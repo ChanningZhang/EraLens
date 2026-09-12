@@ -8,10 +8,11 @@ import styles from "./DynastyLane.module.css";
 type Props = {
   dynasty: PlacedDynasty;
   reigns: Reign[];
+  personNames: Map<string, string>;
   top: number;
 };
 
-export function DynastyLane({ dynasty, reigns, top }: Props) {
+export function DynastyLane({ dynasty, reigns, personNames, top }: Props) {
   const color = COLOR_VALUES[dynasty.colorToken];
   const { items, rowCount } = assignReignStacks(reigns);
   const height = dynastyLaneHeight(rowCount);
@@ -48,6 +49,7 @@ export function DynastyLane({ dynasty, reigns, top }: Props) {
               dynasty={dynasty as Dynasty}
               color={color}
               reigns={reigns}
+              personName={personNames.get(reign.personId)}
             />
           ))}
         </div>

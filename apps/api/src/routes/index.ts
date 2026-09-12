@@ -60,8 +60,8 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
 
   const dynastyIds = dynastyRows.map((row) => row.id);
 
-  const [personRows, reignPersonRows] = await Promise.all([
-    prisma.person.findMany({
+  if (dynastyIds.length === 0) {
+    const personRows = await prisma.person.findMany({
       where: {
         birthYear: { not: null },
         birthMonth: { not: null },
@@ -69,20 +69,14 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
         deathMonth: { not: null },
         reigns: { none: {} },
       },
-    }),
-    prisma.reign.findMany({ select: { personId: true } }),
-  ]);
-  const reignPersonIds = new Set(reignPersonRows.map((row) => row.personId));
-  const persons = personRows
-    .map(mapPerson)
-    .filter((person) => {
-      if (reignPersonIds.has(person.id)) return false;
-      const life = personLifeAbs(person);
-      if (!life) return false;
-      return rangeIntersectsWindow(life.startAbs, life.endAbs, fromAbs, toAbs);
     });
-
-  if (dynastyIds.length === 0) {
+    const persons = personRows
+      .map(mapPerson)
+      .filter((person) => {
+        const life = personLifeAbs(person);
+        if (!life) return false;
+        return rangeIntersectsWindow(life.startAbs, life.endAbs, fromAbs, toAbs);
+      });
     return TimelineSliceSchema.parse({ dynasties: [], reigns: [], events: [], persons });
   }
 
@@ -140,6 +134,31 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
 
   const dynasties = dynastyRows.map(mapDynasty);
   const reigns = reignRows.map((row) => mapReign(row, erasByReign.get(row.id) ?? []));
+  const visibleReignPersonIds = [...new Set(reignRows.map((row) => row.person_id))];
+  const [lifePersonRows, rulerPersonRows] = await Promise.all([
+    prisma.person.findMany({
+      where: {
+        birthYear: { not: null },
+        birthMonth: { not: null },
+        deathYear: { not: null },
+        deathMonth: { not: null },
+        reigns: { none: {} },
+      },
+    }),
+    visibleReignPersonIds.length
+      ? prisma.person.findMany({ where: { id: { in: visibleReignPersonIds } } })
+      : Promise.resolve([]),
+  ]);
+  const persons = [
+    ...rulerPersonRows.map(mapPerson),
+    ...lifePersonRows
+      .map(mapPerson)
+      .filter((person) => {
+        const life = personLifeAbs(person);
+        if (!life) return false;
+        return rangeIntersectsWindow(life.startAbs, life.endAbs, fromAbs, toAbs);
+      }),
+  ];
   const events = eventRows
     .map((row) =>
       mapEvent({

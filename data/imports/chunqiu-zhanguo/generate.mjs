@@ -120,6 +120,11 @@ const EXTRA_PERSONS = [
   person("bian-que", "扁鹊", ["医学家"], "战国名医，望闻问切四诊法传说与其相关。", "扁鹊", ym(-407), ym(-310)),
 ];
 
+/** Person id → Wikipedia article title when display name differs from the wiki slug. */
+const PERSON_WIKI_OVERRIDES = {
+  "zhongshan-r4": "中山王胜",
+};
+
 const DYNASTY_LABELS = {
   "qi-chunqiu": "齐国",
   "jin-chunqiu": "晋国",
@@ -145,7 +150,9 @@ function rulerPerson(r) {
     r.personName && !/^[0-9]+$/.test(r.personName) && !/^[0-9]+年$/.test(r.personName)
       ? r.personName
       : r.title;
-  const wikiTitle = r.title.replace(/^[吴越韩赵魏秦燕宋鲁卫郑曹齐晋楚]/, "").trim() || r.title;
+  const wikiTitle =
+    PERSON_WIKI_OVERRIDES[r.personId] ??
+    (r.title.replace(/^[吴越韩赵魏秦燕宋鲁卫郑曹齐晋楚]/, "").trim() || r.title);
   return person(
     r.personId,
     displayName,
@@ -607,6 +614,54 @@ VALUES (${sqlStr(r.id)}, ${sqlStr(from.type)}, ${sqlStr(from.id)}, ${sqlStr(to.t
 ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;`;
 }
 
+function staleReignCleanupSql(reignList, dynastyList) {
+  const dynastyIds = dynastyList.map((d) => d.id);
+  const reignIds = reignList.map((r) => r.id);
+  if (reignIds.length === 0 || dynastyIds.length === 0) return [];
+
+  const dynastySql = dynastyIds.map(sqlStr).join(", ");
+  const reignSql = reignIds.map(sqlStr).join(", ");
+
+  return [
+    "",
+    "-- Remove stale reigns from managed dynasties (superseded ids from older imports)",
+    `WITH stale AS (`,
+    `  DELETE FROM reigns`,
+    `  WHERE dynasty_id IN (${dynastySql}) AND id NOT IN (${reignSql})`,
+    `  RETURNING person_id`,
+    `)`,
+    `DELETE FROM persons p`,
+    `WHERE p.id IN (SELECT DISTINCT person_id FROM stale)`,
+    `  AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)`,
+    `  AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = p.id)`,
+    `  AND NOT EXISTS (`,
+    `    SELECT 1 FROM relations rel`,
+    `    WHERE (rel.from_type = 'person' AND rel.from_id = p.id)`,
+    `       OR (rel.to_type = 'person' AND rel.to_id = p.id)`,
+    `  );`,
+  ];
+}
+
+function orphanPersonCleanupSql(personList) {
+  const personIds = personList.map((p) => p.id);
+  if (personIds.length === 0) return [];
+
+  const personSql = personIds.map(sqlStr).join(", ");
+  return [
+    "",
+    "-- Drop ruler persons left behind by earlier imports",
+    `DELETE FROM persons p`,
+    `WHERE p.id NOT IN (${personSql})`,
+    `  AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)`,
+    `  AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = p.id)`,
+    `  AND NOT EXISTS (`,
+    `    SELECT 1 FROM relations rel`,
+    `    WHERE (rel.from_type = 'person' AND rel.from_id = p.id)`,
+    `       OR (rel.to_type = 'person' AND rel.to_id = p.id)`,
+    `  );`,
+  ];
+}
+
 const eventDynastySql = [
   ...events.flatMap((e) =>
     e.dynastyIds.map(
@@ -653,6 +708,8 @@ const sql = [
   "",
   "-- relations",
   ...relations.map(relationSql),
+  ...staleReignCleanupSql(reigns, dynasties),
+  ...orphanPersonCleanupSql(persons),
   "",
   "COMMIT;",
   "",

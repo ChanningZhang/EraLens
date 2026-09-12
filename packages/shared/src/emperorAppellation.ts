@@ -12,6 +12,57 @@ export const APPELLATION_LABELS: Record<AppellationKind, string> = {
   regnal: "称号",
 };
 
+const MESSY_PERSON_NAME =
+  /出土|原名|记载|史記|史记|漢書|汉书|之子|之弟|之孫|之孙|之兄|長子|长子|少子|别名|又名|又称|或作|一名|一作|之侯|避讳|误作|旧作|左右|不满|后裔|族人|三世|不明|灭亡/;
+
+/** Rare or inscription forms mapped to displayable modern names. */
+const PERSON_NAME_ALIASES: Record<string, string> = {
+  "𧊒": "胜",
+};
+
+const STATE_PREFIX =
+  /^(齐|晋|楚|燕|宋|鲁|卫|郑|曹|吴|越|韩|赵|魏|秦|中山|田)/;
+
+/** Strip wiki alias noise so cards show a short personal name, not raw table text. */
+export function sanitizePersonName(
+  name: string | null | undefined,
+): string | null {
+  if (!name) return null;
+  if (PERSON_NAME_ALIASES[name]) return PERSON_NAME_ALIASES[name];
+  let s = name
+    .replace(/後/g, "后")
+    .replace(/異/g, "异")
+    .trim();
+  if (!s) return null;
+
+  const renamed = s.match(/(?:后)?改名\s*([\u4e00-\u9fff·]{1,8})/);
+  if (renamed) return renamed[1];
+
+  if (MESSY_PERSON_NAME.test(s)) {
+    const tail = s
+      .split(/[，,、]/)
+      .pop()
+      ?.replace(/(?:后)?改名\s*/, "")
+      .trim();
+    if (tail && tail.length <= 4 && !MESSY_PERSON_NAME.test(tail)) return tail;
+    return null;
+  }
+
+  if (s.length > 8) return null;
+  return PERSON_NAME_ALIASES[s] ?? s;
+}
+
+/** Pull a short given name from Warring States-style regnal titles like 中山王厝. */
+export function extractGivenNameFromRegnalTitle(
+  title: string,
+  appellationName?: string | null,
+): string | null {
+  const full = appellationName ?? title;
+  const stripped = full.replace(STATE_PREFIX, "");
+  const match = stripped.match(/^王([^\s]{1,2})$/);
+  return match?.[1] ?? null;
+}
+
 type ReignAppellationFields = Pick<
   Reign,
   | "start"
@@ -68,7 +119,18 @@ export function resolveReignPrimaryLabel(
   reign: ReignAppellationFields & Pick<Reign, "title">,
   personName?: string | null,
 ): string {
-  return personName ?? reign.title;
+  const appellationName = reign.preferredAppellation?.name;
+  const fromRegnal =
+    reign.preferredAppellation?.kind === "regnal"
+      ? extractGivenNameFromRegnalTitle(reign.title, appellationName)
+      : null;
+  const cleaned = sanitizePersonName(personName);
+  const cleanedIsTitle =
+    !cleaned || cleaned === reign.title || cleaned === appellationName;
+
+  if (!cleanedIsTitle) return cleaned;
+  if (fromRegnal) return fromRegnal;
+  return cleaned ?? reign.title;
 }
 
 type ReignCardLabelOptions = {
@@ -76,34 +138,13 @@ type ReignCardLabelOptions = {
   dynastyId?: string;
 };
 
-/**
- * Label rendered on a reign card. On narrow cards, Song rulers with a 谥号
- * show the short posthumous form (平公) instead of a clipped 子+名 (子成→「了」).
- */
+/** Primary label rendered on a reign card: always the personal name when known. */
 export function resolveReignCardLabel(
   reign: ReignAppellationFields & Pick<Reign, "title">,
   personName?: string | null,
-  options?: ReignCardLabelOptions,
+  _options?: ReignCardLabelOptions,
 ): string {
-  const primary = resolveReignPrimaryLabel(reign, personName);
-  const appellation = resolveEmperorAppellation(reign);
-  const width = options?.cardWidthPx;
-  if (width == null || !appellation) return primary;
-
-  const primaryGlyphs = [...primary].length;
-  const appellationGlyphs = [...appellation.name].length;
-
-  if (
-    options.dynastyId === "song-chunqiu" &&
-    width < 48 &&
-    appellation.kind === "posthumous"
-  ) {
-    return appellation.name;
-  }
-  if (appellationGlyphs < primaryGlyphs && width < 40) {
-    return appellation.name;
-  }
-  return primary;
+  return resolveReignPrimaryLabel(reign, personName);
 }
 
 /** Secondary line shown when the card has enough space. */
@@ -114,9 +155,14 @@ export function resolveReignCardMeta(
   const appellation = resolveEmperorAppellation(reign);
   if (!appellation) return null;
   const primary = resolveReignPrimaryLabel(reign, personName);
+  const cleanedPersonName = sanitizePersonName(personName);
   // Early rulers (e.g. Qin) often lack a recorded personal name; the title
   // is used as a fallback, so skip a duplicate "称号 秦襄公" subtitle.
-  if (appellation.name === primary || appellation.name === personName) {
+  if (
+    appellation.name === primary ||
+    appellation.name === cleanedPersonName ||
+    appellation.name === personName
+  ) {
     return null;
   }
   return { label: APPELLATION_LABELS[appellation.kind], name: appellation.name };

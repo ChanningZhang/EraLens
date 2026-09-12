@@ -3205,7 +3205,7 @@ export const rulersByDynasty = {
       "dynastyId": "zhongshan",
       "personId": "zhongshan-r3",
       "title": "中山王厝",
-      "personName": "中山王厝",
+      "personName": "厝",
       "posthumousName": null,
       "startYear": -327,
       "endYear": -313
@@ -3213,8 +3213,8 @@ export const rulersByDynasty = {
     {
       "dynastyId": "zhongshan",
       "personId": "zhongshan-r4",
-      "title": "中山王𧊒",
-      "personName": "𧊒",
+      "title": "中山王胜",
+      "personName": "胜",
       "posthumousName": null,
       "startYear": -312,
       "endYear": -299

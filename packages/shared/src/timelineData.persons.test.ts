@@ -76,13 +76,22 @@ describe("filterTimeline persons", () => {
       scope: "cn",
     });
     const ids = slice.persons.map((person) => person.id).sort();
-    expect(ids).toEqual(["cao-cao", "zhuge-liang"]);
+    expect(ids).toEqual(["cao-cao", "liu-bei", "zhuge-liang"]);
   });
 
-  it("excludes reign holders even when their lifespan intersects", () => {
+  it("includes visible reign holders so cards can render personal names", () => {
     const slice = filterTimeline(store, {
       fromAbs: absMonth(150, 1),
       toAbs: absMonth(240, 12),
+      scope: "cn",
+    });
+    expect(slice.persons.some((person) => person.id === "liu-bei")).toBe(true);
+  });
+
+  it("excludes reign holders whose reign is outside the window", () => {
+    const slice = filterTimeline(store, {
+      fromAbs: absMonth(150, 1),
+      toAbs: absMonth(180, 12),
       scope: "cn",
     });
     expect(slice.persons.some((person) => person.id === "liu-bei")).toBe(false);

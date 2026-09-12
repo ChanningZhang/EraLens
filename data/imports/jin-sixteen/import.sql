@@ -1861,7 +1861,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-sima-yi-jin', 'jin-east', 'sima-yi-jin', '晋海西公',
-  NULL, NULL, '{"kind":"era","name":"太和"}'::jsonb,
+  '海西公', NULL, '{"kind":"posthumous","name":"晋海西公"}'::jsonb,
   365, 1, 371, 12,
   4380, 4463, 'year'
 )
@@ -1886,7 +1886,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-sima-yu-jin', 'jin-east', 'sima-yu-jin', '晋简文帝',
-  NULL, NULL, '{"kind":"era","name":"咸安"}'::jsonb,
+  '简文皇帝', NULL, '{"kind":"posthumous","name":"晋简文帝"}'::jsonb,
   371, 1, 372, 12,
   4452, 4475, 'year'
 )

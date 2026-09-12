@@ -5,6 +5,7 @@ import {
   resolveReignCardLabel,
   resolveReignCardMeta,
   resolveReignPrimaryLabel,
+  sanitizePersonName,
 } from "./emperorAppellation";
 
 function source(overrides: Partial<Reign>) {
@@ -94,6 +95,17 @@ describe("resolveEmperorAppellation", () => {
   });
 });
 
+describe("sanitizePersonName", () => {
+  it("extracts the final name from wiki alias notes", () => {
+    expect(sanitizePersonName("原名子异、异人，后改名子楚")).toBe("子楚");
+    expect(sanitizePersonName("原名子异、異人，後改名子楚")).toBe("子楚");
+  });
+
+  it("returns null for unusable wiki notes", () => {
+    expect(sanitizePersonName("出土于某某墓")).toBeNull();
+  });
+});
+
 describe("resolveReignPrimaryLabel", () => {
   it("shows person name for Ming and Qing emperors", () => {
     expect(
@@ -136,35 +148,111 @@ describe("resolveReignPrimaryLabel", () => {
       ),
     ).toBe("李世民");
   });
+
+  it("extracts a short personal name from wiki alias notes", () => {
+    expect(
+      resolveReignPrimaryLabel(
+        source({
+          start: { year: -250, month: 1 },
+          title: "秦庄襄王",
+        }),
+        "原名子异、异人，后改名子楚",
+      ),
+    ).toBe("子楚");
+  });
+
+  it("extracts a given name from Zhongshan regnal titles", () => {
+    const reign = source({
+      start: { year: -327, month: 1 },
+      title: "中山王厝",
+      preferredAppellation: { kind: "regnal", name: "中山王厝" },
+    });
+    expect(resolveReignPrimaryLabel(reign)).toBe("厝");
+    expect(resolveReignPrimaryLabel(reign, "中山王厝")).toBe("厝");
+    expect(
+      resolveReignPrimaryLabel(
+        source({
+          start: { year: -312, month: 1 },
+          title: "中山王胜",
+          preferredAppellation: { kind: "regnal", name: "中山王胜" },
+        }),
+        "𧊒",
+      ),
+    ).toBe("胜");
+  });
+});
+
+describe("resolveReignCardMeta for Zhongshan kings", () => {
+  it("shows regnal meta when the personal name is known", () => {
+    expect(
+      resolveReignCardMeta(
+        source({
+          start: { year: -327, month: 1 },
+          title: "中山王厝",
+          preferredAppellation: { kind: "regnal", name: "中山王厝" },
+        }),
+        "厝",
+      ),
+    ).toEqual({ label: "称号", name: "中山王厝" });
+    expect(
+      resolveReignCardMeta(
+        source({
+          start: { year: -312, month: 1 },
+          title: "中山王胜",
+          preferredAppellation: { kind: "regnal", name: "中山王胜" },
+        }),
+        "胜",
+      ),
+    ).toEqual({ label: "称号", name: "中山王胜" });
+  });
 });
 
 describe("resolveReignCardLabel", () => {
-  it("uses posthumous shorthand for narrow Song cards", () => {
+  it("always shows the personal name regardless of card width", () => {
+    const reign = source({
+      start: { year: -575, month: 1 },
+      title: "宋平公",
+      posthumousName: "平公",
+    });
     expect(
-      resolveReignCardLabel(
-        source({
-          start: { year: -575, month: 1 },
-          title: "宋平公",
-          posthumousName: "平公",
-        }),
-        "子成",
-        { cardWidthPx: 32, dynastyId: "song-chunqiu" },
-      ),
-    ).toBe("平公");
+      resolveReignCardLabel(reign, "子成", {
+        cardWidthPx: 32,
+        dynastyId: "song-chunqiu",
+      }),
+    ).toBe("子成");
+    expect(
+      resolveReignCardLabel(reign, "子成", {
+        cardWidthPx: 80,
+        dynastyId: "song-chunqiu",
+      }),
+    ).toBe("子成");
   });
 
-  it("keeps the personal name on wide Song cards", () => {
+  it("shows posthumous meta for Jin deposed and short-reign emperors", () => {
     expect(
-      resolveReignCardLabel(
+      resolveReignCardMeta(
         source({
-          start: { year: -575, month: 1 },
-          title: "宋平公",
-          posthumousName: "平公",
+          start: { year: 365, month: 1 },
+          title: "晋海西公",
+          posthumousName: "海西公",
+          preferredAppellation: { kind: "posthumous", name: "晋海西公" },
+          eraNames: [{ name: "太和" }] as Reign["eraNames"],
         }),
-        "子成",
-        { cardWidthPx: 80, dynastyId: "song-chunqiu" },
+        "司马奕",
       ),
-    ).toBe("子成");
+    ).toEqual({ label: "谥号", name: "晋海西公" });
+    expect(
+      resolveReignCardMeta(
+        source({
+          start: { year: 371, month: 1 },
+          title: "晋简文帝",
+          posthumousName: "简文皇帝",
+          preferredAppellation: { kind: "posthumous", name: "晋简文帝" },
+          eraNames: [{ name: "咸安" }] as Reign["eraNames"],
+        }),
+        "司马昱",
+      ),
+    ).toEqual({ label: "谥号", name: "晋简文帝" });
   });
 });
 

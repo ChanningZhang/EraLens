@@ -167,8 +167,12 @@ const SURNAME = {
 const CLAN_SURNAMES = ["姜", "吕", "田", "姬", "熊", "芈", "子", "嬴", "赵", "魏", "韩", "燕", "戴"];
 
 function toSimplified(text) {
-  // Sources are already zh-cn Wikipedia; do not homegrow 繁简 conversion.
-  return String(text ?? "");
+  // Sources are already zh-cn Wikipedia; normalize a few chars that still
+  // appear in legacy rows or mixed tables before name extraction.
+  return String(text ?? "")
+    .replace(/後/g, "后")
+    .replace(/異/g, "异")
+    .replace(/莊/g, "庄");
 }
 
 function stripMdLinks(text) {
@@ -620,6 +624,15 @@ function parseZhongshan() {
     }
     if (next.title === "中山文公" && next.end === -415 && next.start > -500) {
       next = { ...next, start: -476 };
+    }
+    // Wiki lists 厝's name as an image; extract the given name from the regnal title.
+    if (next.title === "中山王厝" && !finalizePersonName(next.name)) {
+      next.name = "厝";
+    }
+    // Extension-B inscription 𧊒 is not covered by UI fonts; use the common form 胜.
+    if (next.title === "中山王𧊒" || next.title === "中山王胜") {
+      next.title = "中山王胜";
+      next.name = "胜";
     }
     next.name = withSurname("zhongshan", next.name, next.title);
     fixed.push(next);

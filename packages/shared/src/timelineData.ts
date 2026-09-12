@@ -50,8 +50,10 @@ export function filterTimeline(
     return intersects && (dynastyHit || e.dynastyIds.length === 0);
   });
 
+  const visibleReignPersonIds = new Set(visibleReigns.map((r) => r.personId));
   const reignPersonIds = new Set(store.reigns.map((r) => r.personId));
   const visiblePersons = store.persons.filter((person) => {
+    if (visibleReignPersonIds.has(person.id)) return true;
     if (reignPersonIds.has(person.id)) return false;
     const life = personLifeAbs(person);
     if (!life) return false;

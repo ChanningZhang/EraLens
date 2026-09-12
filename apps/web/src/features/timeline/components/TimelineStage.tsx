@@ -54,6 +54,15 @@ export function TimelineStage() {
     return map;
   }, [data]);
 
+  const personNames = useMemo(() => {
+    const map = new Map<string, string>();
+    if (!data) return map;
+    for (const person of data.persons) {
+      map.set(person.id, person.name);
+    }
+    return map;
+  }, [data]);
+
   const lanes = useMemo(() => {
     let top = railHeight;
     return placed.map((dynasty) => {
@@ -72,7 +81,8 @@ export function TimelineStage() {
 
   const visiblePersons = useMemo(() => {
     if (!data || !shouldShowPersons(viewport.lod)) return [];
-    return data.persons;
+    const reignPersonIds = new Set(data.reigns.map((reign) => reign.personId));
+    return data.persons.filter((person) => !reignPersonIds.has(person.id));
   }, [data, viewport.lod]);
 
   const personPlaced = useMemo(() => {
@@ -119,6 +129,7 @@ export function TimelineStage() {
                   key={dynasty.id}
                   dynasty={dynasty}
                   reigns={reigns}
+                  personNames={personNames}
                   top={top}
                 />
               ))}

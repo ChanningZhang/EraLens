@@ -24,6 +24,7 @@ type Props = {
   dynasty: Dynasty;
   color: string;
   reigns: Reign[];
+  personName?: string;
 };
 
 export function ReignCard({
@@ -31,6 +32,7 @@ export function ReignCard({
   dynasty,
   color,
   reigns,
+  personName: personNameFromTimeline,
 }: Props) {
   const viewport = useViewport();
   const selection = useSelection();
@@ -50,10 +52,11 @@ export function ReignCard({
       const detailEntity = await repo.getEntity({ type: "person", id: reign.personId });
       return detailEntity.title;
     },
-    staleTime: Infinity,
+    enabled: !personNameFromTimeline,
+    staleTime: 5 * 60_000,
   });
 
-  const personName = personQuery.data;
+  const personName = personNameFromTimeline ?? personQuery.data;
   const label = resolveReignCardLabel(reign, personName, {
     cardWidthPx: width,
     dynastyId: dynasty.id,
