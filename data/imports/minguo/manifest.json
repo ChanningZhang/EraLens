@@ -1,0 +1,53 @@
+{
+  "slug": "minguo",
+  "title": "中华民国（大陆时期）",
+  "window": {
+    "startYear": 1912,
+    "startMonth": 1,
+    "endYear": 1949,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-12",
+  "counts": {
+    "persons": 25,
+    "dynasties": 1,
+    "reigns": 11,
+    "events": 12,
+    "relations": 13
+  },
+  "sources": [
+    {
+      "label": "中华民国",
+      "url": "https://zh.wikipedia.org/wiki/中华民国"
+    },
+    {
+      "label": "中华民国国家元首列表",
+      "url": "https://zh.wikipedia.org/wiki/中华民国国家元首列表"
+    },
+    {
+      "label": "北洋政府",
+      "url": "https://zh.wikipedia.org/wiki/北洋政府"
+    },
+    {
+      "label": "军阀",
+      "url": "https://zh.wikipedia.org/wiki/军阀"
+    },
+    {
+      "label": "五四运动",
+      "url": "https://zh.wikipedia.org/wiki/五四运动"
+    },
+    {
+      "label": "抗日战争",
+      "url": "https://zh.wikipedia.org/wiki/抗日战争"
+    }
+  ],
+  "notes": [
+    "覆盖中华民国大陆时期（1912–1949），单行 roc 王朝；各路军阀仅作 persons，不建独立王朝。",
+    "国家元首以 reign 卡片收录（临时大总统、大总统、国民政府主席、总统等）。",
+    "孙中山（sun-yat-sen）复用已有 id；蒋介石 1928–1948 实际主政以事件关联，1948 年起 reign。",
+    "段祺瑞临时执政、汪精卫伪政权等未建 reign；军阀割据以 span 事件「军阀割据」概括。",
+    "1949 迁台后之台湾时期不在本包内；中华人民共和国不在本包内。"
+  ]
+}

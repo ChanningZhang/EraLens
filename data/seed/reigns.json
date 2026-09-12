@@ -945,10 +945,10 @@
     },
     "end": {
       "year": -441,
-      "month": 12
+      "month": 3
     },
     "startAbs": -5280,
-    "endAbs": -5269,
+    "endAbs": -5278,
     "precision": "year",
     "posthumousName": "哀王",
     "preferredAppellation": {
@@ -964,13 +964,13 @@
     "eraNames": [],
     "start": {
       "year": -441,
-      "month": 1
+      "month": 4
     },
     "end": {
       "year": -441,
       "month": 12
     },
-    "startAbs": -5280,
+    "startAbs": -5277,
     "endAbs": -5269,
     "precision": "year",
     "posthumousName": "思王",

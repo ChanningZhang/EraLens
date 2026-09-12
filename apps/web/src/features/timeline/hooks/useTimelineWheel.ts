@@ -62,3 +62,7 @@ export function useTimelineWheel() {
     installTimelineWheel();
   }, []);
 }
+
+if (typeof window !== "undefined") {
+  installTimelineWheel();
+}

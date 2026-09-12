@@ -1,0 +1,57 @@
+{
+  "slug": "sui-tang-wudai-song",
+  "title": "隋唐宋（含五代十国、武周）",
+  "window": {
+    "startYear": 581,
+    "startMonth": 1,
+    "endYear": 1279,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-12",
+  "counts": {
+    "persons": 78,
+    "dynasties": 20,
+    "reigns": 76,
+    "events": 18,
+    "relations": 72
+  },
+  "sources": [
+    {
+      "label": "隋朝",
+      "url": "https://zh.wikipedia.org/wiki/隋朝"
+    },
+    {
+      "label": "唐朝",
+      "url": "https://zh.wikipedia.org/wiki/唐朝"
+    },
+    {
+      "label": "五代十国",
+      "url": "https://zh.wikipedia.org/wiki/五代十国"
+    },
+    {
+      "label": "北宋",
+      "url": "https://zh.wikipedia.org/wiki/北宋"
+    },
+    {
+      "label": "南宋",
+      "url": "https://zh.wikipedia.org/wiki/南宋"
+    },
+    {
+      "label": "安史之乱",
+      "url": "https://zh.wikipedia.org/wiki/安史之乱"
+    },
+    {
+      "label": "靖康之变",
+      "url": "https://zh.wikipedia.org/wiki/靖康之变"
+    }
+  ],
+  "notes": [
+    "覆盖隋（581–618）、唐（618–907）、武周（690–705）、五代十国（907–979）、北宋（960–1127）、南宋（1127–1279）。",
+    "杨坚（yang-jian）复用 nanbei-chao 已有 id；后梁 id 为 liang-hou，避免与十六国后凉 liang-back 冲突。",
+    "十国吴 id 为 wu-shi，避免与三国孙吴 wu 冲突；前蜀/后蜀为 shu-qian/shu-hou，避免与蜀汉 shu 冲突。",
+    "十国各政权收录开国与末代君主；五代收录全部皇帝。",
+    "1279 崖山海战为南宋终结；元朝不在本包内。"
+  ]
+}

@@ -1,0 +1,477 @@
+#!/usr/bin/env node
+/**
+ * Generate EraLens import SQL for Sui, Tang, Five Dynasties & Ten Kingdoms, Song (581–1279).
+ */
+import { writeFileSync, mkdirSync } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+function toAstroYear(year) {
+  return year > 0 ? year : year + 1;
+}
+function absMonth(year, month = 1) {
+  return toAstroYear(year) * 12 + (month - 1);
+}
+function sqlStr(value) {
+  if (value == null) return "NULL";
+  return `'${String(value).replace(/'/g, "''")}'`;
+}
+function sqlArray(values) {
+  if (!values?.length) return "ARRAY[]::text[]";
+  return `ARRAY[${values.map(sqlStr).join(",")}]`;
+}
+function sqlJson(value) {
+  if (value == null) return "NULL";
+  return `${sqlStr(JSON.stringify(value))}::jsonb`;
+}
+function ym(year, month = 1) {
+  return { year, month, abs: absMonth(year, month) };
+}
+function wiki(title) {
+  return [{ label: "维基百科", url: `https://zh.wikipedia.org/wiki/${title}` }];
+}
+
+function person(id, name, roles, bio, wikiTitle, birth = null, death = null) {
+  return { id, name, roles, bio, links: wiki(wikiTitle), birth, death };
+}
+
+function reign({
+  id,
+  dynastyId,
+  personId,
+  title,
+  posthumousName,
+  templeName,
+  preferred,
+  start,
+  end,
+  precision = "year",
+  eraNames = [],
+}) {
+  return {
+    id,
+    dynastyId,
+    personId,
+    title,
+    posthumousName,
+    templeName,
+    preferredAppellation: preferred,
+    eraNames,
+    start,
+    end,
+    startAbs: start.abs,
+    endAbs: end.abs,
+    precision,
+  };
+}
+
+function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, eraNames = [], preferred = null) {
+  const pref =
+    preferred ??
+    (temple ? { kind: "temple", name: title } : posthumous ? { kind: "posthumous", name: title } : { kind: "regnal", name: title });
+  return reign({
+    id: dynastyId === "sui" || dynastyId === "tang" ? `reign-${personId}` : `reign-${personId}-${dynastyId}`,
+    dynastyId,
+    personId,
+    title,
+    posthumousName: posthumous,
+    templeName: temple,
+    preferred: pref,
+    start: ym(startYear),
+    end: ym(endYear, 12),
+    eraNames,
+  });
+}
+
+function eras(reignId, list) {
+  return list.map((e, i) => ({
+    reignId,
+    name: e.name,
+    start: ym(e.sy, e.sm ?? 1),
+    end: ym(e.ey, e.em ?? 12),
+    sortOrder: i,
+  }));
+}
+
+function dr(dynastyId, personId, title, posthumous, temple, sy, ey, eraList = []) {
+  const reignId = `reign-${personId}-${dynastyId}`;
+  return dynastyReign(dynastyId, personId, title, posthumous, temple, sy, ey, eraList.length ? eras(reignId, eraList) : [], null);
+}
+
+const colorTokens = ["ochre", "indigo", "moss", "mineral", "cinnabar", "stone", "grape", "wisteria"];
+let colorIdx = 0;
+function nextColor() {
+  return colorTokens[colorIdx++ % colorTokens.length];
+}
+
+// ── persons ────────────────────────────────────────────────────────────────
+// yang-jian already in DB from nanbei-chao
+
+const persons = [
+  person("yang-guang", "杨广", ["皇帝"], "隋炀帝，开运河、三征高句丽，江都兵变被杀。", "隋炀帝"),
+  person("yang-you", "杨侑", ["皇帝"], "隋恭帝，李渊拥立，后禅让建唐。", "杨侑"),
+  // 唐
+  person("li-yuan", "李渊", ["皇帝"], "唐高祖，太原起兵，建唐定都长安。", "李渊"),
+  person("li-shimin", "李世民", ["皇帝"], "唐太宗，玄武门之变后即位，开创贞观之治。", "唐太宗"),
+  person("li-zhi", "李治", ["皇帝"], "唐高宗，永徽年间与武则天共治。", "唐高宗"),
+  person("li-xian", "李显", ["皇帝"], "唐中宗，两度即位，韦后乱政在其朝。", "唐中宗"),
+  person("li-dan", "李旦", ["皇帝"], "唐睿宗，两度即位，后禅位玄宗。", "唐睿宗"),
+  person("wu-zetian", "武则天", ["皇帝"], "中国历史上唯一女皇帝，改国号周。", "武则天"),
+  person("li-longji", "李隆基", ["皇帝"], "唐玄宗，开元盛世，安史之乱在其朝。", "唐玄宗"),
+  person("li-heng", "李亨", ["皇帝"], "唐肃宗，马嵬驿后即位，平定安史之乱。", "唐肃宗"),
+  person("li-yu-tang", "李豫", ["皇帝"], "唐代宗，平定安史余部。", "唐代宗"),
+  person("li-kuo", "李适", ["皇帝"], "唐德宗，后期藩镇坐大。", "唐德宗"),
+  person("li-song", "李诵", ["皇帝"], "唐顺宗，在位仅八个月。", "唐顺宗"),
+  person("li-chun", "李纯", ["皇帝"], "唐宪宗，元和中兴。", "唐宪宗"),
+  person("li-heng-mu", "李恒", ["皇帝"], "唐穆宗，宴游无度，藩镇复叛。", "唐穆宗"),
+  person("li-zhan", "李湛", ["皇帝"], "唐敬宗，荒淫，为宦官所杀。", "唐敬宗"),
+  person("li-ang", "李昂", ["皇帝"], "唐文宗，甘露之变在其朝。", "唐文宗"),
+  person("li-yan-tang", "李炎", ["皇帝"], "唐武宗，会昌灭佛。", "唐武宗"),
+  person("li-chen-tang", "李忱", ["皇帝"], "唐宣宗，大中之治，晚唐中兴。", "唐宣宗"),
+  person("li-cui", "李漼", ["皇帝"], "唐懿宗，奢靡，唐由盛转衰。", "唐懿宗"),
+  person("li-xuan-tang", "李儇", ["皇帝"], "唐僖宗，黄巢起义在其朝。", "唐僖宗"),
+  person("li-ye-tang", "李晔", ["皇帝"], "唐昭宗，为朱温控制，后被杀。", "唐昭宗"),
+  person("li-zhu-tang", "李柷", ["皇帝"], "唐哀帝，朱温篡唐，唐亡。", "唐哀帝"),
+  // 五代
+  person("zhu-wen", "朱温", ["皇帝"], "后梁太祖，篡唐建梁，都开封。", "朱温"),
+  person("zhu-yougui", "朱友珪", ["皇帝"], "后梁末帝，弑父自立，旋被杀。", "朱友珪"),
+  person("zhu-youzhen", "朱友贞", ["皇帝"], "后梁末帝，为后唐所灭。", "朱友贞"),
+  person("li-cunxu", "李存勖", ["皇帝"], "后唐庄宗，灭梁复唐，旋败。", "李存勖"),
+  person("li-siyuan", "李嗣源", ["皇帝"], "后唐明宗，沙陀族，励精图治。", "李嗣源"),
+  person("li-conghou", "李从厚", ["皇帝"], "后唐闵帝，在位仅三个月。", "李从厚"),
+  person("li-congke", "李从珂", ["皇帝"], "后唐末帝，为石敬瑭联契丹所灭。", "李从珂"),
+  person("shi-jingtang", "石敬瑭", ["皇帝"], "后晋高祖，割燕云十六州予契丹。", "石敬瑭"),
+  person("shi-chonggui", "石重贵", ["皇帝"], "后晋出帝，与契丹决裂，后晋亡。", "石重贵"),
+  person("liu-zhiyuan", "刘知远", ["皇帝"], "后汉高祖，沙陀族，建后汉。", "刘知远"),
+  person("liu-chengyou", "刘承祐", ["皇帝"], "后汉隐帝，后汉末代，为郭威所代。", "刘承祐"),
+  person("guo-wei", "郭威", ["皇帝"], "后周太祖，陈桥前代汉建周。", "郭威"),
+  person("chai-rong", "柴荣", ["皇帝"], "后周世宗，励精图治，北伐南征。", "周世宗"),
+  person("chai-zongxun", "柴宗训", ["皇帝"], "后周恭帝，赵匡胤陈桥兵变后禅让。", "柴宗训"),
+  // 十国
+  person("yang-xingmi", "杨行密", ["君主"], "吴国奠基者，据淮南。", "杨行密"),
+  person("yang-pu", "杨溥", ["皇帝"], "吴末帝，为南唐所灭。", "杨溥"),
+  person("li-bian", "李昪", ["皇帝"], "南唐烈祖，代吴建南唐。", "李昪"),
+  person("li-yu-nantang", "李煜", ["君主"], "南唐后主，词名满天下，为宋所俘。", "李煜"),
+  person("qian-liu", "钱镠", ["君主"], "吴越开国，据两浙。", "钱镠"),
+  person("qian-chu", "钱俶", ["君主"], "吴越末主，纳土归宋。", "钱俶"),
+  person("wang-shenzhi", "王审知", ["君主"], "闽国奠基者，据福建。", "王审知"),
+  person("wang-yanxi", "王延羲", ["君主"], "闽末帝，为部下所杀，闽亡。", "王延羲"),
+  person("liu-yan", "刘龑", ["皇帝"], "南汉高祖，据岭南。", "刘龑"),
+  person("liu-chang", "刘鋹", ["皇帝"], "南汉末帝，为宋所灭。", "刘鋹"),
+  person("wang-jian-shu", "王建", ["皇帝"], "前蜀高祖，据成都。", "王建"),
+  person("wang-yan-shu", "王衍", ["皇帝"], "前蜀末帝，为后唐所灭。", "王衍"),
+  person("meng-zhixiang", "孟知祥", ["皇帝"], "后蜀高祖，据成都。", "孟知祥"),
+  person("meng-chang", "孟昶", ["皇帝"], "后蜀末帝，为宋所灭。", "孟昶"),
+  person("gao-jixing", "高季兴", ["君主"], "荆南（南平）开国，据江陵。", "高季兴"),
+  person("gao-jichong", "高继冲", ["君主"], "荆南末主，纳土归宋。", "高继冲"),
+  person("ma-yin", "马殷", ["君主"], "楚国开国，据湖南。", "马殷"),
+  person("ma-xichong", "马希崇", ["君主"], "楚末，为南唐所灭。", "马希崇"),
+  person("liu-min", "刘旻", ["皇帝"], "北汉世祖，据太原。", "刘旻"),
+  person("liu-jiyuan", "刘继元", ["皇帝"], "北汉末帝，为宋所灭。", "刘继元"),
+  // 宋
+  person("zhao-kuangyin", "赵匡胤", ["皇帝"], "宋太祖，陈桥兵变建宋，杯酒释兵权。", "赵匡胤"),
+  person("zhao-kuangyi", "赵光义", ["皇帝"], "宋太宗，完成统一，幽州之战失利。", "赵光义"),
+  person("zhao-heng", "赵恒", ["皇帝"], "宋真宗，澶渊之盟在其朝。", "宋真宗"),
+  person("zhao-zhen", "赵祯", ["皇帝"], "宋仁宗，庆历新政，北宋极盛。", "宋仁宗"),
+  person("zhao-shu", "赵曙", ["皇帝"], "宋英宗，在位仅四年。", "宋英宗"),
+  person("zhao-xu", "赵顼", ["皇帝"], "宋神宗，王安石变法在其朝。", "宋神宗"),
+  person("zhao-zhe", "赵煦", ["皇帝"], "宋哲宗，元祐更化与绍圣绍述。", "宋哲宗"),
+  person("zhao-ji", "赵佶", ["皇帝"], "宋徽宗，崇道兴艺术，靖康之耻。", "宋徽宗"),
+  person("zhao-huan", "赵桓", ["皇帝"], "宋钦宗，靖康之变被俘，北宋亡。", "宋钦宗"),
+  person("zhao-gou", "赵构", ["皇帝"], "宋高宗，南渡建南宋，杀岳飞。", "宋高宗"),
+  person("zhao-shen", "赵昚", ["皇帝"], "宋孝宗，乾淳之治，南宋中兴。", "宋孝宗"),
+  person("zhao-dun", "赵惇", ["皇帝"], "宋光宗，淳熙内禅。", "宋光宗"),
+  person("zhao-kuo", "赵扩", ["皇帝"], "宋宁宗，开禧北伐。", "宋宁宗"),
+  person("zhao-yun", "赵昀", ["皇帝"], "宋理宗，联蒙灭金，后蒙攻宋。", "宋理宗"),
+  person("zhao-qi", "赵禥", ["皇帝"], "宋度宗，度宗荒怠，宋势日衰。", "宋度宗"),
+  person("zhao-shi", "赵显", ["皇帝"], "宋恭帝，降元，南宋实质亡。", "宋恭帝"),
+  person("zhao-shi-duan", "赵昰", ["皇帝"], "宋端宗，流亡途中崩。", "宋端宗"),
+  person("zhao-bing", "赵昺", ["皇帝"], "宋帝昺，崖山海战殉国，南宋亡。", "宋帝昺"),
+  person("an-lushan", "安禄山", ["将领"], "安史之乱发动者，范阳节度使。", "安禄山"),
+  person("huang-chao", "黄巢", ["起义领袖"], "唐末农民起义领袖，攻入长安。", "黄巢"),
+  person("wang-anshi", "王安石", ["政治家"], "北宋改革家，熙宁变法主持者。", "王安石"),
+];
+
+const allPersons = persons;
+
+// ── dynasties ──────────────────────────────────────────────────────────────
+
+const dynasties = [
+  { id: "sui", name: "隋", altNames: ["大隋"], scope: "cn", region: "east_asia", start: ym(581), end: ym(618), precision: "year", colorToken: nextColor(), note: "杨坚代周建隋，589年灭陈统一；618年江都兵变，隋亡。" },
+  { id: "tang", name: "唐", altNames: ["李唐"], scope: "cn", region: "east_asia", start: ym(618), end: ym(907), precision: "year", colorToken: nextColor(), note: "李渊建唐，都长安；907年朱温篡唐，唐亡。" },
+  { id: "zhou-wu", name: "武周", altNames: ["周"], scope: "cn", region: "east_asia", start: ym(690), end: ym(705), precision: "year", colorToken: nextColor(), note: "武则天改国号周，690–705年，后还政李唐。" },
+  { id: "liang-hou", name: "后梁", altNames: ["梁"], scope: "cn", region: "east_asia", start: ym(907), end: ym(923), precision: "year", colorToken: nextColor(), note: "朱温篡唐建梁，都开封；923年后唐灭之。" },
+  { id: "tang-hou", name: "后唐", altNames: ["唐"], scope: "cn", region: "east_asia", start: ym(923), end: ym(936), precision: "year", colorToken: nextColor(), note: "李存勖灭梁称帝；936年石敬瑭联契丹灭之。" },
+  { id: "jin-hou", name: "后晋", altNames: ["晋"], scope: "cn", region: "east_asia", start: ym(936), end: ym(947), precision: "year", colorToken: nextColor(), note: "石敬瑭割燕云十六州；947年契丹灭晋。" },
+  { id: "han-hou", name: "后汉", altNames: ["汉"], scope: "cn", region: "east_asia", start: ym(947), end: ym(951), precision: "year", colorToken: nextColor(), note: "刘知远建后汉；951年郭威代汉。" },
+  { id: "zhou-hou", name: "后周", altNames: ["周"], scope: "cn", region: "east_asia", start: ym(951), end: ym(960), precision: "year", colorToken: nextColor(), note: "郭威建后周；960年赵匡胤陈桥兵变代周。" },
+  { id: "wu-shi", name: "吴", altNames: ["杨吴", "十国吴"], scope: "cn", region: "east_asia", start: ym(902), end: ym(937), precision: "year", colorToken: nextColor(), note: "杨行密据淮南；937年为南唐所灭。" },
+  { id: "tang-nan", name: "南唐", altNames: ["唐"], scope: "cn", region: "east_asia", start: ym(937), end: ym(975), precision: "year", colorToken: nextColor(), note: "李昪代吴建南唐；975年宋灭之。" },
+  { id: "wuyue", name: "吴越", altNames: ["吴越国"], scope: "cn", region: "east_asia", start: ym(907), end: ym(978), precision: "year", colorToken: nextColor(), note: "钱镠据两浙；978年钱俶纳土归宋。" },
+  { id: "min-fujian", name: "闽", altNames: ["闽国"], scope: "cn", region: "east_asia", start: ym(909), end: ym(945), precision: "year", colorToken: nextColor(), note: "王审知据福建；945年内乱灭亡。" },
+  { id: "han-nan", name: "南汉", altNames: ["汉"], scope: "cn", region: "east_asia", start: ym(917), end: ym(971), precision: "year", colorToken: nextColor(), note: "刘龑据岭南；971年宋灭之。" },
+  { id: "shu-qian", name: "前蜀", altNames: ["蜀"], scope: "cn", region: "east_asia", start: ym(907), end: ym(925), precision: "year", colorToken: nextColor(), note: "王建据成都；925年后唐灭之。" },
+  { id: "shu-hou", name: "后蜀", altNames: ["蜀"], scope: "cn", region: "east_asia", start: ym(934), end: ym(965), precision: "year", colorToken: nextColor(), note: "孟知祥据成都；965年宋灭之。" },
+  { id: "jingnan", name: "荆南", altNames: ["南平"], scope: "cn", region: "east_asia", start: ym(924), end: ym(963), precision: "year", colorToken: nextColor(), note: "高季兴据江陵；963年纳土归宋。" },
+  { id: "chu-nan", name: "楚", altNames: ["马楚"], scope: "cn", region: "east_asia", start: ym(907), end: ym(951), precision: "year", colorToken: nextColor(), note: "马殷据湖南；951年南唐灭楚。" },
+  { id: "han-bei", name: "北汉", altNames: ["汉"], scope: "cn", region: "east_asia", start: ym(951), end: ym(979), precision: "year", colorToken: nextColor(), note: "刘旻据太原；979年宋灭之，十国终结。" },
+  { id: "song-north", name: "北宋", altNames: ["宋"], scope: "cn", region: "east_asia", start: ym(960), end: ym(1127), precision: "year", colorToken: nextColor(), note: "赵匡胤陈桥兵变建宋；1127年靖康之变，北宋亡。" },
+  { id: "song-south", name: "南宋", altNames: ["宋"], scope: "cn", region: "east_asia", start: ym(1127), end: ym(1279), precision: "year", colorToken: nextColor(), note: "赵构南渡建南宋；1279年崖山海战，南宋亡。" },
+];
+
+// ── reigns ─────────────────────────────────────────────────────────────────
+
+const suiReigns = [
+  dynastyReign("sui", "yang-jian", "隋文帝", "文皇帝", null, 581, 604, eras("reign-yang-jian", [{ name: "开皇", sy: 581, ey: 600 }, { name: "仁寿", sy: 601, ey: 604 }])),
+  dynastyReign("sui", "yang-guang", "隋炀帝", null, null, 604, 618, eras("reign-yang-guang", [{ name: "大业", sy: 605, ey: 618 }])),
+  dynastyReign("sui", "yang-you", "隋恭帝", null, null, 617, 618),
+];
+
+const tangReigns = [
+  dynastyReign("tang", "li-yuan", "唐高祖", "神尧皇帝", "高祖", 618, 626),
+  dynastyReign("tang", "li-shimin", "唐太宗", "文武皇帝", "太宗", 626, 649, eras("reign-li-shimin", [{ name: "贞观", sy: 627, ey: 649 }])),
+  dynastyReign("tang", "li-zhi", "唐高宗", "天皇大帝", "高宗", 649, 683),
+  dynastyReign("tang", "li-xian", "唐中宗", null, null, 684, 710),
+  dynastyReign("tang", "li-dan", "唐睿宗", null, null, 684, 712),
+  dynastyReign("tang", "li-longji", "唐玄宗", "至道大明孝皇帝", "玄宗", 712, 756, eras("reign-li-longji", [{ name: "开元", sy: 713, ey: 741 }, { name: "天宝", sy: 742, ey: 756 }])),
+  dynastyReign("tang", "li-heng", "唐肃宗", null, null, 756, 762),
+  dynastyReign("tang", "li-yu-tang", "唐代宗", null, null, 762, 779),
+  dynastyReign("tang", "li-kuo", "唐德宗", null, null, 779, 805),
+  dynastyReign("tang", "li-song", "唐顺宗", null, null, 805, 805),
+  dynastyReign("tang", "li-chun", "唐宪宗", null, null, 806, 820),
+  dynastyReign("tang", "li-heng-mu", "唐穆宗", null, null, 820, 824),
+  dynastyReign("tang", "li-zhan", "唐敬宗", null, null, 824, 826),
+  dynastyReign("tang", "li-ang", "唐文宗", null, null, 826, 840),
+  dynastyReign("tang", "li-yan-tang", "唐武宗", null, null, 840, 846),
+  dynastyReign("tang", "li-chen-tang", "唐宣宗", null, null, 846, 859),
+  dynastyReign("tang", "li-cui", "唐懿宗", null, null, 859, 873),
+  dynastyReign("tang", "li-xuan-tang", "唐僖宗", null, null, 873, 888),
+  dynastyReign("tang", "li-ye-tang", "唐昭宗", null, null, 888, 904),
+  dynastyReign("tang", "li-zhu-tang", "唐哀帝", null, null, 904, 907),
+];
+
+const zhouWuReigns = [
+  dynastyReign("zhou-wu", "wu-zetian", "则天皇帝", null, null, 690, 705, eras("reign-wu-zetian-zhou-wu", [{ name: "天授", sy: 690, ey: 692 }, { name: "万岁通天", sy: 696, ey: 697 }, { name: "万岁登封", sy: 697, ey: 697 }, { name: "神功", sy: 697, ey: 700 }, { name: "圣历", sy: 700, ey: 700 }, { name: "久视", sy: 700, ey: 701 }, { name: "大足", sy: 701, ey: 701 }, { name: "长安", sy: 701, ey: 705 }])),
+];
+
+const wudaiReigns = [
+  dr("liang-hou", "zhu-wen", "后梁太祖", null, null, 907, 912),
+  dr("liang-hou", "zhu-yougui", "后梁末帝", null, null, 912, 913),
+  dr("liang-hou", "zhu-youzhen", "后梁末帝", null, null, 913, 923),
+  dr("tang-hou", "li-cunxu", "后唐庄宗", null, null, 923, 926),
+  dr("tang-hou", "li-siyuan", "后唐明宗", null, null, 926, 933),
+  dr("tang-hou", "li-conghou", "后唐闵帝", null, null, 934, 934),
+  dr("tang-hou", "li-congke", "后唐末帝", null, null, 934, 936),
+  dr("jin-hou", "shi-jingtang", "后晋高祖", null, null, 936, 942),
+  dr("jin-hou", "shi-chonggui", "后晋出帝", null, null, 942, 947),
+  dr("han-hou", "liu-zhiyuan", "后汉高祖", null, null, 947, 948),
+  dr("han-hou", "liu-chengyou", "后汉隐帝", null, null, 948, 951),
+  dr("zhou-hou", "guo-wei", "后周太祖", null, null, 951, 954),
+  dr("zhou-hou", "chai-rong", "后周世宗", null, null, 954, 959),
+  dr("zhou-hou", "chai-zongxun", "后周恭帝", null, null, 959, 960),
+];
+
+const shiguoReigns = [
+  dr("wu-shi", "yang-xingmi", "吴太祖", null, null, 902, 905),
+  dr("wu-shi", "yang-pu", "吴末帝", null, null, 920, 937),
+  dr("tang-nan", "li-bian", "南唐烈祖", null, null, 937, 943),
+  dr("tang-nan", "li-yu-nantang", "南唐后主", null, null, 961, 975),
+  dr("wuyue", "qian-liu", "吴越武肃王", null, null, 907, 932),
+  dr("wuyue", "qian-chu", "吴越末王", null, null, 947, 978),
+  dr("min-fujian", "wang-shenzhi", "闽太祖", null, null, 909, 925),
+  dr("min-fujian", "wang-yanxi", "闽末王", null, null, 939, 945),
+  dr("han-nan", "liu-yan", "南汉高祖", null, null, 917, 942),
+  dr("han-nan", "liu-chang", "南汉末帝", null, null, 958, 971),
+  dr("shu-qian", "wang-jian-shu", "前蜀高祖", null, null, 907, 918),
+  dr("shu-qian", "wang-yan-shu", "前蜀末帝", null, null, 918, 925),
+  dr("shu-hou", "meng-zhixiang", "后蜀高祖", null, null, 934, 934),
+  dr("shu-hou", "meng-chang", "后蜀末帝", null, null, 934, 965),
+  dr("jingnan", "gao-jixing", "荆南武信王", null, null, 924, 928),
+  dr("jingnan", "gao-jichong", "荆南末王", null, null, 962, 963),
+  dr("chu-nan", "ma-yin", "楚武王", null, null, 907, 930),
+  dr("chu-nan", "ma-xichong", "楚末", null, null, 950, 951),
+  dr("han-bei", "liu-min", "北汉世祖", null, null, 951, 954),
+  dr("han-bei", "liu-jiyuan", "北汉末帝", null, null, 968, 979),
+];
+
+const songNorthReigns = [
+  dr("song-north", "zhao-kuangyin", "宋太祖", null, null, 960, 976, [{ name: "建隆", sy: 960, ey: 963 }, { name: "乾德", sy: 963, ey: 968 }, { name: "开宝", sy: 968, ey: 976 }]),
+  dr("song-north", "zhao-kuangyi", "宋太宗", null, null, 976, 997),
+  dr("song-north", "zhao-heng", "宋真宗", null, null, 997, 1022),
+  dr("song-north", "zhao-zhen", "宋仁宗", null, null, 1022, 1063, [{ name: "天圣", sy: 1023, ey: 1032 }, { name: "明道", sy: 1032, ey: 1033 }, { name: "景祐", sy: 1034, ey: 1038 }, { name: "庆历", sy: 1041, ey: 1048 }]),
+  dr("song-north", "zhao-shu", "宋英宗", null, null, 1063, 1067),
+  dr("song-north", "zhao-xu", "宋神宗", null, null, 1067, 1085, [{ name: "熙宁", sy: 1068, ey: 1077 }, { name: "元丰", sy: 1078, ey: 1085 }]),
+  dr("song-north", "zhao-zhe", "宋哲宗", null, null, 1085, 1100),
+  dr("song-north", "zhao-ji", "宋徽宗", null, null, 1100, 1126),
+  dr("song-north", "zhao-huan", "宋钦宗", null, null, 1126, 1127),
+];
+
+const songSouthReigns = [
+  dr("song-south", "zhao-gou", "宋高宗", null, null, 1127, 1162),
+  dr("song-south", "zhao-shen", "宋孝宗", null, null, 1162, 1189),
+  dr("song-south", "zhao-dun", "宋光宗", null, null, 1189, 1194),
+  dr("song-south", "zhao-kuo", "宋宁宗", null, null, 1194, 1224),
+  dr("song-south", "zhao-yun", "宋理宗", null, null, 1224, 1264),
+  dr("song-south", "zhao-qi", "宋度宗", null, null, 1264, 1274),
+  dr("song-south", "zhao-shi", "宋恭帝", null, null, 1274, 1276),
+  dr("song-south", "zhao-shi-duan", "宋端宗", null, null, 1276, 1278),
+  dr("song-south", "zhao-bing", "宋帝昺", null, null, 1278, 1279),
+];
+
+const reignGroups = [suiReigns, tangReigns, zhouWuReigns, wudaiReigns, shiguoReigns, songNorthReigns, songSouthReigns];
+const reigns = reignGroups.flat();
+
+// ── events ───────────────────────────────────────────────────────────────────
+
+function eventPoint(partial) {
+  const at = partial.at;
+  return { kind: "other", timeMode: "point", precision: "year", dynastyIds: [], participantIds: [], ...partial, at, atAbs: at.abs };
+}
+function eventRange(partial) {
+  const start = partial.start;
+  const end = partial.end;
+  const at = partial.at;
+  return {
+    kind: "other", precision: "year", dynastyIds: [], participantIds: [], ...partial,
+    start, end, startAbs: start.abs, endAbs: end.abs, ...(at ? { at, atAbs: at.abs } : {}),
+  };
+}
+
+const events = [
+  eventPoint({ id: "sui-founded", name: "隋朝建立", kind: "politics", at: ym(581), dynastyIds: ["sui", "zhou-bei"], participantIds: ["yang-jian"], summary: "杨坚废北周静帝自立，改国号隋，北朝终结。" }),
+  eventPoint({ id: "sui-unify", name: "隋灭陈统一", kind: "politics", at: ym(589), dynastyIds: ["sui", "chen-nan"], participantIds: ["yang-jian"], summary: "隋军灭南陈，南北分裂终结，隋统一全国。" }),
+  eventRange({ id: "kaihuang-rule", name: "开皇之治", kind: "politics", timeMode: "span", start: ym(581), end: ym(600), dynastyIds: ["sui"], participantIds: ["yang-jian"], summary: "隋文帝励精图治，轻徭薄赋，国力强盛。" }),
+  eventRange({ id: "grand-canal", name: "开凿大运河", kind: "culture", timeMode: "span", dateNote: "605年起大规模开凿，连通南北", start: ym(605), end: ym(610), dynastyIds: ["sui"], participantIds: ["yang-guang"], summary: "隋炀帝下令开凿大运河，贯通南北交通。" }),
+  eventPoint({ id: "sui-fall", name: "隋朝灭亡", kind: "politics", at: ym(618), dynastyIds: ["sui"], participantIds: ["yang-guang"], summary: "江都兵变，隋炀帝被杀，隋朝终结。" }),
+  eventPoint({ id: "tang-founded", name: "唐朝建立", kind: "politics", at: ym(618), dynastyIds: ["tang", "sui"], participantIds: ["li-yuan"], summary: "李渊称帝，定都长安，唐朝开始。" }),
+  eventPoint({ id: "xuanwumen", name: "玄武门之变", kind: "politics", precision: "month", dateNote: "武德九年六月，626年", at: ym(626, 7), dynastyIds: ["tang"], participantIds: ["li-shimin"], summary: "李世民发动政变，杀兄弟即位太子，后登基。" }),
+  eventRange({ id: "zhenguan-rule", name: "贞观之治", kind: "politics", timeMode: "span", start: ym(627), end: ym(649), dynastyIds: ["tang"], participantIds: ["li-shimin"], summary: "唐太宗任贤纳谏，轻徭薄赋，为盛唐奠基。" }),
+  eventRange({ id: "kaiyuan-prosperity", name: "开元盛世", kind: "politics", timeMode: "span", start: ym(713), end: ym(741), dynastyIds: ["tang"], participantIds: ["li-longji"], summary: "唐玄宗前期励精图治，唐朝国力达于鼎盛。" }),
+  eventRange({ id: "anshi-rebellion", name: "安史之乱", kind: "battle", timeMode: "span", dateNote: "755–763年", start: ym(755), end: ym(763), dynastyIds: ["tang"], participantIds: ["li-longji", "an-lushan"], summary: "安禄山、史思明叛乱，唐朝由盛转衰。" }),
+  eventPoint({ id: "huang-chao-uprising", name: "黄巢起义", kind: "politics", at: ym(875), dynastyIds: ["tang"], participantIds: ["huang-chao"], summary: "黄巢领导农民起义，攻入长安，唐廷名存实亡。" }),
+  eventPoint({ id: "zhu-wen-usurp", name: "朱温篡唐", kind: "politics", at: ym(907), dynastyIds: ["tang", "liang-hou"], participantIds: ["zhu-wen", "li-zhu-tang"], summary: "朱温废唐哀帝自立，改国号梁，唐朝终结，五代开始。" }),
+  eventPoint({ id: "chenqiao-mutiny", name: "陈桥兵变", kind: "politics", at: ym(960), dynastyIds: ["zhou-hou", "song-north"], participantIds: ["zhao-kuangyin", "chai-zongxun"], summary: "赵匡胤黄袍加身，代后周建宋，五代终结。" }),
+  eventRange({ id: "xining-reform", name: "王安石变法", kind: "politics", timeMode: "span", start: ym(1069), end: ym(1085), dynastyIds: ["song-north"], participantIds: ["zhao-xu", "wang-anshi"], summary: "宋神宗用王安石推行新法，富国强兵。" }),
+  eventPoint({ id: "jingkang-incident", name: "靖康之变", kind: "politics", at: ym(1127), dynastyIds: ["song-north"], participantIds: ["zhao-ji", "zhao-huan"], summary: "金军破开封，俘徽钦二帝，北宋灭亡。" }),
+  eventPoint({ id: "song-south-founded", name: "南宋建立", kind: "politics", at: ym(1127), dynastyIds: ["song-south"], participantIds: ["zhao-gou"], summary: "赵构南渡即位，定都临安，南宋开始。" }),
+  eventPoint({ id: "yashan-battle", name: "崖山海战", kind: "battle", dateNote: "1279年，宋军全军覆没", at: ym(1279), dynastyIds: ["song-south"], participantIds: ["zhao-bing"], summary: "元军于崖山击败宋军，陆秀夫负帝昺殉国，南宋亡。" }),
+  eventRange({ id: "wudai-shiguo", name: "五代十国", kind: "politics", timeMode: "span", dateNote: "907–979年，北方五代更迭，南方十国并存", start: ym(907), end: ym(979), dynastyIds: ["liang-hou", "tang-hou", "jin-hou", "han-hou", "zhou-hou", "wu-shi", "tang-nan"], participantIds: ["zhu-wen"], summary: "唐亡后北方短命王朝更迭，南方十国割据，至宋统一。" }),
+];
+
+// ── relations ────────────────────────────────────────────────────────────────
+
+function successionPairs(list) {
+  const pairs = [];
+  for (let i = 0; i < list.length - 1; i++) pairs.push([list[i].personId, list[i + 1].personId]);
+  return pairs;
+}
+
+const relations = [];
+for (const group of reignGroups) {
+  for (const [fromId, toId] of successionPairs(group)) {
+    relations.push({ id: `rel-${fromId}-${toId}-succession`, fromRef: `person:${fromId}`, toRef: `person:${toId}`, kind: "succession" });
+  }
+}
+relations.push(
+  { id: "rel-xuanwumen-li-shimin", fromRef: "event:xuanwumen", toRef: "person:li-shimin", kind: "battle" },
+  { id: "rel-anshi-an-lushan", fromRef: "event:anshi-rebellion", toRef: "person:an-lushan", kind: "battle" },
+  { id: "rel-chenqiao-zhao", fromRef: "event:chenqiao-mutiny", toRef: "person:zhao-kuangyin", kind: "succession" },
+);
+
+// ── SQL helpers ─────────────────────────────────────────────────────────────
+
+function personSql(p) {
+  return `INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (${sqlStr(p.id)}, ${sqlStr(p.name)}, ${p.birth?.year ?? "NULL"}, ${p.birth?.month ?? "NULL"}, ${p.death?.year ?? "NULL"}, ${p.death?.month ?? "NULL"}, ${sqlArray(p.roles)}, ${sqlStr(p.bio)}, ${sqlJson(p.links)})
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;`;
+}
+
+function dynastySql(d) {
+  return `INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, parent_id, note)
+VALUES (${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlArray(d.altNames)}, ${sqlStr(d.scope)}, ${sqlStr(d.region)}, ${d.start.year}, ${d.start.month}, ${d.end.year}, ${d.end.month}, ${d.start.abs}, ${d.end.abs}, ${sqlStr(d.precision)}, ${sqlStr(d.colorToken)}, NULL, ${sqlStr(d.note)})
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, color_token = EXCLUDED.color_token, note = EXCLUDED.note;`;
+}
+
+function reignSql(r) {
+  return `INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES (${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(r.title)}, ${sqlStr(r.posthumousName ?? null)}, ${sqlStr(r.templeName ?? null)}, ${sqlJson(r.preferredAppellation)}, ${r.start.year}, ${r.start.month}, ${r.end.year}, ${r.end.month}, ${r.startAbs}, ${r.endAbs}, ${sqlStr(r.precision)})
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;`;
+}
+
+function eraNameSql(e) {
+  return `INSERT INTO era_names (reign_id, name, start_year, start_month, end_year, end_month, start_abs, end_abs, sort_order)
+VALUES (${sqlStr(e.reignId)}, ${sqlStr(e.name)}, ${e.start.year}, ${e.start.month}, ${e.end.year}, ${e.end.month}, ${e.start.abs}, ${e.end.abs}, ${e.sortOrder});`;
+}
+
+function eventSql(e) {
+  const cols = ["id", "name", "kind", "time_mode", "precision", "date_note", "at_year", "at_month", "at_abs", "start_year", "start_month", "start_abs", "end_year", "end_month", "end_abs", "summary"];
+  const vals = [sqlStr(e.id), sqlStr(e.name), sqlStr(e.kind), sqlStr(e.timeMode), sqlStr(e.precision), sqlStr(e.dateNote ?? null), e.at?.year ?? "NULL", e.at?.month ?? "NULL", e.atAbs ?? "NULL", e.start?.year ?? "NULL", e.start?.month ?? "NULL", e.startAbs ?? "NULL", e.end?.year ?? "NULL", e.end?.month ?? "NULL", e.endAbs ?? "NULL", sqlStr(e.summary ?? null)];
+  return `INSERT INTO events (${cols.join(", ")}) VALUES (${vals.join(", ")})
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary;`;
+}
+
+function parseRef(raw) {
+  const [type, ...rest] = raw.split(":");
+  return { type, id: rest.join(":") };
+}
+
+function relationSql(r) {
+  const from = parseRef(r.fromRef);
+  const to = parseRef(r.toRef);
+  return `INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES (${sqlStr(r.id)}, ${sqlStr(from.type)}, ${sqlStr(from.id)}, ${sqlStr(to.type)}, ${sqlStr(to.id)}, ${sqlStr(r.kind)}) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;`;
+}
+
+const reignsWithEras = reigns.filter((r) => r.eraNames.length > 0);
+const eraDeleteSql = reignsWithEras.map((r) => `DELETE FROM era_names WHERE reign_id = ${sqlStr(r.id)};`);
+const eraInsertSql = reignsWithEras.flatMap((r) => r.eraNames.map(eraNameSql));
+const eventDynastySql = events.flatMap((e) => e.dynastyIds.map((d) => `INSERT INTO event_dynasties (event_id, dynasty_id) VALUES (${sqlStr(e.id)}, ${sqlStr(d)}) ON CONFLICT DO NOTHING;`));
+const eventParticipantSql = events.flatMap((e) => e.participantIds.map((p) => `INSERT INTO event_participants (event_id, person_id) VALUES (${sqlStr(e.id)}, ${sqlStr(p)}) ON CONFLICT DO NOTHING;`));
+
+const sql = [
+  "-- EraLens period import: sui-tang-wudai-song",
+  "-- Window: 581-01 .. 1279-12",
+  "BEGIN;",
+  "", "-- persons", ...allPersons.map(personSql),
+  "", "-- dynasties", ...dynasties.map(dynastySql),
+  "", "-- reigns", ...reigns.map(reignSql),
+  "", "-- era_names", ...eraDeleteSql, ...eraInsertSql,
+  "", "-- events", ...events.map(eventSql),
+  "", "-- event_dynasties", ...eventDynastySql,
+  "", "-- event_participants", ...eventParticipantSql,
+  "", "-- relations", ...relations.map(relationSql),
+  "", "COMMIT;", "",
+].join("\n");
+
+mkdirSync(__dirname, { recursive: true });
+writeFileSync(path.join(__dirname, "import.sql"), sql);
+
+const manifest = {
+  slug: "sui-tang-wudai-song",
+  title: "隋唐宋（含五代十国、武周）",
+  window: { startYear: 581, startMonth: 1, endYear: 1279, endMonth: 12 },
+  scope: "cn",
+  depth: "standard",
+  generatedAt: "2026-09-12",
+  counts: { persons: allPersons.length, dynasties: dynasties.length, reigns: reigns.length, events: events.length, relations: relations.length },
+  sources: [
+    { label: "隋朝", url: "https://zh.wikipedia.org/wiki/隋朝" },
+    { label: "唐朝", url: "https://zh.wikipedia.org/wiki/唐朝" },
+    { label: "五代十国", url: "https://zh.wikipedia.org/wiki/五代十国" },
+    { label: "北宋", url: "https://zh.wikipedia.org/wiki/北宋" },
+    { label: "南宋", url: "https://zh.wikipedia.org/wiki/南宋" },
+    { label: "安史之乱", url: "https://zh.wikipedia.org/wiki/安史之乱" },
+    { label: "靖康之变", url: "https://zh.wikipedia.org/wiki/靖康之变" },
+  ],
+  notes: [
+    "覆盖隋（581–618）、唐（618–907）、武周（690–705）、五代十国（907–979）、北宋（960–1127）、南宋（1127–1279）。",
+    "杨坚（yang-jian）复用 nanbei-chao 已有 id；后梁 id 为 liang-hou，避免与十六国后凉 liang-back 冲突。",
+    "十国吴 id 为 wu-shi，避免与三国孙吴 wu 冲突；前蜀/后蜀为 shu-qian/shu-hou，避免与蜀汉 shu 冲突。",
+    "十国各政权收录开国与末代君主；五代收录全部皇帝。",
+    "1279 崖山海战为南宋终结；元朝不在本包内。",
+  ],
+};
+writeFileSync(path.join(__dirname, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);
+
+console.log(`Wrote import.sql + manifest.json: ${allPersons.length} persons, ${dynasties.length} dynasties, ${reigns.length} reigns, ${events.length} events, ${relations.length} relations`);

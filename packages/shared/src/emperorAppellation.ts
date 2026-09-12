@@ -1,4 +1,4 @@
-import type { AppellationKind, Reign } from "@eralens/shared";
+import type { AppellationKind, Reign } from "./schema";
 
 export type EmperorAppellation = {
   kind: AppellationKind;
@@ -11,6 +11,16 @@ export const APPELLATION_LABELS: Record<AppellationKind, string> = {
   era: "年号",
   regnal: "称号",
 };
+
+type ReignAppellationFields = Pick<
+  Reign,
+  | "start"
+  | "title"
+  | "posthumousName"
+  | "templeName"
+  | "eraNames"
+  | "preferredAppellation"
+>;
 
 /**
  * Resolve the one conventional appellation shown on a ruler card.
@@ -25,15 +35,7 @@ export const APPELLATION_LABELS: Record<AppellationKind, string> = {
  * the regnal title remains a valid fallback.
  */
 export function resolveEmperorAppellation(
-  reign: Pick<
-    Reign,
-    | "start"
-    | "title"
-    | "posthumousName"
-    | "templeName"
-    | "eraNames"
-    | "preferredAppellation"
-  >,
+  reign: ReignAppellationFields,
 ): EmperorAppellation | null {
   if (reign.preferredAppellation) return reign.preferredAppellation;
 
@@ -59,4 +61,28 @@ export function resolveEmperorAppellation(
     return { kind: "regnal", name: reign.title };
   }
   return null;
+}
+
+/** Primary label for a reign card or detail title. */
+export function resolveReignPrimaryLabel(
+  reign: ReignAppellationFields & Pick<Reign, "title">,
+  personName?: string | null,
+): string {
+  const appellation = resolveEmperorAppellation(reign);
+  if (appellation?.kind === "era") return appellation.name;
+  return personName ?? reign.title;
+}
+
+/** Secondary line shown when the card has enough space. */
+export function resolveReignCardMeta(
+  reign: ReignAppellationFields,
+  personName?: string | null,
+): { label: string; name: string } | null {
+  const appellation = resolveEmperorAppellation(reign);
+  if (appellation?.kind === "era") {
+    return personName ? { label: "本名", name: personName } : null;
+  }
+  return appellation
+    ? { label: APPELLATION_LABELS[appellation.kind], name: appellation.name }
+    : null;
 }

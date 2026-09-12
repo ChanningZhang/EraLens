@@ -9,7 +9,7 @@
 - **Shared**: `@eralens/shared`（AbsMonth 时间坐标 + Zod 数据契约 + 领域逻辑）
 - **State**: Zustand（视口瞬时订阅）+ TanStack Query（分块缓存）
 - **Animation**: Framer Motion（王朝行 FLIP 布局）
-- **Data**: Mock Repository（默认）/ HTTP Repository（`VITE_DATA_SOURCE=http`）
+- **Data**: HTTP Repository（默认，读 PostgreSQL）/ Mock Repository（`VITE_DATA_SOURCE=mock`）
 
 ## 快速开始
 
@@ -19,19 +19,19 @@ pnpm db:setup      # Docker PostgreSQL + migrate + seed
 pnpm dev:all       # 前端 :5173 + API :3001
 ```
 
-仅前端（Mock 数据）：
+仅前端（Mock 数据，无需 API）：
 
 ```bash
-pnpm dev
+VITE_DATA_SOURCE=mock pnpm dev
 ```
 
-浏览器打开 http://localhost:5173（HTTP 模式需 API 已启动）
+浏览器打开 http://localhost:5173（默认 HTTP 模式需 API 已启动，推荐 `pnpm dev:all`）
 
 ## 环境变量
 
 | 变量 | 说明 | 默认 |
 |------|------|------|
-| `VITE_DATA_SOURCE` | `mock` 或 `http` | `mock` |
+| `VITE_DATA_SOURCE` | `mock` 或 `http` | `http` |
 | `VITE_API_BASE` | HTTP 模式 API 前缀 | `/api` |
 | `VITE_PERF_DATA` | `1` 时注入 2200+ 合成数据做性能验证 | 未设置 |
 
@@ -54,7 +54,7 @@ Mock 与 HTTP Repository 共享同一接口契约：
 - `GET /api/search?q=`
 - `GET /api/bounds`
 
-切换方式：复制 `apps/web/.env.example` 为 `.env`，设置 `VITE_DATA_SOURCE=http`。
+切换方式：复制 `apps/web/.env.example` 为 `.env`（默认 `http`）；离线开发可设 `VITE_DATA_SOURCE=mock`。
 
 API 环境变量见 `apps/api/.env.example`（`DATABASE_URL`、`PORT`）。
 

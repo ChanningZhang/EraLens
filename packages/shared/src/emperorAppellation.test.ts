@@ -1,6 +1,10 @@
 import { describe, expect, it } from "vitest";
-import type { Reign } from "@eralens/shared";
-import { resolveEmperorAppellation } from "./emperorAppellation";
+import type { Reign } from "./schema";
+import {
+  resolveEmperorAppellation,
+  resolveReignCardMeta,
+  resolveReignPrimaryLabel,
+} from "./emperorAppellation";
 
 function source(overrides: Partial<Reign>) {
   return {
@@ -65,5 +69,57 @@ describe("resolveEmperorAppellation", () => {
         }),
       ),
     ).toEqual({ kind: "temple", name: "英宗" });
+  });
+});
+
+describe("resolveReignPrimaryLabel", () => {
+  it("shows era name for Ming and Qing emperors", () => {
+    expect(
+      resolveReignPrimaryLabel(
+        source({
+          start: { year: 1661, month: 1 },
+          eraNames: [{ name: "康熙" }] as Reign["eraNames"],
+        }),
+        "爱新觉罗·玄烨",
+      ),
+    ).toBe("康熙");
+  });
+
+  it("shows person name for earlier dynasties", () => {
+    expect(
+      resolveReignPrimaryLabel(
+        source({
+          start: { year: 626, month: 1 },
+          templeName: "太宗",
+        }),
+        "李世民",
+      ),
+    ).toBe("李世民");
+  });
+});
+
+describe("resolveReignCardMeta", () => {
+  it("shows birth name when era is primary", () => {
+    expect(
+      resolveReignCardMeta(
+        source({
+          start: { year: 1661, month: 1 },
+          eraNames: [{ name: "康熙" }] as Reign["eraNames"],
+        }),
+        "爱新觉罗·玄烨",
+      ),
+    ).toEqual({ label: "本名", name: "爱新觉罗·玄烨" });
+  });
+
+  it("shows temple name for Tang emperors", () => {
+    expect(
+      resolveReignCardMeta(
+        source({
+          start: { year: 626, month: 1 },
+          templeName: "太宗",
+        }),
+        "李世民",
+      ),
+    ).toEqual({ label: "庙号", name: "太宗" });
   });
 });

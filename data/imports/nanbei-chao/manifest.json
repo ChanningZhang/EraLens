@@ -1,0 +1,53 @@
+{
+  "slug": "nanbei-chao",
+  "title": "南北朝",
+  "window": {
+    "startYear": 386,
+    "startMonth": 1,
+    "endYear": 589,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-12",
+  "counts": {
+    "persons": 56,
+    "dynasties": 9,
+    "reigns": 53,
+    "events": 17,
+    "relations": 47
+  },
+  "sources": [
+    {
+      "label": "南北朝",
+      "url": "https://zh.wikipedia.org/wiki/南北朝"
+    },
+    {
+      "label": "南北朝君主列表",
+      "url": "https://zh.wikipedia.org/wiki/南北朝君主列表"
+    },
+    {
+      "label": "刘宋",
+      "url": "https://zh.wikipedia.org/wiki/刘宋"
+    },
+    {
+      "label": "北魏",
+      "url": "https://zh.wikipedia.org/wiki/北魏"
+    },
+    {
+      "label": "侯景之乱",
+      "url": "https://zh.wikipedia.org/wiki/侯景之乱"
+    },
+    {
+      "label": "孝文帝改革",
+      "url": "https://zh.wikipedia.org/wiki/北魏孝文帝改革"
+    }
+  ],
+  "notes": [
+    "覆盖南北朝（420–589），含386年立国的北魏；北朝含北魏、东魏、西魏、北齐、北周，南朝含刘宋、南齐、南梁、南陈。",
+    "刘裕（liu-yu-jin）复用 jin-sixteen 已有 id；北魏 id 为 wei-north，避免与曹魏 wei 冲突。",
+    "南梁 id 为 liang-nan，与十六国南凉 liang-south 区分。",
+    "589 年隋灭陈为南北朝终结事件；隋（581–）不在本包内。",
+    "未收录西梁（555–587）等次要政权。"
+  ]
+}

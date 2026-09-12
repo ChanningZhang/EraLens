@@ -27,7 +27,7 @@ export interface TimelineRepository {
 }
 
 export async function createRepository(): Promise<TimelineRepository> {
-  const source = import.meta.env.VITE_DATA_SOURCE ?? "mock";
+  const source = import.meta.env.VITE_DATA_SOURCE ?? "http";
   if (source === "http") {
     return (await import("./http/repository")).httpRepository;
   }

@@ -1,0 +1,54 @@
+{
+  "slug": "jin-sixteen",
+  "title": "两晋五胡十六国",
+  "window": {
+    "startYear": 266,
+    "startMonth": 2,
+    "endYear": 439,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-12",
+  "counts": {
+    "persons": 69,
+    "dynasties": 18,
+    "reigns": 64,
+    "events": 18,
+    "relations": 50
+  },
+  "sources": [
+    {
+      "label": "晋朝",
+      "url": "https://zh.wikipedia.org/wiki/晋朝"
+    },
+    {
+      "label": "晋朝君主列表",
+      "url": "https://zh.wikipedia.org/wiki/晋朝君主列表"
+    },
+    {
+      "label": "五胡十六国",
+      "url": "https://zh.wikipedia.org/wiki/五胡十六国"
+    },
+    {
+      "label": "五胡十六国君主列表",
+      "url": "https://zh.wikipedia.org/wiki/五胡十六国君主列表"
+    },
+    {
+      "label": "淝水之战",
+      "url": "https://zh.wikipedia.org/wiki/淝水之战"
+    },
+    {
+      "label": "永嘉之乱",
+      "url": "https://zh.wikipedia.org/wiki/永嘉之乱"
+    }
+  ],
+  "notes": [
+    "覆盖西晋（266–316）、东晋（317–420）及崔鸿《十六国春秋》所列十六国（304–439）。",
+    "王朝与皇帝在位年取维基百科君主列表常见年表，precision=year。",
+    "西晋 upsert 已有 jin-west 行；胡夏 id 为 xia-hu，避免与夏朝 xia 冲突。",
+    "前秦/后秦/西秦 id 分别为 qin-front/qin-back/qin-xi，避免与秦朝 qin 冲突。",
+    "439 年北魏灭北凉为十六国终结事件；北魏本身归入南北朝，不在此包内。",
+    "未收录冉魏、西燕、仇池等《十六国春秋》以外的小国。"
+  ]
+}

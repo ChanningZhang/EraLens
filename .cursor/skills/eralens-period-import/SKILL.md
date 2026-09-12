@@ -150,7 +150,7 @@ curl -s "http://localhost:3001/api/timeline?from=START&to=END&scope=cn" | jq '.d
 curl -s "http://localhost:3001/api/bounds"
 ```
 
-浏览器默认读 Mock，**看不到本次 SQL**。验收设 `VITE_DATA_SOURCE=http` 后**硬刷新**（bounds 查询 `staleTime: Infinity`）。用搜索跳到朝代名或事件名，比拖标尺快。`Home` 跳到 `bounds.minAbs`（可能早于王朝始年，若有更早的 circa 事件）。
+浏览器默认读 HTTP（数据库）。入库后若界面未更新，**硬刷新**（bounds 查询 `staleTime: Infinity`）。用搜索跳到朝代名或事件名，比拖标尺快。`Home` 跳到 `bounds.minAbs`（可能早于王朝始年，若有更早的 circa 事件）。若仍为 Mock 数据，检查 `VITE_DATA_SOURCE` 是否为 `http`。
 
 确认：王朝行、在位卡片、事件标记出现；`circa` 淡色虚线带，`span` 细条，point 无虚假跨度。
 

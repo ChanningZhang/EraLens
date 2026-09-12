@@ -1,6 +1,11 @@
 import { describe, expect, it } from "vitest";
 import type { Reign } from "@eralens/shared";
-import { clusterSameStartReigns, reignCardSpan } from "./reignClusters";
+import {
+  assignReignStacks,
+  dynastyLaneHeight,
+  nextLaterStartAbs,
+  reignCardSpan,
+} from "./reignClusters";
 
 function reign(id: string, startAbs: number, endAbs: number): Reign {
   return {
@@ -17,30 +22,34 @@ function reign(id: string, startAbs: number, endAbs: number): Reign {
   };
 }
 
-describe("clusterSameStartReigns", () => {
-  it("keeps sequential reigns on their own cards", () => {
-    const clusters = clusterSameStartReigns([
+describe("assignReignStacks", () => {
+  it("keeps sequential reigns on a single row", () => {
+    const { items, rowCount } = assignReignStacks([
       reign("a", 0, 11),
       reign("b", 12, 23),
     ]);
-    expect(clusters.map((group) => group.map((item) => item.id))).toEqual([
-      ["a"],
-      ["b"],
+    expect(rowCount).toBe(1);
+    expect(items.map((item) => [item.reign.id, item.stackIndex])).toEqual([
+      ["a", 0],
+      ["b", 0],
     ]);
   });
 
-  it("groups 哀王 and 思王 who share the same year", () => {
-    const clusters = clusterSameStartReigns([
+  it("stacks 哀王 and 思王 who share a year but have no calendar months", () => {
+    const { items, rowCount } = assignReignStacks([
       reign("jie", 0, 335),
       reign("quji", 336, 347),
       reign("shu", 336, 347),
       reign("wei", 348, 400),
     ]);
-    expect(clusters.map((group) => group.map((item) => item.id))).toEqual([
-      ["jie"],
-      ["quji", "shu"],
-      ["wei"],
+    expect(rowCount).toBe(2);
+    expect(items.map((item) => [item.reign.id, item.stackIndex])).toEqual([
+      ["jie", 0],
+      ["quji", 0],
+      ["shu", 1],
+      ["wei", 0],
     ]);
+    expect(dynastyLaneHeight(rowCount)).toBe(16 + 56 * 2);
   });
 });
 
@@ -57,5 +66,13 @@ describe("reignCardSpan", () => {
       startAbs: 336,
       endExclusive: 348,
     });
+  });
+});
+
+describe("nextLaterStartAbs", () => {
+  it("skips a same-start peer so 哀王 is clipped by 考王, not 思王", () => {
+    const quji = reign("quji", 336, 347);
+    const all = [reign("jie", 0, 335), quji, reign("shu", 336, 347), reign("wei", 348, 400)];
+    expect(nextLaterStartAbs(quji, all)).toBe(348);
   });
 });

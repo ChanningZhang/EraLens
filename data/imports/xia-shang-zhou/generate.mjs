@@ -85,8 +85,8 @@ const persons = [
   { id: "ji-gai", name: "姬匄", roles: ["天子"], bio: "周敬王，春秋与战国之交的周天子。", links: wiki("周敬王") },
   { id: "ji-ren", name: "姬仁", roles: ["天子"], bio: "周元王。", links: wiki("周元王") },
   { id: "ji-jie", name: "姬介", roles: ["天子"], bio: "周贞定王。", links: wiki("周贞定王") },
-  { id: "ji-quji", name: "姬去疾", roles: ["天子"], bio: "周哀王，在位数月为弟所杀。", links: wiki("周哀王") },
-  { id: "ji-shu", name: "姬叔", roles: ["天子"], bio: "周思王，杀哀王而立，旋为考王所杀。", links: wiki("周思王") },
+  { id: "ji-quji", name: "姬去疾", roles: ["天子"], bio: "周哀王。史记：立三月，为弟叔袭杀。", links: wiki("周哀王") },
+  { id: "ji-shu", name: "姬叔", roles: ["天子"], bio: "周思王。史记：杀哀王而立，立五月，旋为考王所杀。", links: wiki("周思王") },
   { id: "ji-wei", name: "姬嵬", roles: ["天子"], bio: "周考王。", links: wiki("周考王") },
   { id: "ji-wu", name: "姬午", roles: ["天子"], bio: "周威烈王，前403年命韩赵魏为诸侯。", links: wiki("周威烈王") },
   { id: "ji-jiao", name: "姬骄", roles: ["天子"], bio: "周安王。", links: wiki("周安王") },
@@ -315,7 +315,16 @@ const shangReigns = [
   }),
 ];
 
-function zhouReign(personId, title, posthumous, startYear, endYear, dynastyId) {
+function zhouReign(
+  personId,
+  title,
+  posthumous,
+  startYear,
+  endYear,
+  dynastyId,
+  startMonth = 1,
+  endMonth = 12,
+) {
   return reign({
     id: `reign-${personId}`,
     dynastyId,
@@ -323,8 +332,8 @@ function zhouReign(personId, title, posthumous, startYear, endYear, dynastyId) {
     title,
     posthumousName: posthumous,
     preferred: { kind: "posthumous", name: title },
-    start: ym(startYear),
-    end: ym(endYear, 12),
+    start: ym(startYear, startMonth),
+    end: ym(endYear, endMonth),
   });
 }
 
@@ -360,8 +369,9 @@ const zhouEastReigns = [
   zhouReign("ji-gai", "周敬王", "敬王", -519, -477, "zhou-east"),
   zhouReign("ji-ren", "周元王", "元王", -476, -469, "zhou-east"),
   zhouReign("ji-jie", "周贞定王", "贞定王", -468, -441, "zhou-east"),
-  zhouReign("ji-quji", "周哀王", "哀王", -441, -441, "zhou-east"),
-  zhouReign("ji-shu", "周思王", "思王", -441, -441, "zhou-east"),
+  // 史记：哀王立三月、思王立五月。无历月，按时长把前441年顺序切开。
+  zhouReign("ji-quji", "周哀王", "哀王", -441, -441, "zhou-east", 1, 3),
+  zhouReign("ji-shu", "周思王", "思王", -441, -441, "zhou-east", 4, 12),
   zhouReign("ji-wei", "周考王", "考王", -440, -426, "zhou-east"),
   zhouReign("ji-wu", "周威烈王", "威烈王", -425, -402, "zhou-east"),
   zhouReign("ji-jiao", "周安王", "安王", -401, -376, "zhou-east"),
@@ -954,7 +964,7 @@ const manifest = {
   notes: [
     "王朝起迄与晚商、西周列王年优先采用夏商周断代工程2000年《夏商周年表》；该工程方法与结论在学界仍有争议，作教材通行框架而非定论。",
     "夏代及商代前期具体王年工程未给出。禹、启、太康、少康、桀与汤、太甲、盘庚的在位年为传统积年锚定工程框架的估列，precision=year，事件用 circa，避免伪造成月日。",
-    "东周列王取《史记》系统常见年表（与维基百科周朝君主列表一致）。敬王取前519–前477年。哀王、思王同年相残，在位窗口重叠。",
+    "东周列王取《史记》系统常见年表（与维基百科周朝君主列表一致）。敬王取前519–前477年。哀王、思王同年先后相残，非并立；史记仅记「立三月」「立五月」，无历月，按此时长将前441年顺序切开（1–3月 / 4–12月），不作历日。",
     "共和行政不建在位卡片（非王），仅作 span 事件。周公旦不另建称王记录。",
     "夏商周无年号，不写入 era_names。",
     "未单列春秋战国诸侯国为王朝行，以免超出「夏商周」王室主线。",

@@ -1,0 +1,53 @@
+{
+  "slug": "yuan-ming-qing",
+  "title": "元明清（含南明）",
+  "window": {
+    "startYear": 1271,
+    "startMonth": 12,
+    "endYear": 1912,
+    "endMonth": 2
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-12",
+  "counts": {
+    "persons": 46,
+    "dynasties": 4,
+    "reigns": 42,
+    "events": 15,
+    "relations": 40
+  },
+  "sources": [
+    {
+      "label": "元朝",
+      "url": "https://zh.wikipedia.org/wiki/元朝"
+    },
+    {
+      "label": "明朝",
+      "url": "https://zh.wikipedia.org/wiki/明朝"
+    },
+    {
+      "label": "清朝",
+      "url": "https://zh.wikipedia.org/wiki/清朝"
+    },
+    {
+      "label": "南明",
+      "url": "https://zh.wikipedia.org/wiki/南明"
+    },
+    {
+      "label": "土木堡之变",
+      "url": "https://zh.wikipedia.org/wiki/土木堡之变"
+    },
+    {
+      "label": "辛亥革命",
+      "url": "https://zh.wikipedia.org/wiki/辛亥革命"
+    }
+  ],
+  "notes": [
+    "覆盖元（1271–1368）、明（1368–1644）、南明（1644–1662）、清（1636–1912）。",
+    "清王朝行自1636年皇太极改国号起算，努尔哈赤、皇太极在位计入清 reign。",
+    "元世祖至元年间部分早于1271年，年号取1271年后窗口。",
+    "1912年清帝退位为帝制终结；中华民国不在本包内。",
+    "未收录北元（1368–1388）、明郑（1662–1683）等延续政权。"
+  ]
+}

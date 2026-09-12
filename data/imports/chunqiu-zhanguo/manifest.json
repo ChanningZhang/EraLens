@@ -1,0 +1,63 @@
+{
+  "slug": "chunqiu-zhanguo",
+  "title": "春秋战国诸侯国",
+  "window": {
+    "startYear": -1046,
+    "startMonth": 1,
+    "endYear": -207,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-12",
+  "counts": {
+    "persons": 11,
+    "dynasties": 16,
+    "reigns": 11,
+    "events": 5,
+    "relations": 4,
+    "existingEventDynastyLinks": 29
+  },
+  "sources": [
+    {
+      "label": "春秋时期",
+      "url": "https://zh.wikipedia.org/wiki/春秋时期"
+    },
+    {
+      "label": "战国时期",
+      "url": "https://zh.wikipedia.org/wiki/战国时期"
+    },
+    {
+      "label": "战国七雄",
+      "url": "https://zh.wikipedia.org/wiki/战国七雄"
+    },
+    {
+      "label": "齐国",
+      "url": "https://zh.wikipedia.org/wiki/齐国"
+    },
+    {
+      "label": "晋国",
+      "url": "https://zh.wikipedia.org/wiki/晋国"
+    },
+    {
+      "label": "楚国",
+      "url": "https://zh.wikipedia.org/wiki/楚国"
+    },
+    {
+      "label": "秦国",
+      "url": "https://zh.wikipedia.org/wiki/秦国"
+    },
+    {
+      "label": "三家分晋",
+      "url": "https://zh.wikipedia.org/wiki/三家分晋"
+    }
+  ],
+  "notes": [
+    "收录春秋主要列国与战国七雄（齐楚燕韩赵魏秦）及宋鲁卫郑曹吴越中山等。",
+    "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
+    "秦国 upsert 已有 qin 行，将始年延至前770年秦襄公，与 qin-han 统一帝国段衔接。",
+    "各国在位仅列代表性君主；未逐代收录全部国君。",
+    "未收录薛、滕、杞、莒等小国；未收录战国末期的代、胶东等残余。",
+    "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。"
+  ]
+}

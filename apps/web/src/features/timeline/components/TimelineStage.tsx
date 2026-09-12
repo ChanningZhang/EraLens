@@ -8,14 +8,13 @@ import {
   eventRailHeight,
   layoutEvents,
 } from "../model/eventLayout";
-import { assignLanes, getLaneCount } from "../model/laneLayout";
+import { assignLanes } from "../model/laneLayout";
 import { shouldShowEvent } from "../model/lod";
+import { assignReignStacks, dynastyLaneHeight } from "../model/reignClusters";
 import { expandWindow, filterVisibleDynasties } from "../model/visible";
 import { DynastyLane } from "./DynastyLane";
 import { EventLayer } from "./EventLayer";
 import styles from "./TimelineStage.module.css";
-
-const LANE_HEIGHT = 72;
 
 export function TimelineStage() {
   const viewport = useViewport();
@@ -42,11 +41,6 @@ export function TimelineStage() {
   }, [data, viewport]);
 
   const railHeight = eventRailHeight(eventLaneCount(eventPlaced));
-  const laneCount = getLaneCount(placed);
-  const contentHeight = Math.max(
-    railHeight + laneCount * LANE_HEIGHT + 32,
-    240,
-  );
   const reignsByDynasty = useMemo(() => {
     const map = new Map<string, typeof data extends undefined ? never : NonNullable<typeof data>["reigns"]>();
     if (!data) return map;
@@ -57,6 +51,23 @@ export function TimelineStage() {
     }
     return map;
   }, [data]);
+
+  const lanes = useMemo(() => {
+    let top = railHeight;
+    return placed.map((dynasty) => {
+      const reigns = reignsByDynasty.get(dynasty.id) ?? [];
+      const { rowCount } = assignReignStacks(reigns);
+      const height = dynastyLaneHeight(rowCount);
+      const item = { dynasty, reigns, top, height };
+      top += height;
+      return item;
+    });
+  }, [placed, railHeight, reignsByDynasty]);
+
+  const contentHeight = Math.max(
+    (lanes.at(-1) ? lanes.at(-1)!.top + lanes.at(-1)!.height : railHeight) + 32,
+    240,
+  );
 
   const emptyYearLabel = useMemo(() => {
     const { year } = fromAbsMonth(Math.round(viewport.centerAbs));
@@ -81,13 +92,12 @@ export function TimelineStage() {
             </div>
           ) : (
             <LayoutGroup>
-              {placed.map((dynasty) => (
+              {lanes.map(({ dynasty, reigns, top }) => (
                 <DynastyLane
                   key={dynasty.id}
                   dynasty={dynasty}
-                  reigns={reignsByDynasty.get(dynasty.id) ?? []}
-                  laneHeight={LANE_HEIGHT}
-                  topOffset={railHeight}
+                  reigns={reigns}
+                  top={top}
                 />
               ))}
             </LayoutGroup>

@@ -1,3 +1,4 @@
+import { resolveReignPrimaryLabel } from "./emperorAppellation";
 import { eventSpanAbs, formatEventTime } from "./eventTime";
 import {
   TimelineSliceSchema,
@@ -99,10 +100,13 @@ export function buildEntityDetail(
       .slice(0, 6)
       .map((r) => {
         const person = personMap.get(r.personId);
+        const label = resolveReignPrimaryLabel(r, person?.name);
+        const personName = person?.name ?? r.title;
+        const usesEra = label !== personName;
         return {
           ref: { type: "reign" as const, id: r.id },
-          label: person?.name ?? r.title,
-          subtitle: r.title,
+          label,
+          subtitle: usesEra ? personName : r.title,
           abs: r.startAbs,
         };
       });
@@ -127,6 +131,9 @@ export function buildEntityDetail(
     const person = personMap.get(reign.personId);
     const dynasty = dynastyMap.get(reign.dynastyId);
     const era = reign.eraNames[0]?.name;
+    const personName = person?.name ?? reign.title;
+    const title = resolveReignPrimaryLabel(reign, person?.name);
+    const usesEra = title !== personName;
     const related = store.relations
       .filter((rel) => rel.fromRef === refKey(ref) || rel.toRef === refKey(ref))
       .map((rel) => {
@@ -139,8 +146,10 @@ export function buildEntityDetail(
 
     return {
       ref,
-      title: person?.name ?? reign.title,
-      subtitle: `${dynasty?.name ?? ""} · ${reign.title}`,
+      title,
+      subtitle: usesEra
+        ? `${dynasty?.name ?? ""} · ${personName}`
+        : `${dynasty?.name ?? ""} · ${reign.title}`,
       colorToken: dynasty?.colorToken,
       facts: [
         { label: "在位", value: `${reign.start.year} — ${reign.end.year}` },
