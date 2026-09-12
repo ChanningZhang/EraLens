@@ -1,6 +1,7 @@
 .unit {
   position: absolute;
   height: var(--stack-row-height, 56px);
+  overflow: visible;
 }
 
 .card {
@@ -54,20 +55,10 @@
   text-overflow: clip;
 }
 
-.below {
-  height: 28px;
-  padding: 0;
-  border-radius: 2px;
-}
-
-.below:hover {
-  transform: none;
-}
-
 .caption {
   position: absolute;
-  top: 36px;
-  left: 0;
+  top: 52px;
+  left: 50%;
   z-index: 2;
   font-family: var(--font-serif);
   font-size: 11px;
@@ -76,6 +67,7 @@
   white-space: nowrap;
   color: var(--color-ink);
   pointer-events: none;
+  transform: translateX(-50%);
 }
 
 .name {

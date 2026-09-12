@@ -3,7 +3,8 @@
   left: 0;
   right: 0;
   padding: 8px 0;
-  contain: layout paint style;
+  contain: layout style;
+  overflow: visible;
 }
 
 .reignSequence {

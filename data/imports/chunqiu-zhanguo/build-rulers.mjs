@@ -83,6 +83,18 @@ const NAME_OVERRIDES = {
   "ji-shuyu": "姬虞",
   "ji-shi": "姬奭",
   "song-weizi": "子启",
+  "yue-r5": "勾践",
+  "yue-r8": "翁",
+  "yue-r11": "无余",
+};
+
+/** Title-keyed display names — do not use person index (sort order changes). */
+const TITLE_NAME_OVERRIDES = {
+  "song-chunqiu": {
+    宋休公: "子田",
+    宋剔成君: "戴剔成",
+    宋康王: "戴偃",
+  },
 };
 
 /** Early Western Zhou founders — wiki tables omit years or use non-standard rows */
@@ -152,7 +164,7 @@ const SURNAME = {
   qin: "嬴",
 };
 
-const CLAN_SURNAMES = ["姜", "吕", "田", "姬", "熊", "芈", "子", "嬴", "赵", "魏", "韩", "燕"];
+const CLAN_SURNAMES = ["姜", "吕", "田", "姬", "熊", "芈", "子", "嬴", "赵", "魏", "韩", "燕", "戴"];
 
 function toSimplified(text) {
   // Sources are already zh-cn Wikipedia; do not homegrow 繁简 conversion.
@@ -209,8 +221,24 @@ function isBadPersonName(name) {
     !name ||
     /^[0-9]+$/.test(name) ||
     /^[0-9]+年$/.test(name) ||
-    /出土|原名|记载|史記|史记|漢書|汉书|之子|之弟|之孫|之孙|之兄|長子|长子|少子/.test(name)
+    /出土|原名|记载|史記|史记|漢書|汉书|之子|之弟|之孫|之孙|之兄|長子|长子|少子|别名|又名|又称|或作|一名|一作|之侯|避讳|误作|旧作|左右|不满|后裔|族人|三世|不明|灭亡/.test(
+      name,
+    )
   );
+}
+
+/** Strip alias markers / trailing notes that survived column parsing. */
+function finalizePersonName(name) {
+  if (!name) return "";
+  let s = toSimplified(String(name));
+  s = s.split(/[《（(]/)[0].trim();
+  s = s.split(/\s*(?:别名|又名|又称|或作|一作|一名)\s*/)[0].trim();
+  s = s.split(/\s+/)[0].trim();
+  s = s.replace(/[，,、].*$/, "").trim();
+  s = s.replace(/\s+/g, "");
+  if (isBadPersonName(s)) return "";
+  if (s.length > 8) return "";
+  return s;
 }
 
 function normalizeTitle(title) {
@@ -233,22 +261,22 @@ function extractGivenName(raw) {
   let s = toSimplified(stripMd(raw));
   if (!s) return "";
 
-  const renamed = s.match(/改名\s*([\u4e00-\u9fff]{1,6})/);
+  const renamed = s.match(/(?:后)?改名\s*([\u4e00-\u9fff]{1,6})/);
   if (renamed) return renamed[1];
 
   const recorded = s.match(/记载名\s*([\u4e00-\u9fff]{1,6})/);
   if (recorded) return recorded[1];
 
-  s = s.split(/[《（(]|一作|一名|又名|又称/)[0].trim();
-  s = s.replace(/[，,].*$/, "").trim();
+  // Primary given name precedes book citations and alias markers.
+  s = s.split(/[《（(]/)[0].trim();
+  s = s.split(/\s*(?:别名|又名|又称|或作|一作|一名)\s*/)[0].trim();
+  s = s.split(/\s+/)[0].trim();
+  s = s.replace(/[，,、].*$/, "").trim();
   if (s.includes("/")) {
     const parts = s.split("/").map((p) => p.trim()).filter(Boolean);
     s = parts[0] ?? "";
   }
-  s = s.replace(/\s+/g, "");
-  if (isBadPersonName(s)) return "";
-  if (s.length > 12) return "";
-  return s;
+  return finalizePersonName(s);
 }
 
 function parseYearToken(s) {
@@ -257,7 +285,10 @@ function parseYearToken(s) {
 }
 
 function parseYearsFromText(s) {
-  const text = String(s ?? "").replace(/前年/g, "？");
+  // Prefer the primary chronology; wiki often appends 旧作/旧误作 alternate ranges.
+  const text = String(s ?? "")
+    .replace(/前年/g, "？")
+    .split(/旧(?:作|误作)/)[0];
   const range =
     text.match(/前(\d+)年\s*[—–\-－~～―─]{1,3}\s*前(\d+)年/) ||
     text.match(/前(\d+)年\s*--+?\s*(?:\[)?前(\d+)年/) ||
@@ -512,13 +543,18 @@ function fillUndatedYears(rulers, dynastyId) {
 }
 
 function withSurname(dynastyId, name, title, surnameOverride = null) {
-  const cleaned = (name || "").trim();
+  const cleaned = finalizePersonName(name);
   if (!cleaned || isBadPersonName(cleaned)) return title;
   if (/[公王侯]$/.test(cleaned) && cleaned.length >= 2) return cleaned;
   const surname = surnameOverride ?? SURNAME[dynastyId] ?? "";
   if (!surname) return cleaned;
   if (cleaned.startsWith(surname)) return cleaned;
-  if (CLAN_SURNAMES.some((s) => s !== surname && s.length >= 1 && cleaned.startsWith(s) && s !== "子")) {
+  // Only treat as an embedded clan prefix when the token is longer than one character
+  // (e.g. 田午), not a single-char given name like 宋休公「田」.
+  if (
+    cleaned.length > 1 &&
+    CLAN_SURNAMES.some((s) => s !== surname && s.length >= 1 && cleaned.startsWith(s) && s !== "子")
+  ) {
     return cleaned;
   }
   if (dynastyId === "wu-chunqiu" && /^(夫差|阖闾|寿梦|诸樊|僚)$/.test(cleaned)) return cleaned;
@@ -691,14 +727,28 @@ function makePersonId(dynastyId, title, name, index) {
   return `${prefix}-r${index}`;
 }
 
+function resolvePersonDisplayName(title, name) {
+  const posthumous = posthumousFromTitle(title);
+  const normalizedTitle = normalizeTitle(title);
+  const normalizedName = normalizeTitle(name || "");
+  if (!normalizedName || normalizedName === normalizedTitle) {
+    return posthumous || title;
+  }
+  return name;
+}
+
 function enrichRulers(dynastyId, rulers) {
   const usedIds = new Set();
   return rulers.map((r, index) => {
-    const personName = NAME_OVERRIDES[PERSON_OVERRIDES[`${normalizeTitle(r.title)}|${normalizeTitle(r.name)}`]] || r.name || r.title;
     let personId = makePersonId(dynastyId, r.title, r.name || r.title, index);
     if (usedIds.has(personId)) personId = `${personId}-${index}`;
     usedIds.add(personId);
-    const resolvedName = NAME_OVERRIDES[personId] || personName;
+    const titleKey = normalizeTitle(r.title);
+    const resolvedName =
+      NAME_OVERRIDES[personId] ||
+      NAME_OVERRIDES[PERSON_OVERRIDES[`${titleKey}|${normalizeTitle(r.name)}`]] ||
+      TITLE_NAME_OVERRIDES[dynastyId]?.[titleKey] ||
+      resolvePersonDisplayName(r.title, r.name);
     return {
       dynastyId,
       personId,
@@ -753,7 +803,45 @@ const DYNASTY_SOURCES = {
   qin: () => parseQin(),
 };
 
-const BAD_NAME = /出土|原名|之子|改称|称號|称号|\(|\{/;
+const BAD_NAME = /出土|原名|之子|改称|称號|称号|别名|又名|又称|或作|一名|一作|\(|\{/;
+
+/** Expected Song given names (wiki 国君姓名 + 子/戴 prefix). Key: title|startYear */
+const SONG_EXPECTED_NAMES = {
+  "宋微子|-1034": "子启",
+  "宋微仲|-1009": "子衍",
+  "宋公稽|-984": "子稽",
+  "宋丁公|-959": "子申",
+  "宋湣公|-934": "子共",
+  "宋炀公|-909": "子熙",
+  "宋厉公|-884": "子鲋祀",
+  "宋釐公|-858": "子举",
+  "宋惠公|-830": "子覵",
+  "宋哀公|-800": "哀公",
+  "宋戴公|-799": "子白",
+  "宋武公|-765": "子司空",
+  "宋宣公|-747": "子力",
+  "宋穆公|-728": "子和",
+  "宋殇公|-719": "子与夷",
+  "宋庄公|-710": "子冯",
+  "宋湣公|-691": "子捷",
+  "宋公游|-682": "子游",
+  "宋桓公|-681": "子御说",
+  "宋襄公|-650": "子兹甫",
+  "宋成公|-636": "子王臣",
+  "宋公御|-620": "子御",
+  "宋昭公|-619": "子杵臼",
+  "宋文公|-610": "子鲍革",
+  "宋共公|-588": "子瑕",
+  "宋平公|-575": "子成",
+  "宋元公|-531": "子佐",
+  "宋景公|-516": "子头曼",
+  "宋昭公|-468": "子特",
+  "宋悼公|-403": "子购由",
+  "宋休公|-385": "子田",
+  "宋桓公|-362": "子辟兵",
+  "宋剔成君|-355": "戴剔成",
+  "宋康王|-328": "戴偃",
+};
 
 const byDynasty = {};
 let total = 0;
@@ -768,6 +856,12 @@ for (const [dynastyId, fn] of Object.entries(DYNASTY_SOURCES)) {
   const at522 = enriched.find((r) => r.startYear <= -522 && r.endYear >= -522);
   console.log(`${dynastyId}: ${enriched.length} rulers, at -522: ${at522?.title ?? "—"} ${at522?.personName ?? ""}`);
   for (const r of enriched) {
+    if (dynastyId === "song-chunqiu") {
+      const expected = SONG_EXPECTED_NAMES[`${normalizeTitle(r.title)}|${r.startYear}`];
+      if (expected && r.personName !== expected) {
+        problems.push(`song name ${r.title} (${r.startYear}): got ${r.personName}, want ${expected}`);
+      }
+    }
     if (BAD_NAME.test(r.personName) || BAD_NAME.test(r.title)) {
       problems.push(`${dynastyId} ${r.title} / ${r.personName}`);
     }

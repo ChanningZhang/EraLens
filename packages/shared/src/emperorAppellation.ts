@@ -71,6 +71,41 @@ export function resolveReignPrimaryLabel(
   return personName ?? reign.title;
 }
 
+type ReignCardLabelOptions = {
+  cardWidthPx?: number;
+  dynastyId?: string;
+};
+
+/**
+ * Label rendered on a reign card. On narrow cards, Song rulers with a 谥号
+ * show the short posthumous form (平公) instead of a clipped 子+名 (子成→「了」).
+ */
+export function resolveReignCardLabel(
+  reign: ReignAppellationFields & Pick<Reign, "title">,
+  personName?: string | null,
+  options?: ReignCardLabelOptions,
+): string {
+  const primary = resolveReignPrimaryLabel(reign, personName);
+  const appellation = resolveEmperorAppellation(reign);
+  const width = options?.cardWidthPx;
+  if (width == null || !appellation) return primary;
+
+  const primaryGlyphs = [...primary].length;
+  const appellationGlyphs = [...appellation.name].length;
+
+  if (
+    options.dynastyId === "song-chunqiu" &&
+    width < 48 &&
+    appellation.kind === "posthumous"
+  ) {
+    return appellation.name;
+  }
+  if (appellationGlyphs < primaryGlyphs && width < 40) {
+    return appellation.name;
+  }
+  return primary;
+}
+
 /** Secondary line shown when the card has enough space. */
 export function resolveReignCardMeta(
   reign: ReignAppellationFields,

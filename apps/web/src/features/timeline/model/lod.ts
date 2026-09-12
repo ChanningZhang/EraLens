@@ -32,7 +32,7 @@ function wrappedLineCount(cardWidthPx: number, glyphCount: number): number | nul
 /**
  * Card text uses the full name and follows pixel width, not global zoom.
  * Prefer wrapping inside the card; if a wrapped name still cannot fit,
- * the name hangs below a shorter bar.
+ * the name hangs in the lane gap below the full-height bar.
  */
 export function cardDetailLevel(
   cardWidthPx: number,

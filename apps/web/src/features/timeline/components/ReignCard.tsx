@@ -2,8 +2,8 @@ import { useMemo, useState } from "react";
 import {
   type Dynasty,
   type Reign,
+  resolveReignCardLabel,
   resolveReignCardMeta,
-  resolveReignPrimaryLabel,
 } from "@eralens/shared";
 import { useQuery } from "@tanstack/react-query";
 import { getRepository } from "@/data/repository";
@@ -11,7 +11,11 @@ import { useSelection } from "../hooks/useSelection";
 import { useViewport } from "../hooks/useViewport";
 import { projectAbs } from "../model/coordinates";
 import { cardDetailLevel } from "../model/lod";
-import { resolveReignVisualSpan, STACK_ROW_HEIGHT } from "../model/reignClusters";
+import {
+  assignReignStacks,
+  resolveReignVisualSpan,
+  STACK_ROW_HEIGHT,
+} from "../model/reignClusters";
 import { selectionStore } from "../state/selectionStore";
 import styles from "./ReignCard.module.css";
 
@@ -32,6 +36,8 @@ export function ReignCard({
   const selection = useSelection();
   const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number } | null>(null);
   const { startAbs, endExclusive, stackIndex } = resolveReignVisualSpan(reign, reigns);
+  const { rowCount } = assignReignStacks(reigns);
+  const showCaptionBelow = stackIndex === rowCount - 1;
   const left = projectAbs(viewport, startAbs);
   const width = Math.max(1, projectAbs(viewport, endExclusive) - left);
   const selected =
@@ -48,16 +54,21 @@ export function ReignCard({
   });
 
   const personName = personQuery.data;
-  const label = resolveReignPrimaryLabel(reign, personName);
+  const label = resolveReignCardLabel(reign, personName, {
+    cardWidthPx: width,
+    dynastyId: dynasty.id,
+  });
   const detail = cardDetailLevel(width, [...label].length);
   const meta = resolveReignCardMeta(reign, personName);
-  const tooltipText = meta ? `${label}　${meta.label}：${meta.name}` : label;
+  const tooltipName = personName && personName !== label ? personName : label;
+  const tooltipText = meta
+    ? `${tooltipName}　${meta.label}：${meta.name}`
+    : tooltipName;
 
   const className = useMemo(() => {
     return [
       styles.card,
       detail === "wrap" ? styles.wrap : "",
-      detail === "below" ? styles.below : "",
       selected ? styles.selected : "",
     ]
       .filter(Boolean)
@@ -96,7 +107,9 @@ export function ReignCard({
           </p>
         )}
       </button>
-      {detail === "below" && <span className={styles.caption}>{label}</span>}
+      {detail === "below" && showCaptionBelow && (
+        <span className={styles.caption}>{label}</span>
+      )}
       {tooltipPos && detail !== "full" && (
         <div
           className={styles.tooltip}

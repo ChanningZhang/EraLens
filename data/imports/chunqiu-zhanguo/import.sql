@@ -2054,7 +2054,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r4', '燕惠侯',
+  'yan-r4', '惠侯',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕惠侯，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/惠侯"}]'::jsonb
@@ -2086,7 +2086,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r6', '燕顷侯',
+  'yan-r6', '顷侯',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕顷侯，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/顷侯"}]'::jsonb
@@ -2102,7 +2102,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r7', '燕哀侯',
+  'yan-r7', '哀侯',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕哀侯，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/哀侯"}]'::jsonb
@@ -2118,7 +2118,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r8', '燕郑侯',
+  'yan-r8', '郑侯',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕郑侯，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/郑侯"}]'::jsonb
@@ -2134,7 +2134,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r9', '燕穆侯',
+  'yan-r9', '穆侯',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕穆侯，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/穆侯"}]'::jsonb
@@ -2150,7 +2150,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r10', '燕宣侯',
+  'yan-r10', '宣侯',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕宣侯，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/宣侯"}]'::jsonb
@@ -2166,7 +2166,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r11', '燕桓侯',
+  'yan-r11', '桓侯',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕桓侯，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/桓侯"}]'::jsonb
@@ -2182,7 +2182,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r12', '燕庄公',
+  'yan-r12', '庄公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕庄公，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/庄公"}]'::jsonb
@@ -2198,7 +2198,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r13', '燕襄公',
+  'yan-r13', '襄公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕襄公，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/襄公"}]'::jsonb
@@ -2214,7 +2214,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r14', '燕桓公',
+  'yan-r14', '桓公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕桓公，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/桓公"}]'::jsonb
@@ -2230,7 +2230,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r15', '燕宣公',
+  'yan-r15', '宣公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕宣公，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/宣公"}]'::jsonb
@@ -2246,7 +2246,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r16', '燕昭公',
+  'yan-r16', '昭公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕昭公，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/昭公"}]'::jsonb
@@ -2262,7 +2262,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r17', '燕武公',
+  'yan-r17', '武公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕武公，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/武公"}]'::jsonb
@@ -2278,7 +2278,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r18', '燕文公',
+  'yan-r18', '文公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕文公，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/文公"}]'::jsonb
@@ -2294,7 +2294,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r19', '燕懿公',
+  'yan-r19', '懿公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕懿公，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/懿公"}]'::jsonb
@@ -2310,7 +2310,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r20', '燕惠公',
+  'yan-r20', '惠公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕惠公，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/惠公"}]'::jsonb
@@ -2326,7 +2326,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r21', '燕悼公',
+  'yan-r21', '悼公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕悼公，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/悼公"}]'::jsonb
@@ -2342,7 +2342,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r22', '燕共公',
+  'yan-r22', '共公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕共公，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/共公"}]'::jsonb
@@ -2358,7 +2358,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r23', '燕平公',
+  'yan-r23', '平公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕平公，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/平公"}]'::jsonb
@@ -2374,7 +2374,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r24', '燕简公',
+  'yan-r24', '简公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕简公，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/简公"}]'::jsonb
@@ -2390,7 +2390,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r25', '燕孝公',
+  'yan-r25', '孝公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕孝公，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/孝公"}]'::jsonb
@@ -2422,7 +2422,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r27', '燕闵公',
+  'yan-r27', '闵公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕闵公，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/闵公"}]'::jsonb
@@ -2454,7 +2454,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r29', '燕桓公',
+  'yan-r29', '桓公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕桓公，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/桓公"}]'::jsonb
@@ -2470,7 +2470,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r30', '燕文公',
+  'yan-r30', '文公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕文公，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/文公"}]'::jsonb
@@ -2486,7 +2486,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r31', '燕易王',
+  'yan-r31', '易王',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕易王，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/易王"}]'::jsonb
@@ -2534,7 +2534,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r34', '燕惠王',
+  'yan-r34', '惠王',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕惠王，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/惠王"}]'::jsonb
@@ -2550,7 +2550,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r35', '燕武成王',
+  'yan-r35', '武成王',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕武成王，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/武成王"}]'::jsonb
@@ -2566,7 +2566,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yan-r36', '燕孝王',
+  'yan-r36', '孝王',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '燕孝王，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/孝王"}]'::jsonb
@@ -2742,7 +2742,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'song-r9', '宋哀公',
+  'song-r9', '哀公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '宋哀公，宋国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/哀公"}]'::jsonb
@@ -3078,7 +3078,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'song-r30', '田',
+  'song-r30', '子田',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '宋休公，宋国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/休公"}]'::jsonb
@@ -3094,23 +3094,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'song-r31', '子戴剔成',
-  NULL, NULL,
-  NULL, NULL,
-  ARRAY['君主'], '宋剔成君，宋国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/剔成君"}]'::jsonb
-)
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  birth_year = EXCLUDED.birth_year,
-  birth_month = EXCLUDED.birth_month,
-  death_year = EXCLUDED.death_year,
-  death_month = EXCLUDED.death_month,
-  roles = EXCLUDED.roles,
-  bio = EXCLUDED.bio,
-  links = EXCLUDED.links;
-INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES (
-  'song-r32', '子辟兵',
+  'song-r31', '子辟兵',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '宋桓公，宋国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/桓公"}]'::jsonb
@@ -3126,7 +3110,23 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'song-r33', '子戴偃',
+  'song-r32', '戴剔成',
+  NULL, NULL,
+  NULL, NULL,
+  ARRAY['君主'], '宋剔成君，宋国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/剔成君"}]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
+  'song-r33', '戴偃',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '宋康王，宋国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/康王"}]'::jsonb
@@ -3734,7 +3734,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'weiguo-r2', '卫考伯',
+  'weiguo-r2', '考伯',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '卫考伯，卫国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/考伯"}]'::jsonb
@@ -3750,7 +3750,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'weiguo-r3', '卫嗣伯',
+  'weiguo-r3', '嗣伯',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '卫嗣伯，卫国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/嗣伯"}]'::jsonb
@@ -3766,7 +3766,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'weiguo-r4', '卫疌伯',
+  'weiguo-r4', '疌伯',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '卫疌伯，卫国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/疌伯"}]'::jsonb
@@ -3782,7 +3782,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'weiguo-r5', '卫靖伯',
+  'weiguo-r5', '靖伯',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '卫靖伯，卫国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/靖伯"}]'::jsonb
@@ -3798,7 +3798,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'weiguo-r6', '卫贞伯',
+  'weiguo-r6', '贞伯',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '卫贞伯，卫国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/贞伯"}]'::jsonb
@@ -3814,7 +3814,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'weiguo-r7', '卫顷侯',
+  'weiguo-r7', '顷侯',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '卫顷侯，卫国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/顷侯"}]'::jsonb
@@ -3830,7 +3830,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'weiguo-r8', '卫釐侯',
+  'weiguo-r8', '釐侯',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '卫釐侯，卫国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/釐侯"}]'::jsonb
@@ -5462,7 +5462,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yue-r5', '勾践别名鸠浅',
+  'gou-jian', '勾践',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '越王勾践，越国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/王勾践"}]'::jsonb
@@ -5510,7 +5510,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yue-r8', '翁别名州勾或作朱勾',
+  'yue-r8', '翁',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '越王朱勾，越国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/王朱勾"}]'::jsonb
@@ -5558,7 +5558,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'yue-r11', '无余莽安',
+  'yue-r11', '无余',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '越王无余，越国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/王无余"}]'::jsonb
@@ -5606,7 +5606,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'zhongshan-r0', '中山武公',
+  'zhongshan-r0', '武公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '中山武公，中山君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/中山武公"}]'::jsonb
@@ -5622,7 +5622,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'zhongshan-r1', '中山桓公',
+  'zhongshan-r1', '桓公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '中山桓公，中山君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/中山桓公"}]'::jsonb
@@ -5638,7 +5638,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'zhongshan-r2', '中山成公',
+  'zhongshan-r2', '成公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '中山成公，中山君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/中山成公"}]'::jsonb
@@ -6246,7 +6246,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'ying-qi', '秦襄公',
+  'ying-qi', '襄公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '秦襄公，秦国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/襄公"}]'::jsonb
@@ -6262,7 +6262,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'qin-r1', '秦文公',
+  'qin-r1', '文公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '秦文公，秦国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/文公"}]'::jsonb
@@ -6278,7 +6278,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'qin-r2', '秦宪公',
+  'qin-r2', '宪公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '秦宪公，秦国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/宪公"}]'::jsonb
@@ -6310,7 +6310,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'qin-r4', '秦武公',
+  'qin-r4', '武公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '秦武公，秦国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/武公"}]'::jsonb
@@ -6326,7 +6326,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'qin-r5', '秦德公',
+  'qin-r5', '德公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '秦德公，秦国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/德公"}]'::jsonb
@@ -6342,7 +6342,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'qin-r6', '秦宣公',
+  'qin-r6', '宣公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '秦宣公，秦国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/宣公"}]'::jsonb
@@ -6358,7 +6358,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'qin-r7', '秦成公',
+  'qin-r7', '成公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '秦成公，秦国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/成公"}]'::jsonb
@@ -6454,7 +6454,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'qin-r13', '秦哀公',
+  'qin-r13', '哀公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '秦哀公，秦国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/哀公"}]'::jsonb
@@ -6470,7 +6470,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'qin-r14', '秦惠公',
+  'qin-r14', '惠公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '秦惠公，秦国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/惠公"}]'::jsonb
@@ -6486,7 +6486,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'qin-r15', '秦悼公',
+  'qin-r15', '悼公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '秦悼公，秦国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/悼公"}]'::jsonb
@@ -6502,7 +6502,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'qin-r16', '秦厉共公',
+  'qin-r16', '厉共公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '秦厉共公，秦国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/厉共公"}]'::jsonb
@@ -6518,7 +6518,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'qin-r17', '秦躁公',
+  'qin-r17', '躁公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '秦躁公，秦国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/躁公"}]'::jsonb
@@ -6534,7 +6534,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'qin-r18', '秦怀公',
+  'qin-r18', '怀公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '秦怀公，秦国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/怀公"}]'::jsonb
@@ -6550,7 +6550,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'qin-r19', '秦灵公',
+  'qin-r19', '灵公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '秦灵公，秦国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/灵公"}]'::jsonb
@@ -6582,7 +6582,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'qin-r21', '秦惠公',
+  'qin-r21', '惠公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '秦惠公，秦国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/惠公"}]'::jsonb
@@ -6598,7 +6598,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'qin-r22', '秦出公',
+  'qin-r22', '出公',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '秦出公，秦国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/出公"}]'::jsonb
@@ -12151,10 +12151,10 @@ INSERT INTO reigns (
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision
 ) VALUES (
-  'reign-song-r31-song-chunqiu', 'song-chunqiu', 'song-r31', '宋剔成君',
-  NULL, NULL, '{"kind":"regnal","name":"宋剔成君"}'::jsonb,
-  -369, 1, -329, 12,
-  -4416, -3925, 'year'
+  'reign-song-r31-song-chunqiu', 'song-chunqiu', 'song-r31', '宋桓公',
+  '桓公', NULL, '{"kind":"posthumous","name":"宋桓公"}'::jsonb,
+  -362, 1, -356, 12,
+  -4332, -4249, 'year'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12176,10 +12176,10 @@ INSERT INTO reigns (
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision
 ) VALUES (
-  'reign-song-r32-song-chunqiu', 'song-chunqiu', 'song-r32', '宋桓公',
-  '桓公', NULL, '{"kind":"posthumous","name":"宋桓公"}'::jsonb,
-  -362, 1, -356, 12,
-  -4332, -4249, 'year'
+  'reign-song-r32-song-chunqiu', 'song-chunqiu', 'song-r32', '宋剔成君',
+  NULL, NULL, '{"kind":"regnal","name":"宋剔成君"}'::jsonb,
+  -355, 1, -329, 12,
+  -4248, -3925, 'year'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -15851,7 +15851,7 @@ INSERT INTO reigns (
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision
 ) VALUES (
-  'reign-yue-r5-yue-chunqiu', 'yue-chunqiu', 'yue-r5', '越王勾践',
+  'reign-gou-jian-yue-chunqiu', 'yue-chunqiu', 'gou-jian', '越王勾践',
   NULL, NULL, '{"kind":"regnal","name":"越王勾践"}'::jsonb,
   -496, 1, -464, 12,
   -5940, -5545, 'year'

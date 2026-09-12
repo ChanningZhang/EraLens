@@ -10,12 +10,17 @@ describe("cardDetailLevel", () => {
   it("wraps the full name inside the card before moving it outside", () => {
     expect(cardDetailLevel(50, 3)).toBe("wrap");
     expect(cardDetailLevel(28, 3)).toBe("wrap");
+  });
+
+  it("wraps vertically when only one glyph fits per line", () => {
+    expect(cardDetailLevel(16, 2)).toBe("wrap");
     expect(cardDetailLevel(16, 3)).toBe("wrap");
   });
 
   it("places the name below the card when wrapping cannot fit", () => {
     expect(cardDetailLevel(15, 3)).toBe("below");
     expect(cardDetailLevel(8, 2)).toBe("below");
+    expect(cardDetailLevel(16, 4)).toBe("below");
     expect(cardDetailLevel(16, 5)).toBe("below");
   });
 });

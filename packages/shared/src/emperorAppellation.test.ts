@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import type { Reign } from "./schema";
 import {
   resolveEmperorAppellation,
+  resolveReignCardLabel,
   resolveReignCardMeta,
   resolveReignPrimaryLabel,
 } from "./emperorAppellation";
@@ -134,6 +135,36 @@ describe("resolveReignPrimaryLabel", () => {
         "李世民",
       ),
     ).toBe("李世民");
+  });
+});
+
+describe("resolveReignCardLabel", () => {
+  it("uses posthumous shorthand for narrow Song cards", () => {
+    expect(
+      resolveReignCardLabel(
+        source({
+          start: { year: -575, month: 1 },
+          title: "宋平公",
+          posthumousName: "平公",
+        }),
+        "子成",
+        { cardWidthPx: 32, dynastyId: "song-chunqiu" },
+      ),
+    ).toBe("平公");
+  });
+
+  it("keeps the personal name on wide Song cards", () => {
+    expect(
+      resolveReignCardLabel(
+        source({
+          start: { year: -575, month: 1 },
+          title: "宋平公",
+          posthumousName: "平公",
+        }),
+        "子成",
+        { cardWidthPx: 80, dynastyId: "song-chunqiu" },
+      ),
+    ).toBe("子成");
   });
 });
 
