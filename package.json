@@ -1,0 +1,22 @@
+{
+  "name": "eralens",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --filter @eralens/web dev",
+    "dev:api": "pnpm --filter @eralens/api dev",
+    "dev:all": "pnpm --parallel --filter @eralens/web --filter @eralens/api dev",
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "lint": "pnpm -r lint",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down",
+    "db:migrate": "pnpm --filter @eralens/api db:migrate",
+    "db:seed": "pnpm --filter @eralens/api db:seed",
+    "db:setup": "pnpm db:up && pnpm db:migrate && pnpm db:seed"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  },
+  "packageManager": "pnpm@9.15.4"
+}

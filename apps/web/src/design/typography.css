@@ -1,0 +1,15 @@
+.serif {
+  font-family: var(--font-serif);
+}
+
+.muted {
+  color: var(--color-ink-muted);
+}
+
+.secondary {
+  color: var(--color-ink-secondary);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}

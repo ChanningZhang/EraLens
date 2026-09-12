@@ -1,0 +1,320 @@
+[
+  {
+    "id": "rel-si-yu-si-qi-succession",
+    "fromRef": "person:si-yu",
+    "toRef": "person:si-qi",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-si-qi-si-taikang-succession",
+    "fromRef": "person:si-qi",
+    "toRef": "person:si-taikang",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-si-taikang-si-shaokang-succession",
+    "fromRef": "person:si-taikang",
+    "toRef": "person:si-shaokang",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-si-shaokang-si-jie-succession",
+    "fromRef": "person:si-shaokang",
+    "toRef": "person:si-jie",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-tang-zi-taijia-succession",
+    "fromRef": "person:zi-tang",
+    "toRef": "person:zi-taijia",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-taijia-zi-pangeng-succession",
+    "fromRef": "person:zi-taijia",
+    "toRef": "person:zi-pangeng",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-pangeng-zi-wuding-succession",
+    "fromRef": "person:zi-pangeng",
+    "toRef": "person:zi-wuding",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-wuding-zi-wuyi-succession",
+    "fromRef": "person:zi-wuding",
+    "toRef": "person:zi-wuyi",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-wuyi-zi-wending-succession",
+    "fromRef": "person:zi-wuyi",
+    "toRef": "person:zi-wending",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-wending-zi-diyi-succession",
+    "fromRef": "person:zi-wending",
+    "toRef": "person:zi-diyi",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-diyi-zi-dixin-succession",
+    "fromRef": "person:zi-diyi",
+    "toRef": "person:zi-dixin",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-fa-ji-song-succession",
+    "fromRef": "person:ji-fa",
+    "toRef": "person:ji-song",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-song-ji-zhao-succession",
+    "fromRef": "person:ji-song",
+    "toRef": "person:ji-zhao",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-zhao-ji-xia-succession",
+    "fromRef": "person:ji-zhao",
+    "toRef": "person:ji-xia",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-xia-ji-man-succession",
+    "fromRef": "person:ji-xia",
+    "toRef": "person:ji-man",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-man-ji-yihu-succession",
+    "fromRef": "person:ji-man",
+    "toRef": "person:ji-yihu",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-yihu-ji-jian-succession",
+    "fromRef": "person:ji-yihu",
+    "toRef": "person:ji-jian",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-jian-ji-pifang-succession",
+    "fromRef": "person:ji-jian",
+    "toRef": "person:ji-pifang",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-pifang-ji-xie-succession",
+    "fromRef": "person:ji-pifang",
+    "toRef": "person:ji-xie",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-xie-ji-hu-succession",
+    "fromRef": "person:ji-xie",
+    "toRef": "person:ji-hu",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-hu-ji-jing-succession",
+    "fromRef": "person:ji-hu",
+    "toRef": "person:ji-jing",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-jing-ji-gongsheng-succession",
+    "fromRef": "person:ji-jing",
+    "toRef": "person:ji-gongsheng",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-yijiu-ji-lin-succession",
+    "fromRef": "person:ji-yijiu",
+    "toRef": "person:ji-lin",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-lin-ji-tuo-succession",
+    "fromRef": "person:ji-lin",
+    "toRef": "person:ji-tuo",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-tuo-ji-huqi-succession",
+    "fromRef": "person:ji-tuo",
+    "toRef": "person:ji-huqi",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-huqi-ji-lang-succession",
+    "fromRef": "person:ji-huqi",
+    "toRef": "person:ji-lang",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-lang-ji-zheng-succession",
+    "fromRef": "person:ji-lang",
+    "toRef": "person:ji-zheng",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-zheng-ji-renchen-succession",
+    "fromRef": "person:ji-zheng",
+    "toRef": "person:ji-renchen",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-renchen-ji-ban-succession",
+    "fromRef": "person:ji-renchen",
+    "toRef": "person:ji-ban",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-ban-ji-yu-succession",
+    "fromRef": "person:ji-ban",
+    "toRef": "person:ji-yu",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-yu-ji-yi-succession",
+    "fromRef": "person:ji-yu",
+    "toRef": "person:ji-yi",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-yi-ji-xiexin-succession",
+    "fromRef": "person:ji-yi",
+    "toRef": "person:ji-xiexin",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-xiexin-ji-gui-succession",
+    "fromRef": "person:ji-xiexin",
+    "toRef": "person:ji-gui",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-gui-ji-meng-succession",
+    "fromRef": "person:ji-gui",
+    "toRef": "person:ji-meng",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-meng-ji-gai-succession",
+    "fromRef": "person:ji-meng",
+    "toRef": "person:ji-gai",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-gai-ji-ren-succession",
+    "fromRef": "person:ji-gai",
+    "toRef": "person:ji-ren",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-ren-ji-jie-succession",
+    "fromRef": "person:ji-ren",
+    "toRef": "person:ji-jie",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-jie-ji-quji-succession",
+    "fromRef": "person:ji-jie",
+    "toRef": "person:ji-quji",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-quji-ji-shu-succession",
+    "fromRef": "person:ji-quji",
+    "toRef": "person:ji-shu",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-shu-ji-wei-succession",
+    "fromRef": "person:ji-shu",
+    "toRef": "person:ji-wei",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-wei-ji-wu-succession",
+    "fromRef": "person:ji-wei",
+    "toRef": "person:ji-wu",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-wu-ji-jiao-succession",
+    "fromRef": "person:ji-wu",
+    "toRef": "person:ji-jiao",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-jiao-ji-xi-succession",
+    "fromRef": "person:ji-jiao",
+    "toRef": "person:ji-xi",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-xi-ji-bian-succession",
+    "fromRef": "person:ji-xi",
+    "toRef": "person:ji-bian",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-bian-ji-ding-succession",
+    "fromRef": "person:ji-bian",
+    "toRef": "person:ji-ding",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-ding-ji-yan-succession",
+    "fromRef": "person:ji-ding",
+    "toRef": "person:ji-yan",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-chang-ji-fa-succession",
+    "fromRef": "person:ji-chang",
+    "toRef": "person:ji-fa",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-mingtiao-tang",
+    "fromRef": "event:mingtiao",
+    "toRef": "person:zi-tang",
+    "kind": "battle"
+  },
+  {
+    "id": "rel-muye-fa",
+    "fromRef": "event:muye",
+    "toRef": "person:ji-fa",
+    "kind": "battle"
+  },
+  {
+    "id": "rel-chengpu-chonger",
+    "fromRef": "event:chengpu",
+    "toRef": "person:ji-chonger",
+    "kind": "battle"
+  },
+  {
+    "id": "rel-cao-pi-succession",
+    "fromRef": "person:cao-cao",
+    "toRef": "reign:cao-pi",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-guandu-cao",
+    "fromRef": "event:guandu",
+    "toRef": "person:cao-cao",
+    "kind": "battle"
+  },
+  {
+    "id": "rel-chibi-zhuge",
+    "fromRef": "event:chibi",
+    "toRef": "person:zhuge-liang",
+    "kind": "battle"
+  }
+]

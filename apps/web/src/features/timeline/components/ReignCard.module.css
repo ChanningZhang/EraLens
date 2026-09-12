@@ -1,0 +1,128 @@
+.card {
+  position: absolute;
+  top: 4px;
+  height: 48px;
+  min-width: 1px;
+  padding: 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  border: 1px solid color-mix(in srgb, var(--card-color) 40%, var(--color-border));
+  border-top: 2px solid var(--card-color);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  cursor: pointer;
+  transition:
+    transform var(--motion-fast),
+    box-shadow var(--motion-fast),
+    border-color var(--motion-fast);
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(27, 25, 23, 0.08);
+}
+
+.selected {
+  border-color: var(--color-accent);
+  box-shadow: inset 3px 0 0 var(--color-accent);
+}
+
+.wrap {
+  padding: 3px 2px;
+  gap: 0;
+  align-items: center;
+}
+
+.wrap .name {
+  font-size: 12px;
+  line-height: 1.1;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+.below {
+  height: 28px;
+  padding: 0;
+  border-radius: 2px;
+}
+
+.belowCluster {
+  height: 22px;
+}
+
+.below:hover {
+  transform: none;
+}
+
+.captions {
+  position: absolute;
+  top: 36px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.belowCluster + .captions,
+.belowCluster ~ .captions {
+  top: 28px;
+}
+
+.caption {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: var(--font-serif);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  color: var(--color-ink);
+  cursor: pointer;
+  text-align: left;
+}
+
+.name {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.meta {
+  margin: 0;
+  font-size: 9px;
+  color: var(--color-ink-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.metaKind {
+  margin-right: 5px;
+  color: color-mix(in srgb, var(--card-color) 76%, var(--color-ink-muted));
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  padding: 6px 10px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  font-size: 12px;
+  pointer-events: none;
+  box-shadow: 0 4px 16px rgba(27, 25, 23, 0.12);
+}

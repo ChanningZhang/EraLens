@@ -1,0 +1,54 @@
+{
+  "slug": "xia-shang-zhou",
+  "title": "夏商周",
+  "window": {
+    "startYear": -2070,
+    "startMonth": 1,
+    "endYear": -256,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-12",
+  "counts": {
+    "persons": 60,
+    "dynasties": 4,
+    "reigns": 50,
+    "events": 24,
+    "relations": 50
+  },
+  "sources": [
+    {
+      "label": "夏商周断代工程",
+      "url": "https://zh.wikipedia.org/wiki/夏商周断代工程"
+    },
+    {
+      "label": "夏商周年表",
+      "url": "https://zh.wikipedia.org/wiki/夏商周年表"
+    },
+    {
+      "label": "周朝君主列表",
+      "url": "https://zh.wikipedia.org/wiki/周朝君主列表"
+    },
+    {
+      "label": "商朝君主列表",
+      "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+    },
+    {
+      "label": "夏朝",
+      "url": "https://zh.wikipedia.org/wiki/夏朝"
+    },
+    {
+      "label": "百度百科·夏商周断代工程（西周年表）",
+      "url": "https://baike.baidu.com/item/夏商周断代工程/2331516"
+    }
+  ],
+  "notes": [
+    "王朝起迄与晚商、西周列王年优先采用夏商周断代工程2000年《夏商周年表》；该工程方法与结论在学界仍有争议，作教材通行框架而非定论。",
+    "夏代及商代前期具体王年工程未给出。禹、启、太康、少康、桀与汤、太甲、盘庚的在位年为传统积年锚定工程框架的估列，precision=year，事件用 circa，避免伪造成月日。",
+    "东周列王取《史记》系统常见年表（与维基百科周朝君主列表一致）。敬王取前519–前477年。哀王、思王同年相残，在位窗口重叠。",
+    "共和行政不建在位卡片（非王），仅作 span 事件。周公旦不另建称王记录。",
+    "夏商周无年号，不写入 era_names。",
+    "未单列春秋战国诸侯国为王朝行，以免超出「夏商周」王室主线。"
+  ]
+}

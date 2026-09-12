@@ -1,0 +1,121 @@
+.ruler {
+  position: relative;
+  padding: 6px var(--space-4);
+  border-top: 1px solid var(--color-border);
+  background: var(--color-surface);
+  user-select: none;
+  touch-action: none;
+  overscroll-behavior: none;
+}
+
+.ringShell {
+  position: relative;
+  height: 58px;
+}
+
+.ringTrack {
+  position: absolute;
+  inset: 3px 0 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  cursor: grab;
+  border-radius: 999px;
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--color-ink-muted) 10%, var(--color-paper)) 0%,
+      var(--color-paper) 20%,
+      var(--color-surface) 52%,
+      color-mix(in srgb, var(--color-ink-muted) 7%, var(--color-paper)) 100%
+    );
+  box-shadow:
+    inset 0 1px 0 color-mix(in srgb, white 55%, transparent),
+    inset 0 8px 12px color-mix(in srgb, var(--color-ink) 3%, transparent),
+    inset 0 -8px 12px color-mix(in srgb, var(--color-ink) 5%, transparent),
+    0 0 0 1px var(--color-border);
+}
+
+.ringTrackDragging {
+  cursor: grabbing;
+}
+
+.scaleViewport {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.18) 4%,
+    #000 13%,
+    #000 87%,
+    rgba(0, 0, 0, 0.18) 96%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.18) 4%,
+    #000 13%,
+    #000 87%,
+    rgba(0, 0, 0, 0.18) 96%,
+    transparent 100%
+  );
+}
+
+.tickBand {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 8px;
+  bottom: 8px;
+  pointer-events: none;
+}
+
+.tick {
+  position: absolute;
+  bottom: 0;
+  width: 1px;
+  transform: translateX(-50%);
+  background: color-mix(in srgb, var(--color-ink-muted) 38%, var(--color-border));
+}
+
+.tickMinor {
+  height: 8px;
+  opacity: 0.72;
+}
+
+.tickMid {
+  height: 12px;
+  background: color-mix(in srgb, var(--color-ink-muted) 62%, var(--color-border));
+}
+
+.tickLabel {
+  height: 16px;
+  width: 2px;
+  background: color-mix(in srgb, var(--color-ink-secondary) 70%, var(--color-border));
+}
+
+.tickText {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 11px;
+  color: var(--color-ink-secondary);
+  white-space: nowrap;
+}
+
+.zoomHint {
+  position: absolute;
+  right: 18px;
+  bottom: 6px;
+  z-index: 3;
+  font-size: 10px;
+  color: var(--color-ink-muted);
+  pointer-events: none;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-surface) 92%, transparent);
+  box-shadow: 0 0 12px 8px color-mix(in srgb, var(--color-surface) 88%, transparent);
+}

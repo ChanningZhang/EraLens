@@ -1,0 +1,112 @@
+.layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  pointer-events: none;
+  contain: layout paint style;
+  z-index: 3;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-border) 70%, transparent);
+}
+
+.event {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 24px;
+  pointer-events: none;
+}
+
+.bandSpan,
+.bandCirca {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: auto;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+}
+
+.bandSpan {
+  height: 4px;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--color-ink-muted) 42%, transparent);
+}
+
+.bandCirca {
+  height: 10px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-ink-muted) 12%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-ink-muted) 40%, transparent);
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent,
+    transparent 5px,
+    color-mix(in srgb, var(--color-ink-muted) 18%, transparent) 5px,
+    color-mix(in srgb, var(--color-ink-muted) 18%, transparent) 7px
+  );
+}
+
+.marker {
+  --dot-size: 5px;
+  --marker-pad-left: 6px;
+  --marker-border: 1px;
+  --dot-nudge: calc(var(--marker-border) + var(--marker-pad-left) + var(--dot-size) / 2);
+  position: absolute;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 132px;
+  min-height: 24px;
+  padding: 3px 8px 3px var(--marker-pad-left);
+  transform: translateX(calc(-1 * var(--dot-nudge)));
+  border: var(--marker-border) solid var(--color-border);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-surface) 94%, transparent);
+  color: var(--color-ink-secondary);
+  box-shadow: 0 1px 4px color-mix(in srgb, var(--color-ink) 7%, transparent);
+  pointer-events: auto;
+  cursor: pointer;
+  white-space: nowrap;
+  backdrop-filter: blur(5px);
+  transition:
+    border-color var(--motion-fast),
+    color var(--motion-fast),
+    transform var(--motion-fast);
+}
+
+.marker:hover {
+  border-color: var(--color-ink-muted);
+  color: var(--color-ink);
+  transform: translateX(calc(-1 * var(--dot-nudge))) translateY(-1px);
+}
+
+.dot,
+.dotCirca {
+  flex: 0 0 auto;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+}
+
+.dot {
+  background: var(--color-ink-muted);
+}
+
+.dotCirca {
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px var(--color-ink-muted);
+}
+
+.label {
+  font-size: 11px;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.marker[data-time-mode="circa"] {
+  border-style: dashed;
+}

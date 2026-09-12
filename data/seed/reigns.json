@@ -1,0 +1,1451 @@
+[
+  {
+    "id": "reign-si-yu",
+    "dynastyId": "xia",
+    "personId": "si-yu",
+    "title": "夏禹",
+    "eraNames": [],
+    "start": {
+      "year": -2070,
+      "month": 1
+    },
+    "end": {
+      "year": -2026,
+      "month": 12
+    },
+    "startAbs": -24828,
+    "endAbs": -24289,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "夏禹"
+    }
+  },
+  {
+    "id": "reign-si-qi",
+    "dynastyId": "xia",
+    "personId": "si-qi",
+    "title": "夏启",
+    "eraNames": [],
+    "start": {
+      "year": -2025,
+      "month": 1
+    },
+    "end": {
+      "year": -2010,
+      "month": 12
+    },
+    "startAbs": -24288,
+    "endAbs": -24097,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "夏启"
+    }
+  },
+  {
+    "id": "reign-si-taikang",
+    "dynastyId": "xia",
+    "personId": "si-taikang",
+    "title": "夏太康",
+    "eraNames": [],
+    "start": {
+      "year": -2009,
+      "month": 1
+    },
+    "end": {
+      "year": -1990,
+      "month": 12
+    },
+    "startAbs": -24096,
+    "endAbs": -23857,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "夏太康"
+    }
+  },
+  {
+    "id": "reign-si-shaokang",
+    "dynastyId": "xia",
+    "personId": "si-shaokang",
+    "title": "夏少康",
+    "eraNames": [],
+    "start": {
+      "year": -1910,
+      "month": 1
+    },
+    "end": {
+      "year": -1860,
+      "month": 12
+    },
+    "startAbs": -22908,
+    "endAbs": -22297,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "夏少康"
+    }
+  },
+  {
+    "id": "reign-si-jie",
+    "dynastyId": "xia",
+    "personId": "si-jie",
+    "title": "夏桀",
+    "eraNames": [],
+    "start": {
+      "year": -1650,
+      "month": 1
+    },
+    "end": {
+      "year": -1600,
+      "month": 12
+    },
+    "startAbs": -19788,
+    "endAbs": -19177,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "夏桀"
+    }
+  },
+  {
+    "id": "reign-zi-tang",
+    "dynastyId": "shang",
+    "personId": "zi-tang",
+    "title": "商汤",
+    "eraNames": [],
+    "start": {
+      "year": -1600,
+      "month": 1
+    },
+    "end": {
+      "year": -1571,
+      "month": 12
+    },
+    "startAbs": -19188,
+    "endAbs": -18829,
+    "precision": "year",
+    "posthumousName": "武王",
+    "templeName": "太祖",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商汤"
+    }
+  },
+  {
+    "id": "reign-zi-taijia",
+    "dynastyId": "shang",
+    "personId": "zi-taijia",
+    "title": "商太甲",
+    "eraNames": [],
+    "start": {
+      "year": -1560,
+      "month": 1
+    },
+    "end": {
+      "year": -1548,
+      "month": 12
+    },
+    "startAbs": -18708,
+    "endAbs": -18553,
+    "precision": "year",
+    "templeName": "太宗",
+    "preferredAppellation": {
+      "kind": "temple",
+      "name": "商太宗"
+    }
+  },
+  {
+    "id": "reign-zi-pangeng",
+    "dynastyId": "shang",
+    "personId": "zi-pangeng",
+    "title": "商盘庚",
+    "eraNames": [],
+    "start": {
+      "year": -1310,
+      "month": 1
+    },
+    "end": {
+      "year": -1280,
+      "month": 12
+    },
+    "startAbs": -15708,
+    "endAbs": -15337,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商盘庚"
+    }
+  },
+  {
+    "id": "reign-zi-wuding",
+    "dynastyId": "shang",
+    "personId": "zi-wuding",
+    "title": "商王武丁",
+    "eraNames": [],
+    "start": {
+      "year": -1250,
+      "month": 1
+    },
+    "end": {
+      "year": -1192,
+      "month": 12
+    },
+    "startAbs": -14988,
+    "endAbs": -14281,
+    "precision": "year",
+    "templeName": "高宗",
+    "preferredAppellation": {
+      "kind": "temple",
+      "name": "商高宗"
+    }
+  },
+  {
+    "id": "reign-zi-wuyi",
+    "dynastyId": "shang",
+    "personId": "zi-wuyi",
+    "title": "商王武乙",
+    "eraNames": [],
+    "start": {
+      "year": -1147,
+      "month": 1
+    },
+    "end": {
+      "year": -1113,
+      "month": 12
+    },
+    "startAbs": -13752,
+    "endAbs": -13333,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商武乙"
+    }
+  },
+  {
+    "id": "reign-zi-wending",
+    "dynastyId": "shang",
+    "personId": "zi-wending",
+    "title": "商王文丁",
+    "eraNames": [],
+    "start": {
+      "year": -1112,
+      "month": 1
+    },
+    "end": {
+      "year": -1102,
+      "month": 12
+    },
+    "startAbs": -13332,
+    "endAbs": -13201,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商文丁"
+    }
+  },
+  {
+    "id": "reign-zi-diyi",
+    "dynastyId": "shang",
+    "personId": "zi-diyi",
+    "title": "商王帝乙",
+    "eraNames": [],
+    "start": {
+      "year": -1101,
+      "month": 1
+    },
+    "end": {
+      "year": -1076,
+      "month": 12
+    },
+    "startAbs": -13200,
+    "endAbs": -12889,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商帝乙"
+    }
+  },
+  {
+    "id": "reign-zi-dixin",
+    "dynastyId": "shang",
+    "personId": "zi-dixin",
+    "title": "商王帝辛",
+    "eraNames": [],
+    "start": {
+      "year": -1075,
+      "month": 1
+    },
+    "end": {
+      "year": -1046,
+      "month": 1
+    },
+    "startAbs": -12888,
+    "endAbs": -12540,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商帝辛"
+    }
+  },
+  {
+    "id": "reign-ji-fa",
+    "dynastyId": "zhou-west",
+    "personId": "ji-fa",
+    "title": "周武王",
+    "eraNames": [],
+    "start": {
+      "year": -1046,
+      "month": 1
+    },
+    "end": {
+      "year": -1043,
+      "month": 12
+    },
+    "startAbs": -12540,
+    "endAbs": -12493,
+    "precision": "year",
+    "posthumousName": "武王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周武王"
+    }
+  },
+  {
+    "id": "reign-ji-song",
+    "dynastyId": "zhou-west",
+    "personId": "ji-song",
+    "title": "周成王",
+    "eraNames": [],
+    "start": {
+      "year": -1042,
+      "month": 1
+    },
+    "end": {
+      "year": -1021,
+      "month": 12
+    },
+    "startAbs": -12492,
+    "endAbs": -12229,
+    "precision": "year",
+    "posthumousName": "成王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周成王"
+    }
+  },
+  {
+    "id": "reign-ji-zhao",
+    "dynastyId": "zhou-west",
+    "personId": "ji-zhao",
+    "title": "周康王",
+    "eraNames": [],
+    "start": {
+      "year": -1020,
+      "month": 1
+    },
+    "end": {
+      "year": -996,
+      "month": 12
+    },
+    "startAbs": -12228,
+    "endAbs": -11929,
+    "precision": "year",
+    "posthumousName": "康王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周康王"
+    }
+  },
+  {
+    "id": "reign-ji-xia",
+    "dynastyId": "zhou-west",
+    "personId": "ji-xia",
+    "title": "周昭王",
+    "eraNames": [],
+    "start": {
+      "year": -995,
+      "month": 1
+    },
+    "end": {
+      "year": -977,
+      "month": 12
+    },
+    "startAbs": -11928,
+    "endAbs": -11701,
+    "precision": "year",
+    "posthumousName": "昭王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周昭王"
+    }
+  },
+  {
+    "id": "reign-ji-man",
+    "dynastyId": "zhou-west",
+    "personId": "ji-man",
+    "title": "周穆王",
+    "eraNames": [],
+    "start": {
+      "year": -976,
+      "month": 1
+    },
+    "end": {
+      "year": -922,
+      "month": 12
+    },
+    "startAbs": -11700,
+    "endAbs": -11041,
+    "precision": "year",
+    "posthumousName": "穆王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周穆王"
+    }
+  },
+  {
+    "id": "reign-ji-yihu",
+    "dynastyId": "zhou-west",
+    "personId": "ji-yihu",
+    "title": "周共王",
+    "eraNames": [],
+    "start": {
+      "year": -922,
+      "month": 1
+    },
+    "end": {
+      "year": -900,
+      "month": 12
+    },
+    "startAbs": -11052,
+    "endAbs": -10777,
+    "precision": "year",
+    "posthumousName": "共王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周共王"
+    }
+  },
+  {
+    "id": "reign-ji-jian",
+    "dynastyId": "zhou-west",
+    "personId": "ji-jian",
+    "title": "周懿王",
+    "eraNames": [],
+    "start": {
+      "year": -899,
+      "month": 1
+    },
+    "end": {
+      "year": -892,
+      "month": 12
+    },
+    "startAbs": -10776,
+    "endAbs": -10681,
+    "precision": "year",
+    "posthumousName": "懿王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周懿王"
+    }
+  },
+  {
+    "id": "reign-ji-pifang",
+    "dynastyId": "zhou-west",
+    "personId": "ji-pifang",
+    "title": "周孝王",
+    "eraNames": [],
+    "start": {
+      "year": -891,
+      "month": 1
+    },
+    "end": {
+      "year": -886,
+      "month": 12
+    },
+    "startAbs": -10680,
+    "endAbs": -10609,
+    "precision": "year",
+    "posthumousName": "孝王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周孝王"
+    }
+  },
+  {
+    "id": "reign-ji-xie",
+    "dynastyId": "zhou-west",
+    "personId": "ji-xie",
+    "title": "周夷王",
+    "eraNames": [],
+    "start": {
+      "year": -885,
+      "month": 1
+    },
+    "end": {
+      "year": -878,
+      "month": 12
+    },
+    "startAbs": -10608,
+    "endAbs": -10513,
+    "precision": "year",
+    "posthumousName": "夷王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周夷王"
+    }
+  },
+  {
+    "id": "reign-ji-hu",
+    "dynastyId": "zhou-west",
+    "personId": "ji-hu",
+    "title": "周厉王",
+    "eraNames": [],
+    "start": {
+      "year": -877,
+      "month": 1
+    },
+    "end": {
+      "year": -841,
+      "month": 12
+    },
+    "startAbs": -10512,
+    "endAbs": -10069,
+    "precision": "year",
+    "posthumousName": "厉王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周厉王"
+    }
+  },
+  {
+    "id": "reign-ji-jing",
+    "dynastyId": "zhou-west",
+    "personId": "ji-jing",
+    "title": "周宣王",
+    "eraNames": [],
+    "start": {
+      "year": -827,
+      "month": 1
+    },
+    "end": {
+      "year": -782,
+      "month": 12
+    },
+    "startAbs": -9912,
+    "endAbs": -9361,
+    "precision": "year",
+    "posthumousName": "宣王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周宣王"
+    }
+  },
+  {
+    "id": "reign-ji-gongsheng",
+    "dynastyId": "zhou-west",
+    "personId": "ji-gongsheng",
+    "title": "周幽王",
+    "eraNames": [],
+    "start": {
+      "year": -781,
+      "month": 1
+    },
+    "end": {
+      "year": -771,
+      "month": 12
+    },
+    "startAbs": -9360,
+    "endAbs": -9229,
+    "precision": "year",
+    "posthumousName": "幽王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周幽王"
+    }
+  },
+  {
+    "id": "reign-ji-yijiu",
+    "dynastyId": "zhou-east",
+    "personId": "ji-yijiu",
+    "title": "周平王",
+    "eraNames": [],
+    "start": {
+      "year": -770,
+      "month": 1
+    },
+    "end": {
+      "year": -720,
+      "month": 12
+    },
+    "startAbs": -9228,
+    "endAbs": -8617,
+    "precision": "year",
+    "posthumousName": "平王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周平王"
+    }
+  },
+  {
+    "id": "reign-ji-lin",
+    "dynastyId": "zhou-east",
+    "personId": "ji-lin",
+    "title": "周桓王",
+    "eraNames": [],
+    "start": {
+      "year": -719,
+      "month": 1
+    },
+    "end": {
+      "year": -697,
+      "month": 12
+    },
+    "startAbs": -8616,
+    "endAbs": -8341,
+    "precision": "year",
+    "posthumousName": "桓王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周桓王"
+    }
+  },
+  {
+    "id": "reign-ji-tuo",
+    "dynastyId": "zhou-east",
+    "personId": "ji-tuo",
+    "title": "周庄王",
+    "eraNames": [],
+    "start": {
+      "year": -696,
+      "month": 1
+    },
+    "end": {
+      "year": -682,
+      "month": 12
+    },
+    "startAbs": -8340,
+    "endAbs": -8161,
+    "precision": "year",
+    "posthumousName": "庄王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周庄王"
+    }
+  },
+  {
+    "id": "reign-ji-huqi",
+    "dynastyId": "zhou-east",
+    "personId": "ji-huqi",
+    "title": "周釐王",
+    "eraNames": [],
+    "start": {
+      "year": -681,
+      "month": 1
+    },
+    "end": {
+      "year": -677,
+      "month": 12
+    },
+    "startAbs": -8160,
+    "endAbs": -8101,
+    "precision": "year",
+    "posthumousName": "釐王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周釐王"
+    }
+  },
+  {
+    "id": "reign-ji-lang",
+    "dynastyId": "zhou-east",
+    "personId": "ji-lang",
+    "title": "周惠王",
+    "eraNames": [],
+    "start": {
+      "year": -676,
+      "month": 1
+    },
+    "end": {
+      "year": -652,
+      "month": 12
+    },
+    "startAbs": -8100,
+    "endAbs": -7801,
+    "precision": "year",
+    "posthumousName": "惠王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周惠王"
+    }
+  },
+  {
+    "id": "reign-ji-zheng",
+    "dynastyId": "zhou-east",
+    "personId": "ji-zheng",
+    "title": "周襄王",
+    "eraNames": [],
+    "start": {
+      "year": -651,
+      "month": 1
+    },
+    "end": {
+      "year": -619,
+      "month": 12
+    },
+    "startAbs": -7800,
+    "endAbs": -7405,
+    "precision": "year",
+    "posthumousName": "襄王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周襄王"
+    }
+  },
+  {
+    "id": "reign-ji-renchen",
+    "dynastyId": "zhou-east",
+    "personId": "ji-renchen",
+    "title": "周顷王",
+    "eraNames": [],
+    "start": {
+      "year": -618,
+      "month": 1
+    },
+    "end": {
+      "year": -613,
+      "month": 12
+    },
+    "startAbs": -7404,
+    "endAbs": -7333,
+    "precision": "year",
+    "posthumousName": "顷王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周顷王"
+    }
+  },
+  {
+    "id": "reign-ji-ban",
+    "dynastyId": "zhou-east",
+    "personId": "ji-ban",
+    "title": "周匡王",
+    "eraNames": [],
+    "start": {
+      "year": -612,
+      "month": 1
+    },
+    "end": {
+      "year": -607,
+      "month": 12
+    },
+    "startAbs": -7332,
+    "endAbs": -7261,
+    "precision": "year",
+    "posthumousName": "匡王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周匡王"
+    }
+  },
+  {
+    "id": "reign-ji-yu",
+    "dynastyId": "zhou-east",
+    "personId": "ji-yu",
+    "title": "周定王",
+    "eraNames": [],
+    "start": {
+      "year": -606,
+      "month": 1
+    },
+    "end": {
+      "year": -586,
+      "month": 12
+    },
+    "startAbs": -7260,
+    "endAbs": -7009,
+    "precision": "year",
+    "posthumousName": "定王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周定王"
+    }
+  },
+  {
+    "id": "reign-ji-yi",
+    "dynastyId": "zhou-east",
+    "personId": "ji-yi",
+    "title": "周简王",
+    "eraNames": [],
+    "start": {
+      "year": -585,
+      "month": 1
+    },
+    "end": {
+      "year": -572,
+      "month": 12
+    },
+    "startAbs": -7008,
+    "endAbs": -6841,
+    "precision": "year",
+    "posthumousName": "简王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周简王"
+    }
+  },
+  {
+    "id": "reign-ji-xiexin",
+    "dynastyId": "zhou-east",
+    "personId": "ji-xiexin",
+    "title": "周灵王",
+    "eraNames": [],
+    "start": {
+      "year": -571,
+      "month": 1
+    },
+    "end": {
+      "year": -545,
+      "month": 12
+    },
+    "startAbs": -6840,
+    "endAbs": -6517,
+    "precision": "year",
+    "posthumousName": "灵王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周灵王"
+    }
+  },
+  {
+    "id": "reign-ji-gui",
+    "dynastyId": "zhou-east",
+    "personId": "ji-gui",
+    "title": "周景王",
+    "eraNames": [],
+    "start": {
+      "year": -544,
+      "month": 1
+    },
+    "end": {
+      "year": -520,
+      "month": 12
+    },
+    "startAbs": -6516,
+    "endAbs": -6217,
+    "precision": "year",
+    "posthumousName": "景王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周景王"
+    }
+  },
+  {
+    "id": "reign-ji-meng",
+    "dynastyId": "zhou-east",
+    "personId": "ji-meng",
+    "title": "周悼王",
+    "eraNames": [],
+    "start": {
+      "year": -520,
+      "month": 1
+    },
+    "end": {
+      "year": -520,
+      "month": 12
+    },
+    "startAbs": -6228,
+    "endAbs": -6217,
+    "precision": "year",
+    "posthumousName": "悼王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周悼王"
+    }
+  },
+  {
+    "id": "reign-ji-gai",
+    "dynastyId": "zhou-east",
+    "personId": "ji-gai",
+    "title": "周敬王",
+    "eraNames": [],
+    "start": {
+      "year": -519,
+      "month": 1
+    },
+    "end": {
+      "year": -477,
+      "month": 12
+    },
+    "startAbs": -6216,
+    "endAbs": -5701,
+    "precision": "year",
+    "posthumousName": "敬王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周敬王"
+    }
+  },
+  {
+    "id": "reign-ji-ren",
+    "dynastyId": "zhou-east",
+    "personId": "ji-ren",
+    "title": "周元王",
+    "eraNames": [],
+    "start": {
+      "year": -476,
+      "month": 1
+    },
+    "end": {
+      "year": -469,
+      "month": 12
+    },
+    "startAbs": -5700,
+    "endAbs": -5605,
+    "precision": "year",
+    "posthumousName": "元王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周元王"
+    }
+  },
+  {
+    "id": "reign-ji-jie",
+    "dynastyId": "zhou-east",
+    "personId": "ji-jie",
+    "title": "周贞定王",
+    "eraNames": [],
+    "start": {
+      "year": -468,
+      "month": 1
+    },
+    "end": {
+      "year": -441,
+      "month": 12
+    },
+    "startAbs": -5604,
+    "endAbs": -5269,
+    "precision": "year",
+    "posthumousName": "贞定王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周贞定王"
+    }
+  },
+  {
+    "id": "reign-ji-quji",
+    "dynastyId": "zhou-east",
+    "personId": "ji-quji",
+    "title": "周哀王",
+    "eraNames": [],
+    "start": {
+      "year": -441,
+      "month": 1
+    },
+    "end": {
+      "year": -441,
+      "month": 12
+    },
+    "startAbs": -5280,
+    "endAbs": -5269,
+    "precision": "year",
+    "posthumousName": "哀王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周哀王"
+    }
+  },
+  {
+    "id": "reign-ji-shu",
+    "dynastyId": "zhou-east",
+    "personId": "ji-shu",
+    "title": "周思王",
+    "eraNames": [],
+    "start": {
+      "year": -441,
+      "month": 1
+    },
+    "end": {
+      "year": -441,
+      "month": 12
+    },
+    "startAbs": -5280,
+    "endAbs": -5269,
+    "precision": "year",
+    "posthumousName": "思王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周思王"
+    }
+  },
+  {
+    "id": "reign-ji-wei",
+    "dynastyId": "zhou-east",
+    "personId": "ji-wei",
+    "title": "周考王",
+    "eraNames": [],
+    "start": {
+      "year": -440,
+      "month": 1
+    },
+    "end": {
+      "year": -426,
+      "month": 12
+    },
+    "startAbs": -5268,
+    "endAbs": -5089,
+    "precision": "year",
+    "posthumousName": "考王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周考王"
+    }
+  },
+  {
+    "id": "reign-ji-wu",
+    "dynastyId": "zhou-east",
+    "personId": "ji-wu",
+    "title": "周威烈王",
+    "eraNames": [],
+    "start": {
+      "year": -425,
+      "month": 1
+    },
+    "end": {
+      "year": -402,
+      "month": 12
+    },
+    "startAbs": -5088,
+    "endAbs": -4801,
+    "precision": "year",
+    "posthumousName": "威烈王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周威烈王"
+    }
+  },
+  {
+    "id": "reign-ji-jiao",
+    "dynastyId": "zhou-east",
+    "personId": "ji-jiao",
+    "title": "周安王",
+    "eraNames": [],
+    "start": {
+      "year": -401,
+      "month": 1
+    },
+    "end": {
+      "year": -376,
+      "month": 12
+    },
+    "startAbs": -4800,
+    "endAbs": -4489,
+    "precision": "year",
+    "posthumousName": "安王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周安王"
+    }
+  },
+  {
+    "id": "reign-ji-xi",
+    "dynastyId": "zhou-east",
+    "personId": "ji-xi",
+    "title": "周烈王",
+    "eraNames": [],
+    "start": {
+      "year": -375,
+      "month": 1
+    },
+    "end": {
+      "year": -369,
+      "month": 12
+    },
+    "startAbs": -4488,
+    "endAbs": -4405,
+    "precision": "year",
+    "posthumousName": "烈王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周烈王"
+    }
+  },
+  {
+    "id": "reign-ji-bian",
+    "dynastyId": "zhou-east",
+    "personId": "ji-bian",
+    "title": "周显王",
+    "eraNames": [],
+    "start": {
+      "year": -368,
+      "month": 1
+    },
+    "end": {
+      "year": -321,
+      "month": 12
+    },
+    "startAbs": -4404,
+    "endAbs": -3829,
+    "precision": "year",
+    "posthumousName": "显王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周显王"
+    }
+  },
+  {
+    "id": "reign-ji-ding",
+    "dynastyId": "zhou-east",
+    "personId": "ji-ding",
+    "title": "周慎靓王",
+    "eraNames": [],
+    "start": {
+      "year": -320,
+      "month": 1
+    },
+    "end": {
+      "year": -315,
+      "month": 12
+    },
+    "startAbs": -3828,
+    "endAbs": -3757,
+    "precision": "year",
+    "posthumousName": "慎靓王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周慎靓王"
+    }
+  },
+  {
+    "id": "reign-ji-yan",
+    "dynastyId": "zhou-east",
+    "personId": "ji-yan",
+    "title": "周赧王",
+    "eraNames": [],
+    "start": {
+      "year": -314,
+      "month": 1
+    },
+    "end": {
+      "year": -256,
+      "month": 12
+    },
+    "startAbs": -3756,
+    "endAbs": -3049,
+    "precision": "year",
+    "posthumousName": "赧王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周赧王"
+    }
+  },
+  {
+    "id": "reign-liu-xiu",
+    "dynastyId": "han-east",
+    "personId": "liu-xiu",
+    "title": "光武帝",
+    "posthumousName": "光武皇帝",
+    "templeName": "世祖",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "汉光武帝"
+    },
+    "eraNames": [
+      {
+        "name": "建武",
+        "start": {
+          "year": 25,
+          "month": 1
+        },
+        "end": {
+          "year": 56,
+          "month": 12
+        },
+        "startAbs": 300,
+        "endAbs": 683
+      }
+    ],
+    "start": {
+      "year": 25,
+      "month": 1
+    },
+    "end": {
+      "year": 57,
+      "month": 3
+    },
+    "startAbs": 300,
+    "endAbs": 686,
+    "precision": "year"
+  },
+  {
+    "id": "reign-liu-xie",
+    "dynastyId": "han-east",
+    "personId": "liu-xie",
+    "title": "汉献帝",
+    "posthumousName": "孝献皇帝",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "汉献帝"
+    },
+    "eraNames": [
+      {
+        "name": "建安",
+        "start": {
+          "year": 196,
+          "month": 1
+        },
+        "end": {
+          "year": 220,
+          "month": 12
+        },
+        "startAbs": 2352,
+        "endAbs": 2651,
+        "precision": "month"
+      }
+    ],
+    "start": {
+      "year": 189,
+      "month": 9
+    },
+    "end": {
+      "year": 220,
+      "month": 12
+    },
+    "startAbs": 2276,
+    "endAbs": 2651,
+    "precision": "month"
+  },
+  {
+    "id": "reign-cao-pi",
+    "dynastyId": "wei",
+    "personId": "cao-pi",
+    "title": "魏文帝",
+    "posthumousName": "文皇帝",
+    "templeName": "高祖",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "魏文帝"
+    },
+    "eraNames": [
+      {
+        "name": "黄初",
+        "start": {
+          "year": 220,
+          "month": 12
+        },
+        "end": {
+          "year": 226,
+          "month": 6
+        },
+        "startAbs": 2651,
+        "endAbs": 2717,
+        "precision": "month"
+      }
+    ],
+    "start": {
+      "year": 220,
+      "month": 12
+    },
+    "end": {
+      "year": 226,
+      "month": 6
+    },
+    "startAbs": 2651,
+    "endAbs": 2717,
+    "precision": "month"
+  },
+  {
+    "id": "reign-cao-rui",
+    "dynastyId": "wei",
+    "personId": "cao-rui",
+    "title": "魏明帝",
+    "posthumousName": "明皇帝",
+    "templeName": "烈祖",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "魏明帝"
+    },
+    "eraNames": [
+      {
+        "name": "太和",
+        "start": {
+          "year": 227,
+          "month": 1
+        },
+        "end": {
+          "year": 233,
+          "month": 1
+        },
+        "startAbs": 2724,
+        "endAbs": 2796,
+        "precision": "year"
+      }
+    ],
+    "start": {
+      "year": 226,
+      "month": 6
+    },
+    "end": {
+      "year": 239,
+      "month": 1
+    },
+    "startAbs": 2717,
+    "endAbs": 2868,
+    "precision": "month"
+  },
+  {
+    "id": "reign-liu-bei",
+    "dynastyId": "shu",
+    "personId": "liu-bei",
+    "title": "昭烈帝",
+    "posthumousName": "昭烈皇帝",
+    "templeName": "烈祖",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "汉昭烈帝"
+    },
+    "eraNames": [
+      {
+        "name": "章武",
+        "start": {
+          "year": 221,
+          "month": 5
+        },
+        "end": {
+          "year": 223,
+          "month": 6
+        },
+        "startAbs": 2656,
+        "endAbs": 2681,
+        "precision": "month"
+      }
+    ],
+    "start": {
+      "year": 221,
+      "month": 5
+    },
+    "end": {
+      "year": 223,
+      "month": 6
+    },
+    "startAbs": 2656,
+    "endAbs": 2681,
+    "precision": "month"
+  },
+  {
+    "id": "reign-liu-shan",
+    "dynastyId": "shu",
+    "personId": "liu-shan",
+    "title": "蜀汉后主",
+    "posthumousName": "孝怀皇帝",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "蜀汉后主"
+    },
+    "eraNames": [
+      {
+        "name": "建兴",
+        "start": {
+          "year": 223,
+          "month": 6
+        },
+        "end": {
+          "year": 237,
+          "month": 1
+        },
+        "startAbs": 2681,
+        "endAbs": 2844,
+        "precision": "year"
+      }
+    ],
+    "start": {
+      "year": 223,
+      "month": 6
+    },
+    "end": {
+      "year": 263,
+      "month": 11
+    },
+    "startAbs": 2681,
+    "endAbs": 3166,
+    "precision": "month"
+  },
+  {
+    "id": "reign-sun-quan",
+    "dynastyId": "wu",
+    "personId": "sun-quan",
+    "title": "大皇帝",
+    "posthumousName": "大皇帝",
+    "templeName": "太祖",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "吴大帝"
+    },
+    "eraNames": [
+      {
+        "name": "黄武",
+        "start": {
+          "year": 222,
+          "month": 10
+        },
+        "end": {
+          "year": 229,
+          "month": 4
+        },
+        "startAbs": 2673,
+        "endAbs": 2751,
+        "precision": "month"
+      }
+    ],
+    "start": {
+      "year": 222,
+      "month": 10
+    },
+    "end": {
+      "year": 252,
+      "month": 4
+    },
+    "startAbs": 2673,
+    "endAbs": 3027,
+    "precision": "month"
+  },
+  {
+    "id": "reign-sun-liang",
+    "dynastyId": "wu",
+    "personId": "sun-liang",
+    "title": "会稽王",
+    "posthumousName": "会稽王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "吴少帝"
+    },
+    "eraNames": [
+      {
+        "name": "建兴",
+        "start": {
+          "year": 252,
+          "month": 5
+        },
+        "end": {
+          "year": 253,
+          "month": 1
+        },
+        "startAbs": 3028,
+        "endAbs": 3036,
+        "precision": "month"
+      }
+    ],
+    "start": {
+      "year": 252,
+      "month": 5
+    },
+    "end": {
+      "year": 258,
+      "month": 11
+    },
+    "startAbs": 3028,
+    "endAbs": 3106,
+    "precision": "month"
+  }
+]

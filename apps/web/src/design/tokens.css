@@ -1,0 +1,96 @@
+:root {
+  color-scheme: light;
+  --color-paper: #f7f4ed;
+  --color-surface: #fcfaf5;
+  --color-border: #e4ded2;
+  --color-ink: #1b1917;
+  --color-ink-secondary: #5c564c;
+  --color-ink-muted: #8c857a;
+  --color-accent: #c0392b;
+  --color-accent-soft: rgba(192, 57, 43, 0.12);
+  --color-cinnabar: #a8432f;
+  --color-mineral: #3a6b6e;
+  --color-ochre: #9a7b4f;
+  --color-indigo: #3c4e7a;
+  --color-moss: #5c6b4a;
+  --color-wisteria: #be8a2c;
+  --color-grape: #6e4b5c;
+  --color-stone: #4a5e6b;
+  --radius-sm: 4px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --header-height: 56px;
+  --ruler-height: 71px;
+  --lane-height: 72px;
+  --dynasty-bar-height: 56px;
+  --detail-min-width: 360px;
+  --detail-max-width: 640px;
+  --detail-default-width: 420px;
+  --motion-fast: 160ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  --motion-panel: 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  --font-serif: "Noto Serif SC", "Songti SC", serif;
+  --font-sans: "Noto Sans SC", "Inter", system-ui, sans-serif;
+  --shadow-subtle: 0 1px 0 rgba(27, 25, 23, 0.04);
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --color-paper: #15140f;
+  --color-surface: #1d1b15;
+  --color-border: #2f2b24;
+  --color-ink: #ede7da;
+  --color-ink-secondary: #b8b0a2;
+  --color-ink-muted: #8a8275;
+  --color-accent-soft: rgba(224, 96, 80, 0.16);
+  --color-cinnabar: #c45a48;
+  --color-mineral: #4d8588;
+  --color-ochre: #b89462;
+  --color-indigo: #5a6f9e;
+  --color-moss: #748664;
+  --color-wisteria: #d4a045;
+  --color-grape: #8a6274;
+  --color-stone: #627786;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+html,
+body {
+  position: fixed;
+  inset: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-variant-numeric: tabular-nums;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}

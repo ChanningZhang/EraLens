@@ -1,0 +1,224 @@
+import type {
+  Dynasty,
+  Event,
+  Person,
+  Reign,
+  Relation,
+  TimelineDataStore,
+} from "@eralens/shared";
+import type {
+  Dynasty as DbDynasty,
+  EraName as DbEraName,
+  Event as DbEvent,
+  Person as DbPerson,
+  Reign as DbReign,
+  Relation as DbRelation,
+} from "@prisma/client";
+
+type PreferredAppellation = {
+  kind: "posthumous" | "temple" | "era" | "regnal";
+  name: string;
+};
+
+export type RawDynastyRow = {
+  id: string;
+  name: string;
+  alt_names: string[];
+  scope: string;
+  region: string;
+  start_year: number;
+  start_month: number;
+  end_year: number;
+  end_month: number;
+  start_abs: number;
+  end_abs: number;
+  precision: string;
+  color_token: string;
+  parent_id: string | null;
+  note: string | null;
+};
+
+export type RawReignRow = {
+  id: string;
+  dynasty_id: string;
+  person_id: string;
+  title: string;
+  posthumous_name: string | null;
+  temple_name: string | null;
+  preferred_appellation: unknown;
+  start_year: number;
+  start_month: number;
+  end_year: number;
+  end_month: number;
+  start_abs: number;
+  end_abs: number;
+  precision: string;
+};
+
+export type RawEventRow = {
+  id: string;
+  name: string;
+  kind: string;
+  time_mode: string;
+  precision: string;
+  date_note: string | null;
+  at_year: number | null;
+  at_month: number | null;
+  at_abs: number | null;
+  start_year: number | null;
+  start_month: number | null;
+  start_abs: number | null;
+  end_year: number | null;
+  end_month: number | null;
+  end_abs: number | null;
+  summary: string | null;
+};
+
+export function mapPerson(row: DbPerson): Person {
+  return {
+    id: row.id,
+    name: row.name,
+    birth:
+      row.birthYear != null && row.birthMonth != null
+        ? { year: row.birthYear, month: row.birthMonth }
+        : undefined,
+    death:
+      row.deathYear != null && row.deathMonth != null
+        ? { year: row.deathYear, month: row.deathMonth }
+        : undefined,
+    roles: row.roles,
+    bio: row.bio ?? undefined,
+    links: (row.links as Person["links"]) ?? [],
+  };
+}
+
+export function mapDynasty(row: DbDynasty | RawDynastyRow): Dynasty {
+  const altNames = "altNames" in row ? row.altNames : row.alt_names;
+  const startYear = "startYear" in row ? row.startYear : row.start_year;
+  const startMonth = "startMonth" in row ? row.startMonth : row.start_month;
+  const endYear = "endYear" in row ? row.endYear : row.end_year;
+  const endMonth = "endMonth" in row ? row.endMonth : row.end_month;
+  const startAbs = "startAbs" in row ? row.startAbs : row.start_abs;
+  const endAbs = "endAbs" in row ? row.endAbs : row.end_abs;
+  const colorToken = "colorToken" in row ? row.colorToken : row.color_token;
+  const parentId = "parentId" in row ? row.parentId : row.parent_id;
+  const noteValue = row.note;
+
+  return {
+    id: row.id,
+    name: row.name,
+    altNames,
+    scope: row.scope as Dynasty["scope"],
+    region: row.region,
+    start: { year: startYear, month: startMonth },
+    end: { year: endYear, month: endMonth },
+    startAbs,
+    endAbs,
+    precision: row.precision as Dynasty["precision"],
+    colorToken: colorToken as Dynasty["colorToken"],
+    parentId: parentId ?? undefined,
+    note: noteValue ?? undefined,
+  };
+}
+
+export function mapReign(
+  row: DbReign | RawReignRow,
+  eraNames: DbEraName[],
+): Reign {
+  const dynastyId = "dynastyId" in row ? row.dynastyId : row.dynasty_id;
+  const personId = "personId" in row ? row.personId : row.person_id;
+  const posthumousName =
+    "posthumousName" in row ? row.posthumousName : row.posthumous_name;
+  const templeName = "templeName" in row ? row.templeName : row.temple_name;
+  const preferredAppellation =
+    "preferredAppellation" in row ? row.preferredAppellation : row.preferred_appellation;
+  const startYear = "startYear" in row ? row.startYear : row.start_year;
+  const startMonth = "startMonth" in row ? row.startMonth : row.start_month;
+  const endYear = "endYear" in row ? row.endYear : row.end_year;
+  const endMonth = "endMonth" in row ? row.endMonth : row.end_month;
+  const startAbs = "startAbs" in row ? row.startAbs : row.start_abs;
+  const endAbs = "endAbs" in row ? row.endAbs : row.end_abs;
+
+  return {
+    id: row.id,
+    dynastyId,
+    personId,
+    title: row.title,
+    posthumousName: posthumousName ?? undefined,
+    templeName: templeName ?? undefined,
+    preferredAppellation: (preferredAppellation as PreferredAppellation | null) ?? undefined,
+    eraNames: eraNames
+      .sort((a, b) => a.sortOrder - b.sortOrder)
+      .map((era) => ({
+        name: era.name,
+        start: { year: era.startYear, month: era.startMonth },
+        end: { year: era.endYear, month: era.endMonth },
+        startAbs: era.startAbs,
+        endAbs: era.endAbs,
+      })),
+    start: { year: startYear, month: startMonth },
+    end: { year: endYear, month: endMonth },
+    startAbs,
+    endAbs,
+    precision: row.precision as Reign["precision"],
+  };
+}
+
+export function mapEvent(
+  row: (DbEvent | RawEventRow) & {
+    dynasties: { dynastyId: string }[];
+    participants: { personId: string }[];
+  },
+): Event {
+  const atYear = "atYear" in row ? row.atYear : row.at_year;
+  const atMonth = "atMonth" in row ? row.atMonth : row.at_month;
+  const atAbs = "atAbs" in row ? row.atAbs : row.at_abs;
+  const startYear = "startYear" in row ? row.startYear : row.start_year;
+  const startMonth = "startMonth" in row ? row.startMonth : row.start_month;
+  const startAbs = "startAbs" in row ? row.startAbs : row.start_abs;
+  const endYear = "endYear" in row ? row.endYear : row.end_year;
+  const endMonth = "endMonth" in row ? row.endMonth : row.end_month;
+  const endAbs = "endAbs" in row ? row.endAbs : row.end_abs;
+  const timeMode = "timeMode" in row ? row.timeMode : row.time_mode;
+  const dateNote = "dateNote" in row ? row.dateNote : row.date_note;
+
+  return {
+    id: row.id,
+    name: row.name,
+    kind: row.kind as Event["kind"],
+    timeMode: (timeMode as Event["timeMode"] | null) ?? "point",
+    precision: (row.precision as Event["precision"] | null) ?? "year",
+    dateNote: dateNote ?? undefined,
+    at: atYear != null && atMonth != null ? { year: atYear, month: atMonth } : undefined,
+    start:
+      startYear != null && startMonth != null
+        ? { year: startYear, month: startMonth }
+        : undefined,
+    end: endYear != null && endMonth != null ? { year: endYear, month: endMonth } : undefined,
+    atAbs: atAbs ?? undefined,
+    startAbs: startAbs ?? undefined,
+    endAbs: endAbs ?? undefined,
+    dynastyIds: row.dynasties.map((d) => d.dynastyId),
+    participantIds: row.participants.map((p) => p.personId),
+    summary: row.summary ?? undefined,
+  };
+}
+
+export function mapRelation(row: DbRelation): Relation {
+  return {
+    id: row.id,
+    fromRef: `${row.fromType}:${row.fromId}`,
+    toRef: `${row.toType}:${row.toId}`,
+    kind: row.kind as Relation["kind"],
+  };
+}
+
+export function toTimelineDataStore(input: {
+  persons: Person[];
+  dynasties: Dynasty[];
+  reigns: Reign[];
+  events: Event[];
+  relations: Relation[];
+}): TimelineDataStore {
+  return input;
+}

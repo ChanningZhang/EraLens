@@ -1,0 +1,197 @@
+[
+  {
+    "id": "xia",
+    "name": "夏",
+    "altNames": [
+      "夏后氏"
+    ],
+    "scope": "cn",
+    "region": "east_asia",
+    "start": {
+      "year": -2070,
+      "month": 1
+    },
+    "end": {
+      "year": -1600,
+      "month": 12
+    },
+    "startAbs": -24828,
+    "endAbs": -19177,
+    "precision": "year",
+    "colorToken": "ochre",
+    "note": "夏商周断代工程拟夏始约前2070年、夏商分界约前1600年；具体王年多不可考，学界对其历史性仍有争议。"
+  },
+  {
+    "id": "shang",
+    "name": "商",
+    "altNames": [
+      "殷",
+      "殷商"
+    ],
+    "scope": "cn",
+    "region": "east_asia",
+    "start": {
+      "year": -1600,
+      "month": 1
+    },
+    "end": {
+      "year": -1046,
+      "month": 1
+    },
+    "startAbs": -19188,
+    "endAbs": -12540,
+    "precision": "year",
+    "colorToken": "mineral",
+    "note": "断代工程：商始约前1600年，盘庚迁殷约前1300年，武王克商前1046年。"
+  },
+  {
+    "id": "zhou-west",
+    "name": "西周",
+    "altNames": [
+      "周"
+    ],
+    "scope": "cn",
+    "region": "east_asia",
+    "start": {
+      "year": -1046,
+      "month": 1
+    },
+    "end": {
+      "year": -771,
+      "month": 12
+    },
+    "startAbs": -12540,
+    "endAbs": -9229,
+    "precision": "year",
+    "colorToken": "indigo",
+    "note": "武王克商至犬戎破镐。列王年取夏商周断代工程《夏商周年表》。"
+  },
+  {
+    "id": "zhou-east",
+    "name": "东周",
+    "altNames": [
+      "周"
+    ],
+    "scope": "cn",
+    "region": "east_asia",
+    "start": {
+      "year": -770,
+      "month": 1
+    },
+    "end": {
+      "year": -256,
+      "month": 12
+    },
+    "startAbs": -9228,
+    "endAbs": -3049,
+    "precision": "year",
+    "colorToken": "moss",
+    "note": "平王东迁至秦灭周。王年取《史记》系统常见年表；东周王室衰微，列国争霸不另建王朝行。"
+  },
+  {
+    "id": "han-east",
+    "name": "东汉",
+    "altNames": [
+      "后汉"
+    ],
+    "scope": "cn",
+    "region": "east_asia",
+    "start": {
+      "year": 25,
+      "month": 1
+    },
+    "end": {
+      "year": 220,
+      "month": 12
+    },
+    "startAbs": 300,
+    "endAbs": 2651,
+    "precision": "year",
+    "colorToken": "ochre",
+    "note": "光武帝刘秀建立"
+  },
+  {
+    "id": "wei",
+    "name": "曹魏",
+    "altNames": [
+      "魏"
+    ],
+    "scope": "cn",
+    "region": "east_asia",
+    "start": {
+      "year": 220,
+      "month": 12
+    },
+    "end": {
+      "year": 266,
+      "month": 2
+    },
+    "startAbs": 2651,
+    "endAbs": 3193,
+    "precision": "month",
+    "colorToken": "indigo",
+    "parentId": "three-kingdoms"
+  },
+  {
+    "id": "shu",
+    "name": "蜀汉",
+    "altNames": [
+      "蜀"
+    ],
+    "scope": "cn",
+    "region": "east_asia",
+    "start": {
+      "year": 221,
+      "month": 5
+    },
+    "end": {
+      "year": 263,
+      "month": 11
+    },
+    "startAbs": 2656,
+    "endAbs": 3166,
+    "precision": "month",
+    "colorToken": "moss",
+    "parentId": "three-kingdoms"
+  },
+  {
+    "id": "wu",
+    "name": "孙吴",
+    "altNames": [
+      "吴"
+    ],
+    "scope": "cn",
+    "region": "east_asia",
+    "start": {
+      "year": 222,
+      "month": 10
+    },
+    "end": {
+      "year": 280,
+      "month": 5
+    },
+    "startAbs": 2673,
+    "endAbs": 3364,
+    "precision": "month",
+    "colorToken": "mineral",
+    "parentId": "three-kingdoms"
+  },
+  {
+    "id": "jin-west",
+    "name": "西晋",
+    "scope": "cn",
+    "region": "east_asia",
+    "start": {
+      "year": 266,
+      "month": 2
+    },
+    "end": {
+      "year": 316,
+      "month": 4
+    },
+    "startAbs": 3193,
+    "endAbs": 3795,
+    "precision": "month",
+    "colorToken": "stone"
+  }
+]

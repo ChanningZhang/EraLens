@@ -1,0 +1,24 @@
+.handle {
+  width: 6px;
+  cursor: col-resize;
+  background: transparent;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.handle::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 2px;
+  width: 1px;
+  background: var(--color-border);
+}
+
+.handle:hover::after,
+.handleActive::after {
+  background: var(--color-accent);
+  width: 2px;
+  left: 1px;
+}

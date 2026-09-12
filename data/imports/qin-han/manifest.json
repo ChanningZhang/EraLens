@@ -1,0 +1,71 @@
+{
+  "slug": "qin-han",
+  "title": "秦汉（含新莽、更始、东汉）",
+  "window": {
+    "startYear": -221,
+    "startMonth": 1,
+    "endYear": 220,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-12",
+  "counts": {
+    "persons": 48,
+    "dynasties": 6,
+    "reigns": 35,
+    "events": 30,
+    "relations": 35
+  },
+  "sources": [
+    {
+      "label": "秦朝",
+      "url": "https://zh.wikipedia.org/wiki/秦朝"
+    },
+    {
+      "label": "西汉",
+      "url": "https://zh.wikipedia.org/wiki/西汉"
+    },
+    {
+      "label": "东汉",
+      "url": "https://zh.wikipedia.org/wiki/东汉"
+    },
+    {
+      "label": "新朝",
+      "url": "https://zh.wikipedia.org/wiki/新朝"
+    },
+    {
+      "label": "更始政权",
+      "url": "https://zh.wikipedia.org/wiki/更始政权"
+    },
+    {
+      "label": "汉朝君主列表",
+      "url": "https://zh.wikipedia.org/wiki/汉朝君主列表"
+    },
+    {
+      "label": "西楚",
+      "url": "https://zh.wikipedia.org/wiki/西楚"
+    },
+    {
+      "label": "楚汉战争",
+      "url": "https://zh.wikipedia.org/wiki/楚汉战争"
+    },
+    {
+      "label": "漠北之战",
+      "url": "https://zh.wikipedia.org/wiki/漠北之战"
+    },
+    {
+      "label": "巨鹿之战",
+      "url": "https://zh.wikipedia.org/wiki/巨鹿之战"
+    }
+  ],
+  "notes": [
+    "覆盖秦统一（前221）至东汉终结（220年），含西楚、新莽、更始等过渡政权。",
+    "王朝与皇帝在位年取《史记》《后汉书》系统常见年表（与维基百科汉朝君主列表一致），precision=year。",
+    "秦末诸侯（章邯、项梁、魏豹等）以人物与事件收录，不另建诸侯国王朝行。",
+    "武帝时期补录河西之战、漠北之战、远征大宛等重大战役。",
+    "吕后临朝不建皇帝 reign，以 span 事件「吕后称制」表示。",
+    "东汉前/后少帝在位极短，仍列入在位卡片；年号自武帝（西汉）及光武（东汉）起写入 era_names。",
+    "未收录三国曹魏及赤眉军刘盆子政权，以免超出两汉主线。"
+  ]
+}

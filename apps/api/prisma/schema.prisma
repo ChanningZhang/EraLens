@@ -1,0 +1,157 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Person {
+  id          String              @id
+  name        String
+  birthYear   Int?                @map("birth_year")
+  birthMonth  Int?                @map("birth_month")
+  deathYear   Int?                @map("death_year")
+  deathMonth  Int?                @map("death_month")
+  roles       String[]            @default([])
+  bio         String?
+  links       Json                @default("[]")
+  reigns      Reign[]
+  participants EventParticipant[]
+
+  @@index([birthYear])
+  @@index([deathYear])
+  @@index([name])
+  @@map("persons")
+}
+
+model Dynasty {
+  id          String           @id
+  name        String
+  altNames    String[]         @default([]) @map("alt_names")
+  scope       String           @default("cn")
+  region      String           @default("east_asia")
+  startYear   Int              @map("start_year")
+  startMonth  Int              @map("start_month")
+  endYear     Int              @map("end_year")
+  endMonth    Int              @map("end_month")
+  startAbs    Int              @map("start_abs")
+  endAbs      Int              @map("end_abs")
+  precision   String           @default("year")
+  colorToken  String           @map("color_token")
+  parentId    String?          @map("parent_id")
+  note        String?
+  reigns      Reign[]
+  eventDynasties EventDynasty[]
+
+  @@index([startYear])
+  @@index([endYear])
+  @@index([scope, startAbs, endAbs])
+  @@map("dynasties")
+}
+
+model Reign {
+  id                    String      @id
+  dynastyId             String      @map("dynasty_id")
+  personId              String      @map("person_id")
+  title                 String
+  posthumousName        String?     @map("posthumous_name")
+  templeName            String?     @map("temple_name")
+  preferredAppellation  Json?       @map("preferred_appellation")
+  startYear             Int         @map("start_year")
+  startMonth            Int         @map("start_month")
+  endYear               Int         @map("end_year")
+  endMonth              Int         @map("end_month")
+  startAbs              Int         @map("start_abs")
+  endAbs                Int         @map("end_abs")
+  precision             String      @default("year")
+  dynasty               Dynasty     @relation(fields: [dynastyId], references: [id])
+  person                Person      @relation(fields: [personId], references: [id])
+  eraNames              EraName[]
+
+  @@index([startYear])
+  @@index([endYear])
+  @@index([dynastyId])
+  @@index([personId])
+  @@map("reigns")
+}
+
+model EraName {
+  id         Int    @id @default(autoincrement())
+  reignId    String @map("reign_id")
+  name       String
+  startYear  Int    @map("start_year")
+  startMonth Int    @map("start_month")
+  endYear    Int    @map("end_year")
+  endMonth   Int    @map("end_month")
+  startAbs   Int    @map("start_abs")
+  endAbs     Int    @map("end_abs")
+  sortOrder  Int    @default(0) @map("sort_order")
+  reign      Reign  @relation(fields: [reignId], references: [id], onDelete: Cascade)
+
+  @@index([startYear])
+  @@index([endYear])
+  @@index([reignId])
+  @@index([startAbs])
+  @@index([endAbs])
+  @@map("era_names")
+}
+
+model Event {
+  id          String              @id
+  name        String
+  kind        String              @default("other")
+  timeMode    String              @default("point") @map("time_mode")
+  precision   String              @default("year")
+  dateNote    String?             @map("date_note")
+  atYear      Int?                @map("at_year")
+  atMonth     Int?                @map("at_month")
+  atAbs       Int?                @map("at_abs")
+  startYear   Int?                @map("start_year")
+  startMonth  Int?                @map("start_month")
+  startAbs    Int?                @map("start_abs")
+  endYear     Int?                @map("end_year")
+  endMonth    Int?                @map("end_month")
+  endAbs      Int?                @map("end_abs")
+  summary     String?
+  dynasties   EventDynasty[]
+  participants EventParticipant[]
+
+  @@index([atYear])
+  @@index([startYear])
+  @@index([endYear])
+  @@map("events")
+}
+
+model EventDynasty {
+  eventId   String  @map("event_id")
+  dynastyId String  @map("dynasty_id")
+  event     Event   @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  dynasty   Dynasty @relation(fields: [dynastyId], references: [id], onDelete: Cascade)
+
+  @@id([eventId, dynastyId])
+  @@map("event_dynasties")
+}
+
+model EventParticipant {
+  eventId  String @map("event_id")
+  personId String @map("person_id")
+  event    Event  @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  person   Person @relation(fields: [personId], references: [id], onDelete: Cascade)
+
+  @@id([eventId, personId])
+  @@map("event_participants")
+}
+
+model Relation {
+  id       String @id
+  fromType String @map("from_type")
+  fromId   String @map("from_id")
+  toType   String @map("to_type")
+  toId     String @map("to_id")
+  kind     String
+
+  @@unique([fromType, fromId, toType, toId, kind])
+  @@map("relations")
+}

@@ -1,0 +1,1114 @@
+[
+  {
+    "id": "si-yu",
+    "name": "禹",
+    "roles": [
+      "君主"
+    ],
+    "bio": "夏朝开国之君，史称大禹，传说治水有功。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/禹"
+      }
+    ]
+  },
+  {
+    "id": "si-qi",
+    "name": "启",
+    "roles": [
+      "君主"
+    ],
+    "bio": "禹之子，传统记载变禅让为世袭，史称家天下。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/启_(夏朝)"
+      }
+    ]
+  },
+  {
+    "id": "si-taikang",
+    "name": "太康",
+    "roles": [
+      "君主"
+    ],
+    "bio": "夏启之子，传说失国于后羿。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/太康_(夏朝)"
+      }
+    ]
+  },
+  {
+    "id": "hou-yi",
+    "name": "后羿",
+    "roles": [
+      "君主",
+      "军事家"
+    ],
+    "bio": "有穷氏首领，传说代夏政，史称后羿代夏。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/后羿_(夏朝)"
+      }
+    ]
+  },
+  {
+    "id": "si-shaokang",
+    "name": "少康",
+    "roles": [
+      "君主"
+    ],
+    "bio": "夏相之子，传统记载中兴夏后氏。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/少康"
+      }
+    ]
+  },
+  {
+    "id": "si-jie",
+    "name": "桀",
+    "roles": [
+      "君主"
+    ],
+    "bio": "夏朝末代之王履癸，鸣条之战为商汤所灭。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/桀"
+      }
+    ]
+  },
+  {
+    "id": "zi-tang",
+    "name": "汤",
+    "roles": [
+      "君主"
+    ],
+    "bio": "商朝开国之君成汤，鸣条之战灭夏。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/商汤"
+      }
+    ]
+  },
+  {
+    "id": "yi-yin",
+    "name": "伊尹",
+    "roles": [
+      "政治家"
+    ],
+    "bio": "商初重臣，辅汤灭夏，传说曾放太甲于桐宫。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/伊尹"
+      }
+    ]
+  },
+  {
+    "id": "zi-taijia",
+    "name": "太甲",
+    "roles": [
+      "君主"
+    ],
+    "bio": "汤之孙，商朝早期重要君主，与伊尹传说相关。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/太甲"
+      }
+    ]
+  },
+  {
+    "id": "zi-pangeng",
+    "name": "盘庚",
+    "roles": [
+      "君主"
+    ],
+    "bio": "商王，约前1300年迁都于殷，晚商以此为界。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/盘庚"
+      }
+    ]
+  },
+  {
+    "id": "zi-wuding",
+    "name": "武丁",
+    "roles": [
+      "君主"
+    ],
+    "bio": "商高宗，甲骨文所见盛世之王，史称武丁中兴。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/武丁"
+      }
+    ]
+  },
+  {
+    "id": "fu-hao",
+    "name": "妇好",
+    "roles": [
+      "王后",
+      "军事家"
+    ],
+    "bio": "武丁配偶，甲骨与殷墟墓葬所见女将、祭司。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/妇好"
+      }
+    ]
+  },
+  {
+    "id": "zi-wuyi",
+    "name": "武乙",
+    "roles": [
+      "君主"
+    ],
+    "bio": "晚商之王，断代工程定其在位前1147–前1113年。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/武乙"
+      }
+    ]
+  },
+  {
+    "id": "zi-wending",
+    "name": "文丁",
+    "roles": [
+      "君主"
+    ],
+    "bio": "晚商之王，《史记》或作太丁。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/文丁"
+      }
+    ]
+  },
+  {
+    "id": "zi-diyi",
+    "name": "帝乙",
+    "roles": [
+      "君主"
+    ],
+    "bio": "晚商之王，帝辛之父。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/帝乙"
+      }
+    ]
+  },
+  {
+    "id": "zi-dixin",
+    "name": "帝辛",
+    "roles": [
+      "君主"
+    ],
+    "bio": "商朝末代之王，世称纣，牧野之战亡于周。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/帝辛"
+      }
+    ]
+  },
+  {
+    "id": "ji-chang",
+    "name": "姬昌",
+    "roles": [
+      "西伯",
+      "君主"
+    ],
+    "bio": "周文王，商末西伯，武王之父。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周文王"
+      }
+    ]
+  },
+  {
+    "id": "ji-fa",
+    "name": "姬发",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周武王，牧野克商，建立西周。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周武王"
+      }
+    ]
+  },
+  {
+    "id": "ji-dan",
+    "name": "姬旦",
+    "roles": [
+      "政治家"
+    ],
+    "bio": "周公旦，武王之弟，成王初摄政，东征平三监。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周公旦"
+      }
+    ]
+  },
+  {
+    "id": "lv-shang",
+    "name": "吕尚",
+    "roles": [
+      "军事家",
+      "政治家"
+    ],
+    "bio": "姜太公，辅武王克商，封于齐。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/姜子牙"
+      }
+    ]
+  },
+  {
+    "id": "ji-song",
+    "name": "姬诵",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周成王，周公辅政，与康王并称成康之治。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周成王"
+      }
+    ]
+  },
+  {
+    "id": "ji-zhao",
+    "name": "姬钊",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周康王，成康之治后期之王。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周康王"
+      }
+    ]
+  },
+  {
+    "id": "ji-xia",
+    "name": "姬瑕",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周昭王，南征荆楚，传说卒于汉水。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周昭王"
+      }
+    ]
+  },
+  {
+    "id": "ji-man",
+    "name": "姬满",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周穆王，西周在位最久的天子之一。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周穆王"
+      }
+    ]
+  },
+  {
+    "id": "ji-yihu",
+    "name": "姬繄扈",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周共王，穆王之子。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周共王"
+      }
+    ]
+  },
+  {
+    "id": "ji-jian",
+    "name": "姬囏",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周懿王，断代工程以元年天再旦为前899年。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周懿王"
+      }
+    ]
+  },
+  {
+    "id": "ji-pifang",
+    "name": "姬辟方",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周孝王，共王之弟，继懿王而立。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周孝王"
+      }
+    ]
+  },
+  {
+    "id": "ji-xie",
+    "name": "姬燮",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周夷王。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周夷王"
+      }
+    ]
+  },
+  {
+    "id": "ji-hu",
+    "name": "姬胡",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周厉王，专利引发国人暴动，出奔于彘。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周厉王"
+      }
+    ]
+  },
+  {
+    "id": "ji-jing",
+    "name": "姬静",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周宣王，共和之后即位，史称宣王中兴。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周宣王"
+      }
+    ]
+  },
+  {
+    "id": "ji-gongsheng",
+    "name": "姬宫湦",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周幽王，犬戎之祸中身死，西周终结。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周幽王"
+      }
+    ]
+  },
+  {
+    "id": "ji-yijiu",
+    "name": "姬宜臼",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周平王，东迁洛邑，东周开始。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周平王"
+      }
+    ]
+  },
+  {
+    "id": "ji-lin",
+    "name": "姬林",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周桓王。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周桓王"
+      }
+    ]
+  },
+  {
+    "id": "ji-tuo",
+    "name": "姬佗",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周庄王。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周庄王"
+      }
+    ]
+  },
+  {
+    "id": "ji-huqi",
+    "name": "姬胡齐",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周釐王，亦作周僖王。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周釐王"
+      }
+    ]
+  },
+  {
+    "id": "ji-lang",
+    "name": "姬阆",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周惠王，其间有王子颓之乱。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周惠王"
+      }
+    ]
+  },
+  {
+    "id": "ji-zheng",
+    "name": "姬郑",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周襄王，晋文公勤王前后在位。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周襄王"
+      }
+    ]
+  },
+  {
+    "id": "ji-renchen",
+    "name": "姬壬臣",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周顷王。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周顷王"
+      }
+    ]
+  },
+  {
+    "id": "ji-ban",
+    "name": "姬班",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周匡王。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周匡王"
+      }
+    ]
+  },
+  {
+    "id": "ji-yu",
+    "name": "姬瑜",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周定王。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周定王"
+      }
+    ]
+  },
+  {
+    "id": "ji-yi",
+    "name": "姬夷",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周简王。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周简王"
+      }
+    ]
+  },
+  {
+    "id": "ji-xiexin",
+    "name": "姬泄心",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周灵王。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周灵王"
+      }
+    ]
+  },
+  {
+    "id": "ji-gui",
+    "name": "姬贵",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周景王。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周景王"
+      }
+    ]
+  },
+  {
+    "id": "ji-meng",
+    "name": "姬猛",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周悼王，在位仅数月。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周悼王"
+      }
+    ]
+  },
+  {
+    "id": "ji-gai",
+    "name": "姬匄",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周敬王，春秋与战国之交的周天子。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周敬王"
+      }
+    ]
+  },
+  {
+    "id": "ji-ren",
+    "name": "姬仁",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周元王。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周元王"
+      }
+    ]
+  },
+  {
+    "id": "ji-jie",
+    "name": "姬介",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周贞定王。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周贞定王"
+      }
+    ]
+  },
+  {
+    "id": "ji-quji",
+    "name": "姬去疾",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周哀王，在位数月为弟所杀。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周哀王"
+      }
+    ]
+  },
+  {
+    "id": "ji-shu",
+    "name": "姬叔",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周思王，杀哀王而立，旋为考王所杀。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周思王"
+      }
+    ]
+  },
+  {
+    "id": "ji-wei",
+    "name": "姬嵬",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周考王。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周考王"
+      }
+    ]
+  },
+  {
+    "id": "ji-wu",
+    "name": "姬午",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周威烈王，前403年命韩赵魏为诸侯。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周威烈王"
+      }
+    ]
+  },
+  {
+    "id": "ji-jiao",
+    "name": "姬骄",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周安王。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周安王"
+      }
+    ]
+  },
+  {
+    "id": "ji-xi",
+    "name": "姬喜",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周烈王。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周烈王"
+      }
+    ]
+  },
+  {
+    "id": "ji-bian",
+    "name": "姬扁",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周显王。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周显王"
+      }
+    ]
+  },
+  {
+    "id": "ji-ding",
+    "name": "姬定",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周慎靓王。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周慎靓王"
+      }
+    ]
+  },
+  {
+    "id": "ji-yan",
+    "name": "姬延",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周赧王，东周末代天子，前256年周亡于秦。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周赧王"
+      }
+    ]
+  },
+  {
+    "id": "jiang-xiaobai",
+    "name": "姜小白",
+    "roles": [
+      "诸侯"
+    ],
+    "bio": "齐桓公，春秋首霸，葵丘会盟。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐桓公"
+      }
+    ]
+  },
+  {
+    "id": "guan-zhong",
+    "name": "管仲",
+    "roles": [
+      "政治家"
+    ],
+    "bio": "齐桓公之相，助齐称霸。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/管仲"
+      }
+    ]
+  },
+  {
+    "id": "ji-chonger",
+    "name": "姬重耳",
+    "roles": [
+      "诸侯"
+    ],
+    "bio": "晋文公，城濮之战胜楚，成为中原霸主。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋文公"
+      }
+    ]
+  },
+  {
+    "id": "kong-qiu",
+    "name": "孔丘",
+    "birth": {
+      "year": -551,
+      "month": 1
+    },
+    "death": {
+      "year": -479,
+      "month": 1
+    },
+    "roles": [
+      "思想家"
+    ],
+    "bio": "孔子，儒家开创者，传统生卒前551–前479年。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/孔子"
+      }
+    ]
+  },
+  {
+    "id": "liu-xiu",
+    "name": "刘秀",
+    "roles": [
+      "皇帝"
+    ],
+    "bio": "东汉开国皇帝，光武帝。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/劉秀"
+      }
+    ]
+  },
+  {
+    "id": "cao-cao",
+    "name": "曹操",
+    "birth": {
+      "year": 155,
+      "month": 1
+    },
+    "death": {
+      "year": 220,
+      "month": 3
+    },
+    "roles": [
+      "政治家",
+      "军事家",
+      "文学家"
+    ],
+    "bio": "东汉末年权臣，魏武帝（追尊），官渡之战主将。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹操"
+      }
+    ]
+  },
+  {
+    "id": "liu-bei",
+    "name": "刘备",
+    "birth": {
+      "year": 161,
+      "month": 1
+    },
+    "death": {
+      "year": 223,
+      "month": 6
+    },
+    "roles": [
+      "皇帝",
+      "政治家"
+    ],
+    "bio": "蜀汉开国皇帝，昭烈帝。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/劉備"
+      }
+    ]
+  },
+  {
+    "id": "sun-quan",
+    "name": "孙权",
+    "birth": {
+      "year": 182,
+      "month": 7
+    },
+    "death": {
+      "year": 252,
+      "month": 4
+    },
+    "roles": [
+      "皇帝"
+    ],
+    "bio": "孙吴开国皇帝，大皇帝。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/孫權"
+      }
+    ]
+  },
+  {
+    "id": "cao-pi",
+    "name": "曹丕",
+    "birth": {
+      "year": 187,
+      "month": 1
+    },
+    "death": {
+      "year": 226,
+      "month": 6
+    },
+    "roles": [
+      "皇帝"
+    ],
+    "bio": "曹魏开国皇帝，魏文帝。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹丕"
+      }
+    ]
+  },
+  {
+    "id": "zhuge-liang",
+    "name": "诸葛亮",
+    "birth": {
+      "year": 181,
+      "month": 1
+    },
+    "death": {
+      "year": 234,
+      "month": 8
+    },
+    "roles": [
+      "丞相",
+      "军事家"
+    ],
+    "bio": "蜀汉丞相，赤壁之战重要参与者。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/诸葛亮"
+      }
+    ]
+  },
+  {
+    "id": "zhou-yu",
+    "name": "周瑜",
+    "birth": {
+      "year": 175,
+      "month": 1
+    },
+    "death": {
+      "year": 210,
+      "month": 1
+    },
+    "roles": [
+      "军事家"
+    ],
+    "bio": "孙吴名将，赤壁之战主将之一。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周瑜"
+      }
+    ]
+  },
+  {
+    "id": "yuan-shao",
+    "name": "袁绍",
+    "birth": {
+      "year": 154,
+      "month": 1
+    },
+    "death": {
+      "year": 202,
+      "month": 6
+    },
+    "roles": [
+      "军阀"
+    ],
+    "bio": "东汉末年北方军阀，官渡之战曹操对手。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/袁绍"
+      }
+    ]
+  },
+  {
+    "id": "liu-xie",
+    "name": "刘协",
+    "birth": {
+      "year": 181,
+      "month": 4
+    },
+    "death": {
+      "year": 234,
+      "month": 4
+    },
+    "roles": [
+      "皇帝"
+    ],
+    "bio": "东汉末代皇帝，史称汉献帝。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/汉献帝"
+      }
+    ]
+  },
+  {
+    "id": "cao-rui",
+    "name": "曹叡",
+    "birth": {
+      "year": 206,
+      "month": 1
+    },
+    "death": {
+      "year": 239,
+      "month": 1
+    },
+    "roles": [
+      "皇帝"
+    ],
+    "bio": "曹魏第二位皇帝，史称魏明帝。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹叡"
+      }
+    ]
+  },
+  {
+    "id": "liu-shan",
+    "name": "刘禅",
+    "birth": {
+      "year": 207,
+      "month": 1
+    },
+    "death": {
+      "year": 271,
+      "month": 1
+    },
+    "roles": [
+      "皇帝"
+    ],
+    "bio": "蜀汉后主，刘备之子。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/刘禅"
+      }
+    ]
+  },
+  {
+    "id": "sun-liang",
+    "name": "孙亮",
+    "birth": {
+      "year": 243,
+      "month": 1
+    },
+    "death": {
+      "year": 260,
+      "month": 1
+    },
+    "roles": [
+      "皇帝"
+    ],
+    "bio": "孙吴第二位皇帝，后被废为会稽王。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/孙亮"
+      }
+    ]
+  }
+]
