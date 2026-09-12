@@ -124,6 +124,10 @@ const persons = [
     bio: "孔子，儒家开创者，传统生卒前551–前479年。",
     links: wiki("孔子"),
   },
+  // 非帝王人物
+  { id: "da-ji", name: "妲己", roles: ["后妃"], bio: "传说中商末帝辛宠妃，牧野之战后商亡。", links: wiki("妲己") },
+  { id: "bao-si", name: "褒姒", roles: ["后妃"], bio: "周幽王宠妃，传说与烽火戏诸侯、犬戎之祸相关。", links: wiki("褒姒") },
+  { id: "ji-shi", name: "姬奭", roles: ["政治家"], bio: "召公奭，周武王弟，与周公旦分陕而治，辅佐成康。", links: wiki("召公奭") },
 ];
 
 const dynasties = [

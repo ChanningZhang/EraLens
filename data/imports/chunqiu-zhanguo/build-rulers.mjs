@@ -60,8 +60,8 @@ const PERSON_OVERRIDES = {
   "伯禽|伯禽": "bo-qin",
   "唐叔虞|姬虞": "ji-shuyu",
   "唐叔虞|虞": "ji-shuyu",
-  "燕召公|姬奭": "zhao-shi",
-  "燕召公|奭": "zhao-shi",
+  "燕召公|姬奭": "ji-shi",
+  "燕召公|奭": "ji-shi",
   "宋微子|子启": "song-weizi",
   "宋微子|启": "song-weizi",
 };
@@ -81,7 +81,7 @@ const NAME_OVERRIDES = {
   "zhao-lie": "赵籍",
   "bo-qin": "伯禽",
   "ji-shuyu": "姬虞",
-  "zhao-shi": "姬奭",
+  "ji-shi": "姬奭",
   "song-weizi": "子启",
 };
 
@@ -109,6 +109,10 @@ const DYNASTY_START = {
   "wei-warring": -424,
   qin: -770,
 };
+
+/** Interpolated / unknown-duration reigns must not look like multi-century lives. */
+const MAX_PLAUSIBLE_REIGN_YEARS = 70;
+const MAX_INTERPOLATED_REIGN_YEARS = 35;
 
 const STATE_PREFIX = {
   "qi-chunqiu": "齐",
@@ -358,6 +362,7 @@ function ensureStatePrefix(title, dynastyId) {
 function parseDuration(raw) {
   const text = stripMd(raw);
   if (/未改元/.test(text)) return 1;
+  if (/[?？]/.test(text)) return "unknown";
   const m = text.match(/(\d+)\s*年/);
   if (m) return parseInt(m[1], 10);
   if (/^1$/.test(text.trim())) return 1;
@@ -391,6 +396,12 @@ function parseRow(rawCols, header, { dynastyId } = {}) {
   if (years && !years.complete && duration === 1 && (years.start != null || years.end != null)) {
     const y = years.start ?? years.end;
     years = { start: y, end: y, complete: true };
+  }
+  if (years?.complete && years.start != null && years.end != null) {
+    const span = years.end - years.start + 1;
+    if (span > MAX_PLAUSIBLE_REIGN_YEARS && typeof duration !== "number") {
+      years = { start: years.start, end: null, complete: false };
+    }
   }
 
   let name = extractGivenName(nameRaw);
@@ -433,9 +444,42 @@ function isCompleteReign(r) {
   return r.complete === true && r.start != null && r.end != null;
 }
 
+function assignInterpolatedRun(run, windowStart, windowEnd) {
+  const count = run.length;
+  const span = windowEnd - windowStart + 1;
+  const even = Math.floor(span / count);
+  if (even <= MAX_INTERPOLATED_REIGN_YEARS) {
+    for (let k = 0; k < count; k += 1) {
+      const a = windowStart + Math.floor((span * k) / count);
+      const b = windowStart + Math.floor((span * (k + 1)) / count) - 1;
+      run[k].start = a;
+      run[k].end = Math.max(a, b);
+      run[k].complete = true;
+    }
+    return;
+  }
+  let cursor = windowStart;
+  for (let k = 0; k < count; k += 1) {
+    const last = k === count - 1;
+    if (last && run[k].endHint != null) {
+      const end = windowEnd;
+      const start = Math.min(end, Math.max(cursor, end - MAX_INTERPOLATED_REIGN_YEARS + 1));
+      run[k].start = start;
+      run[k].end = end;
+    } else {
+      const start = cursor;
+      const end = Math.min(start + MAX_INTERPOLATED_REIGN_YEARS - 1, windowEnd);
+      run[k].start = start;
+      run[k].end = Math.max(start, end);
+      cursor = run[k].end + 1;
+    }
+    run[k].complete = true;
+  }
+}
+
 function fillUndatedYears(rulers, dynastyId) {
   const dynastyStart = DYNASTY_START[dynastyId];
-  const out = rulers.map((r) => ({ ...r }));
+  const out = rulers.map((r) => ({ ...r, startHint: r.start, endHint: r.end }));
   let i = 0;
   while (i < out.length) {
     if (isCompleteReign(out[i])) {
@@ -449,6 +493,9 @@ function fillUndatedYears(rulers, dynastyId) {
     let windowStart = dynastyStart ?? null;
     if (prev?.end != null) windowStart = prev.end + 1;
     if (out[i].start != null) windowStart = out[i].start;
+    if (dynastyStart != null && windowStart != null) {
+      windowStart = Math.max(windowStart, dynastyStart);
+    }
     let windowEnd = next?.start != null ? next.start - 1 : null;
     if (out[j - 1].end != null) {
       windowEnd = windowEnd == null ? out[j - 1].end : Math.min(windowEnd, out[j - 1].end);
@@ -458,15 +505,7 @@ function fillUndatedYears(rulers, dynastyId) {
       i = j;
       continue;
     }
-    const count = j - i;
-    const span = windowEnd - windowStart + 1;
-    for (let k = 0; k < count; k += 1) {
-      const a = windowStart + Math.floor((span * k) / count);
-      const b = windowStart + Math.floor((span * (k + 1)) / count) - 1;
-      out[i + k].start = a;
-      out[i + k].end = Math.max(a, b);
-      out[i + k].complete = true;
-    }
+    assignInterpolatedRun(out.slice(i, j), windowStart, windowEnd);
     i = j;
   }
   return out.filter((r) => !r.drop && r.start != null && r.end != null);
@@ -541,7 +580,7 @@ function parseZhongshan() {
     let next = { ...r };
     if (next.title === "中山王") next.title = "中山王厝";
     if (next.title === "中山桓公" && next.start === -406 && next.end === -406) {
-      next = { ...next, start: -478, end: -340 };
+      next = { ...next, start: -478, end: null, complete: false };
     }
     if (next.title === "中山文公" && next.end === -415 && next.start > -500) {
       next = { ...next, start: -476 };
@@ -549,7 +588,7 @@ function parseZhongshan() {
     next.name = withSurname("zhongshan", next.name, next.title);
     fixed.push(next);
   }
-  return dedupeReigns(fixed);
+  return dedupePreserveOrder(fixed);
 }
 
 function parseState(keyword, dynastyId, extra = {}) {
@@ -734,6 +773,10 @@ for (const [dynastyId, fn] of Object.entries(DYNASTY_SOURCES)) {
     }
     if (r.personName.length > 8 && /[\u4e00-\u9fff]/.test(r.personName) === false) {
       problems.push(`non-cjk name ${dynastyId} ${r.personName}`);
+    }
+    const yrs = r.endYear - r.startYear + 1;
+    if (yrs > MAX_PLAUSIBLE_REIGN_YEARS) {
+      problems.push(`long reign ${yrs}y ${dynastyId} ${r.title} ${r.startYear}–${r.endYear}`);
     }
   }
 }

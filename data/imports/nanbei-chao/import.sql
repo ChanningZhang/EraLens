@@ -886,6 +886,70 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
+  'feng-taihou', '冯太后',
+  442, 1,
+  490, 1,
+  ARRAY['太后','政治家'], '北魏文明太后，献文帝、孝文帝朝两度临朝，推动改革。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/冯太后"}]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
+  'hu-taihou', '胡太后',
+  NULL, NULL,
+  528, 4,
+  ARRAY['太后','政治家'], '北魏灵太后，孝明帝生母，毒杀明帝，河阴之变后被沉河。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/胡太后"}]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
+  'zu-chongzhi', '祖冲之',
+  429, 1,
+  500, 1,
+  ARRAY['科学家'], '南朝数学家，精确圆周率，大明历作者。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/祖冲之"}]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
+  'zhang-lihua', '张丽华',
+  559, 1,
+  604, 1,
+  ARRAY['后妃','政治家'], '陈后主宠妃，与孔、龚二妃干预朝政，隋灭陈时殉。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/张丽华"}]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
   'yang-jian', '杨坚',
   NULL, NULL,
   NULL, NULL,
@@ -1109,7 +1173,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-tuoba-gui', 'wei-north', 'tuoba-gui', '魏道武帝',
-  '道武皇帝', '太祖', '{"kind":"temple","name":"魏道武帝"}'::jsonb,
+  '道武皇帝', '太祖', '{"kind":"posthumous","name":"魏道武帝"}'::jsonb,
   386, 1, 409, 12,
   4632, 4919, 'year'
 )
@@ -1134,7 +1198,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-tuoba-si', 'wei-north', 'tuoba-si', '魏明元帝',
-  '明元皇帝', '太宗', '{"kind":"temple","name":"魏明元帝"}'::jsonb,
+  '明元皇帝', '太宗', '{"kind":"posthumous","name":"魏明元帝"}'::jsonb,
   409, 1, 423, 12,
   4908, 5087, 'year'
 )
@@ -1159,7 +1223,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-tuoba-tao', 'wei-north', 'tuoba-tao', '魏太武帝',
-  '太武皇帝', '世祖', '{"kind":"temple","name":"魏太武帝"}'::jsonb,
+  '太武皇帝', '世祖', '{"kind":"posthumous","name":"魏太武帝"}'::jsonb,
   423, 1, 452, 12,
   5076, 5435, 'year'
 )
@@ -1209,7 +1273,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-tuoba-jun', 'wei-north', 'tuoba-jun', '魏文成帝',
-  '文成皇帝', '高宗', '{"kind":"temple","name":"魏文成帝"}'::jsonb,
+  '文成皇帝', '高宗', '{"kind":"posthumous","name":"魏文成帝"}'::jsonb,
   452, 1, 465, 12,
   5424, 5591, 'year'
 )
@@ -1259,7 +1323,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-yuan-hong', 'wei-north', 'yuan-hong', '魏孝文帝',
-  '孝文皇帝', '高祖', '{"kind":"temple","name":"魏孝文帝"}'::jsonb,
+  '孝文皇帝', '高祖', '{"kind":"posthumous","name":"魏孝文帝"}'::jsonb,
   471, 1, 499, 12,
   5652, 5999, 'year'
 )
@@ -1434,7 +1498,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-liu-yu-jin', 'song-liu', 'liu-yu-jin', '宋武帝',
-  '武皇帝', '高祖', '{"kind":"temple","name":"宋武帝"}'::jsonb,
+  '武皇帝', '高祖', '{"kind":"posthumous","name":"宋武帝"}'::jsonb,
   420, 1, 422, 12,
   5040, 5075, 'year'
 )
@@ -1484,7 +1548,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-liu-yilong', 'song-liu', 'liu-yilong', '宋文帝',
-  '文皇帝', '太祖', '{"kind":"temple","name":"宋文帝"}'::jsonb,
+  '文皇帝', '太祖', '{"kind":"posthumous","name":"宋文帝"}'::jsonb,
   424, 1, 453, 12,
   5088, 5447, 'year'
 )
@@ -1534,7 +1598,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-liu-jun', 'song-liu', 'liu-jun', '宋孝武帝',
-  '孝武皇帝', '世祖', '{"kind":"temple","name":"宋孝武帝"}'::jsonb,
+  '孝武皇帝', '世祖', '{"kind":"posthumous","name":"宋孝武帝"}'::jsonb,
   453, 1, 464, 12,
   5436, 5579, 'year'
 )
@@ -1584,7 +1648,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-liu-yu-song', 'song-liu', 'liu-yu-song', '宋明帝',
-  '明皇帝', '太宗', '{"kind":"temple","name":"宋明帝"}'::jsonb,
+  '明皇帝', '太宗', '{"kind":"posthumous","name":"宋明帝"}'::jsonb,
   465, 1, 472, 12,
   5580, 5675, 'year'
 )
@@ -1659,7 +1723,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-xiao-daocheng', 'qi-nan', 'xiao-daocheng', '齐高帝',
-  '高皇帝', '太祖', '{"kind":"temple","name":"齐高帝"}'::jsonb,
+  '高皇帝', '太祖', '{"kind":"posthumous","name":"齐高帝"}'::jsonb,
   479, 1, 482, 12,
   5748, 5795, 'year'
 )
@@ -1684,7 +1748,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-xiao-ze', 'qi-nan', 'xiao-ze', '齐武帝',
-  '武皇帝', '世祖', '{"kind":"temple","name":"齐武帝"}'::jsonb,
+  '武皇帝', '世祖', '{"kind":"posthumous","name":"齐武帝"}'::jsonb,
   482, 1, 493, 12,
   5784, 5927, 'year'
 )
@@ -1759,7 +1823,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-xiao-luan', 'qi-nan', 'xiao-luan', '齐明帝',
-  '明皇帝', '高宗', '{"kind":"temple","name":"齐明帝"}'::jsonb,
+  '明皇帝', '高宗', '{"kind":"posthumous","name":"齐明帝"}'::jsonb,
   494, 1, 498, 12,
   5928, 5987, 'year'
 )
@@ -1834,7 +1898,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-xiao-yan', 'liang-nan', 'xiao-yan', '梁武帝',
-  '武皇帝', '高祖', '{"kind":"temple","name":"梁武帝"}'::jsonb,
+  '武皇帝', '高祖', '{"kind":"posthumous","name":"梁武帝"}'::jsonb,
   502, 1, 549, 12,
   6024, 6599, 'year'
 )
@@ -2034,7 +2098,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-chen-baxian', 'chen-nan', 'chen-baxian', '陈武帝',
-  '武皇帝', '高祖', '{"kind":"temple","name":"陈武帝"}'::jsonb,
+  '武皇帝', '高祖', '{"kind":"posthumous","name":"陈武帝"}'::jsonb,
   557, 1, 559, 12,
   6684, 6719, 'year'
 )
@@ -2592,7 +2656,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('he-yin-massacre', '河阴之变', 'politics', 'point', 'year', '528年，尔朱荣于河阴屠杀百官', 528, 1, 6336, NULL, NULL, NULL, NULL, NULL, NULL, '尔朱荣于河阴 massacre 北魏公卿两千余人，后诛杀孝明帝。')
+VALUES ('he-yin-massacre', '河阴之变', 'politics', 'point', 'year', '528年，尔朱荣于河阴屠杀百官', 528, 1, 6336, NULL, NULL, NULL, NULL, NULL, NULL, '尔朱荣于河阴屠杀北魏公卿两千余人，后诛杀孝明帝。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
   date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,

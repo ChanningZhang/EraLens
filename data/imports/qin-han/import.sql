@@ -772,6 +772,150 @@ ON CONFLICT (id) DO UPDATE SET
   roles = EXCLUDED.roles,
   bio = EXCLUDED.bio,
   links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
+  'zhao-gao', '赵高',
+  NULL, NULL,
+  NULL, NULL,
+  ARRAY['政治家'], '秦宦官，矫诏立胡亥，指鹿为马，后被子婴诛杀。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/赵高"}]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
+  'huo-guang', '霍光',
+  -68, 1,
+  68, 1,
+  ARRAY['政治家'], '汉昭帝辅政大臣，废立昌邑王、拥立宣帝，权倾朝野。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/霍光"}]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
+  'wang-zhaojun', '王昭君',
+  -52, 1,
+  -15, 1,
+  ARRAY['后妃'], '汉元帝宫人，自愿和亲匈奴，昭君出塞。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/王昭君"}]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
+  'dou-taihou', '窦太后',
+  NULL, NULL,
+  NULL, NULL,
+  ARRAY['太后','政治家'], '汉文帝皇后，景帝生母，崇尚黄老，文景之治重要推手。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/窦太后"}]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
+  'liang-taihou', '梁太后',
+  NULL, NULL,
+  NULL, NULL,
+  ARRAY['太后','政治家'], '汉顺帝皇后，质帝、桓帝朝临朝，毒杀质帝。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/梁妢"}]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
+  'dong-zhongshu', '董仲舒',
+  -179, 1,
+  -104, 1,
+  ARRAY['思想家'], '汉武帝时大儒，独尊儒术理论奠基者。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/董仲舒"}]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
+  'si-ma-qian', '司马迁',
+  -145, 1,
+  -86, 1,
+  ARRAY['史学家'], '汉武帝时太史令，著史记，中国第一部纪传体通史。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/司马迁"}]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
+  'ban-chao', '班超',
+  32, 1,
+  102, 1,
+  ARRAY['外交家','军事家'], '东汉名将，投笔从戎，通西域三十六年。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/班超"}]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
+  'cai-lun', '蔡伦',
+  NULL, NULL,
+  NULL, NULL,
+  ARRAY['发明家'], '东汉宦官，改进造纸术，纸张普及为之勃兴。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/蔡伦"}]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
 
 -- dynasties
 INSERT INTO dynasties (
@@ -2222,6 +2366,7 @@ INSERT INTO event_participants (event_id, person_id) VALUES ('wugu-case', 'liu-c
 INSERT INTO event_participants (event_id, person_id) VALUES ('zhaoxuan-rule', 'liu-fuling') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('zhaoxuan-rule', 'liu-xun') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('zhaojun-chusai', 'liu-shi') ON CONFLICT DO NOTHING;
+INSERT INTO event_participants (event_id, person_id) VALUES ('zhaojun-chusai', 'wang-zhaojun') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('wang-mang-usurp', 'wang-mang') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('wang-mang-usurp', 'ruzi-ying') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('kunyang-battle', 'liu-xiu') ON CONFLICT DO NOTHING;

@@ -1252,6 +1252,54 @@ ON CONFLICT (id) DO UPDATE SET
   roles = EXCLUDED.roles,
   bio = EXCLUDED.bio,
   links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
+  'da-ji', '妲己',
+  NULL, NULL,
+  NULL, NULL,
+  ARRAY['后妃'], '传说中商末帝辛宠妃，牧野之战后商亡。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/妲己"}]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
+  'bao-si', '褒姒',
+  NULL, NULL,
+  NULL, NULL,
+  ARRAY['后妃'], '周幽王宠妃，传说与烽火戏诸侯、犬戎之祸相关。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/褒姒"}]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
+  'ji-shi', '姬奭',
+  NULL, NULL,
+  NULL, NULL,
+  ARRAY['政治家'], '召公奭，周武王弟，与周公旦分陕而治，辅佐成康。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/召公奭"}]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
 
 -- dynasties
 INSERT INTO dynasties (

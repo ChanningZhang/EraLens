@@ -1104,6 +1104,48 @@
     ]
   },
   {
+    "id": "da-ji",
+    "name": "妲己",
+    "roles": [
+      "后妃"
+    ],
+    "bio": "传说中商末帝辛宠妃，牧野之战后商亡。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/妲己"
+      }
+    ]
+  },
+  {
+    "id": "bao-si",
+    "name": "褒姒",
+    "roles": [
+      "后妃"
+    ],
+    "bio": "周幽王宠妃，传说与烽火戏诸侯、犬戎之祸相关。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/褒姒"
+      }
+    ]
+  },
+  {
+    "id": "ji-shi",
+    "name": "姬奭",
+    "roles": [
+      "政治家"
+    ],
+    "bio": "召公奭，周武王弟，与周公旦分陕而治，辅佐成康。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/召公奭"
+      }
+    ]
+  },
+  {
     "id": "liu-xiu",
     "name": "刘秀",
     "roles": [

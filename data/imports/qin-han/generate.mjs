@@ -83,6 +83,16 @@ const persons = [
   { id: "liu-hong", name: "刘宏", birth: ym(157), death: ym(189), roles: ["皇帝"], bio: "汉灵帝，东汉末年皇帝，黄巾起义在其朝爆发。", links: wiki("汉灵帝") },
   { id: "liu-bian", name: "刘辩", roles: ["皇帝"], bio: "汉后少帝，灵帝长子，为董卓所废。", links: wiki("汉少帝刘辩") },
   { id: "liu-xie", name: "刘协", birth: ym(181), death: ym(234), roles: ["皇帝"], bio: "汉献帝，东汉末代皇帝，曹丕受禅后东汉终结。", links: wiki("汉献帝") },
+  // 非帝王人物
+  { id: "zhao-gao", name: "赵高", roles: ["政治家"], bio: "秦宦官，矫诏立胡亥，指鹿为马，后被子婴诛杀。", links: wiki("赵高") },
+  { id: "huo-guang", name: "霍光", birth: ym(-68), death: ym(68), roles: ["政治家"], bio: "汉昭帝辅政大臣，废立昌邑王、拥立宣帝，权倾朝野。", links: wiki("霍光") },
+  { id: "wang-zhaojun", name: "王昭君", birth: ym(-52), death: ym(-15), roles: ["后妃"], bio: "汉元帝宫人，自愿和亲匈奴，昭君出塞。", links: wiki("王昭君") },
+  { id: "dou-taihou", name: "窦太后", roles: ["太后", "政治家"], bio: "汉文帝皇后，景帝生母，崇尚黄老，文景之治重要推手。", links: wiki("窦太后") },
+  { id: "liang-taihou", name: "梁太后", roles: ["太后", "政治家"], bio: "汉顺帝皇后，质帝、桓帝朝临朝，毒杀质帝。", links: wiki("梁妢") },
+  { id: "dong-zhongshu", name: "董仲舒", birth: ym(-179), death: ym(-104), roles: ["思想家"], bio: "汉武帝时大儒，独尊儒术理论奠基者。", links: wiki("董仲舒") },
+  { id: "si-ma-qian", name: "司马迁", birth: ym(-145), death: ym(-86), roles: ["史学家"], bio: "汉武帝时太史令，著史记，中国第一部纪传体通史。", links: wiki("司马迁") },
+  { id: "ban-chao", name: "班超", birth: ym(32), death: ym(102), roles: ["外交家", "军事家"], bio: "东汉名将，投笔从戎，通西域三十六年。", links: wiki("班超") },
+  { id: "cai-lun", name: "蔡伦", roles: ["发明家"], bio: "东汉宦官，改进造纸术，纸张普及为之勃兴。", links: wiki("蔡伦") },
 ];
 
 const dynasties = [
@@ -801,7 +811,7 @@ const events = [
     dateNote: "竟宁元年，前33年",
     at: ym(-33),
     dynastyIds: ["han-west"],
-    participantIds: ["liu-shi"],
+    participantIds: ["liu-shi", "wang-zhaojun"],
     summary: "元帝以王昭君嫁呼韩邪单于，汉匈和好。",
   }),
   eventPoint({
