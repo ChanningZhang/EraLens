@@ -10,7 +10,7 @@ import { getRepository } from "@/data/repository";
 import { useSelection } from "../hooks/useSelection";
 import { useViewport } from "../hooks/useViewport";
 import { projectAbs } from "../model/coordinates";
-import { cardDetailLevel } from "../model/lod";
+import { cardDetailLevel, shouldShowReignCardMeta } from "../model/lod";
 import {
   assignReignStacks,
   resolveReignVisualSpan,
@@ -62,6 +62,7 @@ export function ReignCard({
     dynastyId: dynasty.id,
   });
   const detail = cardDetailLevel(width, [...label].length);
+  const showMeta = shouldShowReignCardMeta(width, [...label].length);
   const meta = resolveReignCardMeta(reign, personName);
   const tooltipName = personName && personName !== label ? personName : label;
   const tooltipText = meta
@@ -103,7 +104,7 @@ export function ReignCard({
         aria-label={`${label} ${dynasty.name}`}
       >
         {detail !== "below" && <p className={styles.name}>{label}</p>}
-        {detail === "full" && meta && (
+        {showMeta && meta && (
           <p className={styles.meta}>
             <span className={styles.metaKind}>{meta.label}</span>
             {meta.name}

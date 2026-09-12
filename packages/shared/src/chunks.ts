@@ -104,7 +104,18 @@ export function dedupeOverlappingReigns(reigns: Reign[]): Reign[] {
       kept.push(reign);
       continue;
     }
-    kept[index] = pickBetterReign(kept[index]!, reign);
+    const existing = kept[index]!;
+    if (existing.personId === reign.personId) {
+      kept[index] = pickBetterReign(existing, reign);
+      continue;
+    }
+    // Same generic title (楚王 / 闽主) across successive rulers is not a duplicate import.
+    const scoreDiff = Math.abs(reignQualityScore(existing) - reignQualityScore(reign));
+    if (scoreDiff >= 2) {
+      kept[index] = pickBetterReign(existing, reign);
+      continue;
+    }
+    kept.push(reign);
   }
 
   return kept;

@@ -145,6 +145,61 @@ describe("mergeTimelineSlices", () => {
 });
 
 describe("dedupeOverlappingReigns", () => {
+  it("keeps successive rulers who share a generic regnal title", () => {
+    const reign = (
+      id: string,
+      personId: string,
+      dynastyId: string,
+      title: string,
+      startAbs: number,
+      endAbs: number,
+    ): Reign => ({
+      id,
+      dynastyId,
+      personId,
+      title,
+      preferredAppellation: { kind: "regnal", name: title },
+      eraNames: [],
+      start: { year: 1, month: 1 },
+      end: { year: 1, month: 12 },
+      startAbs,
+      endAbs,
+      precision: "year",
+    });
+
+    const chu = [
+      reign("reign-ma-yin", "ma-yin", "chu-nan", "楚王", 10884, 11171),
+      reign("reign-ma-xisheng", "ma-xisheng", "chu-nan", "楚王", 11160, 11195),
+      reign("reign-ma-xifan", "ma-xifan", "chu-nan", "楚王", 11184, 11375),
+      reign("reign-ma-xiguang", "ma-xiguang", "chu-nan", "楚王", 11364, 11375),
+      reign("reign-ma-xie", "ma-xie", "chu-nan", "楚王", 11364, 11411),
+      reign("reign-ma-xichong", "ma-xichong", "chu-nan", "楚王", 11400, 11423),
+    ];
+    expect(dedupeOverlappingReigns(chu).map((item) => item.personId)).toEqual([
+      "ma-yin",
+      "ma-xisheng",
+      "ma-xifan",
+      "ma-xiguang",
+      "ma-xie",
+      "ma-xichong",
+    ]);
+
+    const min = [
+      reign("reign-wang-yanjun", "wang-yanjun", "min-fujian", "闽主", 11112, 11231),
+      reign("reign-wang-jipeng", "wang-jipeng", "min-fujian", "闽主", 11220, 11279),
+      reign("reign-wang-yanxi", "wang-yanxi", "min-fujian", "闽主", 11268, 11327),
+      reign("reign-zhu-wenjin", "zhu-wenjin", "min-fujian", "闽主", 11328, 11339),
+      reign("reign-wang-yanzheng", "wang-yanzheng", "min-fujian", "闽主", 11316, 11351),
+    ];
+    expect(dedupeOverlappingReigns(min).map((item) => item.personId)).toEqual([
+      "wang-yanjun",
+      "wang-jipeng",
+      "wang-yanxi",
+      "zhu-wenjin",
+      "wang-yanzheng",
+    ]);
+  });
+
   it("keeps distinct rulers who share a title in different eras", () => {
     const first: Reign = {
       id: "reign-qin-r14-qin",

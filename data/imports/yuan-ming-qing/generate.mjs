@@ -81,6 +81,15 @@ const persons = [
   person("khoshila", "和世㻋", ["皇帝"], "元明宗，文宗之兄，即位仅一月被害。", "和世㻋"),
   person("irinchibal", "懿璘质班", ["皇帝"], "元宁宗，幼年即位，在位仅两月。", "元宁宗"),
   person("togon-temur", "妥懽帖睦尔", ["皇帝"], "元顺帝，元朝末代，红巾起义，退居漠北。", "元顺帝"),
+  // 元末割据——称帝/称王者
+  person("xu-shouhui", "徐寿辉", ["皇帝"], "元末红巾军领袖，1351年称帝，国号宋，传世文献多作天完；1360年为陈友谅所杀。", "徐寿辉", ym(1320), ym(1360)),
+  person("chen-youliang", "陈友谅", ["皇帝"], "元末陈汉建立者，1359年自立汉王，1360年弑徐寿辉称帝，国号汉；1363年鄱阳湖之战阵亡。", "陈友谅", ym(1320), ym(1363)),
+  person("chen-li", "陈理", ["皇帝"], "陈友谅次子，1363年鄱阳湖战后继位，改元德寿；1364年降明，陈汉亡。", "陈理_(元末)", ym(1351), ym(1408)),
+  person("han-liner", "韩林儿", ["皇帝"], "韩山童之子，号小明王，1355年被刘福通拥立称帝，国号宋；1366年溺亡于瓜洲渡。", "韩林儿", null, ym(1366)),
+  person("zhang-shicheng", "张士诚", ["皇帝"], "盐贩出身，1354年高邮建国号大周，自称诚王；1363年再号吴王；1367年平江败亡。", "张士诚", ym(1321), ym(1367)),
+  person("ming-yuzhen", "明玉珍", ["皇帝"], "元末明夏建立者，徐寿辉部将，1362年重庆称帝，国号夏，据有两川。", "明玉珍", ym(1329), ym(1366)),
+  person("ming-sheng", "明升", ["皇帝"], "明玉珍之子，1366年嗣位；1371年明军灭夏，降明。", "明升", null, ym(1371)),
+  person("liu-futong", "刘福通", ["起义领袖"], "红巾军首领，拥立韩林儿为小明王，三路北伐；1363年安丰之战战死。", "刘福通", null, ym(1363)),
   person("ayushiridara", "爱猷识理达腊", ["皇帝"], "北元昭宗，元顺帝长子，1370年嗣位，改元宣光。", "爱猷识理达腊"),
   person("togus-temur", "脱古思帖木儿", ["皇帝"], "北元末主天元帝，1388年捕鱼儿海之战后为也速迭儿所杀，北元终结。", "脱古思帖木儿"),
   // 明
@@ -150,6 +159,13 @@ const persons = [
 const dynasties = [
   { id: "yuan", name: "元", altNames: ["大元", "蒙元"], scope: "cn", region: "east_asia", start: ym(1271, 12), end: ym(1368), precision: "year", colorToken: nextColor(), note: "忽必烈1271年定国号大元；1368年顺帝北逃，中原统治终结，漠北延续见北元。" },
   { id: "yuan-north", name: "北元", altNames: ["大元", "残元", "故元"], scope: "cn", region: "east_asia", start: ym(1368), end: ym(1388), precision: "year", colorToken: nextColor(), note: "1368年顺帝北逃漠北后继续称大元；1388年天元帝被杀，北元终结。" },
+  // 元末割据政权（称帝/称王）
+  { id: "song-xu", name: "徐宋", altNames: ["宋", "天完"], scope: "cn", region: "east_asia", start: ym(1351, 10), end: ym(1360, 6), precision: "year", colorToken: nextColor(), note: "徐寿辉1351年蕲州称帝，国号宋，传世多作天完；1360年陈友谅弑之。" },
+  { id: "song-han", name: "韩宋", altNames: ["宋", "小明王"], scope: "cn", region: "east_asia", start: ym(1355, 2), end: ym(1366, 12), precision: "year", colorToken: nextColor(), note: "刘福通拥韩林儿为帝，号小明王，年号龙凤；1366年溺亡，韩宋亡。" },
+  { id: "zhou-zhang", name: "大周", altNames: ["周"], scope: "cn", region: "east_asia", start: ym(1354, 1), end: ym(1367, 9), precision: "year", colorToken: nextColor(), note: "张士诚1354年高邮建国，自称诚王；1363年再号吴王；1367年平江败亡。" },
+  { id: "chen-han", name: "陈汉", altNames: ["汉", "大汉"], scope: "cn", region: "east_asia", start: ym(1360, 6), end: ym(1364), precision: "year", colorToken: nextColor(), note: "陈友谅1360年称帝，国号汉；1363年鄱阳湖阵亡，子陈理继位；1364年降明。" },
+  { id: "xia-ming", name: "明夏", altNames: ["夏", "大夏"], scope: "cn", region: "east_asia", start: ym(1362), end: ym(1371), precision: "year", colorToken: nextColor(), note: "明玉珍1362年重庆称帝，国号夏，据两川；1371年明灭夏。" },
+  { id: "wu-zhu", name: "吴", altNames: ["西吴"], scope: "cn", region: "east_asia", start: ym(1364), end: ym(1368, 1), precision: "year", colorToken: nextColor(), note: "朱元璋1364年自立吴王，仍用龙凤年号；1367年改元吴，1368年称帝建明。" },
   { id: "ming", name: "明", altNames: ["大明"], scope: "cn", region: "east_asia", start: ym(1368), end: ym(1644, 4), precision: "year", colorToken: nextColor(), note: "朱元璋驱逐蒙元，定都南京后迁北京；1644年崇祯自缢，明亡。" },
   { id: "ming-south", name: "南明", altNames: ["明"], scope: "cn", region: "east_asia", start: ym(1644), end: ym(1662), precision: "year", colorToken: nextColor(), note: "明亡后朱氏宗室相继监国称帝；1662年永历帝殉，南明终结。" },
   { id: "qing", name: "清", altNames: ["大清", "后金"], scope: "cn", region: "east_asia", start: ym(1616, 2), end: ym(1912, 2), precision: "year", colorToken: nextColor(), note: "1616年努尔哈赤建后金，1636年改国号大清；1912年宣统退位。" },
@@ -175,6 +191,22 @@ const yuanNorthReigns = [
   dr("yuan-north", "togon-temur", "元惠宗", "宣仁普孝皇帝", "惠宗", 1368, 1370, [{ name: "至正", sy: 1368, ey: 1370 }]),
   dr("yuan-north", "ayushiridara", "元昭宗", null, "昭宗", 1370, 1378, [{ name: "宣光", sy: 1371, ey: 1378 }]),
   dr("yuan-north", "togus-temur", "天元帝", null, null, 1378, 1388, [{ name: "天元", sy: 1379, ey: 1388 }]),
+];
+
+const yuanMoReigns = [
+  dr("song-xu", "xu-shouhui", "徐宋帝", null, null, 1351, 1360, [
+    { name: "治平", sy: 1351, ey: 1355 },
+    { name: "太平", sy: 1356, ey: 1358 },
+    { name: "天启", sy: 1358, ey: 1359 },
+    { name: "天定", sy: 1359, ey: 1360 },
+  ]),
+  dr("song-han", "han-liner", "小明王", null, null, 1355, 1366, [{ name: "龙凤", sy: 1355, ey: 1366 }]),
+  dr("zhou-zhang", "zhang-shicheng", "诚王", null, null, 1354, 1367, [{ name: "天佑", sy: 1354, ey: 1357 }]),
+  dr("chen-han", "chen-youliang", "陈汉帝", null, null, 1360, 1363, [{ name: "大义", sy: 1360, ey: 1363 }]),
+  dr("chen-han", "chen-li", "陈汉帝", null, null, 1363, 1364, [{ name: "德寿", sy: 1363, ey: 1364 }]),
+  dr("xia-ming", "ming-yuzhen", "明夏帝", null, null, 1362, 1366, [{ name: "天统", sy: 1363, ey: 1366 }]),
+  dr("xia-ming", "ming-sheng", "明夏帝", null, null, 1366, 1371, [{ name: "天统", sy: 1366, ey: 1371 }]),
+  dr("wu-zhu", "zhu-yuanzhang", "吴王", null, null, 1364, 1368, [{ name: "吴", sy: 1367, ey: 1367 }]),
 ];
 
 function mingSplitReign(id, personId, title, posthumous, temple, startYear, endYear, eraList) {
@@ -245,7 +277,7 @@ const qingReigns = [
   dr("qing", "puyi", "清逊帝", null, null, 1908, 1912, [{ name: "宣统", sy: 1909, ey: 1912 }]),
 ];
 
-const reignGroups = [yuanReigns, yuanNorthReigns, mingReigns, mingSouthReigns, qingReigns];
+const reignGroups = [yuanReigns, yuanNorthReigns, yuanMoReigns, mingReigns, mingSouthReigns, qingReigns];
 const reigns = reignGroups.flat();
 
 // ── events ───────────────────────────────────────────────────────────────────
@@ -264,7 +296,13 @@ function eventRange(partial) {
 const events = [
   eventPoint({ id: "yuan-founded", name: "元朝建立", kind: "politics", at: ym(1271, 12), dynastyIds: ["yuan"], participantIds: ["hu-bilie"], summary: "忽必烈定国号大元，都大都，元朝开始。" }),
   eventPoint({ id: "yuan-unify-song", name: "元灭南宋", kind: "politics", at: ym(1279), dynastyIds: ["yuan", "song-south"], participantIds: ["hu-bilie"], summary: "崖山之战后南宋灭亡，元统一全国。" }),
-  eventPoint({ id: "ming-founded", name: "明朝建立", kind: "politics", at: ym(1368), dynastyIds: ["ming", "yuan", "yuan-north"], participantIds: ["zhu-yuanzhang", "togon-temur"], summary: "朱元璋称帝，定都南京，国号大明，元顺帝北逃，北元开始。" }),
+  eventPoint({ id: "chen-kills-xu", name: "陈友谅弑徐寿辉", kind: "politics", at: ym(1360, 6), dynastyIds: ["song-xu", "chen-han"], participantIds: ["chen-youliang", "xu-shouhui"], summary: "陈友谅于采石杀徐寿辉，自立称帝，国号汉，徐宋亡。" }),
+  eventPoint({ id: "poyang-lake-battle", name: "鄱阳湖之战", kind: "battle", at: ym(1363, 10), dynastyIds: ["chen-han", "wu-zhu"], participantIds: ["chen-youliang", "zhu-yuanzhang"], summary: "朱元璋与陈友谅鄱阳湖决战，陈友谅中流矢阵亡，陈汉大势已去。" }),
+  eventPoint({ id: "han-liner-death", name: "韩林儿溺亡", kind: "politics", at: ym(1366, 12), dynastyIds: ["song-han", "wu-zhu"], participantIds: ["han-liner", "zhu-yuanzhang"], summary: "朱元璋遣廖永忠迎韩林儿至应天，渡江时船沉，小明王遇难，韩宋亡。" }),
+  eventPoint({ id: "zhang-shicheng-defeated", name: "张士诚败亡", kind: "politics", at: ym(1367, 9), dynastyIds: ["zhou-zhang", "wu-zhu"], participantIds: ["zhang-shicheng", "zhu-yuanzhang"], summary: "徐达克平江，张士诚被俘，大周亡。" }),
+  eventPoint({ id: "xia-ming-founded", name: "明夏建立", kind: "politics", at: ym(1362), dynastyIds: ["xia-ming"], participantIds: ["ming-yuzhen"], summary: "明玉珍于重庆称帝，国号夏，据有两川。" }),
+  eventPoint({ id: "xia-ming-fall", name: "明夏灭亡", kind: "politics", at: ym(1371), dynastyIds: ["xia-ming", "ming"], participantIds: ["ming-sheng"], summary: "明军灭夏，明升降明，明夏终结。" }),
+  eventPoint({ id: "ming-founded", name: "明朝建立", kind: "politics", at: ym(1368), dynastyIds: ["ming", "wu-zhu", "yuan", "yuan-north"], participantIds: ["zhu-yuanzhang", "togon-temur"], summary: "朱元璋称帝，定都南京，国号大明，元顺帝北逃，北元开始。" }),
   eventPoint({ id: "korqin-sea-battle", name: "捕鱼儿海之战", kind: "battle", at: ym(1388), dynastyIds: ["yuan-north", "ming"], participantIds: ["togus-temur"], summary: "明将蓝玉率军深入漠北，大破北元，俘北元宗室。" }),
   eventPoint({ id: "yuan-north-end", name: "北元灭亡", kind: "politics", at: ym(1388), dynastyIds: ["yuan-north"], participantIds: ["togus-temur"], summary: "捕鱼儿海之战后，也速迭儿杀天元帝脱古思帖木儿，北元国号终结。" }),
   eventRange({ id: "yongle-rule", name: "永乐盛世", kind: "politics", timeMode: "span", start: ym(1403), end: ym(1424), dynastyIds: ["ming"], participantIds: ["zhu-di"], summary: "明成祖迁都北京，派郑和下西洋，国力强盛。" }),
@@ -296,6 +334,8 @@ for (const group of reignGroups) {
   }
 }
 relations.push(
+  { id: "rel-chen-kills-xu", fromRef: "event:chen-kills-xu", toRef: "person:chen-youliang", kind: "other" },
+  { id: "rel-poyang-chen-youliang", fromRef: "event:poyang-lake-battle", toRef: "person:chen-youliang", kind: "battle" },
   { id: "rel-tumu-zhu-qizhen", fromRef: "event:tumu-crisis", toRef: "person:zhu-qizhen", kind: "battle" },
   { id: "rel-opium-lin-zexu", fromRef: "event:opium-war", toRef: "person:lin-zexu", kind: "other" },
 );
@@ -351,6 +391,13 @@ const manifest = {
   sources: [
     { label: "元朝", url: "https://zh.wikipedia.org/wiki/元朝" },
     { label: "北元", url: "https://zh.wikipedia.org/wiki/北元" },
+    { label: "徐寿辉", url: "https://zh.wikipedia.org/wiki/徐寿辉" },
+    { label: "陈友谅", url: "https://zh.wikipedia.org/wiki/陈友谅" },
+    { label: "陈汉", url: "https://zh.wikipedia.org/wiki/陈汉" },
+    { label: "韩林儿", url: "https://zh.wikipedia.org/wiki/韩林儿" },
+    { label: "张士诚", url: "https://zh.wikipedia.org/wiki/张士诚" },
+    { label: "明玉珍", url: "https://zh.wikipedia.org/wiki/明玉珍" },
+    { label: "鄱阳湖之战", url: "https://zh.wikipedia.org/wiki/鄱阳湖之战" },
     { label: "爱猷识理达腊", url: "https://zh.wikipedia.org/wiki/爱猷识理达腊" },
     { label: "脱古思帖木儿", url: "https://zh.wikipedia.org/wiki/脱古思帖木儿" },
     { label: "明朝", url: "https://zh.wikipedia.org/wiki/明朝" },
@@ -366,6 +413,7 @@ const manifest = {
     "明清皇帝卡片优先显示年号；朱祁镇两段在位分别用正统、天顺。",
     "元世祖至元年间部分早于1271年，年号取1271年后窗口。",
     "1912年清帝退位为帝制终结；中华民国不在本包内。",
+    "元末割据：徐宋（1351–1360）、韩宋（1355–1366）、大周（1354–1367）、陈汉（1360–1364）、明夏（1362–1371）、吴/西吴（1364–1368，朱元璋称帝前）。",
     "未收录明郑（1662–1683）等延续政权。",
   ],
 };

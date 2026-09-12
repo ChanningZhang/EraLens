@@ -47,6 +47,16 @@ export function cardDetailLevel(
   return "wrap";
 }
 
+/** Show era/temple/posthumous meta when the personal name fits on one line. */
+export function shouldShowReignCardMeta(
+  cardWidthPx: number,
+  glyphCount = 3,
+): boolean {
+  if (cardDetailLevel(cardWidthPx, glyphCount) === "below") return false;
+  const lines = wrappedLineCount(cardWidthPx, glyphCount);
+  return lines === 1;
+}
+
 export function shouldShowEvent(event: Event, lod: Lod): boolean {
   return shouldShowEventAtLod(event, lod);
 }
