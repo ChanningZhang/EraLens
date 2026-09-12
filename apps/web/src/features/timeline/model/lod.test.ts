@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { cardDetailLevel } from "./lod";
+import { cardDetailLevel, personDetailLevel, shouldShowPersons } from "./lod";
 
 describe("cardDetailLevel", () => {
   it("shows name and appellation when the full name fits on one line", () => {
@@ -17,5 +17,19 @@ describe("cardDetailLevel", () => {
     expect(cardDetailLevel(15, 3)).toBe("below");
     expect(cardDetailLevel(8, 2)).toBe("below");
     expect(cardDetailLevel(16, 5)).toBe("below");
+  });
+});
+
+describe("shouldShowPersons", () => {
+  it("hides persons at millennium lod", () => {
+    expect(shouldShowPersons("millennium")).toBe(false);
+    expect(shouldShowPersons("century")).toBe(true);
+  });
+});
+
+describe("personDetailLevel", () => {
+  it("shows full label at decade zoom with enough width", () => {
+    expect(personDetailLevel("decade", 120)).toBe("full");
+    expect(personDetailLevel("century", 20)).toBe("dot");
   });
 });

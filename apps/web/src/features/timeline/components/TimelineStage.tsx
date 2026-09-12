@@ -9,11 +9,13 @@ import {
   layoutEvents,
 } from "../model/eventLayout";
 import { assignLanes } from "../model/laneLayout";
-import { shouldShowEvent } from "../model/lod";
+import { shouldShowEvent, shouldShowPersons } from "../model/lod";
+import { layoutPersons } from "../model/personLayout";
 import { assignReignStacks, dynastyLaneHeight } from "../model/reignClusters";
 import { expandWindow, filterVisibleDynasties } from "../model/visible";
 import { DynastyLane } from "./DynastyLane";
 import { EventLayer } from "./EventLayer";
+import { PersonLayer } from "./PersonLayer";
 import styles from "./TimelineStage.module.css";
 
 export function TimelineStage() {
@@ -64,10 +66,23 @@ export function TimelineStage() {
     });
   }, [placed, railHeight, reignsByDynasty]);
 
-  const contentHeight = Math.max(
-    (lanes.at(-1) ? lanes.at(-1)!.top + lanes.at(-1)!.height : railHeight) + 32,
-    240,
-  );
+  const dynastiesBottom = lanes.at(-1)
+    ? lanes.at(-1)!.top + lanes.at(-1)!.height
+    : railHeight;
+
+  const visiblePersons = useMemo(() => {
+    if (!data || !shouldShowPersons(viewport.lod)) return [];
+    return data.persons;
+  }, [data, viewport.lod]);
+
+  const personPlaced = useMemo(() => {
+    if (visiblePersons.length === 0) return [];
+    return layoutPersons(visiblePersons, viewport);
+  }, [visiblePersons, viewport]);
+
+  const contentHeight = Math.max(dynastiesBottom + 32, 240);
+  const showPersonLayer =
+    Boolean(data) && placed.length > 0 && visiblePersons.length > 0;
 
   const emptyYearLabel = useMemo(() => {
     const { year } = fromAbsMonth(Math.round(viewport.centerAbs));
@@ -75,11 +90,18 @@ export function TimelineStage() {
   }, [viewport.centerAbs]);
 
   return (
-    <div className={styles.stage} data-timeline-pan>
-      <div className={styles.content} style={{ minHeight: contentHeight }}>
+    <div className={styles.stage} data-timeline-pan data-timeline-stage>
+      <div
+        className={styles.content}
+        style={{ minHeight: `max(100%, ${contentHeight}px)` }}
+      >
         <div
           className={styles.lanes}
-          style={{ height: contentHeight, position: "relative" }}
+          style={{
+            position: "relative",
+            minHeight: contentHeight,
+            height: "100%",
+          }}
         >
           {isLoading && placed.length === 0 ? (
             <div className={styles.empty}>
@@ -104,6 +126,9 @@ export function TimelineStage() {
           )}
           {data && placed.length > 0 && (
             <EventLayer placed={eventPlaced} height={railHeight} />
+          )}
+          {showPersonLayer && (
+            <PersonLayer placed={personPlaced} top={dynastiesBottom} />
           )}
         </div>
       </div>

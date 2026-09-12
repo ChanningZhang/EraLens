@@ -11,7 +11,7 @@ import { useSelection } from "../hooks/useSelection";
 import { useViewport } from "../hooks/useViewport";
 import { projectAbs } from "../model/coordinates";
 import { cardDetailLevel } from "../model/lod";
-import { reignCardSpan, STACK_ROW_HEIGHT } from "../model/reignClusters";
+import { resolveReignVisualSpan, STACK_ROW_HEIGHT } from "../model/reignClusters";
 import { selectionStore } from "../state/selectionStore";
 import styles from "./ReignCard.module.css";
 
@@ -19,26 +19,20 @@ type Props = {
   reign: Reign;
   dynasty: Dynasty;
   color: string;
-  nextReignStartAbs?: number;
-  stackIndex?: number;
+  reigns: Reign[];
 };
 
 export function ReignCard({
   reign,
   dynasty,
   color,
-  nextReignStartAbs,
-  stackIndex = 0,
+  reigns,
 }: Props) {
   const viewport = useViewport();
   const selection = useSelection();
   const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number } | null>(null);
-  const { endExclusive } = reignCardSpan(
-    reign.startAbs,
-    reign.endAbs,
-    nextReignStartAbs,
-  );
-  const left = projectAbs(viewport, reign.startAbs);
+  const { startAbs, endExclusive, stackIndex } = resolveReignVisualSpan(reign, reigns);
+  const left = projectAbs(viewport, startAbs);
   const width = Math.max(1, projectAbs(viewport, endExclusive) - left);
   const selected =
     selection.selected?.type === "reign" && selection.selected.id === reign.id;

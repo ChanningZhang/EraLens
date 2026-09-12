@@ -51,6 +51,22 @@ export function shouldShowEvent(event: Event, lod: Lod): boolean {
   return shouldShowEventAtLod(event, lod);
 }
 
+export function shouldShowPersons(lod: Lod): boolean {
+  return lod !== "millennium";
+}
+
+export type PersonDetailLevel = "full" | "compact" | "dot";
+
+export function personDetailLevel(
+  lod: Lod,
+  barWidthPx: number,
+): PersonDetailLevel {
+  if (lod === "millennium") return "dot";
+  if ((lod === "decade" || lod === "month") && barWidthPx >= 72) return "full";
+  if (lod === "century" && barWidthPx >= 40) return "compact";
+  return "dot";
+}
+
 export function tickStepForLod(lod: Lod): { major: number; minor: number } {
   switch (lod) {
     case "millennium":

@@ -2,6 +2,8 @@ import {
   buildEntityDetail,
   computeBounds,
   EntityDetailSchema,
+  personLifeAbs,
+  rangeIntersectsWindow,
   SearchHitSchema,
   searchEntities,
   TimelineSliceSchema,
@@ -57,8 +59,31 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
         WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')`;
 
   const dynastyIds = dynastyRows.map((row) => row.id);
+
+  const [personRows, reignPersonRows] = await Promise.all([
+    prisma.person.findMany({
+      where: {
+        birthYear: { not: null },
+        birthMonth: { not: null },
+        deathYear: { not: null },
+        deathMonth: { not: null },
+        reigns: { none: {} },
+      },
+    }),
+    prisma.reign.findMany({ select: { personId: true } }),
+  ]);
+  const reignPersonIds = new Set(reignPersonRows.map((row) => row.personId));
+  const persons = personRows
+    .map(mapPerson)
+    .filter((person) => {
+      if (reignPersonIds.has(person.id)) return false;
+      const life = personLifeAbs(person);
+      if (!life) return false;
+      return rangeIntersectsWindow(life.startAbs, life.endAbs, fromAbs, toAbs);
+    });
+
   if (dynastyIds.length === 0) {
-    return TimelineSliceSchema.parse({ dynasties: [], reigns: [], events: [] });
+    return TimelineSliceSchema.parse({ dynasties: [], reigns: [], events: [], persons });
   }
 
   const reignRows = await prisma.$queryRaw<RawReignRow[]>`
@@ -128,7 +153,7 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
       return dynastyHit || event.dynastyIds.length === 0;
     });
 
-  return TimelineSliceSchema.parse({ dynasties, reigns, events });
+  return TimelineSliceSchema.parse({ dynasties, reigns, events, persons });
 }
 
 export async function registerRoutes(app: FastifyInstance) {

@@ -64,6 +64,29 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 ```
 
+后宫/宗室政治人物示例（无 `reign`，`name` 用通行检索名）：
+
+```sql
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
+  'wei-hou',
+  '韦后',
+  644, 1, 710, 7,
+  ARRAY['皇后','政治家'],
+  '唐中宗皇后，神龙政变后擅权，景龙政变中被杀。',
+  '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/韦皇后"}]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
+```
+
 ### dynasties
 
 ```sql

@@ -1,10 +1,12 @@
 import { describe, expect, it } from "vitest";
 import type { Reign } from "@eralens/shared";
+import { absMonth } from "@eralens/shared";
 import {
   assignReignStacks,
   dynastyLaneHeight,
   nextLaterStartAbs,
   reignCardSpan,
+  resolveReignVisualSpan,
 } from "./reignClusters";
 
 function reign(id: string, startAbs: number, endAbs: number): Reign {
@@ -33,6 +35,37 @@ describe("assignReignStacks", () => {
       ["a", 0],
       ["b", 0],
     ]);
+  });
+
+  it("keeps same-start rivals with different end years on one row", () => {
+    const huFirst = reign("zheng-r3", absMonth(-700, 1), absMonth(-700, 12));
+    const tu = reign("zheng-r4", absMonth(-700, 1), absMonth(-697, 12));
+    const huSecond = reign("zheng-r5", absMonth(-696, 1), absMonth(-695, 12));
+    const all = [huFirst, tu, huSecond];
+
+    const { items, rowCount } = assignReignStacks(all);
+    expect(rowCount).toBe(1);
+    expect(items.every((item) => item.stackIndex === 0)).toBe(true);
+
+    const first = resolveReignVisualSpan(huFirst, all);
+    const second = resolveReignVisualSpan(tu, all);
+    expect(first.startAbs).toBe(huFirst.startAbs);
+    expect(second.startAbs).toBe(huFirst.endAbs + 1);
+    expect(second.startAbs).toBeGreaterThan(first.endExclusive - 1);
+  });
+
+  it("shows both reigns when a ruler returns after an interregnum (明英宗复辟)", () => {
+    const qizhenFirst = reign("zhu-qizhen-1", absMonth(1435, 1), absMonth(1449, 12));
+    const qiyu = reign("zhu-qiyu", absMonth(1449, 1), absMonth(1457, 12));
+    const qizhenSecond = reign("zhu-qizhen-2", absMonth(1457, 1), absMonth(1464, 12));
+    const jianshen = reign("zhu-jianshen", absMonth(1464, 1), absMonth(1487, 12));
+    const all = [qizhenFirst, qiyu, qizhenSecond, jianshen];
+
+    const first = resolveReignVisualSpan(qizhenFirst, all);
+    const second = resolveReignVisualSpan(qizhenSecond, all);
+    expect(first.endExclusive).toBe(qiyu.startAbs);
+    expect(second.startAbs).toBe(qizhenSecond.startAbs);
+    expect(second.endExclusive).toBe(jianshen.startAbs);
   });
 
   it("stacks 哀王 and 思王 who share a year but have no calendar months", () => {

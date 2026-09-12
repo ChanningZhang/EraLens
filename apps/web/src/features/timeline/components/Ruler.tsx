@@ -154,7 +154,7 @@ export function Ruler() {
               })}
             </div>
           </div>
-          <span className={styles.zoomHint}>{zoomHint} · ⌘/Ctrl + 滚轮缩放</span>
+          <span className={styles.zoomHint}>{zoomHint} · 双指捏合缩放</span>
         </div>
       </div>
     </div>

@@ -18,10 +18,42 @@ function sortReigns(reigns: Reign[]): Reign[] {
   );
 }
 
+function sameStartGroup(reign: Reign, reigns: Reign[]): Reign[] {
+  return sortReigns(reigns).filter((item) => item.startAbs === reign.startAbs);
+}
+
+function sameSpanGroup(group: Reign[]): boolean {
+  return group.length > 1 && group.every((item) => item.endAbs === group[0]!.endAbs);
+}
+
 /**
- * Same-start rulers (哀王 / 思王) cannot be split by calendar month, so they
- * occupy stacked rows instead of overlapping on one card.
+ * Same-start, same-end rulers (哀王 / 思王) cannot be split by calendar month,
+ * so they occupy stacked rows. Same-start rulers with different end years are
+ * laid out sequentially on one row (郑昭公忽 / 郑厉公突).
  */
+export function resolveReignVisualSpan(
+  reign: Reign,
+  reigns: Reign[],
+): { startAbs: number; endExclusive: number; stackIndex: number } {
+  const group = sameStartGroup(reign, reigns);
+  const nextLater = nextLaterStartAbs(reign, reigns);
+
+  if (sameSpanGroup(group)) {
+    const stackIndex = group.findIndex((item) => item.id === reign.id);
+    const { endExclusive } = reignCardSpan(reign.startAbs, reign.endAbs, nextLater);
+    return { startAbs: reign.startAbs, endExclusive, stackIndex };
+  }
+
+  const ordered = [...group].sort(
+    (a, b) => a.endAbs - b.endAbs || a.id.localeCompare(b.id),
+  );
+  const index = ordered.findIndex((item) => item.id === reign.id);
+  const visualStart =
+    index === 0 ? reign.startAbs : ordered[index - 1]!.endAbs + 1;
+  const { endExclusive } = reignCardSpan(visualStart, reign.endAbs, nextLater);
+  return { startAbs: visualStart, endExclusive, stackIndex: 0 };
+}
+
 export function assignReignStacks(reigns: Reign[]): {
   items: StackedReign[];
   rowCount: number;
@@ -35,10 +67,12 @@ export function assignReignStacks(reigns: Reign[]): {
     while (end < sorted.length && sorted[end]!.startAbs === sorted[index]!.startAbs) {
       end += 1;
     }
-    const groupSize = end - index;
+    const group = sorted.slice(index, end);
+    const groupSize = sameSpanGroup(group) ? group.length : 1;
     rowCount = Math.max(rowCount, groupSize);
-    for (let offset = 0; offset < groupSize; offset += 1) {
-      items.push({ reign: sorted[index + offset]!, stackIndex: offset });
+    for (const reign of group) {
+      const { stackIndex } = resolveReignVisualSpan(reign, reigns);
+      items.push({ reign, stackIndex });
     }
     index = end;
   }

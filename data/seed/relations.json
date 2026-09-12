@@ -30,20 +30,128 @@
     "kind": "succession"
   },
   {
-    "id": "rel-zi-taijia-zi-pangeng-succession",
+    "id": "rel-zi-taijia-zi-woding-succession",
     "fromRef": "person:zi-taijia",
+    "toRef": "person:zi-woding",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-woding-zi-taigeng-succession",
+    "fromRef": "person:zi-woding",
+    "toRef": "person:zi-taigeng",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-taigeng-zi-xiaojia-succession",
+    "fromRef": "person:zi-taigeng",
+    "toRef": "person:zi-xiaojia",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-xiaojia-zi-yongji-succession",
+    "fromRef": "person:zi-xiaojia",
+    "toRef": "person:zi-yongji",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-yongji-zi-taiwu-succession",
+    "fromRef": "person:zi-yongji",
+    "toRef": "person:zi-taiwu",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-taiwu-zi-zhongding-succession",
+    "fromRef": "person:zi-taiwu",
+    "toRef": "person:zi-zhongding",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-zhongding-zi-wairen-succession",
+    "fromRef": "person:zi-zhongding",
+    "toRef": "person:zi-wairen",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-wairen-zi-hedanjia-succession",
+    "fromRef": "person:zi-wairen",
+    "toRef": "person:zi-hedanjia",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-hedanjia-zi-zuyi-succession",
+    "fromRef": "person:zi-hedanjia",
+    "toRef": "person:zi-zuyi",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-zuyi-zi-zuxin-succession",
+    "fromRef": "person:zi-zuyi",
+    "toRef": "person:zi-zuxin",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-zuxin-zi-wojia-succession",
+    "fromRef": "person:zi-zuxin",
+    "toRef": "person:zi-wojia",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-wojia-zi-zuding-succession",
+    "fromRef": "person:zi-wojia",
+    "toRef": "person:zi-zuding",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-zuding-zi-nangeng-succession",
+    "fromRef": "person:zi-zuding",
+    "toRef": "person:zi-nangeng",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-nangeng-zi-yangjia-succession",
+    "fromRef": "person:zi-nangeng",
+    "toRef": "person:zi-yangjia",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-yangjia-zi-pangeng-succession",
+    "fromRef": "person:zi-yangjia",
     "toRef": "person:zi-pangeng",
     "kind": "succession"
   },
   {
-    "id": "rel-zi-pangeng-zi-wuding-succession",
+    "id": "rel-zi-pangeng-zi-xiaoxin-succession",
     "fromRef": "person:zi-pangeng",
+    "toRef": "person:zi-xiaoxin",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-xiaoxin-zi-xiaoyi-succession",
+    "fromRef": "person:zi-xiaoxin",
+    "toRef": "person:zi-xiaoyi",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-xiaoyi-zi-wuding-succession",
+    "fromRef": "person:zi-xiaoyi",
     "toRef": "person:zi-wuding",
     "kind": "succession"
   },
   {
-    "id": "rel-zi-wuding-zi-wuyi-succession",
+    "id": "rel-zi-wuding-zi-zugeng-succession",
     "fromRef": "person:zi-wuding",
+    "toRef": "person:zi-zugeng",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-zugeng-zi-zujia-succession",
+    "fromRef": "person:zi-zugeng",
+    "toRef": "person:zi-zujia",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-zujia-zi-wuyi-succession",
+    "fromRef": "person:zi-zujia",
     "toRef": "person:zi-wuyi",
     "kind": "succession"
   },
@@ -298,6 +406,24 @@
     "fromRef": "event:chengpu",
     "toRef": "person:ji-chonger",
     "kind": "battle"
+  },
+  {
+    "id": "rel-zi-pangeng-zi-wuding-succession",
+    "fromRef": "person:zi-pangeng",
+    "toRef": "person:zi-wuding",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-taijia-zi-pangeng-succession",
+    "fromRef": "person:zi-taijia",
+    "toRef": "person:zi-pangeng",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-wuding-zi-wuyi-succession",
+    "fromRef": "person:zi-wuding",
+    "toRef": "person:zi-wuyi",
+    "kind": "succession"
   },
   {
     "id": "rel-cao-pi-succession",

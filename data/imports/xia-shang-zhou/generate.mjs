@@ -47,9 +47,27 @@ const persons = [
   { id: "zi-tang", name: "汤", roles: ["君主"], bio: "商朝开国之君成汤，鸣条之战灭夏。", links: wiki("商汤") },
   { id: "yi-yin", name: "伊尹", roles: ["政治家"], bio: "商初重臣，辅汤灭夏，传说曾放太甲于桐宫。", links: wiki("伊尹") },
   { id: "zi-taijia", name: "太甲", roles: ["君主"], bio: "汤之孙，商朝早期重要君主，与伊尹传说相关。", links: wiki("太甲") },
+  { id: "zi-woding", name: "沃丁", roles: ["君主"], bio: "太甲之子，伊尹卒后仍用伊尹诸子及咎单为政。", links: wiki("沃丁") },
+  { id: "zi-taigeng", name: "太庚", roles: ["君主"], bio: "沃丁之弟，又称大庚。", links: wiki("太庚") },
+  { id: "zi-xiaojia", name: "小甲", roles: ["君主"], bio: "太庚之子，商代早中期君主。", links: wiki("小甲") },
+  { id: "zi-yongji", name: "雍己", roles: ["君主"], bio: "小甲之弟，传统记载此际诸侯不朝、殷道始衰。", links: wiki("雍己") },
+  { id: "zi-taiwu", name: "太戊", roles: ["君主"], bio: "雍己之弟，传统称中宗，与伊陟、巫咸辅政而复兴。", links: wiki("太戊") },
+  { id: "zi-zhongding", name: "仲丁", roles: ["君主"], bio: "太戊之子，迁于嚣，九世之乱始。", links: wiki("仲丁") },
+  { id: "zi-wairen", name: "外壬", roles: ["君主"], bio: "仲丁之弟，九世之乱中继位。", links: wiki("外壬") },
+  { id: "zi-hedanjia", name: "河亶甲", roles: ["君主"], bio: "外壬之弟，传统记载曾迁于相。", links: wiki("河亶甲") },
+  { id: "zi-zuyi", name: "祖乙", roles: ["君主"], bio: "河亶甲之子，传统记载迁邢、殷道再兴。", links: wiki("祖乙") },
+  { id: "zi-zuxin", name: "祖辛", roles: ["君主"], bio: "祖乙之子，商代早中期君主。", links: wiki("祖辛") },
+  { id: "zi-wojia", name: "沃甲", roles: ["君主"], bio: "祖辛之弟，甲骨文或作羌甲。", links: wiki("沃甲") },
+  { id: "zi-zuding", name: "祖丁", roles: ["君主"], bio: "沃甲之侄，祖辛之子，传统记载居庇。", links: wiki("祖丁") },
+  { id: "zi-nangeng", name: "南庚", roles: ["君主"], bio: "祖丁之弟，传统记载自庇迁于奄。", links: wiki("南庚") },
+  { id: "zi-yangjia", name: "阳甲", roles: ["君主"], bio: "祖丁之子，盘庚之兄，传统记载此际殷衰。", links: wiki("阳甲") },
   { id: "zi-pangeng", name: "盘庚", roles: ["君主"], bio: "商王，约前1300年迁都于殷，晚商以此为界。", links: wiki("盘庚") },
+  { id: "zi-xiaoxin", name: "小辛", roles: ["君主"], bio: "盘庚之弟，迁殷后继位，传统记载殷道再衰。", links: wiki("小辛") },
+  { id: "zi-xiaoyi", name: "小乙", roles: ["君主"], bio: "小辛之弟，武丁之父，传统记载仍居殷。", links: wiki("小乙_(商朝)") },
   { id: "zi-wuding", name: "武丁", roles: ["君主"], bio: "商高宗，甲骨文所见盛世之王，史称武丁中兴。", links: wiki("武丁") },
   { id: "fu-hao", name: "妇好", roles: ["王后", "军事家"], bio: "武丁配偶，甲骨与殷墟墓葬所见女将、祭司。", links: wiki("妇好") },
+  { id: "zi-zugeng", name: "祖庚", roles: ["君主"], bio: "武丁之子，甲骨文作「且庚」，断代工程定其在位前1191–前1148年。", links: wiki("祖庚") },
+  { id: "zi-zujia", name: "祖甲", roles: ["君主"], bio: "武丁之子、祖庚之弟，甲骨文作「且甲」，断代工程定其在位前1148–前1112年。", links: wiki("祖甲") },
   { id: "zi-wuyi", name: "武乙", roles: ["君主"], bio: "晚商之王，断代工程定其在位前1147–前1113年。", links: wiki("武乙") },
   { id: "zi-wending", name: "文丁", roles: ["君主"], bio: "晚商之王，《史记》或作太丁。", links: wiki("文丁") },
   { id: "zi-diyi", name: "帝乙", roles: ["君主"], bio: "晚商之王，帝辛之父。", links: wiki("帝乙") },
@@ -236,6 +254,69 @@ const xiaReigns = [
   }),
 ];
 
+/** 竹书纪年各王在位年数；首尾锚定既有太甲、盘庚年，末王阳甲填满剩余窗口。 */
+function chainShangReigns(entries, firstStartYear, lastEndYear) {
+  const items = [];
+  let startYear = firstStartYear;
+  for (let i = 0; i < entries.length; i += 1) {
+    const entry = entries[i];
+    const years =
+      i === entries.length - 1 ? lastEndYear - startYear + 1 : entry.years;
+    const endYear = startYear + years - 1;
+    items.push(
+      reign({
+        id: `reign-${entry.personId}`,
+        dynastyId: "shang",
+        personId: entry.personId,
+        title: entry.title,
+        posthumousName: entry.posthumousName,
+        templeName: entry.templeName,
+        preferred: entry.preferred ?? { kind: "regnal", name: entry.title },
+        start: ym(startYear),
+        end: ym(endYear, 12),
+      }),
+    );
+    startYear = endYear + 1;
+  }
+  return items;
+}
+
+const shangEarlyReigns = chainShangReigns(
+  [
+    { personId: "zi-woding", title: "商沃丁", years: 19 },
+    { personId: "zi-taigeng", title: "商太庚", years: 5 },
+    { personId: "zi-xiaojia", title: "商小甲", years: 17 },
+    { personId: "zi-yongji", title: "商雍己", years: 12 },
+    {
+      personId: "zi-taiwu",
+      title: "商太戊",
+      templeName: "中宗",
+      preferred: { kind: "temple", name: "商中宗" },
+      years: 75,
+    },
+    { personId: "zi-zhongding", title: "商仲丁", years: 9 },
+    { personId: "zi-wairen", title: "商外壬", years: 10 },
+    { personId: "zi-hedanjia", title: "商河亶甲", years: 9 },
+    { personId: "zi-zuyi", title: "商祖乙", years: 19 },
+    { personId: "zi-zuxin", title: "商祖辛", years: 14 },
+    { personId: "zi-wojia", title: "商沃甲", years: 20 },
+    { personId: "zi-zuding", title: "商祖丁", years: 9 },
+    { personId: "zi-nangeng", title: "商南庚", years: 6 },
+    { personId: "zi-yangjia", title: "商阳甲", years: 13 },
+  ],
+  -1547,
+  -1311,
+);
+
+const shangLateReigns = chainShangReigns(
+  [
+    { personId: "zi-xiaoxin", title: "商小辛", years: 3 },
+    { personId: "zi-xiaoyi", title: "商小乙", years: 3 },
+  ],
+  -1279,
+  -1251,
+);
+
 const shangReigns = [
   reign({
     id: "reign-zi-tang",
@@ -258,6 +339,7 @@ const shangReigns = [
     start: ym(-1560),
     end: ym(-1548, 12),
   }),
+  ...shangEarlyReigns,
   reign({
     id: "reign-zi-pangeng",
     dynastyId: "shang",
@@ -267,6 +349,7 @@ const shangReigns = [
     start: ym(-1310),
     end: ym(-1280, 12),
   }),
+  ...shangLateReigns,
   reign({
     id: "reign-zi-wuding",
     dynastyId: "shang",
@@ -276,6 +359,24 @@ const shangReigns = [
     preferred: { kind: "temple", name: "商高宗" },
     start: ym(-1250),
     end: ym(-1192, 12),
+  }),
+  reign({
+    id: "reign-zi-zugeng",
+    dynastyId: "shang",
+    personId: "zi-zugeng",
+    title: "商王祖庚",
+    preferred: { kind: "regnal", name: "商祖庚" },
+    start: ym(-1191),
+    end: ym(-1148, 12),
+  }),
+  reign({
+    id: "reign-zi-zujia",
+    dynastyId: "shang",
+    personId: "zi-zujia",
+    title: "商王祖甲",
+    preferred: { kind: "regnal", name: "商祖甲" },
+    start: ym(-1148),
+    end: ym(-1112, 12),
   }),
   reign({
     id: "reign-zi-wuyi",
@@ -964,6 +1065,9 @@ const manifest = {
   notes: [
     "王朝起迄与晚商、西周列王年优先采用夏商周断代工程2000年《夏商周年表》；该工程方法与结论在学界仍有争议，作教材通行框架而非定论。",
     "夏代及商代前期具体王年工程未给出。禹、启、太康、少康、桀与汤、太甲、盘庚的在位年为传统积年锚定工程框架的估列，precision=year，事件用 circa，避免伪造成月日。",
+    "太甲至盘庚之间诸王（沃丁至阳甲）取《竹书纪年》在位年数顺序，首尾衔接既有太甲（迄前1548）、盘庚（起前1310）锚点；非断代工程实测，precision=year。",
+    "盘庚至武丁之间补入小辛、小乙；小辛取竹书纪年三年，小乙年数依盘庚（迄前1280）与武丁（起前1250）锚点填满，precision=year。",
+    "晚商补入祖庚、祖甲（断代工程前1191–前1148、前1148–前1112）；工程表中武乙（前1147–前1113）与祖甲在位年部分重叠，系原表取舍，未另改武乙年。",
     "东周列王取《史记》系统常见年表（与维基百科周朝君主列表一致）。敬王取前519–前477年。哀王、思王同年先后相残，非并立；史记仅记「立三月」「立五月」，无历月，按此时长将前441年顺序切开（1–3月 / 4–12月），不作历日。",
     "共和行政不建在位卡片（非王），仅作 span 事件。周公旦不另建称王记录。",
     "夏商周无年号，不写入 era_names。",

@@ -6,6 +6,7 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -67,7 +68,7 @@ function reign({
 function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, eraNames = [], preferred = null) {
   const pref =
     preferred ??
-    (temple ? { kind: "temple", name: title } : posthumous ? { kind: "posthumous", name: title } : { kind: "regnal", name: title });
+    defaultPreferredAppellation({ title, posthumous, temple, startYear, eraNames });
   return reign({
     id: `reign-${personId}`,
     dynastyId,
@@ -79,6 +80,37 @@ function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear,
     start: ym(startYear),
     end: ym(endYear, 12),
     eraNames,
+  });
+}
+
+function dynastyReignMonth(
+  dynastyId,
+  personId,
+  title,
+  posthumous,
+  temple,
+  startYear,
+  startMonth,
+  endYear,
+  endMonth,
+  eraNames = [],
+  preferred = null,
+) {
+  const pref =
+    preferred ??
+    defaultPreferredAppellation({ title, posthumous, temple, startYear: startYear, eraNames });
+  return reign({
+    id: `reign-${personId}`,
+    dynastyId,
+    personId,
+    title,
+    posthumousName: posthumous,
+    templeName: temple,
+    preferred: pref,
+    start: ym(startYear, startMonth),
+    end: ym(endYear, endMonth),
+    eraNames,
+    precision: "month",
   });
 }
 
@@ -124,7 +156,7 @@ const persons = [
   person("li-shi", "李势", ["皇帝"], "成汉末帝，桓温伐蜀后降晋。", "李势"),
   // 汉赵
   person("liu-yuan", "刘渊", ["皇帝"], "汉赵（前赵）开国皇帝，匈奴贵族，举兵反晋。", "刘渊"),
-  person("liu-he-zhao", "刘和", ["皇帝"], "汉赵皇帝，刘渊嫡子，在位仅七日被刘聪所杀。", "刘和"),
+  person("liu-he", "刘和", ["皇帝"], "汉赵皇帝，刘渊嫡子，在位仅七日被刘聪所杀。", "刘和"),
   person("liu-cong", "刘聪", ["皇帝"], "汉赵昭武皇帝，灭西晋、俘怀愍二帝。", "刘聪"),
   person("liu-can", "刘粲", ["皇帝"], "汉赵末帝，在位仅一月被杀。", "刘粲"),
   person("liu-yao-jin", "刘曜", ["皇帝"], "汉赵末代君主，改国号赵，后为石勒所俘杀。", "刘曜"),
@@ -553,12 +585,13 @@ const chengHanReigns = [
   dynastyReign("cheng-han", "li-shi", "成汉末帝", null, null, 343, 347),
 ];
 
+// 汉赵同年更替：刘渊七月卒→刘和（七日）→刘聪八月即位；刘聪八月卒→刘粲→刘曜十月即位。
 const hanZhaoReigns = [
-  dynastyReign("han-zhao", "liu-yuan", "汉赵光文皇帝", "光文皇帝", "高祖", 304, 310),
-  dynastyReign("han-zhao", "liu-he-zhao", "汉赵皇帝", null, null, 310, 310),
-  dynastyReign("han-zhao", "liu-cong", "汉赵昭武皇帝", "昭武皇帝", null, 310, 318),
-  dynastyReign("han-zhao", "liu-can", "汉赵末帝", null, null, 318, 318),
-  dynastyReign("han-zhao", "liu-yao-jin", "汉赵末帝", null, null, 318, 329),
+  dynastyReignMonth("han-zhao", "liu-yuan", "汉赵光文皇帝", "光文皇帝", "高祖", 304, 1, 310, 7),
+  dynastyReignMonth("han-zhao", "liu-he", "汉赵皇帝", null, null, 310, 7, 310, 7),
+  dynastyReignMonth("han-zhao", "liu-cong", "汉赵昭武皇帝", "昭武皇帝", null, 310, 8, 318, 8),
+  dynastyReignMonth("han-zhao", "liu-can", "汉赵末帝", null, null, 318, 8, 318, 9),
+  dynastyReignMonth("han-zhao", "liu-yao-jin", "汉赵末帝", null, null, 318, 10, 329, 12),
 ];
 
 const zhaoBackReigns = [
@@ -1104,7 +1137,7 @@ const manifest = {
   ],
   notes: [
     "覆盖西晋（266–316）、东晋（317–420）及崔鸿《十六国春秋》所列十六国（304–439）。",
-    "王朝与皇帝在位年取维基百科君主列表常见年表，precision=year。",
+    "王朝与皇帝在位年取维基百科君主列表常见年表，precision=year；汉赵同年更替者用 month。",
     "西晋 upsert 已有 jin-west 行；胡夏 id 为 xia-hu，避免与夏朝 xia 冲突。",
     "前秦/后秦/西秦 id 分别为 qin-front/qin-back/qin-xi，避免与秦朝 qin 冲突。",
     "439 年北魏灭北凉为十六国终结事件；北魏本身归入南北朝，不在此包内。",

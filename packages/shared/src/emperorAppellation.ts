@@ -63,13 +63,11 @@ export function resolveEmperorAppellation(
   return null;
 }
 
-/** Primary label for a reign card or detail title. */
+/** Primary label for a reign card or detail title: personal name, then title. */
 export function resolveReignPrimaryLabel(
   reign: ReignAppellationFields & Pick<Reign, "title">,
   personName?: string | null,
 ): string {
-  const appellation = resolveEmperorAppellation(reign);
-  if (appellation?.kind === "era") return appellation.name;
   return personName ?? reign.title;
 }
 
@@ -79,10 +77,12 @@ export function resolveReignCardMeta(
   personName?: string | null,
 ): { label: string; name: string } | null {
   const appellation = resolveEmperorAppellation(reign);
-  if (appellation?.kind === "era") {
-    return personName ? { label: "本名", name: personName } : null;
+  if (!appellation) return null;
+  const primary = resolveReignPrimaryLabel(reign, personName);
+  // Early rulers (e.g. Qin) often lack a recorded personal name; the title
+  // is used as a fallback, so skip a duplicate "称号 秦襄公" subtitle.
+  if (appellation.name === primary || appellation.name === personName) {
+    return null;
   }
-  return appellation
-    ? { label: APPELLATION_LABELS[appellation.kind], name: appellation.name }
-    : null;
+  return { label: APPELLATION_LABELS[appellation.kind], name: appellation.name };
 }

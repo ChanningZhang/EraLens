@@ -1,0 +1,61 @@
+{
+  "slug": "song-liao-jin",
+  "title": "宋辽金对峙（含南宋时期）",
+  "window": {
+    "startYear": 916,
+    "startMonth": 1,
+    "endYear": 1234,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-12",
+  "counts": {
+    "persons": 24,
+    "dynasties": 2,
+    "reigns": 19,
+    "events": 8,
+    "relations": 21
+  },
+  "sources": [
+    {
+      "label": "辽朝",
+      "url": "https://zh.wikipedia.org/wiki/辽朝"
+    },
+    {
+      "label": "辽朝君主列表",
+      "url": "https://zh.wikipedia.org/wiki/辽朝君主列表"
+    },
+    {
+      "label": "金朝",
+      "url": "https://zh.wikipedia.org/wiki/金朝"
+    },
+    {
+      "label": "金朝君主列表",
+      "url": "https://zh.wikipedia.org/wiki/金朝君主列表"
+    },
+    {
+      "label": "澶渊之盟",
+      "url": "https://zh.wikipedia.org/wiki/澶渊之盟"
+    },
+    {
+      "label": "靖康之变",
+      "url": "https://zh.wikipedia.org/wiki/靖康之变"
+    },
+    {
+      "label": "郾城之战",
+      "url": "https://zh.wikipedia.org/wiki/郾城之战"
+    },
+    {
+      "label": "采石之战",
+      "url": "https://zh.wikipedia.org/wiki/采石之战"
+    }
+  ],
+  "notes": [
+    "覆盖辽（916–1125）、女真金（1115–1234）及宋辽金对峙重大事件。",
+    "金朝 id 为 jin-nvzhen，避免与两晋 jin-west/jin-east、后晋 jin-hou 冲突。",
+    "南宋/北宋王朝与皇帝见 sui-tang-wudai-song；本包补充 event_dynasties 关联靖康之变、南宋建立。",
+    "未收录西辽、北辽、东辽等辽亡后残余政权。",
+    "在位年取维基百科君主列表常见年表，precision=year。"
+  ]
+}

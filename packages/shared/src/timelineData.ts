@@ -12,6 +12,7 @@ import {
   type SearchHit,
   type TimelineSlice,
 } from "./schema";
+import { personLifeAbs } from "./personTime";
 import { rangeIntersectsWindow } from "./time";
 
 export type TimelineFilterQuery = {
@@ -49,10 +50,24 @@ export function filterTimeline(
     return intersects && (dynastyHit || e.dynastyIds.length === 0);
   });
 
+  const reignPersonIds = new Set(store.reigns.map((r) => r.personId));
+  const visiblePersons = store.persons.filter((person) => {
+    if (reignPersonIds.has(person.id)) return false;
+    const life = personLifeAbs(person);
+    if (!life) return false;
+    return rangeIntersectsWindow(
+      life.startAbs,
+      life.endAbs,
+      query.fromAbs,
+      query.toAbs,
+    );
+  });
+
   return TimelineSliceSchema.parse({
     dynasties: visibleDynasties,
     reigns: visibleReigns,
     events: visibleEvents,
+    persons: visiblePersons,
   });
 }
 

@@ -2016,8 +2016,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-liu-yuan', 'han-zhao', 'liu-yuan', '汉赵光文皇帝',
   '光文皇帝', '高祖', '{"kind":"temple","name":"汉赵光文皇帝"}'::jsonb,
-  304, 1, 310, 12,
-  3648, 3731, 'year'
+  304, 1, 310, 7,
+  3648, 3726, 'month'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -2041,8 +2041,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-liu-he', 'han-zhao', 'liu-he', '汉赵皇帝',
   NULL, NULL, '{"kind":"regnal","name":"汉赵皇帝"}'::jsonb,
-  310, 1, 310, 12,
-  3720, 3731, 'year'
+  310, 7, 310, 7,
+  3726, 3726, 'month'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -2066,8 +2066,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-liu-cong', 'han-zhao', 'liu-cong', '汉赵昭武皇帝',
   '昭武皇帝', NULL, '{"kind":"posthumous","name":"汉赵昭武皇帝"}'::jsonb,
-  310, 1, 318, 12,
-  3720, 3827, 'year'
+  310, 8, 318, 8,
+  3727, 3823, 'month'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -2091,8 +2091,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-liu-can', 'han-zhao', 'liu-can', '汉赵末帝',
   NULL, NULL, '{"kind":"regnal","name":"汉赵末帝"}'::jsonb,
-  318, 1, 318, 12,
-  3816, 3827, 'year'
+  318, 8, 318, 9,
+  3823, 3824, 'month'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -2116,8 +2116,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-liu-yao-jin', 'han-zhao', 'liu-yao-jin', '汉赵末帝',
   NULL, NULL, '{"kind":"regnal","name":"汉赵末帝"}'::jsonb,
-  318, 1, 329, 12,
-  3816, 3959, 'year'
+  318, 10, 329, 12,
+  3825, 3959, 'month'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,

@@ -127,6 +127,202 @@
     ]
   },
   {
+    "id": "zi-woding",
+    "name": "沃丁",
+    "roles": [
+      "君主"
+    ],
+    "bio": "太甲之子，伊尹卒后仍用伊尹诸子及咎单为政。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/沃丁"
+      }
+    ]
+  },
+  {
+    "id": "zi-taigeng",
+    "name": "太庚",
+    "roles": [
+      "君主"
+    ],
+    "bio": "沃丁之弟，又称大庚。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/太庚"
+      }
+    ]
+  },
+  {
+    "id": "zi-xiaojia",
+    "name": "小甲",
+    "roles": [
+      "君主"
+    ],
+    "bio": "太庚之子，商代早中期君主。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/小甲"
+      }
+    ]
+  },
+  {
+    "id": "zi-yongji",
+    "name": "雍己",
+    "roles": [
+      "君主"
+    ],
+    "bio": "小甲之弟，传统记载此际诸侯不朝、殷道始衰。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/雍己"
+      }
+    ]
+  },
+  {
+    "id": "zi-taiwu",
+    "name": "太戊",
+    "roles": [
+      "君主"
+    ],
+    "bio": "雍己之弟，传统称中宗，与伊陟、巫咸辅政而复兴。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/太戊"
+      }
+    ]
+  },
+  {
+    "id": "zi-zhongding",
+    "name": "仲丁",
+    "roles": [
+      "君主"
+    ],
+    "bio": "太戊之子，迁于嚣，九世之乱始。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/仲丁"
+      }
+    ]
+  },
+  {
+    "id": "zi-wairen",
+    "name": "外壬",
+    "roles": [
+      "君主"
+    ],
+    "bio": "仲丁之弟，九世之乱中继位。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/外壬"
+      }
+    ]
+  },
+  {
+    "id": "zi-hedanjia",
+    "name": "河亶甲",
+    "roles": [
+      "君主"
+    ],
+    "bio": "外壬之弟，传统记载曾迁于相。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/河亶甲"
+      }
+    ]
+  },
+  {
+    "id": "zi-zuyi",
+    "name": "祖乙",
+    "roles": [
+      "君主"
+    ],
+    "bio": "河亶甲之子，传统记载迁邢、殷道再兴。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/祖乙"
+      }
+    ]
+  },
+  {
+    "id": "zi-zuxin",
+    "name": "祖辛",
+    "roles": [
+      "君主"
+    ],
+    "bio": "祖乙之子，商代早中期君主。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/祖辛"
+      }
+    ]
+  },
+  {
+    "id": "zi-wojia",
+    "name": "沃甲",
+    "roles": [
+      "君主"
+    ],
+    "bio": "祖辛之弟，甲骨文或作羌甲。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/沃甲"
+      }
+    ]
+  },
+  {
+    "id": "zi-zuding",
+    "name": "祖丁",
+    "roles": [
+      "君主"
+    ],
+    "bio": "沃甲之侄，祖辛之子，传统记载居庇。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/祖丁"
+      }
+    ]
+  },
+  {
+    "id": "zi-nangeng",
+    "name": "南庚",
+    "roles": [
+      "君主"
+    ],
+    "bio": "祖丁之弟，传统记载自庇迁于奄。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南庚"
+      }
+    ]
+  },
+  {
+    "id": "zi-yangjia",
+    "name": "阳甲",
+    "roles": [
+      "君主"
+    ],
+    "bio": "祖丁之子，盘庚之兄，传统记载此际殷衰。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/阳甲"
+      }
+    ]
+  },
+  {
     "id": "zi-pangeng",
     "name": "盘庚",
     "roles": [
@@ -137,6 +333,34 @@
       {
         "label": "维基百科",
         "url": "https://zh.wikipedia.org/wiki/盘庚"
+      }
+    ]
+  },
+  {
+    "id": "zi-xiaoxin",
+    "name": "小辛",
+    "roles": [
+      "君主"
+    ],
+    "bio": "盘庚之弟，迁殷后继位，传统记载殷道再衰。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/小辛"
+      }
+    ]
+  },
+  {
+    "id": "zi-xiaoyi",
+    "name": "小乙",
+    "roles": [
+      "君主"
+    ],
+    "bio": "小辛之弟，武丁之父，传统记载仍居殷。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/小乙_(商朝)"
       }
     ]
   },
@@ -166,6 +390,34 @@
       {
         "label": "维基百科",
         "url": "https://zh.wikipedia.org/wiki/妇好"
+      }
+    ]
+  },
+  {
+    "id": "zi-zugeng",
+    "name": "祖庚",
+    "roles": [
+      "君主"
+    ],
+    "bio": "武丁之子，甲骨文作「且庚」，断代工程定其在位前1191–前1148年。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/祖庚"
+      }
+    ]
+  },
+  {
+    "id": "zi-zujia",
+    "name": "祖甲",
+    "roles": [
+      "君主"
+    ],
+    "bio": "武丁之子、祖庚之弟，甲骨文作「且甲」，断代工程定其在位前1148–前1112年。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/祖甲"
       }
     ]
   },

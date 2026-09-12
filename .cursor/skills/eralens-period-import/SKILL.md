@@ -47,6 +47,13 @@ Task Progress:
 - 按用户字面范围收录：说「夏商周」只收三代王室，不自动展开春秋列国；同一王室可按习惯分期拆行（`zhou-west` / `zhou-east`，比照东汉）。
 - 每条实体记录来源（URL 或书名卷页），写入 `manifest.json` 的 `sources`；争议取舍写入 `notes`。
 - 只收录与**指定时期窗口相交**的实体；长跨度王朝（如唐）可只补窗口内在位与事件，勿重复插入已存在的完整王朝行（用 upsert 更新或跳过）。
+- **非帝王人物**（`persons`，不建 `reign`）与君主同等重要，按深度收录：
+  - **standard / detailed**：除主要皇帝外，应补**影响政局或广为检索**的非君主——名臣、名将、诗人学者，以及**后宫/宗室政治人物**（如吕后、韦后、太平公主、上官婉儿）。
+  - 若某皇帝 `bio` 或事件已点名某人（如「韦后乱政」），必须为其建 `person`，不可只在文本里提及。
+  - 后宫/宗室人物：`roles` 用 `皇后` / `后妃` / `公主` 等身份标签，若实际干政再加 `政治家`；**不**用 `皇帝` / `君主`。
+  - `name` 用通行检索名（韦后、吕后、太平公主）；本名可写在 `bio`，维基链接仍指向条目全名。
+  - `id` 优先 `{姓拼音}-{名/通称拼音}`（`lv-zhi`、`wei-hou`）；通称固定时可用 `{family}-hou` / `{family}-gongzhu`。
+  - 生卒能核对则填 `birth_*` / `death_*`（时间轴人物层需要）；仅知卒年或生年可只填一侧，其余 `NULL`。
 
 ### 2. 建模规则
 
@@ -54,11 +61,14 @@ Task Progress:
 
 - 王朝 `{name}`：`tang`、`song-north`、`zhou-west`
 - 人物 `{family}-{given}`：`li-shimin`、`ji-fa`。先查库中已有 id（`zhou-yu` 已是周瑜）。
+- 后宫/宗室通称人物：`wei-hou`（韦后）、`pingyang-gongzhu`（平阳公主）；与 `{family}-{given}` 并存，以库内无冲突为准。
 - 在位 `reign-{person}` 或 `reign-{person}-{ordinal}`
 - 事件 `{topic}`：`xuanwumen`、`muye`
 - 关系 `rel-{from}-{to}-{kind}`
 
-`persons.name` 用可检索的常用名（禹、姬发、孔子）。搜索只匹配 dynasty/person/event 的 `name`，不匹配 `title` 或谥号；谥号/庙号放 `title` + `preferred_appellation`。先秦角色用 `君主`/`天子`，不用 `皇帝`。年号自汉武帝起；先秦省略 `era_names`。
+`persons.name` 用可检索的常用名（禹、姬发、孔子、韦后）。搜索只匹配 dynasty/person/event 的 `name`，不匹配 `title` 或谥号；谥号/庙号放 `title` + `preferred_appellation`。先秦角色用 `君主`/`天子`，不用 `皇帝`。年号自汉武帝起；先秦省略 `era_names`。
+
+**非帝王人物 roles 示例**（可多选）：`政治家`、`军事家`、`诗人`、`文学家`、`史学家`、`科学家`、`将领`、`起义领袖`、`皇后`、`后妃`、`公主`、`宗室`、`高僧`、`学者`、`医学家` 等。干政后妃/太后/公主：`ARRAY['皇后','政治家']` 或 `ARRAY['公主','政治家']`。
 
 **AbsMonth**（必须与 `@eralens/shared` 一致）：
 
@@ -138,6 +148,13 @@ node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/impor
 
 ```bash
 .cursor/skills/eralens-period-import/scripts/apply-sql.sh data/imports/{slug}/import.sql
+```
+
+导入后若时间轴出现君主卡片上下叠放，运行去重脚本清理旧版 import 残留的孤儿记录：
+
+```bash
+node .cursor/skills/eralens-period-import/scripts/dedupe-database.mjs --dry-run
+node .cursor/skills/eralens-period-import/scripts/dedupe-database.mjs
 ```
 
 连接串默认 `postgresql://eralens:eralens@localhost:5432/eralens`（与 `apps/api/.env` 一致）。不要跑 `pnpm db:seed`：它会清空表再灌 JSON，冲掉本次 SQL 导入。

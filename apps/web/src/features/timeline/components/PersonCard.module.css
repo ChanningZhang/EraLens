@@ -1,0 +1,56 @@
+.card {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 8px;
+  height: 24px;
+  padding: 0 8px;
+  border: 1px solid color-mix(in srgb, var(--color-stone) 35%, var(--color-border));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-surface) 92%, var(--color-stone) 8%);
+  color: var(--color-ink-secondary);
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  transition:
+    border-color var(--motion-fast),
+    color var(--motion-fast),
+    box-shadow var(--motion-fast);
+}
+
+.card:hover {
+  border-color: var(--color-stone);
+  color: var(--color-ink);
+  box-shadow: 0 1px 4px color-mix(in srgb, var(--color-ink) 8%, transparent);
+}
+
+.selected {
+  border-color: var(--color-accent);
+  box-shadow: inset 2px 0 0 var(--color-accent);
+}
+
+.dot {
+  padding: 0;
+  min-width: 8px;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--color-stone) 55%, transparent);
+}
+
+.compact {
+  padding: 0 6px;
+}
+
+.name {
+  font-size: 11px;
+  line-height: 1.2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.role {
+  flex: 0 0 auto;
+  font-size: 10px;
+  line-height: 1.2;
+  color: var(--color-ink-muted);
+}

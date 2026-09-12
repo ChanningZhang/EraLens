@@ -37,6 +37,16 @@ describe("mergeTimelineSlices", () => {
         ],
         reigns: [],
         events: [],
+        persons: [
+          {
+            id: "cao-cao",
+            name: "曹操",
+            birth: { year: 155, month: 1 },
+            death: { year: 220, month: 3 },
+            roles: ["政治家"],
+            links: [],
+          },
+        ],
       },
       {
         dynasties: [
@@ -56,9 +66,31 @@ describe("mergeTimelineSlices", () => {
         ],
         reigns: [],
         events: [],
+        persons: [
+          {
+            id: "cao-cao",
+            name: "曹操",
+            birth: { year: 155, month: 1 },
+            death: { year: 220, month: 3 },
+            roles: ["政治家"],
+            links: [],
+          },
+          {
+            id: "zhuge-liang",
+            name: "诸葛亮",
+            birth: { year: 181, month: 1 },
+            death: { year: 234, month: 8 },
+            roles: ["丞相"],
+            links: [],
+          },
+        ],
       },
     ]);
 
     expect(merged.dynasties).toHaveLength(1);
+    expect(merged.persons.map((person) => person.id).sort()).toEqual([
+      "cao-cao",
+      "zhuge-liang",
+    ]);
   });
 });

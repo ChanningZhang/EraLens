@@ -5,6 +5,7 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -70,7 +71,7 @@ function reign({
 function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, eraNames = [], preferred = null) {
   const pref =
     preferred ??
-    (temple ? { kind: "temple", name: title } : posthumous ? { kind: "posthumous", name: title } : { kind: "regnal", name: title });
+    defaultPreferredAppellation({ title, posthumous, temple, startYear, eraNames });
   return reign({
     id: dynastyId === "sui" || dynastyId === "tang" ? `reign-${personId}` : `reign-${personId}-${dynastyId}`,
     dynastyId,
@@ -93,6 +94,31 @@ function eras(reignId, list) {
     end: ym(e.ey, e.em ?? 12),
     sortOrder: i,
   }));
+}
+
+function tangSplitReign(id, personId, title, posthumous, temple, startYear, endYear, opts = {}) {
+  const { startMonth = 1, endMonth = 12, precision = "year", eraList = [] } = opts;
+  const eraNames = eraList.length ? eras(id, eraList) : [];
+  const preferred = defaultPreferredAppellation({
+    title,
+    posthumous,
+    temple,
+    startYear,
+    eraNames,
+  });
+  return reign({
+    id,
+    dynastyId: "tang",
+    personId,
+    title,
+    posthumousName: posthumous,
+    templeName: temple,
+    preferred,
+    start: ym(startYear, startMonth),
+    end: ym(endYear, endMonth),
+    precision,
+    eraNames,
+  });
 }
 
 function dr(dynastyId, personId, title, posthumous, temple, sy, ey, eraList = []) {
@@ -151,24 +177,45 @@ const persons = [
   person("chai-zongxun", "柴宗训", ["皇帝"], "后周恭帝，赵匡胤陈桥兵变后禅让。", "柴宗训"),
   // 十国
   person("yang-xingmi", "杨行密", ["君主"], "吴国奠基者，据淮南。", "杨行密"),
-  person("yang-pu", "杨溥", ["皇帝"], "吴末帝，为南唐所灭。", "杨溥"),
+  person("yang-wo", "杨渥", ["君主"], "杨吴第二代君主，荒淫失政，被部将张温所杀。", "杨渥"),
+  person("yang-longyan", "杨隆演", ["君主"], "杨吴第三代君主，后晋封吴王。", "杨隆演"),
+  person("yang-pu", "杨溥", ["皇帝"], "吴末帝，927年称帝，937年为南唐所灭。", "杨溥"),
   person("li-bian", "李昪", ["皇帝"], "南唐烈祖，代吴建南唐。", "李昪"),
+  person("li-jing-nantang", "李璟", ["皇帝"], "南唐元宗，李煜之父，善词赋。", "李璟"),
   person("li-yu-nantang", "李煜", ["君主"], "南唐后主，词名满天下，为宋所俘。", "李煜"),
   person("qian-liu", "钱镠", ["君主"], "吴越开国，据两浙。", "钱镠"),
+  person("qian-yuangui", "钱元瓘", ["君主"], "吴越文穆王，钱镠之子。", "钱元瓘"),
+  person("qian-hongzuo", "钱弘佐", ["君主"], "吴越忠悼王，年少即位。", "钱弘佐"),
+  person("qian-hongcong", "钱弘倧", ["君主"], "吴越忠逊王，在位仅一年。", "钱弘倧"),
   person("qian-chu", "钱俶", ["君主"], "吴越末主，纳土归宋。", "钱俶"),
   person("wang-shenzhi", "王审知", ["君主"], "闽国奠基者，据福建。", "王审知"),
-  person("wang-yanxi", "王延羲", ["君主"], "闽末帝，为部下所杀，闽亡。", "王延羲"),
+  person("wang-yanhan", "王延翰", ["君主"], "闽国第二代君主，王审知长子。", "王延翰"),
+  person("wang-yanjun", "王延钧", ["君主"], "闽国第三代君主，后称王鏞。", "王延钧"),
+  person("wang-jipeng", "王继鹏", ["君主"], "闽国第四代君主，王延钧之子。", "王继鹏"),
+  person("wang-yanxi", "王延羲", ["君主"], "闽国君主，荒虐，为部下所杀。", "王延羲"),
+  person("zhu-wenjin", "朱文进", ["君主"], "闽国叛将，短暂篡位。", "朱文进"),
+  person("wang-yanzheng", "王延政", ["君主"], "闽国末主，据建州称帝，945年闽亡。", "王延政"),
   person("liu-yan", "刘龑", ["皇帝"], "南汉高祖，据岭南。", "刘龑"),
+  person("liu-bin", "刘玢", ["皇帝"], "南汉殇帝，在位仅两年。", "刘玢"),
+  person("liu-sheng", "刘晟", ["皇帝"], "南汉中宗，残暴，南汉由盛转衰。", "刘晟"),
   person("liu-chang", "刘鋹", ["皇帝"], "南汉末帝，为宋所灭。", "刘鋹"),
   person("wang-jian-shu", "王建", ["皇帝"], "前蜀高祖，据成都。", "王建"),
   person("wang-yan-shu", "王衍", ["皇帝"], "前蜀末帝，为后唐所灭。", "王衍"),
   person("meng-zhixiang", "孟知祥", ["皇帝"], "后蜀高祖，据成都。", "孟知祥"),
   person("meng-chang", "孟昶", ["皇帝"], "后蜀末帝，为宋所灭。", "孟昶"),
   person("gao-jixing", "高季兴", ["君主"], "荆南（南平）开国，据江陵。", "高季兴"),
+  person("gao-conghe", "高从诲", ["君主"], "荆南第二代君主，高季兴之子。", "高从诲"),
+  person("gao-baorong", "高保融", ["君主"], "荆南第三代君主。", "高保融"),
+  person("gao-baoxu", "高保勖", ["君主"], "荆南第四代君主。", "高保勖"),
   person("gao-jichong", "高继冲", ["君主"], "荆南末主，纳土归宋。", "高继冲"),
   person("ma-yin", "马殷", ["君主"], "楚国开国，据湖南。", "马殷"),
+  person("ma-xisheng", "马希声", ["君主"], "楚国第二代君主，马殷之子。", "马希声"),
+  person("ma-xifan", "马希范", ["君主"], "楚国第三代君主，马楚鼎盛在其朝。", "马希范"),
+  person("ma-xiguang", "马希广", ["君主"], "楚国君主，在位仅数月。", "马希广"),
+  person("ma-xie", "马希萼", ["君主"], "楚国君主，与马希广争位。", "马希萼"),
   person("ma-xichong", "马希崇", ["君主"], "楚末，为南唐所灭。", "马希崇"),
   person("liu-min", "刘旻", ["皇帝"], "北汉世祖，据太原。", "刘旻"),
+  person("liu-jun-bei", "刘钧", ["皇帝"], "北汉第二代皇帝，刘旻之子。", "刘钧"),
   person("liu-jiyuan", "刘继元", ["皇帝"], "北汉末帝，为宋所灭。", "刘继元"),
   // 宋
   person("zhao-kuangyin", "赵匡胤", ["皇帝"], "宋太祖，陈桥兵变建宋，杯酒释兵权。", "赵匡胤"),
@@ -189,9 +236,42 @@ const persons = [
   person("zhao-shi", "赵显", ["皇帝"], "宋恭帝，降元，南宋实质亡。", "宋恭帝"),
   person("zhao-shi-duan", "赵昰", ["皇帝"], "宋端宗，流亡途中崩。", "宋端宗"),
   person("zhao-bing", "赵昺", ["皇帝"], "宋帝昺，崖山海战殉国，南宋亡。", "宋帝昺"),
-  person("an-lushan", "安禄山", ["将领"], "安史之乱发动者，范阳节度使。", "安禄山"),
+  person("an-lushan", "安禄山", ["将领"], "安史之乱发动者，范阳节度使。", "安禄山", ym(703), ym(761)),
   person("huang-chao", "黄巢", ["起义领袖"], "唐末农民起义领袖，攻入长安。", "黄巢"),
-  person("wang-anshi", "王安石", ["政治家"], "北宋改革家，熙宁变法主持者。", "王安石"),
+  person("wang-anshi", "王安石", ["政治家"], "北宋改革家，熙宁变法主持者。", "王安石", ym(1021), ym(1086)),
+  // 唐——非帝王人物
+  person("wei-zheng", "魏征", ["政治家"], "唐太宗时名相，以直言敢谏著称，为贞观之治奠基。", "魏征", ym(580), ym(643)),
+  person("fang-xuanling", "房玄龄", ["政治家"], "唐初宰相，与杜如晦并称房谋杜断。", "房玄龄", ym(579), ym(648)),
+  person("du-ruhui", "杜如晦", ["政治家"], "唐初宰相，辅佐李世民定策夺位、治理天下。", "杜如晦", ym(585), ym(630)),
+  person("li-jing-tang", "李靖", ["军事家"], "唐初名将，平定江南、北击突厥，封卫国公。", "李靖", ym(571), ym(649)),
+  person("guo-ziyi", "郭子仪", ["军事家"], "平定安史之乱功臣，再造唐朝，封汾阳王。", "郭子仪", ym(697), ym(781)),
+  person("di-renjie", "狄仁杰", ["政治家"], "武周名臣，断案如神，后复为宰相。", "狄仁杰", ym(630), ym(700)),
+  person("li-bai", "李白", ["诗人"], "盛唐诗人，诗仙，浪漫主义诗歌代表。", "李白", ym(701), ym(762)),
+  person("du-fu", "杜甫", ["诗人"], "盛唐诗人，诗圣，现实主义诗歌高峰。", "杜甫", ym(712), ym(770)),
+  person("wang-wei", "王维", ["诗人", "画家"], "盛唐诗人画家，山水田园诗代表。", "王维", ym(701), ym(761)),
+  person("bai-juyi", "白居易", ["诗人"], "中唐诗人，新乐府运动代表，长恨歌、琵琶行作者。", "白居易", ym(772), ym(846)),
+  person("han-yu", "韩愈", ["文学家"], "中唐古文运动领袖，唐宋八大家之首。", "韩愈", ym(768), ym(824)),
+  person("du-mu", "杜牧", ["诗人"], "晚唐诗人，与李商隐并称小李杜。", "杜牧", ym(803), ym(852)),
+  person("yan-zhenqing", "颜真卿", ["书法家", "政治家"], "唐代书法家，颜体创始人，安史之乱中守平原。", "颜真卿", ym(709), ym(784)),
+  person("xuanzang", "玄奘", ["高僧", "学者"], "西行取经，回国后主持译经，创唯识宗。", "玄奘", ym(602), ym(664)),
+  person("jianzhen", "鉴真", ["高僧"], "六次东渡日本，传播佛教与唐文化。", "鉴真", ym(688), ym(763)),
+  person("yang-guifei", "杨玉环", ["后妃"], "唐玄宗宠妃，马嵬驿之变中被赐死。", "杨贵妃", ym(719), ym(756)),
+  person("shangguan-waner", "上官婉儿", ["政治家", "诗人"], "武则天、中宗朝女官，掌制诰，诗文名世。", "上官婉儿", ym(664), ym(710)),
+  person("wei-hou", "韦后", ["皇后", "政治家"], "唐中宗皇后，神龙政变后擅权，效法武则天，景龙政变中被杀。", "韦皇后", ym(644), ym(710, 7)),
+  person("xue-rengui", "薛仁贵", ["军事家"], "唐将，白袍将军，征高句丽、击突厥。", "薛仁贵", ym(614), ym(683)),
+  person("zhang-xun", "张巡", ["军事家"], "安史之乱中死守睢阳，阻叛军南下。", "张巡", null, ym(757)),
+  // 宋——非帝王人物
+  person("fan-zhongyan", "范仲淹", ["政治家", "文学家"], "北宋名臣，庆历新政主持者，岳阳楼记作者。", "范仲淹", ym(989), ym(1052)),
+  person("bao-zheng", "包拯", ["政治家"], "北宋名臣，以清廉刚正著称，开封府尹。", "包拯", ym(999), ym(1062)),
+  person("ouyang-xiu", "欧阳修", ["文学家", "政治家"], "北宋文坛领袖，唐宋八大家之一，主持庆历新政。", "欧阳修", ym(1007), ym(1072)),
+  person("si-ma-guang", "司马光", ["史学家", "政治家"], "北宋史学家，主编资治通鉴，元祐更化代表。", "司马光", ym(1019), ym(1086)),
+  person("su-shi", "苏轼", ["文学家", "政治家"], "北宋文学家，唐宋八大家之一，诗词书画皆精。", "苏轼", ym(1037), ym(1101)),
+  person("shen-kuo", "沈括", ["科学家"], "北宋科学家，梦溪笔谈作者，天文历法、物理皆有建树。", "沈括", ym(1031), ym(1095)),
+  person("xin-qiji", "辛弃疾", ["词人", "军事家"], "南宋词人，抗金名将，豪放词派代表。", "辛弃疾", ym(1140), ym(1207)),
+  person("lu-you", "陆游", ["诗人"], "南宋爱国诗人，诗词文俱工，存诗近万首。", "陆游", ym(1125), ym(1210)),
+  person("han-shizhong", "韩世忠", ["军事家"], "南宋抗金名将，黄天荡之战大败金军。", "韩世忠", ym(1089), ym(1151)),
+  person("li-gang", "李纲", ["政治家", "军事家"], "北宋末宰相，力主抗金，靖康之变前后多次起用。", "李纲", ym(1083), ym(1140)),
+  person("wen-tianxiang", "文天祥", ["政治家"], "南宋末丞相，抗元被俘，作正气歌，就义于大都。", "文天祥", ym(1236), ym(1283)),
 ];
 
 const allPersons = persons;
@@ -233,8 +313,11 @@ const tangReigns = [
   dynastyReign("tang", "li-yuan", "唐高祖", "神尧皇帝", "高祖", 618, 626),
   dynastyReign("tang", "li-shimin", "唐太宗", "文武皇帝", "太宗", 626, 649, eras("reign-li-shimin", [{ name: "贞观", sy: 627, ey: 649 }])),
   dynastyReign("tang", "li-zhi", "唐高宗", "天皇大帝", "高宗", 649, 683),
-  dynastyReign("tang", "li-xian", "唐中宗", null, null, 684, 710),
-  dynastyReign("tang", "li-dan", "唐睿宗", null, null, 684, 712),
+  // 李显、李旦两度即位，中间夹武周（690–705），各拆两段在位。
+  tangSplitReign("reign-li-xian", "li-xian", "唐中宗", null, null, 684, 684, { startMonth: 1, endMonth: 2, precision: "month" }),
+  tangSplitReign("reign-li-dan", "li-dan", "唐睿宗", null, null, 684, 690),
+  tangSplitReign("reign-li-xian-2", "li-xian", "唐中宗", null, null, 705, 710),
+  tangSplitReign("reign-li-dan-2", "li-dan", "唐睿宗", null, null, 710, 712),
   dynastyReign("tang", "li-longji", "唐玄宗", "至道大明孝皇帝", "玄宗", 712, 756, eras("reign-li-longji", [{ name: "开元", sy: 713, ey: 741 }, { name: "天宝", sy: 742, ey: 756 }])),
   dynastyReign("tang", "li-heng", "唐肃宗", null, null, 756, 762),
   dynastyReign("tang", "li-yu-tang", "唐代宗", null, null, 762, 779),
@@ -275,24 +358,45 @@ const wudaiReigns = [
 
 const shiguoReigns = [
   dr("wu-shi", "yang-xingmi", "吴太祖", null, null, 902, 905),
+  dr("wu-shi", "yang-wo", "吴王", null, null, 905, 918),
+  dr("wu-shi", "yang-longyan", "吴王", null, null, 918, 920),
   dr("wu-shi", "yang-pu", "吴末帝", null, null, 920, 937),
   dr("tang-nan", "li-bian", "南唐烈祖", null, null, 937, 943),
+  dr("tang-nan", "li-jing-nantang", "南唐元宗", null, null, 943, 961),
   dr("tang-nan", "li-yu-nantang", "南唐后主", null, null, 961, 975),
   dr("wuyue", "qian-liu", "吴越武肃王", null, null, 907, 932),
-  dr("wuyue", "qian-chu", "吴越末王", null, null, 947, 978),
+  dr("wuyue", "qian-yuangui", "吴越文穆王", null, null, 932, 941),
+  dr("wuyue", "qian-hongzuo", "吴越忠悼王", null, null, 941, 947),
+  dr("wuyue", "qian-hongcong", "吴越忠逊王", null, null, 947, 948),
+  dr("wuyue", "qian-chu", "吴越忠懿王", null, null, 948, 978),
   dr("min-fujian", "wang-shenzhi", "闽太祖", null, null, 909, 925),
-  dr("min-fujian", "wang-yanxi", "闽末王", null, null, 939, 945),
+  dr("min-fujian", "wang-yanhan", "闽主", null, null, 925, 926),
+  dr("min-fujian", "wang-yanjun", "闽主", null, null, 926, 935),
+  dr("min-fujian", "wang-jipeng", "闽主", null, null, 935, 939),
+  dr("min-fujian", "wang-yanxi", "闽主", null, null, 939, 944),
+  dr("min-fujian", "zhu-wenjin", "闽主", null, null, 944, 944),
+  dr("min-fujian", "wang-yanzheng", "闽主", null, null, 943, 945),
   dr("han-nan", "liu-yan", "南汉高祖", null, null, 917, 942),
+  dr("han-nan", "liu-bin", "南汉殇帝", null, null, 942, 943),
+  dr("han-nan", "liu-sheng", "南汉中宗", null, null, 943, 958),
   dr("han-nan", "liu-chang", "南汉末帝", null, null, 958, 971),
   dr("shu-qian", "wang-jian-shu", "前蜀高祖", null, null, 907, 918),
   dr("shu-qian", "wang-yan-shu", "前蜀末帝", null, null, 918, 925),
   dr("shu-hou", "meng-zhixiang", "后蜀高祖", null, null, 934, 934),
   dr("shu-hou", "meng-chang", "后蜀末帝", null, null, 934, 965),
   dr("jingnan", "gao-jixing", "荆南武信王", null, null, 924, 928),
+  dr("jingnan", "gao-conghe", "荆南文献王", null, null, 928, 948),
+  dr("jingnan", "gao-baorong", "荆南贞懿王", null, null, 948, 960),
+  dr("jingnan", "gao-baoxu", "荆南贞献王", null, null, 960, 962),
   dr("jingnan", "gao-jichong", "荆南末王", null, null, 962, 963),
   dr("chu-nan", "ma-yin", "楚武王", null, null, 907, 930),
-  dr("chu-nan", "ma-xichong", "楚末", null, null, 950, 951),
+  dr("chu-nan", "ma-xisheng", "楚王", null, null, 930, 932),
+  dr("chu-nan", "ma-xifan", "楚王", null, null, 932, 947),
+  dr("chu-nan", "ma-xiguang", "楚王", null, null, 947, 947),
+  dr("chu-nan", "ma-xie", "楚王", null, null, 947, 950),
+  dr("chu-nan", "ma-xichong", "楚王", null, null, 950, 951),
   dr("han-bei", "liu-min", "北汉世祖", null, null, 951, 954),
+  dr("han-bei", "liu-jun-bei", "北汉睿皇帝", null, null, 954, 968),
   dr("han-bei", "liu-jiyuan", "北汉末帝", null, null, 968, 979),
 ];
 
@@ -468,8 +572,9 @@ const manifest = {
     "覆盖隋（581–618）、唐（618–907）、武周（690–705）、五代十国（907–979）、北宋（960–1127）、南宋（1127–1279）。",
     "杨坚（yang-jian）复用 nanbei-chao 已有 id；后梁 id 为 liang-hou，避免与十六国后凉 liang-back 冲突。",
     "十国吴 id 为 wu-shi，避免与三国孙吴 wu 冲突；前蜀/后蜀为 shu-qian/shu-hou，避免与蜀汉 shu 冲突。",
-    "十国各政权收录开国与末代君主；五代收录全部皇帝。",
+    "十国各政权收录全部君主；五代收录全部皇帝。",
     "1279 崖山海战为南宋终结；元朝不在本包内。",
+    "李显、李旦两度即位，在位拆为两段；690–705 年武周武则天，不与唐中宗重叠。",
   ],
 };
 writeFileSync(path.join(__dirname, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);

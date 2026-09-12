@@ -6,6 +6,7 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -192,7 +193,7 @@ function reign({
 function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, eraNames = [], preferred = null) {
   const pref =
     preferred ??
-    (temple ? { kind: "temple", name: title } : posthumous ? { kind: "posthumous", name: title } : { kind: "regnal", name: title });
+    defaultPreferredAppellation({ title, posthumous, temple, startYear, eraNames });
   return reign({
     id: `reign-${personId}`,
     dynastyId,

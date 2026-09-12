@@ -1,6 +1,6 @@
 .ruler {
   position: relative;
-  padding: 6px var(--space-4);
+  padding: 6px 0;
   border-top: 1px solid var(--color-border);
   background: var(--color-surface);
   user-select: none;
@@ -11,6 +11,7 @@
 .ringShell {
   position: relative;
   height: 58px;
+  margin: 0 var(--space-4);
 }
 
 .ringTrack {
@@ -41,7 +42,10 @@
 
 .scaleViewport {
   position: absolute;
-  inset: 0;
+  top: 0;
+  bottom: 0;
+  left: calc(-1 * var(--space-4));
+  right: calc(-1 * var(--space-4));
   pointer-events: none;
   -webkit-mask-image: linear-gradient(
     90deg,

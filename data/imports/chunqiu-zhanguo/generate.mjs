@@ -6,6 +6,7 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { rulersByDynasty, rulerStats } from "./rulers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -99,21 +100,58 @@ function eventPoint({ id, name, kind, at, precision = "year", dateNote, dynastyI
   };
 }
 
-// ── persons (new; jiang-xiaobai, ji-chonger, lv-shang, ying-zheng, kong-qiu already in DB) ──
+// ── persons (rulers + key figures) ──
 
-const persons = [
-  person("xiong-zhuang", "熊侣", ["君主"], "楚庄王，春秋五霸之一，问鼎中原。", "楚庄王"),
-  person("ying-quliang", "嬴渠梁", ["君主"], "秦孝公，任用商鞅变法，秦国由弱转强。", "秦孝公"),
-  person("ying-qi", "嬴开", ["君主"], "秦襄公，护送周平王东迁，秦国始列为诸侯。", "秦襄公"),
-  person("gou-jian", "勾践", ["君主"], "越国君主，卧薪尝胆，终灭吴国。", "勾践"),
-  person("fu-chai", "夫差", ["君主"], "吴王夫差，破越后骄纵，终为勾践所灭。", "夫差"),
-  person("wei-wen", "魏文侯", ["君主"], "魏国开国君主，任用李悝、吴起，战国初强。", "魏文侯"),
-  person("han-jing", "韩景侯", ["君主"], "韩国开国君主，前403年周天子正式册命。", "韩景侯"),
-  person("zhao-lie", "赵烈侯", ["君主"], "赵国开国君主，与韩魏同受周室册命。", "赵烈侯"),
+const EXTRA_PERSONS = [
   person("shang-yang", "商鞅", ["政治家"], "卫国人，秦孝公时主持变法，奠定秦统一基础。", "商鞅"),
   person("wu-qi", "吴起", ["军事家", "政治家"], "魏文侯时名将，后在楚主持变法。", "吴起"),
   person("sun-wu", "孙武", ["军事家"], "齐国军事家，著《孙子兵法》，传为吴王阖闾将。", "孙武"),
+  person("helu", "阖闾", ["君主"], "吴王阖闾，任用伍子胥、孙武，破楚入郢。", "阖闾"),
 ];
+
+const DYNASTY_LABELS = {
+  "qi-chunqiu": "齐国",
+  "jin-chunqiu": "晋国",
+  "chu-chunqiu": "楚国",
+  "yan-chunqiu": "燕国",
+  "song-chunqiu": "宋国",
+  "lu-chunqiu": "鲁国",
+  "wei-weiguo": "卫国",
+  "zheng-chunqiu": "郑国",
+  "cao-chunqiu": "曹国",
+  "wu-chunqiu": "吴国",
+  "yue-chunqiu": "越国",
+  zhongshan: "中山",
+  "han-warring": "韩国",
+  "zhao-warring": "赵国",
+  "wei-warring": "魏国",
+  qin: "秦国",
+};
+
+function rulerPerson(r) {
+  const state = DYNASTY_LABELS[r.dynastyId] ?? r.dynastyId;
+  const displayName =
+    r.personName && !/^[0-9]+$/.test(r.personName) && !/^[0-9]+年$/.test(r.personName)
+      ? r.personName
+      : r.title;
+  const wikiTitle = r.title.replace(/^[吴越韩赵魏秦燕宋鲁卫郑曹齐晋楚]/, "").trim() || r.title;
+  return person(
+    r.personId,
+    displayName,
+    ["君主"],
+    `${r.title}，${state}君主。`,
+    wikiTitle,
+  );
+}
+
+const rulerPersons = Object.values(rulersByDynasty)
+  .flat()
+  .map(rulerPerson);
+const personById = new Map();
+for (const p of [...rulerPersons, ...EXTRA_PERSONS]) {
+  personById.set(p.id, p);
+}
+const persons = [...personById.values()];
 
 // ── dynasties (feudal states; id suffix avoids later homonymous dynasties) ──
 
@@ -142,7 +180,7 @@ const dynasties = [
     altNames: ["晋"],
     scope: "cn",
     region: "east_asia",
-    start: ym(-1033),
+    start: ym(-1042),
     end: ym(-376, 12),
     precision: "year",
     colorToken: nextColor(),
@@ -202,7 +240,7 @@ const dynasties = [
     altNames: ["卫"],
     scope: "cn",
     region: "east_asia",
-    start: ym(-1038),
+    start: ym(-1040),
     end: ym(-209, 12),
     precision: "year",
     colorToken: nextColor(),
@@ -319,21 +357,37 @@ const dynasties = [
   },
 ];
 
-// ── reigns (representative rulers per state) ──
+// ── reigns (full succession per state; built from Wikipedia/Shiji chronology) ──
 
-const reigns = [
-  dynastyReign("qi-chunqiu", "lv-shang", "齐太公", "太公", -1046, -1043),
-  dynastyReign("qi-chunqiu", "jiang-xiaobai", "齐桓公", "桓公", -685, -643),
-  dynastyReign("jin-chunqiu", "ji-chonger", "晋文公", "文公", -636, -628),
-  dynastyReign("chu-chunqiu", "xiong-zhuang", "楚庄王", "庄王", -613, -591),
-  dynastyReign("qin", "ying-qi", "秦襄公", "襄公", -770, -766),
-  dynastyReign("qin", "ying-quliang", "秦孝公", "孝公", -361, -338),
-  dynastyReign("wu-chunqiu", "fu-chai", "吴王夫差", "夫差", -495, -473),
-  dynastyReign("yue-chunqiu", "gou-jian", "越王勾践", "勾践", -496, -465),
-  dynastyReign("wei-warring", "wei-wen", "魏文侯", "文侯", -424, -387),
-  dynastyReign("han-warring", "han-jing", "韩景侯", "景侯", -408, -400),
-  dynastyReign("zhao-warring", "zhao-lie", "赵烈侯", "烈侯", -403, -387),
-];
+function dedupeReigns(reignList) {
+  const seen = new Set();
+  return reignList.filter((r) => {
+    const key = `${r.dynastyId}|${r.startAbs}|${r.endAbs}|${r.personId}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+const reigns = dedupeReigns(
+  Object.values(rulersByDynasty)
+    .flat()
+    .map((r) =>
+      reign({
+        id: `reign-${r.personId}-${r.dynastyId}`,
+        dynastyId: r.dynastyId,
+        personId: r.personId,
+        title: r.title,
+        posthumousName: r.posthumousName,
+        templeName: null,
+        preferred: r.posthumousName
+          ? { kind: "posthumous", name: r.title }
+          : { kind: "regnal", name: r.title },
+        start: ym(r.startYear),
+        end: ym(r.endYear, 12),
+      }),
+    ),
+);
 
 // ── events ──
 
@@ -602,7 +656,7 @@ const manifest = {
   window: { startYear: -1046, startMonth: 1, endYear: -207, endMonth: 12 },
   scope: "cn",
   depth: "standard",
-  generatedAt: "2026-09-12",
+  generatedAt: rulerStats.generatedAt,
   counts: {
     persons: persons.length,
     dynasties: dynasties.length,
@@ -620,14 +674,21 @@ const manifest = {
     { label: "楚国", url: "https://zh.wikipedia.org/wiki/楚国" },
     { label: "秦国", url: "https://zh.wikipedia.org/wiki/秦国" },
     { label: "三家分晋", url: "https://zh.wikipedia.org/wiki/三家分晋" },
+    { label: "周朝诸侯国君主列表", url: "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表" },
+    { label: "齐国君主列表", url: "https://zh.wikipedia.org/zh-cn/齐国君主列表" },
+    { label: "秦国君主列表", url: "https://zh.wikipedia.org/zh-cn/秦国君主列表" },
   ],
   notes: [
     "收录春秋主要列国与战国七雄（齐楚燕韩赵魏秦）及宋鲁卫郑曹吴越中山等。",
     "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
     "秦国 upsert 已有 qin 行，将始年延至前770年秦襄公，与 qin-han 统一帝国段衔接。",
-    "各国在位仅列代表性君主；未逐代收录全部国君。",
+    "各国国君世系取维基百科大陆简体（zh-cn）诸侯君主列表与《史记》年表；按表头读取称号/姓名/在位年份，不用本地繁简转换。",
+    "西周早中期曹、楚、卫、晋、燕、宋等表中无在位年的国君，按世系顺序均分到分封年与《史记》始记年之间，不采用传统积年。",
+    "卫国人物 id 用 weiguo- 前缀，避免与战国魏 wei-r* 冲突。",
+    "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 precision: year。",
     "未收录薛、滕、杞、莒等小国；未收录战国末期的代、胶东等残余。",
     "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
+    `国君数据由 fetch-wiki-zh-cn.py + build-rulers.mjs 生成，共 ${rulerStats.reigns} 条在位记录。`,
   ],
 };
 writeFileSync(path.join(__dirname, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);

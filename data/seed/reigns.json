@@ -157,6 +157,315 @@
     }
   },
   {
+    "id": "reign-zi-woding",
+    "dynastyId": "shang",
+    "personId": "zi-woding",
+    "title": "商沃丁",
+    "eraNames": [],
+    "start": {
+      "year": -1547,
+      "month": 1
+    },
+    "end": {
+      "year": -1529,
+      "month": 12
+    },
+    "startAbs": -18552,
+    "endAbs": -18325,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商沃丁"
+    }
+  },
+  {
+    "id": "reign-zi-taigeng",
+    "dynastyId": "shang",
+    "personId": "zi-taigeng",
+    "title": "商太庚",
+    "eraNames": [],
+    "start": {
+      "year": -1528,
+      "month": 1
+    },
+    "end": {
+      "year": -1524,
+      "month": 12
+    },
+    "startAbs": -18324,
+    "endAbs": -18265,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商太庚"
+    }
+  },
+  {
+    "id": "reign-zi-xiaojia",
+    "dynastyId": "shang",
+    "personId": "zi-xiaojia",
+    "title": "商小甲",
+    "eraNames": [],
+    "start": {
+      "year": -1523,
+      "month": 1
+    },
+    "end": {
+      "year": -1507,
+      "month": 12
+    },
+    "startAbs": -18264,
+    "endAbs": -18061,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商小甲"
+    }
+  },
+  {
+    "id": "reign-zi-yongji",
+    "dynastyId": "shang",
+    "personId": "zi-yongji",
+    "title": "商雍己",
+    "eraNames": [],
+    "start": {
+      "year": -1506,
+      "month": 1
+    },
+    "end": {
+      "year": -1495,
+      "month": 12
+    },
+    "startAbs": -18060,
+    "endAbs": -17917,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商雍己"
+    }
+  },
+  {
+    "id": "reign-zi-taiwu",
+    "dynastyId": "shang",
+    "personId": "zi-taiwu",
+    "title": "商太戊",
+    "eraNames": [],
+    "start": {
+      "year": -1494,
+      "month": 1
+    },
+    "end": {
+      "year": -1420,
+      "month": 12
+    },
+    "startAbs": -17916,
+    "endAbs": -17017,
+    "precision": "year",
+    "templeName": "中宗",
+    "preferredAppellation": {
+      "kind": "temple",
+      "name": "商中宗"
+    }
+  },
+  {
+    "id": "reign-zi-zhongding",
+    "dynastyId": "shang",
+    "personId": "zi-zhongding",
+    "title": "商仲丁",
+    "eraNames": [],
+    "start": {
+      "year": -1419,
+      "month": 1
+    },
+    "end": {
+      "year": -1411,
+      "month": 12
+    },
+    "startAbs": -17016,
+    "endAbs": -16909,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商仲丁"
+    }
+  },
+  {
+    "id": "reign-zi-wairen",
+    "dynastyId": "shang",
+    "personId": "zi-wairen",
+    "title": "商外壬",
+    "eraNames": [],
+    "start": {
+      "year": -1410,
+      "month": 1
+    },
+    "end": {
+      "year": -1401,
+      "month": 12
+    },
+    "startAbs": -16908,
+    "endAbs": -16789,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商外壬"
+    }
+  },
+  {
+    "id": "reign-zi-hedanjia",
+    "dynastyId": "shang",
+    "personId": "zi-hedanjia",
+    "title": "商河亶甲",
+    "eraNames": [],
+    "start": {
+      "year": -1400,
+      "month": 1
+    },
+    "end": {
+      "year": -1392,
+      "month": 12
+    },
+    "startAbs": -16788,
+    "endAbs": -16681,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商河亶甲"
+    }
+  },
+  {
+    "id": "reign-zi-zuyi",
+    "dynastyId": "shang",
+    "personId": "zi-zuyi",
+    "title": "商祖乙",
+    "eraNames": [],
+    "start": {
+      "year": -1391,
+      "month": 1
+    },
+    "end": {
+      "year": -1373,
+      "month": 12
+    },
+    "startAbs": -16680,
+    "endAbs": -16453,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商祖乙"
+    }
+  },
+  {
+    "id": "reign-zi-zuxin",
+    "dynastyId": "shang",
+    "personId": "zi-zuxin",
+    "title": "商祖辛",
+    "eraNames": [],
+    "start": {
+      "year": -1372,
+      "month": 1
+    },
+    "end": {
+      "year": -1359,
+      "month": 12
+    },
+    "startAbs": -16452,
+    "endAbs": -16285,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商祖辛"
+    }
+  },
+  {
+    "id": "reign-zi-wojia",
+    "dynastyId": "shang",
+    "personId": "zi-wojia",
+    "title": "商沃甲",
+    "eraNames": [],
+    "start": {
+      "year": -1358,
+      "month": 1
+    },
+    "end": {
+      "year": -1339,
+      "month": 12
+    },
+    "startAbs": -16284,
+    "endAbs": -16045,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商沃甲"
+    }
+  },
+  {
+    "id": "reign-zi-zuding",
+    "dynastyId": "shang",
+    "personId": "zi-zuding",
+    "title": "商祖丁",
+    "eraNames": [],
+    "start": {
+      "year": -1338,
+      "month": 1
+    },
+    "end": {
+      "year": -1330,
+      "month": 12
+    },
+    "startAbs": -16044,
+    "endAbs": -15937,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商祖丁"
+    }
+  },
+  {
+    "id": "reign-zi-nangeng",
+    "dynastyId": "shang",
+    "personId": "zi-nangeng",
+    "title": "商南庚",
+    "eraNames": [],
+    "start": {
+      "year": -1329,
+      "month": 1
+    },
+    "end": {
+      "year": -1324,
+      "month": 12
+    },
+    "startAbs": -15936,
+    "endAbs": -15865,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商南庚"
+    }
+  },
+  {
+    "id": "reign-zi-yangjia",
+    "dynastyId": "shang",
+    "personId": "zi-yangjia",
+    "title": "商阳甲",
+    "eraNames": [],
+    "start": {
+      "year": -1323,
+      "month": 1
+    },
+    "end": {
+      "year": -1311,
+      "month": 12
+    },
+    "startAbs": -15864,
+    "endAbs": -15709,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商阳甲"
+    }
+  },
+  {
     "id": "reign-zi-pangeng",
     "dynastyId": "shang",
     "personId": "zi-pangeng",
@@ -176,6 +485,50 @@
     "preferredAppellation": {
       "kind": "regnal",
       "name": "商盘庚"
+    }
+  },
+  {
+    "id": "reign-zi-xiaoxin",
+    "dynastyId": "shang",
+    "personId": "zi-xiaoxin",
+    "title": "商小辛",
+    "eraNames": [],
+    "start": {
+      "year": -1279,
+      "month": 1
+    },
+    "end": {
+      "year": -1277,
+      "month": 12
+    },
+    "startAbs": -15336,
+    "endAbs": -15301,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商小辛"
+    }
+  },
+  {
+    "id": "reign-zi-xiaoyi",
+    "dynastyId": "shang",
+    "personId": "zi-xiaoyi",
+    "title": "商小乙",
+    "eraNames": [],
+    "start": {
+      "year": -1276,
+      "month": 1
+    },
+    "end": {
+      "year": -1251,
+      "month": 12
+    },
+    "startAbs": -15300,
+    "endAbs": -14989,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商小乙"
     }
   },
   {
@@ -199,6 +552,50 @@
     "preferredAppellation": {
       "kind": "temple",
       "name": "商高宗"
+    }
+  },
+  {
+    "id": "reign-zi-zugeng",
+    "dynastyId": "shang",
+    "personId": "zi-zugeng",
+    "title": "商王祖庚",
+    "eraNames": [],
+    "start": {
+      "year": -1191,
+      "month": 1
+    },
+    "end": {
+      "year": -1148,
+      "month": 12
+    },
+    "startAbs": -14280,
+    "endAbs": -13753,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商祖庚"
+    }
+  },
+  {
+    "id": "reign-zi-zujia",
+    "dynastyId": "shang",
+    "personId": "zi-zujia",
+    "title": "商王祖甲",
+    "eraNames": [],
+    "start": {
+      "year": -1148,
+      "month": 1
+    },
+    "end": {
+      "year": -1112,
+      "month": 12
+    },
+    "startAbs": -13764,
+    "endAbs": -13321,
+    "precision": "year",
+    "preferredAppellation": {
+      "kind": "regnal",
+      "name": "商祖甲"
     }
   },
   {

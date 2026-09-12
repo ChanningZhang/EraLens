@@ -1,0 +1,14 @@
+.layer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  border-top: 1px solid color-mix(in srgb, var(--color-border) 85%, transparent);
+  background: color-mix(in srgb, var(--color-stone) 2.5%, var(--color-paper));
+  pointer-events: none;
+}
+
+.layer > * {
+  pointer-events: auto;
+}

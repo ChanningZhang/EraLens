@@ -175,6 +175,7 @@ export const TimelineSliceSchema = z.object({
   dynasties: z.array(DynastySchema),
   reigns: z.array(ReignSchema),
   events: z.array(EventSchema),
+  persons: z.array(PersonSchema).default([]),
 });
 
 export const EntityDetailSchema = z.object({

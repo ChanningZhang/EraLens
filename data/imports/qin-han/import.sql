@@ -1015,7 +1015,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-liu-bang', 'han-west', 'liu-bang', '汉高祖',
-  '高皇帝', '太祖', '{"kind":"temple","name":"汉高祖"}'::jsonb,
+  '高皇帝', '太祖', '{"kind":"posthumous","name":"汉高祖"}'::jsonb,
   -202, 1, -195, 12,
   -2412, -2317, 'year'
 )
@@ -1115,7 +1115,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-liu-heng', 'han-west', 'liu-heng', '汉文帝',
-  '孝文皇帝', '太宗', '{"kind":"temple","name":"汉文帝"}'::jsonb,
+  '孝文皇帝', '太宗', '{"kind":"posthumous","name":"汉文帝"}'::jsonb,
   -180, 1, -157, 12,
   -2148, -1861, 'year'
 )
@@ -1165,7 +1165,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-liu-che', 'han-west', 'liu-che', '汉武帝',
-  '孝武皇帝', '世宗', '{"kind":"temple","name":"汉武帝"}'::jsonb,
+  '孝武皇帝', '世宗', '{"kind":"posthumous","name":"汉武帝"}'::jsonb,
   -141, 1, -87, 12,
   -1680, -1021, 'year'
 )
@@ -1365,7 +1365,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-ruzi-ying', 'han-west', 'ruzi-ying', '孺子婴',
-  NULL, NULL, '{"kind":"regnal","name":"孺子婴"}'::jsonb,
+  NULL, NULL, '{"kind":"era","name":"居摄"}'::jsonb,
   6, 1, 8, 12,
   72, 107, 'year'
 )
@@ -1440,7 +1440,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-liu-xiu', 'han-east', 'liu-xiu', '汉光武帝',
-  '光武皇帝', '世祖', '{"kind":"temple","name":"汉光武帝"}'::jsonb,
+  '光武皇帝', '世祖', '{"kind":"posthumous","name":"汉光武帝"}'::jsonb,
   25, 1, 57, 12,
   300, 695, 'year'
 )
@@ -1465,7 +1465,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-liu-zhuang', 'han-east', 'liu-zhuang', '汉明帝',
-  '孝明皇帝', '显宗', '{"kind":"temple","name":"汉明帝"}'::jsonb,
+  '孝明皇帝', '显宗', '{"kind":"posthumous","name":"汉明帝"}'::jsonb,
   57, 1, 75, 12,
   684, 911, 'year'
 )
@@ -1490,7 +1490,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-liu-zuo', 'han-east', 'liu-zuo', '汉章帝',
-  '孝章皇帝', '肃宗', '{"kind":"temple","name":"汉章帝"}'::jsonb,
+  '孝章皇帝', '肃宗', '{"kind":"posthumous","name":"汉章帝"}'::jsonb,
   75, 1, 88, 12,
   900, 1067, 'year'
 )

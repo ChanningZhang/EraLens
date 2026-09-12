@@ -1,0 +1,54 @@
+{
+  "slug": "mongol-pre-yuan",
+  "title": "元朝建立前的蒙古帝国",
+  "window": {
+    "startYear": 1206,
+    "startMonth": 1,
+    "endYear": 1271,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-12",
+  "counts": {
+    "persons": 7,
+    "dynasties": 1,
+    "reigns": 5,
+    "events": 7,
+    "relations": 7
+  },
+  "sources": [
+    {
+      "label": "蒙古帝国",
+      "url": "https://zh.wikipedia.org/wiki/蒙古帝国"
+    },
+    {
+      "label": "成吉思汗",
+      "url": "https://zh.wikipedia.org/wiki/成吉思汗"
+    },
+    {
+      "label": "窝阔台",
+      "url": "https://zh.wikipedia.org/wiki/窝阔台"
+    },
+    {
+      "label": "蒙哥",
+      "url": "https://zh.wikipedia.org/wiki/蒙哥"
+    },
+    {
+      "label": "忽必烈",
+      "url": "https://zh.wikipedia.org/wiki/忽必烈"
+    },
+    {
+      "label": "蒙古帝国大汗列表",
+      "url": "https://zh.wikipedia.org/wiki/蒙古帝国大汗列表"
+    }
+  ],
+  "notes": [
+    "覆盖大蒙古国（1206–1271），五位普遍承认的大汗：成吉思汗、窝阔台、贵由、蒙哥、忽必烈（薛禅汗）。",
+    "1227–1229拖雷监国、1241–1246乃马真称制、1248–1251海迷失称制以事件收录，不建 reign。",
+    "忽必烈 1271 年定国号大元后见 yuan-ming-qing；本包 reign-hu-bilie-mongol-empire 止于 1271。",
+    "联蒙灭金事件见 song-liao-jin，本包补充 mongol-empire 关联。",
+    "未收录钦察、伊利、察合台等汗国分治时期。",
+    "在位年取维基百科君主列表，precision=year。"
+  ]
+}

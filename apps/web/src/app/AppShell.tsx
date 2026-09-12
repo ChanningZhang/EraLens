@@ -3,6 +3,7 @@ import { getRepository } from "@/data/repository";
 import type { SearchHit } from "@eralens/shared";
 import { DetailPanel } from "@/features/detail/components/DetailPanel";
 import { ResizeHandle } from "@/features/detail/components/ResizeHandle";
+import { CursorGuide } from "@/features/timeline/components/CursorGuide";
 import { Ruler } from "@/features/timeline/components/Ruler";
 import { TimelineStage } from "@/features/timeline/components/TimelineStage";
 import { useSelection } from "@/features/timeline/hooks/useSelection";
@@ -178,6 +179,7 @@ export function AppShell() {
       </div>
 
       <Ruler />
+      <CursorGuide stageRef={stageRef} />
     </div>
   );
 }

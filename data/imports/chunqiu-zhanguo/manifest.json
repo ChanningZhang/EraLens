@@ -11,9 +11,9 @@
   "depth": "standard",
   "generatedAt": "2026-09-12",
   "counts": {
-    "persons": 11,
+    "persons": 425,
     "dynasties": 16,
-    "reigns": 11,
+    "reigns": 422,
     "events": 5,
     "relations": 4,
     "existingEventDynastyLinks": 29
@@ -50,14 +50,30 @@
     {
       "label": "三家分晋",
       "url": "https://zh.wikipedia.org/wiki/三家分晋"
+    },
+    {
+      "label": "周朝诸侯国君主列表",
+      "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+    },
+    {
+      "label": "齐国君主列表",
+      "url": "https://zh.wikipedia.org/zh-cn/齐国君主列表"
+    },
+    {
+      "label": "秦国君主列表",
+      "url": "https://zh.wikipedia.org/zh-cn/秦国君主列表"
     }
   ],
   "notes": [
     "收录春秋主要列国与战国七雄（齐楚燕韩赵魏秦）及宋鲁卫郑曹吴越中山等。",
     "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
     "秦国 upsert 已有 qin 行，将始年延至前770年秦襄公，与 qin-han 统一帝国段衔接。",
-    "各国在位仅列代表性君主；未逐代收录全部国君。",
+    "各国国君世系取维基百科大陆简体（zh-cn）诸侯君主列表与《史记》年表；按表头读取称号/姓名/在位年份，不用本地繁简转换。",
+    "西周早中期曹、楚、卫、晋、燕、宋等表中无在位年的国君，按世系顺序均分到分封年与《史记》始记年之间，不采用传统积年。",
+    "卫国人物 id 用 weiguo- 前缀，避免与战国魏 wei-r* 冲突。",
+    "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 precision: year。",
     "未收录薛、滕、杞、莒等小国；未收录战国末期的代、胶东等残余。",
-    "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。"
+    "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
+    "国君数据由 fetch-wiki-zh-cn.py + build-rulers.mjs 生成，共 422 条在位记录。"
   ]
 }

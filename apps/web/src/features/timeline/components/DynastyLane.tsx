@@ -1,12 +1,7 @@
 import { motion } from "framer-motion";
 import { COLOR_VALUES, type Dynasty, type Reign } from "@eralens/shared";
 import type { PlacedDynasty } from "../model/laneLayout";
-import {
-  assignReignStacks,
-  dynastyLaneHeight,
-  nextLaterStartAbs,
-  STACK_ROW_HEIGHT,
-} from "../model/reignClusters";
+import { assignReignStacks, dynastyLaneHeight, STACK_ROW_HEIGHT } from "../model/reignClusters";
 import { ReignCard } from "./ReignCard";
 import styles from "./DynastyLane.module.css";
 
@@ -46,14 +41,13 @@ export function DynastyLane({ dynasty, reigns, top }: Props) {
 
       <div className={styles.reignSequence}>
         <div className={styles.cards}>
-          {items.map(({ reign, stackIndex }) => (
+          {items.map(({ reign }) => (
             <ReignCard
               key={reign.id}
               reign={reign}
               dynasty={dynasty as Dynasty}
               color={color}
-              stackIndex={stackIndex}
-              nextReignStartAbs={nextLaterStartAbs(reign, reigns)}
+              reigns={reigns}
             />
           ))}
         </div>
