@@ -11,12 +11,12 @@
   "depth": "standard",
   "generatedAt": "2026-09-13",
   "counts": {
-    "persons": 27,
-    "dynasties": 6,
-    "reigns": 27,
-    "events": 2,
-    "relations": 23,
-    "supplementalEventDynastyLinks": 7
+    "persons": 33,
+    "dynasties": 8,
+    "reigns": 33,
+    "events": 4,
+    "relations": 30,
+    "supplementalEventDynastyLinks": 10
   },
   "sources": [
     {
@@ -38,6 +38,18 @@
     {
       "label": "代国 (战国)",
       "url": "https://zh.wikipedia.org/wiki/代国_(战国)"
+    },
+    {
+      "label": "西周国",
+      "url": "https://zh.wikipedia.org/wiki/西周国"
+    },
+    {
+      "label": "东周国",
+      "url": "https://zh.wikipedia.org/wiki/东周国"
+    },
+    {
+      "label": "周朝诸侯国君主列表",
+      "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
     }
   ],
   "notes": [
@@ -45,6 +57,8 @@
     "薛献公仅知前511年卒（左传），不填虚始年；齐庄公/卫武公/曹桓公/宋昭公长年在维基或史记有载，保留。",
     "薛国自薛献公起；滕国自春秋滕文公起；杞国自武公起；莒国自纪公起。",
     "杞桓公在位70年、高句丽太祖王等长年在史料中有记载，保留。",
-    "代王嘉 person id 为 zhao-jia-dai，与赵桓子 zhao-r2 区分。"
+    "代王嘉 person id 为 zhao-jia-dai，与赵桓子 zhao-r2 区分。",
+    "西周国/东周国（zhou-guo-west / zhou-guo-east）为战国王畿小国，与西周/东周王朝分期（zhou-west / zhou-east）区分命名。",
+    "西周武公、东周昭文君等中间世系在位年失考，不强行拉满；文公咎、东周君迄年据《史记》。"
   ]
 }

@@ -71,8 +71,26 @@ const NAME_OVERRIDES = {
   "jiang-xiaobai": "姜小白",
   "ji-chonger": "姬重耳",
   "xiong-zhuang": "熊侣",
+  "ying-qi": "嬴开",
   "ying-quliang": "嬴渠梁",
   "ying-zheng": "嬴政",
+  "qin-r1": "嬴康",
+  "qin-r2": "嬴立",
+  "qin-r4": "嬴说",
+  "qin-r5": "嬴嘉",
+  "qin-r6": "嬴恬",
+  "qin-r7": "嬴载",
+  "qin-r13": "嬴籍",
+  "qin-r14": "嬴宁",
+  "qin-r15": "嬴盘",
+  "qin-r16": "嬴刺",
+  "qin-r17": "嬴欣",
+  "qin-r18": "嬴封",
+  "qin-r19": "嬴肃",
+  "qin-r21": "嬴仁",
+  "qin-r22": "嬴昌",
+  "qin-r25": "嬴驷",
+  "qin-r27": "嬴稷",
   "fu-chai": "夫差",
   "helu": "阖闾",
   "gou-jian": "勾践",
@@ -86,6 +104,9 @@ const NAME_OVERRIDES = {
   "yue-r5": "勾践",
   "yue-r8": "翁",
   "yue-r11": "无余",
+  "yan-r25": "姬桓",
+  "yan-r35": "姬讙",
+  "yan-r36": "姬遇",
 };
 
 /** Title-keyed display names — do not use person index (sort order changes). */
@@ -750,6 +771,25 @@ function resolvePersonDisplayName(title, name) {
   return name;
 }
 
+/** Dynasties where wiki often lacks given names; use clan + posthumous (燕襄公 → 姬襄公). */
+const CLAN_POSTHUMOUS_DYNASTIES = new Set(["yan-chunqiu"]);
+
+/** When wiki has no given name, use clan + posthumous (e.g. 燕襄公 → 姬襄公). */
+function clanNameWhenOnlyPosthumous(dynastyId, personName, title) {
+  if (!CLAN_POSTHUMOUS_DYNASTIES.has(dynastyId)) return personName;
+  const surname = SURNAME[dynastyId];
+  if (!surname) return personName;
+  const posthumous = posthumousFromTitle(title);
+  if (!posthumous) return personName;
+  const name = normalizeTitle(personName ?? "");
+  const titleNorm = normalizeTitle(title);
+  if (!name || name === titleNorm || name === posthumous) {
+    if (name.startsWith(surname)) return personName;
+    return `${surname}${posthumous}`;
+  }
+  return personName;
+}
+
 function enrichRulers(dynastyId, rulers) {
   const usedIds = new Set();
   return rulers.map((r, index) => {
@@ -757,11 +797,18 @@ function enrichRulers(dynastyId, rulers) {
     if (usedIds.has(personId)) personId = `${personId}-${index}`;
     usedIds.add(personId);
     const titleKey = normalizeTitle(r.title);
-    const resolvedName =
+    const wikiNameKey = `${titleKey}|${normalizeTitle(r.name)}`;
+    const explicitName =
       NAME_OVERRIDES[personId] ||
-      NAME_OVERRIDES[PERSON_OVERRIDES[`${titleKey}|${normalizeTitle(r.name)}`]] ||
-      TITLE_NAME_OVERRIDES[dynastyId]?.[titleKey] ||
-      resolvePersonDisplayName(r.title, r.name);
+      NAME_OVERRIDES[PERSON_OVERRIDES[wikiNameKey]] ||
+      TITLE_NAME_OVERRIDES[dynastyId]?.[titleKey];
+    const resolvedName =
+      explicitName ??
+      clanNameWhenOnlyPosthumous(
+        dynastyId,
+        resolvePersonDisplayName(r.title, r.name),
+        r.title,
+      );
     return {
       dynastyId,
       personId,
