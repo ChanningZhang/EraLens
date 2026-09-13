@@ -151,8 +151,8 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'xiao-he', '萧何',
-  NULL, NULL,
-  NULL, NULL,
+  -257, 1,
+  -193, 1,
   ARRAY['政治家'], '汉初相国，定都长安、制律令，与韩信、张良并称三杰。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/萧何"}]'::jsonb
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -167,8 +167,8 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'han-xin', '韩信',
-  NULL, NULL,
-  NULL, NULL,
+  -231, 1,
+  -196, 1,
   ARRAY['军事家'], '汉初大将，破赵燕齐楚，垓下围项羽，后遭诛。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/韩信"}]'::jsonb
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -183,8 +183,8 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zhang-liang', '张良',
-  NULL, NULL,
-  NULL, NULL,
+  -250, 1,
+  -186, 1,
   ARRAY['政治家','军事家'], '汉初谋臣，鸿门宴护刘邦，功成身退。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/张良"}]'::jsonb
 )
 ON CONFLICT (id) DO UPDATE SET

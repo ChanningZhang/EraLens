@@ -1,0 +1,53 @@
+{
+  "slug": "nanzhao-dali",
+  "title": "南诏与大理",
+  "window": {
+    "startYear": 649,
+    "startMonth": 1,
+    "endYear": 1254,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-13",
+  "counts": {
+    "persons": 37,
+    "dynasties": 2,
+    "reigns": 37,
+    "events": 3,
+    "relations": 38
+  },
+  "sources": [
+    {
+      "label": "六诏君主列表",
+      "url": "https://zh.wikipedia.org/wiki/六诏君主列表"
+    },
+    {
+      "label": "南诏",
+      "url": "https://zh.wikipedia.org/wiki/南诏"
+    },
+    {
+      "label": "大理君主列表",
+      "url": "https://zh.wikipedia.org/wiki/大理君主列表"
+    },
+    {
+      "label": "大理国",
+      "url": "https://zh.wikipedia.org/wiki/大理国"
+    },
+    {
+      "label": "段思平",
+      "url": "https://zh.wikipedia.org/wiki/段思平"
+    },
+    {
+      "label": "蒙古攻灭大理",
+      "url": "https://zh.wikipedia.org/wiki/蒙古攻灭大理"
+    }
+  ],
+  "notes": [
+    "覆盖南诏十三世君主（649–902）与大理国皇帝（937–1253）。",
+    "南诏王朝始年取细奴逻即位（649），立国事件取738年皮逻阁统一六诏。",
+    "杨义贞（1080）与高升泰（1094–1096）按维基君主列表收录。",
+    "蒙古灭大理事件补充关联 mongol-empire 王朝与 hu-bilie（忽必烈，见 mongol-pre-yuan）。",
+    "在位年取维基百科君主列表常见年表，precision=year。"
+  ]
+}

@@ -1,0 +1,254 @@
+-- EraLens period import: chunqiu-minor
+-- Window: -750-01 .. -206-12
+BEGIN;
+
+-- cleanup
+DELETE FROM reigns WHERE id IN (
+  'reign-xue-r0-xue-chunqiu',
+  'reign-teng-r0-teng-chunqiu',
+  'reign-teng-r1-teng-chunqiu',
+  'reign-teng-r7-teng-chunqiu',
+  'reign-qi-state-r0-qi-state-chunqiu',
+  'reign-ju-r0-ju-chunqiu',
+  'reign-ju-r6-ju-chunqiu'
+);
+DELETE FROM persons WHERE id IN ('xue-r0','teng-r0','teng-r1','teng-r7','qi-state-r0','ju-r0')
+  AND id NOT IN (SELECT person_id FROM reigns);
+
+-- persons
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('xue-r1', '任谷', NULL, NULL, NULL, NULL, ARRAY['君主'], '《左传·昭公三十一年》载前511年卒；在位始年不详，不承接前代拉满。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/薛献公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('xue-r2', '任定', NULL, NULL, NULL, NULL, ARRAY['君主'], '薛襄公，薛国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/薛襄公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('xue-r3', '薛公比', NULL, NULL, NULL, NULL, ARRAY['君主'], '薛公比，薛国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/薛公比"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('xue-r4', '任夷', NULL, NULL, NULL, NULL, ARRAY['君主'], '薛惠公，薛国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/薛惠公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('teng-r2', '寿', NULL, NULL, NULL, NULL, ARRAY['君主'], '滕文公，滕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/滕文公_(春秋)"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('teng-r3', '原', NULL, NULL, NULL, NULL, ARRAY['君主'], '滕成公，滕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/滕成公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('teng-r4', '宁', NULL, NULL, NULL, NULL, ARRAY['君主'], '滕悼公，滕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/滕悼公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('teng-r5', '结', NULL, NULL, NULL, NULL, ARRAY['君主'], '滕顷公，滕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/滕顷公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('teng-r6', '虞毋', NULL, NULL, NULL, NULL, ARRAY['君主'], '滕隐公，滕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/滕隐公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('qi-state-r1', '杞武公', NULL, NULL, NULL, NULL, ARRAY['君主'], '杞武公，杞国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/杞武公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('qi-state-r1b', '杞靖公', NULL, NULL, NULL, NULL, ARRAY['君主'], '杞靖公，杞国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/杞靖公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('qi-state-r1c', '杞成公', NULL, NULL, NULL, NULL, ARRAY['君主'], '杞成公，杞国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/杞成公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('qi-state-r2', '姑容', NULL, NULL, NULL, NULL, ARRAY['君主'], '杞桓公，杞国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/杞桓公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('qi-state-r3', '益姑', NULL, NULL, NULL, NULL, ARRAY['君主'], '杞文公，杞国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/杞文公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('qi-state-r4', '郁', NULL, NULL, NULL, NULL, ARRAY['君主'], '杞平公，杞国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/杞平公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('qi-state-r5', '维', NULL, NULL, NULL, NULL, ARRAY['君主'], '杞湣公，杞国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/杞湣公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('qi-state-r6', '春', NULL, NULL, NULL, NULL, ARRAY['君主'], '杞简公，杞国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/杞简公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('ju-r1', '庶其', NULL, NULL, NULL, NULL, ARRAY['君主'], '莒纪公，莒国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/莒纪公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('ju-r1b', '季佗', NULL, NULL, NULL, NULL, ARRAY['君主'], '莒厉公，莒国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/莒厉公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('ju-r2', '朱', NULL, NULL, NULL, NULL, ARRAY['君主'], '莒渠丘公，莒国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/莒渠丘公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('ju-r3', '密州', NULL, NULL, NULL, NULL, ARRAY['君主'], '莒犂比公，莒国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/莒犂比公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('ju-r4', '舆', NULL, NULL, NULL, NULL, ARRAY['君主'], '莒子舆，莒国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/莒子舆"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('ju-r5', '去疾', NULL, NULL, NULL, NULL, ARRAY['君主'], '莒著丘公，莒国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/莒著丘公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('ju-r6', '庚舆', NULL, NULL, NULL, NULL, ARRAY['君主'], '莒共公，莒国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/莒共公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('ju-r7', '狂', NULL, NULL, NULL, NULL, ARRAY['君主'], '莒郊公，莒国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/莒郊公"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('zhao-jia-dai', '赵嘉', NULL, NULL, NULL, NULL, ARRAY['君主'], '代王，代国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/代王嘉"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('tian-shi', '田市', NULL, NULL, NULL, NULL, ARRAY['君主'], '胶东王，胶东君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/田市"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+
+-- dynasties
+INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, parent_id, note)
+VALUES ('xue-chunqiu', '薛国', ARRAY['薛'], 'cn', 'east_asia', -578, 1, -327, 12, -6924, -3901, 'year', 'ochre', NULL, '任姓小国；可考君主自薛献公（前511年卒）起；前327年齐魏共灭薛。西周薛伯等早期君主在位年失考，不收录。')
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, color_token = EXCLUDED.color_token, note = EXCLUDED.note;
+INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, parent_id, note)
+VALUES ('teng-chunqiu', '滕国', ARRAY['滕'], 'cn', 'east_asia', -599, 1, -414, 12, -7176, -4945, 'year', 'indigo', NULL, '周武王封弟错叔绣于滕；本包仅收录春秋可考君主（文公至隐公）。错叔绣至宣公等早期世系在位年失考。')
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, color_token = EXCLUDED.color_token, note = EXCLUDED.note;
+INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, parent_id, note)
+VALUES ('qi-state-chunqiu', '杞国', ARRAY['杞'], 'cn', 'east_asia', -750, 1, -445, 12, -8988, -5317, 'year', 'cinnabar', NULL, '自杞武公起有通行在位年；东楼公等更早君主失考。前445年为齐所灭。')
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, color_token = EXCLUDED.color_token, note = EXCLUDED.note;
+INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, parent_id, note)
+VALUES ('ju-chunqiu', '莒国', ARRAY['莒'], 'cn', 'east_asia', -615, 1, -431, 12, -7368, -5149, 'year', 'moss', NULL, '兹舆期受封后多世失考；本包自春秋可见于《左传》的莒纪公起收录。前431年为楚所灭。')
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, color_token = EXCLUDED.color_token, note = EXCLUDED.note;
+INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, parent_id, note)
+VALUES ('dai-warring', '代国', ARRAY['代'], 'cn', 'east_asia', -228, 1, -222, 12, -2724, -2641, 'year', 'wisteria', NULL, '前228年赵嘉于代郡自立代王；前222年秦将王贲灭代。')
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, color_token = EXCLUDED.color_token, note = EXCLUDED.note;
+INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, parent_id, note)
+VALUES ('jiaodong-warring', '胶东', ARRAY['胶东国'], 'cn', 'east_asia', -221, 1, -206, 12, -2640, -2449, 'year', 'grape', NULL, '秦灭齐后即墨一带齐宗室残余；田市等据胶东，至楚汉之际并入分封格局。')
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, color_token = EXCLUDED.color_token, note = EXCLUDED.note;
+
+-- reigns
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-xue-r1-xue-chunqiu', 'xue-chunqiu', 'xue-r1', '薛献公', '献公', NULL, '{"kind":"posthumous","name":"薛献公"}'::jsonb, -511, 1, -511, 12, -6120, -6109, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-xue-r2-xue-chunqiu', 'xue-chunqiu', 'xue-r2', '薛襄公', '襄公', NULL, '{"kind":"posthumous","name":"薛襄公"}'::jsonb, -510, 1, -498, 12, -6108, -5953, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-xue-r3-xue-chunqiu', 'xue-chunqiu', 'xue-r3', '薛公比', NULL, NULL, '{"kind":"regnal","name":"薛公比"}'::jsonb, -497, 1, -497, 12, -5952, -5941, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-xue-r4-xue-chunqiu', 'xue-chunqiu', 'xue-r4', '薛惠公', '惠公', NULL, '{"kind":"posthumous","name":"薛惠公"}'::jsonb, -496, 1, -485, 12, -5940, -5797, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-teng-r2-teng-chunqiu', 'teng-chunqiu', 'teng-r2', '滕文公', '文公', NULL, '{"kind":"posthumous","name":"滕文公"}'::jsonb, -599, 1, -575, 12, -7176, -6877, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-teng-r3-teng-chunqiu', 'teng-chunqiu', 'teng-r3', '滕成公', '成公', NULL, '{"kind":"posthumous","name":"滕成公"}'::jsonb, -574, 1, -539, 12, -6876, -6445, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-teng-r4-teng-chunqiu', 'teng-chunqiu', 'teng-r4', '滕悼公', '悼公', NULL, '{"kind":"posthumous","name":"滕悼公"}'::jsonb, -538, 1, -513, 12, -6444, -6133, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-teng-r5-teng-chunqiu', 'teng-chunqiu', 'teng-r5', '滕顷公', '顷公', NULL, '{"kind":"posthumous","name":"滕顷公"}'::jsonb, -512, 1, -491, 12, -6132, -5869, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-teng-r6-teng-chunqiu', 'teng-chunqiu', 'teng-r6', '滕隐公', '隐公', NULL, '{"kind":"posthumous","name":"滕隐公"}'::jsonb, -490, 1, -484, 12, -5868, -5785, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-qi-state-r1-qi-state-chunqiu', 'qi-state-chunqiu', 'qi-state-r1', '杞武公', '武公', NULL, '{"kind":"posthumous","name":"杞武公"}'::jsonb, -750, 1, -704, 12, -8988, -8425, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-qi-state-r1b-qi-state-chunqiu', 'qi-state-chunqiu', 'qi-state-r1b', '杞靖公', '靖公', NULL, '{"kind":"posthumous","name":"杞靖公"}'::jsonb, -719, 1, -685, 12, -8616, -8197, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-qi-state-r1c-qi-state-chunqiu', 'qi-state-chunqiu', 'qi-state-r1c', '杞成公', '成公', NULL, '{"kind":"posthumous","name":"杞成公"}'::jsonb, -654, 1, -637, 12, -7836, -7621, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-qi-state-r2-qi-state-chunqiu', 'qi-state-chunqiu', 'qi-state-r2', '杞桓公', '桓公', NULL, '{"kind":"posthumous","name":"杞桓公"}'::jsonb, -636, 1, -567, 12, -7620, -6781, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-qi-state-r3-qi-state-chunqiu', 'qi-state-chunqiu', 'qi-state-r3', '杞文公', '文公', NULL, '{"kind":"posthumous","name":"杞文公"}'::jsonb, -549, 1, -536, 12, -6576, -6409, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-qi-state-r4-qi-state-chunqiu', 'qi-state-chunqiu', 'qi-state-r4', '杞平公', '平公', NULL, '{"kind":"posthumous","name":"杞平公"}'::jsonb, -535, 1, -518, 12, -6408, -6193, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-qi-state-r5-qi-state-chunqiu', 'qi-state-chunqiu', 'qi-state-r5', '杞湣公', '湣公', NULL, '{"kind":"posthumous","name":"杞湣公"}'::jsonb, -486, 1, -471, 12, -5820, -5629, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-qi-state-r6-qi-state-chunqiu', 'qi-state-chunqiu', 'qi-state-r6', '杞简公', '简公', NULL, '{"kind":"posthumous","name":"杞简公"}'::jsonb, -448, 1, -445, 12, -5364, -5317, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-ju-r1-ju-chunqiu', 'ju-chunqiu', 'ju-r1', '莒纪公', '纪公', NULL, '{"kind":"posthumous","name":"莒纪公"}'::jsonb, -615, 1, -609, 12, -7368, -7285, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-ju-r1b-ju-chunqiu', 'ju-chunqiu', 'ju-r1b', '莒厉公', '厉公', NULL, '{"kind":"posthumous","name":"莒厉公"}'::jsonb, -608, 1, -580, 12, -7284, -6937, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-ju-r2-ju-chunqiu', 'ju-chunqiu', 'ju-r2', '莒渠丘公', '渠丘公', NULL, '{"kind":"posthumous","name":"莒渠丘公"}'::jsonb, -579, 1, -577, 12, -6936, -6901, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-ju-r3-ju-chunqiu', 'ju-chunqiu', 'ju-r3', '莒犂比公', '犂比公', NULL, '{"kind":"posthumous","name":"莒犂比公"}'::jsonb, -576, 1, -542, 12, -6900, -6481, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-ju-r4-ju-chunqiu', 'ju-chunqiu', 'ju-r4', '莒子舆', NULL, NULL, '{"kind":"regnal","name":"莒子舆"}'::jsonb, -541, 1, -541, 12, -6480, -6469, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-ju-r5-ju-chunqiu', 'ju-chunqiu', 'ju-r5', '莒著丘公', '著丘公', NULL, '{"kind":"posthumous","name":"莒著丘公"}'::jsonb, -540, 1, -528, 12, -6468, -6313, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-ju-r6-ju-chunqiu', 'ju-chunqiu', 'ju-r6', '莒共公', '共公', NULL, '{"kind":"posthumous","name":"莒共公"}'::jsonb, -527, 1, -519, 12, -6312, -6205, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-ju-r7-ju-chunqiu', 'ju-chunqiu', 'ju-r7', '莒郊公', '郊公', NULL, '{"kind":"posthumous","name":"莒郊公"}'::jsonb, -518, 1, -481, 12, -6204, -5749, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-zhao-jia-dai-dai-warring', 'dai-warring', 'zhao-jia-dai', '代王', NULL, NULL, '{"kind":"regnal","name":"代王"}'::jsonb, -228, 1, -222, 12, -2724, -2641, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-tian-shi-jiaodong-warring', 'jiaodong-warring', 'tian-shi', '胶东王', NULL, NULL, '{"kind":"regnal","name":"胶东王"}'::jsonb, -221, 1, -206, 12, -2640, -2449, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+
+-- era_names
+
+-- events
+INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary) VALUES ('dai-founded', '代王嘉自立', 'politics', 'point', 'year', '赵幽缪王八年，前228年，秦占邯郸后赵嘉逃代自立', -228, 1, -2724, NULL, NULL, NULL, NULL, NULL, NULL, '赵公子嘉逃至代郡，被大夫拥立为代王，延续赵国宗祀。')
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary;
+INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary) VALUES ('qin-destroy-dai', '秦灭代', 'battle', 'point', 'year', '秦王政二十五年，前222年', -222, 1, -2652, NULL, NULL, NULL, NULL, NULL, NULL, '秦将王贲攻代，俘代王嘉，代国灭亡。')
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary;
+
+-- event_dynasties
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('dai-founded', 'dai-warring') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('dai-founded', 'zhao-warring') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('qin-destroy-dai', 'dai-warring') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('qin-destroy-dai', 'qin') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('chunqiu', 'xue-chunqiu') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('chunqiu', 'teng-chunqiu') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('chunqiu', 'qi-state-chunqiu') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('chunqiu', 'ju-chunqiu') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('zhanguo', 'dai-warring') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('zhanguo', 'jiaodong-warring') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('qin-destroy-han', 'dai-warring') ON CONFLICT DO NOTHING;
+
+-- event_participants
+INSERT INTO event_participants (event_id, person_id) VALUES ('dai-founded', 'zhao-jia-dai') ON CONFLICT DO NOTHING;
+INSERT INTO event_participants (event_id, person_id) VALUES ('qin-destroy-dai', 'zhao-jia-dai') ON CONFLICT DO NOTHING;
+
+-- relations
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-xue-r1-xue-r2-succession', 'person', 'xue-r1', 'person', 'xue-r2', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-xue-r2-xue-r3-succession', 'person', 'xue-r2', 'person', 'xue-r3', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-xue-r3-xue-r4-succession', 'person', 'xue-r3', 'person', 'xue-r4', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-teng-r2-teng-r3-succession', 'person', 'teng-r2', 'person', 'teng-r3', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-teng-r3-teng-r4-succession', 'person', 'teng-r3', 'person', 'teng-r4', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-teng-r4-teng-r5-succession', 'person', 'teng-r4', 'person', 'teng-r5', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-teng-r5-teng-r6-succession', 'person', 'teng-r5', 'person', 'teng-r6', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-qi-state-r1-qi-state-r1b-succession', 'person', 'qi-state-r1', 'person', 'qi-state-r1b', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-qi-state-r1b-qi-state-r1c-succession', 'person', 'qi-state-r1b', 'person', 'qi-state-r1c', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-qi-state-r1c-qi-state-r2-succession', 'person', 'qi-state-r1c', 'person', 'qi-state-r2', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-qi-state-r2-qi-state-r3-succession', 'person', 'qi-state-r2', 'person', 'qi-state-r3', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-qi-state-r3-qi-state-r4-succession', 'person', 'qi-state-r3', 'person', 'qi-state-r4', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-qi-state-r4-qi-state-r5-succession', 'person', 'qi-state-r4', 'person', 'qi-state-r5', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-qi-state-r5-qi-state-r6-succession', 'person', 'qi-state-r5', 'person', 'qi-state-r6', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-ju-r1-ju-r1b-succession', 'person', 'ju-r1', 'person', 'ju-r1b', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-ju-r1b-ju-r2-succession', 'person', 'ju-r1b', 'person', 'ju-r2', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-ju-r2-ju-r3-succession', 'person', 'ju-r2', 'person', 'ju-r3', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-ju-r3-ju-r4-succession', 'person', 'ju-r3', 'person', 'ju-r4', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-ju-r4-ju-r5-succession', 'person', 'ju-r4', 'person', 'ju-r5', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-ju-r5-ju-r6-succession', 'person', 'ju-r5', 'person', 'ju-r6', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-ju-r6-ju-r7-succession', 'person', 'ju-r6', 'person', 'ju-r7', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-dai-founded-zhao-jia', 'event', 'dai-founded', 'person', 'zhao-jia-dai', 'politics') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-qin-destroy-dai-zhao-jia', 'event', 'qin-destroy-dai', 'person', 'zhao-jia-dai', 'battle') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+
+COMMIT;

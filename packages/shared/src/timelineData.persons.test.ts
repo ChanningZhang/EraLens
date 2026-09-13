@@ -96,4 +96,36 @@ describe("filterTimeline persons", () => {
     });
     expect(slice.persons.some((person) => person.id === "liu-bei")).toBe(false);
   });
+
+  it("includes non-reign persons with only birth or death in the window", () => {
+    const storeWithPartial = {
+      ...store,
+      persons: [
+        ...store.persons,
+        {
+          id: "zhang-liang",
+          name: "张良",
+          birth: { year: -250, month: 1 },
+          roles: ["政治家"],
+          links: [],
+        },
+        {
+          id: "xiao-he",
+          name: "萧何",
+          death: { year: -193, month: 1 },
+          roles: ["政治家"],
+          links: [],
+        },
+      ],
+    };
+    const slice = filterTimeline(storeWithPartial, {
+      fromAbs: absMonth(-260, 1),
+      toAbs: absMonth(-180, 12),
+      scope: "cn",
+    });
+    expect(slice.persons.map((person) => person.id).sort()).toEqual([
+      "xiao-he",
+      "zhang-liang",
+    ]);
+  });
 });

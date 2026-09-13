@@ -3,6 +3,7 @@ import type { Reign } from "@eralens/shared";
 import { absMonth } from "@eralens/shared";
 import {
   assignReignStacks,
+  computeReignGaps,
   dynastyLaneHeight,
   nextLaterStartAbs,
   reignCardSpan,
@@ -99,6 +100,45 @@ describe("reignCardSpan", () => {
       startAbs: 336,
       endExclusive: 348,
     });
+  });
+});
+
+describe("computeReignGaps", () => {
+  const dynasty = { startAbs: 0, endAbs: 99 };
+
+  it("returns the full dynasty span when there are no reigns", () => {
+    expect(computeReignGaps(dynasty, [])).toEqual([
+      { startAbs: 0, endExclusive: 100 },
+    ]);
+  });
+
+  it("finds gaps before, between, and after reigns", () => {
+    const gaps = computeReignGaps(dynasty, [
+      reign("a", 20, 39),
+      reign("b", 60, 79),
+    ]);
+    expect(gaps).toEqual([
+      { startAbs: 0, endExclusive: 20 },
+      { startAbs: 40, endExclusive: 60 },
+      { startAbs: 80, endExclusive: 100 },
+    ]);
+  });
+
+  it("skips short gaps below the minimum month threshold", () => {
+    const gaps = computeReignGaps(dynasty, [reign("a", 0, 10), reign("b", 15, 30)], 12);
+    expect(gaps).toEqual([{ startAbs: 31, endExclusive: 100 }]);
+  });
+
+  it("treats overlapping reign intervals as continuous coverage", () => {
+    const gaps = computeReignGaps(
+      dynasty,
+      [reign("a", 10, 50), reign("b", 30, 70)],
+      1,
+    );
+    expect(gaps).toEqual([
+      { startAbs: 0, endExclusive: 10 },
+      { startAbs: 71, endExclusive: 100 },
+    ]);
   });
 });
 

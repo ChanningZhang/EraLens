@@ -405,26 +405,26 @@ const shiguoReigns = [
 ];
 
 const songNorthReigns = [
-  dr("song-north", "zhao-kuangyin", "宋太祖", null, null, 960, 976, [{ name: "建隆", sy: 960, ey: 963 }, { name: "乾德", sy: 963, ey: 968 }, { name: "开宝", sy: 968, ey: 976 }]),
-  dr("song-north", "zhao-kuangyi", "宋太宗", null, null, 976, 997),
-  dr("song-north", "zhao-heng", "宋真宗", null, null, 997, 1022),
-  dr("song-north", "zhao-zhen", "宋仁宗", null, null, 1022, 1063, [{ name: "天圣", sy: 1023, ey: 1032 }, { name: "明道", sy: 1032, ey: 1033 }, { name: "景祐", sy: 1034, ey: 1038 }, { name: "庆历", sy: 1041, ey: 1048 }]),
-  dr("song-north", "zhao-shu", "宋英宗", null, null, 1063, 1067),
-  dr("song-north", "zhao-xu", "宋神宗", null, null, 1067, 1085, [{ name: "熙宁", sy: 1068, ey: 1077 }, { name: "元丰", sy: 1078, ey: 1085 }]),
-  dr("song-north", "zhao-zhe", "宋哲宗", null, null, 1085, 1100),
-  dr("song-north", "zhao-ji", "宋徽宗", null, null, 1100, 1126),
-  dr("song-north", "zhao-huan", "宋钦宗", null, null, 1126, 1127),
+  dr("song-north", "zhao-kuangyin", "宋太祖", null, "太祖", 960, 976, [{ name: "建隆", sy: 960, ey: 963 }, { name: "乾德", sy: 963, ey: 968 }, { name: "开宝", sy: 968, ey: 976 }]),
+  dr("song-north", "zhao-kuangyi", "宋太宗", null, "太宗", 976, 997),
+  dr("song-north", "zhao-heng", "宋真宗", null, "真宗", 997, 1022),
+  dr("song-north", "zhao-zhen", "宋仁宗", null, "仁宗", 1022, 1063, [{ name: "天圣", sy: 1023, ey: 1032 }, { name: "明道", sy: 1032, ey: 1033 }, { name: "景祐", sy: 1034, ey: 1038 }, { name: "庆历", sy: 1041, ey: 1048 }]),
+  dr("song-north", "zhao-shu", "宋英宗", null, "英宗", 1063, 1067),
+  dr("song-north", "zhao-xu", "宋神宗", null, "神宗", 1067, 1085, [{ name: "熙宁", sy: 1068, ey: 1077 }, { name: "元丰", sy: 1078, ey: 1085 }]),
+  dr("song-north", "zhao-zhe", "宋哲宗", null, "哲宗", 1085, 1100),
+  dr("song-north", "zhao-ji", "宋徽宗", null, "徽宗", 1100, 1126),
+  dr("song-north", "zhao-huan", "宋钦宗", null, "钦宗", 1126, 1127),
 ];
 
 const songSouthReigns = [
-  dr("song-south", "zhao-gou", "宋高宗", null, null, 1127, 1162),
-  dr("song-south", "zhao-shen", "宋孝宗", null, null, 1162, 1189),
-  dr("song-south", "zhao-dun", "宋光宗", null, null, 1189, 1194),
-  dr("song-south", "zhao-kuo", "宋宁宗", null, null, 1194, 1224),
-  dr("song-south", "zhao-yun", "宋理宗", null, null, 1224, 1264),
-  dr("song-south", "zhao-qi", "宋度宗", null, null, 1264, 1274),
-  dr("song-south", "zhao-shi", "宋恭帝", null, null, 1274, 1276),
-  dr("song-south", "zhao-shi-duan", "宋端宗", null, null, 1276, 1278),
+  dr("song-south", "zhao-gou", "宋高宗", null, "高宗", 1127, 1162),
+  dr("song-south", "zhao-shen", "宋孝宗", null, "孝宗", 1162, 1189),
+  dr("song-south", "zhao-dun", "宋光宗", null, "光宗", 1189, 1194),
+  dr("song-south", "zhao-kuo", "宋宁宗", null, "宁宗", 1194, 1224),
+  dr("song-south", "zhao-yun", "宋理宗", null, "理宗", 1224, 1264),
+  dr("song-south", "zhao-qi", "宋度宗", null, "度宗", 1264, 1274),
+  dr("song-south", "zhao-shi", "宋恭帝", null, "恭帝", 1274, 1276),
+  dr("song-south", "zhao-shi-duan", "宋端宗", null, "端宗", 1276, 1278),
   dr("song-south", "zhao-bing", "宋帝昺", null, null, 1278, 1279),
 ];
 

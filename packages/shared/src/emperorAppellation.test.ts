@@ -4,6 +4,8 @@ import {
   resolveEmperorAppellation,
   resolveReignCardLabel,
   resolveReignCardMeta,
+  resolveReignDetailFacts,
+  resolveReignDetailSubtitle,
   resolveReignPrimaryLabel,
   sanitizePersonName,
 } from "./emperorAppellation";
@@ -336,5 +338,67 @@ describe("resolveReignCardMeta", () => {
         "任好",
       ),
     ).toEqual({ label: "称号", name: "秦穆公" });
+  });
+
+  it("shows temple meta for Song emperors with temple names", () => {
+    expect(
+      resolveReignCardMeta(
+        source({
+          start: { year: 960, month: 1 },
+          title: "宋太祖",
+          templeName: "太祖",
+          preferredAppellation: { kind: "temple", name: "宋太祖" },
+          eraNames: [{ name: "建隆" }] as Reign["eraNames"],
+        }),
+        "赵匡胤",
+      ),
+    ).toEqual({ label: "庙号", name: "宋太祖" });
+  });
+});
+
+describe("resolveReignDetailSubtitle", () => {
+  it("matches reign card appellation for Song and Liao emperors", () => {
+    const songReign = source({
+      start: { year: 960, month: 1 },
+      title: "宋太祖",
+      templeName: "太祖",
+      preferredAppellation: { kind: "temple", name: "宋太祖" },
+      eraNames: [{ name: "建隆" }] as Reign["eraNames"],
+    });
+    const liaoReign = source({
+      start: { year: 982, month: 1 },
+      title: "辽圣宗",
+      templeName: "圣宗",
+      preferredAppellation: { kind: "temple", name: "辽圣宗" },
+      eraNames: [{ name: "统和" }] as Reign["eraNames"],
+    });
+
+    expect(resolveReignDetailSubtitle(songReign, "北宋", "赵匡胤")).toBe(
+      "北宋 · 宋太祖",
+    );
+    expect(resolveReignDetailSubtitle(liaoReign, "辽", "耶律隆绪")).toBe(
+      "辽 · 辽圣宗",
+    );
+  });
+});
+
+describe("resolveReignDetailFacts", () => {
+  it("keeps supplementary temple and era facts", () => {
+    expect(
+      resolveReignDetailFacts(
+        source({
+          start: { year: 960, month: 1 },
+          end: { year: 976, month: 12 },
+          title: "宋太祖",
+          templeName: "太祖",
+          preferredAppellation: { kind: "temple", name: "宋太祖" },
+          eraNames: [{ name: "建隆" }] as Reign["eraNames"],
+        }),
+      ),
+    ).toEqual([
+      { label: "在位", value: "960 — 976" },
+      { label: "庙号", value: "太祖" },
+      { label: "年号", value: "建隆" },
+    ]);
   });
 });

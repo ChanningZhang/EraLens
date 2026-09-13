@@ -7,9 +7,9 @@ BEGIN;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'lv-shang', '吕尚',
-  NULL, NULL,
-  NULL, NULL,
-  ARRAY['君主'], '齐太公，齐国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/太公"}]'::jsonb
+  -1156, 1,
+  -1017, 1,
+  ARRAY['君主','军事家','政治家'], '姜太公（姜子牙），辅武王克商，封于齐。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/姜子牙"}]'::jsonb
 )
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
@@ -185,7 +185,7 @@ VALUES (
   'qi-r11', '姜购',
   NULL, NULL,
   NULL, NULL,
-  ARRAY['君主'], '齐庄公，齐国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/庄公"}]'::jsonb
+  ARRAY['君主'], '齐前庄公（姜购），维基齐国君主表载在位64年（前794–前731），为齐国在位最久之君。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/庄公"}]'::jsonb
 )
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
@@ -3049,7 +3049,7 @@ VALUES (
   'song-r28', '子特',
   NULL, NULL,
   NULL, NULL,
-  ARRAY['君主'], '宋昭公，宋国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/昭公"}]'::jsonb
+  ARRAY['君主'], '宋昭公（子特），前469–前404年在位。《史记·宋微子世家》另有前422年卒异说。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/宋昭公特"}]'::jsonb
 )
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
@@ -3865,7 +3865,7 @@ VALUES (
   'weiguo-r10', '姬和',
   NULL, NULL,
   NULL, NULL,
-  ARRAY['君主'], '卫武公，卫国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/武公"}]'::jsonb
+  ARRAY['君主'], '卫武公（姬和），《史记·卫世家》载前812–前758年在位，共55年。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/卫武公"}]'::jsonb
 )
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
@@ -5033,7 +5033,7 @@ VALUES (
   'cao-r11', '姬终生',
   NULL, NULL,
   NULL, NULL,
-  ARRAY['君主'], '曹桓公，曹国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/桓公"}]'::jsonb
+  ARRAY['君主'], '曹桓公（姬终生），《史记·蔡世家》载前756–前702年在位，共55年。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/曹桓公"}]'::jsonb
 )
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
@@ -6995,7 +6995,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'jin-chunqiu', '晋国', ARRAY['晋'], 'cn', 'east_asia',
   -1042, 1, -376, 12,
-  -12492, -4489, 'year', 'indigo', NULL,
+  -12492, -4489, 'year', 'azure', NULL,
   '周成王封叔虞于唐，改国号晋；前403年三家分晋，公室至前376年废。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -7017,7 +7017,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'chu-chunqiu', '楚国', ARRAY['楚','荆楚'], 'cn', 'east_asia',
   -1042, 1, -223, 12,
-  -12492, -2653, 'year', 'moss', NULL,
+  -12492, -2653, 'year', 'cinnabar', NULL,
   '周成王封熊绎于楚；春秋战国南方大国，前223年秦灭楚。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -7039,7 +7039,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'yan-chunqiu', '燕国', ARRAY['燕'], 'cn', 'east_asia',
   -1044, 1, -222, 12,
-  -12516, -2641, 'year', 'mineral', NULL,
+  -12516, -2641, 'year', 'jade', NULL,
   '周武王封召公奭于燕；战国七雄之一，前222年秦灭燕。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -7061,7 +7061,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'song-chunqiu', '宋国', ARRAY['宋'], 'cn', 'east_asia',
   -1034, 1, -286, 12,
-  -12396, -3409, 'year', 'cinnabar', NULL,
+  -12396, -3409, 'year', 'indigo', NULL,
   '周成王封微子启于宋；前286年齐湣王灭宋。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -7083,7 +7083,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'lu-chunqiu', '鲁国', ARRAY['鲁'], 'cn', 'east_asia',
   -1042, 1, -256, 12,
-  -12492, -3049, 'year', 'stone', NULL,
+  -12492, -3049, 'year', 'coral', NULL,
   '周武王封周公旦于鲁；孔子故乡，前256年楚灭鲁。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -7105,7 +7105,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'wei-weiguo', '卫国', ARRAY['卫'], 'cn', 'east_asia',
   -1040, 1, -209, 12,
-  -12468, -2485, 'year', 'grape', NULL,
+  -12468, -2485, 'year', 'moss', NULL,
   '周成王封康叔封于卫；小国久存，秦二世时废。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -7127,7 +7127,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'zheng-chunqiu', '郑国', ARRAY['郑'], 'cn', 'east_asia',
   -806, 1, -375, 12,
-  -9660, -4477, 'year', 'wisteria', NULL,
+  -9660, -4477, 'year', 'plum', NULL,
   '周厉王少子友封于郑，后东迁新郑；前375年韩灭郑。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -7149,7 +7149,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'cao-chunqiu', '曹国', ARRAY['曹'], 'cn', 'east_asia',
   -1046, 1, -487, 12,
-  -12540, -5821, 'year', 'ochre', NULL,
+  -12540, -5821, 'year', 'mineral', NULL,
   '周武王封弟振铎于曹；前487年宋灭曹。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -7171,7 +7171,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'wu-chunqiu', '吴国', ARRAY['吴'], 'cn', 'east_asia',
   -585, 1, -473, 12,
-  -7008, -5653, 'year', 'indigo', NULL,
+  -7008, -5653, 'year', 'amber', NULL,
   '春秋东南强国，阖闾、夫差时盛；前473年越灭吴。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -7193,7 +7193,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'yue-chunqiu', '越国', ARRAY['越'], 'cn', 'east_asia',
   -600, 1, -334, 12,
-  -7188, -3985, 'year', 'moss', NULL,
+  -7188, -3985, 'year', 'grape', NULL,
   '东南古国，勾践灭吴后北进；前334年楚败越，国势衰微。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -7215,7 +7215,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'zhongshan', '中山', ARRAY['中山国'], 'cn', 'east_asia',
   -476, 1, -296, 12,
-  -5700, -3529, 'year', 'mineral', NULL,
+  -5700, -3529, 'year', 'sage', NULL,
   '鲜虞白狄所建，战国中小国；前296年赵灭中山。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -7237,7 +7237,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'han-warring', '韩国', ARRAY['韩'], 'cn', 'east_asia',
   -403, 1, -230, 12,
-  -4824, -2737, 'year', 'cinnabar', NULL,
+  -4824, -2737, 'year', 'stone', NULL,
   '三家分晋后韩氏立国，前403年周天子册命；前230年秦灭韩。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -7259,7 +7259,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'zhao-warring', '赵国', ARRAY['赵'], 'cn', 'east_asia',
   -403, 1, -222, 12,
-  -4824, -2641, 'year', 'stone', NULL,
+  -4824, -2641, 'year', 'clay', NULL,
   '三家分晋后赵氏立国；前222年秦灭赵。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -7281,7 +7281,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'wei-warring', '魏国', ARRAY['魏','梁'], 'cn', 'east_asia',
   -403, 1, -225, 12,
-  -4824, -2677, 'year', 'grape', NULL,
+  -4824, -2677, 'year', 'wisteria', NULL,
   '三家分晋后魏氏立国，都大梁；前225年秦灭魏。与三国曹魏 wei 区分。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -12078,8 +12078,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-song-r28-song-chunqiu', 'song-chunqiu', 'song-r28', '宋昭公',
   '昭公', NULL, '{"kind":"posthumous","name":"宋昭公"}'::jsonb,
-  -468, 1, -404, 12,
-  -5604, -4825, 'year'
+  -469, 1, -404, 12,
+  -5616, -4825, 'year'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -15178,8 +15178,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-cao-r11-cao-chunqiu', 'cao-chunqiu', 'cao-r11', '曹桓公',
   '桓公', NULL, '{"kind":"posthumous","name":"曹桓公"}'::jsonb,
-  -757, 1, -702, 12,
-  -9072, -8401, 'year'
+  -756, 1, -702, 12,
+  -9060, -8401, 'year'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,

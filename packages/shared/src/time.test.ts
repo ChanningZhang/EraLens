@@ -3,6 +3,7 @@ import {
   absFromPoint,
   absMonth,
   computeWindow,
+  formatAbsSpanTooltip,
   formatYear,
   fromAbsMonth,
   parseYearMonthParam,
@@ -29,6 +30,16 @@ describe("time utilities", () => {
   it("formats BCE years", () => {
     expect(formatYear(-221)).toBe("公元前221年");
     expect(formatYear(200)).toBe("公元200年");
+  });
+
+  it("formats abs span tooltip for multi-year ranges", () => {
+    expect(formatAbsSpanTooltip(absMonth(-221), absMonth(-210))).toBe(
+      "公元前221年 — 公元前210年 · 12年",
+    );
+  });
+
+  it("formats abs span tooltip for a single year", () => {
+    expect(formatAbsSpanTooltip(absMonth(200), absMonth(200))).toBe("公元200年");
   });
 
   it("detects range intersection", () => {

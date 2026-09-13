@@ -1,0 +1,50 @@
+{
+  "slug": "chunqiu-minor",
+  "title": "春秋小国与战国残余",
+  "window": {
+    "startYear": -750,
+    "startMonth": 1,
+    "endYear": -206,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-13",
+  "counts": {
+    "persons": 27,
+    "dynasties": 6,
+    "reigns": 27,
+    "events": 2,
+    "relations": 23,
+    "supplementalEventDynastyLinks": 7
+  },
+  "sources": [
+    {
+      "label": "薛国",
+      "url": "https://zh.wikipedia.org/wiki/薛国"
+    },
+    {
+      "label": "滕国",
+      "url": "https://zh.wikipedia.org/wiki/滕国"
+    },
+    {
+      "label": "杞国",
+      "url": "https://zh.wikipedia.org/wiki/杞国"
+    },
+    {
+      "label": "莒国",
+      "url": "https://zh.wikipedia.org/wiki/莒国"
+    },
+    {
+      "label": "代国 (战国)",
+      "url": "https://zh.wikipedia.org/wiki/代国_(战国)"
+    }
+  ],
+  "notes": [
+    "仅收录维基/左传有明确在位年的君主；早期失考君主不强行拉满王朝跨度。",
+    "薛献公仅知前511年卒（左传），不填虚始年；齐庄公/卫武公/曹桓公/宋昭公长年在维基或史记有载，保留。",
+    "薛国自薛献公起；滕国自春秋滕文公起；杞国自武公起；莒国自纪公起。",
+    "杞桓公在位70年、高句丽太祖王等长年在史料中有记载，保留。",
+    "代王嘉 person id 为 zhao-jia-dai，与赵桓子 zhao-r2 区分。"
+  ]
+}

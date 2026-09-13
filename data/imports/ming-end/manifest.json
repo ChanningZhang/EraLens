@@ -1,0 +1,58 @@
+{
+  "slug": "ming-end",
+  "title": "明末清初过渡政权",
+  "window": {
+    "startYear": 1644,
+    "startMonth": 1,
+    "endYear": 1683,
+    "endMonth": 10
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-13",
+  "counts": {
+    "persons": 5,
+    "dynasties": 3,
+    "reigns": 5,
+    "events": 4,
+    "relations": 6,
+    "supplementalEventDynastyLinks": 5
+  },
+  "sources": [
+    {
+      "label": "大顺 (政权)",
+      "url": "https://zh.wikipedia.org/wiki/大顺_(政权)"
+    },
+    {
+      "label": "大西",
+      "url": "https://zh.wikipedia.org/wiki/大西"
+    },
+    {
+      "label": "李自成",
+      "url": "https://zh.wikipedia.org/wiki/李自成"
+    },
+    {
+      "label": "张献忠",
+      "url": "https://zh.wikipedia.org/wiki/张献忠"
+    },
+    {
+      "label": "明郑",
+      "url": "https://zh.wikipedia.org/wiki/明郑"
+    },
+    {
+      "label": "郑经",
+      "url": "https://zh.wikipedia.org/wiki/郑经"
+    },
+    {
+      "label": "澎湖海战",
+      "url": "https://zh.wikipedia.org/wiki/澎湖海战"
+    }
+  ],
+  "notes": [
+    "收录大顺（1644–1645）、大西（1644–1647）、明郑/东宁（1662–1683）。",
+    "郑成功、郑经、郑克塽在位与 yuan-ming-qing 已有人物 upsert 衔接。",
+    "大西年号亦作大顺，与李自成大顺国号同名异政权。",
+    "明郑开台事件与 zheng-recover-taiwan 并存，本包补 mingzheng 关联。",
+    "明朝灭亡、清军入关、南明终结等事件沿用已有 id，补 event_dynasties。"
+  ]
+}

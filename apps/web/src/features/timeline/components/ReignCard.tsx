@@ -1,7 +1,8 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import {
   type Dynasty,
   type Reign,
+  formatAbsSpanTooltip,
   resolveReignCardLabel,
   resolveReignCardMeta,
 } from "@eralens/shared";
@@ -10,13 +11,14 @@ import { getRepository } from "@/data/repository";
 import { useSelection } from "../hooks/useSelection";
 import { useViewport } from "../hooks/useViewport";
 import { projectAbs } from "../model/coordinates";
-import { cardDetailLevel, resolveReignCardTextLayout, shouldShowReignCardMeta } from "../model/lod";
+import { resolveReignCardTextLayout, shouldShowReignCardMeta } from "../model/lod";
 import {
   assignReignStacks,
   resolveReignVisualSpan,
   STACK_ROW_HEIGHT,
 } from "../model/reignClusters";
 import { selectionStore } from "../state/selectionStore";
+import { HoverTooltip } from "./HoverTooltip";
 import styles from "./ReignCard.module.css";
 
 type Props = {
@@ -36,7 +38,6 @@ export function ReignCard({
 }: Props) {
   const viewport = useViewport();
   const selection = useSelection();
-  const [tooltipPos, setTooltipPos] = useState<{ x: number; y: number } | null>(null);
   const { startAbs, endExclusive, stackIndex } = resolveReignVisualSpan(reign, reigns);
   const { rowCount } = assignReignStacks(reigns);
   const showCaptionBelow = stackIndex === rowCount - 1;
@@ -71,7 +72,9 @@ export function ReignCard({
     metaGlyphCount,
   );
   const tooltipName = personName && personName !== label ? personName : label;
-  const tooltipText = meta ? `${tooltipName}　${meta.name}` : tooltipName;
+  const nameTooltip = meta ? `${tooltipName}　${meta.name}` : tooltipName;
+  const timeTooltip = formatAbsSpanTooltip(reign.startAbs, reign.endAbs);
+  const tooltipText = detail === "full" ? timeTooltip : `${nameTooltip}\n${timeTooltip}`;
 
   const className = useMemo(() => {
     return [
@@ -92,43 +95,35 @@ export function ReignCard({
         top: stackIndex * STACK_ROW_HEIGHT,
       }}
     >
-      <button
-        type="button"
-        className={className}
-        style={{
-          ["--card-color" as string]: color,
-          ...(detail === "wrap"
-            ? { ["--card-name-size" as string]: `${layout.nameFontPx}px` }
-            : {}),
-        }}
-        onClick={() => {
-          selectionStore.select({ type: "reign", id: reign.id }, reign.startAbs);
-          selectionStore.syncToUrl(viewport.centerAbs);
-        }}
-        onMouseEnter={(e) => {
-          if (detail === "full") return;
-          setTooltipPos({ x: e.clientX, y: e.clientY - 12 });
-        }}
-        onMouseLeave={() => setTooltipPos(null)}
-        aria-label={`${label} ${dynasty.name}`}
-      >
-        {detail !== "below" && (
-          <div className={styles.content}>
-            <p className={styles.name}>{label}</p>
-            {showMeta && meta && <p className={styles.meta}>{meta.name}</p>}
-          </div>
+      <HoverTooltip text={tooltipText}>
+        {(handlers) => (
+          <button
+            type="button"
+            className={className}
+            style={{
+              ["--card-color" as string]: color,
+              ...(detail === "wrap"
+                ? { ["--card-name-size" as string]: `${layout.nameFontPx}px` }
+                : {}),
+            }}
+            onClick={() => {
+              selectionStore.select({ type: "reign", id: reign.id }, reign.startAbs);
+              selectionStore.syncToUrl(viewport.centerAbs);
+            }}
+            aria-label={`${label} ${dynasty.name}`}
+            {...handlers}
+          >
+            {detail !== "below" && (
+              <div className={styles.content}>
+                <p className={styles.name}>{label}</p>
+                {showMeta && meta && <p className={styles.meta}>{meta.name}</p>}
+              </div>
+            )}
+          </button>
         )}
-      </button>
+      </HoverTooltip>
       {detail === "below" && showCaptionBelow && (
         <span className={styles.caption}>{label}</span>
-      )}
-      {tooltipPos && detail !== "full" && (
-        <div
-          className={styles.tooltip}
-          style={{ left: tooltipPos.x + 12, top: tooltipPos.y }}
-        >
-          {tooltipText}
-        </div>
       )}
     </div>
   );

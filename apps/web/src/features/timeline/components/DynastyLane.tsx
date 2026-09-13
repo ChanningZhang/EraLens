@@ -6,8 +6,14 @@ import {
   type Reign,
 } from "@eralens/shared";
 import type { PlacedDynasty } from "../model/laneLayout";
-import { assignReignStacks, dynastyLaneHeight, STACK_ROW_HEIGHT } from "../model/reignClusters";
+import {
+  assignReignStacks,
+  computeReignGaps,
+  dynastyLaneHeight,
+  STACK_ROW_HEIGHT,
+} from "../model/reignClusters";
 import { ReignCard } from "./ReignCard";
+import { ReignGapCard } from "./ReignGapCard";
 import styles from "./DynastyLane.module.css";
 
 type Props = {
@@ -21,6 +27,7 @@ export function DynastyLane({ dynasty, reigns, personNames, top }: Props) {
   const color = COLOR_VALUES[resolveDynastyColorToken(dynasty)];
   const { items, rowCount } = assignReignStacks(reigns);
   const height = dynastyLaneHeight(rowCount);
+  const gaps = computeReignGaps(dynasty, reigns);
 
   return (
     <motion.div
@@ -46,6 +53,14 @@ export function DynastyLane({ dynasty, reigns, personNames, top }: Props) {
 
       <div className={styles.reignSequence}>
         <div className={styles.cards}>
+          {gaps.map((gap) => (
+            <ReignGapCard
+              key={`gap-${gap.startAbs}-${gap.endExclusive}`}
+              gap={gap}
+              dynasty={dynasty as Dynasty}
+              color={color}
+            />
+          ))}
           {items.map(({ reign }) => (
             <ReignCard
               key={reign.id}

@@ -10,7 +10,12 @@ import {
 } from "../model/eventLayout";
 import { assignLanes } from "../model/laneLayout";
 import { shouldShowEvent, shouldShowPersons } from "../model/lod";
-import { layoutPersons } from "../model/personLayout";
+import {
+  layoutPersons,
+  PERSON_LAYER_BOTTOM_PAD,
+  PERSON_LAYER_GAP,
+  personLayerHeight,
+} from "../model/personLayout";
 import { assignReignStacks, dynastyLaneHeight } from "../model/reignClusters";
 import { expandWindow, filterVisibleDynasties } from "../model/visible";
 import { DynastyLane } from "./DynastyLane";
@@ -90,7 +95,12 @@ export function TimelineStage() {
     return layoutPersons(visiblePersons, viewport);
   }, [visiblePersons, viewport]);
 
-  const contentHeight = Math.max(dynastiesBottom + 32, 240);
+  const personAreaHeight = personLayerHeight(personPlaced);
+  const personLayerTop = dynastiesBottom + (personAreaHeight > 0 ? PERSON_LAYER_GAP : 0);
+  const contentHeight = Math.max(
+    personLayerTop + personAreaHeight + PERSON_LAYER_BOTTOM_PAD,
+    240,
+  );
   const showPersonLayer =
     Boolean(data) && placed.length > 0 && visiblePersons.length > 0;
 
@@ -139,7 +149,11 @@ export function TimelineStage() {
             <EventLayer placed={eventPlaced} height={railHeight} />
           )}
           {showPersonLayer && (
-            <PersonLayer placed={personPlaced} top={dynastiesBottom} />
+            <PersonLayer
+              placed={personPlaced}
+              top={personLayerTop}
+              height={personAreaHeight}
+            />
           )}
         </div>
       </div>

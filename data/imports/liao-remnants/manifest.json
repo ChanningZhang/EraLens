@@ -1,0 +1,54 @@
+{
+  "slug": "liao-remnants",
+  "title": "辽残余政权（西辽、北辽、东辽）",
+  "window": {
+    "startYear": 1122,
+    "startMonth": 1,
+    "endYear": 1269,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-13",
+  "counts": {
+    "persons": 14,
+    "dynasties": 3,
+    "reigns": 12,
+    "events": 6,
+    "relations": 13
+  },
+  "sources": [
+    {
+      "label": "西辽",
+      "url": "https://zh.wikipedia.org/wiki/西辽"
+    },
+    {
+      "label": "耶律大石",
+      "url": "https://zh.wikipedia.org/wiki/耶律大石"
+    },
+    {
+      "label": "北辽",
+      "url": "https://zh.wikipedia.org/wiki/北辽"
+    },
+    {
+      "label": "东辽",
+      "url": "https://zh.wikipedia.org/wiki/东辽"
+    },
+    {
+      "label": "耶律留哥",
+      "url": "https://zh.wikipedia.org/wiki/耶律留哥"
+    },
+    {
+      "label": "辽朝君主列表",
+      "url": "https://zh.wikipedia.org/wiki/辽朝君主列表"
+    }
+  ],
+  "notes": [
+    "覆盖西辽（1124–1218）、北辽（1122–1123）、东辽（1213–1269）三个残余政权。",
+    "song-liao-jin 有 yelu-* 辽朝皇帝但无 yelu-dashi，本包新建西辽人物。",
+    "萧德妃称制以事件收录，不建 reign；耶律厮不等叛乱亦以事件收录。",
+    "西辽灭亡事件补充关联 mongol-empire 与 temujin（见 mongol-pre-yuan）。",
+    "北辽建立事件补充关联 liao 王朝（见 song-liao-jin）。",
+    "在位年取维基百科常见年表，precision=year。"
+  ]
+}

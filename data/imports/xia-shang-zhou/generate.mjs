@@ -75,7 +75,7 @@ const persons = [
   { id: "ji-chang", name: "姬昌", roles: ["西伯", "君主"], bio: "周文王，商末西伯，武王之父。", links: wiki("周文王") },
   { id: "ji-fa", name: "姬发", roles: ["天子"], bio: "周武王，牧野克商，建立西周。", links: wiki("周武王") },
   { id: "ji-dan", name: "姬旦", roles: ["政治家"], bio: "周公旦，武王之弟，成王初摄政，东征平三监。", links: wiki("周公旦") },
-  { id: "lv-shang", name: "吕尚", roles: ["军事家", "政治家"], bio: "姜太公，辅武王克商，封于齐。", links: wiki("姜子牙") },
+  { id: "lv-shang", name: "吕尚", birth: ym(-1156), death: ym(-1017), roles: ["军事家", "政治家"], bio: "姜太公（姜子牙），辅武王克商，封于齐。", links: wiki("姜子牙") },
   { id: "ji-song", name: "姬诵", roles: ["天子"], bio: "周成王，周公辅政，与康王并称成康之治。", links: wiki("周成王") },
   { id: "ji-zhao", name: "姬钊", roles: ["天子"], bio: "周康王，成康之治后期之王。", links: wiki("周康王") },
   { id: "ji-xia", name: "姬瑕", roles: ["天子"], bio: "周昭王，南征荆楚，传说卒于汉水。", links: wiki("周昭王") },

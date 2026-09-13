@@ -1,0 +1,48 @@
+{
+  "slug": "nanbei-sixteen-extra",
+  "title": "南北朝与十六国补充政权",
+  "window": {
+    "startYear": 296,
+    "startMonth": 1,
+    "endYear": 587,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-13",
+  "counts": {
+    "persons": 11,
+    "dynasties": 4,
+    "reigns": 11,
+    "events": 3,
+    "relations": 10
+  },
+  "sources": [
+    {
+      "label": "西梁",
+      "url": "https://zh.wikipedia.org/wiki/%E8%A5%BF%E6%A2%81"
+    },
+    {
+      "label": "冉魏",
+      "url": "https://zh.wikipedia.org/wiki/%E5%86%89%E9%AD%8F"
+    },
+    {
+      "label": "西燕",
+      "url": "https://zh.wikipedia.org/wiki/%E8%A5%BF%E7%87%95"
+    },
+    {
+      "label": "仇池",
+      "url": "https://zh.wikipedia.org/wiki/%E4%BB%87%E6%B1%A0"
+    },
+    {
+      "label": "五胡十六国君主列表",
+      "url": "https://zh.wikipedia.org/zh-hans/%E4%BA%94%E8%83%A1%E5%8D%81%E5%85%AD%E5%9B%BD%E5%90%9B%E4%B8%BB%E5%88%97%E8%A1%A8"
+    }
+  ],
+  "notes": [
+    "补充 jin-sixteen / nanbei-chao 未收录的西梁、冉魏、西燕、前仇池。",
+    "西梁 id 为 xiliang，与十六国西凉 liang-xi 区分。",
+    "仇池取296–371前仇池窗口，杨腾至杨难当代表杨氏四氏执政序列。",
+    "南梁（liang-nan）、后赵（zhao-back）、后燕（yan-back）复用已有 dynasty id 作事件关联。"
+  ]
+}

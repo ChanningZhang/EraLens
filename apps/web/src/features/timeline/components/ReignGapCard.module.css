@@ -1,0 +1,40 @@
+.unit {
+  position: absolute;
+  height: var(--stack-row-height, 56px);
+  overflow: visible;
+  pointer-events: auto;
+  z-index: 0;
+}
+
+.card {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  right: 0;
+  height: 48px;
+  min-width: 1px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed color-mix(in srgb, var(--card-color) 28%, var(--color-border));
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--card-color) 6%, transparent);
+  cursor: default;
+  overflow: hidden;
+}
+
+.card:hover {
+  background: color-mix(in srgb, var(--card-color) 10%, transparent);
+}
+
+.label {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.2;
+  color: var(--color-ink-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  opacity: 0.85;
+}

@@ -169,6 +169,37 @@ const personById = new Map();
 for (const p of [...rulerPersons, ...EXTRA_PERSONS]) {
   personById.set(p.id, p);
 }
+
+const PERSON_DETAIL_OVERRIDES = {
+  "lv-shang": {
+    roles: ["君主", "军事家", "政治家"],
+    bio: "姜太公（姜子牙），辅武王克商，封于齐。",
+    links: wiki("姜子牙"),
+    birth: ym(-1156),
+    death: ym(-1017),
+  },
+  "song-r28": {
+    bio: "宋昭公（子特），前469–前404年在位。《史记·宋微子世家》另有前422年卒异说。",
+    links: wiki("宋昭公特"),
+  },
+  "qi-r11": {
+    bio: "齐前庄公（姜购），维基齐国君主表载在位64年（前794–前731），为齐国在位最久之君。",
+  },
+  "weiguo-r10": {
+    bio: "卫武公（姬和），《史记·卫世家》载前812–前758年在位，共55年。",
+    links: wiki("卫武公"),
+  },
+  "cao-r11": {
+    bio: "曹桓公（姬终生），《史记·蔡世家》载前756–前702年在位，共55年。",
+    links: wiki("曹桓公"),
+  },
+};
+
+for (const [id, patch] of Object.entries(PERSON_DETAIL_OVERRIDES)) {
+  const existing = personById.get(id);
+  if (existing) personById.set(id, { ...existing, ...patch });
+}
+
 const persons = [...personById.values()];
 
 // ── dynasties (feudal states; id suffix avoids later homonymous dynasties) ──

@@ -1,0 +1,57 @@
+{
+  "slug": "tang-border",
+  "title": "唐代边陲政权（吐蕃·吐谷浑·高句丽·回鹘）",
+  "window": {
+    "startYear": -37,
+    "startMonth": 1,
+    "endYear": 842,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-13",
+  "counts": {
+    "persons": 61,
+    "dynasties": 4,
+    "reigns": 61,
+    "events": 4,
+    "relations": 61
+  },
+  "sources": [
+    {
+      "label": "吐蕃",
+      "url": "https://zh.wikipedia.org/wiki/%E5%90%90%E8%95%83"
+    },
+    {
+      "label": "吐蕃君主列表",
+      "url": "https://zh.wikipedia.org/zh-cn/%E5%90%90%E8%95%83%E5%90%9B%E4%B8%BB%E5%88%97%E8%A1%A8"
+    },
+    {
+      "label": "吐谷浑",
+      "url": "https://zh.wikipedia.org/wiki/%E5%90%90%E8%B0%B7%E6%B5%91"
+    },
+    {
+      "label": "吐谷浑首领列表",
+      "url": "https://zh.wikipedia.org/wiki/%E5%90%90%E8%B0%B7%E6%B5%91%E9%A6%96%E9%A2%86%E5%88%97%E8%A1%A8"
+    },
+    {
+      "label": "高句丽君主列表",
+      "url": "https://zh.wikipedia.org/wiki/%E9%AB%98%E5%8F%A5%E4%B8%BD%E5%90%9B%E4%B8%BB%E5%88%97%E8%A1%A8"
+    },
+    {
+      "label": "回鹘",
+      "url": "https://zh.wikipedia.org/wiki/%E5%9B%9E%E9%B9%81"
+    },
+    {
+      "label": "唐灭高句丽",
+      "url": "https://zh.wikipedia.org/wiki/%E9%AB%98%E5%8F%A5%E4%B8%BD"
+    }
+  ],
+  "notes": [
+    "吐蕃在位年取维基百科帝国时期标准列表（618–842），含南日松赞至朗达玛。",
+    "吐谷浑含慕容吐谷浑至诺曷钵完整首领序列；王朝窗口取329–663。",
+    "高句丽取君主列表约18位主要君主，故国川王以前年代有争议，precision=year。",
+    "回鹘可汗序列按744–840通行年表；840年亡国事件关联黠戛斯。",
+    "唐（tang）复用 sui-tang-wudai-song 已有 id，本包仅关联 event_dynasties。"
+  ]
+}

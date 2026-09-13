@@ -80,6 +80,37 @@ export function formatYearMonthFromAbs(abs: AbsMonth): string {
   return formatYearMonth(year, month);
 }
 
+function formatDurationMonths(totalMonths: number): string {
+  if (totalMonths <= 0) return "不足1个月";
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
+  if (years === 0) return `${months}个月`;
+  if (months === 0) return `${years}年`;
+  return `${years}年${months}个月`;
+}
+
+function formatAbsSpanDuration(start: TimePoint, end: TimePoint, startAbs: AbsMonth, endAbs: AbsMonth): string {
+  if (start.month === 1 && end.month === 1) {
+    const years = toAstroYear(end.year) - toAstroYear(start.year) + 1;
+    return `${years}年`;
+  }
+  return formatDurationMonths(endAbs - startAbs + 1);
+}
+
+/** Hover label for an abs-month span: years, or a single year when start equals end. */
+export function formatAbsSpanTooltip(startAbs: AbsMonth, endAbs: AbsMonth): string {
+  const start = fromAbsMonth(startAbs);
+  const end = fromAbsMonth(endAbs);
+  if (startAbs === endAbs) {
+    return start.month === 1 ? formatYear(start.year) : formatYearMonth(start.year, start.month);
+  }
+  const startLabel =
+    start.month === 1 ? formatYear(start.year) : formatYearMonth(start.year, start.month);
+  const endLabel = end.month === 1 ? formatYear(end.year) : formatYearMonth(end.year, end.month);
+  const duration = formatAbsSpanDuration(start, end, startAbs, endAbs);
+  return `${startLabel} — ${endLabel} · ${duration}`;
+}
+
 export function parseYearMonthParam(value: string): AbsMonth | null {
   const match = value.match(/^(-?\d+)(?:-(\d{1,2}))?$/);
   if (!match) return null;

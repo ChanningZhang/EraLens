@@ -1,4 +1,4 @@
-import type { Reign } from "@eralens/shared";
+import type { Dynasty, Reign } from "@eralens/shared";
 
 export const LANE_PADDING_Y = 16;
 export const STACK_ROW_HEIGHT = 56;
@@ -101,4 +101,62 @@ export function reignCardSpan(
       ? nextStartAbs
       : naturalEndExclusive;
   return { startAbs, endExclusive };
+}
+
+export type ReignGap = {
+  startAbs: number;
+  endExclusive: number;
+};
+
+/** Minimum gap length (abs months) before showing a dashed placeholder card. */
+export const REIGN_GAP_MIN_MONTHS = 12;
+
+function mergeReignCoverage(reigns: Reign[]): { start: number; end: number }[] {
+  const sorted = sortReigns(reigns);
+  const merged: { start: number; end: number }[] = [];
+  for (const reign of sorted) {
+    const start = reign.startAbs;
+    const end = reign.endAbs + 1;
+    const last = merged.at(-1);
+    if (!last || start > last.end) {
+      merged.push({ start, end });
+    } else {
+      last.end = Math.max(last.end, end);
+    }
+  }
+  return merged;
+}
+
+/**
+ * Intervals within a dynasty span that have no recorded reign.
+ * Derived at render time; does not create fake reign rows in the database.
+ */
+export function computeReignGaps(
+  dynasty: Pick<Dynasty, "startAbs" | "endAbs">,
+  reigns: Reign[],
+  minMonths = REIGN_GAP_MIN_MONTHS,
+): ReignGap[] {
+  const dynastyEndExclusive = dynasty.endAbs + 1;
+  if (dynastyEndExclusive <= dynasty.startAbs) return [];
+
+  if (reigns.length === 0) {
+    const span = dynastyEndExclusive - dynasty.startAbs;
+    return span >= minMonths
+      ? [{ startAbs: dynasty.startAbs, endExclusive: dynastyEndExclusive }]
+      : [];
+  }
+
+  const gaps: ReignGap[] = [];
+  let cursor = dynasty.startAbs;
+  for (const covered of mergeReignCoverage(reigns)) {
+    if (covered.start > cursor) {
+      gaps.push({ startAbs: cursor, endExclusive: covered.start });
+    }
+    cursor = Math.max(cursor, covered.end);
+  }
+  if (cursor < dynastyEndExclusive) {
+    gaps.push({ startAbs: cursor, endExclusive: dynastyEndExclusive });
+  }
+
+  return gaps.filter((gap) => gap.endExclusive - gap.startAbs >= minMonths);
 }

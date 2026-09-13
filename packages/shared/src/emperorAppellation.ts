@@ -149,6 +149,53 @@ export function resolveReignCardLabel(
   return resolveReignPrimaryLabel(reign, personName);
 }
 
+/** Subtitle for reign detail and dynasty related lists. */
+export function resolveReignDetailSubtitle(
+  reign: ReignAppellationFields,
+  dynastyName?: string | null,
+  _personName?: string | null,
+): string {
+  const dynastyPart = dynastyName ?? "";
+  const appellation = resolveEmperorAppellation(reign);
+  const conventional = appellation?.name ?? reign.title;
+  return dynastyPart ? `${dynastyPart} · ${conventional}` : conventional;
+}
+
+type ReignDetailFactsFields = ReignAppellationFields &
+  Pick<Reign, "start" | "end" | "eraNames">;
+
+/** Structured facts for reign detail panels. */
+export function resolveReignDetailFacts(
+  reign: ReignDetailFactsFields,
+): Array<{ label: string; value: string }> {
+  const facts = [
+    { label: "在位", value: `${reign.start.year} — ${reign.end.year}` },
+  ];
+  if (reign.posthumousName) {
+    facts.push({ label: "谥号", value: reign.posthumousName });
+  }
+  if (reign.templeName) {
+    facts.push({ label: "庙号", value: reign.templeName });
+  }
+  const era = reign.eraNames[0]?.name;
+  if (era) {
+    facts.push({ label: "年号", value: era });
+  }
+  return facts;
+}
+
+/** Subtitle for a reign listed under its dynasty. */
+export function resolveReignRelatedSubtitle(
+  reign: ReignAppellationFields,
+  personName?: string | null,
+): string {
+  const label = resolveReignPrimaryLabel(reign, personName);
+  const resolvedPersonName = personName ?? reign.title;
+  if (label !== resolvedPersonName) return resolvedPersonName;
+  const appellation = resolveEmperorAppellation(reign);
+  return appellation?.name ?? reign.title;
+}
+
 /** Secondary line shown when the card has enough space. */
 export function resolveReignCardMeta(
   reign: ReignAppellationFields,

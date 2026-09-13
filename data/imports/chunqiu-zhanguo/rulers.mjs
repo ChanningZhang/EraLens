@@ -1726,7 +1726,7 @@ export const rulersByDynasty = {
       "title": "宋昭公",
       "personName": "子特",
       "posthumousName": "昭公",
-      "startYear": -468,
+      "startYear": -469,
       "endYear": -404
     },
     {
@@ -2850,7 +2850,7 @@ export const rulersByDynasty = {
       "title": "曹桓公",
       "personName": "姬终生",
       "posthumousName": "桓公",
-      "startYear": -757,
+      "startYear": -756,
       "endYear": -702
     },
     {

@@ -176,27 +176,27 @@ const dynasties = [
 // ── reigns ───────────────────────────────────────────────────────────────────
 
 const liaoReigns = [
-  dr("liao", "yelu-abaoji", "辽太祖", null, null, 916, 926, [{ name: "神册", sy: 916, ey: 922 }, { name: "天赞", sy: 922, ey: 926 }]),
-  dr("liao", "yelu-deguang", "辽太宗", null, null, 927, 947),
-  dr("liao", "yelu-ruan", "辽世宗", null, null, 947, 951),
-  dr("liao", "yelu-jing", "辽穆宗", null, null, 951, 969),
-  dr("liao", "yelu-xian", "辽景宗", null, null, 969, 982),
-  dr("liao", "yelu-longxu", "辽圣宗", null, null, 982, 1031, [{ name: "统和", sy: 983, ey: 1012 }, { name: "开泰", sy: 1012, ey: 1021 }, { name: "太平", sy: 1021, ey: 1031 }]),
-  dr("liao", "yelu-zongzhen", "辽兴宗", null, null, 1031, 1055),
-  dr("liao", "yelu-hongji", "辽道宗", null, null, 1055, 1101),
+  dr("liao", "yelu-abaoji", "辽太祖", null, "太祖", 916, 926, [{ name: "神册", sy: 916, ey: 922 }, { name: "天赞", sy: 922, ey: 926 }]),
+  dr("liao", "yelu-deguang", "辽太宗", null, "太宗", 927, 947),
+  dr("liao", "yelu-ruan", "辽世宗", null, "世宗", 947, 951),
+  dr("liao", "yelu-jing", "辽穆宗", null, "穆宗", 951, 969),
+  dr("liao", "yelu-xian", "辽景宗", null, "景宗", 969, 982),
+  dr("liao", "yelu-longxu", "辽圣宗", null, "圣宗", 982, 1031, [{ name: "统和", sy: 983, ey: 1012 }, { name: "开泰", sy: 1012, ey: 1021 }, { name: "太平", sy: 1021, ey: 1031 }]),
+  dr("liao", "yelu-zongzhen", "辽兴宗", null, "兴宗", 1031, 1055),
+  dr("liao", "yelu-hongji", "辽道宗", null, "道宗", 1055, 1101),
   dr("liao", "yelu-yanxi", "辽天祚帝", null, null, 1101, 1125),
 ];
 
 const jinReigns = [
-  dr("jin-nvzhen", "wanyan-aguda", "金太祖", null, null, 1115, 1123, [{ name: "收国", sy: 1115, ey: 1116 }, { name: "天辅", sy: 1117, ey: 1123 }]),
-  dr("jin-nvzhen", "wanyan-sheng", "金太宗", null, null, 1123, 1135),
-  dr("jin-nvzhen", "wanyan-dan", "金熙宗", null, null, 1135, 1149),
+  dr("jin-nvzhen", "wanyan-aguda", "金太祖", null, "太祖", 1115, 1123, [{ name: "收国", sy: 1115, ey: 1116 }, { name: "天辅", sy: 1117, ey: 1123 }]),
+  dr("jin-nvzhen", "wanyan-sheng", "金太宗", null, "太宗", 1123, 1135),
+  dr("jin-nvzhen", "wanyan-dan", "金熙宗", null, "熙宗", 1135, 1149),
   dr("jin-nvzhen", "wanyan-liang", "海陵王", null, null, 1149, 1161),
-  dr("jin-nvzhen", "wanyan-yong", "金世宗", null, null, 1161, 1189, [{ name: "大定", sy: 1161, ey: 1189 }]),
-  dr("jin-nvzhen", "wanyan-jing", "金章宗", null, null, 1189, 1208),
+  dr("jin-nvzhen", "wanyan-yong", "金世宗", null, "世宗", 1161, 1189, [{ name: "大定", sy: 1161, ey: 1189 }]),
+  dr("jin-nvzhen", "wanyan-jing", "金章宗", null, "章宗", 1189, 1208),
   dr("jin-nvzhen", "wanyan-yongji", "卫绍王", null, null, 1208, 1213),
-  dr("jin-nvzhen", "wanyan-xun", "金宣宗", null, null, 1213, 1223),
-  dr("jin-nvzhen", "wanyan-shouxu", "金哀宗", null, null, 1223, 1234),
+  dr("jin-nvzhen", "wanyan-xun", "金宣宗", null, "宣宗", 1213, 1223),
+  dr("jin-nvzhen", "wanyan-shouxu", "金哀宗", null, "哀宗", 1223, 1234),
   dr("jin-nvzhen", "wanyan-chenglin", "金末帝", null, null, 1234, 1234),
 ];
 

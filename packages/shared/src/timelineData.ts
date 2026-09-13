@@ -1,4 +1,9 @@
-import { resolveReignPrimaryLabel } from "./emperorAppellation";
+import {
+  resolveReignDetailFacts,
+  resolveReignDetailSubtitle,
+  resolveReignPrimaryLabel,
+  resolveReignRelatedSubtitle,
+} from "./emperorAppellation";
 import { eventSpanAbs, formatEventTime } from "./eventTime";
 import {
   TimelineSliceSchema,
@@ -12,7 +17,10 @@ import {
   type SearchHit,
   type TimelineSlice,
 } from "./schema";
-import { personLifeAbs } from "./personTime";
+import {
+  personPlacementWindow,
+  personTimelinePlacement,
+} from "./personTime";
 import { rangeIntersectsWindow } from "./time";
 
 export type TimelineFilterQuery = {
@@ -55,11 +63,12 @@ export function filterTimeline(
   const visiblePersons = store.persons.filter((person) => {
     if (visibleReignPersonIds.has(person.id)) return true;
     if (reignPersonIds.has(person.id)) return false;
-    const life = personLifeAbs(person);
-    if (!life) return false;
+    const placement = personTimelinePlacement(person);
+    if (!placement) return false;
+    const window = personPlacementWindow(placement);
     return rangeIntersectsWindow(
-      life.startAbs,
-      life.endAbs,
+      window.startAbs,
+      window.endAbs,
       query.fromAbs,
       query.toAbs,
     );
@@ -118,12 +127,10 @@ export function buildEntityDetail(
       .map((r) => {
         const person = personMap.get(r.personId);
         const label = resolveReignPrimaryLabel(r, person?.name);
-        const personName = person?.name ?? r.title;
-        const usesEra = label !== personName;
         return {
           ref: { type: "reign" as const, id: r.id },
           label,
-          subtitle: usesEra ? personName : r.title,
+          subtitle: resolveReignRelatedSubtitle(r, person?.name),
           abs: r.startAbs,
         };
       });
@@ -147,10 +154,7 @@ export function buildEntityDetail(
     if (!reign) throw new Error(`Reign not found: ${ref.id}`);
     const person = personMap.get(reign.personId);
     const dynasty = dynastyMap.get(reign.dynastyId);
-    const era = reign.eraNames[0]?.name;
-    const personName = person?.name ?? reign.title;
     const title = resolveReignPrimaryLabel(reign, person?.name);
-    const usesEra = title !== personName;
     const related = store.relations
       .filter((rel) => rel.fromRef === refKey(ref) || rel.toRef === refKey(ref))
       .map((rel) => {
@@ -164,20 +168,9 @@ export function buildEntityDetail(
     return {
       ref,
       title,
-      subtitle: usesEra
-        ? `${dynasty?.name ?? ""} · ${personName}`
-        : `${dynasty?.name ?? ""} · ${reign.title}`,
+      subtitle: resolveReignDetailSubtitle(reign, dynasty?.name, person?.name),
       colorToken: dynasty?.colorToken,
-      facts: [
-        { label: "在位", value: `${reign.start.year} — ${reign.end.year}` },
-        ...(reign.posthumousName
-          ? [{ label: "谥号", value: reign.posthumousName }]
-          : []),
-        ...(reign.templeName
-          ? [{ label: "庙号", value: reign.templeName }]
-          : []),
-        ...(era ? [{ label: "年号", value: era }] : []),
-      ],
+      facts: resolveReignDetailFacts(reign),
       summary: person?.bio,
       related,
       links: person?.links ?? [],
@@ -237,6 +230,16 @@ export function buildEntityDetail(
   };
 }
 
+const PERSON_SEARCH_ALIASES: Record<string, readonly string[]> = {
+  "lv-shang": ["姜子牙", "姜太公", "太公"],
+};
+
+function personMatchesSearch(person: Person, q: string): boolean {
+  if (person.name.toLowerCase().includes(q)) return true;
+  const aliases = PERSON_SEARCH_ALIASES[person.id];
+  return aliases?.some((alias) => alias.toLowerCase().includes(q)) ?? false;
+}
+
 export function searchEntities(store: TimelineDataStore, term: string): SearchHit[] {
   const q = term.trim().toLowerCase();
   if (!q) return [];
@@ -252,11 +255,13 @@ export function searchEntities(store: TimelineDataStore, term: string): SearchHi
     }
   }
   for (const person of store.persons) {
-    if (person.name.toLowerCase().includes(q)) {
+    if (personMatchesSearch(person, q)) {
+      const placement = personTimelinePlacement(person);
       hits.push({
         ref: { type: "person", id: person.id },
         label: person.name,
         subtitle: person.roles.join(" · "),
+        abs: placement?.anchorAbs,
       });
     }
   }

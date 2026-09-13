@@ -1,6 +1,10 @@
 import { describe, expect, it } from "vitest";
 import { PersonSchema, absMonth } from "@eralens/shared";
-import { layoutPersons, personLaneCount } from "./personLayout";
+import {
+  layoutPersons,
+  personLaneCount,
+  personLayerHeight,
+} from "./personLayout";
 import { packEventLanes as packLanes } from "./eventLayout";
 
 describe("layoutPersons", () => {
@@ -27,8 +31,24 @@ describe("layoutPersons", () => {
     expect(personLaneCount(placed)).toBeGreaterThanOrEqual(1);
     const lanes = new Set(placed.map((item) => item.lane));
     expect(lanes.size).toBeGreaterThanOrEqual(1);
+    expect(placed.every((item) => item.mode === "span")).toBe(true);
+    expect(personLayerHeight(placed)).toBeGreaterThanOrEqual(36);
+    expect(placed.every((item) => item.top >= 12)).toBe(true);
   });
 
+  it("lays out birth-only persons as point markers", () => {
+    const zhangLiang = PersonSchema.parse({
+      id: "zhang-liang",
+      name: "张良",
+      birth: { year: -250, month: 1 },
+      roles: ["政治家"],
+    });
+    const placed = layoutPersons([zhangLiang], viewport);
+    expect(placed).toHaveLength(1);
+    expect(placed[0]?.mode).toBe("point");
+    expect(placed[0]?.pointKind).toBe("birth");
+    expect(placed[0]?.anchorX).toBeDefined();
+  });
 });
 
 describe("packEventLanes reuse", () => {

@@ -54,3 +54,58 @@
   line-height: 1.2;
   color: var(--color-ink-muted);
 }
+
+.pointMarker {
+  --dot-size: 5px;
+  --marker-pad-left: 6px;
+  --marker-border: 1px;
+  position: absolute;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 132px;
+  min-height: 24px;
+  padding: 3px 8px 3px var(--marker-pad-left);
+  border: var(--marker-border) solid color-mix(in srgb, var(--color-stone) 35%, var(--color-border));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-surface) 92%, var(--color-stone) 8%);
+  color: var(--color-ink-secondary);
+  box-shadow: 0 1px 4px color-mix(in srgb, var(--color-ink) 7%, transparent);
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  transition:
+    border-color var(--motion-fast),
+    color var(--motion-fast),
+    box-shadow var(--motion-fast);
+}
+
+.pointMarker:hover {
+  border-color: var(--color-stone);
+  color: var(--color-ink);
+  box-shadow: 0 1px 4px color-mix(in srgb, var(--color-ink) 8%, transparent);
+}
+
+.pointDot {
+  padding: 0;
+  min-width: 8px;
+  max-width: 8px;
+  border-radius: 2px;
+  background: color-mix(in srgb, var(--color-stone) 55%, transparent);
+}
+
+.pointDotIcon {
+  flex: 0 0 auto;
+  width: var(--dot-size);
+  height: var(--dot-size);
+  border-radius: 50%;
+  background: var(--color-stone);
+}
+
+.pointKind {
+  flex: 0 0 auto;
+  font-size: 10px;
+  line-height: 1.2;
+  color: var(--color-ink-muted);
+}

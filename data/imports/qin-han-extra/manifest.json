@@ -1,0 +1,53 @@
+{
+  "slug": "qin-han-extra",
+  "title": "秦汉补充：南越与赤眉",
+  "window": {
+    "startYear": -203,
+    "startMonth": 1,
+    "endYear": 27,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-13",
+  "counts": {
+    "persons": 7,
+    "dynasties": 2,
+    "reigns": 7,
+    "events": 3,
+    "relations": 8
+  },
+  "sources": [
+    {
+      "label": "南越国",
+      "url": "https://zh.wikipedia.org/wiki/南越国"
+    },
+    {
+      "label": "赵佗",
+      "url": "https://zh.wikipedia.org/wiki/赵佗"
+    },
+    {
+      "label": "南越国君主列表",
+      "url": "https://zh.wikipedia.org/wiki/南越国君主列表"
+    },
+    {
+      "label": "赤眉军",
+      "url": "https://zh.wikipedia.org/wiki/赤眉军"
+    },
+    {
+      "label": "刘盆子",
+      "url": "https://zh.wikipedia.org/wiki/刘盆子"
+    },
+    {
+      "label": "樊崇",
+      "url": "https://zh.wikipedia.org/wiki/樊崇"
+    }
+  ],
+  "notes": [
+    "南越赵氏五世（赵佗至赵建德），前203–前111；赤眉为西汉末过渡政权（23–27）。",
+    "赵兴为吕嘉所杀后赵建德即位，同年汉军灭南越。",
+    "赤眉入长安事件关联更始帝刘玄（见 qin-han 包 liu-xuan）。",
+    "西汉、更始关联见 qin-han 包，本包以 supplemental 补充。",
+    "precision=year，scope=cn，region=east_asia。"
+  ]
+}
