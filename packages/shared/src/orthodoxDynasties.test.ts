@@ -95,6 +95,25 @@ describe("orthodoxDynasties", () => {
     ).toBe(true);
   });
 
+  it("does not mark 曹丕魏王嗣位 as orthodox before he declared emperor", () => {
+    const wei = {
+      id: "wei",
+      startAbs: absMonth(208, 12),
+      endAbs: absMonth(266, 2),
+      orthodoxFromAbs: absMonth(220, 12),
+    };
+    const caoPiKing = {
+      startAbs: absMonth(220, 3),
+      endAbs: absMonth(220, 12),
+    };
+    const caoPiEmperor = {
+      startAbs: absMonth(220, 12),
+      endAbs: absMonth(226, 6),
+    };
+    expect(isOrthodoxReign(wei, caoPiKing)).toBe(false);
+    expect(isOrthodoxReign(wei, caoPiEmperor)).toBe(true);
+  });
+
   it("gives gold to the Sui main line, not to 杨侑 while 炀帝 still lived", () => {
     const sui = {
       id: "sui",

@@ -13,9 +13,9 @@
   "counts": {
     "persons": 1,
     "dynasties": 3,
-    "reigns": 6,
+    "reigns": 7,
     "events": 4,
-    "relations": 7
+    "relations": 8
   },
   "sources": [
     {
@@ -47,6 +47,7 @@
     "魏蜀吴王朝行起点取208年12月赤壁战后，与东汉（至220年12月）并行展示。",
     "wei 的 orthodox_from_abs 仍为220年12月曹丕称帝；shu、wu 为割据政权。",
     "袁绍（yuan-shao）、刘璋（liu-zhang）仅作人物收录，不建割据王朝行。",
-    "曹操、刘备、孙权各拆为割据期与称帝/称王期两段 reign；曹叡及以后见 seed 与 three-kingdoms-late 包。"
+    "曹操、刘备、孙权各拆为割据期与称帝/称王期两段 reign；曹丕另拆魏王嗣位（220-3-15）与称帝（220-12-11）两段；曹叡及以后见 seed 与 three-kingdoms-late 包。",
+    "在位起止日经 documentedReignDates 提升至 day（赤壁起点无日则 month）。"
   ]
 }

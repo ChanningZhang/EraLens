@@ -99,7 +99,8 @@ export function overlapsOrthodoxSpan(
   const span = resolveOrthodoxSpan(dynasty);
   if (!span) return false;
   // Reigns starting at orthodox end (e.g. 元惠宗 1368) are post-orthodox.
-  return startAbs < span.endAbs && endAbs >= span.startAbs;
+  // Reigns ending at orthodox start (e.g. 曹丕魏王嗣位 220-12) are pre-orthodox.
+  return startAbs < span.endAbs && endAbs > span.startAbs;
 }
 
 /**

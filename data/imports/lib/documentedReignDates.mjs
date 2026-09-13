@@ -5,6 +5,7 @@
  * Keys: reign id, or `${dynastyId}:${personId}` fallback.
  * Values: { start: [y, m, d?], end: [y, m, d?], precision?: "day"|"month" }
  */
+import { JIN_NANBEI_REIGN_DATES } from "./documentedReignDatesJinNanbei.mjs";
 import { ymDay } from "./reignDateHelpers.mjs";
 
 function point([y, m, d]) {
@@ -13,6 +14,69 @@ function point([y, m, d]) {
 
 /** @type {Record<string, { start: number[], end: number[], precision?: string }>} */
 export const DOCUMENTED_REIGN_DATES = {
+  ...JIN_NANBEI_REIGN_DATES,
+
+  // ── 秦 ──────────────────────────────────────────────────────────────────
+  "reign-ying-zheng": { start: [-221, 9, 10], end: [-210, 7, 11] },
+  "reign-ying-huhai": { start: [-210, 8, 9], end: [-207, 10, 1] },
+  "reign-ying-ziying": { start: [-207, 10, 1], end: [-207, 11, 17] },
+
+  // ── 西楚 ────────────────────────────────────────────────────────────────
+  "reign-xiang-yu": { start: [-206, 3, 12], end: [-202, 2, 28] },
+
+  // ── 西汉 ──────────────────────────────────────────────────────────────
+  "reign-liu-bang": { start: [-202, 2, 28], end: [-195, 6, 1] },
+  "reign-liu-ying": { start: [-195, 6, 26], end: [-188, 9, 26] },
+  "reign-liu-gong": { start: [-188, 9, 27], end: [-184, 6, 15] },
+  "reign-liu-hong-shao": { start: [-184, 6, 15], end: [-180, 11, 14] },
+  "reign-liu-heng": { start: [-180, 11, 14], end: [-157, 7, 6] },
+  "reign-liu-qi": { start: [-157, 7, 14], end: [-141, 3, 9] },
+  "reign-liu-che": { start: [-141, 3, 9], end: [-87, 3, 29] },
+  "reign-liu-fuling": { start: [-87, 3, 30], end: [-74, 6, 5] },
+  "reign-liu-he": { start: [-74, 7, 18], end: [-74, 8, 14] },
+  "reign-liu-xun": { start: [-74, 9, 10], end: [-48, 1, 10] },
+  "reign-liu-shi": { start: [-48, 1, 29], end: [-33, 7, 8] },
+  "reign-liu-ao": { start: [-33, 8, 4], end: [-7, 4, 17] },
+  "reign-liu-xin": { start: [-7, 5, 7], end: [-1, 8, 15] },
+  "reign-liu-kan": { start: [-1, 10, 17], end: [6, 2, 3] },
+  "reign-ruzi-ying": { start: [6, 4, 17], end: [9, 1, 15] },
+
+  // ── 新莽 ────────────────────────────────────────────────────────────────
+  "reign-wang-mang": { start: [9, 1, 10], end: [23, 10, 6] },
+
+  // ── 更始 ──────────────────────────────────────────────────────────────
+  "reign-liu-xuan": { start: [23, 3, 11], end: [25, 10, 4] },
+
+  // ── 东汉 ──────────────────────────────────────────────────────────────
+  "reign-liu-xiu": { start: [25, 8, 5], end: [57, 3, 29] },
+  "reign-liu-zhuang": { start: [57, 3, 29], end: [75, 9, 5] },
+  "reign-liu-zuo": { start: [75, 9, 5], end: [88, 4, 9] },
+  "reign-liu-zhao": { start: [88, 4, 9], end: [106, 2, 13] },
+  "reign-liu-long": { start: [106, 2, 13], end: [106, 9, 21] },
+  "reign-liu-hu": { start: [106, 9, 21], end: [125, 4, 30] },
+  "reign-liu-yi-shao": { start: [125, 5, 18], end: [125, 12, 10] },
+  "reign-liu-bao": { start: [125, 12, 10], end: [144, 9, 20] },
+  "reign-liu-bing": { start: [144, 9, 20], end: [145, 2, 15] },
+  "reign-liu-zuan": { start: [145, 3, 6], end: [146, 7, 26] },
+  "reign-liu-zhi": { start: [146, 8, 1], end: [168, 1, 25] },
+  "reign-liu-hong": { start: [168, 2, 17], end: [189, 5, 13] },
+  "reign-liu-bian": { start: [189, 5, 15], end: [189, 9, 28] },
+  "reign-liu-xie": { start: [189, 9, 29], end: [220, 11, 25] },
+
+  // ── 三国（魏蜀吴割据期）────────────────────────────────────────────────
+  "reign-cao-cao-wei": { start: [208, 12], end: [220, 3, 15] },
+  "reign-cao-pi-king": { start: [220, 3, 15], end: [220, 12, 10] },
+  "reign-cao-pi": { start: [220, 12, 11], end: [226, 6, 29] },
+  "reign-liu-bei-warlord": { start: [208, 12], end: [221, 5, 14] },
+  "reign-liu-bei": { start: [221, 5, 15], end: [223, 6, 10] },
+  "reign-sun-quan-warlord": { start: [208, 12], end: [222, 9, 30] },
+  "reign-sun-quan": { start: [222, 10, 19], end: [252, 5, 21] },
+  "reign-cao-fang": { start: [239, 1, 22], end: [254, 10, 17] },
+  "reign-cao-mao": { start: [254, 10, 17], end: [260, 6, 2] },
+  "reign-cao-huan": { start: [260, 6, 27], end: [266, 2, 4] },
+  "reign-sun-xiu": { start: [258, 11, 2], end: [264, 9, 3] },
+  "reign-sun-hao": { start: [264, 9, 3], end: [280, 5, 1] },
+
   // ── 隋 ──────────────────────────────────────────────────────────────────
   "reign-yang-jian": { start: [581, 3, 4], end: [604, 8, 13] },
   "reign-yang-guang": { start: [604, 8, 13], end: [618, 4, 11] },

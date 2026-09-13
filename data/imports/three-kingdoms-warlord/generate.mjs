@@ -5,6 +5,7 @@
  */
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
 import {
   person,
@@ -133,6 +134,20 @@ const weiReigns = [
     { kind: "posthumous", name: "魏武帝" },
   ),
   dynastyReignMonth(
+    "reign-cao-pi-king",
+    "wei",
+    "cao-pi",
+    "魏王",
+    null,
+    null,
+    220,
+    3,
+    220,
+    12,
+    [],
+    { kind: "regnal", name: "魏王" },
+  ),
+  dynastyReignMonth(
     "reign-cao-pi",
     "wei",
     "cao-pi",
@@ -140,7 +155,7 @@ const weiReigns = [
     "文皇帝",
     "高祖",
     220,
-    4,
+    12,
     226,
     6,
     [{ name: "黄初", sy: 220, sm: 12, ey: 226, em: 6 }],
@@ -205,7 +220,7 @@ const wuReigns = [
 ];
 
 const reignGroups = [weiReigns, shuReigns, wuReigns];
-const reigns = reignGroups.flat();
+const reigns = applyDocumentedDatesToReigns(reignGroups.flat());
 
 // ── events ───────────────────────────────────────────────────────────────────
 
@@ -312,7 +327,8 @@ const manifest = {
     "魏蜀吴王朝行起点取208年12月赤壁战后，与东汉（至220年12月）并行展示。",
     "wei 的 orthodox_from_abs 仍为220年12月曹丕称帝；shu、wu 为割据政权。",
     "袁绍（yuan-shao）、刘璋（liu-zhang）仅作人物收录，不建割据王朝行。",
-    "曹操、刘备、孙权各拆为割据期与称帝/称王期两段 reign；曹叡及以后见 seed 与 three-kingdoms-late 包。",
+    "曹操、刘备、孙权各拆为割据期与称帝/称王期两段 reign；曹丕另拆魏王嗣位（220-3-15）与称帝（220-12-11）两段；曹叡及以后见 seed 与 three-kingdoms-late 包。",
+    "在位起止日经 documentedReignDates 提升至 day（赤壁起点无日则 month）。",
   ],
 };
 

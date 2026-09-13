@@ -6,6 +6,7 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 import { reignSql } from "../lib/reignSql.mjs";
@@ -456,7 +457,7 @@ const reignGroups = [
   qiBeiReigns,
   zhouBeiReigns,
 ];
-const reigns = reignGroups.flat();
+const reigns = applyDocumentedDatesToReigns(reignGroups.flat());
 
 // ── events ───────────────────────────────────────────────────────────────────
 
@@ -862,6 +863,7 @@ const manifest = {
   ],
   notes: [
     "覆盖南北朝（420–589），含386年立国的北魏；北朝含北魏、北齐、北周，南朝含刘宋、南齐、南梁、南陈。",
+    "全部53位君主在位日取维基百科君主条目公历换算（documentedReignDates，precision=day）。",
     "刘裕（liu-yu-jin）复用 jin-sixteen 已有 id；北魏 id 为 wei-north，避免与曹魏 wei 冲突。",
     "534年分裂用 claim_track：ye/孝静帝为并行傀儡（与孝武帝同时称帝）；孝武帝死后文帝元宝炬接续主线→废帝→恭帝。东魏、西魏不再另建王朝行。",
     "南梁 id 为 liang-nan，与十六国南凉 liang-south 区分。",

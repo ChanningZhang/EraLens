@@ -4,6 +4,7 @@
  */
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
 import {
   person,
@@ -88,7 +89,7 @@ const wuReigns = [
 ];
 
 const reignGroups = [weiReigns, wuReigns];
-const reigns = reignGroups.flat();
+const reigns = applyDocumentedDatesToReigns(reignGroups.flat());
 
 const relations = [];
 for (const group of reignGroups) {
@@ -143,7 +144,7 @@ const manifest = {
   ],
   notes: [
     "补录曹魏曹叡之后曹芳、曹髦、曹奂，及孙吴孙亮之后孙休、孙皓。",
-    "在位起止据《三国志》及通行年表，precision=month。",
+    "在位起止据《三国志》及维基百科通行公历换算，经 documentedReignDates 提升至 day。",
     "曹芳、曹髦谥号非完整皇帝谥，title 取通行称呼。",
     "曹魏、孙吴王朝行已存在于 seed，本包仅补人物与在位。",
   ],

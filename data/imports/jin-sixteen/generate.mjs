@@ -6,8 +6,10 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
+import { reignSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -723,7 +725,7 @@ const reignGroups = [
   yanNorthReigns,
   xiaHuReigns,
 ];
-const reigns = reignGroups.flat();
+const reigns = applyDocumentedDatesToReigns(reignGroups.flat());
 
 // ── events ───────────────────────────────────────────────────────────────────
 
@@ -1019,34 +1021,6 @@ ON CONFLICT (id) DO UPDATE SET
   note = EXCLUDED.note;`;
 }
 
-function reignSql(r) {
-  return `INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  posthumous_name, temple_name, preferred_appellation,
-  start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision
-) VALUES (
-  ${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(r.title)},
-  ${sqlStr(r.posthumousName ?? null)}, ${sqlStr(r.templeName ?? null)}, ${sqlJson(r.preferredAppellation)},
-  ${r.start.year}, ${r.start.month}, ${r.end.year}, ${r.end.month},
-  ${r.startAbs}, ${r.endAbs}, ${sqlStr(r.precision)}
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  posthumous_name = EXCLUDED.posthumous_name,
-  temple_name = EXCLUDED.temple_name,
-  preferred_appellation = EXCLUDED.preferred_appellation,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision;`;
-}
-
 function eraNameSql(e) {
   return `INSERT INTO era_names (reign_id, name, start_year, start_month, end_year, end_month, start_abs, end_abs, sort_order)
 VALUES (${sqlStr(e.reignId)}, ${sqlStr(e.name)}, ${e.start.year}, ${e.start.month}, ${e.end.year}, ${e.end.month}, ${e.start.abs}, ${e.end.abs}, ${e.sortOrder});`;
@@ -1171,7 +1145,7 @@ const manifest = {
   ],
   notes: [
     "覆盖西晋（266–316）、东晋（317–420）及崔鸿《十六国春秋》所列十六国（304–439）。",
-    "王朝与皇帝在位年取维基百科君主列表常见年表，precision=year；汉赵同年更替者用 month。",
+    "两晋皇帝在位日取维基百科君主条目公历换算（documentedReignDates，precision=day）；十六国君主仍为 year，汉赵同年更替者用 month。",
     "西晋 upsert 已有 jin-west 行；胡夏 id 为 xia-hu，避免与夏朝 xia 冲突。",
     "前秦/后秦/西秦 id 分别为 qin-front/qin-back/qin-xi，避免与秦朝 qin 冲突。",
     "439 年北魏灭北凉为十六国终结事件；北魏本身归入南北朝，不在此包内。",
