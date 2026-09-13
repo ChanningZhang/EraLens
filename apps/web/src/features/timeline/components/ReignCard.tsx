@@ -5,6 +5,9 @@ import {
   claimRoleLabel,
   formatReignSpanTooltip,
   isSubMonthReign,
+  claimTrackOf,
+  isUncertainDateConfidence,
+  isUncertainReignSeam,
   reignVisualBounds,
   isParallelClaim,
   resolveReignCardLabel,
@@ -30,6 +33,8 @@ import { HoverTooltip } from "./HoverTooltip";
 import styles from "./ReignCard.module.css";
 
 const MARKER_HIT_MIN_PX = 8;
+/** Breathing room at interpolated seams so wavy junctions stay visible. */
+const UNCERTAIN_SEAM_GAP_PX = 3;
 
 type Props = {
   reign: Reign;
@@ -73,6 +78,23 @@ export function ReignCard({
     ? projectAbs(viewport, anchor) - unitWidth / 2
     : projectAbs(viewport, visual.start);
   const cardInset = marker ? (unitWidth - visualWidth) / 2 : 0;
+  const trackPeers = reigns
+    .filter((item) => claimTrackOf(item) === claimTrackOf(reign))
+    .sort((a, b) => a.startAbs - b.startAbs || a.id.localeCompare(b.id));
+  const reignIndex = trackPeers.findIndex((item) => item.id === reign.id);
+  const prevReign = reignIndex > 0 ? trackPeers[reignIndex - 1] : undefined;
+  const nextReign =
+    reignIndex >= 0 && reignIndex < trackPeers.length - 1
+      ? trackPeers[reignIndex + 1]
+      : undefined;
+  const seamInsetLeft =
+    prevReign && isUncertainReignSeam(prevReign, reign)
+      ? UNCERTAIN_SEAM_GAP_PX
+      : 0;
+  const seamInsetRight =
+    nextReign && isUncertainReignSeam(reign, nextReign)
+      ? UNCERTAIN_SEAM_GAP_PX
+      : 0;
   const selected =
     selection.selected?.type === "reign" && selection.selected.id === reign.id;
 
@@ -148,7 +170,10 @@ export function ReignCard({
               ["--card-color" as string]: color,
               ...(marker
                 ? { left: cardInset, width: visualWidth, right: "auto" }
-                : {}),
+                : {
+                    left: seamInsetLeft,
+                    right: seamInsetRight,
+                  }),
               ...(detail === "wrap"
                 ? { ["--card-name-size" as string]: `${layout.nameFontPx}px` }
                 : {}),

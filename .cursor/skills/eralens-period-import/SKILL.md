@@ -118,6 +118,13 @@ node .cursor/skills/eralens-period-import/scripts/compute-abs.mjs -1046 1  # -12
 - 不增加 `missing` 字段、不建单独 gap 表。前端只根据保留的 `person_id` 将该 reign 渲染为虚线框。
 - 没有占位 reign 的时间空档一律留白，不由前端自动推断为资料缺失；导入脚本也**不会**根据相邻君主间隔自动插入 `reign-missing-*`，仅 `getCuratedMissingReigns` 或包内显式传入的占位会写入库。
 
+**在位年失考 / 推算边界**（与史料缺区分）：
+
+- 世系连续但在位年为插值或约数时，在 `reigns` 行标注 `start_date_confidence` / `end_date_confidence`：`certain`（默认 NULL）、`approximate`、`interpolated`。
+- 前端 `findReignUncertaintyBoundaries` 仅在两位君主**日历相接且交界两侧均标失考**时渲染波浪线；灭国留白、一侧有年表锚点、一年实录短祚（卫戴公等）不画。
+- `build-rulers.mjs` 对 `fillUndatedYears` 在锚点窗口内按世系**均分**在位年（不设 35 年上限），并自动打 `interpolated`；有年表锚点的边界保持 NULL。
+- 灭国、亡国等确实无国君的空档：若需占位用史料缺；若仅年代不可考则靠 confidence + 波浪线，不要混用。
+
 ### 3. 冲突检查
 
 导入前查询已有 id：

@@ -57,6 +57,8 @@ export type RawReignRow = {
   start_abs: number;
   end_abs: number;
   precision: string;
+  start_date_confidence: string | null;
+  end_date_confidence: string | null;
   claim_track: string | null;
   claim_label: string | null;
   claim_role: string | null;
@@ -156,6 +158,10 @@ export function mapReign(
   const claimTrack = "claimTrack" in row ? row.claimTrack : row.claim_track;
   const claimLabel = "claimLabel" in row ? row.claimLabel : row.claim_label;
   const claimRole = "claimRole" in row ? row.claimRole : row.claim_role;
+  const startDateConfidence =
+    "startDateConfidence" in row ? row.startDateConfidence : row.start_date_confidence;
+  const endDateConfidence =
+    "endDateConfidence" in row ? row.endDateConfidence : row.end_date_confidence;
 
   return {
     id: row.id,
@@ -187,6 +193,10 @@ export function mapReign(
     startAbs,
     endAbs,
     precision: row.precision as Reign["precision"],
+    startDateConfidence:
+      (startDateConfidence as Reign["startDateConfidence"] | null) ?? undefined,
+    endDateConfidence:
+      (endDateConfidence as Reign["endDateConfidence"] | null) ?? undefined,
     claimTrack: claimTrack ?? undefined,
     claimLabel: claimLabel ?? undefined,
     claimRole: (claimRole as Reign["claimRole"] | null) ?? undefined,

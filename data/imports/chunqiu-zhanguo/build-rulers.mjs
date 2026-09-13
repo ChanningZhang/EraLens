@@ -161,9 +161,8 @@ function trimToIndependentState(rulers) {
     }));
 }
 
-/** Interpolated / unknown-duration reigns must not look like multi-century lives. */
+/** Warn on implausibly long single reigns after wiki parsing (not applied to interpolation). */
 const MAX_PLAUSIBLE_REIGN_YEARS = 70;
-const MAX_INTERPOLATED_REIGN_YEARS = 35;
 
 const STATE_PREFIX = {
   "qi-chunqiu": "齐",
@@ -518,37 +517,54 @@ function isCompleteReign(r) {
   return r.complete === true && r.start != null && r.end != null;
 }
 
+/** Evenly split [windowStart, windowEnd] across undated rulers; seams stay contiguous. */
 function assignInterpolatedRun(run, windowStart, windowEnd) {
   const count = run.length;
+  if (count === 0) return;
   const span = windowEnd - windowStart + 1;
-  const even = Math.floor(span / count);
-  if (even <= MAX_INTERPOLATED_REIGN_YEARS) {
-    for (let k = 0; k < count; k += 1) {
-      const a = windowStart + Math.floor((span * k) / count);
-      const b = windowStart + Math.floor((span * (k + 1)) / count) - 1;
-      run[k].start = a;
-      run[k].end = Math.max(a, b);
-      run[k].complete = true;
-    }
-    return;
-  }
-  let cursor = windowStart;
   for (let k = 0; k < count; k += 1) {
-    const last = k === count - 1;
-    if (last && run[k].endHint != null) {
-      const end = windowEnd;
-      const start = Math.min(end, Math.max(cursor, end - MAX_INTERPOLATED_REIGN_YEARS + 1));
-      run[k].start = start;
-      run[k].end = end;
-    } else {
-      const start = cursor;
-      const end = Math.min(start + MAX_INTERPOLATED_REIGN_YEARS - 1, windowEnd);
-      run[k].start = start;
-      run[k].end = Math.max(start, end);
-      cursor = run[k].end + 1;
-    }
+    const a = windowStart + Math.floor((span * k) / count);
+    const b = windowStart + Math.floor((span * (k + 1)) / count) - 1;
+    run[k].start = a;
+    run[k].end = Math.max(a, b);
     run[k].complete = true;
+    run[k].interpolated = true;
   }
+}
+
+/** Tag interpolated reign years; do not mark seams across calendar holes (亡国留白). */
+function markInterpolatedBoundaries(rulers) {
+  for (const reign of rulers) {
+    if (reign.interpolated) {
+      if (!reign.startDateConfidence) reign.startDateConfidence = "interpolated";
+      if (!reign.endDateConfidence) reign.endDateConfidence = "interpolated";
+    }
+  }
+  return clearAnchoredShortReignInterpolation(rulers);
+}
+
+/**
+ * Single-year reigns pinned between dated neighbors (卫戴公、公孙无知等)
+ * are documented short terms, not even-split artifacts — drop interpolated tags.
+ */
+function clearAnchoredShortReignInterpolation(rulers) {
+  const sorted = [...rulers].sort(
+    (a, b) => a.start - b.start || a.end - b.end || a.title.localeCompare(b.title),
+  );
+  for (let i = 0; i < sorted.length; i += 1) {
+    const reign = sorted[i];
+    if (!reign.interpolated || reign.start !== reign.end) continue;
+    const prev = sorted[i - 1];
+    const next = sorted[i + 1];
+    if (prev?.end == null || next?.start == null) continue;
+    const pinned =
+      reign.start === prev.end && reign.end + 1 === next.start;
+    if (!pinned) continue;
+    reign.interpolated = false;
+    delete reign.startDateConfidence;
+    delete reign.endDateConfidence;
+  }
+  return rulers;
 }
 
 function fillUndatedYears(rulers, dynastyId) {
@@ -838,6 +854,8 @@ function enrichRulers(dynastyId, rulers) {
       posthumousName: posthumousFromTitle(r.title),
       startYear: r.start,
       endYear: r.end,
+      startDateConfidence: r.startDateConfidence ?? undefined,
+      endDateConfidence: r.endDateConfidence ?? undefined,
     };
   });
 }
@@ -919,9 +937,9 @@ const byDynasty = {};
 let total = 0;
 const problems = [];
 for (const [dynastyId, fn] of Object.entries(DYNASTY_SOURCES)) {
-  const raw = fillUndatedYears(mergeFoundingRulers(dynastyId, fn()), dynastyId).sort(
-    (a, b) => a.start - b.start || a.end - b.end,
-  );
+  const raw = markInterpolatedBoundaries(
+    fillUndatedYears(mergeFoundingRulers(dynastyId, fn()), dynastyId),
+  ).sort((a, b) => a.start - b.start || a.end - b.end);
   const enriched = enrichRulers(dynastyId, raw);
   byDynasty[dynastyId] = enriched;
   total += enriched.length;
@@ -941,7 +959,11 @@ for (const [dynastyId, fn] of Object.entries(DYNASTY_SOURCES)) {
       problems.push(`non-cjk name ${dynastyId} ${r.personName}`);
     }
     const yrs = r.endYear - r.startYear + 1;
-    if (yrs > MAX_PLAUSIBLE_REIGN_YEARS) {
+    if (
+      yrs > MAX_PLAUSIBLE_REIGN_YEARS &&
+      r.startDateConfidence !== "interpolated" &&
+      r.endDateConfidence !== "interpolated"
+    ) {
       problems.push(`long reign ${yrs}y ${dynastyId} ${r.title} ${r.startYear}–${r.endYear}`);
     }
   }

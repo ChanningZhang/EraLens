@@ -49,6 +49,8 @@ function reign({
   start,
   end,
   precision = "year",
+  startDateConfidence = null,
+  endDateConfidence = null,
 }) {
   return {
     id,
@@ -63,6 +65,8 @@ function reign({
     startAbs: start.abs,
     endAbs: end.abs,
     precision,
+    startDateConfidence,
+    endDateConfidence,
   };
 }
 
@@ -454,6 +458,8 @@ const reigns = applyDocumentedDatesToReigns(
             : { kind: "regnal", name: r.title },
           start: ym(r.startYear),
           end: ym(r.endYear, 12),
+          startDateConfidence: r.startDateConfidence ?? null,
+          endDateConfidence: r.endDateConfidence ?? null,
         }),
       ),
   ),
@@ -688,12 +694,12 @@ function reignSql(r) {
   id, dynasty_id, person_id, title,
   posthumous_name, temple_name, preferred_appellation,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
 ) VALUES (
   ${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(r.title)},
   ${sqlStr(r.posthumousName ?? null)}, ${sqlStr(r.templeName ?? null)}, ${sqlJson(r.preferredAppellation)},
   ${r.start.year}, ${r.start.month}, ${r.start.day ?? "NULL"}, ${r.end.year}, ${r.end.month}, ${r.end.day ?? "NULL"},
-  ${r.startAbs}, ${r.endAbs}, ${sqlStr(r.precision)}
+  ${r.startAbs}, ${r.endAbs}, ${sqlStr(r.precision)}, ${sqlStr(r.startDateConfidence ?? null)}, ${sqlStr(r.endDateConfidence ?? null)}
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -710,7 +716,9 @@ ON CONFLICT (id) DO UPDATE SET
   end_day = EXCLUDED.end_day,
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision;`;
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence;`;
 }
 
 function eventSql(e) {
@@ -897,7 +905,7 @@ const manifest = {
     "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
     "秦国 upsert 已有 qin 行，将始年延至前770年秦襄公，与 qin-han 统一帝国段衔接；清理脚本保留 qin-han 的秦二世、子婴 reign。",
     "各国国君世系取维基百科大陆简体（zh-cn）诸侯君主列表与《史记》年表；按表头读取称号/姓名/在位年份，不用本地繁简转换。",
-    "西周早中期无在位年的国君按世系排在分封后数十年内，单条在位不超过约 35 年，不把整段失考年摊到开国之君身上。",
+    "西周早中期无在位年的国君在相邻锚点之间按世系均分时长（不设单条上限），不把整段失考年摊到开国之君身上；均分结果标 start/end_date_confidence=interpolated。",
     "齐太公不用维基齐国表的前1122年（旧克商年），与西周始年（前1046）对齐。",
     "卫国人物 id 用 weiguo- 前缀，避免与战国魏 wei-r* 冲突；燕召公用 ji-shi，避免与宋恭帝 zhao-shi 冲突。",
     "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 precision: year。",

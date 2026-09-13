@@ -83,6 +83,7 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
     SELECT id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation,
            start_year, start_month, start_day, end_year, end_month, end_day,
            start_abs, end_abs, precision,
+           start_date_confidence, end_date_confidence,
            claim_track, claim_label, claim_role
     FROM reigns
     WHERE dynasty_id = ANY(${dynastyIds}::text[])

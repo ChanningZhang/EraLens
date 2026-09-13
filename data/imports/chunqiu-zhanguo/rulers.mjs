@@ -9,7 +9,9 @@ export const rulersByDynasty = {
       "personName": "吕尚",
       "posthumousName": "太公",
       "startYear": -1046,
-      "endYear": -1012
+      "endYear": -1011,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -17,8 +19,10 @@ export const rulersByDynasty = {
       "title": "齐丁公",
       "personName": "姜伋",
       "posthumousName": "丁公",
-      "startYear": -1011,
-      "endYear": -977
+      "startYear": -1010,
+      "endYear": -974,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -26,8 +30,10 @@ export const rulersByDynasty = {
       "title": "齐乙公",
       "personName": "姜得",
       "posthumousName": "乙公",
-      "startYear": -976,
-      "endYear": -942
+      "startYear": -973,
+      "endYear": -937,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -35,8 +41,10 @@ export const rulersByDynasty = {
       "title": "齐癸公",
       "personName": "姜慈母",
       "posthumousName": "癸公",
-      "startYear": -941,
-      "endYear": -907
+      "startYear": -936,
+      "endYear": -900,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -44,8 +52,10 @@ export const rulersByDynasty = {
       "title": "齐哀公",
       "personName": "姜不辰",
       "posthumousName": "哀公",
-      "startYear": -897,
-      "endYear": -863
+      "startYear": -899,
+      "endYear": -863,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -243,7 +253,9 @@ export const rulersByDynasty = {
       "personName": "姜荼",
       "posthumousName": null,
       "startYear": -489,
-      "endYear": -489
+      "endYear": -489,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -371,7 +383,9 @@ export const rulersByDynasty = {
       "personName": "姬虞",
       "posthumousName": null,
       "startYear": -1042,
-      "endYear": -1008
+      "endYear": -1007,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -379,8 +393,10 @@ export const rulersByDynasty = {
       "title": "晋侯燮",
       "personName": "姬燮",
       "posthumousName": null,
-      "startYear": -1007,
-      "endYear": -973
+      "startYear": -1006,
+      "endYear": -970,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -388,8 +404,10 @@ export const rulersByDynasty = {
       "title": "晋武侯",
       "personName": "姬宁族",
       "posthumousName": "武侯",
-      "startYear": -972,
-      "endYear": -938
+      "startYear": -969,
+      "endYear": -933,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -397,8 +415,10 @@ export const rulersByDynasty = {
       "title": "晋成侯",
       "personName": "姬服人",
       "posthumousName": "成侯",
-      "startYear": -937,
-      "endYear": -903
+      "startYear": -932,
+      "endYear": -896,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -406,8 +426,10 @@ export const rulersByDynasty = {
       "title": "晋厉侯",
       "personName": "姬福",
       "posthumousName": "厉侯",
-      "startYear": -893,
-      "endYear": -859
+      "startYear": -895,
+      "endYear": -859,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -733,7 +755,9 @@ export const rulersByDynasty = {
       "personName": "熊绎",
       "posthumousName": null,
       "startYear": -1042,
-      "endYear": -1019
+      "endYear": -1019,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -742,7 +766,9 @@ export const rulersByDynasty = {
       "personName": "熊艾",
       "posthumousName": null,
       "startYear": -1018,
-      "endYear": -995
+      "endYear": -995,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -751,7 +777,9 @@ export const rulersByDynasty = {
       "personName": "熊䵣",
       "posthumousName": null,
       "startYear": -994,
-      "endYear": -970
+      "endYear": -970,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -760,7 +788,9 @@ export const rulersByDynasty = {
       "personName": "熊胜",
       "posthumousName": null,
       "startYear": -969,
-      "endYear": -946
+      "endYear": -946,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -769,7 +799,9 @@ export const rulersByDynasty = {
       "personName": "熊杨",
       "posthumousName": null,
       "startYear": -945,
-      "endYear": -922
+      "endYear": -922,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -778,7 +810,9 @@ export const rulersByDynasty = {
       "personName": "熊渠",
       "posthumousName": null,
       "startYear": -921,
-      "endYear": -897
+      "endYear": -897,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -787,7 +821,9 @@ export const rulersByDynasty = {
       "personName": "熊挚",
       "posthumousName": null,
       "startYear": -896,
-      "endYear": -873
+      "endYear": -873,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -796,7 +832,9 @@ export const rulersByDynasty = {
       "personName": "熊延",
       "posthumousName": null,
       "startYear": -872,
-      "endYear": -848
+      "endYear": -848,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1131,7 +1169,9 @@ export const rulersByDynasty = {
       "personName": "姬奭",
       "posthumousName": "召公",
       "startYear": -1044,
-      "endYear": -1010
+      "endYear": -1000,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1139,8 +1179,10 @@ export const rulersByDynasty = {
       "title": "燕侯克",
       "personName": "姬克",
       "posthumousName": null,
-      "startYear": -1009,
-      "endYear": -975
+      "startYear": -999,
+      "endYear": -955,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1148,8 +1190,10 @@ export const rulersByDynasty = {
       "title": "燕侯旨",
       "personName": "姬旨",
       "posthumousName": null,
-      "startYear": -974,
-      "endYear": -940
+      "startYear": -954,
+      "endYear": -910,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1157,8 +1201,10 @@ export const rulersByDynasty = {
       "title": "燕侯舞",
       "personName": "姬舞",
       "posthumousName": null,
-      "startYear": -939,
-      "endYear": -905
+      "startYear": -909,
+      "endYear": -865,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1475,7 +1521,9 @@ export const rulersByDynasty = {
       "personName": "子启",
       "posthumousName": null,
       "startYear": -1034,
-      "endYear": -1010
+      "endYear": -1010,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1484,7 +1532,9 @@ export const rulersByDynasty = {
       "personName": "子衍",
       "posthumousName": null,
       "startYear": -1009,
-      "endYear": -985
+      "endYear": -985,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1493,7 +1543,9 @@ export const rulersByDynasty = {
       "personName": "子稽",
       "posthumousName": null,
       "startYear": -984,
-      "endYear": -960
+      "endYear": -960,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1502,7 +1554,9 @@ export const rulersByDynasty = {
       "personName": "子申",
       "posthumousName": "丁公",
       "startYear": -959,
-      "endYear": -935
+      "endYear": -935,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1511,7 +1565,9 @@ export const rulersByDynasty = {
       "personName": "子共",
       "posthumousName": "湣公",
       "startYear": -934,
-      "endYear": -910
+      "endYear": -910,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1520,7 +1576,9 @@ export const rulersByDynasty = {
       "personName": "子熙",
       "posthumousName": "炀公",
       "startYear": -909,
-      "endYear": -885
+      "endYear": -885,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1529,7 +1587,9 @@ export const rulersByDynasty = {
       "personName": "子鲋祀",
       "posthumousName": "厉公",
       "startYear": -884,
-      "endYear": -859
+      "endYear": -859,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -2100,7 +2160,9 @@ export const rulersByDynasty = {
       "personName": "姬封",
       "posthumousName": "康叔",
       "startYear": -1040,
-      "endYear": -1017
+      "endYear": -1017,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2109,7 +2171,9 @@ export const rulersByDynasty = {
       "personName": "姬代",
       "posthumousName": "康伯",
       "startYear": -1016,
-      "endYear": -992
+      "endYear": -992,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2118,7 +2182,9 @@ export const rulersByDynasty = {
       "personName": "考伯",
       "posthumousName": "考伯",
       "startYear": -991,
-      "endYear": -967
+      "endYear": -967,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2127,7 +2193,9 @@ export const rulersByDynasty = {
       "personName": "嗣伯",
       "posthumousName": "嗣伯",
       "startYear": -966,
-      "endYear": -942
+      "endYear": -942,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2136,7 +2204,9 @@ export const rulersByDynasty = {
       "personName": "疌伯",
       "posthumousName": "疌伯",
       "startYear": -941,
-      "endYear": -917
+      "endYear": -917,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2145,7 +2215,9 @@ export const rulersByDynasty = {
       "personName": "靖伯",
       "posthumousName": "靖伯",
       "startYear": -916,
-      "endYear": -892
+      "endYear": -892,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2154,7 +2226,9 @@ export const rulersByDynasty = {
       "personName": "贞伯",
       "posthumousName": "贞伯",
       "startYear": -891,
-      "endYear": -867
+      "endYear": -867,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2579,7 +2653,9 @@ export const rulersByDynasty = {
       "personName": "姬子亹",
       "posthumousName": null,
       "startYear": -694,
-      "endYear": -694
+      "endYear": -694,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2752,7 +2828,9 @@ export const rulersByDynasty = {
       "personName": "姬振铎",
       "posthumousName": null,
       "startYear": -1046,
-      "endYear": -1012
+      "endYear": -1011,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -2760,8 +2838,10 @@ export const rulersByDynasty = {
       "title": "曹太伯",
       "personName": "姬脾",
       "posthumousName": "太伯",
-      "startYear": -1011,
-      "endYear": -977
+      "startYear": -1010,
+      "endYear": -975,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -2769,8 +2849,10 @@ export const rulersByDynasty = {
       "title": "曹仲君",
       "personName": "姬平",
       "posthumousName": null,
-      "startYear": -976,
-      "endYear": -942
+      "startYear": -974,
+      "endYear": -939,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -2778,8 +2860,10 @@ export const rulersByDynasty = {
       "title": "曹宫伯",
       "personName": "姬侯",
       "posthumousName": "宫伯",
-      "startYear": -941,
-      "endYear": -907
+      "startYear": -938,
+      "endYear": -903,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -2787,8 +2871,10 @@ export const rulersByDynasty = {
       "title": "曹孝伯",
       "personName": "姬云",
       "posthumousName": "孝伯",
-      "startYear": -906,
-      "endYear": -872
+      "startYear": -902,
+      "endYear": -866,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3053,7 +3139,9 @@ export const rulersByDynasty = {
       "personName": "姒无余",
       "posthumousName": null,
       "startYear": -565,
-      "endYear": -553
+      "endYear": -553,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "yue-chunqiu",
@@ -3062,7 +3150,9 @@ export const rulersByDynasty = {
       "personName": "姒无壬",
       "posthumousName": null,
       "startYear": -552,
-      "endYear": -539
+      "endYear": -539,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "yue-chunqiu",
@@ -3071,7 +3161,9 @@ export const rulersByDynasty = {
       "personName": "姒无瞫",
       "posthumousName": null,
       "startYear": -538,
-      "endYear": -525
+      "endYear": -525,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "yue-chunqiu",
@@ -3080,7 +3172,9 @@ export const rulersByDynasty = {
       "personName": "姒夫谭",
       "posthumousName": null,
       "startYear": -524,
-      "endYear": -511
+      "endYear": -511,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "yue-chunqiu",
@@ -3190,7 +3284,9 @@ export const rulersByDynasty = {
       "personName": "姬桓公",
       "posthumousName": "桓公",
       "startYear": -414,
-      "endYear": -380
+      "endYear": -340,
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated"
     },
     {
       "dynastyId": "zhongshan",
@@ -3783,7 +3879,7 @@ export const rulersByDynasty = {
       "personName": "嬴政",
       "posthumousName": null,
       "startYear": -247,
-      "endYear": -221
+      "endYear": -210
     }
   ]
 };

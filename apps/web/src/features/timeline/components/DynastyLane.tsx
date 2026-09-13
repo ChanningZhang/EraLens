@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import {
+  findReignUncertaintyBoundaries,
   getDynastyLaneGroup,
   isOrthodoxReign,
   overlapsOrthodoxSpan,
@@ -11,6 +12,7 @@ import {
   type Dynasty,
   type Reign,
 } from "@eralens/shared";
+import { useMemo } from "react";
 import { useViewport } from "../hooks/useViewport";
 import { projectAbs } from "../model/coordinates";
 import type { PlacedDynasty } from "../model/laneLayout";
@@ -21,6 +23,7 @@ import {
 } from "../model/reignClusters";
 import { ReignCard } from "./ReignCard";
 import { ReignGapCard } from "./ReignGapCard";
+import { ReignUncertaintyGap } from "./ReignUncertaintyGap";
 import styles from "./DynastyLane.module.css";
 
 type Props = {
@@ -61,6 +64,10 @@ export function DynastyLane({
   const { items, rowCount } = assignReignStacks(reigns);
   const height = dynastyLaneHeight(rowCount);
   const concurrencySpans = resolveConcurrencySpans(reigns);
+  const uncertaintyBoundaries = useMemo(
+    () => findReignUncertaintyBoundaries(reigns, missingReigns),
+    [reigns, missingReigns],
+  );
 
   return (
     <motion.div
@@ -114,6 +121,14 @@ export function DynastyLane({
           })}
         </div>
         <div className={styles.cards}>
+          {uncertaintyBoundaries.map((boundary) => (
+            <ReignUncertaintyGap
+              key={boundary.id}
+              boundary={boundary}
+              rulers={reigns}
+              color={laneColor}
+            />
+          ))}
           {missingReigns.map((gap) => (
             <ReignGapCard
               key={gap.id}

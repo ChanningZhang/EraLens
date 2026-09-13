@@ -116,6 +116,13 @@ export const PreferredAppellationSchema = z.object({
  */
 export const ClaimRoleSchema = z.enum(["rival", "puppet", "regent"]);
 
+/** Trust level for a reign start/end year when sources disagree or are interpolated. */
+export const DateConfidenceSchema = z.enum([
+  "certain",
+  "approximate",
+  "interpolated",
+]);
+
 export const ReignSchema = z.object({
   id: z.string(),
   dynastyId: z.string(),
@@ -130,6 +137,9 @@ export const ReignSchema = z.object({
   startAbs: z.number(),
   endAbs: z.number(),
   precision: PrecisionSchema.default("year"),
+  /** Omitted = certain. Mark approximate/interpolated when the year is estimated. */
+  startDateConfidence: DateConfidenceSchema.optional(),
+  endDateConfidence: DateConfidenceSchema.optional(),
   /** Parallel-claim lane key; absent puts the reign on the main track. */
   claimTrack: z.string().optional(),
   /** Short seat label shown on the card (长安 / 洛阳 / 绍兴监国). */

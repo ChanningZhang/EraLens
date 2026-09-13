@@ -11,3 +11,4 @@ export * from "./orthodoxDynasties";
 export * from "./dynastyLaneGroups";
 export * from "./claimTracks";
 export * from "./systemReigns";
+export * from "./reignBoundaries";
