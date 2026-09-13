@@ -16,5 +16,26 @@ services:
       timeout: 5s
       retries: 10
 
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: eralens-app
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://eralens:eralens@postgres:5432/eralens
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: eralens
+      DB_NAME: eralens
+      PORT: 8080
+      HOST: 0.0.0.0
+      STATIC_DIR: /app/apps/web/dist
+      RUN_SEED: ${RUN_SEED:-false}
+    ports:
+      - "8080:8080"
+
 volumes:
   eralens_pg_data:

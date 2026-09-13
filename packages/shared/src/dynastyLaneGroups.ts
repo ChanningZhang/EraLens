@@ -106,8 +106,10 @@ export function resolveFrozenLaneLabel(
 }
 
 function toDynastyMap(dynasties: Dynasty[] | ReadonlyMap<string, Dynasty>): Map<string, Dynasty> {
-  if (dynasties instanceof Map) return new Map(dynasties);
-  return new Map(dynasties.map((dynasty) => [dynasty.id, dynasty]));
+  if (Array.isArray(dynasties)) {
+    return new Map(dynasties.map((dynasty) => [dynasty.id, dynasty]));
+  }
+  return new Map(dynasties);
 }
 
 /**

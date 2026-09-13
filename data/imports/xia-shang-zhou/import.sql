@@ -1528,7 +1528,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-zi-tang', 'shang', 'zi-tang', '商汤',
-  '武王', '太祖', '{"kind":"regnal","name":"商汤"}'::jsonb,
+  '武王', '太祖', '{"kind":"posthumous","name":"商汤"}'::jsonb,
   -1600, 1, -1571, 12,
   -19188, -18829, 'year'
 )
@@ -1553,7 +1553,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-zi-taijia', 'shang', 'zi-taijia', '商太甲',
-  '太甲', '太宗', '{"kind":"temple","name":"商太宗"}'::jsonb,
+  '太甲', '太宗', '{"kind":"posthumous","name":"商太甲"}'::jsonb,
   -1560, 1, -1548, 12,
   -18708, -18553, 'year'
 )
@@ -1678,7 +1678,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-zi-taiwu', 'shang', 'zi-taiwu', '商太戊',
-  '太戊', '中宗', '{"kind":"temple","name":"商中宗"}'::jsonb,
+  '太戊', '中宗', '{"kind":"posthumous","name":"商太戊"}'::jsonb,
   -1494, 1, -1420, 12,
   -17916, -17017, 'year'
 )
@@ -2003,7 +2003,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-zi-wuding', 'shang', 'zi-wuding', '商王武丁',
-  '武丁', '高宗', '{"kind":"temple","name":"商高宗"}'::jsonb,
+  '武丁', '高宗', '{"kind":"posthumous","name":"商武丁"}'::jsonb,
   -1250, 1, -1192, 12,
   -14988, -14281, 'year'
 )
@@ -2128,7 +2128,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-zi-diyi', 'shang', 'zi-diyi', '商王帝乙',
-  '帝乙', NULL, '{"kind":"posthumous","name":"商帝乙"}'::jsonb,
+  '帝乙', NULL, '{"kind":"posthumous","name":"帝乙"}'::jsonb,
   -1101, 1, -1076, 12,
   -13200, -12889, 'year'
 )

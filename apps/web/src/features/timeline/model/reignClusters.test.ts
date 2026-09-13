@@ -3,9 +3,9 @@ import type { Reign } from "@eralens/shared";
 import { absMonth } from "@eralens/shared";
 import {
   assignReignStacks,
-  computeReignGaps,
   dynastyLaneHeight,
   nextLaterStartAbs,
+  partitionReignRecords,
   reignCardSpan,
   resolveReignVisualSpan,
 } from "./reignClusters";
@@ -26,6 +26,19 @@ function reign(id: string, startAbs: number, endAbs: number): Reign {
 }
 
 describe("assignReignStacks", () => {
+  it("separates only the reserved missing-ruler records", () => {
+    const ruler = reign("ruler", 0, 11);
+    const missing = {
+      ...reign("missing", 12, 23),
+      personId: "system-missing-ruler",
+    };
+
+    expect(partitionReignRecords([ruler, missing])).toEqual({
+      rulers: [ruler],
+      missing: [missing],
+    });
+  });
+
   it("keeps sequential reigns on a single row", () => {
     const { items, rowCount } = assignReignStacks([
       reign("a", 0, 11),
@@ -100,76 +113,6 @@ describe("reignCardSpan", () => {
       startAbs: 336,
       endExclusive: 348,
     });
-  });
-});
-
-describe("computeReignGaps", () => {
-  const dynasty = { startAbs: 0, endAbs: 99 };
-
-  it("returns the full dynasty span when there are no reigns", () => {
-    expect(computeReignGaps(dynasty, [])).toEqual([
-      { startAbs: 0, endExclusive: 100 },
-    ]);
-  });
-
-  it("finds gaps before, between, and after reigns", () => {
-    const gaps = computeReignGaps(dynasty, [
-      reign("a", 20, 39),
-      reign("b", 60, 79),
-    ]);
-    expect(gaps).toEqual([
-      { startAbs: 0, endExclusive: 20 },
-      { startAbs: 40, endExclusive: 60 },
-      { startAbs: 80, endExclusive: 100 },
-    ]);
-  });
-
-  it("skips short gaps below the minimum month threshold", () => {
-    const gaps = computeReignGaps(dynasty, [reign("a", 0, 10), reign("b", 15, 30)], 12);
-    expect(gaps).toEqual([{ startAbs: 31, endExclusive: 100 }]);
-  });
-
-  it("treats overlapping reign intervals as continuous coverage", () => {
-    const gaps = computeReignGaps(
-      dynasty,
-      [reign("a", 10, 50), reign("b", 30, 70)],
-      1,
-    );
-    expect(gaps).toEqual([
-      { startAbs: 0, endExclusive: 10 },
-      { startAbs: 71, endExclusive: 100 },
-    ]);
-  });
-
-  it("finds visual gaps when a clipped reign leaves blank space (卫成公 / 卫君瑕 / 卫穆公)", () => {
-    const weiSpan = { startAbs: absMonth(-1040), endAbs: absMonth(-209, 12) };
-    const cheng = reign("wei-cheng", absMonth(-634), absMonth(-600, 12));
-    const xia = reign("wei-xia", absMonth(-632), absMonth(-632, 12));
-    const mu = reign("wei-mu", absMonth(-599), absMonth(-589, 12));
-    const gaps = computeReignGaps(weiSpan, [cheng, xia, mu]);
-    expect(gaps.some((gap) => gap.startAbs >= absMonth(-631) && gap.endExclusive <= absMonth(-598))).toBe(
-      true,
-    );
-  });
-
-  it("fills gaps with coverage from related-dynasty reigns (唐/武周)", () => {
-    const tangSpan = { startAbs: 8208, endAbs: 8531 };
-    const tangOnly = computeReignGaps(tangSpan, [
-      reign("li-dan", 8208, 8289),
-      reign("li-xian-2", 8460, 8531),
-    ]);
-    expect(tangOnly.some((gap) => gap.startAbs >= 8290 && gap.endExclusive <= 8460)).toBe(
-      true,
-    );
-
-    const withWuZhou = computeReignGaps(tangSpan, [
-      reign("li-dan", 8208, 8289),
-      reign("li-xian-2", 8460, 8531),
-      reign("wu-zetian", 8289, 8460),
-    ]);
-    expect(
-      withWuZhou.some((gap) => gap.startAbs >= 8290 && gap.endExclusive <= 8460),
-    ).toBe(false);
   });
 });
 

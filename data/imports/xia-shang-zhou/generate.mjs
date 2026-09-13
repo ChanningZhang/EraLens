@@ -260,17 +260,42 @@ const xiaReigns = [
 
 /** 商王称号如「商沃丁」「商王武丁」→ 谥号/日名「沃丁」「武丁」。 */
 function shangPosthumousFromTitle(title) {
-  return title.replace(/^商王?/, "");
+  const core = title.replace(/^商王?/, "");
+  if (core === "帝辛") return "纣";
+  return core;
 }
 
-/** 卡片副标题用「商武丁」而非原始 title「商王武丁」。 */
+/**
+ * 卡片副标题：通常用「商武丁」；「帝+名」已是完整君王称谓，不再叠「商」前缀；
+ * 帝辛通行作「商纣王」。
+ */
 function shangPreferredName(title) {
+  const core = title.replace(/^商王?/, "");
+  if (core === "帝辛") return "商纣王";
+  if (/^帝/.test(core)) return core;
   return title.replace(/^商王/, "商");
 }
 
 function defaultShangPreferred(entry) {
   if (entry.preferred) return entry.preferred;
   return { kind: "posthumous", name: shangPreferredName(entry.title) };
+}
+
+function shangReign(personId, title, startYear, endYear, overrides = {}) {
+  const endMonth = overrides.endMonth ?? 12;
+  return reign({
+    id: `reign-${personId}`,
+    dynastyId: "shang",
+    personId,
+    title,
+    posthumousName:
+      overrides.posthumousName ?? shangPosthumousFromTitle(title),
+    templeName: overrides.templeName,
+    preferred:
+      overrides.preferred ?? defaultShangPreferred({ title, ...overrides }),
+    start: ym(startYear, overrides.startMonth ?? 1),
+    end: ym(endYear, endMonth),
+  });
 }
 
 /** 竹书纪年各王在位年数；首尾锚定既有太甲、盘庚年，末王阳甲填满剩余窗口。 */
@@ -307,13 +332,7 @@ const shangEarlyReigns = chainShangReigns(
     { personId: "zi-taigeng", title: "商太庚", years: 5 },
     { personId: "zi-xiaojia", title: "商小甲", years: 17 },
     { personId: "zi-yongji", title: "商雍己", years: 12 },
-    {
-      personId: "zi-taiwu",
-      title: "商太戊",
-      templeName: "中宗",
-      preferred: { kind: "temple", name: "商中宗" },
-      years: 75,
-    },
+    { personId: "zi-taiwu", title: "商太戊", templeName: "中宗", years: 75 },
     { personId: "zi-zhongding", title: "商仲丁", years: 9 },
     { personId: "zi-wairen", title: "商外壬", years: 10 },
     { personId: "zi-hedanjia", title: "商河亶甲", years: 9 },
@@ -338,112 +357,31 @@ const shangLateReigns = chainShangReigns(
 );
 
 const shangReigns = [
-  reign({
-    id: "reign-zi-tang",
-    dynastyId: "shang",
-    personId: "zi-tang",
-    title: "商汤",
+  shangReign("zi-tang", "商汤", -1600, -1571, {
     posthumousName: "武王",
     templeName: "太祖",
-    preferred: { kind: "regnal", name: "商汤" },
-    start: ym(-1600),
-    end: ym(-1571, 12),
   }),
-  reign({
-    id: "reign-zi-taijia",
-    dynastyId: "shang",
-    personId: "zi-taijia",
-    title: "商太甲",
-    posthumousName: "太甲",
-    templeName: "太宗",
-    preferred: { kind: "temple", name: "商太宗" },
-    start: ym(-1560),
-    end: ym(-1548, 12),
-  }),
+  shangReign("zi-taijia", "商太甲", -1560, -1548, { templeName: "太宗" }),
   ...shangEarlyReigns,
-  reign({
-    id: "reign-zi-pangeng",
-    dynastyId: "shang",
-    personId: "zi-pangeng",
-    title: "商盘庚",
-    posthumousName: "盘庚",
-    preferred: { kind: "posthumous", name: "商盘庚" },
-    start: ym(-1310),
-    end: ym(-1280, 12),
-  }),
+  shangReign("zi-pangeng", "商盘庚", -1310, -1280),
   ...shangLateReigns,
-  reign({
-    id: "reign-zi-wuding",
-    dynastyId: "shang",
-    personId: "zi-wuding",
-    title: "商王武丁",
-    posthumousName: "武丁",
-    templeName: "高宗",
-    preferred: { kind: "temple", name: "商高宗" },
-    start: ym(-1250),
-    end: ym(-1192, 12),
-  }),
-  reign({
-    id: "reign-zi-zugeng",
-    dynastyId: "shang",
-    personId: "zi-zugeng",
-    title: "商王祖庚",
-    posthumousName: "祖庚",
-    preferred: { kind: "posthumous", name: "商祖庚" },
-    start: ym(-1191),
-    end: ym(-1148, 12),
-  }),
-  reign({
-    id: "reign-zi-zujia",
-    dynastyId: "shang",
-    personId: "zi-zujia",
-    title: "商王祖甲",
-    posthumousName: "祖甲",
-    preferred: { kind: "posthumous", name: "商祖甲" },
-    start: ym(-1148),
-    end: ym(-1112, 12),
-  }),
-  reign({
-    id: "reign-zi-wuyi",
-    dynastyId: "shang",
-    personId: "zi-wuyi",
-    title: "商王武乙",
-    posthumousName: "武乙",
-    preferred: { kind: "posthumous", name: "商武乙" },
-    start: ym(-1147),
-    end: ym(-1113, 12),
-  }),
-  reign({
-    id: "reign-zi-wending",
-    dynastyId: "shang",
-    personId: "zi-wending",
-    title: "商王文丁",
-    posthumousName: "文丁",
-    preferred: { kind: "posthumous", name: "商文丁" },
-    start: ym(-1112),
-    end: ym(-1102, 12),
-  }),
-  reign({
-    id: "reign-zi-diyi",
-    dynastyId: "shang",
-    personId: "zi-diyi",
-    title: "商王帝乙",
-    posthumousName: "帝乙",
-    preferred: { kind: "posthumous", name: "商帝乙" },
-    start: ym(-1101),
-    end: ym(-1076, 12),
-  }),
-  reign({
-    id: "reign-zi-dixin",
-    dynastyId: "shang",
-    personId: "zi-dixin",
-    title: "商王帝辛",
-    posthumousName: "纣",
-    preferred: { kind: "posthumous", name: "商纣王" },
-    start: ym(-1075),
-    end: ym(-1046),
-  }),
+  shangReign("zi-wuding", "商王武丁", -1250, -1192, { templeName: "高宗" }),
+  shangReign("zi-zugeng", "商王祖庚", -1191, -1148),
+  shangReign("zi-zujia", "商王祖甲", -1148, -1112),
+  shangReign("zi-wuyi", "商王武乙", -1147, -1113),
+  shangReign("zi-wending", "商王文丁", -1112, -1102),
+  shangReign("zi-diyi", "商王帝乙", -1101, -1076),
+  shangReign("zi-dixin", "商王帝辛", -1075, -1046, { endMonth: 1 }),
 ];
+
+for (const r of shangReigns) {
+  const pref = r.preferredAppellation;
+  if (pref?.kind !== "posthumous") {
+    throw new Error(
+      `Shang reign ${r.id} must use posthumous preferred appellation, got ${pref?.kind}`,
+    );
+  }
+}
 
 function zhouReign(
   personId,

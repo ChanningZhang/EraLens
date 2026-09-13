@@ -5,7 +5,6 @@ import {
   collectLaneReigns,
   formatYear,
   fromAbsMonth,
-  REIGN_GAP_COVERAGE_FROM,
   type Dynasty,
 } from "@eralens/shared";
 import { useTimelineData } from "../hooks/useTimelineData";
@@ -23,7 +22,11 @@ import {
   PERSON_LAYER_GAP,
   personLayerHeight,
 } from "../model/personLayout";
-import { assignReignStacks, dynastyLaneHeight } from "../model/reignClusters";
+import {
+  assignReignStacks,
+  dynastyLaneHeight,
+  partitionReignRecords,
+} from "../model/reignClusters";
 import { expandWindow, filterVisibleDynasties } from "../model/visible";
 import { DynastyLane } from "./DynastyLane";
 import { EventLayer } from "./EventLayer";
@@ -87,10 +90,12 @@ export function TimelineStage() {
   const lanes = useMemo(() => {
     let top = railHeight;
     return placed.map((dynasty) => {
-      const reigns = collectLaneReigns(dynasty.id, reignsByDynasty);
+      const laneRecords = collectLaneReigns(dynasty.id, reignsByDynasty);
+      const { rulers: reigns, missing: missingReigns } =
+        partitionReignRecords(laneRecords);
       const { rowCount } = assignReignStacks(reigns);
       const height = dynastyLaneHeight(rowCount);
-      const item = { dynasty, reigns, top, height };
+      const item = { dynasty, reigns, missingReigns, top, height };
       top += height;
       return item;
     });
@@ -157,15 +162,13 @@ export function TimelineStage() {
             </div>
           ) : (
             <LayoutGroup>
-              {lanes.map(({ dynasty, reigns, top }) => (
+              {lanes.map(({ dynasty, reigns, missingReigns, top }) => (
                 <DynastyLane
                   key={dynasty.id}
                   dynasty={dynasty}
                   reigns={reigns}
+                  missingReigns={missingReigns}
                   dynastiesById={dynastiesById}
-                  gapCoverageReigns={(REIGN_GAP_COVERAGE_FROM[dynasty.id] ?? []).flatMap(
-                    (dynastyId) => reignsByDynasty.get(dynastyId) ?? [],
-                  )}
                   personNames={personNames}
                   top={top}
                 />

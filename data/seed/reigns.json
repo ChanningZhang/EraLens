@@ -129,7 +129,7 @@
     "posthumousName": "武王",
     "templeName": "太祖",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商汤"
     }
   },
@@ -153,8 +153,8 @@
     "posthumousName": "太甲",
     "templeName": "太宗",
     "preferredAppellation": {
-      "kind": "temple",
-      "name": "商太宗"
+      "kind": "posthumous",
+      "name": "商太甲"
     }
   },
   {
@@ -269,8 +269,8 @@
     "posthumousName": "太戊",
     "templeName": "中宗",
     "preferredAppellation": {
-      "kind": "temple",
-      "name": "商中宗"
+      "kind": "posthumous",
+      "name": "商太戊"
     }
   },
   {
@@ -569,8 +569,8 @@
     "posthumousName": "武丁",
     "templeName": "高宗",
     "preferredAppellation": {
-      "kind": "temple",
-      "name": "商高宗"
+      "kind": "posthumous",
+      "name": "商武丁"
     }
   },
   {
@@ -685,7 +685,7 @@
     "posthumousName": "帝乙",
     "preferredAppellation": {
       "kind": "posthumous",
-      "name": "商帝乙"
+      "name": "帝乙"
     }
   },
   {

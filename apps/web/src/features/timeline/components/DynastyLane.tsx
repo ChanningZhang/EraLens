@@ -13,7 +13,6 @@ import { useViewport } from "../hooks/useViewport";
 import type { PlacedDynasty } from "../model/laneLayout";
 import {
   assignReignStacks,
-  computeReignGaps,
   dynastyLaneHeight,
   STACK_ROW_HEIGHT,
 } from "../model/reignClusters";
@@ -24,8 +23,8 @@ import styles from "./DynastyLane.module.css";
 type Props = {
   dynasty: PlacedDynasty;
   reigns: Reign[];
+  missingReigns: Reign[];
   dynastiesById: Map<string, Dynasty>;
-  gapCoverageReigns?: Reign[];
   personNames: Map<string, string>;
   top: number;
 };
@@ -33,8 +32,8 @@ type Props = {
 export function DynastyLane({
   dynasty,
   reigns,
+  missingReigns,
   dynastiesById,
-  gapCoverageReigns = [],
   personNames,
   top,
 }: Props) {
@@ -58,10 +57,6 @@ export function DynastyLane({
   const laneColor = resolveDynastyColorValue(activePhaseDynasty, labelAnchorAbs);
   const { items, rowCount } = assignReignStacks(reigns);
   const height = dynastyLaneHeight(rowCount);
-  const gaps = computeReignGaps(
-    dynasty,
-    gapCoverageReigns.length > 0 ? [...reigns, ...gapCoverageReigns] : reigns,
-  );
 
   return (
     <motion.div
@@ -98,16 +93,16 @@ export function DynastyLane({
 
       <div className={styles.reignSequence}>
         <div className={styles.cards}>
-          {gaps.map((gap) => (
+          {missingReigns.map((gap) => (
             <ReignGapCard
-              key={`gap-${gap.startAbs}-${gap.endExclusive}`}
+              key={gap.id}
               gap={gap}
               dynasty={dynasty as Dynasty}
               color={laneColor}
               orthodox={overlapsOrthodoxSpan(
                 dynasty,
                 gap.startAbs,
-                gap.endExclusive - 1,
+                gap.endAbs,
               )}
             />
           ))}

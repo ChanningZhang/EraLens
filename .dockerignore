@@ -1,0 +1,13 @@
+node_modules
+dist
+.git
+.github
+.cursor
+.env
+.env.*
+coverage
+.vite
+.DS_Store
+*.local
+apps/web/dist
+agent-transcripts

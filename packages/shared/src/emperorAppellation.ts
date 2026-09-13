@@ -12,6 +12,11 @@ export const APPELLATION_LABELS: Record<AppellationKind, string> = {
   regnal: "称号",
 };
 
+/** Ming/Qing cards conventionally show era names. */
+const MING_QING_START_YEAR = 1368;
+/** Tang through Yuan cards conventionally show temple names. */
+const TEMPLE_ERA_START_YEAR = 618;
+
 const MESSY_PERSON_NAME =
   /出土|原名|记载|史記|史记|漢書|汉书|之子|之弟|之孫|之孙|之兄|長子|长子|少子|别名|又名|又称|或作|一名|一作|之侯|避讳|误作|旧作|左右|不满|后裔|族人|三世|不明|灭亡/;
 
@@ -22,6 +27,16 @@ const PERSON_NAME_ALIASES: Record<string, string> = {
 
 const STATE_PREFIX =
   /^(齐|晋|楚|燕|宋|鲁|卫|郑|曹|吴|越|韩|赵|魏|秦|中山|田)/;
+
+type ReignAppellationFields = Pick<
+  Reign,
+  | "start"
+  | "title"
+  | "posthumousName"
+  | "templeName"
+  | "eraNames"
+  | "preferredAppellation"
+>;
 
 /** Strip wiki alias noise so cards show a short personal name, not raw table text. */
 export function sanitizePersonName(
@@ -65,15 +80,58 @@ export function extractGivenNameFromRegnalTitle(
   return match?.[1] ?? null;
 }
 
-type ReignAppellationFields = Pick<
-  Reign,
-  | "start"
-  | "title"
-  | "posthumousName"
-  | "templeName"
-  | "eraNames"
-  | "preferredAppellation"
->;
+/** Titles like 隋文帝 / 隋炀帝 that already carry the conventional shorthand. */
+export function isDynasticEmperorTitle(title: string | null | undefined): boolean {
+  if (!title || title === "皇帝" || title === "始皇帝") return false;
+  return /^[\u4e00-\u9fff]{2,6}帝$/.test(title);
+}
+
+function firstEraName(reign: ReignAppellationFields): string | undefined {
+  return reign.eraNames[0]?.name;
+}
+
+function templeDisplayName(
+  title: string,
+  templeName: string,
+): string {
+  if (title && title !== "皇帝" && title.includes(templeName)) {
+    return title;
+  }
+  return title.length > templeName.length ? title : templeName;
+}
+
+function posthumousDisplayName(
+  title: string,
+  posthumousName: string,
+): string {
+  if (title && title !== "皇帝") return title;
+  return posthumousName;
+}
+
+function resolvePosthumousAppellation(
+  reign: ReignAppellationFields,
+): EmperorAppellation | null {
+  if (reign.posthumousName) {
+    return {
+      kind: "posthumous",
+      name: posthumousDisplayName(reign.title, reign.posthumousName),
+    };
+  }
+  if (isDynasticEmperorTitle(reign.title)) {
+    return { kind: "posthumous", name: reign.title };
+  }
+  return null;
+}
+
+function resolveTempleAppellation(
+  reign: ReignAppellationFields,
+): EmperorAppellation | null {
+  if (!reign.templeName) return null;
+  return {
+    kind: "temple",
+    name: templeDisplayName(reign.title, reign.templeName),
+  };
+}
 
 /**
  * Resolve the one conventional appellation shown on a ruler card.
@@ -92,21 +150,23 @@ export function resolveEmperorAppellation(
 ): EmperorAppellation | null {
   if (reign.preferredAppellation) return reign.preferredAppellation;
 
-  const eraName = reign.eraNames[0]?.name;
+  const eraName = firstEraName(reign);
   const year = reign.start.year;
 
-  if (year >= 1368 && eraName) {
+  if (year >= MING_QING_START_YEAR && eraName) {
     return { kind: "era", name: eraName };
   }
-  if (year >= 618 && reign.templeName) {
-    return { kind: "temple", name: reign.templeName };
+  if (year >= TEMPLE_ERA_START_YEAR) {
+    const temple = resolveTempleAppellation(reign);
+    if (temple) return temple;
   }
-  if (reign.posthumousName) {
-    return { kind: "posthumous", name: reign.posthumousName };
-  }
-  if (reign.templeName) {
-    return { kind: "temple", name: reign.templeName };
-  }
+
+  const posthumous = resolvePosthumousAppellation(reign);
+  if (posthumous) return posthumous;
+
+  const temple = resolveTempleAppellation(reign);
+  if (temple) return temple;
+
   if (eraName) {
     return { kind: "era", name: eraName };
   }
@@ -177,7 +237,7 @@ export function resolveReignDetailFacts(
   if (reign.templeName) {
     facts.push({ label: "庙号", value: reign.templeName });
   }
-  const era = reign.eraNames[0]?.name;
+  const era = firstEraName(reign);
   if (era) {
     facts.push({ label: "年号", value: era });
   }
@@ -196,6 +256,19 @@ export function resolveReignRelatedSubtitle(
   return appellation?.name ?? reign.title;
 }
 
+function isRedundantCardMeta(
+  appellation: EmperorAppellation,
+  primary: string,
+  personName?: string | null,
+): boolean {
+  const cleanedPersonName = sanitizePersonName(personName);
+  return (
+    appellation.name === primary ||
+    appellation.name === cleanedPersonName ||
+    appellation.name === personName
+  );
+}
+
 /** Secondary line shown when the card has enough space. */
 export function resolveReignCardMeta(
   reign: ReignAppellationFields,
@@ -203,16 +276,13 @@ export function resolveReignCardMeta(
 ): { label: string; name: string } | null {
   const appellation = resolveEmperorAppellation(reign);
   if (!appellation) return null;
+
   const primary = resolveReignPrimaryLabel(reign, personName);
-  const cleanedPersonName = sanitizePersonName(personName);
   // Early rulers (e.g. Qin) often lack a recorded personal name; the title
   // is used as a fallback, so skip a duplicate "称号 秦襄公" subtitle.
-  if (
-    appellation.name === primary ||
-    appellation.name === cleanedPersonName ||
-    appellation.name === personName
-  ) {
+  if (isRedundantCardMeta(appellation, primary, personName)) {
     return null;
   }
+
   return { label: APPELLATION_LABELS[appellation.kind], name: appellation.name };
 }

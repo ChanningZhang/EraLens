@@ -31,6 +31,29 @@ describe("resolveEmperorAppellation", () => {
     ).toEqual({ kind: "posthumous", name: "孝景皇帝" });
   });
 
+  it("uses the dynastic title for Sui posthumous shorthand", () => {
+    expect(
+      resolveEmperorAppellation(
+        source({
+          start: { year: 581, month: 1 },
+          title: "隋文帝",
+          posthumousName: "文皇帝",
+          eraNames: [{ name: "开皇" }] as Reign["eraNames"],
+        }),
+      ),
+    ).toEqual({ kind: "posthumous", name: "隋文帝" });
+    expect(
+      resolveEmperorAppellation(
+        source({
+          start: { year: 604, month: 1 },
+          title: "隋炀帝",
+          posthumousName: "炀皇帝",
+          eraNames: [{ name: "大业" }] as Reign["eraNames"],
+        }),
+      ),
+    ).toEqual({ kind: "posthumous", name: "隋炀帝" });
+  });
+
   it("uses a temple name from Tang through Yuan", () => {
     expect(
       resolveEmperorAppellation(
@@ -307,11 +330,37 @@ describe("resolveReignCardMeta", () => {
       resolveReignCardMeta(
         source({
           start: { year: 626, month: 1 },
+          title: "唐太宗",
           templeName: "太宗",
         }),
         "李世民",
       ),
-    ).toEqual({ label: "庙号", name: "太宗" });
+    ).toEqual({ label: "庙号", name: "唐太宗" });
+  });
+
+  it("shows posthumous meta for Sui emperors", () => {
+    expect(
+      resolveReignCardMeta(
+        source({
+          start: { year: 581, month: 1 },
+          title: "隋文帝",
+          posthumousName: "文皇帝",
+          eraNames: [{ name: "开皇" }] as Reign["eraNames"],
+        }),
+        "杨坚",
+      ),
+    ).toEqual({ label: "谥号", name: "隋文帝" });
+    expect(
+      resolveReignCardMeta(
+        source({
+          start: { year: 604, month: 1 },
+          title: "隋炀帝",
+          posthumousName: "炀皇帝",
+          eraNames: [{ name: "大业" }] as Reign["eraNames"],
+        }),
+        "杨广",
+      ),
+    ).toEqual({ label: "谥号", name: "隋炀帝" });
   });
 
   it("hides redundant regnal meta when the title is also the person name", () => {
@@ -374,11 +423,23 @@ describe("resolveReignCardMeta", () => {
           title: "商王武丁",
           posthumousName: "武丁",
           templeName: "高宗",
-          preferredAppellation: { kind: "temple", name: "商高宗" },
+          preferredAppellation: { kind: "posthumous", name: "商武丁" },
         }),
         "武丁",
       ),
-    ).toEqual({ label: "庙号", name: "商高宗" });
+    ).toEqual({ label: "谥号", name: "商武丁" });
+    expect(
+      resolveReignCardMeta(
+        source({
+          start: { year: -1560, month: 1 },
+          title: "商太甲",
+          posthumousName: "太甲",
+          templeName: "太宗",
+          preferredAppellation: { kind: "posthumous", name: "商太甲" },
+        }),
+        "太甲",
+      ),
+    ).toEqual({ label: "谥号", name: "商太甲" });
     expect(
       resolveReignCardMeta(
         source({
@@ -390,6 +451,28 @@ describe("resolveReignCardMeta", () => {
         "帝辛",
       ),
     ).toEqual({ label: "谥号", name: "商纣王" });
+    expect(
+      resolveReignCardMeta(
+        source({
+          start: { year: -1101, month: 1 },
+          title: "商王帝乙",
+          posthumousName: "帝乙",
+          preferredAppellation: { kind: "posthumous", name: "帝乙" },
+        }),
+        "帝乙",
+      ),
+    ).toBeNull();
+    expect(
+      resolveReignDetailSubtitle(
+        source({
+          start: { year: -1101, month: 1 },
+          title: "商王帝乙",
+          posthumousName: "帝乙",
+          preferredAppellation: { kind: "posthumous", name: "帝乙" },
+        }),
+        "商",
+      ),
+    ).toBe("商 · 帝乙");
   });
 });
 

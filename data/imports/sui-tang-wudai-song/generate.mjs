@@ -309,7 +309,7 @@ const dynasties = [
 
 const suiReigns = [
   dynastyReign("sui", "yang-jian", "隋文帝", "文皇帝", null, 581, 604, eras("reign-yang-jian", [{ name: "开皇", sy: 581, ey: 600 }, { name: "仁寿", sy: 601, ey: 604 }])),
-  dynastyReign("sui", "yang-guang", "隋炀帝", null, null, 604, 618, eras("reign-yang-guang", [{ name: "大业", sy: 605, ey: 618 }])),
+  dynastyReign("sui", "yang-guang", "隋炀帝", "炀皇帝", null, 604, 618, eras("reign-yang-guang", [{ name: "大业", sy: 605, ey: 618 }])),
   dynastyReign("sui", "yang-you", "隋恭帝", null, null, 617, 618),
 ];
 

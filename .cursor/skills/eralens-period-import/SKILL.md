@@ -42,6 +42,10 @@ Task Progress:
   - **span**：事件真实持续一段时间。填 `start_*` + `end_*`，`time_mode: span`。
   - **circa**：大约发生于某窗口（或诸说不一）。窗口填 `start_*` + `end_*`，`time_mode: circa`；学界常用估计可另填 `at_*`；原文说法写入 `date_note`。
 - 王朝 / 在位月不确定：标 `precision: year`，用月初 / 月末占位。
+- 收集完在位记录后，逐段核对王朝时间范围内的空档，不能仅凭相邻年份自动判定其含义：
+  - 来源明确表明该期存在国君、但姓名或具体世次失载，才写一条系统缺失占位 reign。
+  - 历史上确实无人统治该王朝行（改朝换号、中断、摄政期不设君等），不写 reign，前端自然留白。例如武周期间的唐行不写占位。
+  - 只是本次导入深度不足或尚未搜集完整，必须继续查证/补齐，不能标成「国君记载缺」。
 - 无实测或无通行王年（夏代、商前期常见）：只收关键人物，事件用 `circa` + `date_note`。禁止用传统积年填满每一王来「补齐」时间轴。
 - 摄政、共和等非王时期建**事件**，不建 reign。
 - 按用户字面范围收录：说「夏商周」只收三代王室，不自动展开春秋列国；同一王室可按习惯分期拆行（`zhou-west` / `zhou-east`，比照东汉）。
@@ -63,6 +67,7 @@ Task Progress:
 - 人物 `{family}-{given}`：`li-shimin`、`ji-fa`。先查库中已有 id（`zhou-yu` 已是周瑜）。
 - 后宫/宗室通称人物：`wei-hou`（韦后）、`pingyang-gongzhu`（平阳公主）；与 `{family}-{given}` 并存，以库内无冲突为准。
 - 在位 `reign-{person}` 或 `reign-{person}-{ordinal}`
+- 经查证的缺失占位 `reign-missing-{dynasty}-{start-year}`，其 `person_id` 固定为 `system-missing-ruler`
 - 事件 `{topic}`：`xuanwumen`、`muye`
 - 关系 `rel-{from}-{to}-{kind}`
 
@@ -98,6 +103,14 @@ node .cursor/skills/eralens-period-import/scripts/compute-abs.mjs -1046 1  # -12
 - `scope`: cn（默认）| global
 
 **不要写入生成列**：`dynasties.span`、`reigns.span`、`events.span*` 均由 DB 自动生成。
+
+**国君资料缺失占位**：
+
+- 先 UPSERT 系统人物：`id = 'system-missing-ruler'`、`name = '国君记载缺'`、`roles = ARRAY['系统占位']`。
+- 缺失区间仍写入普通 `reigns` 表，`person_id = 'system-missing-ruler'`，`title = '国君记载缺'`，起止时间为查证后的缺失范围。
+- 不添加年号、谥号、庙号或 preferred_appellation。
+- 不增加 `missing` 字段、不建单独 gap 表。前端只根据保留的 `person_id` 将该 reign 渲染为虚线框。
+- 没有占位 reign 的时间空档一律留白，不由前端自动推断为资料缺失。
 
 ### 3. 冲突检查
 

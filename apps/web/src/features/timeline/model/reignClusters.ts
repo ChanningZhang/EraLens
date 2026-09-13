@@ -1,4 +1,4 @@
-import type { Dynasty, Reign } from "@eralens/shared";
+import { isSystemMissingReign, type Reign } from "@eralens/shared";
 
 export const LANE_PADDING_Y = 16;
 export const STACK_ROW_HEIGHT = 56;
@@ -11,6 +11,16 @@ export type StackedReign = {
   reign: Reign;
   stackIndex: number;
 };
+
+export function partitionReignRecords(reigns: Reign[]): {
+  rulers: Reign[];
+  missing: Reign[];
+} {
+  return {
+    rulers: reigns.filter((reign) => !isSystemMissingReign(reign)),
+    missing: reigns.filter(isSystemMissingReign),
+  };
+}
 
 function sortReigns(reigns: Reign[]): Reign[] {
   return [...reigns].sort(
@@ -101,61 +111,4 @@ export function reignCardSpan(
       ? nextStartAbs
       : naturalEndExclusive;
   return { startAbs, endExclusive };
-}
-
-export type ReignGap = {
-  startAbs: number;
-  endExclusive: number;
-};
-
-/** Minimum gap length (abs months) before showing a dashed placeholder card. */
-export const REIGN_GAP_MIN_MONTHS = 12;
-
-/** Merge visible card spans — must match ReignCard layout, not raw reign dates. */
-function mergeVisualCoverage(reigns: Reign[]): { start: number; end: number }[] {
-  const merged: { start: number; end: number }[] = [];
-  for (const reign of reigns) {
-    const { startAbs, endExclusive } = resolveReignVisualSpan(reign, reigns);
-    const last = merged.at(-1);
-    if (!last || startAbs > last.end) {
-      merged.push({ start: startAbs, end: endExclusive });
-    } else {
-      last.end = Math.max(last.end, endExclusive);
-    }
-  }
-  return merged.sort((a, b) => a.start - b.start);
-}
-
-/**
- * Intervals within a dynasty span with no visible reign card coverage.
- * Uses the same visual spans as ReignCard, not raw database reign dates.
- */
-export function computeReignGaps(
-  dynasty: Pick<Dynasty, "startAbs" | "endAbs">,
-  reigns: Reign[],
-  minMonths = REIGN_GAP_MIN_MONTHS,
-): ReignGap[] {
-  const dynastyEndExclusive = dynasty.endAbs + 1;
-  if (dynastyEndExclusive <= dynasty.startAbs) return [];
-
-  if (reigns.length === 0) {
-    const span = dynastyEndExclusive - dynasty.startAbs;
-    return span >= minMonths
-      ? [{ startAbs: dynasty.startAbs, endExclusive: dynastyEndExclusive }]
-      : [];
-  }
-
-  const gaps: ReignGap[] = [];
-  let cursor = dynasty.startAbs;
-  for (const covered of mergeVisualCoverage(reigns)) {
-    if (covered.start > cursor) {
-      gaps.push({ startAbs: cursor, endExclusive: covered.start });
-    }
-    cursor = Math.max(cursor, covered.end);
-  }
-  if (cursor < dynastyEndExclusive) {
-    gaps.push({ startAbs: cursor, endExclusive: dynastyEndExclusive });
-  }
-
-  return gaps.filter((gap) => gap.endExclusive - gap.startAbs >= minMonths);
 }

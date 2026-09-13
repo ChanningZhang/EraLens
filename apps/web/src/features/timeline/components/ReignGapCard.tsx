@@ -1,9 +1,7 @@
-import type { Dynasty } from "@eralens/shared";
-import { formatAbsSpanTooltip } from "@eralens/shared";
+import { formatAbsSpanTooltip, type Dynasty, type Reign } from "@eralens/shared";
 import { useViewport } from "../hooks/useViewport";
 import { projectAbs } from "../model/coordinates";
 import { resolveLod } from "../model/lod";
-import type { ReignGap } from "../model/reignClusters";
 import { HoverTooltip } from "./HoverTooltip";
 import styles from "./ReignGapCard.module.css";
 
@@ -11,7 +9,7 @@ const MIN_GAP_PX = 10;
 const LABEL_MIN_PX = 56;
 
 type Props = {
-  gap: ReignGap;
+  gap: Reign;
   dynasty: Dynasty;
   color: string;
   orthodox?: boolean;
@@ -20,13 +18,13 @@ type Props = {
 export function ReignGapCard({ gap, dynasty, color, orthodox = false }: Props) {
   const viewport = useViewport();
   const left = projectAbs(viewport, gap.startAbs);
-  const width = Math.max(1, projectAbs(viewport, gap.endExclusive) - left);
+  const endExclusive = gap.endAbs + 1;
+  const width = Math.max(1, projectAbs(viewport, endExclusive) - left);
   if (width < MIN_GAP_PX) return null;
 
   const lod = resolveLod(viewport.pxPerMonth);
   const showLabel = lod !== "millennium" && width >= LABEL_MIN_PX;
-  const endAbs = gap.endExclusive - 1;
-  const timeTooltip = formatAbsSpanTooltip(gap.startAbs, endAbs);
+  const timeTooltip = formatAbsSpanTooltip(gap.startAbs, gap.endAbs);
   const tooltipText = dynasty.note
     ? `国君记载缺\n${timeTooltip}\n${dynasty.note}`
     : `国君记载缺\n${timeTooltip}`;
