@@ -1,0 +1,78 @@
+-- EraLens period import: taiping
+-- Window: 1851-01 .. 1864-07
+BEGIN;
+
+-- persons
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('hong-xiuquan', '洪秀全', 1814, 1, 1864, 6, ARRAY['皇帝','起义领袖'], '太平天国创建者，金田起义后称天王，定都天京；同治三年四月二十七日（1864年6月1日）病逝于南京。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/洪秀全"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('hong-tianguifu', '洪天贵福', 1849, 11, 1864, 11, ARRAY['皇帝'], '洪秀全长子，幼天王；洪秀全死后于六月初六继位，天京陷落后被俘处死。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/洪天贵福"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('yang-xiuqing', '杨秀清', 1823, 1, 1856, 9, ARRAY['政治家','军事家'], '太平天国东王，定都天京后掌军政大权；咸丰六年八月初四（1856年9月2日）天京事变中被北王韦昌辉所杀。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/杨秀清"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('li-xiucheng', '李秀成', 1823, 1, 1864, 8, ARRAY['军事家','政治家'], '太平天国忠王，后期主持军政；同治三年七月初六（1864年8月7日）城破后被俘处死。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/李秀成"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('shi-dakai', '石达开', 1831, 1, 1863, 6, ARRAY['军事家'], '太平天国翼王，西征名将；咸丰七年出走后转战西南，同治二年五月初十（1863年6月10日）大渡河兵败被俘。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/石达开"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+
+-- dynasties
+INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs, parent_id, note)
+VALUES ('taiping', '太平天国', ARRAY['太平天囯','天囯'], 'cn', 'east_asia', 1851, 3, 1864, 7, 22214, 22374, 'month', 'ochre', NULL, NULL, NULL, '1851年3月23日洪秀全登基称天王、正号太平天国；1853年3月定都天京（南京）；1864年7月19日天京陷落，政权覆亡。与清廷并立，非正统。')
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, color_token = EXCLUDED.color_token, orthodox_from_abs = EXCLUDED.orthodox_from_abs, orthodox_end_abs = EXCLUDED.orthodox_end_abs, note = EXCLUDED.note;
+
+-- reigns
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision)
+VALUES ('reign-hong-xiuquan-taiping', 'taiping', 'hong-xiuquan', '天王', NULL, NULL, NULL, 1851, 3, 23, 1864, 6, 1, 22214, 22373, 'day')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision)
+VALUES ('reign-hong-tianguifu-taiping', 'taiping', 'hong-tianguifu', '幼天王', NULL, NULL, NULL, 1864, 6, 6, 1864, 7, 19, 22373, 22374, 'day')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+
+-- era_names
+
+-- events
+INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary) VALUES ('jintian-uprising', '金田起义', 'politics', 'point', 'day', '咸丰元年十一月十一日，1851年1月11日', 1851, 1, 22212, NULL, NULL, NULL, NULL, NULL, NULL, '洪秀全于广西桂平金田举兵，揭开太平天国运动序幕；称帝建号另见三月登基。')
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary;
+INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary) VALUES ('hong-xiuquan-enthroned', '洪秀全登基', 'politics', 'point', 'day', '咸丰元年二月二十一日，1851年3月23日，广西武宣', 1851, 3, 22214, NULL, NULL, NULL, NULL, NULL, NULL, '洪秀全于广西武宣登基，称太平天王，后改称天王，正号太平天国。')
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary;
+INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary) VALUES ('taiping-capital-tianjing', '定都天京', 'politics', 'point', 'day', '咸丰三年二月初十，1853年3月19日攻克江宁；三月十九日洪秀全入城', 1853, 3, 22238, NULL, NULL, NULL, NULL, NULL, NULL, '太平军攻克江宁，改南京为天京并定都，与清朝形成南北对峙。')
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary;
+INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary) VALUES ('tianjing-incident', '天京事变', 'politics', 'point', 'day', '咸丰六年八月初四，1856年9月2日东王杨秀清被诛', 1856, 9, 22280, NULL, NULL, NULL, NULL, NULL, NULL, '北王韦昌辉诛杀东王杨秀清，太平天国领导层内讧，元气大伤。')
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary;
+INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary) VALUES ('fall-of-tianjing', '天京陷落', 'battle', 'point', 'day', '同治三年六月十六日，1864年7月19日', 1864, 7, 22374, NULL, NULL, NULL, NULL, NULL, NULL, '湘军攻破天京，幼天王洪天贵福出逃，太平天国政权覆亡。')
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary;
+
+-- event_dynasties
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('jintian-uprising', 'taiping') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('hong-xiuquan-enthroned', 'taiping') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('taiping-capital-tianjing', 'taiping') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('taiping-capital-tianjing', 'qing') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('tianjing-incident', 'taiping') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('fall-of-tianjing', 'taiping') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('fall-of-tianjing', 'qing') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('taiping-rebellion', 'taiping') ON CONFLICT DO NOTHING;
+
+-- event_participants
+INSERT INTO event_participants (event_id, person_id) VALUES ('jintian-uprising', 'hong-xiuquan') ON CONFLICT DO NOTHING;
+INSERT INTO event_participants (event_id, person_id) VALUES ('hong-xiuquan-enthroned', 'hong-xiuquan') ON CONFLICT DO NOTHING;
+INSERT INTO event_participants (event_id, person_id) VALUES ('taiping-capital-tianjing', 'hong-xiuquan') ON CONFLICT DO NOTHING;
+INSERT INTO event_participants (event_id, person_id) VALUES ('tianjing-incident', 'yang-xiuqing') ON CONFLICT DO NOTHING;
+INSERT INTO event_participants (event_id, person_id) VALUES ('tianjing-incident', 'hong-xiuquan') ON CONFLICT DO NOTHING;
+INSERT INTO event_participants (event_id, person_id) VALUES ('fall-of-tianjing', 'hong-tianguifu') ON CONFLICT DO NOTHING;
+INSERT INTO event_participants (event_id, person_id) VALUES ('fall-of-tianjing', 'li-xiucheng') ON CONFLICT DO NOTHING;
+INSERT INTO event_participants (event_id, person_id) VALUES ('taiping-rebellion', 'hong-xiuquan') ON CONFLICT DO NOTHING;
+INSERT INTO event_participants (event_id, person_id) VALUES ('fall-of-tianjing', 'zeng-guofan') ON CONFLICT DO NOTHING;
+
+-- relations
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-hong-xiuquan-hong-tianguifu-succession', 'person', 'hong-xiuquan', 'person', 'hong-tianguifu', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-jintian-hong', 'event', 'jintian-uprising', 'person', 'hong-xiuquan', 'politics') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-hong-enthroned', 'event', 'hong-xiuquan-enthroned', 'person', 'hong-xiuquan', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-tianjing-capital', 'event', 'taiping-capital-tianjing', 'dynasty', 'taiping', 'politics') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-tianjing-incident-yang', 'event', 'tianjing-incident', 'person', 'yang-xiuqing', 'politics') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-fall-tianjing', 'event', 'fall-of-tianjing', 'dynasty', 'taiping', 'battle') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+
+COMMIT;

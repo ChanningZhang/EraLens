@@ -43,6 +43,25 @@ describe("orthodoxDynasties", () => {
     ).toBe(true);
   });
 
+  it("gives gold to 顺治 though he acceded in 1643 before qing orthodox at 1644", () => {
+    const qing = {
+      id: "qing",
+      startAbs: absMonth(1616, 2),
+      endAbs: absMonth(1912, 2),
+      orthodoxFromAbs: ORTHODOX_FROM_ABS.qing,
+    };
+    const shunzhi = {
+      startAbs: absMonth(1643, 10),
+      endAbs: absMonth(1661, 2),
+    };
+    const huangTaiji = {
+      startAbs: absMonth(1626, 10),
+      endAbs: absMonth(1643, 9),
+    };
+    expect(isOrthodoxReign(qing, shunzhi)).toBe(true);
+    expect(isOrthodoxReign(qing, huangTaiji)).toBe(false);
+  });
+
   it("marks xia as orthodox from dynasty start", () => {
     const xia = { id: "xia", startAbs: absMonth(-2070) };
     expect(resolveOrthodoxFromAbs(xia)).toBe(xia.startAbs);

@@ -108,6 +108,9 @@ export function overlapsOrthodoxSpan(
  * conventionally counted line. Parallel claimants (隋恭帝杨侑 while 炀帝
  * still lived, 南明鲁监国) stay on their own row without gold.
  */
+/** Months between accession and delayed-orthodox begin that still count (e.g. 顺治 1643→1644). */
+const DELAYED_ORTHODOX_ACCESSION_GRACE = 12;
+
 export function isOrthodoxReign(
   dynasty: OrthodoxDynasty & { endAbs: number },
   reign: Pick<Reign, "startAbs" | "endAbs" | "claimTrack">,
@@ -115,6 +118,21 @@ export function isOrthodoxReign(
   if (isParallelClaim(reign)) return false;
   const span = resolveOrthodoxSpan(dynasty);
   if (!span) return false;
-  // Gold only when the reign *begins* inside the orthodox window (秦王政 vs 秦始皇).
-  return reign.startAbs >= span.startAbs && reign.startAbs < span.endAbs;
+  if (reign.endAbs <= span.startAbs) return false;
+  // Gold when the reign *begins* inside the orthodox window (秦始皇, not 秦王政).
+  if (reign.startAbs >= span.startAbs && reign.startAbs < span.endAbs) return true;
+
+  const orthodoxFrom = resolveOrthodoxFromAbs(dynasty);
+  // Delayed-orthodox dynasties (秦、清): accession shortly before orthodox
+  // begin still counts if the reign continues past it (顺治 vs 入关).
+  if (
+    orthodoxFrom != null &&
+    orthodoxFrom > dynasty.startAbs &&
+    reign.startAbs < span.startAbs &&
+    span.startAbs - reign.startAbs <= DELAYED_ORTHODOX_ACCESSION_GRACE
+  ) {
+    return true;
+  }
+
+  return false;
 }

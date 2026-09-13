@@ -1,0 +1,51 @@
+{
+  "slug": "taiping",
+  "title": "太平天国",
+  "window": {
+    "startYear": 1851,
+    "startMonth": 1,
+    "endYear": 1864,
+    "endMonth": 7
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-13",
+  "counts": {
+    "persons": 5,
+    "dynasties": 1,
+    "reigns": 2,
+    "events": 5,
+    "relations": 6,
+    "supplementalEventDynastyLinks": 1,
+    "supplementalEventParticipantLinks": 2
+  },
+  "sources": [
+    {
+      "label": "太平天国",
+      "url": "https://zh.wikipedia.org/wiki/太平天国"
+    },
+    {
+      "label": "洪秀全",
+      "url": "https://zh.wikipedia.org/wiki/洪秀全"
+    },
+    {
+      "label": "洪天贵福",
+      "url": "https://zh.wikipedia.org/wiki/洪天贵福"
+    },
+    {
+      "label": "天京事变",
+      "url": "https://zh.wikipedia.org/wiki/天京事变"
+    },
+    {
+      "label": "李秀成",
+      "url": "https://zh.wikipedia.org/wiki/李秀成"
+    }
+  ],
+  "notes": [
+    "收录太平天国王朝行及洪秀全、幼天王洪天贵福在位；与清廷并立，不设正统。",
+    "君主在位日取维基百科通行公历换算，precision=day；王朝行仅至月（schema 无 start_day）。",
+    "洪秀全在位自 1851-03-23 武宣登基（非金田起义）；至 1864-06-01 病逝。幼天王：1864-06-06 继位至 1864-07-19 天京陷落。",
+    "太平天国以干支纪年，不设传统年号，故省略 era_names。",
+    "taiping-rebellion 事件沿用 yuan-ming-qing 已有 id，本包补 taiping 王朝与洪秀全参与关联。"
+  ]
+}
