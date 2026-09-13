@@ -90,7 +90,7 @@ INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_na
 VALUES ('reign-li-dewang-xixia', 'xixia', 'li-dewang', '夏献宗', '南平王', '献宗', '{"kind":"temple","name":"夏献宗"}'::jsonb, 1223, 1, 1226, 12, 14676, 14723, 'year')
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
 INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
-VALUES ('reign-li-xian-xixia', 'xixia', 'li-xian-xixia', '夏末帝', NULL, NULL, '{"kind":"regnal","name":"夏末帝"}'::jsonb, 1226, 1, 1227, 12, 14712, 14735, 'year')
+VALUES ('reign-li-xian-xixia', 'xixia', 'li-xian-xixia', '夏末帝', NULL, NULL, '{"kind":"posthumous","name":"夏末帝"}'::jsonb, 1226, 1, 1227, 12, 14712, 14735, 'year')
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
 
 -- era_names

@@ -995,7 +995,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'song-liu', '刘宋', ARRAY['宋','南朝宋'], 'cn', 'east_asia',
   420, 7, 479, 1,
-  5046, 5748, 'year', 'indigo', NULL,
+  5046, 5748, 'year', 'azure', NULL,
   '刘裕代晋建宋，都建康；479年萧道成代宋。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1017,7 +1017,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'qi-nan', '南齐', ARRAY['齐','萧齐'], 'cn', 'east_asia',
   479, 1, 502, 1,
-  5748, 6024, 'year', 'moss', NULL,
+  5748, 6024, 'year', 'cinnabar', NULL,
   '萧道成代宋建齐；502年萧衍代齐。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1039,7 +1039,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'liang-nan', '南梁', ARRAY['梁','萧梁'], 'cn', 'east_asia',
   502, 1, 557, 1,
-  6024, 6684, 'year', 'mineral', NULL,
+  6024, 6684, 'year', 'jade', NULL,
   '萧衍代齐建梁；557年陈霸先代梁。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1061,7 +1061,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'wei-east', '东魏', ARRAY['魏'], 'cn', 'east_asia',
   534, 1, 550, 1,
-  6408, 6600, 'year', 'cinnabar', NULL,
+  6408, 6600, 'year', 'indigo', NULL,
   '534年元善见东迁邺城；550年高洋代魏建北齐。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1083,7 +1083,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'wei-west', '西魏', ARRAY['魏'], 'cn', 'east_asia',
   535, 1, 557, 1,
-  6420, 6684, 'year', 'stone', NULL,
+  6420, 6684, 'year', 'coral', NULL,
   '535年元宝炬西迁长安；557年宇文觉代魏建北周。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1105,7 +1105,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'chen-nan', '南陈', ARRAY['陈'], 'cn', 'east_asia',
   557, 1, 589, 1,
-  6684, 7068, 'year', 'grape', NULL,
+  6684, 7068, 'year', 'moss', NULL,
   '陈霸先代梁建陈；589年隋灭陈，南北朝终结。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1127,7 +1127,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'qi-bei', '北齐', ARRAY['齐','高齐'], 'cn', 'east_asia',
   550, 1, 577, 1,
-  6600, 6924, 'year', 'wisteria', NULL,
+  6600, 6924, 'year', 'plum', NULL,
   '高洋代东魏建齐，都邺；577年北周灭齐。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1149,7 +1149,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'zhou-bei', '北周', ARRAY['周','宇文周'], 'cn', 'east_asia',
   557, 1, 581, 1,
-  6684, 6972, 'year', 'ochre', NULL,
+  6684, 6972, 'year', 'mineral', NULL,
   '宇文觉代西魏建周，都长安；581年杨坚代周。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1448,7 +1448,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-yuan-lang', 'wei-north', 'yuan-lang', '魏节闵帝',
-  NULL, NULL, '{"kind":"regnal","name":"魏节闵帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"魏节闵帝"}'::jsonb,
   531, 1, 532, 12,
   6372, 6395, 'year'
 )
@@ -1523,7 +1523,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-liu-yifu', 'song-liu', 'liu-yifu', '宋少帝',
-  NULL, NULL, '{"kind":"regnal","name":"宋少帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"宋少帝"}'::jsonb,
   422, 1, 424, 12,
   5064, 5099, 'year'
 )
@@ -1623,7 +1623,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-liu-ziye', 'song-liu', 'liu-ziye', '宋前废帝',
-  NULL, NULL, '{"kind":"regnal","name":"宋前废帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"宋前废帝"}'::jsonb,
   464, 1, 465, 12,
   5568, 5591, 'year'
 )
@@ -1673,7 +1673,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-liu-yu-fei', 'song-liu', 'liu-yu-fei', '宋后废帝',
-  NULL, NULL, '{"kind":"regnal","name":"宋后废帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"宋后废帝"}'::jsonb,
   473, 1, 477, 12,
   5676, 5735, 'year'
 )
@@ -1873,7 +1873,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-xiao-baorong', 'qi-nan', 'xiao-baorong', '齐和帝',
-  NULL, NULL, '{"kind":"regnal","name":"齐和帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"齐和帝"}'::jsonb,
   501, 1, 502, 12,
   6012, 6035, 'year'
 )
@@ -1923,7 +1923,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-xiao-gang', 'liang-nan', 'xiao-gang', '梁简文帝',
-  NULL, NULL, '{"kind":"regnal","name":"梁简文帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"梁简文帝"}'::jsonb,
   549, 1, 551, 12,
   6588, 6623, 'year'
 )
@@ -1973,7 +1973,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-xiao-fangzhi', 'liang-nan', 'xiao-fangzhi', '梁敬帝',
-  NULL, NULL, '{"kind":"regnal","name":"梁敬帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"梁敬帝"}'::jsonb,
   555, 1, 557, 12,
   6660, 6695, 'year'
 )
@@ -2048,7 +2048,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-yuan-qin', 'wei-west', 'yuan-qin', '西魏废帝',
-  NULL, NULL, '{"kind":"regnal","name":"西魏废帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"西魏废帝"}'::jsonb,
   551, 1, 554, 12,
   6612, 6659, 'year'
 )
@@ -2073,7 +2073,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-tuoba-kuo', 'wei-west', 'tuoba-kuo', '西魏恭帝',
-  NULL, NULL, '{"kind":"regnal","name":"西魏恭帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"西魏恭帝"}'::jsonb,
   554, 1, 557, 12,
   6648, 6695, 'year'
 )
@@ -2148,7 +2148,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-chen-bozong', 'chen-nan', 'chen-bozong', '陈废帝',
-  NULL, NULL, '{"kind":"regnal","name":"陈废帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"陈废帝"}'::jsonb,
   566, 1, 568, 12,
   6792, 6827, 'year'
 )
@@ -2248,7 +2248,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-gao-yin', 'qi-bei', 'gao-yin', '齐废帝',
-  NULL, NULL, '{"kind":"regnal","name":"齐废帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"齐废帝"}'::jsonb,
   560, 1, 561, 12,
   6720, 6743, 'year'
 )
@@ -2373,7 +2373,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-yuwen-jue', 'zhou-bei', 'yuwen-jue', '周孝闵帝',
-  NULL, NULL, '{"kind":"regnal","name":"周孝闵帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"周孝闵帝"}'::jsonb,
   557, 1, 557, 12,
   6684, 6695, 'year'
 )
@@ -2473,7 +2473,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-yuwen-yan', 'zhou-bei', 'yuwen-yan', '周静帝',
-  NULL, NULL, '{"kind":"regnal","name":"周静帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"周静帝"}'::jsonb,
   579, 1, 581, 12,
   6948, 6983, 'year'
 )

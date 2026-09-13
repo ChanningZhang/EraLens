@@ -6,6 +6,7 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
+import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -565,7 +566,13 @@ function relationSql(r) {
   return `INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES (${sqlStr(r.id)}, ${sqlStr(from.type)}, ${sqlStr(from.id)}, ${sqlStr(to.type)}, ${sqlStr(to.id)}, ${sqlStr(r.kind)}) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;`;
 }
 
-const reignsWithEras = reigns.filter((r) => r.eraNames.length > 0);
+const { persons: importPersons, reigns: importReigns } = finalizeImportReigns(
+  "sui-tang-wudai-song",
+  allPersons,
+  reigns,
+);
+
+const reignsWithEras = importReigns.filter((r) => r.eraNames.length > 0);
 const eraDeleteSql = reignsWithEras.map((r) => `DELETE FROM era_names WHERE reign_id = ${sqlStr(r.id)};`);
 const eraInsertSql = reignsWithEras.flatMap((r) => r.eraNames.map(eraNameSql));
 const eventDynastySql = events.flatMap((e) => e.dynastyIds.map((d) => `INSERT INTO event_dynasties (event_id, dynasty_id) VALUES (${sqlStr(e.id)}, ${sqlStr(d)}) ON CONFLICT DO NOTHING;`));
@@ -575,9 +582,9 @@ const sql = [
   "-- EraLens period import: sui-tang-wudai-song",
   "-- Window: 581-01 .. 1279-12",
   "BEGIN;",
-  "", "-- persons", ...allPersons.map(personSql),
+  "", "-- persons", ...importPersons.map(personSql),
   "", "-- dynasties", ...dynasties.map(dynastySql),
-  "", "-- reigns", ...reigns.map(reignSql),
+  "", "-- reigns", ...importReigns.map(reignSql),
   "", "-- era_names", ...eraDeleteSql, ...eraInsertSql,
   "", "-- events", ...events.map(eventSql),
   "", "-- event_dynasties", ...eventDynastySql,

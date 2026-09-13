@@ -6,6 +6,7 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
+import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -271,19 +272,25 @@ const supplementalEventParticipantSql = supplementalEventParticipants.map(
   ({ eventId, personId }) => `INSERT INTO event_participants (event_id, person_id) VALUES (${sqlStr(eventId)}, ${sqlStr(personId)}) ON CONFLICT DO NOTHING;`,
 );
 
+const { persons: importPersons, reigns: importReigns } = finalizeImportReigns(
+  "mongol-pre-yuan",
+  persons,
+  reigns,
+);
+
 const sql = [
   "-- EraLens period import: mongol-pre-yuan",
   "-- Window: 1206-01 .. 1271-12",
   "BEGIN;",
   "",
   "-- persons",
-  ...persons.map(personSql),
+  ...importPersons.map(personSql),
   "",
   "-- dynasties",
   ...dynasties.map(dynastySql),
   "",
   "-- reigns",
-  ...reigns.map(reignSql),
+  ...importReigns.map(reignSql),
   "",
   "-- events",
   ...events.map(eventSql),

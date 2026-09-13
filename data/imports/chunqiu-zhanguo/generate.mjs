@@ -8,6 +8,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { rulersByDynasty, rulerStats } from "./rulers.mjs";
 import { ORTHODOX_FROM_START } from "../lib/orthodoxDynasties.mjs";
+import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -455,6 +456,12 @@ const reigns = dedupeReigns(
     ),
 );
 
+const { persons: importPersons, reigns: importReigns, missingReigns } = finalizeImportReigns(
+  "chunqiu-zhanguo",
+  persons,
+  reigns,
+);
+
 // ── events ──
 
 const events = [
@@ -745,13 +752,13 @@ const sql = [
   "BEGIN;",
   "",
   "-- persons",
-  ...persons.map(personSql),
+  ...importPersons.map(personSql),
   "",
   "-- dynasties",
   ...dynasties.map(dynastySql),
   "",
   "-- reigns",
-  ...reigns.map(reignSql),
+  ...importReigns.map(reignSql),
   "",
   "-- events",
   ...events.map(eventSql),
@@ -764,8 +771,8 @@ const sql = [
   "",
   "-- relations",
   ...relations.map(relationSql),
-  ...staleReignCleanupSql(reigns, dynasties),
-  ...orphanPersonCleanupSql(persons),
+  ...staleReignCleanupSql(importReigns, dynasties),
+  ...orphanPersonCleanupSql(importPersons),
   "",
   "COMMIT;",
   "",
@@ -782,9 +789,10 @@ const manifest = {
   depth: "standard",
   generatedAt: rulerStats.generatedAt,
   counts: {
-    persons: persons.length,
+    persons: importPersons.length,
     dynasties: dynasties.length,
-    reigns: reigns.length,
+    reigns: importReigns.length,
+    missingReigns: missingReigns.length,
     events: events.length,
     relations: relations.length,
     existingEventDynastyLinks: existingEventDynasties.length,
@@ -820,7 +828,7 @@ const manifest = {
 writeFileSync(path.join(__dirname, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);
 
 console.log(
-  `Wrote import.sql + manifest.json: ${persons.length} persons, ${dynasties.length} dynasties, ${reigns.length} reigns, ${events.length} events, ${relations.length} relations, ${existingEventDynasties.length} event_dynasty links`,
+  `Wrote import.sql + manifest.json: ${importPersons.length} persons, ${dynasties.length} dynasties, ${importReigns.length} reigns (${missingReigns.length} missing), ${events.length} events, ${relations.length} relations, ${existingEventDynasties.length} event_dynasty links`,
 );
 console.log("Sample abs:", {
   qiStart: absMonth(-1046, 1),

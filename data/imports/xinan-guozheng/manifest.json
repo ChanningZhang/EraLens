@@ -11,9 +11,9 @@
   "depth": "standard",
   "generatedAt": "2026-09-13",
   "counts": {
-    "persons": 7,
-    "dynasties": 8,
-    "reigns": 7,
+    "persons": 4,
+    "dynasties": 2,
+    "reigns": 4,
     "events": 4,
     "relations": 6
   },
@@ -33,22 +33,13 @@
     {
       "label": "庄蹻",
       "url": "https://zh.wikipedia.org/wiki/庄蹻"
-    },
-    {
-      "label": "邛都",
-      "url": "https://zh.wikipedia.org/wiki/邛都"
-    },
-    {
-      "label": "且兰",
-      "url": "https://zh.wikipedia.org/wiki/且兰"
     }
   ],
   "notes": [
-    "覆盖夜郎、滇国及邛都、莋都、冉駹、白马、且兰、劳深靡莫等西南夷古国。",
+    "覆盖夜郎、滇国两大西南夷政权；其余小国仅保留汉平西南夷事件，不单独建王朝行。",
     "君主在位年无通行记载时，仅取史料锚点前后短窗口，禁止用王朝起讫年硬填。",
     "多同取唐蒙通夜郎（前135）前后约二十年；兴取被杀前数年；尝羌取降汉前数年。",
     "庄蹻与尝羌之间、多同与兴之间世系失考，中间空缺不补齐。",
-    "冉駹、白马、劳深靡莫无通行君主名，仅王朝行与事件。",
     "precision=year，scope=cn，region=east_asia。"
   ]
 }

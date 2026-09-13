@@ -3,7 +3,7 @@
   height: var(--stack-row-height, 56px);
   overflow: visible;
   pointer-events: auto;
-  z-index: 0;
+  z-index: 1;
 }
 
 .card {

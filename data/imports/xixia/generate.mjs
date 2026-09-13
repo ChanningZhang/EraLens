@@ -7,6 +7,7 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
+import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -303,7 +304,9 @@ function relationSql(r) {
   return `INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES (${sqlStr(r.id)}, ${sqlStr(from.type)}, ${sqlStr(from.id)}, ${sqlStr(to.type)}, ${sqlStr(to.id)}, ${sqlStr(r.kind)}) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;`;
 }
 
-const reignsWithEras = reigns.filter((r) => r.eraNames.length > 0);
+const { persons: importPersons, reigns: importReigns } = finalizeImportReigns("xixia", persons, reigns);
+
+const reignsWithEras = importReigns.filter((r) => r.eraNames.length > 0);
 const eraDeleteSql = reignsWithEras.map((r) => `DELETE FROM era_names WHERE reign_id = ${sqlStr(r.id)};`);
 const eraInsertSql = reignsWithEras.flatMap((r) => r.eraNames.map(eraNameSql));
 const eventDynastySql = events.flatMap((e) => e.dynastyIds.map((d) => `INSERT INTO event_dynasties (event_id, dynasty_id) VALUES (${sqlStr(e.id)}, ${sqlStr(d)}) ON CONFLICT DO NOTHING;`));
@@ -319,7 +322,7 @@ const sql = [
   "-- EraLens period import: xixia",
   "-- Window: 982-01 .. 1227-12",
   "BEGIN;",
-  "", "-- persons", ...persons.map(personSql),
+  "", "-- persons", ...importPersons.map(personSql),
   "", "-- dynasties", ...dynasties.map(dynastySql),
   "",
   "-- cleanup renamed / orphaned reigns (li-xian person id collision with 唐中宗)",
@@ -327,7 +330,7 @@ const sql = [
   "DELETE FROM reigns WHERE id = 'reign-li-xian-xixia-xixia';",
   "",
   "-- reigns",
-  ...reigns.map(reignSql),
+  ...importReigns.map(reignSql),
   "", "-- era_names", ...eraDeleteSql, ...eraInsertSql,
   "", "-- events", ...events.map(eventSql),
   "", "-- event_dynasties", ...eventDynastySql, ...supplementalEventDynastySql,

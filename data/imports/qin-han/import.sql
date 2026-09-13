@@ -1209,7 +1209,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-liu-gong', 'han-west', 'liu-gong', '汉前少帝',
-  NULL, NULL, '{"kind":"regnal","name":"汉前少帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"汉前少帝"}'::jsonb,
   -188, 1, -184, 12,
   -2244, -2185, 'year'
 )
@@ -1234,7 +1234,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-liu-hong-shao', 'han-west', 'liu-hong-shao', '汉后少帝',
-  NULL, NULL, '{"kind":"regnal","name":"汉后少帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"汉后少帝"}'::jsonb,
   -184, 1, -180, 12,
   -2196, -2137, 'year'
 )
@@ -1359,7 +1359,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-liu-he', 'han-west', 'liu-he', '汉废帝',
-  NULL, NULL, '{"kind":"regnal","name":"汉废帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"汉废帝"}'::jsonb,
   -74, 1, -74, 12,
   -876, -865, 'year'
 )
@@ -1734,7 +1734,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-liu-yi-shao', 'han-east', 'liu-yi-shao', '汉前少帝',
-  NULL, NULL, '{"kind":"regnal","name":"汉前少帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"汉前少帝"}'::jsonb,
   125, 1, 125, 12,
   1500, 1511, 'year'
 )
@@ -1884,7 +1884,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-liu-bian', 'han-east', 'liu-bian', '汉后少帝',
-  NULL, NULL, '{"kind":"regnal","name":"汉后少帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"汉后少帝"}'::jsonb,
   189, 1, 189, 12,
   2268, 2279, 'year'
 )

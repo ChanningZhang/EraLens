@@ -45,7 +45,7 @@ Task Progress:
 - 收集完在位记录后，逐段核对王朝时间范围内的空档，不能仅凭相邻年份自动判定其含义：
   - 来源明确表明该期存在国君、但姓名或具体世次失载，才写一条系统缺失占位 reign。
   - 历史上确实无人统治该王朝行（改朝换号、中断、摄政期不设君等），不写 reign，前端自然留白。例如武周期间的唐行不写占位。
-  - 只是本次导入深度不足或尚未搜集完整，必须继续查证/补齐，不能标成「国君记载缺」。
+  - 只是本次导入深度不足或尚未搜集完整，必须继续查证/补齐，不能标成「史料缺」。
 - 无实测或无通行王年（夏代、商前期常见）：只收关键人物，事件用 `circa` + `date_note`。禁止用传统积年填满每一王来「补齐」时间轴。
 - 摄政、共和等非王时期建**事件**，不建 reign。
 - 按用户字面范围收录：说「夏商周」只收三代王室，不自动展开春秋列国；同一王室可按习惯分期拆行（`zhou-west` / `zhou-east`，比照东汉）。
@@ -106,8 +106,8 @@ node .cursor/skills/eralens-period-import/scripts/compute-abs.mjs -1046 1  # -12
 
 **国君资料缺失占位**：
 
-- 先 UPSERT 系统人物：`id = 'system-missing-ruler'`、`name = '国君记载缺'`、`roles = ARRAY['系统占位']`。
-- 缺失区间仍写入普通 `reigns` 表，`person_id = 'system-missing-ruler'`，`title = '国君记载缺'`，起止时间为查证后的缺失范围。
+- 先 UPSERT 系统人物：`id = 'system-missing-ruler'`、`name = '史料缺'`、`roles = ARRAY['系统占位']`。
+- 缺失区间仍写入普通 `reigns` 表，`person_id = 'system-missing-ruler'`，`title = '史料缺'`，起止时间为查证后的缺失范围。
 - 不添加年号、谥号、庙号或 preferred_appellation。
 - 不增加 `missing` 字段、不建单独 gap 表。前端只根据保留的 `person_id` 将该 reign 渲染为虚线框。
 - 没有占位 reign 的时间空档一律留白，不由前端自动推断为资料缺失。

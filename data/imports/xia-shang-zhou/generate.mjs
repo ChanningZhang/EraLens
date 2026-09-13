@@ -6,6 +6,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "../../..");
@@ -410,7 +411,7 @@ const zhouWestReigns = [
   zhouReign("ji-song", "周成王", "成王", -1042, -1021, "zhou-west"),
   zhouReign("ji-zhao", "周康王", "康王", -1020, -996, "zhou-west"),
   zhouReign("ji-xia", "周昭王", "昭王", -995, -977, "zhou-west"),
-  zhouReign("ji-man", "周穆王", "穆王", -976, -922, "zhou-west"),
+  zhouReign("ji-man", "周穆王", "穆王", -976, -923, "zhou-west"),
   zhouReign("ji-yihu", "周共王", "共王", -922, -900, "zhou-west"),
   zhouReign("ji-jian", "周懿王", "懿王", -899, -892, "zhou-west"),
   zhouReign("ji-pifang", "周孝王", "孝王", -891, -886, "zhou-west"),
@@ -432,7 +433,7 @@ const zhouEastReigns = [
   zhouReign("ji-yu", "周定王", "定王", -606, -586, "zhou-east"),
   zhouReign("ji-yi", "周简王", "简王", -585, -572, "zhou-east"),
   zhouReign("ji-xiexin", "周灵王", "灵王", -571, -545, "zhou-east"),
-  zhouReign("ji-gui", "周景王", "景王", -544, -520, "zhou-east"),
+  zhouReign("ji-gui", "周景王", "景王", -544, -521, "zhou-east"),
   zhouReign("ji-meng", "周悼王", "悼王", -520, -520, "zhou-east"),
   zhouReign("ji-gai", "周敬王", "敬王", -519, -477, "zhou-east"),
   zhouReign("ji-ren", "周元王", "元王", -476, -469, "zhou-east"),
@@ -450,6 +451,12 @@ const zhouEastReigns = [
 ];
 
 const reigns = [...xiaReigns, ...shangReigns, ...zhouWestReigns, ...zhouEastReigns];
+
+const { persons: importPersons, reigns: importReigns, missingReigns } = finalizeImportReigns(
+  "xia-shang-zhou",
+  persons,
+  reigns,
+);
 
 function eventPoint(partial) {
   const at = partial.at;
@@ -988,13 +995,13 @@ const sql = [
   preSql,
   "",
   "-- persons",
-  ...persons.map(personSql),
+  ...importPersons.map(personSql),
   "",
   "-- dynasties",
   ...dynasties.map(dynastySql),
   "",
   "-- reigns",
-  ...reigns.map(reignSql),
+  ...importReigns.map(reignSql),
   "",
   "-- events",
   ...events.map(eventSql),

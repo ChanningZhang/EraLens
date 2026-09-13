@@ -52,33 +52,6 @@ const persons = [
     "滇王，汉武帝元封二年率众降汉，设益州郡。中间世系多失考。",
     "滇国",
   ),
-  person(
-    "qiong-jun",
-    "邛君",
-    ["君主"],
-    "邛都国君主，武帝元鼎六年为汉所诛。",
-    "邛都国",
-    null,
-    ym(-111),
-  ),
-  person(
-    "zuo-hou",
-    "莋侯",
-    ["君主"],
-    "莋都国君主，武帝元鼎六年为汉所诛。",
-    "莋都",
-    null,
-    ym(-111),
-  ),
-  person(
-    "qielan-jun",
-    "头兰",
-    ["君主"],
-    "且兰（头兰）君，武帝元鼎六年为汉军所破。",
-    "且兰",
-    null,
-    ym(-111),
-  ),
 ];
 
 // ── dynasties ──────────────────────────────────────────────────────────────
@@ -108,78 +81,6 @@ const dynasties = [
     colorToken: nextColor(),
     note: "楚将庄蹻入滇称王；武帝元封二年（前109）尝羌降汉，设益州郡。庄蹻与尝羌之间世系失考。",
   },
-  {
-    id: "qiongdu",
-    name: "邛都",
-    altNames: ["邛都国"],
-    scope: "cn",
-    region: "east_asia",
-    start: ym(-200),
-    end: ym(-111),
-    precision: "year",
-    colorToken: nextColor(),
-    note: "据今四川西昌；武帝元鼎六年（前111）为汉所灭。君主名仅见于灭国之年。",
-  },
-  {
-    id: "zuodu",
-    name: "莋都",
-    altNames: ["莋都国"],
-    scope: "cn",
-    region: "east_asia",
-    start: ym(-200),
-    end: ym(-111),
-    precision: "year",
-    colorToken: nextColor(),
-    note: "据今四川盐源；武帝元鼎六年（前111）为汉所灭。",
-  },
-  {
-    id: "ranmang",
-    name: "冉駹",
-    altNames: ["冉駹国"],
-    scope: "cn",
-    region: "east_asia",
-    start: ym(-200),
-    end: ym(-111),
-    precision: "year",
-    colorToken: nextColor(),
-    note: "川西高原古国；武帝元鼎六年（前111）纳入汉朝版图。无通行君主名，仅建王朝行与事件。",
-  },
-  {
-    id: "baima",
-    name: "白马",
-    altNames: ["白马国", "白狼国"],
-    scope: "cn",
-    region: "east_asia",
-    start: ym(-200),
-    end: ym(-111),
-    precision: "year",
-    colorToken: nextColor(),
-    note: "据今甘肃东南部；武帝元鼎六年（前111）为汉所灭。无通行君主名。",
-  },
-  {
-    id: "qielan",
-    name: "且兰",
-    altNames: ["头兰", "且兰国"],
-    scope: "cn",
-    region: "east_asia",
-    start: ym(-200),
-    end: ym(-111),
-    precision: "year",
-    colorToken: nextColor(),
-    note: "滇东小国，君主称头兰；武帝元鼎六年（前111）为汉军所破。",
-  },
-  {
-    id: "laomo",
-    name: "劳深靡莫",
-    altNames: ["劳深", "靡莫"],
-    scope: "cn",
-    region: "east_asia",
-    start: ym(-200),
-    end: ym(-109),
-    precision: "year",
-    colorToken: nextColor(),
-    note: "滇东北古国联盟；武帝元封二年（前109）前后为汉所平定。无通行君主名。",
-  },
 ];
 
 // ── reigns ─────────────────────────────────────────────────────────────────
@@ -198,11 +99,7 @@ const dianReigns = [
   dr("dian", "dian-changqiang", "滇王", null, null, -115, -109),
 ];
 
-const qiongduReigns = [dr("qiongdu", "qiong-jun", "邛君", null, null, -111, -111)];
-const zuoduReigns = [dr("zuodu", "zuo-hou", "莋侯", null, null, -111, -111)];
-const qielanReigns = [dr("qielan", "qielan-jun", "且兰君", null, null, -111, -111)];
-
-const reignGroups = [yelangReigns, dianReigns, qiongduReigns, zuoduReigns, qielanReigns];
+const reignGroups = [yelangReigns, dianReigns];
 const reigns = reignGroups.flat();
 
 // ── events ───────────────────────────────────────────────────────────────────
@@ -218,12 +115,12 @@ const events = [
     summary: "汉武帝遣唐蒙出使夜郎，夜郎侯多同归附，开西南夷通道。",
   }),
   eventPoint({
-    id: "han-destroy-qielan",
-    name: "汉灭且兰",
+    id: "han-pacify-southwest-yi",
+    name: "汉平西南夷",
     kind: "battle",
     at: ym(-111),
-    dynastyIds: ["qielan", "qiongdu", "zuodu", "ranmang", "baima"],
-    participantIds: ["qielan-jun", "qiong-jun", "zuo-hou"],
+    dynastyIds: [],
+    participantIds: [],
     summary: "汉武帝遣郭昌、卫广等伐西南夷，且兰（头兰）及邛都、莋都、冉駹、白马等国为汉所灭。",
   }),
   eventPoint({
@@ -231,9 +128,9 @@ const events = [
     name: "滇国降汉",
     kind: "politics",
     at: ym(-109),
-    dynastyIds: ["dian", "laomo"],
+    dynastyIds: ["dian"],
     participantIds: ["dian-changqiang"],
-    summary: "汉武帝元封二年，滇王尝羌率众降汉，设益州郡，劳深靡莫等部亦平定。",
+    summary: "汉武帝元封二年，滇王尝羌率众降汉，设益州郡。",
   }),
   eventPoint({
     id: "yelang-xin-killed",
@@ -248,7 +145,7 @@ const events = [
 
 const supplementalEventDynasties = [
   { eventId: "tangmeng-tong-yelang", dynastyId: "han-west" },
-  { eventId: "han-destroy-qielan", dynastyId: "han-west" },
+  { eventId: "han-pacify-southwest-yi", dynastyId: "han-west" },
   { eventId: "dian-surrender-han", dynastyId: "han-west" },
   { eventId: "yelang-xin-killed", dynastyId: "han-west" },
 ];
@@ -268,10 +165,31 @@ for (const group of reignGroups) {
 }
 relations.push(
   { id: "rel-tangmeng-yelang", fromRef: "event:tangmeng-tong-yelang", toRef: "dynasty:yelang", kind: "other" },
-  { id: "rel-han-destroy-qielan", fromRef: "event:han-destroy-qielan", toRef: "dynasty:qielan", kind: "battle" },
+  { id: "rel-han-pacify-southwest-yi", fromRef: "event:han-pacify-southwest-yi", toRef: "dynasty:han-west", kind: "battle" },
   { id: "rel-dian-surrender", fromRef: "event:dian-surrender-han", toRef: "dynasty:dian", kind: "other" },
   { id: "rel-yelang-xin-killed", fromRef: "event:yelang-xin-killed", toRef: "person:yelang-xin", kind: "other" },
 );
+
+const removedDynastyIds = ["qiongdu", "zuodu", "ranmang", "baima", "qielan", "laomo"];
+const removedPersonIds = ["qiong-jun", "zuo-hou", "qielan-jun"];
+const removedReignIds = [
+  "reign-qiong-jun-qiongdu",
+  "reign-zuo-hou-zuodu",
+  "reign-qielan-jun-qielan",
+];
+
+const preSql = [
+  `DELETE FROM event_dynasties WHERE dynasty_id IN (${removedDynastyIds.map((id) => `'${id}'`).join(", ")});`,
+  `DELETE FROM event_dynasties WHERE event_id = 'han-destroy-qielan';`,
+  `DELETE FROM event_participants WHERE person_id IN (${removedPersonIds.map((id) => `'${id}'`).join(", ")});`,
+  `DELETE FROM event_participants WHERE event_id = 'han-destroy-qielan';`,
+  "DELETE FROM relations WHERE id = 'rel-han-destroy-qielan';",
+  `DELETE FROM reigns WHERE id IN (${removedReignIds.map((id) => `'${id}'`).join(", ")});`,
+  `DELETE FROM reigns WHERE dynasty_id IN (${removedDynastyIds.map((id) => `'${id}'`).join(", ")});`,
+  `DELETE FROM persons WHERE id IN (${removedPersonIds.map((id) => `'${id}'`).join(", ")});`,
+  `DELETE FROM dynasties WHERE id IN (${removedDynastyIds.map((id) => `'${id}'`).join(", ")});`,
+  "DELETE FROM events WHERE id = 'han-destroy-qielan';",
+].join("\n");
 
 const manifest = {
   slug: "xinan-guozheng",
@@ -292,15 +210,12 @@ const manifest = {
     { label: "夜郎", url: "https://zh.wikipedia.org/wiki/夜郎" },
     { label: "滇国", url: "https://zh.wikipedia.org/wiki/滇国" },
     { label: "庄蹻", url: "https://zh.wikipedia.org/wiki/庄蹻" },
-    { label: "邛都", url: "https://zh.wikipedia.org/wiki/邛都" },
-    { label: "且兰", url: "https://zh.wikipedia.org/wiki/且兰" },
   ],
   notes: [
-    "覆盖夜郎、滇国及邛都、莋都、冉駹、白马、且兰、劳深靡莫等西南夷古国。",
+    "覆盖夜郎、滇国两大西南夷政权；其余小国仅保留汉平西南夷事件，不单独建王朝行。",
     "君主在位年无通行记载时，仅取史料锚点前后短窗口，禁止用王朝起讫年硬填。",
     "多同取唐蒙通夜郎（前135）前后约二十年；兴取被杀前数年；尝羌取降汉前数年。",
     "庄蹻与尝羌之间、多同与兴之间世系失考，中间空缺不补齐。",
-    "冉駹、白马、劳深靡莫无通行君主名，仅王朝行与事件。",
     "precision=year，scope=cn，region=east_asia。",
   ],
 };
@@ -315,5 +230,6 @@ writeImportPackage(__dirname, {
   events,
   relations,
   supplementalEventDynasties,
+  preSql,
   manifest,
 });

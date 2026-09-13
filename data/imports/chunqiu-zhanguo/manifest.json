@@ -11,9 +11,10 @@
   "depth": "standard",
   "generatedAt": "2026-09-13",
   "counts": {
-    "persons": 431,
+    "persons": 432,
     "dynasties": 16,
-    "reigns": 417,
+    "reigns": 426,
+    "missingReigns": 9,
     "events": 5,
     "relations": 4,
     "existingEventDynastyLinks": 29

@@ -10,6 +10,22 @@ DELETE FROM dynasties WHERE id = 'zhou';
 -- persons
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
+  'system-missing-ruler', '史料缺',
+  NULL, NULL,
+  NULL, NULL,
+  ARRAY['系统占位'], 'EraLens 系统保留人物，仅用于标记经考证确认的国君资料缺失区间。', '[]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
   'si-yu', '禹',
   NULL, NULL,
   NULL, NULL,
@@ -2279,8 +2295,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-ji-man', 'zhou-west', 'ji-man', '周穆王',
   '穆王', NULL, '{"kind":"posthumous","name":"周穆王"}'::jsonb,
-  -976, 1, -922, 12,
-  -11700, -11041, 'year'
+  -976, 1, -923, 12,
+  -11700, -11053, 'year'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -2754,8 +2770,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-ji-gui', 'zhou-east', 'ji-gui', '周景王',
   '景王', NULL, '{"kind":"posthumous","name":"周景王"}'::jsonb,
-  -544, 1, -520, 12,
-  -6516, -6217, 'year'
+  -544, 1, -521, 12,
+  -6516, -6229, 'year'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -3081,6 +3097,106 @@ INSERT INTO reigns (
   '赧王', NULL, '{"kind":"posthumous","name":"周赧王"}'::jsonb,
   -314, 1, -256, 12,
   -3756, -3049, 'year'
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  posthumous_name = EXCLUDED.posthumous_name,
+  temple_name = EXCLUDED.temple_name,
+  preferred_appellation = EXCLUDED.preferred_appellation,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  posthumous_name, temple_name, preferred_appellation,
+  start_year, start_month, end_year, end_month,
+  start_abs, end_abs, precision
+) VALUES (
+  'reign-missing-xia--1989', 'xia', 'system-missing-ruler', '史料缺',
+  NULL, NULL, NULL,
+  -1989, 1, -1911, 12,
+  -23856, -22909, 'year'
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  posthumous_name = EXCLUDED.posthumous_name,
+  temple_name = EXCLUDED.temple_name,
+  preferred_appellation = EXCLUDED.preferred_appellation,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  posthumous_name, temple_name, preferred_appellation,
+  start_year, start_month, end_year, end_month,
+  start_abs, end_abs, precision
+) VALUES (
+  'reign-missing-xia--1859', 'xia', 'system-missing-ruler', '史料缺',
+  NULL, NULL, NULL,
+  -1859, 1, -1651, 12,
+  -22296, -19789, 'year'
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  posthumous_name = EXCLUDED.posthumous_name,
+  temple_name = EXCLUDED.temple_name,
+  preferred_appellation = EXCLUDED.preferred_appellation,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  posthumous_name, temple_name, preferred_appellation,
+  start_year, start_month, end_year, end_month,
+  start_abs, end_abs, precision
+) VALUES (
+  'reign-missing-shang--1570', 'shang', 'system-missing-ruler', '史料缺',
+  NULL, NULL, NULL,
+  -1570, 1, -1561, 12,
+  -18828, -18709, 'year'
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  posthumous_name = EXCLUDED.posthumous_name,
+  temple_name = EXCLUDED.temple_name,
+  preferred_appellation = EXCLUDED.preferred_appellation,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  posthumous_name, temple_name, preferred_appellation,
+  start_year, start_month, end_year, end_month,
+  start_abs, end_abs, precision
+) VALUES (
+  'reign-missing-zhou-west--840', 'zhou-west', 'system-missing-ruler', '史料缺',
+  NULL, NULL, NULL,
+  -840, 1, -828, 12,
+  -10068, -9913, 'year'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,

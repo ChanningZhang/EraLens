@@ -7,6 +7,7 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { dynastySql } from "../lib/sqlHelpers.mjs";
+import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -351,6 +352,8 @@ const eventDynastySql = [
 ];
 const eventParticipantSql = events.flatMap((e) => e.participantIds.map((p) => `INSERT INTO event_participants (event_id, person_id) VALUES (${sqlStr(e.id)}, ${sqlStr(p)}) ON CONFLICT DO NOTHING;`));
 
+const { persons: importPersons, reigns: importReigns } = finalizeImportReigns("minguo", persons, reigns);
+
 const sql = [
   "-- EraLens period import: minguo",
   "-- Window: 1912-01 .. 1949-12",
@@ -358,13 +361,13 @@ const sql = [
   "BEGIN;",
   "",
   "-- persons",
-  ...persons.map(personSql),
+  ...importPersons.map(personSql),
   "",
   "-- dynasties",
   ...dynasties.map(dynastySql),
   "",
   "-- reigns",
-  ...reigns.map(reignSql),
+  ...importReigns.map(reignSql),
   "",
   "-- events",
   ...events.map(eventSql),

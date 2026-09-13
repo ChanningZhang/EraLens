@@ -6,6 +6,22 @@ BEGIN;
 -- persons
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
+  'system-missing-ruler', '史料缺',
+  NULL, NULL,
+  NULL, NULL,
+  ARRAY['系统占位'], 'EraLens 系统保留人物，仅用于标记经考证确认的国君资料缺失区间。', '[]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
   'sima-yan', '司马炎',
   236, 1,
   290, 1,
@@ -2086,7 +2102,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-li-shi', 'cheng-han', 'li-shi', '成汉末帝',
-  NULL, NULL, '{"kind":"regnal","name":"成汉末帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"成汉末帝"}'::jsonb,
   343, 1, 347, 12,
   4116, 4175, 'year'
 )
@@ -2136,7 +2152,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-liu-he', 'han-zhao', 'liu-he', '汉赵皇帝',
-  NULL, NULL, '{"kind":"regnal","name":"汉赵皇帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"汉赵皇帝"}'::jsonb,
   310, 7, 310, 7,
   3726, 3726, 'month'
 )
@@ -2186,7 +2202,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-liu-can', 'han-zhao', 'liu-can', '汉赵末帝',
-  NULL, NULL, '{"kind":"regnal","name":"汉赵末帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"汉赵末帝"}'::jsonb,
   318, 8, 318, 9,
   3823, 3824, 'month'
 )
@@ -2211,7 +2227,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-liu-yao-jin', 'han-zhao', 'liu-yao-jin', '汉赵末帝',
-  NULL, NULL, '{"kind":"regnal","name":"汉赵末帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"汉赵末帝"}'::jsonb,
   318, 10, 329, 12,
   3825, 3959, 'month'
 )
@@ -2261,7 +2277,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-shi-hong', 'zhao-back', 'shi-hong', '后赵皇帝',
-  NULL, NULL, '{"kind":"regnal","name":"后赵皇帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"后赵皇帝"}'::jsonb,
   333, 1, 334, 12,
   3996, 4019, 'year'
 )
@@ -2561,7 +2577,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-murong-wei', 'yan-front', 'murong-wei', '前燕末帝',
-  NULL, NULL, '{"kind":"regnal","name":"前燕末帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"前燕末帝"}'::jsonb,
   360, 1, 370, 12,
   4320, 4451, 'year'
 )
@@ -2611,7 +2627,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-fu-sheng', 'qin-front', 'fu-sheng', '前秦废帝',
-  NULL, NULL, '{"kind":"regnal","name":"前秦废帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"前秦废帝"}'::jsonb,
   355, 1, 357, 12,
   4260, 4295, 'year'
 )
@@ -2661,7 +2677,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-fu-chong', 'qin-front', 'fu-chong', '前秦末帝',
-  NULL, NULL, '{"kind":"regnal","name":"前秦末帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"前秦末帝"}'::jsonb,
   385, 1, 394, 12,
   4620, 4739, 'year'
 )
@@ -2711,7 +2727,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-murong-xi', 'yan-back', 'murong-xi', '后燕末帝',
-  NULL, NULL, '{"kind":"regnal","name":"后燕末帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"后燕末帝"}'::jsonb,
   401, 1, 409, 12,
   4812, 4919, 'year'
 )
@@ -2786,7 +2802,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-yao-hong', 'qin-back', 'yao-hong', '后秦末帝',
-  NULL, NULL, '{"kind":"regnal","name":"后秦末帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"后秦末帝"}'::jsonb,
   416, 1, 417, 12,
   4992, 5015, 'year'
 )
@@ -2911,7 +2927,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-tufa-lilugu', 'liang-south', 'tufa-lilugu', '南凉皇帝',
-  NULL, NULL, '{"kind":"regnal","name":"南凉皇帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"南凉皇帝"}'::jsonb,
   399, 1, 402, 12,
   4788, 4835, 'year'
 )
@@ -2936,7 +2952,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-tufa-rutan', 'liang-south', 'tufa-rutan', '南凉末帝',
-  NULL, NULL, '{"kind":"regnal","name":"南凉末帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"南凉末帝"}'::jsonb,
   402, 1, 414, 12,
   4824, 4979, 'year'
 )
@@ -2986,7 +3002,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-li-xin', 'liang-xi', 'li-xin', '西凉末帝',
-  NULL, NULL, '{"kind":"regnal","name":"西凉末帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"西凉末帝"}'::jsonb,
   417, 1, 421, 12,
   5004, 5063, 'year'
 )
@@ -3036,7 +3052,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-juqu-mujian', 'liang-north', 'juqu-mujian', '北凉末帝',
-  NULL, NULL, '{"kind":"regnal","name":"北凉末帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"北凉末帝"}'::jsonb,
   433, 1, 439, 12,
   5196, 5279, 'year'
 )
@@ -3086,7 +3102,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-murong-chao', 'yan-south', 'murong-chao', '南燕末帝',
-  NULL, NULL, '{"kind":"regnal","name":"南燕末帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"南燕末帝"}'::jsonb,
   405, 1, 410, 12,
   4860, 4931, 'year'
 )
@@ -3161,7 +3177,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-helian-chang', 'xia-hu', 'helian-chang', '胡夏皇帝',
-  NULL, NULL, '{"kind":"regnal","name":"胡夏皇帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"胡夏皇帝"}'::jsonb,
   425, 1, 428, 12,
   5100, 5147, 'year'
 )
@@ -3186,9 +3202,34 @@ INSERT INTO reigns (
   start_abs, end_abs, precision
 ) VALUES (
   'reign-helian-ding', 'xia-hu', 'helian-ding', '胡夏末帝',
-  NULL, NULL, '{"kind":"regnal","name":"胡夏末帝"}'::jsonb,
+  NULL, NULL, '{"kind":"posthumous","name":"胡夏末帝"}'::jsonb,
   428, 1, 431, 12,
   5136, 5183, 'year'
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  posthumous_name = EXCLUDED.posthumous_name,
+  temple_name = EXCLUDED.temple_name,
+  preferred_appellation = EXCLUDED.preferred_appellation,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  posthumous_name, temple_name, preferred_appellation,
+  start_year, start_month, end_year, end_month,
+  start_abs, end_abs, precision
+) VALUES (
+  'reign-missing-yan-back-a4764', 'yan-back', 'system-missing-ruler', '史料缺',
+  NULL, NULL, NULL,
+  397, 1, 400, 12,
+  4764, 4811, 'year'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,

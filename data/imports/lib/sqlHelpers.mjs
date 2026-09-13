@@ -2,12 +2,19 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { defaultPreferredAppellation } from "./defaultPreferredAppellation.mjs";
 import { resolveOrthodoxEndAbs, resolveOrthodoxFromAbs } from "./orthodoxDynasties.mjs";
+import { finalizeImportReigns } from "./missingReigns.mjs";
 
 export function toAstroYear(year) {
   return year > 0 ? year : year + 1;
 }
 export function absMonth(year, month = 1) {
   return toAstroYear(year) * 12 + (month - 1);
+}
+export function fromAbsMonth(abs) {
+  const wholeAbs = Math.round(abs);
+  const astroYear = Math.floor(wholeAbs / 12);
+  const month = wholeAbs - astroYear * 12 + 1;
+  return { year: astroYear > 0 ? astroYear : astroYear - 1, month };
 }
 export function sqlStr(value) {
   if (value == null) return "NULL";
@@ -167,7 +174,12 @@ export function relationSql(r) {
   return `INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES (${sqlStr(r.id)}, ${sqlStr(from.type)}, ${sqlStr(from.id)}, ${sqlStr(to.type)}, ${sqlStr(to.id)}, ${sqlStr(r.kind)}) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;`;
 }
 
-export function writeImportPackage(dir, { slug, window, persons, dynasties, reignGroups, reigns, events, relations, supplementalEventDynasties = [], supplementalEventParticipants = [], preSql = "", manifest }) {
+export function writeImportPackage(dir, { slug, window, persons, dynasties, reignGroups, reigns, events, relations, supplementalEventDynasties = [], supplementalEventParticipants = [], preSql = "", missingReigns = [], manifest }) {
+  const finalized = finalizeImportReigns(slug, persons, reigns, missingReigns);
+  persons = finalized.persons;
+  reigns = finalized.reigns;
+  missingReigns = finalized.missingReigns;
+
   const reignsWithEras = reigns.filter((r) => r.eraNames.length > 0);
   const eraDeleteSql = reignsWithEras.map((r) => `DELETE FROM era_names WHERE reign_id = ${sqlStr(r.id)};`);
   const eraInsertSql = reignsWithEras.flatMap((r) => r.eraNames.map(eraNameSql));
@@ -199,7 +211,9 @@ export function writeImportPackage(dir, { slug, window, persons, dynasties, reig
   mkdirSync(dir, { recursive: true });
   writeFileSync(path.join(dir, "import.sql"), sql);
   writeFileSync(path.join(dir, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);
-  console.log(`[${slug}] ${persons.length} persons, ${dynasties.length} dynasties, ${reigns.length} reigns, ${events.length} events`);
+  console.log(
+    `[${slug}] ${persons.length} persons, ${dynasties.length} dynasties, ${reigns.length} reigns (${missingReigns.length} missing), ${events.length} events`,
+  );
 }
 
 export const colorTokens = ["ochre", "indigo", "cinnabar", "moss", "wisteria", "grape", "stone", "mineral"];

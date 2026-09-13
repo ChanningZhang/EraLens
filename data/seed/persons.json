@@ -1,14 +1,5 @@
 [
   {
-    "id": "system-missing-ruler",
-    "name": "国君记载缺",
-    "roles": [
-      "系统占位"
-    ],
-    "bio": "EraLens 系统保留人物，仅用于标记经考证确认的国君资料缺失区间。",
-    "links": []
-  },
-  {
     "id": "si-yu",
     "name": "禹",
     "roles": [
@@ -1161,6 +1152,15 @@
         "url": "https://zh.wikipedia.org/wiki/召公奭"
       }
     ]
+  },
+  {
+    "id": "system-missing-ruler",
+    "name": "史料缺",
+    "roles": [
+      "系统占位"
+    ],
+    "bio": "EraLens 系统保留人物，仅用于标记经考证确认的国君资料缺失区间。",
+    "links": []
   },
   {
     "id": "liu-xiu",

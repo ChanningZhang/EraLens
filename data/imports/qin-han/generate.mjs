@@ -7,6 +7,7 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
+import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -1019,7 +1020,9 @@ VALUES (${sqlStr(r.id)}, ${sqlStr(from.type)}, ${sqlStr(from.id)}, ${sqlStr(to.t
 ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;`;
 }
 
-const reignsWithEras = reigns.filter((r) => r.eraNames.length > 0);
+const { persons: importPersons, reigns: importReigns } = finalizeImportReigns("qin-han", persons, reigns);
+
+const reignsWithEras = importReigns.filter((r) => r.eraNames.length > 0);
 const eraDeleteSql = reignsWithEras.map((r) => `DELETE FROM era_names WHERE reign_id = ${sqlStr(r.id)};`);
 const eraInsertSql = reignsWithEras.flatMap((r) => r.eraNames.map(eraNameSql));
 
@@ -1043,13 +1046,13 @@ const sql = [
   "BEGIN;",
   "",
   "-- persons",
-  ...persons.map(personSql),
+  ...importPersons.map(personSql),
   "",
   "-- dynasties",
   ...dynasties.map(dynastySql),
   "",
   "-- reigns",
-  ...reigns.map(reignSql),
+  ...importReigns.map(reignSql),
   "",
   "-- era_names",
   ...eraDeleteSql,
