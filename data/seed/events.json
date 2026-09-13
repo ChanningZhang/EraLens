@@ -442,6 +442,47 @@
     "summary": "申侯联合犬戎攻破镐京，幽王死，西周亡。"
   },
   {
+    "id": "zhou-dual-kings",
+    "name": "二王并立",
+    "kind": "politics",
+    "timeMode": "point",
+    "precision": "year",
+    "dynastyIds": [
+      "zhou-east"
+    ],
+    "participantIds": [
+      "ji-yijiu",
+      "ji-yuchen"
+    ],
+    "dateNote": "前771年幽王死后",
+    "at": {
+      "year": -771,
+      "month": 1
+    },
+    "atAbs": -9240,
+    "summary": "申侯等立平王，虢公翰等立携王；后世以平王东迁为东周正统。"
+  },
+  {
+    "id": "xie-wang-killed",
+    "name": "晋文侯杀携王",
+    "kind": "politics",
+    "timeMode": "point",
+    "precision": "year",
+    "dynastyIds": [
+      "zhou-east"
+    ],
+    "participantIds": [
+      "ji-yuchen"
+    ],
+    "dateNote": "前750年",
+    "at": {
+      "year": -750,
+      "month": 1
+    },
+    "atAbs": -8988,
+    "summary": "晋文侯攻灭携王，二王并立终结，平王正统确立。"
+  },
+  {
     "id": "pingwang-eastward",
     "name": "平王东迁",
     "kind": "politics",

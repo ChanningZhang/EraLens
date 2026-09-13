@@ -703,11 +703,25 @@
     "roles": [
       "天子"
     ],
-    "bio": "周平王，东迁洛邑，东周开始。",
+    "bio": "周平王，申侯等拥立；与携王二王并立，东迁洛邑后后世视为东周正统。",
     "links": [
       {
         "label": "维基百科",
         "url": "https://zh.wikipedia.org/wiki/周平王"
+      }
+    ]
+  },
+  {
+    "id": "ji-yuchen",
+    "name": "姬余臣",
+    "roles": [
+      "天子"
+    ],
+    "bio": "周携王（携惠王），幽王弟；虢公翰等拥立于携，与平王并立；前750年晋文侯杀之。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周携王"
       }
     ]
   },

@@ -7,6 +7,7 @@ import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
+import { reignSql } from "../lib/reignSql.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "../../..");
@@ -88,7 +89,20 @@ const persons = [
   { id: "ji-hu", name: "姬胡", roles: ["天子"], bio: "周厉王，专利引发国人暴动，出奔于彘。", links: wiki("周厉王") },
   { id: "ji-jing", name: "姬静", roles: ["天子"], bio: "周宣王，共和之后即位，史称宣王中兴。", links: wiki("周宣王") },
   { id: "ji-gongsheng", name: "姬宫湦", roles: ["天子"], bio: "周幽王，犬戎之祸中身死，西周终结。", links: wiki("周幽王") },
-  { id: "ji-yijiu", name: "姬宜臼", roles: ["天子"], bio: "周平王，东迁洛邑，东周开始。", links: wiki("周平王") },
+  {
+    id: "ji-yijiu",
+    name: "姬宜臼",
+    roles: ["天子"],
+    bio: "周平王，申侯等拥立；与携王二王并立，东迁洛邑后后世视为东周正统。",
+    links: wiki("周平王"),
+  },
+  {
+    id: "ji-yuchen",
+    name: "姬余臣",
+    roles: ["天子"],
+    bio: "周携王（携惠王），幽王弟；虢公翰等拥立于携，与平王并立；前750年晋文侯杀之。",
+    links: wiki("周携王"),
+  },
   { id: "ji-lin", name: "姬林", roles: ["天子"], bio: "周桓王。", links: wiki("周桓王") },
   { id: "ji-tuo", name: "姬佗", roles: ["天子"], bio: "周庄王。", links: wiki("周庄王") },
   { id: "ji-huqi", name: "姬胡齐", roles: ["天子"], bio: "周釐王，亦作周僖王。", links: wiki("周釐王") },
@@ -178,7 +192,7 @@ const dynasties = [
     end: ym(-256, 12),
     precision: "year",
     colorToken: "moss",
-    note: "平王东迁至秦灭周。王年取《史记》系统常见年表；东周王室衰微，列国争霸不另建王朝行。",
+    note: "平王东迁至秦灭周。前771–前750年与携王二王并立，后世以平王为正统（claim_track 主线）。",
   },
 ];
 
@@ -193,6 +207,9 @@ function reign({
   start,
   end,
   precision = "year",
+  claimTrack,
+  claimLabel,
+  claimRole,
 }) {
   return {
     id,
@@ -208,6 +225,9 @@ function reign({
     startAbs: start.abs,
     endAbs: end.abs,
     precision,
+    claimTrack,
+    claimLabel,
+    claimRole,
   };
 }
 
@@ -393,6 +413,7 @@ function zhouReign(
   dynastyId,
   startMonth = 1,
   endMonth = 12,
+  claim = null,
 ) {
   return reign({
     id: `reign-${personId}`,
@@ -403,6 +424,9 @@ function zhouReign(
     preferred: { kind: "posthumous", name: title },
     start: ym(startYear, startMonth),
     end: ym(endYear, endMonth),
+    claimTrack: claim?.track,
+    claimLabel: claim?.label,
+    claimRole: claim?.role,
   });
 }
 
@@ -423,6 +447,11 @@ const zhouWestReigns = [
 
 const zhouEastReigns = [
   zhouReign("ji-yijiu", "周平王", "平王", -770, -720, "zhou-east"),
+  zhouReign("ji-yuchen", "周携王", "携王", -771, -750, "zhou-east", 1, 12, {
+    track: "xie",
+    label: "携",
+    role: "rival",
+  }),
   zhouReign("ji-lin", "周桓王", "桓王", -719, -697, "zhou-east"),
   zhouReign("ji-tuo", "周庄王", "庄王", -696, -682, "zhou-east"),
   zhouReign("ji-huqi", "周釐王", "釐王", -681, -677, "zhou-east"),
@@ -702,6 +731,28 @@ const events = [
     summary: "申侯联合犬戎攻破镐京，幽王死，西周亡。",
   }),
   eventPoint({
+    id: "zhou-dual-kings",
+    name: "二王并立",
+    kind: "politics",
+    precision: "year",
+    dateNote: "前771年幽王死后",
+    at: ym(-771),
+    dynastyIds: ["zhou-east"],
+    participantIds: ["ji-yijiu", "ji-yuchen"],
+    summary: "申侯等立平王，虢公翰等立携王；后世以平王东迁为东周正统。",
+  }),
+  eventPoint({
+    id: "xie-wang-killed",
+    name: "晋文侯杀携王",
+    kind: "politics",
+    precision: "year",
+    dateNote: "前750年",
+    at: ym(-750),
+    dynastyIds: ["zhou-east"],
+    participantIds: ["ji-yuchen"],
+    summary: "晋文侯攻灭携王，二王并立终结，平王正统确立。",
+  }),
+  eventPoint({
     id: "pingwang-eastward",
     name: "平王东迁",
     kind: "politics",
@@ -869,34 +920,6 @@ ON CONFLICT (id) DO UPDATE SET
   note = EXCLUDED.note;`;
 }
 
-function reignSql(r) {
-  return `INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  posthumous_name, temple_name, preferred_appellation,
-  start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision
-) VALUES (
-  ${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(r.title)},
-  ${sqlStr(r.posthumousName ?? null)}, ${sqlStr(r.templeName ?? null)}, ${sqlJson(r.preferredAppellation)},
-  ${r.start.year}, ${r.start.month}, ${r.end.year}, ${r.end.month},
-  ${r.startAbs}, ${r.endAbs}, ${sqlStr(r.precision)}
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  posthumous_name = EXCLUDED.posthumous_name,
-  temple_name = EXCLUDED.temple_name,
-  preferred_appellation = EXCLUDED.preferred_appellation,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision;`;
-}
-
 function eventSql(e) {
   const cols = [
     "id",
@@ -1001,7 +1024,7 @@ const sql = [
   ...dynasties.map(dynastySql),
   "",
   "-- reigns",
-  ...importReigns.map(reignSql),
+  ...importReigns.map((r) => reignSql(r, sqlStr, sqlJson)),
   "",
   "-- events",
   ...events.map(eventSql),
@@ -1054,6 +1077,7 @@ const manifest = {
     "共和行政不建在位卡片（非王），仅作 span 事件。周公旦不另建称王记录。",
     "夏商周无年号，不写入 era_names。",
     "未单列春秋战国诸侯国为王朝行，以免超出「夏商周」王室主线。",
+    "东周二王并立用 claim_track：主线平王→桓王…（正统金色）；xie/携王为并行对手，不镀金、不串进继承链。",
   ],
 };
 writeFileSync(path.join(__dirname, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);

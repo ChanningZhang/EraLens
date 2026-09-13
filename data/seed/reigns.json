@@ -1011,6 +1011,29 @@
     }
   },
   {
+    "id": "reign-ji-yuchen",
+    "dynastyId": "zhou-east",
+    "personId": "ji-yuchen",
+    "title": "周携王",
+    "eraNames": [],
+    "start": {
+      "year": -771,
+      "month": 1
+    },
+    "end": {
+      "year": -750,
+      "month": 12
+    },
+    "startAbs": -9240,
+    "endAbs": -8977,
+    "precision": "year",
+    "posthumousName": "携王",
+    "preferredAppellation": {
+      "kind": "posthumous",
+      "name": "周携王"
+    }
+  },
+  {
     "id": "reign-ji-lin",
     "dynastyId": "zhou-east",
     "personId": "ji-lin",

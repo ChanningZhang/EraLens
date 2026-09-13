@@ -11,11 +11,29 @@
 - **Animation**: Framer Motion（王朝行 FLIP 布局）
 - **Data**: HTTP Repository（默认，读 PostgreSQL）/ Mock Repository（`VITE_DATA_SOURCE=mock`）
 
-## 快速开始
+## Docker 启动
+
+需要已安装 [Docker](https://docs.docker.com/get-docker/) 与 Docker Compose。一条命令同时启动 PostgreSQL 和应用（前端静态资源由 API 在同一端口提供）：
+
+```bash
+docker compose up --build
+```
+
+首次需要写入种子数据时：
+
+```bash
+RUN_SEED=true docker compose up --build
+```
+
+浏览器打开 http://localhost:8080
+
+后台运行用 `-d`：`docker compose up --build -d`。停止：`docker compose down`（数据卷 `eralens_pg_data` 会保留）。
+
+## 本地开发
 
 ```bash
 pnpm install
-pnpm db:setup      # Docker PostgreSQL + migrate + seed
+pnpm db:setup      # 仅启动 Docker PostgreSQL + migrate + seed
 pnpm dev:all       # 前端 :5173 + API :3001
 ```
 
@@ -42,7 +60,7 @@ packages/shared/     # 时间工具 + Zod schema + 领域逻辑
 apps/web/            # React 前端
 apps/api/            # Fastify REST API + Prisma
 data/seed/           # 种子 JSON（东汉—三国）
-docker-compose.yml   # PostgreSQL
+docker-compose.yml   # PostgreSQL + 应用容器
 ```
 
 ## 后端对接
@@ -61,7 +79,7 @@ API 环境变量见 `apps/api/.env.example`（`DATABASE_URL`、`PORT`）。
 ## 数据库
 
 ```bash
-pnpm db:up        # 启动 PostgreSQL
+pnpm db:up        # 仅启动 PostgreSQL 容器
 pnpm db:migrate   # 应用迁移
 pnpm db:seed      # 导入 data/seed JSON
 pnpm db:down      # 停止容器

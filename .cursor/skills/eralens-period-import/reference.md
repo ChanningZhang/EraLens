@@ -157,8 +157,8 @@ ON CONFLICT (id) DO UPDATE SET
   claim_label = EXCLUDED.claim_label,
   claim_role = EXCLUDED.claim_role;
 
--- 并行称君示例（南明鲁监国）：主线不填 track；并立朝廷占另一行。
--- claim_role: puppet | rival | regent
+-- 并行称君示例（南明鲁监国）：仅当与主线皇帝同时另立时才填 claim_track；是否傀儡不影响此判定。
+-- 前帝身后才即位（哪怕傀儡）走主线，claim_track 留 NULL。claim_role: puppet | rival | regent
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   posthumous_name, temple_name, preferred_appellation,

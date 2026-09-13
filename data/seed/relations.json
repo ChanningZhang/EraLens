@@ -240,8 +240,14 @@
     "kind": "succession"
   },
   {
-    "id": "rel-ji-yijiu-ji-lin-succession",
+    "id": "rel-ji-yijiu-ji-yuchen-succession",
     "fromRef": "person:ji-yijiu",
+    "toRef": "person:ji-yuchen",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-ji-yuchen-ji-lin-succession",
+    "fromRef": "person:ji-yuchen",
     "toRef": "person:ji-lin",
     "kind": "succession"
   },
@@ -406,6 +412,12 @@
     "fromRef": "event:chengpu",
     "toRef": "person:ji-chonger",
     "kind": "battle"
+  },
+  {
+    "id": "rel-ji-yijiu-ji-lin-succession",
+    "fromRef": "person:ji-yijiu",
+    "toRef": "person:ji-lin",
+    "kind": "succession"
   },
   {
     "id": "rel-ji-gongsheng-ji-yijiu-succession",

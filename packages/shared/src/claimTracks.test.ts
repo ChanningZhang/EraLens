@@ -81,6 +81,43 @@ describe("groupByClaimTrack", () => {
   });
 });
 
+describe("groupByClaimTrack — early Zhou dual kings", () => {
+  it("keeps 平王 on the main line while 携王 sits on a rival row", () => {
+    const lanes = groupByClaimTrack([
+      reign("ji-yijiu", -770, -720, { dynastyId: "zhou-east" }),
+      reign("ji-yuchen", -771, -750, {
+        dynastyId: "zhou-east",
+        claimTrack: "xie",
+        claimLabel: "携",
+        claimRole: "rival",
+      }),
+    ]);
+
+    expect(lanes.map((lane) => lane.track)).toEqual([MAIN_CLAIM_TRACK, "xie"]);
+  });
+});
+
+describe("groupByClaimTrack — Northern Wei split", () => {
+  it("keeps 文帝 on the main line after 孝武帝 while 邺城孝静帝 stays parallel", () => {
+    const lanes = groupByClaimTrack([
+      reign("yuan-xiu", 532, 534, { dynastyId: "wei-north" }),
+      reign("yuan-bao-ju", 535, 551, { dynastyId: "wei-north" }),
+      reign("yuan-shan-jian", 534, 550, {
+        dynastyId: "wei-north",
+        claimTrack: "ye",
+        claimLabel: "邺",
+        claimRole: "puppet",
+      }),
+    ]);
+
+    expect(lanes.map((lane) => lane.track)).toEqual([MAIN_CLAIM_TRACK, "ye"]);
+    expect(lanes[0]?.reigns.map((item) => item.personId)).toEqual([
+      "yuan-xiu",
+      "yuan-bao-ju",
+    ]);
+  });
+});
+
 describe("resolveConcurrencySpans", () => {
   it("marks the years when Sui puppet courts overlap the main line", () => {
     const spans = resolveConcurrencySpans([
