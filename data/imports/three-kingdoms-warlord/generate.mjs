@@ -11,6 +11,7 @@ import {
   reign,
   eras,
   eventPoint,
+  eventRange,
   writeImportPackage,
   ym,
   successionPairs,
@@ -210,6 +211,28 @@ const reigns = reignGroups.flat();
 
 const events = [
   eventPoint({
+    id: "guandu",
+    name: "官渡之战",
+    kind: "battle",
+    precision: "month",
+    dateNote: "建安五年六月，曹操大败袁绍",
+    at: ym(200, 6),
+    dynastyIds: ["wei"],
+    participantIds: ["cao-cao", "yuan-shao"],
+    summary: "曹操以少胜多，大败袁绍，奠定统一北方基础。",
+  }),
+  eventPoint({
+    id: "chibi",
+    name: "赤壁之战",
+    kind: "battle",
+    precision: "month",
+    dateNote: "建安十三年十二月，孙刘联军大败曹操",
+    at: CHIBI,
+    dynastyIds: ["wei", "shu", "wu"],
+    participantIds: ["cao-cao", "liu-bei", "sun-quan", "zhuge-liang", "zhou-yu"],
+    summary: "孙刘联军于赤壁大败曹操，三国鼎立格局初步形成。",
+  }),
+  eventPoint({
     id: "liu-bei-takes-yizhou",
     name: "刘备取益州",
     kind: "politics",
@@ -220,12 +243,22 @@ const events = [
     participantIds: ["liu-bei", "liu-zhang"],
     summary: "刘备围成都，刘璋出降，益州归刘备。",
   }),
+  eventRange({
+    id: "yiling",
+    name: "夷陵之战",
+    kind: "battle",
+    timeMode: "span",
+    precision: "month",
+    dateNote: "章武元年七月至二年八月",
+    start: ym(221, 7),
+    end: ym(222, 8),
+    dynastyIds: ["shu", "wu"],
+    participantIds: ["liu-bei", "sun-quan"],
+    summary: "刘备伐吴复仇，于夷陵大败，蜀汉元气大伤。",
+  }),
 ];
 
-const supplementalEventDynasties = [
-  { eventId: "chibi", dynastyId: "wei" },
-  { eventId: "chibi", dynastyId: "shu" },
-];
+const supplementalEventDynasties = [];
 
 const preSql = [
   "DELETE FROM event_dynasties WHERE dynasty_id IN ('yuan-hebei', 'yizhou-liu');",
@@ -246,6 +279,12 @@ for (const group of reignGroups) {
     });
   }
 }
+relations.push(
+  { id: "rel-guandu-cao-cao", fromRef: "event:guandu", toRef: "person:cao-cao", kind: "battle" },
+  { id: "rel-chibi-cao-cao", fromRef: "event:chibi", toRef: "person:cao-cao", kind: "battle" },
+  { id: "rel-chibi-zhuge", fromRef: "event:chibi", toRef: "person:zhuge-liang", kind: "battle" },
+  { id: "rel-yiling-liu-bei", fromRef: "event:yiling", toRef: "person:liu-bei", kind: "battle" },
+);
 
 const manifest = {
   slug: "three-kingdoms-warlord",

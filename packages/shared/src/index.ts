@@ -1,4 +1,5 @@
 export * from "./time";
+export * from "./reignVisual";
 export * from "./schema";
 export * from "./eventTime";
 export * from "./personTime";

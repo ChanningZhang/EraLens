@@ -18,6 +18,7 @@ export type EventTimeMode = z.infer<typeof EventTimeModeSchema>;
 export const TimePointSchema = z.object({
   year: z.number(),
   month: z.number().int().min(1).max(12),
+  day: z.number().int().min(1).max(31).optional(),
 });
 
 export const TimeRangeSchema = z.object({

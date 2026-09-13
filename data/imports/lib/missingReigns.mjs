@@ -22,6 +22,10 @@ const MEMBER_TO_LANE = new Map(
 /** Intentional blanks — never emit missing placeholders (e.g. Tang lane during Wu Zhou). */
 const INTENTIONAL_BLANK_GAPS = [
   { dynastyId: "tang", startAbs: 8289, endAbs: 8459 },
+  // Mongol regency intervals (tolui / töregene / oghul qaimish) — events only, no reign.
+  { dynastyId: "mongol-empire", startAbs: ym(1228, 1).abs, endAbs: ym(1228, 12).abs },
+  { dynastyId: "mongol-empire", startAbs: ym(1242, 1).abs, endAbs: ym(1245, 12).abs },
+  { dynastyId: "mongol-empire", startAbs: ym(1249, 1).abs, endAbs: ym(1250, 12).abs },
 ];
 
 export const systemMissingPerson = {

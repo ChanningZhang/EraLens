@@ -11,11 +11,11 @@
   "depth": "standard",
   "generatedAt": "2026-09-13",
   "counts": {
-    "persons": 83,
+    "persons": 87,
     "dynasties": 10,
     "reigns": 56,
-    "events": 35,
-    "relations": 58
+    "events": 75,
+    "relations": 70
   },
   "sources": [
     {
@@ -111,8 +111,88 @@
       "url": "https://zh.wikipedia.org/wiki/袁崇焕"
     },
     {
+      "label": "张居正",
+      "url": "https://zh.wikipedia.org/wiki/张居正"
+    },
+    {
+      "label": "王阳明",
+      "url": "https://zh.wikipedia.org/wiki/王阳明"
+    },
+    {
+      "label": "严嵩",
+      "url": "https://zh.wikipedia.org/wiki/严嵩"
+    },
+    {
+      "label": "唐寅",
+      "url": "https://zh.wikipedia.org/wiki/唐寅"
+    },
+    {
+      "label": "徐光启",
+      "url": "https://zh.wikipedia.org/wiki/徐光启"
+    },
+    {
       "label": "辛亥革命",
       "url": "https://zh.wikipedia.org/wiki/辛亥革命"
+    },
+    {
+      "label": "平定三藩",
+      "url": "https://zh.wikipedia.org/wiki/平定三藩之乱"
+    },
+    {
+      "label": "雅克萨之战",
+      "url": "https://zh.wikipedia.org/wiki/雅克萨之战"
+    },
+    {
+      "label": "尼布楚条约",
+      "url": "https://zh.wikipedia.org/wiki/尼布楚条约"
+    },
+    {
+      "label": "南京条约",
+      "url": "https://zh.wikipedia.org/wiki/南京条约"
+    },
+    {
+      "label": "第二次鸦片战争",
+      "url": "https://zh.wikipedia.org/wiki/第二次鸦片战争"
+    },
+    {
+      "label": "中法战争",
+      "url": "https://zh.wikipedia.org/wiki/中法战争"
+    },
+    {
+      "label": "甲午战争",
+      "url": "https://zh.wikipedia.org/wiki/甲午战争"
+    },
+    {
+      "label": "马关条约",
+      "url": "https://zh.wikipedia.org/wiki/马关条约"
+    },
+    {
+      "label": "辛丑条约",
+      "url": "https://zh.wikipedia.org/wiki/辛丑条约"
+    },
+    {
+      "label": "虎门条约",
+      "url": "https://zh.wikipedia.org/wiki/虎门条约"
+    },
+    {
+      "label": "望厦条约",
+      "url": "https://zh.wikipedia.org/wiki/望厦条约"
+    },
+    {
+      "label": "黄埔条约",
+      "url": "https://zh.wikipedia.org/wiki/黄埔条约"
+    },
+    {
+      "label": "伊犁条约",
+      "url": "https://zh.wikipedia.org/wiki/中俄伊犁条约"
+    },
+    {
+      "label": "虎门销烟",
+      "url": "https://zh.wikipedia.org/wiki/虎门销烟"
+    },
+    {
+      "label": "左宗棠收复新疆",
+      "url": "https://zh.wikipedia.org/wiki/左宗棠平乱"
     }
   ],
   "notes": [
@@ -125,6 +205,12 @@
     "元末割据：徐宋（1351–1360）、韩宋（1355–1366）、大周（1354–1367）、陈汉（1360–1364）、明夏（1362–1371）、吴/西吴（1364–1368，朱元璋称帝前）。",
     "未收录明郑（1662–1683）等延续政权。",
     "南明并行用 claim_track：主线弘光→隆武→永历；lu-jian/朱以海（绍兴监国）、shaowu/朱聿鐭（广州）。不把鲁监国、绍武串进继承链。",
-    "晚明三大疑案：梃击案（1615）、红丸案（1620）、移宫案（1620），均取通行月日写入 date_note。"
+    "晚明三大疑案：梃击案（1615）、红丸案（1620）、移宫案（1620），均取通行月日写入 date_note。",
+    "清战争：平定三藩、雅克萨、统一台湾、大小金川、准噶尔、清缅、两次鸦片战争、中法战争、甲午战争、义和团、八国联军。",
+    "清条约：尼布楚（1689，平等边界条约）、南京、虎门、望厦、黄埔、瑷珲、天津、北京、中日修好条规、烟台、伊犁、中法新约、藏印、滇缅、马关、辛丑、中俄改订；条约月日取通行说法写入 date_note。",
+    "鸦片战争事件 id 仍为 opium-war，名称改为「第一次鸦片战争」并改为 span（1840–1842）。",
+    "补充战争：虎门销烟、左宗棠收复新疆、隆务关之战；三国干涉还辽为马关条约后续外交事件。",
+    "元明战争：两都之战、红巾起义、明军攻占大都、抗倭战争、萨尔浒、宁远、松锦之战。",
+    "明非帝王人物：张居正、海瑞、戚继光、王阳明、严嵩、唐寅、李时珍、徐光启、徐霞客、魏忠贤、刘基、于谦、郑和等；张居正改革（1572–1582）为 span 事件。"
   ]
 }

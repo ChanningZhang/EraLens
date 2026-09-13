@@ -516,6 +516,7 @@ const events = [
   eventPoint({ id: "sui-unify", name: "隋灭陈统一", kind: "politics", at: ym(589), dynastyIds: ["sui", "chen-nan"], participantIds: ["yang-jian"], summary: "隋军灭南陈，南北分裂终结，隋统一全国。" }),
   eventRange({ id: "kaihuang-rule", name: "开皇之治", kind: "politics", timeMode: "span", start: ym(581), end: ym(600), dynastyIds: ["sui"], participantIds: ["yang-jian"], summary: "隋文帝励精图治，轻徭薄赋，国力强盛。" }),
   eventRange({ id: "grand-canal", name: "开凿大运河", kind: "culture", timeMode: "span", dateNote: "605年起大规模开凿，连通南北", start: ym(605), end: ym(610), dynastyIds: ["sui"], participantIds: ["yang-guang"], summary: "隋炀帝下令开凿大运河，贯通南北交通。" }),
+  eventRange({ id: "sui-campaign-goguryeo", name: "隋炀帝三征高丽", kind: "battle", timeMode: "span", start: ym(612), end: ym(614), dynastyIds: ["sui"], participantIds: ["yang-guang"], summary: "隋炀帝三次大规模远征高句丽，劳民伤财，隋军惨败，国力大损。" }),
   eventPoint({ id: "yang-you-enthroned", name: "李渊拥杨侑称帝", kind: "politics", at: ym(617), dynastyIds: ["sui"], participantIds: ["li-yuan", "yang-you"], summary: "李渊入长安，拥隋炀帝孙杨侑为帝，与江都炀帝形成二主并存。" }),
   eventPoint({ id: "sui-fall", name: "隋朝灭亡", kind: "politics", at: ym(618), dynastyIds: ["sui"], participantIds: ["yang-guang", "yuwen-huaji"], summary: "江都兵变，隋炀帝被杀，中央权威瓦解；长安、江都、东都各立隋室傀儡。" }),
   eventPoint({ id: "yang-hao-enthroned", name: "宇文化及立杨浩", kind: "politics", at: ym(618), dynastyIds: ["sui"], participantIds: ["yuwen-huaji", "yang-hao"], summary: "宇文化及弑炀帝后，拥立秦王杨浩，江都隋室由此续统。" }),
@@ -523,12 +524,15 @@ const events = [
   eventPoint({ id: "tang-founded", name: "唐朝建立", kind: "politics", at: ym(618), dynastyIds: ["tang", "sui"], participantIds: ["li-yuan", "yang-you"], summary: "杨侑禅让，李渊称帝，定都长安，唐朝开始。" }),
   eventPoint({ id: "yang-tong-killed", name: "杨侗被杀", kind: "politics", at: ym(619), dynastyIds: ["sui"], participantIds: ["wang-shichong", "yang-tong"], summary: "王世充杀杨侗，自立为帝，名义隋主终结。" }),
   eventPoint({ id: "xuanwumen", name: "玄武门之变", kind: "politics", precision: "month", dateNote: "武德九年六月，626年", at: ym(626, 7), dynastyIds: ["tang"], participantIds: ["li-shimin"], summary: "李世民发动政变，杀兄弟即位太子，后登基。" }),
+  eventPoint({ id: "hulao-battle", name: "虎牢关之战", kind: "battle", precision: "month", dateNote: "武德四年四月，李世民大败窦建德", at: ym(621, 4), dynastyIds: ["tang"], participantIds: ["li-shimin"], summary: "李世民于虎牢关以少胜多，俘窦建德、王世充，唐朝统一中原。" }),
   eventRange({ id: "zhenguan-rule", name: "贞观之治", kind: "politics", timeMode: "span", start: ym(627), end: ym(649), dynastyIds: ["tang"], participantIds: ["li-shimin"], summary: "唐太宗任贤纳谏，轻徭薄赋，为盛唐奠基。" }),
   eventRange({ id: "kaiyuan-prosperity", name: "开元盛世", kind: "politics", timeMode: "span", start: ym(713), end: ym(741), dynastyIds: ["tang"], participantIds: ["li-longji"], summary: "唐玄宗前期励精图治，唐朝国力达于鼎盛。" }),
   eventRange({ id: "anshi-rebellion", name: "安史之乱", kind: "battle", timeMode: "span", dateNote: "755–763年", start: ym(755), end: ym(763), dynastyIds: ["tang"], participantIds: ["li-longji", "an-lushan"], summary: "安禄山、史思明叛乱，唐朝由盛转衰。" }),
   eventPoint({ id: "huang-chao-uprising", name: "黄巢起义", kind: "politics", at: ym(875), dynastyIds: ["tang"], participantIds: ["huang-chao"], summary: "黄巢领导农民起义，攻入长安，唐廷名存实亡。" }),
   eventPoint({ id: "zhu-wen-usurp", name: "朱温篡唐", kind: "politics", at: ym(907), dynastyIds: ["tang", "liang-hou"], participantIds: ["zhu-wen", "li-zhu-tang"], summary: "朱温废唐哀帝自立，改国号梁，唐朝终结，五代开始。" }),
   eventPoint({ id: "chenqiao-mutiny", name: "陈桥兵变", kind: "politics", at: ym(960), dynastyIds: ["zhou-hou", "song-north"], participantIds: ["zhao-kuangyin", "chai-zongxun"], summary: "赵匡胤黄袍加身，代后周建宋，五代终结。" }),
+  eventPoint({ id: "gaoliang-river-battle", name: "高梁河之战", kind: "battle", precision: "month", dateNote: "太平兴国四年六月，宋太宗北伐败于辽", at: ym(979, 6), dynastyIds: ["song-north"], participantIds: ["zhao-kuangyi"], summary: "宋太宗率军北伐辽国，于高梁河被耶律休哥击败，宋军溃退。" }),
+  eventRange({ id: "xiangyang-siege", name: "襄樊之战", kind: "battle", timeMode: "span", start: ym(1268), end: ym(1273), dynastyIds: ["song-south"], participantIds: ["zhao-qi"], summary: "蒙古军围攻襄阳、樊城六年，吕文焕降元，南宋长江防线洞开。" }),
   eventRange({ id: "xining-reform", name: "王安石变法", kind: "politics", timeMode: "span", start: ym(1069), end: ym(1085), dynastyIds: ["song-north"], participantIds: ["zhao-xu", "wang-anshi"], summary: "宋神宗用王安石推行新法，富国强兵。" }),
   eventPoint({ id: "jingkang-incident", name: "靖康之变", kind: "politics", at: ym(1127), dynastyIds: ["song-north"], participantIds: ["zhao-ji", "zhao-huan"], summary: "金军破开封，俘徽钦二帝，北宋灭亡。" }),
   eventPoint({ id: "song-south-founded", name: "南宋建立", kind: "politics", at: ym(1127), dynastyIds: ["song-south"], participantIds: ["zhao-gou"], summary: "赵构南渡即位，定都临安，南宋开始。" }),
@@ -552,8 +556,10 @@ for (const group of reignGroups) {
 }
 relations.push(
   { id: "rel-xuanwumen-li-shimin", fromRef: "event:xuanwumen", toRef: "person:li-shimin", kind: "battle" },
+  { id: "rel-hulao-li-shimin", fromRef: "event:hulao-battle", toRef: "person:li-shimin", kind: "battle" },
   { id: "rel-anshi-an-lushan", fromRef: "event:anshi-rebellion", toRef: "person:an-lushan", kind: "battle" },
   { id: "rel-chenqiao-zhao", fromRef: "event:chenqiao-mutiny", toRef: "person:zhao-kuangyin", kind: "succession" },
+  { id: "rel-gaoliang-zhao", fromRef: "event:gaoliang-river-battle", toRef: "person:zhao-kuangyi", kind: "battle" },
 );
 
 // ── SQL helpers ─────────────────────────────────────────────────────────────

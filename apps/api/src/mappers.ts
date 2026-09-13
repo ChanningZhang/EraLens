@@ -50,8 +50,10 @@ export type RawReignRow = {
   preferred_appellation: unknown;
   start_year: number;
   start_month: number;
+  start_day: number | null;
   end_year: number;
   end_month: number;
+  end_day: number | null;
   start_abs: number;
   end_abs: number;
   precision: string;
@@ -145,8 +147,10 @@ export function mapReign(
     "preferredAppellation" in row ? row.preferredAppellation : row.preferred_appellation;
   const startYear = "startYear" in row ? row.startYear : row.start_year;
   const startMonth = "startMonth" in row ? row.startMonth : row.start_month;
+  const startDay = "startDay" in row ? row.startDay : row.start_day;
   const endYear = "endYear" in row ? row.endYear : row.end_year;
   const endMonth = "endMonth" in row ? row.endMonth : row.end_month;
+  const endDay = "endDay" in row ? row.endDay : row.end_day;
   const startAbs = "startAbs" in row ? row.startAbs : row.start_abs;
   const endAbs = "endAbs" in row ? row.endAbs : row.end_abs;
   const claimTrack = "claimTrack" in row ? row.claimTrack : row.claim_track;
@@ -170,8 +174,16 @@ export function mapReign(
         startAbs: era.startAbs,
         endAbs: era.endAbs,
       })),
-    start: { year: startYear, month: startMonth },
-    end: { year: endYear, month: endMonth },
+    start: {
+      year: startYear,
+      month: startMonth,
+      ...(startDay != null ? { day: startDay } : {}),
+    },
+    end: {
+      year: endYear,
+      month: endMonth,
+      ...(endDay != null ? { day: endDay } : {}),
+    },
     startAbs,
     endAbs,
     precision: row.precision as Reign["precision"],

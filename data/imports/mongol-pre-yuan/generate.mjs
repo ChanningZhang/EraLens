@@ -208,10 +208,23 @@ const events = [
     participantIds: ["hu-bilie", "ariq-boke"],
     summary: "蒙哥死后忽必烈与阿里不哥各举忽里台互不承认，1264年忽必烈获胜，帝国走向分裂。",
   }),
+  eventRange({
+    id: "mongol-campaign-song",
+    name: "蒙古攻宋",
+    kind: "battle",
+    timeMode: "span",
+    start: ym(1235),
+    end: ym(1279),
+    dynastyIds: ["mongol-empire", "song-south"],
+    participantIds: ["hu-bilie", "mongke"],
+    summary: "蒙古自窝阔台至忽必烈长期南征，经襄樊之战、崖山海战，最终灭南宋。",
+  }),
 ];
 
 const supplementalEventDynasties = [
   { eventId: "song-jin-alliance-mongol", dynastyId: "mongol-empire" },
+  { eventId: "mongol-campaign-song", dynastyId: "song-south" },
+  { eventId: "xiangyang-siege", dynastyId: "mongol-empire" },
 ];
 const supplementalEventParticipants = [
   { eventId: "song-jin-alliance-mongol", personId: "ogedei" },
@@ -234,6 +247,7 @@ for (const group of reignGroups) {
 relations.push(
   { id: "rel-great-khan-hu-bilie", fromRef: "event:great-khan-contention", toRef: "person:hu-bilie", kind: "battle" },
   { id: "rel-great-khan-ariq-boke", fromRef: "event:great-khan-contention", toRef: "person:ariq-boke", kind: "battle" },
+  { id: "rel-mongol-song-hu-bilie", fromRef: "event:mongol-campaign-song", toRef: "person:hu-bilie", kind: "battle" },
   { id: "rel-temujin-tolui-succession", fromRef: "person:temujin", toRef: "person:tolui", kind: "other" },
 );
 
@@ -278,10 +292,19 @@ const { persons: importPersons, reigns: importReigns } = finalizeImportReigns(
   reigns,
 );
 
+const removedMissingReignIds = [
+  "reign-missing-mongol-empire-a14736",
+  "reign-missing-mongol-empire-a14904",
+  "reign-missing-mongol-empire-a14988",
+];
+
 const sql = [
   "-- EraLens period import: mongol-pre-yuan",
   "-- Window: 1206-01 .. 1271-12",
   "BEGIN;",
+  "",
+  "-- remove stale 史料缺 placeholders (regency gaps are intentional blanks)",
+  `DELETE FROM reigns WHERE id IN (${removedMissingReignIds.map(sqlStr).join(", ")});`,
   "",
   "-- persons",
   ...importPersons.map(personSql),
@@ -337,7 +360,7 @@ const manifest = {
   ],
   notes: [
     "覆盖大蒙古国（1206–1271），五位普遍承认的大汗：成吉思汗、窝阔台、贵由、蒙哥、忽必烈（薛禅汗）。",
-    "1227–1229拖雷监国、1241–1246乃马真称制、1248–1251海迷失称制以事件收录，不建 reign。",
+    "1227–1229拖雷监国、1241–1246乃马真称制、1248–1251海迷失称制以事件收录，不建 reign；大汗间隔留白（同唐武周留白）。",
     "忽必烈 1271 年定国号大元后见 yuan-ming-qing；本包 reign-hu-bilie-mongol-empire 止于 1271。",
     "联蒙灭金事件见 song-liao-jin，本包补充 mongol-empire 关联。",
     "未收录钦察、伊利、察合台等汗国分治时期。",

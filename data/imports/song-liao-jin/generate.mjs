@@ -29,8 +29,9 @@ function sqlJson(value) {
   if (value == null) return "NULL";
   return `${sqlStr(JSON.stringify(value))}::jsonb`;
 }
-function ym(year, month = 1) {
-  return { year, month, abs: absMonth(year, month) };
+function ym(year, month = 1, day = null) {
+  const point = { year, month, abs: absMonth(year, month) };
+  return day == null ? point : { ...point, day };
 }
 function wiki(title) {
   return [{ label: "维基百科", url: `https://zh.wikipedia.org/wiki/${title}` }];
@@ -85,6 +86,70 @@ function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear,
     start: ym(startYear),
     end: ym(endYear, 12),
     eraNames,
+  });
+}
+
+function dynastyReignMonth(
+  dynastyId,
+  personId,
+  title,
+  posthumous,
+  temple,
+  startYear,
+  startMonth,
+  endYear,
+  endMonth,
+  eraNames = [],
+  preferred = null,
+) {
+  const pref =
+    preferred ??
+    defaultPreferredAppellation({ title, posthumous, temple, startYear, eraNames });
+  return reign({
+    id: `reign-${personId}-${dynastyId}`,
+    dynastyId,
+    personId,
+    title,
+    posthumousName: posthumous,
+    templeName: temple,
+    preferred: pref,
+    start: ym(startYear, startMonth),
+    end: ym(endYear, endMonth),
+    eraNames,
+    precision: "month",
+  });
+}
+
+function dynastyReignDay(
+  dynastyId,
+  personId,
+  title,
+  posthumous,
+  temple,
+  startYear,
+  startMonth,
+  startDay,
+  endYear,
+  endMonth,
+  endDay,
+  eraNames = [],
+  preferred = null,
+) {
+  const pref =
+    preferred ??
+    defaultPreferredAppellation({ title, posthumous, temple, startYear, eraNames });
+  return reign({
+    id: `reign-${personId}-${dynastyId}`,
+    dynastyId,
+    personId,
+    title,
+    posthumousName: posthumous,
+    templeName: temple,
+    preferred: pref,
+    start: ym(startYear, startMonth, startDay),
+    end: ym(endYear, endMonth, endDay),
+    eraNames,
+    precision: "day",
   });
 }
 
@@ -197,8 +262,9 @@ const jinReigns = [
   dr("jin-nvzhen", "wanyan-jing", "金章宗", null, "章宗", 1189, 1208),
   dr("jin-nvzhen", "wanyan-yongji", "卫绍王", null, null, 1208, 1213),
   dr("jin-nvzhen", "wanyan-xun", "金宣宗", null, "宣宗", 1213, 1223),
-  dr("jin-nvzhen", "wanyan-shouxu", "金哀宗", null, "哀宗", 1223, 1234),
-  dr("jin-nvzhen", "wanyan-chenglin", "金末帝", null, null, 1234, 1234),
+  // 1234年2月9日蔡州陷落：哀宗殉国，承麟即位不足一日即战死。
+  dynastyReignMonth("jin-nvzhen", "wanyan-shouxu", "金哀宗", null, "哀宗", 1223, 1, 1234, 2),
+  dynastyReignDay("jin-nvzhen", "wanyan-chenglin", "金末帝", null, null, 1234, 2, 9, 1234, 2, 9),
 ];
 
 const reignGroups = [liaoReigns, jinReigns];
@@ -297,6 +363,26 @@ const events = [
     participantIds: ["zhao-yun", "wanyan-shouxu"],
     summary: "宋蒙结盟攻金，金哀宗殉国，金朝灭亡；宋随即遭蒙古南侵。",
   }),
+  eventPoint({
+    id: "yongle-campaign",
+    name: "雍熙北伐",
+    kind: "battle",
+    dateNote: "986年，宋太宗二次北伐辽国失利",
+    at: ym(986),
+    dynastyIds: ["song-north", "liao"],
+    participantIds: ["zhao-kuangyi"],
+    summary: "宋太宗遣潘美、杨业等北伐，岐沟关、陈家谷惨败，杨业殉国，宋辽转为守势。",
+  }),
+  eventPoint({
+    id: "haoshuichuan-battle",
+    name: "好水川之战",
+    kind: "battle",
+    dateNote: "1044年，西夏大败宋军",
+    at: ym(1044),
+    dynastyIds: ["song-north"],
+    participantIds: ["zhao-zhen"],
+    summary: "西夏李元昊于好水川伏击宋军，韩琦、范仲淹主持的西线战事受挫。",
+  }),
 ];
 
 // Supplemental links for events already in sui-tang-wudai-song
@@ -342,9 +428,9 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_na
 }
 
 function reignSql(r) {
-  return `INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
-VALUES (${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(r.title)}, ${sqlStr(r.posthumousName ?? null)}, ${sqlStr(r.templeName ?? null)}, ${sqlJson(r.preferredAppellation)}, ${r.start.year}, ${r.start.month}, ${r.end.year}, ${r.end.month}, ${r.startAbs}, ${r.endAbs}, ${sqlStr(r.precision)})
-ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;`;
+  return `INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision)
+VALUES (${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(r.title)}, ${sqlStr(r.posthumousName ?? null)}, ${sqlStr(r.templeName ?? null)}, ${sqlJson(r.preferredAppellation)}, ${r.start.year}, ${r.start.month}, ${r.start.day ?? "NULL"}, ${r.end.year}, ${r.end.month}, ${r.end.day ?? "NULL"}, ${r.startAbs}, ${r.endAbs}, ${sqlStr(r.precision)})
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;`;
 }
 
 function eraNameSql(e) {
@@ -428,7 +514,7 @@ const manifest = {
     "金朝 id 为 jin-nvzhen，避免与两晋 jin-west/jin-east、后晋 jin-hou 冲突。",
     "南宋/北宋王朝与皇帝见 sui-tang-wudai-song；本包补充 event_dynasties 关联靖康之变、南宋建立。",
     "未收录西辽、北辽、东辽等辽亡后残余政权。",
-    "在位年取维基百科君主列表常见年表，precision=year。",
+    "在位年取维基百科君主列表常见年表，precision=year；1234年蔡州陷落同年更替用 month；承麟在位不足一日用 day。",
   ],
 };
 writeFileSync(path.join(__dirname, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);

@@ -3,7 +3,9 @@ import {
   type Dynasty,
   type Reign,
   claimRoleLabel,
-  formatAbsSpanTooltip,
+  formatReignSpanTooltip,
+  isSubMonthReign,
+  reignVisualBounds,
   isParallelClaim,
   resolveReignCardLabel,
   resolveReignCardMeta,
@@ -26,6 +28,8 @@ import {
 import { selectionStore } from "../state/selectionStore";
 import { HoverTooltip } from "./HoverTooltip";
 import styles from "./ReignCard.module.css";
+
+const MARKER_HIT_MIN_PX = 8;
 
 type Props = {
   reign: Reign;
@@ -58,8 +62,17 @@ export function ReignCard({
     rowCount,
     overlapsLowerRow,
   });
-  const left = projectAbs(viewport, startAbs);
-  const width = Math.max(1, projectAbs(viewport, endExclusive) - left);
+  const visual = reignVisualBounds(reign, startAbs, endExclusive);
+  const marker = isSubMonthReign(reign, startAbs, endExclusive);
+  const durationMonths = visual.endExclusive - visual.start;
+  const rawWidth = durationMonths * viewport.pxPerMonth;
+  const visualWidth = Math.max(0, rawWidth);
+  const anchor = (visual.start + visual.endExclusive) / 2;
+  const unitWidth = marker ? Math.max(visualWidth, MARKER_HIT_MIN_PX) : visualWidth;
+  const left = marker
+    ? projectAbs(viewport, anchor) - unitWidth / 2
+    : projectAbs(viewport, visual.start);
+  const cardInset = marker ? (unitWidth - visualWidth) / 2 : 0;
   const selected =
     selection.selected?.type === "reign" && selection.selected.id === reign.id;
 
@@ -76,11 +89,11 @@ export function ReignCard({
 
   const personName = personNameFromTimeline ?? personQuery.data;
   const label = resolveReignCardLabel(reign, personName, {
-    cardWidthPx: width,
+    cardWidthPx: unitWidth,
     dynastyId: dynasty.id,
   });
-  const layout = resolveReignCardTextLayout(width, [...label].length);
-  const detail = layout.level;
+  const layout = resolveReignCardTextLayout(unitWidth, [...label].length);
+  const detail = marker ? "below" : layout.level;
   const parallel = isParallelClaim(reign);
   // For concurrent claimants the seat (长安 / 洛阳) tells them apart far better
   // than the appellation kind, so it takes over the subtitle slot.
@@ -90,13 +103,13 @@ export function ReignCard({
       : resolveReignCardMeta(reign, personName);
   const metaGlyphCount = meta ? [...meta.name].length : 0;
   const showMeta = shouldShowReignCardMeta(
-    width,
+    unitWidth,
     [...label].length,
     metaGlyphCount,
   );
   const tooltipName = personName && personName !== label ? personName : label;
   const nameTooltip = meta ? `${tooltipName}　${meta.name}` : tooltipName;
-  const timeTooltip = formatAbsSpanTooltip(reign.startAbs, reign.endAbs);
+  const timeTooltip = formatReignSpanTooltip(reign);
   const claimTooltip = reign.claimRole
     ? `${claimRoleLabel(reign.claimRole)}${reign.claimLabel ? `・${reign.claimLabel}` : ""}`
     : undefined;
@@ -107,6 +120,7 @@ export function ReignCard({
   const className = useMemo(() => {
     return [
       styles.card,
+      marker ? styles.marker : "",
       detail === "wrap" ? styles.wrap : "",
       orthodox ? "orthodoxGold" : "",
       selected ? styles.selected : "",
@@ -114,14 +128,14 @@ export function ReignCard({
     ]
       .filter(Boolean)
       .join(" ");
-  }, [detail, orthodox, selected, reign.claimRole]);
+  }, [detail, marker, orthodox, selected, reign.claimRole]);
 
   return (
     <div
       className={styles.unit}
       style={{
         left,
-        width,
+        width: unitWidth,
         top: stackIndex * STACK_ROW_HEIGHT,
       }}
     >
@@ -132,6 +146,9 @@ export function ReignCard({
             className={className}
             style={{
               ["--card-color" as string]: color,
+              ...(marker
+                ? { left: cardInset, width: visualWidth, right: "auto" }
+                : {}),
               ...(detail === "wrap"
                 ? { ["--card-name-size" as string]: `${layout.nameFontPx}px` }
                 : {}),
