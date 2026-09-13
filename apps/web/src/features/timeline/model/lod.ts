@@ -23,7 +23,9 @@ export type ReignCardTextLayout = {
 };
 
 const CARD_HEIGHT = 48;
-const CARD_PAD_X = 20;
+const FULL_PAD_X = 20;
+/** Matches `.wrap { padding: 3px 2px }` — the old 20px pad made year-slivers unwrappable. */
+const WRAP_PAD_X = 4;
 const ROW_GAP = 6;
 const WRAP_PAD_Y = 6;
 const NAME_FONT_DEFAULT = 17;
@@ -40,8 +42,8 @@ function lineHeightForFont(fontPx: number): number {
   return Math.ceil(fontPx * 1.1);
 }
 
-function contentWidth(cardWidthPx: number): number {
-  return Math.max(0, cardWidthPx - CARD_PAD_X);
+function contentWidth(cardWidthPx: number, padX = FULL_PAD_X): number {
+  return Math.max(0, cardWidthPx - padX);
 }
 
 function wrappedLineCount(
@@ -49,7 +51,9 @@ function wrappedLineCount(
   glyphCount: number,
   fontPx: number,
 ): number | null {
-  const charsPerLine = Math.floor(contentWidth(cardWidthPx) / glyphPxForFont(fontPx));
+  const charsPerLine = Math.floor(
+    contentWidth(cardWidthPx, WRAP_PAD_X) / glyphPxForFont(fontPx),
+  );
   if (charsPerLine < 1) return null;
   return Math.ceil(glyphCount / charsPerLine);
 }
@@ -111,6 +115,23 @@ export function resolveReignCardTextLayout(
     nameFontPx: NAME_FONT_WRAP_DEFAULT,
     metaFontPx: META_FONT_DEFAULT,
   };
+}
+
+export type CaptionPlacement = "below" | "above";
+
+/**
+ * Hang the name under the bar unless a lower stack row already occupies that
+ * x-range (隋主线杨浩 above 杨侑). Then flip the caption above the bar.
+ */
+export function resolveReignCaptionPlacement(options: {
+  stackIndex: number;
+  rowCount: number;
+  overlapsLowerRow: boolean;
+}): CaptionPlacement {
+  if (options.stackIndex >= options.rowCount - 1 || !options.overlapsLowerRow) {
+    return "below";
+  }
+  return "above";
 }
 
 export function cardDetailLevel(

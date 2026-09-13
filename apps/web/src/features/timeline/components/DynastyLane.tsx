@@ -1,6 +1,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 import {
   getDynastyLaneGroup,
+  isOrthodoxReign,
   overlapsOrthodoxSpan,
   resolveActivePhaseDynastyId,
   resolveConcurrencySpans,
@@ -136,11 +137,7 @@ export function DynastyLane({
                 color={laneColor}
                 reigns={reigns}
                 personName={personNames.get(reign.personId)}
-                orthodox={overlapsOrthodoxSpan(
-                  reignDynasty,
-                  reign.startAbs,
-                  reign.endAbs,
-                )}
+                orthodox={isOrthodoxReign(reignDynasty, reign)}
               />
             );
           })}

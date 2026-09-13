@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   cardDetailLevel,
   personDetailLevel,
+  resolveReignCaptionPlacement,
   resolveReignCardTextLayout,
   shouldShowPersons,
   shouldShowReignCardMeta,
@@ -15,20 +16,45 @@ describe("cardDetailLevel", () => {
 
   it("wraps the full name inside the card before moving it outside", () => {
     expect(cardDetailLevel(50, 3)).toBe("wrap");
-    expect(cardDetailLevel(28, 3)).toBe("below");
+    expect(cardDetailLevel(28, 3)).toBe("wrap");
+  });
+
+  it("wraps a 2-glyph sliver like 杨浩 vertically inside a year-wide card", () => {
+    expect(cardDetailLevel(18, 2)).toBe("wrap");
+    expect(cardDetailLevel(16, 2)).toBe("wrap");
   });
 
   it("wraps vertically when only one glyph fits per line", () => {
     expect(cardDetailLevel(44, 4)).toBe("wrap");
-    expect(cardDetailLevel(16, 2)).toBe("below");
-    expect(cardDetailLevel(16, 3)).toBe("below");
+    expect(cardDetailLevel(16, 3)).toBe("wrap");
   });
 
-  it("places the name below the card when wrapping cannot fit", () => {
-    expect(cardDetailLevel(15, 3)).toBe("below");
+  it("places the name beside the card when wrapping cannot fit", () => {
     expect(cardDetailLevel(8, 2)).toBe("below");
     expect(cardDetailLevel(16, 4)).toBe("below");
     expect(cardDetailLevel(16, 5)).toBe("below");
+  });
+});
+
+describe("resolveReignCaptionPlacement", () => {
+  it("hangs the name below on the last stack row", () => {
+    expect(
+      resolveReignCaptionPlacement({
+        stackIndex: 2,
+        rowCount: 3,
+        overlapsLowerRow: false,
+      }),
+    ).toBe("below");
+  });
+
+  it("flips the caption above when a lower row already occupies that span", () => {
+    expect(
+      resolveReignCaptionPlacement({
+        stackIndex: 0,
+        rowCount: 3,
+        overlapsLowerRow: true,
+      }),
+    ).toBe("above");
   });
 });
 
@@ -42,10 +68,10 @@ describe("resolveReignCardTextLayout", () => {
   });
 
   it("steps down the font size for narrow wrapped cards", () => {
-    expect(resolveReignCardTextLayout(50, 3).level).toBe("wrap");
-    expect(resolveReignCardTextLayout(50, 3).nameFontPx).toBeLessThan(16);
-    expect(resolveReignCardTextLayout(44, 4).level).toBe("wrap");
-    expect(resolveReignCardTextLayout(44, 4).nameFontPx).toBeLessThan(16);
+    expect(resolveReignCardTextLayout(28, 3).level).toBe("wrap");
+    expect(resolveReignCardTextLayout(28, 3).nameFontPx).toBeLessThan(16);
+    expect(resolveReignCardTextLayout(18, 2).level).toBe("wrap");
+    expect(resolveReignCardTextLayout(18, 2).nameFontPx).toBeLessThan(16);
   });
 });
 

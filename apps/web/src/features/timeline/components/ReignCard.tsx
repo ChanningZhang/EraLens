@@ -13,7 +13,11 @@ import { getRepository } from "@/data/repository";
 import { useSelection } from "../hooks/useSelection";
 import { useViewport } from "../hooks/useViewport";
 import { projectAbs } from "../model/coordinates";
-import { resolveReignCardTextLayout, shouldShowReignCardMeta } from "../model/lod";
+import {
+  resolveReignCaptionPlacement,
+  resolveReignCardTextLayout,
+  shouldShowReignCardMeta,
+} from "../model/lod";
 import {
   assignReignStacks,
   resolveReignVisualSpan,
@@ -43,8 +47,17 @@ export function ReignCard({
   const viewport = useViewport();
   const selection = useSelection();
   const { startAbs, endExclusive, stackIndex } = resolveReignVisualSpan(reign, reigns);
-  const { rowCount } = assignReignStacks(reigns);
-  const showCaptionBelow = stackIndex === rowCount - 1;
+  const { items, rowCount } = assignReignStacks(reigns);
+  const overlapsLowerRow = items.some((item) => {
+    if (item.stackIndex <= stackIndex) return false;
+    const span = resolveReignVisualSpan(item.reign, reigns);
+    return span.startAbs < endExclusive && span.endExclusive > startAbs;
+  });
+  const captionPlacement = resolveReignCaptionPlacement({
+    stackIndex,
+    rowCount,
+    overlapsLowerRow,
+  });
   const left = projectAbs(viewport, startAbs);
   const width = Math.max(1, projectAbs(viewport, endExclusive) - left);
   const selected =
@@ -143,8 +156,14 @@ export function ReignCard({
           </button>
         )}
       </HoverTooltip>
-      {detail === "below" && showCaptionBelow && (
-        <span className={styles.caption}>{label}</span>
+      {detail === "below" && (
+        <span
+          className={
+            captionPlacement === "above" ? styles.captionAbove : styles.caption
+          }
+        >
+          {label}
+        </span>
       )}
     </div>
   );

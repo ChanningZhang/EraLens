@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { absMonth } from "./time";
 import {
   isOrthodoxAt,
+  isOrthodoxReign,
   overlapsOrthodoxSpan,
   ORTHODOX_END_ABS,
   ORTHODOX_FROM_ABS,
@@ -92,6 +93,24 @@ describe("orthodoxDynasties", () => {
     expect(
       overlapsOrthodoxSpan(jinWest, absMonth(266, 2), absMonth(290, 12)),
     ).toBe(true);
+  });
+
+  it("gives gold to the Sui main line, not to 杨侑 while 炀帝 still lived", () => {
+    const sui = {
+      id: "sui",
+      startAbs: absMonth(581),
+      endAbs: absMonth(618),
+    };
+    const yangGuang = { startAbs: absMonth(604), endAbs: absMonth(618) };
+    const yangHao = { startAbs: absMonth(618), endAbs: absMonth(618) };
+    const yangYou = {
+      startAbs: absMonth(617),
+      endAbs: absMonth(618),
+      claimTrack: "changan",
+    };
+    expect(isOrthodoxReign(sui, yangGuang)).toBe(true);
+    expect(isOrthodoxReign(sui, yangHao)).toBe(true);
+    expect(isOrthodoxReign(sui, yangYou)).toBe(false);
   });
 
   it("marks roc as orthodox from dynasty start", () => {

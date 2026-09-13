@@ -52,6 +52,7 @@ Task Progress:
   - 通行主线不填 `claim_track`（文帝→炀帝，弘光→隆武→永历）。
   - 并行政权填 `claim_track`（据点 kebab-case，如 `changan`、`lu-jian`）、`claim_label`（长安 / 绍兴监国）、`claim_role`（`puppet` 傀儡 / `rival` 对峙 / `regent` 监国）。
   - succession 只串主线，不把并行傀儡/监国串进继承链。
+  - 正统金色只覆主线。炀帝尚在时被拥立的杨侑不镀金；弑帝后的江都续统（杨浩）走主线。
 - 按用户字面范围收录：说「夏商周」只收三代王室，不自动展开春秋列国；同一王室可按习惯分期拆行（`zhou-west` / `zhou-east`，比照东汉）。
 - 每条实体记录来源（URL 或书名卷页），写入 `manifest.json` 的 `sources`；争议取舍写入 `notes`。
 - 只收录与**指定时期窗口相交**的实体；长跨度王朝（如唐）可只补窗口内在位与事件，勿重复插入已存在的完整王朝行（用 upsert 更新或跳过）。

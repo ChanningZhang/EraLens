@@ -1,3 +1,5 @@
+import { isParallelClaim } from "./claimTracks";
+import type { Reign } from "./schema";
 import { absMonth } from "./time";
 
 /** 大一统王朝自起始即为中国正统（展示为金色）。分裂期、偏安或割据政权不在此列。 */
@@ -31,6 +33,11 @@ export const ORTHODOX_FROM_ABS: Readonly<Record<string, number>> = {
 
 /** 在特定 AbsMonth 之前仍为中国正统（王朝存续更久时用于截断金色展示）。 */
 export const ORTHODOX_END_ABS: Readonly<Record<string, number>> = {
+  /**
+   * 王朝行止于 618 正月以对接唐，金色覆盖整年，使江都续统杨浩
+   * （618 起，炀帝被弑后）仍算正统。
+   */
+  sui: absMonth(618, 12),
   /** 1368 年顺帝北逃后中原正统归明；漠北延续不计正统。 */
   yuan: absMonth(1368),
 };
@@ -93,4 +100,17 @@ export function overlapsOrthodoxSpan(
   if (!span) return false;
   // Reigns starting at orthodox end (e.g. 元惠宗 1368) are post-orthodox.
   return startAbs < span.endAbs && endAbs >= span.startAbs;
+}
+
+/**
+ * Gold on a card: the dynasty span is orthodox *and* the reign is the
+ * conventionally counted line. Parallel claimants (隋恭帝杨侑 while 炀帝
+ * still lived, 南明鲁监国) stay on their own row without gold.
+ */
+export function isOrthodoxReign(
+  dynasty: OrthodoxDynasty & { endAbs: number },
+  reign: Pick<Reign, "startAbs" | "endAbs" | "claimTrack">,
+): boolean {
+  if (isParallelClaim(reign)) return false;
+  return overlapsOrthodoxSpan(dynasty, reign.startAbs, reign.endAbs);
 }

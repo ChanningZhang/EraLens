@@ -152,8 +152,8 @@ function nextColor() {
 
 const persons = [
   person("yang-guang", "杨广", ["皇帝"], "隋炀帝，开运河、三征高句丽；江都时期仍为名义皇帝，与长安杨侑并存；江都兵变被杀。", "隋炀帝"),
-  person("yang-you", "杨侑", ["皇帝"], "隋恭帝，李渊拥立，尊炀帝为太上皇；后禅让建唐。", "杨侑"),
-  person("yang-hao", "杨浩", ["皇帝"], "隋秦王，宇文化及江都兵变后拥立的傀儡皇帝，旋被废杀。", "杨浩"),
+  person("yang-you", "杨侑", ["皇帝"], "隋恭帝，李渊拥立时炀帝尚在江都，尊炀帝为太上皇；后禅让建唐。", "杨侑"),
+  person("yang-hao", "杨浩", ["皇帝"], "隋秦王，宇文化及弑炀帝后拥立，为江都隋室续统，旋被废杀。", "杨浩"),
   person("yang-tong", "杨侗", ["皇帝"], "隋越王，王世充等在东都拥立的傀儡皇帝，619年被杀，名义隋主终结。", "杨侗"),
   person("yuwen-huaji", "宇文化及", ["将领", "政治家"], "江都兵变主谋，杀隋炀帝后拥立杨浩。", "宇文化及"),
   person("wang-shichong", "王世充", ["将领", "政治家"], "隋末割据洛阳，拥立杨侗，后杀之自立。", "王世充"),
@@ -325,16 +325,13 @@ const dynasties = [
 const suiReignsCore = [
   dynastyReign("sui", "yang-jian", "隋文帝", "文皇帝", null, 581, 604, eras("reign-yang-jian", [{ name: "开皇", sy: 581, ey: 600 }, { name: "仁寿", sy: 601, ey: 604 }])),
   dynastyReign("sui", "yang-guang", "隋炀帝", "炀皇帝", null, 604, 618, eras("reign-yang-guang", [{ name: "大业", sy: 605, ey: 618 }])),
+  // 炀帝被弑后的江都续统，走主线金色；杨侑拥立时炀帝尚在，不入主线。
+  dynastyReign("sui", "yang-hao", "隋秦王", null, null, 618, 618),
 ];
 const suiReignsPuppets = [
   dynastyReign("sui", "yang-you", "隋恭帝", null, null, 617, 618, [], null, {
     track: "changan",
     label: "长安",
-    role: "puppet",
-  }),
-  dynastyReign("sui", "yang-hao", "隋秦王", null, null, 618, 618, [], null, {
-    track: "jiangdu",
-    label: "江都",
     role: "puppet",
   }),
   dynastyReign("sui", "yang-tong", "隋越王", null, null, 618, 619, [], null, {
@@ -494,7 +491,7 @@ const songSouthReigns = [
   dr("song-south", "zhao-bing", "宋帝昺", null, null, 1278, 1279),
 ];
 
-// Puppets (杨侑/杨浩/杨侗) are parallel, not a linear succession chain.
+// Puppets (杨侑/杨侗) are parallel; 杨浩 is on the main line after 炀帝.
 const reignGroups = [suiReignsCore, tangReigns, zhouWuReigns, wudaiReigns, shiguoReigns, songNorthReigns, songSouthReigns];
 const reigns = [suiReigns, tangReigns, zhouWuReigns, wudaiReigns, shiguoReigns, songNorthReigns, songSouthReigns].flat();
 
@@ -521,7 +518,7 @@ const events = [
   eventRange({ id: "grand-canal", name: "开凿大运河", kind: "culture", timeMode: "span", dateNote: "605年起大规模开凿，连通南北", start: ym(605), end: ym(610), dynastyIds: ["sui"], participantIds: ["yang-guang"], summary: "隋炀帝下令开凿大运河，贯通南北交通。" }),
   eventPoint({ id: "yang-you-enthroned", name: "李渊拥杨侑称帝", kind: "politics", at: ym(617), dynastyIds: ["sui"], participantIds: ["li-yuan", "yang-you"], summary: "李渊入长安，拥隋炀帝孙杨侑为帝，与江都炀帝形成二主并存。" }),
   eventPoint({ id: "sui-fall", name: "隋朝灭亡", kind: "politics", at: ym(618), dynastyIds: ["sui"], participantIds: ["yang-guang", "yuwen-huaji"], summary: "江都兵变，隋炀帝被杀，中央权威瓦解；长安、江都、东都各立隋室傀儡。" }),
-  eventPoint({ id: "yang-hao-enthroned", name: "宇文化及立杨浩", kind: "politics", at: ym(618), dynastyIds: ["sui"], participantIds: ["yuwen-huaji", "yang-hao"], summary: "宇文化及弑炀帝后，拥立秦王杨浩为傀儡皇帝。" }),
+  eventPoint({ id: "yang-hao-enthroned", name: "宇文化及立杨浩", kind: "politics", at: ym(618), dynastyIds: ["sui"], participantIds: ["yuwen-huaji", "yang-hao"], summary: "宇文化及弑炀帝后，拥立秦王杨浩，江都隋室由此续统。" }),
   eventPoint({ id: "yang-tong-enthroned", name: "东都拥立杨侗", kind: "politics", at: ym(618), dynastyIds: ["sui"], participantIds: ["wang-shichong", "yang-tong"], summary: "王世充等拥隋炀帝孙杨侗于东都即位，与长安、江都各立一主。" }),
   eventPoint({ id: "tang-founded", name: "唐朝建立", kind: "politics", at: ym(618), dynastyIds: ["tang", "sui"], participantIds: ["li-yuan", "yang-you"], summary: "杨侑禅让，李渊称帝，定都长安，唐朝开始。" }),
   eventPoint({ id: "yang-tong-killed", name: "杨侗被杀", kind: "politics", at: ym(619), dynastyIds: ["sui"], participantIds: ["wang-shichong", "yang-tong"], summary: "王世充杀杨侗，自立为帝，名义隋主终结。" }),
@@ -654,7 +651,7 @@ const manifest = {
     "十国各政权收录全部君主；五代收录全部皇帝。",
     "1279 崖山海战为南宋终结；元朝不在本包内。",
     "李显、李旦两度即位，在位拆为两段；690–705 年武周武则天，不与唐中宗重叠。",
-    "隋末并行用 claim_track：主线文帝→炀帝；changan/杨侑、jiangdu/杨浩、luoyang/杨侗。不串进继承链；杨侗延至619年。",
+    "隋末并行用 claim_track：主线文帝→炀帝→杨浩（江都续统，正统金色）；changan/杨侑、luoyang/杨侗为并行傀儡，不镀金、不串进继承链。",
   ],
 };
 writeFileSync(path.join(__dirname, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);

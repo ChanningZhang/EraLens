@@ -1,7 +1,7 @@
 import type { ClaimRole, Reign } from "./schema";
 
 /**
- * Concurrent claimants on one dynasty lane (隋末三帝, 南明鲁监国 / 绍武).
+ * Concurrent claimants on one dynasty lane (隋末长安杨侑 / 洛阳杨侗, 南明鲁监国 / 绍武).
  *
  * Do **not** invent extra dynasty rows, and do **not** clip cards sequentially
  * across rival courts. Each power base is a `claimTrack`:
