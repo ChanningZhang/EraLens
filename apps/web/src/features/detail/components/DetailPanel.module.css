@@ -38,6 +38,8 @@
   margin-bottom: var(--space-2);
   border-radius: 999px;
   background: var(--detail-accent, var(--color-accent));
+  overflow: hidden;
+  position: relative;
 }
 
 .title {

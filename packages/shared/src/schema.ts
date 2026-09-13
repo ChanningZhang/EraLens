@@ -252,5 +252,5 @@ export const COLOR_VALUES: Record<ColorToken, string> = {
   clay: "#B06E52",
   sage: "#7D9172",
   slate: "#636882",
-  gold: "#E5C18A",
+  gold: "#C9A227",
 };

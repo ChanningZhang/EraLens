@@ -1,0 +1,81 @@
+:root {
+  --orthodox-gold-1: #fffef9;
+  --orthodox-gold-2: #faf0d0;
+  --orthodox-gold-3: #f2de98;
+  --orthodox-gold-4: #e8c96a;
+  --orthodox-gold-5: #d4ad42;
+  --orthodox-gold-border: #e0c878;
+  --orthodox-gold-glow: rgba(240, 210, 120, 0.45);
+  --orthodox-gold-specular: rgba(255, 255, 250, 0.98);
+  --orthodox-gold-divider: color-mix(in srgb, #b8922a 58%, #6b5424);
+}
+
+[data-theme="dark"] {
+  --orthodox-gold-1: #fff8ec;
+  --orthodox-gold-2: #f5e6b8;
+  --orthodox-gold-3: #ecd080;
+  --orthodox-gold-4: #deb850;
+  --orthodox-gold-5: #c9a038;
+  --orthodox-gold-border: #e8cc70;
+  --orthodox-gold-glow: rgba(245, 215, 130, 0.35);
+  --orthodox-gold-specular: rgba(255, 252, 240, 0.92);
+  --orthodox-gold-divider: color-mix(in srgb, #c9a038 62%, #8a7030);
+}
+
+.orthodoxGold {
+  overflow: hidden;
+  contain: paint;
+  color: color-mix(in srgb, var(--color-ink) 88%, var(--orthodox-gold-5));
+  border: 1px solid var(--orthodox-gold-border) !important;
+  background:
+    linear-gradient(
+      180deg,
+      var(--orthodox-gold-1) 0%,
+      var(--orthodox-gold-2) 28%,
+      var(--orthodox-gold-3) 56%,
+      var(--orthodox-gold-4) 82%,
+      color-mix(in srgb, var(--orthodox-gold-4) 72%, var(--orthodox-gold-2)) 100%
+    ) !important;
+  box-shadow:
+    inset 0 1px 0 var(--orthodox-gold-specular),
+    inset 0 -1px 0 color-mix(in srgb, var(--orthodox-gold-4) 16%, transparent),
+    0 0 0 1px color-mix(in srgb, var(--orthodox-gold-3) 45%, white);
+}
+
+.orthodoxGold::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.42;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(255, 255, 255, 0.08) 42%,
+      rgba(255, 255, 255, 0.04) 58%,
+      rgba(255, 255, 255, 0.28) 100%
+    );
+}
+
+.orthodoxGold--muted {
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--orthodox-gold-1) 80%, var(--color-surface)) 0%,
+      var(--orthodox-gold-2) 32%,
+      var(--orthodox-gold-3) 64%,
+      var(--orthodox-gold-4) 100%
+    ) !important;
+}
+
+.orthodoxGold--dashed {
+  border-style: dashed !important;
+}
+
+.orthodoxGold--accent {
+  display: block;
+  height: 3px;
+  border-radius: 999px;
+}

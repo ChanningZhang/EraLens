@@ -460,14 +460,16 @@ const dynasties = [
 // ── reigns ─────────────────────────────────────────────────────────────────
 
 const jinWestReigns = [
-  dynastyReign(
+  dynastyReignMonth(
     "jin-west",
     "sima-yan",
     "晋武帝",
     "武皇帝",
     "世祖",
     266,
+    2,
     290,
+    12,
     eras("reign-sima-yan", [
       { name: "泰始", sy: 265, ey: 274 },
       { name: "咸宁", sy: 275, ey: 280 },

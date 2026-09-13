@@ -2,8 +2,10 @@ import { describe, expect, it } from "vitest";
 import { absMonth } from "./time";
 import {
   isOrthodoxAt,
+  overlapsOrthodoxSpan,
   ORTHODOX_FROM_ABS,
   resolveOrthodoxFromAbs,
+  resolveOrthodoxSpan,
 } from "./orthodoxDynasties";
 import {
   ORTHODOX_COLOR_TOKEN,
@@ -27,6 +29,33 @@ describe("orthodoxDynasties", () => {
   it("prefers persisted orthodoxFromAbs override", () => {
     const dynasty = { id: "qin", startAbs: absMonth(-770), orthodoxFromAbs: absMonth(-220) };
     expect(resolveOrthodoxFromAbs(dynasty)).toBe(absMonth(-220));
+  });
+
+  it("builds orthodox span from orthodox start through dynasty end", () => {
+    const qin = {
+      id: "qin",
+      startAbs: absMonth(-770),
+      endAbs: absMonth(-206),
+    };
+    expect(resolveOrthodoxSpan(qin)).toEqual({
+      startAbs: ORTHODOX_FROM_ABS.qin,
+      endAbs: absMonth(-206),
+    });
+  });
+
+  it("marks reigns that overlap orthodox span even when startAbs is earlier", () => {
+    const jinWest = {
+      id: "jin-west",
+      startAbs: absMonth(266, 2),
+      endAbs: absMonth(316, 4),
+    };
+    expect(isOrthodoxAt(jinWest, absMonth(266, 1))).toBe(false);
+    expect(
+      overlapsOrthodoxSpan(jinWest, absMonth(266, 1), absMonth(290, 12)),
+    ).toBe(true);
+    expect(
+      overlapsOrthodoxSpan(jinWest, absMonth(266, 2), absMonth(290, 12)),
+    ).toBe(true);
   });
 });
 

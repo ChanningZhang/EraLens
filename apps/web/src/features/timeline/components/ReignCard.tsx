@@ -25,18 +25,18 @@ type Props = {
   reign: Reign;
   dynasty: Dynasty;
   color: string;
-  orthodox?: boolean;
   reigns: Reign[];
   personName?: string;
+  orthodox?: boolean;
 };
 
 export function ReignCard({
   reign,
   dynasty,
   color,
-  orthodox = false,
   reigns,
   personName: personNameFromTimeline,
+  orthodox = false,
 }: Props) {
   const viewport = useViewport();
   const selection = useSelection();
@@ -82,7 +82,7 @@ export function ReignCard({
     return [
       styles.card,
       detail === "wrap" ? styles.wrap : "",
-      orthodox ? styles.orthodox : "",
+      orthodox ? "orthodoxGold" : "",
       selected ? styles.selected : "",
     ]
       .filter(Boolean)

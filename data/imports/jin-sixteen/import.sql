@@ -1257,7 +1257,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'cheng-han', '成汉', ARRAY['成','汉','大成'], 'cn', 'east_asia',
   304, 1, 347, 1,
-  3648, 4164, 'year', 'indigo', NULL,
+  3648, 4164, 'year', 'azure', NULL,
   '李雄据益州，304年建号，347年桓温伐蜀后灭亡。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1279,7 +1279,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'han-zhao', '汉赵', ARRAY['前赵','汉','赵'], 'cn', 'east_asia',
   304, 1, 329, 1,
-  3648, 3948, 'year', 'moss', NULL,
+  3648, 3948, 'year', 'cinnabar', NULL,
   '刘渊举兵反晋，304年建汉；329年石勒灭之，改国号赵。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1301,7 +1301,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'zhao-back', '后赵', ARRAY['赵','魏'], 'cn', 'east_asia',
   319, 1, 351, 1,
-  3828, 4212, 'year', 'mineral', NULL,
+  3828, 4212, 'year', 'jade', NULL,
   '石勒据襄国，319年建后赵；351年内乱，冉闵篡位。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1323,7 +1323,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'liang-front', '前凉', ARRAY['凉'], 'cn', 'east_asia',
   301, 1, 376, 1,
-  3612, 4512, 'year', 'cinnabar', NULL,
+  3612, 4512, 'year', 'indigo', NULL,
   '张轨301年任凉州刺史，张氏据河西百余年；376年前秦灭之。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1345,7 +1345,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'yan-front', '前燕', ARRAY['燕'], 'cn', 'east_asia',
   337, 1, 370, 1,
-  4044, 4440, 'year', 'stone', NULL,
+  4044, 4440, 'year', 'coral', NULL,
   '慕容氏据辽东，337年慕容皝称燕王；370年前秦灭之。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1367,7 +1367,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'qin-front', '前秦', ARRAY['秦'], 'cn', 'east_asia',
   351, 1, 394, 1,
-  4212, 4728, 'year', 'grape', NULL,
+  4212, 4728, 'year', 'moss', NULL,
   '苻氏据关中，苻坚一度统一北方；淝水之战后崩溃。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1389,7 +1389,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'yan-back', '后燕', ARRAY['燕'], 'cn', 'east_asia',
   384, 1, 409, 1,
-  4608, 4908, 'year', 'wisteria', NULL,
+  4608, 4908, 'year', 'plum', NULL,
   '慕容垂淝水后复国，都中山；409年慕容熙被杀，后燕衰亡。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1411,7 +1411,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'qin-back', '后秦', ARRAY['秦'], 'cn', 'east_asia',
   384, 1, 417, 1,
-  4608, 5004, 'year', 'ochre', NULL,
+  4608, 5004, 'year', 'mineral', NULL,
   '姚苌杀苻坚建后秦，都长安；417年刘裕北伐灭之。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1433,7 +1433,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'qin-xi', '西秦', ARRAY['秦'], 'cn', 'east_asia',
   385, 1, 431, 1,
-  4620, 5172, 'year', 'indigo', NULL,
+  4620, 5172, 'year', 'amber', NULL,
   '乞伏氏据陇右，386年乞伏国仁建西秦；431年赫连定俘杀乞伏暮末。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1455,7 +1455,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'liang-back', '后凉', ARRAY['凉'], 'cn', 'east_asia',
   386, 1, 403, 1,
-  4632, 4836, 'year', 'moss', NULL,
+  4632, 4836, 'year', 'grape', NULL,
   '吕光据凉州，386年建后凉；403年南凉、北凉攻灭。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1477,7 +1477,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'liang-south', '南凉', ARRAY['凉'], 'cn', 'east_asia',
   397, 1, 414, 1,
-  4764, 4968, 'year', 'mineral', NULL,
+  4764, 4968, 'year', 'sage', NULL,
   '秃发氏据青海，397年建南凉；414年降西秦。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1499,7 +1499,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'liang-xi', '西凉', ARRAY['凉'], 'cn', 'east_asia',
   400, 1, 421, 1,
-  4800, 5052, 'year', 'cinnabar', NULL,
+  4800, 5052, 'year', 'stone', NULL,
   '李暠据敦煌，400年建西凉；421年北凉沮渠蒙逊灭之。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1521,7 +1521,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'liang-north', '北凉', ARRAY['凉'], 'cn', 'east_asia',
   397, 1, 439, 1,
-  4764, 5268, 'year', 'stone', NULL,
+  4764, 5268, 'year', 'clay', NULL,
   '沮渠氏据河西，397年建北凉；439年北魏太武帝灭之，十六国时期终结。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1543,7 +1543,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'yan-south', '南燕', ARRAY['燕'], 'cn', 'east_asia',
   398, 1, 410, 1,
-  4776, 4920, 'year', 'grape', NULL,
+  4776, 4920, 'year', 'wisteria', NULL,
   '慕容德据广固，398年建南燕；410年刘裕北伐灭之。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1565,7 +1565,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'yan-north', '北燕', ARRAY['燕'], 'cn', 'east_asia',
   407, 1, 436, 1,
-  4884, 5232, 'year', 'wisteria', NULL,
+  4884, 5232, 'year', 'slate', NULL,
   '冯跋据和龙，407年建北燕；436年北魏灭之。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1612,8 +1612,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-sima-yan', 'jin-west', 'sima-yan', '晋武帝',
   '武皇帝', '世祖', '{"kind":"posthumous","name":"晋武帝"}'::jsonb,
-  266, 1, 290, 12,
-  3192, 3491, 'year'
+  266, 2, 290, 12,
+  3193, 3491, 'month'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,

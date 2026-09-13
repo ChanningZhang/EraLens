@@ -5,6 +5,7 @@ import { App } from "./app/App";
 import { installTimelineWheel } from "./features/timeline/hooks/useTimelineWheel";
 import "./design/tokens.css";
 import "./design/typography.css";
+import "./design/orthodoxGold.css";
 
 installTimelineWheel();
 

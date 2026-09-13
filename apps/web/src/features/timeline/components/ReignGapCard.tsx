@@ -36,7 +36,12 @@ export function ReignGapCard({ gap, dynasty, color, orthodox = false }: Props) {
       <HoverTooltip text={tooltipText}>
         {(handlers) => (
           <div
-            className={[styles.card, orthodox ? styles.orthodox : ""].filter(Boolean).join(" ")}
+            className={[
+              styles.card,
+              orthodox ? "orthodoxGold orthodoxGold--muted orthodoxGold--dashed" : "",
+            ]
+              .filter(Boolean)
+              .join(" ")}
             style={{ ["--card-color" as string]: color }}
             aria-label={`${dynasty.name} 国君记载缺`}
             {...handlers}

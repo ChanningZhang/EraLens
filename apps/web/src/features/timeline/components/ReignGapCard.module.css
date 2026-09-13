@@ -24,17 +24,18 @@
   overflow: hidden;
 }
 
-.card:hover {
+.card:global(.orthodoxGold) {
+  position: absolute;
+  border-color: color-mix(in srgb, var(--orthodox-gold-divider) 68%, transparent) !important;
+}
+
+.card:hover:not(:global(.orthodoxGold)) {
   background: color-mix(in srgb, var(--card-color) 10%, transparent);
 }
 
-.orthodox {
-  background: color-mix(in srgb, var(--card-color) 4%, transparent);
-  border-color: color-mix(in srgb, var(--card-color) 20%, var(--color-border));
-}
-
-.orthodox:hover {
-  background: color-mix(in srgb, var(--card-color) 7%, transparent);
+.card:global(.orthodoxGold) .label {
+  position: relative;
+  z-index: 2;
 }
 
 .label {

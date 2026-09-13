@@ -26,19 +26,34 @@
   overflow: hidden;
 }
 
-.card:hover {
+.card:hover:not(:global(.orthodoxGold)) {
   transform: translateY(-1px);
   background: color-mix(in srgb, var(--card-color) 20%, var(--color-surface));
   box-shadow: 0 2px 8px rgba(27, 25, 23, 0.08);
 }
 
-.orthodox {
-  background: color-mix(in srgb, var(--card-color) 10%, var(--color-surface));
-  border-color: color-mix(in srgb, var(--card-color) 16%, var(--color-border));
+.card:global(.orthodoxGold) {
+  position: absolute;
+  border-color: color-mix(in srgb, var(--orthodox-gold-divider) 72%, transparent) !important;
 }
 
-.orthodox:hover {
-  background: color-mix(in srgb, var(--card-color) 14%, var(--color-surface));
+.card:global(.orthodoxGold):hover {
+  transform: translateY(-1px);
+}
+
+.card:global(.orthodoxGold) .content,
+.card:global(.orthodoxGold) .name,
+.card:global(.orthodoxGold) .meta {
+  position: relative;
+  z-index: 2;
+}
+
+.card:global(.orthodoxGold).selected {
+  box-shadow:
+    inset 3px 0 0 var(--color-accent),
+    inset 0 1px 0 var(--orthodox-gold-specular),
+    0 0 0 1px var(--orthodox-gold-border),
+    0 0 14px color-mix(in srgb, var(--orthodox-gold-glow) 65%, transparent);
 }
 
 .selected {

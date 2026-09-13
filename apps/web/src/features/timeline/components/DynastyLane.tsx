@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import {
-  isOrthodoxDisplayAt,
+  overlapsOrthodoxSpan,
   resolveDynastyColorValue,
   type Dynasty,
   type Reign,
@@ -58,8 +58,12 @@ export function DynastyLane({ dynasty, reigns, personNames, top }: Props) {
               key={`gap-${gap.startAbs}-${gap.endExclusive}`}
               gap={gap}
               dynasty={dynasty as Dynasty}
-              color={resolveDynastyColorValue(dynasty, gap.startAbs)}
-              orthodox={isOrthodoxDisplayAt(dynasty, gap.startAbs)}
+              color={laneColor}
+              orthodox={overlapsOrthodoxSpan(
+                dynasty,
+                gap.startAbs,
+                gap.endExclusive - 1,
+              )}
             />
           ))}
           {items.map(({ reign }) => (
@@ -67,10 +71,14 @@ export function DynastyLane({ dynasty, reigns, personNames, top }: Props) {
               key={reign.id}
               reign={reign}
               dynasty={dynasty as Dynasty}
-              color={resolveDynastyColorValue(dynasty, reign.startAbs)}
-              orthodox={isOrthodoxDisplayAt(dynasty, reign.startAbs)}
+              color={laneColor}
               reigns={reigns}
               personName={personNames.get(reign.personId)}
+              orthodox={overlapsOrthodoxSpan(
+                dynasty,
+                reign.startAbs,
+                reign.endAbs,
+              )}
             />
           ))}
         </div>

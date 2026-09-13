@@ -1,0 +1,64 @@
+{
+  "slug": "three-kingdoms-late",
+  "title": "三国后期：曹魏与孙吴末帝",
+  "window": {
+    "startYear": 239,
+    "startMonth": 1,
+    "endYear": 280,
+    "endMonth": 5
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-13",
+  "counts": {
+    "persons": 5,
+    "dynasties": 0,
+    "reigns": 5,
+    "events": 0,
+    "relations": 5
+  },
+  "sources": [
+    {
+      "label": "曹魏",
+      "url": "https://zh.wikipedia.org/wiki/曹魏"
+    },
+    {
+      "label": "曹魏皇帝列表",
+      "url": "https://zh.wikipedia.org/wiki/曹魏皇帝列表"
+    },
+    {
+      "label": "曹芳",
+      "url": "https://zh.wikipedia.org/wiki/曹芳"
+    },
+    {
+      "label": "曹髦",
+      "url": "https://zh.wikipedia.org/wiki/曹髦"
+    },
+    {
+      "label": "曹奂",
+      "url": "https://zh.wikipedia.org/wiki/曹奂"
+    },
+    {
+      "label": "孙吴",
+      "url": "https://zh.wikipedia.org/wiki/孙吴"
+    },
+    {
+      "label": "孙吴皇帝列表",
+      "url": "https://zh.wikipedia.org/wiki/孙吴皇帝列表"
+    },
+    {
+      "label": "孙休",
+      "url": "https://zh.wikipedia.org/wiki/孙休"
+    },
+    {
+      "label": "孙皓",
+      "url": "https://zh.wikipedia.org/wiki/孙皓"
+    }
+  ],
+  "notes": [
+    "补录曹魏曹叡之后曹芳、曹髦、曹奂，及孙吴孙亮之后孙休、孙皓。",
+    "在位起止据《三国志》及通行年表，precision=month。",
+    "曹芳、曹髦谥号非完整皇帝谥，title 取通行称呼。",
+    "曹魏、孙吴王朝行已存在于 seed，本包仅补人物与在位。"
+  ]
+}

@@ -59,3 +59,25 @@ export function isOrthodoxAt(dynasty: OrthodoxDynasty, atAbs: number): boolean {
   const from = resolveOrthodoxFromAbs(dynasty);
   return from != null && atAbs >= from;
 }
+
+export function resolveOrthodoxSpan(
+  dynasty: OrthodoxDynasty & { endAbs: number },
+): { startAbs: number; endAbs: number } | null {
+  const from = resolveOrthodoxFromAbs(dynasty);
+  if (from == null) return null;
+  const startAbs = Math.max(from, dynasty.startAbs);
+  const endAbs = dynasty.endAbs;
+  if (startAbs > endAbs) return null;
+  return { startAbs, endAbs };
+}
+
+/** True when [startAbs, endAbs] overlaps the dynasty's orthodox display span. */
+export function overlapsOrthodoxSpan(
+  dynasty: OrthodoxDynasty & { endAbs: number },
+  startAbs: number,
+  endAbs: number,
+): boolean {
+  const span = resolveOrthodoxSpan(dynasty);
+  if (!span) return false;
+  return startAbs <= span.endAbs && endAbs >= span.startAbs;
+}

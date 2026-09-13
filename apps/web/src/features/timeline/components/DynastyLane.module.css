@@ -39,6 +39,8 @@
   display: flex;
   min-width: 0;
   max-width: 142px;
+  position: relative;
+  z-index: 1;
 }
 
 .name {
