@@ -19,7 +19,8 @@
     "endAbs": -19177,
     "precision": "year",
     "colorToken": "ochre",
-    "note": "夏商周断代工程拟夏始约前2070年、夏商分界约前1600年；具体王年多不可考，学界对其历史性仍有争议。"
+    "note": "夏商周断代工程拟夏始约前2070年、夏商分界约前1600年；具体王年多不可考，学界对其历史性仍有争议。",
+    "orthodoxFromAbs": -24828
   },
   {
     "id": "shang",
@@ -42,7 +43,8 @@
     "endAbs": -12540,
     "precision": "year",
     "colorToken": "mineral",
-    "note": "断代工程：商始约前1600年，盘庚迁殷约前1300年，武王克商前1046年。"
+    "note": "断代工程：商始约前1600年，盘庚迁殷约前1300年，武王克商前1046年。",
+    "orthodoxFromAbs": -19188
   },
   {
     "id": "zhou-west",
@@ -64,7 +66,8 @@
     "endAbs": -9229,
     "precision": "year",
     "colorToken": "indigo",
-    "note": "武王克商至犬戎破镐。列王年取夏商周断代工程《夏商周年表》。"
+    "note": "武王克商至犬戎破镐。列王年取夏商周断代工程《夏商周年表》。",
+    "orthodoxFromAbs": -12540
   },
   {
     "id": "zhou-east",
@@ -86,7 +89,8 @@
     "endAbs": -3049,
     "precision": "year",
     "colorToken": "moss",
-    "note": "平王东迁至秦灭周。王年取《史记》系统常见年表；东周王室衰微，列国争霸不另建王朝行。"
+    "note": "平王东迁至秦灭周。王年取《史记》系统常见年表；东周王室衰微，列国争霸不另建王朝行。",
+    "orthodoxFromAbs": -9228
   },
   {
     "id": "han-east",
@@ -108,7 +112,8 @@
     "endAbs": 2651,
     "precision": "year",
     "colorToken": "ochre",
-    "note": "光武帝刘秀建立"
+    "note": "光武帝刘秀建立",
+    "orthodoxFromAbs": 300
   },
   {
     "id": "wei",
@@ -130,7 +135,8 @@
     "endAbs": 3193,
     "precision": "month",
     "colorToken": "indigo",
-    "parentId": "three-kingdoms"
+    "parentId": "three-kingdoms",
+    "orthodoxFromAbs": 2651
   },
   {
     "id": "shu",
@@ -192,6 +198,7 @@
     "startAbs": 3193,
     "endAbs": 3795,
     "precision": "month",
-    "colorToken": "stone"
+    "colorToken": "stone",
+    "orthodoxFromAbs": 3193
   }
 ]

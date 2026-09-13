@@ -14,9 +14,10 @@ type Props = {
   gap: ReignGap;
   dynasty: Dynasty;
   color: string;
+  orthodox?: boolean;
 };
 
-export function ReignGapCard({ gap, dynasty, color }: Props) {
+export function ReignGapCard({ gap, dynasty, color, orthodox = false }: Props) {
   const viewport = useViewport();
   const left = projectAbs(viewport, gap.startAbs);
   const width = Math.max(1, projectAbs(viewport, gap.endExclusive) - left);
@@ -35,7 +36,7 @@ export function ReignGapCard({ gap, dynasty, color }: Props) {
       <HoverTooltip text={tooltipText}>
         {(handlers) => (
           <div
-            className={styles.card}
+            className={[styles.card, orthodox ? styles.orthodox : ""].filter(Boolean).join(" ")}
             style={{ ["--card-color" as string]: color }}
             aria-label={`${dynasty.name} 国君记载缺`}
             {...handlers}

@@ -4,6 +4,8 @@ import {
   resolveReignPrimaryLabel,
   resolveReignRelatedSubtitle,
 } from "./emperorAppellation";
+import { resolveDynastyColorToken } from "./dynastyColors";
+import { resolveOrthodoxFromAbs } from "./orthodoxDynasties";
 import { eventSpanAbs, formatEventTime } from "./eventTime";
 import {
   TimelineSliceSchema,
@@ -138,7 +140,10 @@ export function buildEntityDetail(
       ref,
       title: dynasty.name,
       subtitle: dynasty.altNames?.[0],
-      colorToken: dynasty.colorToken,
+      colorToken: resolveDynastyColorToken(
+        dynasty,
+        resolveOrthodoxFromAbs(dynasty) ?? dynasty.startAbs,
+      ),
       facts: [
         { label: "起止", value: `${dynasty.start.year} — ${dynasty.end.year}` },
         { label: "范围", value: dynasty.scope === "cn" ? "中国史" : dynasty.scope },
@@ -169,7 +174,9 @@ export function buildEntityDetail(
       ref,
       title,
       subtitle: resolveReignDetailSubtitle(reign, dynasty?.name, person?.name),
-      colorToken: dynasty?.colorToken,
+      colorToken: dynasty
+        ? resolveDynastyColorToken(dynasty, reign.startAbs)
+        : undefined,
       facts: resolveReignDetailFacts(reign),
       summary: person?.bio,
       related,

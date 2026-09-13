@@ -11,9 +11,9 @@
   "depth": "standard",
   "generatedAt": "2026-09-13",
   "counts": {
-    "persons": 435,
+    "persons": 431,
     "dynasties": 16,
-    "reigns": 421,
+    "reigns": 417,
     "events": 5,
     "relations": 4,
     "existingEventDynastyLinks": 29
@@ -67,7 +67,7 @@
   "notes": [
     "收录春秋主要列国与战国七雄（齐楚燕韩赵魏秦）及宋鲁卫郑曹吴越中山等。",
     "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
-    "秦国 upsert 已有 qin 行，将始年延至前770年秦襄公，与 qin-han 统一帝国段衔接。",
+    "秦国 upsert 已有 qin 行，将始年延至前770年秦襄公，与 qin-han 统一帝国段衔接；清理脚本保留 qin-han 的秦二世、子婴 reign。",
     "各国国君世系取维基百科大陆简体（zh-cn）诸侯君主列表与《史记》年表；按表头读取称号/姓名/在位年份，不用本地繁简转换。",
     "西周早中期无在位年的国君按世系排在分封后数十年内，单条在位不超过约 35 年，不把整段失考年摊到开国之君身上。",
     "齐太公不用维基齐国表的前1122年（旧克商年），与西周始年（前1046）对齐。",
@@ -75,6 +75,7 @@
     "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 precision: year。",
     "未收录薛、滕、杞、莒等小国；未收录战国末期的代、胶东等残余。",
     "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
-    "国君数据由 fetch-wiki-zh-cn.py + build-rulers.mjs 生成，共 421 条在位记录。"
+    "韩赵魏在位仅收录前403年册命立国之后；晋国卿大夫世系（赵简子等）不挂在三国行上。晋国止于前349年静公被杀。",
+    "国君数据由 fetch-wiki-zh-cn.py + build-rulers.mjs 生成，共 417 条在位记录。"
   ]
 }

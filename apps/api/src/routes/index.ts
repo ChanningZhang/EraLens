@@ -1,6 +1,5 @@
 import {
   buildEntityDetail,
-  computeBounds,
   EntityDetailSchema,
   personLifeAbs,
   rangeIntersectsWindow,
@@ -48,13 +47,13 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
   const dynastyRows = scope
     ? await prisma.$queryRaw<RawDynastyRow[]>`
         SELECT id, name, alt_names, scope, region, start_year, start_month, end_year, end_month,
-               start_abs, end_abs, precision, color_token, parent_id, note
+               start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
         FROM dynasties
         WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')
           AND scope = ${scope}`
     : await prisma.$queryRaw<RawDynastyRow[]>`
         SELECT id, name, alt_names, scope, region, start_year, start_month, end_year, end_month,
-               start_abs, end_abs, precision, color_token, parent_id, note
+               start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
         FROM dynasties
         WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')`;
 
@@ -180,8 +179,24 @@ export async function registerRoutes(app: FastifyInstance) {
 
   app.get("/bounds", async (_request, reply) => {
     reply.header("Cache-Control", CACHE_HEADER);
-    const store = await loadStore();
-    return computeBounds(store);
+    const [dynastySpan, eventSpan] = await Promise.all([
+      prisma.$queryRaw<{ min_abs: number | null; max_abs: number | null }[]>`
+        SELECT MIN(start_abs) AS min_abs, MAX(end_abs) AS max_abs FROM dynasties`,
+      prisma.$queryRaw<{ min_abs: number | null; max_abs: number | null }[]>`
+        SELECT MIN(COALESCE(at_abs, start_abs)) AS min_abs,
+               MAX(COALESCE(end_abs, at_abs)) AS max_abs
+        FROM events`,
+    ]);
+    const mins = [dynastySpan[0]?.min_abs, eventSpan[0]?.min_abs].filter(
+      (value): value is number => value != null,
+    );
+    const maxs = [dynastySpan[0]?.max_abs, eventSpan[0]?.max_abs].filter(
+      (value): value is number => value != null,
+    );
+    if (mins.length === 0 || maxs.length === 0) {
+      return { minAbs: 0, maxAbs: 5000 };
+    }
+    return { minAbs: Math.min(...mins), maxAbs: Math.max(...maxs) };
   });
 
   app.get("/timeline", async (request, reply) => {

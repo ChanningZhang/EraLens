@@ -471,17 +471,17 @@
       "zhou-east"
     ],
     "participantIds": [],
-    "dateNote": "取《史记》常见划分：平王东迁至周敬王末（前770–前476）",
+    "dateNote": "平王东迁（前770）至三家分晋（前403）；与战国以册命立国为界",
     "start": {
       "year": -770,
       "month": 1
     },
     "startAbs": -9228,
     "end": {
-      "year": -476,
+      "year": -403,
       "month": 12
     },
-    "endAbs": -5689,
+    "endAbs": -4813,
     "summary": "诸侯争霸、礼崩乐坏，周天子共主名存实亡。"
   },
   {
@@ -536,12 +536,12 @@
       "zhou-east"
     ],
     "participantIds": [],
-    "dateNote": "《史记》起周元王元年前475年，迄秦统一前221年；周室亡于前256年",
+    "dateNote": "以三家分晋、周天子册命韩赵魏为诸侯（前403）为起点，迄秦统一前221年",
     "start": {
-      "year": -475,
+      "year": -403,
       "month": 1
     },
-    "startAbs": -5688,
+    "startAbs": -4824,
     "end": {
       "year": -221,
       "month": 12

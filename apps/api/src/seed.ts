@@ -109,6 +109,7 @@ async function main() {
           endAbs: dynasty.endAbs,
           precision: dynasty.precision,
           colorToken: dynasty.colorToken,
+          orthodoxFromAbs: dynasty.orthodoxFromAbs,
           parentId: dynasty.parentId,
           note: dynasty.note,
         },

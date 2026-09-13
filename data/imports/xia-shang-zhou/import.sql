@@ -599,9 +599,9 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'lv-shang', '吕尚',
-  NULL, NULL,
-  NULL, NULL,
-  ARRAY['军事家','政治家'], '姜太公，辅武王克商，封于齐。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/姜子牙"}]'::jsonb
+  -1156, 1,
+  -1017, 1,
+  ARRAY['军事家','政治家'], '姜太公（姜子牙），辅武王克商，封于齐。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/姜子牙"}]'::jsonb
 )
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
@@ -3401,7 +3401,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('chunqiu', '春秋', 'politics', 'span', 'year', '取《史记》常见划分：平王东迁至周敬王末（前770–前476）', NULL, NULL, NULL, -770, 1, -9228, -476, 12, -5689, '诸侯争霸、礼崩乐坏，周天子共主名存实亡。')
+VALUES ('chunqiu', '春秋', 'politics', 'span', 'year', '平王东迁（前770）至三家分晋（前403）；与战国以册命立国为界', NULL, NULL, NULL, -770, 1, -9228, -403, 12, -4813, '诸侯争霸、礼崩乐坏，周天子共主名存实亡。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
   kind = EXCLUDED.kind,
@@ -3455,7 +3455,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('zhanguo', '战国', 'politics', 'span', 'year', '《史记》起周元王元年前475年，迄秦统一前221年；周室亡于前256年', NULL, NULL, NULL, -475, 1, -5688, -221, 12, -2629, '七雄兼并，变法图强，至秦始皇统一而结束。')
+VALUES ('zhanguo', '战国', 'politics', 'span', 'year', '以三家分晋、周天子册命韩赵魏为诸侯（前403）为起点，迄秦统一前221年', NULL, NULL, NULL, -403, 1, -4824, -221, 12, -2629, '七雄兼并，变法图强，至秦始皇统一而结束。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
   kind = EXCLUDED.kind,

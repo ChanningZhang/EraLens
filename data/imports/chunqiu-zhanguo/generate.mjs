@@ -7,6 +7,7 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { rulersByDynasty, rulerStats } from "./rulers.mjs";
+import { ORTHODOX_FROM_START } from "../lib/orthodoxDynasties.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -234,10 +235,10 @@ const dynasties = [
     scope: "cn",
     region: "east_asia",
     start: ym(-1042),
-    end: ym(-376, 12),
+    end: ym(-349, 12),
     precision: "year",
     colorToken: nextColor(),
-    note: "周成王封叔虞于唐，改国号晋；前403年三家分晋，公室至前376年废。",
+    note: "周成王封叔虞于唐，改国号晋；前403年三家分晋；前376年公室被废、另立傀儡君，前349年静公被杀而国亡。",
   },
   {
     id: "chu-chunqiu",
@@ -559,14 +560,17 @@ ON CONFLICT (id) DO UPDATE SET
 }
 
 function dynastySql(d) {
+  const orthodoxFromAbs =
+    d.orthodoxFromAbs ??
+    (d.id === "qin" ? absMonth(-221) : ORTHODOX_FROM_START.has(d.id) ? d.start.abs : null);
   return `INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
 ) VALUES (
   ${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlArray(d.altNames)}, ${sqlStr(d.scope)}, ${sqlStr(d.region)},
   ${d.start.year}, ${d.start.month}, ${d.end.year}, ${d.end.month},
-  ${d.start.abs}, ${d.end.abs}, ${sqlStr(d.precision)}, ${sqlStr(d.colorToken)}, NULL,
+  ${d.start.abs}, ${d.end.abs}, ${sqlStr(d.precision)}, ${sqlStr(d.colorToken)}, ${orthodoxFromAbs ?? "NULL"}, NULL,
   ${sqlStr(d.note)}
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -580,6 +584,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  orthodox_from_abs = EXCLUDED.orthodox_from_abs,
   note = EXCLUDED.note;`;
 }
 
@@ -649,9 +654,13 @@ VALUES (${sqlStr(r.id)}, ${sqlStr(from.type)}, ${sqlStr(from.id)}, ${sqlStr(to.t
 ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;`;
 }
 
+/** Reigns maintained by qin-han; must survive chunqiu-zhanguo stale cleanup on qin. */
+const QIN_HAN_PROTECTED_REIGN_IDS = ["reign-ying-huhai", "reign-ying-ziying"];
+const QIN_HAN_PROTECTED_PERSON_IDS = ["ying-huhai", "ying-ziying"];
+
 function staleReignCleanupSql(reignList, dynastyList) {
   const dynastyIds = dynastyList.map((d) => d.id);
-  const reignIds = reignList.map((r) => r.id);
+  const reignIds = [...new Set([...reignList.map((r) => r.id), ...QIN_HAN_PROTECTED_REIGN_IDS])];
   if (reignIds.length === 0 || dynastyIds.length === 0) return [];
 
   const dynastySql = dynastyIds.map(sqlStr).join(", ");
@@ -678,7 +687,7 @@ function staleReignCleanupSql(reignList, dynastyList) {
 }
 
 function orphanPersonCleanupSql(personList) {
-  const personIds = personList.map((p) => p.id);
+  const personIds = [...new Set([...personList.map((p) => p.id), ...QIN_HAN_PROTECTED_PERSON_IDS])];
   if (personIds.length === 0) return [];
 
   const personSql = personIds.map(sqlStr).join(", ");
@@ -784,7 +793,7 @@ const manifest = {
   notes: [
     "收录春秋主要列国与战国七雄（齐楚燕韩赵魏秦）及宋鲁卫郑曹吴越中山等。",
     "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
-    "秦国 upsert 已有 qin 行，将始年延至前770年秦襄公，与 qin-han 统一帝国段衔接。",
+    "秦国 upsert 已有 qin 行，将始年延至前770年秦襄公，与 qin-han 统一帝国段衔接；清理脚本保留 qin-han 的秦二世、子婴 reign。",
     "各国国君世系取维基百科大陆简体（zh-cn）诸侯君主列表与《史记》年表；按表头读取称号/姓名/在位年份，不用本地繁简转换。",
     "西周早中期无在位年的国君按世系排在分封后数十年内，单条在位不超过约 35 年，不把整段失考年摊到开国之君身上。",
     "齐太公不用维基齐国表的前1122年（旧克商年），与西周始年（前1046）对齐。",
@@ -792,6 +801,7 @@ const manifest = {
     "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 precision: year。",
     "未收录薛、滕、杞、莒等小国；未收录战国末期的代、胶东等残余。",
     "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
+    "韩赵魏在位仅收录前403年册命立国之后；晋国卿大夫世系（赵简子等）不挂在三国行上。晋国止于前349年静公被杀。",
     `国君数据由 fetch-wiki-zh-cn.py + build-rulers.mjs 生成，共 ${rulerStats.reigns} 条在位记录。`,
   ],
 };

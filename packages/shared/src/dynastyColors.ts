@@ -1,6 +1,9 @@
+import { isOrthodoxAt, type OrthodoxDynasty } from "./orthodoxDynasties";
 import { COLOR_TOKENS, COLOR_VALUES, type ColorToken } from "./schema";
 
 const LOOKBACK = 3;
+
+export const ORTHODOX_COLOR_TOKEN: ColorToken = "gold";
 
 function parseHex(hex: string): [number, number, number] {
   const value = hex.slice(1);
@@ -61,14 +64,35 @@ function compareDynastyStart(
   return a.startAbs - b.startAbs || a.id.localeCompare(b.id);
 }
 
+type DynastyColorInput = OrthodoxDynasty & { colorToken: ColorToken };
+
 /**
  * Runtime display color for a dynasty. Uses the persisted token so panning
  * never changes colors when timeline data is loaded in chunks.
+ * When `atAbs` is given and the dynasty is orthodox at that time, returns gold.
  */
 export function resolveDynastyColorToken(
-  dynasty: { colorToken: ColorToken },
+  dynasty: DynastyColorInput,
+  atAbs?: number,
 ): ColorToken {
+  if (atAbs != null && isOrthodoxAt(dynasty, atAbs)) {
+    return ORTHODOX_COLOR_TOKEN;
+  }
   return dynasty.colorToken;
+}
+
+export function resolveDynastyColorValue(
+  dynasty: DynastyColorInput,
+  atAbs?: number,
+): string {
+  return COLOR_VALUES[resolveDynastyColorToken(dynasty, atAbs)];
+}
+
+export function isOrthodoxDisplayAt(
+  dynasty: OrthodoxDynasty,
+  atAbs: number,
+): boolean {
+  return isOrthodoxAt(dynasty, atAbs);
 }
 
 /**

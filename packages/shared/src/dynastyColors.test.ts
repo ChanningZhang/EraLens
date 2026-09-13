@@ -16,8 +16,8 @@ function mockDynasties(count: number) {
 }
 
 describe("assignDistinctColorTokens", () => {
-  it("supports sixteen distinct palette tokens", () => {
-    expect(COLOR_TOKENS).toHaveLength(16);
+  it("supports seventeen palette tokens including gold for orthodox dynasties", () => {
+    expect(COLOR_TOKENS).toHaveLength(17);
   });
 
   it("keeps the first dynasty color unchanged", () => {
@@ -45,7 +45,7 @@ describe("assignDistinctColorTokens", () => {
     }
   });
 
-  it("resolveDynastyColorToken always returns the persisted token", () => {
+  it("resolveDynastyColorToken returns the persisted token without a time context", () => {
     const dynasty = {
       id: "tang",
       colorToken: "indigo" as ColorToken,

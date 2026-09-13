@@ -93,7 +93,7 @@ const NAME_OVERRIDES = {
   "qin-r27": "嬴稷",
   "fu-chai": "夫差",
   "helu": "阖闾",
-  "gou-jian": "勾践",
+  "gou-jian": "姒勾践",
   "wei-wen": "魏斯",
   "han-jing": "韩虔",
   "zhao-lie": "赵籍",
@@ -101,12 +101,12 @@ const NAME_OVERRIDES = {
   "ji-shuyu": "姬虞",
   "ji-shi": "姬奭",
   "song-weizi": "子启",
-  "yue-r5": "勾践",
-  "yue-r8": "翁",
-  "yue-r11": "无余",
+  "yue-r6": "姒与夷",
+  "yue-r8": "姒翁",
   "yan-r25": "姬桓",
   "yan-r35": "姬讙",
   "yan-r36": "姬遇",
+  "zhongshan-r0": "姬窟",
 };
 
 /** Title-keyed display names — do not use person index (sort order changes). */
@@ -137,11 +137,24 @@ const DYNASTY_START = {
   "wu-chunqiu": -585,
   "yue-chunqiu": -565,
   zhongshan: -414,
-  "han-warring": -424,
+  "han-warring": -403,
   "zhao-warring": -403,
-  "wei-warring": -424,
+  "wei-warring": -403,
   qin: -770,
 };
+
+/** 周天子册命韩赵魏为诸侯（三家分晋），独立诸侯国起点 */
+const WARRING_STATE_FOUNDING_YEAR = -403;
+
+/** Drop Jin-era 卿大夫 rulers; clip overlapping reigns to founding year. */
+function trimToIndependentState(rulers) {
+  return rulers
+    .filter((r) => r.end >= WARRING_STATE_FOUNDING_YEAR)
+    .map((r) => ({
+      ...r,
+      start: Math.max(r.start, WARRING_STATE_FOUNDING_YEAR),
+    }));
+}
 
 /** Interpolated / unknown-duration reigns must not look like multi-century lives. */
 const MAX_PLAUSIBLE_REIGN_YEARS = 70;
@@ -177,15 +190,15 @@ const SURNAME = {
   "zheng-chunqiu": "姬",
   "cao-chunqiu": "姬",
   "wu-chunqiu": "姬",
-  "yue-chunqiu": "",
-  zhongshan: "",
+  "yue-chunqiu": "姒",
+  zhongshan: "姬",
   "han-warring": "韩",
   "zhao-warring": "赵",
   "wei-warring": "魏",
   qin: "嬴",
 };
 
-const CLAN_SURNAMES = ["姜", "吕", "田", "姬", "熊", "芈", "子", "嬴", "赵", "魏", "韩", "燕", "戴"];
+const CLAN_SURNAMES = ["姜", "吕", "田", "姬", "熊", "芈", "子", "嬴", "赵", "魏", "韩", "燕", "戴", "姒"];
 
 function toSimplified(text) {
   // Sources are already zh-cn Wikipedia; normalize a few chars that still
@@ -583,7 +596,6 @@ function withSurname(dynastyId, name, title, surnameOverride = null) {
     return cleaned;
   }
   if (dynastyId === "wu-chunqiu" && /^(夫差|阖闾|寿梦|诸樊|僚)$/.test(cleaned)) return cleaned;
-  if (dynastyId === "yue-chunqiu" && /勾践|允常/.test(cleaned)) return cleaned;
   if (cleaned === title) return cleaned;
   return `${surname}${cleaned}`;
 }
@@ -654,6 +666,10 @@ function parseZhongshan() {
     if (next.title === "中山王𧊒" || next.title === "中山王胜") {
       next.title = "中山王胜";
       next.name = "胜";
+    }
+    // Early 公-style rulers lack wiki given names; leave blank so enrichRulers can apply 姬+谥号.
+    if (/^中山(武公|桓公|成公)$/.test(next.title) && finalizePersonName(next.name) === posthumousFromTitle(next.title)) {
+      next.name = "";
     }
     next.name = withSurname("zhongshan", next.name, next.title);
     fixed.push(next);
@@ -751,7 +767,7 @@ function makePersonId(dynastyId, title, name, index) {
   const nameKey = normalizeTitle(name);
   const override =
     PERSON_OVERRIDES[`${titleKey}|${nameKey}`] ||
-    PERSON_OVERRIDES[`${titleKey}|${nameKey.replace(/^(姜|姬|嬴|熊|田|吕|子|韩|赵|魏)/, "")}`];
+    PERSON_OVERRIDES[`${titleKey}|${nameKey.replace(/^(姜|姬|嬴|熊|田|吕|子|韩|赵|魏|姒)/, "")}`];
   if (override) {
     if (override === "jiang-xiaobai" && /田/.test(name)) return "tian-wu";
     if (override === "lv-shang" && /田/.test(name)) return "tian-he";
@@ -772,7 +788,7 @@ function resolvePersonDisplayName(title, name) {
 }
 
 /** Dynasties where wiki often lacks given names; use clan + posthumous (燕襄公 → 姬襄公). */
-const CLAN_POSTHUMOUS_DYNASTIES = new Set(["yan-chunqiu"]);
+const CLAN_POSTHUMOUS_DYNASTIES = new Set(["yan-chunqiu", "zhongshan"]);
 
 /** When wiki has no given name, use clan + posthumous (e.g. 燕襄公 → 姬襄公). */
 function clanNameWhenOnlyPosthumous(dynastyId, personName, title) {
@@ -835,31 +851,22 @@ const DYNASTY_SOURCES = {
   "yue-chunqiu": () => parseState("越国", "yue-chunqiu"),
   zhongshan: () => parseZhongshan(),
   "han-warring": () =>
-    parseState("韩国", "han-warring", { maxStart: -230, keepFromTitle: "韩武子" }).filter(
-      (r) => r.start <= -230 && r.end >= -424,
+    trimToIndependentState(
+      parseState("韩国", "han-warring", { maxStart: -230 }).filter(
+        (r) => r.start <= -230 && r.end >= WARRING_STATE_FOUNDING_YEAR,
+      ),
     ),
-  "zhao-warring": () => {
-    const leaders = parseWikiTables(sectionText(mainText, "赵国"), {
-      dynastyId: "zhao-warring",
-      includeLeaderTable: true,
-    }).filter((r) => r.start <= -403 && r.end >= -517);
-    const state = parseState("赵国", "zhao-warring", { maxStart: -222 }).filter(
-      (r) => r.start <= -222 && r.end >= -403,
-    );
-    return dedupeReigns(
-      [...leaders, ...state].map((r) => ({
-        ...r,
-        name: withSurname("zhao-warring", r.name, r.title),
-      })),
-    );
-  },
-  "wei-warring": () => {
-    const rulers = parseState("魏国", "wei-warring");
-    const out = mergeSamePersonSpans(rulers);
-    const wen = out.find((r) => r.title.includes("文侯"));
-    if (wen && wen.start > -410) wen.start = -424;
-    return out;
-  },
+  "zhao-warring": () =>
+    trimToIndependentState(
+      parseState("赵国", "zhao-warring", { maxStart: -222 })
+        .filter((r) => r.start <= -222 && r.end >= WARRING_STATE_FOUNDING_YEAR)
+        .map((r) => ({
+          ...r,
+          name: withSurname("zhao-warring", r.name, r.title),
+        })),
+    ),
+  "wei-warring": () =>
+    trimToIndependentState(mergeSamePersonSpans(parseState("魏国", "wei-warring"))),
   qin: () => parseQin(),
 };
 

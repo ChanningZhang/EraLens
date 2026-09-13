@@ -206,7 +206,7 @@ describe("resolveReignCardMeta for Zhongshan kings", () => {
           title: "中山王厝",
           preferredAppellation: { kind: "regnal", name: "中山王厝" },
         }),
-        "厝",
+        "姬厝",
       ),
     ).toEqual({ label: "称号", name: "中山王厝" });
     expect(
@@ -216,7 +216,7 @@ describe("resolveReignCardMeta for Zhongshan kings", () => {
           title: "中山王胜",
           preferredAppellation: { kind: "regnal", name: "中山王胜" },
         }),
-        "胜",
+        "姬胜",
       ),
     ).toEqual({ label: "称号", name: "中山王胜" });
   });

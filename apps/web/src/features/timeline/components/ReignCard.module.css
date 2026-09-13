@@ -32,6 +32,15 @@
   box-shadow: 0 2px 8px rgba(27, 25, 23, 0.08);
 }
 
+.orthodox {
+  background: color-mix(in srgb, var(--card-color) 10%, var(--color-surface));
+  border-color: color-mix(in srgb, var(--card-color) 16%, var(--color-border));
+}
+
+.orthodox:hover {
+  background: color-mix(in srgb, var(--card-color) 14%, var(--color-surface));
+}
+
 .selected {
   border-color: var(--color-accent);
   box-shadow: inset 3px 0 0 var(--color-accent);

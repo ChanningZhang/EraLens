@@ -46,6 +46,7 @@ export const ColorTokenSchema = z.enum([
   "clay",
   "sage",
   "slate",
+  "gold",
 ]);
 export type ColorToken = z.infer<typeof ColorTokenSchema>;
 export const COLOR_TOKENS = ColorTokenSchema.options;
@@ -62,6 +63,8 @@ export const DynastySchema = z.object({
   endAbs: z.number(),
   precision: PrecisionSchema.default("year"),
   colorToken: ColorTokenSchema,
+  /** AbsMonth from which this dynasty is displayed as orthodox (gold). Overrides built-in rules when set. */
+  orthodoxFromAbs: z.number().optional(),
   parentId: z.string().optional(),
   note: z.string().optional(),
 });
@@ -249,4 +252,5 @@ export const COLOR_VALUES: Record<ColorToken, string> = {
   clay: "#B06E52",
   sage: "#7D9172",
   slate: "#636882",
+  gold: "#E5C18A",
 };

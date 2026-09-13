@@ -31,8 +31,13 @@ export function AppShell() {
   useEffect(() => {
     if (boundsQuery.data) {
       viewportStore.setBounds(boundsQuery.data.minAbs, boundsQuery.data.maxAbs);
+      return;
     }
-  }, [boundsQuery.data]);
+    if (boundsQuery.isError) {
+      // Keep BCE panning usable when /bounds is temporarily unavailable.
+      viewportStore.setBounds(-30_000, 25_000);
+    }
+  }, [boundsQuery.data, boundsQuery.isError]);
 
   useEffect(() => {
     if (selection.highlightAbs !== null) {

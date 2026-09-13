@@ -28,6 +28,15 @@
   background: color-mix(in srgb, var(--card-color) 10%, transparent);
 }
 
+.orthodox {
+  background: color-mix(in srgb, var(--card-color) 4%, transparent);
+  border-color: color-mix(in srgb, var(--card-color) 20%, var(--color-border));
+}
+
+.orthodox:hover {
+  background: color-mix(in srgb, var(--card-color) 7%, transparent);
+}
+
 .label {
   margin: 0;
   font-size: 12px;

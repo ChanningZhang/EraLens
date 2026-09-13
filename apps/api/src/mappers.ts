@@ -34,6 +34,7 @@ export type RawDynastyRow = {
   end_abs: number;
   precision: string;
   color_token: string;
+  orthodox_from_abs: number | null;
   parent_id: string | null;
   note: string | null;
 };
@@ -101,6 +102,8 @@ export function mapDynasty(row: DbDynasty | RawDynastyRow): Dynasty {
   const startAbs = "startAbs" in row ? row.startAbs : row.start_abs;
   const endAbs = "endAbs" in row ? row.endAbs : row.end_abs;
   const colorToken = "colorToken" in row ? row.colorToken : row.color_token;
+  const orthodoxFromAbs =
+    "orthodoxFromAbs" in row ? row.orthodoxFromAbs : row.orthodox_from_abs;
   const parentId = "parentId" in row ? row.parentId : row.parent_id;
   const noteValue = row.note;
 
@@ -116,6 +119,7 @@ export function mapDynasty(row: DbDynasty | RawDynastyRow): Dynasty {
     endAbs,
     precision: row.precision as Dynasty["precision"],
     colorToken: colorToken as Dynasty["colorToken"],
+    orthodoxFromAbs: orthodoxFromAbs ?? undefined,
     parentId: parentId ?? undefined,
     note: noteValue ?? undefined,
   };

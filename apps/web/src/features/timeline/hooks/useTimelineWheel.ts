@@ -44,6 +44,22 @@ export function isStageVerticallyScrollable(
   return stageEl.scrollHeight > stageEl.clientHeight + 1;
 }
 
+/**
+ * When the stage is taller than its viewport, pure vertical wheel scrolls lanes.
+ * Any horizontal component (trackpad swipe left/right) must still pan the timeline.
+ */
+export function shouldDeferToStageVerticalScroll(
+  deltaX: number,
+  deltaY: number,
+  zoom: boolean,
+  stageScrollable: boolean,
+): boolean {
+  if (zoom || !stageScrollable) return false;
+  if (Math.abs(deltaX) >= Math.abs(deltaY)) return false;
+  if (Math.abs(deltaX) >= 1) return false;
+  return Math.abs(deltaY) > 0;
+}
+
 function resolveAnchorAbs(clientX: number): AbsMonth {
   const viewport = viewportStore.getSnapshot();
   const stageEl = document.querySelector(TIMELINE_STAGE);
@@ -61,10 +77,13 @@ function onWheel(event: WheelEvent) {
   const panEl = target instanceof Element ? target.closest(TIMELINE_PAN) : null;
 
   if (
-    !isZoomWheel(event) &&
     stageEl instanceof HTMLElement &&
-    Math.abs(event.deltaY) > Math.abs(event.deltaX) &&
-    isStageVerticallyScrollable(stageEl)
+    shouldDeferToStageVerticalScroll(
+      event.deltaX,
+      event.deltaY,
+      isZoomWheel(event),
+      isStageVerticallyScrollable(stageEl),
+    )
   ) {
     return;
   }

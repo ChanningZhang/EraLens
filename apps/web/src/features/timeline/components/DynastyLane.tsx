@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import {
-  COLOR_VALUES,
-  resolveDynastyColorToken,
+  isOrthodoxDisplayAt,
+  resolveDynastyColorValue,
   type Dynasty,
   type Reign,
 } from "@eralens/shared";
@@ -24,7 +24,7 @@ type Props = {
 };
 
 export function DynastyLane({ dynasty, reigns, personNames, top }: Props) {
-  const color = COLOR_VALUES[resolveDynastyColorToken(dynasty)];
+  const laneColor = resolveDynastyColorValue(dynasty);
   const { items, rowCount } = assignReignStacks(reigns);
   const height = dynastyLaneHeight(rowCount);
   const gaps = computeReignGaps(dynasty, reigns);
@@ -37,7 +37,7 @@ export function DynastyLane({ dynasty, reigns, personNames, top }: Props) {
       style={{
         top,
         height,
-        ["--dynasty-color" as string]: color,
+        ["--dynasty-color" as string]: laneColor,
         ["--stack-row-height" as string]: `${STACK_ROW_HEIGHT}px`,
         ["--dynasty-bar-height" as string]: `${rowCount * STACK_ROW_HEIGHT}px`,
       }}
@@ -58,7 +58,8 @@ export function DynastyLane({ dynasty, reigns, personNames, top }: Props) {
               key={`gap-${gap.startAbs}-${gap.endExclusive}`}
               gap={gap}
               dynasty={dynasty as Dynasty}
-              color={color}
+              color={resolveDynastyColorValue(dynasty, gap.startAbs)}
+              orthodox={isOrthodoxDisplayAt(dynasty, gap.startAbs)}
             />
           ))}
           {items.map(({ reign }) => (
@@ -66,7 +67,8 @@ export function DynastyLane({ dynasty, reigns, personNames, top }: Props) {
               key={reign.id}
               reign={reign}
               dynasty={dynasty as Dynasty}
-              color={color}
+              color={resolveDynastyColorValue(dynasty, reign.startAbs)}
+              orthodox={isOrthodoxDisplayAt(dynasty, reign.startAbs)}
               reigns={reigns}
               personName={personNames.get(reign.personId)}
             />

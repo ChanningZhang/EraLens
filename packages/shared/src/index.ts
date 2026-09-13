@@ -6,3 +6,4 @@ export * from "./emperorAppellation";
 export * from "./timelineData";
 export * from "./chunks";
 export * from "./dynastyColors";
+export * from "./orthodoxDynasties";

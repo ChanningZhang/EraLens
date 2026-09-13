@@ -90,7 +90,7 @@ export function useTimelineData() {
 
 export function useDataBounds() {
   return useQuery({
-    queryKey: ["bounds"],
+    queryKey: ["bounds", 2],
     queryFn: async () => {
       const repo = await getRepository();
       return repo.getBounds();
