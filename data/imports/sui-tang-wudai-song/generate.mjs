@@ -7,6 +7,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
+import { reignSql } from "../lib/reignSql.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -51,6 +52,9 @@ function reign({
   end,
   precision = "year",
   eraNames = [],
+  claimTrack,
+  claimLabel,
+  claimRole,
 }) {
   return {
     id,
@@ -66,10 +70,13 @@ function reign({
     startAbs: start.abs,
     endAbs: end.abs,
     precision,
+    claimTrack,
+    claimLabel,
+    claimRole,
   };
 }
 
-function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, eraNames = [], preferred = null) {
+function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, eraNames = [], preferred = null, claim = null) {
   const pref =
     preferred ??
     defaultPreferredAppellation({ title, posthumous, temple, startYear, eraNames });
@@ -84,6 +91,9 @@ function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear,
     start: ym(startYear),
     end: ym(endYear, 12),
     eraNames,
+    claimTrack: claim?.track,
+    claimLabel: claim?.label,
+    claimRole: claim?.role,
   });
 }
 
@@ -141,8 +151,12 @@ function nextColor() {
 // yang-jian already in DB from nanbei-chao
 
 const persons = [
-  person("yang-guang", "杨广", ["皇帝"], "隋炀帝，开运河、三征高句丽，江都兵变被杀。", "隋炀帝"),
-  person("yang-you", "杨侑", ["皇帝"], "隋恭帝，李渊拥立，后禅让建唐。", "杨侑"),
+  person("yang-guang", "杨广", ["皇帝"], "隋炀帝，开运河、三征高句丽；江都时期仍为名义皇帝，与长安杨侑并存；江都兵变被杀。", "隋炀帝"),
+  person("yang-you", "杨侑", ["皇帝"], "隋恭帝，李渊拥立，尊炀帝为太上皇；后禅让建唐。", "杨侑"),
+  person("yang-hao", "杨浩", ["皇帝"], "隋秦王，宇文化及江都兵变后拥立的傀儡皇帝，旋被废杀。", "杨浩"),
+  person("yang-tong", "杨侗", ["皇帝"], "隋越王，王世充等在东都拥立的傀儡皇帝，619年被杀，名义隋主终结。", "杨侗"),
+  person("yuwen-huaji", "宇文化及", ["将领", "政治家"], "江都兵变主谋，杀隋炀帝后拥立杨浩。", "宇文化及"),
+  person("wang-shichong", "王世充", ["将领", "政治家"], "隋末割据洛阳，拥立杨侗，后杀之自立。", "王世充"),
   // 唐
   person("li-yuan", "李渊", ["皇帝"], "唐高祖，太原起兵，建唐定都长安。", "李渊"),
   person("li-shimin", "李世民", ["皇帝"], "唐太宗，玄武门之变后即位，开创贞观之治。", "唐太宗"),
@@ -284,7 +298,7 @@ const allPersons = persons;
 // ── dynasties ──────────────────────────────────────────────────────────────
 
 const dynasties = [
-  { id: "sui", name: "隋", altNames: ["大隋"], scope: "cn", region: "east_asia", start: ym(581), end: ym(618), precision: "year", colorToken: nextColor(), note: "杨坚代周建隋，589年灭陈统一；618年江都兵变，隋亡。" },
+  { id: "sui", name: "隋", altNames: ["大隋"], scope: "cn", region: "east_asia", start: ym(581), end: ym(618), precision: "year", colorToken: nextColor(), note: "杨坚代周建隋，589年灭陈统一；618年江都兵变、唐建立标志隋亡，东都杨侗名义延续至619年。" },
   { id: "tang", name: "唐", altNames: ["李唐"], scope: "cn", region: "east_asia", start: ym(618), end: ym(907), precision: "year", colorToken: nextColor(), note: "李渊建唐，都长安；907年朱温篡唐，唐亡。" },
   { id: "zhou-wu", name: "武周", altNames: ["周"], scope: "cn", region: "east_asia", start: ym(690), end: ym(705), precision: "year", colorToken: nextColor(), note: "武则天改国号周，690–705年，后还政李唐。" },
   { id: "liang-hou", name: "后梁", altNames: ["梁"], scope: "cn", region: "east_asia", start: ym(907), end: ym(923), precision: "year", colorToken: nextColor(), note: "朱温篡唐建梁，都开封；923年后唐灭之。" },
@@ -308,11 +322,28 @@ const dynasties = [
 
 // ── reigns ─────────────────────────────────────────────────────────────────
 
-const suiReigns = [
+const suiReignsCore = [
   dynastyReign("sui", "yang-jian", "隋文帝", "文皇帝", null, 581, 604, eras("reign-yang-jian", [{ name: "开皇", sy: 581, ey: 600 }, { name: "仁寿", sy: 601, ey: 604 }])),
   dynastyReign("sui", "yang-guang", "隋炀帝", "炀皇帝", null, 604, 618, eras("reign-yang-guang", [{ name: "大业", sy: 605, ey: 618 }])),
-  dynastyReign("sui", "yang-you", "隋恭帝", null, null, 617, 618),
 ];
+const suiReignsPuppets = [
+  dynastyReign("sui", "yang-you", "隋恭帝", null, null, 617, 618, [], null, {
+    track: "changan",
+    label: "长安",
+    role: "puppet",
+  }),
+  dynastyReign("sui", "yang-hao", "隋秦王", null, null, 618, 618, [], null, {
+    track: "jiangdu",
+    label: "江都",
+    role: "puppet",
+  }),
+  dynastyReign("sui", "yang-tong", "隋越王", null, null, 618, 619, [], null, {
+    track: "luoyang",
+    label: "洛阳",
+    role: "puppet",
+  }),
+];
+const suiReigns = [...suiReignsCore, ...suiReignsPuppets];
 
 const tangReigns = [
   dynastyReign("tang", "li-yuan", "唐高祖", "神尧皇帝", "高祖", 618, 626),
@@ -463,8 +494,9 @@ const songSouthReigns = [
   dr("song-south", "zhao-bing", "宋帝昺", null, null, 1278, 1279),
 ];
 
-const reignGroups = [suiReigns, tangReigns, zhouWuReigns, wudaiReigns, shiguoReigns, songNorthReigns, songSouthReigns];
-const reigns = reignGroups.flat();
+// Puppets (杨侑/杨浩/杨侗) are parallel, not a linear succession chain.
+const reignGroups = [suiReignsCore, tangReigns, zhouWuReigns, wudaiReigns, shiguoReigns, songNorthReigns, songSouthReigns];
+const reigns = [suiReigns, tangReigns, zhouWuReigns, wudaiReigns, shiguoReigns, songNorthReigns, songSouthReigns].flat();
 
 // ── events ───────────────────────────────────────────────────────────────────
 
@@ -487,8 +519,12 @@ const events = [
   eventPoint({ id: "sui-unify", name: "隋灭陈统一", kind: "politics", at: ym(589), dynastyIds: ["sui", "chen-nan"], participantIds: ["yang-jian"], summary: "隋军灭南陈，南北分裂终结，隋统一全国。" }),
   eventRange({ id: "kaihuang-rule", name: "开皇之治", kind: "politics", timeMode: "span", start: ym(581), end: ym(600), dynastyIds: ["sui"], participantIds: ["yang-jian"], summary: "隋文帝励精图治，轻徭薄赋，国力强盛。" }),
   eventRange({ id: "grand-canal", name: "开凿大运河", kind: "culture", timeMode: "span", dateNote: "605年起大规模开凿，连通南北", start: ym(605), end: ym(610), dynastyIds: ["sui"], participantIds: ["yang-guang"], summary: "隋炀帝下令开凿大运河，贯通南北交通。" }),
-  eventPoint({ id: "sui-fall", name: "隋朝灭亡", kind: "politics", at: ym(618), dynastyIds: ["sui"], participantIds: ["yang-guang"], summary: "江都兵变，隋炀帝被杀，隋朝终结。" }),
-  eventPoint({ id: "tang-founded", name: "唐朝建立", kind: "politics", at: ym(618), dynastyIds: ["tang", "sui"], participantIds: ["li-yuan"], summary: "李渊称帝，定都长安，唐朝开始。" }),
+  eventPoint({ id: "yang-you-enthroned", name: "李渊拥杨侑称帝", kind: "politics", at: ym(617), dynastyIds: ["sui"], participantIds: ["li-yuan", "yang-you"], summary: "李渊入长安，拥隋炀帝孙杨侑为帝，与江都炀帝形成二主并存。" }),
+  eventPoint({ id: "sui-fall", name: "隋朝灭亡", kind: "politics", at: ym(618), dynastyIds: ["sui"], participantIds: ["yang-guang", "yuwen-huaji"], summary: "江都兵变，隋炀帝被杀，中央权威瓦解；长安、江都、东都各立隋室傀儡。" }),
+  eventPoint({ id: "yang-hao-enthroned", name: "宇文化及立杨浩", kind: "politics", at: ym(618), dynastyIds: ["sui"], participantIds: ["yuwen-huaji", "yang-hao"], summary: "宇文化及弑炀帝后，拥立秦王杨浩为傀儡皇帝。" }),
+  eventPoint({ id: "yang-tong-enthroned", name: "东都拥立杨侗", kind: "politics", at: ym(618), dynastyIds: ["sui"], participantIds: ["wang-shichong", "yang-tong"], summary: "王世充等拥隋炀帝孙杨侗于东都即位，与长安、江都各立一主。" }),
+  eventPoint({ id: "tang-founded", name: "唐朝建立", kind: "politics", at: ym(618), dynastyIds: ["tang", "sui"], participantIds: ["li-yuan", "yang-you"], summary: "杨侑禅让，李渊称帝，定都长安，唐朝开始。" }),
+  eventPoint({ id: "yang-tong-killed", name: "杨侗被杀", kind: "politics", at: ym(619), dynastyIds: ["sui"], participantIds: ["wang-shichong", "yang-tong"], summary: "王世充杀杨侗，自立为帝，名义隋主终结。" }),
   eventPoint({ id: "xuanwumen", name: "玄武门之变", kind: "politics", precision: "month", dateNote: "武德九年六月，626年", at: ym(626, 7), dynastyIds: ["tang"], participantIds: ["li-shimin"], summary: "李世民发动政变，杀兄弟即位太子，后登基。" }),
   eventRange({ id: "zhenguan-rule", name: "贞观之治", kind: "politics", timeMode: "span", start: ym(627), end: ym(649), dynastyIds: ["tang"], participantIds: ["li-shimin"], summary: "唐太宗任贤纳谏，轻徭薄赋，为盛唐奠基。" }),
   eventRange({ id: "kaiyuan-prosperity", name: "开元盛世", kind: "politics", timeMode: "span", start: ym(713), end: ym(741), dynastyIds: ["tang"], participantIds: ["li-longji"], summary: "唐玄宗前期励精图治，唐朝国力达于鼎盛。" }),
@@ -537,10 +573,8 @@ VALUES (${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlArray(d.altNames)}, ${sqlStr(d.
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, color_token = EXCLUDED.color_token, note = EXCLUDED.note;`;
 }
 
-function reignSql(r) {
-  return `INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
-VALUES (${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(r.title)}, ${sqlStr(r.posthumousName ?? null)}, ${sqlStr(r.templeName ?? null)}, ${sqlJson(r.preferredAppellation)}, ${r.start.year}, ${r.start.month}, ${r.end.year}, ${r.end.month}, ${r.startAbs}, ${r.endAbs}, ${sqlStr(r.precision)})
-ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;`;
+function formatReignSql(r) {
+  return reignSql(r, sqlStr, sqlJson);
 }
 
 function eraNameSql(e) {
@@ -584,7 +618,7 @@ const sql = [
   "BEGIN;",
   "", "-- persons", ...importPersons.map(personSql),
   "", "-- dynasties", ...dynasties.map(dynastySql),
-  "", "-- reigns", ...importReigns.map(reignSql),
+  "", "-- reigns", ...importReigns.map(formatReignSql),
   "", "-- era_names", ...eraDeleteSql, ...eraInsertSql,
   "", "-- events", ...events.map(eventSql),
   "", "-- event_dynasties", ...eventDynastySql,
@@ -602,8 +636,8 @@ const manifest = {
   window: { startYear: 581, startMonth: 1, endYear: 1279, endMonth: 12 },
   scope: "cn",
   depth: "standard",
-  generatedAt: "2026-09-12",
-  counts: { persons: allPersons.length, dynasties: dynasties.length, reigns: reigns.length, events: events.length, relations: relations.length },
+  generatedAt: "2026-09-13",
+  counts: { persons: importPersons.length, dynasties: dynasties.length, reigns: importReigns.length, events: events.length, relations: relations.length },
   sources: [
     { label: "隋朝", url: "https://zh.wikipedia.org/wiki/隋朝" },
     { label: "唐朝", url: "https://zh.wikipedia.org/wiki/唐朝" },
@@ -620,6 +654,7 @@ const manifest = {
     "十国各政权收录全部君主；五代收录全部皇帝。",
     "1279 崖山海战为南宋终结；元朝不在本包内。",
     "李显、李旦两度即位，在位拆为两段；690–705 年武周武则天，不与唐中宗重叠。",
+    "隋末并行用 claim_track：主线文帝→炀帝；changan/杨侑、jiangdu/杨浩、luoyang/杨侗。不串进继承链；杨侗延至619年。",
   ],
 };
 writeFileSync(path.join(__dirname, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);

@@ -3,6 +3,41 @@
  * so import SQL can insert missing placeholders for holes the UI actually shows.
  */
 
+const MAIN_CLAIM_TRACK = "main";
+
+function claimTrackOf(reign) {
+  return reign.claimTrack ?? MAIN_CLAIM_TRACK;
+}
+
+function earliestStart(reigns) {
+  return reigns.reduce((min, reign) => Math.min(min, reign.startAbs), Infinity);
+}
+
+function groupByClaimTrack(reigns) {
+  const byTrack = new Map();
+  for (const reign of reigns) {
+    const track = claimTrackOf(reign);
+    const list = byTrack.get(track);
+    if (list) list.push(reign);
+    else byTrack.set(track, [reign]);
+  }
+
+  const mainReigns = byTrack.get(MAIN_CLAIM_TRACK);
+  byTrack.delete(MAIN_CLAIM_TRACK);
+
+  const rivals = [...byTrack.entries()]
+    .map(([track, list]) => ({ track, reigns: list }))
+    .sort(
+      (a, b) =>
+        earliestStart(a.reigns) - earliestStart(b.reigns) ||
+        a.track.localeCompare(b.track),
+    );
+
+  return mainReigns?.length
+    ? [{ track: MAIN_CLAIM_TRACK, reigns: mainReigns }, ...rivals]
+    : rivals;
+}
+
 function sortReigns(reigns) {
   return [...reigns].sort(
     (a, b) => a.startAbs - b.startAbs || a.endAbs - b.endAbs || a.id.localeCompare(b.id),
@@ -33,8 +68,9 @@ function reignCardSpan(startAbs, endAbs, nextStartAbs) {
 }
 
 function resolveReignVisualSpan(reign, reigns) {
-  const group = sameStartGroup(reign, reigns);
-  const nextLater = nextLaterStartAbs(reign, reigns);
+  const peers = reigns.filter((item) => claimTrackOf(item) === claimTrackOf(reign));
+  const group = sameStartGroup(reign, peers);
+  const nextLater = nextLaterStartAbs(reign, peers);
 
   if (sameSpanGroup(group)) {
     const stackIndex = group.findIndex((item) => item.id === reign.id);
@@ -51,8 +87,8 @@ function resolveReignVisualSpan(reign, reigns) {
   return { startAbs: visualStart, endExclusive, stackIndex: 0 };
 }
 
-function assignReignStacks(reigns) {
-  const sorted = sortReigns(reigns);
+function assignReignStacksInTrack(trackReigns) {
+  const sorted = sortReigns(trackReigns);
   const items = [];
   let rowCount = 1;
   let index = 0;
@@ -65,10 +101,25 @@ function assignReignStacks(reigns) {
     const groupSize = sameSpanGroup(group) ? group.length : 1;
     rowCount = Math.max(rowCount, groupSize);
     for (const reign of group) {
-      const { stackIndex } = resolveReignVisualSpan(reign, reigns);
+      const { stackIndex } = resolveReignVisualSpan(reign, trackReigns);
       items.push({ reign, stackIndex });
     }
     index = end;
+  }
+  return { items, rowCount };
+}
+
+function assignReignStacks(reigns) {
+  const items = [];
+  let rowCount = 1;
+  let rowOffset = 0;
+  for (const lane of groupByClaimTrack(reigns)) {
+    const trackLayout = assignReignStacksInTrack(lane.reigns);
+    for (const item of trackLayout.items) {
+      items.push({ reign: item.reign, stackIndex: rowOffset + item.stackIndex });
+    }
+    rowOffset += trackLayout.rowCount;
+    rowCount = Math.max(rowCount, rowOffset);
   }
   return { items, rowCount };
 }

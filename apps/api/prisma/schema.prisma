@@ -68,6 +68,9 @@ model Reign {
   startAbs              Int         @map("start_abs")
   endAbs                Int         @map("end_abs")
   precision             String      @default("year")
+  claimTrack            String?     @map("claim_track")
+  claimLabel            String?     @map("claim_label")
+  claimRole             String?     @map("claim_role")
   dynasty               Dynasty     @relation(fields: [dynastyId], references: [id])
   person                Person      @relation(fields: [personId], references: [id])
   eraNames              EraName[]
@@ -76,6 +79,7 @@ model Reign {
   @@index([endYear])
   @@index([dynastyId])
   @@index([personId])
+  @@index([claimTrack])
   @@map("reigns")
 }
 

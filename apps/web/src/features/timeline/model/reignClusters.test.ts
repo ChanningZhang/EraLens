@@ -100,6 +100,69 @@ describe("assignReignStacks", () => {
     expect(second.endExclusive).toBe(jianshen.startAbs);
   });
 
+  it("does not clip the main line when a puppet court overlaps it", () => {
+    const guang = reign("yang-guang", absMonth(604, 1), absMonth(618, 12));
+    const you = {
+      ...reign("yang-you", absMonth(617, 1), absMonth(618, 12)),
+      claimTrack: "changan",
+      claimLabel: "长安",
+      claimRole: "puppet" as const,
+    };
+    const tong = {
+      ...reign("yang-tong", absMonth(618, 1), absMonth(619, 12)),
+      claimTrack: "luoyang",
+      claimLabel: "洛阳",
+      claimRole: "puppet" as const,
+    };
+    const all = [guang, you, tong];
+
+    const { items, rowCount } = assignReignStacks(all);
+    expect(rowCount).toBe(3);
+    expect(items.map((item) => [item.reign.id, item.stackIndex])).toEqual([
+      ["yang-guang", 0],
+      ["yang-you", 1],
+      ["yang-tong", 2],
+    ]);
+
+    const main = resolveReignVisualSpan(guang, all);
+    expect(main.startAbs).toBe(guang.startAbs);
+    expect(main.endExclusive).toBe(guang.endAbs + 1);
+    expect(resolveReignVisualSpan(you, all).startAbs).toBe(you.startAbs);
+  });
+
+  it("keeps 南明主线 sequential while 鲁监国 / 绍武 sit on their own rows", () => {
+    const hongguang = reign("hongguang", absMonth(1644, 1), absMonth(1645, 12));
+    const longwu = reign("longwu", absMonth(1645, 1), absMonth(1646, 12));
+    const yongli = reign("yongli", absMonth(1646, 1), absMonth(1662, 12));
+    const luJian = {
+      ...reign("lu-jian", absMonth(1645, 1), absMonth(1653, 12)),
+      claimTrack: "lu-jian",
+      claimRole: "regent" as const,
+    };
+    const shaowu = {
+      ...reign("shaowu", absMonth(1646, 1), absMonth(1647, 12)),
+      claimTrack: "shaowu",
+      claimRole: "rival" as const,
+    };
+    const all = [hongguang, longwu, yongli, luJian, shaowu];
+
+    const { items, rowCount } = assignReignStacks(all);
+    expect(rowCount).toBe(3);
+    expect(
+      items.map((item) => [item.reign.id, item.stackIndex]),
+    ).toEqual([
+      ["hongguang", 0],
+      ["longwu", 0],
+      ["yongli", 0],
+      ["lu-jian", 1],
+      ["shaowu", 2],
+    ]);
+
+    expect(resolveReignVisualSpan(hongguang, all).endExclusive).toBe(longwu.startAbs);
+    expect(resolveReignVisualSpan(yongli, all).startAbs).toBe(yongli.startAbs);
+    expect(resolveReignVisualSpan(luJian, all).endExclusive).toBe(luJian.endAbs + 1);
+  });
+
   it("stacks 哀王 and 思王 who share a year but have no calendar months", () => {
     const { items, rowCount } = assignReignStacks([
       reign("jie", 0, 335),

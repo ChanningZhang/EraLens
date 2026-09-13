@@ -108,6 +108,13 @@ export const PreferredAppellationSchema = z.object({
   name: z.string(),
 });
 
+/**
+ * Role of a ruler who held power concurrently with the dynasty's main line
+ * (隋末三帝并立, 南明鲁监国 / 绍武). Absent means the ruler belongs to the
+ * conventionally counted succession.
+ */
+export const ClaimRoleSchema = z.enum(["rival", "puppet", "regent"]);
+
 export const ReignSchema = z.object({
   id: z.string(),
   dynastyId: z.string(),
@@ -122,6 +129,11 @@ export const ReignSchema = z.object({
   startAbs: z.number(),
   endAbs: z.number(),
   precision: PrecisionSchema.default("year"),
+  /** Parallel-claim lane key; absent puts the reign on the main track. */
+  claimTrack: z.string().optional(),
+  /** Short seat label shown on the card (长安 / 洛阳 / 绍兴监国). */
+  claimLabel: z.string().optional(),
+  claimRole: ClaimRoleSchema.optional(),
 });
 
 export const EventKindSchema = z.enum([
@@ -174,7 +186,7 @@ export const RelationSchema = z.object({
   id: z.string(),
   fromRef: z.string(),
   toRef: z.string(),
-  kind: z.enum(["succession", "battle", "alliance", "other"]),
+  kind: z.enum(["succession", "battle", "alliance", "enthronement", "other"]),
 });
 
 export const EntityRefSchema = z.object({
@@ -228,6 +240,7 @@ export const SearchHitSchema = z.object({
 
 export type Dynasty = z.infer<typeof DynastySchema>;
 export type Reign = z.infer<typeof ReignSchema>;
+export type ClaimRole = z.infer<typeof ClaimRoleSchema>;
 export type AppellationKind = z.infer<typeof AppellationKindSchema>;
 export type Person = z.infer<typeof PersonSchema>;
 export type Event = z.output<typeof EventSchema>;

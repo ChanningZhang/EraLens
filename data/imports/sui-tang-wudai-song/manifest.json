@@ -9,13 +9,13 @@
   },
   "scope": "cn",
   "depth": "standard",
-  "generatedAt": "2026-09-12",
+  "generatedAt": "2026-09-13",
   "counts": {
-    "persons": 130,
+    "persons": 134,
     "dynasties": 20,
-    "reigns": 99,
-    "events": 18,
-    "relations": 95
+    "reigns": 101,
+    "events": 22,
+    "relations": 94
   },
   "sources": [
     {
@@ -53,6 +53,7 @@
     "十国吴 id 为 wu-shi，避免与三国孙吴 wu 冲突；前蜀/后蜀为 shu-qian/shu-hou，避免与蜀汉 shu 冲突。",
     "十国各政权收录全部君主；五代收录全部皇帝。",
     "1279 崖山海战为南宋终结；元朝不在本包内。",
-    "李显、李旦两度即位，在位拆为两段；690–705 年武周武则天，不与唐中宗重叠。"
+    "李显、李旦两度即位，在位拆为两段；690–705 年武周武则天，不与唐中宗重叠。",
+    "隋末并行用 claim_track：主线文帝→炀帝；changan/杨侑、jiangdu/杨浩、luoyang/杨侗。不串进继承链；杨侗延至619年。"
   ]
 }

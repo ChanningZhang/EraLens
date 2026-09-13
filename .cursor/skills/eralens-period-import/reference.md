@@ -128,14 +128,16 @@ INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   posthumous_name, temple_name, preferred_appellation,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision
+  start_abs, end_abs, precision,
+  claim_track, claim_label, claim_role
 ) VALUES (
   'reign-li-shimin',
   'tang', 'li-shimin', '唐太宗',
   '文武皇帝', '太宗',
   '{"kind":"temple","name":"唐太宗"}'::jsonb,
   626, 9, 649, 7,
-  7517, 7795, 'month'
+  7517, 7795, 'month',
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -150,7 +152,32 @@ ON CONFLICT (id) DO UPDATE SET
   end_month = EXCLUDED.end_month,
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision;
+  precision = EXCLUDED.precision,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+
+-- 并行称君示例（南明鲁监国）：主线不填 track；并立朝廷占另一行。
+-- claim_role: puppet | rival | regent
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  posthumous_name, temple_name, preferred_appellation,
+  start_year, start_month, end_year, end_month,
+  start_abs, end_abs, precision,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zhu-yihai-ming-south',
+  'ming-south', 'zhu-yihai', '鲁监国',
+  NULL, NULL,
+  '{"kind":"regnal","name":"鲁监国"}'::jsonb,
+  1645, 1, 1653, 12,
+  19740, 19847, 'year',
+  'lu-jian', '绍兴监国', 'regent'
+)
+ON CONFLICT (id) DO UPDATE SET
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 ```
 
 ### era_names

@@ -55,6 +55,9 @@ export type RawReignRow = {
   start_abs: number;
   end_abs: number;
   precision: string;
+  claim_track: string | null;
+  claim_label: string | null;
+  claim_role: string | null;
 };
 
 export type RawEventRow = {
@@ -146,6 +149,9 @@ export function mapReign(
   const endMonth = "endMonth" in row ? row.endMonth : row.end_month;
   const startAbs = "startAbs" in row ? row.startAbs : row.start_abs;
   const endAbs = "endAbs" in row ? row.endAbs : row.end_abs;
+  const claimTrack = "claimTrack" in row ? row.claimTrack : row.claim_track;
+  const claimLabel = "claimLabel" in row ? row.claimLabel : row.claim_label;
+  const claimRole = "claimRole" in row ? row.claimRole : row.claim_role;
 
   return {
     id: row.id,
@@ -169,6 +175,9 @@ export function mapReign(
     startAbs,
     endAbs,
     precision: row.precision as Reign["precision"],
+    claimTrack: claimTrack ?? undefined,
+    claimLabel: claimLabel ?? undefined,
+    claimRole: (claimRole as Reign["claimRole"] | null) ?? undefined,
   };
 }
 

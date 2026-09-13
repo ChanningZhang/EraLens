@@ -2,7 +2,9 @@ import { useMemo } from "react";
 import {
   type Dynasty,
   type Reign,
+  claimRoleLabel,
   formatAbsSpanTooltip,
+  isParallelClaim,
   resolveReignCardLabel,
   resolveReignCardMeta,
 } from "@eralens/shared";
@@ -66,7 +68,13 @@ export function ReignCard({
   });
   const layout = resolveReignCardTextLayout(width, [...label].length);
   const detail = layout.level;
-  const meta = resolveReignCardMeta(reign, personName);
+  const parallel = isParallelClaim(reign);
+  // For concurrent claimants the seat (长安 / 洛阳) tells them apart far better
+  // than the appellation kind, so it takes over the subtitle slot.
+  const meta =
+    parallel && reign.claimLabel
+      ? { label: "据点", name: reign.claimLabel }
+      : resolveReignCardMeta(reign, personName);
   const metaGlyphCount = meta ? [...meta.name].length : 0;
   const showMeta = shouldShowReignCardMeta(
     width,
@@ -76,7 +84,12 @@ export function ReignCard({
   const tooltipName = personName && personName !== label ? personName : label;
   const nameTooltip = meta ? `${tooltipName}　${meta.name}` : tooltipName;
   const timeTooltip = formatAbsSpanTooltip(reign.startAbs, reign.endAbs);
-  const tooltipText = detail === "full" ? timeTooltip : `${nameTooltip}\n${timeTooltip}`;
+  const claimTooltip = reign.claimRole
+    ? `${claimRoleLabel(reign.claimRole)}${reign.claimLabel ? `・${reign.claimLabel}` : ""}`
+    : undefined;
+  const baseTooltip =
+    detail === "full" ? timeTooltip : `${nameTooltip}\n${timeTooltip}`;
+  const tooltipText = claimTooltip ? `${baseTooltip}\n${claimTooltip}` : baseTooltip;
 
   const className = useMemo(() => {
     return [
@@ -84,10 +97,11 @@ export function ReignCard({
       detail === "wrap" ? styles.wrap : "",
       orthodox ? "orthodoxGold" : "",
       selected ? styles.selected : "",
+      reign.claimRole ? styles[reign.claimRole] ?? "" : "",
     ]
       .filter(Boolean)
       .join(" ");
-  }, [detail, orthodox, selected]);
+  }, [detail, orthodox, selected, reign.claimRole]);
 
   return (
     <div
@@ -113,7 +127,11 @@ export function ReignCard({
               selectionStore.select({ type: "reign", id: reign.id }, reign.startAbs);
               selectionStore.syncToUrl(viewport.centerAbs);
             }}
-            aria-label={`${label} ${dynasty.name}`}
+            aria-label={
+              claimTooltip
+                ? `${label} ${dynasty.name} ${claimTooltip}`
+                : `${label} ${dynasty.name}`
+            }
             {...handlers}
           >
             {detail !== "below" && (

@@ -11,10 +11,10 @@
   "depth": "standard",
   "generatedAt": "2026-09-13",
   "counts": {
-    "persons": 81,
+    "persons": 83,
     "dynasties": 10,
-    "reigns": 54,
-    "events": 32,
+    "reigns": 56,
+    "events": 35,
     "relations": 58
   },
   "sources": [
@@ -75,6 +75,14 @@
       "url": "https://zh.wikipedia.org/wiki/南明"
     },
     {
+      "label": "朱以海",
+      "url": "https://zh.wikipedia.org/wiki/朱以海"
+    },
+    {
+      "label": "绍武帝",
+      "url": "https://zh.wikipedia.org/wiki/绍武帝"
+    },
+    {
       "label": "土木堡之变",
       "url": "https://zh.wikipedia.org/wiki/土木堡之变"
     },
@@ -116,6 +124,7 @@
     "1912年清帝退位为帝制终结；中华民国不在本包内。",
     "元末割据：徐宋（1351–1360）、韩宋（1355–1366）、大周（1354–1367）、陈汉（1360–1364）、明夏（1362–1371）、吴/西吴（1364–1368，朱元璋称帝前）。",
     "未收录明郑（1662–1683）等延续政权。",
+    "南明并行用 claim_track：主线弘光→隆武→永历；lu-jian/朱以海（绍兴监国）、shaowu/朱聿鐭（广州）。不把鲁监国、绍武串进继承链。",
     "晚明三大疑案：梃击案（1615）、红丸案（1620）、移宫案（1620），均取通行月日写入 date_note。"
   ]
 }

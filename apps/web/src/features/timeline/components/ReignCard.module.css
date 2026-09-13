@@ -61,6 +61,46 @@
   box-shadow: inset 3px 0 0 var(--color-accent);
 }
 
+/*
+ * Concurrent claimants (隋末三帝并立, 南明鲁监国 / 绍武). Dashed borders are
+ * reserved for the 史料缺 gap card, so these lean on fill and edge treatments.
+ */
+.rival,
+.puppet,
+.regent {
+  background: color-mix(in srgb, var(--card-color) 8%, var(--color-surface));
+  border-color: color-mix(in srgb, var(--card-color) 30%, var(--color-border));
+}
+
+.rival:hover,
+.puppet:hover,
+.regent:hover {
+  background: color-mix(in srgb, var(--card-color) 14%, var(--color-surface));
+}
+
+.rival {
+  border-left: 3px solid color-mix(in srgb, var(--card-color) 55%, transparent);
+}
+
+.puppet {
+  background-image: repeating-linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--card-color) 16%, transparent) 0 4px,
+    transparent 4px 9px
+  );
+}
+
+.regent {
+  border-style: dotted;
+  border-width: 2px;
+}
+
+.rival .name,
+.puppet .name,
+.regent .name {
+  color: var(--color-ink-muted);
+}
+
 .content {
   display: flex;
   flex-direction: row;

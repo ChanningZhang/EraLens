@@ -60,4 +60,60 @@ describe("buildEntityDetail reign", () => {
       { label: "年号", value: "建隆" },
     ]);
   });
+
+  it("adds claim seat facts for a parallel court", () => {
+    const store = {
+      dynasties: [
+        {
+          id: "ming-south",
+          name: "南明",
+          scope: "cn",
+          region: "east_asia",
+          start: { year: 1644, month: 1 },
+          end: { year: 1662, month: 12 },
+          startAbs: 0,
+          endAbs: 1,
+          precision: "year",
+          colorToken: "mineral",
+        },
+      ],
+      reigns: [
+        reign({
+          id: "reign-zhu-yihai-ming-south",
+          dynastyId: "ming-south",
+          personId: "zhu-yihai",
+          title: "鲁监国",
+          start: { year: 1645, month: 1 },
+          end: { year: 1653, month: 12 },
+          templeName: undefined,
+          eraNames: [],
+          preferredAppellation: { kind: "regnal", name: "鲁监国" },
+          claimTrack: "lu-jian",
+          claimLabel: "绍兴监国",
+          claimRole: "regent",
+        }),
+      ],
+      persons: [
+        {
+          id: "zhu-yihai",
+          name: "朱以海",
+          roles: ["皇帝"],
+          links: [],
+        },
+      ],
+      events: [],
+      relations: [],
+    };
+
+    const detail = buildEntityDetail(store, {
+      type: "reign",
+      id: "reign-zhu-yihai-ming-south",
+    });
+    expect(detail.facts).toEqual(
+      expect.arrayContaining([
+        { label: "身份", value: "监国" },
+        { label: "据点", value: "绍兴监国" },
+      ]),
+    );
+  });
 });

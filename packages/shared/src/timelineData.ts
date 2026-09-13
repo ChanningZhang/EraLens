@@ -1,3 +1,4 @@
+import { claimDetailFacts } from "./claimTracks";
 import {
   resolveReignDetailFacts,
   resolveReignDetailSubtitle,
@@ -177,7 +178,7 @@ export function buildEntityDetail(
       colorToken: dynasty
         ? resolveDynastyColorToken(dynasty, reign.startAbs)
         : undefined,
-      facts: resolveReignDetailFacts(reign),
+      facts: [...resolveReignDetailFacts(reign), ...claimDetailFacts(reign)],
       summary: person?.bio,
       related,
       links: person?.links ?? [],
