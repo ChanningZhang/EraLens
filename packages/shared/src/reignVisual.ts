@@ -105,7 +105,7 @@ export function formatReignSpanTooltip(reign: Reign): string {
       return `${startLabel} — ${endLabel} · ${formatSmartDayDuration(reign, days)}`;
     }
   }
-  return formatAbsSpanTooltip(reign.startAbs, reign.endAbs);
+  return formatAbsSpanTooltip(reign.startAbs, reign.endAbs, reign.precision);
 }
 
 /**

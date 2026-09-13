@@ -42,6 +42,24 @@ describe("time utilities", () => {
     expect(formatAbsSpanTooltip(absMonth(200), absMonth(200))).toBe("公元200年");
   });
 
+  it("hides month for year-precision spans stored as Jan–Dec", () => {
+    expect(
+      formatAbsSpanTooltip(absMonth(-356, 1), absMonth(-320, 12), "year"),
+    ).toBe("公元前356年 — 公元前320年 · 37年");
+  });
+
+  it("shows months for month-precision spans", () => {
+    expect(
+      formatAbsSpanTooltip(absMonth(-356, 3), absMonth(-320, 12), "month"),
+    ).toBe("公元前356年3月 — 公元前320年12月 · 36年10个月");
+  });
+
+  it("collapses same-calendar-year year-precision spans", () => {
+    expect(formatAbsSpanTooltip(absMonth(200, 1), absMonth(200, 12), "year")).toBe(
+      "公元200年",
+    );
+  });
+
   it("detects range intersection", () => {
     expect(rangesIntersect(0, 100, 50, 150)).toBe(true);
     expect(rangesIntersect(0, 100, 101, 200)).toBe(false);

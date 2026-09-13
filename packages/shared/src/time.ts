@@ -89,8 +89,27 @@ function formatDurationMonths(totalMonths: number): string {
   return `${years}年${months}个月`;
 }
 
-function formatAbsSpanDuration(start: TimePoint, end: TimePoint, startAbs: AbsMonth, endAbs: AbsMonth): string {
-  if (start.month === 1 && end.month === 1) {
+function formatSpanPointLabel(
+  point: TimePoint,
+  precision?: TimeRange["precision"],
+): string {
+  if (precision === "month" || precision === "day") {
+    return formatYearMonth(point.year, point.month);
+  }
+  if (precision === "year") {
+    return formatYear(point.year);
+  }
+  return point.month === 1 ? formatYear(point.year) : formatYearMonth(point.year, point.month);
+}
+
+function formatAbsSpanDuration(
+  start: TimePoint,
+  end: TimePoint,
+  startAbs: AbsMonth,
+  endAbs: AbsMonth,
+  precision?: TimeRange["precision"],
+): string {
+  if (precision === "year" || (precision == null && start.month === 1 && end.month === 1)) {
     const years = toAstroYear(end.year) - toAstroYear(start.year) + 1;
     return `${years}年`;
   }
@@ -98,16 +117,22 @@ function formatAbsSpanDuration(start: TimePoint, end: TimePoint, startAbs: AbsMo
 }
 
 /** Hover label for an abs-month span: years, or a single year when start equals end. */
-export function formatAbsSpanTooltip(startAbs: AbsMonth, endAbs: AbsMonth): string {
+export function formatAbsSpanTooltip(
+  startAbs: AbsMonth,
+  endAbs: AbsMonth,
+  precision?: TimeRange["precision"],
+): string {
   const start = fromAbsMonth(startAbs);
   const end = fromAbsMonth(endAbs);
-  if (startAbs === endAbs) {
-    return start.month === 1 ? formatYear(start.year) : formatYearMonth(start.year, start.month);
+  if (precision === "year" && start.year === end.year) {
+    return formatYear(start.year);
   }
-  const startLabel =
-    start.month === 1 ? formatYear(start.year) : formatYearMonth(start.year, start.month);
-  const endLabel = end.month === 1 ? formatYear(end.year) : formatYearMonth(end.year, end.month);
-  const duration = formatAbsSpanDuration(start, end, startAbs, endAbs);
+  if (startAbs === endAbs) {
+    return formatSpanPointLabel(start, precision);
+  }
+  const startLabel = formatSpanPointLabel(start, precision);
+  const endLabel = formatSpanPointLabel(end, precision);
+  const duration = formatAbsSpanDuration(start, end, startAbs, endAbs, precision);
   return `${startLabel} — ${endLabel} · ${duration}`;
 }
 

@@ -170,7 +170,6 @@ function buildCuratedByPackage() {
         id: "reign-missing-xia--1859",
       }),
       missingReign({ dynastyId: "shang", startYear: -1570, endYear: -1561 }),
-      missingReign({ dynastyId: "zhou-west", startYear: -840, endYear: -828 }),
     ],
     "xinan-guozheng": [
       missingReign({ dynastyId: "yelang", startYear: -119, endYear: -31 }),

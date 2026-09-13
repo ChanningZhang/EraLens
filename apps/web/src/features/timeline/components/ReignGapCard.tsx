@@ -23,7 +23,7 @@ export function ReignGapCard({ gap, dynasty, color, orthodox = false }: Props) {
   if (width < MIN_GAP_PX) return null;
 
   const showLabel = width >= LABEL_MIN_PX;
-  const timeTooltip = formatAbsSpanTooltip(gap.startAbs, gap.endAbs);
+  const timeTooltip = formatAbsSpanTooltip(gap.startAbs, gap.endAbs, gap.precision);
   const tooltipText = dynasty.note
     ? `史料缺\n${timeTooltip}\n${dynasty.note}`
     : `史料缺\n${timeTooltip}`;

@@ -129,6 +129,20 @@ describe("formatReignSpanTooltip", () => {
       ),
     ).toBe("公元1234年2月9日 — 公元1234年2月20日 · 12天");
   });
+
+  it("hides month for year-precision reigns stored as Jan–Dec", () => {
+    expect(
+      formatReignSpanTooltip(
+        reign({
+          precision: "year",
+          start: { year: -356, month: 1 },
+          end: { year: -320, month: 12 },
+          startAbs: absMonth(-356, 1),
+          endAbs: absMonth(-320, 12),
+        }),
+      ),
+    ).toBe("公元前356年 — 公元前320年 · 37年");
+  });
 });
 
 describe("isSubMonthReign", () => {
