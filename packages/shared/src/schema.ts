@@ -65,6 +65,8 @@ export const DynastySchema = z.object({
   colorToken: ColorTokenSchema,
   /** AbsMonth from which this dynasty is displayed as orthodox (gold). Overrides built-in rules when set. */
   orthodoxFromAbs: z.number().optional(),
+  /** AbsMonth after which orthodox (gold) display ends, even if the dynasty continues. */
+  orthodoxEndAbs: z.number().optional(),
   parentId: z.string().optional(),
   note: z.string().optional(),
 });

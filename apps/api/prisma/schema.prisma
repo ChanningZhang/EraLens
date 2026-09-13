@@ -41,6 +41,7 @@ model Dynasty {
   precision   String           @default("year")
   colorToken  String           @map("color_token")
   orthodoxFromAbs Int?         @map("orthodox_from_abs")
+  orthodoxEndAbs  Int?         @map("orthodox_end_abs")
   parentId    String?          @map("parent_id")
   note        String?
   reigns      Reign[]

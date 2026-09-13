@@ -11,7 +11,7 @@ import { useViewport } from "./useViewport";
 
 const SCOPE = "cn";
 const STALE_TIME = 5 * 60_000;
-const TIMELINE_CACHE_VERSION = 3;
+const TIMELINE_CACHE_VERSION = 5;
 
 function chunkKey(chunk: QueryChunk) {
   return ["timeline-chunk", TIMELINE_CACHE_VERSION, chunk.fromAbs, chunk.toAbs, SCOPE] as const;
@@ -90,7 +90,7 @@ export function useTimelineData() {
 
 export function useDataBounds() {
   return useQuery({
-    queryKey: ["bounds", 2],
+    queryKey: ["bounds", 3],
     queryFn: async () => {
       const repo = await getRepository();
       return repo.getBounds();

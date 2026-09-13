@@ -47,13 +47,13 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
   const dynastyRows = scope
     ? await prisma.$queryRaw<RawDynastyRow[]>`
         SELECT id, name, alt_names, scope, region, start_year, start_month, end_year, end_month,
-               start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
+               start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs, parent_id, note
         FROM dynasties
         WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')
           AND scope = ${scope}`
     : await prisma.$queryRaw<RawDynastyRow[]>`
         SELECT id, name, alt_names, scope, region, start_year, start_month, end_year, end_month,
-               start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
+               start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs, parent_id, note
         FROM dynasties
         WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')`;
 
@@ -194,7 +194,7 @@ export async function registerRoutes(app: FastifyInstance) {
       (value): value is number => value != null,
     );
     if (mins.length === 0 || maxs.length === 0) {
-      return { minAbs: 0, maxAbs: 5000 };
+      return { minAbs: -30_000, maxAbs: 25_000 };
     }
     return { minAbs: Math.min(...mins), maxAbs: Math.max(...maxs) };
   });

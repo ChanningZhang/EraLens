@@ -21,12 +21,15 @@ const DEFAULT_CENTER = 2400; // ~200 CE
 const DEFAULT_PX_PER_MONTH = 1.5;
 const MIN_PX = 0.08;
 const MAX_PX = 12;
+/** Wide defaults until /bounds loads; 5000 abs ≈ 416 CE and blocked post-Han history. */
+const DEFAULT_MIN_ABS = -30_000;
+const DEFAULT_MAX_ABS = 25_000;
 
 let centerAbs = DEFAULT_CENTER;
 let pxPerMonth = DEFAULT_PX_PER_MONTH;
 let widthPx = 1200;
-let minAbs = 0;
-let maxAbs = 5000;
+let minAbs = DEFAULT_MIN_ABS;
+let maxAbs = DEFAULT_MAX_ABS;
 
 const listeners = new Set<ViewportListener>();
 

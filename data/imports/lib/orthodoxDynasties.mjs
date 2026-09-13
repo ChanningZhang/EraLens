@@ -10,34 +10,24 @@ export const ORTHODOX_FROM_START = new Set([
   "xin",
   "han-gengshi",
   "han-east",
-  "wei",
   "jin-west",
   "jin-east",
-  "song-liu",
-  "qi-nan",
-  "liang-nan",
-  "chen-nan",
-  "wei-north",
-  "wei-east",
-  "wei-west",
-  "qi-bei",
-  "zhou-bei",
   "sui",
   "tang",
-  "liang-hou",
-  "tang-hou",
-  "jin-hou",
-  "han-hou",
-  "zhou-hou",
   "song-north",
   "song-south",
   "yuan",
   "ming",
-  "qing",
+  "roc",
 ]);
 
 export const ORTHODOX_FROM_ABS = {
   qin: absMonth(-221),
+  qing: absMonth(1644),
+};
+
+export const ORTHODOX_END_ABS = {
+  yuan: absMonth(1368),
 };
 
 export function resolveOrthodoxFromAbs(dynasty) {
@@ -47,4 +37,13 @@ export function resolveOrthodoxFromAbs(dynasty) {
   const startAbs = dynasty.start?.abs ?? dynasty.startAbs;
   if (ORTHODOX_FROM_START.has(dynasty.id) && startAbs != null) return startAbs;
   return null;
+}
+
+export function resolveOrthodoxEndAbs(dynasty) {
+  if (dynasty.orthodoxEndAbs != null) return dynasty.orthodoxEndAbs;
+  const explicit = ORTHODOX_END_ABS[dynasty.id];
+  if (explicit != null) return explicit;
+  if (resolveOrthodoxFromAbs(dynasty) == null) return null;
+  const endAbs = dynasty.end?.abs ?? dynasty.endAbs;
+  return endAbs ?? null;
 }

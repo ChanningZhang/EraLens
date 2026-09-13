@@ -319,8 +319,15 @@ const tangReigns = [
   dynastyReign("tang", "li-zhi", "唐高宗", "天皇大帝", "高宗", 649, 683),
   // 李显、李旦两度即位，中间夹武周（690–705），各拆两段在位。
   tangSplitReign("reign-li-xian", "li-xian", "唐中宗", null, null, 684, 684, { startMonth: 1, endMonth: 2, precision: "month" }),
-  tangSplitReign("reign-li-dan", "li-dan", "唐睿宗", null, null, 684, 690),
-  tangSplitReign("reign-li-xian-2", "li-xian", "唐中宗", null, null, 705, 710),
+  // 睿宗第一次退位于 690 年九月；武周 690 年十月称帝，705 年正月逊位，中宗同日复位。
+  tangSplitReign("reign-li-dan", "li-dan", "唐睿宗", null, null, 684, 690, {
+    endMonth: 9,
+    precision: "month",
+  }),
+  tangSplitReign("reign-li-xian-2", "li-xian", "唐中宗", null, null, 705, 710, {
+    startMonth: 1,
+    precision: "month",
+  }),
   tangSplitReign("reign-li-dan-2", "li-dan", "唐睿宗", null, null, 710, 712),
   dynastyReign("tang", "li-longji", "唐玄宗", "至道大明孝皇帝", "玄宗", 712, 756, eras("reign-li-longji", [{ name: "开元", sy: 713, ey: 741 }, { name: "天宝", sy: 742, ey: 756 }])),
   dynastyReign("tang", "li-heng", "唐肃宗", null, null, 756, 762),
@@ -340,7 +347,34 @@ const tangReigns = [
 ];
 
 const zhouWuReigns = [
-  dynastyReign("zhou-wu", "wu-zetian", "则天皇帝", null, null, 690, 705, eras("reign-wu-zetian-zhou-wu", [{ name: "天授", sy: 690, ey: 692 }, { name: "万岁通天", sy: 696, ey: 697 }, { name: "万岁登封", sy: 697, ey: 697 }, { name: "神功", sy: 697, ey: 700 }, { name: "圣历", sy: 700, ey: 700 }, { name: "久视", sy: 700, ey: 701 }, { name: "大足", sy: 701, ey: 701 }, { name: "长安", sy: 701, ey: 705 }])),
+  reign({
+    id: "reign-wu-zetian-zhou-wu",
+    dynastyId: "zhou-wu",
+    personId: "wu-zetian",
+    title: "则天皇帝",
+    posthumousName: null,
+    templeName: null,
+    preferred: defaultPreferredAppellation({
+      title: "则天皇帝",
+      posthumous: null,
+      temple: null,
+      startYear: 690,
+      eraNames: [{ name: "天授" }],
+    }),
+    start: ym(690, 10),
+    end: ym(705, 1),
+    precision: "month",
+    eraNames: eras("reign-wu-zetian-zhou-wu", [
+      { name: "天授", sy: 690, ey: 692 },
+      { name: "万岁通天", sy: 696, ey: 697 },
+      { name: "万岁登封", sy: 697, ey: 697 },
+      { name: "神功", sy: 697, ey: 700 },
+      { name: "圣历", sy: 700, ey: 700 },
+      { name: "久视", sy: 700, ey: 701 },
+      { name: "大足", sy: 701, ey: 701 },
+      { name: "长安", sy: 701, ey: 705 },
+    ]),
+  }),
 ];
 
 const wudaiReigns = [

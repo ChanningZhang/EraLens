@@ -140,6 +140,26 @@ describe("computeReignGaps", () => {
       { startAbs: 71, endExclusive: 100 },
     ]);
   });
+
+  it("fills gaps with coverage from related-dynasty reigns (唐/武周)", () => {
+    const tangSpan = { startAbs: 8208, endAbs: 8531 };
+    const tangOnly = computeReignGaps(tangSpan, [
+      reign("li-dan", 8208, 8289),
+      reign("li-xian-2", 8460, 8531),
+    ]);
+    expect(tangOnly.some((gap) => gap.startAbs >= 8290 && gap.endExclusive <= 8460)).toBe(
+      true,
+    );
+
+    const withWuZhou = computeReignGaps(tangSpan, [
+      reign("li-dan", 8208, 8289),
+      reign("li-xian-2", 8460, 8531),
+      reign("wu-zetian", 8289, 8460),
+    ]);
+    expect(
+      withWuZhou.some((gap) => gap.startAbs >= 8290 && gap.endExclusive <= 8460),
+    ).toBe(false);
+  });
 });
 
 describe("nextLaterStartAbs", () => {

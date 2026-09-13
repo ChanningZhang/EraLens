@@ -21,8 +21,13 @@ function rgbDistance(a: [number, number, number], b: [number, number, number]): 
   return Math.sqrt(dr * dr + dg * dg + db * db);
 }
 
+/** Palette tokens used for dynasty assignment; orthodox gold is runtime-only. */
+const ASSIGNABLE_COLOR_TOKENS = COLOR_TOKENS.filter(
+  (token) => token !== ORTHODOX_COLOR_TOKEN && COLOR_VALUES[token] != null,
+);
+
 const TOKEN_RGB = Object.fromEntries(
-  COLOR_TOKENS.map((token) => [token, parseHex(COLOR_VALUES[token])]),
+  ASSIGNABLE_COLOR_TOKENS.map((token) => [token, parseHex(COLOR_VALUES[token])]),
 ) as Record<ColorToken, [number, number, number]>;
 
 export function colorTokenDistance(a: ColorToken, b: ColorToken): number {
@@ -35,10 +40,10 @@ function scoreToken(token: ColorToken, recent: ColorToken[]): number {
 }
 
 function pickBestToken(recent: ColorToken[]): ColorToken {
-  let best = COLOR_TOKENS[0]!;
+  let best = ASSIGNABLE_COLOR_TOKENS[0]!;
   let bestScore = -1;
 
-  for (const token of COLOR_TOKENS) {
+  for (const token of ASSIGNABLE_COLOR_TOKENS) {
     const score = scoreToken(token, recent);
     if (score > bestScore) {
       bestScore = score;
@@ -48,7 +53,7 @@ function pickBestToken(recent: ColorToken[]): ColorToken {
 
   const previous = recent.at(-1);
   if (previous && best === previous) {
-    const alternative = COLOR_TOKENS
+    const alternative = ASSIGNABLE_COLOR_TOKENS
       .filter((token) => token !== previous)
       .sort((a, b) => colorTokenDistance(b, previous) - colorTokenDistance(a, previous))[0];
     if (alternative) return alternative;

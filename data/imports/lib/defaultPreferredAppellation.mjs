@@ -18,7 +18,7 @@ export function defaultPreferredAppellation({
     return { kind: "temple", name: title };
   }
   if (posthumous) {
-    return { kind: "posthumous", name: title };
+    return { kind: "posthumous", name: posthumous };
   }
   if (temple) {
     return { kind: "temple", name: temple };

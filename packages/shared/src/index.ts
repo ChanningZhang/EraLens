@@ -7,3 +7,5 @@ export * from "./timelineData";
 export * from "./chunks";
 export * from "./dynastyColors";
 export * from "./orthodoxDynasties";
+export * from "./reignGapCoverage";
+export * from "./dynastyLaneGroups";

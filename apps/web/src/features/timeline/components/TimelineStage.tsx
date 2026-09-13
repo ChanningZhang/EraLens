@@ -1,6 +1,13 @@
 import { useMemo } from "react";
 import { LayoutGroup } from "framer-motion";
-import { formatYear, fromAbsMonth } from "@eralens/shared";
+import {
+  collapseDynastyLaneGroups,
+  collectLaneReigns,
+  formatYear,
+  fromAbsMonth,
+  REIGN_GAP_COVERAGE_FROM,
+  type Dynasty,
+} from "@eralens/shared";
 import { useTimelineData } from "../hooks/useTimelineData";
 import { useViewport } from "../hooks/useViewport";
 import {
@@ -25,7 +32,7 @@ import styles from "./TimelineStage.module.css";
 
 export function TimelineStage() {
   const viewport = useViewport();
-  const { data, isLoading } = useTimelineData();
+  const { data, isLoading, error } = useTimelineData();
 
   const placed = useMemo(() => {
     if (!data) return [];
@@ -38,7 +45,7 @@ export function TimelineStage() {
       (dynasty) =>
         dynasty.startAbs <= viewport.endAbs && dynasty.endAbs >= viewport.startAbs,
     );
-    return assignLanes(visible);
+    return assignLanes(collapseDynastyLaneGroups(visible));
   }, [data, viewport.startAbs, viewport.endAbs]);
 
   const eventPlaced = useMemo(() => {
@@ -68,10 +75,19 @@ export function TimelineStage() {
     return map;
   }, [data]);
 
+  const dynastiesById = useMemo(() => {
+    const map = new Map<string, Dynasty>();
+    if (!data) return map;
+    for (const dynasty of data.dynasties) {
+      map.set(dynasty.id, dynasty);
+    }
+    return map;
+  }, [data]);
+
   const lanes = useMemo(() => {
     let top = railHeight;
     return placed.map((dynasty) => {
-      const reigns = reignsByDynasty.get(dynasty.id) ?? [];
+      const reigns = collectLaneReigns(dynasty.id, reignsByDynasty);
       const { rowCount } = assignReignStacks(reigns);
       const height = dynastyLaneHeight(rowCount);
       const item = { dynasty, reigns, top, height };
@@ -127,6 +143,13 @@ export function TimelineStage() {
             <div className={styles.empty}>
               <p className={styles.emptyHint}>加载中…</p>
             </div>
+          ) : error && placed.length === 0 ? (
+            <div className={styles.empty}>
+              <p className={styles.emptyTitle}>数据加载失败</p>
+              <p className={styles.emptyHint}>
+                请确认 API 服务已启动（pnpm --filter @eralens/api dev）
+              </p>
+            </div>
           ) : placed.length === 0 ? (
             <div className={styles.empty}>
               <p className={styles.emptyTitle}>{emptyYearLabel} 前后暂无收录</p>
@@ -139,6 +162,10 @@ export function TimelineStage() {
                   key={dynasty.id}
                   dynasty={dynasty}
                   reigns={reigns}
+                  dynastiesById={dynastiesById}
+                  gapCoverageReigns={(REIGN_GAP_COVERAGE_FROM[dynasty.id] ?? []).flatMap(
+                    (dynastyId) => reignsByDynasty.get(dynastyId) ?? [],
+                  )}
                   personNames={personNames}
                   top={top}
                 />

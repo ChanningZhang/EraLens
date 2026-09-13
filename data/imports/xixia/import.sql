@@ -37,7 +37,7 @@ INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month,
 VALUES ('li-dewang', '李德旺', NULL, NULL, NULL, NULL, ARRAY['皇帝'], '夏献宗，1223年嗣位，蒙古持续围攻。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/李德旺"}]'::jsonb)
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES ('li-xian', '李睍', NULL, NULL, NULL, NULL, ARRAY['皇帝'], '夏末帝，1226年即位，1227年西夏亡于蒙古。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/李睍"}]'::jsonb)
+VALUES ('li-xian-xixia', '李睍', NULL, NULL, NULL, NULL, ARRAY['皇帝'], '夏末帝，1226年即位，1227年西夏亡于蒙古。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/李睍"}]'::jsonb)
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES ('mo-nang-e-pang', '没藏讹庞', NULL, NULL, NULL, NULL, ARRAY['政治家','军事家'], '西夏权臣，毅宗朝没藏太后之父，长期摄政干政。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/没藏讹庞"}]'::jsonb)
@@ -50,6 +50,10 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, parent_id, note)
 VALUES ('xixia', '西夏', ARRAY['大夏','党项西夏'], 'cn', 'east_asia', 982, 1, 1227, 1, 11784, 14724, 'year', 'grape', NULL, '党项李氏，982年李继迁叛宋自立；1038年李元昊称帝，国号大夏；1227年蒙古攻灭。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, color_token = EXCLUDED.color_token, note = EXCLUDED.note;
+
+-- cleanup renamed / orphaned reigns (li-xian person id collision with 唐中宗)
+DELETE FROM era_names WHERE reign_id = 'reign-li-xian-xixia-xixia';
+DELETE FROM reigns WHERE id = 'reign-li-xian-xixia-xixia';
 
 -- reigns
 INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
@@ -86,7 +90,7 @@ INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_na
 VALUES ('reign-li-dewang-xixia', 'xixia', 'li-dewang', '夏献宗', '南平王', '献宗', '{"kind":"temple","name":"夏献宗"}'::jsonb, 1223, 1, 1226, 12, 14676, 14723, 'year')
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
 INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
-VALUES ('reign-li-xian-xixia', 'xixia', 'li-xian', '夏末帝', NULL, NULL, '{"kind":"regnal","name":"夏末帝"}'::jsonb, 1226, 1, 1227, 12, 14712, 14735, 'year')
+VALUES ('reign-li-xian-xixia', 'xixia', 'li-xian-xixia', '夏末帝', NULL, NULL, '{"kind":"regnal","name":"夏末帝"}'::jsonb, 1226, 1, 1227, 12, 14712, 14735, 'year')
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
 
 -- era_names
@@ -134,7 +138,7 @@ INSERT INTO event_participants (event_id, person_id) VALUES ('xixia-li-jiqian-re
 INSERT INTO event_participants (event_id, person_id) VALUES ('xixia-yuanhao-empire', 'li-yuanhao') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('xixia-haoshuichuan-battle', 'li-yuanhao') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('xixia-qingli-treaty', 'li-yuanhao') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('mongol-fall-xixia', 'li-xian') ON CONFLICT DO NOTHING;
+INSERT INTO event_participants (event_id, person_id) VALUES ('mongol-fall-xixia', 'li-xian-xixia') ON CONFLICT DO NOTHING;
 
 -- relations
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-li-jiqian-li-deming-succession', 'person', 'li-jiqian', 'person', 'li-deming', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
@@ -147,7 +151,7 @@ INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('re
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-li-chunyou-li-anquan-succession', 'person', 'li-chunyou', 'person', 'li-anquan', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-li-anquan-li-zunxu-succession', 'person', 'li-anquan', 'person', 'li-zunxu', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-li-zunxu-li-dewang-succession', 'person', 'li-zunxu', 'person', 'li-dewang', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
-INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-li-dewang-li-xian-succession', 'person', 'li-dewang', 'person', 'li-xian', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-li-dewang-li-xian-xixia-succession', 'person', 'li-dewang', 'person', 'li-xian-xixia', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-xixia-yuanhao-empire', 'event', 'xixia-yuanhao-empire', 'dynasty', 'xixia', 'other') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-xixia-haoshuichuan-yuanhao', 'event', 'xixia-haoshuichuan-battle', 'person', 'li-yuanhao', 'battle') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-mongol-fall-xixia', 'event', 'mongol-fall-xixia', 'dynasty', 'xixia', 'battle') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;

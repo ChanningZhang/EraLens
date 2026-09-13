@@ -135,8 +135,7 @@
     "endAbs": 3193,
     "precision": "month",
     "colorToken": "indigo",
-    "parentId": "three-kingdoms",
-    "orthodoxFromAbs": 2651
+    "parentId": "three-kingdoms"
   },
   {
     "id": "shu",

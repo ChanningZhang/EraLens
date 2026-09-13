@@ -116,7 +116,7 @@ const persons = [
   person("li-anquan", "李安全", ["皇帝"], "夏襄宗，篡位夺嫡，1211年蒙古首次大举攻夏。", "李安全"),
   person("li-zunxu", "李遵顼", ["皇帝"], "夏神宗，蒙古反复侵夏，国力日衰。", "李遵顼"),
   person("li-dewang", "李德旺", ["皇帝"], "夏献宗，1223年嗣位，蒙古持续围攻。", "李德旺"),
-  person("li-xian", "李睍", ["皇帝"], "夏末帝，1226年即位，1227年西夏亡于蒙古。", "李睍"),
+  person("li-xian-xixia", "李睍", ["皇帝"], "夏末帝，1226年即位，1227年西夏亡于蒙古。", "李睍"),
   person("mo-nang-e-pang", "没藏讹庞", ["政治家", "军事家"], "西夏权臣，毅宗朝没藏太后之父，长期摄政干政。", "没藏讹庞"),
   person("liang-taihou", "梁太后", ["后妃", "政治家"], "惠宗李秉常之母，两度摄政，主张对宋用兵。", "梁太后"),
 ];
@@ -161,7 +161,26 @@ const xixiaReigns = [
   dr("xixia", "li-anquan", "夏襄宗", "敬穆皇帝", "襄宗", 1206, 1211),
   dr("xixia", "li-zunxu", "夏神宗", "英武皇帝", "神宗", 1211, 1223),
   dr("xixia", "li-dewang", "夏献宗", "南平王", "献宗", 1223, 1226),
-  dr("xixia", "li-xian", "夏末帝", null, null, 1226, 1227),
+  // Stable id reign-li-xian-xixia (person was li-xian before rename to li-xian-xixia).
+  reign({
+    id: "reign-li-xian-xixia",
+    dynastyId: "xixia",
+    personId: "li-xian-xixia",
+    title: "夏末帝",
+    posthumousName: null,
+    templeName: null,
+    preferred: defaultPreferredAppellation({
+      title: "夏末帝",
+      posthumous: null,
+      temple: null,
+      startYear: 1226,
+      eraNames: [],
+    }),
+    start: ym(1226),
+    end: ym(1227, 12),
+    precision: "year",
+    eraNames: [],
+  }),
 ];
 
 const reignGroups = [xixiaReigns];
@@ -218,7 +237,7 @@ const supplementalEventDynasties = [
 ];
 
 const supplementalEventParticipants = [
-  { eventId: "mongol-fall-xixia", personId: "li-xian" },
+  { eventId: "mongol-fall-xixia", personId: "li-xian-xixia" },
 ];
 
 // ── relations ────────────────────────────────────────────────────────────────
@@ -302,7 +321,13 @@ const sql = [
   "BEGIN;",
   "", "-- persons", ...persons.map(personSql),
   "", "-- dynasties", ...dynasties.map(dynastySql),
-  "", "-- reigns", ...reigns.map(reignSql),
+  "",
+  "-- cleanup renamed / orphaned reigns (li-xian person id collision with 唐中宗)",
+  "DELETE FROM era_names WHERE reign_id = 'reign-li-xian-xixia-xixia';",
+  "DELETE FROM reigns WHERE id = 'reign-li-xian-xixia-xixia';",
+  "",
+  "-- reigns",
+  ...reigns.map(reignSql),
   "", "-- era_names", ...eraDeleteSql, ...eraInsertSql,
   "", "-- events", ...events.map(eventSql),
   "", "-- event_dynasties", ...eventDynastySql, ...supplementalEventDynastySql,
