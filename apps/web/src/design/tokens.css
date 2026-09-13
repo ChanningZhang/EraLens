@@ -16,6 +16,14 @@
   --color-wisteria: #be8a2c;
   --color-grape: #6e4b5c;
   --color-stone: #4a5e6b;
+  --color-jade: #3f8a62;
+  --color-coral: #c76a58;
+  --color-plum: #8b5c86;
+  --color-azure: #4f86a8;
+  --color-amber: #c8963e;
+  --color-clay: #b06e52;
+  --color-sage: #7d9172;
+  --color-slate: #636882;
   --radius-sm: 4px;
   --space-1: 4px;
   --space-2: 8px;
@@ -54,6 +62,14 @@
   --color-wisteria: #d4a045;
   --color-grape: #8a6274;
   --color-stone: #627786;
+  --color-jade: #52a07a;
+  --color-coral: #dc7f6a;
+  --color-plum: #a5749e;
+  --color-azure: #6899ba;
+  --color-amber: #d9ab52;
+  --color-clay: #c8886c;
+  --color-sage: #94a889;
+  --color-slate: #7a7f9a;
 }
 
 *,

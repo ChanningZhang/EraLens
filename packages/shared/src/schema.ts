@@ -38,8 +38,17 @@ export const ColorTokenSchema = z.enum([
   "wisteria",
   "grape",
   "stone",
+  "jade",
+  "coral",
+  "plum",
+  "azure",
+  "amber",
+  "clay",
+  "sage",
+  "slate",
 ]);
 export type ColorToken = z.infer<typeof ColorTokenSchema>;
+export const COLOR_TOKENS = ColorTokenSchema.options;
 
 export const DynastySchema = z.object({
   id: z.string(),
@@ -232,4 +241,12 @@ export const COLOR_VALUES: Record<ColorToken, string> = {
   wisteria: "#BE8A2C",
   grape: "#6E4B5C",
   stone: "#4A5E6B",
+  jade: "#3F8A62",
+  coral: "#C76A58",
+  plum: "#8B5C86",
+  azure: "#4F86A8",
+  amber: "#C8963E",
+  clay: "#B06E52",
+  sage: "#7D9172",
+  slate: "#636882",
 };

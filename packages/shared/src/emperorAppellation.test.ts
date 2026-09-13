@@ -180,6 +180,19 @@ describe("resolveReignPrimaryLabel", () => {
       ),
     ).toBe("胜");
   });
+
+  it("keeps surnames that begin with 王, such as 王莽", () => {
+    expect(
+      resolveReignPrimaryLabel(
+        source({
+          start: { year: 9, month: 1 },
+          title: "新莽皇帝",
+          preferredAppellation: { kind: "regnal", name: "王莽" },
+        }),
+        "王莽",
+      ),
+    ).toBe("王莽");
+  });
 });
 
 describe("resolveReignCardMeta for Zhongshan kings", () => {

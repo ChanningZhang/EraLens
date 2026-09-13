@@ -173,7 +173,11 @@ const persons = [...personById.values()];
 
 // ── dynasties (feudal states; id suffix avoids later homonymous dynasties) ──
 
-const colorTokens = ["ochre", "indigo", "moss", "mineral", "cinnabar", "stone", "grape", "wisteria"];
+const colorTokens = [
+  "ochre", "azure", "cinnabar", "jade", "indigo", "coral",
+  "moss", "plum", "mineral", "amber", "grape", "sage",
+  "stone", "clay", "wisteria", "slate",
+];
 let colorIdx = 0;
 function nextColor() {
   return colorTokens[colorIdx++ % colorTokens.length];

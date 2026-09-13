@@ -1,5 +1,10 @@
 import { motion } from "framer-motion";
-import { COLOR_VALUES, type Dynasty, type Reign } from "@eralens/shared";
+import {
+  COLOR_VALUES,
+  resolveDynastyColorToken,
+  type Dynasty,
+  type Reign,
+} from "@eralens/shared";
 import type { PlacedDynasty } from "../model/laneLayout";
 import { assignReignStacks, dynastyLaneHeight, STACK_ROW_HEIGHT } from "../model/reignClusters";
 import { ReignCard } from "./ReignCard";
@@ -13,7 +18,7 @@ type Props = {
 };
 
 export function DynastyLane({ dynasty, reigns, personNames, top }: Props) {
-  const color = COLOR_VALUES[dynasty.colorToken];
+  const color = COLOR_VALUES[resolveDynastyColorToken(dynasty)];
   const { items, rowCount } = assignReignStacks(reigns);
   const height = dynastyLaneHeight(rowCount);
 
@@ -34,7 +39,6 @@ export function DynastyLane({ dynasty, reigns, personNames, top }: Props) {
         className={styles.frozenLabel}
         style={rowCount > 1 ? { top: "50%", transform: "translateY(-50%)" } : undefined}
       >
-        <span className={styles.colorMark} aria-hidden="true" />
         <div className={styles.labelText}>
           <p className={styles.name}>{dynasty.name}</p>
         </div>

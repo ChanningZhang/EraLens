@@ -58,7 +58,9 @@ export function extractGivenNameFromRegnalTitle(
   appellationName?: string | null,
 ): string | null {
   const full = appellationName ?? title;
-  const stripped = full.replace(STATE_PREFIX, "");
+  const prefix = full.match(STATE_PREFIX);
+  if (!prefix) return null;
+  const stripped = full.slice(prefix[0].length);
   const match = stripped.match(/^王([^\s]{1,2})$/);
   return match?.[1] ?? null;
 }

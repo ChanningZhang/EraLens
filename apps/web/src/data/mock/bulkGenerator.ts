@@ -1,15 +1,4 @@
-import { absMonth, type Dynasty, type Reign } from "@eralens/shared";
-
-const COLOR_TOKENS: Dynasty["colorToken"][] = [
-  "cinnabar",
-  "mineral",
-  "ochre",
-  "indigo",
-  "moss",
-  "wisteria",
-  "grape",
-  "stone",
-];
+import { absMonth, COLOR_TOKENS, type Dynasty, type Reign } from "@eralens/shared";
 
 /** Synthetic bulk data for performance validation (not shown in UI labels). */
 export function generateBulkReigns(count = 2200): Reign[] {

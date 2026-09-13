@@ -13,13 +13,10 @@
   min-width: 1px;
   padding: 0 10px;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 3px;
-  border: 1px solid color-mix(in srgb, var(--card-color) 40%, var(--color-border));
-  border-top: 2px solid var(--card-color);
+  align-items: center;
+  border: 1px solid color-mix(in srgb, var(--card-color) 22%, var(--color-border));
   border-radius: var(--radius-sm);
-  background: var(--color-surface);
+  background: color-mix(in srgb, var(--card-color) 14%, var(--color-surface));
   cursor: pointer;
   transition:
     transform var(--motion-fast),
@@ -30,6 +27,7 @@
 
 .card:hover {
   transform: translateY(-1px);
+  background: color-mix(in srgb, var(--card-color) 20%, var(--color-surface));
   box-shadow: 0 2px 8px rgba(27, 25, 23, 0.08);
 }
 
@@ -38,14 +36,29 @@
   box-shadow: inset 3px 0 0 var(--color-accent);
 }
 
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 6px;
+  min-width: 0;
+  width: 100%;
+}
+
 .wrap {
   padding: 3px 2px;
+  align-items: center;
+}
+
+.wrap .content {
+  flex-direction: column;
   gap: 0;
   align-items: center;
 }
 
 .wrap .name {
-  font-size: 12px;
+  font-size: var(--card-name-size, 16px);
   line-height: 1.1;
   text-align: center;
   white-space: normal;
@@ -61,7 +74,7 @@
   left: 50%;
   z-index: 2;
   font-family: var(--font-serif);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 1.2;
   white-space: nowrap;
@@ -73,25 +86,25 @@
 .name {
   margin: 0;
   font-family: var(--font-serif);
-  font-size: 13px;
+  font-size: 17px;
   font-weight: 600;
+  line-height: 1;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  flex-shrink: 0;
 }
 
 .meta {
   margin: 0;
-  font-size: 9px;
+  font-size: 13px;
+  line-height: 1;
   color: var(--color-ink-muted);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.metaKind {
-  margin-right: 5px;
-  color: color-mix(in srgb, var(--card-color) 76%, var(--color-ink-muted));
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .tooltip {

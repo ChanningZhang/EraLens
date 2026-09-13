@@ -5,3 +5,4 @@ export * from "./personTime";
 export * from "./emperorAppellation";
 export * from "./timelineData";
 export * from "./chunks";
+export * from "./dynastyColors";

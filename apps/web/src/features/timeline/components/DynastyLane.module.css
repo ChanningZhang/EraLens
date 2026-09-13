@@ -24,23 +24,15 @@
   min-width: 76px;
   max-width: 180px;
   height: 44px;
-  padding: 0 14px 0 10px;
-  background: color-mix(in srgb, var(--color-surface) 94%, transparent);
-  border: 1px solid color-mix(in srgb, var(--dynasty-color) 15%, var(--color-border));
+  padding: 0 14px;
+  background: color-mix(in srgb, var(--dynasty-color) 14%, var(--color-surface));
+  border: 1px solid color-mix(in srgb, var(--dynasty-color) 22%, var(--color-border));
   border-radius: 8px;
   box-shadow:
     0 2px 8px color-mix(in srgb, var(--color-ink) 6%, transparent),
     8px 0 16px color-mix(in srgb, var(--color-paper) 72%, transparent);
   backdrop-filter: blur(10px);
   pointer-events: none;
-}
-
-.colorMark {
-  flex: 0 0 3px;
-  align-self: stretch;
-  margin: 7px 10px 7px 0;
-  border-radius: 999px;
-  background: var(--dynasty-color);
 }
 
 .labelText {

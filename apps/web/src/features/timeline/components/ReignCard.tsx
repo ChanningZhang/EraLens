@@ -10,7 +10,7 @@ import { getRepository } from "@/data/repository";
 import { useSelection } from "../hooks/useSelection";
 import { useViewport } from "../hooks/useViewport";
 import { projectAbs } from "../model/coordinates";
-import { cardDetailLevel, shouldShowReignCardMeta } from "../model/lod";
+import { cardDetailLevel, resolveReignCardTextLayout, shouldShowReignCardMeta } from "../model/lod";
 import {
   assignReignStacks,
   resolveReignVisualSpan,
@@ -61,13 +61,17 @@ export function ReignCard({
     cardWidthPx: width,
     dynastyId: dynasty.id,
   });
-  const detail = cardDetailLevel(width, [...label].length);
-  const showMeta = shouldShowReignCardMeta(width, [...label].length);
+  const layout = resolveReignCardTextLayout(width, [...label].length);
+  const detail = layout.level;
   const meta = resolveReignCardMeta(reign, personName);
+  const metaGlyphCount = meta ? [...meta.name].length : 0;
+  const showMeta = shouldShowReignCardMeta(
+    width,
+    [...label].length,
+    metaGlyphCount,
+  );
   const tooltipName = personName && personName !== label ? personName : label;
-  const tooltipText = meta
-    ? `${tooltipName}　${meta.label}：${meta.name}`
-    : tooltipName;
+  const tooltipText = meta ? `${tooltipName}　${meta.name}` : tooltipName;
 
   const className = useMemo(() => {
     return [
@@ -91,7 +95,12 @@ export function ReignCard({
       <button
         type="button"
         className={className}
-        style={{ ["--card-color" as string]: color }}
+        style={{
+          ["--card-color" as string]: color,
+          ...(detail === "wrap"
+            ? { ["--card-name-size" as string]: `${layout.nameFontPx}px` }
+            : {}),
+        }}
         onClick={() => {
           selectionStore.select({ type: "reign", id: reign.id }, reign.startAbs);
           selectionStore.syncToUrl(viewport.centerAbs);
@@ -103,12 +112,11 @@ export function ReignCard({
         onMouseLeave={() => setTooltipPos(null)}
         aria-label={`${label} ${dynasty.name}`}
       >
-        {detail !== "below" && <p className={styles.name}>{label}</p>}
-        {showMeta && meta && (
-          <p className={styles.meta}>
-            <span className={styles.metaKind}>{meta.label}</span>
-            {meta.name}
-          </p>
+        {detail !== "below" && (
+          <div className={styles.content}>
+            <p className={styles.name}>{label}</p>
+            {showMeta && meta && <p className={styles.meta}>{meta.name}</p>}
+          </div>
         )}
       </button>
       {detail === "below" && showCaptionBelow && (

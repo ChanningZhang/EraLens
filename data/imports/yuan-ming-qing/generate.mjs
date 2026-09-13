@@ -60,7 +60,11 @@ function dr(dynastyId, personId, title, posthumous, temple, sy, ey, eraList = []
   return dynastyReign(dynastyId, personId, title, posthumous, temple, sy, ey, eraNames);
 }
 
-const colorTokens = ["ochre", "indigo", "moss", "mineral", "cinnabar", "stone", "grape", "wisteria"];
+const colorTokens = [
+  "ochre", "azure", "cinnabar", "jade", "indigo", "coral",
+  "moss", "plum", "mineral", "amber", "grape", "sage",
+  "stone", "clay", "wisteria", "slate",
+];
 let colorIdx = 0;
 function nextColor() {
   return colorTokens[colorIdx++ % colorTokens.length];

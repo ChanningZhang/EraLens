@@ -16,45 +16,123 @@ export function resolveLod(pxPerMonth: number): Lod {
 
 export type CardDetailLevel = "full" | "wrap" | "below";
 
+export type ReignCardTextLayout = {
+  level: CardDetailLevel;
+  nameFontPx: number;
+  metaFontPx: number;
+};
+
 const CARD_HEIGHT = 48;
-const WRAP_PAD_X = 4;
+const CARD_PAD_X = 20;
+const ROW_GAP = 6;
 const WRAP_PAD_Y = 6;
-const GLYPH_PX = 12;
-const LINE_HEIGHT = 13;
+const NAME_FONT_DEFAULT = 17;
+const NAME_FONT_WRAP_DEFAULT = 16;
+const META_FONT_DEFAULT = 13;
+const MIN_WRAP_FONT = 11;
 const FULL_MIN_WIDTH = 80;
 
-function wrappedLineCount(cardWidthPx: number, glyphCount: number): number | null {
-  const charsPerLine = Math.floor((cardWidthPx - WRAP_PAD_X) / GLYPH_PX);
+function glyphPxForFont(fontPx: number): number {
+  return fontPx * 0.94;
+}
+
+function lineHeightForFont(fontPx: number): number {
+  return Math.ceil(fontPx * 1.1);
+}
+
+function contentWidth(cardWidthPx: number): number {
+  return Math.max(0, cardWidthPx - CARD_PAD_X);
+}
+
+function wrappedLineCount(
+  cardWidthPx: number,
+  glyphCount: number,
+  fontPx: number,
+): number | null {
+  const charsPerLine = Math.floor(contentWidth(cardWidthPx) / glyphPxForFont(fontPx));
   if (charsPerLine < 1) return null;
   return Math.ceil(glyphCount / charsPerLine);
 }
 
+function wrappedFits(
+  cardWidthPx: number,
+  glyphCount: number,
+  fontPx: number,
+): boolean {
+  const lines = wrappedLineCount(cardWidthPx, glyphCount, fontPx);
+  if (lines === null) return false;
+  const innerHeight = CARD_HEIGHT - WRAP_PAD_Y;
+  return lines * lineHeightForFont(fontPx) <= innerHeight;
+}
+
+function singleLineFits(
+  cardWidthPx: number,
+  glyphCount: number,
+  fontPx: number,
+): boolean {
+  return glyphCount * glyphPxForFont(fontPx) <= contentWidth(cardWidthPx);
+}
+
 /**
  * Card text uses the full name and follows pixel width, not global zoom.
- * Prefer wrapping inside the card; if a wrapped name still cannot fit,
- * the name hangs in the lane gap below the full-height bar.
+ * Prefer wrapping inside the card at the default size; if that still cannot
+ * fit, step down the font size before moving the name below the bar.
  */
+export function resolveReignCardTextLayout(
+  cardWidthPx: number,
+  glyphCount = 3,
+): ReignCardTextLayout {
+  if (
+    cardWidthPx >= FULL_MIN_WIDTH &&
+    singleLineFits(cardWidthPx, glyphCount, NAME_FONT_DEFAULT)
+  ) {
+    return {
+      level: "full",
+      nameFontPx: NAME_FONT_DEFAULT,
+      metaFontPx: META_FONT_DEFAULT,
+    };
+  }
+
+  for (let fontPx = NAME_FONT_WRAP_DEFAULT; fontPx >= MIN_WRAP_FONT; fontPx--) {
+    if (wrappedFits(cardWidthPx, glyphCount, fontPx)) {
+      return {
+        level: "wrap",
+        nameFontPx: fontPx,
+        metaFontPx: Math.max(
+          10,
+          Math.round((fontPx * META_FONT_DEFAULT) / NAME_FONT_DEFAULT),
+        ),
+      };
+    }
+  }
+
+  return {
+    level: "below",
+    nameFontPx: NAME_FONT_WRAP_DEFAULT,
+    metaFontPx: META_FONT_DEFAULT,
+  };
+}
+
 export function cardDetailLevel(
   cardWidthPx: number,
   glyphCount = 3,
 ): CardDetailLevel {
-  const lines = wrappedLineCount(cardWidthPx, glyphCount);
-  const innerHeight = CARD_HEIGHT - WRAP_PAD_Y;
-  const fitsInside = lines !== null && lines * LINE_HEIGHT <= innerHeight;
-
-  if (!fitsInside) return "below";
-  if (cardWidthPx >= FULL_MIN_WIDTH && lines === 1) return "full";
-  return "wrap";
+  return resolveReignCardTextLayout(cardWidthPx, glyphCount).level;
 }
 
-/** Show era/temple/posthumous meta when the personal name fits on one line. */
+/** Show era/temple/posthumous meta when name and meta fit on one horizontal row. */
 export function shouldShowReignCardMeta(
   cardWidthPx: number,
-  glyphCount = 3,
+  nameGlyphCount = 3,
+  metaGlyphCount = 0,
 ): boolean {
-  if (cardDetailLevel(cardWidthPx, glyphCount) === "below") return false;
-  const lines = wrappedLineCount(cardWidthPx, glyphCount);
-  return lines === 1;
+  const layout = resolveReignCardTextLayout(cardWidthPx, nameGlyphCount);
+  if (layout.level !== "full" || metaGlyphCount <= 0) return false;
+
+  const nameWidth = nameGlyphCount * glyphPxForFont(layout.nameFontPx);
+  const metaWidth = metaGlyphCount * glyphPxForFont(layout.metaFontPx);
+  const available = contentWidth(cardWidthPx) - ROW_GAP;
+  return nameWidth + metaWidth <= available;
 }
 
 export function shouldShowEvent(event: Event, lod: Lod): boolean {
