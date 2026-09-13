@@ -8,7 +8,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { dynastySql } from "../lib/sqlHelpers.mjs";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
-import { finalizeImportReigns } from "../lib/missingReigns.mjs";
+import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
 import { reignSql as formatReignSql } from "../lib/reignSql.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -362,6 +362,9 @@ const sql = [
   "-- Warlords as persons only; single roc dynasty row",
   "BEGIN;",
   "",
+  "-- remove stale auto-generated 史料缺 (元首空缺期应留白)",
+  sqlDeleteSystemMissingReigns(["roc"], sqlStr),
+  "",
   "-- persons",
   ...importPersons.map(personSql),
   "",
@@ -411,6 +414,7 @@ const manifest = {
     "国家元首以 reign 卡片收录（临时大总统、大总统、国民政府主席、总统等）。",
     "孙中山（sun-yat-sen）复用已有 id；蒋介石 1928–1948 实际主政以事件关联，1948 年起 reign。",
     "段祺瑞临时执政、汪精卫伪政权等未建 reign；军阀割据以 span 事件「军阀割据」概括。",
+    "徐世昌下台至曹锟当选、曹锟下台至张作霖任大元帅、张作霖死后至林森任主席等元首空缺期留白，不标史料缺。",
     "1949 迁台后之台湾时期不在本包内；中华人民共和国不在本包内。",
   ],
 };

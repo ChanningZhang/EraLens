@@ -104,7 +104,7 @@ function posthumousDisplayName(
   title: string,
   posthumousName: string,
 ): string {
-  if (title && title !== "皇帝") return title;
+  if (title && title !== "皇帝" && isDynasticEmperorTitle(title)) return title;
   return posthumousName;
 }
 

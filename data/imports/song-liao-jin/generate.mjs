@@ -7,7 +7,7 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
-import { finalizeImportReigns } from "../lib/missingReigns.mjs";
+import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
 import { drDay, dynastyReignDay, dynastyReignMonth } from "../lib/reignDateHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -409,6 +409,10 @@ const sql = [
   "-- EraLens period import: song-liao-jin",
   "-- Window: 916-01 .. 1234-12",
   "BEGIN;",
+  "",
+  "-- remove stale auto-generated 史料缺 (太祖卒后述律太后摄政期应留白)",
+  sqlDeleteSystemMissingReigns(["liao"], sqlStr),
+  "",
   "", "-- persons", ...importPersons.map(personSql),
   "", "-- dynasties", ...dynasties.map(dynastySql),
   "", "-- reigns", ...importReigns.map(reignSql),
@@ -453,6 +457,7 @@ const manifest = {
     "南宋/北宋王朝与皇帝见 sui-tang-wudai-song；本包补充 event_dynasties 关联靖康之变、南宋建立。",
     "未收录西辽、北辽、东辽等辽亡后残余政权。",
     "辽金皇帝在位日取中国君主列表/维基百科通行换算，precision=day；1234年蔡州陷落同年更替用 month；承麟在位不足一日用 day。",
+    "辽太祖卒至太宗即位间述律太后摄政、未立新帝，时间轴留白，不标史料缺。",
   ],
 };
 writeFileSync(path.join(__dirname, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);

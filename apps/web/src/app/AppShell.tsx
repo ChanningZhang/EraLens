@@ -22,11 +22,6 @@ export function AppShell() {
   useTimelineWheel();
   const [search, setSearch] = useState("");
   const [searchHits, setSearchHits] = useState<SearchHit[]>([]);
-  const [theme, setTheme] = useState<"light" | "dark">("light");
-
-  useEffect(() => {
-    document.documentElement.dataset.theme = theme;
-  }, [theme]);
 
   useEffect(() => {
     if (boundsQuery.data) {
@@ -140,29 +135,6 @@ export function AppShell() {
               ))}
             </div>
           )}
-        </div>
-        <div className={styles.headerActions}>
-          <button
-            type="button"
-            className={styles.chipButton}
-            onClick={() => viewportStore.zoomBy(1.25)}
-          >
-            放大
-          </button>
-          <button
-            type="button"
-            className={styles.chipButton}
-            onClick={() => viewportStore.zoomBy(0.8)}
-          >
-            缩小
-          </button>
-          <button
-            type="button"
-            className={styles.iconButton}
-            onClick={() => setTheme((t) => (t === "light" ? "dark" : "light"))}
-          >
-            {theme === "light" ? "深色" : "浅色"}
-          </button>
         </div>
       </header>
 

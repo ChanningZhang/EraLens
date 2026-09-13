@@ -19,7 +19,7 @@ function templeDisplayName(title, templeName) {
 }
 
 function posthumousDisplayName(title, posthumousName) {
-  if (title && title !== "皇帝") return title;
+  if (title && title !== "皇帝" && isDynasticEmperorTitle(title)) return title;
   return posthumousName;
 }
 

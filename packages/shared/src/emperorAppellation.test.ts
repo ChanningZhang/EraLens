@@ -389,6 +389,37 @@ describe("resolveReignCardMeta", () => {
     ).toEqual({ label: "称号", name: "秦穆公" });
   });
 
+  it("uses posthumous name when title is not a dynastic emperor shorthand", () => {
+    const liuShan = {
+      ...source({
+        start: { year: 223, month: 6 },
+        end: { year: 263, month: 11 },
+        title: "蜀汉后主",
+        posthumousName: "孝怀皇帝",
+        preferredAppellation: { kind: "posthumous", name: "孝怀皇帝" },
+        eraNames: [{ name: "建兴" }] as Reign["eraNames"],
+      }),
+    };
+    expect(resolveEmperorAppellation(liuShan)).toEqual({
+      kind: "posthumous",
+      name: "孝怀皇帝",
+    });
+    expect(resolveReignCardMeta(liuShan, "刘禅")).toEqual({
+      label: "谥号",
+      name: "孝怀皇帝",
+    });
+    expect(
+      resolveEmperorAppellation(
+        source({
+          start: { year: 223, month: 6 },
+          title: "蜀汉后主",
+          posthumousName: "孝怀皇帝",
+          eraNames: [{ name: "建兴" }] as Reign["eraNames"],
+        }),
+      ),
+    ).toEqual({ kind: "posthumous", name: "孝怀皇帝" });
+  });
+
   it("shows temple meta for Song emperors with temple names", () => {
     expect(
       resolveReignCardMeta(

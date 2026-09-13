@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
 import { resolveOrthodoxEndAbs, resolveOrthodoxFromAbs } from "../lib/orthodoxDynasties.mjs";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
-import { finalizeImportReigns } from "../lib/missingReigns.mjs";
+import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
 import { drDay } from "../lib/reignDateHelpers.mjs";
 import { reignSql } from "../lib/reignSql.mjs";
 
@@ -484,6 +484,8 @@ const preSql = [
   "DELETE FROM events WHERE id = 'yuan-north-end';",
   "DELETE FROM reigns WHERE dynasty_id = 'yuan-north';",
   "DELETE FROM dynasties WHERE id = 'yuan-north';",
+  "-- remove stale auto-generated 史料缺 (两都之战并行叠放、驾崩至即位短空档应留白)",
+  sqlDeleteSystemMissingReigns(["yuan"], sqlStr),
 ].join("\n");
 
 const sql = ["-- EraLens period import: yuan-ming-qing", "-- Window: 1271-12 .. 1912-02", "BEGIN;", "", preSql, "", "-- persons", ...importPersons.map(personSql), "", "-- dynasties", ...dynasties.map(dynastySql), "", "-- reigns", ...importReigns.map(formatReignSql), "", "-- era_names", ...eraDeleteSql, ...eraInsertSql, "", "-- events", ...events.map(eventSql), "", "-- event_dynasties", ...eventDynastySql, "", "-- event_participants", ...eventParticipantSql, "", "-- relations", ...relations.map(relationSql), "", "COMMIT;", ""].join("\n");
@@ -563,6 +565,7 @@ const manifest = {
     "元明战争：两都之战、红巾起义、明军攻占大都、抗倭战争、萨尔浒、宁远、松锦之战。",
     "明非帝王人物：张居正、海瑞、戚继光、王阳明、严嵩、唐寅、李时珍、徐光启、徐霞客、魏忠贤、刘基、于谦、郑和等；张居正改革（1572–1582）为 span 事件。",
     "元明清皇帝在位日取维基百科君主列表通行换算，precision=day；南明弘光/隆武/永历及鲁监国、绍武亦升级日精度。",
+    "元两都之战文宗与明宗并行、帝位短空档等不标史料缺，时间轴自然留白。",
   ],
 };
 writeFileSync(path.join(__dirname, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);
