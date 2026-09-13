@@ -6,7 +6,9 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
-import { finalizeImportReigns } from "../lib/missingReigns.mjs";
+import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
+import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
+import { drDay } from "../lib/reignDateHelpers.mjs";
 import { reignSql } from "../lib/reignSql.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -467,33 +469,36 @@ const shiguoReigns = [
   dr("han-bei", "liu-jiyuan", "北汉末帝", null, null, 968, 979),
 ];
 
+// 两宋皇帝在位日取维基百科/宋史通行换算，precision=day。
 const songNorthReigns = [
-  dr("song-north", "zhao-kuangyin", "宋太祖", null, "太祖", 960, 976, [{ name: "建隆", sy: 960, ey: 963 }, { name: "乾德", sy: 963, ey: 968 }, { name: "开宝", sy: 968, ey: 976 }]),
-  dr("song-north", "zhao-kuangyi", "宋太宗", null, "太宗", 976, 997),
-  dr("song-north", "zhao-heng", "宋真宗", null, "真宗", 997, 1022),
-  dr("song-north", "zhao-zhen", "宋仁宗", null, "仁宗", 1022, 1063, [{ name: "天圣", sy: 1023, ey: 1032 }, { name: "明道", sy: 1032, ey: 1033 }, { name: "景祐", sy: 1034, ey: 1038 }, { name: "庆历", sy: 1041, ey: 1048 }]),
-  dr("song-north", "zhao-shu", "宋英宗", null, "英宗", 1063, 1067),
-  dr("song-north", "zhao-xu", "宋神宗", null, "神宗", 1067, 1085, [{ name: "熙宁", sy: 1068, ey: 1077 }, { name: "元丰", sy: 1078, ey: 1085 }]),
-  dr("song-north", "zhao-zhe", "宋哲宗", null, "哲宗", 1085, 1100),
-  dr("song-north", "zhao-ji", "宋徽宗", null, "徽宗", 1100, 1126),
-  dr("song-north", "zhao-huan", "宋钦宗", null, "钦宗", 1126, 1127),
+  drDay("song-north", "zhao-kuangyin", "宋太祖", null, "太祖", 960, 2, 4, 976, 11, 14, [{ name: "建隆", sy: 960, ey: 963 }, { name: "乾德", sy: 963, ey: 968 }, { name: "开宝", sy: 968, ey: 976 }]),
+  drDay("song-north", "zhao-kuangyi", "宋太宗", null, "太宗", 976, 11, 14, 997, 5, 8),
+  drDay("song-north", "zhao-heng", "宋真宗", null, "真宗", 997, 5, 8, 1022, 3, 23),
+  drDay("song-north", "zhao-zhen", "宋仁宗", null, "仁宗", 1022, 3, 23, 1063, 4, 30, [{ name: "天圣", sy: 1023, ey: 1032 }, { name: "明道", sy: 1032, ey: 1033 }, { name: "景祐", sy: 1034, ey: 1038 }, { name: "庆历", sy: 1041, ey: 1048 }]),
+  drDay("song-north", "zhao-shu", "宋英宗", null, "英宗", 1063, 4, 30, 1067, 1, 25),
+  drDay("song-north", "zhao-xu", "宋神宗", null, "神宗", 1067, 1, 25, 1085, 4, 1, [{ name: "熙宁", sy: 1068, ey: 1077 }, { name: "元丰", sy: 1078, ey: 1085 }]),
+  drDay("song-north", "zhao-zhe", "宋哲宗", null, "哲宗", 1085, 4, 1, 1100, 2, 23),
+  drDay("song-north", "zhao-ji", "宋徽宗", null, "徽宗", 1100, 2, 23, 1126, 1, 18),
+  drDay("song-north", "zhao-huan", "宋钦宗", null, "钦宗", 1126, 1, 18, 1127, 6, 12),
 ];
 
 const songSouthReigns = [
-  dr("song-south", "zhao-gou", "宋高宗", null, "高宗", 1127, 1162),
-  dr("song-south", "zhao-shen", "宋孝宗", null, "孝宗", 1162, 1189),
-  dr("song-south", "zhao-dun", "宋光宗", null, "光宗", 1189, 1194),
-  dr("song-south", "zhao-kuo", "宋宁宗", null, "宁宗", 1194, 1224),
-  dr("song-south", "zhao-yun", "宋理宗", null, "理宗", 1224, 1264),
-  dr("song-south", "zhao-qi", "宋度宗", null, "度宗", 1264, 1274),
-  dr("song-south", "zhao-shi", "宋恭帝", null, "恭帝", 1274, 1276),
-  dr("song-south", "zhao-shi-duan", "宋端宗", null, "端宗", 1276, 1278),
-  dr("song-south", "zhao-bing", "宋帝昺", null, null, 1278, 1279),
+  drDay("song-south", "zhao-gou", "宋高宗", null, "高宗", 1127, 6, 12, 1162, 7, 24),
+  drDay("song-south", "zhao-shen", "宋孝宗", null, "孝宗", 1162, 7, 24, 1189, 2, 18),
+  drDay("song-south", "zhao-dun", "宋光宗", null, "光宗", 1189, 2, 18, 1194, 7, 24),
+  drDay("song-south", "zhao-kuo", "宋宁宗", null, "宁宗", 1194, 7, 24, 1224, 9, 18),
+  drDay("song-south", "zhao-yun", "宋理宗", null, "理宗", 1224, 9, 18, 1264, 11, 16),
+  drDay("song-south", "zhao-qi", "宋度宗", null, "度宗", 1264, 11, 16, 1274, 8, 12),
+  drDay("song-south", "zhao-shi", "宋恭帝", null, "恭帝", 1274, 8, 12, 1276, 2, 4),
+  drDay("song-south", "zhao-shi-duan", "宋端宗", null, "端宗", 1276, 6, 14, 1278, 5, 8),
+  drDay("song-south", "zhao-bing", "宋帝昺", null, null, 1278, 5, 10, 1279, 3, 19),
 ];
 
 // Puppets (杨侑/杨侗) are parallel; 杨浩 is on the main line after 炀帝.
 const reignGroups = [suiReignsCore, tangReigns, zhouWuReigns, wudaiReigns, shiguoReigns, songNorthReigns, songSouthReigns];
-const reigns = [suiReigns, tangReigns, zhouWuReigns, wudaiReigns, shiguoReigns, songNorthReigns, songSouthReigns].flat();
+const reigns = applyDocumentedDatesToReigns(
+  [suiReigns, tangReigns, zhouWuReigns, wudaiReigns, shiguoReigns, songNorthReigns, songSouthReigns].flat(),
+);
 
 // ── events ───────────────────────────────────────────────────────────────────
 
@@ -619,6 +624,10 @@ const sql = [
   "-- EraLens period import: sui-tang-wudai-song",
   "-- Window: 581-01 .. 1279-12",
   "BEGIN;",
+  "",
+  "-- remove stale auto-generated 史料缺 (武周期间唐行留白)",
+  sqlDeleteSystemMissingReigns(["tang"], sqlStr),
+  "",
   "", "-- persons", ...importPersons.map(personSql),
   "", "-- dynasties", ...dynasties.map(dynastySql),
   "", "-- reigns", ...importReigns.map(formatReignSql),
@@ -658,6 +667,7 @@ const manifest = {
     "1279 崖山海战为南宋终结；元朝不在本包内。",
     "李显、李旦两度即位，在位拆为两段；690–705 年武周武则天，不与唐中宗重叠。",
     "隋末并行用 claim_track：主线文帝→炀帝→杨浩（江都续统，正统金色）；changan/杨侑、luoyang/杨侗为并行傀儡，不镀金、不串进继承链。",
+    "北宋、南宋皇帝在位日取维基百科/宋史通行换算，precision=day；隋唐宋及五代十国其余君主仍为 year/month。",
   ],
 };
 writeFileSync(path.join(__dirname, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);

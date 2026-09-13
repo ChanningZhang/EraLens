@@ -116,7 +116,7 @@ node .cursor/skills/eralens-period-import/scripts/compute-abs.mjs -1046 1  # -12
 - 缺失区间仍写入普通 `reigns` 表，`person_id = 'system-missing-ruler'`，`title = '史料缺'`，起止时间为查证后的缺失范围。
 - 不添加年号、谥号、庙号或 preferred_appellation。
 - 不增加 `missing` 字段、不建单独 gap 表。前端只根据保留的 `person_id` 将该 reign 渲染为虚线框。
-- 没有占位 reign 的时间空档一律留白，不由前端自动推断为资料缺失。
+- 没有占位 reign 的时间空档一律留白，不由前端自动推断为资料缺失；导入脚本也**不会**根据相邻君主间隔自动插入 `reign-missing-*`，仅 `getCuratedMissingReigns` 或包内显式传入的占位会写入库。
 
 ### 3. 冲突检查
 

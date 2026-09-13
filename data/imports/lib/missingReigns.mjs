@@ -19,15 +19,6 @@ const MEMBER_TO_LANE = new Map(
   ),
 );
 
-/** Intentional blanks — never emit missing placeholders (e.g. Tang lane during Wu Zhou). */
-const INTENTIONAL_BLANK_GAPS = [
-  { dynastyId: "tang", startAbs: 8289, endAbs: 8459 },
-  // Mongol regency intervals (tolui / töregene / oghul qaimish) — events only, no reign.
-  { dynastyId: "mongol-empire", startAbs: ym(1228, 1).abs, endAbs: ym(1228, 12).abs },
-  { dynastyId: "mongol-empire", startAbs: ym(1242, 1).abs, endAbs: ym(1245, 12).abs },
-  { dynastyId: "mongol-empire", startAbs: ym(1249, 1).abs, endAbs: ym(1250, 12).abs },
-];
-
 export const systemMissingPerson = {
   id: SYSTEM_MISSING_RULER_PERSON_ID,
   name: "史料缺",
@@ -42,11 +33,11 @@ function laneKeyForDynasty(dynastyId) {
   return MEMBER_TO_LANE.get(dynastyId) ?? dynastyId;
 }
 
-function gapIsExcluded(dynastyId, gapStart, gapEnd) {
-  return INTENTIONAL_BLANK_GAPS.some((blank) => {
-    if (blank.dynastyId !== dynastyId) return false;
-    return gapStart >= blank.startAbs && gapEnd <= blank.endAbs;
-  });
+/** SQL to drop stale auto-generated 史料缺 rows before re-import (optional per package). */
+export function sqlDeleteSystemMissingReigns(dynastyIds, sqlStr) {
+  if (!dynastyIds.length) return "";
+  const ids = dynastyIds.map((id) => sqlStr(id)).join(", ");
+  return `DELETE FROM reigns WHERE dynasty_id IN (${ids}) AND person_id = ${sqlStr(SYSTEM_MISSING_RULER_PERSON_ID)};`;
 }
 
 /**
@@ -96,8 +87,8 @@ export function missingReignFromAbs({ dynastyId, startAbs, endAbs, id = null }) 
 }
 
 /**
+ * @deprecated Import pipeline no longer auto-emits gaps. Kept for ad-hoc validation scripts.
  * Emit missing placeholders for uncovered intervals between consecutive rulers on a lane.
- * Uses coverage sweep so overlapping reign years do not create false gaps.
  */
 export function buildMissingReignsFromGaps(reigns, { minGapMonths = 12 } = {}) {
   const rulers = reigns.filter((r) => r.personId !== SYSTEM_MISSING_RULER_PERSON_ID);
@@ -122,10 +113,7 @@ export function buildMissingReignsFromGaps(reigns, { minGapMonths = 12 } = {}) {
         const gapStart = coverageEnd + 1;
         const gapEnd = reign.startAbs - 1;
         const gapMonths = gapEnd - gapStart + 1;
-        if (
-          gapMonths >= minGapMonths &&
-          !gapIsExcluded(reign.dynastyId, gapStart, gapEnd)
-        ) {
+        if (gapMonths >= minGapMonths) {
           missing.push(
             missingReignFromAbs({
               dynastyId: reign.dynastyId,
@@ -142,10 +130,7 @@ export function buildMissingReignsFromGaps(reigns, { minGapMonths = 12 } = {}) {
   return missing;
 }
 
-/**
- * Holes visible on the timeline when overlapping reign years clip cards.
- * Matches frontend reignClusters layout.
- */
+/** @deprecated Import pipeline no longer auto-emits gaps. Kept for ad-hoc validation scripts. */
 export function buildMissingReignsFromVisualGaps(reigns, { minGapMonths = 12 } = {}) {
   const rulers = reigns.filter((r) => r.personId !== SYSTEM_MISSING_RULER_PERSON_ID);
   const byLane = new Map();
@@ -161,7 +146,6 @@ export function buildMissingReignsFromVisualGaps(reigns, { minGapMonths = 12 } =
     for (const { dynastyId, gapStart, gapEnd } of findVisualLaneGaps(laneReigns, {
       minGapMonths,
     })) {
-      if (gapIsExcluded(dynastyId, gapStart, gapEnd)) continue;
       missing.push(
         missingReignFromAbs({
           dynastyId,
@@ -218,13 +202,12 @@ export function mergeMissingReigns(...lists) {
   return [...bySpan.values()];
 }
 
-export function resolveMissingReigns(slug, reigns, extraMissingReigns = []) {
-  return mergeMissingReigns(
-    getCuratedMissingReigns(slug),
-    buildMissingReignsFromGaps(reigns),
-    buildMissingReignsFromVisualGaps(reigns),
-    extraMissingReigns,
-  );
+/**
+ * Only explicit, researched 史料缺 placeholders — never infer from calendar gaps.
+ * Intentional blanks (武周留白、大汗监国间隔等) stay empty with no reign row.
+ */
+export function resolveMissingReigns(slug, _reigns, extraMissingReigns = []) {
+  return mergeMissingReigns(getCuratedMissingReigns(slug), extraMissingReigns);
 }
 
 /** Resolve curated + auto-detected gaps, then merge into import persons/reigns. */

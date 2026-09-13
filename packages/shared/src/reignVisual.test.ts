@@ -3,6 +3,7 @@ import { absMonth } from "./time";
 import type { Reign } from "./schema";
 import {
   formatReignSpanTooltip,
+  isSubMonthReign,
   reignDurationDays,
   reignVisualBounds,
 } from "./reignVisual";
@@ -88,6 +89,73 @@ describe("formatReignSpanTooltip", () => {
         }),
       ),
     ).toBe("公元1234年2月9日 · 1天");
+  });
+
+  it("formats multi-year day-precision reigns as years and months", () => {
+    expect(
+      formatReignSpanTooltip(
+        reign({
+          start: { year: 712, month: 9, day: 8 },
+          end: { year: 756, month: 8, day: 12 },
+          startAbs: absMonth(712, 9),
+          endAbs: absMonth(756, 8),
+        }),
+      ),
+    ).toBe("公元712年9月8日 — 公元756年8月12日 · 43年11个月");
+  });
+
+  it("formats sub-year spans in months", () => {
+    expect(
+      formatReignSpanTooltip(
+        reign({
+          start: { year: 1234, month: 2, day: 9 },
+          end: { year: 1234, month: 8, day: 15 },
+          startAbs: absMonth(1234, 2),
+          endAbs: absMonth(1234, 8),
+        }),
+      ),
+    ).toBe("公元1234年2月9日 — 公元1234年8月15日 · 6个月");
+  });
+
+  it("formats sub-month spans in days", () => {
+    expect(
+      formatReignSpanTooltip(
+        reign({
+          start: { year: 1234, month: 2, day: 9 },
+          end: { year: 1234, month: 2, day: 20 },
+          startAbs: absMonth(1234, 2),
+          endAbs: absMonth(1234, 2),
+        }),
+      ),
+    ).toBe("公元1234年2月9日 — 公元1234年2月20日 · 12天");
+  });
+});
+
+describe("isSubMonthReign", () => {
+  it("returns false for multi-year day-precision reigns", () => {
+    expect(
+      isSubMonthReign(
+        reign({
+          start: { year: 1127, month: 6, day: 12 },
+          end: { year: 1162, month: 7, day: 24 },
+          startAbs: absMonth(1127, 6),
+          endAbs: absMonth(1162, 7),
+        }),
+      ),
+    ).toBe(false);
+  });
+
+  it("returns true for same-day day-precision reigns", () => {
+    expect(
+      isSubMonthReign(
+        reign({
+          start: { year: 1234, month: 2, day: 9 },
+          end: { year: 1234, month: 2, day: 9 },
+          startAbs: absMonth(1234, 2),
+          endAbs: absMonth(1234, 2),
+        }),
+      ),
+    ).toBe(true);
   });
 });
 

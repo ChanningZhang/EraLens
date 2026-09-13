@@ -8,6 +8,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
+import { drDay, dynastyReignDay, dynastyReignMonth } from "../lib/reignDateHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -86,70 +87,6 @@ function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear,
     start: ym(startYear),
     end: ym(endYear, 12),
     eraNames,
-  });
-}
-
-function dynastyReignMonth(
-  dynastyId,
-  personId,
-  title,
-  posthumous,
-  temple,
-  startYear,
-  startMonth,
-  endYear,
-  endMonth,
-  eraNames = [],
-  preferred = null,
-) {
-  const pref =
-    preferred ??
-    defaultPreferredAppellation({ title, posthumous, temple, startYear, eraNames });
-  return reign({
-    id: `reign-${personId}-${dynastyId}`,
-    dynastyId,
-    personId,
-    title,
-    posthumousName: posthumous,
-    templeName: temple,
-    preferred: pref,
-    start: ym(startYear, startMonth),
-    end: ym(endYear, endMonth),
-    eraNames,
-    precision: "month",
-  });
-}
-
-function dynastyReignDay(
-  dynastyId,
-  personId,
-  title,
-  posthumous,
-  temple,
-  startYear,
-  startMonth,
-  startDay,
-  endYear,
-  endMonth,
-  endDay,
-  eraNames = [],
-  preferred = null,
-) {
-  const pref =
-    preferred ??
-    defaultPreferredAppellation({ title, posthumous, temple, startYear, eraNames });
-  return reign({
-    id: `reign-${personId}-${dynastyId}`,
-    dynastyId,
-    personId,
-    title,
-    posthumousName: posthumous,
-    templeName: temple,
-    preferred: pref,
-    start: ym(startYear, startMonth, startDay),
-    end: ym(endYear, endMonth, endDay),
-    eraNames,
-    precision: "day",
   });
 }
 
@@ -241,27 +178,28 @@ const dynasties = [
 
 // ── reigns ───────────────────────────────────────────────────────────────────
 
+// 辽金皇帝在位日取中国君主列表/维基百科通行换算，precision=day。
 const liaoReigns = [
-  dr("liao", "yelu-abaoji", "辽太祖", null, "太祖", 916, 926, [{ name: "神册", sy: 916, ey: 922 }, { name: "天赞", sy: 922, ey: 926 }]),
-  dr("liao", "yelu-deguang", "辽太宗", null, "太宗", 927, 947),
-  dr("liao", "yelu-ruan", "辽世宗", null, "世宗", 947, 951),
-  dr("liao", "yelu-jing", "辽穆宗", null, "穆宗", 951, 969),
-  dr("liao", "yelu-xian", "辽景宗", null, "景宗", 969, 982),
-  dr("liao", "yelu-longxu", "辽圣宗", null, "圣宗", 982, 1031, [{ name: "统和", sy: 983, ey: 1012 }, { name: "开泰", sy: 1012, ey: 1021 }, { name: "太平", sy: 1021, ey: 1031 }]),
-  dr("liao", "yelu-zongzhen", "辽兴宗", null, "兴宗", 1031, 1055),
-  dr("liao", "yelu-hongji", "辽道宗", null, "道宗", 1055, 1101),
-  dr("liao", "yelu-yanxi", "辽天祚帝", null, null, 1101, 1125),
+  drDay("liao", "yelu-abaoji", "辽太祖", null, "太祖", 916, 3, 17, 926, 9, 6, [{ name: "神册", sy: 916, ey: 922 }, { name: "天赞", sy: 922, ey: 926 }]),
+  drDay("liao", "yelu-deguang", "辽太宗", null, "太宗", 927, 12, 11, 947, 5, 15),
+  drDay("liao", "yelu-ruan", "辽世宗", null, "世宗", 947, 5, 16, 951, 10, 7),
+  drDay("liao", "yelu-jing", "辽穆宗", null, "穆宗", 951, 10, 7, 969, 3, 12),
+  drDay("liao", "yelu-xian", "辽景宗", null, "景宗", 969, 3, 12, 982, 10, 13),
+  drDay("liao", "yelu-longxu", "辽圣宗", null, "圣宗", 982, 10, 13, 1031, 6, 25, [{ name: "统和", sy: 983, ey: 1012 }, { name: "开泰", sy: 1012, ey: 1021 }, { name: "太平", sy: 1021, ey: 1031 }]),
+  drDay("liao", "yelu-zongzhen", "辽兴宗", null, "兴宗", 1031, 6, 25, 1055, 8, 25),
+  drDay("liao", "yelu-hongji", "辽道宗", null, "道宗", 1055, 8, 25, 1101, 2, 12),
+  drDay("liao", "yelu-yanxi", "辽天祚帝", null, null, 1101, 2, 12, 1125, 3, 26),
 ];
 
 const jinReigns = [
-  dr("jin-nvzhen", "wanyan-aguda", "金太祖", null, "太祖", 1115, 1123, [{ name: "收国", sy: 1115, ey: 1116 }, { name: "天辅", sy: 1117, ey: 1123 }]),
-  dr("jin-nvzhen", "wanyan-sheng", "金太宗", null, "太宗", 1123, 1135),
-  dr("jin-nvzhen", "wanyan-dan", "金熙宗", null, "熙宗", 1135, 1149),
-  dr("jin-nvzhen", "wanyan-liang", "海陵王", null, null, 1149, 1161),
-  dr("jin-nvzhen", "wanyan-yong", "金世宗", null, "世宗", 1161, 1189, [{ name: "大定", sy: 1161, ey: 1189 }]),
-  dr("jin-nvzhen", "wanyan-jing", "金章宗", null, "章宗", 1189, 1208),
-  dr("jin-nvzhen", "wanyan-yongji", "卫绍王", null, null, 1208, 1213),
-  dr("jin-nvzhen", "wanyan-xun", "金宣宗", null, "宣宗", 1213, 1223),
+  drDay("jin-nvzhen", "wanyan-aguda", "金太祖", null, "太祖", 1115, 1, 28, 1123, 9, 19, [{ name: "收国", sy: 1115, ey: 1116 }, { name: "天辅", sy: 1117, ey: 1123 }]),
+  drDay("jin-nvzhen", "wanyan-sheng", "金太宗", null, "太宗", 1123, 9, 19, 1135, 12, 25),
+  drDay("jin-nvzhen", "wanyan-dan", "金熙宗", null, "熙宗", 1135, 12, 25, 1149, 12, 24),
+  drDay("jin-nvzhen", "wanyan-liang", "海陵王", null, null, 1150, 1, 9, 1161, 1, 6),
+  drDay("jin-nvzhen", "wanyan-yong", "金世宗", null, "世宗", 1161, 1, 6, 1189, 1, 20, [{ name: "大定", sy: 1161, ey: 1189 }]),
+  drDay("jin-nvzhen", "wanyan-jing", "金章宗", null, "章宗", 1189, 1, 20, 1208, 12, 29),
+  drDay("jin-nvzhen", "wanyan-yongji", "卫绍王", null, null, 1208, 12, 29, 1213, 9, 11),
+  drDay("jin-nvzhen", "wanyan-xun", "金宣宗", null, "宣宗", 1213, 9, 11, 1223, 1, 14),
   // 1234年2月9日蔡州陷落：哀宗殉国，承麟即位不足一日即战死。
   dynastyReignMonth("jin-nvzhen", "wanyan-shouxu", "金哀宗", null, "哀宗", 1223, 1, 1234, 2),
   dynastyReignDay("jin-nvzhen", "wanyan-chenglin", "金末帝", null, null, 1234, 2, 9, 1234, 2, 9),
@@ -514,7 +452,7 @@ const manifest = {
     "金朝 id 为 jin-nvzhen，避免与两晋 jin-west/jin-east、后晋 jin-hou 冲突。",
     "南宋/北宋王朝与皇帝见 sui-tang-wudai-song；本包补充 event_dynasties 关联靖康之变、南宋建立。",
     "未收录西辽、北辽、东辽等辽亡后残余政权。",
-    "在位年取维基百科君主列表常见年表，precision=year；1234年蔡州陷落同年更替用 month；承麟在位不足一日用 day。",
+    "辽金皇帝在位日取中国君主列表/维基百科通行换算，precision=day；1234年蔡州陷落同年更替用 month；承麟在位不足一日用 day。",
   ],
 };
 writeFileSync(path.join(__dirname, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);

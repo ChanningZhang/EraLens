@@ -6,7 +6,9 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
-import { finalizeImportReigns } from "../lib/missingReigns.mjs";
+import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
+import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
+import { reignSql as formatReignSql } from "../lib/reignSql.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -105,7 +107,7 @@ const mongolReigns = [
 ];
 
 const reignGroups = [mongolReigns];
-const reigns = reignGroups.flat();
+const reigns = applyDocumentedDatesToReigns(reignGroups.flat());
 
 // ── events ───────────────────────────────────────────────────────────────────
 
@@ -260,7 +262,7 @@ function dynastySql(d) {
   return `INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, parent_id, note) VALUES (${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlArray(d.altNames)}, ${sqlStr(d.scope)}, ${sqlStr(d.region)}, ${d.start.year}, ${d.start.month}, ${d.end.year}, ${d.end.month}, ${d.start.abs}, ${d.end.abs}, ${sqlStr(d.precision)}, ${sqlStr(d.colorToken)}, NULL, ${sqlStr(d.note)}) ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, color_token = EXCLUDED.color_token, note = EXCLUDED.note;`;
 }
 function reignSql(r) {
-  return `INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision) VALUES (${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(r.title)}, ${sqlStr(r.posthumousName ?? null)}, ${sqlStr(r.templeName ?? null)}, ${sqlJson(r.preferredAppellation)}, ${r.start.year}, ${r.start.month}, ${r.end.year}, ${r.end.month}, ${r.startAbs}, ${r.endAbs}, ${sqlStr(r.precision)}) ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;`;
+  return formatReignSql(r, sqlStr, sqlJson);
 }
 function eventSql(e) {
   const cols = ["id", "name", "kind", "time_mode", "precision", "date_note", "at_year", "at_month", "at_abs", "start_year", "start_month", "start_abs", "end_year", "end_month", "end_abs", "summary"];
@@ -292,19 +294,13 @@ const { persons: importPersons, reigns: importReigns } = finalizeImportReigns(
   reigns,
 );
 
-const removedMissingReignIds = [
-  "reign-missing-mongol-empire-a14736",
-  "reign-missing-mongol-empire-a14904",
-  "reign-missing-mongol-empire-a14988",
-];
-
 const sql = [
   "-- EraLens period import: mongol-pre-yuan",
   "-- Window: 1206-01 .. 1271-12",
   "BEGIN;",
   "",
-  "-- remove stale 史料缺 placeholders (regency gaps are intentional blanks)",
-  `DELETE FROM reigns WHERE id IN (${removedMissingReignIds.map(sqlStr).join(", ")});`,
+  "-- remove stale auto-generated 史料缺 (regency gaps are intentional blanks)",
+  sqlDeleteSystemMissingReigns(["mongol-empire"], sqlStr),
   "",
   "-- persons",
   ...importPersons.map(personSql),

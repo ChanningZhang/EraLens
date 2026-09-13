@@ -7,7 +7,9 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
 import { resolveOrthodoxEndAbs, resolveOrthodoxFromAbs } from "../lib/orthodoxDynasties.mjs";
+import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
+import { drDay } from "../lib/reignDateHelpers.mjs";
 import { reignSql } from "../lib/reignSql.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -204,33 +206,23 @@ const dynasties = [
 
 // ── reigns ─────────────────────────────────────────────────────────────────
 
+// 元帝在位日取维基百科君主列表通行换算（儒略历/格里历），precision=day。
 const yuanReigns = [
-  dr("yuan", "hu-bilie", "元世祖", "圣德神功文武皇帝", "世祖", 1271, 1294, [{ name: "至元", sy: 1264, ey: 1294 }]),
-  dr("yuan", "temur", "元成宗", "钦明广孝皇帝", null, 1294, 1307),
-  dr("yuan", "khayishan", "元武宗", "仁圣钦安皇帝", null, 1307, 1311),
-  dr("yuan", "ayurbarwada", "元仁宗", "圣德慈仁皇帝", null, 1311, 1320),
-  dr("yuan", "shidebala", "元英宗", "睿圣文孝皇帝", null, 1320, 1323),
-  dr("yuan", "yeshuntuemur", "元泰定帝", null, null, 1323, 1328),
-  dr("yuan", "ragibagh", "元天顺帝", null, null, 1328, 1328),
-  dr("yuan", "tugh-temur", "元文宗", "圣明元孝皇帝", null, 1328, 1332),
-  dr("yuan", "khoshila", "元明宗", "翼献景孝皇帝", null, 1329, 1329),
-  dr("yuan", "irinchibal", "元宁宗", "冲圣嗣孝皇帝", null, 1332, 1332),
-  dr("yuan", "togon-temur", "元顺帝", "宣仁普孝皇帝", null, 1333, 1368),
+  drDay("yuan", "hu-bilie", "元世祖", "圣德神功文武皇帝", "世祖", 1271, 12, 18, 1294, 2, 18, [{ name: "至元", sy: 1264, ey: 1294 }]),
+  drDay("yuan", "temur", "元成宗", "钦明广孝皇帝", null, 1294, 5, 10, 1307, 2, 10),
+  drDay("yuan", "khayishan", "元武宗", "仁圣钦安皇帝", null, 1307, 6, 21, 1311, 1, 27),
+  drDay("yuan", "ayurbarwada", "元仁宗", "圣德慈仁皇帝", null, 1311, 4, 7, 1320, 3, 1),
+  drDay("yuan", "shidebala", "元英宗", "睿圣文孝皇帝", null, 1320, 4, 19, 1323, 9, 4),
+  drDay("yuan", "yeshuntuemur", "元泰定帝", null, null, 1323, 9, 4, 1328, 8, 15),
+  drDay("yuan", "ragibagh", "元天顺帝", null, null, 1328, 8, 15, 1328, 10, 4),
+  drDay("yuan", "tugh-temur", "元文宗", "圣明元孝皇帝", null, 1328, 10, 4, 1332, 9, 2),
+  drDay("yuan", "khoshila", "元明宗", "翼献景孝皇帝", null, 1329, 2, 27, 1329, 8, 30),
+  drDay("yuan", "irinchibal", "元宁宗", "冲圣嗣孝皇帝", null, 1332, 9, 2, 1332, 12, 14),
+  drDay("yuan", "togon-temur", "元顺帝", "宣仁普孝皇帝", null, 1333, 7, 19, 1368, 1, 23),
   // 顺帝北迁后庙号惠宗，卡片仍用至正年号。
-  reign({
-    id: "reign-togon-temur-yuan-north",
-    dynastyId: "yuan",
-    personId: "togon-temur",
-    title: "元惠宗",
-    posthumousName: "宣仁普孝皇帝",
-    templeName: "惠宗",
-    preferred: { kind: "era", name: "至正" },
-    start: ym(1368),
-    end: ym(1370, 12),
-    eraNames: eras("reign-togon-temur-yuan-north", [{ name: "至正", sy: 1368, ey: 1370 }]),
-  }),
-  dr("yuan", "ayushiridara", "元昭宗", null, "昭宗", 1370, 1378, [{ name: "宣光", sy: 1371, ey: 1378 }]),
-  dr("yuan", "togus-temur", "天元帝", null, null, 1378, 1388, [{ name: "天元", sy: 1379, ey: 1388 }]),
+  drDay("yuan", "togon-temur", "元惠宗", "宣仁普孝皇帝", "惠宗", 1368, 1, 23, 1370, 5, 23, [{ name: "至正", sy: 1368, ey: 1370 }], null, "reign-togon-temur-yuan-north"),
+  drDay("yuan", "ayushiridara", "元昭宗", null, "昭宗", 1370, 5, 27, 1378, 5, 10, [{ name: "宣光", sy: 1371, ey: 1378 }]),
+  drDay("yuan", "togus-temur", "天元帝", null, null, 1378, 5, 13, 1388, 11, 1, [{ name: "天元", sy: 1379, ey: 1388 }]),
 ];
 
 const yuanMoReigns = [
@@ -249,62 +241,40 @@ const yuanMoReigns = [
   dr("wu-zhu", "zhu-yuanzhang", "吴王", null, null, 1364, 1368, [{ name: "吴", sy: 1367, ey: 1367 }]),
 ];
 
-function mingSplitReign(id, personId, title, posthumous, temple, startYear, endYear, eraList) {
-  const eraNames = eras(id, eraList);
-  const preferred = defaultPreferredAppellation({
-    title,
-    posthumous,
-    temple,
-    startYear,
-    eraNames,
-  });
-  return reign({
-    id,
-    dynastyId: "ming",
-    personId,
-    title,
-    posthumousName: posthumous,
-    templeName: temple,
-    preferred,
-    start: ym(startYear),
-    end: ym(endYear, 12),
-    eraNames,
-  });
-}
-
+// 明帝在位日取维基百科君主列表通行换算，precision=day。
 const mingReigns = [
-  dr("ming", "zhu-yuanzhang", "明太祖", "高皇帝", "太祖", 1368, 1398, [{ name: "洪武", sy: 1368, ey: 1398 }]),
-  dr("ming", "zhu-yunwen", "建文帝", null, null, 1398, 1402, [{ name: "建文", sy: 1399, ey: 1402 }]),
-  dr("ming", "zhu-di", "明成祖", "文皇帝", "成祖", 1402, 1424, [{ name: "永乐", sy: 1403, ey: 1424 }]),
-  dr("ming", "zhu-gaochi", "明仁宗", "昭皇帝", "仁宗", 1424, 1425, [{ name: "洪熙", sy: 1425, ey: 1425 }]),
-  dr("ming", "zhu-zhanji", "明宣宗", "章皇帝", "宣宗", 1425, 1435, [{ name: "宣德", sy: 1426, ey: 1435 }]),
+  drDay("ming", "zhu-yuanzhang", "明太祖", "高皇帝", "太祖", 1368, 1, 23, 1398, 6, 24, [{ name: "洪武", sy: 1368, ey: 1398 }]),
+  drDay("ming", "zhu-yunwen", "建文帝", null, null, 1398, 6, 30, 1402, 7, 13, [{ name: "建文", sy: 1399, ey: 1402 }]),
+  drDay("ming", "zhu-di", "明成祖", "文皇帝", "成祖", 1402, 7, 17, 1424, 8, 12, [{ name: "永乐", sy: 1403, ey: 1424 }]),
+  drDay("ming", "zhu-gaochi", "明仁宗", "昭皇帝", "仁宗", 1424, 8, 12, 1425, 5, 29, [{ name: "洪熙", sy: 1425, ey: 1425 }]),
+  drDay("ming", "zhu-zhanji", "明宣宗", "章皇帝", "宣宗", 1425, 5, 29, 1435, 1, 31, [{ name: "宣德", sy: 1426, ey: 1435 }]),
   // 朱祁镇两次登基：前为正统，复辟后天顺，卡片分别用年号。
-  mingSplitReign("reign-zhu-qizhen-ming", "zhu-qizhen", "明英宗", "睿皇帝", "英宗", 1435, 1449, [{ name: "正统", sy: 1436, ey: 1449 }]),
-  dr("ming", "zhu-qiyu", "明代宗", "景皇帝", "代宗", 1449, 1457, [{ name: "景泰", sy: 1450, ey: 1457 }]),
-  mingSplitReign("reign-zhu-qizhen-ming-2", "zhu-qizhen", "明英宗", "睿皇帝", "英宗", 1457, 1464, [{ name: "天顺", sy: 1457, ey: 1464 }]),
-  dr("ming", "zhu-jianshen", "明宪宗", "纯皇帝", "宪宗", 1464, 1487, [{ name: "成化", sy: 1465, ey: 1487 }]),
-  dr("ming", "zhu-youcheng", "明孝宗", "达皇帝", "孝宗", 1487, 1505, [{ name: "弘治", sy: 1488, ey: 1505 }]),
-  dr("ming", "zhu-houzhao", "明武宗", "毅皇帝", "武宗", 1505, 1521, [{ name: "正德", sy: 1506, ey: 1521 }]),
-  dr("ming", "zhu-houcong", "明世宗", "肃皇帝", "世宗", 1521, 1566, [{ name: "嘉靖", sy: 1522, ey: 1566 }]),
-  dr("ming", "zhu-zaihou", "明穆宗", "庄皇帝", "穆宗", 1566, 1572, [{ name: "隆庆", sy: 1567, ey: 1572 }]),
-  dr("ming", "zhu-yiming", "明神宗", "显皇帝", "神宗", 1572, 1620, [{ name: "万历", sy: 1573, ey: 1620 }]),
-  dr("ming", "zhu-changluo", "明光宗", "贞皇帝", "光宗", 1620, 1620, [{ name: "泰昌", sy: 1620, ey: 1620 }]),
-  dr("ming", "zhu-youjiao", "明熹宗", "哲皇帝", "熹宗", 1620, 1627, [{ name: "天启", sy: 1621, ey: 1627 }]),
-  dr("ming", "zhu-youjian", "明思宗", "毅皇帝", "思宗", 1627, 1644, [{ name: "崇祯", sy: 1628, ey: 1644 }]),
+  drDay("ming", "zhu-qizhen", "明英宗", "睿皇帝", "英宗", 1435, 1, 31, 1449, 9, 22, [{ name: "正统", sy: 1436, ey: 1449 }], null, "reign-zhu-qizhen-ming"),
+  drDay("ming", "zhu-qiyu", "明代宗", "景皇帝", "代宗", 1449, 9, 22, 1457, 2, 24, [{ name: "景泰", sy: 1450, ey: 1457 }]),
+  drDay("ming", "zhu-qizhen", "明英宗", "睿皇帝", "英宗", 1457, 2, 11, 1464, 2, 23, [{ name: "天顺", sy: 1457, ey: 1464 }], null, "reign-zhu-qizhen-ming-2"),
+  drDay("ming", "zhu-jianshen", "明宪宗", "纯皇帝", "宪宗", 1464, 2, 23, 1487, 9, 9, [{ name: "成化", sy: 1465, ey: 1487 }]),
+  drDay("ming", "zhu-youcheng", "明孝宗", "达皇帝", "孝宗", 1487, 9, 9, 1505, 6, 8, [{ name: "弘治", sy: 1488, ey: 1505 }]),
+  drDay("ming", "zhu-houzhao", "明武宗", "毅皇帝", "武宗", 1505, 6, 8, 1521, 4, 20, [{ name: "正德", sy: 1506, ey: 1521 }]),
+  drDay("ming", "zhu-houcong", "明世宗", "肃皇帝", "世宗", 1521, 5, 27, 1567, 1, 23, [{ name: "嘉靖", sy: 1522, ey: 1566 }]),
+  drDay("ming", "zhu-zaihou", "明穆宗", "庄皇帝", "穆宗", 1567, 1, 23, 1572, 7, 5, [{ name: "隆庆", sy: 1567, ey: 1572 }]),
+  drDay("ming", "zhu-yiming", "明神宗", "显皇帝", "神宗", 1572, 7, 5, 1620, 8, 18, [{ name: "万历", sy: 1573, ey: 1620 }]),
+  drDay("ming", "zhu-changluo", "明光宗", "贞皇帝", "光宗", 1620, 8, 28, 1620, 9, 26, [{ name: "泰昌", sy: 1620, ey: 1620 }]),
+  drDay("ming", "zhu-youjiao", "明熹宗", "哲皇帝", "熹宗", 1620, 9, 26, 1627, 9, 30, [{ name: "天启", sy: 1621, ey: 1627 }]),
+  drDay("ming", "zhu-youjian", "明思宗", "毅皇帝", "思宗", 1627, 10, 2, 1644, 4, 25, [{ name: "崇祯", sy: 1628, ey: 1644 }]),
 ];
 
 const mingSouthMain = [
-  dr("ming-south", "zhu-yousong", "弘光帝", null, null, 1644, 1645, [{ name: "弘光", sy: 1644, ey: 1645 }]),
-  dr("ming-south", "zhu-yujian", "隆武帝", null, null, 1645, 1646, [{ name: "隆武", sy: 1645, ey: 1646 }]),
-  dr("ming-south", "zhu-youlang", "永历帝", null, null, 1646, 1662, [{ name: "永历", sy: 1646, ey: 1662 }]),
+  drDay("ming-south", "zhu-yousong", "弘光帝", null, null, 1644, 6, 19, 1645, 6, 15, [{ name: "弘光", sy: 1644, ey: 1645 }]),
+  drDay("ming-south", "zhu-yujian", "隆武帝", null, null, 1645, 8, 18, 1646, 10, 6, [{ name: "隆武", sy: 1645, ey: 1646 }]),
+  drDay("ming-south", "zhu-youlang", "永历帝", null, null, 1646, 12, 24, 1662, 6, 1, [{ name: "永历", sy: 1646, ey: 1662 }]),
 ];
 const mingSouthParallel = [
-  dr("ming-south", "zhu-yihai", "鲁监国", null, null, 1645, 1653, [], {
+  drDay("ming-south", "zhu-yihai", "鲁监国", null, null, 1645, 9, 7, 1653, 3, 1, [], {
     track: "lu-jian",
     label: "绍兴监国",
     role: "regent",
   }),
-  dr("ming-south", "zhu-yuyue", "绍武帝", null, null, 1646, 1647, [{ name: "绍武", sy: 1646, ey: 1647 }], {
+  drDay("ming-south", "zhu-yuyue", "绍武帝", null, null, 1646, 12, 11, 1647, 1, 20, [{ name: "绍武", sy: 1646, ey: 1647 }], {
     track: "shaowu",
     label: "广州",
     role: "rival",
@@ -312,26 +282,29 @@ const mingSouthParallel = [
 ];
 const mingSouthReigns = [...mingSouthMain, ...mingSouthParallel];
 
+// 清帝在位日取维基百科君主列表通行换算，precision=day。
 const qingReigns = [
-  dr("qing", "nurhaci", "清太祖", "武皇帝", "太祖", 1616, 1626, [{ name: "天命", sy: 1616, ey: 1626 }]),
-  dr("qing", "huang-taiji", "清太宗", "文皇帝", "太宗", 1626, 1643, [
+  drDay("qing", "nurhaci", "清太祖", "武皇帝", "太祖", 1616, 2, 17, 1626, 9, 30, [{ name: "天命", sy: 1616, ey: 1626 }]),
+  drDay("qing", "huang-taiji", "清太宗", "文皇帝", "太宗", 1626, 10, 20, 1643, 9, 21, [
     { name: "天聪", sy: 1627, ey: 1636 },
     { name: "崇德", sy: 1636, ey: 1643 },
   ]),
-  dr("qing", "fulin", "清世祖", "章皇帝", "世祖", 1643, 1661, [{ name: "顺治", sy: 1644, ey: 1661 }]),
-  dr("qing", "xuanye", "清圣祖", "仁皇帝", "圣祖", 1661, 1722, [{ name: "康熙", sy: 1662, ey: 1722 }]),
-  dr("qing", "yinzhen", "清世宗", "宪皇帝", "世宗", 1722, 1735, [{ name: "雍正", sy: 1723, ey: 1735 }]),
-  dr("qing", "hongli", "清高宗", "纯皇帝", "高宗", 1735, 1796, [{ name: "乾隆", sy: 1736, ey: 1795 }]),
-  dr("qing", "yongyan", "清仁宗", "睿皇帝", "仁宗", 1796, 1820, [{ name: "嘉庆", sy: 1796, ey: 1820 }]),
-  dr("qing", "minning", "清宣宗", "成皇帝", "宣宗", 1820, 1850, [{ name: "道光", sy: 1821, ey: 1850 }]),
-  dr("qing", "yizhu", "清文宗", "显皇帝", "文宗", 1850, 1861, [{ name: "咸丰", sy: 1851, ey: 1861 }]),
-  dr("qing", "zaichun", "清穆宗", "毅皇帝", "穆宗", 1861, 1875, [{ name: "同治", sy: 1862, ey: 1874 }]),
-  dr("qing", "zaitian", "清德宗", "景皇帝", "德宗", 1875, 1908, [{ name: "光绪", sy: 1875, ey: 1908 }]),
-  dr("qing", "puyi", "清逊帝", null, null, 1908, 1912, [{ name: "宣统", sy: 1909, ey: 1912 }]),
+  drDay("qing", "fulin", "清世祖", "章皇帝", "世祖", 1643, 10, 30, 1661, 2, 5, [{ name: "顺治", sy: 1644, ey: 1661 }]),
+  drDay("qing", "xuanye", "清圣祖", "仁皇帝", "圣祖", 1661, 2, 5, 1722, 12, 20, [{ name: "康熙", sy: 1662, ey: 1722 }]),
+  drDay("qing", "yinzhen", "清世宗", "宪皇帝", "世宗", 1722, 12, 27, 1735, 10, 8, [{ name: "雍正", sy: 1723, ey: 1735 }]),
+  drDay("qing", "hongli", "清高宗", "纯皇帝", "高宗", 1735, 10, 18, 1796, 2, 8, [{ name: "乾隆", sy: 1736, ey: 1795 }]),
+  drDay("qing", "yongyan", "清仁宗", "睿皇帝", "仁宗", 1796, 2, 9, 1820, 9, 2, [{ name: "嘉庆", sy: 1796, ey: 1820 }]),
+  drDay("qing", "minning", "清宣宗", "成皇帝", "宣宗", 1820, 10, 3, 1850, 2, 25, [{ name: "道光", sy: 1821, ey: 1850 }]),
+  drDay("qing", "yizhu", "清文宗", "显皇帝", "文宗", 1850, 3, 9, 1861, 8, 22, [{ name: "咸丰", sy: 1851, ey: 1861 }]),
+  drDay("qing", "zaichun", "清穆宗", "毅皇帝", "穆宗", 1861, 11, 11, 1875, 1, 12, [{ name: "同治", sy: 1862, ey: 1874 }]),
+  drDay("qing", "zaitian", "清德宗", "景皇帝", "德宗", 1875, 2, 25, 1908, 11, 14, [{ name: "光绪", sy: 1875, ey: 1908 }]),
+  drDay("qing", "puyi", "清逊帝", null, null, 1908, 12, 2, 1912, 2, 12, [{ name: "宣统", sy: 1909, ey: 1912 }]),
 ];
 
 const reignGroups = [yuanReigns, yuanMoReigns, mingReigns, mingSouthMain, qingReigns];
-const reigns = [yuanReigns, yuanMoReigns, mingReigns, mingSouthReigns, qingReigns].flat();
+const reigns = applyDocumentedDatesToReigns(
+  [yuanReigns, yuanMoReigns, mingReigns, mingSouthReigns, qingReigns].flat(),
+);
 
 // ── events ───────────────────────────────────────────────────────────────────
 
@@ -589,6 +562,7 @@ const manifest = {
     "补充战争：虎门销烟、左宗棠收复新疆、隆务关之战；三国干涉还辽为马关条约后续外交事件。",
     "元明战争：两都之战、红巾起义、明军攻占大都、抗倭战争、萨尔浒、宁远、松锦之战。",
     "明非帝王人物：张居正、海瑞、戚继光、王阳明、严嵩、唐寅、李时珍、徐光启、徐霞客、魏忠贤、刘基、于谦、郑和等；张居正改革（1572–1582）为 span 事件。",
+    "元明清皇帝在位日取维基百科君主列表通行换算，precision=day；南明弘光/隆武/永历及鲁监国、绍武亦升级日精度。",
   ],
 };
 writeFileSync(path.join(__dirname, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);

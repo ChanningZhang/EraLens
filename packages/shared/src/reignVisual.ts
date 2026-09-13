@@ -58,8 +58,37 @@ function formatYearMonthDay(year: number, month: number, day: number): string {
   return `${formatYearMonth(year, month)}${day}日`;
 }
 
-function formatDurationDays(days: number): string {
+function calendarYearsMonths(
+  start: { year: number; month: number; day?: number },
+  end: { year: number; month: number; day?: number },
+): { years: number; months: number } {
+  const startDay = start.day ?? 1;
+  const endDay = end.day ?? 1;
+  let years = end.year - start.year;
+  let months = end.month - start.month;
+  if (endDay < startDay) {
+    months -= 1;
+  }
+  if (months < 0) {
+    years -= 1;
+    months += 12;
+  }
+  return { years, months };
+}
+
+/** Day-precision spans: days under a month, months under a year, else years + months. */
+function formatSmartDayDuration(reign: Reign, days: number): string {
   if (days <= 0) return "不足1天";
+  if (days === 1) return "1天";
+
+  const { years, months } = calendarYearsMonths(reign.start, reign.end);
+  if (years >= 1) {
+    if (months === 0) return `${years}年`;
+    return `${years}年${months}个月`;
+  }
+  if (months >= 1) {
+    return `${months}个月`;
+  }
   return `${days}天`;
 }
 
@@ -73,7 +102,7 @@ export function formatReignSpanTooltip(reign: Reign): string {
       return `${startLabel} · 1天`;
     }
     if (days != null) {
-      return `${startLabel} — ${endLabel} · ${formatDurationDays(days)}`;
+      return `${startLabel} — ${endLabel} · ${formatSmartDayDuration(reign, days)}`;
     }
   }
   return formatAbsSpanTooltip(reign.startAbs, reign.endAbs);
@@ -115,7 +144,6 @@ export function reignVisualBounds(
 }
 
 export function isSubMonthReign(reign: Reign, clipStartAbs?: number, clipEndExclusive?: number): boolean {
-  if (reign.precision === "day") return true;
   const { start, endExclusive } = reignVisualBounds(reign, clipStartAbs, clipEndExclusive);
   return endExclusive - start < 0.5;
 }
