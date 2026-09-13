@@ -34,6 +34,15 @@ export function TimelineStage() {
   const viewport = useViewport();
   const { data, isLoading, error } = useTimelineData();
 
+  const dynastiesById = useMemo(() => {
+    const map = new Map<string, Dynasty>();
+    if (!data) return map;
+    for (const dynasty of data.dynasties) {
+      map.set(dynasty.id, dynasty);
+    }
+    return map;
+  }, [data]);
+
   const placed = useMemo(() => {
     if (!data) return [];
     const buffered = expandWindow(viewport.startAbs, viewport.endAbs, 120);
@@ -45,8 +54,8 @@ export function TimelineStage() {
       (dynasty) =>
         dynasty.startAbs <= viewport.endAbs && dynasty.endAbs >= viewport.startAbs,
     );
-    return assignLanes(collapseDynastyLaneGroups(visible));
-  }, [data, viewport.startAbs, viewport.endAbs]);
+    return assignLanes(collapseDynastyLaneGroups(visible, dynastiesById));
+  }, [data, viewport.startAbs, viewport.endAbs, dynastiesById]);
 
   const eventPlaced = useMemo(() => {
     if (!data) return [];
@@ -71,15 +80,6 @@ export function TimelineStage() {
     if (!data) return map;
     for (const person of data.persons) {
       map.set(person.id, person.name);
-    }
-    return map;
-  }, [data]);
-
-  const dynastiesById = useMemo(() => {
-    const map = new Map<string, Dynasty>();
-    if (!data) return map;
-    for (const dynasty of data.dynasties) {
-      map.set(dynasty.id, dynasty);
     }
     return map;
   }, [data]);

@@ -194,6 +194,18 @@ const PERSON_DETAIL_OVERRIDES = {
     bio: "曹桓公（姬终生），《史记·蔡世家》载前756–前702年在位，共55年。",
     links: wiki("曹桓公"),
   },
+  "weiguo-r43": {
+    bio: "卫嗣君，本名失考，前334–前293年在位。",
+    links: wiki("卫嗣君"),
+  },
+  "weiguo-r44": {
+    bio: "卫怀君，本名失考，前292–前254年在位。",
+    links: wiki("卫怀君"),
+  },
+  "weiguo-r45": {
+    bio: "卫元君，姬姓子南氏，本名失考，前254–前230年在位。",
+    links: wiki("卫元君"),
+  },
 };
 
 for (const [id, patch] of Object.entries(PERSON_DETAIL_OVERRIDES)) {

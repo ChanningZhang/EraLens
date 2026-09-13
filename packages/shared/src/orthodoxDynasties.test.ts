@@ -111,6 +111,20 @@ describe("orthodoxDynasties", () => {
     ).toBe(true);
   });
 
+  it("marks zhou-wu as orthodox for wu zetian interregnum", () => {
+    const zhouWu = {
+      id: "zhou-wu",
+      startAbs: absMonth(690, 10),
+      endAbs: absMonth(705, 1),
+    };
+    expect(resolveOrthodoxFromAbs(zhouWu)).toBe(zhouWu.startAbs);
+    expect(isOrthodoxAt(zhouWu, absMonth(690, 9))).toBe(false);
+    expect(isOrthodoxAt(zhouWu, absMonth(690, 10))).toBe(true);
+    expect(isOrthodoxAt(zhouWu, absMonth(700))).toBe(true);
+    expect(isOrthodoxAt(zhouWu, absMonth(705, 1))).toBe(true);
+    expect(isOrthodoxAt(zhouWu, absMonth(705, 2))).toBe(false);
+  });
+
   it("does not mark split-period dynasties as orthodox", () => {
     const songLiu = { id: "song-liu", startAbs: absMonth(420, 7) };
     const weiNorth = { id: "wei-north", startAbs: absMonth(386) };

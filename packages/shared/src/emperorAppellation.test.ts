@@ -354,6 +354,43 @@ describe("resolveReignCardMeta", () => {
       ),
     ).toEqual({ label: "庙号", name: "宋太祖" });
   });
+
+  it("shows posthumous meta for Shang rulers", () => {
+    expect(
+      resolveReignCardMeta(
+        source({
+          start: { year: -1547, month: 1 },
+          title: "商沃丁",
+          posthumousName: "沃丁",
+          preferredAppellation: { kind: "posthumous", name: "商沃丁" },
+        }),
+        "沃丁",
+      ),
+    ).toEqual({ label: "谥号", name: "商沃丁" });
+    expect(
+      resolveReignCardMeta(
+        source({
+          start: { year: -1250, month: 1 },
+          title: "商王武丁",
+          posthumousName: "武丁",
+          templeName: "高宗",
+          preferredAppellation: { kind: "temple", name: "商高宗" },
+        }),
+        "武丁",
+      ),
+    ).toEqual({ label: "庙号", name: "商高宗" });
+    expect(
+      resolveReignCardMeta(
+        source({
+          start: { year: -1075, month: 1 },
+          title: "商王帝辛",
+          posthumousName: "纣",
+          preferredAppellation: { kind: "posthumous", name: "商纣王" },
+        }),
+        "帝辛",
+      ),
+    ).toEqual({ label: "谥号", name: "商纣王" });
+  });
 });
 
 describe("resolveReignDetailSubtitle", () => {

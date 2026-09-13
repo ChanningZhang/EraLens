@@ -408,6 +408,12 @@
     "kind": "battle"
   },
   {
+    "id": "rel-ji-gongsheng-ji-yijiu-succession",
+    "fromRef": "person:ji-gongsheng",
+    "toRef": "person:ji-yijiu",
+    "kind": "succession"
+  },
+  {
     "id": "rel-zi-pangeng-zi-wuding-succession",
     "fromRef": "person:zi-pangeng",
     "toRef": "person:zi-wuding",

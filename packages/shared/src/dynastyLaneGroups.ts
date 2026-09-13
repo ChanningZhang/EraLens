@@ -1,4 +1,5 @@
 import type { Dynasty, Reign } from "./schema";
+import { absMonth } from "./time";
 
 /** Horizontal offset of the frozen dynasty label from the viewport left edge. */
 export const DEFAULT_FROZEN_LABEL_LEFT_PX = 12;
@@ -14,6 +15,9 @@ export type DynastyLaneGroup = {
   primaryDynastyId: string;
   /** Chronological phase dynasty ids for frozen-label resolution. */
   phaseDynastyIds: readonly string[];
+  /** Stable lane-order span; does not shrink when earlier phases leave the viewport. */
+  laneOrderStartAbs: number;
+  laneOrderEndAbs: number;
 };
 
 export const DYNASTY_LANE_GROUPS: readonly DynastyLaneGroup[] = [
@@ -21,6 +25,29 @@ export const DYNASTY_LANE_GROUPS: readonly DynastyLaneGroup[] = [
     id: "mongol-yuan",
     primaryDynastyId: "yuan",
     phaseDynastyIds: ["mongol-empire", "yuan"],
+    laneOrderStartAbs: absMonth(1206),
+    laneOrderEndAbs: absMonth(1388),
+  },
+  {
+    id: "wu-ming",
+    primaryDynastyId: "ming",
+    phaseDynastyIds: ["wu-zhu", "ming", "ming-south"],
+    laneOrderStartAbs: absMonth(1364),
+    laneOrderEndAbs: absMonth(1662),
+  },
+  {
+    id: "song-north-south",
+    primaryDynastyId: "song-north",
+    phaseDynastyIds: ["song-north", "song-south"],
+    laneOrderStartAbs: absMonth(960),
+    laneOrderEndAbs: absMonth(1279),
+  },
+  {
+    id: "zhou-west-east",
+    primaryDynastyId: "zhou-west",
+    phaseDynastyIds: ["zhou-west", "zhou-east"],
+    laneOrderStartAbs: absMonth(-1046),
+    laneOrderEndAbs: absMonth(-256, 12),
   },
 ];
 
@@ -78,44 +105,66 @@ export function resolveFrozenLaneLabel(
   return dynastiesById.get(phaseId)?.name ?? dynasty.name;
 }
 
+function toDynastyMap(dynasties: Dynasty[] | ReadonlyMap<string, Dynasty>): Map<string, Dynasty> {
+  if (dynasties instanceof Map) return new Map(dynasties);
+  return new Map(dynasties.map((dynasty) => [dynasty.id, dynasty]));
+}
+
 /**
  * Collapse configured lane groups into one row per group. Member dynasties are
  * removed from the list; the primary dynasty is kept with the union span.
+ *
+ * Visibility is driven by `visible`; span and sort order use `catalog` so a
+ * lane keeps the group's earliest start even when earlier phases scroll off-screen.
  */
-export function collapseDynastyLaneGroups(dynasties: Dynasty[]): Dynasty[] {
-  const byId = new Map(dynasties.map((dynasty) => [dynasty.id, dynasty]));
+export function collapseDynastyLaneGroups(
+  visible: Dynasty[],
+  catalog: Dynasty[] | ReadonlyMap<string, Dynasty> = visible,
+): Dynasty[] {
+  const visibleById = new Map(visible.map((dynasty) => [dynasty.id, dynasty]));
+  const catalogById = toDynastyMap(catalog);
   const consumedIds = new Set<string>();
   const merged: Dynasty[] = [];
 
   for (const group of DYNASTY_LANE_GROUPS) {
-    const members = group.phaseDynastyIds
-      .map((dynastyId) => byId.get(dynastyId))
+    const visibleMembers = group.phaseDynastyIds
+      .map((dynastyId) => visibleById.get(dynastyId))
       .filter((dynasty): dynasty is Dynasty => Boolean(dynasty));
-    if (members.length === 0) continue;
+    if (visibleMembers.length === 0) continue;
 
-    for (const member of members) consumedIds.add(member.id);
+    for (const member of visibleMembers) consumedIds.add(member.id);
 
-    const primary = byId.get(group.primaryDynastyId) ?? members[0]!;
-    const startAbs = Math.min(...members.map((member) => member.startAbs));
-    const endAbs = Math.max(...members.map((member) => member.endAbs));
-    const earliest = members.reduce((left, right) =>
-      left.startAbs <= right.startAbs ? left : right,
-    );
-    const latest = members.reduce((left, right) =>
-      left.endAbs >= right.endAbs ? left : right,
-    );
+    const spanMembers = group.phaseDynastyIds
+      .map((dynastyId) => catalogById.get(dynastyId))
+      .filter((dynasty): dynasty is Dynasty => Boolean(dynasty));
+
+    const primary =
+      catalogById.get(group.primaryDynastyId) ??
+      visibleById.get(group.primaryDynastyId) ??
+      spanMembers[0] ??
+      visibleMembers[0]!;
+    const earliest =
+      spanMembers.find((member) => member.id === group.phaseDynastyIds[0]) ??
+      spanMembers[0] ??
+      visibleMembers[0]!;
+    const latest =
+      spanMembers.find(
+        (member) => member.id === group.phaseDynastyIds[group.phaseDynastyIds.length - 1],
+      ) ??
+      spanMembers.at(-1) ??
+      visibleMembers.at(-1)!;
 
     merged.push({
       ...primary,
       id: group.primaryDynastyId,
-      startAbs,
-      endAbs,
+      startAbs: group.laneOrderStartAbs,
+      endAbs: group.laneOrderEndAbs,
       start: earliest.start,
       end: latest.end,
     });
   }
 
-  const rest = dynasties.filter((dynasty) => !consumedIds.has(dynasty.id));
+  const rest = visible.filter((dynasty) => !consumedIds.has(dynasty.id));
   return [...rest, ...merged].sort(compareDynastyOrder);
 }
 

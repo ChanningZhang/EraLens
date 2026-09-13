@@ -258,6 +258,21 @@ const xiaReigns = [
   }),
 ];
 
+/** 商王称号如「商沃丁」「商王武丁」→ 谥号/日名「沃丁」「武丁」。 */
+function shangPosthumousFromTitle(title) {
+  return title.replace(/^商王?/, "");
+}
+
+/** 卡片副标题用「商武丁」而非原始 title「商王武丁」。 */
+function shangPreferredName(title) {
+  return title.replace(/^商王/, "商");
+}
+
+function defaultShangPreferred(entry) {
+  if (entry.preferred) return entry.preferred;
+  return { kind: "posthumous", name: shangPreferredName(entry.title) };
+}
+
 /** 竹书纪年各王在位年数；首尾锚定既有太甲、盘庚年，末王阳甲填满剩余窗口。 */
 function chainShangReigns(entries, firstStartYear, lastEndYear) {
   const items = [];
@@ -273,9 +288,10 @@ function chainShangReigns(entries, firstStartYear, lastEndYear) {
         dynastyId: "shang",
         personId: entry.personId,
         title: entry.title,
-        posthumousName: entry.posthumousName,
+        posthumousName:
+          entry.posthumousName ?? shangPosthumousFromTitle(entry.title),
         templeName: entry.templeName,
-        preferred: entry.preferred ?? { kind: "regnal", name: entry.title },
+        preferred: defaultShangPreferred(entry),
         start: ym(startYear),
         end: ym(endYear, 12),
       }),
@@ -338,6 +354,7 @@ const shangReigns = [
     dynastyId: "shang",
     personId: "zi-taijia",
     title: "商太甲",
+    posthumousName: "太甲",
     templeName: "太宗",
     preferred: { kind: "temple", name: "商太宗" },
     start: ym(-1560),
@@ -349,7 +366,8 @@ const shangReigns = [
     dynastyId: "shang",
     personId: "zi-pangeng",
     title: "商盘庚",
-    preferred: { kind: "regnal", name: "商盘庚" },
+    posthumousName: "盘庚",
+    preferred: { kind: "posthumous", name: "商盘庚" },
     start: ym(-1310),
     end: ym(-1280, 12),
   }),
@@ -359,6 +377,7 @@ const shangReigns = [
     dynastyId: "shang",
     personId: "zi-wuding",
     title: "商王武丁",
+    posthumousName: "武丁",
     templeName: "高宗",
     preferred: { kind: "temple", name: "商高宗" },
     start: ym(-1250),
@@ -369,7 +388,8 @@ const shangReigns = [
     dynastyId: "shang",
     personId: "zi-zugeng",
     title: "商王祖庚",
-    preferred: { kind: "regnal", name: "商祖庚" },
+    posthumousName: "祖庚",
+    preferred: { kind: "posthumous", name: "商祖庚" },
     start: ym(-1191),
     end: ym(-1148, 12),
   }),
@@ -378,7 +398,8 @@ const shangReigns = [
     dynastyId: "shang",
     personId: "zi-zujia",
     title: "商王祖甲",
-    preferred: { kind: "regnal", name: "商祖甲" },
+    posthumousName: "祖甲",
+    preferred: { kind: "posthumous", name: "商祖甲" },
     start: ym(-1148),
     end: ym(-1112, 12),
   }),
@@ -387,7 +408,8 @@ const shangReigns = [
     dynastyId: "shang",
     personId: "zi-wuyi",
     title: "商王武乙",
-    preferred: { kind: "regnal", name: "商武乙" },
+    posthumousName: "武乙",
+    preferred: { kind: "posthumous", name: "商武乙" },
     start: ym(-1147),
     end: ym(-1113, 12),
   }),
@@ -396,7 +418,8 @@ const shangReigns = [
     dynastyId: "shang",
     personId: "zi-wending",
     title: "商王文丁",
-    preferred: { kind: "regnal", name: "商文丁" },
+    posthumousName: "文丁",
+    preferred: { kind: "posthumous", name: "商文丁" },
     start: ym(-1112),
     end: ym(-1102, 12),
   }),
@@ -405,7 +428,8 @@ const shangReigns = [
     dynastyId: "shang",
     personId: "zi-diyi",
     title: "商王帝乙",
-    preferred: { kind: "regnal", name: "商帝乙" },
+    posthumousName: "帝乙",
+    preferred: { kind: "posthumous", name: "商帝乙" },
     start: ym(-1101),
     end: ym(-1076, 12),
   }),
@@ -414,7 +438,8 @@ const shangReigns = [
     dynastyId: "shang",
     personId: "zi-dixin",
     title: "商王帝辛",
-    preferred: { kind: "regnal", name: "商帝辛" },
+    posthumousName: "纣",
+    preferred: { kind: "posthumous", name: "商纣王" },
     start: ym(-1075),
     end: ym(-1046),
   }),
@@ -1010,11 +1035,19 @@ const eventParticipantSql = events.flatMap((e) =>
   ),
 );
 
+const preSql = [
+  "DELETE FROM event_dynasties WHERE dynasty_id = 'zhou';",
+  "DELETE FROM reigns WHERE dynasty_id = 'zhou';",
+  "DELETE FROM dynasties WHERE id = 'zhou';",
+].join("\n");
+
 const sql = [
   "-- EraLens period import: xia-shang-zhou",
   "-- Window: -2070-01 .. -256-12",
   "-- Chronology: Xia-Shang-Zhou Chronology Project + Shiji Eastern Zhou kings",
   "BEGIN;",
+  "",
+  preSql,
   "",
   "-- persons",
   ...persons.map(personSql),
@@ -1155,11 +1188,35 @@ function mergeById(existing, incoming) {
   return [...incoming, ...existing.filter((x) => !incomingIds.has(x.id))];
 }
 
+const REMOVED_MERGED_ZHOU_ID = "zhou";
+
+function prepareSeedDynasties(existing) {
+  return mergeById(
+    existing.filter((d) => d.id !== REMOVED_MERGED_ZHOU_ID),
+    dynasties.map(toDynastyJson),
+  );
+}
+
+function prepareSeedReigns(existing) {
+  return mergeById(
+    existing.filter((r) => r.dynastyId !== REMOVED_MERGED_ZHOU_ID),
+    reigns.map(toReignJson),
+  );
+}
+
+function prepareSeedEvents(existing) {
+  const remapped = existing.map((e) => ({
+    ...e,
+    dynastyIds: (e.dynastyIds ?? []).filter((id) => id !== REMOVED_MERGED_ZHOU_ID),
+  }));
+  return mergeById(remapped, events.map(toEventJson));
+}
+
 const seedFiles = {
   "persons.json": mergeById(JSON.parse(readFileSync(path.join(seedDir, "persons.json"), "utf8")), persons.map(toPersonJson)),
-  "dynasties.json": mergeById(JSON.parse(readFileSync(path.join(seedDir, "dynasties.json"), "utf8")), dynasties.map(toDynastyJson)),
-  "reigns.json": mergeById(JSON.parse(readFileSync(path.join(seedDir, "reigns.json"), "utf8")), reigns.map(toReignJson)),
-  "events.json": mergeById(JSON.parse(readFileSync(path.join(seedDir, "events.json"), "utf8")), events.map(toEventJson)),
+  "dynasties.json": prepareSeedDynasties(JSON.parse(readFileSync(path.join(seedDir, "dynasties.json"), "utf8"))),
+  "reigns.json": prepareSeedReigns(JSON.parse(readFileSync(path.join(seedDir, "reigns.json"), "utf8"))),
+  "events.json": prepareSeedEvents(JSON.parse(readFileSync(path.join(seedDir, "events.json"), "utf8"))),
   "relations.json": mergeById(JSON.parse(readFileSync(path.join(seedDir, "relations.json"), "utf8")), relations),
 };
 

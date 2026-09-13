@@ -141,6 +141,17 @@ describe("computeReignGaps", () => {
     ]);
   });
 
+  it("finds visual gaps when a clipped reign leaves blank space (卫成公 / 卫君瑕 / 卫穆公)", () => {
+    const weiSpan = { startAbs: absMonth(-1040), endAbs: absMonth(-209, 12) };
+    const cheng = reign("wei-cheng", absMonth(-634), absMonth(-600, 12));
+    const xia = reign("wei-xia", absMonth(-632), absMonth(-632, 12));
+    const mu = reign("wei-mu", absMonth(-599), absMonth(-589, 12));
+    const gaps = computeReignGaps(weiSpan, [cheng, xia, mu]);
+    expect(gaps.some((gap) => gap.startAbs >= absMonth(-631) && gap.endExclusive <= absMonth(-598))).toBe(
+      true,
+    );
+  });
+
   it("fills gaps with coverage from related-dynasty reigns (唐/武周)", () => {
     const tangSpan = { startAbs: 8208, endAbs: 8531 };
     const tangOnly = computeReignGaps(tangSpan, [

@@ -14,6 +14,7 @@ export const ORTHODOX_FROM_START = new Set([
   "jin-east",
   "sui",
   "tang",
+  "zhou-wu",
   "song-north",
   "song-south",
   "yuan",

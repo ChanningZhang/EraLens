@@ -150,6 +150,7 @@
     "startAbs": -18708,
     "endAbs": -18553,
     "precision": "year",
+    "posthumousName": "太甲",
     "templeName": "太宗",
     "preferredAppellation": {
       "kind": "temple",
@@ -173,8 +174,9 @@
     "startAbs": -18552,
     "endAbs": -18325,
     "precision": "year",
+    "posthumousName": "沃丁",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商沃丁"
     }
   },
@@ -195,8 +197,9 @@
     "startAbs": -18324,
     "endAbs": -18265,
     "precision": "year",
+    "posthumousName": "太庚",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商太庚"
     }
   },
@@ -217,8 +220,9 @@
     "startAbs": -18264,
     "endAbs": -18061,
     "precision": "year",
+    "posthumousName": "小甲",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商小甲"
     }
   },
@@ -239,8 +243,9 @@
     "startAbs": -18060,
     "endAbs": -17917,
     "precision": "year",
+    "posthumousName": "雍己",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商雍己"
     }
   },
@@ -261,6 +266,7 @@
     "startAbs": -17916,
     "endAbs": -17017,
     "precision": "year",
+    "posthumousName": "太戊",
     "templeName": "中宗",
     "preferredAppellation": {
       "kind": "temple",
@@ -284,8 +290,9 @@
     "startAbs": -17016,
     "endAbs": -16909,
     "precision": "year",
+    "posthumousName": "仲丁",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商仲丁"
     }
   },
@@ -306,8 +313,9 @@
     "startAbs": -16908,
     "endAbs": -16789,
     "precision": "year",
+    "posthumousName": "外壬",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商外壬"
     }
   },
@@ -328,8 +336,9 @@
     "startAbs": -16788,
     "endAbs": -16681,
     "precision": "year",
+    "posthumousName": "河亶甲",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商河亶甲"
     }
   },
@@ -350,8 +359,9 @@
     "startAbs": -16680,
     "endAbs": -16453,
     "precision": "year",
+    "posthumousName": "祖乙",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商祖乙"
     }
   },
@@ -372,8 +382,9 @@
     "startAbs": -16452,
     "endAbs": -16285,
     "precision": "year",
+    "posthumousName": "祖辛",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商祖辛"
     }
   },
@@ -394,8 +405,9 @@
     "startAbs": -16284,
     "endAbs": -16045,
     "precision": "year",
+    "posthumousName": "沃甲",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商沃甲"
     }
   },
@@ -416,8 +428,9 @@
     "startAbs": -16044,
     "endAbs": -15937,
     "precision": "year",
+    "posthumousName": "祖丁",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商祖丁"
     }
   },
@@ -438,8 +451,9 @@
     "startAbs": -15936,
     "endAbs": -15865,
     "precision": "year",
+    "posthumousName": "南庚",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商南庚"
     }
   },
@@ -460,8 +474,9 @@
     "startAbs": -15864,
     "endAbs": -15709,
     "precision": "year",
+    "posthumousName": "阳甲",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商阳甲"
     }
   },
@@ -482,8 +497,9 @@
     "startAbs": -15708,
     "endAbs": -15337,
     "precision": "year",
+    "posthumousName": "盘庚",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商盘庚"
     }
   },
@@ -504,8 +520,9 @@
     "startAbs": -15336,
     "endAbs": -15301,
     "precision": "year",
+    "posthumousName": "小辛",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商小辛"
     }
   },
@@ -526,8 +543,9 @@
     "startAbs": -15300,
     "endAbs": -14989,
     "precision": "year",
+    "posthumousName": "小乙",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商小乙"
     }
   },
@@ -548,6 +566,7 @@
     "startAbs": -14988,
     "endAbs": -14281,
     "precision": "year",
+    "posthumousName": "武丁",
     "templeName": "高宗",
     "preferredAppellation": {
       "kind": "temple",
@@ -571,8 +590,9 @@
     "startAbs": -14280,
     "endAbs": -13753,
     "precision": "year",
+    "posthumousName": "祖庚",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商祖庚"
     }
   },
@@ -593,8 +613,9 @@
     "startAbs": -13764,
     "endAbs": -13321,
     "precision": "year",
+    "posthumousName": "祖甲",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商祖甲"
     }
   },
@@ -615,8 +636,9 @@
     "startAbs": -13752,
     "endAbs": -13333,
     "precision": "year",
+    "posthumousName": "武乙",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商武乙"
     }
   },
@@ -637,8 +659,9 @@
     "startAbs": -13332,
     "endAbs": -13201,
     "precision": "year",
+    "posthumousName": "文丁",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商文丁"
     }
   },
@@ -659,8 +682,9 @@
     "startAbs": -13200,
     "endAbs": -12889,
     "precision": "year",
+    "posthumousName": "帝乙",
     "preferredAppellation": {
-      "kind": "regnal",
+      "kind": "posthumous",
       "name": "商帝乙"
     }
   },
@@ -681,9 +705,10 @@
     "startAbs": -12888,
     "endAbs": -12540,
     "precision": "year",
+    "posthumousName": "纣",
     "preferredAppellation": {
-      "kind": "regnal",
-      "name": "商帝辛"
+      "kind": "posthumous",
+      "name": "商纣王"
     }
   },
   {

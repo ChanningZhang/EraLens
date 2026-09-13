@@ -111,25 +111,24 @@ export type ReignGap = {
 /** Minimum gap length (abs months) before showing a dashed placeholder card. */
 export const REIGN_GAP_MIN_MONTHS = 12;
 
-function mergeReignCoverage(reigns: Reign[]): { start: number; end: number }[] {
-  const sorted = sortReigns(reigns);
+/** Merge visible card spans — must match ReignCard layout, not raw reign dates. */
+function mergeVisualCoverage(reigns: Reign[]): { start: number; end: number }[] {
   const merged: { start: number; end: number }[] = [];
-  for (const reign of sorted) {
-    const start = reign.startAbs;
-    const end = reign.endAbs + 1;
+  for (const reign of reigns) {
+    const { startAbs, endExclusive } = resolveReignVisualSpan(reign, reigns);
     const last = merged.at(-1);
-    if (!last || start > last.end) {
-      merged.push({ start, end });
+    if (!last || startAbs > last.end) {
+      merged.push({ start: startAbs, end: endExclusive });
     } else {
-      last.end = Math.max(last.end, end);
+      last.end = Math.max(last.end, endExclusive);
     }
   }
-  return merged;
+  return merged.sort((a, b) => a.start - b.start);
 }
 
 /**
- * Intervals within a dynasty span that have no recorded reign.
- * Derived at render time; does not create fake reign rows in the database.
+ * Intervals within a dynasty span with no visible reign card coverage.
+ * Uses the same visual spans as ReignCard, not raw database reign dates.
  */
 export function computeReignGaps(
   dynasty: Pick<Dynasty, "startAbs" | "endAbs">,
@@ -148,7 +147,7 @@ export function computeReignGaps(
 
   const gaps: ReignGap[] = [];
   let cursor = dynasty.startAbs;
-  for (const covered of mergeReignCoverage(reigns)) {
+  for (const covered of mergeVisualCoverage(reigns)) {
     if (covered.start > cursor) {
       gaps.push({ startAbs: cursor, endExclusive: covered.start });
     }

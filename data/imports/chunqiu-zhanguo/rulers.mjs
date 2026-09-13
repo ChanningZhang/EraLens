@@ -1760,7 +1760,7 @@ export const rulersByDynasty = {
       "dynastyId": "song-chunqiu",
       "personId": "song-r32",
       "title": "宋剔成君",
-      "personName": "戴剔成",
+      "personName": "戴喜",
       "posthumousName": null,
       "startYear": -355,
       "endYear": -329
@@ -2484,7 +2484,7 @@ export const rulersByDynasty = {
       "dynastyId": "wei-weiguo",
       "personId": "weiguo-r43",
       "title": "卫嗣君",
-      "personName": "卫嗣君",
+      "personName": "缺失",
       "posthumousName": null,
       "startYear": -334,
       "endYear": -293
@@ -2493,7 +2493,7 @@ export const rulersByDynasty = {
       "dynastyId": "wei-weiguo",
       "personId": "weiguo-r44",
       "title": "卫怀君",
-      "personName": "卫怀君",
+      "personName": "缺失",
       "posthumousName": null,
       "startYear": -292,
       "endYear": -254
@@ -2502,7 +2502,7 @@ export const rulersByDynasty = {
       "dynastyId": "wei-weiguo",
       "personId": "weiguo-r45",
       "title": "卫元君",
-      "personName": "卫元君",
+      "personName": "缺失",
       "posthumousName": null,
       "startYear": -254,
       "endYear": -230
