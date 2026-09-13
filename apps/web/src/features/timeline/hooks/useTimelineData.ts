@@ -12,7 +12,7 @@ import { useViewport } from "./useViewport";
 
 const SCOPE = "cn";
 const STALE_TIME = 5 * 60_000;
-const TIMELINE_CACHE_VERSION = 21;
+const TIMELINE_CACHE_VERSION = 24;
 
 function chunkKey(chunk: QueryChunk) {
   return ["timeline-chunk", TIMELINE_CACHE_VERSION, chunk.fromAbs, chunk.toAbs, SCOPE] as const;

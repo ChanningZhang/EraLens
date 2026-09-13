@@ -1,6 +1,5 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
-import { defaultPreferredAppellation } from "./defaultPreferredAppellation.mjs";
 import { resolveOrthodoxEndAbs, resolveOrthodoxFromAbs } from "./orthodoxDynasties.mjs";
 import { finalizeImportReigns } from "./missingReigns.mjs";
 
@@ -70,9 +69,6 @@ export function reign({
 }
 
 export function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, eraNames = [], preferred = null) {
-  const pref =
-    preferred ??
-    defaultPreferredAppellation({ title, posthumous, temple, startYear, eraNames });
   return reign({
     id: `reign-${personId}-${dynastyId}`,
     dynastyId,
@@ -80,7 +76,7 @@ export function dynastyReign(dynastyId, personId, title, posthumous, temple, sta
     title,
     posthumousName: posthumous,
     templeName: temple,
-    preferred: pref,
+    preferred,
     start: ym(startYear),
     end: ym(endYear, 12),
     eraNames,

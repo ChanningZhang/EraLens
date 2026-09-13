@@ -1,4 +1,10 @@
+import {
+  MING_QING_START_YEAR,
+  TEMPLE_ERA_START_YEAR,
+} from "./appellationPolicy";
 import type { AppellationKind, Reign } from "./schema";
+
+export { MING_QING_START_YEAR, TEMPLE_ERA_START_YEAR } from "./appellationPolicy";
 
 export type EmperorAppellation = {
   kind: AppellationKind;
@@ -11,11 +17,6 @@ export const APPELLATION_LABELS: Record<AppellationKind, string> = {
   era: "年号",
   regnal: "称号",
 };
-
-/** Ming/Qing cards conventionally show era names. */
-const MING_QING_START_YEAR = 1368;
-/** Tang through Yuan cards conventionally show temple names. */
-const TEMPLE_ERA_START_YEAR = 618;
 
 const MESSY_PERSON_NAME =
   /出土|原名|记载|史記|史记|漢書|汉书|之子|之弟|之孫|之孙|之兄|長子|长子|少子|别名|又名|又称|或作|一名|一作|之侯|避讳|误作|旧作|左右|不满|后裔|族人|三世|不明|灭亡/;
@@ -141,14 +142,17 @@ function resolveTempleAppellation(
  * - Tang through Yuan: temple names became the common shorthand.
  * - Ming and Qing: era names became the common shorthand.
  *
- * `preferredAppellation` always wins because individual rulers have
- * exceptions. If no posthumous/temple/era name exists (for example Qin),
- * the regnal title remains a valid fallback.
+ * `preferredAppellation` is only honored for regnal overrides (先秦称号、
+ * 秦襄公等). Era/temple/posthumous display follows the year thresholds below
+ * so changing `TEMPLE_ERA_START_YEAR` applies to every dynasty without
+ * re-importing baked SQL defaults.
  */
 export function resolveEmperorAppellation(
   reign: ReignAppellationFields,
 ): EmperorAppellation | null {
-  if (reign.preferredAppellation) return reign.preferredAppellation;
+  if (reign.preferredAppellation?.kind === "regnal") {
+    return reign.preferredAppellation;
+  }
 
   const eraName = firstEraName(reign);
   const year = reign.start.year;

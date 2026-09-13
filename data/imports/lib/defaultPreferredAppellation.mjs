@@ -1,10 +1,9 @@
 /**
- * Default preferred_appellation for import scripts.
- * Keep in sync with packages/shared/src/emperorAppellation.ts.
+ * Derive preferred_appellation when a generator wants to persist it.
+ * Runtime display ignores non-regnal preferred values; see emperorAppellation.ts.
  */
 
-const MING_QING_START_YEAR = 1368;
-const TEMPLE_ERA_START_YEAR = 618;
+import { MING_QING_START_YEAR, TEMPLE_ERA_START_YEAR } from "./appellationPolicy.mjs";
 
 function isDynasticEmperorTitle(title) {
   if (!title || title === "皇帝" || title === "始皇帝") return false;

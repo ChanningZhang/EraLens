@@ -2,7 +2,6 @@
  * Day/month-precision reign helpers for post-Tang imports.
  * Dates use proleptic Gregorian calendar (Wikipedia / 实录通行换算).
  */
-import { defaultPreferredAppellation } from "./defaultPreferredAppellation.mjs";
 import { absMonth } from "./sqlHelpers.mjs";
 
 export function ymDay(year, month = 1, day = null) {
@@ -61,9 +60,6 @@ export function dynastyReignMonth(
   claim = null,
   id = null,
 ) {
-  const pref =
-    preferred ??
-    defaultPreferredAppellation({ title, posthumous, temple, startYear, eraNames });
   return reignBase({
     id: id ?? `reign-${personId}-${dynastyId}`,
     dynastyId,
@@ -71,7 +67,7 @@ export function dynastyReignMonth(
     title,
     posthumousName: posthumous,
     templeName: temple,
-    preferred: pref,
+    preferred,
     start: ymDay(startYear, startMonth),
     end: ymDay(endYear, endMonth),
     eraNames,
@@ -99,9 +95,6 @@ export function dynastyReignDay(
   claim = null,
   id = null,
 ) {
-  const pref =
-    preferred ??
-    defaultPreferredAppellation({ title, posthumous, temple, startYear, eraNames });
   return reignBase({
     id: id ?? `reign-${personId}-${dynastyId}`,
     dynastyId,
@@ -109,7 +102,7 @@ export function dynastyReignDay(
     title,
     posthumousName: posthumous,
     templeName: temple,
-    preferred: pref,
+    preferred,
     start: ymDay(startYear, startMonth, startDay),
     end: ymDay(endYear, endMonth, endDay),
     eraNames,

@@ -61,9 +61,33 @@ describe("resolveEmperorAppellation", () => {
           start: { year: 626, month: 1 },
           posthumousName: "文皇帝",
           templeName: "太宗",
+          title: "唐太宗",
         }),
       ),
-    ).toEqual({ kind: "temple", name: "太宗" });
+    ).toEqual({ kind: "temple", name: "唐太宗" });
+    expect(
+      resolveEmperorAppellation(
+        source({
+          start: { year: 960, month: 1 },
+          posthumousName: "启运立极英武睿文神德圣功至明大孝皇帝",
+          templeName: "太祖",
+          title: "宋太祖",
+        }),
+      ),
+    ).toEqual({ kind: "temple", name: "宋太祖" });
+  });
+
+  it("prefers temple over posthumous from Tang onward", () => {
+    expect(
+      resolveEmperorAppellation(
+        source({
+          start: { year: 649, month: 1 },
+          title: "诏王",
+          posthumousName: "奇嘉王",
+          templeName: "高祖",
+        }),
+      ),
+    ).toEqual({ kind: "temple", name: "高祖" });
   });
 
   it("uses an era name for Ming and Qing", () => {
@@ -86,16 +110,30 @@ describe("resolveEmperorAppellation", () => {
     ).toEqual({ kind: "regnal", name: "始皇帝" });
   });
 
-  it("lets an explicit preferred appellation override the default", () => {
+  it("honors regnal preferred overrides", () => {
     expect(
       resolveEmperorAppellation(
         source({
-          start: { year: 1294, month: 1 },
-          templeName: "成宗",
-          preferredAppellation: { kind: "temple", name: "元成宗" },
+          start: { year: -678, month: 1 },
+          title: "秦襄公",
+          preferredAppellation: { kind: "regnal", name: "秦襄公" },
         }),
       ),
-    ).toEqual({ kind: "temple", name: "元成宗" });
+    ).toEqual({ kind: "regnal", name: "秦襄公" });
+  });
+
+  it("ignores stored temple/posthumous preferred and follows year rules", () => {
+    expect(
+      resolveEmperorAppellation(
+        source({
+          start: { year: 649, month: 1 },
+          title: "诏王",
+          posthumousName: "奇嘉王",
+          templeName: "高祖",
+          preferredAppellation: { kind: "posthumous", name: "奇嘉王" },
+        }),
+      ),
+    ).toEqual({ kind: "temple", name: "高祖" });
   });
 
   it("uses 正统 then 天顺 for Zhu Qizhen's two reigns", () => {
@@ -278,7 +316,7 @@ describe("resolveReignCardLabel", () => {
         }),
         "司马奕",
       ),
-    ).toEqual({ label: "谥号", name: "晋海西公" });
+    ).toEqual({ label: "谥号", name: "海西公" });
     expect(
       resolveReignCardMeta(
         source({
@@ -325,7 +363,7 @@ describe("resolveReignCardMeta", () => {
     ).toEqual({ label: "年号", name: "天顺" });
   });
 
-  it("shows temple name for Tang emperors", () => {
+  it("shows temple meta for Tang emperors", () => {
     expect(
       resolveReignCardMeta(
         source({
@@ -336,6 +374,20 @@ describe("resolveReignCardMeta", () => {
         "李世民",
       ),
     ).toEqual({ label: "庙号", name: "唐太宗" });
+  });
+
+  it("shows temple meta for Nanzhao rulers from Tang onward", () => {
+    expect(
+      resolveReignCardMeta(
+        source({
+          start: { year: 649, month: 1 },
+          title: "诏王",
+          posthumousName: "奇嘉王",
+          templeName: "高祖",
+        }),
+        "细奴逻",
+      ),
+    ).toEqual({ label: "庙号", name: "高祖" });
   });
 
   it("shows posthumous meta for Sui emperors", () => {
@@ -442,46 +494,20 @@ describe("resolveReignCardMeta", () => {
           start: { year: -1547, month: 1 },
           title: "商沃丁",
           posthumousName: "沃丁",
-          preferredAppellation: { kind: "posthumous", name: "商沃丁" },
         }),
         "沃丁",
       ),
-    ).toEqual({ label: "谥号", name: "商沃丁" });
-    expect(
-      resolveReignCardMeta(
-        source({
-          start: { year: -1250, month: 1 },
-          title: "商王武丁",
-          posthumousName: "武丁",
-          templeName: "高宗",
-          preferredAppellation: { kind: "posthumous", name: "商武丁" },
-        }),
-        "武丁",
-      ),
-    ).toEqual({ label: "谥号", name: "商武丁" });
-    expect(
-      resolveReignCardMeta(
-        source({
-          start: { year: -1560, month: 1 },
-          title: "商太甲",
-          posthumousName: "太甲",
-          templeName: "太宗",
-          preferredAppellation: { kind: "posthumous", name: "商太甲" },
-        }),
-        "太甲",
-      ),
-    ).toEqual({ label: "谥号", name: "商太甲" });
+    ).toBeNull();
     expect(
       resolveReignCardMeta(
         source({
           start: { year: -1075, month: 1 },
           title: "商王帝辛",
           posthumousName: "纣",
-          preferredAppellation: { kind: "posthumous", name: "商纣王" },
         }),
         "帝辛",
       ),
-    ).toEqual({ label: "谥号", name: "商纣王" });
+    ).toEqual({ label: "谥号", name: "纣" });
     expect(
       resolveReignCardMeta(
         source({

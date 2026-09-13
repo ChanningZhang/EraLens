@@ -11,11 +11,11 @@
   "depth": "standard",
   "generatedAt": "2026-09-13",
   "counts": {
-    "persons": 61,
+    "persons": 62,
     "dynasties": 4,
-    "reigns": 61,
+    "reigns": 60,
     "events": 4,
-    "relations": 61
+    "relations": 60
   },
   "sources": [
     {
@@ -43,6 +43,10 @@
       "url": "https://zh.wikipedia.org/wiki/%E5%9B%9E%E9%B9%81"
     },
     {
+      "label": "回鹘可汗列表",
+      "url": "https://zh.wikipedia.org/wiki/%E5%9B%9E%E9%B9%98%E5%8F%AF%E6%B1%97%E5%88%97%E8%A1%A8"
+    },
+    {
       "label": "唐灭高句丽",
       "url": "https://zh.wikipedia.org/wiki/%E9%AB%98%E5%8F%A5%E4%B8%BD"
     }
@@ -51,7 +55,7 @@
     "吐蕃在位年取维基百科帝国时期标准列表（618–842），含南日松赞至朗达玛。",
     "吐谷浑含慕容吐谷浑至诺曷钵完整首领序列；王朝窗口取329–663。",
     "高句丽取君主列表约18位主要君主，故国川王以前年代有争议，precision=year。",
-    "回鹘可汗序列按744–840通行年表；840年亡国事件关联黠戛斯。",
+    "回鹘可汗序列据维基百科回鹘可汗列表（744–840）；人物名用本名，在位 title 用唐封称号，尊号不入人物名。",
     "唐（tang）复用 sui-tang-wudai-song 已有 id，本包仅关联 event_dynasties。"
   ]
 }

@@ -19,20 +19,20 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // ── persons ────────────────────────────────────────────────────────────────
 
 const persons = [
-  // 南诏十三世
-  person("xi-nuoluo", "细奴逻", ["君主"], "南诏始祖，蒙舍诏首领，649年即位。", "细奴逻"),
-  person("luo-sheng", "逻盛", ["君主"], "南诏第二任君主，细奴逻之子。", "逻盛"),
-  person("sheng-luopi", "盛逻皮", ["君主"], "南诏第三任君主，逻盛之子。", "盛逻皮"),
-  person("pi-luoge", "皮逻阁", ["君主"], "南诏第四任君主，738年统一六诏，南诏国号始显。", "皮逻阁"),
-  person("ge-luofeng", "阁罗凤", ["皇帝"], "南诏第五任君主，在位期间与唐多次交战，国势强盛。", "阁罗凤"),
-  person("yi-mouxun", "异牟寻", ["皇帝"], "南诏第六任君主，与吐蕃结盟后复与唐修好。", "异牟寻"),
-  person("xun-gequan", "寻阁劝", ["皇帝"], "南诏第七任君主，在位仅一年。", "寻阁劝"),
-  person("quan-longsheng", "劝龙晟", ["皇帝"], "南诏第八任君主。", "劝龙晟"),
-  person("quan-lisheng", "劝利晟", ["皇帝"], "南诏第九任君主。", "劝利晟"),
-  person("quan-fengyou", "劝丰祐", ["皇帝"], "南诏第十任君主，在位三十余年。", "劝丰祐"),
-  person("shi-long", "世隆", ["皇帝"], "南诏第十一任君主，改国号大礼，与唐战争频繁。", "世隆"),
-  person("long-shun", "隆舜", ["皇帝"], "南诏第十二任君主，改国号大封民。", "隆舜"),
-  person("shun-huazhen", "舜化贞", ["皇帝"], "南诏末代君主，902年亡于郑买嗣。", "舜化贞"),
+  // 南诏十三世（人物名=本名；在位 title=册封/爵号，谥号入 posthumous）
+  person("xi-nuoluo", "细奴逻", ["君主"], "蒙舍诏首领，蒙姓，649年即位，谥奇嘉王，庙号高祖。", "细奴逻"),
+  person("luo-sheng", "逻盛", ["君主"], "细奴逻之子，谥兴宗王，庙号世宗。", "逻盛"),
+  person("sheng-luopi", "盛逻皮", ["君主"], "逻盛之子，谥威成王，庙号太宗。", "盛逻皮"),
+  person("pi-luoge", "皮逻阁", ["君主"], "盛逻皮之子，唐封云南王，赐名归义，738年统一六诏。", "皮逻阁"),
+  person("ge-luofeng", "阁罗凤", ["君主"], "皮逻阁之子，唐封云南王，谥神武王，天宝年间与唐战并与吐蕃结盟。", "阁罗凤"),
+  person("yi-mouxun", "异牟寻", ["君主"], "阁罗凤之孙、凤伽异之子，谥孝桓王，复臣于唐。", "异牟寻"),
+  person("xun-gequan", "寻阁劝", ["君主"], "异牟寻之子，亦称新觉劝，谥孝惠王，在位仅一年。", "寻阁劝"),
+  person("quan-longsheng", "劝龙晟", ["君主"], "寻阁劝之子，谥幽王。", "劝龙晟"),
+  person("quan-lisheng", "劝利晟", ["君主"], "劝龙晟之弟，谥靖王。", "劝利晟"),
+  person("quan-fengyou", "劝丰祐", ["君主"], "劝利晟之弟，谥昭成王，在位三十余年。", "劝丰祐"),
+  person("shi-long", "世隆", ["君主", "皇帝"], "劝丰祐之子，亦称酋龙，僭称帝号，改国号大礼，谥景庄帝。", "世隆"),
+  person("long-shun", "隆舜", ["君主", "皇帝"], "世隆之子，亦称法，改国号大封民，谥武宣帝。", "隆舜"),
+  person("shun-huazhen", "舜化贞", ["君主", "皇帝"], "隆舜之子，南诏末代君主，谥孝哀帝，902年亡于郑买嗣。", "舜化贞"),
   // 大理
   person("duan-siping", "段思平", ["皇帝"], "大理太祖，937年灭大义宁建国，国号大理。", "段思平"),
   person("duan-siying", "段思英", ["皇帝"], "大理第二任皇帝，段思平之子，在位一年。", "段思英"),
@@ -92,19 +92,19 @@ const dynasties = [
 // ── reigns ───────────────────────────────────────────────────────────────────
 
 const nanzhaoReigns = [
-  dr("nanzhao", "xi-nuoluo", "奇嘉王", null, "高祖", 649, 674),
-  dr("nanzhao", "luo-sheng", "兴宗王", null, "世宗", 674, 712),
-  dr("nanzhao", "sheng-luopi", "威成王", null, "太宗", 712, 728),
-  dr("nanzhao", "pi-luoge", "归义王", null, null, 728, 748),
-  dr("nanzhao", "ge-luofeng", "南诏王", "神武王", null, 748, 779),
+  dr("nanzhao", "xi-nuoluo", "诏王", "奇嘉王", "高祖", 649, 674),
+  dr("nanzhao", "luo-sheng", "诏王", "兴宗王", "世宗", 674, 712),
+  dr("nanzhao", "sheng-luopi", "诏王", "威成王", "太宗", 712, 728),
+  dr("nanzhao", "pi-luoge", "云南王", "归义王", null, 728, 748),
+  dr("nanzhao", "ge-luofeng", "云南王", "神武王", null, 748, 779),
   dr("nanzhao", "yi-mouxun", "南诏王", "孝桓王", null, 779, 808),
   dr("nanzhao", "xun-gequan", "南诏王", "孝惠王", null, 808, 809),
   dr("nanzhao", "quan-longsheng", "南诏王", "幽王", null, 809, 816),
   dr("nanzhao", "quan-lisheng", "南诏王", "靖王", null, 816, 823),
   dr("nanzhao", "quan-fengyou", "南诏王", "昭成王", null, 823, 859),
-  dr("nanzhao", "shi-long", "景庄帝", null, null, 859, 877),
-  dr("nanzhao", "long-shun", "武宣帝", null, null, 877, 897),
-  dr("nanzhao", "shun-huazhen", "孝哀帝", null, null, 897, 902),
+  dr("nanzhao", "shi-long", "皇帝", "景庄帝", null, 859, 877),
+  dr("nanzhao", "long-shun", "皇帝", "武宣帝", null, 877, 897),
+  dr("nanzhao", "shun-huazhen", "皇帝", "孝哀帝", null, 897, 902),
 ];
 
 const daliReigns = [
@@ -236,6 +236,7 @@ writeImportPackage(__dirname, {
     ],
     notes: [
       "覆盖南诏十三世君主（649–902）与大理国皇帝（937–1253）。",
+      "南诏人物名用本名，在位 title 用诏王/云南王/南诏王/皇帝等爵号，谥号与庙号分列。",
       "南诏王朝始年取细奴逻即位（649），立国事件取738年皮逻阁统一六诏。",
       "杨义贞（1080）与高升泰（1094–1096）按维基君主列表收录。",
       "蒙古灭大理事件补充关联 mongol-empire 王朝与 hu-bilie（忽必烈，见 mongol-pre-yuan）。",

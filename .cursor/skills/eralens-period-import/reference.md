@@ -121,7 +121,7 @@ ON CONFLICT (id) DO UPDATE SET
 
 ### reigns
 
-唐以后常用庙号。先秦/汉：`{"kind":"posthumous","name":"周武王"}` 或 `{"kind":"regnal","name":"夏禹"}`。`persons.name` 仍用名（姬发、禹），便于搜索。
+卡片称谓由运行时 `resolveEmperorAppellation` 按 `appellationPolicy.ts` 的年份阈值计算；`preferred_appellation` 仅用于 **regnal** 例外（先秦称号、秦襄公等）。导入时不要写入庙号/谥号/年号的默认 preferred。`persons.name` 仍用名（姬发、禹），便于搜索。
 
 ```sql
 INSERT INTO reigns (

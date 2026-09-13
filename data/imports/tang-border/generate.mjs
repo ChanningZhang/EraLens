@@ -76,20 +76,21 @@ const gaogouliPersons = [
 ];
 
 const huihuPersons = [
-  person("guli-peiluo", "骨力裴罗", ["可汗", "君主"], "回纥可汗，744年建国，统一漠北。", "骨力裴罗"),
-  person("mo-yanchuo", "漠延啜", ["可汗", "君主"], "回纥可汗，骨力裴罗之子。", "漠延啜"),
-  person("ya-yanchuo", "磨延啜", ["可汗", "君主"], "回纥可汗，漠延啜之弟。", "磨延啜"),
-  person("huairen-kehan", "怀仁可汗", ["可汗", "君主"], "回纥可汗，磨延啜之子。", "怀仁可汗"),
-  person("fengcheng-kehan", "奉诚可汗", ["可汗", "君主"], "回纥可汗，在位仅一年。", "奉诚可汗"),
-  person("jieyu-jiasi", "颉于伽思", ["可汗", "君主"], "回纥可汗，奉诚可汗之弟。", "颉于伽思"),
-  person("huaixin-kehan", "怀信可汗", ["可汗", "君主"], "回纥可汗，颉于伽思之弟。", "怀信可汗"),
-  person("fengyi-kehan", "奉义可汗", ["可汗", "君主"], "回纥可汗，怀信可汗之弟。", "奉义可汗"),
-  person("anyuan-kehan", "安远可汗", ["可汗", "君主"], "回纥可汗，奉义可汗之弟。", "安远可汗"),
-  person("zhongzhen-kehan", "忠贞可汗", ["可汗", "君主"], "回纥可汗，安远可汗之侄。", "忠贞可汗"),
-  person("zhongjing-kehan", "忠敬可汗", ["可汗", "君主"], "回纥可汗，忠贞可汗之弟。", "忠敬可汗"),
-  person("aidengli-kehan", "爱登里啰汩没密施合毗伽可汗", ["可汗", "君主"], "回纥可汗，忠敬可汗之弟。", "爱登里啰汩没密施合毗伽可汗"),
-  person("wujie-kehan", "乌介可汗", ["可汗", "君主"], "回纥可汗，840年被杀。", "乌介可汗"),
-  person("enzhen-kehan", "遏捻可汗", ["可汗", "君主"], "回纥末代可汗，840年亡国。", "遏捻可汗"),
+  person("guli-peiluo", "骨力裴罗", ["可汗", "君主"], "药罗葛氏，744年统一漠北，唐封怀仁可汗。", "骨力裴罗"),
+  person("mo-yanchuo", "磨延啜", ["可汗", "君主"], "骨力裴罗之子，唐封英武可汗。", "磨延啜"),
+  person("ya-yanchuo", "移地健", ["可汗", "君主"], "药罗葛氏，磨延啜次子，唐封英义可汗，后世常称牟羽可汗，引入摩尼教为国教。", "牟羽可汗"),
+  person("huairen-kehan", "顿莫贺达干", ["可汗", "君主"], "杀移地健自立，唐封长寿天亲可汗。", "顿莫贺达干"),
+  person("fengcheng-kehan", "多逻斯", ["可汗", "君主"], "顿莫贺达干之子，唐封忠贞可汗，在位仅一年。", "忠贞可汗"),
+  person("jieyu-jiasi", "阿啜", ["可汗", "君主"], "多逻斯之弟，唐封奉诚可汗。", "奉诚可汗"),
+  person("huaixin-kehan", "骨咄禄", ["可汗", "君主"], "阿跌氏，唐封怀信可汗，阿啜之后继统。", "怀信可汗"),
+  person("fengyi-kehan", "滕里", ["可汗", "君主"], "本名失载，怀信可汗之后，唐封滕里可汗。", "滕里可汗"),
+  person("anyuan-kehan", "保义", ["可汗", "君主"], "本名失载，硖跌氏，怀信可汗庶长子，唐封保义可汗。", "保义可汗"),
+  person("zhongzhen-kehan", "崇德", ["可汗", "君主"], "本名失载，唐封崇德可汗。", "崇德可汗"),
+  person("zhongjing-kehan", "曷萨特勤", ["可汗", "君主"], "硖跌氏，崇德可汗之弟，唐封昭礼可汗。", "昭礼可汗"),
+  person("aidengli-kehan", "胡特勤", ["可汗", "君主"], "昭礼可汗从子，唐封彰信可汗。", "彰信可汗"),
+  person("kasa-kehan", "葛萨", ["可汗", "君主"], "亦称㕎馺特勤，篡位，唐封㕎馺可汗，840年牙帐陷落时被杀。", "㕎馺可汗"),
+  person("wujie-kehan", "乌希特勤", ["可汗", "君主"], "亦称乌介特勤，840年南逃，唐封乌介可汗，846年被杀。", "乌介可汗"),
+  person("enzhen-kehan", "遏捻特勤", ["可汗", "君主"], "唐封遏捻可汗，846—848年在位，回鹘南迁时期末代可汗。", "遏捻可汗"),
 ];
 
 const persons = [...tuboPersons, ...tuyuhunPersons, ...gaogouliPersons, ...huihuPersons];
@@ -143,7 +144,7 @@ const dynasties = [
     end: ym(840),
     precision: "year",
     colorToken: nextColor(),
-    note: "744年骨力裴罗建国；840年被黠戛斯所灭，遏捻可汗亡国。",
+    note: "744年骨力裴罗建国；840年黠戛斯攻破牙帐，㕎馺可汗被杀，漠北汗国终结。",
   },
 ];
 
@@ -206,20 +207,19 @@ const gaogouliReigns = [
 ];
 
 const huihuReigns = [
-  dr("huihu", "guli-peiluo", "可汗", null, null, 744, 747),
-  dr("huihu", "mo-yanchuo", "可汗", null, null, 747, 759),
-  dr("huihu", "ya-yanchuo", "可汗", null, null, 759, 780),
-  dr("huihu", "huairen-kehan", "怀仁可汗", null, null, 780, 789),
-  dr("huihu", "fengcheng-kehan", "奉诚可汗", null, null, 789, 790),
-  dr("huihu", "jieyu-jiasi", "颉于伽思", null, null, 790, 795),
+  dr("huihu", "guli-peiluo", "怀仁可汗", null, null, 744, 747),
+  dr("huihu", "mo-yanchuo", "英武可汗", null, null, 747, 759),
+  dr("huihu", "ya-yanchuo", "英义可汗", null, null, 759, 780),
+  dr("huihu", "huairen-kehan", "长寿天亲可汗", null, null, 780, 789),
+  dr("huihu", "fengcheng-kehan", "忠贞可汗", null, null, 789, 790),
+  dr("huihu", "jieyu-jiasi", "奉诚可汗", null, null, 790, 795),
   dr("huihu", "huaixin-kehan", "怀信可汗", null, null, 795, 805),
-  dr("huihu", "fengyi-kehan", "奉义可汗", null, null, 805, 808),
-  dr("huihu", "anyuan-kehan", "安远可汗", null, null, 808, 821),
-  dr("huihu", "zhongzhen-kehan", "忠贞可汗", null, null, 821, 824),
-  dr("huihu", "zhongjing-kehan", "忠敬可汗", null, null, 824, 833),
-  dr("huihu", "aidengli-kehan", "爱登里啰汩没密施合毗伽可汗", null, null, 833, 839),
-  dr("huihu", "wujie-kehan", "乌介可汗", null, null, 839, 840),
-  dr("huihu", "enzhen-kehan", "遏捻可汗", null, null, 840, 840),
+  dr("huihu", "fengyi-kehan", "滕里可汗", null, null, 805, 808),
+  dr("huihu", "anyuan-kehan", "保义可汗", null, null, 808, 821),
+  dr("huihu", "zhongzhen-kehan", "崇德可汗", null, null, 821, 824),
+  dr("huihu", "zhongjing-kehan", "昭礼可汗", null, null, 824, 832),
+  dr("huihu", "aidengli-kehan", "彰信可汗", null, null, 832, 839),
+  dr("huihu", "kasa-kehan", "㕎馺可汗", null, null, 839, 840),
 ];
 
 const reignGroups = [tuboReigns, tuyuhunReigns, gaogouliReigns, huihuReigns];
@@ -254,8 +254,8 @@ const events = [
     dateNote: "840年，黠戛斯攻灭回鹘",
     at: ym(840),
     dynastyIds: ["huihu"],
-    participantIds: ["enzhen-kehan"],
-    summary: "黠戛斯击败回鹘，乌介可汗被杀，遏捻可汗亡国，漠北回鹘汗国终结。",
+    participantIds: ["kasa-kehan", "wujie-kehan"],
+    summary: "黠戛斯攻破回鹘牙帐，㕎馺可汗被杀；乌介可汗南逃，漠北回鹘汗国终结。",
   }),
   eventPoint({
     id: "tuyuhun-destroyed",
@@ -312,13 +312,14 @@ const manifest = {
     { label: "吐谷浑首领列表", url: "https://zh.wikipedia.org/wiki/%E5%90%90%E8%B0%B7%E6%B5%91%E9%A6%96%E9%A2%86%E5%88%97%E8%A1%A8" },
     { label: "高句丽君主列表", url: "https://zh.wikipedia.org/wiki/%E9%AB%98%E5%8F%A5%E4%B8%BD%E5%90%9B%E4%B8%BB%E5%88%97%E8%A1%A8" },
     { label: "回鹘", url: "https://zh.wikipedia.org/wiki/%E5%9B%9E%E9%B9%81" },
+    { label: "回鹘可汗列表", url: "https://zh.wikipedia.org/wiki/%E5%9B%9E%E9%B9%98%E5%8F%AF%E6%B1%97%E5%88%97%E8%A1%A8" },
     { label: "唐灭高句丽", url: "https://zh.wikipedia.org/wiki/%E9%AB%98%E5%8F%A5%E4%B8%BD" },
   ],
   notes: [
     "吐蕃在位年取维基百科帝国时期标准列表（618–842），含南日松赞至朗达玛。",
     "吐谷浑含慕容吐谷浑至诺曷钵完整首领序列；王朝窗口取329–663。",
     "高句丽取君主列表约18位主要君主，故国川王以前年代有争议，precision=year。",
-    "回鹘可汗序列按744–840通行年表；840年亡国事件关联黠戛斯。",
+    "回鹘可汗序列据维基百科回鹘可汗列表（744–840）；人物名用本名，在位 title 用唐封称号，尊号不入人物名。",
     "唐（tang）复用 sui-tang-wudai-song 已有 id，本包仅关联 event_dynasties。",
   ],
 };
