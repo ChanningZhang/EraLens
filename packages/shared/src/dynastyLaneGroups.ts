@@ -1,6 +1,14 @@
 import type { Dynasty, Reign } from "./schema";
 import { absMonth } from "./time";
 
+function compareReignOrder(a: Reign, b: Reign): number {
+  return (
+    a.startAbs - b.startAbs ||
+    a.endAbs - b.endAbs ||
+    a.id.localeCompare(b.id)
+  );
+}
+
 /** Horizontal offset of the frozen dynasty label from the viewport left edge. */
 export const DEFAULT_FROZEN_LABEL_LEFT_PX = 12;
 
@@ -48,6 +56,13 @@ export const DYNASTY_LANE_GROUPS: readonly DynastyLaneGroup[] = [
     phaseDynastyIds: ["zhou-west", "zhou-east"],
     laneOrderStartAbs: absMonth(-1046),
     laneOrderEndAbs: absMonth(-256, 12),
+  },
+  {
+    id: "jin-west-east",
+    primaryDynastyId: "jin-west",
+    phaseDynastyIds: ["jin-west", "jin-east"],
+    laneOrderStartAbs: absMonth(266, 2),
+    laneOrderEndAbs: absMonth(420, 7),
   },
 ];
 
@@ -168,6 +183,62 @@ export function collapseDynastyLaneGroups(
 
   const rest = visible.filter((dynasty) => !consumedIds.has(dynasty.id));
   return [...rest, ...merged].sort(compareDynastyOrder);
+}
+
+/**
+ * Reign peers used for card clipping within one lane row. Lane-group phases
+ * (西晋 / 东晋, 北宋 / 南宋, …) lay out independently so a merged lane does
+ * not clip eastern rulers against unrelated western neighbors.
+ */
+export function reignsInLayoutBucket(
+  reign: Pick<Reign, "dynastyId">,
+  laneReigns: readonly Reign[],
+): Reign[] {
+  const group = getDynastyLaneGroup(reign.dynastyId);
+  if (!group) return [...laneReigns];
+  return laneReigns.filter((item) => item.dynastyId === reign.dynastyId);
+}
+
+/** Split a merged lane's reigns into per-phase layout buckets. */
+export function layoutBucketsForLaneReigns(laneReigns: readonly Reign[]): Reign[][] {
+  const buckets: Reign[][] = [];
+  const groupedPhases = new Map<string, Map<string, Reign[]>>();
+  const standaloneDynastyIds = new Set<string>();
+
+  for (const reign of laneReigns) {
+    const group = getDynastyLaneGroup(reign.dynastyId);
+    if (!group) {
+      standaloneDynastyIds.add(reign.dynastyId);
+      continue;
+    }
+    let phases = groupedPhases.get(group.id);
+    if (!phases) {
+      phases = new Map();
+      groupedPhases.set(group.id, phases);
+    }
+    const list = phases.get(reign.dynastyId) ?? [];
+    list.push(reign);
+    phases.set(reign.dynastyId, list);
+  }
+
+  for (const dynastyId of standaloneDynastyIds) {
+    buckets.push(
+      laneReigns
+        .filter((reign) => reign.dynastyId === dynastyId)
+        .sort(compareReignOrder),
+    );
+  }
+
+  for (const group of DYNASTY_LANE_GROUPS) {
+    const phases = groupedPhases.get(group.id);
+    if (!phases) continue;
+    for (const dynastyId of group.phaseDynastyIds) {
+      const list = phases.get(dynastyId);
+      if (list?.length) buckets.push([...list].sort(compareReignOrder));
+    }
+  }
+
+  return buckets;
 }
 
 /** Reigns for a lane, including all dynasties in the same lane group. */

@@ -1,4 +1,9 @@
-import { isSystemMissingReign, type Reign } from "@eralens/shared";
+import {
+  isSystemMissingReign,
+  layoutBucketsForLaneReigns,
+  reignsInLayoutBucket,
+  type Reign,
+} from "@eralens/shared";
 
 export const LANE_PADDING_Y = 16;
 export const STACK_ROW_HEIGHT = 56;
@@ -45,8 +50,9 @@ export function resolveReignVisualSpan(
   reign: Reign,
   reigns: Reign[],
 ): { startAbs: number; endExclusive: number; stackIndex: number } {
-  const group = sameStartGroup(reign, reigns);
-  const nextLater = nextLaterStartAbs(reign, reigns);
+  const layoutReigns = reignsInLayoutBucket(reign, reigns);
+  const group = sameStartGroup(reign, layoutReigns);
+  const nextLater = nextLaterStartAbs(reign, layoutReigns);
 
   if (sameSpanGroup(group)) {
     const stackIndex = group.findIndex((item) => item.id === reign.id);
@@ -64,7 +70,7 @@ export function resolveReignVisualSpan(
   return { startAbs: visualStart, endExclusive, stackIndex: 0 };
 }
 
-export function assignReignStacks(reigns: Reign[]): {
+function assignReignStacksInBucket(reigns: Reign[]): {
   items: StackedReign[];
   rowCount: number;
 } {
@@ -85,6 +91,25 @@ export function assignReignStacks(reigns: Reign[]): {
       items.push({ reign, stackIndex });
     }
     index = end;
+  }
+  return { items, rowCount };
+}
+
+export function assignReignStacks(reigns: Reign[]): {
+  items: StackedReign[];
+  rowCount: number;
+} {
+  const buckets = layoutBucketsForLaneReigns(reigns);
+  if (buckets.length <= 1) {
+    return assignReignStacksInBucket(reigns);
+  }
+
+  const items: StackedReign[] = [];
+  let rowCount = 1;
+  for (const bucket of buckets) {
+    const bucketLayout = assignReignStacksInBucket(bucket);
+    items.push(...bucketLayout.items);
+    rowCount = Math.max(rowCount, bucketLayout.rowCount);
   }
   return { items, rowCount };
 }

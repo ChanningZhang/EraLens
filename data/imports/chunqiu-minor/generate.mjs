@@ -14,6 +14,7 @@ import {
   writeImportPackage,
   successionPairs,
 } from "../lib/sqlHelpers.mjs";
+import { missingReign, SYSTEM_MISSING_RULER_PERSON_ID } from "../lib/missingReigns.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -75,7 +76,6 @@ const zhouGuoWestReigns = [
 
 const zhouGuoEastReigns = [
   dr("zhou-guo-east", "zhou-guo-gen", "东周惠公", "惠公", null, -367, -360),
-  dr("zhou-guo-east", "zhou-guo-sijun", "东周君", null, null, -360, -249),
 ];
 
 const reignGroups = [
@@ -135,12 +135,16 @@ const RULER_META = {
     wiki: "东周国",
     bio: "西周威公少子，《韩非子》作根，《纪年》作杰；赵韩扶持下据巩为东周惠公。",
   },
-  "zhou-guo-sijun": {
-    name: "缺失",
-    wiki: "东周国",
-    bio: "本名失考；东周惠公之后昭文君、武公等世系在位年多不可考。末任东周君，前249年为秦所灭。",
-  },
 };
+
+const curatedMissingReigns = [
+  missingReign({
+    dynastyId: "zhou-guo-east",
+    startYear: -360,
+    endYear: -249,
+    id: "reign-missing-zhou-guo-east--360",
+  }),
+];
 
 const DYNASTY_LABELS = {
   "xue-chunqiu": "薛国",
@@ -297,7 +301,7 @@ const events = [
     dateNote: "秦庄襄王元年，前249年",
     at: ym(-249),
     dynastyIds: ["zhou-guo-east", "qin"],
-    participantIds: ["zhou-guo-sijun"],
+    participantIds: [SYSTEM_MISSING_RULER_PERSON_ID],
     summary: "秦庄襄王遣吕不韦攻东周国，杀东周君，东周国灭亡。",
   }),
 ];
@@ -336,9 +340,9 @@ relations.push(
   { id: "rel-zhou-guo-split-chao", fromRef: "event:zhou-guo-split", toRef: "person:zhou-guo-chao", kind: "politics" },
   { id: "rel-zhou-guo-split-gen", fromRef: "event:zhou-guo-split", toRef: "person:zhou-guo-gen", kind: "politics" },
   {
-    id: "rel-qin-destroy-zhou-east-sijun",
+    id: "rel-qin-destroy-zhou-east-missing-ruler",
     fromRef: "event:qin-destroy-zhou-east",
-    toRef: "person:zhou-guo-sijun",
+    toRef: `person:${SYSTEM_MISSING_RULER_PERSON_ID}`,
     kind: "politics",
   },
 );
@@ -353,8 +357,9 @@ const cleanupSql = [
   "  'reign-ju-r0-ju-chunqiu',",
   "  'reign-ju-r6-ju-chunqiu'",
   ");",
-  "DELETE FROM persons WHERE id IN ('xue-r0','teng-r0','teng-r1','teng-r7','qi-state-r0','ju-r0')",
+  "DELETE FROM persons WHERE id IN ('xue-r0','teng-r0','teng-r1','teng-r7','qi-state-r0','ju-r0','zhou-guo-sijun')",
   "  AND id NOT IN (SELECT person_id FROM reigns);",
+  "DELETE FROM reigns WHERE id = 'reign-zhou-guo-sijun-zhou-guo-east';",
 ].join("\n");
 
 const manifest = {
@@ -389,7 +394,7 @@ const manifest = {
     "杞桓公在位70年、高句丽太祖王等长年在史料中有记载，保留。",
     "代王嘉 person id 为 zhao-jia-dai，与赵桓子 zhao-r2 区分。",
     "西周国/东周国（zhou-guo-west / zhou-guo-east）为战国王畿小国，与西周/东周王朝分期（zhou-west / zhou-east）区分命名。",
-    "西周武公、东周昭文君等中间世系在位年失考，不强行拉满；文公咎、东周君迄年据《史记》。",
+    "西周武公、东周昭文君等中间世系在位年失考，不强行拉满；东周惠公之后至秦灭前用系统史料缺占位。",
   ],
 };
 
@@ -405,5 +410,6 @@ writeImportPackage(__dirname, {
   supplementalEventDynasties,
   supplementalEventParticipants,
   preSql: cleanupSql,
+  missingReigns: curatedMissingReigns,
   manifest,
 });

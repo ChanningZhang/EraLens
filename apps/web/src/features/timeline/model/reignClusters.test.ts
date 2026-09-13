@@ -39,6 +39,24 @@ describe("assignReignStacks", () => {
     });
   });
 
+  it("lays out merged lane-group phases independently on one row", () => {
+    const west = reign("west-r1", 100, 199);
+    const eastA = reign("east-r1", 250, 349);
+    const eastB = reign("east-r2", 350, 449);
+    west.dynastyId = "jin-west";
+    eastA.dynastyId = "jin-east";
+    eastB.dynastyId = "jin-east";
+
+    const { items, rowCount } = assignReignStacks([west, eastA, eastB]);
+    expect(rowCount).toBe(1);
+    expect(items.map((item) => item.reign.id)).toEqual(["west-r1", "east-r1", "east-r2"]);
+
+    const firstEast = resolveReignVisualSpan(eastA, [west, eastA, eastB]);
+    const secondEast = resolveReignVisualSpan(eastB, [west, eastA, eastB]);
+    expect(firstEast.endExclusive).toBe(eastB.startAbs);
+    expect(secondEast.startAbs).toBe(eastA.endAbs + 1);
+  });
+
   it("keeps sequential reigns on a single row", () => {
     const { items, rowCount } = assignReignStacks([
       reign("a", 0, 11),

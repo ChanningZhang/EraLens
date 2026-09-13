@@ -10,6 +10,7 @@ const LANE_GROUP_MEMBERS = {
   "wu-ming": ["wu-zhu", "ming", "ming-south"],
   "song-north-south": ["song-north", "song-south"],
   "zhou-west-east": ["zhou-west", "zhou-east"],
+  "jin-west-east": ["jin-west", "jin-east"],
 };
 
 const MEMBER_TO_LANE = new Map(

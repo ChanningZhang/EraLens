@@ -12,8 +12,9 @@ DELETE FROM reigns WHERE id IN (
   'reign-ju-r0-ju-chunqiu',
   'reign-ju-r6-ju-chunqiu'
 );
-DELETE FROM persons WHERE id IN ('xue-r0','teng-r0','teng-r1','teng-r7','qi-state-r0','ju-r0')
+DELETE FROM persons WHERE id IN ('xue-r0','teng-r0','teng-r1','teng-r7','qi-state-r0','ju-r0','zhou-guo-sijun')
   AND id NOT IN (SELECT person_id FROM reigns);
+DELETE FROM reigns WHERE id = 'reign-zhou-guo-sijun-zhou-guo-east';
 
 -- persons
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
@@ -114,9 +115,6 @@ VALUES ('zhou-guo-jiu', '姬咎', NULL, NULL, NULL, NULL, ARRAY['君主'], '西�
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES ('zhou-guo-gen', '姬班', NULL, NULL, NULL, NULL, ARRAY['君主'], '西周威公少子，《韩非子》作根，《纪年》作杰；赵韩扶持下据巩为东周惠公。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/东周国"}]'::jsonb)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
-INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES ('zhou-guo-sijun', '缺失', NULL, NULL, NULL, NULL, ARRAY['君主'], '本名失考；东周惠公之后昭文君、武公等世系在位年多不可考。末任东周君，前249年为秦所灭。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/东周国"}]'::jsonb)
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
 
 -- dynasties
@@ -243,9 +241,6 @@ INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_na
 VALUES ('reign-zhou-guo-gen-zhou-guo-east', 'zhou-guo-east', 'zhou-guo-gen', '东周惠公', '惠公', NULL, '{"kind":"posthumous","name":"东周惠公"}'::jsonb, -367, 1, -360, 12, -4392, -4297, 'year')
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
 INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
-VALUES ('reign-zhou-guo-sijun-zhou-guo-east', 'zhou-guo-east', 'zhou-guo-sijun', '东周君', NULL, NULL, '{"kind":"regnal","name":"东周君"}'::jsonb, -360, 1, -249, 12, -4308, -2965, 'year')
-ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
-INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
 VALUES ('reign-missing-qi-state-chunqiu-a-8196', 'qi-state-chunqiu', 'system-missing-ruler', '史料缺', NULL, NULL, NULL, -684, 1, -655, 12, -8196, -7837, 'year')
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
 INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
@@ -259,6 +254,9 @@ VALUES ('reign-missing-qi-state-chunqiu-a-5628', 'qi-state-chunqiu', 'system-mis
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
 INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
 VALUES ('reign-missing-zhou-guo-west-a-4368', 'zhou-guo-west', 'system-missing-ruler', '史料缺', NULL, NULL, NULL, -365, 1, -316, 12, -4368, -3769, 'year')
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, end_year, end_month, start_abs, end_abs, precision)
+VALUES ('reign-missing-zhou-guo-east--360', 'zhou-guo-east', 'system-missing-ruler', '史料缺', NULL, NULL, NULL, -360, 1, -249, 12, -4308, -2965, 'year')
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;
 
 -- era_names
@@ -299,7 +297,7 @@ INSERT INTO event_participants (event_id, person_id) VALUES ('dai-founded', 'zha
 INSERT INTO event_participants (event_id, person_id) VALUES ('qin-destroy-dai', 'zhao-jia-dai') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('zhou-guo-split', 'zhou-guo-chao') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('zhou-guo-split', 'zhou-guo-gen') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('qin-destroy-zhou-east', 'zhou-guo-sijun') ON CONFLICT DO NOTHING;
+INSERT INTO event_participants (event_id, person_id) VALUES ('qin-destroy-zhou-east', 'system-missing-ruler') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('qin-destroy-zhou', 'zhou-guo-jiu') ON CONFLICT DO NOTHING;
 
 -- relations
@@ -327,11 +325,10 @@ INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('re
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-zhou-guo-jie-zhou-guo-zao-succession', 'person', 'zhou-guo-jie', 'person', 'zhou-guo-zao', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-zhou-guo-zao-zhou-guo-chao-succession', 'person', 'zhou-guo-zao', 'person', 'zhou-guo-chao', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-zhou-guo-chao-zhou-guo-jiu-succession', 'person', 'zhou-guo-chao', 'person', 'zhou-guo-jiu', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
-INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-zhou-guo-gen-zhou-guo-sijun-succession', 'person', 'zhou-guo-gen', 'person', 'zhou-guo-sijun', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-dai-founded-zhao-jia', 'event', 'dai-founded', 'person', 'zhao-jia-dai', 'politics') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-qin-destroy-dai-zhao-jia', 'event', 'qin-destroy-dai', 'person', 'zhao-jia-dai', 'battle') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-zhou-guo-split-chao', 'event', 'zhou-guo-split', 'person', 'zhou-guo-chao', 'politics') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-zhou-guo-split-gen', 'event', 'zhou-guo-split', 'person', 'zhou-guo-gen', 'politics') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
-INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-qin-destroy-zhou-east-sijun', 'event', 'qin-destroy-zhou-east', 'person', 'zhou-guo-sijun', 'politics') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-qin-destroy-zhou-east-missing-ruler', 'event', 'qin-destroy-zhou-east', 'person', 'system-missing-ruler', 'politics') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 
 COMMIT;

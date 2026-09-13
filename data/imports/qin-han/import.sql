@@ -923,28 +923,6 @@ INSERT INTO dynasties (
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision, color_token, parent_id, note
 ) VALUES (
-  'qin', '秦', ARRAY['嬴秦'], 'cn', 'east_asia',
-  -221, 1, -207, 12,
-  -2640, -2461, 'year', 'ochre', NULL,
-  '秦王政灭六国称帝，前221年统一；前207年子婴投降，秦亡。'
-)
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  alt_names = EXCLUDED.alt_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
-  note = EXCLUDED.note;
-INSERT INTO dynasties (
-  id, name, alt_names, scope, region,
-  start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
-) VALUES (
   'chu-west', '西楚', ARRAY['楚'], 'cn', 'east_asia',
   -206, 1, -202, 12,
   -2460, -2401, 'year', 'indigo', NULL,

@@ -3,6 +3,8 @@ import { absMonth } from "./time";
 import {
   collapseDynastyLaneGroups,
   collectLaneReigns,
+  layoutBucketsForLaneReigns,
+  reignsInLayoutBucket,
   resolveFrozenLabelAnchorAbs,
   resolveFrozenLaneLabel,
 } from "./dynastyLaneGroups";
@@ -133,6 +135,34 @@ const zhouEast: Dynasty = {
   endAbs: absMonth(-256, 12),
   precision: "year",
   colorToken: "moss",
+};
+
+const jinWest: Dynasty = {
+  id: "jin-west",
+  name: "西晋",
+  altNames: ["晋", "司马晋"],
+  scope: "cn",
+  region: "east_asia",
+  start: { year: 266, month: 2 },
+  end: { year: 316, month: 4 },
+  startAbs: absMonth(266, 2),
+  endAbs: absMonth(316, 4),
+  precision: "year",
+  colorToken: "stone",
+};
+
+const jinEast: Dynasty = {
+  id: "jin-east",
+  name: "东晋",
+  altNames: ["晋"],
+  scope: "cn",
+  region: "east_asia",
+  start: { year: 317, month: 1 },
+  end: { year: 420, month: 7 },
+  startAbs: absMonth(317),
+  endAbs: absMonth(420, 7),
+  precision: "year",
+  colorToken: "jade",
 };
 
 const tang: Dynasty = {
@@ -305,6 +335,67 @@ describe("dynastyLaneGroups", () => {
     expect(resolveFrozenLaneLabel(zhouWest, byId, absMonth(-771, 12))).toBe("西周");
     expect(resolveFrozenLaneLabel(zhouWest, byId, absMonth(-770))).toBe("东周");
     expect(resolveFrozenLaneLabel(zhouWest, byId, absMonth(-500))).toBe("东周");
+  });
+
+  it("collapses jin-west and jin-east into one lane", () => {
+    const collapsed = collapseDynastyLaneGroups([tang, jinWest, jinEast]);
+
+    expect(collapsed.map((dynasty) => dynasty.id)).toEqual(["jin-west", "tang"]);
+    expect(collapsed[0]).toMatchObject({
+      id: "jin-west",
+      name: "西晋",
+      startAbs: jinWest.startAbs,
+      endAbs: jinEast.endAbs,
+    });
+  });
+
+  it("resolves jin-west to jin-east across the 317 boundary", () => {
+    const byId = new Map([
+      [jinWest.id, jinWest],
+      [jinEast.id, jinEast],
+    ]);
+
+    expect(resolveFrozenLaneLabel(jinWest, byId, absMonth(300))).toBe("西晋");
+    expect(resolveFrozenLaneLabel(jinWest, byId, absMonth(316, 4))).toBe("西晋");
+    expect(resolveFrozenLaneLabel(jinWest, byId, absMonth(317))).toBe("东晋");
+    expect(resolveFrozenLaneLabel(jinWest, byId, absMonth(400))).toBe("东晋");
+  });
+
+  it("scopes layout buckets to phase dynasties inside a lane group", () => {
+    const laneReigns: Reign[] = [
+      {
+        id: "reign-sima-yan",
+        dynastyId: "jin-west",
+        personId: "sima-yan",
+        title: "晋武帝",
+        eraNames: [],
+        start: { year: 266, month: 2 },
+        end: { year: 290, month: 12 },
+        startAbs: jinWest.startAbs,
+        endAbs: absMonth(290, 12),
+        precision: "year",
+      },
+      {
+        id: "reign-sima-rui",
+        dynastyId: "jin-east",
+        personId: "sima-rui",
+        title: "晋元帝",
+        eraNames: [],
+        start: { year: 317, month: 1 },
+        end: { year: 323, month: 12 },
+        startAbs: jinEast.startAbs,
+        endAbs: absMonth(323, 12),
+        precision: "year",
+      },
+    ];
+
+    expect(layoutBucketsForLaneReigns(laneReigns).map((bucket) => bucket.map((reign) => reign.id))).toEqual([
+      ["reign-sima-yan"],
+      ["reign-sima-rui"],
+    ]);
+    expect(reignsInLayoutBucket(laneReigns[1]!, laneReigns).map((reign) => reign.id)).toEqual([
+      "reign-sima-rui",
+    ]);
   });
 
   it("collects reigns from every member dynasty in a lane group", () => {

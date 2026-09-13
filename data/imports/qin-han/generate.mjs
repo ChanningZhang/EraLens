@@ -96,19 +96,8 @@ const persons = [
   { id: "cai-lun", name: "蔡伦", roles: ["发明家"], bio: "东汉宦官，改进造纸术，纸张普及为之勃兴。", links: wiki("蔡伦") },
 ];
 
+// qin dynasty row is owned by chunqiu-zhanguo (feudal span -770..-207); this pack only adds imperial reigns.
 const dynasties = [
-  {
-    id: "qin",
-    name: "秦",
-    altNames: ["嬴秦"],
-    scope: "cn",
-    region: "east_asia",
-    start: ym(-221),
-    end: ym(-207, 12),
-    precision: "year",
-    colorToken: "ochre",
-    note: "秦王政灭六国称帝，前221年统一；前207年子婴投降，秦亡。",
-  },
   {
     id: "chu-west",
     name: "西楚",

@@ -65,6 +65,20 @@ describe("orthodoxDynasties", () => {
     });
   });
 
+  it("does not mark pre-unification qin king reign as orthodox", () => {
+    const qin = {
+      id: "qin",
+      startAbs: absMonth(-770),
+      endAbs: absMonth(-206),
+    };
+    expect(
+      overlapsOrthodoxSpan(qin, absMonth(-247), absMonth(-222)),
+    ).toBe(false);
+    expect(
+      overlapsOrthodoxSpan(qin, absMonth(-221), absMonth(-210)),
+    ).toBe(true);
+  });
+
   it("marks reigns that overlap orthodox span even when startAbs is earlier", () => {
     const jinWest = {
       id: "jin-west",

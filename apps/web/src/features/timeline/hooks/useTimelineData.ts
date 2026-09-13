@@ -5,13 +5,14 @@ import {
   listQueryChunks,
   mergeTimelineSlices,
   type QueryChunk,
+  type TimelineSlice,
 } from "@eralens/shared";
 import { getRepository } from "@/data/repository";
 import { useViewport } from "./useViewport";
 
 const SCOPE = "cn";
 const STALE_TIME = 5 * 60_000;
-const TIMELINE_CACHE_VERSION = 18;
+const TIMELINE_CACHE_VERSION = 19;
 
 function chunkKey(chunk: QueryChunk) {
   return ["timeline-chunk", TIMELINE_CACHE_VERSION, chunk.fromAbs, chunk.toAbs, SCOPE] as const;
@@ -43,12 +44,17 @@ export function useTimelineData() {
     })),
   });
 
+  const lastCompleteDataRef = useRef<TimelineSlice | undefined>(undefined);
+
   const mergedData = useMemo(() => {
-    const slices = chunkQueries
-      .map((query) => query.data)
-      .filter((slice): slice is NonNullable<typeof slice> => Boolean(slice));
-    if (slices.length === 0) return undefined;
-    return mergeTimelineSlices(slices);
+    const slices = chunkQueries.map((query) => query.data);
+    const allChunksReady = slices.length > 0 && slices.every(Boolean);
+    if (!allChunksReady) {
+      return lastCompleteDataRef.current;
+    }
+    const merged = mergeTimelineSlices(slices as TimelineSlice[]);
+    lastCompleteDataRef.current = merged;
+    return merged;
   }, [chunkQueries]);
 
   const isLoading = chunkQueries.some((query) => query.isLoading);

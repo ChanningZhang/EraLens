@@ -17696,8 +17696,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-ying-zheng-qin', 'qin', 'ying-zheng', '秦王政',
   NULL, NULL, '{"kind":"regnal","name":"秦王政"}'::jsonb,
-  -247, 1, -210, 12,
-  -2952, -2497, 'year'
+  -247, 1, -222, 12,
+  -2952, -2641, 'year'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
