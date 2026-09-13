@@ -72,12 +72,19 @@ describe("orthodoxDynasties", () => {
       startAbs: absMonth(-770),
       endAbs: absMonth(-206),
     };
+    const yingZhengKing = {
+      startAbs: absMonth(-247),
+      endAbs: absMonth(-221, 9),
+    };
+    const yingZhengEmperor = {
+      startAbs: absMonth(-221, 9),
+      endAbs: absMonth(-210),
+    };
     expect(
-      overlapsOrthodoxSpan(qin, absMonth(-247), absMonth(-222)),
-    ).toBe(false);
-    expect(
-      overlapsOrthodoxSpan(qin, absMonth(-221), absMonth(-210)),
+      overlapsOrthodoxSpan(qin, yingZhengKing.startAbs, yingZhengKing.endAbs),
     ).toBe(true);
+    expect(isOrthodoxReign(qin, yingZhengKing)).toBe(false);
+    expect(isOrthodoxReign(qin, yingZhengEmperor)).toBe(true);
   });
 
   it("marks reigns that overlap orthodox span even when startAbs is earlier", () => {

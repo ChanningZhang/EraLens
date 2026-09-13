@@ -113,5 +113,8 @@ export function isOrthodoxReign(
   reign: Pick<Reign, "startAbs" | "endAbs" | "claimTrack">,
 ): boolean {
   if (isParallelClaim(reign)) return false;
-  return overlapsOrthodoxSpan(dynasty, reign.startAbs, reign.endAbs);
+  const span = resolveOrthodoxSpan(dynasty);
+  if (!span) return false;
+  // Gold only when the reign *begins* inside the orthodox window (秦王政 vs 秦始皇).
+  return reign.startAbs >= span.startAbs && reign.startAbs < span.endAbs;
 }

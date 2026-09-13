@@ -7,6 +7,7 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { rulersByDynasty, rulerStats } from "./rulers.mjs";
+import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { ORTHODOX_FROM_START } from "../lib/orthodoxDynasties.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 
@@ -436,24 +437,26 @@ function dedupeReigns(reignList) {
   });
 }
 
-const reigns = dedupeReigns(
-  Object.values(rulersByDynasty)
-    .flat()
-    .map((r) =>
-      reign({
-        id: `reign-${r.personId}-${r.dynastyId}`,
-        dynastyId: r.dynastyId,
-        personId: r.personId,
-        title: r.title,
-        posthumousName: r.posthumousName,
-        templeName: null,
-        preferred: r.posthumousName
-          ? { kind: "posthumous", name: r.title }
-          : { kind: "regnal", name: r.title },
-        start: ym(r.startYear),
-        end: ym(r.endYear, 12),
-      }),
-    ),
+const reigns = applyDocumentedDatesToReigns(
+  dedupeReigns(
+    Object.values(rulersByDynasty)
+      .flat()
+      .map((r) =>
+        reign({
+          id: `reign-${r.personId}-${r.dynastyId}`,
+          dynastyId: r.dynastyId,
+          personId: r.personId,
+          title: r.title,
+          posthumousName: r.posthumousName,
+          templeName: null,
+          preferred: r.posthumousName
+            ? { kind: "posthumous", name: r.title }
+            : { kind: "regnal", name: r.title },
+          start: ym(r.startYear),
+          end: ym(r.endYear, 12),
+        }),
+      ),
+  ),
 );
 
 const { persons: importPersons, reigns: importReigns, missingReigns } = finalizeImportReigns(
@@ -684,12 +687,12 @@ function reignSql(r) {
   return `INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   posthumous_name, temple_name, preferred_appellation,
-  start_year, start_month, end_year, end_month,
+  start_year, start_month, start_day, end_year, end_month, end_day,
   start_abs, end_abs, precision
 ) VALUES (
   ${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(r.title)},
   ${sqlStr(r.posthumousName ?? null)}, ${sqlStr(r.templeName ?? null)}, ${sqlJson(r.preferredAppellation)},
-  ${r.start.year}, ${r.start.month}, ${r.end.year}, ${r.end.month},
+  ${r.start.year}, ${r.start.month}, ${r.start.day ?? "NULL"}, ${r.end.year}, ${r.end.month}, ${r.end.day ?? "NULL"},
   ${r.startAbs}, ${r.endAbs}, ${sqlStr(r.precision)}
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -701,8 +704,10 @@ ON CONFLICT (id) DO UPDATE SET
   preferred_appellation = EXCLUDED.preferred_appellation,
   start_year = EXCLUDED.start_year,
   start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
   end_year = EXCLUDED.end_year,
   end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision;`;
@@ -747,7 +752,11 @@ ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;`;
 }
 
 /** Reigns maintained by qin-han; must survive chunqiu-zhanguo stale cleanup on qin. */
-const QIN_HAN_PROTECTED_REIGN_IDS = ["reign-ying-huhai", "reign-ying-ziying"];
+const QIN_HAN_PROTECTED_REIGN_IDS = [
+  "reign-ying-zheng",
+  "reign-ying-huhai",
+  "reign-ying-ziying",
+];
 const QIN_HAN_PROTECTED_PERSON_IDS = ["ying-huhai", "ying-ziying"];
 
 function staleReignCleanupSql(reignList, dynastyList) {

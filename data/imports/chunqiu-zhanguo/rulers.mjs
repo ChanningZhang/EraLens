@@ -3783,7 +3783,7 @@ export const rulersByDynasty = {
       "personName": "嬴政",
       "posthumousName": null,
       "startYear": -247,
-      "endYear": -222
+      "endYear": -221
     }
   ]
 };

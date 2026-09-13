@@ -129,12 +129,16 @@ export function DynastyLane({
           ))}
           {items.map(({ reign }) => {
             const reignDynasty = dynastiesById.get(reign.dynastyId) ?? dynasty;
+            const reignColor = resolveDynastyColorValue(
+              reignDynasty as Dynasty,
+              reign.startAbs,
+            );
             return (
               <ReignCard
                 key={reign.id}
                 reign={reign}
                 dynasty={reignDynasty as Dynasty}
-                color={laneColor}
+                color={reignColor}
                 reigns={reigns}
                 personName={personNames.get(reign.personId)}
                 orthodox={isOrthodoxReign(reignDynasty, reign)}

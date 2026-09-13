@@ -1,0 +1,77 @@
+{
+  "slug": "three-kingdoms-battles",
+  "title": "三国著名战役补充",
+  "window": {
+    "startYear": 208,
+    "startMonth": 1,
+    "endYear": 234,
+    "endMonth": 8
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-13",
+  "counts": {
+    "persons": 10,
+    "dynasties": 0,
+    "reigns": 0,
+    "events": 9,
+    "relations": 9
+  },
+  "sources": [
+    {
+      "label": "长坂之战",
+      "url": "https://zh.wikipedia.org/wiki/长坂之战"
+    },
+    {
+      "label": "逍遥津之战",
+      "url": "https://zh.wikipedia.org/wiki/逍遥津之战"
+    },
+    {
+      "label": "汉中之战",
+      "url": "https://zh.wikipedia.org/wiki/汉中之战"
+    },
+    {
+      "label": "定军山之战",
+      "url": "https://zh.wikipedia.org/wiki/定军山之战"
+    },
+    {
+      "label": "襄樊之战",
+      "url": "https://zh.wikipedia.org/wiki/樊城之战"
+    },
+    {
+      "label": "濡须之战",
+      "url": "https://zh.wikipedia.org/wiki/濡须之战"
+    },
+    {
+      "label": "街亭之战",
+      "url": "https://zh.wikipedia.org/wiki/街亭之战"
+    },
+    {
+      "label": "石亭之战",
+      "url": "https://zh.wikipedia.org/wiki/石亭之战"
+    },
+    {
+      "label": "五丈原",
+      "url": "https://zh.wikipedia.org/wiki/五丈原"
+    },
+    {
+      "label": "关羽",
+      "url": "https://zh.wikipedia.org/wiki/关羽"
+    },
+    {
+      "label": "陆逊",
+      "url": "https://zh.wikipedia.org/wiki/陆逊"
+    },
+    {
+      "label": "张辽",
+      "url": "https://zh.wikipedia.org/wiki/张辽"
+    }
+  ],
+  "notes": [
+    "官渡、赤壁、夷陵已在 seed / three-kingdoms-warlord 包中，本包补充其余著名战役。",
+    "长坂之战关联东汉（han-east），并 supplemental 关联魏、蜀割据行。",
+    "夷陵之战补充陆逊为参战人物（supplemental participant）。",
+    "定军山为汉中之战关键节点，单独建点事件以便检索。",
+    "人物生卒据《三国志》及维基百科通行换算，不详处 birth/death 留 NULL。"
+  ]
+}
