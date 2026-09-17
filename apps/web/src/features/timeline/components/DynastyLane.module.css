@@ -15,7 +15,7 @@
 
 .frozenLabel {
   position: absolute;
-  top: 14px;
+  top: 10px;
   left: 12px;
   z-index: 6;
   display: inline-flex;
@@ -52,25 +52,6 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.concurrencyBands {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-}
-
-.concurrencyBand {
-  position: absolute;
-  top: 2px;
-  bottom: 2px;
-  border-radius: 6px;
-  background: repeating-linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--dynasty-color) 11%, transparent) 0 5px,
-    transparent 5px 11px
-  );
 }
 
 .cards {

@@ -6,7 +6,6 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
-import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
 import {
   person,
   reign,
@@ -39,15 +38,6 @@ function dynastyReignMonth(
   eraList = [],
   preferred = null,
 ) {
-  const pref =
-    preferred ??
-    defaultPreferredAppellation({
-      title,
-      posthumous,
-      temple,
-      startYear,
-      eraNames: eraList.length ? eras(id, eraList) : [],
-    });
   return reign({
     id,
     dynastyId,
@@ -55,7 +45,7 @@ function dynastyReignMonth(
     title,
     posthumousName: posthumous,
     templeName: temple,
-    preferred: pref,
+    preferred,
     start: ym(startYear, startMonth),
     end: ym(endYear, endMonth),
     eraNames: eraList.length ? eras(id, eraList) : [],
@@ -134,7 +124,6 @@ const weiReigns = [
     226,
     6,
     [{ name: "黄初", sy: 220, sm: 12, ey: 226, em: 6 }],
-    { kind: "posthumous", name: "魏文帝" },
   ),
 ];
 

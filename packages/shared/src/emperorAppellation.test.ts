@@ -41,7 +41,7 @@ describe("resolveEmperorAppellation", () => {
           eraNames: [{ name: "开皇" }] as Reign["eraNames"],
         }),
       ),
-    ).toEqual({ kind: "posthumous", name: "隋文帝" });
+    ).toEqual({ kind: "posthumous", name: "文皇帝" });
     expect(
       resolveEmperorAppellation(
         source({
@@ -51,7 +51,7 @@ describe("resolveEmperorAppellation", () => {
           eraNames: [{ name: "大业" }] as Reign["eraNames"],
         }),
       ),
-    ).toEqual({ kind: "posthumous", name: "隋炀帝" });
+    ).toEqual({ kind: "posthumous", name: "炀皇帝" });
   });
 
   it("uses a temple name from Tang through Yuan", () => {
@@ -64,7 +64,7 @@ describe("resolveEmperorAppellation", () => {
           title: "唐太宗",
         }),
       ),
-    ).toEqual({ kind: "temple", name: "唐太宗" });
+    ).toEqual({ kind: "temple", name: "太宗" });
     expect(
       resolveEmperorAppellation(
         source({
@@ -74,7 +74,7 @@ describe("resolveEmperorAppellation", () => {
           title: "宋太祖",
         }),
       ),
-    ).toEqual({ kind: "temple", name: "宋太祖" });
+    ).toEqual({ kind: "temple", name: "太祖" });
   });
 
   it("prefers temple over posthumous from Tang onward", () => {
@@ -258,6 +258,61 @@ describe("resolveReignPrimaryLabel", () => {
   });
 });
 
+describe("resolveEmperorAppellation for feudal regnal titles", () => {
+  it("strips state and rank prefixes for personal-name titles", () => {
+    expect(
+      resolveEmperorAppellation(
+        source({
+          start: { year: -496, month: 1 },
+          title: "越王勾践",
+        }),
+      ),
+    ).toEqual({ kind: "regnal", name: "勾践" });
+    expect(
+      resolveEmperorAppellation(
+        source({
+          start: { year: -372, month: 1 },
+          title: "越王无余",
+        }),
+      ),
+    ).toEqual({ kind: "regnal", name: "无余" });
+    expect(
+      resolveEmperorAppellation(
+        source({
+          start: { year: -565, month: 1 },
+          title: "越侯无余",
+        }),
+      ),
+    ).toEqual({ kind: "regnal", name: "无余" });
+  });
+
+  it("keeps posthumous-style bodies after stripping the state", () => {
+    expect(
+      resolveEmperorAppellation(
+        source({
+          start: { year: -350, month: 1 },
+          title: "齐威王",
+        }),
+      ),
+    ).toEqual({ kind: "regnal", name: "威王" });
+  });
+});
+
+describe("resolveReignDetailSubtitle for Yue kings", () => {
+  it("omits a redundant personal name from the dynasty subtitle", () => {
+    expect(
+      resolveReignDetailSubtitle(
+        source({
+          start: { year: -372, month: 1 },
+          title: "越王无余",
+        }),
+        "越国",
+        "无余",
+      ),
+    ).toBe("越国");
+  });
+});
+
 describe("resolveReignCardMeta for Zhongshan kings", () => {
   it("shows regnal meta when the personal name is known", () => {
     expect(
@@ -328,7 +383,7 @@ describe("resolveReignCardLabel", () => {
         }),
         "司马昱",
       ),
-    ).toEqual({ label: "谥号", name: "晋简文帝" });
+    ).toEqual({ label: "谥号", name: "简文皇帝" });
   });
 });
 
@@ -373,7 +428,7 @@ describe("resolveReignCardMeta", () => {
         }),
         "李世民",
       ),
-    ).toEqual({ label: "庙号", name: "唐太宗" });
+    ).toEqual({ label: "庙号", name: "太宗" });
   });
 
   it("shows temple meta for Nanzhao rulers from Tang onward", () => {
@@ -401,7 +456,7 @@ describe("resolveReignCardMeta", () => {
         }),
         "杨坚",
       ),
-    ).toEqual({ label: "谥号", name: "隋文帝" });
+    ).toEqual({ label: "谥号", name: "文皇帝" });
     expect(
       resolveReignCardMeta(
         source({
@@ -412,7 +467,7 @@ describe("resolveReignCardMeta", () => {
         }),
         "杨广",
       ),
-    ).toEqual({ label: "谥号", name: "隋炀帝" });
+    ).toEqual({ label: "谥号", name: "炀皇帝" });
   });
 
   it("hides redundant regnal meta when the title is also the person name", () => {
@@ -484,7 +539,7 @@ describe("resolveReignCardMeta", () => {
         }),
         "赵匡胤",
       ),
-    ).toEqual({ label: "庙号", name: "宋太祖" });
+    ).toEqual({ label: "庙号", name: "太祖" });
   });
 
   it("shows posthumous meta for Shang rulers", () => {
@@ -551,10 +606,10 @@ describe("resolveReignDetailSubtitle", () => {
     });
 
     expect(resolveReignDetailSubtitle(songReign, "北宋", "赵匡胤")).toBe(
-      "北宋 · 宋太祖",
+      "北宋 · 太祖",
     );
     expect(resolveReignDetailSubtitle(liaoReign, "辽", "耶律隆绪")).toBe(
-      "辽 · 辽圣宗",
+      "辽 · 圣宗",
     );
   });
 });

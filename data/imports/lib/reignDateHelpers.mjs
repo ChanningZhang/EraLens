@@ -74,7 +74,7 @@ export function dynastyReignMonth(
     precision: "month",
     claimTrack: claim?.track,
     claimLabel: claim?.label,
-    claimRole: claim?.role,
+    claimRole: claim?.track ? "rival" : undefined,
   });
 }
 
@@ -109,7 +109,7 @@ export function dynastyReignDay(
     precision: "day",
     claimTrack: claim?.track,
     claimLabel: claim?.label,
-    claimRole: claim?.role,
+    claimRole: claim?.track ? "rival" : undefined,
   });
 }
 

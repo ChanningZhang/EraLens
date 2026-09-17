@@ -110,11 +110,11 @@ export const PreferredAppellationSchema = z.object({
 });
 
 /**
- * Role of a ruler who held power concurrently with the dynasty's main line
+ * Marker for a ruler who held power concurrently with the dynasty's main line
  * (隋末三帝并立, 南明鲁监国 / 绍武). Absent means the ruler belongs to the
- * conventionally counted succession.
+ * conventionally counted succession. Parallel cards share one visual treatment.
  */
-export const ClaimRoleSchema = z.enum(["rival", "puppet", "regent"]);
+export const ClaimRoleSchema = z.enum(["rival"]);
 
 /** Trust level for a reign start/end year when sources disagree or are interpolated. */
 export const DateConfidenceSchema = z.enum([

@@ -1,4 +1,4 @@
-import type { ClaimRole, Reign } from "./schema";
+import type { Reign } from "./schema";
 
 /**
  * Concurrent claimants on one dynasty lane (隋末长安杨侑 / 洛阳杨侗, 南明鲁监国 / 绍武).
@@ -9,7 +9,7 @@ import type { ClaimRole, Reign } from "./schema";
  * - omitted / `main` — conventionally counted succession (文帝→炀帝, 弘光→隆武→永历)
  * - other kebab-case keys — one vertical sub-row per seat (`changan`, `lu-jian`)
  * - `claimLabel` — seat shown on the card (长安 / 绍兴监国)
- * - `claimRole` — `puppet` | `rival` | `regent` (visual treatment only)
+ * - `claimRole` — always `rival` on a parallel track (dashed border)
  *
  * Sequencing, clipping, and succession chains stay *inside* a track. Tracks
  * stack so overlapping reigns render side by side.
@@ -96,9 +96,7 @@ export type ConcurrencySpan = {
 };
 
 /**
- * Abs ranges where two or more tracks are active at once. Drives the lane
- * background band that tells readers "these rulers overlapped" rather than
- * leaving stacked rows looking like a layout glitch.
+ * Abs ranges where two or more tracks are active at once.
  */
 export function resolveConcurrencySpans(
   reigns: readonly Reign[],
@@ -133,22 +131,14 @@ export function resolveConcurrencySpans(
   return spans;
 }
 
-const CLAIM_ROLE_LABELS: Readonly<Record<ClaimRole, string>> = {
-  rival: "并立",
-  puppet: "傀儡",
-  regent: "监国",
-};
-
-export function claimRoleLabel(role: ClaimRole): string {
-  return CLAIM_ROLE_LABELS[role];
-}
+export const PARALLEL_CLAIM_LABEL = "并立";
 
 export function claimDetailFacts(
-  reign: Pick<Reign, "claimRole" | "claimLabel">,
+  reign: Pick<Reign, "claimTrack" | "claimLabel">,
 ): Array<{ label: string; value: string }> {
   const facts: Array<{ label: string; value: string }> = [];
-  if (reign.claimRole) {
-    facts.push({ label: "身份", value: claimRoleLabel(reign.claimRole) });
+  if (isParallelClaim(reign)) {
+    facts.push({ label: "身份", value: PARALLEL_CLAIM_LABEL });
   }
   if (reign.claimLabel) {
     facts.push({ label: "据点", value: reign.claimLabel });

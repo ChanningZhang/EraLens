@@ -10,15 +10,11 @@ function isDynasticEmperorTitle(title) {
   return /^[\u4e00-\u9fff]{2,6}帝$/.test(title);
 }
 
-function templeDisplayName(title, templeName) {
-  if (title && title !== "皇帝" && title.includes(templeName)) {
-    return title;
-  }
-  return title.length > templeName.length ? title : templeName;
+function templeDisplayName(_title, templeName) {
+  return templeName;
 }
 
-function posthumousDisplayName(title, posthumousName) {
-  if (title && title !== "皇帝" && isDynasticEmperorTitle(title)) return title;
+function posthumousDisplayName(_title, posthumousName) {
   return posthumousName;
 }
 

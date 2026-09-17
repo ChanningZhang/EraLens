@@ -100,19 +100,19 @@ describe("assignReignStacks", () => {
     expect(second.endExclusive).toBe(jianshen.startAbs);
   });
 
-  it("does not clip the main line when a puppet court overlaps it", () => {
+  it("does not clip the main line when a parallel court overlaps it", () => {
     const guang = reign("yang-guang", absMonth(604, 1), absMonth(618, 12));
     const you = {
       ...reign("yang-you", absMonth(617, 1), absMonth(618, 12)),
       claimTrack: "changan",
       claimLabel: "长安",
-      claimRole: "puppet" as const,
+      claimRole: "rival" as const,
     };
     const tong = {
       ...reign("yang-tong", absMonth(618, 1), absMonth(619, 12)),
       claimTrack: "luoyang",
       claimLabel: "洛阳",
-      claimRole: "puppet" as const,
+      claimRole: "rival" as const,
     };
     const all = [guang, you, tong];
 
@@ -137,7 +137,7 @@ describe("assignReignStacks", () => {
     const luJian = {
       ...reign("lu-jian", absMonth(1645, 1), absMonth(1653, 12)),
       claimTrack: "lu-jian",
-      claimRole: "regent" as const,
+      claimRole: "rival" as const,
     };
     const shaowu = {
       ...reign("shaowu", absMonth(1646, 1), absMonth(1647, 12)),
@@ -177,7 +177,7 @@ describe("assignReignStacks", () => {
       ["shu", 1],
       ["wei", 0],
     ]);
-    expect(dynastyLaneHeight(rowCount)).toBe(16 + 56 * 2);
+    expect(dynastyLaneHeight(rowCount)).toBe(16 + 48 * 2);
   });
 });
 

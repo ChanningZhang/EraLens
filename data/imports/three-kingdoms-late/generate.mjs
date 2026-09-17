@@ -5,7 +5,6 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
-import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
 import {
   person,
   reign,
@@ -31,9 +30,6 @@ function dynastyReignMonth(
   preferred = null,
 ) {
   const reignId = `reign-${personId}`;
-  const pref =
-    preferred ??
-    defaultPreferredAppellation({ title, posthumous, temple, startYear, eraNames: eraList.length ? eras(reignId, eraList) : [] });
   return reign({
     id: reignId,
     dynastyId,
@@ -41,7 +37,7 @@ function dynastyReignMonth(
     title,
     posthumousName: posthumous,
     templeName: temple,
-    preferred: pref,
+    preferred,
     start: ym(startYear, startMonth),
     end: ym(endYear, endMonth),
     eraNames: eraList.length ? eras(reignId, eraList) : [],

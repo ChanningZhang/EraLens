@@ -5,7 +5,6 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
 import { resolveOrthodoxEndAbs, resolveOrthodoxFromAbs } from "../lib/orthodoxDynasties.mjs";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
@@ -48,9 +47,6 @@ function reign({ id, dynastyId, personId, title, posthumousName, templeName, pre
 }
 
 function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, eraNames = [], preferred = null, claim = null) {
-  const pref =
-    preferred ??
-    defaultPreferredAppellation({ title, posthumous, temple, startYear, eraNames });
   const reignId = `reign-${personId}-${dynastyId}`;
   return reign({
     id: reignId,
@@ -59,13 +55,13 @@ function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear,
     title,
     posthumousName: posthumous,
     templeName: temple,
-    preferred: pref,
+    preferred,
     start: ym(startYear),
     end: ym(endYear, 12),
     eraNames,
     claimTrack: claim?.track,
     claimLabel: claim?.label,
-    claimRole: claim?.role,
+    claimRole: claim?.track ? "rival" : undefined,
   });
 }
 
@@ -272,12 +268,10 @@ const mingSouthParallel = [
   drDay("ming-south", "zhu-yihai", "鲁监国", null, null, 1645, 9, 7, 1653, 3, 1, [], {
     track: "lu-jian",
     label: "绍兴监国",
-    role: "regent",
   }),
   drDay("ming-south", "zhu-yuyue", "绍武帝", null, null, 1646, 12, 11, 1647, 1, 20, [{ name: "绍武", sy: 1646, ey: 1647 }], {
     track: "shaowu",
     label: "广州",
-    role: "rival",
   }),
 ];
 const mingSouthReigns = [...mingSouthMain, ...mingSouthParallel];

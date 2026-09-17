@@ -5,7 +5,6 @@ import {
   isOrthodoxReign,
   overlapsOrthodoxSpan,
   resolveActivePhaseDynastyId,
-  resolveConcurrencySpans,
   resolveDynastyColorValue,
   resolveFrozenLabelAnchorAbs,
   resolveFrozenLaneLabel,
@@ -14,7 +13,6 @@ import {
 } from "@eralens/shared";
 import { useMemo } from "react";
 import { useViewport } from "../hooks/useViewport";
-import { projectAbs } from "../model/coordinates";
 import type { PlacedDynasty } from "../model/laneLayout";
 import {
   assignReignStacks,
@@ -63,7 +61,6 @@ export function DynastyLane({
   const laneColor = resolveDynastyColorValue(activePhaseDynasty, labelAnchorAbs);
   const { items, rowCount } = assignReignStacks(reigns);
   const height = dynastyLaneHeight(rowCount);
-  const concurrencySpans = resolveConcurrencySpans(reigns);
   const uncertaintyBoundaries = useMemo(
     () => findReignUncertaintyBoundaries(reigns, missingReigns),
     [reigns, missingReigns],
@@ -103,23 +100,6 @@ export function DynastyLane({
       </div>
 
       <div className={styles.reignSequence}>
-        <div className={styles.concurrencyBands} aria-hidden>
-          {concurrencySpans.map((span) => {
-            const left = projectAbs(viewport, span.startAbs);
-            const width = Math.max(
-              1,
-              projectAbs(viewport, span.endAbs + 1) - left,
-            );
-            return (
-              <div
-                key={`${span.startAbs}-${span.endAbs}-${span.trackCount}`}
-                className={styles.concurrencyBand}
-                style={{ left, width }}
-                title={`${span.trackCount} 路并立`}
-              />
-            );
-          })}
-        </div>
         <div className={styles.cards}>
           {uncertaintyBoundaries.map((boundary) => (
             <ReignUncertaintyGap

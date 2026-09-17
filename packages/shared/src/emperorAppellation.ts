@@ -91,21 +91,11 @@ function firstEraName(reign: ReignAppellationFields): string | undefined {
   return reign.eraNames[0]?.name;
 }
 
-function templeDisplayName(
-  title: string,
-  templeName: string,
-): string {
-  if (title && title !== "皇帝" && title.includes(templeName)) {
-    return title;
-  }
-  return title.length > templeName.length ? title : templeName;
+function templeDisplayName(_title: string, templeName: string): string {
+  return templeName;
 }
 
-function posthumousDisplayName(
-  title: string,
-  posthumousName: string,
-): string {
-  if (title && title !== "皇帝" && isDynasticEmperorTitle(title)) return title;
+function posthumousDisplayName(_title: string, posthumousName: string): string {
   return posthumousName;
 }
 
@@ -175,9 +165,28 @@ export function resolveEmperorAppellation(
     return { kind: "era", name: eraName };
   }
   if (reign.title) {
-    return { kind: "regnal", name: reign.title };
+    const stripped = stripStatePrefixFromTitle(reign.title);
+    return { kind: "regnal", name: stripped };
   }
   return null;
+}
+
+/**
+ * Drop state + rank prefixes from pre-imperial titles.
+ * 越王无余 → 无余 (wiki 国君姓名); 齐威王 → 威王 (short posthumous-style body).
+ */
+function stripStatePrefixFromTitle(title: string): string {
+  const match = title.match(STATE_PREFIX);
+  let stripped = match ? title.slice(match[0].length) : title;
+  if (stripped.length < 2) return title;
+
+  const rank = stripped.match(/^([侯王伯])(.+)$/);
+  if (!rank) return stripped;
+
+  const body = rank[2];
+  // 桓公、威王等谥号式简称保留爵位字后的整体。
+  if (/^.{1,2}[公王]$/.test(body)) return stripped;
+  return body.length >= 1 ? body : stripped;
 }
 
 /** Primary label for a reign card or detail title: personal name, then title. */
@@ -217,11 +226,15 @@ export function resolveReignCardLabel(
 export function resolveReignDetailSubtitle(
   reign: ReignAppellationFields,
   dynastyName?: string | null,
-  _personName?: string | null,
+  personName?: string | null,
 ): string {
   const dynastyPart = dynastyName ?? "";
   const appellation = resolveEmperorAppellation(reign);
   const conventional = appellation?.name ?? reign.title;
+  const primary = resolveReignPrimaryLabel(reign, personName);
+  if (conventional === primary || conventional === personName) {
+    return dynastyPart || primary;
+  }
   return dynastyPart ? `${dynastyPart} · ${conventional}` : conventional;
 }
 

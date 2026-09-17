@@ -8,7 +8,8 @@ import {
 } from "@eralens/shared";
 
 export const LANE_PADDING_Y = 16;
-export const STACK_ROW_HEIGHT = 56;
+/** Matches the painted card height so stacked contemporaneous reigns sit flush. */
+export const STACK_ROW_HEIGHT = 48;
 
 export function dynastyLaneHeight(rowCount: number): number {
   return LANE_PADDING_Y + Math.max(1, rowCount) * STACK_ROW_HEIGHT;

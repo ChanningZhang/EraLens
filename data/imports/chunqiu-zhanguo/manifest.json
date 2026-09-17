@@ -9,11 +9,11 @@
   },
   "scope": "cn",
   "depth": "standard",
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-17",
   "counts": {
-    "persons": 431,
+    "persons": 432,
     "dynasties": 16,
-    "reigns": 417,
+    "reigns": 418,
     "missingReigns": 0,
     "events": 12,
     "relations": 7,
@@ -77,6 +77,6 @@
     "未收录薛、滕、杞、莒等小国；未收录战国末期的代、胶东等残余。",
     "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
     "韩赵魏在位仅收录前403年册命立国之后；晋国卿大夫世系（赵简子等）不挂在三国行上。晋国止于前349年静公被杀。",
-    "国君数据由 fetch-wiki-zh-cn.py + build-rulers.mjs 生成，共 417 条在位记录。"
+    "国君数据由 fetch-wiki-zh-cn.py + build-rulers.mjs 生成，共 418 条在位记录。"
   ]
 }

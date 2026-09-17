@@ -71,9 +71,6 @@ function reign({
 }
 
 function dynastyReign(dynastyId, personId, title, posthumous, startYear, endYear, preferred = null) {
-  const pref =
-    preferred ??
-    (posthumous ? { kind: "posthumous", name: title } : { kind: "regnal", name: title });
   return reign({
     id: `reign-${personId}-${dynastyId}`,
     dynastyId,
@@ -81,7 +78,7 @@ function dynastyReign(dynastyId, personId, title, posthumous, startYear, endYear
     title,
     posthumousName: posthumous,
     templeName: null,
-    preferred: pref,
+    preferred,
     start: ym(startYear),
     end: ym(endYear, 12),
   });
@@ -129,7 +126,7 @@ const EXTRA_PERSONS = [
 
 /** Person id → Wikipedia article title when display name differs from the wiki slug. */
 const PERSON_WIKI_OVERRIDES = {
-  "zhongshan-r4": "中山王胜",
+  "zhongshan-r5": "中山王胜",
 };
 
 const DYNASTY_LABELS = {
@@ -211,6 +208,46 @@ const PERSON_DETAIL_OVERRIDES = {
   "weiguo-r45": {
     bio: "卫元君，姬姓子南氏，本名失考，前254–前230年在位。",
     links: wiki("卫元君"),
+  },
+  "song-r32": {
+    bio: "宋剔成君，本名戴喜，字子罕。司城子罕篡位，约前355–前329年在位，无谥号。",
+    links: wiki("剔成君"),
+  },
+  "yue-r6": {
+    bio: "越王鹿郢，名与夷，又名鹿郢、于赐，勾践之子。",
+    links: wiki("鹿郢"),
+  },
+  "yue-r8": {
+    bio: "越王朱勾，名翁，一作州勾，不寿之子。",
+    links: wiki("朱勾"),
+  },
+  "zhongshan-r0": {
+    bio: "中山文公，维基年表载约前424–前415年在位，姓名失载。",
+    links: wiki("中山文公"),
+  },
+  "zhongshan-r1": {
+    bio: "中山武公，本名姬窟，文公之子，前414–约前406年在位。",
+    links: wiki("中山武公"),
+  },
+  "zhongshan-r2": {
+    bio: "中山桓公，复兴后约前380–约前350年在位，姓名失载。",
+    links: wiki("中山桓公"),
+  },
+  "zhongshan-r3": {
+    bio: "中山成公，约前349–前328年在位，姓名失载。",
+    links: wiki("中山成公"),
+  },
+  "zhongshan-r4": {
+    bio: "中山王厝（𰯼），前327–约前310年在位。",
+    links: wiki("中山王厝"),
+  },
+  "zhongshan-r5": {
+    bio: "中山王胜（𧊒），约前309–前299年在位。",
+    links: wiki("中山王胜"),
+  },
+  "zhongshan-r6": {
+    bio: "中山王尚，前298–前296年在位，赵灭中山。",
+    links: wiki("中山王尚"),
   },
 };
 
@@ -453,9 +490,7 @@ const reigns = applyDocumentedDatesToReigns(
           title: r.title,
           posthumousName: r.posthumousName,
           templeName: null,
-          preferred: r.posthumousName
-            ? { kind: "posthumous", name: r.title }
-            : { kind: "regnal", name: r.title },
+          preferred: null,
           start: ym(r.startYear),
           end: ym(r.endYear, 12),
           startDateConfidence: r.startDateConfidence ?? null,

@@ -7,7 +7,6 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
-import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 import { reignSql } from "../lib/sqlHelpers.mjs";
 
@@ -193,9 +192,6 @@ function reign({
 }
 
 function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, eraNames = [], preferred = null) {
-  const pref =
-    preferred ??
-    defaultPreferredAppellation({ title, posthumous, temple, startYear, eraNames });
   return reign({
     id: `reign-${personId}`,
     dynastyId,
@@ -203,7 +199,7 @@ function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear,
     title,
     posthumousName: posthumous,
     templeName: temple,
-    preferred: pref,
+    preferred,
     start: ym(startYear),
     end: ym(endYear, 12),
     eraNames,
@@ -260,7 +256,7 @@ const chuReigns = [
     dynastyId: "chu-west",
     personId: "xiang-yu",
     title: "西楚霸王",
-    preferred: { kind: "posthumous", name: "西楚霸王" },
+    preferred: { kind: "regnal", name: "西楚霸王" },
     start: ym(-206),
     end: ym(-202, 12),
   }),

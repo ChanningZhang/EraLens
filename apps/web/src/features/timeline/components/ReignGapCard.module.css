@@ -1,6 +1,6 @@
 .unit {
   position: absolute;
-  height: var(--stack-row-height, 56px);
+  height: var(--stack-row-height, 48px);
   overflow: visible;
   pointer-events: auto;
   z-index: 1;
@@ -8,10 +8,10 @@
 
 .card {
   position: absolute;
-  top: 4px;
+  top: 0;
   left: 0;
   right: 0;
-  height: 48px;
+  height: 100%;
   min-width: 1px;
   padding: 0 8px;
   display: flex;

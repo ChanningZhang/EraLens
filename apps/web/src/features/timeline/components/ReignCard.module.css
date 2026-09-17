@@ -1,16 +1,16 @@
 .unit {
   position: absolute;
-  height: var(--stack-row-height, 56px);
+  height: var(--stack-row-height, 48px);
   overflow: visible;
   z-index: 1;
 }
 
 .card {
   position: absolute;
-  top: 4px;
+  top: 0;
   left: 0;
   right: 0;
-  height: 48px;
+  height: 100%;
   min-width: 0;
   padding: 0 10px;
   display: flex;
@@ -68,42 +68,21 @@
 }
 
 /*
- * Concurrent claimants (隋末三帝并立, 南明鲁监国 / 绍武). Dashed borders are
- * reserved for the 史料缺 gap card, so these lean on fill and edge treatments.
+ * Parallel claimants share one treatment: a dashed outline. 史料缺 uses a
+ * thinner, emptier dashed gap card, so these keep a tinted fill.
  */
-.rival,
-.puppet,
-.regent {
+.parallel {
   background: color-mix(in srgb, var(--card-color) 8%, var(--color-surface));
+  border-style: dashed;
+  border-width: 2px;
   border-color: color-mix(in srgb, var(--card-color) 30%, var(--color-border));
 }
 
-.rival:hover,
-.puppet:hover,
-.regent:hover {
+.parallel:hover {
   background: color-mix(in srgb, var(--card-color) 14%, var(--color-surface));
 }
 
-.rival {
-  border-left: 3px solid color-mix(in srgb, var(--card-color) 55%, transparent);
-}
-
-.puppet {
-  background-image: repeating-linear-gradient(
-    135deg,
-    color-mix(in srgb, var(--card-color) 16%, transparent) 0 4px,
-    transparent 4px 9px
-  );
-}
-
-.regent {
-  border-style: dotted;
-  border-width: 2px;
-}
-
-.rival .name,
-.puppet .name,
-.regent .name {
+.parallel .name {
   color: var(--color-ink-muted);
 }
 
@@ -155,7 +134,7 @@
 }
 
 .caption {
-  top: 52px;
+  top: calc(100% + 2px);
 }
 
 .captionAbove {

@@ -7,8 +7,8 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
-import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
+import { resolveRegnalAppellationFields } from "../lib/regnalAppellation.mjs";
 import { reignSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -69,17 +69,15 @@ function reign({
 }
 
 function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, eraNames = [], preferred = null) {
-  const pref =
-    preferred ??
-    defaultPreferredAppellation({ title, posthumous, temple, startYear, eraNames });
+  const appellation = resolveRegnalAppellationFields(dynastyId, title, posthumous, temple);
   return reign({
     id: `reign-${personId}`,
     dynastyId,
     personId,
     title,
-    posthumousName: posthumous,
-    templeName: temple,
-    preferred: pref,
+    posthumousName: appellation.posthumousName,
+    templeName: appellation.templeName,
+    preferred,
     start: ym(startYear),
     end: ym(endYear, 12),
     eraNames,
@@ -99,17 +97,15 @@ function dynastyReignMonth(
   eraNames = [],
   preferred = null,
 ) {
-  const pref =
-    preferred ??
-    defaultPreferredAppellation({ title, posthumous, temple, startYear: startYear, eraNames });
+  const appellation = resolveRegnalAppellationFields(dynastyId, title, posthumous, temple);
   return reign({
     id: `reign-${personId}`,
     dynastyId,
     personId,
     title,
-    posthumousName: posthumous,
-    templeName: temple,
-    preferred: pref,
+    posthumousName: appellation.posthumousName,
+    templeName: appellation.templeName,
+    preferred,
     start: ym(startYear, startMonth),
     end: ym(endYear, endMonth),
     eraNames,

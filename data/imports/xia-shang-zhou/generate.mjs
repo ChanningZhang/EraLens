@@ -286,22 +286,6 @@ function shangPosthumousFromTitle(title) {
   return core;
 }
 
-/**
- * 卡片副标题：通常用「商武丁」；「帝+名」已是完整君王称谓，不再叠「商」前缀；
- * 帝辛通行作「商纣王」。
- */
-function shangPreferredName(title) {
-  const core = title.replace(/^商王?/, "");
-  if (core === "帝辛") return "商纣王";
-  if (/^帝/.test(core)) return core;
-  return title.replace(/^商王/, "商");
-}
-
-function defaultShangPreferred(entry) {
-  if (entry.preferred) return entry.preferred;
-  return { kind: "posthumous", name: shangPreferredName(entry.title) };
-}
-
 function shangReign(personId, title, startYear, endYear, overrides = {}) {
   const endMonth = overrides.endMonth ?? 12;
   return reign({
@@ -312,8 +296,7 @@ function shangReign(personId, title, startYear, endYear, overrides = {}) {
     posthumousName:
       overrides.posthumousName ?? shangPosthumousFromTitle(title),
     templeName: overrides.templeName,
-    preferred:
-      overrides.preferred ?? defaultShangPreferred({ title, ...overrides }),
+    preferred: overrides.preferred ?? null,
     start: ym(startYear, overrides.startMonth ?? 1),
     end: ym(endYear, endMonth),
   });
@@ -337,7 +320,7 @@ function chainShangReigns(entries, firstStartYear, lastEndYear) {
         posthumousName:
           entry.posthumousName ?? shangPosthumousFromTitle(entry.title),
         templeName: entry.templeName,
-        preferred: defaultShangPreferred(entry),
+        preferred: entry.preferred ?? null,
         start: ym(startYear),
         end: ym(endYear, 12),
       }),
@@ -395,15 +378,6 @@ const shangReigns = [
   shangReign("zi-dixin", "商王帝辛", -1075, -1046, { endMonth: 1 }),
 ];
 
-for (const r of shangReigns) {
-  const pref = r.preferredAppellation;
-  if (pref?.kind !== "posthumous") {
-    throw new Error(
-      `Shang reign ${r.id} must use posthumous preferred appellation, got ${pref?.kind}`,
-    );
-  }
-}
-
 function zhouReign(
   personId,
   title,
@@ -421,12 +395,12 @@ function zhouReign(
     personId,
     title,
     posthumousName: posthumous,
-    preferred: { kind: "posthumous", name: title },
+    preferred: null,
     start: ym(startYear, startMonth),
     end: ym(endYear, endMonth),
     claimTrack: claim?.track,
     claimLabel: claim?.label,
-    claimRole: claim?.role,
+    claimRole: claim?.track ? "rival" : undefined,
   });
 }
 
@@ -450,7 +424,6 @@ const zhouEastReigns = [
   zhouReign("ji-yuchen", "周携王", "携王", -771, -750, "zhou-east", 1, 12, {
     track: "xie",
     label: "携",
-    role: "rival",
   }),
   zhouReign("ji-lin", "周桓王", "桓王", -719, -697, "zhou-east"),
   zhouReign("ji-tuo", "周庄王", "庄王", -696, -682, "zhou-east"),

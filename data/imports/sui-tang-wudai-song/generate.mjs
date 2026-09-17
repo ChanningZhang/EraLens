@@ -8,6 +8,7 @@ import { fileURLToPath } from "node:url";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
 import { drDay } from "../lib/reignDateHelpers.mjs";
+import { resolveRegnalAppellationFields } from "../lib/regnalAppellation.mjs";
 import { reignSql } from "../lib/reignSql.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -78,20 +79,21 @@ function reign({
 }
 
 function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, eraNames = [], preferred = null, claim = null) {
+  const appellation = resolveRegnalAppellationFields(dynastyId, title, posthumous, temple);
   return reign({
     id: dynastyId === "sui" || dynastyId === "tang" ? `reign-${personId}` : `reign-${personId}-${dynastyId}`,
     dynastyId,
     personId,
     title,
-    posthumousName: posthumous,
-    templeName: temple,
+    posthumousName: appellation.posthumousName,
+    templeName: appellation.templeName,
     preferred,
     start: ym(startYear),
     end: ym(endYear, 12),
     eraNames,
     claimTrack: claim?.track,
     claimLabel: claim?.label,
-    claimRole: claim?.role,
+    claimRole: claim?.track ? "rival" : undefined,
   });
 }
 
@@ -108,21 +110,15 @@ function eras(reignId, list) {
 function tangSplitReign(id, personId, title, posthumous, temple, startYear, endYear, opts = {}) {
   const { startMonth = 1, endMonth = 12, precision = "year", eraList = [] } = opts;
   const eraNames = eraList.length ? eras(id, eraList) : [];
-  const preferred = defaultPreferredAppellation({
-    title,
-    posthumous,
-    temple,
-    startYear,
-    eraNames,
-  });
+  const appellation = resolveRegnalAppellationFields("tang", title, posthumous, temple);
   return reign({
     id,
     dynastyId: "tang",
     personId,
     title,
-    posthumousName: posthumous,
-    templeName: temple,
-    preferred,
+    posthumousName: appellation.posthumousName,
+    templeName: appellation.templeName,
+    preferred: null,
     start: ym(startYear, startMonth),
     end: ym(endYear, endMonth),
     precision,
@@ -132,7 +128,17 @@ function tangSplitReign(id, personId, title, posthumous, temple, startYear, endY
 
 function dr(dynastyId, personId, title, posthumous, temple, sy, ey, eraList = []) {
   const reignId = `reign-${personId}-${dynastyId}`;
-  return dynastyReign(dynastyId, personId, title, posthumous, temple, sy, ey, eraList.length ? eras(reignId, eraList) : [], null);
+  return dynastyReign(
+    dynastyId,
+    personId,
+    title,
+    posthumous,
+    temple,
+    sy,
+    ey,
+    eraList.length ? eras(reignId, eraList) : [],
+    null,
+  );
 }
 
 const colorTokens = [
@@ -326,19 +332,17 @@ const suiReignsCore = [
   // 炀帝被弑后的江都续统，走主线金色；杨侑拥立时炀帝尚在，不入主线。
   dynastyReign("sui", "yang-hao", "隋秦王", null, null, 618, 618),
 ];
-const suiReignsPuppets = [
+const suiReignsParallel = [
   dynastyReign("sui", "yang-you", "隋恭帝", null, null, 617, 618, [], null, {
     track: "changan",
     label: "长安",
-    role: "puppet",
   }),
   dynastyReign("sui", "yang-tong", "隋越王", null, null, 618, 619, [], null, {
     track: "luoyang",
     label: "洛阳",
-    role: "puppet",
   }),
 ];
-const suiReigns = [...suiReignsCore, ...suiReignsPuppets];
+const suiReigns = [...suiReignsCore, ...suiReignsParallel];
 
 const tangReigns = [
   dynastyReign("tang", "li-yuan", "唐高祖", "神尧皇帝", "高祖", 618, 626),
@@ -381,13 +385,7 @@ const zhouWuReigns = [
     title: "则天皇帝",
     posthumousName: null,
     templeName: null,
-    preferred: defaultPreferredAppellation({
-      title: "则天皇帝",
-      posthumous: null,
-      temple: null,
-      startYear: 690,
-      eraNames: [{ name: "天授" }],
-    }),
+    preferred: null,
     start: ym(690, 10),
     end: ym(705, 1),
     precision: "month",

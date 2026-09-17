@@ -5,7 +5,6 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
 import { reignSql as formatReignSql } from "../lib/reignSql.mjs";
@@ -46,11 +45,8 @@ function reign({ id, dynastyId, personId, title, posthumousName, templeName, pre
 }
 
 function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, preferred = null) {
-  const pref =
-    preferred ??
-    defaultPreferredAppellation({ title, posthumous, temple, startYear, eraNames: [] });
   const reignId = `reign-${personId}-${dynastyId}`;
-  return reign({ id: reignId, dynastyId, personId, title, posthumousName: posthumous, templeName: temple, preferred: pref, start: ym(startYear), end: ym(endYear, 12) });
+  return reign({ id: reignId, dynastyId, personId, title, posthumousName: posthumous, templeName: temple, preferred, start: ym(startYear), end: ym(endYear, 12) });
 }
 
 function dr(dynastyId, personId, title, posthumous, temple, sy, ey, preferred = null) {

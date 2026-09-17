@@ -3136,7 +3136,7 @@ export const rulersByDynasty = {
       "dynastyId": "yue-chunqiu",
       "personId": "yue-r0",
       "title": "越侯无余",
-      "personName": "姒无余",
+      "personName": "无余",
       "posthumousName": null,
       "startYear": -565,
       "endYear": -553,
@@ -3147,7 +3147,7 @@ export const rulersByDynasty = {
       "dynastyId": "yue-chunqiu",
       "personId": "yue-r1",
       "title": "越侯无壬",
-      "personName": "姒无壬",
+      "personName": "无壬",
       "posthumousName": null,
       "startYear": -552,
       "endYear": -539,
@@ -3158,7 +3158,7 @@ export const rulersByDynasty = {
       "dynastyId": "yue-chunqiu",
       "personId": "yue-r2",
       "title": "越侯无瞫",
-      "personName": "姒无瞫",
+      "personName": "无瞫",
       "posthumousName": null,
       "startYear": -538,
       "endYear": -525,
@@ -3169,7 +3169,7 @@ export const rulersByDynasty = {
       "dynastyId": "yue-chunqiu",
       "personId": "yue-r3",
       "title": "越侯夫谭",
-      "personName": "姒夫谭",
+      "personName": "夫谭",
       "posthumousName": null,
       "startYear": -524,
       "endYear": -511,
@@ -3180,7 +3180,7 @@ export const rulersByDynasty = {
       "dynastyId": "yue-chunqiu",
       "personId": "yue-r4",
       "title": "越侯允常",
-      "personName": "姒允常",
+      "personName": "允常",
       "posthumousName": null,
       "startYear": -510,
       "endYear": -497
@@ -3189,7 +3189,7 @@ export const rulersByDynasty = {
       "dynastyId": "yue-chunqiu",
       "personId": "gou-jian",
       "title": "越王勾践",
-      "personName": "姒勾践",
+      "personName": "勾践",
       "posthumousName": null,
       "startYear": -496,
       "endYear": -464
@@ -3198,7 +3198,7 @@ export const rulersByDynasty = {
       "dynastyId": "yue-chunqiu",
       "personId": "yue-r6",
       "title": "越王鹿郢",
-      "personName": "姒与夷",
+      "personName": "与夷",
       "posthumousName": null,
       "startYear": -463,
       "endYear": -458
@@ -3207,7 +3207,7 @@ export const rulersByDynasty = {
       "dynastyId": "yue-chunqiu",
       "personId": "yue-r7",
       "title": "越王不寿",
-      "personName": "姒不寿",
+      "personName": "不寿",
       "posthumousName": null,
       "startYear": -457,
       "endYear": -448
@@ -3216,7 +3216,7 @@ export const rulersByDynasty = {
       "dynastyId": "yue-chunqiu",
       "personId": "yue-r8",
       "title": "越王朱勾",
-      "personName": "姒翁",
+      "personName": "翁",
       "posthumousName": null,
       "startYear": -447,
       "endYear": -411
@@ -3225,7 +3225,7 @@ export const rulersByDynasty = {
       "dynastyId": "yue-chunqiu",
       "personId": "yue-r9",
       "title": "越王翳",
-      "personName": "姒翳",
+      "personName": "翳",
       "posthumousName": null,
       "startYear": -410,
       "endYear": -375
@@ -3234,7 +3234,7 @@ export const rulersByDynasty = {
       "dynastyId": "yue-chunqiu",
       "personId": "yue-r10",
       "title": "越王错枝",
-      "personName": "姒错枝",
+      "personName": "错枝",
       "posthumousName": null,
       "startYear": -374,
       "endYear": -373
@@ -3243,7 +3243,7 @@ export const rulersByDynasty = {
       "dynastyId": "yue-chunqiu",
       "personId": "yue-r11",
       "title": "越王无余",
-      "personName": "姒无余",
+      "personName": "无余",
       "posthumousName": null,
       "startYear": -372,
       "endYear": -361
@@ -3252,7 +3252,7 @@ export const rulersByDynasty = {
       "dynastyId": "yue-chunqiu",
       "personId": "yue-r12",
       "title": "越王无颛",
-      "personName": "姒无颛",
+      "personName": "无颛",
       "posthumousName": null,
       "startYear": -360,
       "endYear": -343
@@ -3261,7 +3261,7 @@ export const rulersByDynasty = {
       "dynastyId": "yue-chunqiu",
       "personId": "yue-r13",
       "title": "越王无彊",
-      "personName": "姒无彊",
+      "personName": "无彊",
       "posthumousName": null,
       "startYear": -342,
       "endYear": -306
@@ -3271,55 +3271,67 @@ export const rulersByDynasty = {
     {
       "dynastyId": "zhongshan",
       "personId": "zhongshan-r0",
+      "title": "中山文公",
+      "personName": "文公",
+      "posthumousName": "文公",
+      "startYear": -424,
+      "endYear": -415
+    },
+    {
+      "dynastyId": "zhongshan",
+      "personId": "zhongshan-r1",
       "title": "中山武公",
-      "personName": "姬窟",
+      "personName": "窟",
       "posthumousName": "武公",
       "startYear": -414,
       "endYear": -406
     },
     {
       "dynastyId": "zhongshan",
-      "personId": "zhongshan-r1",
-      "title": "中山桓公",
-      "personName": "姬桓公",
-      "posthumousName": "桓公",
-      "startYear": -414,
-      "endYear": -340,
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
-    },
-    {
-      "dynastyId": "zhongshan",
       "personId": "zhongshan-r2",
-      "title": "中山成公",
-      "personName": "姬成公",
-      "posthumousName": "成公",
-      "startYear": -339,
-      "endYear": -328
+      "title": "中山桓公",
+      "personName": "桓公",
+      "posthumousName": "桓公",
+      "startYear": -380,
+      "endYear": -350,
+      "startDateConfidence": "approximate",
+      "endDateConfidence": "approximate"
     },
     {
       "dynastyId": "zhongshan",
       "personId": "zhongshan-r3",
-      "title": "中山王厝",
-      "personName": "姬厝",
-      "posthumousName": null,
-      "startYear": -327,
-      "endYear": -313
+      "title": "中山成公",
+      "personName": "成公",
+      "posthumousName": "成公",
+      "startYear": -349,
+      "endYear": -328,
+      "startDateConfidence": "approximate"
     },
     {
       "dynastyId": "zhongshan",
       "personId": "zhongshan-r4",
-      "title": "中山王胜",
-      "personName": "姬胜",
+      "title": "中山王厝",
+      "personName": "厝",
       "posthumousName": null,
-      "startYear": -312,
-      "endYear": -299
+      "startYear": -327,
+      "endYear": -310,
+      "endDateConfidence": "approximate"
     },
     {
       "dynastyId": "zhongshan",
       "personId": "zhongshan-r5",
+      "title": "中山王胜",
+      "personName": "胜",
+      "posthumousName": null,
+      "startYear": -309,
+      "endYear": -299,
+      "startDateConfidence": "approximate"
+    },
+    {
+      "dynastyId": "zhongshan",
+      "personId": "zhongshan-r6",
       "title": "中山王尚",
-      "personName": "姬尚",
+      "personName": "尚",
       "posthumousName": null,
       "startYear": -298,
       "endYear": -296
@@ -3886,6 +3898,6 @@ export const rulersByDynasty = {
 
 export const rulerStats = {
   dynasties: 16,
-  reigns: 417,
-  generatedAt: "2026-09-13",
+  reigns: 418,
+  generatedAt: "2026-09-17",
 };

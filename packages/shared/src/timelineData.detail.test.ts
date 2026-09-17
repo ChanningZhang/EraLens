@@ -90,7 +90,7 @@ describe("buildEntityDetail reign", () => {
           preferredAppellation: { kind: "regnal", name: "鲁监国" },
           claimTrack: "lu-jian",
           claimLabel: "绍兴监国",
-          claimRole: "regent",
+          claimRole: "rival",
         }),
       ],
       persons: [
@@ -111,7 +111,7 @@ describe("buildEntityDetail reign", () => {
     });
     expect(detail.facts).toEqual(
       expect.arrayContaining([
-        { label: "身份", value: "监国" },
+        { label: "身份", value: "并立" },
         { label: "据点", value: "绍兴监国" },
       ]),
     );

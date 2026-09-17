@@ -2,13 +2,13 @@ import { useMemo } from "react";
 import {
   type Dynasty,
   type Reign,
-  claimRoleLabel,
   formatReignSpanTooltip,
   claimTrackOf,
   isUncertainDateConfidence,
   isUncertainReignSeam,
   reignVisualBounds,
   isParallelClaim,
+  PARALLEL_CLAIM_LABEL,
   resolveReignCardLabel,
   resolveReignCardMeta,
 } from "@eralens/shared";
@@ -126,8 +126,8 @@ export function ReignCard({
   );
   const tooltipName = personName && personName !== label ? personName : label;
   const timeTooltip = formatReignSpanTooltip(reign);
-  const claimTooltip = reign.claimRole
-    ? `${claimRoleLabel(reign.claimRole)}${reign.claimLabel ? `・${reign.claimLabel}` : ""}`
+  const claimTooltip = parallel
+    ? `${PARALLEL_CLAIM_LABEL}${reign.claimLabel ? `・${reign.claimLabel}` : ""}`
     : undefined;
   const tooltipText = buildReignCardTooltip({
     detail,
@@ -145,11 +145,11 @@ export function ReignCard({
       detail === "wrap" ? styles.wrap : "",
       orthodox ? "orthodoxGold" : "",
       selected ? styles.selected : "",
-      reign.claimRole ? styles[reign.claimRole] ?? "" : "",
+      parallel ? styles.parallel : "",
     ]
       .filter(Boolean)
       .join(" ");
-  }, [barLayout.markerStyle, detail, orthodox, selected, reign.claimRole]);
+  }, [barLayout.markerStyle, detail, orthodox, selected, parallel]);
 
   return (
     <div

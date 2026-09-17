@@ -1,6 +1,6 @@
 .unit {
   position: absolute;
-  height: var(--stack-row-height, 56px);
+  height: var(--stack-row-height, 48px);
   overflow: visible;
   z-index: 2;
   pointer-events: auto;
@@ -8,7 +8,7 @@
 
 .gap {
   position: absolute;
-  inset: 4px 0;
+  inset: 0;
   display: grid;
   grid-template-columns: 6px 1fr 6px;
   align-items: stretch;
@@ -16,7 +16,7 @@
 }
 
 .junction {
-  inset: 4px 0;
+  inset: 0;
   grid-template-columns: 3px 2px 3px;
 }
 

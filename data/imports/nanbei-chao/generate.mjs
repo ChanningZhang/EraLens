@@ -7,8 +7,8 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
-import { defaultPreferredAppellation } from "../lib/defaultPreferredAppellation.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
+import { resolveRegnalAppellationFields } from "../lib/regnalAppellation.mjs";
 import { reignSql } from "../lib/reignSql.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -86,23 +86,21 @@ function dynastyReign(
   preferred = null,
   claim = null,
 ) {
-  const pref =
-    preferred ??
-    defaultPreferredAppellation({ title, posthumous, temple, startYear, eraNames });
+  const appellation = resolveRegnalAppellationFields(dynastyId, title, posthumous, temple);
   return reign({
     id: `reign-${personId}`,
     dynastyId,
     personId,
     title,
-    posthumousName: posthumous,
-    templeName: temple,
-    preferred: pref,
+    posthumousName: appellation.posthumousName,
+    templeName: appellation.templeName,
+    preferred,
     start: ym(startYear),
     end: ym(endYear, 12),
     eraNames,
     claimTrack: claim?.track,
     claimLabel: claim?.label,
-    claimRole: claim?.role,
+    claimRole: claim?.track ? "rival" : undefined,
   });
 }
 
@@ -427,7 +425,6 @@ const weiNorthReigns = [
   dynastyReign("wei-north", "yuan-shan-jian", "魏孝静帝", "孝静皇帝", null, 534, 550, [], null, {
     track: "ye",
     label: "邺",
-    role: "puppet",
   }),
 ];
 

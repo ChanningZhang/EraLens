@@ -42,12 +42,12 @@ describe("groupByClaimTrack", () => {
       reign("yang-tong", 618, 619, {
         claimTrack: "luoyang",
         claimLabel: "洛阳",
-        claimRole: "puppet",
+        claimRole: "rival",
       }),
       reign("yang-you", 617, 618, {
         claimTrack: "changan",
         claimLabel: "长安",
-        claimRole: "puppet",
+        claimRole: "rival",
       }),
     ]);
 
@@ -69,7 +69,7 @@ describe("groupByClaimTrack", () => {
       reign("lu-jian", 1645, 1653, {
         dynastyId: "ming-south",
         claimTrack: "lu-jian",
-        claimRole: "regent",
+        claimRole: "rival",
       }),
     ]);
 
@@ -106,7 +106,7 @@ describe("groupByClaimTrack — Northern Wei split", () => {
         dynastyId: "wei-north",
         claimTrack: "ye",
         claimLabel: "邺",
-        claimRole: "puppet",
+        claimRole: "rival",
       }),
     ]);
 
@@ -119,7 +119,7 @@ describe("groupByClaimTrack — Northern Wei split", () => {
 });
 
 describe("resolveConcurrencySpans", () => {
-  it("marks the years when Sui puppet courts overlap the main line", () => {
+  it("marks the years when Sui parallel courts overlap the main line", () => {
     const spans = resolveConcurrencySpans([
       reign("yang-guang", 604, 618),
       reign("yang-you", 617, 618, { claimTrack: "changan" }),
@@ -145,11 +145,11 @@ describe("claimDetailFacts", () => {
   it("exposes role and seat for the detail panel", () => {
     expect(
       claimDetailFacts({
-        claimRole: "regent",
+        claimTrack: "lu-jian",
         claimLabel: "绍兴监国",
       }),
     ).toEqual([
-      { label: "身份", value: "监国" },
+      { label: "身份", value: "并立" },
       { label: "据点", value: "绍兴监国" },
     ]);
   });

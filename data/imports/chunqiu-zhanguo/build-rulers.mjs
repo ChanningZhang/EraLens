@@ -93,7 +93,6 @@ const NAME_OVERRIDES = {
   "qin-r27": "嬴稷",
   "fu-chai": "夫差",
   "helu": "阖闾",
-  "gou-jian": "姒勾践",
   "wei-wen": "魏斯",
   "han-jing": "韩虔",
   "zhao-lie": "赵籍",
@@ -101,12 +100,9 @@ const NAME_OVERRIDES = {
   "ji-shuyu": "姬虞",
   "ji-shi": "姬奭",
   "song-weizi": "子启",
-  "yue-r6": "姒与夷",
-  "yue-r8": "姒翁",
   "yan-r25": "姬桓",
   "yan-r35": "姬讙",
   "yan-r36": "姬遇",
-  "zhongshan-r0": "姬窟",
 };
 
 /** Title-keyed display names — do not use person index (sort order changes). */
@@ -141,7 +137,7 @@ const DYNASTY_START = {
   "cao-chunqiu": -1046,
   "wu-chunqiu": -585,
   "yue-chunqiu": -565,
-  zhongshan: -414,
+  zhongshan: -424,
   "han-warring": -403,
   "zhao-warring": -403,
   "wei-warring": -403,
@@ -667,35 +663,57 @@ function parseWu() {
   return dedupeReigns(rulers);
 }
 
+/** 中山国君主在位年：以维基「中山国」词条年表为准（诸侯表仅有残缺年）。 */
+const ZHONGSHAN_WIKI_REIGNS = {
+  中山文公: { start: -424, end: -415 },
+  中山武公: { start: -414, end: -406, name: "窟" },
+  中山桓公: { start: -380, end: -350, startDateConfidence: "approximate", endDateConfidence: "approximate" },
+  中山成公: { start: -349, end: -328, startDateConfidence: "approximate" },
+  中山王厝: { start: -327, end: -310, name: "厝", endDateConfidence: "approximate" },
+  中山王胜: { start: -309, end: -299, name: "胜", startDateConfidence: "approximate" },
+  中山王尚: { start: -298, end: -296, name: "尚" },
+};
+
 function parseZhongshan() {
   const rulers = parseWikiTables(sectionText(mainText, "中山国"), { dynastyId: "zhongshan" });
   const fixed = [];
   for (const r of rulers) {
     let next = { ...r };
     if (next.title === "中山王") next.title = "中山王厝";
-    if (next.title === "中山桓公" && next.start === -406 && next.end === -406) {
-      next = { ...next, start: -478, end: null, complete: false };
+    if (next.title === "中山王𧊒" || next.title === "中山王胜") {
+      next.title = "中山王胜";
     }
-    if (next.title === "中山文公" && next.end === -415 && next.start > -500) {
-      next = { ...next, start: -476 };
-    }
-    // Wiki lists 厝's name as an image; extract the given name from the regnal title.
     if (next.title === "中山王厝" && !finalizePersonName(next.name)) {
       next.name = "厝";
     }
-    // Extension-B inscription 𧊒 is not covered by UI fonts; use the common form 胜.
-    if (next.title === "中山王𧊒" || next.title === "中山王胜") {
-      next.title = "中山王胜";
+    if (next.title === "中山王胜" && !finalizePersonName(next.name)) {
       next.name = "胜";
     }
-    // Early 公-style rulers lack wiki given names; leave blank so enrichRulers can apply 姬+谥号.
-    if (/^中山(武公|桓公|成公)$/.test(next.title) && finalizePersonName(next.name) === posthumousFromTitle(next.title)) {
-      next.name = "";
-    }
-    next.name = withSurname("zhongshan", next.name, next.title);
     fixed.push(next);
   }
   return dedupePreserveOrder(fixed);
+}
+
+function finalizeZhongshanRulers(rulers) {
+  const byTitle = new Map(rulers.map((r) => [normalizeTitle(r.title), r]));
+  for (const [title, patch] of Object.entries(ZHONGSHAN_WIKI_REIGNS)) {
+    const key = normalizeTitle(title);
+    const existing = byTitle.get(key);
+    if (existing) {
+      Object.assign(existing, patch, { complete: true });
+    } else {
+      rulers.push({
+        title,
+        name: patch.name ?? "",
+        start: patch.start,
+        end: patch.end,
+        complete: true,
+        startDateConfidence: patch.startDateConfidence,
+        endDateConfidence: patch.endDateConfidence,
+      });
+    }
+  }
+  return dedupePreserveOrder(rulers).sort((a, b) => a.start - b.start || a.end - b.end);
 }
 
 function parseState(keyword, dynastyId, extra = {}) {
@@ -709,7 +727,9 @@ function parseState(keyword, dynastyId, extra = {}) {
   if (extra.maxStart != null) rulers = rulers.filter((r) => r.start == null || r.start <= extra.maxStart);
   return rulers.map((r) => ({
     ...r,
-    name: withSurname(dynastyId, r.name, r.title),
+    name: extra.skipSurname
+      ? extractGivenName(r.name) || extractGivenName(r.title) || ""
+      : withSurname(dynastyId, r.name, r.title),
   }));
 }
 
@@ -809,7 +829,7 @@ function resolvePersonDisplayName(title, name) {
 }
 
 /** Dynasties where wiki often lacks given names; use clan + posthumous (燕襄公 → 姬襄公). */
-const CLAN_POSTHUMOUS_DYNASTIES = new Set(["yan-chunqiu", "zhongshan"]);
+const CLAN_POSTHUMOUS_DYNASTIES = new Set(["yan-chunqiu"]);
 
 /** When wiki has no given name, use clan + posthumous (e.g. 燕襄公 → 姬襄公). */
 function clanNameWhenOnlyPosthumous(dynastyId, personName, title) {
@@ -871,8 +891,8 @@ const DYNASTY_SOURCES = {
   "zheng-chunqiu": () => parseState("郑国", "zheng-chunqiu"),
   "cao-chunqiu": () => parseState("曹国", "cao-chunqiu"),
   "wu-chunqiu": () => parseWu(),
-  "yue-chunqiu": () => parseState("越国", "yue-chunqiu"),
-  zhongshan: () => parseZhongshan(),
+  "yue-chunqiu": () => parseState("越国", "yue-chunqiu", { skipSurname: true }),
+  zhongshan: () => finalizeZhongshanRulers(parseZhongshan()),
   "han-warring": () =>
     trimToIndependentState(
       parseState("韩国", "han-warring", { maxStart: -230 }).filter(
@@ -937,9 +957,13 @@ const byDynasty = {};
 let total = 0;
 const problems = [];
 for (const [dynastyId, fn] of Object.entries(DYNASTY_SOURCES)) {
-  const raw = markInterpolatedBoundaries(
-    fillUndatedYears(mergeFoundingRulers(dynastyId, fn()), dynastyId),
-  ).sort((a, b) => a.start - b.start || a.end - b.end);
+  const parsed =
+    dynastyId === "zhongshan"
+      ? fn()
+      : fillUndatedYears(mergeFoundingRulers(dynastyId, fn()), dynastyId);
+  const raw = markInterpolatedBoundaries(parsed).sort(
+    (a, b) => a.start - b.start || a.end - b.end,
+  );
   const enriched = enrichRulers(dynastyId, raw);
   byDynasty[dynastyId] = enriched;
   total += enriched.length;

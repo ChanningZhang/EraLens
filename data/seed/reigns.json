@@ -127,11 +127,7 @@
     "endAbs": -18829,
     "precision": "year",
     "posthumousName": "武王",
-    "templeName": "太祖",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商汤"
-    }
+    "templeName": "太祖"
   },
   {
     "id": "reign-zi-taijia",
@@ -151,11 +147,7 @@
     "endAbs": -18553,
     "precision": "year",
     "posthumousName": "太甲",
-    "templeName": "太宗",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商太甲"
-    }
+    "templeName": "太宗"
   },
   {
     "id": "reign-zi-woding",
@@ -174,11 +166,7 @@
     "startAbs": -18552,
     "endAbs": -18325,
     "precision": "year",
-    "posthumousName": "沃丁",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商沃丁"
-    }
+    "posthumousName": "沃丁"
   },
   {
     "id": "reign-zi-taigeng",
@@ -197,11 +185,7 @@
     "startAbs": -18324,
     "endAbs": -18265,
     "precision": "year",
-    "posthumousName": "太庚",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商太庚"
-    }
+    "posthumousName": "太庚"
   },
   {
     "id": "reign-zi-xiaojia",
@@ -220,11 +204,7 @@
     "startAbs": -18264,
     "endAbs": -18061,
     "precision": "year",
-    "posthumousName": "小甲",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商小甲"
-    }
+    "posthumousName": "小甲"
   },
   {
     "id": "reign-zi-yongji",
@@ -243,11 +223,7 @@
     "startAbs": -18060,
     "endAbs": -17917,
     "precision": "year",
-    "posthumousName": "雍己",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商雍己"
-    }
+    "posthumousName": "雍己"
   },
   {
     "id": "reign-zi-taiwu",
@@ -267,11 +243,7 @@
     "endAbs": -17017,
     "precision": "year",
     "posthumousName": "太戊",
-    "templeName": "中宗",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商太戊"
-    }
+    "templeName": "中宗"
   },
   {
     "id": "reign-zi-zhongding",
@@ -290,11 +262,7 @@
     "startAbs": -17016,
     "endAbs": -16909,
     "precision": "year",
-    "posthumousName": "仲丁",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商仲丁"
-    }
+    "posthumousName": "仲丁"
   },
   {
     "id": "reign-zi-wairen",
@@ -313,11 +281,7 @@
     "startAbs": -16908,
     "endAbs": -16789,
     "precision": "year",
-    "posthumousName": "外壬",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商外壬"
-    }
+    "posthumousName": "外壬"
   },
   {
     "id": "reign-zi-hedanjia",
@@ -336,11 +300,7 @@
     "startAbs": -16788,
     "endAbs": -16681,
     "precision": "year",
-    "posthumousName": "河亶甲",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商河亶甲"
-    }
+    "posthumousName": "河亶甲"
   },
   {
     "id": "reign-zi-zuyi",
@@ -359,11 +319,7 @@
     "startAbs": -16680,
     "endAbs": -16453,
     "precision": "year",
-    "posthumousName": "祖乙",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商祖乙"
-    }
+    "posthumousName": "祖乙"
   },
   {
     "id": "reign-zi-zuxin",
@@ -382,11 +338,7 @@
     "startAbs": -16452,
     "endAbs": -16285,
     "precision": "year",
-    "posthumousName": "祖辛",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商祖辛"
-    }
+    "posthumousName": "祖辛"
   },
   {
     "id": "reign-zi-wojia",
@@ -405,11 +357,7 @@
     "startAbs": -16284,
     "endAbs": -16045,
     "precision": "year",
-    "posthumousName": "沃甲",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商沃甲"
-    }
+    "posthumousName": "沃甲"
   },
   {
     "id": "reign-zi-zuding",
@@ -428,11 +376,7 @@
     "startAbs": -16044,
     "endAbs": -15937,
     "precision": "year",
-    "posthumousName": "祖丁",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商祖丁"
-    }
+    "posthumousName": "祖丁"
   },
   {
     "id": "reign-zi-nangeng",
@@ -451,11 +395,7 @@
     "startAbs": -15936,
     "endAbs": -15865,
     "precision": "year",
-    "posthumousName": "南庚",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商南庚"
-    }
+    "posthumousName": "南庚"
   },
   {
     "id": "reign-zi-yangjia",
@@ -474,11 +414,7 @@
     "startAbs": -15864,
     "endAbs": -15709,
     "precision": "year",
-    "posthumousName": "阳甲",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商阳甲"
-    }
+    "posthumousName": "阳甲"
   },
   {
     "id": "reign-zi-pangeng",
@@ -497,11 +433,7 @@
     "startAbs": -15708,
     "endAbs": -15337,
     "precision": "year",
-    "posthumousName": "盘庚",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商盘庚"
-    }
+    "posthumousName": "盘庚"
   },
   {
     "id": "reign-zi-xiaoxin",
@@ -520,11 +452,7 @@
     "startAbs": -15336,
     "endAbs": -15301,
     "precision": "year",
-    "posthumousName": "小辛",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商小辛"
-    }
+    "posthumousName": "小辛"
   },
   {
     "id": "reign-zi-xiaoyi",
@@ -543,11 +471,7 @@
     "startAbs": -15300,
     "endAbs": -14989,
     "precision": "year",
-    "posthumousName": "小乙",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商小乙"
-    }
+    "posthumousName": "小乙"
   },
   {
     "id": "reign-zi-wuding",
@@ -567,11 +491,7 @@
     "endAbs": -14281,
     "precision": "year",
     "posthumousName": "武丁",
-    "templeName": "高宗",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商武丁"
-    }
+    "templeName": "高宗"
   },
   {
     "id": "reign-zi-zugeng",
@@ -590,11 +510,7 @@
     "startAbs": -14280,
     "endAbs": -13753,
     "precision": "year",
-    "posthumousName": "祖庚",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商祖庚"
-    }
+    "posthumousName": "祖庚"
   },
   {
     "id": "reign-zi-zujia",
@@ -613,11 +529,7 @@
     "startAbs": -13764,
     "endAbs": -13321,
     "precision": "year",
-    "posthumousName": "祖甲",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商祖甲"
-    }
+    "posthumousName": "祖甲"
   },
   {
     "id": "reign-zi-wuyi",
@@ -636,11 +548,7 @@
     "startAbs": -13752,
     "endAbs": -13333,
     "precision": "year",
-    "posthumousName": "武乙",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商武乙"
-    }
+    "posthumousName": "武乙"
   },
   {
     "id": "reign-zi-wending",
@@ -659,11 +567,7 @@
     "startAbs": -13332,
     "endAbs": -13201,
     "precision": "year",
-    "posthumousName": "文丁",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商文丁"
-    }
+    "posthumousName": "文丁"
   },
   {
     "id": "reign-zi-diyi",
@@ -682,11 +586,7 @@
     "startAbs": -13200,
     "endAbs": -12889,
     "precision": "year",
-    "posthumousName": "帝乙",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "帝乙"
-    }
+    "posthumousName": "帝乙"
   },
   {
     "id": "reign-zi-dixin",
@@ -705,11 +605,7 @@
     "startAbs": -12888,
     "endAbs": -12540,
     "precision": "year",
-    "posthumousName": "纣",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "商纣王"
-    }
+    "posthumousName": "纣"
   },
   {
     "id": "reign-ji-fa",
@@ -728,11 +624,7 @@
     "startAbs": -12540,
     "endAbs": -12493,
     "precision": "year",
-    "posthumousName": "武王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周武王"
-    }
+    "posthumousName": "武王"
   },
   {
     "id": "reign-ji-song",
@@ -751,11 +643,7 @@
     "startAbs": -12492,
     "endAbs": -12229,
     "precision": "year",
-    "posthumousName": "成王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周成王"
-    }
+    "posthumousName": "成王"
   },
   {
     "id": "reign-ji-zhao",
@@ -774,11 +662,7 @@
     "startAbs": -12228,
     "endAbs": -11929,
     "precision": "year",
-    "posthumousName": "康王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周康王"
-    }
+    "posthumousName": "康王"
   },
   {
     "id": "reign-ji-xia",
@@ -797,11 +681,7 @@
     "startAbs": -11928,
     "endAbs": -11701,
     "precision": "year",
-    "posthumousName": "昭王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周昭王"
-    }
+    "posthumousName": "昭王"
   },
   {
     "id": "reign-ji-man",
@@ -820,11 +700,7 @@
     "startAbs": -11700,
     "endAbs": -11053,
     "precision": "year",
-    "posthumousName": "穆王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周穆王"
-    }
+    "posthumousName": "穆王"
   },
   {
     "id": "reign-ji-yihu",
@@ -843,11 +719,7 @@
     "startAbs": -11052,
     "endAbs": -10777,
     "precision": "year",
-    "posthumousName": "共王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周共王"
-    }
+    "posthumousName": "共王"
   },
   {
     "id": "reign-ji-jian",
@@ -866,11 +738,7 @@
     "startAbs": -10776,
     "endAbs": -10681,
     "precision": "year",
-    "posthumousName": "懿王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周懿王"
-    }
+    "posthumousName": "懿王"
   },
   {
     "id": "reign-ji-pifang",
@@ -889,11 +757,7 @@
     "startAbs": -10680,
     "endAbs": -10609,
     "precision": "year",
-    "posthumousName": "孝王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周孝王"
-    }
+    "posthumousName": "孝王"
   },
   {
     "id": "reign-ji-xie",
@@ -912,11 +776,7 @@
     "startAbs": -10608,
     "endAbs": -10513,
     "precision": "year",
-    "posthumousName": "夷王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周夷王"
-    }
+    "posthumousName": "夷王"
   },
   {
     "id": "reign-ji-hu",
@@ -935,11 +795,7 @@
     "startAbs": -10512,
     "endAbs": -10069,
     "precision": "year",
-    "posthumousName": "厉王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周厉王"
-    }
+    "posthumousName": "厉王"
   },
   {
     "id": "reign-ji-jing",
@@ -958,11 +814,7 @@
     "startAbs": -9912,
     "endAbs": -9361,
     "precision": "year",
-    "posthumousName": "宣王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周宣王"
-    }
+    "posthumousName": "宣王"
   },
   {
     "id": "reign-ji-gongsheng",
@@ -981,11 +833,7 @@
     "startAbs": -9360,
     "endAbs": -9229,
     "precision": "year",
-    "posthumousName": "幽王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周幽王"
-    }
+    "posthumousName": "幽王"
   },
   {
     "id": "reign-ji-yijiu",
@@ -1004,11 +852,7 @@
     "startAbs": -9228,
     "endAbs": -8617,
     "precision": "year",
-    "posthumousName": "平王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周平王"
-    }
+    "posthumousName": "平王"
   },
   {
     "id": "reign-ji-yuchen",
@@ -1027,11 +871,7 @@
     "startAbs": -9240,
     "endAbs": -8977,
     "precision": "year",
-    "posthumousName": "携王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周携王"
-    }
+    "posthumousName": "携王"
   },
   {
     "id": "reign-ji-lin",
@@ -1050,11 +890,7 @@
     "startAbs": -8616,
     "endAbs": -8341,
     "precision": "year",
-    "posthumousName": "桓王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周桓王"
-    }
+    "posthumousName": "桓王"
   },
   {
     "id": "reign-ji-tuo",
@@ -1073,11 +909,7 @@
     "startAbs": -8340,
     "endAbs": -8161,
     "precision": "year",
-    "posthumousName": "庄王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周庄王"
-    }
+    "posthumousName": "庄王"
   },
   {
     "id": "reign-ji-huqi",
@@ -1096,11 +928,7 @@
     "startAbs": -8160,
     "endAbs": -8101,
     "precision": "year",
-    "posthumousName": "釐王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周釐王"
-    }
+    "posthumousName": "釐王"
   },
   {
     "id": "reign-ji-lang",
@@ -1119,11 +947,7 @@
     "startAbs": -8100,
     "endAbs": -7801,
     "precision": "year",
-    "posthumousName": "惠王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周惠王"
-    }
+    "posthumousName": "惠王"
   },
   {
     "id": "reign-ji-zheng",
@@ -1142,11 +966,7 @@
     "startAbs": -7800,
     "endAbs": -7405,
     "precision": "year",
-    "posthumousName": "襄王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周襄王"
-    }
+    "posthumousName": "襄王"
   },
   {
     "id": "reign-ji-renchen",
@@ -1165,11 +985,7 @@
     "startAbs": -7404,
     "endAbs": -7333,
     "precision": "year",
-    "posthumousName": "顷王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周顷王"
-    }
+    "posthumousName": "顷王"
   },
   {
     "id": "reign-ji-ban",
@@ -1188,11 +1004,7 @@
     "startAbs": -7332,
     "endAbs": -7261,
     "precision": "year",
-    "posthumousName": "匡王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周匡王"
-    }
+    "posthumousName": "匡王"
   },
   {
     "id": "reign-ji-yu",
@@ -1211,11 +1023,7 @@
     "startAbs": -7260,
     "endAbs": -7009,
     "precision": "year",
-    "posthumousName": "定王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周定王"
-    }
+    "posthumousName": "定王"
   },
   {
     "id": "reign-ji-yi",
@@ -1234,11 +1042,7 @@
     "startAbs": -7008,
     "endAbs": -6841,
     "precision": "year",
-    "posthumousName": "简王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周简王"
-    }
+    "posthumousName": "简王"
   },
   {
     "id": "reign-ji-xiexin",
@@ -1257,11 +1061,7 @@
     "startAbs": -6840,
     "endAbs": -6517,
     "precision": "year",
-    "posthumousName": "灵王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周灵王"
-    }
+    "posthumousName": "灵王"
   },
   {
     "id": "reign-ji-gui",
@@ -1280,11 +1080,7 @@
     "startAbs": -6516,
     "endAbs": -6229,
     "precision": "year",
-    "posthumousName": "景王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周景王"
-    }
+    "posthumousName": "景王"
   },
   {
     "id": "reign-ji-meng",
@@ -1303,11 +1099,7 @@
     "startAbs": -6228,
     "endAbs": -6217,
     "precision": "year",
-    "posthumousName": "悼王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周悼王"
-    }
+    "posthumousName": "悼王"
   },
   {
     "id": "reign-ji-gai",
@@ -1326,11 +1118,7 @@
     "startAbs": -6216,
     "endAbs": -5701,
     "precision": "year",
-    "posthumousName": "敬王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周敬王"
-    }
+    "posthumousName": "敬王"
   },
   {
     "id": "reign-ji-ren",
@@ -1349,11 +1137,7 @@
     "startAbs": -5700,
     "endAbs": -5605,
     "precision": "year",
-    "posthumousName": "元王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周元王"
-    }
+    "posthumousName": "元王"
   },
   {
     "id": "reign-ji-jie",
@@ -1372,11 +1156,7 @@
     "startAbs": -5604,
     "endAbs": -5269,
     "precision": "year",
-    "posthumousName": "贞定王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周贞定王"
-    }
+    "posthumousName": "贞定王"
   },
   {
     "id": "reign-ji-quji",
@@ -1395,11 +1175,7 @@
     "startAbs": -5280,
     "endAbs": -5278,
     "precision": "year",
-    "posthumousName": "哀王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周哀王"
-    }
+    "posthumousName": "哀王"
   },
   {
     "id": "reign-ji-shu",
@@ -1418,11 +1194,7 @@
     "startAbs": -5277,
     "endAbs": -5269,
     "precision": "year",
-    "posthumousName": "思王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周思王"
-    }
+    "posthumousName": "思王"
   },
   {
     "id": "reign-ji-wei",
@@ -1441,11 +1213,7 @@
     "startAbs": -5268,
     "endAbs": -5089,
     "precision": "year",
-    "posthumousName": "考王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周考王"
-    }
+    "posthumousName": "考王"
   },
   {
     "id": "reign-ji-wu",
@@ -1464,11 +1232,7 @@
     "startAbs": -5088,
     "endAbs": -4801,
     "precision": "year",
-    "posthumousName": "威烈王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周威烈王"
-    }
+    "posthumousName": "威烈王"
   },
   {
     "id": "reign-ji-jiao",
@@ -1487,11 +1251,7 @@
     "startAbs": -4800,
     "endAbs": -4489,
     "precision": "year",
-    "posthumousName": "安王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周安王"
-    }
+    "posthumousName": "安王"
   },
   {
     "id": "reign-ji-xi",
@@ -1510,11 +1270,7 @@
     "startAbs": -4488,
     "endAbs": -4405,
     "precision": "year",
-    "posthumousName": "烈王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周烈王"
-    }
+    "posthumousName": "烈王"
   },
   {
     "id": "reign-ji-bian",
@@ -1533,11 +1289,7 @@
     "startAbs": -4404,
     "endAbs": -3829,
     "precision": "year",
-    "posthumousName": "显王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周显王"
-    }
+    "posthumousName": "显王"
   },
   {
     "id": "reign-ji-ding",
@@ -1556,11 +1308,7 @@
     "startAbs": -3828,
     "endAbs": -3757,
     "precision": "year",
-    "posthumousName": "慎靓王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周慎靓王"
-    }
+    "posthumousName": "慎靓王"
   },
   {
     "id": "reign-ji-yan",
@@ -1579,11 +1327,7 @@
     "startAbs": -3756,
     "endAbs": -3049,
     "precision": "year",
-    "posthumousName": "赧王",
-    "preferredAppellation": {
-      "kind": "posthumous",
-      "name": "周赧王"
-    }
+    "posthumousName": "赧王"
   },
   {
     "id": "reign-liu-xiu",
