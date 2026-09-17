@@ -119,6 +119,9 @@ export function personLayerHeight(placed: PlacedPerson[]): number {
   const laneCount = personLaneCount(placed);
   if (laneCount === 0) return 0;
   return (
-    PERSON_ROW_TOP + (laneCount - 1) * PERSON_ROW_STEP + PERSON_BAR_HEIGHT
+    PERSON_ROW_TOP +
+    (laneCount - 1) * PERSON_ROW_STEP +
+    PERSON_BAR_HEIGHT +
+    PERSON_LAYER_BOTTOM_PAD
   );
 }

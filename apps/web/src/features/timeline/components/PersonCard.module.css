@@ -43,7 +43,7 @@
 
 .name {
   font-size: 11px;
-  line-height: 1.2;
+  line-height: 1.5;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -51,7 +51,7 @@
 .role {
   flex: 0 0 auto;
   font-size: 10px;
-  line-height: 1.2;
+  line-height: 1.4;
   color: var(--color-ink-muted);
 }
 
@@ -106,6 +106,6 @@
 .pointKind {
   flex: 0 0 auto;
   font-size: 10px;
-  line-height: 1.2;
+  line-height: 1.4;
   color: var(--color-ink-muted);
 }

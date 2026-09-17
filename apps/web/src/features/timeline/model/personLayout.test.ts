@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { PersonSchema, absMonth } from "@eralens/shared";
 import {
   layoutPersons,
+  PERSON_BAR_HEIGHT,
   personLaneCount,
   personLayerHeight,
 } from "./personLayout";
@@ -34,6 +35,13 @@ describe("layoutPersons", () => {
     expect(placed.every((item) => item.mode === "span")).toBe(true);
     expect(personLayerHeight(placed)).toBeGreaterThanOrEqual(36);
     expect(placed.every((item) => item.top >= 12)).toBe(true);
+  });
+
+  it("keeps padding below the last bar so the pill is not clipped", () => {
+    const placed = layoutPersons([caoCao], viewport);
+    const last = placed[0]!;
+    expect(last).toBeDefined();
+    expect(personLayerHeight(placed)).toBeGreaterThan(last.top + PERSON_BAR_HEIGHT);
   });
 
   it("lays out birth-only persons as point markers", () => {
