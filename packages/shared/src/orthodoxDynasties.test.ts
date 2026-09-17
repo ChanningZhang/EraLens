@@ -187,6 +187,24 @@ describe("orthodoxDynasties", () => {
     expect(
       overlapsOrthodoxSpan(yuan, absMonth(1367), absMonth(1370)),
     ).toBe(true);
+    expect(
+      isOrthodoxReign(yuan, {
+        startAbs: absMonth(1333, 7),
+        endAbs: absMonth(1368, 1),
+      }),
+    ).toBe(true);
+    expect(
+      isOrthodoxReign(yuan, {
+        startAbs: absMonth(1368),
+        endAbs: absMonth(1370, 5),
+      }),
+    ).toBe(false);
+    expect(
+      isOrthodoxReign(yuan, {
+        startAbs: absMonth(1370, 5),
+        endAbs: absMonth(1378, 5),
+      }),
+    ).toBe(false);
   });
 
   it("marks zhou-wu as orthodox for wu zetian interregnum", () => {

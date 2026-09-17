@@ -29,6 +29,10 @@ const PERSON_NAME_ALIASES: Record<string, string> = {
 const STATE_PREFIX =
   /^(齐|晋|楚|燕|宋|鲁|卫|郑|曹|吴|越|韩|赵|魏|秦|中山|田)/;
 
+/** Last syllable of a regime name, used to reject placeholders like 徐宋帝 / 陈汉帝. */
+const REGIME_NAME_FINAL =
+  /[齐晋楚燕宋鲁卫郑曹吴越韩赵魏秦汉夏唐隋梁陈周闽元辽金明清蜀]$/;
+
 type ReignAppellationFields = Pick<
   Reign,
   | "start"
@@ -84,11 +88,20 @@ export function extractGivenNameFromRegnalTitle(
 /** Titles like 隋文帝 / 隋炀帝 that already carry the conventional shorthand. */
 export function isDynasticEmperorTitle(title: string | null | undefined): boolean {
   if (!title || title === "皇帝" || title === "始皇帝") return false;
-  return /^[\u4e00-\u9fff]{2,6}帝$/.test(title);
+  if (!/^[\u4e00-\u9fff]{2,6}帝$/.test(title)) return false;
+  const stem = title.slice(0, -1);
+  // "{政权名}帝" (徐宋帝、陈汉帝、明夏帝) has no 谥 body: the last syllable
+  // of a 1–2 character stem is the state name itself, not 文/炀/献.
+  if (stem.length <= 2 && REGIME_NAME_FINAL.test(stem)) return false;
+  return true;
+}
+
+function eraNameList(reign: ReignAppellationFields): string[] {
+  return reign.eraNames.map((era) => era.name).filter(Boolean);
 }
 
 function firstEraName(reign: ReignAppellationFields): string | undefined {
-  return reign.eraNames[0]?.name;
+  return eraNameList(reign)[0];
 }
 
 function templeDisplayName(_title: string, templeName: string): string {
@@ -97,6 +110,10 @@ function templeDisplayName(_title: string, templeName: string): string {
 
 function posthumousDisplayName(_title: string, posthumousName: string): string {
   return posthumousName;
+}
+
+function titleEmbedsEraName(title: string, eraNames: string[]): boolean {
+  return eraNames.some((era) => era.length >= 2 && title.includes(era));
 }
 
 function resolvePosthumousAppellation(
@@ -108,7 +125,11 @@ function resolvePosthumousAppellation(
       name: posthumousDisplayName(reign.title, reign.posthumousName),
     };
   }
-  if (isDynasticEmperorTitle(reign.title)) {
+  // 元泰定帝 / 元天顺帝 are era-based 史称, not 谥号.
+  if (
+    isDynasticEmperorTitle(reign.title) &&
+    !titleEmbedsEraName(reign.title, eraNameList(reign))
+  ) {
     return { kind: "posthumous", name: reign.title };
   }
   return null;
@@ -254,9 +275,9 @@ export function resolveReignDetailFacts(
   if (reign.templeName) {
     facts.push({ label: "庙号", value: reign.templeName });
   }
-  const era = firstEraName(reign);
-  if (era) {
-    facts.push({ label: "年号", value: era });
+  const eras = eraNameList(reign);
+  if (eras.length) {
+    facts.push({ label: "年号", value: eras.join("、") });
   }
   return facts;
 }

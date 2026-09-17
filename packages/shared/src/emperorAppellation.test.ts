@@ -54,6 +54,37 @@ describe("resolveEmperorAppellation", () => {
     ).toEqual({ kind: "posthumous", name: "炀皇帝" });
   });
 
+  it("uses era name for Yuan rulers who never received a temple name", () => {
+    expect(
+      resolveEmperorAppellation(
+        source({
+          start: { year: 1323, month: 9 },
+          title: "元泰定帝",
+          eraNames: [{ name: "泰定" }, { name: "致和" }] as Reign["eraNames"],
+        }),
+      ),
+    ).toEqual({ kind: "era", name: "泰定" });
+    expect(
+      resolveReignCardMeta(
+        source({
+          start: { year: 1323, month: 9 },
+          title: "元泰定帝",
+          eraNames: [{ name: "泰定" }, { name: "致和" }] as Reign["eraNames"],
+        }),
+        "也孙铁木儿",
+      ),
+    ).toEqual({ label: "年号", name: "泰定" });
+    expect(
+      resolveEmperorAppellation(
+        source({
+          start: { year: 1328, month: 8 },
+          title: "元天顺帝",
+          eraNames: [{ name: "天顺" }] as Reign["eraNames"],
+        }),
+      ),
+    ).toEqual({ kind: "era", name: "天顺" });
+  });
+
   it("uses a temple name from Tang through Yuan", () => {
     expect(
       resolveEmperorAppellation(
@@ -100,6 +131,41 @@ describe("resolveEmperorAppellation", () => {
         }),
       ),
     ).toEqual({ kind: "era", name: "康熙" });
+  });
+
+  it("does not treat {regime}帝 placeholders as posthumous names", () => {
+    expect(
+      resolveEmperorAppellation(
+        source({
+          start: { year: 1351, month: 1 },
+          title: "徐宋帝",
+          eraNames: [{ name: "治平" }] as Reign["eraNames"],
+        }),
+      ),
+    ).toEqual({ kind: "era", name: "治平" });
+    expect(
+      resolveEmperorAppellation(
+        source({
+          start: { year: 1360, month: 1 },
+          title: "陈汉帝",
+          eraNames: [{ name: "大义" }] as Reign["eraNames"],
+        }),
+      ),
+    ).toEqual({ kind: "era", name: "大义" });
+  });
+
+  it("uses the temple name for a late Yuan emperor with a recorded 庙号", () => {
+    expect(
+      resolveEmperorAppellation(
+        source({
+          start: { year: 1351, month: 1 },
+          title: "徐宋世宗",
+          posthumousName: "应天启运献武皇帝",
+          templeName: "世宗",
+          eraNames: [{ name: "治平" }, { name: "太平" }] as Reign["eraNames"],
+        }),
+      ),
+    ).toEqual({ kind: "temple", name: "世宗" });
   });
 
   it("falls back to a regnal title when Qin-style names do not exist", () => {
@@ -631,6 +697,31 @@ describe("resolveReignDetailFacts", () => {
       { label: "在位", value: "960 — 976" },
       { label: "庙号", value: "太祖" },
       { label: "年号", value: "建隆" },
+    ]);
+  });
+
+  it("lists every era name instead of only the first", () => {
+    expect(
+      resolveReignDetailFacts(
+        source({
+          start: { year: 1351, month: 1 },
+          end: { year: 1360, month: 6 },
+          title: "徐宋世宗",
+          posthumousName: "应天启运献武皇帝",
+          templeName: "世宗",
+          eraNames: [
+            { name: "治平" },
+            { name: "太平" },
+            { name: "天启" },
+            { name: "天定" },
+          ] as Reign["eraNames"],
+        }),
+      ),
+    ).toEqual([
+      { label: "在位", value: "1351 — 1360" },
+      { label: "谥号", value: "应天启运献武皇帝" },
+      { label: "庙号", value: "世宗" },
+      { label: "年号", value: "治平、太平、天启、天定" },
     ]);
   });
 });

@@ -7,6 +7,8 @@ import { fileURLToPath } from "node:url";
 import {
   person,
   dr,
+  dynastyReign,
+  eras,
   eventPoint,
   eventRange,
   writeImportPackage,
@@ -30,13 +32,13 @@ const persons = [
   // 北辽
   person("yelu-chun", "耶律淳", ["皇帝"], "辽末宗室，金攻辽时于燕京称帝，国号北辽，在位仅一年余。", "耶律淳"),
   person("xiao-defei", "萧德妃", ["后妃", "政治家"], "耶律淳妃，耶律淳死后临朝称制，北辽旋亡。", "萧德妃"),
-  // 东辽
-  person("yelu-liuge", "耶律留哥", ["皇帝"], "金末契丹将领，1213年称王建国号辽，史称东辽。", "耶律留哥", ym(1165), ym(1220)),
-  person("yao-li-shi", "姚里氏", ["皇帝", "皇后"], "耶律留哥妻，留哥死后嗣位，1220–1226年在位。", "姚里氏"),
-  person("yelu-xieshe", "耶律薛阇", ["皇帝"], "耶律留哥之弟，1226–1238年在位。", "耶律薛阇"),
-  person("yelu-shouguonu", "耶律收国奴", ["皇帝"], "耶律薛阇之子，1238–1259年在位。", "耶律收国奴"),
-  person("yelu-gunai", "耶律古乃", ["皇帝"], "东辽末代君主，1259–1269年在位，后降蒙古。", "耶律古乃"),
-  person("yelu-sibu", "耶律厮不", ["宗室"], "耶律留哥之弟，封郡王，后叛留哥，东辽内乱。", "耶律厮不"),
+  // 东辽：元史称王不称帝；姚里氏权领其众，非国王。
+  person("yelu-liuge", "耶律留哥", ["君主"], "金末契丹将领，1213年称辽王、国号辽，改元天统；拒称帝，蒙古仍封辽王。史称东辽。", "耶律留哥", ym(1165), ym(1220)),
+  person("yao-li-shi", "姚里氏", ["王后", "政治家"], "耶律留哥妻，元史立为妃；留哥卒后佩虎符权领其众七年，请以嫡子薛阇袭爵。", "姚里氏"),
+  person("yelu-xieshe", "耶律薛阇", ["君主"], "耶律留哥嫡长子，1226年袭辽王爵，后行广宁路都元帅府事。", "耶律薛阇", ym(1193), ym(1238)),
+  person("yelu-shouguonu", "耶律收国奴", ["君主"], "耶律薛阇之子，1238年袭爵，行广宁府路总管军民万户府事，易名石剌。", "耶律收国奴", ym(1215), ym(1259)),
+  person("yelu-gunai", "耶律古乃", ["君主"], "耶律收国奴长子，1259年嗣爵；至元六年广宁并入东京，去职同年卒。", "耶律古乃", ym(1234), ym(1269)),
+  person("yelu-sibu", "耶律厮不", ["宗室"], "留哥属下郡王，1216年僭帝号于澄州，国号辽、改元天威，史称后辽；月余被杀。", "耶律厮不"),
 ];
 
 // ── dynasties ──────────────────────────────────────────────────────────────
@@ -76,7 +78,7 @@ const dynasties = [
     end: ym(1269, 12),
     precision: "year",
     colorToken: nextColor(),
-    note: "1213年耶律留哥称王；1269年末代君主耶律古乃降蒙古。",
+    note: "1213年耶律留哥称辽王；1269年耶律古乃去职，广宁并入东京。",
   },
 ];
 
@@ -98,12 +100,26 @@ const beiliaoReigns = [
   dr("beiliao", "yelu-chun", "北辽皇帝", null, null, 1122, 1123),
 ];
 
+const liaoKing = { kind: "regnal", name: "辽王" };
 const dongliaoReigns = [
-  dr("dongliao", "yelu-liuge", "东辽国王", null, null, 1213, 1220, [{ name: "天统", sy: 1213, ey: 1220 }]),
-  dr("dongliao", "yao-li-shi", "东辽国王", null, null, 1220, 1226),
-  dr("dongliao", "yelu-xieshe", "东辽国王", null, null, 1226, 1238),
-  dr("dongliao", "yelu-shouguonu", "东辽国王", null, null, 1238, 1259),
-  dr("dongliao", "yelu-gunai", "东辽国王", null, null, 1259, 1269),
+  dynastyReign(
+    "dongliao",
+    "yelu-liuge",
+    "辽王",
+    null,
+    null,
+    1213,
+    1220,
+    eras("reign-yelu-liuge-dongliao", [{ name: "天统", sy: 1213, ey: 1216 }]),
+    liaoKing,
+  ),
+  dynastyReign("dongliao", "yao-li-shi", "王后", null, null, 1220, 1226, [], {
+    kind: "regnal",
+    name: "王后",
+  }),
+  dynastyReign("dongliao", "yelu-xieshe", "辽王", null, null, 1226, 1238, [], liaoKing),
+  dynastyReign("dongliao", "yelu-shouguonu", "辽王", null, null, 1238, 1259, [], liaoKing),
+  dynastyReign("dongliao", "yelu-gunai", "辽王", null, null, 1259, 1269, [], liaoKing),
 ];
 
 const reignGroups = [xiliaoReigns, beiliaoReigns, dongliaoReigns];
@@ -158,17 +174,17 @@ const events = [
     at: ym(1213),
     dynastyIds: ["dongliao"],
     participantIds: ["yelu-liuge"],
-    summary: "耶律留哥于辽东称王，定国号辽，改元天统，史称东辽。",
+    summary: "耶律留哥于辽东称辽王，定国号辽，改元天统，史称东辽；众人劝进称帝，留哥拒绝。",
   }),
   eventPoint({
     id: "dongliao-yelu-sibu-rebel",
     name: "耶律厮不叛乱",
     kind: "politics",
-    dateNote: "1213年前后，封郡王后叛留哥",
-    at: ym(1214),
+    dateNote: "元史丙子（1216）僭帝号于澄州，改元天威，方阅月被杀",
+    at: ym(1216),
     dynastyIds: ["dongliao"],
     participantIds: ["yelu-sibu", "yelu-liuge"],
-    summary: "耶律厮不等宗室叛东辽，留哥平定内乱，东辽政局动荡。",
+    summary: "耶律厮不僭帝号于澄州，国号辽、改元天威；月余被杀，其后金山、统古与、喊舍相继自立。",
   }),
 ];
 
@@ -218,7 +234,7 @@ writeImportPackage(__dirname, {
     window: { startYear: 1122, startMonth: 1, endYear: 1269, endMonth: 12 },
     scope: "cn",
     depth: "standard",
-    generatedAt: "2026-09-13",
+    generatedAt: "2026-09-17",
     counts: {
       persons: persons.length,
       dynasties: dynasties.length,
@@ -230,8 +246,10 @@ writeImportPackage(__dirname, {
       { label: "西辽", url: "https://zh.wikipedia.org/wiki/西辽" },
       { label: "耶律大石", url: "https://zh.wikipedia.org/wiki/耶律大石" },
       { label: "北辽", url: "https://zh.wikipedia.org/wiki/北辽" },
-      { label: "东辽", url: "https://zh.wikipedia.org/wiki/东辽" },
+      { label: "东辽国", url: "https://zh.wikipedia.org/wiki/东辽国" },
       { label: "耶律留哥", url: "https://zh.wikipedia.org/wiki/耶律留哥" },
+      { label: "姚里氏", url: "https://zh.wikipedia.org/wiki/姚里氏" },
+      { label: "元史·耶律留哥传", url: "https://zh.wikisource.org/wiki/元史/卷149" },
       { label: "辽朝君主列表", url: "https://zh.wikipedia.org/wiki/辽朝君主列表" },
     ],
     notes: [
@@ -241,6 +259,8 @@ writeImportPackage(__dirname, {
       "西辽灭亡事件补充关联 mongol-empire 与 temujin（见 mongol-pre-yuan）。",
       "北辽建立事件补充关联 liao 王朝（见 song-liao-jin）。",
       "在位年取维基百科常见年表，precision=year。",
+      "东辽无庙号谥号。元史：留哥自立为辽王、拒称帝，蒙古仍封辽王；子孙袭爵。姚里氏为妃/王后，权领其众七年，不袭王爵。称号用 preferred_appellation=辽王/王后，避免留哥年号天统盖过王号。",
+      "文献年号多作元统；辽宁出土官印署天统三年，从出土作天统，起迄取维基天统条 1213–1216。",
     ],
   },
 });

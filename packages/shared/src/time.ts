@@ -61,18 +61,25 @@ export function rangeIntersectsWindow(
   return rangesIntersect(entityStart, entityEnd, windowStart, windowEnd);
 }
 
-export function formatYear(year: number): string {
+export type YearLabelStyle = "era" | "compact";
+
+export function formatYear(year: number, style: YearLabelStyle = "era"): string {
   if (year < 0) {
-    return `公元前${Math.abs(year)}年`;
+    const prefix = style === "compact" ? "前" : "公元前";
+    return `${prefix}${Math.abs(year)}年`;
   }
   if (year === 0) {
-    return "公元元年";
+    return style === "compact" ? "元年" : "公元元年";
   }
-  return `公元${year}年`;
+  return style === "compact" ? `${year}年` : `公元${year}年`;
 }
 
-export function formatYearMonth(year: number, month: number): string {
-  return `${formatYear(year)}${month}月`;
+export function formatYearMonth(
+  year: number,
+  month: number,
+  style: YearLabelStyle = "era",
+): string {
+  return `${formatYear(year, style)}${month}月`;
 }
 
 export function formatYearMonthFromAbs(abs: AbsMonth): string {
@@ -92,14 +99,17 @@ function formatDurationMonths(totalMonths: number): string {
 function formatSpanPointLabel(
   point: TimePoint,
   precision?: TimeRange["precision"],
+  style: YearLabelStyle = "era",
 ): string {
   if (precision === "month" || precision === "day") {
-    return formatYearMonth(point.year, point.month);
+    return formatYearMonth(point.year, point.month, style);
   }
   if (precision === "year") {
-    return formatYear(point.year);
+    return formatYear(point.year, style);
   }
-  return point.month === 1 ? formatYear(point.year) : formatYearMonth(point.year, point.month);
+  return point.month === 1
+    ? formatYear(point.year, style)
+    : formatYearMonth(point.year, point.month, style);
 }
 
 function formatAbsSpanDuration(
@@ -125,13 +135,13 @@ export function formatAbsSpanTooltip(
   const start = fromAbsMonth(startAbs);
   const end = fromAbsMonth(endAbs);
   if (precision === "year" && start.year === end.year) {
-    return formatYear(start.year);
+    return formatYear(start.year, "compact");
   }
   if (startAbs === endAbs) {
-    return formatSpanPointLabel(start, precision);
+    return formatSpanPointLabel(start, precision, "compact");
   }
-  const startLabel = formatSpanPointLabel(start, precision);
-  const endLabel = formatSpanPointLabel(end, precision);
+  const startLabel = formatSpanPointLabel(start, precision, "compact");
+  const endLabel = formatSpanPointLabel(end, precision, "compact");
   const duration = formatAbsSpanDuration(start, end, startAbs, endAbs, precision);
   return `${startLabel} — ${endLabel} · ${duration}`;
 }

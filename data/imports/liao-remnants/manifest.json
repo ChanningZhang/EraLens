@@ -9,7 +9,7 @@
   },
   "scope": "cn",
   "depth": "standard",
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-17",
   "counts": {
     "persons": 14,
     "dynasties": 3,
@@ -31,12 +31,20 @@
       "url": "https://zh.wikipedia.org/wiki/北辽"
     },
     {
-      "label": "东辽",
-      "url": "https://zh.wikipedia.org/wiki/东辽"
+      "label": "东辽国",
+      "url": "https://zh.wikipedia.org/wiki/东辽国"
     },
     {
       "label": "耶律留哥",
       "url": "https://zh.wikipedia.org/wiki/耶律留哥"
+    },
+    {
+      "label": "姚里氏",
+      "url": "https://zh.wikipedia.org/wiki/姚里氏"
+    },
+    {
+      "label": "元史·耶律留哥传",
+      "url": "https://zh.wikisource.org/wiki/元史/卷149"
     },
     {
       "label": "辽朝君主列表",
@@ -49,6 +57,8 @@
     "萧德妃称制以事件收录，不建 reign；耶律厮不等叛乱亦以事件收录。",
     "西辽灭亡事件补充关联 mongol-empire 与 temujin（见 mongol-pre-yuan）。",
     "北辽建立事件补充关联 liao 王朝（见 song-liao-jin）。",
-    "在位年取维基百科常见年表，precision=year。"
+    "在位年取维基百科常见年表，precision=year。",
+    "东辽无庙号谥号。元史：留哥自立为辽王、拒称帝，蒙古仍封辽王；子孙袭爵。姚里氏为妃/王后，权领其众七年，不袭王爵。称号用 preferred_appellation=辽王/王后，避免留哥年号天统盖过王号。",
+    "文献年号多作元统；辽宁出土官印署天统三年，从出土作天统，起迄取维基天统条 1213–1216。"
   ]
 }

@@ -1,10 +1,13 @@
 import { describe, expect, it } from "vitest";
 import { COLOR_TOKENS, type ColorToken } from "./schema";
+import { absMonth } from "./time";
 import {
   assignDistinctColorTokens,
   buildDynastyColorMap,
   colorTokenDistance,
+  ORTHODOX_COLOR_TOKEN,
   resolveDynastyColorToken,
+  resolveReignColorToken,
 } from "./dynastyColors";
 
 function mockDynasties(count: number) {
@@ -96,5 +99,47 @@ describe("assignDistinctColorTokens", () => {
     expect(colorTokenDistance(second!, "ochre")).toBeGreaterThan(
       colorTokenDistance("wisteria", "ochre"),
     );
+  });
+});
+
+describe("resolveReignColorToken", () => {
+  const yuan = {
+    id: "yuan",
+    startAbs: absMonth(1271, 12),
+    endAbs: absMonth(1388),
+    colorToken: "indigo" as const,
+  };
+
+  it("keeps gold for orthodox Yuan reigns but not for 元惠宗 starting at the cutoff", () => {
+    expect(
+      resolveReignColorToken(yuan, {
+        startAbs: absMonth(1333, 7),
+        endAbs: absMonth(1368, 1),
+      }),
+    ).toBe(ORTHODOX_COLOR_TOKEN);
+    expect(
+      resolveReignColorToken(yuan, {
+        startAbs: absMonth(1368),
+        endAbs: absMonth(1370, 5),
+      }),
+    ).toBe("indigo");
+    expect(
+      resolveReignColorToken(yuan, {
+        startAbs: absMonth(1370, 5),
+        endAbs: absMonth(1378, 5),
+      }),
+    ).toBe("indigo");
+  });
+
+  it("does not use the cutoff month's orthodox-at color for the post-orthodox card", () => {
+    expect(resolveDynastyColorToken(yuan, absMonth(1368))).toBe(
+      ORTHODOX_COLOR_TOKEN,
+    );
+    expect(
+      resolveReignColorToken(yuan, {
+        startAbs: absMonth(1368),
+        endAbs: absMonth(1370, 5),
+      }),
+    ).not.toBe(resolveDynastyColorToken(yuan, absMonth(1368)));
   });
 });

@@ -53,7 +53,7 @@ describe("buildEntityDetail reign", () => {
     const detail = buildEntityDetail(store, { type: "reign", id: "reign-test" });
 
     expect(detail.title).toBe("赵匡胤");
-    expect(detail.subtitle).toBe("北宋 · 宋太祖");
+    expect(detail.subtitle).toBe("北宋 · 太祖");
     expect(detail.facts).toEqual([
       { label: "在位", value: "960 — 976" },
       { label: "庙号", value: "太祖" },

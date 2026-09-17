@@ -1,5 +1,14 @@
-import { isOrthodoxAt, type OrthodoxDynasty } from "./orthodoxDynasties";
-import { COLOR_TOKENS, COLOR_VALUES, type ColorToken } from "./schema";
+import {
+  isOrthodoxAt,
+  isOrthodoxReign,
+  type OrthodoxDynasty,
+} from "./orthodoxDynasties";
+import {
+  COLOR_TOKENS,
+  COLOR_VALUES,
+  type ColorToken,
+  type Reign,
+} from "./schema";
 
 const LOOKBACK = 3;
 
@@ -91,6 +100,26 @@ export function resolveDynastyColorValue(
   atAbs?: number,
 ): string {
   return COLOR_VALUES[resolveDynastyColorToken(dynasty, atAbs)];
+}
+
+/**
+ * Reign-card / reign-detail color. Gold only when the reign itself is
+ * orthodox — not merely because its start month still sits on the dynasty's
+ * orthodox cutoff (e.g. 元惠宗 1368 after Yuan orthodox ends).
+ */
+export function resolveReignColorToken(
+  dynasty: DynastyColorInput & { endAbs: number },
+  reign: Pick<Reign, "startAbs" | "endAbs" | "claimTrack">,
+): ColorToken {
+  if (isOrthodoxReign(dynasty, reign)) return ORTHODOX_COLOR_TOKEN;
+  return dynasty.colorToken;
+}
+
+export function resolveReignColorValue(
+  dynasty: DynastyColorInput & { endAbs: number },
+  reign: Pick<Reign, "startAbs" | "endAbs" | "claimTrack">,
+): string {
+  return COLOR_VALUES[resolveReignColorToken(dynasty, reign)];
 }
 
 export function isOrthodoxDisplayAt(

@@ -5,7 +5,7 @@ import {
   resolveReignPrimaryLabel,
   resolveReignRelatedSubtitle,
 } from "./emperorAppellation";
-import { resolveDynastyColorToken } from "./dynastyColors";
+import { resolveDynastyColorToken, resolveReignColorToken } from "./dynastyColors";
 import { resolveOrthodoxFromAbs } from "./orthodoxDynasties";
 import { eventSpanAbs, formatEventTime } from "./eventTime";
 import {
@@ -176,7 +176,7 @@ export function buildEntityDetail(
       title,
       subtitle: resolveReignDetailSubtitle(reign, dynasty?.name, person?.name),
       colorToken: dynasty
-        ? resolveDynastyColorToken(dynasty, reign.startAbs)
+        ? resolveReignColorToken(dynasty, reign)
         : undefined,
       facts: [...resolveReignDetailFacts(reign), ...claimDetailFacts(reign)],
       summary: person?.bio,

@@ -1,5 +1,5 @@
 import type { Reign } from "./schema";
-import { formatAbsSpanTooltip, formatYear, formatYearMonth } from "./time";
+import { formatAbsSpanTooltip, formatYearMonth } from "./time";
 
 /** Days in a Gregorian calendar month (historical dates use proleptic Gregorian). */
 export function daysInCalendarMonth(year: number, month: number): number {
@@ -55,7 +55,7 @@ export function reignDurationDays(reign: Reign): number | null {
 }
 
 function formatYearMonthDay(year: number, month: number, day: number): string {
-  return `${formatYearMonth(year, month)}${day}日`;
+  return `${formatYearMonth(year, month, "compact")}${day}日`;
 }
 
 function calendarYearsMonths(

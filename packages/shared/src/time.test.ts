@@ -34,30 +34,28 @@ describe("time utilities", () => {
 
   it("formats abs span tooltip for multi-year ranges", () => {
     expect(formatAbsSpanTooltip(absMonth(-221), absMonth(-210))).toBe(
-      "公元前221年 — 公元前210年 · 12年",
+      "前221年 — 前210年 · 12年",
     );
   });
 
   it("formats abs span tooltip for a single year", () => {
-    expect(formatAbsSpanTooltip(absMonth(200), absMonth(200))).toBe("公元200年");
+    expect(formatAbsSpanTooltip(absMonth(200), absMonth(200))).toBe("200年");
   });
 
   it("hides month for year-precision spans stored as Jan–Dec", () => {
     expect(
       formatAbsSpanTooltip(absMonth(-356, 1), absMonth(-320, 12), "year"),
-    ).toBe("公元前356年 — 公元前320年 · 37年");
+    ).toBe("前356年 — 前320年 · 37年");
   });
 
   it("shows months for month-precision spans", () => {
     expect(
       formatAbsSpanTooltip(absMonth(-356, 3), absMonth(-320, 12), "month"),
-    ).toBe("公元前356年3月 — 公元前320年12月 · 36年10个月");
+    ).toBe("前356年3月 — 前320年12月 · 36年10个月");
   });
 
   it("collapses same-calendar-year year-precision spans", () => {
-    expect(formatAbsSpanTooltip(absMonth(200, 1), absMonth(200, 12), "year")).toBe(
-      "公元200年",
-    );
+    expect(formatAbsSpanTooltip(absMonth(200, 1), absMonth(200, 12), "year")).toBe("200年");
   });
 
   it("detects range intersection", () => {

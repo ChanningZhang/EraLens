@@ -87,7 +87,7 @@ describe("formatReignSpanTooltip", () => {
           endAbs: absMonth(1234, 2),
         }),
       ),
-    ).toBe("公元1234年2月9日 · 1天");
+    ).toBe("1234年2月9日 · 1天");
   });
 
   it("formats multi-year day-precision reigns as years and months", () => {
@@ -100,7 +100,7 @@ describe("formatReignSpanTooltip", () => {
           endAbs: absMonth(756, 8),
         }),
       ),
-    ).toBe("公元712年9月8日 — 公元756年8月12日 · 43年11个月");
+    ).toBe("712年9月8日 — 756年8月12日 · 43年11个月");
   });
 
   it("formats sub-year spans in months", () => {
@@ -113,7 +113,7 @@ describe("formatReignSpanTooltip", () => {
           endAbs: absMonth(1234, 8),
         }),
       ),
-    ).toBe("公元1234年2月9日 — 公元1234年8月15日 · 6个月");
+    ).toBe("1234年2月9日 — 1234年8月15日 · 6个月");
   });
 
   it("formats sub-month spans in days", () => {
@@ -126,7 +126,7 @@ describe("formatReignSpanTooltip", () => {
           endAbs: absMonth(1234, 2),
         }),
       ),
-    ).toBe("公元1234年2月9日 — 公元1234年2月20日 · 12天");
+    ).toBe("1234年2月9日 — 1234年2月20日 · 12天");
   });
 
   it("hides month for year-precision reigns stored as Jan–Dec", () => {
@@ -140,7 +140,7 @@ describe("formatReignSpanTooltip", () => {
           endAbs: absMonth(-320, 12),
         }),
       ),
-    ).toBe("公元前356年 — 公元前320年 · 37年");
+    ).toBe("前356年 — 前320年 · 37年");
   });
 });
 

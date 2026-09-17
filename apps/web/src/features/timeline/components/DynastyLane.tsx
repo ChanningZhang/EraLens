@@ -9,6 +9,7 @@ import {
   resolveActivePhaseDynastyId,
   resolveDynastyColorValue,
   resolveFrozenLaneLabel,
+  resolveReignColorValue,
   type Dynasty,
   type Reign,
 } from "@eralens/shared";
@@ -143,19 +144,16 @@ export function DynastyLane({
           ))}
           {items.map(({ reign }) => {
             const reignDynasty = dynastiesById.get(reign.dynastyId) ?? dynasty;
-            const reignColor = resolveDynastyColorValue(
-              reignDynasty as Dynasty,
-              reign.startAbs,
-            );
+            const orthodox = isOrthodoxReign(reignDynasty, reign);
             return (
               <ReignCard
                 key={reign.id}
                 reign={reign}
                 dynasty={reignDynasty as Dynasty}
-                color={reignColor}
+                color={resolveReignColorValue(reignDynasty as Dynasty, reign)}
                 reigns={reigns}
                 personName={personNames.get(reign.personId)}
-                orthodox={isOrthodoxReign(reignDynasty, reign)}
+                orthodox={orthodox}
               />
             );
           })}
