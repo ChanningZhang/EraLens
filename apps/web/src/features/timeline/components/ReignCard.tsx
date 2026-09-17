@@ -18,6 +18,7 @@ import { useSelection } from "../hooks/useSelection";
 import { useViewport } from "../hooks/useViewport";
 import { projectAbs } from "../model/coordinates";
 import {
+  buildReignCardTooltip,
   resolveReignBarLayout,
   resolveReignCaptionPlacement,
   shouldShowReignCardMeta,
@@ -124,14 +125,18 @@ export function ReignCard({
     metaGlyphCount,
   );
   const tooltipName = personName && personName !== label ? personName : label;
-  const nameTooltip = meta ? `${tooltipName}　${meta.name}` : tooltipName;
   const timeTooltip = formatReignSpanTooltip(reign);
   const claimTooltip = reign.claimRole
     ? `${claimRoleLabel(reign.claimRole)}${reign.claimLabel ? `・${reign.claimLabel}` : ""}`
     : undefined;
-  const baseTooltip =
-    detail === "full" ? timeTooltip : `${nameTooltip}\n${timeTooltip}`;
-  const tooltipText = claimTooltip ? `${baseTooltip}\n${claimTooltip}` : baseTooltip;
+  const tooltipText = buildReignCardTooltip({
+    detail,
+    showMeta,
+    meta,
+    tooltipName,
+    timeTooltip,
+    claimTooltip,
+  });
 
   const className = useMemo(() => {
     return [

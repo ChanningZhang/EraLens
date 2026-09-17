@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  buildReignCardTooltip,
   cardDetailLevel,
   personDetailLevel,
   resolveReignBarLayout,
@@ -119,6 +120,59 @@ describe("shouldShowReignCardMeta", () => {
   it("hides meta when the name must wrap or hang below the card", () => {
     expect(shouldShowReignCardMeta(16, 4, 4)).toBe(false);
     expect(shouldShowReignCardMeta(15, 3, 4)).toBe(false);
+  });
+});
+
+describe("buildReignCardTooltip", () => {
+  const time = "公元304年1月 — 公元310年7月 · 6年7个月";
+
+  it("shows only time when the card already shows name and meta", () => {
+    expect(
+      buildReignCardTooltip({
+        detail: "full",
+        showMeta: true,
+        meta: { name: "汉赵光文皇帝" },
+        tooltipName: "刘渊",
+        timeTooltip: time,
+      }),
+    ).toBe(time);
+  });
+
+  it("adds hidden meta when the card shows the name but not the appellation", () => {
+    expect(
+      buildReignCardTooltip({
+        detail: "full",
+        showMeta: false,
+        meta: { name: "汉赵光文皇帝" },
+        tooltipName: "刘渊",
+        timeTooltip: time,
+      }),
+    ).toBe(`汉赵光文皇帝\n${time}`);
+  });
+
+  it("adds name and meta when the label hangs below the bar", () => {
+    expect(
+      buildReignCardTooltip({
+        detail: "below",
+        showMeta: false,
+        meta: { name: "汉赵光文皇帝" },
+        tooltipName: "刘渊",
+        timeTooltip: time,
+      }),
+    ).toBe(`刘渊　汉赵光文皇帝\n${time}`);
+  });
+
+  it("appends claim lines after the time span", () => {
+    expect(
+      buildReignCardTooltip({
+        detail: "full",
+        showMeta: false,
+        meta: { name: "汉赵光文皇帝" },
+        tooltipName: "刘渊",
+        timeTooltip: time,
+        claimTooltip: "割据・长安",
+      }),
+    ).toBe(`汉赵光文皇帝\n${time}\n割据・长安`);
   });
 });
 
