@@ -93,6 +93,14 @@ export const selectionStore = {
     return state;
   },
   select(ref: EntityRef, abs?: AbsMonth) {
+    if (
+      state.detailOpen &&
+      state.selected?.type === ref.type &&
+      state.selected.id === ref.id
+    ) {
+      selectionStore.clearSelection();
+      return;
+    }
     state = {
       ...state,
       selected: ref,

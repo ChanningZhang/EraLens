@@ -16,6 +16,7 @@ import {
 } from "../model/eventLayout";
 import { assignLanes } from "../model/laneLayout";
 import { shouldShowEvent, shouldShowPersons } from "../model/lod";
+import { centerGuideX } from "../model/coordinates";
 import {
   layoutPersons,
   PERSON_LAYER_BOTTOM_PAD,
@@ -131,11 +132,19 @@ export function TimelineStage() {
   }, [viewport.centerAbs]);
 
   return (
-    <div className={styles.stage} data-timeline-pan data-timeline-stage>
+    <div
+      className={styles.stage}
+      data-timeline-pan
+      data-timeline-stage
+      style={{
+        ["--center-guide-x" as string]: `${Math.round(centerGuideX(viewport))}px`,
+      }}
+    >
       <div
         className={styles.content}
         style={{ minHeight: `max(100%, ${contentHeight}px)` }}
       >
+        <div className={styles.rail} aria-hidden="true" />
         <div
           className={styles.lanes}
           style={{

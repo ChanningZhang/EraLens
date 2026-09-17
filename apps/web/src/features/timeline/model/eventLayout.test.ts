@@ -147,6 +147,17 @@ describe("stickyEventMarkerX", () => {
     expect(pillLeft + EVENT_MARKER_WIDTH).toBeGreaterThan(960);
   });
 
+  it("pins sticky labels to the rail edge when a gutter is reserved", () => {
+    const x = stickyEventMarkerX({
+      anchorX: -800,
+      bandLeft: -2000,
+      bandWidth: 5000,
+      viewportWidth: 1000,
+      gutter: 102,
+    });
+    expect(x).toBe(102 + EVENT_MARKER_VIEW_PAD + EVENT_MARKER_DOT_OFFSET);
+  });
+
   it("leaves an off-screen band at its natural position", () => {
     const x = stickyEventMarkerX({
       anchorX: -400,

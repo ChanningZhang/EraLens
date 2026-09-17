@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import type { AbsMonth } from "@eralens/shared";
+import { absFromStageX } from "../model/coordinates";
 import { viewportStore } from "../state/viewportStore";
 
 const TIMELINE_PAN = "[data-timeline-pan]";
@@ -60,13 +61,29 @@ export function shouldDeferToStageVerticalScroll(
   return Math.abs(deltaY) > 0;
 }
 
+/** Normalize wheel delta to CSS pixels. Trackpads use DOM_DELTA_PIXEL (0). */
+export function wheelDeltaPx(delta: number, deltaMode: number): number {
+  if (deltaMode === 1) return delta * 16;
+  if (deltaMode === 2) return delta * 800;
+  return delta;
+}
+
+export function applyStageVerticalScroll(
+  stageEl: Pick<HTMLElement, "scrollTop">,
+  deltaY: number,
+  deltaMode: number,
+): void {
+  stageEl.scrollTop += wheelDeltaPx(deltaY, deltaMode);
+}
+
 function resolveAnchorAbs(clientX: number): AbsMonth {
   const viewport = viewportStore.getSnapshot();
   const stageEl = document.querySelector(TIMELINE_STAGE);
   if (!(stageEl instanceof HTMLElement)) return viewport.centerAbs;
   const rect = stageEl.getBoundingClientRect();
   const x = clientX - rect.left;
-  return viewport.startAbs + x / viewport.pxPerMonth;
+  if (x < viewport.gutterPx || x > rect.width) return viewport.centerAbs;
+  return absFromStageX(viewport, x);
 }
 
 function onWheel(event: WheelEvent) {
@@ -85,6 +102,10 @@ function onWheel(event: WheelEvent) {
       isStageVerticallyScrollable(stageEl),
     )
   ) {
+    // Consume the gesture in JS. Native overflow scroll on Mac lets leftover
+    // horizontal overscroll escape to the OS (Notification Center / Mission Control).
+    event.preventDefault();
+    applyStageVerticalScroll(stageEl, event.deltaY, event.deltaMode);
     return;
   }
 

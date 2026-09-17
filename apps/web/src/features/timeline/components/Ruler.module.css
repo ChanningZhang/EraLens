@@ -1,4 +1,5 @@
 .ruler {
+  --ruler-edge-fade: 64px;
   position: relative;
   padding: 6px 0;
   border-top: 1px solid var(--color-border);
@@ -8,10 +9,31 @@
   overscroll-behavior: none;
 }
 
+.ruler::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+  width: var(--timeline-gutter);
+  pointer-events: none;
+  background:
+    linear-gradient(
+      to right,
+      transparent 0,
+      transparent calc(100% - 12px),
+      color-mix(in srgb, var(--color-surface) 55%, transparent) 100%
+    ),
+    var(--timeline-rail-bg);
+  border-right: 1px solid var(--timeline-rail-edge);
+}
+
 .ringShell {
   position: relative;
+  z-index: 1;
   height: 58px;
-  margin: 0 var(--space-4);
+  margin: 0 0 0 var(--timeline-gutter);
 }
 
 .ringTrack {
@@ -20,19 +42,9 @@
   overflow: hidden;
   overscroll-behavior: none;
   cursor: grab;
-  border-radius: 999px;
-  background:
-    linear-gradient(
-      180deg,
-      color-mix(in srgb, var(--color-ink-muted) 10%, var(--color-paper)) 0%,
-      var(--color-paper) 20%,
-      var(--color-surface) 52%,
-      color-mix(in srgb, var(--color-ink-muted) 7%, var(--color-paper)) 100%
-    );
+  background: var(--color-paper);
   box-shadow:
     inset 0 1px 0 color-mix(in srgb, white 55%, transparent),
-    inset 0 8px 12px color-mix(in srgb, var(--color-ink) 3%, transparent),
-    inset 0 -8px 12px color-mix(in srgb, var(--color-ink) 5%, transparent),
     0 0 0 1px var(--color-border);
 }
 
@@ -44,25 +56,27 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  left: calc(-1 * var(--space-4));
-  right: calc(-1 * var(--space-4));
+  left: calc(-1 * var(--timeline-gutter));
+  right: 0;
   pointer-events: none;
   -webkit-mask-image: linear-gradient(
     90deg,
-    transparent 0%,
-    rgba(0, 0, 0, 0.18) 4%,
-    #000 13%,
-    #000 87%,
-    rgba(0, 0, 0, 0.18) 96%,
+    transparent 0,
+    transparent var(--timeline-gutter),
+    rgba(0, 0, 0, 0.28) calc(var(--timeline-gutter) + 20px),
+    #000 calc(var(--timeline-gutter) + var(--ruler-edge-fade)),
+    #000 calc(100% - var(--ruler-edge-fade)),
+    rgba(0, 0, 0, 0.28) calc(100% - 20px),
     transparent 100%
   );
   mask-image: linear-gradient(
     90deg,
-    transparent 0%,
-    rgba(0, 0, 0, 0.18) 4%,
-    #000 13%,
-    #000 87%,
-    rgba(0, 0, 0, 0.18) 96%,
+    transparent 0,
+    transparent var(--timeline-gutter),
+    rgba(0, 0, 0, 0.28) calc(var(--timeline-gutter) + 20px),
+    #000 calc(var(--timeline-gutter) + var(--ruler-edge-fade)),
+    #000 calc(100% - var(--ruler-edge-fade)),
+    rgba(0, 0, 0, 0.28) calc(100% - 20px),
     transparent 100%
   );
 }

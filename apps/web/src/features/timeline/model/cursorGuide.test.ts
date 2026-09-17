@@ -15,6 +15,11 @@ describe("cursorGuideStageX", () => {
     expect(cursorGuideStageX(20, 40, 800)).toBeNull();
     expect(cursorGuideStageX(900, 40, 800)).toBeNull();
   });
+
+  it("hides when the pointer is over the dynasty-name rail", () => {
+    expect(cursorGuideStageX(80, 40, 800, 100)).toBeNull();
+    expect(cursorGuideStageX(150, 40, 800, 100)).toBe(110);
+  });
 });
 
 describe("formatCursorGuideLabel", () => {
@@ -33,5 +38,9 @@ describe("clampCursorGuideLabelX", () => {
     expect(clampCursorGuideLabelX(10, 400, 80)).toBe(44);
     expect(clampCursorGuideLabelX(390, 400, 80)).toBe(356);
     expect(clampCursorGuideLabelX(200, 400, 80)).toBe(200);
+  });
+
+  it("does not place the label over the dynasty-name rail", () => {
+    expect(clampCursorGuideLabelX(10, 400, 80, 4, 100)).toBe(144);
   });
 });

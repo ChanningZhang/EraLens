@@ -68,8 +68,10 @@ const persons = [
   { id: "zi-xiaoyi", name: "小乙", roles: ["君主"], bio: "小辛之弟，武丁之父，传统记载仍居殷。", links: wiki("小乙_(商朝)") },
   { id: "zi-wuding", name: "武丁", roles: ["君主"], bio: "商高宗，甲骨文所见盛世之王，史称武丁中兴。", links: wiki("武丁") },
   { id: "fu-hao", name: "妇好", roles: ["王后", "军事家"], bio: "武丁配偶，甲骨与殷墟墓葬所见女将、祭司。", links: wiki("妇好") },
-  { id: "zi-zugeng", name: "祖庚", roles: ["君主"], bio: "武丁之子，甲骨文作「且庚」，断代工程定其在位前1191–前1148年。", links: wiki("祖庚") },
-  { id: "zi-zujia", name: "祖甲", roles: ["君主"], bio: "武丁之子、祖庚之弟，甲骨文作「且甲」，断代工程定其在位前1148–前1112年。", links: wiki("祖甲") },
+  { id: "zi-zugeng", name: "祖庚", roles: ["君主"], bio: "武丁之子，甲骨文作「且庚」。断代工程将祖庚至庚丁合为前1191–前1148年，年精度下四王平分。", links: wiki("祖庚") },
+  { id: "zi-zujia", name: "祖甲", roles: ["君主"], bio: "武丁之子、祖庚之弟，甲骨文作「且甲」。与祖庚、廪辛、庚丁同属断代工程前1191–前1148年窗口。", links: wiki("祖甲") },
+  { id: "zi-linxin", name: "廪辛", roles: ["君主"], bio: "祖甲之子，甲骨或作冯辛；与祖庚、祖甲、庚丁同属断代工程前1191–前1148年窗口。", links: wiki("廪辛") },
+  { id: "zi-gengding", name: "庚丁", roles: ["君主"], bio: "廪辛之弟，甲骨作文丁前的康丁，《史记》作庚丁；四王窗口之末，死年归本王，武乙次年起算。", links: wiki("康丁") },
   { id: "zi-wuyi", name: "武乙", roles: ["君主"], bio: "晚商之王，断代工程定其在位前1147–前1113年。", links: wiki("武乙") },
   { id: "zi-wending", name: "文丁", roles: ["君主"], bio: "晚商之王，《史记》或作太丁。", links: wiki("文丁") },
   { id: "zi-diyi", name: "帝乙", roles: ["君主"], bio: "晚商之王，帝辛之父。", links: wiki("帝乙") },
@@ -192,7 +194,7 @@ const dynasties = [
     end: ym(-256, 12),
     precision: "year",
     colorToken: "moss",
-    note: "平王东迁至秦灭周。前771–前750年与携王二王并立，后世以平王为正统（claim_track 主线）。",
+    note: "平王东迁至秦灭周。前770–前750年与携王二王并立，后世以平王为正统（claim_track 主线）。",
   },
 ];
 
@@ -370,8 +372,17 @@ const shangReigns = [
   shangReign("zi-pangeng", "商盘庚", -1310, -1280),
   ...shangLateReigns,
   shangReign("zi-wuding", "商王武丁", -1250, -1192, { templeName: "高宗" }),
-  shangReign("zi-zugeng", "商王祖庚", -1191, -1148),
-  shangReign("zi-zujia", "商王祖甲", -1148, -1112),
+  // 夏商周年表：祖庚、祖甲、廪辛、庚丁合占前1191–前1148；四王平分，武乙从前1147年起。
+  ...chainShangReigns(
+    [
+      { personId: "zi-zugeng", title: "商王祖庚", years: 11 },
+      { personId: "zi-zujia", title: "商王祖甲", years: 11 },
+      { personId: "zi-linxin", title: "商王廪辛", years: 11 },
+      { personId: "zi-gengding", title: "商王庚丁", years: 11 },
+    ],
+    -1191,
+    -1148,
+  ),
   shangReign("zi-wuyi", "商王武乙", -1147, -1113),
   shangReign("zi-wending", "商王文丁", -1112, -1102),
   shangReign("zi-diyi", "商王帝乙", -1101, -1076),
@@ -421,7 +432,7 @@ const zhouWestReigns = [
 
 const zhouEastReigns = [
   zhouReign("ji-yijiu", "周平王", "平王", -770, -720, "zhou-east"),
-  zhouReign("ji-yuchen", "周携王", "携王", -771, -750, "zhou-east", 1, 12, {
+  zhouReign("ji-yuchen", "周携王", "携王", -770, -750, "zhou-east", 1, 12, {
     track: "xie",
     label: "携",
   }),
@@ -439,7 +450,7 @@ const zhouEastReigns = [
   zhouReign("ji-meng", "周悼王", "悼王", -520, -520, "zhou-east"),
   zhouReign("ji-gai", "周敬王", "敬王", -519, -477, "zhou-east"),
   zhouReign("ji-ren", "周元王", "元王", -476, -469, "zhou-east"),
-  zhouReign("ji-jie", "周贞定王", "贞定王", -468, -441, "zhou-east"),
+  zhouReign("ji-jie", "周贞定王", "贞定王", -468, -442, "zhou-east"),
   // 史记：哀王立三月、思王立五月。无历月，按时长把前441年顺序切开。
   zhouReign("ji-quji", "周哀王", "哀王", -441, -441, "zhou-east", 1, 3),
   zhouReign("ji-shu", "周思王", "思王", -441, -441, "zhou-east", 4, 12),
@@ -1046,12 +1057,12 @@ const manifest = {
     "夏代及商代前期具体王年工程未给出。禹、启、太康、少康、桀与汤、太甲、盘庚的在位年为传统积年锚定工程框架的估列，precision=year，事件用 circa，避免伪造成月日。",
     "太甲至盘庚之间诸王（沃丁至阳甲）取《竹书纪年》在位年数顺序，首尾衔接既有太甲（迄前1548）、盘庚（起前1310）锚点；非断代工程实测，precision=year。",
     "盘庚至武丁之间补入小辛、小乙；小辛取竹书纪年三年，小乙年数依盘庚（迄前1280）与武丁（起前1250）锚点填满，precision=year。",
-    "晚商补入祖庚、祖甲（断代工程前1191–前1148、前1148–前1112）；工程表中武乙（前1147–前1113）与祖甲在位年部分重叠，系原表取舍，未另改武乙年。",
-    "东周列王取《史记》系统常见年表（与维基百科周朝君主列表一致）。敬王取前519–前477年。哀王、思王同年先后相残，非并立；史记仅记「立三月」「立五月」，无历月，按此时长将前441年顺序切开（1–3月 / 4–12月），不作历日。",
+    "晚商祖庚、祖甲、廪辛、庚丁：夏商周年表合为前1191–前1148年，工程未给出各王起迄；年精度下按四王平分（各11年）。武乙从前1147年起（死年归庚丁），文丁从前1112年起，与年表一致。",
+    "东周列王取《史记》系统常见年表（与维基百科周朝君主列表一致）。敬王取前519–前477年。年精度顺序继位：死年归旧王、新王次年起算。携王与平王同从前770年起（英文维基 770–750 BCE），不从前771年幽王死年画起。哀王、思王同年先后相残，非并立；史记仅记「立三月」「立五月」，无历月，贞定王年精度迄前442年，前441年按此时长切开（1–3月 / 4–12月），不作历日。",
     "共和行政不建在位卡片（非王），仅作 span 事件；厉王出奔至宣王即位间西周行留白，不用史料缺占位。周公旦不另建称王记录。",
     "夏商周无年号，不写入 era_names。",
     "未单列春秋战国诸侯国为王朝行，以免超出「夏商周」王室主线。",
-    "东周二王并立用 claim_track：主线平王→桓王…（正统金色）；xie/携王为并行对手，不镀金、不串进继承链。",
+    "东周二王并立用 claim_track：主线平王→桓王…（正统金色）；xie/携王为并行对手（前770–前750），不镀金、不串进继承链。",
   ],
 };
 writeFileSync(path.join(__dirname, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);

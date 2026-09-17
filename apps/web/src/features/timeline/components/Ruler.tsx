@@ -123,7 +123,7 @@ export function Ruler() {
           onPointerUp={onPointerUp}
           onPointerCancel={onPointerUp}
           role="slider"
-          aria-label="时间环形标尺"
+          aria-label="时间标尺"
           aria-valuetext={`年份标签${zoomHint}`}
         >
           <div className={styles.scaleViewport}>

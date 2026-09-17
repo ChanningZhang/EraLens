@@ -23,11 +23,13 @@ export type ReignCardTextLayout = {
 };
 
 const CARD_HEIGHT = 48;
-const FULL_PAD_X = 20;
-/** Matches `.wrap { padding: 3px 2px }` — the old 20px pad made year-slivers unwrappable. */
-const WRAP_PAD_X = 4;
+/** 1px left+right / top+bottom; cards use `box-sizing: border-box`. */
+const CARD_BORDER_PX = 2;
+const FULL_PAD_X = 20 + CARD_BORDER_PX;
+/** Matches `.wrap { padding: 3px 2px }` plus border. */
+const WRAP_PAD_X = 4 + CARD_BORDER_PX;
 const ROW_GAP = 6;
-const WRAP_PAD_Y = 6;
+const WRAP_PAD_Y = 6 + CARD_BORDER_PX;
 const NAME_FONT_DEFAULT = 17;
 const NAME_FONT_WRAP_DEFAULT = 16;
 const META_FONT_DEFAULT = 13;
@@ -77,8 +79,9 @@ export function resolveReignBarLayout(
   };
 }
 
+/** CJK serif at 600 is a full em square; 0.94em over-counted glyphs per line. */
 function glyphPxForFont(fontPx: number): number {
-  return fontPx * 0.94;
+  return fontPx;
 }
 
 function lineHeightForFont(fontPx: number): number {

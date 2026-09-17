@@ -11,39 +11,57 @@
   position: relative;
   height: var(--dynasty-bar-height);
   margin: 0;
+  /* Clip at the shared rail; negative vertical inset keeps captions visible. */
+  clip-path: inset(-64px 0 -64px var(--timeline-gutter));
 }
 
 .frozenLabel {
   position: absolute;
   top: 10px;
-  left: 12px;
+  left: var(--timeline-rail-inset, 12px);
   z-index: 6;
   display: inline-flex;
   align-items: center;
-  width: max-content;
-  min-width: 76px;
-  max-width: 180px;
+  justify-content: center;
+  width: var(--timeline-rail-label-width, 80px);
+  min-width: var(--timeline-rail-label-width, 80px);
   height: 44px;
-  padding: 0 14px;
+  padding: 0 8px;
+  appearance: none;
   background: color-mix(in srgb, var(--dynasty-color) 14%, var(--color-surface));
   border: 1px solid color-mix(in srgb, var(--dynasty-color) 22%, var(--color-border));
   border-radius: 8px;
-  box-shadow:
-    0 2px 8px color-mix(in srgb, var(--color-ink) 6%, transparent),
-    8px 0 16px color-mix(in srgb, var(--color-paper) 72%, transparent);
-  backdrop-filter: blur(10px);
-  pointer-events: none;
+  box-shadow: 0 2px 8px color-mix(in srgb, var(--color-ink) 6%, transparent);
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  pointer-events: auto;
+  transition:
+    border-color var(--motion-fast),
+    background-color var(--motion-fast),
+    box-shadow var(--motion-fast);
+}
+
+.frozenLabel:hover {
+  background: color-mix(in srgb, var(--dynasty-color) 20%, var(--color-surface));
+  border-color: color-mix(in srgb, var(--dynasty-color) 36%, var(--color-border));
+}
+
+.frozenLabel.selected {
+  border-color: var(--color-accent);
+  box-shadow: inset 3px 0 0 var(--color-accent);
 }
 
 .labelText {
   display: flex;
   min-width: 0;
-  max-width: 142px;
+  max-width: 100%;
   position: relative;
   z-index: 1;
 }
 
 .name {
+  display: block;
   margin: 0;
   font-family: var(--font-serif);
   font-size: 14px;
@@ -64,4 +82,3 @@
 .cards > * {
   pointer-events: auto;
 }
-

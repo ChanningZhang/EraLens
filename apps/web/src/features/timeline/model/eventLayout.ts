@@ -43,15 +43,17 @@ export function stickyEventMarkerX(options: {
   viewportWidth: number;
   markerWidth?: number;
   pad?: number;
+  gutter?: number;
 }): number {
   const markerWidth = options.markerWidth ?? EVENT_MARKER_WIDTH;
   const pad = options.pad ?? EVENT_MARKER_VIEW_PAD;
+  const gutter = options.gutter ?? 0;
   const bandRight = options.bandLeft + options.bandWidth;
-  const visLeft = Math.max(0, options.bandLeft);
+  const visLeft = Math.max(gutter, options.bandLeft);
   const visRight = Math.min(options.viewportWidth, bandRight);
   if (visRight <= visLeft) return options.anchorX;
 
-  const viewLeft = pad;
+  const viewLeft = gutter + pad;
   const viewRight = Math.max(viewLeft, options.viewportWidth - pad);
   const pillLeft = options.anchorX - EVENT_MARKER_DOT_OFFSET;
   const pillRight = pillLeft + markerWidth;
@@ -125,6 +127,7 @@ export function layoutEvents(events: Event[], viewport: ViewportState): PlacedEv
             bandLeft: range.left,
             bandWidth,
             viewportWidth: viewport.widthPx,
+            gutter: viewport.gutterPx,
           })
         : naturalX,
       bandLeft: range.left,

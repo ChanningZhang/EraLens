@@ -85,7 +85,7 @@ describe("groupByClaimTrack — early Zhou dual kings", () => {
   it("keeps 平王 on the main line while 携王 sits on a rival row", () => {
     const lanes = groupByClaimTrack([
       reign("ji-yijiu", -770, -720, { dynastyId: "zhou-east" }),
-      reign("ji-yuchen", -771, -750, {
+      reign("ji-yuchen", -770, -750, {
         dynastyId: "zhou-east",
         claimTrack: "xie",
         claimLabel: "携",

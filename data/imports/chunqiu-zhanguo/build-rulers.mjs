@@ -12,6 +12,7 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { applyDeathYearToPredecessor } from "../lib/deathYearSuccession.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const sourcesDir = path.join(__dirname, "sources");
@@ -775,18 +776,27 @@ function mergeFoundingRulers(dynastyId, rulers) {
 }
 
 function mergeSamePersonSpans(rulers) {
-  const byName = new Map();
-  for (const r of rulers) {
-    const key = `${normalizeForDedup(r.name)}|${normalizeForDedup(r.title.replace(/惠成王/, "惠王"))}`;
-    const prev = byName.get(key);
-    if (prev && r.name && r.name === prev.name && Math.abs(r.start - prev.end) <= 2) {
+  const out = [];
+  for (const r of [...rulers].sort((a, b) => a.start - b.start || a.end - b.end)) {
+    const prev = out.find(
+      (item) =>
+        r.name &&
+        item.name &&
+        r.name === item.name &&
+        item.end != null &&
+        r.start != null &&
+        r.start - item.end <= 2 &&
+        r.start - item.end >= -1,
+    );
+    if (prev) {
       prev.end = Math.max(prev.end, r.end);
-      if (r.title.length > prev.title.length) prev.title = r.title;
+      if (/[王公侯]$/.test(r.title) && !/[王公侯]$/.test(prev.title)) prev.title = r.title;
+      else if (r.title.length > prev.title.length) prev.title = r.title;
       continue;
     }
-    byName.set(key + String(r.start), r);
+    out.push({ ...r });
   }
-  return [...byName.values()].sort((a, b) => a.start - b.start);
+  return out.sort((a, b) => a.start - b.start);
 }
 
 function posthumousFromTitle(title) {
@@ -961,6 +971,7 @@ for (const [dynastyId, fn] of Object.entries(DYNASTY_SOURCES)) {
     dynastyId === "zhongshan"
       ? fn()
       : fillUndatedYears(mergeFoundingRulers(dynastyId, fn()), dynastyId);
+  applyDeathYearToPredecessor(parsed);
   const raw = markInterpolatedBoundaries(parsed).sort(
     (a, b) => a.start - b.start || a.end - b.end,
   );

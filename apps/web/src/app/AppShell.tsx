@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { getRepository } from "@/data/repository";
-import type { SearchHit } from "@eralens/shared";
+import {
+  TIMELINE_GUTTER_PX,
+  TIMELINE_RAIL_INSET_PX,
+  TIMELINE_RAIL_LABEL_WIDTH_PX,
+  type SearchHit,
+} from "@eralens/shared";
 import { DetailPanel } from "@/features/detail/components/DetailPanel";
 import { ResizeHandle } from "@/features/detail/components/ResizeHandle";
 import { CursorGuide } from "@/features/timeline/components/CursorGuide";
@@ -85,7 +90,14 @@ export function AppShell() {
   }, [boundsQuery.data]);
 
   return (
-    <div className={styles.appShell}>
+    <div
+      className={styles.appShell}
+      style={{
+        ["--timeline-gutter" as string]: `${TIMELINE_GUTTER_PX}px`,
+        ["--timeline-rail-inset" as string]: `${TIMELINE_RAIL_INSET_PX}px`,
+        ["--timeline-rail-label-width" as string]: `${TIMELINE_RAIL_LABEL_WIDTH_PX}px`,
+      }}
+    >
       <header className={styles.header}>
         <div className={styles.brand}>
           <h1 className={styles.brandTitle}>EraLens</h1>
@@ -142,21 +154,21 @@ export function AppShell() {
         <div ref={stageRef} className={styles.stageWrap}>
           <TimelineStage />
         </div>
-        {selection.detailOpen && (
-          <>
-            <ResizeHandle />
-            <div
-              className={styles.detailWrap}
-              style={{ width: selection.detailWidth }}
-            >
-              <DetailPanel />
-            </div>
-          </>
-        )}
       </div>
 
       <Ruler />
       <CursorGuide stageRef={stageRef} />
+      {selection.detailOpen && (
+        <div
+          className={styles.detailDrawer}
+          style={{ ["--detail-width" as string]: `${selection.detailWidth}px` }}
+        >
+          <ResizeHandle />
+          <div className={styles.detailWrap}>
+            <DetailPanel />
+          </div>
+        </div>
+      )}
     </div>
   );
 }

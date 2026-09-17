@@ -6089,22 +6089,6 @@ VALUES (
   'wei-r2', '魏罃',
   NULL, NULL,
   NULL, NULL,
-  ARRAY['君主'], '魏罃，魏国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/罃"}]'::jsonb
-)
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  birth_year = EXCLUDED.birth_year,
-  birth_month = EXCLUDED.birth_month,
-  death_year = EXCLUDED.death_year,
-  death_month = EXCLUDED.death_month,
-  roles = EXCLUDED.roles,
-  bio = EXCLUDED.bio,
-  links = EXCLUDED.links;
-INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES (
-  'wei-r3', '魏罃',
-  NULL, NULL,
-  NULL, NULL,
   ARRAY['君主'], '魏惠成王，魏国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/惠成王"}]'::jsonb
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -6118,7 +6102,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'wei-r4', '魏嗣',
+  'wei-r3', '魏嗣',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '魏襄王，魏国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/襄王"}]'::jsonb
@@ -6134,7 +6118,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'wei-r5', '魏遫',
+  'wei-r4', '魏遫',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '魏昭王，魏国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/昭王"}]'::jsonb
@@ -6150,7 +6134,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'wei-r6', '魏圉',
+  'wei-r5', '魏圉',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '魏安僖王，魏国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/安僖王"}]'::jsonb
@@ -6166,7 +6150,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'wei-r7', '魏午',
+  'wei-r6', '魏午',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '魏景湣王，魏国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/景湣王"}]'::jsonb
@@ -6182,7 +6166,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
-  'wei-r8', '魏假',
+  'wei-r7', '魏假',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '魏假，魏国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/假"}]'::jsonb
@@ -11907,8 +11891,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-yan-r35-yan-chunqiu', 'yan-chunqiu', 'yan-r35', '燕武成王',
   '武成王', NULL, NULL,
-  -271, 1, NULL, -258, 12, NULL,
-  -3240, -3073, 'year', NULL, NULL
+  -270, 1, NULL, -258, 12, NULL,
+  -3228, -3073, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12864,8 +12848,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-song-r30-song-chunqiu', 'song-chunqiu', 'song-r30', '宋休公',
   '休公', NULL, NULL,
-  -385, 1, NULL, -363, 12, NULL,
-  -4608, -4333, 'year', NULL, NULL
+  -384, 1, NULL, -363, 12, NULL,
+  -4596, -4333, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -14459,8 +14443,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-weiguo-r16-wei-weiguo', 'wei-weiguo', 'weiguo-r16', '卫黔牟',
   NULL, NULL, NULL,
-  -696, 1, NULL, -688, 12, NULL,
-  -8340, -8233, 'year', NULL, NULL
+  -695, 1, NULL, -688, 12, NULL,
+  -8328, -8233, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -14488,8 +14472,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-weiguo-r17-wei-weiguo', 'wei-weiguo', 'weiguo-r17', '卫惠公',
   '惠公', NULL, NULL,
-  -688, 1, NULL, -669, 12, NULL,
-  -8244, -8005, 'year', NULL, NULL
+  -687, 1, NULL, -669, 12, NULL,
+  -8232, -8005, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -14894,8 +14878,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-weiguo-r31-wei-weiguo', 'wei-weiguo', 'weiguo-r31', '卫庄公',
   '庄公', NULL, NULL,
-  -480, 1, NULL, -478, 12, NULL,
-  -5748, -5713, 'year', NULL, NULL
+  -479, 1, NULL, -478, 12, NULL,
+  -5736, -5713, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -15300,8 +15284,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-weiguo-r45-wei-weiguo', 'wei-weiguo', 'weiguo-r45', '卫元君',
   NULL, NULL, NULL,
-  -254, 1, NULL, -230, 12, NULL,
-  -3036, -2737, 'year', NULL, NULL
+  -253, 1, NULL, -230, 12, NULL,
+  -3024, -2737, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -15474,8 +15458,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-zheng-r4-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r4', '郑厉公',
   '厉公', NULL, NULL,
-  -700, 1, NULL, -697, 12, NULL,
-  -8388, -8341, 'year', NULL, NULL
+  -699, 1, NULL, -697, 12, NULL,
+  -8376, -8341, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -16257,8 +16241,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-cao-r6-cao-chunqiu', 'cao-chunqiu', 'cao-r6', '曹幽伯',
   '幽伯', NULL, NULL,
-  -835, 1, NULL, -826, 12, NULL,
-  -10008, -9889, 'year', NULL, NULL
+  -834, 1, NULL, -826, 12, NULL,
+  -9996, -9889, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -16286,8 +16270,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-cao-r7-cao-chunqiu', 'cao-chunqiu', 'cao-r7', '曹戴伯',
   '戴伯', NULL, NULL,
-  -826, 1, NULL, -796, 12, NULL,
-  -9900, -9529, 'year', NULL, NULL
+  -825, 1, NULL, -796, 12, NULL,
+  -9888, -9529, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -16315,8 +16299,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-cao-r8-cao-chunqiu', 'cao-chunqiu', 'cao-r8', '曹惠伯',
   '惠伯', NULL, NULL,
-  -796, 1, NULL, -760, 12, NULL,
-  -9540, -9097, 'year', NULL, NULL
+  -795, 1, NULL, -760, 12, NULL,
+  -9528, -9097, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -16373,8 +16357,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-cao-r10-cao-chunqiu', 'cao-chunqiu', 'cao-r10', '曹穆公',
   '穆公', NULL, NULL,
-  -760, 1, NULL, -757, 12, NULL,
-  -9108, -9061, 'year', NULL, NULL
+  -759, 1, NULL, -757, 12, NULL,
+  -9096, -9061, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -16402,8 +16386,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-cao-r11-cao-chunqiu', 'cao-chunqiu', 'cao-r11', '曹桓公',
   '桓公', NULL, NULL,
-  -757, 1, NULL, -702, 12, NULL,
-  -9072, -8401, 'year', NULL, NULL
+  -756, 1, NULL, -702, 12, NULL,
+  -9060, -8401, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -16431,8 +16415,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-cao-r12-cao-chunqiu', 'cao-chunqiu', 'cao-r12', '曹庄公',
   '庄公', NULL, NULL,
-  -702, 1, NULL, -671, 12, NULL,
-  -8412, -8029, 'year', NULL, NULL
+  -701, 1, NULL, -671, 12, NULL,
+  -8400, -8029, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -16460,8 +16444,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-cao-r13-cao-chunqiu', 'cao-chunqiu', 'cao-r13', '曹釐公',
   '釐公', NULL, NULL,
-  -671, 1, NULL, -662, 12, NULL,
-  -8040, -7921, 'year', NULL, NULL
+  -670, 1, NULL, -662, 12, NULL,
+  -8028, -7921, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -16489,8 +16473,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-cao-r14-cao-chunqiu', 'cao-chunqiu', 'cao-r14', '曹昭公',
   '昭公', NULL, NULL,
-  -662, 1, NULL, -653, 12, NULL,
-  -7932, -7813, 'year', NULL, NULL
+  -661, 1, NULL, -653, 12, NULL,
+  -7920, -7813, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -16518,8 +16502,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-cao-r15-cao-chunqiu', 'cao-chunqiu', 'cao-r15', '曹共公',
   '共公', NULL, NULL,
-  -653, 1, NULL, -618, 12, NULL,
-  -7824, -7393, 'year', NULL, NULL
+  -652, 1, NULL, -618, 12, NULL,
+  -7812, -7393, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -16547,8 +16531,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-cao-r16-cao-chunqiu', 'cao-chunqiu', 'cao-r16', '曹文公',
   '文公', NULL, NULL,
-  -618, 1, NULL, -595, 12, NULL,
-  -7404, -7117, 'year', NULL, NULL
+  -617, 1, NULL, -595, 12, NULL,
+  -7392, -7117, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -16576,8 +16560,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-cao-r17-cao-chunqiu', 'cao-chunqiu', 'cao-r17', '曹宣公',
   '宣公', NULL, NULL,
-  -595, 1, NULL, -578, 12, NULL,
-  -7128, -6913, 'year', NULL, NULL
+  -594, 1, NULL, -578, 12, NULL,
+  -7116, -6913, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -16605,8 +16589,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-cao-r18-cao-chunqiu', 'cao-chunqiu', 'cao-r18', '曹成公',
   '成公', NULL, NULL,
-  -578, 1, NULL, -555, 12, NULL,
-  -6924, -6637, 'year', NULL, NULL
+  -577, 1, NULL, -555, 12, NULL,
+  -6912, -6637, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -16634,8 +16618,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-cao-r19-cao-chunqiu', 'cao-chunqiu', 'cao-r19', '曹武公',
   '武公', NULL, NULL,
-  -555, 1, NULL, -528, 12, NULL,
-  -6648, -6313, 'year', NULL, NULL
+  -554, 1, NULL, -528, 12, NULL,
+  -6636, -6313, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -16663,8 +16647,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-cao-r20-cao-chunqiu', 'cao-chunqiu', 'cao-r20', '曹平公',
   '平公', NULL, NULL,
-  -528, 1, NULL, -524, 12, NULL,
-  -6324, -6265, 'year', NULL, NULL
+  -527, 1, NULL, -524, 12, NULL,
+  -6312, -6265, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -16692,8 +16676,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-cao-r21-cao-chunqiu', 'cao-chunqiu', 'cao-r21', '曹悼公',
   '悼公', NULL, NULL,
-  -524, 1, NULL, -515, 12, NULL,
-  -6276, -6157, 'year', NULL, NULL
+  -523, 1, NULL, -515, 12, NULL,
+  -6264, -6157, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -16721,8 +16705,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-cao-r22-cao-chunqiu', 'cao-chunqiu', 'cao-r22', '曹声公',
   '声公', NULL, NULL,
-  -515, 1, NULL, -510, 12, NULL,
-  -6168, -6097, 'year', NULL, NULL
+  -514, 1, NULL, -510, 12, NULL,
+  -6156, -6097, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -16750,8 +16734,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-cao-r23-cao-chunqiu', 'cao-chunqiu', 'cao-r23', '曹隐公',
   '隐公', NULL, NULL,
-  -510, 1, NULL, -506, 12, NULL,
-  -6108, -6049, 'year', NULL, NULL
+  -509, 1, NULL, -506, 12, NULL,
+  -6096, -6049, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -16779,8 +16763,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-cao-r24-cao-chunqiu', 'cao-chunqiu', 'cao-r24', '曹靖公',
   '靖公', NULL, NULL,
-  -506, 1, NULL, -502, 12, NULL,
-  -6060, -6001, 'year', NULL, NULL
+  -505, 1, NULL, -502, 12, NULL,
+  -6048, -6001, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -16808,8 +16792,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-cao-r25-cao-chunqiu', 'cao-chunqiu', 'cao-r25', '曹伯阳',
   NULL, NULL, NULL,
-  -502, 1, NULL, -487, 12, NULL,
-  -6012, -5821, 'year', NULL, NULL
+  -501, 1, NULL, -487, 12, NULL,
+  -6000, -5821, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -17765,8 +17749,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-han-r4-han-warring', 'han-warring', 'han-r4', '韩共侯',
   '共侯', NULL, NULL,
-  -374, 1, NULL, -363, 12, NULL,
-  -4476, -4333, 'year', NULL, NULL
+  -373, 1, NULL, -363, 12, NULL,
+  -4464, -4333, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -18314,39 +18298,10 @@ INSERT INTO reigns (
   start_year, start_month, start_day, end_year, end_month, end_day,
   start_abs, end_abs, precision, start_date_confidence, end_date_confidence
 ) VALUES (
-  'reign-wei-r2-wei-warring', 'wei-warring', 'wei-r2', '魏罃',
-  NULL, NULL, NULL,
-  -369, 1, NULL, -344, 12, NULL,
-  -4416, -4105, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  posthumous_name = EXCLUDED.posthumous_name,
-  temple_name = EXCLUDED.temple_name,
-  preferred_appellation = EXCLUDED.preferred_appellation,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  posthumous_name, temple_name, preferred_appellation,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wei-r3-wei-warring', 'wei-warring', 'wei-r3', '魏惠成王',
+  'reign-wei-r2-wei-warring', 'wei-warring', 'wei-r2', '魏惠成王',
   '惠成王', NULL, NULL,
-  -344, 1, NULL, -319, 12, NULL,
-  -4116, -3805, 'year', NULL, NULL
+  -369, 1, NULL, -319, 12, NULL,
+  -4416, -3805, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -18372,7 +18327,7 @@ INSERT INTO reigns (
   start_year, start_month, start_day, end_year, end_month, end_day,
   start_abs, end_abs, precision, start_date_confidence, end_date_confidence
 ) VALUES (
-  'reign-wei-r4-wei-warring', 'wei-warring', 'wei-r4', '魏襄王',
+  'reign-wei-r3-wei-warring', 'wei-warring', 'wei-r3', '魏襄王',
   '襄王', NULL, NULL,
   -318, 1, NULL, -296, 12, NULL,
   -3804, -3529, 'year', NULL, NULL
@@ -18401,7 +18356,7 @@ INSERT INTO reigns (
   start_year, start_month, start_day, end_year, end_month, end_day,
   start_abs, end_abs, precision, start_date_confidence, end_date_confidence
 ) VALUES (
-  'reign-wei-r5-wei-warring', 'wei-warring', 'wei-r5', '魏昭王',
+  'reign-wei-r4-wei-warring', 'wei-warring', 'wei-r4', '魏昭王',
   '昭王', NULL, NULL,
   -295, 1, NULL, -277, 12, NULL,
   -3528, -3301, 'year', NULL, NULL
@@ -18430,7 +18385,7 @@ INSERT INTO reigns (
   start_year, start_month, start_day, end_year, end_month, end_day,
   start_abs, end_abs, precision, start_date_confidence, end_date_confidence
 ) VALUES (
-  'reign-wei-r6-wei-warring', 'wei-warring', 'wei-r6', '魏安僖王',
+  'reign-wei-r5-wei-warring', 'wei-warring', 'wei-r5', '魏安僖王',
   '安僖王', NULL, NULL,
   -276, 1, NULL, -243, 12, NULL,
   -3300, -2893, 'year', NULL, NULL
@@ -18459,7 +18414,7 @@ INSERT INTO reigns (
   start_year, start_month, start_day, end_year, end_month, end_day,
   start_abs, end_abs, precision, start_date_confidence, end_date_confidence
 ) VALUES (
-  'reign-wei-r7-wei-warring', 'wei-warring', 'wei-r7', '魏景湣王',
+  'reign-wei-r6-wei-warring', 'wei-warring', 'wei-r6', '魏景湣王',
   '景湣王', NULL, NULL,
   -242, 1, NULL, -228, 12, NULL,
   -2892, -2713, 'year', NULL, NULL
@@ -18488,7 +18443,7 @@ INSERT INTO reigns (
   start_year, start_month, start_day, end_year, end_month, end_day,
   start_abs, end_abs, precision, start_date_confidence, end_date_confidence
 ) VALUES (
-  'reign-wei-r8-wei-warring', 'wei-warring', 'wei-r8', '魏假',
+  'reign-wei-r7-wei-warring', 'wei-warring', 'wei-r7', '魏假',
   NULL, NULL, NULL,
   -227, 1, NULL, -225, 12, NULL,
   -2712, -2677, 'year', NULL, NULL
@@ -18548,8 +18503,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r1-qin', 'qin', 'qin-r1', '秦文公',
   '文公', NULL, NULL,
-  -766, 1, NULL, -716, 12, NULL,
-  -9180, -8569, 'year', NULL, NULL
+  -765, 1, NULL, -716, 12, NULL,
+  -9168, -8569, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -18577,8 +18532,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r2-qin', 'qin', 'qin-r2', '秦宪公',
   '宪公', NULL, NULL,
-  -716, 1, NULL, -704, 12, NULL,
-  -8580, -8425, 'year', NULL, NULL
+  -715, 1, NULL, -704, 12, NULL,
+  -8568, -8425, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -18606,8 +18561,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r3-qin', 'qin', 'qin-r3', '秦出子',
   NULL, NULL, NULL,
-  -704, 1, NULL, -698, 12, NULL,
-  -8436, -8353, 'year', NULL, NULL
+  -703, 1, NULL, -698, 12, NULL,
+  -8424, -8353, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -18635,8 +18590,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r4-qin', 'qin', 'qin-r4', '秦武公',
   '武公', NULL, NULL,
-  -698, 1, NULL, -678, 12, NULL,
-  -8364, -8113, 'year', NULL, NULL
+  -697, 1, NULL, -678, 12, NULL,
+  -8352, -8113, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -18664,8 +18619,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r5-qin', 'qin', 'qin-r5', '秦德公',
   '德公', NULL, NULL,
-  -678, 1, NULL, -676, 12, NULL,
-  -8124, -8089, 'year', NULL, NULL
+  -677, 1, NULL, -676, 12, NULL,
+  -8112, -8089, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -18693,8 +18648,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r6-qin', 'qin', 'qin-r6', '秦宣公',
   '宣公', NULL, NULL,
-  -676, 1, NULL, -664, 12, NULL,
-  -8100, -7945, 'year', NULL, NULL
+  -675, 1, NULL, -664, 12, NULL,
+  -8088, -7945, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -18722,8 +18677,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r7-qin', 'qin', 'qin-r7', '秦成公',
   '成公', NULL, NULL,
-  -664, 1, NULL, -660, 12, NULL,
-  -7956, -7897, 'year', NULL, NULL
+  -663, 1, NULL, -660, 12, NULL,
+  -7944, -7897, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -18751,8 +18706,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r8-qin', 'qin', 'qin-r8', '秦穆公',
   '穆公', NULL, NULL,
-  -660, 1, NULL, -621, 12, NULL,
-  -7908, -7429, 'year', NULL, NULL
+  -659, 1, NULL, -621, 12, NULL,
+  -7896, -7429, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -18780,8 +18735,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r9-qin', 'qin', 'qin-r9', '秦康公',
   '康公', NULL, NULL,
-  -621, 1, NULL, -609, 12, NULL,
-  -7440, -7285, 'year', NULL, NULL
+  -620, 1, NULL, -609, 12, NULL,
+  -7428, -7285, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -18809,8 +18764,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r10-qin', 'qin', 'qin-r10', '秦共公',
   '共公', NULL, NULL,
-  -609, 1, NULL, -605, 12, NULL,
-  -7296, -7237, 'year', NULL, NULL
+  -608, 1, NULL, -605, 12, NULL,
+  -7284, -7237, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -18838,8 +18793,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r11-qin', 'qin', 'qin-r11', '秦桓公',
   '桓公', NULL, NULL,
-  -605, 1, NULL, -577, 12, NULL,
-  -7248, -6901, 'year', NULL, NULL
+  -604, 1, NULL, -577, 12, NULL,
+  -7236, -6901, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -18867,8 +18822,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r12-qin', 'qin', 'qin-r12', '秦景公',
   '景公', NULL, NULL,
-  -577, 1, NULL, -537, 12, NULL,
-  -6912, -6421, 'year', NULL, NULL
+  -576, 1, NULL, -537, 12, NULL,
+  -6900, -6421, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -18896,8 +18851,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r13-qin', 'qin', 'qin-r13', '秦哀公',
   '哀公', NULL, NULL,
-  -537, 1, NULL, -501, 12, NULL,
-  -6432, -5989, 'year', NULL, NULL
+  -536, 1, NULL, -501, 12, NULL,
+  -6420, -5989, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -18925,8 +18880,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r14-qin', 'qin', 'qin-r14', '秦惠公',
   '惠公', NULL, NULL,
-  -501, 1, NULL, -492, 12, NULL,
-  -6000, -5881, 'year', NULL, NULL
+  -500, 1, NULL, -492, 12, NULL,
+  -5988, -5881, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -18954,8 +18909,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r15-qin', 'qin', 'qin-r15', '秦悼公',
   '悼公', NULL, NULL,
-  -492, 1, NULL, -477, 12, NULL,
-  -5892, -5701, 'year', NULL, NULL
+  -491, 1, NULL, -477, 12, NULL,
+  -5880, -5701, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -18983,8 +18938,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r16-qin', 'qin', 'qin-r16', '秦厉共公',
   '厉共公', NULL, NULL,
-  -477, 1, NULL, -443, 12, NULL,
-  -5712, -5293, 'year', NULL, NULL
+  -476, 1, NULL, -443, 12, NULL,
+  -5700, -5293, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -19012,8 +18967,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r17-qin', 'qin', 'qin-r17', '秦躁公',
   '躁公', NULL, NULL,
-  -443, 1, NULL, -429, 12, NULL,
-  -5304, -5125, 'year', NULL, NULL
+  -442, 1, NULL, -429, 12, NULL,
+  -5292, -5125, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -19041,8 +18996,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r18-qin', 'qin', 'qin-r18', '秦怀公',
   '怀公', NULL, NULL,
-  -429, 1, NULL, -425, 12, NULL,
-  -5136, -5077, 'year', NULL, NULL
+  -428, 1, NULL, -425, 12, NULL,
+  -5124, -5077, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -19128,8 +19083,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r21-qin', 'qin', 'qin-r21', '秦惠公',
   '惠公', NULL, NULL,
-  -400, 1, NULL, -387, 12, NULL,
-  -4788, -4621, 'year', NULL, NULL
+  -399, 1, NULL, -387, 12, NULL,
+  -4776, -4621, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -19157,8 +19112,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r22-qin', 'qin', 'qin-r22', '秦出公',
   '出公', NULL, NULL,
-  -387, 1, NULL, -385, 12, NULL,
-  -4632, -4597, 'year', NULL, NULL
+  -386, 1, NULL, -385, 12, NULL,
+  -4620, -4597, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -19215,8 +19170,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-ying-quliang-qin', 'qin', 'ying-quliang', '秦孝公',
   '孝公', NULL, NULL,
-  -362, 1, NULL, -338, 12, NULL,
-  -4332, -4033, 'year', NULL, NULL
+  -361, 1, NULL, -338, 12, NULL,
+  -4320, -4033, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -19244,8 +19199,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r25-qin', 'qin', 'qin-r25', '秦惠文王',
   '惠文王', NULL, NULL,
-  -338, 1, NULL, -311, 12, NULL,
-  -4044, -3709, 'year', NULL, NULL
+  -337, 1, NULL, -311, 12, NULL,
+  -4032, -3709, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -19273,8 +19228,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r26-qin', 'qin', 'qin-r26', '秦武王',
   '武王', NULL, NULL,
-  -311, 1, NULL, -307, 12, NULL,
-  -3720, -3661, 'year', NULL, NULL
+  -310, 1, NULL, -307, 12, NULL,
+  -3708, -3661, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -19302,8 +19257,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r27-qin', 'qin', 'qin-r27', '秦昭襄王',
   '昭襄王', NULL, NULL,
-  -307, 1, NULL, -251, 12, NULL,
-  -3672, -2989, 'year', NULL, NULL
+  -306, 1, NULL, -251, 12, NULL,
+  -3660, -2989, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -19331,8 +19286,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r28-qin', 'qin', 'qin-r28', '秦孝文王',
   '孝文王', NULL, NULL,
-  -251, 1, NULL, -250, 12, NULL,
-  -3000, -2977, 'year', NULL, NULL
+  -250, 1, NULL, -250, 12, NULL,
+  -2988, -2977, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -19360,8 +19315,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-qin-r29-qin', 'qin', 'qin-r29', '秦庄襄王',
   '庄襄王', NULL, NULL,
-  -250, 1, NULL, -247, 12, NULL,
-  -2988, -2941, 'year', NULL, NULL
+  -249, 1, NULL, -247, 12, NULL,
+  -2976, -2941, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -19389,8 +19344,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-ying-zheng-qin', 'qin', 'ying-zheng', '秦王政',
   NULL, NULL, NULL,
-  -247, 1, NULL, -221, 9, 9,
-  -2952, -2632, 'month', NULL, NULL
+  -246, 1, NULL, -221, 9, 9,
+  -2940, -2632, 'month', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -19607,7 +19562,7 @@ ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 -- Remove stale reigns from managed dynasties (superseded ids from older imports)
 WITH stale AS (
   DELETE FROM reigns
-  WHERE dynasty_id IN ('qi-chunqiu', 'jin-chunqiu', 'chu-chunqiu', 'yan-chunqiu', 'song-chunqiu', 'lu-chunqiu', 'wei-weiguo', 'zheng-chunqiu', 'cao-chunqiu', 'wu-chunqiu', 'yue-chunqiu', 'zhongshan', 'han-warring', 'zhao-warring', 'wei-warring', 'qin') AND id NOT IN ('reign-lv-shang-qi-chunqiu', 'reign-qi-r1-qi-chunqiu', 'reign-qi-r2-qi-chunqiu', 'reign-qi-r3-qi-chunqiu', 'reign-qi-r4-qi-chunqiu', 'reign-qi-r5-qi-chunqiu', 'reign-qi-r6-qi-chunqiu', 'reign-qi-r7-qi-chunqiu', 'reign-qi-r8-qi-chunqiu', 'reign-qi-r9-qi-chunqiu', 'reign-qi-r10-qi-chunqiu', 'reign-qi-r11-qi-chunqiu', 'reign-qi-r12-qi-chunqiu', 'reign-qi-r13-qi-chunqiu', 'reign-qi-r14-qi-chunqiu', 'reign-jiang-xiaobai-qi-chunqiu', 'reign-qi-r16-qi-chunqiu', 'reign-qi-r17-qi-chunqiu', 'reign-qi-r18-qi-chunqiu', 'reign-qi-r19-qi-chunqiu', 'reign-qi-r20-qi-chunqiu', 'reign-qi-r21-qi-chunqiu', 'reign-qi-r22-qi-chunqiu', 'reign-qi-r23-qi-chunqiu', 'reign-qi-r24-qi-chunqiu', 'reign-qi-r25-qi-chunqiu', 'reign-qi-r26-qi-chunqiu', 'reign-qi-r27-qi-chunqiu', 'reign-qi-r28-qi-chunqiu', 'reign-qi-r29-qi-chunqiu', 'reign-qi-r30-qi-chunqiu', 'reign-qi-r31-qi-chunqiu', 'reign-qi-r32-qi-chunqiu', 'reign-qi-r33-qi-chunqiu', 'reign-qi-r34-qi-chunqiu', 'reign-qi-r35-qi-chunqiu', 'reign-qi-r36-qi-chunqiu', 'reign-qi-r37-qi-chunqiu', 'reign-qi-r38-qi-chunqiu', 'reign-qi-r39-qi-chunqiu', 'reign-ji-shuyu-jin-chunqiu', 'reign-jin-r1-jin-chunqiu', 'reign-jin-r2-jin-chunqiu', 'reign-jin-r3-jin-chunqiu', 'reign-jin-r4-jin-chunqiu', 'reign-jin-r5-jin-chunqiu', 'reign-jin-r6-jin-chunqiu', 'reign-jin-r7-jin-chunqiu', 'reign-jin-r8-jin-chunqiu', 'reign-jin-r9-jin-chunqiu', 'reign-jin-r10-jin-chunqiu', 'reign-jin-r11-jin-chunqiu', 'reign-jin-r12-jin-chunqiu', 'reign-jin-r13-jin-chunqiu', 'reign-jin-r14-jin-chunqiu', 'reign-jin-r15-jin-chunqiu', 'reign-jin-r16-jin-chunqiu', 'reign-jin-r17-jin-chunqiu', 'reign-jin-r18-jin-chunqiu', 'reign-jin-r19-jin-chunqiu', 'reign-jin-r20-jin-chunqiu', 'reign-jin-r21-jin-chunqiu', 'reign-jin-r22-jin-chunqiu', 'reign-ji-chonger-jin-chunqiu', 'reign-jin-r24-jin-chunqiu', 'reign-jin-r25-jin-chunqiu', 'reign-jin-r26-jin-chunqiu', 'reign-jin-r27-jin-chunqiu', 'reign-jin-r28-jin-chunqiu', 'reign-jin-r29-jin-chunqiu', 'reign-jin-r30-jin-chunqiu', 'reign-jin-r31-jin-chunqiu', 'reign-jin-r32-jin-chunqiu', 'reign-jin-r33-jin-chunqiu', 'reign-jin-r34-jin-chunqiu', 'reign-jin-r35-jin-chunqiu', 'reign-jin-r36-jin-chunqiu', 'reign-jin-r37-jin-chunqiu', 'reign-jin-r38-jin-chunqiu', 'reign-jin-r39-jin-chunqiu', 'reign-chu-r0-chu-chunqiu', 'reign-chu-r1-chu-chunqiu', 'reign-chu-r2-chu-chunqiu', 'reign-chu-r3-chu-chunqiu', 'reign-chu-r4-chu-chunqiu', 'reign-chu-r5-chu-chunqiu', 'reign-chu-r6-chu-chunqiu', 'reign-chu-r7-chu-chunqiu', 'reign-chu-r8-chu-chunqiu', 'reign-chu-r9-chu-chunqiu', 'reign-chu-r10-chu-chunqiu', 'reign-chu-r11-chu-chunqiu', 'reign-chu-r12-chu-chunqiu', 'reign-chu-r13-chu-chunqiu', 'reign-chu-r14-chu-chunqiu', 'reign-chu-r15-chu-chunqiu', 'reign-chu-r16-chu-chunqiu', 'reign-chu-r17-chu-chunqiu', 'reign-chu-r18-chu-chunqiu', 'reign-chu-r19-chu-chunqiu', 'reign-chu-r20-chu-chunqiu', 'reign-xiong-zhuang-chu-chunqiu', 'reign-chu-r22-chu-chunqiu', 'reign-chu-r23-chu-chunqiu', 'reign-chu-r24-chu-chunqiu', 'reign-chu-r25-chu-chunqiu', 'reign-chu-r26-chu-chunqiu', 'reign-chu-r27-chu-chunqiu', 'reign-chu-r28-chu-chunqiu', 'reign-chu-r29-chu-chunqiu', 'reign-chu-r30-chu-chunqiu', 'reign-chu-r31-chu-chunqiu', 'reign-chu-r32-chu-chunqiu', 'reign-chu-r33-chu-chunqiu', 'reign-chu-r34-chu-chunqiu', 'reign-chu-r35-chu-chunqiu', 'reign-chu-r36-chu-chunqiu', 'reign-chu-r37-chu-chunqiu', 'reign-chu-r38-chu-chunqiu', 'reign-chu-r39-chu-chunqiu', 'reign-chu-r40-chu-chunqiu', 'reign-chu-r41-chu-chunqiu', 'reign-chu-r42-chu-chunqiu', 'reign-chu-r43-chu-chunqiu', 'reign-ji-shi-yan-chunqiu', 'reign-yan-r1-yan-chunqiu', 'reign-yan-r2-yan-chunqiu', 'reign-yan-r3-yan-chunqiu', 'reign-yan-r4-yan-chunqiu', 'reign-yan-r5-yan-chunqiu', 'reign-yan-r6-yan-chunqiu', 'reign-yan-r7-yan-chunqiu', 'reign-yan-r8-yan-chunqiu', 'reign-yan-r9-yan-chunqiu', 'reign-yan-r10-yan-chunqiu', 'reign-yan-r11-yan-chunqiu', 'reign-yan-r12-yan-chunqiu', 'reign-yan-r13-yan-chunqiu', 'reign-yan-r14-yan-chunqiu', 'reign-yan-r15-yan-chunqiu', 'reign-yan-r16-yan-chunqiu', 'reign-yan-r17-yan-chunqiu', 'reign-yan-r18-yan-chunqiu', 'reign-yan-r19-yan-chunqiu', 'reign-yan-r20-yan-chunqiu', 'reign-yan-r21-yan-chunqiu', 'reign-yan-r22-yan-chunqiu', 'reign-yan-r23-yan-chunqiu', 'reign-yan-r24-yan-chunqiu', 'reign-yan-r25-yan-chunqiu', 'reign-yan-r26-yan-chunqiu', 'reign-yan-r27-yan-chunqiu', 'reign-yan-r28-yan-chunqiu', 'reign-yan-r29-yan-chunqiu', 'reign-yan-r30-yan-chunqiu', 'reign-yan-r31-yan-chunqiu', 'reign-yan-r32-yan-chunqiu', 'reign-yan-r33-yan-chunqiu', 'reign-yan-r34-yan-chunqiu', 'reign-yan-r35-yan-chunqiu', 'reign-yan-r36-yan-chunqiu', 'reign-yan-r37-yan-chunqiu', 'reign-song-weizi-song-chunqiu', 'reign-song-r1-song-chunqiu', 'reign-song-r2-song-chunqiu', 'reign-song-r3-song-chunqiu', 'reign-song-r4-song-chunqiu', 'reign-song-r5-song-chunqiu', 'reign-song-r6-song-chunqiu', 'reign-song-r7-song-chunqiu', 'reign-song-r8-song-chunqiu', 'reign-song-r9-song-chunqiu', 'reign-song-r10-song-chunqiu', 'reign-song-r11-song-chunqiu', 'reign-song-r12-song-chunqiu', 'reign-song-r13-song-chunqiu', 'reign-song-r14-song-chunqiu', 'reign-song-r15-song-chunqiu', 'reign-song-r16-song-chunqiu', 'reign-song-r17-song-chunqiu', 'reign-song-r18-song-chunqiu', 'reign-song-r19-song-chunqiu', 'reign-song-r20-song-chunqiu', 'reign-song-r21-song-chunqiu', 'reign-song-r22-song-chunqiu', 'reign-song-r23-song-chunqiu', 'reign-song-r24-song-chunqiu', 'reign-song-r25-song-chunqiu', 'reign-song-r26-song-chunqiu', 'reign-song-r27-song-chunqiu', 'reign-song-r28-song-chunqiu', 'reign-song-r29-song-chunqiu', 'reign-song-r30-song-chunqiu', 'reign-song-r31-song-chunqiu', 'reign-song-r32-song-chunqiu', 'reign-song-r33-song-chunqiu', 'reign-bo-qin-lu-chunqiu', 'reign-lu-r1-lu-chunqiu', 'reign-lu-r2-lu-chunqiu', 'reign-lu-r3-lu-chunqiu', 'reign-lu-r4-lu-chunqiu', 'reign-lu-r5-lu-chunqiu', 'reign-lu-r6-lu-chunqiu', 'reign-lu-r7-lu-chunqiu', 'reign-lu-r8-lu-chunqiu', 'reign-lu-r9-lu-chunqiu', 'reign-lu-r10-lu-chunqiu', 'reign-lu-r11-lu-chunqiu', 'reign-lu-r12-lu-chunqiu', 'reign-lu-r13-lu-chunqiu', 'reign-lu-r14-lu-chunqiu', 'reign-lu-r15-lu-chunqiu', 'reign-lu-r16-lu-chunqiu', 'reign-lu-r17-lu-chunqiu', 'reign-lu-r18-lu-chunqiu', 'reign-lu-r19-lu-chunqiu', 'reign-lu-r20-lu-chunqiu', 'reign-lu-r21-lu-chunqiu', 'reign-lu-r22-lu-chunqiu', 'reign-lu-r23-lu-chunqiu', 'reign-lu-r24-lu-chunqiu', 'reign-lu-r25-lu-chunqiu', 'reign-lu-r26-lu-chunqiu', 'reign-lu-r27-lu-chunqiu', 'reign-lu-r28-lu-chunqiu', 'reign-lu-r29-lu-chunqiu', 'reign-lu-r30-lu-chunqiu', 'reign-lu-r31-lu-chunqiu', 'reign-lu-r32-lu-chunqiu', 'reign-lu-r33-lu-chunqiu', 'reign-lu-r34-lu-chunqiu', 'reign-weiguo-r0-wei-weiguo', 'reign-weiguo-r1-wei-weiguo', 'reign-weiguo-r2-wei-weiguo', 'reign-weiguo-r3-wei-weiguo', 'reign-weiguo-r4-wei-weiguo', 'reign-weiguo-r5-wei-weiguo', 'reign-weiguo-r6-wei-weiguo', 'reign-weiguo-r7-wei-weiguo', 'reign-weiguo-r8-wei-weiguo', 'reign-weiguo-r9-wei-weiguo', 'reign-weiguo-r10-wei-weiguo', 'reign-weiguo-r11-wei-weiguo', 'reign-weiguo-r12-wei-weiguo', 'reign-weiguo-r13-wei-weiguo', 'reign-weiguo-r14-wei-weiguo', 'reign-weiguo-r15-wei-weiguo', 'reign-weiguo-r16-wei-weiguo', 'reign-weiguo-r17-wei-weiguo', 'reign-weiguo-r18-wei-weiguo', 'reign-weiguo-r19-wei-weiguo', 'reign-weiguo-r20-wei-weiguo', 'reign-weiguo-r21-wei-weiguo', 'reign-weiguo-r22-wei-weiguo', 'reign-weiguo-r23-wei-weiguo', 'reign-weiguo-r24-wei-weiguo', 'reign-weiguo-r25-wei-weiguo', 'reign-weiguo-r26-wei-weiguo', 'reign-weiguo-r27-wei-weiguo', 'reign-weiguo-r28-wei-weiguo', 'reign-weiguo-r29-wei-weiguo', 'reign-weiguo-r30-wei-weiguo', 'reign-weiguo-r31-wei-weiguo', 'reign-weiguo-r32-wei-weiguo', 'reign-weiguo-r33-wei-weiguo', 'reign-weiguo-r34-wei-weiguo', 'reign-weiguo-r35-wei-weiguo', 'reign-weiguo-r36-wei-weiguo', 'reign-weiguo-r37-wei-weiguo', 'reign-weiguo-r38-wei-weiguo', 'reign-weiguo-r39-wei-weiguo', 'reign-weiguo-r40-wei-weiguo', 'reign-weiguo-r41-wei-weiguo', 'reign-weiguo-r42-wei-weiguo', 'reign-weiguo-r43-wei-weiguo', 'reign-weiguo-r44-wei-weiguo', 'reign-weiguo-r45-wei-weiguo', 'reign-weiguo-r46-wei-weiguo', 'reign-zheng-r0-zheng-chunqiu', 'reign-zheng-r1-zheng-chunqiu', 'reign-zheng-r2-zheng-chunqiu', 'reign-zheng-r3-zheng-chunqiu', 'reign-zheng-r4-zheng-chunqiu', 'reign-zheng-r5-zheng-chunqiu', 'reign-zheng-r6-zheng-chunqiu', 'reign-zheng-r7-zheng-chunqiu', 'reign-zheng-r8-zheng-chunqiu', 'reign-zheng-r9-zheng-chunqiu', 'reign-zheng-r10-zheng-chunqiu', 'reign-zheng-r11-zheng-chunqiu', 'reign-zheng-r12-zheng-chunqiu', 'reign-zheng-r13-zheng-chunqiu', 'reign-zheng-r14-zheng-chunqiu', 'reign-zheng-r15-zheng-chunqiu', 'reign-zheng-r16-zheng-chunqiu', 'reign-zheng-r17-zheng-chunqiu', 'reign-zheng-r18-zheng-chunqiu', 'reign-zheng-r19-zheng-chunqiu', 'reign-zheng-r20-zheng-chunqiu', 'reign-zheng-r21-zheng-chunqiu', 'reign-zheng-r22-zheng-chunqiu', 'reign-zheng-r23-zheng-chunqiu', 'reign-zheng-r24-zheng-chunqiu', 'reign-cao-r0-cao-chunqiu', 'reign-cao-r1-cao-chunqiu', 'reign-cao-r2-cao-chunqiu', 'reign-cao-r3-cao-chunqiu', 'reign-cao-r4-cao-chunqiu', 'reign-cao-r5-cao-chunqiu', 'reign-cao-r6-cao-chunqiu', 'reign-cao-r7-cao-chunqiu', 'reign-cao-r8-cao-chunqiu', 'reign-cao-r9-cao-chunqiu', 'reign-cao-r10-cao-chunqiu', 'reign-cao-r11-cao-chunqiu', 'reign-cao-r12-cao-chunqiu', 'reign-cao-r13-cao-chunqiu', 'reign-cao-r14-cao-chunqiu', 'reign-cao-r15-cao-chunqiu', 'reign-cao-r16-cao-chunqiu', 'reign-cao-r17-cao-chunqiu', 'reign-cao-r18-cao-chunqiu', 'reign-cao-r19-cao-chunqiu', 'reign-cao-r20-cao-chunqiu', 'reign-cao-r21-cao-chunqiu', 'reign-cao-r22-cao-chunqiu', 'reign-cao-r23-cao-chunqiu', 'reign-cao-r24-cao-chunqiu', 'reign-cao-r25-cao-chunqiu', 'reign-wu-r0-wu-chunqiu', 'reign-wu-r1-wu-chunqiu', 'reign-wu-r2-wu-chunqiu', 'reign-wu-r3-wu-chunqiu', 'reign-wu-r4-wu-chunqiu', 'reign-helu-wu-chunqiu', 'reign-fu-chai-wu-chunqiu', 'reign-yue-r0-yue-chunqiu', 'reign-yue-r1-yue-chunqiu', 'reign-yue-r2-yue-chunqiu', 'reign-yue-r3-yue-chunqiu', 'reign-yue-r4-yue-chunqiu', 'reign-gou-jian-yue-chunqiu', 'reign-yue-r6-yue-chunqiu', 'reign-yue-r7-yue-chunqiu', 'reign-yue-r8-yue-chunqiu', 'reign-yue-r9-yue-chunqiu', 'reign-yue-r10-yue-chunqiu', 'reign-yue-r11-yue-chunqiu', 'reign-yue-r12-yue-chunqiu', 'reign-yue-r13-yue-chunqiu', 'reign-zhongshan-r0-zhongshan', 'reign-zhongshan-r1-zhongshan', 'reign-zhongshan-r2-zhongshan', 'reign-zhongshan-r3-zhongshan', 'reign-zhongshan-r4-zhongshan', 'reign-zhongshan-r5-zhongshan', 'reign-zhongshan-r6-zhongshan', 'reign-han-jing-han-warring', 'reign-han-r1-han-warring', 'reign-han-r2-han-warring', 'reign-han-r3-han-warring', 'reign-han-r4-han-warring', 'reign-han-r5-han-warring', 'reign-han-r6-han-warring', 'reign-han-r7-han-warring', 'reign-han-r8-han-warring', 'reign-han-r9-han-warring', 'reign-han-r10-han-warring', 'reign-zhao-lie-zhao-warring', 'reign-zhao-r1-zhao-warring', 'reign-zhao-r2-zhao-warring', 'reign-zhao-r3-zhao-warring', 'reign-zhao-r4-zhao-warring', 'reign-zhao-r5-zhao-warring', 'reign-zhao-r6-zhao-warring', 'reign-zhao-r7-zhao-warring', 'reign-zhao-r8-zhao-warring', 'reign-zhao-r9-zhao-warring', 'reign-wei-wen-wei-warring', 'reign-wei-r1-wei-warring', 'reign-wei-r2-wei-warring', 'reign-wei-r3-wei-warring', 'reign-wei-r4-wei-warring', 'reign-wei-r5-wei-warring', 'reign-wei-r6-wei-warring', 'reign-wei-r7-wei-warring', 'reign-wei-r8-wei-warring', 'reign-ying-qi-qin', 'reign-qin-r1-qin', 'reign-qin-r2-qin', 'reign-qin-r3-qin', 'reign-qin-r4-qin', 'reign-qin-r5-qin', 'reign-qin-r6-qin', 'reign-qin-r7-qin', 'reign-qin-r8-qin', 'reign-qin-r9-qin', 'reign-qin-r10-qin', 'reign-qin-r11-qin', 'reign-qin-r12-qin', 'reign-qin-r13-qin', 'reign-qin-r14-qin', 'reign-qin-r15-qin', 'reign-qin-r16-qin', 'reign-qin-r17-qin', 'reign-qin-r18-qin', 'reign-qin-r19-qin', 'reign-qin-r20-qin', 'reign-qin-r21-qin', 'reign-qin-r22-qin', 'reign-qin-r23-qin', 'reign-ying-quliang-qin', 'reign-qin-r25-qin', 'reign-qin-r26-qin', 'reign-qin-r27-qin', 'reign-qin-r28-qin', 'reign-qin-r29-qin', 'reign-ying-zheng-qin', 'reign-ying-zheng', 'reign-ying-huhai', 'reign-ying-ziying')
+  WHERE dynasty_id IN ('qi-chunqiu', 'jin-chunqiu', 'chu-chunqiu', 'yan-chunqiu', 'song-chunqiu', 'lu-chunqiu', 'wei-weiguo', 'zheng-chunqiu', 'cao-chunqiu', 'wu-chunqiu', 'yue-chunqiu', 'zhongshan', 'han-warring', 'zhao-warring', 'wei-warring', 'qin') AND id NOT IN ('reign-lv-shang-qi-chunqiu', 'reign-qi-r1-qi-chunqiu', 'reign-qi-r2-qi-chunqiu', 'reign-qi-r3-qi-chunqiu', 'reign-qi-r4-qi-chunqiu', 'reign-qi-r5-qi-chunqiu', 'reign-qi-r6-qi-chunqiu', 'reign-qi-r7-qi-chunqiu', 'reign-qi-r8-qi-chunqiu', 'reign-qi-r9-qi-chunqiu', 'reign-qi-r10-qi-chunqiu', 'reign-qi-r11-qi-chunqiu', 'reign-qi-r12-qi-chunqiu', 'reign-qi-r13-qi-chunqiu', 'reign-qi-r14-qi-chunqiu', 'reign-jiang-xiaobai-qi-chunqiu', 'reign-qi-r16-qi-chunqiu', 'reign-qi-r17-qi-chunqiu', 'reign-qi-r18-qi-chunqiu', 'reign-qi-r19-qi-chunqiu', 'reign-qi-r20-qi-chunqiu', 'reign-qi-r21-qi-chunqiu', 'reign-qi-r22-qi-chunqiu', 'reign-qi-r23-qi-chunqiu', 'reign-qi-r24-qi-chunqiu', 'reign-qi-r25-qi-chunqiu', 'reign-qi-r26-qi-chunqiu', 'reign-qi-r27-qi-chunqiu', 'reign-qi-r28-qi-chunqiu', 'reign-qi-r29-qi-chunqiu', 'reign-qi-r30-qi-chunqiu', 'reign-qi-r31-qi-chunqiu', 'reign-qi-r32-qi-chunqiu', 'reign-qi-r33-qi-chunqiu', 'reign-qi-r34-qi-chunqiu', 'reign-qi-r35-qi-chunqiu', 'reign-qi-r36-qi-chunqiu', 'reign-qi-r37-qi-chunqiu', 'reign-qi-r38-qi-chunqiu', 'reign-qi-r39-qi-chunqiu', 'reign-ji-shuyu-jin-chunqiu', 'reign-jin-r1-jin-chunqiu', 'reign-jin-r2-jin-chunqiu', 'reign-jin-r3-jin-chunqiu', 'reign-jin-r4-jin-chunqiu', 'reign-jin-r5-jin-chunqiu', 'reign-jin-r6-jin-chunqiu', 'reign-jin-r7-jin-chunqiu', 'reign-jin-r8-jin-chunqiu', 'reign-jin-r9-jin-chunqiu', 'reign-jin-r10-jin-chunqiu', 'reign-jin-r11-jin-chunqiu', 'reign-jin-r12-jin-chunqiu', 'reign-jin-r13-jin-chunqiu', 'reign-jin-r14-jin-chunqiu', 'reign-jin-r15-jin-chunqiu', 'reign-jin-r16-jin-chunqiu', 'reign-jin-r17-jin-chunqiu', 'reign-jin-r18-jin-chunqiu', 'reign-jin-r19-jin-chunqiu', 'reign-jin-r20-jin-chunqiu', 'reign-jin-r21-jin-chunqiu', 'reign-jin-r22-jin-chunqiu', 'reign-ji-chonger-jin-chunqiu', 'reign-jin-r24-jin-chunqiu', 'reign-jin-r25-jin-chunqiu', 'reign-jin-r26-jin-chunqiu', 'reign-jin-r27-jin-chunqiu', 'reign-jin-r28-jin-chunqiu', 'reign-jin-r29-jin-chunqiu', 'reign-jin-r30-jin-chunqiu', 'reign-jin-r31-jin-chunqiu', 'reign-jin-r32-jin-chunqiu', 'reign-jin-r33-jin-chunqiu', 'reign-jin-r34-jin-chunqiu', 'reign-jin-r35-jin-chunqiu', 'reign-jin-r36-jin-chunqiu', 'reign-jin-r37-jin-chunqiu', 'reign-jin-r38-jin-chunqiu', 'reign-jin-r39-jin-chunqiu', 'reign-chu-r0-chu-chunqiu', 'reign-chu-r1-chu-chunqiu', 'reign-chu-r2-chu-chunqiu', 'reign-chu-r3-chu-chunqiu', 'reign-chu-r4-chu-chunqiu', 'reign-chu-r5-chu-chunqiu', 'reign-chu-r6-chu-chunqiu', 'reign-chu-r7-chu-chunqiu', 'reign-chu-r8-chu-chunqiu', 'reign-chu-r9-chu-chunqiu', 'reign-chu-r10-chu-chunqiu', 'reign-chu-r11-chu-chunqiu', 'reign-chu-r12-chu-chunqiu', 'reign-chu-r13-chu-chunqiu', 'reign-chu-r14-chu-chunqiu', 'reign-chu-r15-chu-chunqiu', 'reign-chu-r16-chu-chunqiu', 'reign-chu-r17-chu-chunqiu', 'reign-chu-r18-chu-chunqiu', 'reign-chu-r19-chu-chunqiu', 'reign-chu-r20-chu-chunqiu', 'reign-xiong-zhuang-chu-chunqiu', 'reign-chu-r22-chu-chunqiu', 'reign-chu-r23-chu-chunqiu', 'reign-chu-r24-chu-chunqiu', 'reign-chu-r25-chu-chunqiu', 'reign-chu-r26-chu-chunqiu', 'reign-chu-r27-chu-chunqiu', 'reign-chu-r28-chu-chunqiu', 'reign-chu-r29-chu-chunqiu', 'reign-chu-r30-chu-chunqiu', 'reign-chu-r31-chu-chunqiu', 'reign-chu-r32-chu-chunqiu', 'reign-chu-r33-chu-chunqiu', 'reign-chu-r34-chu-chunqiu', 'reign-chu-r35-chu-chunqiu', 'reign-chu-r36-chu-chunqiu', 'reign-chu-r37-chu-chunqiu', 'reign-chu-r38-chu-chunqiu', 'reign-chu-r39-chu-chunqiu', 'reign-chu-r40-chu-chunqiu', 'reign-chu-r41-chu-chunqiu', 'reign-chu-r42-chu-chunqiu', 'reign-chu-r43-chu-chunqiu', 'reign-ji-shi-yan-chunqiu', 'reign-yan-r1-yan-chunqiu', 'reign-yan-r2-yan-chunqiu', 'reign-yan-r3-yan-chunqiu', 'reign-yan-r4-yan-chunqiu', 'reign-yan-r5-yan-chunqiu', 'reign-yan-r6-yan-chunqiu', 'reign-yan-r7-yan-chunqiu', 'reign-yan-r8-yan-chunqiu', 'reign-yan-r9-yan-chunqiu', 'reign-yan-r10-yan-chunqiu', 'reign-yan-r11-yan-chunqiu', 'reign-yan-r12-yan-chunqiu', 'reign-yan-r13-yan-chunqiu', 'reign-yan-r14-yan-chunqiu', 'reign-yan-r15-yan-chunqiu', 'reign-yan-r16-yan-chunqiu', 'reign-yan-r17-yan-chunqiu', 'reign-yan-r18-yan-chunqiu', 'reign-yan-r19-yan-chunqiu', 'reign-yan-r20-yan-chunqiu', 'reign-yan-r21-yan-chunqiu', 'reign-yan-r22-yan-chunqiu', 'reign-yan-r23-yan-chunqiu', 'reign-yan-r24-yan-chunqiu', 'reign-yan-r25-yan-chunqiu', 'reign-yan-r26-yan-chunqiu', 'reign-yan-r27-yan-chunqiu', 'reign-yan-r28-yan-chunqiu', 'reign-yan-r29-yan-chunqiu', 'reign-yan-r30-yan-chunqiu', 'reign-yan-r31-yan-chunqiu', 'reign-yan-r32-yan-chunqiu', 'reign-yan-r33-yan-chunqiu', 'reign-yan-r34-yan-chunqiu', 'reign-yan-r35-yan-chunqiu', 'reign-yan-r36-yan-chunqiu', 'reign-yan-r37-yan-chunqiu', 'reign-song-weizi-song-chunqiu', 'reign-song-r1-song-chunqiu', 'reign-song-r2-song-chunqiu', 'reign-song-r3-song-chunqiu', 'reign-song-r4-song-chunqiu', 'reign-song-r5-song-chunqiu', 'reign-song-r6-song-chunqiu', 'reign-song-r7-song-chunqiu', 'reign-song-r8-song-chunqiu', 'reign-song-r9-song-chunqiu', 'reign-song-r10-song-chunqiu', 'reign-song-r11-song-chunqiu', 'reign-song-r12-song-chunqiu', 'reign-song-r13-song-chunqiu', 'reign-song-r14-song-chunqiu', 'reign-song-r15-song-chunqiu', 'reign-song-r16-song-chunqiu', 'reign-song-r17-song-chunqiu', 'reign-song-r18-song-chunqiu', 'reign-song-r19-song-chunqiu', 'reign-song-r20-song-chunqiu', 'reign-song-r21-song-chunqiu', 'reign-song-r22-song-chunqiu', 'reign-song-r23-song-chunqiu', 'reign-song-r24-song-chunqiu', 'reign-song-r25-song-chunqiu', 'reign-song-r26-song-chunqiu', 'reign-song-r27-song-chunqiu', 'reign-song-r28-song-chunqiu', 'reign-song-r29-song-chunqiu', 'reign-song-r30-song-chunqiu', 'reign-song-r31-song-chunqiu', 'reign-song-r32-song-chunqiu', 'reign-song-r33-song-chunqiu', 'reign-bo-qin-lu-chunqiu', 'reign-lu-r1-lu-chunqiu', 'reign-lu-r2-lu-chunqiu', 'reign-lu-r3-lu-chunqiu', 'reign-lu-r4-lu-chunqiu', 'reign-lu-r5-lu-chunqiu', 'reign-lu-r6-lu-chunqiu', 'reign-lu-r7-lu-chunqiu', 'reign-lu-r8-lu-chunqiu', 'reign-lu-r9-lu-chunqiu', 'reign-lu-r10-lu-chunqiu', 'reign-lu-r11-lu-chunqiu', 'reign-lu-r12-lu-chunqiu', 'reign-lu-r13-lu-chunqiu', 'reign-lu-r14-lu-chunqiu', 'reign-lu-r15-lu-chunqiu', 'reign-lu-r16-lu-chunqiu', 'reign-lu-r17-lu-chunqiu', 'reign-lu-r18-lu-chunqiu', 'reign-lu-r19-lu-chunqiu', 'reign-lu-r20-lu-chunqiu', 'reign-lu-r21-lu-chunqiu', 'reign-lu-r22-lu-chunqiu', 'reign-lu-r23-lu-chunqiu', 'reign-lu-r24-lu-chunqiu', 'reign-lu-r25-lu-chunqiu', 'reign-lu-r26-lu-chunqiu', 'reign-lu-r27-lu-chunqiu', 'reign-lu-r28-lu-chunqiu', 'reign-lu-r29-lu-chunqiu', 'reign-lu-r30-lu-chunqiu', 'reign-lu-r31-lu-chunqiu', 'reign-lu-r32-lu-chunqiu', 'reign-lu-r33-lu-chunqiu', 'reign-lu-r34-lu-chunqiu', 'reign-weiguo-r0-wei-weiguo', 'reign-weiguo-r1-wei-weiguo', 'reign-weiguo-r2-wei-weiguo', 'reign-weiguo-r3-wei-weiguo', 'reign-weiguo-r4-wei-weiguo', 'reign-weiguo-r5-wei-weiguo', 'reign-weiguo-r6-wei-weiguo', 'reign-weiguo-r7-wei-weiguo', 'reign-weiguo-r8-wei-weiguo', 'reign-weiguo-r9-wei-weiguo', 'reign-weiguo-r10-wei-weiguo', 'reign-weiguo-r11-wei-weiguo', 'reign-weiguo-r12-wei-weiguo', 'reign-weiguo-r13-wei-weiguo', 'reign-weiguo-r14-wei-weiguo', 'reign-weiguo-r15-wei-weiguo', 'reign-weiguo-r16-wei-weiguo', 'reign-weiguo-r17-wei-weiguo', 'reign-weiguo-r18-wei-weiguo', 'reign-weiguo-r19-wei-weiguo', 'reign-weiguo-r20-wei-weiguo', 'reign-weiguo-r21-wei-weiguo', 'reign-weiguo-r22-wei-weiguo', 'reign-weiguo-r23-wei-weiguo', 'reign-weiguo-r24-wei-weiguo', 'reign-weiguo-r25-wei-weiguo', 'reign-weiguo-r26-wei-weiguo', 'reign-weiguo-r27-wei-weiguo', 'reign-weiguo-r28-wei-weiguo', 'reign-weiguo-r29-wei-weiguo', 'reign-weiguo-r30-wei-weiguo', 'reign-weiguo-r31-wei-weiguo', 'reign-weiguo-r32-wei-weiguo', 'reign-weiguo-r33-wei-weiguo', 'reign-weiguo-r34-wei-weiguo', 'reign-weiguo-r35-wei-weiguo', 'reign-weiguo-r36-wei-weiguo', 'reign-weiguo-r37-wei-weiguo', 'reign-weiguo-r38-wei-weiguo', 'reign-weiguo-r39-wei-weiguo', 'reign-weiguo-r40-wei-weiguo', 'reign-weiguo-r41-wei-weiguo', 'reign-weiguo-r42-wei-weiguo', 'reign-weiguo-r43-wei-weiguo', 'reign-weiguo-r44-wei-weiguo', 'reign-weiguo-r45-wei-weiguo', 'reign-weiguo-r46-wei-weiguo', 'reign-zheng-r0-zheng-chunqiu', 'reign-zheng-r1-zheng-chunqiu', 'reign-zheng-r2-zheng-chunqiu', 'reign-zheng-r3-zheng-chunqiu', 'reign-zheng-r4-zheng-chunqiu', 'reign-zheng-r5-zheng-chunqiu', 'reign-zheng-r6-zheng-chunqiu', 'reign-zheng-r7-zheng-chunqiu', 'reign-zheng-r8-zheng-chunqiu', 'reign-zheng-r9-zheng-chunqiu', 'reign-zheng-r10-zheng-chunqiu', 'reign-zheng-r11-zheng-chunqiu', 'reign-zheng-r12-zheng-chunqiu', 'reign-zheng-r13-zheng-chunqiu', 'reign-zheng-r14-zheng-chunqiu', 'reign-zheng-r15-zheng-chunqiu', 'reign-zheng-r16-zheng-chunqiu', 'reign-zheng-r17-zheng-chunqiu', 'reign-zheng-r18-zheng-chunqiu', 'reign-zheng-r19-zheng-chunqiu', 'reign-zheng-r20-zheng-chunqiu', 'reign-zheng-r21-zheng-chunqiu', 'reign-zheng-r22-zheng-chunqiu', 'reign-zheng-r23-zheng-chunqiu', 'reign-zheng-r24-zheng-chunqiu', 'reign-cao-r0-cao-chunqiu', 'reign-cao-r1-cao-chunqiu', 'reign-cao-r2-cao-chunqiu', 'reign-cao-r3-cao-chunqiu', 'reign-cao-r4-cao-chunqiu', 'reign-cao-r5-cao-chunqiu', 'reign-cao-r6-cao-chunqiu', 'reign-cao-r7-cao-chunqiu', 'reign-cao-r8-cao-chunqiu', 'reign-cao-r9-cao-chunqiu', 'reign-cao-r10-cao-chunqiu', 'reign-cao-r11-cao-chunqiu', 'reign-cao-r12-cao-chunqiu', 'reign-cao-r13-cao-chunqiu', 'reign-cao-r14-cao-chunqiu', 'reign-cao-r15-cao-chunqiu', 'reign-cao-r16-cao-chunqiu', 'reign-cao-r17-cao-chunqiu', 'reign-cao-r18-cao-chunqiu', 'reign-cao-r19-cao-chunqiu', 'reign-cao-r20-cao-chunqiu', 'reign-cao-r21-cao-chunqiu', 'reign-cao-r22-cao-chunqiu', 'reign-cao-r23-cao-chunqiu', 'reign-cao-r24-cao-chunqiu', 'reign-cao-r25-cao-chunqiu', 'reign-wu-r0-wu-chunqiu', 'reign-wu-r1-wu-chunqiu', 'reign-wu-r2-wu-chunqiu', 'reign-wu-r3-wu-chunqiu', 'reign-wu-r4-wu-chunqiu', 'reign-helu-wu-chunqiu', 'reign-fu-chai-wu-chunqiu', 'reign-yue-r0-yue-chunqiu', 'reign-yue-r1-yue-chunqiu', 'reign-yue-r2-yue-chunqiu', 'reign-yue-r3-yue-chunqiu', 'reign-yue-r4-yue-chunqiu', 'reign-gou-jian-yue-chunqiu', 'reign-yue-r6-yue-chunqiu', 'reign-yue-r7-yue-chunqiu', 'reign-yue-r8-yue-chunqiu', 'reign-yue-r9-yue-chunqiu', 'reign-yue-r10-yue-chunqiu', 'reign-yue-r11-yue-chunqiu', 'reign-yue-r12-yue-chunqiu', 'reign-yue-r13-yue-chunqiu', 'reign-zhongshan-r0-zhongshan', 'reign-zhongshan-r1-zhongshan', 'reign-zhongshan-r2-zhongshan', 'reign-zhongshan-r3-zhongshan', 'reign-zhongshan-r4-zhongshan', 'reign-zhongshan-r5-zhongshan', 'reign-zhongshan-r6-zhongshan', 'reign-han-jing-han-warring', 'reign-han-r1-han-warring', 'reign-han-r2-han-warring', 'reign-han-r3-han-warring', 'reign-han-r4-han-warring', 'reign-han-r5-han-warring', 'reign-han-r6-han-warring', 'reign-han-r7-han-warring', 'reign-han-r8-han-warring', 'reign-han-r9-han-warring', 'reign-han-r10-han-warring', 'reign-zhao-lie-zhao-warring', 'reign-zhao-r1-zhao-warring', 'reign-zhao-r2-zhao-warring', 'reign-zhao-r3-zhao-warring', 'reign-zhao-r4-zhao-warring', 'reign-zhao-r5-zhao-warring', 'reign-zhao-r6-zhao-warring', 'reign-zhao-r7-zhao-warring', 'reign-zhao-r8-zhao-warring', 'reign-zhao-r9-zhao-warring', 'reign-wei-wen-wei-warring', 'reign-wei-r1-wei-warring', 'reign-wei-r2-wei-warring', 'reign-wei-r3-wei-warring', 'reign-wei-r4-wei-warring', 'reign-wei-r5-wei-warring', 'reign-wei-r6-wei-warring', 'reign-wei-r7-wei-warring', 'reign-ying-qi-qin', 'reign-qin-r1-qin', 'reign-qin-r2-qin', 'reign-qin-r3-qin', 'reign-qin-r4-qin', 'reign-qin-r5-qin', 'reign-qin-r6-qin', 'reign-qin-r7-qin', 'reign-qin-r8-qin', 'reign-qin-r9-qin', 'reign-qin-r10-qin', 'reign-qin-r11-qin', 'reign-qin-r12-qin', 'reign-qin-r13-qin', 'reign-qin-r14-qin', 'reign-qin-r15-qin', 'reign-qin-r16-qin', 'reign-qin-r17-qin', 'reign-qin-r18-qin', 'reign-qin-r19-qin', 'reign-qin-r20-qin', 'reign-qin-r21-qin', 'reign-qin-r22-qin', 'reign-qin-r23-qin', 'reign-ying-quliang-qin', 'reign-qin-r25-qin', 'reign-qin-r26-qin', 'reign-qin-r27-qin', 'reign-qin-r28-qin', 'reign-qin-r29-qin', 'reign-ying-zheng-qin', 'reign-ying-zheng', 'reign-ying-huhai', 'reign-ying-ziying')
   RETURNING person_id
 )
 DELETE FROM persons p
@@ -19622,7 +19577,7 @@ WHERE p.id IN (SELECT DISTINCT person_id FROM stale)
 
 -- Drop ruler persons left behind by earlier imports
 DELETE FROM persons p
-WHERE p.id NOT IN ('lv-shang', 'qi-r1', 'qi-r2', 'qi-r3', 'qi-r4', 'qi-r5', 'qi-r6', 'qi-r7', 'qi-r8', 'qi-r9', 'qi-r10', 'qi-r11', 'qi-r12', 'qi-r13', 'qi-r14', 'jiang-xiaobai', 'qi-r16', 'qi-r17', 'qi-r18', 'qi-r19', 'qi-r20', 'qi-r21', 'qi-r22', 'qi-r23', 'qi-r24', 'qi-r25', 'qi-r26', 'qi-r27', 'qi-r28', 'qi-r29', 'qi-r30', 'qi-r31', 'qi-r32', 'qi-r33', 'qi-r34', 'qi-r35', 'qi-r36', 'qi-r37', 'qi-r38', 'qi-r39', 'ji-shuyu', 'jin-r1', 'jin-r2', 'jin-r3', 'jin-r4', 'jin-r5', 'jin-r6', 'jin-r7', 'jin-r8', 'jin-r9', 'jin-r10', 'jin-r11', 'jin-r12', 'jin-r13', 'jin-r14', 'jin-r15', 'jin-r16', 'jin-r17', 'jin-r18', 'jin-r19', 'jin-r20', 'jin-r21', 'jin-r22', 'ji-chonger', 'jin-r24', 'jin-r25', 'jin-r26', 'jin-r27', 'jin-r28', 'jin-r29', 'jin-r30', 'jin-r31', 'jin-r32', 'jin-r33', 'jin-r34', 'jin-r35', 'jin-r36', 'jin-r37', 'jin-r38', 'jin-r39', 'chu-r0', 'chu-r1', 'chu-r2', 'chu-r3', 'chu-r4', 'chu-r5', 'chu-r6', 'chu-r7', 'chu-r8', 'chu-r9', 'chu-r10', 'chu-r11', 'chu-r12', 'chu-r13', 'chu-r14', 'chu-r15', 'chu-r16', 'chu-r17', 'chu-r18', 'chu-r19', 'chu-r20', 'xiong-zhuang', 'chu-r22', 'chu-r23', 'chu-r24', 'chu-r25', 'chu-r26', 'chu-r27', 'chu-r28', 'chu-r29', 'chu-r30', 'chu-r31', 'chu-r32', 'chu-r33', 'chu-r34', 'chu-r35', 'chu-r36', 'chu-r37', 'chu-r38', 'chu-r39', 'chu-r40', 'chu-r41', 'chu-r42', 'chu-r43', 'ji-shi', 'yan-r1', 'yan-r2', 'yan-r3', 'yan-r4', 'yan-r5', 'yan-r6', 'yan-r7', 'yan-r8', 'yan-r9', 'yan-r10', 'yan-r11', 'yan-r12', 'yan-r13', 'yan-r14', 'yan-r15', 'yan-r16', 'yan-r17', 'yan-r18', 'yan-r19', 'yan-r20', 'yan-r21', 'yan-r22', 'yan-r23', 'yan-r24', 'yan-r25', 'yan-r26', 'yan-r27', 'yan-r28', 'yan-r29', 'yan-r30', 'yan-r31', 'yan-r32', 'yan-r33', 'yan-r34', 'yan-r35', 'yan-r36', 'yan-r37', 'song-weizi', 'song-r1', 'song-r2', 'song-r3', 'song-r4', 'song-r5', 'song-r6', 'song-r7', 'song-r8', 'song-r9', 'song-r10', 'song-r11', 'song-r12', 'song-r13', 'song-r14', 'song-r15', 'song-r16', 'song-r17', 'song-r18', 'song-r19', 'song-r20', 'song-r21', 'song-r22', 'song-r23', 'song-r24', 'song-r25', 'song-r26', 'song-r27', 'song-r28', 'song-r29', 'song-r30', 'song-r31', 'song-r32', 'song-r33', 'bo-qin', 'lu-r1', 'lu-r2', 'lu-r3', 'lu-r4', 'lu-r5', 'lu-r6', 'lu-r7', 'lu-r8', 'lu-r9', 'lu-r10', 'lu-r11', 'lu-r12', 'lu-r13', 'lu-r14', 'lu-r15', 'lu-r16', 'lu-r17', 'lu-r18', 'lu-r19', 'lu-r20', 'lu-r21', 'lu-r22', 'lu-r23', 'lu-r24', 'lu-r25', 'lu-r26', 'lu-r27', 'lu-r28', 'lu-r29', 'lu-r30', 'lu-r31', 'lu-r32', 'lu-r33', 'lu-r34', 'weiguo-r0', 'weiguo-r1', 'weiguo-r2', 'weiguo-r3', 'weiguo-r4', 'weiguo-r5', 'weiguo-r6', 'weiguo-r7', 'weiguo-r8', 'weiguo-r9', 'weiguo-r10', 'weiguo-r11', 'weiguo-r12', 'weiguo-r13', 'weiguo-r14', 'weiguo-r15', 'weiguo-r16', 'weiguo-r17', 'weiguo-r18', 'weiguo-r19', 'weiguo-r20', 'weiguo-r21', 'weiguo-r22', 'weiguo-r23', 'weiguo-r24', 'weiguo-r25', 'weiguo-r26', 'weiguo-r27', 'weiguo-r28', 'weiguo-r29', 'weiguo-r30', 'weiguo-r31', 'weiguo-r32', 'weiguo-r33', 'weiguo-r34', 'weiguo-r35', 'weiguo-r36', 'weiguo-r37', 'weiguo-r38', 'weiguo-r39', 'weiguo-r40', 'weiguo-r41', 'weiguo-r42', 'weiguo-r43', 'weiguo-r44', 'weiguo-r45', 'weiguo-r46', 'zheng-r0', 'zheng-r1', 'zheng-r2', 'zheng-r3', 'zheng-r4', 'zheng-r5', 'zheng-r6', 'zheng-r7', 'zheng-r8', 'zheng-r9', 'zheng-r10', 'zheng-r11', 'zheng-r12', 'zheng-r13', 'zheng-r14', 'zheng-r15', 'zheng-r16', 'zheng-r17', 'zheng-r18', 'zheng-r19', 'zheng-r20', 'zheng-r21', 'zheng-r22', 'zheng-r23', 'zheng-r24', 'cao-r0', 'cao-r1', 'cao-r2', 'cao-r3', 'cao-r4', 'cao-r5', 'cao-r6', 'cao-r7', 'cao-r8', 'cao-r9', 'cao-r10', 'cao-r11', 'cao-r12', 'cao-r13', 'cao-r14', 'cao-r15', 'cao-r16', 'cao-r17', 'cao-r18', 'cao-r19', 'cao-r20', 'cao-r21', 'cao-r22', 'cao-r23', 'cao-r24', 'cao-r25', 'wu-r0', 'wu-r1', 'wu-r2', 'wu-r3', 'wu-r4', 'helu', 'fu-chai', 'yue-r0', 'yue-r1', 'yue-r2', 'yue-r3', 'yue-r4', 'gou-jian', 'yue-r6', 'yue-r7', 'yue-r8', 'yue-r9', 'yue-r10', 'yue-r11', 'yue-r12', 'yue-r13', 'zhongshan-r0', 'zhongshan-r1', 'zhongshan-r2', 'zhongshan-r3', 'zhongshan-r4', 'zhongshan-r5', 'zhongshan-r6', 'han-jing', 'han-r1', 'han-r2', 'han-r3', 'han-r4', 'han-r5', 'han-r6', 'han-r7', 'han-r8', 'han-r9', 'han-r10', 'zhao-lie', 'zhao-r1', 'zhao-r2', 'zhao-r3', 'zhao-r4', 'zhao-r5', 'zhao-r6', 'zhao-r7', 'zhao-r8', 'zhao-r9', 'wei-wen', 'wei-r1', 'wei-r2', 'wei-r3', 'wei-r4', 'wei-r5', 'wei-r6', 'wei-r7', 'wei-r8', 'ying-qi', 'qin-r1', 'qin-r2', 'qin-r3', 'qin-r4', 'qin-r5', 'qin-r6', 'qin-r7', 'qin-r8', 'qin-r9', 'qin-r10', 'qin-r11', 'qin-r12', 'qin-r13', 'qin-r14', 'qin-r15', 'qin-r16', 'qin-r17', 'qin-r18', 'qin-r19', 'qin-r20', 'qin-r21', 'qin-r22', 'qin-r23', 'ying-quliang', 'qin-r25', 'qin-r26', 'qin-r27', 'qin-r28', 'qin-r29', 'ying-zheng', 'shang-yang', 'wu-qi', 'sun-wu', 'wu-zixu', 'fan-li', 'qu-yuan', 'lao-zi', 'meng-ke', 'zhuang-zhou', 'han-fei', 'sun-bin', 'bai-qi', 'wang-jian-qin', 'bian-que', 'ying-huhai', 'ying-ziying')
+WHERE p.id NOT IN ('lv-shang', 'qi-r1', 'qi-r2', 'qi-r3', 'qi-r4', 'qi-r5', 'qi-r6', 'qi-r7', 'qi-r8', 'qi-r9', 'qi-r10', 'qi-r11', 'qi-r12', 'qi-r13', 'qi-r14', 'jiang-xiaobai', 'qi-r16', 'qi-r17', 'qi-r18', 'qi-r19', 'qi-r20', 'qi-r21', 'qi-r22', 'qi-r23', 'qi-r24', 'qi-r25', 'qi-r26', 'qi-r27', 'qi-r28', 'qi-r29', 'qi-r30', 'qi-r31', 'qi-r32', 'qi-r33', 'qi-r34', 'qi-r35', 'qi-r36', 'qi-r37', 'qi-r38', 'qi-r39', 'ji-shuyu', 'jin-r1', 'jin-r2', 'jin-r3', 'jin-r4', 'jin-r5', 'jin-r6', 'jin-r7', 'jin-r8', 'jin-r9', 'jin-r10', 'jin-r11', 'jin-r12', 'jin-r13', 'jin-r14', 'jin-r15', 'jin-r16', 'jin-r17', 'jin-r18', 'jin-r19', 'jin-r20', 'jin-r21', 'jin-r22', 'ji-chonger', 'jin-r24', 'jin-r25', 'jin-r26', 'jin-r27', 'jin-r28', 'jin-r29', 'jin-r30', 'jin-r31', 'jin-r32', 'jin-r33', 'jin-r34', 'jin-r35', 'jin-r36', 'jin-r37', 'jin-r38', 'jin-r39', 'chu-r0', 'chu-r1', 'chu-r2', 'chu-r3', 'chu-r4', 'chu-r5', 'chu-r6', 'chu-r7', 'chu-r8', 'chu-r9', 'chu-r10', 'chu-r11', 'chu-r12', 'chu-r13', 'chu-r14', 'chu-r15', 'chu-r16', 'chu-r17', 'chu-r18', 'chu-r19', 'chu-r20', 'xiong-zhuang', 'chu-r22', 'chu-r23', 'chu-r24', 'chu-r25', 'chu-r26', 'chu-r27', 'chu-r28', 'chu-r29', 'chu-r30', 'chu-r31', 'chu-r32', 'chu-r33', 'chu-r34', 'chu-r35', 'chu-r36', 'chu-r37', 'chu-r38', 'chu-r39', 'chu-r40', 'chu-r41', 'chu-r42', 'chu-r43', 'ji-shi', 'yan-r1', 'yan-r2', 'yan-r3', 'yan-r4', 'yan-r5', 'yan-r6', 'yan-r7', 'yan-r8', 'yan-r9', 'yan-r10', 'yan-r11', 'yan-r12', 'yan-r13', 'yan-r14', 'yan-r15', 'yan-r16', 'yan-r17', 'yan-r18', 'yan-r19', 'yan-r20', 'yan-r21', 'yan-r22', 'yan-r23', 'yan-r24', 'yan-r25', 'yan-r26', 'yan-r27', 'yan-r28', 'yan-r29', 'yan-r30', 'yan-r31', 'yan-r32', 'yan-r33', 'yan-r34', 'yan-r35', 'yan-r36', 'yan-r37', 'song-weizi', 'song-r1', 'song-r2', 'song-r3', 'song-r4', 'song-r5', 'song-r6', 'song-r7', 'song-r8', 'song-r9', 'song-r10', 'song-r11', 'song-r12', 'song-r13', 'song-r14', 'song-r15', 'song-r16', 'song-r17', 'song-r18', 'song-r19', 'song-r20', 'song-r21', 'song-r22', 'song-r23', 'song-r24', 'song-r25', 'song-r26', 'song-r27', 'song-r28', 'song-r29', 'song-r30', 'song-r31', 'song-r32', 'song-r33', 'bo-qin', 'lu-r1', 'lu-r2', 'lu-r3', 'lu-r4', 'lu-r5', 'lu-r6', 'lu-r7', 'lu-r8', 'lu-r9', 'lu-r10', 'lu-r11', 'lu-r12', 'lu-r13', 'lu-r14', 'lu-r15', 'lu-r16', 'lu-r17', 'lu-r18', 'lu-r19', 'lu-r20', 'lu-r21', 'lu-r22', 'lu-r23', 'lu-r24', 'lu-r25', 'lu-r26', 'lu-r27', 'lu-r28', 'lu-r29', 'lu-r30', 'lu-r31', 'lu-r32', 'lu-r33', 'lu-r34', 'weiguo-r0', 'weiguo-r1', 'weiguo-r2', 'weiguo-r3', 'weiguo-r4', 'weiguo-r5', 'weiguo-r6', 'weiguo-r7', 'weiguo-r8', 'weiguo-r9', 'weiguo-r10', 'weiguo-r11', 'weiguo-r12', 'weiguo-r13', 'weiguo-r14', 'weiguo-r15', 'weiguo-r16', 'weiguo-r17', 'weiguo-r18', 'weiguo-r19', 'weiguo-r20', 'weiguo-r21', 'weiguo-r22', 'weiguo-r23', 'weiguo-r24', 'weiguo-r25', 'weiguo-r26', 'weiguo-r27', 'weiguo-r28', 'weiguo-r29', 'weiguo-r30', 'weiguo-r31', 'weiguo-r32', 'weiguo-r33', 'weiguo-r34', 'weiguo-r35', 'weiguo-r36', 'weiguo-r37', 'weiguo-r38', 'weiguo-r39', 'weiguo-r40', 'weiguo-r41', 'weiguo-r42', 'weiguo-r43', 'weiguo-r44', 'weiguo-r45', 'weiguo-r46', 'zheng-r0', 'zheng-r1', 'zheng-r2', 'zheng-r3', 'zheng-r4', 'zheng-r5', 'zheng-r6', 'zheng-r7', 'zheng-r8', 'zheng-r9', 'zheng-r10', 'zheng-r11', 'zheng-r12', 'zheng-r13', 'zheng-r14', 'zheng-r15', 'zheng-r16', 'zheng-r17', 'zheng-r18', 'zheng-r19', 'zheng-r20', 'zheng-r21', 'zheng-r22', 'zheng-r23', 'zheng-r24', 'cao-r0', 'cao-r1', 'cao-r2', 'cao-r3', 'cao-r4', 'cao-r5', 'cao-r6', 'cao-r7', 'cao-r8', 'cao-r9', 'cao-r10', 'cao-r11', 'cao-r12', 'cao-r13', 'cao-r14', 'cao-r15', 'cao-r16', 'cao-r17', 'cao-r18', 'cao-r19', 'cao-r20', 'cao-r21', 'cao-r22', 'cao-r23', 'cao-r24', 'cao-r25', 'wu-r0', 'wu-r1', 'wu-r2', 'wu-r3', 'wu-r4', 'helu', 'fu-chai', 'yue-r0', 'yue-r1', 'yue-r2', 'yue-r3', 'yue-r4', 'gou-jian', 'yue-r6', 'yue-r7', 'yue-r8', 'yue-r9', 'yue-r10', 'yue-r11', 'yue-r12', 'yue-r13', 'zhongshan-r0', 'zhongshan-r1', 'zhongshan-r2', 'zhongshan-r3', 'zhongshan-r4', 'zhongshan-r5', 'zhongshan-r6', 'han-jing', 'han-r1', 'han-r2', 'han-r3', 'han-r4', 'han-r5', 'han-r6', 'han-r7', 'han-r8', 'han-r9', 'han-r10', 'zhao-lie', 'zhao-r1', 'zhao-r2', 'zhao-r3', 'zhao-r4', 'zhao-r5', 'zhao-r6', 'zhao-r7', 'zhao-r8', 'zhao-r9', 'wei-wen', 'wei-r1', 'wei-r2', 'wei-r3', 'wei-r4', 'wei-r5', 'wei-r6', 'wei-r7', 'ying-qi', 'qin-r1', 'qin-r2', 'qin-r3', 'qin-r4', 'qin-r5', 'qin-r6', 'qin-r7', 'qin-r8', 'qin-r9', 'qin-r10', 'qin-r11', 'qin-r12', 'qin-r13', 'qin-r14', 'qin-r15', 'qin-r16', 'qin-r17', 'qin-r18', 'qin-r19', 'qin-r20', 'qin-r21', 'qin-r22', 'qin-r23', 'ying-quliang', 'qin-r25', 'qin-r26', 'qin-r27', 'qin-r28', 'qin-r29', 'ying-zheng', 'shang-yang', 'wu-qi', 'sun-wu', 'wu-zixu', 'fan-li', 'qu-yuan', 'lao-zi', 'meng-ke', 'zhuang-zhou', 'han-fei', 'sun-bin', 'bai-qi', 'wang-jian-qin', 'bian-que', 'ying-huhai', 'ying-ziying')
   AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)
   AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = p.id)
   AND NOT EXISTS (

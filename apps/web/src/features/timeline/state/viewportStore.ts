@@ -1,15 +1,17 @@
 import {
   clampAbs,
-  computeWindow,
   quantizeWindowForQuery,
+  TIMELINE_GUTTER_PX,
   type AbsMonth,
 } from "@eralens/shared";
+import { getWindow } from "../model/coordinates";
 import { resolveLod } from "../model/lod";
 
 export type ViewportSnapshot = {
   centerAbs: AbsMonth;
   pxPerMonth: number;
   widthPx: number;
+  gutterPx: number;
   startAbs: AbsMonth;
   endAbs: AbsMonth;
   lod: ReturnType<typeof resolveLod>;
@@ -34,11 +36,18 @@ let maxAbs = DEFAULT_MAX_ABS;
 const listeners = new Set<ViewportListener>();
 
 function buildSnapshot(): ViewportSnapshot {
-  const { startAbs, endAbs } = computeWindow(centerAbs, widthPx, pxPerMonth);
+  const gutterPx = TIMELINE_GUTTER_PX;
+  const { startAbs, endAbs } = getWindow({
+    centerAbs,
+    pxPerMonth,
+    widthPx,
+    gutterPx,
+  });
   return {
     centerAbs,
     pxPerMonth,
     widthPx,
+    gutterPx,
     startAbs,
     endAbs,
     lod: resolveLod(pxPerMonth),

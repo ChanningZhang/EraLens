@@ -104,10 +104,12 @@
 .wrap .content {
   flex-direction: column;
   gap: 0;
-  align-items: center;
+  align-items: stretch;
 }
 
 .wrap .name {
+  width: 100%;
+  min-width: 0;
   font-size: var(--card-name-size, 16px);
   line-height: 1.1;
   text-align: center;

@@ -17,7 +17,7 @@ export const DOCUMENTED_REIGN_DATES = {
   ...JIN_NANBEI_REIGN_DATES,
 
   // ── 秦 ──────────────────────────────────────────────────────────────────
-  "reign-ying-zheng-qin": { start: [-247, 1], end: [-221, 9, 9] },
+  "reign-ying-zheng-qin": { start: [-246, 1], end: [-221, 9, 9] },
   "reign-ying-zheng": { start: [-221, 9, 10], end: [-210, 7, 11] },
   "reign-ying-huhai": { start: [-210, 8, 9], end: [-207, 10, 1] },
   "reign-ying-ziying": { start: [-207, 10, 1], end: [-207, 11, 17] },

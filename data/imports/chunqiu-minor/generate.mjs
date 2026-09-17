@@ -35,19 +35,27 @@ const xueReigns = [
 const tengReigns = [
   dr("teng-chunqiu", "teng-r2", "滕文公", "文公", null, -599, -575),
   dr("teng-chunqiu", "teng-r3", "滕成公", "成公", null, -574, -539),
-  dr("teng-chunqiu", "teng-r4", "滕悼公", "悼公", null, -538, -513),
-  dr("teng-chunqiu", "teng-r5", "滕顷公", "顷公", null, -512, -491),
+  dr("teng-chunqiu", "teng-r4", "滕悼公", "悼公", null, -538, -514),
+  dr("teng-chunqiu", "teng-r5", "滕顷公", "顷公", null, -513, -491),
   dr("teng-chunqiu", "teng-r6", "滕隐公", "隐公", null, -490, -484),
 ];
 
 const qiStateReigns = [
   dr("qi-state-chunqiu", "qi-state-r1", "杞武公", "武公", null, -750, -704),
-  dr("qi-state-chunqiu", "qi-state-r1b", "杞靖公", "靖公", null, -719, -685),
+  dr("qi-state-chunqiu", "qi-state-r1b", "杞靖公", "靖公", null, -703, -681),
+  dr("qi-state-chunqiu", "qi-state-gong", "杞共公", "共公", null, -680, -673),
+  dr("qi-state-chunqiu", "qi-state-de", "杞德公", "德公", null, -672, -655),
   dr("qi-state-chunqiu", "qi-state-r1c", "杞成公", "成公", null, -654, -637),
   dr("qi-state-chunqiu", "qi-state-r2", "杞桓公", "桓公", null, -636, -567),
+  dr("qi-state-chunqiu", "qi-state-xiao", "杞孝公", "孝公", null, -566, -550),
   dr("qi-state-chunqiu", "qi-state-r3", "杞文公", "文公", null, -549, -536),
   dr("qi-state-chunqiu", "qi-state-r4", "杞平公", "平公", null, -535, -518),
+  dr("qi-state-chunqiu", "qi-state-dao", "杞悼公", "悼公", null, -517, -506),
+  dr("qi-state-chunqiu", "qi-state-yin", "杞隐公", "隐公", null, -506, -506),
+  dr("qi-state-chunqiu", "qi-state-xi", "杞僖公", "僖公", null, -505, -487),
   dr("qi-state-chunqiu", "qi-state-r5", "杞湣公", "湣公", null, -486, -471),
+  dr("qi-state-chunqiu", "qi-state-ai", "杞哀公", "哀公", null, -470, -461),
+  dr("qi-state-chunqiu", "qi-state-chu", "杞出公", "出公", null, -460, -449),
   dr("qi-state-chunqiu", "qi-state-r6", "杞简公", "简公", null, -448, -445),
 ];
 
@@ -70,7 +78,7 @@ const jiaodongReigns = [dr("jiaodong-warring", "tian-shi", "胶东王", null, nu
 const zhouGuoWestReigns = [
   dr("zhou-guo-west", "zhou-guo-jie", "西周桓公", "桓公", null, -440, -415),
   dr("zhou-guo-west", "zhou-guo-zao", "西周威公", "威公", null, -414, -367),
-  dr("zhou-guo-west", "zhou-guo-chao", "西周惠公", "惠公", null, -367, -366),
+  dr("zhou-guo-west", "zhou-guo-chao", "西周惠公", "惠公", null, -366, -366),
   dr("zhou-guo-west", "zhou-guo-jiu", "西周文公", "文公", null, -315, -256),
 ];
 
@@ -102,11 +110,19 @@ const RULER_META = {
   "teng-r6": { name: "姬虞毋", wiki: "滕隐公" },
   "qi-state-r1": { name: "姒武公", wiki: "杞武公" },
   "qi-state-r1b": { name: "姒靖公", wiki: "杞靖公" },
+  "qi-state-gong": { name: "姒共公", wiki: "杞共公" },
+  "qi-state-de": { name: "姒德公", wiki: "杞德公" },
   "qi-state-r1c": { name: "姒成公", wiki: "杞成公" },
   "qi-state-r2": { name: "姒姑容", wiki: "杞桓公" },
+  "qi-state-xiao": { name: "姒匄", wiki: "杞孝公" },
   "qi-state-r3": { name: "姒益姑", wiki: "杞文公" },
   "qi-state-r4": { name: "姒郁", wiki: "杞平公" },
+  "qi-state-dao": { name: "姒成", wiki: "杞悼公" },
+  "qi-state-yin": { name: "姒乞", wiki: "杞隐公", bio: "悼公之子，在位七月即为弟僖公所弑；死年与悼公同在前506年。" },
+  "qi-state-xi": { name: "姒遂", wiki: "杞僖公" },
   "qi-state-r5": { name: "姒维", wiki: "杞湣公" },
+  "qi-state-ai": { name: "姒阏路", wiki: "杞哀公" },
+  "qi-state-chu": { name: "姒欶", wiki: "杞出公" },
   "qi-state-r6": { name: "姒春", wiki: "杞简公" },
   "ju-r1": { name: "己庶其", wiki: "莒纪公" },
   "ju-r1b": { name: "己季佗", wiki: "莒厉公" },
@@ -394,6 +410,8 @@ const manifest = {
     "杞桓公在位70年、高句丽太祖王等长年在史料中有记载，保留。",
     "代王嘉 person id 为 zhao-jia-dai，与赵桓子 zhao-r2 区分。",
     "西周国/东周国（zhou-guo-west / zhou-guo-east）为战国王畿小国，与西周/东周王朝分期（zhou-west / zhou-east）区分命名。",
+    "年精度顺序继位：死年归旧王。西周惠公改从前366年起（威公卒年归威公），与东周惠公前367年并立不混为同一王室继位。",
+    "杞国列王按维基「杞国」君主表（在位年份已是逾年切分）；隐公仅前506年七月，与悼公死年同桶。滕悼公迄前514、顷公起前513，与维基在位年数一致。",
     "西周武公、东周昭文君等中间世系在位年失考，不强行拉满；东周惠公之后至秦灭前用系统史料缺占位。",
   ],
 };

@@ -14,7 +14,7 @@
   "sources": [
     { "label": "维基百科", "url": "https://zh.wikipedia.org/wiki/贞观之治" }
   ],
-  "notes": ["即位月取史料常见说法，争议处标 precision=year"]
+  "notes": ["年精度顺序继位：死年归旧王、新王次年起算；未逾年改元与一年短祚除外"]
 }
 ```
 
@@ -123,6 +123,8 @@ ON CONFLICT (id) DO UPDATE SET
 
 卡片称谓由运行时 `resolveEmperorAppellation` 按 `appellationPolicy.ts` 的年份阈值计算；`preferred_appellation` 仅用于 **regnal** 例外（先秦称号、秦襄公等）。导入时不要写入庙号/谥号/年号的默认 preferred。`persons.name` 仍用名（姬发、禹），便于搜索。
 
+`posthumous_name` / `temple_name` 与商周数据一致：**只存谥号/庙号本体，不带国名**（`武王`、`孝文皇帝`、`太宗`）。国名简称写在 `title`（`周武王`、`唐太宗`）。
+
 ```sql
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
@@ -134,7 +136,7 @@ INSERT INTO reigns (
   'reign-li-shimin',
   'tang', 'li-shimin', '唐太宗',
   '文武皇帝', '太宗',
-  '{"kind":"temple","name":"唐太宗"}'::jsonb,
+  NULL,
   626, 9, 649, 7,
   7517, 7795, 'month',
   NULL, NULL, NULL
@@ -158,7 +160,7 @@ ON CONFLICT (id) DO UPDATE SET
   claim_role = EXCLUDED.claim_role;
 
 -- 并行称君示例（南明鲁监国）：仅当与主线皇帝同时另立时才填 claim_track；是否傀儡不影响此判定。
--- 前帝身后才即位（哪怕傀儡）走主线，claim_track 留 NULL。claim_role: puppet | rival | regent
+-- 前帝身后才即位（哪怕权臣拥立）走主线，claim_track 留 NULL。并行 track 的 claim_role 一律 rival。
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   posthumous_name, temple_name, preferred_appellation,
@@ -172,7 +174,7 @@ INSERT INTO reigns (
   '{"kind":"regnal","name":"鲁监国"}'::jsonb,
   1645, 1, 1653, 12,
   19740, 19847, 'year',
-  'lu-jian', '绍兴监国', 'regent'
+  'lu-jian', '绍兴监国', 'rival'
 )
 ON CONFLICT (id) DO UPDATE SET
   claim_track = EXCLUDED.claim_track,

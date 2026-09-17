@@ -4,18 +4,6 @@
   flex-direction: column;
   background: var(--color-surface);
   border-left: 1px solid var(--color-border);
-  animation: slideIn var(--motion-panel);
-}
-
-@keyframes slideIn {
-  from {
-    transform: translateX(12px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
 }
 
 .header {

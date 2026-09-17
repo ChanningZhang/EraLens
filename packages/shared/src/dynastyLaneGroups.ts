@@ -9,13 +9,21 @@ function compareReignOrder(a: Reign, b: Reign): number {
   );
 }
 
-/** Horizontal offset of the frozen dynasty label from the viewport left edge. */
-export const DEFAULT_FROZEN_LABEL_LEFT_PX = 12;
+/** Left padding of the dynasty-name rail. */
+export const TIMELINE_RAIL_INSET_PX = 12;
+/** Fixed chip width: 4 CJK glyphs at 14px plus padding. */
+export const TIMELINE_RAIL_LABEL_WIDTH_PX = 80;
+/** Air between name chips and time-mapped content. */
+export const TIMELINE_RAIL_GAP_PX = 10;
+/** Stage x where the shared time axis begins. */
+export const TIMELINE_GUTTER_PX =
+  TIMELINE_RAIL_INSET_PX + TIMELINE_RAIL_LABEL_WIDTH_PX + TIMELINE_RAIL_GAP_PX;
 
 /**
  * Dynasties that share one timeline row. The frozen left label follows
  * `phaseDynastyIds` in chronological order: when the abs at the label anchor
- * crosses a phase dynasty's `startAbs`, the label switches to that name.
+ * (the center guide) crosses a phase dynasty's `startAbs`, the label switches
+ * to that name.
  */
 export type DynastyLaneGroup = {
   id: string;
@@ -83,15 +91,6 @@ function compareDynastyOrder(a: Dynasty, b: Dynasty): number {
 
 export function getDynastyLaneGroup(dynastyId: string): DynastyLaneGroup | undefined {
   return MEMBER_TO_GROUP.get(dynastyId);
-}
-
-/** AbsMonth sampled at the frozen label anchor (not viewport center). */
-export function resolveFrozenLabelAnchorAbs(
-  startAbs: number,
-  pxPerMonth: number,
-  leftPx = DEFAULT_FROZEN_LABEL_LEFT_PX,
-): number {
-  return startAbs + leftPx / pxPerMonth;
 }
 
 export function resolveActivePhaseDynastyId(

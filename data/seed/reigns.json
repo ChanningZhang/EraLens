@@ -504,11 +504,11 @@
       "month": 1
     },
     "end": {
-      "year": -1148,
+      "year": -1181,
       "month": 12
     },
     "startAbs": -14280,
-    "endAbs": -13753,
+    "endAbs": -14149,
     "precision": "year",
     "posthumousName": "祖庚"
   },
@@ -519,17 +519,55 @@
     "title": "商王祖甲",
     "eraNames": [],
     "start": {
-      "year": -1148,
+      "year": -1180,
       "month": 1
     },
     "end": {
-      "year": -1112,
+      "year": -1170,
       "month": 12
     },
-    "startAbs": -13764,
-    "endAbs": -13321,
+    "startAbs": -14148,
+    "endAbs": -14017,
     "precision": "year",
     "posthumousName": "祖甲"
+  },
+  {
+    "id": "reign-zi-linxin",
+    "dynastyId": "shang",
+    "personId": "zi-linxin",
+    "title": "商王廪辛",
+    "eraNames": [],
+    "start": {
+      "year": -1169,
+      "month": 1
+    },
+    "end": {
+      "year": -1159,
+      "month": 12
+    },
+    "startAbs": -14016,
+    "endAbs": -13885,
+    "precision": "year",
+    "posthumousName": "廪辛"
+  },
+  {
+    "id": "reign-zi-gengding",
+    "dynastyId": "shang",
+    "personId": "zi-gengding",
+    "title": "商王庚丁",
+    "eraNames": [],
+    "start": {
+      "year": -1158,
+      "month": 1
+    },
+    "end": {
+      "year": -1148,
+      "month": 12
+    },
+    "startAbs": -13884,
+    "endAbs": -13753,
+    "precision": "year",
+    "posthumousName": "庚丁"
   },
   {
     "id": "reign-zi-wuyi",
@@ -861,14 +899,14 @@
     "title": "周携王",
     "eraNames": [],
     "start": {
-      "year": -771,
+      "year": -770,
       "month": 1
     },
     "end": {
       "year": -750,
       "month": 12
     },
-    "startAbs": -9240,
+    "startAbs": -9228,
     "endAbs": -8977,
     "precision": "year",
     "posthumousName": "携王"
@@ -1150,11 +1188,11 @@
       "month": 1
     },
     "end": {
-      "year": -441,
+      "year": -442,
       "month": 12
     },
     "startAbs": -5604,
-    "endAbs": -5269,
+    "endAbs": -5281,
     "precision": "year",
     "posthumousName": "贞定王"
   },

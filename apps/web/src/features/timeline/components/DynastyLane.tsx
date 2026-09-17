@@ -1,24 +1,28 @@
 import { AnimatePresence, motion } from "framer-motion";
 import {
+  TIMELINE_RAIL_INSET_PX,
+  TIMELINE_RAIL_LABEL_WIDTH_PX,
   findReignUncertaintyBoundaries,
   getDynastyLaneGroup,
   isOrthodoxReign,
   overlapsOrthodoxSpan,
   resolveActivePhaseDynastyId,
   resolveDynastyColorValue,
-  resolveFrozenLabelAnchorAbs,
   resolveFrozenLaneLabel,
   type Dynasty,
   type Reign,
 } from "@eralens/shared";
 import { useMemo } from "react";
+import { useSelection } from "../hooks/useSelection";
 import { useViewport } from "../hooks/useViewport";
+import { laneLabelAnchorAbs } from "../model/coordinates";
 import type { PlacedDynasty } from "../model/laneLayout";
 import {
   assignReignStacks,
   dynastyLaneHeight,
   STACK_ROW_HEIGHT,
 } from "../model/reignClusters";
+import { selectionStore } from "../state/selectionStore";
 import { ReignCard } from "./ReignCard";
 import { ReignGapCard } from "./ReignGapCard";
 import { ReignUncertaintyGap } from "./ReignUncertaintyGap";
@@ -42,10 +46,8 @@ export function DynastyLane({
   top,
 }: Props) {
   const viewport = useViewport();
-  const labelAnchorAbs = resolveFrozenLabelAnchorAbs(
-    viewport.startAbs,
-    viewport.pxPerMonth,
-  );
+  const selection = useSelection();
+  const labelAnchorAbs = laneLabelAnchorAbs(viewport);
   const laneGroup = getDynastyLaneGroup(dynasty.id);
   const activePhaseDynasty =
     laneGroup == null
@@ -58,6 +60,9 @@ export function DynastyLane({
     dynastiesById,
     labelAnchorAbs,
   );
+  const selected =
+    selection.selected?.type === "dynasty" &&
+    selection.selected.id === activePhaseDynasty.id;
   const laneColor = resolveDynastyColorValue(activePhaseDynasty, labelAnchorAbs);
   const { items, rowCount } = assignReignStacks(reigns);
   const height = dynastyLaneHeight(rowCount);
@@ -77,15 +82,29 @@ export function DynastyLane({
         ["--dynasty-color" as string]: laneColor,
         ["--stack-row-height" as string]: `${STACK_ROW_HEIGHT}px`,
         ["--dynasty-bar-height" as string]: `${rowCount * STACK_ROW_HEIGHT}px`,
+        ["--timeline-rail-inset" as string]: `${TIMELINE_RAIL_INSET_PX}px`,
+        ["--timeline-rail-label-width" as string]: `${TIMELINE_RAIL_LABEL_WIDTH_PX}px`,
       }}
     >
-      <div
-        className={styles.frozenLabel}
+      <button
+        type="button"
+        className={[styles.frozenLabel, selected ? styles.selected : ""]
+          .filter(Boolean)
+          .join(" ")}
         style={rowCount > 1 ? { top: "50%", transform: "translateY(-50%)" } : undefined}
+        onClick={() => {
+          selectionStore.select(
+            { type: "dynasty", id: activePhaseDynasty.id },
+            activePhaseDynasty.startAbs,
+          );
+          selectionStore.syncToUrl(viewport.centerAbs);
+        }}
+        aria-label={frozenLabel}
+        aria-pressed={selected}
       >
-        <div className={styles.labelText}>
+        <span className={styles.labelText}>
           <AnimatePresence mode="wait" initial={false}>
-            <motion.p
+            <motion.span
               key={frozenLabel}
               className={styles.name}
               initial={{ opacity: 0, y: 4 }}
@@ -94,10 +113,10 @@ export function DynastyLane({
               transition={{ duration: 0.14, ease: [0.2, 0.8, 0.2, 1] }}
             >
               {frozenLabel}
-            </motion.p>
+            </motion.span>
           </AnimatePresence>
-        </div>
-      </div>
+        </span>
+      </button>
 
       <div className={styles.reignSequence}>
         <div className={styles.cards}>

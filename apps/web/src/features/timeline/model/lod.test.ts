@@ -23,16 +23,17 @@ describe("cardDetailLevel", () => {
 
   it("wraps a 2-glyph sliver like 杨浩 vertically inside a year-wide card", () => {
     expect(cardDetailLevel(18, 2)).toBe("wrap");
-    expect(cardDetailLevel(16, 2)).toBe("wrap");
   });
 
   it("wraps vertically when only one glyph fits per line", () => {
     expect(cardDetailLevel(44, 4)).toBe("wrap");
-    expect(cardDetailLevel(16, 3)).toBe("wrap");
+    expect(cardDetailLevel(22, 3)).toBe("wrap");
   });
 
   it("places the name beside the card when wrapping cannot fit", () => {
     expect(cardDetailLevel(8, 2)).toBe("below");
+    expect(cardDetailLevel(16, 2)).toBe("below");
+    expect(cardDetailLevel(16, 3)).toBe("below");
     expect(cardDetailLevel(16, 4)).toBe("below");
     expect(cardDetailLevel(16, 5)).toBe("below");
   });
@@ -103,12 +104,19 @@ describe("resolveReignCardTextLayout", () => {
     expect(resolveReignCardTextLayout(18, 2).level).toBe("wrap");
     expect(resolveReignCardTextLayout(18, 2).nameFontPx).toBeLessThan(16);
   });
+
+  it("steps down a 4-glyph name on a 2-year card instead of overflowing", () => {
+    const layout = resolveReignCardTextLayout(36, 4);
+    expect(layout.level).toBe("wrap");
+    expect(layout.nameFontPx).toBeLessThanOrEqual(15);
+    expect(layout.nameFontPx * 2).toBeLessThanOrEqual(36 - 6);
+  });
 });
 
 describe("shouldShowReignCardMeta", () => {
   it("shows meta when name and appellation fit on one horizontal row", () => {
     expect(shouldShowReignCardMeta(120, 2, 4)).toBe(true);
-    expect(shouldShowReignCardMeta(100, 2, 3)).toBe(true);
+    expect(shouldShowReignCardMeta(110, 2, 3)).toBe(true);
   });
 
   it("hides meta when the row is too narrow for name plus appellation", () => {

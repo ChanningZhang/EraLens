@@ -22,3 +22,9 @@
   width: 2px;
   left: 1px;
 }
+
+@media (max-width: 960px) {
+  .handle {
+    display: none;
+  }
+}

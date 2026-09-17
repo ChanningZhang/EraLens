@@ -478,7 +478,7 @@ VALUES (
   'zi-zugeng', '祖庚',
   NULL, NULL,
   NULL, NULL,
-  ARRAY['君主'], '武丁之子，甲骨文作「且庚」，断代工程定其在位前1191–前1148年。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/祖庚"}]'::jsonb
+  ARRAY['君主'], '武丁之子，甲骨文作「且庚」。断代工程将祖庚至庚丁合为前1191–前1148年，年精度下四王平分。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/祖庚"}]'::jsonb
 )
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
@@ -494,7 +494,39 @@ VALUES (
   'zi-zujia', '祖甲',
   NULL, NULL,
   NULL, NULL,
-  ARRAY['君主'], '武丁之子、祖庚之弟，甲骨文作「且甲」，断代工程定其在位前1148–前1112年。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/祖甲"}]'::jsonb
+  ARRAY['君主'], '武丁之子、祖庚之弟，甲骨文作「且甲」。与祖庚、廪辛、庚丁同属断代工程前1191–前1148年窗口。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/祖甲"}]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
+  'zi-linxin', '廪辛',
+  NULL, NULL,
+  NULL, NULL,
+  ARRAY['君主'], '祖甲之子，甲骨或作冯辛；与祖庚、祖甲、庚丁同属断代工程前1191–前1148年窗口。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/廪辛"}]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  birth_year = EXCLUDED.birth_year,
+  birth_month = EXCLUDED.birth_month,
+  death_year = EXCLUDED.death_year,
+  death_month = EXCLUDED.death_month,
+  roles = EXCLUDED.roles,
+  bio = EXCLUDED.bio,
+  links = EXCLUDED.links;
+INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (
+  'zi-gengding', '庚丁',
+  NULL, NULL,
+  NULL, NULL,
+  ARRAY['君主'], '廪辛之弟，甲骨作文丁前的康丁，《史记》作庚丁；四王窗口之末，死年归本王，武乙次年起算。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/康丁"}]'::jsonb
 )
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
@@ -1413,7 +1445,7 @@ INSERT INTO dynasties (
   'zhou-east', '东周', ARRAY['周'], 'cn', 'east_asia',
   -770, 1, -256, 12,
   -9228, -3049, 'year', 'moss', NULL,
-  '平王东迁至秦灭周。前771–前750年与携王二王并立，后世以平王为正统（claim_track 主线）。'
+  '平王东迁至秦灭周。前770–前750年与携王二王并立，后世以平王为正统（claim_track 主线）。'
 )
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
@@ -1505,10 +1537,16 @@ INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_na
 VALUES ('reign-zi-wuding', 'shang', 'zi-wuding', '商王武丁', '武丁', '高宗', NULL, -1250, 1, NULL, -1192, 12, NULL, -14988, -14281, 'year', NULL, NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, claim_track = EXCLUDED.claim_track, claim_label = EXCLUDED.claim_label, claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, claim_track, claim_label, claim_role)
-VALUES ('reign-zi-zugeng', 'shang', 'zi-zugeng', '商王祖庚', '祖庚', NULL, NULL, -1191, 1, NULL, -1148, 12, NULL, -14280, -13753, 'year', NULL, NULL, NULL)
+VALUES ('reign-zi-zugeng', 'shang', 'zi-zugeng', '商王祖庚', '祖庚', NULL, NULL, -1191, 1, NULL, -1181, 12, NULL, -14280, -14149, 'year', NULL, NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, claim_track = EXCLUDED.claim_track, claim_label = EXCLUDED.claim_label, claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, claim_track, claim_label, claim_role)
-VALUES ('reign-zi-zujia', 'shang', 'zi-zujia', '商王祖甲', '祖甲', NULL, NULL, -1148, 1, NULL, -1112, 12, NULL, -13764, -13321, 'year', NULL, NULL, NULL)
+VALUES ('reign-zi-zujia', 'shang', 'zi-zujia', '商王祖甲', '祖甲', NULL, NULL, -1180, 1, NULL, -1170, 12, NULL, -14148, -14017, 'year', NULL, NULL, NULL)
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, claim_track = EXCLUDED.claim_track, claim_label = EXCLUDED.claim_label, claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, claim_track, claim_label, claim_role)
+VALUES ('reign-zi-linxin', 'shang', 'zi-linxin', '商王廪辛', '廪辛', NULL, NULL, -1169, 1, NULL, -1159, 12, NULL, -14016, -13885, 'year', NULL, NULL, NULL)
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, claim_track = EXCLUDED.claim_track, claim_label = EXCLUDED.claim_label, claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, claim_track, claim_label, claim_role)
+VALUES ('reign-zi-gengding', 'shang', 'zi-gengding', '商王庚丁', '庚丁', NULL, NULL, -1158, 1, NULL, -1148, 12, NULL, -13884, -13753, 'year', NULL, NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, claim_track = EXCLUDED.claim_track, claim_label = EXCLUDED.claim_label, claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, claim_track, claim_label, claim_role)
 VALUES ('reign-zi-wuyi', 'shang', 'zi-wuyi', '商王武乙', '武乙', NULL, NULL, -1147, 1, NULL, -1113, 12, NULL, -13752, -13333, 'year', NULL, NULL, NULL)
@@ -1562,7 +1600,7 @@ INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_na
 VALUES ('reign-ji-yijiu', 'zhou-east', 'ji-yijiu', '周平王', '平王', NULL, NULL, -770, 1, NULL, -720, 12, NULL, -9228, -8617, 'year', NULL, NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, claim_track = EXCLUDED.claim_track, claim_label = EXCLUDED.claim_label, claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, claim_track, claim_label, claim_role)
-VALUES ('reign-ji-yuchen', 'zhou-east', 'ji-yuchen', '周携王', '携王', NULL, NULL, -771, 1, NULL, -750, 12, NULL, -9240, -8977, 'year', 'xie', '携', 'rival')
+VALUES ('reign-ji-yuchen', 'zhou-east', 'ji-yuchen', '周携王', '携王', NULL, NULL, -770, 1, NULL, -750, 12, NULL, -9228, -8977, 'year', 'xie', '携', 'rival')
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, claim_track = EXCLUDED.claim_track, claim_label = EXCLUDED.claim_label, claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, claim_track, claim_label, claim_role)
 VALUES ('reign-ji-lin', 'zhou-east', 'ji-lin', '周桓王', '桓王', NULL, NULL, -719, 1, NULL, -697, 12, NULL, -8616, -8341, 'year', NULL, NULL, NULL)
@@ -1607,7 +1645,7 @@ INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_na
 VALUES ('reign-ji-ren', 'zhou-east', 'ji-ren', '周元王', '元王', NULL, NULL, -476, 1, NULL, -469, 12, NULL, -5700, -5605, 'year', NULL, NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, claim_track = EXCLUDED.claim_track, claim_label = EXCLUDED.claim_label, claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, claim_track, claim_label, claim_role)
-VALUES ('reign-ji-jie', 'zhou-east', 'ji-jie', '周贞定王', '贞定王', NULL, NULL, -468, 1, NULL, -441, 12, NULL, -5604, -5269, 'year', NULL, NULL, NULL)
+VALUES ('reign-ji-jie', 'zhou-east', 'ji-jie', '周贞定王', '贞定王', NULL, NULL, -468, 1, NULL, -442, 12, NULL, -5604, -5281, 'year', NULL, NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, claim_track = EXCLUDED.claim_track, claim_label = EXCLUDED.claim_label, claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, claim_track, claim_label, claim_role)
 VALUES ('reign-ji-quji', 'zhou-east', 'ji-quji', '周哀王', '哀王', NULL, NULL, -441, 1, NULL, -441, 3, NULL, -5280, -5278, 'year', NULL, NULL, NULL)
@@ -2263,7 +2301,13 @@ INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind)
 VALUES ('rel-zi-zugeng-zi-zujia-succession', 'person', 'zi-zugeng', 'person', 'zi-zujia', 'succession')
 ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind)
-VALUES ('rel-zi-zujia-zi-wuyi-succession', 'person', 'zi-zujia', 'person', 'zi-wuyi', 'succession')
+VALUES ('rel-zi-zujia-zi-linxin-succession', 'person', 'zi-zujia', 'person', 'zi-linxin', 'succession')
+ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind)
+VALUES ('rel-zi-linxin-zi-gengding-succession', 'person', 'zi-linxin', 'person', 'zi-gengding', 'succession')
+ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind)
+VALUES ('rel-zi-gengding-zi-wuyi-succession', 'person', 'zi-gengding', 'person', 'zi-wuyi', 'succession')
 ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind)
 VALUES ('rel-zi-wuyi-zi-wending-succession', 'person', 'zi-wuyi', 'person', 'zi-wending', 'succession')

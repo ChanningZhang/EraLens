@@ -6,10 +6,11 @@ export function cursorGuideStageX(
   clientX: number,
   stageLeft: number,
   stageWidth: number,
+  gutterPx = 0,
 ): number | null {
   if (stageWidth <= 0) return null;
   const x = clientX - stageLeft;
-  if (x < 0 || x > stageWidth) return null;
+  if (x < gutterPx || x > stageWidth) return null;
   return x;
 }
 
@@ -27,9 +28,10 @@ export function clampCursorGuideLabelX(
   overlayWidth: number,
   labelWidth: number,
   pad = 4,
+  gutterPx = 0,
 ): number {
   const half = labelWidth / 2;
-  const min = half + pad;
+  const min = gutterPx + half + pad;
   const max = overlayWidth - half - pad;
   if (min >= max) return overlayWidth / 2;
   return Math.min(max, Math.max(min, x));

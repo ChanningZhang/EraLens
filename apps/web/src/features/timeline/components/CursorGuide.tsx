@@ -1,4 +1,5 @@
 import { useEffect, useRef, type RefObject } from "react";
+import { absFromStageX } from "../model/coordinates";
 import {
   clampCursorGuideLabelX,
   cursorGuideStageX,
@@ -46,7 +47,8 @@ export function CursorGuide({ stageRef }: Props) {
         return;
       }
 
-      const x = cursorGuideStageX(clientX, rect.left, rect.width);
+      const viewport = viewportStore.getSnapshot();
+      const x = cursorGuideStageX(clientX, rect.left, rect.width, viewport.gutterPx);
       if (x === null) {
         hide();
         return;
@@ -57,10 +59,15 @@ export function CursorGuide({ stageRef }: Props) {
       overlay.dataset.visible = "true";
       line.style.transform = `translate3d(${x}px, 0, 0)`;
 
-      const viewport = viewportStore.getSnapshot();
-      const abs = viewport.startAbs + x / viewport.pxPerMonth;
+      const abs = absFromStageX(viewport, x);
       label.textContent = formatCursorGuideLabel(abs, viewport.pxPerMonth);
-      const labelX = clampCursorGuideLabelX(x, rect.width, label.offsetWidth);
+      const labelX = clampCursorGuideLabelX(
+        x,
+        rect.width,
+        label.offsetWidth,
+        4,
+        viewport.gutterPx,
+      );
       label.style.transform = `translate3d(${labelX}px, 0, 0) translateX(-50%)`;
     };
 

@@ -150,8 +150,20 @@
     "kind": "succession"
   },
   {
-    "id": "rel-zi-zujia-zi-wuyi-succession",
+    "id": "rel-zi-zujia-zi-linxin-succession",
     "fromRef": "person:zi-zujia",
+    "toRef": "person:zi-linxin",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-linxin-zi-gengding-succession",
+    "fromRef": "person:zi-linxin",
+    "toRef": "person:zi-gengding",
+    "kind": "succession"
+  },
+  {
+    "id": "rel-zi-gengding-zi-wuyi-succession",
+    "fromRef": "person:zi-gengding",
     "toRef": "person:zi-wuyi",
     "kind": "succession"
   },
@@ -412,6 +424,12 @@
     "fromRef": "event:chengpu",
     "toRef": "person:ji-chonger",
     "kind": "battle"
+  },
+  {
+    "id": "rel-zi-zujia-zi-wuyi-succession",
+    "fromRef": "person:zi-zujia",
+    "toRef": "person:zi-wuyi",
+    "kind": "succession"
   },
   {
     "id": "rel-ji-yijiu-ji-lin-succession",

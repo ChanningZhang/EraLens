@@ -5,8 +5,11 @@ import {
   collectLaneReigns,
   layoutBucketsForLaneReigns,
   reignsInLayoutBucket,
-  resolveFrozenLabelAnchorAbs,
   resolveFrozenLaneLabel,
+  TIMELINE_GUTTER_PX,
+  TIMELINE_RAIL_GAP_PX,
+  TIMELINE_RAIL_INSET_PX,
+  TIMELINE_RAIL_LABEL_WIDTH_PX,
 } from "./dynastyLaneGroups";
 import type { Dynasty, Reign } from "./schema";
 
@@ -192,23 +195,27 @@ describe("dynastyLaneGroups", () => {
     expect(resolveFrozenLaneLabel(yuan, byId, absMonth(1300))).toBe("元");
   });
 
-  it("uses the label anchor so a phase switch is not tied to viewport center", () => {
+  it("reserves a shared gutter for the dynasty-name rail", () => {
+    expect(TIMELINE_GUTTER_PX).toBe(
+      TIMELINE_RAIL_INSET_PX + TIMELINE_RAIL_LABEL_WIDTH_PX + TIMELINE_RAIL_GAP_PX,
+    );
+  });
+
+  it("switches the frozen label at the center guide, not the left edge", () => {
     const byId = new Map([
       [mongolEmpire.id, mongolEmpire],
       [yuan.id, yuan],
     ]);
     const yuanStart = yuan.startAbs;
     const pxPerMonth = 1.5;
-    const halfWindow = 1200 / pxPerMonth / 2;
+    const contentWidth = 1200 - TIMELINE_GUTTER_PX;
+    const halfWindow = contentWidth / pxPerMonth / 2;
     const centerAbs = yuanStart + 100;
-    const labelAnchorAbs = resolveFrozenLabelAnchorAbs(
-      centerAbs - halfWindow,
-      pxPerMonth,
-    );
+    const leftEdgeAbs = centerAbs - halfWindow;
 
     expect(centerAbs).toBeGreaterThan(yuanStart);
-    expect(labelAnchorAbs).toBeLessThan(yuanStart);
-    expect(resolveFrozenLaneLabel(yuan, byId, labelAnchorAbs)).toBe("蒙古帝国");
+    expect(leftEdgeAbs).toBeLessThan(yuanStart);
+    expect(resolveFrozenLaneLabel(yuan, byId, leftEdgeAbs)).toBe("蒙古帝国");
     expect(resolveFrozenLaneLabel(yuan, byId, centerAbs)).toBe("元");
   });
 

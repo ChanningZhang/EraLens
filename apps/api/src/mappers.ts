@@ -136,6 +136,15 @@ export function mapDynasty(row: DbDynasty | RawDynastyRow): Dynasty {
   };
 }
 
+function mapClaimRole(
+  claimRole: string | null | undefined,
+  claimTrack: string | null | undefined,
+): Reign["claimRole"] | undefined {
+  if (claimTrack) return "rival";
+  if (claimRole === "rival") return "rival";
+  return undefined;
+}
+
 export function mapReign(
   row: DbReign | RawReignRow,
   eraNames: DbEraName[],
@@ -157,7 +166,7 @@ export function mapReign(
   const endAbs = "endAbs" in row ? row.endAbs : row.end_abs;
   const claimTrack = "claimTrack" in row ? row.claimTrack : row.claim_track;
   const claimLabel = "claimLabel" in row ? row.claimLabel : row.claim_label;
-  const claimRole = "claimRole" in row ? row.claimRole : row.claim_role;
+  const rawClaimRole = "claimRole" in row ? row.claimRole : row.claim_role;
   const startDateConfidence =
     "startDateConfidence" in row ? row.startDateConfidence : row.start_date_confidence;
   const endDateConfidence =
@@ -199,7 +208,7 @@ export function mapReign(
       (endDateConfidence as Reign["endDateConfidence"] | null) ?? undefined,
     claimTrack: claimTrack ?? undefined,
     claimLabel: claimLabel ?? undefined,
-    claimRole: (claimRole as Reign["claimRole"] | null) ?? undefined,
+    claimRole: mapClaimRole(rawClaimRole, claimTrack),
   };
 }
 

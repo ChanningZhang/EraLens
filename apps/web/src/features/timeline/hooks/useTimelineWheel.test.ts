@@ -1,9 +1,11 @@
 import { describe, expect, it } from "vitest";
 import {
+  applyStageVerticalScroll,
   isStageVerticallyScrollable,
   isZoomWheel,
   resolveWheelAction,
   shouldDeferToStageVerticalScroll,
+  wheelDeltaPx,
   wheelZoomFactor,
 } from "./useTimelineWheel";
 
@@ -37,6 +39,22 @@ describe("shouldDeferToStageVerticalScroll", () => {
   it("keeps horizontal trackpad swipes on panning even when the stage overflows", () => {
     expect(shouldDeferToStageVerticalScroll(-80, 10, false, true)).toBe(false);
     expect(shouldDeferToStageVerticalScroll(-3, 40, false, true)).toBe(false);
+  });
+});
+
+describe("applyStageVerticalScroll", () => {
+  it("moves scrollTop by pixel deltas so the gesture can be preventDefaulted", () => {
+    const stage = { scrollTop: 20 };
+    applyStageVerticalScroll(stage, 40, 0);
+    expect(stage.scrollTop).toBe(60);
+  });
+});
+
+describe("wheelDeltaPx", () => {
+  it("keeps pixel deltas and converts line/page modes", () => {
+    expect(wheelDeltaPx(40, 0)).toBe(40);
+    expect(wheelDeltaPx(2, 1)).toBe(32);
+    expect(wheelDeltaPx(1, 2)).toBe(800);
   });
 });
 

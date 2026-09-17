@@ -134,7 +134,7 @@ const persons = [
   person("zhu-yuyue", "朱聿鐭", ["皇帝"], "绍武帝，隆武之弟，1646年广州称帝，与肇庆永历并立，旋为清军所破。", "绍武帝"),
   person("zhu-youlang", "朱由榔", ["皇帝"], "永历帝，南明末帝，肇庆称帝，与鲁监国、绍武并立，后为吴三桂所害。", "永历帝"),
   person("zheng-chenggong", "郑成功", ["军事家"], "抗清名将，收复台湾。", "郑成功", ym(1624), ym(1662)),
-  person("yu-qian", "于谦", ["政治家", "军事家"], "土木堡之变后保卫北京，后被英宗冤杀。", "于谦", ym(1398), ym(1457)),
+  person("yu-qian", "于谦", ["政治家", "军事家"], "土木堡之变后保卫北京，后被英宗冤杀。", "于谦", ym(1398), ym(1457, 2)),
   // 元——非帝王人物
   person("guan-hanqing", "关汉卿", ["文学家"], "元杂剧代表作家，窦娥冤作者。", "关汉卿"),
   // 明——非帝王人物
@@ -334,7 +334,7 @@ const events = [
   eventRange({ id: "zheng-he-voyages", name: "郑和下西洋", kind: "culture", timeMode: "span", start: ym(1405), end: ym(1433), dynastyIds: ["ming"], participantIds: ["zheng-he", "zhu-di"], summary: "永乐至宣德间七次远航，最远达非洲东岸，宣扬国威。" }),
   eventPoint({ id: "tumu-crisis", name: "土木堡之变", kind: "battle", at: ym(1449), dynastyIds: ["ming"], participantIds: ["zhu-qizhen"], summary: "明英宗率军北征瓦剌，土木堡被俘，明军主力覆没。" }),
   eventPoint({ id: "beijing-defense", name: "北京保卫战", kind: "battle", precision: "month", dateNote: "正统十四年十月，于谦督师保卫北京", at: ym(1449, 10), dynastyIds: ["ming"], participantIds: ["yu-qian", "zhu-qiyu"], summary: "土木堡之变后瓦剌兵临北京，于谦拥立景泰帝，击退敌军。" }),
-  eventPoint({ id: "duomen-restoration", name: "夺门之变", kind: "politics", precision: "month", dateNote: "天顺元年正月，石亨等拥英宗复辟", at: ym(1457, 1), dynastyIds: ["ming"], participantIds: ["zhu-qizhen", "zhu-qiyu"], summary: "石亨、曹吉祥等拥英宗复辟，废景泰帝，于谦被害。" }),
+  eventPoint({ id: "duomen-restoration", name: "夺门之变", kind: "politics", precision: "month", dateNote: "景泰八年正月十七日，石亨等拥英宗复辟", at: ym(1457, 2), dynastyIds: ["ming"], participantIds: ["zhu-qizhen", "zhu-qiyu"], summary: "石亨、曹吉祥等拥英宗复辟，废景泰帝，于谦被害。" }),
   eventRange({ id: "wanli-campaigns", name: "万历三大征", kind: "battle", timeMode: "span", start: ym(1592), end: ym(1600), dynastyIds: ["ming"], participantIds: ["zhu-yiming"], summary: "万历朝平定宁夏哱拜、朝鲜倭乱、播州杨应龙，耗损国力。" }),
   eventRange({ id: "zhang-juzheng-reforms", name: "张居正改革", kind: "politics", timeMode: "span", start: ym(1572), end: ym(1582), dynastyIds: ["ming"], participantIds: ["zhang-juzheng", "zhu-yiming"], summary: "张居正为首辅，推行考成法、一条鞭法，整顿吏治，史称万历中兴。" }),
   // 明——战争
@@ -513,6 +513,7 @@ const manifest = {
     { label: "朱以海", url: "https://zh.wikipedia.org/wiki/朱以海" },
     { label: "绍武帝", url: "https://zh.wikipedia.org/wiki/绍武帝" },
     { label: "土木堡之变", url: "https://zh.wikipedia.org/wiki/土木堡之变" },
+    { label: "夺门之变", url: "https://zh.wikipedia.org/wiki/夺门之变" },
     { label: "靖难之役", url: "https://zh.wikipedia.org/wiki/靖难之役" },
     { label: "郑和下西洋", url: "https://zh.wikipedia.org/wiki/郑和下西洋" },
     { label: "梃击案", url: "https://zh.wikipedia.org/wiki/梃击案" },
@@ -546,6 +547,7 @@ const manifest = {
     "元末漠北三位君主：元惠宗（顺帝北迁续统，1368–1370）、元昭宗（1370–1378）、天元帝（1378–1388）。",
     "清王朝行自1616年努尔哈赤建后金起算，1636年改国号大清；努尔哈赤、皇太极在位计入清 reign，但正统自顺治（福临）入关（1644）起算。",
     "明清皇帝卡片优先显示年号；朱祁镇两段在位分别用正统、天顺。",
+    "夺门之变落点取公历 1457 年 2 月（景泰八年正月十七日＝2 月 11 日），与英宗复辟在位日起算一致，不把农历正月写成 1 月。",
     "元世祖至元年间部分早于1271年，年号取1271年后窗口。",
     "1912年清帝退位为帝制终结；中华民国不在本包内。",
     "元末割据：徐宋（1351–1360）、韩宋（1355–1366）、大周（1354–1367）、陈汉（1360–1364）、明夏（1362–1371）、吴/西吴（1364–1368，朱元璋称帝前）。",
