@@ -142,8 +142,3 @@ export function reignVisualBounds(
 
   return { start, endExclusive };
 }
-
-export function isSubMonthReign(reign: Reign, clipStartAbs?: number, clipEndExclusive?: number): boolean {
-  const { start, endExclusive } = reignVisualBounds(reign, clipStartAbs, clipEndExclusive);
-  return endExclusive - start < 0.5;
-}

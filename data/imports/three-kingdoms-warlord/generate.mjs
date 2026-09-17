@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Model Wei / Shu / Wu as post-Chibi warlord polities (208–).
+ * Model Wei / Shu / Wu from each polity's enthronement (称帝/立国).
  * Yuan Shao and Liu Zhang remain persons only (no separatist dynasty rows).
  */
 import path from "node:path";
@@ -21,6 +21,9 @@ import {
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const CHIBI = ym(208, 12);
+const WEI_FOUNDED = ym(220, 12);
+const SHU_FOUNDED = ym(221, 5);
+const WU_FOUNDED = ym(222, 10);
 
 function dynastyReignMonth(
   id,
@@ -83,12 +86,12 @@ const dynasties = [
     altNames: ["魏"],
     scope: "cn",
     region: "east_asia",
-    start: CHIBI,
+    start: WEI_FOUNDED,
     end: ym(266, 2),
     precision: "month",
     colorToken: "indigo",
-    orthodoxFromAbs: ym(220, 12).abs,
-    note: "赤壁战后曹操据北方为割据；216年封魏王，220年曹丕称帝。王朝行自208年赤壁后与东汉并行。",
+    orthodoxFromAbs: WEI_FOUNDED.abs,
+    note: "220年曹丕受禅称帝，代汉建魏。",
   },
   {
     id: "shu",
@@ -96,11 +99,11 @@ const dynasties = [
     altNames: ["蜀", "季汉"],
     scope: "cn",
     region: "east_asia",
-    start: CHIBI,
+    start: SHU_FOUNDED,
     end: ym(263, 11),
     precision: "month",
     colorToken: "moss",
-    note: "赤壁战后孙刘联盟中刘备一系；219年称汉中王，221年称帝。王朝行自208年赤壁后与东汉并行。",
+    note: "221年刘备于成都称帝，国号汉，史称蜀汉。",
   },
   {
     id: "wu",
@@ -108,45 +111,17 @@ const dynasties = [
     altNames: ["吴"],
     scope: "cn",
     region: "east_asia",
-    start: CHIBI,
+    start: WU_FOUNDED,
     end: ym(280, 5),
     precision: "month",
     colorToken: "mineral",
-    note: "赤壁战后孙权据江东为割据；222年称吴王，229年称帝。王朝行自208年赤壁后与东汉并行。",
+    note: "222年孙权称吴王，229年称帝；王朝行自称王始。",
   },
 ];
 
 // ── reigns ─────────────────────────────────────────────────────────────────
 
 const weiReigns = [
-  dynastyReignMonth(
-    "reign-cao-cao-wei",
-    "wei",
-    "cao-cao",
-    "丞相",
-    "武皇帝",
-    "太祖",
-    208,
-    12,
-    220,
-    3,
-    [],
-    { kind: "posthumous", name: "魏武帝" },
-  ),
-  dynastyReignMonth(
-    "reign-cao-pi-king",
-    "wei",
-    "cao-pi",
-    "魏王",
-    null,
-    null,
-    220,
-    3,
-    220,
-    12,
-    [],
-    { kind: "regnal", name: "魏王" },
-  ),
   dynastyReignMonth(
     "reign-cao-pi",
     "wei",
@@ -165,18 +140,6 @@ const weiReigns = [
 
 const shuReigns = [
   dynastyReignMonth(
-    "reign-liu-bei-warlord",
-    "shu",
-    "liu-bei",
-    "左将军",
-    null,
-    null,
-    208,
-    12,
-    221,
-    4,
-  ),
-  dynastyReignMonth(
     "reign-liu-bei",
     "shu",
     "liu-bei",
@@ -192,18 +155,6 @@ const shuReigns = [
 ];
 
 const wuReigns = [
-  dynastyReignMonth(
-    "reign-sun-quan-warlord",
-    "wu",
-    "sun-quan",
-    "吴侯",
-    null,
-    null,
-    208,
-    12,
-    222,
-    9,
-  ),
   dynastyReignMonth(
     "reign-sun-quan",
     "wu",
@@ -277,7 +228,9 @@ const supplementalEventDynasties = [];
 
 const preSql = [
   "DELETE FROM event_dynasties WHERE dynasty_id IN ('yuan-hebei', 'yizhou-liu');",
-  "DELETE FROM reigns WHERE id IN ('reign-yuan-shao-hebei', 'reign-liu-zhang-yizhou');",
+  "DELETE FROM era_names WHERE reign_id IN ('reign-cao-cao-wei', 'reign-cao-pi-king', 'reign-liu-bei-warlord', 'reign-sun-quan-warlord');",
+  "DELETE FROM relations WHERE id IN ('rel-cao-cao-cao-pi-succession', 'rel-cao-pi-cao-pi-succession', 'rel-liu-bei-liu-bei-succession', 'rel-sun-quan-sun-quan-succession');",
+  "DELETE FROM reigns WHERE id IN ('reign-yuan-shao-hebei', 'reign-liu-zhang-yizhou', 'reign-cao-cao-wei', 'reign-cao-pi-king', 'reign-liu-bei-warlord', 'reign-sun-quan-warlord');",
   "DELETE FROM dynasties WHERE id IN ('yuan-hebei', 'yizhou-liu');",
 ].join("\n");
 
@@ -324,11 +277,11 @@ const manifest = {
     { label: "曹操", url: "https://zh.wikipedia.org/wiki/曹操" },
   ],
   notes: [
-    "魏蜀吴王朝行起点取208年12月赤壁战后，与东汉（至220年12月）并行展示。",
-    "wei 的 orthodox_from_abs 仍为220年12月曹丕称帝；shu、wu 为割据政权。",
+    "魏蜀吴王朝行分别自曹丕称帝（220-12）、刘备称帝（221-5）、孙权称王（222-10）起；称帝前不建 reign。",
+    "wei 的 orthodox_from_abs 与王朝始年同为 220 年 12 月曹丕称帝。",
     "袁绍（yuan-shao）、刘璋（liu-zhang）仅作人物收录，不建割据王朝行。",
-    "曹操、刘备、孙权各拆为割据期与称帝/称王期两段 reign；曹丕另拆魏王嗣位（220-3-15）与称帝（220-12-11）两段；曹叡及以后见 seed 与 three-kingdoms-late 包。",
-    "在位起止日经 documentedReignDates 提升至 day（赤壁起点无日则 month）。",
+    "曹叡及以后见 seed 与 three-kingdoms-late 包。",
+    "在位起止日经 documentedReignDates 提升至 day。",
   ],
 };
 

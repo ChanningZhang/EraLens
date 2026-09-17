@@ -64,13 +64,9 @@ export const DOCUMENTED_REIGN_DATES = {
   "reign-liu-bian": { start: [189, 5, 15], end: [189, 9, 28] },
   "reign-liu-xie": { start: [189, 9, 29], end: [220, 11, 25] },
 
-  // ── 三国（魏蜀吴割据期）────────────────────────────────────────────────
-  "reign-cao-cao-wei": { start: [208, 12], end: [220, 3, 15] },
-  "reign-cao-pi-king": { start: [220, 3, 15], end: [220, 12, 10] },
+  // ── 三国（魏蜀吴称帝后）────────────────────────────────────────────────
   "reign-cao-pi": { start: [220, 12, 11], end: [226, 6, 29] },
-  "reign-liu-bei-warlord": { start: [208, 12], end: [221, 5, 14] },
   "reign-liu-bei": { start: [221, 5, 15], end: [223, 6, 10] },
-  "reign-sun-quan-warlord": { start: [208, 12], end: [222, 9, 30] },
   "reign-sun-quan": { start: [222, 10, 19], end: [252, 5, 21] },
   "reign-cao-fang": { start: [239, 1, 22], end: [254, 10, 17] },
   "reign-cao-mao": { start: [254, 10, 17], end: [260, 6, 2] },

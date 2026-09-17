@@ -3,7 +3,6 @@ import { absMonth } from "./time";
 import type { Reign } from "./schema";
 import {
   formatReignSpanTooltip,
-  isSubMonthReign,
   reignDurationDays,
   reignVisualBounds,
 } from "./reignVisual";
@@ -142,34 +141,6 @@ describe("formatReignSpanTooltip", () => {
         }),
       ),
     ).toBe("公元前356年 — 公元前320年 · 37年");
-  });
-});
-
-describe("isSubMonthReign", () => {
-  it("returns false for multi-year day-precision reigns", () => {
-    expect(
-      isSubMonthReign(
-        reign({
-          start: { year: 1127, month: 6, day: 12 },
-          end: { year: 1162, month: 7, day: 24 },
-          startAbs: absMonth(1127, 6),
-          endAbs: absMonth(1162, 7),
-        }),
-      ),
-    ).toBe(false);
-  });
-
-  it("returns true for same-day day-precision reigns", () => {
-    expect(
-      isSubMonthReign(
-        reign({
-          start: { year: 1234, month: 2, day: 9 },
-          end: { year: 1234, month: 2, day: 9 },
-          startAbs: absMonth(1234, 2),
-          endAbs: absMonth(1234, 2),
-        }),
-      ),
-    ).toBe(true);
   });
 });
 

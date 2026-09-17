@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   cardDetailLevel,
   personDetailLevel,
+  resolveReignBarLayout,
   resolveReignCaptionPlacement,
   resolveReignCardTextLayout,
   shouldShowPersons,
@@ -33,6 +34,34 @@ describe("cardDetailLevel", () => {
     expect(cardDetailLevel(8, 2)).toBe("below");
     expect(cardDetailLevel(16, 4)).toBe("below");
     expect(cardDetailLevel(16, 5)).toBe("below");
+  });
+});
+
+describe("resolveReignBarLayout", () => {
+  it("keeps a sub-month bar at its duration width with an expanded hit target", () => {
+    const layout = resolveReignBarLayout(1 / 28, 4);
+    expect(layout.barWidthPx).toBeCloseTo(1 / 28, 5);
+    expect(layout.unitWidthPx).toBe(8);
+    expect(layout.markerStyle).toBe(true);
+    expect(layout.centerOnAnchor).toBe(true);
+    expect(layout.captionBelow).toBe(true);
+  });
+
+  it("uses marker styling for a multi-week bar that is still too narrow for padding", () => {
+    const layout = resolveReignBarLayout(2.35, 2);
+    expect(layout.barWidthPx).toBe(2.35);
+    expect(layout.unitWidthPx).toBe(8);
+    expect(layout.markerStyle).toBe(true);
+    expect(layout.captionBelow).toBe(true);
+  });
+
+  it("keeps wide bars on the normal padded card path", () => {
+    const layout = resolveReignBarLayout(56.6, 2);
+    expect(layout.barWidthPx).toBe(56.6);
+    expect(layout.unitWidthPx).toBe(56.6);
+    expect(layout.markerStyle).toBe(false);
+    expect(layout.centerOnAnchor).toBe(false);
+    expect(layout.textLayout.level).toBe("wrap");
   });
 });
 

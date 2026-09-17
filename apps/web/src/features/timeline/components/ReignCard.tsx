@@ -4,7 +4,6 @@ import {
   type Reign,
   claimRoleLabel,
   formatReignSpanTooltip,
-  isSubMonthReign,
   claimTrackOf,
   isUncertainDateConfidence,
   isUncertainReignSeam,
@@ -19,8 +18,8 @@ import { useSelection } from "../hooks/useSelection";
 import { useViewport } from "../hooks/useViewport";
 import { projectAbs } from "../model/coordinates";
 import {
+  resolveReignBarLayout,
   resolveReignCaptionPlacement,
-  resolveReignCardTextLayout,
   shouldShowReignCardMeta,
 } from "../model/lod";
 import {
@@ -32,7 +31,6 @@ import { selectionStore } from "../state/selectionStore";
 import { HoverTooltip } from "./HoverTooltip";
 import styles from "./ReignCard.module.css";
 
-const MARKER_HIT_MIN_PX = 8;
 /** Breathing room at interpolated seams so wavy junctions stay visible. */
 const UNCERTAIN_SEAM_GAP_PX = 3;
 
@@ -68,16 +66,9 @@ export function ReignCard({
     overlapsLowerRow,
   });
   const visual = reignVisualBounds(reign, startAbs, endExclusive);
-  const marker = isSubMonthReign(reign, startAbs, endExclusive);
   const durationMonths = visual.endExclusive - visual.start;
-  const rawWidth = durationMonths * viewport.pxPerMonth;
-  const visualWidth = Math.max(0, rawWidth);
+  const visualWidth = Math.max(0, durationMonths * viewport.pxPerMonth);
   const anchor = (visual.start + visual.endExclusive) / 2;
-  const unitWidth = marker ? Math.max(visualWidth, MARKER_HIT_MIN_PX) : visualWidth;
-  const left = marker
-    ? projectAbs(viewport, anchor) - unitWidth / 2
-    : projectAbs(viewport, visual.start);
-  const cardInset = marker ? (unitWidth - visualWidth) / 2 : 0;
   const trackPeers = reigns
     .filter((item) => claimTrackOf(item) === claimTrackOf(reign))
     .sort((a, b) => a.startAbs - b.startAbs || a.id.localeCompare(b.id));
@@ -111,11 +102,14 @@ export function ReignCard({
 
   const personName = personNameFromTimeline ?? personQuery.data;
   const label = resolveReignCardLabel(reign, personName, {
-    cardWidthPx: unitWidth,
+    cardWidthPx: visualWidth,
     dynastyId: dynasty.id,
   });
-  const layout = resolveReignCardTextLayout(unitWidth, [...label].length);
-  const detail = marker ? "below" : layout.level;
+  const barLayout = resolveReignBarLayout(visualWidth, [...label].length);
+  const left = barLayout.centerOnAnchor
+    ? projectAbs(viewport, anchor) - barLayout.unitWidthPx / 2
+    : projectAbs(viewport, visual.start);
+  const detail = barLayout.captionBelow ? "below" : barLayout.textLayout.level;
   const parallel = isParallelClaim(reign);
   // For concurrent claimants the seat (长安 / 洛阳) tells them apart far better
   // than the appellation kind, so it takes over the subtitle slot.
@@ -125,7 +119,7 @@ export function ReignCard({
       : resolveReignCardMeta(reign, personName);
   const metaGlyphCount = meta ? [...meta.name].length : 0;
   const showMeta = shouldShowReignCardMeta(
-    unitWidth,
+    barLayout.barWidthPx,
     [...label].length,
     metaGlyphCount,
   );
@@ -142,7 +136,7 @@ export function ReignCard({
   const className = useMemo(() => {
     return [
       styles.card,
-      marker ? styles.marker : "",
+      barLayout.markerStyle ? styles.marker : "",
       detail === "wrap" ? styles.wrap : "",
       orthodox ? "orthodoxGold" : "",
       selected ? styles.selected : "",
@@ -150,14 +144,14 @@ export function ReignCard({
     ]
       .filter(Boolean)
       .join(" ");
-  }, [detail, marker, orthodox, selected, reign.claimRole]);
+  }, [barLayout.markerStyle, detail, orthodox, selected, reign.claimRole]);
 
   return (
     <div
       className={styles.unit}
       style={{
         left,
-        width: unitWidth,
+        width: barLayout.unitWidthPx,
         top: stackIndex * STACK_ROW_HEIGHT,
       }}
     >
@@ -168,14 +162,20 @@ export function ReignCard({
             className={className}
             style={{
               ["--card-color" as string]: color,
-              ...(marker
-                ? { left: cardInset, width: visualWidth, right: "auto" }
+              ...(barLayout.markerStyle
+                ? {
+                    left: barLayout.barInsetPx,
+                    width: barLayout.barWidthPx,
+                    right: "auto",
+                  }
                 : {
                     left: seamInsetLeft,
                     right: seamInsetRight,
                   }),
               ...(detail === "wrap"
-                ? { ["--card-name-size" as string]: `${layout.nameFontPx}px` }
+                ? {
+                    ["--card-name-size" as string]: `${barLayout.textLayout.nameFontPx}px`,
+                  }
                 : {}),
             }}
             onClick={() => {

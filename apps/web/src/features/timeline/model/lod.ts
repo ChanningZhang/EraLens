@@ -34,6 +34,49 @@ const META_FONT_DEFAULT = 13;
 const MIN_WRAP_FONT = 11;
 const FULL_MIN_WIDTH = 80;
 
+/** Minimum clickable row width when the duration-accurate bar is thinner. */
+export const REIGN_BAR_HIT_MIN_PX = 8;
+
+export type ReignBarLayout = {
+  /** Painted bar width from reign duration × pxPerMonth. */
+  barWidthPx: number;
+  /** Row width; wider than the bar only to preserve a hit target. */
+  unitWidthPx: number;
+  /** Offset of the painted bar inside the unit when hit target is expanded. */
+  barInsetPx: number;
+  captionBelow: boolean;
+  /** Zero-padding marker styling so the painted bar matches `barWidthPx`. */
+  markerStyle: boolean;
+  centerOnAnchor: boolean;
+  textLayout: ReignCardTextLayout;
+};
+
+/**
+ * One layout path for all reign bars: duration sets `barWidthPx`; marker styling
+ * and caption placement follow pixel width, not calendar-month heuristics.
+ */
+export function resolveReignBarLayout(
+  visualWidthPx: number,
+  labelGlyphCount = 3,
+): ReignBarLayout {
+  const barWidthPx = Math.max(0, visualWidthPx);
+  const hitExpanded = barWidthPx < REIGN_BAR_HIT_MIN_PX;
+  const unitWidthPx = hitExpanded ? REIGN_BAR_HIT_MIN_PX : barWidthPx;
+  const barInsetPx = hitExpanded ? (unitWidthPx - barWidthPx) / 2 : 0;
+  const textLayout = resolveReignCardTextLayout(barWidthPx, labelGlyphCount);
+  const captionBelow = textLayout.level === "below";
+
+  return {
+    barWidthPx,
+    unitWidthPx,
+    barInsetPx,
+    captionBelow,
+    markerStyle: captionBelow || hitExpanded,
+    centerOnAnchor: hitExpanded,
+    textLayout,
+  };
+}
+
 function glyphPxForFont(fontPx: number): number {
   return fontPx * 0.94;
 }
