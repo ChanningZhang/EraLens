@@ -71,6 +71,7 @@ export const DOCUMENTED_REIGN_DATES = {
   "reign-cao-fang": { start: [239, 1, 22], end: [254, 10, 17] },
   "reign-cao-mao": { start: [254, 10, 17], end: [260, 6, 2] },
   "reign-cao-huan": { start: [260, 6, 27], end: [266, 2, 4] },
+  "reign-sun-liang": { start: [252, 5, 23], end: [258, 11, 2] },
   "reign-sun-xiu": { start: [258, 11, 2], end: [264, 9, 3] },
   "reign-sun-hao": { start: [264, 9, 3], end: [280, 5, 1] },
 

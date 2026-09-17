@@ -116,6 +116,14 @@ function titleEmbedsEraName(title: string, eraNames: string[]): boolean {
   return eraNames.some((era) => era.length >= 2 && title.includes(era));
 }
 
+/** 少帝 / 废帝 / 末帝 / 后主 are conventional 史称, not 谥号. */
+export function isConventionalRulerTitle(
+  title: string | null | undefined,
+): boolean {
+  if (!title) return false;
+  return /(?:少|废|末)帝$/.test(title) || /后主$/.test(title);
+}
+
 function resolvePosthumousAppellation(
   reign: ReignAppellationFields,
 ): EmperorAppellation | null {
@@ -126,8 +134,10 @@ function resolvePosthumousAppellation(
     };
   }
   // 元泰定帝 / 元天顺帝 are era-based 史称, not 谥号.
+  // 吴末帝 is a conventional 史称, not a 谥号.
   if (
     isDynasticEmperorTitle(reign.title) &&
+    !isConventionalRulerTitle(reign.title) &&
     !titleEmbedsEraName(reign.title, eraNameList(reign))
   ) {
     return { kind: "posthumous", name: reign.title };
@@ -181,6 +191,10 @@ export function resolveEmperorAppellation(
 
   const temple = resolveTempleAppellation(reign);
   if (temple) return temple;
+
+  if (isConventionalRulerTitle(reign.title)) {
+    return { kind: "regnal", name: reign.title };
+  }
 
   if (eraName) {
     return { kind: "era", name: eraName };

@@ -9,13 +9,13 @@
   },
   "scope": "cn",
   "depth": "standard",
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-18",
   "counts": {
-    "persons": 5,
+    "persons": 6,
     "dynasties": 0,
-    "reigns": 5,
+    "reigns": 6,
     "events": 0,
-    "relations": 5
+    "relations": 6
   },
   "sources": [
     {
@@ -47,6 +47,10 @@
       "url": "https://zh.wikipedia.org/wiki/孙吴皇帝列表"
     },
     {
+      "label": "孙亮",
+      "url": "https://zh.wikipedia.org/wiki/孙亮"
+    },
+    {
       "label": "孙休",
       "url": "https://zh.wikipedia.org/wiki/孙休"
     },
@@ -56,9 +60,10 @@
     }
   ],
   "notes": [
-    "补录曹魏曹叡之后曹芳、曹髦、曹奂，及孙吴孙亮之后孙休、孙皓。",
+    "补录曹魏曹叡之后曹芳、曹髦、曹奂，及孙吴孙亮、孙休、孙皓。",
     "在位起止据《三国志》及维基百科通行公历换算，经 documentedReignDates 提升至 day。",
-    "曹芳、曹髦谥号非完整皇帝谥，title 取通行称呼。",
+    "曹芳晋谥厉，作邵陵厉公；title 用《三国志》齐王。曹髦、孙亮无谥号，title 用高贵乡公、会稽王。孙皓无谥号，title 用吴末帝。封号不写入 posthumous_name。",
+    "孙皓第四个年号为建衡，旧误作建兴（孙亮年号）。",
     "曹魏、孙吴王朝行已存在于 seed，本包仅补人物与在位。"
   ]
 }

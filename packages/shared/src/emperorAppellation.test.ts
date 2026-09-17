@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import type { Reign } from "./schema";
 import {
+  isConventionalRulerTitle,
   resolveEmperorAppellation,
   resolveReignCardLabel,
   resolveReignCardMeta,
@@ -560,6 +561,78 @@ describe("resolveReignCardMeta", () => {
         "任好",
       ),
     ).toEqual({ label: "称号", name: "秦穆公" });
+  });
+
+  it("does not treat 吴末帝 or 后主 as 谥号", () => {
+    expect(isConventionalRulerTitle("吴末帝")).toBe(true);
+    expect(isConventionalRulerTitle("蜀汉后主")).toBe(true);
+    expect(isConventionalRulerTitle("魏文帝")).toBe(false);
+    expect(isConventionalRulerTitle("高贵乡公")).toBe(false);
+    expect(isConventionalRulerTitle("会稽王")).toBe(false);
+
+    const sunHao = source({
+      start: { year: 264, month: 9 },
+      end: { year: 280, month: 5 },
+      title: "吴末帝",
+      eraNames: [{ name: "元兴" }] as Reign["eraNames"],
+    });
+    expect(resolveEmperorAppellation(sunHao)).toEqual({
+      kind: "regnal",
+      name: "吴末帝",
+    });
+    expect(resolveReignCardMeta(sunHao, "孙皓")).toEqual({
+      label: "称号",
+      name: "吴末帝",
+    });
+    expect(resolveReignDetailFacts(sunHao)).toEqual([
+      { label: "在位", value: "264 — 280" },
+      { label: "年号", value: "元兴" },
+    ]);
+
+    expect(
+      resolveEmperorAppellation(
+        source({
+          start: { year: 239, month: 1 },
+          title: "邵陵厉公",
+          posthumousName: "邵陵厉公",
+        }),
+      ),
+    ).toEqual({ kind: "posthumous", name: "邵陵厉公" });
+
+    const caoMao = source({
+      start: { year: 254, month: 10 },
+      end: { year: 260, month: 5 },
+      title: "高贵乡公",
+      preferredAppellation: { kind: "regnal", name: "高贵乡公" },
+      eraNames: [{ name: "正元" }, { name: "甘露" }] as Reign["eraNames"],
+    });
+    expect(resolveEmperorAppellation(caoMao)).toEqual({
+      kind: "regnal",
+      name: "高贵乡公",
+    });
+    expect(resolveReignCardMeta(caoMao, "曹髦")).toEqual({
+      label: "称号",
+      name: "高贵乡公",
+    });
+    expect(resolveReignDetailFacts(caoMao)).not.toEqual(
+      expect.arrayContaining([{ label: "谥号", value: expect.anything() }]),
+    );
+
+    const sunLiang = source({
+      start: { year: 252, month: 5 },
+      end: { year: 258, month: 11 },
+      title: "会稽王",
+      preferredAppellation: { kind: "regnal", name: "会稽王" },
+      eraNames: [{ name: "建兴" }] as Reign["eraNames"],
+    });
+    expect(resolveEmperorAppellation(sunLiang)).toEqual({
+      kind: "regnal",
+      name: "会稽王",
+    });
+    expect(resolveReignCardMeta(sunLiang, "孙亮")).toEqual({
+      label: "称号",
+      name: "会稽王",
+    });
   });
 
   it("uses posthumous name when title is not a dynastic emperor shorthand", () => {
