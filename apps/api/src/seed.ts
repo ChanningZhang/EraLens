@@ -193,6 +193,11 @@ async function main() {
           toType: to.type,
           toId: to.id,
           kind: relation.kind,
+          atYear: relation.at?.year ?? null,
+          atMonth: relation.at?.month ?? null,
+          atAbs: relation.atAbs ?? null,
+          precision: relation.precision ?? null,
+          eventId: relation.eventId ?? null,
         },
       });
     }

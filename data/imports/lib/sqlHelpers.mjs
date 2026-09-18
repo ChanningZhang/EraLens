@@ -180,7 +180,7 @@ function parseRef(raw) {
 export function relationSql(r) {
   const from = parseRef(r.fromRef);
   const to = parseRef(r.toRef);
-  return `INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES (${sqlStr(r.id)}, ${sqlStr(from.type)}, ${sqlStr(from.id)}, ${sqlStr(to.type)}, ${sqlStr(to.id)}, ${sqlStr(r.kind)}) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;`;
+  return `INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_abs, precision, event_id) VALUES (${sqlStr(r.id)}, ${sqlStr(from.type)}, ${sqlStr(from.id)}, ${sqlStr(to.type)}, ${sqlStr(to.id)}, ${sqlStr(r.kind)}, ${r.at?.year ?? "NULL"}, ${r.at?.month ?? "NULL"}, ${r.atAbs ?? "NULL"}, ${sqlStr(r.precision ?? null)}, ${sqlStr(r.eventId ?? null)}) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, precision = EXCLUDED.precision, event_id = EXCLUDED.event_id;`;
 }
 
 export function writeImportPackage(dir, { slug, window, persons, dynastyGroups = [], dynasties, reignGroups, reigns, events, relations, supplementalEventDynasties = [], supplementalEventParticipants = [], preSql = "", missingReigns = [], manifest }) {

@@ -86,6 +86,7 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
       reigns: [],
       events: [],
       persons,
+      relations: [],
     });
   }
 
@@ -200,12 +201,52 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
       return dynastyHit || event.dynastyIds.length === 0;
     });
 
+  const relationRows = await prisma.$queryRaw<
+    {
+      id: string;
+      from_type: string;
+      from_id: string;
+      to_type: string;
+      to_id: string;
+      kind: string;
+      at_year: number | null;
+      at_month: number | null;
+      at_abs: number | null;
+      precision: string | null;
+      event_id: string | null;
+    }[]
+  >`
+    SELECT id, from_type, from_id, to_type, to_id, kind,
+           at_year, at_month, at_abs, precision, event_id
+    FROM relations
+    WHERE kind IN ('killed', 'surrender', 'abdication', 'captured')
+      AND at_abs IS NOT NULL
+      AND at_abs >= ${fromAbs}::int
+      AND at_abs <= ${toAbs}::int`;
+
+  const relations = relationRows.map((row) =>
+    mapRelation({
+      id: row.id,
+      fromType: row.from_type,
+      fromId: row.from_id,
+      toType: row.to_type,
+      toId: row.to_id,
+      kind: row.kind,
+      atYear: row.at_year,
+      atMonth: row.at_month,
+      atAbs: row.at_abs,
+      precision: row.precision,
+      eventId: row.event_id,
+    }),
+  );
+
   return TimelineSliceSchema.parse({
     dynasties,
     dynastyGroups,
     reigns,
     events,
     persons,
+    relations,
   });
 }
 

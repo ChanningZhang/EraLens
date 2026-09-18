@@ -46,8 +46,11 @@ export function isStageVerticallyScrollable(
 }
 
 /**
- * When the stage is taller than its viewport, pure vertical wheel scrolls lanes.
- * Any horizontal component (trackpad swipe left/right) must still pan the timeline.
+ * When the stage is taller than its viewport, vertical-dominant wheel scrolls
+ * lanes. Trackpad flicks almost always carry a few pixels of deltaX; those
+ * must still scroll, not pan time. Horizontal-dominant swipes keep panning.
+ * The wheel handler preventDefaults either way so leftover X cannot leak to
+ * macOS Notification Center.
  */
 export function shouldDeferToStageVerticalScroll(
   deltaX: number,
@@ -57,7 +60,6 @@ export function shouldDeferToStageVerticalScroll(
 ): boolean {
   if (zoom || !stageScrollable) return false;
   if (Math.abs(deltaX) >= Math.abs(deltaY)) return false;
-  if (Math.abs(deltaX) >= 1) return false;
   return Math.abs(deltaY) > 0;
 }
 

@@ -87,7 +87,7 @@ const persons = [
   { id: "liu-xie", name: "刘协", birth: ym(181), death: ym(234), roles: ["皇帝"], bio: "汉献帝，东汉末代皇帝，曹丕受禅后东汉终结。", links: wiki("汉献帝") },
   // 非帝王人物
   { id: "zhao-gao", name: "赵高", roles: ["政治家"], bio: "秦宦官，矫诏立胡亥，指鹿为马，后被子婴诛杀。", links: wiki("赵高") },
-  { id: "huo-guang", name: "霍光", birth: ym(-68), death: ym(68), roles: ["政治家"], bio: "汉昭帝辅政大臣，废立昌邑王、拥立宣帝，权倾朝野。", links: wiki("霍光") },
+  { id: "huo-guang", name: "霍光", death: ym(-68), roles: ["政治家"], bio: "汉昭帝辅政大臣，废立昌邑王、拥立宣帝，权倾朝野。", links: wiki("霍光") },
   { id: "wang-zhaojun", name: "王昭君", birth: ym(-52), death: ym(-15), roles: ["后妃"], bio: "汉元帝宫人，自愿和亲匈奴，昭君出塞。", links: wiki("王昭君") },
   { id: "dou-taihou", name: "窦太后", roles: ["太后", "政治家"], bio: "汉文帝皇后，景帝生母，崇尚黄老，文景之治重要推手。", links: wiki("窦太后") },
   { id: "liang-taihou", name: "梁太后", roles: ["太后", "政治家"], bio: "汉顺帝皇后，质帝、桓帝朝临朝，毒杀质帝。", links: wiki("梁妢") },
@@ -117,11 +117,11 @@ const dynasties = [
     altNames: ["前汉", "汉"],
     scope: "cn",
     region: "east_asia",
-    start: ym(-202),
+    start: ym(-209, 9),
     end: ym(8, 11),
     precision: "year",
     colorToken: "mineral",
-    note: "刘邦称帝定都长安；孺子婴被废、王莽代汉，前8年十一月西汉终结。",
+    note: "前209年九月沛公起兵于沛县；前202年二月称帝定都长安。孺子婴被废、王莽代汉，前8年十一月西汉终结。",
   },
   {
     id: "xin",
@@ -263,6 +263,16 @@ const chuReigns = [
 ];
 
 const hanReigns = [
+  reign({
+    id: "reign-liu-bang-han-king-han-west",
+    dynastyId: "han-west",
+    personId: "liu-bang",
+    title: "沛公",
+    preferred: { kind: "regnal", name: "沛公" },
+    start: ym(-209, 9),
+    end: ym(-202, 2),
+    precision: "day",
+  }),
   hanReign("liu-bang", "汉高祖", "高皇帝", "太祖", -202, -195),
   hanReign("liu-ying", "汉惠帝", "孝惠皇帝", null, -195, -188),
   hanReign("liu-gong", "汉前少帝", null, null, -188, -184),

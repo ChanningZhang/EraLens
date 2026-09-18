@@ -304,6 +304,13 @@ export function mapRelation(row: DbRelation): Relation {
     fromRef: `${row.fromType}:${row.fromId}`,
     toRef: `${row.toType}:${row.toId}`,
     kind: row.kind as Relation["kind"],
+    at:
+      row.atYear != null && row.atMonth != null
+        ? { year: row.atYear, month: row.atMonth }
+        : undefined,
+    atAbs: row.atAbs ?? undefined,
+    precision: (row.precision as Relation["precision"]) ?? undefined,
+    eventId: row.eventId ?? undefined,
   };
 }
 

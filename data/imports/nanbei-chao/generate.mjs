@@ -227,7 +227,7 @@ const dynastyGroups = [
     start: ym(420),
     end: ym(589, 12),
     precision: "year",
-    note: "420–589年南朝四朝（刘宋、南齐、南梁、南陈）。",
+    note: "420–589年南朝（刘宋、南齐、南梁、南陈及江陵西梁）。",
   },
   {
     id: "bei-chao",
@@ -943,13 +943,13 @@ const manifest = {
     { label: "孝文帝改革", url: "https://zh.wikipedia.org/wiki/北魏孝文帝改革" },
   ],
   notes: [
-    "覆盖南北朝（420–589），含386年立国的北魏；北朝含北魏、东魏、西魏、北齐、北周，南朝含刘宋、南齐、南梁、南陈。",
+    "覆盖南北朝（420–589），含386年立国的北魏；北朝含北魏、东魏、西魏、北齐、北周，南朝含刘宋、南齐、南梁、南陈；江陵西梁（555–587）在 nanbei-sixteen-extra，同属 nan-chao。",
     "全部53位君主在位日取维基百科君主条目公历换算（documentedReignDates，precision=day）。",
     "刘裕（liu-yu-jin）复用 jin-sixteen 已有 id；北魏 id 为 wei-north，避免与曹魏 wei 冲突；东魏 wei-east、西魏 wei-west。",
     "东魏、西魏按通行史书习惯分期各占一行（与北齐、北周并列），不用北魏 claim_track。孝武帝仍属北魏（至535年2月3日）；孝静帝属东魏；文帝→废帝→恭帝属西魏。",
     "南梁 id 为 liang-nan，与十六国南凉 liang-south 区分。",
     "589 年隋灭陈为南北朝终结事件；隋（581–）不在本包内。",
-    "未收录西梁（555–587）等次要政权。",
+    "西梁行在 nanbei-sixteen-extra，group_id 为 nan-chao，不另立组。",
   ],
 };
 writeFileSync(path.join(__dirname, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);

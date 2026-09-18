@@ -188,6 +188,7 @@ const persons = [
   person("murong-yi", "慕容义", ["皇帝"], "北燕末帝，为冯跋所废。", "慕容义"),
   person("murong-xi", "慕容熙", ["皇帝"], "后燕末帝，为冯跋兄弟所杀。", "慕容熙"),
   person("feng-ba", "冯跋", ["皇帝"], "北燕开国皇帝，据和龙。", "冯跋"),
+  person("feng-hong", "冯弘", ["皇帝"], "北燕昭成帝，冯跋之弟；436年和龙陷于北魏，出奔高句丽。", "冯弘"),
   // 后秦
   person("yao-chang", "姚苌", ["皇帝"], "后秦武昭皇帝，苻坚旧臣，淝水后杀苻坚建后秦。", "姚苌"),
   person("yao-xing", "姚兴", ["皇帝"], "后秦文桓皇帝，崇佛，与东晋刘裕、北魏拓跋珪同时。", "姚兴"),
@@ -195,8 +196,12 @@ const persons = [
   // 西秦
   person("qifu-guoren", "乞伏国仁", ["皇帝"], "西秦开国，鲜卑乞伏部。", "乞伏国仁"),
   person("qifu-gan", "乞伏乾归", ["皇帝"], "西秦文威皇帝，复国后再亡。", "乞伏乾归"),
+  person("qifu-chipan", "乞伏炽磐", ["皇帝"], "西秦文昭王，乾归长子，414年灭南凉。", "乞伏炽磐"),
+  person("qifu-mumo", "乞伏暮末", ["皇帝"], "西秦末主，431年降夏，旋为赫连定所杀。", "乞伏暮末"),
   // 后凉
   person("lu-guang", "吕光", ["皇帝"], "后凉武皇帝，前秦旧将，据凉州。", "吕光"),
+  person("lu-zuan", "吕纂", ["皇帝"], "后凉灵帝，杀吕绍自立，后为吕超所弑。", "吕纂"),
+  person("lu-long", "吕隆", ["皇帝"], "后凉末主，吕超所立，403年降后秦姚兴。", "吕隆"),
   // 南凉
   person("tufa-wugu", "秃发乌孤", ["皇帝"], "南凉开国，鲜卑秃发部。", "秃发乌孤"),
   person("tufa-lilugu", "秃发利鹿孤", ["皇帝"], "南凉皇帝，秃发乌孤之弟。", "秃发利鹿孤"),
@@ -403,7 +408,7 @@ const dynasties = [
     precision: "year",
     colorToken: nextColor(),
     groupId: "wuhu",
-    note: "吕光据凉州，386年建后凉；403年南凉、北凉攻灭。",
+    note: "吕光据凉州，386年建后凉；403年吕隆降后秦，后凉亡。",
   },
   {
     id: "liang-south",
@@ -697,9 +702,15 @@ const qinBackReigns = [
 const qinXiReigns = [
   dynastyReign("qin-xi", "qifu-guoren", "西秦武元王", "武元王", null, 385, 388),
   dynastyReign("qin-xi", "qifu-gan", "西秦文威皇帝", "文威皇帝", null, 388, 412),
+  dynastyReign("qin-xi", "qifu-chipan", "西秦文昭王", "文昭王", "太祖", 412, 428),
+  dynastyReign("qin-xi", "qifu-mumo", "西秦末主", null, null, 428, 431),
 ];
 
-const liangBackReigns = [dynastyReign("liang-back", "lu-guang", "后凉武皇帝", "武皇帝", null, 386, 399)];
+const liangBackReigns = [
+  dynastyReign("liang-back", "lu-guang", "后凉武皇帝", "武皇帝", null, 386, 399),
+  dynastyReign("liang-back", "lu-zuan", "后凉灵帝", "灵帝", null, 399, 401),
+  dynastyReign("liang-back", "lu-long", "后凉末主", null, null, 401, 403),
+];
 
 const liangSouthReigns = [
   dynastyReign("liang-south", "tufa-wugu", "南凉武成王", "武成王", null, 397, 399),
@@ -722,7 +733,10 @@ const yanSouthReigns = [
   dynastyReign("yan-south", "murong-chao", "南燕末帝", null, null, 405, 410),
 ];
 
-const yanNorthReigns = [dynastyReign("yan-north", "feng-ba", "北燕文成皇帝", "文成皇帝", null, 407, 430)];
+const yanNorthReigns = [
+  dynastyReign("yan-north", "feng-ba", "北燕文成皇帝", "文成皇帝", null, 407, 430),
+  dynastyReign("yan-north", "feng-hong", "北燕昭成帝", "昭成帝", null, 430, 436),
+];
 
 const xiaHuReigns = [
   dynastyReign("xia-hu", "helian-bobo", "胡夏武皇帝", "武皇帝", null, 407, 425),
@@ -1176,7 +1190,7 @@ const manifest = {
   notes: [
     "覆盖西晋（266–316）、东晋（317–420）及崔鸿《十六国春秋》所列十六国（304–439）。",
     "十六国同属 dynasty_groups.wuhu（组名「五胡」，狭义 304–439，据中文维基「五胡十六国」）；西晋/东晋不入组。前凉 301 可露在框外。",
-    "两晋皇帝在位日取维基百科君主条目公历换算（documentedReignDates，precision=day）；十六国君主仍为 year，汉赵同年更替者用 month。",
+    "两晋皇帝在位日取维基百科君主条目公历换算（documentedReignDates，precision=day）；十六国多数仍为 year，汉赵同年更替者用 month，苻坚/慕容熙/慕容超已补维基公历月日。",
     "西晋 upsert 已有 jin-west 行；胡夏 id 为 xia-hu，避免与夏朝 xia 冲突。",
     "前秦/后秦/西秦 id 分别为 qin-front/qin-back/qin-xi，避免与秦朝 qin 冲突。",
     "439 年北魏灭北凉为十六国终结事件；北魏本身归入南北朝，不在此包内。",

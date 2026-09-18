@@ -6907,7 +6907,7 @@ INSERT INTO dynasties (
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
 ) VALUES (
-  'qi-chunqiu', '齐国', ARRAY['齐','姜齐','田齐'], 'cn', 'east_asia',
+  'qi-chunqiu', '齐', ARRAY['姜齐','田齐','齐国'], 'cn', 'east_asia',
   -1046, 1, -221, 12,
   -12540, -2629, 'year', 'ochre', NULL, NULL,
   '周武王封姜太公于齐；前386年田氏代齐；前221年秦灭齐。'
@@ -6930,7 +6930,7 @@ INSERT INTO dynasties (
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
 ) VALUES (
-  'jin-chunqiu', '晋国', ARRAY['晋'], 'cn', 'east_asia',
+  'jin-chunqiu', '晋', ARRAY['晋国'], 'cn', 'east_asia',
   -1042, 1, -349, 12,
   -12492, -4165, 'year', 'azure', NULL, NULL,
   '周成王封叔虞于唐，改国号晋；前403年三家分晋；前376年公室被废、另立傀儡君，前349年静公被杀而国亡。'
@@ -6953,7 +6953,7 @@ INSERT INTO dynasties (
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
 ) VALUES (
-  'chu-chunqiu', '楚国', ARRAY['楚','荆楚'], 'cn', 'east_asia',
+  'chu-chunqiu', '楚', ARRAY['荆楚','楚国'], 'cn', 'east_asia',
   -1042, 1, -223, 12,
   -12492, -2653, 'year', 'cinnabar', NULL, NULL,
   '周成王封熊绎于楚；春秋战国南方大国，前223年秦灭楚。'
@@ -6976,7 +6976,7 @@ INSERT INTO dynasties (
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
 ) VALUES (
-  'yan-chunqiu', '燕国', ARRAY['燕'], 'cn', 'east_asia',
+  'yan-chunqiu', '燕', ARRAY['燕国'], 'cn', 'east_asia',
   -1044, 1, -222, 12,
   -12516, -2641, 'year', 'jade', NULL, NULL,
   '周武王封召公奭于燕；战国七雄之一，前222年秦灭燕。'
@@ -6999,7 +6999,7 @@ INSERT INTO dynasties (
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
 ) VALUES (
-  'song-chunqiu', '宋国', ARRAY['宋'], 'cn', 'east_asia',
+  'song-chunqiu', '宋', ARRAY['宋国'], 'cn', 'east_asia',
   -1034, 1, -286, 12,
   -12396, -3409, 'year', 'indigo', NULL, NULL,
   '周成王封微子启于宋；前286年齐湣王灭宋。'
@@ -7022,7 +7022,7 @@ INSERT INTO dynasties (
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
 ) VALUES (
-  'lu-chunqiu', '鲁国', ARRAY['鲁'], 'cn', 'east_asia',
+  'lu-chunqiu', '鲁', ARRAY['鲁国'], 'cn', 'east_asia',
   -1042, 1, -256, 12,
   -12492, -3049, 'year', 'coral', NULL, NULL,
   '周武王封周公旦于鲁；孔子故乡，前256年楚灭鲁。'
@@ -7045,7 +7045,7 @@ INSERT INTO dynasties (
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
 ) VALUES (
-  'wei-weiguo', '卫国', ARRAY['卫'], 'cn', 'east_asia',
+  'wei-weiguo', '卫', ARRAY['卫国'], 'cn', 'east_asia',
   -1040, 1, -209, 12,
   -12468, -2485, 'year', 'moss', NULL, NULL,
   '周成王封康叔封于卫；小国久存，秦二世时废。'
@@ -7068,7 +7068,7 @@ INSERT INTO dynasties (
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
 ) VALUES (
-  'zheng-chunqiu', '郑国', ARRAY['郑'], 'cn', 'east_asia',
+  'zheng-chunqiu', '郑', ARRAY['郑国'], 'cn', 'east_asia',
   -806, 1, -375, 12,
   -9660, -4477, 'year', 'plum', NULL, NULL,
   '周厉王少子友封于郑，后东迁新郑；前375年韩灭郑。'
@@ -7091,7 +7091,7 @@ INSERT INTO dynasties (
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
 ) VALUES (
-  'cao-chunqiu', '曹国', ARRAY['曹'], 'cn', 'east_asia',
+  'cao-chunqiu', '曹', ARRAY['曹国'], 'cn', 'east_asia',
   -1046, 1, -487, 12,
   -12540, -5821, 'year', 'mineral', NULL, NULL,
   '周武王封弟振铎于曹；前487年宋灭曹。'
@@ -7114,7 +7114,7 @@ INSERT INTO dynasties (
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
 ) VALUES (
-  'wu-chunqiu', '吴国', ARRAY['吴'], 'cn', 'east_asia',
+  'wu-chunqiu', '吴', ARRAY['吴国'], 'cn', 'east_asia',
   -585, 1, -473, 12,
   -7008, -5653, 'year', 'amber', NULL, NULL,
   '春秋东南强国，阖闾、夫差时盛；前473年越灭吴。'
@@ -7137,7 +7137,7 @@ INSERT INTO dynasties (
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
 ) VALUES (
-  'yue-chunqiu', '越国', ARRAY['越'], 'cn', 'east_asia',
+  'yue-chunqiu', '越', ARRAY['越国'], 'cn', 'east_asia',
   -600, 1, -334, 12,
   -7188, -3985, 'year', 'grape', NULL, NULL,
   '东南古国，勾践灭吴后北进；前334年楚败越，国势衰微。'
@@ -7183,7 +7183,7 @@ INSERT INTO dynasties (
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
 ) VALUES (
-  'han-warring', '韩国', ARRAY['韩'], 'cn', 'east_asia',
+  'han-warring', '韩', ARRAY['韩国'], 'cn', 'east_asia',
   -403, 1, -230, 12,
   -4824, -2737, 'year', 'stone', NULL, NULL,
   '三家分晋后韩氏立国，前403年周天子册命；前230年秦灭韩。'
@@ -7206,7 +7206,7 @@ INSERT INTO dynasties (
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
 ) VALUES (
-  'zhao-warring', '赵国', ARRAY['赵'], 'cn', 'east_asia',
+  'zhao-warring', '赵', ARRAY['赵国'], 'cn', 'east_asia',
   -403, 1, -222, 12,
   -4824, -2641, 'year', 'clay', NULL, NULL,
   '三家分晋后赵氏立国；前222年秦灭赵。'
@@ -7229,7 +7229,7 @@ INSERT INTO dynasties (
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
 ) VALUES (
-  'wei-warring', '魏国', ARRAY['魏','梁'], 'cn', 'east_asia',
+  'wei-warring', '魏', ARRAY['梁','魏国'], 'cn', 'east_asia',
   -403, 1, -225, 12,
   -4824, -2677, 'year', 'wisteria', NULL, NULL,
   '三家分晋后魏氏立国，都大梁；前225年秦灭魏。与三国曹魏 wei 区分。'
@@ -19440,7 +19440,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('qin-destroy-zhao', '秦灭赵', 'battle', 'point', 'year', '秦王政二十五年，前222年', -222, 1, -2652, NULL, NULL, NULL, NULL, NULL, NULL, '王翦、王贲率军灭赵，俘赵王嘉，赵国灭亡。')
+VALUES ('qin-destroy-zhao', '秦灭赵', 'battle', 'point', 'year', '秦王政十九年，前228年', -228, 1, -2724, NULL, NULL, NULL, NULL, NULL, NULL, '秦军破赵都邯郸，赵王迁被迫降秦，赵国灭亡。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
   date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,
@@ -19537,27 +19537,27 @@ INSERT INTO event_participants (event_id, person_id) VALUES ('qin-destroy-yan', 
 INSERT INTO event_participants (event_id, person_id) VALUES ('qin-destroy-qi', 'ying-zheng') ON CONFLICT DO NOTHING;
 
 -- relations
-INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind)
-VALUES ('rel-shangyang-reform-shang-yang', 'event', 'shangyang-reform', 'person', 'shang-yang', 'politics')
-ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
-INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind)
-VALUES ('rel-wu-destroy-yue-gou-jian', 'event', 'wu-destroy-yue', 'person', 'gou-jian', 'battle')
-ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
-INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind)
-VALUES ('rel-qin-destroy-han-ying-zheng', 'event', 'qin-destroy-han', 'person', 'ying-zheng', 'battle')
-ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
-INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind)
-VALUES ('rel-qin-destroy-chu-ying-zheng', 'event', 'qin-destroy-chu', 'person', 'ying-zheng', 'battle')
-ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
-INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind)
-VALUES ('rel-changping-bai-qi', 'event', 'changping-battle', 'person', 'bai-qi', 'battle')
-ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
-INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind)
-VALUES ('rel-guiling-sun-bin', 'event', 'guiling-battle', 'person', 'sun-bin', 'battle')
-ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
-INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind)
-VALUES ('rel-maling-sun-bin', 'event', 'maling-battle', 'person', 'sun-bin', 'battle')
-ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_abs, precision, event_id)
+VALUES ('rel-shangyang-reform-shang-yang', 'event', 'shangyang-reform', 'person', 'shang-yang', 'politics', NULL, NULL, NULL, NULL, NULL)
+ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, precision = EXCLUDED.precision, event_id = EXCLUDED.event_id;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_abs, precision, event_id)
+VALUES ('rel-wu-destroy-yue-gou-jian', 'event', 'wu-destroy-yue', 'person', 'gou-jian', 'battle', NULL, NULL, NULL, NULL, NULL)
+ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, precision = EXCLUDED.precision, event_id = EXCLUDED.event_id;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_abs, precision, event_id)
+VALUES ('rel-qin-destroy-han-ying-zheng', 'event', 'qin-destroy-han', 'person', 'ying-zheng', 'battle', NULL, NULL, NULL, NULL, NULL)
+ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, precision = EXCLUDED.precision, event_id = EXCLUDED.event_id;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_abs, precision, event_id)
+VALUES ('rel-qin-destroy-chu-ying-zheng', 'event', 'qin-destroy-chu', 'person', 'ying-zheng', 'battle', NULL, NULL, NULL, NULL, NULL)
+ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, precision = EXCLUDED.precision, event_id = EXCLUDED.event_id;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_abs, precision, event_id)
+VALUES ('rel-changping-bai-qi', 'event', 'changping-battle', 'person', 'bai-qi', 'battle', NULL, NULL, NULL, NULL, NULL)
+ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, precision = EXCLUDED.precision, event_id = EXCLUDED.event_id;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_abs, precision, event_id)
+VALUES ('rel-guiling-sun-bin', 'event', 'guiling-battle', 'person', 'sun-bin', 'battle', NULL, NULL, NULL, NULL, NULL)
+ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, precision = EXCLUDED.precision, event_id = EXCLUDED.event_id;
+INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_abs, precision, event_id)
+VALUES ('rel-maling-sun-bin', 'event', 'maling-battle', 'person', 'sun-bin', 'battle', NULL, NULL, NULL, NULL, NULL)
+ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, precision = EXCLUDED.precision, event_id = EXCLUDED.event_id;
 
 -- Remove stale reigns from managed dynasties (superseded ids from older imports)
 WITH stale AS (

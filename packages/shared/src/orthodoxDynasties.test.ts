@@ -140,6 +140,21 @@ describe("orthodoxDynasties", () => {
     expect(isOrthodoxReign(wei, caoPiEmperor)).toBe(true);
   });
 
+  it("marks han-west as orthodox only from liu bang emperor, not 沛公", () => {
+    const hanWest = {
+      id: "han-west",
+      startAbs: absMonth(-209, 9),
+      endAbs: absMonth(8),
+    };
+    expect(resolveOrthodoxFromAbs(hanWest)).toBe(ORTHODOX_FROM_ABS["han-west"]);
+    expect(isOrthodoxAt(hanWest, absMonth(-209, 9))).toBe(false);
+    expect(isOrthodoxAt(hanWest, absMonth(-202, 2))).toBe(true);
+    const peiGong = { startAbs: absMonth(-209, 9), endAbs: absMonth(-202, 2) };
+    const gaozu = { startAbs: absMonth(-202, 2), endAbs: absMonth(-195) };
+    expect(isOrthodoxReign(hanWest, peiGong)).toBe(false);
+    expect(isOrthodoxReign(hanWest, gaozu)).toBe(true);
+  });
+
   it("gives gold to the Sui main line, not to 杨侑 while 炀帝 still lived", () => {
     const sui = {
       id: "sui",

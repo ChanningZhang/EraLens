@@ -273,8 +273,8 @@ function nextColor() {
 const dynasties = [
   {
     id: "qi-chunqiu",
-    name: "齐国",
-    altNames: ["齐", "姜齐", "田齐"],
+    name: "齐",
+    altNames: ["姜齐", "田齐", "齐国"],
     scope: "cn",
     region: "east_asia",
     start: ym(-1046),
@@ -285,8 +285,8 @@ const dynasties = [
   },
   {
     id: "jin-chunqiu",
-    name: "晋国",
-    altNames: ["晋"],
+    name: "晋",
+    altNames: ["晋国"],
     scope: "cn",
     region: "east_asia",
     start: ym(-1042),
@@ -297,8 +297,8 @@ const dynasties = [
   },
   {
     id: "chu-chunqiu",
-    name: "楚国",
-    altNames: ["楚", "荆楚"],
+    name: "楚",
+    altNames: ["荆楚", "楚国"],
     scope: "cn",
     region: "east_asia",
     start: ym(-1042),
@@ -309,8 +309,8 @@ const dynasties = [
   },
   {
     id: "yan-chunqiu",
-    name: "燕国",
-    altNames: ["燕"],
+    name: "燕",
+    altNames: ["燕国"],
     scope: "cn",
     region: "east_asia",
     start: ym(-1044),
@@ -321,8 +321,8 @@ const dynasties = [
   },
   {
     id: "song-chunqiu",
-    name: "宋国",
-    altNames: ["宋"],
+    name: "宋",
+    altNames: ["宋国"],
     scope: "cn",
     region: "east_asia",
     start: ym(-1034),
@@ -333,8 +333,8 @@ const dynasties = [
   },
   {
     id: "lu-chunqiu",
-    name: "鲁国",
-    altNames: ["鲁"],
+    name: "鲁",
+    altNames: ["鲁国"],
     scope: "cn",
     region: "east_asia",
     start: ym(-1042),
@@ -345,8 +345,8 @@ const dynasties = [
   },
   {
     id: "wei-weiguo",
-    name: "卫国",
-    altNames: ["卫"],
+    name: "卫",
+    altNames: ["卫国"],
     scope: "cn",
     region: "east_asia",
     start: ym(-1040),
@@ -357,8 +357,8 @@ const dynasties = [
   },
   {
     id: "zheng-chunqiu",
-    name: "郑国",
-    altNames: ["郑"],
+    name: "郑",
+    altNames: ["郑国"],
     scope: "cn",
     region: "east_asia",
     start: ym(-806),
@@ -369,8 +369,8 @@ const dynasties = [
   },
   {
     id: "cao-chunqiu",
-    name: "曹国",
-    altNames: ["曹"],
+    name: "曹",
+    altNames: ["曹国"],
     scope: "cn",
     region: "east_asia",
     start: ym(-1046),
@@ -381,8 +381,8 @@ const dynasties = [
   },
   {
     id: "wu-chunqiu",
-    name: "吴国",
-    altNames: ["吴"],
+    name: "吴",
+    altNames: ["吴国"],
     scope: "cn",
     region: "east_asia",
     start: ym(-585),
@@ -393,8 +393,8 @@ const dynasties = [
   },
   {
     id: "yue-chunqiu",
-    name: "越国",
-    altNames: ["越"],
+    name: "越",
+    altNames: ["越国"],
     scope: "cn",
     region: "east_asia",
     start: ym(-600),
@@ -417,8 +417,8 @@ const dynasties = [
   },
   {
     id: "han-warring",
-    name: "韩国",
-    altNames: ["韩"],
+    name: "韩",
+    altNames: ["韩国"],
     scope: "cn",
     region: "east_asia",
     start: ym(-403),
@@ -429,8 +429,8 @@ const dynasties = [
   },
   {
     id: "zhao-warring",
-    name: "赵国",
-    altNames: ["赵"],
+    name: "赵",
+    altNames: ["赵国"],
     scope: "cn",
     region: "east_asia",
     start: ym(-403),
@@ -441,8 +441,8 @@ const dynasties = [
   },
   {
     id: "wei-warring",
-    name: "魏国",
-    altNames: ["魏", "梁"],
+    name: "魏",
+    altNames: ["梁", "魏国"],
     scope: "cn",
     region: "east_asia",
     start: ym(-403),
@@ -603,11 +603,11 @@ const events = [
     id: "qin-destroy-zhao",
     name: "秦灭赵",
     kind: "battle",
-    dateNote: "秦王政二十五年，前222年",
-    at: ym(-222),
+    dateNote: "秦王政十九年，前228年",
+    at: ym(-228),
     dynastyIds: ["qin", "zhao-warring"],
     participantIds: ["ying-zheng", "wang-jian-qin"],
-    summary: "王翦、王贲率军灭赵，俘赵王嘉，赵国灭亡。",
+    summary: "秦军破赵都邯郸，赵王迁被迫降秦，赵国灭亡。",
   }),
   eventPoint({
     id: "qin-destroy-yan",
@@ -789,9 +789,9 @@ function parseRef(raw) {
 function relationSql(r) {
   const from = parseRef(r.fromRef);
   const to = parseRef(r.toRef);
-  return `INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind)
-VALUES (${sqlStr(r.id)}, ${sqlStr(from.type)}, ${sqlStr(from.id)}, ${sqlStr(to.type)}, ${sqlStr(to.id)}, ${sqlStr(r.kind)})
-ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;`;
+  return `INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_abs, precision, event_id)
+VALUES (${sqlStr(r.id)}, ${sqlStr(from.type)}, ${sqlStr(from.id)}, ${sqlStr(to.type)}, ${sqlStr(to.id)}, ${sqlStr(r.kind)}, ${r.at?.year ?? "NULL"}, ${r.at?.month ?? "NULL"}, ${r.atAbs ?? "NULL"}, ${sqlStr(r.precision ?? null)}, ${sqlStr(r.eventId ?? null)})
+ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, precision = EXCLUDED.precision, event_id = EXCLUDED.event_id;`;
 }
 
 /** Reigns maintained by qin-han; must survive chunqiu-zhanguo stale cleanup on qin. */
@@ -937,6 +937,7 @@ const manifest = {
   ],
   notes: [
     "收录春秋主要列国与战国七雄（齐楚燕韩赵魏秦）及宋鲁卫郑曹吴越中山等。",
+    "列国泳道名用国号（齐、楚、韩），与夏商周秦汉一致，不带「国」；「齐国」等写入 alt_names。",
     "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
     "秦国 upsert 已有 qin 行，将始年延至前770年秦襄公，与 qin-han 统一帝国段衔接；清理脚本保留 qin-han 的秦二世、子婴 reign。",
     "各国国君世系取维基百科大陆简体（zh-cn）诸侯君主列表与《史记》年表；按表头读取称号/姓名/在位年份，不用本地繁简转换。",

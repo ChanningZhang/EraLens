@@ -1,0 +1,33 @@
+{
+  "slug": "cross-dynasty-fate",
+  "title": "跨朝代帝王命运线",
+  "window": {
+    "startYear": -2100,
+    "startMonth": 1,
+    "endYear": 1900,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-18",
+  "counts": {
+    "persons": 0,
+    "dynasties": 0,
+    "reigns": 0,
+    "events": 0,
+    "relations": 118
+  },
+  "sources": [
+    {
+      "label": "各时期 import 包 events 与 documentedReignDates",
+      "url": "https://zh.wikipedia.org/wiki/中国朝代"
+    }
+  ],
+  "notes": [
+    "仅 person→person，kind∈killed|surrender|abdication|captured。",
+    "at_abs 优先取受害方 documented end；年精度事件取 event 年 12 月。",
+    "同朝 succession 不写入；B 方无 reign 卡者改挂当时在位君主（成汉/南燕/后秦→晋帝，太平天国→同治）。",
+    "秦灭六国等边自 chunqiu-zhanguo 迁入本包，避免重复维护。",
+    "吐蕃、回鹘、南诏末代无时间轴上的灭国接收方（僧人刺杀 / 黠戛斯 / 大长和未收录），不硬画。"
+  ]
+}

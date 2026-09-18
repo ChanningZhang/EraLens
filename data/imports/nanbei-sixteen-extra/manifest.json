@@ -9,18 +9,30 @@
   },
   "scope": "cn",
   "depth": "standard",
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-18",
   "counts": {
-    "persons": 11,
+    "persons": 12,
     "dynasties": 4,
-    "reigns": 11,
+    "reigns": 12,
     "events": 3,
-    "relations": 10
+    "relations": 11
   },
   "sources": [
     {
       "label": "西梁",
-      "url": "https://zh.wikipedia.org/wiki/%E8%A5%BF%E6%A2%81"
+      "url": "https://zh.wikipedia.org/wiki/后梁_(南朝)"
+    },
+    {
+      "label": "萧詧",
+      "url": "https://zh.wikipedia.org/wiki/萧詧"
+    },
+    {
+      "label": "萧巋",
+      "url": "https://zh.wikipedia.org/wiki/萧巋"
+    },
+    {
+      "label": "萧琮",
+      "url": "https://zh.wikipedia.org/wiki/萧琮"
     },
     {
       "label": "冉魏",
@@ -41,8 +53,9 @@
   ],
   "notes": [
     "补充 jin-sixteen / nanbei-chao 未收录的西梁、冉魏、西燕、前仇池。",
-    "冉魏、西燕属 dynasty_groups.wuhu（与崔鸿十六国同框）；西梁属南朝之后，仇池始年早于 304，均不入组。",
-    "西梁 id 为 xiliang，与十六国西凉 liang-xi 区分。",
+    "冉魏、西燕属 dynasty_groups.wuhu（与崔鸿十六国同框）；西梁属 dynasty_groups.nan-chao（555–587，落在南朝框 420–589 内，与南陈并存）；仇池始年早于 304，不入五胡组。",
+    "西梁 id 为 xiliang，与十六国西凉 liang-xi 区分。三帝为萧詧、萧巋、萧琮；萧庄是王琳在郢州另立的梁帝，不属江陵西梁。",
+    "萧詧起迄月取维基即位（555年2月）与《周书》保定二年二月薨；萧巋接天保始年二月，卒于天保二十四年五月；萧琮亡国取广运二年九月十九日（587年10月26日）。",
     "仇池取296–371前仇池窗口，杨腾至杨难当代表杨氏四氏执政序列。",
     "南梁（liang-nan）、后赵（zhao-back）、后燕（yan-back）复用已有 dynasty id 作事件关联。"
   ]

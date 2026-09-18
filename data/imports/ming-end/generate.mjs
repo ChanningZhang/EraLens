@@ -5,6 +5,7 @@
  */
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import {
   person,
   dr,
@@ -97,9 +98,9 @@ const dynasties = [
     altNames: ["东宁", "延平"],
     scope: "cn",
     region: "east_asia",
-    start: ym(1662),
+    start: ym(1661, 6),
     end: ym(1683, 10),
-    precision: "year",
+    precision: "month",
     colorToken: nextColor(),
     note: "郑成功1662年收复台湾后建承天府，奉永历正朔；1683年郑克塽降清，东宁终结。",
   },
@@ -129,7 +130,7 @@ const mingzhengReigns = [
 ];
 
 const reignGroups = [dashunReigns, daxiReigns, mingzhengReigns];
-const reigns = reignGroups.flat();
+const reigns = applyDocumentedDatesToReigns(reignGroups.flat());
 
 const events = [
   eventPoint({
@@ -228,7 +229,8 @@ const manifest = {
     { label: "澎湖海战", url: "https://zh.wikipedia.org/wiki/澎湖海战" },
   ],
   notes: [
-    "收录大顺（1644–1645）、大西（1644–1647）、明郑/东宁（1662–1683）。",
+    "收录大顺（1644–1645）、大西（1644–1647）、明郑/东宁（1661–1683）。",
+    "明郑三代延平王在位日取维基百科条目公历换算（documentedReignDates，precision=day）。",
     "郑成功、郑经、郑克塽在位与 yuan-ming-qing 已有人物 upsert 衔接。",
     "大西年号亦作大顺，与李自成大顺国号同名异政权。",
     "明郑开台事件与 zheng-recover-taiwan 并存，本包补 mingzheng 关联。",

@@ -6,7 +6,6 @@ export const ORTHODOX_FROM_START = new Set([
   "shang",
   "zhou-west",
   "zhou-east",
-  "han-west",
   "han-east",
   "jin-west",
   "jin-east",
@@ -21,6 +20,8 @@ export const ORTHODOX_FROM_START = new Set([
 
 export const ORTHODOX_FROM_ABS = {
   qin: absMonth(-221),
+  /** 刘邦称帝建汉后始为正统；沛公/汉王起兵至称帝前不计金色。 */
+  "han-west": absMonth(-202, 2),
   qing: absMonth(1644),
   /** 宋恭帝降元后始为中原正统；定国号至恭帝投降前世祖拆段非正统。 */
   yuan: absMonth(1276, 2),

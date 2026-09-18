@@ -7,6 +7,7 @@ import {
   formatYear,
   fromAbsMonth,
   orderDynastiesForLanes,
+  resolveDynastyColorValue,
   TIMELINE_RAIL_CHIP_HEIGHT_PX,
   TIMELINE_RAIL_CHIP_TOP_PX,
   type Dynasty,
@@ -37,7 +38,9 @@ import { DynastyClusterFrame } from "./DynastyClusterFrame";
 import { DynastyLane } from "./DynastyLane";
 import { EventLayer } from "./EventLayer";
 import { PersonLayer } from "./PersonLayer";
+import { ReignFateLayer } from "./ReignFateLayer";
 import styles from "./TimelineStage.module.css";
+import { layoutReignFates } from "../model/reignFateLayout";
 
 export function TimelineStage() {
   const viewport = useViewport();
@@ -99,9 +102,8 @@ export function TimelineStage() {
   const lanes = useMemo(() => {
     let top = railHeight;
     return placed.map((dynasty) => {
-      const laneRecords = collectLaneReigns(dynasty.id, reignsByDynasty);
-      const { rulers: reigns, missing: missingReigns } =
-        partitionReignRecords(laneRecords);
+      const records = collectLaneReigns(dynasty.id, reignsByDynasty);
+      const { rulers: reigns, missing: missingReigns } = partitionReignRecords(records);
       const { rowCount, rowHeights } = assignReignStacks(reigns);
       const height = dynastyLaneHeight(rowHeights);
       const chipHeight = TIMELINE_RAIL_CHIP_HEIGHT_PX;
@@ -109,7 +111,7 @@ export function TimelineStage() {
         rowCount > 1
           ? top + height / 2 - chipHeight / 2
           : top + TIMELINE_RAIL_CHIP_TOP_PX;
-      const item = { dynasty, reigns, missingReigns, top, height, chipTop, chipHeight };
+      const item = { dynasty, records, reigns, missingReigns, top, height, chipTop, chipHeight };
       top += height;
       return item;
     });
@@ -119,6 +121,22 @@ export function TimelineStage() {
     () => clusterFramesForLanes(lanes, data?.dynastyGroups ?? []),
     [lanes, data?.dynastyGroups],
   );
+
+  const fatePlaced = useMemo(() => {
+    if (!data?.relations?.length) return [];
+    return layoutReignFates(
+      data.relations,
+      data.reigns,
+      lanes.map(({ dynasty, records, top }) => ({
+        dynastyId: dynasty.id,
+        top,
+        records,
+        color: resolveDynastyColorValue(dynasty),
+      })),
+      viewport,
+      personNames,
+    );
+  }, [data, lanes, viewport, personNames]);
 
   const dynastiesBottom = lanes.at(-1)
     ? lanes.at(-1)!.top + lanes.at(-1)!.height
@@ -214,6 +232,9 @@ export function TimelineStage() {
           )}
           {data && placed.length > 0 && (
             <EventLayer placed={eventPlaced} height={railHeight} />
+          )}
+          {data && placed.length > 0 && fatePlaced.length > 0 && (
+            <ReignFateLayer placed={fatePlaced} height={contentHeight} />
           )}
           {showPersonLayer && (
             <PersonLayer

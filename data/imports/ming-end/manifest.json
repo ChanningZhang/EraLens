@@ -9,7 +9,7 @@
   },
   "scope": "cn",
   "depth": "standard",
-  "generatedAt": "2026-09-17",
+  "generatedAt": "2026-09-18",
   "counts": {
     "persons": 5,
     "dynasties": 3,
@@ -49,7 +49,8 @@
     }
   ],
   "notes": [
-    "收录大顺（1644–1645）、大西（1644–1647）、明郑/东宁（1662–1683）。",
+    "收录大顺（1644–1645）、大西（1644–1647）、明郑/东宁（1661–1683）。",
+    "明郑三代延平王在位日取维基百科条目公历换算（documentedReignDates，precision=day）。",
     "郑成功、郑经、郑克塽在位与 yuan-ming-qing 已有人物 upsert 衔接。",
     "大西年号亦作大顺，与李自成大顺国号同名异政权。",
     "明郑开台事件与 zheng-recover-taiwan 并存，本包补 mingzheng 关联。",

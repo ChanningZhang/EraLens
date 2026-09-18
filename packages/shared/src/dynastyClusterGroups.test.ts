@@ -76,6 +76,7 @@ describe("dynastyClusterGroups", () => {
       dynasty("chen-nan", absMonth(557), absMonth(589), "nan-chao"),
       dynasty("song-liu", absMonth(420, 7), absMonth(479), "nan-chao"),
       dynasty("qi-nan", absMonth(479), absMonth(502), "nan-chao"),
+      dynasty("xiliang", absMonth(555), absMonth(587), "nan-chao"),
       dynasty("sui", absMonth(581), absMonth(618)),
     ];
 
@@ -83,6 +84,7 @@ describe("dynastyClusterGroups", () => {
     expect(ordered.map((item) => item.id)).toEqual([
       "song-liu",
       "qi-nan",
+      "xiliang",
       "chen-nan",
       "sui",
     ]);

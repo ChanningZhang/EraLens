@@ -26,6 +26,7 @@ export const DOCUMENTED_REIGN_DATES = {
   "reign-xiang-yu": { start: [-206, 3, 12], end: [-202, 2, 28] },
 
   // ── 西汉 ──────────────────────────────────────────────────────────────
+  "reign-liu-bang-han-king-han-west": { start: [-209, 9], end: [-202, 2, 27] },
   "reign-liu-bang": { start: [-202, 2, 28], end: [-195, 6, 1] },
   "reign-liu-ying": { start: [-195, 6, 26], end: [-188, 9, 26] },
   "reign-liu-gong": { start: [-188, 9, 27], end: [-184, 6, 15] },
@@ -155,6 +156,13 @@ export const DOCUMENTED_REIGN_DATES = {
   "reign-gao-baoxu-jingnan": { start: [960, 9, 9], end: [962, 11, 19] },
   "reign-gao-jichong-jingnan": { start: [962, 11, 19], end: [963, 3, 17] },
   "reign-ma-yin-chu-nan": { start: [907, 5, 15], end: [930, 12, 2] },
+  "reign-ma-xisheng-chu-nan": { start: [930, 12, 2], end: [932, 8, 15] },
+  "reign-ma-xifan-chu-nan": { start: [932, 8, 15], end: [947, 5, 30] },
+  "reign-wang-yanhan-min-fujian": { start: [925, 12, 30], end: [927, 1, 14] },
+  "reign-wang-yanjun-min-fujian": { start: [927, 1, 14], end: [935, 11, 17] },
+  "reign-wang-jipeng-min-fujian": { start: [935, 11, 18], end: [939, 8, 29] },
+  "reign-wang-yanxi-min-fujian": { start: [939, 8, 30], end: [944, 4, 8] },
+  "reign-zhu-wenjin-min-fujian": { start: [944, 4, 8], end: [945, 2, 14] },
   "reign-liu-min-han-bei": { start: [951, 5, 18], end: [954, 11, 24] },
   "reign-liu-jun-bei-han-bei": { start: [954, 11, 24], end: [968, 10, 12] },
   "reign-liu-jiyuan-han-bei": { start: [968, 10, 12], end: [979, 6, 1] },
@@ -175,6 +183,11 @@ export const DOCUMENTED_REIGN_DATES = {
   "reign-ming-yuzhen-xia-ming": { start: [1362, 3, 22], end: [1366, 3, 17] },
   "reign-ming-sheng-xia-ming": { start: [1366, 3, 17], end: [1371, 6, 21] },
   "reign-zhu-yuanzhang-wu-zhu": { start: [1364, 2, 15], end: [1368, 1, 23] },
+
+  // ── 明郑 ─────────────────────────────────────────────────────────────────
+  "reign-zheng-chenggong-mingzheng": { start: [1661, 6, 14], end: [1662, 6, 23] },
+  "reign-zheng-jing-mingzheng": { start: [1662, 6, 29], end: [1681, 3, 17] },
+  "reign-zheng-keshuang-mingzheng": { start: [1681, 3, 20], end: [1683, 10, 8] },
 
   // ── 西夏 ─────────────────────────────────────────────────────────────────
   "reign-li-yuanhao-xixia": { start: [1031, 10, 19], end: [1048, 1, 19] },

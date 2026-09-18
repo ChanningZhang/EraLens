@@ -123,7 +123,7 @@ node .cursor/skills/eralens-period-import/scripts/compute-abs.mjs -1046 1  # -12
 - `event.precision`: day | month | year | decade | century
 - `event.time_mode`: point | span | circa
 - `event.kind`: battle | politics | culture | disaster | other
-- `relation.kind`: succession | battle | alliance | other
+- `relation.kind`: succession | battle | alliance | enthronement | other | killed | surrender | abdication | captured
 - `scope`: cn（默认）| global
 
 **不要写入生成列**：`dynasties.span`、`reigns.span`、`events.span*` 均由 DB 自动生成。

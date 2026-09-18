@@ -373,10 +373,10 @@ describe("resolveReignDetailSubtitle for Yue kings", () => {
           start: { year: -372, month: 1 },
           title: "越王无余",
         }),
-        "越国",
+        "越",
         "无余",
       ),
-    ).toBe("越国");
+    ).toBe("越");
   });
 });
 

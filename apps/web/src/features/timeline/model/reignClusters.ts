@@ -8,7 +8,9 @@ import {
   type Reign,
 } from "@eralens/shared";
 
-export const LANE_PADDING_Y = 16;
+/** Matches `.lane { padding: 8px 0 }` in DynastyLane.module.css. */
+export const LANE_PADDING_TOP = 8;
+export const LANE_PADDING_Y = LANE_PADDING_TOP * 2;
 /** Matches the painted card height so stacked contemporaneous reigns sit flush. */
 export const STACK_ROW_HEIGHT = 48;
 /** Parallel claimants (`claimTrack` ≠ main) use 2/3 of a normal stack row. */

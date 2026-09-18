@@ -25,6 +25,7 @@ import {
   personPlacementWindow,
   personTimelinePlacement,
 } from "./personTime";
+import { isFateRelationKind } from "./reignFateRelations";
 import { rangeIntersectsWindow } from "./time";
 
 export type TimelineFilterQuery = {
@@ -88,12 +89,19 @@ export function filterTimeline(
     visibleGroupIds.has(group.id),
   );
 
+  const visibleRelations = store.relations.filter((relation) => {
+    if (relation.atAbs == null) return false;
+    if (!isFateRelationKind(relation.kind)) return false;
+    return relation.atAbs >= query.fromAbs && relation.atAbs <= query.toAbs;
+  });
+
   return TimelineSliceSchema.parse({
     dynasties: visibleDynasties,
     dynastyGroups: visibleDynastyGroups,
     reigns: visibleReigns,
     events: visibleEvents,
     persons: visiblePersons,
+    relations: visibleRelations,
   });
 }
 

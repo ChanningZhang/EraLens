@@ -48,6 +48,11 @@ export const JIN_NANBEI_REIGN_DATES = {
   "reign-xiao-yi": { start: [552, 11, 15], end: [555, 1, 27] },
   "reign-xiao-fangzhi": { start: [555, 1, 27], end: [557, 11, 16] },
 
+  // ── 西梁（江陵，维基公历月；萧琮亡国取广运二年九月十九）────────────────
+  "reign-xiao-cha-xiliang": { start: [555, 2], end: [562, 2] },
+  "reign-xiao-kui-xiliang": { start: [562, 2], end: [585, 5] },
+  "reign-xiao-cong-xiliang": { start: [585, 5], end: [587, 10, 26] },
+
   // ── 南朝陈 ──────────────────────────────────────────────────────────────
   "reign-chen-baxian": { start: [557, 11, 16], end: [559, 8, 12] },
   "reign-chen-qian": { start: [559, 8, 12], end: [566, 11, 24] },
@@ -88,4 +93,9 @@ export const JIN_NANBEI_REIGN_DATES = {
   "reign-yuwen-yong": { start: [560, 5, 31], end: [578, 6, 21] },
   "reign-yuwen-yun": { start: [578, 6, 21], end: [579, 4, 16] },
   "reign-yuwen-yan": { start: [579, 4, 16], end: [581, 3, 4] },
+
+  // ── 十六国（维基百科条目已给出公历月/日）────────────────────────────────
+  "reign-fu-jian-ming": { start: [357, 7], end: [385, 10, 16] },
+  "reign-murong-xi": { start: [401, 9, 14], end: [407, 9, 14] },
+  "reign-murong-chao": { start: [405, 11, 18], end: [410, 3, 25] },
 };

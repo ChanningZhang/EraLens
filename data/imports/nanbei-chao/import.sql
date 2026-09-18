@@ -967,7 +967,7 @@ ON CONFLICT (id) DO UPDATE SET
 
 -- dynasty_groups
 INSERT INTO dynasty_groups (id, name, alt_names, scope, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, note)
-VALUES ('nan-chao', '南朝', ARRAY[]::text[], 'cn', 420, 1, 589, 12, 5040, 7079, 'year', '420–589年南朝四朝（刘宋、南齐、南梁、南陈）。')
+VALUES ('nan-chao', '南朝', ARRAY[]::text[], 'cn', 420, 1, 589, 12, 5040, 7079, 'year', '420–589年南朝（刘宋、南齐、南梁、南陈及江陵西梁）。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, scope = EXCLUDED.scope, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, note = EXCLUDED.note;
 INSERT INTO dynasty_groups (id, name, alt_names, scope, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, note)
 VALUES ('bei-chao', '北朝', ARRAY[]::text[], 'cn', 420, 1, 581, 12, 5040, 6983, 'year', '420–581年北朝（北魏、东魏、西魏、北齐、北周）。')

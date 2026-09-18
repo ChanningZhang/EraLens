@@ -71,8 +71,8 @@ const dynasties = [
   },
   {
     id: "dian",
-    name: "滇国",
-    altNames: ["滇"],
+    name: "滇",
+    altNames: ["滇国"],
     scope: "cn",
     region: "east_asia",
     start: ym(-279),

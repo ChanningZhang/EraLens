@@ -207,12 +207,59 @@ export const EventSchema = z
     }
   });
 
-export const RelationSchema = z.object({
-  id: z.string(),
-  fromRef: z.string(),
-  toRef: z.string(),
-  kind: z.enum(["succession", "battle", "alliance", "enthronement", "other"]),
-});
+export const RelationKindSchema = z.enum([
+  "succession",
+  "battle",
+  "alliance",
+  "enthronement",
+  "other",
+  "killed",
+  "surrender",
+  "abdication",
+  "captured",
+]);
+export type RelationKind = z.infer<typeof RelationKindSchema>;
+
+export const FATE_RELATION_KINDS = [
+  "killed",
+  "surrender",
+  "abdication",
+  "captured",
+] as const satisfies readonly RelationKind[];
+export type FateRelationKind = (typeof FATE_RELATION_KINDS)[number];
+
+export const RelationSchema = z
+  .object({
+    id: z.string(),
+    fromRef: z.string(),
+    toRef: z.string(),
+    kind: RelationKindSchema,
+    at: TimePointSchema.optional(),
+    atAbs: z.number().optional(),
+    precision: PrecisionSchema.optional(),
+    eventId: z.string().optional(),
+  })
+  .superRefine((relation, ctx) => {
+    if (!FATE_RELATION_KINDS.includes(relation.kind as FateRelationKind)) {
+      return;
+    }
+    if (relation.atAbs == null) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "fate relations require atAbs",
+        path: ["atAbs"],
+      });
+    }
+    const fromOk =
+      relation.fromRef.startsWith("person:") || relation.fromRef.startsWith("reign:");
+    if (!fromOk || !relation.toRef.startsWith("person:")) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message: "fate relations require person:to and person:/reign:from endpoints",
+        path: ["fromRef"],
+      });
+    }
+  });
 
 export const EntityRefSchema = z.object({
   type: z.enum(["dynasty", "reign", "person", "event"]),
@@ -228,6 +275,7 @@ export const TimelineSliceSchema = z.object({
   reigns: z.array(ReignSchema),
   events: z.array(EventSchema),
   persons: z.array(PersonSchema).default([]),
+  relations: z.array(RelationSchema).default([]),
 });
 
 export const EntityDetailSchema = z.object({

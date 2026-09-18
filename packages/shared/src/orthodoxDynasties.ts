@@ -8,7 +8,6 @@ export const ORTHODOX_FROM_START = new Set([
   "shang",
   "zhou-west",
   "zhou-east",
-  "han-west",
   "han-east",
   "jin-west",
   "jin-east",
@@ -24,6 +23,8 @@ export const ORTHODOX_FROM_START = new Set([
 /** 在特定 AbsMonth 之后才成为中国正统。 */
 export const ORTHODOX_FROM_ABS: Readonly<Record<string, number>> = {
   qin: absMonth(-221),
+  /** 刘邦称帝建汉后始为正统；沛公/汉王起兵至称帝前不计金色。 */
+  "han-west": absMonth(-202, 2),
   /** 入关定鼎后自顺治（福临）起算；努尔哈赤、皇太极在位不算正统。 */
   qing: absMonth(1644),
   /** 宋恭帝降元后始为中原正统；定国号至恭帝投降前世祖拆段非正统。 */

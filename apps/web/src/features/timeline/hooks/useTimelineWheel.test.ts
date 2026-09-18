@@ -31,14 +31,15 @@ describe("resolveWheelAction", () => {
 });
 
 describe("shouldDeferToStageVerticalScroll", () => {
-  it("allows pure vertical scroll when the stage overflows", () => {
+  it("allows vertical-dominant scroll when the stage overflows", () => {
     expect(shouldDeferToStageVerticalScroll(0, 40, false, true)).toBe(true);
-    expect(shouldDeferToStageVerticalScroll(4, 40, false, true)).toBe(false);
+    expect(shouldDeferToStageVerticalScroll(4, 40, false, true)).toBe(true);
+    expect(shouldDeferToStageVerticalScroll(-3, 40, false, true)).toBe(true);
   });
 
-  it("keeps horizontal trackpad swipes on panning even when the stage overflows", () => {
+  it("keeps horizontal-dominant trackpad swipes on panning even when the stage overflows", () => {
     expect(shouldDeferToStageVerticalScroll(-80, 10, false, true)).toBe(false);
-    expect(shouldDeferToStageVerticalScroll(-3, 40, false, true)).toBe(false);
+    expect(shouldDeferToStageVerticalScroll(40, 40, false, true)).toBe(false);
   });
 });
 

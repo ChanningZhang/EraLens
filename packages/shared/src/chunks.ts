@@ -128,6 +128,8 @@ export function mergeTimelineSlices(slices: TimelineSlice[]): TimelineSlice {
   const eventMap = new Map<string, TimelineSlice["events"][number]>();
   const personMap = new Map<string, TimelineSlice["persons"][number]>();
 
+  const relationMap = new Map<string, TimelineSlice["relations"][number]>();
+
   for (const slice of slices) {
     for (const dynasty of slice.dynasties) {
       dynastyMap.set(dynasty.id, dynasty);
@@ -143,6 +145,9 @@ export function mergeTimelineSlices(slices: TimelineSlice[]): TimelineSlice {
     }
     for (const person of slice.persons) {
       personMap.set(person.id, person);
+    }
+    for (const relation of slice.relations ?? []) {
+      relationMap.set(relation.id, relation);
     }
   }
 
@@ -160,5 +165,6 @@ export function mergeTimelineSlices(slices: TimelineSlice[]): TimelineSlice {
     reigns,
     events: [...eventMap.values()],
     persons,
+    relations: [...relationMap.values()],
   });
 }

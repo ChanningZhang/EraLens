@@ -177,12 +177,17 @@ model EventParticipant {
 }
 
 model Relation {
-  id       String @id
-  fromType String @map("from_type")
-  fromId   String @map("from_id")
-  toType   String @map("to_type")
-  toId     String @map("to_id")
-  kind     String
+  id        String  @id
+  fromType  String  @map("from_type")
+  fromId    String  @map("from_id")
+  toType    String  @map("to_type")
+  toId      String  @map("to_id")
+  kind      String
+  atYear    Int?    @map("at_year")
+  atMonth   Int?    @map("at_month")
+  atAbs     Int?    @map("at_abs")
+  precision String? @default("year")
+  eventId   String? @map("event_id")
 
   @@unique([fromType, fromId, toType, toId, kind])
   @@map("relations")

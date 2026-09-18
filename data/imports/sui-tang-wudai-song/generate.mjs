@@ -696,7 +696,8 @@ const manifest = {
     "李显、李旦两度即位，在位拆为两段；690–705 年武周武则天，不与唐中宗重叠。",
     "隋末并行用 claim_track：主线文帝→炀帝→杨浩（江都续统，正统金色）；changan/杨侑、luoyang/杨侗为并行傀儡，不镀金、不串进继承链。",
     "南宋正统金色止于恭帝降元（1276-02）；端宗、帝昺接在恭帝之后走主线继承，但不计正统。",
-    "北宋、南宋皇帝在位日取维基百科/宋史通行换算，precision=day；隋唐宋及五代十国其余君主仍为 year/month。",
+    "北宋、南宋皇帝在位日取维基百科/宋史通行换算，precision=day。",
+    "闽王延翰至朱文进、楚马希声/马希范在位日取维基百科条目公历换算（documentedReignDates）；马希广以后及王延政仍仅年/月。",
   ],
 };
 writeFileSync(path.join(__dirname, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);

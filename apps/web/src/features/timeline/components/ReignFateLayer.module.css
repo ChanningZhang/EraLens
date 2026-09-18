@@ -1,0 +1,77 @@
+.layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 5;
+  clip-path: inset(0 0 0 var(--timeline-gutter));
+}
+
+.link {
+  pointer-events: stroke;
+  cursor: help;
+}
+
+.hit {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 14;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: stroke;
+}
+
+.path {
+  fill: none;
+  /* Same token as the source card/lane, mixed like their borders so the
+     dash reads as 韩灰 / 燕绿 rather than the raw saturated hex. */
+  stroke: color-mix(in srgb, var(--card-color) 42%, var(--color-border));
+  stroke-width: 1.35;
+  stroke-dasharray: 3.5 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+.tick {
+  stroke: color-mix(in srgb, var(--card-color) 42%, var(--color-border));
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+.originHit {
+  fill: transparent;
+  pointer-events: fill;
+}
+
+.originRing {
+  fill: color-mix(in srgb, var(--card-color) 16%, var(--color-surface));
+  stroke: color-mix(in srgb, var(--card-color) 62%, var(--color-border));
+  stroke-width: 1.15;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+}
+
+.originCore {
+  fill: color-mix(in srgb, var(--card-color) 86%, var(--color-ink) 6%);
+  pointer-events: none;
+}
+
+.link:hover .path,
+.link:hover .tick {
+  stroke: color-mix(in srgb, var(--card-color) 58%, var(--color-border));
+}
+
+.link:hover .originRing {
+  stroke: color-mix(in srgb, var(--card-color) 78%, var(--color-border));
+}
+
+.link:hover .originCore {
+  fill: var(--card-color);
+}

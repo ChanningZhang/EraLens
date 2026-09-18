@@ -160,6 +160,24 @@ const curatedMissingReigns = [
     endYear: -249,
     id: "reign-missing-zhou-guo-east--360",
   }),
+  missingReign({
+    dynastyId: "xue-chunqiu",
+    startYear: -485,
+    endYear: -327,
+    id: "reign-missing-xue-chunqiu--485",
+  }),
+  missingReign({
+    dynastyId: "teng-chunqiu",
+    startYear: -484,
+    endYear: -296,
+    id: "reign-missing-teng-chunqiu--484",
+  }),
+  missingReign({
+    dynastyId: "ju-chunqiu",
+    startYear: -481,
+    endYear: -431,
+    id: "reign-missing-ju-chunqiu--481",
+  }),
 ];
 
 const DYNASTY_LABELS = {
@@ -182,8 +200,8 @@ const persons = reigns.map((r) => {
 const dynasties = [
   {
     id: "xue-chunqiu",
-    name: "薛国",
-    altNames: ["薛"],
+    name: "薛",
+    altNames: ["薛国"],
     scope: "cn",
     region: "east_asia",
     start: ym(-578),
@@ -194,20 +212,20 @@ const dynasties = [
   },
   {
     id: "teng-chunqiu",
-    name: "滕国",
-    altNames: ["滕"],
+    name: "滕",
+    altNames: ["滕国"],
     scope: "cn",
     region: "east_asia",
     start: ym(-599),
-    end: ym(-414, 12),
+    end: ym(-296, 12),
     precision: "year",
     colorToken: nextColor(),
-    note: "周武王封弟错叔绣于滕；本包仅收录春秋可考君主（文公至隐公）。错叔绣至宣公等早期世系在位年失考。",
+    note: "周武王封弟错叔绣于滕；本包仅收录春秋可考君主（文公至隐公）。前414年越灭滕后复国，世系失考；前296年宋康王终灭之。",
   },
   {
     id: "qi-state-chunqiu",
-    name: "杞国",
-    altNames: ["杞"],
+    name: "杞",
+    altNames: ["杞国"],
     scope: "cn",
     region: "east_asia",
     start: ym(-750),
@@ -218,8 +236,8 @@ const dynasties = [
   },
   {
     id: "ju-chunqiu",
-    name: "莒国",
-    altNames: ["莒"],
+    name: "莒",
+    altNames: ["莒国"],
     scope: "cn",
     region: "east_asia",
     start: ym(-615),
@@ -230,8 +248,8 @@ const dynasties = [
   },
   {
     id: "dai-warring",
-    name: "代国",
-    altNames: ["代"],
+    name: "代",
+    altNames: ["代国"],
     scope: "cn",
     region: "east_asia",
     start: ym(-228),
@@ -409,7 +427,7 @@ const manifest = {
     "薛国自薛献公起；滕国自春秋滕文公起；杞国自武公起；莒国自纪公起。",
     "杞桓公在位70年、高句丽太祖王等长年在史料中有记载，保留。",
     "代王嘉 person id 为 zhao-jia-dai，与赵桓子 zhao-r2 区分。",
-    "西周国/东周国（zhou-guo-west / zhou-guo-east）为战国王畿小国，与西周/东周王朝分期（zhou-west / zhou-east）区分命名。",
+    "薛、滕、杞、莒、代用国号，不带「国」。西周国/东周国例外：史记、战国策原文称西周、东周（君称西周君、东周君）；后世为与王朝分期西周/东周消歧，维基百科与杨宽《战国史料编年辑证》等通行作西周国、东周国。",
     "年精度顺序继位：死年归旧王。西周惠公改从前366年起（威公卒年归威公），与东周惠公前367年并立不混为同一王室继位。",
     "杞国列王按维基「杞国」君主表（在位年份已是逾年切分）；隐公仅前506年七月，与悼公死年同桶。滕悼公迄前514、顷公起前513，与维基在位年数一致。",
     "西周武公、东周昭文君等中间世系在位年失考，不强行拉满；东周惠公之后至秦灭前用系统史料缺占位。",
