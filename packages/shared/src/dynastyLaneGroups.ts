@@ -52,25 +52,11 @@ export const DYNASTY_LANE_GROUPS: readonly DynastyLaneGroup[] = [
     laneOrderEndAbs: absMonth(1662),
   },
   {
-    id: "song-north-south",
-    primaryDynastyId: "song-north",
-    phaseDynastyIds: ["song-north", "song-south"],
-    laneOrderStartAbs: absMonth(960),
-    laneOrderEndAbs: absMonth(1279),
-  },
-  {
     id: "zhou-west-east",
     primaryDynastyId: "zhou-west",
     phaseDynastyIds: ["zhou-west", "zhou-east"],
     laneOrderStartAbs: absMonth(-1046),
     laneOrderEndAbs: absMonth(-256, 12),
-  },
-  {
-    id: "jin-west-east",
-    primaryDynastyId: "jin-west",
-    phaseDynastyIds: ["jin-west", "jin-east"],
-    laneOrderStartAbs: absMonth(266, 2),
-    laneOrderEndAbs: absMonth(420, 7),
   },
 ];
 
@@ -186,7 +172,7 @@ export function collapseDynastyLaneGroups(
 
 /**
  * Reign peers used for card clipping within one lane row. Lane-group phases
- * (西晋 / 东晋, 北宋 / 南宋, …) lay out independently so a merged lane does
+ * (西周 / 东周, 吴 / 明 / 南明, …) lay out independently so a merged lane does
  * not clip eastern rulers against unrelated western neighbors.
  */
 export function reignsInLayoutBucket(

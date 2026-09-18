@@ -64,7 +64,10 @@ export function DynastyLane({
   const selected =
     selection.selected?.type === "dynasty" &&
     selection.selected.id === activePhaseDynasty.id;
-  const laneColor = resolveDynastyColorValue(activePhaseDynasty, labelAnchorAbs);
+  // Lane chip uses the persisted dynasty token so it stays aligned with
+  // post-orthodox rulers (南宋端宗/帝昺, 元惠宗, …). Orthodox gold is
+  // reserved for individual reign cards via isOrthodoxReign.
+  const laneColor = resolveDynastyColorValue(activePhaseDynasty);
   const { items, rowCount } = assignReignStacks(reigns);
   const height = dynastyLaneHeight(rowCount);
   const uncertaintyBoundaries = useMemo(

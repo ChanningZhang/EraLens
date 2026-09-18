@@ -73,7 +73,7 @@ type TrackPlacement = {
 };
 
 /**
- * Row offsets for every reign in a lane. Dynasty phases (西晋 / 东晋) keep their
+ * Row offsets for every reign in a lane. Dynasty phases (西周 / 东周) keep their
  * independent buckets; inside a bucket each claim track gets its own rows so
  * concurrent claimants (隋末三帝, 南明鲁监国 / 绍武) render side by side.
  */

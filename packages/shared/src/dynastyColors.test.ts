@@ -142,4 +142,29 @@ describe("resolveReignColorToken", () => {
       }),
     ).not.toBe(resolveDynastyColorToken(yuan, absMonth(1368)));
   });
+
+  it("keeps song-south post-orthodox reigns on the dynasty base token", () => {
+    const songSouth = {
+      id: "song-south",
+      startAbs: absMonth(1127),
+      endAbs: absMonth(1279),
+      colorToken: "jade" as const,
+      orthodoxFromAbs: absMonth(1127),
+      orthodoxEndAbs: absMonth(1276, 2, 4),
+    };
+
+    expect(
+      resolveReignColorToken(songSouth, {
+        startAbs: absMonth(1276, 6),
+        endAbs: absMonth(1278, 5),
+      }),
+    ).toBe("jade");
+    expect(resolveDynastyColorToken(songSouth)).toBe("jade");
+    expect(
+      resolveReignColorToken(songSouth, {
+        startAbs: absMonth(1276, 6),
+        endAbs: absMonth(1278, 5),
+      }),
+    ).toBe(resolveDynastyColorToken(songSouth));
+  });
 });

@@ -43,9 +43,9 @@ describe("assignReignStacks", () => {
     const west = reign("west-r1", 100, 199);
     const eastA = reign("east-r1", 250, 349);
     const eastB = reign("east-r2", 350, 449);
-    west.dynastyId = "jin-west";
-    eastA.dynastyId = "jin-east";
-    eastB.dynastyId = "jin-east";
+    west.dynastyId = "zhou-west";
+    eastA.dynastyId = "zhou-east";
+    eastB.dynastyId = "zhou-east";
 
     const { items, rowCount } = assignReignStacks([west, eastA, eastB]);
     expect(rowCount).toBe(1);
