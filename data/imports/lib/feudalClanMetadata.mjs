@@ -3,9 +3,20 @@
  * Runtime reads persons.ancestral_xing / clan_shi and dynasties.* — not this file.
  *
  * Each entry must cite a source URL or 史记卷次.
+ *
+ * `nameUsesShi`: persons.name is prefixed with 氏 (熊侣, 魏斯), not 姓.
+ * `skipXingOnGivenName`: keep wiki given names as-is (勾践).
+ * `bareGivenNames`: do not prefix 姓 when the wiki cell is already the search name (夫差).
  */
 
-/** @typedef {{ ancestralXing?: string, clanShi?: string, source: string }} FeudalClanEntry */
+/** @typedef {{
+ *   ancestralXing?: string,
+ *   clanShi?: string,
+ *   nameUsesShi?: boolean,
+ *   skipXingOnGivenName?: boolean,
+ *   bareGivenNames?: string[],
+ *   source: string,
+ * }} FeudalClanEntry */
 
 /** @type {Record<string, FeudalClanEntry>} */
 export const FEUDAL_DYNASTY_CLAN = {
@@ -39,6 +50,7 @@ export const FEUDAL_DYNASTY_CLAN = {
   "chu-chunqiu": {
     ancestralXing: "芈",
     clanShi: "熊",
+    nameUsesShi: true,
     source: "https://zh.wikipedia.org/wiki/楚国 — 芈姓熊氏",
   },
   "yan-chunqiu": {
@@ -74,27 +86,76 @@ export const FEUDAL_DYNASTY_CLAN = {
   "wu-chunqiu": {
     ancestralXing: "姬",
     clanShi: "姑发",
+    bareGivenNames: ["夫差", "阖闾", "寿梦", "诸樊", "僚"],
     source: "https://zh.wikipedia.org/wiki/吴国 — 姬姓姑发氏",
+  },
+  "yue-chunqiu": {
+    ancestralXing: "姒",
+    skipXingOnGivenName: true,
+    source: "https://zh.wikipedia.org/wiki/越国 — 姒姓",
+  },
+  zhongshan: {
+    ancestralXing: "姬",
+    source: "https://zh.wikipedia.org/wiki/中山国 — 姬姓",
   },
   "han-warring": {
     ancestralXing: "姬",
     clanShi: "韩",
+    nameUsesShi: true,
     source: "https://zh.wikipedia.org/wiki/韩国_(战国) — 姬姓韩氏",
   },
   "zhao-warring": {
     ancestralXing: "嬴",
     clanShi: "赵",
+    nameUsesShi: true,
     source: "https://zh.wikipedia.org/wiki/赵国 — 嬴姓赵氏",
   },
   "wei-warring": {
     ancestralXing: "姬",
     clanShi: "魏",
+    nameUsesShi: true,
     source: "https://zh.wikipedia.org/wiki/魏国 — 姬姓魏氏",
   },
   qin: {
     ancestralXing: "嬴",
     clanShi: "赵",
     source: "《史记·秦本纪》造父封赵城为赵氏；《秦始皇本纪》姓赵氏",
+  },
+  "xue-chunqiu": {
+    ancestralXing: "任",
+    source: "https://zh.wikipedia.org/wiki/薛国 — 任姓",
+  },
+  "teng-chunqiu": {
+    ancestralXing: "姬",
+    source: "https://zh.wikipedia.org/wiki/滕国 — 姬姓",
+  },
+  "qi-state-chunqiu": {
+    ancestralXing: "姒",
+    source: "https://zh.wikipedia.org/wiki/杞国 — 姒姓",
+  },
+  "ju-chunqiu": {
+    ancestralXing: "己",
+    source: "https://zh.wikipedia.org/wiki/莒国 — 己姓",
+  },
+  "dai-warring": {
+    ancestralXing: "嬴",
+    clanShi: "赵",
+    nameUsesShi: true,
+    source: "https://zh.wikipedia.org/wiki/代国_(战国) — 赵嘉，嬴姓赵氏",
+  },
+  "jiaodong-warring": {
+    ancestralXing: "妫",
+    clanShi: "田",
+    nameUsesShi: true,
+    source: "https://zh.wikipedia.org/wiki/田市 — 妫姓田氏",
+  },
+  "zhou-guo-west": {
+    ancestralXing: "姬",
+    source: "https://zh.wikipedia.org/wiki/西周国 — 姬姓",
+  },
+  "zhou-guo-east": {
+    ancestralXing: "姬",
+    source: "https://zh.wikipedia.org/wiki/东周国 — 姬姓",
   },
 };
 
@@ -112,7 +173,7 @@ export const FEUDAL_PERSON_CLAN_OVERRIDES = {
 };
 
 /**
- * Import-time rules when person.name carries 氏 prefix (田因齐、吕尚).
+ * Import-time rules when person.name carries 氏 prefix (田因齐、吕尚、戴喜).
  * @type {Array<{ dynastyId?: string, matchNamePrefix: string, ancestralXing?: string, clanShi?: string, source: string }>}
  */
 export const FEUDAL_PERSON_CLAN_RULES = [
@@ -129,4 +190,34 @@ export const FEUDAL_PERSON_CLAN_RULES = [
     clanShi: "吕",
     source: "https://zh.wikipedia.org/wiki/齐国 — 姜齐吕氏",
   },
+  {
+    dynastyId: "song-chunqiu",
+    matchNamePrefix: "戴",
+    ancestralXing: "子",
+    clanShi: "戴",
+    source: "https://zh.wikipedia.org/wiki/宋国 — 戴氏出于戴公",
+  },
 ];
+
+/** Prefix written into persons.name (氏 when `nameUsesShi`, otherwise 姓). */
+export function personNamePrefix(dynastyId) {
+  const meta = FEUDAL_DYNASTY_CLAN[dynastyId];
+  if (!meta) return undefined;
+  if (meta.nameUsesShi && meta.clanShi) return meta.clanShi;
+  return meta.ancestralXing;
+}
+
+/** 氏 tokens that already appear as the start of a stored personal name. */
+export function shiPersonalNamePrefixes() {
+  const prefixes = new Set();
+  for (const meta of Object.values(FEUDAL_DYNASTY_CLAN)) {
+    if (meta.nameUsesShi && meta.clanShi) prefixes.add(meta.clanShi);
+  }
+  for (const override of Object.values(FEUDAL_PERSON_CLAN_OVERRIDES)) {
+    if (override.clanShi) prefixes.add(override.clanShi);
+  }
+  for (const rule of FEUDAL_PERSON_CLAN_RULES) {
+    if (rule.clanShi) prefixes.add(rule.clanShi);
+  }
+  return prefixes;
+}

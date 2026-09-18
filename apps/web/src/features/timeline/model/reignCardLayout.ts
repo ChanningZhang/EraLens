@@ -4,6 +4,7 @@ import {
   isUncertainReignSeam,
   reignVisualBounds,
   resolveReignCardLabel,
+  type PreQinClanContext,
   type Reign,
 } from "@eralens/shared";
 import {
@@ -60,11 +61,12 @@ export function layoutLaneReignBar(
   viewport: ViewportState,
   laneTop: number,
   personName?: string,
+  clan?: PreQinClanContext | null,
 ): ReignCardLayout | null {
   if (isSystemMissingReign(reign)) {
     return layoutMissingReignBar(reign, dynastyId, laneTop, viewport);
   }
-  return layoutRulerReignBar(reign, dynastyId, rulers, viewport, laneTop, personName);
+  return layoutRulerReignBar(reign, dynastyId, rulers, viewport, laneTop, personName, clan);
 }
 
 function layoutRulerReignBar(
@@ -74,6 +76,7 @@ function layoutRulerReignBar(
   viewport: ViewportState,
   laneTop: number,
   personName?: string,
+  clan?: PreQinClanContext | null,
 ): ReignCardLayout | null {
   const { startAbs, endExclusive, stackIndex } = resolveReignVisualSpan(reign, reigns);
   const { items, rowHeights } = assignReignStacks(reigns);
@@ -99,7 +102,7 @@ function layoutRulerReignBar(
 
   const label = resolveReignCardLabel(reign, personName, {
     cardWidthPx: visualWidth,
-    dynastyId,
+    clan,
   });
   const barLayout = resolveReignBarLayout(visualWidth, [...label].length);
   const unitLeft = barLayout.centerOnAnchor

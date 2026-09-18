@@ -1,7 +1,8 @@
 /**
- * Derive posthumous_name / temple_name from a regnal title that embeds the state
- * prefix (e.g. 唐肃宗 → temple 肃宗; 汉赵末帝 → posthumous 末帝).
- * title keeps the full form; short forms never repeat the prefix.
+ * Derive posthumous_name from a regnal title that embeds the state prefix
+ * (e.g. 隋文帝 → 文帝; 吴越武肃王 → 武肃王). Never infers temple_name:
+ * 唐肃宗 / 后梁太祖 must pass temple explicitly. title keeps the full form;
+ * short forms never repeat the prefix.
  */
 
 /** Multi-char state prefixes, longest match first at runtime. */
@@ -44,7 +45,21 @@ export const REGNAL_TITLE_PREFIXES = [
 /** Single-char prefixes on imperial shorthand titles (晋元帝、魏道武帝). */
 const SINGLE_CHAR_PREFIXES = ["晋", "隋", "唐", "宋", "魏", "梁", "齐", "陈", "周", "汉", "吴", "闽", "楚"];
 
-const SKIP_BODIES = new Set(["皇帝", "王", "主", "奠基者"]);
+/** 史称本体 — not real 谥号; must not populate posthumous_name. */
+const SKIP_BODIES = new Set([
+  "皇帝",
+  "王",
+  "主",
+  "奠基者",
+  "少帝",
+  "前少帝",
+  "后少帝",
+  "废帝",
+  "前废帝",
+  "后废帝",
+  "末帝",
+  "后主",
+]);
 
 /** @deprecated use title-based matching */
 export const REGNAL_TITLE_PREFIX = {
@@ -130,14 +145,13 @@ export function appellationFieldsFromRegnalTitle(dynastyId, title) {
   if (!body || body.length < 2 || SKIP_BODIES.has(body)) {
     return { posthumousName: null, templeName: null };
   }
-  if (/[祖宗]$/.test(body)) {
-    return { posthumousName: null, templeName: body };
-  }
   return { posthumousName: body, templeName: null };
 }
 
 /**
- * Fill missing posthumous/temple from title; explicit values always win.
+ * Fill missing posthumous from title; explicit values always win.
+ * If temple is already set, do not also copy the same title body into
+ * posthumous_name (唐肃宗 + temple 肃宗 must not become 谥号 肃宗).
  */
 export function resolveRegnalAppellationFields(
   dynastyId,
@@ -147,7 +161,7 @@ export function resolveRegnalAppellationFields(
 ) {
   const derived = appellationFieldsFromRegnalTitle(dynastyId, title);
   return {
-    posthumousName: posthumous ?? derived.posthumousName,
-    templeName: temple ?? derived.templeName,
+    posthumousName: posthumous ?? (temple != null ? null : derived.posthumousName),
+    templeName: temple ?? null,
   };
 }

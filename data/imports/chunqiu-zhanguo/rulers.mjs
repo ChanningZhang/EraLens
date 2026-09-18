@@ -407,7 +407,7 @@ export const rulersByDynasty = {
       "posthumousName": null,
       "preferredAppellation": {
         "kind": "regnal",
-        "name": "侯燮"
+        "name": "燮"
       },
       "startYear": -1006,
       "endYear": -970,
@@ -581,7 +581,7 @@ export const rulersByDynasty = {
       "posthumousName": null,
       "preferredAppellation": {
         "kind": "regnal",
-        "name": "侯缗"
+        "name": "缗"
       },
       "startYear": -704,
       "endYear": -678
@@ -1237,7 +1237,7 @@ export const rulersByDynasty = {
       "posthumousName": null,
       "preferredAppellation": {
         "kind": "regnal",
-        "name": "侯克"
+        "name": "克"
       },
       "startYear": -999,
       "endYear": -955,
@@ -1252,7 +1252,7 @@ export const rulersByDynasty = {
       "posthumousName": null,
       "preferredAppellation": {
         "kind": "regnal",
-        "name": "侯旨"
+        "name": "旨"
       },
       "startYear": -954,
       "endYear": -910,
@@ -1267,7 +1267,7 @@ export const rulersByDynasty = {
       "posthumousName": null,
       "preferredAppellation": {
         "kind": "regnal",
-        "name": "侯舞"
+        "name": "舞"
       },
       "startYear": -909,
       "endYear": -865,
@@ -1534,7 +1534,7 @@ export const rulersByDynasty = {
       "posthumousName": null,
       "preferredAppellation": {
         "kind": "regnal",
-        "name": "王哙"
+        "name": "哙"
       },
       "startYear": -320,
       "endYear": -314
@@ -1583,7 +1583,7 @@ export const rulersByDynasty = {
       "posthumousName": null,
       "preferredAppellation": {
         "kind": "regnal",
-        "name": "王喜"
+        "name": "喜"
       },
       "startYear": -254,
       "endYear": -222
@@ -3291,7 +3291,7 @@ export const rulersByDynasty = {
       "posthumousName": null,
       "preferredAppellation": {
         "kind": "regnal",
-        "name": "王僚"
+        "name": "僚"
       },
       "startYear": -526,
       "endYear": -515
@@ -3412,7 +3412,7 @@ export const rulersByDynasty = {
       "posthumousName": null,
       "preferredAppellation": {
         "kind": "regnal",
-        "name": "王翳"
+        "name": "翳"
       },
       "startYear": -410,
       "endYear": -375
@@ -3518,7 +3518,7 @@ export const rulersByDynasty = {
       "posthumousName": null,
       "preferredAppellation": {
         "kind": "regnal",
-        "name": "王厝"
+        "name": "厝"
       },
       "startYear": -327,
       "endYear": -310,
@@ -3532,7 +3532,7 @@ export const rulersByDynasty = {
       "posthumousName": null,
       "preferredAppellation": {
         "kind": "regnal",
-        "name": "王胜"
+        "name": "胜"
       },
       "startYear": -309,
       "endYear": -299,
@@ -3546,7 +3546,7 @@ export const rulersByDynasty = {
       "posthumousName": null,
       "preferredAppellation": {
         "kind": "regnal",
-        "name": "王尚"
+        "name": "尚"
       },
       "startYear": -298,
       "endYear": -296

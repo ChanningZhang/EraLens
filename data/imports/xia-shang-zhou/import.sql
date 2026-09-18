@@ -31,7 +31,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'si-yu', '禹',
-  NULL, NULL,
+  '姒', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '夏朝开国之君，史称大禹，传说治水有功。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/禹"}]'::jsonb
@@ -50,7 +50,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'si-qi', '启',
-  NULL, NULL,
+  '姒', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '禹之子，传统记载变禅让为世袭，史称家天下。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/启_(夏朝)"}]'::jsonb
@@ -69,7 +69,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'si-taikang', '太康',
-  NULL, NULL,
+  '姒', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '夏启之子，传说失国于后羿。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/太康_(夏朝)"}]'::jsonb
@@ -107,7 +107,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'si-shaokang', '少康',
-  NULL, NULL,
+  '姒', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '夏相之子，传统记载中兴夏后氏。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/少康"}]'::jsonb
@@ -126,7 +126,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'si-jie', '桀',
-  NULL, NULL,
+  '姒', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '夏朝末代之王履癸，鸣条之战为商汤所灭。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/桀"}]'::jsonb
@@ -145,7 +145,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-tang', '汤',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '商朝开国之君成汤，鸣条之战灭夏。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/商汤"}]'::jsonb
@@ -183,7 +183,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-taijia', '太甲',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '汤之孙，商朝早期重要君主，与伊尹传说相关。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/太甲"}]'::jsonb
@@ -202,7 +202,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-woding', '沃丁',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '太甲之子，伊尹卒后仍用伊尹诸子及咎单为政。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/沃丁"}]'::jsonb
@@ -221,7 +221,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-taigeng', '太庚',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '沃丁之弟，又称大庚。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/太庚"}]'::jsonb
@@ -240,7 +240,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-xiaojia', '小甲',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '太庚之子，商代早中期君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/小甲"}]'::jsonb
@@ -259,7 +259,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-yongji', '雍己',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '小甲之弟，传统记载此际诸侯不朝、殷道始衰。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/雍己"}]'::jsonb
@@ -278,7 +278,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-taiwu', '太戊',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '雍己之弟，传统称中宗，与伊陟、巫咸辅政而复兴。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/太戊"}]'::jsonb
@@ -297,7 +297,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-zhongding', '仲丁',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '太戊之子，迁于嚣，九世之乱始。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/仲丁"}]'::jsonb
@@ -316,7 +316,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-wairen', '外壬',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '仲丁之弟，九世之乱中继位。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/外壬"}]'::jsonb
@@ -335,7 +335,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-hedanjia', '河亶甲',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '外壬之弟，传统记载曾迁于相。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/河亶甲"}]'::jsonb
@@ -354,7 +354,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-zuyi', '祖乙',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '河亶甲之子，传统记载迁邢、殷道再兴。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/祖乙"}]'::jsonb
@@ -373,7 +373,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-zuxin', '祖辛',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '祖乙之子，商代早中期君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/祖辛"}]'::jsonb
@@ -392,7 +392,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-wojia', '沃甲',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '祖辛之弟，甲骨文或作羌甲。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/沃甲"}]'::jsonb
@@ -411,7 +411,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-zuding', '祖丁',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '沃甲之侄，祖辛之子，传统记载居庇。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/祖丁"}]'::jsonb
@@ -430,7 +430,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-nangeng', '南庚',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '祖丁之弟，传统记载自庇迁于奄。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/南庚"}]'::jsonb
@@ -449,7 +449,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-yangjia', '阳甲',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '祖丁之子，盘庚之兄，传统记载此际殷衰。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/阳甲"}]'::jsonb
@@ -468,7 +468,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-pangeng', '盘庚',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '商王，约前1300年迁都于殷，晚商以此为界。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/盘庚"}]'::jsonb
@@ -487,7 +487,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-xiaoxin', '小辛',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '盘庚之弟，迁殷后继位，传统记载殷道再衰。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/小辛"}]'::jsonb
@@ -506,7 +506,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-xiaoyi', '小乙',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '小辛之弟，武丁之父，传统记载仍居殷。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/小乙_(商朝)"}]'::jsonb
@@ -525,7 +525,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-wuding', '武丁',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '商高宗，甲骨文所见盛世之王，史称武丁中兴。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/武丁"}]'::jsonb
@@ -563,7 +563,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-zugeng', '祖庚',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '武丁之子，甲骨文作「且庚」。断代工程将祖庚至庚丁合为前1191–前1148年，年精度下四王平分。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/祖庚"}]'::jsonb
@@ -582,7 +582,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-zujia', '祖甲',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '武丁之子、祖庚之弟，甲骨文作「且甲」。与祖庚、廪辛、庚丁同属断代工程前1191–前1148年窗口。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/祖甲"}]'::jsonb
@@ -601,7 +601,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-linxin', '廪辛',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '祖甲之子，甲骨或作冯辛；与祖庚、祖甲、庚丁同属断代工程前1191–前1148年窗口。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/廪辛"}]'::jsonb
@@ -620,7 +620,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-gengding', '庚丁',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '廪辛之弟，甲骨作文丁前的康丁，《史记》作庚丁；四王窗口之末，死年归本王，武乙次年起算。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/康丁"}]'::jsonb
@@ -639,7 +639,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-wuyi', '武乙',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '晚商之王，断代工程定其在位前1147–前1113年。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/武乙"}]'::jsonb
@@ -658,7 +658,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-wending', '文丁',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '晚商之王，《史记》或作太丁。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/文丁"}]'::jsonb
@@ -677,7 +677,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-diyi', '帝乙',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '晚商之王，帝辛之父。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/帝乙"}]'::jsonb
@@ -696,7 +696,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'zi-dixin', '帝辛',
-  NULL, NULL,
+  '子', '殷',
   NULL, NULL,
   NULL, NULL,
   ARRAY['君主'], '商朝末代之王，世称纣，牧野之战亡于周。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/帝辛"}]'::jsonb
@@ -734,7 +734,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-fa', '姬发',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周武王，牧野克商，建立西周。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周武王"}]'::jsonb
@@ -791,7 +791,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-song', '姬诵',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周成王，周公辅政，与康王并称成康之治。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周成王"}]'::jsonb
@@ -810,7 +810,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-zhao', '姬钊',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周康王，成康之治后期之王。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周康王"}]'::jsonb
@@ -829,7 +829,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-xia', '姬瑕',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周昭王，南征荆楚，传说卒于汉水。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周昭王"}]'::jsonb
@@ -848,7 +848,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-man', '姬满',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周穆王，西周在位最久的天子之一。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周穆王"}]'::jsonb
@@ -867,7 +867,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-yihu', '姬繄扈',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周共王，穆王之子。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周共王"}]'::jsonb
@@ -886,7 +886,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-jian', '姬囏',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周懿王，断代工程以元年天再旦为前899年。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周懿王"}]'::jsonb
@@ -905,7 +905,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-pifang', '姬辟方',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周孝王，共王之弟，继懿王而立。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周孝王"}]'::jsonb
@@ -924,7 +924,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-xie', '姬燮',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周夷王。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周夷王"}]'::jsonb
@@ -943,7 +943,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-hu', '姬胡',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周厉王，专利引发国人暴动，出奔于彘。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周厉王"}]'::jsonb
@@ -962,7 +962,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-jing', '姬静',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周宣王，共和之后即位，史称宣王中兴。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周宣王"}]'::jsonb
@@ -981,7 +981,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-gongsheng', '姬宫湦',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周幽王，犬戎之祸中身死，西周终结。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周幽王"}]'::jsonb
@@ -1000,7 +1000,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-yijiu', '姬宜臼',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周平王，申侯等拥立；与携王二王并立，东迁洛邑后后世视为东周正统。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周平王"}]'::jsonb
@@ -1019,7 +1019,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-yuchen', '姬余臣',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周携王（携惠王），幽王弟；虢公翰等拥立于携，与平王并立；前750年晋文侯杀之。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周携王"}]'::jsonb
@@ -1038,7 +1038,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-lin', '姬林',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周桓王。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周桓王"}]'::jsonb
@@ -1057,7 +1057,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-tuo', '姬佗',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周庄王。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周庄王"}]'::jsonb
@@ -1076,7 +1076,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-huqi', '姬胡齐',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周釐王，亦作周僖王。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周釐王"}]'::jsonb
@@ -1095,7 +1095,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-lang', '姬阆',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周惠王，其间有王子颓之乱。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周惠王"}]'::jsonb
@@ -1114,7 +1114,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-zheng', '姬郑',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周襄王，晋文公勤王前后在位。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周襄王"}]'::jsonb
@@ -1133,7 +1133,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-renchen', '姬壬臣',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周顷王。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周顷王"}]'::jsonb
@@ -1152,7 +1152,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-ban', '姬班',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周匡王。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周匡王"}]'::jsonb
@@ -1171,7 +1171,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-yu', '姬瑜',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周定王。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周定王"}]'::jsonb
@@ -1190,7 +1190,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-yi', '姬夷',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周简王。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周简王"}]'::jsonb
@@ -1209,7 +1209,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-xiexin', '姬泄心',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周灵王。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周灵王"}]'::jsonb
@@ -1228,7 +1228,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-gui', '姬贵',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周景王。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周景王"}]'::jsonb
@@ -1247,7 +1247,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-meng', '姬猛',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周悼王，在位仅数月。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周悼王"}]'::jsonb
@@ -1266,7 +1266,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-gai', '姬匄',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周敬王，春秋与战国之交的周天子。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周敬王"}]'::jsonb
@@ -1285,7 +1285,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-ren', '姬仁',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周元王。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周元王"}]'::jsonb
@@ -1304,7 +1304,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-jie', '姬介',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周贞定王。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周贞定王"}]'::jsonb
@@ -1323,7 +1323,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-quji', '姬去疾',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周哀王。史记：立三月，为弟叔袭杀。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周哀王"}]'::jsonb
@@ -1342,7 +1342,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-shu', '姬叔',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周思王。史记：杀哀王而立，立五月，旋为考王所杀。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周思王"}]'::jsonb
@@ -1361,7 +1361,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-wei', '姬嵬',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周考王。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周考王"}]'::jsonb
@@ -1380,7 +1380,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-wu', '姬午',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周威烈王，前403年命韩赵魏为诸侯。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周威烈王"}]'::jsonb
@@ -1399,7 +1399,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-jiao', '姬骄',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周安王。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周安王"}]'::jsonb
@@ -1418,7 +1418,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-xi', '姬喜',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周烈王。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周烈王"}]'::jsonb
@@ -1437,7 +1437,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-bian', '姬扁',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周显王。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周显王"}]'::jsonb
@@ -1456,7 +1456,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-ding', '姬定',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周慎靓王。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周慎靓王"}]'::jsonb
@@ -1475,7 +1475,7 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   'ji-yan', '姬延',
-  NULL, NULL,
+  '姬', NULL,
   NULL, NULL,
   NULL, NULL,
   ARRAY['天子'], '周赧王，东周末代天子，前256年周亡于秦。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周赧王"}]'::jsonb

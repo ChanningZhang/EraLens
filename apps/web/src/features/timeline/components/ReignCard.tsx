@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import {
   type Dynasty,
   type Reign,
+  buildPreQinClanContext,
   formatReignSpanTooltip,
   claimTrackOf,
   isUncertainDateConfidence,
@@ -12,6 +13,7 @@ import {
   resolveReignCardGivenName,
   resolveReignCardLabel,
   resolveReignCardMeta,
+  type Person,
 } from "@eralens/shared";
 import { useQuery } from "@tanstack/react-query";
 import { getRepository } from "@/data/repository";
@@ -43,6 +45,7 @@ type Props = {
   color: string;
   reigns: Reign[];
   personName?: string;
+  personClan?: Pick<Person, "ancestralXing" | "clanShi">;
   orthodox?: boolean;
 };
 
@@ -52,6 +55,7 @@ export function ReignCard({
   color,
   reigns,
   personName: personNameFromTimeline,
+  personClan,
   orthodox = false,
 }: Props) {
   const viewport = useViewport();
@@ -104,9 +108,10 @@ export function ReignCard({
   });
 
   const personName = personNameFromTimeline ?? personQuery.data;
+  const clan = buildPreQinClanContext(personClan, dynasty);
   const label = resolveReignCardLabel(reign, personName, {
     cardWidthPx: visualWidth,
-    dynastyId: dynasty.id,
+    clan,
   });
   const barLayout = resolveReignBarLayout(visualWidth, [...label].length);
   const left = barLayout.centerOnAnchor
@@ -114,14 +119,14 @@ export function ReignCard({
     : projectAbs(viewport, visual.start);
   const detail = barLayout.captionBelow ? "below" : barLayout.textLayout.level;
   const parallel = isParallelClaim(reign);
-  const meta = resolveReignCardMeta(reign, personName);
+  const meta = resolveReignCardMeta(reign, personName, clan);
   const metaGlyphCount = meta ? [...meta.name].length : 0;
   const showMeta = shouldShowReignCardMeta(
     barLayout.barWidthPx,
     [...label].length,
     metaGlyphCount,
   );
-  const givenName = resolveReignCardGivenName(reign, personName);
+  const givenName = resolveReignCardGivenName(reign, personName, clan);
   const tooltipName =
     givenName && givenName !== label
       ? givenName

@@ -99,6 +99,20 @@ export function TimelineStage() {
     return map;
   }, [data]);
 
+  const personClans = useMemo(() => {
+    const map = new Map<string, { ancestralXing?: string; clanShi?: string }>();
+    if (!data) return map;
+    for (const person of data.persons) {
+      if (person.ancestralXing || person.clanShi) {
+        map.set(person.id, {
+          ancestralXing: person.ancestralXing,
+          clanShi: person.clanShi,
+        });
+      }
+    }
+    return map;
+  }, [data]);
+
   const lanes = useMemo(() => {
     let top = railHeight;
     return placed.map((dynasty) => {
@@ -225,6 +239,7 @@ export function TimelineStage() {
                   missingReigns={missingReigns}
                   dynastiesById={dynastiesById}
                   personNames={personNames}
+                  personClans={personClans}
                   top={top}
                 />
               ))}

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Audit pre-imperial reigns for missing 姓/氏 in detail panels.
- * Reads ancestral_xing / clan_shi from import SQL (DB fields), not hardcoded maps.
+ * Reads ancestral_xing / clan_shi from import SQL (DB fields), not runtime name parsing.
  * Run: node data/imports/lib/auditPreQinXingShi.mjs
  */
 import { readdirSync, readFileSync } from "node:fs";
@@ -12,93 +12,15 @@ import { FEUDAL_DYNASTY_CLAN } from "./feudalClanMetadata.mjs";
 
 const PRE_IMPERIAL_START_YEAR = -221;
 
-const ANCESTRAL_XING = ["姬", "姜", "嬴", "姒", "子", "己", "芈", "妫", "姚"];
-const CLAN_SHI_PREFIXES = ["公孙", "吕", "田", "熊", "赵", "魏", "韩", "戴"];
-const XING_STRIP_BLOCKLIST = new Set(["楚"]);
-const PLACEHOLDER_PERSON_NAME = /^(缺失|史料缺|不明)$/;
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const importsRoot = path.resolve(__dirname, "..");
 
-function sanitizePersonName(name) {
-  if (!name) return null;
-  let s = String(name).replace(/後/g, "后").replace(/異/g, "异").trim();
-  if (!s || s.length > 8) return null;
-  return s;
-}
-
-function looksLikePersonalGivenName(name) {
-  if (!name || name.length < 1 || name.length > 4) return false;
-  if (PLACEHOLDER_PERSON_NAME.test(name)) return false;
-  if (/[公王侯伯]$/.test(name) && name.length >= 2) return false;
-  return true;
-}
-
-function isHonorificOnlyName(name) {
-  return /^.{1,3}(公|侯|伯|王|叔)$/.test(name);
-}
-
-function parseClanShiPrefix(name) {
-  for (const shi of CLAN_SHI_PREFIXES) {
-    if (!name.startsWith(shi) || name.length <= shi.length) continue;
-    const rest = name.slice(shi.length);
-    if (rest.length < 1 || rest.length > 3) continue;
-    if (!looksLikePersonalGivenName(rest)) continue;
-    return { shi, rest };
-  }
-  return null;
-}
-
-function parseAncestralXingPrefix(name) {
-  for (const xing of ANCESTRAL_XING) {
-    if (!name.startsWith(xing) || name.length <= xing.length) continue;
-    const rest = name.slice(xing.length);
-    if (rest.length < 1 || rest.length > 3) continue;
-    if (XING_STRIP_BLOCKLIST.has(rest)) continue;
-    if (looksLikePersonalGivenName(rest) || isHonorificOnlyName(rest)) {
-      return { xing, rest };
-    }
-  }
-  return null;
-}
-
-function resolveStoredAncestralXing(personName, clan) {
-  if (clan?.personAncestralXing) return clan.personAncestralXing;
-  const cleaned = sanitizePersonName(personName);
-  if (cleaned) {
-    const ancestral = parseAncestralXingPrefix(cleaned);
-    if (ancestral) return ancestral.xing;
-    if (parseClanShiPrefix(cleaned)) {
-      return clan?.dynastyAncestralXing ?? undefined;
-    }
-  }
-  if (
-    cleaned &&
-    (looksLikePersonalGivenName(cleaned) ||
-      isHonorificOnlyName(cleaned) ||
-      PLACEHOLDER_PERSON_NAME.test(cleaned))
-  ) {
-    return clan?.dynastyAncestralXing ?? undefined;
-  }
-  return undefined;
-}
-
-function resolveStoredClanShi(personName, clan) {
-  if (clan?.personClanShi) return clan.personClanShi;
-  const cleaned = sanitizePersonName(personName);
-  if (cleaned) {
-    const parsed = parseClanShiPrefix(cleaned);
-    if (parsed) return parsed.shi;
-  }
-  return clan?.dynastyClanShi ?? undefined;
-}
-
-function resolvePreQinXingShi(personName, clan) {
-  const xing = resolveStoredAncestralXing(personName, clan);
-  const shi = resolveStoredClanShi(personName, clan);
+function resolvePreQinXingShi(clan) {
+  const xing = clan?.personAncestralXing ?? clan?.dynastyAncestralXing ?? undefined;
+  const shi = clan?.personClanShi ?? clan?.dynastyClanShi ?? undefined;
   if (!xing && !shi) return {};
   return { ...(xing ? { xing } : {}), ...(shi ? { shi } : {}) };
 }
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const importsRoot = path.resolve(__dirname, "..");
 
 function parsePersonsFromSql(content) {
   const persons = new Map();
@@ -195,8 +117,8 @@ function buildClanContext(personId, dynastyId, persons, dynasties) {
   };
 }
 
-function auditRow(name, clan) {
-  const { xing, shi } = resolvePreQinXingShi(name, clan);
+function auditRow(clan) {
+  const { xing, shi } = resolvePreQinXingShi(clan);
   const missing = [];
   if (!xing && !shi) missing.push("姓/氏");
   else {
@@ -231,7 +153,7 @@ function main() {
       seenReign.add(key);
       const name = ruler.personName ?? persons.get(ruler.personId)?.name;
       const clan = buildClanContext(ruler.personId, dynastyId, persons, dynasties);
-      const gaps = auditRow(name, clan);
+      const gaps = auditRow(clan);
       if (gaps.length) {
         missing.push({ dynastyId, title: ruler.title, personId: ruler.personId, personName: name, gaps });
       }
@@ -244,18 +166,18 @@ function main() {
     if (seenReign.has(key)) continue;
     seenReign.add(key);
     const person = persons.get(reign.personId);
-    const name = person?.name;
-    const clan = buildClanContext(reign.personId, reign.dynastyId, persons, dynasties);
-    const gaps = auditRow(name, clan);
-    if (gaps.length) {
-      missing.push({
-        dynastyId: reign.dynastyId,
-        title: reign.title,
-        personId: reign.personId,
-        personName: name,
-        gaps,
-      });
-    }
+      const name = person?.name;
+      const clan = buildClanContext(reign.personId, reign.dynastyId, persons, dynasties);
+      const gaps = auditRow(clan);
+      if (gaps.length) {
+        missing.push({
+          dynastyId: reign.dynastyId,
+          title: reign.title,
+          personId: reign.personId,
+          personName: name,
+          gaps,
+        });
+      }
   }
 
   console.log("=== Dynasty 姓/氏 column gaps ===");

@@ -156,9 +156,9 @@ ON CONFLICT (id) DO UPDATE SET
 
 ### reigns
 
-卡片称谓由运行时 `resolveEmperorAppellation` / `resolveReignCardLabel` 按 `appellationPolicy.ts` 的年份阈值计算；始皇帝以前主行用谥号或诸侯称号（不带国名）。`preferred_appellation` 仅用于 **regnal** 例外（先秦称号、秦襄公等）。无谥号时 preferred 存称号本体（`夫差`、`王厝`），不要写 `吴王夫差`。导入时不要写入庙号/谥号/年号的默认 preferred。`persons.name` 仍用名（姬发、禹），便于搜索。
+卡片称谓由运行时 `resolveEmperorAppellation` / `resolveReignCardLabel` 按 `appellationPolicy.ts` 的年份阈值计算；始皇帝以前主行用谥号或诸侯称号（不带国名）。谥号只读 `posthumous_name`；史称（少帝/末帝/后主等）不得写入该字段。`preferred_appellation` 仅用于 **regnal** 例外（先秦称号、秦襄公等）。无谥号时 preferred 存称号本体（`夫差`、`王厝`），不要写 `吴王夫差`。导入时不要写入庙号/谥号/年号的默认 preferred。`persons.name` 仍用可展示私名（姬发、禹），便于搜索；维基别名须在导入时清洗。
 
-`posthumous_name` / `temple_name` 与商周数据一致：**只存谥号/庙号本体，不带国名**（`武王`、`孝文皇帝`、`太宗`）。国名简称写在 `title`（`周武王`、`唐太宗`）。
+`posthumous_name` / `temple_name` 与商周数据一致：**只存谥号/庙号本体，不带国名**（`武王`、`孝文皇帝`、`太宗`）。国名简称写在 `title`（`周武王`、`唐太宗`）。先秦副行去姓靠 `persons.ancestral_xing` / `dynasties.ancestral_xing` 与 `clan_shi`，运行时不再维护姓氏表。
 
 ```sql
 INSERT INTO reigns (

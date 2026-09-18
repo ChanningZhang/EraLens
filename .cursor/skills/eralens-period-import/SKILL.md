@@ -88,13 +88,15 @@ Task Progress:
 - 事件 `{topic}`：`xuanwumen`、`muye`
 - 关系 `rel-{from}-{to}-{kind}`
 
-`persons.name` 用可检索的常用名（禹、姬发、孔子、韦后）。**入库时君主姓名须带姓**（如莒郊公写 `己狂` 而非 `狂`，薛献公写 `任谷` 而非 `谷`），便于搜索；时间轴卡片在始皇帝以前主行显示谥号/称号，由 `resolveReignCardLabel` 处理，不要为迁就卡片去改姓名字段。维基诸侯表若只给「国君本名」，须结合该国姓氏（如莒己、滕姬、杞姒）补全；仅知谥号而本名失考时，可用 `{姓}{谥号}`（如 `姒武公`）。搜索只匹配 dynasty/person/event 的 `name`，不匹配 `title` 或谥号。
+`persons.name` 用可检索的常用名（禹、姬发、孔子、韦后）。**入库时君主姓名须带姓**（如莒郊公写 `己狂` 而非 `狂`，薛献公写 `任谷` 而非 `谷`），便于搜索；时间轴卡片在始皇帝以前主行显示谥号/称号，由 `resolveReignCardLabel` 处理，不要为迁就卡片去改姓名字段。维基诸侯表若只给「国君本名」，须结合该国姓氏（如莒己、滕姬、杞姒）补全；仅知谥号而本名失考时，可用 `{姓}{谥号}`（如 `姒武公`）。先秦王朝/人物须写入 `ancestral_xing` / `clan_shi`（`feudalClanMetadata.mjs` + `applyFeudalClanMetadata`），运行时只按该字段去姓，不维护姓氏表。搜索只匹配 dynasty/person/event 的 `name`，不匹配 `title` 或谥号。
 
 **谥号 / 庙号字段**（与商周一致）：
 - `posthumous_name`、`temple_name` 只存谥号/庙号本体，**不带国名或王朝前缀**（如 `武王`、`孝文皇帝`、`太宗`；不要写 `周武王`、`汉孝文皇帝`、`唐太宗`）。
-- 国名 + 简称写在 `title`（如 `周武王`、`唐太宗`、`后唐庄宗`），由运行时 `resolveEmperorAppellation` 按年份阈值选用庙号/谥号/年号展示。
-- 若 `title` 已含国号简称（`唐肃宗`、`吴越武肃王`），须同步写出无国号的 `posthumous_name`/`temple_name`（`肃宗`、`武肃王`）；生成器可用 `regnalAppellation.mjs` 从 `title` 自动拆分，不可只写 `title` 留空两字段。
+- **史称**（少帝/废帝/末帝/后主等）写在 `title`，**不得**写入 `posthumous_name`；`regnalAppellation.mjs` 的 `SKIP_BODIES` 会拦这类本体。
+- 国名 + 简称写在 `title`（如 `周武王`、`唐太宗`、`后唐庄宗`），由运行时 `resolveEmperorAppellation` 按年份阈值选用正规字段展示；运行时不从 `title` 推测谥号。
+- 若 `title` 已含国号简称（`唐肃宗`、`吴越武肃王`），须同步写出无国号的 `posthumous_name`/`temple_name`（`肃宗`、`武肃王`）。`regnalAppellation.mjs` 只从 `title` 拆谥号本体（`文帝`、`武肃王`）；**庙号必须在 generate 里显式传入**，不要靠「祖/宗」结尾猜测，也不可只写 `title` 留空两字段。
 - `preferred_appellation` 仅用于 **regnal** 例外（先秦称号、秦襄公、西楚霸王等）；不要写入庙号/谥号/年号的默认 preferred。无谥号的先秦称号写入**不带国名的本体**（`若敖`、`夫差`、`王厝`、`禹`），由 `preQinCardAppellation.mjs` 按该朝国号从 `title` 拆出；运行时主行直接读字段，不靠国名列表剥前缀。
+- `persons.name` 入库即为可展示私名（不带维基「原名/后改名」残渣）；古文异体可留在 `bio`。
 
 先秦角色用 `君主`/`天子`，不用 `皇帝`。年号自汉武帝起；先秦省略 `era_names`。
 

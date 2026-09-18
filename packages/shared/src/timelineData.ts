@@ -153,11 +153,12 @@ export function buildEntityDetail(
       .slice(0, 6)
       .map((r) => {
         const person = personMap.get(r.personId);
-        const label = resolveReignPrimaryLabel(r, person?.name);
+        const clan = buildPreQinClanContext(person, dynasty);
+        const label = resolveReignPrimaryLabel(r, person?.name, clan);
         return {
           ref: { type: "reign" as const, id: r.id },
           label,
-          subtitle: resolveReignRelatedSubtitle(r, person?.name),
+          subtitle: resolveReignRelatedSubtitle(r, person?.name, clan),
           abs: r.startAbs,
         };
       });
@@ -184,7 +185,8 @@ export function buildEntityDetail(
     if (!reign) throw new Error(`Reign not found: ${ref.id}`);
     const person = personMap.get(reign.personId);
     const dynasty = dynastyMap.get(reign.dynastyId);
-    const title = resolveReignPrimaryLabel(reign, person?.name);
+    const clan = buildPreQinClanContext(person, dynasty);
+    const title = resolveReignPrimaryLabel(reign, person?.name, clan);
     const related = store.relations
       .filter((rel) => rel.fromRef === refKey(ref) || rel.toRef === refKey(ref))
       .map((rel) => {
@@ -198,16 +200,17 @@ export function buildEntityDetail(
     return {
       ref,
       title,
-      subtitle: resolveReignDetailSubtitle(reign, dynasty?.name, person?.name),
+      subtitle: resolveReignDetailSubtitle(
+        reign,
+        dynasty?.name,
+        person?.name,
+        clan,
+      ),
       colorToken: dynasty
         ? resolveReignColorToken(dynasty, reign)
         : undefined,
       facts: [
-        ...resolveReignDetailFacts(
-          reign,
-          person?.name,
-          buildPreQinClanContext(person, dynasty),
-        ),
+        ...resolveReignDetailFacts(reign, person?.name, clan),
         ...claimDetailFacts(reign),
       ],
       summary: person?.bio,

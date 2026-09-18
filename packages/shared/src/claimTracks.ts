@@ -8,7 +8,7 @@ import type { Reign } from "./schema";
  *
  * - omitted / `main` — conventionally counted succession (文帝→炀帝, 弘光→隆武→永历)
  * - other kebab-case keys — one vertical sub-row per seat (`changan`, `lu-jian`)
- * - `claimLabel` — seat shown on the card (长安 / 绍兴监国)
+ * - `claimLabel` — seat shown in tooltip / detail (长安 / 绍兴监国)
  * - `claimRole` — always `rival` on a parallel track (dashed border)
  *
  * Sequencing, clipping, and succession chains stay *inside* a track. Tracks

@@ -36,6 +36,7 @@ type Props = {
   missingReigns: Reign[];
   dynastiesById: Map<string, Dynasty>;
   personNames: Map<string, string>;
+  personClans: Map<string, { ancestralXing?: string; clanShi?: string } | undefined>;
   top: number;
 };
 
@@ -45,6 +46,7 @@ export function DynastyLane({
   missingReigns,
   dynastiesById,
   personNames,
+  personClans,
   top,
 }: Props) {
   const viewport = useViewport();
@@ -158,6 +160,7 @@ export function DynastyLane({
                 color={resolveReignColorValue(reignDynasty as Dynasty, reign)}
                 reigns={reigns}
                 personName={personNames.get(reign.personId)}
+                personClan={personClans.get(reign.personId)}
                 orthodox={orthodox}
               />
             );

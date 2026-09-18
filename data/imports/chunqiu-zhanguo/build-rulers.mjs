@@ -14,6 +14,11 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { applyDeathYearToPredecessor } from "../lib/deathYearSuccession.mjs";
 import { preQinRegnalCardName } from "../lib/preQinCardAppellation.mjs";
+import {
+  FEUDAL_DYNASTY_CLAN,
+  personNamePrefix,
+  shiPersonalNamePrefixes,
+} from "../lib/feudalClanMetadata.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const sourcesDir = path.join(__dirname, "sources");
@@ -226,26 +231,7 @@ const STATE_PREFIX = {
   qin: "秦",
 };
 
-const SURNAME = {
-  "qi-chunqiu": "姜",
-  "jin-chunqiu": "姬",
-  "chu-chunqiu": "熊",
-  "yan-chunqiu": "姬",
-  "song-chunqiu": "子",
-  "lu-chunqiu": "姬",
-  "wei-weiguo": "姬",
-  "zheng-chunqiu": "姬",
-  "cao-chunqiu": "姬",
-  "wu-chunqiu": "姬",
-  "yue-chunqiu": "姒",
-  zhongshan: "姬",
-  "han-warring": "韩",
-  "zhao-warring": "赵",
-  "wei-warring": "魏",
-  qin: "嬴",
-};
-
-const CLAN_SURNAMES = ["姜", "吕", "田", "姬", "熊", "芈", "子", "嬴", "赵", "魏", "韩", "燕", "戴", "姒"];
+const SHI_NAME_PREFIXES = shiPersonalNamePrefixes();
 
 function toSimplified(text) {
   // Sources are already zh-cn Wikipedia; normalize a few chars that still
@@ -671,18 +657,20 @@ function withSurname(dynastyId, name, title, surnameOverride = null) {
   const cleaned = finalizePersonName(name);
   if (!cleaned || isBadPersonName(cleaned)) return title;
   if (/[公王侯]$/.test(cleaned) && cleaned.length >= 2) return cleaned;
-  const surname = surnameOverride ?? SURNAME[dynastyId] ?? "";
+  const meta = FEUDAL_DYNASTY_CLAN[dynastyId];
+  if (meta?.skipXingOnGivenName && !surnameOverride) return cleaned;
+  if (meta?.bareGivenNames?.includes(cleaned)) return cleaned;
+  const surname = surnameOverride ?? personNamePrefix(dynastyId) ?? "";
   if (!surname) return cleaned;
   if (cleaned.startsWith(surname)) return cleaned;
-  // Only treat as an embedded clan prefix when the token is longer than one character
-  // (e.g. 田午), not a single-char given name like 宋休公「田」.
+  // Embedded 氏 (田午, 戴喜) is already the search name; do not also prefix 姓.
+  // Single-char given names like 宋休公「田」 still take the dynasty 姓.
   if (
     cleaned.length > 1 &&
-    CLAN_SURNAMES.some((s) => s !== surname && s.length >= 1 && cleaned.startsWith(s) && s !== "子")
+    [...SHI_NAME_PREFIXES].some((shi) => shi !== surname && cleaned.startsWith(shi))
   ) {
     return cleaned;
   }
-  if (dynastyId === "wu-chunqiu" && /^(夫差|阖闾|寿梦|诸樊|僚)$/.test(cleaned)) return cleaned;
   if (cleaned === title) return cleaned;
   return `${surname}${cleaned}`;
 }
@@ -882,12 +870,20 @@ function posthumousFromTitle(title) {
   return null;
 }
 
+function nameWithoutDynastyPrefix(dynastyId, name) {
+  const prefix = personNamePrefix(dynastyId);
+  if (prefix && name.startsWith(prefix) && name.length > prefix.length) {
+    return name.slice(prefix.length);
+  }
+  return name;
+}
+
 function makePersonId(dynastyId, title, name, index) {
   const titleKey = normalizeTitle(title);
   const nameKey = normalizeTitle(name);
   const override =
     PERSON_OVERRIDES[`${titleKey}|${nameKey}`] ||
-    PERSON_OVERRIDES[`${titleKey}|${nameKey.replace(/^(姜|姬|嬴|熊|田|吕|子|韩|赵|魏|姒)/, "")}`];
+    PERSON_OVERRIDES[`${titleKey}|${nameWithoutDynastyPrefix(dynastyId, nameKey)}`];
   if (override) {
     if (override === "jiang-xiaobai" && /田/.test(name)) return "tian-wu";
     if (override === "lv-shang" && /田/.test(name)) return "tian-he";
@@ -909,7 +905,7 @@ function resolvePersonDisplayName(title, name) {
 
 /** When wiki has no given name, prefix ancestral 姓 + posthumous (燕襄公 → 姬襄公). */
 function clanNameWhenOnlyPosthumous(dynastyId, personName, title) {
-  const surname = SURNAME[dynastyId];
+  const surname = personNamePrefix(dynastyId);
   if (!surname) return personName;
   const posthumous = posthumousFromTitle(title);
   if (!posthumous) return personName;
@@ -945,7 +941,12 @@ function enrichRulers(dynastyId, rulers) {
     const override =
       REIGN_PREFERRED_APPELLATION_OVERRIDES[`${personId}|${dynastyId}`];
     const derivedRegnal = !posthumousName && !override
-      ? preQinRegnalCardName(r.title, STATE_PREFIX[dynastyId])
+      ? preQinRegnalCardName(
+          r.title,
+          STATE_PREFIX[dynastyId],
+          resolvedName,
+          FEUDAL_DYNASTY_CLAN[dynastyId],
+        )
       : null;
     const preferredAppellation =
       override ??

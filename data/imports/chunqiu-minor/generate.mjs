@@ -15,6 +15,7 @@ import {
   successionPairs,
 } from "../lib/sqlHelpers.mjs";
 import { missingReign, SYSTEM_MISSING_RULER_PERSON_ID } from "../lib/missingReigns.mjs";
+import { applyFeudalClanMetadata } from "../lib/applyFeudalClanMetadata.mjs";
 import { preQinRegnalCardName } from "../lib/preQinCardAppellation.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -448,6 +449,7 @@ const manifest = {
     { label: "周朝诸侯国君主列表", url: "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表" },
   ],
   notes: [
+    "各国 ancestral_xing / clan_shi 取 feudalClanMetadata（薛任、滕姬、杞姒、莒己、代嬴赵、胶东妫田、西周国/东周国姬）。",
     "仅收录维基/左传有明确在位年的君主；早期失考君主不强行拉满王朝跨度。",
     "薛献公仅知前511年卒（左传），不填虚始年；齐庄公/卫武公/曹桓公/宋昭公长年在维基或史记有载，保留。",
     "薛国自薛献公起；滕国自春秋滕文公起；杞国自武公起；莒国自纪公起。",
@@ -460,6 +462,10 @@ const manifest = {
     "西周武公、东周昭文君等中间世系在位年失考，不强行拉满；东周惠公之后至秦灭前用系统史料缺占位。",
   ],
 };
+
+const personDynastyId = new Map();
+for (const r of reigns) personDynastyId.set(r.personId, r.dynastyId);
+applyFeudalClanMetadata({ persons, dynasties, personDynastyId });
 
 writeImportPackage(__dirname, {
   slug: "chunqiu-minor",
