@@ -7,8 +7,10 @@ import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
+import { applyFeudalClanMetadata } from "../lib/applyFeudalClanMetadata.mjs";
 import { reignSql } from "../lib/reignSql.mjs";
 import { normalizeYearPrecisionAt } from "../lib/sqlHelpers.mjs";
+import { preQinRegnalCardName } from "../lib/preQinCardAppellation.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "../../..");
@@ -240,7 +242,7 @@ const xiaReigns = [
     dynastyId: "xia",
     personId: "si-yu",
     title: "夏禹",
-    preferred: { kind: "regnal", name: "夏禹" },
+    preferred: { kind: "regnal", name: preQinRegnalCardName("夏禹", "夏") },
     start: ym(-2070),
     end: ym(-2026, 12),
   }),
@@ -249,7 +251,7 @@ const xiaReigns = [
     dynastyId: "xia",
     personId: "si-qi",
     title: "夏启",
-    preferred: { kind: "regnal", name: "夏启" },
+    preferred: { kind: "regnal", name: preQinRegnalCardName("夏启", "夏") },
     start: ym(-2025),
     end: ym(-2010, 12),
   }),
@@ -258,7 +260,7 @@ const xiaReigns = [
     dynastyId: "xia",
     personId: "si-taikang",
     title: "夏太康",
-    preferred: { kind: "regnal", name: "夏太康" },
+    preferred: { kind: "regnal", name: preQinRegnalCardName("夏太康", "夏") },
     start: ym(-2009),
     end: ym(-1990, 12),
   }),
@@ -267,7 +269,7 @@ const xiaReigns = [
     dynastyId: "xia",
     personId: "si-shaokang",
     title: "夏少康",
-    preferred: { kind: "regnal", name: "夏少康" },
+    preferred: { kind: "regnal", name: preQinRegnalCardName("夏少康", "夏") },
     start: ym(-1910),
     end: ym(-1860, 12),
   }),
@@ -276,7 +278,7 @@ const xiaReigns = [
     dynastyId: "xia",
     personId: "si-jie",
     title: "夏桀",
-    preferred: { kind: "regnal", name: "夏桀" },
+    preferred: { kind: "regnal", name: preQinRegnalCardName("夏桀", "夏") },
     start: ym(-1650),
     end: ym(-1600, 12),
   }),
@@ -471,6 +473,12 @@ const { persons: importPersons, reigns: importReigns, missingReigns } = finalize
   persons,
   reigns,
 );
+
+const personDynastyId = new Map();
+for (const reign of importReigns) {
+  personDynastyId.set(reign.personId, reign.dynastyId);
+}
+applyFeudalClanMetadata({ persons: importPersons, dynasties, personDynastyId });
 
 function eventPoint(partial) {
   const precision = partial.precision ?? "year";
@@ -866,15 +874,18 @@ relations.push(
 );
 
 function personSql(p) {
-  return `INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+  return `INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   ${sqlStr(p.id)}, ${sqlStr(p.name)},
+  ${sqlStr(p.ancestralXing ?? null)}, ${sqlStr(p.clanShi ?? null)},
   ${p.birth?.year ?? "NULL"}, ${p.birth?.month ?? "NULL"},
   ${p.death?.year ?? "NULL"}, ${p.death?.month ?? "NULL"},
   ${sqlArray(p.roles)}, ${sqlStr(p.bio)}, ${sqlJson(p.links)}
 )
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
+  ancestral_xing = EXCLUDED.ancestral_xing,
+  clan_shi = EXCLUDED.clan_shi,
   birth_year = EXCLUDED.birth_year,
   birth_month = EXCLUDED.birth_month,
   death_year = EXCLUDED.death_year,
@@ -886,17 +897,19 @@ ON CONFLICT (id) DO UPDATE SET
 
 function dynastySql(d) {
   return `INSERT INTO dynasties (
-  id, name, alt_names, scope, region,
+  id, name, ancestral_xing, clan_shi, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision, color_token, parent_id, note
 ) VALUES (
-  ${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlArray(d.altNames)}, ${sqlStr(d.scope)}, ${sqlStr(d.region)},
+  ${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlStr(d.ancestralXing ?? null)}, ${sqlStr(d.clanShi ?? null)}, ${sqlArray(d.altNames)}, ${sqlStr(d.scope)}, ${sqlStr(d.region)},
   ${d.start.year}, ${d.start.month}, ${d.end.year}, ${d.end.month},
   ${d.start.abs}, ${d.end.abs}, ${sqlStr(d.precision)}, ${sqlStr(d.colorToken)}, NULL,
   ${sqlStr(d.note)}
 )
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
+  ancestral_xing = EXCLUDED.ancestral_xing,
+  clan_shi = EXCLUDED.clan_shi,
   alt_names = EXCLUDED.alt_names,
   start_year = EXCLUDED.start_year,
   start_month = EXCLUDED.start_month,

@@ -13,7 +13,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { applyDeathYearToPredecessor } from "../lib/deathYearSuccession.mjs";
-import { assignOverlappingBranchTracks } from "../lib/overlappingBranchTracks.mjs";
+import { preQinRegnalCardName } from "../lib/preQinCardAppellation.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const sourcesDir = path.join(__dirname, "sources");
@@ -39,6 +39,9 @@ const qinText = loadSource("wiki-qin.json");
 const PERSON_OVERRIDES = {
   "齐太公|吕尚": "lv-shang",
   "齐太公|尚": "lv-shang",
+  "齐太公|田和": "tian-he",
+  "齐康公|姜贷": "jiang-dai",
+  "齐康公|贷": "jiang-dai",
   "齐桓公|姜小白": "jiang-xiaobai",
   "齐桓公|小白": "jiang-xiaobai",
   "晋文公|姬重耳": "ji-chonger",
@@ -81,6 +84,8 @@ const PERSON_OVERRIDES = {
 
 const NAME_OVERRIDES = {
   "lv-shang": "吕尚",
+  "tian-he": "田和",
+  "jiang-dai": "姜贷",
   "jiang-xiaobai": "姜小白",
   "ji-chonger": "姬重耳",
   "xiong-zhuang": "熊侣",
@@ -113,6 +118,7 @@ const NAME_OVERRIDES = {
   "ji-shuyu": "姬虞",
   "ji-shi": "姬奭",
   "song-weizi": "子启",
+  "jin-r8": "姬费",
   "yan-r25": "姬桓",
   "yan-r35": "姬讙",
   "yan-r36": "姬遇",
@@ -131,6 +137,33 @@ const TITLE_NAME_OVERRIDES = {
     卫元君: "缺失",
   },
 };
+
+/** Wiki monarch-table years that actually count clan-head / 卿 tenure. */
+/** Pre-Qin card regnal overrides (e.g. 秦王政 → 赵政). Key: personId|dynastyId */
+const REIGN_PREFERRED_APPELLATION_OVERRIDES = {
+  "ying-zheng|qin": { kind: "regnal", name: "赵政" },
+};
+
+const REIGN_YEAR_OVERRIDES = {
+  "qi-chunqiu": {
+    // 齐国表田和起前404年接田悼子，是田氏领袖年。田和条目：前391年放逐康公、自立为齐君。
+    "齐太公|田和": { start: -391, end: -384 },
+    // 康公卒前379年，前391年已被放逐；齐行国君止于废立前一年，其后顺序接田齐。
+    "齐康公|姜贷": { start: -404, end: -392 },
+  },
+};
+
+function applyReignYearOverrides(dynastyId, rulers) {
+  const table = REIGN_YEAR_OVERRIDES[dynastyId];
+  if (!table) return rulers;
+  return rulers.map((r) => {
+    const titleKey = normalizeTitle(r.title);
+    const nameKey = normalizeTitle(r.name || "");
+    const patch = table[`${titleKey}|${nameKey}`] ?? table[titleKey];
+    if (!patch) return r;
+    return { ...r, ...patch, complete: true };
+  });
+}
 
 /** Early Western Zhou founders — wiki tables omit years or use non-standard rows */
 const FOUNDING_RULER_PATCHES = {
@@ -874,12 +907,8 @@ function resolvePersonDisplayName(title, name) {
   return name;
 }
 
-/** Dynasties where wiki often lacks given names; use clan + posthumous (燕襄公 → 姬襄公). */
-const CLAN_POSTHUMOUS_DYNASTIES = new Set(["yan-chunqiu"]);
-
-/** When wiki has no given name, use clan + posthumous (e.g. 燕襄公 → 姬襄公). */
+/** When wiki has no given name, prefix ancestral 姓 + posthumous (燕襄公 → 姬襄公). */
 function clanNameWhenOnlyPosthumous(dynastyId, personName, title) {
-  if (!CLAN_POSTHUMOUS_DYNASTIES.has(dynastyId)) return personName;
   const surname = SURNAME[dynastyId];
   if (!surname) return personName;
   const posthumous = posthumousFromTitle(title);
@@ -912,19 +941,26 @@ function enrichRulers(dynastyId, rulers) {
         resolvePersonDisplayName(r.title, r.name),
         r.title,
       );
+    const posthumousName = posthumousFromTitle(r.title);
+    const override =
+      REIGN_PREFERRED_APPELLATION_OVERRIDES[`${personId}|${dynastyId}`];
+    const derivedRegnal = !posthumousName && !override
+      ? preQinRegnalCardName(r.title, STATE_PREFIX[dynastyId])
+      : null;
+    const preferredAppellation =
+      override ??
+      (derivedRegnal ? { kind: "regnal", name: derivedRegnal } : undefined);
     return {
       dynastyId,
       personId,
       title: r.title,
       personName: resolvedName,
-      posthumousName: posthumousFromTitle(r.title),
+      posthumousName,
+      ...(preferredAppellation ? { preferredAppellation } : {}),
       startYear: r.start,
       endYear: r.end,
       startDateConfidence: r.startDateConfidence ?? undefined,
       endDateConfidence: r.endDateConfidence ?? undefined,
-      claimTrack: r.claimTrack ?? undefined,
-      claimLabel: r.claimLabel ?? undefined,
-      claimRole: r.claimRole ?? undefined,
     };
   });
 }
@@ -975,7 +1011,7 @@ const SONG_EXPECTED_NAMES = {
   "宋厉公|-884": "子鲋祀",
   "宋釐公|-858": "子举",
   "宋惠公|-830": "子覵",
-  "宋哀公|-800": "哀公",
+  "宋哀公|-800": "子哀公",
   "宋戴公|-799": "子白",
   "宋武公|-765": "子司空",
   "宋宣公|-747": "子力",
@@ -1010,11 +1046,11 @@ for (const [dynastyId, fn] of Object.entries(DYNASTY_SOURCES)) {
     dynastyId === "zhongshan"
       ? fn()
       : fillUndatedYears(mergeFoundingRulers(dynastyId, fn()), dynastyId);
-  applyDeathYearToPredecessor(parsed);
-  const raw = markInterpolatedBoundaries(parsed).sort(
+  const dated = applyReignYearOverrides(dynastyId, parsed);
+  applyDeathYearToPredecessor(dated);
+  const raw = markInterpolatedBoundaries(dated).sort(
     (a, b) => a.start - b.start || a.end - b.end,
   );
-  assignOverlappingBranchTracks(raw);
   const enriched = enrichRulers(dynastyId, raw);
   byDynasty[dynastyId] = enriched;
   total += enriched.length;

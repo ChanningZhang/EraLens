@@ -15,6 +15,7 @@ import {
   successionPairs,
 } from "../lib/sqlHelpers.mjs";
 import { missingReign, SYSTEM_MISSING_RULER_PERSON_ID } from "../lib/missingReigns.mjs";
+import { preQinRegnalCardName } from "../lib/preQinCardAppellation.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -105,7 +106,23 @@ const reignGroups = [
   zhouGuoWestReigns,
   zhouGuoEastReigns,
 ];
-const reigns = reignGroups.flat();
+const STATE_NAME = {
+  "xue-chunqiu": "薛",
+  "teng-chunqiu": "滕",
+  "qi-state-chunqiu": "杞",
+  "ju-chunqiu": "莒",
+  "dai-warring": "代",
+  "jiaodong-warring": "胶东",
+  "zhou-guo-west": "西周",
+  "zhou-guo-east": "东周",
+};
+
+const reigns = reignGroups.flat().map((r) => {
+  if (r.posthumousName || r.preferredAppellation) return r;
+  const body = preQinRegnalCardName(r.title, STATE_NAME[r.dynastyId]);
+  if (!body || body === r.title || body.length < 2) return r;
+  return { ...r, preferredAppellation: { kind: "regnal", name: body } };
+});
 
 const RULER_META = {
   "xue-r1": { name: "任谷", wiki: "薛献公", bio: "《左传·昭公三十一年》载前511年卒；在位始年不详，不承接前代拉满。" },

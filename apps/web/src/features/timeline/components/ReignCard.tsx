@@ -9,6 +9,7 @@ import {
   reignVisualBounds,
   isParallelClaim,
   PARALLEL_CLAIM_LABEL,
+  resolveReignCardGivenName,
   resolveReignCardLabel,
   resolveReignCardMeta,
 } from "@eralens/shared";
@@ -113,19 +114,20 @@ export function ReignCard({
     : projectAbs(viewport, visual.start);
   const detail = barLayout.captionBelow ? "below" : barLayout.textLayout.level;
   const parallel = isParallelClaim(reign);
-  // For concurrent claimants the seat (长安 / 洛阳) tells them apart far better
-  // than the appellation kind, so it takes over the subtitle slot.
-  const meta =
-    parallel && reign.claimLabel
-      ? { label: "据点", name: reign.claimLabel }
-      : resolveReignCardMeta(reign, personName);
+  const meta = resolveReignCardMeta(reign, personName);
   const metaGlyphCount = meta ? [...meta.name].length : 0;
   const showMeta = shouldShowReignCardMeta(
     barLayout.barWidthPx,
     [...label].length,
     metaGlyphCount,
   );
-  const tooltipName = personName && personName !== label ? personName : label;
+  const givenName = resolveReignCardGivenName(reign, personName);
+  const tooltipName =
+    givenName && givenName !== label
+      ? givenName
+      : personName && personName !== label
+        ? personName
+        : label;
   const timeTooltip = formatReignSpanTooltip(reign);
   const claimTooltip = parallel
     ? `${PARALLEL_CLAIM_LABEL}${reign.claimLabel ? `・${reign.claimLabel}` : ""}`

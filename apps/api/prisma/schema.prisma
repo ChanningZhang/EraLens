@@ -10,6 +10,8 @@ datasource db {
 model Person {
   id          String              @id
   name        String
+  ancestralXing String?           @map("ancestral_xing")
+  clanShi     String?             @map("clan_shi")
   birthYear   Int?                @map("birth_year")
   birthMonth  Int?                @map("birth_month")
   deathYear   Int?                @map("death_year")
@@ -48,6 +50,8 @@ model DynastyGroup {
 model Dynasty {
   id          String           @id
   name        String
+  ancestralXing String?        @map("ancestral_xing")
+  clanShi     String?          @map("clan_shi")
   altNames    String[]         @default([]) @map("alt_names")
   scope       String           @default("cn")
   region      String           @default("east_asia")

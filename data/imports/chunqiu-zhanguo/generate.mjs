@@ -8,6 +8,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { rulersByDynasty, rulerStats } from "./rulers.mjs";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
+import { applyFeudalClanMetadata } from "../lib/applyFeudalClanMetadata.mjs";
 import { ORTHODOX_FROM_START } from "../lib/orthodoxDynasties.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 import { normalizeYearPrecisionAt } from "../lib/sqlHelpers.mjs";
@@ -52,9 +53,6 @@ function reign({
   precision = "year",
   startDateConfidence = null,
   endDateConfidence = null,
-  claimTrack = null,
-  claimLabel = null,
-  claimRole = null,
 }) {
   return {
     id,
@@ -71,9 +69,6 @@ function reign({
     precision,
     startDateConfidence,
     endDateConfidence,
-    claimTrack,
-    claimLabel,
-    claimRole,
   };
 }
 
@@ -200,6 +195,16 @@ const PERSON_DETAIL_OVERRIDES = {
     links: wiki("姜子牙"),
     birth: ym(-1156),
     death: ym(-1017),
+  },
+  "jiang-dai": {
+    bio: "齐康公（姜贷），姜齐末代。前404年继宣公；前391年田和放逐于海上，姜齐在齐君位止。前379年卒，姜太公之祀绝。",
+    links: wiki("齐康公"),
+    death: ym(-379),
+  },
+  "tian-he": {
+    bio: "田齐太公（田和）。前391年放逐齐康公自立，前386年周安王列为诸侯，史称田氏代齐。前384年卒。",
+    links: wiki("田和"),
+    death: ym(-384),
   },
   "song-r28": {
     bio: "宋昭公（子特），前469–前404年在位。《史记·宋微子世家》另有前422年卒异说。",
@@ -509,7 +514,7 @@ const reigns = applyDocumentedDatesToReigns(
           title: r.title,
           posthumousName: r.posthumousName,
           templeName: null,
-          preferred: null,
+          preferred: r.preferredAppellation ?? null,
           start: ym(r.startYear),
           end: ym(r.endYear, 12),
           startDateConfidence: r.startDateConfidence ?? null,
@@ -524,6 +529,14 @@ const { persons: importPersons, reigns: importReigns, missingReigns } = finalize
   persons,
   reigns,
 );
+
+const personDynastyId = new Map();
+for (const [dynastyId, rulers] of Object.entries(rulersByDynasty)) {
+  for (const ruler of rulers) {
+    personDynastyId.set(ruler.personId, dynastyId);
+  }
+}
+applyFeudalClanMetadata({ persons: importPersons, dynasties, personDynastyId });
 
 // ── events ──
 
@@ -696,15 +709,18 @@ const relations = [
 // ── SQL generation ───────────────────────────────────────────────────────────
 
 function personSql(p) {
-  return `INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+  return `INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES (
   ${sqlStr(p.id)}, ${sqlStr(p.name)},
+  ${sqlStr(p.ancestralXing ?? null)}, ${sqlStr(p.clanShi ?? null)},
   ${p.birth?.year ?? "NULL"}, ${p.birth?.month ?? "NULL"},
   ${p.death?.year ?? "NULL"}, ${p.death?.month ?? "NULL"},
   ${sqlArray(p.roles)}, ${sqlStr(p.bio)}, ${sqlJson(p.links)}
 )
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
+  ancestral_xing = EXCLUDED.ancestral_xing,
+  clan_shi = EXCLUDED.clan_shi,
   birth_year = EXCLUDED.birth_year,
   birth_month = EXCLUDED.birth_month,
   death_year = EXCLUDED.death_year,
@@ -719,17 +735,19 @@ function dynastySql(d) {
     d.orthodoxFromAbs ??
     (d.id === "qin" ? absMonth(-221) : ORTHODOX_FROM_START.has(d.id) ? d.start.abs : null);
   return `INSERT INTO dynasties (
-  id, name, alt_names, scope, region,
+  id, name, ancestral_xing, clan_shi, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
 ) VALUES (
-  ${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlArray(d.altNames)}, ${sqlStr(d.scope)}, ${sqlStr(d.region)},
+  ${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlStr(d.ancestralXing ?? null)}, ${sqlStr(d.clanShi ?? null)}, ${sqlArray(d.altNames)}, ${sqlStr(d.scope)}, ${sqlStr(d.region)},
   ${d.start.year}, ${d.start.month}, ${d.end.year}, ${d.end.month},
   ${d.start.abs}, ${d.end.abs}, ${sqlStr(d.precision)}, ${sqlStr(d.colorToken)}, ${orthodoxFromAbs ?? "NULL"}, NULL,
   ${sqlStr(d.note)}
 )
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
+  ancestral_xing = EXCLUDED.ancestral_xing,
+  clan_shi = EXCLUDED.clan_shi,
   alt_names = EXCLUDED.alt_names,
   start_year = EXCLUDED.start_year,
   start_month = EXCLUDED.start_month,
@@ -952,6 +970,8 @@ const manifest = {
     { label: "三家分晋", url: "https://zh.wikipedia.org/wiki/三家分晋" },
     { label: "周朝诸侯国君主列表", url: "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表" },
     { label: "齐国君主列表", url: "https://zh.wikipedia.org/zh-cn/齐国君主列表" },
+    { label: "田和", url: "https://zh.wikipedia.org/wiki/田和" },
+    { label: "田氏代齐", url: "https://zh.wikipedia.org/wiki/田氏代齐" },
     { label: "秦国君主列表", url: "https://zh.wikipedia.org/zh-cn/秦国君主列表" },
   ],
   notes: [
@@ -960,9 +980,10 @@ const manifest = {
     "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
     "秦国 upsert 已有 qin 行，将始年延至前770年秦襄公，与 qin-han 统一帝国段衔接；清理脚本保留 qin-han 的秦二世、子婴 reign。",
     "各国国君世系取维基百科大陆简体（zh-cn）诸侯君主列表与《史记》年表；按表头读取称号/姓名/在位年份，不用本地繁简转换。",
-    "年精度顺序继位按逾年改元切年（死年归旧王、新王次年起算，见 deathYearSuccession.mjs；用维基原始起年检测，避免孝文王占死后庄襄王不再后移）。维基在位年份常与死年重叠（如秦文公起前766年）；一年短祚、秦灵公/简公/献公未逾年改元、田齐与姜齐并立、曲沃与翼并立不后移。魏惠王称王前后合并为一条在位（前369–前319）。",
+    "年精度顺序继位按逾年改元切年（死年归旧王、新王次年起算，见 deathYearSuccession.mjs；用维基原始起年检测，避免孝文王占死后庄襄王不再后移）。维基在位年份常与死年重叠（如秦文公起前766年）；一年短祚、秦灵公/简公/献公未逾年改元、曲沃与翼并立不后移。魏惠王称王前后合并为一条在位（前369–前319）。",
     "西周早中期无在位年的国君在相邻锚点之间按世系均分时长（不设单条上限），不把整段失考年摊到开国之君身上；均分结果标 start/end_date_confidence=interpolated。",
     "齐太公不用维基齐国表的前1122年（旧克商年），与西周始年（前1046）对齐。",
+    "田氏代齐为顺序接续，不是并立：宣公→康公→田和→侯剡。齐国表田和前404–前384年是田悼子卒后的领袖年；田和称君取条目前391年自立，前386年周安王列为诸侯。康公卒前379年，前391年被放逐后不在齐行续画，在位迄前392年。",
     "卫国人物 id 用 weiguo- 前缀，避免与战国魏 wei-r* 冲突；燕召公用 ji-shi，避免与宋恭帝 zhao-shi 冲突。",
     "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 precision: year。",
     "越国泳道不收夏少康庶子无余及无壬、无瞫：维基诸侯表在无余后「中有十世不明」、无瞫后「中有二十世不明」，无通行王年，不把远祖插值到春秋。有年表自允常；无年表的夫谭仅按允常前窗口插值。王朝起迄取在位首尾（夫谭至无彊前306），楚破越从维基诸侯表前306年，不取旧泳道前334。",

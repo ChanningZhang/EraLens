@@ -1,9 +1,13 @@
 import { claimDetailFacts } from "./claimTracks";
+import { PRE_IMPERIAL_START_YEAR } from "./appellationPolicy";
 import {
+  buildPreQinClanContext,
+  resolvePreQinNameFacts,
   resolveReignDetailFacts,
   resolveReignDetailSubtitle,
   resolveReignPrimaryLabel,
   resolveReignRelatedSubtitle,
+  usesPreQinCardLayout,
 } from "./emperorAppellation";
 import { resolveDynastyColorToken, resolveReignColorToken } from "./dynastyColors";
 import { resolveOrthodoxFromAbs } from "./orthodoxDynasties";
@@ -198,7 +202,14 @@ export function buildEntityDetail(
       colorToken: dynasty
         ? resolveReignColorToken(dynasty, reign)
         : undefined,
-      facts: [...resolveReignDetailFacts(reign), ...claimDetailFacts(reign)],
+      facts: [
+        ...resolveReignDetailFacts(
+          reign,
+          person?.name,
+          buildPreQinClanContext(person, dynasty),
+        ),
+        ...claimDetailFacts(reign),
+      ],
       summary: person?.bio,
       related,
       links: person?.links ?? [],
@@ -209,11 +220,26 @@ export function buildEntityDetail(
     const person = personMap.get(ref.id);
     if (!person) throw new Error(`Person not found: ${ref.id}`);
     const personReigns = store.reigns.filter((r) => r.personId === person.id);
+    const preQinReign = personReigns.find((r) => usesPreQinCardLayout(r));
+    const preQinByBirth =
+      !preQinReign &&
+      person.birth &&
+      person.birth.year < PRE_IMPERIAL_START_YEAR;
+    const preQinDynasty = preQinReign
+      ? dynastyMap.get(preQinReign.dynastyId)
+      : undefined;
     return {
       ref,
       title: person.name,
       subtitle: person.roles.join(" · "),
       facts: [
+        ...(preQinReign || preQinByBirth
+          ? resolvePreQinNameFacts(
+              person.name,
+              buildPreQinClanContext(person, preQinDynasty),
+              preQinReign,
+            )
+          : []),
         ...(person.birth
           ? [{ label: "生", value: `${person.birth.year}年` }]
           : []),
@@ -260,6 +286,7 @@ export function buildEntityDetail(
 
 const PERSON_SEARCH_ALIASES: Record<string, readonly string[]> = {
   "lv-shang": ["姜子牙", "姜太公", "太公"],
+  "ying-zheng": ["赵政"],
 };
 
 function personMatchesSearch(person: Person, q: string): boolean {

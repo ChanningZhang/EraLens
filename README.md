@@ -203,7 +203,9 @@ pnpm db:down      # 停止容器
 
 ## 帝王称谓
 
-卡片主行是 `persons.name`。副行由 `resolveEmperorAppellation` 按在位起始年选择：
+卡片主行默认是 `persons.name`。**始皇帝以前**（`start.year < -221`）主行改为谥号或诸侯称号（不带国名，国名在泳道上），副行才是私名，并去掉姬、姜、嬴等姓前缀（吕尚、熊侣、田氏、三晋的氏保留）。
+
+其余时期副行由 `resolveEmperorAppellation` 按在位起始年选择：
 
 - 唐以前：谥号或诸侯称号
 - 唐至元：庙号优先
@@ -211,7 +213,7 @@ pnpm db:down      # 停止容器
 
 `posthumous_name` / `temple_name` 只存「太宗」「孝文皇帝」，不写「唐太宗」。国名在 `title`。`preferred_appellation` 仅 regnal 例外。
 
-空间不够时：左右排人名+称谓 → 只留人名 → 字溢到行间，**不**为塞字改变在位条宽度。
+空间不够时：左右排主行+副行 → 只留主行 → 字溢到行间，**不**为塞字改变在位条宽度。先秦窄条保「桓公」，不保「小白」。
 
 ## 人物层
 

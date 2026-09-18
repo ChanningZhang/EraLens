@@ -68,6 +68,10 @@ export const DynastyGroupSchema = z.object({
 export const DynastySchema = z.object({
   id: z.string(),
   name: z.string(),
+  /** 该国君主支系之姓（wiki/史料入库）。 */
+  ancestralXing: z.string().optional(),
+  /** 该国君主支系之氏（wiki/史料入库）。 */
+  clanShi: z.string().optional(),
   altNames: z.array(z.string()).default([]),
   scope: ScopeSchema.default("cn"),
   region: z.string().default("east_asia"),
@@ -97,6 +101,10 @@ export const EraNameSchema = z.object({
 export const PersonSchema = z.object({
   id: z.string(),
   name: z.string(),
+  /** 姓 — import-time field from wiki/史料, not inferred at runtime. */
+  ancestralXing: z.string().optional(),
+  /** 氏 — import-time field from wiki/史料, not inferred at runtime. */
+  clanShi: z.string().optional(),
   birth: TimePointSchema.optional(),
   death: TimePointSchema.optional(),
   roles: z.array(z.string()).default([]),

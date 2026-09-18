@@ -48,12 +48,24 @@ describe("applyDeathYearToPredecessor", () => {
 
   it("does not shift concurrent multi-year starts", () => {
     const rulers = [
-      r("齐太公", -404, -384, { dynastyId: "qi-chunqiu", name: "田和" }),
-      r("齐康公", -404, -379, { dynastyId: "qi-chunqiu", name: "姜贷" }),
+      r("曲沃桓叔", -744, -731, { dynastyId: "jin-chunqiu", name: "姬成师" }),
+      r("翼侯", -744, -724, { dynastyId: "jin-chunqiu", name: "姬平" }),
     ];
     applyDeathYearToPredecessor(rulers);
-    assert.equal(rulers[0].start, -404);
-    assert.equal(rulers[1].start, -404);
+    assert.equal(rulers[0].start, -744);
+    assert.equal(rulers[1].start, -744);
+  });
+
+  it("keeps 田和 sequential after 康公 on the year he became 齐君", () => {
+    const rulers = [
+      r("齐宣公", -455, -405, { dynastyId: "qi-chunqiu", name: "姜积" }),
+      r("齐康公", -404, -392, { dynastyId: "qi-chunqiu", name: "姜贷" }),
+      r("齐太公", -391, -384, { dynastyId: "qi-chunqiu", name: "田和" }),
+    ];
+    applyDeathYearToPredecessor(rulers);
+    assert.equal(rulers.find((x) => x.title === "齐康公").start, -404);
+    assert.equal(rulers.find((x) => x.title === "齐康公").end, -392);
+    assert.equal(rulers.find((x) => x.title === "齐太公").start, -391);
   });
 
   it("shifts 庄襄王 off 孝文王's death year using original wiki years", () => {
