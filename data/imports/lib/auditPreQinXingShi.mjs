@@ -7,6 +7,7 @@
 import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { buildPreQinClanContext, resolvePreQinXingShi } from "./preQinClanContext.mjs";
 import { rulersByDynasty } from "../chunqiu-zhanguo/rulers.mjs";
 import { FEUDAL_DYNASTY_CLAN } from "./feudalClanMetadata.mjs";
 
@@ -15,13 +16,6 @@ const PRE_IMPERIAL_START_YEAR = -221;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const importsRoot = path.resolve(__dirname, "..");
 
-function resolvePreQinXingShi(clan) {
-  const xing = clan?.personAncestralXing ?? clan?.dynastyAncestralXing ?? undefined;
-  const shi = clan?.personClanShi ?? clan?.dynastyClanShi ?? undefined;
-  if (!xing && !shi) return {};
-  return { ...(xing ? { xing } : {}), ...(shi ? { shi } : {}) };
-}
-
 function parsePersonsFromSql(content) {
   const persons = new Map();
   const blocks = content.split(/(?=INSERT INTO persons)/i);
@@ -29,7 +23,7 @@ function parsePersonsFromSql(content) {
     if (!/^INSERT INTO persons/i.test(block)) continue;
     if (!block.includes("ancestral_xing")) continue;
     const m = block.match(
-      /VALUES\s*\(\s*'([^']+)',\s*'([^']*)',\s*(?:'([^']*)'|NULL),\s*(?:'([^']*)'|NULL)/s,
+      /VALUES\s*\(\s*'([^']+)',\s*'([^']*)',\s*(?:ARRAY\[[^\]]*\]|[^,]+),\s*(?:'([^']*)'|NULL),\s*(?:'([^']*)'|NULL)/s,
     );
     if (m) {
       persons.set(m[1], {
@@ -37,13 +31,17 @@ function parsePersonsFromSql(content) {
         ancestralXing: m[3] || null,
         clanShi: m[4] || null,
       });
+      continue;
     }
-  }
-  const legacyRe =
-    /INSERT INTO persons \(id, name[^)]*\)\s*\nVALUES \('([^']+)', '([^']+)'(?:, (-?\d+), (-?\d+))?(?:, (-?\d+), (-?\d+))?/g;
-  for (const m of content.matchAll(legacyRe)) {
-    if (!persons.has(m[1])) {
-      persons.set(m[1], { name: m[2], ancestralXing: null, clanShi: null });
+    const legacy = block.match(
+      /VALUES\s*\(\s*'([^']+)',\s*'([^']*)',\s*(?:'([^']*)'|NULL),\s*(?:'([^']*)'|NULL)/s,
+    );
+    if (legacy) {
+      persons.set(legacy[1], {
+        name: legacy[2],
+        ancestralXing: legacy[3] || null,
+        clanShi: legacy[4] || null,
+      });
     }
   }
   return persons;
@@ -106,19 +104,8 @@ function loadSqlCorpus() {
   return { persons, dynasties, reigns };
 }
 
-function buildClanContext(personId, dynastyId, persons, dynasties) {
-  const person = persons.get(personId);
-  const dynasty = dynasties.get(dynastyId);
-  return {
-    personAncestralXing: person?.ancestralXing,
-    personClanShi: person?.clanShi,
-    dynastyAncestralXing: dynasty?.ancestralXing,
-    dynastyClanShi: dynasty?.clanShi,
-  };
-}
-
 function auditRow(clan) {
-  const { xing, shi } = resolvePreQinXingShi(clan);
+  const { xing, shi } = resolvePreQinXingShi(null, clan);
   const missing = [];
   if (!xing && !shi) missing.push("姓/氏");
   else {
@@ -151,11 +138,18 @@ function main() {
       const key = `${ruler.personId}:${dynastyId}`;
       if (seenReign.has(key)) continue;
       seenReign.add(key);
-      const name = ruler.personName ?? persons.get(ruler.personId)?.name;
-      const clan = buildClanContext(ruler.personId, dynastyId, persons, dynasties);
+      const person = persons.get(ruler.personId);
+      const dynasty = dynasties.get(dynastyId);
+      const clan = buildPreQinClanContext(person, dynasty);
       const gaps = auditRow(clan);
       if (gaps.length) {
-        missing.push({ dynastyId, title: ruler.title, personId: ruler.personId, personName: name, gaps });
+        missing.push({
+          dynastyId,
+          title: ruler.title,
+          personId: ruler.personId,
+          personName: ruler.personName ?? person?.name,
+          gaps,
+        });
       }
     }
   }
@@ -166,18 +160,18 @@ function main() {
     if (seenReign.has(key)) continue;
     seenReign.add(key);
     const person = persons.get(reign.personId);
-      const name = person?.name;
-      const clan = buildClanContext(reign.personId, reign.dynastyId, persons, dynasties);
-      const gaps = auditRow(clan);
-      if (gaps.length) {
-        missing.push({
-          dynastyId: reign.dynastyId,
-          title: reign.title,
-          personId: reign.personId,
-          personName: name,
-          gaps,
-        });
-      }
+    const dynasty = dynasties.get(reign.dynastyId);
+    const clan = buildPreQinClanContext(person, dynasty);
+    const gaps = auditRow(clan);
+    if (gaps.length) {
+      missing.push({
+        dynastyId: reign.dynastyId,
+        title: reign.title,
+        personId: reign.personId,
+        personName: person?.name,
+        gaps,
+      });
+    }
   }
 
   console.log("=== Dynasty 姓/氏 column gaps ===");

@@ -16,6 +16,7 @@ import {
   TimelineSliceSchema,
   type Dynasty,
   type DynastyGroup,
+  type DynastyLaneGroup,
   type EntityDetail,
   type EntityRef,
   type Event,
@@ -41,6 +42,7 @@ export type TimelineFilterQuery = {
 export type TimelineDataStore = {
   dynasties: Dynasty[];
   dynastyGroups?: DynastyGroup[];
+  dynastyLaneGroups?: DynastyLaneGroup[];
   reigns: Reign[];
   persons: Person[];
   events: Event[];
@@ -287,15 +289,9 @@ export function buildEntityDetail(
   };
 }
 
-const PERSON_SEARCH_ALIASES: Record<string, readonly string[]> = {
-  "lv-shang": ["姜子牙", "姜太公", "太公"],
-  "ying-zheng": ["赵政"],
-};
-
 function personMatchesSearch(person: Person, q: string): boolean {
   if (person.name.toLowerCase().includes(q)) return true;
-  const aliases = PERSON_SEARCH_ALIASES[person.id];
-  return aliases?.some((alias) => alias.toLowerCase().includes(q)) ?? false;
+  return person.altNames?.some((alias) => alias.toLowerCase().includes(q)) ?? false;
 }
 
 export function searchEntities(store: TimelineDataStore, term: string): SearchHit[] {

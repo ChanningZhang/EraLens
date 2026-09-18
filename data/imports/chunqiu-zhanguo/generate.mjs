@@ -11,7 +11,7 @@ import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { applyFeudalClanMetadata } from "../lib/applyFeudalClanMetadata.mjs";
 import { ORTHODOX_FROM_START } from "../lib/orthodoxDynasties.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
-import { normalizeYearPrecisionAt } from "../lib/sqlHelpers.mjs";
+import { normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -183,6 +183,7 @@ for (const p of [...rulerPersons, ...EXTRA_PERSONS]) {
 
 const PERSON_DETAIL_OVERRIDES = {
   "lv-shang": {
+    altNames: ["姜子牙", "姜太公", "太公"],
     roles: ["君主", "军事家", "政治家"],
     bio: "姜太公（姜子牙），辅武王克商，封于齐。",
     links: wiki("姜子牙"),
@@ -701,27 +702,6 @@ const relations = [
 
 // ── SQL generation ───────────────────────────────────────────────────────────
 
-function personSql(p) {
-  return `INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES (
-  ${sqlStr(p.id)}, ${sqlStr(p.name)},
-  ${sqlStr(p.ancestralXing ?? null)}, ${sqlStr(p.clanShi ?? null)},
-  ${p.birth?.year ?? "NULL"}, ${p.birth?.month ?? "NULL"},
-  ${p.death?.year ?? "NULL"}, ${p.death?.month ?? "NULL"},
-  ${sqlArray(p.roles)}, ${sqlStr(p.bio)}, ${sqlJson(p.links)}
-)
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  ancestral_xing = EXCLUDED.ancestral_xing,
-  clan_shi = EXCLUDED.clan_shi,
-  birth_year = EXCLUDED.birth_year,
-  birth_month = EXCLUDED.birth_month,
-  death_year = EXCLUDED.death_year,
-  death_month = EXCLUDED.death_month,
-  roles = EXCLUDED.roles,
-  bio = EXCLUDED.bio,
-  links = EXCLUDED.links;`;
-}
 
 function dynastySql(d) {
   const orthodoxFromAbs =

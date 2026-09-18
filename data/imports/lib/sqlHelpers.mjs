@@ -49,8 +49,8 @@ export function wiki(title) {
   return [{ label: "维基百科", url: `https://zh.wikipedia.org/wiki/${title}` }];
 }
 
-export function person(id, name, roles, bio, wikiTitle, birth = null, death = null) {
-  return { id, name, roles, bio, links: wiki(wikiTitle), birth, death };
+export function person(id, name, roles, bio, wikiTitle, birth = null, death = null, altNames = []) {
+  return { id, name, roles, bio, links: wiki(wikiTitle), birth, death, altNames };
 }
 
 export function reign({
@@ -160,9 +160,15 @@ export function successionPairs(list) {
 }
 
 export function personSql(p) {
-  return `INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES (${sqlStr(p.id)}, ${sqlStr(p.name)}, ${sqlStr(p.ancestralXing ?? null)}, ${sqlStr(p.clanShi ?? null)}, ${p.birth?.year ?? "NULL"}, ${p.birth?.month ?? "NULL"}, ${p.death?.year ?? "NULL"}, ${p.death?.month ?? "NULL"}, ${sqlArray(p.roles)}, ${sqlStr(p.bio)}, ${sqlJson(p.links)})
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;`;
+  return `INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES (${sqlStr(p.id)}, ${sqlStr(p.name)}, ${sqlArray(p.altNames ?? [])}, ${sqlStr(p.ancestralXing ?? null)}, ${sqlStr(p.clanShi ?? null)}, ${p.birth?.year ?? "NULL"}, ${p.birth?.month ?? "NULL"}, ${p.death?.year ?? "NULL"}, ${p.death?.month ?? "NULL"}, ${sqlArray(p.roles)}, ${sqlStr(p.bio)}, ${sqlJson(p.links)})
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;`;
+}
+
+export function dynastyLaneGroupSql(group) {
+  return `INSERT INTO dynasty_lane_groups (id, primary_dynasty_id, phase_dynasty_ids, lane_order_start_abs, lane_order_end_abs)
+VALUES (${sqlStr(group.id)}, ${sqlStr(group.primaryDynastyId)}, ${sqlArray(group.phaseDynastyIds)}, ${group.laneOrderStartAbs}, ${group.laneOrderEndAbs})
+ON CONFLICT (id) DO UPDATE SET primary_dynasty_id = EXCLUDED.primary_dynasty_id, phase_dynasty_ids = EXCLUDED.phase_dynasty_ids, lane_order_start_abs = EXCLUDED.lane_order_start_abs, lane_order_end_abs = EXCLUDED.lane_order_end_abs;`;
 }
 
 export function dynastyGroupSql(g) {

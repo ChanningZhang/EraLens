@@ -10,7 +10,7 @@ import { resolveOrthodoxEndAbs, resolveOrthodoxFromAbs } from "../lib/orthodoxDy
 import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
 import { drDay } from "../lib/reignDateHelpers.mjs";
 import { reignSql } from "../lib/reignSql.mjs";
-import { normalizeYearPrecisionAt } from "../lib/sqlHelpers.mjs";
+import { normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -587,11 +587,6 @@ relations.push(
 
 // ── SQL helpers ─────────────────────────────────────────────────────────────
 
-function personSql(p) {
-  return `INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES (${sqlStr(p.id)}, ${sqlStr(p.name)}, ${p.birth?.year ?? "NULL"}, ${p.birth?.month ?? "NULL"}, ${p.death?.year ?? "NULL"}, ${p.death?.month ?? "NULL"}, ${sqlArray(p.roles)}, ${sqlStr(p.bio)}, ${sqlJson(p.links)})
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;`;
-}
 
 function dynastyGroupSql(g) {
   return `INSERT INTO dynasty_groups (id, name, alt_names, scope, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, note)

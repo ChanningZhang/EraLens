@@ -1,0 +1,10 @@
+{
+  "slug": "dynasty-lane-groups",
+  "window": {
+    "startYear": -9999,
+    "startMonth": 1,
+    "endYear": 9999,
+    "endMonth": 12
+  },
+  "notes": "Timeline lane merge configuration; imported before historical packages."
+}

@@ -3,35 +3,35 @@
 BEGIN;
 
 -- persons
-INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES ('zhao-tuo', '赵佗', -240, 1, -137, 1, ARRAY['君主'], '南越开国君主，秦将，秦亡后据岭南自立，前203年建南越国。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/赵佗"}]'::jsonb)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
-INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES ('zhao-mo', '赵眜', NULL, NULL, NULL, NULL, ARRAY['君主'], '南越文王，赵佗孙，在位期间与汉朝修好。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/赵眜"}]'::jsonb)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
-INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES ('zhao-yingqi', '赵婴齐', NULL, NULL, NULL, NULL, ARRAY['君主'], '南越明王，赵眜之子，归汉入朝，卒于长安。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/赵婴齐"}]'::jsonb)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
-INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES ('zhao-xing', '赵兴', NULL, NULL, NULL, NULL, ARRAY['君主'], '南越末王之一，赵婴齐之子，年幼即位，为吕嘉所杀。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/赵兴"}]'::jsonb)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
-INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES ('zhao-jiande', '赵建德', NULL, NULL, NULL, NULL, ARRAY['君主'], '南越末代君主，吕嘉所立，前111年汉军灭南越时被俘。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/赵建德"}]'::jsonb)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
-INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES ('liu-panzi', '刘盆子', NULL, NULL, NULL, NULL, ARRAY['君主'], '赤眉军所立皇帝，西汉末被立为帝，后降刘秀。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/刘盆子"}]'::jsonb)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
-INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES ('fan-chong', '樊崇', NULL, NULL, NULL, NULL, ARRAY['起义领袖'], '赤眉军首领，拥立刘盆子称帝，后降刘秀。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/樊崇"}]'::jsonb)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('zhao-tuo', '赵佗', ARRAY[]::text[], NULL, NULL, -240, 1, -137, 1, ARRAY['君主'], '南越开国君主，秦将，秦亡后据岭南自立，前203年建南越国。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/赵佗"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('zhao-mo', '赵眜', ARRAY[]::text[], NULL, NULL, NULL, NULL, NULL, NULL, ARRAY['君主'], '南越文王，赵佗孙，在位期间与汉朝修好。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/赵眜"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('zhao-yingqi', '赵婴齐', ARRAY[]::text[], NULL, NULL, NULL, NULL, NULL, NULL, ARRAY['君主'], '南越明王，赵眜之子，归汉入朝，卒于长安。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/赵婴齐"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('zhao-xing', '赵兴', ARRAY[]::text[], NULL, NULL, NULL, NULL, NULL, NULL, ARRAY['君主'], '南越末王之一，赵婴齐之子，年幼即位，为吕嘉所杀。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/赵兴"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('zhao-jiande', '赵建德', ARRAY[]::text[], NULL, NULL, NULL, NULL, NULL, NULL, ARRAY['君主'], '南越末代君主，吕嘉所立，前111年汉军灭南越时被俘。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/赵建德"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('liu-panzi', '刘盆子', ARRAY[]::text[], NULL, NULL, NULL, NULL, NULL, NULL, ARRAY['君主'], '赤眉军所立皇帝，西汉末被立为帝，后降刘秀。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/刘盆子"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('fan-chong', '樊崇', ARRAY[]::text[], NULL, NULL, NULL, NULL, NULL, NULL, ARRAY['起义领袖'], '赤眉军首领，拥立刘盆子称帝，后降刘秀。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/樊崇"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
 
 -- dynasties
-INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs, parent_id, group_id, note)
-VALUES ('nanyue', '南越', ARRAY['南越国'], 'cn', 'east_asia', -203, 1, -111, 1, -2424, -1320, 'year', 'ochre', NULL, NULL, NULL, NULL, '赵佗据岭南自立，前203年建国；前111年汉武帝遣军灭南越，设九郡。')
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, color_token = EXCLUDED.color_token, orthodox_from_abs = EXCLUDED.orthodox_from_abs, orthodox_end_abs = EXCLUDED.orthodox_end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
-INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs, parent_id, group_id, note)
-VALUES ('chimei', '赤眉', ARRAY['赤眉军'], 'cn', 'east_asia', 23, 1, 27, 1, 276, 324, 'year', 'indigo', NULL, NULL, NULL, NULL, '新莽末赤眉起义军政权，樊崇为首，25年立刘盆子为帝，27年降刘秀。')
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, color_token = EXCLUDED.color_token, orthodox_from_abs = EXCLUDED.orthodox_from_abs, orthodox_end_abs = EXCLUDED.orthodox_end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
+INSERT INTO dynasties (id, name, ancestral_xing, clan_shi, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs, parent_id, group_id, note)
+VALUES ('nanyue', '南越', NULL, NULL, ARRAY['南越国'], 'cn', 'east_asia', -203, 1, -111, 1, -2424, -1320, 'year', 'ochre', NULL, NULL, NULL, NULL, '赵佗据岭南自立，前203年建国；前111年汉武帝遣军灭南越，设九郡。')
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, color_token = EXCLUDED.color_token, orthodox_from_abs = EXCLUDED.orthodox_from_abs, orthodox_end_abs = EXCLUDED.orthodox_end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
+INSERT INTO dynasties (id, name, ancestral_xing, clan_shi, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs, parent_id, group_id, note)
+VALUES ('chimei', '赤眉', NULL, NULL, ARRAY['赤眉军'], 'cn', 'east_asia', 23, 1, 27, 1, 276, 324, 'year', 'indigo', NULL, NULL, NULL, NULL, '新莽末赤眉起义军政权，樊崇为首，25年立刘盆子为帝，27年降刘秀。')
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, color_token = EXCLUDED.color_token, orthodox_from_abs = EXCLUDED.orthodox_from_abs, orthodox_end_abs = EXCLUDED.orthodox_end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 
 -- reigns
 INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence)

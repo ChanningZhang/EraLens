@@ -16,7 +16,12 @@ import {
 
 describe("orthodoxDynasties", () => {
   it("marks qin as orthodox only after unification", () => {
-    const qin = { id: "qin", startAbs: absMonth(-770) };
+    const qin = {
+      id: "qin",
+      startAbs: absMonth(-770),
+      endAbs: absMonth(-206),
+      orthodoxFromAbs: ORTHODOX_FROM_ABS.qin,
+    };
     expect(resolveOrthodoxFromAbs(qin)).toBe(ORTHODOX_FROM_ABS.qin);
     expect(isOrthodoxAt(qin, absMonth(-770))).toBe(false);
     expect(isOrthodoxAt(qin, absMonth(-221))).toBe(true);
@@ -27,6 +32,7 @@ describe("orthodoxDynasties", () => {
       id: "qing",
       startAbs: absMonth(1616, 2),
       endAbs: absMonth(1912, 2),
+      orthodoxFromAbs: ORTHODOX_FROM_ABS.qing,
     };
     expect(resolveOrthodoxFromAbs(qing)).toBe(ORTHODOX_FROM_ABS.qing);
     expect(isOrthodoxAt(qing, absMonth(1636))).toBe(false);
@@ -63,7 +69,12 @@ describe("orthodoxDynasties", () => {
   });
 
   it("marks xia as orthodox from dynasty start", () => {
-    const xia = { id: "xia", startAbs: absMonth(-2070) };
+    const xia = {
+      id: "xia",
+      startAbs: absMonth(-2070),
+      endAbs: absMonth(-1600),
+      orthodoxFromAbs: absMonth(-2070),
+    };
     expect(resolveOrthodoxFromAbs(xia)).toBe(xia.startAbs);
     expect(isOrthodoxAt(xia, xia.startAbs)).toBe(true);
   });
@@ -78,6 +89,7 @@ describe("orthodoxDynasties", () => {
       id: "qin",
       startAbs: absMonth(-770),
       endAbs: absMonth(-206),
+      orthodoxFromAbs: ORTHODOX_FROM_ABS.qin,
     };
     expect(resolveOrthodoxSpan(qin)).toEqual({
       startAbs: ORTHODOX_FROM_ABS.qin,
@@ -90,6 +102,7 @@ describe("orthodoxDynasties", () => {
       id: "qin",
       startAbs: absMonth(-770),
       endAbs: absMonth(-206),
+      orthodoxFromAbs: ORTHODOX_FROM_ABS.qin,
     };
     const yingZhengKing = {
       startAbs: absMonth(-247),
@@ -111,6 +124,7 @@ describe("orthodoxDynasties", () => {
       id: "jin-west",
       startAbs: absMonth(266, 2),
       endAbs: absMonth(316, 4),
+      orthodoxFromAbs: absMonth(266, 2),
     };
     expect(isOrthodoxAt(jinWest, absMonth(266, 1))).toBe(false);
     expect(
@@ -145,6 +159,7 @@ describe("orthodoxDynasties", () => {
       id: "han-west",
       startAbs: absMonth(-209, 9),
       endAbs: absMonth(8),
+      orthodoxFromAbs: ORTHODOX_FROM_ABS["han-west"],
     };
     expect(resolveOrthodoxFromAbs(hanWest)).toBe(ORTHODOX_FROM_ABS["han-west"]);
     expect(isOrthodoxAt(hanWest, absMonth(-209, 9))).toBe(false);
@@ -160,6 +175,8 @@ describe("orthodoxDynasties", () => {
       id: "sui",
       startAbs: absMonth(581),
       endAbs: absMonth(618),
+      orthodoxFromAbs: absMonth(581),
+      orthodoxEndAbs: ORTHODOX_END_ABS.sui,
     };
     const yangGuang = { startAbs: absMonth(604), endAbs: absMonth(618) };
     const yangHao = { startAbs: absMonth(618), endAbs: absMonth(618) };
@@ -174,7 +191,12 @@ describe("orthodoxDynasties", () => {
   });
 
   it("marks roc as orthodox from dynasty start", () => {
-    const roc = { id: "roc", startAbs: absMonth(1912, 1) };
+    const roc = {
+      id: "roc",
+      startAbs: absMonth(1912, 1),
+      endAbs: absMonth(1949, 12),
+      orthodoxFromAbs: absMonth(1912, 1),
+    };
     expect(resolveOrthodoxFromAbs(roc)).toBe(roc.startAbs);
     expect(isOrthodoxAt(roc, absMonth(1912, 1))).toBe(true);
     expect(isOrthodoxAt(roc, absMonth(1911))).toBe(false);
@@ -185,6 +207,8 @@ describe("orthodoxDynasties", () => {
       id: "song-south",
       startAbs: absMonth(1127),
       endAbs: absMonth(1279),
+      orthodoxFromAbs: absMonth(1127),
+      orthodoxEndAbs: ORTHODOX_END_ABS["song-south"],
     };
     expect(resolveOrthodoxSpan(songSouth)).toEqual({
       startAbs: songSouth.startAbs,
@@ -200,6 +224,8 @@ describe("orthodoxDynasties", () => {
       id: "yuan",
       startAbs: absMonth(1271, 12),
       endAbs: absMonth(1388),
+      orthodoxFromAbs: ORTHODOX_FROM_ABS.yuan,
+      orthodoxEndAbs: ORTHODOX_END_ABS.yuan,
     };
     expect(resolveOrthodoxFromAbs(yuan)).toBe(ORTHODOX_FROM_ABS.yuan);
     expect(resolveOrthodoxSpan(yuan)).toEqual({
@@ -258,6 +284,7 @@ describe("orthodoxDynasties", () => {
       id: "zhou-wu",
       startAbs: absMonth(690, 10),
       endAbs: absMonth(705, 1),
+      orthodoxFromAbs: absMonth(690, 10),
     };
     expect(resolveOrthodoxFromAbs(zhouWu)).toBe(zhouWu.startAbs);
     expect(isOrthodoxAt(zhouWu, absMonth(690, 9))).toBe(false);
@@ -270,9 +297,22 @@ describe("orthodoxDynasties", () => {
   it("does not mark split-period dynasties as orthodox", () => {
     const songLiu = { id: "song-liu", startAbs: absMonth(420, 7) };
     const weiNorth = { id: "wei-north", startAbs: absMonth(386) };
-    const jinEast = { id: "jin-east", startAbs: absMonth(317) };
-    const songNorth = { id: "song-north", startAbs: absMonth(960) };
-    const sui = { id: "sui", startAbs: absMonth(581) };
+    const jinEast = {
+      id: "jin-east",
+      startAbs: absMonth(317),
+      orthodoxFromAbs: absMonth(317),
+    };
+    const songNorth = {
+      id: "song-north",
+      startAbs: absMonth(960),
+      orthodoxFromAbs: absMonth(960),
+    };
+    const sui = {
+      id: "sui",
+      startAbs: absMonth(581),
+      orthodoxFromAbs: absMonth(581),
+      orthodoxEndAbs: ORTHODOX_END_ABS.sui,
+    };
 
     expect(resolveOrthodoxFromAbs(songLiu)).toBeUndefined();
     expect(resolveOrthodoxFromAbs(weiNorth)).toBeUndefined();
@@ -284,7 +324,11 @@ describe("orthodoxDynasties", () => {
   it("does not mark xin or gengshi interregnums as orthodox", () => {
     const xin = { id: "xin", startAbs: absMonth(9, 1) };
     const gengshi = { id: "han-gengshi", startAbs: absMonth(23, 1) };
-    const hanEast = { id: "han-east", startAbs: absMonth(25, 8) };
+    const hanEast = {
+      id: "han-east",
+      startAbs: absMonth(25, 8),
+      orthodoxFromAbs: absMonth(25, 8),
+    };
 
     expect(resolveOrthodoxFromAbs(xin)).toBeUndefined();
     expect(resolveOrthodoxFromAbs(gengshi)).toBeUndefined();
@@ -297,7 +341,9 @@ describe("resolveDynastyColorToken orthodox display", () => {
     const qin = {
       id: "qin",
       startAbs: absMonth(-770),
+      endAbs: absMonth(-206),
       colorToken: "ochre" as const,
+      orthodoxFromAbs: ORTHODOX_FROM_ABS.qin,
     };
     expect(resolveDynastyColorToken(qin, absMonth(-500))).toBe("ochre");
     expect(resolveDynastyColorToken(qin, absMonth(-221))).toBe(ORTHODOX_COLOR_TOKEN);

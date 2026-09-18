@@ -25,6 +25,7 @@ TRUNCATE TABLE
   events,
   reigns,
   dynasties,
+  dynasty_lane_groups,
   persons
 RESTART IDENTITY CASCADE;
 `;

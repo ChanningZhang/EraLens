@@ -161,7 +161,7 @@ pnpm db:down      # 停止容器
 
 ### 相续泳道合并
 
-`dynastyLaneGroups.ts` 把前后相续的政权压成一行，左侧冻结名随**舞台中线**切换，例如：
+`dynasty_lane_groups` 表（包 `data/imports/dynasty-lane-groups/`）把前后相续的政权压成一行；运行时 `dynastyLaneGroups.ts` 只读 API 下发的配置，不再硬编码组列表。左侧冻结名随**舞台中线**切换，例如：
 
 - 西周 → 东周
 - 蒙古帝国 → 元（金色正统仍按元的 `orthodox_*` 截断，北元段不上金）
@@ -191,7 +191,7 @@ pnpm db:down      # 停止容器
 
 金色是运行时覆盖，王朝行仍保留 `color_token` 本色（色板含 cinnabar、mineral、ochre、indigo、moss、wisteria、grape、stone、jade、coral、plum、azure、amber、clay、sage、slate）。`gold` 不作为入库本色。
 
-规则：`packages/shared/src/orthodoxDynasties.ts`。库字段 `orthodox_from_abs` / `orthodox_end_abs` 可覆盖。并立 track 不上金。
+**运行时**只读库字段 `orthodox_from_abs` / `orthodox_end_abs`（`packages/shared/src/orthodoxDynasties.ts` 不再用内置表 fallback）。**导入**时用 `data/imports/lib/orthodoxDynasties.mjs` 烘焙到各包 `dynasties` INSERT。并立 track 不上金；延迟起算的 12 月宽限（如清入关）仍是 runtime 抽象规则。
 
 | 类型 | 例子 |
 |------|------|
@@ -211,7 +211,9 @@ pnpm db:down      # 停止容器
 - 唐至元：庙号优先
 - 明清：年号优先（英宗前后两段年号不同则分段显示）
 
-`posthumous_name` / `temple_name` 只存「太宗」「孝文皇帝」，不写「唐太宗」。国名在 `title`。`preferred_appellation` 仅 regnal 例外。
+`posthumous_name` / `temple_name` 只存「太宗」「孝文皇帝」，不写「唐太宗」。国名在 `title`。`preferred_appellation` 仅 regnal 例外。618 以后庙号/谥号须在 generate 显式写入字段；运行时不从 `title` 推测。史称（少帝/末帝/后主等）留在 `title`，不进 `posthumous_name`。
+
+人物搜索别名写入 `persons.alt_names`（如 `lv-shang` → `姜子牙`），不再维护 runtime 硬编码表。
 
 空间不够时：左右排主行+副行 → 只留主行 → 字溢到行间，**不**为塞字改变在位条宽度。先秦窄条保「桓公」，不保「小白」。
 

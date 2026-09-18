@@ -52,21 +52,16 @@ export type OrthodoxDynasty = {
   orthodoxEndAbs?: number;
 };
 
+/** Runtime reads DB columns only; import uses orthodoxDynasties.mjs to bake values. */
 export function resolveOrthodoxFromAbs(dynasty: OrthodoxDynasty): number | undefined {
-  if (dynasty.orthodoxFromAbs != null) return dynasty.orthodoxFromAbs;
-  const explicit = ORTHODOX_FROM_ABS[dynasty.id];
-  if (explicit != null) return explicit;
-  if (ORTHODOX_FROM_START.has(dynasty.id)) return dynasty.startAbs;
-  return undefined;
+  return dynasty.orthodoxFromAbs ?? undefined;
 }
 
 export function resolveOrthodoxEndAbs(
   dynasty: OrthodoxDynasty & { endAbs: number },
 ): number | undefined {
   if (dynasty.orthodoxEndAbs != null) return dynasty.orthodoxEndAbs;
-  const explicit = ORTHODOX_END_ABS[dynasty.id];
-  if (explicit != null) return explicit;
-  if (resolveOrthodoxFromAbs(dynasty) == null) return undefined;
+  if (dynasty.orthodoxFromAbs == null) return undefined;
   return dynasty.endAbs;
 }
 

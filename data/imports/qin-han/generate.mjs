@@ -8,7 +8,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
-import { reignSql, normalizeYearPrecisionAt } from "../lib/sqlHelpers.mjs";
+import { dynastySql, normalizeYearPrecisionAt, personSql, reignSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -37,7 +37,7 @@ function ym(year, month = 1) {
 const wiki = (title) => [{ label: "维基百科", url: `https://zh.wikipedia.org/wiki/${title}` }];
 
 const persons = [
-  { id: "ying-zheng", name: "嬴政", birth: ym(-259), death: ym(-210), roles: ["皇帝"], bio: "秦始皇帝，灭六国统一天下，建立中国首个大一统中央集权帝国。", links: wiki("秦始皇") },
+  { id: "ying-zheng", name: "嬴政", altNames: ["赵政"], birth: ym(-259), death: ym(-210), roles: ["皇帝"], bio: "秦始皇帝，灭六国统一天下，建立中国首个大一统中央集权帝国。", links: wiki("秦始皇") },
   { id: "ying-huhai", name: "胡亥", roles: ["皇帝"], bio: "秦二世皇帝，赵高矫诏即位，秦政益暴，终致天下反叛。", links: wiki("秦二世") },
   { id: "ying-ziying", name: "子婴", roles: ["君主"], bio: "秦末秦王，赵高废二世后立之，刘邦入关后投降，秦朝终结。", links: wiki("秦王子婴") },
   { id: "li-si", name: "李斯", roles: ["政治家"], bio: "秦相，助嬴政统一，推行郡县、书同文，后因赵高陷害被诛。", links: wiki("李斯") },
@@ -913,49 +913,6 @@ relations.push(
   { id: "rel-kunyang-liu-xiu", fromRef: "event:kunyang-battle", toRef: "person:liu-xiu", kind: "battle" },
 );
 
-function personSql(p) {
-  return `INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES (
-  ${sqlStr(p.id)}, ${sqlStr(p.name)},
-  ${p.birth?.year ?? "NULL"}, ${p.birth?.month ?? "NULL"},
-  ${p.death?.year ?? "NULL"}, ${p.death?.month ?? "NULL"},
-  ${sqlArray(p.roles)}, ${sqlStr(p.bio)}, ${sqlJson(p.links)}
-)
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  birth_year = EXCLUDED.birth_year,
-  birth_month = EXCLUDED.birth_month,
-  death_year = EXCLUDED.death_year,
-  death_month = EXCLUDED.death_month,
-  roles = EXCLUDED.roles,
-  bio = EXCLUDED.bio,
-  links = EXCLUDED.links;`;
-}
-
-function dynastySql(d) {
-  return `INSERT INTO dynasties (
-  id, name, alt_names, scope, region,
-  start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
-) VALUES (
-  ${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlArray(d.altNames)}, ${sqlStr(d.scope)}, ${sqlStr(d.region)},
-  ${d.start.year}, ${d.start.month}, ${d.end.year}, ${d.end.month},
-  ${d.start.abs}, ${d.end.abs}, ${sqlStr(d.precision)}, ${sqlStr(d.colorToken)}, NULL,
-  ${sqlStr(d.note)}
-)
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  alt_names = EXCLUDED.alt_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
-  note = EXCLUDED.note;`;
-}
 
 function eraNameSql(e) {
   return `INSERT INTO era_names (reign_id, name, start_year, start_month, end_year, end_month, start_abs, end_abs, sort_order)

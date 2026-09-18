@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 import { applyFeudalClanMetadata } from "../lib/applyFeudalClanMetadata.mjs";
 import { reignSql } from "../lib/reignSql.mjs";
-import { normalizeYearPrecisionAt } from "../lib/sqlHelpers.mjs";
+import { dynastySql, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 import { preQinRegnalCardName } from "../lib/preQinCardAppellation.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -873,54 +873,6 @@ relations.push(
   { id: "rel-chengpu-chonger", fromRef: "event:chengpu", toRef: "person:ji-chonger", kind: "battle" },
 );
 
-function personSql(p) {
-  return `INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES (
-  ${sqlStr(p.id)}, ${sqlStr(p.name)},
-  ${sqlStr(p.ancestralXing ?? null)}, ${sqlStr(p.clanShi ?? null)},
-  ${p.birth?.year ?? "NULL"}, ${p.birth?.month ?? "NULL"},
-  ${p.death?.year ?? "NULL"}, ${p.death?.month ?? "NULL"},
-  ${sqlArray(p.roles)}, ${sqlStr(p.bio)}, ${sqlJson(p.links)}
-)
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  ancestral_xing = EXCLUDED.ancestral_xing,
-  clan_shi = EXCLUDED.clan_shi,
-  birth_year = EXCLUDED.birth_year,
-  birth_month = EXCLUDED.birth_month,
-  death_year = EXCLUDED.death_year,
-  death_month = EXCLUDED.death_month,
-  roles = EXCLUDED.roles,
-  bio = EXCLUDED.bio,
-  links = EXCLUDED.links;`;
-}
-
-function dynastySql(d) {
-  return `INSERT INTO dynasties (
-  id, name, ancestral_xing, clan_shi, alt_names, scope, region,
-  start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
-) VALUES (
-  ${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlStr(d.ancestralXing ?? null)}, ${sqlStr(d.clanShi ?? null)}, ${sqlArray(d.altNames)}, ${sqlStr(d.scope)}, ${sqlStr(d.region)},
-  ${d.start.year}, ${d.start.month}, ${d.end.year}, ${d.end.month},
-  ${d.start.abs}, ${d.end.abs}, ${sqlStr(d.precision)}, ${sqlStr(d.colorToken)}, NULL,
-  ${sqlStr(d.note)}
-)
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  ancestral_xing = EXCLUDED.ancestral_xing,
-  clan_shi = EXCLUDED.clan_shi,
-  alt_names = EXCLUDED.alt_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
-  note = EXCLUDED.note;`;
-}
 
 function eventSql(e) {
   const cols = [

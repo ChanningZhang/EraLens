@@ -39,7 +39,7 @@
 - **称谓**：`resolveEmperorAppellation` 按在位起始年——唐以前偏谥号/称号，唐至元偏庙号，明清偏年号。谥号只读 `posthumous_name`（史称如少帝/末帝/后主不得写入该字段）；庙号/年号同理读正规字段，运行时不从 `title` 推测。`preferred_appellation` 只用于 regnal 例外（先秦称号、秦襄公、西楚霸王等），不要为「默认该显示庙号」去写 preferred。先秦（始皇帝以前）卡片主行用入库字段，副行私名靠 `ancestral_xing` / `clan_shi` 去姓，不靠运行时国名表或姓氏表。
 - **卡片**：宽度由在位时长 × `pxPerMonth` 决定，不要为了塞字而拉宽/缩小条。字排不下时改字号或把字写到行空隙（`wrap` / `below`），不改条的时间几何。
 - **并立**：`claim_track` 分行，高度为正常行的 2/3，虚线描边 + 浅填，互不裁切。
-- **相续泳道合并**（`dynastyLaneGroups`）：西周/东周、蒙古/元、吴政权/明/南明等压成一行；左侧冻结名由泳道**中线**所在相位切换，不是以左缘为准。组的 lane-order span 不随视口收缩。
+- **相续泳道合并**（`dynasty_lane_groups` + `dynastyLaneGroups.ts`）：配置入库（包 `data/imports/dynasty-lane-groups/`），西周/东周、蒙古/元、吴政权/明/南明等压成一行；左侧冻结名由泳道**中线**所在相位切换，不是以左缘为准。组的 lane-order span 不随视口收缩。
 - **并存 cluster**（`dynasty_groups`）：三国、五胡十六国、南北朝、五代十国等各占一行、贴在一起套框。框的起止用组自己的 span，不被成员更早建国年撑大。
 - **人物层**：无 reign 且有可核生卒的 `persons` 画在王朝行下方。皇帝不要再出现在人物栏。
 - **详情**：右侧抽屉覆盖，不挤压泳道和标尺。点击帝王卡、事件、人物、左侧王朝名都走同一详情组件。
@@ -47,7 +47,7 @@
 
 ## 正统金色
 
-规则在 `packages/shared/src/orthodoxDynasties.ts`（导入侧 `data/imports/lib/orthodoxDynasties.mjs` 须同步）。库字段 `orthodox_from_abs` / `orthodox_end_abs` 可覆盖内置表。
+规则在 `packages/shared/src/orthodoxDynasties.ts`（导入侧 `data/imports/lib/orthodoxDynasties.mjs` 须同步，由 `dynastySql` 烘焙）。运行时**只读**库字段 `orthodox_from_abs` / `orthodox_end_abs`。
 
 - 大一统自起始即为正统：夏商周、东汉、西东晋、隋唐、武周、南北宋、明、中华民国。
 - 延迟起算：秦自前 221；西汉自刘邦称帝（前 202 年 2 月），沛公/汉王段不上金；清自 1644（福临），努尔哈赤、皇太极不上金；元自 1276 年 2 月宋恭帝降，忽必烈定国号至降宋前拆段非正统。

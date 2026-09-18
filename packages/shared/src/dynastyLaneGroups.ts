@@ -1,4 +1,4 @@
-import type { Dynasty, Reign } from "./schema";
+import type { Dynasty, DynastyLaneGroup, Reign } from "./schema";
 import { absMonth } from "./time";
 
 function compareReignOrder(a: Reign, b: Reign): number {
@@ -22,52 +22,25 @@ export const TIMELINE_GUTTER_PX =
 export const TIMELINE_RAIL_CHIP_TOP_PX = 10;
 export const TIMELINE_RAIL_CHIP_HEIGHT_PX = 44;
 
-/**
- * Dynasties that share one timeline row. The frozen left label follows
- * `phaseDynastyIds` in chronological order: when the abs at the label anchor
- * (the center guide) crosses a phase dynasty's `startAbs`, the label switches
- * to that name.
- */
-export type DynastyLaneGroup = {
-  id: string;
-  /** Lane key and merged span anchor; usually the longest / canonical dynasty. */
-  primaryDynastyId: string;
-  /** Chronological phase dynasty ids for frozen-label resolution. */
-  phaseDynastyIds: readonly string[];
-  /** Stable lane-order span; does not shrink when earlier phases leave the viewport. */
-  laneOrderStartAbs: number;
-  laneOrderEndAbs: number;
-};
+export type { DynastyLaneGroup };
 
-export const DYNASTY_LANE_GROUPS: readonly DynastyLaneGroup[] = [
-  {
-    id: "mongol-yuan",
-    primaryDynastyId: "yuan",
-    phaseDynastyIds: ["mongol-empire", "yuan"],
-    laneOrderStartAbs: absMonth(1206),
-    laneOrderEndAbs: absMonth(1388),
-  },
-  {
-    id: "wu-ming",
-    primaryDynastyId: "ming",
-    phaseDynastyIds: ["wu-zhu", "ming", "ming-south"],
-    laneOrderStartAbs: absMonth(1364),
-    laneOrderEndAbs: absMonth(1662),
-  },
-  {
-    id: "zhou-west-east",
-    primaryDynastyId: "zhou-west",
-    phaseDynastyIds: ["zhou-west", "zhou-east"],
-    laneOrderStartAbs: absMonth(-1046),
-    laneOrderEndAbs: absMonth(-256, 12),
-  },
-];
-
-const MEMBER_TO_GROUP = new Map<string, DynastyLaneGroup>();
-for (const group of DYNASTY_LANE_GROUPS) {
-  for (const dynastyId of group.phaseDynastyIds) {
-    MEMBER_TO_GROUP.set(dynastyId, group);
+function buildMemberMap(
+  laneGroups: readonly DynastyLaneGroup[],
+): Map<string, DynastyLaneGroup> {
+  const map = new Map<string, DynastyLaneGroup>();
+  for (const group of laneGroups) {
+    for (const dynastyId of group.phaseDynastyIds) {
+      map.set(dynastyId, group);
+    }
   }
+  return map;
+}
+
+export function getDynastyLaneGroup(
+  dynastyId: string,
+  laneGroups: readonly DynastyLaneGroup[],
+): DynastyLaneGroup | undefined {
+  return buildMemberMap(laneGroups).get(dynastyId);
 }
 
 function compareDynastyOrder(a: Dynasty, b: Dynasty): number {
@@ -76,10 +49,6 @@ function compareDynastyOrder(a: Dynasty, b: Dynasty): number {
     a.endAbs - b.endAbs ||
     a.id.localeCompare(b.id)
   );
-}
-
-export function getDynastyLaneGroup(dynastyId: string): DynastyLaneGroup | undefined {
-  return MEMBER_TO_GROUP.get(dynastyId);
 }
 
 export function resolveActivePhaseDynastyId(
@@ -101,8 +70,9 @@ export function resolveFrozenLaneLabel(
   dynasty: Pick<Dynasty, "id" | "name">,
   dynastiesById: ReadonlyMap<string, Pick<Dynasty, "id" | "name" | "startAbs">>,
   labelAnchorAbs: number,
+  laneGroups: readonly DynastyLaneGroup[],
 ): string {
-  const group = getDynastyLaneGroup(dynasty.id);
+  const group = getDynastyLaneGroup(dynasty.id, laneGroups);
   if (!group) return dynasty.name;
   const phaseId = resolveActivePhaseDynastyId(group, dynastiesById, labelAnchorAbs);
   return dynastiesById.get(phaseId)?.name ?? dynasty.name;
@@ -118,20 +88,18 @@ function toDynastyMap(dynasties: Dynasty[] | ReadonlyMap<string, Dynasty>): Map<
 /**
  * Collapse configured lane groups into one row per group. Member dynasties are
  * removed from the list; the primary dynasty is kept with the union span.
- *
- * Visibility is driven by `visible`; span and sort order use `catalog` so a
- * lane keeps the group's earliest start even when earlier phases scroll off-screen.
  */
 export function collapseDynastyLaneGroups(
   visible: Dynasty[],
   catalog: Dynasty[] | ReadonlyMap<string, Dynasty> = visible,
+  laneGroups: readonly DynastyLaneGroup[] = [],
 ): Dynasty[] {
   const visibleById = new Map(visible.map((dynasty) => [dynasty.id, dynasty]));
   const catalogById = toDynastyMap(catalog);
   const consumedIds = new Set<string>();
   const merged: Dynasty[] = [];
 
-  for (const group of DYNASTY_LANE_GROUPS) {
+  for (const group of laneGroups) {
     const visibleMembers = group.phaseDynastyIds
       .map((dynastyId) => visibleById.get(dynastyId))
       .filter((dynasty): dynasty is Dynasty => Boolean(dynasty));
@@ -173,28 +141,26 @@ export function collapseDynastyLaneGroups(
   return [...rest, ...merged].sort(compareDynastyOrder);
 }
 
-/**
- * Reign peers used for card clipping within one lane row. Lane-group phases
- * (西周 / 东周, 吴 / 明 / 南明, …) lay out independently so a merged lane does
- * not clip eastern rulers against unrelated western neighbors.
- */
 export function reignsInLayoutBucket(
   reign: Pick<Reign, "dynastyId">,
   laneReigns: readonly Reign[],
+  laneGroups: readonly DynastyLaneGroup[] = [],
 ): Reign[] {
-  const group = getDynastyLaneGroup(reign.dynastyId);
+  const group = getDynastyLaneGroup(reign.dynastyId, laneGroups);
   if (!group) return [...laneReigns];
   return laneReigns.filter((item) => item.dynastyId === reign.dynastyId);
 }
 
-/** Split a merged lane's reigns into per-phase layout buckets. */
-export function layoutBucketsForLaneReigns(laneReigns: readonly Reign[]): Reign[][] {
+export function layoutBucketsForLaneReigns(
+  laneReigns: readonly Reign[],
+  laneGroups: readonly DynastyLaneGroup[] = [],
+): Reign[][] {
   const buckets: Reign[][] = [];
   const groupedPhases = new Map<string, Map<string, Reign[]>>();
   const standaloneDynastyIds = new Set<string>();
 
   for (const reign of laneReigns) {
-    const group = getDynastyLaneGroup(reign.dynastyId);
+    const group = getDynastyLaneGroup(reign.dynastyId, laneGroups);
     if (!group) {
       standaloneDynastyIds.add(reign.dynastyId);
       continue;
@@ -217,7 +183,7 @@ export function layoutBucketsForLaneReigns(laneReigns: readonly Reign[]): Reign[
     );
   }
 
-  for (const group of DYNASTY_LANE_GROUPS) {
+  for (const group of laneGroups) {
     const phases = groupedPhases.get(group.id);
     if (!phases) continue;
     for (const dynastyId of group.phaseDynastyIds) {
@@ -229,12 +195,12 @@ export function layoutBucketsForLaneReigns(laneReigns: readonly Reign[]): Reign[
   return buckets;
 }
 
-/** Reigns for a lane, including all dynasties in the same lane group. */
 export function collectLaneReigns(
   dynastyId: string,
   reignsByDynasty: ReadonlyMap<string, readonly Reign[]>,
+  laneGroups: readonly DynastyLaneGroup[] = [],
 ): Reign[] {
-  const group = getDynastyLaneGroup(dynastyId);
+  const group = getDynastyLaneGroup(dynastyId, laneGroups);
   const dynastyIds = group?.phaseDynastyIds ?? [dynastyId];
   const seen = new Set<string>();
   const reigns: Reign[] = [];
@@ -247,3 +213,28 @@ export function collectLaneReigns(
   }
   return reigns;
 }
+
+/** Test / mock fixture matching data/imports/dynasty-lane-groups. */
+export const STANDARD_DYNASTY_LANE_GROUPS: readonly DynastyLaneGroup[] = [
+  {
+    id: "mongol-yuan",
+    primaryDynastyId: "yuan",
+    phaseDynastyIds: ["mongol-empire", "yuan"],
+    laneOrderStartAbs: absMonth(1206),
+    laneOrderEndAbs: absMonth(1388),
+  },
+  {
+    id: "wu-ming",
+    primaryDynastyId: "ming",
+    phaseDynastyIds: ["wu-zhu", "ming", "ming-south"],
+    laneOrderStartAbs: absMonth(1364),
+    laneOrderEndAbs: absMonth(1662),
+  },
+  {
+    id: "zhou-west-east",
+    primaryDynastyId: "zhou-west",
+    phaseDynastyIds: ["zhou-west", "zhou-east"],
+    laneOrderStartAbs: absMonth(-1046),
+    laneOrderEndAbs: absMonth(-256, 12),
+  },
+];

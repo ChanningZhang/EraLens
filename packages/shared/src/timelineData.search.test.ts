@@ -12,6 +12,7 @@ describe("searchEntities person aliases", () => {
       {
         id: "lv-shang",
         name: "吕尚",
+        altNames: ["姜子牙", "姜太公", "太公"],
         birth: { year: -1156, month: 1 },
         death: { year: -1017, month: 1 },
         roles: ["君主", "军事家", "政治家"],

@@ -10,6 +10,7 @@ datasource db {
 model Person {
   id          String              @id
   name        String
+  altNames    String[]            @default([]) @map("alt_names")
   ancestralXing String?           @map("ancestral_xing")
   clanShi     String?             @map("clan_shi")
   birthYear   Int?                @map("birth_year")
@@ -195,4 +196,14 @@ model Relation {
 
   @@unique([fromType, fromId, toType, toId, kind])
   @@map("relations")
+}
+
+model DynastyLaneGroup {
+  id                 String   @id
+  primaryDynastyId   String   @map("primary_dynasty_id")
+  phaseDynastyIds    String[] @map("phase_dynasty_ids")
+  laneOrderStartAbs  Int      @map("lane_order_start_abs")
+  laneOrderEndAbs    Int      @map("lane_order_end_abs")
+
+  @@map("dynasty_lane_groups")
 }

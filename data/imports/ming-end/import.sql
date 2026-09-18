@@ -3,21 +3,21 @@
 BEGIN;
 
 -- persons
-INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES ('li-zicheng', '李自成', NULL, NULL, 1606, 9, 1645, 5, ARRAY['皇帝','起义领袖'], '明末闯王，1644年在西安称帝建大顺，旋克北京，明亡；次年兵败被杀。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/李自成"}]'::jsonb)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
-INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES ('zhang-xianzhong', '张献忠', NULL, NULL, 1606, 1, 1647, 1, ARRAY['皇帝','起义领袖'], '明末农民军领袖，1644年于成都称帝，国号大西；1647年1月2日战死于西充凤凰山。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/张献忠"}]'::jsonb)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
-INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES ('zheng-chenggong', '郑成功', NULL, NULL, 1624, 1, 1662, 6, ARRAY['君主','军事家'], '南明延平王，1662年驱逐荷兰、收复台湾，建立明郑东宁政权；同年病逝。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/郑成功"}]'::jsonb)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
-INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES ('zheng-jing', '郑经', NULL, NULL, 1642, 10, 1681, 3, ARRAY['君主'], '郑成功嫡长子，1662年嗣延平王，据台湾奉永历正朔；1681年卒。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/郑经"}]'::jsonb)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
-INSERT INTO persons (id, name, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES ('zheng-keshuang', '郑克塽', NULL, NULL, 1670, 1, 1707, 1, ARRAY['君主'], '郑经之子，1681年嗣延平王；1683年澎湖战败降清，明郑终结。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/郑克塽"}]'::jsonb)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('li-zicheng', '李自成', ARRAY[]::text[], NULL, NULL, 1606, 9, 1645, 5, ARRAY['皇帝','起义领袖'], '明末闯王，1644年在西安称帝建大顺，旋克北京，明亡；次年兵败被杀。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/李自成"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('zhang-xianzhong', '张献忠', ARRAY[]::text[], NULL, NULL, 1606, 1, 1647, 1, ARRAY['皇帝','起义领袖'], '明末农民军领袖，1644年于成都称帝，国号大西；1647年1月2日战死于西充凤凰山。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/张献忠"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('zheng-chenggong', '郑成功', ARRAY[]::text[], NULL, NULL, 1624, 1, 1662, 6, ARRAY['君主','军事家'], '南明延平王，1662年驱逐荷兰、收复台湾，建立明郑东宁政权；同年病逝。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/郑成功"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('zheng-jing', '郑经', ARRAY[]::text[], NULL, NULL, 1642, 10, 1681, 3, ARRAY['君主'], '郑成功嫡长子，1662年嗣延平王，据台湾奉永历正朔；1681年卒。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/郑经"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('zheng-keshuang', '郑克塽', ARRAY[]::text[], NULL, NULL, 1670, 1, 1707, 1, ARRAY['君主'], '郑经之子，1681年嗣延平王；1683年澎湖战败降清，明郑终结。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/郑克塽"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
 
 -- dynasties
 INSERT INTO dynasties (id, name, ancestral_xing, clan_shi, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs, parent_id, group_id, note)

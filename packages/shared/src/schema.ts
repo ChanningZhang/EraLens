@@ -52,6 +52,14 @@ export const ColorTokenSchema = z.enum([
 export type ColorToken = z.infer<typeof ColorTokenSchema>;
 export const COLOR_TOKENS = ColorTokenSchema.options;
 
+export const DynastyLaneGroupSchema = z.object({
+  id: z.string(),
+  primaryDynastyId: z.string(),
+  phaseDynastyIds: z.array(z.string()),
+  laneOrderStartAbs: z.number(),
+  laneOrderEndAbs: z.number(),
+});
+
 export const DynastyGroupSchema = z.object({
   id: z.string(),
   name: z.string(),
@@ -101,6 +109,7 @@ export const EraNameSchema = z.object({
 export const PersonSchema = z.object({
   id: z.string(),
   name: z.string(),
+  altNames: z.array(z.string()).default([]),
   /** 姓 — import-time field from wiki/史料, not inferred at runtime. */
   ancestralXing: z.string().optional(),
   /** 氏 — import-time field from wiki/史料, not inferred at runtime. */
@@ -280,6 +289,7 @@ export type Lod = z.infer<typeof LodSchema>;
 export const TimelineSliceSchema = z.object({
   dynasties: z.array(DynastySchema),
   dynastyGroups: z.array(DynastyGroupSchema).default([]),
+  dynastyLaneGroups: z.array(DynastyLaneGroupSchema).default([]),
   reigns: z.array(ReignSchema),
   events: z.array(EventSchema),
   persons: z.array(PersonSchema).default([]),
@@ -322,6 +332,7 @@ export const SearchHitSchema = z.object({
 
 export type Dynasty = z.infer<typeof DynastySchema>;
 export type DynastyGroup = z.infer<typeof DynastyGroupSchema>;
+export type DynastyLaneGroup = z.infer<typeof DynastyLaneGroupSchema>;
 export type Reign = z.infer<typeof ReignSchema>;
 export type ClaimRole = z.infer<typeof ClaimRoleSchema>;
 export type AppellationKind = z.infer<typeof AppellationKindSchema>;

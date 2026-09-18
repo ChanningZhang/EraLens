@@ -1,6 +1,7 @@
 import type {
   Dynasty,
   DynastyGroup,
+  DynastyLaneGroup,
   Event,
   Person,
   Reign,
@@ -10,6 +11,7 @@ import type {
 import type {
   Dynasty as DbDynasty,
   DynastyGroup as DbDynastyGroup,
+  DynastyLaneGroup as DbDynastyLaneGroup,
   EraName as DbEraName,
   Event as DbEvent,
   Person as DbPerson,
@@ -107,6 +109,7 @@ export function mapPerson(row: DbPerson): Person {
   return {
     id: row.id,
     name: row.name,
+    altNames: row.altNames ?? [],
     ancestralXing: row.ancestralXing ?? undefined,
     clanShi: row.clanShi ?? undefined,
     birth:
@@ -146,6 +149,16 @@ export function mapDynastyGroup(
     endAbs,
     precision: row.precision as DynastyGroup["precision"],
     note: noteValue ?? undefined,
+  };
+}
+
+export function mapDynastyLaneGroup(row: DbDynastyLaneGroup): DynastyLaneGroup {
+  return {
+    id: row.id,
+    primaryDynastyId: row.primaryDynastyId,
+    phaseDynastyIds: row.phaseDynastyIds,
+    laneOrderStartAbs: row.laneOrderStartAbs,
+    laneOrderEndAbs: row.laneOrderEndAbs,
   };
 }
 

@@ -6,7 +6,7 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { dynastySql, normalizeYearPrecisionAt } from "../lib/sqlHelpers.mjs";
+import { dynastySql, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
 import { reignSql as formatReignSql } from "../lib/reignSql.mjs";
@@ -330,9 +330,6 @@ relations.push(
 
 // ── SQL ──────────────────────────────────────────────────────────────────────
 
-function personSql(p) {
-  return `INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links) VALUES (${sqlStr(p.id)}, ${sqlStr(p.name)}, ${p.birth?.year ?? "NULL"}, ${p.birth?.month ?? "NULL"}, ${p.death?.year ?? "NULL"}, ${p.death?.month ?? "NULL"}, ${sqlArray(p.roles)}, ${sqlStr(p.bio)}, ${sqlJson(p.links)}) ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;`;
-}
 function reignSql(r) {
   return formatReignSql(r, sqlStr, sqlJson);
 }

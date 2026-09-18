@@ -88,7 +88,7 @@ Task Progress:
 - 事件 `{topic}`：`xuanwumen`、`muye`
 - 关系 `rel-{from}-{to}-{kind}`
 
-`persons.name` 用可检索的常用名（禹、姬发、孔子、韦后）。**入库时君主姓名须带姓**（如莒郊公写 `己狂` 而非 `狂`，薛献公写 `任谷` 而非 `谷`），便于搜索；时间轴卡片在始皇帝以前主行显示谥号/称号，由 `resolveReignCardLabel` 处理，不要为迁就卡片去改姓名字段。维基诸侯表若只给「国君本名」，须结合该国姓氏（如莒己、滕姬、杞姒）补全；仅知谥号而本名失考时，可用 `{姓}{谥号}`（如 `姒武公`）。先秦王朝/人物须写入 `ancestral_xing` / `clan_shi`（`feudalClanMetadata.mjs` + `applyFeudalClanMetadata`），运行时只按该字段去姓，不维护姓氏表。搜索只匹配 dynasty/person/event 的 `name`，不匹配 `title` 或谥号。
+`persons.name` 用可检索的常用名（禹、姬发、孔子、韦后）。**入库时君主姓名须带姓**（如莒郊公写 `己狂` 而非 `狂`，薛献公写 `任谷` 而非 `谷`），便于搜索；时间轴卡片在始皇帝以前主行显示谥号/称号，由 `resolveReignCardLabel` 处理，不要为迁就卡片去改姓名字段。维基诸侯表若只给「国君本名」，须结合该国姓氏（如莒己、滕姬、杞姒）补全；仅知谥号而本名失考时，可用 `{姓}{谥号}`（如 `姒武公`）。先秦王朝/人物须写入 `ancestral_xing` / `clan_shi`（`feudalClanMetadata.mjs` + `applyFeudalClanMetadata`），运行时只按该字段去姓，不维护姓氏表。搜索匹配 `persons.name` 与 `persons.alt_names`（如 `姜子牙` → `lv-shang`），不匹配 `title` 或谥号。
 
 **谥号 / 庙号字段**（与商周一致）：
 - `posthumous_name`、`temple_name` 只存谥号/庙号本体，**不带国名或王朝前缀**（如 `武王`、`孝文皇帝`、`太宗`；不要写 `周武王`、`汉孝文皇帝`、`唐太宗`）。
@@ -230,6 +230,8 @@ curl -s "http://localhost:3001/api/bounds"
 - 中文名称用 UTF-8；SQL 字符串中单引号写 `''`。
 - 对争议年代在 `manifest.json` 的 `notes` 与事件 `date_note` 说明取舍，不 silently 编造精确到月。
 - 生卒不明则 `birth_*` / `death_*` 用 NULL，不要用正月占位冒充已知。
+- 各包 `personSql` 优先用 `data/imports/lib/sqlHelpers.mjs` 的共享模板（含 `alt_names`、姓氏列）。
+- 正统金色：`dynastySql()` + `orthodoxDynasties.mjs` 烘焙 `orthodox_*`；相续泳道组走 `data/imports/dynasty-lane-groups/`。
 
 ## 附加资源
 

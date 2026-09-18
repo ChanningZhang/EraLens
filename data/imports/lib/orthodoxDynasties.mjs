@@ -28,6 +28,10 @@ export const ORTHODOX_FROM_ABS = {
 };
 
 export const ORTHODOX_END_ABS = {
+  /**
+   * 王朝行止于 618 正月以对接唐，金色覆盖整年，使江都续统杨浩仍算正统。
+   */
+  sui: absMonth(618, 12),
   yuan: absMonth(1368),
   /** 恭帝降元后南宋正统终结；端宗、帝昺续统不计正统。 */
   "song-south": absMonth(1276, 2),

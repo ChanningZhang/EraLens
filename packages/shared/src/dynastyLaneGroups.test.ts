@@ -6,11 +6,15 @@ import {
   layoutBucketsForLaneReigns,
   reignsInLayoutBucket,
   resolveFrozenLaneLabel,
+  STANDARD_DYNASTY_LANE_GROUPS,
   TIMELINE_GUTTER_PX,
   TIMELINE_RAIL_GAP_PX,
   TIMELINE_RAIL_INSET_PX,
   TIMELINE_RAIL_LABEL_WIDTH_PX,
 } from "./dynastyLaneGroups";
+
+const LANE_GROUPS = STANDARD_DYNASTY_LANE_GROUPS;
+
 import type { Dynasty, Reign } from "./schema";
 
 const mongolEmpire: Dynasty = {
@@ -189,10 +193,10 @@ describe("dynastyLaneGroups", () => {
       [yuan.id, yuan],
     ]);
 
-    expect(resolveFrozenLaneLabel(yuan, byId, absMonth(1250))).toBe("蒙古帝国");
-    expect(resolveFrozenLaneLabel(yuan, byId, absMonth(1271, 11))).toBe("蒙古帝国");
-    expect(resolveFrozenLaneLabel(yuan, byId, absMonth(1271, 12))).toBe("元");
-    expect(resolveFrozenLaneLabel(yuan, byId, absMonth(1300))).toBe("元");
+    expect(resolveFrozenLaneLabel(yuan, byId, absMonth(1250), LANE_GROUPS)).toBe("蒙古帝国");
+    expect(resolveFrozenLaneLabel(yuan, byId, absMonth(1271, 11), LANE_GROUPS)).toBe("蒙古帝国");
+    expect(resolveFrozenLaneLabel(yuan, byId, absMonth(1271, 12), LANE_GROUPS)).toBe("元");
+    expect(resolveFrozenLaneLabel(yuan, byId, absMonth(1300), LANE_GROUPS)).toBe("元");
   });
 
   it("reserves a shared gutter for the dynasty-name rail", () => {
@@ -215,12 +219,12 @@ describe("dynastyLaneGroups", () => {
 
     expect(centerAbs).toBeGreaterThan(yuanStart);
     expect(leftEdgeAbs).toBeLessThan(yuanStart);
-    expect(resolveFrozenLaneLabel(yuan, byId, leftEdgeAbs)).toBe("蒙古帝国");
-    expect(resolveFrozenLaneLabel(yuan, byId, centerAbs)).toBe("元");
+    expect(resolveFrozenLaneLabel(yuan, byId, leftEdgeAbs, LANE_GROUPS)).toBe("蒙古帝国");
+    expect(resolveFrozenLaneLabel(yuan, byId, centerAbs, LANE_GROUPS)).toBe("元");
   });
 
   it("collapses mongol empire and yuan into one lane anchored on yuan", () => {
-    const collapsed = collapseDynastyLaneGroups([tang, mongolEmpire, yuan]);
+    const collapsed = collapseDynastyLaneGroups([tang, mongolEmpire, yuan], undefined, LANE_GROUPS);
 
     expect(collapsed.map((dynasty) => dynasty.id)).toEqual(["tang", "yuan"]);
     expect(collapsed[1]).toMatchObject({
@@ -232,7 +236,7 @@ describe("dynastyLaneGroups", () => {
   });
 
   it("still merges when only the pre-yuan member is visible", () => {
-    const collapsed = collapseDynastyLaneGroups([mongolEmpire]);
+    const collapsed = collapseDynastyLaneGroups([mongolEmpire], undefined, LANE_GROUPS);
 
     expect(collapsed).toHaveLength(1);
     expect(collapsed[0]).toMatchObject({
@@ -247,7 +251,7 @@ describe("dynastyLaneGroups", () => {
       [zhouWest.id, zhouWest],
       [zhouEast.id, zhouEast],
     ]);
-    const collapsed = collapseDynastyLaneGroups([zhouEast], catalog);
+    const collapsed = collapseDynastyLaneGroups([zhouEast], catalog, LANE_GROUPS);
 
     expect(collapsed).toHaveLength(1);
     expect(collapsed[0]).toMatchObject({
@@ -258,7 +262,7 @@ describe("dynastyLaneGroups", () => {
   });
 
   it("keeps lane sort span without catalog when only the later zhou phase is visible", () => {
-    const collapsed = collapseDynastyLaneGroups([zhouEast]);
+    const collapsed = collapseDynastyLaneGroups([zhouEast], undefined, LANE_GROUPS);
 
     expect(collapsed).toHaveLength(1);
     expect(collapsed[0]).toMatchObject({
@@ -269,7 +273,7 @@ describe("dynastyLaneGroups", () => {
   });
 
   it("collapses wu-zhu, ming, and ming-south into one lane anchored on ming", () => {
-    const collapsed = collapseDynastyLaneGroups([wuZhu, ming, mingSouth, tang]);
+    const collapsed = collapseDynastyLaneGroups([wuZhu, ming, mingSouth, tang], undefined, LANE_GROUPS);
 
     expect(collapsed.map((dynasty) => dynasty.id)).toEqual(["tang", "ming"]);
     expect(collapsed[1]).toMatchObject({
@@ -287,23 +291,23 @@ describe("dynastyLaneGroups", () => {
       [mingSouth.id, mingSouth],
     ]);
 
-    expect(resolveFrozenLaneLabel(ming, byId, absMonth(1367))).toBe("吴");
-    expect(resolveFrozenLaneLabel(ming, byId, absMonth(1367, 12))).toBe("吴");
-    expect(resolveFrozenLaneLabel(ming, byId, absMonth(1368))).toBe("明");
-    expect(resolveFrozenLaneLabel(ming, byId, absMonth(1400))).toBe("明");
-    expect(resolveFrozenLaneLabel(ming, byId, absMonth(1643, 12))).toBe("明");
-    expect(resolveFrozenLaneLabel(ming, byId, absMonth(1644))).toBe("南明");
-    expect(resolveFrozenLaneLabel(ming, byId, absMonth(1660))).toBe("南明");
+    expect(resolveFrozenLaneLabel(ming, byId, absMonth(1367), LANE_GROUPS)).toBe("吴");
+    expect(resolveFrozenLaneLabel(ming, byId, absMonth(1367, 12), LANE_GROUPS)).toBe("吴");
+    expect(resolveFrozenLaneLabel(ming, byId, absMonth(1368), LANE_GROUPS)).toBe("明");
+    expect(resolveFrozenLaneLabel(ming, byId, absMonth(1400), LANE_GROUPS)).toBe("明");
+    expect(resolveFrozenLaneLabel(ming, byId, absMonth(1643, 12), LANE_GROUPS)).toBe("明");
+    expect(resolveFrozenLaneLabel(ming, byId, absMonth(1644), LANE_GROUPS)).toBe("南明");
+    expect(resolveFrozenLaneLabel(ming, byId, absMonth(1660), LANE_GROUPS)).toBe("南明");
   });
 
   it("keeps song-north and song-south as separate lanes", () => {
-    const collapsed = collapseDynastyLaneGroups([tang, songNorth, songSouth]);
+    const collapsed = collapseDynastyLaneGroups([tang, songNorth, songSouth], undefined, LANE_GROUPS);
 
     expect(collapsed.map((dynasty) => dynasty.id)).toEqual(["tang", "song-north", "song-south"]);
   });
 
   it("collapses zhou-west and zhou-east into one lane", () => {
-    const collapsed = collapseDynastyLaneGroups([tang, zhouWest, zhouEast]);
+    const collapsed = collapseDynastyLaneGroups([tang, zhouWest, zhouEast], undefined, LANE_GROUPS);
 
     expect(collapsed.map((dynasty) => dynasty.id)).toEqual(["zhou-west", "tang"]);
     expect(collapsed[0]).toMatchObject({
@@ -320,14 +324,14 @@ describe("dynastyLaneGroups", () => {
       [zhouEast.id, zhouEast],
     ]);
 
-    expect(resolveFrozenLaneLabel(zhouWest, byId, absMonth(-900))).toBe("西周");
-    expect(resolveFrozenLaneLabel(zhouWest, byId, absMonth(-771, 12))).toBe("西周");
-    expect(resolveFrozenLaneLabel(zhouWest, byId, absMonth(-770))).toBe("东周");
-    expect(resolveFrozenLaneLabel(zhouWest, byId, absMonth(-500))).toBe("东周");
+    expect(resolveFrozenLaneLabel(zhouWest, byId, absMonth(-900), LANE_GROUPS)).toBe("西周");
+    expect(resolveFrozenLaneLabel(zhouWest, byId, absMonth(-771, 12), LANE_GROUPS)).toBe("西周");
+    expect(resolveFrozenLaneLabel(zhouWest, byId, absMonth(-770), LANE_GROUPS)).toBe("东周");
+    expect(resolveFrozenLaneLabel(zhouWest, byId, absMonth(-500), LANE_GROUPS)).toBe("东周");
   });
 
   it("keeps jin-west and jin-east as separate lanes", () => {
-    const collapsed = collapseDynastyLaneGroups([tang, jinWest, jinEast]);
+    const collapsed = collapseDynastyLaneGroups([tang, jinWest, jinEast], undefined, LANE_GROUPS);
 
     expect(collapsed.map((dynasty) => dynasty.id)).toEqual(["jin-west", "jin-east", "tang"]);
   });
@@ -360,11 +364,11 @@ describe("dynastyLaneGroups", () => {
       },
     ];
 
-    expect(layoutBucketsForLaneReigns(laneReigns).map((bucket) => bucket.map((reign) => reign.id))).toEqual([
+    expect(layoutBucketsForLaneReigns(laneReigns, LANE_GROUPS).map((bucket) => bucket.map((reign) => reign.id))).toEqual([
       ["reign-zhou-west-r1"],
       ["reign-zhou-east-r1"],
     ]);
-    expect(reignsInLayoutBucket(laneReigns[1]!, laneReigns).map((reign) => reign.id)).toEqual([
+    expect(reignsInLayoutBucket(laneReigns[1]!, laneReigns, LANE_GROUPS).map((reign) => reign.id)).toEqual([
       "reign-zhou-east-r1",
     ]);
   });
@@ -403,7 +407,7 @@ describe("dynastyLaneGroups", () => {
       ],
     ]);
 
-    const reigns = collectLaneReigns("yuan", reignsByDynasty);
+    const reigns = collectLaneReigns("yuan", reignsByDynasty, LANE_GROUPS);
     expect(reigns.map((reign) => reign.id)).toEqual(["reign-temujin", "reign-hu-bilie"]);
   });
 });

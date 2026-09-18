@@ -25,6 +25,7 @@
 | persons | id |
 | dynasty_groups | id |
 | dynasties | id |
+| dynasty_lane_groups | id |
 | reigns | id |
 | era_names | DB serial（按 `reign_id` + `sort_order`） |
 | events | id |
@@ -45,10 +46,16 @@
 生卒不明时年月日填 `NULL`，不要用正月占位冒充已知。
 
 ```sql
-INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+INSERT INTO persons (
+  id, name, alt_names, ancestral_xing, clan_shi,
+  birth_year, birth_month, death_year, death_month,
+  roles, bio, links
+)
 VALUES (
   'li-shimin',
   '李世民',
+  ARRAY[]::text[],
+  NULL, NULL,
   598, 1, 649, 7,
   ARRAY['皇帝','军事家'],
   '唐太宗，开创贞观之治。',
@@ -56,6 +63,9 @@ VALUES (
 )
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
+  alt_names = EXCLUDED.alt_names,
+  ancestral_xing = EXCLUDED.ancestral_xing,
+  clan_shi = EXCLUDED.clan_shi,
   birth_year = EXCLUDED.birth_year,
   birth_month = EXCLUDED.birth_month,
   death_year = EXCLUDED.death_year,
@@ -65,13 +75,21 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 ```
 
+检索别名（如 `lv-shang` → `姜子牙`）写入 `alt_names`，不要在前端或 shared 维护硬编码映射。
+
 后宫/宗室政治人物示例（无 `reign`，`name` 用通行检索名）：
 
 ```sql
-INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
+INSERT INTO persons (
+  id, name, alt_names, ancestral_xing, clan_shi,
+  birth_year, birth_month, death_year, death_month,
+  roles, bio, links
+)
 VALUES (
   'wei-hou',
   '韦后',
+  ARRAY[]::text[],
+  NULL, NULL,
   644, 1, 710, 7,
   ARRAY['皇后','政治家'],
   '唐中宗皇后，神龙政变后擅权，景龙政变中被杀。',
@@ -79,6 +97,9 @@ VALUES (
 )
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
+  alt_names = EXCLUDED.alt_names,
+  ancestral_xing = EXCLUDED.ancestral_xing,
+  clan_shi = EXCLUDED.clan_shi,
   birth_year = EXCLUDED.birth_year,
   birth_month = EXCLUDED.birth_month,
   death_year = EXCLUDED.death_year,
@@ -87,6 +108,8 @@ ON CONFLICT (id) DO UPDATE SET
   bio = EXCLUDED.bio,
   links = EXCLUDED.links;
 ```
+
+（旧模板省略 `alt_names` / 姓氏列时，请改用 `data/imports/lib/sqlHelpers.mjs` 的 `personSql`。）
 
 ### dynasty_groups
 
@@ -127,7 +150,9 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, group_id, note
+  start_abs, end_abs, precision, color_token,
+  orthodox_from_abs, orthodox_end_abs,
+  parent_id, group_id, note
 ) VALUES (
   'tang',
   '唐',
@@ -135,7 +160,9 @@ INSERT INTO dynasties (
   'cn', 'east_asia',
   618, 6, 907, 5,
   7420, 10889,  -- 用 compute-abs.mjs 验算
-  'month', 'cinnabar', NULL, NULL,
+  'month', 'cinnabar',
+  7420, NULL,   -- 自起始即正统；截断用 orthodox_end_abs
+  NULL, NULL,
   '李渊建立，朱温篡唐终结'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -149,10 +176,14 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  orthodox_from_abs = EXCLUDED.orthodox_from_abs,
+  orthodox_end_abs = EXCLUDED.orthodox_end_abs,
   parent_id = EXCLUDED.parent_id,
   group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;
 ```
+
+正统起迄由 `data/imports/lib/orthodoxDynasties.mjs` 与 `dynastySql()` 烘焙；运行时只读这两列，不再内置 per-dynasty 表。
 
 ### reigns
 
@@ -354,6 +385,27 @@ VALUES ('rel-li-yuan-li-shimin', 'person', 'li-yuan', 'person', 'li-shimin', 'su
 ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 ```
 
+### dynasty_lane_groups
+
+相续泳道合并（西周/东周、蒙古/元、吴/明/南明）写入独立包 `data/imports/dynasty-lane-groups/`，不要在前端 hardcode。
+
+```sql
+INSERT INTO dynasty_lane_groups (
+  id, primary_dynasty_id, phase_dynasty_ids,
+  lane_order_start_abs, lane_order_end_abs
+) VALUES (
+  'zhou-west-east',
+  'zhou-west',
+  ARRAY['zhou-west','zhou-east'],
+  -12540, -3049
+)
+ON CONFLICT (id) DO UPDATE SET
+  primary_dynasty_id = EXCLUDED.primary_dynasty_id,
+  phase_dynasty_ids = EXCLUDED.phase_dynasty_ids,
+  lane_order_start_abs = EXCLUDED.lane_order_start_abs,
+  lane_order_end_abs = EXCLUDED.lane_order_end_abs;
+```
+
 跨王朝帝王命运边（时间轴虚线，`killed` / `surrender` / `abdication` / `captured`）：
 
 - 端点：`person:{victim}` → `person:{receiver}`，不写 event/dynasty 端点
@@ -366,6 +418,25 @@ ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 - `dynasties.span`
 - `reigns.span`
 - `events.span_start_abs`, `events.span_end_abs`, `events.span`
+
+## Runtime 与 import 边界
+
+| 数据 | 入库 | 运行时 |
+|---|---|---|
+| 正统金色起迄 | `orthodox_from_abs` / `orthodox_end_abs`（`orthodoxDynasties.mjs` + `dynastySql`） | 只读 DB 列 |
+| 相续泳道合并 | `dynasty_lane_groups` | API 下发，`dynastyLaneGroups.ts` 无硬编码组 |
+| 检索别名 | `persons.alt_names` | 搜索匹配 `name` + `altNames` |
+| 庙号/谥号/先秦称号 | `posthumous_name` / `temple_name` / `preferred_appellation` | `resolveEmperorAppellation` 按 618/1368/-221 阈值读字段；**不**从 `title` 推导 |
+| 姓/氏 | `ancestral_xing` / `clan_shi`（王朝 + 人物） | `stripAncestralXing` 读 DB |
+
+入库审计（可选）：
+
+```bash
+node data/imports/lib/auditPreQinXingShi.mjs
+node data/imports/lib/auditImperialAppellationFields.mjs
+```
+
+后者列出 618+ 两庙谥字段皆 NULL 的在位；史称（末帝/后主等）留在 `title` 属正常，勿写入 `posthumous_name`。
 
 ## color_token 轮换建议
 

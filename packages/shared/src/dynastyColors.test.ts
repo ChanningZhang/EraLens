@@ -108,6 +108,8 @@ describe("resolveReignColorToken", () => {
     startAbs: absMonth(1271, 12),
     endAbs: absMonth(1388),
     colorToken: "indigo" as const,
+    orthodoxFromAbs: absMonth(1276, 2),
+    orthodoxEndAbs: absMonth(1368),
   };
 
   it("keeps gold for orthodox Yuan reigns but not for 元惠宗 starting at the cutoff", () => {

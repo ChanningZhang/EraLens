@@ -5,6 +5,7 @@ import {
   layoutBucketsForLaneReigns,
   reignsInLayoutBucket,
   reignsInSameClaimTrack,
+  type DynastyLaneGroup,
   type Reign,
 } from "@eralens/shared";
 
@@ -118,11 +119,14 @@ type TrackPlacement = {
  * independent buckets; inside a bucket each claim track gets its own rows so
  * concurrent claimants (隋末三帝, 南明鲁监国 / 绍武) render side by side.
  */
-function resolveTrackPlacements(laneReigns: readonly Reign[]): {
+function resolveTrackPlacements(
+  laneReigns: readonly Reign[],
+  laneGroups: readonly DynastyLaneGroup[] = [],
+): {
   placements: Map<string, TrackPlacement>;
   rowCount: number;
 } {
-  const buckets = layoutBucketsForLaneReigns(laneReigns);
+  const buckets = layoutBucketsForLaneReigns(laneReigns, laneGroups);
   const effectiveBuckets = buckets.length > 0 ? buckets : [[...laneReigns]];
   const placements = new Map<string, TrackPlacement>();
   let rowCount = 1;
@@ -141,11 +145,15 @@ function resolveTrackPlacements(laneReigns: readonly Reign[]): {
   return { placements, rowCount };
 }
 
-function trackPeersOf(reign: Reign, laneReigns: readonly Reign[]): Reign[] {
-  const { placements } = resolveTrackPlacements(laneReigns);
+function trackPeersOf(
+  reign: Reign,
+  laneReigns: readonly Reign[],
+  laneGroups: readonly DynastyLaneGroup[] = [],
+): Reign[] {
+  const { placements } = resolveTrackPlacements(laneReigns, laneGroups);
   const placement = placements.get(reign.id);
   if (placement) return placement.peers;
-  return reignsInSameClaimTrack(reign, reignsInLayoutBucket(reign, laneReigns));
+  return reignsInSameClaimTrack(reign, reignsInLayoutBucket(reign, laneReigns, laneGroups));
 }
 
 function subStackIndexOf(reign: Reign, trackPeers: readonly Reign[]): number {
@@ -162,10 +170,11 @@ function subStackIndexOf(reign: Reign, trackPeers: readonly Reign[]): number {
 export function resolveReignVisualSpan(
   reign: Reign,
   reigns: Reign[],
+  laneGroups: readonly DynastyLaneGroup[] = [],
 ): { startAbs: number; endExclusive: number; stackIndex: number } {
-  const { placements } = resolveTrackPlacements(reigns);
+  const { placements } = resolveTrackPlacements(reigns, laneGroups);
   const placement = placements.get(reign.id);
-  const trackPeers = placement?.peers ?? trackPeersOf(reign, reigns);
+  const trackPeers = placement?.peers ?? trackPeersOf(reign, reigns, laneGroups);
   const rowOffset = placement?.rowOffset ?? 0;
   const group = sameStartGroup(reign, trackPeers);
   const nextLater = nextLaterStartAbs(reign, trackPeers);
@@ -190,13 +199,16 @@ export function resolveReignVisualSpan(
   return { startAbs: visualStart, endExclusive, stackIndex: rowOffset };
 }
 
-export function assignReignStacks(reigns: Reign[]): {
+export function assignReignStacks(
+  reigns: Reign[],
+  laneGroups: readonly DynastyLaneGroup[] = [],
+): {
   items: StackedReign[];
   rowCount: number;
   rowHeights: number[];
 } {
-  const { placements, rowCount } = resolveTrackPlacements(reigns);
-  const buckets = layoutBucketsForLaneReigns(reigns);
+  const { placements, rowCount } = resolveTrackPlacements(reigns, laneGroups);
+  const buckets = layoutBucketsForLaneReigns(reigns, laneGroups);
   const effectiveBuckets = buckets.length > 0 ? buckets : [[...reigns]];
   const items: StackedReign[] = [];
 

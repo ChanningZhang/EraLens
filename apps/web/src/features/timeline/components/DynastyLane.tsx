@@ -11,6 +11,7 @@ import {
   resolveFrozenLaneLabel,
   resolveReignColorValue,
   type Dynasty,
+  type DynastyLaneGroup,
   type Reign,
 } from "@eralens/shared";
 import { useMemo } from "react";
@@ -37,6 +38,7 @@ type Props = {
   dynastiesById: Map<string, Dynasty>;
   personNames: Map<string, string>;
   personClans: Map<string, { ancestralXing?: string; clanShi?: string } | undefined>;
+  laneGroups: readonly DynastyLaneGroup[];
   top: number;
 };
 
@@ -47,12 +49,13 @@ export function DynastyLane({
   dynastiesById,
   personNames,
   personClans,
+  laneGroups,
   top,
 }: Props) {
   const viewport = useViewport();
   const selection = useSelection();
   const labelAnchorAbs = laneLabelAnchorAbs(viewport);
-  const laneGroup = getDynastyLaneGroup(dynasty.id);
+  const laneGroup = getDynastyLaneGroup(dynasty.id, laneGroups);
   const activePhaseDynasty =
     laneGroup == null
       ? dynasty
@@ -63,6 +66,7 @@ export function DynastyLane({
     dynasty,
     dynastiesById,
     labelAnchorAbs,
+    laneGroups,
   );
   const selected =
     selection.selected?.type === "dynasty" &&
@@ -71,7 +75,7 @@ export function DynastyLane({
   // post-orthodox rulers (南宋端宗/帝昺, 元惠宗, …). Orthodox gold is
   // reserved for individual reign cards via isOrthodoxReign.
   const laneColor = resolveDynastyColorValue(activePhaseDynasty);
-  const { items, rowCount, rowHeights } = assignReignStacks(reigns);
+  const { items, rowCount, rowHeights } = assignReignStacks(reigns, laneGroups);
   const height = dynastyLaneHeight(rowHeights);
   const barHeight = dynastyBarHeight(rowHeights);
   const uncertaintyBoundaries = useMemo(

@@ -8,7 +8,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
-import { dynastyGroupSql, reignSql, normalizeYearPrecisionAt } from "../lib/sqlHelpers.mjs";
+import { dynastyGroupSql, dynastySql, normalizeYearPrecisionAt, personSql, reignSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -1034,51 +1034,6 @@ relations.push(
 
 // ── SQL generation ───────────────────────────────────────────────────────────
 
-function personSql(p) {
-  return `INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES (
-  ${sqlStr(p.id)}, ${sqlStr(p.name)},
-  ${p.birth?.year ?? "NULL"}, ${p.birth?.month ?? "NULL"},
-  ${p.death?.year ?? "NULL"}, ${p.death?.month ?? "NULL"},
-  ${sqlArray(p.roles)}, ${sqlStr(p.bio)}, ${sqlJson(p.links)}
-)
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  birth_year = EXCLUDED.birth_year,
-  birth_month = EXCLUDED.birth_month,
-  death_year = EXCLUDED.death_year,
-  death_month = EXCLUDED.death_month,
-  roles = EXCLUDED.roles,
-  bio = EXCLUDED.bio,
-  links = EXCLUDED.links;`;
-}
-
-function dynastySql(d) {
-  const groupId = d.groupId ? sqlStr(d.groupId) : "NULL";
-  return `INSERT INTO dynasties (
-  id, name, alt_names, scope, region,
-  start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, group_id, note
-) VALUES (
-  ${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlArray(d.altNames)}, ${sqlStr(d.scope)}, ${sqlStr(d.region)},
-  ${d.start.year}, ${d.start.month}, ${d.end.year}, ${d.end.month},
-  ${d.start.abs}, ${d.end.abs}, ${sqlStr(d.precision)}, ${sqlStr(d.colorToken)}, NULL, ${groupId},
-  ${sqlStr(d.note)}
-)
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  alt_names = EXCLUDED.alt_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
-  group_id = EXCLUDED.group_id,
-  note = EXCLUDED.note;`;
-}
 
 function eraNameSql(e) {
   return `INSERT INTO era_names (reign_id, name, start_year, start_month, end_year, end_month, start_abs, end_abs, sort_order)

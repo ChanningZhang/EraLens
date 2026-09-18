@@ -3,26 +3,26 @@
 BEGIN;
 
 -- persons
-INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES ('hong-xiuquan', '洪秀全', 1814, 1, 1864, 6, ARRAY['皇帝','起义领袖'], '太平天国创建者，金田起义后称天王，定都天京；同治三年四月二十七日（1864年6月1日）病逝于南京。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/洪秀全"}]'::jsonb)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
-INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES ('hong-tianguifu', '洪天贵福', 1849, 11, 1864, 11, ARRAY['皇帝'], '洪秀全长子，幼天王；洪秀全死后于六月初六继位，天京陷落后被俘处死。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/洪天贵福"}]'::jsonb)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
-INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES ('yang-xiuqing', '杨秀清', 1823, 1, 1856, 9, ARRAY['政治家','军事家'], '太平天国东王，定都天京后掌军政大权；咸丰六年八月初四（1856年9月2日）天京事变中被北王韦昌辉所杀。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/杨秀清"}]'::jsonb)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
-INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES ('li-xiucheng', '李秀成', 1823, 1, 1864, 8, ARRAY['军事家','政治家'], '太平天国忠王，后期主持军政；同治三年七月初六（1864年8月7日）城破后被俘处死。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/李秀成"}]'::jsonb)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
-INSERT INTO persons (id, name, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES ('shi-dakai', '石达开', 1831, 1, 1863, 6, ARRAY['军事家'], '太平天国翼王，西征名将；咸丰七年出走后转战西南，同治二年五月初十（1863年6月10日）大渡河兵败被俘。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/石达开"}]'::jsonb)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('hong-xiuquan', '洪秀全', ARRAY[]::text[], NULL, NULL, 1814, 1, 1864, 6, ARRAY['皇帝','起义领袖'], '太平天国创建者，金田起义后称天王，定都天京；同治三年四月二十七日（1864年6月1日）病逝于南京。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/洪秀全"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('hong-tianguifu', '洪天贵福', ARRAY[]::text[], NULL, NULL, 1849, 11, 1864, 11, ARRAY['皇帝'], '洪秀全长子，幼天王；洪秀全死后于六月初六继位，天京陷落后被俘处死。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/洪天贵福"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('yang-xiuqing', '杨秀清', ARRAY[]::text[], NULL, NULL, 1823, 1, 1856, 9, ARRAY['政治家','军事家'], '太平天国东王，定都天京后掌军政大权；咸丰六年八月初四（1856年9月2日）天京事变中被北王韦昌辉所杀。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/杨秀清"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('li-xiucheng', '李秀成', ARRAY[]::text[], NULL, NULL, 1823, 1, 1864, 8, ARRAY['军事家','政治家'], '太平天国忠王，后期主持军政；同治三年七月初六（1864年8月7日）城破后被俘处死。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/李秀成"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
+INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
+VALUES ('shi-dakai', '石达开', ARRAY[]::text[], NULL, NULL, 1831, 1, 1863, 6, ARRAY['军事家'], '太平天国翼王，西征名将；咸丰七年出走后转战西南，同治二年五月初十（1863年6月10日）大渡河兵败被俘。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/石达开"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
 
 -- dynasties
-INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs, parent_id, group_id, note)
-VALUES ('taiping', '太平天国', ARRAY['太平天囯','天囯'], 'cn', 'east_asia', 1851, 3, 1864, 7, 22214, 22374, 'month', 'ochre', NULL, NULL, NULL, NULL, '1851年3月23日洪秀全登基称天王、正号太平天国；1853年3月定都天京（南京）；1864年7月19日天京陷落，政权覆亡。与清廷并立，非正统。')
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, color_token = EXCLUDED.color_token, orthodox_from_abs = EXCLUDED.orthodox_from_abs, orthodox_end_abs = EXCLUDED.orthodox_end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
+INSERT INTO dynasties (id, name, ancestral_xing, clan_shi, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs, parent_id, group_id, note)
+VALUES ('taiping', '太平天国', NULL, NULL, ARRAY['太平天囯','天囯'], 'cn', 'east_asia', 1851, 3, 1864, 7, 22214, 22374, 'month', 'ochre', NULL, NULL, NULL, NULL, '1851年3月23日洪秀全登基称天王、正号太平天国；1853年3月定都天京（南京）；1864年7月19日天京陷落，政权覆亡。与清廷并立，非正统。')
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, color_token = EXCLUDED.color_token, orthodox_from_abs = EXCLUDED.orthodox_from_abs, orthodox_end_abs = EXCLUDED.orthodox_end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 
 -- reigns
 INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence)

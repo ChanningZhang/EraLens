@@ -12,6 +12,7 @@ import { prisma } from "../db.js";
 import {
   mapDynasty,
   mapDynastyGroup,
+  mapDynastyLaneGroup,
   mapEvent,
   mapPerson,
   mapReign,
@@ -83,6 +84,7 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
     return TimelineSliceSchema.parse({
       dynasties: [],
       dynastyGroups: [],
+      dynastyLaneGroups: [],
       reigns: [],
       events: [],
       persons,
@@ -162,6 +164,9 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
           WHERE id = ANY(${groupIds}::text[])`
       : [];
   const dynastyGroups = dynastyGroupRows.map(mapDynastyGroup);
+  const dynastyLaneGroups = (await prisma.dynastyLaneGroup.findMany()).map(
+    mapDynastyLaneGroup,
+  );
   const reigns = reignRows.map((row) => mapReign(row, erasByReign.get(row.id) ?? []));
   const visibleReignPersonIds = [...new Set(reignRows.map((row) => row.person_id))];
   const [lifePersonRows, rulerPersonRows] = await Promise.all([
@@ -243,6 +248,7 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
   return TimelineSliceSchema.parse({
     dynasties,
     dynastyGroups,
+    dynastyLaneGroups,
     reigns,
     events,
     persons,
