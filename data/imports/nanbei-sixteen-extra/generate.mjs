@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * Generate EraLens import SQL for minor Sixteen Kingdoms / Southern Dynasties states.
- * 西梁、冉魏、西燕、仇池
+ * Generate EraLens import SQL for extra regimes around Sixteen Kingdoms / Southern Dynasties.
+ * 西梁、冉魏、西燕、仇池（冉魏、西燕不在崔鸿十六国之列）
  */
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -48,31 +48,58 @@ const persons = [
     ym(558),
     ym(607),
   ),
-  person("ran-min", "冉闵", ["皇帝"], "冉魏开国皇帝，杀石虎后称帝，350–352年。", "冉闵"),
-  person("murong-hong", "慕容泓", ["皇帝"], "西燕开国皇帝，慕容垂之子，384年称帝，同年被杀。", "慕容泓"),
-  person("murong-chong", "慕容冲", ["皇帝"], "西燕皇帝，慕容泓之弟，384–386年在位。", "慕容冲"),
-  person("murong-yong", "慕容永", ["皇帝"], "西燕末帝，386–394年在位，为后燕慕容垂所灭。", "慕容永"),
-  person("yang-teng", "杨腾", ["君主"], "仇池早期氐族首领，为前仇池奠基，296年前后据仇池。", "杨腾"),
-  person("yang-chu", "杨初", ["君主"], "前仇池君主，337–357年在位。", "杨初_(仇池)"),
-  person("yang-lan", "杨兰", ["君主"], "仇池杨氏贵族，前仇池中期摄政。", "杨兰"),
-  person("yang-fu", "杨馥", ["君主"], "仇池杨氏贵族，前仇池后期君主。", "杨馥"),
-  person("yang-nandang", "杨难当", ["君主"], "仇池著名君主，杨氏四氏之一，371年前后。", "杨难当"),
+  person(
+    "ran-min",
+    "冉闵",
+    ["皇帝"],
+    "石虎养孙，本姓冉，后赵时姓名石闵。石虎病死后诸子争位，350年杀石鉴称帝，国号魏，年号永兴；352年败于前燕，慕容儁斩于龙城。谥平帝；前燕谥武悼天王。",
+    "冉闵",
+    null,
+    ym(352, 6),
+  ),
+  person(
+    "murong-hong",
+    "慕容泓",
+    ["皇帝"],
+    "西燕开国皇帝，前燕末帝慕容暐之弟；384年华阴称济北王，同年为部将所杀。",
+    "慕容泓",
+  ),
+  person(
+    "murong-chong",
+    "慕容冲",
+    ["皇帝"],
+    "西燕威皇帝，慕容儁之子、慕容暐之弟；385年阿房称帝，386年为韩延所杀。",
+    "慕容冲",
+  ),
+  person("duan-sui", "段随", ["皇帝"], "西燕将领，386年二月被拥立为燕王，三月为慕容恒、慕容永所杀。", "段隨"),
+  person(
+    "murong-hao",
+    "慕容顗",
+    ["皇帝"],
+    "西燕皇帝，前燕宜都王慕容桓之子；386年三月即位，旋为慕容韬所诱杀。",
+    "建明_(西燕)",
+  ),
+  person("murong-yao", "慕容瑶", ["皇帝"], "西燕皇帝，慕容冲之子；386年三月即位，为慕容永所擒杀。", "慕容瑶"),
+  person("murong-zhong", "慕容忠", ["皇帝"], "西燕皇帝，慕容泓之子；386年三月即位，六月为刁云所杀。", "慕容忠"),
+  person(
+    "murong-yong",
+    "慕容永",
+    ["皇帝"],
+    "西燕末帝，慕容廆侄孙；386年六月称河东王、十月称帝，394年为后燕慕容垂所灭。",
+    "慕容永",
+  ),
+  person("yang-maosou", "杨茂搜", ["君主"], "前仇池开国君主，296年率部据仇池，自号辅国将军、右贤王。", "杨茂搜"),
+  person("yang-nandi", "杨难敌", ["君主"], "前仇池君主，317–334年在位，前赵封为武都王。", "杨难敌"),
+  person("yang-yi-chouchi", "杨毅", ["君主"], "前仇池君主，334–337年在位，自号龙骧将军、左贤王、下辨公。", "杨毅_(仇池)"),
+  person("yang-chu", "杨初", ["君主"], "前仇池君主，337–355年在位，东晋封仇池公、天水公。", "杨初_(仇池)"),
+  person("yang-guo-chouchi", "杨国", ["君主"], "前仇池君主，355–356年在位。", "杨国_(仇池)"),
+  person("yang-jun-chouchi", "杨俊", ["君主"], "前仇池君主，356–360年在位，东晋封为仇池公。", "杨俊_(仇池)"),
+  person("yang-shi-chouchi", "杨世", ["君主"], "前仇池君主，360–370年在位。", "杨世_(仇池)"),
+  person("yang-tong-chouchi", "杨统", ["君主"], "前仇池君主，370年在位，史料有争议。", "杨统_(仇池)"),
+  person("yang-zuan-chouchi", "杨纂", ["君主"], "前仇池末代君主，370–371年在位，371年前秦灭仇池。", "杨纂_(仇池)"),
 ];
 
 // ── dynasties ──────────────────────────────────────────────────────────────
-
-const dynastyGroups = [
-  {
-    id: "wuhu",
-    name: "五胡",
-    altNames: ["十六国", "五胡十六国"],
-    scope: "cn",
-    start: ym(304),
-    end: ym(439, 12),
-    precision: "year",
-    note: "304–439年五胡十六国；狭义自刘渊/李雄立国至北魏灭北凉。",
-  },
-];
 
 const dynasties = [
   {
@@ -95,11 +122,10 @@ const dynasties = [
     scope: "cn",
     region: "east_asia",
     start: ym(350),
-    end: ym(352),
+    end: ym(352, 12),
     precision: "year",
     colorToken: nextColor(),
-    groupId: "wuhu",
-    note: "350年冉闵杀石虎称帝，国号魏；352年败亡。",
+    note: "350年冉闵杀后赵石鉴称帝，国号魏；352年败于前燕。不入崔鸿十六国。",
   },
   {
     id: "xiyan",
@@ -111,8 +137,7 @@ const dynasties = [
     end: ym(394),
     precision: "year",
     colorToken: nextColor(),
-    groupId: "wuhu",
-    note: "384年慕容泓称帝，都长子；394年慕容永为后燕所灭。",
+    note: "384年慕容泓称帝，都长子；394年慕容永为后燕所灭。不入崔鸿十六国。",
   },
   {
     id: "chouchi",
@@ -124,7 +149,7 @@ const dynasties = [
     end: ym(371),
     precision: "year",
     colorToken: nextColor(),
-    note: "296年杨茂搜据仇池；371年前仇池亡，杨氏四氏先后执政。",
+    note: "296年杨茂搜据仇池；371年前秦灭前仇池。杨腾为东汉迁入祖，不算君主。",
   },
 ];
 
@@ -142,20 +167,28 @@ const xiliangReigns = [
   ]),
 ];
 
-const ranweiReigns = [dr("ranwei", "ran-min", "魏皇帝", null, null, 350, 352)];
+const ranweiReigns = [dr("ranwei", "ran-min", "魏平帝", "平帝", null, 350, 352, [{ name: "永兴", sy: 350, ey: 352 }])];
 
 const xiyanReigns = [
-  dr("xiyan", "murong-hong", "西燕皇帝", null, null, 384, 384),
-  dr("xiyan", "murong-chong", "西燕皇帝", null, null, 384, 386),
-  dr("xiyan", "murong-yong", "西燕皇帝", null, null, 386, 394),
+  dr("xiyan", "murong-hong", "西燕皇帝", null, null, 384, 384, [{ name: "燕兴", sy: 384, ey: 384 }]),
+  dr("xiyan", "murong-chong", "西燕威皇帝", "威皇帝", null, 385, 386, [{ name: "更始", sy: 385, ey: 386 }]),
+  dr("xiyan", "duan-sui", "西燕皇帝", null, null, 386, 386, [{ name: "昌平", sy: 386, ey: 386 }]),
+  dr("xiyan", "murong-hao", "西燕皇帝", null, null, 386, 386, [{ name: "建明", sy: 386, ey: 386 }]),
+  dr("xiyan", "murong-yao", "西燕皇帝", null, null, 386, 386, [{ name: "建平", sy: 386, ey: 386 }]),
+  dr("xiyan", "murong-zhong", "西燕皇帝", null, null, 386, 386, [{ name: "建武", sy: 386, ey: 386 }]),
+  dr("xiyan", "murong-yong", "西燕皇帝", null, null, 386, 394, [{ name: "中兴", sy: 386, ey: 394 }]),
 ];
 
 const chouchiReigns = [
-  dr("chouchi", "yang-teng", "仇池王", null, null, 296, 317),
-  dr("chouchi", "yang-chu", "仇池王", null, null, 337, 357),
-  dr("chouchi", "yang-lan", "仇池王", null, null, 357, 361),
-  dr("chouchi", "yang-fu", "仇池王", null, null, 361, 370),
-  dr("chouchi", "yang-nandang", "仇池王", null, null, 370, 371),
+  dr("chouchi", "yang-maosou", "仇池王", null, null, 296, 317),
+  dr("chouchi", "yang-nandi", "仇池王", null, null, 317, 334),
+  dr("chouchi", "yang-yi-chouchi", "仇池王", null, null, 334, 337),
+  dr("chouchi", "yang-chu", "仇池王", null, null, 337, 355),
+  dr("chouchi", "yang-guo-chouchi", "仇池王", null, null, 355, 356),
+  dr("chouchi", "yang-jun-chouchi", "仇池王", null, null, 356, 360),
+  dr("chouchi", "yang-shi-chouchi", "仇池王", null, null, 360, 370),
+  dr("chouchi", "yang-tong-chouchi", "仇池王", null, null, 370, 370),
+  dr("chouchi", "yang-zuan-chouchi", "仇池王", null, null, 370, 371),
 ];
 
 const reignGroups = [xiliangReigns, ranweiReigns, xiyanReigns, chouchiReigns];
@@ -178,19 +211,22 @@ const events = [
     id: "ranwei-founded",
     name: "冉魏建立",
     kind: "politics",
-    at: ym(350),
+    at: ym(350, 4),
+    precision: "month",
+    dateNote: "永和六年闰二月改元永兴；350年闰二月望约公历4月。",
     dynastyIds: ["ranwei", "zhao-back"],
     participantIds: ["ran-min"],
-    summary: "冉闵杀后赵石虎，称帝建国，国号魏，史称冉魏。",
+    summary: "冉闵杀后赵石鉴，称帝于邺，国号魏，改元永兴，史称冉魏。",
   }),
   eventPoint({
     id: "xiyan-founded",
     name: "西燕建立",
     kind: "politics",
-    at: ym(384),
+    at: ym(384, 2),
+    precision: "month",
     dynastyIds: ["xiyan", "yan-back"],
     participantIds: ["murong-hong"],
-    summary: "慕容泓于长子称帝，国号燕，史称西燕。",
+    summary: "慕容泓于华阴称济北王，起兵反秦，国号燕，史称西燕。",
   }),
 ];
 
@@ -235,17 +271,21 @@ const manifest = {
     { label: "萧巋", url: "https://zh.wikipedia.org/wiki/萧巋" },
     { label: "萧琮", url: "https://zh.wikipedia.org/wiki/萧琮" },
     { label: "冉魏", url: "https://zh.wikipedia.org/wiki/%E5%86%89%E9%AD%8F" },
+    { label: "冉闵", url: "https://zh.wikipedia.org/wiki/冉闵" },
     { label: "西燕", url: "https://zh.wikipedia.org/wiki/%E8%A5%BF%E7%87%95" },
     { label: "仇池", url: "https://zh.wikipedia.org/wiki/%E4%BB%87%E6%B1%A0" },
     { label: "五胡十六国君主列表", url: "https://zh.wikipedia.org/zh-hans/%E4%BA%94%E8%83%A1%E5%8D%81%E5%85%AD%E5%9B%BD%E5%90%9B%E4%B8%BB%E5%88%97%E8%A1%A8" },
   ],
   notes: [
     "补充 jin-sixteen / nanbei-chao 未收录的西梁、冉魏、西燕、前仇池。",
-    "冉魏、西燕属 dynasty_groups.wuhu（与崔鸿十六国同框）；西梁属 dynasty_groups.nan-chao（555–587，落在南朝框 420–589 内，与南陈并存）；仇池始年早于 304，不入五胡组。",
+    "冉魏、西燕、仇池均不入崔鸿《十六国春秋》，不属 dynasty_groups.wuhu，单独成行（与十六国框分开）。西梁属 dynasty_groups.nan-chao（555–587，落在南朝框 420–589 内，与南陈并存）。",
     "西梁 id 为 xiliang，与十六国西凉 liang-xi 区分。三帝为萧詧、萧巋、萧琮；萧庄是王琳在郢州另立的梁帝，不属江陵西梁。",
     "萧詧起迄月取维基即位（555年2月）与《周书》保定二年二月薨；萧巋接天保始年二月，卒于天保二十四年五月；萧琮亡国取广运二年九月十九日（587年10月26日）。",
-    "仇池取296–371前仇池窗口，杨腾至杨难当代表杨氏四氏执政序列。",
+    "仇池取296–371前仇池窗口，九君为杨茂搜、杨难敌、杨毅、杨初、杨国、杨俊、杨世、杨统、杨纂；杨统年有争议仍单列。杨难当属后仇池，不在此包。",
     "南梁（liang-nan）、后赵（zhao-back）、后燕（yan-back）复用已有 dynasty id 作事件关联。",
+    "冉闵杀的是后赵石鉴，不是石虎（349年病死）。称谓取染华墓志谥平帝（维基作魏平帝）；前燕追谥武悼天王写入 bio。年号永兴。起年取永兴始闰二月（350年闰二月望≈4月），迄日取维基 352-06-01。太子冉智是否继位史料有缺，不另建 reign。",
+    "西燕通行七帝（慕容泓→慕容冲→段随→慕容顗→慕容瑶→慕容忠→慕容永）；386年政变频繁，诸短祚君主用 month 精度依《资治通鉴》晋纪二十八排月。",
+    "慕容泓为慕容暐之弟，非慕容垂之子；慕容冲称帝在阿房（385年），非长子。",
   ],
 };
 
@@ -255,13 +295,32 @@ const preSql = [
   "DELETE FROM era_names WHERE reign_id IN ('reign-xiao-zhuang-xiliang', 'reign-xiao-cong-xiliang');",
   "DELETE FROM reigns WHERE id = 'reign-xiao-zhuang-xiliang';",
   "DELETE FROM persons WHERE id = 'xiao-zhuang';",
+  "DELETE FROM relations WHERE id IN (",
+  "  'rel-yang-teng-yang-chu-succession',",
+  "  'rel-yang-chu-yang-lan-succession',",
+  "  'rel-yang-lan-yang-fu-succession',",
+  "  'rel-yang-fu-yang-nandang-succession'",
+  ");",
+  "DELETE FROM reigns WHERE id IN (",
+  "  'reign-yang-teng-chouchi',",
+  "  'reign-yang-lan-chouchi',",
+  "  'reign-yang-fu-chouchi',",
+  "  'reign-yang-nandang-chouchi'",
+  ");",
+  "DELETE FROM persons WHERE id IN ('yang-teng', 'yang-lan', 'yang-fu', 'yang-nandang');",
+  "DELETE FROM relations WHERE id IN (",
+  "  'rel-murong-chong-murong-yong-succession',",
+  "  'rel-duan-sui-murong-yi-xiyan-succession',",
+  "  'rel-murong-yi-xiyan-murong-yao-succession'",
+  ");",
+  "DELETE FROM reigns WHERE id = 'reign-murong-yi-xiyan-xiyan';",
+  "DELETE FROM persons WHERE id = 'murong-yi-xiyan';",
 ].join("\n");
 
 writeImportPackage(__dirname, {
   slug: "nanbei-sixteen-extra",
   window: { startYear: 296, startMonth: 1, endYear: 587, endMonth: 12 },
   persons,
-  dynastyGroups,
   dynasties,
   reignGroups,
   reigns,

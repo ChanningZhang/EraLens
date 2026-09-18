@@ -5,8 +5,9 @@
 export const JIN_NANBEI_REIGN_DATES = {
   // ── 西晋 ────────────────────────────────────────────────────────────────
   "reign-sima-yan": { start: [266, 2, 8], end: [290, 5, 16] },
-  "reign-sima-zhong": { start: [290, 5, 17], end: [307, 2, 3] },
-  "reign-sima-chi": { start: [307, 5, 15], end: [313, 3, 14] },
+  "reign-sima-zhong": { start: [290, 5, 17], end: [307, 1, 8] },
+  // 怀帝统治迄日取洛阳陷落被俘（维基条目「统治」），非 313-03-14 卒年。
+  "reign-sima-chi": { start: [307, 1, 11], end: [311, 7, 13] },
   "reign-sima-ye": { start: [313, 6, 12], end: [316, 12, 11] },
 
   // ── 东晋 ────────────────────────────────────────────────────────────────
@@ -96,6 +97,13 @@ export const JIN_NANBEI_REIGN_DATES = {
 
   // ── 十六国（维基百科条目已给出公历月/日）────────────────────────────────
   "reign-fu-jian-ming": { start: [357, 7], end: [385, 10, 16] },
+  // 苻丕：坚死（385-10-16）后至晋阳称帝；太元十一年十月为晋将冯该所杀（该月＝386-11-08–12-07）。
+  "reign-fu-pi": { start: [385, 10], end: [386, 11] },
+  // 苻登：太初 386 年十一月–394 年七月。十一月望约公历 12 月；七月接苻崇延初。
+  "reign-fu-deng": { start: [386, 12], end: [394, 7] },
+  "reign-murong-chui": { start: [384, 2, 9], end: [396, 6, 2] },
+  "reign-murong-bao": { start: [396, 6, 21], end: [398, 5, 27] },
+  "reign-murong-sheng": { start: [398, 8, 19], end: [401, 9, 13] },
   "reign-murong-xi": { start: [401, 9, 14], end: [407, 9, 14] },
   "reign-murong-chao": { start: [405, 11, 18], end: [410, 3, 25] },
 
@@ -103,8 +111,16 @@ export const JIN_NANBEI_REIGN_DATES = {
   "reign-liu-yao-jin": { start: [318, 10], end: [329, 2, 6] },
   // 慕容暐：维基 360-02-27 — 370-12-10（十一月丁丑邺城降秦）。
   "reign-murong-wei": { start: [360, 2, 27], end: [370, 12, 10] },
-  // 冉闵：维基逝世 352-06-01（永和八年四月被俘，慕容儁杀于龙城）。
-  "reign-ran-min-ranwei": { start: [350, 1], end: [352, 6, 1] },
+  // 冉闵：永兴始闰二月（350年闰二月望≈4月）；维基逝世 352-06-01（永和八年四月被俘，五月辛卯慕容儁斩于龙城）。
+  "reign-ran-min-ranwei": { start: [350, 4], end: [352, 6, 1] },
+  // 石世：石虎死日（349-05-26）即位，在位三十三日，望在六月。
+  "reign-shi-shi": { start: [349, 5], end: [349, 6] },
+  // 石遵：废石世自立，太宁元年十一月被杀（在位183日）。十一月望≈12月。
+  "reign-shi-zun": { start: [349, 6], end: [349, 12] },
+  // 石鉴：十一月即位，青龙止350年闰二月（在位103日）。闰二月望≈4月。
+  "reign-shi-jian": { start: [349, 12], end: [350, 4] },
+  // 石祗：闻石鉴死于襄国称帝；351年四月刘显杀之。四月望≈5月。
+  "reign-shi-zhi": { start: [350, 4], end: [351, 5] },
 
   // ── 十六国农历→格里历（寿星历 sxtwl；仅月者取望日所在公历月）────────
   // 嘉宁二年三月十七日降表＝347-04-13。
@@ -130,6 +146,13 @@ export const JIN_NANBEI_REIGN_DATES = {
   "reign-juqu-mujian": { start: [433, 1], end: [439, 10, 18], precision: "day" },
   // 嘉兴四年七月蓼泉之败；七月十五＝420-08-09。
   "reign-li-xin": { start: [417, 1], end: [420, 8] },
+  // 西燕七帝：泓二月称王、冲385正月称帝、386二–六月政变链、永六月称河东王十月称帝。
+  "reign-murong-hong-xiyan": { start: [384, 2], end: [384, 11] },
+  "reign-murong-chong-xiyan": { start: [385, 1], end: [386, 2] },
+  "reign-duan-sui-xiyan": { start: [386, 2], end: [386, 3] },
+  "reign-murong-hao-xiyan": { start: [386, 3], end: [386, 3] },
+  "reign-murong-yao-xiyan": { start: [386, 3], end: [386, 3] },
+  "reign-murong-zhong-xiyan": { start: [386, 3], end: [386, 6] },
   // 中兴九年八月长子城破；八月十五＝394-09-26。
-  "reign-murong-yong-xiyan": { start: [386, 1], end: [394, 9] },
+  "reign-murong-yong-xiyan": { start: [386, 6], end: [394, 9] },
 };

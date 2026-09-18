@@ -8,7 +8,6 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
-import { resolveRegnalAppellationFields } from "../lib/regnalAppellation.mjs";
 import { dynastyGroupSql, reignSql, normalizeYearPrecisionAt } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -69,14 +68,13 @@ function reign({
 }
 
 function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, eraNames = [], preferred = null) {
-  const appellation = resolveRegnalAppellationFields(dynastyId, title, posthumous, temple);
   return reign({
     id: `reign-${personId}`,
     dynastyId,
     personId,
     title,
-    posthumousName: appellation.posthumousName,
-    templeName: appellation.templeName,
+    posthumousName: posthumous,
+    templeName: temple,
     preferred,
     start: ym(startYear),
     end: ym(endYear, 12),
@@ -97,14 +95,13 @@ function dynastyReignMonth(
   eraNames = [],
   preferred = null,
 ) {
-  const appellation = resolveRegnalAppellationFields(dynastyId, title, posthumous, temple);
   return reign({
     id: `reign-${personId}`,
     dynastyId,
     personId,
     title,
-    posthumousName: appellation.posthumousName,
-    templeName: appellation.templeName,
+    posthumousName: posthumous,
+    templeName: temple,
     preferred,
     start: ym(startYear, startMonth),
     end: ym(endYear, endMonth),
@@ -163,6 +160,10 @@ const persons = [
   person("shi-le", "石勒", ["皇帝"], "后赵开国皇帝，羯族，统一北方大部。", "石勒"),
   person("shi-hong", "石弘", ["皇帝"], "后赵皇帝，石勒之子，为石虎所废。", "石弘"),
   person("shi-hu", "石虎", ["皇帝"], "后赵武皇帝，穷兵黩武，后赵由盛转衰。", "石虎"),
+  person("shi-shi", "石世", ["皇帝"], "后赵少帝，石虎幼子。349年石虎病死后即位，在位三十三日，为石遵所废杀。", "石世", ym(339), ym(349, 6)),
+  person("shi-zun", "石遵", ["皇帝"], "后赵皇帝，石虎子。废杀石世自立，同年十一月为冉闵所杀。", "石遵"),
+  person("shi-jian", "石鉴", ["皇帝"], "后赵皇帝，石虎子。冉闵杀石遵后拥立，350年闰二月为冉闵所杀。", "石鉴"),
+  person("shi-zhi", "石祗", ["皇帝"], "后赵末帝，石虎子。冉闵杀石鉴后于襄国称帝，351年被部将刘显所杀。", "石祗"),
   // 前凉
   person("zhang-gui", "张轨", ["君主"], "前凉奠基者，任凉州刺史，保境安民。", "张轨"),
   person("zhang-shi", "张寔", ["君主"], "前凉昭王，张轨之子，继守河西。", "张寔"),
@@ -176,13 +177,17 @@ const persons = [
   person("murong-huang", "慕容皝", ["皇帝"], "前燕文明皇帝，据辽东称燕王，后称帝。", "慕容皝"),
   person("murong-jun", "慕容儁", ["皇帝"], "前燕景昭皇帝，迁都邺城，前燕极盛。", "慕容儁"),
   person("murong-wei", "慕容暐", ["皇帝"], "前燕末帝，为前秦苻坚所灭。", "慕容暐"),
-  // 前秦
+  // 前秦（通行六帝：健→生→坚→丕→登→崇；追尊苻洪/苻雄不建 reign）
   person("fu-jian", "苻健", ["皇帝"], "前秦开国皇帝，氐族，据关中。", "苻健"),
   person("fu-sheng", "苻生", ["皇帝"], "前秦废帝，苻健之子，暴虐，为苻坚所废。", "苻生"),
   person("fu-jian-ming", "苻坚", ["皇帝"], "前秦宣昭皇帝，统一北方，淝水之战后前秦崩溃。", "苻坚"),
-  person("fu-chong", "苻崇", ["皇帝"], "前秦末帝，苻坚之子，为西秦乞伏乾归所杀。", "苻崇"),
+  person("fu-pi", "苻丕", ["皇帝"], "前秦哀平皇帝，苻坚长子，晋阳称帝，后为东晋冯该所杀。", "苻丕"),
+  person("fu-deng", "苻登", ["皇帝"], "前秦高皇帝，苻坚族孙，与后秦相持，后为姚兴所俘杀。", "苻登"),
+  person("fu-chong", "苻崇", ["皇帝"], "前秦末帝，苻登之子，为西秦乞伏乾归所杀。", "苻崇"),
   // 后燕
   person("murong-chui", "慕容垂", ["皇帝"], "后燕成武皇帝，前燕旧臣，淝水后复国。", "慕容垂"),
+  person("murong-bao", "慕容宝", ["皇帝"], "后燕惠愍皇帝，慕容垂第四子；参合陂后守中山，为兰汗所杀。", "慕容宝"),
+  person("murong-sheng", "慕容盛", ["皇帝"], "后燕昭武皇帝，慕容宝庶长子；诛兰汗复国，为部将所杀。", "慕容盛"),
   person("murong-de-yan", "慕容德", ["皇帝"], "南燕开国皇帝，后燕分裂后据广固。", "慕容德"),
   person("murong-chao", "慕容超", ["皇帝"], "南燕末帝，为东晋刘裕所灭。", "慕容超"),
   person("murong-yi", "慕容义", ["皇帝"], "北燕末帝，为冯跋所废。", "慕容义"),
@@ -245,8 +250,8 @@ function nextColor() {
 const dynastyGroups = [
   {
     id: "wuhu",
-    name: "五胡",
-    altNames: ["十六国", "五胡十六国"],
+    name: "五胡十六国",
+    altNames: ["十六国", "五胡"],
     scope: "cn",
     start: ym(304),
     end: ym(439, 12),
@@ -317,7 +322,7 @@ const dynasties = [
     precision: "year",
     colorToken: nextColor(),
     groupId: "wuhu",
-    note: "石勒据襄国，319年建后赵；351年内乱，冉闵篡位。",
+    note: "石勒据襄国，319年建后赵；349年石虎病死，诸子争立；350年冉闵杀石鉴称帝，351年石祗被杀，后赵亡。",
   },
   {
     id: "liang-front",
@@ -531,7 +536,7 @@ const jinWestReigns = [
       { name: "光熙", sy: 306, ey: 306 },
     ]),
   ),
-  dynastyReign("jin-west", "sima-chi", "晋怀帝", "孝怀皇帝", null, 306, 312),
+  dynastyReign("jin-west", "sima-chi", "晋怀帝", "孝怀皇帝", null, 307, 311),
   dynastyReign("jin-west", "sima-ye", "晋愍帝", "孝愍皇帝", null, 313, 316),
 ];
 
@@ -662,6 +667,10 @@ const zhaoBackReigns = [
   dynastyReign("zhao-back", "shi-le", "后赵明皇帝", "明皇帝", "高祖", 319, 333),
   dynastyReign("zhao-back", "shi-hong", "后赵皇帝", null, null, 333, 334),
   dynastyReign("zhao-back", "shi-hu", "后赵武皇帝", "武皇帝", "太祖", 334, 349),
+  dynastyReignMonth("zhao-back", "shi-shi", "后赵少帝", null, null, 349, 5, 349, 6),
+  dynastyReignMonth("zhao-back", "shi-zun", "后赵皇帝", null, null, 349, 6, 349, 12),
+  dynastyReignMonth("zhao-back", "shi-jian", "后赵皇帝", null, null, 349, 12, 350, 4),
+  dynastyReignMonth("zhao-back", "shi-zhi", "后赵末帝", null, null, 350, 4, 351, 5),
 ];
 
 const liangFrontReigns = [
@@ -682,14 +691,18 @@ const yanFrontReigns = [
 ];
 
 const qinFrontReigns = [
-  dynastyReign("qin-front", "fu-jian", "前秦景明皇帝", "景明皇帝", null, 351, 355),
+  dynastyReign("qin-front", "fu-jian", "前秦景明皇帝", "景明皇帝", "高祖", 351, 355),
   dynastyReign("qin-front", "fu-sheng", "前秦废帝", null, null, 355, 357),
-  dynastyReign("qin-front", "fu-jian-ming", "前秦宣昭皇帝", "宣昭皇帝", null, 357, 385),
-  dynastyReign("qin-front", "fu-chong", "前秦末帝", null, null, 385, 394),
+  dynastyReign("qin-front", "fu-jian-ming", "前秦宣昭皇帝", "宣昭皇帝", "世祖", 357, 385),
+  dynastyReign("qin-front", "fu-pi", "前秦哀平皇帝", "哀平皇帝", null, 385, 386),
+  dynastyReign("qin-front", "fu-deng", "前秦高皇帝", "高皇帝", "太宗", 386, 394),
+  dynastyReign("qin-front", "fu-chong", "前秦末帝", null, null, 394, 394),
 ];
 
 const yanBackReigns = [
   dynastyReign("yan-back", "murong-chui", "后燕成武皇帝", "成武皇帝", "世祖", 384, 396),
+  dynastyReign("yan-back", "murong-bao", "后燕惠愍皇帝", "惠愍皇帝", "烈宗", 396, 398),
+  dynastyReign("yan-back", "murong-sheng", "后燕昭武皇帝", "昭武皇帝", "中宗", 398, 401),
   dynastyReign("yan-back", "murong-xi", "后燕末帝", null, null, 401, 409),
 ];
 
@@ -840,8 +853,9 @@ const events = [
     id: "yongjia-disaster",
     name: "永嘉之乱",
     kind: "battle",
-    dateNote: "永嘉五年，311年，刘曜陷洛阳",
-    at: ym(311),
+    precision: "month",
+    dateNote: "永嘉五年六月（311年7月13日），刘曜陷洛阳，俘晋怀帝",
+    at: ym(311, 7),
     dynastyIds: ["jin-west", "han-zhao"],
     participantIds: ["sima-chi", "liu-cong"],
     summary: "汉赵刘曜攻陷洛阳，俘晋怀帝，中原士族南渡，西晋名存实亡。",
@@ -1160,6 +1174,8 @@ const sql = [
   ...eventParticipantSql,
   "",
   "-- relations",
+  "DELETE FROM relations WHERE id = 'rel-fu-jian-ming-fu-chong-succession';",
+  "DELETE FROM relations WHERE id = 'rel-murong-chui-murong-xi-succession';",
   ...relations.map(relationSql),
   "",
   "COMMIT;",
@@ -1175,7 +1191,7 @@ const manifest = {
   window: { startYear: 266, startMonth: 2, endYear: 439, endMonth: 12 },
   scope: "cn",
   depth: "standard",
-  generatedAt: "2026-09-12",
+  generatedAt: "2026-09-18",
   counts: {
     persons: persons.length,
     dynasties: dynasties.length,
@@ -1193,11 +1209,15 @@ const manifest = {
   ],
   notes: [
     "覆盖西晋（266–316）、东晋（317–420）及崔鸿《十六国春秋》所列十六国（304–439）。",
-    "十六国同属 dynasty_groups.wuhu（组名「五胡」，狭义 304–439，据中文维基「五胡十六国」）；西晋/东晋不入组。前凉 301 可露在框外。",
-    "两晋皇帝在位日取维基百科君主条目公历换算（documentedReignDates，precision=day）；十六国多数仍为 year，汉赵同年更替者用 month，苻坚/慕容熙/慕容超已补维基公历月日。",
+    "十六国同属 dynasty_groups.wuhu（狭义 304–439，据中文维基「五胡十六国」）；西晋/东晋不入组。前凉 301 可露在框外。",
+    "两晋皇帝在位日取维基百科君主条目公历换算（documentedReignDates，precision=day）；十六国多数仍为 year，汉赵同年更替者用 month，苻坚/后燕四帝/慕容超已补维基公历月日。",
+    "后燕通行四帝（慕容垂→慕容宝→慕容盛→慕容熙）；398年兰汗篡位约三月，不另建 reign。",
+    "晋怀帝统治迄日取洛阳陷落被俘（311-07-13），非 313-03-14 卒年；惠帝迄日取中毒日 307-01-08，以免叠在怀帝起日。",
     "西晋 upsert 已有 jin-west 行；胡夏 id 为 xia-hu，避免与夏朝 xia 冲突。",
     "前秦/后秦/西秦 id 分别为 qin-front/qin-back/qin-xi，避免与秦朝 qin 冲突。",
+    "前秦通行六帝（苻健→苻生→苻坚→苻丕→苻登→苻崇）；追尊苻洪、苻雄及叛臣窦冲不建 reign。旧包曾把苻崇误接到苻坚之后，已拆开。",
     "439 年北魏灭北凉为十六国终结事件；北魏本身归入南北朝，不在此包内。",
+    "后赵石虎之后补石世、石遵、石鉴、石祗。石虎349年病死，冉闵杀的是石鉴而非石虎；石祗于襄国续统至351年，与冉魏并立。月取农历望日所在公历月。",
     "未收录冉魏、西燕、仇池等《十六国春秋》以外的小国。",
   ],
 };

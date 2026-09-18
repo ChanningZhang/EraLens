@@ -6,6 +6,8 @@ import { DOCUMENTED_REIGN_DATES, applyDocumentedDates } from "./documentedReignD
 import { ymDay } from "./reignDateHelpers.mjs";
 
 const FATE_VICTIM_MAX_LAG_MONTHS = 24;
+/** Ex-rulers poisoned/executed after capture may lag longer than reign end. */
+const FATE_KILLED_VICTIM_MAX_LAG_MONTHS = 48;
 const REIGN_ROW_RE =
   /VALUES\s*\(\s*'(reign-[^']+)',\s*'([^']+)',\s*'([^']+)'[\s\S]*?,\s*(-?\d+),\s*(-?\d+),\s*(NULL|-?\d+),\s*(-?\d+),\s*(-?\d+),\s*(NULL|-?\d+),\s*(-?\d+),\s*(-?\d+),\s*'([^']+)'/g;
 
@@ -104,8 +106,13 @@ function resolveVictimReignAt(personId, atAbs, reigns) {
  * Ensure fate victim was in power near atAbs (or within 24 months of reign end).
  * Catches catalog entries that point at founding/early rulers instead of末代君主.
  */
+function fateVictimMaxLagMonths(kind) {
+  return kind === "killed" ? FATE_KILLED_VICTIM_MAX_LAG_MONTHS : FATE_VICTIM_MAX_LAG_MONTHS;
+}
+
 export function validateFateCatalogEntry(entry, reigns) {
   const atAbs = entry.resolveAt().abs;
+  const maxLagMonths = fateVictimMaxLagMonths(entry.kind);
   if (entry.fromReignId) {
     const reign = reigns.find((item) => item.id === entry.fromReignId);
     if (!reign) {
@@ -113,7 +120,7 @@ export function validateFateCatalogEntry(entry, reigns) {
     }
     const contains = reign.startAbs <= atAbs && atAbs <= reign.endAbs;
     const lagMonths = atAbs - reign.endAbs;
-    if (!contains && lagMonths > FATE_VICTIM_MAX_LAG_MONTHS) {
+    if (!contains && lagMonths > maxLagMonths) {
       return {
         ok: false,
         reason: `fromReign ended ${Math.round(lagMonths / 12)}y before atAbs`,
@@ -133,7 +140,7 @@ export function validateFateCatalogEntry(entry, reigns) {
   }
   const contains = resolved.reign.startAbs <= atAbs && atAbs <= resolved.reign.endAbs;
   const lagMonths = atAbs - resolved.reign.endAbs;
-  if (!contains && lagMonths > FATE_VICTIM_MAX_LAG_MONTHS) {
+  if (!contains && lagMonths > maxLagMonths) {
     const reignEnd = fromAbsMonth(resolved.reign.endAbs);
     const at = fromAbsMonth(atAbs);
     return {

@@ -12,7 +12,8 @@
 .legend {
   position: absolute;
   top: 0;
-  left: 10px;
+  /* Align with frozen dynasty chips (inset); offset frame border + padX. */
+  left: 4px;
   transform: translateY(-50%);
   padding: 0 5px;
   font-family: var(--font-serif);

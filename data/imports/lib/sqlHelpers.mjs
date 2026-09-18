@@ -2,7 +2,6 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { resolveOrthodoxEndAbs, resolveOrthodoxFromAbs } from "./orthodoxDynasties.mjs";
 import { finalizeImportReigns } from "./missingReigns.mjs";
-import { resolveRegnalAppellationFields } from "./regnalAppellation.mjs";
 
 export function toAstroYear(year) {
   return year > 0 ? year : year + 1;
@@ -89,14 +88,13 @@ export function reign({
 }
 
 export function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, eraNames = [], preferred = null) {
-  const appellation = resolveRegnalAppellationFields(dynastyId, title, posthumous, temple);
   return reign({
     id: `reign-${personId}-${dynastyId}`,
     dynastyId,
     personId,
     title,
-    posthumousName: appellation.posthumousName,
-    templeName: appellation.templeName,
+    posthumousName: posthumous,
+    templeName: temple,
     preferred,
     start: ym(startYear),
     end: ym(endYear, 12),

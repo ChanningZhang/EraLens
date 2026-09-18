@@ -90,7 +90,7 @@ ON CONFLICT (id) DO UPDATE SET
 
 ### dynasty_groups
 
-并存时期分组（三国、五胡、南朝/北朝、五代/十国等）。起止为组的外框与排序锚点，不用成员 min/max。
+并存时期分组（三国、五胡十六国、南朝/北朝、五代/十国等）。起止为组的外框与排序锚点，不用成员 min/max。
 
 ```sql
 INSERT INTO dynasty_groups (

@@ -181,6 +181,97 @@ describe("reignFateRelations", () => {
     expect(resolved?.toReign.id).toBe("reign-ying-zheng-qin");
   });
 
+  it("drops surrender and abdication when the same ruler also has a killed fate line", () => {
+    const liYu: Reign = {
+      id: "reign-li-yu",
+      dynastyId: "tang-south",
+      personId: "li-yu",
+      title: "南唐后主",
+      eraNames: [],
+      start: { year: 961, month: 1 },
+      end: { year: 975, month: 12 },
+      startAbs: absMonth(961, 1),
+      endAbs: absMonth(975, 12),
+      precision: "year",
+    };
+    const zhaoKuangyin: Reign = {
+      id: "reign-zhao-kuangyin",
+      dynastyId: "song-north",
+      personId: "zhao-kuangyin",
+      title: "宋太祖",
+      eraNames: [],
+      start: { year: 960, month: 1 },
+      end: { year: 979, month: 12 },
+      startAbs: absMonth(960, 1),
+      endAbs: absMonth(979, 12),
+      precision: "year",
+    };
+    const reignList = [liYu, zhaoKuangyin];
+    const surrender = fateRel({
+      id: "rel-li-yu-zhao-kuangyin-surrender",
+      fromRef: "person:li-yu",
+      toRef: "person:zhao-kuangyin",
+      kind: "surrender",
+      atAbs: absMonth(975, 12),
+    });
+    const killed = fateRel({
+      id: "rel-li-yu-zhao-kuangyin-killed",
+      fromRef: "person:li-yu",
+      toRef: "person:zhao-kuangyin",
+      kind: "killed",
+      atAbs: absMonth(978, 8),
+    });
+    const resolved = resolveFateRelations([surrender, killed], reignList);
+    expect(resolved).toHaveLength(1);
+    expect(resolved[0]?.relation.kind).toBe("killed");
+    expect(resolved[0]?.relation.id).toBe("rel-li-yu-zhao-kuangyin-killed");
+  });
+
+  it("drops captured fate lines when killed is also present", () => {
+    const victim: Reign = {
+      id: "reign-victim",
+      dynastyId: "victim-dynasty",
+      personId: "victim-person",
+      title: "亡国君",
+      eraNames: [],
+      start: { year: 100, month: 1 },
+      end: { year: 110, month: 12 },
+      startAbs: absMonth(100, 1),
+      endAbs: absMonth(110, 12),
+      precision: "year",
+    };
+    const receiver: Reign = {
+      id: "reign-receiver",
+      dynastyId: "receiver-dynasty",
+      personId: "receiver-person",
+      title: "征服者",
+      eraNames: [],
+      start: { year: 90, month: 1 },
+      end: { year: 120, month: 12 },
+      startAbs: absMonth(90, 1),
+      endAbs: absMonth(120, 12),
+      precision: "year",
+    };
+    const reignList = [victim, receiver];
+    const captured = fateRel({
+      id: "rel-victim-receiver-captured",
+      fromRef: "person:victim-person",
+      toRef: "person:receiver-person",
+      kind: "captured",
+      atAbs: absMonth(110, 12),
+    });
+    const killed = fateRel({
+      id: "rel-victim-receiver-killed",
+      fromRef: "person:victim-person",
+      toRef: "person:receiver-person",
+      kind: "killed",
+      atAbs: absMonth(112, 12),
+    });
+    const resolved = resolveFateRelations([captured, killed], reignList);
+    expect(resolved).toHaveLength(1);
+    expect(resolved[0]?.relation.kind).toBe("killed");
+  });
+
   it("resolves ziying surrender to liu bang pre-imperial reign", () => {
     const ziying: Reign = {
       id: "reign-ying-ziying",

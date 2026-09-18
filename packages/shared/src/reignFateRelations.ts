@@ -87,6 +87,38 @@ export type ResolvedFateRelation = {
   toReign: Reign;
 };
 
+const FATE_KINDS_SUPPRESSED_BY_KILLED = new Set<FateRelationKind>([
+  "surrender",
+  "abdication",
+  "captured",
+]);
+
+/** Group key for the victim side of a fate line. */
+function fateVictimKey(fromReign: Reign): string {
+  if (fromReign.personId !== "system-missing-ruler") {
+    return `person:${fromReign.personId}`;
+  }
+  return `reign:${fromReign.id}`;
+}
+
+/** When a ruler has both killed and surrender/abdication/captured, keep only killed. */
+export function prioritizeKilledFateRelations(
+  resolved: readonly ResolvedFateRelation[],
+): ResolvedFateRelation[] {
+  const killedVictims = new Set<string>();
+  for (const item of resolved) {
+    if (item.relation.kind === "killed") {
+      killedVictims.add(fateVictimKey(item.fromReign));
+    }
+  }
+  if (killedVictims.size === 0) return [...resolved];
+
+  return resolved.filter((item) => {
+    if (!FATE_KINDS_SUPPRESSED_BY_KILLED.has(item.relation.kind)) return true;
+    return !killedVictims.has(fateVictimKey(item.fromReign));
+  });
+}
+
 export function resolveFateRelation(
   relation: Relation,
   reigns: readonly Reign[],
@@ -117,5 +149,5 @@ export function resolveFateRelations(
     const item = resolveFateRelation(relation, reigns);
     if (item) resolved.push(item);
   }
-  return resolved;
+  return prioritizeKilledFateRelations(resolved);
 }

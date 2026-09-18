@@ -92,9 +92,9 @@ Task Progress:
 
 **谥号 / 庙号字段**（与商周一致）：
 - `posthumous_name`、`temple_name` 只存谥号/庙号本体，**不带国名或王朝前缀**（如 `武王`、`孝文皇帝`、`太宗`；不要写 `周武王`、`汉孝文皇帝`、`唐太宗`）。
-- **史称**（少帝/废帝/末帝/后主等）写在 `title`，**不得**写入 `posthumous_name`；`regnalAppellation.mjs` 的 `SKIP_BODIES` 会拦这类本体。
+- **史称**（少帝/废帝/末帝/后主等）写在 `title`，**不得**写入 `posthumous_name`。
 - 国名 + 简称写在 `title`（如 `周武王`、`唐太宗`、`后唐庄宗`），由运行时 `resolveEmperorAppellation` 按年份阈值选用正规字段展示；运行时不从 `title` 推测谥号。
-- 若 `title` 已含国号简称（`唐肃宗`、`吴越武肃王`），须同步写出无国号的 `posthumous_name`/`temple_name`（`肃宗`、`武肃王`）。`regnalAppellation.mjs` 只从 `title` 拆谥号本体（`文帝`、`武肃王`）；**庙号必须在 generate 里显式传入**，不要靠「祖/宗」结尾猜测，也不可只写 `title` 留空两字段。
+- 若 `title` 已含国号简称（`唐肃宗`、`吴越武肃王`），须同步写出无国号的 `posthumous_name`/`temple_name`（`肃宗`、`武肃王`）。**庙号必须在 generate 里显式传入**，不要靠「祖/宗」结尾猜测，也不可只写 `title` 留空两字段再靠导入脚本拆字。
 - `preferred_appellation` 仅用于 **regnal** 例外（先秦称号、秦襄公、西楚霸王等）；不要写入庙号/谥号/年号的默认 preferred。无谥号的先秦称号写入**不带国名的本体**（`若敖`、`夫差`、`王厝`、`禹`），由 `preQinCardAppellation.mjs` 按该朝国号从 `title` 拆出；运行时主行直接读字段，不靠国名列表剥前缀。
 - `persons.name` 入库即为可展示私名（不带维基「原名/后改名」残渣）；古文异体可留在 `bio`。
 

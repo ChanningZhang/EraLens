@@ -387,14 +387,26 @@ export function buildFateCatalog() {
       resolveAt: () => atFromReignEnd("reign-li-shi", 347),
     },
     {
-      // 非末代：313年正月刘聪鸩杀被俘的晋怀帝；四月长安立愍帝，西晋未即亡。
+      // 永嘉五年六月（311-07-13）洛阳陷，怀帝被俘。统治迄日即此，非卒年。
+      // https://zh.wikipedia.org/wiki/晋怀帝
+      id: "rel-sima-chi-liu-cong-captured",
+      fromPersonId: "sima-chi",
+      toPersonId: "liu-cong",
+      kind: "captured",
+      eventId: "yongjia-disaster",
+      resolveAt: () => ymDay(311, 7, 13),
+      precision: "day",
+    },
+    {
+      // 非末代：被俘后软禁平阳，313年3月14日刘聪鸩杀；四月长安立愍帝，西晋未即亡。
       // https://zh.wikipedia.org/wiki/晋怀帝
       id: "rel-sima-chi-liu-cong-killed",
       fromPersonId: "sima-chi",
       toPersonId: "liu-cong",
       kind: "killed",
       eventId: "yongjia-disaster",
-      resolveAt: () => atFromReignEnd("reign-sima-chi", 313),
+      resolveAt: () => ymDay(313, 3, 14),
+      precision: "day",
     },
     {
       // 建兴四年十一月十一日（316-12-11）出降。刘曜当时是汉赵将，318年十月才称帝，
@@ -406,6 +418,17 @@ export function buildFateCatalog() {
       kind: "surrender",
       eventId: "jin-west-fall",
       resolveAt: () => atFromReignEnd("reign-sima-ye", 316),
+    },
+    {
+      // 建兴五年十二月二十日（318-02-07）刘聪杀愍帝于平阳。
+      // https://zh.wikipedia.org/wiki/晋愍帝
+      id: "rel-sima-ye-liu-cong-killed",
+      fromPersonId: "sima-ye",
+      toPersonId: "liu-cong",
+      kind: "killed",
+      eventId: "jin-west-fall",
+      resolveAt: () => ymDay(318, 2, 7),
+      precision: "day",
     },
     {
       id: "rel-sima-dewen-liu-yu-jin-abdication",
@@ -424,20 +447,35 @@ export function buildFateCatalog() {
       resolveAt: () => atFromReignEnd("reign-liu-yao-jin", 329),
     },
     {
-      id: "rel-shi-hu-ran-min-killed",
-      fromPersonId: "shi-hu",
+      // 石虎349年病死，非冉闵所杀。冉闵杀的是后赵石鉴（永和六年闰二月）。
+      // https://zh.wikipedia.org/wiki/石鉴
+      id: "rel-shi-jian-ran-min-killed",
+      fromPersonId: "shi-jian",
       toPersonId: "ran-min",
       kind: "killed",
-      eventId: null,
-      resolveAt: () => atFromReignEnd("reign-shi-hu", 349),
+      eventId: "ranwei-founded",
+      resolveAt: () => atFromReignEnd("reign-shi-jian", 350),
     },
     {
+      // 永和八年四月被俘（四月望≈5月）。
       id: "rel-ran-min-murong-jun-captured",
       fromPersonId: "ran-min",
       toPersonId: "murong-jun",
       kind: "captured",
       eventId: null,
-      resolveAt: () => atFromReignEnd("reign-ran-min-ranwei", 352),
+      resolveAt: () => ym(352, 5),
+      precision: "month",
+    },
+    {
+      // 永和八年五月辛卯（352-06-01）慕容儁斩冉闵于龙城。
+      // https://zh.wikipedia.org/wiki/冉闵
+      id: "rel-ran-min-murong-jun-killed",
+      fromPersonId: "ran-min",
+      toPersonId: "murong-jun",
+      kind: "killed",
+      eventId: null,
+      resolveAt: () => ymDay(352, 6, 1),
+      precision: "day",
     },
     {
       id: "rel-murong-wei-fu-jian-ming-captured",
@@ -448,12 +486,12 @@ export function buildFateCatalog() {
       resolveAt: () => atFromReignEnd("reign-murong-wei", 370),
     },
     {
-      id: "rel-yang-nandang-fu-jian-ming-surrender",
-      fromPersonId: "yang-nandang",
+      id: "rel-yang-zuan-chouchi-fu-jian-ming-surrender",
+      fromPersonId: "yang-zuan-chouchi",
       toPersonId: "fu-jian-ming",
       kind: "surrender",
       eventId: null,
-      resolveAt: () => ym(371, 12),
+      resolveAt: () => atFromReignEnd("reign-yang-zuan-chouchi-chouchi", 371),
     },
     {
       id: "rel-zhang-tianxi-fu-jian-ming-surrender",
@@ -462,6 +500,26 @@ export function buildFateCatalog() {
       kind: "surrender",
       eventId: "fu-jian-unify-north",
       resolveAt: () => atFromReignEnd("reign-zhang-tianxi", 376),
+    },
+    {
+      // 非末代：建元二十一年八月（385-10-16）姚苌缢杀苻坚于新平佛寺。
+      // https://zh.wikipedia.org/wiki/苻坚
+      id: "rel-fu-jian-ming-yao-chang-killed",
+      fromPersonId: "fu-jian-ming",
+      toPersonId: "yao-chang",
+      kind: "killed",
+      eventId: null,
+      resolveAt: () => atFromReignEnd("reign-fu-jian-ming", 385),
+    },
+    {
+      // 太初九年七月苻登与姚兴战于马毛山南，被俘斩。
+      // https://zh.wikipedia.org/wiki/苻登
+      id: "rel-fu-deng-yao-xing-killed",
+      fromPersonId: "fu-deng",
+      toPersonId: "yao-xing",
+      kind: "killed",
+      eventId: null,
+      resolveAt: () => atFromReignEnd("reign-fu-deng", 394),
     },
     {
       id: "rel-fu-chong-qifu-gan-killed",
@@ -488,6 +546,16 @@ export function buildFateCatalog() {
       resolveAt: () => atFromReignEnd("reign-murong-chao", 410),
     },
     {
+      // 义熙六年广固陷后送建康市斩；取 documented 在位迄日。
+      // https://zh.wikipedia.org/wiki/慕容超
+      id: "rel-murong-chao-sima-dezong-killed",
+      fromPersonId: "murong-chao",
+      toPersonId: "sima-dezong",
+      kind: "killed",
+      eventId: null,
+      resolveAt: () => atFromReignEnd("reign-murong-chao", 410),
+    },
+    {
       id: "rel-qifu-mumo-helian-ding-killed",
       fromPersonId: "qifu-mumo",
       toPersonId: "helian-ding",
@@ -502,6 +570,16 @@ export function buildFateCatalog() {
       kind: "surrender",
       eventId: null,
       resolveAt: () => atFromReignEnd("reign-tufa-rutan", 414),
+    },
+    {
+      // 降西秦岁余，乞伏炽磐鸩杀。年精度取 415 年 12 月。
+      // https://zh.wikipedia.org/wiki/秃发傉檀
+      id: "rel-tufa-rutan-qifu-chipan-killed",
+      fromPersonId: "tufa-rutan",
+      toPersonId: "qifu-chipan",
+      kind: "killed",
+      eventId: null,
+      resolveAt: () => ym(415, 12),
     },
     {
       id: "rel-yao-hong-sima-dezong-killed",
@@ -786,6 +864,16 @@ export function buildFateCatalog() {
       resolveAt: () => atFromReignEnd("reign-wang-yan-shu-shu-qian", 925),
     },
     {
+      // 同光四年四月秦川驿，庄宗遣向延嗣诛王衍及其宗族。
+      // https://zh.wikipedia.org/wiki/王衍_(前蜀)
+      id: "rel-wang-yan-shu-li-cunxu-killed",
+      fromPersonId: "wang-yan-shu",
+      toPersonId: "li-cunxu",
+      kind: "killed",
+      eventId: null,
+      resolveAt: () => ym(926, 4),
+    },
+    {
       id: "rel-wang-yanzheng-li-jing-nantang-surrender",
       fromPersonId: "wang-yanzheng",
       toPersonId: "li-jing-nantang",
@@ -824,6 +912,17 @@ export function buildFateCatalog() {
       kind: "captured",
       eventId: null,
       resolveAt: () => atFromReignEnd("reign-li-yu-nantang-tang-nan", 975),
+    },
+    {
+      // 降宋后太平兴国三年七月八日（978-07-08）遘疾薨；牵机药之说见《默记》，接收方为太宗。
+      // 赵匡胤已于开宝九年（976）去世。https://zh.wikipedia.org/wiki/李煜
+      id: "rel-li-yu-nantang-zhao-kuangyi-killed",
+      fromPersonId: "li-yu-nantang",
+      toPersonId: "zhao-kuangyi",
+      kind: "killed",
+      eventId: null,
+      resolveAt: () => ymDay(978, 7, 8),
+      precision: "day",
     },
     {
       id: "rel-qian-chu-zhao-kuangyi-surrender",

@@ -8,7 +8,6 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
-import { resolveRegnalAppellationFields } from "../lib/regnalAppellation.mjs";
 import { reignSql } from "../lib/reignSql.mjs";
 import { normalizeYearPrecisionAt } from "../lib/sqlHelpers.mjs";
 
@@ -87,14 +86,13 @@ function dynastyReign(
   preferred = null,
   claim = null,
 ) {
-  const appellation = resolveRegnalAppellationFields(dynastyId, title, posthumous, temple);
   return reign({
     id: `reign-${personId}`,
     dynastyId,
     personId,
     title,
-    posthumousName: appellation.posthumousName,
-    templeName: appellation.templeName,
+    posthumousName: posthumous,
+    templeName: temple,
     preferred,
     start: ym(startYear),
     end: ym(endYear, 12),
@@ -415,7 +413,7 @@ const qiNanReigns = [
   dynastyReign("qi-nan", "xiao-zhaowen", "齐海陵王", null, null, 494, 494),
   dynastyReign("qi-nan", "xiao-luan", "齐明帝", "明皇帝", "高宗", 494, 498),
   dynastyReign("qi-nan", "xiao-baojuan", "东昏侯", null, null, 499, 501),
-  dynastyReign("qi-nan", "xiao-baorong", "齐和帝", null, null, 501, 502),
+  dynastyReign("qi-nan", "xiao-baorong", "齐和帝", "和帝", null, 501, 502),
 ];
 
 const liangNanReigns = [
@@ -437,9 +435,9 @@ const liangNanReigns = [
       { name: "太清", sy: 547, ey: 549 },
     ]),
   ),
-  dynastyReign("liang-nan", "xiao-gang", "梁简文帝", null, null, 549, 551),
+  dynastyReign("liang-nan", "xiao-gang", "梁简文帝", "简文帝", null, 549, 551),
   dynastyReign("liang-nan", "xiao-yi", "梁元帝", "孝元皇帝", null, 552, 555),
-  dynastyReign("liang-nan", "xiao-fangzhi", "梁敬帝", null, null, 555, 557),
+  dynastyReign("liang-nan", "xiao-fangzhi", "梁敬帝", "敬帝", null, 555, 557),
 ];
 
 const chenNanReigns = [
@@ -473,7 +471,7 @@ const weiNorthReigns = [
   dynastyReign("wei-north", "yuan-xu", "魏孝明帝", "孝明皇帝", null, 515, 528),
   dynastyReign("wei-north", "yuan-zi-you", "魏孝庄帝", "孝庄皇帝", null, 528, 530),
   dynastyReign("wei-north", "yuan-ye", "魏长广王", null, null, 530, 531),
-  dynastyReign("wei-north", "yuan-lang", "魏节闵帝", null, null, 531, 532),
+  dynastyReign("wei-north", "yuan-lang", "魏节闵帝", "节闵帝", null, 531, 532),
   dynastyReign("wei-north", "yuan-xiu", "魏孝武帝", "孝武皇帝", null, 532, 535),
 ];
 
@@ -484,7 +482,7 @@ const weiEastReigns = [
 const weiWestReigns = [
   dynastyReign("wei-west", "yuan-bao-ju", "魏文帝", "文皇帝", null, 535, 551),
   dynastyReign("wei-west", "yuan-qin", "魏废帝", null, null, 551, 554),
-  dynastyReign("wei-west", "tuoba-kuo", "魏恭帝", null, null, 554, 557),
+  dynastyReign("wei-west", "tuoba-kuo", "魏恭帝", "恭帝", null, 554, 557),
 ];
 
 const qiBeiReigns = [
@@ -497,11 +495,11 @@ const qiBeiReigns = [
 ];
 
 const zhouBeiReigns = [
-  dynastyReign("zhou-bei", "yuwen-jue", "周孝闵帝", null, null, 557, 557),
+  dynastyReign("zhou-bei", "yuwen-jue", "周孝闵帝", "孝闵帝", null, 557, 557),
   dynastyReign("zhou-bei", "yuwen-yu", "周明帝", "明皇帝", null, 557, 560),
   dynastyReign("zhou-bei", "yuwen-yong", "周武帝", "武皇帝", null, 560, 578),
   dynastyReign("zhou-bei", "yuwen-yun", "周宣帝", "宣皇帝", null, 578, 579),
-  dynastyReign("zhou-bei", "yuwen-yan", "周静帝", null, null, 579, 581),
+  dynastyReign("zhou-bei", "yuwen-yan", "周静帝", "静帝", null, 579, 581),
 ];
 
 const reignGroups = [

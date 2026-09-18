@@ -9,7 +9,6 @@ import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { resolveOrthodoxEndAbs, resolveOrthodoxFromAbs } from "../lib/orthodoxDynasties.mjs";
 import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
 import { drDay } from "../lib/reignDateHelpers.mjs";
-import { resolveRegnalAppellationFields } from "../lib/regnalAppellation.mjs";
 import { reignSql } from "../lib/reignSql.mjs";
 import { normalizeYearPrecisionAt } from "../lib/sqlHelpers.mjs";
 
@@ -81,14 +80,13 @@ function reign({
 }
 
 function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, eraNames = [], preferred = null, claim = null) {
-  const appellation = resolveRegnalAppellationFields(dynastyId, title, posthumous, temple);
   return reign({
     id: dynastyId === "sui" || dynastyId === "tang" ? `reign-${personId}` : `reign-${personId}-${dynastyId}`,
     dynastyId,
     personId,
     title,
-    posthumousName: appellation.posthumousName,
-    templeName: appellation.templeName,
+    posthumousName: posthumous,
+    templeName: temple,
     preferred,
     start: ym(startYear),
     end: ym(endYear, 12),
@@ -112,14 +110,13 @@ function eras(reignId, list) {
 function tangSplitReign(id, personId, title, posthumous, temple, startYear, endYear, opts = {}) {
   const { startMonth = 1, endMonth = 12, precision = "year", eraList = [] } = opts;
   const eraNames = eraList.length ? eras(id, eraList) : [];
-  const appellation = resolveRegnalAppellationFields("tang", title, posthumous, temple);
   return reign({
     id,
     dynastyId: "tang",
     personId,
     title,
-    posthumousName: appellation.posthumousName,
-    templeName: appellation.templeName,
+    posthumousName: posthumous,
+    templeName: temple,
     preferred: null,
     start: ym(startYear, startMonth),
     end: ym(endYear, endMonth),
@@ -358,7 +355,7 @@ const suiReignsCore = [
   dynastyReign("sui", "yang-hao", "隋秦王", null, null, 618, 618),
 ];
 const suiReignsParallel = [
-  dynastyReign("sui", "yang-you", "隋恭帝", null, null, 617, 618, [], null, {
+  dynastyReign("sui", "yang-you", "隋恭帝", "恭帝", null, 617, 618, [], null, {
     track: "changan",
     label: "长安",
   }),
@@ -399,7 +396,7 @@ const tangReigns = [
   dynastyReign("tang", "li-cui", "唐懿宗", null, "懿宗", 859, 873),
   dynastyReign("tang", "li-xuan-tang", "唐僖宗", null, "僖宗", 873, 888),
   dynastyReign("tang", "li-ye-tang", "唐昭宗", null, "昭宗", 888, 904),
-  dynastyReign("tang", "li-zhu-tang", "唐哀帝", null, null, 904, 907),
+  dynastyReign("tang", "li-zhu-tang", "唐哀帝", "哀帝", null, 904, 907),
 ];
 
 const zhouWuReigns = [
@@ -433,15 +430,15 @@ const wudaiReigns = [
   dr("liang-hou", "zhu-youzhen", "后梁末帝", null, null, 913, 923),
   dr("tang-hou", "li-cunxu", "后唐庄宗", null, "庄宗", 923, 926),
   dr("tang-hou", "li-siyuan", "后唐明宗", null, "明宗", 926, 933),
-  dr("tang-hou", "li-conghou", "后唐闵帝", null, null, 934, 934),
+  dr("tang-hou", "li-conghou", "后唐闵帝", "闵帝", null, 934, 934),
   dr("tang-hou", "li-congke", "后唐末帝", null, null, 934, 936),
   dr("jin-hou", "shi-jingtang", "后晋高祖", null, "高祖", 936, 942),
-  dr("jin-hou", "shi-chonggui", "后晋出帝", null, null, 942, 947),
+  dr("jin-hou", "shi-chonggui", "后晋出帝", "出帝", null, 942, 947),
   dr("han-hou", "liu-zhiyuan", "后汉高祖", null, "高祖", 947, 948),
-  dr("han-hou", "liu-chengyou", "后汉隐帝", null, null, 948, 951),
+  dr("han-hou", "liu-chengyou", "后汉隐帝", "隐帝", null, 948, 951),
   dr("zhou-hou", "guo-wei", "后周太祖", null, "太祖", 951, 954),
   dr("zhou-hou", "chai-rong", "后周世宗", null, "世宗", 954, 959),
-  dr("zhou-hou", "chai-zongxun", "后周恭帝", null, null, 959, 960),
+  dr("zhou-hou", "chai-zongxun", "后周恭帝", "恭帝", null, 959, 960),
 ];
 
 const shiguoReigns = [
@@ -452,11 +449,11 @@ const shiguoReigns = [
   dr("tang-nan", "li-bian", "南唐烈祖", null, "烈祖", 937, 943),
   dr("tang-nan", "li-jing-nantang", "南唐元宗", null, "元宗", 943, 961),
   dr("tang-nan", "li-yu-nantang", "南唐后主", null, null, 961, 975),
-  dr("wuyue", "qian-liu", "吴越武肃王", null, null, 907, 932),
-  dr("wuyue", "qian-yuangui", "吴越文穆王", null, null, 932, 941),
-  dr("wuyue", "qian-hongzuo", "吴越忠悼王", null, null, 941, 947),
-  dr("wuyue", "qian-hongcong", "吴越忠逊王", null, null, 947, 948),
-  dr("wuyue", "qian-chu", "吴越忠懿王", null, null, 948, 978),
+  dr("wuyue", "qian-liu", "吴越武肃王", "武肃王", null, 907, 932),
+  dr("wuyue", "qian-yuangui", "吴越文穆王", "文穆王", null, 932, 941),
+  dr("wuyue", "qian-hongzuo", "吴越忠悼王", "忠悼王", null, 941, 947),
+  dr("wuyue", "qian-hongcong", "吴越忠逊王", "忠逊王", null, 947, 948),
+  dr("wuyue", "qian-chu", "吴越忠懿王", "忠懿王", null, 948, 978),
   dr("min-fujian", "wang-shenzhi", "闽太祖", null, "太祖", 909, 925),
   dr("min-fujian", "wang-yanhan", "闽主", null, null, 925, 926),
   dr("min-fujian", "wang-yanjun", "闽主", null, null, 926, 935),
@@ -465,26 +462,26 @@ const shiguoReigns = [
   dr("min-fujian", "zhu-wenjin", "闽主", null, null, 944, 944),
   dr("min-fujian", "wang-yanzheng", "闽主", null, null, 943, 945),
   dr("han-nan", "liu-yan", "南汉高祖", null, "高祖", 917, 942),
-  dr("han-nan", "liu-bin", "南汉殇帝", null, null, 942, 943),
+  dr("han-nan", "liu-bin", "南汉殇帝", "殇帝", null, 942, 943),
   dr("han-nan", "liu-sheng", "南汉中宗", null, "中宗", 943, 958),
   dr("han-nan", "liu-chang", "南汉末帝", null, null, 958, 971),
   dr("shu-qian", "wang-jian-shu", "前蜀高祖", null, "高祖", 907, 918),
   dr("shu-qian", "wang-yan-shu", "前蜀末帝", null, null, 918, 925),
   dr("shu-hou", "meng-zhixiang", "后蜀高祖", null, "高祖", 934, 934),
   dr("shu-hou", "meng-chang", "后蜀后主", "恭孝王", null, 934, 965),
-  dr("jingnan", "gao-jixing", "荆南武信王", null, null, 924, 928),
-  dr("jingnan", "gao-conghe", "荆南文献王", null, null, 928, 948),
-  dr("jingnan", "gao-baorong", "荆南贞懿王", null, null, 948, 960),
-  dr("jingnan", "gao-baoxu", "荆南贞献王", null, null, 960, 962),
+  dr("jingnan", "gao-jixing", "荆南武信王", "武信王", null, 924, 928),
+  dr("jingnan", "gao-conghe", "荆南文献王", "文献王", null, 928, 948),
+  dr("jingnan", "gao-baorong", "荆南贞懿王", "贞懿王", null, 948, 960),
+  dr("jingnan", "gao-baoxu", "荆南贞献王", "贞献王", null, 960, 962),
   dr("jingnan", "gao-jichong", "荆南末王", null, null, 962, 963),
-  dr("chu-nan", "ma-yin", "楚武王", null, null, 907, 930),
+  dr("chu-nan", "ma-yin", "楚武王", "武王", null, 907, 930),
   dr("chu-nan", "ma-xisheng", "楚王", null, null, 930, 932),
   dr("chu-nan", "ma-xifan", "楚王", null, null, 932, 947),
   dr("chu-nan", "ma-xiguang", "楚王", null, null, 947, 947),
   dr("chu-nan", "ma-xie", "楚王", null, null, 947, 950),
   dr("chu-nan", "ma-xichong", "楚王", null, null, 950, 951),
   dr("han-bei", "liu-min", "北汉世祖", null, "世祖", 951, 954),
-  dr("han-bei", "liu-jun-bei", "北汉睿皇帝", null, null, 954, 968),
+  dr("han-bei", "liu-jun-bei", "北汉睿皇帝", "睿皇帝", null, 954, 968),
   dr("han-bei", "liu-jiyuan", "北汉末帝", null, null, 968, 979),
 ];
 
