@@ -3134,44 +3134,11 @@ export const rulersByDynasty = {
   "yue-chunqiu": [
     {
       "dynastyId": "yue-chunqiu",
-      "personId": "yue-r0",
-      "title": "越侯无余",
-      "personName": "无余",
-      "posthumousName": null,
-      "startYear": -565,
-      "endYear": -553,
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
-    },
-    {
-      "dynastyId": "yue-chunqiu",
-      "personId": "yue-r1",
-      "title": "越侯无壬",
-      "personName": "无壬",
-      "posthumousName": null,
-      "startYear": -552,
-      "endYear": -539,
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
-    },
-    {
-      "dynastyId": "yue-chunqiu",
-      "personId": "yue-r2",
-      "title": "越侯无瞫",
-      "personName": "无瞫",
-      "posthumousName": null,
-      "startYear": -538,
-      "endYear": -525,
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
-    },
-    {
-      "dynastyId": "yue-chunqiu",
       "personId": "yue-r3",
       "title": "越侯夫谭",
       "personName": "夫谭",
       "posthumousName": null,
-      "startYear": -524,
+      "startYear": -565,
       "endYear": -511,
       "startDateConfidence": "interpolated",
       "endDateConfidence": "interpolated"
@@ -3889,6 +3856,6 @@ export const rulersByDynasty = {
 
 export const rulerStats = {
   dynasties: 16,
-  reigns: 417,
-  generatedAt: "2026-09-17",
+  reigns: 414,
+  generatedAt: "2026-09-18",
 };

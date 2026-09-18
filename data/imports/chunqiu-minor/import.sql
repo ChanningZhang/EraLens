@@ -143,7 +143,7 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, birth_year = EXCLUDED.birth
 
 -- dynasties
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs, parent_id, group_id, note)
-VALUES ('xue-chunqiu', '薛', ARRAY['薛国'], 'cn', 'east_asia', -578, 1, -327, 12, -6924, -3901, 'year', 'ochre', NULL, NULL, NULL, NULL, '任姓小国；可考君主自薛献公（前511年卒）起；前327年齐魏共灭薛。西周薛伯等早期君主在位年失考，不收录。')
+VALUES ('xue-chunqiu', '薛', ARRAY['薛国'], 'cn', 'east_asia', -511, 1, -327, 12, -6120, -3901, 'year', 'ochre', NULL, NULL, NULL, NULL, '任姓小国；可考君主自薛献公（前511年卒）起；前327年齐魏共灭薛。西周薛伯等早期君主在位年失考，不收录。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, color_token = EXCLUDED.color_token, orthodox_from_abs = EXCLUDED.orthodox_from_abs, orthodox_end_abs = EXCLUDED.orthodox_end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs, parent_id, group_id, note)
 VALUES ('teng-chunqiu', '滕', ARRAY['滕国'], 'cn', 'east_asia', -599, 1, -296, 12, -7176, -3529, 'year', 'indigo', NULL, NULL, NULL, NULL, '周武王封弟错叔绣于滕；本包仅收录春秋可考君主（文公至隐公）。前414年越灭滕后复国，世系失考；前296年宋康王终灭之。')

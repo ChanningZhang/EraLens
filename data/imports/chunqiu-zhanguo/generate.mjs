@@ -52,6 +52,9 @@ function reign({
   precision = "year",
   startDateConfidence = null,
   endDateConfidence = null,
+  claimTrack = null,
+  claimLabel = null,
+  claimRole = null,
 }) {
   return {
     id,
@@ -68,6 +71,9 @@ function reign({
     precision,
     startDateConfidence,
     endDateConfidence,
+    claimTrack,
+    claimLabel,
+    claimRole,
   };
 }
 
@@ -130,6 +136,17 @@ const EXTRA_PERSONS = [
 const PERSON_WIKI_OVERRIDES = {
   "zhongshan-r5": "中山王胜",
 };
+
+function dynastyReignSpan(dynastyId) {
+  const rs = rulersByDynasty[dynastyId] ?? [];
+  return {
+    startYear: Math.min(...rs.map((r) => r.startYear)),
+    endYear: Math.max(...rs.map((r) => r.endYear)),
+  };
+}
+
+const yueSpan = dynastyReignSpan("yue-chunqiu");
+const zhongshanSpan = dynastyReignSpan("zhongshan");
 
 const DYNASTY_LABELS = {
   "qi-chunqiu": "齐国",
@@ -399,11 +416,11 @@ const dynasties = [
     altNames: ["越国"],
     scope: "cn",
     region: "east_asia",
-    start: ym(-600),
-    end: ym(-334, 12),
+    start: ym(yueSpan.startYear),
+    end: ym(yueSpan.endYear, 12),
     precision: "year",
     colorToken: nextColor(),
-    note: "东南古国，勾践灭吴后北进；前334年楚败越，国势衰微。",
+    note: "东南古国。传说夏少康庶子无余始封会稽，中间世系多缺载；有年表自允常。勾践灭吴后北进；前306年楚破越。",
   },
   {
     id: "zhongshan",
@@ -411,11 +428,11 @@ const dynasties = [
     altNames: ["中山国"],
     scope: "cn",
     region: "east_asia",
-    start: ym(-476),
-    end: ym(-296, 12),
+    start: ym(zhongshanSpan.startYear),
+    end: ym(zhongshanSpan.endYear, 12),
     precision: "year",
     colorToken: nextColor(),
-    note: "鲜虞白狄所建，战国中小国；前296年赵灭中山。",
+    note: "鲜虞白狄所建。有年表自文公、武公；前406年后亡国，桓公复兴。前296年赵灭中山。",
   },
   {
     id: "han-warring",
@@ -948,6 +965,8 @@ const manifest = {
     "齐太公不用维基齐国表的前1122年（旧克商年），与西周始年（前1046）对齐。",
     "卫国人物 id 用 weiguo- 前缀，避免与战国魏 wei-r* 冲突；燕召公用 ji-shi，避免与宋恭帝 zhao-shi 冲突。",
     "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 precision: year。",
+    "越国泳道不收夏少康庶子无余及无壬、无瞫：维基诸侯表在无余后「中有十世不明」、无瞫后「中有二十世不明」，无通行王年，不把远祖插值到春秋。有年表自允常；无年表的夫谭仅按允常前窗口插值。王朝起迄取在位首尾（夫谭至无彊前306），楚破越从维基诸侯表前306年，不取旧泳道前334。",
+    "中山国泳道起迄取在位首尾（文公至王尚前296），不提前至桓公复兴传说起点前478；武公之后至桓公复兴间亡国留白。",
     "未收录薛、滕、杞、莒等小国；未收录战国末期的代、胶东等残余。",
     "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
     "韩赵魏在位仅收录前403年册命立国之后；晋国卿大夫世系（赵简子等）不挂在三国行上。晋国止于前349年静公被杀。",

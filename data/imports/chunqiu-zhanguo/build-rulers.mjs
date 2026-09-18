@@ -13,6 +13,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { applyDeathYearToPredecessor } from "../lib/deathYearSuccession.mjs";
+import { assignOverlappingBranchTracks } from "../lib/overlappingBranchTracks.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const sourcesDir = path.join(__dirname, "sources");
@@ -53,6 +54,17 @@ const PERSON_OVERRIDES = {
   "吴王阖闾|光": "helu",
   "阖闾|光": "helu",
   "越王勾践|勾践": "gou-jian",
+  // Yue ids stay stable after dropping legendary undated ancestors across wiki 世不明 gaps.
+  "越侯夫谭|夫谭": "yue-r3",
+  "越侯允常|允常": "yue-r4",
+  "越王鹿郢|与夷": "yue-r6",
+  "越王不寿|不寿": "yue-r7",
+  "越王朱勾|翁": "yue-r8",
+  "越王翳|翳": "yue-r9",
+  "越王错枝|错枝": "yue-r10",
+  "越王无余|无余": "yue-r11",
+  "越王无颛|无颛": "yue-r12",
+  "越王无彊|无彊": "yue-r13",
   "魏文侯|魏斯": "wei-wen",
   "韩景侯|韩虔": "han-jing",
   "赵烈侯|赵籍": "zhao-lie",
@@ -137,6 +149,7 @@ const DYNASTY_START = {
   "zheng-chunqiu": -806,
   "cao-chunqiu": -1046,
   "wu-chunqiu": -585,
+  /** First remaining Yue reign after wiki 世不明 gaps; bounds undated 夫谭 before 允常. */
   "yue-chunqiu": -565,
   zhongshan: -424,
   "han-warring": -403,
@@ -374,6 +387,16 @@ const YEAR_START_HEADER = /^(上任時間|上任时间)$/;
 const YEAR_END_HEADER = /^(退位時間|退位时间)$/;
 const DURATION_HEADER = /^(在位年數|在位年数)$/;
 const SKIP_ROW = /稱號|称号|諡號|谥号|国君姓名|國君姓名|国君之名|领袖姓名|在位年數|在位年数|资料出处|出身与关系/;
+/** Wiki genealogy holes such as 「中有十世不明」「中间世系失考」. */
+const GENEALOGY_GAP_ROW = /世系失考|世不明|中间世系/;
+
+function isGenealogyGapRow(rawCols) {
+  return GENEALOGY_GAP_ROW.test(toSimplified(rawCols.map((c) => stripMd(c)).join("")));
+}
+
+function isCompleteReign(r) {
+  return r.complete === true && r.start != null && r.end != null;
+}
 
 function splitCols(line) {
   const raw = line.split("|");
@@ -487,7 +510,12 @@ function parseRow(rawCols, header, { dynastyId } = {}) {
 
 function parseWikiTables(chunk, { dynastyId, includeLeaderTable = false } = {}) {
   const rulers = [];
+  const pendingUndated = [];
   let header = null;
+  const flushPending = () => {
+    rulers.push(...pendingUndated);
+    pendingUndated.length = 0;
+  };
   for (const line of chunk.split("\n")) {
     if (!line.startsWith("|") || line.includes("---")) continue;
     const rawCols = splitCols(line);
@@ -504,14 +532,22 @@ function parseWikiTables(chunk, { dynastyId, includeLeaderTable = false } = {}) 
       continue;
     }
     void labelsJoined;
+    if (isGenealogyGapRow(rawCols)) {
+      // Do not interpolate undated names across lost generations (e.g. Xia 无余 → Spring-Autumn).
+      pendingUndated.length = 0;
+      continue;
+    }
     const row = parseRow(rawCols, header, { dynastyId });
-    if (row) rulers.push(row);
+    if (!row) continue;
+    if (isCompleteReign(row)) {
+      flushPending();
+      rulers.push(row);
+    } else {
+      pendingUndated.push(row);
+    }
   }
+  flushPending();
   return dedupePreserveOrder(rulers);
-}
-
-function isCompleteReign(r) {
-  return r.complete === true && r.start != null && r.end != null;
 }
 
 /** Evenly split [windowStart, windowEnd] across undated rulers; seams stay contiguous. */
@@ -886,6 +922,9 @@ function enrichRulers(dynastyId, rulers) {
       endYear: r.end,
       startDateConfidence: r.startDateConfidence ?? undefined,
       endDateConfidence: r.endDateConfidence ?? undefined,
+      claimTrack: r.claimTrack ?? undefined,
+      claimLabel: r.claimLabel ?? undefined,
+      claimRole: r.claimRole ?? undefined,
     };
   });
 }
@@ -975,6 +1014,7 @@ for (const [dynastyId, fn] of Object.entries(DYNASTY_SOURCES)) {
   const raw = markInterpolatedBoundaries(parsed).sort(
     (a, b) => a.start - b.start || a.end - b.end,
   );
+  assignOverlappingBranchTracks(raw);
   const enriched = enrichRulers(dynastyId, raw);
   byDynasty[dynastyId] = enriched;
   total += enriched.length;
