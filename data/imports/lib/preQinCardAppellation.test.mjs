@@ -10,7 +10,7 @@ describe("preQinRegnalCardName", () => {
 
   it("drops 王 when the person is stored as a bare single-character given name", () => {
     assert.equal(preQinRegnalCardName("中山王厝", "中山", "厝"), "厝");
-    assert.equal(preQinRegnalCardName("中山王胜", "中山", "胜"), "胜");
+    assert.equal(preQinRegnalCardName("中山王𧊒", "中山", "𧊒"), "𧊒");
     assert.equal(preQinRegnalCardName("吴王僚", "吴", "僚"), "僚");
   });
 
@@ -23,6 +23,13 @@ describe("preQinRegnalCardName", () => {
     const ji = { ancestralXing: "姬" };
     assert.equal(preQinRegnalCardName("燕王哙", "燕", "姬哙", ji), "哙");
     assert.equal(preQinRegnalCardName("燕王喜", "燕", "姬喜", ji), "喜");
+  });
+
+  it("drops 侯 when the person is stored as 氏+单字私名", () => {
+    assert.equal(
+      preQinRegnalCardName("齐侯剡", "齐", "田剡", { clanShi: "田" }),
+      "剡",
+    );
   });
 
   it("keeps 号/称号 bodies that are not 王X names", () => {

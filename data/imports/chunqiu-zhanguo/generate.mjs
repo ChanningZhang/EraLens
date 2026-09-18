@@ -127,11 +127,6 @@ const EXTRA_PERSONS = [
   person("bian-que", "扁鹊", ["医学家"], "战国名医，望闻问切四诊法传说与其相关。", "扁鹊", ym(-407), ym(-310)),
 ];
 
-/** Person id → Wikipedia article title when display name differs from the wiki slug. */
-const PERSON_WIKI_OVERRIDES = {
-  "zhongshan-r5": "中山王胜",
-};
-
 function dynastyReignSpan(dynastyId) {
   const rs = rulersByDynasty[dynastyId] ?? [];
   return {
@@ -168,9 +163,7 @@ function rulerPerson(r) {
     r.personName && !/^[0-9]+$/.test(r.personName) && !/^[0-9]+年$/.test(r.personName)
       ? r.personName
       : r.title;
-  const wikiTitle =
-    PERSON_WIKI_OVERRIDES[r.personId] ??
-    (r.title.replace(/^[吴越韩赵魏秦燕宋鲁卫郑曹齐晋楚]/, "").trim() || r.title);
+  const wikiTitle = r.title;
   return person(
     r.personId,
     displayName,
@@ -266,8 +259,8 @@ const PERSON_DETAIL_OVERRIDES = {
     links: wiki("中山王厝"),
   },
   "zhongshan-r5": {
-    bio: "中山王胜（𧊒），约前309–前299年在位。",
-    links: wiki("中山王胜"),
+    bio: "中山王𧊒，约前309–前299年在位；前299年赵破灵寿后逃齐卒。",
+    links: wiki("中山王𧊒"),
   },
   "zhongshan-r6": {
     bio: "中山王尚，前298–前296年在位，赵灭中山。",

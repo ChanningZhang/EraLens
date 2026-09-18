@@ -294,12 +294,12 @@ describe("resolveReignPrimaryLabel", () => {
       resolveReignPrimaryLabel(
         source({
           start: { year: -312, month: 1 },
-          title: "中山王胜",
-          preferredAppellation: { kind: "regnal", name: "胜" },
+          title: "中山王𧊒",
+          preferredAppellation: { kind: "regnal", name: "𧊒" },
         }),
-        "胜",
+        "𧊒",
       ),
-    ).toBe("胜");
+    ).toBe("𧊒");
   });
 
   it("keeps surnames that begin with 王, such as 王莽", () => {
@@ -384,10 +384,10 @@ describe("resolveReignCardMeta for Zhongshan kings", () => {
       resolveReignCardMeta(
         source({
           start: { year: -312, month: 1 },
-          title: "中山王胜",
-          preferredAppellation: { kind: "regnal", name: "胜" },
+          title: "中山王𧊒",
+          preferredAppellation: { kind: "regnal", name: "𧊒" },
         }),
-        "胜",
+        "𧊒",
         clan,
       ),
     ).toBeNull();

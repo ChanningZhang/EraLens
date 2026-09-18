@@ -323,7 +323,7 @@ export const rulersByDynasty = {
       "posthumousName": null,
       "preferredAppellation": {
         "kind": "regnal",
-        "name": "侯剡"
+        "name": "剡"
       },
       "startYear": -383,
       "endYear": -375
@@ -381,7 +381,7 @@ export const rulersByDynasty = {
       "posthumousName": null,
       "preferredAppellation": {
         "kind": "regnal",
-        "name": "王建"
+        "name": "建"
       },
       "startYear": -264,
       "endYear": -221
@@ -1046,7 +1046,7 @@ export const rulersByDynasty = {
       "posthumousName": null,
       "preferredAppellation": {
         "kind": "regnal",
-        "name": "王比"
+        "name": "比"
       },
       "startYear": -529,
       "endYear": -529
@@ -3527,12 +3527,12 @@ export const rulersByDynasty = {
     {
       "dynastyId": "zhongshan",
       "personId": "zhongshan-r5",
-      "title": "中山王胜",
-      "personName": "胜",
+      "title": "中山王𧊒",
+      "personName": "𧊒",
       "posthumousName": null,
       "preferredAppellation": {
         "kind": "regnal",
-        "name": "胜"
+        "name": "𧊒"
       },
       "startYear": -309,
       "endYear": -299,
@@ -3651,7 +3651,7 @@ export const rulersByDynasty = {
       "posthumousName": null,
       "preferredAppellation": {
         "kind": "regnal",
-        "name": "王安"
+        "name": "安"
       },
       "startYear": -238,
       "endYear": -230

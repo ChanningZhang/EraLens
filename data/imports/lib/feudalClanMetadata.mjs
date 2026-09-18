@@ -207,6 +207,22 @@ export function personNamePrefix(dynastyId) {
   return meta.ancestralXing;
 }
 
+/** Resolve 姓/氏 hints for one person (dynasty defaults + per-person overrides + prefix rules). */
+export function clanHintForPerson(dynastyId, personId, personName) {
+  const base = FEUDAL_DYNASTY_CLAN[dynastyId];
+  const override = FEUDAL_PERSON_CLAN_OVERRIDES[personId];
+  const rule = FEUDAL_PERSON_CLAN_RULES.find(
+    (r) =>
+      (!r.dynastyId || r.dynastyId === dynastyId) &&
+      personName?.startsWith(r.matchNamePrefix),
+  );
+  return {
+    ancestralXing:
+      override?.ancestralXing ?? rule?.ancestralXing ?? base?.ancestralXing,
+    clanShi: override?.clanShi ?? rule?.clanShi ?? base?.clanShi,
+  };
+}
+
 /** 氏 tokens that already appear as the start of a stored personal name. */
 export function shiPersonalNamePrefixes() {
   const prefixes = new Set();

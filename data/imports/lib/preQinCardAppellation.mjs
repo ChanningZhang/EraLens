@@ -3,11 +3,11 @@
  * Titles still carry 国名 (齐桓公, 吴王夫差); this helper derives the body
  * from the dynasty's own 国号 so runtime does not keep a state-name list.
  *
- * 齐王建 → 王建; 中山王厝 → 厝; 吴王夫差 → 夫差; 燕王哙 → 哙; 楚若敖 → 若敖; 夏禹 → 禹.
+ * 齐王建 → 王建; 齐侯剡 → 剡; 中山王厝 → 厝; 吴王夫差 → 夫差; 燕王哙 → 哙; 楚若敖 → 若敖; 夏禹 → 禹.
  */
 
 /**
- * @typedef {{ ancestralXing?: string }} PreQinClanHint
+ * @typedef {{ ancestralXing?: string, clanShi?: string }} PreQinClanHint
  */
 
 /**
@@ -19,6 +19,12 @@ function personStoredAsXingGivenName(personName, body, clan) {
   const xing = clan?.ancestralXing;
   if (!personName || !xing || !body) return false;
   return personName.startsWith(xing) && personName.slice(xing.length) === body;
+}
+
+function personStoredAsShiGivenName(personName, body, clan) {
+  const shi = clan?.clanShi;
+  if (!personName || !shi || !body) return false;
+  return personName.startsWith(shi) && personName.slice(shi.length) === body;
 }
 
 /** @param {string | null | undefined} personName */
@@ -46,6 +52,7 @@ export function preQinRegnalCardName(title, stateName, personName, clan) {
   if (body.length === 1) {
     if (
       personStoredAsXingGivenName(personName, body, clan) ||
+      personStoredAsShiGivenName(personName, body, clan) ||
       personStoredAsBareGivenName(personName, body)
     ) {
       return body;

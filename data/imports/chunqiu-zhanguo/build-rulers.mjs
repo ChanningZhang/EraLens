@@ -15,6 +15,7 @@ import { fileURLToPath } from "node:url";
 import { applyDeathYearToPredecessor } from "../lib/deathYearSuccession.mjs";
 import { preQinRegnalCardName } from "../lib/preQinCardAppellation.mjs";
 import {
+  clanHintForPerson,
   FEUDAL_DYNASTY_CLAN,
   personNamePrefix,
   shiPersonalNamePrefixes,
@@ -728,7 +729,7 @@ const ZHONGSHAN_WIKI_REIGNS = {
   中山桓公: { start: -380, end: -350, startDateConfidence: "approximate", endDateConfidence: "approximate" },
   中山成公: { start: -349, end: -328, startDateConfidence: "approximate" },
   中山王厝: { start: -327, end: -310, name: "厝", endDateConfidence: "approximate" },
-  中山王胜: { start: -309, end: -299, name: "胜", startDateConfidence: "approximate" },
+  中山王𧊒: { start: -309, end: -299, name: "𧊒", startDateConfidence: "approximate" },
   中山王尚: { start: -298, end: -296, name: "尚" },
 };
 
@@ -738,14 +739,14 @@ function parseZhongshan() {
   for (const r of rulers) {
     let next = { ...r };
     if (next.title === "中山王") next.title = "中山王厝";
-    if (next.title === "中山王𧊒" || next.title === "中山王胜") {
-      next.title = "中山王胜";
+    if (next.title === "中山王胜") {
+      next.title = "中山王𧊒";
     }
     if (next.title === "中山王厝" && !finalizePersonName(next.name)) {
       next.name = "厝";
     }
-    if (next.title === "中山王胜" && !finalizePersonName(next.name)) {
-      next.name = "胜";
+    if (next.title === "中山王𧊒" && !finalizePersonName(next.name)) {
+      next.name = "𧊒";
     }
     fixed.push(next);
   }
@@ -945,7 +946,7 @@ function enrichRulers(dynastyId, rulers) {
           r.title,
           STATE_PREFIX[dynastyId],
           resolvedName,
-          FEUDAL_DYNASTY_CLAN[dynastyId],
+          clanHintForPerson(dynastyId, personId, resolvedName),
         )
       : null;
     const preferredAppellation =
