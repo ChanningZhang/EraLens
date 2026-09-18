@@ -10,6 +10,7 @@ import { rulersByDynasty, rulerStats } from "./rulers.mjs";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { ORTHODOX_FROM_START } from "../lib/orthodoxDynasties.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
+import { normalizeYearPrecisionAt } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -89,6 +90,7 @@ function person(id, name, roles, bio, wikiTitle, birth = null, death = null) {
 }
 
 function eventPoint({ id, name, kind, at, precision = "year", dateNote, dynastyIds = [], participantIds = [], summary }) {
+  const resolvedAt = normalizeYearPrecisionAt(at, precision);
   return {
     id,
     name,
@@ -96,8 +98,8 @@ function eventPoint({ id, name, kind, at, precision = "year", dateNote, dynastyI
     timeMode: "point",
     precision,
     dateNote,
-    at,
-    atAbs: at.abs,
+    at: resolvedAt,
+    atAbs: resolvedAt.abs,
     dynastyIds,
     participantIds,
     summary,

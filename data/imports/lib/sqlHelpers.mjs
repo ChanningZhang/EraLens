@@ -31,6 +31,21 @@ export function sqlJson(value) {
 export function ym(year, month = 1) {
   return { year, month, abs: absMonth(year, month) };
 }
+
+/** Year-precision point: December, matching lane year-end and fate `atAbs`. */
+export function eventYear(year) {
+  return ym(year, 12);
+}
+
+/**
+ * Year-precision `at` uses month 12 (lane year-end). January is the old
+ * placeholder and is rewritten; a real January must be `precision: month`.
+ */
+export function normalizeYearPrecisionAt(at, precision = "year") {
+  if (!at || precision !== "year" || at.day != null) return at;
+  if (at.month !== 1) return at;
+  return ym(at.year, 12);
+}
 export function wiki(title) {
   return [{ label: "维基百科", url: `https://zh.wikipedia.org/wiki/${title}` }];
 }
@@ -105,20 +120,33 @@ export function dr(dynastyId, personId, title, posthumous, temple, sy, ey, eraLi
 }
 
 export function eventPoint(partial) {
-  const at = partial.at;
-  return { kind: "other", timeMode: "point", precision: "year", dynastyIds: [], participantIds: [], ...partial, at, atAbs: at.abs };
+  const precision = partial.precision ?? "year";
+  const at = normalizeYearPrecisionAt(partial.at, precision);
+  return {
+    kind: "other",
+    timeMode: "point",
+    precision: "year",
+    dynastyIds: [],
+    participantIds: [],
+    ...partial,
+    precision,
+    at,
+    atAbs: at.abs,
+  };
 }
 
 export function eventRange(partial) {
   const start = partial.start;
   const end = partial.end;
-  const at = partial.at;
+  const precision = partial.precision ?? "year";
+  const at = partial.at ? normalizeYearPrecisionAt(partial.at, precision) : undefined;
   return {
     kind: "other",
     precision: "year",
     dynastyIds: [],
     participantIds: [],
     ...partial,
+    precision,
     start,
     end,
     startAbs: start.abs,
@@ -166,8 +194,9 @@ VALUES (${sqlStr(e.reignId)}, ${sqlStr(e.name)}, ${e.start.year}, ${e.start.mont
 }
 
 export function eventSql(e) {
+  const at = normalizeYearPrecisionAt(e.at, e.precision ?? "year");
   const cols = ["id", "name", "kind", "time_mode", "precision", "date_note", "at_year", "at_month", "at_abs", "start_year", "start_month", "start_abs", "end_year", "end_month", "end_abs", "summary"];
-  const vals = [sqlStr(e.id), sqlStr(e.name), sqlStr(e.kind), sqlStr(e.timeMode), sqlStr(e.precision), sqlStr(e.dateNote ?? null), e.at?.year ?? "NULL", e.at?.month ?? "NULL", e.atAbs ?? "NULL", e.start?.year ?? "NULL", e.start?.month ?? "NULL", e.startAbs ?? "NULL", e.end?.year ?? "NULL", e.end?.month ?? "NULL", e.endAbs ?? "NULL", sqlStr(e.summary ?? null)];
+  const vals = [sqlStr(e.id), sqlStr(e.name), sqlStr(e.kind), sqlStr(e.timeMode), sqlStr(e.precision), sqlStr(e.dateNote ?? null), at?.year ?? "NULL", at?.month ?? "NULL", at?.abs ?? "NULL", e.start?.year ?? "NULL", e.start?.month ?? "NULL", e.startAbs ?? "NULL", e.end?.year ?? "NULL", e.end?.month ?? "NULL", e.endAbs ?? "NULL", sqlStr(e.summary ?? null)];
   return `INSERT INTO events (${cols.join(", ")}) VALUES (${vals.join(", ")})
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary;`;
 }

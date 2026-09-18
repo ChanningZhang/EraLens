@@ -1848,7 +1848,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('sanjian-rebellion', '三监之乱', 'battle', 'circa', 'year', '成王初、周公摄政期间，绝对年据西周初框架', -1041, 1, -12480, -1042, 1, -12492, -1036, 12, -12409, '管蔡霍三监联合武庚叛周，周公东征平定，大规模封建东土。')
+VALUES ('sanjian-rebellion', '三监之乱', 'battle', 'circa', 'year', '成王初、周公摄政期间，绝对年据西周初框架', -1041, 12, -12469, -1042, 1, -12492, -1036, 12, -12409, '管蔡霍三监联合武庚叛周，周公东征平定，大规模封建东土。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
   kind = EXCLUDED.kind,
@@ -1884,7 +1884,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('zhaowang-south', '昭王南征', 'battle', 'circa', 'year', '昭王卒年取断代工程前977年，南征次数与月份不详', -977, 1, -11712, -995, 1, -11928, -977, 12, -11701, '周昭王多次南征荆楚，传说还师渡汉水而卒。')
+VALUES ('zhaowang-south', '昭王南征', 'battle', 'circa', 'year', '昭王卒年取断代工程前977年，南征次数与月份不详', -977, 12, -11701, -995, 1, -11928, -977, 12, -11701, '周昭王多次南征荆楚，传说还师渡汉水而卒。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
   kind = EXCLUDED.kind,
@@ -1902,7 +1902,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('guoren-riot', '国人暴动', 'politics', 'point', 'year', '共和元年即前841年，为中国有确切纪年之始', -841, 1, -10080, NULL, NULL, NULL, NULL, NULL, NULL, '厉王专利，国人暴动，王奔彘，周召共和行政。')
+VALUES ('guoren-riot', '国人暴动', 'politics', 'point', 'year', '共和元年即前841年，为中国有确切纪年之始', -841, 12, -10069, NULL, NULL, NULL, NULL, NULL, NULL, '厉王专利，国人暴动，王奔彘，周召共和行政。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
   kind = EXCLUDED.kind,
@@ -1956,7 +1956,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('quanrong-invasion', '犬戎之祸', 'battle', 'point', 'year', '幽王十一年，前771年', -771, 1, -9240, NULL, NULL, NULL, NULL, NULL, NULL, '申侯联合犬戎攻破镐京，幽王死，西周亡。')
+VALUES ('quanrong-invasion', '犬戎之祸', 'battle', 'point', 'year', '幽王十一年，前771年', -771, 12, -9229, NULL, NULL, NULL, NULL, NULL, NULL, '申侯联合犬戎攻破镐京，幽王死，西周亡。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
   kind = EXCLUDED.kind,
@@ -1974,7 +1974,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('zhou-dual-kings', '二王并立', 'politics', 'point', 'year', '前771年幽王死后', -771, 1, -9240, NULL, NULL, NULL, NULL, NULL, NULL, '申侯等立平王，虢公翰等立携王；后世以平王东迁为东周正统。')
+VALUES ('zhou-dual-kings', '二王并立', 'politics', 'point', 'year', '前771年幽王死后', -771, 12, -9229, NULL, NULL, NULL, NULL, NULL, NULL, '申侯等立平王，虢公翰等立携王；后世以平王东迁为东周正统。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
   kind = EXCLUDED.kind,
@@ -1992,7 +1992,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('xie-wang-killed', '晋文侯杀携王', 'politics', 'point', 'year', '前750年', -750, 1, -8988, NULL, NULL, NULL, NULL, NULL, NULL, '晋文侯攻灭携王，二王并立终结，平王正统确立。')
+VALUES ('xie-wang-killed', '晋文侯杀携王', 'politics', 'point', 'year', '前750年', -750, 12, -8977, NULL, NULL, NULL, NULL, NULL, NULL, '晋文侯攻灭携王，二王并立终结，平王正统确立。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
   kind = EXCLUDED.kind,
@@ -2010,7 +2010,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('pingwang-eastward', '平王东迁', 'politics', 'point', 'year', '平王元年，前770年', -770, 1, -9228, NULL, NULL, NULL, NULL, NULL, NULL, '平王迁都洛邑，东周开始，王室逐渐失去对诸侯的实质控制。')
+VALUES ('pingwang-eastward', '平王东迁', 'politics', 'point', 'year', '平王元年，前770年', -770, 12, -9217, NULL, NULL, NULL, NULL, NULL, NULL, '平王迁都洛邑，东周开始，王室逐渐失去对诸侯的实质控制。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
   kind = EXCLUDED.kind,
@@ -2046,7 +2046,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('kuiqiu', '葵丘之盟', 'politics', 'point', 'year', '齐桓公三十五年，鲁僖公九年，前651年', -651, 1, -7800, NULL, NULL, NULL, NULL, NULL, NULL, '齐桓公会诸侯于葵丘，周襄王赐胙，齐霸达到顶点。')
+VALUES ('kuiqiu', '葵丘之盟', 'politics', 'point', 'year', '齐桓公三十五年，鲁僖公九年，前651年', -651, 12, -7789, NULL, NULL, NULL, NULL, NULL, NULL, '齐桓公会诸侯于葵丘，周襄王赐胙，齐霸达到顶点。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
   kind = EXCLUDED.kind,
@@ -2064,7 +2064,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('chengpu', '城濮之战', 'battle', 'point', 'year', '鲁僖公二十八年，前632年', -632, 1, -7572, NULL, NULL, NULL, NULL, NULL, NULL, '晋文公败楚于城濮，随后践土会盟，晋霸确立。')
+VALUES ('chengpu', '城濮之战', 'battle', 'point', 'year', '鲁僖公二十八年，前632年', -632, 12, -7561, NULL, NULL, NULL, NULL, NULL, NULL, '晋文公败楚于城濮，随后践土会盟，晋霸确立。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
   kind = EXCLUDED.kind,
@@ -2100,7 +2100,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('sanjia-fenjin', '三家分晋', 'politics', 'point', 'year', '周威烈王二十三年正式命韩赵魏为诸侯，前403年', -403, 1, -4824, NULL, NULL, NULL, NULL, NULL, NULL, '周天子承认韩、赵、魏，战国格局形成的标志性事件。')
+VALUES ('sanjia-fenjin', '三家分晋', 'politics', 'point', 'year', '周威烈王二十三年正式命韩赵魏为诸侯，前403年', -403, 12, -4813, NULL, NULL, NULL, NULL, NULL, NULL, '周天子承认韩、赵、魏，战国格局形成的标志性事件。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
   kind = EXCLUDED.kind,
@@ -2136,7 +2136,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('qin-destroy-zhou', '秦灭周', 'politics', 'point', 'year', '赧王五十九年，前256年，秦昭襄王灭西周君', -256, 1, -3060, NULL, NULL, NULL, NULL, NULL, NULL, '秦攻取周王畿，赧王卒，东周灭亡。')
+VALUES ('qin-destroy-zhou', '秦灭周', 'politics', 'point', 'year', '赧王五十九年，前256年，秦昭襄王灭西周君', -256, 12, -3049, NULL, NULL, NULL, NULL, NULL, NULL, '秦攻取周王畿，赧王卒，东周灭亡。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
   kind = EXCLUDED.kind,

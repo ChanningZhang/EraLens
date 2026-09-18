@@ -231,7 +231,7 @@ VALUES
 
 ### events（点事件 point）
 
-发生时刻明确。月未知时 `precision='year'`，`at_month` 用 1 占位（界面不显示 1 月）。
+发生时刻明确。月未知时 `precision='year'`，`at_month` 用 **12** 占位（与泳道年桶右缘一致；界面不显示 12 月）。生成器用 `eventYear(year)` 或 `eventPoint`（会把旧的正月占位改成 12）。已知月份则 `precision='month'|'day'`。
 
 ```sql
 INSERT INTO events (

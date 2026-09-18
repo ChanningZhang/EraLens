@@ -8,6 +8,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 import { reignSql } from "../lib/reignSql.mjs";
+import { normalizeYearPrecisionAt } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "../../..");
@@ -472,7 +473,8 @@ const { persons: importPersons, reigns: importReigns, missingReigns } = finalize
 );
 
 function eventPoint(partial) {
-  const at = partial.at;
+  const precision = partial.precision ?? "year";
+  const at = normalizeYearPrecisionAt(partial.at, precision);
   return {
     kind: "other",
     timeMode: "point",
@@ -480,6 +482,7 @@ function eventPoint(partial) {
     dynastyIds: [],
     participantIds: [],
     ...partial,
+    precision,
     at,
     atAbs: at.abs,
   };
@@ -487,7 +490,8 @@ function eventPoint(partial) {
 function eventRange(partial) {
   const start = partial.start;
   const end = partial.end;
-  const at = partial.at;
+  const precision = partial.precision ?? "year";
+  const at = partial.at ? normalizeYearPrecisionAt(partial.at, precision) : undefined;
   return {
     kind: "other",
     precision: "year",
@@ -495,6 +499,7 @@ function eventRange(partial) {
     participantIds: [],
     dateNote: undefined,
     ...partial,
+    precision,
     start,
     end,
     startAbs: start.abs,

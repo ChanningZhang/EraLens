@@ -8,6 +8,7 @@ import { fileURLToPath } from "node:url";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
 import { reignSql as formatReignSql } from "../lib/reignSql.mjs";
+import { normalizeYearPrecisionAt } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -108,19 +109,22 @@ const reigns = applyDocumentedDatesToReigns(reignGroups.flat());
 // ── events ───────────────────────────────────────────────────────────────────
 
 function eventPoint(partial) {
-  const at = partial.at;
-  return { kind: "other", timeMode: "point", precision: "year", dynastyIds: [], participantIds: [], ...partial, at, atAbs: at.abs };
+  const precision = partial.precision ?? "year";
+  const at = normalizeYearPrecisionAt(partial.at, precision);
+  return { kind: "other", timeMode: "point", precision: "year", dynastyIds: [], participantIds: [], ...partial, precision, at, atAbs: at.abs };
 }
 function eventRange(partial) {
   const start = partial.start;
   const end = partial.end;
-  const at = partial.at;
+  const precision = partial.precision ?? "year";
+  const at = partial.at ? normalizeYearPrecisionAt(partial.at, precision) : undefined;
   return {
     kind: "other",
     precision: "year",
     dynastyIds: [],
     participantIds: [],
     ...partial,
+    precision,
     start,
     end,
     startAbs: start.abs,

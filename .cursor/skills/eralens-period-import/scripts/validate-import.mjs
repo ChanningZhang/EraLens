@@ -63,6 +63,18 @@ if (/\bINSERT\s+INTO\s+events\b/i.test(sql) && !/\btime_mode\b/i.test(sql)) {
   warnings.push("events INSERT has no time_mode; DB default is point");
 }
 
+const eventInsertRe =
+  /INSERT INTO events \([^)]*\) VALUES \('((?:[^']|'')*)',\s*'(?:[^']|'')*',\s*'(?:[^']|'')*',\s*'([^']*)',\s*'([^']*)',\s*(?:NULL|'(?:[^']|'')*'),\s*(-?\d+|NULL),\s*(-?\d+|NULL)/gi;
+for (const match of sql.matchAll(eventInsertRe)) {
+  const [, id, timeMode, precision, atYear, atMonth] = match;
+  if (precision !== "year" || atMonth === "NULL") continue;
+  if (Number(atMonth) === 1) {
+    errors.push(
+      `Year-precision event ${id} (${timeMode}) must use at_month=12 to match lane year-end (got ${atYear}-${atMonth})`,
+    );
+  }
+}
+
 const absFields = sql.match(/\b(start_abs|end_abs|at_abs)\s*,\s*(-?\d+)/gi) ?? [];
 // Heuristic: flag obviously unquoted negative in wrong context — light check only
 

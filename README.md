@@ -224,7 +224,7 @@ pnpm db:down      # 停止容器
 - 数据：`relations`，`kind` 为 `killed` | `surrender` | `abdication` | `captured`，必须有 `atAbs`。`fromRef` 为 `person:` 或 `reign:`，`toRef` 为 `person:`。同朝继承不画。
 - 解析：受害方取当时在位或最近已结束的 reign；接收方取当时在位或其后 24 个月内即位的 reign。B 在时间轴上无卡时，改挂当时在位君主。无接收方（未收录的后续政权等）不画。
 - 几何：水平段从 A 卡**中线**出发，折到 `atAbs` 再接到 B 朝向边；颜色为 A 所在泳道本色。命中热区加宽，便于 tooltip。
-- 主数据包：`data/imports/cross-dynasty-fate/`（与各时期 events、`documentedReignDates` 对齐）。有明确灭国对象的王朝，末代通常应有一条线。
+- 主数据包：`data/imports/cross-dynasty-fate/`（与各时期 events、`documentedReignDates` 对齐）。有明确灭国对象的王朝，末代通常应有一条线；非末代被他朝杀死或俘虏的也画。
 
 实现：`packages/shared/src/reignFateRelations.ts`，布局 `apps/web/src/features/timeline/model/reignFateLayout.ts`，绘制 `ReignFateLayer`。
 
@@ -234,7 +234,7 @@ pnpm db:down      # 停止容器
 - `Cmd/Ctrl + 滚轮` 或触控板捏合缩放
 - `←/→` 步进，`Shift+←/→` 大步，`Home/End` 跳数据首尾
 - 舞台随鼠标的竖向参考线；泳道中央另有中线，用于切换冻结王朝名
-- 悬停卡片：起止年（compact，无「公元」）与时长；年精度不展示占位月
+- 悬停卡片：起止年（compact，无「公元」）与时长；年精度不展示占位月。年精度点事件落在该年 12 月，与泳道年桶右缘、命运线对齐。
 - 悬停命运虚线：`甲 → 乙（被杀|投降|禅让|被俘）`
 - 点击皇帝 / 事件 / 人物 / 左侧王朝名：右侧抽屉详情（可拖宽，双击分隔条复位）
 - 顶栏搜索跳转到实体（比拖标尺快）。`Home` 到 `bounds.minAbs`（可能早于最早王朝，若有更早 circa 事件）

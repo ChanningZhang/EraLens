@@ -211,6 +211,36 @@ export function buildFateCatalog() {
       eventId: null,
       resolveAt: () => atFromReignEnd("reign-xiang-yu", -202),
     },
+    {
+      // 非末代：前299年秦昭襄王诱楚怀王会武关而扣留，楚立顷襄王；怀王前296年病死于秦。
+      // https://zh.wikipedia.org/wiki/楚怀王
+      id: "rel-chu-r36-qin-r27-captured",
+      fromPersonId: "chu-r36",
+      toPersonId: "qin-r27",
+      kind: "captured",
+      eventId: null,
+      resolveAt: () => ym(-299, 12),
+    },
+    {
+      // 非末代：前645年韩原之战秦穆公俘晋惠公，同年释归；惠公续位至前637，晋未亡。
+      // https://zh.wikipedia.org/wiki/韩原之战
+      id: "rel-jin-r21-qin-r8-captured",
+      fromPersonId: "jin-r21",
+      toPersonId: "qin-r8",
+      kind: "captured",
+      eventId: null,
+      resolveAt: () => ym(-645, 11),
+    },
+    {
+      // 非末代：前284年楚将淖齿杀齐湣王，齐人立襄王守莒；湣王非田齐末主。
+      // https://zh.wikipedia.org/wiki/淖齿
+      id: "rel-qi-r37-chu-r37-killed",
+      fromPersonId: "qi-r37",
+      toPersonId: "chu-r37",
+      kind: "killed",
+      eventId: null,
+      resolveAt: () => ym(-284, 12),
+    },
 
     // ── 夏商周 ──────────────────────────────────────────────────────────────
     {
@@ -354,6 +384,16 @@ export function buildFateCatalog() {
       kind: "surrender",
       eventId: "cheng-han-fall",
       resolveAt: () => atFromReignEnd("reign-li-shi", 347),
+    },
+    {
+      // 非末代：313年正月刘聪鸩杀被俘的晋怀帝；四月长安立愍帝，西晋未即亡。
+      // https://zh.wikipedia.org/wiki/晋怀帝
+      id: "rel-sima-chi-liu-cong-killed",
+      fromPersonId: "sima-chi",
+      toPersonId: "liu-cong",
+      kind: "killed",
+      eventId: "yongjia-disaster",
+      resolveAt: () => atFromReignEnd("reign-sima-chi", 313),
     },
     {
       id: "rel-sima-ye-liu-yao-jin-surrender",
@@ -532,6 +572,17 @@ export function buildFateCatalog() {
       kind: "abdication",
       eventId: "liang-nan-founded",
       resolveAt: () => ym(502, 12),
+    },
+    {
+      // 非末代：承圣三年十二月辛未（555-01-27）西魏克江陵，杀梁元帝；敬帝继立于建康。
+      // 当时西魏在位为恭帝拓跋廓；萧詧西梁卡起于次月，不抢接收方。
+      // https://zh.wikipedia.org/wiki/梁元帝
+      id: "rel-xiao-yi-tuoba-kuo-killed",
+      fromPersonId: "xiao-yi",
+      toPersonId: "tuoba-kuo",
+      kind: "killed",
+      eventId: null,
+      resolveAt: () => atFromReignEnd("reign-xiao-yi", 555),
     },
     {
       id: "rel-xiao-fangzhi-chen-baxian-abdication",
@@ -875,6 +926,17 @@ export function buildFateCatalog() {
       kind: "killed",
       eventId: "chen-kills-xu",
       resolveAt: () => ym(1360, 6),
+    },
+    {
+      // 非末代：至正二十三年八月壬戌（1363-10-03）鄱阳湖陈友谅中流矢死，张定边立陈理。
+      // 朱元璋吴王卡起 1364-02-15，落在 24 个月即将即位窗口。
+      // https://zh.wikipedia.org/wiki/陈友谅
+      id: "rel-chen-youliang-zhu-yuanzhang-killed",
+      fromPersonId: "chen-youliang",
+      toPersonId: "zhu-yuanzhang",
+      kind: "killed",
+      eventId: "poyang-lake-battle",
+      resolveAt: () => atFromReignEnd("reign-chen-youliang-chen-han", 1363),
     },
     {
       id: "rel-chen-li-zhu-yuanzhang-surrender",

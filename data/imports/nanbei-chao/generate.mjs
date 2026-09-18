@@ -10,6 +10,7 @@ import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 import { resolveRegnalAppellationFields } from "../lib/regnalAppellation.mjs";
 import { reignSql } from "../lib/reignSql.mjs";
+import { normalizeYearPrecisionAt } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -519,7 +520,8 @@ const reigns = applyDocumentedDatesToReigns(reignGroups.flat());
 // ── events ───────────────────────────────────────────────────────────────────
 
 function eventPoint(partial) {
-  const at = partial.at;
+  const precision = partial.precision ?? "year";
+  const at = normalizeYearPrecisionAt(partial.at, precision);
   return {
     kind: "other",
     timeMode: "point",
@@ -527,6 +529,7 @@ function eventPoint(partial) {
     dynastyIds: [],
     participantIds: [],
     ...partial,
+    precision,
     at,
     atAbs: at.abs,
   };
@@ -534,13 +537,15 @@ function eventPoint(partial) {
 function eventRange(partial) {
   const start = partial.start;
   const end = partial.end;
-  const at = partial.at;
+  const precision = partial.precision ?? "year";
+  const at = partial.at ? normalizeYearPrecisionAt(partial.at, precision) : undefined;
   return {
     kind: "other",
     precision: "year",
     dynastyIds: [],
     participantIds: [],
     ...partial,
+    precision,
     start,
     end,
     startAbs: start.abs,

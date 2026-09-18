@@ -2022,7 +2022,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('yongjia-disaster', '永嘉之乱', 'battle', 'point', 'year', '永嘉五年，311年，刘曜陷洛阳', 311, 1, 3732, NULL, NULL, NULL, NULL, NULL, NULL, '汉赵刘曜攻陷洛阳，俘晋怀帝，中原士族南渡，西晋名存实亡。')
+VALUES ('yongjia-disaster', '永嘉之乱', 'battle', 'point', 'year', '永嘉五年，311年，刘曜陷洛阳', 311, 12, 3743, NULL, NULL, NULL, NULL, NULL, NULL, '汉赵刘曜攻陷洛阳，俘晋怀帝，中原士族南渡，西晋名存实亡。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
   date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,
@@ -2038,7 +2038,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('jin-east-founded', '东晋建立', 'politics', 'point', 'year', '317年，司马睿即皇帝位于建康', 317, 1, 3804, NULL, NULL, NULL, NULL, NULL, NULL, '司马睿南渡即帝位，建都建康，东晋开始，王导等士族共定江南。')
+VALUES ('jin-east-founded', '东晋建立', 'politics', 'point', 'year', '317年，司马睿即皇帝位于建康', 317, 12, 3815, NULL, NULL, NULL, NULL, NULL, NULL, '司马睿南渡即帝位，建都建康，东晋开始，王导等士族共定江南。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
   date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,
@@ -2046,7 +2046,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('cheng-han-founded', '成汉建立', 'politics', 'point', 'year', NULL, 304, 1, 3648, NULL, NULL, NULL, NULL, NULL, NULL, '李雄据益州称成都王，后称帝，成汉立国。')
+VALUES ('cheng-han-founded', '成汉建立', 'politics', 'point', 'year', NULL, 304, 12, 3659, NULL, NULL, NULL, NULL, NULL, NULL, '李雄据益州称成都王，后称帝，成汉立国。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
   date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,
@@ -2054,7 +2054,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('han-zhao-founded', '汉赵建立', 'politics', 'point', 'year', NULL, 304, 1, 3648, NULL, NULL, NULL, NULL, NULL, NULL, '刘渊于离石举兵，称汉王，后称帝，五胡乱华开端。')
+VALUES ('han-zhao-founded', '汉赵建立', 'politics', 'point', 'year', NULL, 304, 12, 3659, NULL, NULL, NULL, NULL, NULL, NULL, '刘渊于离石举兵，称汉王，后称帝，五胡乱华开端。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
   date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,
@@ -2070,7 +2070,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('zhao-back-founded', '后赵建立', 'politics', 'point', 'year', NULL, 319, 1, 3828, NULL, NULL, NULL, NULL, NULL, NULL, '石勒据襄国，称赵王，后称帝，建立后赵。')
+VALUES ('zhao-back-founded', '后赵建立', 'politics', 'point', 'year', NULL, 319, 12, 3839, NULL, NULL, NULL, NULL, NULL, NULL, '石勒据襄国，称赵王，后称帝，建立后赵。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
   date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,
@@ -2078,7 +2078,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('qin-front-founded', '前秦建立', 'politics', 'point', 'year', NULL, 351, 1, 4212, NULL, NULL, NULL, NULL, NULL, NULL, '苻健据长安称帝，前秦开始。')
+VALUES ('qin-front-founded', '前秦建立', 'politics', 'point', 'year', NULL, 351, 12, 4223, NULL, NULL, NULL, NULL, NULL, NULL, '苻健据长安称帝，前秦开始。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
   date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,
@@ -2094,7 +2094,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('feishui-battle', '淝水之战', 'battle', 'point', 'year', '太元八年，383年，前秦败于东晋', 383, 1, 4596, NULL, NULL, NULL, NULL, NULL, NULL, '苻坚率百万大军南征东晋，于淝水惨败，前秦迅速崩溃，北方再分裂。')
+VALUES ('feishui-battle', '淝水之战', 'battle', 'point', 'year', '太元八年，383年，前秦败于东晋', 383, 12, 4607, NULL, NULL, NULL, NULL, NULL, NULL, '苻坚率百万大军南征东晋，于淝水惨败，前秦迅速崩溃，北方再分裂。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
   date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,
@@ -2110,7 +2110,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('cheng-han-fall', '桓温伐蜀', 'battle', 'point', 'year', '346年，桓温攻成都，李势降', 346, 1, 4152, NULL, NULL, NULL, NULL, NULL, NULL, '桓温率军伐蜀，李势投降，成汉灭亡。')
+VALUES ('cheng-han-fall', '桓温伐蜀', 'battle', 'point', 'year', '346年，桓温攻成都，李势降', 346, 12, 4163, NULL, NULL, NULL, NULL, NULL, NULL, '桓温率军伐蜀，李势投降，成汉灭亡。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
   date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,
@@ -2118,7 +2118,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('liu-yu-north', '刘裕北伐', 'battle', 'point', 'year', '416–417年，刘裕灭后秦', 417, 1, 5004, NULL, NULL, NULL, NULL, NULL, NULL, '刘裕率军北伐，攻占长安，灭后秦，东晋势力达于极北。')
+VALUES ('liu-yu-north', '刘裕北伐', 'battle', 'point', 'year', '416–417年，刘裕灭后秦', 417, 12, 5015, NULL, NULL, NULL, NULL, NULL, NULL, '刘裕率军北伐，攻占长安，灭后秦，东晋势力达于极北。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
   date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,
@@ -2134,7 +2134,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('sixteen-kingdoms-end', '北魏灭北凉', 'politics', 'point', 'year', '439年，拓跋焘灭北凉，统一华北', 439, 1, 5268, NULL, NULL, NULL, NULL, NULL, NULL, '北魏太武帝灭北凉，统一华北，五胡十六国时期结束。')
+VALUES ('sixteen-kingdoms-end', '北魏灭北凉', 'politics', 'point', 'year', '439年，拓跋焘灭北凉，统一华北', 439, 12, 5279, NULL, NULL, NULL, NULL, NULL, NULL, '北魏太武帝灭北凉，统一华北，五胡十六国时期结束。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
   date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,
