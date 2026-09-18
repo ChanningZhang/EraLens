@@ -1,6 +1,7 @@
 import {
   isOrthodoxAt,
   isOrthodoxReign,
+  resolveOrthodoxEndAbs,
   type OrthodoxDynasty,
 } from "./orthodoxDynasties";
 import {
@@ -112,7 +113,13 @@ export function resolveReignColorToken(
   reign: Pick<Reign, "startAbs" | "endAbs" | "claimTrack">,
 ): ColorToken {
   if (isOrthodoxReign(dynasty, reign)) return ORTHODOX_COLOR_TOKEN;
-  return dynasty.colorToken;
+  const orthodoxEnd = resolveOrthodoxEndAbs(dynasty);
+  // Post-orthodox reigns (端宗/帝昺, 元惠宗) keep the dynasty base token, not
+  // the cutoff month's orthodox-at gold used for the lane chip.
+  if (orthodoxEnd != null && reign.startAbs >= orthodoxEnd) {
+    return dynasty.colorToken;
+  }
+  return resolveDynastyColorToken(dynasty, reign.startAbs);
 }
 
 export function resolveReignColorValue(

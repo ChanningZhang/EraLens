@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Supplement famous Three Kingdoms battles and key commanders.
- * Existing guandu / chibi / yiling remain in seed & three-kingdoms-warlord.
+ * Guandu / chibi / yiling are in three-kingdoms-warlord; this pack adds other famous battles.
  */
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -269,7 +269,7 @@ const manifest = {
     { label: "张辽", url: "https://zh.wikipedia.org/wiki/张辽" },
   ],
   notes: [
-    "官渡、赤壁、夷陵已在 seed / three-kingdoms-warlord 包中，本包补充其余著名战役。",
+    "官渡、赤壁、夷陵已在 three-kingdoms-warlord 包中，本包补充其余著名战役。",
     "长坂之战关联东汉（han-east），并 supplemental 关联魏、蜀割据行。",
     "夷陵之战补充陆逊为参战人物（supplemental participant）。",
     "定军山为汉中之战关键节点，单独建点事件以便检索。",

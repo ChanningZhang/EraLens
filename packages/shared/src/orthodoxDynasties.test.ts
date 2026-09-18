@@ -165,16 +165,35 @@ describe("orthodoxDynasties", () => {
     expect(isOrthodoxAt(roc, absMonth(1911))).toBe(false);
   });
 
-  it("marks yuan as orthodox only until 1368 even when dynasty ends in 1388", () => {
+  it("marks song-south as orthodox until gongdi surrender; duanzong and dibing stay on main line without gold", () => {
+    const songSouth = {
+      id: "song-south",
+      startAbs: absMonth(1127),
+      endAbs: absMonth(1279),
+    };
+    expect(resolveOrthodoxSpan(songSouth)).toEqual({
+      startAbs: songSouth.startAbs,
+      endAbs: ORTHODOX_END_ABS["song-south"],
+    });
+    expect(isOrthodoxReign(songSouth, { startAbs: absMonth(1274, 8), endAbs: absMonth(1276, 2) })).toBe(true);
+    expect(isOrthodoxReign(songSouth, { startAbs: absMonth(1276, 6), endAbs: absMonth(1278, 5) })).toBe(false);
+    expect(isOrthodoxReign(songSouth, { startAbs: absMonth(1278, 5), endAbs: absMonth(1279, 3) })).toBe(false);
+  });
+
+  it("marks yuan as orthodox from gongdi surrender until 1368 even when dynasty ends in 1388", () => {
     const yuan = {
       id: "yuan",
       startAbs: absMonth(1271, 12),
       endAbs: absMonth(1388),
     };
+    expect(resolveOrthodoxFromAbs(yuan)).toBe(ORTHODOX_FROM_ABS.yuan);
     expect(resolveOrthodoxSpan(yuan)).toEqual({
-      startAbs: yuan.startAbs,
+      startAbs: ORTHODOX_FROM_ABS.yuan,
       endAbs: ORTHODOX_END_ABS.yuan,
     });
+    expect(isOrthodoxAt(yuan, absMonth(1275))).toBe(false);
+    expect(isOrthodoxAt(yuan, absMonth(1276, 2))).toBe(true);
+    expect(isOrthodoxAt(yuan, absMonth(1278))).toBe(true);
     expect(isOrthodoxAt(yuan, absMonth(1367))).toBe(true);
     expect(isOrthodoxAt(yuan, absMonth(1368))).toBe(true);
     expect(isOrthodoxAt(yuan, absMonth(1369))).toBe(false);
@@ -186,6 +205,18 @@ describe("orthodoxDynasties", () => {
     ).toBe(false);
     expect(
       overlapsOrthodoxSpan(yuan, absMonth(1367), absMonth(1370)),
+    ).toBe(true);
+    expect(
+      isOrthodoxReign(yuan, {
+        startAbs: absMonth(1271, 12),
+        endAbs: absMonth(1276, 2),
+      }),
+    ).toBe(false);
+    expect(
+      isOrthodoxReign(yuan, {
+        startAbs: absMonth(1276, 2),
+        endAbs: absMonth(1294, 2),
+      }),
     ).toBe(true);
     expect(
       isOrthodoxReign(yuan, {
@@ -233,6 +264,16 @@ describe("orthodoxDynasties", () => {
     expect(resolveOrthodoxFromAbs(jinEast)).toBe(jinEast.startAbs);
     expect(resolveOrthodoxFromAbs(songNorth)).toBe(songNorth.startAbs);
     expect(resolveOrthodoxFromAbs(sui)).toBe(sui.startAbs);
+  });
+
+  it("does not mark xin or gengshi interregnums as orthodox", () => {
+    const xin = { id: "xin", startAbs: absMonth(9, 1) };
+    const gengshi = { id: "han-gengshi", startAbs: absMonth(23, 1) };
+    const hanEast = { id: "han-east", startAbs: absMonth(25, 8) };
+
+    expect(resolveOrthodoxFromAbs(xin)).toBeUndefined();
+    expect(resolveOrthodoxFromAbs(gengshi)).toBeUndefined();
+    expect(resolveOrthodoxFromAbs(hanEast)).toBe(hanEast.startAbs);
   });
 });
 

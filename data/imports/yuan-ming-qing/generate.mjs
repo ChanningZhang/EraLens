@@ -203,8 +203,10 @@ const dynasties = [
 // ── reigns ─────────────────────────────────────────────────────────────────
 
 // 元帝在位日取维基百科君主列表通行换算（儒略历/格里历），precision=day。
-const yuanReigns = [
-  drDay("yuan", "hu-bilie", "元世祖", "圣德神功文武皇帝", "世祖", 1271, 12, 18, 1294, 2, 18, [{ name: "至元", sy: 1264, ey: 1294 }]),
+// 世祖定国号至宋恭帝降元（1276-02-04）拆为独立卡片、主线非正统；降元后同帝续统走金色。
+const yuanReignsMain = [
+  drDay("yuan", "hu-bilie", "元世祖", "圣德神功文武皇帝", "世祖", 1271, 12, 18, 1276, 2, 4, [{ name: "至元", sy: 1264, ey: 1294 }]),
+  drDay("yuan", "hu-bilie", "元世祖", "圣德神功文武皇帝", "世祖", 1276, 2, 4, 1294, 2, 18, [{ name: "至元", sy: 1264, ey: 1294 }], null, "reign-hu-bilie-yuan-unified"),
   drDay("yuan", "temur", "元成宗", "钦明广孝皇帝", "成宗", 1294, 5, 10, 1307, 2, 10),
   drDay("yuan", "khayishan", "元武宗", "仁惠宣孝皇帝", "武宗", 1307, 6, 21, 1311, 1, 27),
   drDay("yuan", "ayurbarwada", "元仁宗", "圣文钦孝皇帝", "仁宗", 1311, 4, 7, 1320, 3, 1),
@@ -226,6 +228,7 @@ const yuanReigns = [
   drDay("yuan", "ayushiridara", "元昭宗", null, "昭宗", 1370, 5, 27, 1378, 5, 10, [{ name: "宣光", sy: 1371, ey: 1378 }]),
   drDay("yuan", "togus-temur", "天元帝", null, null, 1378, 5, 13, 1388, 11, 1, [{ name: "天元", sy: 1379, ey: 1388 }]),
 ];
+const yuanReigns = yuanReignsMain;
 
 const yuanMoReigns = [
   // 谥号、庙号为明玉珍1361年所上，见中/英文维基「徐寿辉」。
@@ -303,7 +306,7 @@ const qingReigns = [
   drDay("qing", "puyi", "清逊帝", null, null, 1908, 12, 2, 1912, 2, 12, [{ name: "宣统", sy: 1909, ey: 1912 }]),
 ];
 
-const reignGroups = [yuanReigns, yuanMoReigns, mingReigns, mingSouthMain, qingReigns];
+const reignGroups = [yuanReignsMain, yuanMoReigns, mingReigns, mingSouthMain, qingReigns];
 const reigns = applyDocumentedDatesToReigns(
   [yuanReigns, yuanMoReigns, mingReigns, mingSouthReigns, qingReigns].flat(),
 );
@@ -551,7 +554,8 @@ const manifest = {
     { label: "左宗棠收复新疆", url: "https://zh.wikipedia.org/wiki/左宗棠平乱" },
   ],
   notes: [
-    "覆盖元（1271–1388，含漠北延续；正统金色止于1368）、明（1368–1644）、南明（1644–1662）、清（1636–1912）。",
+    "覆盖元（1271–1388，含漠北延续；正统金色自1276恭帝降元起至1368）、明（1368–1644）、南明（1644–1662）、清（1636–1912）。",
+    "元世祖忽必烈定国号至宋恭帝降元（1271-12-18–1276-02-04）拆为独立卡片、主线非正统；降元后同帝续统走金色。",
     "元末漠北三位君主：元惠宗（顺帝北迁续统，1368–1370）、元昭宗（1370–1378）、天元帝（1378–1388）。",
     "清王朝行自1616年努尔哈赤建后金起算，1636年改国号大清；努尔哈赤、皇太极在位计入清 reign，但正统自顺治（福临）入关（1644）起算。",
     "明清皇帝卡片优先显示年号；朱祁镇两段在位分别用正统、天顺。",

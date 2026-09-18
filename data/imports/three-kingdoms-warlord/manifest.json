@@ -9,13 +9,13 @@
   },
   "scope": "cn",
   "depth": "standard",
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-18",
   "counts": {
-    "persons": 1,
+    "persons": 10,
     "dynasties": 3,
-    "reigns": 3,
+    "reigns": 5,
     "events": 4,
-    "relations": 4
+    "relations": 6
   },
   "sources": [
     {
@@ -47,7 +47,8 @@
     "魏蜀吴王朝行分别自曹丕称帝（220-12）、刘备称帝（221-5）、孙权称王（222-10）起；称帝前不建 reign。",
     "wei 的 orthodox_from_abs 与王朝始年同为 220 年 12 月曹丕称帝。",
     "袁绍（yuan-shao）、刘璋（liu-zhang）仅作人物收录，不建割据王朝行。",
-    "曹叡及以后见 seed 与 three-kingdoms-late 包。",
+    "曹叡、刘禅在位及年号本包写入；曹芳及孙吴末帝见 three-kingdoms-late。",
+    "刘禅降魏日据中文维基 263-12-23，蜀汉王朝行迄月对齐为 263-12。",
     "在位起止日经 documentedReignDates 提升至 day。"
   ]
 }

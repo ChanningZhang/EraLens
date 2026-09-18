@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Supplement Wei (曹魏) and Wu (孙吴) late emperors missing after seed import.
+ * Supplement Wei (曹魏) and Wu (孙吴) emperors after Cao Rui / Sun Quan.
  */
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -174,7 +174,7 @@ const manifest = {
     "在位起止据《三国志》及维基百科通行公历换算，经 documentedReignDates 提升至 day。",
     "曹芳晋谥厉，作邵陵厉公；title 用《三国志》齐王。曹髦、孙亮无谥号，title 用高贵乡公、会稽王。孙皓无谥号，title 用吴末帝。封号不写入 posthumous_name。",
     "孙皓第四个年号为建衡，旧误作建兴（孙亮年号）。",
-    "曹魏、孙吴王朝行已存在于 seed，本包仅补人物与在位。",
+    "曹魏、孙吴王朝行与曹丕、曹叡、孙权在位由 three-kingdoms-warlord 写入，本包仅补其后人物与在位。",
   ],
 };
 

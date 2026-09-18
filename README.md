@@ -33,7 +33,7 @@ RUN_SEED=true docker compose up --build
 
 ```bash
 pnpm install
-pnpm db:setup      # 仅启动 Docker PostgreSQL + migrate + seed
+pnpm db:setup      # 启动 Docker PostgreSQL + migrate + 导入 data/imports
 pnpm dev:all       # 前端 :5173 + API :3001
 ```
 
@@ -81,7 +81,8 @@ API 环境变量见 `apps/api/.env.example`（`DATABASE_URL`、`PORT`）。
 ```bash
 pnpm db:up        # 仅启动 PostgreSQL 容器
 pnpm db:migrate   # 应用迁移
-pnpm db:seed      # 导入 data/seed JSON
+pnpm db:import    # 导入 data/imports 各时期 SQL
+pnpm db:seed      # 导入 data/seed JSON（Mock 样本）
 pnpm db:down      # 停止容器
 ```
 

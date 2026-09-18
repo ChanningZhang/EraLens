@@ -9,11 +9,12 @@
     "build": "pnpm -r build",
     "test": "pnpm -r test",
     "lint": "pnpm -r lint",
-    "db:up": "docker compose up -d postgres",
+    "db:up": "docker compose up -d --wait postgres",
     "db:down": "docker compose down",
     "db:migrate": "pnpm --filter @eralens/api db:migrate",
     "db:seed": "pnpm --filter @eralens/api db:seed",
-    "db:setup": "pnpm db:up && pnpm db:migrate && pnpm db:seed"
+    "db:import": "node scripts/import-real-data.mjs",
+    "db:setup": "pnpm db:up && pnpm db:migrate && pnpm db:import"
   },
   "devDependencies": {
     "typescript": "^5.7.3"

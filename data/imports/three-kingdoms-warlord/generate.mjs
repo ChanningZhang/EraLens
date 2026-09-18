@@ -22,6 +22,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const CHIBI = ym(208, 12);
 const WEI_FOUNDED = ym(220, 12);
 const SHU_FOUNDED = ym(221, 5);
+const SHU_ENDED = ym(263, 12);
 const WU_FOUNDED = ym(222, 10);
 
 function dynastyReignMonth(
@@ -57,6 +58,87 @@ function dynastyReignMonth(
 
 const persons = [
   person(
+    "cao-cao",
+    "曹操",
+    ["政治家", "军事家", "文学家"],
+    "东汉末权臣，魏武帝（追尊），官渡之战主将。",
+    "曹操",
+    ym(155),
+    ym(220, 3),
+  ),
+  person(
+    "cao-pi",
+    "曹丕",
+    ["皇帝"],
+    "曹魏开国皇帝，魏文帝，受汉献帝禅让。",
+    "曹丕",
+    ym(187),
+    ym(226, 6),
+  ),
+  person(
+    "cao-rui",
+    "曹叡",
+    ["皇帝"],
+    "曹魏第二位皇帝，魏明帝；无子，传位养子曹芳。",
+    "曹叡",
+    ym(206),
+    ym(239, 1),
+  ),
+  person(
+    "liu-bei",
+    "刘备",
+    ["皇帝"],
+    "蜀汉开国皇帝，昭烈帝。",
+    "刘备",
+    ym(161),
+    ym(223, 6),
+  ),
+  person(
+    "liu-shan",
+    "刘禅",
+    ["皇帝"],
+    "蜀汉后主，刘备之子；263年降魏，蜀汉亡。",
+    "刘禅",
+    ym(207),
+    ym(271),
+  ),
+  person(
+    "sun-quan",
+    "孙权",
+    ["皇帝"],
+    "孙吴开国皇帝，先称吴王，后称帝。",
+    "孙权",
+    ym(182, 7),
+    ym(252, 5),
+  ),
+  person(
+    "zhuge-liang",
+    "诸葛亮",
+    ["政治家", "军事家"],
+    "蜀汉丞相，赤壁之战参与者，后主朝北伐。",
+    "诸葛亮",
+    ym(181),
+    ym(234, 8),
+  ),
+  person(
+    "zhou-yu",
+    "周瑜",
+    ["军事家"],
+    "孙吴名将，赤壁之战主将之一。",
+    "周瑜",
+    ym(175),
+    ym(210),
+  ),
+  person(
+    "yuan-shao",
+    "袁绍",
+    ["军阀"],
+    "东汉末北方军阀，官渡之战曹操对手。",
+    "袁绍",
+    ym(154),
+    ym(202, 6),
+  ),
+  person(
     "liu-zhang",
     "刘璋",
     ["军阀"],
@@ -90,7 +172,7 @@ const dynasties = [
     scope: "cn",
     region: "east_asia",
     start: SHU_FOUNDED,
-    end: ym(263, 11),
+    end: SHU_ENDED,
     precision: "month",
     colorToken: "moss",
     note: "221年刘备于成都称帝，国号汉，史称蜀汉。",
@@ -125,6 +207,23 @@ const weiReigns = [
     6,
     [{ name: "黄初", sy: 220, sm: 12, ey: 226, em: 6 }],
   ),
+  dynastyReignMonth(
+    "reign-cao-rui",
+    "wei",
+    "cao-rui",
+    "魏明帝",
+    "明皇帝",
+    "烈祖",
+    226,
+    6,
+    239,
+    1,
+    [
+      { name: "太和", sy: 227, ey: 233 },
+      { name: "青龙", sy: 233, ey: 237 },
+      { name: "景初", sy: 237, ey: 239, em: 1 },
+    ],
+  ),
 ];
 
 const shuReigns = [
@@ -140,6 +239,24 @@ const shuReigns = [
     223,
     6,
     [{ name: "章武", sy: 221, sm: 5, ey: 223, em: 6 }],
+  ),
+  dynastyReignMonth(
+    "reign-liu-shan",
+    "shu",
+    "liu-shan",
+    "蜀汉后主",
+    "孝怀皇帝",
+    null,
+    223,
+    6,
+    263,
+    12,
+    [
+      { name: "建兴", sy: 223, sm: 5, ey: 237 },
+      { name: "延熙", sy: 238, ey: 257 },
+      { name: "景耀", sy: 258, ey: 263, em: 7 },
+      { name: "炎兴", sy: 263, sm: 8, ey: 263, em: 11 },
+    ],
   ),
 ];
 
@@ -249,7 +366,7 @@ const manifest = {
   window: { startYear: 208, startMonth: 12, endYear: 280, endMonth: 5 },
   scope: "cn",
   depth: "standard",
-  generatedAt: "2026-09-13",
+  generatedAt: "2026-09-18",
   counts: {
     persons: persons.length,
     dynasties: dynasties.length,
@@ -269,7 +386,8 @@ const manifest = {
     "魏蜀吴王朝行分别自曹丕称帝（220-12）、刘备称帝（221-5）、孙权称王（222-10）起；称帝前不建 reign。",
     "wei 的 orthodox_from_abs 与王朝始年同为 220 年 12 月曹丕称帝。",
     "袁绍（yuan-shao）、刘璋（liu-zhang）仅作人物收录，不建割据王朝行。",
-    "曹叡及以后见 seed 与 three-kingdoms-late 包。",
+    "曹叡、刘禅在位及年号本包写入；曹芳及孙吴末帝见 three-kingdoms-late。",
+    "刘禅降魏日据中文维基 263-12-23，蜀汉王朝行迄月对齐为 263-12。",
     "在位起止日经 documentedReignDates 提升至 day。",
   ],
 };

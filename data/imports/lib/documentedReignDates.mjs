@@ -66,7 +66,9 @@ export const DOCUMENTED_REIGN_DATES = {
 
   // ── 三国（魏蜀吴称帝后）────────────────────────────────────────────────
   "reign-cao-pi": { start: [220, 12, 11], end: [226, 6, 29] },
+  "reign-cao-rui": { start: [226, 6, 29], end: [239, 1, 22] },
   "reign-liu-bei": { start: [221, 5, 15], end: [223, 6, 10] },
+  "reign-liu-shan": { start: [223, 6, 10], end: [263, 12, 23] },
   "reign-sun-quan": { start: [222, 10, 19], end: [252, 5, 21] },
   "reign-cao-fang": { start: [239, 1, 22], end: [254, 10, 17] },
   "reign-cao-mao": { start: [254, 10, 17], end: [260, 6, 2] },

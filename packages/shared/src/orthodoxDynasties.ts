@@ -9,8 +9,6 @@ export const ORTHODOX_FROM_START = new Set([
   "zhou-west",
   "zhou-east",
   "han-west",
-  "xin",
-  "han-gengshi",
   "han-east",
   "jin-west",
   "jin-east",
@@ -19,7 +17,6 @@ export const ORTHODOX_FROM_START = new Set([
   "zhou-wu",
   "song-north",
   "song-south",
-  "yuan",
   "ming",
   "roc",
 ]);
@@ -29,6 +26,8 @@ export const ORTHODOX_FROM_ABS: Readonly<Record<string, number>> = {
   qin: absMonth(-221),
   /** 入关定鼎后自顺治（福临）起算；努尔哈赤、皇太极在位不算正统。 */
   qing: absMonth(1644),
+  /** 宋恭帝降元后始为中原正统；定国号至恭帝投降前世祖拆段非正统。 */
+  yuan: absMonth(1276, 2),
 };
 
 /** 在特定 AbsMonth 之前仍为中国正统（王朝存续更久时用于截断金色展示）。 */
@@ -40,6 +39,8 @@ export const ORTHODOX_END_ABS: Readonly<Record<string, number>> = {
   sui: absMonth(618, 12),
   /** 1368 年顺帝北逃后中原正统归明；漠北延续不计正统。 */
   yuan: absMonth(1368),
+  /** 恭帝降元后南宋正统终结；端宗、帝昺续统不计正统。 */
+  "song-south": absMonth(1276, 2),
 };
 
 export type OrthodoxDynasty = {

@@ -7,8 +7,6 @@ export const ORTHODOX_FROM_START = new Set([
   "zhou-west",
   "zhou-east",
   "han-west",
-  "xin",
-  "han-gengshi",
   "han-east",
   "jin-west",
   "jin-east",
@@ -17,7 +15,6 @@ export const ORTHODOX_FROM_START = new Set([
   "zhou-wu",
   "song-north",
   "song-south",
-  "yuan",
   "ming",
   "roc",
 ]);
@@ -25,10 +22,14 @@ export const ORTHODOX_FROM_START = new Set([
 export const ORTHODOX_FROM_ABS = {
   qin: absMonth(-221),
   qing: absMonth(1644),
+  /** 宋恭帝降元后始为中原正统；定国号至恭帝投降前世祖拆段非正统。 */
+  yuan: absMonth(1276, 2),
 };
 
 export const ORTHODOX_END_ABS = {
   yuan: absMonth(1368),
+  /** 恭帝降元后南宋正统终结；端宗、帝昺续统不计正统。 */
+  "song-south": absMonth(1276, 2),
 };
 
 export function resolveOrthodoxFromAbs(dynasty) {
