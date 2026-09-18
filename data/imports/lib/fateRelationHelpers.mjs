@@ -7,15 +7,31 @@ import { ymDay } from "./reignDateHelpers.mjs";
 
 const FATE_VICTIM_MAX_LAG_MONTHS = 24;
 const REIGN_ROW_RE =
-  /VALUES\s*\(\s*'(reign-[^']+)',\s*'([^']+)',\s*'([^']+)'[\s\S]*?,\s*(-?\d+),\s*(-?\d+),\s*(?:NULL|-?\d+),\s*(-?\d+),\s*(-?\d+),\s*(?:NULL|-?\d+),\s*(-?\d+),\s*(-?\d+)/g;
+  /VALUES\s*\(\s*'(reign-[^']+)',\s*'([^']+)',\s*'([^']+)'[\s\S]*?,\s*(-?\d+),\s*(-?\d+),\s*(NULL|-?\d+),\s*(-?\d+),\s*(-?\d+),\s*(NULL|-?\d+),\s*(-?\d+),\s*(-?\d+),\s*'([^']+)'/g;
+
+/** @type {Map<string, {id:string,end:{year:number,month:number,day?:number},precision:string}>} */
+let importedReignById = new Map();
+
+function pointFromEnd([y, m, d]) {
+  const point = d != null ? ymDay(y, m, d) : ym(y, m);
+  return { ...point, precision: d != null ? "day" : "month" };
+}
+
+export function setImportedReignLookup(reigns) {
+  importedReignById = new Map((reigns ?? []).map((reign) => [reign.id, reign]));
+}
 
 export function atFromReignEnd(reignId, fallbackYear, fallbackMonth = 12) {
   const doc = DOCUMENTED_REIGN_DATES[reignId];
-  if (doc?.end) {
-    const [y, m, d] = doc.end;
-    return d != null ? ymDay(y, m, d) : ym(y, m);
+  if (doc?.end) return pointFromEnd(doc.end);
+
+  const reign = importedReignById.get(reignId);
+  if (reign && reign.precision !== "year") {
+    const { year, month, day } = reign.end;
+    const point = day != null ? ymDay(year, month, day) : ym(year, month);
+    return { ...point, precision: day != null ? "day" : "month" };
   }
-  return ym(fallbackYear, fallbackMonth);
+  return { ...ym(fallbackYear, fallbackMonth), precision: "year" };
 }
 
 /** Load reign rows from all period import.sql files (for catalog validation). */
@@ -26,8 +42,23 @@ export function loadReignsFromImports(importsRoot = path.join(path.dirname(fileU
     try {
       const sql = readFileSync(sqlPath, "utf8");
       for (const match of sql.matchAll(REIGN_ROW_RE)) {
-        const [, id, dynastyId, personId, startYear, startMonth, endYear, endMonth, startAbs, endAbs] =
-          match;
+        const [
+          ,
+          id,
+          dynastyId,
+          personId,
+          startYear,
+          startMonth,
+          startDayRaw,
+          endYear,
+          endMonth,
+          endDayRaw,
+          startAbs,
+          endAbs,
+          precision,
+        ] = match;
+        const startDay = startDayRaw === "NULL" ? null : Number(startDayRaw);
+        const endDay = endDayRaw === "NULL" ? null : Number(endDayRaw);
         reigns.push(
           applyDocumentedDates({
             id,
@@ -35,11 +66,19 @@ export function loadReignsFromImports(importsRoot = path.join(path.dirname(fileU
             personId,
             title: "",
             eraNames: [],
-            start: { year: Number(startYear), month: Number(startMonth) },
-            end: { year: Number(endYear), month: Number(endMonth) },
+            start: {
+              year: Number(startYear),
+              month: Number(startMonth),
+              ...(startDay != null ? { day: startDay } : {}),
+            },
+            end: {
+              year: Number(endYear),
+              month: Number(endMonth),
+              ...(endDay != null ? { day: endDay } : {}),
+            },
             startAbs: Number(startAbs),
             endAbs: Number(endAbs),
-            precision: "year",
+            precision,
           }),
         );
       }
@@ -47,6 +86,7 @@ export function loadReignsFromImports(importsRoot = path.join(path.dirname(fileU
       // package without import.sql
     }
   }
+  setImportedReignLookup(reigns);
   return reigns;
 }
 
@@ -126,7 +166,7 @@ export function fateRelation({
   eventId = null,
   precision = null,
 }) {
-  const resolvedPrecision = precision ?? (at.day != null ? "day" : "year");
+  const resolvedPrecision = precision ?? at.precision ?? (at.day != null ? "day" : "year");
   const fromRef = fromReignId
     ? `reign:${fromReignId}`
     : fromPersonId

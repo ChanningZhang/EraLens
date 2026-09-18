@@ -37,6 +37,10 @@ describe("appellationFieldsFromRegnalTitle", () => {
       posthumousName: null,
       templeName: null,
     });
+    assert.deepEqual(appellationFieldsFromRegnalTitle("shu-hou", "后蜀后主"), {
+      posthumousName: null,
+      templeName: null,
+    });
   });
 });
 
@@ -56,6 +60,13 @@ describe("resolveRegnalAppellationFields", () => {
     assert.deepEqual(
       resolveRegnalAppellationFields("sui", "隋文帝", null, null),
       { posthumousName: "文帝", templeName: null },
+    );
+  });
+
+  it("keeps Song-granted 谥号 on 后蜀后主 rather than treating 后主 as posthumous", () => {
+    assert.deepEqual(
+      resolveRegnalAppellationFields("shu-hou", "后蜀后主", "恭孝王", null),
+      { posthumousName: "恭孝王", templeName: null },
     );
   });
 });

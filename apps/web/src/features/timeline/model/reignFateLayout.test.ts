@@ -203,17 +203,17 @@ describe("layoutReignFates", () => {
       endAbs: absMonth(316, 12),
       precision: "year",
     };
-    const liuYao: Reign = {
-      id: "reign-liu-yao-jin",
+    const liuCong: Reign = {
+      id: "reign-liu-cong",
       dynastyId: "han-zhao",
-      personId: "liu-yao-jin",
-      title: "刘曜",
+      personId: "liu-cong",
+      title: "刘聪",
       eraNames: [],
-      start: { year: 318, month: 1 },
-      end: { year: 329, month: 12 },
-      startAbs: absMonth(318, 1),
-      endAbs: absMonth(329, 12),
-      precision: "year",
+      start: { year: 310, month: 8 },
+      end: { year: 318, month: 8 },
+      startAbs: absMonth(310, 8),
+      endAbs: absMonth(318, 8),
+      precision: "month",
     };
     const jinViewport = {
       ...viewport,
@@ -224,28 +224,29 @@ describe("layoutReignFates", () => {
     const placed = layoutReignFates(
       [
         {
-          id: "rel-sima-ye-liu-yao-jin-surrender",
+          id: "rel-sima-ye-liu-cong-surrender",
           fromRef: "person:sima-ye",
-          toRef: "person:liu-yao-jin",
+          toRef: "person:liu-cong",
           kind: "surrender",
           atAbs: absMonth(316, 12),
           precision: "year",
         },
       ],
-      [simaYe, liuYao],
+      [simaYe, liuCong],
       [
         { dynastyId: "jin-west", top: 80, records: [simaYe], color: COLOR_VALUES[jinWest.colorToken] },
-        { dynastyId: "han-zhao", top: 200, records: [liuYao], color: COLOR_VALUES[hanZhao.colorToken] },
+        { dynastyId: "han-zhao", top: 200, records: [liuCong], color: COLOR_VALUES[hanZhao.colorToken] },
       ],
       jinViewport,
       new Map([
         ["sima-ye", "司马邺"],
-        ["liu-yao-jin", "刘曜"],
+        ["liu-cong", "刘聪"],
       ]),
     );
     expect(placed).toHaveLength(1);
     expect(placed[0]?.color).toBe(COLOR_VALUES.stone);
     expect(placed[0]?.color).not.toBe(COLOR_VALUES.gold);
+    expect(placed[0]?.tickX).toBe(placed[0]?.originX);
   });
 
   it("anchors fate lines on system missing-ruler gap cards", () => {

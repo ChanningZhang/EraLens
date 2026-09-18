@@ -16,6 +16,7 @@ import {
   successionPairs,
   ym,
 } from "../lib/sqlHelpers.mjs";
+import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -123,7 +124,7 @@ const dongliaoReigns = [
 ];
 
 const reignGroups = [xiliaoReigns, beiliaoReigns, dongliaoReigns];
-const reigns = reignGroups.flat();
+const reigns = applyDocumentedDatesToReigns(reignGroups.flat());
 
 // ── events ───────────────────────────────────────────────────────────────────
 

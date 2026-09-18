@@ -2034,7 +2034,7 @@ export const rulersByDynasty = {
       "posthumousName": null,
       "preferredAppellation": {
         "kind": "regnal",
-        "name": "公伯御"
+        "name": "伯御"
       },
       "startYear": -806,
       "endYear": -796

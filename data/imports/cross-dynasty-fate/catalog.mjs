@@ -315,7 +315,8 @@ export function buildFateCatalog() {
       toPersonId: "liu-xiu",
       kind: "surrender",
       eventId: null,
-      resolveAt: () => ym(27, 12),
+      // 维基：建世止于 27-03-15（闰正月丙午降光武）。
+      resolveAt: () => ymDay(27, 3, 15),
     },
 
     // ── 西南 / 南越 ─────────────────────────────────────────────────────────
@@ -396,12 +397,15 @@ export function buildFateCatalog() {
       resolveAt: () => atFromReignEnd("reign-sima-chi", 313),
     },
     {
-      id: "rel-sima-ye-liu-yao-jin-surrender",
+      // 建兴四年十一月十一日（316-12-11）出降。刘曜当时是汉赵将，318年十月才称帝，
+      // 时间轴上无卡；改挂当时在位的刘聪，避免 24 个月前瞻把虚线拖到 318。
+      // https://zh.wikipedia.org/wiki/晋愍帝
+      id: "rel-sima-ye-liu-cong-surrender",
       fromPersonId: "sima-ye",
-      toPersonId: "liu-yao-jin",
+      toPersonId: "liu-cong",
       kind: "surrender",
       eventId: "jin-west-fall",
-      resolveAt: () => ym(316, 12),
+      resolveAt: () => atFromReignEnd("reign-sima-ye", 316),
     },
     {
       id: "rel-sima-dewen-liu-yu-jin-abdication",
@@ -409,7 +413,7 @@ export function buildFateCatalog() {
       toPersonId: "liu-yu-jin",
       kind: "abdication",
       eventId: "jin-east-end",
-      resolveAt: () => ym(420, 12),
+      resolveAt: () => atFromReignEnd("reign-sima-dewen", 420),
     },
     {
       id: "rel-liu-yao-jin-shi-le-killed",
@@ -563,7 +567,7 @@ export function buildFateCatalog() {
       toPersonId: "xiao-daocheng",
       kind: "abdication",
       eventId: "qi-nan-founded",
-      resolveAt: () => ym(479, 12),
+      resolveAt: () => atFromReignEnd("reign-liu-zhun", 479),
     },
     {
       id: "rel-xiao-baorong-xiao-yan-abdication",
@@ -571,7 +575,7 @@ export function buildFateCatalog() {
       toPersonId: "xiao-yan",
       kind: "abdication",
       eventId: "liang-nan-founded",
-      resolveAt: () => ym(502, 12),
+      resolveAt: () => atFromReignEnd("reign-xiao-baorong", 502),
     },
     {
       // 非末代：承圣三年十二月辛未（555-01-27）西魏克江陵，杀梁元帝；敬帝继立于建康。
@@ -590,7 +594,7 @@ export function buildFateCatalog() {
       toPersonId: "chen-baxian",
       kind: "abdication",
       eventId: "chen-nan-founded",
-      resolveAt: () => ym(557, 12),
+      resolveAt: () => atFromReignEnd("reign-xiao-fangzhi", 557),
     },
     {
       id: "rel-tuoba-kuo-yuwen-jue-abdication",
@@ -606,7 +610,7 @@ export function buildFateCatalog() {
       toPersonId: "yuwen-yong",
       kind: "captured",
       eventId: "zhou-qi-unify",
-      resolveAt: () => ym(577, 12),
+      resolveAt: () => atFromReignEnd("reign-gao-heng", 577),
     },
     {
       id: "rel-yuwen-yan-yang-jian-abdication",
@@ -614,7 +618,7 @@ export function buildFateCatalog() {
       toPersonId: "yang-jian",
       kind: "abdication",
       eventId: "yang-jian-usurp",
-      resolveAt: () => ym(581, 12),
+      resolveAt: () => atFromReignEnd("reign-yuwen-yan", 581),
     },
     {
       id: "rel-chen-shubao-yang-jian-surrender",
@@ -622,7 +626,7 @@ export function buildFateCatalog() {
       toPersonId: "yang-jian",
       kind: "surrender",
       eventId: "sui-chen-unify",
-      resolveAt: () => ym(589, 12),
+      resolveAt: () => atFromReignEnd("reign-chen-shubao", 589),
     },
     {
       id: "rel-yuan-xiu-yuan-bao-ju-killed",
@@ -712,7 +716,9 @@ export function buildFateCatalog() {
       toPersonId: "wanyan-sheng",
       kind: "captured",
       eventId: "jingkang-incident",
-      resolveAt: () => ym(1127, 12),
+      // 天会五年二月初六（1127-03-20）金废徽钦为庶人、俘虏北上。不用徽宗禅位日或年精度 12 月。
+      resolveAt: () => ymDay(1127, 3, 20),
+      precision: "day",
     },
     {
       id: "rel-zhao-ji-wanyan-sheng-captured",
@@ -720,7 +726,8 @@ export function buildFateCatalog() {
       toPersonId: "wanyan-sheng",
       kind: "captured",
       eventId: "jingkang-incident",
-      resolveAt: () => ym(1127, 12),
+      resolveAt: () => ymDay(1127, 3, 20),
+      precision: "day",
     },
     {
       id: "rel-zhao-shi-hu-bilie-surrender",
@@ -728,7 +735,7 @@ export function buildFateCatalog() {
       toPersonId: "hu-bilie",
       kind: "surrender",
       eventId: null,
-      resolveAt: () => ym(1276, 2),
+      resolveAt: () => atFromReignEnd("reign-zhao-shi-song-south", 1276),
     },
     {
       id: "rel-zhu-youzhen-li-cunxu-killed",
@@ -776,7 +783,7 @@ export function buildFateCatalog() {
       toPersonId: "li-cunxu",
       kind: "captured",
       eventId: null,
-      resolveAt: () => ym(925, 12),
+      resolveAt: () => atFromReignEnd("reign-wang-yan-shu-shu-qian", 925),
     },
     {
       id: "rel-wang-yanzheng-li-jing-nantang-surrender",
@@ -784,7 +791,7 @@ export function buildFateCatalog() {
       toPersonId: "li-jing-nantang",
       kind: "surrender",
       eventId: null,
-      resolveAt: () => ym(945, 12),
+      resolveAt: () => atFromReignEnd("reign-wang-yanzheng-min-fujian", 945),
     },
     {
       id: "rel-ma-xichong-li-jing-nantang-surrender",
@@ -792,7 +799,7 @@ export function buildFateCatalog() {
       toPersonId: "li-jing-nantang",
       kind: "surrender",
       eventId: null,
-      resolveAt: () => ym(951, 12),
+      resolveAt: () => atFromReignEnd("reign-ma-xichong-chu-nan", 951),
     },
     {
       id: "rel-meng-chang-zhao-kuangyin-surrender",
@@ -800,7 +807,7 @@ export function buildFateCatalog() {
       toPersonId: "zhao-kuangyin",
       kind: "surrender",
       eventId: null,
-      resolveAt: () => ym(965, 12),
+      resolveAt: () => atFromReignEnd("reign-meng-chang-shu-hou", 965),
     },
     {
       id: "rel-liu-chang-zhao-kuangyin-surrender",
@@ -808,7 +815,7 @@ export function buildFateCatalog() {
       toPersonId: "zhao-kuangyin",
       kind: "surrender",
       eventId: null,
-      resolveAt: () => ym(971, 12),
+      resolveAt: () => atFromReignEnd("reign-liu-chang-han-nan", 971),
     },
     {
       id: "rel-li-yu-nantang-zhao-kuangyin-captured",
@@ -851,7 +858,7 @@ export function buildFateCatalog() {
       toPersonId: "wanyan-sheng",
       kind: "captured",
       eventId: "jin-destroy-liao",
-      resolveAt: () => ym(1125, 12),
+      resolveAt: () => atFromReignEnd("reign-yelu-yanxi-liao", 1125),
     },
     {
       id: "rel-wanyan-shouxu-ogedei-killed",
@@ -859,7 +866,7 @@ export function buildFateCatalog() {
       toPersonId: "ogedei",
       kind: "killed",
       eventId: "song-jin-alliance-mongol",
-      resolveAt: () => ym(1234, 12),
+      resolveAt: () => atFromReignEnd("reign-wanyan-shouxu-jin-nvzhen", 1234),
     },
     {
       id: "rel-li-xian-xixia-temujin-surrender",
@@ -875,7 +882,8 @@ export function buildFateCatalog() {
       toPersonId: "mongke",
       kind: "surrender",
       eventId: "mongol-conquer-dali",
-      resolveAt: () => ym(1253, 12),
+      // 1253 大理城破，段兴智走鄯阐；翌年昆泽被俘（维基统治 1251–1254）。
+      resolveAt: () => atFromReignEnd("reign-duan-xingzhi-dali", 1254),
     },
     {
       id: "rel-yelu-chun-wanyan-aguda-captured",
@@ -883,7 +891,8 @@ export function buildFateCatalog() {
       toPersonId: "wanyan-aguda",
       kind: "captured",
       eventId: null,
-      resolveAt: () => ym(1122, 12),
+      // 保大二年六月病卒；六月十五＝1122-07-20。
+      resolveAt: () => atFromReignEnd("reign-yelu-chun-beiliao", 1122),
     },
     {
       id: "rel-yelu-gunai-hu-bilie-surrender",
@@ -909,7 +918,8 @@ export function buildFateCatalog() {
       toPersonId: "li-zhi",
       kind: "captured",
       eventId: "gaogouli-destroyed-tang",
-      resolveAt: () => ym(668, 12),
+      // 总章元年九月；九月十五＝668-10-25。
+      resolveAt: () => atFromReignEnd("reign-baozang-wang-gaogouli", 668),
     },
     {
       id: "rel-nuohabo-li-zhi-surrender",
@@ -925,7 +935,7 @@ export function buildFateCatalog() {
       toPersonId: "chen-youliang",
       kind: "killed",
       eventId: "chen-kills-xu",
-      resolveAt: () => ym(1360, 6),
+      resolveAt: () => atFromReignEnd("reign-xu-shouhui-song-xu", 1360),
     },
     {
       // 非末代：至正二十三年八月壬戌（1363-10-03）鄱阳湖陈友谅中流矢死，张定边立陈理。
@@ -952,7 +962,7 @@ export function buildFateCatalog() {
       toPersonId: "zhu-yuanzhang",
       kind: "captured",
       eventId: "zhang-shicheng-defeated",
-      resolveAt: () => ym(1367, 9),
+      resolveAt: () => atFromReignEnd("reign-zhang-shicheng-zhou-zhang", 1367),
     },
     {
       id: "rel-ming-sheng-zhu-yuanzhang-surrender",
@@ -960,7 +970,7 @@ export function buildFateCatalog() {
       toPersonId: "zhu-yuanzhang",
       kind: "surrender",
       eventId: "xia-ming-fall",
-      resolveAt: () => ym(1371, 12),
+      resolveAt: () => atFromReignEnd("reign-ming-sheng-xia-ming", 1371),
     },
     {
       id: "rel-han-liner-zhu-yuanzhang-captured",
@@ -994,7 +1004,7 @@ export function buildFateCatalog() {
       toPersonId: "fulin",
       kind: "killed",
       eventId: null,
-      resolveAt: () => ym(1645, 5),
+      resolveAt: () => atFromReignEnd("reign-li-zicheng-dashun", 1645),
     },
     {
       id: "rel-zhang-xianzhong-fulin-killed",
@@ -1002,7 +1012,7 @@ export function buildFateCatalog() {
       toPersonId: "fulin",
       kind: "killed",
       eventId: null,
-      resolveAt: () => ym(1647, 1),
+      resolveAt: () => atFromReignEnd("reign-zhang-xianzhong-daxi", 1647),
     },
     {
       id: "rel-zhu-youlang-xuanye-captured",
@@ -1028,7 +1038,7 @@ export function buildFateCatalog() {
       toPersonId: "xuanye",
       kind: "surrender",
       eventId: "qing-conquer-taiwan",
-      resolveAt: () => ym(1683, 12),
+      resolveAt: () => atFromReignEnd("reign-zheng-keshuang-mingzheng", 1683),
     },
     {
       id: "rel-hong-tianguifu-zaichun-captured",
@@ -1036,7 +1046,9 @@ export function buildFateCatalog() {
       toPersonId: "zaichun",
       kind: "captured",
       eventId: "fall-of-tianjing",
-      resolveAt: () => atFromReignEnd("reign-hong-tianguifu-taiping", 1864),
+      // 被俘在天京陷落之后：维基 1864-10-25 江西石城；不用幼天王在位迄日 7-19 或年精度 12 月。
+      resolveAt: () => ymDay(1864, 10, 25),
+      precision: "day",
     },
     // 吐蕃朗达玛842年为僧人拉隆贝吉多杰所刺，后内战分裂；时间轴无接收方君主。
     // 南诏舜化贞902年卒（一说郑买嗣所害），郑氏建大长和，该政权未收录。

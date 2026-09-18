@@ -14521,7 +14521,7 @@ INSERT INTO reigns (
   start_abs, end_abs, precision, start_date_confidence, end_date_confidence
 ) VALUES (
   'reign-lu-r10-lu-chunqiu', 'lu-chunqiu', 'lu-r10', '鲁公伯御',
-  NULL, NULL, '{"kind":"regnal","name":"公伯御"}'::jsonb,
+  NULL, NULL, '{"kind":"regnal","name":"伯御"}'::jsonb,
   -806, 1, NULL, -796, 12, NULL,
   -9660, -9529, 'year', NULL, NULL
 )

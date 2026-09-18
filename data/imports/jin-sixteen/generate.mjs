@@ -850,10 +850,10 @@ const events = [
     id: "jin-west-fall",
     name: "西晋灭亡",
     kind: "politics",
-    dateNote: "316年，刘曜陷长安，愍帝出降",
-    at: ym(316, 4),
+    dateNote: "建兴四年十一月十一日（316年12月11日），刘曜陷长安，愍帝出降",
+    at: ym(316),
     dynastyIds: ["jin-west", "han-zhao"],
-    participantIds: ["sima-ye", "liu-yao-jin"],
+    participantIds: ["sima-ye", "liu-yao-jin", "liu-cong"],
     summary: "晋愍帝出降刘曜，西晋正式灭亡。",
   }),
   eventPoint({

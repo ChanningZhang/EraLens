@@ -98,4 +98,38 @@ export const JIN_NANBEI_REIGN_DATES = {
   "reign-fu-jian-ming": { start: [357, 7], end: [385, 10, 16] },
   "reign-murong-xi": { start: [401, 9, 14], end: [407, 9, 14] },
   "reign-murong-chao": { start: [405, 11, 18], end: [410, 3, 25] },
+
+  // 刘曜洛阳兵败被俘：咸和三年十二月乙未 = 329-02-06（维基注）。
+  "reign-liu-yao-jin": { start: [318, 10], end: [329, 2, 6] },
+  // 慕容暐：维基 360-02-27 — 370-12-10（十一月丁丑邺城降秦）。
+  "reign-murong-wei": { start: [360, 2, 27], end: [370, 12, 10] },
+  // 冉闵：维基逝世 352-06-01（永和八年四月被俘，慕容儁杀于龙城）。
+  "reign-ran-min-ranwei": { start: [350, 1], end: [352, 6, 1] },
+
+  // ── 十六国农历→格里历（寿星历 sxtwl；仅月者取望日所在公历月）────────
+  // 嘉宁二年三月十七日降表＝347-04-13。
+  "reign-li-shi": { start: [343, 1], end: [347, 4, 13], precision: "day" },
+  // 维基 349-05-26＝太宁元年四月廿三。
+  "reign-shi-hu": { start: [334, 1], end: [349, 5, 26], precision: "day" },
+  // 升平至 376 年八月；八月十五＝376-09-14。
+  "reign-zhang-tianxi": { start: [363, 1], end: [376, 9] },
+  // 永和至 417 年八月；八月十五＝417-09-11。
+  "reign-yao-hong": { start: [416, 1], end: [417, 9] },
+  // 胜光 / 永弘至 431 年六月；六月十五＝431-07-10。
+  "reign-helian-ding": { start: [428, 1], end: [431, 7] },
+  "reign-qifu-mumo": { start: [428, 1], end: [431, 7] },
+  // 神鼎至 403 年八月；八月十五＝403-09-16。
+  "reign-lu-long": { start: [401, 1], end: [403, 9] },
+  // 嘉平至 414 年七月；七月十五＝414-08-16。
+  "reign-tufa-rutan": { start: [402, 1], end: [414, 8] },
+  // 延初 394 年七月–十月；十月十五＝394-11-24。
+  "reign-fu-chong": { start: [394, 7], end: [394, 11] },
+  // 太兴至 436 年五月；五月十五＝436-06-14。
+  "reign-feng-hong": { start: [430, 1], end: [436, 6] },
+  // 太延五年九月丙戌二十五日姑臧降＝439-10-18。
+  "reign-juqu-mujian": { start: [433, 1], end: [439, 10, 18], precision: "day" },
+  // 嘉兴四年七月蓼泉之败；七月十五＝420-08-09。
+  "reign-li-xin": { start: [417, 1], end: [420, 8] },
+  // 中兴九年八月长子城破；八月十五＝394-09-26。
+  "reign-murong-yong-xiyan": { start: [386, 1], end: [394, 9] },
 };

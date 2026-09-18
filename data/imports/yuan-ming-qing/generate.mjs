@@ -212,16 +212,20 @@ const yuanReignsMain = [
   drDay("yuan", "khayishan", "元武宗", "仁惠宣孝皇帝", "武宗", 1307, 6, 21, 1311, 1, 27),
   drDay("yuan", "ayurbarwada", "元仁宗", "圣文钦孝皇帝", "仁宗", 1311, 4, 7, 1320, 3, 1),
   drDay("yuan", "shidebala", "元英宗", "睿圣文孝皇帝", "英宗", 1320, 4, 19, 1323, 9, 4),
-  // 文宗夺位后未上庙号、谥号，史称取其年号。
+  // 泰定帝未上庙号、谥号，史称取其年号。
   drDay("yuan", "yeshuntuemur", "元泰定帝", null, null, 1323, 9, 4, 1328, 8, 15, [
     { name: "泰定", sy: 1324, ey: 1328 },
     { name: "致和", sy: 1328, ey: 1328 },
   ]),
-  drDay("yuan", "ragibagh", "元天顺帝", null, null, 1328, 8, 15, 1328, 10, 4, [
-    { name: "天顺", sy: 1328, ey: 1328 },
+  // 文宗两度即位，比照明英宗拆段；第一次止于明宗在和宁即位，正式送玺在 1329-04-03。
+  drDay("yuan", "tugh-temur", "元文宗", "圣明元孝皇帝", "文宗", 1328, 10, 16, 1329, 2, 27, [
+    { name: "天历", sy: 1328, ey: 1329 },
   ]),
-  drDay("yuan", "tugh-temur", "元文宗", "圣明元孝皇帝", "文宗", 1328, 10, 4, 1332, 9, 2),
   drDay("yuan", "khoshila", "元明宗", "翼献景孝皇帝", "明宗", 1329, 2, 27, 1329, 8, 30),
+  drDay("yuan", "tugh-temur", "元文宗", "圣明元孝皇帝", "文宗", 1329, 9, 8, 1332, 9, 2, [
+    { name: "天历", sy: 1329, ey: 1330 },
+    { name: "至顺", sy: 1330, ey: 1332 },
+  ], null, "reign-tugh-temur-yuan-2"),
   drDay("yuan", "irinchibal", "元宁宗", "冲圣嗣孝皇帝", "宁宗", 1332, 9, 2, 1332, 12, 14),
   drDay("yuan", "togon-temur", "元顺帝", "顺帝", "惠宗", 1333, 7, 19, 1368, 1, 23),
   // 北迁段起始年 1368，卡片仍用至正年号（明清年号优先规则）。
@@ -229,7 +233,16 @@ const yuanReignsMain = [
   drDay("yuan", "ayushiridara", "元昭宗", null, "昭宗", 1370, 5, 27, 1378, 5, 10, [{ name: "宣光", sy: 1371, ey: 1378 }]),
   drDay("yuan", "togus-temur", "天元帝", null, null, 1378, 5, 13, 1388, 11, 1, [{ name: "天元", sy: 1379, ey: 1388 }]),
 ];
-const yuanReigns = yuanReignsMain;
+const yuanReignsParallel = [
+  // 两都之战：上都天顺帝与大都文宗同时另立。
+  drDay("yuan", "ragibagh", "元天顺帝", null, null, 1328, 10, 4, 1328, 11, 14, [
+    { name: "天顺", sy: 1328, ey: 1328 },
+  ], {
+    track: "shangdu",
+    label: "上都",
+  }),
+];
+const yuanReigns = [...yuanReignsMain, ...yuanReignsParallel];
 
 const yuanMoReigns = [
   // 谥号、庙号为明玉珍1361年所上，见中/英文维基「徐寿辉」。
@@ -494,6 +507,7 @@ const preSql = [
   "DELETE FROM dynasties WHERE id = 'yuan-north';",
   "-- remove stale auto-generated 史料缺 (两都之战并行叠放、驾崩至即位短空档应留白)",
   sqlDeleteSystemMissingReigns(["yuan"], sqlStr),
+  "DELETE FROM relations WHERE id IN ('rel-yeshuntuemur-ragibagh-succession', 'rel-ragibagh-tugh-temur-succession', 'rel-khoshila-irinchibal-succession');",
 ].join("\n");
 
 const sql = ["-- EraLens period import: yuan-ming-qing", "-- Window: 1271-12 .. 1912-02", "BEGIN;", "", preSql, "", "-- persons", ...importPersons.map(personSql), "", "-- dynasties", ...dynasties.map(dynastySql), "", "-- reigns", ...importReigns.map(formatReignSql), "", "-- era_names", ...eraDeleteSql, ...eraInsertSql, "", "-- events", ...events.map(eventSql), "", "-- event_dynasties", ...eventDynastySql, "", "-- event_participants", ...eventParticipantSql, "", "-- relations", ...relations.map(relationSql), "", "COMMIT;", ""].join("\n");
@@ -511,6 +525,10 @@ const manifest = {
   counts: { persons: persons.length, dynasties: dynasties.length, reigns: reigns.length, events: events.length, relations: relations.length },
   sources: [
     { label: "元朝", url: "https://zh.wikipedia.org/wiki/元朝" },
+    { label: "元朝君主列表", url: "https://zh.wikipedia.org/wiki/元朝君主列表" },
+    { label: "元文宗", url: "https://zh.wikipedia.org/wiki/元文宗" },
+    { label: "元明宗", url: "https://zh.wikipedia.org/wiki/元明宗" },
+    { label: "元天顺帝", url: "https://zh.wikipedia.org/wiki/阿速吉八" },
     { label: "北元", url: "https://zh.wikipedia.org/wiki/北元" },
     { label: "徐寿辉", url: "https://zh.wikipedia.org/wiki/徐寿辉" },
     { label: "陈友谅", url: "https://zh.wikipedia.org/wiki/陈友谅" },
@@ -578,7 +596,8 @@ const manifest = {
     "元明战争：两都之战、红巾起义、明军攻占大都、抗倭战争、萨尔浒、宁远、松锦之战。",
     "明非帝王人物：张居正、海瑞、戚继光、王阳明、严嵩、唐寅、李时珍、徐光启、徐霞客、魏忠贤、刘基、于谦、郑和等；张居正改革（1572–1582）为 span 事件。",
     "元明清皇帝在位日取维基百科君主列表通行换算，precision=day；南明弘光/隆武/永历及鲁监国、绍武亦升级日精度。",
-    "元两都之战文宗与明宗并行、帝位短空档等不标史料缺，时间轴自然留白。",
+    "元文宗两度即位（1328-10-16–1329-02-27、1329-09-08–1332-09-02），中间为明宗；第一次止于明宗和宁即位，正式送玺在 1329-04-03。",
+    "两都之战天顺帝用 claim_track=shangdu（1328-10-04–1328-11-14），不串主线继承；泰定崩至文宗即位、明宗崩至文宗复位的短空档不标史料缺。",
   ],
 };
 writeFileSync(path.join(__dirname, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);

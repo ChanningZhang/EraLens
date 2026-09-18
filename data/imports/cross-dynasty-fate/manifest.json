@@ -39,21 +39,54 @@
       "url": "https://zh.wikipedia.org/wiki/晋怀帝"
     },
     {
+      "label": "晋愍帝",
+      "url": "https://zh.wikipedia.org/wiki/晋愍帝"
+    },
+    {
       "label": "梁元帝",
       "url": "https://zh.wikipedia.org/wiki/梁元帝"
     },
     {
       "label": "陈友谅",
       "url": "https://zh.wikipedia.org/wiki/陈友谅"
+    },
+    {
+      "label": "靖康之变 / 金太宗",
+      "url": "https://zh.wikipedia.org/wiki/金太宗"
+    },
+    {
+      "label": "洪天贵福",
+      "url": "https://zh.wikipedia.org/wiki/洪天贵福"
+    },
+    {
+      "label": "慕容暐",
+      "url": "https://zh.wikipedia.org/wiki/慕容暐"
+    },
+    {
+      "label": "金哀宗",
+      "url": "https://zh.wikipedia.org/wiki/金哀宗"
+    },
+    {
+      "label": "刘盆子",
+      "url": "https://zh.wikipedia.org/wiki/刘盆子"
+    },
+    {
+      "label": "段兴智",
+      "url": "https://zh.wikipedia.org/wiki/段兴智"
     }
   ],
   "notes": [
     "仅 person→person，kind∈killed|surrender|abdication|captured。",
-    "at_abs 优先取受害方 documented end；年精度事件取 event 年 12 月。",
+    "at_abs 优先取受害方 documented / 已入库月日迄；年精度事件取 event 年 12 月。",
     "同朝 succession 不写入；B 方无 reign 卡者改挂当时在位君主（成汉/南燕/后秦→晋帝，太平天国→同治）。",
     "秦灭六国等边自 chunqiu-zhanguo 迁入本包，避免重复维护。",
     "吐蕃、回鹘、南诏末代无时间轴上的灭国接收方（僧人刺杀 / 黠戛斯 / 大长和未收录），不硬画。",
     "非末代被他朝杀/俘：楚怀王（秦昭襄王扣武关）、晋惠公（韩原为秦穆公所俘后释归）、齐湣王（楚将淖齿杀）、晋怀帝（刘聪鸩杀，愍帝继立）、梁元帝（西魏杀于江陵，敬帝继立）、陈友谅（鄱阳湖阵亡，陈理继立）；宋徽宗、南越赵兴原目录已有。",
-    "明英宗土木堡被瓦剌也先所俘，时间轴无瓦剌君主卡，不硬画。唐昭宗为朱温所弑时后梁尚未建（907，距 904 逾 24 个月），不硬画。"
+    "愍帝 316 年出降时刘曜尚未称帝，改挂汉赵当时在位的刘聪，不把虚线拖到 318。",
+    "明英宗土木堡被瓦剌也先所俘，时间轴无瓦剌君主卡，不硬画。唐昭宗为朱温所弑时后梁尚未建（907，距 904 逾 24 个月），不硬画。",
+    "孟昶降宋取 documented 在位迄日（乾德三年正月辛卯，965-02），不用卒年六月或年精度 12 月占位。",
+    "秦之后虚线：在位行已有月/日则改挂 documented 迄；靖康之变取 1127-03-20 废二帝，不用徽宗禅位日；幼天王被俘取 1864-10-25 石城，不用天京陷落 7-19。",
+    "刘盆子降光武取维基公历 27-03-15；段兴智被俘取在位迄年 1254（城破 1253 次年昆泽），仍年精度。",
+    "十六国等农历月用寿星历 sxtwl 换公历：有日（李势三月十七、牧犍九月丙戌、石虎四月廿三）升日；仅月者取望日所在公历月。宝藏王九月＝668-10，耶律淳六月＝1122-07。"
   ]
 }

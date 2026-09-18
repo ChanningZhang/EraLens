@@ -149,7 +149,8 @@ export const DOCUMENTED_REIGN_DATES = {
   "reign-wang-jian-shu-shu-qian": { start: [907, 4, 18], end: [918, 7, 11] },
   "reign-wang-yan-shu-shu-qian": { start: [918, 7, 11], end: [925, 11, 29] },
   "reign-meng-zhixiang-shu-hou": { start: [934, 3, 25], end: [934, 9, 7] },
-  "reign-meng-chang-shu-hou": { start: [934, 9, 7], end: [965, 1, 11] },
+  // 出降：乾德三年正月辛卯（《续资治通鉴》升仙桥）；正月朔癸酉=965-02-05 → 十九日=02-23。旧 01-11 是把正月己卯误写成公历 1 月。
+  "reign-meng-chang-shu-hou": { start: [934, 9, 7], end: [965, 2, 23] },
   "reign-gao-jixing-jingnan": { start: [924, 6, 18], end: [928, 1, 28] },
   "reign-gao-conghe-jingnan": { start: [928, 1, 28], end: [948, 7, 28] },
   "reign-gao-baorong-jingnan": { start: [948, 7, 28], end: [960, 9, 9] },
@@ -158,6 +159,10 @@ export const DOCUMENTED_REIGN_DATES = {
   "reign-ma-yin-chu-nan": { start: [907, 5, 15], end: [930, 12, 2] },
   "reign-ma-xisheng-chu-nan": { start: [930, 12, 2], end: [932, 8, 15] },
   "reign-ma-xifan-chu-nan": { start: [932, 8, 15], end: [947, 5, 30] },
+  // 王延政：维基闽皇帝止于 945-10-02（南唐克建州）。
+  "reign-wang-yanzheng-min-fujian": { start: [943, 3], end: [945, 10, 2] },
+  // 马希崇：维基后主 951-10-22 — 951-11-16；起年取 951 正以免与马希萼年精度迄（950-12）之间空出大段无君。
+  "reign-ma-xichong-chu-nan": { start: [951, 1], end: [951, 11, 16] },
   "reign-wang-yanhan-min-fujian": { start: [925, 12, 30], end: [927, 1, 14] },
   "reign-wang-yanjun-min-fujian": { start: [927, 1, 14], end: [935, 11, 17] },
   "reign-wang-jipeng-min-fujian": { start: [935, 11, 18], end: [939, 8, 29] },
@@ -166,6 +171,15 @@ export const DOCUMENTED_REIGN_DATES = {
   "reign-liu-min-han-bei": { start: [951, 5, 18], end: [954, 11, 24] },
   "reign-liu-jun-bei-han-bei": { start: [954, 11, 24], end: [968, 10, 12] },
   "reign-liu-jiyuan-han-bei": { start: [968, 10, 12], end: [979, 6, 1] },
+
+  // 金哀宗：天兴三年正月十日（1234-02-09）蔡州自缢。起年与宣宗迄日对齐。
+  "reign-wanyan-shouxu-jin-nvzhen": { start: [1223, 1, 14], end: [1234, 2, 9] },
+
+  // 北辽耶律淳：保大二年三月–六月；六月十五＝1122-07-20（寿星历）。
+  "reign-yelu-chun-beiliao": { start: [1122, 4], end: [1122, 7] },
+
+  // 高句丽宝藏王：总章元年九月；九月十五＝668-10-25（寿星历）。
+  "reign-baozang-wang-gaogouli": { start: [642, 1], end: [668, 10] },
 
   // ── 蒙古帝国大汗 ─────────────────────────────────────────────────────────
   "reign-temujin-mongol-empire": { start: [1206, 5, 15], end: [1227, 8, 25] },
@@ -188,6 +202,10 @@ export const DOCUMENTED_REIGN_DATES = {
   "reign-zheng-chenggong-mingzheng": { start: [1661, 6, 14], end: [1662, 6, 23] },
   "reign-zheng-jing-mingzheng": { start: [1662, 6, 29], end: [1681, 3, 17] },
   "reign-zheng-keshuang-mingzheng": { start: [1681, 3, 20], end: [1683, 10, 8] },
+
+  // 大顺 / 大西末：维基百科条目公历。李自成卒年取通山九宫山说 1645-05-17；张献忠凤凰山 1647-01-02。
+  "reign-li-zicheng-dashun": { start: [1644, 1], end: [1645, 5, 17] },
+  "reign-zhang-xianzhong-daxi": { start: [1644, 12, 4], end: [1647, 1, 2] },
 
   // ── 西夏 ─────────────────────────────────────────────────────────────────
   "reign-li-yuanhao-xixia": { start: [1031, 10, 19], end: [1048, 1, 19] },

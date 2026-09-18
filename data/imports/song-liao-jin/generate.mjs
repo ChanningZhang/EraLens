@@ -7,7 +7,7 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
-import { drDay, dynastyReignDay, dynastyReignMonth } from "../lib/reignDateHelpers.mjs";
+import { drDay, dynastyReignDay } from "../lib/reignDateHelpers.mjs";
 import { normalizeYearPrecisionAt } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -197,8 +197,8 @@ const jinReigns = [
   drDay("jin-nvzhen", "wanyan-jing", "金章宗", null, "章宗", 1189, 1, 20, 1208, 12, 29),
   drDay("jin-nvzhen", "wanyan-yongji", "卫绍王", null, null, 1208, 12, 29, 1213, 9, 11),
   drDay("jin-nvzhen", "wanyan-xun", "金宣宗", null, "宣宗", 1213, 9, 11, 1223, 1, 14),
-  // 1234年2月9日蔡州陷落：哀宗殉国，承麟即位不足一日即战死。
-  dynastyReignMonth("jin-nvzhen", "wanyan-shouxu", "金哀宗", null, "哀宗", 1223, 1, 1234, 2),
+  // 1234-02-09 蔡州陷落：哀宗殉国，承麟即位不足一日即战死。
+  drDay("jin-nvzhen", "wanyan-shouxu", "金哀宗", null, "哀宗", 1223, 1, 14, 1234, 2, 9),
   dynastyReignDay("jin-nvzhen", "wanyan-chenglin", "金末帝", null, null, 1234, 2, 9, 1234, 2, 9),
 ];
 

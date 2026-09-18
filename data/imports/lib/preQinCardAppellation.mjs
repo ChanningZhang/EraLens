@@ -39,10 +39,34 @@ function personStoredAsBareGivenName(personName, body) {
  * @param {PreQinClanHint | null | undefined} [clan]
  * @returns {string | null} card body without 国名, or null if title has no prefix
  */
+function personNameEndsWithBody(personName, body) {
+  return Boolean(
+    personName && body && personName.length > body.length && personName.endsWith(body),
+  );
+}
+
+function personStoredNameMatchesBody(personName, body, clan) {
+  return (
+    personStoredAsXingGivenName(personName, body, clan) ||
+    personStoredAsShiGivenName(personName, body, clan) ||
+    personStoredAsBareGivenName(personName, body) ||
+    personNameEndsWithBody(personName, body)
+  );
+}
+
 export function preQinRegnalCardName(title, stateName, personName, clan) {
   if (!title || !stateName || !title.startsWith(stateName)) return null;
   const stripped = title.slice(stateName.length);
   if (!stripped) return null;
+
+  // 鲁公伯御 → 伯御：国号 + 爵称「公」 + 私名，不同于谥号式「懿公」
+  const dukeRank = stripped.match(/^公(.+)$/);
+  if (dukeRank) {
+    const body = dukeRank[1];
+    if (!/^.{1,2}[公王]$/.test(body) && personStoredNameMatchesBody(personName, body, clan)) {
+      return body;
+    }
+  }
 
   const rank = stripped.match(/^([侯王伯])(.+)$/);
   if (!rank) return stripped;

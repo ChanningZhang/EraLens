@@ -9,13 +9,13 @@
   },
   "scope": "cn",
   "depth": "standard",
-  "generatedAt": "2026-09-13",
+  "generatedAt": "2026-09-18",
   "counts": {
-    "persons": 62,
+    "persons": 72,
     "dynasties": 4,
-    "reigns": 60,
+    "reigns": 70,
     "events": 4,
-    "relations": 60
+    "relations": 70
   },
   "sources": [
     {
@@ -54,7 +54,7 @@
   "notes": [
     "吐蕃在位年取维基百科帝国时期标准列表（618–842），含南日松赞至朗达玛。",
     "吐谷浑含慕容吐谷浑至诺曷钵完整首领序列；王朝窗口取329–663。",
-    "高句丽取君主列表约18位主要君主，故国川王以前年代有争议，precision=year。",
+    "高句丽取维基百科君主列表28王（东明圣王至宝藏王）；故国川王以前年代有争议，precision=year，在位年依三国史记/维基列表。报德王（安胜，670–683）为亡国后新罗境内残部，不入高句丽王朝行。",
     "回鹘可汗序列据维基百科回鹘可汗列表（744–840）；人物名用本名，在位 title 用唐封称号，尊号不入人物名。",
     "唐（tang）复用 sui-tang-wudai-song 已有 id，本包仅关联 event_dynasties。"
   ]

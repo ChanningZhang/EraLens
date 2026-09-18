@@ -14,6 +14,7 @@ import {
   nextColor,
   writeImportPackage,
 } from "../lib/sqlHelpers.mjs";
+import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -56,23 +57,33 @@ const tuyuhunPersons = [
 
 const gaogouliPersons = [
   person("gao-zhumeng", "高朱蒙", ["君主"], "东明圣王，高句丽开国君主，朱蒙。", "朱蒙"),
-  person("daewuseong", "大武神王", ["君主"], "高句丽君主，扩张辽东。", "大武神王"),
-  person("taizu-wang", "太祖王", ["君主"], "高句丽太祖王，长期在位，国势渐强。", "太祖王"),
-  person("cida-wang", "次大王", ["君主"], "高句丽君主，太祖王之嗣。", "次大王"),
-  person("xingda-wang", "新大王", ["君主"], "高句丽君主，新大王时期。", "新大王"),
-  person("guguo-chuan-wang", "故国川王", ["君主"], "高句丽君主，迁都国内城。", "故国川王"),
-  person("shanshang-wang", "山上王", ["君主"], "高句丽君主，山上王时期。", "山上王"),
-  person("dongchuan-wang", "东川王", ["君主"], "高句丽君主，东川王时期。", "东川王"),
-  person("meichuan-wang", "美川王", ["君主"], "好壤王，高句丽重要君主。", "美川王"),
-  person("guguo-yuan-wang", "故国原王", ["君主"], "高句丽君主，故国原王时期。", "故国原王"),
-  person("xiaoshoulin-wang", "小兽林王", ["君主"], "高句丽君主，迁都平壤前夕。", "小兽林王"),
-  person("guangkaitu-wang", "广开土王", ["君主"], "高句丽鼎盛君主，扩张辽东与半岛。", "广开土王"),
-  person("changsheng-wang", "长寿王", ["君主"], "高句丽君主，长期在位，国势稳定。", "长寿王"),
-  person("wenzhi-wang", "文咨王", ["君主"], "文惠王，高句丽文咨王时期。", "文咨王"),
-  person("pingyuan-wang", "平原王", ["君主"], "高句丽平原王，阳成王时期。", "平原王"),
-  person("yingyang-wang", "婴阳王", ["君主"], "高句丽婴阳王，与隋、唐对峙。", "婴阳王"),
-  person("rongliu-wang", "荣留王", ["君主"], "高句丽荣留王，唐初君主。", "荣留王"),
-  person("baozang-wang", "宝藏王", ["君主"], "高句丽末代君主，668年亡于唐。", "宝藏王"),
+  person("liuli-ming-wang", "琉璃明王", ["君主"], "高句丽第二代君主，名类利、孺留，东明圣王之子。", "琉璃明王"),
+  person("daewuseong", "大武神王", ["君主"], "高句丽君主，名无恤，扩张辽东。", "大武神王"),
+  person("minzhong-wang", "闵中王", ["君主"], "高句丽君主，名解色朱，大武神王之弟，太子年幼时被推举继位。", "閔中王"),
+  person("muben-wang", "慕本王", ["君主"], "高句丽君主，名解忧，大武神王之子，被侍从杜鲁刺杀。", "慕本王"),
+  person("taizu-wang", "太祖王", ["君主"], "高句丽太祖王，名宫，长期在位，国势渐强。", "太祖王"),
+  person("cida-wang", "次大王", ["君主"], "高句丽君主，名遂成，太祖王之嗣。", "次大王"),
+  person("xingda-wang", "新大王", ["君主"], "高句丽君主，名伯固，新大王时期。", "新大王"),
+  person("guguo-chuan-wang", "故国川王", ["君主"], "高句丽君主，名男武，迁都国内城。", "故国川王"),
+  person("shanshang-wang", "山上王", ["君主"], "高句丽君主，名延优，山上王时期。", "山上王"),
+  person("dongchuan-wang", "东川王", ["君主"], "高句丽君主，名忧位居，东川王时期。", "东川王"),
+  person("zhongchuan-wang", "中川王", ["君主"], "高句丽君主，名然弗，东川王之子。", "中川王"),
+  person("xichuan-wang", "西川王", ["君主"], "高句丽君主，名药卢，中川王之子。", "西川王"),
+  person("fengshang-wang", "烽上王", ["君主"], "高句丽君主，名相夫，为大臣所废后自杀。", "烽上王"),
+  person("meichuan-wang", "美川王", ["君主"], "好壤王，名乙弗，高句丽重要君主。", "美川王"),
+  person("guguo-yuan-wang", "故国原王", ["君主"], "高句丽君主，名斯由，故国原王时期。", "故国原王"),
+  person("xiaoshoulin-wang", "小兽林王", ["君主"], "高句丽君主，名丘夫，迁都平壤前夕。", "小兽林王"),
+  person("guguo-rang-wang", "故国壤王", ["君主"], "高句丽君主，名伊连，小兽林王之弟、好太王之父。", "故国壤王"),
+  person("guangkaitu-wang", "广开土王", ["君主"], "高句丽鼎盛君主，名谈德，扩张辽东与半岛。", "广开土王"),
+  person("changsheng-wang", "长寿王", ["君主"], "高句丽君主，名巨连，长期在位，国势稳定。", "长寿王"),
+  person("wenzhi-wang", "文咨王", ["君主"], "文惠王，名罗云，高句丽文咨王时期。", "文咨王"),
+  person("ancang-wang", "安藏王", ["君主"], "高句丽君主，名兴安，文咨王之子。", "安藏王"),
+  person("anyuan-wang", "安原王", ["君主"], "高句丽君主，名宝延，安藏王之弟。", "安原王"),
+  person("yangyuan-wang", "阳原王", ["君主"], "高句丽君主，名平成，安原王长子。", "阳原王"),
+  person("pingyuan-wang", "平原王", ["君主"], "高句丽平原王，名阳成。", "平原王"),
+  person("yingyang-wang", "婴阳王", ["君主"], "高句丽婴阳王，名元，与隋、唐对峙。", "婴阳王"),
+  person("rongliu-wang", "荣留王", ["君主"], "高句丽荣留王，名建武，唐初君主。", "荣留王"),
+  person("baozang-wang", "宝藏王", ["君主"], "高句丽末代君主，名宝藏，668年亡于唐。", "宝藏王"),
 ];
 
 const huihuPersons = [
@@ -187,19 +198,29 @@ const tuyuhunReigns = [
 
 const gaogouliReigns = [
   dr("gaogouli", "gao-zhumeng", "东明圣王", null, null, -37, -19),
+  dr("gaogouli", "liuli-ming-wang", "琉璃明王", null, null, -19, 18),
   dr("gaogouli", "daewuseong", "大武神王", null, null, 18, 44),
+  dr("gaogouli", "minzhong-wang", "闵中王", null, null, 44, 48),
+  dr("gaogouli", "muben-wang", "慕本王", null, null, 48, 53),
   dr("gaogouli", "taizu-wang", "太祖王", null, null, 53, 146),
   dr("gaogouli", "cida-wang", "次大王", null, null, 146, 165),
   dr("gaogouli", "xingda-wang", "新大王", null, null, 165, 179),
   dr("gaogouli", "guguo-chuan-wang", "故国川王", null, null, 179, 197),
   dr("gaogouli", "shanshang-wang", "山上王", null, null, 197, 227),
   dr("gaogouli", "dongchuan-wang", "东川王", null, null, 227, 248),
+  dr("gaogouli", "zhongchuan-wang", "中川王", null, null, 248, 270),
+  dr("gaogouli", "xichuan-wang", "西川王", null, null, 270, 292),
+  dr("gaogouli", "fengshang-wang", "烽上王", null, null, 292, 300),
   dr("gaogouli", "meichuan-wang", "美川王", null, null, 300, 331),
   dr("gaogouli", "guguo-yuan-wang", "故国原王", null, null, 331, 371),
   dr("gaogouli", "xiaoshoulin-wang", "小兽林王", null, null, 371, 384),
+  dr("gaogouli", "guguo-rang-wang", "故国壤王", null, null, 384, 391),
   dr("gaogouli", "guangkaitu-wang", "广开土王", null, null, 391, 412),
   dr("gaogouli", "changsheng-wang", "长寿王", null, null, 412, 491),
   dr("gaogouli", "wenzhi-wang", "文咨王", null, null, 491, 519),
+  dr("gaogouli", "ancang-wang", "安藏王", null, null, 519, 531),
+  dr("gaogouli", "anyuan-wang", "安原王", null, null, 531, 545),
+  dr("gaogouli", "yangyuan-wang", "阳原王", null, null, 545, 559),
   dr("gaogouli", "pingyuan-wang", "平原王", null, null, 559, 590),
   dr("gaogouli", "yingyang-wang", "婴阳王", null, null, 590, 618),
   dr("gaogouli", "rongliu-wang", "荣留王", null, null, 618, 642),
@@ -223,7 +244,7 @@ const huihuReigns = [
 ];
 
 const reignGroups = [tuboReigns, tuyuhunReigns, gaogouliReigns, huihuReigns];
-const reigns = reignGroups.flat();
+const reigns = applyDocumentedDatesToReigns(reignGroups.flat());
 
 // ── events ───────────────────────────────────────────────────────────────────
 
@@ -297,7 +318,7 @@ const manifest = {
   window: { startYear: -37, startMonth: 1, endYear: 842, endMonth: 12 },
   scope: "cn",
   depth: "standard",
-  generatedAt: "2026-09-13",
+  generatedAt: "2026-09-18",
   counts: {
     persons: persons.length,
     dynasties: dynasties.length,
@@ -318,11 +339,21 @@ const manifest = {
   notes: [
     "吐蕃在位年取维基百科帝国时期标准列表（618–842），含南日松赞至朗达玛。",
     "吐谷浑含慕容吐谷浑至诺曷钵完整首领序列；王朝窗口取329–663。",
-    "高句丽取君主列表约18位主要君主，故国川王以前年代有争议，precision=year。",
+    "高句丽取维基百科君主列表28王（东明圣王至宝藏王）；故国川王以前年代有争议，precision=year，在位年依三国史记/维基列表。报德王（安胜，670–683）为亡国后新罗境内残部，不入高句丽王朝行。",
     "回鹘可汗序列据维基百科回鹘可汗列表（744–840）；人物名用本名，在位 title 用唐封称号，尊号不入人物名。",
     "唐（tang）复用 sui-tang-wudai-song 已有 id，本包仅关联 event_dynasties。",
   ],
 };
+
+const preSql = [
+  "DELETE FROM relations WHERE id IN (",
+  "  'rel-gao-zhumeng-daewuseong-succession',",
+  "  'rel-daewuseong-taizu-wang-succession',",
+  "  'rel-dongchuan-wang-meichuan-wang-succession',",
+  "  'rel-xiaoshoulin-wang-guangkaitu-wang-succession',",
+  "  'rel-wenzhi-wang-pingyuan-wang-succession'",
+  ");",
+].join("\n");
 
 writeImportPackage(__dirname, {
   slug: "tang-border",
@@ -333,5 +364,6 @@ writeImportPackage(__dirname, {
   reigns,
   events,
   relations,
+  preSql,
   manifest,
 });

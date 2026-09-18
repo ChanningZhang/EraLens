@@ -1,0 +1,9 @@
+EraLens ships a tiny WOFF2 subset of BabelStone Han for rare CJK unified
+ideographs used in imported historical data (e.g. 𰯼 U+30BFC, 𧊒 U+27292, 𦈡 U+26221).
+
+Source font: BabelStone Han
+Copyright (c) Andrew West and Arphic Technology Co., Ltd.
+License: Arphic Public License
+https://www.babelstone.co.uk/Fonts/Download/APL.txt
+
+Subset generated with fonttools pyftsubset from the upstream TTF.

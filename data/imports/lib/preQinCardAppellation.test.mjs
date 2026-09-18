@@ -44,4 +44,10 @@ describe("preQinRegnalCardName", () => {
     assert.equal(preQinRegnalCardName("熊绎", "楚"), null);
     assert.equal(preQinRegnalCardName("周武王", "西周"), null);
   });
+
+  it("drops 公 when the title is 国号+爵称+私名 (鲁公伯御)", () => {
+    const ji = { ancestralXing: "姬" };
+    assert.equal(preQinRegnalCardName("鲁公伯御", "鲁", "姬伯御", ji), "伯御");
+    assert.equal(preQinRegnalCardName("鲁懿公", "鲁", "姬戏", ji), "懿公");
+  });
 });
