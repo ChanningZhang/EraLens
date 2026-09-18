@@ -120,8 +120,8 @@ function eras(reignId, list) {
   }));
 }
 
-function person(id, name, roles, bio, wikiTitle, birth = null, death = null) {
-  return { id, name, roles, bio, links: wiki(wikiTitle), birth, death };
+function person(id, name, roles, bio, wikiTitle, birth = null, death = null, altNames = []) {
+  return { id, name, roles, bio, links: wiki(wikiTitle), birth, death, altNames };
 }
 
 // ── persons ────────────────────────────────────────────────────────────────
@@ -165,7 +165,16 @@ const persons = [
   person("shi-jian", "石鉴", ["皇帝"], "后赵皇帝，石虎子。冉闵杀石遵后拥立，350年闰二月为冉闵所杀。", "石鉴"),
   person("shi-zhi", "石祗", ["皇帝"], "后赵末帝，石虎子。冉闵杀石鉴后于襄国称帝，351年被部将刘显所杀。", "石祗"),
   // 前凉
-  person("zhang-gui", "张轨", ["君主"], "前凉奠基者，任凉州刺史，保境安民。", "张轨"),
+  person(
+    "zhang-gui",
+    "张轨",
+    ["君主"],
+    "安定张氏出身，字士彦。西晋凉州刺史，前凉奠基者；永嘉之乱后保境安民，河西安定。卒谥武公。",
+    "张轨",
+    ym(255),
+    ym(314, 5),
+    ["士彦"],
+  ),
   person("zhang-shi", "张寔", ["君主"], "前凉昭王，张轨之子，继守河西。", "张寔"),
   person("zhang-mao", "张茂", ["君主"], "前凉成王，称臣于晋而实据凉州。", "张茂_(前凉)"),
   person("zhang-jun", "张骏", ["君主"], "前凉文王，前凉极盛时期。", "张骏_(十六国)"),
@@ -674,7 +683,7 @@ const zhaoBackReigns = [
 ];
 
 const liangFrontReigns = [
-  dynastyReign("liang-front", "zhang-gui", "前凉奠基者", null, null, 301, 314),
+  dynastyReignMonth("liang-front", "zhang-gui", "前凉武公", "武公", null, 301, 1, 314, 5),
   dynastyReign("liang-front", "zhang-shi", "前凉昭王", "昭王", null, 314, 320),
   dynastyReign("liang-front", "zhang-mao", "前凉成王", "成王", null, 320, 324),
   dynastyReign("liang-front", "zhang-jun", "前凉文王", "文王", null, 324, 346),

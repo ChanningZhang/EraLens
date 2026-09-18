@@ -104,6 +104,7 @@ export function filterTimeline(
   return TimelineSliceSchema.parse({
     dynasties: visibleDynasties,
     dynastyGroups: visibleDynastyGroups,
+    dynastyLaneGroups: store.dynastyLaneGroups ?? [],
     reigns: visibleReigns,
     events: visibleEvents,
     persons: visiblePersons,

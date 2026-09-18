@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import {
   type Dynasty,
+  type DynastyLaneGroup,
   type Reign,
   buildPreQinClanContext,
   formatReignSpanTooltip,
@@ -47,6 +48,7 @@ type Props = {
   personName?: string;
   personClan?: Pick<Person, "ancestralXing" | "clanShi">;
   orthodox?: boolean;
+  laneGroups?: readonly DynastyLaneGroup[];
 };
 
 export function ReignCard({
@@ -57,14 +59,19 @@ export function ReignCard({
   personName: personNameFromTimeline,
   personClan,
   orthodox = false,
+  laneGroups = [],
 }: Props) {
   const viewport = useViewport();
   const selection = useSelection();
-  const { startAbs, endExclusive, stackIndex } = resolveReignVisualSpan(reign, reigns);
-  const { items, rowCount, rowHeights } = assignReignStacks(reigns);
+  const { startAbs, endExclusive, stackIndex } = resolveReignVisualSpan(
+    reign,
+    reigns,
+    laneGroups,
+  );
+  const { items, rowCount, rowHeights } = assignReignStacks(reigns, laneGroups);
   const overlapsLowerRow = items.some((item) => {
     if (item.stackIndex <= stackIndex) return false;
-    const span = resolveReignVisualSpan(item.reign, reigns);
+    const span = resolveReignVisualSpan(item.reign, reigns, laneGroups);
     return span.startAbs < endExclusive && span.endExclusive > startAbs;
   });
   const captionPlacement = resolveReignCaptionPlacement({

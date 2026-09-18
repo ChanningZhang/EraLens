@@ -166,6 +166,7 @@ export function DynastyLane({
                 personName={personNames.get(reign.personId)}
                 personClan={personClans.get(reign.personId)}
                 orthodox={orthodox}
+                laneGroups={laneGroups}
               />
             );
           })}

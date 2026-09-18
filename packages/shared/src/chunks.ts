@@ -124,6 +124,7 @@ export function dedupeOverlappingReigns(reigns: Reign[]): Reign[] {
 export function mergeTimelineSlices(slices: TimelineSlice[]): TimelineSlice {
   const dynastyMap = new Map<string, TimelineSlice["dynasties"][number]>();
   const dynastyGroupMap = new Map<string, TimelineSlice["dynastyGroups"][number]>();
+  const dynastyLaneGroupMap = new Map<string, TimelineSlice["dynastyLaneGroups"][number]>();
   const reignMap = new Map<string, TimelineSlice["reigns"][number]>();
   const eventMap = new Map<string, TimelineSlice["events"][number]>();
   const personMap = new Map<string, TimelineSlice["persons"][number]>();
@@ -136,6 +137,9 @@ export function mergeTimelineSlices(slices: TimelineSlice[]): TimelineSlice {
     }
     for (const group of slice.dynastyGroups ?? []) {
       dynastyGroupMap.set(group.id, group);
+    }
+    for (const group of slice.dynastyLaneGroups ?? []) {
+      dynastyLaneGroupMap.set(group.id, group);
     }
     for (const reign of slice.reigns) {
       reignMap.set(reign.id, reign);
@@ -162,6 +166,7 @@ export function mergeTimelineSlices(slices: TimelineSlice[]): TimelineSlice {
   return TimelineSliceSchema.parse({
     dynasties: [...dynastyMap.values()],
     dynastyGroups: [...dynastyGroupMap.values()],
+    dynastyLaneGroups: [...dynastyLaneGroupMap.values()],
     reigns,
     events: [...eventMap.values()],
     persons,

@@ -142,6 +142,34 @@ describe("mergeTimelineSlices", () => {
     expect(merged.reigns.map((reign) => reign.id)).toEqual(["reign-qin-r29-qin"]);
     expect(merged.persons.map((person) => person.id)).toEqual(["qin-r29"]);
   });
+
+  it("preserves dynasty lane group config across chunks", () => {
+    const laneGroup = {
+      id: "mongol-yuan",
+      primaryDynastyId: "yuan",
+      phaseDynastyIds: ["mongol-empire", "yuan"],
+      laneOrderStartAbs: 14472,
+      laneOrderEndAbs: 16656,
+    };
+
+    const merged = mergeTimelineSlices([
+      {
+        dynasties: [],
+        dynastyLaneGroups: [laneGroup],
+        reigns: [],
+        events: [],
+        persons: [],
+      },
+      {
+        dynasties: [],
+        reigns: [],
+        events: [],
+        persons: [],
+      },
+    ]);
+
+    expect(merged.dynastyLaneGroups).toEqual([laneGroup]);
+  });
 });
 
 describe("dedupeOverlappingReigns", () => {
