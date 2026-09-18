@@ -1,5 +1,6 @@
 import {
   groupByClaimTrack,
+  isParallelClaim,
   isSystemMissingReign,
   layoutBucketsForLaneReigns,
   reignsInLayoutBucket,
@@ -10,15 +11,53 @@ import {
 export const LANE_PADDING_Y = 16;
 /** Matches the painted card height so stacked contemporaneous reigns sit flush. */
 export const STACK_ROW_HEIGHT = 48;
-
-export function dynastyLaneHeight(rowCount: number): number {
-  return LANE_PADDING_Y + Math.max(1, rowCount) * STACK_ROW_HEIGHT;
-}
+/** Parallel claimants (`claimTrack` ≠ main) use 2/3 of a normal stack row. */
+export const PARALLEL_STACK_ROW_RATIO = 2 / 3;
+export const PARALLEL_STACK_ROW_HEIGHT = STACK_ROW_HEIGHT * PARALLEL_STACK_ROW_RATIO;
 
 export type StackedReign = {
   reign: Reign;
   stackIndex: number;
 };
+
+export function stackRowHeightForReign(reign: Pick<Reign, "claimTrack">): number {
+  return isParallelClaim(reign) ? PARALLEL_STACK_ROW_HEIGHT : STACK_ROW_HEIGHT;
+}
+
+export function stackRowHeights(
+  items: readonly StackedReign[],
+  rowCount: number,
+): number[] {
+  const heights = Array.from(
+    { length: Math.max(1, rowCount) },
+    () => STACK_ROW_HEIGHT,
+  );
+  for (const item of items) {
+    if (item.stackIndex < 0 || item.stackIndex >= heights.length) continue;
+    heights[item.stackIndex] = stackRowHeightForReign(item.reign);
+  }
+  return heights;
+}
+
+export function stackRowOffset(
+  rowHeights: readonly number[],
+  stackIndex: number,
+): number {
+  let top = 0;
+  for (let index = 0; index < stackIndex; index += 1) {
+    top += rowHeights[index] ?? STACK_ROW_HEIGHT;
+  }
+  return top;
+}
+
+export function dynastyBarHeight(rowHeights: readonly number[]): number {
+  if (rowHeights.length === 0) return STACK_ROW_HEIGHT;
+  return rowHeights.reduce((sum, height) => sum + height, 0);
+}
+
+export function dynastyLaneHeight(rowHeights: readonly number[]): number {
+  return LANE_PADDING_Y + dynastyBarHeight(rowHeights);
+}
 
 export function partitionReignRecords(reigns: Reign[]): {
   rulers: Reign[];
@@ -152,6 +191,7 @@ export function resolveReignVisualSpan(
 export function assignReignStacks(reigns: Reign[]): {
   items: StackedReign[];
   rowCount: number;
+  rowHeights: number[];
 } {
   const { placements, rowCount } = resolveTrackPlacements(reigns);
   const buckets = layoutBucketsForLaneReigns(reigns);
@@ -170,7 +210,7 @@ export function assignReignStacks(reigns: Reign[]): {
     }
   }
 
-  return { items, rowCount };
+  return { items, rowCount, rowHeights: stackRowHeights(items, rowCount) };
 }
 
 export function nextLaterStartAbs(

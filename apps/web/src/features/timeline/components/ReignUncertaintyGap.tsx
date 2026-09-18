@@ -6,7 +6,10 @@ import {
 } from "@eralens/shared";
 import { useViewport } from "../hooks/useViewport";
 import { projectAbs } from "../model/coordinates";
-import { STACK_ROW_HEIGHT } from "../model/reignClusters";
+import {
+  assignReignStacks,
+  stackRowOffset,
+} from "../model/reignClusters";
 import { HoverTooltip } from "./HoverTooltip";
 import styles from "./ReignUncertaintyGap.module.css";
 
@@ -39,6 +42,9 @@ function WavyEdge({ side }: { side: "left" | "right" }) {
 export function ReignUncertaintyGap({ boundary, rulers, color }: Props) {
   const viewport = useViewport();
   const isJunction = boundary.kind === "junction";
+  const { rowHeights } = assignReignStacks(rulers);
+  const stackIndex = boundary.stackIndex;
+  const rowHeight = rowHeights[stackIndex];
   const gapStart = boundary.startAbs;
   const gapEndExclusive = boundary.endAbs + 1;
 
@@ -67,7 +73,8 @@ export function ReignUncertaintyGap({ boundary, rulers, color }: Props) {
       style={{
         left,
         width,
-        top: boundary.stackIndex * STACK_ROW_HEIGHT,
+        top: stackRowOffset(rowHeights, stackIndex),
+        height: rowHeight,
         ["--gap-color" as string]: color,
       }}
     >

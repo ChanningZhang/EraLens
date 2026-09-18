@@ -58,13 +58,13 @@ Task Progress:
   - 只是本次导入深度不足或尚未搜集完整，必须继续查证/补齐，不能标成「史料缺」。
 - 无实测或无通行王年（夏代、商前期常见）：只收关键人物，事件用 `circa` + `date_note`。禁止用传统积年填满每一王来「补齐」时间轴。
 - 摄政、共和等非王时期建**事件**，不建 reign。
-- **并立称君**（隋末三帝、北魏分裂、南明鲁监国/绍武）留在同一王朝行，用 `claim_track` 分行同时显示，不要拆成多个王朝：
+- **并立称君**（隋末三帝、南明鲁监国/绍武）留在同一王朝行，用 `claim_track` 分行同时显示，不要拆成多个王朝：
   - **判定并列只看是否「同时另立」**，与是否权臣拥立无关。
-  - **并行 `claim_track`**：在前任**仍在位**时，或与之**同年分立**的另一政权另立皇帝——如 534 年邺城孝静帝与西迁孝武帝并存、炀帝尚在时的杨侑/杨侗、南明鲁监国/绍武与弘光/隆武并存。填 `claim_track`（据点 kebab-case，如 `ye`、`changan`、`lu-jian`）、`claim_label`（邺 / 长安 / 绍兴监国）。并行卡片统一并立虚线描边，`claim_role` 固定 `rival`。
-  - **主线（不填 `claim_track`）**：前帝**身后**才即位，哪怕实为权臣傀儡，仍算**继任**，接在前帝继承链之后——如 535 年元宝炬接孝武帝（宇文泰杀孝武帝后立）、文帝→炀帝→弑帝后杨浩续统。不要用裁切卡片把继任硬接在前帝尾巴上冒充同时并存。
-  - 通行主线 succession 只串不填 track 的君主（文帝→炀帝，元修→元宝炬→元钦→元廓，弘光→隆武→永历）；并行 track 内的君主彼此可串，但不与主线混链。
+  - **并行 `claim_track`**：在前任**仍在位**时，或与之**同年分立**的另一政权另立皇帝——如炀帝尚在时的杨侑/杨侗、南明鲁监国/绍武与弘光/隆武并存。填 `claim_track`（据点 kebab-case，如 `changan`、`lu-jian`）、`claim_label`（长安 / 洛阳 / 绍兴监国）。并行卡片统一并立虚线描边，`claim_role` 固定 `rival`。
+  - **主线（不填 `claim_track`）**：前帝**身后**才即位，哪怕实为权臣傀儡，仍算**继任**，接在前帝继承链之后——如文帝→炀帝→弑帝后杨浩续统。不要用裁切卡片把继任硬接在前帝尾巴上冒充同时并存。
+  - 通行主线 succession 只串不填 track 的君主（文帝→炀帝，弘光→隆武→永历）；并行 track 内的君主彼此可串，但不与主线混链。
   - 正统金色只覆主线。炀帝尚在时被拥立的杨侑不镀金；弑帝后的江都续统（杨浩）走主线。
-- 按用户字面范围收录：说「夏商周」只收三代王室，不自动展开春秋列国；同一王室可按习惯分期拆行（`zhou-west` / `zhou-east`，比照东汉）。
+- 按用户字面范围收录：说「夏商周」只收三代王室，不自动展开春秋列国；同一王室可按习惯分期拆行（`zhou-west` / `zhou-east`，`wei-east` / `wei-west`，比照东汉）。东魏、西魏虽仍用国号魏，通行史书作独立北朝王朝，各占一行，不用把孝静帝/西魏诸帝留在北魏 `claim_track`。
 - 每条实体记录来源（URL 或书名卷页），写入 `manifest.json` 的 `sources`；争议取舍写入 `notes`。
 - 只收录与**指定时期窗口相交**的实体；长跨度王朝（如唐）可只补窗口内在位与事件，勿重复插入已存在的完整王朝行（用 upsert 更新或跳过）。
 - **非帝王人物**（`persons`，不建 `reign`）与君主同等重要，按深度收录：
@@ -165,14 +165,15 @@ docker exec eralens-postgres psql -U eralens -d eralens -c \
 
 1. `BEGIN;`
 2. `persons`
-3. `dynasties`
-4. `reigns`
-5. `era_names`（可选；先秦无年号则整步省略。有则按 reign_id + sort_order，DELETE 后 INSERT）
-6. `events`
-7. `event_dynasties`
-8. `event_participants`
-9. `relations`
-10. `COMMIT;`
+3. `dynasty_groups`（可选；三国/五胡十六国/南北朝/五代十国等并存时期分组）
+4. `dynasties`（成员通过 `group_id` 引用组）
+5. `reigns`
+6. `era_names`（可选；先秦无年号则整步省略。有则按 reign_id + sort_order，DELETE 后 INSERT）
+7. `events`
+8. `event_dynasties`
+9. `event_participants`
+10. `relations`
+11. `COMMIT;`
 
 默认用 `INSERT ... ON CONFLICT (id) DO UPDATE SET ...`（persons/dynasties/reigns/events/relations）。连接表用 `ON CONFLICT DO NOTHING`。
 

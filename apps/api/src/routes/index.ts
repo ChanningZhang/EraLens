@@ -11,11 +11,13 @@ import type { FastifyInstance } from "fastify";
 import { prisma } from "../db.js";
 import {
   mapDynasty,
+  mapDynastyGroup,
   mapEvent,
   mapPerson,
   mapReign,
   mapRelation,
   toTimelineDataStore,
+  type RawDynastyGroupRow,
   type RawDynastyRow,
   type RawEventRow,
   type RawReignRow,
@@ -47,13 +49,15 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
   const dynastyRows = scope
     ? await prisma.$queryRaw<RawDynastyRow[]>`
         SELECT id, name, alt_names, scope, region, start_year, start_month, end_year, end_month,
-               start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs, parent_id, note
+               start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs,
+               parent_id, group_id, note
         FROM dynasties
         WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')
           AND scope = ${scope}`
     : await prisma.$queryRaw<RawDynastyRow[]>`
         SELECT id, name, alt_names, scope, region, start_year, start_month, end_year, end_month,
-               start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs, parent_id, note
+               start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs,
+               parent_id, group_id, note
         FROM dynasties
         WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')`;
 
@@ -76,7 +80,13 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
         if (!life) return false;
         return rangeIntersectsWindow(life.startAbs, life.endAbs, fromAbs, toAbs);
       });
-    return TimelineSliceSchema.parse({ dynasties: [], reigns: [], events: [], persons });
+    return TimelineSliceSchema.parse({
+      dynasties: [],
+      dynastyGroups: [],
+      reigns: [],
+      events: [],
+      persons,
+    });
   }
 
   const reignRows = await prisma.$queryRaw<RawReignRow[]>`
@@ -135,6 +145,22 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
   }
 
   const dynasties = dynastyRows.map(mapDynasty);
+  const groupIds = [
+    ...new Set(
+      dynastyRows
+        .map((row) => row.group_id)
+        .filter((groupId): groupId is string => Boolean(groupId)),
+    ),
+  ];
+  const dynastyGroupRows =
+    groupIds.length > 0
+      ? await prisma.$queryRaw<RawDynastyGroupRow[]>`
+          SELECT id, name, alt_names, scope, start_year, start_month, end_year, end_month,
+                 start_abs, end_abs, precision, note
+          FROM dynasty_groups
+          WHERE id = ANY(${groupIds}::text[])`
+      : [];
+  const dynastyGroups = dynastyGroupRows.map(mapDynastyGroup);
   const reigns = reignRows.map((row) => mapReign(row, erasByReign.get(row.id) ?? []));
   const visibleReignPersonIds = [...new Set(reignRows.map((row) => row.person_id))];
   const [lifePersonRows, rulerPersonRows] = await Promise.all([
@@ -174,7 +200,13 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
       return dynastyHit || event.dynastyIds.length === 0;
     });
 
-  return TimelineSliceSchema.parse({ dynasties, reigns, events, persons });
+  return TimelineSliceSchema.parse({
+    dynasties,
+    dynastyGroups,
+    reigns,
+    events,
+    persons,
+  });
 }
 
 export async function registerRoutes(app: FastifyInstance) {

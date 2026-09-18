@@ -11,6 +11,7 @@ import { eventSpanAbs, formatEventTime } from "./eventTime";
 import {
   TimelineSliceSchema,
   type Dynasty,
+  type DynastyGroup,
   type EntityDetail,
   type EntityRef,
   type Event,
@@ -34,6 +35,7 @@ export type TimelineFilterQuery = {
 
 export type TimelineDataStore = {
   dynasties: Dynasty[];
+  dynastyGroups?: DynastyGroup[];
   reigns: Reign[];
   persons: Person[];
   events: Event[];
@@ -77,8 +79,18 @@ export function filterTimeline(
     );
   });
 
+  const visibleGroupIds = new Set(
+    visibleDynasties
+      .map((dynasty) => dynasty.groupId)
+      .filter((groupId): groupId is string => Boolean(groupId)),
+  );
+  const visibleDynastyGroups = (store.dynastyGroups ?? []).filter((group) =>
+    visibleGroupIds.has(group.id),
+  );
+
   return TimelineSliceSchema.parse({
     dynasties: visibleDynasties,
+    dynastyGroups: visibleDynastyGroups,
     reigns: visibleReigns,
     events: visibleEvents,
     persons: visiblePersons,

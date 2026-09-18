@@ -35,6 +35,19 @@ const persons = [
 
 // ── dynasties ──────────────────────────────────────────────────────────────
 
+const dynastyGroups = [
+  {
+    id: "wuhu",
+    name: "五胡",
+    altNames: ["十六国", "五胡十六国"],
+    scope: "cn",
+    start: ym(304),
+    end: ym(439, 12),
+    precision: "year",
+    note: "304–439年五胡十六国；狭义自刘渊/李雄立国至北魏灭北凉。",
+  },
+];
+
 const dynasties = [
   {
     id: "xiliang",
@@ -58,6 +71,7 @@ const dynasties = [
     end: ym(352),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "wuhu",
     note: "350年冉闵杀石虎称帝，国号魏；352年败亡。",
   },
   {
@@ -70,6 +84,7 @@ const dynasties = [
     end: ym(394),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "wuhu",
     note: "384年慕容泓称帝，都长子；394年慕容永为前秦所灭。",
   },
   {
@@ -188,6 +203,7 @@ const manifest = {
   ],
   notes: [
     "补充 jin-sixteen / nanbei-chao 未收录的西梁、冉魏、西燕、前仇池。",
+    "冉魏、西燕属 dynasty_groups.wuhu（与崔鸿十六国同框）；西梁属南朝之后，仇池始年早于 304，均不入组。",
     "西梁 id 为 xiliang，与十六国西凉 liang-xi 区分。",
     "仇池取296–371前仇池窗口，杨腾至杨难当代表杨氏四氏执政序列。",
     "南梁（liang-nan）、后赵（zhao-back）、后燕（yan-back）复用已有 dynasty id 作事件关联。",
@@ -198,6 +214,7 @@ writeImportPackage(__dirname, {
   slug: "nanbei-sixteen-extra",
   window: { startYear: 296, startMonth: 1, endYear: 587, endMonth: 12 },
   persons,
+  dynastyGroups,
   dynasties,
   reignGroups,
   reigns,

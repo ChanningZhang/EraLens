@@ -52,6 +52,19 @@ export const ColorTokenSchema = z.enum([
 export type ColorToken = z.infer<typeof ColorTokenSchema>;
 export const COLOR_TOKENS = ColorTokenSchema.options;
 
+export const DynastyGroupSchema = z.object({
+  id: z.string(),
+  name: z.string(),
+  altNames: z.array(z.string()).default([]),
+  scope: ScopeSchema.default("cn"),
+  start: TimePointSchema,
+  end: TimePointSchema,
+  startAbs: z.number(),
+  endAbs: z.number(),
+  precision: PrecisionSchema.default("year"),
+  note: z.string().optional(),
+});
+
 export const DynastySchema = z.object({
   id: z.string(),
   name: z.string(),
@@ -69,6 +82,7 @@ export const DynastySchema = z.object({
   /** AbsMonth after which orthodox (gold) display ends, even if the dynasty continues. */
   orthodoxEndAbs: z.number().optional(),
   parentId: z.string().optional(),
+  groupId: z.string().optional(),
   note: z.string().optional(),
 });
 
@@ -210,6 +224,7 @@ export type Lod = z.infer<typeof LodSchema>;
 
 export const TimelineSliceSchema = z.object({
   dynasties: z.array(DynastySchema),
+  dynastyGroups: z.array(DynastyGroupSchema).default([]),
   reigns: z.array(ReignSchema),
   events: z.array(EventSchema),
   persons: z.array(PersonSchema).default([]),
@@ -250,6 +265,7 @@ export const SearchHitSchema = z.object({
 });
 
 export type Dynasty = z.infer<typeof DynastySchema>;
+export type DynastyGroup = z.infer<typeof DynastyGroupSchema>;
 export type Reign = z.infer<typeof ReignSchema>;
 export type ClaimRole = z.infer<typeof ClaimRoleSchema>;
 export type AppellationKind = z.infer<typeof AppellationKindSchema>;

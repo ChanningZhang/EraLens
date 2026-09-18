@@ -18,6 +18,9 @@ export const TIMELINE_RAIL_GAP_PX = 10;
 /** Stage x where the shared time axis begins. */
 export const TIMELINE_GUTTER_PX =
   TIMELINE_RAIL_INSET_PX + TIMELINE_RAIL_LABEL_WIDTH_PX + TIMELINE_RAIL_GAP_PX;
+/** Frozen dynasty-name chip, matching DynastyLane.frozenLabel. */
+export const TIMELINE_RAIL_CHIP_TOP_PX = 10;
+export const TIMELINE_RAIL_CHIP_HEIGHT_PX = 44;
 
 /**
  * Dynasties that share one timeline row. The frozen left label follows

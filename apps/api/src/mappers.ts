@@ -1,5 +1,6 @@
 import type {
   Dynasty,
+  DynastyGroup,
   Event,
   Person,
   Reign,
@@ -8,6 +9,7 @@ import type {
 } from "@eralens/shared";
 import type {
   Dynasty as DbDynasty,
+  DynastyGroup as DbDynastyGroup,
   EraName as DbEraName,
   Event as DbEvent,
   Person as DbPerson,
@@ -37,6 +39,22 @@ export type RawDynastyRow = {
   orthodox_from_abs: number | null;
   orthodox_end_abs: number | null;
   parent_id: string | null;
+  group_id: string | null;
+  note: string | null;
+};
+
+export type RawDynastyGroupRow = {
+  id: string;
+  name: string;
+  alt_names: string[];
+  scope: string;
+  start_year: number;
+  start_month: number;
+  end_year: number;
+  end_month: number;
+  start_abs: number;
+  end_abs: number;
+  precision: string;
   note: string | null;
 };
 
@@ -101,6 +119,32 @@ export function mapPerson(row: DbPerson): Person {
   };
 }
 
+export function mapDynastyGroup(
+  row: DbDynastyGroup | RawDynastyGroupRow,
+): DynastyGroup {
+  const altNames = "altNames" in row ? row.altNames : row.alt_names;
+  const startYear = "startYear" in row ? row.startYear : row.start_year;
+  const startMonth = "startMonth" in row ? row.startMonth : row.start_month;
+  const endYear = "endYear" in row ? row.endYear : row.end_year;
+  const endMonth = "endMonth" in row ? row.endMonth : row.end_month;
+  const startAbs = "startAbs" in row ? row.startAbs : row.start_abs;
+  const endAbs = "endAbs" in row ? row.endAbs : row.end_abs;
+  const noteValue = row.note;
+
+  return {
+    id: row.id,
+    name: row.name,
+    altNames,
+    scope: row.scope as DynastyGroup["scope"],
+    start: { year: startYear, month: startMonth },
+    end: { year: endYear, month: endMonth },
+    startAbs,
+    endAbs,
+    precision: row.precision as DynastyGroup["precision"],
+    note: noteValue ?? undefined,
+  };
+}
+
 export function mapDynasty(row: DbDynasty | RawDynastyRow): Dynasty {
   const altNames = "altNames" in row ? row.altNames : row.alt_names;
   const startYear = "startYear" in row ? row.startYear : row.start_year;
@@ -115,6 +159,7 @@ export function mapDynasty(row: DbDynasty | RawDynastyRow): Dynasty {
   const orthodoxEndAbs =
     "orthodoxEndAbs" in row ? row.orthodoxEndAbs : row.orthodox_end_abs;
   const parentId = "parentId" in row ? row.parentId : row.parent_id;
+  const groupId = "groupId" in row ? row.groupId : row.group_id;
   const noteValue = row.note;
 
   return {
@@ -132,6 +177,7 @@ export function mapDynasty(row: DbDynasty | RawDynastyRow): Dynasty {
     orthodoxFromAbs: orthodoxFromAbs ?? undefined,
     orthodoxEndAbs: orthodoxEndAbs ?? undefined,
     parentId: parentId ?? undefined,
+    groupId: groupId ?? undefined,
     note: noteValue ?? undefined,
   };
 }

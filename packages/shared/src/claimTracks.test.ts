@@ -97,13 +97,12 @@ describe("groupByClaimTrack — early Zhou dual kings", () => {
   });
 });
 
-describe("groupByClaimTrack — Northern Wei split", () => {
-  it("keeps 文帝 on the main line after 孝武帝 while 邺城孝静帝 stays parallel", () => {
+describe("groupByClaimTrack — posthumous successor vs same-year rival", () => {
+  it("keeps the next ruler on the main line while a same-year rival stays parallel", () => {
     const lanes = groupByClaimTrack([
-      reign("yuan-xiu", 532, 534, { dynastyId: "wei-north" }),
-      reign("yuan-bao-ju", 535, 551, { dynastyId: "wei-north" }),
-      reign("yuan-shan-jian", 534, 550, {
-        dynastyId: "wei-north",
+      reign("main-a", 532, 534),
+      reign("main-b", 535, 551),
+      reign("rival-a", 534, 550, {
         claimTrack: "ye",
         claimLabel: "邺",
         claimRole: "rival",
@@ -112,8 +111,8 @@ describe("groupByClaimTrack — Northern Wei split", () => {
 
     expect(lanes.map((lane) => lane.track)).toEqual([MAIN_CLAIM_TRACK, "ye"]);
     expect(lanes[0]?.reigns.map((item) => item.personId)).toEqual([
-      "yuan-xiu",
-      "yuan-bao-ju",
+      "main-a",
+      "main-b",
     ]);
   });
 });

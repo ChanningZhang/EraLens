@@ -27,6 +27,7 @@ import {
   assignReignStacks,
   resolveReignVisualSpan,
   STACK_ROW_HEIGHT,
+  stackRowOffset,
 } from "../model/reignClusters";
 import { selectionStore } from "../state/selectionStore";
 import { HoverTooltip } from "./HoverTooltip";
@@ -55,7 +56,7 @@ export function ReignCard({
   const viewport = useViewport();
   const selection = useSelection();
   const { startAbs, endExclusive, stackIndex } = resolveReignVisualSpan(reign, reigns);
-  const { items, rowCount } = assignReignStacks(reigns);
+  const { items, rowCount, rowHeights } = assignReignStacks(reigns);
   const overlapsLowerRow = items.some((item) => {
     if (item.stackIndex <= stackIndex) return false;
     const span = resolveReignVisualSpan(item.reign, reigns);
@@ -157,7 +158,8 @@ export function ReignCard({
       style={{
         left,
         width: barLayout.unitWidthPx,
-        top: stackIndex * STACK_ROW_HEIGHT,
+        top: stackRowOffset(rowHeights, stackIndex),
+        height: rowHeights[stackIndex] ?? STACK_ROW_HEIGHT,
       }}
     >
       <HoverTooltip text={tooltipText}>

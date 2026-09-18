@@ -1205,15 +1205,20 @@ ON CONFLICT (id) DO UPDATE SET
   bio = EXCLUDED.bio,
   links = EXCLUDED.links;
 
+-- dynasty_groups
+INSERT INTO dynasty_groups (id, name, alt_names, scope, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, note)
+VALUES ('wuhu', '五胡', ARRAY['十六国','五胡十六国'], 'cn', 304, 1, 439, 12, 3648, 5279, 'year', '304–439年五胡十六国；狭义自刘渊/李雄立国至北魏灭北凉。')
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, scope = EXCLUDED.scope, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, note = EXCLUDED.note;
+
 -- dynasties
 INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, group_id, note
 ) VALUES (
   'jin-west', '西晋', ARRAY['晋','司马晋'], 'cn', 'east_asia',
   266, 2, 316, 4,
-  3193, 3795, 'year', 'stone', NULL,
+  3193, 3795, 'year', 'stone', NULL, NULL,
   '司马炎代魏建晋，都洛阳；316年愍帝出降，西晋灭亡。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1227,15 +1232,16 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, group_id, note
 ) VALUES (
   'jin-east', '东晋', ARRAY['晋'], 'cn', 'east_asia',
   317, 1, 420, 7,
-  3804, 5046, 'year', 'ochre', NULL,
+  3804, 5046, 'year', 'ochre', NULL, NULL,
   '司马睿南渡建康，与北方十六国对峙；420年刘裕代晋。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1249,15 +1255,16 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, group_id, note
 ) VALUES (
   'cheng-han', '成汉', ARRAY['成','汉','大成'], 'cn', 'east_asia',
   304, 1, 347, 1,
-  3648, 4164, 'year', 'azure', NULL,
+  3648, 4164, 'year', 'azure', NULL, 'wuhu',
   '李雄据益州，304年建号，347年桓温伐蜀后灭亡。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1271,15 +1278,16 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, group_id, note
 ) VALUES (
   'han-zhao', '汉赵', ARRAY['前赵','汉','赵'], 'cn', 'east_asia',
   304, 1, 329, 1,
-  3648, 3948, 'year', 'cinnabar', NULL,
+  3648, 3948, 'year', 'cinnabar', NULL, 'wuhu',
   '刘渊举兵反晋，304年建汉；329年石勒灭之，改国号赵。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1293,15 +1301,16 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, group_id, note
 ) VALUES (
   'zhao-back', '后赵', ARRAY['赵','魏'], 'cn', 'east_asia',
   319, 1, 351, 1,
-  3828, 4212, 'year', 'jade', NULL,
+  3828, 4212, 'year', 'jade', NULL, 'wuhu',
   '石勒据襄国，319年建后赵；351年内乱，冉闵篡位。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1315,15 +1324,16 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, group_id, note
 ) VALUES (
   'liang-front', '前凉', ARRAY['凉'], 'cn', 'east_asia',
   301, 1, 376, 1,
-  3612, 4512, 'year', 'indigo', NULL,
+  3612, 4512, 'year', 'indigo', NULL, 'wuhu',
   '张轨301年任凉州刺史，张氏据河西百余年；376年前秦灭之。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1337,15 +1347,16 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, group_id, note
 ) VALUES (
   'yan-front', '前燕', ARRAY['燕'], 'cn', 'east_asia',
   337, 1, 370, 1,
-  4044, 4440, 'year', 'coral', NULL,
+  4044, 4440, 'year', 'coral', NULL, 'wuhu',
   '慕容氏据辽东，337年慕容皝称燕王；370年前秦灭之。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1359,15 +1370,16 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, group_id, note
 ) VALUES (
   'qin-front', '前秦', ARRAY['秦'], 'cn', 'east_asia',
   351, 1, 394, 1,
-  4212, 4728, 'year', 'moss', NULL,
+  4212, 4728, 'year', 'moss', NULL, 'wuhu',
   '苻氏据关中，苻坚一度统一北方；淝水之战后崩溃。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1381,15 +1393,16 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, group_id, note
 ) VALUES (
   'yan-back', '后燕', ARRAY['燕'], 'cn', 'east_asia',
   384, 1, 409, 1,
-  4608, 4908, 'year', 'plum', NULL,
+  4608, 4908, 'year', 'plum', NULL, 'wuhu',
   '慕容垂淝水后复国，都中山；409年慕容熙被杀，后燕衰亡。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1403,15 +1416,16 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, group_id, note
 ) VALUES (
   'qin-back', '后秦', ARRAY['秦'], 'cn', 'east_asia',
   384, 1, 417, 1,
-  4608, 5004, 'year', 'mineral', NULL,
+  4608, 5004, 'year', 'mineral', NULL, 'wuhu',
   '姚苌杀苻坚建后秦，都长安；417年刘裕北伐灭之。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1425,15 +1439,16 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, group_id, note
 ) VALUES (
   'qin-xi', '西秦', ARRAY['秦'], 'cn', 'east_asia',
   385, 1, 431, 1,
-  4620, 5172, 'year', 'amber', NULL,
+  4620, 5172, 'year', 'amber', NULL, 'wuhu',
   '乞伏氏据陇右，386年乞伏国仁建西秦；431年赫连定俘杀乞伏暮末。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1447,15 +1462,16 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, group_id, note
 ) VALUES (
   'liang-back', '后凉', ARRAY['凉'], 'cn', 'east_asia',
   386, 1, 403, 1,
-  4632, 4836, 'year', 'grape', NULL,
+  4632, 4836, 'year', 'grape', NULL, 'wuhu',
   '吕光据凉州，386年建后凉；403年南凉、北凉攻灭。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1469,15 +1485,16 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, group_id, note
 ) VALUES (
   'liang-south', '南凉', ARRAY['凉'], 'cn', 'east_asia',
   397, 1, 414, 1,
-  4764, 4968, 'year', 'sage', NULL,
+  4764, 4968, 'year', 'sage', NULL, 'wuhu',
   '秃发氏据青海，397年建南凉；414年降西秦。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1491,15 +1508,16 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, group_id, note
 ) VALUES (
   'liang-xi', '西凉', ARRAY['凉'], 'cn', 'east_asia',
   400, 1, 421, 1,
-  4800, 5052, 'year', 'stone', NULL,
+  4800, 5052, 'year', 'stone', NULL, 'wuhu',
   '李暠据敦煌，400年建西凉；421年北凉沮渠蒙逊灭之。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1513,15 +1531,16 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, group_id, note
 ) VALUES (
   'liang-north', '北凉', ARRAY['凉'], 'cn', 'east_asia',
   397, 1, 439, 1,
-  4764, 5268, 'year', 'clay', NULL,
+  4764, 5268, 'year', 'clay', NULL, 'wuhu',
   '沮渠氏据河西，397年建北凉；439年北魏太武帝灭之，十六国时期终结。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1535,15 +1554,16 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, group_id, note
 ) VALUES (
   'yan-south', '南燕', ARRAY['燕'], 'cn', 'east_asia',
   398, 1, 410, 1,
-  4776, 4920, 'year', 'wisteria', NULL,
+  4776, 4920, 'year', 'wisteria', NULL, 'wuhu',
   '慕容德据广固，398年建南燕；410年刘裕北伐灭之。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1557,15 +1577,16 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, group_id, note
 ) VALUES (
   'yan-north', '北燕', ARRAY['燕'], 'cn', 'east_asia',
   407, 1, 436, 1,
-  4884, 5232, 'year', 'slate', NULL,
+  4884, 5232, 'year', 'slate', NULL, 'wuhu',
   '冯跋据和龙，407年建北燕；436年北魏灭之。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1579,15 +1600,16 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, group_id, note
 ) VALUES (
   'xia-hu', '胡夏', ARRAY['夏','大夏'], 'cn', 'east_asia',
   407, 1, 431, 1,
-  4884, 5172, 'year', 'ochre', NULL,
+  4884, 5172, 'year', 'ochre', NULL, 'wuhu',
   '赫连勃勃据朔方，407年建夏；431年赫连定为北魏所俘。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1601,6 +1623,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;
 
 -- reigns

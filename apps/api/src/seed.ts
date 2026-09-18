@@ -112,6 +112,7 @@ async function main() {
           orthodoxFromAbs: dynasty.orthodoxFromAbs,
           orthodoxEndAbs: dynasty.orthodoxEndAbs,
           parentId: dynasty.parentId,
+          groupId: dynasty.groupId,
           note: dynasty.note,
         },
       });

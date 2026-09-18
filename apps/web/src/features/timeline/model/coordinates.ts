@@ -41,6 +41,26 @@ export function projectRange(state: ViewportState, startAbs: AbsMonth, endAbs: A
   };
 }
 
+/**
+ * Time-axis range clipped to the visible stage (rail gutter … viewport width).
+ * Returns null when the span is off-screen or the numbers are not finite.
+ */
+export function projectClippedRange(
+  state: ViewportState,
+  startAbs: AbsMonth,
+  endAbs: AbsMonth,
+): { left: number; width: number } | null {
+  const gutter = gutterPxOf(state);
+  const rawLeft = projectAbs(state, startAbs);
+  const rawRight = rawLeft + projectWidth(state, startAbs, endAbs);
+  if (!Number.isFinite(rawLeft) || !Number.isFinite(rawRight)) return null;
+  const left = Math.max(rawLeft, gutter);
+  const right = Math.min(rawRight, state.widthPx);
+  const width = right - left;
+  if (width < 1) return null;
+  return { left, width };
+}
+
 /** Stage x of the temporal center; frozen dynasty names switch when a phase crosses this line. */
 export function centerGuideX(state: ViewportState): number {
   return projectAbs(state, state.centerAbs);

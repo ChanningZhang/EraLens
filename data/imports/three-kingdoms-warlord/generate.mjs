@@ -24,6 +24,20 @@ const WEI_FOUNDED = ym(220, 12);
 const SHU_FOUNDED = ym(221, 5);
 const SHU_ENDED = ym(263, 12);
 const WU_FOUNDED = ym(222, 10);
+const WU_ENDED = ym(280, 5);
+
+const dynastyGroups = [
+  {
+    id: "sanguo",
+    name: "三国",
+    altNames: [],
+    scope: "cn",
+    start: ym(220),
+    end: ym(280, 12),
+    precision: "year",
+    note: "220–280年三国（曹魏、蜀汉、孙吴）；狭义自曹丕代汉至晋灭吴。",
+  },
+];
 
 function dynastyReignMonth(
   id,
@@ -163,6 +177,7 @@ const dynasties = [
     precision: "month",
     colorToken: "indigo",
     orthodoxFromAbs: WEI_FOUNDED.abs,
+    groupId: "sanguo",
     note: "220年曹丕受禅称帝，代汉建魏。",
   },
   {
@@ -175,6 +190,7 @@ const dynasties = [
     end: SHU_ENDED,
     precision: "month",
     colorToken: "moss",
+    groupId: "sanguo",
     note: "221年刘备于成都称帝，国号汉，史称蜀汉。",
   },
   {
@@ -184,9 +200,10 @@ const dynasties = [
     scope: "cn",
     region: "east_asia",
     start: WU_FOUNDED,
-    end: ym(280, 5),
+    end: WU_ENDED,
     precision: "month",
     colorToken: "mineral",
+    groupId: "sanguo",
     note: "222年孙权称吴王，229年称帝；王朝行自称王始。",
   },
 ];
@@ -375,6 +392,7 @@ const manifest = {
     relations: relations.length,
   },
   sources: [
+    { label: "三国", url: "https://zh.wikipedia.org/wiki/三国" },
     { label: "赤壁之战", url: "https://zh.wikipedia.org/wiki/赤壁之战" },
     { label: "曹魏", url: "https://zh.wikipedia.org/wiki/曹魏" },
     { label: "蜀汉", url: "https://zh.wikipedia.org/wiki/蜀汉" },
@@ -383,6 +401,7 @@ const manifest = {
     { label: "曹操", url: "https://zh.wikipedia.org/wiki/曹操" },
   ],
   notes: [
+    "魏蜀吴同属 dynasty_groups.sanguo（狭义 220–280，据中文维基「三国」）；组 span 用年精度，不被成员月精度撑开或截短。",
     "魏蜀吴王朝行分别自曹丕称帝（220-12）、刘备称帝（221-5）、孙权称王（222-10）起；称帝前不建 reign。",
     "wei 的 orthodox_from_abs 与王朝始年同为 220 年 12 月曹丕称帝。",
     "袁绍（yuan-shao）、刘璋（liu-zhang）仅作人物收录，不建割据王朝行。",
@@ -396,6 +415,7 @@ writeImportPackage(__dirname, {
   slug: "three-kingdoms-warlord",
   window: manifest.window,
   persons,
+  dynastyGroups,
   dynasties,
   reignGroups,
   reigns,

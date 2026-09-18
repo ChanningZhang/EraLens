@@ -45,6 +45,7 @@
   ],
   "notes": [
     "覆盖西晋（266–316）、东晋（317–420）及崔鸿《十六国春秋》所列十六国（304–439）。",
+    "十六国同属 dynasty_groups.wuhu（组名「五胡」，狭义 304–439，据中文维基「五胡十六国」）；西晋/东晋不入组。前凉 301 可露在框外。",
     "两晋皇帝在位日取维基百科君主条目公历换算（documentedReignDates，precision=day）；十六国君主仍为 year，汉赵同年更替者用 month。",
     "西晋 upsert 已有 jin-west 行；胡夏 id 为 xia-hu，避免与夏朝 xia 冲突。",
     "前秦/后秦/西秦 id 分别为 qin-front/qin-back/qin-xi，避免与秦朝 qin 冲突。",

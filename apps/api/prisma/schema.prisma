@@ -26,6 +26,25 @@ model Person {
   @@map("persons")
 }
 
+model DynastyGroup {
+  id          String    @id
+  name        String
+  altNames    String[]  @default([]) @map("alt_names")
+  scope       String    @default("cn")
+  startYear   Int       @map("start_year")
+  startMonth  Int       @map("start_month")
+  endYear     Int       @map("end_year")
+  endMonth    Int       @map("end_month")
+  startAbs    Int       @map("start_abs")
+  endAbs      Int       @map("end_abs")
+  precision   String    @default("year")
+  note        String?
+  dynasties   Dynasty[]
+
+  @@index([scope, startAbs, endAbs])
+  @@map("dynasty_groups")
+}
+
 model Dynasty {
   id          String           @id
   name        String
@@ -43,13 +62,16 @@ model Dynasty {
   orthodoxFromAbs Int?         @map("orthodox_from_abs")
   orthodoxEndAbs  Int?         @map("orthodox_end_abs")
   parentId    String?          @map("parent_id")
+  groupId     String?          @map("group_id")
   note        String?
+  group       DynastyGroup?    @relation(fields: [groupId], references: [id])
   reigns      Reign[]
   eventDynasties EventDynasty[]
 
   @@index([startYear])
   @@index([endYear])
   @@index([scope, startAbs, endAbs])
+  @@index([groupId])
   @@map("dynasties")
 }
 

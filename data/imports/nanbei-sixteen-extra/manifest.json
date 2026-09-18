@@ -41,6 +41,7 @@
   ],
   "notes": [
     "补充 jin-sixteen / nanbei-chao 未收录的西梁、冉魏、西燕、前仇池。",
+    "冉魏、西燕属 dynasty_groups.wuhu（与崔鸿十六国同框）；西梁属南朝之后，仇池始年早于 304，均不入组。",
     "西梁 id 为 xiliang，与十六国西凉 liang-xi 区分。",
     "仇池取296–371前仇池窗口，杨腾至杨难当代表杨氏四氏执政序列。",
     "南梁（liang-nan）、后赵（zhao-back）、后燕（yan-back）复用已有 dynasty id 作事件关联。"

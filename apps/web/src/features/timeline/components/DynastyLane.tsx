@@ -20,6 +20,7 @@ import { laneLabelAnchorAbs } from "../model/coordinates";
 import type { PlacedDynasty } from "../model/laneLayout";
 import {
   assignReignStacks,
+  dynastyBarHeight,
   dynastyLaneHeight,
   STACK_ROW_HEIGHT,
 } from "../model/reignClusters";
@@ -68,8 +69,9 @@ export function DynastyLane({
   // post-orthodox rulers (南宋端宗/帝昺, 元惠宗, …). Orthodox gold is
   // reserved for individual reign cards via isOrthodoxReign.
   const laneColor = resolveDynastyColorValue(activePhaseDynasty);
-  const { items, rowCount } = assignReignStacks(reigns);
-  const height = dynastyLaneHeight(rowCount);
+  const { items, rowCount, rowHeights } = assignReignStacks(reigns);
+  const height = dynastyLaneHeight(rowHeights);
+  const barHeight = dynastyBarHeight(rowHeights);
   const uncertaintyBoundaries = useMemo(
     () => findReignUncertaintyBoundaries(reigns, missingReigns),
     [reigns, missingReigns],
@@ -85,7 +87,7 @@ export function DynastyLane({
         height,
         ["--dynasty-color" as string]: laneColor,
         ["--stack-row-height" as string]: `${STACK_ROW_HEIGHT}px`,
-        ["--dynasty-bar-height" as string]: `${rowCount * STACK_ROW_HEIGHT}px`,
+        ["--dynasty-bar-height" as string]: `${barHeight}px`,
         ["--timeline-rail-inset" as string]: `${TIMELINE_RAIL_INSET_PX}px`,
         ["--timeline-rail-label-width" as string]: `${TIMELINE_RAIL_LABEL_WIDTH_PX}px`,
       }}

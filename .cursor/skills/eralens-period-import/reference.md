@@ -23,6 +23,7 @@
 | 表 | 主键 |
 |---|---|
 | persons | id |
+| dynasty_groups | id |
 | dynasties | id |
 | reigns | id |
 | era_names | DB serial（按 `reign_id` + `sort_order`） |
@@ -87,13 +88,46 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 ```
 
+### dynasty_groups
+
+并存时期分组（三国、五胡、南朝/北朝、五代/十国等）。起止为组的外框与排序锚点，不用成员 min/max。
+
+```sql
+INSERT INTO dynasty_groups (
+  id, name, alt_names, scope,
+  start_year, start_month, end_year, end_month,
+  start_abs, end_abs, precision, note
+) VALUES (
+  'wudai',
+  '五代',
+  ARRAY[]::text[],
+  'cn',
+  907, 1, 960, 12,
+  10885, 11520,
+  'year',
+  '907–960年北方五代更迭'
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  alt_names = EXCLUDED.alt_names,
+  scope = EXCLUDED.scope,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  note = EXCLUDED.note;
+```
+
 ### dynasties
 
 ```sql
 INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, group_id, note
 ) VALUES (
   'tang',
   '唐',
@@ -101,7 +135,7 @@ INSERT INTO dynasties (
   'cn', 'east_asia',
   618, 6, 907, 5,
   7420, 10889,  -- 用 compute-abs.mjs 验算
-  'month', 'cinnabar', NULL,
+  'month', 'cinnabar', NULL, NULL,
   '李渊建立，朱温篡唐终结'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -116,6 +150,7 @@ ON CONFLICT (id) DO UPDATE SET
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
   parent_id = EXCLUDED.parent_id,
+  group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;
 ```
 

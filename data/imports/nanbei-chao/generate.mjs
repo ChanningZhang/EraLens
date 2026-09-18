@@ -166,18 +166,18 @@ const persons = [
     "yuan-xiu",
     "元修",
     ["皇帝"],
-    "北魏孝武帝，分裂前末帝；西迁后与邺城孝静帝并立，后世视其为北魏正统末主。",
+    "北魏末帝；534年西迁长安，与东魏孝静帝并立，535年为宇文泰所杀。",
     "魏孝武帝",
   ),
-  person("yuan-shan-jian", "元善见", ["皇帝"], "东魏孝静帝，高欢拥立于邺，与孝武帝并立，为北齐所废。", "魏孝静帝"),
+  person("yuan-shan-jian", "元善见", ["皇帝"], "东魏孝静帝，高欢拥立于邺，东魏唯一皇帝，为北齐所废。", "魏孝静帝"),
   person(
     "yuan-bao-ju",
     "元宝炬",
     ["皇帝"],
-    "西魏文帝，宇文泰杀孝武帝后拥立，都长安；接续孝武帝西迁一系，为北魏主线末段。",
+    "西魏文帝，宇文泰杀孝武帝后拥立，都长安。",
     "元宝炬",
   ),
-  person("yuan-qin", "元钦", ["皇帝"], "西魏废帝，为宇文觉所废杀。", "元钦"),
+  person("yuan-qin", "元钦", ["皇帝"], "西魏废帝，为宇文泰所废杀。", "元钦"),
   person("tuoba-kuo", "拓跋廓", ["皇帝"], "西魏恭帝，西魏末代，禅让于北周宇文觉。", "魏恭帝"),
   // 北齐
   person("gao-yang", "高洋", ["皇帝"], "北齐文宣帝，建国于邺，前期励精，后期暴虐。", "齐文宣帝"),
@@ -218,6 +218,29 @@ function nextColor() {
   return colorTokens[colorIdx++ % colorTokens.length];
 }
 
+const dynastyGroups = [
+  {
+    id: "nan-chao",
+    name: "南朝",
+    altNames: [],
+    scope: "cn",
+    start: ym(420),
+    end: ym(589, 12),
+    precision: "year",
+    note: "420–589年南朝四朝（刘宋、南齐、南梁、南陈）。",
+  },
+  {
+    id: "bei-chao",
+    name: "北朝",
+    altNames: [],
+    scope: "cn",
+    start: ym(420),
+    end: ym(581, 12),
+    precision: "year",
+    note: "420–581年北朝（北魏、东魏、西魏、北齐、北周）。",
+  },
+];
+
 const dynasties = [
   {
     id: "wei-north",
@@ -226,10 +249,11 @@ const dynasties = [
     scope: "cn",
     region: "east_asia",
     start: ym(386),
-    end: ym(557, 12),
+    end: ym(535, 2),
     precision: "year",
     colorToken: nextColor(),
-    note: "拓跋珪386年建国，439年灭北凉统一北方；534年分裂，邺城孝静帝为并行 claim_track；孝武帝西迁后由文帝元宝炬接续主线至恭帝。",
+    groupId: "bei-chao",
+    note: "拓跋珪386年建国，439年灭北凉统一北方；534年分裂，535年孝武帝被杀，北魏亡。",
   },
   {
     id: "song-liu",
@@ -241,6 +265,7 @@ const dynasties = [
     end: ym(479),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "nan-chao",
     note: "刘裕代晋建宋，都建康；479年萧道成代宋。",
   },
   {
@@ -253,6 +278,7 @@ const dynasties = [
     end: ym(502),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "nan-chao",
     note: "萧道成代宋建齐；502年萧衍代齐。",
   },
   {
@@ -265,6 +291,7 @@ const dynasties = [
     end: ym(557),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "nan-chao",
     note: "萧衍代齐建梁；557年陈霸先代梁。",
   },
   {
@@ -277,6 +304,7 @@ const dynasties = [
     end: ym(589),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "nan-chao",
     note: "陈霸先代梁建陈；589年隋灭陈，南北朝终结。",
   },
   {
@@ -289,6 +317,7 @@ const dynasties = [
     end: ym(577),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "bei-chao",
     note: "高洋代东魏建齐，都邺；577年北周灭齐。",
   },
   {
@@ -301,7 +330,34 @@ const dynasties = [
     end: ym(581),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "bei-chao",
     note: "宇文觉代西魏建周，都长安；581年杨坚代周。",
+  },
+  {
+    id: "wei-east",
+    name: "东魏",
+    altNames: ["魏"],
+    scope: "cn",
+    region: "east_asia",
+    start: ym(534, 11),
+    end: ym(550, 2),
+    precision: "year",
+    colorToken: nextColor(),
+    groupId: "bei-chao",
+    note: "高欢拥立孝静帝于邺；550年高洋代魏建齐。",
+  },
+  {
+    id: "wei-west",
+    name: "西魏",
+    altNames: ["魏"],
+    scope: "cn",
+    region: "east_asia",
+    start: ym(535, 2),
+    end: ym(557, 2),
+    precision: "year",
+    colorToken: nextColor(),
+    groupId: "bei-chao",
+    note: "宇文泰拥立文帝于长安；557年宇文觉代魏建周。",
   },
 ];
 
@@ -417,15 +473,17 @@ const weiNorthReigns = [
   dynastyReign("wei-north", "yuan-zi-you", "魏孝庄帝", "孝庄皇帝", null, 528, 530),
   dynastyReign("wei-north", "yuan-ye", "魏长广王", null, null, 530, 531),
   dynastyReign("wei-north", "yuan-lang", "魏节闵帝", null, null, 531, 532),
-  dynastyReign("wei-north", "yuan-xiu", "魏孝武帝", "孝武皇帝", null, 532, 534),
-  // 535 年宇文泰杀孝武帝后立文帝，接主线；534 年邺城孝静帝与孝武帝并立，仅孝静帝走并行 track。
-  dynastyReign("wei-north", "yuan-bao-ju", "西魏文帝", "文皇帝", null, 535, 551),
-  dynastyReign("wei-north", "yuan-qin", "西魏废帝", null, null, 551, 554),
-  dynastyReign("wei-north", "tuoba-kuo", "西魏恭帝", null, null, 554, 557),
-  dynastyReign("wei-north", "yuan-shan-jian", "魏孝静帝", "孝静皇帝", null, 534, 550, [], null, {
-    track: "ye",
-    label: "邺",
-  }),
+  dynastyReign("wei-north", "yuan-xiu", "魏孝武帝", "孝武皇帝", null, 532, 535),
+];
+
+const weiEastReigns = [
+  dynastyReign("wei-east", "yuan-shan-jian", "魏孝静帝", "孝静皇帝", null, 534, 550),
+];
+
+const weiWestReigns = [
+  dynastyReign("wei-west", "yuan-bao-ju", "魏文帝", "文皇帝", null, 535, 551),
+  dynastyReign("wei-west", "yuan-qin", "魏废帝", null, null, 551, 554),
+  dynastyReign("wei-west", "tuoba-kuo", "魏恭帝", null, null, 554, 557),
 ];
 
 const qiBeiReigns = [
@@ -447,6 +505,8 @@ const zhouBeiReigns = [
 
 const reignGroups = [
   weiNorthReigns,
+  weiEastReigns,
+  weiWestReigns,
   songLiuReigns,
   qiNanReigns,
   liangNanReigns,
@@ -589,7 +649,7 @@ const events = [
     kind: "politics",
     dateNote: "534年，孝武帝西迁，东魏、西魏分立",
     at: ym(534),
-    dynastyIds: ["wei-north"],
+    dynastyIds: ["wei-north", "wei-east", "wei-west"],
     participantIds: ["yuan-xiu", "yuan-shan-jian"],
     summary: "孝武帝西迁，高欢立孝静帝于邺；次年宇文泰杀孝武帝立文帝于长安，北魏分裂。",
   }),
@@ -598,7 +658,7 @@ const events = [
     name: "北齐代东魏",
     kind: "politics",
     at: ym(550),
-    dynastyIds: ["wei-north", "qi-bei"],
+    dynastyIds: ["wei-east", "qi-bei"],
     participantIds: ["gao-yang", "yuan-shan-jian"],
     summary: "高洋废东魏孝静帝自立，改国号齐，史称北齐。",
   }),
@@ -607,7 +667,7 @@ const events = [
     name: "北周代西魏",
     kind: "politics",
     at: ym(557),
-    dynastyIds: ["wei-north", "zhou-bei"],
+    dynastyIds: ["wei-west", "zhou-bei"],
     participantIds: ["yuwen-jue", "tuoba-kuo"],
     summary: "宇文觉废西魏恭帝自立，改国号周，史称北周。",
   }),
@@ -711,15 +771,22 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;`;
 }
 
+function dynastyGroupSql(g) {
+  return `INSERT INTO dynasty_groups (id, name, alt_names, scope, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, note)
+VALUES (${sqlStr(g.id)}, ${sqlStr(g.name)}, ${sqlArray(g.altNames ?? [])}, ${sqlStr(g.scope ?? "cn")}, ${g.start.year}, ${g.start.month}, ${g.end.year}, ${g.end.month}, ${g.start.abs}, ${g.end.abs}, ${sqlStr(g.precision ?? "year")}, ${sqlStr(g.note ?? null)})
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, scope = EXCLUDED.scope, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, note = EXCLUDED.note;`;
+}
+
 function dynastySql(d) {
+  const groupId = d.groupId ? sqlStr(d.groupId) : "NULL";
   return `INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, group_id, note
 ) VALUES (
   ${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlArray(d.altNames)}, ${sqlStr(d.scope)}, ${sqlStr(d.region)},
   ${d.start.year}, ${d.start.month}, ${d.end.year}, ${d.end.month},
-  ${d.start.abs}, ${d.end.abs}, ${sqlStr(d.precision)}, ${sqlStr(d.colorToken)}, NULL,
+  ${d.start.abs}, ${d.end.abs}, ${sqlStr(d.precision)}, ${sqlStr(d.colorToken)}, NULL, ${groupId},
   ${sqlStr(d.note)}
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -733,6 +800,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;`;
 }
 
@@ -785,6 +853,15 @@ const reignsWithEras = importReigns.filter((r) => r.eraNames.length > 0);
 const eraDeleteSql = reignsWithEras.map((r) => `DELETE FROM era_names WHERE reign_id = ${sqlStr(r.id)};`);
 const eraInsertSql = reignsWithEras.flatMap((r) => r.eraNames.map(eraNameSql));
 
+const staleRelationSql = [
+  "DELETE FROM relations WHERE id IN ('rel-yuan-xiu-yuan-bao-ju-succession', 'rel-tuoba-kuo-yuan-shan-jian-succession');",
+];
+const eventDynastyCleanupSql = events.map((e) => {
+  const keep = e.dynastyIds.map(sqlStr).join(", ");
+  return keep
+    ? `DELETE FROM event_dynasties WHERE event_id = ${sqlStr(e.id)} AND dynasty_id NOT IN (${keep});`
+    : `DELETE FROM event_dynasties WHERE event_id = ${sqlStr(e.id)};`;
+});
 const eventDynastySql = events.flatMap((e) =>
   e.dynastyIds.map(
     (dynastyId) =>
@@ -807,6 +884,9 @@ const sql = [
   "-- persons",
   ...importPersons.map(personSql),
   "",
+  "-- dynasty_groups",
+  ...dynastyGroups.map(dynastyGroupSql),
+  "",
   "-- dynasties",
   ...dynasties.map(dynastySql),
   "",
@@ -821,12 +901,14 @@ const sql = [
   ...events.map(eventSql),
   "",
   "-- event_dynasties",
+  ...eventDynastyCleanupSql,
   ...eventDynastySql,
   "",
   "-- event_participants",
   ...eventParticipantSql,
   "",
   "-- relations",
+  ...staleRelationSql,
   ...relations.map(relationSql),
   "",
   "COMMIT;",
@@ -842,7 +924,7 @@ const manifest = {
   window: { startYear: 386, startMonth: 1, endYear: 589, endMonth: 12 },
   scope: "cn",
   depth: "standard",
-  generatedAt: "2026-09-12",
+  generatedAt: "2026-09-18",
   counts: {
     persons: allPersons.length,
     dynasties: dynasties.length,
@@ -855,14 +937,16 @@ const manifest = {
     { label: "南北朝君主列表", url: "https://zh.wikipedia.org/wiki/南北朝君主列表" },
     { label: "刘宋", url: "https://zh.wikipedia.org/wiki/刘宋" },
     { label: "北魏", url: "https://zh.wikipedia.org/wiki/北魏" },
+    { label: "东魏", url: "https://zh.wikipedia.org/wiki/东魏" },
+    { label: "西魏", url: "https://zh.wikipedia.org/wiki/西魏" },
     { label: "侯景之乱", url: "https://zh.wikipedia.org/wiki/侯景之乱" },
     { label: "孝文帝改革", url: "https://zh.wikipedia.org/wiki/北魏孝文帝改革" },
   ],
   notes: [
-    "覆盖南北朝（420–589），含386年立国的北魏；北朝含北魏、北齐、北周，南朝含刘宋、南齐、南梁、南陈。",
+    "覆盖南北朝（420–589），含386年立国的北魏；北朝含北魏、东魏、西魏、北齐、北周，南朝含刘宋、南齐、南梁、南陈。",
     "全部53位君主在位日取维基百科君主条目公历换算（documentedReignDates，precision=day）。",
-    "刘裕（liu-yu-jin）复用 jin-sixteen 已有 id；北魏 id 为 wei-north，避免与曹魏 wei 冲突。",
-    "534年分裂用 claim_track：ye/孝静帝为并行傀儡（与孝武帝同时称帝）；孝武帝死后文帝元宝炬接续主线→废帝→恭帝。东魏、西魏不再另建王朝行。",
+    "刘裕（liu-yu-jin）复用 jin-sixteen 已有 id；北魏 id 为 wei-north，避免与曹魏 wei 冲突；东魏 wei-east、西魏 wei-west。",
+    "东魏、西魏按通行史书习惯分期各占一行（与北齐、北周并列），不用北魏 claim_track。孝武帝仍属北魏（至535年2月3日）；孝静帝属东魏；文帝→废帝→恭帝属西魏。",
     "南梁 id 为 liang-nan，与十六国南凉 liang-south 区分。",
     "589 年隋灭陈为南北朝终结事件；隋（581–）不在本包内。",
     "未收录西梁（555–587）等次要政权。",

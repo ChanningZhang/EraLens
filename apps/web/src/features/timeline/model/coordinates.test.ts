@@ -5,6 +5,7 @@ import {
   centerGuideX,
   laneLabelAnchorAbs,
   projectAbs,
+  projectClippedRange,
   projectRange,
 } from "./coordinates";
 
@@ -48,5 +49,55 @@ describe("projectRange", () => {
 
     expect(centerGuideX(viewport)).toBe(100 + contentWidth / 2);
     expect(laneLabelAnchorAbs(viewport)).toBe(viewport.centerAbs);
+  });
+});
+
+describe("projectClippedRange", () => {
+  it("does not pull the left edge to the gutter when the span starts later", () => {
+    const viewport = {
+      centerAbs: absMonth(500, 1),
+      pxPerMonth: 1,
+      widthPx: 2400,
+      gutterPx: 100,
+    };
+    const range = projectClippedRange(
+      viewport,
+      absMonth(420, 1),
+      absMonth(589, 12),
+    );
+
+    expect(range).not.toBeNull();
+    expect(range!.left).toBeGreaterThan(100);
+    expect(range!.left).toBe(projectRange(viewport, absMonth(420, 1), absMonth(589, 12)).left);
+  });
+
+  it("clips to the rail gutter instead of stretching left", () => {
+    const viewport = {
+      centerAbs: absMonth(500, 1),
+      pxPerMonth: 2,
+      widthPx: 800,
+      gutterPx: 100,
+    };
+    const range = projectClippedRange(
+      viewport,
+      absMonth(100, 1),
+      absMonth(589, 12),
+    );
+
+    expect(range).not.toBeNull();
+    expect(range!.left).toBe(100);
+    expect(range!.left + range!.width).toBeLessThanOrEqual(800);
+  });
+
+  it("returns null when the span is completely off-screen", () => {
+    const viewport = {
+      centerAbs: absMonth(100, 1),
+      pxPerMonth: 2,
+      widthPx: 400,
+      gutterPx: 100,
+    };
+    expect(
+      projectClippedRange(viewport, absMonth(800, 1), absMonth(900, 1)),
+    ).toBeNull();
   });
 });

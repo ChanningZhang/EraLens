@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 import { resolveRegnalAppellationFields } from "../lib/regnalAppellation.mjs";
-import { reignSql } from "../lib/sqlHelpers.mjs";
+import { dynastyGroupSql, reignSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -237,6 +237,19 @@ function nextColor() {
   return colorTokens[colorIdx++ % colorTokens.length];
 }
 
+const dynastyGroups = [
+  {
+    id: "wuhu",
+    name: "五胡",
+    altNames: ["十六国", "五胡十六国"],
+    scope: "cn",
+    start: ym(304),
+    end: ym(439, 12),
+    precision: "year",
+    note: "304–439年五胡十六国；狭义自刘渊/李雄立国至北魏灭北凉。",
+  },
+];
+
 const dynasties = [
   {
     id: "jin-west",
@@ -272,6 +285,7 @@ const dynasties = [
     end: ym(347),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "wuhu",
     note: "李雄据益州，304年建号，347年桓温伐蜀后灭亡。",
   },
   {
@@ -284,6 +298,7 @@ const dynasties = [
     end: ym(329),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "wuhu",
     note: "刘渊举兵反晋，304年建汉；329年石勒灭之，改国号赵。",
   },
   {
@@ -296,6 +311,7 @@ const dynasties = [
     end: ym(351),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "wuhu",
     note: "石勒据襄国，319年建后赵；351年内乱，冉闵篡位。",
   },
   {
@@ -308,6 +324,7 @@ const dynasties = [
     end: ym(376),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "wuhu",
     note: "张轨301年任凉州刺史，张氏据河西百余年；376年前秦灭之。",
   },
   {
@@ -320,6 +337,7 @@ const dynasties = [
     end: ym(370),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "wuhu",
     note: "慕容氏据辽东，337年慕容皝称燕王；370年前秦灭之。",
   },
   {
@@ -332,6 +350,7 @@ const dynasties = [
     end: ym(394),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "wuhu",
     note: "苻氏据关中，苻坚一度统一北方；淝水之战后崩溃。",
   },
   {
@@ -344,6 +363,7 @@ const dynasties = [
     end: ym(409),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "wuhu",
     note: "慕容垂淝水后复国，都中山；409年慕容熙被杀，后燕衰亡。",
   },
   {
@@ -356,6 +376,7 @@ const dynasties = [
     end: ym(417),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "wuhu",
     note: "姚苌杀苻坚建后秦，都长安；417年刘裕北伐灭之。",
   },
   {
@@ -368,6 +389,7 @@ const dynasties = [
     end: ym(431),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "wuhu",
     note: "乞伏氏据陇右，386年乞伏国仁建西秦；431年赫连定俘杀乞伏暮末。",
   },
   {
@@ -380,6 +402,7 @@ const dynasties = [
     end: ym(403),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "wuhu",
     note: "吕光据凉州，386年建后凉；403年南凉、北凉攻灭。",
   },
   {
@@ -392,6 +415,7 @@ const dynasties = [
     end: ym(414),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "wuhu",
     note: "秃发氏据青海，397年建南凉；414年降西秦。",
   },
   {
@@ -404,6 +428,7 @@ const dynasties = [
     end: ym(421),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "wuhu",
     note: "李暠据敦煌，400年建西凉；421年北凉沮渠蒙逊灭之。",
   },
   {
@@ -416,6 +441,7 @@ const dynasties = [
     end: ym(439),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "wuhu",
     note: "沮渠氏据河西，397年建北凉；439年北魏太武帝灭之，十六国时期终结。",
   },
   {
@@ -428,6 +454,7 @@ const dynasties = [
     end: ym(410),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "wuhu",
     note: "慕容德据广固，398年建南燕；410年刘裕北伐灭之。",
   },
   {
@@ -440,6 +467,7 @@ const dynasties = [
     end: ym(436),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "wuhu",
     note: "冯跋据和龙，407年建北燕；436年北魏灭之。",
   },
   {
@@ -452,6 +480,7 @@ const dynasties = [
     end: ym(431),
     precision: "year",
     colorToken: nextColor(),
+    groupId: "wuhu",
     note: "赫连勃勃据朔方，407年建夏；431年赫连定为北魏所俘。",
   },
 ];
@@ -993,14 +1022,15 @@ ON CONFLICT (id) DO UPDATE SET
 }
 
 function dynastySql(d) {
+  const groupId = d.groupId ? sqlStr(d.groupId) : "NULL";
   return `INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, group_id, note
 ) VALUES (
   ${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlArray(d.altNames)}, ${sqlStr(d.scope)}, ${sqlStr(d.region)},
   ${d.start.year}, ${d.start.month}, ${d.end.year}, ${d.end.month},
-  ${d.start.abs}, ${d.end.abs}, ${sqlStr(d.precision)}, ${sqlStr(d.colorToken)}, NULL,
+  ${d.start.abs}, ${d.end.abs}, ${sqlStr(d.precision)}, ${sqlStr(d.colorToken)}, NULL, ${groupId},
   ${sqlStr(d.note)}
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1014,6 +1044,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   color_token = EXCLUDED.color_token,
+  group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;`;
 }
 
@@ -1088,6 +1119,9 @@ const sql = [
   "-- persons",
   ...importPersons.map(personSql),
   "",
+  "-- dynasty_groups",
+  ...dynastyGroups.map(dynastyGroupSql),
+  "",
   "-- dynasties",
   ...dynasties.map(dynastySql),
   "",
@@ -1141,6 +1175,7 @@ const manifest = {
   ],
   notes: [
     "覆盖西晋（266–316）、东晋（317–420）及崔鸿《十六国春秋》所列十六国（304–439）。",
+    "十六国同属 dynasty_groups.wuhu（组名「五胡」，狭义 304–439，据中文维基「五胡十六国」）；西晋/东晋不入组。前凉 301 可露在框外。",
     "两晋皇帝在位日取维基百科君主条目公历换算（documentedReignDates，precision=day）；十六国君主仍为 year，汉赵同年更替者用 month。",
     "西晋 upsert 已有 jin-west 行；胡夏 id 为 xia-hu，避免与夏朝 xia 冲突。",
     "前秦/后秦/西秦 id 分别为 qin-front/qin-back/qin-xi，避免与秦朝 qin 冲突。",

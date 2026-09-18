@@ -1,10 +1,14 @@
 import { useMemo } from "react";
 import { LayoutGroup } from "framer-motion";
 import {
+  clusterFramesForLanes,
   collapseDynastyLaneGroups,
   collectLaneReigns,
   formatYear,
   fromAbsMonth,
+  orderDynastiesForLanes,
+  TIMELINE_RAIL_CHIP_HEIGHT_PX,
+  TIMELINE_RAIL_CHIP_TOP_PX,
   type Dynasty,
 } from "@eralens/shared";
 import { useTimelineData } from "../hooks/useTimelineData";
@@ -29,6 +33,7 @@ import {
   partitionReignRecords,
 } from "../model/reignClusters";
 import { expandWindow, filterVisibleDynasties } from "../model/visible";
+import { DynastyClusterFrame } from "./DynastyClusterFrame";
 import { DynastyLane } from "./DynastyLane";
 import { EventLayer } from "./EventLayer";
 import { PersonLayer } from "./PersonLayer";
@@ -58,7 +63,10 @@ export function TimelineStage() {
       (dynasty) =>
         dynasty.startAbs <= viewport.endAbs && dynasty.endAbs >= viewport.startAbs,
     );
-    return assignLanes(collapseDynastyLaneGroups(visible, dynastiesById));
+    const collapsed = collapseDynastyLaneGroups(visible, dynastiesById);
+    return assignLanes(
+      orderDynastiesForLanes(collapsed, data?.dynastyGroups ?? []),
+    );
   }, [data, viewport.startAbs, viewport.endAbs, dynastiesById]);
 
   const eventPlaced = useMemo(() => {
@@ -94,13 +102,23 @@ export function TimelineStage() {
       const laneRecords = collectLaneReigns(dynasty.id, reignsByDynasty);
       const { rulers: reigns, missing: missingReigns } =
         partitionReignRecords(laneRecords);
-      const { rowCount } = assignReignStacks(reigns);
-      const height = dynastyLaneHeight(rowCount);
-      const item = { dynasty, reigns, missingReigns, top, height };
+      const { rowCount, rowHeights } = assignReignStacks(reigns);
+      const height = dynastyLaneHeight(rowHeights);
+      const chipHeight = TIMELINE_RAIL_CHIP_HEIGHT_PX;
+      const chipTop =
+        rowCount > 1
+          ? top + height / 2 - chipHeight / 2
+          : top + TIMELINE_RAIL_CHIP_TOP_PX;
+      const item = { dynasty, reigns, missingReigns, top, height, chipTop, chipHeight };
       top += height;
       return item;
     });
   }, [placed, railHeight, reignsByDynasty]);
+
+  const clusterFrames = useMemo(
+    () => clusterFramesForLanes(lanes, data?.dynastyGroups ?? []),
+    [lanes, data?.dynastyGroups],
+  );
 
   const dynastiesBottom = lanes.at(-1)
     ? lanes.at(-1)!.top + lanes.at(-1)!.height
@@ -171,6 +189,16 @@ export function TimelineStage() {
             </div>
           ) : (
             <LayoutGroup>
+              {clusterFrames.map(({ group, top, height, left, width }) => (
+                <DynastyClusterFrame
+                  key={group.id}
+                  group={group}
+                  top={top}
+                  height={height}
+                  left={left}
+                  width={width}
+                />
+              ))}
               {lanes.map(({ dynasty, reigns, missingReigns, top }) => (
                 <DynastyLane
                   key={dynasty.id}

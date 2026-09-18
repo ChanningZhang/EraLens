@@ -1,0 +1,26 @@
+.frame {
+  position: absolute;
+  z-index: 0;
+  box-sizing: border-box;
+  border: 1px solid color-mix(in srgb, var(--color-ochre) 34%, var(--color-border));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--color-ochre) 5.5%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-paper) 62%, transparent);
+  pointer-events: none;
+}
+
+.legend {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  transform: translateY(-50%);
+  padding: 0 5px;
+  font-family: var(--font-serif);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  color: color-mix(in srgb, var(--color-ochre) 42%, var(--color-ink-secondary));
+  background: color-mix(in srgb, var(--color-ochre) 9%, var(--color-paper));
+  white-space: nowrap;
+}

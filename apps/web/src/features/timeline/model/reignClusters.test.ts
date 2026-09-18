@@ -4,10 +4,14 @@ import { absMonth } from "@eralens/shared";
 import {
   assignReignStacks,
   dynastyLaneHeight,
+  LANE_PADDING_Y,
   nextLaterStartAbs,
+  PARALLEL_STACK_ROW_HEIGHT,
   partitionReignRecords,
   reignCardSpan,
   resolveReignVisualSpan,
+  STACK_ROW_HEIGHT,
+  stackRowOffset,
 } from "./reignClusters";
 
 function reign(id: string, startAbs: number, endAbs: number): Reign {
@@ -116,8 +120,20 @@ describe("assignReignStacks", () => {
     };
     const all = [guang, you, tong];
 
-    const { items, rowCount } = assignReignStacks(all);
+    const { items, rowCount, rowHeights } = assignReignStacks(all);
     expect(rowCount).toBe(3);
+    expect(rowHeights).toEqual([
+      STACK_ROW_HEIGHT,
+      PARALLEL_STACK_ROW_HEIGHT,
+      PARALLEL_STACK_ROW_HEIGHT,
+    ]);
+    expect(stackRowOffset(rowHeights, 1)).toBe(STACK_ROW_HEIGHT);
+    expect(stackRowOffset(rowHeights, 2)).toBe(
+      STACK_ROW_HEIGHT + PARALLEL_STACK_ROW_HEIGHT,
+    );
+    expect(dynastyLaneHeight(rowHeights)).toBe(
+      LANE_PADDING_Y + STACK_ROW_HEIGHT + PARALLEL_STACK_ROW_HEIGHT * 2,
+    );
     expect(items.map((item) => [item.reign.id, item.stackIndex])).toEqual([
       ["yang-guang", 0],
       ["yang-you", 1],
@@ -146,7 +162,7 @@ describe("assignReignStacks", () => {
     };
     const all = [hongguang, longwu, yongli, luJian, shaowu];
 
-    const { items, rowCount } = assignReignStacks(all);
+    const { items, rowCount, rowHeights } = assignReignStacks(all);
     expect(rowCount).toBe(3);
     expect(
       items.map((item) => [item.reign.id, item.stackIndex]),
@@ -157,6 +173,11 @@ describe("assignReignStacks", () => {
       ["lu-jian", 1],
       ["shaowu", 2],
     ]);
+    expect(rowHeights).toEqual([
+      STACK_ROW_HEIGHT,
+      PARALLEL_STACK_ROW_HEIGHT,
+      PARALLEL_STACK_ROW_HEIGHT,
+    ]);
 
     expect(resolveReignVisualSpan(hongguang, all).endExclusive).toBe(longwu.startAbs);
     expect(resolveReignVisualSpan(yongli, all).startAbs).toBe(yongli.startAbs);
@@ -164,7 +185,7 @@ describe("assignReignStacks", () => {
   });
 
   it("stacks 哀王 and 思王 who share a year but have no calendar months", () => {
-    const { items, rowCount } = assignReignStacks([
+    const { items, rowCount, rowHeights } = assignReignStacks([
       reign("jie", 0, 335),
       reign("quji", 336, 347),
       reign("shu", 336, 347),
@@ -177,7 +198,8 @@ describe("assignReignStacks", () => {
       ["shu", 1],
       ["wei", 0],
     ]);
-    expect(dynastyLaneHeight(rowCount)).toBe(16 + 48 * 2);
+    expect(rowHeights).toEqual([STACK_ROW_HEIGHT, STACK_ROW_HEIGHT]);
+    expect(dynastyLaneHeight(rowHeights)).toBe(LANE_PADDING_Y + STACK_ROW_HEIGHT * 2);
   });
 });
 
