@@ -9,7 +9,6 @@ import {
   dr,
   eventPoint,
   writeImportPackage,
-  nextColor,
   successionPairs,
   ym,
 } from "../lib/sqlHelpers.mjs";
@@ -72,7 +71,6 @@ const dynasties = [
     start: ym(649),
     end: ym(902, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "蒙舍诏细奴逻起于649年；738年皮逻阁统一六诏后南诏国号始显；902年亡于郑买嗣。",
   },
   {
@@ -84,7 +82,6 @@ const dynasties = [
     start: ym(937),
     end: ym(1253, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "937年段思平建国；1094–1096年高升泰短暂称帝（大中国）；1253年蒙古灭大理。",
   },
 ];

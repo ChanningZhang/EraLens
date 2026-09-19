@@ -145,6 +145,53 @@ describe("buildEntityDetail event", () => {
 
     expect(detail.title).toBe("牧野之战");
     expect(detail.subtitle).toBe("战事");
+    expect(detail.facts).toEqual([
+      { label: "时间", value: "公元前1046年" },
+    ]);
+  });
+
+  it("shows linked dynasty names for events with dynastyIds", () => {
+    const store = {
+      dynasties: [
+        {
+          id: "daxi",
+          name: "大西",
+          altNames: [],
+          scope: "cn" as const,
+          region: "east_asia",
+          start: { year: 1644, month: 12 },
+          end: { year: 1647, month: 12 },
+          startAbs: 19739,
+          endAbs: 19775,
+          precision: "month" as const,
+        },
+      ],
+      reigns: [],
+      persons: [],
+      events: [
+        {
+          id: "daxi-founded",
+          name: "大西政权建立",
+          kind: "politics" as const,
+          timeMode: "point" as const,
+          precision: "day" as const,
+          at: { year: 1644, month: 12 },
+          atAbs: 19739,
+          dynastyIds: ["daxi"],
+          participantIds: [],
+        },
+      ],
+      relations: [],
+    };
+
+    const detail = buildEntityDetail(store, { type: "event", id: "daxi-founded" });
+
+    expect(detail.subtitle).toBe("大西");
+    expect(detail.dynastyId).toBe("daxi");
+    expect(detail.facts).toEqual([
+      { label: "时间", value: "公元1644年12月" },
+      { label: "类型", value: "政治" },
+    ]);
   });
 
   it("shows dateNote as a reader-facing 说明 fact", () => {

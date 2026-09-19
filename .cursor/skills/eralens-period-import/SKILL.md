@@ -26,7 +26,7 @@ description: >-
 ```
 Task Progress:
 - [ ] 1. 调研：列出王朝、在位、人物、事件、关系及来源
-- [ ] 2. 建模：分配 id、color_token、计算 start_abs/end_abs
+- [ ] 2. 建模：分配 id、计算 start_abs/end_abs（color_token 由 sqlHelpers 占位，勿手填）
 - [ ] 3. 冲突检查：查询 DB 已有 id
 - [ ] 4. 写 SQL：data/imports/{slug}/import.sql + manifest.json
 - [ ] 5. 校验：node .cursor/skills/eralens-period-import/scripts/validate-import.mjs
@@ -121,7 +121,7 @@ node .cursor/skills/eralens-period-import/scripts/compute-abs.mjs -1046 1  # -12
 
 **枚举**（见 [reference.md](reference.md)）：
 
-- `color_token`: cinnabar | mineral | ochre | indigo | moss | wisteria | grape | stone
+- `color_token`：入库占位 `ochre`；运行时 24 色见 reference.md（前端分配，导入勿轮换）
 - `precision`（王朝/在位）: year | month | day
 - `event.precision`: day | month | year | decade | century
 - `event.time_mode`: point | span | circa

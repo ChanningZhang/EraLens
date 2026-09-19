@@ -14,9 +14,10 @@
     "persons": 5,
     "dynasties": 3,
     "reigns": 5,
-    "events": 4,
+    "events": 3,
     "relations": 6,
-    "supplementalEventDynastyLinks": 5
+    "supplementalEventDynastyLinks": 5,
+    "supplementalEventParticipantLinks": 1
   },
   "sources": [
     {

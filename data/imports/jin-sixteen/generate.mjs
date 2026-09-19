@@ -247,15 +247,6 @@ const persons = [
 
 // ── dynasties ──────────────────────────────────────────────────────────────
 
-const colorTokens = [
-  "ochre", "azure", "cinnabar", "jade", "indigo", "coral",
-  "moss", "plum", "mineral", "amber", "grape", "sage",
-  "stone", "clay", "wisteria", "slate",
-];
-let colorIdx = 0;
-function nextColor() {
-  return colorTokens[colorIdx++ % colorTokens.length];
-}
 
 const dynastyGroups = [
   {
@@ -280,7 +271,6 @@ const dynasties = [
     start: ym(266, 2),
     end: ym(316, 4),
     precision: "year",
-    colorToken: "stone",
     note: "司马炎代魏建晋，都洛阳；316年愍帝出降，西晋灭亡。",
   },
   {
@@ -292,7 +282,6 @@ const dynasties = [
     start: ym(317),
     end: ym(420, 7),
     precision: "year",
-    colorToken: nextColor(),
     note: "司马睿南渡建康，与北方十六国对峙；420年刘裕代晋。",
   },
   {
@@ -304,7 +293,6 @@ const dynasties = [
     start: ym(304),
     end: ym(347),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "wuhu",
     note: "李雄据益州，304年建号，347年桓温伐蜀后灭亡。",
   },
@@ -317,7 +305,6 @@ const dynasties = [
     start: ym(304),
     end: ym(329),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "wuhu",
     note: "刘渊举兵反晋，304年建汉；329年石勒灭之，改国号赵。",
   },
@@ -330,7 +317,6 @@ const dynasties = [
     start: ym(319),
     end: ym(351),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "wuhu",
     note: "石勒据襄国，319年建后赵；349年石虎病死，诸子争立；350年冉闵杀石鉴称帝，351年石祗被杀，后赵亡。",
   },
@@ -343,7 +329,6 @@ const dynasties = [
     start: ym(301),
     end: ym(376),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "wuhu",
     note: "张轨301年任凉州刺史，张氏据河西百余年；376年前秦灭之。",
   },
@@ -356,7 +341,6 @@ const dynasties = [
     start: ym(337),
     end: ym(370),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "wuhu",
     note: "慕容氏据辽东，337年慕容皝称燕王；370年前秦灭之。",
   },
@@ -369,7 +353,6 @@ const dynasties = [
     start: ym(351),
     end: ym(394),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "wuhu",
     note: "苻氏据关中，苻坚一度统一北方；淝水之战后崩溃。",
   },
@@ -382,7 +365,6 @@ const dynasties = [
     start: ym(384),
     end: ym(409),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "wuhu",
     note: "慕容垂淝水后复国，都中山；409年慕容熙被杀，后燕衰亡。",
   },
@@ -395,7 +377,6 @@ const dynasties = [
     start: ym(384),
     end: ym(417),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "wuhu",
     note: "姚苌杀苻坚建后秦，都长安；417年刘裕北伐灭之。",
   },
@@ -408,7 +389,6 @@ const dynasties = [
     start: ym(385),
     end: ym(431),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "wuhu",
     note: "乞伏氏据陇右，386年乞伏国仁建西秦；431年赫连定俘杀乞伏暮末。",
   },
@@ -421,7 +401,6 @@ const dynasties = [
     start: ym(386),
     end: ym(403),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "wuhu",
     note: "吕光据凉州，386年建后凉；403年吕隆降后秦，后凉亡。",
   },
@@ -434,7 +413,6 @@ const dynasties = [
     start: ym(397),
     end: ym(414),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "wuhu",
     note: "秃发氏据青海，397年建南凉；414年降西秦。",
   },
@@ -447,7 +425,6 @@ const dynasties = [
     start: ym(400),
     end: ym(421),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "wuhu",
     note: "李暠据敦煌，400年建西凉；421年北凉沮渠蒙逊灭之。",
   },
@@ -460,7 +437,6 @@ const dynasties = [
     start: ym(397),
     end: ym(439),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "wuhu",
     note: "沮渠氏据河西，397年建北凉；439年北魏太武帝灭之，十六国时期终结。",
   },
@@ -473,7 +449,6 @@ const dynasties = [
     start: ym(398),
     end: ym(410),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "wuhu",
     note: "慕容德据广固，398年建南燕；410年刘裕北伐灭之。",
   },
@@ -486,7 +461,6 @@ const dynasties = [
     start: ym(407),
     end: ym(436),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "wuhu",
     note: "冯跋据和龙，407年建北燕；436年北魏灭之。",
   },
@@ -499,7 +473,6 @@ const dynasties = [
     start: ym(407),
     end: ym(431),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "wuhu",
     note: "赫连勃勃据朔方，407年建夏；431年赫连定为北魏所俘。",
   },

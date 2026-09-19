@@ -29,8 +29,8 @@
   height: 44px;
   padding: 0 8px;
   appearance: none;
-  background: color-mix(in srgb, var(--dynasty-color) 14%, var(--color-surface));
-  border: 1px solid color-mix(in srgb, var(--dynasty-color) 22%, var(--color-border));
+  background: color-mix(in srgb, var(--dynasty-color) 16%, var(--color-surface));
+  border: 1px solid color-mix(in srgb, var(--dynasty-color) 18%, var(--color-border));
   border-radius: 8px;
   box-shadow: 0 2px 8px color-mix(in srgb, var(--color-ink) 6%, transparent);
   color: inherit;
@@ -43,14 +43,32 @@
     box-shadow var(--motion-fast);
 }
 
-.frozenLabel:hover {
+.frozenLabel:hover:not(:global(.orthodoxGold)) {
   background: color-mix(in srgb, var(--dynasty-color) 20%, var(--color-surface));
-  border-color: color-mix(in srgb, var(--dynasty-color) 36%, var(--color-border));
+  border-color: color-mix(in srgb, var(--dynasty-color) 28%, var(--color-border));
 }
 
 .frozenLabel.selected {
   border-color: var(--color-accent);
   box-shadow: inset 3px 0 0 var(--color-accent);
+}
+
+.frozenLabel:global(.orthodoxGold) {
+  border-color: color-mix(in srgb, var(--orthodox-gold-divider) 72%, transparent) !important;
+}
+
+.frozenLabel:global(.orthodoxGold) .labelText,
+.frozenLabel:global(.orthodoxGold) .name {
+  position: relative;
+  z-index: 2;
+}
+
+.frozenLabel:global(.orthodoxGold).selected {
+  box-shadow:
+    inset 3px 0 0 var(--color-accent),
+    inset 0 1px 0 var(--orthodox-gold-specular),
+    0 0 0 1px var(--orthodox-gold-border),
+    0 2px 8px color-mix(in srgb, var(--color-ink) 6%, transparent);
 }
 
 .labelText {

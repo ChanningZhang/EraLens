@@ -9,7 +9,6 @@ import {
   person,
   dr,
   ym,
-  nextColor,
   eventPoint,
   writeImportPackage,
   successionPairs,
@@ -234,7 +233,6 @@ const dynasties = [
     start: ym(xueSpan.startYear),
     end: ym(-327, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "任姓小国；可考君主自薛献公（前511年卒）起；前327年齐魏共灭薛。西周薛伯等早期君主在位年失考，不收录。",
   },
   {
@@ -246,7 +244,6 @@ const dynasties = [
     start: ym(-599),
     end: ym(-296, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "周武王封弟错叔绣于滕；本包仅收录春秋可考君主（文公至隐公）。前414年越灭滕后复国，世系失考；前296年宋康王终灭之。",
   },
   {
@@ -258,7 +255,6 @@ const dynasties = [
     start: ym(-750),
     end: ym(-445, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "自杞武公起有通行在位年；东楼公等更早君主失考。前445年为齐所灭。",
   },
   {
@@ -270,7 +266,6 @@ const dynasties = [
     start: ym(-615),
     end: ym(-431, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "兹舆期受封后多世失考；本包自春秋可见于《左传》的莒纪公起收录。前431年为楚所灭。",
   },
   {
@@ -282,7 +277,6 @@ const dynasties = [
     start: ym(-228),
     end: ym(-222, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "前228年赵嘉于代郡自立代王；前222年秦将王贲灭代。",
   },
   {
@@ -294,7 +288,6 @@ const dynasties = [
     start: ym(-221),
     end: ym(-206, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "秦灭齐后即墨一带齐宗室残余；田市等据胶东，至楚汉之际并入分封格局。",
   },
   {
@@ -306,7 +299,6 @@ const dynasties = [
     start: ym(-440),
     end: ym(-256, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "战国周王畿小国，都王城（洛阳）；前440年周考王封弟揭所立，非西周王朝（zhou-west）。前367年威公卒后与东周国分立；前256年秦灭。",
   },
   {
@@ -318,7 +310,6 @@ const dynasties = [
     start: ym(-367),
     end: ym(-249, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "战国周王畿小国，都巩（巩义）；前367年由西周威公少子根所立，非东周王朝（zhou-east）。前249年秦庄襄王灭。",
   },
 ];

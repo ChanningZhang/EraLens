@@ -5,12 +5,11 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { resolveOrthodoxEndAbs, resolveOrthodoxFromAbs } from "../lib/orthodoxDynasties.mjs";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
 import { drDay, ymDay } from "../lib/reignDateHelpers.mjs";
 import { reignSql } from "../lib/reignSql.mjs";
-import { normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
+import { dynastySql, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -76,15 +75,6 @@ function dr(dynastyId, personId, title, posthumous, temple, sy, ey, eraList = []
   return dynastyReign(dynastyId, personId, title, posthumous, temple, sy, ey, eraNames, null, claim);
 }
 
-const colorTokens = [
-  "ochre", "azure", "cinnabar", "jade", "indigo", "coral",
-  "moss", "plum", "mineral", "amber", "grape", "sage",
-  "stone", "clay", "wisteria", "slate",
-];
-let colorIdx = 0;
-function nextColor() {
-  return colorTokens[colorIdx++ % colorTokens.length];
-}
 
 // ── persons ────────────────────────────────────────────────────────────────
 
@@ -188,17 +178,17 @@ const persons = [
 // ── dynasties ──────────────────────────────────────────────────────────────
 
 const dynasties = [
-  { id: "yuan", name: "元", altNames: ["大元", "蒙元", "北元", "残元", "故元"], scope: "cn", region: "east_asia", start: ym(1271, 12), end: ym(1388), precision: "year", colorToken: nextColor(), note: "忽必烈1271年定国号大元；1368年顺帝北逃漠北继续称大元至1388年天元帝被杀，元朝终结。" },
+  { id: "yuan", name: "元", altNames: ["大元", "蒙元", "北元", "残元", "故元"], scope: "cn", region: "east_asia", start: ym(1271, 12), end: ym(1388), precision: "year", note: "忽必烈1271年定国号大元；1368年顺帝北逃漠北继续称大元至1388年天元帝被杀，元朝终结。" },
   // 元末割据政权（称帝/称王）
-  { id: "song-xu", name: "徐宋", altNames: ["宋", "天完"], scope: "cn", region: "east_asia", start: ym(1351, 10), end: ym(1360, 6), precision: "year", colorToken: nextColor(), note: "徐寿辉1351年蕲州称帝，国号宋，传世多作天完；1360年陈友谅弑之。" },
-  { id: "song-han", name: "韩宋", altNames: ["宋", "小明王"], scope: "cn", region: "east_asia", start: ym(1355, 2), end: ym(1366, 12), precision: "year", colorToken: nextColor(), note: "刘福通拥韩林儿为帝，号小明王，年号龙凤；1366年溺亡，韩宋亡。" },
-  { id: "zhou-zhang", name: "大周", altNames: ["周"], scope: "cn", region: "east_asia", start: ym(1354, 1), end: ym(1367, 9), precision: "year", colorToken: nextColor(), note: "张士诚1354年高邮建国，自称诚王；1363年再号吴王；1367年平江败亡。" },
-  { id: "chen-han", name: "陈汉", altNames: ["汉", "大汉"], scope: "cn", region: "east_asia", start: ym(1360, 6), end: ym(1364), precision: "year", colorToken: nextColor(), note: "陈友谅1360年称帝，国号汉；1363年鄱阳湖阵亡，子陈理继位；1364年降明。" },
-  { id: "xia-ming", name: "明夏", altNames: ["夏", "大夏"], scope: "cn", region: "east_asia", start: ym(1362), end: ym(1371), precision: "year", colorToken: nextColor(), note: "明玉珍1362年重庆称帝，国号夏，据两川；1371年明灭夏。" },
-  { id: "wu-zhu", name: "吴", altNames: ["西吴"], scope: "cn", region: "east_asia", start: ym(1364), end: ym(1368, 1), precision: "year", colorToken: nextColor(), note: "朱元璋1364年自立吴王，仍用龙凤年号；1367年改元吴，1368年称帝建明。" },
-  { id: "ming", name: "明", altNames: ["大明"], scope: "cn", region: "east_asia", start: ym(1368), end: ym(1644, 4), precision: "year", colorToken: nextColor(), note: "朱元璋驱逐蒙元，定都南京后迁北京；1644年崇祯自缢，明亡。" },
-  { id: "ming-south", name: "南明", altNames: ["明"], scope: "cn", region: "east_asia", start: ym(1644), end: ym(1662), precision: "year", colorToken: nextColor(), note: "明亡后朱氏多支并立：通行主线弘光→隆武→永历；鲁监国、绍武为并行朝廷。1662年永历帝殉，南明终结。" },
-  { id: "qing", name: "清", altNames: ["大清", "后金"], scope: "cn", region: "east_asia", start: ym(1616, 2), end: ym(1912, 2), precision: "year", colorToken: nextColor(), note: "1616年努尔哈赤建后金，1636年改国号大清；1912年宣统退位。" },
+  { id: "song-xu", name: "徐宋", altNames: ["宋", "天完"], scope: "cn", region: "east_asia", start: ym(1351, 10), end: ym(1360, 6), precision: "year", note: "徐寿辉1351年蕲州称帝，国号宋，传世多作天完；1360年陈友谅弑之。" },
+  { id: "song-han", name: "韩宋", altNames: ["宋", "小明王"], scope: "cn", region: "east_asia", start: ym(1355, 2), end: ym(1366, 12), precision: "year", note: "刘福通拥韩林儿为帝，号小明王，年号龙凤；1366年溺亡，韩宋亡。" },
+  { id: "zhou-zhang", name: "大周", altNames: ["周"], scope: "cn", region: "east_asia", start: ym(1354, 1), end: ym(1367, 9), precision: "year", note: "张士诚1354年高邮建国，自称诚王；1363年再号吴王；1367年平江败亡。" },
+  { id: "chen-han", name: "陈汉", altNames: ["汉", "大汉"], scope: "cn", region: "east_asia", start: ym(1360, 6), end: ym(1364), precision: "year", note: "陈友谅1360年称帝，国号汉；1363年鄱阳湖阵亡，子陈理继位；1364年降明。" },
+  { id: "xia-ming", name: "明夏", altNames: ["夏", "大夏"], scope: "cn", region: "east_asia", start: ym(1362), end: ym(1371), precision: "year", note: "明玉珍1362年重庆称帝，国号夏，据两川；1371年明灭夏。" },
+  { id: "wu-zhu", name: "吴", altNames: ["西吴"], scope: "cn", region: "east_asia", start: ym(1364), end: ym(1368, 1), precision: "year", note: "朱元璋1364年自立吴王，仍用龙凤年号；1367年改元吴，1368年称帝建明。" },
+  { id: "ming", name: "明", altNames: ["大明"], scope: "cn", region: "east_asia", start: ym(1368), end: ym(1644, 4), precision: "year", note: "朱元璋驱逐蒙元，定都南京后迁北京；1644年崇祯自缢，明亡。" },
+  { id: "ming-south", name: "南明", altNames: ["明"], scope: "cn", region: "east_asia", start: ym(1644), end: ym(1662), precision: "year", note: "明亡后朱氏多支并立：通行主线弘光→隆武→永历；鲁监国、绍武为并行朝廷。1662年永历帝殉，南明终结。" },
+  { id: "qing", name: "清", altNames: ["大清", "后金"], scope: "cn", region: "east_asia", start: ym(1616, 2), end: ym(1912, 2), precision: "year", note: "1616年努尔哈赤建后金，1636年改国号大清；1912年宣统退位。" },
 ];
 
 // ── reigns ─────────────────────────────────────────────────────────────────
@@ -393,7 +383,7 @@ const events = [
   eventPoint({ id: "hongwan-case", name: "红丸案", kind: "politics", precision: "month", dateNote: "泰昌元年八月二十九日，光宗服用红丸暴毙", at: ym(1620, 8), dynastyIds: ["ming"], participantIds: ["zhu-changluo", "fang-congze"], summary: "明光宗即位仅月余，服李可灼所献红丸后暴亡，疑案缠身。" }),
   eventPoint({ id: "yigong-case", name: "移宫案", kind: "politics", precision: "month", dateNote: "泰昌元年九月，熹宗即位后逼李选侍迁出乾清宫", at: ym(1620, 9), dynastyIds: ["ming"], participantIds: ["zhu-youjiao", "li-xuanshi"], summary: "光宗死后李选侍据乾清宫不肯迁出，东林党力主逼迁，熹宗即位后李选侍移居别宫。" }),
   eventPoint({ id: "yuan-chonghuan-executed", name: "袁崇焕冤杀", kind: "politics", precision: "month", dateNote: "崇祯三年八月十六日，磔于市", at: ym(1630, 8), dynastyIds: ["ming"], participantIds: ["yuan-chonghuan", "zhu-youjian"], summary: "崇祯帝中皇太极反间计，以通敌罪处死袁崇焕，辽东防线崩溃。" }),
-  eventPoint({ id: "ming-fall", name: "明朝灭亡", kind: "politics", at: ym(1644, 4), dynastyIds: ["ming"], participantIds: ["zhu-youjian"], summary: "李自成攻入北京，崇祯自缢，明朝灭亡。" }),
+  eventPoint({ id: "ming-fall", name: "明朝灭亡", kind: "politics", precision: "month", dateNote: "崇祯十七年三月十九日，1644年4月25日", at: ym(1644, 4), dynastyIds: ["ming"], participantIds: ["zhu-youjian"], summary: "李自成率军攻入北京，崇祯帝自缢，明朝灭亡。" }),
   eventPoint({ id: "qing-founded", name: "大清建国", kind: "politics", at: ym(1636, 5), dynastyIds: ["qing"], participantIds: ["huang-taiji"], summary: "皇太极改国号大清，完善国家制度。" }),
   eventPoint({ id: "qing-enter-pass", name: "清军入关", kind: "politics", at: ym(1644), dynastyIds: ["qing", "ming"], participantIds: ["fulin"], summary: "吴三桂引清军入关，定都北京，逐鹿中原。" }),
   eventRange({ id: "kangqian-prosperity", name: "康乾盛世", kind: "politics", timeMode: "span", start: ym(1661), end: ym(1796), dynastyIds: ["qing"], participantIds: ["xuanye", "hongli"], summary: "康熙、雍正、乾隆三朝国力强盛，疆域辽阔。" }),
@@ -502,11 +492,6 @@ relations.push(
 
 // ── SQL ──────────────────────────────────────────────────────────────────────
 
-function dynastySql(d) {
-  const orthodoxFromAbs = resolveOrthodoxFromAbs(d);
-  const orthodoxEndAbs = resolveOrthodoxEndAbs(d);
-  return `INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs, parent_id, note) VALUES (${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlArray(d.altNames)}, ${sqlStr(d.scope)}, ${sqlStr(d.region)}, ${d.start.year}, ${d.start.month}, ${d.end.year}, ${d.end.month}, ${d.start.abs}, ${d.end.abs}, ${sqlStr(d.precision)}, ${sqlStr(d.colorToken)}, ${orthodoxFromAbs ?? "NULL"}, ${orthodoxEndAbs ?? "NULL"}, NULL, ${sqlStr(d.note)}) ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, color_token = EXCLUDED.color_token, orthodox_from_abs = EXCLUDED.orthodox_from_abs, orthodox_end_abs = EXCLUDED.orthodox_end_abs, note = EXCLUDED.note;`;
-}
 function formatReignSql(r) {
   return reignSql(r, sqlStr, sqlJson);
 }
@@ -545,6 +530,11 @@ const preSql = [
   "-- remove stale auto-generated 史料缺 (两都之战并行叠放、驾崩至即位短空档应留白)",
   sqlDeleteSystemMissingReigns(["yuan"], sqlStr),
   "DELETE FROM relations WHERE id IN ('rel-yeshuntuemur-ragibagh-succession', 'rel-ragibagh-tugh-temur-succession', 'rel-khoshila-irinchibal-succession');",
+  "DELETE FROM era_names WHERE reign_id = 'reign-puyi-qing-forbidden';",
+  "DELETE FROM reigns WHERE id = 'reign-puyi-qing-forbidden';",
+  "DELETE FROM event_participants WHERE event_id = 'puyi-leaves-forbidden-city';",
+  "DELETE FROM event_dynasties WHERE event_id = 'puyi-leaves-forbidden-city';",
+  "DELETE FROM events WHERE id = 'puyi-leaves-forbidden-city';",
 ].join("\n");
 
 const sql = ["-- EraLens period import: yuan-ming-qing", "-- Window: 1271-12 .. 1912-02", "BEGIN;", "", preSql, "", "-- persons", ...importPersons.map(personSql), "", "-- dynasties", ...dynasties.map(dynastySql), "", "-- reigns", ...importReigns.map(formatReignSql), "", "-- era_names", ...eraDeleteSql, ...eraInsertSql, "", "-- events", ...events.map(eventSql), "", "-- event_dynasties", ...eventDynastySql, "", "-- event_participants", ...eventParticipantSql, "", "-- relations", ...relations.map(relationSql), "", "COMMIT;", ""].join("\n");

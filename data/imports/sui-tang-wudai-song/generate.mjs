@@ -6,11 +6,10 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
-import { resolveOrthodoxEndAbs, resolveOrthodoxFromAbs } from "../lib/orthodoxDynasties.mjs";
 import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
 import { drDay, ymDay } from "../lib/reignDateHelpers.mjs";
 import { reignSql } from "../lib/reignSql.mjs";
-import { normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
+import { dynastySql, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -140,15 +139,6 @@ function dr(dynastyId, personId, title, posthumous, temple, sy, ey, eraList = []
   );
 }
 
-const colorTokens = [
-  "ochre", "azure", "cinnabar", "jade", "indigo", "coral",
-  "moss", "plum", "mineral", "amber", "grape", "sage",
-  "stone", "clay", "wisteria", "slate",
-];
-let colorIdx = 0;
-function nextColor() {
-  return colorTokens[colorIdx++ % colorTokens.length];
-}
 
 // ── persons ────────────────────────────────────────────────────────────────
 // yang-jian already in DB from nanbei-chao
@@ -324,26 +314,26 @@ const dynastyGroups = [
 ];
 
 const dynasties = [
-  { id: "sui", name: "隋", altNames: ["大隋"], scope: "cn", region: "east_asia", start: ym(581), end: ym(618), precision: "year", colorToken: nextColor(), note: "杨坚代周建隋，589年灭陈统一；618年江都兵变、唐建立标志隋亡，东都杨侗名义延续至619年。" },
-  { id: "tang", name: "唐", altNames: ["李唐"], scope: "cn", region: "east_asia", start: ym(618), end: ym(907), precision: "year", colorToken: nextColor(), note: "李渊建唐，都长安；907年朱温篡唐，唐亡。" },
-  { id: "zhou-wu", name: "武周", altNames: ["周"], scope: "cn", region: "east_asia", start: ym(690), end: ym(705), precision: "year", colorToken: nextColor(), note: "武则天改国号周，690–705年，后还政李唐。" },
-  { id: "liang-hou", name: "后梁", altNames: ["梁"], scope: "cn", region: "east_asia", start: ym(907), end: ym(923), precision: "year", colorToken: nextColor(), groupId: "wudai", note: "朱温篡唐建梁，都开封；923年后唐灭之。" },
-  { id: "tang-hou", name: "后唐", altNames: ["唐"], scope: "cn", region: "east_asia", start: ym(923), end: ym(936), precision: "year", colorToken: nextColor(), groupId: "wudai", note: "李存勖灭梁称帝；936年石敬瑭联契丹灭之。" },
-  { id: "jin-hou", name: "后晋", altNames: ["晋"], scope: "cn", region: "east_asia", start: ym(936), end: ym(947), precision: "year", colorToken: nextColor(), groupId: "wudai", note: "石敬瑭割燕云十六州；947年契丹灭晋。" },
-  { id: "han-hou", name: "后汉", altNames: ["汉"], scope: "cn", region: "east_asia", start: ym(947), end: ym(951), precision: "year", colorToken: nextColor(), groupId: "wudai", note: "刘知远建后汉；951年郭威代汉。" },
-  { id: "zhou-hou", name: "后周", altNames: ["周"], scope: "cn", region: "east_asia", start: ym(951), end: ym(960), precision: "year", colorToken: nextColor(), groupId: "wudai", note: "郭威建后周；960年赵匡胤陈桥兵变代周。" },
-  { id: "wu-shi", name: "吴", altNames: ["杨吴", "十国吴"], scope: "cn", region: "east_asia", start: ym(902), end: ym(937), precision: "year", colorToken: nextColor(), groupId: "shiguo", note: "杨行密据淮南；937年为南唐所灭。" },
-  { id: "tang-nan", name: "南唐", altNames: ["唐"], scope: "cn", region: "east_asia", start: ym(937), end: ym(975), precision: "year", colorToken: nextColor(), groupId: "shiguo", note: "李昪代吴建南唐；975年宋灭之。" },
-  { id: "wuyue", name: "吴越", altNames: ["吴越国"], scope: "cn", region: "east_asia", start: ym(907), end: ym(978), precision: "year", colorToken: nextColor(), groupId: "shiguo", note: "钱镠据两浙；978年钱俶纳土归宋。" },
-  { id: "min-fujian", name: "闽", altNames: ["闽国"], scope: "cn", region: "east_asia", start: ym(909), end: ym(945), precision: "year", colorToken: nextColor(), groupId: "shiguo", note: "王审知据福建；945年内乱灭亡。" },
-  { id: "han-nan", name: "南汉", altNames: ["汉"], scope: "cn", region: "east_asia", start: ym(917), end: ym(971), precision: "year", colorToken: nextColor(), groupId: "shiguo", note: "刘龑据岭南；971年宋灭之。" },
-  { id: "shu-qian", name: "前蜀", altNames: ["蜀"], scope: "cn", region: "east_asia", start: ym(907), end: ym(925), precision: "year", colorToken: nextColor(), groupId: "shiguo", note: "王建据成都；925年后唐灭之。" },
-  { id: "shu-hou", name: "后蜀", altNames: ["蜀"], scope: "cn", region: "east_asia", start: ym(934), end: ym(965, 2), precision: "year", colorToken: nextColor(), groupId: "shiguo", note: "孟知祥据成都；965年正月辛卯孟昶出降，宋灭之。" },
-  { id: "jingnan", name: "荆南", altNames: ["南平"], scope: "cn", region: "east_asia", start: ym(924), end: ym(963), precision: "year", colorToken: nextColor(), groupId: "shiguo", note: "高季兴据江陵；963年纳土归宋。" },
-  { id: "chu-nan", name: "楚", altNames: ["马楚"], scope: "cn", region: "east_asia", start: ym(907), end: ym(951), precision: "year", colorToken: nextColor(), groupId: "shiguo", note: "马殷据湖南；951年南唐灭楚。" },
-  { id: "han-bei", name: "北汉", altNames: ["汉"], scope: "cn", region: "east_asia", start: ym(951), end: ym(979), precision: "year", colorToken: nextColor(), groupId: "shiguo", note: "刘旻据太原；979年宋灭之，十国终结。" },
-  { id: "song-north", name: "北宋", altNames: ["宋"], scope: "cn", region: "east_asia", start: ym(960), end: ym(1127), precision: "year", colorToken: nextColor(), note: "赵匡胤陈桥兵变建宋；1127年靖康之变，北宋亡。" },
-  { id: "song-south", name: "南宋", altNames: ["宋"], scope: "cn", region: "east_asia", start: ym(1127), end: ym(1279), precision: "year", colorToken: nextColor(), note: "赵构南渡建南宋；1279年崖山海战，南宋亡。" },
+  { id: "sui", name: "隋", altNames: ["大隋"], scope: "cn", region: "east_asia", start: ym(581), end: ym(618), precision: "year", note: "杨坚代周建隋，589年灭陈统一；618年江都兵变、唐建立标志隋亡，东都杨侗名义延续至619年。" },
+  { id: "tang", name: "唐", altNames: ["李唐"], scope: "cn", region: "east_asia", start: ym(618), end: ym(907), precision: "year", note: "李渊建唐，都长安；907年朱温篡唐，唐亡。" },
+  { id: "zhou-wu", name: "武周", altNames: ["周"], scope: "cn", region: "east_asia", start: ym(690), end: ym(705), precision: "year", note: "武则天改国号周，690–705年，后还政李唐。" },
+  { id: "liang-hou", name: "后梁", altNames: ["梁"], scope: "cn", region: "east_asia", start: ym(907), end: ym(923), precision: "year", groupId: "wudai", note: "朱温篡唐建梁，都开封；923年后唐灭之。" },
+  { id: "tang-hou", name: "后唐", altNames: ["唐"], scope: "cn", region: "east_asia", start: ym(923), end: ym(936), precision: "year", groupId: "wudai", note: "李存勖灭梁称帝；936年石敬瑭联契丹灭之。" },
+  { id: "jin-hou", name: "后晋", altNames: ["晋"], scope: "cn", region: "east_asia", start: ym(936), end: ym(947), precision: "year", groupId: "wudai", note: "石敬瑭割燕云十六州；947年契丹灭晋。" },
+  { id: "han-hou", name: "后汉", altNames: ["汉"], scope: "cn", region: "east_asia", start: ym(947), end: ym(951), precision: "year", groupId: "wudai", note: "刘知远建后汉；951年郭威代汉。" },
+  { id: "zhou-hou", name: "后周", altNames: ["周"], scope: "cn", region: "east_asia", start: ym(951), end: ym(960), precision: "year", groupId: "wudai", note: "郭威建后周；960年赵匡胤陈桥兵变代周。" },
+  { id: "wu-shi", name: "吴", altNames: ["杨吴", "十国吴"], scope: "cn", region: "east_asia", start: ym(902), end: ym(937), precision: "year", groupId: "shiguo", note: "杨行密据淮南；937年为南唐所灭。" },
+  { id: "tang-nan", name: "南唐", altNames: ["唐"], scope: "cn", region: "east_asia", start: ym(937), end: ym(975), precision: "year", groupId: "shiguo", note: "李昪代吴建南唐；975年宋灭之。" },
+  { id: "wuyue", name: "吴越", altNames: ["吴越国"], scope: "cn", region: "east_asia", start: ym(907), end: ym(978), precision: "year", groupId: "shiguo", note: "钱镠据两浙；978年钱俶纳土归宋。" },
+  { id: "min-fujian", name: "闽", altNames: ["闽国"], scope: "cn", region: "east_asia", start: ym(909), end: ym(945), precision: "year", groupId: "shiguo", note: "王审知据福建；945年内乱灭亡。" },
+  { id: "han-nan", name: "南汉", altNames: ["汉"], scope: "cn", region: "east_asia", start: ym(917), end: ym(971), precision: "year", groupId: "shiguo", note: "刘龑据岭南；971年宋灭之。" },
+  { id: "shu-qian", name: "前蜀", altNames: ["蜀"], scope: "cn", region: "east_asia", start: ym(907), end: ym(925), precision: "year", groupId: "shiguo", note: "王建据成都；925年后唐灭之。" },
+  { id: "shu-hou", name: "后蜀", altNames: ["蜀"], scope: "cn", region: "east_asia", start: ym(934), end: ym(965, 2), precision: "year", groupId: "shiguo", note: "孟知祥据成都；965年正月辛卯孟昶出降，宋灭之。" },
+  { id: "jingnan", name: "荆南", altNames: ["南平"], scope: "cn", region: "east_asia", start: ym(924), end: ym(963), precision: "year", groupId: "shiguo", note: "高季兴据江陵；963年纳土归宋。" },
+  { id: "chu-nan", name: "楚", altNames: ["马楚"], scope: "cn", region: "east_asia", start: ym(907), end: ym(951), precision: "year", groupId: "shiguo", note: "马殷据湖南；951年南唐灭楚。" },
+  { id: "han-bei", name: "北汉", altNames: ["汉"], scope: "cn", region: "east_asia", start: ym(951), end: ym(979), precision: "year", groupId: "shiguo", note: "刘旻据太原；979年宋灭之，十国终结。" },
+  { id: "song-north", name: "北宋", altNames: ["宋"], scope: "cn", region: "east_asia", start: ym(960), end: ym(1127), precision: "year", note: "赵匡胤陈桥兵变建宋；1127年靖康之变，北宋亡。" },
+  { id: "song-south", name: "南宋", altNames: ["宋"], scope: "cn", region: "east_asia", start: ym(1127), end: ym(1279), precision: "year", note: "赵构南渡建南宋；1279年崖山海战，南宋亡。" },
 ];
 
 // ── reigns ─────────────────────────────────────────────────────────────────
@@ -662,15 +652,6 @@ function dynastyGroupSql(g) {
   return `INSERT INTO dynasty_groups (id, name, alt_names, scope, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, note)
 VALUES (${sqlStr(g.id)}, ${sqlStr(g.name)}, ${sqlArray(g.altNames ?? [])}, ${sqlStr(g.scope ?? "cn")}, ${g.start.year}, ${g.start.month}, ${g.end.year}, ${g.end.month}, ${g.start.abs}, ${g.end.abs}, ${sqlStr(g.precision ?? "year")}, ${sqlStr(g.note ?? null)})
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, scope = EXCLUDED.scope, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, note = EXCLUDED.note;`;
-}
-
-function dynastySql(d) {
-  const orthodoxFromAbs = resolveOrthodoxFromAbs(d);
-  const orthodoxEndAbs = resolveOrthodoxEndAbs(d);
-  const groupId = d.groupId ? sqlStr(d.groupId) : "NULL";
-  return `INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs, parent_id, group_id, note)
-VALUES (${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlArray(d.altNames)}, ${sqlStr(d.scope)}, ${sqlStr(d.region)}, ${d.start.year}, ${d.start.month}, ${d.end.year}, ${d.end.month}, ${d.start.abs}, ${d.end.abs}, ${sqlStr(d.precision)}, ${sqlStr(d.colorToken)}, ${orthodoxFromAbs ?? "NULL"}, ${orthodoxEndAbs ?? "NULL"}, NULL, ${groupId}, ${sqlStr(d.note)})
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, color_token = EXCLUDED.color_token, orthodox_from_abs = EXCLUDED.orthodox_from_abs, orthodox_end_abs = EXCLUDED.orthodox_end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;`;
 }
 
 function formatReignSql(r) {

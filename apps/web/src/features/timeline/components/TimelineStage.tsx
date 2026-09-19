@@ -6,11 +6,13 @@ import {
   formatYear,
   fromAbsMonth,
   orderDynastiesForLanes,
+  fallbackLaneColorToken,
   resolveDynastyColorValue,
   TIMELINE_RAIL_CHIP_HEIGHT_PX,
   TIMELINE_RAIL_CHIP_TOP_PX,
   type Dynasty,
 } from "@eralens/shared";
+import { useLaneColorCatalog } from "../hooks/useLaneColorCatalog";
 import { useTimelineData } from "../hooks/useTimelineData";
 import { useViewport } from "../hooks/useViewport";
 import {
@@ -40,6 +42,13 @@ import { PersonLayer } from "./PersonLayer";
 import { ReignFateLayer } from "./ReignFateLayer";
 import styles from "./TimelineStage.module.css";
 import { layoutReignFates } from "../model/reignFateLayout";
+
+function laneColorTokenFor(
+  map: ReadonlyMap<string, ReturnType<typeof fallbackLaneColorToken>>,
+  dynastyId: string,
+) {
+  return map.get(dynastyId) ?? fallbackLaneColorToken(dynastyId);
+}
 
 export function TimelineStage() {
   const viewport = useViewport();
@@ -74,6 +83,8 @@ export function TimelineStage() {
       orderDynastiesForLanes(collapsed, data?.dynastyGroups ?? []),
     );
   }, [data, viewport.startAbs, viewport.endAbs, dynastiesById]);
+
+  const laneColorMap = useLaneColorCatalog();
 
   const laneGroups = data?.dynastyLaneGroups ?? [];
 
@@ -150,12 +161,15 @@ export function TimelineStage() {
         dynastyId: dynasty.id,
         top,
         records,
-        color: resolveDynastyColorValue(dynasty),
+        color: resolveDynastyColorValue(
+          dynasty,
+          laneColorTokenFor(laneColorMap, dynasty.id),
+        ),
       })),
       viewport,
       personNames,
     );
-  }, [data, lanes, viewport, personNames]);
+  }, [data, lanes, laneColorMap, viewport, personNames]);
 
   const dynastiesBottom = lanes.at(-1)
     ? lanes.at(-1)!.top + lanes.at(-1)!.height
@@ -240,6 +254,7 @@ export function TimelineStage() {
                 <DynastyLane
                   key={dynasty.id}
                   dynasty={dynasty}
+                  laneColorToken={laneColorTokenFor(laneColorMap, dynasty.id)}
                   reigns={reigns}
                   missingReigns={missingReigns}
                   dynastiesById={dynastiesById}

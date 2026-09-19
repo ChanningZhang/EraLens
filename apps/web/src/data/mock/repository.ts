@@ -45,6 +45,16 @@ export const mockRepository: TimelineRepository = {
       scope: query.scope,
     });
   },
+  async getTimelineCatalog(scope?: string) {
+    const dynasties = scope
+      ? store.dynasties.filter((dynasty) => dynasty.scope === scope)
+      : store.dynasties;
+    return {
+      dynasties,
+      dynastyGroups: [],
+      dynastyLaneGroups: [],
+    };
+  },
   async getEntity(ref) {
     return buildEntityDetail(store, ref);
   },

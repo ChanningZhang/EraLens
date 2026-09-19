@@ -1,4 +1,4 @@
-import { absMonth, COLOR_TOKENS, type Dynasty, type Reign } from "@eralens/shared";
+import { absMonth, type Dynasty, type Reign } from "@eralens/shared";
 
 /** Synthetic bulk data for performance validation (not shown in UI labels). */
 export function generateBulkReigns(count = 2200): Reign[] {
@@ -48,7 +48,6 @@ export function generateBulkDynasties(count = 80): Dynasty[] {
       startAbs: absMonth(startYear, 1),
       endAbs: absMonth(endYear, 12),
       precision: "year",
-      colorToken: COLOR_TOKENS[i % COLOR_TOKENS.length]!,
     });
   }
   return dynasties;

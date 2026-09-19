@@ -1,4 +1,6 @@
 import { isNonOrthodoxLine } from "./claimTracks";
+import { orderDynastiesForLanes } from "./dynastyClusterGroups";
+import { collapseDynastyLaneGroups } from "./dynastyLaneGroups";
 import {
   isOrthodoxAt,
   isOrthodoxReign,
@@ -9,10 +11,11 @@ import {
   COLOR_TOKENS,
   COLOR_VALUES,
   type ColorToken,
+  type Dynasty,
+  type DynastyGroup,
+  type DynastyLaneGroup,
   type Reign,
 } from "./schema";
-
-const LOOKBACK = 3;
 
 export const ORTHODOX_COLOR_TOKEN: ColorToken = "gold";
 
@@ -45,32 +48,12 @@ export function colorTokenDistance(a: ColorToken, b: ColorToken): number {
   return rgbDistance(TOKEN_RGB[a], TOKEN_RGB[b]);
 }
 
-function scoreToken(token: ColorToken, recent: ColorToken[]): number {
-  if (recent.length === 0) return 0;
-  return Math.min(...recent.map((prev) => colorTokenDistance(token, prev)));
-}
-
-function pickBestToken(recent: ColorToken[]): ColorToken {
-  let best = ASSIGNABLE_COLOR_TOKENS[0]!;
-  let bestScore = -1;
-
-  for (const token of ASSIGNABLE_COLOR_TOKENS) {
-    const score = scoreToken(token, recent);
-    if (score > bestScore) {
-      bestScore = score;
-      best = token;
-    }
+function hashDynastyId(dynastyId: string): number {
+  let hash = 0;
+  for (let index = 0; index < dynastyId.length; index += 1) {
+    hash = (hash * 33 + dynastyId.charCodeAt(index)) | 0;
   }
-
-  const previous = recent.at(-1);
-  if (previous && best === previous) {
-    const alternative = ASSIGNABLE_COLOR_TOKENS
-      .filter((token) => token !== previous)
-      .sort((a, b) => colorTokenDistance(b, previous) - colorTokenDistance(a, previous))[0];
-    if (alternative) return alternative;
-  }
-
-  return best;
+  return Math.abs(hash);
 }
 
 function compareDynastyStart(
@@ -80,28 +63,100 @@ function compareDynastyStart(
   return a.startAbs - b.startAbs || a.id.localeCompare(b.id);
 }
 
-type DynastyColorInput = OrthodoxDynasty & { colorToken: ColorToken };
+/** Stable fallback when a dynasty is not in the current lane color map. */
+export function fallbackLaneColorToken(dynastyId: string): ColorToken {
+  return ASSIGNABLE_COLOR_TOKENS[hashDynastyId(dynastyId) % ASSIGNABLE_COLOR_TOKENS.length]!;
+}
 
 /**
- * Runtime display color for a dynasty. Uses the persisted token so panning
- * never changes colors when timeline data is loaded in chunks.
- * When `atAbs` is given and the dynasty is orthodox at that time, returns gold.
+ * Assign display colors for an ordered dynasty list. Walks the 24-color
+ * palette in lane order so long clusters (e.g. 十六国) get many distinct hues
+ * instead of alternating among the last few unused slots.
+ */
+export function assignLaneColorTokens(
+  ordered: ReadonlyArray<{ id: string }>,
+): Map<string, ColorToken> {
+  const assigned = new Map<string, ColorToken>();
+  const paletteSize = ASSIGNABLE_COLOR_TOKENS.length;
+  if (ordered.length === 0 || paletteSize === 0) return assigned;
+
+  const startOffset = hashDynastyId(ordered[0]!.id) % paletteSize;
+
+  for (let index = 0; index < ordered.length; index += 1) {
+    assigned.set(
+      ordered[index]!.id,
+      ASSIGNABLE_COLOR_TOKENS[(startOffset + index) % paletteSize]!,
+    );
+  }
+
+  return assigned;
+}
+
+/** @deprecated Use assignLaneColorTokens — kept for tests and tooling. */
+export const assignDistinctColorTokens = assignLaneColorTokens;
+
+/**
+ * Build a color map from chronologically ordered dynasties. For offline
+ * previews.
+ */
+export function buildDynastyColorMap(
+  dynasties: ReadonlyArray<{ id: string; startAbs: number }>,
+): Map<string, ColorToken> {
+  const sorted = [...dynasties].sort(compareDynastyStart);
+  return assignLaneColorTokens(sorted);
+}
+
+/**
+ * Stable per-dynasty lane colors from the full catalog. Uses the same lane
+ * collapse and ordering rules as the timeline, but does not depend on the
+ * current viewport — panning will not recolor rows.
+ */
+export function buildStableLaneColorMap(
+  dynasties: readonly Dynasty[],
+  dynastyGroups: readonly DynastyGroup[] = [],
+  dynastyLaneGroups: readonly DynastyLaneGroup[] = [],
+): Map<string, ColorToken> {
+  const catalogById = new Map(dynasties.map((dynasty) => [dynasty.id, dynasty]));
+  const collapsed = collapseDynastyLaneGroups(
+    [...dynasties],
+    catalogById,
+    dynastyLaneGroups,
+  );
+  const ordered = orderDynastiesForLanes(collapsed, dynastyGroups);
+  const map = assignLaneColorTokens(ordered);
+
+  for (const group of dynastyLaneGroups) {
+    const token = map.get(group.primaryDynastyId);
+    if (!token) continue;
+    for (const dynastyId of group.phaseDynastyIds) {
+      map.set(dynastyId, token);
+    }
+  }
+
+  return map;
+}
+
+/**
+ * Runtime display color for a dynasty lane. Uses the assigned lane token;
+ * orthodox windows still override to gold when `atAbs` is given.
  */
 export function resolveDynastyColorToken(
-  dynasty: DynastyColorInput,
+  dynasty: OrthodoxDynasty,
+  laneColorToken: ColorToken,
   atAbs?: number,
 ): ColorToken {
   if (atAbs != null && isOrthodoxAt(dynasty, atAbs)) {
     return ORTHODOX_COLOR_TOKEN;
   }
-  return dynasty.colorToken;
+  return laneColorToken;
 }
 
 export function resolveDynastyColorValue(
-  dynasty: DynastyColorInput,
+  dynasty: OrthodoxDynasty,
+  laneColorToken: ColorToken,
   atAbs?: number,
 ): string {
-  return COLOR_VALUES[resolveDynastyColorToken(dynasty, atAbs)];
+  return COLOR_VALUES[resolveDynastyColorToken(dynasty, laneColorToken, atAbs)];
 }
 
 /**
@@ -110,26 +165,25 @@ export function resolveDynastyColorValue(
  * orthodox cutoff (e.g. 元惠宗 1368 after Yuan orthodox ends).
  */
 export function resolveReignColorToken(
-  dynasty: DynastyColorInput & { endAbs: number },
+  dynasty: OrthodoxDynasty & { endAbs: number },
   reign: Pick<Reign, "startAbs" | "endAbs" | "claimTrack" | "claimRole">,
+  laneColorToken: ColorToken,
 ): ColorToken {
   if (isOrthodoxReign(dynasty, reign)) return ORTHODOX_COLOR_TOKEN;
-  // Parallel / rival markers keep the lane 本色 even inside an orthodox window.
-  if (isNonOrthodoxLine(reign)) return dynasty.colorToken;
+  if (isNonOrthodoxLine(reign)) return laneColorToken;
   const orthodoxEnd = resolveOrthodoxEndAbs(dynasty);
-  // Post-orthodox reigns (端宗/帝昺, 元惠宗) keep the dynasty base token, not
-  // the cutoff month's orthodox-at gold used for the lane chip.
   if (orthodoxEnd != null && reign.startAbs >= orthodoxEnd) {
-    return dynasty.colorToken;
+    return laneColorToken;
   }
-  return resolveDynastyColorToken(dynasty, reign.startAbs);
+  return resolveDynastyColorToken(dynasty, laneColorToken, reign.startAbs);
 }
 
 export function resolveReignColorValue(
-  dynasty: DynastyColorInput & { endAbs: number },
+  dynasty: OrthodoxDynasty & { endAbs: number },
   reign: Pick<Reign, "startAbs" | "endAbs" | "claimTrack" | "claimRole">,
+  laneColorToken: ColorToken,
 ): string {
-  return COLOR_VALUES[resolveReignColorToken(dynasty, reign)];
+  return COLOR_VALUES[resolveReignColorToken(dynasty, reign, laneColorToken)];
 }
 
 export function isOrthodoxDisplayAt(
@@ -137,37 +191,4 @@ export function isOrthodoxDisplayAt(
   atAbs: number,
 ): boolean {
   return isOrthodoxAt(dynasty, atAbs);
-}
-
-/**
- * Build a color map from an ordered dynasty list. Intended for import scripts
- * or other offline tooling — not for viewport rendering, because chunked
- * timeline loading only exposes a subset of dynasties at a time.
- */
-export function buildDynastyColorMap(
-  dynasties: ReadonlyArray<{ id: string; colorToken: ColorToken; startAbs: number }>,
-): Map<string, ColorToken> {
-  const sorted = [...dynasties].sort(compareDynastyStart);
-  return assignDistinctColorTokens(sorted);
-}
-
-/**
- * Reassign display colors for chronologically ordered dynasties so adjacent
- * lanes stay visually distinct.
- */
-export function assignDistinctColorTokens(
-  ordered: ReadonlyArray<{ id: string; colorToken: ColorToken }>,
-): Map<string, ColorToken> {
-  const assigned = new Map<string, ColorToken>();
-  const recent: ColorToken[] = [];
-
-  for (const dynasty of ordered) {
-    const token =
-      recent.length === 0 ? dynasty.colorToken : pickBestToken(recent);
-    assigned.set(dynasty.id, token);
-    recent.push(token);
-    if (recent.length > LOOKBACK) recent.shift();
-  }
-
-  return assigned;
 }

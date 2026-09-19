@@ -120,6 +120,8 @@ writeImportPackage(__dirname, {
       { label: "金哀宗", url: "https://zh.wikipedia.org/wiki/金哀宗" },
       { label: "刘盆子", url: "https://zh.wikipedia.org/wiki/刘盆子" },
       { label: "段兴智", url: "https://zh.wikipedia.org/wiki/段兴智" },
+      { label: "溥仪出宫", url: "https://zh.wikipedia.org/wiki/%E8%BF%85%E6%B8%85%E7%9A%87%E5%AE%A4%E5%B0%8F%E6%9C%9D%E5%BB%B7" },
+      { label: "段祺瑞", url: "https://zh.wikipedia.org/wiki/%E6%AE%B5%E7%A5%BA%E7%91%9E" },
     ],
     notes: [
       "仅 person→person，kind∈killed|surrender|abdication|captured。",
@@ -136,6 +138,7 @@ writeImportPackage(__dirname, {
       "先降/俘后被杀：怀愍二帝、冉闵、慕容超、秃发傉檀、王衍、李煜等同时保留 capture/surrender 与 killed；前端优先显示 killed。",
       "十六国等农历月用寿星历 sxtwl 换公历：有日（李势三月十七、牧犍九月丙戌、石虎四月廿三）升日；仅月者取望日所在公历月。宝藏王九月＝668-10，耶律淳六月＝1122-07。",
       "石虎349年病死，旧目录误作冉闵所杀已删；改挂石鉴→冉闵（永和六年闰二月）。",
+      "溥仪 1924 出宫：退位后无单独 reign 卡，受害方仍挂宣统 reign，victimMaxLagMonths=156；接收方挂 11 月 24 日就任的段祺瑞临时执政（出宫当日黄郛摄行未建卡）。",
     ],
   },
 });

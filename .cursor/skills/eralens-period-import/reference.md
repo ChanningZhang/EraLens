@@ -439,9 +439,11 @@ node data/imports/lib/auditImperialAppellationFields.mjs
 
 后者列出 618+ 两庙谥字段皆 NULL 的在位；史称（末帝/后主等）留在 `title` 属正常，勿写入 `posthumous_name`。
 
-## color_token 轮换建议
+## color_token（入库占位）
 
-同一时期并存王朝按顺序分配，避免相邻行同色：ochre → indigo → moss → mineral → cinnabar → stone → grape → wisteria
+`dynasties.color_token` 为 DB NOT NULL 遗留列，导入时统一写 `ochre`（`sqlHelpers.mjs` 的 `LEGACY_COLOR_TOKEN`）。**泳道配色由前端运行时 `assignLaneColorTokens` 分配**，不要在 `generate.mjs` 里轮换或手填颜色。
+
+运行时色板 24 色（另加 orthodox `gold`）：cinnabar、mineral、ochre、indigo、moss、wisteria、grape、stone、jade、coral、plum、azure、amber、clay、sage、slate、crimson、bronze、rose、lime、navy、peacock、copper、mulberry。
 
 ## 常用 AbsMonth 验算
 

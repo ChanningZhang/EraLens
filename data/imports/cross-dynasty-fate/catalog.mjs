@@ -1142,6 +1142,16 @@ export function buildFateCatalog() {
       precision: "day",
     },
     {
+      id: "rel-puyi-duan-qirui-surrender",
+      fromPersonId: "puyi",
+      toPersonId: "duan-qirui",
+      kind: "surrender",
+      eventId: "puyi-leaves-forbidden-city",
+      resolveAt: () => ymDay(1924, 11, 5),
+      precision: "day",
+      victimMaxLagMonths: 156,
+    },
+    {
       id: "rel-zheng-keshuang-xuanye-surrender",
       fromPersonId: "zheng-keshuang",
       toPersonId: "xuanye",

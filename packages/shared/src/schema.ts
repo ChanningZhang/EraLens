@@ -47,6 +47,14 @@ export const ColorTokenSchema = z.enum([
   "clay",
   "sage",
   "slate",
+  "crimson",
+  "bronze",
+  "rose",
+  "lime",
+  "navy",
+  "peacock",
+  "copper",
+  "mulberry",
   "gold",
 ]);
 export type ColorToken = z.infer<typeof ColorTokenSchema>;
@@ -88,7 +96,8 @@ export const DynastySchema = z.object({
   startAbs: z.number(),
   endAbs: z.number(),
   precision: PrecisionSchema.default("year"),
-  colorToken: ColorTokenSchema,
+  /** Legacy DB placeholder; lane colors are assigned at render time. */
+  colorToken: ColorTokenSchema.optional(),
   /** AbsMonth from which this dynasty is displayed as orthodox (gold). Overrides built-in rules when set. */
   orthodoxFromAbs: z.number().optional(),
   /** AbsMonth after which orthodox (gold) display ends, even if the dynasty continues. */
@@ -297,10 +306,19 @@ export const TimelineSliceSchema = z.object({
   relations: z.array(RelationSchema).default([]),
 });
 
+/** Full dynasty catalog for stable lane-color assignment (no reigns/events). */
+export const TimelineCatalogSchema = z.object({
+  dynasties: z.array(DynastySchema),
+  dynastyGroups: z.array(DynastyGroupSchema).default([]),
+  dynastyLaneGroups: z.array(DynastyLaneGroupSchema).default([]),
+});
+export type TimelineCatalog = z.infer<typeof TimelineCatalogSchema>;
+
 export const EntityDetailSchema = z.object({
   ref: EntityRefSchema,
   title: z.string(),
   subtitle: z.string().optional(),
+  dynastyId: z.string().optional(),
   colorToken: ColorTokenSchema.optional(),
   facts: z.array(z.object({ label: z.string(), value: z.string() })).default([]),
   summary: z.string().optional(),
@@ -346,21 +364,29 @@ export type EntityDetail = z.infer<typeof EntityDetailSchema>;
 export type SearchHit = z.infer<typeof SearchHitSchema>;
 
 export const COLOR_VALUES: Record<ColorToken, string> = {
-  cinnabar: "#A8432F",
-  mineral: "#3A6B6E",
-  ochre: "#9A7B4F",
-  indigo: "#3C4E7A",
-  moss: "#5C6B4A",
-  wisteria: "#BE8A2C",
-  grape: "#6E4B5C",
-  stone: "#4A5E6B",
-  jade: "#3F8A62",
-  coral: "#C76A58",
-  plum: "#8B5C86",
-  azure: "#4F86A8",
-  amber: "#C8963E",
-  clay: "#B06E52",
-  sage: "#7D9172",
-  slate: "#636882",
+  cinnabar: "#D4382A",
+  mineral: "#1A8F8F",
+  ochre: "#C4922A",
+  indigo: "#2F4A9E",
+  moss: "#5A8F3C",
+  wisteria: "#9B6CC8",
+  grape: "#7A3565",
+  stone: "#4E6A82",
+  jade: "#1F9B62",
+  coral: "#E85D3B",
+  plum: "#9B3D8F",
+  azure: "#2A85C4",
+  amber: "#E09018",
+  clay: "#C25E40",
+  sage: "#6B9270",
+  slate: "#5B5E9C",
+  crimson: "#C41E3A",
+  bronze: "#9C7428",
+  rose: "#D14E86",
+  lime: "#7CAD1E",
+  navy: "#1B3568",
+  peacock: "#148F8F",
+  copper: "#B45A24",
+  mulberry: "#7A3F82",
   gold: "#C9A227",
 };

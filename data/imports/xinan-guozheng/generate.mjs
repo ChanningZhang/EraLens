@@ -10,7 +10,6 @@ import {
   dr,
   eventPoint,
   writeImportPackage,
-  nextColor,
   ym,
   successionPairs,
 } from "../lib/sqlHelpers.mjs";
@@ -66,7 +65,6 @@ const dynasties = [
     start: ym(-300),
     end: ym(-27),
     precision: "year",
-    colorToken: nextColor(),
     note: "战国时已有夜郎；汉武帝时夜郎侯多同，末王兴前27年被诛。君主在位年多失考，不强行拉满王朝跨度。",
   },
   {
@@ -78,7 +76,6 @@ const dynasties = [
     start: ym(-279),
     end: ym(-109),
     precision: "year",
-    colorToken: nextColor(),
     note: "楚将庄蹻入滇称王；武帝元封二年（前109）尝羌降汉，设益州郡。庄蹻与尝羌之间世系失考。",
   },
 ];

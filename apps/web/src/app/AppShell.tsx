@@ -113,7 +113,7 @@ export function AppShell() {
       <header className={styles.header}>
         <div className={styles.brand}>
           <h1 className={styles.brandTitle}>EraLens</h1>
-          <p className={styles.brandSub}>历史时间轴</p>
+          <p className={styles.brandSub}>历史透镜</p>
         </div>
         <div className={styles.searchWrap}>
           <input

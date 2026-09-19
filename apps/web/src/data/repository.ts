@@ -6,6 +6,7 @@ import type {
   Person,
   Reign,
   SearchHit,
+  TimelineCatalog,
   TimelineSlice,
 } from "@eralens/shared";
 
@@ -18,6 +19,7 @@ export interface TimelineQuery {
 
 export interface TimelineRepository {
   getTimeline(q: TimelineQuery): Promise<TimelineSlice>;
+  getTimelineCatalog(scope?: string): Promise<TimelineCatalog>;
   getEntity(ref: EntityRef): Promise<EntityDetail>;
   search(term: string): Promise<SearchHit[]>;
   getBounds(): Promise<{ minAbs: number; maxAbs: number }>;

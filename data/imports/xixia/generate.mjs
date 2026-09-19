@@ -133,7 +133,6 @@ const dynasties = [
     start: ym(982),
     end: ym(1227),
     precision: "year",
-    colorToken: "grape",
     note: "党项李氏，982年李继迁叛宋自立；1038年李元昊称帝，国号大夏；1227年蒙古攻灭。",
   },
 ];

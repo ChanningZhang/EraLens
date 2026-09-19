@@ -55,15 +55,6 @@ function dr(dynastyId, personId, title, posthumous, temple, sy, ey, preferred = 
   return dynastyReign(dynastyId, personId, title, posthumous, temple, sy, ey, preferred);
 }
 
-const colorTokens = [
-  "ochre", "azure", "cinnabar", "jade", "indigo", "coral",
-  "moss", "plum", "mineral", "amber", "grape", "sage",
-  "stone", "clay", "wisteria", "slate",
-];
-let colorIdx = 0;
-function nextColor() {
-  return colorTokens[colorIdx++ % colorTokens.length];
-}
 
 // ── persons ────────────────────────────────────────────────────────────────
 
@@ -89,7 +80,6 @@ const dynasties = [
     start: ym(1206),
     end: ym(1271, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "1206年铁木真称成吉思汗建国；1271年忽必烈定国号大元，中原史语境转入元朝。帝国诸汗国此后分治。",
   },
 ];

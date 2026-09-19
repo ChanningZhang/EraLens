@@ -13,7 +13,7 @@ import { applyFeudalClanMetadata } from "../lib/applyFeudalClanMetadata.mjs";
 import { validateReignDateConfidenceSeams } from "../lib/validateReignSeams.mjs";
 import { ORTHODOX_FROM_START } from "../lib/orthodoxDynasties.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
-import { normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
+import { LEGACY_COLOR_TOKEN, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -285,15 +285,6 @@ const persons = [...personById.values()];
 
 // ── dynasties (feudal states; id suffix avoids later homonymous dynasties) ──
 
-const colorTokens = [
-  "ochre", "azure", "cinnabar", "jade", "indigo", "coral",
-  "moss", "plum", "mineral", "amber", "grape", "sage",
-  "stone", "clay", "wisteria", "slate",
-];
-let colorIdx = 0;
-function nextColor() {
-  return colorTokens[colorIdx++ % colorTokens.length];
-}
 
 const dynasties = [
   {
@@ -305,7 +296,6 @@ const dynasties = [
     start: ym(-1046),
     end: ym(-221, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "周武王封姜太公于齐；前386年田氏代齐；前221年秦灭齐。",
   },
   {
@@ -317,7 +307,6 @@ const dynasties = [
     start: ym(-1042),
     end: ym(-349, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "周成王封叔虞于唐，改国号晋；前403年三家分晋；前376年公室被废、另立傀儡君，前349年静公被杀而国亡。",
   },
   {
@@ -329,7 +318,6 @@ const dynasties = [
     start: ym(-1042),
     end: ym(-223, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "周成王封熊绎于楚；春秋战国南方大国，前223年秦灭楚。",
   },
   {
@@ -341,7 +329,6 @@ const dynasties = [
     start: ym(-1044),
     end: ym(-222, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "周武王封召公奭于燕；战国七雄之一，前222年秦灭燕。",
   },
   {
@@ -353,7 +340,6 @@ const dynasties = [
     start: ym(-1034),
     end: ym(-286, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "周成王封微子启于宋；前286年齐湣王灭宋。",
   },
   {
@@ -365,7 +351,6 @@ const dynasties = [
     start: ym(-1042),
     end: ym(-256, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "周武王封周公旦于鲁；孔子故乡，前256年楚灭鲁。",
   },
   {
@@ -377,7 +362,6 @@ const dynasties = [
     start: ym(-1040),
     end: ym(-209, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "周成王封康叔封于卫；小国久存，秦二世时废。",
   },
   {
@@ -389,7 +373,6 @@ const dynasties = [
     start: ym(-806),
     end: ym(-375, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "周厉王少子友封于郑，后东迁新郑；前375年韩灭郑。",
   },
   {
@@ -401,7 +384,6 @@ const dynasties = [
     start: ym(-1046),
     end: ym(-487, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "周武王封弟振铎于曹；前487年宋灭曹。",
   },
   {
@@ -413,7 +395,6 @@ const dynasties = [
     start: ym(-585),
     end: ym(-473, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "春秋东南强国，阖闾、夫差时盛；前473年越灭吴。",
   },
   {
@@ -425,7 +406,6 @@ const dynasties = [
     start: ym(yueSpan.startYear),
     end: ym(yueSpan.endYear, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "东南古国。传说夏少康庶子无余始封会稽，中间世系多缺载；有年表自允常。勾践灭吴后北进；前306年楚破越。",
   },
   {
@@ -437,7 +417,6 @@ const dynasties = [
     start: ym(zhongshanSpan.startYear),
     end: ym(zhongshanSpan.endYear, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "鲜虞白狄所建。有年表自文公、武公；前406年后亡国，桓公复兴。前296年赵灭中山。",
   },
   {
@@ -449,7 +428,6 @@ const dynasties = [
     start: ym(-403),
     end: ym(-230, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "三家分晋后韩氏立国，前403年周天子册命；前230年秦灭韩。",
   },
   {
@@ -461,7 +439,6 @@ const dynasties = [
     start: ym(-403),
     end: ym(-222, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "三家分晋后赵氏立国；前222年秦灭赵。",
   },
   {
@@ -473,7 +450,6 @@ const dynasties = [
     start: ym(-403),
     end: ym(-225, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "三家分晋后魏氏立国，都大梁；前225年秦灭魏。与三国曹魏 wei 区分。",
   },
   // Upsert qin: extend feudal-state span back to秦襄公，统一帝国段仍由 qin-han 包维护
@@ -486,7 +462,6 @@ const dynasties = [
     start: ym(-778),
     end: ym(-207, 12),
     precision: "year",
-    colorToken: "ochre",
     note: "前778年秦襄公即位；前770年护周平王东迁列为诸侯；前221年嬴政称帝统一；前207年子婴降，秦亡。",
   },
 ];
@@ -730,7 +705,7 @@ function dynastySql(d) {
 ) VALUES (
   ${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlStr(d.ancestralXing ?? null)}, ${sqlStr(d.clanShi ?? null)}, ${sqlArray(d.altNames)}, ${sqlStr(d.scope)}, ${sqlStr(d.region)},
   ${d.start.year}, ${d.start.month}, ${d.end.year}, ${d.end.month},
-  ${d.start.abs}, ${d.end.abs}, ${sqlStr(d.precision)}, ${sqlStr(d.colorToken)}, ${orthodoxFromAbs ?? "NULL"}, NULL,
+  ${d.start.abs}, ${d.end.abs}, ${sqlStr(d.precision)}, ${sqlStr(LEGACY_COLOR_TOKEN)}, ${orthodoxFromAbs ?? "NULL"}, NULL,
   ${sqlStr(d.note)}
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -745,7 +720,6 @@ ON CONFLICT (id) DO UPDATE SET
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
   orthodox_from_abs = EXCLUDED.orthodox_from_abs,
   note = EXCLUDED.note;`;
 }

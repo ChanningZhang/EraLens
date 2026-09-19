@@ -108,7 +108,6 @@ const dynasties = [
     start: ym(-206),
     end: ym(-202, 12),
     precision: "year",
-    colorToken: "indigo",
     note: "项羽分封后自立西楚霸王，都彭城；垓下败亡，政权终结。",
   },
   {
@@ -120,7 +119,6 @@ const dynasties = [
     start: ym(-209, 9),
     end: ym(8, 11),
     precision: "year",
-    colorToken: "mineral",
     note: "前209年九月沛公起兵于沛县；前202年二月称帝定都长安。孺子婴被废、王莽代汉，前8年十一月西汉终结。",
   },
   {
@@ -132,7 +130,6 @@ const dynasties = [
     start: ym(9),
     end: ym(23, 10),
     precision: "year",
-    colorToken: "moss",
     note: "王莽篡汉自立，国号新；地皇四年绿林攻入长安，王莽被杀。",
   },
   {
@@ -144,7 +141,6 @@ const dynasties = [
     start: ym(23),
     end: ym(25, 10),
     precision: "year",
-    colorToken: "wisteria",
     note: "绿林军拥立更始帝刘玄，复汉号；赤眉入长安后刘玄降被杀。",
   },
   {
@@ -156,7 +152,6 @@ const dynasties = [
     start: ym(25),
     end: ym(220, 12),
     precision: "year",
-    colorToken: "cinnabar",
     note: "光武帝刘秀建立，定都洛阳；献帝禅让曹丕，东汉终结。",
   },
 ];

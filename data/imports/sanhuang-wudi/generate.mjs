@@ -140,7 +140,6 @@ const dynasties = [
     start: ym(-2804),
     end: ym(-2465, 12),
     precision: "year",
-    colorToken: "stone",
     note: "司马贞《三皇本纪》：伏羲、女娲、神农。在位年取《帝王世纪》伏羲一百十年、神农一百二十年；女娲无年，与伏羲同长。",
   },
   {
@@ -152,7 +151,6 @@ const dynasties = [
     start: ym(-2464),
     end: ym(-2071, 12),
     precision: "year",
-    colorToken: "wisteria",
     note: "《史记·五帝本纪》世系，含帝挚过渡。相对在位年下锚夏始前2071，绝对年代为传说推算。",
   },
 ];

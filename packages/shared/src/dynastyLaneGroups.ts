@@ -1,3 +1,4 @@
+import { isOrthodoxAt, type OrthodoxDynasty } from "./orthodoxDynasties";
 import type { Dynasty, DynastyLaneGroup, Reign } from "./schema";
 import { absMonth } from "./time";
 
@@ -76,6 +77,28 @@ export function resolveFrozenLaneLabel(
   if (!group) return dynasty.name;
   const phaseId = resolveActivePhaseDynastyId(group, dynastiesById, labelAnchorAbs);
   return dynastiesById.get(phaseId)?.name ?? dynasty.name;
+}
+
+type FrozenLaneOrthodoxDynasty = OrthodoxDynasty & Pick<Dynasty, "id" | "startAbs">;
+
+/**
+ * Frozen name chip gold uses the same center-guide abs as the phase label.
+ * Lane floor, fate lines, and gap cards stay on the persisted token.
+ */
+export function isFrozenLaneOrthodox(
+  dynasty: FrozenLaneOrthodoxDynasty,
+  dynastiesById: ReadonlyMap<string, FrozenLaneOrthodoxDynasty>,
+  labelAnchorAbs: number,
+  laneGroups: readonly DynastyLaneGroup[],
+): boolean {
+  const group = getDynastyLaneGroup(dynasty.id, laneGroups);
+  const active =
+    group == null
+      ? dynasty
+      : dynastiesById.get(
+          resolveActivePhaseDynastyId(group, dynastiesById, labelAnchorAbs),
+        ) ?? dynasty;
+  return isOrthodoxAt(active, labelAnchorAbs);
 }
 
 function toDynastyMap(dynasties: Dynasty[] | ReadonlyMap<string, Dynasty>): Map<string, Dynasty> {

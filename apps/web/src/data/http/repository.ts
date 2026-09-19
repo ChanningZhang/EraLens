@@ -1,6 +1,7 @@
 import {
   EntityDetailSchema,
   SearchHitSchema,
+  TimelineCatalogSchema,
   TimelineSliceSchema,
   type EntityDetail,
   type EntityRef,
@@ -8,6 +9,7 @@ import {
   type Person,
   type Reign,
   type SearchHit,
+  type TimelineCatalog,
   type TimelineSlice,
 } from "@eralens/shared";
 import type { TimelineQuery, TimelineRepository } from "../repository";
@@ -32,6 +34,14 @@ export const httpRepository: TimelineRepository = {
       ...(query.scope ? { scope: query.scope } : {}),
     });
     return fetchJson(`/timeline?${params}`, TimelineSliceSchema);
+  },
+  async getTimelineCatalog(scope?: string): Promise<TimelineCatalog> {
+    const params = new URLSearchParams(scope ? { scope } : {});
+    const query = params.toString();
+    return fetchJson(
+      `/timeline-catalog${query ? `?${query}` : ""}`,
+      TimelineCatalogSchema,
+    );
   },
   async getEntity(ref: EntityRef): Promise<EntityDetail> {
     return fetchJson(`/entities/${ref.type}/${ref.id}`, EntityDetailSchema);

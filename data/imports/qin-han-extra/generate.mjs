@@ -10,7 +10,6 @@ import {
   dr,
   eventPoint,
   writeImportPackage,
-  nextColor,
   ym,
   successionPairs,
 } from "../lib/sqlHelpers.mjs";
@@ -42,7 +41,6 @@ const dynasties = [
     start: ym(-203),
     end: ym(-111),
     precision: "year",
-    colorToken: nextColor(),
     note: "赵佗据岭南自立，前203年建国；前111年汉武帝遣军灭南越，设九郡。",
   },
   {
@@ -54,7 +52,6 @@ const dynasties = [
     start: ym(23),
     end: ym(27),
     precision: "year",
-    colorToken: nextColor(),
     note: "新莽末赤眉起义军政权，樊崇为首，25年立刘盆子为帝，27年降刘秀。",
   },
 ];

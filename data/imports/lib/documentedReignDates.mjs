@@ -234,6 +234,7 @@ export const DOCUMENTED_REIGN_DATES = {
   "reign-feng-guozhang-roc": { start: [1917, 8, 1], end: [1918, 10, 10] },
   "reign-xu-shichang-roc": { start: [1918, 10, 10], end: [1922, 6, 2] },
   "reign-cao-kun-roc": { start: [1923, 10, 10], end: [1924, 11, 2] },
+  "reign-duan-qirui-roc": { start: [1924, 11, 24], end: [1926, 4, 20] },
   "reign-zhang-zuolin-roc": { start: [1927, 6, 18], end: [1928, 6, 4] },
   "reign-lin-sen-roc": { start: [1932, 1, 1], end: [1943, 8, 1] },
   "reign-jiang-jieshi-chairman-roc": { start: [1943, 8, 1], end: [1948, 5, 20] },

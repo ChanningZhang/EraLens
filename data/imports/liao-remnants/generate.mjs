@@ -12,7 +12,6 @@ import {
   eventPoint,
   eventRange,
   writeImportPackage,
-  nextColor,
   successionPairs,
   ym,
 } from "../lib/sqlHelpers.mjs";
@@ -55,7 +54,6 @@ const dynasties = [
     start: ym(1124),
     end: ym(1218, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "耶律大石辽亡后西迁，1124年镇州称王；1218年蒙古攻灭。",
   },
   {
@@ -67,7 +65,6 @@ const dynasties = [
     start: ym(1122),
     end: ym(1123, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "1122年耶律淳于燕京称帝，1123年旋亡；萧德妃称制不另建 reign。",
   },
   {
@@ -79,7 +76,6 @@ const dynasties = [
     start: ym(1213),
     end: ym(1269, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "1213年耶律留哥称辽王；1269年耶律古乃去职，广宁并入东京。",
   },
 ];

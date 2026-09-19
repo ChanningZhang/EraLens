@@ -405,7 +405,6 @@ const dynasties = [
     start: ym(-2070),
     end: ym(-1600, 12),
     precision: "year",
-    colorToken: "ochre",
     note: "王朝窗口取断代工程前2070–前1600。各王起迄依今本《竹书纪年》在位年数自夏始顺推（桀用《帝王世纪》五十二年以接商汤），全部标 interpolated。相、少康之间有穷后羿、寒浞占夏行而非夏后正统。",
   },
   {
@@ -417,7 +416,6 @@ const dynasties = [
     start: ym(-1600),
     end: ym(-1046),
     precision: "year",
-    colorToken: "mineral",
     note: "断代工程：商始约前1600年，盘庚迁殷约前1300年，武王克商前1046年。",
   },
   {
@@ -429,7 +427,6 @@ const dynasties = [
     start: ym(-1046),
     end: ym(-771, 12),
     precision: "year",
-    colorToken: "indigo",
     note: "武王克商至犬戎破镐。列王年取夏商周断代工程《夏商周年表》。",
   },
   {
@@ -441,7 +438,6 @@ const dynasties = [
     start: ym(-770),
     end: ym(-256, 12),
     precision: "year",
-    colorToken: "moss",
     note: "平王东迁至秦灭周。前770–前750年与携王二王并立，后世以平王为正统（claim_track 主线）。",
   },
 ];

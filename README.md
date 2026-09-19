@@ -161,7 +161,7 @@ pnpm db:down      # 停止容器
 
 ### 相续泳道合并
 
-`dynasty_lane_groups` 表（包 `data/imports/dynasty-lane-groups/`）把前后相续的政权压成一行；运行时 `dynastyLaneGroups.ts` 只读 API 下发的配置，不再硬编码组列表。左侧冻结名随**舞台中线**切换，例如：
+`dynasty_lane_groups` 表（包 `data/imports/dynasty-lane-groups/`）把前后相续的政权压成一行；运行时 `dynastyLaneGroups.ts` 只读 API 下发的配置，不再硬编码组列表。左侧冻结名与名牌金色随**舞台中线**切换，例如：
 
 - 西周 → 东周
 - 蒙古帝国 → 元（金色正统仍按元的 `orthodox_*` 截断，北元段不上金）
@@ -189,7 +189,7 @@ pnpm db:down      # 停止容器
 
 ## 正统金色
 
-金色是运行时覆盖，王朝行仍保留 `color_token` 本色（色板含 cinnabar、mineral、ochre、indigo、moss、wisteria、grape、stone、jade、coral、plum、azure、amber、clay、sage、slate）。`gold` 不作为入库本色。
+金色是运行时覆盖。泳道本色由前端 `assignLaneColorTokens` 按视口泳道顺序分配（24 色：cinnabar、mineral、ochre、indigo、moss、wisteria、grape、stone、jade、coral、plum、azure、amber、clay、sage、slate、crimson、bronze、rose、lime、navy、peacock、copper、mulberry）；库内 `color_token` 仅为 NOT NULL 占位。`gold` 不作为泳道本色。左侧冻结名牌在舞台中线落入该行正统窗口时叠金，移出后回到本色；命运虚线与泳道底始终本色。
 
 **运行时**只读库字段 `orthodox_from_abs` / `orthodox_end_abs`（`packages/shared/src/orthodoxDynasties.ts` 不再用内置表 fallback）。**导入**时用 `data/imports/lib/orthodoxDynasties.mjs` 烘焙到各包 `dynasties` INSERT。并立 track 不上金；延迟起算的 12 月宽限（如清入关）仍是 runtime 抽象规则。
 
@@ -237,7 +237,7 @@ pnpm db:down      # 停止容器
 - 底部标尺拖拽平移；触控板两指横向平移（已避免与浏览器前进/后退、系统通知中心冲突）
 - `Cmd/Ctrl + 滚轮` 或触控板捏合缩放
 - `←/→` 步进，`Shift+←/→` 大步，`Home/End` 跳数据首尾
-- 舞台随鼠标的竖向参考线；泳道中央另有中线，用于切换冻结王朝名
+- 舞台随鼠标的竖向参考线；泳道中央另有中线，用于切换冻结王朝名，并决定名牌是否叠正统金
 - 悬停卡片：起止年（compact，无「公元」）与时长；年精度不展示占位月。年精度点事件落在该年 12 月，与泳道年桶右缘、命运线对齐。
 - 悬停命运虚线：`甲 → 乙（被杀|投降|禅让|被俘）`
 - 点击皇帝 / 事件 / 人物 / 左侧王朝名：右侧抽屉详情（可拖宽，双击分隔条复位）

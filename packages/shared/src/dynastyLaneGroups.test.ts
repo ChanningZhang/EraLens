@@ -3,6 +3,7 @@ import { absMonth } from "./time";
 import {
   collapseDynastyLaneGroups,
   collectLaneReigns,
+  isFrozenLaneOrthodox,
   layoutBucketsForLaneReigns,
   reignsInLayoutBucket,
   resolveFrozenLaneLabel,
@@ -221,6 +222,36 @@ describe("dynastyLaneGroups", () => {
     expect(leftEdgeAbs).toBeLessThan(yuanStart);
     expect(resolveFrozenLaneLabel(yuan, byId, leftEdgeAbs, LANE_GROUPS)).toBe("蒙古帝国");
     expect(resolveFrozenLaneLabel(yuan, byId, centerAbs, LANE_GROUPS)).toBe("元");
+  });
+
+  it("paints frozen-chip gold from the same center abs as the phase label", () => {
+    const yuanOrthodox = {
+      ...yuan,
+      orthodoxFromAbs: absMonth(1276, 2),
+    };
+    const byId = new Map([
+      [mongolEmpire.id, mongolEmpire],
+      [yuanOrthodox.id, yuanOrthodox],
+    ]);
+
+    expect(isFrozenLaneOrthodox(yuanOrthodox, byId, absMonth(1250), LANE_GROUPS)).toBe(
+      false,
+    );
+    expect(isFrozenLaneOrthodox(yuanOrthodox, byId, absMonth(1271, 12), LANE_GROUPS)).toBe(
+      false,
+    );
+    expect(isFrozenLaneOrthodox(yuanOrthodox, byId, absMonth(1276, 2), LANE_GROUPS)).toBe(
+      true,
+    );
+    expect(isFrozenLaneOrthodox(yuanOrthodox, byId, absMonth(1300), LANE_GROUPS)).toBe(
+      true,
+    );
+    expect(isFrozenLaneOrthodox(yuanOrthodox, byId, absMonth(1368), LANE_GROUPS)).toBe(
+      true,
+    );
+    expect(isFrozenLaneOrthodox(yuanOrthodox, byId, absMonth(1369), LANE_GROUPS)).toBe(
+      false,
+    );
   });
 
   it("collapses mongol empire and yuan into one lane anchored on yuan", () => {

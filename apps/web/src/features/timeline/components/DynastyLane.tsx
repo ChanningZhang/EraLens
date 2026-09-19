@@ -3,12 +3,14 @@ import {
   TIMELINE_RAIL_INSET_PX,
   TIMELINE_RAIL_LABEL_WIDTH_PX,
   getDynastyLaneGroup,
+  isFrozenLaneOrthodox,
   isOrthodoxReign,
   overlapsOrthodoxSpan,
   resolveActivePhaseDynastyId,
   resolveDynastyColorValue,
   resolveFrozenLaneLabel,
   resolveReignColorValue,
+  type ColorToken,
   type Dynasty,
   type DynastyLaneGroup,
   type Reign,
@@ -31,6 +33,7 @@ import styles from "./DynastyLane.module.css";
 
 type Props = {
   dynasty: PlacedDynasty;
+  laneColorToken: ColorToken;
   reigns: Reign[];
   missingReigns: Reign[];
   dynastiesById: Map<string, Dynasty>;
@@ -42,6 +45,7 @@ type Props = {
 
 export function DynastyLane({
   dynasty,
+  laneColorToken,
   reigns,
   missingReigns,
   dynastiesById,
@@ -66,13 +70,18 @@ export function DynastyLane({
     labelAnchorAbs,
     laneGroups,
   );
+  const frozenOrthodox = isFrozenLaneOrthodox(
+    dynasty,
+    dynastiesById,
+    labelAnchorAbs,
+    laneGroups,
+  );
   const selected =
     selection.selected?.type === "dynasty" &&
     selection.selected.id === activePhaseDynasty.id;
-  // Lane chip uses the persisted dynasty token so it stays aligned with
-  // post-orthodox rulers (南宋端宗/帝昺, 元惠宗, …). Orthodox gold is
-  // reserved for individual reign cards via isOrthodoxReign.
-  const laneColor = resolveDynastyColorValue(activePhaseDynasty);
+  // Lane floor / gap cards stay on the persisted token. The frozen name
+  // chip overlays orthodox gold when the center guide sits in the window.
+  const laneColor = resolveDynastyColorValue(activePhaseDynasty, laneColorToken);
   const { items, rowCount, rowHeights } = assignReignStacks(reigns, laneGroups);
   const height = dynastyLaneHeight(rowHeights);
   const barHeight = dynastyBarHeight(rowHeights);
@@ -91,7 +100,11 @@ export function DynastyLane({
     >
       <button
         type="button"
-        className={[styles.frozenLabel, selected ? styles.selected : ""]
+        className={[
+          styles.frozenLabel,
+          selected ? styles.selected : "",
+          frozenOrthodox ? "orthodoxGold" : "",
+        ]
           .filter(Boolean)
           .join(" ")}
         style={rowCount > 1 ? { top: "50%", transform: "translateY(-50%)" } : undefined}
@@ -144,7 +157,11 @@ export function DynastyLane({
                 key={reign.id}
                 reign={reign}
                 dynasty={reignDynasty as Dynasty}
-                color={resolveReignColorValue(reignDynasty as Dynasty, reign)}
+                color={resolveReignColorValue(
+                  reignDynasty as Dynasty,
+                  reign,
+                  laneColorToken,
+                )}
                 reigns={reigns}
                 personName={personNames.get(reign.personId)}
                 personClan={personClans.get(reign.personId)}

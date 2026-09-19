@@ -11,7 +11,6 @@ import {
   dr,
   eventPoint,
   successionPairs,
-  nextColor,
   writeImportPackage,
 } from "../lib/sqlHelpers.mjs";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
@@ -118,7 +117,6 @@ const dynasties = [
     start: ym(618),
     end: ym(842),
     precision: "year",
-    colorToken: nextColor(),
     note: "618年南日松赞统一青藏高原诸部；842年朗达玛被杀，帝国分裂。",
   },
   {
@@ -130,7 +128,6 @@ const dynasties = [
     start: ym(329),
     end: ym(663),
     precision: "year",
-    colorToken: nextColor(),
     note: "329年叶延确立国号；663年吐蕃灭之，诺曷钵投唐。",
   },
   {
@@ -142,7 +139,6 @@ const dynasties = [
     start: ym(-37),
     end: ym(668),
     precision: "year",
-    colorToken: nextColor(),
     note: "前37年朱蒙建国；668年唐将薛仁贵等灭之，宝藏王被俘。",
   },
   {
@@ -154,7 +150,6 @@ const dynasties = [
     start: ym(744),
     end: ym(840),
     precision: "year",
-    colorToken: nextColor(),
     note: "744年骨力裴罗建国；840年黠戛斯攻破牙帐，㕎馺可汗被杀，漠北汗国终结。",
   },
 ];

@@ -12,7 +12,6 @@ import {
   dr,
   eventPoint,
   successionPairs,
-  nextColor,
   writeImportPackage,
 } from "../lib/sqlHelpers.mjs";
 
@@ -111,7 +110,6 @@ const dynasties = [
     start: ym(555, 2),
     end: ym(587, 10),
     precision: "month",
-    colorToken: nextColor(),
     groupId: "nan-chao",
     note: "555年萧詧在西魏支持下称帝于江陵；587年隋废西梁，萧琮为末帝。",
   },
@@ -124,7 +122,6 @@ const dynasties = [
     start: ym(350),
     end: ym(352, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "350年冉闵杀后赵石鉴称帝，国号魏；352年败于前燕。不入崔鸿十六国。",
   },
   {
@@ -136,7 +133,6 @@ const dynasties = [
     start: ym(384),
     end: ym(394),
     precision: "year",
-    colorToken: nextColor(),
     note: "384年慕容泓称帝，都长子；394年慕容永为后燕所灭。不入崔鸿十六国。",
   },
   {
@@ -148,7 +144,6 @@ const dynasties = [
     start: ym(296),
     end: ym(371),
     precision: "year",
-    colorToken: nextColor(),
     note: "296年杨茂搜据仇池；371年前秦灭前仇池。杨腾为东汉迁入祖，不算君主。",
   },
 ];

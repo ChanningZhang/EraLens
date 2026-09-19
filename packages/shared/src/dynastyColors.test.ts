@@ -2,42 +2,40 @@ import { describe, expect, it } from "vitest";
 import { COLOR_TOKENS, type ColorToken } from "./schema";
 import { absMonth } from "./time";
 import {
-  assignDistinctColorTokens,
+  assignLaneColorTokens,
   buildDynastyColorMap,
+  buildStableLaneColorMap,
   colorTokenDistance,
+  fallbackLaneColorToken,
   ORTHODOX_COLOR_TOKEN,
   resolveDynastyColorToken,
   resolveReignColorToken,
 } from "./dynastyColors";
+import type { Dynasty } from "./schema";
 
 function mockDynasties(count: number) {
   return Array.from({ length: count }, (_, index) => ({
     id: `dynasty-${index}`,
-    colorToken: COLOR_TOKENS[index % COLOR_TOKENS.length] as ColorToken,
     startAbs: index * 120,
   }));
 }
 
-describe("assignDistinctColorTokens", () => {
-  it("supports seventeen palette tokens including gold for orthodox dynasties", () => {
-    expect(COLOR_TOKENS).toHaveLength(17);
+describe("assignLaneColorTokens", () => {
+  it("supports twenty-four assignable palette tokens plus orthodox gold", () => {
+    expect(COLOR_TOKENS).toHaveLength(25);
+    expect(COLOR_TOKENS).toContain("gold");
   });
 
-  it("keeps the first dynasty color unchanged", () => {
-    const assigned = assignDistinctColorTokens([
-      { id: "a", colorToken: "ochre" },
-      { id: "b", colorToken: "wisteria" },
-    ]);
-
-    expect(assigned.get("a")).toBe("ochre");
+  it("assigns a stable fallback token per dynasty id", () => {
+    expect(fallbackLaneColorToken("qin")).toBe(fallbackLaneColorToken("qin"));
+    expect(fallbackLaneColorToken("qin")).not.toBe(fallbackLaneColorToken("tang"));
   });
 
   it("avoids repeating the same token on adjacent lanes", () => {
     const ordered = Array.from({ length: 12 }, (_, index) => ({
       id: `d-${index}`,
-      colorToken: "ochre" as const,
     }));
-    const assigned = assignDistinctColorTokens(ordered);
+    const assigned = assignLaneColorTokens(ordered);
 
     for (let index = 1; index < ordered.length; index += 1) {
       const current = assigned.get(`d-${index}`);
@@ -48,21 +46,32 @@ describe("assignDistinctColorTokens", () => {
     }
   });
 
-  it("resolveDynastyColorToken returns the persisted token without a time context", () => {
-    const dynasty = {
-      id: "tang",
-      colorToken: "indigo" as ColorToken,
-      startAbs: 1000,
-    };
-    expect(resolveDynastyColorToken(dynasty)).toBe("indigo");
+  it("uses many distinct colors in a long contiguous cluster, not a short cycle", () => {
+    const ordered = Array.from({ length: 16 }, (_, index) => ({
+      id: `sixteen-${index}`,
+    }));
+    const assigned = assignLaneColorTokens(ordered);
+    const tokens = ordered.map((dynasty) => assigned.get(dynasty.id)!);
+    const unique = new Set(tokens);
+    expect(unique.size).toBe(16);
   });
 
-  it("buildDynastyColorMap depends on which dynasties are in the set", () => {
-    const dynasties = mockDynasties(8);
-    const full = buildDynastyColorMap(dynasties);
-    const withoutPrefix = buildDynastyColorMap(dynasties.slice(2));
+  it("resolveDynastyColorToken uses the lane token without a time context", () => {
+    const dynasty = {
+      id: "tang",
+      startAbs: 1000,
+    };
+    expect(resolveDynastyColorToken(dynasty, "indigo")).toBe("indigo");
+  });
 
-    expect(withoutPrefix.get("dynasty-3")).not.toBe(full.get("dynasty-3"));
+  it("buildDynastyColorMap walks the palette in sorted lane order", () => {
+    const dynasties = mockDynasties(8);
+    const map = buildDynastyColorMap(dynasties);
+    const tokens = dynasties.map((dynasty) => map.get(dynasty.id)!);
+    expect(new Set(tokens).size).toBe(8);
+    for (let index = 1; index < tokens.length; index += 1) {
+      expect(tokens[index]).not.toBe(tokens[index - 1]);
+    }
   });
 
   it("keeps each dynasty color stable across repeated builds", () => {
@@ -83,22 +92,51 @@ describe("assignDistinctColorTokens", () => {
       const current = map.get(dynasties[index]!.id);
       const previous = map.get(dynasties[index - 1]!.id);
       expect(current).not.toBe(previous);
-      expect(colorTokenDistance(current!, previous!)).toBeGreaterThan(40);
+      expect(current).not.toBe(previous);
     }
   });
 
-  it("prefers contrasting colors over similar imported tokens", () => {
-    const assigned = assignDistinctColorTokens([
-      { id: "a", colorToken: "ochre" },
-      { id: "b", colorToken: "wisteria" },
-      { id: "c", colorToken: "stone" },
+  it("cycles the palette in lane order for adjacent lanes", () => {
+    const assigned = assignLaneColorTokens([
+      { id: "a" },
+      { id: "b" },
+      { id: "c" },
     ]);
 
     const second = assigned.get("b");
-    expect(second).not.toBe("ochre");
-    expect(colorTokenDistance(second!, "ochre")).toBeGreaterThan(
-      colorTokenDistance("wisteria", "ochre"),
-    );
+    const first = assigned.get("a");
+    expect(second).not.toBe(first);
+    expect(colorTokenDistance(second!, first!)).toBeGreaterThan(60);
+  });
+});
+
+describe("buildStableLaneColorMap", () => {
+  function mockDynasty(id: string, startAbs: number, endAbs = startAbs + 120): Dynasty {
+    return {
+      id,
+      name: id,
+      altNames: [],
+      scope: "cn",
+      region: "east_asia",
+      start: { year: 0, month: 1 },
+      end: { year: 10, month: 12 },
+      startAbs,
+      endAbs,
+      precision: "year",
+    };
+  }
+
+  it("keeps dynasty colors stable regardless of which subset is visible", () => {
+    const dynasties = [
+      mockDynasty("a", 0),
+      mockDynasty("b", 120),
+      mockDynasty("c", 240),
+      mockDynasty("d", 360),
+    ];
+    const full = buildStableLaneColorMap(dynasties);
+    const again = buildStableLaneColorMap(dynasties);
+    expect(again.get("b")).toBe(full.get("b"));
+    expect(again.get("c")).toBe(full.get("c"));
   });
 });
 
@@ -107,89 +145,89 @@ describe("resolveReignColorToken", () => {
     id: "yuan",
     startAbs: absMonth(1271, 12),
     endAbs: absMonth(1388),
-    colorToken: "indigo" as const,
     orthodoxFromAbs: absMonth(1276, 2),
     orthodoxEndAbs: absMonth(1368),
   };
+  const laneColor = "indigo" as const;
 
   it("keeps gold for orthodox Yuan reigns but not for 元惠宗 starting at the cutoff", () => {
     expect(
       resolveReignColorToken(yuan, {
         startAbs: absMonth(1333, 7),
         endAbs: absMonth(1368, 1),
-      }),
+      }, laneColor),
     ).toBe(ORTHODOX_COLOR_TOKEN);
     expect(
       resolveReignColorToken(yuan, {
         startAbs: absMonth(1368),
         endAbs: absMonth(1370, 5),
-      }),
+      }, laneColor),
     ).toBe("indigo");
     expect(
       resolveReignColorToken(yuan, {
         startAbs: absMonth(1370, 5),
         endAbs: absMonth(1378, 5),
-      }),
+      }, laneColor),
     ).toBe("indigo");
   });
 
   it("does not use the cutoff month's orthodox-at color for the post-orthodox card", () => {
-    expect(resolveDynastyColorToken(yuan, absMonth(1368))).toBe(
+    expect(resolveDynastyColorToken(yuan, laneColor, absMonth(1368))).toBe(
       ORTHODOX_COLOR_TOKEN,
     );
     expect(
       resolveReignColorToken(yuan, {
         startAbs: absMonth(1368),
         endAbs: absMonth(1370, 5),
-      }),
-    ).not.toBe(resolveDynastyColorToken(yuan, absMonth(1368)));
+      }, laneColor),
+    ).not.toBe(resolveDynastyColorToken(yuan, laneColor, absMonth(1368)));
   });
 
-  it("keeps song-south post-orthodox reigns on the dynasty base token", () => {
+  it("keeps song-south post-orthodox reigns on the lane base token", () => {
     const songSouth = {
       id: "song-south",
       startAbs: absMonth(1127),
       endAbs: absMonth(1279),
-      colorToken: "jade" as const,
       orthodoxFromAbs: absMonth(1127),
       orthodoxEndAbs: absMonth(1276, 2, 4),
     };
+    const songLane = "jade" as const;
 
     expect(
       resolveReignColorToken(songSouth, {
         startAbs: absMonth(1276, 6),
         endAbs: absMonth(1278, 5),
-      }),
+      }, songLane),
     ).toBe("jade");
-    expect(resolveDynastyColorToken(songSouth)).toBe("jade");
+    expect(resolveDynastyColorToken(songSouth, songLane)).toBe("jade");
     expect(
       resolveReignColorToken(songSouth, {
         startAbs: absMonth(1276, 6),
         endAbs: absMonth(1278, 5),
-      }),
-    ).toBe(resolveDynastyColorToken(songSouth));
+      }, songLane),
+    ).toBe(resolveDynastyColorToken(songSouth, songLane));
   });
 
-  it("keeps main-row rival reigns on the dynasty base token inside an orthodox window", () => {
+  it("keeps main-row rival reigns on the lane base token inside an orthodox window", () => {
     const xia = {
       id: "xia",
       startAbs: absMonth(-2070),
       endAbs: absMonth(-1600, 12),
-      colorToken: "ochre" as const,
       orthodoxFromAbs: absMonth(-2061),
     };
+    const xiaLane = "ochre" as const;
     expect(
       resolveReignColorToken(xia, {
         startAbs: absMonth(-2006),
         endAbs: absMonth(-1999, 12),
         claimRole: "rival",
-      }),
+      }, xiaLane),
     ).toBe("ochre");
     expect(
       resolveReignColorToken(xia, {
         startAbs: absMonth(-2061),
         endAbs: absMonth(-2046, 12),
-      }),
+      }, xiaLane),
     ).toBe(ORTHODOX_COLOR_TOKEN);
   });
 });

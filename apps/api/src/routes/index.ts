@@ -4,6 +4,7 @@ import {
   personIntersectsAbsWindow,
   SearchHitSchema,
   searchEntities,
+  TimelineCatalogSchema,
   TimelineSliceSchema,
 } from "@eralens/shared";
 import type { FastifyInstance } from "fastify";
@@ -271,6 +272,23 @@ export async function registerRoutes(app: FastifyInstance) {
       return { minAbs: -30_000, maxAbs: 25_000 };
     }
     return { minAbs: Math.min(...mins), maxAbs: Math.max(...maxs) };
+  });
+
+  app.get("/timeline-catalog", async (request, reply) => {
+    reply.header("Cache-Control", CACHE_HEADER);
+    const query = request.query as { scope?: string };
+    const dynastyRows = query.scope
+      ? await prisma.dynasty.findMany({ where: { scope: query.scope } })
+      : await prisma.dynasty.findMany();
+    const [dynastyGroupRows, dynastyLaneGroups] = await Promise.all([
+      prisma.dynastyGroup.findMany(),
+      prisma.dynastyLaneGroup.findMany(),
+    ]);
+    return TimelineCatalogSchema.parse({
+      dynasties: dynastyRows.map(mapDynasty),
+      dynastyGroups: dynastyGroupRows.map(mapDynastyGroup),
+      dynastyLaneGroups: dynastyLaneGroups.map(mapDynastyLaneGroup),
+    });
   });
 
   app.get("/timeline", async (request, reply) => {

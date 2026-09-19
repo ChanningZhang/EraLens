@@ -1312,7 +1312,6 @@ ON CONFLICT (id) DO UPDATE SET
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
   orthodox_from_abs = EXCLUDED.orthodox_from_abs,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
@@ -1322,7 +1321,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'jin-chunqiu', '晋', '姬', '晋', ARRAY['晋国'], 'cn', 'east_asia',
   -1042, 1, -349, 12,
-  -12492, -4165, 'year', 'azure', NULL, NULL,
+  -12492, -4165, 'year', 'ochre', NULL, NULL,
   '周成王封叔虞于唐，改国号晋；前403年三家分晋；前376年公室被废、另立傀儡君，前349年静公被杀而国亡。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1337,7 +1336,6 @@ ON CONFLICT (id) DO UPDATE SET
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
   orthodox_from_abs = EXCLUDED.orthodox_from_abs,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
@@ -1347,7 +1345,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'chu-chunqiu', '楚', '芈', '熊', ARRAY['荆楚','楚国'], 'cn', 'east_asia',
   -1042, 1, -223, 12,
-  -12492, -2653, 'year', 'cinnabar', NULL, NULL,
+  -12492, -2653, 'year', 'ochre', NULL, NULL,
   '周成王封熊绎于楚；春秋战国南方大国，前223年秦灭楚。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1362,7 +1360,6 @@ ON CONFLICT (id) DO UPDATE SET
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
   orthodox_from_abs = EXCLUDED.orthodox_from_abs,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
@@ -1372,7 +1369,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'yan-chunqiu', '燕', '姬', '匽', ARRAY['燕国'], 'cn', 'east_asia',
   -1044, 1, -222, 12,
-  -12516, -2641, 'year', 'jade', NULL, NULL,
+  -12516, -2641, 'year', 'ochre', NULL, NULL,
   '周武王封召公奭于燕；战国七雄之一，前222年秦灭燕。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1387,7 +1384,6 @@ ON CONFLICT (id) DO UPDATE SET
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
   orthodox_from_abs = EXCLUDED.orthodox_from_abs,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
@@ -1397,7 +1393,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'song-chunqiu', '宋', '子', '宋', ARRAY['宋国'], 'cn', 'east_asia',
   -1034, 1, -286, 12,
-  -12396, -3409, 'year', 'indigo', NULL, NULL,
+  -12396, -3409, 'year', 'ochre', NULL, NULL,
   '周成王封微子启于宋；前286年齐湣王灭宋。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1412,7 +1408,6 @@ ON CONFLICT (id) DO UPDATE SET
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
   orthodox_from_abs = EXCLUDED.orthodox_from_abs,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
@@ -1422,7 +1417,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'lu-chunqiu', '鲁', '姬', '鲁', ARRAY['鲁国'], 'cn', 'east_asia',
   -1042, 1, -256, 12,
-  -12492, -3049, 'year', 'coral', NULL, NULL,
+  -12492, -3049, 'year', 'ochre', NULL, NULL,
   '周武王封周公旦于鲁；孔子故乡，前256年楚灭鲁。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1437,7 +1432,6 @@ ON CONFLICT (id) DO UPDATE SET
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
   orthodox_from_abs = EXCLUDED.orthodox_from_abs,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
@@ -1447,7 +1441,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'wei-weiguo', '卫', '姬', '卫', ARRAY['卫国'], 'cn', 'east_asia',
   -1040, 1, -209, 12,
-  -12468, -2485, 'year', 'moss', NULL, NULL,
+  -12468, -2485, 'year', 'ochre', NULL, NULL,
   '周成王封康叔封于卫；小国久存，秦二世时废。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1462,7 +1456,6 @@ ON CONFLICT (id) DO UPDATE SET
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
   orthodox_from_abs = EXCLUDED.orthodox_from_abs,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
@@ -1472,7 +1465,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'zheng-chunqiu', '郑', '姬', '郑', ARRAY['郑国'], 'cn', 'east_asia',
   -806, 1, -375, 12,
-  -9660, -4477, 'year', 'plum', NULL, NULL,
+  -9660, -4477, 'year', 'ochre', NULL, NULL,
   '周厉王少子友封于郑，后东迁新郑；前375年韩灭郑。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1487,7 +1480,6 @@ ON CONFLICT (id) DO UPDATE SET
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
   orthodox_from_abs = EXCLUDED.orthodox_from_abs,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
@@ -1497,7 +1489,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'cao-chunqiu', '曹', '姬', '曹', ARRAY['曹国'], 'cn', 'east_asia',
   -1046, 1, -487, 12,
-  -12540, -5821, 'year', 'mineral', NULL, NULL,
+  -12540, -5821, 'year', 'ochre', NULL, NULL,
   '周武王封弟振铎于曹；前487年宋灭曹。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1512,7 +1504,6 @@ ON CONFLICT (id) DO UPDATE SET
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
   orthodox_from_abs = EXCLUDED.orthodox_from_abs,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
@@ -1522,7 +1513,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'wu-chunqiu', '吴', '姬', '姑发', ARRAY['吴国'], 'cn', 'east_asia',
   -585, 1, -473, 12,
-  -7008, -5653, 'year', 'amber', NULL, NULL,
+  -7008, -5653, 'year', 'ochre', NULL, NULL,
   '春秋东南强国，阖闾、夫差时盛；前473年越灭吴。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1537,7 +1528,6 @@ ON CONFLICT (id) DO UPDATE SET
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
   orthodox_from_abs = EXCLUDED.orthodox_from_abs,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
@@ -1547,7 +1537,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'yue-chunqiu', '越', '姒', NULL, ARRAY['越国'], 'cn', 'east_asia',
   -565, 1, -306, 12,
-  -6768, -3649, 'year', 'grape', NULL, NULL,
+  -6768, -3649, 'year', 'ochre', NULL, NULL,
   '东南古国。传说夏少康庶子无余始封会稽，中间世系多缺载；有年表自允常。勾践灭吴后北进；前306年楚破越。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1562,7 +1552,6 @@ ON CONFLICT (id) DO UPDATE SET
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
   orthodox_from_abs = EXCLUDED.orthodox_from_abs,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
@@ -1572,7 +1561,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'zhongshan', '中山', '姬', NULL, ARRAY['中山国'], 'cn', 'east_asia',
   -424, 1, -296, 12,
-  -5076, -3529, 'year', 'sage', NULL, NULL,
+  -5076, -3529, 'year', 'ochre', NULL, NULL,
   '鲜虞白狄所建。有年表自文公、武公；前406年后亡国，桓公复兴。前296年赵灭中山。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1587,7 +1576,6 @@ ON CONFLICT (id) DO UPDATE SET
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
   orthodox_from_abs = EXCLUDED.orthodox_from_abs,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
@@ -1597,7 +1585,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'han-warring', '韩', '姬', '韩', ARRAY['韩国'], 'cn', 'east_asia',
   -403, 1, -230, 12,
-  -4824, -2737, 'year', 'stone', NULL, NULL,
+  -4824, -2737, 'year', 'ochre', NULL, NULL,
   '三家分晋后韩氏立国，前403年周天子册命；前230年秦灭韩。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1612,7 +1600,6 @@ ON CONFLICT (id) DO UPDATE SET
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
   orthodox_from_abs = EXCLUDED.orthodox_from_abs,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
@@ -1622,7 +1609,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'zhao-warring', '赵', '嬴', '赵', ARRAY['赵国'], 'cn', 'east_asia',
   -403, 1, -222, 12,
-  -4824, -2641, 'year', 'clay', NULL, NULL,
+  -4824, -2641, 'year', 'ochre', NULL, NULL,
   '三家分晋后赵氏立国；前222年秦灭赵。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1637,7 +1624,6 @@ ON CONFLICT (id) DO UPDATE SET
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
   orthodox_from_abs = EXCLUDED.orthodox_from_abs,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
@@ -1647,7 +1633,7 @@ INSERT INTO dynasties (
 ) VALUES (
   'wei-warring', '魏', '姬', '魏', ARRAY['梁','魏国'], 'cn', 'east_asia',
   -403, 1, -225, 12,
-  -4824, -2677, 'year', 'wisteria', NULL, NULL,
+  -4824, -2677, 'year', 'ochre', NULL, NULL,
   '三家分晋后魏氏立国，都大梁；前225年秦灭魏。与三国曹魏 wei 区分。'
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -1662,7 +1648,6 @@ ON CONFLICT (id) DO UPDATE SET
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
   orthodox_from_abs = EXCLUDED.orthodox_from_abs,
   note = EXCLUDED.note;
 INSERT INTO dynasties (
@@ -1687,7 +1672,6 @@ ON CONFLICT (id) DO UPDATE SET
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
   orthodox_from_abs = EXCLUDED.orthodox_from_abs,
   note = EXCLUDED.note;
 

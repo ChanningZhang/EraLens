@@ -66,7 +66,7 @@ export function centerGuideX(state: ViewportState): number {
   return projectAbs(state, state.centerAbs);
 }
 
-/** Abs used to resolve frozen lane labels and phase colors. */
+/** Abs used to resolve frozen lane labels, phase colors, and name-chip gold. */
 export function laneLabelAnchorAbs(state: Pick<ViewportState, "centerAbs">): AbsMonth {
   return state.centerAbs;
 }

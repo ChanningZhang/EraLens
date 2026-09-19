@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
-import { COLOR_VALUES } from "@eralens/shared";
 import { getRepository } from "@/data/repository";
+import { useLaneColorValue } from "@/features/timeline/hooks/useLaneColor";
 import { useSelection } from "@/features/timeline/hooks/useSelection";
 import { useViewport } from "@/features/timeline/hooks/useViewport";
 import { selectionStore } from "@/features/timeline/state/selectionStore";
@@ -21,9 +21,11 @@ export function DetailPanel() {
     enabled: Boolean(selection.selected),
   });
 
-  const accent = detailQuery.data?.colorToken
-    ? COLOR_VALUES[detailQuery.data.colorToken]
-    : "var(--color-accent)";
+  const dynastyId =
+    selection.selected?.type === "dynasty"
+      ? selection.selected.id
+      : detailQuery.data?.dynastyId;
+  const accent = useLaneColorValue(dynastyId) ?? "var(--color-accent)";
 
   if (!selection.selected) return null;
 

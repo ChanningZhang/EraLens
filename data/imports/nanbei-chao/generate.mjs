@@ -207,15 +207,6 @@ const allPersons = persons;
 
 // ── dynasties ──────────────────────────────────────────────────────────────
 
-const colorTokens = [
-  "ochre", "azure", "cinnabar", "jade", "indigo", "coral",
-  "moss", "plum", "mineral", "amber", "grape", "sage",
-  "stone", "clay", "wisteria", "slate",
-];
-let colorIdx = 0;
-function nextColor() {
-  return colorTokens[colorIdx++ % colorTokens.length];
-}
 
 const dynastyGroups = [
   {
@@ -250,7 +241,6 @@ const dynasties = [
     start: ym(386),
     end: ym(535, 2),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "bei-chao",
     note: "拓跋珪386年建国，439年灭北凉统一北方；534年分裂，535年孝武帝被杀，北魏亡。",
   },
@@ -263,7 +253,6 @@ const dynasties = [
     start: ym(420, 7),
     end: ym(479),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "nan-chao",
     note: "刘裕代晋建宋，都建康；479年萧道成代宋。",
   },
@@ -276,7 +265,6 @@ const dynasties = [
     start: ym(479),
     end: ym(502),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "nan-chao",
     note: "萧道成代宋建齐；502年萧衍代齐。",
   },
@@ -289,7 +277,6 @@ const dynasties = [
     start: ym(502),
     end: ym(557),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "nan-chao",
     note: "萧衍代齐建梁；557年陈霸先代梁。",
   },
@@ -302,7 +289,6 @@ const dynasties = [
     start: ym(557),
     end: ym(589),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "nan-chao",
     note: "陈霸先代梁建陈；589年隋灭陈，南北朝终结。",
   },
@@ -315,7 +301,6 @@ const dynasties = [
     start: ym(550),
     end: ym(577),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "bei-chao",
     note: "高洋代东魏建齐，都邺；577年北周灭齐。",
   },
@@ -328,7 +313,6 @@ const dynasties = [
     start: ym(557),
     end: ym(581),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "bei-chao",
     note: "宇文觉代西魏建周，都长安；581年杨坚代周。",
   },
@@ -341,7 +325,6 @@ const dynasties = [
     start: ym(534, 11),
     end: ym(550, 2),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "bei-chao",
     note: "高欢拥立孝静帝于邺；550年高洋代魏建齐。",
   },
@@ -354,7 +337,6 @@ const dynasties = [
     start: ym(535, 2),
     end: ym(557, 2),
     precision: "year",
-    colorToken: nextColor(),
     groupId: "bei-chao",
     note: "宇文泰拥立文帝于长安；557年宇文觉代魏建周。",
   },

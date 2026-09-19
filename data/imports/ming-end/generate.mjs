@@ -11,7 +11,6 @@ import {
   dr,
   ym,
   eras,
-  nextColor,
   eventPoint,
   writeImportPackage,
   successionPairs,
@@ -78,7 +77,6 @@ const dynasties = [
     start: ym(1644),
     end: ym(1645, 12),
     precision: "year",
-    colorToken: nextColor(),
     note: "李自成1644年正月西安称帝，年号永昌；克北京后旋败，1645年李自成阵亡，政权瓦解。",
   },
   {
@@ -87,11 +85,10 @@ const dynasties = [
     altNames: ["西"],
     scope: "cn",
     region: "east_asia",
-    start: ym(1644),
+    start: ym(1644, 12),
     end: ym(1647, 12),
-    precision: "year",
-    colorToken: nextColor(),
-    note: "张献忠1644年十一月成都称帝，年号大顺；1646年战死，余部至1647年归顺南明。",
+    precision: "month",
+    note: "张献忠1644年十二月成都称帝，年号大顺；1647年1月战死于西充，余部至同年归顺南明。",
   },
   {
     id: "mingzheng",
@@ -102,7 +99,6 @@ const dynasties = [
     start: ym(1661, 6),
     end: ym(1683, 10),
     precision: "month",
-    colorToken: nextColor(),
     note: "郑成功1662年收复台湾后建承天府，奉永历正朔；1683年郑克塽降清，东宁终结。",
   },
 ];
@@ -120,7 +116,7 @@ const dashunReigns = [
 const daxiReigns = [
   {
     ...dr("daxi", "zhang-xianzhong", "大西皇帝", null, null, 1644, 1647),
-    eraNames: eras(daxiReignId, [{ name: "大顺", sy: 1644, ey: 1647 }]),
+    eraNames: eras(daxiReignId, [{ name: "大顺", sy: 1644, sm: 12, ey: 1647 }]),
   },
 ];
 
@@ -135,23 +131,12 @@ const reigns = applyDocumentedDatesToReigns(reignGroups.flat());
 
 const events = [
   eventPoint({
-    id: "dashun-capture-beijing",
-    name: "大顺军攻克北京",
-    kind: "politics",
-    dateNote: "崇祯十七年三月十九日，1644年4月25日",
-    at: ym(1644, 4),
-    precision: "month",
-    dynastyIds: ["dashun", "ming"],
-    participantIds: ["li-zicheng"],
-    summary: "李自成率军攻入北京，崇祯帝自缢，明朝京师陷落。",
-  }),
-  eventPoint({
     id: "daxi-founded",
     name: "大西政权建立",
     kind: "politics",
-    dateNote: "崇祯十七年十一月，1644年，张献忠成都称帝",
-    at: ym(1644, 11),
-    precision: "month",
+    dateNote: "崇祯十七年十一月庚寅，1644年12月4日，张献忠成都称帝",
+    at: ymDay(1644, 12, 4),
+    precision: "day",
     dynastyIds: ["daxi"],
     participantIds: ["zhang-xianzhong"],
     summary: "张献忠占领成都后称帝，国号大西，年号大顺，以蜀王府为宫。",
@@ -182,10 +167,14 @@ const events = [
 
 const supplementalEventDynasties = [
   { eventId: "ming-fall", dynastyId: "dashun" },
-  { eventId: "dashun-capture-beijing", dynastyId: "qing" },
+  { eventId: "ming-fall", dynastyId: "qing" },
   { eventId: "qing-enter-pass", dynastyId: "dashun" },
   { eventId: "zheng-recover-taiwan", dynastyId: "mingzheng" },
   { eventId: "ming-south-end", dynastyId: "mingzheng" },
+];
+
+const supplementalEventParticipants = [
+  { eventId: "ming-fall", personId: "li-zicheng" },
 ];
 
 const relations = [];
@@ -200,7 +189,7 @@ for (const group of reignGroups) {
   }
 }
 relations.push(
-  { id: "rel-dashun-beijing-li", fromRef: "event:dashun-capture-beijing", toRef: "person:li-zicheng", kind: "politics" },
+  { id: "rel-ming-fall-li", fromRef: "event:ming-fall", toRef: "person:li-zicheng", kind: "politics" },
   { id: "rel-daxi-founded-zhang", fromRef: "event:daxi-founded", toRef: "person:zhang-xianzhong", kind: "politics" },
   { id: "rel-mingzheng-taiwan-zheng", fromRef: "event:mingzheng-taiwan-founded", toRef: "person:zheng-chenggong", kind: "politics" },
   { id: "rel-qing-taiwan-zheng-keshuang", fromRef: "event:qing-conquer-taiwan", toRef: "person:zheng-keshuang", kind: "battle" },
@@ -220,6 +209,7 @@ const manifest = {
     events: events.length,
     relations: relations.length,
     supplementalEventDynastyLinks: supplementalEventDynasties.length,
+    supplementalEventParticipantLinks: supplementalEventParticipants.length,
   },
   sources: [
     { label: "大顺 (政权)", url: "https://zh.wikipedia.org/wiki/大顺_(政权)" },
@@ -250,5 +240,6 @@ writeImportPackage(__dirname, {
   events,
   relations,
   supplementalEventDynasties,
+  supplementalEventParticipants,
   manifest,
 });

@@ -114,7 +114,7 @@ function fateVictimMaxLagMonths(kind) {
 
 export function validateFateCatalogEntry(entry, reigns) {
   const atAbs = entry.resolveAt().abs;
-  const maxLagMonths = fateVictimMaxLagMonths(entry.kind);
+  const maxLagMonths = entry.victimMaxLagMonths ?? fateVictimMaxLagMonths(entry.kind);
   if (entry.fromReignId) {
     const reign = reigns.find((item) => item.id === entry.fromReignId);
     if (!reign) {

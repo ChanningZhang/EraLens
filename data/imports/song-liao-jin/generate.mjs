@@ -102,15 +102,6 @@ function dr(dynastyId, personId, title, posthumous, temple, sy, ey, eraList = []
   return dynastyReign(dynastyId, personId, title, posthumous, temple, sy, ey, eraList.length ? eras(reignId, eraList) : [], null);
 }
 
-const colorTokens = [
-  "ochre", "azure", "cinnabar", "jade", "indigo", "coral",
-  "moss", "plum", "mineral", "amber", "grape", "sage",
-  "stone", "clay", "wisteria", "slate",
-];
-let colorIdx = 0;
-function nextColor() {
-  return colorTokens[colorIdx++ % colorTokens.length];
-}
 
 // ── persons ────────────────────────────────────────────────────────────────
 
@@ -156,7 +147,6 @@ const dynasties = [
     start: ym(916),
     end: ym(1125),
     precision: "year",
-    colorToken: nextColor(),
     note: "契丹耶律氏，916年太祖称帝；1125年金灭辽。",
   },
   {
@@ -168,7 +158,6 @@ const dynasties = [
     start: ym(1115),
     end: ym(1234),
     precision: "year",
-    colorToken: nextColor(),
     note: "女真完颜氏，1115年太祖完颜阿骨打于会宁称帝，国号大金；1125年灭辽，1127年靖康之变灭北宋；1234年蒙古与南宋联军破蔡州，金亡。",
   },
 ];

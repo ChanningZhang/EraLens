@@ -359,10 +359,12 @@ describe("resolveDynastyColorToken orthodox display", () => {
       id: "qin",
       startAbs: absMonth(-770),
       endAbs: absMonth(-206),
-      colorToken: "ochre" as const,
       orthodoxFromAbs: ORTHODOX_FROM_ABS.qin,
     };
-    expect(resolveDynastyColorToken(qin, absMonth(-500))).toBe("ochre");
-    expect(resolveDynastyColorToken(qin, absMonth(-221))).toBe(ORTHODOX_COLOR_TOKEN);
+    const laneColor = "ochre" as const;
+    expect(resolveDynastyColorToken(qin, laneColor, absMonth(-500))).toBe("ochre");
+    expect(resolveDynastyColorToken(qin, laneColor, absMonth(-221))).toBe(
+      ORTHODOX_COLOR_TOKEN,
+    );
   });
 });

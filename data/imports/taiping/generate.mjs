@@ -8,7 +8,6 @@ import { fileURLToPath } from "node:url";
 import {
   person,
   ym,
-  nextColor,
   eventPoint,
   writeImportPackage,
   successionPairs,
@@ -75,7 +74,6 @@ const dynasties = [
     start: ymDay(1851, 3),
     end: ymDay(1864, 7),
     precision: "month",
-    colorToken: nextColor(),
     note: "1851年3月23日洪秀全登基称天王、正号太平天国；1853年3月定都天京（南京）；1864年7月19日天京陷落，政权覆亡。与清廷并立，非正统。",
   },
 ];

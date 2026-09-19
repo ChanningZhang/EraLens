@@ -9,7 +9,11 @@ import {
   resolveReignRelatedSubtitle,
   usesPreQinCardLayout,
 } from "./emperorAppellation";
-import { resolveDynastyColorToken, resolveReignColorToken } from "./dynastyColors";
+import {
+  fallbackLaneColorToken,
+  resolveDynastyColorToken,
+  resolveReignColorToken,
+} from "./dynastyColors";
 import { resolveOrthodoxFromAbs } from "./orthodoxDynasties";
 import { eventKindLabel, eventSpanAbs, formatEventTime } from "./eventTime";
 import {
@@ -161,8 +165,10 @@ export function buildEntityDetail(
       ref,
       title: dynasty.name,
       subtitle: dynasty.altNames?.[0],
+      dynastyId: dynasty.id,
       colorToken: resolveDynastyColorToken(
         dynasty,
+        fallbackLaneColorToken(dynasty.id),
         resolveOrthodoxFromAbs(dynasty) ?? dynasty.startAbs,
       ),
       facts: [
@@ -201,8 +207,13 @@ export function buildEntityDetail(
         person?.name,
         clan,
       ),
+      dynastyId: reign.dynastyId,
       colorToken: dynasty
-        ? resolveReignColorToken(dynasty, reign)
+        ? resolveReignColorToken(
+            dynasty,
+            reign,
+            fallbackLaneColorToken(dynasty.id),
+          )
         : undefined,
       facts: [
         ...resolveReignDetailFacts(reign, person?.name, clan),
@@ -259,15 +270,33 @@ export function buildEntityDetail(
   const event = eventMap.get(ref.id);
   if (!event) throw new Error(`Event not found: ${ref.id}`);
   const { anchorAbs } = eventSpanAbs(event);
+  const linkedDynasties = event.dynastyIds
+    .map((id) => dynastyMap.get(id))
+    .filter((dynasty): dynasty is NonNullable<typeof dynasty> => dynasty != null);
+  const primaryDynasty = linkedDynasties[0];
   return {
     ref,
     title: event.name,
-    subtitle: eventKindLabel(event.kind),
+    subtitle:
+      linkedDynasties.length > 0
+        ? linkedDynasties.map((dynasty) => dynasty.name).join(" · ")
+        : eventKindLabel(event.kind),
+    dynastyId: primaryDynasty?.id,
+    colorToken: primaryDynasty
+      ? resolveDynastyColorToken(
+          primaryDynasty,
+          fallbackLaneColorToken(primaryDynasty.id),
+          resolveOrthodoxFromAbs(primaryDynasty) ?? primaryDynasty.startAbs,
+        )
+      : undefined,
     facts: [
       {
         label: "时间",
         value: formatEventTime(event),
       },
+      ...(linkedDynasties.length > 0
+        ? [{ label: "类型", value: eventKindLabel(event.kind) }]
+        : []),
       ...(event.dateNote ? [{ label: "说明", value: event.dateNote }] : []),
     ],
     summary: event.summary,

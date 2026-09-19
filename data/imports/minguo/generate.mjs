@@ -8,6 +8,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { dynastySql, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
+import { ymDay } from "../lib/reignDateHelpers.mjs";
 import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
 import { reignSql as formatReignSql } from "../lib/reignSql.mjs";
 
@@ -107,7 +108,6 @@ const dynasties = [
     start: ym(1912, 1),
     end: ym(1949, 12),
     precision: "month",
-    colorToken: "indigo",
     note: "1912年孙中山任临时大总统，定都南京；1949年国民政府迁台，大陆时期结束。",
   },
 ];
@@ -121,6 +121,7 @@ const rocReigns = [
   dr("roc", "feng-guozhang", "大总统", 1917, 1918),
   dr("roc", "xu-shichang", "大总统", 1918, 1922),
   dr("roc", "cao-kun", "大总统", 1923, 1924),
+  dr("roc", "duan-qirui", "临时执政", 1924, 1926, 11, 4),
   dr("roc", "zhang-zuolin", "陆海军大元帅", 1927, 1928, 6, 6),
   dr("roc", "lin-sen", "国民政府主席", 1932, 1943),
   reign({
@@ -215,6 +216,17 @@ const events = [
     dynastyIds: ["roc"],
     participantIds: [],
     summary: "北京学生抗议巴黎和会山东问题，新文化运动与爱国运动高潮。",
+  }),
+  eventPoint({
+    id: "puyi-leaves-forbidden-city",
+    name: "溥仪出宫",
+    kind: "politics",
+    precision: "day",
+    dateNote: "1924年11月5日，国民军将溥仪逐出紫禁城",
+    at: ymDay(1924, 11, 5),
+    dynastyIds: ["roc", "qing"],
+    participantIds: ["puyi", "feng-yuxiang"],
+    summary: "冯玉祥北京政变后执行修正清室优待条件，溥仪被逐出紫禁城，逊清小朝廷终结。",
   }),
   eventRange({
     id: "warlord-era",
@@ -413,7 +425,7 @@ const manifest = {
     "覆盖中华民国大陆时期（1912–1949），单行 roc 王朝；各路军阀仅作 persons，不建独立王朝。",
     "国家元首以 reign 卡片收录（临时大总统、大总统、国民政府主席、总统等）。",
     "孙中山（sun-yat-sen）复用已有 id；蒋介石 1928–1948 实际主政以事件关联，1948 年起 reign。",
-    "段祺瑞临时执政、汪精卫伪政权等未建 reign；军阀割据以 span 事件「军阀割据」概括。",
+    "段祺瑞 1924–1926 临时执政建 reign；汪精卫伪政权等未建 reign；军阀割据以 span 事件「军阀割据」概括。",
     "徐世昌下台至曹锟当选、曹锟下台至张作霖任大元帅、张作霖死后至林森任主席等元首空缺期留白，不标史料缺。",
     "1949 迁台后之台湾时期不在本包内；中华人民共和国不在本包内。",
   ],
