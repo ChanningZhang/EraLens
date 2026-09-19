@@ -1,0 +1,81 @@
+{
+  "slug": "prehistoric-cultures",
+  "title": "史前考古文化",
+  "window": {
+    "startYear": -7000,
+    "startMonth": 1,
+    "endYear": -1100,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-19",
+  "counts": {
+    "persons": 0,
+    "dynasties": 0,
+    "reigns": 0,
+    "events": 12,
+    "relations": 0
+  },
+  "sources": [
+    {
+      "label": "贾湖遗址",
+      "url": "https://zh.wikipedia.org/wiki/贾湖遗址"
+    },
+    {
+      "label": "河姆渡遗址",
+      "url": "https://zh.wikipedia.org/wiki/河姆渡遗址"
+    },
+    {
+      "label": "仰韶文化",
+      "url": "https://zh.wikipedia.org/wiki/仰韶文化"
+    },
+    {
+      "label": "红山文化",
+      "url": "https://zh.wikipedia.org/wiki/红山文化"
+    },
+    {
+      "label": "大汶口文化",
+      "url": "https://zh.wikipedia.org/wiki/大汶口文化"
+    },
+    {
+      "label": "良渚文化",
+      "url": "https://zh.wikipedia.org/wiki/良渚文化"
+    },
+    {
+      "label": "马家窑文化",
+      "url": "https://zh.wikipedia.org/wiki/马家窑文化"
+    },
+    {
+      "label": "龙山文化",
+      "url": "https://zh.wikipedia.org/wiki/龙山文化"
+    },
+    {
+      "label": "陶寺遗址",
+      "url": "https://zh.wikipedia.org/wiki/陶寺遗址"
+    },
+    {
+      "label": "石峁遗址",
+      "url": "https://zh.wikipedia.org/wiki/石峁遗址"
+    },
+    {
+      "label": "二里头文化",
+      "url": "https://zh.wikipedia.org/wiki/二里头文化"
+    },
+    {
+      "label": "二里头遗址",
+      "url": "https://zh.wikipedia.org/wiki/二里头遗址"
+    },
+    {
+      "label": "三星堆遗址",
+      "url": "https://zh.wikipedia.org/wiki/三星堆遗址"
+    }
+  ],
+  "notes": [
+    "不建王朝行或在位卡片：此类为考古学文化/遗址，不是文献世系国号。事件不挂 event_dynasties，以免把二里头等同夏、三星堆等同商。",
+    "全部 time_mode=circa、precision=century：碳十四窗口本无月日；千年尺度缩放时仅世纪精度事件可见。",
+    "收录教科书与文明探源常用条目：贾湖、河姆渡、仰韶、红山、大汶口、良渚、马家窑、龙山、陶寺、石峁、二里头、三星堆。半坡、牛河梁、殷墟不另立，以免与仰韶/红山/商重复。",
+    "起迄取维基通行年，争议写入各条 date_note（读者可见的年代说明，不含「窗口/维基作」等入库用语）；at 为窗口中点，三星堆 at 取著名祭祀坑约前1200年。",
+    "三星堆条自二三期（约前2000）起至遗址下限前1100，含祭祀坑，不含宝墩一期。半坡、庙底沟、马家窑诸类型不另立事件。"
+  ]
+}

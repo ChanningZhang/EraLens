@@ -2,7 +2,6 @@ import { absMonth } from "./sqlHelpers.mjs";
 
 /** Keep in sync with packages/shared/src/orthodoxDynasties.ts */
 export const ORTHODOX_FROM_START = new Set([
-  "xia",
   "shang",
   "zhou-west",
   "zhou-east",
@@ -19,6 +18,8 @@ export const ORTHODOX_FROM_START = new Set([
 ]);
 
 export const ORTHODOX_FROM_ABS = {
+  /** 禹受禅建夏后氏，家天下自启始；禹段不上金。与 xia-shang-zhou 启在位起年对齐。 */
+  xia: absMonth(-2061),
   qin: absMonth(-221),
   /** 刘邦称帝建汉后始为正统；沛公/汉王起兵至称帝前不计金色。 */
   "han-west": absMonth(-202, 2),

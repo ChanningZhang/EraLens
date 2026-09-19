@@ -1,8 +1,7 @@
 import {
   buildEntityDetail,
   EntityDetailSchema,
-  personLifeAbs,
-  rangeIntersectsWindow,
+  personIntersectsAbsWindow,
   SearchHitSchema,
   searchEntities,
   TimelineSliceSchema,
@@ -46,71 +45,8 @@ async function loadStore() {
   });
 }
 
-async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string) {
-  const dynastyRows = scope
-    ? await prisma.$queryRaw<RawDynastyRow[]>`
-        SELECT id, name, alt_names, scope, region, start_year, start_month, end_year, end_month,
-               start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs,
-               parent_id, group_id, note
-        FROM dynasties
-        WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')
-          AND scope = ${scope}`
-    : await prisma.$queryRaw<RawDynastyRow[]>`
-        SELECT id, name, alt_names, scope, region, start_year, start_month, end_year, end_month,
-               start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs,
-               parent_id, group_id, note
-        FROM dynasties
-        WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')`;
-
-  const dynastyIds = dynastyRows.map((row) => row.id);
-
-  if (dynastyIds.length === 0) {
-    const personRows = await prisma.person.findMany({
-      where: {
-        birthYear: { not: null },
-        birthMonth: { not: null },
-        deathYear: { not: null },
-        deathMonth: { not: null },
-        reigns: { none: {} },
-      },
-    });
-    const persons = personRows
-      .map(mapPerson)
-      .filter((person) => {
-        const life = personLifeAbs(person);
-        if (!life) return false;
-        return rangeIntersectsWindow(life.startAbs, life.endAbs, fromAbs, toAbs);
-      });
-    return TimelineSliceSchema.parse({
-      dynasties: [],
-      dynastyGroups: [],
-      dynastyLaneGroups: [],
-      reigns: [],
-      events: [],
-      persons,
-      relations: [],
-    });
-  }
-
-  const reignRows = await prisma.$queryRaw<RawReignRow[]>`
-    SELECT id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation,
-           start_year, start_month, start_day, end_year, end_month, end_day,
-           start_abs, end_abs, precision,
-           start_date_confidence, end_date_confidence,
-           claim_track, claim_label, claim_role
-    FROM reigns
-    WHERE dynasty_id = ANY(${dynastyIds}::text[])
-      AND span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')`;
-
-  const reignIds = reignRows.map((row) => row.id);
-  const eraRows =
-    reignIds.length > 0
-      ? await prisma.eraName.findMany({
-          where: { reignId: { in: reignIds } },
-          orderBy: { sortOrder: "asc" },
-        })
-      : [];
-
+/** Events may exist with no dynasty (archaeological cultures). Still return those in empty-lane windows. */
+async function loadEventsInWindow(fromAbs: number, toAbs: number, visibleDynastyIds: string[]) {
   const eventRows = await prisma.$queryRaw<RawEventRow[]>`
     SELECT id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs,
            start_year, start_month, start_abs, end_year, end_month, end_abs, summary
@@ -139,6 +75,84 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
     list.push(row.personId);
     participantsByEvent.set(row.eventId, list);
   }
+
+  return eventRows
+    .map((row) =>
+      mapEvent({
+        ...row,
+        dynasties: (dynastiesByEvent.get(row.id) ?? []).map((dynastyId) => ({ dynastyId })),
+        participants: (participantsByEvent.get(row.id) ?? []).map((personId) => ({ personId })),
+      }),
+    )
+    .filter((event) => {
+      const dynastyHit = event.dynastyIds.some((id: string) => visibleDynastyIds.includes(id));
+      return dynastyHit || event.dynastyIds.length === 0;
+    });
+}
+
+const PLACEABLE_NON_RULER_WHERE = {
+  reigns: { none: {} },
+  OR: [
+    { AND: [{ birthYear: { not: null } }, { birthMonth: { not: null } }] },
+    { AND: [{ deathYear: { not: null } }, { deathMonth: { not: null } }] },
+  ],
+} as const;
+
+async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string) {
+  const dynastyRows = scope
+    ? await prisma.$queryRaw<RawDynastyRow[]>`
+        SELECT id, name, alt_names, scope, region, start_year, start_month, end_year, end_month,
+               start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs,
+               parent_id, group_id, note
+        FROM dynasties
+        WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')
+          AND scope = ${scope}`
+    : await prisma.$queryRaw<RawDynastyRow[]>`
+        SELECT id, name, alt_names, scope, region, start_year, start_month, end_year, end_month,
+               start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs,
+               parent_id, group_id, note
+        FROM dynasties
+        WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')`;
+
+  const dynastyIds = dynastyRows.map((row) => row.id);
+  const events = await loadEventsInWindow(fromAbs, toAbs, dynastyIds);
+
+  if (dynastyIds.length === 0) {
+    const personRows = await prisma.person.findMany({
+      where: PLACEABLE_NON_RULER_WHERE,
+    });
+    const persons = personRows
+      .map(mapPerson)
+      .filter((person) => personIntersectsAbsWindow(person, fromAbs, toAbs));
+    return TimelineSliceSchema.parse({
+      dynasties: [],
+      dynastyGroups: [],
+      dynastyLaneGroups: [],
+      reigns: [],
+      events,
+      persons,
+      relations: [],
+    });
+  }
+
+  const reignRows = await prisma.$queryRaw<RawReignRow[]>`
+    SELECT id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation,
+           start_year, start_month, start_day, end_year, end_month, end_day,
+           start_abs, end_abs, precision,
+           start_date_confidence, end_date_confidence,
+           claim_track, claim_label, claim_role
+    FROM reigns
+    WHERE dynasty_id = ANY(${dynastyIds}::text[])
+      AND span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')`;
+
+  const reignIds = reignRows.map((row) => row.id);
+  const eraRows =
+    reignIds.length > 0
+      ? await prisma.eraName.findMany({
+          where: { reignId: { in: reignIds } },
+          orderBy: { sortOrder: "asc" },
+        })
+      : [];
 
   const erasByReign = new Map<string, typeof eraRows>();
   for (const era of eraRows) {
@@ -171,13 +185,7 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
   const visibleReignPersonIds = [...new Set(reignRows.map((row) => row.person_id))];
   const [lifePersonRows, rulerPersonRows] = await Promise.all([
     prisma.person.findMany({
-      where: {
-        birthYear: { not: null },
-        birthMonth: { not: null },
-        deathYear: { not: null },
-        deathMonth: { not: null },
-        reigns: { none: {} },
-      },
+      where: PLACEABLE_NON_RULER_WHERE,
     }),
     visibleReignPersonIds.length
       ? prisma.person.findMany({ where: { id: { in: visibleReignPersonIds } } })
@@ -187,24 +195,8 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
     ...rulerPersonRows.map(mapPerson),
     ...lifePersonRows
       .map(mapPerson)
-      .filter((person) => {
-        const life = personLifeAbs(person);
-        if (!life) return false;
-        return rangeIntersectsWindow(life.startAbs, life.endAbs, fromAbs, toAbs);
-      }),
+      .filter((person) => personIntersectsAbsWindow(person, fromAbs, toAbs)),
   ];
-  const events = eventRows
-    .map((row) =>
-      mapEvent({
-        ...row,
-        dynasties: (dynastiesByEvent.get(row.id) ?? []).map((dynastyId) => ({ dynastyId })),
-        participants: (participantsByEvent.get(row.id) ?? []).map((personId) => ({ personId })),
-      }),
-    )
-    .filter((event) => {
-      const dynastyHit = event.dynastyIds.some((id: string) => dynastyIds.includes(id));
-      return dynastyHit || event.dynastyIds.length === 0;
-    });
 
   const relationRows = await prisma.$queryRaw<
     {
@@ -265,7 +257,7 @@ export async function registerRoutes(app: FastifyInstance) {
       prisma.$queryRaw<{ min_abs: number | null; max_abs: number | null }[]>`
         SELECT MIN(start_abs) AS min_abs, MAX(end_abs) AS max_abs FROM dynasties`,
       prisma.$queryRaw<{ min_abs: number | null; max_abs: number | null }[]>`
-        SELECT MIN(COALESCE(at_abs, start_abs)) AS min_abs,
+        SELECT MIN(COALESCE(start_abs, at_abs)) AS min_abs,
                MAX(COALESCE(end_abs, at_abs)) AS max_abs
         FROM events`,
     ]);

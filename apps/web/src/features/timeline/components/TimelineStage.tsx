@@ -219,7 +219,7 @@ export function TimelineStage() {
                 请确认 API 服务已启动（pnpm --filter @eralens/api dev）
               </p>
             </div>
-          ) : placed.length === 0 ? (
+          ) : placed.length === 0 && eventPlaced.length === 0 ? (
             <div className={styles.empty}>
               <p className={styles.emptyTitle}>{emptyYearLabel} 前后暂无收录</p>
               <p className={styles.emptyHint}>拖动底部标尺浏览其他年代</p>
@@ -251,7 +251,7 @@ export function TimelineStage() {
               ))}
             </>
           )}
-          {data && placed.length > 0 && (
+          {eventPlaced.length > 0 && (
             <EventLayer placed={eventPlaced} height={railHeight} />
           )}
           {data && placed.length > 0 && fatePlaced.length > 0 && (

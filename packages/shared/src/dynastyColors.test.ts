@@ -169,4 +169,27 @@ describe("resolveReignColorToken", () => {
       }),
     ).toBe(resolveDynastyColorToken(songSouth));
   });
+
+  it("keeps main-row rival reigns on the dynasty base token inside an orthodox window", () => {
+    const xia = {
+      id: "xia",
+      startAbs: absMonth(-2070),
+      endAbs: absMonth(-1600, 12),
+      colorToken: "ochre" as const,
+      orthodoxFromAbs: absMonth(-2061),
+    };
+    expect(
+      resolveReignColorToken(xia, {
+        startAbs: absMonth(-2006),
+        endAbs: absMonth(-1999, 12),
+        claimRole: "rival",
+      }),
+    ).toBe("ochre");
+    expect(
+      resolveReignColorToken(xia, {
+        startAbs: absMonth(-2061),
+        endAbs: absMonth(-2046, 12),
+      }),
+    ).toBe(ORTHODOX_COLOR_TOKEN);
+  });
 });

@@ -7,8 +7,10 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { rulersByDynasty, rulerStats } from "./rulers.mjs";
+import { alignReignSeamConfidences } from "../lib/alignReignSeamConfidences.mjs";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { applyFeudalClanMetadata } from "../lib/applyFeudalClanMetadata.mjs";
+import { validateReignDateConfidenceSeams } from "../lib/validateReignSeams.mjs";
 import { ORTHODOX_FROM_START } from "../lib/orthodoxDynasties.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 import { normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
@@ -189,6 +191,11 @@ const PERSON_DETAIL_OVERRIDES = {
     links: wiki("姜子牙"),
     birth: ym(-1156),
     death: ym(-1017),
+  },
+  "song-weizi": {
+    altNames: ["微子", "微子启"],
+    bio: "微子启，帝乙长子、帝辛庶兄。数谏不听而亡奔，周封之于宋，为宋国始封君。",
+    links: wiki("微子"),
   },
   "jiang-dai": {
     bio: "齐康公（姜贷），姜齐末代。前404年继宣公；前391年田和放逐于海上，姜齐在齐君位止。前379年卒，姜太公之祀绝。",
@@ -496,27 +503,36 @@ function dedupeReigns(reignList) {
   });
 }
 
-const reigns = applyDocumentedDatesToReigns(
-  dedupeReigns(
-    Object.values(rulersByDynasty)
-      .flat()
-      .map((r) =>
-        reign({
-          id: `reign-${r.personId}-${r.dynastyId}`,
-          dynastyId: r.dynastyId,
-          personId: r.personId,
-          title: r.title,
-          posthumousName: r.posthumousName,
-          templeName: null,
-          preferred: r.preferredAppellation ?? null,
-          start: ym(r.startYear),
-          end: ym(r.endYear, 12),
-          startDateConfidence: r.startDateConfidence ?? null,
-          endDateConfidence: r.endDateConfidence ?? null,
-        }),
-      ),
+const reigns = alignReignSeamConfidences(
+  applyDocumentedDatesToReigns(
+    dedupeReigns(
+      Object.values(rulersByDynasty)
+        .flat()
+        .map((r) =>
+          reign({
+            id: `reign-${r.personId}-${r.dynastyId}`,
+            dynastyId: r.dynastyId,
+            personId: r.personId,
+            title: r.title,
+            posthumousName: r.posthumousName,
+            templeName: null,
+            preferred: r.preferredAppellation ?? null,
+            start: ym(r.startYear),
+            end: ym(r.endYear, 12),
+            startDateConfidence: r.startDateConfidence ?? null,
+            endDateConfidence: r.endDateConfidence ?? null,
+          }),
+        ),
+    ),
   ),
 );
+
+const seamErrors = validateReignDateConfidenceSeams(reigns);
+if (seamErrors.length) {
+  console.error("Reign seam validation failed:");
+  for (const error of seamErrors) console.error(" ", error);
+  process.exit(1);
+}
 
 const { persons: importPersons, reigns: importReigns, missingReigns } = finalizeImportReigns(
   "chunqiu-zhanguo",

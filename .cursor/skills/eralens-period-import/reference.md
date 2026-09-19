@@ -227,6 +227,7 @@ ON CONFLICT (id) DO UPDATE SET
 
 -- 并行称君示例（南明鲁监国）：仅当与主线皇帝同时另立时才填 claim_track；是否傀儡不影响此判定。
 -- 前帝身后才即位（哪怕权臣拥立）走主线，claim_track 留 NULL。并行 track 的 claim_role 一律 rival。
+-- 主行上非正统代政（有穷后羿/寒浞）不填 claim_track，只标 claim_role=rival：不上金、不分并立行、不串通行继承链。
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   posthumous_name, temple_name, preferred_appellation,

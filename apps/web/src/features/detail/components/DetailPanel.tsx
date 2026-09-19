@@ -64,9 +64,16 @@ export function DetailPanel() {
             <h3 className={styles.sectionTitle}>要点</h3>
             <div className={styles.facts}>
               {detailQuery.data.facts.map((fact) => (
-                <div key={fact.label} className={styles.fact}>
+                <div
+                  key={fact.label}
+                  className={
+                    fact.value.length > 36
+                      ? `${styles.fact} ${styles.factBlock}`
+                      : styles.fact
+                  }
+                >
                   <span className={styles.factLabel}>{fact.label}</span>
-                  <span>{fact.value}</span>
+                  <span className={styles.factValue}>{fact.value}</span>
                 </div>
               ))}
             </div>

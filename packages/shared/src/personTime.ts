@@ -1,5 +1,5 @@
 import type { Person } from "./schema";
-import { absFromPoint } from "./time";
+import { absFromPoint, rangeIntersectsWindow } from "./time";
 
 export type PersonLifeSpan = {
   startAbs: number;
@@ -67,6 +67,18 @@ export function personPlacementWindow(
     return { startAbs: placement.startAbs, endAbs: placement.endAbs };
   }
   return { startAbs: placement.anchorAbs, endAbs: placement.anchorAbs };
+}
+
+/** True when a non-reign person has a placeable birth/death in the abs window. */
+export function personIntersectsAbsWindow(
+  person: Person,
+  fromAbs: number,
+  toAbs: number,
+): boolean {
+  const placement = personTimelinePlacement(person);
+  if (!placement) return false;
+  const window = personPlacementWindow(placement);
+  return rangeIntersectsWindow(window.startAbs, window.endAbs, fromAbs, toAbs);
 }
 
 export function personPointKindLabel(kind: PersonPointKind): string {

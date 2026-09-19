@@ -63,8 +63,8 @@ Task Progress:
   - **判定并列只看是否「同时另立」**，与是否权臣拥立无关。
   - **并行 `claim_track`**：在前任**仍在位**时，或与之**同年分立**的另一政权另立皇帝——如炀帝尚在时的杨侑/杨侗、南明鲁监国/绍武与弘光/隆武并存。填 `claim_track`（据点 kebab-case，如 `changan`、`lu-jian`）、`claim_label`（长安 / 洛阳 / 绍兴监国）。并行卡片统一并立虚线描边，`claim_role` 固定 `rival`。
   - **主线（不填 `claim_track`）**：前帝**身后**才即位，哪怕实为权臣傀儡，仍算**继任**，接在前帝继承链之后——如文帝→炀帝→弑帝后杨浩续统。不要用裁切卡片把继任硬接在前帝尾巴上冒充同时并存。
-  - 通行主线 succession 只串不填 track 的君主（文帝→炀帝，弘光→隆武→永历）；并行 track 内的君主彼此可串，但不与主线混链。
-  - 正统金色只覆主线。炀帝尚在时被拥立的杨侑不镀金；弑帝后的江都续统（杨浩）走主线。
+  - 通行主线 succession 只串不填 track、且无 `claim_role=rival` 的君主（文帝→炀帝，弘光→隆武→永历）；并行 track 内的君主彼此可串，但不与主线混链。
+  - 正统金色只覆主线。炀帝尚在时被拥立的杨侑不镀金；弑帝后的江都续统（杨浩）走主线。先后代政、不入正统世次的君主（有穷后羿/寒浞）走主行串行，不填 `claim_track`；标 `claim_role=rival`，不上金、不串进通行继承链，二人之间可另写 succession。
 - 按用户字面范围收录：说「夏商周」只收三代王室，不自动展开春秋列国；同一王室可按习惯分期拆行（`zhou-west` / `zhou-east`，`wei-east` / `wei-west`，比照东汉）。东魏、西魏虽仍用国号魏，通行史书作独立北朝王朝，各占一行，不用把孝静帝/西魏诸帝留在北魏 `claim_track`。
 - 每条实体记录来源（URL 或书名卷页），写入 `manifest.json` 的 `sources`；争议取舍写入 `notes`。
 - 只收录与**指定时期窗口相交**的实体；长跨度王朝（如唐）可只补窗口内在位与事件，勿重复插入已存在的完整王朝行（用 upsert 更新或跳过）。
@@ -142,7 +142,7 @@ node .cursor/skills/eralens-period-import/scripts/compute-abs.mjs -1046 1  # -12
 **在位年失考 / 推算边界**（与史料缺区分）：
 
 - 世系连续但在位年为插值或约数时，在 `reigns` 行标注 `start_date_confidence` / `end_date_confidence`：`certain`（默认 NULL）、`approximate`、`interpolated`。
-- 前端 `findReignUncertaintyBoundaries` 仅在两位君主**日历相接且交界两侧均标失考**时渲染波浪线；灭国留白、一侧有年表锚点、一年实录短祚（卫戴公等）不画。
+- 前端按本卡 `start_date_confidence` / `end_date_confidence` 在起年/迄年边画波浪线。日历相接的两王交界两侧必须同为失考或同为确定；贴着年表锚点的一侧不打失考标记。灭国留白不相接，各画自己的失考边。
 - `build-rulers.mjs` 对 `fillUndatedYears` 在锚点窗口内按世系**均分**在位年（不设 35 年上限），并自动打 `interpolated`；有年表锚点的边界保持 NULL。
 - 灭国、亡国等确实无国君的空档：若需占位用史料缺；若仅年代不可考则靠 confidence + 波浪线，不要混用。
 

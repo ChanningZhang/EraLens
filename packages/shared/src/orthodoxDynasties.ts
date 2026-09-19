@@ -1,10 +1,9 @@
-import { isParallelClaim } from "./claimTracks";
+import { isNonOrthodoxLine } from "./claimTracks";
 import type { Reign } from "./schema";
 import { absMonth } from "./time";
 
 /** 大一统王朝自起始即为中国正统（展示为金色）。分裂期、偏安或割据政权不在此列。 */
 export const ORTHODOX_FROM_START = new Set([
-  "xia",
   "shang",
   "zhou-west",
   "zhou-east",
@@ -22,6 +21,8 @@ export const ORTHODOX_FROM_START = new Set([
 
 /** 在特定 AbsMonth 之后才成为中国正统。 */
 export const ORTHODOX_FROM_ABS: Readonly<Record<string, number>> = {
+  /** 禹受禅建夏后氏，家天下自启始；禹段不上金。与 xia-shang-zhou 启在位起年对齐。 */
+  xia: absMonth(-2061),
   qin: absMonth(-221),
   /** 刘邦称帝建汉后始为正统；沛公/汉王起兵至称帝前不计金色。 */
   "han-west": absMonth(-202, 2),
@@ -103,16 +104,17 @@ export function overlapsOrthodoxSpan(
 /**
  * Gold on a card: the dynasty span is orthodox *and* the reign is the
  * conventionally counted line. Parallel claimants (隋恭帝杨侑 while 炀帝
- * still lived, 南明鲁监国) stay on their own row without gold.
+ * still lived, 南明鲁监国) and main-row rivals (`claimRole=rival`, 有穷代夏)
+ * stay without gold.
  */
 /** Months between accession and delayed-orthodox begin that still count (e.g. 顺治 1643→1644). */
 const DELAYED_ORTHODOX_ACCESSION_GRACE = 12;
 
 export function isOrthodoxReign(
   dynasty: OrthodoxDynasty & { endAbs: number },
-  reign: Pick<Reign, "startAbs" | "endAbs" | "claimTrack">,
+  reign: Pick<Reign, "startAbs" | "endAbs" | "claimTrack" | "claimRole">,
 ): boolean {
-  if (isParallelClaim(reign)) return false;
+  if (isNonOrthodoxLine(reign)) return false;
   const span = resolveOrthodoxSpan(dynasty);
   if (!span) return false;
   if (reign.endAbs <= span.startAbs) return false;

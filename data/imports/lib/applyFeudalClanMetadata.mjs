@@ -54,8 +54,10 @@ export function applyFeudalClanMetadata({ persons, dynasties, personDynastyId })
     }
 
     const override = FEUDAL_PERSON_CLAN_OVERRIDES[person.id];
-    if (override?.ancestralXing) person.ancestralXing = override.ancestralXing;
-    if (override?.clanShi) person.clanShi = override.clanShi;
+    if (override) {
+      if ("ancestralXing" in override) person.ancestralXing = override.ancestralXing;
+      if ("clanShi" in override) person.clanShi = override.clanShi;
+    }
   }
 
   return { persons, dynasties };

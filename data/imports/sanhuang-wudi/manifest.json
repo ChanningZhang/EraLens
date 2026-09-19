@@ -1,0 +1,61 @@
+{
+  "slug": "sanhuang-wudi",
+  "title": "三皇五帝",
+  "window": {
+    "startYear": -2804,
+    "startMonth": 1,
+    "endYear": -2071,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "minimal",
+  "generatedAt": "2026-09-19",
+  "counts": {
+    "persons": 9,
+    "dynasties": 2,
+    "reigns": 9,
+    "events": 3,
+    "relations": 9
+  },
+  "sources": [
+    {
+      "label": "史记·五帝本纪",
+      "url": "https://zh.wikisource.org/wiki/史記/卷01"
+    },
+    {
+      "label": "史记·三皇本纪（司马贞补）",
+      "url": "https://zh.wikisource.org/wiki/史記/卷01"
+    },
+    {
+      "label": "帝王世纪",
+      "url": "https://zh.wikipedia.org/wiki/帝王世纪"
+    },
+    {
+      "label": "伏羲",
+      "url": "https://zh.wikipedia.org/wiki/伏羲"
+    },
+    {
+      "label": "女娲",
+      "url": "https://zh.wikipedia.org/wiki/女娲"
+    },
+    {
+      "label": "神农氏",
+      "url": "https://zh.wikipedia.org/wiki/神农氏"
+    },
+    {
+      "label": "黄帝",
+      "url": "https://zh.wikipedia.org/wiki/黄帝"
+    },
+    {
+      "label": "夏商周断代工程",
+      "url": "https://zh.wikipedia.org/wiki/夏商周断代工程"
+    }
+  ],
+  "notes": [
+    "三皇取司马贞《三皇本纪》伏羲、女娲、神农；五帝取《史记》黄帝、颛顼、帝喾、挚、尧、舜。",
+    "相对在位年：《帝王世纪》伏羲110、神农120；女娲无年与伏羲同110；五帝黄帝100、颛顼78、喾70、挚9、尧98、舜39（史记践帝位）。下锚舜迄前2071接夏禹前2070。",
+    "全部在位起迄标 interpolated；黄帝纪元前2697仅作后世纪年参照，不作在位元年。",
+    "三皇、五帝不上正统金色。舜禹禅让 relation 指向夏包 si-yu。",
+    "尧取维基「姓祁、名放勋、陶唐氏」；伊祁为索隐/帝王世纪一说，不写入 ancestral_xing。"
+  ]
+}

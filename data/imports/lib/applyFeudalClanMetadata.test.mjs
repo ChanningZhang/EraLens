@@ -41,6 +41,18 @@ describe("applyFeudalClanMetadata", () => {
     assert.equal(persons[0].clanShi, "吕");
   });
 
+  it("lets usurpers clear inherited dynasty 姓", () => {
+    const persons = [{ id: "hou-yi", name: "后羿" }];
+    const dynasties = [{ id: "xia", name: "夏" }];
+    applyFeudalClanMetadata({
+      persons,
+      dynasties,
+      personDynastyId: { "hou-yi": "xia" },
+    });
+    assert.equal(persons[0].ancestralXing, null);
+    assert.equal(persons[0].clanShi, "有穷");
+  });
+
   it("does not stamp the shared missing-ruler person", () => {
     const persons = [{ id: "system-missing-ruler", name: "史料缺" }];
     const dynasties = [{ id: "ju-chunqiu", name: "莒" }];

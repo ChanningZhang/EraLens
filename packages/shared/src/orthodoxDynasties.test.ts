@@ -68,15 +68,32 @@ describe("orthodoxDynasties", () => {
     expect(isOrthodoxReign(qing, huangTaiji)).toBe(false);
   });
 
-  it("marks xia as orthodox from dynasty start", () => {
+  it("marks xia as orthodox from Qi, not Yu", () => {
     const xia = {
       id: "xia",
       startAbs: absMonth(-2070),
-      endAbs: absMonth(-1600),
-      orthodoxFromAbs: absMonth(-2070),
+      endAbs: absMonth(-1600, 12),
+      orthodoxFromAbs: ORTHODOX_FROM_ABS.xia,
     };
-    expect(resolveOrthodoxFromAbs(xia)).toBe(xia.startAbs);
-    expect(isOrthodoxAt(xia, xia.startAbs)).toBe(true);
+    const yu = {
+      startAbs: absMonth(-2070),
+      endAbs: absMonth(-1600, 12),
+    };
+    const qi = {
+      startAbs: ORTHODOX_FROM_ABS.xia!,
+      endAbs: absMonth(-1600, 12),
+    };
+    expect(resolveOrthodoxFromAbs(xia)).toBe(ORTHODOX_FROM_ABS.xia);
+    expect(isOrthodoxAt(xia, xia.startAbs)).toBe(false);
+    expect(isOrthodoxReign(xia, yu)).toBe(false);
+    expect(isOrthodoxReign(xia, qi)).toBe(true);
+    expect(
+      isOrthodoxReign(xia, {
+        startAbs: absMonth(-2006),
+        endAbs: absMonth(-1999, 12),
+        claimRole: "rival",
+      }),
+    ).toBe(false);
   });
 
   it("prefers persisted orthodoxFromAbs override", () => {

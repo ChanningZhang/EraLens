@@ -1,3 +1,4 @@
+import { isNonOrthodoxLine } from "./claimTracks";
 import {
   isOrthodoxAt,
   isOrthodoxReign,
@@ -110,9 +111,11 @@ export function resolveDynastyColorValue(
  */
 export function resolveReignColorToken(
   dynasty: DynastyColorInput & { endAbs: number },
-  reign: Pick<Reign, "startAbs" | "endAbs" | "claimTrack">,
+  reign: Pick<Reign, "startAbs" | "endAbs" | "claimTrack" | "claimRole">,
 ): ColorToken {
   if (isOrthodoxReign(dynasty, reign)) return ORTHODOX_COLOR_TOKEN;
+  // Parallel / rival markers keep the lane 本色 even inside an orthodox window.
+  if (isNonOrthodoxLine(reign)) return dynasty.colorToken;
   const orthodoxEnd = resolveOrthodoxEndAbs(dynasty);
   // Post-orthodox reigns (端宗/帝昺, 元惠宗) keep the dynasty base token, not
   // the cutoff month's orthodox-at gold used for the lane chip.
@@ -124,7 +127,7 @@ export function resolveReignColorToken(
 
 export function resolveReignColorValue(
   dynasty: DynastyColorInput & { endAbs: number },
-  reign: Pick<Reign, "startAbs" | "endAbs" | "claimTrack">,
+  reign: Pick<Reign, "startAbs" | "endAbs" | "claimTrack" | "claimRole">,
 ): string {
   return COLOR_VALUES[resolveReignColorToken(dynasty, reign)];
 }

@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { PersonSchema } from "./schema";
 import {
+  personIntersectsAbsWindow,
   personLifeAbs,
   personPlacementWindow,
   personPointKindLabel,
@@ -112,5 +113,19 @@ describe("personPointKindLabel", () => {
   it("labels birth and death", () => {
     expect(personPointKindLabel("birth")).toBe("生");
     expect(personPointKindLabel("death")).toBe("卒");
+  });
+});
+
+describe("personIntersectsAbsWindow", () => {
+  it("includes death-only persons at the death month", () => {
+    const person = PersonSchema.parse({
+      id: "fu-hao",
+      name: "妇好",
+      death: { year: -1200, month: 1 },
+      roles: ["王后"],
+    });
+    const at = absMonth(-1200, 1);
+    expect(personIntersectsAbsWindow(person, at, at)).toBe(true);
+    expect(personIntersectsAbsWindow(person, at + 1, at + 12)).toBe(false);
   });
 });

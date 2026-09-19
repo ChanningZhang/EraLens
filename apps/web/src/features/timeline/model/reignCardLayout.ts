@@ -1,7 +1,6 @@
 import {
-  claimTrackOf,
   isSystemMissingReign,
-  isUncertainReignSeam,
+  isUncertainDateConfidence,
   reignVisualBounds,
   resolveReignCardLabel,
   type PreQinClanContext,
@@ -86,19 +85,12 @@ function layoutRulerReignBar(
   if (visualWidth <= 0) return null;
 
   const anchor = (visual.start + visual.endExclusive) / 2;
-  const trackPeers = reigns
-    .filter((item) => claimTrackOf(item) === claimTrackOf(reign))
-    .sort((a, b) => a.startAbs - b.startAbs || a.id.localeCompare(b.id));
-  const reignIndex = trackPeers.findIndex((item) => item.id === reign.id);
-  const prevReign = reignIndex > 0 ? trackPeers[reignIndex - 1] : undefined;
-  const nextReign =
-    reignIndex >= 0 && reignIndex < trackPeers.length - 1
-      ? trackPeers[reignIndex + 1]
-      : undefined;
-  const seamInsetLeft =
-    prevReign && isUncertainReignSeam(prevReign, reign) ? UNCERTAIN_SEAM_GAP_PX : 0;
-  const seamInsetRight =
-    nextReign && isUncertainReignSeam(reign, nextReign) ? UNCERTAIN_SEAM_GAP_PX : 0;
+  const seamInsetLeft = isUncertainDateConfidence(reign.startDateConfidence)
+    ? UNCERTAIN_SEAM_GAP_PX
+    : 0;
+  const seamInsetRight = isUncertainDateConfidence(reign.endDateConfidence)
+    ? UNCERTAIN_SEAM_GAP_PX
+    : 0;
 
   const label = resolveReignCardLabel(reign, personName, {
     cardWidthPx: visualWidth,

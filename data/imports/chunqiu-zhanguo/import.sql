@@ -491,7 +491,7 @@ INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, 
 VALUES ('yan-r37', '姬喜', ARRAY[]::text[], '姬', '匽', NULL, NULL, NULL, NULL, ARRAY['君主'], '燕王喜，燕国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/燕王喜"}]'::jsonb)
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES ('song-weizi', '子启', ARRAY[]::text[], '子', '宋', NULL, NULL, NULL, NULL, ARRAY['君主'], '宋微子，宋国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/宋微子"}]'::jsonb)
+VALUES ('song-weizi', '子启', ARRAY['微子','微子启'], '子', '宋', NULL, NULL, NULL, NULL, ARRAY['君主'], '微子启，帝乙长子、帝辛庶兄。数谏不听而亡奔，周封之于宋，为宋国始封君。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/微子"}]'::jsonb)
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES ('song-r1', '子衍', ARRAY[]::text[], '子', '宋', NULL, NULL, NULL, NULL, ARRAY['君主'], '宋微仲，宋国君主。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/宋微仲"}]'::jsonb)
@@ -1817,7 +1817,7 @@ INSERT INTO reigns (
   'reign-qi-r4-qi-chunqiu', 'qi-chunqiu', 'qi-r4', '齐哀公',
   '哀公', NULL, NULL,
   -899, 1, NULL, -863, 12, NULL,
-  -10776, -10333, 'year', 'interpolated', 'interpolated'
+  -10776, -10333, 'year', 'interpolated', NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -2455,7 +2455,7 @@ INSERT INTO reigns (
   'reign-qi-r26-qi-chunqiu', 'qi-chunqiu', 'qi-r26', '安孺子',
   NULL, NULL, NULL,
   -489, 1, NULL, -489, 12, NULL,
-  -5856, -5845, 'year', 'interpolated', 'interpolated'
+  -5856, -5845, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -2977,7 +2977,7 @@ INSERT INTO reigns (
   'reign-jin-r4-jin-chunqiu', 'jin-chunqiu', 'jin-r4', '晋厉侯',
   '厉侯', NULL, NULL,
   -895, 1, NULL, -859, 12, NULL,
-  -10728, -10285, 'year', 'interpolated', 'interpolated'
+  -10728, -10285, 'year', 'interpolated', NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -4224,7 +4224,7 @@ INSERT INTO reigns (
   'reign-chu-r7-chu-chunqiu', 'chu-chunqiu', 'chu-r7', '熊延',
   NULL, NULL, NULL,
   -872, 1, NULL, -848, 12, NULL,
-  -10452, -10153, 'year', 'interpolated', 'interpolated'
+  -10452, -10153, 'year', 'interpolated', NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -5384,7 +5384,7 @@ INSERT INTO reigns (
   'reign-yan-r3-yan-chunqiu', 'yan-chunqiu', 'yan-r3', '燕侯舞',
   NULL, NULL, '{"kind":"regnal","name":"舞"}'::jsonb,
   -909, 1, NULL, -865, 12, NULL,
-  -10896, -10357, 'year', 'interpolated', 'interpolated'
+  -10896, -10357, 'year', 'interpolated', NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -6573,7 +6573,7 @@ INSERT INTO reigns (
   'reign-song-r6-song-chunqiu', 'song-chunqiu', 'song-r6', '宋厉公',
   '厉公', NULL, NULL,
   -884, 1, NULL, -859, 12, NULL,
-  -10596, -10285, 'year', 'interpolated', 'interpolated'
+  -10596, -10285, 'year', 'interpolated', NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -8574,7 +8574,7 @@ INSERT INTO reigns (
   'reign-weiguo-r6-wei-weiguo', 'wei-weiguo', 'weiguo-r6', '卫贞伯',
   '贞伯', NULL, NULL,
   -891, 1, NULL, -867, 12, NULL,
-  -10680, -10381, 'year', 'interpolated', 'interpolated'
+  -10680, -10381, 'year', 'interpolated', NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -9937,7 +9937,7 @@ INSERT INTO reigns (
   'reign-zheng-r6-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r6', '郑子亹',
   NULL, NULL, '{"kind":"regnal","name":"子亹"}'::jsonb,
   -694, 1, NULL, -694, 12, NULL,
-  -8316, -8305, 'year', 'interpolated', 'interpolated'
+  -8316, -8305, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -10604,7 +10604,7 @@ INSERT INTO reigns (
   'reign-cao-r4-cao-chunqiu', 'cao-chunqiu', 'cao-r4', '曹孝伯',
   '孝伯', NULL, NULL,
   -902, 1, NULL, -866, 12, NULL,
-  -10812, -10369, 'year', 'interpolated', 'interpolated'
+  -10812, -10369, 'year', 'interpolated', NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11445,7 +11445,7 @@ INSERT INTO reigns (
   'reign-yue-r3-yue-chunqiu', 'yue-chunqiu', 'yue-r3', '越侯夫谭',
   NULL, NULL, '{"kind":"regnal","name":"夫谭"}'::jsonb,
   -565, 1, NULL, -511, 12, NULL,
-  -6768, -6109, 'year', 'interpolated', 'interpolated'
+  -6768, -6109, 'year', 'interpolated', NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,

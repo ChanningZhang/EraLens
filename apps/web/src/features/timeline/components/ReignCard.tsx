@@ -5,9 +5,8 @@ import {
   type Reign,
   buildPreQinClanContext,
   formatReignSpanTooltip,
-  claimTrackOf,
+  DATE_CONFIDENCE_LABEL,
   isUncertainDateConfidence,
-  isUncertainReignSeam,
   reignVisualBounds,
   isParallelClaim,
   PARALLEL_CLAIM_LABEL,
@@ -35,6 +34,7 @@ import {
 } from "../model/reignClusters";
 import { selectionStore } from "../state/selectionStore";
 import { HoverTooltip } from "./HoverTooltip";
+import { ReignWavyEdge } from "./ReignWavyEdge";
 import styles from "./ReignCard.module.css";
 
 /** Breathing room at interpolated seams so wavy junctions stay visible. */
@@ -83,23 +83,10 @@ export function ReignCard({
   const durationMonths = visual.endExclusive - visual.start;
   const visualWidth = Math.max(0, durationMonths * viewport.pxPerMonth);
   const anchor = (visual.start + visual.endExclusive) / 2;
-  const trackPeers = reigns
-    .filter((item) => claimTrackOf(item) === claimTrackOf(reign))
-    .sort((a, b) => a.startAbs - b.startAbs || a.id.localeCompare(b.id));
-  const reignIndex = trackPeers.findIndex((item) => item.id === reign.id);
-  const prevReign = reignIndex > 0 ? trackPeers[reignIndex - 1] : undefined;
-  const nextReign =
-    reignIndex >= 0 && reignIndex < trackPeers.length - 1
-      ? trackPeers[reignIndex + 1]
-      : undefined;
-  const seamInsetLeft =
-    prevReign && isUncertainReignSeam(prevReign, reign)
-      ? UNCERTAIN_SEAM_GAP_PX
-      : 0;
-  const seamInsetRight =
-    nextReign && isUncertainReignSeam(reign, nextReign)
-      ? UNCERTAIN_SEAM_GAP_PX
-      : 0;
+  const uncertainStart = isUncertainDateConfidence(reign.startDateConfidence);
+  const uncertainEnd = isUncertainDateConfidence(reign.endDateConfidence);
+  const seamInsetLeft = uncertainStart ? UNCERTAIN_SEAM_GAP_PX : 0;
+  const seamInsetRight = uncertainEnd ? UNCERTAIN_SEAM_GAP_PX : 0;
   const selected =
     selection.selected?.type === "reign" && selection.selected.id === reign.id;
 
@@ -141,6 +128,16 @@ export function ReignCard({
         ? personName
         : label;
   const timeTooltip = formatReignSpanTooltip(reign);
+  const dateConfidenceNote = [
+    uncertainStart && reign.startDateConfidence
+      ? `起年${DATE_CONFIDENCE_LABEL[reign.startDateConfidence]}`
+      : null,
+    uncertainEnd && reign.endDateConfidence
+      ? `迄年${DATE_CONFIDENCE_LABEL[reign.endDateConfidence]}`
+      : null,
+  ]
+    .filter(Boolean)
+    .join("；");
   const claimTooltip = parallel
     ? `${PARALLEL_CLAIM_LABEL}${reign.claimLabel ? `・${reign.claimLabel}` : ""}`
     : undefined;
@@ -149,7 +146,9 @@ export function ReignCard({
     showMeta,
     meta,
     tooltipName,
-    timeTooltip,
+    timeTooltip: dateConfidenceNote
+      ? `${timeTooltip}\n${dateConfidenceNote}`
+      : timeTooltip,
     claimTooltip,
   });
 
@@ -158,13 +157,23 @@ export function ReignCard({
       styles.card,
       barLayout.markerStyle ? styles.marker : "",
       detail === "wrap" ? styles.wrap : "",
+      uncertainStart ? styles.uncertainStart : "",
+      uncertainEnd ? styles.uncertainEnd : "",
       orthodox ? "orthodoxGold" : "",
       selected ? styles.selected : "",
       parallel ? styles.parallel : "",
     ]
       .filter(Boolean)
       .join(" ");
-  }, [barLayout.markerStyle, detail, orthodox, selected, parallel]);
+  }, [
+    barLayout.markerStyle,
+    detail,
+    uncertainStart,
+    uncertainEnd,
+    orthodox,
+    selected,
+    parallel,
+  ]);
 
   return (
     <div
@@ -176,49 +185,55 @@ export function ReignCard({
         height: rowHeights[stackIndex] ?? STACK_ROW_HEIGHT,
       }}
     >
-      <HoverTooltip text={tooltipText}>
-        {(handlers) => (
-          <button
-            type="button"
-            className={className}
-            style={{
-              ["--card-color" as string]: color,
-              ...(barLayout.markerStyle
-                ? {
-                    left: barLayout.barInsetPx,
-                    width: barLayout.barWidthPx,
-                    right: "auto",
-                  }
-                : {
-                    left: seamInsetLeft,
-                    right: seamInsetRight,
-                  }),
-              ...(detail === "wrap"
-                ? {
-                    ["--card-name-size" as string]: `${barLayout.textLayout.nameFontPx}px`,
-                  }
-                : {}),
-            }}
-            onClick={() => {
-              selectionStore.select({ type: "reign", id: reign.id }, reign.startAbs);
-              selectionStore.syncToUrl(viewport.centerAbs);
-            }}
-            aria-label={
-              claimTooltip
-                ? `${label} ${dynasty.name} ${claimTooltip}`
-                : `${label} ${dynasty.name}`
-            }
-            {...handlers}
-          >
-            {detail !== "below" && (
-              <div className={styles.content}>
-                <p className={styles.name}>{label}</p>
-                {showMeta && meta && <p className={styles.meta}>{meta.name}</p>}
-              </div>
-            )}
-          </button>
-        )}
-      </HoverTooltip>
+      <div
+        className={styles.cardShell}
+        style={{ ["--card-color" as string]: color }}
+      >
+        {uncertainStart && <ReignWavyEdge side="left" />}
+        <HoverTooltip text={tooltipText}>
+          {(handlers) => (
+            <button
+              type="button"
+              className={className}
+              style={{
+                ...(barLayout.markerStyle
+                  ? {
+                      left: barLayout.barInsetPx,
+                      width: barLayout.barWidthPx,
+                      right: "auto",
+                    }
+                  : {
+                      left: seamInsetLeft,
+                      right: seamInsetRight,
+                    }),
+                ...(detail === "wrap"
+                  ? {
+                      ["--card-name-size" as string]: `${barLayout.textLayout.nameFontPx}px`,
+                    }
+                  : {}),
+              }}
+              onClick={() => {
+                selectionStore.select({ type: "reign", id: reign.id }, reign.startAbs);
+                selectionStore.syncToUrl(viewport.centerAbs);
+              }}
+              aria-label={
+                claimTooltip
+                  ? `${label} ${dynasty.name} ${claimTooltip}`
+                  : `${label} ${dynasty.name}`
+              }
+              {...handlers}
+            >
+              {detail !== "below" && (
+                <div className={styles.content}>
+                  <p className={styles.name}>{label}</p>
+                  {showMeta && meta && <p className={styles.meta}>{meta.name}</p>}
+                </div>
+              )}
+            </button>
+          )}
+        </HoverTooltip>
+        {uncertainEnd && <ReignWavyEdge side="right" />}
+      </div>
       {detail === "below" && (
         <span
           className={

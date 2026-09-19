@@ -177,7 +177,7 @@ function missingCoversGap(
   );
 }
 
-/** Wavy seams only when both sides agree the junction year is uncertain. */
+/** @deprecated Wavy edges render per-card from start/end_date_confidence. */
 export function isUncertainReignSeam(left: Reign, right: Reign): boolean {
   return (
     isUncertainDateConfidence(left.endDateConfidence) &&
@@ -185,73 +185,82 @@ export function isUncertainReignSeam(left: Reign, right: Reign): boolean {
   );
 }
 
-function boundaryConfidenceAtSeam(
+function reignEndExclusive(reign: Reign): number {
+  return reign.endAbs + 1;
+}
+
+function isParallelPair(left: Reign, right: Reign): boolean {
+  const leftTrack = claimTrackOf(left);
+  const rightTrack = claimTrackOf(right);
+  if (leftTrack == null && rightTrack == null) return false;
+  return leftTrack !== rightTrack;
+}
+
+/** Same-dynasty succession, or cross-dynasty handoff without in-dynasty continuations. */
+function isCalendarSeamPair(
   left: Reign,
   right: Reign,
-): DateConfidence | undefined {
-  if (!isUncertainReignSeam(left, right)) return undefined;
-  return left.endDateConfidence ?? right.startDateConfidence;
+  active: readonly Reign[],
+): boolean {
+  if (isParallelPair(left, right)) return false;
+  if (reignEndExclusive(left) !== right.startAbs) return false;
+  if (left.dynastyId === right.dynastyId) return true;
+
+  const leftHasDynastySuccessor = active.some(
+    (reign) =>
+      reign.id !== left.id &&
+      reign.dynastyId === left.dynastyId &&
+      reign.startAbs === right.startAbs,
+  );
+  if (leftHasDynastySuccessor) return false;
+
+  const rightHasDynastyPredecessor = active.some(
+    (reign) =>
+      reign.id !== right.id &&
+      reign.dynastyId === right.dynastyId &&
+      reignEndExclusive(reign) === right.startAbs,
+  );
+  if (rightHasDynastyPredecessor) return false;
+
+  return true;
 }
 
 /**
- * Locate reign seams that should show the wavy "年代失考" treatment.
- *
- * Only **junction** — two cards touch and **both** sides mark the seam year uncertain.
- * Calendar holes (亡国、留白) never get wavy lines even if nearby reigns are
- * interpolated; 史料缺 keeps the dashed card.
+ * Calendar-adjacent reign seams must mark uncertainty on both sides or neither.
+ * Skips 亡国留白 (calendar holes) and parallel claim_track rivals.
  */
-export function findReignUncertaintyBoundaries(
-  rulers: readonly Reign[],
-  missingReigns: readonly Reign[] = [],
-): ReignUncertaintyBoundary[] {
-  const activeRulers = rulers.filter((reign) => !isSystemMissingReign(reign));
-  if (activeRulers.length < 2) return [];
+export function validateReignDateConfidenceSeams(
+  reigns: readonly Reign[],
+): string[] {
+  const active = reigns.filter((reign) => !isSystemMissingReign(reign));
+  const errors: string[] = [];
 
-  const { items, rowCount } = assignReignStacks(activeRulers);
-  const boundaries: ReignUncertaintyBoundary[] = [];
-
-  for (let row = 0; row < rowCount; row += 1) {
-    const rowItems = items.filter((item) => item.stackIndex === row);
-    const intervals: VisualInterval[] = rowItems.map(({ reign, stackIndex }) => {
-      const span = resolveReignVisualSpan(reign, activeRulers);
-      return {
-        startAbs: span.startAbs,
-        endExclusive: span.endExclusive,
-        reignId: reign.id,
-        stackIndex,
-      };
-    });
-    const merged = mergeIntervals(intervals);
-
-    for (let i = 0; i < merged.length - 1; i += 1) {
-      const left = merged[i]!;
-      const right = merged[i + 1]!;
-      const gapStart = left.endExclusive;
-      const gapEnd = right.startAbs - 1;
-      const gapMonths = gapEnd - gapStart + 1;
-
-      const leftReign = activeRulers.find((r) => r.id === left.reignId)!;
-      const rightReign = activeRulers.find((r) => r.id === right.reignId)!;
-      const confidence = boundaryConfidenceAtSeam(leftReign, rightReign);
-
-      if (!confidence) continue;
-      if (gapMonths > 0) continue;
-      if (missingCoversGap(missingReigns, gapStart, gapEnd)) continue;
-
-      const seamAbs = Math.max(left.endExclusive - 1, right.startAbs);
-      boundaries.push({
-        id: `uncertain-junction-${left.reignId}-${right.reignId}`,
-        kind: "junction",
-        stackIndex: row,
-        startAbs: seamAbs,
-        endAbs: seamAbs,
-        leftReignId: left.reignId,
-        rightReignId: right.reignId,
-      });
+  for (const left of active) {
+    const successors = active.filter(
+      (right) =>
+        right.id !== left.id && isCalendarSeamPair(left, right, active),
+    );
+    for (const right of successors) {
+      const leftUncertain = isUncertainDateConfidence(left.endDateConfidence);
+      const rightUncertain = isUncertainDateConfidence(right.startDateConfidence);
+      if (leftUncertain === rightUncertain) continue;
+      errors.push(
+        `${left.id} end (${left.endDateConfidence ?? "certain"}) / ${right.id} start (${right.startDateConfidence ?? "certain"}) mismatch`,
+      );
     }
   }
 
-  return boundaries;
+  return errors;
+}
+
+/**
+ * @deprecated Uncertainty waves render on each reign card edge. Kept for callers/tests.
+ */
+export function findReignUncertaintyBoundaries(
+  _rulers: readonly Reign[],
+  _missingReigns: readonly Reign[] = [],
+): ReignUncertaintyBoundary[] {
+  return [];
 }
 
 export function uncertaintyBoundaryTooltip(
@@ -261,7 +270,9 @@ export function uncertaintyBoundaryTooltip(
   const left = rulers.find((r) => r.id === boundary.leftReignId);
   const right = rulers.find((r) => r.id === boundary.rightReignId);
   const confidence =
-    left && right ? boundaryConfidenceAtSeam(left, right) : undefined;
+    left && right && isUncertainReignSeam(left, right)
+      ? (left.endDateConfidence ?? right.startDateConfidence)
+      : undefined;
   const label = confidence ? DATE_CONFIDENCE_LABEL[confidence] : "年代失考";
   const note =
     boundary.kind === "gap"

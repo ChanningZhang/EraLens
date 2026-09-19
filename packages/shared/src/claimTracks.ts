@@ -9,7 +9,10 @@ import type { Reign } from "./schema";
  * - omitted / `main` — conventionally counted succession (文帝→炀帝, 弘光→隆武→永历)
  * - other kebab-case keys — one vertical sub-row per seat (`changan`, `lu-jian`)
  * - `claimLabel` — seat shown in tooltip / detail (长安 / 绍兴监国)
- * - `claimRole` — always `rival` on a parallel track (dashed border)
+ * - `claimRole` — `rival` for a reign that is not the conventionally counted
+ *   line. With `claimTrack` it is a concurrent claimant (dashed sub-row).
+ *   Without `claimTrack` it stays sequential on the main row (有穷代夏) but
+ *   still skips orthodox gold and the main succession chain.
  *
  * Sequencing, clipping, and succession chains stay *inside* a track. Tracks
  * stack so overlapping reigns render side by side.
@@ -22,6 +25,13 @@ export function claimTrackOf(reign: Pick<Reign, "claimTrack">): string {
 
 export function isParallelClaim(reign: Pick<Reign, "claimTrack">): boolean {
   return claimTrackOf(reign) !== MAIN_CLAIM_TRACK;
+}
+
+/** Not the conventionally counted orthodox line (parallel track or rival marker). */
+export function isNonOrthodoxLine(
+  reign: Pick<Reign, "claimTrack" | "claimRole">,
+): boolean {
+  return isParallelClaim(reign) || reign.claimRole === "rival";
 }
 
 export type ClaimTrackLane = {

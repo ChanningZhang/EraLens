@@ -671,6 +671,7 @@ describe("resolveReignCardMeta", () => {
   });
 
   it("shows posthumous meta for Shang rulers", () => {
+    const clan = buildPreQinClanContext(null, { ancestralXing: "子" });
     expect(
       resolveReignCardMeta(
         source({
@@ -682,13 +683,25 @@ describe("resolveReignCardMeta", () => {
       ),
     ).toBeNull();
     expect(
+      resolveReignCardMeta(
+        source({
+          start: { year: -1547, month: 1 },
+          title: "商沃丁",
+          posthumousName: "沃丁",
+        }),
+        "子绚",
+        clan,
+      ),
+    ).toEqual({ label: "名", name: "绚" });
+    expect(
       resolveReignCardLabel(
         source({
           start: { year: -1075, month: 1 },
           title: "商王帝辛",
           posthumousName: "纣",
         }),
-        "帝辛",
+        "子受",
+        { clan },
       ),
     ).toBe("纣");
     expect(
@@ -698,9 +711,10 @@ describe("resolveReignCardMeta", () => {
           title: "商王帝辛",
           posthumousName: "纣",
         }),
-        "帝辛",
+        "子受",
+        clan,
       ),
-    ).toEqual({ label: "名", name: "帝辛" });
+    ).toEqual({ label: "名", name: "受" });
     expect(
       resolveReignCardMeta(
         source({
@@ -712,6 +726,17 @@ describe("resolveReignCardMeta", () => {
         "帝乙",
       ),
     ).toBeNull();
+    expect(
+      resolveReignCardMeta(
+        source({
+          start: { year: -1101, month: 1 },
+          title: "商王帝乙",
+          posthumousName: "帝乙",
+        }),
+        "子羡",
+        clan,
+      ),
+    ).toEqual({ label: "名", name: "羡" });
     expect(
       resolveReignDetailSubtitle(
         source({

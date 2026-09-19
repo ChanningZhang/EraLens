@@ -1,0 +1,30 @@
+.waveLeft,
+.waveRight {
+  position: absolute;
+  top: 0;
+  width: 6px;
+  height: 100%;
+  color: color-mix(in srgb, var(--card-color) 42%, var(--color-ink-muted));
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.waveLeft {
+  left: 0;
+}
+
+.waveRight {
+  right: 0;
+}
+
+.waveLeft path,
+.waveRight path {
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+.waveRight {
+  transform: scaleX(-1);
+}

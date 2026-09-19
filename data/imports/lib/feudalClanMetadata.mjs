@@ -22,7 +22,8 @@
 export const FEUDAL_DYNASTY_CLAN = {
   xia: {
     ancestralXing: "姒",
-    source: "https://zh.wikipedia.org/wiki/夏朝 — 姒姓",
+    clanShi: "夏",
+    source: "https://zh.wikipedia.org/wiki/夏朝 — 姒姓夏氏",
   },
   shang: {
     ancestralXing: "子",
@@ -169,6 +170,16 @@ export const FEUDAL_PERSON_CLAN_OVERRIDES = {
     ancestralXing: "妫",
     clanShi: "田",
     source: "https://zh.wikipedia.org/wiki/齐国 — 田齐：妫姓田氏",
+  },
+  "hou-yi": {
+    ancestralXing: null,
+    clanShi: "有穷",
+    source: "https://zh.wikipedia.org/wiki/后羿_(夏朝) — 有穷氏，代夏而未称夏后",
+  },
+  "han-zhuo": {
+    ancestralXing: "妘",
+    clanShi: "寒",
+    source: "https://zh.wikipedia.org/wiki/寒浞 — 妘姓寒氏",
   },
 };
 

@@ -585,15 +585,38 @@ function assignInterpolatedRun(run, windowStart, windowEnd) {
   }
 }
 
-/** Tag interpolated reign years; do not mark seams across calendar holes (亡国留白). */
+/** Tag interpolated reign years; anchor-adjacent sides stay certain. */
 function markInterpolatedBoundaries(rulers) {
-  for (const reign of rulers) {
-    if (reign.interpolated) {
-      if (!reign.startDateConfidence) reign.startDateConfidence = "interpolated";
-      if (!reign.endDateConfidence) reign.endDateConfidence = "interpolated";
+  const sorted = [...rulers].sort(
+    (a, b) => a.start - b.start || a.end - b.end || a.title.localeCompare(b.title),
+  );
+  for (let i = 0; i < sorted.length; i += 1) {
+    const reign = sorted[i];
+    if (!reign.interpolated) continue;
+    const prev = sorted[i - 1];
+    const next = sorted[i + 1];
+    const touchesPrevAnchor =
+      prev?.end != null &&
+      reign.start === prev.end + 1 &&
+      !prev.interpolated &&
+      !isUncertainConfidence(prev.endDateConfidence);
+    const touchesNextAnchor =
+      next?.start != null &&
+      reign.end + 1 === next.start &&
+      !next.interpolated &&
+      !isUncertainConfidence(next.startDateConfidence);
+    if (!reign.startDateConfidence && !touchesPrevAnchor) {
+      reign.startDateConfidence = "interpolated";
+    }
+    if (!reign.endDateConfidence && !touchesNextAnchor) {
+      reign.endDateConfidence = "interpolated";
     }
   }
   return clearAnchoredShortReignInterpolation(rulers);
+}
+
+function isUncertainConfidence(value) {
+  return value === "interpolated" || value === "approximate";
 }
 
 /**

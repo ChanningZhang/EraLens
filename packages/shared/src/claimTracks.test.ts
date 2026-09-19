@@ -4,6 +4,7 @@ import {
   claimDetailFacts,
   claimTrackOf,
   groupByClaimTrack,
+  isNonOrthodoxLine,
   MAIN_CLAIM_TRACK,
   resolveConcurrencySpans,
 } from "./claimTracks";
@@ -151,5 +152,21 @@ describe("claimDetailFacts", () => {
       { label: "身份", value: "并立" },
       { label: "据点", value: "绍兴监国" },
     ]);
+  });
+
+  it("does not label a main-row rival as 并立", () => {
+    expect(claimDetailFacts({ claimRole: "rival" })).toEqual([]);
+  });
+});
+
+describe("isNonOrthodoxLine", () => {
+  it("treats parallel tracks and main-row rivals as non-orthodox", () => {
+    expect(isNonOrthodoxLine(reign("yang-you", 617, 618, { claimTrack: "changan" }))).toBe(
+      true,
+    );
+    expect(isNonOrthodoxLine(reign("hou-yi", -2006, -1999, { claimRole: "rival" }))).toBe(
+      true,
+    );
+    expect(isNonOrthodoxLine(reign("si-qi", -2061, -2046))).toBe(false);
   });
 });

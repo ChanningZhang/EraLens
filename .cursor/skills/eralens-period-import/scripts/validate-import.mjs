@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 import { readFileSync } from "node:fs";
+import { parseReignsFromSql } from "../../../../data/imports/lib/parseReignsFromSql.mjs";
+import { validateReignDateConfidenceSeams } from "../../../../data/imports/lib/validateReignSeams.mjs";
 
 const file = process.argv[2];
 if (!file) {
@@ -77,6 +79,13 @@ for (const match of sql.matchAll(eventInsertRe)) {
 
 const absFields = sql.match(/\b(start_abs|end_abs|at_abs)\s*,\s*(-?\d+)/gi) ?? [];
 // Heuristic: flag obviously unquoted negative in wrong context — light check only
+
+const reigns = parseReignsFromSql(sql);
+if (reigns.length) {
+  for (const seamError of validateReignDateConfidenceSeams(reigns)) {
+    errors.push(`Reign seam mismatch: ${seamError}`);
+  }
+}
 
 if (errors.length) {
   console.error("VALIDATION FAILED");

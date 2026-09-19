@@ -27,7 +27,7 @@ import {
   type TimelineSlice,
 } from "./schema";
 import {
-  personPlacementWindow,
+  personIntersectsAbsWindow,
   personTimelinePlacement,
 } from "./personTime";
 import { isFateRelationKind } from "./reignFateRelations";
@@ -75,15 +75,7 @@ export function filterTimeline(
   const visiblePersons = store.persons.filter((person) => {
     if (visibleReignPersonIds.has(person.id)) return true;
     if (reignPersonIds.has(person.id)) return false;
-    const placement = personTimelinePlacement(person);
-    if (!placement) return false;
-    const window = personPlacementWindow(placement);
-    return rangeIntersectsWindow(
-      window.startAbs,
-      window.endAbs,
-      query.fromAbs,
-      query.toAbs,
-    );
+    return personIntersectsAbsWindow(person, query.fromAbs, query.toAbs);
   });
 
   const visibleGroupIds = new Set(
@@ -276,7 +268,7 @@ export function buildEntityDetail(
         label: "时间",
         value: formatEventTime(event),
       },
-      ...(event.dateNote ? [{ label: "年代说明", value: event.dateNote }] : []),
+      ...(event.dateNote ? [{ label: "说明", value: event.dateNote }] : []),
     ],
     summary: event.summary,
     related: event.participantIds

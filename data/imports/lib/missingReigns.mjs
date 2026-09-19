@@ -158,16 +158,6 @@ export function buildMissingReignsFromVisualGaps(reigns, { minGapMonths = 12 } =
 
 function buildCuratedByPackage() {
   return {
-    "xia-shang-zhou": [
-      missingReign({ dynastyId: "xia", startYear: -1989, endYear: -1911 }),
-      missingReign({
-        dynastyId: "xia",
-        startYear: -1859,
-        endYear: -1651,
-        id: "reign-missing-xia--1859",
-      }),
-      missingReign({ dynastyId: "shang", startYear: -1570, endYear: -1561 }),
-    ],
     "xinan-guozheng": [
       missingReign({ dynastyId: "yelang", startYear: -119, endYear: -31 }),
       missingReign({ dynastyId: "dian", startYear: -255, endYear: -116 }),

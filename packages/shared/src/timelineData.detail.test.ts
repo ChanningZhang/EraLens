@@ -146,4 +146,44 @@ describe("buildEntityDetail event", () => {
     expect(detail.title).toBe("牧野之战");
     expect(detail.subtitle).toBe("战事");
   });
+
+  it("shows dateNote as a reader-facing 说明 fact", () => {
+    const store = {
+      dynasties: [],
+      reigns: [],
+      persons: [],
+      events: [
+        {
+          id: "sanxingdui",
+          name: "三星堆文化",
+          kind: "culture" as const,
+          timeMode: "circa" as const,
+          precision: "century" as const,
+          dateNote:
+            "遗址约前2800–前1100。一期属宝墩文化；二三期三星堆文化约前2000–前1400；著名祭祀坑约前1200–前1000，属四期十二桥。不含宝墩一期。",
+          start: { year: -2000, month: 1 },
+          end: { year: -1100, month: 12 },
+          startAbs: -23988,
+          endAbs: -13177,
+          at: { year: -1200, month: 1 },
+          atAbs: -14388,
+          dynastyIds: [],
+          participantIds: [],
+        },
+      ],
+      relations: [],
+    };
+
+    const detail = buildEntityDetail(store, { type: "event", id: "sanxingdui" });
+
+    expect(detail.subtitle).toBe("文化");
+    expect(detail.facts).toEqual([
+      { label: "时间", value: "约公元前2000年 — 公元前1100年" },
+      {
+        label: "说明",
+        value:
+          "遗址约前2800–前1100。一期属宝墩文化；二三期三星堆文化约前2000–前1400；著名祭祀坑约前1200–前1000，属四期十二桥。不含宝墩一期。",
+      },
+    ]);
+  });
 });
