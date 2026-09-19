@@ -125,9 +125,7 @@
     },
     "startAbs": -19188,
     "endAbs": -18829,
-    "precision": "year",
-    "posthumousName": "武王",
-    "templeName": "太祖"
+    "precision": "year"
   },
   {
     "id": "reign-zi-taijia",
@@ -145,9 +143,7 @@
     },
     "startAbs": -18708,
     "endAbs": -18553,
-    "precision": "year",
-    "posthumousName": "太甲",
-    "templeName": "太宗"
+    "precision": "year"
   },
   {
     "id": "reign-zi-woding",
@@ -165,8 +161,7 @@
     },
     "startAbs": -18552,
     "endAbs": -18325,
-    "precision": "year",
-    "posthumousName": "沃丁"
+    "precision": "year"
   },
   {
     "id": "reign-zi-taigeng",
@@ -184,8 +179,7 @@
     },
     "startAbs": -18324,
     "endAbs": -18265,
-    "precision": "year",
-    "posthumousName": "太庚"
+    "precision": "year"
   },
   {
     "id": "reign-zi-xiaojia",
@@ -203,8 +197,7 @@
     },
     "startAbs": -18264,
     "endAbs": -18061,
-    "precision": "year",
-    "posthumousName": "小甲"
+    "precision": "year"
   },
   {
     "id": "reign-zi-yongji",
@@ -222,8 +215,7 @@
     },
     "startAbs": -18060,
     "endAbs": -17917,
-    "precision": "year",
-    "posthumousName": "雍己"
+    "precision": "year"
   },
   {
     "id": "reign-zi-taiwu",
@@ -241,9 +233,7 @@
     },
     "startAbs": -17916,
     "endAbs": -17017,
-    "precision": "year",
-    "posthumousName": "太戊",
-    "templeName": "中宗"
+    "precision": "year"
   },
   {
     "id": "reign-zi-zhongding",
@@ -261,8 +251,7 @@
     },
     "startAbs": -17016,
     "endAbs": -16909,
-    "precision": "year",
-    "posthumousName": "仲丁"
+    "precision": "year"
   },
   {
     "id": "reign-zi-wairen",
@@ -280,8 +269,7 @@
     },
     "startAbs": -16908,
     "endAbs": -16789,
-    "precision": "year",
-    "posthumousName": "外壬"
+    "precision": "year"
   },
   {
     "id": "reign-zi-hedanjia",
@@ -299,8 +287,7 @@
     },
     "startAbs": -16788,
     "endAbs": -16681,
-    "precision": "year",
-    "posthumousName": "河亶甲"
+    "precision": "year"
   },
   {
     "id": "reign-zi-zuyi",
@@ -318,8 +305,7 @@
     },
     "startAbs": -16680,
     "endAbs": -16453,
-    "precision": "year",
-    "posthumousName": "祖乙"
+    "precision": "year"
   },
   {
     "id": "reign-zi-zuxin",
@@ -337,8 +323,7 @@
     },
     "startAbs": -16452,
     "endAbs": -16285,
-    "precision": "year",
-    "posthumousName": "祖辛"
+    "precision": "year"
   },
   {
     "id": "reign-zi-wojia",
@@ -356,8 +341,7 @@
     },
     "startAbs": -16284,
     "endAbs": -16045,
-    "precision": "year",
-    "posthumousName": "沃甲"
+    "precision": "year"
   },
   {
     "id": "reign-zi-zuding",
@@ -375,8 +359,7 @@
     },
     "startAbs": -16044,
     "endAbs": -15937,
-    "precision": "year",
-    "posthumousName": "祖丁"
+    "precision": "year"
   },
   {
     "id": "reign-zi-nangeng",
@@ -394,8 +377,7 @@
     },
     "startAbs": -15936,
     "endAbs": -15865,
-    "precision": "year",
-    "posthumousName": "南庚"
+    "precision": "year"
   },
   {
     "id": "reign-zi-yangjia",
@@ -413,8 +395,7 @@
     },
     "startAbs": -15864,
     "endAbs": -15709,
-    "precision": "year",
-    "posthumousName": "阳甲"
+    "precision": "year"
   },
   {
     "id": "reign-zi-pangeng",
@@ -432,8 +413,7 @@
     },
     "startAbs": -15708,
     "endAbs": -15337,
-    "precision": "year",
-    "posthumousName": "盘庚"
+    "precision": "year"
   },
   {
     "id": "reign-zi-xiaoxin",
@@ -451,8 +431,7 @@
     },
     "startAbs": -15336,
     "endAbs": -15301,
-    "precision": "year",
-    "posthumousName": "小辛"
+    "precision": "year"
   },
   {
     "id": "reign-zi-xiaoyi",
@@ -470,8 +449,7 @@
     },
     "startAbs": -15300,
     "endAbs": -14989,
-    "precision": "year",
-    "posthumousName": "小乙"
+    "precision": "year"
   },
   {
     "id": "reign-zi-wuding",
@@ -489,9 +467,7 @@
     },
     "startAbs": -14988,
     "endAbs": -14281,
-    "precision": "year",
-    "posthumousName": "武丁",
-    "templeName": "高宗"
+    "precision": "year"
   },
   {
     "id": "reign-zi-zugeng",
@@ -509,8 +485,7 @@
     },
     "startAbs": -14280,
     "endAbs": -14149,
-    "precision": "year",
-    "posthumousName": "祖庚"
+    "precision": "year"
   },
   {
     "id": "reign-zi-zujia",
@@ -528,8 +503,7 @@
     },
     "startAbs": -14148,
     "endAbs": -14017,
-    "precision": "year",
-    "posthumousName": "祖甲"
+    "precision": "year"
   },
   {
     "id": "reign-zi-linxin",
@@ -547,8 +521,7 @@
     },
     "startAbs": -14016,
     "endAbs": -13885,
-    "precision": "year",
-    "posthumousName": "廪辛"
+    "precision": "year"
   },
   {
     "id": "reign-zi-gengding",
@@ -566,8 +539,7 @@
     },
     "startAbs": -13884,
     "endAbs": -13753,
-    "precision": "year",
-    "posthumousName": "庚丁"
+    "precision": "year"
   },
   {
     "id": "reign-zi-wuyi",
@@ -585,8 +557,7 @@
     },
     "startAbs": -13752,
     "endAbs": -13333,
-    "precision": "year",
-    "posthumousName": "武乙"
+    "precision": "year"
   },
   {
     "id": "reign-zi-wending",
@@ -604,8 +575,7 @@
     },
     "startAbs": -13332,
     "endAbs": -13201,
-    "precision": "year",
-    "posthumousName": "文丁"
+    "precision": "year"
   },
   {
     "id": "reign-zi-diyi",
@@ -623,8 +593,7 @@
     },
     "startAbs": -13200,
     "endAbs": -12889,
-    "precision": "year",
-    "posthumousName": "帝乙"
+    "precision": "year"
   },
   {
     "id": "reign-zi-dixin",
@@ -642,8 +611,7 @@
     },
     "startAbs": -12888,
     "endAbs": -12540,
-    "precision": "year",
-    "posthumousName": "纣"
+    "precision": "year"
   },
   {
     "id": "reign-ji-fa",
@@ -661,8 +629,7 @@
     },
     "startAbs": -12540,
     "endAbs": -12493,
-    "precision": "year",
-    "posthumousName": "武王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-song",
@@ -680,8 +647,7 @@
     },
     "startAbs": -12492,
     "endAbs": -12229,
-    "precision": "year",
-    "posthumousName": "成王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-zhao",
@@ -699,8 +665,7 @@
     },
     "startAbs": -12228,
     "endAbs": -11929,
-    "precision": "year",
-    "posthumousName": "康王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-xia",
@@ -718,8 +683,7 @@
     },
     "startAbs": -11928,
     "endAbs": -11701,
-    "precision": "year",
-    "posthumousName": "昭王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-man",
@@ -737,8 +701,7 @@
     },
     "startAbs": -11700,
     "endAbs": -11053,
-    "precision": "year",
-    "posthumousName": "穆王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-yihu",
@@ -756,8 +719,7 @@
     },
     "startAbs": -11052,
     "endAbs": -10777,
-    "precision": "year",
-    "posthumousName": "共王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-jian",
@@ -775,8 +737,7 @@
     },
     "startAbs": -10776,
     "endAbs": -10681,
-    "precision": "year",
-    "posthumousName": "懿王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-pifang",
@@ -794,8 +755,7 @@
     },
     "startAbs": -10680,
     "endAbs": -10609,
-    "precision": "year",
-    "posthumousName": "孝王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-xie",
@@ -813,8 +773,7 @@
     },
     "startAbs": -10608,
     "endAbs": -10513,
-    "precision": "year",
-    "posthumousName": "夷王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-hu",
@@ -832,8 +791,7 @@
     },
     "startAbs": -10512,
     "endAbs": -10069,
-    "precision": "year",
-    "posthumousName": "厉王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-jing",
@@ -851,8 +809,7 @@
     },
     "startAbs": -9912,
     "endAbs": -9361,
-    "precision": "year",
-    "posthumousName": "宣王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-gongsheng",
@@ -870,8 +827,7 @@
     },
     "startAbs": -9360,
     "endAbs": -9229,
-    "precision": "year",
-    "posthumousName": "幽王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-yijiu",
@@ -889,8 +845,7 @@
     },
     "startAbs": -9228,
     "endAbs": -8617,
-    "precision": "year",
-    "posthumousName": "平王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-yuchen",
@@ -908,8 +863,7 @@
     },
     "startAbs": -9228,
     "endAbs": -8977,
-    "precision": "year",
-    "posthumousName": "携王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-lin",
@@ -927,8 +881,7 @@
     },
     "startAbs": -8616,
     "endAbs": -8341,
-    "precision": "year",
-    "posthumousName": "桓王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-tuo",
@@ -946,8 +899,7 @@
     },
     "startAbs": -8340,
     "endAbs": -8161,
-    "precision": "year",
-    "posthumousName": "庄王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-huqi",
@@ -965,8 +917,7 @@
     },
     "startAbs": -8160,
     "endAbs": -8101,
-    "precision": "year",
-    "posthumousName": "釐王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-lang",
@@ -984,8 +935,7 @@
     },
     "startAbs": -8100,
     "endAbs": -7801,
-    "precision": "year",
-    "posthumousName": "惠王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-zheng",
@@ -1003,8 +953,7 @@
     },
     "startAbs": -7800,
     "endAbs": -7405,
-    "precision": "year",
-    "posthumousName": "襄王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-renchen",
@@ -1022,8 +971,7 @@
     },
     "startAbs": -7404,
     "endAbs": -7333,
-    "precision": "year",
-    "posthumousName": "顷王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-ban",
@@ -1041,8 +989,7 @@
     },
     "startAbs": -7332,
     "endAbs": -7261,
-    "precision": "year",
-    "posthumousName": "匡王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-yu",
@@ -1060,8 +1007,7 @@
     },
     "startAbs": -7260,
     "endAbs": -7009,
-    "precision": "year",
-    "posthumousName": "定王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-yi",
@@ -1079,8 +1025,7 @@
     },
     "startAbs": -7008,
     "endAbs": -6841,
-    "precision": "year",
-    "posthumousName": "简王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-xiexin",
@@ -1098,8 +1043,7 @@
     },
     "startAbs": -6840,
     "endAbs": -6517,
-    "precision": "year",
-    "posthumousName": "灵王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-gui",
@@ -1117,8 +1061,7 @@
     },
     "startAbs": -6516,
     "endAbs": -6229,
-    "precision": "year",
-    "posthumousName": "景王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-meng",
@@ -1136,8 +1079,7 @@
     },
     "startAbs": -6228,
     "endAbs": -6217,
-    "precision": "year",
-    "posthumousName": "悼王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-gai",
@@ -1155,8 +1097,7 @@
     },
     "startAbs": -6216,
     "endAbs": -5701,
-    "precision": "year",
-    "posthumousName": "敬王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-ren",
@@ -1174,8 +1115,7 @@
     },
     "startAbs": -5700,
     "endAbs": -5605,
-    "precision": "year",
-    "posthumousName": "元王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-jie",
@@ -1193,8 +1133,7 @@
     },
     "startAbs": -5604,
     "endAbs": -5281,
-    "precision": "year",
-    "posthumousName": "贞定王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-quji",
@@ -1212,8 +1151,7 @@
     },
     "startAbs": -5280,
     "endAbs": -5278,
-    "precision": "year",
-    "posthumousName": "哀王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-shu",
@@ -1231,8 +1169,7 @@
     },
     "startAbs": -5277,
     "endAbs": -5269,
-    "precision": "year",
-    "posthumousName": "思王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-wei",
@@ -1250,8 +1187,7 @@
     },
     "startAbs": -5268,
     "endAbs": -5089,
-    "precision": "year",
-    "posthumousName": "考王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-wu",
@@ -1269,8 +1205,7 @@
     },
     "startAbs": -5088,
     "endAbs": -4801,
-    "precision": "year",
-    "posthumousName": "威烈王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-jiao",
@@ -1288,8 +1223,7 @@
     },
     "startAbs": -4800,
     "endAbs": -4489,
-    "precision": "year",
-    "posthumousName": "安王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-xi",
@@ -1307,8 +1241,7 @@
     },
     "startAbs": -4488,
     "endAbs": -4405,
-    "precision": "year",
-    "posthumousName": "烈王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-bian",
@@ -1326,8 +1259,7 @@
     },
     "startAbs": -4404,
     "endAbs": -3829,
-    "precision": "year",
-    "posthumousName": "显王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-ding",
@@ -1345,8 +1277,7 @@
     },
     "startAbs": -3828,
     "endAbs": -3757,
-    "precision": "year",
-    "posthumousName": "慎靓王"
+    "precision": "year"
   },
   {
     "id": "reign-ji-yan",
@@ -1364,34 +1295,19 @@
     },
     "startAbs": -3756,
     "endAbs": -3049,
-    "precision": "year",
-    "posthumousName": "赧王"
+    "precision": "year"
   },
   {
     "id": "reign-liu-xiu",
     "dynastyId": "han-east",
     "personId": "liu-xiu",
     "title": "光武帝",
-    "posthumousName": "光武皇帝",
-    "templeName": "世祖",
     "preferredAppellation": {
       "kind": "posthumous",
       "name": "汉光武帝"
     },
     "eraNames": [
-      {
-        "name": "建武",
-        "start": {
-          "year": 25,
-          "month": 1
-        },
-        "end": {
-          "year": 56,
-          "month": 12
-        },
-        "startAbs": 300,
-        "endAbs": 683
-      }
+      "建武"
     ],
     "start": {
       "year": 25,
@@ -1410,26 +1326,12 @@
     "dynastyId": "han-east",
     "personId": "liu-xie",
     "title": "汉献帝",
-    "posthumousName": "孝献皇帝",
     "preferredAppellation": {
       "kind": "posthumous",
       "name": "汉献帝"
     },
     "eraNames": [
-      {
-        "name": "建安",
-        "start": {
-          "year": 196,
-          "month": 1
-        },
-        "end": {
-          "year": 220,
-          "month": 12
-        },
-        "startAbs": 2352,
-        "endAbs": 2651,
-        "precision": "month"
-      }
+      "建安"
     ],
     "start": {
       "year": 189,
@@ -1448,27 +1350,12 @@
     "dynastyId": "wei",
     "personId": "cao-pi",
     "title": "魏文帝",
-    "posthumousName": "文皇帝",
-    "templeName": "高祖",
     "preferredAppellation": {
       "kind": "posthumous",
       "name": "魏文帝"
     },
     "eraNames": [
-      {
-        "name": "黄初",
-        "start": {
-          "year": 220,
-          "month": 12
-        },
-        "end": {
-          "year": 226,
-          "month": 6
-        },
-        "startAbs": 2651,
-        "endAbs": 2717,
-        "precision": "month"
-      }
+      "黄初"
     ],
     "start": {
       "year": 220,
@@ -1487,27 +1374,12 @@
     "dynastyId": "wei",
     "personId": "cao-rui",
     "title": "魏明帝",
-    "posthumousName": "明皇帝",
-    "templeName": "烈祖",
     "preferredAppellation": {
       "kind": "posthumous",
       "name": "魏明帝"
     },
     "eraNames": [
-      {
-        "name": "太和",
-        "start": {
-          "year": 227,
-          "month": 1
-        },
-        "end": {
-          "year": 233,
-          "month": 1
-        },
-        "startAbs": 2724,
-        "endAbs": 2796,
-        "precision": "year"
-      }
+      "太和"
     ],
     "start": {
       "year": 226,
@@ -1526,27 +1398,12 @@
     "dynastyId": "shu",
     "personId": "liu-bei",
     "title": "昭烈帝",
-    "posthumousName": "昭烈皇帝",
-    "templeName": "烈祖",
     "preferredAppellation": {
       "kind": "posthumous",
       "name": "汉昭烈帝"
     },
     "eraNames": [
-      {
-        "name": "章武",
-        "start": {
-          "year": 221,
-          "month": 5
-        },
-        "end": {
-          "year": 223,
-          "month": 6
-        },
-        "startAbs": 2656,
-        "endAbs": 2681,
-        "precision": "month"
-      }
+      "章武"
     ],
     "start": {
       "year": 221,
@@ -1565,26 +1422,12 @@
     "dynastyId": "shu",
     "personId": "liu-shan",
     "title": "蜀汉后主",
-    "posthumousName": "孝怀皇帝",
     "preferredAppellation": {
       "kind": "posthumous",
       "name": "孝怀皇帝"
     },
     "eraNames": [
-      {
-        "name": "建兴",
-        "start": {
-          "year": 223,
-          "month": 6
-        },
-        "end": {
-          "year": 237,
-          "month": 1
-        },
-        "startAbs": 2681,
-        "endAbs": 2844,
-        "precision": "year"
-      }
+      "建兴"
     ],
     "start": {
       "year": 223,
@@ -1603,27 +1446,12 @@
     "dynastyId": "wu",
     "personId": "sun-quan",
     "title": "大皇帝",
-    "posthumousName": "大皇帝",
-    "templeName": "太祖",
     "preferredAppellation": {
       "kind": "posthumous",
       "name": "吴大帝"
     },
     "eraNames": [
-      {
-        "name": "黄武",
-        "start": {
-          "year": 222,
-          "month": 10
-        },
-        "end": {
-          "year": 229,
-          "month": 4
-        },
-        "startAbs": 2673,
-        "endAbs": 2751,
-        "precision": "month"
-      }
+      "黄武"
     ],
     "start": {
       "year": 222,
@@ -1642,26 +1470,12 @@
     "dynastyId": "wu",
     "personId": "sun-liang",
     "title": "会稽王",
-    "posthumousName": "会稽王",
     "preferredAppellation": {
       "kind": "posthumous",
       "name": "吴少帝"
     },
     "eraNames": [
-      {
-        "name": "建兴",
-        "start": {
-          "year": 252,
-          "month": 5
-        },
-        "end": {
-          "year": 253,
-          "month": 1
-        },
-        "startAbs": 3028,
-        "endAbs": 3036,
-        "precision": "month"
-      }
+      "建兴"
     ],
     "start": {
       "year": 252,

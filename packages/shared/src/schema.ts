@@ -107,14 +107,6 @@ export const DynastySchema = z.object({
   note: z.string().optional(),
 });
 
-export const EraNameSchema = z.object({
-  name: z.string(),
-  start: TimePointSchema,
-  end: TimePointSchema,
-  startAbs: z.number(),
-  endAbs: z.number(),
-});
-
 export const PersonSchema = z.object({
   id: z.string(),
   name: z.string(),
@@ -135,6 +127,10 @@ export const PersonSchema = z.object({
       }),
     )
     .default([]),
+  /** Comma-separated in DB; parsed to array at runtime. */
+  posthumousNames: z.array(z.string()).default([]),
+  /** Comma-separated in DB; parsed to array at runtime. */
+  templeNames: z.array(z.string()).default([]),
 });
 
 export const AppellationKindSchema = z.enum([
@@ -169,10 +165,9 @@ export const ReignSchema = z.object({
   dynastyId: z.string(),
   personId: z.string(),
   title: z.string(),
-  posthumousName: z.string().optional(),
-  templeName: z.string().optional(),
   preferredAppellation: PreferredAppellationSchema.optional(),
-  eraNames: z.array(EraNameSchema).default([]),
+  /** Comma-separated in DB; parsed to array at runtime. */
+  eraNames: z.array(z.string()).default([]),
   start: TimePointSchema,
   end: TimePointSchema,
   startAbs: z.number(),

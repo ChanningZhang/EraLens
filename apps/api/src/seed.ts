@@ -1,5 +1,6 @@
 import {
   absMonth,
+  formatAppellationCsv,
   DynastySchema,
   EventSchema,
   PersonSchema,
@@ -50,10 +51,6 @@ async function main() {
   for (const reign of reigns) {
     assertAbs(`reign ${reign.id} start`, reign.start.year, reign.start.month, reign.startAbs);
     assertAbs(`reign ${reign.id} end`, reign.end.year, reign.end.month, reign.endAbs);
-    for (const era of reign.eraNames) {
-      assertAbs(`era ${era.name}`, era.start.year, era.start.month, era.startAbs);
-      assertAbs(`era ${era.name} end`, era.end.year, era.end.month, era.endAbs);
-    }
   }
   for (const event of events) {
     if (event.at && event.atAbs != null) {
@@ -70,7 +67,6 @@ async function main() {
   await prisma.$transaction(async (tx) => {
     await tx.eventParticipant.deleteMany();
     await tx.eventDynasty.deleteMany();
-    await tx.eraName.deleteMany();
     await tx.relation.deleteMany();
     await tx.event.deleteMany();
     await tx.reign.deleteMany();
@@ -89,6 +85,8 @@ async function main() {
           roles: person.roles,
           bio: person.bio,
           links: person.links,
+          posthumousName: formatAppellationCsv(person.posthumousNames),
+          templeName: formatAppellationCsv(person.templeNames),
         },
       });
     }
@@ -125,9 +123,8 @@ async function main() {
           dynastyId: reign.dynastyId,
           personId: reign.personId,
           title: reign.title,
-          posthumousName: reign.posthumousName,
-          templeName: reign.templeName,
           preferredAppellation: reign.preferredAppellation,
+          eraNames: formatAppellationCsv(reign.eraNames),
           startYear: reign.start.year,
           startMonth: reign.start.month,
           startDay: reign.start.day,
@@ -137,18 +134,6 @@ async function main() {
           startAbs: reign.startAbs,
           endAbs: reign.endAbs,
           precision: reign.precision,
-          eraNames: {
-            create: reign.eraNames.map((era, index) => ({
-              name: era.name,
-              startYear: era.start.year,
-              startMonth: era.start.month,
-              endYear: era.end.year,
-              endMonth: era.end.month,
-              startAbs: era.startAbs,
-              endAbs: era.endAbs,
-              sortOrder: index,
-            })),
-          },
         },
       });
     }

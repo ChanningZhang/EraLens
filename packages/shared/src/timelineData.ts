@@ -249,6 +249,12 @@ export function buildEntityDetail(
               preQinReign,
             )
           : []),
+        ...(person.posthumousNames.length
+          ? [{ label: "谥号", value: person.posthumousNames.join("、") }]
+          : []),
+        ...(person.templeNames.length
+          ? [{ label: "庙号", value: person.templeNames.join("、") }]
+          : []),
         ...(person.birth
           ? [{ label: "生", value: `${person.birth.year}年` }]
           : []),

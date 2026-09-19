@@ -9,7 +9,7 @@ import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
 import { drDay, ymDay } from "../lib/reignDateHelpers.mjs";
 import { reignSql } from "../lib/reignSql.mjs";
-import { dynastySql, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
+import { dynastySql, formatAppellationCsv, mergeAppellationsIntoPersons, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -655,13 +655,9 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_na
 }
 
 function formatReignSql(r) {
-  return reignSql(r, sqlStr, sqlJson);
+  return reignSql(r, sqlStr, sqlJson, formatAppellationCsv);
 }
 
-function eraNameSql(e) {
-  return `INSERT INTO era_names (reign_id, name, start_year, start_month, end_year, end_month, start_abs, end_abs, sort_order)
-VALUES (${sqlStr(e.reignId)}, ${sqlStr(e.name)}, ${e.start.year}, ${e.start.month}, ${e.end.year}, ${e.end.month}, ${e.start.abs}, ${e.end.abs}, ${e.sortOrder});`;
-}
 
 function eventSql(e) {
   const cols = ["id", "name", "kind", "time_mode", "precision", "date_note", "at_year", "at_month", "at_abs", "start_year", "start_month", "start_abs", "end_year", "end_month", "end_abs", "summary"];
@@ -681,15 +677,15 @@ function relationSql(r) {
   return `INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES (${sqlStr(r.id)}, ${sqlStr(from.type)}, ${sqlStr(from.id)}, ${sqlStr(to.type)}, ${sqlStr(to.id)}, ${sqlStr(r.kind)}) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;`;
 }
 
-const { persons: importPersons, reigns: importReigns } = finalizeImportReigns(
+const finalized = finalizeImportReigns(
   "sui-tang-wudai-song",
   allPersons,
   reigns,
 );
+const merged = mergeAppellationsIntoPersons(finalized.persons, finalized.reigns);
+const importPersons = merged.persons;
+const importReigns = merged.reigns;
 
-const reignsWithEras = importReigns.filter((r) => r.eraNames.length > 0);
-const eraDeleteSql = reignsWithEras.map((r) => `DELETE FROM era_names WHERE reign_id = ${sqlStr(r.id)};`);
-const eraInsertSql = reignsWithEras.flatMap((r) => r.eraNames.map(eraNameSql));
 const eventDynastySql = events.flatMap((e) => e.dynastyIds.map((d) => `INSERT INTO event_dynasties (event_id, dynasty_id) VALUES (${sqlStr(e.id)}, ${sqlStr(d)}) ON CONFLICT DO NOTHING;`));
 const eventParticipantSql = events.flatMap((e) => e.participantIds.map((p) => `INSERT INTO event_participants (event_id, person_id) VALUES (${sqlStr(e.id)}, ${sqlStr(p)}) ON CONFLICT DO NOTHING;`));
 
@@ -705,7 +701,6 @@ const sql = [
   "", "-- dynasty_groups", ...dynastyGroups.map(dynastyGroupSql),
   "", "-- dynasties", ...dynasties.map(dynastySql),
   "", "-- reigns", ...importReigns.map(formatReignSql),
-  "", "-- era_names", ...eraDeleteSql, ...eraInsertSql,
   "", "-- events", ...events.map(eventSql),
   "", "-- event_dynasties", ...eventDynastySql,
   "", "-- event_participants", ...eventParticipantSql,

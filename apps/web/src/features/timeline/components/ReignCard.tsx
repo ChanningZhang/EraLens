@@ -47,7 +47,10 @@ type Props = {
   color: string;
   reigns: Reign[];
   personName?: string;
-  personClan?: Pick<Person, "ancestralXing" | "clanShi">;
+  personClan?: Pick<
+    Person,
+    "ancestralXing" | "clanShi" | "posthumousNames" | "templeNames"
+  >;
   orthodox?: boolean;
   laneGroups?: readonly DynastyLaneGroup[];
 };

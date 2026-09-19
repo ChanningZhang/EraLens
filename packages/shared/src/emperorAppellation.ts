@@ -1,3 +1,4 @@
+import { firstAppellation } from "./appellationFields";
 import {
   MING_QING_START_YEAR,
   PRE_IMPERIAL_START_YEAR,
@@ -30,47 +31,50 @@ export const APPELLATION_LABELS: Record<AppellationKind, string> = {
 
 const PLACEHOLDER_PERSON_NAME = /^(缺失|史料缺|不明)$/;
 
-/** Stored 姓/氏 from import (person + dynasty rows). */
-export type PreQinClanContext = {
+/** Stored 姓/氏 and person-level 庙谥 from import. */
+export type PersonDisplayContext = {
   personAncestralXing?: string | null;
   personClanShi?: string | null;
   dynastyAncestralXing?: string | null;
   dynastyClanShi?: string | null;
+  posthumousNames?: string[];
+  templeNames?: string[];
 };
+
+/** @deprecated Use PersonDisplayContext */
+export type PreQinClanContext = PersonDisplayContext;
 
 export function buildPreQinClanContext(
   person?: {
     ancestralXing?: string | null;
     clanShi?: string | null;
+    posthumousNames?: string[];
+    templeNames?: string[];
   } | null,
   dynasty?: {
     ancestralXing?: string | null;
     clanShi?: string | null;
   } | null,
-): PreQinClanContext {
+): PersonDisplayContext {
   return {
     personAncestralXing: person?.ancestralXing,
     personClanShi: person?.clanShi,
     dynastyAncestralXing: dynasty?.ancestralXing,
     dynastyClanShi: dynasty?.clanShi,
+    posthumousNames: person?.posthumousNames,
+    templeNames: person?.templeNames,
   };
 }
 
 type ReignAppellationFields = Pick<
   Reign,
-  | "dynastyId"
-  | "start"
-  | "title"
-  | "posthumousName"
-  | "templeName"
-  | "eraNames"
-  | "preferredAppellation"
+  "dynastyId" | "start" | "title" | "eraNames" | "preferredAppellation"
 >;
 
 type ReignLabelFields = ReignAppellationFields & Pick<Reign, "title">;
 
 function eraNameList(reign: ReignAppellationFields): string[] {
-  return reign.eraNames.map((era) => era.name).filter(Boolean);
+  return reign.eraNames.filter(Boolean);
 }
 
 function firstEraName(reign: ReignAppellationFields): string | undefined {
@@ -78,17 +82,19 @@ function firstEraName(reign: ReignAppellationFields): string | undefined {
 }
 
 function resolvePosthumousAppellation(
-  reign: ReignAppellationFields,
+  personContext?: PersonDisplayContext | null,
 ): EmperorAppellation | null {
-  if (!reign.posthumousName) return null;
-  return { kind: "posthumous", name: reign.posthumousName };
+  const name = firstAppellation(personContext?.posthumousNames);
+  if (!name) return null;
+  return { kind: "posthumous", name };
 }
 
 function resolveTempleAppellation(
-  reign: ReignAppellationFields,
+  personContext?: PersonDisplayContext | null,
 ): EmperorAppellation | null {
-  if (!reign.templeName) return null;
-  return { kind: "temple", name: reign.templeName };
+  const name = firstAppellation(personContext?.templeNames);
+  if (!name) return null;
+  return { kind: "temple", name: name };
 }
 
 /**
@@ -107,6 +113,7 @@ function resolveTempleAppellation(
  */
 export function resolveEmperorAppellation(
   reign: ReignAppellationFields,
+  personContext?: PersonDisplayContext | null,
 ): EmperorAppellation | null {
   if (isRocTaiwanLeaderReign(reign)) {
     return { kind: "regnal", name: ROC_TAIWAN_LEADER_OFFICE_LABEL };
@@ -122,14 +129,14 @@ export function resolveEmperorAppellation(
     return { kind: "era", name: eraName };
   }
   if (year >= TEMPLE_ERA_START_YEAR) {
-    const temple = resolveTempleAppellation(reign);
+    const temple = resolveTempleAppellation(personContext);
     if (temple) return temple;
   }
 
-  const posthumous = resolvePosthumousAppellation(reign);
+  const posthumous = resolvePosthumousAppellation(personContext);
   if (posthumous) return posthumous;
 
-  const temple = resolveTempleAppellation(reign);
+  const temple = resolveTempleAppellation(personContext);
   if (temple) return temple;
 
   if (year < TEMPLE_ERA_START_YEAR && reign.title) {
@@ -153,7 +160,7 @@ export function usesPreQinCardLayout(reign: Pick<Reign, "start">): boolean {
 /** Drop stored 姓 prefix; keep 氏 embedded in names (熊侣, 吕尚). */
 export function stripAncestralXing(
   name: string,
-  clan?: PreQinClanContext | null,
+  clan?: PersonDisplayContext | null,
 ): string {
   const xing = clan?.personAncestralXing ?? clan?.dynastyAncestralXing;
   if (!xing || !name.startsWith(xing) || name.length <= xing.length) {
@@ -169,7 +176,7 @@ function isPlaceholderPersonName(name: string): boolean {
 /** Resolve 姓/氏 for pre-imperial rulers from stored DB fields only. */
 export function resolvePreQinXingShi(
   _personName?: string | null,
-  clan?: PreQinClanContext | null,
+  clan?: PersonDisplayContext | null,
 ): { xing?: string; shi?: string } {
   const xing =
     clan?.personAncestralXing ?? clan?.dynastyAncestralXing ?? undefined;
@@ -181,7 +188,7 @@ export function resolvePreQinXingShi(
 /** Detail-panel facts for pre-imperial personal names. */
 export function resolvePreQinNameFacts(
   personName: string | null | undefined,
-  clan?: PreQinClanContext | null,
+  clan?: PersonDisplayContext | null,
   _reign?: ReignLabelFields | null,
 ): Array<{ label: string; value: string }> {
   const { xing, shi } = resolvePreQinXingShi(personName, clan);
@@ -196,8 +203,20 @@ export function resolvePreQinNameFacts(
  * `{国}王{私名}` bodies are baked into preferred at import
  * (`preQinRegnalCardName`); runtime does not parse title.
  */
-function resolvePreQinCardAppellation(reign: ReignLabelFields): string | null {
-  if (reign.posthumousName) return reign.posthumousName;
+function resolvePreQinCardAppellation(
+  personContext?: PersonDisplayContext | null,
+): string | null {
+  const posthumous = firstAppellation(personContext?.posthumousNames);
+  if (posthumous) return posthumous;
+  return null;
+}
+
+function resolvePreQinCardPrimary(
+  reign: ReignLabelFields,
+  personContext?: PersonDisplayContext | null,
+): string | null {
+  const posthumous = resolvePreQinCardAppellation(personContext);
+  if (posthumous) return posthumous;
   const preferred =
     reign.preferredAppellation?.kind === "regnal"
       ? reign.preferredAppellation.name
@@ -209,15 +228,15 @@ function resolvePreQinCardAppellation(reign: ReignLabelFields): string | null {
 function resolvePreQinGivenName(
   reign: ReignLabelFields,
   personName?: string | null,
-  clan?: PreQinClanContext | null,
+  personContext?: PersonDisplayContext | null,
 ): string | null {
   if (!personName || isPlaceholderPersonName(personName)) return null;
   if (personName === reign.title || personName === reign.preferredAppellation?.name) {
     return null;
   }
-  const given = stripAncestralXing(personName, clan);
+  const given = stripAncestralXing(personName, personContext);
   if (!given) return null;
-  const appellation = resolvePreQinCardAppellation(reign);
+  const appellation = resolvePreQinCardPrimary(reign, personContext);
   if (appellation && givenNameIsRedundant(appellation, given)) return null;
   return given;
 }
@@ -241,11 +260,11 @@ function personalNamePrimary(
 export function resolveReignPrimaryLabel(
   reign: ReignLabelFields,
   personName?: string | null,
-  clan?: PreQinClanContext | null,
+  personContext?: PersonDisplayContext | null,
 ): string {
   if (usesPreQinCardLayout(reign)) {
     return (
-      resolvePreQinCardAppellation(reign) ??
+      resolvePreQinCardPrimary(reign, personContext) ??
       personalNamePrimary(reign, personName)
     );
   }
@@ -254,7 +273,7 @@ export function resolveReignPrimaryLabel(
 
 type ReignCardLabelOptions = {
   cardWidthPx?: number;
-  clan?: PreQinClanContext | null;
+  clan?: PersonDisplayContext | null;
 };
 
 /** Primary label rendered on a reign card. */
@@ -270,10 +289,10 @@ export function resolveReignCardLabel(
 export function resolveReignCardGivenName(
   reign: ReignLabelFields,
   personName?: string | null,
-  clan?: PreQinClanContext | null,
+  personContext?: PersonDisplayContext | null,
 ): string | null {
   if (!usesPreQinCardLayout(reign)) return personName || null;
-  return resolvePreQinGivenName(reign, personName, clan);
+  return resolvePreQinGivenName(reign, personName, personContext);
 }
 
 /** Subtitle for reign detail and dynasty related lists. */
@@ -281,21 +300,21 @@ export function resolveReignDetailSubtitle(
   reign: ReignAppellationFields,
   dynastyName?: string | null,
   personName?: string | null,
-  clan?: PreQinClanContext | null,
+  personContext?: PersonDisplayContext | null,
 ): string {
   if (isRocTaiwanLeaderReign(reign)) {
     return resolveRocReignDetailSubtitle();
   }
   const dynastyPart = dynastyName ?? "";
-  const primary = resolveReignPrimaryLabel(reign, personName, clan);
+  const primary = resolveReignPrimaryLabel(reign, personName, personContext);
   if (usesPreQinCardLayout(reign)) {
-    const given = resolvePreQinGivenName(reign, personName, clan);
+    const given = resolvePreQinGivenName(reign, personName, personContext);
     if (given && given !== primary) {
       return dynastyPart ? `${dynastyPart} · ${given}` : given;
     }
     return dynastyPart || primary;
   }
-  const appellation = resolveEmperorAppellation(reign);
+  const appellation = resolveEmperorAppellation(reign, personContext);
   const conventional = appellation?.name ?? reign.title;
   if (conventional === primary || conventional === personName) {
     return dynastyPart || primary;
@@ -310,19 +329,21 @@ type ReignDetailFactsFields = ReignAppellationFields &
 export function resolveReignDetailFacts(
   reign: ReignDetailFactsFields,
   personName?: string | null,
-  clan?: PreQinClanContext | null,
+  personContext?: PersonDisplayContext | null,
 ): Array<{ label: string; value: string }> {
   const facts = [
     { label: "在位", value: `${reign.start.year} — ${reign.end.year}` },
   ];
   if (usesPreQinCardLayout(reign)) {
-    facts.push(...resolvePreQinNameFacts(personName, clan, reign));
+    facts.push(...resolvePreQinNameFacts(personName, personContext, reign));
   }
-  if (reign.posthumousName) {
-    facts.push({ label: "谥号", value: reign.posthumousName });
+  const posthumous = personContext?.posthumousNames?.filter(Boolean) ?? [];
+  if (posthumous.length) {
+    facts.push({ label: "谥号", value: posthumous.join("、") });
   }
-  if (reign.templeName) {
-    facts.push({ label: "庙号", value: reign.templeName });
+  const temples = personContext?.templeNames?.filter(Boolean) ?? [];
+  if (temples.length) {
+    facts.push({ label: "庙号", value: temples.join("、") });
   }
   const eras = eraNameList(reign);
   if (eras.length) {
@@ -335,16 +356,16 @@ export function resolveReignDetailFacts(
 export function resolveReignRelatedSubtitle(
   reign: ReignAppellationFields,
   personName?: string | null,
-  clan?: PreQinClanContext | null,
+  personContext?: PersonDisplayContext | null,
 ): string {
-  const label = resolveReignPrimaryLabel(reign, personName, clan);
+  const label = resolveReignPrimaryLabel(reign, personName, personContext);
   if (usesPreQinCardLayout(reign)) {
-    const given = resolvePreQinGivenName(reign, personName, clan);
+    const given = resolvePreQinGivenName(reign, personName, personContext);
     if (given && given !== label) return given;
   }
   const resolvedPersonName = personName ?? reign.title;
   if (label !== resolvedPersonName) return resolvedPersonName;
-  const appellation = resolveEmperorAppellation(reign);
+  const appellation = resolveEmperorAppellation(reign, personContext);
   return appellation?.name ?? reign.title;
 }
 
@@ -364,16 +385,16 @@ function isRedundantCardMeta(
 export function resolveReignCardMeta(
   reign: ReignAppellationFields,
   personName?: string | null,
-  clan?: PreQinClanContext | null,
+  personContext?: PersonDisplayContext | null,
 ): { label: string; name: string } | null {
-  const primary = resolveReignPrimaryLabel(reign, personName, clan);
+  const primary = resolveReignPrimaryLabel(reign, personName, personContext);
   if (usesPreQinCardLayout(reign)) {
-    const given = resolvePreQinGivenName(reign, personName, clan);
+    const given = resolvePreQinGivenName(reign, personName, personContext);
     if (!given || givenNameIsRedundant(primary, given)) return null;
     return { label: "名", name: given };
   }
 
-  const appellation = resolveEmperorAppellation(reign);
+  const appellation = resolveEmperorAppellation(reign, personContext);
   if (!appellation) return null;
 
   if (isRedundantCardMeta(appellation, primary, personName)) {

@@ -34,7 +34,6 @@ const tableOrder = [
   "dynasty_groups",
   "dynasties",
   "reigns",
-  "era_names",
   "events",
   "event_dynasties",
   "event_participants",
@@ -63,6 +62,16 @@ for (const table of ["persons", "dynasties", "reigns", "events"]) {
 
 if (/\bINSERT\s+INTO\s+events\b/i.test(sql) && !/\btime_mode\b/i.test(sql)) {
   warnings.push("events INSERT has no time_mode; DB default is point");
+}
+
+if (/\bINSERT\s+INTO\s+era_names\b/i.test(sql)) {
+  errors.push("Deprecated era_names table INSERT; use reigns.era_names CSV");
+}
+if (/\bINSERT\s+INTO\s+reigns\b[^;]*\bposthumous_name\b/i.test(sql)) {
+  errors.push("Deprecated reigns.posthumous_name; use persons.posthumous_name CSV");
+}
+if (/\bINSERT\s+INTO\s+persons\b/i.test(sql) && !/\bposthumous_name,\s*temple_name\b/i.test(sql)) {
+  warnings.push("persons INSERT missing posthumous_name/temple_name columns");
 }
 
 const eventInsertRe =

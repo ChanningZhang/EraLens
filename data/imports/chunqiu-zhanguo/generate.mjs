@@ -13,7 +13,7 @@ import { applyFeudalClanMetadata } from "../lib/applyFeudalClanMetadata.mjs";
 import { validateReignDateConfidenceSeams } from "../lib/validateReignSeams.mjs";
 import { ORTHODOX_FROM_START } from "../lib/orthodoxDynasties.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
-import { LEGACY_COLOR_TOKEN, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
+import { LEGACY_COLOR_TOKEN, formatAppellationCsv, mergeAppellationsIntoPersons, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -40,6 +40,12 @@ function ym(year, month = 1) {
 }
 function wiki(title) {
   return [{ label: "维基百科", url: `https://zh.wikipedia.org/wiki/${title}` }];
+}
+
+function reignIdFor(r) {
+  if (r.reignId) return r.reignId;
+  if (r.ordinal > 1) return `reign-${r.personId}-${r.dynastyId}-${r.ordinal}`;
+  return `reign-${r.personId}-${r.dynastyId}`;
 }
 
 function reign({
@@ -217,6 +223,10 @@ const PERSON_DETAIL_OVERRIDES = {
   "weiguo-r10": {
     bio: "卫武公（姬和），《史记·卫世家》载前812–前758年在位，共55年。",
     links: wiki("卫武公"),
+  },
+  "weiguo-r21": {
+    bio: "卫成公（姬郑）。前634年即位，出奔后弟卫君瑕代立，僖公三十年复位，前600年卒。维基分两次在位（前634–前632、前632–前600）；年桶以卫君瑕占前632年，复位段逾年改元起前631年。",
+    links: wiki("卫成公"),
   },
   "cao-r11": {
     bio: "曹桓公（姬终生），《史记·蔡世家》载前756–前702年在位，共55年。",
@@ -485,7 +495,7 @@ const reigns = alignReignSeamConfidences(
         .flat()
         .map((r) =>
           reign({
-            id: `reign-${r.personId}-${r.dynastyId}`,
+            id: reignIdFor(r),
             dynastyId: r.dynastyId,
             personId: r.personId,
             title: r.title,
@@ -509,11 +519,15 @@ if (seamErrors.length) {
   process.exit(1);
 }
 
-const { persons: importPersons, reigns: importReigns, missingReigns } = finalizeImportReigns(
+const finalized = finalizeImportReigns(
   "chunqiu-zhanguo",
   persons,
   reigns,
 );
+const merged = mergeAppellationsIntoPersons(finalized.persons, finalized.reigns);
+const importPersons = merged.persons;
+const importReigns = merged.reigns;
+const missingReigns = finalized.missingReigns;
 
 const personDynastyId = new Map();
 for (const [dynastyId, rulers] of Object.entries(rulersByDynasty)) {
@@ -727,12 +741,12 @@ ON CONFLICT (id) DO UPDATE SET
 function reignSql(r) {
   return `INSERT INTO reigns (
   id, dynasty_id, person_id, title,
-  posthumous_name, temple_name, preferred_appellation,
+  era_names, preferred_appellation,
   start_year, start_month, start_day, end_year, end_month, end_day,
   start_abs, end_abs, precision, start_date_confidence, end_date_confidence
 ) VALUES (
   ${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(r.title)},
-  ${sqlStr(r.posthumousName ?? null)}, ${sqlStr(r.templeName ?? null)}, ${sqlJson(r.preferredAppellation)},
+  ${sqlStr(formatAppellationCsv(r.eraNames))}, ${sqlJson(r.preferredAppellation)},
   ${r.start.year}, ${r.start.month}, ${r.start.day ?? "NULL"}, ${r.end.year}, ${r.end.month}, ${r.end.day ?? "NULL"},
   ${r.startAbs}, ${r.endAbs}, ${sqlStr(r.precision)}, ${sqlStr(r.startDateConfidence ?? null)}, ${sqlStr(r.endDateConfidence ?? null)}
 )
@@ -740,8 +754,7 @@ ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
   person_id = EXCLUDED.person_id,
   title = EXCLUDED.title,
-  posthumous_name = EXCLUDED.posthumous_name,
-  temple_name = EXCLUDED.temple_name,
+  era_names = EXCLUDED.era_names,
   preferred_appellation = EXCLUDED.preferred_appellation,
   start_year = EXCLUDED.start_year,
   start_month = EXCLUDED.start_month,
@@ -948,6 +961,7 @@ const manifest = {
     "齐太公不用维基齐国表的前1122年（旧克商年），与西周始年（前1046）对齐。",
     "田氏代齐为顺序接续，不是并立：宣公→康公→田和→侯剡。齐国表田和前404–前384年是田悼子卒后的领袖年；田和称君取条目前391年自立，前386年周安王列为诸侯。康公卒前379年，前391年被放逐后不在齐行续画，在位迄前392年。",
     "卫国人物 id 用 weiguo- 前缀，避免与战国魏 wei-r* 冲突；燕召公用 ji-shi，避免与宋恭帝 zhao-shi 冲突。",
+    "同人多次即位拆多条 reign（reignId 后缀 -2），与唐/明一致；维基合并年表由 build-rulers.mjs 条目校正展开，不做运行时 split。",
     "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 precision: year。",
     "越国泳道不收夏少康庶子无余及无壬、无瞫：维基诸侯表在无余后「中有十世不明」、无瞫后「中有二十世不明」，无通行王年，不把远祖插值到春秋。有年表自允常；无年表的夫谭仅按允常前窗口插值。王朝起迄取在位首尾（夫谭至无彊前306），楚破越从维基诸侯表前306年，不取旧泳道前334。",
     "中山国泳道起迄取在位首尾（文公至王尚前296），不提前至桓公复兴传说起点前478；武公之后至桓公复兴间亡国留白。",

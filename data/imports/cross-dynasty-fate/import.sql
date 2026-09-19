@@ -37,7 +37,6 @@ DELETE FROM relations WHERE id IN (
 
 -- reigns
 
--- era_names
 
 -- events
 

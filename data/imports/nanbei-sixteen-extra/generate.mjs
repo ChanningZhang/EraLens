@@ -287,7 +287,6 @@ const manifest = {
 const preSql = [
   "DELETE FROM event_participants WHERE event_id = 'xiliang-founded' AND person_id = 'xiao-zhuang';",
   "DELETE FROM relations WHERE id = 'rel-xiao-zhuang-xiao-cong-succession';",
-  "DELETE FROM era_names WHERE reign_id IN ('reign-xiao-zhuang-xiliang', 'reign-xiao-cong-xiliang');",
   "DELETE FROM reigns WHERE id = 'reign-xiao-zhuang-xiliang';",
   "DELETE FROM persons WHERE id = 'xiao-zhuang';",
   "DELETE FROM relations WHERE id IN (",

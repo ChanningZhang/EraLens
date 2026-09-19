@@ -39,18 +39,21 @@ INSERT INTO dynasties (
 )
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs;
 
+INSERT INTO persons (
+  id, name, roles, bio, links, posthumous_name, temple_name
+) VALUES (
+  'li-shimin', '李世民', ARRAY['皇帝'], '唐太宗。', '[]'::jsonb, '文武皇帝', '太宗'
+)
+ON CONFLICT (id) DO UPDATE SET posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name;
+
 INSERT INTO reigns (
-  id, dynasty_id, person_id, title, temple_name,
+  id, dynasty_id, person_id, title, era_names,
   start_year, start_month, end_year, end_month, start_abs, end_abs, precision
 ) VALUES (
-  'reign-li-shimin', 'tang', 'li-shimin', '唐太宗', '太宗',
+  'reign-li-shimin', 'tang', 'li-shimin', '唐太宗', '贞观',
   626, 9, 649, 7, 7517, 7795, 'month'
 )
 ON CONFLICT (id) DO UPDATE SET start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs;
-
-DELETE FROM era_names WHERE reign_id = 'reign-li-shimin';
-INSERT INTO era_names (reign_id, name, start_year, start_month, end_year, end_month, start_abs, end_abs, sort_order)
-VALUES ('reign-li-shimin', '贞观', 627, 1, 649, 7, 7524, 7795, 0);
 
 INSERT INTO events (
   id, name, kind,

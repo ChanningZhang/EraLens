@@ -21,7 +21,7 @@ describe("timeline seed coordinates", () => {
     }
   });
 
-  it("keeps reign and era absolute months derived from calendar dates", () => {
+  it("keeps reign absolute months derived from calendar dates", () => {
     for (const reign of ReignSchema.array().parse(reignsJson)) {
       expect(reign.startAbs, `${reign.id}.startAbs`).toBe(
         absMonth(reign.start.year, reign.start.month),
@@ -29,14 +29,6 @@ describe("timeline seed coordinates", () => {
       expect(reign.endAbs, `${reign.id}.endAbs`).toBe(
         absMonth(reign.end.year, reign.end.month),
       );
-      for (const era of reign.eraNames) {
-        expect(era.startAbs, `${reign.id}.${era.name}.startAbs`).toBe(
-          absMonth(era.start.year, era.start.month),
-        );
-        expect(era.endAbs, `${reign.id}.${era.name}.endAbs`).toBe(
-          absMonth(era.end.year, era.end.month),
-        );
-      }
     }
   });
 

@@ -38,7 +38,16 @@ type Props = {
   missingReigns: Reign[];
   dynastiesById: Map<string, Dynasty>;
   personNames: Map<string, string>;
-  personClans: Map<string, { ancestralXing?: string; clanShi?: string } | undefined>;
+  personClans: Map<
+    string,
+    | {
+        ancestralXing?: string;
+        clanShi?: string;
+        posthumousNames?: string[];
+        templeNames?: string[];
+      }
+    | undefined
+  >;
   laneGroups: readonly DynastyLaneGroup[];
   top: number;
 };

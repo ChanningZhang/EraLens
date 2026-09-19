@@ -115,14 +115,29 @@ export function TimelineStage() {
     return map;
   }, [data]);
 
-  const personClans = useMemo(() => {
-    const map = new Map<string, { ancestralXing?: string; clanShi?: string }>();
+  const personDisplay = useMemo(() => {
+    const map = new Map<
+      string,
+      {
+        ancestralXing?: string;
+        clanShi?: string;
+        posthumousNames?: string[];
+        templeNames?: string[];
+      }
+    >();
     if (!data) return map;
     for (const person of data.persons) {
-      if (person.ancestralXing || person.clanShi) {
+      if (
+        person.ancestralXing ||
+        person.clanShi ||
+        person.posthumousNames.length ||
+        person.templeNames.length
+      ) {
         map.set(person.id, {
           ancestralXing: person.ancestralXing,
           clanShi: person.clanShi,
+          posthumousNames: person.posthumousNames,
+          templeNames: person.templeNames,
         });
       }
     }
@@ -259,7 +274,7 @@ export function TimelineStage() {
                   missingReigns={missingReigns}
                   dynastiesById={dynastiesById}
                   personNames={personNames}
-                  personClans={personClans}
+                  personClans={personDisplay}
                   laneGroups={laneGroups}
                   top={top}
                 />

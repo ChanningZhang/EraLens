@@ -11,7 +11,7 @@ import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 import { applyFeudalClanMetadata } from "../lib/applyFeudalClanMetadata.mjs";
 import { reignSql } from "../lib/reignSql.mjs";
 import { validateReignDateConfidenceSeams } from "../lib/validateReignSeams.mjs";
-import { dynastySql, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
+import { dynastySql, formatAppellationCsv, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -1358,7 +1358,7 @@ const sql = [
   ...dynasties.map(dynastySql),
   "",
   "-- reigns",
-  ...importReigns.map((r) => reignSql(r, sqlStr, sqlJson)),
+  ...importReigns.map((r) => reignSql(r, sqlStr, sqlJson, formatAppellationCsv)),
   "",
   "-- events",
   ...events.map(eventSql),

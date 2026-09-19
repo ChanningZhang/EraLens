@@ -9,7 +9,7 @@ import { fileURLToPath } from "node:url";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 import { reignSql } from "../lib/reignSql.mjs";
-import { dynastyGroupSql, dynastySql, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
+import { dynastyGroupSql, dynastySql, formatAppellationCsv, mergeAppellationsIntoPersons, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -738,10 +738,6 @@ relations.push(
 // ── SQL generation (same helpers as jin-sixteen) ─────────────────────────────
 
 
-function eraNameSql(e) {
-  return `INSERT INTO era_names (reign_id, name, start_year, start_month, end_year, end_month, start_abs, end_abs, sort_order)
-VALUES (${sqlStr(e.reignId)}, ${sqlStr(e.name)}, ${e.start.year}, ${e.start.month}, ${e.end.year}, ${e.end.month}, ${e.start.abs}, ${e.end.abs}, ${e.sortOrder});`;
-}
 
 function eventSql(e) {
   const cols = [
@@ -781,11 +777,11 @@ VALUES (${sqlStr(r.id)}, ${sqlStr(from.type)}, ${sqlStr(from.id)}, ${sqlStr(to.t
 ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;`;
 }
 
-const { persons: importPersons, reigns: importReigns } = finalizeImportReigns("nanbei-chao", allPersons, reigns);
+const finalized = finalizeImportReigns("nanbei-chao", allPersons, reigns);
+const merged = mergeAppellationsIntoPersons(finalized.persons, finalized.reigns);
+const importPersons = merged.persons;
+const importReigns = merged.reigns;
 
-const reignsWithEras = importReigns.filter((r) => r.eraNames.length > 0);
-const eraDeleteSql = reignsWithEras.map((r) => `DELETE FROM era_names WHERE reign_id = ${sqlStr(r.id)};`);
-const eraInsertSql = reignsWithEras.flatMap((r) => r.eraNames.map(eraNameSql));
 
 const staleRelationSql = [
   "DELETE FROM relations WHERE id IN ('rel-yuan-xiu-yuan-bao-ju-succession', 'rel-tuoba-kuo-yuan-shan-jian-succession');",
@@ -825,11 +821,7 @@ const sql = [
   ...dynasties.map(dynastySql),
   "",
   "-- reigns",
-  ...importReigns.map((r) => reignSql(r, sqlStr, sqlJson)),
-  "",
-  "-- era_names",
-  ...eraDeleteSql,
-  ...eraInsertSql,
+  ...importReigns.map((r) => reignSql(r, sqlStr, sqlJson, formatAppellationCsv)),
   "",
   "-- events",
   ...events.map(eventSql),

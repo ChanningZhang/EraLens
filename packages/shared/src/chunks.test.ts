@@ -123,7 +123,6 @@ describe("mergeTimelineSlices", () => {
       dynastyId: "qin",
       personId: "qin-r29",
       title: "秦庄襄王",
-      posthumousName: "庄襄王",
       preferredAppellation: { kind: "posthumous", name: "秦庄襄王" },
       eraNames: [],
       start: { year: -250, month: 1 },

@@ -8,7 +8,6 @@ BEGIN;
 
 -- reigns
 
--- era_names
 
 -- events
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary) VALUES ('jiahu', '贾湖文化', 'culture', 'circa', 'century', '贾湖遗址三期约距今9000–7800年；骨笛分期作前7000–前5800。一说属裴李岗文化类型。', -6400, 1, -76788, -7000, 1, -83988, -5800, 12, -69577, '河南舞阳贾湖，新石器早期聚落。出土七声音阶骨笛、炭化稻、龟甲契刻符号，为黄河—淮河间早期文化的代表。')

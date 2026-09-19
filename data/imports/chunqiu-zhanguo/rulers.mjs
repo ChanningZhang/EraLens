@@ -11,7 +11,8 @@ export const rulersByDynasty = {
       "startYear": -1046,
       "endYear": -1011,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-lv-shang-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -22,7 +23,8 @@ export const rulersByDynasty = {
       "startYear": -1010,
       "endYear": -974,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-qi-r1-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -33,7 +35,8 @@ export const rulersByDynasty = {
       "startYear": -973,
       "endYear": -937,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-qi-r2-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -44,7 +47,8 @@ export const rulersByDynasty = {
       "startYear": -936,
       "endYear": -900,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-qi-r3-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -55,7 +59,7 @@ export const rulersByDynasty = {
       "startYear": -899,
       "endYear": -863,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "reignId": "reign-qi-r4-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -64,7 +68,8 @@ export const rulersByDynasty = {
       "personName": "姜静",
       "posthumousName": "胡公",
       "startYear": -862,
-      "endYear": -860
+      "endYear": -860,
+      "reignId": "reign-qi-r5-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -73,7 +78,8 @@ export const rulersByDynasty = {
       "personName": "姜山",
       "posthumousName": "献公",
       "startYear": -859,
-      "endYear": -851
+      "endYear": -851,
+      "reignId": "reign-qi-r6-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -82,7 +88,8 @@ export const rulersByDynasty = {
       "personName": "姜寿",
       "posthumousName": "武公",
       "startYear": -850,
-      "endYear": -825
+      "endYear": -825,
+      "reignId": "reign-qi-r7-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -91,7 +98,8 @@ export const rulersByDynasty = {
       "personName": "姜无忌",
       "posthumousName": "厉公",
       "startYear": -824,
-      "endYear": -816
+      "endYear": -816,
+      "reignId": "reign-qi-r8-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -100,7 +108,8 @@ export const rulersByDynasty = {
       "personName": "姜赤",
       "posthumousName": "文公",
       "startYear": -815,
-      "endYear": -804
+      "endYear": -804,
+      "reignId": "reign-qi-r9-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -109,7 +118,8 @@ export const rulersByDynasty = {
       "personName": "姜脱",
       "posthumousName": "成公",
       "startYear": -803,
-      "endYear": -795
+      "endYear": -795,
+      "reignId": "reign-qi-r10-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -118,7 +128,8 @@ export const rulersByDynasty = {
       "personName": "姜购",
       "posthumousName": "庄公",
       "startYear": -794,
-      "endYear": -731
+      "endYear": -731,
+      "reignId": "reign-qi-r11-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -127,7 +138,8 @@ export const rulersByDynasty = {
       "personName": "姜禄甫",
       "posthumousName": "釐公",
       "startYear": -730,
-      "endYear": -698
+      "endYear": -698,
+      "reignId": "reign-qi-r12-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -136,7 +148,8 @@ export const rulersByDynasty = {
       "personName": "姜诸儿",
       "posthumousName": "襄公",
       "startYear": -697,
-      "endYear": -686
+      "endYear": -686,
+      "reignId": "reign-qi-r13-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -145,7 +158,8 @@ export const rulersByDynasty = {
       "personName": "姜无知",
       "posthumousName": null,
       "startYear": -686,
-      "endYear": -686
+      "endYear": -686,
+      "reignId": "reign-qi-r14-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -154,7 +168,8 @@ export const rulersByDynasty = {
       "personName": "姜小白",
       "posthumousName": "桓公",
       "startYear": -685,
-      "endYear": -643
+      "endYear": -643,
+      "reignId": "reign-jiang-xiaobai-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -163,7 +178,8 @@ export const rulersByDynasty = {
       "personName": "姜无诡",
       "posthumousName": null,
       "startYear": -643,
-      "endYear": -643
+      "endYear": -643,
+      "reignId": "reign-qi-r16-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -172,7 +188,8 @@ export const rulersByDynasty = {
       "personName": "姜昭",
       "posthumousName": "孝公",
       "startYear": -642,
-      "endYear": -633
+      "endYear": -633,
+      "reignId": "reign-qi-r17-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -181,7 +198,8 @@ export const rulersByDynasty = {
       "personName": "姜潘",
       "posthumousName": "昭公",
       "startYear": -632,
-      "endYear": -613
+      "endYear": -613,
+      "reignId": "reign-qi-r18-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -194,7 +212,8 @@ export const rulersByDynasty = {
         "name": "君舍"
       },
       "startYear": -613,
-      "endYear": -613
+      "endYear": -613,
+      "reignId": "reign-qi-r19-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -203,7 +222,8 @@ export const rulersByDynasty = {
       "personName": "姜商人",
       "posthumousName": "懿公",
       "startYear": -612,
-      "endYear": -609
+      "endYear": -609,
+      "reignId": "reign-qi-r20-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -212,7 +232,8 @@ export const rulersByDynasty = {
       "personName": "姜元",
       "posthumousName": "惠公",
       "startYear": -608,
-      "endYear": -599
+      "endYear": -599,
+      "reignId": "reign-qi-r21-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -221,7 +242,8 @@ export const rulersByDynasty = {
       "personName": "姜无野",
       "posthumousName": "顷公",
       "startYear": -598,
-      "endYear": -582
+      "endYear": -582,
+      "reignId": "reign-qi-r22-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -230,7 +252,8 @@ export const rulersByDynasty = {
       "personName": "姜环",
       "posthumousName": "灵公",
       "startYear": -581,
-      "endYear": -554
+      "endYear": -554,
+      "reignId": "reign-qi-r23-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -239,7 +262,8 @@ export const rulersByDynasty = {
       "personName": "姜光",
       "posthumousName": "庄公",
       "startYear": -553,
-      "endYear": -548
+      "endYear": -548,
+      "reignId": "reign-qi-r24-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -248,7 +272,8 @@ export const rulersByDynasty = {
       "personName": "姜杵臼",
       "posthumousName": "景公",
       "startYear": -547,
-      "endYear": -490
+      "endYear": -490,
+      "reignId": "reign-qi-r25-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -258,8 +283,7 @@ export const rulersByDynasty = {
       "posthumousName": null,
       "startYear": -489,
       "endYear": -489,
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "reignId": "reign-qi-r26-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -268,7 +292,8 @@ export const rulersByDynasty = {
       "personName": "姜阳生",
       "posthumousName": "悼公",
       "startYear": -488,
-      "endYear": -485
+      "endYear": -485,
+      "reignId": "reign-qi-r27-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -277,7 +302,8 @@ export const rulersByDynasty = {
       "personName": "姜壬",
       "posthumousName": "简公",
       "startYear": -484,
-      "endYear": -481
+      "endYear": -481,
+      "reignId": "reign-qi-r28-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -286,7 +312,8 @@ export const rulersByDynasty = {
       "personName": "姜骜",
       "posthumousName": "平公",
       "startYear": -480,
-      "endYear": -456
+      "endYear": -456,
+      "reignId": "reign-qi-r29-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -295,7 +322,8 @@ export const rulersByDynasty = {
       "personName": "姜积",
       "posthumousName": "宣公",
       "startYear": -455,
-      "endYear": -405
+      "endYear": -405,
+      "reignId": "reign-qi-r30-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -304,7 +332,8 @@ export const rulersByDynasty = {
       "personName": "姜贷",
       "posthumousName": "康公",
       "startYear": -404,
-      "endYear": -392
+      "endYear": -392,
+      "reignId": "reign-jiang-dai-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -313,7 +342,8 @@ export const rulersByDynasty = {
       "personName": "田和",
       "posthumousName": "太公",
       "startYear": -391,
-      "endYear": -384
+      "endYear": -384,
+      "reignId": "reign-tian-he-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -326,7 +356,8 @@ export const rulersByDynasty = {
         "name": "剡"
       },
       "startYear": -383,
-      "endYear": -375
+      "endYear": -375,
+      "reignId": "reign-qi-r33-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -335,7 +366,8 @@ export const rulersByDynasty = {
       "personName": "田午",
       "posthumousName": "桓公",
       "startYear": -374,
-      "endYear": -357
+      "endYear": -357,
+      "reignId": "reign-qi-r34-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -344,7 +376,8 @@ export const rulersByDynasty = {
       "personName": "田因齐",
       "posthumousName": "威王",
       "startYear": -356,
-      "endYear": -320
+      "endYear": -320,
+      "reignId": "reign-qi-r35-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -353,7 +386,8 @@ export const rulersByDynasty = {
       "personName": "田辟彊",
       "posthumousName": "宣王",
       "startYear": -319,
-      "endYear": -301
+      "endYear": -301,
+      "reignId": "reign-qi-r36-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -362,7 +396,8 @@ export const rulersByDynasty = {
       "personName": "田地",
       "posthumousName": "湣王",
       "startYear": -300,
-      "endYear": -284
+      "endYear": -284,
+      "reignId": "reign-qi-r37-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -371,7 +406,8 @@ export const rulersByDynasty = {
       "personName": "田法章",
       "posthumousName": "襄王",
       "startYear": -283,
-      "endYear": -265
+      "endYear": -265,
+      "reignId": "reign-qi-r38-qi-chunqiu"
     },
     {
       "dynastyId": "qi-chunqiu",
@@ -384,7 +420,8 @@ export const rulersByDynasty = {
         "name": "建"
       },
       "startYear": -264,
-      "endYear": -221
+      "endYear": -221,
+      "reignId": "reign-qi-r39-qi-chunqiu"
     }
   ],
   "jin-chunqiu": [
@@ -397,7 +434,8 @@ export const rulersByDynasty = {
       "startYear": -1042,
       "endYear": -1007,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-ji-shuyu-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -412,7 +450,8 @@ export const rulersByDynasty = {
       "startYear": -1006,
       "endYear": -970,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-jin-r1-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -423,7 +462,8 @@ export const rulersByDynasty = {
       "startYear": -969,
       "endYear": -933,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-jin-r2-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -434,7 +474,8 @@ export const rulersByDynasty = {
       "startYear": -932,
       "endYear": -896,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-jin-r3-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -445,7 +486,7 @@ export const rulersByDynasty = {
       "startYear": -895,
       "endYear": -859,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "reignId": "reign-jin-r4-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -454,7 +495,8 @@ export const rulersByDynasty = {
       "personName": "姬宜臼",
       "posthumousName": "靖侯",
       "startYear": -858,
-      "endYear": -841
+      "endYear": -841,
+      "reignId": "reign-jin-r5-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -463,7 +505,8 @@ export const rulersByDynasty = {
       "personName": "姬司徒",
       "posthumousName": "釐侯",
       "startYear": -840,
-      "endYear": -823
+      "endYear": -823,
+      "reignId": "reign-jin-r6-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -472,7 +515,8 @@ export const rulersByDynasty = {
       "personName": "姬籍",
       "posthumousName": "献侯",
       "startYear": -822,
-      "endYear": -812
+      "endYear": -812,
+      "reignId": "reign-jin-r7-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -481,7 +525,8 @@ export const rulersByDynasty = {
       "personName": "姬费",
       "posthumousName": "穆侯",
       "startYear": -811,
-      "endYear": -785
+      "endYear": -785,
+      "reignId": "reign-jin-r8-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -490,7 +535,8 @@ export const rulersByDynasty = {
       "personName": "姬殇",
       "posthumousName": "殇叔",
       "startYear": -784,
-      "endYear": -781
+      "endYear": -781,
+      "reignId": "reign-jin-r9-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -499,7 +545,8 @@ export const rulersByDynasty = {
       "personName": "姬仇",
       "posthumousName": "文侯",
       "startYear": -780,
-      "endYear": -746
+      "endYear": -746,
+      "reignId": "reign-jin-r10-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -508,7 +555,8 @@ export const rulersByDynasty = {
       "personName": "姬伯",
       "posthumousName": "昭侯",
       "startYear": -745,
-      "endYear": -740
+      "endYear": -740,
+      "reignId": "reign-jin-r11-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -517,7 +565,8 @@ export const rulersByDynasty = {
       "personName": "姬成师",
       "posthumousName": null,
       "startYear": -744,
-      "endYear": -731
+      "endYear": -731,
+      "reignId": "reign-jin-r12-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -526,7 +575,8 @@ export const rulersByDynasty = {
       "personName": "姬平",
       "posthumousName": "孝侯",
       "startYear": -739,
-      "endYear": -724
+      "endYear": -724,
+      "reignId": "reign-jin-r13-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -535,7 +585,8 @@ export const rulersByDynasty = {
       "personName": "姬鱓",
       "posthumousName": null,
       "startYear": -730,
-      "endYear": -716
+      "endYear": -716,
+      "reignId": "reign-jin-r14-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -544,7 +595,8 @@ export const rulersByDynasty = {
       "personName": "姬却",
       "posthumousName": "鄂侯",
       "startYear": -723,
-      "endYear": -718
+      "endYear": -718,
+      "reignId": "reign-jin-r15-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -553,7 +605,8 @@ export const rulersByDynasty = {
       "personName": "姬光",
       "posthumousName": "哀侯",
       "startYear": -717,
-      "endYear": -709
+      "endYear": -709,
+      "reignId": "reign-jin-r16-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -562,7 +615,8 @@ export const rulersByDynasty = {
       "personName": "姬称",
       "posthumousName": "曲沃武公",
       "startYear": -715,
-      "endYear": -677
+      "endYear": -677,
+      "reignId": "reign-jin-r17-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -571,7 +625,8 @@ export const rulersByDynasty = {
       "personName": "姬小子",
       "posthumousName": "小子侯",
       "startYear": -708,
-      "endYear": -705
+      "endYear": -705,
+      "reignId": "reign-jin-r18-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -584,7 +639,8 @@ export const rulersByDynasty = {
         "name": "缗"
       },
       "startYear": -704,
-      "endYear": -678
+      "endYear": -678,
+      "reignId": "reign-jin-r19-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -593,7 +649,8 @@ export const rulersByDynasty = {
       "personName": "姬诡诸",
       "posthumousName": "献公",
       "startYear": -676,
-      "endYear": -651
+      "endYear": -651,
+      "reignId": "reign-jin-r20-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -602,7 +659,8 @@ export const rulersByDynasty = {
       "personName": "姬夷吾",
       "posthumousName": "惠公",
       "startYear": -650,
-      "endYear": -637
+      "endYear": -637,
+      "reignId": "reign-jin-r21-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -611,7 +669,8 @@ export const rulersByDynasty = {
       "personName": "姬圉",
       "posthumousName": "怀公",
       "startYear": -637,
-      "endYear": -637
+      "endYear": -637,
+      "reignId": "reign-jin-r22-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -620,7 +679,8 @@ export const rulersByDynasty = {
       "personName": "姬重耳",
       "posthumousName": "文公",
       "startYear": -636,
-      "endYear": -628
+      "endYear": -628,
+      "reignId": "reign-ji-chonger-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -629,7 +689,8 @@ export const rulersByDynasty = {
       "personName": "姬欢",
       "posthumousName": "襄公",
       "startYear": -627,
-      "endYear": -621
+      "endYear": -621,
+      "reignId": "reign-jin-r24-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -638,7 +699,8 @@ export const rulersByDynasty = {
       "personName": "姬夷皋",
       "posthumousName": "灵公",
       "startYear": -620,
-      "endYear": -607
+      "endYear": -607,
+      "reignId": "reign-jin-r25-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -647,7 +709,8 @@ export const rulersByDynasty = {
       "personName": "姬黑臀",
       "posthumousName": "成公",
       "startYear": -606,
-      "endYear": -600
+      "endYear": -600,
+      "reignId": "reign-jin-r26-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -656,7 +719,8 @@ export const rulersByDynasty = {
       "personName": "姬据",
       "posthumousName": "景公",
       "startYear": -599,
-      "endYear": -581
+      "endYear": -581,
+      "reignId": "reign-jin-r27-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -665,7 +729,8 @@ export const rulersByDynasty = {
       "personName": "姬寿曼",
       "posthumousName": "厉公",
       "startYear": -580,
-      "endYear": -573
+      "endYear": -573,
+      "reignId": "reign-jin-r28-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -674,7 +739,8 @@ export const rulersByDynasty = {
       "personName": "姬周",
       "posthumousName": "悼公",
       "startYear": -572,
-      "endYear": -558
+      "endYear": -558,
+      "reignId": "reign-jin-r29-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -683,7 +749,8 @@ export const rulersByDynasty = {
       "personName": "姬彪",
       "posthumousName": "平公",
       "startYear": -557,
-      "endYear": -532
+      "endYear": -532,
+      "reignId": "reign-jin-r30-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -692,7 +759,8 @@ export const rulersByDynasty = {
       "personName": "姬夷",
       "posthumousName": "昭公",
       "startYear": -531,
-      "endYear": -526
+      "endYear": -526,
+      "reignId": "reign-jin-r31-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -701,7 +769,8 @@ export const rulersByDynasty = {
       "personName": "姬弃疾",
       "posthumousName": "顷公",
       "startYear": -525,
-      "endYear": -512
+      "endYear": -512,
+      "reignId": "reign-jin-r32-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -710,7 +779,8 @@ export const rulersByDynasty = {
       "personName": "姬午",
       "posthumousName": "定公",
       "startYear": -511,
-      "endYear": -475
+      "endYear": -475,
+      "reignId": "reign-jin-r33-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -719,7 +789,8 @@ export const rulersByDynasty = {
       "personName": "姬凿",
       "posthumousName": "出公",
       "startYear": -474,
-      "endYear": -452
+      "endYear": -452,
+      "reignId": "reign-jin-r34-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -728,7 +799,8 @@ export const rulersByDynasty = {
       "personName": "姬骄",
       "posthumousName": "哀公",
       "startYear": -451,
-      "endYear": -434
+      "endYear": -434,
+      "reignId": "reign-jin-r35-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -737,7 +809,8 @@ export const rulersByDynasty = {
       "personName": "姬柳",
       "posthumousName": "幽公",
       "startYear": -433,
-      "endYear": -416
+      "endYear": -416,
+      "reignId": "reign-jin-r36-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -746,7 +819,8 @@ export const rulersByDynasty = {
       "personName": "姬止",
       "posthumousName": "烈公",
       "startYear": -415,
-      "endYear": -389
+      "endYear": -389,
+      "reignId": "reign-jin-r37-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -755,7 +829,8 @@ export const rulersByDynasty = {
       "personName": "姬颀",
       "posthumousName": "孝公",
       "startYear": -388,
-      "endYear": -357
+      "endYear": -357,
+      "reignId": "reign-jin-r38-jin-chunqiu"
     },
     {
       "dynastyId": "jin-chunqiu",
@@ -764,7 +839,8 @@ export const rulersByDynasty = {
       "personName": "姬俱酒",
       "posthumousName": "静公",
       "startYear": -356,
-      "endYear": -349
+      "endYear": -349,
+      "reignId": "reign-jin-r39-jin-chunqiu"
     }
   ],
   "chu-chunqiu": [
@@ -777,7 +853,8 @@ export const rulersByDynasty = {
       "startYear": -1042,
       "endYear": -1019,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-chu-r0-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -788,7 +865,8 @@ export const rulersByDynasty = {
       "startYear": -1018,
       "endYear": -995,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-chu-r1-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -799,7 +877,8 @@ export const rulersByDynasty = {
       "startYear": -994,
       "endYear": -970,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-chu-r2-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -810,7 +889,8 @@ export const rulersByDynasty = {
       "startYear": -969,
       "endYear": -946,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-chu-r3-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -821,7 +901,8 @@ export const rulersByDynasty = {
       "startYear": -945,
       "endYear": -922,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-chu-r4-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -832,7 +913,8 @@ export const rulersByDynasty = {
       "startYear": -921,
       "endYear": -897,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-chu-r5-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -843,7 +925,8 @@ export const rulersByDynasty = {
       "startYear": -896,
       "endYear": -873,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-chu-r6-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -854,7 +937,7 @@ export const rulersByDynasty = {
       "startYear": -872,
       "endYear": -848,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "reignId": "reign-chu-r7-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -863,7 +946,8 @@ export const rulersByDynasty = {
       "personName": "熊勇",
       "posthumousName": null,
       "startYear": -847,
-      "endYear": -838
+      "endYear": -838,
+      "reignId": "reign-chu-r8-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -872,7 +956,8 @@ export const rulersByDynasty = {
       "personName": "熊严",
       "posthumousName": null,
       "startYear": -837,
-      "endYear": -828
+      "endYear": -828,
+      "reignId": "reign-chu-r9-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -881,7 +966,8 @@ export const rulersByDynasty = {
       "personName": "熊霜",
       "posthumousName": null,
       "startYear": -827,
-      "endYear": -822
+      "endYear": -822,
+      "reignId": "reign-chu-r10-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -890,7 +976,8 @@ export const rulersByDynasty = {
       "personName": "熊徇",
       "posthumousName": null,
       "startYear": -821,
-      "endYear": -800
+      "endYear": -800,
+      "reignId": "reign-chu-r11-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -899,7 +986,8 @@ export const rulersByDynasty = {
       "personName": "熊咢",
       "posthumousName": null,
       "startYear": -799,
-      "endYear": -791
+      "endYear": -791,
+      "reignId": "reign-chu-r12-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -912,7 +1000,8 @@ export const rulersByDynasty = {
         "name": "若敖"
       },
       "startYear": -790,
-      "endYear": -764
+      "endYear": -764,
+      "reignId": "reign-chu-r13-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -925,7 +1014,8 @@ export const rulersByDynasty = {
         "name": "霄敖"
       },
       "startYear": -763,
-      "endYear": -758
+      "endYear": -758,
+      "reignId": "reign-chu-r14-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -938,7 +1028,8 @@ export const rulersByDynasty = {
         "name": "蚡冒"
       },
       "startYear": -757,
-      "endYear": -741
+      "endYear": -741,
+      "reignId": "reign-chu-r15-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -947,7 +1038,8 @@ export const rulersByDynasty = {
       "personName": "熊通",
       "posthumousName": "武王",
       "startYear": -740,
-      "endYear": -690
+      "endYear": -690,
+      "reignId": "reign-chu-r16-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -956,7 +1048,8 @@ export const rulersByDynasty = {
       "personName": "熊赀",
       "posthumousName": "文王",
       "startYear": -689,
-      "endYear": -675
+      "endYear": -675,
+      "reignId": "reign-chu-r17-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -969,7 +1062,8 @@ export const rulersByDynasty = {
         "name": "堵敖"
       },
       "startYear": -674,
-      "endYear": -672
+      "endYear": -672,
+      "reignId": "reign-chu-r18-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -978,7 +1072,8 @@ export const rulersByDynasty = {
       "personName": "熊恽",
       "posthumousName": "成王",
       "startYear": -671,
-      "endYear": -626
+      "endYear": -626,
+      "reignId": "reign-chu-r19-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -987,7 +1082,8 @@ export const rulersByDynasty = {
       "personName": "熊商臣",
       "posthumousName": "穆王",
       "startYear": -625,
-      "endYear": -614
+      "endYear": -614,
+      "reignId": "reign-chu-r20-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -996,7 +1092,8 @@ export const rulersByDynasty = {
       "personName": "熊侣",
       "posthumousName": "庄王",
       "startYear": -613,
-      "endYear": -591
+      "endYear": -591,
+      "reignId": "reign-xiong-zhuang-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1005,7 +1102,8 @@ export const rulersByDynasty = {
       "personName": "熊审",
       "posthumousName": "共王",
       "startYear": -590,
-      "endYear": -560
+      "endYear": -560,
+      "reignId": "reign-chu-r22-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1014,7 +1112,8 @@ export const rulersByDynasty = {
       "personName": "熊招",
       "posthumousName": "康王",
       "startYear": -559,
-      "endYear": -545
+      "endYear": -545,
+      "reignId": "reign-chu-r23-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1027,7 +1126,8 @@ export const rulersByDynasty = {
         "name": "郏敖"
       },
       "startYear": -544,
-      "endYear": -541
+      "endYear": -541,
+      "reignId": "reign-chu-r24-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1036,7 +1136,8 @@ export const rulersByDynasty = {
       "personName": "熊围",
       "posthumousName": "灵王",
       "startYear": -540,
-      "endYear": -529
+      "endYear": -529,
+      "reignId": "reign-chu-r25-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1049,7 +1150,8 @@ export const rulersByDynasty = {
         "name": "比"
       },
       "startYear": -529,
-      "endYear": -529
+      "endYear": -529,
+      "reignId": "reign-chu-r26-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1058,7 +1160,8 @@ export const rulersByDynasty = {
       "personName": "熊居",
       "posthumousName": "平王",
       "startYear": -528,
-      "endYear": -516
+      "endYear": -516,
+      "reignId": "reign-chu-r27-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1067,7 +1170,8 @@ export const rulersByDynasty = {
       "personName": "熊珍",
       "posthumousName": "昭王",
       "startYear": -515,
-      "endYear": -489
+      "endYear": -489,
+      "reignId": "reign-chu-r28-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1076,7 +1180,8 @@ export const rulersByDynasty = {
       "personName": "熊章",
       "posthumousName": "惠王",
       "startYear": -488,
-      "endYear": -432
+      "endYear": -432,
+      "reignId": "reign-chu-r29-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1085,7 +1190,8 @@ export const rulersByDynasty = {
       "personName": "熊中",
       "posthumousName": "简王",
       "startYear": -431,
-      "endYear": -408
+      "endYear": -408,
+      "reignId": "reign-chu-r30-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1094,7 +1200,8 @@ export const rulersByDynasty = {
       "personName": "熊当",
       "posthumousName": "声王",
       "startYear": -407,
-      "endYear": -402
+      "endYear": -402,
+      "reignId": "reign-chu-r31-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1103,7 +1210,8 @@ export const rulersByDynasty = {
       "personName": "熊疑",
       "posthumousName": "悼王",
       "startYear": -401,
-      "endYear": -381
+      "endYear": -381,
+      "reignId": "reign-chu-r32-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1112,7 +1220,8 @@ export const rulersByDynasty = {
       "personName": "熊臧",
       "posthumousName": "肃王",
       "startYear": -380,
-      "endYear": -370
+      "endYear": -370,
+      "reignId": "reign-chu-r33-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1121,7 +1230,8 @@ export const rulersByDynasty = {
       "personName": "熊良夫",
       "posthumousName": "宣王",
       "startYear": -369,
-      "endYear": -340
+      "endYear": -340,
+      "reignId": "reign-chu-r34-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1130,7 +1240,8 @@ export const rulersByDynasty = {
       "personName": "熊商",
       "posthumousName": "威王",
       "startYear": -339,
-      "endYear": -329
+      "endYear": -329,
+      "reignId": "reign-chu-r35-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1139,7 +1250,8 @@ export const rulersByDynasty = {
       "personName": "熊槐",
       "posthumousName": "怀王",
       "startYear": -328,
-      "endYear": -299
+      "endYear": -299,
+      "reignId": "reign-chu-r36-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1148,7 +1260,8 @@ export const rulersByDynasty = {
       "personName": "熊横",
       "posthumousName": "顷襄王",
       "startYear": -298,
-      "endYear": -263
+      "endYear": -263,
+      "reignId": "reign-chu-r37-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1157,7 +1270,8 @@ export const rulersByDynasty = {
       "personName": "熊元",
       "posthumousName": "考烈王",
       "startYear": -262,
-      "endYear": -238
+      "endYear": -238,
+      "reignId": "reign-chu-r38-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1166,7 +1280,8 @@ export const rulersByDynasty = {
       "personName": "熊悍",
       "posthumousName": "幽王",
       "startYear": -237,
-      "endYear": -228
+      "endYear": -228,
+      "reignId": "reign-chu-r39-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1175,7 +1290,8 @@ export const rulersByDynasty = {
       "personName": "熊犹",
       "posthumousName": "哀王",
       "startYear": -228,
-      "endYear": -228
+      "endYear": -228,
+      "reignId": "reign-chu-r40-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1188,7 +1304,8 @@ export const rulersByDynasty = {
         "name": "负刍"
       },
       "startYear": -227,
-      "endYear": -223
+      "endYear": -223,
+      "reignId": "reign-chu-r41-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1201,7 +1318,8 @@ export const rulersByDynasty = {
         "name": "昌平君"
       },
       "startYear": -223,
-      "endYear": -223
+      "endYear": -223,
+      "reignId": "reign-chu-r42-chu-chunqiu"
     },
     {
       "dynastyId": "chu-chunqiu",
@@ -1214,7 +1332,8 @@ export const rulersByDynasty = {
         "name": "义帝"
       },
       "startYear": -208,
-      "endYear": -205
+      "endYear": -205,
+      "reignId": "reign-chu-r43-chu-chunqiu"
     }
   ],
   "yan-chunqiu": [
@@ -1227,7 +1346,8 @@ export const rulersByDynasty = {
       "startYear": -1044,
       "endYear": -1000,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-ji-shi-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1242,7 +1362,8 @@ export const rulersByDynasty = {
       "startYear": -999,
       "endYear": -955,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-yan-r1-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1257,7 +1378,8 @@ export const rulersByDynasty = {
       "startYear": -954,
       "endYear": -910,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-yan-r2-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1272,7 +1394,7 @@ export const rulersByDynasty = {
       "startYear": -909,
       "endYear": -865,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "reignId": "reign-yan-r3-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1281,7 +1403,8 @@ export const rulersByDynasty = {
       "personName": "姬惠侯",
       "posthumousName": "惠侯",
       "startYear": -864,
-      "endYear": -827
+      "endYear": -827,
+      "reignId": "reign-yan-r4-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1290,7 +1413,8 @@ export const rulersByDynasty = {
       "personName": "姬庄",
       "posthumousName": "釐侯",
       "startYear": -826,
-      "endYear": -791
+      "endYear": -791,
+      "reignId": "reign-yan-r5-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1299,7 +1423,8 @@ export const rulersByDynasty = {
       "personName": "姬顷侯",
       "posthumousName": "顷侯",
       "startYear": -790,
-      "endYear": -767
+      "endYear": -767,
+      "reignId": "reign-yan-r6-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1308,7 +1433,8 @@ export const rulersByDynasty = {
       "personName": "姬哀侯",
       "posthumousName": "哀侯",
       "startYear": -766,
-      "endYear": -765
+      "endYear": -765,
+      "reignId": "reign-yan-r7-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1317,7 +1443,8 @@ export const rulersByDynasty = {
       "personName": "姬郑侯",
       "posthumousName": "郑侯",
       "startYear": -764,
-      "endYear": -729
+      "endYear": -729,
+      "reignId": "reign-yan-r8-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1326,7 +1453,8 @@ export const rulersByDynasty = {
       "personName": "姬穆侯",
       "posthumousName": "穆侯",
       "startYear": -728,
-      "endYear": -711
+      "endYear": -711,
+      "reignId": "reign-yan-r9-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1335,7 +1463,8 @@ export const rulersByDynasty = {
       "personName": "姬宣侯",
       "posthumousName": "宣侯",
       "startYear": -710,
-      "endYear": -698
+      "endYear": -698,
+      "reignId": "reign-yan-r10-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1344,7 +1473,8 @@ export const rulersByDynasty = {
       "personName": "姬桓侯",
       "posthumousName": "桓侯",
       "startYear": -697,
-      "endYear": -691
+      "endYear": -691,
+      "reignId": "reign-yan-r11-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1353,7 +1483,8 @@ export const rulersByDynasty = {
       "personName": "姬庄公",
       "posthumousName": "庄公",
       "startYear": -690,
-      "endYear": -658
+      "endYear": -658,
+      "reignId": "reign-yan-r12-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1362,7 +1493,8 @@ export const rulersByDynasty = {
       "personName": "姬襄公",
       "posthumousName": "襄公",
       "startYear": -657,
-      "endYear": -618
+      "endYear": -618,
+      "reignId": "reign-yan-r13-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1371,7 +1503,9 @@ export const rulersByDynasty = {
       "personName": "姬桓公",
       "posthumousName": "桓公",
       "startYear": -617,
-      "endYear": -602
+      "endYear": -602,
+      "ordinal": 1,
+      "reignId": "reign-yan-r14-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1380,7 +1514,8 @@ export const rulersByDynasty = {
       "personName": "姬宣公",
       "posthumousName": "宣公",
       "startYear": -601,
-      "endYear": -587
+      "endYear": -587,
+      "reignId": "reign-yan-r15-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1389,7 +1524,8 @@ export const rulersByDynasty = {
       "personName": "姬昭公",
       "posthumousName": "昭公",
       "startYear": -586,
-      "endYear": -574
+      "endYear": -574,
+      "reignId": "reign-yan-r16-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1398,7 +1534,8 @@ export const rulersByDynasty = {
       "personName": "姬武公",
       "posthumousName": "武公",
       "startYear": -573,
-      "endYear": -555
+      "endYear": -555,
+      "reignId": "reign-yan-r17-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1407,7 +1544,9 @@ export const rulersByDynasty = {
       "personName": "姬文公",
       "posthumousName": "文公",
       "startYear": -554,
-      "endYear": -549
+      "endYear": -549,
+      "ordinal": 1,
+      "reignId": "reign-yan-r18-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1416,7 +1555,8 @@ export const rulersByDynasty = {
       "personName": "姬懿公",
       "posthumousName": "懿公",
       "startYear": -548,
-      "endYear": -545
+      "endYear": -545,
+      "reignId": "reign-yan-r19-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1425,7 +1565,8 @@ export const rulersByDynasty = {
       "personName": "姬惠公",
       "posthumousName": "惠公",
       "startYear": -544,
-      "endYear": -536
+      "endYear": -536,
+      "reignId": "reign-yan-r20-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1434,7 +1575,8 @@ export const rulersByDynasty = {
       "personName": "姬悼公",
       "posthumousName": "悼公",
       "startYear": -535,
-      "endYear": -529
+      "endYear": -529,
+      "reignId": "reign-yan-r21-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1443,7 +1585,8 @@ export const rulersByDynasty = {
       "personName": "姬共公",
       "posthumousName": "共公",
       "startYear": -528,
-      "endYear": -524
+      "endYear": -524,
+      "reignId": "reign-yan-r22-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1452,7 +1595,8 @@ export const rulersByDynasty = {
       "personName": "姬平公",
       "posthumousName": "平公",
       "startYear": -523,
-      "endYear": -505
+      "endYear": -505,
+      "reignId": "reign-yan-r23-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1461,7 +1605,8 @@ export const rulersByDynasty = {
       "personName": "姬简公",
       "posthumousName": "简公",
       "startYear": -504,
-      "endYear": -493
+      "endYear": -493,
+      "reignId": "reign-yan-r24-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1470,7 +1615,8 @@ export const rulersByDynasty = {
       "personName": "姬桓",
       "posthumousName": "孝公",
       "startYear": -492,
-      "endYear": -455
+      "endYear": -455,
+      "reignId": "reign-yan-r25-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1479,7 +1625,8 @@ export const rulersByDynasty = {
       "personName": "姬戴",
       "posthumousName": "成公",
       "startYear": -454,
-      "endYear": -439
+      "endYear": -439,
+      "reignId": "reign-yan-r26-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1488,7 +1635,8 @@ export const rulersByDynasty = {
       "personName": "姬闵公",
       "posthumousName": "闵公",
       "startYear": -438,
-      "endYear": -415
+      "endYear": -415,
+      "reignId": "reign-yan-r27-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1497,25 +1645,30 @@ export const rulersByDynasty = {
       "personName": "姬载",
       "posthumousName": "简公",
       "startYear": -414,
-      "endYear": -373
+      "endYear": -373,
+      "reignId": "reign-yan-r28-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
-      "personId": "yan-r29",
+      "personId": "yan-r14",
       "title": "燕桓公",
       "personName": "姬桓公",
       "posthumousName": "桓公",
       "startYear": -372,
-      "endYear": -362
+      "endYear": -362,
+      "ordinal": 2,
+      "reignId": "reign-yan-r14-yan-chunqiu-2"
     },
     {
       "dynastyId": "yan-chunqiu",
-      "personId": "yan-r30",
+      "personId": "yan-r18",
       "title": "燕文公",
       "personName": "姬文公",
       "posthumousName": "文公",
       "startYear": -361,
-      "endYear": -333
+      "endYear": -333,
+      "ordinal": 2,
+      "reignId": "reign-yan-r18-yan-chunqiu-2"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1524,7 +1677,8 @@ export const rulersByDynasty = {
       "personName": "姬易王",
       "posthumousName": "易王",
       "startYear": -332,
-      "endYear": -321
+      "endYear": -321,
+      "reignId": "reign-yan-r31-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1537,7 +1691,8 @@ export const rulersByDynasty = {
         "name": "哙"
       },
       "startYear": -320,
-      "endYear": -314
+      "endYear": -314,
+      "reignId": "reign-yan-r32-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1546,7 +1701,8 @@ export const rulersByDynasty = {
       "personName": "姬职",
       "posthumousName": "昭王",
       "startYear": -312,
-      "endYear": -279
+      "endYear": -279,
+      "reignId": "reign-yan-r33-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1555,7 +1711,8 @@ export const rulersByDynasty = {
       "personName": "姬惠王",
       "posthumousName": "惠王",
       "startYear": -278,
-      "endYear": -271
+      "endYear": -271,
+      "reignId": "reign-yan-r34-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1564,7 +1721,8 @@ export const rulersByDynasty = {
       "personName": "姬讙",
       "posthumousName": "武成王",
       "startYear": -270,
-      "endYear": -258
+      "endYear": -258,
+      "reignId": "reign-yan-r35-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1573,7 +1731,8 @@ export const rulersByDynasty = {
       "personName": "姬遇",
       "posthumousName": "孝王",
       "startYear": -257,
-      "endYear": -255
+      "endYear": -255,
+      "reignId": "reign-yan-r36-yan-chunqiu"
     },
     {
       "dynastyId": "yan-chunqiu",
@@ -1586,7 +1745,8 @@ export const rulersByDynasty = {
         "name": "喜"
       },
       "startYear": -254,
-      "endYear": -222
+      "endYear": -222,
+      "reignId": "reign-yan-r37-yan-chunqiu"
     }
   ],
   "song-chunqiu": [
@@ -1603,7 +1763,8 @@ export const rulersByDynasty = {
       "startYear": -1034,
       "endYear": -1010,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-song-weizi-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1618,7 +1779,8 @@ export const rulersByDynasty = {
       "startYear": -1009,
       "endYear": -985,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-song-r1-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1628,12 +1790,13 @@ export const rulersByDynasty = {
       "posthumousName": null,
       "preferredAppellation": {
         "kind": "regnal",
-        "name": "公稽"
+        "name": "稽"
       },
       "startYear": -984,
       "endYear": -960,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-song-r2-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1644,7 +1807,8 @@ export const rulersByDynasty = {
       "startYear": -959,
       "endYear": -935,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-song-r3-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1655,7 +1819,8 @@ export const rulersByDynasty = {
       "startYear": -934,
       "endYear": -910,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-song-r4-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1666,7 +1831,8 @@ export const rulersByDynasty = {
       "startYear": -909,
       "endYear": -885,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-song-r5-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1677,7 +1843,7 @@ export const rulersByDynasty = {
       "startYear": -884,
       "endYear": -859,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "reignId": "reign-song-r6-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1686,7 +1852,8 @@ export const rulersByDynasty = {
       "personName": "子举",
       "posthumousName": "釐公",
       "startYear": -858,
-      "endYear": -831
+      "endYear": -831,
+      "reignId": "reign-song-r7-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1695,7 +1862,8 @@ export const rulersByDynasty = {
       "personName": "子覵",
       "posthumousName": "惠公",
       "startYear": -830,
-      "endYear": -800
+      "endYear": -800,
+      "reignId": "reign-song-r8-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1704,7 +1872,8 @@ export const rulersByDynasty = {
       "personName": "子哀公",
       "posthumousName": "哀公",
       "startYear": -800,
-      "endYear": -800
+      "endYear": -800,
+      "reignId": "reign-song-r9-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1713,7 +1882,8 @@ export const rulersByDynasty = {
       "personName": "子白",
       "posthumousName": "戴公",
       "startYear": -799,
-      "endYear": -766
+      "endYear": -766,
+      "reignId": "reign-song-r10-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1722,7 +1892,8 @@ export const rulersByDynasty = {
       "personName": "子司空",
       "posthumousName": "武公",
       "startYear": -765,
-      "endYear": -748
+      "endYear": -748,
+      "reignId": "reign-song-r11-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1731,7 +1902,8 @@ export const rulersByDynasty = {
       "personName": "子力",
       "posthumousName": "宣公",
       "startYear": -747,
-      "endYear": -729
+      "endYear": -729,
+      "reignId": "reign-song-r12-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1740,7 +1912,8 @@ export const rulersByDynasty = {
       "personName": "子和",
       "posthumousName": "穆公",
       "startYear": -728,
-      "endYear": -720
+      "endYear": -720,
+      "reignId": "reign-song-r13-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1749,7 +1922,8 @@ export const rulersByDynasty = {
       "personName": "子与夷",
       "posthumousName": "殇公",
       "startYear": -719,
-      "endYear": -711
+      "endYear": -711,
+      "reignId": "reign-song-r14-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1758,7 +1932,8 @@ export const rulersByDynasty = {
       "personName": "子冯",
       "posthumousName": "庄公",
       "startYear": -710,
-      "endYear": -692
+      "endYear": -692,
+      "reignId": "reign-song-r15-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1767,7 +1942,8 @@ export const rulersByDynasty = {
       "personName": "子捷",
       "posthumousName": "湣公",
       "startYear": -691,
-      "endYear": -682
+      "endYear": -682,
+      "reignId": "reign-song-r16-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1777,10 +1953,11 @@ export const rulersByDynasty = {
       "posthumousName": null,
       "preferredAppellation": {
         "kind": "regnal",
-        "name": "公游"
+        "name": "游"
       },
       "startYear": -682,
-      "endYear": -682
+      "endYear": -682,
+      "reignId": "reign-song-r17-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1789,7 +1966,8 @@ export const rulersByDynasty = {
       "personName": "子御说",
       "posthumousName": "桓公",
       "startYear": -681,
-      "endYear": -651
+      "endYear": -651,
+      "reignId": "reign-song-r18-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1798,7 +1976,8 @@ export const rulersByDynasty = {
       "personName": "子兹甫",
       "posthumousName": "襄公",
       "startYear": -650,
-      "endYear": -637
+      "endYear": -637,
+      "reignId": "reign-song-r19-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1807,7 +1986,8 @@ export const rulersByDynasty = {
       "personName": "子王臣",
       "posthumousName": "成公",
       "startYear": -636,
-      "endYear": -620
+      "endYear": -620,
+      "reignId": "reign-song-r20-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1817,10 +1997,11 @@ export const rulersByDynasty = {
       "posthumousName": null,
       "preferredAppellation": {
         "kind": "regnal",
-        "name": "公御"
+        "name": "御"
       },
       "startYear": -620,
-      "endYear": -620
+      "endYear": -620,
+      "reignId": "reign-song-r21-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1829,7 +2010,8 @@ export const rulersByDynasty = {
       "personName": "子杵臼",
       "posthumousName": "昭公",
       "startYear": -619,
-      "endYear": -611
+      "endYear": -611,
+      "reignId": "reign-song-r22-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1838,7 +2020,8 @@ export const rulersByDynasty = {
       "personName": "子鲍革",
       "posthumousName": "文公",
       "startYear": -610,
-      "endYear": -589
+      "endYear": -589,
+      "reignId": "reign-song-r23-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1847,7 +2030,8 @@ export const rulersByDynasty = {
       "personName": "子瑕",
       "posthumousName": "共公",
       "startYear": -588,
-      "endYear": -576
+      "endYear": -576,
+      "reignId": "reign-song-r24-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1856,7 +2040,8 @@ export const rulersByDynasty = {
       "personName": "子成",
       "posthumousName": "平公",
       "startYear": -575,
-      "endYear": -532
+      "endYear": -532,
+      "reignId": "reign-song-r25-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1865,7 +2050,8 @@ export const rulersByDynasty = {
       "personName": "子佐",
       "posthumousName": "元公",
       "startYear": -531,
-      "endYear": -517
+      "endYear": -517,
+      "reignId": "reign-song-r26-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1874,7 +2060,8 @@ export const rulersByDynasty = {
       "personName": "子头曼",
       "posthumousName": "景公",
       "startYear": -516,
-      "endYear": -469
+      "endYear": -469,
+      "reignId": "reign-song-r27-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1883,7 +2070,8 @@ export const rulersByDynasty = {
       "personName": "子特",
       "posthumousName": "昭公",
       "startYear": -468,
-      "endYear": -404
+      "endYear": -404,
+      "reignId": "reign-song-r28-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1892,7 +2080,8 @@ export const rulersByDynasty = {
       "personName": "子购由",
       "posthumousName": "悼公",
       "startYear": -403,
-      "endYear": -385
+      "endYear": -385,
+      "reignId": "reign-song-r29-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1901,7 +2090,8 @@ export const rulersByDynasty = {
       "personName": "子田",
       "posthumousName": "休公",
       "startYear": -384,
-      "endYear": -363
+      "endYear": -363,
+      "reignId": "reign-song-r30-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1910,7 +2100,8 @@ export const rulersByDynasty = {
       "personName": "子辟兵",
       "posthumousName": "桓公",
       "startYear": -362,
-      "endYear": -356
+      "endYear": -356,
+      "reignId": "reign-song-r31-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1923,7 +2114,8 @@ export const rulersByDynasty = {
         "name": "剔成君"
       },
       "startYear": -355,
-      "endYear": -329
+      "endYear": -329,
+      "reignId": "reign-song-r32-song-chunqiu"
     },
     {
       "dynastyId": "song-chunqiu",
@@ -1932,7 +2124,8 @@ export const rulersByDynasty = {
       "personName": "戴偃",
       "posthumousName": "康王",
       "startYear": -328,
-      "endYear": -286
+      "endYear": -286,
+      "reignId": "reign-song-r33-song-chunqiu"
     }
   ],
   "lu-chunqiu": [
@@ -1943,7 +2136,8 @@ export const rulersByDynasty = {
       "personName": "伯禽",
       "posthumousName": null,
       "startYear": -1043,
-      "endYear": -998
+      "endYear": -998,
+      "reignId": "reign-bo-qin-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -1952,7 +2146,8 @@ export const rulersByDynasty = {
       "personName": "姬酋",
       "posthumousName": "考公",
       "startYear": -997,
-      "endYear": -994
+      "endYear": -994,
+      "reignId": "reign-lu-r1-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -1961,7 +2156,8 @@ export const rulersByDynasty = {
       "personName": "姬熙",
       "posthumousName": "炀公",
       "startYear": -993,
-      "endYear": -988
+      "endYear": -988,
+      "reignId": "reign-lu-r2-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -1970,7 +2166,8 @@ export const rulersByDynasty = {
       "personName": "姬宰",
       "posthumousName": "幽公",
       "startYear": -987,
-      "endYear": -974
+      "endYear": -974,
+      "reignId": "reign-lu-r3-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -1979,7 +2176,8 @@ export const rulersByDynasty = {
       "personName": "姬晞",
       "posthumousName": "魏公",
       "startYear": -973,
-      "endYear": -924
+      "endYear": -924,
+      "reignId": "reign-lu-r4-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -1988,7 +2186,8 @@ export const rulersByDynasty = {
       "personName": "姬擢",
       "posthumousName": "厉公",
       "startYear": -923,
-      "endYear": -887
+      "endYear": -887,
+      "reignId": "reign-lu-r5-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -1997,7 +2196,8 @@ export const rulersByDynasty = {
       "personName": "姬具",
       "posthumousName": "献公",
       "startYear": -886,
-      "endYear": -855
+      "endYear": -855,
+      "reignId": "reign-lu-r6-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2006,7 +2206,8 @@ export const rulersByDynasty = {
       "personName": "姬濞",
       "posthumousName": "真公",
       "startYear": -854,
-      "endYear": -825
+      "endYear": -825,
+      "reignId": "reign-lu-r7-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2015,7 +2216,8 @@ export const rulersByDynasty = {
       "personName": "姬敖",
       "posthumousName": "武公",
       "startYear": -824,
-      "endYear": -816
+      "endYear": -816,
+      "reignId": "reign-lu-r8-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2024,7 +2226,8 @@ export const rulersByDynasty = {
       "personName": "姬戏",
       "posthumousName": "懿公",
       "startYear": -815,
-      "endYear": -807
+      "endYear": -807,
+      "reignId": "reign-lu-r9-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2037,7 +2240,8 @@ export const rulersByDynasty = {
         "name": "伯御"
       },
       "startYear": -806,
-      "endYear": -796
+      "endYear": -796,
+      "reignId": "reign-lu-r10-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2046,7 +2250,8 @@ export const rulersByDynasty = {
       "personName": "姬称",
       "posthumousName": "孝公",
       "startYear": -795,
-      "endYear": -769
+      "endYear": -769,
+      "reignId": "reign-lu-r11-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2055,7 +2260,8 @@ export const rulersByDynasty = {
       "personName": "姬弗涅",
       "posthumousName": "惠公",
       "startYear": -768,
-      "endYear": -723
+      "endYear": -723,
+      "reignId": "reign-lu-r12-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2064,7 +2270,8 @@ export const rulersByDynasty = {
       "personName": "姬息姑",
       "posthumousName": "隐公",
       "startYear": -722,
-      "endYear": -712
+      "endYear": -712,
+      "reignId": "reign-lu-r13-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2073,7 +2280,8 @@ export const rulersByDynasty = {
       "personName": "姬允",
       "posthumousName": "桓公",
       "startYear": -711,
-      "endYear": -694
+      "endYear": -694,
+      "reignId": "reign-lu-r14-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2082,7 +2290,8 @@ export const rulersByDynasty = {
       "personName": "姬同",
       "posthumousName": "庄公",
       "startYear": -693,
-      "endYear": -662
+      "endYear": -662,
+      "reignId": "reign-lu-r15-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2091,7 +2300,8 @@ export const rulersByDynasty = {
       "personName": "姬启",
       "posthumousName": "闵公",
       "startYear": -661,
-      "endYear": -660
+      "endYear": -660,
+      "reignId": "reign-lu-r16-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2100,7 +2310,8 @@ export const rulersByDynasty = {
       "personName": "姬申",
       "posthumousName": "釐公",
       "startYear": -659,
-      "endYear": -627
+      "endYear": -627,
+      "reignId": "reign-lu-r17-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2109,7 +2320,8 @@ export const rulersByDynasty = {
       "personName": "姬兴",
       "posthumousName": "文公",
       "startYear": -626,
-      "endYear": -609
+      "endYear": -609,
+      "reignId": "reign-lu-r18-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2118,7 +2330,8 @@ export const rulersByDynasty = {
       "personName": "姬馁",
       "posthumousName": "宣公",
       "startYear": -608,
-      "endYear": -591
+      "endYear": -591,
+      "reignId": "reign-lu-r19-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2127,7 +2340,8 @@ export const rulersByDynasty = {
       "personName": "姬黑肱",
       "posthumousName": "成公",
       "startYear": -590,
-      "endYear": -573
+      "endYear": -573,
+      "reignId": "reign-lu-r20-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2136,7 +2350,8 @@ export const rulersByDynasty = {
       "personName": "姬午",
       "posthumousName": "襄公",
       "startYear": -572,
-      "endYear": -542
+      "endYear": -542,
+      "reignId": "reign-lu-r21-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2149,7 +2364,8 @@ export const rulersByDynasty = {
         "name": "君野"
       },
       "startYear": -542,
-      "endYear": -542
+      "endYear": -542,
+      "reignId": "reign-lu-r22-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2158,7 +2374,8 @@ export const rulersByDynasty = {
       "personName": "姬稠",
       "posthumousName": "昭公",
       "startYear": -541,
-      "endYear": -510
+      "endYear": -510,
+      "reignId": "reign-lu-r23-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2167,7 +2384,8 @@ export const rulersByDynasty = {
       "personName": "姬宋",
       "posthumousName": "定公",
       "startYear": -509,
-      "endYear": -495
+      "endYear": -495,
+      "reignId": "reign-lu-r24-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2176,7 +2394,8 @@ export const rulersByDynasty = {
       "personName": "姬将",
       "posthumousName": "哀公",
       "startYear": -494,
-      "endYear": -468
+      "endYear": -468,
+      "reignId": "reign-lu-r25-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2185,7 +2404,8 @@ export const rulersByDynasty = {
       "personName": "姬宁",
       "posthumousName": "悼公",
       "startYear": -467,
-      "endYear": -437
+      "endYear": -437,
+      "reignId": "reign-lu-r26-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2194,7 +2414,8 @@ export const rulersByDynasty = {
       "personName": "姬嘉",
       "posthumousName": "元公",
       "startYear": -436,
-      "endYear": -416
+      "endYear": -416,
+      "reignId": "reign-lu-r27-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2203,7 +2424,8 @@ export const rulersByDynasty = {
       "personName": "姬显",
       "posthumousName": "穆公",
       "startYear": -415,
-      "endYear": -383
+      "endYear": -383,
+      "reignId": "reign-lu-r28-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2212,7 +2434,8 @@ export const rulersByDynasty = {
       "personName": "姬奋",
       "posthumousName": "共公",
       "startYear": -382,
-      "endYear": -353
+      "endYear": -353,
+      "reignId": "reign-lu-r29-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2221,7 +2444,8 @@ export const rulersByDynasty = {
       "personName": "姬屯",
       "posthumousName": "康公",
       "startYear": -352,
-      "endYear": -344
+      "endYear": -344,
+      "reignId": "reign-lu-r30-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2230,7 +2454,8 @@ export const rulersByDynasty = {
       "personName": "姬匽",
       "posthumousName": "景公",
       "startYear": -343,
-      "endYear": -323
+      "endYear": -323,
+      "reignId": "reign-lu-r31-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2239,7 +2464,8 @@ export const rulersByDynasty = {
       "personName": "姬叔",
       "posthumousName": "平公",
       "startYear": -322,
-      "endYear": -303
+      "endYear": -303,
+      "reignId": "reign-lu-r32-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2248,7 +2474,8 @@ export const rulersByDynasty = {
       "personName": "姬贾",
       "posthumousName": "文公",
       "startYear": -302,
-      "endYear": -280
+      "endYear": -280,
+      "reignId": "reign-lu-r33-lu-chunqiu"
     },
     {
       "dynastyId": "lu-chunqiu",
@@ -2257,7 +2484,8 @@ export const rulersByDynasty = {
       "personName": "姬仇",
       "posthumousName": "顷公",
       "startYear": -279,
-      "endYear": -256
+      "endYear": -256,
+      "reignId": "reign-lu-r34-lu-chunqiu"
     }
   ],
   "wei-weiguo": [
@@ -2270,7 +2498,8 @@ export const rulersByDynasty = {
       "startYear": -1040,
       "endYear": -1017,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-weiguo-r0-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2281,7 +2510,8 @@ export const rulersByDynasty = {
       "startYear": -1016,
       "endYear": -992,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-weiguo-r1-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2292,7 +2522,8 @@ export const rulersByDynasty = {
       "startYear": -991,
       "endYear": -967,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-weiguo-r2-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2303,7 +2534,8 @@ export const rulersByDynasty = {
       "startYear": -966,
       "endYear": -942,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-weiguo-r3-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2314,7 +2546,8 @@ export const rulersByDynasty = {
       "startYear": -941,
       "endYear": -917,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-weiguo-r4-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2325,7 +2558,8 @@ export const rulersByDynasty = {
       "startYear": -916,
       "endYear": -892,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-weiguo-r5-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2336,7 +2570,7 @@ export const rulersByDynasty = {
       "startYear": -891,
       "endYear": -867,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "reignId": "reign-weiguo-r6-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2345,7 +2579,8 @@ export const rulersByDynasty = {
       "personName": "姬顷侯",
       "posthumousName": "顷侯",
       "startYear": -866,
-      "endYear": -855
+      "endYear": -855,
+      "reignId": "reign-weiguo-r7-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2354,7 +2589,8 @@ export const rulersByDynasty = {
       "personName": "姬釐侯",
       "posthumousName": "釐侯",
       "startYear": -854,
-      "endYear": -813
+      "endYear": -813,
+      "reignId": "reign-weiguo-r8-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2363,7 +2599,8 @@ export const rulersByDynasty = {
       "personName": "姬余",
       "posthumousName": "共伯",
       "startYear": -813,
-      "endYear": -813
+      "endYear": -813,
+      "reignId": "reign-weiguo-r9-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2372,7 +2609,8 @@ export const rulersByDynasty = {
       "personName": "姬和",
       "posthumousName": "武公",
       "startYear": -812,
-      "endYear": -758
+      "endYear": -758,
+      "reignId": "reign-weiguo-r10-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2381,7 +2619,8 @@ export const rulersByDynasty = {
       "personName": "姬扬",
       "posthumousName": "庄公",
       "startYear": -757,
-      "endYear": -735
+      "endYear": -735,
+      "reignId": "reign-weiguo-r11-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2390,7 +2629,8 @@ export const rulersByDynasty = {
       "personName": "姬完",
       "posthumousName": "桓公",
       "startYear": -734,
-      "endYear": -719
+      "endYear": -719,
+      "reignId": "reign-weiguo-r12-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2403,7 +2643,8 @@ export const rulersByDynasty = {
         "name": "州吁"
       },
       "startYear": -719,
-      "endYear": -719
+      "endYear": -719,
+      "reignId": "reign-weiguo-r13-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2412,7 +2653,8 @@ export const rulersByDynasty = {
       "personName": "姬晋",
       "posthumousName": "宣公",
       "startYear": -718,
-      "endYear": -700
+      "endYear": -700,
+      "reignId": "reign-weiguo-r14-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2421,7 +2663,9 @@ export const rulersByDynasty = {
       "personName": "姬朔",
       "posthumousName": "惠公",
       "startYear": -699,
-      "endYear": -696
+      "endYear": -696,
+      "ordinal": 1,
+      "reignId": "reign-weiguo-r15-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2434,16 +2678,19 @@ export const rulersByDynasty = {
         "name": "黔牟"
       },
       "startYear": -695,
-      "endYear": -688
+      "endYear": -688,
+      "reignId": "reign-weiguo-r16-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
-      "personId": "weiguo-r17",
+      "personId": "weiguo-r15",
       "title": "卫惠公",
       "personName": "姬朔",
       "posthumousName": "惠公",
       "startYear": -687,
-      "endYear": -669
+      "endYear": -669,
+      "ordinal": 2,
+      "reignId": "reign-weiguo-r15-wei-weiguo-2"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2452,7 +2699,8 @@ export const rulersByDynasty = {
       "personName": "姬赤",
       "posthumousName": "懿公",
       "startYear": -668,
-      "endYear": -660
+      "endYear": -660,
+      "reignId": "reign-weiguo-r18-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2461,7 +2709,8 @@ export const rulersByDynasty = {
       "personName": "姬申",
       "posthumousName": "戴公",
       "startYear": -660,
-      "endYear": -660
+      "endYear": -660,
+      "reignId": "reign-weiguo-r19-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2470,7 +2719,8 @@ export const rulersByDynasty = {
       "personName": "姬毁",
       "posthumousName": "文公",
       "startYear": -659,
-      "endYear": -635
+      "endYear": -635,
+      "reignId": "reign-weiguo-r20-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2479,7 +2729,9 @@ export const rulersByDynasty = {
       "personName": "姬郑",
       "posthumousName": "成公",
       "startYear": -634,
-      "endYear": -600
+      "endYear": -632,
+      "ordinal": 1,
+      "reignId": "reign-weiguo-r21-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2492,7 +2744,19 @@ export const rulersByDynasty = {
         "name": "君瑕"
       },
       "startYear": -632,
-      "endYear": -632
+      "endYear": -632,
+      "reignId": "reign-weiguo-r22-wei-weiguo"
+    },
+    {
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r21",
+      "title": "卫成公",
+      "personName": "姬郑",
+      "posthumousName": "成公",
+      "startYear": -631,
+      "endYear": -600,
+      "ordinal": 2,
+      "reignId": "reign-weiguo-r21-wei-weiguo-2"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2501,7 +2765,9 @@ export const rulersByDynasty = {
       "personName": "姬遫",
       "posthumousName": "穆公",
       "startYear": -599,
-      "endYear": -589
+      "endYear": -589,
+      "ordinal": 1,
+      "reignId": "reign-weiguo-r23-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2510,7 +2776,8 @@ export const rulersByDynasty = {
       "personName": "姬臧",
       "posthumousName": "定公",
       "startYear": -588,
-      "endYear": -577
+      "endYear": -577,
+      "reignId": "reign-weiguo-r24-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2519,7 +2786,9 @@ export const rulersByDynasty = {
       "personName": "姬衎",
       "posthumousName": "献公",
       "startYear": -576,
-      "endYear": -559
+      "endYear": -559,
+      "ordinal": 1,
+      "reignId": "reign-weiguo-r25-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2528,16 +2797,19 @@ export const rulersByDynasty = {
       "personName": "姬秋",
       "posthumousName": "殇公",
       "startYear": -558,
-      "endYear": -547
+      "endYear": -547,
+      "reignId": "reign-weiguo-r26-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
-      "personId": "weiguo-r27",
+      "personId": "weiguo-r25",
       "title": "卫献公",
       "personName": "姬衎",
       "posthumousName": "献公",
       "startYear": -546,
-      "endYear": -544
+      "endYear": -544,
+      "ordinal": 2,
+      "reignId": "reign-weiguo-r25-wei-weiguo-2"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2546,7 +2818,8 @@ export const rulersByDynasty = {
       "personName": "姬恶",
       "posthumousName": "襄公",
       "startYear": -543,
-      "endYear": -535
+      "endYear": -535,
+      "reignId": "reign-weiguo-r28-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2555,7 +2828,8 @@ export const rulersByDynasty = {
       "personName": "姬元",
       "posthumousName": "灵公",
       "startYear": -534,
-      "endYear": -493
+      "endYear": -493,
+      "reignId": "reign-weiguo-r29-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2564,7 +2838,9 @@ export const rulersByDynasty = {
       "personName": "姬辄",
       "posthumousName": "出公",
       "startYear": -492,
-      "endYear": -480
+      "endYear": -480,
+      "ordinal": 1,
+      "reignId": "reign-weiguo-r30-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2573,7 +2849,8 @@ export const rulersByDynasty = {
       "personName": "姬蒯聩",
       "posthumousName": "庄公",
       "startYear": -479,
-      "endYear": -478
+      "endYear": -478,
+      "reignId": "reign-weiguo-r31-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2586,7 +2863,8 @@ export const rulersByDynasty = {
         "name": "斑师"
       },
       "startYear": -478,
-      "endYear": -478
+      "endYear": -478,
+      "reignId": "reign-weiguo-r32-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2599,16 +2877,19 @@ export const rulersByDynasty = {
         "name": "君起"
       },
       "startYear": -477,
-      "endYear": -477
+      "endYear": -477,
+      "reignId": "reign-weiguo-r33-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
-      "personId": "weiguo-r34",
+      "personId": "weiguo-r30",
       "title": "卫出公",
       "personName": "姬辄",
       "posthumousName": "出公",
       "startYear": -476,
-      "endYear": -470
+      "endYear": -470,
+      "ordinal": 2,
+      "reignId": "reign-weiguo-r30-wei-weiguo-2"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2617,7 +2898,8 @@ export const rulersByDynasty = {
       "personName": "姬黔",
       "posthumousName": "悼公",
       "startYear": -469,
-      "endYear": -465
+      "endYear": -465,
+      "reignId": "reign-weiguo-r35-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2626,7 +2908,8 @@ export const rulersByDynasty = {
       "personName": "姬弗",
       "posthumousName": "敬公",
       "startYear": -464,
-      "endYear": -432
+      "endYear": -432,
+      "reignId": "reign-weiguo-r36-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2635,7 +2918,8 @@ export const rulersByDynasty = {
       "personName": "姬纠",
       "posthumousName": "昭公",
       "startYear": -431,
-      "endYear": -426
+      "endYear": -426,
+      "reignId": "reign-weiguo-r37-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2644,7 +2928,8 @@ export const rulersByDynasty = {
       "personName": "姬亶",
       "posthumousName": "怀公",
       "startYear": -425,
-      "endYear": -415
+      "endYear": -415,
+      "reignId": "reign-weiguo-r38-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2653,7 +2938,8 @@ export const rulersByDynasty = {
       "personName": "姬颓",
       "posthumousName": "慎公",
       "startYear": -414,
-      "endYear": -383
+      "endYear": -383,
+      "reignId": "reign-weiguo-r39-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2662,16 +2948,19 @@ export const rulersByDynasty = {
       "personName": "姬训",
       "posthumousName": "声公",
       "startYear": -382,
-      "endYear": -372
+      "endYear": -372,
+      "reignId": "reign-weiguo-r40-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
-      "personId": "weiguo-r41",
+      "personId": "weiguo-r23",
       "title": "卫成侯",
       "personName": "姬遫",
       "posthumousName": "成侯",
       "startYear": -371,
-      "endYear": -343
+      "endYear": -343,
+      "ordinal": 2,
+      "reignId": "reign-weiguo-r23-wei-weiguo-2"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2680,7 +2969,8 @@ export const rulersByDynasty = {
       "personName": "姬子南劲",
       "posthumousName": "平侯",
       "startYear": -342,
-      "endYear": -335
+      "endYear": -335,
+      "reignId": "reign-weiguo-r42-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2693,11 +2983,13 @@ export const rulersByDynasty = {
         "name": "嗣君"
       },
       "startYear": -334,
-      "endYear": -293
+      "endYear": -293,
+      "ordinal": 1,
+      "reignId": "reign-weiguo-r43-wei-weiguo"
     },
     {
       "dynastyId": "wei-weiguo",
-      "personId": "weiguo-r44",
+      "personId": "weiguo-r43",
       "title": "卫怀君",
       "personName": "缺失",
       "posthumousName": null,
@@ -2706,11 +2998,13 @@ export const rulersByDynasty = {
         "name": "怀君"
       },
       "startYear": -292,
-      "endYear": -254
+      "endYear": -254,
+      "ordinal": 2,
+      "reignId": "reign-weiguo-r43-wei-weiguo-2"
     },
     {
       "dynastyId": "wei-weiguo",
-      "personId": "weiguo-r45",
+      "personId": "weiguo-r43",
       "title": "卫元君",
       "personName": "缺失",
       "posthumousName": null,
@@ -2719,7 +3013,9 @@ export const rulersByDynasty = {
         "name": "元君"
       },
       "startYear": -253,
-      "endYear": -230
+      "endYear": -230,
+      "ordinal": 3,
+      "reignId": "reign-weiguo-r43-wei-weiguo-3"
     },
     {
       "dynastyId": "wei-weiguo",
@@ -2732,7 +3028,8 @@ export const rulersByDynasty = {
         "name": "君角"
       },
       "startYear": -241,
-      "endYear": -209
+      "endYear": -209,
+      "reignId": "reign-weiguo-r46-wei-weiguo"
     }
   ],
   "zheng-chunqiu": [
@@ -2743,7 +3040,8 @@ export const rulersByDynasty = {
       "personName": "姬友",
       "posthumousName": "桓公",
       "startYear": -806,
-      "endYear": -771
+      "endYear": -771,
+      "reignId": "reign-zheng-r0-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2752,7 +3050,8 @@ export const rulersByDynasty = {
       "personName": "姬掘突",
       "posthumousName": "武公",
       "startYear": -770,
-      "endYear": -744
+      "endYear": -744,
+      "reignId": "reign-zheng-r1-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2761,7 +3060,8 @@ export const rulersByDynasty = {
       "personName": "姬寤生",
       "posthumousName": "庄公",
       "startYear": -743,
-      "endYear": -701
+      "endYear": -701,
+      "reignId": "reign-zheng-r2-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2770,7 +3070,9 @@ export const rulersByDynasty = {
       "personName": "姬忽",
       "posthumousName": "昭公",
       "startYear": -700,
-      "endYear": -700
+      "endYear": -700,
+      "ordinal": 1,
+      "reignId": "reign-zheng-r3-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2779,16 +3081,20 @@ export const rulersByDynasty = {
       "personName": "姬突",
       "posthumousName": "厉公",
       "startYear": -699,
-      "endYear": -697
+      "endYear": -697,
+      "ordinal": 1,
+      "reignId": "reign-zheng-r4-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
-      "personId": "zheng-r5",
+      "personId": "zheng-r3",
       "title": "郑昭公",
       "personName": "姬忽",
       "posthumousName": "昭公",
       "startYear": -696,
-      "endYear": -695
+      "endYear": -695,
+      "ordinal": 2,
+      "reignId": "reign-zheng-r3-zheng-chunqiu-2"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2802,8 +3108,7 @@ export const rulersByDynasty = {
       },
       "startYear": -694,
       "endYear": -694,
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "reignId": "reign-zheng-r6-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2816,16 +3121,19 @@ export const rulersByDynasty = {
         "name": "子婴"
       },
       "startYear": -693,
-      "endYear": -680
+      "endYear": -680,
+      "reignId": "reign-zheng-r7-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
-      "personId": "zheng-r8",
+      "personId": "zheng-r4",
       "title": "郑厉公",
       "personName": "姬突",
       "posthumousName": "厉公",
       "startYear": -679,
-      "endYear": -673
+      "endYear": -673,
+      "ordinal": 2,
+      "reignId": "reign-zheng-r4-zheng-chunqiu-2"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2834,7 +3142,8 @@ export const rulersByDynasty = {
       "personName": "姬踕",
       "posthumousName": "文公",
       "startYear": -672,
-      "endYear": -628
+      "endYear": -628,
+      "reignId": "reign-zheng-r9-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2843,7 +3152,8 @@ export const rulersByDynasty = {
       "personName": "姬子兰",
       "posthumousName": "穆公",
       "startYear": -627,
-      "endYear": -606
+      "endYear": -606,
+      "reignId": "reign-zheng-r10-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2852,7 +3162,8 @@ export const rulersByDynasty = {
       "personName": "姬子夷",
       "posthumousName": "灵公",
       "startYear": -605,
-      "endYear": -605
+      "endYear": -605,
+      "reignId": "reign-zheng-r11-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2861,7 +3172,8 @@ export const rulersByDynasty = {
       "personName": "姬子坚",
       "posthumousName": "襄公",
       "startYear": -604,
-      "endYear": -587
+      "endYear": -587,
+      "reignId": "reign-zheng-r12-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2870,7 +3182,8 @@ export const rulersByDynasty = {
       "personName": "姬沸",
       "posthumousName": "悼公",
       "startYear": -586,
-      "endYear": -585
+      "endYear": -585,
+      "reignId": "reign-zheng-r13-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2879,7 +3192,8 @@ export const rulersByDynasty = {
       "personName": "姬睔",
       "posthumousName": "成公",
       "startYear": -584,
-      "endYear": -571
+      "endYear": -571,
+      "reignId": "reign-zheng-r14-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2888,7 +3202,8 @@ export const rulersByDynasty = {
       "personName": "姬恽",
       "posthumousName": "釐公",
       "startYear": -570,
-      "endYear": -566
+      "endYear": -566,
+      "reignId": "reign-zheng-r15-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2897,7 +3212,8 @@ export const rulersByDynasty = {
       "personName": "姬嘉",
       "posthumousName": "简公",
       "startYear": -565,
-      "endYear": -530
+      "endYear": -530,
+      "reignId": "reign-zheng-r16-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2906,7 +3222,8 @@ export const rulersByDynasty = {
       "personName": "姬宁",
       "posthumousName": "定公",
       "startYear": -529,
-      "endYear": -514
+      "endYear": -514,
+      "reignId": "reign-zheng-r17-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2915,7 +3232,8 @@ export const rulersByDynasty = {
       "personName": "姬趸",
       "posthumousName": "献公",
       "startYear": -513,
-      "endYear": -501
+      "endYear": -501,
+      "reignId": "reign-zheng-r18-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2924,7 +3242,8 @@ export const rulersByDynasty = {
       "personName": "姬胜",
       "posthumousName": "声公",
       "startYear": -500,
-      "endYear": -463
+      "endYear": -463,
+      "reignId": "reign-zheng-r19-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2933,7 +3252,8 @@ export const rulersByDynasty = {
       "personName": "姬易",
       "posthumousName": "哀公",
       "startYear": -462,
-      "endYear": -455
+      "endYear": -455,
+      "reignId": "reign-zheng-r20-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2942,7 +3262,8 @@ export const rulersByDynasty = {
       "personName": "姬丑",
       "posthumousName": "共公",
       "startYear": -454,
-      "endYear": -424
+      "endYear": -424,
+      "reignId": "reign-zheng-r21-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2951,7 +3272,8 @@ export const rulersByDynasty = {
       "personName": "姬已",
       "posthumousName": "幽公",
       "startYear": -423,
-      "endYear": -423
+      "endYear": -423,
+      "reignId": "reign-zheng-r22-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2960,7 +3282,8 @@ export const rulersByDynasty = {
       "personName": "姬骀",
       "posthumousName": "𦈡公",
       "startYear": -422,
-      "endYear": -396
+      "endYear": -396,
+      "reignId": "reign-zheng-r23-zheng-chunqiu"
     },
     {
       "dynastyId": "zheng-chunqiu",
@@ -2969,7 +3292,8 @@ export const rulersByDynasty = {
       "personName": "姬乙",
       "posthumousName": "康公",
       "startYear": -395,
-      "endYear": -375
+      "endYear": -375,
+      "reignId": "reign-zheng-r24-zheng-chunqiu"
     }
   ],
   "cao-chunqiu": [
@@ -2986,7 +3310,8 @@ export const rulersByDynasty = {
       "startYear": -1046,
       "endYear": -1011,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-cao-r0-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -2997,7 +3322,8 @@ export const rulersByDynasty = {
       "startYear": -1010,
       "endYear": -975,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-cao-r1-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3012,7 +3338,8 @@ export const rulersByDynasty = {
       "startYear": -974,
       "endYear": -939,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-cao-r2-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3023,7 +3350,8 @@ export const rulersByDynasty = {
       "startYear": -938,
       "endYear": -903,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "endDateConfidence": "interpolated",
+      "reignId": "reign-cao-r3-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3034,7 +3362,7 @@ export const rulersByDynasty = {
       "startYear": -902,
       "endYear": -866,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "reignId": "reign-cao-r4-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3043,7 +3371,8 @@ export const rulersByDynasty = {
       "personName": "姬喜",
       "posthumousName": "夷伯",
       "startYear": -865,
-      "endYear": -835
+      "endYear": -835,
+      "reignId": "reign-cao-r5-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3052,7 +3381,9 @@ export const rulersByDynasty = {
       "personName": "姬彊",
       "posthumousName": "幽伯",
       "startYear": -834,
-      "endYear": -826
+      "endYear": -826,
+      "ordinal": 1,
+      "reignId": "reign-cao-r6-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3061,7 +3392,8 @@ export const rulersByDynasty = {
       "personName": "姬苏",
       "posthumousName": "戴伯",
       "startYear": -825,
-      "endYear": -796
+      "endYear": -796,
+      "reignId": "reign-cao-r7-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3070,7 +3402,8 @@ export const rulersByDynasty = {
       "personName": "姬兕",
       "posthumousName": "惠伯",
       "startYear": -795,
-      "endYear": -760
+      "endYear": -760,
+      "reignId": "reign-cao-r8-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3079,7 +3412,8 @@ export const rulersByDynasty = {
       "personName": "姬石甫",
       "posthumousName": "废伯",
       "startYear": -760,
-      "endYear": -760
+      "endYear": -760,
+      "reignId": "reign-cao-r9-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3088,7 +3422,8 @@ export const rulersByDynasty = {
       "personName": "姬武",
       "posthumousName": "穆公",
       "startYear": -759,
-      "endYear": -757
+      "endYear": -757,
+      "reignId": "reign-cao-r10-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3097,7 +3432,8 @@ export const rulersByDynasty = {
       "personName": "姬终生",
       "posthumousName": "桓公",
       "startYear": -756,
-      "endYear": -702
+      "endYear": -702,
+      "reignId": "reign-cao-r11-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3106,7 +3442,8 @@ export const rulersByDynasty = {
       "personName": "姬夕姑",
       "posthumousName": "庄公",
       "startYear": -701,
-      "endYear": -671
+      "endYear": -671,
+      "reignId": "reign-cao-r12-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3115,7 +3452,8 @@ export const rulersByDynasty = {
       "personName": "姬夷",
       "posthumousName": "釐公",
       "startYear": -670,
-      "endYear": -662
+      "endYear": -662,
+      "reignId": "reign-cao-r13-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3124,7 +3462,8 @@ export const rulersByDynasty = {
       "personName": "姬班",
       "posthumousName": "昭公",
       "startYear": -661,
-      "endYear": -653
+      "endYear": -653,
+      "reignId": "reign-cao-r14-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3133,7 +3472,8 @@ export const rulersByDynasty = {
       "personName": "姬襄",
       "posthumousName": "共公",
       "startYear": -652,
-      "endYear": -618
+      "endYear": -618,
+      "reignId": "reign-cao-r15-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3142,16 +3482,19 @@ export const rulersByDynasty = {
       "personName": "姬寿",
       "posthumousName": "文公",
       "startYear": -617,
-      "endYear": -595
+      "endYear": -595,
+      "reignId": "reign-cao-r16-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
-      "personId": "cao-r17",
+      "personId": "cao-r6",
       "title": "曹宣公",
       "personName": "姬彊",
       "posthumousName": "宣公",
       "startYear": -594,
-      "endYear": -578
+      "endYear": -578,
+      "ordinal": 2,
+      "reignId": "reign-cao-r6-cao-chunqiu-2"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3160,7 +3503,8 @@ export const rulersByDynasty = {
       "personName": "姬负刍",
       "posthumousName": "成公",
       "startYear": -577,
-      "endYear": -555
+      "endYear": -555,
+      "reignId": "reign-cao-r18-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3169,7 +3513,8 @@ export const rulersByDynasty = {
       "personName": "姬胜",
       "posthumousName": "武公",
       "startYear": -554,
-      "endYear": -528
+      "endYear": -528,
+      "reignId": "reign-cao-r19-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3178,7 +3523,8 @@ export const rulersByDynasty = {
       "personName": "姬须",
       "posthumousName": "平公",
       "startYear": -527,
-      "endYear": -524
+      "endYear": -524,
+      "reignId": "reign-cao-r20-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3187,7 +3533,8 @@ export const rulersByDynasty = {
       "personName": "姬午",
       "posthumousName": "悼公",
       "startYear": -523,
-      "endYear": -515
+      "endYear": -515,
+      "reignId": "reign-cao-r21-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3196,7 +3543,8 @@ export const rulersByDynasty = {
       "personName": "姬野",
       "posthumousName": "声公",
       "startYear": -514,
-      "endYear": -510
+      "endYear": -510,
+      "reignId": "reign-cao-r22-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3205,7 +3553,8 @@ export const rulersByDynasty = {
       "personName": "姬通",
       "posthumousName": "隐公",
       "startYear": -509,
-      "endYear": -506
+      "endYear": -506,
+      "reignId": "reign-cao-r23-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3214,7 +3563,8 @@ export const rulersByDynasty = {
       "personName": "姬露",
       "posthumousName": "靖公",
       "startYear": -505,
-      "endYear": -502
+      "endYear": -502,
+      "reignId": "reign-cao-r24-cao-chunqiu"
     },
     {
       "dynastyId": "cao-chunqiu",
@@ -3227,7 +3577,8 @@ export const rulersByDynasty = {
         "name": "伯阳"
       },
       "startYear": -501,
-      "endYear": -487
+      "endYear": -487,
+      "reignId": "reign-cao-r25-cao-chunqiu"
     }
   ],
   "wu-chunqiu": [
@@ -3242,7 +3593,8 @@ export const rulersByDynasty = {
         "name": "寿梦"
       },
       "startYear": -585,
-      "endYear": -561
+      "endYear": -561,
+      "reignId": "reign-wu-r0-wu-chunqiu"
     },
     {
       "dynastyId": "wu-chunqiu",
@@ -3255,7 +3607,8 @@ export const rulersByDynasty = {
         "name": "诸樊"
       },
       "startYear": -560,
-      "endYear": -548
+      "endYear": -548,
+      "reignId": "reign-wu-r1-wu-chunqiu"
     },
     {
       "dynastyId": "wu-chunqiu",
@@ -3268,7 +3621,8 @@ export const rulersByDynasty = {
         "name": "余祭"
       },
       "startYear": -547,
-      "endYear": -544
+      "endYear": -544,
+      "reignId": "reign-wu-r2-wu-chunqiu"
     },
     {
       "dynastyId": "wu-chunqiu",
@@ -3281,7 +3635,8 @@ export const rulersByDynasty = {
         "name": "余昧"
       },
       "startYear": -543,
-      "endYear": -527
+      "endYear": -527,
+      "reignId": "reign-wu-r3-wu-chunqiu"
     },
     {
       "dynastyId": "wu-chunqiu",
@@ -3294,7 +3649,8 @@ export const rulersByDynasty = {
         "name": "僚"
       },
       "startYear": -526,
-      "endYear": -515
+      "endYear": -515,
+      "reignId": "reign-wu-r4-wu-chunqiu"
     },
     {
       "dynastyId": "wu-chunqiu",
@@ -3307,7 +3663,8 @@ export const rulersByDynasty = {
         "name": "阖闾"
       },
       "startYear": -514,
-      "endYear": -496
+      "endYear": -496,
+      "reignId": "reign-helu-wu-chunqiu"
     },
     {
       "dynastyId": "wu-chunqiu",
@@ -3320,7 +3677,8 @@ export const rulersByDynasty = {
         "name": "夫差"
       },
       "startYear": -495,
-      "endYear": -473
+      "endYear": -473,
+      "reignId": "reign-fu-chai-wu-chunqiu"
     }
   ],
   "yue-chunqiu": [
@@ -3337,7 +3695,7 @@ export const rulersByDynasty = {
       "startYear": -565,
       "endYear": -511,
       "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated"
+      "reignId": "reign-yue-r3-yue-chunqiu"
     },
     {
       "dynastyId": "yue-chunqiu",
@@ -3350,7 +3708,8 @@ export const rulersByDynasty = {
         "name": "允常"
       },
       "startYear": -510,
-      "endYear": -497
+      "endYear": -497,
+      "reignId": "reign-yue-r4-yue-chunqiu"
     },
     {
       "dynastyId": "yue-chunqiu",
@@ -3363,7 +3722,8 @@ export const rulersByDynasty = {
         "name": "勾践"
       },
       "startYear": -496,
-      "endYear": -464
+      "endYear": -464,
+      "reignId": "reign-gou-jian-yue-chunqiu"
     },
     {
       "dynastyId": "yue-chunqiu",
@@ -3376,7 +3736,8 @@ export const rulersByDynasty = {
         "name": "鹿郢"
       },
       "startYear": -463,
-      "endYear": -458
+      "endYear": -458,
+      "reignId": "reign-yue-r6-yue-chunqiu"
     },
     {
       "dynastyId": "yue-chunqiu",
@@ -3389,7 +3750,8 @@ export const rulersByDynasty = {
         "name": "不寿"
       },
       "startYear": -457,
-      "endYear": -448
+      "endYear": -448,
+      "reignId": "reign-yue-r7-yue-chunqiu"
     },
     {
       "dynastyId": "yue-chunqiu",
@@ -3402,7 +3764,8 @@ export const rulersByDynasty = {
         "name": "朱勾"
       },
       "startYear": -447,
-      "endYear": -411
+      "endYear": -411,
+      "reignId": "reign-yue-r8-yue-chunqiu"
     },
     {
       "dynastyId": "yue-chunqiu",
@@ -3415,7 +3778,8 @@ export const rulersByDynasty = {
         "name": "翳"
       },
       "startYear": -410,
-      "endYear": -375
+      "endYear": -375,
+      "reignId": "reign-yue-r9-yue-chunqiu"
     },
     {
       "dynastyId": "yue-chunqiu",
@@ -3428,7 +3792,8 @@ export const rulersByDynasty = {
         "name": "错枝"
       },
       "startYear": -374,
-      "endYear": -373
+      "endYear": -373,
+      "reignId": "reign-yue-r10-yue-chunqiu"
     },
     {
       "dynastyId": "yue-chunqiu",
@@ -3441,7 +3806,8 @@ export const rulersByDynasty = {
         "name": "无余"
       },
       "startYear": -372,
-      "endYear": -361
+      "endYear": -361,
+      "reignId": "reign-yue-r11-yue-chunqiu"
     },
     {
       "dynastyId": "yue-chunqiu",
@@ -3454,7 +3820,8 @@ export const rulersByDynasty = {
         "name": "无颛"
       },
       "startYear": -360,
-      "endYear": -343
+      "endYear": -343,
+      "reignId": "reign-yue-r12-yue-chunqiu"
     },
     {
       "dynastyId": "yue-chunqiu",
@@ -3467,7 +3834,8 @@ export const rulersByDynasty = {
         "name": "无彊"
       },
       "startYear": -342,
-      "endYear": -306
+      "endYear": -306,
+      "reignId": "reign-yue-r13-yue-chunqiu"
     }
   ],
   "zhongshan": [
@@ -3478,7 +3846,8 @@ export const rulersByDynasty = {
       "personName": "姬文公",
       "posthumousName": "文公",
       "startYear": -424,
-      "endYear": -415
+      "endYear": -415,
+      "reignId": "reign-zhongshan-r0-zhongshan"
     },
     {
       "dynastyId": "zhongshan",
@@ -3487,7 +3856,8 @@ export const rulersByDynasty = {
       "personName": "窟",
       "posthumousName": "武公",
       "startYear": -414,
-      "endYear": -406
+      "endYear": -406,
+      "reignId": "reign-zhongshan-r1-zhongshan"
     },
     {
       "dynastyId": "zhongshan",
@@ -3498,7 +3868,8 @@ export const rulersByDynasty = {
       "startYear": -380,
       "endYear": -350,
       "startDateConfidence": "approximate",
-      "endDateConfidence": "approximate"
+      "endDateConfidence": "approximate",
+      "reignId": "reign-zhongshan-r2-zhongshan"
     },
     {
       "dynastyId": "zhongshan",
@@ -3508,7 +3879,8 @@ export const rulersByDynasty = {
       "posthumousName": "成公",
       "startYear": -349,
       "endYear": -328,
-      "startDateConfidence": "approximate"
+      "startDateConfidence": "approximate",
+      "reignId": "reign-zhongshan-r3-zhongshan"
     },
     {
       "dynastyId": "zhongshan",
@@ -3522,7 +3894,8 @@ export const rulersByDynasty = {
       },
       "startYear": -327,
       "endYear": -310,
-      "endDateConfidence": "approximate"
+      "endDateConfidence": "approximate",
+      "reignId": "reign-zhongshan-r4-zhongshan"
     },
     {
       "dynastyId": "zhongshan",
@@ -3536,7 +3909,8 @@ export const rulersByDynasty = {
       },
       "startYear": -309,
       "endYear": -299,
-      "startDateConfidence": "approximate"
+      "startDateConfidence": "approximate",
+      "reignId": "reign-zhongshan-r5-zhongshan"
     },
     {
       "dynastyId": "zhongshan",
@@ -3549,7 +3923,8 @@ export const rulersByDynasty = {
         "name": "尚"
       },
       "startYear": -298,
-      "endYear": -296
+      "endYear": -296,
+      "reignId": "reign-zhongshan-r6-zhongshan"
     }
   ],
   "han-warring": [
@@ -3560,7 +3935,8 @@ export const rulersByDynasty = {
       "personName": "韩虔",
       "posthumousName": "景侯",
       "startYear": -403,
-      "endYear": -400
+      "endYear": -400,
+      "reignId": "reign-han-jing-han-warring"
     },
     {
       "dynastyId": "han-warring",
@@ -3569,7 +3945,8 @@ export const rulersByDynasty = {
       "personName": "韩取",
       "posthumousName": "烈侯",
       "startYear": -399,
-      "endYear": -387
+      "endYear": -387,
+      "reignId": "reign-han-r1-han-warring"
     },
     {
       "dynastyId": "han-warring",
@@ -3578,7 +3955,8 @@ export const rulersByDynasty = {
       "personName": "韩猷",
       "posthumousName": "文侯",
       "startYear": -386,
-      "endYear": -377
+      "endYear": -377,
+      "reignId": "reign-han-r2-han-warring"
     },
     {
       "dynastyId": "han-warring",
@@ -3587,7 +3965,8 @@ export const rulersByDynasty = {
       "personName": "韩屯蒙",
       "posthumousName": "哀侯",
       "startYear": -376,
-      "endYear": -374
+      "endYear": -374,
+      "reignId": "reign-han-r3-han-warring"
     },
     {
       "dynastyId": "han-warring",
@@ -3596,7 +3975,8 @@ export const rulersByDynasty = {
       "personName": "韩若山",
       "posthumousName": "共侯",
       "startYear": -373,
-      "endYear": -363
+      "endYear": -363,
+      "reignId": "reign-han-r4-han-warring"
     },
     {
       "dynastyId": "han-warring",
@@ -3605,7 +3985,8 @@ export const rulersByDynasty = {
       "personName": "韩武",
       "posthumousName": "釐侯",
       "startYear": -362,
-      "endYear": -333
+      "endYear": -333,
+      "reignId": "reign-han-r5-han-warring"
     },
     {
       "dynastyId": "han-warring",
@@ -3614,7 +3995,8 @@ export const rulersByDynasty = {
       "personName": "韩康",
       "posthumousName": "宣惠王",
       "startYear": -332,
-      "endYear": -312
+      "endYear": -312,
+      "reignId": "reign-han-r6-han-warring"
     },
     {
       "dynastyId": "han-warring",
@@ -3623,7 +4005,8 @@ export const rulersByDynasty = {
       "personName": "韩仓",
       "posthumousName": "襄王",
       "startYear": -311,
-      "endYear": -296
+      "endYear": -296,
+      "reignId": "reign-han-r7-han-warring"
     },
     {
       "dynastyId": "han-warring",
@@ -3632,7 +4015,8 @@ export const rulersByDynasty = {
       "personName": "韩咎",
       "posthumousName": "釐王",
       "startYear": -295,
-      "endYear": -273
+      "endYear": -273,
+      "reignId": "reign-han-r8-han-warring"
     },
     {
       "dynastyId": "han-warring",
@@ -3641,7 +4025,8 @@ export const rulersByDynasty = {
       "personName": "韩然",
       "posthumousName": "桓惠王",
       "startYear": -272,
-      "endYear": -239
+      "endYear": -239,
+      "reignId": "reign-han-r9-han-warring"
     },
     {
       "dynastyId": "han-warring",
@@ -3654,7 +4039,8 @@ export const rulersByDynasty = {
         "name": "安"
       },
       "startYear": -238,
-      "endYear": -230
+      "endYear": -230,
+      "reignId": "reign-han-r10-han-warring"
     }
   ],
   "zhao-warring": [
@@ -3665,7 +4051,8 @@ export const rulersByDynasty = {
       "personName": "赵籍",
       "posthumousName": "烈侯",
       "startYear": -403,
-      "endYear": -400
+      "endYear": -400,
+      "reignId": "reign-zhao-lie-zhao-warring"
     },
     {
       "dynastyId": "zhao-warring",
@@ -3674,7 +4061,8 @@ export const rulersByDynasty = {
       "personName": "赵□",
       "posthumousName": "武侯",
       "startYear": -399,
-      "endYear": -387
+      "endYear": -387,
+      "reignId": "reign-zhao-r1-zhao-warring"
     },
     {
       "dynastyId": "zhao-warring",
@@ -3683,7 +4071,8 @@ export const rulersByDynasty = {
       "personName": "赵章",
       "posthumousName": "敬侯",
       "startYear": -386,
-      "endYear": -375
+      "endYear": -375,
+      "reignId": "reign-zhao-r2-zhao-warring"
     },
     {
       "dynastyId": "zhao-warring",
@@ -3692,7 +4081,8 @@ export const rulersByDynasty = {
       "personName": "赵种",
       "posthumousName": "成侯",
       "startYear": -374,
-      "endYear": -350
+      "endYear": -350,
+      "reignId": "reign-zhao-r3-zhao-warring"
     },
     {
       "dynastyId": "zhao-warring",
@@ -3701,7 +4091,8 @@ export const rulersByDynasty = {
       "personName": "赵语",
       "posthumousName": "肃侯",
       "startYear": -349,
-      "endYear": -326
+      "endYear": -326,
+      "reignId": "reign-zhao-r4-zhao-warring"
     },
     {
       "dynastyId": "zhao-warring",
@@ -3710,7 +4101,8 @@ export const rulersByDynasty = {
       "personName": "赵雍",
       "posthumousName": "武灵王",
       "startYear": -325,
-      "endYear": -299
+      "endYear": -299,
+      "reignId": "reign-zhao-r5-zhao-warring"
     },
     {
       "dynastyId": "zhao-warring",
@@ -3719,7 +4111,8 @@ export const rulersByDynasty = {
       "personName": "赵何",
       "posthumousName": "惠文王",
       "startYear": -298,
-      "endYear": -266
+      "endYear": -266,
+      "reignId": "reign-zhao-r6-zhao-warring"
     },
     {
       "dynastyId": "zhao-warring",
@@ -3728,7 +4121,8 @@ export const rulersByDynasty = {
       "personName": "赵丹",
       "posthumousName": "孝成王",
       "startYear": -265,
-      "endYear": -245
+      "endYear": -245,
+      "reignId": "reign-zhao-r7-zhao-warring"
     },
     {
       "dynastyId": "zhao-warring",
@@ -3737,7 +4131,8 @@ export const rulersByDynasty = {
       "personName": "赵偃",
       "posthumousName": "悼襄王",
       "startYear": -244,
-      "endYear": -236
+      "endYear": -236,
+      "reignId": "reign-zhao-r8-zhao-warring"
     },
     {
       "dynastyId": "zhao-warring",
@@ -3746,7 +4141,8 @@ export const rulersByDynasty = {
       "personName": "赵迁",
       "posthumousName": "幽缪王",
       "startYear": -235,
-      "endYear": -228
+      "endYear": -228,
+      "reignId": "reign-zhao-r9-zhao-warring"
     }
   ],
   "wei-warring": [
@@ -3757,7 +4153,8 @@ export const rulersByDynasty = {
       "personName": "魏斯",
       "posthumousName": "文侯",
       "startYear": -403,
-      "endYear": -396
+      "endYear": -396,
+      "reignId": "reign-wei-wen-wei-warring"
     },
     {
       "dynastyId": "wei-warring",
@@ -3766,7 +4163,8 @@ export const rulersByDynasty = {
       "personName": "魏击",
       "posthumousName": "武侯",
       "startYear": -395,
-      "endYear": -370
+      "endYear": -370,
+      "reignId": "reign-wei-r1-wei-warring"
     },
     {
       "dynastyId": "wei-warring",
@@ -3775,7 +4173,8 @@ export const rulersByDynasty = {
       "personName": "魏罃",
       "posthumousName": "惠成王",
       "startYear": -369,
-      "endYear": -319
+      "endYear": -319,
+      "reignId": "reign-wei-r2-wei-warring"
     },
     {
       "dynastyId": "wei-warring",
@@ -3784,7 +4183,8 @@ export const rulersByDynasty = {
       "personName": "魏嗣",
       "posthumousName": "襄王",
       "startYear": -318,
-      "endYear": -296
+      "endYear": -296,
+      "reignId": "reign-wei-r3-wei-warring"
     },
     {
       "dynastyId": "wei-warring",
@@ -3793,7 +4193,8 @@ export const rulersByDynasty = {
       "personName": "魏遫",
       "posthumousName": "昭王",
       "startYear": -295,
-      "endYear": -277
+      "endYear": -277,
+      "reignId": "reign-wei-r4-wei-warring"
     },
     {
       "dynastyId": "wei-warring",
@@ -3802,7 +4203,8 @@ export const rulersByDynasty = {
       "personName": "魏圉",
       "posthumousName": "安僖王",
       "startYear": -276,
-      "endYear": -243
+      "endYear": -243,
+      "reignId": "reign-wei-r5-wei-warring"
     },
     {
       "dynastyId": "wei-warring",
@@ -3811,7 +4213,8 @@ export const rulersByDynasty = {
       "personName": "魏午",
       "posthumousName": "景湣王",
       "startYear": -242,
-      "endYear": -228
+      "endYear": -228,
+      "reignId": "reign-wei-r6-wei-warring"
     },
     {
       "dynastyId": "wei-warring",
@@ -3824,7 +4227,8 @@ export const rulersByDynasty = {
         "name": "假"
       },
       "startYear": -227,
-      "endYear": -225
+      "endYear": -225,
+      "reignId": "reign-wei-r7-wei-warring"
     }
   ],
   "qin": [
@@ -3835,7 +4239,8 @@ export const rulersByDynasty = {
       "personName": "嬴开",
       "posthumousName": "襄公",
       "startYear": -778,
-      "endYear": -766
+      "endYear": -766,
+      "reignId": "reign-ying-qi-qin"
     },
     {
       "dynastyId": "qin",
@@ -3844,7 +4249,8 @@ export const rulersByDynasty = {
       "personName": "嬴康",
       "posthumousName": "文公",
       "startYear": -765,
-      "endYear": -716
+      "endYear": -716,
+      "reignId": "reign-qin-r1-qin"
     },
     {
       "dynastyId": "qin",
@@ -3853,7 +4259,8 @@ export const rulersByDynasty = {
       "personName": "嬴立",
       "posthumousName": "宪公",
       "startYear": -715,
-      "endYear": -704
+      "endYear": -704,
+      "reignId": "reign-qin-r2-qin"
     },
     {
       "dynastyId": "qin",
@@ -3866,7 +4273,8 @@ export const rulersByDynasty = {
         "name": "出子"
       },
       "startYear": -703,
-      "endYear": -698
+      "endYear": -698,
+      "reignId": "reign-qin-r3-qin"
     },
     {
       "dynastyId": "qin",
@@ -3875,7 +4283,8 @@ export const rulersByDynasty = {
       "personName": "嬴说",
       "posthumousName": "武公",
       "startYear": -697,
-      "endYear": -678
+      "endYear": -678,
+      "reignId": "reign-qin-r4-qin"
     },
     {
       "dynastyId": "qin",
@@ -3884,7 +4293,8 @@ export const rulersByDynasty = {
       "personName": "嬴嘉",
       "posthumousName": "德公",
       "startYear": -677,
-      "endYear": -676
+      "endYear": -676,
+      "reignId": "reign-qin-r5-qin"
     },
     {
       "dynastyId": "qin",
@@ -3893,7 +4303,8 @@ export const rulersByDynasty = {
       "personName": "嬴恬",
       "posthumousName": "宣公",
       "startYear": -675,
-      "endYear": -664
+      "endYear": -664,
+      "reignId": "reign-qin-r6-qin"
     },
     {
       "dynastyId": "qin",
@@ -3902,7 +4313,8 @@ export const rulersByDynasty = {
       "personName": "嬴载",
       "posthumousName": "成公",
       "startYear": -663,
-      "endYear": -660
+      "endYear": -660,
+      "reignId": "reign-qin-r7-qin"
     },
     {
       "dynastyId": "qin",
@@ -3911,7 +4323,8 @@ export const rulersByDynasty = {
       "personName": "嬴任好",
       "posthumousName": "穆公",
       "startYear": -659,
-      "endYear": -621
+      "endYear": -621,
+      "reignId": "reign-qin-r8-qin"
     },
     {
       "dynastyId": "qin",
@@ -3920,7 +4333,8 @@ export const rulersByDynasty = {
       "personName": "嬴罃",
       "posthumousName": "康公",
       "startYear": -620,
-      "endYear": -609
+      "endYear": -609,
+      "reignId": "reign-qin-r9-qin"
     },
     {
       "dynastyId": "qin",
@@ -3929,7 +4343,8 @@ export const rulersByDynasty = {
       "personName": "嬴和",
       "posthumousName": "共公",
       "startYear": -608,
-      "endYear": -605
+      "endYear": -605,
+      "reignId": "reign-qin-r10-qin"
     },
     {
       "dynastyId": "qin",
@@ -3938,7 +4353,8 @@ export const rulersByDynasty = {
       "personName": "嬴荣",
       "posthumousName": "桓公",
       "startYear": -604,
-      "endYear": -577
+      "endYear": -577,
+      "reignId": "reign-qin-r11-qin"
     },
     {
       "dynastyId": "qin",
@@ -3947,7 +4363,8 @@ export const rulersByDynasty = {
       "personName": "嬴石",
       "posthumousName": "景公",
       "startYear": -576,
-      "endYear": -537
+      "endYear": -537,
+      "reignId": "reign-qin-r12-qin"
     },
     {
       "dynastyId": "qin",
@@ -3956,7 +4373,8 @@ export const rulersByDynasty = {
       "personName": "嬴籍",
       "posthumousName": "哀公",
       "startYear": -536,
-      "endYear": -501
+      "endYear": -501,
+      "reignId": "reign-qin-r13-qin"
     },
     {
       "dynastyId": "qin",
@@ -3965,7 +4383,8 @@ export const rulersByDynasty = {
       "personName": "嬴宁",
       "posthumousName": "惠公",
       "startYear": -500,
-      "endYear": -492
+      "endYear": -492,
+      "reignId": "reign-qin-r14-qin"
     },
     {
       "dynastyId": "qin",
@@ -3974,7 +4393,8 @@ export const rulersByDynasty = {
       "personName": "嬴盘",
       "posthumousName": "悼公",
       "startYear": -491,
-      "endYear": -477
+      "endYear": -477,
+      "reignId": "reign-qin-r15-qin"
     },
     {
       "dynastyId": "qin",
@@ -3983,7 +4403,8 @@ export const rulersByDynasty = {
       "personName": "嬴刺",
       "posthumousName": "厉共公",
       "startYear": -476,
-      "endYear": -443
+      "endYear": -443,
+      "reignId": "reign-qin-r16-qin"
     },
     {
       "dynastyId": "qin",
@@ -3992,7 +4413,8 @@ export const rulersByDynasty = {
       "personName": "嬴欣",
       "posthumousName": "躁公",
       "startYear": -442,
-      "endYear": -429
+      "endYear": -429,
+      "reignId": "reign-qin-r17-qin"
     },
     {
       "dynastyId": "qin",
@@ -4001,7 +4423,8 @@ export const rulersByDynasty = {
       "personName": "嬴封",
       "posthumousName": "怀公",
       "startYear": -428,
-      "endYear": -425
+      "endYear": -425,
+      "reignId": "reign-qin-r18-qin"
     },
     {
       "dynastyId": "qin",
@@ -4010,7 +4433,8 @@ export const rulersByDynasty = {
       "personName": "嬴肃",
       "posthumousName": "灵公",
       "startYear": -425,
-      "endYear": -415
+      "endYear": -415,
+      "reignId": "reign-qin-r19-qin"
     },
     {
       "dynastyId": "qin",
@@ -4019,7 +4443,8 @@ export const rulersByDynasty = {
       "personName": "嬴悼子",
       "posthumousName": "简公",
       "startYear": -415,
-      "endYear": -400
+      "endYear": -400,
+      "reignId": "reign-qin-r20-qin"
     },
     {
       "dynastyId": "qin",
@@ -4028,7 +4453,8 @@ export const rulersByDynasty = {
       "personName": "嬴仁",
       "posthumousName": "惠公",
       "startYear": -399,
-      "endYear": -387
+      "endYear": -387,
+      "reignId": "reign-qin-r21-qin"
     },
     {
       "dynastyId": "qin",
@@ -4037,7 +4463,8 @@ export const rulersByDynasty = {
       "personName": "嬴昌",
       "posthumousName": "出公",
       "startYear": -386,
-      "endYear": -385
+      "endYear": -385,
+      "reignId": "reign-qin-r22-qin"
     },
     {
       "dynastyId": "qin",
@@ -4046,7 +4473,8 @@ export const rulersByDynasty = {
       "personName": "嬴师隰",
       "posthumousName": "献公",
       "startYear": -385,
-      "endYear": -362
+      "endYear": -362,
+      "reignId": "reign-qin-r23-qin"
     },
     {
       "dynastyId": "qin",
@@ -4055,7 +4483,8 @@ export const rulersByDynasty = {
       "personName": "嬴渠梁",
       "posthumousName": "孝公",
       "startYear": -361,
-      "endYear": -338
+      "endYear": -338,
+      "reignId": "reign-ying-quliang-qin"
     },
     {
       "dynastyId": "qin",
@@ -4064,7 +4493,8 @@ export const rulersByDynasty = {
       "personName": "嬴驷",
       "posthumousName": "惠文王",
       "startYear": -337,
-      "endYear": -311
+      "endYear": -311,
+      "reignId": "reign-qin-r25-qin"
     },
     {
       "dynastyId": "qin",
@@ -4073,7 +4503,8 @@ export const rulersByDynasty = {
       "personName": "嬴荡",
       "posthumousName": "武王",
       "startYear": -310,
-      "endYear": -307
+      "endYear": -307,
+      "reignId": "reign-qin-r26-qin"
     },
     {
       "dynastyId": "qin",
@@ -4082,7 +4513,8 @@ export const rulersByDynasty = {
       "personName": "嬴稷",
       "posthumousName": "昭襄王",
       "startYear": -306,
-      "endYear": -251
+      "endYear": -251,
+      "reignId": "reign-qin-r27-qin"
     },
     {
       "dynastyId": "qin",
@@ -4091,7 +4523,8 @@ export const rulersByDynasty = {
       "personName": "嬴柱",
       "posthumousName": "孝文王",
       "startYear": -250,
-      "endYear": -250
+      "endYear": -250,
+      "reignId": "reign-qin-r28-qin"
     },
     {
       "dynastyId": "qin",
@@ -4100,7 +4533,8 @@ export const rulersByDynasty = {
       "personName": "嬴子楚",
       "posthumousName": "庄襄王",
       "startYear": -249,
-      "endYear": -247
+      "endYear": -247,
+      "reignId": "reign-qin-r29-qin"
     },
     {
       "dynastyId": "qin",
@@ -4113,13 +4547,14 @@ export const rulersByDynasty = {
         "name": "赵政"
       },
       "startYear": -246,
-      "endYear": -210
+      "endYear": -210,
+      "reignId": "reign-ying-zheng-qin"
     }
   ]
 };
 
 export const rulerStats = {
   dynasties: 16,
-  reigns: 414,
-  generatedAt: "2026-09-18",
+  reigns: 415,
+  generatedAt: "2026-09-19",
 };

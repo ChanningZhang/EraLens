@@ -63,7 +63,6 @@ function reignQualityScore(reign: Reign): number {
   if (reign.preferredAppellation?.kind === "posthumous") score += 4;
   else if (reign.preferredAppellation?.kind === "temple") score += 3;
   else if (reign.preferredAppellation?.kind === "era") score += 2;
-  if (reign.posthumousName) score += 1;
   // Stale imports often keep an overly wide span for the same title.
   score -= reignSpanMonths(reign) / 1000;
   return score;

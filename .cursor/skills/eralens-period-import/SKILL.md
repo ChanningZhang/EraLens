@@ -90,15 +90,17 @@ Task Progress:
 
 `persons.name` 用可检索的常用名（禹、姬发、孔子、韦后）。**入库时君主姓名须带姓**（如莒郊公写 `己狂` 而非 `狂`，薛献公写 `任谷` 而非 `谷`），便于搜索；时间轴卡片在始皇帝以前主行显示谥号/称号，由 `resolveReignCardLabel` 处理，不要为迁就卡片去改姓名字段。维基诸侯表若只给「国君本名」，须结合该国姓氏（如莒己、滕姬、杞姒）补全；仅知谥号而本名失考时，可用 `{姓}{谥号}`（如 `姒武公`）。先秦王朝/人物须写入 `ancestral_xing` / `clan_shi`（`feudalClanMetadata.mjs` + `applyFeudalClanMetadata`），运行时只按该字段去姓，不维护姓氏表。搜索匹配 `persons.name` 与 `persons.alt_names`（如 `姜子牙` → `lv-shang`），不匹配 `title` 或谥号。
 
-**谥号 / 庙号字段**（与商周一致）：
-- `posthumous_name`、`temple_name` 只存谥号/庙号本体，**不带国名或王朝前缀**（如 `武王`、`孝文皇帝`、`太宗`；不要写 `周武王`、`汉孝文皇帝`、`唐太宗`）。
+**谥号 / 庙号 / 年号字段**（与商周一致）：
+- **谥号、庙号**写在 `persons.posthumous_name` / `persons.temple_name`（逗号分隔 CSV，同人多值按在位顺序）；卡片取第一个，详情用 `、` 展示全部。
+- **年号**写在 `reigns.era_names`（逗号分隔名称列表，如 `泰定,致和`）；不再使用 `era_names` 子表，各年号起迄年月不入库。
+- 字段只存谥号/庙号本体，**不带国名或王朝前缀**（如 `武王`、`孝文皇帝`、`太宗`；不要写 `周武王`、`汉孝文皇帝`、`唐太宗`）。
 - **史称**（少帝/废帝/末帝/后主等）写在 `title`，**不得**写入 `posthumous_name`。
 - 国名 + 简称写在 `title`（如 `周武王`、`唐太宗`、`后唐庄宗`），由运行时 `resolveEmperorAppellation` 按年份阈值选用正规字段展示；运行时不从 `title` 推测谥号。
-- 若 `title` 已含国号简称（`唐肃宗`、`吴越武肃王`），须同步写出无国号的 `posthumous_name`/`temple_name`（`肃宗`、`武肃王`）。**庙号必须在 generate 里显式传入**，不要靠「祖/宗」结尾猜测，也不可只写 `title` 留空两字段再靠导入脚本拆字。
+- 若 `title` 已含国号简称（`唐肃宗`、`吴越武肃王`），须在对应 **person** 上写出无国号的庙谥 CSV（`肃宗`、`武肃王`）。generate 可仍在 reign 对象上暂写 `posthumousName`/`templeName`，`mergeAppellationsIntoPersons()` 会合并到 person 再导出 SQL。
 - `preferred_appellation` 仅用于 **regnal** 例外（先秦称号、秦襄公、西楚霸王等）；不要写入庙号/谥号/年号的默认 preferred。无谥号的先秦称号写入**不带国名的本体**（`若敖`、`夫差`、`王厝`、`禹`），由 `preQinCardAppellation.mjs` 按该朝国号从 `title` 拆出；运行时主行直接读字段，不靠国名列表剥前缀。
 - `persons.name` 入库即为可展示私名（不带维基「原名/后改名」残渣）；古文异体可留在 `bio`。
 
-先秦角色用 `君主`/`天子`，不用 `皇帝`。年号自汉武帝起；先秦省略 `era_names`。
+先秦角色用 `君主`/`天子`，不用 `皇帝`。年号自汉武帝起，写入 `reigns.era_names`；先秦省略该列（NULL）。
 
 **非帝王人物 roles 示例**（可多选）：`政治家`、`军事家`、`诗人`、`文学家`、`史学家`、`科学家`、`将领`、`起义领袖`、`皇后`、`后妃`、`公主`、`宗室`、`高僧`、`学者`、`医学家` 等。干政后妃/太后/公主：`ARRAY['皇后','政治家']` 或 `ARRAY['公主','政治家']`。
 
@@ -170,13 +172,12 @@ docker exec eralens-postgres psql -U eralens -d eralens -c \
 2. `persons`
 3. `dynasty_groups`（可选；三国/五胡十六国/南北朝/五代十国等并存时期分组）
 4. `dynasties`（成员通过 `group_id` 引用组）
-5. `reigns`
-6. `era_names`（可选；先秦无年号则整步省略。有则按 reign_id + sort_order，DELETE 后 INSERT）
-7. `events`
-8. `event_dynasties`
-9. `event_participants`
-10. `relations`
-11. `COMMIT;`
+5. `reigns`（含 `era_names` CSV）
+6. `events`
+7. `event_dynasties`
+8. `event_participants`
+9. `relations`
+10. `COMMIT;`
 
 默认用 `INSERT ... ON CONFLICT (id) DO UPDATE SET ...`（persons/dynasties/reigns/events/relations）。连接表用 `ON CONFLICT DO NOTHING`。
 
@@ -188,7 +189,7 @@ docker exec eralens-postgres psql -U eralens -d eralens -c \
 node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/imports/{slug}/import.sql
 ```
 
-必须通过后再入库。若失败，修复 SQL 并重跑。校验只看 INSERT **列名**里的生成列 `span`；`time_mode` 取值 `'span'` 合法。`era_names` 缺失不报错。
+必须通过后再入库。若失败，修复 SQL 并重跑。校验只看 INSERT **列名**里的生成列 `span`；`time_mode` 取值 `'span'` 合法。禁止再写 `era_names` 表或 `reigns.posthumous_name`/`temple_name`。
 
 ### 6. 入库
 

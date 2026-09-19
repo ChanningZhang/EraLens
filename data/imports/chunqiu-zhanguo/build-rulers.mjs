@@ -13,6 +13,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { applyDeathYearToPredecessor } from "../lib/deathYearSuccession.mjs";
+import { applyMultiReignRulers } from "../lib/multiReignRulers.mjs";
 import { preQinRegnalCardName } from "../lib/preQinCardAppellation.mjs";
 import {
   clanHintForPerson,
@@ -156,6 +157,17 @@ const REIGN_YEAR_OVERRIDES = {
     "齐太公|田和": { start: -391, end: -384 },
     // 康公卒前379年，前391年已被放逐；齐行国君止于废立前一年，其后顺序接田齐。
     "齐康公|姜贷": { start: -404, end: -392 },
+  },
+};
+
+/** Wiki 诸侯表合并复位段 → 多条 reign。Key: dynastyId → personName */
+const MULTI_REIGN_SPAN_EXPANSIONS = {
+  "wei-weiguo": {
+    // 卫成公条目：第一次前634–前632、第二次前632–前600；诸侯表合并为前634–前600。
+    姬郑: [
+      { startYear: -634, endYear: -632 },
+      { startYear: -632, endYear: -600, ordinal: 2 },
+    ],
   },
 };
 
@@ -1076,7 +1088,13 @@ for (const [dynastyId, fn] of Object.entries(DYNASTY_SOURCES)) {
   const raw = markInterpolatedBoundaries(dated).sort(
     (a, b) => a.start - b.start || a.end - b.end,
   );
-  const enriched = enrichRulers(dynastyId, raw);
+  const enriched = applyMultiReignRulers(dynastyId, enrichRulers(dynastyId, raw), {
+    spanExpansions: MULTI_REIGN_SPAN_EXPANSIONS,
+  });
+  applyDeathYearToPredecessor(enriched);
+  enriched.sort(
+    (a, b) => a.startYear - b.startYear || a.endYear - b.endYear,
+  );
   byDynasty[dynastyId] = enriched;
   total += enriched.length;
   const at522 = enriched.find((r) => r.startYear <= -522 && r.endYear >= -522);

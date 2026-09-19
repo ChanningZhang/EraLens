@@ -20,6 +20,8 @@ model Person {
   roles       String[]            @default([])
   bio         String?
   links       Json                @default("[]")
+  posthumousName String?          @map("posthumous_name")
+  templeName  String?             @map("temple_name")
   reigns      Reign[]
   participants EventParticipant[]
 
@@ -85,8 +87,7 @@ model Reign {
   dynastyId             String      @map("dynasty_id")
   personId              String      @map("person_id")
   title                 String
-  posthumousName        String?     @map("posthumous_name")
-  templeName            String?     @map("temple_name")
+  eraNames              String?     @map("era_names")
   preferredAppellation  Json?       @map("preferred_appellation")
   startYear             Int         @map("start_year")
   startMonth            Int         @map("start_month")
@@ -104,7 +105,6 @@ model Reign {
   claimRole             String?     @map("claim_role")
   dynasty               Dynasty     @relation(fields: [dynastyId], references: [id])
   person                Person      @relation(fields: [personId], references: [id])
-  eraNames              EraName[]
 
   @@index([startYear])
   @@index([endYear])
@@ -112,27 +112,6 @@ model Reign {
   @@index([personId])
   @@index([claimTrack])
   @@map("reigns")
-}
-
-model EraName {
-  id         Int    @id @default(autoincrement())
-  reignId    String @map("reign_id")
-  name       String
-  startYear  Int    @map("start_year")
-  startMonth Int    @map("start_month")
-  endYear    Int    @map("end_year")
-  endMonth   Int    @map("end_month")
-  startAbs   Int    @map("start_abs")
-  endAbs     Int    @map("end_abs")
-  sortOrder  Int    @default(0) @map("sort_order")
-  reign      Reign  @relation(fields: [reignId], references: [id], onDelete: Cascade)
-
-  @@index([startYear])
-  @@index([endYear])
-  @@index([reignId])
-  @@index([startAbs])
-  @@index([endAbs])
-  @@map("era_names")
 }
 
 model Event {

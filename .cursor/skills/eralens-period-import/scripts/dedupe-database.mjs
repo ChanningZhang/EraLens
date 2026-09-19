@@ -150,7 +150,6 @@ function main() {
 
   const sql = [
     "BEGIN;",
-    `DELETE FROM era_names WHERE reign_id IN (${deleteIds});`,
     `DELETE FROM reigns WHERE id IN (${deleteIds});`,
     personCleanup,
     "COMMIT;",

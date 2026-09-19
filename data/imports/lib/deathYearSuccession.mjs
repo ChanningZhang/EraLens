@@ -91,7 +91,10 @@ function normalizeDynasty(rulers, sameYearTitles) {
         (a, b) => original.get(b).start - original.get(a).start,
       )[0];
       if (samePerson(pred, ruler)) shouldShift = false;
-    } else if (oneYearPeers.length > 0) {
+    }
+    if (!shouldShift && oneYearPeers.length > 0) {
+      // 卫成公复位与卫君瑕同列前632年：短祚年归一年君，复位段次年起算。
+      // 即使同一人的前一段也在该年结束，仍要后移，不能当成魏惠王式改元续任。
       shouldShift = true;
     }
     if (!shouldShift) continue;

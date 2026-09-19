@@ -30,7 +30,7 @@ async function loadStore() {
   const [personRows, dynastyRows, reignRows, eventRows, relationRows] = await Promise.all([
     prisma.person.findMany(),
     prisma.dynasty.findMany(),
-    prisma.reign.findMany({ include: { eraNames: true } }),
+    prisma.reign.findMany(),
     prisma.event.findMany({
       include: { dynasties: true, participants: true },
     }),
@@ -40,7 +40,7 @@ async function loadStore() {
   return toTimelineDataStore({
     persons: personRows.map(mapPerson),
     dynasties: dynastyRows.map(mapDynasty),
-    reigns: reignRows.map((row) => mapReign(row, row.eraNames)),
+    reigns: reignRows.map((row) => mapReign(row)),
     events: eventRows.map(mapEvent),
     relations: relationRows.map(mapRelation),
   });
@@ -137,7 +137,7 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
   }
 
   const reignRows = await prisma.$queryRaw<RawReignRow[]>`
-    SELECT id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation,
+    SELECT id, dynasty_id, person_id, title, era_names, preferred_appellation,
            start_year, start_month, start_day, end_year, end_month, end_day,
            start_abs, end_abs, precision,
            start_date_confidence, end_date_confidence,
@@ -145,22 +145,6 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
     FROM reigns
     WHERE dynasty_id = ANY(${dynastyIds}::text[])
       AND span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')`;
-
-  const reignIds = reignRows.map((row) => row.id);
-  const eraRows =
-    reignIds.length > 0
-      ? await prisma.eraName.findMany({
-          where: { reignId: { in: reignIds } },
-          orderBy: { sortOrder: "asc" },
-        })
-      : [];
-
-  const erasByReign = new Map<string, typeof eraRows>();
-  for (const era of eraRows) {
-    const list = erasByReign.get(era.reignId) ?? [];
-    list.push(era);
-    erasByReign.set(era.reignId, list);
-  }
 
   const dynasties = dynastyRows.map(mapDynasty);
   const groupIds = [
@@ -182,7 +166,7 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
   const dynastyLaneGroups = (await prisma.dynastyLaneGroup.findMany()).map(
     mapDynastyLaneGroup,
   );
-  const reigns = reignRows.map((row) => mapReign(row, erasByReign.get(row.id) ?? []));
+  const reigns = reignRows.map((row) => mapReign(row));
   const visibleReignPersonIds = [...new Set(reignRows.map((row) => row.person_id))];
   const [lifePersonRows, rulerPersonRows] = await Promise.all([
     prisma.person.findMany({

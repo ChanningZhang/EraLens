@@ -218,14 +218,6 @@ const persons = [
     ym(1919, 10),
     ym(2005, 1),
   ),
-  person(
-    "zhu-rongji",
-    "朱镕基",
-    ["政治家"],
-    "1998–2003年任国务院总理，主持国有企业改革，任内中国加入世界贸易组织。",
-    "朱镕基",
-    ym(1928, 10),
-  ),
 ];
 
 const dynasties = [
@@ -460,7 +452,7 @@ const events = [
     dateNote: "2001年12月11日正式成为世界贸易组织成员",
     at: ym(2001, 12),
     dynastyIds: ["prc"],
-    participantIds: ["jiang-zemin", "zhu-rongji"],
+    participantIds: ["jiang-zemin"],
     summary: "中国加入世界贸易组织，对外开放进入新阶段。",
   }),
   eventPoint({

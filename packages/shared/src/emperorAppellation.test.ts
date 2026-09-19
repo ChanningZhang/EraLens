@@ -2,28 +2,131 @@ import { describe, expect, it } from "vitest";
 import type { Reign } from "./schema";
 import {
   buildPreQinClanContext,
-  resolveEmperorAppellation,
-  resolveReignCardGivenName,
-  resolveReignCardLabel,
-  resolveReignCardMeta,
-  resolveReignDetailFacts,
-  resolveReignDetailSubtitle,
-  resolveReignPrimaryLabel,
+  type PersonDisplayContext,
+  resolveEmperorAppellation as resolveEmperorAppellationBase,
+  resolveReignCardGivenName as resolveReignCardGivenNameBase,
+  resolveReignCardLabel as resolveReignCardLabelBase,
+  resolveReignCardMeta as resolveReignCardMetaBase,
+  resolveReignDetailFacts as resolveReignDetailFactsBase,
+  resolveReignDetailSubtitle as resolveReignDetailSubtitleBase,
+  resolveReignPrimaryLabel as resolveReignPrimaryLabelBase,
   stripAncestralXing,
   usesPreQinCardLayout,
 } from "./emperorAppellation";
 
-function source(overrides: Partial<Reign>) {
-  return {
+type SourceOverrides = Partial<Reign> & {
+  posthumousName?: string;
+  templeName?: string;
+};
+
+const personByReign = new WeakMap<Reign, PersonDisplayContext>();
+
+function mergePersonContext(
+  reign: Reign,
+  personContext?: PersonDisplayContext | null,
+): PersonDisplayContext | undefined {
+  const stored = personByReign.get(reign);
+  if (!stored && !personContext) return undefined;
+  return { ...personContext, ...stored };
+}
+
+function source(overrides: SourceOverrides = {}) {
+  const { posthumousName, templeName, ...reignOverrides } = overrides;
+  const reign: Reign = {
     start: { year: 1, month: 1 },
     end: { year: 1, month: 12 },
     title: "皇帝",
-    posthumousName: undefined,
-    templeName: undefined,
     eraNames: [],
     preferredAppellation: undefined,
-    ...overrides,
+    ...reignOverrides,
   };
+  if (posthumousName || templeName) {
+    personByReign.set(reign, {
+      ...(posthumousName ? { posthumousNames: [posthumousName] } : {}),
+      ...(templeName ? { templeNames: [templeName] } : {}),
+    });
+  }
+  return reign;
+}
+
+function resolveEmperorAppellation(
+  reign: Reign,
+  personContext?: PersonDisplayContext | null,
+) {
+  return resolveEmperorAppellationBase(reign, mergePersonContext(reign, personContext));
+}
+
+function resolveReignPrimaryLabel(
+  reign: Reign,
+  personName?: string | null,
+  personContext?: PersonDisplayContext | null,
+) {
+  return resolveReignPrimaryLabelBase(
+    reign,
+    personName,
+    mergePersonContext(reign, personContext),
+  );
+}
+
+function resolveReignCardLabel(
+  reign: Reign,
+  personName?: string | null,
+  options?: { cardWidthPx?: number; clan?: PersonDisplayContext | null },
+) {
+  return resolveReignCardLabelBase(reign, personName, {
+    ...options,
+    clan: mergePersonContext(reign, options?.clan),
+  });
+}
+
+function resolveReignCardGivenName(
+  reign: Reign,
+  personName?: string | null,
+  personContext?: PersonDisplayContext | null,
+) {
+  return resolveReignCardGivenNameBase(
+    reign,
+    personName,
+    mergePersonContext(reign, personContext),
+  );
+}
+
+function resolveReignCardMeta(
+  reign: Reign,
+  personName?: string | null,
+  personContext?: PersonDisplayContext | null,
+) {
+  return resolveReignCardMetaBase(
+    reign,
+    personName,
+    mergePersonContext(reign, personContext),
+  );
+}
+
+function resolveReignDetailSubtitle(
+  reign: Reign,
+  dynastyName?: string | null,
+  personName?: string | null,
+  personContext?: PersonDisplayContext | null,
+) {
+  return resolveReignDetailSubtitleBase(
+    reign,
+    dynastyName,
+    personName,
+    mergePersonContext(reign, personContext),
+  );
+}
+
+function resolveReignDetailFacts(
+  reign: Reign,
+  personName?: string | null,
+  personContext?: PersonDisplayContext | null,
+) {
+  return resolveReignDetailFactsBase(
+    reign,
+    personName,
+    mergePersonContext(reign, personContext),
+  );
 }
 
 describe("resolveEmperorAppellation", () => {
@@ -42,7 +145,7 @@ describe("resolveEmperorAppellation", () => {
           start: { year: 581, month: 1 },
           title: "隋文帝",
           posthumousName: "文皇帝",
-          eraNames: [{ name: "开皇" }] as Reign["eraNames"],
+          eraNames: ["开皇"],
         }),
       ),
     ).toEqual({ kind: "posthumous", name: "文皇帝" });
@@ -52,7 +155,7 @@ describe("resolveEmperorAppellation", () => {
           start: { year: 604, month: 1 },
           title: "隋炀帝",
           posthumousName: "炀皇帝",
-          eraNames: [{ name: "大业" }] as Reign["eraNames"],
+          eraNames: ["大业"],
         }),
       ),
     ).toEqual({ kind: "posthumous", name: "炀皇帝" });
@@ -64,7 +167,7 @@ describe("resolveEmperorAppellation", () => {
         source({
           start: { year: 1323, month: 9 },
           title: "元泰定帝",
-          eraNames: [{ name: "泰定" }, { name: "致和" }] as Reign["eraNames"],
+          eraNames: ["泰定","致和"],
         }),
       ),
     ).toEqual({ kind: "era", name: "泰定" });
@@ -73,7 +176,7 @@ describe("resolveEmperorAppellation", () => {
         source({
           start: { year: 1323, month: 9 },
           title: "元泰定帝",
-          eraNames: [{ name: "泰定" }, { name: "致和" }] as Reign["eraNames"],
+          eraNames: ["泰定","致和"],
         }),
         "也孙铁木儿",
       ),
@@ -83,7 +186,7 @@ describe("resolveEmperorAppellation", () => {
         source({
           start: { year: 1328, month: 8 },
           title: "元天顺帝",
-          eraNames: [{ name: "天顺" }] as Reign["eraNames"],
+          eraNames: ["天顺"],
         }),
       ),
     ).toEqual({ kind: "era", name: "天顺" });
@@ -131,7 +234,7 @@ describe("resolveEmperorAppellation", () => {
         source({
           start: { year: 1661, month: 1 },
           templeName: "圣祖",
-          eraNames: [{ name: "康熙" }] as Reign["eraNames"],
+          eraNames: ["康熙"],
         }),
       ),
     ).toEqual({ kind: "era", name: "康熙" });
@@ -143,7 +246,7 @@ describe("resolveEmperorAppellation", () => {
         source({
           start: { year: 1351, month: 1 },
           title: "徐宋帝",
-          eraNames: [{ name: "治平" }] as Reign["eraNames"],
+          eraNames: ["治平"],
         }),
       ),
     ).toEqual({ kind: "era", name: "治平" });
@@ -152,7 +255,7 @@ describe("resolveEmperorAppellation", () => {
         source({
           start: { year: 1360, month: 1 },
           title: "陈汉帝",
-          eraNames: [{ name: "大义" }] as Reign["eraNames"],
+          eraNames: ["大义"],
         }),
       ),
     ).toEqual({ kind: "era", name: "大义" });
@@ -166,7 +269,7 @@ describe("resolveEmperorAppellation", () => {
           title: "徐宋世宗",
           posthumousName: "应天启运献武皇帝",
           templeName: "世宗",
-          eraNames: [{ name: "治平" }, { name: "太平" }] as Reign["eraNames"],
+          eraNames: ["治平","太平"],
         }),
       ),
     ).toEqual({ kind: "temple", name: "世宗" });
@@ -212,7 +315,7 @@ describe("resolveEmperorAppellation", () => {
         source({
           start: { year: 1435, month: 1 },
           templeName: "英宗",
-          eraNames: [{ name: "正统" }] as Reign["eraNames"],
+          eraNames: ["正统"],
         }),
       ),
     ).toEqual({ kind: "era", name: "正统" });
@@ -221,7 +324,7 @@ describe("resolveEmperorAppellation", () => {
         source({
           start: { year: 1457, month: 1 },
           templeName: "英宗",
-          eraNames: [{ name: "天顺" }] as Reign["eraNames"],
+          eraNames: ["天顺"],
         }),
       ),
     ).toEqual({ kind: "era", name: "天顺" });
@@ -234,7 +337,7 @@ describe("resolveReignPrimaryLabel", () => {
       resolveReignPrimaryLabel(
         source({
           start: { year: 1661, month: 1 },
-          eraNames: [{ name: "康熙" }] as Reign["eraNames"],
+          eraNames: ["康熙"],
         }),
         "爱新觉罗·玄烨",
       ),
@@ -243,7 +346,7 @@ describe("resolveReignPrimaryLabel", () => {
       resolveReignPrimaryLabel(
         source({
           start: { year: 1435, month: 1 },
-          eraNames: [{ name: "正统" }] as Reign["eraNames"],
+          eraNames: ["正统"],
         }),
         "朱祁镇",
       ),
@@ -252,7 +355,7 @@ describe("resolveReignPrimaryLabel", () => {
       resolveReignPrimaryLabel(
         source({
           start: { year: 1457, month: 1 },
-          eraNames: [{ name: "天顺" }] as Reign["eraNames"],
+          eraNames: ["天顺"],
         }),
         "朱祁镇",
       ),
@@ -428,7 +531,7 @@ describe("resolveReignCardLabel", () => {
           title: "晋海西公",
           posthumousName: "海西公",
           preferredAppellation: { kind: "posthumous", name: "晋海西公" },
-          eraNames: [{ name: "太和" }] as Reign["eraNames"],
+          eraNames: ["太和"],
         }),
         "司马奕",
       ),
@@ -440,7 +543,7 @@ describe("resolveReignCardLabel", () => {
           title: "晋简文帝",
           posthumousName: "简文皇帝",
           preferredAppellation: { kind: "posthumous", name: "晋简文帝" },
-          eraNames: [{ name: "咸安" }] as Reign["eraNames"],
+          eraNames: ["咸安"],
         }),
         "司马昱",
       ),
@@ -454,7 +557,7 @@ describe("resolveReignCardMeta", () => {
       resolveReignCardMeta(
         source({
           start: { year: 1661, month: 1 },
-          eraNames: [{ name: "康熙" }] as Reign["eraNames"],
+          eraNames: ["康熙"],
         }),
         "爱新觉罗·玄烨",
       ),
@@ -463,7 +566,7 @@ describe("resolveReignCardMeta", () => {
       resolveReignCardMeta(
         source({
           start: { year: 1435, month: 1 },
-          eraNames: [{ name: "正统" }] as Reign["eraNames"],
+          eraNames: ["正统"],
         }),
         "朱祁镇",
       ),
@@ -472,7 +575,7 @@ describe("resolveReignCardMeta", () => {
       resolveReignCardMeta(
         source({
           start: { year: 1457, month: 1 },
-          eraNames: [{ name: "天顺" }] as Reign["eraNames"],
+          eraNames: ["天顺"],
         }),
         "朱祁镇",
       ),
@@ -513,7 +616,7 @@ describe("resolveReignCardMeta", () => {
           start: { year: 581, month: 1 },
           title: "隋文帝",
           posthumousName: "文皇帝",
-          eraNames: [{ name: "开皇" }] as Reign["eraNames"],
+          eraNames: ["开皇"],
         }),
         "杨坚",
       ),
@@ -524,7 +627,7 @@ describe("resolveReignCardMeta", () => {
           start: { year: 604, month: 1 },
           title: "隋炀帝",
           posthumousName: "炀皇帝",
-          eraNames: [{ name: "大业" }] as Reign["eraNames"],
+          eraNames: ["大业"],
         }),
         "杨广",
       ),
@@ -563,7 +666,7 @@ describe("resolveReignCardMeta", () => {
       start: { year: 264, month: 9 },
       end: { year: 280, month: 5 },
       title: "吴末帝",
-      eraNames: [{ name: "元兴" }] as Reign["eraNames"],
+      eraNames: ["元兴"],
     });
     expect(resolveEmperorAppellation(sunHao)).toEqual({
       kind: "regnal",
@@ -593,7 +696,7 @@ describe("resolveReignCardMeta", () => {
       end: { year: 260, month: 5 },
       title: "高贵乡公",
       preferredAppellation: { kind: "regnal", name: "高贵乡公" },
-      eraNames: [{ name: "正元" }, { name: "甘露" }] as Reign["eraNames"],
+      eraNames: ["正元","甘露"],
     });
     expect(resolveEmperorAppellation(caoMao)).toEqual({
       kind: "regnal",
@@ -612,7 +715,7 @@ describe("resolveReignCardMeta", () => {
       end: { year: 258, month: 11 },
       title: "会稽王",
       preferredAppellation: { kind: "regnal", name: "会稽王" },
-      eraNames: [{ name: "建兴" }] as Reign["eraNames"],
+      eraNames: ["建兴"],
     });
     expect(resolveEmperorAppellation(sunLiang)).toEqual({
       kind: "regnal",
@@ -625,16 +728,14 @@ describe("resolveReignCardMeta", () => {
   });
 
   it("uses posthumous name when title is not a dynastic emperor shorthand", () => {
-    const liuShan = {
-      ...source({
-        start: { year: 223, month: 6 },
-        end: { year: 263, month: 11 },
-        title: "蜀汉后主",
-        posthumousName: "孝怀皇帝",
-        preferredAppellation: { kind: "posthumous", name: "孝怀皇帝" },
-        eraNames: [{ name: "建兴" }] as Reign["eraNames"],
-      }),
-    };
+    const liuShan = source({
+      start: { year: 223, month: 6 },
+      end: { year: 263, month: 11 },
+      title: "蜀汉后主",
+      posthumousName: "孝怀皇帝",
+      preferredAppellation: { kind: "posthumous", name: "孝怀皇帝" },
+      eraNames: ["建兴"],
+    });
     expect(resolveEmperorAppellation(liuShan)).toEqual({
       kind: "posthumous",
       name: "孝怀皇帝",
@@ -649,7 +750,7 @@ describe("resolveReignCardMeta", () => {
           start: { year: 223, month: 6 },
           title: "蜀汉后主",
           posthumousName: "孝怀皇帝",
-          eraNames: [{ name: "建兴" }] as Reign["eraNames"],
+          eraNames: ["建兴"],
         }),
       ),
     ).toEqual({ kind: "posthumous", name: "孝怀皇帝" });
@@ -663,7 +764,7 @@ describe("resolveReignCardMeta", () => {
           title: "宋太祖",
           templeName: "太祖",
           preferredAppellation: { kind: "temple", name: "宋太祖" },
-          eraNames: [{ name: "建隆" }] as Reign["eraNames"],
+          eraNames: ["建隆"],
         }),
         "赵匡胤",
       ),
@@ -758,14 +859,14 @@ describe("resolveReignDetailSubtitle", () => {
       title: "宋太祖",
       templeName: "太祖",
       preferredAppellation: { kind: "temple", name: "宋太祖" },
-      eraNames: [{ name: "建隆" }] as Reign["eraNames"],
+      eraNames: ["建隆"],
     });
     const liaoReign = source({
       start: { year: 982, month: 1 },
       title: "辽圣宗",
       templeName: "圣宗",
       preferredAppellation: { kind: "temple", name: "辽圣宗" },
-      eraNames: [{ name: "统和" }] as Reign["eraNames"],
+      eraNames: ["统和"],
     });
 
     expect(resolveReignDetailSubtitle(songReign, "北宋", "赵匡胤")).toBe(
@@ -828,7 +929,7 @@ describe("resolveReignDetailFacts", () => {
           title: "宋太祖",
           templeName: "太祖",
           preferredAppellation: { kind: "temple", name: "宋太祖" },
-          eraNames: [{ name: "建隆" }] as Reign["eraNames"],
+          eraNames: ["建隆"],
         }),
       ),
     ).toEqual([
@@ -847,12 +948,7 @@ describe("resolveReignDetailFacts", () => {
           title: "徐宋世宗",
           posthumousName: "应天启运献武皇帝",
           templeName: "世宗",
-          eraNames: [
-            { name: "治平" },
-            { name: "太平" },
-            { name: "天启" },
-            { name: "天定" },
-          ] as Reign["eraNames"],
+          eraNames: ["治平","太平","天启","天定"],
         }),
       ),
     ).toEqual([

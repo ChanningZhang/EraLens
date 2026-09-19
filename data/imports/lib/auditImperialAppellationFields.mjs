@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Audit 618+ reigns missing posthumous_name / temple_name in import SQL.
+ * Audit 618+ persons missing posthumous_name / temple_name in import SQL.
  * Run: node data/imports/lib/auditImperialAppellationFields.mjs
  */
 import { readdirSync, readFileSync } from "node:fs";
@@ -11,21 +11,31 @@ const TEMPLE_ERA_START_YEAR = 618;
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const importsRoot = path.resolve(__dirname, "..");
 
-function parseReigns(content) {
-  const reigns = [];
+function parsePersons(content) {
+  const persons = [];
   const re =
-    /INSERT INTO reigns \(id, dynasty_id, person_id, title, posthumous_name, temple_name[^)]*\)\s*\nVALUES \('([^']+)', '([^']+)', '([^']+)', '([^']+)', ([^,]+), ([^,]+),[^,]*,\s*(-?\d+),/g;
+    /INSERT INTO persons \(id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name\)\s*VALUES \('([^']+)'[\s\S]*?'::jsonb,\s*([^,]+),\s*([^)]+)\)/g;
   for (const m of content.matchAll(re)) {
-    reigns.push({
+    persons.push({
       id: m[1],
-      dynastyId: m[2],
-      title: m[4],
-      posthumous: m[5].trim(),
-      temple: m[6].trim(),
-      startYear: Number(m[7]),
+      posthumous: m[2].trim(),
+      temple: m[3].trim(),
     });
   }
-  return reigns;
+  return persons;
+}
+
+function parseReignStartYears(content) {
+  const byPerson = new Map();
+  const re =
+    /INSERT INTO reigns \([^)]+\)\s*VALUES \('[^']+', '[^']+', '([^']+)'[\s\S]*?,\s*(-?\d+),/g;
+  for (const m of content.matchAll(re)) {
+    const personId = m[1];
+    const startYear = Number(m[2]);
+    const prev = byPerson.get(personId);
+    if (prev == null || startYear < prev) byPerson.set(personId, startYear);
+  }
+  return byPerson;
 }
 
 function main() {
@@ -34,18 +44,20 @@ function main() {
     const sqlPath = path.join(importsRoot, slug, "import.sql");
     try {
       const content = readFileSync(sqlPath, "utf8");
-      for (const reign of parseReigns(content)) {
-        if (reign.startYear < TEMPLE_ERA_START_YEAR) continue;
-        if (reign.posthumous !== "NULL" || reign.temple !== "NULL") continue;
-        gaps.push({ slug, ...reign });
+      const reignStarts = parseReignStartYears(content);
+      for (const person of parsePersons(content)) {
+        const startYear = reignStarts.get(person.id);
+        if (startYear == null || startYear < TEMPLE_ERA_START_YEAR) continue;
+        if (person.posthumous !== "NULL" || person.temple !== "NULL") continue;
+        gaps.push({ slug, personId: person.id, startYear });
       }
     } catch {
       // skip
     }
   }
-  console.log("=== 618+ reigns with both posthumous_name and temple_name NULL ===");
+  console.log("=== 618+ persons with both posthumous_name and temple_name NULL ===");
   for (const row of gaps.slice(0, 40)) {
-    console.log(`${row.slug}\t${row.startYear}\t${row.title}\t${row.id}`);
+    console.log(`${row.slug}\t${row.startYear}\t${row.personId}`);
   }
   if (gaps.length > 40) console.log(`... and ${gaps.length - 40} more`);
   console.log(`Total: ${gaps.length}`);

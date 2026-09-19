@@ -1,18 +1,19 @@
-import type {
-  Dynasty,
-  DynastyGroup,
-  DynastyLaneGroup,
-  Event,
-  Person,
-  Reign,
-  Relation,
-  TimelineDataStore,
+import {
+  parseAppellationCsv,
+  formatAppellationCsv,
+  type Dynasty,
+  type DynastyGroup,
+  type DynastyLaneGroup,
+  type Event,
+  type Person,
+  type Reign,
+  type Relation,
+  type TimelineDataStore,
 } from "@eralens/shared";
 import type {
   Dynasty as DbDynasty,
   DynastyGroup as DbDynastyGroup,
   DynastyLaneGroup as DbDynastyLaneGroup,
-  EraName as DbEraName,
   Event as DbEvent,
   Person as DbPerson,
   Reign as DbReign,
@@ -67,8 +68,7 @@ export type RawReignRow = {
   dynasty_id: string;
   person_id: string;
   title: string;
-  posthumous_name: string | null;
-  temple_name: string | null;
+  era_names: string | null;
   preferred_appellation: unknown;
   start_year: number;
   start_month: number;
@@ -123,6 +123,8 @@ export function mapPerson(row: DbPerson): Person {
     roles: row.roles,
     bio: row.bio ?? undefined,
     links: (row.links as Person["links"]) ?? [],
+    posthumousNames: parseAppellationCsv(row.posthumousName),
+    templeNames: parseAppellationCsv(row.templeName),
   };
 }
 
@@ -213,15 +215,10 @@ function mapClaimRole(
   return undefined;
 }
 
-export function mapReign(
-  row: DbReign | RawReignRow,
-  eraNames: DbEraName[],
-): Reign {
+export function mapReign(row: DbReign | RawReignRow): Reign {
   const dynastyId = "dynastyId" in row ? row.dynastyId : row.dynasty_id;
   const personId = "personId" in row ? row.personId : row.person_id;
-  const posthumousName =
-    "posthumousName" in row ? row.posthumousName : row.posthumous_name;
-  const templeName = "templeName" in row ? row.templeName : row.temple_name;
+  const eraNamesRaw = "eraNames" in row ? row.eraNames : row.era_names;
   const preferredAppellation =
     "preferredAppellation" in row ? row.preferredAppellation : row.preferred_appellation;
   const startYear = "startYear" in row ? row.startYear : row.start_year;
@@ -245,18 +242,8 @@ export function mapReign(
     dynastyId,
     personId,
     title: row.title,
-    posthumousName: posthumousName ?? undefined,
-    templeName: templeName ?? undefined,
     preferredAppellation: (preferredAppellation as PreferredAppellation | null) ?? undefined,
-    eraNames: eraNames
-      .sort((a, b) => a.sortOrder - b.sortOrder)
-      .map((era) => ({
-        name: era.name,
-        start: { year: era.startYear, month: era.startMonth },
-        end: { year: era.endYear, month: era.endMonth },
-        startAbs: era.startAbs,
-        endAbs: era.endAbs,
-      })),
+    eraNames: parseAppellationCsv(eraNamesRaw),
     start: {
       year: startYear,
       month: startMonth,

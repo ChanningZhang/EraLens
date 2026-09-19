@@ -8,7 +8,8 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
 import { drDay, dynastyReignDay, ymDay } from "../lib/reignDateHelpers.mjs";
-import { dynastySql, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
+import { reignSql as formatReignSqlBase } from "../lib/reignSql.mjs";
+import { dynastySql, formatAppellationCsv, mergeAppellationsIntoPersons, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -336,16 +337,10 @@ relations.push(
 // ── SQL helpers ─────────────────────────────────────────────────────────────
 
 
-function reignSql(r) {
-  return `INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision)
-VALUES (${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(r.title)}, ${sqlStr(r.posthumousName ?? null)}, ${sqlStr(r.templeName ?? null)}, ${sqlJson(r.preferredAppellation)}, ${r.start.year}, ${r.start.month}, ${r.start.day ?? "NULL"}, ${r.end.year}, ${r.end.month}, ${r.end.day ?? "NULL"}, ${r.startAbs}, ${r.endAbs}, ${sqlStr(r.precision)})
-ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision;`;
+function formatReignSql(r) {
+  return formatReignSqlBase(r, sqlStr, sqlJson, formatAppellationCsv);
 }
 
-function eraNameSql(e) {
-  return `INSERT INTO era_names (reign_id, name, start_year, start_month, end_year, end_month, start_abs, end_abs, sort_order)
-VALUES (${sqlStr(e.reignId)}, ${sqlStr(e.name)}, ${e.start.year}, ${e.start.month}, ${e.end.year}, ${e.end.month}, ${e.start.abs}, ${e.end.abs}, ${e.sortOrder});`;
-}
 
 function eventSql(e) {
   const cols = ["id", "name", "kind", "time_mode", "precision", "date_note", "at_year", "at_month", "at_abs", "start_year", "start_month", "start_abs", "end_year", "end_month", "end_abs", "summary"];
@@ -365,11 +360,11 @@ function relationSql(r) {
   return `INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES (${sqlStr(r.id)}, ${sqlStr(from.type)}, ${sqlStr(from.id)}, ${sqlStr(to.type)}, ${sqlStr(to.id)}, ${sqlStr(r.kind)}) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;`;
 }
 
-const { persons: importPersons, reigns: importReigns } = finalizeImportReigns("song-liao-jin", persons, reigns);
+const finalized = finalizeImportReigns("song-liao-jin", persons, reigns);
+const merged = mergeAppellationsIntoPersons(finalized.persons, finalized.reigns);
+const importPersons = merged.persons;
+const importReigns = merged.reigns;
 
-const reignsWithEras = importReigns.filter((r) => r.eraNames.length > 0);
-const eraDeleteSql = reignsWithEras.map((r) => `DELETE FROM era_names WHERE reign_id = ${sqlStr(r.id)};`);
-const eraInsertSql = reignsWithEras.flatMap((r) => r.eraNames.map(eraNameSql));
 const eventDynastySql = events.flatMap((e) => e.dynastyIds.map((d) => `INSERT INTO event_dynasties (event_id, dynasty_id) VALUES (${sqlStr(e.id)}, ${sqlStr(d)}) ON CONFLICT DO NOTHING;`));
 const supplementalEventDynastySql = supplementalEventDynasties.map(
   ({ eventId, dynastyId }) => `INSERT INTO event_dynasties (event_id, dynasty_id) VALUES (${sqlStr(eventId)}, ${sqlStr(dynastyId)}) ON CONFLICT DO NOTHING;`,
@@ -386,8 +381,7 @@ const sql = [
   "",
   "", "-- persons", ...importPersons.map(personSql),
   "", "-- dynasties", ...dynasties.map(dynastySql),
-  "", "-- reigns", ...importReigns.map(reignSql),
-  "", "-- era_names", ...eraDeleteSql, ...eraInsertSql,
+  "", "-- reigns", ...importReigns.map(formatReignSql),
   "", "-- events", ...events.map(eventSql),
   "", "-- event_dynasties", ...eventDynastySql, ...supplementalEventDynastySql,
   "", "-- event_participants", ...eventParticipantSql,

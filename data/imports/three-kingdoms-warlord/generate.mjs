@@ -348,7 +348,6 @@ const supplementalEventDynasties = [];
 
 const preSql = [
   "DELETE FROM event_dynasties WHERE dynasty_id IN ('yuan-hebei', 'yizhou-liu');",
-  "DELETE FROM era_names WHERE reign_id IN ('reign-cao-cao-wei', 'reign-cao-pi-king', 'reign-liu-bei-warlord', 'reign-sun-quan-warlord');",
   "DELETE FROM relations WHERE id IN ('rel-cao-cao-cao-pi-succession', 'rel-cao-pi-cao-pi-succession', 'rel-liu-bei-liu-bei-succession', 'rel-sun-quan-sun-quan-succession');",
   "DELETE FROM reigns WHERE id IN ('reign-yuan-shao-hebei', 'reign-liu-zhang-yizhou', 'reign-cao-cao-wei', 'reign-cao-pi-king', 'reign-liu-bei-warlord', 'reign-sun-quan-warlord');",
   "DELETE FROM dynasties WHERE id IN ('yuan-hebei', 'yizhou-liu');",

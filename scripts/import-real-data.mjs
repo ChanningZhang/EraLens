@@ -20,7 +20,6 @@ const TRUNCATE_SQL = `
 TRUNCATE TABLE
   event_participants,
   event_dynasties,
-  era_names,
   relations,
   events,
   reigns,

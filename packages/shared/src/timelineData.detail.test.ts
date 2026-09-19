@@ -2,7 +2,8 @@ import { describe, expect, it } from "vitest";
 import type { Reign } from "./schema";
 import { buildEntityDetail } from "./timelineData";
 
-function reign(overrides: Partial<Reign>): Reign {
+function reign(overrides: Partial<Reign> & { templeName?: string }): Reign {
+  const { templeName, ...reignOverrides } = overrides;
   return {
     id: "reign-test",
     dynastyId: "song-north",
@@ -13,10 +14,9 @@ function reign(overrides: Partial<Reign>): Reign {
     startAbs: 0,
     endAbs: 1,
     precision: "year",
-    eraNames: [{ name: "建隆", start: { year: 960, month: 1 }, end: { year: 963, month: 12 }, startAbs: 0, endAbs: 1, sortOrder: 0 }],
-    templeName: "太祖",
+    eraNames: ["建隆"],
     preferredAppellation: { kind: "temple", name: "宋太祖" },
-    ...overrides,
+    ...reignOverrides,
   };
 }
 
@@ -44,6 +44,7 @@ describe("buildEntityDetail reign", () => {
           name: "赵匡胤",
           roles: ["皇帝"],
           links: [],
+          templeNames: ["太祖"],
         },
       ],
       events: [],
@@ -85,7 +86,6 @@ describe("buildEntityDetail reign", () => {
           title: "鲁监国",
           start: { year: 1645, month: 1 },
           end: { year: 1653, month: 12 },
-          templeName: undefined,
           eraNames: [],
           preferredAppellation: { kind: "regnal", name: "鲁监国" },
           claimTrack: "lu-jian",

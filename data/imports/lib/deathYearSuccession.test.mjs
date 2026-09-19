@@ -95,4 +95,30 @@ describe("applyDeathYearToPredecessor", () => {
     applyDeathYearToPredecessor(rulers);
     assert.equal(rulers[1].start, -344);
   });
+
+  it("shifts a restoration off a one-year usurper even when the same person is a predecessor", () => {
+    const rulers = [
+      r("卫成公", -634, -632, {
+        dynastyId: "wei-weiguo",
+        personId: "weiguo-r21",
+        personName: "姬郑",
+      }),
+      r("卫君瑕", -632, -632, {
+        dynastyId: "wei-weiguo",
+        personId: "weiguo-r22",
+        personName: "姬瑕",
+      }),
+      r("卫成公", -632, -600, {
+        dynastyId: "wei-weiguo",
+        personId: "weiguo-r21",
+        personName: "姬郑",
+      }),
+    ];
+    applyDeathYearToPredecessor(rulers);
+    assert.equal(rulers[0].start, -634);
+    assert.equal(rulers[0].end, -632);
+    assert.equal(rulers[1].start, -632);
+    assert.equal(rulers[2].start, -631);
+    assert.equal(rulers[2].end, -600);
+  });
 });
