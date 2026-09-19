@@ -36,18 +36,22 @@ describe("mergeTimelineSlices", () => {
             colorToken: "ochre",
           },
         ],
+        dynastyGroups: [],
+        dynastyLaneGroups: [],
         reigns: [],
         events: [],
         persons: [
           {
             id: "cao-cao",
             name: "曹操",
+            altNames: [],
             birth: { year: 155, month: 1 },
             death: { year: 220, month: 3 },
             roles: ["政治家"],
             links: [],
           },
         ],
+        relations: [],
       },
       {
         dynasties: [
@@ -65,12 +69,15 @@ describe("mergeTimelineSlices", () => {
             colorToken: "ochre",
           },
         ],
+        dynastyGroups: [],
+        dynastyLaneGroups: [],
         reigns: [],
         events: [],
         persons: [
           {
             id: "cao-cao",
             name: "曹操",
+            altNames: [],
             birth: { year: 155, month: 1 },
             death: { year: 220, month: 3 },
             roles: ["政治家"],
@@ -79,12 +86,14 @@ describe("mergeTimelineSlices", () => {
           {
             id: "zhuge-liang",
             name: "诸葛亮",
+            altNames: [],
             birth: { year: 181, month: 1 },
             death: { year: 234, month: 8 },
             roles: ["丞相"],
             links: [],
           },
         ],
+        relations: [],
       },
     ]);
 
@@ -127,15 +136,21 @@ describe("mergeTimelineSlices", () => {
     const merged = mergeTimelineSlices([
       {
         dynasties: [],
+        dynastyGroups: [],
+        dynastyLaneGroups: [],
         reigns: [stale],
         events: [],
-        persons: [{ id: "qin-r30", name: "原名子异", roles: ["君主"], links: [] }],
+        persons: [{ id: "qin-r30", name: "原名子异", altNames: [], roles: ["君主"], links: [] }],
+        relations: [],
       },
       {
         dynasties: [],
+        dynastyGroups: [],
+        dynastyLaneGroups: [],
         reigns: [current],
         events: [],
-        persons: [{ id: "qin-r29", name: "嬴子楚", roles: ["君主"], links: [] }],
+        persons: [{ id: "qin-r29", name: "嬴子楚", altNames: [], roles: ["君主"], links: [] }],
+        relations: [],
       },
     ]);
 
@@ -155,16 +170,21 @@ describe("mergeTimelineSlices", () => {
     const merged = mergeTimelineSlices([
       {
         dynasties: [],
+        dynastyGroups: [],
         dynastyLaneGroups: [laneGroup],
         reigns: [],
         events: [],
         persons: [],
+        relations: [],
       },
       {
         dynasties: [],
+        dynastyGroups: [],
+        dynastyLaneGroups: [],
         reigns: [],
         events: [],
         persons: [],
+        relations: [],
       },
     ]);
 
