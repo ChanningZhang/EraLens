@@ -175,8 +175,16 @@ export const DOCUMENTED_REIGN_DATES = {
   // 金哀宗：天兴三年正月十日（1234-02-09）蔡州自缢。起年与宣宗迄日对齐。
   "reign-wanyan-shouxu-jin-nvzhen": { start: [1223, 1, 14], end: [1234, 2, 9] },
 
-  // 北辽耶律淳：保大二年三月–六月；六月十五＝1122-07-20（寿星历）。
-  "reign-yelu-chun-beiliao": { start: [1122, 4], end: [1122, 7] },
+  // 北辽耶律淳：保大二年三月癸酉即位；六月十五卒＝1122-07-20（寿星历）。
+  "reign-yelu-chun-beiliao": { start: [1122, 4, 22], end: [1122, 7, 20] },
+
+  // 西辽耶律大石：1124年秋抵镇州可敦城称王；康国十年卒（1143）。
+  "reign-yelu-dashi-xiliao": { start: [1124, 9], end: [1143, 12] },
+  // 西辽屈出律：1218年春蒙古灭西辽被俘。
+  "reign-qu-chulu-xiliao": { start: [1211, 1], end: [1218, 4] },
+
+  // 东辽耶律留哥：贞祐四年三月称辽王改元天统；卒于1220年。
+  "reign-yelu-liuge-dongliao": { start: [1213, 3], end: [1220, 12] },
 
   // 高句丽宝藏王：总章元年九月；九月十五＝668-10-25（寿星历）。
   "reign-baozang-wang-gaogouli": { start: [642, 1], end: [668, 10] },

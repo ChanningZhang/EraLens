@@ -808,6 +808,16 @@ export function buildFateCatalog() {
       precision: "day",
     },
     {
+      id: "rel-wanyan-liang-zhao-gou-killed",
+      fromPersonId: "wanyan-liang",
+      toPersonId: "zhao-gou",
+      kind: "killed",
+      eventId: "caishi-battle",
+      // 采石败后军乱，瓜洲被弑；锚采石战役日，接收方用南宋高宗（虞允文无 reign 卡）。
+      resolveAt: () => ymDay(1161, 11, 26),
+      precision: "day",
+    },
+    {
       id: "rel-zhao-shi-hu-bilie-surrender",
       fromPersonId: "zhao-shi",
       toPersonId: "hu-bilie",
@@ -1007,7 +1017,7 @@ export function buildFateCatalog() {
       toPersonId: "temujin",
       kind: "captured",
       eventId: "xiliao-fallen",
-      resolveAt: () => ym(1218, 12),
+      resolveAt: () => atFromReignEnd("reign-qu-chulu-xiliao", 1218),
     },
 
     // ── 唐边域 / 元末 / 明郑 / 太平天国 ─────────────────────────────────────
