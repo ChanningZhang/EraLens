@@ -246,32 +246,6 @@ describe("dynastyLaneGroups", () => {
     });
   });
 
-  it("keeps lane sort span when only the later zhou phase is visible", () => {
-    const catalog = new Map([
-      [zhouWest.id, zhouWest],
-      [zhouEast.id, zhouEast],
-    ]);
-    const collapsed = collapseDynastyLaneGroups([zhouEast], catalog, LANE_GROUPS);
-
-    expect(collapsed).toHaveLength(1);
-    expect(collapsed[0]).toMatchObject({
-      id: "zhou-west",
-      startAbs: zhouWest.startAbs,
-      endAbs: zhouEast.endAbs,
-    });
-  });
-
-  it("keeps lane sort span without catalog when only the later zhou phase is visible", () => {
-    const collapsed = collapseDynastyLaneGroups([zhouEast], undefined, LANE_GROUPS);
-
-    expect(collapsed).toHaveLength(1);
-    expect(collapsed[0]).toMatchObject({
-      id: "zhou-west",
-      startAbs: zhouWest.startAbs,
-      endAbs: zhouEast.endAbs,
-    });
-  });
-
   it("collapses wu-zhu, ming, and ming-south into one lane anchored on ming", () => {
     const collapsed = collapseDynastyLaneGroups([wuZhu, ming, mingSouth, tang], undefined, LANE_GROUPS);
 
@@ -306,28 +280,10 @@ describe("dynastyLaneGroups", () => {
     expect(collapsed.map((dynasty) => dynasty.id)).toEqual(["tang", "song-north", "song-south"]);
   });
 
-  it("collapses zhou-west and zhou-east into one lane", () => {
+  it("keeps zhou-west and zhou-east as separate lanes", () => {
     const collapsed = collapseDynastyLaneGroups([tang, zhouWest, zhouEast], undefined, LANE_GROUPS);
 
-    expect(collapsed.map((dynasty) => dynasty.id)).toEqual(["zhou-west", "tang"]);
-    expect(collapsed[0]).toMatchObject({
-      id: "zhou-west",
-      name: "西周",
-      startAbs: zhouWest.startAbs,
-      endAbs: zhouEast.endAbs,
-    });
-  });
-
-  it("resolves zhou-west to zhou-east across the -770 boundary", () => {
-    const byId = new Map([
-      [zhouWest.id, zhouWest],
-      [zhouEast.id, zhouEast],
-    ]);
-
-    expect(resolveFrozenLaneLabel(zhouWest, byId, absMonth(-900), LANE_GROUPS)).toBe("西周");
-    expect(resolveFrozenLaneLabel(zhouWest, byId, absMonth(-771, 12), LANE_GROUPS)).toBe("西周");
-    expect(resolveFrozenLaneLabel(zhouWest, byId, absMonth(-770), LANE_GROUPS)).toBe("东周");
-    expect(resolveFrozenLaneLabel(zhouWest, byId, absMonth(-500), LANE_GROUPS)).toBe("东周");
+    expect(collapsed.map((dynasty) => dynasty.id)).toEqual(["zhou-west", "zhou-east", "tang"]);
   });
 
   it("keeps jin-west and jin-east as separate lanes", () => {
@@ -339,37 +295,37 @@ describe("dynastyLaneGroups", () => {
   it("scopes layout buckets to phase dynasties inside a lane group", () => {
     const laneReigns: Reign[] = [
       {
-        id: "reign-zhou-west-r1",
-        dynastyId: "zhou-west",
-        personId: "zhou-west-r1",
-        title: "周武王",
+        id: "reign-temujin",
+        dynastyId: "mongol-empire",
+        personId: "temujin",
+        title: "成吉思汗",
         eraNames: [],
-        start: { year: -1046, month: 1 },
-        end: { year: -1043, month: 12 },
-        startAbs: zhouWest.startAbs,
-        endAbs: absMonth(-1043, 12),
+        start: { year: 1206, month: 1 },
+        end: { year: 1227, month: 1 },
+        startAbs: mongolEmpire.startAbs,
+        endAbs: absMonth(1227),
         precision: "year",
       },
       {
-        id: "reign-zhou-east-r1",
-        dynastyId: "zhou-east",
-        personId: "zhou-east-r1",
-        title: "周平王",
+        id: "reign-hu-bilie",
+        dynastyId: "yuan",
+        personId: "hu-bilie",
+        title: "元世祖",
         eraNames: [],
-        start: { year: -770, month: 1 },
-        end: { year: -720, month: 12 },
-        startAbs: zhouEast.startAbs,
-        endAbs: absMonth(-720, 12),
+        start: { year: 1271, month: 12 },
+        end: { year: 1294, month: 1 },
+        startAbs: yuan.startAbs,
+        endAbs: absMonth(1294),
         precision: "year",
       },
     ];
 
     expect(layoutBucketsForLaneReigns(laneReigns, LANE_GROUPS).map((bucket) => bucket.map((reign) => reign.id))).toEqual([
-      ["reign-zhou-west-r1"],
-      ["reign-zhou-east-r1"],
+      ["reign-temujin"],
+      ["reign-hu-bilie"],
     ]);
     expect(reignsInLayoutBucket(laneReigns[1]!, laneReigns, LANE_GROUPS).map((reign) => reign.id)).toEqual([
-      "reign-zhou-east-r1",
+      "reign-hu-bilie",
     ]);
   });
 

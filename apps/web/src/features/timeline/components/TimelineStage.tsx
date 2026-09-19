@@ -1,5 +1,4 @@
 import { useMemo } from "react";
-import { LayoutGroup } from "framer-motion";
 import {
   clusterFramesForLanes,
   collapseDynastyLaneGroups,
@@ -209,11 +208,11 @@ export function TimelineStage() {
             height: "100%",
           }}
         >
-          {isLoading && placed.length === 0 ? (
+          {!data && isLoading ? (
             <div className={styles.empty}>
               <p className={styles.emptyHint}>加载中…</p>
             </div>
-          ) : error && placed.length === 0 ? (
+          ) : error && !data ? (
             <div className={styles.empty}>
               <p className={styles.emptyTitle}>数据加载失败</p>
               <p className={styles.emptyHint}>
@@ -226,7 +225,7 @@ export function TimelineStage() {
               <p className={styles.emptyHint}>拖动底部标尺浏览其他年代</p>
             </div>
           ) : (
-            <LayoutGroup>
+            <>
               {clusterFrames.map(({ group, top, height, left, width }) => (
                 <DynastyClusterFrame
                   key={group.id}
@@ -250,7 +249,7 @@ export function TimelineStage() {
                   top={top}
                 />
               ))}
-            </LayoutGroup>
+            </>
           )}
           {data && placed.length > 0 && (
             <EventLayer placed={eventPlaced} height={railHeight} />

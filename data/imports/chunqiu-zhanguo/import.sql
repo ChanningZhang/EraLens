@@ -1671,9 +1671,9 @@ INSERT INTO dynasties (
   start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
 ) VALUES (
   'qin', '秦', '嬴', '赵', ARRAY['嬴秦','秦国'], 'cn', 'east_asia',
-  -770, 1, -207, 12,
-  -9228, -2461, 'year', 'ochre', -2640, NULL,
-  '前770年秦襄公护周平王东迁列为诸侯；前221年嬴政称帝统一；前207年子婴降，秦亡。'
+  -778, 1, -207, 12,
+  -9324, -2461, 'year', 'ochre', -2640, NULL,
+  '前778年秦襄公即位；前770年护周平王东迁列为诸侯；前221年嬴政称帝统一；前207年子婴降，秦亡。'
 )
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,

@@ -16,6 +16,7 @@ import {
   writeImportPackage,
   successionPairs,
 } from "../lib/sqlHelpers.mjs";
+import { ymDay } from "../lib/reignDateHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -159,8 +160,9 @@ const events = [
     id: "mingzheng-taiwan-founded",
     name: "明郑开台",
     kind: "politics",
-    dateNote: "永历十五年/1662年，郑成功驱逐荷军后设承天府",
-    at: ym(1662),
+    precision: "day",
+    dateNote: "永历十五年十二月十三日，1662年2月1日，荷军签约投降后据台",
+    at: ymDay(1662, 2, 1),
     dynastyIds: ["mingzheng", "ming-south"],
     participantIds: ["zheng-chenggong"],
     summary: "郑成功收复台湾，建承天府，明郑政权以台湾为复明基地。",
@@ -169,9 +171,9 @@ const events = [
     id: "qing-conquer-taiwan",
     name: "清军攻克台湾",
     kind: "battle",
-    dateNote: "康熙二十二年十月，1683年10月8日郑克塽降清",
-    at: ym(1683, 10),
-    precision: "month",
+    precision: "day",
+    dateNote: "康熙二十二年十月初八，1683年10月8日郑克塽降清",
+    at: ymDay(1683, 10, 8),
     dynastyIds: ["mingzheng", "qing"],
     participantIds: ["zheng-keshuang"],
     summary: "施琅率清军于澎湖海战取胜，郑克塽降清，明郑灭亡。",

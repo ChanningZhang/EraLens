@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { EventSchema } from "./schema";
 import {
+  eventKindLabel,
   eventSpanAbs,
   formatEventTime,
   shouldShowEventAtLod,
@@ -10,6 +11,16 @@ import { absMonth } from "./time";
 function parseEvent(input: Record<string, unknown>) {
   return EventSchema.parse(input);
 }
+
+describe("eventKindLabel", () => {
+  it("maps stored kinds to Chinese labels", () => {
+    expect(eventKindLabel("battle")).toBe("战事");
+    expect(eventKindLabel("politics")).toBe("政治");
+    expect(eventKindLabel("culture")).toBe("文化");
+    expect(eventKindLabel("disaster")).toBe("灾害");
+    expect(eventKindLabel("other")).toBe("其他");
+  });
+});
 
 describe("eventSpanAbs", () => {
   it("uses atAbs for point events", () => {

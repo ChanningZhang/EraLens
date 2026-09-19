@@ -9,6 +9,7 @@ import { fileURLToPath } from "node:url";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 import { dynastyGroupSql, dynastySql, normalizeYearPrecisionAt, personSql, reignSql } from "../lib/sqlHelpers.mjs";
+import { ymDay } from "../lib/reignDateHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -827,10 +828,12 @@ function eventRange(partial) {
 
 const events = [
   eventPoint({
-    id: "jin-founded",
+    id: "jin-west-founded",
     name: "西晋建立",
     kind: "politics",
-    at: ym(266, 2),
+    precision: "day",
+    dateNote: "泰始元年二月癸亥，266年2月4日，曹奂禅让，司马炎称帝",
+    at: ymDay(266, 2, 4),
     dynastyIds: ["jin-west"],
     participantIds: ["sima-yan"],
     summary: "司马炎代魏受禅，改国号晋，定都洛阳。",

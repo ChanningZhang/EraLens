@@ -8,20 +8,32 @@ import { fileURLToPath } from "node:url";
 import { writeImportPackage } from "../lib/sqlHelpers.mjs";
 import {
   fateRelation,
+  loadEventsFromImports,
   loadReignsFromImports,
+  validateEventFateAlignment,
   validateFateCatalog,
 } from "../lib/fateRelationHelpers.mjs";
 import { buildFateCatalog } from "./catalog.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+const importsRoot = path.join(__dirname, "..");
 const catalog = buildFateCatalog();
-const reigns = loadReignsFromImports(path.join(__dirname, ".."));
+const reigns = loadReignsFromImports(importsRoot);
+const events = loadEventsFromImports(importsRoot);
 const validationFailures = validateFateCatalog(catalog, reigns);
 if (validationFailures.length > 0) {
   console.error("[cross-dynasty-fate] fate catalog validation failed:");
   for (const failure of validationFailures) {
     console.error(`  - ${failure.id} (${failure.fromPersonId}): ${failure.reason}`);
+  }
+  process.exit(1);
+}
+const eventAlignmentFailures = validateEventFateAlignment(catalog, events);
+if (eventAlignmentFailures.length > 0) {
+  console.error("[cross-dynasty-fate] event↔fate alignment failed:");
+  for (const failure of eventAlignmentFailures) {
+    console.error(`  - ${failure.id} (${failure.eventId}): ${failure.reason}`);
   }
   process.exit(1);
 }
@@ -111,7 +123,7 @@ writeImportPackage(__dirname, {
     ],
     notes: [
       "仅 person→person，kind∈killed|surrender|abdication|captured。",
-      "at_abs 优先取受害方 documented / 已入库月日迄；年精度事件取 event 年 12 月。",
+      "at_abs 优先取受害方 documented / 已入库月日迄；年精度事件取 event 年 12 月。有月/日史料的事件须同步升 precision，与命运线 at_abs 一致。",
       "同朝 succession 不写入；B 方无 reign 卡者改挂当时在位君主（成汉/南燕/后秦→晋帝，太平天国→同治）。",
       "秦灭六国等边自 chunqiu-zhanguo 迁入本包，避免重复维护。",
       "吐蕃、回鹘、南诏末代无时间轴上的灭国接收方（僧人刺杀 / 黠戛斯 / 大长和未收录），不硬画。",
@@ -119,7 +131,7 @@ writeImportPackage(__dirname, {
       "愍帝 316 年出降时刘曜尚未称帝，改挂汉赵当时在位的刘聪，不把虚线拖到 318。",
       "明英宗土木堡被瓦剌也先所俘，时间轴无瓦剌君主卡，不硬画。唐昭宗为朱温所弑时后梁尚未建（907，距 904 逾 24 个月），不硬画。",
       "孟昶降宋取 documented 在位迄日（乾德三年正月辛卯，965-02），不用卒年六月或年精度 12 月占位。",
-      "秦之后虚线：在位行已有月/日则改挂 documented 迄；靖康之变取 1127-03-20 废二帝，不用徽宗禅位日；幼天王被俘取 1864-10-25 石城，不用天京陷落 7-19。",
+      "秦之后虚线：在位行已有月/日则改挂 documented 迄；靖康之变取 1127-03-20 废二帝，不用徽宗禅位日；幼天王被俘单独事件 hong-tianguifu-captured（1864-10-25），与天京陷落分列。",
       "刘盆子降光武取维基公历 27-03-15；段兴智被俘取在位迄年 1254（城破 1253 次年昆泽），仍年精度。",
       "先降/俘后被杀：怀愍二帝、冉闵、慕容超、秃发傉檀、王衍、李煜等同时保留 capture/surrender 与 killed；前端优先显示 killed。",
       "十六国等农历月用寿星历 sxtwl 换公历：有日（李势三月十七、牧犍九月丙戌、石虎四月廿三）升日；仅月者取望日所在公历月。宝藏王九月＝668-10，耶律淳六月＝1122-07。",

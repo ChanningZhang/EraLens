@@ -11,7 +11,7 @@ import {
 } from "./emperorAppellation";
 import { resolveDynastyColorToken, resolveReignColorToken } from "./dynastyColors";
 import { resolveOrthodoxFromAbs } from "./orthodoxDynasties";
-import { eventSpanAbs, formatEventTime } from "./eventTime";
+import { eventKindLabel, eventSpanAbs, formatEventTime } from "./eventTime";
 import {
   TimelineSliceSchema,
   type Dynasty,
@@ -270,7 +270,7 @@ export function buildEntityDetail(
   return {
     ref,
     title: event.name,
-    subtitle: event.kind,
+    subtitle: eventKindLabel(event.kind),
     facts: [
       {
         label: "时间",

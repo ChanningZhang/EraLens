@@ -10,6 +10,8 @@ const FATE_VICTIM_MAX_LAG_MONTHS = 24;
 const FATE_KILLED_VICTIM_MAX_LAG_MONTHS = 48;
 const REIGN_ROW_RE =
   /VALUES\s*\(\s*'(reign-[^']+)',\s*'([^']+)',\s*'([^']+)'[\s\S]*?,\s*(-?\d+),\s*(-?\d+),\s*(NULL|-?\d+),\s*(-?\d+),\s*(-?\d+),\s*(NULL|-?\d+),\s*(-?\d+),\s*(-?\d+),\s*'([^']+)'/g;
+const EVENT_ROW_RE =
+  /INSERT INTO events \([^)]*\) VALUES \('((?:[^']|'')*)',\s*'(?:[^']|'')*',\s*'(?:[^']|'')*',\s*'(?:[^']|'')*',\s*'([^']*)',\s*(?:NULL|'(?:[^']|'')*'),\s*(-?\d+),\s*(-?\d+),\s*(-?\d+)/g;
 
 /** @type {Map<string, {id:string,end:{year:number,month:number,day?:number},precision:string}>} */
 let importedReignById = new Map();
@@ -159,6 +161,50 @@ export function validateFateCatalog(catalog, reigns) {
   for (const entry of catalog) {
     const result = validateFateCatalogEntry(entry, reigns);
     if (!result.ok) failures.push({ id: entry.id, fromPersonId: entry.fromPersonId, ...result });
+  }
+  return failures;
+}
+
+/** Load event rows from all period import.sql files (for event↔fate alignment). */
+export function loadEventsFromImports(importsRoot = path.join(path.dirname(fileURLToPath(import.meta.url)), "..")) {
+  /** @type {Map<string, {id:string,precision:string,atAbs:number,atYear:number,atMonth:number}>} */
+  const events = new Map();
+  for (const slug of readdirSync(importsRoot)) {
+    const sqlPath = path.join(importsRoot, slug, "import.sql");
+    try {
+      const sql = readFileSync(sqlPath, "utf8");
+      for (const match of sql.matchAll(EVENT_ROW_RE)) {
+        const [, id, precision, atYear, atMonth, atAbs] = match;
+        events.set(id, {
+          id,
+          precision,
+          atYear: Number(atYear),
+          atMonth: Number(atMonth),
+          atAbs: Number(atAbs),
+        });
+      }
+    } catch {
+      // package without import.sql
+    }
+  }
+  return events;
+}
+
+/** Linked fate lines must share at_abs with their event anchor. */
+export function validateEventFateAlignment(catalog, events) {
+  const failures = [];
+  for (const entry of catalog) {
+    if (!entry.eventId) continue;
+    const event = events.get(entry.eventId);
+    if (!event) continue;
+    const at = entry.resolveAt();
+    if (at.abs !== event.atAbs) {
+      failures.push({
+        id: entry.id,
+        eventId: entry.eventId,
+        reason: `event ${entry.eventId} at_abs=${event.atAbs} != fate at_abs=${at.abs}`,
+      });
+    }
   }
   return failures;
 }

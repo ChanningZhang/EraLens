@@ -7,6 +7,21 @@ export type EventSpan = {
   anchorAbs: number;
 };
 
+export function eventKindLabel(kind: Event["kind"]): string {
+  switch (kind) {
+    case "battle":
+      return "战事";
+    case "politics":
+      return "政治";
+    case "culture":
+      return "文化";
+    case "disaster":
+      return "灾害";
+    case "other":
+      return "其他";
+  }
+}
+
 export function eventSpanAbs(event: {
   atAbs?: number;
   startAbs?: number;

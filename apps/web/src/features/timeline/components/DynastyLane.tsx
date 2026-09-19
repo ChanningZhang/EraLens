@@ -84,9 +84,7 @@ export function DynastyLane({
   );
 
   return (
-    <motion.div
-      layout
-      transition={{ duration: 0.16, ease: [0.2, 0.8, 0.2, 1] }}
+    <div
       className={styles.lane}
       style={{
         top,
@@ -172,6 +170,6 @@ export function DynastyLane({
           })}
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

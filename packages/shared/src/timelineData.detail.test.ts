@@ -117,3 +117,33 @@ describe("buildEntityDetail reign", () => {
     );
   });
 });
+
+describe("buildEntityDetail event", () => {
+  it("shows a Chinese kind label instead of the stored enum", () => {
+    const store = {
+      dynasties: [],
+      reigns: [],
+      persons: [],
+      events: [
+        {
+          id: "muye",
+          name: "牧野之战",
+          kind: "battle" as const,
+          timeMode: "point" as const,
+          precision: "year" as const,
+          at: { year: -1046, month: 12 },
+          atAbs: -12540,
+          dynastyIds: [],
+          participantIds: [],
+          summary: "周武王会师牧野克商，商周分界。",
+        },
+      ],
+      relations: [],
+    };
+
+    const detail = buildEntityDetail(store, { type: "event", id: "muye" });
+
+    expect(detail.title).toBe("牧野之战");
+    expect(detail.subtitle).toBe("战事");
+  });
+});

@@ -8,6 +8,7 @@ import { fileURLToPath } from "node:url";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
 import { reignSql as formatReignSql } from "../lib/reignSql.mjs";
+import { ymDay } from "../lib/reignDateHelpers.mjs";
 import { dynastySql, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -172,7 +173,9 @@ const events = [
     id: "mongol-fall-xixia",
     name: "蒙古灭西夏",
     kind: "politics",
-    at: ym(1227),
+    precision: "day",
+    dateNote: "宝义二年六月二十日，1227年7月2日，西夏末帝李睍降蒙古",
+    at: ymDay(1227, 7, 2),
     dynastyIds: ["mongol-empire"],
     participantIds: ["temujin"],
     summary: "蒙古军攻灭西夏，成吉思汗于征途中病逝。",

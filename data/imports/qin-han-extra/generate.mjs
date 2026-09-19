@@ -14,6 +14,7 @@ import {
   ym,
   successionPairs,
 } from "../lib/sqlHelpers.mjs";
+import { ymDay } from "../lib/reignDateHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -101,7 +102,9 @@ const events = [
     id: "chimei-capture-changan",
     name: "赤眉入长安",
     kind: "battle",
-    at: ym(25),
+    precision: "day",
+    dateNote: "建武元年九月庚辰，25年10月4日，更始帝刘玄被杀",
+    at: ymDay(25, 10, 4),
     dynastyIds: ["chimei"],
     participantIds: ["fan-chong", "liu-panzi"],
     summary: "赤眉军攻入长安，杀更始帝刘玄，立刘盆子为帝，更始政权终结。",

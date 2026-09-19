@@ -646,7 +646,7 @@ VALUES ('reign-sima-dewen', '元熙', 419, 1, 420, 12, 5028, 5051, 0);
 
 -- events
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('jin-founded', '西晋建立', 'politics', 'point', 'year', NULL, 266, 2, 3193, NULL, NULL, NULL, NULL, NULL, NULL, '司马炎代魏受禅，改国号晋，定都洛阳。')
+VALUES ('jin-west-founded', '西晋建立', 'politics', 'point', 'day', '泰始元年二月癸亥，266年2月4日，曹奂禅让，司马炎称帝', 266, 2, 3193, NULL, NULL, NULL, NULL, NULL, NULL, '司马炎代魏受禅，改国号晋，定都洛阳。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
   date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,
@@ -791,7 +791,7 @@ ON CONFLICT (id) DO UPDATE SET
   summary = EXCLUDED.summary;
 
 -- event_dynasties
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('jin-founded', 'jin-west') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('jin-west-founded', 'jin-west') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('jin-unify-wu', 'jin-west') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('eight-princes', 'jin-west') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('yongjia-disaster', 'jin-west') ON CONFLICT DO NOTHING;
@@ -821,7 +821,7 @@ INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('jin-east-end', 'jin-
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('sixteen-kingdoms-end', 'liang-north') ON CONFLICT DO NOTHING;
 
 -- event_participants
-INSERT INTO event_participants (event_id, person_id) VALUES ('jin-founded', 'sima-yan') ON CONFLICT DO NOTHING;
+INSERT INTO event_participants (event_id, person_id) VALUES ('jin-west-founded', 'sima-yan') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('jin-unify-wu', 'sima-yan') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('eight-princes', 'sima-zhong') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('yongjia-disaster', 'sima-chi') ON CONFLICT DO NOTHING;

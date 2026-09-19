@@ -7,7 +7,7 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
-import { drDay, dynastyReignDay } from "../lib/reignDateHelpers.mjs";
+import { drDay, dynastyReignDay, ymDay } from "../lib/reignDateHelpers.mjs";
 import { dynastySql, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -169,7 +169,7 @@ const dynasties = [
     end: ym(1234),
     precision: "year",
     colorToken: nextColor(),
-    note: "女真完颜氏，1115年太祖建国；1234年蒙古灭金。id 为 jin-nvzhen，避免与两晋/后晋 jin-* 冲突。",
+    note: "女真完颜氏，1115年太祖完颜阿骨打于会宁称帝，国号大金；1125年灭辽，1127年靖康之变灭北宋；1234年蒙古与南宋联军破蔡州，金亡。",
   },
 ];
 
@@ -246,8 +246,9 @@ const events = [
     id: "jin-destroy-liao",
     name: "金灭辽",
     kind: "battle",
-    dateNote: "1125年俘天祚帝",
-    at: ym(1125),
+    precision: "day",
+    dateNote: "保大五年三月二十六日，1125年3月26日，金俘辽天祚帝",
+    at: ymDay(1125, 3, 26),
     dynastyIds: ["jin-nvzhen", "liao"],
     participantIds: ["wanyan-sheng", "yelu-yanxi"],
     summary: "金军俘辽天祚帝耶律延禧，辽朝灭亡。",
@@ -294,8 +295,9 @@ const events = [
     id: "song-jin-alliance-mongol",
     name: "联蒙灭金",
     kind: "politics",
-    dateNote: "1234年蔡州陷落",
-    at: ym(1234),
+    precision: "day",
+    dateNote: "天兴二年二月九日，1234年2月9日，蔡州陷落，金哀宗殉国",
+    at: ymDay(1234, 2, 9),
     dynastyIds: ["song-south", "jin-nvzhen"],
     participantIds: ["zhao-yun", "wanyan-shouxu"],
     summary: "宋蒙结盟攻金，金哀宗殉国，金朝灭亡；宋随即遭蒙古南侵。",
@@ -309,16 +311,6 @@ const events = [
     dynastyIds: ["song-north", "liao"],
     participantIds: ["zhao-kuangyi"],
     summary: "宋太宗遣潘美、杨业等北伐，岐沟关、陈家谷惨败，杨业殉国，宋辽转为守势。",
-  }),
-  eventPoint({
-    id: "haoshuichuan-battle",
-    name: "好水川之战",
-    kind: "battle",
-    dateNote: "1044年，西夏大败宋军",
-    at: ym(1044),
-    dynastyIds: ["song-north"],
-    participantIds: ["zhao-zhen"],
-    summary: "西夏李元昊于好水川伏击宋军，韩琦、范仲淹主持的西线战事受挫。",
   }),
 ];
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Static timeline lane-group configuration (西周/东周, 蒙古/元, 吴/明/南明).
+ * Static timeline lane-group configuration (蒙古/元, 吴/明/南明).
  */
 import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
@@ -25,20 +25,18 @@ const laneGroups = [
     laneOrderStartAbs: absMonth(1364),
     laneOrderEndAbs: absMonth(1662),
   },
-  {
-    id: "zhou-west-east",
-    primaryDynastyId: "zhou-west",
-    phaseDynastyIds: ["zhou-west", "zhou-east"],
-    laneOrderStartAbs: absMonth(-1046),
-    laneOrderEndAbs: absMonth(-256, 12),
-  },
 ];
+
+const retiredLaneGroupIds = ["zhou-west-east"];
 
 const sql = [
   "-- EraLens period import: dynasty-lane-groups",
   "BEGIN;",
   "",
   "-- dynasty_lane_groups",
+  ...retiredLaneGroupIds.map(
+    (id) => `DELETE FROM dynasty_lane_groups WHERE id = '${id}';`,
+  ),
   ...laneGroups.map(dynastyLaneGroupSql),
   "",
   "COMMIT;",

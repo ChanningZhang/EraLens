@@ -367,7 +367,7 @@ export function buildFateCatalog() {
       fromPersonId: "cao-huan",
       toPersonId: "sima-yan",
       kind: "abdication",
-      eventId: "jin-founded",
+      eventId: "jin-west-founded",
       resolveAt: () => atFromReignEnd("reign-cao-huan", 266),
     },
     {
@@ -1144,8 +1144,7 @@ export function buildFateCatalog() {
       fromPersonId: "hong-tianguifu",
       toPersonId: "zaichun",
       kind: "captured",
-      eventId: "fall-of-tianjing",
-      // 被俘在天京陷落之后：维基 1864-10-25 江西石城；不用幼天王在位迄日 7-19 或年精度 12 月。
+      eventId: "hong-tianguifu-captured",
       resolveAt: () => ymDay(1864, 10, 25),
       precision: "day",
     },

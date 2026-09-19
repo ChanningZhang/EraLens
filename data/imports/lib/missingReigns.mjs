@@ -8,7 +8,6 @@ export const SYSTEM_MISSING_RULER_PERSON_ID = "system-missing-ruler";
 const LANE_GROUP_MEMBERS = {
   "mongol-yuan": ["mongol-empire", "yuan"],
   "wu-ming": ["wu-zhu", "ming", "ming-south"],
-  "zhou-west-east": ["zhou-west", "zhou-east"],
 };
 
 const MEMBER_TO_LANE = new Map(

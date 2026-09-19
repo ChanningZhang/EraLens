@@ -230,11 +230,4 @@ export const STANDARD_DYNASTY_LANE_GROUPS: readonly DynastyLaneGroup[] = [
     laneOrderStartAbs: absMonth(1364),
     laneOrderEndAbs: absMonth(1662),
   },
-  {
-    id: "zhou-west-east",
-    primaryDynastyId: "zhou-west",
-    phaseDynastyIds: ["zhou-west", "zhou-east"],
-    laneOrderStartAbs: absMonth(-1046),
-    laneOrderEndAbs: absMonth(-256, 12),
-  },
 ];

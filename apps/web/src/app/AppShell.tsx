@@ -48,12 +48,24 @@ export function AppShell() {
   useEffect(() => {
     const el = stageRef.current;
     if (!el) return;
-    const observer = new ResizeObserver((entries) => {
-      const width = entries[0]?.contentRect.width ?? 1200;
+    const applyWidth = (width: number) => {
+      if (width < 320) return;
       viewportStore.setWidthPx(width);
+    };
+    const observer = new ResizeObserver((entries) => {
+      if (document.hidden) return;
+      applyWidth(entries[0]?.contentRect.width ?? 0);
     });
     observer.observe(el);
-    return () => observer.disconnect();
+    const onVisible = () => {
+      if (document.hidden) return;
+      applyWidth(el.getBoundingClientRect().width);
+    };
+    document.addEventListener("visibilitychange", onVisible);
+    return () => {
+      observer.disconnect();
+      document.removeEventListener("visibilitychange", onVisible);
+    };
   }, []);
 
   useEffect(() => {

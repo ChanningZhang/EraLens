@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 import { resolveOrthodoxEndAbs, resolveOrthodoxFromAbs } from "../lib/orthodoxDynasties.mjs";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
-import { drDay } from "../lib/reignDateHelpers.mjs";
+import { drDay, ymDay } from "../lib/reignDateHelpers.mjs";
 import { reignSql } from "../lib/reignSql.mjs";
 import { normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 
@@ -351,11 +351,31 @@ const events = [
   eventPoint({ id: "han-liner-death", name: "韩林儿溺亡", kind: "politics", at: ym(1366, 12), dynastyIds: ["song-han", "wu-zhu"], participantIds: ["han-liner", "zhu-yuanzhang"], summary: "朱元璋遣廖永忠迎韩林儿至应天，渡江时船沉，小明王遇难，韩宋亡。" }),
   eventPoint({ id: "zhang-shicheng-defeated", name: "张士诚败亡", kind: "politics", at: ym(1367, 9), dynastyIds: ["zhou-zhang", "wu-zhu"], participantIds: ["zhang-shicheng", "zhu-yuanzhang"], summary: "徐达克平江，张士诚被俘，大周亡。" }),
   eventPoint({ id: "xia-ming-founded", name: "明夏建立", kind: "politics", at: ym(1362), dynastyIds: ["xia-ming"], participantIds: ["ming-yuzhen"], summary: "明玉珍于重庆称帝，国号夏，据有两川。" }),
-  eventPoint({ id: "xia-ming-fall", name: "明夏灭亡", kind: "politics", at: ym(1371), dynastyIds: ["xia-ming", "ming"], participantIds: ["ming-sheng"], summary: "明军灭夏，明升降明，明夏终结。" }),
+  eventPoint({
+    id: "xia-ming-fall",
+    name: "明夏灭亡",
+    kind: "politics",
+    precision: "day",
+    dateNote: "洪武四年六月二十一日，1371年6月21日，明升降明",
+    at: ymDay(1371, 6, 21),
+    dynastyIds: ["xia-ming", "ming"],
+    participantIds: ["ming-sheng"],
+    summary: "明军灭夏，明升降明，明夏终结。",
+  }),
   eventPoint({ id: "ming-founded", name: "明朝建立", kind: "politics", at: ym(1368), dynastyIds: ["ming", "wu-zhu", "yuan"], participantIds: ["zhu-yuanzhang", "togon-temur"], summary: "朱元璋称帝，定都南京，国号大明，元顺帝北逃漠北。" }),
   eventPoint({ id: "ming-capture-dadu", name: "明军攻占大都", kind: "battle", precision: "month", dateNote: "洪武元年八月，明军克大都", at: ym(1368, 8), dynastyIds: ["ming", "yuan"], participantIds: ["zhu-yuanzhang", "togon-temur"], summary: "明军北伐攻克大都，元顺帝北逃，元朝失去中原。" }),
   eventPoint({ id: "korqin-sea-battle", name: "捕鱼儿海之战", kind: "battle", at: ym(1388), dynastyIds: ["yuan", "ming"], participantIds: ["togus-temur"], summary: "明将蓝玉率军深入漠北，大破北元，俘北元宗室。" }),
-  eventPoint({ id: "yuan-end", name: "元朝灭亡", kind: "politics", at: ym(1388), dynastyIds: ["yuan"], participantIds: ["togus-temur"], summary: "捕鱼儿海之战后，也速迭儿杀天元帝脱古思帖木儿，元朝国号终结。" }),
+  eventPoint({
+    id: "yuan-end",
+    name: "元朝灭亡",
+    kind: "politics",
+    precision: "day",
+    dateNote: "洪武二十一年十月一日，1388年11月1日，也速迭儿杀天元帝",
+    at: ymDay(1388, 11, 1),
+    dynastyIds: ["yuan"],
+    participantIds: ["togus-temur"],
+    summary: "捕鱼儿海之战后，也速迭儿杀天元帝脱古思帖木儿，元朝国号终结。",
+  }),
   eventRange({ id: "yongle-rule", name: "永乐盛世", kind: "politics", timeMode: "span", start: ym(1403), end: ym(1424), dynastyIds: ["ming"], participantIds: ["zhu-di"], summary: "明成祖迁都北京，派郑和下西洋，国力强盛。" }),
   eventPoint({ id: "jingnan-campaign", name: "靖难之役", kind: "battle", precision: "month", dateNote: "建文四年六月，朱棣攻入南京", at: ym(1402, 7), dynastyIds: ["ming"], participantIds: ["zhu-di", "zhu-yunwen"], summary: "燕王朱棣起兵夺位，攻入南京，建文帝下落成谜，朱棣即位。" }),
   eventRange({ id: "zheng-he-voyages", name: "郑和下西洋", kind: "culture", timeMode: "span", start: ym(1405), end: ym(1433), dynastyIds: ["ming"], participantIds: ["zheng-he", "zhu-di"], summary: "永乐至宣德间七次远航，最远达非洲东岸，宣扬国威。" }),
@@ -418,8 +438,28 @@ const events = [
   eventPoint({ id: "lu-jian-enthroned", name: "鲁王监国", kind: "politics", at: ym(1645), dynastyIds: ["ming-south"], participantIds: ["zhu-yihai"], summary: "弘光亡后，朱以海监国于绍兴，与福州隆武政权并立。" }),
   eventPoint({ id: "shaowu-enthroned", name: "绍武称帝", kind: "politics", at: ym(1646), dynastyIds: ["ming-south"], participantIds: ["zhu-yuyue"], summary: "隆武被俘后，朱聿鐭在广州称帝，与肇庆永历并立。" }),
   eventPoint({ id: "shaowu-fall", name: "绍武败亡", kind: "politics", at: ym(1647), dynastyIds: ["ming-south"], participantIds: ["zhu-yuyue"], summary: "清军破广州，绍武帝死，广州朝廷覆灭。" }),
-  eventPoint({ id: "ming-south-end", name: "南明终结", kind: "politics", at: ym(1662), dynastyIds: ["ming-south"], participantIds: ["zhu-youlang"], summary: "永历帝为吴三桂所害，南明彻底灭亡。" }),
-  eventPoint({ id: "zheng-recover-taiwan", name: "郑成功收复台湾", kind: "battle", at: ym(1662), dynastyIds: ["ming-south"], participantIds: ["zheng-chenggong"], summary: "郑成功驱逐荷兰殖民者，收复台湾。" }),
+  eventPoint({
+    id: "ming-south-end",
+    name: "南明终结",
+    kind: "politics",
+    precision: "day",
+    dateNote: "康熙元年五月初一日，1662年6月1日，永历帝遇害",
+    at: ymDay(1662, 6, 1),
+    dynastyIds: ["ming-south"],
+    participantIds: ["zhu-youlang"],
+    summary: "永历帝为吴三桂所害，南明彻底灭亡。",
+  }),
+  eventPoint({
+    id: "zheng-recover-taiwan",
+    name: "郑成功收复台湾",
+    kind: "battle",
+    precision: "day",
+    dateNote: "永历十五年十二月十三日，1662年2月1日，荷军签约投降",
+    at: ymDay(1662, 2, 1),
+    dynastyIds: ["ming-south"],
+    participantIds: ["zheng-chenggong"],
+    summary: "郑成功驱逐荷兰殖民者，收复台湾。",
+  }),
 ];
 
 // ── relations ────────────────────────────────────────────────────────────────

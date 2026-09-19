@@ -144,6 +144,17 @@ const events = [
     participantIds: ["hong-tianguifu", "li-xiucheng"],
     summary: "湘军攻破天京，幼天王洪天贵福出逃，太平天国政权覆亡。",
   }),
+  eventPoint({
+    id: "hong-tianguifu-captured",
+    name: "幼天王被俘",
+    kind: "politics",
+    precision: "day",
+    dateNote: "同治三年九月二十二日，1864年10月25日，江西石城",
+    at: ymDay(1864, 10, 25),
+    dynastyIds: ["taiping", "qing"],
+    participantIds: ["hong-tianguifu", "zaichun"],
+    summary: "湘军追擒幼天王洪天贵福于江西石城，太平天国余绪终结。",
+  }),
 ];
 
 const supplementalEventDynasties = [
@@ -153,6 +164,8 @@ const supplementalEventDynasties = [
 const supplementalEventParticipants = [
   { eventId: "taiping-rebellion", personId: "hong-xiuquan" },
   { eventId: "fall-of-tianjing", personId: "zeng-guofan" },
+  { eventId: "hong-tianguifu-captured", personId: "hong-tianguifu" },
+  { eventId: "hong-tianguifu-captured", personId: "zaichun" },
 ];
 
 const relations = [];
