@@ -148,7 +148,7 @@ export const FEUDAL_DYNASTY_CLAN = {
     ancestralXing: "妫",
     clanShi: "田",
     nameUsesShi: true,
-    source: "https://zh.wikipedia.org/wiki/田市 — 妫姓田氏",
+    source: "https://zh.wikipedia.org/wiki/田巿 — 妫姓田氏",
   },
   "zhou-guo-west": {
     ancestralXing: "姬",

@@ -3,6 +3,11 @@ import {
   PRE_IMPERIAL_START_YEAR,
   TEMPLE_ERA_START_YEAR,
 } from "./appellationPolicy";
+import {
+  isRocTaiwanLeaderReign,
+  ROC_TAIWAN_LEADER_OFFICE_LABEL,
+  resolveRocReignDetailSubtitle,
+} from "./rocTaiwanLeaderDisplay";
 import type { AppellationKind, Reign } from "./schema";
 
 export {
@@ -53,6 +58,7 @@ export function buildPreQinClanContext(
 
 type ReignAppellationFields = Pick<
   Reign,
+  | "dynastyId"
   | "start"
   | "title"
   | "posthumousName"
@@ -102,6 +108,9 @@ function resolveTempleAppellation(
 export function resolveEmperorAppellation(
   reign: ReignAppellationFields,
 ): EmperorAppellation | null {
+  if (isRocTaiwanLeaderReign(reign)) {
+    return { kind: "regnal", name: ROC_TAIWAN_LEADER_OFFICE_LABEL };
+  }
   if (reign.preferredAppellation?.kind === "regnal") {
     return reign.preferredAppellation;
   }
@@ -274,6 +283,9 @@ export function resolveReignDetailSubtitle(
   personName?: string | null,
   clan?: PreQinClanContext | null,
 ): string {
+  if (isRocTaiwanLeaderReign(reign)) {
+    return resolveRocReignDetailSubtitle();
+  }
   const dynastyPart = dynastyName ?? "";
   const primary = resolveReignPrimaryLabel(reign, personName, clan);
   if (usesPreQinCardLayout(reign)) {

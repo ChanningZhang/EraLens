@@ -83,6 +83,19 @@
   min-width: 0;
 }
 
+.compactStack {
+  padding: 0 6px;
+}
+
+.compactStack .name {
+  font-size: 14px;
+  line-height: 1.05;
+}
+
+.compactStack .meta {
+  font-size: 11px;
+}
+
 /*
  * Parallel claimants share one treatment: a dashed outline. 史料缺 uses a
  * thinner, emptier dashed gap card, so these keep a tinted fill.

@@ -23,8 +23,99 @@ export type StackedReign = {
   stackIndex: number;
 };
 
+export type StackedCardUnit = {
+  unitTop: number;
+  unitHeight: number;
+};
+
 export function stackRowHeightForReign(reign: Pick<Reign, "claimTrack">): number {
   return isParallelClaim(reign) ? PARALLEL_STACK_ROW_HEIGHT : STACK_ROW_HEIGHT;
+}
+
+/** Vertical band consumed by one claim track inside a lane bucket. */
+function trackBarHeight(trackReigns: readonly Reign[]): number {
+  if (trackReigns.some(isParallelClaim)) {
+    return PARALLEL_STACK_ROW_HEIGHT;
+  }
+  const sorted = sortReigns(trackReigns);
+  let index = 0;
+  while (index < sorted.length) {
+    let end = index + 1;
+    while (end < sorted.length && sorted[end]!.startAbs === sorted[index]!.startAbs) {
+      end += 1;
+    }
+    if (sameSpanGroup(sorted.slice(index, end))) {
+      return STACK_ROW_HEIGHT;
+    }
+    index = end;
+  }
+  return STACK_ROW_HEIGHT;
+}
+
+function rowOffsetToUnitTop(
+  reign: Reign,
+  reigns: Reign[],
+  laneGroups: readonly DynastyLaneGroup[],
+): number {
+  const placement = resolveTrackPlacements(reigns, laneGroups).placements.get(reign.id);
+  const targetOffset = placement?.rowOffset ?? 0;
+  if (targetOffset === 0) return 0;
+
+  const bucket = reignsInLayoutBucket(reign, reigns, laneGroups);
+  let top = 0;
+  let consumedRows = 0;
+  for (const track of groupByClaimTrack(bucket)) {
+    const span = trackSubRowCount(track.reigns);
+    if (consumedRows >= targetOffset) break;
+    if (consumedRows + span <= targetOffset) {
+      top += trackBarHeight(track.reigns);
+      consumedRows += span;
+    }
+  }
+  return top;
+}
+
+/**
+ * Per-card vertical placement. Same-start, same-end peers that truly overlap
+ * (宋庆龄/董必武共同代行) split one {@link STACK_ROW_HEIGHT} band evenly
+ * instead of doubling lane height. Sequential rulers in the same year (哀王→思王)
+ * have different end/start abs and stay on one row at full height.
+ */
+export function resolveStackedCardUnit(
+  reign: Reign,
+  reigns: Reign[],
+  laneGroups: readonly DynastyLaneGroup[] = [],
+): StackedCardUnit {
+  const { placements } = resolveTrackPlacements(reigns, laneGroups);
+  const placement = placements.get(reign.id);
+  const trackPeers = placement?.peers ?? trackPeersOf(reign, reigns, laneGroups);
+  const trackTop = rowOffsetToUnitTop(reign, reigns, laneGroups);
+
+  const group = sameStartGroup(reign, trackPeers);
+  if (sameSpanGroup(group) && !isParallelClaim(reign)) {
+    const indexInGroup = group.findIndex((item) => item.id === reign.id);
+    const unitHeight = STACK_ROW_HEIGHT / group.length;
+    return { unitTop: trackTop + indexInGroup * unitHeight, unitHeight };
+  }
+
+  if (isParallelClaim(reign)) {
+    return { unitTop: trackTop, unitHeight: PARALLEL_STACK_ROW_HEIGHT };
+  }
+
+  return { unitTop: trackTop, unitHeight: STACK_ROW_HEIGHT };
+}
+
+export function dynastyBarHeightForReigns(
+  reigns: Reign[],
+  laneGroups: readonly DynastyLaneGroup[] = [],
+): number {
+  if (reigns.length === 0) return STACK_ROW_HEIGHT;
+  let maxBottom = STACK_ROW_HEIGHT;
+  for (const reign of reigns) {
+    const { unitTop, unitHeight } = resolveStackedCardUnit(reign, reigns, laneGroups);
+    maxBottom = Math.max(maxBottom, unitTop + unitHeight);
+  }
+  return maxBottom;
 }
 
 export function stackRowHeights(
@@ -58,8 +149,16 @@ export function dynastyBarHeight(rowHeights: readonly number[]): number {
   return rowHeights.reduce((sum, height) => sum + height, 0);
 }
 
-export function dynastyLaneHeight(rowHeights: readonly number[]): number {
-  return LANE_PADDING_Y + dynastyBarHeight(rowHeights);
+export function dynastyLaneHeight(
+  rowHeights: readonly number[],
+  reigns?: Reign[],
+  laneGroups: readonly DynastyLaneGroup[] = [],
+): number {
+  const barHeight =
+    reigns != null
+      ? dynastyBarHeightForReigns(reigns, laneGroups)
+      : dynastyBarHeight(rowHeights);
+  return LANE_PADDING_Y + barHeight;
 }
 
 export function partitionReignRecords(reigns: Reign[]): {
@@ -87,9 +186,9 @@ function sameSpanGroup(group: Reign[]): boolean {
 }
 
 /**
- * Sub-rows needed inside one claim track. Same-start, same-end rulers (哀王 /
- * 思王) cannot be split by calendar month, so they stack; everything else
- * sequences on a single sub-row.
+ * Sub-rows needed inside one claim track. Same-start, same-end rulers that
+ * truly overlap (副主席共同代行) stack; sequential same-year reigns with
+ * different abs bounds stay on one sub-row.
  */
 function trackSubRowCount(trackReigns: readonly Reign[]): number {
   const sorted = sortReigns(trackReigns);

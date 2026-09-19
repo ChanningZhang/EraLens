@@ -50,7 +50,7 @@ const persons = [
   { id: "han-xin", name: "韩信", birth: ym(-231), death: ym(-196), roles: ["军事家"], bio: "汉初大将，破赵燕齐楚，垓下围项羽，后遭诛。", links: wiki("韩信") },
   { id: "zhang-liang", name: "张良", birth: ym(-250), death: ym(-186), roles: ["政治家", "军事家"], bio: "汉初谋臣，鸿门宴护刘邦，功成身退。", links: wiki("张良") },
   { id: "liu-ying", name: "刘盈", birth: ym(-211), death: ym(-188), roles: ["皇帝"], bio: "汉惠帝，高祖嫡子，在位推行与民休息。", links: wiki("刘盈") },
-  { id: "liu-gong", name: "刘恭", roles: ["皇帝"], bio: "史称前少帝，惠帝子，为吕后所废杀，汉朝未正式承认。", links: wiki("刘恭") },
+  { id: "liu-gong", name: "刘？", roles: ["皇帝"], bio: "史称前少帝，惠帝子；史、汉未载其名，为吕后所废杀，汉朝未正式承认。", links: wiki("西汉前少帝") },
   { id: "liu-hong-shao", name: "刘弘", roles: ["皇帝"], bio: "史称后少帝，吕氏所立，文帝即位后被废，汉朝未正式承认。", links: wiki("刘弘") },
   { id: "liu-heng", name: "刘恒", birth: ym(-203), death: ym(-157), roles: ["皇帝"], bio: "汉文帝，铲除诸吕后即位，与景帝共创文景之治。", links: wiki("汉文帝") },
   { id: "liu-qi", name: "刘启", birth: ym(-188), death: ym(-141), roles: ["皇帝"], bio: "汉景帝，平定七国之乱，延续轻徭薄赋。", links: wiki("汉景帝") },

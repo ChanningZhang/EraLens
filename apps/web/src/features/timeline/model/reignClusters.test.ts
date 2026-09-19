@@ -3,6 +3,7 @@ import type { Reign } from "@eralens/shared";
 import { absMonth } from "@eralens/shared";
 import {
   assignReignStacks,
+  dynastyBarHeightForReigns,
   dynastyLaneHeight,
   LANE_PADDING_Y,
   nextLaterStartAbs,
@@ -10,6 +11,7 @@ import {
   partitionReignRecords,
   reignCardSpan,
   resolveReignVisualSpan,
+  resolveStackedCardUnit,
   STACK_ROW_HEIGHT,
   stackRowOffset,
 } from "./reignClusters";
@@ -184,22 +186,48 @@ describe("assignReignStacks", () => {
     expect(resolveReignVisualSpan(luJian, all).endExclusive).toBe(luJian.endAbs + 1);
   });
 
-  it("stacks 哀王 and 思王 who share a year but have no calendar months", () => {
-    const { items, rowCount, rowHeights } = assignReignStacks([
-      reign("jie", 0, 335),
-      reign("quji", 336, 347),
-      reign("shu", 336, 347),
-      reign("wei", 348, 400),
-    ]);
+  it("halves card height only for truly concurrent same-span reigns", () => {
+    const song = reign("song-qingling", 336, 347);
+    const dong = reign("dong-biwu", 336, 347);
+    const all = [reign("liu", 300, 335), song, dong, reign("li", 348, 400)];
+
+    const { items, rowCount } = assignReignStacks(all);
     expect(rowCount).toBe(2);
     expect(items.map((item) => [item.reign.id, item.stackIndex])).toEqual([
-      ["jie", 0],
-      ["quji", 0],
-      ["shu", 1],
-      ["wei", 0],
+      ["liu", 0],
+      ["dong-biwu", 0],
+      ["song-qingling", 1],
+      ["li", 0],
     ]);
-    expect(rowHeights).toEqual([STACK_ROW_HEIGHT, STACK_ROW_HEIGHT]);
-    expect(dynastyLaneHeight(rowHeights)).toBe(LANE_PADDING_Y + STACK_ROW_HEIGHT * 2);
+    expect(resolveStackedCardUnit(dong, all)).toEqual({
+      unitTop: 0,
+      unitHeight: STACK_ROW_HEIGHT / 2,
+    });
+    expect(resolveStackedCardUnit(song, all)).toEqual({
+      unitTop: STACK_ROW_HEIGHT / 2,
+      unitHeight: STACK_ROW_HEIGHT / 2,
+    });
+    expect(dynastyBarHeightForReigns(all)).toBe(STACK_ROW_HEIGHT);
+  });
+
+  it("sequences 哀王 and 思王 within the same year on one row", () => {
+    const quji = reign("quji", 336, 338);
+    const shu = reign("shu", 339, 347);
+    const all = [reign("jie", 0, 335), quji, shu, reign("wei", 348, 400)];
+
+    const { items, rowCount } = assignReignStacks(all);
+    expect(rowCount).toBe(1);
+    expect(items.every((item) => item.stackIndex === 0)).toBe(true);
+    expect(resolveStackedCardUnit(quji, all)).toEqual({
+      unitTop: 0,
+      unitHeight: STACK_ROW_HEIGHT,
+    });
+    expect(resolveStackedCardUnit(shu, all)).toEqual({
+      unitTop: 0,
+      unitHeight: STACK_ROW_HEIGHT,
+    });
+    expect(resolveReignVisualSpan(quji, all).endExclusive).toBe(shu.startAbs);
+    expect(resolveReignVisualSpan(shu, all).startAbs).toBe(shu.startAbs);
   });
 });
 

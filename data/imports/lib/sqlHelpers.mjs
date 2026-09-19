@@ -140,6 +140,7 @@ export function eventRange(partial) {
   const at = partial.at ? normalizeYearPrecisionAt(partial.at, precision) : undefined;
   return {
     kind: "other",
+    timeMode: "span",
     precision: "year",
     dynastyIds: [],
     participantIds: [],

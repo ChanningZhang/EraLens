@@ -13,6 +13,7 @@ import {
   resolveReignCardGivenName,
   resolveReignCardLabel,
   resolveReignCardMeta,
+  resolveRocReignRegionLabel,
   type Person,
 } from "@eralens/shared";
 import { useQuery } from "@tanstack/react-query";
@@ -29,8 +30,8 @@ import {
 import {
   assignReignStacks,
   resolveReignVisualSpan,
+  resolveStackedCardUnit,
   STACK_ROW_HEIGHT,
-  stackRowOffset,
 } from "../model/reignClusters";
 import { selectionStore } from "../state/selectionStore";
 import { HoverTooltip } from "./HoverTooltip";
@@ -68,7 +69,9 @@ export function ReignCard({
     reigns,
     laneGroups,
   );
-  const { items, rowCount, rowHeights } = assignReignStacks(reigns, laneGroups);
+  const { items, rowCount } = assignReignStacks(reigns, laneGroups);
+  const { unitTop, unitHeight } = resolveStackedCardUnit(reign, reigns, laneGroups);
+  const compactStack = unitHeight < STACK_ROW_HEIGHT;
   const overlapsLowerRow = items.some((item) => {
     if (item.stackIndex <= stackIndex) return false;
     const span = resolveReignVisualSpan(item.reign, reigns, laneGroups);
@@ -121,6 +124,7 @@ export function ReignCard({
     metaGlyphCount,
   );
   const givenName = resolveReignCardGivenName(reign, personName, clan);
+  const regionLabel = resolveRocReignRegionLabel(reign, dynasty.name);
   const tooltipName =
     givenName && givenName !== label
       ? givenName
@@ -162,6 +166,7 @@ export function ReignCard({
       orthodox ? "orthodoxGold" : "",
       selected ? styles.selected : "",
       parallel ? styles.parallel : "",
+      compactStack ? styles.compactStack : "",
     ]
       .filter(Boolean)
       .join(" ");
@@ -173,6 +178,7 @@ export function ReignCard({
     orthodox,
     selected,
     parallel,
+    compactStack,
   ]);
 
   return (
@@ -181,8 +187,8 @@ export function ReignCard({
       style={{
         left,
         width: barLayout.unitWidthPx,
-        top: stackRowOffset(rowHeights, stackIndex),
-        height: rowHeights[stackIndex] ?? STACK_ROW_HEIGHT,
+        top: unitTop,
+        height: unitHeight,
       }}
     >
       <div
@@ -218,8 +224,8 @@ export function ReignCard({
               }}
               aria-label={
                 claimTooltip
-                  ? `${label} ${dynasty.name} ${claimTooltip}`
-                  : `${label} ${dynasty.name}`
+                  ? `${label} ${regionLabel} ${claimTooltip}`
+                  : `${label} ${regionLabel}`
               }
               {...handlers}
             >

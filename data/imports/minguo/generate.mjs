@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Generate EraLens import SQL for Republic of China (1912–1949).
+ * Generate EraLens import SQL for Republic of China heads of state.
  * Warlords are persons only, not separate dynasties.
  */
 import { writeFileSync, mkdirSync } from "node:fs";
@@ -39,26 +39,28 @@ function wiki(title) {
   return [{ label: "维基百科", url: `https://zh.wikipedia.org/wiki/${title}` }];
 }
 
-function person(id, name, roles, bio, wikiTitle, birth = null, death = null) {
-  return { id, name, roles, bio, links: wiki(wikiTitle), birth, death };
+function person(id, name, roles, bio, wikiTitle, birth = null, death = null, altNames = []) {
+  return { id, name, roles, bio, links: wiki(wikiTitle), birth, death, altNames };
 }
 
 function reign({ id, dynastyId, personId, title, posthumousName, templeName, preferred, start, end, precision = "year", eraNames = [] }) {
   return { id, dynastyId, personId, title, posthumousName, templeName, preferredAppellation: preferred, eraNames, start, end, startAbs: start.abs, endAbs: end.abs, precision };
 }
 
-function dr(dynastyId, personId, title, sy, ey, sm = 1, em = 12, precision = "year") {
+function rocOffice({ id, personId, title, start, end }) {
+  const [sy, sm, sd] = start;
+  const [ey, em, ed] = end;
   return reign({
-    id: `reign-${personId}-${dynastyId}`,
-    dynastyId,
+    id: id ?? `reign-${personId}-roc`,
+    dynastyId: "roc",
     personId,
     title,
     posthumousName: null,
     templeName: null,
     preferred: { kind: "regnal", name: title },
-    start: ym(sy, sm),
-    end: ym(ey, em),
-    precision,
+    start: sd != null ? { ...ym(sy, sm), day: sd } : ym(sy, sm),
+    end: ed != null ? { ...ym(ey, em), day: ed } : ym(ey, em),
+    precision: sd != null && ed != null ? "day" : "month",
   });
 }
 
@@ -73,8 +75,16 @@ const warlords = [
   person("cao-kun", "曹锟", ["军事家", "政治家"], "直系军阀，贿选大总统。", "曹锟"),
   person("zhang-zuolin", "张作霖", ["军事家", "政治家"], "奉系军阀首领，据东北，皇姑屯事件中遇刺。", "张作霖"),
   person("lin-sen", "林森", ["政治家"], "国民政府主席，长期虚位元首。", "林森"),
-  person("jiang-jieshi", "蒋介石", ["军事家", "政治家"], "黄埔军校校长，北伐统一，后任总统，1949年退台。", "蒋介石"),
-  person("li-zongren", "李宗仁", ["军事家", "政治家"], "桂系首领，曾任代总统。", "李宗仁"),
+  person("jiang-jieshi", "蒋介石", ["军事家", "政治家"], "黄埔军校校长，北伐统一，曾任国民政府主席；1949年迁台后继续主政，1975年卒于台北。", "蒋介石", ym(1887, 10), ym(1975, 4), ["蒋中正"]),
+  person("li-zongren", "李宗仁", ["军事家", "政治家"], "桂系首领，蒋中正引退后代理元首，1950年蒋复行视事后解除代理。", "李宗仁"),
+  person("tan-yankai", "谭延闿", ["政治家"], "国民党元老，宁汉合流后任南京国民政府主席，后任行政院院长。", "谭延闿", ym(1880, 1), ym(1930, 9), ["谭延闓"]),
+  person("yan-jiagan", "严家淦", ["政治家"], "蒋中正逝世后继任台湾地区领导人。", "严家淦", ym(1905, 10), ym(1993, 12)),
+  person("jiang-jingguo", "蒋经国", ["政治家"], "蒋中正长子，继任领导人，任内推动十大建设。", "蒋经国", ym(1910, 4), ym(1988, 1)),
+  person("li-denghui", "李登辉", ["政治家"], "蒋经国逝世后继任，后为首次全民直选当选的领导人。", "李登辉", ym(1923, 1), ym(2020, 7)),
+  person("chen-shuibian", "陈水扁", ["政治家"], "2000年当选，行宪后首次政党轮替。", "陈水扁", ym(1950, 10)),
+  person("ma-yingjiu", "马英九", ["政治家"], "2008年当选领导人，行宪后第二次政党轮替。", "马英九", ym(1950, 7)),
+  person("cai-yingwen", "蔡英文", ["政治家"], "2016年当选，首位女性领导人。", "蔡英文", ym(1956, 8)),
+  person("lai-qingde", "赖清德", ["政治家"], "2024年就任台湾地区领导人。", "赖清德", ym(1959, 10)),
   // 军阀（仅人物）
   person("duan-qirui", "段祺瑞", ["军事家", "政治家"], "皖系军阀首领，曾任国务总理、临时执政。", "段祺瑞"),
   person("wu-peifu", "吴佩孚", ["军事家"], "直系军阀，「玉帅」，北洋名将。", "吴佩孚"),
@@ -106,42 +116,42 @@ const dynasties = [
     scope: "cn",
     region: "east_asia",
     start: ym(1912, 1),
-    end: ym(1949, 12),
+    end: ym(2026, 9),
     precision: "month",
-    note: "1912年孙中山任临时大总统，定都南京；1949年国民政府迁台，大陆时期结束。",
+    note: "1912年孙中山任临时大总统肇建；1949年中央迁台后续统。正统金色截于1949年9月。元首收录截至2026年9月。",
   },
 ];
 
 // ── reigns（国家元首）──────────────────────────────────────────────────────
 
 const rocReigns = [
-  dr("roc", "sun-yat-sen", "临时大总统", 1912, 1912, 1, 4, "month"),
-  dr("roc", "yuan-shikai", "大总统", 1912, 1916, 3, 6),
-  dr("roc", "li-yuanhong", "大总统", 1916, 1917),
-  dr("roc", "feng-guozhang", "大总统", 1917, 1918),
-  dr("roc", "xu-shichang", "大总统", 1918, 1922),
-  dr("roc", "cao-kun", "大总统", 1923, 1924),
-  dr("roc", "duan-qirui", "临时执政", 1924, 1926, 11, 4),
-  dr("roc", "zhang-zuolin", "陆海军大元帅", 1927, 1928, 6, 6),
-  dr("roc", "lin-sen", "国民政府主席", 1932, 1943),
-  reign({
-    id: "reign-jiang-jieshi-chairman-roc",
-    dynastyId: "roc",
-    personId: "jiang-jieshi",
-    title: "国民政府主席",
-    posthumousName: null,
-    templeName: null,
-    preferred: { kind: "regnal", name: "国民政府主席" },
-    start: ym(1943),
-    end: ym(1948, 5),
-    precision: "year",
-  }),
-  dr("roc", "jiang-jieshi", "总统", 1948, 1949, 5, 12, "month"),
-  dr("roc", "li-zongren", "代总统", 1949, 1949, 1, 12, "month"),
+  rocOffice({ personId: "sun-yat-sen", title: "临时大总统", start: [1912, 1, 1], end: [1912, 3, 10] }),
+  rocOffice({ personId: "yuan-shikai", title: "大总统", start: [1912, 3, 10], end: [1916, 6, 6] }),
+  rocOffice({ personId: "li-yuanhong", title: "大总统", start: [1916, 6, 7], end: [1917, 7, 6] }),
+  rocOffice({ personId: "feng-guozhang", title: "代理大总统", start: [1917, 7, 6], end: [1918, 10, 10] }),
+  rocOffice({ personId: "xu-shichang", title: "大总统", start: [1918, 10, 10], end: [1922, 6, 2] }),
+  rocOffice({ id: "reign-li-yuanhong-roc-2", personId: "li-yuanhong", title: "大总统", start: [1922, 6, 11], end: [1923, 6, 13] }),
+  rocOffice({ personId: "cao-kun", title: "大总统", start: [1923, 10, 10], end: [1924, 11, 2] }),
+  rocOffice({ personId: "duan-qirui", title: "临时执政", start: [1924, 11, 24], end: [1926, 4, 20] }),
+  rocOffice({ personId: "zhang-zuolin", title: "陆海军大元帅", start: [1927, 6, 18], end: [1928, 6, 3] }),
+  rocOffice({ personId: "tan-yankai", title: "国民政府主席", start: [1928, 6, 4], end: [1928, 10, 10] }),
+  rocOffice({ id: "reign-jiang-jieshi-chairman-1-roc", personId: "jiang-jieshi", title: "国民政府主席", start: [1928, 10, 10], end: [1931, 12, 15] }),
+  rocOffice({ personId: "lin-sen", title: "国民政府主席", start: [1931, 12, 15], end: [1943, 8, 1] }),
+  rocOffice({ id: "reign-jiang-jieshi-chairman-roc", personId: "jiang-jieshi", title: "国民政府主席", start: [1943, 8, 1], end: [1948, 5, 20] }),
+  rocOffice({ personId: "jiang-jieshi", title: "总统", start: [1948, 5, 20], end: [1949, 1, 21] }),
+  rocOffice({ personId: "li-zongren", title: "代总统", start: [1949, 1, 21], end: [1950, 3, 1] }),
+  rocOffice({ id: "reign-jiang-jieshi-roc-2", personId: "jiang-jieshi", title: "总统", start: [1950, 3, 1], end: [1975, 4, 5] }),
+  rocOffice({ personId: "yan-jiagan", title: "总统", start: [1975, 4, 6], end: [1978, 5, 20] }),
+  rocOffice({ personId: "jiang-jingguo", title: "总统", start: [1978, 5, 20], end: [1988, 1, 13] }),
+  rocOffice({ personId: "li-denghui", title: "总统", start: [1988, 1, 13], end: [2000, 5, 20] }),
+  rocOffice({ personId: "chen-shuibian", title: "总统", start: [2000, 5, 20], end: [2008, 5, 20] }),
+  rocOffice({ personId: "ma-yingjiu", title: "总统", start: [2008, 5, 20], end: [2016, 5, 20] }),
+  rocOffice({ personId: "cai-yingwen", title: "总统", start: [2016, 5, 20], end: [2024, 5, 20] }),
+  rocOffice({ personId: "lai-qingde", title: "总统", start: [2024, 5, 20], end: [2026, 9] }),
 ];
 
-// 孙中山护法时期不另建 reign，以事件「护法运动」表示
-// 蒋介石 1928–1948 主导国民政府，1932–1943 林森为名义主席
+// 孙中山护法军政府、广州/武汉国民政府（1925–1928 汪兆铭等）及汪精卫伪政权不建 reign
+// 国务院摄行（周自齐、高凌霨、黄郛、胡惟德、颜惠庆、杜锡珪、顾维钧）不建 reign，空档留白
 
 const reignGroups = [rocReigns];
 const reigns = applyDocumentedDatesToReigns(rocReigns);
@@ -324,7 +334,12 @@ const extraEventDynasties = [
 
 function successionPairs(list) {
   const pairs = [];
-  for (let i = 0; i < list.length - 1; i++) pairs.push([list[i].personId, list[i + 1].personId]);
+  for (let i = 0; i < list.length - 1; i++) {
+    const fromId = list[i].personId;
+    const toId = list[i + 1].personId;
+    if (fromId === toId) continue;
+    pairs.push([fromId, toId]);
+  }
   return pairs;
 }
 
@@ -370,12 +385,13 @@ const { persons: importPersons, reigns: importReigns } = finalizeImportReigns("m
 
 const sql = [
   "-- EraLens period import: minguo",
-  "-- Window: 1912-01 .. 1949-12",
+  "-- Window: 1912-01 .. 2026-09",
   "-- Warlords as persons only; single roc dynasty row",
   "BEGIN;",
   "",
   "-- remove stale auto-generated 史料缺 (元首空缺期应留白)",
   sqlDeleteSystemMissingReigns(["roc"], sqlStr),
+  "DELETE FROM relations WHERE id = 'rel-jiang-jieshi-jiang-jieshi-succession';",
   "",
   "-- persons",
   ...importPersons.map(personSql),
@@ -407,11 +423,11 @@ writeFileSync(path.join(__dirname, "import.sql"), sql);
 
 const manifest = {
   slug: "minguo",
-  title: "中华民国（大陆时期）",
-  window: { startYear: 1912, startMonth: 1, endYear: 1949, endMonth: 12 },
+  title: "中华民国",
+  window: { startYear: 1912, startMonth: 1, endYear: 2026, endMonth: 9 },
   scope: "cn",
   depth: "standard",
-  generatedAt: "2026-09-12",
+  generatedAt: "2026-09-19",
   counts: { persons: persons.length, dynasties: dynasties.length, reigns: reigns.length, events: events.length, relations: relations.length },
   sources: [
     { label: "中华民国", url: "https://zh.wikipedia.org/wiki/中华民国" },
@@ -422,12 +438,13 @@ const manifest = {
     { label: "抗日战争", url: "https://zh.wikipedia.org/wiki/抗日战争" },
   ],
   notes: [
-    "覆盖中华民国大陆时期（1912–1949），单行 roc 王朝；各路军阀仅作 persons，不建独立王朝。",
-    "国家元首以 reign 卡片收录（临时大总统、大总统、国民政府主席、总统等）。",
-    "孙中山（sun-yat-sen）复用已有 id；蒋介石 1928–1948 实际主政以事件关联，1948 年起 reign。",
-    "段祺瑞 1924–1926 临时执政建 reign；汪精卫伪政权等未建 reign；军阀割据以 span 事件「军阀割据」概括。",
-    "徐世昌下台至曹锟当选、曹锟下台至张作霖任大元帅、张作霖死后至林森任主席等元首空缺期留白，不标史料缺。",
-    "1949 迁台后之台湾时期不在本包内；中华人民共和国不在本包内。",
+    "覆盖中华民国（1912–2026-09），单行 roc 王朝；各路军阀仅作 persons，不建独立王朝。中华人民共和国不在本包内。",
+    "国家元首按维基百科「中华民国国家元首列表」收录（临时大总统、大总统、国民政府主席、总统）。连任不拆卡。",
+    "孙中山（sun-yat-sen）复用已有 id。蒋介石分四段：国民政府主席 1928–1931、1943–1948，总统 1948–1949、1950–1975。",
+    "不收录：护法军政府、1925–1928 广州/武汉国民政府（汪兆铭等，维基详表仅列 1928 年后主席）、汪精卫伪政权。",
+    "国务院摄行（周自齐、高凌霨、黄郛、胡惟德、颜惠庆、杜锡珪、顾维钧）不建 reign，空档留白，不标史料缺。",
+    "谭延闿维基自 1928-02-07 任南京国民政府主席，与张作霖安国军政府并立至 6 月；主线自张作霖 1928-06-03 离京后接谭，避免叠卡。",
+    "正统金色截于 1949 年 9 月（十月一日中华人民共和国成立后迁台续统不上金）。1950 年起界面称「台湾地区 · 领导人」，人物概述不用「总统」。赖清德任期收录截至 2026-09。",
   ],
 };
 writeFileSync(path.join(__dirname, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);

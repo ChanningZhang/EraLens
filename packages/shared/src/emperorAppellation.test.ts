@@ -775,6 +775,47 @@ describe("resolveReignDetailSubtitle", () => {
       "辽 · 圣宗",
     );
   });
+
+  it("uses 台湾地区 · 领导人 for ROC leaders from 1950 onward", () => {
+    const chen = source({
+      dynastyId: "roc",
+      start: { year: 2000, month: 5 },
+      end: { year: 2008, month: 5 },
+      title: "总统",
+      preferredAppellation: { kind: "regnal", name: "总统" },
+      eraNames: [],
+    });
+    const jiang = source({
+      dynastyId: "roc",
+      start: { year: 1950, month: 3 },
+      end: { year: 1975, month: 4 },
+      title: "总统",
+      preferredAppellation: { kind: "regnal", name: "总统" },
+      eraNames: [],
+    });
+    const li = source({
+      dynastyId: "roc",
+      start: { year: 1949, month: 1 },
+      end: { year: 1950, month: 3 },
+      title: "代总统",
+      preferredAppellation: { kind: "regnal", name: "代总统" },
+      eraNames: [],
+    });
+
+    expect(resolveReignDetailSubtitle(chen, "中华民国", "陈水扁")).toBe(
+      "台湾地区 · 领导人",
+    );
+    expect(resolveReignDetailSubtitle(jiang, "中华民国", "蒋介石")).toBe(
+      "台湾地区 · 领导人",
+    );
+    expect(resolveReignDetailSubtitle(li, "中华民国", "李宗仁")).toBe(
+      "中华民国 · 代总统",
+    );
+    expect(resolveEmperorAppellation(chen)).toEqual({
+      kind: "regnal",
+      name: "领导人",
+    });
+  });
 });
 
 describe("resolveReignDetailFacts", () => {

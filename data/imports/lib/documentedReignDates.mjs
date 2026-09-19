@@ -227,19 +227,45 @@ export const DOCUMENTED_REIGN_DATES = {
   "reign-li-dewang-xixia": { start: [1223, 12, 17], end: [1226, 9, 17] },
   "reign-li-xian-xixia": { start: [1226, 9, 17], end: [1227, 7, 2] },
 
-  // ── 民国元首 ─────────────────────────────────────────────────────────────
-  "reign-sun-yat-sen-roc": { start: [1912, 1, 1], end: [1912, 2, 13], precision: "day" },
+  // ── 民国元首（中华民国国家元首列表，国务院摄行不建 reign）────────────────
+  "reign-sun-yat-sen-roc": { start: [1912, 1, 1], end: [1912, 3, 10] },
   "reign-yuan-shikai-roc": { start: [1912, 3, 10], end: [1916, 6, 6] },
-  "reign-li-yuanhong-roc": { start: [1916, 6, 7], end: [1917, 7, 1] },
-  "reign-feng-guozhang-roc": { start: [1917, 8, 1], end: [1918, 10, 10] },
+  "reign-li-yuanhong-roc": { start: [1916, 6, 7], end: [1917, 7, 6] },
+  "reign-feng-guozhang-roc": { start: [1917, 7, 6], end: [1918, 10, 10] },
   "reign-xu-shichang-roc": { start: [1918, 10, 10], end: [1922, 6, 2] },
+  "reign-li-yuanhong-roc-2": { start: [1922, 6, 11], end: [1923, 6, 13] },
   "reign-cao-kun-roc": { start: [1923, 10, 10], end: [1924, 11, 2] },
   "reign-duan-qirui-roc": { start: [1924, 11, 24], end: [1926, 4, 20] },
-  "reign-zhang-zuolin-roc": { start: [1927, 6, 18], end: [1928, 6, 4] },
-  "reign-lin-sen-roc": { start: [1932, 1, 1], end: [1943, 8, 1] },
+  "reign-zhang-zuolin-roc": { start: [1927, 6, 18], end: [1928, 6, 3] },
+  // 谭延闿维基自 1928-02-07，与张作霖并立至 6 月；主线自张作霖离京后接续。
+  "reign-tan-yankai-roc": { start: [1928, 6, 4], end: [1928, 10, 10] },
+  "reign-jiang-jieshi-chairman-1-roc": { start: [1928, 10, 10], end: [1931, 12, 15] },
+  "reign-lin-sen-roc": { start: [1931, 12, 15], end: [1943, 8, 1] },
   "reign-jiang-jieshi-chairman-roc": { start: [1943, 8, 1], end: [1948, 5, 20] },
   "reign-jiang-jieshi-roc": { start: [1948, 5, 20], end: [1949, 1, 21] },
-  "reign-li-zongren-roc": { start: [1949, 1, 21], end: [1949, 11, 20] },
+  "reign-li-zongren-roc": { start: [1949, 1, 21], end: [1950, 3, 1] },
+  "reign-jiang-jieshi-roc-2": { start: [1950, 3, 1], end: [1975, 4, 5] },
+  "reign-yan-jiagan-roc": { start: [1975, 4, 6], end: [1978, 5, 20] },
+  "reign-jiang-jingguo-roc": { start: [1978, 5, 20], end: [1988, 1, 13] },
+  "reign-li-denghui-roc": { start: [1988, 1, 13], end: [2000, 5, 20] },
+  "reign-chen-shuibian-roc": { start: [2000, 5, 20], end: [2008, 5, 20] },
+  "reign-ma-yingjiu-roc": { start: [2008, 5, 20], end: [2016, 5, 20] },
+  "reign-cai-yingwen-roc": { start: [2016, 5, 20], end: [2024, 5, 20] },
+  "reign-lai-qingde-roc": { start: [2024, 5, 20], end: [2026, 9], precision: "month" },
+
+  // ── 中华人民共和国国家元首（主席 / 副主席代行 / 代主席 / 人大常委会）──
+  "reign-mao-zedong-prc": { start: [1949, 10, 1], end: [1954, 9, 27] },
+  "reign-mao-zedong-prc-2": { start: [1954, 9, 27], end: [1959, 4, 27] },
+  "reign-liu-shaoqi-prc": { start: [1959, 4, 27], end: [1968, 10, 31] },
+  "reign-song-qingling-prc": { start: [1968, 10, 31], end: [1972, 2, 24] },
+  "reign-dong-biwu-prc-vice": { start: [1968, 10, 31], end: [1972, 2, 24] },
+  "reign-dong-biwu-prc": { start: [1972, 2, 24], end: [1975, 1, 17] },
+  "reign-npc-standing-committee-prc": { start: [1975, 1, 17], end: [1983, 6, 18] },
+  "reign-li-xiannian-prc": { start: [1983, 6, 18], end: [1988, 4, 8] },
+  "reign-yang-shangkun-prc": { start: [1988, 4, 8], end: [1993, 3, 27] },
+  "reign-jiang-zemin-prc": { start: [1993, 3, 27], end: [2003, 3, 15] },
+  "reign-hu-jintao-prc": { start: [2003, 3, 15], end: [2013, 3, 14] },
+  "reign-xi-jinping-prc": { start: [2013, 3, 14], end: [2026, 9], precision: "month" },
 };
 
 function lookupDoc(reign) {

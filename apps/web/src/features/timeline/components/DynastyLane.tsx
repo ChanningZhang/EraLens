@@ -22,7 +22,7 @@ import { laneLabelAnchorAbs } from "../model/coordinates";
 import type { PlacedDynasty } from "../model/laneLayout";
 import {
   assignReignStacks,
-  dynastyBarHeight,
+  dynastyBarHeightForReigns,
   dynastyLaneHeight,
   STACK_ROW_HEIGHT,
 } from "../model/reignClusters";
@@ -83,8 +83,8 @@ export function DynastyLane({
   // chip overlays orthodox gold when the center guide sits in the window.
   const laneColor = resolveDynastyColorValue(activePhaseDynasty, laneColorToken);
   const { items, rowCount, rowHeights } = assignReignStacks(reigns, laneGroups);
-  const height = dynastyLaneHeight(rowHeights);
-  const barHeight = dynastyBarHeight(rowHeights);
+  const height = dynastyLaneHeight(rowHeights, reigns, laneGroups);
+  const barHeight = dynastyBarHeightForReigns(reigns, laneGroups);
   return (
     <div
       className={styles.lane}

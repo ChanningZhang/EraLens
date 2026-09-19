@@ -207,16 +207,53 @@ describe("orthodoxDynasties", () => {
     expect(isOrthodoxReign(sui, yangYou)).toBe(false);
   });
 
-  it("marks roc as orthodox from dynasty start", () => {
+  it("marks prc as orthodox from founding in 1949-10", () => {
+    const prc = {
+      id: "prc",
+      startAbs: absMonth(1949, 10),
+      endAbs: absMonth(2026, 9),
+      orthodoxFromAbs: absMonth(1949, 10),
+    };
+    expect(resolveOrthodoxFromAbs(prc)).toBe(prc.startAbs);
+    expect(resolveOrthodoxSpan(prc)).toEqual({
+      startAbs: prc.startAbs,
+      endAbs: prc.endAbs,
+    });
+    expect(isOrthodoxAt(prc, absMonth(1949, 9))).toBe(false);
+    expect(isOrthodoxAt(prc, absMonth(1949, 10))).toBe(true);
+    expect(
+      isOrthodoxReign(prc, {
+        startAbs: absMonth(1949, 10),
+        endAbs: absMonth(1976, 9),
+      }),
+    ).toBe(true);
+    expect(
+      isOrthodoxReign(prc, {
+        startAbs: absMonth(2012, 11),
+        endAbs: absMonth(2026, 9),
+      }),
+    ).toBe(true);
+  });
+
+  it("marks roc as orthodox from dynasty start until 1949-09 even when the lane continues after retreat to Taiwan", () => {
     const roc = {
       id: "roc",
       startAbs: absMonth(1912, 1),
-      endAbs: absMonth(1949, 12),
+      endAbs: absMonth(2026, 9),
       orthodoxFromAbs: absMonth(1912, 1),
+      orthodoxEndAbs: ORTHODOX_END_ABS.roc,
     };
     expect(resolveOrthodoxFromAbs(roc)).toBe(roc.startAbs);
+    expect(resolveOrthodoxSpan(roc)).toEqual({
+      startAbs: roc.startAbs,
+      endAbs: ORTHODOX_END_ABS.roc,
+    });
     expect(isOrthodoxAt(roc, absMonth(1912, 1))).toBe(true);
     expect(isOrthodoxAt(roc, absMonth(1911))).toBe(false);
+    expect(isOrthodoxAt(roc, absMonth(1949, 9))).toBe(true);
+    expect(isOrthodoxAt(roc, absMonth(1949, 10))).toBe(false);
+    expect(isOrthodoxReign(roc, { startAbs: absMonth(1948, 5), endAbs: absMonth(1949, 1) })).toBe(true);
+    expect(isOrthodoxReign(roc, { startAbs: absMonth(1950, 3), endAbs: absMonth(1975, 4) })).toBe(false);
   });
 
   it("marks song-south as orthodox until gongdi surrender; duanzong and dibing stay on main line without gold", () => {

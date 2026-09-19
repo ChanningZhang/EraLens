@@ -159,7 +159,7 @@ const RULER_META = {
   "ju-r6": { name: "己庚舆", wiki: "莒共公" },
   "ju-r7": { name: "己狂", wiki: "莒郊公" },
   "zhao-jia-dai": { name: "赵嘉", wiki: "代王嘉" },
-  "tian-shi": { name: "田市", wiki: "田市" },
+  "tian-shi": { name: "田巿", wiki: "田巿" },
   "zhou-guo-jie": { name: "姬揭", wiki: "西周国", bio: "周考王之弟，封于王城，续周公之职，为西周国始祖。" },
   "zhou-guo-zao": { name: "姬灶", wiki: "西周国" },
   "zhou-guo-chao": {
@@ -180,6 +180,12 @@ const RULER_META = {
 };
 
 const curatedMissingReigns = [
+  missingReign({
+    dynastyId: "zhou-guo-west",
+    startYear: -365,
+    endYear: -316,
+    id: "reign-missing-zhou-guo-west--365",
+  }),
   missingReign({
     dynastyId: "zhou-guo-east",
     startYear: -360,
@@ -288,7 +294,7 @@ const dynasties = [
     start: ym(-221),
     end: ym(-206, 12),
     precision: "year",
-    note: "秦灭齐后即墨一带齐宗室残余；田市等据胶东，至楚汉之际并入分封格局。",
+    note: "秦灭齐后即墨一带齐宗室残余；田巿等据胶东，至楚汉之际并入分封格局。",
   },
   {
     id: "zhou-guo-west",
@@ -450,7 +456,7 @@ const manifest = {
     "薛、滕、杞、莒、代用国号，不带「国」。西周国/东周国例外：史记、战国策原文称西周、东周（君称西周君、东周君）；后世为与王朝分期西周/东周消歧，维基百科与杨宽《战国史料编年辑证》等通行作西周国、东周国。",
     "年精度顺序继位：死年归旧王。西周惠公改从前366年起（威公卒年归威公），与东周惠公前367年并立不混为同一王室继位。",
     "杞国列王按维基「杞国」君主表（在位年份已是逾年切分）；隐公仅前506年七月，与悼公死年同桶。滕悼公迄前514、顷公起前513，与维基在位年数一致。",
-    "西周武公、东周昭文君等中间世系在位年失考，不强行拉满；东周惠公之后至秦灭前用系统史料缺占位。",
+    "西周武公、东周昭文君等中间世系在位年失考，不强行拉满；西周惠公与文公之间、东周惠公之后至秦灭前用系统史料缺占位。",
   ],
 };
 

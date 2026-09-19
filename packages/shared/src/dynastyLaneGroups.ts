@@ -1,4 +1,5 @@
 import { isOrthodoxAt, type OrthodoxDynasty } from "./orthodoxDynasties";
+import { resolveRocLaneRegionLabel } from "./rocTaiwanLeaderDisplay";
 import type { Dynasty, DynastyLaneGroup, Reign } from "./schema";
 import { absMonth } from "./time";
 
@@ -74,9 +75,12 @@ export function resolveFrozenLaneLabel(
   laneGroups: readonly DynastyLaneGroup[],
 ): string {
   const group = getDynastyLaneGroup(dynasty.id, laneGroups);
-  if (!group) return dynasty.name;
-  const phaseId = resolveActivePhaseDynastyId(group, dynastiesById, labelAnchorAbs);
-  return dynastiesById.get(phaseId)?.name ?? dynasty.name;
+  const base = group
+    ? (dynastiesById.get(
+        resolveActivePhaseDynastyId(group, dynastiesById, labelAnchorAbs),
+      )?.name ?? dynasty.name)
+    : dynasty.name;
+  return resolveRocLaneRegionLabel(dynasty.id, base, labelAnchorAbs);
 }
 
 type FrozenLaneOrthodoxDynasty = OrthodoxDynasty & Pick<Dynasty, "id" | "startAbs">;

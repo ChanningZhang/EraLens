@@ -135,7 +135,7 @@ export function TimelineStage() {
       const records = collectLaneReigns(dynasty.id, reignsByDynasty, laneGroups);
       const { rulers: reigns, missing: missingReigns } = partitionReignRecords(records);
       const { rowCount, rowHeights } = assignReignStacks(reigns, laneGroups);
-      const height = dynastyLaneHeight(rowHeights);
+      const height = dynastyLaneHeight(rowHeights, reigns, laneGroups);
       const chipHeight = TIMELINE_RAIL_CHIP_HEIGHT_PX;
       const chipTop =
         rowCount > 1

@@ -68,7 +68,7 @@ INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, 
 VALUES ('liu-yuan', '刘渊', ARRAY[]::text[], NULL, NULL, NULL, NULL, NULL, NULL, ARRAY['皇帝'], '汉赵（前赵）开国皇帝，匈奴贵族，举兵反晋。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/刘渊"}]'::jsonb)
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
-VALUES ('liu-he', '刘和', ARRAY[]::text[], NULL, NULL, NULL, NULL, NULL, NULL, ARRAY['皇帝'], '汉赵皇帝，刘渊嫡子，在位仅七日被刘聪所杀。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/刘和"}]'::jsonb)
+VALUES ('liu-he-zhao', '刘和', ARRAY[]::text[], NULL, NULL, NULL, NULL, NULL, NULL, ARRAY['皇帝'], '汉赵皇帝，刘渊嫡子，在位仅七日被刘聪所杀。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/刘和"}]'::jsonb)
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links;
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links)
 VALUES ('liu-cong', '刘聪', ARRAY[]::text[], NULL, NULL, NULL, NULL, NULL, NULL, ARRAY['皇帝'], '汉赵昭武皇帝，灭西晋、俘怀愍二帝。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/刘聪"}]'::jsonb)
@@ -395,7 +395,7 @@ INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_na
 VALUES ('reign-liu-yuan', 'han-zhao', 'liu-yuan', '汉赵光文皇帝', '光文皇帝', '高祖', NULL, 304, 1, NULL, 310, 7, NULL, 3648, 3726, 'month', NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence;
 INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence)
-VALUES ('reign-liu-he', 'han-zhao', 'liu-he', '汉赵皇帝', NULL, NULL, NULL, -74, 7, 18, -74, 8, 14, -870, -869, 'day', NULL, NULL)
+VALUES ('reign-liu-he-zhao', 'han-zhao', 'liu-he-zhao', '汉赵皇帝', NULL, NULL, NULL, 310, 7, NULL, 310, 7, NULL, 3726, 3726, 'month', NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, preferred_appellation = EXCLUDED.preferred_appellation, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence;
 INSERT INTO reigns (id, dynasty_id, person_id, title, posthumous_name, temple_name, preferred_appellation, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence)
 VALUES ('reign-liu-cong', 'han-zhao', 'liu-cong', '汉赵昭武皇帝', '昭武皇帝', NULL, NULL, 310, 8, NULL, 318, 8, NULL, 3727, 3823, 'month', NULL, NULL)
@@ -906,10 +906,10 @@ INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind)
 VALUES ('rel-li-shou-li-shi-succession', 'person', 'li-shou', 'person', 'li-shi', 'succession')
 ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind)
-VALUES ('rel-liu-yuan-liu-he-succession', 'person', 'liu-yuan', 'person', 'liu-he', 'succession')
+VALUES ('rel-liu-yuan-liu-he-zhao-succession', 'person', 'liu-yuan', 'person', 'liu-he-zhao', 'succession')
 ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind)
-VALUES ('rel-liu-he-liu-cong-succession', 'person', 'liu-he', 'person', 'liu-cong', 'succession')
+VALUES ('rel-liu-he-zhao-liu-cong-succession', 'person', 'liu-he-zhao', 'person', 'liu-cong', 'succession')
 ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind)
 VALUES ('rel-liu-cong-liu-can-succession', 'person', 'liu-cong', 'person', 'liu-can', 'succession')

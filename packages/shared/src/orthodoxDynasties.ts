@@ -17,6 +17,7 @@ export const ORTHODOX_FROM_START = new Set([
   "song-south",
   "ming",
   "roc",
+  "prc",
 ]);
 
 /** 在特定 AbsMonth 之后才成为中国正统。 */
@@ -43,6 +44,8 @@ export const ORTHODOX_END_ABS: Readonly<Record<string, number>> = {
   yuan: absMonth(1368),
   /** 恭帝降元后南宋正统终结；端宗、帝昺续统不计正统。 */
   "song-south": absMonth(1276, 2),
+  /** 1949 年 10 月中华人民共和国成立后中原正统不再计民国；迁台后续不上金。 */
+  roc: absMonth(1949, 9),
 };
 
 export type OrthodoxDynasty = {

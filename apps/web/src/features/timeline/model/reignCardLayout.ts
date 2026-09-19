@@ -7,11 +7,10 @@ import {
   type Reign,
 } from "@eralens/shared";
 import {
-  assignReignStacks,
   LANE_PADDING_TOP,
   resolveReignVisualSpan,
+  resolveStackedCardUnit,
   STACK_ROW_HEIGHT,
-  stackRowOffset,
 } from "./reignClusters";
 import { projectAbs, type ViewportState } from "./coordinates";
 import { resolveReignBarLayout } from "./lod";
@@ -77,8 +76,8 @@ function layoutRulerReignBar(
   personName?: string,
   clan?: PreQinClanContext | null,
 ): ReignCardLayout | null {
-  const { startAbs, endExclusive, stackIndex } = resolveReignVisualSpan(reign, reigns);
-  const { items, rowHeights } = assignReignStacks(reigns);
+  const { startAbs, endExclusive } = resolveReignVisualSpan(reign, reigns);
+  const { unitTop, unitHeight } = resolveStackedCardUnit(reign, reigns);
   const visual = reignVisualBounds(reign, startAbs, endExclusive);
   const durationMonths = visual.endExclusive - visual.start;
   const visualWidth = Math.max(0, durationMonths * viewport.pxPerMonth);
@@ -100,9 +99,8 @@ function layoutRulerReignBar(
   const unitLeft = barLayout.centerOnAnchor
     ? projectAbs(viewport, anchor) - barLayout.unitWidthPx / 2
     : projectAbs(viewport, visual.start);
-  const rowTop = stackRowOffset(rowHeights, stackIndex);
-  const rowHeight = rowHeights[stackIndex] ?? 48;
-  const barTop = laneTop + LANE_PADDING_TOP + rowTop;
+  const barTop = laneTop + LANE_PADDING_TOP + unitTop;
+  const rowHeight = unitHeight;
 
   let barLeft: number;
   let barRight: number;

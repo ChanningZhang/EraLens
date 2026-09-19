@@ -153,7 +153,7 @@ const persons = [
   person("li-shi", "李势", ["皇帝"], "成汉末帝，桓温伐蜀后降晋。", "李势"),
   // 汉赵
   person("liu-yuan", "刘渊", ["皇帝"], "汉赵（前赵）开国皇帝，匈奴贵族，举兵反晋。", "刘渊"),
-  person("liu-he", "刘和", ["皇帝"], "汉赵皇帝，刘渊嫡子，在位仅七日被刘聪所杀。", "刘和"),
+  person("liu-he-zhao", "刘和", ["皇帝"], "汉赵皇帝，刘渊嫡子，在位仅七日被刘聪所杀。", "刘和"),
   person("liu-cong", "刘聪", ["皇帝"], "汉赵昭武皇帝，灭西晋、俘怀愍二帝。", "刘聪"),
   person("liu-can", "刘粲", ["皇帝"], "汉赵末帝，在位仅一月被杀。", "刘粲"),
   person("liu-yao-jin", "刘曜", ["皇帝"], "汉赵末代君主，改国号赵，后为石勒所俘杀。", "刘曜"),
@@ -640,7 +640,7 @@ const chengHanReigns = [
 // 汉赵同年更替：刘渊七月卒→刘和（七日）→刘聪八月即位；刘聪八月卒→刘粲→刘曜十月即位。
 const hanZhaoReigns = [
   dynastyReignMonth("han-zhao", "liu-yuan", "汉赵光文皇帝", "光文皇帝", "高祖", 304, 1, 310, 7),
-  dynastyReignMonth("han-zhao", "liu-he", "汉赵皇帝", null, null, 310, 7, 310, 7),
+  dynastyReignMonth("han-zhao", "liu-he-zhao", "汉赵皇帝", null, null, 310, 7, 310, 7),
   dynastyReignMonth("han-zhao", "liu-cong", "汉赵昭武皇帝", "昭武皇帝", null, 310, 8, 318, 8),
   dynastyReignMonth("han-zhao", "liu-can", "汉赵末帝", null, null, 318, 8, 318, 9),
   dynastyReignMonth("han-zhao", "liu-yao-jin", "汉赵末帝", null, null, 318, 10, 329, 12),

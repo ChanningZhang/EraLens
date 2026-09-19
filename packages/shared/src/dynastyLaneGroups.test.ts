@@ -305,6 +305,29 @@ describe("dynastyLaneGroups", () => {
     expect(resolveFrozenLaneLabel(ming, byId, absMonth(1660), LANE_GROUPS)).toBe("南明");
   });
 
+  it("shows 台湾地区 on the roc lane from 1950 onward", () => {
+    const roc: Dynasty = {
+      id: "roc",
+      name: "中华民国",
+      altNames: ["民国"],
+      scope: "cn",
+      region: "east_asia",
+      start: { year: 1912, month: 1 },
+      end: { year: 2026, month: 9 },
+      startAbs: absMonth(1912, 1),
+      endAbs: absMonth(2026, 9),
+      precision: "month",
+      colorToken: "ochre",
+    };
+    const byId = new Map([[roc.id, roc]]);
+
+    expect(resolveFrozenLaneLabel(roc, byId, absMonth(1949, 12), [])).toBe(
+      "中华民国",
+    );
+    expect(resolveFrozenLaneLabel(roc, byId, absMonth(1950), [])).toBe("台湾地区");
+    expect(resolveFrozenLaneLabel(roc, byId, absMonth(2024), [])).toBe("台湾地区");
+  });
+
   it("keeps song-north and song-south as separate lanes", () => {
     const collapsed = collapseDynastyLaneGroups([tang, songNorth, songSouth], undefined, LANE_GROUPS);
 

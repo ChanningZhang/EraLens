@@ -4,6 +4,7 @@ export * from "./schema";
 export * from "./eventTime";
 export * from "./personTime";
 export * from "./emperorAppellation";
+export * from "./rocTaiwanLeaderDisplay";
 export * from "./timelineData";
 export * from "./chunks";
 export * from "./dynastyColors";
