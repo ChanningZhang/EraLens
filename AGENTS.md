@@ -1,6 +1,6 @@
 # EraLens 代理规范
 
-面向后续改代码、改数据、排 bug 的约定。产品说明与操作步骤见 [README.md](README.md)；入库细则见 Skill [eralens-period-import](.cursor/skills/eralens-period-import/SKILL.md)。
+面向后续改代码、改数据、排 bug 的约定。产品说明与操作步骤见 [README.md](README.md)；入库细则见 Skill [eralens-period-import](.cursor/skills/eralens-period-import/SKILL.md)；数据修复见 Skill [eralens-data-fix](.cursor/skills/eralens-data-fix/SKILL.md)。
 
 ## 技术规范
 

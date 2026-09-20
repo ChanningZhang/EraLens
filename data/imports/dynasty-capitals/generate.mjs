@@ -10,6 +10,9 @@ import { assertCapitalModernNames } from "../lib/validateCapitalModernName.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+/** Retired capital rows — deleted on import so UPSERT-only packages can drop removed seats. */
+const REMOVED_CAPITAL_IDS = ["cap-roc-taibei-23388"];
+
 const raw = JSON.parse(readFileSync(path.join(__dirname, "capitals-raw.json"), "utf8"));
 const seed = JSON.parse(readFileSync(path.join(__dirname, "coordinates-seed.json"), "utf8"));
 const extraPath = path.join(__dirname, "coordinates.json");
@@ -42,10 +45,15 @@ if (missing.size) {
 assertCapitalModernNames(capitals);
 
 const years = capitals.flatMap((c) => [c.start.year, c.end.year]);
+const removalSql = REMOVED_CAPITAL_IDS.map(
+  (id) => `DELETE FROM dynasty_capitals WHERE id = '${id}';`,
+);
+
 const sql = [
   "-- EraLens period import: dynasty-capitals",
   "BEGIN;",
   "",
+  ...(removalSql.length ? ["-- removed capitals", ...removalSql, ""] : []),
   "-- dynasty_capitals",
   ...capitals.map(dynastyCapitalSql),
   "",

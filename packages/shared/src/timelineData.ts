@@ -1,3 +1,4 @@
+import { firstAppellation } from "./appellationFields";
 import { capitalRoleLabel } from "./dynastyCapitals";
 import { claimDetailFacts } from "./claimTracks";
 import { PRE_IMPERIAL_START_YEAR } from "./appellationPolicy";
@@ -7,6 +8,7 @@ import {
   resolveReignDetailFacts,
   resolveReignDetailSubtitle,
   resolveReignPrimaryLabel,
+  resolveReignRelatedLabel,
   usesPreQinCardLayout,
 } from "./emperorAppellation";
 import {
@@ -174,7 +176,7 @@ function reignRelatedItems(
         .join(" · ");
       return {
         ref: { type: "reign", id: reign.id },
-        label: resolveReignDetailSubtitle(reign, dynasty?.name, person.name, clan),
+        label: resolveReignRelatedLabel(reign, dynasty?.name, person.name, clan),
         subtitle,
         abs: reign.startAbs,
         group: "reign",
@@ -358,17 +360,19 @@ export function buildEntityDetail(
     const preQinDynasty = preQinReign
       ? dynastyMap.get(preQinReign.dynastyId)
       : undefined;
+    const preQinClan = buildPreQinClanContext(person, preQinDynasty);
+    const preQinTitle = preQinReign
+      ? resolveReignPrimaryLabel(preQinReign, person.name, preQinClan)
+      : preQinByBirth
+        ? firstAppellation(person.posthumousNames) ?? person.name
+        : person.name;
     return {
       ref,
-      title: person.name,
+      title: preQinReign || preQinByBirth ? preQinTitle : person.name,
       subtitle: person.roles.join(" · "),
       facts: [
         ...(preQinReign || preQinByBirth
-          ? resolvePreQinNameFacts(
-              person.name,
-              buildPreQinClanContext(person, preQinDynasty),
-              preQinReign,
-            )
+          ? resolvePreQinNameFacts(person.name, preQinClan, preQinReign)
           : []),
         ...(person.posthumousNames.length
           ? [{ label: "谥号", value: person.posthumousNames.join("、") }]

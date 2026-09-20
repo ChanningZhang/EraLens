@@ -10,6 +10,7 @@ import {
   resolveReignDetailFacts as resolveReignDetailFactsBase,
   resolveReignDetailSubtitle as resolveReignDetailSubtitleBase,
   resolveReignPrimaryLabel as resolveReignPrimaryLabelBase,
+  resolveReignRelatedLabel as resolveReignRelatedLabelBase,
   stripAncestralXing,
   usesPreQinCardLayout,
 } from "./emperorAppellation";
@@ -110,6 +111,20 @@ function resolveReignDetailSubtitle(
   personContext?: PersonDisplayContext | null,
 ) {
   return resolveReignDetailSubtitleBase(
+    reign,
+    dynastyName,
+    personName,
+    mergePersonContext(reign, personContext),
+  );
+}
+
+function resolveReignRelatedLabel(
+  reign: Reign,
+  dynastyName?: string | null,
+  personName?: string | null,
+  personContext?: PersonDisplayContext | null,
+) {
+  return resolveReignRelatedLabelBase(
     reign,
     dynastyName,
     personName,
@@ -1029,6 +1044,24 @@ describe("pre-Qin card layout", () => {
     expect(stripAncestralXing("熊侣")).toBe("熊侣");
     expect(stripAncestralXing("田因齐")).toBe("田因齐");
     expect(stripAncestralXing("魏斯")).toBe("魏斯");
+    expect(
+      stripAncestralXing(
+        "妫因齐",
+        buildPreQinClanContext({ ancestralXing: "妫", clanShi: "田" }),
+      ),
+    ).toBe("因齐");
+    expect(
+      stripAncestralXing(
+        "芈侣",
+        buildPreQinClanContext(null, { ancestralXing: "芈", clanShi: "熊" }),
+      ),
+    ).toBe("侣");
+    expect(
+      stripAncestralXing(
+        "姜尚",
+        buildPreQinClanContext({ clanShi: "吕" }, { ancestralXing: "姜", clanShi: "齐" }),
+      ),
+    ).toBe("尚");
   });
 
   it("puts appellation on the primary line and the given name on meta", () => {
@@ -1045,6 +1078,9 @@ describe("pre-Qin card layout", () => {
     });
     expect(resolveReignDetailSubtitle(wu, "西周", "姬发", zhouClan)).toBe(
       "西周 · 发",
+    );
+    expect(resolveReignRelatedLabel(wu, "西周", "姬发", zhouClan)).toBe(
+      "西周 · 武王",
     );
 
     const huan = source({
@@ -1081,10 +1117,14 @@ describe("pre-Qin card layout", () => {
       title: "齐太公",
       posthumousName: "太公",
     });
-    expect(resolveReignCardLabel(tai, "吕尚")).toBe("太公");
-    expect(resolveReignCardMeta(tai, "吕尚")).toEqual({
+    const qiClan = buildPreQinClanContext(
+      { clanShi: "吕" },
+      { ancestralXing: "姜", clanShi: "齐" },
+    );
+    expect(resolveReignCardLabel(tai, "姜尚")).toBe("太公");
+    expect(resolveReignCardMeta(tai, "姜尚", qiClan)).toEqual({
       label: "名",
-      name: "吕尚",
+      name: "尚",
     });
 
     const chuang = source({
@@ -1092,10 +1132,11 @@ describe("pre-Qin card layout", () => {
       title: "楚庄王",
       posthumousName: "庄王",
     });
-    expect(resolveReignCardLabel(chuang, "熊侣")).toBe("庄王");
-    expect(resolveReignCardMeta(chuang, "熊侣")).toEqual({
+    const chuClan = buildPreQinClanContext(null, { ancestralXing: "芈", clanShi: "熊" });
+    expect(resolveReignCardLabel(chuang, "芈侣")).toBe("庄王");
+    expect(resolveReignCardMeta(chuang, "芈侣", chuClan)).toEqual({
       label: "名",
-      name: "熊侣",
+      name: "侣",
     });
 
     const fuchai = source({
@@ -1227,6 +1268,7 @@ describe("pre-Qin card layout", () => {
     ).toEqual([
       { label: "在位", value: "-1046 — -1043" },
       { label: "姓", value: "姬" },
+      { label: "名", value: "发" },
       { label: "谥号", value: "武王" },
     ]);
 
@@ -1246,6 +1288,7 @@ describe("pre-Qin card layout", () => {
       { label: "在位", value: "-685 — -643" },
       { label: "姓", value: "姜" },
       { label: "氏", value: "齐" },
+      { label: "名", value: "小白" },
       { label: "谥号", value: "桓公" },
     ]);
 
@@ -1258,13 +1301,14 @@ describe("pre-Qin card layout", () => {
     expect(
       resolveReignDetailFacts(
         tai,
-        "吕尚",
+        "姜尚",
         buildPreQinClanContext({ clanShi: "吕" }, { ancestralXing: "姜", clanShi: "齐" }),
       ),
     ).toEqual([
       { label: "在位", value: "-1046 — -1046" },
       { label: "姓", value: "姜" },
       { label: "氏", value: "吕" },
+      { label: "名", value: "尚" },
       { label: "谥号", value: "太公" },
     ]);
 
@@ -1277,13 +1321,14 @@ describe("pre-Qin card layout", () => {
     expect(
       resolveReignDetailFacts(
         chuang,
-        "熊侣",
+        "芈侣",
         buildPreQinClanContext(null, { ancestralXing: "芈", clanShi: "熊" }),
       ),
     ).toEqual([
       { label: "在位", value: "-613 — -591" },
       { label: "姓", value: "芈" },
       { label: "氏", value: "熊" },
+      { label: "名", value: "侣" },
       { label: "谥号", value: "庄王" },
     ]);
 
@@ -1321,6 +1366,7 @@ describe("pre-Qin card layout", () => {
       { label: "在位", value: "-307 — -251" },
       { label: "姓", value: "嬴" },
       { label: "氏", value: "赵" },
+      { label: "名", value: "稷" },
       { label: "谥号", value: "昭襄王" },
     ]);
   });

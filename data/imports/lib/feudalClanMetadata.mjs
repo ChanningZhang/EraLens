@@ -4,7 +4,6 @@
  *
  * Each entry must cite a source URL or 史记卷次.
  *
- * `nameUsesShi`: persons.name is prefixed with 氏 (熊侣, 魏斯), not 姓.
  * `skipXingOnGivenName`: keep wiki given names as-is (勾践).
  * `bareGivenNames`: do not prefix 姓 when the wiki cell is already the search name (夫差).
  */
@@ -12,7 +11,6 @@
 /** @typedef {{
  *   ancestralXing?: string,
  *   clanShi?: string,
- *   nameUsesShi?: boolean,
  *   skipXingOnGivenName?: boolean,
  *   bareGivenNames?: string[],
  *   source: string,
@@ -51,7 +49,6 @@ export const FEUDAL_DYNASTY_CLAN = {
   "chu-chunqiu": {
     ancestralXing: "芈",
     clanShi: "熊",
-    nameUsesShi: true,
     source: "https://zh.wikipedia.org/wiki/楚国 — 芈姓熊氏",
   },
   "yan-chunqiu": {
@@ -102,19 +99,16 @@ export const FEUDAL_DYNASTY_CLAN = {
   "han-warring": {
     ancestralXing: "姬",
     clanShi: "韩",
-    nameUsesShi: true,
     source: "https://zh.wikipedia.org/wiki/韩国_(战国) — 姬姓韩氏",
   },
   "zhao-warring": {
     ancestralXing: "嬴",
     clanShi: "赵",
-    nameUsesShi: true,
     source: "https://zh.wikipedia.org/wiki/赵国 — 嬴姓赵氏",
   },
   "wei-warring": {
     ancestralXing: "姬",
     clanShi: "魏",
-    nameUsesShi: true,
     source: "https://zh.wikipedia.org/wiki/魏国 — 姬姓魏氏",
   },
   qin: {
@@ -141,13 +135,11 @@ export const FEUDAL_DYNASTY_CLAN = {
   "dai-warring": {
     ancestralXing: "嬴",
     clanShi: "赵",
-    nameUsesShi: true,
     source: "https://zh.wikipedia.org/wiki/代国_(战国) — 赵嘉，嬴姓赵氏",
   },
   "jiaodong-warring": {
     ancestralXing: "妫",
     clanShi: "田",
-    nameUsesShi: true,
     source: "https://zh.wikipedia.org/wiki/田巿 — 妫姓田氏",
   },
   "zhou-guo-west": {
@@ -181,6 +173,10 @@ export const FEUDAL_PERSON_CLAN_OVERRIDES = {
     clanShi: "寒",
     source: "https://zh.wikipedia.org/wiki/寒浞 — 妘姓寒氏",
   },
+  "weiguo-r42": {
+    clanShi: "子南",
+    source: "https://zh.wikipedia.org/wiki/卫国 — 公子郢字子南，后裔以子南为氏",
+  },
 };
 
 /**
@@ -191,6 +187,13 @@ export const FEUDAL_PERSON_CLAN_RULES = [
   {
     dynastyId: "qi-chunqiu",
     matchNamePrefix: "田",
+    ancestralXing: "妫",
+    clanShi: "田",
+    source: "https://zh.wikipedia.org/wiki/齐国 — 田齐妫姓田氏",
+  },
+  {
+    dynastyId: "qi-chunqiu",
+    matchNamePrefix: "妫",
     ancestralXing: "妫",
     clanShi: "田",
     source: "https://zh.wikipedia.org/wiki/齐国 — 田齐妫姓田氏",
@@ -208,14 +211,49 @@ export const FEUDAL_PERSON_CLAN_RULES = [
     clanShi: "戴",
     source: "https://zh.wikipedia.org/wiki/宋国 — 戴氏出于戴公",
   },
+  {
+    dynastyId: "wei-weiguo",
+    matchNamePrefix: "子南",
+    clanShi: "子南",
+    source: "https://zh.wikipedia.org/wiki/卫国 — 公子郢字子南，后裔以子南为氏",
+  },
 ];
 
-/** Prefix written into persons.name (氏 when `nameUsesShi`, otherwise 姓). */
+/** Prefix written into persons.name — always 姓, never 氏 (氏 goes in clan_shi). */
 export function personNamePrefix(dynastyId) {
   const meta = FEUDAL_DYNASTY_CLAN[dynastyId];
   if (!meta) return undefined;
-  if (meta.nameUsesShi && meta.clanShi) return meta.clanShi;
   return meta.ancestralXing;
+}
+
+/**
+ * Normalize wiki/import names that still carry 氏 or branch prefix into 姓+私名.
+ * @param {string} dynastyId
+ * @param {string} name
+ * @param {string} [surnameOverride] import-time 姓 override (姜齐 vs 田齐)
+ */
+export function normalizeFeudalPersonName(dynastyId, name, surnameOverride = null) {
+  const cleaned = String(name ?? "").trim();
+  if (!cleaned) return cleaned;
+  const meta = FEUDAL_DYNASTY_CLAN[dynastyId];
+  const xing = surnameOverride ?? meta?.ancestralXing;
+  if (!xing) return cleaned;
+
+  for (const rule of FEUDAL_PERSON_CLAN_RULES) {
+    if (rule.dynastyId && rule.dynastyId !== dynastyId) continue;
+    if (!cleaned.startsWith(rule.matchNamePrefix)) continue;
+    const ruleXing = rule.ancestralXing ?? meta?.ancestralXing;
+    if (!ruleXing || cleaned.length <= rule.matchNamePrefix.length) continue;
+    return `${ruleXing}${cleaned.slice(rule.matchNamePrefix.length)}`;
+  }
+
+  const shi = meta?.clanShi;
+  if (shi && cleaned.startsWith(shi) && cleaned.length > shi.length) {
+    return `${xing}${cleaned.slice(shi.length)}`;
+  }
+
+  if (cleaned.startsWith(xing)) return cleaned;
+  return `${xing}${cleaned}`;
 }
 
 /** Resolve 姓/氏 hints for one person (dynasty defaults + per-person overrides + prefix rules). */
@@ -234,17 +272,3 @@ export function clanHintForPerson(dynastyId, personId, personName) {
   };
 }
 
-/** 氏 tokens that already appear as the start of a stored personal name. */
-export function shiPersonalNamePrefixes() {
-  const prefixes = new Set();
-  for (const meta of Object.values(FEUDAL_DYNASTY_CLAN)) {
-    if (meta.nameUsesShi && meta.clanShi) prefixes.add(meta.clanShi);
-  }
-  for (const override of Object.values(FEUDAL_PERSON_CLAN_OVERRIDES)) {
-    if (override.clanShi) prefixes.add(override.clanShi);
-  }
-  for (const rule of FEUDAL_PERSON_CLAN_RULES) {
-    if (rule.clanShi) prefixes.add(rule.clanShi);
-  }
-  return prefixes;
-}

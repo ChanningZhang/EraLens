@@ -11,7 +11,7 @@
   "depth": "standard",
   "generatedAt": "2026-09-20",
   "counts": {
-    "dynasty_capitals": 174
+    "dynasty_capitals": 173
   },
   "sources": [
     {
@@ -25,6 +25,6 @@
   ],
   "notes": [
     "modernName 为省/市全称；坐标 GCJ-02，经 Amap maps_geo 烘焙",
-    "覆盖 122 个王朝，174 条都城记录"
+    "覆盖 122 个王朝，173 条都城记录"
   ]
 }

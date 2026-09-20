@@ -455,11 +455,74 @@ describe("buildEntityDetail person", () => {
     expect(detail.related.map((item) => item.group)).toEqual(["reign", "idiom"]);
     expect(detail.related[0]).toMatchObject({
       ref: { type: "reign", id: "reign-gou-jian-yue-chunqiu" },
-      label: "越",
+      label: "越 · 越王勾践",
       subtitle: "-496 — -464",
       group: "reign",
     });
     expect(detail.related[1]?.label).toBe("卧薪尝胆");
+  });
+
+  it("shows pre-Qin appellation as title and dynasty-appellation on reign cards", () => {
+    const store = {
+      dynasties: [
+        {
+          id: "cao-chunqiu",
+          name: "曹",
+          scope: "cn" as const,
+          region: "east_asia",
+          start: { year: -1046, month: 1 },
+          end: { year: -487, month: 12 },
+          startAbs: -100,
+          endAbs: -50,
+          precision: "year" as const,
+          colorToken: "rose" as const,
+          ancestralXing: "姬",
+          clanShi: "曹",
+        },
+      ],
+      reigns: [
+        {
+          id: "reign-cao-gongbo",
+          dynastyId: "cao-chunqiu",
+          personId: "cao-gongbo",
+          title: "曹宫伯",
+          start: { year: -938, month: 1 },
+          end: { year: -903, month: 12 },
+          startAbs: -200,
+          endAbs: -150,
+          precision: "year",
+          eraNames: [],
+        },
+      ],
+      persons: [
+        {
+          id: "cao-gongbo",
+          name: "姬侯",
+          roles: ["君主"],
+          posthumousNames: ["宫伯"],
+          templeNames: [],
+          bio: "曹宫伯，曹国君主。",
+        },
+      ],
+      events: [],
+      relations: [],
+    };
+
+    const detail = buildEntityDetail(store, { type: "person", id: "cao-gongbo" });
+
+    expect(detail.title).toBe("宫伯");
+    expect(detail.facts).toEqual([
+      { label: "姓", value: "姬" },
+      { label: "氏", value: "曹" },
+      { label: "名", value: "侯" },
+      { label: "谥号", value: "宫伯" },
+    ]);
+    expect(detail.related[0]).toMatchObject({
+      ref: { type: "reign", id: "reign-cao-gongbo" },
+      label: "曹 · 宫伯",
+      subtitle: "-938 — -903",
+      group: "reign",
+    });
   });
 
   it("lists multiple reigns in chronological order", () => {

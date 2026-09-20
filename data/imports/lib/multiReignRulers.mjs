@@ -11,23 +11,31 @@ function defaultReignId(personId, dynastyId, ordinal) {
   return ordinal > 1 ? `${base}-${ordinal}` : base;
 }
 
+/** Same given name across centuries is common; only unify when posthumous/title also match. */
+function personUnifyKey(r) {
+  const name = r.personName;
+  if (!name) return null;
+  const discriminator = r.posthumousName ?? r.title ?? "";
+  return `${name}|${discriminator}`;
+}
+
 function unifyPersonIds(dynastyId, rulers) {
-  const nameCounts = new Map();
+  const keyCounts = new Map();
   for (const r of rulers) {
-    const name = r.personName;
-    if (!name) continue;
-    nameCounts.set(name, (nameCounts.get(name) ?? 0) + 1);
+    const key = personUnifyKey(r);
+    if (!key) continue;
+    keyCounts.set(key, (keyCounts.get(key) ?? 0) + 1);
   }
 
-  const firstPersonIdByName = new Map();
+  const firstPersonIdByKey = new Map();
   return rulers.map((r) => {
-    const name = r.personName;
-    if (!name || (nameCounts.get(name) ?? 0) <= 1) return r;
-    if (!firstPersonIdByName.has(name)) {
-      firstPersonIdByName.set(name, r.personId);
+    const key = personUnifyKey(r);
+    if (!key || (keyCounts.get(key) ?? 0) <= 1) return r;
+    if (!firstPersonIdByKey.has(key)) {
+      firstPersonIdByKey.set(key, r.personId);
       return r;
     }
-    return { ...r, personId: firstPersonIdByName.get(name) };
+    return { ...r, personId: firstPersonIdByKey.get(key) };
   });
 }
 

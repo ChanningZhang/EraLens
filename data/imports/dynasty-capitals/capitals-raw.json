@@ -4644,33 +4644,6 @@
     ]
   },
   {
-    "id": "cap-roc-taibei-23388",
-    "dynastyId": "roc",
-    "historicalName": "台北",
-    "modernName": "台湾省台北市",
-    "start": {
-      "year": 1949,
-      "month": 12,
-      "abs": 23399
-    },
-    "end": {
-      "year": 2026,
-      "month": 12,
-      "abs": 24323
-    },
-    "startAbs": 23399,
-    "endAbs": 24323,
-    "precision": "year",
-    "role": "primary",
-    "note": "国民政府迁台后台北为实际首都。",
-    "links": [
-      {
-        "label": "维基百科",
-        "url": "https://zh.wikipedia.org/wiki/中华民国"
-      }
-    ]
-  },
-  {
     "id": "cap-prc-beijing-1949",
     "dynastyId": "prc",
     "historicalName": "北京",

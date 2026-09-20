@@ -117,7 +117,6 @@ const PLACE_KEBAB = {
   昆明: "kunming",
   西充: "xichong",
   台南: "tainan",
-  台北: "taibei",
   重庆: "chongqing",
   北京: "beijing",
   临安: "linan",
@@ -940,11 +939,6 @@ export const capitals = [
     note: "抗战后还都南京。",
     wikiTitle: "中华民国",
     id: "cap-roc-nanjing-23348",
-  }),
-  entry("roc", "台北", "台湾省台北市", 1949, 12, 2026, 12, {
-    note: "国民政府迁台后台北为实际首都。",
-    wikiTitle: "中华民国",
-    id: "cap-roc-taibei-23388",
   }),
   entry("prc", "北京", "北京市", 1949, 10, 2026, 12, {
     note: "中华人民共和国首都北京。",

@@ -18,8 +18,8 @@ import { preQinRegnalCardName } from "../lib/preQinCardAppellation.mjs";
 import {
   clanHintForPerson,
   FEUDAL_DYNASTY_CLAN,
+  normalizeFeudalPersonName,
   personNamePrefix,
-  shiPersonalNamePrefixes,
 } from "../lib/feudalClanMetadata.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -45,8 +45,10 @@ const qinText = loadSource("wiki-qin.json");
 /** Existing person ids — keep stable across imports */
 const PERSON_OVERRIDES = {
   "齐太公|吕尚": "lv-shang",
+  "齐太公|姜尚": "lv-shang",
   "齐太公|尚": "lv-shang",
   "齐太公|田和": "tian-he",
+  "齐太公|妫和": "tian-he",
   "齐康公|姜贷": "jiang-dai",
   "齐康公|贷": "jiang-dai",
   "齐桓公|姜小白": "jiang-xiaobai",
@@ -54,6 +56,7 @@ const PERSON_OVERRIDES = {
   "晋文公|姬重耳": "ji-chonger",
   "晋文公|重耳": "ji-chonger",
   "楚庄王|熊侣": "xiong-zhuang",
+  "楚庄王|芈侣": "xiong-zhuang",
   "楚庄王|熊旅": "xiong-zhuang",
   "秦襄公|秦襄公": "ying-qi",
   "秦孝公|嬴渠梁": "ying-quliang",
@@ -76,8 +79,11 @@ const PERSON_OVERRIDES = {
   "越王无颛|无颛": "yue-r12",
   "越王无彊|无彊": "yue-r13",
   "魏文侯|魏斯": "wei-wen",
+  "魏文侯|姬斯": "wei-wen",
   "韩景侯|韩虔": "han-jing",
+  "韩景侯|姬虔": "han-jing",
   "赵烈侯|赵籍": "zhao-lie",
+  "赵烈侯|嬴籍": "zhao-lie",
   "秦王政|嬴政": "ying-zheng",
   "秦王政|政": "ying-zheng",
   "伯禽|伯禽": "bo-qin",
@@ -90,12 +96,12 @@ const PERSON_OVERRIDES = {
 };
 
 const NAME_OVERRIDES = {
-  "lv-shang": "吕尚",
-  "tian-he": "田和",
+  "lv-shang": "姜尚",
+  "tian-he": "妫和",
   "jiang-dai": "姜贷",
   "jiang-xiaobai": "姜小白",
   "ji-chonger": "姬重耳",
-  "xiong-zhuang": "熊侣",
+  "xiong-zhuang": "芈侣",
   "ying-qi": "嬴开",
   "ying-quliang": "嬴渠梁",
   "ying-zheng": "嬴政",
@@ -118,9 +124,9 @@ const NAME_OVERRIDES = {
   "qin-r27": "嬴稷",
   "fu-chai": "夫差",
   "helu": "阖闾",
-  "wei-wen": "魏斯",
-  "han-jing": "韩虔",
-  "zhao-lie": "赵籍",
+  "wei-wen": "姬斯",
+  "han-jing": "姬虔",
+  "zhao-lie": "嬴籍",
   "bo-qin": "伯禽",
   "ji-shuyu": "姬虞",
   "ji-shi": "姬奭",
@@ -135,10 +141,11 @@ const NAME_OVERRIDES = {
 const TITLE_NAME_OVERRIDES = {
   "song-chunqiu": {
     宋休公: "子田",
-    宋剔成君: "戴喜",
-    宋康王: "戴偃",
+    宋剔成君: "子喜",
+    宋康王: "子偃",
   },
   "wei-weiguo": {
+    卫平侯: "姬劲",
     卫嗣君: "缺失",
     卫怀君: "缺失",
     卫元君: "缺失",
@@ -243,8 +250,6 @@ const STATE_PREFIX = {
   "wei-warring": "魏",
   qin: "秦",
 };
-
-const SHI_NAME_PREFIXES = shiPersonalNamePrefixes();
 
 function toSimplified(text) {
   // Sources are already zh-cn Wikipedia; normalize a few chars that still
@@ -692,23 +697,14 @@ function fillUndatedYears(rulers, dynastyId) {
 function withSurname(dynastyId, name, title, surnameOverride = null) {
   const cleaned = finalizePersonName(name);
   if (!cleaned || isBadPersonName(cleaned)) return title;
-  if (/[公王侯]$/.test(cleaned) && cleaned.length >= 2) return cleaned;
   const meta = FEUDAL_DYNASTY_CLAN[dynastyId];
   if (meta?.skipXingOnGivenName && !surnameOverride) return cleaned;
   if (meta?.bareGivenNames?.includes(cleaned)) return cleaned;
-  const surname = surnameOverride ?? personNamePrefix(dynastyId) ?? "";
-  if (!surname) return cleaned;
-  if (cleaned.startsWith(surname)) return cleaned;
-  // Embedded 氏 (田午, 戴喜) is already the search name; do not also prefix 姓.
-  // Single-char given names like 宋休公「田」 still take the dynasty 姓.
-  if (
-    cleaned.length > 1 &&
-    [...SHI_NAME_PREFIXES].some((shi) => shi !== surname && cleaned.startsWith(shi))
-  ) {
-    return cleaned;
-  }
+  const normalized = normalizeFeudalPersonName(dynastyId, cleaned, surnameOverride);
+  if (normalized !== cleaned) return normalized;
+  if (/[公王侯]$/.test(cleaned) && cleaned.length >= 2) return cleaned;
   if (cleaned === title) return cleaned;
-  return `${surname}${cleaned}`;
+  return normalized;
 }
 
 function parseQi() {
@@ -721,7 +717,7 @@ function parseQi() {
   }));
   const tianRulers = parseWikiTables(tian, { dynastyId: "qi-chunqiu", includeLeaderTable: false }).map((r) => ({
     ...r,
-    name: withSurname("qi-chunqiu", r.name, r.title, "田"),
+    name: withSurname("qi-chunqiu", r.name, r.title, "妫"),
     clan: "田",
   }));
   return dedupePreserveOrder([...jiangRulers, ...tianRulers]);
@@ -1055,7 +1051,7 @@ const SONG_EXPECTED_NAMES = {
   "宋穆公|-728": "子和",
   "宋殇公|-719": "子与夷",
   "宋庄公|-710": "子冯",
-  "宋湣公|-691": "子捷",
+  "宋闵公|-691": "子捷",
   "宋公游|-682": "子游",
   "宋桓公|-681": "子御说",
   "宋襄公|-650": "子兹甫",
@@ -1071,8 +1067,8 @@ const SONG_EXPECTED_NAMES = {
   "宋悼公|-403": "子购由",
   "宋休公|-385": "子田",
   "宋桓公|-362": "子辟兵",
-  "宋剔成君|-355": "戴喜",
-  "宋康王|-328": "戴偃",
+  "宋剔成君|-355": "子喜",
+  "宋康王|-328": "子偃",
 };
 
 const byDynasty = {};

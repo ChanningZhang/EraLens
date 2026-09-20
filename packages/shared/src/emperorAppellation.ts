@@ -157,7 +157,7 @@ export function usesPreQinCardLayout(reign: Pick<Reign, "start">): boolean {
   return reign.start.year < PRE_IMPERIAL_START_YEAR;
 }
 
-/** Drop stored 姓 prefix; keep 氏 embedded in names (熊侣, 吕尚). */
+/** Drop stored 姓 prefix from persons.name (import stores 姓+私名). */
 export function stripAncestralXing(
   name: string,
   clan?: PersonDisplayContext | null,
@@ -189,12 +189,18 @@ export function resolvePreQinXingShi(
 export function resolvePreQinNameFacts(
   personName: string | null | undefined,
   clan?: PersonDisplayContext | null,
-  _reign?: ReignLabelFields | null,
+  reign?: ReignLabelFields | null,
 ): Array<{ label: string; value: string }> {
   const { xing, shi } = resolvePreQinXingShi(personName, clan);
   const facts: Array<{ label: string; value: string }> = [];
   if (xing) facts.push({ label: "姓", value: xing });
   if (shi) facts.push({ label: "氏", value: shi });
+  const given = reign
+    ? resolvePreQinGivenName(reign, personName, clan)
+    : personName && !isPlaceholderPersonName(personName)
+      ? stripAncestralXing(personName, clan)
+      : null;
+  if (given) facts.push({ label: "名", value: given });
   return facts;
 }
 
@@ -293,6 +299,21 @@ export function resolveReignCardGivenName(
 ): string | null {
   if (!usesPreQinCardLayout(reign)) return personName || null;
   return resolvePreQinGivenName(reign, personName, personContext);
+}
+
+/** Label for reign cards listed under a pre-Qin person detail panel. */
+export function resolveReignRelatedLabel(
+  reign: ReignLabelFields,
+  dynastyName?: string | null,
+  personName?: string | null,
+  personContext?: PersonDisplayContext | null,
+): string {
+  const dynastyPart = dynastyName ?? "";
+  if (usesPreQinCardLayout(reign)) {
+    const primary = resolveReignPrimaryLabel(reign, personName, personContext);
+    return dynastyPart ? `${dynastyPart} · ${primary}` : primary;
+  }
+  return resolveReignDetailSubtitle(reign, dynastyName, personName, personContext);
 }
 
 /** Subtitle for reign detail and dynasty related lists. */

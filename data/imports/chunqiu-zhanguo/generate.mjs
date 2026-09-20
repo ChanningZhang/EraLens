@@ -7,6 +7,7 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { rulersByDynasty, rulerStats } from "./rulers.mjs";
+import { RULER_BIO_OVERRIDES, WIKI_TITLE_BY_PERSON_ID } from "./ruler-bios.mjs";
 import { alignReignSeamConfidences } from "../lib/alignReignSeamConfidences.mjs";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { applyFeudalClanMetadata } from "../lib/applyFeudalClanMetadata.mjs";
@@ -171,7 +172,7 @@ function rulerPerson(r) {
     r.personName && !/^[0-9]+$/.test(r.personName) && !/^[0-9]+年$/.test(r.personName)
       ? r.personName
       : r.title;
-  const wikiTitle = r.title;
+  const wikiTitle = WIKI_TITLE_BY_PERSON_ID[r.personId] ?? r.title;
   return person(
     r.personId,
     displayName,
@@ -187,6 +188,11 @@ const rulerPersons = Object.values(rulersByDynasty)
 const personById = new Map();
 for (const p of [...rulerPersons, ...EXTRA_PERSONS]) {
   personById.set(p.id, p);
+}
+
+for (const [id, patch] of Object.entries(RULER_BIO_OVERRIDES)) {
+  const existing = personById.get(id);
+  if (existing) personById.set(id, { ...existing, ...patch });
 }
 
 const PERSON_DETAIL_OVERRIDES = {
@@ -213,6 +219,11 @@ const PERSON_DETAIL_OVERRIDES = {
     links: wiki("田和"),
     death: ym(-384),
   },
+  "song-r16": {
+    bio: "宋闵公（子捷），宋庄公之子，前691–前682年在位。与鲁多次交战，乘丘之役鲁擒南宫万后释归；因猎博与万争执，前682年为南宫长万所弑于蒙泽。万立子游，诸公子杀子游而立弟御说为宋桓公。",
+    links: wiki("宋闵公"),
+    death: ym(-682),
+  },
   "song-r28": {
     bio: "宋昭公（子特），前469–前404年在位。《史记·宋微子世家》另有前422年卒异说。",
     links: wiki("宋昭公特"),
@@ -231,6 +242,14 @@ const PERSON_DETAIL_OVERRIDES = {
   "cao-r11": {
     bio: "曹桓公（姬终生），《史记·蔡世家》载前756–前702年在位，共55年。",
     links: wiki("曹桓公"),
+  },
+  "weiguo-r41": {
+    bio: "卫成侯（姬遫），卫声公之子，前371–前343年在位。前346年卫国自贬为侯，臣服韩、赵、魏。",
+    links: wiki("卫成侯"),
+  },
+  "weiguo-r42": {
+    bio: "卫平侯（姬劲），姬姓子南氏，卫灵公少子公子郢之后；前342–前335年在位。",
+    links: wiki("卫平侯"),
   },
   "weiguo-r43": {
     bio: "卫嗣君，本名失考，前334–前293年在位。",

@@ -65,6 +65,34 @@ describe("applyMultiReignRulers", () => {
     );
   });
 
+  it("does not unify same given name with different posthumous titles (卫穆公 vs 卫成侯)", () => {
+    const rulers = [
+      ruler({
+        personId: "weiguo-r23",
+        title: "卫穆公",
+        personName: "姬遫",
+        posthumousName: "穆公",
+        startYear: -599,
+        endYear: -589,
+      }),
+      ruler({
+        personId: "weiguo-r41",
+        title: "卫成侯",
+        personName: "姬遫",
+        posthumousName: "成侯",
+        startYear: -371,
+        endYear: -343,
+      }),
+    ];
+    const out = applyMultiReignRulers("wei-weiguo", rulers);
+    const mu = out.find((r) => r.title === "卫穆公");
+    const cheng = out.find((r) => r.title === "卫成侯");
+    assert.equal(mu.personId, "weiguo-r23");
+    assert.equal(cheng.personId, "weiguo-r41");
+    assert.equal(mu.ordinal, undefined);
+    assert.equal(cheng.ordinal, undefined);
+  });
+
   it("unifies duplicate wiki rows for 卫献公 under one personId", () => {
     const rulers = [
       ruler({
