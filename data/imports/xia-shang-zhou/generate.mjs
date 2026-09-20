@@ -11,7 +11,13 @@ import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 import { applyFeudalClanMetadata } from "../lib/applyFeudalClanMetadata.mjs";
 import { reignSql } from "../lib/reignSql.mjs";
 import { validateReignDateConfidenceSeams } from "../lib/validateReignSeams.mjs";
-import { dynastySql, formatAppellationCsv, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
+import {
+  dynastySql,
+  formatAppellationCsv,
+  mergeAppellationsIntoPersons,
+  normalizeYearPrecisionAt,
+  personSql,
+} from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -751,11 +757,11 @@ if (seamErrors.length) {
   process.exit(1);
 }
 
-const { persons: importPersons, reigns: importReigns, missingReigns } = finalizeImportReigns(
-  "xia-shang-zhou",
-  persons,
-  reigns,
-);
+const finalized = finalizeImportReigns("xia-shang-zhou", persons, reigns);
+const merged = mergeAppellationsIntoPersons(finalized.persons, finalized.reigns);
+const importPersons = merged.persons;
+const importReigns = merged.reigns;
+const { missingReigns } = finalized;
 
 const personDynastyId = new Map();
 for (const reign of importReigns) {
