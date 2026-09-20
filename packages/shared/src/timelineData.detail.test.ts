@@ -628,6 +628,75 @@ describe("buildEntityDetail idiom event", () => {
   });
 });
 
+describe("buildEntityDetail capital", () => {
+  it("shows capital facts and links to the owning dynasty", () => {
+    const store = {
+      dynasties: [
+        {
+          id: "tang",
+          name: "唐",
+          scope: "cn",
+          region: "east_asia",
+          start: { year: 618, month: 1 },
+          end: { year: 907, month: 12 },
+          startAbs: 7416,
+          endAbs: 10848,
+          precision: "year",
+          colorToken: "indigo",
+        },
+      ],
+      reigns: [],
+      persons: [],
+      events: [],
+      relations: [],
+      capitals: [
+        {
+          id: "cap-tang-changan",
+          dynastyId: "tang",
+          historicalName: "长安",
+          modernName: "陕西省西安市",
+          longitude: 108.939645,
+          latitude: 34.343207,
+          coordinateSystem: "GCJ02",
+          start: { year: 618, month: 1 },
+          end: { year: 904, month: 12 },
+          startAbs: 7416,
+          endAbs: 10848,
+          precision: "year",
+          role: "primary",
+          note: "隋唐京师",
+          links: [],
+        },
+      ],
+    };
+
+    const detail = buildEntityDetail(store, {
+      type: "capital",
+      id: "cap-tang-changan",
+    });
+
+    expect(detail.title).toBe("长安");
+    expect(detail.subtitle).toBe("唐 · 陕西省西安市");
+    expect(detail.dynastyId).toBe("tang");
+    expect(detail.facts).toEqual([
+      { label: "归属", value: "唐" },
+      { label: "今址", value: "陕西省西安市" },
+      { label: "时段", value: "618 — 904" },
+      { label: "地位", value: "正都" },
+    ]);
+    expect(detail.summary).toBe("隋唐京师");
+    expect(detail.related).toEqual([
+      {
+        ref: { type: "dynasty", id: "tang" },
+        label: "唐",
+        subtitle: undefined,
+        abs: 7416,
+        group: "dynasty",
+      },
+    ]);
+  });
+});
+
 describe("EventSchema idiom", () => {
   it("rejects span idiom events", () => {
     const result = EventSchema.safeParse({

@@ -1,4 +1,5 @@
 import type {
+  DynastyCapital,
   EntityDetail,
   EntityRef,
   Event,
@@ -23,6 +24,7 @@ export interface TimelineRepository {
   getEntity(ref: EntityRef): Promise<EntityDetail>;
   search(term: string): Promise<SearchHit[]>;
   getBounds(): Promise<{ minAbs: number; maxAbs: number }>;
+  getCapitals(fromAbs: number, toAbs: number): Promise<DynastyCapital[]>;
   getPersons(): Promise<Person[]>;
   getReigns(): Promise<Reign[]>;
   getEvents(): Promise<Event[]>;

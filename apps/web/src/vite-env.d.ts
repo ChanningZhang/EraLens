@@ -1,10 +1,11 @@
 /// <reference types="vite/client" />
 
-interface ImportMetaEnv {
-  readonly VITE_DATA_SOURCE?: "mock" | "http";
-  readonly VITE_API_BASE?: string;
+declare module "*.svg" {
+  const src: string;
+  export default src;
 }
 
-interface ImportMeta {
-  readonly env: ImportMetaEnv;
+declare module "*.svg?raw" {
+  const src: string;
+  export default src;
 }

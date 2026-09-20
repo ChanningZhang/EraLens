@@ -1,217 +1,47 @@
 #!/usr/bin/env node
 /**
- * Pilot dynasty capital seats for major unified dynasties.
- * Coordinates baked from Amap maps_geo (GCJ-02), 2026-09-20.
+ * Bake dynasty_capitals import from capitals-raw.json + coordinates.json (GCJ-02).
  */
-import { writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { absMonth, dynastyCapitalSql, wiki, ym } from "../lib/sqlHelpers.mjs";
+import { dynastyCapitalSql } from "../lib/sqlHelpers.mjs";
+import { assertCapitalModernNames } from "../lib/validateCapitalModernName.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-/** @param {object} input */
-function capital({
-  id,
-  dynastyId,
-  historicalName,
-  modernName,
-  longitude,
-  latitude,
-  start,
-  end,
-  precision = "year",
-  role = "primary",
-  claimTrack,
-  note,
-  wikiTitle,
-  startDateConfidence,
-  endDateConfidence,
-}) {
+const raw = JSON.parse(readFileSync(path.join(__dirname, "capitals-raw.json"), "utf8"));
+const seed = JSON.parse(readFileSync(path.join(__dirname, "coordinates-seed.json"), "utf8"));
+const extraPath = path.join(__dirname, "coordinates.json");
+const extra = existsSync(extraPath)
+  ? JSON.parse(readFileSync(extraPath, "utf8"))
+  : {};
+const coords = { ...seed, ...extra };
+
+const missing = new Set();
+const capitals = raw.map((c) => {
+  const coord = coords[c.modernName];
+  if (!coord) {
+    missing.add(c.modernName);
+    return null;
+  }
   return {
-    id,
-    dynastyId,
-    historicalName,
-    modernName,
-    longitude,
-    latitude,
+    ...c,
+    longitude: coord.longitude,
+    latitude: coord.latitude,
     coordinateSystem: "GCJ02",
-    start,
-    end,
-    startAbs: start.abs ?? absMonth(start.year, start.month),
-    endAbs: end.abs ?? absMonth(end.year, end.month),
-    precision,
-    role,
-    claimTrack,
-    note,
-    startDateConfidence,
-    endDateConfidence,
-    links: wikiTitle ? wiki(wikiTitle) : [],
   };
+});
+
+if (missing.size) {
+  console.error(`[dynasty-capitals] Missing coordinates for ${missing.size} locations:`);
+  for (const name of [...missing].sort()) console.error(`  - ${name}`);
+  process.exit(1);
 }
 
-const capitals = [
-  capital({
-    id: "cap-qin-xianyang",
-    dynastyId: "qin",
-    historicalName: "咸阳",
-    modernName: "陕西省咸阳市",
-    longitude: 108.708837,
-    latitude: 34.329896,
-    start: ym(-350),
-    end: ym(-207, 12),
-    note: "商鞅变法后秦都咸阳；前221年统一后仍为京师，前207年秦亡。",
-    wikiTitle: "咸阳",
-  }),
-  capital({
-    id: "cap-han-west-changan",
-    dynastyId: "han-west",
-    historicalName: "长安",
-    modernName: "陕西省西安市",
-    longitude: 108.939645,
-    latitude: 34.343207,
-    start: ym(-202),
-    end: ym(8, 12),
-    note: "刘邦称帝定都长安；王莽代汉，西汉终结。",
-    wikiTitle: "长安",
-  }),
-  capital({
-    id: "cap-han-east-luoyang",
-    dynastyId: "han-east",
-    historicalName: "洛阳",
-    modernName: "河南省洛阳市",
-    longitude: 112.453895,
-    latitude: 34.619702,
-    start: ym(25),
-    end: ym(220, 12),
-    note: "光武帝定都洛阳；献帝禅让曹丕，东汉终结。",
-    wikiTitle: "洛阳",
-  }),
-  capital({
-    id: "cap-tang-changan",
-    dynastyId: "tang",
-    historicalName: "长安",
-    modernName: "陕西省西安市",
-    longitude: 108.939645,
-    latitude: 34.343207,
-    start: ym(618),
-    end: ym(904, 12),
-    note: "唐都长安，高祖至哀帝。",
-    wikiTitle: "长安",
-  }),
-  capital({
-    id: "cap-tang-luoyang",
-    dynastyId: "tang",
-    historicalName: "洛阳",
-    modernName: "河南省洛阳市",
-    longitude: 112.453895,
-    latitude: 34.619702,
-    start: ym(657),
-    end: ym(904, 12),
-    role: "secondary",
-    note: "唐东都洛阳；高宗起定为东都，武则天时期曾为神都。",
-    wikiTitle: "洛阳",
-  }),
-  capital({
-    id: "cap-song-north-bianjing",
-    dynastyId: "song-north",
-    historicalName: "汴京",
-    modernName: "河南省开封市",
-    longitude: 114.314278,
-    latitude: 34.798083,
-    start: ym(960),
-    end: ym(1127, 12),
-    note: "北宋都城开封，亦称汴梁、东京。",
-    wikiTitle: "开封",
-  }),
-  capital({
-    id: "cap-song-south-yingtian",
-    dynastyId: "song-south",
-    historicalName: "应天府",
-    modernName: "河南省商丘市",
-    longitude: 115.656358,
-    latitude: 34.415165,
-    start: ym(1127),
-    end: ym(1129, 12),
-    role: "temporary",
-    note: "南宋初暂都应天府（今商丘）；建炎二年迁临安。",
-    wikiTitle: "应天府",
-  }),
-  capital({
-    id: "cap-song-south-linan",
-    dynastyId: "song-south",
-    historicalName: "临安",
-    modernName: "浙江省杭州市",
-    longitude: 120.209903,
-    latitude: 30.246566,
-    start: ym(1130),
-    end: ym(1279, 12),
-    note: "南宋行在临安（今杭州）；1279年崖山海战，南宋亡。",
-    wikiTitle: "临安",
-  }),
-  capital({
-    id: "cap-yuan-dadu",
-    dynastyId: "yuan",
-    historicalName: "大都",
-    modernName: "北京市",
-    longitude: 116.407387,
-    latitude: 39.904179,
-    start: ym(1272),
-    end: ym(1368, 12),
-    note: "忽必烈营建大都（今北京）；1368年顺帝北逃，元朝终结。",
-    wikiTitle: "大都",
-  }),
-  capital({
-    id: "cap-ming-nanjing",
-    dynastyId: "ming",
-    historicalName: "应天",
-    modernName: "江苏省南京市",
-    longitude: 118.796624,
-    latitude: 32.059344,
-    start: ym(1368),
-    end: ym(1420, 12),
-    note: "明初定都应天府（南京）；永乐十九年迁都北京。",
-    wikiTitle: "南京",
-  }),
-  capital({
-    id: "cap-ming-beijing",
-    dynastyId: "ming",
-    historicalName: "顺天",
-    modernName: "北京市",
-    longitude: 116.407387,
-    latitude: 39.904179,
-    start: ym(1421),
-    end: ym(1644, 4),
-    note: "永乐迁都顺天府（北京）；1644年崇祯自缢，明亡。",
-    wikiTitle: "北京",
-  }),
-  capital({
-    id: "cap-qing-shengjing",
-    dynastyId: "qing",
-    historicalName: "盛京",
-    modernName: "辽宁省沈阳市",
-    longitude: 123.464675,
-    latitude: 41.677576,
-    start: ym(1636),
-    end: ym(1644, 4),
-    role: "secondary",
-    note: "1636年改国号大清后定都盛京（沈阳）；顺治入关后迁都北京。",
-    wikiTitle: "沈阳",
-  }),
-  capital({
-    id: "cap-qing-beijing",
-    dynastyId: "qing",
-    historicalName: "顺天",
-    modernName: "北京市",
-    longitude: 116.407387,
-    latitude: 39.904179,
-    start: ym(1644, 5),
-    end: ym(1912, 2),
-    note: "顺治入关后定都北京；1912年宣统退位，清亡。",
-    wikiTitle: "北京",
-  }),
-];
+assertCapitalModernNames(capitals);
 
+const years = capitals.flatMap((c) => [c.start.year, c.end.year]);
 const sql = [
   "-- EraLens period import: dynasty-capitals",
   "BEGIN;",
@@ -223,38 +53,34 @@ const sql = [
   "",
 ].join("\n");
 
-mkdirSync(__dirname, { recursive: true });
 writeFileSync(path.join(__dirname, "import.sql"), sql);
 writeFileSync(
   path.join(__dirname, "manifest.json"),
   `${JSON.stringify(
     {
       slug: "dynasty-capitals",
-      title: "大一统王朝都城试点",
-      window: { startYear: -350, startMonth: 1, endYear: 1912, endMonth: 2 },
+      title: "全库王朝都城",
+      window: {
+        startYear: Math.min(...years),
+        startMonth: 1,
+        endYear: Math.max(...years),
+        endMonth: 12,
+      },
       scope: "cn",
       depth: "standard",
-      generatedAt: "2026-09-20",
+      generatedAt: new Date().toISOString().slice(0, 10),
       counts: { dynasty_capitals: capitals.length },
       sources: [
         { label: "维基百科", url: "https://zh.wikipedia.org/wiki/中国古代都城" },
         { label: "高德地图地理编码", url: "https://lbs.amap.com/api/webservice/guide/api/georegeo" },
       ],
       notes: [
-        "modernName 为省/市全称；坐标 GCJ-02，2026-09-20 经 Amap maps_geo 烘焙",
-        "陕西省咸阳市: 108.708837,34.329896",
-        "陕西省西安市: 108.939645,34.343207",
-        "河南省洛阳市: 112.453895,34.619702",
-        "河南省开封市: 114.314278,34.798083",
-        "河南省商丘市: 115.656358,34.415165",
-        "浙江省杭州市: 120.209903,30.246566",
-        "江苏省南京市: 118.796624,32.059344",
-        "北京市: 116.407387,39.904179",
-        "辽宁省沈阳市: 123.464675,41.677576",
+        "modernName 为省/市全称；坐标 GCJ-02，经 Amap maps_geo 烘焙",
+        `覆盖 ${new Set(capitals.map((c) => c.dynastyId)).size} 个王朝，${capitals.length} 条都城记录`,
       ],
     },
     null,
     2,
   )}\n`,
 );
-console.log(`[dynasty-capitals] ${capitals.length} capital seats`);
+console.log(`[dynasty-capitals] ${capitals.length} capital seats for ${new Set(capitals.map((c) => c.dynastyId)).size} dynasties`);

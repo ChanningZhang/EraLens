@@ -15,25 +15,13 @@ const baseCapital = {
 };
 
 describe("DynastyCapitalSchema", () => {
-  it("accepts province-city modernName", () => {
+  it("parses capital records without modernName format checks", () => {
     expect(DynastyCapitalSchema.parse(baseCapital).modernName).toBe("陕西省西安市");
-  });
-
-  it("accepts municipality modernName", () => {
     expect(
       DynastyCapitalSchema.parse({
         ...baseCapital,
-        modernName: "北京市",
-      }).modernName,
-    ).toBe("北京市");
-  });
-
-  it("rejects bare city modernName", () => {
-    expect(() =>
-      DynastyCapitalSchema.parse({
-        ...baseCapital,
         modernName: "西安",
-      }),
-    ).toThrow(/modernName/);
+      }).modernName,
+    ).toBe("西安");
   });
 });

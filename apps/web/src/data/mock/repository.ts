@@ -1,4 +1,5 @@
 import {
+  capitalsActiveAtAbs,
   DynastySchema,
   EventSchema,
   PersonSchema,
@@ -9,6 +10,7 @@ import {
   filterTimeline,
   searchEntities,
   type Dynasty,
+  type DynastyCapital,
   type Event,
   type Person,
   type Reign,
@@ -35,6 +37,41 @@ const persons = PersonSchema.array().parse(personsJson);
 const events = EventSchema.array().parse(eventsJson);
 const relations = RelationSchema.array().parse(relationsJson);
 
+const mockCapitals: DynastyCapital[] = [
+  {
+    id: "cap-tang-changan",
+    dynastyId: "tang",
+    historicalName: "长安",
+    modernName: "陕西省西安市",
+    longitude: 108.939645,
+    latitude: 34.343207,
+    coordinateSystem: "GCJ02",
+    start: { year: 618, month: 1 },
+    end: { year: 904, month: 12 },
+    startAbs: 7416,
+    endAbs: 10848,
+    precision: "year",
+    role: "primary",
+    links: [],
+  },
+  {
+    id: "cap-tang-luoyang",
+    dynastyId: "tang",
+    historicalName: "洛阳",
+    modernName: "河南省洛阳市",
+    longitude: 112.453895,
+    latitude: 34.619702,
+    coordinateSystem: "GCJ02",
+    start: { year: 657, month: 1 },
+    end: { year: 904, month: 12 },
+    startAbs: 7884,
+    endAbs: 10848,
+    precision: "year",
+    role: "secondary",
+    links: [],
+  },
+];
+
 const store = { dynasties, reigns, persons, events, relations };
 
 export const mockRepository: TimelineRepository = {
@@ -56,13 +93,17 @@ export const mockRepository: TimelineRepository = {
     };
   },
   async getEntity(ref) {
-    return buildEntityDetail(store, ref);
+    return buildEntityDetail({ ...store, capitals: mockCapitals }, ref);
   },
   async search(term) {
     return searchEntities(store, term);
   },
   async getBounds() {
     return computeBounds(store);
+  },
+  async getCapitals(fromAbs: number, toAbs: number) {
+    const atAbs = Math.round((fromAbs + toAbs) / 2);
+    return capitalsActiveAtAbs(mockCapitals, atAbs);
   },
   async getPersons() {
     return persons;

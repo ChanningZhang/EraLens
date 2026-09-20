@@ -1,8 +1,10 @@
 import {
+  DynastyCapitalSchema,
   EntityDetailSchema,
   SearchHitSchema,
   TimelineCatalogSchema,
   TimelineSliceSchema,
+  type DynastyCapital,
   type EntityDetail,
   type EntityRef,
   type Event,
@@ -57,6 +59,13 @@ export const httpRepository: TimelineRepository = {
     const res = await fetch(`${API_BASE}/bounds`);
     if (!res.ok) throw new Error("Bounds failed");
     return res.json() as Promise<{ minAbs: number; maxAbs: number }>;
+  },
+  async getCapitals(fromAbs: number, toAbs: number): Promise<DynastyCapital[]> {
+    const params = new URLSearchParams({
+      from: String(fromAbs),
+      to: String(toAbs),
+    });
+    return fetchJson(`/capitals?${params}`, DynastyCapitalSchema.array());
   },
   async getPersons(): Promise<Person[]> {
     throw new Error("Not implemented on HTTP repository yet");

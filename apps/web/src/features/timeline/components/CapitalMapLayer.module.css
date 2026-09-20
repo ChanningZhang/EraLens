@@ -1,0 +1,75 @@
+.layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  clip-path: inset(0 0 0 var(--timeline-gutter));
+  pointer-events: none;
+}
+
+.marker {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transform: translate(-6px, -50%);
+  padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform var(--motion-fast);
+}
+
+.marker:hover {
+  transform: translate(-6px, -50%) scale(1.03);
+}
+
+.selected .label {
+  border-color: color-mix(in srgb, var(--capital-color) 55%, var(--color-border));
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--capital-color) 35%, transparent);
+}
+
+.selected .dot {
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--capital-color) 45%, transparent),
+    0 1px 4px color-mix(in srgb, var(--color-ink) 18%, transparent);
+}
+
+.dot {
+  flex-shrink: 0;
+  border: 2px solid color-mix(in srgb, var(--color-surface) 88%, white);
+  border-radius: 50%;
+  background: var(--capital-color);
+  box-shadow: 0 1px 4px color-mix(in srgb, var(--color-ink) 18%, transparent);
+}
+
+.label {
+  font-family: var(--font-serif);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  padding: 2px 7px;
+  border-radius: 4px;
+  color: var(--color-ink);
+  background: color-mix(in srgb, var(--color-surface) 82%, transparent);
+  border: 1px solid color-mix(in srgb, var(--capital-color) 28%, var(--color-border));
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--color-ink) 8%, transparent);
+}
+
+.primary {
+  width: 8px;
+  height: 8px;
+}
+
+.secondary {
+  width: 6px;
+  height: 6px;
+  opacity: 0.85;
+}
+
+.temporary {
+  width: 8px;
+  height: 8px;
+  background: color-mix(in srgb, var(--capital-color) 28%, var(--color-surface));
+}

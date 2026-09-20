@@ -299,13 +299,27 @@ export async function registerRoutes(app: FastifyInstance) {
   app.get("/entities/:type/:id", async (request, reply) => {
     reply.header("Cache-Control", CACHE_HEADER);
     const params = request.params as { type: string; id: string };
-    if (!["dynasty", "reign", "person", "event"].includes(params.type)) {
+    if (!["dynasty", "reign", "person", "event", "capital"].includes(params.type)) {
       reply.code(400);
       return { error: "Invalid entity type" };
     }
 
-    const store = await loadStore();
     try {
+      if (params.type === "capital") {
+        const row = await prisma.dynastyCapital.findUnique({ where: { id: params.id } });
+        if (!row) {
+          reply.code(404);
+          return { error: "Entity not found" };
+        }
+        const store = await loadStore();
+        const detail = buildEntityDetail(
+          { ...store, capitals: [mapDynastyCapital(row)] },
+          { type: "capital", id: params.id },
+        );
+        return EntityDetailSchema.parse(detail);
+      }
+
+      const store = await loadStore();
       const detail = buildEntityDetail(store, {
         type: params.type as "dynasty" | "reign" | "person" | "event",
         id: params.id,

@@ -1,0 +1,4700 @@
+[
+  {
+    "id": "cap-san-huang-wanqiu-2804",
+    "dynastyId": "san-huang",
+    "historicalName": "宛丘",
+    "modernName": "河南省周口市淮阳区",
+    "start": {
+      "year": -2804,
+      "month": 1,
+      "abs": -33636
+    },
+    "end": {
+      "year": -2465,
+      "month": 12,
+      "abs": -29557
+    },
+    "startAbs": -33636,
+    "endAbs": -29557,
+    "precision": "year",
+    "role": "primary",
+    "note": "三皇传说都城，伏羲女娲神农皆传都宛丘（陈）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/淮阳区"
+      }
+    ]
+  },
+  {
+    "id": "cap-wu-di-youxiong-2464",
+    "dynastyId": "wu-di",
+    "historicalName": "有熊",
+    "modernName": "河南省郑州市新郑市",
+    "start": {
+      "year": -2464,
+      "month": 1,
+      "abs": -29556
+    },
+    "end": {
+      "year": -2357,
+      "month": 12,
+      "abs": -28261
+    },
+    "startAbs": -29556,
+    "endAbs": -28261,
+    "precision": "year",
+    "role": "primary",
+    "note": "黄帝轩辕氏传说都城有熊（新郑）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/黄帝"
+      }
+    ]
+  },
+  {
+    "id": "cap-wu-di-diqiu-2356",
+    "dynastyId": "wu-di",
+    "historicalName": "帝丘",
+    "modernName": "河南省濮阳市",
+    "start": {
+      "year": -2356,
+      "month": 1,
+      "abs": -28260
+    },
+    "end": {
+      "year": -2209,
+      "month": 12,
+      "abs": -26485
+    },
+    "startAbs": -28260,
+    "endAbs": -26485,
+    "precision": "year",
+    "role": "primary",
+    "note": "帝颛顼高阳氏都帝丘。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/颛顼"
+      }
+    ]
+  },
+  {
+    "id": "cap-wu-di-bo-2208",
+    "dynastyId": "wu-di",
+    "historicalName": "亳",
+    "modernName": "河南省商丘市",
+    "start": {
+      "year": -2208,
+      "month": 1,
+      "abs": -26484
+    },
+    "end": {
+      "year": -2140,
+      "month": 12,
+      "abs": -25657
+    },
+    "startAbs": -26484,
+    "endAbs": -25657,
+    "precision": "year",
+    "role": "primary",
+    "note": "帝喾高辛氏及帝挚都亳。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/帝喾"
+      }
+    ]
+  },
+  {
+    "id": "cap-wu-di-pingyang-2139",
+    "dynastyId": "wu-di",
+    "historicalName": "平阳",
+    "modernName": "山西省临汾市",
+    "start": {
+      "year": -2139,
+      "month": 1,
+      "abs": -25656
+    },
+    "end": {
+      "year": -2071,
+      "month": 12,
+      "abs": -24829
+    },
+    "startAbs": -25656,
+    "endAbs": -24829,
+    "precision": "year",
+    "role": "primary",
+    "note": "帝尧、帝舜都平阳。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/尧"
+      }
+    ]
+  },
+  {
+    "id": "cap-xia-yangcheng-2070",
+    "dynastyId": "xia",
+    "historicalName": "阳城",
+    "modernName": "河南省郑州市登封市",
+    "start": {
+      "year": -2070,
+      "month": 1,
+      "abs": -24828
+    },
+    "end": {
+      "year": -1990,
+      "month": 12,
+      "abs": -23857
+    },
+    "startAbs": -24828,
+    "endAbs": -23857,
+    "precision": "year",
+    "role": "primary",
+    "note": "夏禹都阳城。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/阳城"
+      }
+    ]
+  },
+  {
+    "id": "cap-xia-diqiu-1989",
+    "dynastyId": "xia",
+    "historicalName": "帝丘",
+    "modernName": "河南省濮阳市",
+    "start": {
+      "year": -1989,
+      "month": 1,
+      "abs": -23856
+    },
+    "end": {
+      "year": -1900,
+      "month": 12,
+      "abs": -22777
+    },
+    "startAbs": -23856,
+    "endAbs": -22777,
+    "precision": "year",
+    "role": "primary",
+    "note": "夏启、相等帝丘。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/帝丘"
+      }
+    ]
+  },
+  {
+    "id": "cap-xia-zhenxun-1899",
+    "dynastyId": "xia",
+    "historicalName": "斟鄩",
+    "modernName": "河南省洛阳市偃师区",
+    "start": {
+      "year": -1899,
+      "month": 1,
+      "abs": -22776
+    },
+    "end": {
+      "year": -1700,
+      "month": 12,
+      "abs": -20377
+    },
+    "startAbs": -22776,
+    "endAbs": -20377,
+    "precision": "year",
+    "role": "primary",
+    "note": "太康失国后夏多都斟鄩。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/斟鄩"
+      }
+    ]
+  },
+  {
+    "id": "cap-xia-xihe-1699",
+    "dynastyId": "xia",
+    "historicalName": "西河",
+    "modernName": "河南省安阳市内黄县",
+    "start": {
+      "year": -1699,
+      "month": 1,
+      "abs": -20376
+    },
+    "end": {
+      "year": -1600,
+      "month": 12,
+      "abs": -19177
+    },
+    "startAbs": -20376,
+    "endAbs": -19177,
+    "precision": "year",
+    "role": "primary",
+    "note": "夏桀都西河。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/西河"
+      }
+    ]
+  },
+  {
+    "id": "cap-shang-bo-1600",
+    "dynastyId": "shang",
+    "historicalName": "亳",
+    "modernName": "河南省商丘市",
+    "start": {
+      "year": -1600,
+      "month": 1,
+      "abs": -19188
+    },
+    "end": {
+      "year": -1300,
+      "month": 12,
+      "abs": -15577
+    },
+    "startAbs": -19188,
+    "endAbs": -15577,
+    "precision": "year",
+    "role": "primary",
+    "note": "商初都亳。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/亳"
+      }
+    ]
+  },
+  {
+    "id": "cap-shang-zhenxun-1299",
+    "dynastyId": "shang",
+    "historicalName": "斟鄩",
+    "modernName": "河南省洛阳市偃师区",
+    "start": {
+      "year": -1299,
+      "month": 1,
+      "abs": -15576
+    },
+    "end": {
+      "year": -1210,
+      "month": 12,
+      "abs": -14497
+    },
+    "startAbs": -15576,
+    "endAbs": -14497,
+    "precision": "year",
+    "role": "primary",
+    "note": "商中期西亳（偃师）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/偃师区"
+      }
+    ]
+  },
+  {
+    "id": "cap-shang-yin-1209",
+    "dynastyId": "shang",
+    "historicalName": "殷",
+    "modernName": "河南省安阳市",
+    "start": {
+      "year": -1209,
+      "month": 1,
+      "abs": -14496
+    },
+    "end": {
+      "year": -1046,
+      "month": 12,
+      "abs": -12529
+    },
+    "startAbs": -14496,
+    "endAbs": -12529,
+    "precision": "year",
+    "role": "primary",
+    "note": "盘庚迁殷后商都殷。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/殷墟"
+      }
+    ]
+  },
+  {
+    "id": "cap-zhou-west-haojing-1046",
+    "dynastyId": "zhou-west",
+    "historicalName": "镐京",
+    "modernName": "陕西省西安市",
+    "start": {
+      "year": -1046,
+      "month": 1,
+      "abs": -12540
+    },
+    "end": {
+      "year": -771,
+      "month": 12,
+      "abs": -9229
+    },
+    "startAbs": -12540,
+    "endAbs": -9229,
+    "precision": "year",
+    "role": "primary",
+    "note": "西周都城镐京（宗周）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/镐京"
+      }
+    ]
+  },
+  {
+    "id": "cap-zhou-east-luoyi-770",
+    "dynastyId": "zhou-east",
+    "historicalName": "洛邑",
+    "modernName": "河南省洛阳市",
+    "start": {
+      "year": -770,
+      "month": 1,
+      "abs": -9228
+    },
+    "end": {
+      "year": -256,
+      "month": 12,
+      "abs": -3049
+    },
+    "startAbs": -9228,
+    "endAbs": -3049,
+    "precision": "year",
+    "role": "primary",
+    "note": "东周都城洛邑（王城）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/洛邑"
+      }
+    ]
+  },
+  {
+    "id": "cap-cao-chunqiu-taoqiu-1046",
+    "dynastyId": "cao-chunqiu",
+    "historicalName": "陶丘",
+    "modernName": "山东省菏泽市定陶区",
+    "start": {
+      "year": -1046,
+      "month": 1,
+      "abs": -12540
+    },
+    "end": {
+      "year": -487,
+      "month": 12,
+      "abs": -5821
+    },
+    "startAbs": -12540,
+    "endAbs": -5821,
+    "precision": "year",
+    "role": "primary",
+    "note": "曹国都城陶丘。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹国"
+      }
+    ]
+  },
+  {
+    "id": "cap-qi-chunqiu-linzi-1046",
+    "dynastyId": "qi-chunqiu",
+    "historicalName": "临淄",
+    "modernName": "山东省淄博市临淄区",
+    "start": {
+      "year": -1046,
+      "month": 1,
+      "abs": -12540
+    },
+    "end": {
+      "year": -221,
+      "month": 12,
+      "abs": -2629
+    },
+    "startAbs": -12540,
+    "endAbs": -2629,
+    "precision": "year",
+    "role": "primary",
+    "note": "齐国都城临淄。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/临淄"
+      }
+    ]
+  },
+  {
+    "id": "cap-yan-chunqiu-ji-1044",
+    "dynastyId": "yan-chunqiu",
+    "historicalName": "蓟",
+    "modernName": "北京市",
+    "start": {
+      "year": -1044,
+      "month": 1,
+      "abs": -12516
+    },
+    "end": {
+      "year": -222,
+      "month": 12,
+      "abs": -2641
+    },
+    "startAbs": -12516,
+    "endAbs": -2641,
+    "precision": "year",
+    "role": "primary",
+    "note": "燕国都城蓟。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/蓟城"
+      }
+    ]
+  },
+  {
+    "id": "cap-lu-chunqiu-qufu-1042",
+    "dynastyId": "lu-chunqiu",
+    "historicalName": "曲阜",
+    "modernName": "山东省济宁市曲阜市",
+    "start": {
+      "year": -1042,
+      "month": 1,
+      "abs": -12492
+    },
+    "end": {
+      "year": -256,
+      "month": 12,
+      "abs": -3049
+    },
+    "startAbs": -12492,
+    "endAbs": -3049,
+    "precision": "year",
+    "role": "primary",
+    "note": "鲁国都城曲阜。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曲阜"
+      }
+    ]
+  },
+  {
+    "id": "cap-jin-chunqiu-jiang-1042",
+    "dynastyId": "jin-chunqiu",
+    "historicalName": "绛",
+    "modernName": "山西省运城市绛县",
+    "start": {
+      "year": -1042,
+      "month": 1,
+      "abs": -12492
+    },
+    "end": {
+      "year": -585,
+      "month": 12,
+      "abs": -6997
+    },
+    "startAbs": -12492,
+    "endAbs": -6997,
+    "precision": "year",
+    "role": "primary",
+    "note": "晋国初都绛。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/绛县"
+      }
+    ]
+  },
+  {
+    "id": "cap-jin-chunqiu-xinjiang-584",
+    "dynastyId": "jin-chunqiu",
+    "historicalName": "新绛",
+    "modernName": "山西省临汾市侯马市",
+    "start": {
+      "year": -584,
+      "month": 1,
+      "abs": -6996
+    },
+    "end": {
+      "year": -349,
+      "month": 12,
+      "abs": -4165
+    },
+    "startAbs": -6996,
+    "endAbs": -4165,
+    "precision": "year",
+    "role": "primary",
+    "note": "晋景公迁新绛。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/侯马市"
+      }
+    ]
+  },
+  {
+    "id": "cap-chu-chunqiu-danyang-1042",
+    "dynastyId": "chu-chunqiu",
+    "historicalName": "丹阳",
+    "modernName": "河南省南阳市淅川县",
+    "start": {
+      "year": -1042,
+      "month": 1,
+      "abs": -12492
+    },
+    "end": {
+      "year": -689,
+      "month": 12,
+      "abs": -8245
+    },
+    "startAbs": -12492,
+    "endAbs": -8245,
+    "precision": "year",
+    "role": "primary",
+    "note": "楚国初都丹阳。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/丹阳"
+      }
+    ]
+  },
+  {
+    "id": "cap-chu-chunqiu-ying-688",
+    "dynastyId": "chu-chunqiu",
+    "historicalName": "郢",
+    "modernName": "湖北省荆州市江陵区",
+    "start": {
+      "year": -688,
+      "month": 1,
+      "abs": -8244
+    },
+    "end": {
+      "year": -278,
+      "month": 12,
+      "abs": -3313
+    },
+    "startAbs": -8244,
+    "endAbs": -3313,
+    "precision": "year",
+    "role": "primary",
+    "note": "楚武王后都郢（纪南城）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郢"
+      }
+    ]
+  },
+  {
+    "id": "cap-chu-chunqiu-chen-277",
+    "dynastyId": "chu-chunqiu",
+    "historicalName": "陈",
+    "modernName": "河南省周口市淮阳区",
+    "start": {
+      "year": -277,
+      "month": 1,
+      "abs": -3312
+    },
+    "end": {
+      "year": -241,
+      "month": 12,
+      "abs": -2869
+    },
+    "startAbs": -3312,
+    "endAbs": -2869,
+    "precision": "year",
+    "role": "primary",
+    "note": "秦攻郢后楚昭王迁陈。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/淮阳区"
+      }
+    ]
+  },
+  {
+    "id": "cap-chu-chunqiu-shouchun-240",
+    "dynastyId": "chu-chunqiu",
+    "historicalName": "寿春",
+    "modernName": "安徽省淮南市寿县",
+    "start": {
+      "year": -240,
+      "month": 1,
+      "abs": -2868
+    },
+    "end": {
+      "year": -223,
+      "month": 12,
+      "abs": -2653
+    },
+    "startAbs": -2868,
+    "endAbs": -2653,
+    "precision": "year",
+    "role": "primary",
+    "note": "楚考烈王迁寿春。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/寿县"
+      }
+    ]
+  },
+  {
+    "id": "cap-wei-weiguo-chaoge-1040",
+    "dynastyId": "wei-weiguo",
+    "historicalName": "朝歌",
+    "modernName": "河南省鹤壁市淇县",
+    "start": {
+      "year": -1040,
+      "month": 1,
+      "abs": -12468
+    },
+    "end": {
+      "year": -559,
+      "month": 12,
+      "abs": -6685
+    },
+    "startAbs": -12468,
+    "endAbs": -6685,
+    "precision": "year",
+    "role": "primary",
+    "note": "卫国初都朝歌。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/朝歌"
+      }
+    ]
+  },
+  {
+    "id": "cap-wei-weiguo-diqiu-558",
+    "dynastyId": "wei-weiguo",
+    "historicalName": "帝丘",
+    "modernName": "河南省濮阳市",
+    "start": {
+      "year": -558,
+      "month": 1,
+      "abs": -6684
+    },
+    "end": {
+      "year": -209,
+      "month": 12,
+      "abs": -2485
+    },
+    "startAbs": -6684,
+    "endAbs": -2485,
+    "precision": "year",
+    "role": "primary",
+    "note": "卫懿公后迁都帝丘。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫国"
+      }
+    ]
+  },
+  {
+    "id": "cap-song-chunqiu-shangqiu-1034",
+    "dynastyId": "song-chunqiu",
+    "historicalName": "商丘",
+    "modernName": "河南省商丘市",
+    "start": {
+      "year": -1034,
+      "month": 1,
+      "abs": -12396
+    },
+    "end": {
+      "year": -286,
+      "month": 12,
+      "abs": -3409
+    },
+    "startAbs": -12396,
+    "endAbs": -3409,
+    "precision": "year",
+    "role": "primary",
+    "note": "宋国都城商丘。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/商丘"
+      }
+    ]
+  },
+  {
+    "id": "cap-zheng-chunqiu-xinzheng-806",
+    "dynastyId": "zheng-chunqiu",
+    "historicalName": "新郑",
+    "modernName": "河南省郑州市新郑市",
+    "start": {
+      "year": -806,
+      "month": 1,
+      "abs": -9660
+    },
+    "end": {
+      "year": -375,
+      "month": 12,
+      "abs": -4477
+    },
+    "startAbs": -9660,
+    "endAbs": -4477,
+    "precision": "year",
+    "role": "primary",
+    "note": "郑国都城新郑。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/新郑市"
+      }
+    ]
+  },
+  {
+    "id": "cap-qin-xiqi-778",
+    "dynastyId": "qin",
+    "historicalName": "西垂",
+    "modernName": "甘肃省陇南市礼县",
+    "start": {
+      "year": -778,
+      "month": 1,
+      "abs": -9324
+    },
+    "end": {
+      "year": -710,
+      "month": 12,
+      "abs": -8497
+    },
+    "startAbs": -9324,
+    "endAbs": -8497,
+    "precision": "year",
+    "role": "primary",
+    "note": "秦非子至秦仲都西垂。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/西垂"
+      }
+    ]
+  },
+  {
+    "id": "cap-qin-qianhui-709",
+    "dynastyId": "qin",
+    "historicalName": "汧渭之会",
+    "modernName": "甘肃省天水市清水县",
+    "start": {
+      "year": -709,
+      "month": 1,
+      "abs": -8496
+    },
+    "end": {
+      "year": -677,
+      "month": 12,
+      "abs": -8101
+    },
+    "startAbs": -8496,
+    "endAbs": -8101,
+    "precision": "year",
+    "role": "primary",
+    "note": "秦宪公至秦武公居汧渭之会。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/清水县"
+      }
+    ]
+  },
+  {
+    "id": "cap-qin-pingyang-714",
+    "dynastyId": "qin",
+    "historicalName": "平阳",
+    "modernName": "陕西省宝鸡市眉县",
+    "start": {
+      "year": -714,
+      "month": 1,
+      "abs": -8556
+    },
+    "end": {
+      "year": -677,
+      "month": 12,
+      "abs": -8101
+    },
+    "startAbs": -8556,
+    "endAbs": -8101,
+    "precision": "year",
+    "role": "primary",
+    "note": "秦宪公迁平阳。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/眉县"
+      }
+    ]
+  },
+  {
+    "id": "cap-qin-yong-677",
+    "dynastyId": "qin",
+    "historicalName": "雍",
+    "modernName": "陕西省宝鸡市凤翔县",
+    "start": {
+      "year": -677,
+      "month": 1,
+      "abs": -8112
+    },
+    "end": {
+      "year": -383,
+      "month": 12,
+      "abs": -4573
+    },
+    "startAbs": -8112,
+    "endAbs": -4573,
+    "precision": "year",
+    "role": "primary",
+    "note": "秦德公迁雍，武公后长期为秦都。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/雍城"
+      }
+    ]
+  },
+  {
+    "id": "cap-qin-liyue-424",
+    "dynastyId": "qin",
+    "historicalName": "栎阳",
+    "modernName": "陕西省西安市阎良区",
+    "start": {
+      "year": -424,
+      "month": 1,
+      "abs": -5076
+    },
+    "end": {
+      "year": -351,
+      "month": 12,
+      "abs": -4189
+    },
+    "startAbs": -5076,
+    "endAbs": -4189,
+    "precision": "year",
+    "role": "primary",
+    "note": "秦献公迁栎阳。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/栎阳"
+      }
+    ]
+  },
+  {
+    "id": "cap-qin-xianyang",
+    "dynastyId": "qin",
+    "historicalName": "咸阳",
+    "modernName": "陕西省咸阳市",
+    "start": {
+      "year": -350,
+      "month": 1,
+      "abs": -4188
+    },
+    "end": {
+      "year": -207,
+      "month": 12,
+      "abs": -2461
+    },
+    "startAbs": -4188,
+    "endAbs": -2461,
+    "precision": "year",
+    "role": "primary",
+    "note": "秦孝公迁咸阳；统一后仍为京师。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/咸阳"
+      }
+    ]
+  },
+  {
+    "id": "cap-qi-state-chunqiu-qi-750",
+    "dynastyId": "qi-state-chunqiu",
+    "historicalName": "杞",
+    "modernName": "河南省开封市杞县",
+    "start": {
+      "year": -750,
+      "month": 1,
+      "abs": -8988
+    },
+    "end": {
+      "year": -445,
+      "month": 12,
+      "abs": -5317
+    },
+    "startAbs": -8988,
+    "endAbs": -5317,
+    "precision": "year",
+    "role": "primary",
+    "note": "杞国都城杞。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞国"
+      }
+    ]
+  },
+  {
+    "id": "cap-ju-chunqiu-ju-615",
+    "dynastyId": "ju-chunqiu",
+    "historicalName": "莒",
+    "modernName": "山东省日照市莒县",
+    "start": {
+      "year": -615,
+      "month": 1,
+      "abs": -7368
+    },
+    "end": {
+      "year": -431,
+      "month": 12,
+      "abs": -5149
+    },
+    "startAbs": -7368,
+    "endAbs": -5149,
+    "precision": "year",
+    "role": "primary",
+    "note": "莒国都城莒。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/莒国"
+      }
+    ]
+  },
+  {
+    "id": "cap-teng-chunqiu-teng-599",
+    "dynastyId": "teng-chunqiu",
+    "historicalName": "滕",
+    "modernName": "山东省枣庄市滕州市",
+    "start": {
+      "year": -599,
+      "month": 1,
+      "abs": -7176
+    },
+    "end": {
+      "year": -296,
+      "month": 12,
+      "abs": -3529
+    },
+    "startAbs": -7176,
+    "endAbs": -3529,
+    "precision": "year",
+    "role": "primary",
+    "note": "滕国都城滕。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/滕国"
+      }
+    ]
+  },
+  {
+    "id": "cap-wu-chunqiu-gusu-585",
+    "dynastyId": "wu-chunqiu",
+    "historicalName": "姑苏",
+    "modernName": "江苏省苏州市",
+    "start": {
+      "year": -585,
+      "month": 1,
+      "abs": -7008
+    },
+    "end": {
+      "year": -473,
+      "month": 12,
+      "abs": -5653
+    },
+    "startAbs": -7008,
+    "endAbs": -5653,
+    "precision": "year",
+    "role": "primary",
+    "note": "吴国都城姑苏。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/姑苏"
+      }
+    ]
+  },
+  {
+    "id": "cap-yue-chunqiu-kuaiji-565",
+    "dynastyId": "yue-chunqiu",
+    "historicalName": "会稽",
+    "modernName": "浙江省绍兴市",
+    "start": {
+      "year": -565,
+      "month": 1,
+      "abs": -6768
+    },
+    "end": {
+      "year": -334,
+      "month": 12,
+      "abs": -3985
+    },
+    "startAbs": -6768,
+    "endAbs": -3985,
+    "precision": "year",
+    "role": "primary",
+    "note": "越国初都会稽。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/会稽"
+      }
+    ]
+  },
+  {
+    "id": "cap-yue-chunqiu-langya-333",
+    "dynastyId": "yue-chunqiu",
+    "historicalName": "琅琊",
+    "modernName": "山东省青岛市黄岛区",
+    "start": {
+      "year": -333,
+      "month": 1,
+      "abs": -3984
+    },
+    "end": {
+      "year": -306,
+      "month": 12,
+      "abs": -3649
+    },
+    "startAbs": -3984,
+    "endAbs": -3649,
+    "precision": "year",
+    "role": "primary",
+    "note": "越王勾践后迁琅琊。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/琅琊"
+      }
+    ]
+  },
+  {
+    "id": "cap-xue-chunqiu-xue-511",
+    "dynastyId": "xue-chunqiu",
+    "historicalName": "薛",
+    "modernName": "山东省枣庄市滕州市",
+    "start": {
+      "year": -511,
+      "month": 1,
+      "abs": -6120
+    },
+    "end": {
+      "year": -327,
+      "month": 12,
+      "abs": -3901
+    },
+    "startAbs": -6120,
+    "endAbs": -3901,
+    "precision": "year",
+    "role": "primary",
+    "note": "薛国都城薛。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/薛国"
+      }
+    ]
+  },
+  {
+    "id": "cap-zhou-guo-west-wangcheng-440",
+    "dynastyId": "zhou-guo-west",
+    "historicalName": "王城",
+    "modernName": "河南省洛阳市",
+    "start": {
+      "year": -440,
+      "month": 1,
+      "abs": -5268
+    },
+    "end": {
+      "year": -256,
+      "month": 12,
+      "abs": -3049
+    },
+    "startAbs": -5268,
+    "endAbs": -3049,
+    "precision": "year",
+    "role": "primary",
+    "note": "西周国都城王城（洛阳）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/东周国"
+      }
+    ]
+  },
+  {
+    "id": "cap-zhongshan-lingshou-424",
+    "dynastyId": "zhongshan",
+    "historicalName": "灵寿",
+    "modernName": "河北省石家庄市灵寿县",
+    "start": {
+      "year": -424,
+      "month": 1,
+      "abs": -5076
+    },
+    "end": {
+      "year": -296,
+      "month": 12,
+      "abs": -3529
+    },
+    "startAbs": -5076,
+    "endAbs": -3529,
+    "precision": "year",
+    "role": "primary",
+    "note": "中山国都城灵寿。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/中山国"
+      }
+    ]
+  },
+  {
+    "id": "cap-han-warring-pingyang-403",
+    "dynastyId": "han-warring",
+    "historicalName": "平阳",
+    "modernName": "山西省临汾市",
+    "start": {
+      "year": -403,
+      "month": 1,
+      "abs": -4824
+    },
+    "end": {
+      "year": -375,
+      "month": 12,
+      "abs": -4477
+    },
+    "startAbs": -4824,
+    "endAbs": -4477,
+    "precision": "year",
+    "role": "primary",
+    "note": "战国韩都平阳。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/韩国_(战国)"
+      }
+    ]
+  },
+  {
+    "id": "cap-han-warring-xinzheng-375",
+    "dynastyId": "han-warring",
+    "historicalName": "新郑",
+    "modernName": "河南省郑州市新郑市",
+    "start": {
+      "year": -375,
+      "month": 1,
+      "abs": -4488
+    },
+    "end": {
+      "year": -230,
+      "month": 12,
+      "abs": -2737
+    },
+    "startAbs": -4488,
+    "endAbs": -2737,
+    "precision": "year",
+    "role": "primary",
+    "note": "韩哀侯迁新郑。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/新郑市"
+      }
+    ]
+  },
+  {
+    "id": "cap-zhao-warring-jinyang-403",
+    "dynastyId": "zhao-warring",
+    "historicalName": "晋阳",
+    "modernName": "山西省太原市",
+    "start": {
+      "year": -403,
+      "month": 1,
+      "abs": -4824
+    },
+    "end": {
+      "year": -386,
+      "month": 12,
+      "abs": -4609
+    },
+    "startAbs": -4824,
+    "endAbs": -4609,
+    "precision": "year",
+    "role": "primary",
+    "note": "赵国初都晋阳。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋阳"
+      }
+    ]
+  },
+  {
+    "id": "cap-zhao-warring-handan-385",
+    "dynastyId": "zhao-warring",
+    "historicalName": "邯郸",
+    "modernName": "河北省邯郸市",
+    "start": {
+      "year": -385,
+      "month": 1,
+      "abs": -4608
+    },
+    "end": {
+      "year": -222,
+      "month": 12,
+      "abs": -2641
+    },
+    "startAbs": -4608,
+    "endAbs": -2641,
+    "precision": "year",
+    "role": "primary",
+    "note": "赵敬侯迁邯郸。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邯郸"
+      }
+    ]
+  },
+  {
+    "id": "cap-wei-warring-anyi-2397",
+    "dynastyId": "wei-warring",
+    "historicalName": "安邑",
+    "modernName": "山西省运城市夏县",
+    "start": {
+      "year": -403,
+      "month": 1,
+      "abs": -4824
+    },
+    "end": {
+      "year": -361,
+      "month": 12,
+      "abs": -4309
+    },
+    "startAbs": -4824,
+    "endAbs": -4309,
+    "precision": "year",
+    "role": "primary",
+    "note": "战国魏初都安邑。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/安邑"
+      }
+    ]
+  },
+  {
+    "id": "cap-wei-warring-daliang-360",
+    "dynastyId": "wei-warring",
+    "historicalName": "大梁",
+    "modernName": "河南省开封市",
+    "start": {
+      "year": -360,
+      "month": 1,
+      "abs": -4308
+    },
+    "end": {
+      "year": -225,
+      "month": 12,
+      "abs": -2677
+    },
+    "startAbs": -4308,
+    "endAbs": -2677,
+    "precision": "year",
+    "role": "primary",
+    "note": "魏惠王迁大梁。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/大梁"
+      }
+    ]
+  },
+  {
+    "id": "cap-zhou-guo-east-wangcheng-367",
+    "dynastyId": "zhou-guo-east",
+    "historicalName": "王城",
+    "modernName": "河南省洛阳市",
+    "start": {
+      "year": -367,
+      "month": 1,
+      "abs": -4392
+    },
+    "end": {
+      "year": -249,
+      "month": 12,
+      "abs": -2965
+    },
+    "startAbs": -4392,
+    "endAbs": -2965,
+    "precision": "year",
+    "role": "primary",
+    "note": "东周国都城王城。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/东周国"
+      }
+    ]
+  },
+  {
+    "id": "cap-yelang-yelang-300",
+    "dynastyId": "yelang",
+    "historicalName": "夜郎",
+    "modernName": "贵州省毕节市赫章县",
+    "start": {
+      "year": -300,
+      "month": 1,
+      "abs": -3588
+    },
+    "end": {
+      "year": -27,
+      "month": 12,
+      "abs": -301
+    },
+    "startAbs": -3588,
+    "endAbs": -301,
+    "precision": "year",
+    "role": "primary",
+    "note": "夜郎国都城牂牁江一带，今赫章可乐遗址。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/夜郎"
+      }
+    ]
+  },
+  {
+    "id": "cap-dian-dianchi-279",
+    "dynastyId": "dian",
+    "historicalName": "滇池",
+    "modernName": "云南省昆明市晋宁区",
+    "start": {
+      "year": -279,
+      "month": 1,
+      "abs": -3336
+    },
+    "end": {
+      "year": -109,
+      "month": 12,
+      "abs": -1285
+    },
+    "startAbs": -3336,
+    "endAbs": -1285,
+    "precision": "year",
+    "role": "primary",
+    "note": "滇国都城滇池（石寨山）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/滇国"
+      }
+    ]
+  },
+  {
+    "id": "cap-dai-warring-dai-228",
+    "dynastyId": "dai-warring",
+    "historicalName": "代",
+    "modernName": "河北省张家口市蔚县",
+    "start": {
+      "year": -228,
+      "month": 1,
+      "abs": -2724
+    },
+    "end": {
+      "year": -222,
+      "month": 12,
+      "abs": -2641
+    },
+    "startAbs": -2724,
+    "endAbs": -2641,
+    "precision": "year",
+    "role": "primary",
+    "note": "代国都城代。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/代国"
+      }
+    ]
+  },
+  {
+    "id": "cap-jiaodong-warring-jimo-221",
+    "dynastyId": "jiaodong-warring",
+    "historicalName": "即墨",
+    "modernName": "山东省青岛市即墨区",
+    "start": {
+      "year": -221,
+      "month": 1,
+      "abs": -2640
+    },
+    "end": {
+      "year": -206,
+      "month": 12,
+      "abs": -2449
+    },
+    "startAbs": -2640,
+    "endAbs": -2449,
+    "precision": "year",
+    "role": "primary",
+    "note": "胶东国都城即墨。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/胶东国"
+      }
+    ]
+  },
+  {
+    "id": "cap-chu-west-pengcheng-206",
+    "dynastyId": "chu-west",
+    "historicalName": "彭城",
+    "modernName": "江苏省徐州市",
+    "start": {
+      "year": -206,
+      "month": 1,
+      "abs": -2460
+    },
+    "end": {
+      "year": -202,
+      "month": 12,
+      "abs": -2401
+    },
+    "startAbs": -2460,
+    "endAbs": -2401,
+    "precision": "year",
+    "role": "primary",
+    "note": "西楚霸王项羽都彭城。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/彭城"
+      }
+    ]
+  },
+  {
+    "id": "cap-nanyue-panyu-203",
+    "dynastyId": "nanyue",
+    "historicalName": "番禺",
+    "modernName": "广东省广州市",
+    "start": {
+      "year": -203,
+      "month": 1,
+      "abs": -2424
+    },
+    "end": {
+      "year": -111,
+      "month": 12,
+      "abs": -1309
+    },
+    "startAbs": -2424,
+    "endAbs": -1309,
+    "precision": "year",
+    "role": "primary",
+    "note": "南越国都城番禺。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南越国"
+      }
+    ]
+  },
+  {
+    "id": "cap-gaogouli-guoneicheng-37",
+    "dynastyId": "gaogouli",
+    "historicalName": "国内城",
+    "modernName": "吉林省通化市集安市",
+    "start": {
+      "year": -37,
+      "month": 1,
+      "abs": -432
+    },
+    "end": {
+      "year": 427,
+      "month": 12,
+      "abs": 5135
+    },
+    "startAbs": -432,
+    "endAbs": 5135,
+    "precision": "year",
+    "role": "primary",
+    "note": "高句丽初都国内城（丸都）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/高句丽"
+      }
+    ]
+  },
+  {
+    "id": "cap-gaogouli-pyongyang-428",
+    "dynastyId": "gaogouli",
+    "historicalName": "平壤",
+    "modernName": "朝鲜民主主义人民共和国平壤市",
+    "start": {
+      "year": 428,
+      "month": 1,
+      "abs": 5136
+    },
+    "end": {
+      "year": 668,
+      "month": 12,
+      "abs": 8027
+    },
+    "startAbs": 5136,
+    "endAbs": 8027,
+    "precision": "year",
+    "role": "primary",
+    "note": "广开土王迁平壤。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/平壤"
+      }
+    ]
+  },
+  {
+    "id": "cap-xin-changan-9",
+    "dynastyId": "xin",
+    "historicalName": "长安",
+    "modernName": "陕西省西安市",
+    "start": {
+      "year": 9,
+      "month": 1,
+      "abs": 108
+    },
+    "end": {
+      "year": 23,
+      "month": 12,
+      "abs": 287
+    },
+    "startAbs": 108,
+    "endAbs": 287,
+    "precision": "year",
+    "role": "primary",
+    "note": "王莽新朝都长安。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/新朝"
+      }
+    ]
+  },
+  {
+    "id": "cap-han-west-changan",
+    "dynastyId": "han-west",
+    "historicalName": "长安",
+    "modernName": "陕西省西安市",
+    "start": {
+      "year": -202,
+      "month": 1,
+      "abs": -2412
+    },
+    "end": {
+      "year": 8,
+      "month": 11,
+      "abs": 106
+    },
+    "startAbs": -2412,
+    "endAbs": 106,
+    "precision": "year",
+    "role": "primary",
+    "note": "刘邦称帝定都长安；王莽代汉，西汉终结。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/长安"
+      }
+    ]
+  },
+  {
+    "id": "cap-han-east-luoyang",
+    "dynastyId": "han-east",
+    "historicalName": "洛阳",
+    "modernName": "河南省洛阳市",
+    "start": {
+      "year": 25,
+      "month": 1,
+      "abs": 300
+    },
+    "end": {
+      "year": 220,
+      "month": 12,
+      "abs": 2651
+    },
+    "startAbs": 300,
+    "endAbs": 2651,
+    "precision": "year",
+    "role": "primary",
+    "note": "光武帝定都洛阳；献帝禅让曹丕，东汉终结。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/洛阳"
+      }
+    ]
+  },
+  {
+    "id": "cap-han-gengshi-changan-23",
+    "dynastyId": "han-gengshi",
+    "historicalName": "长安",
+    "modernName": "陕西省西安市",
+    "start": {
+      "year": 23,
+      "month": 1,
+      "abs": 276
+    },
+    "end": {
+      "year": 25,
+      "month": 12,
+      "abs": 311
+    },
+    "startAbs": 276,
+    "endAbs": 311,
+    "precision": "year",
+    "role": "primary",
+    "note": "更始政权都长安。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/更始政权"
+      }
+    ]
+  },
+  {
+    "id": "cap-chimei-changan-23",
+    "dynastyId": "chimei",
+    "historicalName": "长安",
+    "modernName": "陕西省西安市",
+    "start": {
+      "year": 23,
+      "month": 1,
+      "abs": 276
+    },
+    "end": {
+      "year": 27,
+      "month": 12,
+      "abs": 335
+    },
+    "startAbs": 276,
+    "endAbs": 335,
+    "precision": "year",
+    "role": "primary",
+    "note": "赤眉军据长安。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赤眉军"
+      }
+    ]
+  },
+  {
+    "id": "cap-wei-luoyang-220",
+    "dynastyId": "wei",
+    "historicalName": "洛阳",
+    "modernName": "河南省洛阳市",
+    "start": {
+      "year": 220,
+      "month": 1,
+      "abs": 2640
+    },
+    "end": {
+      "year": 266,
+      "month": 12,
+      "abs": 3203
+    },
+    "startAbs": 2640,
+    "endAbs": 3203,
+    "precision": "year",
+    "role": "primary",
+    "note": "曹魏都城洛阳。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹魏"
+      }
+    ]
+  },
+  {
+    "id": "cap-shu-chengdu-221",
+    "dynastyId": "shu",
+    "historicalName": "成都",
+    "modernName": "四川省成都市",
+    "start": {
+      "year": 221,
+      "month": 1,
+      "abs": 2652
+    },
+    "end": {
+      "year": 263,
+      "month": 12,
+      "abs": 3167
+    },
+    "startAbs": 2652,
+    "endAbs": 3167,
+    "precision": "year",
+    "role": "primary",
+    "note": "蜀汉都城成都。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/蜀汉"
+      }
+    ]
+  },
+  {
+    "id": "cap-wu-jianye-222",
+    "dynastyId": "wu",
+    "historicalName": "建业",
+    "modernName": "江苏省南京市",
+    "start": {
+      "year": 222,
+      "month": 1,
+      "abs": 2664
+    },
+    "end": {
+      "year": 280,
+      "month": 12,
+      "abs": 3371
+    },
+    "startAbs": 2664,
+    "endAbs": 3371,
+    "precision": "year",
+    "role": "primary",
+    "note": "东吴都城建业。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/东吴"
+      }
+    ]
+  },
+  {
+    "id": "cap-jin-west-luoyang-266",
+    "dynastyId": "jin-west",
+    "historicalName": "洛阳",
+    "modernName": "河南省洛阳市",
+    "start": {
+      "year": 266,
+      "month": 1,
+      "abs": 3192
+    },
+    "end": {
+      "year": 316,
+      "month": 12,
+      "abs": 3803
+    },
+    "startAbs": 3192,
+    "endAbs": 3803,
+    "precision": "year",
+    "role": "primary",
+    "note": "西晋都城洛阳。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/西晋"
+      }
+    ]
+  },
+  {
+    "id": "cap-chouchi-chouchi-296",
+    "dynastyId": "chouchi",
+    "historicalName": "仇池",
+    "modernName": "甘肃省陇南市成县",
+    "start": {
+      "year": 296,
+      "month": 1,
+      "abs": 3552
+    },
+    "end": {
+      "year": 371,
+      "month": 12,
+      "abs": 4463
+    },
+    "startAbs": 3552,
+    "endAbs": 4463,
+    "precision": "year",
+    "role": "primary",
+    "note": "仇池氏据仇池。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/仇池国"
+      }
+    ]
+  },
+  {
+    "id": "cap-liang-front-guzang-301",
+    "dynastyId": "liang-front",
+    "historicalName": "姑臧",
+    "modernName": "甘肃省武威市",
+    "start": {
+      "year": 301,
+      "month": 1,
+      "abs": 3612
+    },
+    "end": {
+      "year": 376,
+      "month": 12,
+      "abs": 4523
+    },
+    "startAbs": 3612,
+    "endAbs": 4523,
+    "precision": "year",
+    "role": "primary",
+    "note": "前凉都城姑臧。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/前凉"
+      }
+    ]
+  },
+  {
+    "id": "cap-han-zhao-changan-304",
+    "dynastyId": "han-zhao",
+    "historicalName": "长安",
+    "modernName": "陕西省西安市",
+    "start": {
+      "year": 304,
+      "month": 1,
+      "abs": 3648
+    },
+    "end": {
+      "year": 329,
+      "month": 12,
+      "abs": 3959
+    },
+    "startAbs": 3648,
+    "endAbs": 3959,
+    "precision": "year",
+    "role": "primary",
+    "note": "前赵（汉赵）都城长安。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/前赵"
+      }
+    ]
+  },
+  {
+    "id": "cap-cheng-han-chengdu-304",
+    "dynastyId": "cheng-han",
+    "historicalName": "成都",
+    "modernName": "四川省成都市",
+    "start": {
+      "year": 304,
+      "month": 1,
+      "abs": 3648
+    },
+    "end": {
+      "year": 347,
+      "month": 12,
+      "abs": 4175
+    },
+    "startAbs": 3648,
+    "endAbs": 4175,
+    "precision": "year",
+    "role": "primary",
+    "note": "成汉都城成都。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/成汉"
+      }
+    ]
+  },
+  {
+    "id": "cap-jin-east-jiankang-317",
+    "dynastyId": "jin-east",
+    "historicalName": "建康",
+    "modernName": "江苏省南京市",
+    "start": {
+      "year": 317,
+      "month": 1,
+      "abs": 3804
+    },
+    "end": {
+      "year": 420,
+      "month": 12,
+      "abs": 5051
+    },
+    "startAbs": 3804,
+    "endAbs": 5051,
+    "precision": "year",
+    "role": "primary",
+    "note": "东晋都城建康。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/东晋"
+      }
+    ]
+  },
+  {
+    "id": "cap-zhao-back-xiangguo-319",
+    "dynastyId": "zhao-back",
+    "historicalName": "襄国",
+    "modernName": "河北省邢台市",
+    "start": {
+      "year": 319,
+      "month": 1,
+      "abs": 3828
+    },
+    "end": {
+      "year": 335,
+      "month": 12,
+      "abs": 4031
+    },
+    "startAbs": 3828,
+    "endAbs": 4031,
+    "precision": "year",
+    "role": "primary",
+    "note": "后赵初都襄国。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/后赵"
+      }
+    ]
+  },
+  {
+    "id": "cap-zhao-back-ye-336",
+    "dynastyId": "zhao-back",
+    "historicalName": "邺",
+    "modernName": "河北省邯郸市临漳县",
+    "start": {
+      "year": 336,
+      "month": 1,
+      "abs": 4032
+    },
+    "end": {
+      "year": 351,
+      "month": 12,
+      "abs": 4223
+    },
+    "startAbs": 4032,
+    "endAbs": 4223,
+    "precision": "year",
+    "role": "primary",
+    "note": "后赵迁邺。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邺城"
+      }
+    ]
+  },
+  {
+    "id": "cap-tuyuhun-fushicheng-329",
+    "dynastyId": "tuyuhun",
+    "historicalName": "伏俟城",
+    "modernName": "青海省海南藏族自治州共和县",
+    "start": {
+      "year": 329,
+      "month": 1,
+      "abs": 3948
+    },
+    "end": {
+      "year": 663,
+      "month": 12,
+      "abs": 7967
+    },
+    "startAbs": 3948,
+    "endAbs": 7967,
+    "precision": "year",
+    "role": "primary",
+    "note": "吐谷浑汗国都城伏俟城（莫贺延碛南）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吐谷浑"
+      }
+    ]
+  },
+  {
+    "id": "cap-yan-front-longcheng-337",
+    "dynastyId": "yan-front",
+    "historicalName": "龙城",
+    "modernName": "辽宁省朝阳市",
+    "start": {
+      "year": 337,
+      "month": 1,
+      "abs": 4044
+    },
+    "end": {
+      "year": 347,
+      "month": 12,
+      "abs": 4175
+    },
+    "startAbs": 4044,
+    "endAbs": 4175,
+    "precision": "year",
+    "role": "primary",
+    "note": "前燕初都龙城。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/前燕"
+      }
+    ]
+  },
+  {
+    "id": "cap-yan-front-ji-348",
+    "dynastyId": "yan-front",
+    "historicalName": "蓟",
+    "modernName": "北京市",
+    "start": {
+      "year": 348,
+      "month": 1,
+      "abs": 4176
+    },
+    "end": {
+      "year": 357,
+      "month": 12,
+      "abs": 4295
+    },
+    "startAbs": 4176,
+    "endAbs": 4295,
+    "precision": "year",
+    "role": "primary",
+    "note": "前燕迁都蓟。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/蓟城"
+      }
+    ]
+  },
+  {
+    "id": "cap-yan-front-ye-358",
+    "dynastyId": "yan-front",
+    "historicalName": "邺",
+    "modernName": "河北省邯郸市临漳县",
+    "start": {
+      "year": 358,
+      "month": 1,
+      "abs": 4296
+    },
+    "end": {
+      "year": 370,
+      "month": 12,
+      "abs": 4451
+    },
+    "startAbs": 4296,
+    "endAbs": 4451,
+    "precision": "year",
+    "role": "primary",
+    "note": "前燕慕容垂迁邺。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邺城"
+      }
+    ]
+  },
+  {
+    "id": "cap-ranwei-ye-350",
+    "dynastyId": "ranwei",
+    "historicalName": "邺",
+    "modernName": "河北省邯郸市临漳县",
+    "start": {
+      "year": 350,
+      "month": 1,
+      "abs": 4200
+    },
+    "end": {
+      "year": 352,
+      "month": 12,
+      "abs": 4235
+    },
+    "startAbs": 4200,
+    "endAbs": 4235,
+    "precision": "year",
+    "role": "primary",
+    "note": "冉魏据邺。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/冉魏"
+      }
+    ]
+  },
+  {
+    "id": "cap-qin-front-changan-351",
+    "dynastyId": "qin-front",
+    "historicalName": "长安",
+    "modernName": "陕西省西安市",
+    "start": {
+      "year": 351,
+      "month": 1,
+      "abs": 4212
+    },
+    "end": {
+      "year": 394,
+      "month": 12,
+      "abs": 4739
+    },
+    "startAbs": 4212,
+    "endAbs": 4739,
+    "precision": "year",
+    "role": "primary",
+    "note": "前秦都城长安。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/前秦"
+      }
+    ]
+  },
+  {
+    "id": "cap-xiyan-changzi-384",
+    "dynastyId": "xiyan",
+    "historicalName": "长子",
+    "modernName": "山西省长治市长子县",
+    "start": {
+      "year": 384,
+      "month": 1,
+      "abs": 4608
+    },
+    "end": {
+      "year": 394,
+      "month": 12,
+      "abs": 4739
+    },
+    "startAbs": 4608,
+    "endAbs": 4739,
+    "precision": "year",
+    "role": "primary",
+    "note": "西燕都城长子。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/西燕"
+      }
+    ]
+  },
+  {
+    "id": "cap-yan-back-zhongshan-384",
+    "dynastyId": "yan-back",
+    "historicalName": "中山",
+    "modernName": "河北省保定市定州市",
+    "start": {
+      "year": 384,
+      "month": 1,
+      "abs": 4608
+    },
+    "end": {
+      "year": 397,
+      "month": 12,
+      "abs": 4775
+    },
+    "startAbs": 4608,
+    "endAbs": 4775,
+    "precision": "year",
+    "role": "primary",
+    "note": "后燕初都中山。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/后燕"
+      }
+    ]
+  },
+  {
+    "id": "cap-yan-back-longcheng-398",
+    "dynastyId": "yan-back",
+    "historicalName": "龙城",
+    "modernName": "辽宁省朝阳市",
+    "start": {
+      "year": 398,
+      "month": 1,
+      "abs": 4776
+    },
+    "end": {
+      "year": 409,
+      "month": 12,
+      "abs": 4919
+    },
+    "startAbs": 4776,
+    "endAbs": 4919,
+    "precision": "year",
+    "role": "primary",
+    "note": "后燕慕容宝迁龙城。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/龙城"
+      }
+    ]
+  },
+  {
+    "id": "cap-qin-back-changan-384",
+    "dynastyId": "qin-back",
+    "historicalName": "长安",
+    "modernName": "陕西省西安市",
+    "start": {
+      "year": 384,
+      "month": 1,
+      "abs": 4608
+    },
+    "end": {
+      "year": 417,
+      "month": 12,
+      "abs": 5015
+    },
+    "startAbs": 4608,
+    "endAbs": 5015,
+    "precision": "year",
+    "role": "primary",
+    "note": "后秦都城长安。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/后秦"
+      }
+    ]
+  },
+  {
+    "id": "cap-qin-xi-fuhan-385",
+    "dynastyId": "qin-xi",
+    "historicalName": "桴罕",
+    "modernName": "甘肃省临夏回族自治州临夏市",
+    "start": {
+      "year": 385,
+      "month": 1,
+      "abs": 4620
+    },
+    "end": {
+      "year": 431,
+      "month": 12,
+      "abs": 5183
+    },
+    "startAbs": 4620,
+    "endAbs": 5183,
+    "precision": "year",
+    "role": "primary",
+    "note": "西秦都城桴罕。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/西秦"
+      }
+    ]
+  },
+  {
+    "id": "cap-liang-back-guzang-386",
+    "dynastyId": "liang-back",
+    "historicalName": "姑臧",
+    "modernName": "甘肃省武威市",
+    "start": {
+      "year": 386,
+      "month": 1,
+      "abs": 4632
+    },
+    "end": {
+      "year": 403,
+      "month": 12,
+      "abs": 4847
+    },
+    "startAbs": 4632,
+    "endAbs": 4847,
+    "precision": "year",
+    "role": "primary",
+    "note": "后凉都城姑臧。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/后凉"
+      }
+    ]
+  },
+  {
+    "id": "cap-wei-north-shengle-386",
+    "dynastyId": "wei-north",
+    "historicalName": "盛乐",
+    "modernName": "内蒙古自治区呼和浩特市和林格尔县",
+    "start": {
+      "year": 386,
+      "month": 1,
+      "abs": 4632
+    },
+    "end": {
+      "year": 398,
+      "month": 12,
+      "abs": 4787
+    },
+    "startAbs": 4632,
+    "endAbs": 4787,
+    "precision": "year",
+    "role": "primary",
+    "note": "北魏初都盛乐。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/盛乐"
+      }
+    ]
+  },
+  {
+    "id": "cap-wei-north-pingcheng-398",
+    "dynastyId": "wei-north",
+    "historicalName": "平城",
+    "modernName": "山西省大同市",
+    "start": {
+      "year": 398,
+      "month": 1,
+      "abs": 4776
+    },
+    "end": {
+      "year": 493,
+      "month": 12,
+      "abs": 5927
+    },
+    "startAbs": 4776,
+    "endAbs": 5927,
+    "precision": "year",
+    "role": "primary",
+    "note": "北魏迁都平城。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/平城"
+      }
+    ]
+  },
+  {
+    "id": "cap-wei-north-luoyang-494",
+    "dynastyId": "wei-north",
+    "historicalName": "洛阳",
+    "modernName": "河南省洛阳市",
+    "start": {
+      "year": 494,
+      "month": 1,
+      "abs": 5928
+    },
+    "end": {
+      "year": 535,
+      "month": 12,
+      "abs": 6431
+    },
+    "startAbs": 5928,
+    "endAbs": 6431,
+    "precision": "year",
+    "role": "primary",
+    "note": "孝文帝迁洛阳。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/北魏"
+      }
+    ]
+  },
+  {
+    "id": "cap-liang-south-guzang-397",
+    "dynastyId": "liang-south",
+    "historicalName": "姑臧",
+    "modernName": "甘肃省武威市",
+    "start": {
+      "year": 397,
+      "month": 1,
+      "abs": 4764
+    },
+    "end": {
+      "year": 404,
+      "month": 12,
+      "abs": 4859
+    },
+    "startAbs": 4764,
+    "endAbs": 4859,
+    "precision": "year",
+    "role": "primary",
+    "note": "南凉初都姑臧。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南凉"
+      }
+    ]
+  },
+  {
+    "id": "cap-liang-south-ledu-405",
+    "dynastyId": "liang-south",
+    "historicalName": "乐都",
+    "modernName": "青海省海东市乐都区",
+    "start": {
+      "year": 405,
+      "month": 1,
+      "abs": 4860
+    },
+    "end": {
+      "year": 414,
+      "month": 12,
+      "abs": 4979
+    },
+    "startAbs": 4860,
+    "endAbs": 4979,
+    "precision": "year",
+    "role": "primary",
+    "note": "南凉迁都乐都。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/乐都区"
+      }
+    ]
+  },
+  {
+    "id": "cap-liang-north-zhangye-397",
+    "dynastyId": "liang-north",
+    "historicalName": "张掖",
+    "modernName": "甘肃省张掖市",
+    "start": {
+      "year": 397,
+      "month": 1,
+      "abs": 4764
+    },
+    "end": {
+      "year": 439,
+      "month": 12,
+      "abs": 5279
+    },
+    "startAbs": 4764,
+    "endAbs": 5279,
+    "precision": "year",
+    "role": "primary",
+    "note": "北凉都城张掖→姑臧。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/北凉"
+      }
+    ]
+  },
+  {
+    "id": "cap-yan-south-guanggu-398",
+    "dynastyId": "yan-south",
+    "historicalName": "广固",
+    "modernName": "山东省潍坊市青州市",
+    "start": {
+      "year": 398,
+      "month": 1,
+      "abs": 4776
+    },
+    "end": {
+      "year": 410,
+      "month": 12,
+      "abs": 4931
+    },
+    "startAbs": 4776,
+    "endAbs": 4931,
+    "precision": "year",
+    "role": "primary",
+    "note": "南燕都城广固。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南燕"
+      }
+    ]
+  },
+  {
+    "id": "cap-liang-xi-jiuquan-400",
+    "dynastyId": "liang-xi",
+    "historicalName": "酒泉",
+    "modernName": "甘肃省酒泉市",
+    "start": {
+      "year": 400,
+      "month": 1,
+      "abs": 4800
+    },
+    "end": {
+      "year": 421,
+      "month": 12,
+      "abs": 5063
+    },
+    "startAbs": 4800,
+    "endAbs": 5063,
+    "precision": "year",
+    "role": "primary",
+    "note": "西凉都城酒泉→敦煌。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/西凉"
+      }
+    ]
+  },
+  {
+    "id": "cap-xia-hu-tongwancheng-407",
+    "dynastyId": "xia-hu",
+    "historicalName": "统万城",
+    "modernName": "陕西省榆林市靖边县",
+    "start": {
+      "year": 407,
+      "month": 1,
+      "abs": 4884
+    },
+    "end": {
+      "year": 431,
+      "month": 12,
+      "abs": 5183
+    },
+    "startAbs": 4884,
+    "endAbs": 5183,
+    "precision": "year",
+    "role": "primary",
+    "note": "胡夏都城统万城。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/统万城"
+      }
+    ]
+  },
+  {
+    "id": "cap-yan-north-longcheng-407",
+    "dynastyId": "yan-north",
+    "historicalName": "龙城",
+    "modernName": "辽宁省朝阳市",
+    "start": {
+      "year": 407,
+      "month": 1,
+      "abs": 4884
+    },
+    "end": {
+      "year": 436,
+      "month": 12,
+      "abs": 5243
+    },
+    "startAbs": 4884,
+    "endAbs": 5243,
+    "precision": "year",
+    "role": "primary",
+    "note": "北燕都城龙城。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/北燕"
+      }
+    ]
+  },
+  {
+    "id": "cap-song-liu-jiankang-420",
+    "dynastyId": "song-liu",
+    "historicalName": "建康",
+    "modernName": "江苏省南京市",
+    "start": {
+      "year": 420,
+      "month": 1,
+      "abs": 5040
+    },
+    "end": {
+      "year": 479,
+      "month": 12,
+      "abs": 5759
+    },
+    "startAbs": 5040,
+    "endAbs": 5759,
+    "precision": "year",
+    "role": "primary",
+    "note": "刘宋都城建康。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/刘宋"
+      }
+    ]
+  },
+  {
+    "id": "cap-qi-nan-jiankang-479",
+    "dynastyId": "qi-nan",
+    "historicalName": "建康",
+    "modernName": "江苏省南京市",
+    "start": {
+      "year": 479,
+      "month": 1,
+      "abs": 5748
+    },
+    "end": {
+      "year": 502,
+      "month": 12,
+      "abs": 6035
+    },
+    "startAbs": 5748,
+    "endAbs": 6035,
+    "precision": "year",
+    "role": "primary",
+    "note": "南齐都城建康。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南齐"
+      }
+    ]
+  },
+  {
+    "id": "cap-liang-nan-jiankang-502",
+    "dynastyId": "liang-nan",
+    "historicalName": "建康",
+    "modernName": "江苏省南京市",
+    "start": {
+      "year": 502,
+      "month": 1,
+      "abs": 6024
+    },
+    "end": {
+      "year": 557,
+      "month": 12,
+      "abs": 6695
+    },
+    "startAbs": 6024,
+    "endAbs": 6695,
+    "precision": "year",
+    "role": "primary",
+    "note": "南梁都城建康。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南梁"
+      }
+    ]
+  },
+  {
+    "id": "cap-wei-east-ye-534",
+    "dynastyId": "wei-east",
+    "historicalName": "邺",
+    "modernName": "河北省邯郸市临漳县",
+    "start": {
+      "year": 534,
+      "month": 1,
+      "abs": 6408
+    },
+    "end": {
+      "year": 550,
+      "month": 12,
+      "abs": 6611
+    },
+    "startAbs": 6408,
+    "endAbs": 6611,
+    "precision": "year",
+    "role": "primary",
+    "note": "东魏都城邺。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/东魏"
+      }
+    ]
+  },
+  {
+    "id": "cap-wei-west-changan-535",
+    "dynastyId": "wei-west",
+    "historicalName": "长安",
+    "modernName": "陕西省西安市",
+    "start": {
+      "year": 535,
+      "month": 1,
+      "abs": 6420
+    },
+    "end": {
+      "year": 557,
+      "month": 12,
+      "abs": 6695
+    },
+    "startAbs": 6420,
+    "endAbs": 6695,
+    "precision": "year",
+    "role": "primary",
+    "note": "西魏都城长安。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/西魏"
+      }
+    ]
+  },
+  {
+    "id": "cap-qi-bei-ye-550",
+    "dynastyId": "qi-bei",
+    "historicalName": "邺",
+    "modernName": "河北省邯郸市临漳县",
+    "start": {
+      "year": 550,
+      "month": 1,
+      "abs": 6600
+    },
+    "end": {
+      "year": 577,
+      "month": 12,
+      "abs": 6935
+    },
+    "startAbs": 6600,
+    "endAbs": 6935,
+    "precision": "year",
+    "role": "primary",
+    "note": "北齐都城邺。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/北齐"
+      }
+    ]
+  },
+  {
+    "id": "cap-xiliang-jiangling-555",
+    "dynastyId": "xiliang",
+    "historicalName": "江陵",
+    "modernName": "湖北省荆州市",
+    "start": {
+      "year": 555,
+      "month": 1,
+      "abs": 6660
+    },
+    "end": {
+      "year": 587,
+      "month": 12,
+      "abs": 7055
+    },
+    "startAbs": 6660,
+    "endAbs": 7055,
+    "precision": "year",
+    "role": "primary",
+    "note": "西梁（萧梁）都城江陵。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/西梁"
+      }
+    ]
+  },
+  {
+    "id": "cap-chen-nan-jiankang-557",
+    "dynastyId": "chen-nan",
+    "historicalName": "建康",
+    "modernName": "江苏省南京市",
+    "start": {
+      "year": 557,
+      "month": 1,
+      "abs": 6684
+    },
+    "end": {
+      "year": 589,
+      "month": 12,
+      "abs": 7079
+    },
+    "startAbs": 6684,
+    "endAbs": 7079,
+    "precision": "year",
+    "role": "primary",
+    "note": "南陈都城建康。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南陈"
+      }
+    ]
+  },
+  {
+    "id": "cap-zhou-bei-changan-557",
+    "dynastyId": "zhou-bei",
+    "historicalName": "长安",
+    "modernName": "陕西省西安市",
+    "start": {
+      "year": 557,
+      "month": 1,
+      "abs": 6684
+    },
+    "end": {
+      "year": 581,
+      "month": 12,
+      "abs": 6983
+    },
+    "startAbs": 6684,
+    "endAbs": 6983,
+    "precision": "year",
+    "role": "primary",
+    "note": "北周都城长安。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/北周"
+      }
+    ]
+  },
+  {
+    "id": "cap-sui-daxing-581",
+    "dynastyId": "sui",
+    "historicalName": "大兴城",
+    "modernName": "陕西省西安市",
+    "start": {
+      "year": 581,
+      "month": 1,
+      "abs": 6972
+    },
+    "end": {
+      "year": 618,
+      "month": 12,
+      "abs": 7427
+    },
+    "startAbs": 6972,
+    "endAbs": 7427,
+    "precision": "year",
+    "role": "primary",
+    "note": "隋都大兴城（长安）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/大兴城"
+      }
+    ]
+  },
+  {
+    "id": "cap-tang-changan",
+    "dynastyId": "tang",
+    "historicalName": "长安",
+    "modernName": "陕西省西安市",
+    "start": {
+      "year": 618,
+      "month": 1,
+      "abs": 7416
+    },
+    "end": {
+      "year": 904,
+      "month": 12,
+      "abs": 10859
+    },
+    "startAbs": 7416,
+    "endAbs": 10859,
+    "precision": "year",
+    "role": "primary",
+    "note": "唐都长安。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/长安"
+      }
+    ]
+  },
+  {
+    "id": "cap-tang-luoyang",
+    "dynastyId": "tang",
+    "historicalName": "洛阳",
+    "modernName": "河南省洛阳市",
+    "start": {
+      "year": 657,
+      "month": 1,
+      "abs": 7884
+    },
+    "end": {
+      "year": 904,
+      "month": 12,
+      "abs": 10859
+    },
+    "startAbs": 7884,
+    "endAbs": 10859,
+    "precision": "year",
+    "role": "secondary",
+    "note": "唐东都洛阳。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/洛阳"
+      }
+    ]
+  },
+  {
+    "id": "cap-tubo-luosuo-618",
+    "dynastyId": "tubo",
+    "historicalName": "逻些",
+    "modernName": "西藏自治区拉萨市",
+    "start": {
+      "year": 618,
+      "month": 1,
+      "abs": 7416
+    },
+    "end": {
+      "year": 842,
+      "month": 12,
+      "abs": 10115
+    },
+    "startAbs": 7416,
+    "endAbs": 10115,
+    "precision": "year",
+    "role": "primary",
+    "note": "吐蕃都城逻些（拉萨）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吐蕃"
+      }
+    ]
+  },
+  {
+    "id": "cap-nanzhao-taihecheng-649",
+    "dynastyId": "nanzhao",
+    "historicalName": "太和城",
+    "modernName": "云南省大理白族自治州巍山彝族回族自治县",
+    "start": {
+      "year": 649,
+      "month": 1,
+      "abs": 7788
+    },
+    "end": {
+      "year": 902,
+      "month": 12,
+      "abs": 10835
+    },
+    "startAbs": 7788,
+    "endAbs": 10835,
+    "precision": "year",
+    "role": "primary",
+    "note": "南诏都城太和城（巍山）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南诏"
+      }
+    ]
+  },
+  {
+    "id": "cap-zhou-wu-shendu-690",
+    "dynastyId": "zhou-wu",
+    "historicalName": "神都",
+    "modernName": "河南省洛阳市",
+    "start": {
+      "year": 690,
+      "month": 1,
+      "abs": 8280
+    },
+    "end": {
+      "year": 705,
+      "month": 12,
+      "abs": 8471
+    },
+    "startAbs": 8280,
+    "endAbs": 8471,
+    "precision": "year",
+    "role": "primary",
+    "note": "武周以洛阳为神都。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/武周"
+      }
+    ]
+  },
+  {
+    "id": "cap-huihu-yahzhang-8928",
+    "dynastyId": "huihu",
+    "historicalName": "回鹘牙帐",
+    "modernName": "蒙古国前杭爱省哈拉和林苏木",
+    "start": {
+      "year": 744,
+      "month": 1,
+      "abs": 8928
+    },
+    "end": {
+      "year": 840,
+      "month": 12,
+      "abs": 10091
+    },
+    "startAbs": 8928,
+    "endAbs": 10091,
+    "precision": "year",
+    "role": "primary",
+    "note": "回鹘汗国牙帐，漠北草原都城。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/回鹘"
+      }
+    ]
+  },
+  {
+    "id": "cap-wu-shi-hangzhou-902",
+    "dynastyId": "wu-shi",
+    "historicalName": "杭州",
+    "modernName": "浙江省杭州市",
+    "start": {
+      "year": 902,
+      "month": 1,
+      "abs": 10824
+    },
+    "end": {
+      "year": 937,
+      "month": 12,
+      "abs": 11255
+    },
+    "startAbs": 10824,
+    "endAbs": 11255,
+    "precision": "year",
+    "role": "primary",
+    "note": "吴越前身武肃王据杭州。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴越国"
+      }
+    ]
+  },
+  {
+    "id": "cap-liang-hou-kaifeng-907",
+    "dynastyId": "liang-hou",
+    "historicalName": "开封",
+    "modernName": "河南省开封市",
+    "start": {
+      "year": 907,
+      "month": 1,
+      "abs": 10884
+    },
+    "end": {
+      "year": 923,
+      "month": 12,
+      "abs": 11087
+    },
+    "startAbs": 10884,
+    "endAbs": 11087,
+    "precision": "year",
+    "role": "primary",
+    "note": "后梁都城开封。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/后梁"
+      }
+    ]
+  },
+  {
+    "id": "cap-chu-nan-changsha-10884",
+    "dynastyId": "chu-nan",
+    "historicalName": "长沙",
+    "modernName": "湖南省长沙市",
+    "start": {
+      "year": 907,
+      "month": 1,
+      "abs": 10884
+    },
+    "end": {
+      "year": 951,
+      "month": 12,
+      "abs": 11423
+    },
+    "startAbs": 10884,
+    "endAbs": 11423,
+    "precision": "year",
+    "role": "primary",
+    "note": "楚国都城长沙。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚国_(十国)"
+      }
+    ]
+  },
+  {
+    "id": "cap-shu-qian-chengdu-907",
+    "dynastyId": "shu-qian",
+    "historicalName": "成都",
+    "modernName": "四川省成都市",
+    "start": {
+      "year": 907,
+      "month": 1,
+      "abs": 10884
+    },
+    "end": {
+      "year": 925,
+      "month": 12,
+      "abs": 11111
+    },
+    "startAbs": 10884,
+    "endAbs": 11111,
+    "precision": "year",
+    "role": "primary",
+    "note": "前蜀都城成都。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/前蜀"
+      }
+    ]
+  },
+  {
+    "id": "cap-wuyue-hangzhou-907",
+    "dynastyId": "wuyue",
+    "historicalName": "杭州",
+    "modernName": "浙江省杭州市",
+    "start": {
+      "year": 907,
+      "month": 1,
+      "abs": 10884
+    },
+    "end": {
+      "year": 978,
+      "month": 12,
+      "abs": 11747
+    },
+    "startAbs": 10884,
+    "endAbs": 11747,
+    "precision": "year",
+    "role": "primary",
+    "note": "吴越都城杭州。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴越国"
+      }
+    ]
+  },
+  {
+    "id": "cap-min-fujian-fuzhou-909",
+    "dynastyId": "min-fujian",
+    "historicalName": "福州",
+    "modernName": "福建省福州市",
+    "start": {
+      "year": 909,
+      "month": 1,
+      "abs": 10908
+    },
+    "end": {
+      "year": 945,
+      "month": 12,
+      "abs": 11351
+    },
+    "startAbs": 10908,
+    "endAbs": 11351,
+    "precision": "year",
+    "role": "primary",
+    "note": "闽国都城福州。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/闽国"
+      }
+    ]
+  },
+  {
+    "id": "cap-han-nan-guangzhou-11004",
+    "dynastyId": "han-nan",
+    "historicalName": "广州",
+    "modernName": "广东省广州市",
+    "start": {
+      "year": 917,
+      "month": 1,
+      "abs": 11004
+    },
+    "end": {
+      "year": 971,
+      "month": 12,
+      "abs": 11663
+    },
+    "startAbs": 11004,
+    "endAbs": 11663,
+    "precision": "year",
+    "role": "primary",
+    "note": "南汉都城广州。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南汉"
+      }
+    ]
+  },
+  {
+    "id": "cap-tang-hou-luoyang-923",
+    "dynastyId": "tang-hou",
+    "historicalName": "洛阳",
+    "modernName": "河南省洛阳市",
+    "start": {
+      "year": 923,
+      "month": 1,
+      "abs": 11076
+    },
+    "end": {
+      "year": 936,
+      "month": 12,
+      "abs": 11243
+    },
+    "startAbs": 11076,
+    "endAbs": 11243,
+    "precision": "year",
+    "role": "primary",
+    "note": "后唐都城洛阳。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/后唐"
+      }
+    ]
+  },
+  {
+    "id": "cap-jingnan-jiangling-924",
+    "dynastyId": "jingnan",
+    "historicalName": "江陵",
+    "modernName": "湖北省荆州市",
+    "start": {
+      "year": 924,
+      "month": 1,
+      "abs": 11088
+    },
+    "end": {
+      "year": 963,
+      "month": 12,
+      "abs": 11567
+    },
+    "startAbs": 11088,
+    "endAbs": 11567,
+    "precision": "year",
+    "role": "primary",
+    "note": "荆南都城江陵。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/荆南"
+      }
+    ]
+  },
+  {
+    "id": "cap-shu-hou-chengdu-934",
+    "dynastyId": "shu-hou",
+    "historicalName": "成都",
+    "modernName": "四川省成都市",
+    "start": {
+      "year": 934,
+      "month": 1,
+      "abs": 11208
+    },
+    "end": {
+      "year": 965,
+      "month": 12,
+      "abs": 11591
+    },
+    "startAbs": 11208,
+    "endAbs": 11591,
+    "precision": "year",
+    "role": "primary",
+    "note": "后蜀都城成都。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/后蜀"
+      }
+    ]
+  },
+  {
+    "id": "cap-jin-hou-taiyuan-936",
+    "dynastyId": "jin-hou",
+    "historicalName": "太原",
+    "modernName": "山西省太原市",
+    "start": {
+      "year": 936,
+      "month": 1,
+      "abs": 11232
+    },
+    "end": {
+      "year": 947,
+      "month": 12,
+      "abs": 11375
+    },
+    "startAbs": 11232,
+    "endAbs": 11375,
+    "precision": "year",
+    "role": "primary",
+    "note": "后晋都城太原。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/后晋"
+      }
+    ]
+  },
+  {
+    "id": "cap-tang-nan-jinling-937",
+    "dynastyId": "tang-nan",
+    "historicalName": "金陵",
+    "modernName": "江苏省南京市",
+    "start": {
+      "year": 937,
+      "month": 1,
+      "abs": 11244
+    },
+    "end": {
+      "year": 975,
+      "month": 12,
+      "abs": 11711
+    },
+    "startAbs": 11244,
+    "endAbs": 11711,
+    "precision": "year",
+    "role": "primary",
+    "note": "南唐都城金陵。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南唐"
+      }
+    ]
+  },
+  {
+    "id": "cap-dali-taihecheng-11244",
+    "dynastyId": "dali",
+    "historicalName": "太和城",
+    "modernName": "云南省大理白族自治州大理市",
+    "start": {
+      "year": 937,
+      "month": 1,
+      "abs": 11244
+    },
+    "end": {
+      "year": 1253,
+      "month": 12,
+      "abs": 15047
+    },
+    "startAbs": 11244,
+    "endAbs": 15047,
+    "precision": "year",
+    "role": "primary",
+    "note": "大理国都城羊苴咩城（大理）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/大理国"
+      }
+    ]
+  },
+  {
+    "id": "cap-han-hou-kaifeng-947",
+    "dynastyId": "han-hou",
+    "historicalName": "开封",
+    "modernName": "河南省开封市",
+    "start": {
+      "year": 947,
+      "month": 1,
+      "abs": 11364
+    },
+    "end": {
+      "year": 951,
+      "month": 12,
+      "abs": 11423
+    },
+    "startAbs": 11364,
+    "endAbs": 11423,
+    "precision": "year",
+    "role": "primary",
+    "note": "后汉都城开封。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/后汉"
+      }
+    ]
+  },
+  {
+    "id": "cap-han-bei-taiyuan-951",
+    "dynastyId": "han-bei",
+    "historicalName": "太原",
+    "modernName": "山西省太原市",
+    "start": {
+      "year": 951,
+      "month": 1,
+      "abs": 11412
+    },
+    "end": {
+      "year": 979,
+      "month": 12,
+      "abs": 11759
+    },
+    "startAbs": 11412,
+    "endAbs": 11759,
+    "precision": "year",
+    "role": "primary",
+    "note": "北汉都城太原。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/北汉"
+      }
+    ]
+  },
+  {
+    "id": "cap-zhou-hou-kaifeng-951",
+    "dynastyId": "zhou-hou",
+    "historicalName": "开封",
+    "modernName": "河南省开封市",
+    "start": {
+      "year": 951,
+      "month": 1,
+      "abs": 11412
+    },
+    "end": {
+      "year": 960,
+      "month": 12,
+      "abs": 11531
+    },
+    "startAbs": 11412,
+    "endAbs": 11531,
+    "precision": "year",
+    "role": "primary",
+    "note": "后周都城开封。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/后周"
+      }
+    ]
+  },
+  {
+    "id": "cap-song-north-bianjing",
+    "dynastyId": "song-north",
+    "historicalName": "汴京",
+    "modernName": "河南省开封市",
+    "start": {
+      "year": 960,
+      "month": 1,
+      "abs": 11520
+    },
+    "end": {
+      "year": 1127,
+      "month": 12,
+      "abs": 13535
+    },
+    "startAbs": 11520,
+    "endAbs": 13535,
+    "precision": "year",
+    "role": "primary",
+    "note": "北宋都城汴京（开封）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/汴京"
+      }
+    ]
+  },
+  {
+    "id": "cap-xixia-xingqing-982",
+    "dynastyId": "xixia",
+    "historicalName": "兴庆府",
+    "modernName": "宁夏回族自治区银川市",
+    "start": {
+      "year": 982,
+      "month": 1,
+      "abs": 11784
+    },
+    "end": {
+      "year": 1227,
+      "month": 12,
+      "abs": 14735
+    },
+    "startAbs": 11784,
+    "endAbs": 14735,
+    "precision": "year",
+    "role": "primary",
+    "note": "西夏都城兴庆府。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/兴庆府"
+      }
+    ]
+  },
+  {
+    "id": "cap-liao-shangjing-916",
+    "dynastyId": "liao",
+    "historicalName": "上京临潢府",
+    "modernName": "内蒙古自治区赤峰市巴林左旗",
+    "start": {
+      "year": 916,
+      "month": 1,
+      "abs": 10992
+    },
+    "end": {
+      "year": 1125,
+      "month": 12,
+      "abs": 13511
+    },
+    "startAbs": 10992,
+    "endAbs": 13511,
+    "precision": "year",
+    "role": "primary",
+    "note": "辽上京临潢府。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/上京临潢府"
+      }
+    ]
+  },
+  {
+    "id": "cap-liao-南京-938",
+    "dynastyId": "liao",
+    "historicalName": "南京",
+    "modernName": "北京市",
+    "start": {
+      "year": 938,
+      "month": 1,
+      "abs": 11256
+    },
+    "end": {
+      "year": 1125,
+      "month": 12,
+      "abs": 13511
+    },
+    "startAbs": 11256,
+    "endAbs": 13511,
+    "precision": "year",
+    "role": "secondary",
+    "note": "辽南京（析津府，今北京）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南京_(辽朝)"
+      }
+    ]
+  },
+  {
+    "id": "cap-jin-nvzhen-huining-1115",
+    "dynastyId": "jin-nvzhen",
+    "historicalName": "会宁府",
+    "modernName": "黑龙江省哈尔滨市阿城区",
+    "start": {
+      "year": 1115,
+      "month": 1,
+      "abs": 13380
+    },
+    "end": {
+      "year": 1153,
+      "month": 12,
+      "abs": 13847
+    },
+    "startAbs": 13380,
+    "endAbs": 13847,
+    "precision": "year",
+    "role": "primary",
+    "note": "金初都会宁府。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/会宁府"
+      }
+    ]
+  },
+  {
+    "id": "cap-jin-nvzhen-zhongdu-1154",
+    "dynastyId": "jin-nvzhen",
+    "historicalName": "中都",
+    "modernName": "北京市",
+    "start": {
+      "year": 1154,
+      "month": 1,
+      "abs": 13848
+    },
+    "end": {
+      "year": 1214,
+      "month": 12,
+      "abs": 14579
+    },
+    "startAbs": 13848,
+    "endAbs": 14579,
+    "precision": "year",
+    "role": "primary",
+    "note": "金迁都中都（今北京）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/金中都"
+      }
+    ]
+  },
+  {
+    "id": "cap-jin-nvzhen-bianjing-1215",
+    "dynastyId": "jin-nvzhen",
+    "historicalName": "汴京",
+    "modernName": "河南省开封市",
+    "start": {
+      "year": 1215,
+      "month": 1,
+      "abs": 14580
+    },
+    "end": {
+      "year": 1234,
+      "month": 12,
+      "abs": 14819
+    },
+    "startAbs": 14580,
+    "endAbs": 14819,
+    "precision": "year",
+    "role": "primary",
+    "note": "金末迁都汴京。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/汴京"
+      }
+    ]
+  },
+  {
+    "id": "cap-beiliao-linhuang-13464",
+    "dynastyId": "beiliao",
+    "historicalName": "临潢",
+    "modernName": "内蒙古自治区赤峰市巴林左旗",
+    "start": {
+      "year": 1122,
+      "month": 1,
+      "abs": 13464
+    },
+    "end": {
+      "year": 1123,
+      "month": 12,
+      "abs": 13487
+    },
+    "startAbs": 13464,
+    "endAbs": 13487,
+    "precision": "year",
+    "role": "primary",
+    "note": "北辽据临潢。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/北辽"
+      }
+    ]
+  },
+  {
+    "id": "cap-xiliao-husi-13476",
+    "dynastyId": "xiliao",
+    "historicalName": "虎思",
+    "modernName": "吉尔吉斯斯坦楚河州托克马克市",
+    "start": {
+      "year": 1124,
+      "month": 1,
+      "abs": 13488
+    },
+    "end": {
+      "year": 1218,
+      "month": 12,
+      "abs": 14627
+    },
+    "startAbs": 13488,
+    "endAbs": 14627,
+    "precision": "year",
+    "role": "primary",
+    "note": "西辽都城虎思（今托克马克）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/西辽"
+      }
+    ]
+  },
+  {
+    "id": "cap-song-south-yingtian",
+    "dynastyId": "song-south",
+    "historicalName": "应天府",
+    "modernName": "河南省商丘市",
+    "start": {
+      "year": 1127,
+      "month": 1,
+      "abs": 13524
+    },
+    "end": {
+      "year": 1129,
+      "month": 12,
+      "abs": 13559
+    },
+    "startAbs": 13524,
+    "endAbs": 13559,
+    "precision": "year",
+    "role": "temporary",
+    "note": "南宋初暂都应天府。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/应天府"
+      }
+    ]
+  },
+  {
+    "id": "cap-song-south-linan",
+    "dynastyId": "song-south",
+    "historicalName": "临安",
+    "modernName": "浙江省杭州市",
+    "start": {
+      "year": 1130,
+      "month": 1,
+      "abs": 13560
+    },
+    "end": {
+      "year": 1279,
+      "month": 12,
+      "abs": 15359
+    },
+    "startAbs": 13560,
+    "endAbs": 15359,
+    "precision": "year",
+    "role": "primary",
+    "note": "南宋行在临安。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/临安"
+      }
+    ]
+  },
+  {
+    "id": "cap-mongol-empire-karakorum-1206",
+    "dynastyId": "mongol-empire",
+    "historicalName": "哈拉和林",
+    "modernName": "蒙古国前杭爱省哈拉和林苏木",
+    "start": {
+      "year": 1206,
+      "month": 1,
+      "abs": 14472
+    },
+    "end": {
+      "year": 1271,
+      "month": 12,
+      "abs": 15263
+    },
+    "startAbs": 14472,
+    "endAbs": 15263,
+    "precision": "year",
+    "role": "primary",
+    "note": "蒙古帝国汗庭哈拉和林。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/哈拉和林"
+      }
+    ]
+  },
+  {
+    "id": "cap-dongliao-kaiyuan-14556",
+    "dynastyId": "dongliao",
+    "historicalName": "开原",
+    "modernName": "辽宁省铁岭市开原市",
+    "start": {
+      "year": 1213,
+      "month": 1,
+      "abs": 14556
+    },
+    "end": {
+      "year": 1269,
+      "month": 12,
+      "abs": 15239
+    },
+    "startAbs": 14556,
+    "endAbs": 15239,
+    "precision": "year",
+    "role": "primary",
+    "note": "东辽都城开原。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/东辽"
+      }
+    ]
+  },
+  {
+    "id": "cap-yuan-kaiping-15252",
+    "dynastyId": "yuan",
+    "historicalName": "开平",
+    "modernName": "内蒙古自治区锡林郭勒盟正蓝旗",
+    "start": {
+      "year": 1271,
+      "month": 1,
+      "abs": 15252
+    },
+    "end": {
+      "year": 1273,
+      "month": 12,
+      "abs": 15287
+    },
+    "startAbs": 15252,
+    "endAbs": 15287,
+    "precision": "year",
+    "role": "primary",
+    "note": "元初开平（上都前身）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/开平"
+      }
+    ]
+  },
+  {
+    "id": "cap-yuan-shangdu-15120",
+    "dynastyId": "yuan",
+    "historicalName": "上都",
+    "modernName": "内蒙古自治区锡林郭勒盟正蓝旗",
+    "start": {
+      "year": 1260,
+      "month": 1,
+      "abs": 15120
+    },
+    "end": {
+      "year": 1368,
+      "month": 12,
+      "abs": 16427
+    },
+    "startAbs": 15120,
+    "endAbs": 16427,
+    "precision": "year",
+    "role": "secondary",
+    "note": "元上都（开平）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/元上都"
+      }
+    ]
+  },
+  {
+    "id": "cap-yuan-zhongdu-15168",
+    "dynastyId": "yuan",
+    "historicalName": "中都",
+    "modernName": "北京市",
+    "start": {
+      "year": 1264,
+      "month": 1,
+      "abs": 15168
+    },
+    "end": {
+      "year": 1271,
+      "month": 12,
+      "abs": 15263
+    },
+    "startAbs": 15168,
+    "endAbs": 15263,
+    "precision": "year",
+    "role": "primary",
+    "note": "元中都（大都前身）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/元中都"
+      }
+    ]
+  },
+  {
+    "id": "cap-yuan-dadu",
+    "dynastyId": "yuan",
+    "historicalName": "大都",
+    "modernName": "北京市",
+    "start": {
+      "year": 1272,
+      "month": 1,
+      "abs": 15264
+    },
+    "end": {
+      "year": 1368,
+      "month": 12,
+      "abs": 16427
+    },
+    "startAbs": 15264,
+    "endAbs": 16427,
+    "precision": "year",
+    "role": "primary",
+    "note": "元大都（今北京）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/大都"
+      }
+    ]
+  },
+  {
+    "id": "cap-song-xu-anfeng-16212",
+    "dynastyId": "song-xu",
+    "historicalName": "安丰",
+    "modernName": "安徽省淮南市寿县",
+    "start": {
+      "year": 1351,
+      "month": 1,
+      "abs": 16212
+    },
+    "end": {
+      "year": 1360,
+      "month": 12,
+      "abs": 16331
+    },
+    "startAbs": 16212,
+    "endAbs": 16331,
+    "precision": "year",
+    "role": "primary",
+    "note": "徐寿辉天完政权都安丰。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/徐寿辉"
+      }
+    ]
+  },
+  {
+    "id": "cap-zhou-zhang-chuzhou-16248",
+    "dynastyId": "zhou-zhang",
+    "historicalName": "滁州",
+    "modernName": "安徽省滁州市",
+    "start": {
+      "year": 1354,
+      "month": 1,
+      "abs": 16248
+    },
+    "end": {
+      "year": 1367,
+      "month": 12,
+      "abs": 16415
+    },
+    "startAbs": 16248,
+    "endAbs": 16415,
+    "precision": "year",
+    "role": "primary",
+    "note": "张士诚大周政权据滁州→高邮。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/张士诚"
+      }
+    ]
+  },
+  {
+    "id": "cap-song-han-mianyang-16260",
+    "dynastyId": "song-han",
+    "historicalName": "沔阳",
+    "modernName": "湖北省仙桃市",
+    "start": {
+      "year": 1355,
+      "month": 1,
+      "abs": 16260
+    },
+    "end": {
+      "year": 1366,
+      "month": 12,
+      "abs": 16403
+    },
+    "startAbs": 16260,
+    "endAbs": 16403,
+    "precision": "year",
+    "role": "primary",
+    "note": "陈友谅汉政权初都沔阳。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/陈友谅"
+      }
+    ]
+  },
+  {
+    "id": "cap-chen-han-wuchang-1360",
+    "dynastyId": "chen-han",
+    "historicalName": "武昌",
+    "modernName": "湖北省武汉市",
+    "start": {
+      "year": 1360,
+      "month": 1,
+      "abs": 16320
+    },
+    "end": {
+      "year": 1364,
+      "month": 12,
+      "abs": 16379
+    },
+    "startAbs": 16320,
+    "endAbs": 16379,
+    "precision": "year",
+    "role": "primary",
+    "note": "陈友谅迁都武昌。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/陈友谅"
+      }
+    ]
+  },
+  {
+    "id": "cap-xia-ming-chongqing-1362",
+    "dynastyId": "xia-ming",
+    "historicalName": "重庆",
+    "modernName": "重庆市",
+    "start": {
+      "year": 1362,
+      "month": 1,
+      "abs": 16344
+    },
+    "end": {
+      "year": 1371,
+      "month": 12,
+      "abs": 16463
+    },
+    "startAbs": 16344,
+    "endAbs": 16463,
+    "precision": "year",
+    "role": "primary",
+    "note": "明玉珍大夏都城重庆。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/明玉珍"
+      }
+    ]
+  },
+  {
+    "id": "cap-wu-zhu-yingtian-1364",
+    "dynastyId": "wu-zhu",
+    "historicalName": "应天",
+    "modernName": "江苏省南京市",
+    "start": {
+      "year": 1364,
+      "month": 1,
+      "abs": 16368
+    },
+    "end": {
+      "year": 1368,
+      "month": 12,
+      "abs": 16427
+    },
+    "startAbs": 16368,
+    "endAbs": 16427,
+    "precision": "year",
+    "role": "primary",
+    "note": "朱元璋吴国都城应天。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/朱元璋"
+      }
+    ]
+  },
+  {
+    "id": "cap-ming-nanjing",
+    "dynastyId": "ming",
+    "historicalName": "应天",
+    "modernName": "江苏省南京市",
+    "start": {
+      "year": 1368,
+      "month": 1,
+      "abs": 16416
+    },
+    "end": {
+      "year": 1420,
+      "month": 12,
+      "abs": 17051
+    },
+    "startAbs": 16416,
+    "endAbs": 17051,
+    "precision": "year",
+    "role": "primary",
+    "note": "明初都应天府。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南京"
+      }
+    ]
+  },
+  {
+    "id": "cap-ming-beijing",
+    "dynastyId": "ming",
+    "historicalName": "顺天",
+    "modernName": "北京市",
+    "start": {
+      "year": 1421,
+      "month": 1,
+      "abs": 17052
+    },
+    "end": {
+      "year": 1644,
+      "month": 4,
+      "abs": 19731
+    },
+    "startAbs": 17052,
+    "endAbs": 19731,
+    "precision": "year",
+    "role": "primary",
+    "note": "永乐迁都顺天府。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/北京"
+      }
+    ]
+  },
+  {
+    "id": "cap-qing-shengjing",
+    "dynastyId": "qing",
+    "historicalName": "盛京",
+    "modernName": "辽宁省沈阳市",
+    "start": {
+      "year": 1636,
+      "month": 1,
+      "abs": 19632
+    },
+    "end": {
+      "year": 1644,
+      "month": 4,
+      "abs": 19731
+    },
+    "startAbs": 19632,
+    "endAbs": 19731,
+    "precision": "year",
+    "role": "secondary",
+    "note": "清定都盛京后入关。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/沈阳"
+      }
+    ]
+  },
+  {
+    "id": "cap-qing-beijing",
+    "dynastyId": "qing",
+    "historicalName": "顺天",
+    "modernName": "北京市",
+    "start": {
+      "year": 1644,
+      "month": 5,
+      "abs": 19732
+    },
+    "end": {
+      "year": 1912,
+      "month": 2,
+      "abs": 22945
+    },
+    "startAbs": 19732,
+    "endAbs": 22945,
+    "precision": "year",
+    "role": "primary",
+    "note": "清入关后都北京。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/北京"
+      }
+    ]
+  },
+  {
+    "id": "cap-ming-south-yingtian-1644",
+    "dynastyId": "ming-south",
+    "historicalName": "应天",
+    "modernName": "江苏省南京市",
+    "start": {
+      "year": 1644,
+      "month": 1,
+      "abs": 19728
+    },
+    "end": {
+      "year": 1645,
+      "month": 12,
+      "abs": 19751
+    },
+    "startAbs": 19728,
+    "endAbs": 19751,
+    "precision": "year",
+    "role": "primary",
+    "note": "弘光政权都南京。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南明"
+      }
+    ]
+  },
+  {
+    "id": "cap-ming-south-fuzhou-1645",
+    "dynastyId": "ming-south",
+    "historicalName": "福州",
+    "modernName": "福建省福州市",
+    "start": {
+      "year": 1645,
+      "month": 1,
+      "abs": 19740
+    },
+    "end": {
+      "year": 1646,
+      "month": 12,
+      "abs": 19763
+    },
+    "startAbs": 19740,
+    "endAbs": 19763,
+    "precision": "year",
+    "role": "primary",
+    "note": "隆武政权都福州。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南明"
+      }
+    ]
+  },
+  {
+    "id": "cap-ming-south-广州-1646",
+    "dynastyId": "ming-south",
+    "historicalName": "广州",
+    "modernName": "广东省广州市",
+    "start": {
+      "year": 1646,
+      "month": 1,
+      "abs": 19752
+    },
+    "end": {
+      "year": 1647,
+      "month": 12,
+      "abs": 19775
+    },
+    "startAbs": 19752,
+    "endAbs": 19775,
+    "precision": "year",
+    "role": "primary",
+    "note": "绍武政权都广州。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南明"
+      }
+    ]
+  },
+  {
+    "id": "cap-ming-south-zhaoqing-1646",
+    "dynastyId": "ming-south",
+    "historicalName": "肇庆",
+    "modernName": "广东省肇庆市",
+    "start": {
+      "year": 1646,
+      "month": 1,
+      "abs": 19752
+    },
+    "end": {
+      "year": 1647,
+      "month": 12,
+      "abs": 19775
+    },
+    "startAbs": 19752,
+    "endAbs": 19775,
+    "precision": "year",
+    "role": "primary",
+    "note": "永历帝于肇庆登基。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南明"
+      }
+    ]
+  },
+  {
+    "id": "cap-ming-south-guilin-1647",
+    "dynastyId": "ming-south",
+    "historicalName": "桂林",
+    "modernName": "广西壮族自治区桂林市",
+    "start": {
+      "year": 1647,
+      "month": 1,
+      "abs": 19764
+    },
+    "end": {
+      "year": 1649,
+      "month": 12,
+      "abs": 19799
+    },
+    "startAbs": 19764,
+    "endAbs": 19799,
+    "precision": "year",
+    "role": "primary",
+    "note": "绍武败后永历退守广西。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南明"
+      }
+    ]
+  },
+  {
+    "id": "cap-ming-south-nanning-1649",
+    "dynastyId": "ming-south",
+    "historicalName": "南宁",
+    "modernName": "广西壮族自治区南宁市",
+    "start": {
+      "year": 1649,
+      "month": 1,
+      "abs": 19788
+    },
+    "end": {
+      "year": 1651,
+      "month": 12,
+      "abs": 19823
+    },
+    "startAbs": 19788,
+    "endAbs": 19823,
+    "precision": "year",
+    "role": "primary",
+    "note": "永历驻南宁，入黔前倚仗孙可望。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南明"
+      }
+    ]
+  },
+  {
+    "id": "cap-ming-south-anlong-1651",
+    "dynastyId": "ming-south",
+    "historicalName": "安龙",
+    "modernName": "贵州省黔西南布依族苗族自治州安龙县",
+    "start": {
+      "year": 1651,
+      "month": 1,
+      "abs": 19812
+    },
+    "end": {
+      "year": 1656,
+      "month": 12,
+      "abs": 19883
+    },
+    "startAbs": 19812,
+    "endAbs": 19883,
+    "precision": "year",
+    "role": "primary",
+    "note": "孙可望安置永历于安龙府。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南明"
+      }
+    ]
+  },
+  {
+    "id": "cap-ming-south-kunming-1656",
+    "dynastyId": "ming-south",
+    "historicalName": "昆明",
+    "modernName": "云南省昆明市",
+    "start": {
+      "year": 1656,
+      "month": 1,
+      "abs": 19872
+    },
+    "end": {
+      "year": 1659,
+      "month": 12,
+      "abs": 19919
+    },
+    "startAbs": 19872,
+    "endAbs": 19919,
+    "precision": "year",
+    "role": "primary",
+    "note": "李定国迎驾入滇；1659年后流亡缅甸，1662年遇害于昆明。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南明"
+      }
+    ]
+  },
+  {
+    "id": "cap-dashun-xian-19728",
+    "dynastyId": "dashun",
+    "historicalName": "西安",
+    "modernName": "陕西省西安市",
+    "start": {
+      "year": 1644,
+      "month": 1,
+      "abs": 19728
+    },
+    "end": {
+      "year": 1644,
+      "month": 12,
+      "abs": 19739
+    },
+    "startAbs": 19728,
+    "endAbs": 19739,
+    "precision": "year",
+    "role": "primary",
+    "note": "大顺政权初据西安。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/大顺"
+      }
+    ]
+  },
+  {
+    "id": "cap-dashun-beijing-19728",
+    "dynastyId": "dashun",
+    "historicalName": "北京",
+    "modernName": "北京市",
+    "start": {
+      "year": 1644,
+      "month": 1,
+      "abs": 19728
+    },
+    "end": {
+      "year": 1645,
+      "month": 12,
+      "abs": 19751
+    },
+    "startAbs": 19728,
+    "endAbs": 19751,
+    "precision": "year",
+    "role": "primary",
+    "note": "李自成入京。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/大顺"
+      }
+    ]
+  },
+  {
+    "id": "cap-daxi-chengdu-1644",
+    "dynastyId": "daxi",
+    "historicalName": "成都",
+    "modernName": "四川省成都市",
+    "start": {
+      "year": 1644,
+      "month": 1,
+      "abs": 19728
+    },
+    "end": {
+      "year": 1646,
+      "month": 12,
+      "abs": 19763
+    },
+    "startAbs": 19728,
+    "endAbs": 19763,
+    "precision": "year",
+    "role": "primary",
+    "note": "大西政权都成都。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/大西"
+      }
+    ]
+  },
+  {
+    "id": "cap-daxi-xichong-1646",
+    "dynastyId": "daxi",
+    "historicalName": "西充",
+    "modernName": "四川省南充市西充县",
+    "start": {
+      "year": 1646,
+      "month": 1,
+      "abs": 19752
+    },
+    "end": {
+      "year": 1647,
+      "month": 12,
+      "abs": 19775
+    },
+    "startAbs": 19752,
+    "endAbs": 19775,
+    "precision": "year",
+    "role": "primary",
+    "note": "张献忠迁西充。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/大西"
+      }
+    ]
+  },
+  {
+    "id": "cap-mingzheng-dongning-19932",
+    "dynastyId": "mingzheng",
+    "historicalName": "东宁",
+    "modernName": "台湾省台南市",
+    "start": {
+      "year": 1661,
+      "month": 1,
+      "abs": 19932
+    },
+    "end": {
+      "year": 1683,
+      "month": 12,
+      "abs": 20207
+    },
+    "startAbs": 19932,
+    "endAbs": 20207,
+    "precision": "year",
+    "role": "primary",
+    "note": "明郑东宁王国都东宁（今台南）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/明郑"
+      }
+    ]
+  },
+  {
+    "id": "cap-taiping-tianjing-1853",
+    "dynastyId": "taiping",
+    "historicalName": "天京",
+    "modernName": "江苏省南京市",
+    "start": {
+      "year": 1853,
+      "month": 1,
+      "abs": 22236
+    },
+    "end": {
+      "year": 1864,
+      "month": 12,
+      "abs": 22379
+    },
+    "startAbs": 22236,
+    "endAbs": 22379,
+    "precision": "year",
+    "role": "primary",
+    "note": "太平天国天京（南京）。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/天京"
+      }
+    ]
+  },
+  {
+    "id": "cap-roc-南京-1912",
+    "dynastyId": "roc",
+    "historicalName": "南京",
+    "modernName": "江苏省南京市",
+    "start": {
+      "year": 1912,
+      "month": 1,
+      "abs": 22944
+    },
+    "end": {
+      "year": 1937,
+      "month": 11,
+      "abs": 23254
+    },
+    "startAbs": 22944,
+    "endAbs": 23254,
+    "precision": "year",
+    "role": "primary",
+    "note": "民国初都南京。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/中华民国"
+      }
+    ]
+  },
+  {
+    "id": "cap-roc-chongqing-1937",
+    "dynastyId": "roc",
+    "historicalName": "重庆",
+    "modernName": "重庆市",
+    "start": {
+      "year": 1937,
+      "month": 11,
+      "abs": 23254
+    },
+    "end": {
+      "year": 1946,
+      "month": 5,
+      "abs": 23356
+    },
+    "startAbs": 23254,
+    "endAbs": 23356,
+    "precision": "year",
+    "role": "temporary",
+    "note": "抗战陪都重庆。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/重庆陪都"
+      }
+    ]
+  },
+  {
+    "id": "cap-roc-nanjing-23348",
+    "dynastyId": "roc",
+    "historicalName": "南京",
+    "modernName": "江苏省南京市",
+    "start": {
+      "year": 1946,
+      "month": 5,
+      "abs": 23356
+    },
+    "end": {
+      "year": 1949,
+      "month": 4,
+      "abs": 23391
+    },
+    "startAbs": 23356,
+    "endAbs": 23391,
+    "precision": "year",
+    "role": "primary",
+    "note": "抗战后还都南京。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/中华民国"
+      }
+    ]
+  },
+  {
+    "id": "cap-roc-taibei-23388",
+    "dynastyId": "roc",
+    "historicalName": "台北",
+    "modernName": "台湾省台北市",
+    "start": {
+      "year": 1949,
+      "month": 12,
+      "abs": 23399
+    },
+    "end": {
+      "year": 2026,
+      "month": 12,
+      "abs": 24323
+    },
+    "startAbs": 23399,
+    "endAbs": 24323,
+    "precision": "year",
+    "role": "primary",
+    "note": "国民政府迁台后台北为实际首都。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/中华民国"
+      }
+    ]
+  },
+  {
+    "id": "cap-prc-beijing-1949",
+    "dynastyId": "prc",
+    "historicalName": "北京",
+    "modernName": "北京市",
+    "start": {
+      "year": 1949,
+      "month": 10,
+      "abs": 23397
+    },
+    "end": {
+      "year": 2026,
+      "month": 12,
+      "abs": 24323
+    },
+    "startAbs": 23397,
+    "endAbs": 24323,
+    "precision": "year",
+    "role": "primary",
+    "note": "中华人民共和国首都北京。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/北京市"
+      }
+    ]
+  }
+]

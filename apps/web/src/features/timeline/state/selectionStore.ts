@@ -33,7 +33,13 @@ function parseUrlState(): Partial<SelectionState> {
   if (sel) {
     const [type, ...rest] = sel.split(":");
     const id = rest.join(":");
-    if (type === "dynasty" || type === "reign" || type === "person" || type === "event") {
+    if (
+      type === "dynasty" ||
+      type === "reign" ||
+      type === "person" ||
+      type === "event" ||
+      type === "capital"
+    ) {
       next.selected = { type, id };
       next.detailOpen = true;
     }

@@ -1,5 +1,6 @@
-import { useMemo } from "react";
+import { useMemo, useRef } from "react";
 import {
+  capitalsActiveAtAbs,
   clusterFramesForLanes,
   collapseDynastyLaneGroups,
   collectLaneReigns,
@@ -12,8 +13,11 @@ import {
   TIMELINE_RAIL_CHIP_TOP_PX,
   type Dynasty,
 } from "@eralens/shared";
+import { useDataBounds, useTimelineData } from "../hooks/useTimelineData";
+import { useDynastyCapitals } from "../hooks/useDynastyCapitals";
 import { useLaneColorCatalog } from "../hooks/useLaneColorCatalog";
-import { useTimelineData } from "../hooks/useTimelineData";
+import { useStageViewportHeight } from "../hooks/useStageViewportHeight";
+import { useTimelineCatalog } from "../hooks/useTimelineCatalog";
 import { useViewport } from "../hooks/useViewport";
 import {
   eventLaneCount,
@@ -22,7 +26,7 @@ import {
 } from "../model/eventLayout";
 import { assignLanes } from "../model/laneLayout";
 import { shouldShowEvent, shouldShowPersons } from "../model/lod";
-import { centerGuideX } from "../model/coordinates";
+import { centerGuideX, laneLabelAnchorAbs } from "../model/coordinates";
 import {
   layoutPersons,
   PERSON_LAYER_BOTTOM_PAD,
@@ -35,6 +39,8 @@ import {
   partitionReignRecords,
 } from "../model/reignClusters";
 import { expandWindow, filterVisibleDynasties } from "../model/visible";
+import { CapitalMapLayer } from "./CapitalMapLayer";
+import { ChinaMapBackground } from "./ChinaMapBackground";
 import { DynastyClusterFrame } from "./DynastyClusterFrame";
 import { DynastyLane } from "./DynastyLane";
 import { EventLayer } from "./EventLayer";
@@ -51,6 +57,8 @@ function laneColorTokenFor(
 }
 
 export function TimelineStage() {
+  const stageRef = useRef<HTMLDivElement>(null);
+  const stageViewportHeight = useStageViewportHeight(stageRef);
   const viewport = useViewport();
   const { data, isLoading, error } = useTimelineData();
 
@@ -85,6 +93,21 @@ export function TimelineStage() {
   }, [data, viewport.startAbs, viewport.endAbs, dynastiesById]);
 
   const laneColorMap = useLaneColorCatalog();
+  const timelineCatalog = useTimelineCatalog();
+  const boundsQuery = useDataBounds();
+  const labelAnchorAbs = laneLabelAnchorAbs(viewport);
+  const capitalsQuery = useDynastyCapitals(boundsQuery.data);
+  const activeCapitals = useMemo(
+    () => capitalsActiveAtAbs(capitalsQuery.data ?? [], labelAnchorAbs),
+    [capitalsQuery.data, labelAnchorAbs],
+  );
+  const dynastyNamesById = useMemo(() => {
+    const map = new Map<string, string>();
+    for (const dynasty of timelineCatalog?.dynasties ?? []) {
+      map.set(dynasty.id, dynasty.name);
+    }
+    return map;
+  }, [timelineCatalog]);
 
   const laneGroups = data?.dynastyLaneGroups ?? [];
 
@@ -217,13 +240,25 @@ export function TimelineStage() {
 
   return (
     <div
+      ref={stageRef}
       className={styles.stage}
       data-timeline-pan
       data-timeline-stage
       style={{
         ["--center-guide-x" as string]: `${Math.round(centerGuideX(viewport))}px`,
+        ...(stageViewportHeight > 0
+          ? { ["--stage-viewport-height" as string]: `${stageViewportHeight}px` }
+          : {}),
       }}
     >
+      <div className={styles.mapUnderlay} aria-hidden="true">
+        <div className={styles.viewportPanel}>
+          <ChinaMapBackground />
+        </div>
+      </div>
+      <div className={styles.guideOverlay} aria-hidden="true">
+        <div className={styles.viewportPanel} />
+      </div>
       <div
         className={styles.content}
         style={{ minHeight: `max(100%, ${contentHeight}px)` }}
@@ -294,6 +329,18 @@ export function TimelineStage() {
               height={personAreaHeight}
             />
           )}
+        </div>
+      </div>
+      <div className={styles.capitalOverlay} aria-hidden={activeCapitals.length === 0}>
+        <div className={styles.viewportPanel}>
+          <CapitalMapLayer
+            capitals={activeCapitals}
+            dynastiesById={dynastiesById}
+            dynastyNamesById={dynastyNamesById}
+            laneColorMap={laneColorMap}
+            atAbs={labelAnchorAbs}
+            gutterPx={viewport.gutterPx}
+          />
         </div>
       </div>
     </div>

@@ -16,3 +16,4 @@ export * from "./claimTracks";
 export * from "./systemReigns";
 export * from "./reignBoundaries";
 export * from "./reignFateRelations";
+export * from "./dynastyCapitals";

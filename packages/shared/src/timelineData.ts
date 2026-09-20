@@ -1,3 +1,4 @@
+import { capitalRoleLabel } from "./dynastyCapitals";
 import { claimDetailFacts } from "./claimTracks";
 import { PRE_IMPERIAL_START_YEAR } from "./appellationPolicy";
 import {
@@ -18,6 +19,7 @@ import { eventKindLabel, eventSpanAbs, formatEventTime } from "./eventTime";
 import {
   TimelineSliceSchema,
   type Dynasty,
+  type DynastyCapital,
   type DynastyGroup,
   type DynastyLaneGroup,
   type EntityDetail,
@@ -33,6 +35,7 @@ import {
   personIntersectsAbsWindow,
   personTimelinePlacement,
 } from "./personTime";
+import { DATE_CONFIDENCE_LABEL } from "./reignBoundaries";
 import { isFateRelationKind } from "./reignFateRelations";
 import { rangeIntersectsWindow } from "./time";
 
@@ -50,6 +53,7 @@ export type TimelineDataStore = {
   persons: Person[];
   events: Event[];
   relations: Relation[];
+  capitals?: DynastyCapital[];
 };
 
 export function filterTimeline(
@@ -182,7 +186,13 @@ function parseRef(raw: string): EntityRef | null {
   const [type, ...rest] = raw.split(":");
   const id = rest.join(":");
   if (!type || !id) return null;
-  if (type === "dynasty" || type === "reign" || type === "person" || type === "event") {
+  if (
+    type === "dynasty" ||
+    type === "reign" ||
+    type === "person" ||
+    type === "event" ||
+    type === "capital"
+  ) {
     return { type, id };
   }
   return null;
@@ -208,6 +218,59 @@ export function buildEntityDetail(
     } catch {
       return { ref: relatedRef, label: relatedRef.id };
     }
+  }
+
+  if (ref.type === "capital") {
+    const capital = (store.capitals ?? []).find((item) => item.id === ref.id);
+    if (!capital) throw new Error(`Capital not found: ${ref.id}`);
+    const dynasty = dynastyMap.get(capital.dynastyId);
+    const facts = [
+      { label: "归属", value: dynasty?.name ?? capital.dynastyId },
+      { label: "今址", value: capital.modernName },
+      { label: "时段", value: `${capital.start.year} — ${capital.end.year}` },
+      { label: "地位", value: capitalRoleLabel(capital.role) },
+    ];
+    if (capital.startDateConfidence && capital.startDateConfidence !== "certain") {
+      facts.push({
+        label: "起始年代",
+        value: DATE_CONFIDENCE_LABEL[capital.startDateConfidence],
+      });
+    }
+    if (capital.endDateConfidence && capital.endDateConfidence !== "certain") {
+      facts.push({
+        label: "终止年代",
+        value: DATE_CONFIDENCE_LABEL[capital.endDateConfidence],
+      });
+    }
+    return {
+      ref,
+      title: capital.historicalName,
+      subtitle: dynasty
+        ? `${dynasty.name} · ${capital.modernName}`
+        : capital.modernName,
+      dynastyId: capital.dynastyId,
+      colorToken: dynasty
+        ? resolveDynastyColorToken(
+            dynasty,
+            fallbackLaneColorToken(dynasty.id),
+            resolveOrthodoxFromAbs(dynasty) ?? dynasty.startAbs,
+          )
+        : undefined,
+      facts,
+      summary: capital.note,
+      related: dynasty
+        ? [
+            {
+              ref: { type: "dynasty", id: dynasty.id },
+              label: dynasty.name,
+              subtitle: dynasty.altNames?.[0],
+              abs: capital.startAbs,
+              group: "dynasty",
+            },
+          ]
+        : [],
+      links: capital.links,
+    };
   }
 
   if (ref.type === "dynasty") {
