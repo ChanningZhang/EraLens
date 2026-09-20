@@ -74,6 +74,7 @@ model Dynasty {
   group       DynastyGroup?    @relation(fields: [groupId], references: [id])
   reigns      Reign[]
   eventDynasties EventDynasty[]
+  capitals    DynastyCapital[]
 
   @@index([startYear])
   @@index([endYear])
@@ -186,4 +187,34 @@ model DynastyLaneGroup {
   laneOrderEndAbs    Int      @map("lane_order_end_abs")
 
   @@map("dynasty_lane_groups")
+}
+
+model DynastyCapital {
+  id                  String   @id
+  dynastyId           String   @map("dynasty_id")
+  historicalName      String   @map("historical_name")
+  modernName          String   @map("modern_name")
+  longitude           Decimal  @db.Decimal(10, 7)
+  latitude            Decimal  @db.Decimal(10, 7)
+  coordinateSystem    String   @default("GCJ02") @map("coordinate_system")
+  startYear           Int      @map("start_year")
+  startMonth          Int      @map("start_month")
+  startDay            Int?     @map("start_day")
+  endYear             Int      @map("end_year")
+  endMonth            Int      @map("end_month")
+  endDay              Int?     @map("end_day")
+  startAbs            Int      @map("start_abs")
+  endAbs              Int      @map("end_abs")
+  precision           String   @default("year")
+  startDateConfidence String?  @map("start_date_confidence")
+  endDateConfidence   String?  @map("end_date_confidence")
+  role                String   @default("primary")
+  claimTrack          String?  @map("claim_track")
+  note                String?
+  links               Json     @default("[]")
+  dynasty             Dynasty  @relation(fields: [dynastyId], references: [id])
+
+  @@index([dynastyId])
+  @@index([startAbs, endAbs])
+  @@map("dynasty_capitals")
 }

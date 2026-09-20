@@ -33,6 +33,7 @@ const tableOrder = [
   "persons",
   "dynasty_groups",
   "dynasties",
+  "dynasty_capitals",
   "reigns",
   "events",
   "event_dynasties",

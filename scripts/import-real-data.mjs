@@ -23,6 +23,7 @@ TRUNCATE TABLE
   relations,
   events,
   reigns,
+  dynasty_capitals,
   dynasties,
   dynasty_lane_groups,
   persons

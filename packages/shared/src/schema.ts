@@ -160,6 +160,53 @@ export const DateConfidenceSchema = z.enum([
   "interpolated",
 ]);
 
+export const CoordinateSystemSchema = z.enum(["GCJ02"]);
+export type CoordinateSystem = z.infer<typeof CoordinateSystemSchema>;
+
+export const CapitalRoleSchema = z.enum(["primary", "secondary", "temporary"]);
+export type CapitalRole = z.infer<typeof CapitalRoleSchema>;
+
+const MODERN_NAME_PATTERN = /^(?:.{2,}省.{2,}市(?:.{2,}[区县])?|(?:北京市|上海市|天津市|重庆市))$/;
+
+export const DynastyCapitalSchema = z
+  .object({
+    id: z.string(),
+    dynastyId: z.string(),
+    historicalName: z.string(),
+    modernName: z.string(),
+    longitude: z.number(),
+    latitude: z.number(),
+    coordinateSystem: CoordinateSystemSchema.default("GCJ02"),
+    start: TimePointSchema,
+    end: TimePointSchema,
+    startAbs: z.number(),
+    endAbs: z.number(),
+    precision: PrecisionSchema.default("year"),
+    startDateConfidence: DateConfidenceSchema.optional(),
+    endDateConfidence: DateConfidenceSchema.optional(),
+    role: CapitalRoleSchema.default("primary"),
+    claimTrack: z.string().optional(),
+    note: z.string().optional(),
+    links: z
+      .array(
+        z.object({
+          label: z.string(),
+          url: z.string(),
+        }),
+      )
+      .default([]),
+  })
+  .superRefine((capital, ctx) => {
+    if (!MODERN_NAME_PATTERN.test(capital.modernName)) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        message:
+          "modernName must be a full administrative name (e.g. 陕西省西安市 or 北京市)",
+        path: ["modernName"],
+      });
+    }
+  });
+
 export const ReignSchema = z.object({
   id: z.string(),
   dynastyId: z.string(),
@@ -363,6 +410,7 @@ export const SearchHitSchema = z.object({
   abs: z.number().optional(),
 });
 
+export type DynastyCapital = z.infer<typeof DynastyCapitalSchema>;
 export type Dynasty = z.infer<typeof DynastySchema>;
 export type DynastyGroup = z.infer<typeof DynastyGroupSchema>;
 export type DynastyLaneGroup = z.infer<typeof DynastyLaneGroupSchema>;

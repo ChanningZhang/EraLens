@@ -27,6 +27,7 @@
 | dynasties | id |
 | dynasty_lane_groups | id |
 | reigns | id |
+| dynasty_capitals | id |
 | events | id |
 | event_dynasties | (event_id, dynasty_id) |
 | event_participants | (event_id, person_id) |
@@ -253,6 +254,63 @@ ON CONFLICT (id) DO UPDATE SET
 ### reigns.era_names
 
 年号自汉武帝起，写入 `reigns.era_names` 逗号分隔名称（如 `泰定,致和`）。先秦省略（NULL）。**不再**使用 `era_names` 子表，各年号起迄年月不入库；界面与称谓只读名称列表。
+
+### dynasty_capitals
+
+王朝在指定时段的都城，供地图撒点。坐标烘焙入库（GCJ-02），运行时不调高德。
+
+- `historical_name`：当时名称（长安、大都、临安）
+- `modern_name`：**必填**行政区全称，格式 `{省}{市}` 或直辖市 `北京市`；禁止裸写「西安」「洛阳」
+- `role`：`primary`（京师）/ `secondary`（陪都）/ `temporary`（行在）
+- `claim_track`：并行政权都城时与 `reigns.claim_track` 同一 kebab-case key
+- 时间字段与 `reigns` 一致；年精度起年 `start_month=1`、迄年 `end_month=12`
+
+```sql
+INSERT INTO dynasty_capitals (
+  id, dynasty_id, historical_name, modern_name,
+  longitude, latitude, coordinate_system,
+  start_year, start_month, start_day,
+  end_year, end_month, end_day,
+  start_abs, end_abs, precision,
+  start_date_confidence, end_date_confidence,
+  role, claim_track, note, links
+) VALUES (
+  'cap-tang-changan',
+  'tang', '长安', '陕西省西安市',
+  108.9396450, 34.3432070, 'GCJ02',
+  618, 1, NULL,
+  904, 12, NULL,
+  7416, 10848, 'year',
+  NULL, NULL,
+  'primary', NULL,
+  '唐都长安，高祖至哀帝。',
+  '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/长安"}]'::jsonb
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  historical_name = EXCLUDED.historical_name,
+  modern_name = EXCLUDED.modern_name,
+  longitude = EXCLUDED.longitude,
+  latitude = EXCLUDED.latitude,
+  coordinate_system = EXCLUDED.coordinate_system,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  role = EXCLUDED.role,
+  claim_track = EXCLUDED.claim_track,
+  note = EXCLUDED.note,
+  links = EXCLUDED.links;
+```
+
+地理编码流程见 Skill [eralens-capital-geocode](.cursor/skills/eralens-capital-geocode/SKILL.md)。
 
 ### events（点事件 point）
 

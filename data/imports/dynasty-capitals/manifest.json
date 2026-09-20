@@ -1,0 +1,38 @@
+{
+  "slug": "dynasty-capitals",
+  "title": "大一统王朝都城试点",
+  "window": {
+    "startYear": -350,
+    "startMonth": 1,
+    "endYear": 1912,
+    "endMonth": 2
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-20",
+  "counts": {
+    "dynasty_capitals": 13
+  },
+  "sources": [
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/中国古代都城"
+    },
+    {
+      "label": "高德地图地理编码",
+      "url": "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+    }
+  ],
+  "notes": [
+    "modernName 为省/市全称；坐标 GCJ-02，2026-09-20 经 Amap maps_geo 烘焙",
+    "陕西省咸阳市: 108.708837,34.329896",
+    "陕西省西安市: 108.939645,34.343207",
+    "河南省洛阳市: 112.453895,34.619702",
+    "河南省开封市: 114.314278,34.798083",
+    "河南省商丘市: 115.656358,34.415165",
+    "浙江省杭州市: 120.209903,30.246566",
+    "江苏省南京市: 118.796624,32.059344",
+    "北京市: 116.407387,39.904179",
+    "辽宁省沈阳市: 123.464675,41.677576"
+  ]
+}

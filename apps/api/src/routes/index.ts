@@ -1,5 +1,6 @@
 import {
   buildEntityDetail,
+  DynastyCapitalSchema,
   EntityDetailSchema,
   personIntersectsAbsWindow,
   SearchHitSchema,
@@ -11,6 +12,7 @@ import type { FastifyInstance } from "fastify";
 import { prisma } from "../db.js";
 import {
   mapDynasty,
+  mapDynastyCapital,
   mapDynastyGroup,
   mapDynastyLaneGroup,
   mapEvent,
@@ -18,6 +20,7 @@ import {
   mapReign,
   mapRelation,
   toTimelineDataStore,
+  type RawDynastyCapitalRow,
   type RawDynastyGroupRow,
   type RawDynastyRow,
   type RawEventRow,
@@ -320,5 +323,43 @@ export async function registerRoutes(app: FastifyInstance) {
     const store = await loadStore();
     const hits = searchEntities(store, query.q ?? "");
     return SearchHitSchema.array().parse(hits);
+  });
+
+  app.get("/capitals", async (request, reply) => {
+    reply.header("Cache-Control", CACHE_HEADER);
+    const query = request.query as { from?: string; to?: string; dynastyId?: string };
+    const fromAbs = Number(query.from);
+    const toAbs = Number(query.to);
+    if (!Number.isFinite(fromAbs) || !Number.isFinite(toAbs)) {
+      reply.code(400);
+      return { error: "from and to are required numeric AbsMonth values" };
+    }
+
+    const rows = query.dynastyId
+      ? await prisma.$queryRaw<RawDynastyCapitalRow[]>`
+          SELECT id, dynasty_id, historical_name, modern_name,
+                 longitude, latitude, coordinate_system,
+                 start_year, start_month, start_day,
+                 end_year, end_month, end_day,
+                 start_abs, end_abs, precision,
+                 start_date_confidence, end_date_confidence,
+                 role, claim_track, note, links
+          FROM dynasty_capitals
+          WHERE dynasty_id = ${query.dynastyId}
+            AND start_abs <= ${toAbs}::int
+            AND end_abs >= ${fromAbs}::int`
+      : await prisma.$queryRaw<RawDynastyCapitalRow[]>`
+          SELECT id, dynasty_id, historical_name, modern_name,
+                 longitude, latitude, coordinate_system,
+                 start_year, start_month, start_day,
+                 end_year, end_month, end_day,
+                 start_abs, end_abs, precision,
+                 start_date_confidence, end_date_confidence,
+                 role, claim_track, note, links
+          FROM dynasty_capitals
+          WHERE start_abs <= ${toAbs}::int
+            AND end_abs >= ${fromAbs}::int`;
+
+    return DynastyCapitalSchema.array().parse(rows.map(mapDynastyCapital));
   });
 }

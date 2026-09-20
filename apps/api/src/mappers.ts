@@ -2,6 +2,7 @@ import {
   parseAppellationCsv,
   formatAppellationCsv,
   type Dynasty,
+  type DynastyCapital,
   type DynastyGroup,
   type DynastyLaneGroup,
   type Event,
@@ -12,6 +13,7 @@ import {
 } from "@eralens/shared";
 import type {
   Dynasty as DbDynasty,
+  DynastyCapital as DbDynastyCapital,
   DynastyGroup as DbDynastyGroup,
   DynastyLaneGroup as DbDynastyLaneGroup,
   Event as DbEvent,
@@ -84,6 +86,31 @@ export type RawReignRow = {
   claim_track: string | null;
   claim_label: string | null;
   claim_role: string | null;
+};
+
+export type RawDynastyCapitalRow = {
+  id: string;
+  dynasty_id: string;
+  historical_name: string;
+  modern_name: string;
+  longitude: { toString(): string } | number | string;
+  latitude: { toString(): string } | number | string;
+  coordinate_system: string;
+  start_year: number;
+  start_month: number;
+  start_day: number | null;
+  end_year: number;
+  end_month: number;
+  end_day: number | null;
+  start_abs: number;
+  end_abs: number;
+  precision: string;
+  start_date_confidence: string | null;
+  end_date_confidence: string | null;
+  role: string;
+  claim_track: string | null;
+  note: string | null;
+  links: unknown;
 };
 
 export type RawEventRow = {
@@ -162,6 +189,67 @@ export function mapDynastyLaneGroup(row: DbDynastyLaneGroup): DynastyLaneGroup {
     phaseDynastyIds: row.phaseDynastyIds,
     laneOrderStartAbs: row.laneOrderStartAbs,
     laneOrderEndAbs: row.laneOrderEndAbs,
+  };
+}
+
+function toCoordinateNumber(value: { toString(): string } | number | string): number {
+  return typeof value === "number" ? value : Number(value);
+}
+
+export function mapDynastyCapital(
+  row: DbDynastyCapital | RawDynastyCapitalRow,
+): DynastyCapital {
+  const dynastyId = "dynastyId" in row ? row.dynastyId : row.dynasty_id;
+  const historicalName =
+    "historicalName" in row ? row.historicalName : row.historical_name;
+  const modernName = "modernName" in row ? row.modernName : row.modern_name;
+  const coordinateSystem =
+    "coordinateSystem" in row ? row.coordinateSystem : row.coordinate_system;
+  const startYear = "startYear" in row ? row.startYear : row.start_year;
+  const startMonth = "startMonth" in row ? row.startMonth : row.start_month;
+  const startDay = "startDay" in row ? row.startDay : row.start_day;
+  const endYear = "endYear" in row ? row.endYear : row.end_year;
+  const endMonth = "endMonth" in row ? row.endMonth : row.end_month;
+  const endDay = "endDay" in row ? row.endDay : row.end_day;
+  const startAbs = "startAbs" in row ? row.startAbs : row.start_abs;
+  const endAbs = "endAbs" in row ? row.endAbs : row.end_abs;
+  const startDateConfidence =
+    "startDateConfidence" in row ? row.startDateConfidence : row.start_date_confidence;
+  const endDateConfidence =
+    "endDateConfidence" in row ? row.endDateConfidence : row.end_date_confidence;
+  const claimTrack = "claimTrack" in row ? row.claimTrack : row.claim_track;
+  const noteValue = row.note;
+  const links = (row.links as DynastyCapital["links"]) ?? [];
+
+  return {
+    id: row.id,
+    dynastyId,
+    historicalName,
+    modernName,
+    longitude: toCoordinateNumber(row.longitude),
+    latitude: toCoordinateNumber(row.latitude),
+    coordinateSystem: coordinateSystem as DynastyCapital["coordinateSystem"],
+    start: {
+      year: startYear,
+      month: startMonth,
+      ...(startDay != null ? { day: startDay } : {}),
+    },
+    end: {
+      year: endYear,
+      month: endMonth,
+      ...(endDay != null ? { day: endDay } : {}),
+    },
+    startAbs,
+    endAbs,
+    precision: row.precision as DynastyCapital["precision"],
+    startDateConfidence:
+      (startDateConfidence as DynastyCapital["startDateConfidence"] | null) ?? undefined,
+    endDateConfidence:
+      (endDateConfidence as DynastyCapital["endDateConfidence"] | null) ?? undefined,
+    role: row.role as DynastyCapital["role"],
+    claimTrack: claimTrack ?? undefined,
+    note: noteValue ?? undefined,
+    links,
   };
 }
 
