@@ -1,5 +1,11 @@
 import { describe, expect, it } from "vitest";
-import { CHINA_MAP_BOUNDS, projectGcj02 } from "./chinaMapProjection";
+import {
+  CHINA_MAP_BOUNDS,
+  chinaMapGeoAspect,
+  chinaMapViewBox,
+  projectChinaLatitude,
+  projectGcj02,
+} from "./chinaMapProjection";
 
 describe("projectGcj02", () => {
   const width = 800;
@@ -27,13 +33,41 @@ describe("projectGcj02", () => {
   });
 
   it("respects envelope corners inside the fitted map box", () => {
-    const sw = projectGcj02(CHINA_MAP_BOUNDS.minLng, CHINA_MAP_BOUNDS.minLat, width, height, padding);
-    const ne = projectGcj02(CHINA_MAP_BOUNDS.maxLng, CHINA_MAP_BOUNDS.maxLat, width, height, padding);
+    const sw = projectGcj02(
+      CHINA_MAP_BOUNDS.minLng,
+      CHINA_MAP_BOUNDS.minLat,
+      width,
+      height,
+      padding,
+    );
+    const ne = projectGcj02(
+      CHINA_MAP_BOUNDS.maxLng,
+      CHINA_MAP_BOUNDS.maxLat,
+      width,
+      height,
+      padding,
+    );
     expect(sw.x).toBeGreaterThanOrEqual(padding);
     expect(sw.y).toBeLessThanOrEqual(height - padding);
     expect(ne.x).toBeLessThanOrEqual(width - padding);
     expect(ne.y).toBeGreaterThanOrEqual(padding);
     expect(ne.x).toBeGreaterThan(sw.x);
     expect(sw.y).toBeGreaterThan(ne.y);
+  });
+
+  it("uses latitude-corrected aspect ratio (taller than equirectangular)", () => {
+    const equirectangularAspect =
+      (CHINA_MAP_BOUNDS.maxLng - CHINA_MAP_BOUNDS.minLng) /
+      (CHINA_MAP_BOUNDS.maxLat - CHINA_MAP_BOUNDS.minLat);
+    expect(chinaMapGeoAspect()).toBeLessThan(equirectangularAspect);
+    expect(chinaMapGeoAspect()).toBeGreaterThan(1.3);
+  });
+
+  it("keeps viewBox aligned with projected latitude span", () => {
+    const minProj = projectChinaLatitude(CHINA_MAP_BOUNDS.minLat);
+    const maxProj = projectChinaLatitude(CHINA_MAP_BOUNDS.maxLat);
+    expect(chinaMapViewBox()).toBe(
+      `${CHINA_MAP_BOUNDS.minLng} ${minProj} ${CHINA_MAP_BOUNDS.maxLng - CHINA_MAP_BOUNDS.minLng} ${maxProj - minProj}`,
+    );
   });
 });

@@ -18,12 +18,8 @@
     color-mix(in srgb, var(--color-paper) 76%, transparent);
 }
 
-.outlineWrap {
+.mapBox {
   position: absolute;
-  inset: 20px 24px 28px calc(var(--timeline-gutter) + 12px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   opacity: 0.72;
   --map-fill-top: color-mix(in srgb, var(--color-ochre) 10%, var(--color-paper));
   --map-fill-mid: color-mix(in srgb, var(--color-mineral) 6%, var(--color-paper));
@@ -31,8 +27,10 @@
   --map-stroke: color-mix(in srgb, var(--color-ochre) 22%, var(--color-border));
 }
 
-.outlineWrap svg {
+.mapBox svg {
   display: block;
   width: 100%;
   height: 100%;
+  --map-river-yangtze: color-mix(in srgb, var(--color-azure) 62%, var(--color-mineral));
+  --map-river-yellow: color-mix(in srgb, var(--color-ochre) 58%, var(--color-amber));
 }

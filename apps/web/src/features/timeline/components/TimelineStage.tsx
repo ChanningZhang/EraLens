@@ -253,7 +253,7 @@ export function TimelineStage() {
     >
       <div className={styles.mapUnderlay} aria-hidden="true">
         <div className={styles.viewportPanel}>
-          <ChinaMapBackground />
+          <ChinaMapBackground gutterPx={viewport.gutterPx} />
         </div>
       </div>
       <div className={styles.guideOverlay} aria-hidden="true">

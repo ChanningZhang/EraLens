@@ -6,13 +6,21 @@ export const CHINA_MAP_BOUNDS = {
   maxLat: 54,
 } as const;
 
-/** Keep in sync with ChinaMapBackground.module.css `.outlineWrap` insets. */
+/** Keep in sync with ChinaMapBackground map box positioning. */
 export const CHINA_MAP_INSETS = {
   top: 20,
   right: 24,
   bottom: 28,
   gutterExtra: 12,
 } as const;
+
+export const CHINA_MAP_MID_LAT =
+  (CHINA_MAP_BOUNDS.minLat + CHINA_MAP_BOUNDS.maxLat) / 2;
+
+/** Compensate equirectangular flattening so China reads naturally on wide screens. */
+export const CHINA_MAP_LATITUDE_SCALE = Math.cos(
+  (CHINA_MAP_MID_LAT * Math.PI) / 180,
+);
 
 export type MapPoint = { x: number; y: number };
 
@@ -29,6 +37,30 @@ export type ChinaMapLayout = {
   width: number;
   height: number;
 };
+
+/** Project latitude into display space (must match generate-china-outline.mjs). */
+export function projectChinaLatitude(lat: number): number {
+  return (
+    CHINA_MAP_MID_LAT + (lat - CHINA_MAP_MID_LAT) / CHINA_MAP_LATITUDE_SCALE
+  );
+}
+
+export function chinaMapProjectedLatSpan(): number {
+  const { minLat, maxLat } = CHINA_MAP_BOUNDS;
+  return projectChinaLatitude(maxLat) - projectChinaLatitude(minLat);
+}
+
+export function chinaMapGeoAspect(): number {
+  const { minLng, maxLng } = CHINA_MAP_BOUNDS;
+  return (maxLng - minLng) / chinaMapProjectedLatSpan();
+}
+
+/** SVG viewBox string; keep in sync with generate-china-outline.mjs. */
+export function chinaMapViewBox(): string {
+  const { minLng, maxLng, minLat } = CHINA_MAP_BOUNDS;
+  const minProjLat = projectChinaLatitude(minLat);
+  return `${minLng} ${minProjLat} ${maxLng - minLng} ${chinaMapProjectedLatSpan()}`;
+}
 
 export function resolveChinaMapInsets(gutterPx: number): ChinaMapInsets {
   return {
@@ -53,7 +85,9 @@ export function resolveChinaMapLayout(
 ): ChinaMapLayout {
   const insets = normalizeInsets(padding);
   const { minLng, maxLng, minLat, maxLat } = CHINA_MAP_BOUNDS;
-  const geoAspect = (maxLng - minLng) / (maxLat - minLat);
+  const lngSpan = maxLng - minLng;
+  const latSpan = projectChinaLatitude(maxLat) - projectChinaLatitude(minLat);
+  const geoAspect = lngSpan / latSpan;
   const maxInnerW = Math.max(1, width - insets.left - insets.right);
   const maxInnerH = Math.max(1, height - insets.top - insets.bottom);
   const containerAspect = maxInnerW / maxInnerH;
@@ -85,8 +119,12 @@ export function projectGcj02(
 ): MapPoint {
   const { minLng, maxLng, minLat, maxLat } = CHINA_MAP_BOUNDS;
   const layout = resolveChinaMapLayout(width, height, padding);
-  const x = layout.left + ((lng - minLng) / (maxLng - minLng)) * layout.width;
-  const y = layout.top + ((maxLat - lat) / (maxLat - minLat)) * layout.height;
+  const lngSpan = maxLng - minLng;
+  const latSpan = projectChinaLatitude(maxLat) - projectChinaLatitude(minLat);
+  const x = layout.left + ((lng - minLng) / lngSpan) * layout.width;
+  const y =
+    layout.top +
+    ((projectChinaLatitude(maxLat) - projectChinaLatitude(lat)) / latSpan) *
+      layout.height;
   return { x, y };
 }
-
