@@ -161,7 +161,7 @@ export function dynastyLaneHeight(
   return LANE_PADDING_Y + barHeight;
 }
 
-export function partitionReignRecords(reigns: Reign[]): {
+export function partitionReignRecords(reigns: readonly Reign[]): {
   rulers: Reign[];
   missing: Reign[];
 } {

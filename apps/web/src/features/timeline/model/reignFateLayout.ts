@@ -1,5 +1,6 @@
 import {
   fateRelationLabel,
+  isFateRelationKind,
   resolveFateRelations,
   type Relation,
   type Reign,
@@ -7,7 +8,7 @@ import {
 import { expandWindow } from "./visible";
 import { clampAbsToBarX, layoutLaneReignBar, type ReignCardLayout } from "./reignCardLayout";
 import { partitionReignRecords } from "./reignClusters";
-import { type ViewportState } from "./coordinates";
+import { getWindow, type ViewportState } from "./coordinates";
 
 export type TimelineLaneLayout = {
   dynastyId: string;
@@ -129,7 +130,8 @@ export function layoutReignFates(
   viewport: ViewportState,
   personNames: ReadonlyMap<string, string>,
 ): PlacedReignFate[] {
-  const buffered = expandWindow(viewport.startAbs, viewport.endAbs, 120);
+  const { startAbs, endAbs } = getWindow(viewport);
+  const buffered = expandWindow(startAbs, endAbs, 120);
   const layoutByReignId = new Map<string, ReignCardLayout>();
   const colorByReignId = new Map<string, string>();
 
@@ -172,6 +174,7 @@ export function layoutReignFates(
 
     const fromName = personNames.get(fromReign.personId) ?? fromReign.title;
     const toName = personNames.get(toReign.personId) ?? toReign.title;
+    if (!isFateRelationKind(relation.kind)) continue;
     const color = colorByReignId.get(fromReign.id) ?? "var(--color-ink-muted)";
     const tick = destTick(toLayout, fromLayout, endX);
     placed.push({

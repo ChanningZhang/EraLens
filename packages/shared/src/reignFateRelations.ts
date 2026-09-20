@@ -114,6 +114,7 @@ export function prioritizeKilledFateRelations(
   if (killedVictims.size === 0) return [...resolved];
 
   return resolved.filter((item) => {
+    if (!isFateRelationKind(item.relation.kind)) return true;
     if (!FATE_KINDS_SUPPRESSED_BY_KILLED.has(item.relation.kind)) return true;
     return !killedVictims.has(fateVictimKey(item.fromReign));
   });

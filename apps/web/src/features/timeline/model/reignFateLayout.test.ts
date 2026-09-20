@@ -234,8 +234,8 @@ describe("layoutReignFates", () => {
       ],
       [simaYe, liuCong],
       [
-        { dynastyId: "jin-west", top: 80, records: [simaYe], color: COLOR_VALUES[jinWest.colorToken] },
-        { dynastyId: "han-zhao", top: 200, records: [liuCong], color: COLOR_VALUES[hanZhao.colorToken] },
+        { dynastyId: "jin-west", top: 80, records: [simaYe], color: COLOR_VALUES.stone },
+        { dynastyId: "han-zhao", top: 200, records: [liuCong], color: COLOR_VALUES.cinnabar },
       ],
       jinViewport,
       new Map([

@@ -14,7 +14,6 @@ import {
   resolveReignCardLabel,
   resolveReignCardMeta,
   resolveRocReignRegionLabel,
-  type Person,
 } from "@eralens/shared";
 import { useQuery } from "@tanstack/react-query";
 import { getRepository } from "@/data/repository";
@@ -47,10 +46,12 @@ type Props = {
   color: string;
   reigns: Reign[];
   personName?: string;
-  personClan?: Pick<
-    Person,
-    "ancestralXing" | "clanShi" | "posthumousNames" | "templeNames"
-  >;
+  personClan?: {
+    ancestralXing?: string;
+    clanShi?: string;
+    posthumousNames?: string[];
+    templeNames?: string[];
+  };
   orthodox?: boolean;
   laneGroups?: readonly DynastyLaneGroup[];
 };
