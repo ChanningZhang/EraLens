@@ -188,6 +188,7 @@ export const EventKindSchema = z.enum([
   "politics",
   "culture",
   "disaster",
+  "idiom",
   "other",
 ]);
 
@@ -208,8 +209,25 @@ export const EventSchema = z
     dynastyIds: z.array(z.string()).default([]),
     participantIds: z.array(z.string()).default([]),
     summary: z.string().optional(),
+    meaning: z.string().optional(),
   })
   .superRefine((event, ctx) => {
+    if (event.kind === "idiom") {
+      if (event.timeMode !== "point") {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: "idiom events must use timeMode point",
+          path: ["timeMode"],
+        });
+      }
+      if (!event.meaning?.trim()) {
+        ctx.addIssue({
+          code: z.ZodIssueCode.custom,
+          message: "idiom events require meaning",
+          path: ["meaning"],
+        });
+      }
+    }
     if (event.timeMode === "point" && event.atAbs == null) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
@@ -324,6 +342,7 @@ export const EntityDetailSchema = z.object({
         label: z.string(),
         subtitle: z.string().optional(),
         abs: z.number().optional(),
+        group: z.enum(["idiom", "event", "reign", "person", "dynasty"]).optional(),
       }),
     )
     .default([]),

@@ -17,6 +17,8 @@ export function eventKindLabel(kind: Event["kind"]): string {
       return "文化";
     case "disaster":
       return "灾害";
+    case "idiom":
+      return "成语";
     case "other":
       return "其他";
   }

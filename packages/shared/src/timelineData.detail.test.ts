@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import type { Reign } from "./schema";
+import { EventSchema, type Reign } from "./schema";
 import { buildEntityDetail } from "./timelineData";
 
 function reign(overrides: Partial<Reign> & { templeName?: string }): Reign {
@@ -115,6 +115,69 @@ describe("buildEntityDetail reign", () => {
         { label: "据点", value: "绍兴监国" },
       ]),
     );
+  });
+
+  it("does not list idioms linked only through person participants", () => {
+    const store = {
+      dynasties: [
+        {
+          id: "yue-chunqiu",
+          name: "越",
+          scope: "cn" as const,
+          region: "east_asia",
+          start: { year: -496, month: 1 },
+          end: { year: -306, month: 12 },
+          startAbs: -5932,
+          endAbs: -3652,
+          precision: "year" as const,
+          colorToken: "moss" as const,
+        },
+      ],
+      reigns: [
+        reign({
+          id: "reign-gou-jian-yue-chunqiu",
+          dynastyId: "yue-chunqiu",
+          personId: "gou-jian",
+          title: "越王勾践",
+          start: { year: -496, month: 1 },
+          end: { year: -464, month: 12 },
+          startAbs: -5932,
+          endAbs: -5548,
+          preferredAppellation: { kind: "regnal", name: "勾践" },
+        }),
+      ],
+      persons: [
+        {
+          id: "gou-jian",
+          name: "勾践",
+          roles: ["君主"],
+          links: [],
+        },
+      ],
+      events: [
+        {
+          id: "idiom-wo-xin-chang-dan",
+          name: "卧薪尝胆",
+          kind: "idiom" as const,
+          timeMode: "point" as const,
+          precision: "year" as const,
+          at: { year: -473, month: 12 },
+          atAbs: -5653,
+          dynastyIds: ["yue-chunqiu"],
+          participantIds: ["gou-jian"],
+          meaning: "形容刻苦自励，发愤图强。",
+          summary: "勾践战败后屈身事吴，回国卧薪尝胆，最终灭吴称霸。",
+        },
+      ],
+      relations: [],
+    };
+
+    const detail = buildEntityDetail(store, {
+      type: "reign",
+      id: "reign-gou-jian-yue-chunqiu",
+    });
+
+    expect(detail.related).toEqual([]);
   });
 });
 
@@ -232,5 +295,350 @@ describe("buildEntityDetail event", () => {
           "遗址约前2800–前1100。一期属宝墩文化；二三期三星堆文化约前2000–前1400；著名祭祀坑约前1200–前1000，属四期十二桥。不含宝墩一期。",
       },
     ]);
+  });
+});
+
+describe("buildEntityDetail dynasty", () => {
+  it("groups related idioms and events", () => {
+    const store = {
+      dynasties: [
+        {
+          id: "shu",
+          name: "蜀汉",
+          scope: "cn" as const,
+          region: "east_asia",
+          start: { year: 221, month: 5 },
+          end: { year: 263, month: 12 },
+          startAbs: 100,
+          endAbs: 200,
+          precision: "year" as const,
+          colorToken: "moss" as const,
+        },
+      ],
+      reigns: [],
+      persons: [],
+      events: [
+        {
+          id: "idiom-san-gu-mao-lu",
+          name: "三顾茅庐",
+          kind: "idiom" as const,
+          timeMode: "point" as const,
+          precision: "year" as const,
+          at: { year: 207, month: 12 },
+          atAbs: 90,
+          dynastyIds: ["shu"],
+          participantIds: ["liu-bei"],
+          meaning: "比喻诚心诚意地一再邀请或拜访。",
+          summary: "刘备三请诸葛亮。",
+        },
+        {
+          id: "chibi",
+          name: "赤壁之战",
+          kind: "battle" as const,
+          timeMode: "point" as const,
+          precision: "year" as const,
+          at: { year: 208, month: 12 },
+          atAbs: 102,
+          dynastyIds: ["shu"],
+          participantIds: [],
+        },
+      ],
+      relations: [],
+    };
+
+    const detail = buildEntityDetail(store, { type: "dynasty", id: "shu" });
+
+    expect(detail.related.map((item) => item.group)).toEqual(["idiom", "event"]);
+    expect(detail.related[0]?.label).toBe("三顾茅庐");
+    expect(detail.related[1]?.label).toBe("赤壁之战");
+  });
+});
+
+describe("buildEntityDetail person", () => {
+  it("lists related idioms for participants", () => {
+    const store = {
+      dynasties: [],
+      reigns: [],
+      persons: [
+        {
+          id: "lin-xiangru",
+          name: "蔺相如",
+          roles: ["政治家"],
+          posthumousNames: [],
+          templeNames: [],
+        },
+      ],
+      events: [
+        {
+          id: "idiom-wan-bi-gui-zhao",
+          name: "完璧归赵",
+          kind: "idiom" as const,
+          timeMode: "point" as const,
+          precision: "year" as const,
+          at: { year: -259, month: 12 },
+          atAbs: -3085,
+          dynastyIds: ["zhao-warring", "qin"],
+          participantIds: ["lin-xiangru"],
+          meaning: "比喻把原物完好地归还本人。",
+          summary: "蔺相如持和氏璧入秦。",
+        },
+      ],
+      relations: [],
+    };
+
+    const detail = buildEntityDetail(store, { type: "person", id: "lin-xiangru" });
+
+    expect(detail.related.map((item) => item.group)).toEqual(["idiom"]);
+    expect(detail.related[0]?.label).toBe("完璧归赵");
+  });
+
+  it("lists reign cards for monarch participants", () => {
+    const store = {
+      dynasties: [
+        {
+          id: "yue-chunqiu",
+          name: "越",
+          scope: "cn" as const,
+          region: "east_asia",
+          start: { year: -496, month: 1 },
+          end: { year: -306, month: 12 },
+          startAbs: -5932,
+          endAbs: -3652,
+          precision: "year" as const,
+          colorToken: "moss" as const,
+        },
+      ],
+      reigns: [
+        {
+          id: "reign-gou-jian-yue-chunqiu",
+          dynastyId: "yue-chunqiu",
+          personId: "gou-jian",
+          title: "越王勾践",
+          start: { year: -496, month: 1 },
+          end: { year: -464, month: 12 },
+          startAbs: -5932,
+          endAbs: -5548,
+          precision: "year",
+          eraNames: [],
+        },
+      ],
+      persons: [
+        {
+          id: "gou-jian",
+          name: "勾践",
+          roles: ["君主"],
+          posthumousNames: [],
+          templeNames: [],
+          bio: "越王勾践，越国君主。",
+        },
+      ],
+      events: [
+        {
+          id: "idiom-wo-xin-chang-dan",
+          name: "卧薪尝胆",
+          kind: "idiom" as const,
+          timeMode: "point" as const,
+          precision: "year" as const,
+          at: { year: -473, month: 12 },
+          atAbs: -5653,
+          dynastyIds: ["yue-chunqiu"],
+          participantIds: ["gou-jian"],
+          meaning: "形容刻苦自励，发愤图强。",
+          summary: "勾践战败后屈身事吴，回国卧薪尝胆，最终灭吴称霸。",
+        },
+      ],
+      relations: [],
+    };
+
+    const detail = buildEntityDetail(store, { type: "person", id: "gou-jian" });
+
+    expect(detail.related.map((item) => item.group)).toEqual(["reign", "idiom"]);
+    expect(detail.related[0]).toMatchObject({
+      ref: { type: "reign", id: "reign-gou-jian-yue-chunqiu" },
+      label: "越",
+      subtitle: "-496 — -464",
+      group: "reign",
+    });
+    expect(detail.related[1]?.label).toBe("卧薪尝胆");
+  });
+
+  it("lists multiple reigns in chronological order", () => {
+    const store = {
+      dynasties: [
+        {
+          id: "ming",
+          name: "明",
+          scope: "cn" as const,
+          region: "east_asia",
+          start: { year: 1368, month: 1 },
+          end: { year: 1644, month: 12 },
+          startAbs: 100,
+          endAbs: 200,
+          precision: "year" as const,
+          colorToken: "moss" as const,
+        },
+      ],
+      reigns: [
+        reign({
+          id: "reign-zhu-qizhen-zhengtong",
+          dynastyId: "ming",
+          personId: "zhu-qizhen",
+          title: "明英宗",
+          start: { year: 1436, month: 1 },
+          end: { year: 1449, month: 12 },
+          startAbs: 10,
+          endAbs: 20,
+          eraNames: ["正统"],
+          preferredAppellation: { kind: "era", name: "正统" },
+        }),
+        reign({
+          id: "reign-zhu-qizhen-tianshun",
+          dynastyId: "ming",
+          personId: "zhu-qizhen",
+          title: "明英宗",
+          start: { year: 1457, month: 1 },
+          end: { year: 1464, month: 12 },
+          startAbs: 30,
+          endAbs: 40,
+          eraNames: ["天顺"],
+          preferredAppellation: { kind: "era", name: "天顺" },
+        }),
+      ],
+      persons: [
+        {
+          id: "zhu-qizhen",
+          name: "朱祁镇",
+          roles: ["皇帝"],
+          posthumousNames: [],
+          templeNames: [],
+          links: [],
+        },
+      ],
+      events: [],
+      relations: [],
+    };
+
+    const detail = buildEntityDetail(store, { type: "person", id: "zhu-qizhen" });
+
+    expect(detail.related.map((item) => item.ref.id)).toEqual([
+      "reign-zhu-qizhen-zhengtong",
+      "reign-zhu-qizhen-tianshun",
+    ]);
+    expect(detail.related[0]?.label).toBe("明 · 正统");
+    expect(detail.related[1]?.label).toBe("明 · 天顺");
+  });
+});
+
+describe("buildEntityDetail idiom event", () => {
+  it("shows meaning and 典故年代 facts", () => {
+    const store = {
+      dynasties: [
+        {
+          id: "shu",
+          name: "蜀汉",
+          scope: "cn" as const,
+          region: "east_asia",
+          start: { year: 221, month: 5 },
+          end: { year: 263, month: 12 },
+          startAbs: 100,
+          endAbs: 200,
+          precision: "year" as const,
+          colorToken: "moss" as const,
+        },
+      ],
+      reigns: [],
+      persons: [],
+      events: [
+        {
+          id: "idiom-san-gu-mao-lu",
+          name: "三顾茅庐",
+          kind: "idiom" as const,
+          timeMode: "point" as const,
+          precision: "year" as const,
+          at: { year: 207, month: 12 },
+          atAbs: 90,
+          dynastyIds: ["shu"],
+          participantIds: [],
+          meaning: "比喻诚心诚意地一再邀请或拜访。",
+          summary: "刘备三请诸葛亮。",
+        },
+      ],
+      relations: [],
+    };
+
+    const detail = buildEntityDetail(store, { type: "event", id: "idiom-san-gu-mao-lu" });
+
+    expect(detail.facts).toEqual([
+      { label: "释义", value: "比喻诚心诚意地一再邀请或拜访。" },
+      { label: "典故年代", value: "公元207年" },
+      { label: "类型", value: "成语" },
+    ]);
+    expect(detail.summary).toBe("刘备三请诸葛亮。");
+  });
+
+  it("lists linked dynasties and participants in related", () => {
+    const store = {
+      dynasties: [
+        {
+          id: "shu",
+          name: "蜀汉",
+          scope: "cn" as const,
+          region: "east_asia",
+          start: { year: 221, month: 5 },
+          end: { year: 263, month: 12 },
+          startAbs: 100,
+          endAbs: 200,
+          precision: "year" as const,
+          colorToken: "moss" as const,
+        },
+      ],
+      reigns: [],
+      persons: [
+        {
+          id: "liu-bei",
+          name: "刘备",
+          roles: ["皇帝"],
+          posthumousNames: [],
+          templeNames: [],
+        },
+      ],
+      events: [
+        {
+          id: "idiom-san-gu-mao-lu",
+          name: "三顾茅庐",
+          kind: "idiom" as const,
+          timeMode: "point" as const,
+          precision: "year" as const,
+          at: { year: 207, month: 12 },
+          atAbs: 90,
+          dynastyIds: ["shu"],
+          participantIds: ["liu-bei"],
+          meaning: "比喻诚心诚意地一再邀请或拜访。",
+          summary: "刘备三请诸葛亮。",
+        },
+      ],
+      relations: [],
+    };
+
+    const detail = buildEntityDetail(store, { type: "event", id: "idiom-san-gu-mao-lu" });
+
+    expect(detail.related.map((item) => item.group)).toEqual(["dynasty", "person"]);
+    expect(detail.related[0]?.label).toBe("蜀汉");
+    expect(detail.related[1]?.label).toBe("刘备");
+  });
+});
+
+describe("EventSchema idiom", () => {
+  it("rejects span idiom events", () => {
+    const result = EventSchema.safeParse({
+      id: "bad-idiom",
+      name: "错误成语",
+      kind: "idiom",
+      timeMode: "span",
+      startAbs: 1,
+      endAbs: 2,
+      meaning: "释义",
+    });
+    expect(result.success).toBe(false);
   });
 });

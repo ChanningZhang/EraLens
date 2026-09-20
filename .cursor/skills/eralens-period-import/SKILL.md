@@ -127,7 +127,7 @@ node .cursor/skills/eralens-period-import/scripts/compute-abs.mjs -1046 1  # -12
 - `precision`（王朝/在位）: year | month | day
 - `event.precision`: day | month | year | decade | century
 - `event.time_mode`: point | span | circa
-- `event.kind`: battle | politics | culture | disaster | other
+- `event.kind`: battle | politics | culture | disaster | idiom | other
 - `relation.kind`: succession | battle | alliance | enthronement | other | killed | surrender | abdication | captured
 - `scope`: cn（默认）| global
 
@@ -233,6 +233,22 @@ curl -s "http://localhost:3001/api/bounds"
 - 生卒不明则 `birth_*` / `death_*` 用 NULL，不要用正月占位冒充已知。
 - 各包 `personSql` 优先用 `data/imports/lib/sqlHelpers.mjs` 的共享模板（含 `alt_names`、姓氏列）。
 - 正统金色：`dynastySql()` + `orthodoxDynasties.mjs` 烘焙 `orthodox_*`；相续泳道组走 `data/imports/dynasty-lane-groups/`。
+
+## 成语典故（`data/imports/idioms/`）
+
+成语单独成包，不与王朝/在位包混写。
+
+- **入库形态**：`events.kind = idiom`，`time_mode = point`（禁止 span/circa）；`at_*` 决定时间轴 marker 位置（年精度占位 12 月）；`meaning` 存释义，`summary` 存典故。
+- **关联**：
+  - 故事发生国 / 背景王朝 → `event_dynasties`
+  - 典故人物 → `event_participants.person_id`，**只能写 `persons.id`**
+  - **禁止**写 `reign` id、禁止在 `relations` 中挂 `reign:*`
+  - 国君引用各时期包已入库的 person id（如 `gou-jian`、`qi-r25`），不要写 `reign-gou-jian-*`
+  - 库内尚无的人物由 idioms 包 `upsert`（蔺相如、荆轲等）
+- **史事对照**：有明确对应 battle/politics 事件时，用 `relations` 从成语 `event:idiom-*` 指向已有 `event:*`（`kind: other`），不写 reign 端点。
+- **展示语义**：成语详情关联 person；person 详情关联成语；reign 详情**不**因 person 间接列出成语。时间轴上成语只按 `at_abs` 画点。
+
+生成：`node data/imports/idioms/generate.mjs` → `import.sql` + `manifest.json`。
 
 ## 附加资源
 

@@ -6,7 +6,6 @@ import {
   resolveReignDetailFacts,
   resolveReignDetailSubtitle,
   resolveReignPrimaryLabel,
-  resolveReignRelatedSubtitle,
   usesPreQinCardLayout,
 } from "./emperorAppellation";
 import {
@@ -112,6 +111,73 @@ function refKey(ref: EntityRef): string {
   return `${ref.type}:${ref.id}`;
 }
 
+function truncateText(text: string, max = 36): string {
+  if (text.length <= max) return text;
+  return `${text.slice(0, max)}…`;
+}
+
+function sortEventsByAnchor(events: Event[]): Event[] {
+  return [...events].sort(
+    (a, b) => eventSpanAbs(a).anchorAbs - eventSpanAbs(b).anchorAbs,
+  );
+}
+
+type RelatedItem = EntityDetail["related"][number];
+
+function idiomRelatedItems(events: Event[]): RelatedItem[] {
+  return sortEventsByAnchor(events.filter((e) => e.kind === "idiom")).map((e) => ({
+    ref: { type: "event", id: e.id },
+    label: e.name,
+    subtitle: e.meaning ? truncateText(e.meaning) : undefined,
+    abs: eventSpanAbs(e).anchorAbs,
+    group: "idiom",
+  }));
+}
+
+function eventRelatedItems(events: Event[]): RelatedItem[] {
+  return sortEventsByAnchor(events.filter((e) => e.kind !== "idiom")).map((e) => ({
+    ref: { type: "event", id: e.id },
+    label: e.name,
+    subtitle: formatEventTime(e),
+    abs: eventSpanAbs(e).anchorAbs,
+    group: "event",
+  }));
+}
+
+function eventsForPerson(store: TimelineDataStore, personId: string): Event[] {
+  return store.events.filter((e) => e.participantIds.includes(personId));
+}
+
+function reignRelatedItems(
+  store: TimelineDataStore,
+  person: Person,
+  personReigns: Reign[],
+): RelatedItem[] {
+  const dynastyMap = new Map(store.dynasties.map((d) => [d.id, d]));
+  return [...personReigns]
+    .sort((a, b) => a.startAbs - b.startAbs)
+    .map((reign) => {
+      const dynasty = dynastyMap.get(reign.dynastyId);
+      const clan = buildPreQinClanContext(person, dynasty);
+      const claimNote = claimDetailFacts(reign)
+        .map((fact) => fact.value)
+        .join(" · ");
+      const subtitle = [
+        `${reign.start.year} — ${reign.end.year}`,
+        claimNote || null,
+      ]
+        .filter(Boolean)
+        .join(" · ");
+      return {
+        ref: { type: "reign", id: reign.id },
+        label: resolveReignDetailSubtitle(reign, dynasty?.name, person.name, clan),
+        subtitle,
+        abs: reign.startAbs,
+        group: "reign",
+      };
+    });
+}
+
 function parseRef(raw: string): EntityRef | null {
   const [type, ...rest] = raw.split(":");
   const id = rest.join(":");
@@ -147,20 +213,11 @@ export function buildEntityDetail(
   if (ref.type === "dynasty") {
     const dynasty = dynastyMap.get(ref.id);
     if (!dynasty) throw new Error(`Dynasty not found: ${ref.id}`);
-    const relatedReigns = store.reigns
-      .filter((r) => r.dynastyId === dynasty.id)
-      .slice(0, 6)
-      .map((r) => {
-        const person = personMap.get(r.personId);
-        const clan = buildPreQinClanContext(person, dynasty);
-        const label = resolveReignPrimaryLabel(r, person?.name, clan);
-        return {
-          ref: { type: "reign" as const, id: r.id },
-          label,
-          subtitle: resolveReignRelatedSubtitle(r, person?.name, clan),
-          abs: r.startAbs,
-        };
-      });
+    const dynastyEvents = store.events.filter((e) =>
+      e.dynastyIds.includes(dynasty.id),
+    );
+    const idiomRelated = idiomRelatedItems(dynastyEvents);
+    const eventRelated = eventRelatedItems(dynastyEvents);
     return {
       ref,
       title: dynasty.name,
@@ -176,7 +233,7 @@ export function buildEntityDetail(
         { label: "范围", value: dynasty.scope === "cn" ? "中国史" : dynasty.scope },
       ],
       summary: dynasty.note,
-      related: relatedReigns,
+      related: [...idiomRelated, ...eventRelated],
       links: [],
     };
   }
@@ -228,6 +285,7 @@ export function buildEntityDetail(
   if (ref.type === "person") {
     const person = personMap.get(ref.id);
     if (!person) throw new Error(`Person not found: ${ref.id}`);
+    const participantEvents = eventsForPerson(store, person.id);
     const personReigns = store.reigns.filter((r) => r.personId === person.id);
     const preQinReign = personReigns.find((r) => usesPreQinCardLayout(r));
     const preQinByBirth =
@@ -263,12 +321,11 @@ export function buildEntityDetail(
           : []),
       ],
       summary: person.bio,
-      related: personReigns.map((r) => ({
-        ref: { type: "reign" as const, id: r.id },
-        label: r.title,
-        subtitle: `${r.start.year} — ${r.end.year}`,
-        abs: r.startAbs,
-      })),
+      related: [
+        ...reignRelatedItems(store, person, personReigns),
+        ...idiomRelatedItems(participantEvents),
+        ...eventRelatedItems(participantEvents),
+      ],
       links: person.links,
     };
   }
@@ -280,6 +337,64 @@ export function buildEntityDetail(
     .map((id) => dynastyMap.get(id))
     .filter((dynasty): dynasty is NonNullable<typeof dynasty> => dynasty != null);
   const primaryDynasty = linkedDynasties[0];
+
+  if (event.kind === "idiom") {
+    const dynastyRelated = linkedDynasties.map((dynasty) => ({
+      ref: { type: "dynasty" as const, id: dynasty.id },
+      label: dynasty.name,
+      subtitle: dynasty.altNames?.[0],
+      abs: anchorAbs,
+      group: "dynasty" as const,
+    }));
+    const sourceEventRelated = store.relations
+      .filter((rel) => rel.fromRef === refKey(ref) && rel.toRef.startsWith("event:"))
+      .map((rel) => parseRef(rel.toRef))
+      .filter((parsed): parsed is EntityRef => parsed != null)
+      .map((parsed) => {
+        const summary = buildRelatedSummary(parsed);
+        const sourceEvent = eventMap.get(parsed.id);
+        return {
+          ...summary,
+          abs: sourceEvent ? eventSpanAbs(sourceEvent).anchorAbs : anchorAbs,
+          group: "event" as const,
+        };
+      });
+    const participantRelated = event.participantIds
+      .map((id) => {
+        const summary = buildRelatedSummary({ type: "person", id });
+        return summary
+          ? { ...summary, abs: anchorAbs, group: "person" as const }
+          : null;
+      })
+      .filter(Boolean) as EntityDetail["related"];
+
+    return {
+      ref,
+      title: event.name,
+      subtitle:
+        linkedDynasties.length > 0
+          ? linkedDynasties.map((dynasty) => dynasty.name).join(" · ")
+          : eventKindLabel(event.kind),
+      dynastyId: primaryDynasty?.id,
+      colorToken: primaryDynasty
+        ? resolveDynastyColorToken(
+            primaryDynasty,
+            fallbackLaneColorToken(primaryDynasty.id),
+            resolveOrthodoxFromAbs(primaryDynasty) ?? primaryDynasty.startAbs,
+          )
+        : undefined,
+      facts: [
+        { label: "释义", value: event.meaning ?? "" },
+        { label: "典故年代", value: formatEventTime(event) },
+        { label: "类型", value: eventKindLabel(event.kind) },
+        ...(event.dateNote ? [{ label: "说明", value: event.dateNote }] : []),
+      ],
+      summary: event.summary,
+      related: [...dynastyRelated, ...participantRelated, ...sourceEventRelated],
+      links: [],
+    };
+  }
+
   return {
     ref,
     title: event.name,
@@ -309,10 +424,11 @@ export function buildEntityDetail(
     related: event.participantIds
       .map((id) => {
         const summary = buildRelatedSummary({ type: "person", id });
-        return summary ? { ...summary, abs: anchorAbs } : null;
+        return summary
+          ? { ...summary, abs: anchorAbs, group: "person" as const }
+          : null;
       })
-      .filter(Boolean)
-      .slice(0, 8) as EntityDetail["related"],
+      .filter(Boolean) as EntityDetail["related"],
     links: [],
   };
 }
@@ -348,10 +464,13 @@ export function searchEntities(store: TimelineDataStore, term: string): SearchHi
     }
   }
   for (const event of store.events) {
-    if (event.name.toLowerCase().includes(q)) {
+    const nameHit = event.name.toLowerCase().includes(q);
+    const meaningHit = event.meaning?.toLowerCase().includes(q) ?? false;
+    if (nameHit || meaningHit) {
       hits.push({
         ref: { type: "event", id: event.id },
         label: event.name,
+        subtitle: event.kind === "idiom" ? "成语" : eventKindLabel(event.kind),
         abs: eventSpanAbs(event).anchorAbs,
       });
     }

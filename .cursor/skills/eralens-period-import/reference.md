@@ -359,6 +359,49 @@ ON CONFLICT (id) DO UPDATE SET
   summary = EXCLUDED.summary;
 ```
 
+### events（成语 idiom）
+
+成语典故专用 `kind = idiom`，**只能** `time_mode = point`。时间轴按 `at_abs` 画时刻 marker；`meaning` 必填（释义），`summary` 写典故。
+
+- `event_participants.person_id` 只写 `persons.id`（国君也用 person id，如 `gou-jian`），**禁止** reign id
+- 不在 `relations` 中挂 `reign:*`；人物关联只走 `event_participants`
+- 对照史事可用 `relations`：`event:idiom-*` → `event:*`（`kind: other`）
+
+```sql
+INSERT INTO events (
+  id, name, kind, time_mode, precision, date_note,
+  at_year, at_month, at_abs,
+  summary, meaning
+) VALUES (
+  'idiom-wo-xin-chang-dan',
+  '卧薪尝胆',
+  'idiom',
+  'point', 'year', '越灭吴，前473年',
+  -473, 12, -5653,
+  '勾践战败后屈身事吴，回国卧薪尝胆，最终灭吴称霸。',
+  '形容刻苦自励，发愤图强。'
+)
+ON CONFLICT (id) DO UPDATE SET
+  name = EXCLUDED.name,
+  kind = EXCLUDED.kind,
+  time_mode = EXCLUDED.time_mode,
+  precision = EXCLUDED.precision,
+  date_note = EXCLUDED.date_note,
+  at_year = EXCLUDED.at_year,
+  at_month = EXCLUDED.at_month,
+  at_abs = EXCLUDED.at_abs,
+  summary = EXCLUDED.summary,
+  meaning = EXCLUDED.meaning;
+
+INSERT INTO event_dynasties (event_id, dynasty_id)
+VALUES ('idiom-wo-xin-chang-dan', 'yue-chunqiu')
+ON CONFLICT DO NOTHING;
+
+INSERT INTO event_participants (event_id, person_id)
+VALUES ('idiom-wo-xin-chang-dan', 'gou-jian')
+ON CONFLICT DO NOTHING;
+```
+
 ### event_dynasties / event_participants
 
 ```sql

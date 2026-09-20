@@ -125,6 +125,17 @@
   gap: var(--space-2);
 }
 
+.relatedGroup + .relatedGroup {
+  margin-top: var(--space-3);
+}
+
+.relatedGroupTitle {
+  margin: 0 0 var(--space-2);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: var(--color-ink-muted);
+}
+
 .relatedItem {
   display: flex;
   flex-direction: column;
@@ -140,6 +151,11 @@
 
 .relatedItem:hover {
   border-color: color-mix(in srgb, var(--color-accent) 40%, var(--color-border));
+}
+
+.relatedItemActive {
+  border-color: var(--detail-accent, var(--color-accent));
+  background: color-mix(in srgb, var(--detail-accent, var(--color-accent)) 8%, var(--color-paper));
 }
 
 .relatedLabel {

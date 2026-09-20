@@ -1,0 +1,118 @@
+{
+  "slug": "idioms",
+  "title": "成语典故（point 事件）",
+  "window": {
+    "startYear": -2100,
+    "startMonth": 1,
+    "endYear": 1600,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-09-20",
+  "counts": {
+    "persons": 19,
+    "dynasties": 0,
+    "reigns": 0,
+    "events": 69,
+    "relations": 11
+  },
+  "sources": [
+    {
+      "label": "叶公好龙",
+      "url": "https://zh.wikipedia.org/wiki/叶公好龙"
+    },
+    {
+      "label": "郑人买履",
+      "url": "https://zh.wikipedia.org/wiki/郑人买履"
+    },
+    {
+      "label": "杞人忧天",
+      "url": "https://zh.wikipedia.org/wiki/杞人忧天"
+    },
+    {
+      "label": "自相矛盾",
+      "url": "https://zh.wikipedia.org/wiki/自相矛盾"
+    },
+    {
+      "label": "南辕北辙",
+      "url": "https://zh.wikipedia.org/wiki/南辕北辙"
+    },
+    {
+      "label": "滥竽充数",
+      "url": "https://zh.wikipedia.org/wiki/滥竽充数"
+    },
+    {
+      "label": "刻舟求剑",
+      "url": "https://zh.wikipedia.org/wiki/刻舟求剑"
+    },
+    {
+      "label": "卧薪尝胆",
+      "url": "https://zh.wikipedia.org/wiki/卧薪尝胆"
+    },
+    {
+      "label": "烽火戏诸侯",
+      "url": "https://zh.wikipedia.org/wiki/烽火戏诸侯"
+    },
+    {
+      "label": "退避三舍",
+      "url": "https://zh.wikipedia.org/wiki/退避三舍"
+    },
+    {
+      "label": "围魏救赵",
+      "url": "https://zh.wikipedia.org/wiki/围魏救赵"
+    },
+    {
+      "label": "纸上谈兵",
+      "url": "https://zh.wikipedia.org/wiki/纸上谈兵"
+    },
+    {
+      "label": "完璧归赵",
+      "url": "https://zh.wikipedia.org/wiki/完璧归赵"
+    },
+    {
+      "label": "负荆请罪",
+      "url": "https://zh.wikipedia.org/wiki/负荆请罪"
+    },
+    {
+      "label": "指鹿为马",
+      "url": "https://zh.wikipedia.org/wiki/指鹿为马"
+    },
+    {
+      "label": "图穷匕见",
+      "url": "https://zh.wikipedia.org/wiki/荆轲刺秦王"
+    },
+    {
+      "label": "破釜沉舟",
+      "url": "https://zh.wikipedia.org/wiki/巨鹿之战"
+    },
+    {
+      "label": "三顾茅庐",
+      "url": "https://zh.wikipedia.org/wiki/三顾茅庐"
+    },
+    {
+      "label": "草船借箭",
+      "url": "https://zh.wikipedia.org/wiki/草船借箭"
+    },
+    {
+      "label": "程门立雪",
+      "url": "https://zh.wikipedia.org/wiki/程门立雪"
+    },
+    {
+      "label": "精忠报国",
+      "url": "https://zh.wikipedia.org/wiki/岳飞"
+    },
+    {
+      "label": "知行合一",
+      "url": "https://zh.wikipedia.org/wiki/王阳明"
+    }
+  ],
+  "notes": [
+    "成语以 kind=idiom 的 point 事件入库，仅在时间轴显示时刻 marker，不画 span/circa 区间。",
+    "meaning 存释义，summary 存典故；王朝经 event_dynasties，人物经 event_participants（仅 person_id）。",
+    "participantIds 必须引用 persons.id，禁止写 reign id 或在 relations 中挂 reign。",
+    "有明确史事者经 relations 指向已有 battle/politics 事件（event→event）。",
+    "典故国君引用各时期包已入库的 person id（如 gou-jian、qi-r25）；蔺相如、荆轲等名臣由本包 upsert。",
+    "寓言类关联故事发生国，不把典籍作者（韩非、庄子等）当作典故人物。"
+  ]
+}

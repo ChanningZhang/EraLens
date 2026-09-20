@@ -131,6 +131,7 @@ model Event {
   endMonth    Int?                @map("end_month")
   endAbs      Int?                @map("end_abs")
   summary     String?
+  meaning     String?
   dynasties   EventDynasty[]
   participants EventParticipant[]
 

@@ -50,7 +50,7 @@ async function loadStore() {
 async function loadEventsInWindow(fromAbs: number, toAbs: number, visibleDynastyIds: string[]) {
   const eventRows = await prisma.$queryRaw<RawEventRow[]>`
     SELECT id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs,
-           start_year, start_month, start_abs, end_year, end_month, end_abs, summary
+           start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning
     FROM events
     WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')`;
 

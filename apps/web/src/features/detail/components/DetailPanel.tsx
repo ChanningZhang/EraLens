@@ -1,11 +1,58 @@
 import { useQuery } from "@tanstack/react-query";
+import type { EntityDetail } from "@eralens/shared";
 import { getRepository } from "@/data/repository";
 import { useLaneColorValue } from "@/features/timeline/hooks/useLaneColor";
 import { useSelection } from "@/features/timeline/hooks/useSelection";
 import { useViewport } from "@/features/timeline/hooks/useViewport";
-import { selectionStore } from "@/features/timeline/state/selectionStore";
+import {
+  type SelectionState,
+  selectionStore,
+} from "@/features/timeline/state/selectionStore";
 import { viewportStore } from "@/features/timeline/state/viewportStore";
 import styles from "./DetailPanel.module.css";
+
+const RELATED_GROUPS = [
+  { key: "idiom", title: "成语" },
+  { key: "event", title: "事件" },
+  { key: "reign", title: "在位" },
+  { key: "person", title: "人物" },
+  { key: "dynasty", title: "王朝" },
+] as const;
+
+function groupRelatedItems(items: EntityDetail["related"]) {
+  if (!items.length) return [];
+  const grouped = RELATED_GROUPS.map(({ key, title }) => ({
+    title,
+    items: items.filter((item) => item.group === key),
+  })).filter((group) => group.items.length > 0);
+  const ungrouped = items.filter((item) => !item.group);
+  if (ungrouped.length > 0) {
+    grouped.push({ title: null, items: ungrouped });
+  }
+  return grouped;
+}
+
+function selectRelatedItem(
+  item: EntityDetail["related"][number],
+  selection: SelectionState,
+  centerAbs: number,
+) {
+  if (
+    item.ref.type === "reign" &&
+    selection.selected?.type === "person" &&
+    item.abs !== undefined
+  ) {
+    selectionStore.setHighlightAbs(item.abs);
+    viewportStore.jumpToAbs(item.abs);
+    selectionStore.syncToUrl(centerAbs);
+    return;
+  }
+  selectionStore.select(item.ref, item.abs);
+  if (item.abs !== undefined) {
+    viewportStore.jumpToAbs(item.abs);
+  }
+  selectionStore.syncToUrl(centerAbs);
+}
 
 export function DetailPanel() {
   const selection = useSelection();
@@ -92,27 +139,36 @@ export function DetailPanel() {
         {detailQuery.data?.related && detailQuery.data.related.length > 0 && (
           <section className={styles.section}>
             <h3 className={styles.sectionTitle}>关联</h3>
-            <div className={styles.relatedList}>
-              {detailQuery.data.related.map((item) => (
-                <button
-                  key={`${item.ref.type}:${item.ref.id}`}
-                  type="button"
-                  className={styles.relatedItem}
-                  onClick={() => {
-                    selectionStore.select(item.ref, item.abs);
-                    if (item.abs !== undefined) {
-                      viewportStore.jumpToAbs(item.abs);
-                    }
-                    selectionStore.syncToUrl(viewport.centerAbs);
-                  }}
-                >
-                  <span className={styles.relatedLabel}>{item.label}</span>
-                  {item.subtitle && (
-                    <span className={styles.relatedSub}>{item.subtitle}</span>
-                  )}
-                </button>
-              ))}
-            </div>
+            {groupRelatedItems(detailQuery.data.related).map((group) => (
+              <div key={group.title ?? "default"} className={styles.relatedGroup}>
+                {group.title && (
+                  <h4 className={styles.relatedGroupTitle}>{group.title}</h4>
+                )}
+                <div className={styles.relatedList}>
+                  {group.items.map((item) => (
+                    <button
+                      key={`${item.ref.type}:${item.ref.id}`}
+                      type="button"
+                      className={
+                        item.ref.type === "reign" &&
+                        item.abs !== undefined &&
+                        selection.highlightAbs === item.abs
+                          ? `${styles.relatedItem} ${styles.relatedItemActive}`
+                          : styles.relatedItem
+                      }
+                      onClick={() =>
+                        selectRelatedItem(item, selection, viewport.centerAbs)
+                      }
+                    >
+                      <span className={styles.relatedLabel}>{item.label}</span>
+                      {item.subtitle && (
+                        <span className={styles.relatedSub}>{item.subtitle}</span>
+                      )}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            ))}
           </section>
         )}
 
