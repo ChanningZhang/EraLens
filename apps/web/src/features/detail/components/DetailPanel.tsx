@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import type { EntityDetail } from "@eralens/shared";
+import type { EntityDetail, EntityRef } from "@eralens/shared";
 import { getRepository } from "@/data/repository";
 import { useLaneColorValue } from "@/features/timeline/hooks/useLaneColor";
 import { useSelection } from "@/features/timeline/hooks/useSelection";
@@ -12,8 +12,9 @@ import { viewportStore } from "@/features/timeline/state/viewportStore";
 import styles from "./DetailPanel.module.css";
 
 const RELATED_GROUPS = [
-  { key: "idiom", title: "成语" },
+  { key: "capital", title: "都城" },
   { key: "event", title: "事件" },
+  { key: "idiom", title: "成语" },
   { key: "reign", title: "在位" },
   { key: "person", title: "人物" },
   { key: "dynasty", title: "王朝" },
@@ -54,15 +55,51 @@ function selectRelatedItem(
   selectionStore.syncToUrl(centerAbs);
 }
 
+function selectDetailRef(
+  ref: EntityRef,
+  abs: number,
+  centerAbs: number,
+) {
+  selectionStore.select(ref, abs);
+  viewportStore.jumpToAbs(abs);
+  selectionStore.syncToUrl(centerAbs);
+}
+
+function selectTenureRef(
+  tenure: EntityDetail["capitalTenures"][number]["tenure"],
+  selection: SelectionState,
+  centerAbs: number,
+) {
+  if (selection.selected?.type === "person") {
+    selectionStore.setHighlightAbs(tenure.abs);
+    viewportStore.jumpToAbs(tenure.abs);
+    selectionStore.syncToUrl(centerAbs);
+    return;
+  }
+  selectionStore.select(tenure.ref, tenure.abs);
+  viewportStore.jumpToAbs(tenure.abs);
+  selectionStore.syncToUrl(centerAbs);
+}
+
 export function DetailPanel() {
   const selection = useSelection();
   const viewport = useViewport();
 
   const detailQuery = useQuery({
-    queryKey: ["entity", selection.selected?.type, selection.selected?.id],
+    queryKey: [
+      "entity",
+      selection.selected?.type,
+      selection.selected?.id,
+      selection.focusReignId,
+    ],
     queryFn: async () => {
       if (!selection.selected) throw new Error("No selection");
       const repo = await getRepository();
+      if (selection.selected.type === "person") {
+        return repo.getEntity(selection.selected, {
+          focusReignId: selection.focusReignId ?? undefined,
+        });
+      }
       return repo.getEntity(selection.selected);
     },
     enabled: Boolean(selection.selected),
@@ -73,6 +110,10 @@ export function DetailPanel() {
       ? selection.selected.id
       : detailQuery.data?.dynastyId;
   const accent = useLaneColorValue(dynastyId) ?? "var(--color-accent)";
+
+  const capitalTenures = detailQuery.data?.capitalTenures ?? [];
+  const relatedItems = detailQuery.data?.related ?? [];
+  const hasRelated = capitalTenures.length > 0 || relatedItems.length > 0;
 
   if (!selection.selected) return null;
 
@@ -136,10 +177,55 @@ export function DetailPanel() {
           </section>
         )}
 
-        {detailQuery.data?.related && detailQuery.data.related.length > 0 && (
+        {hasRelated && (
           <section className={styles.section}>
             <h3 className={styles.sectionTitle}>关联</h3>
-            {groupRelatedItems(detailQuery.data.related).map((group) => (
+            {capitalTenures.length > 0 && (
+              <div className={styles.relatedGroup}>
+                <h4 className={styles.relatedGroupTitle}>在位</h4>
+                <div className={styles.capitalTenureList}>
+                  {capitalTenures.map((row) => (
+                    <div
+                      key={`${row.tenure.ref.id}:${row.tenure.abs}:${row.capital?.ref.id ?? "solo"}`}
+                      className={
+                        row.capital
+                          ? styles.capitalTenureRow
+                          : `${styles.capitalTenureRow} ${styles.capitalTenureRowSingle}`
+                      }
+                    >
+                      <button
+                        type="button"
+                        className={
+                          selection.highlightAbs === row.tenure.abs
+                            ? `${styles.capitalTenureCell} ${styles.capitalTenureCellActive}`
+                            : styles.capitalTenureCell
+                        }
+                        onClick={() =>
+                          selectTenureRef(row.tenure, selection, viewport.centerAbs)
+                        }
+                      >
+                        <span className={styles.capitalTenureLabel}>{row.tenure.label}</span>
+                      </button>
+                      {row.capital && (
+                        <button
+                          type="button"
+                          className={styles.capitalTenureCell}
+                          onClick={() =>
+                            selectDetailRef(row.capital!.ref, row.tenure.abs, viewport.centerAbs)
+                          }
+                        >
+                          <span className={styles.capitalTenureLabel}>{row.capital.label}</span>
+                          {row.capital.subtitle && (
+                            <span className={styles.capitalTenureSub}>{row.capital.subtitle}</span>
+                          )}
+                        </button>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+            {groupRelatedItems(relatedItems).map((group) => (
               <div key={group.title ?? "default"} className={styles.relatedGroup}>
                 {group.title && (
                   <h4 className={styles.relatedGroupTitle}>{group.title}</h4>

@@ -45,8 +45,16 @@ export const httpRepository: TimelineRepository = {
       TimelineCatalogSchema,
     );
   },
-  async getEntity(ref: EntityRef): Promise<EntityDetail> {
-    return fetchJson(`/entities/${ref.type}/${ref.id}`, EntityDetailSchema);
+  async getEntity(ref: EntityRef, options?: { focusReignId?: string }): Promise<EntityDetail> {
+    const params = new URLSearchParams();
+    if (options?.focusReignId) {
+      params.set("focusReign", options.focusReignId);
+    }
+    const query = params.toString();
+    return fetchJson(
+      `/entities/${ref.type}/${ref.id}${query ? `?${query}` : ""}`,
+      EntityDetailSchema,
+    );
   },
   async search(term: string): Promise<SearchHit[]> {
     const params = new URLSearchParams({ q: term });

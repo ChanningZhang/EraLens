@@ -95,10 +95,10 @@ export function ReignCard({
   const seamInsetLeft = uncertainStart ? UNCERTAIN_SEAM_GAP_PX : 0;
   const seamInsetRight = uncertainEnd ? UNCERTAIN_SEAM_GAP_PX : 0;
   const selected =
-    (selection.selected?.type === "reign" && selection.selected.id === reign.id) ||
     (selection.selected?.type === "person" &&
       selection.selected.id === reign.personId &&
-      selection.highlightAbs === reign.startAbs);
+      selection.focusReignId === reign.id) ||
+    (selection.selected?.type === "reign" && selection.selected.id === reign.id);
 
   const personQuery = useQuery({
     queryKey: ["person", reign.personId],
@@ -226,7 +226,11 @@ export function ReignCard({
                   : {}),
               }}
               onClick={() => {
-                selectionStore.select({ type: "person", id: reign.personId }, reign.startAbs);
+                selectionStore.select(
+                  { type: "person", id: reign.personId },
+                  reign.startAbs,
+                  { focusReignId: reign.id },
+                );
                 selectionStore.syncToUrl(viewport.centerAbs);
               }}
               aria-label={

@@ -6,9 +6,14 @@ export type SelectionState = {
   detailOpen: boolean;
   detailWidth: number;
   highlightAbs: AbsMonth | null;
+  focusReignId: string | null;
 };
 
 type SelectionListener = () => void;
+
+type SelectOptions = {
+  focusReignId?: string | null;
+};
 
 const DETAIL_WIDTH_KEY = "eralens.detailWidth";
 const DEFAULT_WIDTH = 420;
@@ -29,6 +34,7 @@ function parseUrlState(): Partial<SelectionState> {
   const sel = params.get("sel");
   const w = params.get("w");
   const y = params.get("y");
+  const focusReign = params.get("r");
   const next: Partial<SelectionState> = {};
   if (sel) {
     const [type, ...rest] = sel.split(":");
@@ -52,6 +58,11 @@ function parseUrlState(): Partial<SelectionState> {
     const abs = parseYearMonthParam(y);
     if (abs !== null) next.highlightAbs = abs;
   }
+  if (focusReign) {
+    next.focusReignId = focusReign;
+  } else if (next.selected?.type === "reign") {
+    next.focusReignId = next.selected.id;
+  }
   return next;
 }
 
@@ -63,6 +74,11 @@ function syncUrl(state: SelectionState, centerAbs?: AbsMonth) {
   } else {
     params.delete("sel");
     params.delete("w");
+  }
+  if (state.focusReignId) {
+    params.set("r", state.focusReignId);
+  } else {
+    params.delete("r");
   }
   if (centerAbs !== undefined) {
     params.set("y", encodeYearMonthParam(centerAbs));
@@ -76,6 +92,7 @@ let state: SelectionState = {
   detailOpen: false,
   detailWidth: readStoredWidth(),
   highlightAbs: null,
+  focusReignId: null,
   ...parseUrlState(),
 };
 
@@ -85,6 +102,22 @@ function notify() {
   for (const listener of listeners) {
     listener();
   }
+}
+
+function resolveFocusReignId(
+  ref: EntityRef,
+  options?: SelectOptions,
+): string | null {
+  if (options?.focusReignId !== undefined) {
+    return options.focusReignId;
+  }
+  if (ref.type === "reign") {
+    return ref.id;
+  }
+  if (ref.type === "person") {
+    return null;
+  }
+  return null;
 }
 
 export const selectionStore = {
@@ -98,11 +131,14 @@ export const selectionStore = {
   getServerSnapshot() {
     return state;
   },
-  select(ref: EntityRef, abs?: AbsMonth) {
+  select(ref: EntityRef, abs?: AbsMonth, options?: SelectOptions) {
+    const focusReignId = resolveFocusReignId(ref, options);
     if (
       state.detailOpen &&
       state.selected?.type === ref.type &&
-      state.selected.id === ref.id
+      state.selected.id === ref.id &&
+      state.focusReignId === focusReignId &&
+      (abs === undefined || abs === state.highlightAbs)
     ) {
       selectionStore.clearSelection();
       return;
@@ -112,11 +148,18 @@ export const selectionStore = {
       selected: ref,
       detailOpen: true,
       highlightAbs: abs ?? state.highlightAbs,
+      focusReignId,
     };
     notify();
   },
   clearSelection() {
-    state = { ...state, selected: null, detailOpen: false, highlightAbs: null };
+    state = {
+      ...state,
+      selected: null,
+      detailOpen: false,
+      highlightAbs: null,
+      focusReignId: null,
+    };
     syncUrl(state);
     notify();
   },

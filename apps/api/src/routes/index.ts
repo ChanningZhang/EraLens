@@ -320,10 +320,71 @@ export async function registerRoutes(app: FastifyInstance) {
       }
 
       const store = await loadStore();
-      const detail = buildEntityDetail(store, {
-        type: params.type as "dynasty" | "reign" | "person" | "event",
-        id: params.id,
-      });
+      const query = request.query as { focusReign?: string };
+      let entityType = params.type;
+      let entityId = params.id;
+      let focusReignId = query.focusReign;
+
+      if (params.type === "reign") {
+        const reign = store.reigns.find((item) => item.id === params.id);
+        if (!reign) {
+          reply.code(404);
+          return { error: "Entity not found" };
+        }
+        entityType = "person";
+        entityId = reign.personId;
+        focusReignId = params.id;
+      }
+
+      let capitals;
+      if (entityType === "dynasty") {
+        const dynasty = store.dynasties.find((item) => item.id === entityId);
+        if (!dynasty) {
+          reply.code(404);
+          return { error: "Entity not found" };
+        }
+        const rows = await prisma.$queryRaw<RawDynastyCapitalRow[]>`
+          SELECT id, dynasty_id, historical_name, modern_name,
+                 longitude, latitude, coordinate_system,
+                 start_year, start_month, start_day,
+                 end_year, end_month, end_day,
+                 start_abs, end_abs, precision,
+                 start_date_confidence, end_date_confidence,
+                 role, claim_track, note, links
+          FROM dynasty_capitals
+          WHERE dynasty_id = ${dynasty.id}
+          ORDER BY start_abs, role, id`;
+        capitals = rows.map(mapDynastyCapital);
+      } else if (entityType === "person") {
+        const person = store.persons.find((item) => item.id === entityId);
+        if (!person) {
+          reply.code(404);
+          return { error: "Entity not found" };
+        }
+        const dynastyIds = [
+          ...new Set(
+            store.reigns
+              .filter((reign) => reign.personId === person.id)
+              .map((reign) => reign.dynastyId),
+          ),
+        ];
+        if (dynastyIds.length > 0) {
+          const rows = await prisma.dynastyCapital.findMany({
+            where: { dynastyId: { in: dynastyIds } },
+            orderBy: [{ startAbs: "asc" }, { role: "asc" }, { id: "asc" }],
+          });
+          capitals = rows.map(mapDynastyCapital);
+        }
+      }
+
+      const detail = buildEntityDetail(
+        capitals ? { ...store, capitals } : store,
+        {
+          type: entityType as "dynasty" | "person" | "event",
+          id: entityId,
+        },
+        entityType === "person" ? { focusReignId } : {},
+      );
       return EntityDetailSchema.parse(detail);
     } catch {
       reply.code(404);

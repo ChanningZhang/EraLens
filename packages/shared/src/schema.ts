@@ -366,7 +366,25 @@ export const EntityDetailSchema = z.object({
         label: z.string(),
         subtitle: z.string().optional(),
         abs: z.number().optional(),
-        group: z.enum(["idiom", "event", "reign", "person", "dynasty"]).optional(),
+        group: z.enum(["idiom", "event", "reign", "person", "dynasty", "capital"]).optional(),
+      }),
+    )
+    .default([]),
+  capitalTenures: z
+    .array(
+      z.object({
+        capital: z
+          .object({
+            ref: EntityRefSchema,
+            label: z.string(),
+            subtitle: z.string().optional(),
+          })
+          .optional(),
+        tenure: z.object({
+          ref: EntityRefSchema,
+          label: z.string(),
+          abs: z.number(),
+        }),
       }),
     )
     .default([]),

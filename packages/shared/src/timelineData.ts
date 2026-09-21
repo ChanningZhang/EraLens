@@ -1,5 +1,5 @@
 import { firstAppellation } from "./appellationFields";
-import { capitalRoleLabel } from "./dynastyCapitals";
+import { buildReignTenureCapitalRows, capitalRoleLabel, dynastyCapitalRelatedItems } from "./dynastyCapitals";
 import { claimDetailFacts } from "./claimTracks";
 import { PRE_IMPERIAL_START_YEAR } from "./appellationPolicy";
 import {
@@ -8,7 +8,6 @@ import {
   resolveReignDetailFacts,
   resolveReignDetailSubtitle,
   resolveReignPrimaryLabel,
-  resolveReignRelatedLabel,
   usesPreQinCardLayout,
 } from "./emperorAppellation";
 import {
@@ -154,34 +153,132 @@ function eventsForPerson(store: TimelineDataStore, personId: string): Event[] {
   return store.events.filter((e) => e.participantIds.includes(personId));
 }
 
-function reignRelatedItems(
+function fateRelationRelatedItems(
+  store: TimelineDataStore,
+  reigns: Reign[],
+  buildRelatedSummary: (relatedRef: EntityRef) => {
+    ref: EntityRef;
+    label: string;
+    subtitle?: string;
+  },
+): RelatedItem[] {
+  return reigns.flatMap((reign) => {
+    const reignRef: EntityRef = { type: "reign", id: reign.id };
+    return store.relations
+      .filter((rel) => rel.fromRef === refKey(reignRef) || rel.toRef === refKey(reignRef))
+      .map((rel) => {
+        const other = rel.fromRef === refKey(reignRef) ? rel.toRef : rel.fromRef;
+        const parsed = parseRef(other);
+        if (!parsed) return null;
+        return buildRelatedSummary(parsed);
+      })
+      .filter(Boolean) as RelatedItem[];
+  });
+}
+
+export type PersonDetailOptions = {
+  focusReignId?: string;
+};
+
+function buildPersonEntityDetail(
   store: TimelineDataStore,
   person: Person,
-  personReigns: Reign[],
-): RelatedItem[] {
+  options: PersonDetailOptions = {},
+  buildRelatedSummary: (relatedRef: EntityRef) => {
+    ref: EntityRef;
+    label: string;
+    subtitle?: string;
+  },
+): Omit<EntityDetail, "ref"> {
   const dynastyMap = new Map(store.dynasties.map((d) => [d.id, d]));
-  return [...personReigns]
-    .sort((a, b) => a.startAbs - b.startAbs)
-    .map((reign) => {
-      const dynasty = dynastyMap.get(reign.dynastyId);
-      const clan = buildPreQinClanContext(person);
-      const claimNote = claimDetailFacts(reign)
-        .map((fact) => fact.value)
-        .join(" · ");
-      const subtitle = [
-        `${reign.start.year} — ${reign.end.year}`,
-        claimNote || null,
+  const personReigns = store.reigns
+    .filter((reign) => reign.personId === person.id)
+    .sort((a, b) => a.startAbs - b.startAbs);
+  const focusReign = options.focusReignId
+    ? personReigns.find((reign) => reign.id === options.focusReignId)
+    : undefined;
+  if (options.focusReignId && !focusReign) {
+    throw new Error(`Reign not found: ${options.focusReignId}`);
+  }
+
+  const capitalTenures = personReigns.flatMap((reign) =>
+    buildReignTenureCapitalRows(reign, store.capitals ?? []),
+  );
+  const clan = buildPreQinClanContext(person);
+  const participantEvents = eventsForPerson(store, person.id);
+  const preQinReign = personReigns.find((reign) => usesPreQinCardLayout(reign));
+  const preQinByBirth =
+    !preQinReign &&
+    person.birth != null &&
+    person.birth.year < PRE_IMPERIAL_START_YEAR;
+
+  let title: string;
+  let subtitle: string | undefined;
+  if (focusReign) {
+    const dynasty = dynastyMap.get(focusReign.dynastyId);
+    title = resolveReignPrimaryLabel(focusReign, person.name, clan);
+    subtitle = resolveReignDetailSubtitle(
+      focusReign,
+      dynasty?.name,
+      person.name,
+      clan,
+    );
+  } else {
+    title =
+      preQinReign || preQinByBirth
+        ? preQinReign
+          ? resolveReignPrimaryLabel(preQinReign, person.name, clan)
+          : (firstAppellation(person.posthumousNames) ?? person.name)
+        : person.name;
+    subtitle = person.roles.join(" · ");
+  }
+
+  const facts = focusReign
+    ? [
+        ...resolveReignDetailFacts(focusReign, person.name, clan).filter(
+          (fact) => fact.label !== "在位",
+        ),
+        ...claimDetailFacts(focusReign),
       ]
-        .filter(Boolean)
-        .join(" · ");
-      return {
-        ref: { type: "reign", id: reign.id },
-        label: resolveReignRelatedLabel(reign, dynasty?.name, person.name, clan),
-        subtitle,
-        abs: reign.startAbs,
-        group: "reign",
-      };
-    });
+    : [
+        ...(preQinReign || preQinByBirth
+          ? resolvePreQinNameFacts(person.name, clan, preQinReign)
+          : []),
+        ...(person.posthumousNames.length
+          ? [{ label: "谥号", value: person.posthumousNames.join("、") }]
+          : []),
+        ...(person.templeNames.length
+          ? [{ label: "庙号", value: person.templeNames.join("、") }]
+          : []),
+        ...(person.birth ? [{ label: "生", value: `${person.birth.year}年` }] : []),
+        ...(person.death ? [{ label: "卒", value: `${person.death.year}年` }] : []),
+      ];
+
+  const colorReign = focusReign ?? personReigns[0];
+  const colorDynasty = colorReign ? dynastyMap.get(colorReign.dynastyId) : undefined;
+
+  return {
+    title,
+    subtitle,
+    dynastyId: colorReign?.dynastyId,
+    colorToken:
+      colorReign && colorDynasty
+        ? resolveReignColorToken(
+            colorDynasty,
+            colorReign,
+            fallbackLaneColorToken(colorDynasty.id),
+          )
+        : undefined,
+    facts,
+    summary: person.bio,
+    related: [
+      ...fateRelationRelatedItems(store, personReigns, buildRelatedSummary),
+      ...eventRelatedItems(participantEvents),
+      ...idiomRelatedItems(participantEvents),
+    ],
+    capitalTenures,
+    links: person.links ?? [],
+  };
 }
 
 function parseRef(raw: string): EntityRef | null {
@@ -203,6 +300,7 @@ function parseRef(raw: string): EntityRef | null {
 export function buildEntityDetail(
   store: TimelineDataStore,
   ref: EntityRef,
+  options: PersonDetailOptions = {},
 ): EntityDetail {
   const personMap = new Map(store.persons.map((p) => [p.id, p]));
   const dynastyMap = new Map(store.dynasties.map((d) => [d.id, d]));
@@ -283,6 +381,7 @@ export function buildEntityDetail(
     );
     const idiomRelated = idiomRelatedItems(dynastyEvents);
     const eventRelated = eventRelatedItems(dynastyEvents);
+    const capitalRelated = dynastyCapitalRelatedItems(dynasty.id, store.capitals ?? []);
     return {
       ref,
       title: dynasty.name,
@@ -298,99 +397,26 @@ export function buildEntityDetail(
         { label: "范围", value: dynasty.scope === "cn" ? "中国史" : dynasty.scope },
       ],
       summary: dynasty.note,
-      related: [...idiomRelated, ...eventRelated],
+      related: [...capitalRelated, ...eventRelated, ...idiomRelated],
       links: [],
     };
   }
 
+  let personRef: EntityRef = ref;
+  let personOptions = options;
   if (ref.type === "reign") {
     const reign = reignMap.get(ref.id);
     if (!reign) throw new Error(`Reign not found: ${ref.id}`);
-    const person = personMap.get(reign.personId);
-    const dynasty = dynastyMap.get(reign.dynastyId);
-    const clan = buildPreQinClanContext(person);
-    const title = resolveReignPrimaryLabel(reign, person?.name, clan);
-    const related = store.relations
-      .filter((rel) => rel.fromRef === refKey(ref) || rel.toRef === refKey(ref))
-      .map((rel) => {
-        const other = rel.fromRef === refKey(ref) ? rel.toRef : rel.fromRef;
-        const parsed = parseRef(other);
-        if (!parsed) return null;
-        return buildRelatedSummary(parsed);
-      })
-      .filter(Boolean) as EntityDetail["related"];
-
-    return {
-      ref,
-      title,
-      subtitle: resolveReignDetailSubtitle(
-        reign,
-        dynasty?.name,
-        person?.name,
-        clan,
-      ),
-      dynastyId: reign.dynastyId,
-      colorToken: dynasty
-        ? resolveReignColorToken(
-            dynasty,
-            reign,
-            fallbackLaneColorToken(dynasty.id),
-          )
-        : undefined,
-      facts: [
-        ...resolveReignDetailFacts(reign, person?.name, clan),
-        ...claimDetailFacts(reign),
-      ],
-      summary: person?.bio,
-      related,
-      links: person?.links ?? [],
-    };
+    personRef = { type: "person", id: reign.personId };
+    personOptions = { focusReignId: ref.id };
   }
 
-  if (ref.type === "person") {
-    const person = personMap.get(ref.id);
-    if (!person) throw new Error(`Person not found: ${ref.id}`);
-    const participantEvents = eventsForPerson(store, person.id);
-    const personReigns = store.reigns.filter((r) => r.personId === person.id);
-    const preQinReign = personReigns.find((r) => usesPreQinCardLayout(r));
-    const preQinByBirth =
-      !preQinReign &&
-      person.birth &&
-      person.birth.year < PRE_IMPERIAL_START_YEAR;
-    const preQinClan = buildPreQinClanContext(person);
-    const preQinTitle = preQinReign
-      ? resolveReignPrimaryLabel(preQinReign, person.name, preQinClan)
-      : preQinByBirth
-        ? firstAppellation(person.posthumousNames) ?? person.name
-        : person.name;
+  if (personRef.type === "person") {
+    const person = personMap.get(personRef.id);
+    if (!person) throw new Error(`Person not found: ${personRef.id}`);
     return {
-      ref,
-      title: preQinReign || preQinByBirth ? preQinTitle : person.name,
-      subtitle: person.roles.join(" · "),
-      facts: [
-        ...(preQinReign || preQinByBirth
-          ? resolvePreQinNameFacts(person.name, preQinClan, preQinReign)
-          : []),
-        ...(person.posthumousNames.length
-          ? [{ label: "谥号", value: person.posthumousNames.join("、") }]
-          : []),
-        ...(person.templeNames.length
-          ? [{ label: "庙号", value: person.templeNames.join("、") }]
-          : []),
-        ...(person.birth
-          ? [{ label: "生", value: `${person.birth.year}年` }]
-          : []),
-        ...(person.death
-          ? [{ label: "卒", value: `${person.death.year}年` }]
-          : []),
-      ],
-      summary: person.bio,
-      related: [
-        ...reignRelatedItems(store, person, personReigns),
-        ...idiomRelatedItems(participantEvents),
-        ...eventRelatedItems(participantEvents),
-      ],
-      links: person.links,
+      ref: personRef,
+      ...buildPersonEntityDetail(store, person, personOptions, buildRelatedSummary),
     };
   }
 

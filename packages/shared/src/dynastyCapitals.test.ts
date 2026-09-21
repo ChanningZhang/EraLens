@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { capitalsActiveAtAbs } from "./dynastyCapitals";
-import type { DynastyCapital } from "./schema";
+import { buildReignCapitalTenures, buildReignTenureCapitalRows, capitalsActiveAtAbs } from "./dynastyCapitals";
+import type { DynastyCapital, Reign } from "./schema";
 
 const tangChangan: DynastyCapital = {
   id: "cap-tang-changan",
@@ -79,6 +79,62 @@ describe("capitalsActiveAtAbs", () => {
   it("returns Qin capital in the Warring States period", () => {
     expect(capitalsActiveAtAbs([qinXianyang, tangChangan], -3000).map((c) => c.id)).toEqual([
       "cap-qin-xianyang",
+    ]);
+  });
+});
+
+const tangReign: Reign = {
+  id: "reign-tang-xuanzong",
+  dynastyId: "tang",
+  personId: "li-longji",
+  title: "唐玄宗",
+  start: { year: 712, month: 9 },
+  end: { year: 756, month: 8 },
+  startAbs: 8544,
+  endAbs: 9071,
+  precision: "month",
+};
+
+describe("buildReignCapitalTenures", () => {
+  it("pairs overlapping capitals with intersected reign segments", () => {
+    const rows = buildReignCapitalTenures(tangReign, [tangChangan, tangLuoyang, qinXianyang]);
+    expect(rows).toEqual([
+      {
+        capital: {
+          ref: { type: "capital", id: "cap-tang-changan" },
+          label: "长安",
+          subtitle: "陕西省西安市",
+        },
+        tenure: {
+          ref: { type: "reign", id: "reign-tang-xuanzong" },
+          label: "712年9月 — 756年8月",
+          abs: 8544,
+        },
+      },
+      {
+        capital: {
+          ref: { type: "capital", id: "cap-tang-luoyang" },
+          label: "洛阳",
+          subtitle: "陪都 · 河南省洛阳市",
+        },
+        tenure: {
+          ref: { type: "reign", id: "reign-tang-xuanzong" },
+          label: "712年9月 — 756年8月",
+          abs: 8544,
+        },
+      },
+    ]);
+  });
+
+  it("returns empty when no capitals overlap the reign", () => {
+    expect(buildReignTenureCapitalRows(tangReign, [qinXianyang])).toEqual([
+      {
+        tenure: {
+          ref: { type: "reign", id: "reign-tang-xuanzong" },
+          label: "712年9月 — 756年8月",
+          abs: 8544,
+        },
+      },
     ]);
   });
 });

@@ -52,13 +52,107 @@ describe("buildEntityDetail reign", () => {
 
     const detail = buildEntityDetail(store, { type: "reign", id: "reign-test" });
 
+    expect(detail.ref).toEqual({ type: "person", id: "zhao-kuangyin" });
     expect(detail.title).toBe("赵匡胤");
     expect(detail.subtitle).toBe("北宋 · 太祖");
     expect(detail.facts).toEqual([
-      { label: "在位", value: "960 — 976" },
       { label: "庙号", value: "太祖" },
       { label: "年号", value: "建隆" },
     ]);
+    expect(detail.capitalTenures).toEqual([
+      {
+        tenure: {
+          ref: { type: "reign", id: "reign-test" },
+          label: "960 — 976",
+          abs: 0,
+        },
+      },
+    ]);
+  });
+
+  it("pairs capitals with reign tenure rows and drops the duplicate tenure fact", () => {
+    const store = {
+      dynasties: [
+        {
+          id: "tang",
+          name: "唐",
+          scope: "cn" as const,
+          region: "east_asia",
+          start: { year: 618, month: 1 },
+          end: { year: 907, month: 12 },
+          startAbs: 7416,
+          endAbs: 10848,
+          precision: "year" as const,
+          colorToken: "indigo" as const,
+        },
+      ],
+      reigns: [
+        reign({
+          id: "reign-tang-test",
+          dynastyId: "tang",
+          personId: "li-longji",
+          title: "唐玄宗",
+          start: { year: 712, month: 9 },
+          end: { year: 756, month: 8 },
+          startAbs: 8544,
+          endAbs: 9071,
+          precision: "month",
+          eraNames: ["开元"],
+        }),
+      ],
+      persons: [
+        {
+          id: "li-longji",
+          name: "李隆基",
+          roles: ["皇帝"],
+          links: [],
+          templeNames: ["玄宗"],
+        },
+      ],
+      events: [],
+      relations: [],
+      capitals: [
+        {
+          id: "cap-tang-changan",
+          dynastyId: "tang",
+          historicalName: "长安",
+          modernName: "陕西省西安市",
+          longitude: 108.939645,
+          latitude: 34.343207,
+          coordinateSystem: "GCJ02",
+          start: { year: 618, month: 1 },
+          end: { year: 904, month: 12 },
+          startAbs: 7416,
+          endAbs: 10848,
+          precision: "year",
+          role: "primary",
+          links: [],
+        },
+        {
+          id: "cap-tang-luoyang",
+          dynastyId: "tang",
+          historicalName: "洛阳",
+          modernName: "河南省洛阳市",
+          longitude: 112.453895,
+          latitude: 34.619702,
+          coordinateSystem: "GCJ02",
+          start: { year: 657, month: 1 },
+          end: { year: 904, month: 12 },
+          startAbs: 7884,
+          endAbs: 10848,
+          precision: "year",
+          role: "secondary",
+          links: [],
+        },
+      ],
+    };
+
+    const detail = buildEntityDetail(store, { type: "reign", id: "reign-tang-test" });
+
+    expect(detail.facts.map((fact) => fact.label)).not.toContain("在位");
+    expect(detail.capitalTenures).toHaveLength(2);
+    expect(detail.capitalTenures[0]?.capital.label).toBe("长安");
+    expect(detail.capitalTenures[0]?.tenure.label).toBe("712年9月 — 756年8月");
   });
 
   it("adds claim seat facts for a parallel court", () => {
@@ -115,7 +209,7 @@ describe("buildEntityDetail reign", () => {
     );
   });
 
-  it("does not list idioms linked only through person participants", () => {
+  it("includes person-linked idioms in the unified person detail", () => {
     const store = {
       dynasties: [
         {
@@ -174,7 +268,8 @@ describe("buildEntityDetail reign", () => {
       id: "reign-gou-jian-yue-chunqiu",
     });
 
-    expect(detail.related).toEqual([]);
+    expect(detail.related.map((item) => item.group)).toEqual(["idiom"]);
+    expect(detail.related[0]?.label).toBe("卧薪尝胆");
   });
 });
 
@@ -296,7 +391,7 @@ describe("buildEntityDetail event", () => {
 });
 
 describe("buildEntityDetail dynasty", () => {
-  it("groups related idioms and events", () => {
+  it("groups related capitals, idioms and events", () => {
     const store = {
       dynasties: [
         {
@@ -341,13 +436,33 @@ describe("buildEntityDetail dynasty", () => {
         },
       ],
       relations: [],
+      capitals: [
+        {
+          id: "cap-shu-chengdu",
+          dynastyId: "shu",
+          historicalName: "成都",
+          modernName: "四川省成都市",
+          longitude: 104.066301,
+          latitude: 30.572961,
+          coordinateSystem: "GCJ02",
+          start: { year: 221, month: 5 },
+          end: { year: 263, month: 12 },
+          startAbs: 100,
+          endAbs: 200,
+          precision: "year",
+          role: "primary",
+          links: [],
+        },
+      ],
     };
 
     const detail = buildEntityDetail(store, { type: "dynasty", id: "shu" });
 
-    expect(detail.related.map((item) => item.group)).toEqual(["idiom", "event"]);
-    expect(detail.related[0]?.label).toBe("三顾茅庐");
+    expect(detail.related.map((item) => item.group)).toEqual(["capital", "event", "idiom"]);
+    expect(detail.related[0]?.label).toBe("成都");
+    expect(detail.related[0]?.subtitle).toBe("221 — 263 · 正都");
     expect(detail.related[1]?.label).toBe("赤壁之战");
+    expect(detail.related[2]?.label).toBe("三顾茅庐");
   });
 });
 
@@ -449,14 +564,17 @@ describe("buildEntityDetail person", () => {
 
     const detail = buildEntityDetail(store, { type: "person", id: "gou-jian" });
 
-    expect(detail.related.map((item) => item.group)).toEqual(["reign", "idiom"]);
-    expect(detail.related[0]).toMatchObject({
-      ref: { type: "reign", id: "reign-gou-jian-yue-chunqiu" },
-      label: "越 · 越王勾践",
-      subtitle: "-496 — -464",
-      group: "reign",
-    });
-    expect(detail.related[1]?.label).toBe("卧薪尝胆");
+    expect(detail.related.map((item) => item.group)).toEqual(["idiom"]);
+    expect(detail.related[0]?.label).toBe("卧薪尝胆");
+    expect(detail.capitalTenures).toEqual([
+      {
+        tenure: {
+          ref: { type: "reign", id: "reign-gou-jian-yue-chunqiu" },
+          label: "-496 — -464",
+          abs: -5932,
+        },
+      },
+    ]);
   });
 
   it("shows pre-Qin appellation as title and dynasty-appellation on reign cards", () => {
@@ -514,12 +632,16 @@ describe("buildEntityDetail person", () => {
       { label: "名", value: "侯" },
       { label: "谥号", value: "宫伯" },
     ]);
-    expect(detail.related[0]).toMatchObject({
-      ref: { type: "reign", id: "reign-cao-gongbo" },
-      label: "曹 · 宫伯",
-      subtitle: "-938 — -903",
-      group: "reign",
-    });
+    expect(detail.related).toEqual([]);
+    expect(detail.capitalTenures).toEqual([
+      {
+        tenure: {
+          ref: { type: "reign", id: "reign-cao-gongbo" },
+          label: "-938 — -903",
+          abs: -200,
+        },
+      },
+    ]);
   });
 
   it("lists multiple reigns in chronological order", () => {
@@ -578,12 +700,140 @@ describe("buildEntityDetail person", () => {
 
     const detail = buildEntityDetail(store, { type: "person", id: "zhu-qizhen" });
 
-    expect(detail.related.map((item) => item.ref.id)).toEqual([
+    expect(detail.related).toEqual([]);
+    expect(detail.capitalTenures.map((row) => row.tenure.ref.id)).toEqual([
       "reign-zhu-qizhen-zhengtong",
       "reign-zhu-qizhen-tianshun",
     ]);
-    expect(detail.related[0]?.label).toBe("明 · 正统");
-    expect(detail.related[1]?.label).toBe("明 · 天顺");
+    expect(detail.capitalTenures[0]?.tenure.label).toBe("1436 — 1449");
+    expect(detail.capitalTenures[1]?.tenure.label).toBe("1457 — 1464");
+  });
+
+  it("matches reign detail when focusing a single reign on a person", () => {
+    const store = {
+      dynasties: [
+        {
+          id: "song-north",
+          name: "北宋",
+          scope: "cn" as const,
+          region: "east_asia",
+          start: { year: 960, month: 1 },
+          end: { year: 1127, month: 12 },
+          startAbs: 0,
+          endAbs: 1,
+          precision: "year" as const,
+          colorToken: "moss" as const,
+        },
+      ],
+      reigns: [reign({})],
+      persons: [
+        {
+          id: "zhao-kuangyin",
+          name: "赵匡胤",
+          roles: ["皇帝"],
+          links: [],
+          templeNames: ["太祖"],
+        },
+      ],
+      events: [],
+      relations: [],
+    };
+
+    const reignDetail = buildEntityDetail(store, { type: "reign", id: "reign-test" });
+    const personDetail = buildEntityDetail(
+      store,
+      { type: "person", id: "zhao-kuangyin" },
+      { focusReignId: "reign-test" },
+    );
+
+    expect(reignDetail.ref).toEqual({ type: "person", id: "zhao-kuangyin" });
+    expect(personDetail).toMatchObject({
+      title: reignDetail.title,
+      subtitle: reignDetail.subtitle,
+      facts: reignDetail.facts,
+      capitalTenures: reignDetail.capitalTenures,
+    });
+  });
+
+  it("lists all reign tenures when focusing one reign on a multi-reign person", () => {
+    const store = {
+      dynasties: [
+        {
+          id: "wu-zhu",
+          name: "吴",
+          scope: "cn" as const,
+          region: "east_asia",
+          start: { year: 1364, month: 1 },
+          end: { year: 1368, month: 1 },
+          startAbs: 10,
+          endAbs: 20,
+          precision: "year" as const,
+          colorToken: "cinnabar" as const,
+        },
+        {
+          id: "ming",
+          name: "明",
+          scope: "cn" as const,
+          region: "east_asia",
+          start: { year: 1368, month: 1 },
+          end: { year: 1644, month: 12 },
+          startAbs: 30,
+          endAbs: 40,
+          precision: "year" as const,
+          colorToken: "cinnabar" as const,
+        },
+      ],
+      reigns: [
+        reign({
+          id: "reign-zhu-yuanzhang-wu-zhu",
+          dynastyId: "wu-zhu",
+          personId: "zhu-yuanzhang",
+          title: "吴王",
+          start: { year: 1364, month: 2 },
+          end: { year: 1368, month: 1 },
+          startAbs: 11,
+          endAbs: 19,
+          precision: "month",
+          eraNames: ["吴"],
+        }),
+        reign({
+          id: "reign-zhu-yuanzhang-ming",
+          dynastyId: "ming",
+          personId: "zhu-yuanzhang",
+          title: "明太祖",
+          start: { year: 1368, month: 1 },
+          end: { year: 1398, month: 6 },
+          startAbs: 31,
+          endAbs: 39,
+          precision: "month",
+          eraNames: ["洪武"],
+        }),
+      ],
+      persons: [
+        {
+          id: "zhu-yuanzhang",
+          name: "朱元璋",
+          roles: ["皇帝"],
+          links: [],
+          templeNames: ["太祖"],
+        },
+      ],
+      events: [],
+      relations: [],
+    };
+
+    const detail = buildEntityDetail(
+      store,
+      { type: "person", id: "zhu-yuanzhang" },
+      { focusReignId: "reign-zhu-yuanzhang-ming" },
+    );
+
+    expect(detail.title).toBe("朱元璋");
+    expect(detail.subtitle).toBe("明 · 洪武");
+    expect(detail.capitalTenures.map((row) => row.tenure.ref.id)).toEqual([
+      "reign-zhu-yuanzhang-wu-zhu",
+      "reign-zhu-yuanzhang-ming",
+    ]);
   });
 });
 

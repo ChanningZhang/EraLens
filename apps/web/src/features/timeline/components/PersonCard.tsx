@@ -17,7 +17,9 @@ export function PersonCard({ placed }: Props) {
   const selection = useSelection();
   const { person, top, startAbs, endAbs, mode, pointKind } = placed;
   const selected =
-    selection.selected?.type === "person" && selection.selected.id === person.id;
+    selection.selected?.type === "person" &&
+    selection.selected.id === person.id &&
+    selection.focusReignId == null;
   const role = person.roles[0];
   const timeTooltip =
     mode === "point" && pointKind

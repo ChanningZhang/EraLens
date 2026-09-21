@@ -92,8 +92,12 @@ export const mockRepository: TimelineRepository = {
       dynastyLaneGroups: [],
     };
   },
-  async getEntity(ref) {
-    return buildEntityDetail({ ...store, capitals: mockCapitals }, ref);
+  async getEntity(ref, options) {
+    return buildEntityDetail(
+      { ...store, capitals: mockCapitals },
+      ref,
+      { focusReignId: options?.focusReignId },
+    );
   },
   async search(term) {
     return searchEntities(store, term);
