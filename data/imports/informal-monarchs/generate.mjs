@@ -27,16 +27,6 @@ const persons = [
     null,
     ["共伯和", "周公", "召公"],
   ),
-  // 王莽摄政期
-  person(
-    "wang-mang-regent",
-    "王莽",
-    ["摄政", "权臣"],
-    "西汉末年权臣，6–8年以摄皇帝/假皇帝名义摄政，后于9年篡汉建新。",
-    "王莽",
-    ym(-45),
-    ym(23, 10),
-  ),
   // 述律平
   person(
     "shulvping",
@@ -83,18 +73,6 @@ const reigns = [
     precision: "year",
   }),
 
-  // 3. 西汉末期 - 王莽摄政期 (6–8年)
-  informalReign({
-    id: "reign-wang-mang-regent",
-    dynastyId: "han-west",
-    personId: "wang-mang-regent",
-    title: "摄皇帝",
-    posthumousName: null,
-    templeName: null,
-    start: ym(6, 4),
-    end: ym(8, 11),
-    precision: "year",
-  }),
 
   // 4. 辽朝 - 述律平称制 (926–927)
   informalReign({
@@ -226,10 +204,6 @@ const manifest = {
       url: "https://zh.wikipedia.org/wiki/共和_(西周)",
     },
     {
-      label: "维基百科 - 王莽",
-      url: "https://zh.wikipedia.org/wiki/王莽",
-    },
-    {
       label: "维基百科 - 述律平",
       url: "https://zh.wikipedia.org/wiki/述律平",
     },
@@ -260,7 +234,6 @@ const manifest = {
   ],
   notes: [
     "共和行政（前841–828）：史料争议，一说周公、召公共和，一说共伯和摄政；此处建 reign 以承载非正式国君标记。",
-    "王莽摄政期（6–8）：以摄皇帝/假皇帝名义摄政，9年篡汉建新；摄政期为非正式国君。",
     "述律平（926–927）：应天太后称制，推举太宗前为非正式国君。",
     "郭威监国（950–951）：后汉末年监国，后建后周；监国期为非正式国君。",
     "拖雷、乃马真后、海迷失后：蒙古帝国监国/称制，非正式可汗。",
@@ -279,6 +252,9 @@ const updateSql = [
   ...clearInformalReigns.map(
     (reignId) => `UPDATE reigns SET is_informal_monarch = false WHERE id = ${sqlStr(reignId)};`,
   ),
+  // 6–8 年非正式国君仅为孺子婴；删除误加的王莽摄政 reign
+  `DELETE FROM reigns WHERE id = ${sqlStr("reign-wang-mang-regent")};`,
+  `DELETE FROM persons WHERE id = ${sqlStr("wang-mang-regent")};`,
 ].join("\n");
 
 writeImportPackage(__dirname, {
