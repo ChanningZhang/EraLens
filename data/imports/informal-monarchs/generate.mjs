@@ -19,13 +19,13 @@ const persons = [
   // 共伯和 (周公、召公 or 共伯和本人，史料有争议)
   person(
     "gonghe-regency",
-    "共伯和",
+    "周公、召公",
     ["摄政"],
-    "周厉王出奔后，一说周公、召公共和行政，一说共伯和摄政。前841–前828年，共和行政。",
-    "共伯和",
+    "周厉王出奔后，周公、召公共和行政（一说共伯和摄政）。前841–前828年，共和行政。",
+    "共和_(西周)",
     null,
     null,
-    ["周公", "召公"],
+    ["共伯和", "周公", "召公"],
   ),
   // 王莽摄政期
   person(
@@ -125,7 +125,7 @@ const reigns = [
   // 6. 蒙古帝国 - 拖雷监国 (1227–1229)
   informalReign({
     id: "reign-tolui-mongol",
-    dynastyId: "mongol",
+    dynastyId: "mongol-empire",
     personId: "tolui",
     title: "监国",
     posthumousName: null,
@@ -138,7 +138,7 @@ const reigns = [
   // 6. 蒙古帝国 - 乃马真后称制 (1241–1246)
   informalReign({
     id: "reign-toregene-mongol",
-    dynastyId: "mongol",
+    dynastyId: "mongol-empire",
     personId: "toregene-khatun",
     title: "称制皇后",
     posthumousName: null,
@@ -151,7 +151,7 @@ const reigns = [
   // 6. 蒙古帝国 - 海迷失后称制 (1248–1251)
   informalReign({
     id: "reign-oghul-qaimish-mongol",
-    dynastyId: "mongol",
+    dynastyId: "mongol-empire",
     personId: "oghul-qaimish",
     title: "称制皇后",
     posthumousName: null,
@@ -184,20 +184,24 @@ const reignGroups = [];
 const existingInformalReigns = [
   // 2. 西汉末期 - 孺子婴
   "reign-ruzi-ying",
-  // 8. 南明 - 鲁王朱以海
-  "reign-zhu-yihai-ming-south",
   // 9. 中华民国 - 段祺瑞
   "reign-duan-qirui-roc",
   // 9. 中华民国 - 张作霖
   "reign-zhang-zuolin-roc",
   // 10. 中华人民共和国 - 宋庆龄
   "reign-song-qingling-prc",
-  // 10. 中华人民共和国 - 董必武 (副主席)
+  // 10. 中华人民共和国 - 董必武 (副主席，1968–1972，与宋庆龄共治)
   "reign-dong-biwu-prc-vice",
-  // 10. 中华人民共和国 - 董必武 (代主席)
-  "reign-dong-biwu-prc",
   // 10. 中华人民共和国 - 全国人大常委会
   "reign-npc-standing-committee-prc",
+];
+
+// Clear informal flag for reigns that should no longer be marked
+const clearInformalReigns = [
+  // 南明鲁王朱以海：去掉非正式标记
+  "reign-zhu-yihai-ming-south",
+  // 董必武代主席 1972–1975：去掉非正式标记
+  "reign-dong-biwu-prc",
 ];
 
 const manifest = {
@@ -268,9 +272,14 @@ const manifest = {
 };
 
 // Generate UPDATE SQL for existing reigns
-const updateSql = existingInformalReigns
-  .map((reignId) => `UPDATE reigns SET is_informal_monarch = true WHERE id = ${sqlStr(reignId)};`)
-  .join("\n");
+const updateSql = [
+  ...existingInformalReigns.map(
+    (reignId) => `UPDATE reigns SET is_informal_monarch = true WHERE id = ${sqlStr(reignId)};`,
+  ),
+  ...clearInformalReigns.map(
+    (reignId) => `UPDATE reigns SET is_informal_monarch = false WHERE id = ${sqlStr(reignId)};`,
+  ),
+].join("\n");
 
 writeImportPackage(__dirname, {
   slug: "informal-monarchs",
