@@ -245,7 +245,7 @@ export function TimelineStage() {
       data-timeline-pan
       data-timeline-stage
       style={{
-        ["--center-guide-x" as string]: `${Math.round(centerGuideX(viewport))}px`,
+        ["--center-guide-x" as string]: `${centerGuideX(viewport)}px`,
         ...(stageViewportHeight > 0
           ? { ["--stage-viewport-height" as string]: `${stageViewportHeight}px` }
           : {}),

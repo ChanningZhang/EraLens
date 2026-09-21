@@ -63,7 +63,7 @@ export function projectClippedRange(
 
 /** Stage x of the temporal center; frozen dynasty names switch when a phase crosses this line. */
 export function centerGuideX(state: ViewportState): number {
-  return projectAbs(state, state.centerAbs);
+  return gutterPxOf(state) + contentWidthPx(state) / 2;
 }
 
 /** Abs used to resolve frozen lane labels, phase colors, and name-chip gold. */

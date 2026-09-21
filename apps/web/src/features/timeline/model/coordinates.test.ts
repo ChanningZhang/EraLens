@@ -50,6 +50,22 @@ describe("projectRange", () => {
     expect(centerGuideX(viewport)).toBe(100 + contentWidth / 2);
     expect(laneLabelAnchorAbs(viewport)).toBe(viewport.centerAbs);
   });
+
+  it("keeps the center guide fixed on screen while panning", () => {
+    const viewport = {
+      centerAbs: absMonth(225, 1),
+      pxPerMonth: 1.5,
+      widthPx: 1200,
+      gutterPx: 100,
+    };
+    const expected = 100 + 1100 / 2;
+
+    for (let offset = 0; offset < 1; offset += 0.07) {
+      expect(centerGuideX({ ...viewport, centerAbs: viewport.centerAbs + offset })).toBe(
+        expected,
+      );
+    }
+  });
 });
 
 describe("projectClippedRange", () => {
