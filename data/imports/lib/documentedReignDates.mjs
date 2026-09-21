@@ -125,6 +125,12 @@ export const DOCUMENTED_REIGN_DATES = {
   "reign-liu-zhiyuan-han-hou": { start: [947, 3, 10], end: [948, 3, 30] },
   "reign-liu-chengyou-han-hou": { start: [948, 3, 30], end: [951, 1, 2] },
   "reign-guo-wei-zhou-hou": { start: [951, 2, 13], end: [954, 2, 22] },
+  "reign-guo-wei-regent-han-hou": { start: [951, 1, 2], end: [951, 2, 12] },
+  "reign-shulvping-liao": { start: [926, 9, 6], end: [927, 12, 10] },
+  "reign-tolui-mongol": { start: [1227, 8, 25], end: [1229, 9, 12] },
+  "reign-toregene-mongol": { start: [1241, 12, 11], end: [1246, 8, 23] },
+  "reign-oghul-qaimish-mongol": { start: [1248, 4, 20], end: [1251, 6, 30] },
+  "reign-zhu-qiyu-regent-ming": { start: [1449, 9, 6], end: [1449, 9, 22] },
   "reign-chai-rong-zhou-hou": { start: [954, 2, 22], end: [959, 7, 27] },
   "reign-chai-zongxun-zhou-hou": { start: [959, 7, 28], end: [960, 2, 3] },
 

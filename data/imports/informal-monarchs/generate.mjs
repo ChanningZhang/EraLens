@@ -15,6 +15,11 @@ function informalReign(data) {
   return { ...baseReign, isInformalMonarch: true };
 }
 
+/** Day-precision point; abs stays month-bucketed like the rest of EraLens. */
+function ymd(year, month, day) {
+  return { year, month, day, abs: absMonth(year, month) };
+}
+
 const persons = [
   // 共伯和 (周公、召公 or 共伯和本人，史料有争议)
   person(
@@ -68,7 +73,8 @@ const reigns = [
     title: "共和行政",
     posthumousName: null,
     templeName: null,
-    start: ym(-841, 12),
+    // 西周共和无可靠月日；年精度占位：起年1月、迄年12月
+    start: ym(-841, 1),
     end: ym(-828, 12),
     precision: "year",
   }),
@@ -82,9 +88,10 @@ const reigns = [
     title: "应天太后称制",
     posthumousName: null,
     templeName: null,
-    start: ym(926, 7),
-    end: ym(927, 11),
-    precision: "year",
+    // 接太祖崩日 926-09-06，至太宗即位前一日 927-12-10
+    start: ymd(926, 9, 6),
+    end: ymd(927, 12, 10),
+    precision: "day",
   }),
 
   // 5. 五代·后汉 - 郭威监国 (950–951)
@@ -95,9 +102,10 @@ const reigns = [
     title: "监国",
     posthumousName: null,
     templeName: null,
-    start: ym(950, 12),
-    end: ym(951, 1),
-    precision: "year",
+    // 隐帝终日 951-01-02 → 后周太祖即位前一日 951-02-12
+    start: ymd(951, 1, 2),
+    end: ymd(951, 2, 12),
+    precision: "day",
   }),
 
   // 6. 蒙古帝国 - 拖雷监国 (1227–1229)
@@ -108,9 +116,10 @@ const reigns = [
     title: "监国",
     posthumousName: null,
     templeName: null,
-    start: ym(1227, 8),
-    end: ym(1229, 9),
-    precision: "year",
+    // 成吉思汗崩 1227-08-25 → 窝阔台即位前一日 1229-09-12
+    start: ymd(1227, 8, 25),
+    end: ymd(1229, 9, 12),
+    precision: "day",
   }),
 
   // 6. 蒙古帝国 - 乃马真后称制 (1241–1246)
@@ -121,9 +130,10 @@ const reigns = [
     title: "称制皇后",
     posthumousName: null,
     templeName: null,
-    start: ym(1241, 12),
-    end: ym(1246, 8),
-    precision: "year",
+    // 窝阔台崩 1241-12-11 → 贵由即位前一日 1246-08-23
+    start: ymd(1241, 12, 11),
+    end: ymd(1246, 8, 23),
+    precision: "day",
   }),
 
   // 6. 蒙古帝国 - 海迷失后称制 (1248–1251)
@@ -134,9 +144,10 @@ const reigns = [
     title: "称制皇后",
     posthumousName: null,
     templeName: null,
-    start: ym(1248, 4),
-    end: ym(1251, 7),
-    precision: "year",
+    // 贵由崩 1248-04-20 → 蒙哥即位前一日 1251-06-30
+    start: ymd(1248, 4, 20),
+    end: ymd(1251, 6, 30),
+    precision: "day",
   }),
 
   // 7. 明朝 - 朱祁钰监国 (1449年约1个月)
