@@ -181,7 +181,7 @@ describe("reignFateRelations", () => {
     expect(resolved?.toReign.id).toBe("reign-ying-zheng-qin");
   });
 
-  it("drops surrender and abdication when the same ruler also has a killed fate line", () => {
+  it("drops surrender when the same ruler also has a killed fate line", () => {
     const liYu: Reign = {
       id: "reign-li-yu",
       dynastyId: "tang-south",
@@ -225,6 +225,62 @@ describe("reignFateRelations", () => {
     expect(resolved).toHaveLength(1);
     expect(resolved[0]?.relation.kind).toBe("killed");
     expect(resolved[0]?.relation.id).toBe("rel-li-yu-zhao-kuangyin-killed");
+  });
+
+  it("keeps abdication alongside a later killed fate for the same ruler", () => {
+    const ruziYing: Reign = {
+      id: "reign-ruzi-ying",
+      dynastyId: "han-west",
+      personId: "ruzi-ying",
+      title: "孺子婴",
+      eraNames: [],
+      start: { year: 6, month: 4 },
+      end: { year: 9, month: 1 },
+      startAbs: absMonth(6, 4),
+      endAbs: absMonth(9, 1),
+      precision: "day",
+    };
+    const wangMang: Reign = {
+      id: "reign-wang-mang",
+      dynastyId: "xin",
+      personId: "wang-mang",
+      title: "新莽皇帝",
+      eraNames: [],
+      start: { year: 9, month: 1 },
+      end: { year: 23, month: 10 },
+      startAbs: absMonth(9, 1),
+      endAbs: absMonth(23, 10),
+      precision: "day",
+    };
+    const liuXuan: Reign = {
+      id: "reign-liu-xuan",
+      dynastyId: "han-gengshi",
+      personId: "liu-xuan",
+      title: "更始帝",
+      eraNames: [],
+      start: { year: 23, month: 3 },
+      end: { year: 25, month: 10 },
+      startAbs: absMonth(23, 3),
+      endAbs: absMonth(25, 10),
+      precision: "day",
+    };
+    const reignList = [ruziYing, wangMang, liuXuan];
+    const abdication = fateRel({
+      id: "rel-ruzi-ying-wang-mang-abdication",
+      fromRef: "person:ruzi-ying",
+      toRef: "person:wang-mang",
+      kind: "abdication",
+      atAbs: absMonth(9, 1),
+    });
+    const killed = fateRel({
+      id: "rel-ruzi-ying-liu-xuan-killed",
+      fromRef: "person:ruzi-ying",
+      toRef: "person:liu-xuan",
+      kind: "killed",
+      atAbs: absMonth(24, 1),
+    });
+    const resolved = resolveFateRelations([abdication, killed], reignList);
+    expect(resolved.map((item) => item.relation.kind).sort()).toEqual(["abdication", "killed"]);
   });
 
   it("drops captured fate lines when killed is also present", () => {

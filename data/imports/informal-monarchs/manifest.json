@@ -1,0 +1,65 @@
+{
+  "slug": "informal-monarchs",
+  "title": "非正式国君",
+  "window": {
+    "startYear": -841,
+    "startMonth": 1,
+    "endYear": 2026,
+    "endMonth": 9
+  },
+  "scope": "cn",
+  "depth": "supplemental",
+  "generatedAt": "2026-09-21",
+  "counts": {
+    "persons": 4,
+    "dynasties": 0,
+    "reigns": 7,
+    "events": 0,
+    "relations": 0
+  },
+  "description": "Informal monarchs: regents, acting heads, joint vice-chairs, and non-formal sovereigns. Marks existing reigns and inserts missing ones with is_informal_monarch = true.",
+  "sources": [
+    {
+      "label": "维基百科 - 共和行政",
+      "url": "https://zh.wikipedia.org/wiki/共和_(西周)"
+    },
+    {
+      "label": "维基百科 - 述律平",
+      "url": "https://zh.wikipedia.org/wiki/述律平"
+    },
+    {
+      "label": "维基百科 - 郭威",
+      "url": "https://zh.wikipedia.org/wiki/郭威"
+    },
+    {
+      "label": "维基百科 - 拖雷",
+      "url": "https://zh.wikipedia.org/wiki/拖雷"
+    },
+    {
+      "label": "维基百科 - 乃马真后",
+      "url": "https://zh.wikipedia.org/wiki/乃马真后"
+    },
+    {
+      "label": "维基百科 - 海迷失后",
+      "url": "https://zh.wikipedia.org/wiki/海迷失后"
+    },
+    {
+      "label": "维基百科 - 朱祁钰",
+      "url": "https://zh.wikipedia.org/wiki/朱祁钰"
+    },
+    {
+      "label": "维基百科 - 朱以海",
+      "url": "https://zh.wikipedia.org/wiki/朱以海"
+    }
+  ],
+  "notes": [
+    "共和行政（前841–828）：史料争议，一说周公、召公共和，一说共伯和摄政；此处建 reign 以承载非正式国君标记。",
+    "述律平（926–927）：应天太后称制，推举太宗前为非正式国君。",
+    "郭威监国（950–951）：后汉末年监国，后建后周；监国期为非正式国君。",
+    "拖雷、乃马真后、海迷失后：蒙古帝国监国/称制，非正式可汗。",
+    "朱祁钰监国（1449-09-06 至 09-22）：土木堡之变后监国约16天，9月22日即位为明代宗。",
+    "鲁王朱以海：绍兴监国，南明并立政权，非正式皇帝。",
+    "段祺瑞、张作霖：北洋军阀时期临时执政、陆海军大元帅，非正式国家元首。",
+    "宋庆龄、董必武、全国人大常委会：国家副主席代行、代主席、机构行使元首职权，非正式国家主席。"
+  ]
+}

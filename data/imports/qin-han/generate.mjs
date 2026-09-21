@@ -62,7 +62,7 @@ const persons = [
   { id: "liu-ao", name: "刘骜", birth: ym(-51), death: ym(-7), roles: ["皇帝"], bio: "汉成帝，外戚王氏势力渐盛。", links: wiki("汉成帝") },
   { id: "liu-xin", name: "刘欣", birth: ym(-27), death: ym(-1), roles: ["皇帝"], bio: "汉哀帝，在位短暂，西汉由盛转衰。", links: wiki("汉哀帝") },
   { id: "liu-kan", name: "刘衎", birth: ym(-9), death: ym(6), roles: ["皇帝"], bio: "汉平帝，王莽摄政，西汉实亡于其朝。", links: wiki("汉平帝") },
-  { id: "ruzi-ying", name: "刘婴", roles: ["君主"], bio: "孺子婴，平帝死后王莽立为太子而未正式登基，新莽代汉。", links: wiki("孺子婴") },
+  { id: "ruzi-ying", name: "刘婴", death: ym(24, 1), roles: ["君主"], bio: "孺子婴，平帝死后王莽立为太子而未正式登基，新莽代汉；更始二年春为刘玄所杀。", links: wiki("孺子婴") },
   { id: "zhang-qian", name: "张骞", birth: ym(-164), death: ym(-114), roles: ["外交家"], bio: "汉武帝时两次出使西域，开辟丝绸之路。", links: wiki("张骞") },
   { id: "zhang-han", name: "章邯", roles: ["将领"], bio: "秦末名将，巨鹿败后降楚，后降汉封雍王。", links: wiki("章邯") },
   { id: "xiang-liang", name: "项梁", roles: ["起义领袖", "将领"], bio: "项羽叔父，会稽起兵反秦，立楚怀王，战死于定陶。", links: wiki("项梁") },

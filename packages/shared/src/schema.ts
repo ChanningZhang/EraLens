@@ -205,6 +205,8 @@ export const ReignSchema = z.object({
   /** Short seat label shown on the card (长安 / 洛阳 / 绍兴监国). */
   claimLabel: z.string().optional(),
   claimRole: ClaimRoleSchema.optional(),
+  /** Non-formal sovereign: regent, acting head, joint vice-chair, etc. Renders with diagonal stripes. */
+  isInformalMonarch: z.boolean().default(false),
 });
 
 export const EventKindSchema = z.enum([

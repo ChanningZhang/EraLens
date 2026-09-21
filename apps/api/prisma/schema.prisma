@@ -101,6 +101,7 @@ model Reign {
   claimTrack            String?     @map("claim_track")
   claimLabel            String?     @map("claim_label")
   claimRole             String?     @map("claim_role")
+  isInformalMonarch     Boolean     @default(false) @map("is_informal_monarch")
   dynasty               Dynasty     @relation(fields: [dynastyId], references: [id])
   person                Person      @relation(fields: [personId], references: [id])
 

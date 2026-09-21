@@ -87,9 +87,9 @@ export type ResolvedFateRelation = {
   toReign: Reign;
 };
 
+/** Surrender/captured near a later killing are usually the same conquest story; abdication is not. */
 const FATE_KINDS_SUPPRESSED_BY_KILLED = new Set<FateRelationKind>([
   "surrender",
-  "abdication",
   "captured",
 ]);
 
@@ -101,7 +101,7 @@ function fateVictimKey(fromReign: Reign): string {
   return `reign:${fromReign.id}`;
 }
 
-/** When a ruler has both killed and surrender/abdication/captured, keep only killed. */
+/** When a ruler has both killed and surrender/captured, keep only killed. Abdication stays (e.g. 孺子婴禅让王莽后又为刘玄所杀). */
 export function prioritizeKilledFateRelations(
   resolved: readonly ResolvedFateRelation[],
 ): ResolvedFateRelation[] {
