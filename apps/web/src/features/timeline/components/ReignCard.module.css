@@ -115,6 +115,45 @@
   color: var(--color-ink-muted);
 }
 
+/*
+ * Informal monarchs (regents, acting heads, joint vice-chairs) show diagonal
+ * stripes. Painted on ::after so they sit above .orthodoxGold's background
+ * shorthand (!important) and its ::before sheen — background-image on the
+ * card itself is wiped by the gold fill.
+ */
+.informalMonarch::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 2;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 5px,
+    color-mix(in srgb, var(--color-ink) 22%, transparent) 5px,
+    color-mix(in srgb, var(--color-ink) 22%, transparent) 9px
+  );
+}
+
+.informalMonarch:global(.orthodoxGold)::after {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 5px,
+    color-mix(in srgb, var(--orthodox-gold-divider) 55%, transparent) 5px,
+    color-mix(in srgb, var(--orthodox-gold-divider) 55%, transparent) 9px
+  );
+}
+
+.informalMonarch .content,
+.informalMonarch .name,
+.informalMonarch .meta {
+  position: relative;
+  z-index: 3;
+}
+
 .content {
   display: flex;
   flex-direction: row;

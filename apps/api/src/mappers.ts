@@ -78,6 +78,7 @@ export type RawReignRow = {
   claim_track: string | null;
   claim_label: string | null;
   claim_role: string | null;
+  is_informal_monarch: boolean;
 };
 
 export type RawDynastyCapitalRow = {
@@ -310,6 +311,8 @@ export function mapReign(row: DbReign | RawReignRow): Reign {
     "startDateConfidence" in row ? row.startDateConfidence : row.start_date_confidence;
   const endDateConfidence =
     "endDateConfidence" in row ? row.endDateConfidence : row.end_date_confidence;
+  const isInformalMonarch =
+    "isInformalMonarch" in row ? row.isInformalMonarch : row.is_informal_monarch;
 
   return {
     id: row.id,
@@ -337,6 +340,7 @@ export function mapReign(row: DbReign | RawReignRow): Reign {
     claimTrack: claimTrack ?? undefined,
     claimLabel: claimLabel ?? undefined,
     claimRole: mapClaimRole(rawClaimRole, claimTrack),
+    isInformalMonarch: isInformalMonarch ?? false,
   };
 }
 

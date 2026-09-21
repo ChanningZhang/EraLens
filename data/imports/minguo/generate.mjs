@@ -43,11 +43,11 @@ function person(id, name, roles, bio, wikiTitle, birth = null, death = null, alt
   return { id, name, roles, bio, links: wiki(wikiTitle), birth, death, altNames };
 }
 
-function reign({ id, dynastyId, personId, title, posthumousName, templeName, start, end, precision = "year", eraNames = [] }) {
-  return { id, dynastyId, personId, title, posthumousName, templeName, eraNames, start, end, startAbs: start.abs, endAbs: end.abs, precision };
+function reign({ id, dynastyId, personId, title, posthumousName, templeName, start, end, precision = "year", eraNames = [], isInformalMonarch = false }) {
+  return { id, dynastyId, personId, title, posthumousName, templeName, eraNames, start, end, startAbs: start.abs, endAbs: end.abs, precision, isInformalMonarch };
 }
 
-function rocOffice({ id, personId, title, start, end }) {
+function rocOffice({ id, personId, title, start, end, isInformalMonarch = false }) {
   const [sy, sm, sd] = start;
   const [ey, em, ed] = end;
   return reign({
@@ -60,6 +60,7 @@ function rocOffice({ id, personId, title, start, end }) {
     start: sd != null ? { ...ym(sy, sm), day: sd } : ym(sy, sm),
     end: ed != null ? { ...ym(ey, em), day: ed } : ym(ey, em),
     precision: sd != null && ed != null ? "day" : "month",
+    isInformalMonarch,
   });
 }
 
@@ -86,6 +87,14 @@ const warlords = [
   person("lai-qingde", "赖清德", ["政治家"], "2024年就任台湾地区领导人。", "赖清德", ym(1959, 10)),
   // 军阀（仅人物）
   person("duan-qirui", "段祺瑞", ["军事家", "政治家"], "皖系军阀首领，曾任国务总理、临时执政。", "段祺瑞"),
+  // 国务院摄行（非正式元首）
+  person("zhou-ziqi", "周自齐", ["政治家"], "交通系，徐世昌去职后以国务总理摄行大总统职权。", "周自齐"),
+  person("gao-lingwei", "高凌霨", ["政治家"], "直系，黎元洪去职后以国务总理摄行大总统职权。", "高凌霨"),
+  person("huang-fu", "黄郛", ["政治家"], "北京政变后摄行大总统职权，迎段祺瑞入京任临时执政。", "黄郛"),
+  person("hu-weide", "胡惟德", ["外交家", "政治家"], "两度以国务总理摄行临时执政或大总统职权。", "胡惟德"),
+  person("yan-huiqing", "颜惠庆", ["外交家", "政治家"], "段祺瑞去职后组摄政内阁，以国务院名义摄行大总统职权。", "颜惠庆"),
+  person("du-xigui", "杜锡珪", ["军事家", "政治家"], "海军总长代理国务总理，摄行大总统职权。", "杜锡珪"),
+  person("gu-weijun", "顾维钧", ["外交家", "政治家"], "国务总理兼外交总长，摄行大总统职权至安国军政府成立。", "顾维钧", null, null, ["V. K. Wellington Koo"]),
   person("wu-peifu", "吴佩孚", ["军事家"], "直系军阀，「玉帅」，北洋名将。", "吴佩孚"),
   person("sun-chuanfang", "孙传芳", ["军事家"], "直系军阀，据东南五省。", "孙传芳"),
   person("feng-yuxiang", "冯玉祥", ["军事家"], "西北军首领，北京政变发动者。", "冯玉祥"),
@@ -129,10 +138,19 @@ const rocReigns = [
   rocOffice({ personId: "li-yuanhong", title: "大总统", start: [1916, 6, 7], end: [1917, 7, 6] }),
   rocOffice({ personId: "feng-guozhang", title: "代理大总统", start: [1917, 7, 6], end: [1918, 10, 10] }),
   rocOffice({ personId: "xu-shichang", title: "大总统", start: [1918, 10, 10], end: [1922, 6, 2] }),
+  // 维基「中华民国国家元首列表」：国务院摄行
+  rocOffice({ id: "reign-zhou-ziqi-roc", personId: "zhou-ziqi", title: "国务院摄行", start: [1922, 6, 2], end: [1922, 6, 11], isInformalMonarch: true }),
   rocOffice({ id: "reign-li-yuanhong-roc-2", personId: "li-yuanhong", title: "大总统", start: [1922, 6, 11], end: [1923, 6, 13] }),
+  rocOffice({ id: "reign-gao-lingwei-roc", personId: "gao-lingwei", title: "国务院摄行", start: [1923, 6, 14], end: [1923, 10, 10], isInformalMonarch: true }),
   rocOffice({ personId: "cao-kun", title: "大总统", start: [1923, 10, 10], end: [1924, 11, 2] }),
-  rocOffice({ personId: "duan-qirui", title: "临时执政", start: [1924, 11, 24], end: [1926, 4, 20] }),
-  rocOffice({ personId: "zhang-zuolin", title: "陆海军大元帅", start: [1927, 6, 18], end: [1928, 6, 3] }),
+  rocOffice({ id: "reign-huang-fu-roc", personId: "huang-fu", title: "国务院摄行", start: [1924, 11, 2], end: [1924, 11, 24], isInformalMonarch: true }),
+  rocOffice({ personId: "duan-qirui", title: "临时执政", start: [1924, 11, 24], end: [1926, 4, 20], isInformalMonarch: true }),
+  rocOffice({ id: "reign-hu-weide-roc", personId: "hu-weide", title: "国务院摄行", start: [1926, 4, 20], end: [1926, 5, 13], isInformalMonarch: true }),
+  rocOffice({ id: "reign-yan-huiqing-roc", personId: "yan-huiqing", title: "国务院摄行", start: [1926, 5, 13], end: [1926, 6, 23], isInformalMonarch: true }),
+  rocOffice({ id: "reign-du-xigui-roc", personId: "du-xigui", title: "国务院摄行", start: [1926, 6, 23], end: [1926, 10, 1], isInformalMonarch: true }),
+  rocOffice({ id: "reign-gu-weijun-roc", personId: "gu-weijun", title: "国务院摄行", start: [1926, 10, 1], end: [1927, 6, 16], isInformalMonarch: true }),
+  rocOffice({ id: "reign-hu-weide-roc-2", personId: "hu-weide", title: "国务院摄行", start: [1927, 6, 16], end: [1927, 6, 18], isInformalMonarch: true }),
+  rocOffice({ personId: "zhang-zuolin", title: "陆海军大元帅", start: [1927, 6, 18], end: [1928, 6, 3], isInformalMonarch: true }),
   rocOffice({ personId: "tan-yankai", title: "国民政府主席", start: [1928, 6, 4], end: [1928, 10, 10] }),
   rocOffice({ id: "reign-jiang-jieshi-chairman-1-roc", personId: "jiang-jieshi", title: "国民政府主席", start: [1928, 10, 10], end: [1931, 12, 15] }),
   rocOffice({ personId: "lin-sen", title: "国民政府主席", start: [1931, 12, 15], end: [1943, 8, 1] }),
@@ -150,7 +168,7 @@ const rocReigns = [
 ];
 
 // 孙中山护法军政府、广州/武汉国民政府（1925–1928 汪兆铭等）及汪精卫伪政权不建 reign
-// 国务院摄行（周自齐、高凌霨、黄郛、胡惟德、颜惠庆、杜锡珪、顾维钧）不建 reign，空档留白
+// 国务院摄行：已建 informal reign（周自齐、高凌霨、黄郛、胡惟德、颜惠庆、杜锡珪、顾维钧）
 
 const reignGroups = [rocReigns];
 const reigns = applyDocumentedDatesToReigns(rocReigns);
@@ -441,7 +459,7 @@ const manifest = {
     "国家元首按维基百科「中华民国国家元首列表」收录（临时大总统、大总统、国民政府主席、总统）。连任不拆卡。",
     "孙中山（sun-yat-sen）复用已有 id。蒋介石分四段：国民政府主席 1928–1931、1943–1948，总统 1948–1949、1950–1975。",
     "不收录：护法军政府、1925–1928 广州/武汉国民政府（汪兆铭等，维基详表仅列 1928 年后主席）、汪精卫伪政权。",
-    "国务院摄行（周自齐、高凌霨、黄郛、胡惟德、颜惠庆、杜锡珪、顾维钧）不建 reign，空档留白，不标史料缺。",
+    "国务院摄行按维基「中华民国国家元首列表」建 informal reign：周自齐、高凌霨、黄郛、胡惟德（两段）、颜惠庆、杜锡珪、顾维钧。",
     "谭延闿维基自 1928-02-07 任南京国民政府主席，与张作霖安国军政府并立至 6 月；主线自张作霖 1928-06-03 离京后接谭，避免叠卡。",
     "正统金色截于 1949 年 9 月（十月一日中华人民共和国成立后迁台续统不上金）。1950 年起界面称「台湾地区 · 领导人」，人物概述不用「总统」。赖清德任期收录截至 2026-09。",
   ],

@@ -286,6 +286,18 @@ export function buildFateCatalog() {
       resolveAt: () => atFromReignEnd("reign-ruzi-ying", 9),
     },
     {
+      id: "rel-ruzi-ying-liu-xuan-killed",
+      fromPersonId: "ruzi-ying",
+      toPersonId: "liu-xuan",
+      kind: "killed",
+      eventId: null,
+      // 《后汉书·刘玄传》：更始二年春，方望等立孺子婴于临泾，刘玄遣李松击破，杀婴。无确切日；春取正月，月精度。
+      resolveAt: () => ym(24, 1),
+      precision: "month",
+      // 居摄终（9）至被杀（24）约十五年
+      victimMaxLagMonths: 192,
+    },
+    {
       id: "rel-liu-xie-cao-pi-abdication",
       fromPersonId: "liu-xie",
       toPersonId: "cao-pi",
