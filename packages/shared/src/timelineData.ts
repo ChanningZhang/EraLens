@@ -164,7 +164,7 @@ function reignRelatedItems(
     .sort((a, b) => a.startAbs - b.startAbs)
     .map((reign) => {
       const dynasty = dynastyMap.get(reign.dynastyId);
-      const clan = buildPreQinClanContext(person, dynasty);
+      const clan = buildPreQinClanContext(person);
       const claimNote = claimDetailFacts(reign)
         .map((fact) => fact.value)
         .join(" · ");
@@ -308,7 +308,7 @@ export function buildEntityDetail(
     if (!reign) throw new Error(`Reign not found: ${ref.id}`);
     const person = personMap.get(reign.personId);
     const dynasty = dynastyMap.get(reign.dynastyId);
-    const clan = buildPreQinClanContext(person, dynasty);
+    const clan = buildPreQinClanContext(person);
     const title = resolveReignPrimaryLabel(reign, person?.name, clan);
     const related = store.relations
       .filter((rel) => rel.fromRef === refKey(ref) || rel.toRef === refKey(ref))
@@ -357,10 +357,7 @@ export function buildEntityDetail(
       !preQinReign &&
       person.birth &&
       person.birth.year < PRE_IMPERIAL_START_YEAR;
-    const preQinDynasty = preQinReign
-      ? dynastyMap.get(preQinReign.dynastyId)
-      : undefined;
-    const preQinClan = buildPreQinClanContext(person, preQinDynasty);
+    const preQinClan = buildPreQinClanContext(person);
     const preQinTitle = preQinReign
       ? resolveReignPrimaryLabel(preQinReign, person.name, preQinClan)
       : preQinByBirth

@@ -112,7 +112,7 @@ export function ReignCard({
   });
 
   const personName = personNameFromTimeline ?? personQuery.data;
-  const clan = buildPreQinClanContext(personClan, dynasty);
+  const clan = buildPreQinClanContext(personClan);
   const label = resolveReignCardLabel(reign, personName, {
     cardWidthPx: visualWidth,
     clan,

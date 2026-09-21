@@ -51,7 +51,6 @@ function dynastyReignMonth(
   endYear,
   endMonth,
   eraList = [],
-  preferred = null,
 ) {
   return reign({
     id,
@@ -60,7 +59,6 @@ function dynastyReignMonth(
     title,
     posthumousName: posthumous,
     templeName: temple,
-    preferred,
     start: ym(startYear, startMonth),
     end: ym(endYear, endMonth),
     eraNames: eraList.length ? eras(id, eraList) : [],

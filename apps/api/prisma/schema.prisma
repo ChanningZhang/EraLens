@@ -53,8 +53,6 @@ model DynastyGroup {
 model Dynasty {
   id          String           @id
   name        String
-  ancestralXing String?        @map("ancestral_xing")
-  clanShi     String?          @map("clan_shi")
   altNames    String[]         @default([]) @map("alt_names")
   scope       String           @default("cn")
   region      String           @default("east_asia")
@@ -89,7 +87,6 @@ model Reign {
   personId              String      @map("person_id")
   title                 String
   eraNames              String?     @map("era_names")
-  preferredAppellation  Json?       @map("preferred_appellation")
   startYear             Int         @map("start_year")
   startMonth            Int         @map("start_month")
   startDay              Int?        @map("start_day")

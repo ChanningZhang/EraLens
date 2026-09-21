@@ -140,7 +140,7 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
   }
 
   const reignRows = await prisma.$queryRaw<RawReignRow[]>`
-    SELECT id, dynasty_id, person_id, title, era_names, preferred_appellation,
+    SELECT id, dynasty_id, person_id, title, era_names,
            start_year, start_month, start_day, end_year, end_month, end_day,
            start_abs, end_abs, precision,
            start_date_confidence, end_date_confidence,

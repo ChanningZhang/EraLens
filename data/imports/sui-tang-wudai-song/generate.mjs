@@ -49,7 +49,6 @@ function reign({
   title,
   posthumousName,
   templeName,
-  preferred,
   start,
   end,
   precision = "year",
@@ -65,7 +64,6 @@ function reign({
     title,
     posthumousName,
     templeName,
-    preferredAppellation: preferred,
     eraNames,
     start,
     end,
@@ -78,7 +76,7 @@ function reign({
   };
 }
 
-function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, eraNames = [], preferred = null, claim = null) {
+function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, eraNames = [], claim = null) {
   return reign({
     id: dynastyId === "sui" || dynastyId === "tang" ? `reign-${personId}` : `reign-${personId}-${dynastyId}`,
     dynastyId,
@@ -86,7 +84,6 @@ function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear,
     title,
     posthumousName: posthumous,
     templeName: temple,
-    preferred,
     start: ym(startYear),
     end: ym(endYear, 12),
     eraNames,
@@ -116,7 +113,6 @@ function tangSplitReign(id, personId, title, posthumous, temple, startYear, endY
     title,
     posthumousName: posthumous,
     templeName: temple,
-    preferred: null,
     start: ym(startYear, startMonth),
     end: ym(endYear, endMonth),
     precision,
@@ -397,7 +393,6 @@ const zhouWuReigns = [
     title: "则天皇帝",
     posthumousName: null,
     templeName: null,
-    preferred: null,
     start: ym(690, 10),
     end: ym(705, 1),
     precision: "month",

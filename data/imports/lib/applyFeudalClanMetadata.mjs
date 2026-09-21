@@ -6,42 +6,34 @@ import {
 } from "./feudalClanMetadata.mjs";
 
 /**
- * Stamp wiki-sourced 姓/氏 onto dynasty/person objects before SQL generation.
+ * Stamp wiki-sourced 姓/氏 onto person objects before SQL generation.
  *
- * Person rows inherit the dynasty, then name-prefix rules (田/吕/戴), then
- * per-person overrides. `system-missing-ruler` is shared across dynasties
- * and must not receive a 姓.
+ * Person rows inherit FEUDAL_DYNASTY_CLAN defaults by dynasty, then
+ * name-prefix rules (田/吕/戴), then per-person overrides.
+ * `system-missing-ruler` is shared across dynasties and must not receive a 姓.
  *
  * @param {{
  *   persons: Array<{ id: string, name: string, ancestralXing?: string, clanShi?: string }>,
- *   dynasties: Array<{ id: string, ancestralXing?: string, clanShi?: string }>,
+ *   dynasties?: Array<{ id: string }>,
  *   personDynastyId?: Map<string, string> | Record<string, string>,
  * }} input
  */
-export function applyFeudalClanMetadata({ persons, dynasties, personDynastyId }) {
+export function applyFeudalClanMetadata({ persons, personDynastyId }) {
   const dynastyMap =
     personDynastyId instanceof Map
       ? personDynastyId
       : new Map(Object.entries(personDynastyId ?? {}));
-  const dynastyById = new Map(dynasties.map((row) => [row.id, row]));
-
-  for (const dynasty of dynasties) {
-    const meta = FEUDAL_DYNASTY_CLAN[dynasty.id];
-    if (!meta) continue;
-    if (meta.ancestralXing) dynasty.ancestralXing = meta.ancestralXing;
-    if (meta.clanShi) dynasty.clanShi = meta.clanShi;
-  }
 
   for (const person of persons) {
     if (person.id === SYSTEM_MISSING_RULER_PERSON_ID) continue;
 
     const dynastyId = dynastyMap.get(person.id);
-    const dynasty = dynastyId ? dynastyById.get(dynastyId) : undefined;
-    if (dynasty?.ancestralXing && !person.ancestralXing) {
-      person.ancestralXing = dynasty.ancestralXing;
+    const meta = dynastyId ? FEUDAL_DYNASTY_CLAN[dynastyId] : undefined;
+    if (meta?.ancestralXing && !person.ancestralXing) {
+      person.ancestralXing = meta.ancestralXing;
     }
-    if (dynasty?.clanShi && !person.clanShi) {
-      person.clanShi = dynasty.clanShi;
+    if (meta?.clanShi && !person.clanShi) {
+      person.clanShi = meta.clanShi;
     }
 
     if (dynastyId) {
@@ -60,5 +52,5 @@ export function applyFeudalClanMetadata({ persons, dynasties, personDynastyId })
     }
   }
 
-  return { persons, dynasties };
+  return { persons };
 }

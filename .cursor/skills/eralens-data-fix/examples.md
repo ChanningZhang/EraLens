@@ -86,7 +86,7 @@ const DISPLAY_FIX: Record<string, string> = {
 };
 ```
 
-应改为：在 import 源补 `preferred_appellation: { kind: "regnal", name: "襄公" }` 或正确 `title` / `posthumous_name`。
+应改为：在 import 源补 `reigns.title = "襄公"` 或正确 `posthumous_name`。
 
 ---
 

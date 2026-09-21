@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Audit pre-imperial reigns for missing 姓/氏 in detail panels.
- * Reads ancestral_xing / clan_shi from import SQL (DB fields), not runtime name parsing.
+ * Reads persons.ancestral_xing / clan_shi from import SQL (DB fields), not runtime name parsing.
  * Run: node data/imports/lib/auditPreQinXingShi.mjs
  */
 import { readdirSync, readFileSync } from "node:fs";
@@ -9,7 +9,6 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildPreQinClanContext, resolvePreQinXingShi } from "./preQinClanContext.mjs";
 import { rulersByDynasty } from "../chunqiu-zhanguo/rulers.mjs";
-import { FEUDAL_DYNASTY_CLAN } from "./feudalClanMetadata.mjs";
 
 const PRE_IMPERIAL_START_YEAR = -221;
 
@@ -47,25 +46,6 @@ function parsePersonsFromSql(content) {
   return persons;
 }
 
-function parseDynastiesFromSql(content) {
-  const dynasties = new Map();
-  const blocks = content.split(/(?=INSERT INTO dynasties)/i);
-  for (const block of blocks) {
-    if (!/^INSERT INTO dynasties/i.test(block)) continue;
-    if (!block.includes("ancestral_xing")) continue;
-    const m = block.match(
-      /VALUES\s*\(\s*'([^']+)',\s*'([^']*)',\s*(?:'([^']*)'|NULL),\s*(?:'([^']*)'|NULL)/s,
-    );
-    if (m) {
-      dynasties.set(m[1], {
-        ancestralXing: m[3] || null,
-        clanShi: m[4] || null,
-      });
-    }
-  }
-  return dynasties;
-}
-
 function parseReignsFromSql(content) {
   const reigns = [];
   const re =
@@ -84,7 +64,6 @@ function parseReignsFromSql(content) {
 
 function loadSqlCorpus() {
   const persons = new Map();
-  const dynasties = new Map();
   const reigns = [];
   for (const slug of readdirSync(importsRoot)) {
     const sqlPath = path.join(importsRoot, slug, "import.sql");
@@ -93,44 +72,25 @@ function loadSqlCorpus() {
       for (const [id, row] of parsePersonsFromSql(content)) {
         if (!persons.has(id)) persons.set(id, row);
       }
-      for (const [id, row] of parseDynastiesFromSql(content)) {
-        dynasties.set(id, row);
-      }
       reigns.push(...parseReignsFromSql(content));
     } catch {
       // skip
     }
   }
-  return { persons, dynasties, reigns };
+  return { persons, reigns };
 }
 
 function auditRow(clan) {
   const { xing, shi } = resolvePreQinXingShi(null, clan);
   const missing = [];
   if (!xing && !shi) missing.push("姓/氏");
-  else {
-    if (!xing && clan.dynastyAncestralXing) missing.push("姓");
-    if (!shi && clan.dynastyClanShi) missing.push("氏");
-  }
   return missing;
 }
 
 function main() {
-  const { persons, dynasties, reigns } = loadSqlCorpus();
+  const { persons, reigns } = loadSqlCorpus();
   const missing = [];
-  const dynastyGaps = [];
   const seenReign = new Set();
-
-  for (const [dynastyId, meta] of Object.entries(FEUDAL_DYNASTY_CLAN)) {
-    const row = dynasties.get(dynastyId);
-    if (!row) continue;
-    if (meta.ancestralXing && !row.ancestralXing) {
-      dynastyGaps.push(`${dynastyId}: missing dynasty ancestral_xing (expected ${meta.ancestralXing})`);
-    }
-    if (meta.clanShi && !row.clanShi) {
-      dynastyGaps.push(`${dynastyId}: missing dynasty clan_shi (expected ${meta.clanShi})`);
-    }
-  }
 
   for (const [dynastyId, rulers] of Object.entries(rulersByDynasty)) {
     for (const ruler of rulers) {
@@ -139,8 +99,7 @@ function main() {
       if (seenReign.has(key)) continue;
       seenReign.add(key);
       const person = persons.get(ruler.personId);
-      const dynasty = dynasties.get(dynastyId);
-      const clan = buildPreQinClanContext(person, dynasty);
+      const clan = buildPreQinClanContext(person);
       const gaps = auditRow(clan);
       if (gaps.length) {
         missing.push({
@@ -160,8 +119,7 @@ function main() {
     if (seenReign.has(key)) continue;
     seenReign.add(key);
     const person = persons.get(reign.personId);
-    const dynasty = dynasties.get(reign.dynastyId);
-    const clan = buildPreQinClanContext(person, dynasty);
+    const clan = buildPreQinClanContext(person);
     const gaps = auditRow(clan);
     if (gaps.length) {
       missing.push({
@@ -174,10 +132,6 @@ function main() {
     }
   }
 
-  console.log("=== Dynasty 姓/氏 column gaps ===");
-  for (const row of dynastyGaps) console.log(row);
-  console.log(`Dynasty gaps: ${dynastyGaps.length}`);
-  console.log("");
   console.log("=== Missing 姓 and/or 氏 on pre-Qin reigns ===");
   for (const row of missing) {
     console.log(

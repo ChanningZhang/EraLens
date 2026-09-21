@@ -43,7 +43,6 @@ function source(overrides: SourceOverrides = {}) {
     end: { year: 1, month: 12 },
     title: "皇帝",
     eraNames: [],
-    preferredAppellation: undefined,
     ...reignOverrides,
   };
   if (posthumousName || templeName) {

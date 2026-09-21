@@ -190,14 +190,14 @@ ON CONFLICT (id) DO UPDATE SET
 
 ### reigns
 
-卡片称谓由运行时 `resolveEmperorAppellation` / `resolveReignCardLabel` 按 `appellationPolicy.ts` 的年份阈值计算；始皇帝以前主行用谥号或诸侯称号（不带国名）。谥号/庙号读 **person** 的 CSV 字段；史称（少帝/末帝/后主等）不得写入 `posthumous_name`。`preferred_appellation` 仅用于 **regnal** 例外（先秦称号、秦襄公等）。无谥号时 preferred 存称号本体（`夫差`、`王厝`），不要写 `吴王夫差`。导入时不要写入庙号/谥号/年号的默认 preferred。`persons.name` 仍用可展示私名（姬发、禹），便于搜索；维基别名须在导入时清洗。
+卡片称谓由运行时 `resolveEmperorAppellation` / `resolveReignCardLabel` 按 `appellationPolicy.ts` 的年份阈值计算；始皇帝以前主行用谥号或诸侯称号（不带国名）。谥号/庙号读 **person** 的 CSV 字段；史称（少帝/末帝/后主等）不得写入 `posthumous_name`。无谥号的 regnal 称号直接写入 `reigns.title` 本体（`夫差`、`王厝`、`禹`），不要写 `吴王夫差`。`persons.name` 仍用可展示私名（姬发、禹），便于搜索；维基别名须在导入时清洗。
 
-`persons.posthumous_name` / `persons.temple_name` 与商周数据一致：**只存谥号/庙号本体，不带国名**（`武王`、`孝文皇帝`、`太宗`）。同人多值用逗号连接。国名简称写在 `title`（`周武王`、`唐太宗`）。先秦副行去姓靠 `persons.ancestral_xing` / `dynasties.ancestral_xing` 与 `clan_shi`，运行时不再维护姓氏表。
+`persons.posthumous_name` / `persons.temple_name` 与商周数据一致：**只存谥号/庙号本体，不带国名**（`武王`、`孝文皇帝`、`太宗`）。同人多值用逗号连接。国名简称写在 `title`（`周武王`、`唐太宗`）。先秦副行去姓靠 `persons.ancestral_xing` / `persons.clan_shi`，运行时不再维护姓氏表。
 
 ```sql
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
-  era_names, preferred_appellation,
+  era_names,
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision,
   claim_track, claim_label, claim_role
@@ -205,7 +205,6 @@ INSERT INTO reigns (
   'reign-li-shimin',
   'tang', 'li-shimin', '唐太宗',
   '贞观',
-  NULL,
   626, 9, 649, 7,
   7517, 7795, 'month',
   NULL, NULL, NULL
@@ -215,7 +214,6 @@ ON CONFLICT (id) DO UPDATE SET
   person_id = EXCLUDED.person_id,
   title = EXCLUDED.title,
   era_names = EXCLUDED.era_names,
-  preferred_appellation = EXCLUDED.preferred_appellation,
   start_year = EXCLUDED.start_year,
   start_month = EXCLUDED.start_month,
   end_year = EXCLUDED.end_year,
@@ -232,7 +230,7 @@ ON CONFLICT (id) DO UPDATE SET
 -- 主行上非正统代政（有穷后羿/寒浞）不填 claim_track，只标 claim_role=rival：不上金、不分并立行、不串通行继承链。
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
-  era_names, preferred_appellation,
+  era_names,
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision,
   claim_track, claim_label, claim_role
@@ -521,9 +519,9 @@ ON CONFLICT (id) DO UPDATE SET
 | 正统金色起迄 | `orthodox_from_abs` / `orthodox_end_abs`（`orthodoxDynasties.mjs` + `dynastySql`） | 只读 DB 列 |
 | 相续泳道合并 | `dynasty_lane_groups` | API 下发，`dynastyLaneGroups.ts` 无硬编码组 |
 | 检索别名 | `persons.alt_names` | 搜索匹配 `name` + `altNames` |
-| 庙号/谥号/先秦称号 | `persons.posthumous_name` / `persons.temple_name` / `reigns.preferred_appellation` | `resolveEmperorAppellation` 按 618/1368/-221 阈值读 person 庙谥 + reign 年号；**不**从 `title` 推导 |
+| 庙号/谥号/先秦称号 | `persons.posthumous_name` / `persons.temple_name` / `reigns.title` | `resolveEmperorAppellation` 按 618/1368/-221 阈值读 person 庙谥 + reign 年号；**不**从 `title` 推导庙谥 |
 | 年号 | `reigns.era_names` CSV | 卡片取第一个，详情 `、` 连接全部 |
-| 姓/氏 | `ancestral_xing` / `clan_shi`（王朝 + 人物） | `stripAncestralXing` 读 DB |
+| 姓/氏 | `persons.ancestral_xing` / `persons.clan_shi` | `stripAncestralXing` 读 DB |
 
 入库审计（可选）：
 

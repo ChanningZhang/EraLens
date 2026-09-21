@@ -31,7 +31,6 @@ function prcOffice({ id, personId, title, start, end }) {
     title,
     posthumousName: null,
     templeName: null,
-    preferred: { kind: "regnal", name: title },
     start: sd != null ? { ...ym(sy, sm), day: sd } : ym(sy, sm),
     end: ed != null ? { ...ym(ey, em), day: ed } : ym(ey, em),
     precision: sd != null && ed != null ? "day" : "month",

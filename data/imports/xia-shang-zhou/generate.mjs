@@ -468,7 +468,6 @@ function reign({
   title,
   posthumousName,
   templeName,
-  preferred,
   start,
   end,
   precision = "year",
@@ -485,7 +484,6 @@ function reign({
     title,
     posthumousName,
     templeName,
-    preferredAppellation: preferred,
     eraNames: [],
     start,
     end,
@@ -500,13 +498,12 @@ function reign({
   };
 }
 
-function xiaReign(personId, title, cardName, startYear, endYear, claim = null) {
+function xiaReign(personId, _title, cardName, startYear, endYear, claim = null) {
   return reign({
     id: `reign-${personId}`,
     dynastyId: "xia",
     personId,
-    title,
-    preferred: { kind: "regnal", name: cardName },
+    title: cardName,
     start: ym(startYear),
     end: ym(endYear, 12),
     ...interpolatedConfidence(true),
@@ -573,7 +570,6 @@ function shangReign(personId, title, startYear, endYear, overrides = {}) {
     posthumousName:
       overrides.posthumousName ?? shangPosthumousFromTitle(title),
     templeName: overrides.templeName,
-    preferred: overrides.preferred ?? null,
     start: ym(startYear, overrides.startMonth ?? 1),
     end: ym(endYear, endMonth),
     ...interpolatedConfidence(overrides.interpolated),
@@ -598,7 +594,6 @@ function chainShangReigns(entries, firstStartYear, lastEndYear) {
         posthumousName:
           entry.posthumousName ?? shangPosthumousFromTitle(entry.title),
         templeName: entry.templeName,
-        preferred: entry.preferred ?? null,
         start: ym(startYear),
         end: ym(endYear, 12),
         ...interpolatedConfidence(entry.interpolated),
@@ -686,7 +681,6 @@ function zhouReign(
     personId,
     title,
     posthumousName: posthumous,
-    preferred: null,
     start: ym(startYear, startMonth),
     end: ym(endYear, endMonth),
     claimTrack: claim?.track,
@@ -1419,7 +1413,7 @@ const manifest = {
     "王朝起迄与晚商、西周列王年优先采用夏商周断代工程2000年《夏商周年表》；该工程方法与结论在学界仍有争议，作教材通行框架而非定论。",
     "夏代具体王年工程未给出。十七王起迄依今本《竹书纪年》在位年数自断代工程夏始前2070年顺推，全部标 interpolated（卡片起迄波浪线）。桀取《帝王世纪》五十二年（前1651–前1600）以接商汤。正统金色自启起（家天下），禹受禅不上金。",
     "后羿、寒浞为有穷代夏君主，写入夏行在位卡（相、少康之间串行，不填 claim_track）。claim_role=rival：不上正统金色、不串进十七王继承链。年取推算前1999–前1992、前1991–前1960。二人之间另串后羿→寒浞继承。",
-    "夏王 persons.name 带姒姓；禹用私名文命、桀用履癸，禹/桀/太康等称号走 preferred_appellation。",
+    "夏王 persons.name 带姒姓；禹用私名文命、桀用履癸，禹/桀/太康等卡片称号写在 reigns.title。",
     "商王 persons.name 取维基/今本竹书纪年所载私名并加子姓（子履、子昭、子受等）；日名与史称写入 alt_names，卡片主行仍用日名/谥号。",
     "汤庙号取甲骨/文献高祖（高祖乙），不取太祖。盘庚庙号世祖依维基分类。帝辛私名受，周谥纣仍作 posthumous_name。",
     "汤与太甲之间旧「史料缺」改为外丙、仲壬（史记、孟子世系）。二人传统年数为外丙二或三年、仲壬四年，在汤迄年与太甲起年锚点之间按二王平分，标 interpolated。仲壬不见于周祭，与沃丁同属有争议君主，仍从史记收录。",

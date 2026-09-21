@@ -45,7 +45,6 @@ function reign({
   title,
   posthumousName,
   templeName,
-  preferred,
   start,
   end,
   precision = "year",
@@ -61,7 +60,6 @@ function reign({
     title,
     posthumousName,
     templeName,
-    preferredAppellation: preferred,
     eraNames,
     start,
     end,
@@ -83,7 +81,6 @@ function dynastyReign(
   startYear,
   endYear,
   eraNames = [],
-  preferred = null,
   claim = null,
 ) {
   return reign({
@@ -93,7 +90,6 @@ function dynastyReign(
     title,
     posthumousName: posthumous,
     templeName: temple,
-    preferred,
     start: ym(startYear),
     end: ym(endYear, 12),
     eraNames,

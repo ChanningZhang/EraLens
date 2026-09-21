@@ -97,17 +97,16 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 | `clan_shi` | 氏（齐、晋、赵） | 姓 |
 | `posthumous_name` | 谥号本体 CSV（`武王`、`孝文皇帝`） | 国号、`少帝`/`末帝`/`后主` 等史称 |
 | `temple_name` | 庙号本体 CSV（`太宗`、`高祖`） | 国号 |
-| `reigns.title` | 国号+简称（`周武王`、`唐太宗`） | 不应替代庙谥列 |
+| `reigns.title` | 卡片称号/史称（先秦去国号如 `禹`；帝制如 `唐太宗`、`少帝`） | 不应替代庙谥列 |
 | `reigns.era_names` | 年号 CSV（`贞观,永徽`） | — |
-| `preferred_appellation` | **仅 regnal 例外**（先秦称号、秦襄公、西楚霸王） | 默认庙号/谥号/年号展示 |
 | `alt_names` | 检索别名（`姜子牙` → `lv-shang`） | 与 `name` 重复的私名 |
 | `bio` | 生平、本名异体、争议说明 | 不应替代正规列 |
 
 **展示规则（只读库，不在修复时破坏）**：
 
 - `resolveEmperorAppellation`：唐以前偏谥号/称号，唐–元偏庙号，明清偏年号。
-- 先秦卡片：主行读 `posthumous_name` / `preferred_appellation`；副行私名靠 `ancestral_xing` / `clan_shi` 去姓。
-- 先秦 `ancestral_xing` / `clan_shi` 优先写 `feudalClanMetadata.mjs` + `applyFeudalClanMetadata`（王朝级姓氏数据，不是个案 hardcode）。
+- 先秦卡片：主行读 `posthumous_name` / `reigns.title`；副行私名靠 `ancestral_xing` / `clan_shi` 去姓。
+- 先秦 `persons.ancestral_xing` / `persons.clan_shi` 优先写 `feudalClanMetadata.mjs` + `applyFeudalClanMetadata`（导入模板 + 人物级覆盖，不是个案 hardcode）。
 
 字段细则与 INSERT 模板见 [reference.md](reference.md)；正反例见 [examples.md](examples.md)。
 
@@ -128,7 +127,7 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 仅当**多条记录共用同一抽象规则**且数据已规范仍无法满足时：
 
 1. 在 `@eralens/shared` 或 `data/imports/lib/` 写规则（阈值、字段读取顺序、schema）。
-2. 用数据标记表达例外（`preferred_appellation`、`claim_track`、`start_date_confidence` 等）。
+2. 用数据标记表达例外（`reigns.title`、`claim_track`、`start_date_confidence` 等）。
 3. **单实体特例必须用户书面同意**；否则一律回到数据层修。
 
 ## 验收

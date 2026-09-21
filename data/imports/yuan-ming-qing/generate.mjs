@@ -8,7 +8,6 @@ import { fileURLToPath } from "node:url";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
 import { drDay, ymDay } from "../lib/reignDateHelpers.mjs";
-import { formatAppellationCsv } from "../lib/sqlHelpers.mjs";
 import { reignSql } from "../lib/reignSql.mjs";
 import { dynastySql, formatAppellationCsv, mergeAppellationsIntoPersons, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 
@@ -43,11 +42,11 @@ function person(id, name, roles, bio, wikiTitle, birth = null, death = null) {
   return { id, name, roles, bio, links: wiki(wikiTitle), birth, death };
 }
 
-function reign({ id, dynastyId, personId, title, posthumousName, templeName, preferred, start, end, precision = "year", eraNames = [], claimTrack, claimLabel, claimRole }) {
-  return { id, dynastyId, personId, title, posthumousName, templeName, preferredAppellation: preferred, eraNames, start, end, startAbs: start.abs, endAbs: end.abs, precision, claimTrack, claimLabel, claimRole };
+function reign({ id, dynastyId, personId, title, posthumousName, templeName, start, end, precision = "year", eraNames = [], claimTrack, claimLabel, claimRole }) {
+  return { id, dynastyId, personId, title, posthumousName, templeName, eraNames, start, end, startAbs: start.abs, endAbs: end.abs, precision, claimTrack, claimLabel, claimRole };
 }
 
-function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, eraNames = [], preferred = null, claim = null) {
+function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, eraNames = [], claim = null) {
   const reignId = `reign-${personId}-${dynastyId}`;
   return reign({
     id: reignId,
@@ -56,7 +55,6 @@ function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear,
     title,
     posthumousName: posthumous,
     templeName: temple,
-    preferred,
     start: ym(startYear),
     end: ym(endYear, 12),
     eraNames,

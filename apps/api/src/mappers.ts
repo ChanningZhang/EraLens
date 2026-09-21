@@ -22,11 +22,6 @@ import type {
   Relation as DbRelation,
 } from "@prisma/client";
 
-type PreferredAppellation = {
-  kind: "posthumous" | "temple" | "era" | "regnal";
-  name: string;
-};
-
 export type RawDynastyRow = {
   id: string;
   name: string;
@@ -43,8 +38,6 @@ export type RawDynastyRow = {
   color_token: string;
   orthodox_from_abs: number | null;
   orthodox_end_abs: number | null;
-  ancestral_xing: string | null;
-  clan_shi: string | null;
   parent_id: string | null;
   group_id: string | null;
   note: string | null;
@@ -71,7 +64,6 @@ export type RawReignRow = {
   person_id: string;
   title: string;
   era_names: string | null;
-  preferred_appellation: unknown;
   start_year: number;
   start_month: number;
   start_day: number | null;
@@ -266,9 +258,6 @@ export function mapDynasty(row: DbDynasty | RawDynastyRow): Dynasty {
     "orthodoxFromAbs" in row ? row.orthodoxFromAbs : row.orthodox_from_abs;
   const orthodoxEndAbs =
     "orthodoxEndAbs" in row ? row.orthodoxEndAbs : row.orthodox_end_abs;
-  const ancestralXing =
-    "ancestralXing" in row ? row.ancestralXing : row.ancestral_xing;
-  const clanShi = "clanShi" in row ? row.clanShi : row.clan_shi;
   const parentId = "parentId" in row ? row.parentId : row.parent_id;
   const groupId = "groupId" in row ? row.groupId : row.group_id;
   const noteValue = row.note;
@@ -285,8 +274,6 @@ export function mapDynasty(row: DbDynasty | RawDynastyRow): Dynasty {
     endAbs,
     precision: row.precision as Dynasty["precision"],
     colorToken: colorToken as Dynasty["colorToken"],
-    ancestralXing: ancestralXing ?? undefined,
-    clanShi: clanShi ?? undefined,
     orthodoxFromAbs: orthodoxFromAbs ?? undefined,
     orthodoxEndAbs: orthodoxEndAbs ?? undefined,
     parentId: parentId ?? undefined,
@@ -308,8 +295,6 @@ export function mapReign(row: DbReign | RawReignRow): Reign {
   const dynastyId = "dynastyId" in row ? row.dynastyId : row.dynasty_id;
   const personId = "personId" in row ? row.personId : row.person_id;
   const eraNamesRaw = "eraNames" in row ? row.eraNames : row.era_names;
-  const preferredAppellation =
-    "preferredAppellation" in row ? row.preferredAppellation : row.preferred_appellation;
   const startYear = "startYear" in row ? row.startYear : row.start_year;
   const startMonth = "startMonth" in row ? row.startMonth : row.start_month;
   const startDay = "startDay" in row ? row.startDay : row.start_day;
@@ -331,7 +316,6 @@ export function mapReign(row: DbReign | RawReignRow): Reign {
     dynastyId,
     personId,
     title: row.title,
-    preferredAppellation: (preferredAppellation as PreferredAppellation | null) ?? undefined,
     eraNames: parseAppellationCsv(eraNamesRaw),
     start: {
       year: startYear,

@@ -6,7 +6,7 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { dynastySql, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
+import { dynastySql, formatAppellationCsv, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { ymDay } from "../lib/reignDateHelpers.mjs";
 import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
@@ -43,8 +43,8 @@ function person(id, name, roles, bio, wikiTitle, birth = null, death = null, alt
   return { id, name, roles, bio, links: wiki(wikiTitle), birth, death, altNames };
 }
 
-function reign({ id, dynastyId, personId, title, posthumousName, templeName, preferred, start, end, precision = "year", eraNames = [] }) {
-  return { id, dynastyId, personId, title, posthumousName, templeName, preferredAppellation: preferred, eraNames, start, end, startAbs: start.abs, endAbs: end.abs, precision };
+function reign({ id, dynastyId, personId, title, posthumousName, templeName, start, end, precision = "year", eraNames = [] }) {
+  return { id, dynastyId, personId, title, posthumousName, templeName, eraNames, start, end, startAbs: start.abs, endAbs: end.abs, precision };
 }
 
 function rocOffice({ id, personId, title, start, end }) {
@@ -57,7 +57,6 @@ function rocOffice({ id, personId, title, start, end }) {
     title,
     posthumousName: null,
     templeName: null,
-    preferred: { kind: "regnal", name: title },
     start: sd != null ? { ...ym(sy, sm), day: sd } : ym(sy, sm),
     end: ed != null ? { ...ym(ey, em), day: ed } : ym(ey, em),
     precision: sd != null && ed != null ? "day" : "month",
@@ -358,7 +357,7 @@ relations.push(
 // ── SQL ──────────────────────────────────────────────────────────────────────
 
 function reignSql(r) {
-  return formatReignSql(r, sqlStr, sqlJson);
+  return formatReignSql(r, sqlStr, sqlJson, formatAppellationCsv);
 }
 function eventSql(e) {
   const cols = ["id", "name", "kind", "time_mode", "precision", "date_note", "at_year", "at_month", "at_abs", "start_year", "start_month", "start_abs", "end_year", "end_month", "end_abs", "summary"];

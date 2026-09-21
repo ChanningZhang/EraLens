@@ -59,13 +59,8 @@ function reignSpanMonths(reign: Reign): number {
 }
 
 function reignQualityScore(reign: Reign): number {
-  let score = 0;
-  if (reign.preferredAppellation?.kind === "posthumous") score += 4;
-  else if (reign.preferredAppellation?.kind === "temple") score += 3;
-  else if (reign.preferredAppellation?.kind === "era") score += 2;
   // Stale imports often keep an overly wide span for the same title.
-  score -= reignSpanMonths(reign) / 1000;
-  return score;
+  return -reignSpanMonths(reign) / 1000;
 }
 
 function pickBetterReign(a: Reign, b: Reign): Reign {
@@ -109,8 +104,9 @@ export function dedupeOverlappingReigns(reigns: Reign[]): Reign[] {
       continue;
     }
     // Same generic title (楚王 / 闽主) across successive rulers is not a duplicate import.
+    // Prefer the tighter span when scores diverge enough (stale wide 秦庄襄王 import).
     const scoreDiff = Math.abs(reignQualityScore(existing) - reignQualityScore(reign));
-    if (scoreDiff >= 2) {
+    if (scoreDiff >= 0.35) {
       kept[index] = pickBetterReign(existing, reign);
       continue;
     }

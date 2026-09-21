@@ -1,5 +1,5 @@
 /**
- * Pre-Qin card primary uses stored posthumous_name / preferred_appellation.
+ * Pre-Qin card title uses stored posthumous_name or regnal title baked at import.
  * Titles still carry 国名 (齐桓公, 吴王夫差); this helper derives the body
  * from the dynasty's own 国号 so runtime does not keep a state-name list.
  *

@@ -60,7 +60,6 @@ export function missingReign({
     title: "史料缺",
     posthumousName: null,
     templeName: null,
-    preferredAppellation: null,
     eraNames: [],
     start,
     end,

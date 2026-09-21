@@ -10,10 +10,8 @@
 | `persons.clan_shi` | text? | 氏 |
 | `persons.posthumous_name` | text? | 谥号 CSV |
 | `persons.temple_name` | text? | 庙号 CSV |
-| `reigns.title` | text | 在位称号，常含国号 |
+| `reigns.title` | text | 卡片称号/史称（先秦去国号如 `禹`；帝制如 `唐太宗`、`少帝`） |
 | `reigns.era_names` | text? | 年号 CSV |
-| `reigns.preferred_appellation` | jsonb? | `{ kind: "regnal", name: "…" }` |
-| `dynasties.ancestral_xing` / `clan_shi` | text? | 王朝默认姓氏（先秦） |
 
 运行时称谓：`packages/shared/src/emperorAppellation.ts`  
 先秦姓氏展示：`ancestral_xing` / `clan_shi` + `resolvePreQinPrivateName`  
@@ -26,7 +24,7 @@
 1. **这是私名、谥号、庙号、年号、还是史称/封号？**
 2. **国号是否应出现在展示主行？** 国号 → `reigns.title`；庙谥本体 → person 列。
 3. **先秦吗？** 是 → 检查 `ancestral_xing` / `clan_shi` / `feudalClanMetadata.mjs`。
-4. **是否仅个别时代用特殊称号？** 是 → `preferred_appellation`（regnal），不是代码分支。
+4. **是否仅个别时代用特殊称号？** 是 → 写入 `reigns.title`（regnal 本体），不是代码分支。
 5. **`name` 是否应能被搜索？** 需要别名 → `alt_names`。
 
 ## 先秦姓/氏

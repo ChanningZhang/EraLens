@@ -84,10 +84,6 @@ export const DynastyGroupSchema = z.object({
 export const DynastySchema = z.object({
   id: z.string(),
   name: z.string(),
-  /** 该国君主支系之姓（wiki/史料入库）。 */
-  ancestralXing: z.string().optional(),
-  /** 该国君主支系之氏（wiki/史料入库）。 */
-  clanShi: z.string().optional(),
   altNames: z.array(z.string()).default([]),
   scope: ScopeSchema.default("cn"),
   region: z.string().default("east_asia"),
@@ -139,11 +135,6 @@ export const AppellationKindSchema = z.enum([
   "era",
   "regnal",
 ]);
-
-export const PreferredAppellationSchema = z.object({
-  kind: AppellationKindSchema,
-  name: z.string(),
-});
 
 /**
  * Marker for a ruler who is not on the conventionally counted orthodox line.
@@ -199,7 +190,6 @@ export const ReignSchema = z.object({
   dynastyId: z.string(),
   personId: z.string(),
   title: z.string(),
-  preferredAppellation: PreferredAppellationSchema.optional(),
   /** Comma-separated in DB; parsed to array at runtime. */
   eraNames: z.array(z.string()).default([]),
   start: TimePointSchema,

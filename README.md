@@ -211,7 +211,7 @@ pnpm db:down      # 停止容器
 - 唐至元：庙号优先
 - 明清：年号优先（英宗前后两段年号不同则分段显示）
 
-`posthumous_name` / `temple_name` 只存「太宗」「孝文皇帝」，不写「唐太宗」。国名在 `title`。`preferred_appellation` 仅 regnal 例外。618 以后庙号/谥号须在 generate 显式写入字段；运行时不从 `title` 推测。史称（少帝/末帝/后主等）留在 `title`，不进 `posthumous_name`。
+`posthumous_name` / `temple_name` 只存「太宗」「孝文皇帝」，不写「唐太宗」。`reigns.title` 存卡片称号/史称（先秦去国号如 `禹`、`君舍`；帝制后如 `唐太宗`、`少帝`）。618 以后庙号/谥号须在 generate 显式写入 person 字段；运行时不从 `title` 推测庙谥。史称（少帝/末帝/后主等）留在 `title`，不进 `posthumous_name`。
 
 人物搜索别名写入 `persons.alt_names`（如 `lv-shang` → `姜子牙`），不再维护 runtime 硬编码表。
 

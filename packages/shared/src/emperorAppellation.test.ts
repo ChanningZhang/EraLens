@@ -38,7 +38,6 @@ function source(overrides: SourceOverrides = {}) {
     end: { year: 1, month: 12 },
     title: "皇帝",
     eraNames: [],
-    preferredAppellation: undefined,
     ...reignOverrides,
   };
   if (posthumousName || templeName) {
@@ -304,7 +303,6 @@ describe("resolveEmperorAppellation", () => {
         source({
           start: { year: -678, month: 1 },
           title: "秦襄公",
-          preferredAppellation: { kind: "regnal", name: "秦襄公" },
         }),
       ),
     ).toEqual({ kind: "regnal", name: "秦襄公" });
@@ -318,7 +316,6 @@ describe("resolveEmperorAppellation", () => {
           title: "诏王",
           posthumousName: "奇嘉王",
           templeName: "高祖",
-          preferredAppellation: { kind: "posthumous", name: "奇嘉王" },
         }),
       ),
     ).toEqual({ kind: "temple", name: "高祖" });
@@ -395,7 +392,7 @@ describe("resolveReignPrimaryLabel", () => {
       title: "秦庄襄王",
       posthumousName: "庄襄王",
     });
-    const clan = buildPreQinClanContext(null, { ancestralXing: "嬴" });
+    const clan = buildPreQinClanContext({ ancestralXing: "嬴" });
     expect(resolveReignCardGivenName(reign, "嬴子楚", clan)).toBe("子楚");
     expect(resolveReignPrimaryLabel(reign, "嬴子楚", clan)).toBe("庄襄王");
   });
@@ -403,8 +400,7 @@ describe("resolveReignPrimaryLabel", () => {
   it("uses stored regnal body for Zhongshan kings (no runtime state strip)", () => {
     const reign = source({
       start: { year: -327, month: 1 },
-      title: "中山王厝",
-      preferredAppellation: { kind: "regnal", name: "厝" },
+      title: "厝",
     });
     expect(resolveReignPrimaryLabel(reign)).toBe("厝");
     expect(resolveReignPrimaryLabel(reign, "厝")).toBe("厝");
@@ -412,8 +408,7 @@ describe("resolveReignPrimaryLabel", () => {
       resolveReignPrimaryLabel(
         source({
           start: { year: -312, month: 1 },
-          title: "中山王𧊒",
-          preferredAppellation: { kind: "regnal", name: "𧊒" },
+          title: "𧊒",
         }),
         "𧊒",
       ),
@@ -425,8 +420,7 @@ describe("resolveReignPrimaryLabel", () => {
       resolveReignPrimaryLabel(
         source({
           start: { year: 9, month: 1 },
-          title: "新莽皇帝",
-          preferredAppellation: { kind: "regnal", name: "王莽" },
+          title: "王莽",
         }),
         "王莽",
       ),
@@ -440,8 +434,7 @@ describe("resolveEmperorAppellation for feudal regnal titles", () => {
       resolveEmperorAppellation(
         source({
           start: { year: -496, month: 1 },
-          title: "越王勾践",
-          preferredAppellation: { kind: "regnal", name: "勾践" },
+          title: "勾践",
         }),
       ),
     ).toEqual({ kind: "regnal", name: "勾践" });
@@ -474,8 +467,7 @@ describe("resolveReignDetailSubtitle for Yue kings", () => {
       resolveReignDetailSubtitle(
         source({
           start: { year: -372, month: 1 },
-          title: "越王无余",
-          preferredAppellation: { kind: "regnal", name: "无余" },
+          title: "无余",
         }),
         "越",
         "无余",
@@ -486,13 +478,12 @@ describe("resolveReignDetailSubtitle for Yue kings", () => {
 
 describe("resolveReignCardMeta for Zhongshan kings", () => {
   it("hides given-name meta when it is already the card appellation", () => {
-    const clan = buildPreQinClanContext(null, { ancestralXing: "姬" });
+    const clan = buildPreQinClanContext({ ancestralXing: "姬" });
     expect(
       resolveReignCardMeta(
         source({
           start: { year: -327, month: 1 },
-          title: "中山王厝",
-          preferredAppellation: { kind: "regnal", name: "厝" },
+          title: "厝",
         }),
         "厝",
         clan,
@@ -502,8 +493,7 @@ describe("resolveReignCardMeta for Zhongshan kings", () => {
       resolveReignCardMeta(
         source({
           start: { year: -312, month: 1 },
-          title: "中山王𧊒",
-          preferredAppellation: { kind: "regnal", name: "𧊒" },
+          title: "𧊒",
         }),
         "𧊒",
         clan,
@@ -519,7 +509,7 @@ describe("resolveReignCardLabel", () => {
       title: "宋平公",
       posthumousName: "平公",
     });
-    const clan = buildPreQinClanContext(null, { ancestralXing: "子" });
+    const clan = buildPreQinClanContext({ ancestralXing: "子" });
     expect(
       resolveReignCardLabel(reign, "子成", {
         cardWidthPx: 32,
@@ -545,7 +535,6 @@ describe("resolveReignCardLabel", () => {
           start: { year: 365, month: 1 },
           title: "晋海西公",
           posthumousName: "海西公",
-          preferredAppellation: { kind: "posthumous", name: "晋海西公" },
           eraNames: ["太和"],
         }),
         "司马奕",
@@ -557,7 +546,6 @@ describe("resolveReignCardLabel", () => {
           start: { year: 371, month: 1 },
           title: "晋简文帝",
           posthumousName: "简文皇帝",
-          preferredAppellation: { kind: "posthumous", name: "晋简文帝" },
           eraNames: ["咸安"],
         }),
         "司马昱",
@@ -655,7 +643,6 @@ describe("resolveReignCardMeta", () => {
         source({
           start: { year: -778, month: 1 },
           title: "秦襄公",
-          preferredAppellation: { kind: "regnal", name: "秦襄公" },
         }),
         "秦襄公",
       ),
@@ -668,7 +655,7 @@ describe("resolveReignCardMeta", () => {
       title: "秦穆公",
       posthumousName: "穆公",
     });
-    const clan = buildPreQinClanContext(null, { ancestralXing: "嬴" });
+    const clan = buildPreQinClanContext({ ancestralXing: "嬴" });
     expect(resolveReignCardLabel(reign, "嬴任好")).toBe("穆公");
     expect(resolveReignCardMeta(reign, "嬴任好", clan)).toEqual({
       label: "名",
@@ -710,7 +697,6 @@ describe("resolveReignCardMeta", () => {
       start: { year: 254, month: 10 },
       end: { year: 260, month: 5 },
       title: "高贵乡公",
-      preferredAppellation: { kind: "regnal", name: "高贵乡公" },
       eraNames: ["正元","甘露"],
     });
     expect(resolveEmperorAppellation(caoMao)).toEqual({
@@ -729,7 +715,6 @@ describe("resolveReignCardMeta", () => {
       start: { year: 252, month: 5 },
       end: { year: 258, month: 11 },
       title: "会稽王",
-      preferredAppellation: { kind: "regnal", name: "会稽王" },
       eraNames: ["建兴"],
     });
     expect(resolveEmperorAppellation(sunLiang)).toEqual({
@@ -747,8 +732,7 @@ describe("resolveReignCardMeta", () => {
       start: { year: 223, month: 6 },
       end: { year: 263, month: 11 },
       title: "蜀汉后主",
-      posthumousName: "孝怀皇帝",
-      preferredAppellation: { kind: "posthumous", name: "孝怀皇帝" },
+          posthumousName: "孝怀皇帝",
       eraNames: ["建兴"],
     });
     expect(resolveEmperorAppellation(liuShan)).toEqual({
@@ -778,7 +762,6 @@ describe("resolveReignCardMeta", () => {
           start: { year: 960, month: 1 },
           title: "宋太祖",
           templeName: "太祖",
-          preferredAppellation: { kind: "temple", name: "宋太祖" },
           eraNames: ["建隆"],
         }),
         "赵匡胤",
@@ -787,7 +770,7 @@ describe("resolveReignCardMeta", () => {
   });
 
   it("shows posthumous meta for Shang rulers", () => {
-    const clan = buildPreQinClanContext(null, { ancestralXing: "子" });
+    const clan = buildPreQinClanContext({ ancestralXing: "子" });
     expect(
       resolveReignCardMeta(
         source({
@@ -837,7 +820,6 @@ describe("resolveReignCardMeta", () => {
           start: { year: -1101, month: 1 },
           title: "商王帝乙",
           posthumousName: "帝乙",
-          preferredAppellation: { kind: "posthumous", name: "帝乙" },
         }),
         "帝乙",
       ),
@@ -859,7 +841,6 @@ describe("resolveReignCardMeta", () => {
           start: { year: -1101, month: 1 },
           title: "商王帝乙",
           posthumousName: "帝乙",
-          preferredAppellation: { kind: "posthumous", name: "帝乙" },
         }),
         "商",
       ),
@@ -873,14 +854,12 @@ describe("resolveReignDetailSubtitle", () => {
       start: { year: 960, month: 1 },
       title: "宋太祖",
       templeName: "太祖",
-      preferredAppellation: { kind: "temple", name: "宋太祖" },
       eraNames: ["建隆"],
     });
     const liaoReign = source({
       start: { year: 982, month: 1 },
       title: "辽圣宗",
       templeName: "圣宗",
-      preferredAppellation: { kind: "temple", name: "辽圣宗" },
       eraNames: ["统和"],
     });
 
@@ -898,7 +877,6 @@ describe("resolveReignDetailSubtitle", () => {
       start: { year: 2000, month: 5 },
       end: { year: 2008, month: 5 },
       title: "总统",
-      preferredAppellation: { kind: "regnal", name: "总统" },
       eraNames: [],
     });
     const jiang = source({
@@ -906,7 +884,6 @@ describe("resolveReignDetailSubtitle", () => {
       start: { year: 1950, month: 3 },
       end: { year: 1975, month: 4 },
       title: "总统",
-      preferredAppellation: { kind: "regnal", name: "总统" },
       eraNames: [],
     });
     const li = source({
@@ -914,7 +891,6 @@ describe("resolveReignDetailSubtitle", () => {
       start: { year: 1949, month: 1 },
       end: { year: 1950, month: 3 },
       title: "代总统",
-      preferredAppellation: { kind: "regnal", name: "代总统" },
       eraNames: [],
     });
 
@@ -943,7 +919,6 @@ describe("resolveReignDetailFacts", () => {
           end: { year: 976, month: 12 },
           title: "宋太祖",
           templeName: "太祖",
-          preferredAppellation: { kind: "temple", name: "宋太祖" },
           eraNames: ["建隆"],
         }),
       ),
@@ -989,55 +964,55 @@ describe("pre-Qin card layout", () => {
     expect(
       stripAncestralXing(
         "姬发",
-        buildPreQinClanContext(null, { ancestralXing: "姬" }),
+        buildPreQinClanContext({ ancestralXing: "姬" }),
       ),
     ).toBe("发");
     expect(
       stripAncestralXing(
         "姜小白",
-        buildPreQinClanContext(null, { ancestralXing: "姜" }),
+        buildPreQinClanContext({ ancestralXing: "姜" }),
       ),
     ).toBe("小白");
     expect(
       stripAncestralXing(
         "嬴渠梁",
-        buildPreQinClanContext(null, { ancestralXing: "嬴" }),
+        buildPreQinClanContext({ ancestralXing: "嬴" }),
       ),
     ).toBe("渠梁");
     expect(
       stripAncestralXing(
         "己狂",
-        buildPreQinClanContext(null, { ancestralXing: "己" }),
+        buildPreQinClanContext({ ancestralXing: "己" }),
       ),
     ).toBe("狂");
     expect(
       stripAncestralXing(
         "姒姑容",
-        buildPreQinClanContext(null, { ancestralXing: "姒" }),
+        buildPreQinClanContext({ ancestralXing: "姒" }),
       ),
     ).toBe("姑容");
     expect(
       stripAncestralXing(
         "子成",
-        buildPreQinClanContext(null, { ancestralXing: "子" }),
+        buildPreQinClanContext({ ancestralXing: "子" }),
       ),
     ).toBe("成");
     expect(
       stripAncestralXing(
         "嬴子楚",
-        buildPreQinClanContext(null, { ancestralXing: "嬴" }),
+        buildPreQinClanContext({ ancestralXing: "嬴" }),
       ),
     ).toBe("子楚");
     expect(
       stripAncestralXing(
         "任好",
-        buildPreQinClanContext(null, { ancestralXing: "嬴" }),
+        buildPreQinClanContext({ ancestralXing: "嬴" }),
       ),
     ).toBe("任好");
     expect(
       stripAncestralXing(
         "姬宫湦余",
-        buildPreQinClanContext(null, { ancestralXing: "姬" }),
+        buildPreQinClanContext({ ancestralXing: "姬" }),
       ),
     ).toBe("宫湦余");
     expect(stripAncestralXing("吕尚")).toBe("吕尚");
@@ -1053,13 +1028,13 @@ describe("pre-Qin card layout", () => {
     expect(
       stripAncestralXing(
         "芈侣",
-        buildPreQinClanContext(null, { ancestralXing: "芈", clanShi: "熊" }),
+        buildPreQinClanContext({ ancestralXing: "芈", clanShi: "熊" }),
       ),
     ).toBe("侣");
     expect(
       stripAncestralXing(
         "姜尚",
-        buildPreQinClanContext({ clanShi: "吕" }, { ancestralXing: "姜", clanShi: "齐" }),
+        buildPreQinClanContext({ ancestralXing: "姜", clanShi: "吕" }),
       ),
     ).toBe("尚");
   });
@@ -1070,7 +1045,7 @@ describe("pre-Qin card layout", () => {
       title: "周武王",
       posthumousName: "武王",
     });
-    const zhouClan = buildPreQinClanContext(null, { ancestralXing: "姬" });
+    const zhouClan = buildPreQinClanContext({ ancestralXing: "姬" });
     expect(resolveReignCardLabel(wu, "姬发")).toBe("武王");
     expect(resolveReignCardMeta(wu, "姬发", zhouClan)).toEqual({
       label: "名",
@@ -1088,7 +1063,7 @@ describe("pre-Qin card layout", () => {
       title: "齐桓公",
       posthumousName: "桓公",
     });
-    const qiClan = buildPreQinClanContext(null, {
+    const qiClan = buildPreQinClanContext({
       ancestralXing: "姜",
       clanShi: "齐",
     });
@@ -1103,7 +1078,7 @@ describe("pre-Qin card layout", () => {
       title: "晋文公",
       posthumousName: "文公",
     });
-    const jinClan = buildPreQinClanContext(null, { ancestralXing: "姬" });
+    const jinClan = buildPreQinClanContext({ ancestralXing: "姬" });
     expect(resolveReignCardLabel(wen, "姬重耳")).toBe("文公");
     expect(resolveReignCardMeta(wen, "姬重耳", jinClan)).toEqual({
       label: "名",
@@ -1117,10 +1092,7 @@ describe("pre-Qin card layout", () => {
       title: "齐太公",
       posthumousName: "太公",
     });
-    const qiClan = buildPreQinClanContext(
-      { clanShi: "吕" },
-      { ancestralXing: "姜", clanShi: "齐" },
-    );
+    const qiClan = buildPreQinClanContext({ ancestralXing: "姜", clanShi: "吕" });
     expect(resolveReignCardLabel(tai, "姜尚")).toBe("太公");
     expect(resolveReignCardMeta(tai, "姜尚", qiClan)).toEqual({
       label: "名",
@@ -1132,7 +1104,7 @@ describe("pre-Qin card layout", () => {
       title: "楚庄王",
       posthumousName: "庄王",
     });
-    const chuClan = buildPreQinClanContext(null, { ancestralXing: "芈", clanShi: "熊" });
+    const chuClan = buildPreQinClanContext({ ancestralXing: "芈", clanShi: "熊" });
     expect(resolveReignCardLabel(chuang, "芈侣")).toBe("庄王");
     expect(resolveReignCardMeta(chuang, "芈侣", chuClan)).toEqual({
       label: "名",
@@ -1141,8 +1113,7 @@ describe("pre-Qin card layout", () => {
 
     const fuchai = source({
       start: { year: -495, month: 1 },
-      title: "吴王夫差",
-      preferredAppellation: { kind: "regnal", name: "夫差" },
+      title: "夫差",
     });
     expect(resolveReignCardLabel(fuchai, "夫差")).toBe("夫差");
     expect(resolveReignCardMeta(fuchai, "夫差")).toBeNull();
@@ -1153,8 +1124,7 @@ describe("pre-Qin card layout", () => {
       resolveReignCardLabel(
         source({
           start: { year: -790, month: 1 },
-          title: "楚若敖",
-          preferredAppellation: { kind: "regnal", name: "若敖" },
+          title: "若敖",
         }),
         "熊仪",
       ),
@@ -1163,8 +1133,7 @@ describe("pre-Qin card layout", () => {
       resolveReignCardLabel(
         source({
           start: { year: -2070, month: 1 },
-          title: "夏禹",
-          preferredAppellation: { kind: "regnal", name: "禹" },
+          title: "禹",
         }),
         "禹",
       ),
@@ -1186,7 +1155,7 @@ describe("pre-Qin card layout", () => {
       title: "燕襄公",
       posthumousName: "襄公",
     });
-    const yanClan = buildPreQinClanContext(null, {
+    const yanClan = buildPreQinClanContext({
       ancestralXing: "姬",
       clanShi: "匽",
     });
@@ -1197,8 +1166,7 @@ describe("pre-Qin card layout", () => {
   it("keeps imperial name-first layout from 始皇帝 onward", () => {
     const shi = source({
       start: { year: -221, month: 1 },
-      title: "始皇帝",
-      preferredAppellation: { kind: "regnal", name: "秦始皇" },
+      title: "秦始皇",
     });
     expect(resolveReignCardLabel(shi, "嬴政")).toBe("嬴政");
     expect(resolveReignCardMeta(shi, "嬴政")).toEqual({
@@ -1210,10 +1178,9 @@ describe("pre-Qin card layout", () => {
   it("uses 赵政 for the pre-imperial Qin king (赵氏，非王政)", () => {
     const zheng = source({
       start: { year: -246, month: 1 },
-      title: "秦王政",
-      preferredAppellation: { kind: "regnal", name: "赵政" },
+      title: "赵政",
     });
-    const qinClan = buildPreQinClanContext(null, {
+    const qinClan = buildPreQinClanContext({
       ancestralXing: "嬴",
       clanShi: "赵",
     });
@@ -1224,7 +1191,7 @@ describe("pre-Qin card layout", () => {
       resolveReignDetailFacts(
         zheng,
         "嬴政",
-        buildPreQinClanContext(null, {
+        buildPreQinClanContext({
           ancestralXing: "嬴",
           clanShi: "赵",
         }),
@@ -1244,7 +1211,7 @@ describe("pre-Qin card layout", () => {
       claimTrack: "xie",
       claimLabel: "携",
     });
-    const zhouClan = buildPreQinClanContext(null, { ancestralXing: "姬" });
+    const zhouClan = buildPreQinClanContext({ ancestralXing: "姬" });
     expect(resolveReignCardLabel(xie, "姬余臣")).toBe("携王");
     expect(resolveReignCardMeta(xie, "姬余臣", zhouClan)).toEqual({
       label: "名",
@@ -1263,7 +1230,7 @@ describe("pre-Qin card layout", () => {
       resolveReignDetailFacts(
         wu,
         "姬发",
-        buildPreQinClanContext(null, { ancestralXing: "姬" }),
+        buildPreQinClanContext({ ancestralXing: "姬" }),
       ),
     ).toEqual([
       { label: "在位", value: "-1046 — -1043" },
@@ -1282,7 +1249,7 @@ describe("pre-Qin card layout", () => {
       resolveReignDetailFacts(
         huan,
         "姜小白",
-        buildPreQinClanContext(null, { ancestralXing: "姜", clanShi: "齐" }),
+        buildPreQinClanContext({ ancestralXing: "姜", clanShi: "齐" }),
       ),
     ).toEqual([
       { label: "在位", value: "-685 — -643" },
@@ -1302,7 +1269,7 @@ describe("pre-Qin card layout", () => {
       resolveReignDetailFacts(
         tai,
         "姜尚",
-        buildPreQinClanContext({ clanShi: "吕" }, { ancestralXing: "姜", clanShi: "齐" }),
+        buildPreQinClanContext({ ancestralXing: "姜", clanShi: "吕" }),
       ),
     ).toEqual([
       { label: "在位", value: "-1046 — -1046" },
@@ -1322,7 +1289,7 @@ describe("pre-Qin card layout", () => {
       resolveReignDetailFacts(
         chuang,
         "芈侣",
-        buildPreQinClanContext(null, { ancestralXing: "芈", clanShi: "熊" }),
+        buildPreQinClanContext({ ancestralXing: "芈", clanShi: "熊" }),
       ),
     ).toEqual([
       { label: "在位", value: "-613 — -591" },
@@ -1335,14 +1302,13 @@ describe("pre-Qin card layout", () => {
     const fuchai = source({
       start: { year: -495, month: 1 },
       end: { year: -473, month: 12 },
-      title: "吴王夫差",
-      preferredAppellation: { kind: "regnal", name: "夫差" },
+      title: "夫差",
     });
     expect(
       resolveReignDetailFacts(
         fuchai,
         "夫差",
-        buildPreQinClanContext(null, { ancestralXing: "姬", clanShi: "姑发" }),
+        buildPreQinClanContext({ ancestralXing: "姬", clanShi: "姑发" }),
       ),
     ).toEqual([
       { label: "在位", value: "-495 — -473" },
@@ -1360,7 +1326,7 @@ describe("pre-Qin card layout", () => {
       resolveReignDetailFacts(
         zhaoxiang,
         "嬴稷",
-        buildPreQinClanContext(null, { ancestralXing: "嬴", clanShi: "赵" }),
+        buildPreQinClanContext({ ancestralXing: "嬴", clanShi: "赵" }),
       ),
     ).toEqual([
       { label: "在位", value: "-307 — -251" },
@@ -1382,7 +1348,7 @@ describe("pre-Qin card layout", () => {
       resolveReignDetailFacts(
         yan,
         "姬襄公",
-        buildPreQinClanContext(null, { ancestralXing: "姬", clanShi: "匽" }),
+        buildPreQinClanContext({ ancestralXing: "姬", clanShi: "匽" }),
       ),
     ).toEqual([
       { label: "在位", value: "-657 — -617" },
@@ -1401,7 +1367,7 @@ describe("pre-Qin card layout", () => {
       resolveReignDetailFacts(
         wei,
         "考伯",
-        buildPreQinClanContext(null, { ancestralXing: "姬", clanShi: "卫" }),
+        buildPreQinClanContext({ ancestralXing: "姬", clanShi: "卫" }),
       ),
     ).toEqual([
       { label: "在位", value: "-855 — -845" },

@@ -45,7 +45,6 @@ function reign({
   title,
   posthumousName,
   templeName,
-  preferred,
   start,
   end,
   precision = "year",
@@ -58,7 +57,6 @@ function reign({
     title,
     posthumousName,
     templeName,
-    preferredAppellation: preferred,
     eraNames,
     start,
     end,
@@ -68,7 +66,7 @@ function reign({
   };
 }
 
-function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, eraNames = [], preferred = null) {
+function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, eraNames = []) {
   return reign({
     id: `reign-${personId}`,
     dynastyId,
@@ -76,7 +74,6 @@ function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear,
     title,
     posthumousName: posthumous,
     templeName: temple,
-    preferred,
     start: ym(startYear),
     end: ym(endYear, 12),
     eraNames,
@@ -94,7 +91,6 @@ function dynastyReignMonth(
   endYear,
   endMonth,
   eraNames = [],
-  preferred = null,
 ) {
   return reign({
     id: `reign-${personId}`,
@@ -103,7 +99,6 @@ function dynastyReignMonth(
     title,
     posthumousName: posthumous,
     templeName: temple,
-    preferred,
     start: ym(startYear, startMonth),
     end: ym(endYear, endMonth),
     eraNames,

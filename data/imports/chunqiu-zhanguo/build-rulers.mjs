@@ -980,16 +980,13 @@ function enrichRulers(dynastyId, rulers) {
           clanHintForPerson(dynastyId, personId, resolvedName),
         )
       : null;
-    const preferredAppellation =
-      override ??
-      (derivedRegnal ? { kind: "regnal", name: derivedRegnal } : undefined);
+    const title = override?.name ?? derivedRegnal ?? r.title;
     return {
       dynastyId,
       personId,
-      title: r.title,
+      title,
       personName: resolvedName,
       posthumousName,
-      ...(preferredAppellation ? { preferredAppellation } : {}),
       startYear: r.start,
       endYear: r.end,
       startDateConfidence: r.startDateConfidence ?? undefined,

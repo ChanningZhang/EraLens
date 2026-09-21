@@ -1,6 +1,6 @@
 /**
  * Pre-imperial 姓/氏 sourced from wiki/史记 for import pipelines.
- * Runtime reads persons.ancestral_xing / clan_shi and dynasties.* — not this file.
+ * Runtime reads persons.ancestral_xing / clan_shi — not this file.
  *
  * Each entry must cite a source URL or 史记卷次.
  *

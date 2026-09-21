@@ -98,7 +98,6 @@ const beiliaoReigns = [
   dr("beiliao", "yelu-chun", "北辽皇帝", null, null, 1122, 1123),
 ];
 
-const liaoKing = { kind: "regnal", name: "辽王" };
 const dongliaoReigns = [
   dynastyReign(
     "dongliao",
@@ -109,15 +108,11 @@ const dongliaoReigns = [
     1213,
     1220,
     eras("reign-yelu-liuge-dongliao", [{ name: "天统", sy: 1213, ey: 1216 }]),
-    liaoKing,
   ),
-  dynastyReign("dongliao", "yao-li-shi", "王后", null, null, 1220, 1226, [], {
-    kind: "regnal",
-    name: "王后",
-  }),
-  dynastyReign("dongliao", "yelu-xieshe", "辽王", null, null, 1226, 1238, [], liaoKing),
-  dynastyReign("dongliao", "yelu-shouguonu", "辽王", null, null, 1238, 1259, [], liaoKing),
-  dynastyReign("dongliao", "yelu-gunai", "辽王", null, null, 1259, 1269, [], liaoKing),
+  dynastyReign("dongliao", "yao-li-shi", "王后", null, null, 1220, 1226),
+  dynastyReign("dongliao", "yelu-xieshe", "辽王", null, null, 1226, 1238),
+  dynastyReign("dongliao", "yelu-shouguonu", "辽王", null, null, 1238, 1259),
+  dynastyReign("dongliao", "yelu-gunai", "辽王", null, null, 1259, 1269),
 ];
 
 const reignGroups = [xiliaoReigns, beiliaoReigns, dongliaoReigns];
@@ -267,7 +262,7 @@ writeImportPackage(__dirname, {
       "西辽灭亡事件补充关联 mongol-empire 与 temujin（见 mongol-pre-yuan）。",
       "北辽建立事件补充关联 liao 王朝（见 song-liao-jin）。",
       "在位年取维基百科常见年表；耶律大石、耶律留哥、屈出律等有月日锚点的见 documentedReignDates。",
-      "东辽无庙号谥号。元史：留哥自立为辽王、拒称帝，蒙古仍封辽王；子孙袭爵。姚里氏为妃/王后，权领其众七年，不袭王爵。称号用 preferred_appellation=辽王/王后，避免留哥年号天统盖过王号。",
+      "东辽无庙号谥号。元史：留哥自立为辽王、拒称帝，蒙古仍封辽王；子孙袭爵。姚里氏为妃/王后，权领其众七年，不袭王爵。称号写在 reigns.title（辽王/王后），避免留哥年号天统盖过王号。",
       "文献年号多作元统；辽宁出土官印署天统三年，从出土作天统，起迄取维基天统条 1213–1216。",
     ],
   },

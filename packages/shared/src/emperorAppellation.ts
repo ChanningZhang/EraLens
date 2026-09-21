@@ -35,8 +35,6 @@ const PLACEHOLDER_PERSON_NAME = /^(缺失|史料缺|不明)$/;
 export type PersonDisplayContext = {
   personAncestralXing?: string | null;
   personClanShi?: string | null;
-  dynastyAncestralXing?: string | null;
-  dynastyClanShi?: string | null;
   posthumousNames?: string[];
   templeNames?: string[];
 };
@@ -51,16 +49,10 @@ export function buildPreQinClanContext(
     posthumousNames?: string[];
     templeNames?: string[];
   } | null,
-  dynasty?: {
-    ancestralXing?: string | null;
-    clanShi?: string | null;
-  } | null,
 ): PersonDisplayContext {
   return {
     personAncestralXing: person?.ancestralXing,
     personClanShi: person?.clanShi,
-    dynastyAncestralXing: dynasty?.ancestralXing,
-    dynastyClanShi: dynasty?.clanShi,
     posthumousNames: person?.posthumousNames,
     templeNames: person?.templeNames,
   };
@@ -68,7 +60,7 @@ export function buildPreQinClanContext(
 
 type ReignAppellationFields = Pick<
   Reign,
-  "dynastyId" | "start" | "title" | "eraNames" | "preferredAppellation"
+  "dynastyId" | "start" | "title" | "eraNames"
 >;
 
 type ReignLabelFields = ReignAppellationFields & Pick<Reign, "title">;
@@ -106,10 +98,8 @@ function resolveTempleAppellation(
  * - Tang through Yuan: temple names became the common shorthand.
  * - Ming and Qing: era names became the common shorthand.
  *
- * `preferredAppellation` is only honored for regnal overrides (先秦称号、
- * 秦襄公等). Era/temple/posthumous display follows the year thresholds below
- * so changing `TEMPLE_ERA_START_YEAR` applies to every dynasty without
- * re-importing baked SQL defaults.
+ * Era/temple/posthumous display follows the year thresholds below so changing
+ * `TEMPLE_ERA_START_YEAR` applies to every dynasty without re-importing data.
  */
 export function resolveEmperorAppellation(
   reign: ReignAppellationFields,
@@ -117,9 +107,6 @@ export function resolveEmperorAppellation(
 ): EmperorAppellation | null {
   if (isRocTaiwanLeaderReign(reign)) {
     return { kind: "regnal", name: ROC_TAIWAN_LEADER_OFFICE_LABEL };
-  }
-  if (reign.preferredAppellation?.kind === "regnal") {
-    return reign.preferredAppellation;
   }
 
   const eraName = firstEraName(reign);
@@ -162,7 +149,7 @@ export function stripAncestralXing(
   name: string,
   clan?: PersonDisplayContext | null,
 ): string {
-  const xing = clan?.personAncestralXing ?? clan?.dynastyAncestralXing;
+  const xing = clan?.personAncestralXing;
   if (!xing || !name.startsWith(xing) || name.length <= xing.length) {
     return name;
   }
@@ -178,9 +165,8 @@ export function resolvePreQinXingShi(
   _personName?: string | null,
   clan?: PersonDisplayContext | null,
 ): { xing?: string; shi?: string } {
-  const xing =
-    clan?.personAncestralXing ?? clan?.dynastyAncestralXing ?? undefined;
-  const shi = clan?.personClanShi ?? clan?.dynastyClanShi ?? undefined;
+  const xing = clan?.personAncestralXing ?? undefined;
+  const shi = clan?.personClanShi ?? undefined;
   if (!xing && !shi) return {};
   return { ...(xing ? { xing } : {}), ...(shi ? { shi } : {}) };
 }
@@ -204,30 +190,13 @@ export function resolvePreQinNameFacts(
   return facts;
 }
 
-/**
- * Pre-Qin card primary: stored 谥号, then regnal preferred, else title.
- * `{国}王{私名}` bodies are baked into preferred at import
- * (`preQinRegnalCardName`); runtime does not parse title.
- */
-function resolvePreQinCardAppellation(
-  personContext?: PersonDisplayContext | null,
-): string | null {
-  const posthumous = firstAppellation(personContext?.posthumousNames);
-  if (posthumous) return posthumous;
-  return null;
-}
-
+/** Pre-Qin card primary: stored 谥号, else regnal title baked at import. */
 function resolvePreQinCardPrimary(
   reign: ReignLabelFields,
   personContext?: PersonDisplayContext | null,
 ): string | null {
-  const posthumous = resolvePreQinCardAppellation(personContext);
+  const posthumous = firstAppellation(personContext?.posthumousNames);
   if (posthumous) return posthumous;
-  const preferred =
-    reign.preferredAppellation?.kind === "regnal"
-      ? reign.preferredAppellation.name
-      : null;
-  if (preferred) return preferred;
   return reign.title || null;
 }
 
@@ -237,7 +206,7 @@ function resolvePreQinGivenName(
   personContext?: PersonDisplayContext | null,
 ): string | null {
   if (!personName || isPlaceholderPersonName(personName)) return null;
-  if (personName === reign.title || personName === reign.preferredAppellation?.name) {
+  if (personName === reign.title) {
     return null;
   }
   const given = stripAncestralXing(personName, personContext);
@@ -251,12 +220,7 @@ function personalNamePrimary(
   reign: ReignLabelFields,
   personName?: string | null,
 ): string {
-  const appellationName = reign.preferredAppellation?.name;
-  if (
-    !personName ||
-    personName === reign.title ||
-    personName === appellationName
-  ) {
+  if (!personName || personName === reign.title) {
     return personName || reign.title;
   }
   return personName;

@@ -56,7 +56,6 @@ function reign({
   title,
   posthumousName,
   templeName,
-  preferred,
   start,
   end,
   precision = "year",
@@ -70,7 +69,6 @@ function reign({
     title,
     posthumousName,
     templeName,
-    preferredAppellation: preferred,
     start,
     end,
     startAbs: start.abs,
@@ -81,7 +79,7 @@ function reign({
   };
 }
 
-function dynastyReign(dynastyId, personId, title, posthumous, startYear, endYear, preferred = null) {
+function dynastyReign(dynastyId, personId, title, posthumous, startYear, endYear) {
   return reign({
     id: `reign-${personId}-${dynastyId}`,
     dynastyId,
@@ -89,7 +87,6 @@ function dynastyReign(dynastyId, personId, title, posthumous, startYear, endYear
     title,
     posthumousName: posthumous,
     templeName: null,
-    preferred,
     start: ym(startYear),
     end: ym(endYear, 12),
   });
@@ -528,7 +525,6 @@ const reigns = alignReignSeamConfidences(
             title: r.title,
             posthumousName: r.posthumousName,
             templeName: null,
-            preferred: r.preferredAppellation ?? null,
             start: ym(r.startYear),
             end: ym(r.endYear, 12),
             startDateConfidence: r.startDateConfidence ?? null,
@@ -740,19 +736,17 @@ function dynastySql(d) {
     d.orthodoxFromAbs ??
     (d.id === "qin" ? absMonth(-221) : ORTHODOX_FROM_START.has(d.id) ? d.start.abs : null);
   return `INSERT INTO dynasties (
-  id, name, ancestral_xing, clan_shi, alt_names, scope, region,
+  id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
 ) VALUES (
-  ${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlStr(d.ancestralXing ?? null)}, ${sqlStr(d.clanShi ?? null)}, ${sqlArray(d.altNames)}, ${sqlStr(d.scope)}, ${sqlStr(d.region)},
+  ${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlArray(d.altNames)}, ${sqlStr(d.scope)}, ${sqlStr(d.region)},
   ${d.start.year}, ${d.start.month}, ${d.end.year}, ${d.end.month},
   ${d.start.abs}, ${d.end.abs}, ${sqlStr(d.precision)}, ${sqlStr(LEGACY_COLOR_TOKEN)}, ${orthodoxFromAbs ?? "NULL"}, NULL,
   ${sqlStr(d.note)}
 )
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
-  ancestral_xing = EXCLUDED.ancestral_xing,
-  clan_shi = EXCLUDED.clan_shi,
   alt_names = EXCLUDED.alt_names,
   start_year = EXCLUDED.start_year,
   start_month = EXCLUDED.start_month,
@@ -768,12 +762,12 @@ ON CONFLICT (id) DO UPDATE SET
 function reignSql(r) {
   return `INSERT INTO reigns (
   id, dynasty_id, person_id, title,
-  era_names, preferred_appellation,
+  era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
   start_abs, end_abs, precision, start_date_confidence, end_date_confidence
 ) VALUES (
   ${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(r.title)},
-  ${sqlStr(formatAppellationCsv(r.eraNames))}, ${sqlJson(r.preferredAppellation)},
+  ${sqlStr(formatAppellationCsv(r.eraNames))},
   ${r.start.year}, ${r.start.month}, ${r.start.day ?? "NULL"}, ${r.end.year}, ${r.end.month}, ${r.end.day ?? "NULL"},
   ${r.startAbs}, ${r.endAbs}, ${sqlStr(r.precision)}, ${sqlStr(r.startDateConfidence ?? null)}, ${sqlStr(r.endDateConfidence ?? null)}
 )
@@ -782,7 +776,6 @@ ON CONFLICT (id) DO UPDATE SET
   person_id = EXCLUDED.person_id,
   title = EXCLUDED.title,
   era_names = EXCLUDED.era_names,
-  preferred_appellation = EXCLUDED.preferred_appellation,
   start_year = EXCLUDED.start_year,
   start_month = EXCLUDED.start_month,
   start_day = EXCLUDED.start_day,

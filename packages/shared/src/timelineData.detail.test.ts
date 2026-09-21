@@ -15,7 +15,6 @@ function reign(overrides: Partial<Reign> & { templeName?: string }): Reign {
     endAbs: 1,
     precision: "year",
     eraNames: ["建隆"],
-    preferredAppellation: { kind: "temple", name: "宋太祖" },
     ...reignOverrides,
   };
 }
@@ -87,7 +86,6 @@ describe("buildEntityDetail reign", () => {
           start: { year: 1645, month: 1 },
           end: { year: 1653, month: 12 },
           eraNames: [],
-          preferredAppellation: { kind: "regnal", name: "鲁监国" },
           claimTrack: "lu-jian",
           claimLabel: "绍兴监国",
           claimRole: "rival",
@@ -143,7 +141,6 @@ describe("buildEntityDetail reign", () => {
           end: { year: -464, month: 12 },
           startAbs: -5932,
           endAbs: -5548,
-          preferredAppellation: { kind: "regnal", name: "勾践" },
         }),
       ],
       persons: [
@@ -476,8 +473,6 @@ describe("buildEntityDetail person", () => {
           endAbs: -50,
           precision: "year" as const,
           colorToken: "rose" as const,
-          ancestralXing: "姬",
-          clanShi: "曹",
         },
       ],
       reigns: [
@@ -498,6 +493,8 @@ describe("buildEntityDetail person", () => {
         {
           id: "cao-gongbo",
           name: "姬侯",
+          ancestralXing: "姬",
+          clanShi: "曹",
           roles: ["君主"],
           posthumousNames: ["宫伯"],
           templeNames: [],
@@ -552,7 +549,6 @@ describe("buildEntityDetail person", () => {
           startAbs: 10,
           endAbs: 20,
           eraNames: ["正统"],
-          preferredAppellation: { kind: "era", name: "正统" },
         }),
         reign({
           id: "reign-zhu-qizhen-tianshun",
@@ -564,7 +560,6 @@ describe("buildEntityDetail person", () => {
           startAbs: 30,
           endAbs: 40,
           eraNames: ["天顺"],
-          preferredAppellation: { kind: "era", name: "天顺" },
         }),
       ],
       persons: [

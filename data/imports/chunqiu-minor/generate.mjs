@@ -118,10 +118,10 @@ const STATE_NAME = {
 };
 
 const reigns = reignGroups.flat().map((r) => {
-  if (r.posthumousName || r.preferredAppellation) return r;
+  if (r.posthumousName) return r;
   const body = preQinRegnalCardName(r.title, STATE_NAME[r.dynastyId]);
   if (!body || body === r.title || body.length < 2) return r;
-  return { ...r, preferredAppellation: { kind: "regnal", name: body } };
+  return { ...r, title: body };
 });
 
 const RULER_META = {

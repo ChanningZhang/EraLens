@@ -123,7 +123,6 @@ async function main() {
           dynastyId: reign.dynastyId,
           personId: reign.personId,
           title: reign.title,
-          preferredAppellation: reign.preferredAppellation,
           eraNames: formatAppellationCsv(reign.eraNames),
           startYear: reign.start.year,
           startMonth: reign.start.month,

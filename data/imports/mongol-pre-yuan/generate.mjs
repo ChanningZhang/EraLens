@@ -9,7 +9,7 @@ import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
 import { reignSql as formatReignSql } from "../lib/reignSql.mjs";
 import { ymDay } from "../lib/reignDateHelpers.mjs";
-import { dynastySql, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
+import { dynastySql, formatAppellationCsv, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -42,17 +42,17 @@ function person(id, name, roles, bio, wikiTitle, birth = null, death = null) {
   return { id, name, roles, bio, links: wiki(wikiTitle), birth, death };
 }
 
-function reign({ id, dynastyId, personId, title, posthumousName, templeName, preferred, start, end, precision = "year", eraNames = [] }) {
-  return { id, dynastyId, personId, title, posthumousName, templeName, preferredAppellation: preferred, eraNames, start, end, startAbs: start.abs, endAbs: end.abs, precision };
+function reign({ id, dynastyId, personId, title, posthumousName, templeName, start, end, precision = "year", eraNames = [] }) {
+  return { id, dynastyId, personId, title, posthumousName, templeName, eraNames, start, end, startAbs: start.abs, endAbs: end.abs, precision };
 }
 
-function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear, preferred = null) {
+function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear, endYear) {
   const reignId = `reign-${personId}-${dynastyId}`;
-  return reign({ id: reignId, dynastyId, personId, title, posthumousName: posthumous, templeName: temple, preferred, start: ym(startYear), end: ym(endYear, 12) });
+  return reign({ id: reignId, dynastyId, personId, title, posthumousName: posthumous, templeName: temple, start: ym(startYear), end: ym(endYear, 12) });
 }
 
-function dr(dynastyId, personId, title, posthumous, temple, sy, ey, preferred = null) {
-  return dynastyReign(dynastyId, personId, title, posthumous, temple, sy, ey, preferred);
+function dr(dynastyId, personId, title, posthumous, temple, sy, ey) {
+  return dynastyReign(dynastyId, personId, title, posthumous, temple, sy, ey);
 }
 
 
@@ -249,7 +249,7 @@ relations.push(
 // ── SQL ──────────────────────────────────────────────────────────────────────
 
 function reignSql(r) {
-  return formatReignSql(r, sqlStr, sqlJson);
+  return formatReignSql(r, sqlStr, sqlJson, formatAppellationCsv);
 }
 function eventSql(e) {
   const cols = ["id", "name", "kind", "time_mode", "precision", "date_note", "at_year", "at_month", "at_abs", "start_year", "start_month", "start_abs", "end_year", "end_month", "end_abs", "summary"];
