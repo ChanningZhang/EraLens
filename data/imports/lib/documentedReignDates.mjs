@@ -233,15 +233,23 @@ export const DOCUMENTED_REIGN_DATES = {
   "reign-li-dewang-xixia": { start: [1223, 12, 17], end: [1226, 9, 17] },
   "reign-li-xian-xixia": { start: [1226, 9, 17], end: [1227, 7, 2] },
 
-  // ── 民国元首（中华民国国家元首列表，国务院摄行不建 reign）────────────────
+  // ── 民国元首（中华民国国家元首列表；国务院摄行建 informal reign）──────────
   "reign-sun-yat-sen-roc": { start: [1912, 1, 1], end: [1912, 3, 10] },
   "reign-yuan-shikai-roc": { start: [1912, 3, 10], end: [1916, 6, 6] },
   "reign-li-yuanhong-roc": { start: [1916, 6, 7], end: [1917, 7, 6] },
   "reign-feng-guozhang-roc": { start: [1917, 7, 6], end: [1918, 10, 10] },
   "reign-xu-shichang-roc": { start: [1918, 10, 10], end: [1922, 6, 2] },
+  "reign-zhou-ziqi-roc": { start: [1922, 6, 2], end: [1922, 6, 11] },
   "reign-li-yuanhong-roc-2": { start: [1922, 6, 11], end: [1923, 6, 13] },
+  "reign-gao-lingwei-roc": { start: [1923, 6, 14], end: [1923, 10, 10] },
   "reign-cao-kun-roc": { start: [1923, 10, 10], end: [1924, 11, 2] },
+  "reign-huang-fu-roc": { start: [1924, 11, 2], end: [1924, 11, 24] },
   "reign-duan-qirui-roc": { start: [1924, 11, 24], end: [1926, 4, 20] },
+  "reign-hu-weide-roc": { start: [1926, 4, 20], end: [1926, 5, 13] },
+  "reign-yan-huiqing-roc": { start: [1926, 5, 13], end: [1926, 6, 23] },
+  "reign-du-xigui-roc": { start: [1926, 6, 23], end: [1926, 10, 1] },
+  "reign-gu-weijun-roc": { start: [1926, 10, 1], end: [1927, 6, 16] },
+  "reign-hu-weide-roc-2": { start: [1927, 6, 16], end: [1927, 6, 18] },
   "reign-zhang-zuolin-roc": { start: [1927, 6, 18], end: [1928, 6, 3] },
   // 谭延闿维基自 1928-02-07，与张作霖并立至 6 月；主线自张作霖离京后接续。
   "reign-tan-yankai-roc": { start: [1928, 6, 4], end: [1928, 10, 10] },

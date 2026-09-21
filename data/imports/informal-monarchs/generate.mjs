@@ -173,6 +173,15 @@ const reignGroups = [];
 const existingInformalReigns = [
   // 2. 西汉末期 - 孺子婴
   "reign-ruzi-ying",
+  // 9. 中华民国 - 国务院摄行
+  "reign-zhou-ziqi-roc",
+  "reign-gao-lingwei-roc",
+  "reign-huang-fu-roc",
+  "reign-hu-weide-roc",
+  "reign-yan-huiqing-roc",
+  "reign-du-xigui-roc",
+  "reign-gu-weijun-roc",
+  "reign-hu-weide-roc-2",
   // 9. 中华民国 - 段祺瑞
   "reign-duan-qirui-roc",
   // 9. 中华民国 - 张作霖
