@@ -1,5 +1,5 @@
 import { isNonOrthodoxLine } from "./claimTracks";
-import { orderDynastiesForLanes } from "./dynastyClusterGroups";
+import { orderDynastiesForLanes, type LaneCapital } from "./dynastyClusterGroups";
 import { collapseDynastyLaneGroups } from "./dynastyLaneGroups";
 import {
   isOrthodoxAt,
@@ -115,6 +115,7 @@ export function buildStableLaneColorMap(
   dynasties: readonly Dynasty[],
   dynastyGroups: readonly DynastyGroup[] = [],
   dynastyLaneGroups: readonly DynastyLaneGroup[] = [],
+  capitals: readonly LaneCapital[] = [],
 ): Map<string, ColorToken> {
   const catalogById = new Map(dynasties.map((dynasty) => [dynasty.id, dynasty]));
   const collapsed = collapseDynastyLaneGroups(
@@ -122,7 +123,7 @@ export function buildStableLaneColorMap(
     catalogById,
     dynastyLaneGroups,
   );
-  const ordered = orderDynastiesForLanes(collapsed, dynastyGroups);
+  const ordered = orderDynastiesForLanes(collapsed, dynastyGroups, capitals);
   const map = assignLaneColorTokens(ordered);
 
   for (const group of dynastyLaneGroups) {

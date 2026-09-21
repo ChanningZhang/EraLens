@@ -1,4 +1,4 @@
-import type { Dynasty, DynastyGroup } from "./schema";
+import type { Dynasty, DynastyCapital, DynastyGroup } from "./schema";
 import {
   TIMELINE_RAIL_CHIP_HEIGHT_PX,
   TIMELINE_RAIL_INSET_PX,
@@ -25,13 +25,90 @@ type LaneUnit = {
   dynasties: Dynasty[];
 };
 
+/** Capital fields the lane rule needs; a subset of `DynastyCapital`. */
+export type LaneCapital = Pick<DynastyCapital, "dynastyId" | "modernName" | "role">;
+
+/** Map each dynasty to the set of cities where it held a primary capital. */
+function primaryCapitalCitiesByDynastyId(
+  capitals: readonly LaneCapital[],
+): Map<string, Set<string>> {
+  const byDynasty = new Map<string, Set<string>>();
+  for (const capital of capitals) {
+    if (capital.role !== "primary") continue;
+    const city = capital.modernName.trim();
+    if (!city) continue;
+    const cities = byDynasty.get(capital.dynastyId) ?? new Set<string>();
+    cities.add(city);
+    byDynasty.set(capital.dynastyId, cities);
+  }
+  return byDynasty;
+}
+
+/**
+ * Lane-ordering rule: a later dynasty that takes over an earlier dynasty's
+ * capital is pulled up to sit directly below it (before other, unrelated rows).
+ *
+ * "Takes over" is bounded to a genuine hand-off — the successor must begin on
+ * or before the anchor's own end (overlap / direct succession), so a dynasty
+ * that reuses the same city centuries later (e.g. 秦 vs 大顺 at 西安) is never
+ * yanked across the timeline. Chaining is transitive, so a run such as
+ * 隋 → 唐 at 长安 stacks together. Same-city is keyed on the primary capital's
+ * modern city, so 大兴/长安 (both 西安) count as one capital.
+ */
+function orderBySameCapitalSuccession(
+  units: readonly LaneUnit[],
+  capitals: readonly LaneCapital[],
+): LaneUnit[] {
+  const citiesByDynasty = primaryCapitalCitiesByDynastyId(capitals);
+  const unitCities = (unit: LaneUnit): Set<string> => {
+    const cities = new Set<string>();
+    for (const dynasty of unit.dynasties) {
+      for (const city of citiesByDynasty.get(dynasty.id) ?? []) cities.add(city);
+    }
+    return cities;
+  };
+
+  const remaining = [...units];
+  const result: LaneUnit[] = [];
+
+  while (remaining.length > 0) {
+    let current = remaining.shift()!;
+    result.push(current);
+
+    // Pull up same-capital successors that begin during / at this row's hand-off.
+    for (;;) {
+      const anchorCities = unitCities(current);
+      if (anchorCities.size === 0) break;
+
+      const nextIndex = remaining.findIndex((candidate) => {
+        if (candidate.sortKey.startAbs < current.sortKey.startAbs) return false;
+        if (candidate.sortKey.startAbs > current.sortKey.endAbs) return false;
+        for (const city of unitCities(candidate)) {
+          if (anchorCities.has(city)) return true;
+        }
+        return false;
+      });
+      if (nextIndex === -1) break;
+
+      current = remaining.splice(nextIndex, 1)[0]!;
+      result.push(current);
+    }
+  }
+
+  return result;
+}
+
 /**
  * Cluster members stay on separate rows but are placed contiguously.
  * Unit sort uses the group's own span, not member min/max.
+ *
+ * When `capitals` are supplied, same-capital successor dynasties are pulled up
+ * to sit directly below their predecessor (see `orderBySameCapitalSuccession`).
  */
 export function orderDynastiesForLanes(
   dynasties: readonly Dynasty[],
   dynastyGroups: readonly DynastyGroup[],
+  capitals: readonly LaneCapital[] = [],
 ): Dynasty[] {
   const groupById = new Map(dynastyGroups.map((group) => [group.id, group]));
   const membersByGroupId = new Map<string, Dynasty[]>();
@@ -72,9 +149,10 @@ export function orderDynastiesForLanes(
     });
   }
 
-  return units
-    .sort((a, b) => compareTimedOrder(a.sortKey, b.sortKey))
-    .flatMap((unit) => unit.dynasties);
+  const sorted = units.sort((a, b) => compareTimedOrder(a.sortKey, b.sortKey));
+  const ordered =
+    capitals.length > 0 ? orderBySameCapitalSuccession(sorted, capitals) : sorted;
+  return ordered.flatMap((unit) => unit.dynasties);
 }
 
 export type PlacedLaneMetrics = {

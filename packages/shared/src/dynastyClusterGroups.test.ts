@@ -30,6 +30,14 @@ function dynasty(
   };
 }
 
+function capital(
+  dynastyId: string,
+  modernName: string,
+  role: "primary" | "secondary" | "temporary" = "primary",
+) {
+  return { dynastyId, modernName, role };
+}
+
 function group(
   id: string,
   startAbs: number,
@@ -87,6 +95,99 @@ describe("dynastyClusterGroups", () => {
       "xiliang",
       "chen-nan",
       "sui",
+    ]);
+  });
+
+  it("pulls a same-capital successor up directly below its predecessor", () => {
+    const dynasties = [
+      dynasty("sui", absMonth(581), absMonth(618, 12)),
+      dynasty("xliang", absMonth(590), absMonth(617, 12)),
+      dynasty("tang", absMonth(618), absMonth(907, 12)),
+    ];
+    const capitals = [
+      capital("sui", "陕西省西安市"),
+      capital("xliang", "湖北省荆州市"),
+      capital("tang", "陕西省西安市"),
+    ];
+
+    // Without capitals: pure time order.
+    expect(orderDynastiesForLanes(dynasties, []).map((d) => d.id)).toEqual([
+      "sui",
+      "xliang",
+      "tang",
+    ]);
+
+    // With capitals: 唐 (同都长安/西安) is pulled up directly below 隋,
+    // ahead of the intervening 西梁.
+    expect(orderDynastiesForLanes(dynasties, [], capitals).map((d) => d.id)).toEqual([
+      "sui",
+      "tang",
+      "xliang",
+    ]);
+  });
+
+  it("does not pull a same-city dynasty that reuses the capital much later", () => {
+    // 秦 and 西汉 both sat at 西安, but 西汉 begins after 秦 has ended
+    // (the 楚汉 interregnum), so it stays in plain time order.
+    const dynasties = [
+      dynasty("qin", absMonth(-221), absMonth(-206, 12)),
+      dynasty("chu", absMonth(-209), absMonth(-202, 12)),
+      dynasty("han-west", absMonth(-202), absMonth(8, 12)),
+    ];
+    const capitals = [
+      capital("qin", "陕西省西安市"),
+      capital("chu", "江苏省徐州市"),
+      capital("han-west", "陕西省西安市"),
+    ];
+
+    expect(orderDynastiesForLanes(dynasties, [], capitals).map((d) => d.id)).toEqual([
+      "qin",
+      "chu",
+      "han-west",
+    ]);
+  });
+
+  it("chains same-capital successors transitively, skipping other rows", () => {
+    const dynasties = [
+      dynasty("sui", absMonth(581), absMonth(618, 12)),
+      dynasty("tang", absMonth(618), absMonth(907, 12)),
+      dynasty("luoyang-row", absMonth(700), absMonth(760, 12)),
+      dynasty("changan-late", absMonth(900), absMonth(950, 12)),
+    ];
+    const capitals = [
+      capital("sui", "陕西省西安市"),
+      capital("tang", "陕西省西安市"),
+      capital("luoyang-row", "河南省洛阳市"),
+      capital("changan-late", "陕西省西安市"),
+    ];
+
+    // 隋 → 唐 → changan-late all stack together (all 西安, each overlaps the
+    // previous), and the unrelated 洛阳 row drops below the chain.
+    expect(orderDynastiesForLanes(dynasties, [], capitals).map((d) => d.id)).toEqual([
+      "sui",
+      "tang",
+      "changan-late",
+      "luoyang-row",
+    ]);
+  });
+
+  it("ignores non-primary capitals when matching (只按正都)", () => {
+    const dynasties = [
+      dynasty("a", absMonth(100), absMonth(200, 12)),
+      dynasty("b", absMonth(150), absMonth(180, 12)),
+      dynasty("c", absMonth(190), absMonth(300, 12)),
+    ];
+    // c only shares the city as a 陪都, not its 正都 → no pull-up.
+    const capitals = [
+      capital("a", "城甲"),
+      capital("b", "城乙"),
+      capital("c", "城甲", "secondary"),
+    ];
+
+    expect(orderDynastiesForLanes(dynasties, [], capitals).map((d) => d.id)).toEqual([
+      "a",
+      "b",
+      "c",
     ]);
   });
 

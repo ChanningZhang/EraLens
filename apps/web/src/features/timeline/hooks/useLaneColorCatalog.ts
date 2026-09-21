@@ -1,9 +1,15 @@
-import { buildStableLaneColorMap, type ColorToken } from "@eralens/shared";
+import {
+  buildStableLaneColorMap,
+  type ColorToken,
+  type DynastyCapital,
+} from "@eralens/shared";
 import { useEffect, useMemo } from "react";
 import { laneColorStore } from "../state/laneColorStore";
 import { useTimelineCatalog } from "./useTimelineCatalog";
 
-export function useLaneColorCatalog(): ReadonlyMap<string, ColorToken> {
+export function useLaneColorCatalog(
+  capitals?: readonly DynastyCapital[],
+): ReadonlyMap<string, ColorToken> {
   const catalog = useTimelineCatalog();
 
   const colorMap = useMemo(() => {
@@ -12,8 +18,9 @@ export function useLaneColorCatalog(): ReadonlyMap<string, ColorToken> {
       catalog.dynasties,
       catalog.dynastyGroups,
       catalog.dynastyLaneGroups,
+      capitals ?? [],
     );
-  }, [catalog]);
+  }, [catalog, capitals]);
 
   useEffect(() => {
     if (colorMap.size > 0) {
