@@ -71,6 +71,12 @@ export function TimelineStage() {
     return map;
   }, [data]);
 
+  const laneColorMap = useLaneColorCatalog();
+  const timelineCatalog = useTimelineCatalog();
+  const boundsQuery = useDataBounds();
+  const labelAnchorAbs = laneLabelAnchorAbs(viewport);
+  const capitalsQuery = useDynastyCapitals(boundsQuery.data);
+
   const placed = useMemo(() => {
     if (!data) return [];
     const buffered = expandWindow(viewport.startAbs, viewport.endAbs, 120);
@@ -88,15 +94,13 @@ export function TimelineStage() {
       data?.dynastyLaneGroups ?? [],
     );
     return assignLanes(
-      orderDynastiesForLanes(collapsed, data?.dynastyGroups ?? []),
+      orderDynastiesForLanes(
+        collapsed,
+        data?.dynastyGroups ?? [],
+        capitalsQuery.data ?? [],
+      ),
     );
-  }, [data, viewport.startAbs, viewport.endAbs, dynastiesById]);
-
-  const laneColorMap = useLaneColorCatalog();
-  const timelineCatalog = useTimelineCatalog();
-  const boundsQuery = useDataBounds();
-  const labelAnchorAbs = laneLabelAnchorAbs(viewport);
-  const capitalsQuery = useDynastyCapitals(boundsQuery.data);
+  }, [data, viewport.startAbs, viewport.endAbs, dynastiesById, capitalsQuery.data]);
   const activeCapitals = useMemo(
     () => capitalsActiveAtAbs(capitalsQuery.data ?? [], labelAnchorAbs),
     [capitalsQuery.data, labelAnchorAbs],

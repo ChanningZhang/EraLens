@@ -1,6 +1,5 @@
-import type { Dynasty, DynastyGroup } from "./schema";
+import type { Dynasty, DynastyCapital, DynastyGroup } from "./schema";
 import {
-  TIMELINE_RAIL_CHIP_HEIGHT_PX,
   TIMELINE_RAIL_INSET_PX,
   TIMELINE_RAIL_LABEL_WIDTH_PX,
 } from "./dynastyLaneGroups";
@@ -20,23 +19,129 @@ export function compareTimedOrder(a: TimedSortKey, b: TimedSortKey): number {
   );
 }
 
+/**
+ * How far after a dynasty ends we still treat a same-capital regime as its
+ * "near successor" for lane packing (months). Keeps Tang→Five Dynasties style
+ * handoffs sticky without yanking same-city regimes across centuries.
+ */
+export const SAME_CAPITAL_SUCCESSOR_WINDOW_MONTHS = 12 * 5;
+
 type LaneUnit = {
   sortKey: TimedSortKey;
   dynasties: Dynasty[];
+  /** Place identity of the unit's lead dynasty (modernName of primary capital). */
+  capitalKey: string | null;
 };
+
+const CAPITAL_ROLE_RANK: Record<string, number> = {
+  primary: 0,
+  secondary: 1,
+  temporary: 2,
+};
+
+/** Stable place id for lane affinity: prefer primary capital covering `atAbs`. */
+export function dynastyCapitalPlaceKey(
+  dynastyId: string,
+  atAbs: number,
+  capitals: readonly DynastyCapital[],
+): string | null {
+  const owned = capitals.filter((capital) => capital.dynastyId === dynastyId);
+  if (owned.length === 0) return null;
+
+  const covering = owned.filter(
+    (capital) => capital.startAbs <= atAbs && capital.endAbs >= atAbs,
+  );
+  const pool = covering.length > 0 ? covering : owned;
+  const best = [...pool].sort(
+    (a, b) =>
+      (CAPITAL_ROLE_RANK[a.role] ?? 9) - (CAPITAL_ROLE_RANK[b.role] ?? 9) ||
+      a.startAbs - b.startAbs ||
+      a.id.localeCompare(b.id),
+  )[0];
+  const key = best?.modernName?.trim();
+  return key ? key : null;
+}
+
+function isNearSuccessor(prev: TimedSortKey, next: TimedSortKey): boolean {
+  return (
+    next.startAbs >= prev.startAbs &&
+    next.startAbs <= prev.endAbs + SAME_CAPITAL_SUCCESSOR_WINDOW_MONTHS
+  );
+}
+
+/**
+ * Timed order, but after each pick prefer a near successor that shares the
+ * previous unit's capital place so same-city continuations sit just below.
+ */
+export function orderByTimedWithCapitalAffinity<T>(
+  items: readonly T[],
+  timedKey: (item: T) => TimedSortKey,
+  capitalKey: (item: T) => string | null,
+): T[] {
+  const remaining = [...items].sort((a, b) =>
+    compareTimedOrder(timedKey(a), timedKey(b)),
+  );
+  const ordered: T[] = [];
+
+  while (remaining.length > 0) {
+    if (ordered.length === 0) {
+      ordered.push(remaining.shift()!);
+      continue;
+    }
+
+    const prev = timedKey(ordered[ordered.length - 1]!);
+    const prevCapital = capitalKey(ordered[ordered.length - 1]!);
+    let bestIndex = 0;
+
+    if (prevCapital) {
+      for (let i = 0; i < remaining.length; i++) {
+        const candidate = remaining[i]!;
+        const candidateKey = timedKey(candidate);
+        const candidateCapital = capitalKey(candidate);
+        if (candidateCapital !== prevCapital) continue;
+        if (!isNearSuccessor(prev, candidateKey)) continue;
+
+        const best = remaining[bestIndex]!;
+        const bestKey = timedKey(best);
+        const bestCapital = capitalKey(best);
+        const bestIsMatch =
+          bestCapital === prevCapital && isNearSuccessor(prev, bestKey);
+
+        if (!bestIsMatch) {
+          bestIndex = i;
+          continue;
+        }
+        if (compareTimedOrder(candidateKey, bestKey) < 0) {
+          bestIndex = i;
+        }
+      }
+    }
+
+    ordered.push(remaining.splice(bestIndex, 1)[0]!);
+  }
+
+  return ordered;
+}
 
 /**
  * Cluster members stay on separate rows but are placed contiguously.
  * Unit sort uses the group's own span, not member min/max.
+ *
+ * Optional `capitals`: near successors that share a capital place with the
+ * dynasty above are pulled forward so they sit just below it.
  */
 export function orderDynastiesForLanes(
   dynasties: readonly Dynasty[],
   dynastyGroups: readonly DynastyGroup[],
+  capitals: readonly DynastyCapital[] = [],
 ): Dynasty[] {
   const groupById = new Map(dynastyGroups.map((group) => [group.id, group]));
   const membersByGroupId = new Map<string, Dynasty[]>();
   const consumedIds = new Set<string>();
   const units: LaneUnit[] = [];
+
+  const capitalKeyFor = (dynasty: Dynasty): string | null =>
+    dynastyCapitalPlaceKey(dynasty.id, dynasty.startAbs, capitals);
 
   for (const dynasty of dynasties) {
     const groupId = dynasty.groupId;
@@ -50,13 +155,19 @@ export function orderDynastiesForLanes(
     const group = groupById.get(groupId);
     if (!group || members.length === 0) continue;
     for (const member of members) consumedIds.add(member.id);
+    const orderedMembers = orderByTimedWithCapitalAffinity(
+      members,
+      (dynasty) => dynasty,
+      capitalKeyFor,
+    );
     units.push({
       sortKey: {
         id: group.id,
         startAbs: group.startAbs,
         endAbs: group.endAbs,
       },
-      dynasties: [...members].sort(compareTimedOrder),
+      dynasties: orderedMembers,
+      capitalKey: capitalKeyFor(orderedMembers[0]!),
     });
   }
 
@@ -69,12 +180,15 @@ export function orderDynastiesForLanes(
         endAbs: dynasty.endAbs,
       },
       dynasties: [dynasty],
+      capitalKey: capitalKeyFor(dynasty),
     });
   }
 
-  return units
-    .sort((a, b) => compareTimedOrder(a.sortKey, b.sortKey))
-    .flatMap((unit) => unit.dynasties);
+  return orderByTimedWithCapitalAffinity(
+    units,
+    (unit) => unit.sortKey,
+    (unit) => unit.capitalKey,
+  ).flatMap((unit) => unit.dynasties);
 }
 
 export type PlacedLaneMetrics = {

@@ -50,6 +50,34 @@ function group(
   };
 }
 
+
+function capital(
+  id: string,
+  dynastyId: string,
+  modernName: string,
+  startAbs: number,
+  endAbs: number,
+): import("./schema").DynastyCapital {
+  const startYear = startAbs > 0 ? Math.floor(startAbs / 12) : -Math.floor(-startAbs / 12);
+  const endYear = endAbs > 0 ? Math.floor(endAbs / 12) : -Math.floor(-endAbs / 12);
+  return {
+    id,
+    dynastyId,
+    historicalName: modernName,
+    modernName,
+    longitude: 108.9,
+    latitude: 34.3,
+    coordinateSystem: "GCJ02",
+    start: { year: startYear, month: 1 },
+    end: { year: endYear, month: 12 },
+    startAbs,
+    endAbs,
+    precision: "year",
+    role: "primary",
+    links: [],
+  };
+}
+
 describe("dynastyClusterGroups", () => {
   it("orders cluster units by group span, not member min startAbs", () => {
     const dynastyGroups = [
@@ -97,6 +125,46 @@ describe("dynastyClusterGroups", () => {
         { id: "nan-chao", startAbs: absMonth(420), endAbs: absMonth(589, 12) },
       ),
     ).toBeLessThan(0);
+  });
+
+
+  it("pulls a same-capital near successor ahead of an earlier foreign-capital rival", () => {
+    // 前秦 (长安) ends 394; 后燕 (中山) starts 384; 后秦 (长安) starts 384.
+    // Timed order would keep 后燕 before 后秦 when both start together after
+    // an intervening pick — with capitals, 后秦 sticks under 前秦.
+    const qinQian = dynasty("qin-front", absMonth(351), absMonth(394, 12));
+    const yanHou = dynasty("yan-back", absMonth(384), absMonth(409, 12));
+    const qinHou = dynasty("qin-back", absMonth(384, 6), absMonth(417, 12));
+    const capitals = [
+      capital("cap-qin-front", "qin-front", "陕西省西安市", absMonth(351), absMonth(394, 12)),
+      capital("cap-yan-back", "yan-back", "河北省定州市", absMonth(384), absMonth(409, 12)),
+      capital("cap-qin-back", "qin-back", "陕西省西安市", absMonth(384, 6), absMonth(417, 12)),
+    ];
+
+    // Without capitals: startAbs order — yan-back (384-1) before qin-back (384-6).
+    expect(
+      orderDynastiesForLanes([qinHou, yanHou, qinQian], []).map((d) => d.id),
+    ).toEqual(["qin-front", "yan-back", "qin-back"]);
+
+    // With capitals: after 前秦, prefer 后秦 (same 西安) over 后燕.
+    expect(
+      orderDynastiesForLanes([qinHou, yanHou, qinQian], [], capitals).map((d) => d.id),
+    ).toEqual(["qin-front", "qin-back", "yan-back"]);
+  });
+
+  it("does not pull a same-capital dynasty across centuries", () => {
+    const hanWest = dynasty("han-west", absMonth(-202), absMonth(8, 11));
+    const xin = dynasty("xin", absMonth(9), absMonth(23, 10));
+    const tang = dynasty("tang", absMonth(618), absMonth(907, 12));
+    const capitals = [
+      capital("cap-han", "han-west", "陕西省西安市", absMonth(-202), absMonth(8, 11)),
+      capital("cap-xin", "xin", "陕西省西安市", absMonth(9), absMonth(23, 10)),
+      capital("cap-tang", "tang", "陕西省西安市", absMonth(618), absMonth(907, 12)),
+    ];
+
+    expect(
+      orderDynastiesForLanes([tang, xin, hanWest], [], capitals).map((d) => d.id),
+    ).toEqual(["han-west", "xin", "tang"]);
   });
 
   it("wraps the left-rail dynasty chips, not the time-axis lane", () => {
