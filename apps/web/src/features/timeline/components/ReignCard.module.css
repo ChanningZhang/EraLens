@@ -115,6 +115,35 @@
   color: var(--color-ink-muted);
 }
 
+/*
+ * Informal monarchs (regents, acting heads, joint vice-chairs) show diagonal
+ * stripes over the base color to indicate non-formal sovereign status.
+ */
+.informalMonarch {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 8px,
+    color-mix(in srgb, var(--card-color) 18%, var(--color-border)) 8px,
+    color-mix(in srgb, var(--card-color) 18%, var(--color-border)) 10px
+  );
+  background-color: color-mix(in srgb, var(--card-color) 12%, var(--color-surface));
+}
+
+.informalMonarch:hover {
+  background-color: color-mix(in srgb, var(--card-color) 16%, var(--color-surface));
+}
+
+.informalMonarch:global(.orthodoxGold) {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 8px,
+    color-mix(in srgb, var(--orthodox-gold-divider) 35%, transparent) 8px,
+    color-mix(in srgb, var(--orthodox-gold-divider) 35%, transparent) 10px
+  );
+}
+
 .content {
   display: flex;
   flex-direction: row;

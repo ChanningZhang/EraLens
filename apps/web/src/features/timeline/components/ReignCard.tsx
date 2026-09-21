@@ -174,6 +174,7 @@ export function ReignCard({
       selected ? styles.selected : "",
       parallel ? styles.parallel : "",
       compactStack ? styles.compactStack : "",
+      reign.isInformalMonarch ? styles.informalMonarch : "",
     ]
       .filter(Boolean)
       .join(" ");
@@ -186,6 +187,7 @@ export function ReignCard({
     selected,
     parallel,
     compactStack,
+    reign.isInformalMonarch,
   ]);
 
   return (
