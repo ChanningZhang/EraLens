@@ -113,7 +113,6 @@ export function DetailPanel() {
 
   const capitalTenures = detailQuery.data?.capitalTenures ?? [];
   const relatedItems = detailQuery.data?.related ?? [];
-  const hasRelated = capitalTenures.length > 0 || relatedItems.length > 0;
 
   if (!selection.selected) return null;
 
@@ -177,54 +176,55 @@ export function DetailPanel() {
           </section>
         )}
 
-        {hasRelated && (
+        {capitalTenures.length > 0 && (
           <section className={styles.section}>
-            <h3 className={styles.sectionTitle}>关联</h3>
-            {capitalTenures.length > 0 && (
-              <div className={styles.relatedGroup}>
-                <h4 className={styles.relatedGroupTitle}>在位</h4>
-                <div className={styles.capitalTenureList}>
-                  {capitalTenures.map((row) => (
-                    <div
-                      key={`${row.tenure.ref.id}:${row.tenure.abs}:${row.capital?.ref.id ?? "solo"}`}
-                      className={
-                        row.capital
-                          ? styles.capitalTenureRow
-                          : `${styles.capitalTenureRow} ${styles.capitalTenureRowSingle}`
+            <h3 className={styles.sectionTitle}>在位</h3>
+            <div className={styles.capitalTenureList}>
+              {capitalTenures.map((row) => (
+                <div
+                  key={`${row.tenure.ref.id}:${row.tenure.abs}:${row.capital?.ref.id ?? "solo"}`}
+                  className={
+                    row.capital
+                      ? styles.capitalTenureRow
+                      : `${styles.capitalTenureRow} ${styles.capitalTenureRowSingle}`
+                  }
+                >
+                  <button
+                    type="button"
+                    className={
+                      selection.highlightAbs === row.tenure.abs
+                        ? `${styles.capitalTenureCell} ${styles.capitalTenureCellActive}`
+                        : styles.capitalTenureCell
+                    }
+                    onClick={() =>
+                      selectTenureRef(row.tenure, selection, viewport.centerAbs)
+                    }
+                  >
+                    <span className={styles.capitalTenureLabel}>{row.tenure.label}</span>
+                  </button>
+                  {row.capital && (
+                    <button
+                      type="button"
+                      className={styles.capitalTenureCell}
+                      onClick={() =>
+                        selectDetailRef(row.capital!.ref, row.tenure.abs, viewport.centerAbs)
                       }
                     >
-                      <button
-                        type="button"
-                        className={
-                          selection.highlightAbs === row.tenure.abs
-                            ? `${styles.capitalTenureCell} ${styles.capitalTenureCellActive}`
-                            : styles.capitalTenureCell
-                        }
-                        onClick={() =>
-                          selectTenureRef(row.tenure, selection, viewport.centerAbs)
-                        }
-                      >
-                        <span className={styles.capitalTenureLabel}>{row.tenure.label}</span>
-                      </button>
-                      {row.capital && (
-                        <button
-                          type="button"
-                          className={styles.capitalTenureCell}
-                          onClick={() =>
-                            selectDetailRef(row.capital!.ref, row.tenure.abs, viewport.centerAbs)
-                          }
-                        >
-                          <span className={styles.capitalTenureLabel}>{row.capital.label}</span>
-                          {row.capital.subtitle && (
-                            <span className={styles.capitalTenureSub}>{row.capital.subtitle}</span>
-                          )}
-                        </button>
+                      <span className={styles.capitalTenureLabel}>{row.capital.label}</span>
+                      {row.capital.subtitle && (
+                        <span className={styles.capitalTenureSub}>{row.capital.subtitle}</span>
                       )}
-                    </div>
-                  ))}
+                    </button>
+                  )}
                 </div>
-              </div>
-            )}
+              ))}
+            </div>
+          </section>
+        )}
+
+        {relatedItems.length > 0 && (
+          <section className={styles.section}>
+            <h3 className={styles.sectionTitle}>关联</h3>
             {groupRelatedItems(relatedItems).map((group) => (
               <div key={group.title ?? "default"} className={styles.relatedGroup}>
                 {group.title && (
