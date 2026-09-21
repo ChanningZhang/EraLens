@@ -110,7 +110,6 @@ model Reign {
   @@index([dynastyId])
   @@index([personId])
   @@index([claimTrack])
-  @@index([isInformalMonarch], where: is_informal_monarch)
   @@map("reigns")
 }
 
