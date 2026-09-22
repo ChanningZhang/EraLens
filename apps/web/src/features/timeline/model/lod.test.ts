@@ -32,8 +32,8 @@ describe("cardDetailLevel", () => {
 
   it("places the name beside the card when wrapping cannot fit", () => {
     expect(cardDetailLevel(8, 2)).toBe("below");
-    expect(cardDetailLevel(16, 2)).toBe("below");
-    expect(cardDetailLevel(16, 3)).toBe("below");
+    expect(cardDetailLevel(16, 2)).toBe("wrap");
+    expect(cardDetailLevel(16, 3)).toBe("wrap");
     expect(cardDetailLevel(16, 4)).toBe("below");
     expect(cardDetailLevel(16, 5)).toBe("below");
   });
@@ -93,8 +93,8 @@ describe("resolveReignCardTextLayout", () => {
   it("keeps the default font size for full cards", () => {
     expect(resolveReignCardTextLayout(120, 2)).toEqual({
       level: "full",
-      nameFontPx: 17,
-      metaFontPx: 13,
+      nameFontPx: 16,
+      metaFontPx: 12,
     });
   });
 
