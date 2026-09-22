@@ -220,6 +220,30 @@ describe("dynastyClusterGroups", () => {
     ]);
   });
 
+  it("orders same-capital successors within a cluster (北朝: 西魏 next to 北周)", () => {
+    const dynastyGroups = [group("bei-chao", absMonth(386), absMonth(581, 12), "北朝")];
+    const dynasties = [
+      dynasty("wei-north", absMonth(386), absMonth(534, 12), "bei-chao"),
+      dynasty("wei-east", absMonth(534), absMonth(550, 12), "bei-chao"),
+      dynasty("wei-west", absMonth(535), absMonth(557, 12), "bei-chao"),
+      dynasty("qi-bei", absMonth(550), absMonth(577, 12), "bei-chao"),
+      dynasty("zhou-bei", absMonth(557), absMonth(581, 12), "bei-chao"),
+    ];
+    const capitals = [
+      capital("wei-north", "河南省洛阳市"),
+      capital("wei-east", "河北省邯郸市临漳县"),
+      capital("wei-west", "陕西省西安市"),
+      capital("qi-bei", "河北省邯郸市临漳县"),
+      capital("zhou-bei", "陕西省西安市"),
+    ];
+
+    // 东魏→北齐 (邺/临漳) and 西魏→北周 (长安/西安) each stack together, so 北齐
+    // no longer sits between 西魏 and 北周.
+    expect(
+      orderDynastiesForLanes(dynasties, dynastyGroups, capitals).map((d) => d.id),
+    ).toEqual(["wei-north", "wei-east", "qi-bei", "wei-west", "zhou-bei"]);
+  });
+
   it("uses shorter endAbs to order units with the same startAbs", () => {
     expect(
       compareTimedOrder(

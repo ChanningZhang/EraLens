@@ -120,12 +120,36 @@ function orderBySameCapitalSuccession(
   return result;
 }
 
+function toSingletonUnit(dynasty: Dynasty): LaneUnit {
+  return {
+    sortKey: { id: dynasty.id, startAbs: dynasty.startAbs, endAbs: dynasty.endAbs },
+    dynasties: [dynasty],
+    isCluster: false,
+  };
+}
+
+/**
+ * Order dynasties chronologically, then apply the same-capital pull-up. Used
+ * both for standalone rows and for members inside a cluster (三国/五代/北朝…),
+ * so e.g. 西魏 → 北周 (长安) sit together inside 北朝 instead of being split by
+ * 北齐 (邺).
+ */
+function orderDynastiesBySameCapital(
+  dynasties: readonly Dynasty[],
+  capitals: readonly LaneCapital[],
+): Dynasty[] {
+  if (capitals.length === 0) return [...dynasties].sort(compareTimedOrder);
+  const subUnits = [...dynasties].sort(compareTimedOrder).map(toSingletonUnit);
+  return orderBySameCapitalSuccession(subUnits, capitals).flatMap((unit) => unit.dynasties);
+}
+
 /**
  * Cluster members stay on separate rows but are placed contiguously.
  * Unit sort uses the group's own span, not member min/max.
  *
  * When `capitals` are supplied, same-capital successor dynasties are pulled up
- * to sit directly below their predecessor (see `orderBySameCapitalSuccession`).
+ * to sit directly below their predecessor (see `orderBySameCapitalSuccession`),
+ * both across standalone rows and within each cluster's members.
  */
 export function orderDynastiesForLanes(
   dynasties: readonly Dynasty[],
@@ -155,7 +179,7 @@ export function orderDynastiesForLanes(
         startAbs: group.startAbs,
         endAbs: group.endAbs,
       },
-      dynasties: [...members].sort(compareTimedOrder),
+      dynasties: orderDynastiesBySameCapital(members, capitals),
       isCluster: true,
     });
   }
