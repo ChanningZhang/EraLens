@@ -464,13 +464,15 @@ export const capitals = [
     wikiTitle: "洛阳",
     id: "cap-han-east-luoyang",
   }),
-  entry("han-gengshi", "宛", "河南省南阳市", 23, 6, 24, 1, {
-    note: "更始元年六月刘玄入都宛城；更始二年迁都长安。",
+  entry("han-gengshi", "宛", "河南省南阳市", 23, 6, 24, 2, {
+    precision: "month",
+    note: "更始元年六月刘玄入都宛城；更始二年二月迁都长安。",
     wikiTitle: "更始帝",
     id: "cap-han-gengshi-wan-23",
   }),
-  entry("han-gengshi", "长安", "陕西省西安市", 24, 1, 25, 9, {
-    note: "更始二年迁都长安；更始三年九月赤眉军攻入长安后政权终结。",
+  entry("han-gengshi", "长安", "陕西省西安市", 24, 2, 25, 9, {
+    precision: "month",
+    note: "更始二年二月刘玄自洛阳迁都长安；更始三年九月赤眉军攻入长安后政权终结。",
     wikiTitle: "更始帝",
     id: "cap-han-gengshi-changan-24",
   }),

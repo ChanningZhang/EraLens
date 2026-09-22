@@ -33,6 +33,8 @@ export type PlacedReignFate = {
 };
 
 const ORTHOGONAL_EPSILON_PX = 2;
+/** Stop just outside the painted card so the dash does not pierce the fill. */
+const EDGE_GAP_PX = 2;
 const TICK_HEIGHT_PX = 6;
 
 function barBottom(layout: Pick<ReignCardLayout, "barTop" | "barHeight">): number {
@@ -49,6 +51,17 @@ function sourceFacingBorderY(layout: ReignCardLayout, other: ReignCardLayout): n
   }
   if (layout.barMidY < other.barMidY - ORTHOGONAL_EPSILON_PX) {
     return barBottom(layout);
+  }
+  return layout.barMidY;
+}
+
+/** Destination edge that faces the source, with a small lane-side gap. */
+function facingEdgeY(layout: ReignCardLayout, other: ReignCardLayout): number {
+  if (layout.barMidY > other.barMidY + ORTHOGONAL_EPSILON_PX) {
+    return layout.barTop - EDGE_GAP_PX;
+  }
+  if (layout.barMidY < other.barMidY - ORTHOGONAL_EPSILON_PX) {
+    return barBottom(layout) + EDGE_GAP_PX;
   }
   return layout.barMidY;
 }
@@ -86,8 +99,23 @@ function buildFatePath(
 
 function destTick(
   toLayout: ReignCardLayout,
+  fromLayout: ReignCardLayout,
   tickX: number,
 ): { tickX: number; tickTop: number; tickHeight: number } {
+  if (toLayout.barMidY < fromLayout.barMidY - ORTHOGONAL_EPSILON_PX) {
+    return {
+      tickX,
+      tickTop: barBottom(toLayout) - TICK_HEIGHT_PX,
+      tickHeight: TICK_HEIGHT_PX,
+    };
+  }
+  if (toLayout.barMidY > fromLayout.barMidY + ORTHOGONAL_EPSILON_PX) {
+    return {
+      tickX,
+      tickTop: toLayout.barTop,
+      tickHeight: TICK_HEIGHT_PX,
+    };
+  }
   return {
     tickX,
     tickTop: toLayout.barMidY - TICK_HEIGHT_PX / 2,
@@ -142,16 +170,27 @@ export function layoutReignFates(
     const sourceY = Math.abs(eventX - sourceAnchorX) > ORTHOGONAL_EPSILON_PX
       ? fromLayout.barMidY
       : sourceFacingBorderY(fromLayout, toLayout);
-    // The horizontal segment must meet the receiving card at its vertical
-    // midpoint. Keep the event column authoritative, then run the connector
-    // across the lane gap into the card center rather than its top/bottom edge.
-    const destinationY = toLayout.barMidY;
+    const hasHorizontalLeader =
+      Math.abs(sourceAnchorX - eventX) > ORTHOGONAL_EPSILON_PX ||
+      Math.abs(destinationAnchorX - eventX) > ORTHOGONAL_EPSILON_PX;
+    // Keep the event column authoritative. A horizontal leader may enter the
+    // receiving card at its midpoint (needed when the card starts later),
+    // while a nearly vertical line stops at the facing edge.
+    const destinationY = hasHorizontalLeader
+      ? toLayout.barMidY
+      : facingEdgeY(toLayout, fromLayout);
 
     const fromName = personNames.get(fromReign.personId) ?? fromReign.title;
     const toName = personNames.get(toReign.personId) ?? toReign.title;
     if (!isFateRelationKind(relation.kind)) continue;
     const color = colorByReignId.get(fromReign.id) ?? "var(--color-ink-muted)";
-    const tick = destTick(toLayout, destinationAnchorX);
+    const tick = hasHorizontalLeader
+      ? {
+          tickX: destinationAnchorX,
+          tickTop: toLayout.barMidY - TICK_HEIGHT_PX / 2,
+          tickHeight: TICK_HEIGHT_PX,
+        }
+      : destTick(toLayout, fromLayout, destinationAnchorX);
     placed.push({
       id: relation.id,
       path: buildFatePath(

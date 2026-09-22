@@ -155,7 +155,7 @@ describe("layoutReignFates", () => {
     expect(placed[0]?.originY).toBe(hanBarBottom);
   });
 
-  it("connects the horizontal segment to the receiving card midpoint", () => {
+  it("stops the horizontal segment at the receiving card's facing edge", () => {
     const relation: Relation = {
       id: "rel-han-r10-ying-zheng-surrender",
       fromRef: "person:han-r10",
@@ -181,12 +181,12 @@ describe("layoutReignFates", () => {
     );
     expect(placed).toHaveLength(1);
     const qinBarTop = qinTop + LANE_PADDING_TOP;
-    const qinBarMid = qinBarTop + STACK_ROW_HEIGHT / 2;
+    const qinBarBottom = qinBarTop + STACK_ROW_HEIGHT;
     const hanBarTop = hanTop + LANE_PADDING_TOP;
     const ys = pathCoords(placed[0]!.path).map((point) => point.y);
-    expect(ys.at(-1)).toBe(qinBarMid);
+    expect(ys.at(-1)).toBe(qinBarBottom + 2);
     expect(placed[0]!.originY).toBe(hanBarTop);
-    expect(placed[0]!.tickTop + placed[0]!.tickHeight / 2).toBe(qinBarMid);
+    expect(placed[0]!.tickTop + placed[0]!.tickHeight / 2).toBe(qinBarBottom - 3);
   });
 
   it("starts a rightward leader at the source card mid-height, not the bottom", () => {
@@ -222,6 +222,10 @@ describe("layoutReignFates", () => {
     expect(points[0]!.y).toBeCloseTo(hanMidY, 0);
     const hanBarBottom = hanTop + LANE_PADDING_TOP + STACK_ROW_HEIGHT;
     expect(points[0]!.y).toBeLessThan(hanBarBottom - 8);
+    const qinBarTop = qinTop + LANE_PADDING_TOP;
+    const qinBarMid = qinBarTop + STACK_ROW_HEIGHT / 2;
+    expect(points.at(-1)!.y).toBe(qinBarMid);
+    expect(placed[0]!.tickTop + placed[0]!.tickHeight / 2).toBe(qinBarMid);
     expect(placed[0]!.originX).toBe(points[0]!.x);
     expect(placed[0]!.originY).toBe(points[0]!.y);
   });
