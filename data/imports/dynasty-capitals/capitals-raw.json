@@ -2872,12 +2872,12 @@
       "abs": 7416
     },
     "end": {
-      "year": 904,
+      "year": 903,
       "month": 12,
-      "abs": 10859
+      "abs": 10847
     },
     "startAbs": 7416,
-    "endAbs": 10859,
+    "endAbs": 10847,
     "precision": "year",
     "role": "primary",
     "note": "唐都长安。",
@@ -2899,12 +2899,12 @@
       "abs": 7884
     },
     "end": {
-      "year": 904,
+      "year": 903,
       "month": 12,
-      "abs": 10859
+      "abs": 10847
     },
     "startAbs": 7884,
-    "endAbs": 10859,
+    "endAbs": 10847,
     "precision": "year",
     "role": "secondary",
     "note": "唐东都洛阳。",
@@ -2912,6 +2912,33 @@
       {
         "label": "维基百科",
         "url": "https://zh.wikipedia.org/wiki/洛阳"
+      }
+    ]
+  },
+  {
+    "id": "cap-tang-luoyang-904",
+    "dynastyId": "tang",
+    "historicalName": "洛阳",
+    "modernName": "河南省洛阳市",
+    "start": {
+      "year": 904,
+      "month": 1,
+      "abs": 10848
+    },
+    "end": {
+      "year": 907,
+      "month": 12,
+      "abs": 10895
+    },
+    "startAbs": 10848,
+    "endAbs": 10895,
+    "precision": "year",
+    "role": "primary",
+    "note": "904年朱全忠逼唐昭宗迁都洛阳；李柷（唐哀帝）继位后至907年唐亡，洛阳为唐正都。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐哀帝"
       }
     ]
   },

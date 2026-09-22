@@ -379,6 +379,14 @@ export function resolveReignCardMeta(
     return { label: "名", name: given };
   }
 
+  // The primary line is the person name. The secondary appellation belongs to
+  // this particular reign, so it must be read from `reigns.title` rather than
+  // from person-level temple/posthumous fields shared by all of that person's
+  // reign records.
+  if (reign.title && reign.title !== primary && reign.title !== personName) {
+    return { label: "称号", name: reign.title };
+  }
+
   const appellation = resolveEmperorAppellation(reign, personContext);
   if (!appellation) return null;
 

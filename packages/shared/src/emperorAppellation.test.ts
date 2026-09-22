@@ -194,7 +194,7 @@ describe("resolveEmperorAppellation", () => {
         }),
         "也孙铁木儿",
       ),
-    ).toEqual({ label: "年号", name: "泰定" });
+    ).toEqual({ label: "称号", name: "元泰定帝" });
     expect(
       resolveEmperorAppellation(
         source({
@@ -528,7 +528,7 @@ describe("resolveReignCardLabel", () => {
     });
   });
 
-  it("shows posthumous meta for Jin deposed and short-reign emperors", () => {
+  it("uses the reign title for Jin deposed and short-reign emperors", () => {
     expect(
       resolveReignCardMeta(
         source({
@@ -539,7 +539,7 @@ describe("resolveReignCardLabel", () => {
         }),
         "司马奕",
       ),
-    ).toEqual({ label: "谥号", name: "海西公" });
+    ).toEqual({ label: "称号", name: "晋海西公" });
     expect(
       resolveReignCardMeta(
         source({
@@ -550,42 +550,63 @@ describe("resolveReignCardLabel", () => {
         }),
         "司马昱",
       ),
-    ).toEqual({ label: "谥号", name: "简文皇帝" });
+    ).toEqual({ label: "称号", name: "晋简文帝" });
   });
 });
 
 describe("resolveReignCardMeta", () => {
-  it("shows era name under the personal name for Ming and Qing", () => {
+  it("reads the card appellation from the current reign title", () => {
     expect(
       resolveReignCardMeta(
         source({
           start: { year: 1661, month: 1 },
+          title: "清圣祖",
           eraNames: ["康熙"],
         }),
         "爱新觉罗·玄烨",
       ),
-    ).toEqual({ label: "年号", name: "康熙" });
+    ).toEqual({ label: "称号", name: "清圣祖" });
     expect(
       resolveReignCardMeta(
         source({
           start: { year: 1435, month: 1 },
+          title: "明英宗",
           eraNames: ["正统"],
         }),
         "朱祁镇",
       ),
-    ).toEqual({ label: "年号", name: "正统" });
+    ).toEqual({ label: "称号", name: "明英宗" });
     expect(
       resolveReignCardMeta(
         source({
           start: { year: 1457, month: 1 },
+          title: "明英宗",
           eraNames: ["天顺"],
         }),
         "朱祁镇",
       ),
-    ).toEqual({ label: "年号", name: "天顺" });
+    ).toEqual({ label: "称号", name: "明英宗" });
   });
 
-  it("shows temple meta for Tang emperors", () => {
+  it("keeps the person name while separating multiple reign titles", () => {
+    const liuBangReigns = [
+      source({ start: { year: -209, month: 9 }, title: "沛公" }),
+      source({ start: { year: -202, month: 2 }, title: "汉高祖" }),
+    ];
+
+    expect(resolveReignCardLabel(liuBangReigns[0]!, "刘邦")).toBe("刘邦");
+    expect(resolveReignCardMeta(liuBangReigns[0]!, "刘邦")).toEqual({
+      label: "称号",
+      name: "沛公",
+    });
+    expect(resolveReignCardLabel(liuBangReigns[1]!, "刘邦")).toBe("刘邦");
+    expect(resolveReignCardMeta(liuBangReigns[1]!, "刘邦")).toEqual({
+      label: "称号",
+      name: "汉高祖",
+    });
+  });
+
+  it("uses the reign title for Tang emperors", () => {
     expect(
       resolveReignCardMeta(
         source({
@@ -595,10 +616,10 @@ describe("resolveReignCardMeta", () => {
         }),
         "李世民",
       ),
-    ).toEqual({ label: "庙号", name: "太宗" });
+    ).toEqual({ label: "称号", name: "唐太宗" });
   });
 
-  it("shows temple meta for Nanzhao rulers from Tang onward", () => {
+  it("uses the reign title for Nanzhao rulers from Tang onward", () => {
     expect(
       resolveReignCardMeta(
         source({
@@ -609,10 +630,10 @@ describe("resolveReignCardMeta", () => {
         }),
         "细奴逻",
       ),
-    ).toEqual({ label: "庙号", name: "高祖" });
+    ).toEqual({ label: "称号", name: "诏王" });
   });
 
-  it("shows posthumous meta for Sui emperors", () => {
+  it("uses the reign title for Sui emperors", () => {
     expect(
       resolveReignCardMeta(
         source({
@@ -623,7 +644,7 @@ describe("resolveReignCardMeta", () => {
         }),
         "杨坚",
       ),
-    ).toEqual({ label: "谥号", name: "文皇帝" });
+    ).toEqual({ label: "称号", name: "隋文帝" });
     expect(
       resolveReignCardMeta(
         source({
@@ -634,7 +655,7 @@ describe("resolveReignCardMeta", () => {
         }),
         "杨广",
       ),
-    ).toEqual({ label: "谥号", name: "炀皇帝" });
+    ).toEqual({ label: "称号", name: "隋炀帝" });
   });
 
   it("hides redundant regnal meta when the title is also the person name", () => {
@@ -727,7 +748,7 @@ describe("resolveReignCardMeta", () => {
     });
   });
 
-  it("uses posthumous name when title is not a dynastic emperor shorthand", () => {
+  it("uses the reign title when a historical appellation is stored there", () => {
     const liuShan = source({
       start: { year: 223, month: 6 },
       end: { year: 263, month: 11 },
@@ -740,8 +761,8 @@ describe("resolveReignCardMeta", () => {
       name: "孝怀皇帝",
     });
     expect(resolveReignCardMeta(liuShan, "刘禅")).toEqual({
-      label: "谥号",
-      name: "孝怀皇帝",
+      label: "称号",
+      name: "蜀汉后主",
     });
     expect(
       resolveEmperorAppellation(
@@ -755,7 +776,7 @@ describe("resolveReignCardMeta", () => {
     ).toEqual({ kind: "posthumous", name: "孝怀皇帝" });
   });
 
-  it("shows temple meta for Song emperors with temple names", () => {
+  it("uses the reign title for Song emperors with temple names", () => {
     expect(
       resolveReignCardMeta(
         source({
@@ -766,7 +787,7 @@ describe("resolveReignCardMeta", () => {
         }),
         "赵匡胤",
       ),
-    ).toEqual({ label: "庙号", name: "太祖" });
+    ).toEqual({ label: "称号", name: "宋太祖" });
   });
 
   it("shows posthumous meta for Shang rulers", () => {

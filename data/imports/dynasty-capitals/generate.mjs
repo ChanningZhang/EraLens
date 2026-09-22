@@ -80,10 +80,12 @@ writeFileSync(
       counts: { dynasty_capitals: capitals.length },
       sources: [
         { label: "维基百科", url: "https://zh.wikipedia.org/wiki/中国古代都城" },
+        { label: "唐哀帝（维基百科）", url: "https://zh.wikipedia.org/wiki/唐哀帝" },
         { label: "高德地图地理编码", url: "https://lbs.amap.com/api/webservice/guide/api/georegeo" },
       ],
       notes: [
         "modernName 为省/市全称；坐标 GCJ-02，经 Amap maps_geo 烘焙",
+        "唐都城：904年迁都洛阳，李柷（唐哀帝）在位至907年唐亡；洛阳记录拆分为迁都前陪都与迁都后正都",
         `覆盖 ${new Set(capitals.map((c) => c.dynastyId)).size} 个王朝，${capitals.length} 条都城记录`,
       ],
     },

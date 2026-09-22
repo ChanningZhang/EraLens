@@ -9,14 +9,18 @@
   },
   "scope": "cn",
   "depth": "standard",
-  "generatedAt": "2026-09-20",
+  "generatedAt": "2026-09-22",
   "counts": {
-    "dynasty_capitals": 173
+    "dynasty_capitals": 174
   },
   "sources": [
     {
       "label": "维基百科",
       "url": "https://zh.wikipedia.org/wiki/中国古代都城"
+    },
+    {
+      "label": "唐哀帝（维基百科）",
+      "url": "https://zh.wikipedia.org/wiki/唐哀帝"
     },
     {
       "label": "高德地图地理编码",
@@ -25,6 +29,7 @@
   ],
   "notes": [
     "modernName 为省/市全称；坐标 GCJ-02，经 Amap maps_geo 烘焙",
-    "覆盖 122 个王朝，173 条都城记录"
+    "唐都城：904年迁都洛阳，李柷（唐哀帝）在位至907年唐亡；洛阳记录拆分为迁都前陪都与迁都后正都",
+    "覆盖 122 个王朝，174 条都城记录"
   ]
 }
