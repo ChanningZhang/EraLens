@@ -15,7 +15,7 @@ export function buildFateCatalog() {
       fromPersonId: "han-r10",
       toPersonId: "ying-zheng",
       kind: "surrender",
-      eventId: "qin-destroy-han",
+      eventId: null,
       resolveAt: () => ym(-230, 12),
     },
     {
@@ -23,7 +23,7 @@ export function buildFateCatalog() {
       fromPersonId: "zhao-r9",
       toPersonId: "ying-zheng",
       kind: "surrender",
-      eventId: "qin-destroy-zhao",
+      eventId: null,
       resolveAt: () => ym(-228, 12),
     },
     {
@@ -31,7 +31,7 @@ export function buildFateCatalog() {
       fromPersonId: "wei-r7",
       toPersonId: "ying-zheng",
       kind: "surrender",
-      eventId: "qin-destroy-wei",
+      eventId: null,
       resolveAt: () => ym(-225, 12),
     },
     {
@@ -39,7 +39,7 @@ export function buildFateCatalog() {
       fromPersonId: "chu-r41",
       toPersonId: "ying-zheng",
       kind: "captured",
-      eventId: "qin-destroy-chu",
+      eventId: null,
       resolveAt: () => ym(-223, 12),
     },
     {
@@ -47,7 +47,7 @@ export function buildFateCatalog() {
       fromPersonId: "yan-r37",
       toPersonId: "ying-zheng",
       kind: "captured",
-      eventId: "qin-destroy-yan",
+      eventId: null,
       resolveAt: () => ym(-222, 12),
     },
     {
@@ -55,7 +55,7 @@ export function buildFateCatalog() {
       fromPersonId: "qi-r39",
       toPersonId: "ying-zheng",
       kind: "surrender",
-      eventId: "qin-destroy-qi",
+      eventId: null,
       resolveAt: () => ym(-221, 12),
     },
     {
@@ -63,7 +63,7 @@ export function buildFateCatalog() {
       fromPersonId: "fu-chai",
       toPersonId: "gou-jian",
       kind: "killed",
-      eventId: "wu-destroy-yue",
+      eventId: null,
       resolveAt: () => ym(-473, 12),
     },
     {
@@ -71,7 +71,7 @@ export function buildFateCatalog() {
       fromPersonId: "zhao-jia-dai",
       toPersonId: "ying-zheng",
       kind: "captured",
-      eventId: "qin-destroy-dai",
+      eventId: null,
       resolveAt: () => ym(-222, 12),
     },
     {
@@ -176,7 +176,7 @@ export function buildFateCatalog() {
       fromReignId: "reign-missing-zhou-guo-east--360",
       toPersonId: "qin-r29",
       kind: "killed",
-      eventId: "qin-destroy-zhou-east",
+      eventId: null,
       resolveAt: () => ym(-249, 12),
     },
     {
@@ -184,7 +184,7 @@ export function buildFateCatalog() {
       fromPersonId: "zhou-guo-jiu",
       toPersonId: "qin-r27",
       kind: "surrender",
-      eventId: "qin-destroy-zhou",
+      eventId: null,
       resolveAt: () => ym(-256, 12),
     },
     {
@@ -264,7 +264,7 @@ export function buildFateCatalog() {
       fromPersonId: "ji-yan",
       toPersonId: "qin-r27",
       kind: "killed",
-      eventId: "qin-destroy-zhou",
+      eventId: null,
       resolveAt: () => ym(-256, 12),
     },
 
@@ -302,7 +302,7 @@ export function buildFateCatalog() {
       fromPersonId: "liu-xie",
       toPersonId: "cao-pi",
       kind: "abdication",
-      eventId: "han-east-end",
+      eventId: null,
       resolveAt: () => atFromReignEnd("reign-liu-xie", 220),
     },
     {
@@ -337,7 +337,7 @@ export function buildFateCatalog() {
       fromPersonId: "zhao-jiande",
       toPersonId: "liu-che",
       kind: "captured",
-      eventId: "nanyue-destroyed",
+      eventId: null,
       resolveAt: () => ym(-111, 12),
     },
     {
@@ -353,7 +353,7 @@ export function buildFateCatalog() {
       fromPersonId: "zhao-xing",
       toPersonId: "liu-che",
       kind: "killed",
-      eventId: "nanyue-destroyed",
+      eventId: null,
       resolveAt: () => ym(-111, 12),
     },
     {
@@ -379,7 +379,7 @@ export function buildFateCatalog() {
       fromPersonId: "cao-huan",
       toPersonId: "sima-yan",
       kind: "abdication",
-      eventId: "jin-west-founded",
+      eventId: null,
       resolveAt: () => atFromReignEnd("reign-cao-huan", 266),
     },
     {
@@ -428,7 +428,7 @@ export function buildFateCatalog() {
       fromPersonId: "sima-ye",
       toPersonId: "liu-cong",
       kind: "surrender",
-      eventId: "jin-west-fall",
+      eventId: null,
       resolveAt: () => atFromReignEnd("reign-sima-ye", 316),
     },
     {
@@ -438,7 +438,7 @@ export function buildFateCatalog() {
       fromPersonId: "sima-ye",
       toPersonId: "liu-cong",
       kind: "killed",
-      eventId: "jin-west-fall",
+      eventId: null,
       resolveAt: () => ymDay(318, 2, 7),
       precision: "day",
     },
@@ -447,7 +447,7 @@ export function buildFateCatalog() {
       fromPersonId: "sima-dewen",
       toPersonId: "liu-yu-jin",
       kind: "abdication",
-      eventId: "jin-east-end",
+      eventId: null,
       resolveAt: () => atFromReignEnd("reign-sima-dewen", 420),
     },
     {
@@ -465,7 +465,7 @@ export function buildFateCatalog() {
       fromPersonId: "shi-jian",
       toPersonId: "ran-min",
       kind: "killed",
-      eventId: "ranwei-founded",
+      eventId: null,
       resolveAt: () => atFromReignEnd("reign-shi-jian", 350),
     },
     {
@@ -773,7 +773,7 @@ export function buildFateCatalog() {
       fromPersonId: "yang-you",
       toPersonId: "li-yuan",
       kind: "abdication",
-      eventId: "tang-founded",
+      eventId: null,
       resolveAt: () => atFromReignEnd("reign-yang-you", 618),
     },
     {
@@ -1002,7 +1002,7 @@ export function buildFateCatalog() {
       fromPersonId: "li-xian-xixia",
       toPersonId: "temujin",
       kind: "surrender",
-      eventId: "mongol-fall-xixia",
+      eventId: null,
       resolveAt: () => atFromReignEnd("reign-li-xian-xixia", 1227),
     },
     {
@@ -1036,7 +1036,7 @@ export function buildFateCatalog() {
       fromPersonId: "qu-chulu",
       toPersonId: "temujin",
       kind: "captured",
-      eventId: "xiliao-fallen",
+      eventId: null,
       resolveAt: () => atFromReignEnd("reign-qu-chulu-xiliao", 1218),
     },
 
@@ -1055,7 +1055,7 @@ export function buildFateCatalog() {
       fromPersonId: "nuohabo",
       toPersonId: "li-zhi",
       kind: "surrender",
-      eventId: "tuyuhun-destroyed",
+      eventId: null,
       resolveAt: () => atFromReignEnd("reign-nuohabo-tuyuhun", 663),
     },
     {
@@ -1090,7 +1090,7 @@ export function buildFateCatalog() {
       fromPersonId: "zhang-shicheng",
       toPersonId: "zhu-yuanzhang",
       kind: "captured",
-      eventId: "zhang-shicheng-defeated",
+      eventId: null,
       resolveAt: () => atFromReignEnd("reign-zhang-shicheng-zhou-zhang", 1367),
     },
     {
@@ -1098,7 +1098,7 @@ export function buildFateCatalog() {
       fromPersonId: "ming-sheng",
       toPersonId: "zhu-yuanzhang",
       kind: "surrender",
-      eventId: "xia-ming-fall",
+      eventId: null,
       resolveAt: () => atFromReignEnd("reign-ming-sheng-xia-ming", 1371),
     },
     {
@@ -1114,7 +1114,7 @@ export function buildFateCatalog() {
       fromPersonId: "togus-temur",
       toPersonId: "zhu-yuanzhang",
       kind: "killed",
-      eventId: "yuan-end",
+      eventId: null,
       resolveAt: () => ymDay(1388, 11, 1),
       precision: "day",
     },
@@ -1123,7 +1123,7 @@ export function buildFateCatalog() {
       fromPersonId: "zhu-youjian",
       toPersonId: "li-zicheng",
       kind: "killed",
-      eventId: "ming-fall",
+      eventId: null,
       resolveAt: () => ymDay(1644, 4, 25),
       precision: "day",
     },
@@ -1148,7 +1148,7 @@ export function buildFateCatalog() {
       fromPersonId: "zhu-youlang",
       toPersonId: "xuanye",
       kind: "captured",
-      eventId: "ming-south-end",
+      eventId: null,
       resolveAt: () => ymDay(1662, 6, 1),
       precision: "day",
     },
@@ -1157,7 +1157,7 @@ export function buildFateCatalog() {
       fromPersonId: "puyi",
       toPersonId: "yuan-shikai",
       kind: "abdication",
-      eventId: "qing-fall",
+      eventId: null,
       resolveAt: () => ymDay(1912, 2, 12),
       precision: "day",
     },

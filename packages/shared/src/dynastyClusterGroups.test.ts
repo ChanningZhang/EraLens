@@ -280,6 +280,6 @@ describe("dynastyClusterGroups", () => {
     expect(frames[0]?.left).toBe(7);
     expect(frames[0]?.width).toBe(90);
     expect(frames[0]?.top).toBe(119);
-    expect(frames[0]?.height).toBe(124);
+    expect(frames[0]?.height).toBe(119);
   });
 });

@@ -223,13 +223,9 @@ const events = [
   }),
 ];
 
-const supplementalEventDynasties = [
-  { eventId: "mongol-fall-xixia", dynastyId: "xixia" },
-];
+const supplementalEventDynasties = [];
 
-const supplementalEventParticipants = [
-  { eventId: "mongol-fall-xixia", personId: "li-xian-xixia" },
-];
+const supplementalEventParticipants = [];
 
 // ── relations ────────────────────────────────────────────────────────────────
 
@@ -248,7 +244,6 @@ for (const group of reignGroups) {
 relations.push(
   { id: "rel-xixia-yuanhao-empire", fromRef: "event:xixia-yuanhao-empire", toRef: "dynasty:xixia", kind: "other" },
   { id: "rel-xixia-haoshuichuan-yuanhao", fromRef: "event:xixia-haoshuichuan-battle", toRef: "person:li-yuanhao", kind: "battle" },
-  { id: "rel-mongol-fall-xixia", fromRef: "event:mongol-fall-xixia", toRef: "dynasty:xixia", kind: "battle" },
 );
 
 // ── SQL helpers ─────────────────────────────────────────────────────────────
@@ -333,12 +328,10 @@ const manifest = {
     { label: "李元昊", url: "https://zh.wikipedia.org/wiki/李元昊" },
     { label: "好水川之战", url: "https://zh.wikipedia.org/wiki/好水川之战" },
     { label: "庆历和议", url: "https://zh.wikipedia.org/wiki/庆历和议" },
-    { label: "蒙古灭西夏", url: "https://zh.wikipedia.org/wiki/蒙古攻灭西夏" },
   ],
   notes: [
     "覆盖西夏李氏十二世君主（982–1227）；1038年称帝后与宋辽鼎立，1115年金朝建立后改与宋金并立。",
     "王朝始年取李继迁叛宋自立（982），1038年李元昊称帝国号大夏。",
-    "「蒙古灭西夏」事件见 mongol-pre-yuan 包，本包补充 event_dynasties / event_participants 关联。",
     "在位年取维基百科君主列表常见年表，precision=year。",
     "《射雕英雄传》西夏公主等为小说虚构人物，未收录。",
   ],

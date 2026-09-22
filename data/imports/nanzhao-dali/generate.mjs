@@ -142,25 +142,6 @@ const reigns = reignGroups.flat();
 
 const events = [
   eventPoint({
-    id: "nanzhao-founded",
-    name: "南诏立国",
-    kind: "politics",
-    dateNote: "649年细奴逻即位；738年皮逻阁统一六诏为南诏全盛起点",
-    at: ym(738),
-    dynastyIds: ["nanzhao"],
-    participantIds: ["pi-luoge"],
-    summary: "皮逻阁受唐册封为云南王，统一六诏，南诏正式成为西南强国。",
-  }),
-  eventPoint({
-    id: "dali-founded",
-    name: "大理建国",
-    kind: "politics",
-    at: ym(937),
-    dynastyIds: ["dali"],
-    participantIds: ["duan-siping"],
-    summary: "段思平灭大义宁，建国号大理，定都羊苴咩城（今大理）。",
-  }),
-  eventPoint({
     id: "mongol-conquer-dali",
     name: "蒙古灭大理",
     kind: "battle",
@@ -192,8 +173,6 @@ for (const group of reignGroups) {
   }
 }
 relations.push(
-  { id: "rel-nanzhao-founded", fromRef: "event:nanzhao-founded", toRef: "dynasty:nanzhao", kind: "other" },
-  { id: "rel-dali-founded", fromRef: "event:dali-founded", toRef: "dynasty:dali", kind: "other" },
   { id: "rel-mongol-conquer-dali", fromRef: "event:mongol-conquer-dali", toRef: "dynasty:dali", kind: "battle" },
 );
 

@@ -24,6 +24,7 @@ export function generateBulkReigns(count = 2200): Reign[] {
       startAbs,
       endAbs,
       precision: "year",
+      isInformalMonarch: false,
     });
   }
   return reigns;

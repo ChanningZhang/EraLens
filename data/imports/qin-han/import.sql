@@ -305,14 +305,6 @@ ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXC
 
 -- events
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('qin-unify', '秦灭六国', 'politics', 'point', 'year', '秦王政先后灭韩赵魏楚燕齐，前221年称帝', -221, 12, -2629, NULL, NULL, NULL, NULL, NULL, NULL, '秦完成统一战争，建立中国历史上首个大一统帝国。')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
-  date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,
-  start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs,
-  end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
-  summary = EXCLUDED.summary;
-INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
 VALUES ('qin-standardize', '书同文车同轨', 'culture', 'span', 'year', '统一后推行文字、度量衡、车轨及郡县制，具体月份不详', NULL, NULL, NULL, -221, 1, -2640, -210, 12, -2497, '秦始皇统一文字、度量衡与道路车轨，推行郡县制。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
@@ -394,14 +386,6 @@ ON CONFLICT (id) DO UPDATE SET
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
 VALUES ('gaixia', '垓下之战', 'battle', 'point', 'year', '汉五年十二月，前202年', -202, 12, -2401, NULL, NULL, NULL, NULL, NULL, NULL, '韩信等合围项羽于垓下，项羽兵败自刎，楚亡汉兴。')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
-  date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,
-  start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs,
-  end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
-  summary = EXCLUDED.summary;
-INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('han-founded', '西汉建立', 'politics', 'point', 'year', '汉五年二月甲午，前202年，刘邦称帝于定陶', -202, 12, -2401, NULL, NULL, NULL, NULL, NULL, NULL, '刘邦称帝，定国号汉，初都洛阳后迁长安。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
   date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,
@@ -521,23 +505,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('han-east-founded', '东汉建立', 'politics', 'point', 'year', '建武元年，25年，刘秀称帝于鄗城', 25, 12, 311, NULL, NULL, NULL, NULL, NULL, NULL, '刘秀击败各路割据，定都洛阳，东汉开始。')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
-  date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,
-  start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs,
-  end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
-  summary = EXCLUDED.summary;
-INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
 VALUES ('yellow-turban', '黄巾起义', 'politics', 'point', 'year', '灵帝建宁二年，184年', 184, 12, 2219, NULL, NULL, NULL, NULL, NULL, NULL, '张角领导黄巾起义，东汉统治根基动摇，群雄割据。')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
-  date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,
-  start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs,
-  end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
-  summary = EXCLUDED.summary;
-INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('han-east-end', '东汉终结', 'politics', 'point', 'year', '献帝延康元年十一月，220年，曹丕受禅', 220, 12, 2651, NULL, NULL, NULL, NULL, NULL, NULL, '曹丕篡汉，献帝禅让，东汉灭亡，曹魏建立。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
   date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,
@@ -546,7 +514,6 @@ ON CONFLICT (id) DO UPDATE SET
   summary = EXCLUDED.summary;
 
 -- event_dynasties
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('qin-unify', 'qin') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('qin-standardize', 'qin') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('burn-books', 'qin') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('great-wall-qin', 'qin') ON CONFLICT DO NOTHING;
@@ -562,7 +529,6 @@ INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('chu-han-war', 'chu-w
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('chu-han-war', 'han-west') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('gaixia', 'chu-west') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('gaixia', 'han-west') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('han-founded', 'han-west') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('baiteng-siege', 'han-west') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('qiguo-rebellion', 'han-west') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('lv-regency', 'han-west') ON CONFLICT DO NOTHING;
@@ -579,12 +545,9 @@ INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('wang-mang-usurp', 'h
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('wang-mang-usurp', 'xin') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('kunyang-battle', 'xin') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('kunyang-battle', 'han-gengshi') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('han-east-founded', 'han-east') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('yellow-turban', 'han-east') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('han-east-end', 'han-east') ON CONFLICT DO NOTHING;
 
 -- event_participants
-INSERT INTO event_participants (event_id, person_id) VALUES ('qin-unify', 'ying-zheng') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('qin-standardize', 'ying-zheng') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('qin-standardize', 'li-si') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('burn-books', 'ying-zheng') ON CONFLICT DO NOTHING;
@@ -610,7 +573,6 @@ INSERT INTO event_participants (event_id, person_id) VALUES ('chu-han-war', 'zha
 INSERT INTO event_participants (event_id, person_id) VALUES ('gaixia', 'liu-bang') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('gaixia', 'xiang-yu') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('gaixia', 'han-xin') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('han-founded', 'liu-bang') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('baiteng-siege', 'liu-bang') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('qiguo-rebellion', 'liu-qi') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('lv-regency', 'lv-zhi') ON CONFLICT DO NOTHING;
@@ -634,9 +596,7 @@ INSERT INTO event_participants (event_id, person_id) VALUES ('wang-mang-usurp', 
 INSERT INTO event_participants (event_id, person_id) VALUES ('wang-mang-usurp', 'ruzi-ying') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('kunyang-battle', 'liu-xiu') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('kunyang-battle', 'wang-mang') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('han-east-founded', 'liu-xiu') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('yellow-turban', 'liu-hong') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('han-east-end', 'liu-xie') ON CONFLICT DO NOTHING;
 
 -- relations
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind)

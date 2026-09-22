@@ -9,13 +9,13 @@
   },
   "scope": "cn",
   "depth": "standard",
-  "generatedAt": "2026-09-20",
+  "generatedAt": "2026-09-22",
   "counts": {
     "persons": 20,
     "dynasties": 4,
     "reigns": 20,
-    "events": 3,
-    "relations": 19
+    "events": 0,
+    "relations": 16
   },
   "sources": [
     {

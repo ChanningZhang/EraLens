@@ -332,17 +332,6 @@ const reignGroups = [...serialReignGroups, jointViceReigns];
 const reigns = applyDocumentedDatesToReigns(reignGroups.flat());
 
 const events = [
-  eventPoint({
-    id: "prc-founded",
-    name: "开国大典",
-    kind: "politics",
-    precision: "day",
-    dateNote: "1949年10月1日，毛泽东在天安门城楼宣告中华人民共和国中央人民政府成立",
-    at: ym(1949, 10),
-    dynastyIds: ["prc", "roc"],
-    participantIds: ["mao-zedong", "zhou-enlai"],
-    summary: "北京举行开国大典，中华人民共和国成立，中央人民政府就职。",
-  }),
   eventRange({
     id: "korean-war",
     name: "抗美援朝",

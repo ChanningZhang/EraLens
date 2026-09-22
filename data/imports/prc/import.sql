@@ -113,8 +113,6 @@ VALUES ('reign-song-qingling-dong-biwu-prc', 'prc', 'song-qingling-dong-biwu', '
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence;
 
 -- events
-INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning) VALUES ('prc-founded', '开国大典', 'politics', 'point', 'day', '1949年10月1日，毛泽东在天安门城楼宣告中华人民共和国中央人民政府成立', 1949, 10, 23397, NULL, NULL, NULL, NULL, NULL, NULL, '北京举行开国大典，中华人民共和国成立，中央人民政府就职。', NULL)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning) VALUES ('korean-war', '抗美援朝', 'battle', 'span', 'month', '1950年10月志愿军入朝，至1953年7月朝鲜停战协定签字', NULL, NULL, NULL, 1950, 10, 23409, 1953, 7, 23442, '中国人民志愿军入朝作战，1953年7月签订停战协定。', NULL)
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning) VALUES ('great-leap-forward', '大跃进', 'politics', 'span', 'year', '1958年八大二次会议提出总路线，至1961年国民经济调整', NULL, NULL, NULL, 1958, 1, 23496, 1961, 12, 23543, '以钢为纲的跃进运动与人民公社化，随后出现三年困难，国民经济被迫调整。', NULL)
@@ -141,8 +139,6 @@ INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning;
 
 -- event_dynasties
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('prc-founded', 'prc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('prc-founded', 'roc') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('korean-war', 'prc') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('great-leap-forward', 'prc') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('cultural-revolution', 'prc') ON CONFLICT DO NOTHING;
@@ -158,8 +154,6 @@ INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('eighteenth-party-con
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('civil-war', 'prc') ON CONFLICT DO NOTHING;
 
 -- event_participants
-INSERT INTO event_participants (event_id, person_id) VALUES ('prc-founded', 'mao-zedong') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('prc-founded', 'zhou-enlai') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('korean-war', 'mao-zedong') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('korean-war', 'zhou-enlai') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('korean-war', 'peng-dehuai') ON CONFLICT DO NOTHING;

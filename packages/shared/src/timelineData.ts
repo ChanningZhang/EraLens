@@ -369,6 +369,7 @@ export function buildEntityDetail(
             },
           ]
         : [],
+      capitalTenures: [],
       links: capital.links,
     };
   }
@@ -398,6 +399,7 @@ export function buildEntityDetail(
       ],
       summary: dynasty.note,
       related: [...capitalRelated, ...eventRelated, ...idiomRelated],
+      capitalTenures: [],
       links: [],
     };
   }
@@ -481,6 +483,7 @@ export function buildEntityDetail(
       ],
       summary: event.summary,
       related: [...dynastyRelated, ...participantRelated, ...sourceEventRelated],
+      capitalTenures: [],
       links: [],
     };
   }
@@ -519,6 +522,7 @@ export function buildEntityDetail(
           : null;
       })
       .filter(Boolean) as EntityDetail["related"],
+    capitalTenures: [],
     links: [],
   };
 }

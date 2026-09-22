@@ -58,14 +58,12 @@ INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('xixia-haoshuichuan-b
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('xixia-haoshuichuan-battle', 'song-north') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('xixia-qingli-treaty', 'xixia') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('xixia-qingli-treaty', 'song-north') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('mongol-fall-xixia', 'xixia') ON CONFLICT DO NOTHING;
 
 -- event_participants
 INSERT INTO event_participants (event_id, person_id) VALUES ('xixia-li-jiqian-rebel', 'li-jiqian') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('xixia-yuanhao-empire', 'li-yuanhao') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('xixia-haoshuichuan-battle', 'li-yuanhao') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('xixia-qingli-treaty', 'li-yuanhao') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('mongol-fall-xixia', 'li-xian-xixia') ON CONFLICT DO NOTHING;
 
 -- relations
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-li-jiqian-li-deming-succession', 'person', 'li-jiqian', 'person', 'li-deming', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
@@ -81,6 +79,5 @@ INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('re
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-li-dewang-li-xian-xixia-succession', 'person', 'li-dewang', 'person', 'li-xian-xixia', 'succession') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-xixia-yuanhao-empire', 'event', 'xixia-yuanhao-empire', 'dynasty', 'xixia', 'other') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-xixia-haoshuichuan-yuanhao', 'event', 'xixia-haoshuichuan-battle', 'person', 'li-yuanhao', 'battle') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
-INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind) VALUES ('rel-mongol-fall-xixia', 'event', 'mongol-fall-xixia', 'dynasty', 'xixia', 'battle') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 
 COMMIT;

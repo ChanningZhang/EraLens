@@ -739,12 +739,6 @@ const events = [
 
 const relations = [
   {
-    id: "rel-idiom-woxin-wu-destroy-yue",
-    fromRef: "event:idiom-wo-xin-chang-dan",
-    toRef: "event:wu-destroy-yue",
-    kind: "other",
-  },
-  {
     id: "rel-idiom-fenghuo-quanrong",
     fromRef: "event:idiom-feng-huo-xi-zhu-hou",
     toRef: "event:quanrong-invasion",

@@ -444,16 +444,6 @@ const events = [
     summary: "赵公子嘉逃至代郡，被大夫拥立为代王，延续赵国宗祀。",
   }),
   eventPoint({
-    id: "qin-destroy-dai",
-    name: "秦灭代",
-    kind: "battle",
-    dateNote: "秦王政二十五年，前222年",
-    at: ym(-222),
-    dynastyIds: ["dai-warring", "qin"],
-    participantIds: ["zhao-jia-dai"],
-    summary: "秦将王贲攻代，俘代王嘉，代国灭亡。",
-  }),
-  eventPoint({
     id: "zhou-guo-split",
     name: "东西周国分立",
     kind: "politics",
@@ -463,16 +453,6 @@ const events = [
     participantIds: ["zhou-guo-chao", "zhou-guo-gen"],
     summary:
       "西周威公卒后，太子朝据王城为西周惠公，少子根据巩为东周惠公，周王畿分裂为西周国与东周国。",
-  }),
-  eventPoint({
-    id: "qin-destroy-zhou-east",
-    name: "秦灭东周国",
-    kind: "politics",
-    dateNote: "秦庄襄王元年，前249年",
-    at: ym(-249),
-    dynastyIds: ["zhou-guo-east", "qin"],
-    participantIds: [SYSTEM_MISSING_RULER_PERSON_ID],
-    summary: "秦庄襄王遣吕不韦攻东周国，杀东周君，东周国灭亡。",
   }),
 ];
 
@@ -485,12 +465,9 @@ const supplementalEventDynasties = [
   { eventId: "zhanguo", dynastyId: "jiaodong-warring" },
   { eventId: "zhanguo", dynastyId: "zhou-guo-west" },
   { eventId: "zhanguo", dynastyId: "zhou-guo-east" },
-  { eventId: "qin-destroy-han", dynastyId: "dai-warring" },
-  { eventId: "qin-destroy-zhou", dynastyId: "zhou-guo-west" },
 ];
 
 const supplementalEventParticipants = [
-  { eventId: "qin-destroy-zhou", personId: "zhou-guo-jiu" },
 ];
 
 const relations = [];
@@ -506,15 +483,8 @@ for (const group of reignGroups) {
 }
 relations.push(
   { id: "rel-dai-founded-zhao-jia", fromRef: "event:dai-founded", toRef: "person:zhao-jia-dai", kind: "politics" },
-  { id: "rel-qin-destroy-dai-zhao-jia", fromRef: "event:qin-destroy-dai", toRef: "person:zhao-jia-dai", kind: "battle" },
   { id: "rel-zhou-guo-split-chao", fromRef: "event:zhou-guo-split", toRef: "person:zhou-guo-chao", kind: "politics" },
   { id: "rel-zhou-guo-split-gen", fromRef: "event:zhou-guo-split", toRef: "person:zhou-guo-gen", kind: "politics" },
-  {
-    id: "rel-qin-destroy-zhou-east-missing-ruler",
-    fromRef: "event:qin-destroy-zhou-east",
-    toRef: `person:${SYSTEM_MISSING_RULER_PERSON_ID}`,
-    kind: "politics",
-  },
 );
 
 const cleanupSql = [

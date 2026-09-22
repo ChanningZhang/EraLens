@@ -1196,17 +1196,6 @@ const events = [
     participantIds: ["kong-qiu"],
     summary: "儒墨道法名等学派并起，塑造此后中国思想传统。",
   }),
-  eventPoint({
-    id: "qin-destroy-zhou",
-    name: "秦灭周",
-    kind: "politics",
-    precision: "year",
-    dateNote: "赧王五十九年，前256年，秦昭襄王灭西周君",
-    at: ym(-256),
-    dynastyIds: ["zhou-east"],
-    participantIds: ["ji-yan"],
-    summary: "秦攻取周王畿，赧王卒，东周灭亡。",
-  }),
 ];
 
 function successionPairs(list) {

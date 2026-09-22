@@ -245,15 +245,6 @@ const reigns = applyDocumentedDatesToReigns(reignGroups.flat());
 
 const events = [
   eventPoint({
-    id: "tubo-founded",
-    name: "吐蕃建国",
-    kind: "politics",
-    at: ym(618),
-    dynastyIds: ["tubo"],
-    participantIds: ["namri-songtsen"],
-    summary: "南日松赞统一青藏高原诸部，吐蕃帝国肇始。",
-  }),
-  eventPoint({
     id: "gaogouli-destroyed-tang",
     name: "唐灭高句丽",
     kind: "battle",
@@ -263,26 +254,6 @@ const events = [
     dynastyIds: ["gaogouli", "tang"],
     participantIds: ["baozang-wang"],
     summary: "唐军攻灭高句丽，宝藏王被俘，高句丽亡国。",
-  }),
-  eventPoint({
-    id: "huihu-destroyed",
-    name: "回鹘灭亡",
-    kind: "politics",
-    dateNote: "840年，黠戛斯攻灭回鹘",
-    at: ym(840),
-    dynastyIds: ["huihu"],
-    participantIds: ["kasa-kehan", "wujie-kehan"],
-    summary: "黠戛斯攻破回鹘牙帐，㕎馺可汗被杀；乌介可汗南逃，漠北回鹘汗国终结。",
-  }),
-  eventPoint({
-    id: "tuyuhun-destroyed",
-    name: "吐谷浑灭亡",
-    kind: "politics",
-    dateNote: "663年，吐蕃占吐谷浑全境",
-    at: ym(663),
-    dynastyIds: ["tuyuhun", "tubo"],
-    participantIds: ["nuohabo"],
-    summary: "吐蕃大举入侵，诺曷钵率部投唐，吐谷浑汗国灭亡。",
   }),
 ];
 
@@ -300,10 +271,7 @@ for (const group of reignGroups) {
   }
 }
 relations.push(
-  { id: "rel-tubo-founded", fromRef: "event:tubo-founded", toRef: "dynasty:tubo", kind: "other" },
   { id: "rel-gaogouli-destroyed", fromRef: "event:gaogouli-destroyed-tang", toRef: "dynasty:gaogouli", kind: "battle" },
-  { id: "rel-huihu-destroyed", fromRef: "event:huihu-destroyed", toRef: "dynasty:huihu", kind: "other" },
-  { id: "rel-tuyuhun-destroyed", fromRef: "event:tuyuhun-destroyed", toRef: "dynasty:tuyuhun", kind: "battle" },
 );
 
 // ── output ───────────────────────────────────────────────────────────────────

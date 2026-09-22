@@ -361,7 +361,7 @@ export function mapEvent(
   const endAbs = "endAbs" in row ? row.endAbs : row.end_abs;
   const timeMode = "timeMode" in row ? row.timeMode : row.time_mode;
   const dateNote = "dateNote" in row ? row.dateNote : row.date_note;
-  const meaning = "meaning" in row ? row.meaning : row.meaning;
+  const meaning = row.meaning;
 
   return {
     id: row.id,

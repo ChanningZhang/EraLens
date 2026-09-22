@@ -106,7 +106,7 @@ async function main() {
           startAbs: dynasty.startAbs,
           endAbs: dynasty.endAbs,
           precision: dynasty.precision,
-          colorToken: dynasty.colorToken,
+          colorToken: dynasty.colorToken ?? "cinnabar",
           orthodoxFromAbs: dynasty.orthodoxFromAbs,
           orthodoxEndAbs: dynasty.orthodoxEndAbs,
           parentId: dynasty.parentId,

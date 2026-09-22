@@ -54,22 +54,22 @@ function segmentTimePoints(
 function formatTenureRangeLabel(
   start: CapitalTimePoint,
   end: CapitalTimePoint,
-  precision?: Reign["precision"],
+  startPrecision?: Reign["precision"],
+  endPrecision = startPrecision,
 ): string {
-  if (precision === "day" && start.day != null && end.day != null) {
-    const startLabel = `${formatYearMonth(start.year, start.month, "compact")}${start.day}日`;
-    const endLabel = `${formatYearMonth(end.year, end.month, "compact")}${end.day}日`;
-    return startLabel === endLabel ? startLabel : `${startLabel} — ${endLabel}`;
-  }
-  if (precision === "month" || precision === "day") {
-    const startLabel = formatYearMonth(start.year, start.month, "compact");
-    const endLabel = formatYearMonth(end.year, end.month, "compact");
-    return startLabel === endLabel ? startLabel : `${startLabel} — ${endLabel}`;
-  }
-  if (start.year === end.year) {
-    return formatYear(start.year, "compact");
-  }
-  return `${start.year} — ${end.year}`;
+  const formatPoint = (point: CapitalTimePoint, precision?: Reign["precision"]): string => {
+    if (precision === "day" && point.day != null) {
+      return `${formatYearMonth(point.year, point.month, "compact")}${point.day}日`;
+    }
+    if (precision === "month") {
+      return formatYearMonth(point.year, point.month, "compact");
+    }
+    return `${point.year}`;
+  };
+
+  const startLabel = formatPoint(start, startPrecision);
+  const endLabel = formatPoint(end, endPrecision);
+  return startLabel === endLabel ? startLabel : `${startLabel} — ${endLabel}`;
 }
 
 export function capitalTenureSubtitle(capital: DynastyCapital): string | undefined {
@@ -121,12 +121,6 @@ export function buildReignCapitalTenures(
     )
     .map((capital) => {
       const segment = segmentTimePoints(reign, capital);
-      const precision =
-        reign.precision === "day" || capital.precision === "day"
-          ? "day"
-          : reign.precision === "month" || capital.precision === "month"
-            ? "month"
-            : "year";
       return {
         capital: {
           ref: { type: "capital" as const, id: capital.id },
@@ -135,7 +129,12 @@ export function buildReignCapitalTenures(
         },
         tenure: {
           ref: { type: "reign" as const, id: reign.id },
-          label: formatTenureRangeLabel(segment.start, segment.end, precision),
+          label: formatTenureRangeLabel(
+            segment.start,
+            segment.end,
+            segment.start === reign.start ? reign.precision : capital.precision,
+            segment.end === reign.end ? reign.precision : capital.precision,
+          ),
           abs: segment.startAbs,
         },
         sortKey: {

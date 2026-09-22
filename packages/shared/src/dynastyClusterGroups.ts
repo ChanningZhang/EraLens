@@ -227,7 +227,12 @@ export type ClusterFramePlacement = {
 
 /** Horizontal / bottom air around left-rail dynasty chips. */
 export const CLUSTER_CHIP_FRAME_PAD_X_PX = 5;
-export const CLUSTER_CHIP_FRAME_PAD_BOTTOM_PX = 5;
+/**
+ * Keep the frame inside the last chip's bottom edge. The lane itself already
+ * provides the vertical breathing room before the next dynasty chip; adding
+ * frame padding here makes the group border visually stick to that chip.
+ */
+export const CLUSTER_CHIP_FRAME_PAD_BOTTOM_PX = 0;
 /** Extra top air so the group name can sit on the frame edge. */
 export const CLUSTER_CHIP_FRAME_PAD_TOP_PX = 11;
 

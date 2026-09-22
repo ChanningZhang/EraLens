@@ -169,4 +169,38 @@ describe("buildReignCapitalTenures", () => {
       "1644年4月25日 — 1644年4月30日",
     );
   });
+
+  it("keeps the highest available precision independently at each tenure boundary", () => {
+    const reign: Reign = {
+      id: "reign-mixed-precision",
+      dynastyId: "mixed",
+      personId: "ruler-mixed-precision",
+      title: "君主",
+      start: { year: 1644, month: 4, day: 25 },
+      end: { year: 1644, month: 5, day: 17 },
+      startAbs: 19731,
+      endAbs: 19732,
+      precision: "day",
+    };
+    const capital: DynastyCapital = {
+      id: "cap-mixed-precision",
+      dynastyId: "mixed",
+      historicalName: "都城",
+      modernName: "某地",
+      longitude: 0,
+      latitude: 0,
+      coordinateSystem: "GCJ02",
+      start: { year: 1644, month: 1 },
+      end: { year: 1644, month: 4 },
+      startAbs: 19728,
+      endAbs: 19731,
+      precision: "month",
+      role: "primary",
+      links: [],
+    };
+
+    expect(buildReignCapitalTenures(reign, [capital])[0]?.tenure.label).toBe(
+      "1644年4月25日 — 1644年4月",
+    );
+  });
 });

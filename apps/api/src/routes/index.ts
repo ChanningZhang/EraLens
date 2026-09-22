@@ -100,7 +100,7 @@ const PLACEABLE_NON_RULER_WHERE = {
     { AND: [{ birthYear: { not: null } }, { birthMonth: { not: null } }] },
     { AND: [{ deathYear: { not: null } }, { deathMonth: { not: null } }] },
   ],
-} as const;
+};
 
 async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string) {
   const dynastyRows = scope

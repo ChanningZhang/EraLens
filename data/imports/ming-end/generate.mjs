@@ -131,17 +131,6 @@ const reigns = applyDocumentedDatesToReigns(reignGroups.flat());
 
 const events = [
   eventPoint({
-    id: "daxi-founded",
-    name: "大西政权建立",
-    kind: "politics",
-    dateNote: "崇祯十七年十一月庚寅，1644年12月4日，张献忠成都称帝",
-    at: ymDay(1644, 12, 4),
-    precision: "day",
-    dynastyIds: ["daxi"],
-    participantIds: ["zhang-xianzhong"],
-    summary: "张献忠占领成都后称帝，国号大西，年号大顺，以蜀王府为宫。",
-  }),
-  eventPoint({
     id: "mingzheng-taiwan-founded",
     name: "明郑开台",
     kind: "politics",
@@ -166,16 +155,11 @@ const events = [
 ];
 
 const supplementalEventDynasties = [
-  { eventId: "ming-fall", dynastyId: "dashun" },
-  { eventId: "ming-fall", dynastyId: "qing" },
   { eventId: "qing-enter-pass", dynastyId: "dashun" },
   { eventId: "zheng-recover-taiwan", dynastyId: "mingzheng" },
-  { eventId: "ming-south-end", dynastyId: "mingzheng" },
 ];
 
-const supplementalEventParticipants = [
-  { eventId: "ming-fall", personId: "li-zicheng" },
-];
+const supplementalEventParticipants = [];
 
 const relations = [];
 for (const group of reignGroups) {
@@ -189,8 +173,6 @@ for (const group of reignGroups) {
   }
 }
 relations.push(
-  { id: "rel-ming-fall-li", fromRef: "event:ming-fall", toRef: "person:li-zicheng", kind: "politics" },
-  { id: "rel-daxi-founded-zhang", fromRef: "event:daxi-founded", toRef: "person:zhang-xianzhong", kind: "politics" },
   { id: "rel-mingzheng-taiwan-zheng", fromRef: "event:mingzheng-taiwan-founded", toRef: "person:zheng-chenggong", kind: "politics" },
   { id: "rel-qing-taiwan-zheng-keshuang", fromRef: "event:qing-conquer-taiwan", toRef: "person:zheng-keshuang", kind: "battle" },
 );

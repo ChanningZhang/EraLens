@@ -536,13 +536,11 @@ function eventRange(partial) {
 }
 
 const events = [
-  eventPoint({ id: "sui-founded", name: "隋朝建立", kind: "politics", at: ym(581), dynastyIds: ["sui", "zhou-bei"], participantIds: ["yang-jian"], summary: "杨坚废北周静帝自立，改国号隋，北朝终结。" }),
   eventPoint({ id: "sui-unify", name: "隋灭陈统一", kind: "politics", at: ym(589), dynastyIds: ["sui", "chen-nan"], participantIds: ["yang-jian"], summary: "隋军灭南陈，南北分裂终结，隋统一全国。" }),
   eventRange({ id: "kaihuang-rule", name: "开皇之治", kind: "politics", timeMode: "span", start: ym(581), end: ym(600), dynastyIds: ["sui"], participantIds: ["yang-jian"], summary: "隋文帝励精图治，轻徭薄赋，国力强盛。" }),
   eventRange({ id: "grand-canal", name: "开凿大运河", kind: "culture", timeMode: "span", dateNote: "605年起大规模开凿，连通南北", start: ym(605), end: ym(610), dynastyIds: ["sui"], participantIds: ["yang-guang"], summary: "隋炀帝下令开凿大运河，贯通南北交通。" }),
   eventRange({ id: "sui-campaign-goguryeo", name: "隋炀帝三征高丽", kind: "battle", timeMode: "span", start: ym(612), end: ym(614), dynastyIds: ["sui"], participantIds: ["yang-guang"], summary: "隋炀帝三次大规模远征高句丽，劳民伤财，隋军惨败，国力大损。" }),
   eventPoint({ id: "yang-you-enthroned", name: "李渊拥杨侑称帝", kind: "politics", at: ym(617), dynastyIds: ["sui"], participantIds: ["li-yuan", "yang-you"], summary: "李渊入长安，拥隋炀帝孙杨侑为帝，与江都炀帝形成二主并存。" }),
-  eventPoint({ id: "sui-fall", name: "隋朝灭亡", kind: "politics", at: ym(618), dynastyIds: ["sui"], participantIds: ["yang-guang", "yuwen-huaji"], summary: "江都兵变，隋炀帝被杀，中央权威瓦解；长安、江都、东都各立隋室傀儡。" }),
   eventPoint({
     id: "yang-guang-killed",
     name: "江都兵变：隋炀帝被杀",
@@ -566,17 +564,6 @@ const events = [
     summary: "宇文化及弑炀帝后，拥立秦王杨浩，江都隋室由此续统。",
   }),
   eventPoint({ id: "yang-tong-enthroned", name: "东都拥立杨侗", kind: "politics", at: ym(618), dynastyIds: ["sui"], participantIds: ["wang-shichong", "yang-tong"], summary: "王世充等拥隋炀帝孙杨侗于东都即位，与长安、江都各立一主。" }),
-  eventPoint({
-    id: "tang-founded",
-    name: "唐朝建立",
-    kind: "politics",
-    precision: "day",
-    dateNote: "武德元年五月庚午，618年6月12日，杨侑禅让，李渊称帝",
-    at: ymDay(618, 6, 12),
-    dynastyIds: ["tang", "sui"],
-    participantIds: ["li-yuan", "yang-you"],
-    summary: "杨侑禅让，李渊称帝，定都长安，唐朝开始。",
-  }),
   eventPoint({
     id: "yang-tong-killed",
     name: "杨侗被杀",
@@ -630,7 +617,6 @@ const events = [
     participantIds: ["zhao-ji", "zhao-huan"],
     summary: "金军破开封，俘徽钦二帝，北宋灭亡。",
   }),
-  eventPoint({ id: "song-south-founded", name: "南宋建立", kind: "politics", at: ym(1127), dynastyIds: ["song-south"], participantIds: ["zhao-gou"], summary: "赵构南渡即位，定都临安，南宋开始。" }),
   eventPoint({
     id: "yashan-battle",
     name: "崖山海战",

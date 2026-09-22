@@ -796,17 +796,6 @@ function eventRange(partial) {
 
 const events = [
   eventPoint({
-    id: "jin-west-founded",
-    name: "西晋建立",
-    kind: "politics",
-    precision: "day",
-    dateNote: "泰始元年二月癸亥，266年2月4日，曹奂禅让，司马炎称帝",
-    at: ymDay(266, 2, 4),
-    dynastyIds: ["jin-west"],
-    participantIds: ["sima-yan"],
-    summary: "司马炎代魏受禅，改国号晋，定都洛阳。",
-  }),
-  eventPoint({
     id: "jin-unify-wu",
     name: "晋灭吴统一天下",
     kind: "politics",
@@ -840,44 +829,6 @@ const events = [
     participantIds: ["sima-chi", "liu-cong"],
     summary: "汉赵刘曜攻陷洛阳，俘晋怀帝，中原士族南渡，西晋名存实亡。",
   }),
-  eventPoint({
-    id: "jin-west-fall",
-    name: "西晋灭亡",
-    kind: "politics",
-    dateNote: "建兴四年十一月十一日（316年12月11日），刘曜陷长安，愍帝出降",
-    at: ym(316),
-    dynastyIds: ["jin-west", "han-zhao"],
-    participantIds: ["sima-ye", "liu-yao-jin", "liu-cong"],
-    summary: "晋愍帝出降刘曜，西晋正式灭亡。",
-  }),
-  eventPoint({
-    id: "jin-east-founded",
-    name: "东晋建立",
-    kind: "politics",
-    dateNote: "317年，司马睿即皇帝位于建康",
-    at: ym(317),
-    dynastyIds: ["jin-east"],
-    participantIds: ["sima-rui", "wang-dao"],
-    summary: "司马睿南渡即帝位，建都建康，东晋开始，王导等士族共定江南。",
-  }),
-  eventPoint({
-    id: "cheng-han-founded",
-    name: "成汉建立",
-    kind: "politics",
-    at: ym(304),
-    dynastyIds: ["cheng-han"],
-    participantIds: ["li-xiong"],
-    summary: "李雄据益州称成都王，后称帝，成汉立国。",
-  }),
-  eventPoint({
-    id: "han-zhao-founded",
-    name: "汉赵建立",
-    kind: "politics",
-    at: ym(304),
-    dynastyIds: ["han-zhao"],
-    participantIds: ["liu-yuan"],
-    summary: "刘渊于离石举兵，称汉王，后称帝，五胡乱华开端。",
-  }),
   eventRange({
     id: "wuhu-chaos",
     name: "五胡乱华",
@@ -889,24 +840,6 @@ const events = [
     dynastyIds: ["jin-west", "jin-east", "han-zhao", "cheng-han"],
     participantIds: ["liu-yuan", "li-xiong"],
     summary: "匈奴、羯、氐、羌、鲜卑等族内迁并建立政权，北方长期分裂混战。",
-  }),
-  eventPoint({
-    id: "zhao-back-founded",
-    name: "后赵建立",
-    kind: "politics",
-    at: ym(319),
-    dynastyIds: ["zhao-back"],
-    participantIds: ["shi-le"],
-    summary: "石勒据襄国，称赵王，后称帝，建立后赵。",
-  }),
-  eventPoint({
-    id: "qin-front-founded",
-    name: "前秦建立",
-    kind: "politics",
-    at: ym(351),
-    dynastyIds: ["qin-front"],
-    participantIds: ["fu-jian"],
-    summary: "苻健据长安称帝，前秦开始。",
   }),
   eventRange({
     id: "fu-jian-unify-north",
@@ -962,26 +895,6 @@ const events = [
     participantIds: ["liu-yu-jin", "yao-hong"],
     summary: "刘裕率军北伐，攻占长安，灭后秦，东晋势力达于极北。",
   }),
-  eventPoint({
-    id: "jin-east-end",
-    name: "东晋灭亡",
-    kind: "politics",
-    dateNote: "420年，刘裕代晋",
-    at: ym(420, 7),
-    dynastyIds: ["jin-east"],
-    participantIds: ["liu-yu-jin", "sima-dewen"],
-    summary: "刘裕受禅代晋，建宋，东晋终结。",
-  }),
-  eventPoint({
-    id: "sixteen-kingdoms-end",
-    name: "北魏灭北凉",
-    kind: "politics",
-    dateNote: "439年，拓跋焘灭北凉，统一华北",
-    at: ym(439),
-    dynastyIds: ["liang-north"],
-    participantIds: ["juqu-mujian"],
-    summary: "北魏太武帝灭北凉，统一华北，五胡十六国时期结束。",
-  }),
 ];
 
 // ── relations ────────────────────────────────────────────────────────────────
@@ -1009,7 +922,6 @@ relations.push(
   { id: "rel-feishui-fu-jian", fromRef: "event:feishui-battle", toRef: "person:fu-jian-ming", kind: "battle" },
   { id: "rel-feishui-xie-an", fromRef: "event:feishui-battle", toRef: "person:xie-an", kind: "battle" },
   { id: "rel-yongjia-liu-cong", fromRef: "event:yongjia-disaster", toRef: "person:liu-cong", kind: "battle" },
-  { id: "rel-jin-east-wang-dao", fromRef: "event:jin-east-founded", toRef: "person:wang-dao", kind: "alliance" },
 );
 
 // ── SQL generation ───────────────────────────────────────────────────────────

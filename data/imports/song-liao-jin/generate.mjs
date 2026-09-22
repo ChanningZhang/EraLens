@@ -221,15 +221,6 @@ const events = [
     summary: "宋真宗与辽圣宗订立和约，宋岁赐辽银绢，双方罢兵。",
   }),
   eventPoint({
-    id: "jin-founded",
-    name: "金朝建立",
-    kind: "politics",
-    at: ym(1115),
-    dynastyIds: ["jin-nvzhen"],
-    participantIds: ["wanyan-aguda"],
-    summary: "完颜阿骨打称帝，国号大金，起兵反辽。",
-  }),
-  eventPoint({
     id: "jin-destroy-liao",
     name: "金灭辽",
     kind: "battle",
@@ -306,7 +297,6 @@ const events = [
 // Supplemental links for events already in sui-tang-wudai-song
 const supplementalEventDynasties = [
   { eventId: "jingkang-incident", dynastyId: "jin-nvzhen" },
-  { eventId: "song-south-founded", dynastyId: "jin-nvzhen" },
   { eventId: "jingkang-incident", dynastyId: "liao" },
 ];
 

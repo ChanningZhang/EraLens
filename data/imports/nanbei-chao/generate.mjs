@@ -532,15 +532,6 @@ function eventRange(partial) {
 
 const events = [
   eventPoint({
-    id: "wei-north-founded",
-    name: "北魏建立",
-    kind: "politics",
-    at: ym(386),
-    dynastyIds: ["wei-north"],
-    participantIds: ["tuoba-gui"],
-    summary: "拓跋珪即代王位，国号魏，后迁都平城，北魏开始。",
-  }),
-  eventPoint({
     id: "song-liu-founded",
     name: "刘宋代晋",
     kind: "politics",

@@ -512,17 +512,6 @@ function eventRange(partial) {
 }
 
 const events = [
-  eventPoint({
-    id: "qin-unify",
-    name: "秦灭六国",
-    kind: "politics",
-    precision: "year",
-    dateNote: "秦王政先后灭韩赵魏楚燕齐，前221年称帝",
-    at: ym(-221),
-    dynastyIds: ["qin"],
-    participantIds: ["ying-zheng"],
-    summary: "秦完成统一战争，建立中国历史上首个大一统帝国。",
-  }),
   eventRange({
     id: "qin-standardize",
     name: "书同文车同轨",
@@ -653,17 +642,6 @@ const events = [
     dynastyIds: ["chu-west", "han-west"],
     participantIds: ["liu-bang", "xiang-yu", "han-xin"],
     summary: "韩信等合围项羽于垓下，项羽兵败自刎，楚亡汉兴。",
-  }),
-  eventPoint({
-    id: "han-founded",
-    name: "西汉建立",
-    kind: "politics",
-    precision: "year",
-    dateNote: "汉五年二月甲午，前202年，刘邦称帝于定陶",
-    at: ym(-202),
-    dynastyIds: ["han-west"],
-    participantIds: ["liu-bang"],
-    summary: "刘邦称帝，定国号汉，初都洛阳后迁长安。",
   }),
   eventPoint({
     id: "baiteng-siege",
@@ -833,17 +811,6 @@ const events = [
     summary: "刘秀率绿林军于昆阳大破王莽主力，新莽覆亡在即。",
   }),
   eventPoint({
-    id: "han-east-founded",
-    name: "东汉建立",
-    kind: "politics",
-    precision: "year",
-    dateNote: "建武元年，25年，刘秀称帝于鄗城",
-    at: ym(25),
-    dynastyIds: ["han-east"],
-    participantIds: ["liu-xiu"],
-    summary: "刘秀击败各路割据，定都洛阳，东汉开始。",
-  }),
-  eventPoint({
     id: "yellow-turban",
     name: "黄巾起义",
     kind: "politics",
@@ -853,17 +820,6 @@ const events = [
     dynastyIds: ["han-east"],
     participantIds: ["liu-hong"],
     summary: "张角领导黄巾起义，东汉统治根基动摇，群雄割据。",
-  }),
-  eventPoint({
-    id: "han-east-end",
-    name: "东汉终结",
-    kind: "politics",
-    precision: "year",
-    dateNote: "献帝延康元年十一月，220年，曹丕受禅",
-    at: ym(220),
-    dynastyIds: ["han-east"],
-    participantIds: ["liu-xie"],
-    summary: "曹丕篡汉，献帝禅让，东汉灭亡，曹魏建立。",
   }),
 ];
 

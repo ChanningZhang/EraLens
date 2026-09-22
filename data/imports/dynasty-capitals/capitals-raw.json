@@ -4272,17 +4272,19 @@
     "modernName": "江苏省南京市",
     "start": {
       "year": 1644,
-      "month": 1,
-      "abs": 19728
+      "month": 6,
+      "abs": 19733,
+      "day": 19
     },
     "end": {
       "year": 1645,
-      "month": 12,
-      "abs": 19751
+      "month": 6,
+      "abs": 19745,
+      "day": 15
     },
-    "startAbs": 19728,
-    "endAbs": 19751,
-    "precision": "year",
+    "startAbs": 19733,
+    "endAbs": 19745,
+    "precision": "day",
     "role": "primary",
     "note": "弘光政权都南京。",
     "links": [
@@ -4299,17 +4301,19 @@
     "modernName": "福建省福州市",
     "start": {
       "year": 1645,
-      "month": 1,
-      "abs": 19740
+      "month": 8,
+      "abs": 19747,
+      "day": 18
     },
     "end": {
       "year": 1646,
-      "month": 12,
-      "abs": 19763
+      "month": 10,
+      "abs": 19761,
+      "day": 6
     },
-    "startAbs": 19740,
-    "endAbs": 19763,
-    "precision": "year",
+    "startAbs": 19747,
+    "endAbs": 19761,
+    "precision": "day",
     "role": "primary",
     "note": "隆武政权都福州。",
     "links": [
@@ -4326,18 +4330,21 @@
     "modernName": "广东省广州市",
     "start": {
       "year": 1646,
-      "month": 1,
-      "abs": 19752
+      "month": 12,
+      "abs": 19763,
+      "day": 11
     },
     "end": {
       "year": 1647,
-      "month": 12,
-      "abs": 19775
+      "month": 1,
+      "abs": 19764,
+      "day": 20
     },
-    "startAbs": 19752,
-    "endAbs": 19775,
-    "precision": "year",
+    "startAbs": 19763,
+    "endAbs": 19764,
+    "precision": "day",
     "role": "primary",
+    "claimTrack": "shaowu",
     "note": "绍武政权都广州。",
     "links": [
       {
@@ -4353,17 +4360,19 @@
     "modernName": "广东省肇庆市",
     "start": {
       "year": 1646,
-      "month": 1,
-      "abs": 19752
+      "month": 12,
+      "abs": 19763,
+      "day": 24
     },
     "end": {
       "year": 1647,
-      "month": 12,
-      "abs": 19775
+      "month": 2,
+      "abs": 19765,
+      "day": 20
     },
-    "startAbs": 19752,
-    "endAbs": 19775,
-    "precision": "year",
+    "startAbs": 19763,
+    "endAbs": 19765,
+    "precision": "day",
     "role": "primary",
     "note": "永历帝于肇庆登基。",
     "links": [
@@ -4380,19 +4389,74 @@
     "modernName": "广西壮族自治区桂林市",
     "start": {
       "year": 1647,
-      "month": 1,
-      "abs": 19764
+      "month": 2,
+      "abs": 19765,
+      "day": 21
+    },
+    "end": {
+      "year": 1648,
+      "month": 12,
+      "abs": 19787
+    },
+    "startAbs": 19765,
+    "endAbs": 19787,
+    "precision": "month",
+    "role": "primary",
+    "note": "绍武败后永历退守广西。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南明"
+      }
+    ]
+  },
+  {
+    "id": "cap-ming-south-zhaoqing-1648",
+    "dynastyId": "ming-south",
+    "historicalName": "肇庆",
+    "modernName": "广东省肇庆市",
+    "start": {
+      "year": 1648,
+      "month": 8,
+      "abs": 19783
     },
     "end": {
       "year": 1649,
-      "month": 12,
-      "abs": 19799
+      "month": 11,
+      "abs": 19798
     },
-    "startAbs": 19764,
-    "endAbs": 19799,
-    "precision": "year",
+    "startAbs": 19783,
+    "endAbs": 19798,
+    "precision": "month",
     "role": "primary",
-    "note": "绍武败后永历退守广西。",
+    "note": "永历二年还都肇庆，至永历四年清军进犯后再度西撤。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南明"
+      }
+    ]
+  },
+  {
+    "id": "cap-ming-south-nanning-1648",
+    "dynastyId": "ming-south",
+    "historicalName": "南宁",
+    "modernName": "广西壮族自治区南宁市",
+    "start": {
+      "year": 1648,
+      "month": 2,
+      "abs": 19777
+    },
+    "end": {
+      "year": 1648,
+      "month": 8,
+      "abs": 19783
+    },
+    "startAbs": 19777,
+    "endAbs": 19783,
+    "precision": "month",
+    "role": "primary",
+    "note": "永历驻南宁，入黔前倚仗孙可望。",
     "links": [
       {
         "label": "维基百科",
@@ -4407,19 +4471,19 @@
     "modernName": "广西壮族自治区南宁市",
     "start": {
       "year": 1649,
-      "month": 1,
-      "abs": 19788
+      "month": 11,
+      "abs": 19798
     },
     "end": {
-      "year": 1651,
-      "month": 12,
-      "abs": 19823
+      "year": 1652,
+      "month": 2,
+      "abs": 19825
     },
-    "startAbs": 19788,
-    "endAbs": 19823,
-    "precision": "year",
+    "startAbs": 19798,
+    "endAbs": 19825,
+    "precision": "month",
     "role": "primary",
-    "note": "永历驻南宁，入黔前倚仗孙可望。",
+    "note": "永历四年末再驻南宁，后于1652年二月移跸安龙。",
     "links": [
       {
         "label": "维基百科",
@@ -4433,18 +4497,18 @@
     "historicalName": "安龙",
     "modernName": "贵州省黔西南布依族苗族自治州安龙县",
     "start": {
-      "year": 1651,
-      "month": 1,
-      "abs": 19812
+      "year": 1652,
+      "month": 2,
+      "abs": 19825
     },
     "end": {
       "year": 1656,
-      "month": 12,
-      "abs": 19883
+      "month": 3,
+      "abs": 19874
     },
-    "startAbs": 19812,
-    "endAbs": 19883,
-    "precision": "year",
+    "startAbs": 19825,
+    "endAbs": 19874,
+    "precision": "month",
     "role": "primary",
     "note": "孙可望安置永历于安龙府。",
     "links": [
@@ -4461,17 +4525,17 @@
     "modernName": "云南省昆明市",
     "start": {
       "year": 1656,
-      "month": 1,
-      "abs": 19872
+      "month": 3,
+      "abs": 19874
     },
     "end": {
       "year": 1659,
-      "month": 12,
-      "abs": 19919
+      "month": 1,
+      "abs": 19908
     },
-    "startAbs": 19872,
-    "endAbs": 19919,
-    "precision": "year",
+    "startAbs": 19874,
+    "endAbs": 19908,
+    "precision": "month",
     "role": "primary",
     "note": "李定国迎驾入滇；1659年后流亡缅甸，1662年遇害于昆明。",
     "links": [

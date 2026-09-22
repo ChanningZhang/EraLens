@@ -78,24 +78,6 @@ const reigns = reignGroups.flat();
 
 const events = [
   eventPoint({
-    id: "nanyue-founded",
-    name: "南越建国",
-    kind: "politics",
-    at: ym(-203),
-    dynastyIds: ["nanyue"],
-    participantIds: ["zhao-tuo"],
-    summary: "赵佗据岭南自立，建南越国，都番禺。",
-  }),
-  eventPoint({
-    id: "nanyue-destroyed",
-    name: "汉灭南越",
-    kind: "battle",
-    at: ym(-111),
-    dynastyIds: ["nanyue"],
-    participantIds: ["zhao-jiande"],
-    summary: "汉武帝遣路博德、杨仆等伐南越，俘赵建德，南越亡，设岭南九郡。",
-  }),
-  eventPoint({
     id: "chimei-capture-changan",
     name: "赤眉入长安",
     kind: "battle",
@@ -109,7 +91,6 @@ const events = [
 ];
 
 const supplementalEventDynasties = [
-  { eventId: "nanyue-destroyed", dynastyId: "han-west" },
   { eventId: "chimei-capture-changan", dynastyId: "han-gengshi" },
 ];
 
@@ -131,8 +112,6 @@ for (const group of reignGroups) {
   }
 }
 relations.push(
-  { id: "rel-nanyue-founded", fromRef: "event:nanyue-founded", toRef: "dynasty:nanyue", kind: "other" },
-  { id: "rel-nanyue-destroyed", fromRef: "event:nanyue-destroyed", toRef: "dynasty:nanyue", kind: "battle" },
   { id: "rel-chimei-changan", fromRef: "event:chimei-capture-changan", toRef: "dynasty:chimei", kind: "battle" },
 );
 

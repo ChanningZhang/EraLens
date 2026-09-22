@@ -385,14 +385,6 @@ ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXC
 
 -- events
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('wei-north-founded', '北魏建立', 'politics', 'point', 'year', NULL, 386, 12, 4643, NULL, NULL, NULL, NULL, NULL, NULL, '拓跋珪即代王位，国号魏，后迁都平城，北魏开始。')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
-  date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,
-  start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs,
-  end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
-  summary = EXCLUDED.summary;
-INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
 VALUES ('song-liu-founded', '刘宋代晋', 'politics', 'point', 'year', '420年七月，刘裕受禅代晋', 420, 7, 5046, NULL, NULL, NULL, NULL, NULL, NULL, '刘裕废晋恭帝自立，改国号宋，南朝开始。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
@@ -522,7 +514,6 @@ ON CONFLICT (id) DO UPDATE SET
   summary = EXCLUDED.summary;
 
 -- event_dynasties
-DELETE FROM event_dynasties WHERE event_id = 'wei-north-founded' AND dynasty_id NOT IN ('wei-north');
 DELETE FROM event_dynasties WHERE event_id = 'song-liu-founded' AND dynasty_id NOT IN ('song-liu', 'jin-east');
 DELETE FROM event_dynasties WHERE event_id = 'yuanjia-rule' AND dynasty_id NOT IN ('song-liu');
 DELETE FROM event_dynasties WHERE event_id = 'qi-nan-founded' AND dynasty_id NOT IN ('song-liu', 'qi-nan');
@@ -539,7 +530,6 @@ DELETE FROM event_dynasties WHERE event_id = 'yang-jian-usurp' AND dynasty_id NO
 DELETE FROM event_dynasties WHERE event_id = 'sui-chen-unify' AND dynasty_id NOT IN ('chen-nan');
 DELETE FROM event_dynasties WHERE event_id = 'chen-qingzhi-luoyang' AND dynasty_id NOT IN ('liang-nan', 'wei-north');
 DELETE FROM event_dynasties WHERE event_id = 'he-yin-massacre' AND dynasty_id NOT IN ('wei-north');
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('wei-north-founded', 'wei-north') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('song-liu-founded', 'song-liu') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('song-liu-founded', 'jin-east') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('yuanjia-rule', 'song-liu') ON CONFLICT DO NOTHING;
@@ -568,7 +558,6 @@ INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('chen-qingzhi-luoyang
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('he-yin-massacre', 'wei-north') ON CONFLICT DO NOTHING;
 
 -- event_participants
-INSERT INTO event_participants (event_id, person_id) VALUES ('wei-north-founded', 'tuoba-gui') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('song-liu-founded', 'liu-yu-jin') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('yuanjia-rule', 'liu-yilong') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('qi-nan-founded', 'xiao-daocheng') ON CONFLICT DO NOTHING;

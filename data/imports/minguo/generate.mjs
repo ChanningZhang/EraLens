@@ -203,17 +203,6 @@ function eventRange(partial) {
 
 const events = [
   eventPoint({
-    id: "roc-founded",
-    name: "中华民国成立",
-    kind: "politics",
-    precision: "month",
-    dateNote: "1912年1月1日，孙中山就任临时大总统",
-    at: ym(1912, 1),
-    dynastyIds: ["roc", "qing"],
-    participantIds: ["sun-yat-sen"],
-    summary: "南京临时政府成立，孙中山就任临时大总统，民国肇建。",
-  }),
-  eventPoint({
     id: "yuan-shikai-emperor",
     name: "袁世凯称帝",
     kind: "politics",
@@ -344,7 +333,6 @@ const events = [
 // Link existing xinhai event to roc if we upsert event_dynasties
 const extraEventDynasties = [
   { eventId: "xinhai-revolution", dynastyId: "roc" },
-  { eventId: "qing-fall", dynastyId: "roc" },
 ];
 
 // ── relations ────────────────────────────────────────────────────────────────

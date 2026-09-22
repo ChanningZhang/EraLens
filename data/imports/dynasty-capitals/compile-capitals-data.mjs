@@ -150,7 +150,7 @@ function toKebab(historicalName) {
  * @param {number} [startMonth]
  * @param {number} endYear
  * @param {number} [endMonth]
- * @param {{ role?: string, note?: string, wikiTitle?: string, id?: string, precision?: "year"|"month"|"day", startDay?: number, endDay?: number }} [opts]
+ * @param {{ role?: string, note?: string, wikiTitle?: string, id?: string, precision?: "year"|"month"|"day", startDay?: number, endDay?: number, claimTrack?: string }} [opts]
  */
 export function entry(
   dynastyId,
@@ -160,7 +160,16 @@ export function entry(
   startMonth = 1,
   endYear,
   endMonth = 12,
-  { role = "primary", note, wikiTitle, id, precision = "year", startDay, endDay } = {},
+  {
+    role = "primary",
+    note,
+    wikiTitle,
+    id,
+    precision = "year",
+    startDay,
+    endDay,
+    claimTrack,
+  } = {},
 ) {
   const start = startDay == null ? ym(startYear, startMonth) : ymDay(startYear, startMonth, startDay);
   const end = endDay == null ? ym(endYear, endMonth) : ymDay(endYear, endMonth, endDay);
@@ -177,6 +186,7 @@ export function entry(
     endAbs: end.abs,
     precision,
     role,
+    claimTrack,
     note,
     links: wikiTitle ? wiki(wikiTitle) : [],
   };
@@ -907,37 +917,69 @@ export const capitals = [
     wikiTitle: "北京",
     id: "cap-qing-beijing",
   }),
-  e("ming-south", "应天", "江苏省南京市", 1644, 1645, {
+  entry("ming-south", "应天", "江苏省南京市", 1644, 6, 1645, 6, {
+    startDay: 19,
+    endDay: 15,
+    precision: "day",
     note: "弘光政权都南京。",
     wikiTitle: "南明",
   }),
-  e("ming-south", "福州", "福建省福州市", 1645, 1646, {
+  entry("ming-south", "福州", "福建省福州市", 1645, 8, 1646, 10, {
+    startDay: 18,
+    endDay: 6,
+    precision: "day",
     note: "隆武政权都福州。",
     wikiTitle: "南明",
   }),
-  e("ming-south", "广州", "广东省广州市", 1646, 1647, {
+  entry("ming-south", "广州", "广东省广州市", 1646, 12, 1647, 1, {
+    startDay: 11,
+    endDay: 20,
+    precision: "day",
+    claimTrack: "shaowu",
     note: "绍武政权都广州。",
     wikiTitle: "南明",
   }),
-  e("ming-south", "肇庆", "广东省肇庆市", 1646, 1647, {
+  entry("ming-south", "肇庆", "广东省肇庆市", 1646, 12, 1647, 2, {
+    startDay: 24,
+    endDay: 20,
+    precision: "day",
     note: "永历帝于肇庆登基。",
     wikiTitle: "南明",
     id: "cap-ming-south-zhaoqing-1646",
   }),
-  e("ming-south", "桂林", "广西壮族自治区桂林市", 1647, 1649, {
+  entry("ming-south", "桂林", "广西壮族自治区桂林市", 1647, 2, 1648, 12, {
+    precision: "month",
+    startDay: 21,
     note: "绍武败后永历退守广西。",
     wikiTitle: "南明",
     id: "cap-ming-south-guilin-1647",
   }),
-  e("ming-south", "南宁", "广西壮族自治区南宁市", 1649, 1651, {
+  entry("ming-south", "肇庆", "广东省肇庆市", 1648, 8, 1649, 11, {
+    precision: "month",
+    note: "永历二年还都肇庆，至永历四年清军进犯后再度西撤。",
+    wikiTitle: "南明",
+    id: "cap-ming-south-zhaoqing-1648",
+  }),
+  entry("ming-south", "南宁", "广西壮族自治区南宁市", 1648, 2, 1648, 8, {
+    precision: "month",
     note: "永历驻南宁，入黔前倚仗孙可望。",
     wikiTitle: "南明",
+    id: "cap-ming-south-nanning-1648",
   }),
-  e("ming-south", "安龙", "贵州省黔西南布依族苗族自治州安龙县", 1651, 1656, {
+  entry("ming-south", "南宁", "广西壮族自治区南宁市", 1649, 11, 1652, 2, {
+    precision: "month",
+    note: "永历四年末再驻南宁，后于1652年二月移跸安龙。",
+    wikiTitle: "南明",
+    id: "cap-ming-south-nanning-1649",
+  }),
+  entry("ming-south", "安龙", "贵州省黔西南布依族苗族自治州安龙县", 1652, 2, 1656, 3, {
+    precision: "month",
     note: "孙可望安置永历于安龙府。",
     wikiTitle: "南明",
+    id: "cap-ming-south-anlong-1651",
   }),
-  e("ming-south", "昆明", "云南省昆明市", 1656, 1659, {
+  entry("ming-south", "昆明", "云南省昆明市", 1656, 3, 1659, 1, {
+    precision: "month",
     note: "李定国迎驾入滇；1659年后流亡缅甸，1662年遇害于昆明。",
     wikiTitle: "南明",
   }),

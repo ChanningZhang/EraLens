@@ -9,15 +9,15 @@
   },
   "scope": "cn",
   "depth": "standard",
-  "generatedAt": "2026-09-20",
+  "generatedAt": "2026-09-22",
   "counts": {
     "persons": 5,
     "dynasties": 3,
     "reigns": 5,
-    "events": 3,
-    "relations": 6,
-    "supplementalEventDynastyLinks": 5,
-    "supplementalEventParticipantLinks": 1
+    "events": 2,
+    "relations": 4,
+    "supplementalEventDynastyLinks": 2,
+    "supplementalEventParticipantLinks": 0
   },
   "sources": [
     {

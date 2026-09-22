@@ -192,37 +192,6 @@ const reigns = applyDocumentedDatesToReigns(reignGroups.flat());
 // ── events ───────────────────────────────────────────────────────────────────
 
 const events = [
-  eventPoint({
-    id: "xiliang-founded",
-    name: "西梁建立",
-    kind: "politics",
-    at: ym(555, 2),
-    precision: "month",
-    dynastyIds: ["xiliang", "liang-nan"],
-    participantIds: ["xiao-cha"],
-    summary: "西魏立萧詧为梁帝于江陵，史称西梁（后梁）。",
-  }),
-  eventPoint({
-    id: "ranwei-founded",
-    name: "冉魏建立",
-    kind: "politics",
-    at: ym(350, 4),
-    precision: "month",
-    dateNote: "永和六年闰二月改元永兴；350年闰二月望约公历4月。",
-    dynastyIds: ["ranwei", "zhao-back"],
-    participantIds: ["ran-min"],
-    summary: "冉闵杀后赵石鉴，称帝于邺，国号魏，改元永兴，史称冉魏。",
-  }),
-  eventPoint({
-    id: "xiyan-founded",
-    name: "西燕建立",
-    kind: "politics",
-    at: ym(384, 2),
-    precision: "month",
-    dynastyIds: ["xiyan", "yan-back"],
-    participantIds: ["murong-hong"],
-    summary: "慕容泓于华阴称济北王，起兵反秦，国号燕，史称西燕。",
-  }),
 ];
 
 // ── relations ────────────────────────────────────────────────────────────────
@@ -239,9 +208,6 @@ for (const group of reignGroups) {
   }
 }
 relations.push(
-  { id: "rel-xiliang-founded", fromRef: "event:xiliang-founded", toRef: "dynasty:xiliang", kind: "other" },
-  { id: "rel-ranwei-founded", fromRef: "event:ranwei-founded", toRef: "dynasty:ranwei", kind: "other" },
-  { id: "rel-xiyan-founded", fromRef: "event:xiyan-founded", toRef: "dynasty:xiyan", kind: "other" },
 );
 
 // ── output ───────────────────────────────────────────────────────────────────

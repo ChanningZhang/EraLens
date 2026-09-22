@@ -22,7 +22,10 @@ const RELATED_GROUPS = [
 
 function groupRelatedItems(items: EntityDetail["related"]) {
   if (!items.length) return [];
-  const grouped = RELATED_GROUPS.map(({ key, title }) => ({
+  const grouped: Array<{
+    title: string | null;
+    items: EntityDetail["related"];
+  }> = RELATED_GROUPS.map(({ key, title }) => ({
     title,
     items: items.filter((item) => item.group === key),
   })).filter((group) => group.items.length > 0);

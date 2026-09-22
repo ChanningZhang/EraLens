@@ -121,39 +121,6 @@ const reigns = applyDocumentedDatesToReigns(reignGroups.flat());
 // ── events ───────────────────────────────────────────────────────────────────
 
 const events = [
-  eventPoint({
-    id: "xiliao-founded",
-    name: "西辽建立",
-    kind: "politics",
-    precision: "month",
-    dateNote: "1124年秋抵镇州可敦城称王改元延庆；1132年叶密立称帝",
-    at: ym(1124, 9),
-    dynastyIds: ["xiliao"],
-    participantIds: ["yelu-dashi"],
-    summary: "耶律大石辽亡后西迁，于镇州称王改元延庆，西辽政权肇始。",
-  }),
-  eventPoint({
-    id: "xiliao-fallen",
-    name: "西辽灭亡",
-    kind: "battle",
-    precision: "month",
-    dateNote: "1218年春蒙古军灭西辽，屈出律于巴达克山被俘处死",
-    at: ym(1218, 4),
-    dynastyIds: ["xiliao", "mongol-empire"],
-    participantIds: ["qu-chulu"],
-    summary: "蒙古军攻灭西辽，屈出律被俘处死，西辽亡。",
-  }),
-  eventPoint({
-    id: "beiliao-founded",
-    name: "北辽建立",
-    kind: "politics",
-    precision: "day",
-    dateNote: "保大二年三月癸酉，1122年4月22日，于南京称帝，改元建福",
-    at: ymDay(1122, 4, 22),
-    dynastyIds: ["beiliao", "liao"],
-    participantIds: ["yelu-chun"],
-    summary: "金军攻辽，耶律淳于燕京称帝，国号北辽，旋即覆灭。",
-  }),
   eventRange({
     id: "beiliao-xiao-defei-regency",
     name: "萧德妃称制",
@@ -166,17 +133,6 @@ const events = [
     dynastyIds: ["beiliao"],
     participantIds: ["xiao-defei"],
     summary: "耶律淳死后萧德妃临朝称制，北辽不久即亡。",
-  }),
-  eventPoint({
-    id: "dongliao-founded",
-    name: "东辽建立",
-    kind: "politics",
-    precision: "month",
-    dateNote: "贞祐四年三月，部众推耶律留哥为辽王，改元天统",
-    at: ym(1213, 3),
-    dynastyIds: ["dongliao"],
-    participantIds: ["yelu-liuge"],
-    summary: "耶律留哥于辽东称辽王，定国号辽，改元天统，史称东辽；众人劝进称帝，留哥拒绝。",
   }),
   eventPoint({
     id: "dongliao-yelu-sibu-rebel",
@@ -195,7 +151,6 @@ const supplementalEventDynasties = [
   { eventId: "jin-destroy-liao", dynastyId: "beiliao" },
 ];
 const supplementalEventParticipants = [
-  { eventId: "xiliao-fallen", personId: "temujin" },
 ];
 
 // ── relations ────────────────────────────────────────────────────────────────
@@ -212,10 +167,6 @@ for (const group of reignGroups) {
   }
 }
 relations.push(
-  { id: "rel-xiliao-founded", fromRef: "event:xiliao-founded", toRef: "dynasty:xiliao", kind: "other" },
-  { id: "rel-xiliao-fallen", fromRef: "event:xiliao-fallen", toRef: "dynasty:xiliao", kind: "battle" },
-  { id: "rel-beiliao-founded", fromRef: "event:beiliao-founded", toRef: "dynasty:beiliao", kind: "other" },
-  { id: "rel-dongliao-founded", fromRef: "event:dongliao-founded", toRef: "dynasty:dongliao", kind: "other" },
 );
 
 // ── output ───────────────────────────────────────────────────────────────────
