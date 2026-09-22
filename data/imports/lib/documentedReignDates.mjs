@@ -41,7 +41,7 @@ export const DOCUMENTED_REIGN_DATES = {
   "reign-liu-ao": { start: [-33, 8, 4], end: [-7, 4, 17] },
   "reign-liu-xin": { start: [-7, 5, 7], end: [-1, 8, 15] },
   "reign-liu-kan": { start: [-1, 10, 17], end: [6, 2, 3] },
-  "reign-ruzi-ying": { start: [6, 4, 17], end: [9, 1, 15] },
+  "reign-ruzi-ying": { start: [6, 4, 17], end: [9, 1, 10] },
 
   // ── 新莽 ────────────────────────────────────────────────────────────────
   "reign-wang-mang": { start: [9, 1, 10], end: [23, 10, 6] },

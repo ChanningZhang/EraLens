@@ -133,8 +133,9 @@ describe("assignReignStacks", () => {
     expect(stackRowOffset(rowHeights, 2)).toBe(
       STACK_ROW_HEIGHT + PARALLEL_STACK_ROW_HEIGHT,
     );
-    expect(dynastyLaneHeight(rowHeights)).toBe(
+    expect(dynastyLaneHeight(rowHeights)).toBeCloseTo(
       LANE_PADDING_Y + STACK_ROW_HEIGHT + PARALLEL_STACK_ROW_HEIGHT * 2,
+      10,
     );
     expect(items.map((item) => [item.reign.id, item.stackIndex])).toEqual([
       ["yang-guang", 0],

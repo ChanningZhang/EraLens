@@ -181,16 +181,16 @@ INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_mon
 VALUES ('chu-west', '西楚', ARRAY['楚'], 'cn', 'east_asia', -206, 1, -202, 12, -2460, -2401, 'year', 'ochre', NULL, NULL, NULL, NULL, '项羽分封后自立西楚霸王，都彭城；垓下败亡，政权终结。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, orthodox_from_abs = EXCLUDED.orthodox_from_abs, orthodox_end_abs = EXCLUDED.orthodox_end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs, parent_id, group_id, note)
-VALUES ('han-west', '西汉', ARRAY['前汉','汉'], 'cn', 'east_asia', -209, 9, 8, 11, -2488, 106, 'year', 'ochre', -2411, 106, NULL, NULL, '前209年九月沛公起兵于沛县；前202年二月称帝定都长安。孺子婴被废、王莽代汉，前8年十一月西汉终结。')
+VALUES ('han-west', '西汉', ARRAY['前汉','汉'], 'cn', 'east_asia', -202, 2, 9, 1, -2411, 108, 'month', 'ochre', -2411, 108, NULL, NULL, '以刘邦前202年2月称帝、定国号汉为西汉正式建国边界；前206年受封汉王为前置政权史，不并入王朝行。孺子婴于9年1月10日禅让，王莽代汉，西汉终结。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, orthodox_from_abs = EXCLUDED.orthodox_from_abs, orthodox_end_abs = EXCLUDED.orthodox_end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs, parent_id, group_id, note)
-VALUES ('xin', '新', ARRAY['新莽'], 'cn', 'east_asia', 9, 1, 23, 10, 108, 285, 'year', 'ochre', NULL, NULL, NULL, NULL, '王莽篡汉自立，国号新；地皇四年绿林攻入长安，王莽被杀。')
+VALUES ('xin', '新', ARRAY['新莽'], 'cn', 'east_asia', 9, 1, 23, 10, 108, 285, 'month', 'ochre', NULL, NULL, NULL, NULL, '王莽于9年1月10日受孺子婴禅让，改国号为新；地皇四年绿林攻入长安，王莽被杀。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, orthodox_from_abs = EXCLUDED.orthodox_from_abs, orthodox_end_abs = EXCLUDED.orthodox_end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs, parent_id, group_id, note)
 VALUES ('han-gengshi', '更始', ARRAY['玄汉'], 'cn', 'east_asia', 23, 1, 25, 10, 276, 309, 'year', 'ochre', NULL, NULL, NULL, NULL, '绿林军拥立更始帝刘玄，复汉号；赤眉入长安后刘玄降被杀。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, orthodox_from_abs = EXCLUDED.orthodox_from_abs, orthodox_end_abs = EXCLUDED.orthodox_end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs, parent_id, group_id, note)
-VALUES ('han-east', '东汉', ARRAY['后汉'], 'cn', 'east_asia', 25, 1, 220, 12, 300, 2651, 'year', 'ochre', 300, 2651, NULL, NULL, '光武帝刘秀建立，定都洛阳；献帝禅让曹丕，东汉终结。')
+VALUES ('han-east', '东汉', ARRAY['后汉'], 'cn', 'east_asia', 25, 8, 220, 11, 307, 2650, 'month', 'ochre', 307, 2650, NULL, NULL, '25年8月刘秀即位重建汉室，定都洛阳；220年11月献帝禅让曹丕，东汉终结。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, orthodox_from_abs = EXCLUDED.orthodox_from_abs, orthodox_end_abs = EXCLUDED.orthodox_end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 
 -- reigns
@@ -252,7 +252,7 @@ INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, sta
 VALUES ('reign-liu-kan', 'han-west', 'liu-kan', '汉平帝', '元始', -1, 10, 17, 6, 2, 3, 9, 73, 'day', NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence;
 INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence)
-VALUES ('reign-ruzi-ying', 'han-west', 'ruzi-ying', '孺子婴', '居摄', 6, 4, 17, 9, 1, 15, 75, 108, 'day', NULL, NULL)
+VALUES ('reign-ruzi-ying', 'han-west', 'ruzi-ying', '孺子婴', '居摄', 6, 4, 17, 9, 1, 10, 75, 108, 'day', NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence;
 INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence)
 VALUES ('reign-wang-mang', 'xin', 'wang-mang', '新莽皇帝', '始建国,天凤,地皇', 9, 1, 10, 23, 10, 6, 108, 285, 'day', NULL, NULL)
@@ -505,7 +505,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('wang-mang-usurp', '王莽篡汉', 'politics', 'point', 'year', '始建国元年，9年，孺子婴被废', 9, 12, 119, NULL, NULL, NULL, NULL, NULL, NULL, '王莽受孺子婴禅让，改国号为新，西汉终结。')
+VALUES ('wang-mang-usurp', '王莽篡汉', 'politics', 'point', 'month', '9年1月10日，孺子婴禅让，王莽改国号为新', 9, 1, 108, NULL, NULL, NULL, NULL, NULL, NULL, '王莽受孺子婴禅让，改国号为新，西汉终结。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
   date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,

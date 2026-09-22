@@ -9,6 +9,7 @@ import {
 } from "@eralens/shared";
 import { layoutReignFates } from "./reignFateLayout";
 import { LANE_PADDING_TOP, STACK_ROW_HEIGHT } from "./reignClusters";
+import { projectAbs } from "./coordinates";
 
 function pathCoords(path: string): { x: number; y: number }[] {
   const nums = [...path.matchAll(/-?\d+(?:\.\d+)?/g)].map((match) => Number(match[0]));
@@ -55,6 +56,71 @@ const hanLast: Reign = {
 };
 
 describe("layoutReignFates", () => {
+  it("keeps the vertical fate segment at the event date when the receiver accedes later", () => {
+    const yangGuang: Reign = {
+      id: "reign-yang-guang-sui",
+      dynastyId: "sui",
+      personId: "yang-guang",
+      title: "隋炀帝",
+      eraNames: [],
+      start: { year: 604, month: 7 },
+      end: { year: 618, month: 4 },
+      startAbs: absMonth(604, 7),
+      endAbs: absMonth(618, 4),
+      precision: "day",
+      isInformalMonarch: false,
+    };
+    const yuwenHuajiXu: Reign = {
+      id: "reign-yuwen-huaji-xu",
+      dynastyId: "xu",
+      personId: "yuwen-huaji",
+      title: "许帝",
+      eraNames: [],
+      start: { year: 618, month: 9 },
+      end: { year: 619, month: 5 },
+      startAbs: absMonth(618, 9),
+      endAbs: absMonth(619, 5),
+      precision: "month",
+      isInformalMonarch: false,
+    };
+    // AbsMonth is month-granular; the imported day precision is retained in
+    // the source data but projects onto the April 618 time column.
+    const yangGuangKilled = absMonth(618, 4);
+    const fateViewport = {
+      ...viewport,
+      centerAbs: absMonth(618, 6),
+      startAbs: absMonth(618, 6) - 150,
+      endAbs: absMonth(618, 6) + 150,
+    };
+    const placed = layoutReignFates(
+      [{
+        id: "rel-yang-guang-yuwen-huaji-killed",
+        fromRef: "person:yang-guang",
+        toRef: "person:yuwen-huaji",
+        kind: "killed",
+        atAbs: yangGuangKilled,
+        precision: "day",
+      }],
+      [yangGuang, yuwenHuajiXu],
+      [
+        { dynastyId: "sui", top: 80, records: [yangGuang], color: COLOR_VALUES.ochre },
+        { dynastyId: "xu", top: 200, records: [yuwenHuajiXu], color: COLOR_VALUES.ochre },
+      ],
+      fateViewport,
+      new Map([
+        ["yang-guang", "杨广"],
+        ["yuwen-huaji", "宇文化及"],
+      ]),
+    );
+
+    expect(placed).toHaveLength(1);
+    const points = pathCoords(placed[0]!.path);
+    const eventX = projectAbs(fateViewport, yangGuangKilled);
+    expect(points[0]?.x).toBeCloseTo(eventX, 1);
+    expect(points[1]?.x).toBeCloseTo(eventX, 1);
+    expect(points.at(-1)?.x).not.toBeCloseTo(eventX, 1);
+  });
+
   it("builds nearly vertical path when atAbs matches victim end", () => {
     const relation: Relation = {
       id: "rel-han-r10-ying-zheng-surrender",
@@ -89,7 +155,7 @@ describe("layoutReignFates", () => {
     expect(placed[0]?.originY).toBe(hanBarBottom);
   });
 
-  it("stops an upward connector at the lower edge of the upper card", () => {
+  it("connects the horizontal segment to the receiving card midpoint", () => {
     const relation: Relation = {
       id: "rel-han-r10-ying-zheng-surrender",
       fromRef: "person:han-r10",
@@ -115,16 +181,12 @@ describe("layoutReignFates", () => {
     );
     expect(placed).toHaveLength(1);
     const qinBarTop = qinTop + LANE_PADDING_TOP;
-    const qinBarBottom = qinBarTop + STACK_ROW_HEIGHT;
+    const qinBarMid = qinBarTop + STACK_ROW_HEIGHT / 2;
     const hanBarTop = hanTop + LANE_PADDING_TOP;
     const ys = pathCoords(placed[0]!.path).map((point) => point.y);
-    const minY = Math.min(...ys);
-    const maxY = Math.max(...ys);
-    expect(minY).toBeGreaterThan(qinBarBottom);
-    expect(minY).toBeLessThan(qinBarBottom + 4);
+    expect(ys.at(-1)).toBe(qinBarMid);
     expect(placed[0]!.originY).toBe(hanBarTop);
-    expect(maxY).toBe(hanBarTop);
-    expect(placed[0]!.tickTop + placed[0]!.tickHeight).toBe(qinBarBottom);
+    expect(placed[0]!.tickTop + placed[0]!.tickHeight / 2).toBe(qinBarMid);
   });
 
   it("starts a rightward leader at the source card mid-height, not the bottom", () => {

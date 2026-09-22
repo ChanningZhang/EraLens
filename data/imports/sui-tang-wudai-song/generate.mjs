@@ -310,9 +310,9 @@ const dynastyGroups = [
 ];
 
 const dynasties = [
-  { id: "sui", name: "隋", altNames: ["大隋"], scope: "cn", region: "east_asia", start: ym(581), end: ym(618), precision: "year", note: "杨坚代周建隋，589年灭陈统一；618年江都兵变、唐建立标志隋亡，东都杨侗名义延续至619年。" },
+  { id: "sui", name: "隋", altNames: ["大隋"], scope: "cn", region: "east_asia", start: ym(581, 3), end: ym(619, 5), precision: "month", note: "581年3月杨坚受禅建隋；589年灭陈统一。618年唐建立后，东都杨侗仍续统，至619年5月被废，隋亡。" },
   { id: "xu", name: "许", altNames: ["宇文化及许"], scope: "cn", region: "east_asia", start: ym(618, 9), end: ym(619, 5), precision: "month", note: "宇文化及杀杨浩后自立，国号许，旋为窦建德所败，619年覆亡。" },
-  { id: "tang", name: "唐", altNames: ["李唐"], scope: "cn", region: "east_asia", start: ym(618), end: ym(907), precision: "year", note: "李渊建唐，都长安；907年朱温篡唐，唐亡。" },
+  { id: "tang", name: "唐", altNames: ["李唐"], scope: "cn", region: "east_asia", start: ym(618, 6), end: ym(907), precision: "month", note: "618年6月李渊受隋恭帝禅让建唐，都长安；907年朱温篡唐，唐亡。" },
   { id: "zhou-wu", name: "武周", altNames: ["周"], scope: "cn", region: "east_asia", start: ym(690), end: ym(705), precision: "year", note: "武则天改国号周，690–705年，后还政李唐。" },
   { id: "liang-hou", name: "后梁", altNames: ["梁"], scope: "cn", region: "east_asia", start: ym(907), end: ym(923), precision: "year", groupId: "wudai", note: "朱温篡唐建梁，都开封；923年后唐灭之。" },
   { id: "tang-hou", name: "后唐", altNames: ["唐"], scope: "cn", region: "east_asia", start: ym(923), end: ym(936), precision: "year", groupId: "wudai", note: "李存勖灭梁称帝；936年石敬瑭联契丹灭之。" },
@@ -329,8 +329,8 @@ const dynasties = [
   { id: "jingnan", name: "荆南", altNames: ["南平"], scope: "cn", region: "east_asia", start: ym(924), end: ym(963), precision: "year", groupId: "shiguo", note: "高季兴据江陵；963年纳土归宋。" },
   { id: "chu-nan", name: "楚", altNames: ["马楚"], scope: "cn", region: "east_asia", start: ym(907), end: ym(951), precision: "year", groupId: "shiguo", note: "马殷据湖南；951年南唐灭楚。" },
   { id: "han-bei", name: "北汉", altNames: ["汉"], scope: "cn", region: "east_asia", start: ym(951), end: ym(979), precision: "year", groupId: "shiguo", note: "刘旻据太原；979年宋灭之，十国终结。" },
-  { id: "song-north", name: "北宋", altNames: ["宋"], scope: "cn", region: "east_asia", start: ym(960), end: ym(1127), precision: "year", note: "赵匡胤陈桥兵变建宋；1127年靖康之变，北宋亡。" },
-  { id: "song-south", name: "南宋", altNames: ["宋"], scope: "cn", region: "east_asia", start: ym(1127), end: ym(1279), precision: "year", note: "赵构南渡建南宋；1279年崖山海战，南宋亡。" },
+  { id: "song-north", name: "北宋", altNames: ["宋"], scope: "cn", region: "east_asia", start: ym(960, 2), end: ym(1127, 3), precision: "month", note: "960年2月陈桥兵变后赵匡胤建宋；1127年3月靖康之变，北宋亡。南宋于同年6月重建宋室。" },
+  { id: "song-south", name: "南宋", altNames: ["宋"], scope: "cn", region: "east_asia", start: ym(1127, 6), end: ym(1279, 3), precision: "month", note: "1127年6月12日赵构即位，南宋重建宋室；1279年3月崖山海战，南宋亡。" },
 ];
 
 // ── reigns ─────────────────────────────────────────────────────────────────
@@ -365,7 +365,6 @@ const xuReigns = [
       precision: "month",
       eraNames: ["天寿"],
     }),
-    isInformalMonarch: true,
   },
 ];
 

@@ -227,7 +227,7 @@ pnpm db:down      # 停止容器
 
 - 数据：`relations`，`kind` 为 `killed` | `surrender` | `abdication` | `captured`，必须有 `atAbs`。`fromRef` 为 `person:` 或 `reign:`，`toRef` 为 `person:`。同朝继承不画。
 - 解析：受害方取当时在位或最近已结束的 reign；接收方取当时在位或其后 24 个月内即位的 reign。B 在时间轴上无卡时，改挂当时在位君主。无接收方（未收录的后续政权等）不画。
-- 几何：水平段从 A 卡**中线**出发，折到 `atAbs` 再接到 B 朝向边；颜色为 A 所在泳道本色。命中热区加宽，便于 tooltip。
+- 几何：`relation.atAbs` 投影出的事件列是命运线唯一的纵向主轴；上下两端如因卡片锚点不在该列而需要连接，只添加水平段接到 A 卡中线与 B 卡朝向边。接收方尚未即位时，不能把纵向段推到其卡片起点。颜色为 A 所在泳道本色。命中热区加宽，便于 tooltip。
 - 主数据包：`data/imports/cross-dynasty-fate/`（与各时期 events、`documentedReignDates` 对齐）。有明确灭国对象的王朝，末代通常应有一条线；非末代被他朝杀死或俘虏的也画。
 
 实现：`packages/shared/src/reignFateRelations.ts`，布局 `apps/web/src/features/timeline/model/reignFateLayout.ts`，绘制 `ReignFateLayer`。

@@ -149,7 +149,7 @@ function toKebab(historicalName) {
  * @param {number} [startMonth]
  * @param {number} endYear
  * @param {number} [endMonth]
- * @param {{ role?: string, note?: string, wikiTitle?: string, id?: string }} [opts]
+ * @param {{ role?: string, note?: string, wikiTitle?: string, id?: string, precision?: "year"|"month"|"day" }} [opts]
  */
 export function entry(
   dynastyId,
@@ -159,7 +159,7 @@ export function entry(
   startMonth = 1,
   endYear,
   endMonth = 12,
-  { role = "primary", note, wikiTitle, id } = {},
+  { role = "primary", note, wikiTitle, id, precision = "year" } = {},
 ) {
   const start = ym(startYear, startMonth);
   const end = ym(endYear, endMonth);
@@ -174,7 +174,7 @@ export function entry(
     end,
     startAbs: start.abs,
     endAbs: end.abs,
-    precision: "year",
+    precision,
     role,
     note,
     links: wikiTitle ? wiki(wikiTitle) : [],
@@ -442,23 +442,31 @@ export const capitals = [
     note: "王莽新朝都长安。",
     wikiTitle: "新朝",
   }),
-  entry("han-west", "长安", "陕西省西安市", -202, 1, 8, 11, {
-    note: "刘邦称帝定都长安；王莽代汉，西汉终结。",
+  entry("han-west", "长安", "陕西省西安市", -202, 1, 9, 1, {
+    note: "刘邦称帝定都长安；9年1月10日王莽代汉，西汉终结。",
     wikiTitle: "长安",
     id: "cap-han-west-changan",
   }),
-  e("han-east", "洛阳", "河南省洛阳市", 25, 220, {
-    note: "光武帝定都洛阳；献帝禅让曹丕，东汉终结。",
+  entry("han-east", "洛阳", "河南省洛阳市", 25, 10, 220, 12, {
+    precision: "month",
+    note: "建武元年冬十月，光武帝入洛阳并定都；献帝禅让曹丕，东汉终结。",
     wikiTitle: "洛阳",
     id: "cap-han-east-luoyang",
   }),
-  e("han-gengshi", "长安", "陕西省西安市", 23, 25, {
-    note: "更始政权都长安。",
-    wikiTitle: "更始政权",
+  entry("han-gengshi", "宛", "河南省南阳市", 23, 6, 24, 1, {
+    note: "更始元年六月刘玄入都宛城；更始二年迁都长安。",
+    wikiTitle: "更始帝",
+    id: "cap-han-gengshi-wan-23",
   }),
-  e("chimei", "长安", "陕西省西安市", 23, 27, {
-    note: "赤眉军据长安。",
+  entry("han-gengshi", "长安", "陕西省西安市", 24, 1, 25, 9, {
+    note: "更始二年迁都长安；更始三年九月赤眉军攻入长安后政权终结。",
+    wikiTitle: "更始帝",
+    id: "cap-han-gengshi-changan-24",
+  }),
+  entry("chimei", "长安", "陕西省西安市", 25, 9, 26, 12, {
+    note: "赤眉军于25年六月拥立刘盆子，九月攻入长安；26年春退出、秋复入，岁末东撤，长安为其间歇性据点。",
     wikiTitle: "赤眉军",
+    id: "cap-chimei-changan-25",
   }),
 
   // ── 三国 ──────────────────────────────────────────────────────────────────
@@ -877,6 +885,7 @@ export const capitals = [
     id: "cap-ming-nanjing",
   }),
   entry("ming", "顺天", "北京市", 1421, 1, 1644, 4, {
+    precision: "month",
     note: "永乐迁都顺天府。",
     wikiTitle: "北京",
     id: "cap-ming-beijing",
@@ -888,6 +897,7 @@ export const capitals = [
     id: "cap-qing-shengjing",
   }),
   entry("qing", "顺天", "北京市", 1644, 5, 1912, 2, {
+    precision: "month",
     note: "清入关后都北京。",
     wikiTitle: "北京",
     id: "cap-qing-beijing",
@@ -955,20 +965,24 @@ export const capitals = [
     wikiTitle: "天京",
   }),
   entry("roc", "南京", "江苏省南京市", 1912, 1, 1937, 11, {
+    precision: "month",
     note: "民国初都南京。",
     wikiTitle: "中华民国",
   }),
   entry("roc", "重庆", "重庆市", 1937, 11, 1946, 5, {
+    precision: "month",
     role: "temporary",
     note: "抗战陪都重庆。",
     wikiTitle: "重庆陪都",
   }),
   entry("roc", "南京", "江苏省南京市", 1946, 5, 1949, 4, {
+    precision: "month",
     note: "抗战后还都南京。",
     wikiTitle: "中华民国",
     id: "cap-roc-nanjing-23348",
   }),
   entry("prc", "北京", "北京市", 1949, 10, 2026, 12, {
+    precision: "month",
     note: "中华人民共和国首都北京。",
     wikiTitle: "北京市",
   }),

@@ -1603,15 +1603,15 @@
       "abs": -2412
     },
     "end": {
-      "year": 8,
-      "month": 11,
-      "abs": 106
+      "year": 9,
+      "month": 1,
+      "abs": 108
     },
     "startAbs": -2412,
-    "endAbs": 106,
+    "endAbs": 108,
     "precision": "year",
     "role": "primary",
-    "note": "刘邦称帝定都长安；王莽代汉，西汉终结。",
+    "note": "刘邦称帝定都长安；9年1月10日王莽代汉，西汉终结。",
     "links": [
       {
         "label": "维基百科",
@@ -1626,19 +1626,19 @@
     "modernName": "河南省洛阳市",
     "start": {
       "year": 25,
-      "month": 1,
-      "abs": 300
+      "month": 10,
+      "abs": 309
     },
     "end": {
       "year": 220,
       "month": 12,
       "abs": 2651
     },
-    "startAbs": 300,
+    "startAbs": 309,
     "endAbs": 2651,
-    "precision": "year",
+    "precision": "month",
     "role": "primary",
-    "note": "光武帝定都洛阳；献帝禅让曹丕，东汉终结。",
+    "note": "建武元年冬十月，光武帝入洛阳并定都；献帝禅让曹丕，东汉终结。",
     "links": [
       {
         "label": "维基百科",
@@ -1647,52 +1647,79 @@
     ]
   },
   {
-    "id": "cap-han-gengshi-changan-23",
+    "id": "cap-han-gengshi-wan-23",
     "dynastyId": "han-gengshi",
-    "historicalName": "长安",
-    "modernName": "陕西省西安市",
+    "historicalName": "宛",
+    "modernName": "河南省南阳市",
     "start": {
       "year": 23,
-      "month": 1,
-      "abs": 276
+      "month": 6,
+      "abs": 281
     },
     "end": {
-      "year": 25,
-      "month": 12,
-      "abs": 311
+      "year": 24,
+      "month": 1,
+      "abs": 288
     },
-    "startAbs": 276,
-    "endAbs": 311,
+    "startAbs": 281,
+    "endAbs": 288,
     "precision": "year",
     "role": "primary",
-    "note": "更始政权都长安。",
+    "note": "更始元年六月刘玄入都宛城；更始二年迁都长安。",
     "links": [
       {
         "label": "维基百科",
-        "url": "https://zh.wikipedia.org/wiki/更始政权"
+        "url": "https://zh.wikipedia.org/wiki/更始帝"
       }
     ]
   },
   {
-    "id": "cap-chimei-changan-23",
+    "id": "cap-han-gengshi-changan-24",
+    "dynastyId": "han-gengshi",
+    "historicalName": "长安",
+    "modernName": "陕西省西安市",
+    "start": {
+      "year": 24,
+      "month": 1,
+      "abs": 288
+    },
+    "end": {
+      "year": 25,
+      "month": 9,
+      "abs": 308
+    },
+    "startAbs": 288,
+    "endAbs": 308,
+    "precision": "year",
+    "role": "primary",
+    "note": "更始二年迁都长安；更始三年九月赤眉军攻入长安后政权终结。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/更始帝"
+      }
+    ]
+  },
+  {
+    "id": "cap-chimei-changan-25",
     "dynastyId": "chimei",
     "historicalName": "长安",
     "modernName": "陕西省西安市",
     "start": {
-      "year": 23,
-      "month": 1,
-      "abs": 276
+      "year": 25,
+      "month": 9,
+      "abs": 308
     },
     "end": {
-      "year": 27,
+      "year": 26,
       "month": 12,
-      "abs": 335
+      "abs": 323
     },
-    "startAbs": 276,
-    "endAbs": 335,
+    "startAbs": 308,
+    "endAbs": 323,
     "precision": "year",
     "role": "primary",
-    "note": "赤眉军据长安。",
+    "note": "赤眉军于25年六月拥立刘盆子，九月攻入长安；26年春退出、秋复入，岁末东撤，长安为其间歇性据点。",
     "links": [
       {
         "label": "维基百科",
@@ -4174,7 +4201,7 @@
     },
     "startAbs": 17052,
     "endAbs": 19731,
-    "precision": "year",
+    "precision": "month",
     "role": "primary",
     "note": "永乐迁都顺天府。",
     "links": [
@@ -4228,7 +4255,7 @@
     },
     "startAbs": 19732,
     "endAbs": 22945,
-    "precision": "year",
+    "precision": "month",
     "role": "primary",
     "note": "清入关后都北京。",
     "links": [
@@ -4633,7 +4660,7 @@
     },
     "startAbs": 22944,
     "endAbs": 23254,
-    "precision": "year",
+    "precision": "month",
     "role": "primary",
     "note": "民国初都南京。",
     "links": [
@@ -4660,7 +4687,7 @@
     },
     "startAbs": 23254,
     "endAbs": 23356,
-    "precision": "year",
+    "precision": "month",
     "role": "temporary",
     "note": "抗战陪都重庆。",
     "links": [
@@ -4687,7 +4714,7 @@
     },
     "startAbs": 23356,
     "endAbs": 23391,
-    "precision": "year",
+    "precision": "month",
     "role": "primary",
     "note": "抗战后还都南京。",
     "links": [
@@ -4714,7 +4741,7 @@
     },
     "startAbs": 23397,
     "endAbs": 24323,
-    "precision": "year",
+    "precision": "month",
     "role": "primary",
     "note": "中华人民共和国首都北京。",
     "links": [

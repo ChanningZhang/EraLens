@@ -9,11 +9,11 @@ import {
   type Reign,
 } from "@eralens/shared";
 
-/** Matches `.lane { padding: 7px 0 }` in DynastyLane.module.css. */
-export const LANE_PADDING_TOP = 7;
+/** Matches `.lane { padding: 6px 0 }` in DynastyLane.module.css. */
+export const LANE_PADDING_TOP = 6;
 export const LANE_PADDING_Y = LANE_PADDING_TOP * 2;
 /** Matches the painted card height so stacked contemporaneous reigns sit flush. */
-export const STACK_ROW_HEIGHT = 44;
+export const STACK_ROW_HEIGHT = 40;
 /** Parallel claimants (`claimTrack` ≠ main) use 2/3 of a normal stack row. */
 export const PARALLEL_STACK_ROW_RATIO = 2 / 3;
 export const PARALLEL_STACK_ROW_HEIGHT = STACK_ROW_HEIGHT * PARALLEL_STACK_ROW_RATIO;

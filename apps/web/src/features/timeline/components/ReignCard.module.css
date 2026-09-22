@@ -88,12 +88,12 @@
 }
 
 .compactStack .name {
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.05;
 }
 
 .compactStack .meta {
-  font-size: 10px;
+  font-size: 9px;
 }
 
 /*
@@ -109,10 +109,6 @@
 
 .parallel:hover {
   background: color-mix(in srgb, var(--card-color) 17%, var(--color-surface));
-}
-
-.parallel .name {
-  color: var(--color-ink-muted);
 }
 
 /*
@@ -132,8 +128,8 @@
     -45deg,
     transparent,
     transparent 5px,
-    color-mix(in srgb, var(--color-ink) 22%, transparent) 5px,
-    color-mix(in srgb, var(--color-ink) 22%, transparent) 9px
+    color-mix(in srgb, var(--color-ink) 12%, transparent) 5px,
+    color-mix(in srgb, var(--color-ink) 12%, transparent) 9px
   );
 }
 
@@ -142,8 +138,8 @@
     -45deg,
     transparent,
     transparent 5px,
-    color-mix(in srgb, var(--orthodox-gold-divider) 55%, transparent) 5px,
-    color-mix(in srgb, var(--orthodox-gold-divider) 55%, transparent) 9px
+    color-mix(in srgb, var(--orthodox-gold-divider) 20%, transparent) 5px,
+    color-mix(in srgb, var(--orthodox-gold-divider) 20%, transparent) 9px
   );
 }
 
@@ -194,7 +190,7 @@
   left: 50%;
   z-index: 2;
   font-family: var(--font-serif);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   line-height: 1.2;
   white-space: nowrap;
@@ -214,7 +210,7 @@
 .name {
   margin: 0;
   font-family: var(--font-serif);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 1;
   white-space: nowrap;
@@ -225,7 +221,7 @@
 
 .meta {
   margin: 0;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1;
   color: var(--color-ink-muted);
   white-space: nowrap;

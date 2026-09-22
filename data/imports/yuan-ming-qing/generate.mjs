@@ -185,9 +185,9 @@ const dynasties = [
   { id: "chen-han", name: "陈汉", altNames: ["汉", "大汉"], scope: "cn", region: "east_asia", start: ym(1360, 6), end: ym(1364), precision: "year", note: "陈友谅1360年称帝，国号汉；1363年鄱阳湖阵亡，子陈理继位；1364年降明。" },
   { id: "xia-ming", name: "明夏", altNames: ["夏", "大夏"], scope: "cn", region: "east_asia", start: ym(1362), end: ym(1371), precision: "year", note: "明玉珍1362年重庆称帝，国号夏，据两川；1371年明灭夏。" },
   { id: "wu-zhu", name: "吴", altNames: ["西吴"], scope: "cn", region: "east_asia", start: ym(1364), end: ym(1368, 1), precision: "year", note: "朱元璋1364年自立吴王，仍用龙凤年号；1367年改元吴，1368年称帝建明。" },
-  { id: "ming", name: "明", altNames: ["大明"], scope: "cn", region: "east_asia", start: ym(1368), end: ym(1644, 4), precision: "year", note: "朱元璋驱逐蒙元，定都南京后迁北京；1644年崇祯自缢，明亡。" },
+  { id: "ming", name: "明", altNames: ["大明"], scope: "cn", region: "east_asia", start: ym(1368, 1), end: ym(1644, 4), precision: "month", note: "1368年1月朱元璋称帝建明，定都南京后迁北京；1644年4月崇祯自缢，明亡。" },
   { id: "ming-south", name: "南明", altNames: ["明"], scope: "cn", region: "east_asia", start: ym(1644), end: ym(1662), precision: "year", note: "明亡后朱氏多支并立：通行主线弘光→隆武→永历；鲁监国、绍武为并行朝廷。1662年永历帝殉，南明终结。" },
-  { id: "qing", name: "清", altNames: ["大清", "后金"], scope: "cn", region: "east_asia", start: ym(1616, 2), end: ym(1912, 2), precision: "year", note: "1616年努尔哈赤建后金，1636年改国号大清；1912年宣统退位。" },
+  { id: "qing", name: "清", altNames: ["大清", "后金"], scope: "cn", region: "east_asia", start: ym(1616, 2), end: ym(1912, 2), precision: "month", note: "1616年2月努尔哈赤建后金，1636年改国号大清；1912年2月宣统退位。" },
 ];
 
 // ── reigns ─────────────────────────────────────────────────────────────────

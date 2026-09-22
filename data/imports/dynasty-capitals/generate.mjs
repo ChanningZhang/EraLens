@@ -15,6 +15,8 @@ const REMOVED_CAPITAL_IDS = [
   "cap-roc-taibei-23388",
   "cap-nanzhao-taihecheng-649",
   "cap-daxi-xijing-1644",
+  "cap-han-gengshi-changan-23",
+  "cap-chimei-changan-23",
 ];
 
 const raw = JSON.parse(readFileSync(path.join(__dirname, "capitals-raw.json"), "utf8"));
@@ -84,6 +86,10 @@ writeFileSync(
       counts: { dynasty_capitals: capitals.length },
       sources: [
         { label: "维基百科", url: "https://zh.wikipedia.org/wiki/中国古代都城" },
+        { label: "后汉书·光武帝纪", url: "https://ctext.org/hou-han-shu/guang-wu-di-ji-shang/zhs" },
+        { label: "首都博物馆：北京历史变迁", url: "https://www.museum.bj.cn/zlxx/content/2010-12/05/content_21747.htm" },
+        { label: "中华民国首都（维基百科）", url: "https://zh.wikipedia.org/wiki/中华民国首都" },
+        { label: "中国共产党新闻网：1949年大事记", url: "https://cpc.people.com.cn/GB/64162/64164/4416007.html" },
         { label: "唐哀帝（维基百科）", url: "https://zh.wikipedia.org/wiki/唐哀帝" },
         { label: "后梁（维基百科）", url: "https://zh.wikipedia.org/wiki/后梁" },
         { label: "杨吴（维基百科）", url: "https://zh.wikipedia.org/wiki/杨吴" },
@@ -97,6 +103,9 @@ writeFileSync(
       notes: [
         "modernName 为省/市全称；坐标 GCJ-02，经 Amap maps_geo 烘焙",
         "唐都城：904年迁都洛阳，李柷（唐哀帝）在位至907年唐亡；洛阳记录拆分为迁都前陪都与迁都后正都",
+        "东汉洛阳：依据《后汉书·光武帝纪》‘冬十月，车驾入洛阳，遂定都焉’，起始改为25年10月并标记为月精度；其他仅知年份的边界仍保留年精度，不以1月/12月占位冒充实月",
+        "本次将有可核实迁都月份的明北京（1421年1月）、清北京（1644年5月）、民国南京/重庆/南京（1912年1月、1937年11月、1946年5月）及中华人民共和国北京（1949年10月）标记为月精度；盛京及其余仅知年份的都城边界暂不提升",
+        "本次复核修正更始与赤眉都城：更始23年先都宛、24年迁长安；赤眉25年六月立刘盆子、九月入长安，26年曾退出后复入，故不从23年起算长安",
         "本次复核修正杨吴广陵、后梁/后晋/后汉/后周汴州、南汉兴王府、闽长乐府、南诏779年迁羊苴咩城、大理羊苴咩城、辽南京析津府、北辽临潢府、西辽虎思斡耳朵、大西西京等古称；今址仍单列于 modernName",
         `覆盖 ${new Set(capitals.map((c) => c.dynastyId)).size} 个王朝，${capitals.length} 条都城记录`,
       ],

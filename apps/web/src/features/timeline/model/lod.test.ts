@@ -93,8 +93,8 @@ describe("resolveReignCardTextLayout", () => {
   it("keeps the default font size for full cards", () => {
     expect(resolveReignCardTextLayout(120, 2)).toEqual({
       level: "full",
-      nameFontPx: 16,
-      metaFontPx: 12,
+      nameFontPx: 15,
+      metaFontPx: 11,
     });
   });
 

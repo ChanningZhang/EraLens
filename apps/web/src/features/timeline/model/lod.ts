@@ -22,7 +22,7 @@ export type ReignCardTextLayout = {
   metaFontPx: number;
 };
 
-const CARD_HEIGHT = 44;
+const CARD_HEIGHT = 40;
 /** 1px left+right / top+bottom; cards use `box-sizing: border-box`. */
 const CARD_BORDER_PX = 2;
 const FULL_PAD_X = 20 + CARD_BORDER_PX;
@@ -30,10 +30,10 @@ const FULL_PAD_X = 20 + CARD_BORDER_PX;
 const WRAP_PAD_X = 4 + CARD_BORDER_PX;
 const ROW_GAP = 6;
 const WRAP_PAD_Y = 6 + CARD_BORDER_PX;
-const NAME_FONT_DEFAULT = 16;
-const NAME_FONT_WRAP_DEFAULT = 15;
-const META_FONT_DEFAULT = 12;
-const MIN_WRAP_FONT = 10;
+const NAME_FONT_DEFAULT = 15;
+const NAME_FONT_WRAP_DEFAULT = 14;
+const META_FONT_DEFAULT = 11;
+const MIN_WRAP_FONT = 9;
 const FULL_MIN_WIDTH = 80;
 
 /** Minimum clickable row width when the duration-accurate bar is thinner. */
