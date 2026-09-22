@@ -33,9 +33,10 @@ function dynasty(
 function capital(
   dynastyId: string,
   modernName: string,
-  role: "primary" | "secondary" | "temporary" = "primary",
+  startAbs: number,
+  endAbs: number,
 ) {
-  return { dynastyId, modernName, role };
+  return { dynastyId, modernName, startAbs, endAbs };
 }
 
 function group(
@@ -98,16 +99,16 @@ describe("dynastyClusterGroups", () => {
     ]);
   });
 
-  it("pulls a same-capital successor up directly below its predecessor", () => {
+  it("pulls a hand-off successor up directly below its predecessor", () => {
     const dynasties = [
       dynasty("sui", absMonth(581), absMonth(618, 12)),
       dynasty("xliang", absMonth(590), absMonth(617, 12)),
       dynasty("tang", absMonth(618), absMonth(907, 12)),
     ];
     const capitals = [
-      capital("sui", "陕西省西安市"),
-      capital("xliang", "湖北省荆州市"),
-      capital("tang", "陕西省西安市"),
+      capital("sui", "陕西省西安市", absMonth(581), absMonth(618, 12)),
+      capital("xliang", "湖北省荆州市", absMonth(590), absMonth(617, 12)),
+      capital("tang", "陕西省西安市", absMonth(618), absMonth(907, 12)),
     ];
 
     // Without capitals: pure time order.
@@ -117,8 +118,7 @@ describe("dynastyClusterGroups", () => {
       "tang",
     ]);
 
-    // With capitals: 唐 (同都长安/西安) is pulled up directly below 隋,
-    // ahead of the intervening 西梁.
+    // With capitals: 唐 (接手长安) is pulled up directly below 隋, ahead of 西梁.
     expect(orderDynastiesForLanes(dynasties, [], capitals).map((d) => d.id)).toEqual([
       "sui",
       "tang",
@@ -126,97 +126,97 @@ describe("dynastyClusterGroups", () => {
     ]);
   });
 
-  it("does not pull a same-city dynasty that reuses the capital much later", () => {
-    // 秦 and 西汉 both sat at 西安, but 西汉 begins after 秦 has ended
-    // (the 楚汉 interregnum), so it stays in plain time order.
+  it("matches the capital at the hand-off moment, not one adopted later", () => {
+    // 北宋 hands off in 1127 while 金's capital is 会宁; 金 only took 开封 in
+    // 1214, so it must NOT be glued under 北宋.
     const dynasties = [
-      dynasty("qin", absMonth(-221), absMonth(-206, 12)),
-      dynasty("chu", absMonth(-209), absMonth(-202, 12)),
-      dynasty("han-west", absMonth(-202), absMonth(8, 12)),
-    ];
-    const capitals = [
-      capital("qin", "陕西省西安市"),
-      capital("chu", "江苏省徐州市"),
-      capital("han-west", "陕西省西安市"),
-    ];
-
-    expect(orderDynastiesForLanes(dynasties, [], capitals).map((d) => d.id)).toEqual([
-      "qin",
-      "chu",
-      "han-west",
-    ]);
-  });
-
-  it("is single-level: a later same-city dynasty is not cascaded up the chain", () => {
-    const dynasties = [
-      dynasty("sui", absMonth(581), absMonth(618, 12)),
-      dynasty("tang", absMonth(618), absMonth(907, 12)),
-      dynasty("luoyang-row", absMonth(700), absMonth(760, 12)),
-      dynasty("changan-late", absMonth(900), absMonth(950, 12)),
-    ];
-    const capitals = [
-      capital("sui", "陕西省西安市"),
-      capital("tang", "陕西省西安市"),
-      capital("luoyang-row", "河南省洛阳市"),
-      capital("changan-late", "陕西省西安市"),
-    ];
-
-    // 隋 pulls its direct successor 唐 (西安, starts within 隋's span). 唐 does
-    // not itself pull further, so changan-late (西安, but starting long after 隋
-    // ends) stays in plain time order rather than being cascaded up.
-    expect(orderDynastiesForLanes(dynasties, [], capitals).map((d) => d.id)).toEqual([
-      "sui",
-      "tang",
-      "luoyang-row",
-      "changan-late",
-    ]);
-  });
-
-  it("a cluster row pulls its same-city singleton successor but is never itself pulled", () => {
-    const dynastyGroups = [group("wudai", absMonth(907), absMonth(960, 12), "五代")];
-    const dynasties = [
-      dynasty("liang-hou", absMonth(907), absMonth(923, 12), "wudai"),
-      dynasty("zhou-hou", absMonth(951), absMonth(960, 12), "wudai"),
-      dynasty("liao", absMonth(916), absMonth(1125, 12)),
-      dynasty("dali", absMonth(937), absMonth(1253, 12)),
       dynasty("song-north", absMonth(960), absMonth(1127, 12)),
+      dynasty("liao", absMonth(916), absMonth(1125, 12)),
+      dynasty("jin-nv", absMonth(1115), absMonth(1234, 12)),
     ];
     const capitals = [
-      capital("liang-hou", "河南省开封市"),
-      capital("zhou-hou", "河南省开封市"),
-      capital("liao", "内蒙古自治区赤峰市巴林左旗"),
-      capital("dali", "云南省大理市"),
-      capital("song-north", "河南省开封市"),
+      capital("song-north", "河南省开封市", absMonth(960), absMonth(1127, 12)),
+      capital("liao", "内蒙古自治区赤峰市巴林左旗", absMonth(916), absMonth(1125, 12)),
+      capital("jin-nv", "黑龙江省哈尔滨市阿城区", absMonth(1115), absMonth(1153, 12)),
+      capital("jin-nv", "北京市", absMonth(1154), absMonth(1214, 12)),
+      capital("jin-nv", "河南省开封市", absMonth(1215), absMonth(1234, 12)),
     ];
 
-    // 北宋 (开封) is pulled directly under the 五代 cluster, ahead of 辽/大理,
-    // and stays there regardless of the wider window.
-    expect(orderDynastiesForLanes(dynasties, dynastyGroups, capitals).map((d) => d.id)).toEqual([
-      "liang-hou",
-      "zhou-hou",
-      "song-north",
+    // 金 stays in plain time order (its 开封 tenure is far past the hand-off).
+    expect(orderDynastiesForLanes(dynasties, [], capitals).map((d) => d.id)).toEqual([
       "liao",
-      "dali",
+      "song-north",
+      "jin-nv",
     ]);
   });
 
-  it("ignores non-primary capitals when matching (只按正都)", () => {
+  it("cascades: a pulled row recursively pulls its own successors", () => {
     const dynasties = [
       dynasty("a", absMonth(100), absMonth(200, 12)),
-      dynasty("b", absMonth(150), absMonth(180, 12)),
-      dynasty("c", absMonth(190), absMonth(300, 12)),
+      dynasty("other", absMonth(150), absMonth(160, 12)),
+      dynasty("b", absMonth(200), absMonth(300, 12)),
+      dynasty("c", absMonth(300), absMonth(400, 12)),
     ];
-    // c only shares the city as a 陪都, not its 正都 → no pull-up.
     const capitals = [
-      capital("a", "城甲"),
-      capital("b", "城乙"),
-      capital("c", "城甲", "secondary"),
+      capital("a", "城甲", absMonth(100), absMonth(200, 12)),
+      capital("other", "城乙", absMonth(150), absMonth(160, 12)),
+      capital("b", "城甲", absMonth(200), absMonth(300, 12)),
+      capital("c", "城甲", absMonth(300), absMonth(400, 12)),
     ];
 
+    // a → b → c chain together even though c begins long after a ends.
     expect(orderDynastiesForLanes(dynasties, [], capitals).map((d) => d.id)).toEqual([
       "a",
       "b",
       "c",
+      "other",
+    ]);
+  });
+
+  it("matches on any shared capital city, including a 陪都", () => {
+    // 唐 keeps 洛阳 as a 陪都; 武周's 洛阳 matches it even though neither is the
+    // other's 正都.
+    const dynasties = [
+      dynasty("tang", absMonth(618), absMonth(907, 12)),
+      dynasty("tuyuhun", absMonth(650), absMonth(663, 12)),
+      dynasty("wu-zhou", absMonth(690), absMonth(705, 12)),
+    ];
+    const capitals = [
+      capital("tang", "陕西省西安市", absMonth(618), absMonth(907, 12)),
+      capital("tang", "河南省洛阳市", absMonth(657), absMonth(907, 12)),
+      capital("tuyuhun", "青海省海南藏族自治州", absMonth(650), absMonth(663, 12)),
+      capital("wu-zhou", "河南省洛阳市", absMonth(690), absMonth(705, 12)),
+    ];
+
+    // 武周 is pulled directly under 唐 (shared 洛阳), ahead of 吐谷浑.
+    expect(orderDynastiesForLanes(dynasties, [], capitals).map((d) => d.id)).toEqual([
+      "tang",
+      "wu-zhou",
+      "tuyuhun",
+    ]);
+  });
+
+  it("pulls a whole cluster under a same-capital predecessor (南朝 under 东晋)", () => {
+    const dynastyGroups = [group("nan-chao", absMonth(420), absMonth(589, 12), "南朝")];
+    const dynasties = [
+      dynasty("jin-east", absMonth(317), absMonth(420, 12)),
+      dynasty("bei-wei", absMonth(386), absMonth(534, 12)),
+      dynasty("song-liu", absMonth(420), absMonth(479, 12), "nan-chao"),
+      dynasty("qi-nan", absMonth(479), absMonth(502, 12), "nan-chao"),
+    ];
+    const capitals = [
+      capital("jin-east", "江苏省南京市", absMonth(317), absMonth(420, 12)),
+      capital("bei-wei", "河南省洛阳市", absMonth(386), absMonth(534, 12)),
+      capital("song-liu", "江苏省南京市", absMonth(420), absMonth(479, 12)),
+      capital("qi-nan", "江苏省南京市", absMonth(479), absMonth(502, 12)),
+    ];
+
+    // 南朝 (whole cluster) is pulled under 东晋 (both 建康/南京), ahead of 北魏.
+    expect(orderDynastiesForLanes(dynasties, dynastyGroups, capitals).map((d) => d.id)).toEqual([
+      "jin-east",
+      "song-liu",
+      "qi-nan",
+      "bei-wei",
     ]);
   });
 
@@ -230,11 +230,11 @@ describe("dynastyClusterGroups", () => {
       dynasty("zhou-bei", absMonth(557), absMonth(581, 12), "bei-chao"),
     ];
     const capitals = [
-      capital("wei-north", "河南省洛阳市"),
-      capital("wei-east", "河北省邯郸市临漳县"),
-      capital("wei-west", "陕西省西安市"),
-      capital("qi-bei", "河北省邯郸市临漳县"),
-      capital("zhou-bei", "陕西省西安市"),
+      capital("wei-north", "河南省洛阳市", absMonth(386), absMonth(534, 12)),
+      capital("wei-east", "河北省邯郸市临漳县", absMonth(534), absMonth(550, 12)),
+      capital("wei-west", "陕西省西安市", absMonth(535), absMonth(557, 12)),
+      capital("qi-bei", "河北省邯郸市临漳县", absMonth(550), absMonth(577, 12)),
+      capital("zhou-bei", "陕西省西安市", absMonth(557), absMonth(581, 12)),
     ];
 
     // 东魏→北齐 (邺/临漳) and 西魏→北周 (长安/西安) each stack together, so 北齐

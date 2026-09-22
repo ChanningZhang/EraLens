@@ -23,25 +23,29 @@ export function compareTimedOrder(a: TimedSortKey, b: TimedSortKey): number {
 type LaneUnit = {
   sortKey: TimedSortKey;
   dynasties: Dynasty[];
-  /** True for cluster-group units (三国/五代/…); they never get pulled around. */
+  /** True for cluster-group units (三国/五代/…). */
   isCluster: boolean;
 };
 
 /** Capital fields the lane rule needs; a subset of `DynastyCapital`. */
-export type LaneCapital = Pick<DynastyCapital, "dynastyId" | "modernName" | "role">;
+export type LaneCapital = Pick<
+  DynastyCapital,
+  "dynastyId" | "modernName" | "startAbs" | "endAbs"
+>;
 
-/** Map each dynasty to the set of cities where it held a primary capital. */
-function primaryCapitalCitiesByDynastyId(
+type CapitalTenure = { city: string; startAbs: number; endAbs: number };
+
+/** All capital tenures (any role) per dynasty, for point-in-time lookup. */
+function capitalTenuresByDynastyId(
   capitals: readonly LaneCapital[],
-): Map<string, Set<string>> {
-  const byDynasty = new Map<string, Set<string>>();
+): Map<string, CapitalTenure[]> {
+  const byDynasty = new Map<string, CapitalTenure[]>();
   for (const capital of capitals) {
-    if (capital.role !== "primary") continue;
     const city = capital.modernName.trim();
     if (!city) continue;
-    const cities = byDynasty.get(capital.dynastyId) ?? new Set<string>();
-    cities.add(city);
-    byDynasty.set(capital.dynastyId, cities);
+    const list = byDynasty.get(capital.dynastyId) ?? [];
+    list.push({ city, startAbs: capital.startAbs, endAbs: capital.endAbs });
+    byDynasty.set(capital.dynastyId, list);
   }
   return byDynasty;
 }
@@ -50,71 +54,72 @@ function primaryCapitalCitiesByDynastyId(
  * Lane-ordering rule: a later dynasty that takes over an earlier dynasty's
  * capital is pulled up to sit directly below it, before other unrelated rows.
  *
- * The rule is deliberately bounded and single-level so it never scrambles the
- * timeline:
- * - The match is against the **anchor's own** primary-capital cities (for a
- *   cluster row, the union of its members' primary cities), not the last row
- *   pulled — so a mixed-capital cluster like 五代 (开封/洛阳/太原) still pulls
- *   its 开封 successor 北宋 instead of chasing an unrelated city.
- * - Only successors that **begin within the anchor's own span**
- *   (`start ∈ [anchor.start, anchor.end]`) are pulled — a genuine hand-off —
- *   so a dynasty reusing the same city centuries later (e.g. 秦 vs 大顺 at
- *   西安) is never yanked across the timeline.
- * - Pulled rows do **not** themselves pull further (no cascade), and cluster
- *   units are never pulled — they keep their chronological position.
- *
- * Same-city is keyed on the primary capital's modern city, so 大兴/长安 (both
- * 西安市) count as one capital; a successor matches on any of its own primary
- * cities (e.g. 明's later 北京 matches 元).
+ * Matching is by the capital **at the hand-off moment** — the instant the
+ * successor begins. At that month the anchor and the successor must each hold a
+ * capital in the same modern city; capitals a dynasty only held at some *other*
+ * time never match (so 金 taking 开封 in 1214 does not glue it under 北宋, whose
+ * hand-off was 1127). All capital roles count, and a dynasty can hold several
+ * capitals at once, so any shared city (e.g. 唐's 洛阳 陪都 vs 武周's 洛阳)
+ * qualifies. The pull cascades: a pulled row recursively pulls its own
+ * same-capital successors (西魏 → 北周 → 隋 → 唐). Cluster units participate on
+ * both sides — a whole cluster (e.g. 南朝) can be pulled under 东晋.
  */
 function orderBySameCapitalSuccession(
   units: readonly LaneUnit[],
   capitals: readonly LaneCapital[],
 ): LaneUnit[] {
-  const citiesByDynasty = primaryCapitalCitiesByDynastyId(capitals);
-  const unitCities = (unit: LaneUnit): Set<string> => {
+  const tenuresByDynasty = capitalTenuresByDynastyId(capitals);
+
+  /** Cities a unit holds at absolute month `t` (any member, any capital role). */
+  const citiesAt = (unit: LaneUnit, t: number): Set<string> => {
     const cities = new Set<string>();
     for (const dynasty of unit.dynasties) {
-      for (const city of citiesByDynasty.get(dynasty.id) ?? []) cities.add(city);
+      for (const tenure of tenuresByDynasty.get(dynasty.id) ?? []) {
+        if (tenure.startAbs <= t && t <= tenure.endAbs) cities.add(tenure.city);
+      }
     }
     return cities;
+  };
+
+  /** The month a unit begins (its earliest member start) — the hand-off point. */
+  const handoffStart = (unit: LaneUnit): number =>
+    Math.min(...unit.dynasties.map((dynasty) => dynasty.startAbs));
+
+  const intersects = (a: Set<string>, b: Set<string>): boolean => {
+    for (const city of a) if (b.has(city)) return true;
+    return false;
   };
 
   const remaining = [...units];
   const result: LaneUnit[] = [];
 
+  const pullCascade = (anchor: LaneUnit): void => {
+    for (;;) {
+      let bestIndex = -1;
+      let bestStart = Infinity;
+      for (let index = 0; index < remaining.length; index += 1) {
+        const candidate = remaining[index]!;
+        // Successor only: it must begin at or after the anchor.
+        if (candidate.sortKey.startAbs < anchor.sortKey.startAbs) continue;
+        const t = handoffStart(candidate);
+        if (!intersects(citiesAt(anchor, t), citiesAt(candidate, t))) continue;
+        if (candidate.sortKey.startAbs < bestStart) {
+          bestStart = candidate.sortKey.startAbs;
+          bestIndex = index;
+        }
+      }
+      if (bestIndex === -1) return;
+      const pulled = remaining.splice(bestIndex, 1)[0]!;
+      result.push(pulled);
+      // Cascade: the pulled row becomes an anchor for its own successors.
+      pullCascade(pulled);
+    }
+  };
+
   while (remaining.length > 0) {
     const anchor = remaining.shift()!;
     result.push(anchor);
-
-    const anchorCities = unitCities(anchor);
-    if (anchorCities.size === 0) continue;
-
-    // Pull every singleton successor that begins within the anchor's span and
-    // shares one of its capital cities, keeping them in chronological order.
-    for (let index = 0; index < remaining.length; ) {
-      const candidate = remaining[index]!;
-      // remaining stays chronologically sorted; nothing further can start
-      // within the anchor's span once we pass its end.
-      if (candidate.sortKey.startAbs > anchor.sortKey.endAbs) break;
-
-      let shares = false;
-      if (!candidate.isCluster) {
-        for (const city of unitCities(candidate)) {
-          if (anchorCities.has(city)) {
-            shares = true;
-            break;
-          }
-        }
-      }
-
-      if (shares) {
-        result.push(candidate);
-        remaining.splice(index, 1);
-      } else {
-        index += 1;
-      }
-    }
+    pullCascade(anchor);
   }
 
   return result;

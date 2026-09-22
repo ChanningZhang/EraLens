@@ -112,6 +112,35 @@ export function buildDynastyColorMap(
  * current viewport — panning will not recolor rows.
  */
 /**
+ * A merged lane (`dynasty_lane_groups`, e.g. 蒙古帝国 → 元) collapses to one row
+ * keyed by its primary dynasty. Attribute every phase member's capital tenures
+ * to that primary id so the merged row is matched by whichever phase's capital
+ * is active at a hand-off (元's 北京 later, 蒙古's 哈拉和林 in 1206).
+ */
+function attributeLaneGroupCapitals(
+  capitals: readonly LaneCapital[],
+  dynastyLaneGroups: readonly DynastyLaneGroup[],
+): LaneCapital[] {
+  if (dynastyLaneGroups.length === 0) return [...capitals];
+  const byDynasty = new Map<string, LaneCapital[]>();
+  for (const capital of capitals) {
+    const list = byDynasty.get(capital.dynastyId) ?? [];
+    list.push(capital);
+    byDynasty.set(capital.dynastyId, list);
+  }
+  const extra: LaneCapital[] = [];
+  for (const group of dynastyLaneGroups) {
+    for (const phaseId of group.phaseDynastyIds) {
+      if (phaseId === group.primaryDynastyId) continue;
+      for (const capital of byDynasty.get(phaseId) ?? []) {
+        extra.push({ ...capital, dynastyId: group.primaryDynastyId });
+      }
+    }
+  }
+  return [...capitals, ...extra];
+}
+
+/**
  * Full-catalog lane order (collapse lane groups → cluster/capital ordering).
  * Viewport-independent: the same list underlies both stable colors and stable
  * row placement, so panning never reshuffles rows.
@@ -128,7 +157,8 @@ export function orderCatalogLanes(
     catalogById,
     dynastyLaneGroups,
   );
-  return orderDynastiesForLanes(collapsed, dynastyGroups, capitals);
+  const capitalsForOrder = attributeLaneGroupCapitals(capitals, dynastyLaneGroups);
+  return orderDynastiesForLanes(collapsed, dynastyGroups, capitalsForOrder);
 }
 
 /**
