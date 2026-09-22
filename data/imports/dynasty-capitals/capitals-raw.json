@@ -2625,19 +2625,19 @@
     "modernName": "江苏省南京市",
     "start": {
       "year": 420,
-      "month": 1,
-      "abs": 5040
+      "month": 7,
+      "abs": 5046
     },
     "end": {
       "year": 479,
-      "month": 12,
-      "abs": 5759
+      "month": 5,
+      "abs": 5752
     },
-    "startAbs": 5040,
-    "endAbs": 5759,
-    "precision": "year",
+    "startAbs": 5046,
+    "endAbs": 5752,
+    "precision": "month",
     "role": "primary",
-    "note": "刘宋都城建康。",
+    "note": "420年七月刘裕受禅建立刘宋，定都建康；479年五月萧道成代宋。",
     "links": [
       {
         "label": "维基百科",
