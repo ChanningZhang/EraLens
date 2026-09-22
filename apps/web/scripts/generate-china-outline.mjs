@@ -19,8 +19,31 @@ const outPath = path.resolve(__dirname, "../src/assets/china-outline.svg");
 const NATION_URL = "https://geo.datav.aliyun.com/areas_v3/bound/100000.json";
 const RIVERS_URL =
   "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_50m_rivers_lake_centerlines.geojson";
+const YANGTZE_URL =
+  "https://services1.arcgis.com/TQSFiGYN0xveoERF/ArcGIS/rest/services/yangtzeour/FeatureServer/0/query?where=1%3D1&outFields=*&returnGeometry=true&f=geojson";
 
-const YANGTZE_SEGMENT_NAMES = new Set(["Jinsha", "Chang Jiang", "Yangtze"]);
+// Natural Earth's 50m Yangtze centerline stops in the lower Jiangsu reach
+// (around 120.074E, 31.960N), before the river reaches the East China Sea.
+// The ArcGIS main-stem source ends around 119.613E, 32.191N; continue the
+// generalized centerline through the estuary to the commonly mapped river
+// mouth near Chongming / Shanghai.
+const YANGTZE_ESTUARY_EXTENSION = [
+  [119.613112, 32.190650],
+  [119.78, 32.13],
+  [119.92, 32.06],
+  [120.073942, 31.960272],
+  [120.214, 31.935],
+  [120.382, 31.884],
+  [120.558, 31.812],
+  [120.735, 31.746],
+  [120.905, 31.680],
+  [121.071, 31.612],
+  [121.235, 31.548],
+  [121.397, 31.493],
+  [121.558, 31.452],
+  [121.718, 31.421],
+  [121.878, 31.394],
+];
 
 const MAP_BOUNDS = { minLng: 73, maxLng: 136, minLat: 17, maxLat: 54 };
 const MAP_MID_LAT = (MAP_BOUNDS.minLat + MAP_BOUNDS.maxLat) / 2;
@@ -96,7 +119,11 @@ function riverPathMarkup(lines, className, strokeVar, strokeWidth) {
 }
 
 async function main() {
-  const [nationJson, riversJson] = await Promise.all([fetchJson(NATION_URL), fetchJson(RIVERS_URL)]);
+  const [nationJson, riversJson, yangtzeJson] = await Promise.all([
+    fetchJson(NATION_URL),
+    fetchJson(RIVERS_URL),
+    fetchJson(YANGTZE_URL),
+  ]);
 
   const nationFeature =
     nationJson.type === "FeatureCollection" ? nationJson.features[0] : nationJson;
@@ -107,10 +134,10 @@ async function main() {
     .map(ringToPath);
 
   const riverFeatures = riversJson.features ?? [];
-  const yangtzeLines = extractRiverLines(
-    riverFeatures,
-    (feature) => YANGTZE_SEGMENT_NAMES.has(feature.properties?.name ?? ""),
-  );
+  const yangtzeLines = [
+    ...extractRiverLines(yangtzeJson.features ?? [], () => true),
+    YANGTZE_ESTUARY_EXTENSION,
+  ];
   const yellowLines = extractRiverLines(
     riverFeatures,
     (feature) =>
