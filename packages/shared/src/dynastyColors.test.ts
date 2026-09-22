@@ -4,6 +4,7 @@ import { absMonth } from "./time";
 import {
   assignLaneColorTokens,
   buildDynastyColorMap,
+  buildLaneOrderIndex,
   buildStableLaneColorMap,
   colorTokenDistance,
   fallbackLaneColorToken,
@@ -11,7 +12,7 @@ import {
   resolveDynastyColorToken,
   resolveReignColorToken,
 } from "./dynastyColors";
-import type { Dynasty } from "./schema";
+import type { Dynasty, DynastyGroup, DynastyLaneGroup } from "./schema";
 
 function mockDynasties(count: number) {
   return Array.from({ length: count }, (_, index) => ({
@@ -137,6 +138,113 @@ describe("buildStableLaneColorMap", () => {
     const again = buildStableLaneColorMap(dynasties);
     expect(again.get("b")).toBe(full.get("b"));
     expect(again.get("c")).toBe(full.get("c"));
+  });
+});
+
+describe("buildLaneOrderIndex (stable placement)", () => {
+  function d(id: string, startAbs: number, endAbs: number, groupId?: string): Dynasty {
+    return {
+      id,
+      name: id,
+      altNames: [],
+      scope: "cn",
+      region: "east_asia",
+      start: { year: 0, month: 1 },
+      end: { year: 10, month: 12 },
+      startAbs,
+      endAbs,
+      precision: "year",
+      groupId,
+    };
+  }
+  const cap = (dynastyId: string, modernName: string, startAbs: number, endAbs: number) => ({
+    dynastyId,
+    modernName,
+    startAbs,
+    endAbs,
+  });
+
+  it("ranks a same-capital successor above an earlier-starting neighbour, independent of the anchor being visible", () => {
+    // 五代(开封 cluster) → 北宋(开封); 大理 starts earlier than 北宋 but at a
+    // different city. 北宋 should outrank 大理 globally.
+    const dynasties = [
+      d("zhou-hou", absMonth(951), absMonth(960, 12), "wudai"),
+      d("dali", absMonth(937), absMonth(1253, 12)),
+      d("song-north", absMonth(960), absMonth(1127, 12)),
+    ];
+    const groups: DynastyGroup[] = [
+      {
+        id: "wudai",
+        name: "五代",
+        altNames: [],
+        scope: "cn",
+        start: { year: 907, month: 1 },
+        end: { year: 960, month: 12 },
+        startAbs: absMonth(907),
+        endAbs: absMonth(960, 12),
+        precision: "year",
+      },
+    ];
+    const capitals = [
+      cap("zhou-hou", "河南省开封市", absMonth(951), absMonth(960, 12)),
+      cap("song-north", "河南省开封市", absMonth(960), absMonth(1127, 12)),
+      cap("dali", "云南省大理市", absMonth(937), absMonth(1253, 12)),
+    ];
+
+    const rank = buildLaneOrderIndex(dynasties, groups, [], capitals);
+    // 北宋 outranks 大理 (pulled up under 五代).
+    expect(rank.get("song-north")!).toBeLessThan(rank.get("dali")!);
+
+    // Simulate a viewport where 五代 has scrolled off: sorting the remaining
+    // rows by the global rank keeps 北宋 above 大理 (no jump).
+    const visibleAfterWudaiLeaves = [d("dali", absMonth(937), absMonth(1253, 12)), d("song-north", absMonth(960), absMonth(1127, 12))];
+    const ordered = [...visibleAfterWudaiLeaves].sort(
+      (x, y) => rank.get(x.id)! - rank.get(y.id)!,
+    );
+    expect(ordered.map((x) => x.id)).toEqual(["song-north", "dali"]);
+  });
+
+  it("does not pull a merged lane up by a capital it only holds later (蒙古→元)", () => {
+    // 蒙古/元 merges into one row keyed by 元. At its 1206 start the merged
+    // lane sits at 哈拉和林, which nobody shares, so it must stay below the
+    // earlier-starting 西辽 / 南宋 rather than being yanked under 金 via 元's
+    // later 北京.
+    const dynasties = [
+      d("jin-nv", absMonth(1115), absMonth(1234, 12)),
+      d("xiliao", absMonth(1124), absMonth(1218, 12)),
+      d("song-south", absMonth(1127), absMonth(1279, 12)),
+      d("mongol-empire", absMonth(1206), absMonth(1271, 12)),
+      d("yuan", absMonth(1271), absMonth(1368, 12)),
+    ];
+    const laneGroups: DynastyLaneGroup[] = [
+      {
+        id: "mongol-yuan",
+        primaryDynastyId: "yuan",
+        phaseDynastyIds: ["mongol-empire", "yuan"],
+        laneOrderStartAbs: absMonth(1206),
+        laneOrderEndAbs: absMonth(1388),
+      },
+    ];
+    const capitals = [
+      cap("jin-nv", "黑龙江省哈尔滨市阿城区", absMonth(1115), absMonth(1153, 12)),
+      cap("jin-nv", "北京市", absMonth(1154), absMonth(1214, 12)),
+      cap("xiliao", "吉尔吉斯斯坦楚河州", absMonth(1124), absMonth(1218, 12)),
+      cap("song-south", "浙江省杭州市", absMonth(1130), absMonth(1279, 12)),
+      cap("mongol-empire", "蒙古国哈拉和林", absMonth(1206), absMonth(1271, 12)),
+      cap("yuan", "北京市", absMonth(1272), absMonth(1368, 12)),
+    ];
+
+    const rank = buildLaneOrderIndex(dynasties, [], laneGroups, capitals);
+    expect(rank.get("yuan")!).toBeGreaterThan(rank.get("xiliao")!);
+    expect(rank.get("yuan")!).toBeGreaterThan(rank.get("song-south")!);
+    expect(rank.get("yuan")!).toBeGreaterThan(rank.get("jin-nv")!);
+  });
+
+  it("gives every dynasty a rank without capitals (pure time order preserved)", () => {
+    const dynasties = [d("c", 240, 300), d("a", 0, 60), d("b", 120, 180)];
+    const rank = buildLaneOrderIndex(dynasties);
+    expect(rank.get("a")!).toBeLessThan(rank.get("b")!);
+    expect(rank.get("b")!).toBeLessThan(rank.get("c")!);
   });
 });
 
