@@ -147,7 +147,7 @@ describe("dynastyClusterGroups", () => {
     ]);
   });
 
-  it("chains same-capital successors transitively, skipping other rows", () => {
+  it("is single-level: a later same-city dynasty is not cascaded up the chain", () => {
     const dynasties = [
       dynasty("sui", absMonth(581), absMonth(618, 12)),
       dynasty("tang", absMonth(618), absMonth(907, 12)),
@@ -161,13 +161,42 @@ describe("dynastyClusterGroups", () => {
       capital("changan-late", "陕西省西安市"),
     ];
 
-    // 隋 → 唐 → changan-late all stack together (all 西安, each overlaps the
-    // previous), and the unrelated 洛阳 row drops below the chain.
+    // 隋 pulls its direct successor 唐 (西安, starts within 隋's span). 唐 does
+    // not itself pull further, so changan-late (西安, but starting long after 隋
+    // ends) stays in plain time order rather than being cascaded up.
     expect(orderDynastiesForLanes(dynasties, [], capitals).map((d) => d.id)).toEqual([
       "sui",
       "tang",
-      "changan-late",
       "luoyang-row",
+      "changan-late",
+    ]);
+  });
+
+  it("a cluster row pulls its same-city singleton successor but is never itself pulled", () => {
+    const dynastyGroups = [group("wudai", absMonth(907), absMonth(960, 12), "五代")];
+    const dynasties = [
+      dynasty("liang-hou", absMonth(907), absMonth(923, 12), "wudai"),
+      dynasty("zhou-hou", absMonth(951), absMonth(960, 12), "wudai"),
+      dynasty("liao", absMonth(916), absMonth(1125, 12)),
+      dynasty("dali", absMonth(937), absMonth(1253, 12)),
+      dynasty("song-north", absMonth(960), absMonth(1127, 12)),
+    ];
+    const capitals = [
+      capital("liang-hou", "河南省开封市"),
+      capital("zhou-hou", "河南省开封市"),
+      capital("liao", "内蒙古自治区赤峰市巴林左旗"),
+      capital("dali", "云南省大理市"),
+      capital("song-north", "河南省开封市"),
+    ];
+
+    // 北宋 (开封) is pulled directly under the 五代 cluster, ahead of 辽/大理,
+    // and stays there regardless of the wider window.
+    expect(orderDynastiesForLanes(dynasties, dynastyGroups, capitals).map((d) => d.id)).toEqual([
+      "liang-hou",
+      "zhou-hou",
+      "song-north",
+      "liao",
+      "dali",
     ]);
   });
 

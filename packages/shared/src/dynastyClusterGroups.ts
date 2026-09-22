@@ -23,6 +23,8 @@ export function compareTimedOrder(a: TimedSortKey, b: TimedSortKey): number {
 type LaneUnit = {
   sortKey: TimedSortKey;
   dynasties: Dynasty[];
+  /** True for cluster-group units (三国/五代/…); they never get pulled around. */
+  isCluster: boolean;
 };
 
 /** Capital fields the lane rule needs; a subset of `DynastyCapital`. */
@@ -46,14 +48,24 @@ function primaryCapitalCitiesByDynastyId(
 
 /**
  * Lane-ordering rule: a later dynasty that takes over an earlier dynasty's
- * capital is pulled up to sit directly below it (before other, unrelated rows).
+ * capital is pulled up to sit directly below it, before other unrelated rows.
  *
- * "Takes over" is bounded to a genuine hand-off — the successor must begin on
- * or before the anchor's own end (overlap / direct succession), so a dynasty
- * that reuses the same city centuries later (e.g. 秦 vs 大顺 at 西安) is never
- * yanked across the timeline. Chaining is transitive, so a run such as
- * 隋 → 唐 at 长安 stacks together. Same-city is keyed on the primary capital's
- * modern city, so 大兴/长安 (both 西安) count as one capital.
+ * The rule is deliberately bounded and single-level so it never scrambles the
+ * timeline:
+ * - The match is against the **anchor's own** primary-capital cities (for a
+ *   cluster row, the union of its members' primary cities), not the last row
+ *   pulled — so a mixed-capital cluster like 五代 (开封/洛阳/太原) still pulls
+ *   its 开封 successor 北宋 instead of chasing an unrelated city.
+ * - Only successors that **begin within the anchor's own span**
+ *   (`start ∈ [anchor.start, anchor.end]`) are pulled — a genuine hand-off —
+ *   so a dynasty reusing the same city centuries later (e.g. 秦 vs 大顺 at
+ *   西安) is never yanked across the timeline.
+ * - Pulled rows do **not** themselves pull further (no cascade), and cluster
+ *   units are never pulled — they keep their chronological position.
+ *
+ * Same-city is keyed on the primary capital's modern city, so 大兴/长安 (both
+ * 西安市) count as one capital; a successor matches on any of its own primary
+ * cities (e.g. 明's later 北京 matches 元).
  */
 function orderBySameCapitalSuccession(
   units: readonly LaneUnit[],
@@ -72,26 +84,36 @@ function orderBySameCapitalSuccession(
   const result: LaneUnit[] = [];
 
   while (remaining.length > 0) {
-    let current = remaining.shift()!;
-    result.push(current);
+    const anchor = remaining.shift()!;
+    result.push(anchor);
 
-    // Pull up same-capital successors that begin during / at this row's hand-off.
-    for (;;) {
-      const anchorCities = unitCities(current);
-      if (anchorCities.size === 0) break;
+    const anchorCities = unitCities(anchor);
+    if (anchorCities.size === 0) continue;
 
-      const nextIndex = remaining.findIndex((candidate) => {
-        if (candidate.sortKey.startAbs < current.sortKey.startAbs) return false;
-        if (candidate.sortKey.startAbs > current.sortKey.endAbs) return false;
+    // Pull every singleton successor that begins within the anchor's span and
+    // shares one of its capital cities, keeping them in chronological order.
+    for (let index = 0; index < remaining.length; ) {
+      const candidate = remaining[index]!;
+      // remaining stays chronologically sorted; nothing further can start
+      // within the anchor's span once we pass its end.
+      if (candidate.sortKey.startAbs > anchor.sortKey.endAbs) break;
+
+      let shares = false;
+      if (!candidate.isCluster) {
         for (const city of unitCities(candidate)) {
-          if (anchorCities.has(city)) return true;
+          if (anchorCities.has(city)) {
+            shares = true;
+            break;
+          }
         }
-        return false;
-      });
-      if (nextIndex === -1) break;
+      }
 
-      current = remaining.splice(nextIndex, 1)[0]!;
-      result.push(current);
+      if (shares) {
+        result.push(candidate);
+        remaining.splice(index, 1);
+      } else {
+        index += 1;
+      }
     }
   }
 
@@ -134,6 +156,7 @@ export function orderDynastiesForLanes(
         endAbs: group.endAbs,
       },
       dynasties: [...members].sort(compareTimedOrder),
+      isCluster: true,
     });
   }
 
@@ -146,6 +169,7 @@ export function orderDynastiesForLanes(
         endAbs: dynasty.endAbs,
       },
       dynasties: [dynasty],
+      isCluster: false,
     });
   }
 
