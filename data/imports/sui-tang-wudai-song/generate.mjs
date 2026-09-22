@@ -311,6 +311,7 @@ const dynastyGroups = [
 
 const dynasties = [
   { id: "sui", name: "隋", altNames: ["大隋"], scope: "cn", region: "east_asia", start: ym(581), end: ym(618), precision: "year", note: "杨坚代周建隋，589年灭陈统一；618年江都兵变、唐建立标志隋亡，东都杨侗名义延续至619年。" },
+  { id: "xu", name: "许", altNames: ["宇文化及许"], scope: "cn", region: "east_asia", start: ym(618, 9), end: ym(619, 5), precision: "month", note: "宇文化及杀杨浩后自立，国号许，旋为窦建德所败，619年覆亡。" },
   { id: "tang", name: "唐", altNames: ["李唐"], scope: "cn", region: "east_asia", start: ym(618), end: ym(907), precision: "year", note: "李渊建唐，都长安；907年朱温篡唐，唐亡。" },
   { id: "zhou-wu", name: "武周", altNames: ["周"], scope: "cn", region: "east_asia", start: ym(690), end: ym(705), precision: "year", note: "武则天改国号周，690–705年，后还政李唐。" },
   { id: "liang-hou", name: "后梁", altNames: ["梁"], scope: "cn", region: "east_asia", start: ym(907), end: ym(923), precision: "year", groupId: "wudai", note: "朱温篡唐建梁，都开封；923年后唐灭之。" },
@@ -337,20 +338,36 @@ const dynasties = [
 const suiReignsCore = [
   dynastyReign("sui", "yang-jian", "隋文帝", "文皇帝", null, 581, 604, eras("reign-yang-jian", [{ name: "开皇", sy: 581, ey: 600 }, { name: "仁寿", sy: 601, ey: 604 }])),
   dynastyReign("sui", "yang-guang", "隋炀帝", "炀皇帝", null, 604, 618, eras("reign-yang-guang", [{ name: "大业", sy: 605, ey: 618 }])),
-  // 炀帝被弑后的江都续统，走主线金色；杨侑拥立时炀帝尚在，不入主线。
-  dynastyReign("sui", "yang-hao", "隋秦王", null, null, 618, 618),
+  dynastyReign("sui", "yang-you", "隋恭帝", "恭帝", null, 617, 618),
 ];
 const suiReignsParallel = [
-  dynastyReign("sui", "yang-you", "隋恭帝", "恭帝", null, 617, 618, [], null, {
-    track: "changan",
-    label: "长安",
+  dynastyReign("sui", "yang-hao", "隋秦王", null, null, 618, 618, [], {
+    track: "jiangdu",
+    label: "江都",
   }),
-  dynastyReign("sui", "yang-tong", "隋越王", null, null, 618, 619, [], null, {
+  dynastyReign("sui", "yang-tong", "隋越王", null, null, 618, 619, [], {
     track: "luoyang",
     label: "洛阳",
   }),
 ];
 const suiReigns = [...suiReignsCore, ...suiReignsParallel];
+const xuReigns = [
+  {
+    ...reign({
+      id: "reign-yuwen-huaji-xu",
+      dynastyId: "xu",
+      personId: "yuwen-huaji",
+      title: "许帝",
+      posthumousName: null,
+      templeName: null,
+      start: ym(618, 9),
+      end: ym(619, 5),
+      precision: "month",
+      eraNames: ["天寿"],
+    }),
+    isInformalMonarch: true,
+  },
+];
 
 const tangReigns = [
   dynastyReign("tang", "li-yuan", "唐高祖", "神尧皇帝", "高祖", 618, 626),
@@ -495,10 +512,10 @@ const songSouthReigns = [
   drDay("song-south", "zhao-bing", "宋帝昺", null, null, 1278, 5, 10, 1279, 3, 19),
 ];
 
-// Puppets (杨侑/杨侗) are parallel; 杨浩 is on the main line after 炀帝.
+// 杨侑为正统主线；杨浩、杨侗为隋末并立的非正统君王。
 const reignGroups = [suiReignsCore, tangReigns, zhouWuReigns, wudaiReigns, shiguoReigns, songNorthReigns, songSouthReigns];
 const reigns = applyDocumentedDatesToReigns(
-  [suiReigns, tangReigns, zhouWuReigns, wudaiReigns, shiguoReigns, songNorthReigns, songSouthReigns].flat(),
+  [suiReigns, xuReigns, tangReigns, zhouWuReigns, wudaiReigns, shiguoReigns, songNorthReigns, songSouthReigns].flat(),
 );
 
 // ── events ───────────────────────────────────────────────────────────────────
@@ -527,6 +544,17 @@ const events = [
   eventRange({ id: "sui-campaign-goguryeo", name: "隋炀帝三征高丽", kind: "battle", timeMode: "span", start: ym(612), end: ym(614), dynastyIds: ["sui"], participantIds: ["yang-guang"], summary: "隋炀帝三次大规模远征高句丽，劳民伤财，隋军惨败，国力大损。" }),
   eventPoint({ id: "yang-you-enthroned", name: "李渊拥杨侑称帝", kind: "politics", at: ym(617), dynastyIds: ["sui"], participantIds: ["li-yuan", "yang-you"], summary: "李渊入长安，拥隋炀帝孙杨侑为帝，与江都炀帝形成二主并存。" }),
   eventPoint({ id: "sui-fall", name: "隋朝灭亡", kind: "politics", at: ym(618), dynastyIds: ["sui"], participantIds: ["yang-guang", "yuwen-huaji"], summary: "江都兵变，隋炀帝被杀，中央权威瓦解；长安、江都、东都各立隋室傀儡。" }),
+  eventPoint({
+    id: "yang-guang-killed",
+    name: "江都兵变：隋炀帝被杀",
+    kind: "politics",
+    precision: "day",
+    dateNote: "大业十四年三月十一丙辰，618年4月11日，宇文化及发动兵变，隋炀帝被弑",
+    at: ymDay(618, 4, 11),
+    dynastyIds: ["sui"],
+    participantIds: ["yang-guang", "yuwen-huaji"],
+    summary: "宇文化及发动江都兵变，隋炀帝杨广被弑；随后江都军拥立杨浩。",
+  }),
   eventPoint({
     id: "yang-hao-enthroned",
     name: "宇文化及立杨浩",
@@ -688,6 +716,7 @@ const sql = [
   "-- EraLens period import: sui-tang-wudai-song",
   "-- Window: 581-01 .. 1279-12",
   "BEGIN;",
+  "DELETE FROM relations WHERE id = 'rel-yang-guang-yang-hao-succession';",
   "",
   "-- remove stale auto-generated 史料缺 (武周期间唐行留白)",
   sqlDeleteSystemMissingReigns(["tang"], sqlStr),
@@ -722,6 +751,7 @@ const manifest = {
     { label: "南宋", url: "https://zh.wikipedia.org/wiki/南宋" },
     { label: "安史之乱", url: "https://zh.wikipedia.org/wiki/安史之乱" },
     { label: "靖康之变", url: "https://zh.wikipedia.org/wiki/靖康之变" },
+    { label: "宇文化及", url: "https://zh.wikipedia.org/wiki/宇文化及" },
   ],
   notes: [
     "覆盖隋（581–618）、唐（618–907）、武周（690–705）、五代十国（907–979）、北宋（960–1127）、南宋（1127–1279）。",
@@ -730,7 +760,8 @@ const manifest = {
     "十国各政权收录全部君主；五代收录全部皇帝。",
     "1279 崖山海战为南宋终结；元朝不在本包内。",
     "李显、李旦两度即位，在位拆为两段；690–705 年武周武则天，不与唐中宗重叠。",
-    "隋末并行用 claim_track：主线文帝→炀帝→杨浩（江都续统，正统金色）；changan/杨侑、luoyang/杨侗为并行傀儡，不镀金、不串进继承链。",
+    "隋末并行用 claim_track：主线文帝→炀帝→杨侑（正统）；jiangdu/杨浩、luoyang/杨侗为非正统并立君王，不镀金、不串进主线继承链。",
+    "杨广于618-04-11在江都被宇文化及所弑；宇文化及随后建立许政权，命运线准确挂接至其许帝卡。",
     "南宋正统金色止于恭帝降元（1276-02）；端宗、帝昺接在恭帝之后走主线继承，但不计正统。",
     "北宋、南宋皇帝在位日取维基百科/宋史通行换算，precision=day。",
     "闽王延翰至朱文进、楚马希声/马希范在位日取维基百科条目公历换算（documentedReignDates）；马希广以后及王延政仍仅年/月。",

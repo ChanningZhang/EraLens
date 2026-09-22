@@ -761,6 +761,14 @@ export function buildFateCatalog() {
 
     // ── 隋唐五代十国 ────────────────────────────────────────────────────────
     {
+      id: "rel-yang-guang-yuwen-huaji-killed",
+      fromPersonId: "yang-guang",
+      toPersonId: "yuwen-huaji",
+      kind: "killed",
+      eventId: "yang-guang-killed",
+      resolveAt: () => ymDay(618, 4, 11),
+    },
+    {
       id: "rel-yang-you-li-yuan-abdication",
       fromPersonId: "yang-you",
       toPersonId: "li-yuan",

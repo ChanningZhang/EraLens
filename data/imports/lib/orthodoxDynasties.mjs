@@ -31,7 +31,7 @@ export const ORTHODOX_FROM_ABS = {
 
 export const ORTHODOX_END_ABS = {
   /**
-   * 王朝行止于 618 正月以对接唐，金色覆盖整年，使江都续统杨浩仍算正统。
+   * 王朝行止于 618 正月以对接唐，金色覆盖整年，使正统主线杨侑仍算正统。
    */
   sui: absMonth(618, 12),
   yuan: absMonth(1368),

@@ -62,6 +62,7 @@ writeImportPackage(__dirname, {
   preSql: [
     "DELETE FROM relations WHERE id = 'rel-murong-yong-fu-jian-ming-killed';",
     "DELETE FROM relations WHERE id = 'rel-yang-nandang-fu-jian-ming-surrender';",
+    "DELETE FROM relations WHERE id = 'rel-yang-guang-li-yuan-killed';",
     "DELETE FROM relations WHERE id IN (",
     "  'rel-zhou-guo-gen-qin-r29-killed',",
     "  'rel-xue-r4-qi-r35-captured',",

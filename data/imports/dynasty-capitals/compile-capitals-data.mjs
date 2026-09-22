@@ -86,11 +86,20 @@ const PLACE_KEBAB = {
   大兴城: "daxing",
   逻些: "luosuo",
   太和城: "taihecheng",
+  羊苴咩城: "yangjumei",
   莫贺延碛: "moheyanshi",
   伏俟城: "fushicheng",
   平壤: "pyongyang",
   神都: "shendu",
   杭州: "hangzhou",
+  广陵: "guangling",
+  汴州: "bianzhou",
+  长乐府: "changlefu",
+  兴王府: "xingwangfu",
+  南京析津府: "nanjing-xijinfu",
+  临潢府: "linhuangfu",
+  虎思斡耳朵: "husihu-ordu",
+  西京: "xijing",
   扬州: "yangzhou",
   福州: "fuzhou",
   成都蜀: "chengdu-shu",
@@ -653,9 +662,15 @@ export const capitals = [
     note: "吐蕃都城逻些（拉萨）。",
     wikiTitle: "吐蕃",
   }),
-  e("nanzhao", "太和城", "云南省大理白族自治州巍山彝族回族自治县", 649, 902, {
-    note: "南诏都城太和城（巍山）。",
+  e("nanzhao", "太和城", "云南省大理白族自治州巍山彝族回族自治县", 739, 779, {
+    note: "南诏前期都城太和城（巍山）；779年迁都羊苴咩城。",
     wikiTitle: "南诏",
+    id: "cap-nanzhao-taihecheng-739",
+  }),
+  e("nanzhao", "羊苴咩城", "云南省大理白族自治州大理市", 779, 902, {
+    note: "南诏779年迁都羊苴咩城（又作阳苴咩城、苴咩城）。",
+    wikiTitle: "阳苴咩城",
+    id: "cap-nanzhao-yangjumei-779",
   }),
   e("zhou-wu", "神都", "河南省洛阳市", 690, 705, {
     note: "武周以洛阳为神都。",
@@ -668,13 +683,15 @@ export const capitals = [
   }),
 
   // ── 五代十国 ──────────────────────────────────────────────────────────────
-  e("wu-shi", "杭州", "浙江省杭州市", 902, 937, {
-    note: "吴越前身武肃王据杭州。",
-    wikiTitle: "吴越国",
+  e("wu-shi", "广陵", "江苏省扬州市", 902, 937, {
+    note: "杨吴都广陵（今扬州），治所为江都府；不是吴越杭州。",
+    wikiTitle: "杨吴",
+    id: "cap-wu-shi-hangzhou-902",
   }),
-  e("liang-hou", "开封", "河南省开封市", 907, 923, {
-    note: "后梁都城开封。",
+  e("liang-hou", "汴州", "河南省开封市", 907, 923, {
+    note: "朱温建后梁，都汴；汴州升为东京开封府。",
     wikiTitle: "后梁",
+    id: "cap-liang-hou-kaifeng-907",
   }),
   e("chu-nan", "长沙", "湖南省长沙市", 907, 951, {
     note: "楚国都城长沙。",
@@ -689,13 +706,14 @@ export const capitals = [
     note: "吴越都城杭州。",
     wikiTitle: "吴越国",
   }),
-  e("min-fujian", "福州", "福建省福州市", 909, 945, {
-    note: "闽国都城福州。",
+  e("min-fujian", "长乐府", "福建省福州市", 909, 945, {
+    note: "闽国都福州；933年升为长乐府。",
     wikiTitle: "闽国",
+    id: "cap-min-fujian-fuzhou-909",
   }),
-  e("han-nan", "广州", "广东省广州市", 917, 971, {
-    note: "南汉都城广州。",
-    wikiTitle: "南汉",
+  e("han-nan", "兴王府", "广东省广州市", 917, 971, {
+    note: "南汉都兴王府（今广州）；971年宋灭南汉后复称广州。",
+    wikiTitle: "兴王府 (南汉)",
     id: "cap-han-nan-guangzhou-11004",
   }),
   e("tang-hou", "洛阳", "河南省洛阳市", 923, 936, {
@@ -710,30 +728,33 @@ export const capitals = [
     note: "后蜀都城成都。",
     wikiTitle: "后蜀",
   }),
-  e("jin-hou", "太原", "山西省太原市", 936, 947, {
-    note: "后晋都城太原。",
+  e("jin-hou", "汴州", "河南省开封市", 936, 947, {
+    note: "后晋936年自洛阳迁都汴州（东京开封府）；太原为其兴王之地，不是国都。",
     wikiTitle: "后晋",
+    id: "cap-jin-hou-taiyuan-936",
   }),
   e("tang-nan", "金陵", "江苏省南京市", 937, 975, {
     note: "南唐都城金陵。",
     wikiTitle: "南唐",
   }),
-  e("dali", "太和城", "云南省大理白族自治州大理市", 937, 1253, {
-    note: "大理国都城羊苴咩城（大理）。",
-    wikiTitle: "大理国",
+  e("dali", "羊苴咩城", "云南省大理白族自治州大理市", 937, 1253, {
+    note: "大理国都羊苴咩城（又作阳苴咩城、苴咩城）。",
+    wikiTitle: "阳苴咩城",
     id: "cap-dali-taihecheng-11244",
   }),
-  e("han-hou", "开封", "河南省开封市", 947, 951, {
-    note: "后汉都城开封。",
+  e("han-hou", "汴州", "河南省开封市", 947, 951, {
+    note: "后汉都汴州（东京开封府）。",
     wikiTitle: "后汉",
+    id: "cap-han-hou-kaifeng-947",
   }),
   e("han-bei", "太原", "山西省太原市", 951, 979, {
     note: "北汉都城太原。",
     wikiTitle: "北汉",
   }),
-  e("zhou-hou", "开封", "河南省开封市", 951, 960, {
-    note: "后周都城开封。",
+  e("zhou-hou", "汴州", "河南省开封市", 951, 960, {
+    note: "后周都汴州（东京开封府）。",
     wikiTitle: "后周",
+    id: "cap-zhou-hou-kaifeng-951",
   }),
 
   // ── 宋辽金夏 ──────────────────────────────────────────────────────────────
@@ -750,10 +771,11 @@ export const capitals = [
     note: "辽上京临潢府。",
     wikiTitle: "上京临潢府",
   }),
-  e("liao", "南京", "北京市", 938, 1125, {
+  e("liao", "南京析津府", "北京市", 938, 1125, {
     role: "secondary",
     note: "辽南京（析津府，今北京）。",
     wikiTitle: "南京_(辽朝)",
+    id: "cap-liao-南京-938",
   }),
   e("jin-nvzhen", "会宁府", "黑龙江省哈尔滨市阿城区", 1115, 1153, {
     note: "金初都会宁府。",
@@ -767,13 +789,13 @@ export const capitals = [
     note: "金末迁都汴京。",
     wikiTitle: "汴京",
   }),
-  e("beiliao", "临潢", "内蒙古自治区赤峰市巴林左旗", 1122, 1123, {
-    note: "北辽据临潢。",
+  e("beiliao", "临潢府", "内蒙古自治区赤峰市巴林左旗", 1122, 1123, {
+    note: "北辽据辽上京临潢府。",
     wikiTitle: "北辽",
     id: "cap-beiliao-linhuang-13464",
   }),
-  e("xiliao", "虎思", "吉尔吉斯斯坦楚河州托克马克市", 1124, 1218, {
-    note: "西辽都城虎思（今托克马克）。",
+  e("xiliao", "虎思斡耳朵", "吉尔吉斯斯坦楚河州托克马克市", 1124, 1218, {
+    note: "西辽都城虎思斡耳朵（今托克马克附近）。",
     wikiTitle: "西辽",
     id: "cap-xiliao-husi-13476",
   }),
@@ -914,9 +936,10 @@ export const capitals = [
     wikiTitle: "大顺",
     id: "cap-dashun-beijing-19728",
   }),
-  e("daxi", "成都", "四川省成都市", 1644, 1646, {
-    note: "大西政权都成都。",
+  e("daxi", "西京", "四川省成都市", 1644, 1646, {
+    note: "大西以成都为西京。",
     wikiTitle: "大西",
+    id: "cap-daxi-chengdu-1644",
   }),
   e("daxi", "西充", "四川省南充市西充县", 1646, 1647, {
     note: "张献忠迁西充。",

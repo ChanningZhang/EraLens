@@ -106,8 +106,8 @@ export function overlapsOrthodoxSpan(
 
 /**
  * Gold on a card: the dynasty span is orthodox *and* the reign is the
- * conventionally counted line. Parallel claimants (隋恭帝杨侑 while 炀帝
- * still lived, 南明鲁监国) and main-row rivals (`claimRole=rival`, 有穷代夏)
+ * conventionally counted line. Parallel claimants (隋末杨浩/杨侗、南明鲁监国)
+ * and main-row rivals (`claimRole=rival`, 有穷代夏)
  * stay without gold.
  */
 /** Months between accession and delayed-orthodox begin that still count (e.g. 顺治 1643→1644). */

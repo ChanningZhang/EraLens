@@ -11,7 +11,11 @@ import { assertCapitalModernNames } from "../lib/validateCapitalModernName.mjs";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /** Retired capital rows — deleted on import so UPSERT-only packages can drop removed seats. */
-const REMOVED_CAPITAL_IDS = ["cap-roc-taibei-23388"];
+const REMOVED_CAPITAL_IDS = [
+  "cap-roc-taibei-23388",
+  "cap-nanzhao-taihecheng-649",
+  "cap-daxi-xijing-1644",
+];
 
 const raw = JSON.parse(readFileSync(path.join(__dirname, "capitals-raw.json"), "utf8"));
 const seed = JSON.parse(readFileSync(path.join(__dirname, "coordinates-seed.json"), "utf8"));
@@ -81,11 +85,19 @@ writeFileSync(
       sources: [
         { label: "维基百科", url: "https://zh.wikipedia.org/wiki/中国古代都城" },
         { label: "唐哀帝（维基百科）", url: "https://zh.wikipedia.org/wiki/唐哀帝" },
+        { label: "后梁（维基百科）", url: "https://zh.wikipedia.org/wiki/后梁" },
+        { label: "杨吴（维基百科）", url: "https://zh.wikipedia.org/wiki/杨吴" },
+        { label: "兴王府（南汉）", url: "https://zh.wikipedia.org/wiki/兴王府_(南汉)" },
+        { label: "阳苴咩城（维基百科）", url: "https://zh.wikipedia.org/wiki/阳苴咩城" },
+        { label: "辽南京（维基百科）", url: "https://zh.wikipedia.org/wiki/辽南京" },
+        { label: "斡耳朵（维基百科）", url: "https://zh.wikipedia.org/wiki/斡耳朵" },
+        { label: "福州市人民政府：福州建置沿革", url: "https://www.fuzhou.gov.cn/zgfzzt/zjrc/qhyg/202509/t20250925_5083026.htm" },
         { label: "高德地图地理编码", url: "https://lbs.amap.com/api/webservice/guide/api/georegeo" },
       ],
       notes: [
         "modernName 为省/市全称；坐标 GCJ-02，经 Amap maps_geo 烘焙",
         "唐都城：904年迁都洛阳，李柷（唐哀帝）在位至907年唐亡；洛阳记录拆分为迁都前陪都与迁都后正都",
+        "本次复核修正杨吴广陵、后梁/后晋/后汉/后周汴州、南汉兴王府、闽长乐府、南诏779年迁羊苴咩城、大理羊苴咩城、辽南京析津府、北辽临潢府、西辽虎思斡耳朵、大西西京等古称；今址仍单列于 modernName",
         `覆盖 ${new Set(capitals.map((c) => c.dynastyId)).size} 个王朝，${capitals.length} 条都城记录`,
       ],
     },

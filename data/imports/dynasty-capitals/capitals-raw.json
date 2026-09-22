@@ -2970,29 +2970,56 @@
     ]
   },
   {
-    "id": "cap-nanzhao-taihecheng-649",
+    "id": "cap-nanzhao-taihecheng-739",
     "dynastyId": "nanzhao",
     "historicalName": "太和城",
     "modernName": "云南省大理白族自治州巍山彝族回族自治县",
     "start": {
-      "year": 649,
+      "year": 739,
       "month": 1,
-      "abs": 7788
+      "abs": 8868
+    },
+    "end": {
+      "year": 779,
+      "month": 12,
+      "abs": 9359
+    },
+    "startAbs": 8868,
+    "endAbs": 9359,
+    "precision": "year",
+    "role": "primary",
+    "note": "南诏前期都城太和城（巍山）；779年迁都羊苴咩城。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/南诏"
+      }
+    ]
+  },
+  {
+    "id": "cap-nanzhao-yangjumei-779",
+    "dynastyId": "nanzhao",
+    "historicalName": "羊苴咩城",
+    "modernName": "云南省大理白族自治州大理市",
+    "start": {
+      "year": 779,
+      "month": 1,
+      "abs": 9348
     },
     "end": {
       "year": 902,
       "month": 12,
       "abs": 10835
     },
-    "startAbs": 7788,
+    "startAbs": 9348,
     "endAbs": 10835,
     "precision": "year",
     "role": "primary",
-    "note": "南诏都城太和城（巍山）。",
+    "note": "南诏779年迁都羊苴咩城（又作阳苴咩城、苴咩城）。",
     "links": [
       {
         "label": "维基百科",
-        "url": "https://zh.wikipedia.org/wiki/南诏"
+        "url": "https://zh.wikipedia.org/wiki/阳苴咩城"
       }
     ]
   },
@@ -3053,8 +3080,8 @@
   {
     "id": "cap-wu-shi-hangzhou-902",
     "dynastyId": "wu-shi",
-    "historicalName": "杭州",
-    "modernName": "浙江省杭州市",
+    "historicalName": "广陵",
+    "modernName": "江苏省扬州市",
     "start": {
       "year": 902,
       "month": 1,
@@ -3069,18 +3096,18 @@
     "endAbs": 11255,
     "precision": "year",
     "role": "primary",
-    "note": "吴越前身武肃王据杭州。",
+    "note": "杨吴都广陵（今扬州），治所为江都府；不是吴越杭州。",
     "links": [
       {
         "label": "维基百科",
-        "url": "https://zh.wikipedia.org/wiki/吴越国"
+        "url": "https://zh.wikipedia.org/wiki/杨吴"
       }
     ]
   },
   {
     "id": "cap-liang-hou-kaifeng-907",
     "dynastyId": "liang-hou",
-    "historicalName": "开封",
+    "historicalName": "汴州",
     "modernName": "河南省开封市",
     "start": {
       "year": 907,
@@ -3096,7 +3123,7 @@
     "endAbs": 11087,
     "precision": "year",
     "role": "primary",
-    "note": "后梁都城开封。",
+    "note": "朱温建后梁，都汴；汴州升为东京开封府。",
     "links": [
       {
         "label": "维基百科",
@@ -3188,7 +3215,7 @@
   {
     "id": "cap-min-fujian-fuzhou-909",
     "dynastyId": "min-fujian",
-    "historicalName": "福州",
+    "historicalName": "长乐府",
     "modernName": "福建省福州市",
     "start": {
       "year": 909,
@@ -3204,7 +3231,7 @@
     "endAbs": 11351,
     "precision": "year",
     "role": "primary",
-    "note": "闽国都城福州。",
+    "note": "闽国都福州；933年升为长乐府。",
     "links": [
       {
         "label": "维基百科",
@@ -3215,7 +3242,7 @@
   {
     "id": "cap-han-nan-guangzhou-11004",
     "dynastyId": "han-nan",
-    "historicalName": "广州",
+    "historicalName": "兴王府",
     "modernName": "广东省广州市",
     "start": {
       "year": 917,
@@ -3231,11 +3258,11 @@
     "endAbs": 11663,
     "precision": "year",
     "role": "primary",
-    "note": "南汉都城广州。",
+    "note": "南汉都兴王府（今广州）；971年宋灭南汉后复称广州。",
     "links": [
       {
         "label": "维基百科",
-        "url": "https://zh.wikipedia.org/wiki/南汉"
+        "url": "https://zh.wikipedia.org/wiki/兴王府 (南汉)"
       }
     ]
   },
@@ -3323,8 +3350,8 @@
   {
     "id": "cap-jin-hou-taiyuan-936",
     "dynastyId": "jin-hou",
-    "historicalName": "太原",
-    "modernName": "山西省太原市",
+    "historicalName": "汴州",
+    "modernName": "河南省开封市",
     "start": {
       "year": 936,
       "month": 1,
@@ -3339,7 +3366,7 @@
     "endAbs": 11375,
     "precision": "year",
     "role": "primary",
-    "note": "后晋都城太原。",
+    "note": "后晋936年自洛阳迁都汴州（东京开封府）；太原为其兴王之地，不是国都。",
     "links": [
       {
         "label": "维基百科",
@@ -3377,7 +3404,7 @@
   {
     "id": "cap-dali-taihecheng-11244",
     "dynastyId": "dali",
-    "historicalName": "太和城",
+    "historicalName": "羊苴咩城",
     "modernName": "云南省大理白族自治州大理市",
     "start": {
       "year": 937,
@@ -3393,18 +3420,18 @@
     "endAbs": 15047,
     "precision": "year",
     "role": "primary",
-    "note": "大理国都城羊苴咩城（大理）。",
+    "note": "大理国都羊苴咩城（又作阳苴咩城、苴咩城）。",
     "links": [
       {
         "label": "维基百科",
-        "url": "https://zh.wikipedia.org/wiki/大理国"
+        "url": "https://zh.wikipedia.org/wiki/阳苴咩城"
       }
     ]
   },
   {
     "id": "cap-han-hou-kaifeng-947",
     "dynastyId": "han-hou",
-    "historicalName": "开封",
+    "historicalName": "汴州",
     "modernName": "河南省开封市",
     "start": {
       "year": 947,
@@ -3420,7 +3447,7 @@
     "endAbs": 11423,
     "precision": "year",
     "role": "primary",
-    "note": "后汉都城开封。",
+    "note": "后汉都汴州（东京开封府）。",
     "links": [
       {
         "label": "维基百科",
@@ -3458,7 +3485,7 @@
   {
     "id": "cap-zhou-hou-kaifeng-951",
     "dynastyId": "zhou-hou",
-    "historicalName": "开封",
+    "historicalName": "汴州",
     "modernName": "河南省开封市",
     "start": {
       "year": 951,
@@ -3474,7 +3501,7 @@
     "endAbs": 11531,
     "precision": "year",
     "role": "primary",
-    "note": "后周都城开封。",
+    "note": "后周都汴州（东京开封府）。",
     "links": [
       {
         "label": "维基百科",
@@ -3566,7 +3593,7 @@
   {
     "id": "cap-liao-南京-938",
     "dynastyId": "liao",
-    "historicalName": "南京",
+    "historicalName": "南京析津府",
     "modernName": "北京市",
     "start": {
       "year": 938,
@@ -3674,7 +3701,7 @@
   {
     "id": "cap-beiliao-linhuang-13464",
     "dynastyId": "beiliao",
-    "historicalName": "临潢",
+    "historicalName": "临潢府",
     "modernName": "内蒙古自治区赤峰市巴林左旗",
     "start": {
       "year": 1122,
@@ -3690,7 +3717,7 @@
     "endAbs": 13487,
     "precision": "year",
     "role": "primary",
-    "note": "北辽据临潢。",
+    "note": "北辽据辽上京临潢府。",
     "links": [
       {
         "label": "维基百科",
@@ -3701,7 +3728,7 @@
   {
     "id": "cap-xiliao-husi-13476",
     "dynastyId": "xiliao",
-    "historicalName": "虎思",
+    "historicalName": "虎思斡耳朵",
     "modernName": "吉尔吉斯斯坦楚河州托克马克市",
     "start": {
       "year": 1124,
@@ -3717,7 +3744,7 @@
     "endAbs": 14627,
     "precision": "year",
     "role": "primary",
-    "note": "西辽都城虎思（今托克马克）。",
+    "note": "西辽都城虎思斡耳朵（今托克马克附近）。",
     "links": [
       {
         "label": "维基百科",
@@ -4484,7 +4511,7 @@
   {
     "id": "cap-daxi-chengdu-1644",
     "dynastyId": "daxi",
-    "historicalName": "成都",
+    "historicalName": "西京",
     "modernName": "四川省成都市",
     "start": {
       "year": 1644,
@@ -4500,7 +4527,7 @@
     "endAbs": 19763,
     "precision": "year",
     "role": "primary",
-    "note": "大西政权都成都。",
+    "note": "大西以成都为西京。",
     "links": [
       {
         "label": "维基百科",
