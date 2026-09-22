@@ -74,6 +74,17 @@ const persons = [
     ym(1893, 1),
     ym(1981, 5),
   ),
+  // Joint acting presidency, modeled like the shared office of 共和行政.
+  person(
+    "song-qingling-dong-biwu",
+    "宋庆龄、董必武",
+    ["政治家", "联合代行国家元首"],
+    "1968年10月31日至1972年2月24日，与董必武（按联合主体记录）共同以国家副主席身份代行国家主席职权。个人资料分别保留在宋庆龄、董必武人物记录中。",
+    "中华人民共和国国家元首列表",
+    null,
+    null,
+    ["董必武、宋庆龄"],
+  ),
   person(
     "npc-standing-committee",
     "全国人大常委会",
@@ -257,15 +268,9 @@ const maoLiuReigns = [
 
 const jointViceReigns = [
   prcOffice({
-    personId: "song-qingling",
-    title: "国家副主席",
-    start: [1968, 10, 31],
-    end: [1972, 2, 24],
-  }),
-  prcOffice({
-    id: "reign-dong-biwu-prc-vice",
-    personId: "dong-biwu",
-    title: "国家副主席",
+    id: "reign-song-qingling-dong-biwu-prc",
+    personId: "song-qingling-dong-biwu",
+    title: "国家副主席共同代行国家主席职权",
     start: [1968, 10, 31],
     end: [1972, 2, 24],
   }),
@@ -495,7 +500,12 @@ for (const group of serialReignGroups) {
   }
 }
 
-const staleReignIds = ["reign-hua-guofeng-prc", "reign-deng-xiaoping-prc"];
+const staleReignIds = [
+  "reign-hua-guofeng-prc",
+  "reign-deng-xiaoping-prc",
+  "reign-song-qingling-prc",
+  "reign-dong-biwu-prc-vice",
+];
 const staleRelationIds = [
   "rel-mao-zedong-hua-guofeng-succession",
   "rel-hua-guofeng-deng-xiaoping-succession",
@@ -531,7 +541,7 @@ const manifest = {
     "覆盖中华人民共和国（1949-10–2026-09），单行 prc 王朝。正统自开国日起算；民国金色已截于 1949-09。",
     "主线按维基百科「中华人民共和国国家元首列表」：中央人民政府主席、国家主席、国家副主席代行、国家代主席、废除主席期间的全国人大常委会。中共中央总书记、中央军委主席不建 reign。邓小平从未任国家主席，只作 person。",
     "毛泽东分两段：1949-10-01 中央人民政府主席至 1954-09-27；同日当选国家主席至 1959-04-27。宪法改职称，比照民国国民政府主席/总统分卡。刘少奇 1959-04-27 至 1968-10-31。",
-    "1968-10-31 至 1972-02-24 宋庆龄、董必武以国家副主席共同代行主席职权，同日起迄叠卡（不是 rival track）。董必武 1972-02-24 起以国家代主席名义行职权，至 1975-01-17。",
+    "1968-10-31 至 1972-02-24 宋庆龄、董必武以国家副主席共同代行主席职权，合并为一个联合主体卡片；两人的独立人物记录仍保留。董必武 1972-02-24 起以国家代主席名义行职权，至 1975-01-17。",
     "1975-01-17 至 1983-06-18 宪法不设国家主席，全国人大常委会集体行使元首职权，建机构卡；委员长朱德、叶剑英不另建主席卡。宋庆龄名誉主席（1981）为荣誉称号，不建 reign。",
     "李先念 1983-06-18 复设后首任，杨尚昆、江泽民、胡锦涛、习近平接任。连任不拆卡。习近平任期收录截至 2026-09。",
     "华国锋、胡耀邦、赵紫阳只建 persons。国民政府迁台并非投降、禅让或被俘，不画跨朝命运线。国共内战事件 civil-war 补挂 prc。",

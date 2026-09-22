@@ -137,4 +137,36 @@ describe("buildReignCapitalTenures", () => {
       },
     ]);
   });
+
+  it("preserves day-precision capital intervals instead of collapsing them to a month", () => {
+    const liZichengReign: Reign = {
+      id: "reign-li-zicheng-dashun",
+      dynastyId: "dashun",
+      personId: "li-zicheng",
+      title: "大顺皇帝",
+      start: { year: 1644, month: 1 },
+      end: { year: 1645, month: 5, day: 17 },
+      startAbs: 19728,
+      endAbs: 19744,
+      precision: "month",
+    };
+    const beijing = {
+      id: "cap-dashun-beijing-19728",
+      dynastyId: "dashun",
+      historicalName: "北京",
+      modernName: "北京市",
+      longitude: 116.407387,
+      latitude: 39.904179,
+      coordinateSystem: "GCJ02" as const,
+      start: { year: 1644, month: 4, day: 25 },
+      end: { year: 1644, month: 4, day: 30 },
+      startAbs: 19731,
+      endAbs: 19731,
+      precision: "day" as const,
+      role: "primary" as const,
+    };
+    expect(buildReignCapitalTenures(liZichengReign, [beijing])[0]?.tenure.label).toBe(
+      "1644年4月25日 — 1644年4月30日",
+    );
+  });
 });

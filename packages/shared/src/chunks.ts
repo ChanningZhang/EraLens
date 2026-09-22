@@ -78,7 +78,20 @@ function spansOverlap(a: Reign, b: Reign): boolean {
   const end = Math.min(a.endAbs, b.endAbs);
   if (start > end) return false;
   const overlap = end - start + 1;
-  const smaller = Math.min(reignSpanMonths(a), reignSpanMonths(b));
+  const spanA = reignSpanMonths(a);
+  const spanB = reignSpanMonths(b);
+  // A year-precision succession can share exactly one boundary year (e.g.
+  // the previous ruler ends in December and the next starts in January).
+  // That seam is not a duplicate, even though it is the whole span of a
+  // very short successor.
+  const boundaryYearOverlap =
+    (overlap <= 12 && Math.abs(a.endAbs - b.startAbs) <= 11) ||
+    (overlap <= 12 && Math.abs(b.endAbs - a.startAbs) <= 11);
+  if (boundaryYearOverlap) return false;
+
+  // Stale imports may keep an overly wide span for the same title.  Compare
+  // with the shorter row so a contained, corrected row still replaces it.
+  const smaller = Math.min(spanA, spanB);
   return overlap >= smaller * 0.5;
 }
 
@@ -103,8 +116,10 @@ export function dedupeOverlappingReigns(reigns: Reign[]): Reign[] {
       kept[index] = pickBetterReign(existing, reign);
       continue;
     }
-    // Same generic title (楚王 / 闽主) across successive rulers is not a duplicate import.
-    // Prefer the tighter span when scores diverge enough (stale wide 秦庄襄王 import).
+    // Same generic title (楚王 / 闽主 / 赞普) across successive rulers is not
+    // a duplicate import when their spans are similarly sized; this also
+    // preserves genuinely concurrent claimant records.  Prefer the tighter
+    // span only when the difference is large enough to indicate stale data.
     const scoreDiff = Math.abs(reignQualityScore(existing) - reignQualityScore(reign));
     if (scoreDiff >= 0.35) {
       kept[index] = pickBetterReign(existing, reign);

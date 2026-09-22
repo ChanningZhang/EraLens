@@ -186,10 +186,8 @@ const existingInformalReigns = [
   "reign-duan-qirui-roc",
   // 9. 中华民国 - 张作霖
   "reign-zhang-zuolin-roc",
-  // 10. 中华人民共和国 - 宋庆龄
-  "reign-song-qingling-prc",
-  // 10. 中华人民共和国 - 董必武 (副主席，1968–1972，与宋庆龄共治)
-  "reign-dong-biwu-prc-vice",
+  // 10. 中华人民共和国 - 宋庆龄、董必武联合代行
+  "reign-song-qingling-dong-biwu-prc",
   // 10. 中华人民共和国 - 全国人大常委会
   "reign-npc-standing-committee-prc",
 ];

@@ -69,6 +69,9 @@ export function PersonCard({ placed }: Props) {
 
   const { left, width } = placed;
   const detail = personDetailLevel(viewport.lod, width);
+  // A lifespan can begin before the visible window. Keep its small label at
+  // the timeline edge in that case, rather than leaving an unexplained line.
+  const labelLeft = Math.max(6, viewport.gutterPx + 8 - left);
 
   return (
     <HoverTooltip text={timeTooltip}>
@@ -77,8 +80,8 @@ export function PersonCard({ placed }: Props) {
           type="button"
           className={[
             styles.card,
+            styles.lifeLine,
             detail === "dot" ? styles.dot : "",
-            detail === "compact" ? styles.compact : "",
             selected ? styles.selected : "",
           ]
             .filter(Boolean)
@@ -91,8 +94,14 @@ export function PersonCard({ placed }: Props) {
           aria-label={role ? `${person.name}，${role}` : person.name}
           {...handlers}
         >
-          {detail !== "dot" && <span className={styles.name}>{person.name}</span>}
-          {detail === "full" && role && <span className={styles.role}>{role}</span>}
+          {detail !== "dot" && (
+            <span className={styles.label} style={{ left: labelLeft }}>
+              <span className={styles.name}>{person.name}</span>
+              {detail === "full" && role && (
+                <span className={styles.role}>{role}</span>
+              )}
+            </span>
+          )}
         </button>
       )}
     </HoverTooltip>

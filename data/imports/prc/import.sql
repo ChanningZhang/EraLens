@@ -4,7 +4,7 @@ BEGIN;
 
 -- cleanup
 DELETE FROM reigns WHERE dynasty_id IN ('prc') AND person_id = 'system-missing-ruler';
-DELETE FROM reigns WHERE id IN ('reign-hua-guofeng-prc', 'reign-deng-xiaoping-prc');
+DELETE FROM reigns WHERE id IN ('reign-hua-guofeng-prc', 'reign-deng-xiaoping-prc', 'reign-song-qingling-prc', 'reign-dong-biwu-prc-vice');
 DELETE FROM relations WHERE id IN ('rel-mao-zedong-hua-guofeng-succession', 'rel-hua-guofeng-deng-xiaoping-succession', 'rel-deng-xiaoping-jiang-zemin-succession');
 
 -- persons
@@ -19,6 +19,9 @@ VALUES ('dong-biwu', '董必武', ARRAY[]::text[], NULL, NULL, 1886, 3, 1975, 4,
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name;
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name)
 VALUES ('song-qingling', '宋庆龄', ARRAY[]::text[], NULL, NULL, 1893, 1, 1981, 5, ARRAY['政治家'], '国家副主席。1968年10月31日至1972年2月24日与董必武共同代行国家主席职权。1981年5月16日被授予中华人民共和国名誉主席称号。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/宋庆龄"}]'::jsonb, NULL, NULL)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name;
+INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name)
+VALUES ('song-qingling-dong-biwu', '宋庆龄、董必武', ARRAY['董必武、宋庆龄'], NULL, NULL, NULL, NULL, NULL, NULL, ARRAY['政治家','联合代行国家元首'], '1968年10月31日至1972年2月24日，与董必武（按联合主体记录）共同以国家副主席身份代行国家主席职权。个人资料分别保留在宋庆龄、董必武人物记录中。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/中华人民共和国国家元首列表"}]'::jsonb, NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name;
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name)
 VALUES ('npc-standing-committee', '全国人大常委会', ARRAY['人大常委会','全国人民代表大会常务委员会'], NULL, NULL, NULL, NULL, NULL, NULL, ARRAY['机构'], '1975年1月17日四届全国人大一次会议修宪废除国家主席，改由全国人民代表大会常务委员会集体行使国家元首职权，至1983年6月18日六届全国人大一次会议选举李先念为国家主席。期间委员长为朱德（1975–1976）、叶剑英（1978–1983）；朱德逝世至叶剑英就任之间由宋庆龄等副委员长集体代理。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/全国人民代表大会常务委员会"}]'::jsonb, NULL, NULL)
@@ -106,10 +109,7 @@ INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, sta
 VALUES ('reign-xi-jinping-prc', 'prc', 'xi-jinping', '国家主席', NULL, 2013, 3, 14, 2026, 9, NULL, 24158, 24320, 'month', NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence;
 INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence)
-VALUES ('reign-song-qingling-prc', 'prc', 'song-qingling', '国家副主席', NULL, 1968, 10, 31, 1972, 2, 24, 23625, 23665, 'day', NULL, NULL)
-ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence)
-VALUES ('reign-dong-biwu-prc-vice', 'prc', 'dong-biwu', '国家副主席', NULL, 1968, 10, 31, 1972, 2, 24, 23625, 23665, 'day', NULL, NULL)
+VALUES ('reign-song-qingling-dong-biwu-prc', 'prc', 'song-qingling-dong-biwu', '国家副主席共同代行国家主席职权', NULL, 1968, 10, 31, 1972, 2, 24, 23625, 23665, 'day', NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence;
 
 -- events

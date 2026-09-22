@@ -272,4 +272,27 @@ describe("dedupeOverlappingReigns", () => {
 
     expect(dedupeOverlappingReigns([first, second])).toHaveLength(2);
   });
+
+  it("keeps a long reign when a successor overlaps only its boundary year", () => {
+    const reign = (id: string, personId: string, startAbs: number, endAbs: number): Reign => ({
+      id,
+      dynastyId: "tubo",
+      personId,
+      title: "赞普",
+      eraNames: [],
+      start: { year: 1, month: 1 },
+      end: { year: 1, month: 12 },
+      startAbs,
+      endAbs,
+      precision: "year",
+    });
+
+    const trisong = reign("reign-tri-song-detsen", "tri-song-detsen", 9060, 9575);
+    const mune = reign("reign-mu-ne-btsan", "mu-ne-btsan", 9564, 9587);
+
+    expect(dedupeOverlappingReigns([trisong, mune]).map((item) => item.personId)).toEqual([
+      "tri-song-detsen",
+      "mu-ne-btsan",
+    ]);
+  });
 });

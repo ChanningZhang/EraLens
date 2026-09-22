@@ -3165,19 +3165,19 @@
     "modernName": "湖南省长沙市",
     "start": {
       "year": 907,
-      "month": 1,
-      "abs": 10884
+      "month": 6,
+      "abs": 10889
     },
     "end": {
       "year": 951,
       "month": 12,
       "abs": 11423
     },
-    "startAbs": 10884,
+    "startAbs": 10889,
     "endAbs": 11423,
-    "precision": "year",
+    "precision": "month",
     "role": "primary",
-    "note": "楚国都城长沙。",
+    "note": "907年六月马殷受封楚王，以潭州为都；951年十二月楚亡。",
     "links": [
       {
         "label": "维基百科",
@@ -3192,19 +3192,19 @@
     "modernName": "四川省成都市",
     "start": {
       "year": 907,
-      "month": 1,
-      "abs": 10884
+      "month": 9,
+      "abs": 10892
     },
     "end": {
       "year": 925,
       "month": 12,
       "abs": 11111
     },
-    "startAbs": 10884,
+    "startAbs": 10892,
     "endAbs": 11111,
-    "precision": "year",
+    "precision": "month",
     "role": "primary",
-    "note": "前蜀都城成都。",
+    "note": "907年九月王建在成都称帝建立前蜀；925年后唐灭前蜀。",
     "links": [
       {
         "label": "维基百科",
@@ -3219,19 +3219,19 @@
     "modernName": "浙江省杭州市",
     "start": {
       "year": 907,
-      "month": 1,
-      "abs": 10884
+      "month": 6,
+      "abs": 10889
     },
     "end": {
       "year": 978,
-      "month": 12,
-      "abs": 11747
+      "month": 6,
+      "abs": 11741
     },
-    "startAbs": 10884,
-    "endAbs": 11747,
-    "precision": "year",
+    "startAbs": 10889,
+    "endAbs": 11741,
+    "precision": "month",
     "role": "primary",
-    "note": "吴越都城杭州。",
+    "note": "907年六月钱镠受后梁封为吴越王，史家以此为吴越国之始；978年六月钱俶纳土归宋。",
     "links": [
       {
         "label": "维基百科",
@@ -4488,19 +4488,21 @@
     "modernName": "陕西省西安市",
     "start": {
       "year": 1644,
-      "month": 1,
-      "abs": 19728
+      "month": 2,
+      "abs": 19729,
+      "day": 8
     },
     "end": {
       "year": 1644,
-      "month": 12,
-      "abs": 19739
+      "month": 2,
+      "abs": 19729,
+      "day": 15
     },
-    "startAbs": 19728,
-    "endAbs": 19739,
-    "precision": "year",
+    "startAbs": 19729,
+    "endAbs": 19729,
+    "precision": "day",
     "role": "primary",
-    "note": "大顺政权初据西安。",
+    "note": "李自成于1644年2月8日（崇祯十七年正月初一）在西安称帝，2月15日率军东进北京；此处按公历日精度记载。",
     "links": [
       {
         "label": "维基百科",
@@ -4515,19 +4517,21 @@
     "modernName": "北京市",
     "start": {
       "year": 1644,
-      "month": 1,
-      "abs": 19728
+      "month": 4,
+      "abs": 19731,
+      "day": 23
     },
     "end": {
-      "year": 1645,
-      "month": 12,
-      "abs": 19751
+      "year": 1644,
+      "month": 6,
+      "abs": 19733,
+      "day": 4
     },
-    "startAbs": 19728,
-    "endAbs": 19751,
-    "precision": "year",
+    "startAbs": 19731,
+    "endAbs": 19733,
+    "precision": "day",
     "role": "primary",
-    "note": "李自成入京。",
+    "note": "大顺军于1644年4月23日进入北京，至1644年6月4日退出；此处按公历日精度记载。",
     "links": [
       {
         "label": "维基百科",

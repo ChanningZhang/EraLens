@@ -11,11 +11,16 @@ import {
 } from "./eventLayout";
 
 export const PERSON_LAYER_GAP = 12;
+/**
+ * People sit on lightweight life-lines rather than full-height cards.  Keeping
+ * the rows close makes a busy historical period readable without turning the
+ * map into a stack of opaque bands.
+ */
 export const PERSON_ROW_TOP = 12;
-export const PERSON_ROW_STEP = 28;
+export const PERSON_ROW_STEP = 22;
 export const PERSON_LANE_PAD = 4;
-export const PERSON_BAR_HEIGHT = 24;
-export const PERSON_LAYER_BOTTOM_PAD = 12;
+export const PERSON_BAR_HEIGHT = 18;
+export const PERSON_LAYER_BOTTOM_PAD = 10;
 
 export type PlacedPerson = {
   person: Person;

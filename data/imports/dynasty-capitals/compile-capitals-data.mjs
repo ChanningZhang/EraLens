@@ -7,6 +7,7 @@ import { writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { absMonth, wiki, ym } from "../lib/sqlHelpers.mjs";
+import { ymDay } from "../lib/reignDateHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -149,7 +150,7 @@ function toKebab(historicalName) {
  * @param {number} [startMonth]
  * @param {number} endYear
  * @param {number} [endMonth]
- * @param {{ role?: string, note?: string, wikiTitle?: string, id?: string, precision?: "year"|"month"|"day" }} [opts]
+ * @param {{ role?: string, note?: string, wikiTitle?: string, id?: string, precision?: "year"|"month"|"day", startDay?: number, endDay?: number }} [opts]
  */
 export function entry(
   dynastyId,
@@ -159,10 +160,10 @@ export function entry(
   startMonth = 1,
   endYear,
   endMonth = 12,
-  { role = "primary", note, wikiTitle, id, precision = "year" } = {},
+  { role = "primary", note, wikiTitle, id, precision = "year", startDay, endDay } = {},
 ) {
-  const start = ym(startYear, startMonth);
-  const end = ym(endYear, endMonth);
+  const start = startDay == null ? ym(startYear, startMonth) : ymDay(startYear, startMonth, startDay);
+  const end = endDay == null ? ym(endYear, endMonth) : ymDay(endYear, endMonth, endDay);
   const kebab = toKebab(historicalName);
   const capId = id ?? `cap-${dynastyId}-${kebab}-${Math.abs(startYear)}`;
   return {
@@ -702,17 +703,20 @@ export const capitals = [
     wikiTitle: "后梁",
     id: "cap-liang-hou-kaifeng-907",
   }),
-  e("chu-nan", "长沙", "湖南省长沙市", 907, 951, {
-    note: "楚国都城长沙。",
+  entry("chu-nan", "长沙", "湖南省长沙市", 907, 6, 951, 12, {
+    precision: "month",
+    note: "907年六月马殷受封楚王，以潭州为都；951年十二月楚亡。",
     wikiTitle: "楚国_(十国)",
     id: "cap-chu-nan-changsha-10884",
   }),
-  e("shu-qian", "成都", "四川省成都市", 907, 925, {
-    note: "前蜀都城成都。",
+  entry("shu-qian", "成都", "四川省成都市", 907, 9, 925, 12, {
+    precision: "month",
+    note: "907年九月王建在成都称帝建立前蜀；925年后唐灭前蜀。",
     wikiTitle: "前蜀",
   }),
-  e("wuyue", "杭州", "浙江省杭州市", 907, 978, {
-    note: "吴越都城杭州。",
+  entry("wuyue", "杭州", "浙江省杭州市", 907, 6, 978, 6, {
+    precision: "month",
+    note: "907年六月钱镠受后梁封为吴越王，史家以此为吴越国之始；978年六月钱俶纳土归宋。",
     wikiTitle: "吴越国",
   }),
   e("min-fujian", "长乐府", "福建省福州市", 909, 945, {
@@ -937,13 +941,19 @@ export const capitals = [
     note: "李定国迎驾入滇；1659年后流亡缅甸，1662年遇害于昆明。",
     wikiTitle: "南明",
   }),
-  e("dashun", "西安", "陕西省西安市", 1644, 1644, {
-    note: "大顺政权初据西安。",
+  entry("dashun", "西安", "陕西省西安市", 1644, 2, 1644, 2, {
+    precision: "day",
+    startDay: 8,
+    endDay: 15,
+    note: "李自成于1644年2月8日（崇祯十七年正月初一）在西安称帝，2月15日率军东进北京；此处按公历日精度记载。",
     wikiTitle: "大顺",
     id: "cap-dashun-xian-19728",
   }),
-  e("dashun", "北京", "北京市", 1644, 1645, {
-    note: "李自成入京。",
+  entry("dashun", "北京", "北京市", 1644, 4, 1644, 6, {
+    precision: "day",
+    startDay: 23,
+    endDay: 4,
+    note: "大顺军于1644年4月23日进入北京，至1644年6月4日退出；此处按公历日精度记载。",
     wikiTitle: "大顺",
     id: "cap-dashun-beijing-19728",
   }),
