@@ -1,5 +1,5 @@
 import { isNonOrthodoxLine } from "./claimTracks";
-import { orderDynastiesForLanes } from "./dynastyClusterGroups";
+import { orderDynastiesForLanes, type LaneCapital } from "./dynastyClusterGroups";
 import { collapseDynastyLaneGroups } from "./dynastyLaneGroups";
 import {
   isOrthodoxAt,
@@ -111,18 +111,56 @@ export function buildDynastyColorMap(
  * collapse and ordering rules as the timeline, but does not depend on the
  * current viewport — panning will not recolor rows.
  */
-export function buildStableLaneColorMap(
+/**
+ * Full-catalog lane order (collapse lane groups → cluster/capital ordering).
+ * Viewport-independent: the same list underlies both stable colors and stable
+ * row placement, so panning never reshuffles rows.
+ */
+export function orderCatalogLanes(
   dynasties: readonly Dynasty[],
   dynastyGroups: readonly DynastyGroup[] = [],
   dynastyLaneGroups: readonly DynastyLaneGroup[] = [],
-): Map<string, ColorToken> {
+  capitals: readonly LaneCapital[] = [],
+): Dynasty[] {
   const catalogById = new Map(dynasties.map((dynasty) => [dynasty.id, dynasty]));
   const collapsed = collapseDynastyLaneGroups(
     [...dynasties],
     catalogById,
     dynastyLaneGroups,
   );
-  const ordered = orderDynastiesForLanes(collapsed, dynastyGroups);
+  return orderDynastiesForLanes(collapsed, dynastyGroups, capitals);
+}
+
+/**
+ * Stable lane rank per dynasty id from the full catalog. The viewport sorts its
+ * visible rows by this rank so a row keeps its place even when the neighbour
+ * that anchored a same-capital pull-up scrolls out of view. Lane-group phase
+ * members map to their collapsed representative's rank.
+ */
+export function buildLaneOrderIndex(
+  dynasties: readonly Dynasty[],
+  dynastyGroups: readonly DynastyGroup[] = [],
+  dynastyLaneGroups: readonly DynastyLaneGroup[] = [],
+  capitals: readonly LaneCapital[] = [],
+): Map<string, number> {
+  const ordered = orderCatalogLanes(dynasties, dynastyGroups, dynastyLaneGroups, capitals);
+  const rank = new Map<string, number>();
+  ordered.forEach((dynasty, index) => rank.set(dynasty.id, index));
+  for (const group of dynastyLaneGroups) {
+    const primaryRank = rank.get(group.primaryDynastyId);
+    if (primaryRank == null) continue;
+    for (const phaseId of group.phaseDynastyIds) rank.set(phaseId, primaryRank);
+  }
+  return rank;
+}
+
+export function buildStableLaneColorMap(
+  dynasties: readonly Dynasty[],
+  dynastyGroups: readonly DynastyGroup[] = [],
+  dynastyLaneGroups: readonly DynastyLaneGroup[] = [],
+  capitals: readonly LaneCapital[] = [],
+): Map<string, ColorToken> {
+  const ordered = orderCatalogLanes(dynasties, dynastyGroups, dynastyLaneGroups, capitals);
   const map = assignLaneColorTokens(ordered);
 
   for (const group of dynastyLaneGroups) {

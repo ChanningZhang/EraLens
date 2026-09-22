@@ -1,12 +1,13 @@
 import { useMemo, useRef } from "react";
 import {
+  buildLaneOrderIndex,
   capitalsActiveAtAbs,
   clusterFramesForLanes,
   collapseDynastyLaneGroups,
   collectLaneReigns,
+  compareTimedOrder,
   formatYear,
   fromAbsMonth,
-  orderDynastiesForLanes,
   fallbackLaneColorToken,
   resolveDynastyColorValue,
   TIMELINE_RAIL_CHIP_HEIGHT_PX,
@@ -71,6 +72,26 @@ export function TimelineStage() {
     return map;
   }, [data]);
 
+  const boundsQuery = useDataBounds();
+  const capitalsQuery = useDynastyCapitals(boundsQuery.data);
+  const allCapitals = capitalsQuery.data;
+  const timelineCatalog = useTimelineCatalog();
+
+  // Stable, viewport-independent lane order from the full catalog. Sorting the
+  // visible rows by this rank keeps a row in place even when the neighbour that
+  // anchored its same-capital pull-up scrolls out of view (e.g. 北宋 stays under
+  // 后周/五代 instead of dropping below 大理 once 五代 leaves the window).
+  const laneOrderRank = useMemo(
+    () =>
+      buildLaneOrderIndex(
+        timelineCatalog?.dynasties ?? [],
+        timelineCatalog?.dynastyGroups ?? [],
+        timelineCatalog?.dynastyLaneGroups ?? [],
+        allCapitals ?? [],
+      ),
+    [timelineCatalog, allCapitals],
+  );
+
   const placed = useMemo(() => {
     if (!data) return [];
     const buffered = expandWindow(viewport.startAbs, viewport.endAbs, 120);
@@ -87,16 +108,19 @@ export function TimelineStage() {
       dynastiesById,
       data?.dynastyLaneGroups ?? [],
     );
-    return assignLanes(
-      orderDynastiesForLanes(collapsed, data?.dynastyGroups ?? []),
-    );
-  }, [data, viewport.startAbs, viewport.endAbs, dynastiesById]);
+    const ordered = [...collapsed].sort((a, b) => {
+      const ra = laneOrderRank.get(a.id);
+      const rb = laneOrderRank.get(b.id);
+      if (ra != null && rb != null && ra !== rb) return ra - rb;
+      if (ra != null && rb == null) return -1;
+      if (ra == null && rb != null) return 1;
+      return compareTimedOrder(a, b);
+    });
+    return assignLanes(ordered);
+  }, [data, viewport.startAbs, viewport.endAbs, dynastiesById, laneOrderRank]);
 
-  const laneColorMap = useLaneColorCatalog();
-  const timelineCatalog = useTimelineCatalog();
-  const boundsQuery = useDataBounds();
+  const laneColorMap = useLaneColorCatalog(allCapitals);
   const labelAnchorAbs = laneLabelAnchorAbs(viewport);
-  const capitalsQuery = useDynastyCapitals(boundsQuery.data);
   const activeCapitals = useMemo(
     () => capitalsActiveAtAbs(capitalsQuery.data ?? [], labelAnchorAbs),
     [capitalsQuery.data, labelAnchorAbs],

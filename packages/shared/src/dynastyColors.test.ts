@@ -4,6 +4,7 @@ import { absMonth } from "./time";
 import {
   assignLaneColorTokens,
   buildDynastyColorMap,
+  buildLaneOrderIndex,
   buildStableLaneColorMap,
   colorTokenDistance,
   fallbackLaneColorToken,
@@ -11,7 +12,7 @@ import {
   resolveDynastyColorToken,
   resolveReignColorToken,
 } from "./dynastyColors";
-import type { Dynasty } from "./schema";
+import type { Dynasty, DynastyGroup } from "./schema";
 
 function mockDynasties(count: number) {
   return Array.from({ length: count }, (_, index) => ({
@@ -137,6 +138,76 @@ describe("buildStableLaneColorMap", () => {
     const again = buildStableLaneColorMap(dynasties);
     expect(again.get("b")).toBe(full.get("b"));
     expect(again.get("c")).toBe(full.get("c"));
+  });
+});
+
+describe("buildLaneOrderIndex (stable placement)", () => {
+  function d(id: string, startAbs: number, endAbs: number, groupId?: string): Dynasty {
+    return {
+      id,
+      name: id,
+      altNames: [],
+      scope: "cn",
+      region: "east_asia",
+      start: { year: 0, month: 1 },
+      end: { year: 10, month: 12 },
+      startAbs,
+      endAbs,
+      precision: "year",
+      groupId,
+    };
+  }
+  const cap = (dynastyId: string, modernName: string) => ({
+    dynastyId,
+    modernName,
+    role: "primary" as const,
+  });
+
+  it("ranks a same-capital successor above an earlier-starting neighbour, independent of the anchor being visible", () => {
+    // 五代(开封 cluster) → 北宋(开封); 大理 starts earlier than 北宋 but at a
+    // different city. 北宋 should outrank 大理 globally.
+    const dynasties = [
+      d("zhou-hou", absMonth(951), absMonth(960, 12), "wudai"),
+      d("dali", absMonth(937), absMonth(1253, 12)),
+      d("song-north", absMonth(960), absMonth(1127, 12)),
+    ];
+    const groups: DynastyGroup[] = [
+      {
+        id: "wudai",
+        name: "五代",
+        altNames: [],
+        scope: "cn",
+        start: { year: 907, month: 1 },
+        end: { year: 960, month: 12 },
+        startAbs: absMonth(907),
+        endAbs: absMonth(960, 12),
+        precision: "year",
+      },
+    ];
+    const capitals = [
+      cap("zhou-hou", "河南省开封市"),
+      cap("song-north", "河南省开封市"),
+      cap("dali", "云南省大理市"),
+    ];
+
+    const rank = buildLaneOrderIndex(dynasties, groups, [], capitals);
+    // 北宋 outranks 大理 (pulled up under 五代).
+    expect(rank.get("song-north")!).toBeLessThan(rank.get("dali")!);
+
+    // Simulate a viewport where 五代 has scrolled off: sorting the remaining
+    // rows by the global rank keeps 北宋 above 大理 (no jump).
+    const visibleAfterWudaiLeaves = [d("dali", absMonth(937), absMonth(1253, 12)), d("song-north", absMonth(960), absMonth(1127, 12))];
+    const ordered = [...visibleAfterWudaiLeaves].sort(
+      (x, y) => rank.get(x.id)! - rank.get(y.id)!,
+    );
+    expect(ordered.map((x) => x.id)).toEqual(["song-north", "dali"]);
+  });
+
+  it("gives every dynasty a rank without capitals (pure time order preserved)", () => {
+    const dynasties = [d("c", 240, 300), d("a", 0, 60), d("b", 120, 180)];
+    const rank = buildLaneOrderIndex(dynasties);
+    expect(rank.get("a")!).toBeLessThan(rank.get("b")!);
+    expect(rank.get("b")!).toBeLessThan(rank.get("c")!);
   });
 });
 
