@@ -354,7 +354,7 @@ export const capitals = [
     note: "莒国都城莒。",
     wikiTitle: "莒国",
   }),
-  e("teng-chunqiu", "滕", "山东省枣庄市滕州市", -599, -296, {
+  e("teng-chunqiu", "滕", "山东省枣庄市滕州市姜屯镇滕国故城遗址", -599, -296, {
     note: "滕国都城滕。",
     wikiTitle: "滕国",
   }),
@@ -370,7 +370,7 @@ export const capitals = [
     note: "越王勾践后迁琅琊。",
     wikiTitle: "琅琊",
   }),
-  e("xue-chunqiu", "薛", "山东省枣庄市滕州市", -511, -327, {
+  e("xue-chunqiu", "薛", "山东省枣庄市滕州市官桥镇薛国故城遗址", -511, -327, {
     note: "薛国都城薛。",
     wikiTitle: "薛国",
   }),

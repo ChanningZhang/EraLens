@@ -167,8 +167,40 @@ const jiaodongReigns = [dr("jiaodong-warring", "tian-shi", "胶东王", null, nu
 const zhouGuoWestReigns = [
   dr("zhou-guo-west", "zhou-guo-jie", "西周桓公", "桓公", null, -440, -415),
   dr("zhou-guo-west", "zhou-guo-zao", "西周威公", "威公", null, -414, -367),
-  dr("zhou-guo-west", "zhou-guo-chao", "西周惠公", "惠公", null, -366, -366),
-  dr("zhou-guo-west", "zhou-guo-jiu", "西周文公", "文公", null, -315, -256),
+  reign({
+    id: "reign-zhou-guo-chao-zhou-guo-west",
+    dynastyId: "zhou-guo-west",
+    personId: "zhou-guo-chao",
+    title: "西周惠公",
+    posthumousName: "惠公",
+    templeName: null,
+    start: ym(-366),
+    end: ym(-366, 12),
+    endDateConfidence: "interpolated",
+  }),
+  reign({
+    id: "reign-zhou-guo-wugong-zhou-guo-west",
+    dynastyId: "zhou-guo-west",
+    personId: "zhou-guo-wugong",
+    title: "武公",
+    posthumousName: "武公",
+    templeName: null,
+    start: ym(-365),
+    end: ym(-316, 12),
+    startDateConfidence: "interpolated",
+    endDateConfidence: "interpolated",
+  }),
+  reign({
+    id: "reign-zhou-guo-jiu-zhou-guo-west",
+    dynastyId: "zhou-guo-west",
+    personId: "zhou-guo-jiu",
+    title: "西周文公",
+    posthumousName: "文公",
+    templeName: null,
+    start: ym(-315),
+    end: ym(-256, 12),
+    startDateConfidence: "interpolated",
+  }),
 ];
 
 const zhouGuoEastReigns = [
@@ -367,6 +399,11 @@ const RULER_META = {
     wiki: "西周国",
     bio: "西周威公太子；前367年威公卒后与弟根分国，朝据王城为西周惠公。",
   },
+  "zhou-guo-wugong": {
+    name: "姬武公",
+    wiki: "西周武公",
+    bio: "西周惠公长子，承惠公为西周国君，文公之父。《史记·周本纪》及《史记集解》引徐广注可证其世系，但未载本名；部分后世君主表称其名共之，出处未详。在位起讫年无可靠记载。",
+  },
   "zhou-guo-jiu": {
     name: "姬咎",
     wiki: "西周国",
@@ -380,12 +417,6 @@ const RULER_META = {
 };
 
 const curatedMissingReigns = [
-  missingReign({
-    dynastyId: "zhou-guo-west",
-    startYear: -365,
-    endYear: -316,
-    id: "reign-missing-zhou-guo-west--365",
-  }),
   missingReign({
     dynastyId: "zhou-guo-east",
     startYear: -360,
@@ -576,6 +607,7 @@ relations.push(
 );
 
 const cleanupSql = [
+  "DELETE FROM reigns WHERE id = 'reign-missing-zhou-guo-west--365';",
   "DELETE FROM event_participants WHERE event_id = 'dai-founded';",
   "DELETE FROM event_dynasties WHERE event_id = 'dai-founded';",
   "DELETE FROM events WHERE id = 'dai-founded';",
@@ -619,6 +651,8 @@ const manifest = {
     { label: "莒国", url: "https://zh.wikipedia.org/wiki/莒国" },
     { label: "代国 (战国)", url: "https://zh.wikipedia.org/wiki/代国_(战国)" },
     { label: "西周国", url: "https://zh.wikipedia.org/wiki/西周国" },
+    { label: "西周武公", url: "https://zh.wikipedia.org/wiki/西周武公" },
+    { label: "史记·周本纪", url: "https://ctext.org/shiji/zhou-ben-ji" },
     { label: "东周国", url: "https://zh.wikipedia.org/wiki/东周国" },
     { label: "周朝诸侯国君主列表", url: "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表" },
   ],
@@ -638,7 +672,7 @@ const manifest = {
     "薛、滕、杞、莒、代用国号，不带「国」。西周国/东周国例外：史记、战国策原文称西周、东周（君称西周君、东周君）；后世为与王朝分期西周/东周消歧，维基百科与杨宽《战国史料编年辑证》等通行作西周国、东周国。",
     "年精度顺序继位：死年归旧王。西周惠公改从前366年起（威公卒年归威公），与东周惠公前367年并立不混为同一王室继位。",
     "杞国列王按维基「杞国」君主表（在位年份已是逾年切分）；隐公仅前506年七月，与悼公死年同桶。滕悼公迄前514、顷公起前513，与维基在位年数一致。",
-    "西周武公、东周昭文君等中间世系在位年失考，不强行拉满；西周惠公与文公之间、东周惠公之后至秦灭前用系统史料缺占位。",
+    "西周武公承西周惠公、为西周文公之父；《史记·周本纪》及《史记集解》引徐广注支持其世系，但均未载本名。《周朝诸侯国君主列表》列名共之，未标明该名所据原始文献；《西周国》君主表则列姓名不详，故数据库不把共之记作确证本名。具体在位年失考，时间轴暂以惠公之后、文公之前的插值区间表达武公，不作为史料给出的在位年数。东周惠公之后至秦灭前仍为史料缺。",
   ],
 };
 
