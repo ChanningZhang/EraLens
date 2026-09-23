@@ -8,6 +8,11 @@
   --color-ink-muted: #8c857a;
   --color-accent: #c0392b;
   --color-accent-soft: rgba(192, 57, 43, 0.12);
+  --selection-border: color-mix(in srgb, var(--color-ochre) 42%, var(--color-border));
+  --selection-shadow:
+    0 0 0 1px color-mix(in srgb, var(--color-ochre) 18%, transparent),
+    0 3px 12px color-mix(in srgb, var(--color-ink) 11%, transparent),
+    inset 0 -2px 0 var(--color-ochre);
   --color-cinnabar: #a8432f;
   --color-mineral: #3a6b6e;
   --color-ochre: #9a7b4f;

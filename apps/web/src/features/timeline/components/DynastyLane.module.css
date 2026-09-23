@@ -49,8 +49,8 @@
 }
 
 .frozenLabel.selected {
-  border-color: var(--color-accent);
-  box-shadow: inset 3px 0 0 var(--color-accent);
+  border-color: var(--selection-border);
+  box-shadow: var(--selection-shadow);
 }
 
 .frozenLabel:global(.orthodoxGold) {
@@ -65,10 +65,10 @@
 
 .frozenLabel:global(.orthodoxGold).selected {
   box-shadow:
-    inset 3px 0 0 var(--color-accent),
     inset 0 1px 0 var(--orthodox-gold-specular),
+    inset 0 -2px 0 var(--color-ochre),
     0 0 0 1px var(--orthodox-gold-border),
-    0 2px 8px color-mix(in srgb, var(--color-ink) 6%, transparent);
+    0 3px 12px color-mix(in srgb, var(--color-ink) 12%, transparent);
 }
 
 .labelText {

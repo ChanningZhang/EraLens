@@ -11709,7 +11709,7 @@ INSERT INTO reigns (
   'reign-zhongshan-r2-zhongshan', 'zhongshan', 'zhongshan-r2', '中山桓公',
   NULL,
   -406, 1, NULL, -406, 12, NULL,
-  -4860, -4849, 'year', 'approximate', 'approximate'
+  -4860, -4849, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11736,7 +11736,7 @@ INSERT INTO reigns (
   'reign-zhongshan-r2-zhongshan-2', 'zhongshan', 'zhongshan-r2', '中山桓公',
   NULL,
   -380, 1, NULL, -350, 12, NULL,
-  -4548, -4177, 'year', 'approximate', 'approximate'
+  -4548, -4177, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11763,7 +11763,7 @@ INSERT INTO reigns (
   'reign-zhongshan-r3-zhongshan', 'zhongshan', 'zhongshan-r3', '中山成公',
   NULL,
   -349, 1, NULL, -328, 12, NULL,
-  -4176, -3913, 'year', 'approximate', NULL
+  -4176, -3913, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,

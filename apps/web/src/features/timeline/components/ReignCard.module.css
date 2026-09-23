@@ -42,8 +42,7 @@
   border-right-color: transparent;
 }
 
-.card:hover:not(:global(.orthodoxGold)) {
-  transform: translateY(-1px);
+.card:hover:not(:global(.orthodoxGold)):not(.selected) {
   background: color-mix(in srgb, var(--card-color) 20%, var(--color-surface));
   box-shadow: 0 2px 8px rgba(27, 25, 23, 0.08);
 }
@@ -51,10 +50,6 @@
 .card:global(.orthodoxGold) {
   position: absolute;
   border-color: color-mix(in srgb, var(--orthodox-gold-divider) 72%, transparent) !important;
-}
-
-.card:global(.orthodoxGold):hover {
-  transform: translateY(-1px);
 }
 
 .card:global(.orthodoxGold) .content,
@@ -66,15 +61,16 @@
 
 .card:global(.orthodoxGold).selected {
   box-shadow:
-    inset 3px 0 0 var(--color-accent),
     inset 0 1px 0 var(--orthodox-gold-specular),
+    inset 0 -2px 0 var(--color-ochre),
     0 0 0 1px var(--orthodox-gold-border),
-    0 0 14px color-mix(in srgb, var(--orthodox-gold-glow) 65%, transparent);
+    0 3px 12px color-mix(in srgb, var(--color-ink) 12%, transparent);
 }
 
 .selected {
-  border-color: var(--color-accent);
-  box-shadow: inset 3px 0 0 var(--color-accent);
+  transform: translateY(-1px);
+  border-color: var(--selection-border);
+  box-shadow: var(--selection-shadow);
 }
 
 .marker {
