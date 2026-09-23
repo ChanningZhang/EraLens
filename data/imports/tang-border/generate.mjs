@@ -246,7 +246,7 @@ const reigns = applyDocumentedDatesToReigns(reignGroups.flat());
 const events = [
   eventPoint({
     id: "gaogouli-destroyed-tang",
-    name: "唐灭高句丽",
+    name: "高句丽覆亡",
     kind: "battle",
     precision: "month",
     dateNote: "总章元年九月，668年10月，宝藏王被俘",

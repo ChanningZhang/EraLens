@@ -155,7 +155,7 @@ node .cursor/skills/eralens-period-import/scripts/compute-abs.mjs -1046 1  # -12
 - `precision`（王朝/在位）: year | month | day
 - `event.precision`: day | month | year | decade | century
 - `event.time_mode`: point | span | circa
-- `event.kind`: battle | politics | culture | disaster | idiom | other
+- `event.kind`: battle | politics | culture | disaster | idiom | poetry | other
 - `relation.kind`: succession | battle | alliance | enthronement | other | killed | surrender | abdication | captured
 - `scope`: cn（默认）| global
 

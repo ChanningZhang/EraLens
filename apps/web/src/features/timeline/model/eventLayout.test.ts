@@ -95,6 +95,25 @@ describe("layoutEvents", () => {
       x - EVENT_MARKER_DOT_OFFSET + EVENT_MARKER_WIDTH + EVENT_LANE_PAD,
     );
   });
+
+  it("uses a circa poem's anchor without displaying its time band", () => {
+    const poem = EventSchema.parse({
+      id: "poetry-fengqiao-yebo",
+      name: "《枫桥夜泊》",
+      kind: "poetry",
+      timeMode: "circa",
+      precision: "year",
+      start: { year: 750, month: 1 },
+      end: { year: 770, month: 12 },
+      startAbs: absMonth(750, 1),
+      endAbs: absMonth(770, 12),
+    });
+
+    const placed = layoutEvents([poem], viewport)[0]!;
+
+    expect(placed.showBand).toBe(false);
+    expect(placed.anchorX).toBe(projectAbs(viewport, (poem.startAbs! + poem.endAbs!) / 2));
+  });
 });
 
 describe("stickyEventMarkerX", () => {

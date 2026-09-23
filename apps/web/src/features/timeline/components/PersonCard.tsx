@@ -1,4 +1,5 @@
 import { formatAbsSpanTooltip, personPointKindLabel } from "@eralens/shared";
+import { useState } from "react";
 import { useSelection } from "../hooks/useSelection";
 import { useViewport } from "../hooks/useViewport";
 import { EVENT_MARKER_DOT_OFFSET } from "../model/eventLayout";
@@ -15,6 +16,7 @@ type Props = {
 export function PersonCard({ placed }: Props) {
   const viewport = useViewport();
   const selection = useSelection();
+  const [nameHovered, setNameHovered] = useState(false);
   const { person, top, startAbs, endAbs, mode, pointKind } = placed;
   const selected =
     selection.selected?.type === "person" &&
@@ -37,6 +39,7 @@ export function PersonCard({ placed }: Props) {
             type="button"
             className={[
               styles.pointMarker,
+              pointKind === "death" ? styles.pointDeath : "",
               detail === "dot" ? styles.pointDot : "",
               selected ? styles.selected : "",
             ]
@@ -78,10 +81,11 @@ export function PersonCard({ placed }: Props) {
       {(handlers) => (
         <button
           type="button"
-          className={[
-            styles.card,
-            styles.lifeLine,
-            detail === "dot" ? styles.dot : "",
+            className={[
+              styles.card,
+              styles.lifeLine,
+              nameHovered ? styles.lineVisible : "",
+              detail === "dot" ? styles.dot : "",
             selected ? styles.selected : "",
           ]
             .filter(Boolean)
@@ -96,7 +100,13 @@ export function PersonCard({ placed }: Props) {
         >
           {detail !== "dot" && (
             <span className={styles.label} style={{ left: labelLeft }}>
-              <span className={styles.name}>{person.name}</span>
+              <span
+                className={styles.name}
+                onMouseEnter={() => setNameHovered(true)}
+                onMouseLeave={() => setNameHovered(false)}
+              >
+                {person.name}
+              </span>
               {detail === "full" && role && (
                 <span className={styles.role}>{role}</span>
               )}

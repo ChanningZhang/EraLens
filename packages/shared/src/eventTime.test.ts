@@ -18,6 +18,7 @@ describe("eventKindLabel", () => {
     expect(eventKindLabel("politics")).toBe("政治");
     expect(eventKindLabel("culture")).toBe("文化");
     expect(eventKindLabel("disaster")).toBe("灾害");
+    expect(eventKindLabel("poetry")).toBe("古诗");
     expect(eventKindLabel("other")).toBe("其他");
   });
 });

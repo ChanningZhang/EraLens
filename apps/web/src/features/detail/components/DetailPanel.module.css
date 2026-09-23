@@ -151,6 +151,14 @@
   color: var(--color-ink-secondary);
 }
 
+.poemText {
+  margin: 0;
+  white-space: pre-wrap;
+  font-size: 14px;
+  line-height: 2;
+  color: var(--color-ink-secondary);
+}
+
 .relatedList {
   display: grid;
   gap: var(--space-2);

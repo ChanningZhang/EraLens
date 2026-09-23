@@ -196,6 +196,13 @@ export function DetailPanel() {
           </section>
         )}
 
+        {detailQuery.data?.content && (
+          <section className={styles.section}>
+            <h3 className={styles.sectionTitle}>全文</h3>
+            <p className={styles.poemText}>{detailQuery.data.content}</p>
+          </section>
+        )}
+
         {capitalTenures.length > 0 && (
           <section className={styles.section}>
             <h3 className={styles.sectionTitle}>在位</h3>

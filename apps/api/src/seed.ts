@@ -159,6 +159,7 @@ async function main() {
           endMonth: event.end?.month,
           endAbs: event.endAbs,
           summary: event.summary,
+          content: event.content,
           dynasties: {
             create: event.dynastyIds.map((dynastyId) => ({ dynastyId })),
           },

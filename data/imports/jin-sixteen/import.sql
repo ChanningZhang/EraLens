@@ -565,7 +565,7 @@ ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXC
 
 -- events
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('jin-unify-wu', '晋灭吴统一天下', 'politics', 'point', 'month', '太康元年四月，280年', 280, 4, 3363, NULL, NULL, NULL, NULL, NULL, NULL, '晋军灭东吴，三国分裂终结，西晋完成统一。')
+VALUES ('jin-unify-wu', '三国归晋', 'politics', 'point', 'month', '太康元年四月，280年', 280, 4, 3363, NULL, NULL, NULL, NULL, NULL, NULL, '晋军灭东吴，三国分裂终结，西晋完成统一。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
   date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,

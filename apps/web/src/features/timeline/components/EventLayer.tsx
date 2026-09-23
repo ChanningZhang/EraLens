@@ -33,28 +33,15 @@ export function EventLayer({ placed, height }: Props) {
             )}
             <button
               type="button"
-              className={
-                event.kind === "idiom"
-                  ? `${styles.marker} ${styles.markerIdiom}`
-                  : styles.marker
-              }
+              className={styles.marker}
               data-event-kind={event.kind}
-              data-time-mode={event.timeMode}
               style={{ left: item.anchorX }}
               onClick={() => {
                 selectionStore.select({ type: "event", id: event.id }, anchorAbs);
               }}
               aria-label={event.name}
             >
-              <span
-                className={
-                  event.kind === "idiom"
-                    ? styles.dotIdiom
-                    : event.timeMode === "circa"
-                      ? styles.dotCirca
-                      : styles.dot
-                }
-              />
+              <span className={styles.dot} />
               <span className={styles.label}>{event.name}</span>
             </button>
           </div>

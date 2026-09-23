@@ -609,7 +609,7 @@ const events = [
   }),
   eventPoint({
     id: "zhou-qi-unify",
-    name: "北周灭北齐",
+    name: "北周统一北方",
     kind: "battle",
     dateNote: "577年，周武帝宇文邕灭齐",
     at: ym(577),

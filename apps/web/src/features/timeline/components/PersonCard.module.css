@@ -28,6 +28,8 @@
   content: "";
   background: color-mix(in srgb, var(--color-stone) 52%, transparent);
   box-shadow: 0 1px 0 color-mix(in srgb, var(--color-paper) 80%, transparent);
+  opacity: 0;
+  transition: opacity var(--motion-fast), background var(--motion-fast), box-shadow var(--motion-fast);
 }
 
 .lifeLine::after {
@@ -46,10 +48,17 @@
   color: var(--color-ink);
 }
 
-.card:hover::before {
+.lifeLine.lineVisible::before {
+  left: 8px;
   height: 2px;
   background: var(--color-stone);
   box-shadow: 0 1px 5px color-mix(in srgb, var(--color-ink) 16%, transparent);
+  opacity: 1;
+}
+
+.lineVisible .label {
+  background: var(--color-paper);
+  box-shadow: 0 0 7px var(--color-paper);
 }
 
 .selected {
@@ -60,6 +69,10 @@
   height: 2px;
   background: var(--color-accent);
   box-shadow: 0 1px 5px color-mix(in srgb, var(--color-accent) 32%, transparent);
+}
+
+.selected.lineVisible::before {
+  opacity: 1;
 }
 
 .selected::after {
@@ -142,6 +155,18 @@
   border-color: var(--color-stone);
   color: var(--color-ink);
   box-shadow: 0 1px 4px color-mix(in srgb, var(--color-ink) 8%, transparent);
+}
+
+.pointDeath {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
+}
+
+.pointDeath:hover {
+  border-color: transparent;
+  background: transparent;
+  box-shadow: none;
 }
 
 .pointDot {

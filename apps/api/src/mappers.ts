@@ -124,6 +124,7 @@ export type RawEventRow = {
   end_abs: number | null;
   summary: string | null;
   meaning: string | null;
+  content: string | null;
 };
 
 export function mapPerson(row: DbPerson): Person {
@@ -383,6 +384,7 @@ export function mapEvent(
     participantIds: row.participants.map((p) => p.personId),
     summary: row.summary ?? undefined,
     meaning: meaning ?? undefined,
+    content: row.content ?? undefined,
   };
 }
 

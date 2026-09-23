@@ -797,7 +797,7 @@ function eventRange(partial) {
 const events = [
   eventPoint({
     id: "jin-unify-wu",
-    name: "晋灭吴统一天下",
+    name: "三国归晋",
     kind: "politics",
     precision: "month",
     dateNote: "太康元年四月，280年",

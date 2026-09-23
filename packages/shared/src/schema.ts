@@ -217,6 +217,7 @@ export const EventKindSchema = z.enum([
   "culture",
   "disaster",
   "idiom",
+  "poetry",
   "other",
 ]);
 
@@ -238,6 +239,7 @@ export const EventSchema = z
     participantIds: z.array(z.string()).default([]),
     summary: z.string().optional(),
     meaning: z.string().optional(),
+    content: z.string().optional(),
   })
   .superRefine((event, ctx) => {
     if (event.kind === "idiom") {
@@ -363,6 +365,7 @@ export const EntityDetailSchema = z.object({
   colorToken: ColorTokenSchema.optional(),
   facts: z.array(z.object({ label: z.string(), value: z.string() })).default([]),
   summary: z.string().optional(),
+  content: z.string().optional(),
   related: z
     .array(
       z.object({

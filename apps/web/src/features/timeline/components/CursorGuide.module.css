@@ -1,6 +1,7 @@
 .overlay {
   position: absolute;
-  top: var(--header-height);
+  /* The header is an overlay over the stage, not vertical space above it. */
+  top: 0;
   left: 0;
   bottom: 0;
   z-index: 12;

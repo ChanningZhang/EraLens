@@ -144,7 +144,7 @@ function eventRelatedItems(events: Event[]): RelatedItem[] {
   return sortEventsByAnchor(events.filter((e) => e.kind !== "idiom")).map((e) => ({
     ref: { type: "event", id: e.id },
     label: e.name,
-    subtitle: formatEventTime(e),
+    subtitle: e.kind === "poetry" ? eventKindLabel(e.kind) : formatEventTime(e),
     abs: eventSpanAbs(e).anchorAbs,
     group: "event",
   }));
@@ -505,16 +505,14 @@ export function buildEntityDetail(
         )
       : undefined,
     facts: [
-      {
-        label: "时间",
-        value: formatEventTime(event),
-      },
-      ...(linkedDynasties.length > 0
-        ? [{ label: "类型", value: eventKindLabel(event.kind) }]
-        : []),
+      ...(event.kind === "poetry"
+        ? []
+        : [{ label: "时间", value: formatEventTime(event) }]),
+      { label: "类型", value: eventKindLabel(event.kind) },
       ...(event.dateNote ? [{ label: "说明", value: event.dateNote }] : []),
     ],
     summary: event.summary,
+    content: event.content,
     related: event.participantIds
       .map((id) => {
         const summary = buildRelatedSummary({ type: "person", id });

@@ -23,7 +23,7 @@ export type PlacedEvent = {
 };
 
 export function eventHasBand(event: Event): boolean {
-  return event.timeMode === "span" || event.timeMode === "circa";
+  return event.kind !== "poetry" && (event.timeMode === "span" || event.timeMode === "circa");
 }
 
 function clamp(value: number, min: number, max: number): number {

@@ -143,7 +143,7 @@ const reigns = reignGroups.flat();
 const events = [
   eventPoint({
     id: "mongol-conquer-dali",
-    name: "蒙古灭大理",
+    name: "大理覆亡",
     kind: "battle",
     precision: "year",
     dateNote: "1253年忽必烈攻大理城破；1254年段兴智于昆泽被俘降蒙",

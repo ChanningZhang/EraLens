@@ -50,6 +50,12 @@
 }
 
 .marker {
+  --event-color: var(--color-stone);
+  --event-fill: var(--color-surface);
+  --event-dot-fill: var(--event-color);
+  --event-dot-ring: transparent;
+  --event-dot-radius: 50%;
+  --event-dot-rotate: 0deg;
   --dot-size: 5px;
   --marker-pad-left: 6px;
   --marker-border: 1px;
@@ -63,42 +69,40 @@
   min-height: 24px;
   padding: 3px 8px 3px var(--marker-pad-left);
   transform: translateX(calc(-1 * var(--dot-nudge)));
-  border: var(--marker-border) solid var(--color-border);
+  border: var(--marker-border) solid
+    color-mix(in srgb, var(--event-color) 34%, var(--color-border));
   border-radius: 999px;
-  background: color-mix(in srgb, var(--color-surface) 94%, transparent);
-  color: var(--color-ink-secondary);
-  box-shadow: 0 1px 4px color-mix(in srgb, var(--color-ink) 7%, transparent);
+  background: color-mix(in srgb, var(--event-fill) 96%, transparent);
+  color: color-mix(in srgb, var(--event-color) 48%, var(--color-ink-secondary));
+  box-shadow:
+    inset 2px 0 0 color-mix(in srgb, var(--event-color) 70%, transparent),
+    0 1px 4px color-mix(in srgb, var(--color-ink) 7%, transparent);
   pointer-events: auto;
   cursor: pointer;
   white-space: nowrap;
   backdrop-filter: blur(5px);
   transition:
     border-color var(--motion-fast),
+    background var(--motion-fast),
     color var(--motion-fast),
     transform var(--motion-fast);
 }
 
 .marker:hover {
-  border-color: var(--color-ink-muted);
-  color: var(--color-ink);
+  border-color: color-mix(in srgb, var(--event-color) 68%, var(--color-border));
+  background: color-mix(in srgb, var(--event-color) 9%, var(--color-surface));
+  color: color-mix(in srgb, var(--event-color) 58%, var(--color-ink));
   transform: translateX(calc(-1 * var(--dot-nudge))) translateY(-1px);
 }
 
-.dot,
-.dotCirca {
+.dot {
   flex: 0 0 auto;
   width: var(--dot-size);
   height: var(--dot-size);
-  border-radius: 50%;
-}
-
-.dot {
-  background: var(--color-ink-muted);
-}
-
-.dotCirca {
-  background: transparent;
-  box-shadow: inset 0 0 0 1.5px var(--color-ink-muted);
+  border-radius: var(--event-dot-radius);
+  background: var(--event-dot-fill);
+  box-shadow: inset 0 0 0 1.5px var(--event-dot-ring);
+  transform: rotate(var(--event-dot-rotate));
 }
 
 .label {
@@ -108,16 +112,38 @@
   text-overflow: ellipsis;
 }
 
-.marker[data-time-mode="circa"] {
-  border-style: dashed;
+.marker[data-event-kind="battle"] {
+  --event-color: var(--color-cinnabar);
+  --event-fill: color-mix(in srgb, var(--color-cinnabar) 7%, var(--color-surface));
+  --event-dot-radius: 1px;
 }
 
-.markerIdiom {
-  border-style: dashed;
-  background: color-mix(in srgb, var(--color-wisteria) 8%, var(--color-surface) 94%);
+.marker[data-event-kind="politics"] {
+  --event-color: var(--color-indigo);
+  --event-fill: color-mix(in srgb, var(--color-indigo) 7%, var(--color-surface));
 }
 
-.dotIdiom {
-  background: transparent;
-  box-shadow: inset 0 0 0 1.5px var(--color-wisteria);
+.marker[data-event-kind="culture"] {
+  --event-color: var(--color-mineral);
+  --event-fill: color-mix(in srgb, var(--color-mineral) 7%, var(--color-surface));
+  --event-dot-fill: transparent;
+  --event-dot-ring: var(--color-mineral);
+}
+
+.marker[data-event-kind="disaster"] {
+  --event-color: var(--color-grape);
+  --event-fill: color-mix(in srgb, var(--color-grape) 8%, var(--color-surface));
+  --event-dot-radius: 1px;
+  --event-dot-rotate: 45deg;
+}
+
+.marker[data-event-kind="poetry"],
+.marker[data-event-kind="idiom"] {
+  --event-color: var(--color-wisteria);
+  --event-fill: color-mix(in srgb, var(--color-wisteria) 9%, var(--color-surface));
+}
+
+.marker[data-event-kind="idiom"] {
+  --event-dot-fill: transparent;
+  --event-dot-ring: var(--color-wisteria);
 }

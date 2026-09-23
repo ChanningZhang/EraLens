@@ -222,7 +222,7 @@ const events = [
   }),
   eventPoint({
     id: "jin-destroy-liao",
-    name: "金灭辽",
+    name: "辽朝覆亡",
     kind: "battle",
     precision: "day",
     dateNote: "保大五年三月二十六日，1125年3月26日，金俘辽天祚帝",

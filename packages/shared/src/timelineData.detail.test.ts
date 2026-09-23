@@ -302,6 +302,7 @@ describe("buildEntityDetail event", () => {
     expect(detail.subtitle).toBe("战事");
     expect(detail.facts).toEqual([
       { label: "时间", value: "公元前1046年" },
+      { label: "类型", value: "战事" },
     ]);
   });
 
@@ -381,6 +382,7 @@ describe("buildEntityDetail event", () => {
     expect(detail.subtitle).toBe("文化");
     expect(detail.facts).toEqual([
       { label: "时间", value: "约公元前2000年 — 公元前1100年" },
+      { label: "类型", value: "文化" },
       {
         label: "说明",
         value:
@@ -933,6 +935,50 @@ describe("buildEntityDetail idiom event", () => {
     expect(detail.related.map((item) => item.group)).toEqual(["dynasty", "person"]);
     expect(detail.related[0]?.label).toBe("蜀汉");
     expect(detail.related[1]?.label).toBe("刘备");
+  });
+});
+
+describe("buildEntityDetail poetry event", () => {
+  it("keeps the poem title and labels its type as 古诗", () => {
+    const store = {
+      dynasties: [],
+      reigns: [],
+      persons: [],
+      events: [
+        {
+          id: "poetry-fengqiao-yebo",
+          name: "枫桥夜泊",
+          kind: "poetry" as const,
+          timeMode: "circa" as const,
+          precision: "year" as const,
+          start: { year: 750, month: 1 },
+          end: { year: 770, month: 12 },
+          startAbs: 100,
+          endAbs: 200,
+          dynastyIds: [],
+          participantIds: [],
+          dateNote: "安史之乱后，约8世纪中叶",
+          summary: "张继羁旅途中泊舟枫桥，写下唐代最著名的羁旅诗篇之一。",
+          content: "月落乌啼霜满天，江枫渔火对愁眠。\n姑苏城外寒山寺，夜半钟声到客船。",
+        },
+      ],
+      relations: [],
+    };
+
+    const detail = buildEntityDetail(store, {
+      type: "event",
+      id: "poetry-fengqiao-yebo",
+    });
+
+    expect(detail.title).toBe("枫桥夜泊");
+    expect(detail.subtitle).toBe("古诗");
+    expect(detail.facts).toEqual([
+      { label: "类型", value: "古诗" },
+      { label: "说明", value: "安史之乱后，约8世纪中叶" },
+    ]);
+    expect(detail.content).toBe(
+      "月落乌啼霜满天，江枫渔火对愁眠。\n姑苏城外寒山寺，夜半钟声到客船。",
+    );
   });
 });
 
