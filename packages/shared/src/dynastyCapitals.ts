@@ -1,4 +1,5 @@
 import type { CapitalRole, DynastyCapital, EntityRef, Reign } from "./schema";
+import { isUncertainDateConfidence } from "./reignBoundaries";
 import { formatYear, formatYearMonth, rangeIntersectsWindow } from "./time";
 
 type CapitalTimePoint = { year: number; month: number; day?: number };
@@ -56,8 +57,15 @@ function formatTenureRangeLabel(
   end: CapitalTimePoint,
   startPrecision?: Reign["precision"],
   endPrecision = startPrecision,
+  startConfidence?: Reign["startDateConfidence"],
+  endConfidence?: Reign["endDateConfidence"],
 ): string {
-  const formatPoint = (point: CapitalTimePoint, precision?: Reign["precision"]): string => {
+  const formatPoint = (
+    point: CapitalTimePoint,
+    precision: Reign["precision"] | undefined,
+    confidence: Reign["startDateConfidence"] | undefined,
+  ): string => {
+    if (isUncertainDateConfidence(confidence)) return "？";
     if (precision === "day" && point.day != null) {
       return `${formatYearMonth(point.year, point.month, "compact")}${point.day}日`;
     }
@@ -67,9 +75,13 @@ function formatTenureRangeLabel(
     return `${point.year}`;
   };
 
-  const startLabel = formatPoint(start, startPrecision);
-  const endLabel = formatPoint(end, endPrecision);
-  return startLabel === endLabel ? startLabel : `${startLabel} — ${endLabel}`;
+  const startLabel = formatPoint(start, startPrecision, startConfidence);
+  const endLabel = formatPoint(end, endPrecision, endConfidence);
+  return startLabel === endLabel && startLabel !== "？"
+    ? startLabel
+    : startLabel === "？" && endLabel === "？"
+      ? "？－？"
+      : `${startLabel} — ${endLabel}`;
 }
 
 export function capitalTenureSubtitle(capital: DynastyCapital): string | undefined {
@@ -134,6 +146,8 @@ export function buildReignCapitalTenures(
             segment.end,
             segment.start === reign.start ? reign.precision : capital.precision,
             segment.end === reign.end ? reign.precision : capital.precision,
+            segment.start === reign.start ? reign.startDateConfidence : undefined,
+            segment.end === reign.end ? reign.endDateConfidence : undefined,
           ),
           abs: segment.startAbs,
         },
@@ -163,7 +177,14 @@ export function buildReignTenureCapitalRows(
     {
       tenure: {
         ref: { type: "reign", id: reign.id },
-        label: formatTenureRangeLabel(reign.start, reign.end, reign.precision),
+        label: formatTenureRangeLabel(
+          reign.start,
+          reign.end,
+          reign.precision,
+          reign.precision,
+          reign.startDateConfidence,
+          reign.endDateConfidence,
+        ),
         abs: reign.startAbs,
       },
     },

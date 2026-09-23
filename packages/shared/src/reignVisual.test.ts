@@ -142,6 +142,21 @@ describe("formatReignSpanTooltip", () => {
       ),
     ).toBe("前356年 — 前320年 · 37年");
   });
+
+  it("replaces uncertain tooltip endpoints with question marks", () => {
+    expect(
+      formatReignSpanTooltip(
+        reign({
+          precision: "year",
+          start: { year: -899, month: 1 },
+          end: { year: -863, month: 12 },
+          startAbs: absMonth(-899, 1),
+          endAbs: absMonth(-863, 12),
+          startDateConfidence: "interpolated",
+        }),
+      ),
+    ).toBe("？ — 前863年 · ？年");
+  });
 });
 
 describe("reignDurationDays", () => {

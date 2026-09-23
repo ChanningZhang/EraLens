@@ -1,5 +1,6 @@
 import type { Reign } from "./schema";
-import { formatAbsSpanTooltip, formatYearMonth } from "./time";
+import { formatAbsSpanTooltip, formatYear, formatYearMonth } from "./time";
+import { isUncertainDateConfidence } from "./reignBoundaries";
 
 /** Days in a Gregorian calendar month (historical dates use proleptic Gregorian). */
 export function daysInCalendarMonth(year: number, month: number): number {
@@ -105,7 +106,45 @@ export function formatReignSpanTooltip(reign: Reign): string {
       return `${startLabel} — ${endLabel} · ${formatSmartDayDuration(reign, days)}`;
     }
   }
-  return formatAbsSpanTooltip(reign.startAbs, reign.endAbs, reign.precision);
+  const base = formatAbsSpanTooltip(reign.startAbs, reign.endAbs, reign.precision);
+  if (!isUncertainDateConfidence(reign.startDateConfidence) &&
+      !isUncertainDateConfidence(reign.endDateConfidence)) {
+    return base;
+  }
+
+  const formatBoundary = (
+    point: Reign["start"],
+    confidence: Reign["startDateConfidence"],
+  ): string => {
+    if (isUncertainDateConfidence(confidence)) return "？";
+    if (reign.precision === "month" || reign.precision === "day") {
+      return formatYearMonth(point.year, point.month, "compact");
+    }
+    return formatYear(point.year, "compact");
+  };
+  const startLabel = formatBoundary(reign.start, reign.startDateConfidence);
+  const endLabel = formatBoundary(reign.end, reign.endDateConfidence);
+  const duration = base.includes(" · ") ? " · ？年" : "";
+  const range = startLabel === "？" && endLabel === "？"
+    ? "？－？"
+    : `${startLabel} — ${endLabel}`;
+  return `${range}${duration}`;
+}
+
+type ReignYearRangeFields = Pick<
+  Reign,
+  "start" | "end" | "startDateConfidence" | "endDateConfidence"
+>;
+
+/** Detail-panel year range; uncertain endpoints are intentionally rendered as `？`. */
+export function formatReignYearRange(reign: ReignYearRangeFields): string {
+  const start = isUncertainDateConfidence(reign.startDateConfidence)
+    ? "？"
+    : String(reign.start.year);
+  const end = isUncertainDateConfidence(reign.endDateConfidence)
+    ? "？"
+    : String(reign.end.year);
+  return `${start} — ${end}`;
 }
 
 /**

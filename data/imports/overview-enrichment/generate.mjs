@@ -80,6 +80,7 @@ function cleanExtract(text, title) {
     .replace(/^(?:left|right|thumb|缩略图)\|[^。！？\n]{0,160}/i, "")
     .replace(/^(?:[，。；：、]|\([^)]*\)|（[^）]*）)+/, "")
     .replace(/\[[^\]]+\]/g, "")
+    .replace(/（\s*）|\(\s*\)/g, "")
     .replace(/\s+/g, " ")
     .trim();
   if (title && value.startsWith(title)) value = value.slice(title.length).trim();
@@ -90,7 +91,9 @@ function cleanExtract(text, title) {
     .filter((item) => item.length >= 8 && !/^提示：|^目录|^参考/.test(item));
   let result = sentences.slice(0, 2).join("");
   result = result.replace(/^(?:[，。；：、]|（[^）]*）|\([^)]*\))+/g, "").trim();
-  if (result.length > 140) result = `${result.slice(0, 138)}……`;
+  if (result.length > 140) {
+    result = result.slice(0, 140).replace(/[，、；：]$/, "");
+  }
   return result.endsWith("。") || result.endsWith("！") || result.endsWith("？") ? result : `${result}。`;
 }
 

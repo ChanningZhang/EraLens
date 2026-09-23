@@ -10,6 +10,7 @@ import {
   resolveRocReignDetailSubtitle,
 } from "./rocTaiwanLeaderDisplay";
 import type { AppellationKind, Reign } from "./schema";
+import { formatReignYearRange } from "./reignVisual";
 
 export {
   MING_QING_START_YEAR,
@@ -308,7 +309,7 @@ export function resolveReignDetailSubtitle(
 }
 
 type ReignDetailFactsFields = ReignAppellationFields &
-  Pick<Reign, "start" | "end" | "eraNames">;
+  Pick<Reign, "start" | "end" | "eraNames" | "startDateConfidence" | "endDateConfidence">;
 
 /** Structured facts for reign detail panels. */
 export function resolveReignDetailFacts(
@@ -317,7 +318,7 @@ export function resolveReignDetailFacts(
   personContext?: PersonDisplayContext | null,
 ): Array<{ label: string; value: string }> {
   const facts = [
-    { label: "在位", value: `${reign.start.year} — ${reign.end.year}` },
+    { label: "在位", value: formatReignYearRange(reign) },
   ];
   if (usesPreQinCardLayout(reign)) {
     facts.push(...resolvePreQinNameFacts(personName, personContext, reign));

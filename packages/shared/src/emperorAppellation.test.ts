@@ -932,6 +932,18 @@ describe("resolveReignDetailSubtitle", () => {
 });
 
 describe("resolveReignDetailFacts", () => {
+  it("renders uncertain reign endpoints as question marks", () => {
+    expect(
+      resolveReignDetailFacts(
+        source({
+          start: { year: -899, month: 1 },
+          end: { year: -863, month: 12 },
+          startDateConfidence: "interpolated",
+        }),
+      )[0],
+    ).toEqual({ label: "在位", value: "？ — -863" });
+  });
+
   it("keeps supplementary temple and era facts", () => {
     expect(
       resolveReignDetailFacts(

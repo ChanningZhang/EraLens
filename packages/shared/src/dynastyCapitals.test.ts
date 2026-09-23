@@ -138,6 +138,23 @@ describe("buildReignCapitalTenures", () => {
     ]);
   });
 
+  it("renders uncertain reign endpoints as question marks", () => {
+    const uncertainReign: Reign = {
+      ...tangReign,
+      startDateConfidence: "interpolated",
+      endDateConfidence: "approximate",
+    };
+    expect(buildReignTenureCapitalRows(uncertainReign, [qinXianyang])).toEqual([
+      {
+        tenure: {
+          ref: { type: "reign", id: "reign-tang-xuanzong" },
+          label: "？－？",
+          abs: 8544,
+        },
+      },
+    ]);
+  });
+
   it("preserves day-precision capital intervals instead of collapsing them to a month", () => {
     const liZichengReign: Reign = {
       id: "reign-li-zicheng-dashun",
