@@ -160,11 +160,11 @@ const REIGN_PREFERRED_APPELLATION_OVERRIDES = {
 
 const REIGN_YEAR_OVERRIDES = {
   "cao-chunqiu": {
-    // 《曹国》君主表给出西周早期连续年表；以曹仲君前991—前925年为锚点，
-    // 不再把叔振铎至孝伯整段在前865年前的窗口内均分。
-    叔振铎: { start: -1041, end: -1016, startDateConfidence: null, endDateConfidence: null },
-    曹叔振铎: { start: -1041, end: -1016, startDateConfidence: null, endDateConfidence: null },
-    "叔振铎|振铎": { start: -1041, end: -1016, startDateConfidence: null, endDateConfidence: null },
+    // 《史记·管蔡世家》记武王克殷后封叔振铎于曹；以克殷年（前1046）为始封年。
+    // 《曹国》君主表的前1041—前1016与“在位30年”不符；前1046—前1016正好30年。
+    叔振铎: { start: -1046, end: -1016, startDateConfidence: null, endDateConfidence: null },
+    曹叔振铎: { start: -1046, end: -1016, startDateConfidence: null, endDateConfidence: null },
+    "叔振铎|振铎": { start: -1046, end: -1016, startDateConfidence: null, endDateConfidence: null },
     曹太伯: { start: -1015, end: -992, startDateConfidence: null, endDateConfidence: null },
     仲君: { start: -991, end: -925, startDateConfidence: null, endDateConfidence: null },
     曹仲君: { start: -991, end: -925, startDateConfidence: null, endDateConfidence: null },
@@ -650,16 +650,33 @@ function parseWikiTables(chunk, { dynastyId, includeLeaderTable = false } = {}) 
 
 /** Evenly split [windowStart, windowEnd] across undated rulers; seams stay contiguous. */
 function assignInterpolatedRun(run, windowStart, windowEnd) {
-  const count = run.length;
-  if (count === 0) return;
+  if (run.length === 0) return;
+  // A known start year partitions an otherwise undated succession. Each side
+  // is still evenly interpolated, with the marked reign beginning on its anchor.
+  const anchors = run
+    .map((reign, index) => ({ index, year: reign.startHint }))
+    .filter(({ index, year }) => index > 0 && year != null && year > windowStart && year <= windowEnd);
+  let left = 0;
+  let segmentStart = windowStart;
+  for (const anchor of anchors) {
+    assignEvenSegment(run, left, anchor.index, segmentStart, anchor.year - 1);
+    left = anchor.index;
+    segmentStart = anchor.year;
+  }
+  assignEvenSegment(run, left, run.length, segmentStart, windowEnd);
+}
+
+function assignEvenSegment(run, from, to, windowStart, windowEnd) {
+  const count = to - from;
+  if (count <= 0 || windowStart > windowEnd) return;
   const span = windowEnd - windowStart + 1;
   for (let k = 0; k < count; k += 1) {
     const a = windowStart + Math.floor((span * k) / count);
     const b = windowStart + Math.floor((span * (k + 1)) / count) - 1;
-    run[k].start = a;
-    run[k].end = Math.max(a, b);
-    run[k].complete = true;
-    run[k].interpolated = true;
+    run[from + k].start = a;
+    run[from + k].end = Math.max(a, b);
+    run[from + k].complete = true;
+    run[from + k].interpolated = true;
   }
 }
 
@@ -681,9 +698,9 @@ function markInterpolatedBoundaries(rulers) {
     const touchesNextAnchor =
       next?.start != null &&
       reign.end + 1 === next.start &&
-      !next.interpolated &&
+      (!next.interpolated || next.startDateAnchor) &&
       !isUncertainConfidence(next.startDateConfidence);
-    if (!reign.startDateConfidence && !touchesPrevAnchor) {
+    if (!reign.startDateAnchor && !reign.startDateConfidence && !touchesPrevAnchor) {
       reign.startDateConfidence = "interpolated";
     }
     if (!reign.endDateConfidence && !touchesNextAnchor) {
@@ -808,7 +825,10 @@ function parseWu() {
     personId: `wu-pre-r${index}`,
     title: name,
     name: withSurname("wu-chunqiu", name, name),
-    start: null,
+    // 《史记·吴太伯世家》记载武王克殷时周章“已君吴”；
+    // 本项目以西周建国年（前1046）作为确定的世系锚点。
+    start: name === "周章" ? -1046 : null,
+    startDateAnchor: name === "周章",
     end: null,
     startDateConfidence: index === 0 ? "approximate" : undefined,
   }));

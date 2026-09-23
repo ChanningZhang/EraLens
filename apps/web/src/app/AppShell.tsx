@@ -160,8 +160,7 @@ export function AppShell() {
             </div>
           )}
         </div>
-        <div className={styles.legend} aria-label="泳道图例">
-          <div className={styles.legendTitle}>泳道图例</div>
+        <div className={styles.legend} aria-label="图例">
           <div className={styles.legendItems}>
             <span className={styles.legendItem}>
               <span className={`${styles.legendSwatch} ${styles.legendStripes}`} aria-hidden="true" />

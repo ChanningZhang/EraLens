@@ -1535,7 +1535,7 @@ INSERT INTO dynasties (
   'wu-chunqiu', '吴', ARRAY['吴国'], 'cn', 'east_asia',
   -1100, 1, -473, 12,
   -13188, -5653, 'year', 'ochre', NULL, NULL,
-  '传世世系上溯至泰伯；吴国条目称建国约在前12世纪，寿梦起始有可靠纪年（前585）。早期连续君主无在位年，按世系在约前1100至前586年锚点间均分并标为插值；前473年越灭吴。'
+  '传世世系上溯至泰伯；《史记·吴太伯世家》记载武王克殷时周章已君吴，本项目以西周建国年（前1046）为周章起年确定锚点。锚点前后的无年表连续君主分别按世系均分，失考边标为 interpolated；寿梦起始保留前585年年表锚点。前473年越灭吴。'
 )
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
@@ -9953,8 +9953,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-cao-r0-cao-chunqiu', 'cao-chunqiu', 'cao-r0', '叔振铎',
   NULL,
-  -1041, 1, NULL, -1016, 12, NULL,
-  -12480, -12169, 'year', NULL, NULL
+  -1046, 1, NULL, -1016, 12, NULL,
+  -12540, -12169, 'year', NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -10655,8 +10655,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-wu-pre-r0-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r0', '泰伯',
   NULL,
-  -1100, 1, NULL, -1073, 12, NULL,
-  -13188, -12853, 'year', 'approximate', 'interpolated'
+  -1100, 1, NULL, -1088, 12, NULL,
+  -13188, -13033, 'year', 'approximate', 'interpolated'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -10682,8 +10682,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-wu-pre-r1-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r1', '仲雍',
   NULL,
-  -1072, 1, NULL, -1044, 12, NULL,
-  -12852, -12505, 'year', 'interpolated', 'interpolated'
+  -1087, 1, NULL, -1074, 12, NULL,
+  -13032, -12865, 'year', 'interpolated', 'interpolated'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -10709,8 +10709,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-wu-pre-r2-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r2', '季简',
   NULL,
-  -1043, 1, NULL, -1016, 12, NULL,
-  -12504, -12169, 'year', 'interpolated', 'interpolated'
+  -1073, 1, NULL, -1061, 12, NULL,
+  -12864, -12709, 'year', 'interpolated', 'interpolated'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -10736,8 +10736,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-wu-pre-r3-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r3', '叔达',
   NULL,
-  -1015, 1, NULL, -987, 12, NULL,
-  -12168, -11821, 'year', 'interpolated', 'interpolated'
+  -1060, 1, NULL, -1047, 12, NULL,
+  -12708, -12541, 'year', 'interpolated', NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -10763,8 +10763,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-wu-pre-r4-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r4', '周章',
   NULL,
-  -986, 1, NULL, -958, 12, NULL,
-  -11820, -11473, 'year', 'interpolated', 'interpolated'
+  -1046, 1, NULL, -1015, 12, NULL,
+  -12540, -12157, 'year', NULL, 'interpolated'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -10790,8 +10790,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-wu-pre-r5-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r5', '熊遂',
   NULL,
-  -957, 1, NULL, -930, 12, NULL,
-  -11472, -11137, 'year', 'interpolated', 'interpolated'
+  -1014, 1, NULL, -982, 12, NULL,
+  -12156, -11761, 'year', 'interpolated', 'interpolated'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -10817,8 +10817,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-wu-pre-r6-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r6', '柯相',
   NULL,
-  -929, 1, NULL, -901, 12, NULL,
-  -11136, -10789, 'year', 'interpolated', 'interpolated'
+  -981, 1, NULL, -949, 12, NULL,
+  -11760, -11365, 'year', 'interpolated', 'interpolated'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -10844,8 +10844,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-wu-pre-r7-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r7', '彊鸠夷',
   NULL,
-  -900, 1, NULL, -873, 12, NULL,
-  -10788, -10453, 'year', 'interpolated', 'interpolated'
+  -948, 1, NULL, -916, 12, NULL,
+  -11364, -10969, 'year', 'interpolated', 'interpolated'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -10871,8 +10871,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-wu-pre-r8-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r8', '余桥疑吾',
   NULL,
-  -872, 1, NULL, -844, 12, NULL,
-  -10452, -10105, 'year', 'interpolated', 'interpolated'
+  -915, 1, NULL, -883, 12, NULL,
+  -10968, -10573, 'year', 'interpolated', 'interpolated'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -10898,8 +10898,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-wu-pre-r9-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r9', '柯卢',
   NULL,
-  -843, 1, NULL, -815, 12, NULL,
-  -10104, -9757, 'year', 'interpolated', 'interpolated'
+  -882, 1, NULL, -850, 12, NULL,
+  -10572, -10177, 'year', 'interpolated', 'interpolated'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -10925,8 +10925,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-wu-pre-r10-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r10', '周繇',
   NULL,
-  -814, 1, NULL, -787, 12, NULL,
-  -9756, -9421, 'year', 'interpolated', 'interpolated'
+  -849, 1, NULL, -817, 12, NULL,
+  -10176, -9781, 'year', 'interpolated', 'interpolated'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -10952,8 +10952,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-wu-pre-r11-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r11', '屈羽',
   NULL,
-  -786, 1, NULL, -758, 12, NULL,
-  -9420, -9073, 'year', 'interpolated', 'interpolated'
+  -816, 1, NULL, -784, 12, NULL,
+  -9780, -9385, 'year', 'interpolated', 'interpolated'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -10979,8 +10979,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-wu-pre-r12-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r12', '夷吾',
   NULL,
-  -757, 1, NULL, -730, 12, NULL,
-  -9072, -8737, 'year', 'interpolated', 'interpolated'
+  -783, 1, NULL, -751, 12, NULL,
+  -9384, -8989, 'year', 'interpolated', 'interpolated'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11006,8 +11006,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-wu-pre-r13-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r13', '禽处',
   NULL,
-  -729, 1, NULL, -701, 12, NULL,
-  -8736, -8389, 'year', 'interpolated', 'interpolated'
+  -750, 1, NULL, -718, 12, NULL,
+  -8988, -8593, 'year', 'interpolated', 'interpolated'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11033,8 +11033,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-wu-pre-r14-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r14', '转',
   NULL,
-  -700, 1, NULL, -672, 12, NULL,
-  -8388, -8041, 'year', 'interpolated', 'interpolated'
+  -717, 1, NULL, -685, 12, NULL,
+  -8592, -8197, 'year', 'interpolated', 'interpolated'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11060,8 +11060,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-wu-pre-r15-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r15', '颇高',
   NULL,
-  -671, 1, NULL, -644, 12, NULL,
-  -8040, -7705, 'year', 'interpolated', 'interpolated'
+  -684, 1, NULL, -652, 12, NULL,
+  -8196, -7801, 'year', 'interpolated', 'interpolated'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11087,8 +11087,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-wu-pre-r16-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r16', '句卑',
   NULL,
-  -643, 1, NULL, -615, 12, NULL,
-  -7704, -7357, 'year', 'interpolated', 'interpolated'
+  -651, 1, NULL, -619, 12, NULL,
+  -7800, -7405, 'year', 'interpolated', 'interpolated'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11114,8 +11114,8 @@ INSERT INTO reigns (
 ) VALUES (
   'reign-wu-pre-r17-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r17', '去齐',
   NULL,
-  -614, 1, NULL, -586, 12, NULL,
-  -7356, -7009, 'year', 'interpolated', NULL
+  -618, 1, NULL, -586, 12, NULL,
+  -7404, -7009, 'year', 'interpolated', NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11709,7 +11709,7 @@ INSERT INTO reigns (
   'reign-zhongshan-r2-zhongshan', 'zhongshan', 'zhongshan-r2', '中山桓公',
   NULL,
   -406, 1, NULL, -406, 12, NULL,
-  -4860, -4849, 'year', NULL, NULL
+  -4860, -4849, 'year', 'approximate', 'approximate'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11736,7 +11736,7 @@ INSERT INTO reigns (
   'reign-zhongshan-r2-zhongshan-2', 'zhongshan', 'zhongshan-r2', '中山桓公',
   NULL,
   -380, 1, NULL, -350, 12, NULL,
-  -4548, -4177, 'year', NULL, NULL
+  -4548, -4177, 'year', 'approximate', 'approximate'
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11763,7 +11763,7 @@ INSERT INTO reigns (
   'reign-zhongshan-r3-zhongshan', 'zhongshan', 'zhongshan-r3', '中山成公',
   NULL,
   -349, 1, NULL, -328, 12, NULL,
-  -4176, -3913, 'year', NULL, NULL
+  -4176, -3913, 'year', 'approximate', NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
