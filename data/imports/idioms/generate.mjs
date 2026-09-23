@@ -4,7 +4,7 @@
  */
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { idiomPoint, writeImportPackage, wiki, ym } from "../lib/sqlHelpers.mjs";
+import { idiomPoint, sqlStr, writeImportPackage, wiki, ym } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -124,9 +124,9 @@ const preQinIdioms = [
     meaning: "比喻力量达不到，无法控制或影响远处的事物。",
     at: ym(-597),
     dynastyIds: ["chu-chunqiu", "jin-chunqiu", "zheng-chunqiu"],
-    participantIds: ["chu-r22"],
+    participantIds: ["xiong-zhuang"],
     summary: "《左传》楚伐郑，晋欲救，子重曰：「虽我之速，不能及马腹。」喻力所不及。",
-    dateNote: "楚伐郑、晋欲救，前597年",
+    dateNote: "楚庄王伐郑、晋欲救，前597年",
   }),
   idiomPoint({
     id: "idiom-tong-zhou-gong-ji",
@@ -142,11 +142,11 @@ const preQinIdioms = [
     id: "idiom-fen-dao-yang-biao",
     name: "分道扬镳",
     meaning: "比喻目标不同，各走各的路；也指分道而行。",
-    at: ym(-590),
-    dynastyIds: ["qi-chunqiu"],
-    participantIds: ["qi-r25"],
-    summary: "《左传》齐景公宾二人，一寝一朝，至道则分途而行，各归其室。",
-    dateNote: "齐景公时，前590年",
+    at: ym(493),
+    dynastyIds: ["wei-north"],
+    participantIds: ["yuan-hong"],
+    summary: "北魏孝文帝迁都洛阳后，洛阳令元志与御史中尉李彪争道，孝文帝命二人分路而行。",
+    dateNote: "北魏孝文帝迁都洛阳后，约493年；典出《北史》",
   }),
   idiomPoint({
     id: "idiom-duo-xing-bu-yi-bi-zi-bi",
@@ -203,11 +203,11 @@ const preQinIdioms = [
     id: "idiom-yi-ming-jing-ren",
     name: "一鸣惊人",
     meaning: "比喻平时没有突出表现，一旦有所作为就使人震惊。",
-    at: ym(-357),
+    at: ym(-354),
     dynastyIds: ["qi-chunqiu"],
     participantIds: ["qi-r35"],
     summary: "齐威王三年不飞不鸣，淳于髡问之，王曰「一鸣而天下惊」。",
-    dateNote: "齐威王九年，前357年",
+    dateNote: "齐威王在位早期，约前354年；纪年诸说不一",
   }),
   idiomPoint({
     id: "idiom-hui-ji-ji-yi",
@@ -233,11 +233,11 @@ const preQinIdioms = [
     id: "idiom-lan-yu-chong-shu",
     name: "滥竽充数",
     meaning: "比喻没有真才实学的人混在行家里面充数，或以次充好。",
-    at: ym(-340),
+    at: ym(-310),
     dynastyIds: ["qi-chunqiu"],
     participantIds: ["qi-r36"],
     summary: "齐宣王使三百人吹竽，南郭处士充数；湣王好一一听之，处士逃。",
-    dateNote: "齐宣王时，约前340年",
+    dateNote: "齐宣王时，约前319—前301年",
   }),
   idiomPoint({
     id: "idiom-san-ren-cheng-hu",
@@ -315,7 +315,7 @@ const preQinIdioms = [
     meaning: "比喻不必要的或缺乏根据的忧虑和担心。",
     at: ym(-300),
     dynastyIds: ["qi-state-chunqiu"],
-    participantIds: ["qi-state-r2"],
+    participantIds: [],
     summary: "《列子》杞国有人忧天地崩坠，身无所寄，废寝食者。",
     dateNote: "列子寓言，战国",
   }),
@@ -343,11 +343,11 @@ const preQinIdioms = [
     id: "idiom-wu-shi-bu-xiao-bai-bu",
     name: "五十步笑百步",
     meaning: "比喻自己虽有缺点，却去嘲笑别人，本质相同。",
-    at: ym(-300),
+    at: ym(-330),
     dynastyIds: ["wei-warring"],
     participantIds: ["meng-ke", "wei-r2"],
     summary: "《孟子》梁惠王问何以利吾国，孟子以五十步笑百步喻其好战本质未改。",
-    dateNote: "孟子答梁惠王",
+    dateNote: "孟子答梁惠王，约前330年",
   }),
   idiomPoint({
     id: "idiom-jiao-tu-san-ku",
@@ -363,11 +363,11 @@ const preQinIdioms = [
     id: "idiom-wang-yang-bu-lao",
     name: "亡羊补牢",
     meaning: "比喻出了问题后及时补救，仍可防止继续受损失。",
-    at: ym(-300),
+    at: ym(-278),
     dynastyIds: ["chu-chunqiu"],
     participantIds: ["chu-r37", "zhuang-xin"],
     summary: "《战国策》庄辛谏楚襄王：见兔而顾犬，未为晚也；亡羊而补牢，未为迟也。",
-    dateNote: "战国策寓言",
+    dateNote: "楚顷襄王逃至城阳后，约前278年",
   }),
   idiomPoint({
     id: "idiom-handan-xue-bu",
@@ -463,11 +463,11 @@ const preQinIdioms = [
     id: "idiom-tang-lang-bu-chan",
     name: "螳螂捕蝉",
     meaning: "比喻只顾眼前利益，不顾后患。",
-    at: ym(-278),
+    at: ym(-500),
     dynastyIds: ["wu-chunqiu", "chu-chunqiu"],
-    participantIds: ["helu"],
+    participantIds: [],
     summary: "《韩非子》螳螂捕蝉，黄雀在后；吴王欲伐荆，门人以此谏止。",
-    dateNote: "韩非子寓言",
+    dateNote: "吴王欲伐荆的寓言，未具名，约春秋末",
   }),
   idiomPoint({
     id: "idiom-zhi-shang-tan-bing",
@@ -483,21 +483,21 @@ const preQinIdioms = [
     id: "idiom-wan-bi-gui-zhao",
     name: "完璧归赵",
     meaning: "比喻把原物完好地归还本人。",
-    at: ym(-259),
+    at: ym(-283),
     dynastyIds: ["zhao-warring", "qin"],
     participantIds: ["lin-xiangru", "zhao-r6", "qin-r27"],
     summary: "蔺相如持和氏璧入秦，以智谋完璧归赵。",
-    dateNote: "秦昭襄王时，约前259年",
+    dateNote: "赵惠文王十九年，前283年",
   }),
   idiomPoint({
     id: "idiom-fu-jing-qing-zui",
     name: "负荆请罪",
     meaning: "形容主动认错、道歉，请求责罚。",
-    at: ym(-257),
+    at: ym(-279),
     dynastyIds: ["zhao-warring"],
     participantIds: ["lian-po", "lin-xiangru", "zhao-r6"],
     summary: "廉颇闻蔺相如避让之由，负荆请罪，二人结为刎颈之交。",
-    dateNote: "蔺相如廉颇将相和，约前257年",
+    dateNote: "渑池之会后将相和，约前279年",
   }),
   idiomPoint({
     id: "idiom-mao-sui-zi-jian",
@@ -505,7 +505,7 @@ const preQinIdioms = [
     meaning: "比喻自告奋勇，自己推荐自己担任某项工作。",
     at: ym(-257),
     dynastyIds: ["zhao-warring", "chu-chunqiu"],
-    participantIds: ["mao-sui", "zhao-sheng", "zhao-r6"],
+    participantIds: ["mao-sui", "zhao-sheng", "zhao-r7"],
     summary: "毛遂自荐随平原君赴楚，按剑而立，说服楚王合纵抗秦。",
     dateNote: "平原君合纵，前257年",
   }),
@@ -811,6 +811,12 @@ for (const event of events) {
   }
 }
 
+const managedEventIdsSql = events.map((event) => sqlStr(event.id)).join(", ");
+const cleanupManagedEventLinks = [
+  `DELETE FROM event_dynasties WHERE event_id IN (${managedEventIdsSql});`,
+  `DELETE FROM event_participants WHERE event_id IN (${managedEventIdsSql});`,
+].join("\n");
+
 writeImportPackage(__dirname, {
   slug: "idioms",
   window: { startYear: -2100, startMonth: 1, endYear: 1600, endMonth: 12 },
@@ -819,13 +825,14 @@ writeImportPackage(__dirname, {
   reigns: [],
   events,
   relations,
+  preSql: cleanupManagedEventLinks,
   manifest: {
     slug: "idioms",
     title: "成语典故（point 事件）",
     window: { startYear: -2100, startMonth: 1, endYear: 1600, endMonth: 12 },
     scope: "cn",
     depth: "standard",
-    generatedAt: "2026-09-20",
+    generatedAt: "2026-09-23",
     counts: {
       persons: idiomPersons.length,
       dynasties: 0,
@@ -834,6 +841,13 @@ writeImportPackage(__dirname, {
       relations: relations.length,
     },
     sources: [
+      { label: "鞭长莫及（楚庄王伐郑）", url: "https://zh.wikipedia.org/wiki/楚庄王" },
+      { label: "分道扬镳（北魏孝文帝）", url: "https://zh.wikipedia.org/wiki/魏孝文帝" },
+      { label: "一鸣惊人（齐威王纪年）", url: "https://ctext.org/datawiki.pl?if=gb&res=845484" },
+      { label: "五十步笑百步", url: "https://www.kfdsw.com/index/detail/id/472.html" },
+      { label: "亡羊补牢（庄辛）", url: "https://zh.wikipedia.org/wiki/庄辛" },
+      { label: "完璧归赵（赵惠文王）", url: "https://zh.wikipedia.org/wiki/赵惠文王" },
+      { label: "毛遂自荐", url: "https://zh.wikipedia.org/wiki/毛遂" },
       { label: "叶公好龙", url: "https://zh.wikipedia.org/wiki/叶公好龙" },
       { label: "郑人买履", url: "https://zh.wikipedia.org/wiki/郑人买履" },
       { label: "杞人忧天", url: "https://zh.wikipedia.org/wiki/杞人忧天" },
@@ -864,6 +878,8 @@ writeImportPackage(__dirname, {
       "有明确史事者经 relations 指向已有 battle/politics 事件（event→event）。",
       "典故国君引用各时期包已入库的 person id（如 gou-jian、qi-r25）；蔺相如、荆轲等名臣由本包 upsert。",
       "寓言类关联故事发生国，不把典籍作者（韩非、庄子等）当作典故人物。",
+      "已核对并修正成语与君主在位期不一致的条目：鞭长莫及改楚庄王，分道扬镳改北魏孝文帝，毛遂自荐改赵孝成王；杞人忧天与螳螂捕蝉因原典未具名君主而取消具体君主关联。",
+      "一鸣惊人、滥竽充数、五十步笑百步、亡羊补牢、完璧归赵、负荆请罪的时间点已调整到对应君主在位期；有纪年争议者在 dateNote 标注约数或异说。",
     ],
   },
 });

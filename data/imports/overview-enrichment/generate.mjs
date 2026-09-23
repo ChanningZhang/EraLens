@@ -46,11 +46,11 @@ function readDbRows() {
       JOIN dynasties d ON d.id = r.dynasty_id
      WHERE p.id <> 'system-missing-ruler'
      GROUP BY p.id, p.name, p.bio, p.links
-    HAVING coalesce(p.bio, '') ~ '在.*在位。$'
+    HAVING char_length(coalesce(p.bio, '')) < 20
     UNION ALL
     SELECT 'dynasty', id, name, coalesce(note, ''), '', start_year, end_year, name
       FROM dynasties
-     WHERE coalesce(note, '') ~ '（(前)?[0-9]+年—'
+     WHERE char_length(coalesce(note, '')) < 20
      ORDER BY 1, 2`;
   const out = execFileSync(
     "docker",
@@ -76,6 +76,9 @@ function yearText(value) {
 
 function cleanExtract(text, title) {
   let value = text
+    .trimStart()
+    .replace(/^(?:left|right|thumb|缩略图)\|[^。！？\n]{0,160}/i, "")
+    .replace(/^(?:[，。；：、]|\([^)]*\)|（[^）]*）)+/, "")
     .replace(/\[[^\]]+\]/g, "")
     .replace(/\s+/g, " ")
     .trim();
@@ -86,6 +89,7 @@ function cleanExtract(text, title) {
     .map((item) => item.trim())
     .filter((item) => item.length >= 8 && !/^提示：|^目录|^参考/.test(item));
   let result = sentences.slice(0, 2).join("");
+  result = result.replace(/^(?:[，。；：、]|（[^）]*）|\([^)]*\))+/g, "").trim();
   if (result.length > 140) result = `${result.slice(0, 138)}……`;
   return result.endsWith("。") || result.endsWith("！") || result.endsWith("？") ? result : `${result}。`;
 }
@@ -124,11 +128,13 @@ async function fetchIntro(title, attempt = 0) {
   let lead = text.split(/\n==[^=]/)[0];
   for (let i = 0; i < 8; i += 1) lead = lead.replace(/\{\{[^{}]*\}\}/g, "");
   lead = lead
+    .replace(/\{\{[\s\S]*?\}\}/g, "")
     .replace(/<ref[^>]*>[\s\S]*?<\/ref>/gi, "")
     .replace(/<ref[^>]*\/>/gi, "")
     .replace(/<!--[\s\S]*?-->/g, "")
     .replace(/^\s*\|[^\n]*$/gm, "")
     .replace(/^\s*(thumb|left|right|File|文件):[^\n]*$/gim, "")
+    .replace(/^(?:left|right|thumb)\|[^。！？\n]{0,120}/i, "")
     .replace(/^\s*#REDIRECT.*$/gim, "")
     .replace(/'''?/g, "")
     .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, "$2")
@@ -143,7 +149,7 @@ async function collect() {
   for (let offset = 0; offset < rows.length; offset += 10) {
     const batch = rows.slice(offset, offset + 10);
     const fetched = await Promise.all(batch.map(async (row) => {
-      const title = row.kind === "dynasty" ? dynastyWikiTitles[row.id] : titleFromUrl(row.url);
+      const title = row.kind === "dynasty" ? dynastyWikiTitles[row.id] : (titleFromUrl(row.url) ?? row.name);
       if (!title) return null;
       const fetchedBio = await fetchIntro(title, 2);
       const span = row.startYear && row.endYear ? `（${yearText(row.startYear)}—${yearText(row.endYear)}）` : "";
@@ -176,7 +182,7 @@ async function main() {
     slug: "overview-enrichment",
     description: "补全当前概述少于20字的帝王与王朝信息。",
     sources: [...new Set(records.map((record) => record.source))],
-    notes: ["仅处理生成时少于20字的 persons.bio 与 dynasties.note；每条概述取中文维基百科导言最多两句，并保留源快照。", `未找到独立条目的记录使用最小补充并标记 fallback：${records.filter((record) => record.fallback).length} 条。`],
+    notes: ["优先使用中文维基百科导言最多两句；未匹配到条目的记录仅补充数据库中已核对的在位跨度，并标记 fallback。"],
   }, null, 2)}\n`, "utf8");
   console.log(`generated ${records.length} overview updates`);
 }

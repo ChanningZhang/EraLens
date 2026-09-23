@@ -379,20 +379,16 @@ export function resolveReignCardMeta(
     return { label: "名", name: given };
   }
 
-  // The primary line is the person name. The secondary appellation belongs to
-  // this particular reign, so it must be read from `reigns.title` rather than
-  // from person-level temple/posthumous fields shared by all of that person's
-  // reign records.
+  const appellation = resolveEmperorAppellation(reign, personContext);
+  if (appellation && !isRedundantCardMeta(appellation, primary, personName)) {
+    return { label: APPELLATION_LABELS[appellation.kind], name: appellation.name };
+  }
+
+  // `title` is the reign-specific fallback for records without a conventional
+  // appellation (for example a regnal title such as 吴末帝 or a feudal title).
   if (reign.title && reign.title !== primary && reign.title !== personName) {
     return { label: "称号", name: reign.title };
   }
 
-  const appellation = resolveEmperorAppellation(reign, personContext);
-  if (!appellation) return null;
-
-  if (isRedundantCardMeta(appellation, primary, personName)) {
-    return null;
-  }
-
-  return { label: APPELLATION_LABELS[appellation.kind], name: appellation.name };
+  return null;
 }
