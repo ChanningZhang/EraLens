@@ -5,6 +5,7 @@ import {
   chinaMapViewBox,
   projectChinaLatitude,
   projectGcj02,
+  resolveChinaMapLayout,
 } from "./chinaMapProjection";
 
 describe("projectGcj02", () => {
@@ -69,5 +70,17 @@ describe("projectGcj02", () => {
     expect(chinaMapViewBox()).toBe(
       `${CHINA_MAP_BOUNDS.minLng} ${minProj} ${CHINA_MAP_BOUNDS.maxLng - CHINA_MAP_BOUNDS.minLng} ${maxProj - minProj}`,
     );
+  });
+
+  it("anchors the fitted map to the left inset", () => {
+    const layout = resolveChinaMapLayout(1400, 600, {
+      top: 20,
+      right: 24,
+      bottom: 28,
+      left: 114,
+    });
+
+    expect(layout.left).toBe(114);
+    expect(1400 - (layout.left + layout.width)).toBeGreaterThan(24);
   });
 });

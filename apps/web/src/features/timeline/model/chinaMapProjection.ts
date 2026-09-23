@@ -102,8 +102,12 @@ export function resolveChinaMapLayout(
     innerH = innerW / geoAspect;
   }
 
+  // Keep the map anchored to the timeline's left side.  The detail drawer is
+  // layered over the right edge of the stage, so centering the map makes the
+  // drawer cover the map much earlier than necessary.  The unused horizontal
+  // space remains on the right as intentional breathing room.
   return {
-    left: insets.left + (maxInnerW - innerW) / 2,
+    left: insets.left,
     top: insets.top + (maxInnerH - innerH) / 2,
     width: innerW,
     height: innerH,
