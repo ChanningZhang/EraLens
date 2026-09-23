@@ -232,8 +232,9 @@ export function TimelineStage() {
       })),
       viewport,
       personNames,
+      personDisplay,
     );
-  }, [data, lanes, laneColorMap, viewport, personNames]);
+  }, [data, lanes, laneColorMap, viewport, personNames, personDisplay]);
 
   const dynastiesBottom = lanes.at(-1)
     ? lanes.at(-1)!.top + lanes.at(-1)!.height

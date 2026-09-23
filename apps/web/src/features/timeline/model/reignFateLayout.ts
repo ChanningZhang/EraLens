@@ -2,6 +2,8 @@ import {
   fateRelationLabel,
   isFateRelationKind,
   resolveFateRelations,
+  resolveReignCardLabel,
+  buildPreQinClanContext,
   type Relation,
   type Reign,
 } from "@eralens/shared";
@@ -129,6 +131,12 @@ export function layoutReignFates(
   lanes: readonly TimelineLaneLayout[],
   viewport: ViewportState,
   personNames: ReadonlyMap<string, string>,
+  personDisplay: ReadonlyMap<string, {
+    ancestralXing?: string;
+    clanShi?: string;
+    posthumousNames?: string[];
+    templeNames?: string[];
+  }> = new Map(),
 ): PlacedReignFate[] {
   const { startAbs, endAbs } = getWindow(viewport);
   const buffered = expandWindow(startAbs, endAbs, 120);
@@ -180,8 +188,13 @@ export function layoutReignFates(
       ? toLayout.barMidY
       : facingEdgeY(toLayout, fromLayout);
 
-    const fromName = personNames.get(fromReign.personId) ?? fromReign.title;
-    const toName = personNames.get(toReign.personId) ?? toReign.title;
+    const displayName = (reign: Reign) => resolveReignCardLabel(
+      reign,
+      personNames.get(reign.personId),
+      { clan: buildPreQinClanContext(personDisplay.get(reign.personId)) },
+    );
+    const fromName = displayName(fromReign);
+    const toName = displayName(toReign);
     if (!isFateRelationKind(relation.kind)) continue;
     const color = colorByReignId.get(fromReign.id) ?? "var(--color-ink-muted)";
     const tick = hasHorizontalLeader

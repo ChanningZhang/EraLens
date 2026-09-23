@@ -60,6 +60,7 @@ writeImportPackage(__dirname, {
   relations,
   // One-time cleanup: old catalog wrongly linked 慕容永 to 苻坚 (died 385).
   preSql: [
+    "DELETE FROM relations WHERE id = 'rel-ji-yan-qin-r27-killed';",
     "DELETE FROM relations WHERE id = 'rel-murong-yong-fu-jian-ming-killed';",
     "DELETE FROM relations WHERE id = 'rel-yang-nandang-fu-jian-ming-surrender';",
     "DELETE FROM relations WHERE id = 'rel-yang-guang-li-yuan-killed';",
@@ -136,6 +137,7 @@ writeImportPackage(__dirname, {
       "at_abs 优先取受害方 documented / 已入库月日迄；年精度事件取 event 年 12 月。有月/日史料的事件须同步升 precision，与命运线 at_abs 一致。",
       "同朝 succession 不写入；B 方无 reign 卡者改挂当时在位君主（成汉/南燕/后秦→晋帝，太平天国→同治）。",
       "秦灭六国等边自 chunqiu-zhanguo 迁入本包，避免重复维护。",
+      "移除周赧王→秦昭襄王的 killed 关系：《史记·周本纪》仅记‘周君、王赧卒’，未记被杀；《太平御览》所引叙事称秦纳其献后赧王归周。",
       "吐蕃、回鹘、南诏末代无时间轴上的灭国接收方（僧人刺杀 / 黠戛斯 / 大长和未收录），不硬画。",
       "非末代被他朝杀/俘：楚怀王（秦昭襄王扣武关）、晋惠公（韩原为秦穆公所俘后释归）、齐湣王（楚将淖齿杀）、晋怀帝（刘聪鸩杀，愍帝继立）、梁元帝（西魏杀于江陵，敬帝继立）、陈友谅（鄱阳湖阵亡，陈理继立）；宋徽宗、南越赵兴原目录已有。",
       "补入萧栋于552年1月1日被侯景废黜并自立汉帝的 abdication 命运线。",

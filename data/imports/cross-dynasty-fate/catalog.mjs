@@ -259,15 +259,6 @@ export function buildFateCatalog() {
       eventId: "muye",
       resolveAt: () => ym(-1046, 1),
     },
-    {
-      id: "rel-ji-yan-qin-r27-killed",
-      fromPersonId: "ji-yan",
-      toPersonId: "qin-r27",
-      kind: "killed",
-      eventId: null,
-      resolveAt: () => ym(-256, 12),
-    },
-
     // ── 秦汉 ────────────────────────────────────────────────────────────────
     {
       id: "rel-ying-ziying-liu-bang-surrender",

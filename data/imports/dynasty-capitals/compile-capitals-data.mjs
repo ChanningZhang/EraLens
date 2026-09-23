@@ -50,6 +50,8 @@ const PLACE_KEBAB = {
   琅琊: "langya",
   薛: "xue",
   王城: "wangcheng",
+  成周: "chengzhou",
+  巩: "gong",
   灵寿: "lingshou",
   邯郸: "handan",
   大梁: "daliang",
@@ -169,6 +171,8 @@ export function entry(
     startDay,
     endDay,
     claimTrack,
+    startDateConfidence,
+    endDateConfidence,
   } = {},
 ) {
   const start = startDay == null ? ym(startYear, startMonth) : ymDay(startYear, startMonth, startDay);
@@ -185,6 +189,8 @@ export function entry(
     startAbs: start.abs,
     endAbs: end.abs,
     precision,
+    startDateConfidence,
+    endDateConfidence,
     role,
     claimTrack,
     note,
@@ -256,9 +262,19 @@ export const capitals = [
     wikiTitle: "镐京",
   }),
 
-  e("zhou-east", "洛邑", "河南省洛阳市", -770, -256, {
-    note: "东周都城洛邑（王城）。",
-    wikiTitle: "洛邑",
+  e("zhou-east", "王城", "河南省洛阳市西工区东周王城遗址", -770, -520, {
+    note: "平王东迁后都王城；今址为洛阳市西工区东周王城遗址。",
+    wikiTitle: "东周王城",
+  }),
+  e("zhou-east", "成周", "河南省洛阳市瀍河回族区汉魏洛阳故城成周遗址", -519, -315, {
+    note: "周敬王迁都成周，至赧王迁回王城；今址在白马寺以东汉魏洛阳故城一带。",
+    endDateConfidence: "approximate",
+    wikiTitle: "成周",
+  }),
+  e("zhou-east", "王城", "河南省洛阳市西工区东周王城遗址", -314, -256, {
+    note: "周赧王时期迁居西周国王城，具体年份未详；前314年仅作约年起点。今址为洛阳市西工区东周王城遗址。",
+    startDateConfidence: "approximate",
+    wikiTitle: "东周王城",
   }),
 
   // ── 春秋战国诸侯 ──────────────────────────────────────────────────────────
@@ -374,7 +390,7 @@ export const capitals = [
     note: "薛国都城薛。",
     wikiTitle: "薛国",
   }),
-  e("zhou-guo-west", "王城", "河南省洛阳市", -440, -256, {
+  e("zhou-guo-west", "王城", "河南省洛阳市西工区东周王城遗址", -440, -256, {
     note: "西周国都城王城（洛阳）。",
     wikiTitle: "东周国",
   }),
@@ -409,8 +425,8 @@ export const capitals = [
     note: "魏惠王迁大梁。",
     wikiTitle: "大梁",
   }),
-  e("zhou-guo-east", "王城", "河南省洛阳市", -367, -249, {
-    note: "东周国都城王城。",
+  e("zhou-guo-east", "巩", "河南省郑州市巩义市康店镇康北村东周故城遗址", -367, -249, {
+    note: "东周国始封于巩；今址为巩义市康店镇康北村东周故城遗址。",
     wikiTitle: "东周国",
   }),
 

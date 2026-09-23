@@ -14,7 +14,7 @@
     "persons": 87,
     "dynasties": 10,
     "reigns": 58,
-    "events": 62,
+    "events": 63,
     "relations": 71
   },
   "sources": [
@@ -85,6 +85,14 @@
     {
       "label": "清朝",
       "url": "https://zh.wikipedia.org/wiki/清朝"
+    },
+    {
+      "label": "故宫博物院：清廷迁都北京",
+      "url": "https://www.dpm.org.cn/court/event/159873.html"
+    },
+    {
+      "label": "忽必烈与迁都中都、定都大都（北京市地方志）",
+      "url": "https://www.bjdsdfz.cn/jcdq.jhtml"
     },
     {
       "label": "南明",
