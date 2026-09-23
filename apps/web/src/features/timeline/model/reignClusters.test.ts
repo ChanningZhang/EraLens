@@ -7,6 +7,7 @@ import {
   dynastyLaneHeight,
   LANE_PADDING_Y,
   nextLaterStartAbs,
+  PARALLEL_TRACK_GAP,
   PARALLEL_STACK_ROW_HEIGHT,
   partitionReignRecords,
   reignCardSpan,
@@ -129,12 +130,17 @@ describe("assignReignStacks", () => {
       PARALLEL_STACK_ROW_HEIGHT,
       PARALLEL_STACK_ROW_HEIGHT,
     ]);
-    expect(stackRowOffset(rowHeights, 1)).toBe(STACK_ROW_HEIGHT);
+    expect(stackRowOffset(rowHeights, 1)).toBe(
+      STACK_ROW_HEIGHT + PARALLEL_TRACK_GAP,
+    );
     expect(stackRowOffset(rowHeights, 2)).toBe(
-      STACK_ROW_HEIGHT + PARALLEL_STACK_ROW_HEIGHT,
+      STACK_ROW_HEIGHT + PARALLEL_TRACK_GAP + PARALLEL_STACK_ROW_HEIGHT + PARALLEL_TRACK_GAP,
     );
     expect(dynastyLaneHeight(rowHeights)).toBeCloseTo(
-      LANE_PADDING_Y + STACK_ROW_HEIGHT + PARALLEL_STACK_ROW_HEIGHT * 2,
+      LANE_PADDING_Y +
+        STACK_ROW_HEIGHT +
+        PARALLEL_STACK_ROW_HEIGHT * 2 +
+        PARALLEL_TRACK_GAP * 2,
       10,
     );
     expect(items.map((item) => [item.reign.id, item.stackIndex])).toEqual([
@@ -147,6 +153,9 @@ describe("assignReignStacks", () => {
     expect(main.startAbs).toBe(guang.startAbs);
     expect(main.endExclusive).toBe(guang.endAbs + 1);
     expect(resolveReignVisualSpan(you, all).startAbs).toBe(you.startAbs);
+    expect(resolveStackedCardUnit(you, all).unitTop).toBe(
+      STACK_ROW_HEIGHT + PARALLEL_TRACK_GAP,
+    );
   });
 
   it("keeps 南明主线 sequential while 鲁监国 / 绍武 sit on their own rows", () => {

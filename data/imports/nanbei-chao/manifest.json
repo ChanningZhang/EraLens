@@ -11,11 +11,11 @@
   "depth": "standard",
   "generatedAt": "2026-09-18",
   "counts": {
-    "persons": 60,
-    "dynasties": 9,
-    "reigns": 53,
+    "persons": 61,
+    "dynasties": 10,
+    "reigns": 55,
     "events": 8,
-    "relations": 47
+    "relations": 48
   },
   "sources": [
     {
@@ -47,6 +47,14 @@
       "url": "https://zh.wikipedia.org/wiki/侯景之乱"
     },
     {
+      "label": "侯景",
+      "url": "https://zh.wikipedia.org/wiki/侯景"
+    },
+    {
+      "label": "萧栋",
+      "url": "https://zh.wikipedia.org/wiki/萧栋"
+    },
+    {
       "label": "孝文帝改革",
       "url": "https://zh.wikipedia.org/wiki/北魏孝文帝改革"
     }
@@ -57,6 +65,7 @@
     "刘裕（liu-yu-jin）复用 jin-sixteen 已有 id；北魏 id 为 wei-north，避免与曹魏 wei 冲突；东魏 wei-east、西魏 wei-west。",
     "东魏、西魏按通行史书习惯分期各占一行（与北齐、北周并列），不用北魏 claim_track。孝武帝仍属北魏（至535年2月3日）；孝静帝属东魏；文帝→废帝→恭帝属西魏。",
     "南梁 id 为 liang-nan，与十六国南凉 liang-south 区分。",
+    "补入侯景所建汉政权（han-houjing）：552年正月至五月以建康为都；萧栋按551年10月2日至552年1月1日的实日期间补入南梁主线。",
     "589 年隋灭陈为南北朝终结事件；隋（581–）不在本包内。",
     "西梁行在 nanbei-sixteen-extra，group_id 为 nan-chao，不另立组。"
   ]

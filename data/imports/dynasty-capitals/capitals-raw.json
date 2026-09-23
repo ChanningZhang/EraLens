@@ -2700,6 +2700,33 @@
     ]
   },
   {
+    "id": "cap-han-houjing-jiankang-552",
+    "dynastyId": "han-houjing",
+    "historicalName": "建康",
+    "modernName": "江苏省南京市",
+    "start": {
+      "year": 552,
+      "month": 1,
+      "abs": 6624
+    },
+    "end": {
+      "year": 552,
+      "month": 5,
+      "abs": 6628
+    },
+    "startAbs": 6624,
+    "endAbs": 6628,
+    "precision": "month",
+    "role": "primary",
+    "note": "侯景称汉帝期间都城建康；552年五月败亡。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/侯景"
+      }
+    ]
+  },
+  {
     "id": "cap-wei-east-ye-534",
     "dynastyId": "wei-east",
     "historicalName": "邺",

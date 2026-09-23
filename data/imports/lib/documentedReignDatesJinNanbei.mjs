@@ -46,6 +46,8 @@ export const JIN_NANBEI_REIGN_DATES = {
   // ── 南朝梁 ──────────────────────────────────────────────────────────────
   "reign-xiao-yan": { start: [502, 5, 1], end: [549, 6, 12] },
   "reign-xiao-gang": { start: [549, 6, 12], end: [551, 11, 14] },
+  "reign-xiao-dong": { start: [551, 10, 2], end: [552, 1, 1] },
+  "reign-hou-jing": { start: [552, 1, 1], end: [552, 5, 26] },
   "reign-xiao-yi": { start: [552, 11, 15], end: [555, 1, 27] },
   "reign-xiao-fangzhi": { start: [555, 1, 27], end: [557, 11, 16] },
 

@@ -681,6 +681,36 @@ export function buildFateCatalog() {
       resolveAt: () => atFromReignEnd("reign-xiao-baorong", 502),
     },
     {
+      // 天正元年十一月十九日（552-01-01），侯景废萧栋并自立为汉帝。
+      id: "rel-xiao-dong-hou-jing-abdication",
+      fromPersonId: "xiao-dong",
+      toPersonId: "hou-jing",
+      kind: "abdication",
+      eventId: null,
+      precision: "day",
+      resolveAt: () => ymDay(552, 1, 1),
+    },
+    {
+      // 天正元年十月壬寅（551-11-15），侯景派人以土袋压死萧纲。
+      id: "rel-xiao-gang-hou-jing-killed",
+      fromPersonId: "xiao-gang",
+      toPersonId: "hou-jing",
+      kind: "killed",
+      eventId: null,
+      precision: "day",
+      resolveAt: () => ymDay(551, 11, 15),
+    },
+    {
+      // 552-05-26，侯景逃亡途中被部下羊鵾所杀；接收方取当时主导讨伐、后即位的萧绎。
+      id: "rel-hou-jing-xiao-yi-killed",
+      fromPersonId: "hou-jing",
+      toPersonId: "xiao-yi",
+      kind: "killed",
+      eventId: null,
+      precision: "day",
+      resolveAt: () => ymDay(552, 5, 26),
+    },
+    {
       // 非末代：承圣三年十二月辛未（555-01-27）西魏克江陵，杀梁元帝；敬帝继立于建康。
       // 当时西魏在位为恭帝拓跋廓；萧詧西梁卡起于次月，不抢接收方。
       // https://zh.wikipedia.org/wiki/梁元帝

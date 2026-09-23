@@ -17,6 +17,8 @@ export const STACK_ROW_HEIGHT = 40;
 /** Parallel claimants (`claimTrack` ≠ main) use 2/3 of a normal stack row. */
 export const PARALLEL_STACK_ROW_RATIO = 2 / 3;
 export const PARALLEL_STACK_ROW_HEIGHT = STACK_ROW_HEIGHT * PARALLEL_STACK_ROW_RATIO;
+/** Small visual separation between the main row and parallel claimant rows. */
+export const PARALLEL_TRACK_GAP = 4;
 
 export type StackedReign = {
   reign: Reign;
@@ -64,11 +66,20 @@ function rowOffsetToUnitTop(
   const bucket = reignsInLayoutBucket(reign, reigns, laneGroups);
   let top = 0;
   let consumedRows = 0;
-  for (const track of groupByClaimTrack(bucket)) {
+  const tracks = groupByClaimTrack(bucket);
+  for (let trackIndex = 0; trackIndex < tracks.length; trackIndex += 1) {
+    const track = tracks[trackIndex]!;
+    const nextTrack = tracks[trackIndex + 1];
     const span = trackSubRowCount(track.reigns);
     if (consumedRows >= targetOffset) break;
     if (consumedRows + span <= targetOffset) {
       top += trackBarHeight(track.reigns);
+      if (
+        nextTrack &&
+        (track.reigns.some(isParallelClaim) || nextTrack.reigns.some(isParallelClaim))
+      ) {
+        top += PARALLEL_TRACK_GAP;
+      }
       consumedRows += span;
     }
   }
@@ -139,14 +150,27 @@ export function stackRowOffset(
 ): number {
   let top = 0;
   for (let index = 0; index < stackIndex; index += 1) {
-    top += rowHeights[index] ?? STACK_ROW_HEIGHT;
+    const height = rowHeights[index] ?? STACK_ROW_HEIGHT;
+    const nextHeight = rowHeights[index + 1] ?? STACK_ROW_HEIGHT;
+    top += height;
+    if (height < STACK_ROW_HEIGHT || nextHeight < STACK_ROW_HEIGHT) {
+      top += PARALLEL_TRACK_GAP;
+    }
   }
   return top;
 }
 
 export function dynastyBarHeight(rowHeights: readonly number[]): number {
   if (rowHeights.length === 0) return STACK_ROW_HEIGHT;
-  return rowHeights.reduce((sum, height) => sum + height, 0);
+  return rowHeights.reduce((sum, height, index) => {
+    const nextHeight = rowHeights[index + 1];
+    const gap =
+      nextHeight !== undefined &&
+      (height < STACK_ROW_HEIGHT || nextHeight < STACK_ROW_HEIGHT)
+        ? PARALLEL_TRACK_GAP
+        : 0;
+    return sum + height + gap;
+  }, 0);
 }
 
 export function dynastyLaneHeight(

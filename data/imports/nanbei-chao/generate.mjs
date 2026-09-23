@@ -136,6 +136,7 @@ const persons = [
   // 南梁
   person("xiao-yan", "萧衍", ["皇帝"], "梁武帝，崇佛，侯景之乱在其朝，饿死台城。", "萧衍"),
   person("xiao-gang", "萧纲", ["皇帝"], "梁简文帝，侯景拥立，后被杀。", "萧纲"),
+  person("xiao-dong", "萧栋", ["皇帝"], "梁豫章王，侯景逼梁简文帝禅位后拥立，旋被废为淮阴王。", "萧栋"),
   person("xiao-yi", "萧绎", ["皇帝"], "梁元帝，江陵称帝，后为西魏所杀。", "萧绎"),
   person("xiao-fangzhi", "萧方智", ["皇帝"], "梁敬帝，南梁末代，陈霸先代梁。", "萧方智"),
   // 南陈
@@ -277,6 +278,18 @@ const dynasties = [
     note: "萧衍代齐建梁；557年陈霸先代梁。",
   },
   {
+    id: "han-houjing",
+    name: "汉",
+    altNames: ["侯汉", "大汉"],
+    scope: "cn",
+    region: "east_asia",
+    start: ym(552),
+    end: ym(552, 5),
+    precision: "month",
+    groupId: "nan-chao",
+    note: "侯景废萧栋后自立，国号汉，建都建康；552年五月败亡。",
+  },
+  {
     id: "chen-nan",
     name: "南陈",
     altNames: ["陈"],
@@ -414,6 +427,7 @@ const liangNanReigns = [
     ]),
   ),
   dynastyReign("liang-nan", "xiao-gang", "梁简文帝", "简文帝", null, 549, 551),
+  dynastyReign("liang-nan", "xiao-dong", "梁废帝", null, null, 551, 552, ["天正"]),
   dynastyReign("liang-nan", "xiao-yi", "梁元帝", "孝元皇帝", null, 552, 555),
   dynastyReign("liang-nan", "xiao-fangzhi", "梁敬帝", "敬帝", null, 555, 557),
 ];
@@ -424,6 +438,10 @@ const chenNanReigns = [
   dynastyReign("chen-nan", "chen-bozong", "陈废帝", null, null, 566, 568),
   dynastyReign("chen-nan", "chen-xu", "陈宣帝", "宣皇帝", null, 568, 582),
   dynastyReign("chen-nan", "chen-shubao", "陈后主", null, null, 582, 589),
+];
+
+const houJingReigns = [
+  dynastyReign("han-houjing", "hou-jing", "汉帝", null, null, 552, 552, ["太始"]),
 ];
 
 const weiNorthReigns = [
@@ -487,6 +505,7 @@ const reignGroups = [
   songLiuReigns,
   qiNanReigns,
   liangNanReigns,
+  houJingReigns,
   chenNanReigns,
   qiBeiReigns,
   zhouBeiReigns,
@@ -563,7 +582,7 @@ const events = [
     start: ym(548),
     end: ym(552),
     dynastyIds: ["liang-nan"],
-    participantIds: ["hou-jing", "xiao-yan"],
+    participantIds: ["hou-jing", "xiao-yan", "xiao-gang", "xiao-dong"],
     summary: "侯景叛梁，攻陷建康，梁武帝饿死台城，江南凋敝。",
   }),
   eventRange({
@@ -696,7 +715,7 @@ const importReigns = merged.reigns;
 
 
 const staleRelationSql = [
-  "DELETE FROM relations WHERE id IN ('rel-yuan-xiu-yuan-bao-ju-succession', 'rel-tuoba-kuo-yuan-shan-jian-succession');",
+  "DELETE FROM relations WHERE id IN ('rel-yuan-xiu-yuan-bao-ju-succession', 'rel-tuoba-kuo-yuan-shan-jian-succession', 'rel-xiao-gang-xiao-yi-succession');",
 ];
 const eventDynastyCleanupSql = events.map((e) => {
   const keep = e.dynastyIds.map(sqlStr).join(", ");
@@ -781,6 +800,8 @@ const manifest = {
     { label: "东魏", url: "https://zh.wikipedia.org/wiki/东魏" },
     { label: "西魏", url: "https://zh.wikipedia.org/wiki/西魏" },
     { label: "侯景之乱", url: "https://zh.wikipedia.org/wiki/侯景之乱" },
+    { label: "侯景", url: "https://zh.wikipedia.org/wiki/侯景" },
+    { label: "萧栋", url: "https://zh.wikipedia.org/wiki/萧栋" },
     { label: "孝文帝改革", url: "https://zh.wikipedia.org/wiki/北魏孝文帝改革" },
   ],
   notes: [
@@ -789,6 +810,7 @@ const manifest = {
     "刘裕（liu-yu-jin）复用 jin-sixteen 已有 id；北魏 id 为 wei-north，避免与曹魏 wei 冲突；东魏 wei-east、西魏 wei-west。",
     "东魏、西魏按通行史书习惯分期各占一行（与北齐、北周并列），不用北魏 claim_track。孝武帝仍属北魏（至535年2月3日）；孝静帝属东魏；文帝→废帝→恭帝属西魏。",
     "南梁 id 为 liang-nan，与十六国南凉 liang-south 区分。",
+    "补入侯景所建汉政权（han-houjing）：552年正月至五月以建康为都；萧栋按551年10月2日至552年1月1日的实日期间补入南梁主线。",
     "589 年隋灭陈为南北朝终结事件；隋（581–）不在本包内。",
     "西梁行在 nanbei-sixteen-extra，group_id 为 nan-chao，不另立组。",
   ],

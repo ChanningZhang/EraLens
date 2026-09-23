@@ -97,6 +97,13 @@ function cleanExtract(text, title) {
   return result.endsWith("。") || result.endsWith("！") || result.endsWith("？") ? result : `${result}。`;
 }
 
+function normalizeFrozenBio(value) {
+  return String(value ?? "")
+    .replace(/（\s*）|\(\s*\)/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function fetchIntro(title, attempt = 0) {
@@ -172,7 +179,13 @@ async function collect() {
 
 async function main() {
   mkdirSync(dir, { recursive: true });
-  const records = existsSync(sourcePath) ? JSON.parse(readFileSync(sourcePath, "utf8")) : await collect();
+  const records = existsSync(sourcePath)
+    ? JSON.parse(readFileSync(sourcePath, "utf8")).map((record) => ({
+        ...record,
+        bio: normalizeFrozenBio(record.bio),
+      }))
+    : await collect();
+  writeFileSync(sourcePath, `${JSON.stringify(records, null, 2)}\n`, "utf8");
   const lines = ["BEGIN;", ""];
   for (const record of records) {
     const table = record.kind === "person" ? "persons" : "dynasties";

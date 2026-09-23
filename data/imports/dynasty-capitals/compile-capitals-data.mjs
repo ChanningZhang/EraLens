@@ -632,6 +632,11 @@ export const capitals = [
     note: "南梁都城建康。",
     wikiTitle: "南梁",
   }),
+  entry("han-houjing", "建康", "江苏省南京市", 552, 1, 552, 5, {
+    precision: "month",
+    note: "侯景称汉帝期间都城建康；552年五月败亡。",
+    wikiTitle: "侯景",
+  }),
   e("wei-east", "邺", "河北省邯郸市临漳县", 534, 550, {
     note: "东魏都城邺。",
     wikiTitle: "东魏",
