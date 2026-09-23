@@ -2,6 +2,8 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { resolveOrthodoxEndAbs, resolveOrthodoxFromAbs } from "./orthodoxDynasties.mjs";
 import { finalizeImportReigns } from "./missingReigns.mjs";
+import { PERSON_TITLE_SELECTIONS } from "./personTitleSelections.mjs";
+import { resolveReignTitle } from "./reignTitleSelections.mjs";
 
 export function toAstroYear(year) {
   return year > 0 ? year : year + 1;
@@ -178,6 +180,16 @@ export function mergeAppellationsIntoPersons(persons, reigns) {
       person.templeNames.push(reign.templeName);
     }
   }
+  const lastReignByPerson = new Map();
+  for (const reign of reigns) {
+    const current = lastReignByPerson.get(reign.personId);
+    if (!current || reign.startAbs > current.startAbs || (reign.startAbs === current.startAbs && (reign.endAbs > current.endAbs || (reign.endAbs === current.endAbs && reign.id.localeCompare(current.id) > 0)))) {
+      lastReignByPerson.set(reign.personId, reign);
+    }
+  }
+  for (const person of personMap.values()) {
+    person.title = PERSON_TITLE_SELECTIONS[person.id] ?? lastReignByPerson.get(person.id)?.title ?? person.title ?? null;
+  }
   return {
     persons: [...personMap.values()],
     reigns: reigns.map((r) => ({
@@ -243,9 +255,9 @@ export function successionPairs(list) {
 }
 
 export function personSql(p) {
-  return `INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name)
-VALUES (${sqlStr(p.id)}, ${sqlStr(p.name)}, ${sqlArray(p.altNames ?? [])}, ${sqlStr(p.ancestralXing ?? null)}, ${sqlStr(p.clanShi ?? null)}, ${p.birth?.year ?? "NULL"}, ${p.birth?.month ?? "NULL"}, ${p.death?.year ?? "NULL"}, ${p.death?.month ?? "NULL"}, ${sqlArray(p.roles)}, ${sqlStr(p.bio)}, ${sqlJson(p.links)}, ${sqlStr(formatAppellationCsv(p.posthumousNames))}, ${sqlStr(formatAppellationCsv(p.templeNames))})
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name;`;
+  return `INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name, title)
+VALUES (${sqlStr(p.id)}, ${sqlStr(p.name)}, ${sqlArray(p.altNames ?? [])}, ${sqlStr(p.ancestralXing ?? null)}, ${sqlStr(p.clanShi ?? null)}, ${p.birth?.year ?? "NULL"}, ${p.birth?.month ?? "NULL"}, ${p.death?.year ?? "NULL"}, ${p.death?.month ?? "NULL"}, ${sqlArray(p.roles)}, ${sqlStr(p.bio)}, ${sqlJson(p.links)}, ${sqlStr(formatAppellationCsv(p.posthumousNames))}, ${sqlStr(formatAppellationCsv(p.templeNames))}, ${sqlStr(p.title ?? null)})
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, title = EXCLUDED.title;`;
 }
 
 export function dynastyLaneGroupSql(group) {
@@ -289,7 +301,7 @@ export function reignSql(r) {
   const informalVal = r.isInformalMonarch != null ? `, ${r.isInformalMonarch}` : "";
   const informalUpdate = r.isInformalMonarch != null ? ", is_informal_monarch = EXCLUDED.is_informal_monarch" : "";
   return `INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence${claimCols}${informalCol})
-VALUES (${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(r.title)}, ${sqlStr(formatAppellationCsv(r.eraNames))}, ${r.start.year}, ${r.start.month}, ${r.start.day ?? "NULL"}, ${r.end.year}, ${r.end.month}, ${r.end.day ?? "NULL"}, ${r.startAbs}, ${r.endAbs}, ${sqlStr(r.precision)}, ${sqlStr(r.startDateConfidence ?? null)}, ${sqlStr(r.endDateConfidence ?? null)}${claimVals}${informalVal})
+VALUES (${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(resolveReignTitle(r))}, ${sqlStr(formatAppellationCsv(r.eraNames))}, ${r.start.year}, ${r.start.month}, ${r.start.day ?? "NULL"}, ${r.end.year}, ${r.end.month}, ${r.end.day ?? "NULL"}, ${r.startAbs}, ${r.endAbs}, ${sqlStr(r.precision)}, ${sqlStr(r.startDateConfidence ?? null)}, ${sqlStr(r.endDateConfidence ?? null)}${claimVals}${informalVal})
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence${claimUpdates}${informalUpdate};`;
 }
 

@@ -47,6 +47,7 @@ type Props = {
   reigns: Reign[];
   personName?: string;
   personClan?: {
+    title?: string;
     ancestralXing?: string;
     clanShi?: string;
     posthumousNames?: string[];

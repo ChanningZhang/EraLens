@@ -41,6 +41,7 @@ type Props = {
   personClans: Map<
     string,
     | {
+        title?: string;
         ancestralXing?: string;
         clanShi?: string;
         posthumousNames?: string[];

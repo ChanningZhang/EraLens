@@ -74,6 +74,10 @@ function dr(dynastyId, personId, title, posthumous, temple, sy, ey, eraList = []
   return dynastyReign(dynastyId, personId, title, posthumous, temple, sy, ey, eraNames, null, claim);
 }
 
+function useEraNamesAsTitles(reigns) {
+  return reigns.map((r) => r.eraNames?.length ? { ...r, eraNamesAsTitle: true } : r);
+}
+
 
 // ── persons ────────────────────────────────────────────────────────────────
 
@@ -252,7 +256,7 @@ const yuanMoReigns = [
 ];
 
 // 明帝在位日取维基百科君主列表通行换算，precision=day。
-const mingReigns = [
+const mingReigns = useEraNamesAsTitles([
   drDay("ming", "zhu-yuanzhang", "明太祖", "高皇帝", "太祖", 1368, 1, 23, 1398, 6, 24, [{ name: "洪武", sy: 1368, ey: 1398 }]),
   drDay("ming", "zhu-yunwen", "建文帝", null, null, 1398, 6, 30, 1402, 7, 13, [{ name: "建文", sy: 1399, ey: 1402 }]),
   drDay("ming", "zhu-di", "明成祖", "文皇帝", "成祖", 1402, 7, 17, 1424, 8, 12, [{ name: "永乐", sy: 1403, ey: 1424 }]),
@@ -271,14 +275,14 @@ const mingReigns = [
   drDay("ming", "zhu-changluo", "明光宗", "贞皇帝", "光宗", 1620, 8, 28, 1620, 9, 26, [{ name: "泰昌", sy: 1620, ey: 1620 }]),
   drDay("ming", "zhu-youjiao", "明熹宗", "哲皇帝", "熹宗", 1620, 9, 26, 1627, 9, 30, [{ name: "天启", sy: 1621, ey: 1627 }]),
   drDay("ming", "zhu-youjian", "明思宗", "毅皇帝", "思宗", 1627, 10, 2, 1644, 4, 25, [{ name: "崇祯", sy: 1628, ey: 1644 }]),
-];
+]);
 
-const mingSouthMain = [
+const mingSouthMain = useEraNamesAsTitles([
   drDay("ming-south", "zhu-yousong", "弘光帝", null, null, 1644, 6, 19, 1645, 6, 15, [{ name: "弘光", sy: 1644, ey: 1645 }]),
   drDay("ming-south", "zhu-yujian", "隆武帝", null, null, 1645, 8, 18, 1646, 10, 6, [{ name: "隆武", sy: 1645, ey: 1646 }]),
   drDay("ming-south", "zhu-youlang", "永历帝", null, null, 1646, 12, 24, 1662, 6, 1, [{ name: "永历", sy: 1646, ey: 1662 }]),
-];
-const mingSouthParallel = [
+]);
+const mingSouthParallel = useEraNamesAsTitles([
   drDay("ming-south", "zhu-yihai", "鲁监国", null, null, 1645, 9, 7, 1653, 3, 1, [], {
     track: "lu-jian",
     label: "绍兴监国",
@@ -287,11 +291,11 @@ const mingSouthParallel = [
     track: "shaowu",
     label: "广州",
   }),
-];
+]);
 const mingSouthReigns = [...mingSouthMain, ...mingSouthParallel];
 
 // 清帝在位日取维基百科君主列表通行换算，precision=day。
-const qingReigns = [
+const qingReigns = useEraNamesAsTitles([
   drDay("qing", "nurhaci", "清太祖", "武皇帝", "太祖", 1616, 2, 17, 1626, 9, 30, [{ name: "天命", sy: 1616, ey: 1626 }]),
   drDay("qing", "huang-taiji", "清太宗", "文皇帝", "太宗", 1626, 10, 20, 1643, 9, 21, [
     { name: "天聪", sy: 1627, ey: 1636 },
@@ -307,7 +311,7 @@ const qingReigns = [
   drDay("qing", "zaichun", "清穆宗", "毅皇帝", "穆宗", 1861, 11, 11, 1875, 1, 12, [{ name: "同治", sy: 1862, ey: 1874 }]),
   drDay("qing", "zaitian", "清德宗", "景皇帝", "德宗", 1875, 2, 25, 1908, 11, 14, [{ name: "光绪", sy: 1875, ey: 1908 }]),
   drDay("qing", "puyi", "清逊帝", null, null, 1908, 12, 2, 1912, 2, 12, [{ name: "宣统", sy: 1909, ey: 1912 }]),
-];
+]);
 
 const reignGroups = [yuanReignsMain, yuanMoReigns, mingReigns, mingSouthMain, qingReigns];
 const reigns = applyDocumentedDatesToReigns(

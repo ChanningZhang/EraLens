@@ -1,14 +1,14 @@
 import { firstAppellation } from "./appellationFields";
 import {
-  MING_QING_START_YEAR,
-  PRE_IMPERIAL_START_YEAR,
-  TEMPLE_ERA_START_YEAR,
-} from "./appellationPolicy";
-import {
   isRocTaiwanLeaderReign,
   ROC_TAIWAN_LEADER_OFFICE_LABEL,
   resolveRocReignDetailSubtitle,
 } from "./rocTaiwanLeaderDisplay";
+import {
+  MING_QING_START_YEAR,
+  PRE_IMPERIAL_START_YEAR,
+  TEMPLE_ERA_START_YEAR,
+} from "./appellationPolicy";
 import type { AppellationKind, Reign } from "./schema";
 import { formatReignYearRange } from "./reignVisual";
 
@@ -34,6 +34,7 @@ const PLACEHOLDER_PERSON_NAME = /^(缺失|史料缺|不明)$/;
 
 /** Stored 姓/氏 and person-level 庙谥 from import. */
 export type PersonDisplayContext = {
+  title?: string | null;
   personAncestralXing?: string | null;
   personClanShi?: string | null;
   posthumousNames?: string[];
@@ -45,6 +46,7 @@ export type PreQinClanContext = PersonDisplayContext;
 
 export function buildPreQinClanContext(
   person?: {
+    title?: string | null;
     ancestralXing?: string | null;
     clanShi?: string | null;
     posthumousNames?: string[];
@@ -52,6 +54,7 @@ export function buildPreQinClanContext(
   } | null,
 ): PersonDisplayContext {
   return {
+    title: person?.title,
     personAncestralXing: person?.ancestralXing,
     personClanShi: person?.clanShi,
     posthumousNames: person?.posthumousNames,
@@ -90,18 +93,7 @@ function resolveTempleAppellation(
   return { kind: "temple", name: name };
 }
 
-/**
- * Resolve the one conventional appellation shown on a ruler card.
- *
- * Historical defaults:
- * - Before Tang: short posthumous names were the common shorthand;
- *   if none, the stored title (史称 live here, not in posthumous_name).
- * - Tang through Yuan: temple names became the common shorthand.
- * - Ming and Qing: era names became the common shorthand.
- *
- * Era/temple/posthumous display follows the year thresholds below so changing
- * `TEMPLE_ERA_START_YEAR` applies to every dynasty without re-importing data.
- */
+/** Resolve the conventional appellation used by reign detail labels. */
 export function resolveEmperorAppellation(
   reign: ReignAppellationFields,
   personContext?: PersonDisplayContext | null,
@@ -367,6 +359,34 @@ function isRedundantCardMeta(
   return appellation.name === primary || appellation.name === personName;
 }
 
+/** Card small-text preference, independent from the large primary label. */
+function resolveReignCardAppellation(
+  reign: ReignAppellationFields,
+  personContext?: PersonDisplayContext | null,
+): EmperorAppellation | null {
+  const title = reign.title.trim();
+  if (title) return { kind: "regnal", name: title };
+
+  const eraName = firstEraName(reign);
+
+  if (reign.start.year >= TEMPLE_ERA_START_YEAR) {
+    const temple = resolveTempleAppellation(personContext);
+    if (temple) return temple;
+  }
+
+  const posthumous = resolvePosthumousAppellation(personContext);
+  if (posthumous) return posthumous;
+
+  const temple = resolveTempleAppellation(personContext);
+  if (temple) return temple;
+
+  if (eraName) return { kind: "era", name: eraName };
+
+  const personTitle = personContext?.title?.trim();
+  if (personTitle) return { kind: "regnal", name: personTitle };
+  return null;
+}
+
 /** Secondary line shown when the card has enough space. */
 export function resolveReignCardMeta(
   reign: ReignAppellationFields,
@@ -380,7 +400,7 @@ export function resolveReignCardMeta(
     return { label: "名", name: given };
   }
 
-  const appellation = resolveEmperorAppellation(reign, personContext);
+  const appellation = resolveReignCardAppellation(reign, personContext);
   if (appellation && !isRedundantCardMeta(appellation, primary, personName)) {
     return { label: APPELLATION_LABELS[appellation.kind], name: appellation.name };
   }

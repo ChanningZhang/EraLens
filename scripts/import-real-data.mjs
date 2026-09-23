@@ -7,6 +7,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { PERSON_TITLE_SELECTIONS } from "../data/imports/lib/personTitleSelections.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
@@ -54,6 +55,37 @@ function dockerPsql(input) {
     ["exec", "-i", CONTAINER, "psql", "-v", "ON_ERROR_STOP=1", "-U", PGUSER, "-d", PGDB, "-q"],
     { input, encoding: "utf8" },
   );
+}
+
+function sqlString(value) {
+  return `'${String(value).replaceAll("'", "''")}'`;
+}
+
+function updatePersonTitles() {
+  const selectedTitles = Object.entries(PERSON_TITLE_SELECTIONS)
+    .map(([personId, title]) => `WHEN p.id = ${sqlString(personId)} THEN ${sqlString(title)}`)
+    .join("\n    ");
+  const selectedIds = Object.keys(PERSON_TITLE_SELECTIONS).map(sqlString).join(", ");
+  const sql = `
+UPDATE persons AS p
+SET title = CASE
+  WHEN p.id = 'system-missing-ruler' THEN '史料缺'
+  ${selectedTitles}
+  ELSE (
+    SELECT r.title
+    FROM reigns AS r
+    WHERE r.person_id = p.id
+    ORDER BY r.start_abs DESC, r.end_abs DESC, r.id DESC
+    LIMIT 1
+  )
+END
+WHERE p.id = 'system-missing-ruler'
+   OR p.id IN (${selectedIds})
+   OR EXISTS (SELECT 1 FROM reigns AS r WHERE r.person_id = p.id);
+`;
+  const result = dockerPsql(sql);
+  if (result.status !== 0) fail("Failed to populate persons.title", result.stderr || result.stdout);
+  console.log("Updated persons.title from the latest reign title and selected multi-reign titles.");
 }
 
 function waitForPostgres() {
@@ -111,6 +143,8 @@ function main() {
     }
     remaining = failed;
   }
+
+  updatePersonTitles();
 
   console.log("Done.");
 }

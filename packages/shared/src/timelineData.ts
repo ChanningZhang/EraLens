@@ -204,7 +204,12 @@ function buildPersonEntityDetail(
   const dynastyMap = new Map(store.dynasties.map((d) => [d.id, d]));
   const personReigns = store.reigns
     .filter((reign) => reign.personId === person.id)
-    .sort((a, b) => a.startAbs - b.startAbs);
+    .sort(
+      (a, b) =>
+        a.startAbs - b.startAbs ||
+        (a.start.day ?? 1) - (b.start.day ?? 1) ||
+        a.id.localeCompare(b.id),
+    );
   const focusReign = options.focusReignId
     ? personReigns.find((reign) => reign.id === options.focusReignId)
     : undefined;
@@ -212,9 +217,17 @@ function buildPersonEntityDetail(
     throw new Error(`Reign not found: ${options.focusReignId}`);
   }
 
-  const capitalTenures = personReigns.flatMap((reign) =>
-    buildReignTenureCapitalRows(reign, store.capitals ?? []),
-  );
+  const capitalTenures = personReigns.flatMap((reign) => {
+    const rows = buildReignTenureCapitalRows(reign, store.capitals ?? []);
+    if (personReigns.length < 2) return rows;
+    const name = (reign.eraNames.length > 0
+      ? reign.eraNames.join("、")
+      : reign.title).trim();
+    return rows.map((row) => ({
+      ...row,
+      tenure: { ...row.tenure, ...(name ? { name } : {}) },
+    }));
+  });
   const clan = buildPreQinClanContext(person);
   const participantEvents = eventsForPerson(store, person.id);
   const preQinReign = personReigns.find((reign) => usesPreQinCardLayout(reign));

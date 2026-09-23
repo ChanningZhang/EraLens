@@ -683,7 +683,7 @@ describe("buildEntityDetail person", () => {
           end: { year: 1464, month: 12 },
           startAbs: 30,
           endAbs: 40,
-          eraNames: ["天顺"],
+          eraNames: [],
         }),
       ],
       persons: [
@@ -709,6 +709,110 @@ describe("buildEntityDetail person", () => {
     ]);
     expect(detail.capitalTenures[0]?.tenure.label).toBe("1436 — 1449");
     expect(detail.capitalTenures[1]?.tenure.label).toBe("1457 — 1464");
+    expect(detail.capitalTenures.map((row) => row.tenure.name)).toEqual([
+      "正统",
+      "明英宗",
+    ]);
+  });
+
+  it("keeps dates visible when multiple reigns have no stored title or era name", () => {
+    const store = {
+      dynasties: [],
+      reigns: [
+        reign({
+          id: "first-reign",
+          personId: "ruler",
+          title: "",
+          eraNames: [],
+          start: { year: 684, month: 1 },
+          end: { year: 690, month: 12 },
+          startAbs: 10,
+          endAbs: 20,
+        }),
+        reign({
+          id: "second-reign",
+          personId: "ruler",
+          title: "",
+          eraNames: [],
+          start: { year: 710, month: 1 },
+          end: { year: 712, month: 12 },
+          startAbs: 30,
+          endAbs: 40,
+        }),
+      ],
+      persons: [{
+        id: "ruler",
+        name: "李旦",
+        roles: ["皇帝"],
+        posthumousNames: [],
+        templeNames: [],
+        links: [],
+      }],
+      events: [],
+      relations: [],
+    };
+
+    const detail = buildEntityDetail(store, { type: "person", id: "ruler" });
+    expect(detail.capitalTenures.map((row) => row.tenure.name)).toEqual([
+      undefined,
+      undefined,
+    ]);
+    expect(detail.capitalTenures.map((row) => row.tenure.label)).toEqual([
+      "684 — 690",
+      "710 — 712",
+    ]);
+  });
+
+  it("orders reigns starting in the same month by day", () => {
+    const store = {
+      dynasties: [],
+      reigns: [
+        reign({
+          id: "reign-zhu-qiyu-ming",
+          personId: "zhu-qiyu",
+          start: { year: 1449, month: 9, day: 22 },
+          end: { year: 1457, month: 2, day: 24 },
+          startAbs: 17396,
+          endAbs: 17485,
+          precision: "day",
+          isInformalMonarch: false,
+        }),
+        reign({
+          id: "reign-zhu-qiyu-regent-ming",
+          personId: "zhu-qiyu",
+          start: { year: 1449, month: 9, day: 6 },
+          end: { year: 1449, month: 9, day: 22 },
+          startAbs: 17396,
+          endAbs: 17396,
+          precision: "day",
+          isInformalMonarch: true,
+        }),
+      ],
+      persons: [{
+        id: "zhu-qiyu",
+        name: "朱祁钰",
+        roles: ["皇帝"],
+        posthumousNames: [],
+        templeNames: [],
+        links: [],
+      }],
+      events: [],
+      relations: [],
+    };
+
+    const detail = buildEntityDetail(store, { type: "person", id: "zhu-qiyu" });
+    expect(detail.capitalTenures.map((row) => row.tenure.ref.id)).toEqual([
+      "reign-zhu-qiyu-regent-ming",
+      "reign-zhu-qiyu-ming",
+    ]);
+    expect(detail.capitalTenures.map((row) => row.tenure.label)).toEqual([
+      "1449年9月6日 — 1449年9月22日",
+      "1449年9月22日 — 1457年2月24日",
+    ]);
+    expect(detail.capitalTenures.map((row) => row.tenure.isInformalMonarch)).toEqual([
+      true,
+      undefined,
+    ]);
   });
 
   it("matches reign detail when focusing a single reign on a person", () => {

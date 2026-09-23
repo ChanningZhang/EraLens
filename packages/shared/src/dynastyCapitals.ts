@@ -38,6 +38,7 @@ export type ReignCapitalTenureRow = {
     ref: EntityRef;
     label: string;
     abs: number;
+    isInformalMonarch?: boolean;
   };
 };
 
@@ -150,6 +151,7 @@ export function buildReignCapitalTenures(
             segment.end === reign.end ? reign.endDateConfidence : undefined,
           ),
           abs: segment.startAbs,
+          ...(reign.isInformalMonarch ? { isInformalMonarch: true } : {}),
         },
         sortKey: {
           startAbs: segment.startAbs,
@@ -186,6 +188,7 @@ export function buildReignTenureCapitalRows(
           reign.endDateConfidence,
         ),
         abs: reign.startAbs,
+        ...(reign.isInformalMonarch ? { isInformalMonarch: true } : {}),
       },
     },
   ];

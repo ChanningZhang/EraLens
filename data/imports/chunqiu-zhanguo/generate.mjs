@@ -14,6 +14,7 @@ import { applyFeudalClanMetadata } from "../lib/applyFeudalClanMetadata.mjs";
 import { validateReignDateConfidenceSeams } from "../lib/validateReignSeams.mjs";
 import { ORTHODOX_FROM_START } from "../lib/orthodoxDynasties.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
+import { resolveReignTitle } from "../lib/reignTitleSelections.mjs";
 import { LEGACY_COLOR_TOKEN, formatAppellationCsv, mergeAppellationsIntoPersons, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -703,7 +704,7 @@ function reignSql(r) {
   start_year, start_month, start_day, end_year, end_month, end_day,
   start_abs, end_abs, precision, start_date_confidence, end_date_confidence
 ) VALUES (
-  ${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(r.title)},
+  ${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(resolveReignTitle(r))},
   ${sqlStr(formatAppellationCsv(r.eraNames))},
   ${r.start.year}, ${r.start.month}, ${r.start.day ?? "NULL"}, ${r.end.year}, ${r.end.month}, ${r.end.day ?? "NULL"},
   ${r.startAbs}, ${r.endAbs}, ${sqlStr(r.precision)}, ${sqlStr(r.startDateConfidence ?? null)}, ${sqlStr(r.endDateConfidence ?? null)}

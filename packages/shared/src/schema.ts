@@ -106,6 +106,7 @@ export const DynastySchema = z.object({
 export const PersonSchema = z.object({
   id: z.string(),
   name: z.string(),
+  title: z.string().optional(),
   altNames: z.array(z.string()).default([]),
   /** 姓 — import-time field from wiki/史料, not inferred at runtime. */
   ancestralXing: z.string().optional(),
@@ -390,7 +391,9 @@ export const EntityDetailSchema = z.object({
         tenure: z.object({
           ref: EntityRefSchema,
           label: z.string(),
+          name: z.string().optional(),
           abs: z.number(),
+          isInformalMonarch: z.boolean().optional(),
         }),
       }),
     )

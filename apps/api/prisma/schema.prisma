@@ -22,6 +22,7 @@ model Person {
   links       Json                @default("[]")
   posthumousName String?          @map("posthumous_name")
   templeName  String?             @map("temple_name")
+  title       String?
   searchTerms String[]            @default([]) @map("search_terms")
   reigns      Reign[]
   participants EventParticipant[]

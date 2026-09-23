@@ -232,10 +232,17 @@ export function DetailPanel() {
                     }
                   >
                     <span
-                      className={`${styles.capitalTenureLabel} ${styles.tenureLabel}`}
+                      className={
+                        row.tenure.name
+                          ? styles.capitalTenureLabel
+                          : `${styles.capitalTenureLabel} ${styles.tenureLabel}`
+                      }
                     >
-                      {row.tenure.label}
+                      {row.tenure.name ?? row.tenure.label}
                     </span>
+                    {row.tenure.name && (
+                      <span className={styles.capitalTenureSub}>{row.tenure.label}</span>
+                    )}
                   </button>
                   {row.capital && (
                     <button

@@ -168,6 +168,7 @@ export function TimelineStage() {
     const map = new Map<
       string,
       {
+        title?: string;
         ancestralXing?: string;
         clanShi?: string;
         posthumousNames?: string[];
@@ -179,10 +180,12 @@ export function TimelineStage() {
       if (
         person.ancestralXing ||
         person.clanShi ||
+        person.title ||
         person.posthumousNames.length ||
         person.templeNames.length
       ) {
         map.set(person.id, {
+          title: person.title,
           ancestralXing: person.ancestralXing,
           clanShi: person.clanShi,
           posthumousNames: person.posthumousNames,

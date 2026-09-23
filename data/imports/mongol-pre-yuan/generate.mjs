@@ -9,7 +9,7 @@ import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns, sqlDeleteSystemMissingReigns } from "../lib/missingReigns.mjs";
 import { reignSql as formatReignSql } from "../lib/reignSql.mjs";
 import { ymDay } from "../lib/reignDateHelpers.mjs";
-import { dynastySql, formatAppellationCsv, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
+import { dynastySql, formatAppellationCsv, mergeAppellationsIntoPersons, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -255,10 +255,14 @@ const supplementalEventParticipantSql = supplementalEventParticipants.map(
   ({ eventId, personId }) => `INSERT INTO event_participants (event_id, person_id) VALUES (${sqlStr(eventId)}, ${sqlStr(personId)}) ON CONFLICT DO NOTHING;`,
 );
 
-const { persons: importPersons, reigns: importReigns } = finalizeImportReigns(
+const finalized = finalizeImportReigns(
   "mongol-pre-yuan",
   persons,
   reigns,
+);
+const { persons: importPersons, reigns: importReigns } = mergeAppellationsIntoPersons(
+  finalized.persons,
+  finalized.reigns,
 );
 
 const sql = [

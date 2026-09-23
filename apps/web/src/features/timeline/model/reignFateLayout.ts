@@ -132,6 +132,7 @@ export function layoutReignFates(
   viewport: ViewportState,
   personNames: ReadonlyMap<string, string>,
   personDisplay: ReadonlyMap<string, {
+    title?: string;
     ancestralXing?: string;
     clanShi?: string;
     posthumousNames?: string[];
