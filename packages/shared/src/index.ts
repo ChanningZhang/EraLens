@@ -4,6 +4,7 @@ export * from "./reignVisual";
 export * from "./schema";
 export * from "./eventTime";
 export * from "./personTime";
+export * from "./personSearchTerms";
 export * from "./emperorAppellation";
 export * from "./rocTaiwanLeaderDisplay";
 export * from "./timelineData";

@@ -2,11 +2,15 @@ import {
   buildEntityDetail,
   DynastyCapitalSchema,
   EntityDetailSchema,
+  eventKindLabel,
+  eventSpanAbs,
+  normalizeSearchTerm,
   personIntersectsAbsWindow,
+  personTimelinePlacement,
   SearchHitSchema,
-  searchEntities,
   TimelineCatalogSchema,
   TimelineSliceSchema,
+  type Event,
 } from "@eralens/shared";
 import type { FastifyInstance } from "fastify";
 import { prisma } from "../db.js";
@@ -395,8 +399,87 @@ export async function registerRoutes(app: FastifyInstance) {
   app.get("/search", async (request, reply) => {
     reply.header("Cache-Control", CACHE_HEADER);
     const query = request.query as { q?: string };
-    const store = await loadStore();
-    const hits = searchEntities(store, query.q ?? "");
+    const q = normalizeSearchTerm(query.q ?? "");
+    if (!q) return [];
+
+    const [personRows, dynastyRows, reignRows, eventRows, capitalRows] = await Promise.all([
+      prisma.person.findMany({
+        where: { searchTerms: { has: q } },
+        take: 12,
+      }),
+      prisma.dynasty.findMany({
+        where: { name: { contains: q, mode: "insensitive" } },
+        take: 12,
+      }),
+      prisma.reign.findMany({
+        where: { eraNames: { contains: q, mode: "insensitive" } },
+        include: { person: true, dynasty: true },
+        take: 12,
+      }),
+      prisma.event.findMany({
+        where: {
+          OR: [
+            { name: { contains: q, mode: "insensitive" } },
+            { meaning: { contains: q, mode: "insensitive" } },
+          ],
+        },
+        take: 12,
+      }),
+      prisma.dynastyCapital.findMany({
+        where: {
+          OR: [
+            { historicalName: { contains: q, mode: "insensitive" } },
+            { modernName: { contains: q, mode: "insensitive" } },
+          ],
+        },
+        include: { dynasty: true },
+        take: 12,
+      }),
+    ]);
+
+    const hits = [
+      ...dynastyRows.map((dynasty) => ({
+        ref: { type: "dynasty" as const, id: dynasty.id },
+        label: dynasty.name,
+        abs: dynasty.startAbs,
+      })),
+      ...personRows.map((row) => {
+        const person = mapPerson(row);
+        return {
+          ref: { type: "person" as const, id: person.id },
+          label: person.name,
+          subtitle: person.roles.join(" · "),
+          abs: personTimelinePlacement(person)?.anchorAbs,
+        };
+      }),
+      ...reignRows.map((reign) => ({
+        ref: { type: "reign" as const, id: reign.id },
+        label:
+          reign.eraNames
+            ?.split(",")
+            .map((name) => name.trim())
+            .find((name) => normalizeSearchTerm(name).includes(q)) ?? reign.title,
+        subtitle: `${reign.person.name} · ${reign.dynasty.name}`,
+        abs: reign.startAbs,
+      })),
+      ...capitalRows.map((capital) => ({
+        ref: { type: "capital" as const, id: capital.id },
+        label: capital.historicalName,
+        subtitle: `${capital.modernName} · ${capital.dynasty.name} · 都城`,
+        abs: capital.startAbs,
+      })),
+      ...eventRows.map((event) => ({
+        ref: { type: "event" as const, id: event.id },
+        label: event.name,
+        subtitle:
+          event.kind === "idiom" ? "成语" : eventKindLabel(event.kind as Event["kind"]),
+        abs: eventSpanAbs({
+          atAbs: event.atAbs ?? undefined,
+          startAbs: event.startAbs ?? undefined,
+          endAbs: event.endAbs ?? undefined,
+        }).anchorAbs,
+      })),
+    ].slice(0, 12);
     return SearchHitSchema.array().parse(hits);
   });
 

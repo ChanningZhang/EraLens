@@ -127,6 +127,8 @@ export const PersonSchema = z.object({
   posthumousNames: z.array(z.string()).default([]),
   /** Comma-separated in DB; parsed to array at runtime. */
   templeNames: z.array(z.string()).default([]),
+  /** Optional in client/mock data; the database owns the persisted search index. */
+  searchTerms: z.array(z.string()).optional(),
 });
 
 export const AppellationKindSchema = z.enum([
@@ -139,7 +141,7 @@ export const AppellationKindSchema = z.enum([
 /**
  * Marker for a ruler who is not on the conventionally counted orthodox line.
  * With `claimTrack`: concurrent claimant (隋末三帝并立, 南明鲁监国 / 绍武),
- * dashed parallel row. Without `claimTrack`: sequential usurper on the main
+ * secondary parallel row. Without `claimTrack`: sequential usurper on the main
  * row (有穷代夏), no gold and no extra stack. Absent means main succession.
  */
 export const ClaimRoleSchema = z.enum(["rival"]);

@@ -10,7 +10,7 @@ import type { Reign } from "./schema";
  * - other kebab-case keys — one vertical sub-row per seat (`changan`, `lu-jian`)
  * - `claimLabel` — seat shown in tooltip / detail (长安 / 绍兴监国)
  * - `claimRole` — `rival` for a reign that is not the conventionally counted
- *   line. With `claimTrack` it is a concurrent claimant (dashed sub-row).
+ *   line. With `claimTrack` it is a concurrent claimant on a secondary row.
  *   Without `claimTrack` it stays sequential on the main row (有穷代夏) but
  *   still skips orthodox gold and the main succession chain.
  *

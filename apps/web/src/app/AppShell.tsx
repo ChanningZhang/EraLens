@@ -118,7 +118,7 @@ export function AppShell() {
         <div className={styles.searchWrap}>
           <input
             className={styles.searchInput}
-            placeholder="搜索人物、王朝、事件…"
+            placeholder="搜索人物、王朝、年号、都城、事件…"
             value={search}
             onChange={async (e) => {
               const value = e.target.value;
@@ -168,12 +168,9 @@ export function AppShell() {
               非正式君主
             </span>
             <span className={styles.legendItem}>
-              <span className={`${styles.legendSwatch} ${styles.legendDashed}`} aria-hidden="true" />
-              并立或史料缺载
-            </span>
-            <span className={styles.legendItem}>
               <svg className={`${styles.legendSwatch} ${styles.legendWave}`} viewBox="0 0 24 12" aria-hidden="true">
-                <path d="M1 6 C4 1, 7 1, 10 6 S16 11, 19 6 S22 1, 24 4" />
+                <path d="M3 0 C1 1 5 2 3 3 C1 4 5 5 3 6 C1 7 5 8 3 9 C1 10 5 11 3 12" />
+                <path d="M21 0 C19 1 23 2 21 3 C19 4 23 5 21 6 C19 7 23 8 21 9 C19 10 23 11 21 12" />
               </svg>
               年代失考
             </span>

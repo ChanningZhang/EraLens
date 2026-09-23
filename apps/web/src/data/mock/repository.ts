@@ -6,6 +6,7 @@ import {
   ReignSchema,
   RelationSchema,
   buildEntityDetail,
+  buildPersonSearchTerms,
   computeBounds,
   filterTimeline,
   searchEntities,
@@ -33,7 +34,11 @@ const reigns = [
   ...ReignSchema.array().parse(reignsJson),
   ...(import.meta.env.VITE_PERF_DATA === "1" ? generateBulkReigns() : []),
 ];
-const persons = PersonSchema.array().parse(personsJson);
+const rawPersons = PersonSchema.array().parse(personsJson);
+const persons = rawPersons.map((person) => ({
+  ...person,
+  searchTerms: buildPersonSearchTerms(person, reigns, dynasties),
+}));
 const events = EventSchema.array().parse(eventsJson);
 const relations = RelationSchema.array().parse(relationsJson);
 
@@ -72,7 +77,7 @@ const mockCapitals: DynastyCapital[] = [
   },
 ];
 
-const store = { dynasties, reigns, persons, events, relations };
+const store = { dynasties, reigns, persons, events, relations, capitals: mockCapitals };
 
 export const mockRepository: TimelineRepository = {
   async getTimeline(query: TimelineQuery) {

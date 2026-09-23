@@ -108,7 +108,15 @@ Task Progress:
 - 事件 `{topic}`：`xuanwumen`、`muye`
 - 关系 `rel-{from}-{to}-{kind}`
 
-`persons.name` 用可检索的常用名（禹、姬发、孔子、韦后）。**入库时君主姓名须带姓**（如莒郊公写 `己狂` 而非 `狂`，薛献公写 `任谷` 而非 `谷`），便于搜索；时间轴卡片在始皇帝以前主行显示谥号/称号，由 `resolveReignCardLabel` 处理，不要为迁就卡片去改姓名字段。维基诸侯表若只给「国君本名」，须结合该国姓氏（如莒己、滕姬、杞姒）补全；仅知谥号而本名失考时，可用 `{姓}{谥号}`（如 `姒武公`）。先秦王朝/人物须写入 `ancestral_xing` / `clan_shi`（`feudalClanMetadata.mjs` + `applyFeudalClanMetadata`），运行时只按该字段去姓，不维护姓氏表。搜索匹配 `persons.name` 与 `persons.alt_names`（如 `姜子牙` → `lv-shang`），不匹配 `title` 或谥号。
+`persons.name` 用可检索的常用名（禹、姬发、孔子、韦后）。**入库时君主姓名须带姓**（如莒郊公写 `己狂` 而非 `狂`，薛献公写 `任谷` 而非 `谷`），便于搜索；时间轴卡片在始皇帝以前主行显示谥号/称号，由 `resolveReignCardLabel` 处理，不要为迁就卡片去改姓名字段。维基诸侯表若只给「国君本名」，须结合该国姓氏（如莒己、滕姬、杞姒）补全；仅知谥号而本名失考时，可用 `{姓}{谥号}`（如 `姒武公`）。先秦王朝/人物须写入 `ancestral_xing` / `clan_shi`（`feudalClanMetadata.mjs` + `applyFeudalClanMetadata`），运行时只按该字段去姓，不维护姓氏表。常用称呼与人工别名仍写 `persons.alt_names`；数据库会把姓名、别名、姓/氏组合、庙谥、reign title、朝代名 + 庙谥预生成到 `persons.search_terms`。
+
+**人物搜索词与索引（强制）**：
+
+- `persons.search_terms` 是预计算的标准化 `text[]`，用于完整词命中；API 使用数组包含查询，依赖 `persons_search_terms_gin_idx`，禁止在请求时遍历全量 person/reign/dynasty 临时拼词。
+- 搜索词包括：`name`、`alt_names`、按结构化 `ancestral_xing` / `clan_shi` 生成的姓+名/氏+名、`posthumous_name`、`temple_name`、人物关联的 `reigns.title`，以及关联王朝 `name` / `alt_names` + 庙号或谥号（如 `唐太宗`、`唐文皇帝`）。不要把带朝代的组合词写回庙谥字段。
+- `name`、`alt_names`、`ancestral_xing`、`clan_shi`、`posthumous_name`、`temple_name` 发生变化，或关联 reign 的 `person_id` / `dynasty_id` / `title`、王朝 `name` / `alt_names` 发生变化后，必须刷新 `search_terms`。数据库触发器会自动刷新受影响人物。
+- 大批量脚本改写人物、在位或王朝相关字段后，必须显式执行 `SELECT rebuild_person_search_terms();` 全量重建搜索词并抽查目标人物。更新 `search_terms` 时 PostgreSQL 会自动维护 GIN 条目；正常数据变更禁止额外执行锁表的 `REINDEX`，只有索引损坏时才物理重建。
+- `personSql` 不手填 `search_terms`；继续写结构化来源字段，由数据库统一派生，避免各导入包算法漂移。
 
 **谥号 / 庙号 / 年号字段**（与商周一致）：
 - **谥号、庙号**写在 `persons.posthumous_name` / `persons.temple_name`（逗号分隔 CSV，同人多值按在位顺序）；卡片取第一个，详情用 `、` 展示全部。
@@ -252,6 +260,7 @@ curl -s "http://localhost:3001/api/bounds"
 - 对争议年代在 `manifest.json` 的 `notes` 与事件 `date_note` 说明取舍，不 silently 编造精确到月。
 - 生卒不明则 `birth_*` / `death_*` 用 NULL，不要用正月占位冒充已知。
 - 各包 `personSql` 优先用 `data/imports/lib/sqlHelpers.mjs` 的共享模板（含 `alt_names`、姓氏列）。
+- 修改人物、reign 归属/称号或王朝名称后，确认 `persons.search_terms` 已由触发器刷新；批量更新后运行 `SELECT rebuild_person_search_terms();` 并验证 GIN 查询。
 - 正统金色：`dynastySql()` + `orthodoxDynasties.mjs` 烘焙 `orthodox_*`；相续泳道组走 `data/imports/dynasty-lane-groups/`。
 
 ## 成语典故（`data/imports/idioms/`）

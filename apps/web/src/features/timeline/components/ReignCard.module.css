@@ -96,13 +96,9 @@
   font-size: 9px;
 }
 
-/*
- * Parallel claimants share one treatment: a dashed outline. 史料缺 uses a
- * thinner, emptier dashed gap card, so these keep a tinted fill.
- */
+/* Parallel claimants use a lighter filled card on their secondary row. */
 .parallel {
   background: color-mix(in srgb, var(--card-color) 8%, var(--color-surface));
-  border-style: dashed;
   border-width: 2px;
   border-color: color-mix(in srgb, var(--card-color) 30%, var(--color-border));
 }

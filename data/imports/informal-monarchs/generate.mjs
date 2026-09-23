@@ -190,12 +190,12 @@ const existingInformalReigns = [
   "reign-song-qingling-dong-biwu-prc",
   // 10. 中华人民共和国 - 全国人大常委会
   "reign-npc-standing-committee-prc",
+  // 南明鲁王朱以海：绍兴监国，非正式皇帝
+  "reign-zhu-yihai-ming-south",
 ];
 
 // Clear informal flag for reigns that should no longer be marked
 const clearInformalReigns = [
-  // 南明鲁王朱以海：去掉非正式标记
-  "reign-zhu-yihai-ming-south",
   // 董必武代主席 1972–1975：去掉非正式标记
   "reign-dong-biwu-prc",
 ];

@@ -78,6 +78,9 @@ async function main() {
         data: {
           id: person.id,
           name: person.name,
+          altNames: person.altNames,
+          ancestralXing: person.ancestralXing,
+          clanShi: person.clanShi,
           birthYear: person.birth?.year,
           birthMonth: person.birth?.month,
           deathYear: person.death?.year,

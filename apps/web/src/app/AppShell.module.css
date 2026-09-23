@@ -44,9 +44,8 @@
 .searchWrap {
   position: absolute;
   top: 12px;
-  left: 50%;
-  width: min(360px, calc(100% - 220px));
-  transform: translateX(-50%);
+  left: calc(var(--timeline-gutter) + 20px);
+  width: min(250px, calc(100% - var(--timeline-gutter) - 44px));
   pointer-events: auto;
 }
 
@@ -141,11 +140,6 @@
   );
 }
 
-.legendDashed {
-  border: 2px dashed var(--color-ink-muted);
-  background: color-mix(in srgb, var(--color-ink-muted) 5%, transparent);
-}
-
 .legendWave {
   overflow: visible;
   fill: none;
@@ -224,7 +218,7 @@
 
 @media (max-width: 960px) {
   .searchWrap {
-    width: min(300px, calc(100% - 24px));
+    width: min(300px, calc(100% - var(--timeline-gutter) - 44px));
   }
 
   .legend {

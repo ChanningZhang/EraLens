@@ -36,6 +36,7 @@ import {
   personIntersectsAbsWindow,
   personTimelinePlacement,
 } from "./personTime";
+import { normalizeSearchTerm } from "./personSearchTerms";
 import { DATE_CONFIDENCE_LABEL } from "./reignBoundaries";
 import { isFateRelationKind } from "./reignFateRelations";
 import { rangeIntersectsWindow } from "./time";
@@ -528,14 +529,18 @@ export function buildEntityDetail(
 }
 
 function personMatchesSearch(person: Person, q: string): boolean {
-  if (person.name.toLowerCase().includes(q)) return true;
-  return person.altNames?.some((alias) => alias.toLowerCase().includes(q)) ?? false;
+  const terms = person.searchTerms?.length
+    ? person.searchTerms
+    : [person.name, ...(person.altNames ?? [])];
+  return terms.some((term) => normalizeSearchTerm(term) === q);
 }
 
 export function searchEntities(store: TimelineDataStore, term: string): SearchHit[] {
-  const q = term.trim().toLowerCase();
+  const q = normalizeSearchTerm(term);
   if (!q) return [];
   const hits: SearchHit[] = [];
+  const personById = new Map(store.persons.map((person) => [person.id, person]));
+  const dynastyById = new Map(store.dynasties.map((dynasty) => [dynasty.id, dynasty]));
 
   for (const dynasty of store.dynasties) {
     if (dynasty.name.toLowerCase().includes(q)) {
@@ -556,6 +561,32 @@ export function searchEntities(store: TimelineDataStore, term: string): SearchHi
         abs: placement?.anchorAbs,
       });
     }
+  }
+  for (const reign of store.reigns) {
+    const matchedEraNames = reign.eraNames.filter((eraName) =>
+      eraName.toLowerCase().includes(q),
+    );
+    if (matchedEraNames.length === 0) continue;
+    const person = personById.get(reign.personId);
+    const dynasty = dynastyById.get(reign.dynastyId);
+    hits.push({
+      ref: { type: "reign", id: reign.id },
+      label: matchedEraNames[0],
+      subtitle: [person?.name, dynasty?.name].filter(Boolean).join(" · ") || undefined,
+      abs: reign.startAbs,
+    });
+  }
+  for (const capital of store.capitals ?? []) {
+    const dynasty = dynastyById.get(capital.dynastyId);
+    const nameHit = normalizeSearchTerm(capital.historicalName).includes(q);
+    const modernNameHit = normalizeSearchTerm(capital.modernName).includes(q);
+    if (!nameHit && !modernNameHit) continue;
+    hits.push({
+      ref: { type: "capital", id: capital.id },
+      label: capital.historicalName,
+      subtitle: [capital.modernName, dynasty?.name, "都城"].filter(Boolean).join(" · "),
+      abs: capital.startAbs,
+    });
   }
   for (const event of store.events) {
     const nameHit = event.name.toLowerCase().includes(q);

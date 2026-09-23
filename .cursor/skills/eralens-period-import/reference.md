@@ -78,7 +78,21 @@ ON CONFLICT (id) DO UPDATE SET
   temple_name = EXCLUDED.temple_name;
 ```
 
-检索别名（如 `lv-shang` → `姜子牙`）写入 `alt_names`，不要在前端或 shared 维护硬编码映射。
+检索别名（如 `lv-shang` → `姜子牙`）写入 `alt_names`，不要在前端或 shared 维护硬编码映射。`search_terms` 不写进 INSERT；数据库触发器根据人物字段、关联 reign 与王朝统一生成。
+
+人物相关字段、reign 的人物/王朝归属或称号、王朝名称发生变化时，触发器会刷新对应 `persons.search_terms`，GIN 索引随行更新自动维护。批量 SQL 改写后必须执行：
+
+```sql
+SELECT rebuild_person_search_terms();
+```
+
+完整词查询使用数组包含操作符以命中 GIN：
+
+```sql
+SELECT id, name
+FROM persons
+WHERE search_terms @> ARRAY['唐太宗']::text[];
+```
 
 后宫/宗室政治人物示例（无 `reign`，`name` 用通行检索名）：
 
@@ -518,7 +532,8 @@ ON CONFLICT (id) DO UPDATE SET
 |---|---|---|
 | 正统金色起迄 | `orthodox_from_abs` / `orthodox_end_abs`（`orthodoxDynasties.mjs` + `dynastySql`） | 只读 DB 列 |
 | 相续泳道合并 | `dynasty_lane_groups` | API 下发，`dynastyLaneGroups.ts` 无硬编码组 |
-| 检索别名 | `persons.alt_names` | 搜索匹配 `name` + `altNames` |
+| 检索别名 | `persons.alt_names` | 作为人工来源字段，由触发器合并进 `search_terms` |
+| 人物搜索索引 | `persons.search_terms` | 预生成姓名、别名、姓/氏组合、庙谥、title、朝代 + 庙谥；`text[]` GIN 完整词查询 |
 | 庙号/谥号/先秦称号 | `persons.posthumous_name` / `persons.temple_name` / `reigns.title` | `resolveEmperorAppellation` 按 618/1368/-221 阈值读 person 庙谥 + reign 年号；**不**从 `title` 推导庙谥 |
 | 年号 | `reigns.era_names` CSV | 卡片取第一个，详情 `、` 连接全部 |
 | 姓/氏 | `persons.ancestral_xing` / `persons.clan_shi` | `stripAncestralXing` 读 DB |

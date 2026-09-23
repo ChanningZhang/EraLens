@@ -22,12 +22,14 @@ model Person {
   links       Json                @default("[]")
   posthumousName String?          @map("posthumous_name")
   templeName  String?             @map("temple_name")
+  searchTerms String[]            @default([]) @map("search_terms")
   reigns      Reign[]
   participants EventParticipant[]
 
   @@index([birthYear])
   @@index([deathYear])
   @@index([name])
+  @@index([searchTerms], type: Gin, map: "persons_search_terms_gin_idx")
   @@map("persons")
 }
 
