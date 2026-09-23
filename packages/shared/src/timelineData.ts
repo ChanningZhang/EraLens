@@ -140,11 +140,21 @@ function idiomRelatedItems(events: Event[]): RelatedItem[] {
   }));
 }
 
-function eventRelatedItems(events: Event[]): RelatedItem[] {
-  return sortEventsByAnchor(events.filter((e) => e.kind !== "idiom")).map((e) => ({
+function poetryRelatedItems(events: Event[]): RelatedItem[] {
+  return sortEventsByAnchor(events.filter((e) => e.kind === "poetry")).map((e) => ({
     ref: { type: "event", id: e.id },
     label: e.name,
-    subtitle: e.kind === "poetry" ? eventKindLabel(e.kind) : formatEventTime(e),
+    subtitle: eventKindLabel(e.kind),
+    abs: eventSpanAbs(e).anchorAbs,
+    group: "poetry",
+  }));
+}
+
+function eventRelatedItems(events: Event[]): RelatedItem[] {
+  return sortEventsByAnchor(events.filter((e) => e.kind !== "idiom" && e.kind !== "poetry")).map((e) => ({
+    ref: { type: "event", id: e.id },
+    label: e.name,
+    subtitle: formatEventTime(e),
     abs: eventSpanAbs(e).anchorAbs,
     group: "event",
   }));
@@ -276,6 +286,7 @@ function buildPersonEntityDetail(
       ...fateRelationRelatedItems(store, personReigns, buildRelatedSummary),
       ...eventRelatedItems(participantEvents),
       ...idiomRelatedItems(participantEvents),
+      ...poetryRelatedItems(participantEvents),
     ],
     capitalTenures,
     links: person.links ?? [],
@@ -382,6 +393,7 @@ export function buildEntityDetail(
       e.dynastyIds.includes(dynasty.id),
     );
     const idiomRelated = idiomRelatedItems(dynastyEvents);
+    const poetryRelated = poetryRelatedItems(dynastyEvents);
     const eventRelated = eventRelatedItems(dynastyEvents);
     const capitalRelated = dynastyCapitalRelatedItems(dynasty.id, store.capitals ?? []);
     return {
@@ -399,7 +411,7 @@ export function buildEntityDetail(
         { label: "范围", value: dynasty.scope === "cn" ? "中国史" : dynasty.scope },
       ],
       summary: dynasty.note,
-      related: [...capitalRelated, ...eventRelated, ...idiomRelated],
+      related: [...capitalRelated, ...eventRelated, ...idiomRelated, ...poetryRelated],
       capitalTenures: [],
       links: [],
     };

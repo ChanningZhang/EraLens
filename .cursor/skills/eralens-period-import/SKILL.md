@@ -62,6 +62,7 @@ Task Progress:
   - **span**：事件真实持续一段时间。填 `start_*` + `end_*`，`time_mode: span`。
   - **circa**：大约发生于某窗口（或诸说不一）。窗口填 `start_*` + `end_*`，`time_mode: circa`；学界常用估计可另填 `at_*`（年精度时同样落在 12 月）；原文说法写入 `date_note`。
 - 王朝 / 在位月不确定：标 `precision: year`，用月初 / 月末占位。
+- **史料记作“约某年 / 约前某年”**：将该年视为史料给出的确定年桶，按 `precision: year` 记录；reign 不填 `start_date_confidence` / `end_date_confidence`，事件不因此改用 `circa`。这里的“确定”表示忠实采用史料所载年份，不代表史料精确到月日。只有年份由导入者自行推算、插值，或来源给出的是跨年范围 / 多种互相冲突的年份时，才按推算或 `circa` 规则处理。
 - **年精度顺序继位切年**（先秦通行，与英文维基国王表 / 逾年改元一致；实现见 `data/imports/lib/deathYearSuccession.mjs`）：
   - **死年整年归旧王**，新王从**下一年**起算。维基「在位年份」常把死年同时写作新王起年（如秦文公「前766年－前716年」叠在襄公卒年），时间轴按年桶绘制时不要把这一年画成两人并立。
   - 不要把公历 1 月 1 日当成即位日；1–12 月只是年桶占位。中国年本身也不是公历元旦起算。
@@ -77,7 +78,7 @@ Task Progress:
   - 来源明确表明该期存在国君、但姓名或具体世次失载，才写一条系统缺失占位 reign。
   - 历史上确实无人统治该王朝行（改朝换号、中断、摄政期不设君等），不写 reign，前端自然留白。例如武周期间的唐行不写占位。
   - 只是本次导入深度不足或尚未搜集完整，必须继续查证/补齐，不能标成「史料缺」。
-- 无实测或无通行王年（夏代、商前期常见）：只收关键人物，事件用 `circa` + `date_note`。禁止用传统积年填满每一王来「补齐」时间轴。
+- 无实测或无通行王年（夏代、商前期常见）：若世系连续、君主次序明确，且存在可核的共同时段边界（例如王朝约始年与后续可靠年表的首位君主），在边界间按君主数量均分并标 `interpolated`；锚点相接一侧保持确定。若世系有失考断层、没有可核的共同时段边界，或只能依传统积年推算，则只收关键人物，事件用 `circa` + `date_note`，不得自行补满每一王。
 - 摄政、共和等非王时期建**事件**，不建 reign。
 - **并立称君**（隋末三帝、南明鲁监国/绍武）留在同一王朝行，用 `claim_track` 分行同时显示，不要拆成多个王朝：
   - **判定并列只看是否「同时另立」**，与是否权臣拥立无关。
@@ -171,9 +172,9 @@ node .cursor/skills/eralens-period-import/scripts/compute-abs.mjs -1046 1  # -12
 
 **在位年失考 / 推算边界**（与史料缺区分）：
 
-- 世系连续但在位年为插值或约数时，在 `reigns` 行标注 `start_date_confidence` / `end_date_confidence`：`certain`（默认 NULL）、`approximate`、`interpolated`。
+- 世系连续但在位年由导入者推算或插值时，在 `reigns` 行标注 `start_date_confidence` / `end_date_confidence`：`approximate`、`interpolated`（确定值默认 NULL）。**来源原文仅记“约某年”的年份不属于此处的 approximate，不加置信度标记。**
 - 前端按本卡 `start_date_confidence` / `end_date_confidence` 在起年/迄年边画波浪线。日历相接的两王交界两侧必须同为失考或同为确定；贴着年表锚点的一侧不打失考标记。灭国留白不相接，各画自己的失考边。
-- `build-rulers.mjs` 对 `fillUndatedYears` 在锚点窗口内按世系**均分**在位年（不设 35 年上限），并自动打 `interpolated`；有年表锚点的边界保持 NULL。
+- `build-rulers.mjs` 对 `fillUndatedYears` 在锚点窗口内按连续世系**均分**在位年（不设 35 年上限），并自动打 `interpolated`；有年表锚点的边界保持 NULL。缺少两端锚点或世系中断时，不跨断层均分。
 - 灭国、亡国等确实无国君的空档：若需占位用史料缺；若仅年代不可考则靠 confidence + 波浪线，不要混用。
 
 ### 3. 冲突检查

@@ -69,6 +69,7 @@ writeImportPackage(__dirname, {
     "  'rel-teng-r6-yue-r8-captured',",
     "  'rel-teng-r6-song-r32-captured',",
     "  'rel-missing-teng-chunqiu-yue-r8-captured',",
+    "  'rel-missing-teng-chunqiu-song-r33-captured',",
     "  'rel-ju-r7-chu-r30-captured',",
     "  'rel-qi-state-r6-qi-r31-captured',",
     "  'rel-zhongshan-r6-zhao-r5-captured',",

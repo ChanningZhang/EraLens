@@ -20,7 +20,7 @@ export function eventKindLabel(kind: Event["kind"]): string {
     case "idiom":
       return "成语";
     case "poetry":
-      return "古诗";
+      return "诗歌";
     case "other":
       return "其他";
   }

@@ -139,9 +139,9 @@ export function buildFateCatalog() {
       resolveAt: () => ym(-327, 12),
     },
     {
-      // 前414年越朱勾灭滕后复国；史料缺卡止于前296，终灭者为宋康王。
+      // 滕复国后至前296年终为宋所灭；亡国君姓名失载。
       id: "rel-missing-teng-chunqiu-song-r33-captured",
-      fromReignId: "reign-missing-teng-chunqiu--484",
+      fromReignId: "reign-missing-teng-chunqiu--296",
       toPersonId: "song-r33",
       kind: "captured",
       eventId: null,

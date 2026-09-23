@@ -7,6 +7,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
   person,
+  reign,
   dr,
   ym,
   eventPoint,
@@ -23,7 +24,7 @@ function rulerPerson(id, name, dynastyLabel, title, bio, wikiTitle = name) {
   return person(id, name, ["君主"], bio ?? `${title}，${dynastyLabel}君主。`, wikiTitle);
 }
 
-// ── reign definitions (维基诸侯君主表 / 左传可考年) ─────────────────────────
+// ── reign definitions (documented and interpolated ruler succession) ─────────
 
 const xueReigns = [
   // 左传仅载昭公三十一年（前511）薛伯谷卒，在位始年不详
@@ -33,12 +34,99 @@ const xueReigns = [
   dr("xue-chunqiu", "xue-r4", "薛惠公", "惠公", null, -496, -485),
 ];
 
-const tengReigns = [
+const tengAnchoredReigns = [
   dr("teng-chunqiu", "teng-r2", "滕文公", "文公", null, -599, -575),
   dr("teng-chunqiu", "teng-r3", "滕成公", "成公", null, -574, -539),
   dr("teng-chunqiu", "teng-r4", "滕悼公", "悼公", null, -538, -514),
   dr("teng-chunqiu", "teng-r5", "滕顷公", "顷公", null, -513, -491),
   dr("teng-chunqiu", "teng-r6", "滕隐公", "隐公", null, -490, -484),
+];
+
+// Named and numbered rulers whose identities/世次 are attested. Unrecorded
+// regnal dates are interpolated between the documented chronological anchors.
+const tengRulerRoster = [
+  ["teng-r0", "姬绣", "滕错叔", "周武王所封的滕国始封君。"],
+  ["teng-r1", "姬穀", "滕庄公", "《春秋》隐公七年载其卒于前716年；旧谱名穀（亦作毂）。"],
+  ["teng-r7", "姬婴齐", "滕宣公", "前641年为宋所执；按《世本》及杜预《春秋释例》为滕国第十七世君。"],
+  ["teng-r8", "姬郑", "滕孝侯", "滕宣公之后、滕昭公之前的滕君；在位年代失考。"],
+  ["teng-r9", "姬元", "滕昭公", "前615年朝鲁，前600年卒；姓名另有毛伯等异说。"],
+  ["teng-r10", "姬？", "滕子", "《左传·僖公二十二年》（前638年）记载的滕君；本名失考。"],
+  ["teng-r11", "姬？", "滕子", "《左传·庄公十六年》（前678年）记载的滕君；本名失考。"],
+  ["teng-r12", "姬？", "滕子", "《左传·桓公二年》（前710年）记载其朝鲁；本名及卒年失考。"],
+  ["teng-r13", "姬？", "滕侯", "《左传·隐公十一年》所载滕侯，前715至前711年在位；本名失考。"],
+  ["teng-r20", "姬？", "滕公", "西周成康之际滕国第二世君，见《吾鬲》及《滕侯簋》铭文；本名失考。"],
+  ["teng-r21", "姬？", "滕侯", "西周康王时期滕国第三世君，见《滕侯方鼎》《滕侯簋》铭文；本名失考。"],
+  ["teng-r22", "姬命仲", "命仲", "西周康昭之际滕国第四世君，见《滕虎簋》铭文。"],
+  ["teng-r23", "姬？", "滕侯", "命仲之子、滕伯文之父，西周昭王时期；姓名失载。"],
+  ["teng-r24", "姬文", "滕伯文", "西周昭穆之际滕国第六世君，见《礼记·檀弓上》。"],
+  ...Array.from({ length: 6 }, (_, i) => {
+    const generation = i + 7;
+    return [`teng-r${generation + 18}`, "姬？", "？", `滕国第${generation}世君，世次据《世本》及杜预《春秋释例》推定，姓名失载。`];
+  }),
+  ["teng-r31", "姬？", "？", "《世本》称滕隐公后六世，张志鹏《滕国新考》据《古本竹书纪年》推为前414年初次亡于越时的末代滕君；本名失载。"],
+  ...Array.from({ length: 5 }, (_, i) => {
+    const generation = i + 26;
+    return [`teng-r${generation + 7}`, "姬？", "？", `滕隐公之后第${generation - 25}世，列入《世本》所谓隐公后六世，姓名失载。`];
+  }),
+  ["teng-r16", "姬麇", "滕考公", "《世本》所载考公麇；赵岐注《孟子》认为即复国后的滕定公，前324年卒。"],
+  ["teng-r17", "姬弘", "滕元公", "《世本》所载元公弘；赵岐注《孟子》认为即滕文公，前323至前316年在位。"],
+  ["teng-r18", "姬昃", "滕侯昃", "据滕侯昃戈、敦铭文，属战国中期；可能是复国后的滕君，具体年代有争议。"],
+  ["teng-r19", "姬丘", "滕公丘", "后世谱系说列为亡国君，前315至前296年；复旦《滕国新考》认为末代君主失名，故不据此建在位卡。"],
+];
+
+function interpolateTengReigns(entries, startYear, endYear, approximateStart = false) {
+  const totalYears = endYear - startYear + 1;
+  const baseYears = Math.floor(totalYears / entries.length);
+  const extraYears = totalYears % entries.length;
+  let nextYear = startYear;
+  return entries.map(([personId, title], index) => {
+    const duration = baseYears + (index < extraYears ? 1 : 0);
+    const rulerStart = nextYear;
+    const rulerEnd = nextYear + duration - 1;
+    nextYear = rulerEnd + 1;
+    return reign({
+      id: `reign-${personId}-teng-chunqiu`, dynastyId: "teng-chunqiu", personId, title,
+      start: ym(rulerStart), end: ym(rulerEnd, 12),
+      startDateConfidence: index === 0 ? (approximateStart ? "approximate" : null) : "interpolated",
+      endDateConfidence: index === entries.length - 1 ? null : "interpolated",
+    });
+  });
+}
+
+const tengEarlyReigns = interpolateTengReigns([
+  ["teng-r0", "滕错叔"], ["teng-r20", "？"], ["teng-r21", "？"],
+  ["teng-r22", "命仲"], ["teng-r23", "？"], ["teng-r24", "滕伯文"],
+  ["teng-r25", "？"], ["teng-r26", "？"], ["teng-r27", "？"],
+  ["teng-r28", "？"], ["teng-r29", "？"], ["teng-r30", "？"],
+  ["teng-r1", "滕侯"],
+], -1045, -716, true);
+
+const tengLostSixReigns = interpolateTengReigns(
+  [...Array.from({ length: 5 }, (_, i) => [`teng-r${i + 33}`, "？"]), ["teng-r31", "？"]], -483, -414,
+);
+
+function interpolatedTengReign(personId, title, startYear, endYear, startDateConfidence = "interpolated", endDateConfidence = "interpolated") {
+  return reign({
+    id: `reign-${personId}-teng-chunqiu`, dynastyId: "teng-chunqiu", personId, title,
+    start: ym(startYear), end: ym(endYear, 12), startDateConfidence, endDateConfidence,
+  });
+}
+
+const tengMiddleReigns = [
+  interpolatedTengReign("teng-r12", "？", -710, -695, null),
+  interpolatedTengReign("teng-r11", "？", -694, -660),
+  interpolatedTengReign("teng-r7", "滕宣公", -659, -640),
+  interpolatedTengReign("teng-r10", "？", -639, -631),
+  interpolatedTengReign("teng-r8", "孝侯", -630, -623),
+  interpolatedTengReign("teng-r9", "滕昭公", -622, -600, "interpolated", null),
+];
+
+const tengReigns = [
+  ...tengEarlyReigns,
+  dr("teng-chunqiu", "teng-r13", "？", null, null, -715, -711),
+  ...tengMiddleReigns,
+  ...tengLostSixReigns,
+  ...tengAnchoredReigns,
 ];
 
 const qiStateReigns = [
@@ -312,9 +400,15 @@ const curatedMissingReigns = [
   }),
   missingReign({
     dynastyId: "teng-chunqiu",
-    startYear: -484,
+    startYear: -296,
     endYear: -296,
-    id: "reign-missing-teng-chunqiu--484",
+    id: "reign-missing-teng-chunqiu--296",
+  }),
+  missingReign({
+    dynastyId: "ju-chunqiu",
+    startYear: -1046,
+    endYear: -616,
+    id: "reign-missing-ju-chunqiu--1046",
   }),
   missingReign({
     dynastyId: "ju-chunqiu",
@@ -335,11 +429,15 @@ const DYNASTY_LABELS = {
   "zhou-guo-east": "东周国",
 };
 
+const rosterMeta = new Map(tengRulerRoster.map(([id, name, title, bio]) => [id, { name, wiki: title, bio }]));
 const persons = reigns.map((r) => {
-  const meta = RULER_META[r.personId];
+  const meta = RULER_META[r.personId] ?? rosterMeta.get(r.personId);
   const state = DYNASTY_LABELS[r.dynastyId];
   return rulerPerson(r.personId, meta.name, state, r.title, meta.bio ?? null, meta.wiki);
 });
+for (const [id, name, title, bio] of tengRulerRoster) {
+  if (!persons.some((p) => p.id === id)) persons.push(rulerPerson(id, name, "滕国", title, bio, title));
+}
 
 const dynasties = [
   {
@@ -359,10 +457,10 @@ const dynasties = [
     altNames: ["滕国"],
     scope: "cn",
     region: "east_asia",
-    start: ym(-599),
+    start: ym(-1045),
     end: ym(-296, 12),
     precision: "year",
-    note: "周武王封弟错叔绣于滕；本包仅收录春秋可考君主（文公至隐公）。前414年越灭滕后复国，世系失考；前296年宋康王终灭之。",
+    note: "姬姓诸侯国，周武王封错叔绣。前414年一度为越所灭，后复国，前296年为宋所灭。",
   },
   {
     id: "qi-state-chunqiu",
@@ -381,10 +479,10 @@ const dynasties = [
     altNames: ["莒国"],
     scope: "cn",
     region: "east_asia",
-    start: ym(-615),
+    start: ym(-1046),
     end: ym(-431, 12),
     precision: "year",
-    note: "兹舆期受封后多世失考；本包自春秋可见于《左传》的莒纪公起收录。前431年为楚所灭。",
+    note: "周初（断代工程取前1046年）封兹舆期；至春秋早期世系与具体在位年长期失载，以史料缺占位至前616年，后接可考莒君；前481年后至前431年楚灭莒前再以史料缺占位。",
   },
   {
     id: "dai-warring",
@@ -490,8 +588,11 @@ const cleanupSql = [
   "  'reign-ju-r0-ju-chunqiu',",
   "  'reign-ju-r6-ju-chunqiu'",
   ");",
-  "DELETE FROM persons WHERE id IN ('xue-r0','teng-r0','teng-r1','teng-r7','qi-state-r0','ju-r0','zhou-guo-sijun')",
+  "DELETE FROM persons WHERE id IN ('xue-r0','qi-state-r0','ju-r0','zhou-guo-sijun')",
   "  AND id NOT IN (SELECT person_id FROM reigns);",
+  "DELETE FROM reigns WHERE id = 'reign-missing-teng-chunqiu--484';",
+  "DELETE FROM reigns WHERE id = 'reign-teng-r32-teng-chunqiu';",
+  "DELETE FROM persons WHERE id = 'teng-r32' AND id NOT IN (SELECT person_id FROM reigns);",
   "DELETE FROM reigns WHERE id = 'reign-zhou-guo-sijun-zhou-guo-east';",
 ].join("\n");
 
@@ -501,7 +602,7 @@ const manifest = {
   window: { startYear: -750, startMonth: 1, endYear: -206, endMonth: 12 },
   scope: "cn",
   depth: "standard",
-  generatedAt: "2026-09-13",
+  generatedAt: "2026-09-23",
   counts: {
     persons: persons.length,
     dynasties: dynasties.length,
@@ -513,6 +614,7 @@ const manifest = {
   sources: [
     { label: "薛国", url: "https://zh.wikipedia.org/wiki/薛国" },
     { label: "滕国", url: "https://zh.wikipedia.org/wiki/滕国" },
+    { label: "滕国新考", url: "https://www.fdgwz.org.cn/Web/Show/1428" },
     { label: "杞国", url: "https://zh.wikipedia.org/wiki/杞国" },
     { label: "莒国", url: "https://zh.wikipedia.org/wiki/莒国" },
     { label: "代国 (战国)", url: "https://zh.wikipedia.org/wiki/代国_(战国)" },
@@ -522,9 +624,14 @@ const manifest = {
   ],
   notes: [
     "各国 ancestral_xing / clan_shi 取 feudalClanMetadata（薛任、滕姬、杞姒、莒己、代嬴赵、胶东妫田、西周国/东周国姬）。",
-    "仅收录维基/左传有明确在位年的君主；早期失考君主不强行拉满王朝跨度。",
+    "除滕国外，其他小国仍仅收录有明确在位年的君主；无世次或连续君主数量依据的年代空白不强行拉满。",
     "薛献公仅知前511年卒（左传），不填虚始年；齐庄公/卫武公/曹桓公/宋昭公长年在维基或史记有载，保留。",
-    "薛国自薛献公起；滕国自春秋滕文公起；杞国自武公起；莒国自纪公起。",
+    "莒国起始按《莒国》条目所载周武王元年/前1046年修正；《莒国》明载周初至鲁隐公元年史文空缺，始封兹舆期后多世失考，故从前1046至前616年用系统史料缺占位，再接现有可考君主记录。",
+    "《莒国》条目所列前1046年与夏商周断代工程克商纪年相同；按年精度年桶记王朝起点。",
+    "薛国自薛献公起；滕国起点前移至错叔绣始封的约前1045年；杞国自武公起。",
+    "滕国连续无年表的世系按可考边界均分并标 interpolated：始封至前716年滕侯毂卒之间依《世本》及杜预《春秋释例》共13世；前484年隐公卒至前414年越灭滕依《世本》‘隐公后六世’分为六段。始封约年前1045标 approximate，前716、前414等有来源锚点的外侧边界保持确定。",
+    "滕国君主本名失载时，persons.name 记为姬？，reigns.title 记为？；不以世次说明或爵称代替姓名。",
+    "春秋中段按《春秋》《左传》记事年夹定顺序君主，再在相邻锚点间均分连续在位段，均标 interpolated。前414年越灭滕至复国期间为实际亡国期，泳道内不画君主在位卡；复国后考公麇/定公、元公弘/文公按赵岐注对应。滕侯昃年代有争议；滕公丘属于另一谱系说，不作为确证在位记录。前296年末代君主失名，史料缺占位限于该年。",
     "薛国泳道起年取薛献公（前511，左传仅载卒年），不提前至西周薛伯；惠公之后至灭国用史料缺占位。",
     "杞桓公在位70年、高句丽太祖王等长年在史料中有记载，保留。",
     "代王嘉 person id 为 zhao-jia-dai，与赵桓子 zhao-r2 区分。",
@@ -537,6 +644,7 @@ const manifest = {
 
 const personDynastyId = new Map();
 for (const r of reigns) personDynastyId.set(r.personId, r.dynastyId);
+for (const [id] of tengRulerRoster) personDynastyId.set(id, "teng-chunqiu");
 applyFeudalClanMetadata({ persons, dynasties, personDynastyId });
 
 writeImportPackage(__dirname, {

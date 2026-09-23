@@ -25,6 +25,7 @@ const REMOVED_CAPITAL_IDS = [
   "cap-taiping-tianjing-1853",
   "cap-qin-liyue-424",
   "cap-qin-qianhui-709",
+  "cap-zhou-guo-east-wangcheng-367",
   "cap-han-gengshi-changan-23",
   "cap-chimei-changan-23",
 ];

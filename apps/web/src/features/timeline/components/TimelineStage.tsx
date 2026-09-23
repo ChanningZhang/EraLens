@@ -1,4 +1,4 @@
-import { useMemo, useRef } from "react";
+import { useMemo, useRef, useState } from "react";
 import {
   buildLaneOrderIndex,
   capitalsActiveAtAbs,
@@ -59,6 +59,8 @@ function laneColorTokenFor(
 
 export function TimelineStage() {
   const stageRef = useRef<HTMLDivElement>(null);
+  const mapDragRef = useRef<{ pointerId: number; x: number; y: number } | null>(null);
+  const [mapView, setMapView] = useState({ scale: 1, x: 0, y: 0 });
   const stageViewportHeight = useStageViewportHeight(stageRef);
   const viewport = useViewport();
   const { data, isLoading, error } = useTimelineData();
@@ -268,6 +270,28 @@ export function TimelineStage() {
       className={styles.stage}
       data-timeline-pan
       data-timeline-stage
+      onPointerDown={(event) => {
+        if (event.button !== 0 || !(event.target instanceof Element)) return;
+        if (event.target.closest("button, a, input, textarea, select, [role='button']")) return;
+        const mapBox = event.currentTarget.querySelector("[data-china-map-box]");
+        const rect = mapBox?.getBoundingClientRect();
+        if (!rect || event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) return;
+        mapDragRef.current = { pointerId: event.pointerId, x: event.clientX, y: event.clientY };
+        event.currentTarget.setPointerCapture(event.pointerId);
+        event.preventDefault();
+      }}
+      onPointerMove={(event) => {
+        const drag = mapDragRef.current;
+        if (!drag || drag.pointerId !== event.pointerId) return;
+        setMapView((view) => ({ ...view, x: view.x + event.clientX - drag.x, y: view.y + event.clientY - drag.y }));
+        mapDragRef.current = { ...drag, x: event.clientX, y: event.clientY };
+      }}
+      onPointerUp={(event) => {
+        if (mapDragRef.current?.pointerId !== event.pointerId) return;
+        mapDragRef.current = null;
+        if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+      }}
+      onPointerCancel={() => { mapDragRef.current = null; }}
       style={{
         ["--center-guide-x" as string]: `${centerGuideX(viewport)}px`,
         ...(stageViewportHeight > 0
@@ -277,7 +301,11 @@ export function TimelineStage() {
     >
       <div className={styles.mapUnderlay} aria-hidden="true">
         <div className={styles.viewportPanel}>
-          <ChinaMapBackground gutterPx={viewport.gutterPx} />
+          <ChinaMapBackground
+            gutterPx={viewport.gutterPx}
+            scale={mapView.scale}
+            offset={{ x: mapView.x, y: mapView.y }}
+          />
         </div>
       </div>
       <div className={styles.guideOverlay} aria-hidden="true">
@@ -364,7 +392,18 @@ export function TimelineStage() {
             laneColorMap={laneColorMap}
             atAbs={labelAnchorAbs}
             gutterPx={viewport.gutterPx}
+            scale={mapView.scale}
+            offset={{ x: mapView.x, y: mapView.y }}
           />
+        </div>
+      </div>
+      <div className={styles.mapControlsOverlay}>
+        <div className={styles.viewportPanel}>
+          <div className={styles.mapControls} role="group" aria-label="地图缩放">
+            <button type="button" onClick={() => setMapView((view) => ({ ...view, scale: Math.min(2.8, view.scale + 0.2) }))} aria-label="放大地图" title="放大">+</button>
+            <span aria-hidden="true" />
+            <button type="button" onClick={() => setMapView((view) => ({ ...view, scale: Math.max(0.7, view.scale - 0.2) }))} aria-label="缩小地图" title="缩小">−</button>
+          </div>
         </div>
       </div>
     </div>

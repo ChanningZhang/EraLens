@@ -15,15 +15,14 @@
   border-bottom: 1px solid var(--color-border);
 }
 
-.headerLeading {
+.headerActions {
   display: flex;
   align-items: flex-start;
   gap: var(--space-2);
-  min-width: 0;
+  flex: 0 0 auto;
 }
 
 .back {
-  flex: 0 0 auto;
   width: 32px;
   height: 32px;
   border: 1px solid var(--color-border);
@@ -31,9 +30,7 @@
   background: var(--color-paper);
   color: var(--color-ink-secondary);
   cursor: pointer;
-  font-size: 26px;
-  line-height: 1;
-  padding: 0 0 3px;
+  padding: 7px;
 }
 
 .back:hover:not(:disabled),
@@ -41,12 +38,19 @@
   color: var(--color-ink);
 }
 
-.back:disabled {
-  cursor: default;
-  opacity: 0.35;
+.back svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .titleBlock {
+  flex: 1 1 auto;
   min-width: 0;
 }
 

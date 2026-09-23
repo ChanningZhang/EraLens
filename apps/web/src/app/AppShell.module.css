@@ -44,8 +44,8 @@
 .searchWrap {
   position: absolute;
   top: 12px;
-  left: calc(var(--timeline-gutter) + 20px);
-  width: min(250px, calc(100% - var(--timeline-gutter) - 44px));
+  left: calc(var(--timeline-gutter) + 116px);
+  width: min(167px, calc(100% - var(--timeline-gutter) - 140px));
   pointer-events: auto;
 }
 
@@ -218,7 +218,7 @@
 
 @media (max-width: 960px) {
   .searchWrap {
-    width: min(300px, calc(100% - var(--timeline-gutter) - 44px));
+    width: min(200px, calc(100% - var(--timeline-gutter) - 140px));
   }
 
   .legend {

@@ -1157,7 +1157,7 @@ const events = [
     at: ym(-632),
     dynastyIds: ["zhou-east"],
     participantIds: ["ji-chonger"],
-    summary: "晋文公败楚于城濮，随后践土会盟，晋霸确立。",
+    summary: "楚围宋，宋向晋求援。晋先攻曹，因卫拒绝借道，又出兵伐卫；楚将宛春提出复曹、卫以换取楚军解宋围。晋采纳先轸之策，扣留宛春，暗中许诺复曹、卫，借此离间楚与曹、卫；又依晋文公旧诺退避三舍，最终在城濮击败楚军。战后晋复曹、卫，并于践土会盟，确立霸主地位。",
   }),
   eventRange({
     id: "zhanguo",

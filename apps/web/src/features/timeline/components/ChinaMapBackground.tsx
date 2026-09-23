@@ -8,9 +8,11 @@ import styles from "./ChinaMapBackground.module.css";
 
 type Props = {
   gutterPx: number;
+  scale: number;
+  offset: { x: number; y: number };
 };
 
-export function ChinaMapBackground({ gutterPx }: Props) {
+export function ChinaMapBackground({ gutterPx, scale, offset }: Props) {
   const containerRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ width: 0, height: 0 });
 
@@ -41,16 +43,18 @@ export function ChinaMapBackground({ gutterPx }: Props) {
   }, [gutterPx, size.height, size.width]);
 
   return (
-    <div ref={containerRef} className={styles.background} aria-hidden="true">
+    <div ref={containerRef} className={styles.background}>
       <div className={styles.veil} />
       {layout && (
         <div
           className={styles.mapBox}
+          data-china-map-box
           style={{
             left: `${layout.left}px`,
             top: `${layout.top}px`,
             width: `${layout.width}px`,
             height: `${layout.height}px`,
+            transform: `translate(${offset.x + layout.left * (scale - 1)}px, ${offset.y + layout.top * (scale - 1)}px) scale(${scale})`,
           }}
           // Inline SVG so theme tokens and gradients apply (img cannot use currentColor/CSS vars).
           dangerouslySetInnerHTML={{ __html: chinaOutline }}

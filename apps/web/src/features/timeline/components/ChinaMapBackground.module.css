@@ -20,6 +20,7 @@
 
 .mapBox {
   position: absolute;
+  transform-origin: 0 0;
   opacity: 0.72;
   --map-fill-top: color-mix(in srgb, var(--color-ochre) 10%, var(--color-paper));
   --map-fill-mid: color-mix(in srgb, var(--color-mineral) 6%, var(--color-paper));

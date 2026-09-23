@@ -1106,7 +1106,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('chengpu', '城濮之战', 'battle', 'point', 'year', '鲁僖公二十八年，前632年', -632, 12, -7561, NULL, NULL, NULL, NULL, NULL, NULL, '晋文公败楚于城濮，随后践土会盟，晋霸确立。')
+VALUES ('chengpu', '城濮之战', 'battle', 'point', 'year', '鲁僖公二十八年，前632年', -632, 12, -7561, NULL, NULL, NULL, NULL, NULL, NULL, '楚围宋，宋向晋求援。晋先攻曹，因卫拒绝借道，又出兵伐卫；楚将宛春提出复曹、卫以换取楚军解宋围。晋采纳先轸之策，扣留宛春，暗中许诺复曹、卫，借此离间楚与曹、卫；又依晋文公旧诺退避三舍，最终在城濮击败楚军。战后晋复曹、卫，并于践土会盟，确立霸主地位。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
   kind = EXCLUDED.kind,

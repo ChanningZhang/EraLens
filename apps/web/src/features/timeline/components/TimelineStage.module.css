@@ -14,14 +14,16 @@
 .mapUnderlay,
 .guideOverlay,
 .content,
-.capitalOverlay {
+.capitalOverlay,
+.mapControlsOverlay {
   grid-area: stack;
 }
 
 /* height: 0 keeps overlays out of the tall content flow; viewportPanel pins to scrollport. */
 .mapUnderlay,
 .guideOverlay,
-.capitalOverlay {
+.capitalOverlay,
+.mapControlsOverlay {
   position: sticky;
   top: 0;
   align-self: start;
@@ -41,6 +43,52 @@
 
 .capitalOverlay {
   z-index: 6;
+}
+
+.mapControlsOverlay {
+  z-index: 7;
+}
+
+.mapControls {
+  position: absolute;
+  left: calc(var(--timeline-gutter) + 14px);
+  bottom: 14px;
+  display: grid;
+  width: 38px;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-ochre) 24%, var(--color-border));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--color-surface) 92%, transparent);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--color-ink) 14%, transparent), inset 0 1px 0 white;
+  backdrop-filter: blur(8px);
+  pointer-events: auto;
+}
+
+.mapControls button {
+  width: 36px;
+  height: 34px;
+  border: 0;
+  background: transparent;
+  color: var(--color-ink);
+  font: 600 21px/1 var(--font-sans);
+  cursor: pointer;
+  transition: background var(--motion-fast), color var(--motion-fast);
+}
+
+.mapControls button:hover {
+  background: color-mix(in srgb, var(--color-ochre) 12%, transparent);
+  color: var(--color-ochre);
+}
+
+.mapControls button:focus-visible {
+  outline: 2px solid var(--color-ochre);
+  outline-offset: -3px;
+}
+
+.mapControls span {
+  height: 1px;
+  margin: 0 7px;
+  background: color-mix(in srgb, var(--color-border) 80%, transparent);
 }
 
 .viewportPanel {
@@ -126,4 +174,3 @@
   font-size: 14px;
   color: var(--color-ink-muted);
 }
-

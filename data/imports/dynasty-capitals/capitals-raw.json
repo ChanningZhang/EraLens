@@ -1323,10 +1323,10 @@
     ]
   },
   {
-    "id": "cap-zhou-guo-east-wangcheng-367",
+    "id": "cap-zhou-guo-east-gong-367",
     "dynastyId": "zhou-guo-east",
-    "historicalName": "王城",
-    "modernName": "河南省洛阳市",
+    "historicalName": "巩",
+    "modernName": "河南省郑州市巩义市",
     "start": {
       "year": -367,
       "month": 1,
@@ -1341,7 +1341,7 @@
     "endAbs": -2965,
     "precision": "year",
     "role": "primary",
-    "note": "东周国都城王城。",
+    "note": "东周国始封于巩，都城在今巩义一带。",
     "links": [
       {
         "label": "维基百科",

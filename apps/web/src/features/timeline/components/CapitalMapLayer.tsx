@@ -28,6 +28,8 @@ type Props = {
   laneColorMap: ReadonlyMap<string, ColorToken>;
   atAbs: number;
   gutterPx: number;
+  scale: number;
+  offset: { x: number; y: number };
 };
 
 function roleClassName(role: DynastyCapital["role"]) {
@@ -55,6 +57,8 @@ export function CapitalMapLayer({
   laneColorMap,
   atAbs,
   gutterPx,
+  scale,
+  offset,
 }: Props) {
   const selection = useSelection();
   const containerRef = useRef<HTMLDivElement>(null);
@@ -127,8 +131,8 @@ export function CapitalMapLayer({
               type="button"
               className={isSelected ? `${styles.marker} ${styles.selected}` : styles.marker}
               style={{
-                left: `${x}px`,
-                top: `${y}px`,
+                left: `${offset.x + x * scale}px`,
+                top: `${offset.y + y * scale}px`,
                 ["--capital-color" as string]: color,
               }}
               aria-label={`${dynastyName}都城${capital.historicalName}（${capital.modernName}）`}

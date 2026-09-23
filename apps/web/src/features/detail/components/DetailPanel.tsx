@@ -15,6 +15,7 @@ const RELATED_GROUPS = [
   { key: "capital", title: "都城" },
   { key: "event", title: "事件" },
   { key: "idiom", title: "成语" },
+  { key: "poetry", title: "诗歌" },
   { key: "reign", title: "在位" },
   { key: "person", title: "人物" },
   { key: "dynasty", title: "王朝" },
@@ -125,46 +126,49 @@ export function DetailPanel() {
       style={{ ["--detail-accent" as string]: accent }}
     >
       <div className={styles.header}>
-        <div className={styles.headerLeading}>
+        <div className={styles.titleBlock}>
+          <span className={styles.accent} />
+          {detailQuery.isLoading ? (
+            <p className={styles.loading}>加载中…</p>
+          ) : detailQuery.error ? (
+            <p className={styles.error}>无法加载详情</p>
+          ) : (
+            <>
+              <h2 className={styles.title}>{detailQuery.data?.title}</h2>
+              {detailQuery.data?.subtitle && (
+                <p className={styles.subtitle}>{detailQuery.data.subtitle}</p>
+              )}
+            </>
+          )}
+        </div>
+        <div className={styles.headerActions}>
+          {selection.detailHistory.length > 0 && (
+            <button
+              type="button"
+              className={styles.back}
+              aria-label="返回上一条详情"
+              title="返回上一条详情"
+              onClick={() => {
+                const previousCenter = selectionStore.goBack(viewport.centerAbs);
+                if (previousCenter !== null) {
+                  viewportStore.jumpToAbs(previousCenter);
+                }
+              }}
+            >
+              <svg viewBox="0 0 20 20" aria-hidden="true">
+                <path d="m12.5 4.5-5 5.5 5 5.5" />
+              </svg>
+            </button>
+          )}
           <button
             type="button"
-            className={styles.back}
-            aria-label="返回上一条详情"
-            title="返回上一条详情"
-            disabled={selection.detailHistory.length === 0}
-            onClick={() => {
-              const previousCenter = selectionStore.goBack(viewport.centerAbs);
-              if (previousCenter !== null) {
-                viewportStore.jumpToAbs(previousCenter);
-              }
-            }}
+            className={styles.close}
+            aria-label="关闭详情"
+            onClick={() => selectionStore.clearSelection()}
           >
-            ‹
+            ×
           </button>
-          <div className={styles.titleBlock}>
-            <span className={styles.accent} />
-            {detailQuery.isLoading ? (
-              <p className={styles.loading}>加载中…</p>
-            ) : detailQuery.error ? (
-              <p className={styles.error}>无法加载详情</p>
-            ) : (
-              <>
-                <h2 className={styles.title}>{detailQuery.data?.title}</h2>
-                {detailQuery.data?.subtitle && (
-                  <p className={styles.subtitle}>{detailQuery.data.subtitle}</p>
-                )}
-              </>
-            )}
-          </div>
         </div>
-        <button
-          type="button"
-          className={styles.close}
-          aria-label="关闭详情"
-          onClick={() => selectionStore.clearSelection()}
-        >
-          ×
-        </button>
       </div>
 
       <div className={styles.body}>

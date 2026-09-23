@@ -61,6 +61,9 @@ function reign({
   precision = "year",
   startDateConfidence = null,
   endDateConfidence = null,
+  claimTrack = null,
+  claimLabel = null,
+  claimRole = null,
 }) {
   return {
     id,
@@ -76,6 +79,9 @@ function reign({
     precision,
     startDateConfidence,
     endDateConfidence,
+    claimTrack,
+    claimLabel,
+    claimRole,
   };
 }
 
@@ -116,6 +122,7 @@ function eventPoint({ id, name, kind, at, precision = "year", dateNote, dynastyI
 // ── persons (rulers + key figures) ──
 
 const EXTRA_PERSONS = [
+  person("wu-fu-gai", "姬夫概", ["君主"], "阖闾之弟。前505年自立为吴王，不久败走楚国；见吴国君主列表。", "吴王夫概"),
   person("shang-yang", "商鞅", ["政治家"], "卫国人，秦孝公时主持变法，奠定秦统一基础。", "商鞅", ym(-390), ym(-338)),
   person("wu-qi", "吴起", ["军事家", "政治家"], "魏文侯时名将，后在楚主持变法。", "吴起", ym(-440), ym(-381)),
   person("sun-wu", "孙武", ["军事家"], "齐国军事家，著《孙子兵法》，传为吴王阖闾将。", "孙武"),
@@ -426,10 +433,10 @@ const dynasties = [
     altNames: ["吴国"],
     scope: "cn",
     region: "east_asia",
-    start: ym(-585),
+    start: ym(-1100),
     end: ym(-473, 12),
     precision: "year",
-    note: "春秋东南强国，阖闾、夫差时盛；前473年越灭吴。",
+    note: "传世世系上溯至泰伯；吴国条目称建国约在前12世纪，寿梦起始有可靠纪年（前585）。早期连续君主无在位年，按世系在约前1100至前586年锚点间均分并标为插值；前473年越灭吴。",
   },
   {
     id: "yue-chunqiu",
@@ -529,6 +536,9 @@ const reigns = alignReignSeamConfidences(
             end: ym(r.endYear, 12),
             startDateConfidence: r.startDateConfidence ?? null,
             endDateConfidence: r.endDateConfidence ?? null,
+            claimTrack: r.claimTrack ?? null,
+            claimLabel: r.claimLabel ?? null,
+            claimRole: r.claimRole ?? null,
           }),
         ),
     ),
@@ -897,6 +907,8 @@ const manifest = {
     { label: "田氏代齐", url: "https://zh.wikipedia.org/wiki/田氏代齐" },
     { label: "秦国君主列表", url: "https://zh.wikipedia.org/zh-cn/秦国君主列表" },
     { label: "中山国", url: "https://zh.wikipedia.org/wiki/中山国" },
+    { label: "吴国", url: "https://zh.wikipedia.org/wiki/吴国" },
+    { label: "左传·成公十年", url: "https://ctext.org/chun-qiu-zuo-zhuan/cheng-gong-shi-nian/zhs" },
   ],
   notes: [
     "收录春秋主要列国与战国七雄（齐楚燕韩赵魏秦）及宋鲁卫郑曹吴越中山等。",
@@ -910,6 +922,8 @@ const manifest = {
     "田氏代齐为顺序接续，不是并立：宣公→康公→田和→侯剡。齐国表田和前404–前384年是田悼子卒后的领袖年；田和称君取条目前391年自立，前386年周安王列为诸侯。康公卒前379年，前391年被放逐后不在齐行续画，在位迄前392年。",
     "卫国人物 id 用 weiguo- 前缀，避免与战国魏 wei-r* 冲突；燕召公用 ji-shi，避免与宋恭帝 zhao-shi 冲突。",
     "同人多次即位拆多条 reign（reignId 后缀 -2），与唐/明一致；维基合并年表由 build-rulers.mjs 条目校正展开，不做运行时 split。",
+    "吴国条目列出泰伯至去齐的连续世系但未给出各君主在位年，并称建国约在前12世纪、寿梦始有准确纪年。早期18位按约前1100至前586年间均分，插值边标记 interpolated，寿梦起点保留年表锚点。前505年夫概自立，按条目列作短暂并立君主，使用 rival claim track。",
+    "郑成公被晋扣留期间，前581年三月子如立公子繻，四月郑人杀繻并立髡顽，郑伯随后归国（《左传·成公十年》）；在位序列按郑成公第一次在位→公子繻短暂即位→郑成公复位排列。年精度边界沿用前581年。",
     "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 precision: year。",
     "越国泳道不收夏少康庶子无余及无壬、无瞫：维基诸侯表在无余后「中有十世不明」、无瞫后「中有二十世不明」，无通行王年，不把远祖插值到春秋。有年表自允常；无年表的夫谭仅按允常前窗口插值。王朝起迄取在位首尾（夫谭至无彊前306），楚破越从维基诸侯表前306年，不取旧泳道前334。",
     "中山国王朝起迄与国君泳道首尾一致，为文公前424年至王尚前296年；不提前至桓公复兴传说起点前478。桓公约前406年在魏灭中山时在位，约前380年复国后再次在位；两段通过同人多次在位配置拆开，中间魏属中山期仍保留空档，不补史料缺占位。",

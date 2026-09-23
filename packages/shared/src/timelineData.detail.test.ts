@@ -939,7 +939,7 @@ describe("buildEntityDetail idiom event", () => {
 });
 
 describe("buildEntityDetail poetry event", () => {
-  it("keeps the poem title and labels its type as 古诗", () => {
+  it("keeps the poem title and labels its type as 诗歌", () => {
     const store = {
       dynasties: [],
       reigns: [],
@@ -971,9 +971,9 @@ describe("buildEntityDetail poetry event", () => {
     });
 
     expect(detail.title).toBe("枫桥夜泊");
-    expect(detail.subtitle).toBe("古诗");
+    expect(detail.subtitle).toBe("诗歌");
     expect(detail.facts).toEqual([
-      { label: "类型", value: "古诗" },
+      { label: "类型", value: "诗歌" },
       { label: "说明", value: "安史之乱后，约8世纪中叶" },
     ]);
     expect(detail.content).toBe(
