@@ -14,10 +14,30 @@
     "persons": 19,
     "dynasties": 0,
     "reigns": 0,
-    "events": 69,
+    "events": 74,
     "relations": 10
   },
   "sources": [
+    {
+      "label": "酒池肉林（商纣王）",
+      "url": "https://zh.wikipedia.org/wiki/酒池肉林"
+    },
+    {
+      "label": "爱屋及乌（尚书大传·牧誓）",
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=147316&la=0&powerMode=0"
+    },
+    {
+      "label": "周公吐哺（史记·鲁周公世家）",
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=115742&q=1&word=公"
+    },
+    {
+      "label": "殷鉴不远（诗经·大雅·荡）",
+      "url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=156387&la=0&powerMode=0"
+    },
+    {
+      "label": "债台高筑（周赧王）",
+      "url": "https://zh.wikipedia.org/wiki/周赧王"
+    },
     {
       "label": "鞭长莫及（楚庄王伐郑）",
       "url": "https://zh.wikipedia.org/wiki/楚庄王"
@@ -143,6 +163,7 @@
     "典故国君引用各时期包已入库的 person id（如 gou-jian、qi-r25）；蔺相如、荆轲等名臣由本包 upsert。",
     "寓言类关联故事发生国，不把典籍作者（韩非、庄子等）当作典故人物。",
     "已核对并修正成语与君主在位期不一致的条目：鞭长莫及改楚庄王，分道扬镳改北魏孝文帝，毛遂自荐改赵孝成王；杞人忧天与螳螂捕蝉因原典未具名君主而取消具体君主关联。",
-    "一鸣惊人、滥竽充数、五十步笑百步、亡羊补牢、完璧归赵、负荆请罪的时间点已调整到对应君主在位期；有纪年争议者在 dateNote 标注约数或异说。"
+    "一鸣惊人、滥竽充数、五十步笑百步、亡羊补牢、完璧归赵、负荆请罪的时间点已调整到对应君主在位期；有纪年争议者在 dateNote 标注约数或异说。",
+    "商周补录：酒池肉林、爱屋及乌、周公吐哺、殷鉴不远、债台高筑；酒池肉林的早期史源有争议，殷鉴不远的《大雅·荡》作年有争议，均在 dateNote 标注。"
   ]
 }

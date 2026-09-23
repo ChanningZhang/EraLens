@@ -48,12 +48,15 @@ function expandMergedSpans(dynastyId, rulers, spanExpansions) {
 
   const out = [];
   for (const r of rulers) {
-    const expansion = table[r.personName];
-    if (
-      expansion &&
-      r.startYear === expansion[0].startYear &&
-      r.endYear === expansion.at(-1).endYear
-    ) {
+    // Prefer the stable person name, but allow title-keyed entries when the
+    // source omits a personal name and enrichment supplies a clan-prefixed one.
+    const expansion = table[r.personName] ?? table[r.title];
+    const mergedStart = expansion?.[0]?.startYear;
+    const mergedEnd = expansion?.at(-1)?.endYear;
+    // Death-year succession normalization may move a merged successor's
+    // start one year forward before this split is applied.
+    const startMatches = r.startYear === mergedStart || r.startYear === mergedStart + 1;
+    if (expansion && startMatches && r.endYear === mergedEnd) {
       for (const span of expansion) {
         out.push({
           ...r,

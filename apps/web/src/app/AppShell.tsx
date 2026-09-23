@@ -110,7 +110,7 @@ export function AppShell() {
         ["--timeline-rail-label-width" as string]: `${TIMELINE_RAIL_LABEL_WIDTH_PX}px`,
       }}
     >
-      <header className={styles.header}>
+      <header className={styles.header} aria-label="EraLens 导航与图例">
         <div className={styles.brand}>
           <h1 className={styles.brandTitle}>EraLens</h1>
           <p className={styles.brandSub}>历史透镜</p>
@@ -159,6 +159,25 @@ export function AppShell() {
               ))}
             </div>
           )}
+        </div>
+        <div className={styles.legend} aria-label="泳道图例">
+          <div className={styles.legendTitle}>泳道图例</div>
+          <div className={styles.legendItems}>
+            <span className={styles.legendItem}>
+              <span className={`${styles.legendSwatch} ${styles.legendStripes}`} aria-hidden="true" />
+              非正式君主
+            </span>
+            <span className={styles.legendItem}>
+              <span className={`${styles.legendSwatch} ${styles.legendDashed}`} aria-hidden="true" />
+              并立或史料缺载
+            </span>
+            <span className={styles.legendItem}>
+              <svg className={`${styles.legendSwatch} ${styles.legendWave}`} viewBox="0 0 24 12" aria-hidden="true">
+                <path d="M1 6 C4 1, 7 1, 10 6 S16 11, 19 6 S22 1, 24 4" />
+              </svg>
+              年代失考
+            </span>
+          </div>
         </div>
       </header>
 

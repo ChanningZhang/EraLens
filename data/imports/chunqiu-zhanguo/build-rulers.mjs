@@ -159,6 +159,20 @@ const REIGN_PREFERRED_APPELLATION_OVERRIDES = {
 };
 
 const REIGN_YEAR_OVERRIDES = {
+  "cao-chunqiu": {
+    // 《曹国》君主表给出西周早期连续年表；以曹仲君前991—前925年为锚点，
+    // 不再把叔振铎至孝伯整段在前865年前的窗口内均分。
+    叔振铎: { start: -1041, end: -1016, startDateConfidence: null, endDateConfidence: null },
+    曹叔振铎: { start: -1041, end: -1016, startDateConfidence: null, endDateConfidence: null },
+    "叔振铎|振铎": { start: -1041, end: -1016, startDateConfidence: null, endDateConfidence: null },
+    曹太伯: { start: -1015, end: -992, startDateConfidence: null, endDateConfidence: null },
+    仲君: { start: -991, end: -925, startDateConfidence: null, endDateConfidence: null },
+    曹仲君: { start: -991, end: -925, startDateConfidence: null, endDateConfidence: null },
+    "仲君|平": { start: -991, end: -925, startDateConfidence: null, endDateConfidence: null },
+    曹宫伯: { start: -924, end: -885, startDateConfidence: null, endDateConfidence: null },
+    曹孝伯: { start: -884, end: -865, startDateConfidence: null, endDateConfidence: null },
+    曹夷伯: { start: -864, end: -835, startDateConfidence: null, endDateConfidence: null },
+  },
   "qi-chunqiu": {
     // 齐国表田和起前404年接田悼子，是田氏领袖年。田和条目：前391年放逐康公、自立为齐君。
     "齐太公|田和": { start: -391, end: -384 },
@@ -169,6 +183,13 @@ const REIGN_YEAR_OVERRIDES = {
 
 /** Wiki 诸侯表合并复位段 → 多条 reign。Key: dynastyId → personName */
 const MULTI_REIGN_SPAN_EXPANSIONS = {
+  "zhongshan": {
+    // 中山桓公先于魏灭中山时在位，约前380年复国后再次在位。
+    "中山桓公": [
+      { startYear: -406, endYear: -406 },
+      { startYear: -380, endYear: -350, ordinal: 2 },
+    ],
+  },
   "wei-weiguo": {
     // 卫成公条目：第一次前634–前632、第二次前632–前600；诸侯表合并为前634–前600。
     姬郑: [
@@ -186,7 +207,7 @@ function applyReignYearOverrides(dynastyId, rulers) {
     const nameKey = normalizeTitle(r.name || "");
     const patch = table[`${titleKey}|${nameKey}`] ?? table[titleKey];
     if (!patch) return r;
-    return { ...r, ...patch, complete: true };
+    return { ...r, ...patch, complete: true, interpolated: false };
   });
 }
 
@@ -757,7 +778,8 @@ function parseWu() {
 const ZHONGSHAN_WIKI_REIGNS = {
   中山文公: { start: -424, end: -415 },
   中山武公: { start: -414, end: -406, name: "窟" },
-  中山桓公: { start: -380, end: -350, startDateConfidence: "approximate", endDateConfidence: "approximate" },
+  // 年表把桓公的前406年在位段与复国后的在位段合并；下方统一多段配置再拆开。
+  中山桓公: { start: -406, end: -350, startDateConfidence: "approximate", endDateConfidence: "approximate" },
   中山成公: { start: -349, end: -328, startDateConfidence: "approximate" },
   中山王厝: { start: -327, end: -310, name: "厝", endDateConfidence: "approximate" },
   中山王𧊒: { start: -309, end: -299, name: "𧊒", startDateConfidence: "approximate" },
