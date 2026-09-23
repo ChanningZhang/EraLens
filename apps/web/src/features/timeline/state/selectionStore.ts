@@ -16,7 +16,7 @@ type SelectOptions = {
 };
 
 const DETAIL_WIDTH_KEY = "eralens.detailWidth";
-const DEFAULT_WIDTH = 400;
+const DEFAULT_WIDTH = 360;
 const MIN_WIDTH = 360;
 const MAX_WIDTH = 640;
 

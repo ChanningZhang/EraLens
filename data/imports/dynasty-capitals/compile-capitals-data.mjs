@@ -662,8 +662,9 @@ export const capitals = [
     note: "隋都大兴城（长安）。",
     wikiTitle: "大兴城",
   }),
-  e("tang", "长安", "陕西省西安市", 618, 903, {
-    note: "唐都长安。",
+  entry("tang", "长安", "陕西省西安市", 618, 6, 903, 12, {
+    precision: "month",
+    note: "618年六月李渊受隋恭帝杨侑禅让，在长安即皇帝位建立唐朝；903年末前唐都长安。",
     wikiTitle: "长安",
     id: "cap-tang-changan",
   }),

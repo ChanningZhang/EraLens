@@ -203,7 +203,11 @@ export function DetailPanel() {
                       selectTenureRef(row.tenure, selection, viewport.centerAbs)
                     }
                   >
-                    <span className={styles.capitalTenureLabel}>{row.tenure.label}</span>
+                    <span
+                      className={`${styles.capitalTenureLabel} ${styles.tenureLabel}`}
+                    >
+                      {row.tenure.label}
+                    </span>
                   </button>
                   {row.capital && (
                     <button

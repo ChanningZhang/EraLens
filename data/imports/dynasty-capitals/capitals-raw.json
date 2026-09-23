@@ -2895,19 +2895,19 @@
     "modernName": "陕西省西安市",
     "start": {
       "year": 618,
-      "month": 1,
-      "abs": 7416
+      "month": 6,
+      "abs": 7421
     },
     "end": {
       "year": 903,
       "month": 12,
       "abs": 10847
     },
-    "startAbs": 7416,
+    "startAbs": 7421,
     "endAbs": 10847,
-    "precision": "year",
+    "precision": "month",
     "role": "primary",
-    "note": "唐都长安。",
+    "note": "618年六月李渊受隋恭帝杨侑禅让，在长安即皇帝位建立唐朝；903年末前唐都长安。",
     "links": [
       {
         "label": "维基百科",

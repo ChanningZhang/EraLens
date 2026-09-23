@@ -211,6 +211,10 @@
   font-weight: 600;
 }
 
+.tenureLabel {
+  font-weight: 400;
+}
+
 .capitalTenureSub {
   font-size: 12px;
   color: var(--color-ink-muted);

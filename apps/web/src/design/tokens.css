@@ -51,7 +51,7 @@
     );
   --timeline-rail-edge: color-mix(in srgb, var(--color-ochre) 26%, var(--color-border));
   --timeline-rail-sheen: color-mix(in srgb, var(--color-ochre) 18%, white);
-  --detail-default-width: 400px;
+  --detail-default-width: 360px;
   --motion-fast: 160ms cubic-bezier(0.2, 0.8, 0.2, 1);
   --motion-panel: 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
   --font-serif: "Noto Serif SC", "EraLens Rare CJK", "BabelStone Han", "Songti SC",
