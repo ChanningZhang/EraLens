@@ -634,12 +634,25 @@ export function buildFateCatalog() {
       resolveAt: () => atFromReignEnd("reign-murong-xi", 409),
     },
     {
+      // 神䴥四年六月，赫连定北袭沮渠蒙逊，为吐谷浑慕璝所执。
+      // https://zh.wikisource.org/zh-hans/魏書/卷4上
+      id: "rel-helian-ding-mugui-captured",
+      fromPersonId: "helian-ding",
+      toPersonId: "mugui",
+      kind: "captured",
+      precision: "month",
+      eventId: null,
+      resolveAt: () => ym(431, 6),
+    },
+    {
+      // 延和元年（432）春，慕璝送赫连定至北魏，太武帝杀之。
+      // https://zh.wikisource.org/zh-hans/魏書/卷4上
       id: "rel-helian-ding-tuoba-tao-killed",
       fromPersonId: "helian-ding",
       toPersonId: "tuoba-tao",
       kind: "killed",
       eventId: null,
-      resolveAt: () => atFromReignEnd("reign-helian-ding", 431),
+      resolveAt: () => ym(432, 12),
     },
     {
       id: "rel-juqu-mujian-tuoba-tao-surrender",

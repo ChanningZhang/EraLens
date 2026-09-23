@@ -434,16 +434,6 @@ const dynasties = [
 
 const events = [
   eventPoint({
-    id: "dai-founded",
-    name: "代王嘉自立",
-    kind: "politics",
-    dateNote: "赵幽缪王八年，前228年，秦占邯郸后赵嘉逃代自立",
-    at: ym(-228),
-    dynastyIds: ["dai-warring", "zhao-warring"],
-    participantIds: ["zhao-jia-dai"],
-    summary: "赵公子嘉逃至代郡，被大夫拥立为代王，延续赵国宗祀。",
-  }),
-  eventPoint({
     id: "zhou-guo-split",
     name: "东西周国分立",
     kind: "politics",
@@ -488,6 +478,9 @@ relations.push(
 );
 
 const cleanupSql = [
+  "DELETE FROM event_participants WHERE event_id = 'dai-founded';",
+  "DELETE FROM event_dynasties WHERE event_id = 'dai-founded';",
+  "DELETE FROM events WHERE id = 'dai-founded';",
   "DELETE FROM reigns WHERE id IN (",
   "  'reign-xue-r0-xue-chunqiu',",
   "  'reign-teng-r0-teng-chunqiu',",

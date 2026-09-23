@@ -1,0 +1,138 @@
+#!/usr/bin/env node
+/**
+ * Cross-period major events that are not recoverable from dynasty lanes alone.
+ * This package intentionally contains events only; people, dynasties and reigns
+ * remain owned by their period imports.
+ */
+import { eventPoint, eventRange, eventYear, writeImportPackage, ym } from "../lib/sqlHelpers.mjs";
+
+const events = [
+  eventPoint({
+    id: "later-jin-cedes-yanyun",
+    name: "后晋割让燕云十六州",
+    kind: "politics",
+    at: eventYear(936),
+    dynastyIds: ["jin-hou", "liao"],
+    summary: "石敬瑭借契丹援助赢得帝位，向辽割让燕云十六州，北方门户自此长期处于辽、金控制之下。",
+    dateNote: "936年后晋建国及相关契丹册立、割地约定；具体交割过程跨越936年前后。",
+  }),
+  eventPoint({
+    id: "later-zhou-recovers-ying-mo",
+    name: "后周北伐收复瀛、莫二州",
+    kind: "battle",
+    at: eventYear(959),
+    dynastyIds: ["zhou-hou", "liao"],
+    summary: "后周世宗北伐，收复燕云南部的瀛州、莫州等地，但未能完成燕云十六州的整体收复。",
+    dateNote: "显德六年（959年）北伐；州县归属与进军阶段按年精度处理。",
+  }),
+  eventPoint({
+    id: "song-jin-maritime-alliance",
+    name: "宋金海上之盟",
+    kind: "politics",
+    at: eventYear(1120),
+    dynastyIds: ["song-north", "jin-nvzhen", "liao"],
+    summary: "宋与金约定夹攻辽，宋希望借此取得燕云；辽亡后宋金关系迅速破裂，最终引向靖康之变。",
+    dateNote: "宣和二年（1120年）订盟；条约内容与实际执行过程跨越1120—1123年。",
+  }),
+  eventPoint({
+    id: "song-recovers-yanyun-six-prefectures",
+    name: "北宋短暂收复燕京及六州",
+    kind: "politics",
+    at: eventYear(1123),
+    dynastyIds: ["song-north", "jin-nvzhen"],
+    summary: "辽亡后金将燕京及附近六州交给北宋，宋短暂取得燕云南部，但实际控制很快因宋金冲突而动摇。",
+    dateNote: "宣和五年（1123年）；此处采用年精度，不把部分州县交割误写为十六州全部收复。",
+  }),
+  eventPoint({
+    id: "jin-reclaims-yanyun",
+    name: "金重新夺取燕云",
+    kind: "battle",
+    at: eventYear(1125),
+    dynastyIds: ["jin-nvzhen", "song-north"],
+    summary: "宋金矛盾激化后，金军重新控制燕云并南下攻宋，北宋北部防线崩溃，次年开封陷落。",
+    dateNote: "1125—1126年金军重夺燕云并南下；以1125年为事件起点，靖康之变另有独立事件。",
+  }),
+  eventRange({
+    id: "heirloom-seal-lost",
+    name: "传国玉玺失踪",
+    kind: "politics",
+    timeMode: "circa",
+    precision: "year",
+    start: ym(936),
+    end: ym(937, 12),
+    at: eventYear(936),
+    dynastyIds: ["tang", "jin-hou"],
+    summary: "后唐末帝李从珂兵败自焚，传统记载称传国玉玺随之失去下落；此后宋太祖受禅时已不见传国玺。",
+    dateNote: "传国玺失踪的具体时点与是否毁于火中存在记载差异，取后唐灭亡前后窗口。",
+  }),
+  eventPoint({
+    id: "qin-unifies-china",
+    name: "秦统一中国",
+    kind: "politics",
+    at: eventYear(-221),
+    dynastyIds: ["qin"],
+    summary: "秦灭齐完成六国统一，结束战国长期分裂，建立中国历史上第一个大一统帝国。",
+    dateNote: "秦王政二十六年，前221年；作为特别重大总纲事件保留，不等同于秦统一制度事件。",
+  }),
+  eventPoint({
+    id: "western-han-protectorate-of-western-regions",
+    name: "西域都护府建立",
+    kind: "politics",
+    at: eventYear(-60),
+    dynastyIds: ["han-west"],
+    summary: "西汉在西域设置都护，标志中央政权对西域的经略由军事往来推进到持续行政管理。",
+    dateNote: "神爵二年，前60年；具体设置月份不详。",
+  }),
+  eventPoint({
+    id: "tang-tubo-changqing-alliance",
+    name: "唐蕃长庆会盟",
+    kind: "politics",
+    at: eventYear(821),
+    dynastyIds: ["tang"],
+    summary: "唐与吐蕃订立长庆会盟，约定边界与和平关系，是唐蕃长期战争后重要的边疆秩序节点。",
+    dateNote: "长庆元年至二年（821—822年）分阶段立碑、会盟，采用821年作为事件锚点。",
+  }),
+  eventPoint({
+    id: "qing-establishes-ili-general",
+    name: "清设伊犁将军",
+    kind: "politics",
+    at: eventYear(1762),
+    dynastyIds: ["qing"],
+    summary: "清廷在平定准噶尔后设置伊犁将军，建立对新疆军政事务的常设统辖机构。",
+    dateNote: "乾隆二十七年（1762年）；机构设置月份不详。",
+  }),
+];
+
+writeImportPackage(import.meta.dirname, {
+  slug: "major-events",
+  window: { startYear: -221, startMonth: 1, endYear: 1762, endMonth: 12 },
+  persons: [],
+  dynasties: [],
+  reigns: [],
+  events,
+  relations: [],
+  manifest: {
+    slug: "major-events",
+    title: "跨时期重大事件补充",
+    window: { startYear: -221, startMonth: 1, endYear: 1762, endMonth: 12 },
+    scope: "cn",
+    depth: "minimal",
+    generatedAt: "2026-09-23",
+    counts: { persons: 0, dynasties: 0, reigns: 0, events: events.length, relations: 0 },
+    sources: [
+      { label: "中国政府网：中国历史概况", url: "https://www.gov.cn/test/2005-05/24/content_436.htm" },
+      { label: "吕梁市地方志：石敬瑭", url: "https://www.lvliang.gov.cn/zjll/mlll/lsmr/201804/t20180416_520518.html" },
+      { label: "燕云十六州", url: "https://zh.wikipedia.org/wiki/%E7%87%95%E9%9B%B2%E5%8D%81%E5%85%AD%E5%B7%9E" },
+      { label: "湖北省文化和旅游厅：和氏璧的千年流转", url: "https://wlt.hubei.gov.cn/bmdt/ztzl/zshb/201912/t20191226_1799401.shtml" },
+      { label: "河北省档案馆：传国玉玺失踪记载", url: "https://www.hbda.gov.cn/uploads/4/file/public/201712/20171204134917_85ngxdl1xq.pdf" },
+      { label: "唐蕃会盟", url: "https://zh.wikipedia.org/wiki/%E5%94%90%E8%95%83%E4%BC%9A%E7%9B%9F" },
+      { label: "伊犁将军", url: "https://zh.wikipedia.org/wiki/%E4%BC%8A%E7%8A%81%E5%B0%86%E5%86%9B" },
+    ],
+    notes: [
+      "本包只补充无法由泳道直接读出的疆域、跨政权关系、政治象征和特别重大结构性转折，不重复普通王朝建立、皇帝即位或一般迁都。",
+      "燕云十六州拆为割让、局部收复、短暂取得与重新失陷，避免一个事件覆盖全部复杂过程。",
+      "传国玉玺失踪采用936—937年 circa 窗口；不把传统记载中的焚毁说写成确定事实。",
+      "已存在的张骞通西域、秦统一制度、尼布楚条约、左宗棠收复新疆等事件不在本包重复导入。",
+    ],
+  },
+});

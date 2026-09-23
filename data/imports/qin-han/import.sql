@@ -2,6 +2,9 @@
 -- Window: -221-01 .. 220-12
 -- Chronology: Shiji + Wikipedia Han dynasty emperor list
 BEGIN;
+DELETE FROM event_participants WHERE event_id = 'wang-mang-usurp';
+DELETE FROM event_dynasties WHERE event_id = 'wang-mang-usurp';
+DELETE FROM events WHERE id = 'wang-mang-usurp';
 
 -- persons
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name)
@@ -489,14 +492,6 @@ ON CONFLICT (id) DO UPDATE SET
   end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('wang-mang-usurp', '王莽篡汉', 'politics', 'point', 'month', '9年1月10日，孺子婴禅让，王莽改国号为新', 9, 1, 108, NULL, NULL, NULL, NULL, NULL, NULL, '王莽受孺子婴禅让，改国号为新，西汉终结。')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
-  date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,
-  start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs,
-  end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
-  summary = EXCLUDED.summary;
-INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
 VALUES ('kunyang-battle', '昆阳之战', 'battle', 'point', 'year', '更始元年，23年，刘秀以少胜多破王莽军', 23, 12, 287, NULL, NULL, NULL, NULL, NULL, NULL, '刘秀率绿林军于昆阳大破王莽主力，新莽覆亡在即。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
@@ -541,8 +536,6 @@ INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('dayuan-expedition', 
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('wugu-case', 'han-west') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('zhaoxuan-rule', 'han-west') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('zhaojun-chusai', 'han-west') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('wang-mang-usurp', 'han-west') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('wang-mang-usurp', 'xin') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('kunyang-battle', 'xin') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('kunyang-battle', 'han-gengshi') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('yellow-turban', 'han-east') ON CONFLICT DO NOTHING;
@@ -592,8 +585,6 @@ INSERT INTO event_participants (event_id, person_id) VALUES ('zhaoxuan-rule', 'l
 INSERT INTO event_participants (event_id, person_id) VALUES ('zhaoxuan-rule', 'liu-xun') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('zhaojun-chusai', 'liu-shi') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('zhaojun-chusai', 'wang-zhaojun') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('wang-mang-usurp', 'wang-mang') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('wang-mang-usurp', 'ruzi-ying') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('kunyang-battle', 'liu-xiu') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('kunyang-battle', 'wang-mang') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('yellow-turban', 'liu-hong') ON CONFLICT DO NOTHING;

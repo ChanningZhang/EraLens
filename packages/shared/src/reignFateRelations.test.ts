@@ -181,7 +181,7 @@ describe("reignFateRelations", () => {
     expect(resolved?.toReign.id).toBe("reign-ying-zheng-qin");
   });
 
-  it("drops surrender when the same ruler also has a killed fate line", () => {
+  it("keeps surrender when the same ruler also has a killed fate line", () => {
     const liYu: Reign = {
       id: "reign-li-yu",
       dynastyId: "tang-south",
@@ -222,9 +222,7 @@ describe("reignFateRelations", () => {
       atAbs: absMonth(978, 8),
     });
     const resolved = resolveFateRelations([surrender, killed], reignList);
-    expect(resolved).toHaveLength(1);
-    expect(resolved[0]?.relation.kind).toBe("killed");
-    expect(resolved[0]?.relation.id).toBe("rel-li-yu-zhao-kuangyin-killed");
+    expect(resolved.map((item) => item.relation.kind).sort()).toEqual(["killed", "surrender"]);
   });
 
   it("keeps abdication alongside a later killed fate for the same ruler", () => {
@@ -283,7 +281,7 @@ describe("reignFateRelations", () => {
     expect(resolved.map((item) => item.relation.kind).sort()).toEqual(["abdication", "killed"]);
   });
 
-  it("drops captured fate lines when killed is also present", () => {
+  it("keeps captured fate lines when killed is also present", () => {
     const victim: Reign = {
       id: "reign-victim",
       dynastyId: "victim-dynasty",
@@ -324,8 +322,7 @@ describe("reignFateRelations", () => {
       atAbs: absMonth(112, 12),
     });
     const resolved = resolveFateRelations([captured, killed], reignList);
-    expect(resolved).toHaveLength(1);
-    expect(resolved[0]?.relation.kind).toBe("killed");
+    expect(resolved.map((item) => item.relation.kind).sort()).toEqual(["captured", "killed"]);
   });
 
   it("resolves ziying surrender to liu bang pre-imperial reign", () => {

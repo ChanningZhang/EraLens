@@ -15,7 +15,7 @@
     "dynasties": 0,
     "reigns": 0,
     "events": 0,
-    "relations": 137
+    "relations": 138
   },
   "sources": [
     {
@@ -63,6 +63,14 @@
       "url": "https://zh.wikipedia.org/wiki/慕容暐"
     },
     {
+      "label": "赫连定",
+      "url": "https://zh.wikipedia.org/wiki/赫连定"
+    },
+    {
+      "label": "魏书·世祖纪",
+      "url": "https://zh.wikisource.org/zh-hans/魏書/卷4上"
+    },
+    {
       "label": "金哀宗",
       "url": "https://zh.wikipedia.org/wiki/金哀宗"
     },
@@ -96,6 +104,7 @@
     "秦之后虚线：在位行已有月/日则改挂 documented 迄；靖康之变取 1127-03-20 废二帝，不用徽宗禅位日；幼天王被俘单独事件 hong-tianguifu-captured（1864-10-25），与天京陷落分列。",
     "刘盆子降光武取维基公历 27-03-15；段兴智被俘取在位迄年 1254（城破 1253 次年昆泽），仍年精度。",
     "先降/俘后被杀：怀愍二帝、冉闵、慕容超、秃发傉檀、王衍、李煜等同时保留 capture/surrender 与 killed；前端优先显示 killed。",
+    "赫连定于431年六月为吐谷浑慕璝所俘，432年被送至北魏后为拓跋焘处死；分别记录 captured 与 killed 两条命运线。",
     "十六国等农历月用寿星历 sxtwl 换公历：有日（李势三月十七、牧犍九月丙戌、石虎四月廿三）升日；仅月者取望日所在公历月。宝藏王九月＝668-10，耶律淳六月＝1122-07。",
     "石虎349年病死，旧目录误作冉闵所杀已删；改挂石鉴→冉闵（永和六年闰二月）。",
     "溥仪 1924 出宫：退位后无单独 reign 卡，受害方仍挂宣统 reign，victimMaxLagMonths=156；接收方挂 11 月 24 日就任的段祺瑞临时执政（出宫当日黄郛摄行未建卡）。"

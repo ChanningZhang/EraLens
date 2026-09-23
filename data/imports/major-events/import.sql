@@ -1,0 +1,56 @@
+-- EraLens period import: major-events
+-- Window: -221-01 .. 1762-12
+BEGIN;
+
+-- persons
+
+-- dynasties
+
+-- reigns
+
+-- events
+INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning) VALUES ('later-jin-cedes-yanyun', '后晋割让燕云十六州', 'politics', 'point', 'year', '936年后晋建国及相关契丹册立、割地约定；具体交割过程跨越936年前后。', 936, 12, 11243, NULL, NULL, NULL, NULL, NULL, NULL, '石敬瑭借契丹援助赢得帝位，向辽割让燕云十六州，北方门户自此长期处于辽、金控制之下。', NULL)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning;
+INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning) VALUES ('later-zhou-recovers-ying-mo', '后周北伐收复瀛、莫二州', 'battle', 'point', 'year', '显德六年（959年）北伐；州县归属与进军阶段按年精度处理。', 959, 12, 11519, NULL, NULL, NULL, NULL, NULL, NULL, '后周世宗北伐，收复燕云南部的瀛州、莫州等地，但未能完成燕云十六州的整体收复。', NULL)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning;
+INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning) VALUES ('song-jin-maritime-alliance', '宋金海上之盟', 'politics', 'point', 'year', '宣和二年（1120年）订盟；条约内容与实际执行过程跨越1120—1123年。', 1120, 12, 13451, NULL, NULL, NULL, NULL, NULL, NULL, '宋与金约定夹攻辽，宋希望借此取得燕云；辽亡后宋金关系迅速破裂，最终引向靖康之变。', NULL)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning;
+INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning) VALUES ('song-recovers-yanyun-six-prefectures', '北宋短暂收复燕京及六州', 'politics', 'point', 'year', '宣和五年（1123年）；此处采用年精度，不把部分州县交割误写为十六州全部收复。', 1123, 12, 13487, NULL, NULL, NULL, NULL, NULL, NULL, '辽亡后金将燕京及附近六州交给北宋，宋短暂取得燕云南部，但实际控制很快因宋金冲突而动摇。', NULL)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning;
+INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning) VALUES ('jin-reclaims-yanyun', '金重新夺取燕云', 'battle', 'point', 'year', '1125—1126年金军重夺燕云并南下；以1125年为事件起点，靖康之变另有独立事件。', 1125, 12, 13511, NULL, NULL, NULL, NULL, NULL, NULL, '宋金矛盾激化后，金军重新控制燕云并南下攻宋，北宋北部防线崩溃，次年开封陷落。', NULL)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning;
+INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning) VALUES ('heirloom-seal-lost', '传国玉玺失踪', 'politics', 'circa', 'year', '传国玺失踪的具体时点与是否毁于火中存在记载差异，取后唐灭亡前后窗口。', 936, 12, 11243, 936, 1, 11232, 937, 12, 11255, '后唐末帝李从珂兵败自焚，传统记载称传国玉玺随之失去下落；此后宋太祖受禅时已不见传国玺。', NULL)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning;
+INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning) VALUES ('qin-unifies-china', '秦统一中国', 'politics', 'point', 'year', '秦王政二十六年，前221年；作为特别重大总纲事件保留，不等同于秦统一制度事件。', -221, 12, -2629, NULL, NULL, NULL, NULL, NULL, NULL, '秦灭齐完成六国统一，结束战国长期分裂，建立中国历史上第一个大一统帝国。', NULL)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning;
+INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning) VALUES ('western-han-protectorate-of-western-regions', '西域都护府建立', 'politics', 'point', 'year', '神爵二年，前60年；具体设置月份不详。', -60, 12, -697, NULL, NULL, NULL, NULL, NULL, NULL, '西汉在西域设置都护，标志中央政权对西域的经略由军事往来推进到持续行政管理。', NULL)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning;
+INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning) VALUES ('tang-tubo-changqing-alliance', '唐蕃长庆会盟', 'politics', 'point', 'year', '长庆元年至二年（821—822年）分阶段立碑、会盟，采用821年作为事件锚点。', 821, 12, 9863, NULL, NULL, NULL, NULL, NULL, NULL, '唐与吐蕃订立长庆会盟，约定边界与和平关系，是唐蕃长期战争后重要的边疆秩序节点。', NULL)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning;
+INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning) VALUES ('qing-establishes-ili-general', '清设伊犁将军', 'politics', 'point', 'year', '乾隆二十七年（1762年）；机构设置月份不详。', 1762, 12, 21155, NULL, NULL, NULL, NULL, NULL, NULL, '清廷在平定准噶尔后设置伊犁将军，建立对新疆军政事务的常设统辖机构。', NULL)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning;
+
+-- event_dynasties
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('later-jin-cedes-yanyun', 'jin-hou') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('later-jin-cedes-yanyun', 'liao') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('later-zhou-recovers-ying-mo', 'zhou-hou') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('later-zhou-recovers-ying-mo', 'liao') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('song-jin-maritime-alliance', 'song-north') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('song-jin-maritime-alliance', 'jin-nvzhen') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('song-jin-maritime-alliance', 'liao') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('song-recovers-yanyun-six-prefectures', 'song-north') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('song-recovers-yanyun-six-prefectures', 'jin-nvzhen') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('jin-reclaims-yanyun', 'jin-nvzhen') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('jin-reclaims-yanyun', 'song-north') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('heirloom-seal-lost', 'tang') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('heirloom-seal-lost', 'jin-hou') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('qin-unifies-china', 'qin') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('western-han-protectorate-of-western-regions', 'han-west') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('tang-tubo-changqing-alliance', 'tang') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('qing-establishes-ili-general', 'qing') ON CONFLICT DO NOTHING;
+
+-- event_participants
+
+-- relations
+
+COMMIT;

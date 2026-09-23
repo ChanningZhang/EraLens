@@ -1,0 +1,56 @@
+{
+  "slug": "major-events",
+  "title": "跨时期重大事件补充",
+  "window": {
+    "startYear": -221,
+    "startMonth": 1,
+    "endYear": 1762,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "minimal",
+  "generatedAt": "2026-09-23",
+  "counts": {
+    "persons": 0,
+    "dynasties": 0,
+    "reigns": 0,
+    "events": 10,
+    "relations": 0
+  },
+  "sources": [
+    {
+      "label": "中国政府网：中国历史概况",
+      "url": "https://www.gov.cn/test/2005-05/24/content_436.htm"
+    },
+    {
+      "label": "吕梁市地方志：石敬瑭",
+      "url": "https://www.lvliang.gov.cn/zjll/mlll/lsmr/201804/t20180416_520518.html"
+    },
+    {
+      "label": "燕云十六州",
+      "url": "https://zh.wikipedia.org/wiki/%E7%87%95%E9%9B%B2%E5%8D%81%E5%85%AD%E5%B7%9E"
+    },
+    {
+      "label": "湖北省文化和旅游厅：和氏璧的千年流转",
+      "url": "https://wlt.hubei.gov.cn/bmdt/ztzl/zshb/201912/t20191226_1799401.shtml"
+    },
+    {
+      "label": "河北省档案馆：传国玉玺失踪记载",
+      "url": "https://www.hbda.gov.cn/uploads/4/file/public/201712/20171204134917_85ngxdl1xq.pdf"
+    },
+    {
+      "label": "唐蕃会盟",
+      "url": "https://zh.wikipedia.org/wiki/%E5%94%90%E8%95%83%E4%BC%9A%E7%9B%9F"
+    },
+    {
+      "label": "伊犁将军",
+      "url": "https://zh.wikipedia.org/wiki/%E4%BC%8A%E7%8A%81%E5%B0%86%E5%86%9B"
+    }
+  ],
+  "notes": [
+    "本包只补充无法由泳道直接读出的疆域、跨政权关系、政治象征和特别重大结构性转折，不重复普通王朝建立、皇帝即位或一般迁都。",
+    "燕云十六州拆为割让、局部收复、短暂取得与重新失陷，避免一个事件覆盖全部复杂过程。",
+    "传国玉玺失踪采用936—937年 circa 窗口；不把传统记载中的焚毁说写成确定事实。",
+    "已存在的张骞通西域、秦统一制度、尼布楚条约、左宗棠收复新疆等事件不在本包重复导入。"
+  ]
+}

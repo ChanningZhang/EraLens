@@ -320,24 +320,24 @@ export const capitals = [
   }),
 
   // 秦（含迁都序列）
-  e("qin", "西垂", "甘肃省陇南市礼县", -778, -710, {
-    note: "秦非子至秦仲都西垂。",
+  e("qin", "西垂", "甘肃省陇南市礼县", -778, -763, {
+    note: "秦非子至秦文公初年都西垂；前763年秦文公东迁。",
     wikiTitle: "西垂",
   }),
-  e("qin", "汧渭之会", "甘肃省天水市清水县", -709, -677, {
-    note: "秦宪公至秦武公居汧渭之会。",
-    wikiTitle: "清水县",
+  e("qin", "汧渭之会", "陕西省宝鸡市陈仓区", -762, -714, {
+    note: "秦文公四年营建汧渭之会；秦宪公二年（前714）迁都平阳。今址据考古与通行地理考证在宝鸡陈仓一带。",
+    wikiTitle: "汧渭之会",
   }),
-  e("qin", "平阳", "陕西省宝鸡市眉县", -714, -677, {
-    note: "秦宪公迁平阳。",
-    wikiTitle: "眉县",
+  e("qin", "平阳", "陕西省宝鸡市岐山县", -714, -677, {
+    note: "前714年秦宪公自汧渭之会迁都平阳；故址一说在今岐山县西南，一说在陈仓区东南阳平。此处采用岐山县行政区作为地图定位。",
+    wikiTitle: "平阳城",
   }),
   e("qin", "雍", "陕西省宝鸡市凤翔县", -677, -383, {
     note: "秦德公迁雍，武公后长期为秦都。",
     wikiTitle: "雍城",
   }),
-  e("qin", "栎阳", "陕西省西安市阎良区", -424, -351, {
-    note: "秦献公迁栎阳。",
+  e("qin", "栎阳", "陕西省西安市阎良区", -383, -350, {
+    note: "前383年秦献公迁都栎阳；前350年秦孝公迁都咸阳。",
     wikiTitle: "栎阳",
   }),
   e("qin", "咸阳", "陕西省咸阳市", -350, -207, {
@@ -658,9 +658,15 @@ export const capitals = [
   }),
 
   // ── 隋唐 ──────────────────────────────────────────────────────────────────
-  e("sui", "大兴城", "陕西省西安市", 581, 618, {
-    note: "隋都大兴城（长安）。",
+  e("sui", "长安", "陕西省西安市", 581, 582, {
+    note: "581年杨坚受禅建立隋朝，沿用北周旧都长安；583年迁入新建的大兴城。",
+    wikiTitle: "唐长安城",
+    id: "cap-sui-changan-581",
+  }),
+  e("sui", "大兴城", "陕西省西安市", 583, 618, {
+    note: "开皇三年（583）隋文帝由旧长安城迁入新都大兴城；618年唐建立后改名长安。",
     wikiTitle: "大兴城",
+    id: "cap-sui-daxing-583",
   }),
   entry("tang", "长安", "陕西省西安市", 618, 6, 903, 12, {
     precision: "month",
@@ -868,24 +874,58 @@ export const capitals = [
     wikiTitle: "大都",
     id: "cap-yuan-dadu",
   }),
-  e("song-xu", "安丰", "安徽省淮南市寿县", 1351, 1360, {
-    note: "徐寿辉天完政权都安丰。",
-    wikiTitle: "徐寿辉",
-    id: "cap-song-xu-anfeng-16212",
+  entry("song-xu", "蕲水", "湖北省黄冈市浠水县", 1351, 10, 1356, 1, {
+    note: "至正十一年十月徐寿辉据蕲水称帝，以蕲水为都；1356年初迁都汉阳。",
+    wikiTitle: "宋 (徐寿辉)",
+    id: "cap-song-xu-qishui-1351",
+    precision: "month",
   }),
-  e("zhou-zhang", "滁州", "安徽省滁州市", 1354, 1367, {
-    note: "张士诚大周政权据滁州→高邮。",
+  entry("song-xu", "汉阳", "湖北省武汉市汉阳区", 1356, 1, 1359, 12, {
+    note: "1356年初徐宋迁都汉阳；1359年末受陈友谅挟持迁江州。",
+    wikiTitle: "宋 (徐寿辉)",
+    id: "cap-song-xu-hanyang-1356",
+    precision: "month",
+  }),
+  entry("zhou-zhang", "高邮", "江苏省扬州市高邮市", 1354, 1, 1356, 2, {
+    note: "1354年张士诚在高邮建大周、称诚王；1356年迁都平江。",
     wikiTitle: "张士诚",
-    id: "cap-zhou-zhang-chuzhou-16248",
+    id: "cap-zhou-zhang-gaoyou-1354",
+    precision: "month",
   }),
-  e("song-han", "沔阳", "湖北省仙桃市", 1355, 1366, {
-    note: "陈友谅汉政权初都沔阳。",
-    wikiTitle: "陈友谅",
-    id: "cap-song-han-mianyang-16260",
+  entry("zhou-zhang", "平江", "江苏省苏州市", 1356, 3, 1367, 9, {
+    note: "1356年三月张士诚据平江并迁都，改平江路为隆平府；1367年平江城破。",
+    wikiTitle: "张士诚",
+    id: "cap-zhou-zhang-pingjiang-1356",
+    precision: "month",
   }),
-  e("chen-han", "武昌", "湖北省武汉市", 1360, 1364, {
-    note: "陈友谅迁都武昌。",
+  entry("song-han", "亳州", "安徽省亳州市", 1355, 2, 1356, 12, {
+    note: "1355年二月刘福通拥立韩林儿于亳州，韩宋以亳州为都；1356年底亳州陷落。",
+    wikiTitle: "宋 (韩林儿)",
+    id: "cap-song-han-bozhou-1355",
+    precision: "month",
+  }),
+  entry("song-han", "汴梁", "河南省开封市", 1358, 5, 1359, 8, {
+    note: "1358年韩宋攻占汴梁并迁都；1359年八月城破，退守安丰。",
+    wikiTitle: "宋 (韩林儿)",
+    id: "cap-song-han-bianliang-1358",
+    precision: "month",
+  }),
+  entry("song-han", "安丰", "安徽省淮南市寿县", 1359, 8, 1363, 2, {
+    note: "1359年八月汴梁失守后韩林儿退守安丰；1363年张士诚围攻安丰，韩林儿被朱元璋救出。",
+    wikiTitle: "宋 (韩林儿)",
+    id: "cap-song-han-anfeng-1359",
+    precision: "month",
+  }),
+  entry("chen-han", "江州", "江西省九江市", 1360, 6, 1362, 1, {
+    note: "陈友谅1360年称帝，以江州（今九江）为都；1361—1362年间败退后迁都武昌。",
     wikiTitle: "陈友谅",
+    id: "cap-chen-han-jiangzhou-1360",
+    precision: "month",
+  }),
+  e("chen-han", "武昌", "湖北省武汉市", 1362, 1364, {
+    note: "陈友谅败退后迁都武昌；1364年武昌陷落，陈理降明。",
+    wikiTitle: "陈友谅",
+    id: "cap-chen-han-wuchang-1362",
   }),
   e("xia-ming", "重庆", "重庆市", 1362, 1371, {
     note: "明玉珍大夏都城重庆。",
@@ -1002,22 +1042,30 @@ export const capitals = [
     wikiTitle: "大顺",
     id: "cap-dashun-beijing-19728",
   }),
-  e("daxi", "西京", "四川省成都市", 1644, 1646, {
-    note: "大西以成都为西京。",
+  entry("daxi", "西京", "四川省成都市", 1644, 12, 1646, 12, {
+    precision: "day",
+    startDay: 4,
+    note: "1644年12月4日张献忠在成都称帝，国号大西，以成都为西京。",
     wikiTitle: "大西",
     id: "cap-daxi-chengdu-1644",
   }),
-  e("daxi", "西充", "四川省南充市西充县", 1646, 1647, {
-    note: "张献忠迁西充。",
-    wikiTitle: "大西",
+  entry("mingzheng", "东都", "台湾省台南市", 1661, 4, 1664, 12, {
+    precision: "month",
+    note: "1661年郑成功在台南建立承天府，称台湾为东都；1664年郑经改称东宁。",
+    wikiTitle: "台湾首都",
+    id: "cap-mingzheng-dongdu-1661",
   }),
-  e("mingzheng", "东宁", "台湾省台南市", 1661, 1683, {
-    note: "明郑东宁王国都东宁（今台南）。",
+  entry("mingzheng", "东宁", "台湾省台南市", 1664, 1, 1683, 10, {
+    precision: "month",
+    note: "1664年郑经将东都改称东宁；1683年十月郑克塽降清。",
     wikiTitle: "明郑",
-    id: "cap-mingzheng-dongning-19932",
+    id: "cap-mingzheng-dongning-1664",
   }),
-  e("taiping", "天京", "江苏省南京市", 1853, 1864, {
-    note: "太平天国天京（南京）。",
+  entry("taiping", "天京", "江苏省南京市", 1853, 3, 1864, 7, {
+    precision: "day",
+    startDay: 29,
+    endDay: 19,
+    note: "1853年3月29日太平天国改江宁为天京并定都；1864年7月19日天京陷落。",
     wikiTitle: "天京",
   }),
   entry("roc", "南京", "江苏省南京市", 1912, 1, 1937, 11, {

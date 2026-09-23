@@ -51,7 +51,7 @@ function selectRelatedItem(
     selectionStore.syncToUrl(centerAbs);
     return;
   }
-  selectionStore.select(item.ref, item.abs);
+  selectionStore.navigateToDetail(item.ref, item.abs, centerAbs);
   if (item.abs !== undefined) {
     viewportStore.jumpToAbs(item.abs);
   }
@@ -63,7 +63,7 @@ function selectDetailRef(
   abs: number,
   centerAbs: number,
 ) {
-  selectionStore.select(ref, abs);
+  selectionStore.navigateToDetail(ref, abs, centerAbs);
   viewportStore.jumpToAbs(abs);
   selectionStore.syncToUrl(centerAbs);
 }
@@ -79,7 +79,7 @@ function selectTenureRef(
     selectionStore.syncToUrl(centerAbs);
     return;
   }
-  selectionStore.select(tenure.ref, tenure.abs);
+  selectionStore.navigateToDetail(tenure.ref, tenure.abs, centerAbs);
   viewportStore.jumpToAbs(tenure.abs);
   selectionStore.syncToUrl(centerAbs);
 }
@@ -125,20 +125,37 @@ export function DetailPanel() {
       style={{ ["--detail-accent" as string]: accent }}
     >
       <div className={styles.header}>
-        <div className={styles.titleBlock}>
-          <span className={styles.accent} />
-          {detailQuery.isLoading ? (
-            <p className={styles.loading}>加载中…</p>
-          ) : detailQuery.error ? (
-            <p className={styles.error}>无法加载详情</p>
-          ) : (
-            <>
-              <h2 className={styles.title}>{detailQuery.data?.title}</h2>
-              {detailQuery.data?.subtitle && (
-                <p className={styles.subtitle}>{detailQuery.data.subtitle}</p>
-              )}
-            </>
-          )}
+        <div className={styles.headerLeading}>
+          <button
+            type="button"
+            className={styles.back}
+            aria-label="返回上一条详情"
+            title="返回上一条详情"
+            disabled={selection.detailHistory.length === 0}
+            onClick={() => {
+              const previousCenter = selectionStore.goBack(viewport.centerAbs);
+              if (previousCenter !== null) {
+                viewportStore.jumpToAbs(previousCenter);
+              }
+            }}
+          >
+            ‹
+          </button>
+          <div className={styles.titleBlock}>
+            <span className={styles.accent} />
+            {detailQuery.isLoading ? (
+              <p className={styles.loading}>加载中…</p>
+            ) : detailQuery.error ? (
+              <p className={styles.error}>无法加载详情</p>
+            ) : (
+              <>
+                <h2 className={styles.title}>{detailQuery.data?.title}</h2>
+                {detailQuery.data?.subtitle && (
+                  <p className={styles.subtitle}>{detailQuery.data.subtitle}</p>
+                )}
+              </>
+            )}
+          </div>
         </div>
         <button
           type="button"

@@ -11,7 +11,7 @@
   "depth": "standard",
   "generatedAt": "2026-09-23",
   "counts": {
-    "dynasty_capitals": 178
+    "dynasty_capitals": 184
   },
   "sources": [
     {
@@ -59,6 +59,46 @@
       "url": "https://zh.wikipedia.org/wiki/杨侑"
     },
     {
+      "label": "陕西省志：隋文帝开皇年表",
+      "url": "https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsz/szdylpdf/201404/P020240923616206405975.pdf"
+    },
+    {
+      "label": "汧渭之会（维基百科）",
+      "url": "https://zh.wikipedia.org/wiki/汧渭之会"
+    },
+    {
+      "label": "平阳城（维基百科）",
+      "url": "https://zh.wikipedia.org/wiki/平阳城"
+    },
+    {
+      "label": "徐宋（维基百科）",
+      "url": "https://zh.wikipedia.org/wiki/宋_(徐寿辉)"
+    },
+    {
+      "label": "韩宋（维基百科）",
+      "url": "https://zh.wikipedia.org/wiki/宋_(韩林儿)"
+    },
+    {
+      "label": "陈友谅（维基百科）",
+      "url": "https://zh.wikipedia.org/wiki/陈友谅"
+    },
+    {
+      "label": "张士诚（维基百科）",
+      "url": "https://zh.wikipedia.org/wiki/张士诚"
+    },
+    {
+      "label": "大西（维基百科）",
+      "url": "https://zh.wikipedia.org/wiki/大西"
+    },
+    {
+      "label": "台湾首都（维基百科）",
+      "url": "https://zh.wikipedia.org/wiki/台湾首都"
+    },
+    {
+      "label": "江宁之战（维基百科）",
+      "url": "https://zh.wikipedia.org/wiki/江宁之战"
+    },
+    {
       "label": "唐哀帝（维基百科）",
       "url": "https://zh.wikipedia.org/wiki/唐哀帝"
     },
@@ -104,7 +144,8 @@
     "本次修正前蜀成都起点为907年9月、楚长沙起点为907年6月、吴越杭州起点为907年6月；原先的907年1月均为年精度占位月",
     "本次复核修正更始与赤眉都城：更始23年六月入都宛，24年二月自洛阳迁长安；两段均标为月精度。赤眉25年六月立刘盆子、九月入长安，26年曾退出后复入，故不从23年起算长安",
     "本次复核修正杨吴广陵、后梁/后晋/后汉/后周汴州、南汉兴王府、闽长乐府、南诏779年迁羊苴咩城、大理羊苴咩城、辽南京析津府、北辽临潢府、西辽虎思斡耳朵、大西西京等古称；今址仍单列于 modernName",
+    "本次全量复核修正秦国汧渭之会/平阳今址、隋581—582年旧长安与583年迁入大兴城、徐宋蕲水→汉阳、韩宋亳州→汴梁→安丰、陈汉江州→武昌、张士诚高邮→平江、大西成都起点、明郑东都/东宁古称及太平天国天京起止",
     "本次复核南明都城按政权边界拆分：应天→福州→肇庆/桂林/南宁/安龙/昆明为主线，广州标记 claim_track=shaowu；不再把隆武、绍武都城显示到永历帝详情中",
-    "覆盖 122 个王朝，178 条都城记录"
+    "覆盖 122 个王朝，184 条都城记录"
   ]
 }

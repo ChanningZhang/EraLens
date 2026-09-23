@@ -7,6 +7,14 @@ export type SelectionState = {
   detailWidth: number;
   highlightAbs: AbsMonth | null;
   focusReignId: string | null;
+  detailHistory: DetailHistoryEntry[];
+};
+
+export type DetailHistoryEntry = Pick<
+  SelectionState,
+  "selected" | "detailOpen" | "highlightAbs" | "focusReignId"
+> & {
+  viewportCenterAbs: AbsMonth;
 };
 
 type SelectionListener = () => void;
@@ -93,6 +101,7 @@ let state: SelectionState = {
   detailWidth: readStoredWidth(),
   highlightAbs: null,
   focusReignId: null,
+  detailHistory: [],
   ...parseUrlState(),
 };
 
@@ -149,8 +158,54 @@ export const selectionStore = {
       detailOpen: true,
       highlightAbs: abs ?? state.highlightAbs,
       focusReignId,
+      detailHistory: [],
     };
     notify();
+  },
+  navigateToDetail(
+    ref: EntityRef,
+    abs: AbsMonth | undefined,
+    viewportCenterAbs: AbsMonth,
+    options?: SelectOptions,
+  ) {
+    if (!state.selected || !state.detailOpen) {
+      selectionStore.select(ref, abs, options);
+      return;
+    }
+    const focusReignId = resolveFocusReignId(ref, options);
+    state = {
+      ...state,
+      selected: ref,
+      detailOpen: true,
+      highlightAbs: abs ?? state.highlightAbs,
+      focusReignId,
+      detailHistory: [
+        ...state.detailHistory,
+        {
+          selected: state.selected,
+          detailOpen: state.detailOpen,
+          highlightAbs: state.highlightAbs,
+          focusReignId: state.focusReignId,
+          viewportCenterAbs,
+        },
+      ],
+    };
+    notify();
+  },
+  goBack(viewportCenterAbs: AbsMonth): AbsMonth | null {
+    const previous = state.detailHistory.at(-1);
+    if (!previous) return null;
+    state = {
+      ...state,
+      selected: previous.selected,
+      detailOpen: previous.detailOpen,
+      highlightAbs: previous.highlightAbs,
+      focusReignId: previous.focusReignId,
+      detailHistory: state.detailHistory.slice(0, -1),
+    };
+    syncUrl(state, previous.viewportCenterAbs ?? viewportCenterAbs);
+    notify();
+    return previous.viewportCenterAbs ?? viewportCenterAbs;
   },
   clearSelection() {
     state = {
@@ -159,6 +214,7 @@ export const selectionStore = {
       detailOpen: false,
       highlightAbs: null,
       focusReignId: null,
+      detailHistory: [],
     };
     syncUrl(state);
     notify();

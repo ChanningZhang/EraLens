@@ -766,15 +766,15 @@
       "abs": -9324
     },
     "end": {
-      "year": -710,
+      "year": -763,
       "month": 12,
-      "abs": -8497
+      "abs": -9133
     },
     "startAbs": -9324,
-    "endAbs": -8497,
+    "endAbs": -9133,
     "precision": "year",
     "role": "primary",
-    "note": "秦非子至秦仲都西垂。",
+    "note": "秦非子至秦文公初年都西垂；前763年秦文公东迁。",
     "links": [
       {
         "label": "维基百科",
@@ -783,29 +783,29 @@
     ]
   },
   {
-    "id": "cap-qin-qianhui-709",
+    "id": "cap-qin-qianhui-762",
     "dynastyId": "qin",
     "historicalName": "汧渭之会",
-    "modernName": "甘肃省天水市清水县",
+    "modernName": "陕西省宝鸡市陈仓区",
     "start": {
-      "year": -709,
+      "year": -762,
       "month": 1,
-      "abs": -8496
+      "abs": -9132
     },
     "end": {
-      "year": -677,
+      "year": -714,
       "month": 12,
-      "abs": -8101
+      "abs": -8545
     },
-    "startAbs": -8496,
-    "endAbs": -8101,
+    "startAbs": -9132,
+    "endAbs": -8545,
     "precision": "year",
     "role": "primary",
-    "note": "秦宪公至秦武公居汧渭之会。",
+    "note": "秦文公四年营建汧渭之会；秦宪公二年（前714）迁都平阳。今址据考古与通行地理考证在宝鸡陈仓一带。",
     "links": [
       {
         "label": "维基百科",
-        "url": "https://zh.wikipedia.org/wiki/清水县"
+        "url": "https://zh.wikipedia.org/wiki/汧渭之会"
       }
     ]
   },
@@ -813,7 +813,7 @@
     "id": "cap-qin-pingyang-714",
     "dynastyId": "qin",
     "historicalName": "平阳",
-    "modernName": "陕西省宝鸡市眉县",
+    "modernName": "陕西省宝鸡市岐山县",
     "start": {
       "year": -714,
       "month": 1,
@@ -828,11 +828,11 @@
     "endAbs": -8101,
     "precision": "year",
     "role": "primary",
-    "note": "秦宪公迁平阳。",
+    "note": "前714年秦宪公自汧渭之会迁都平阳；故址一说在今岐山县西南，一说在陈仓区东南阳平。此处采用岐山县行政区作为地图定位。",
     "links": [
       {
         "label": "维基百科",
-        "url": "https://zh.wikipedia.org/wiki/眉县"
+        "url": "https://zh.wikipedia.org/wiki/平阳城"
       }
     ]
   },
@@ -864,25 +864,25 @@
     ]
   },
   {
-    "id": "cap-qin-liyue-424",
+    "id": "cap-qin-liyue-383",
     "dynastyId": "qin",
     "historicalName": "栎阳",
     "modernName": "陕西省西安市阎良区",
     "start": {
-      "year": -424,
+      "year": -383,
       "month": 1,
-      "abs": -5076
+      "abs": -4584
     },
     "end": {
-      "year": -351,
+      "year": -350,
       "month": 12,
-      "abs": -4189
+      "abs": -4177
     },
-    "startAbs": -5076,
-    "endAbs": -4189,
+    "startAbs": -4584,
+    "endAbs": -4177,
     "precision": "year",
     "role": "primary",
-    "note": "秦献公迁栎阳。",
+    "note": "前383年秦献公迁都栎阳；前350年秦孝公迁都咸阳。",
     "links": [
       {
         "label": "维基百科",
@@ -2862,9 +2862,9 @@
     ]
   },
   {
-    "id": "cap-sui-daxing-581",
+    "id": "cap-sui-changan-581",
     "dynastyId": "sui",
-    "historicalName": "大兴城",
+    "historicalName": "长安",
     "modernName": "陕西省西安市",
     "start": {
       "year": 581,
@@ -2872,15 +2872,42 @@
       "abs": 6972
     },
     "end": {
+      "year": 582,
+      "month": 12,
+      "abs": 6995
+    },
+    "startAbs": 6972,
+    "endAbs": 6995,
+    "precision": "year",
+    "role": "primary",
+    "note": "581年杨坚受禅建立隋朝，沿用北周旧都长安；583年迁入新建的大兴城。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐长安城"
+      }
+    ]
+  },
+  {
+    "id": "cap-sui-daxing-583",
+    "dynastyId": "sui",
+    "historicalName": "大兴城",
+    "modernName": "陕西省西安市",
+    "start": {
+      "year": 583,
+      "month": 1,
+      "abs": 6996
+    },
+    "end": {
       "year": 618,
       "month": 12,
       "abs": 7427
     },
-    "startAbs": 6972,
+    "startAbs": 6996,
     "endAbs": 7427,
     "precision": "year",
     "role": "primary",
-    "note": "隋都大兴城（长安）。",
+    "note": "开皇三年（583）隋文帝由旧长安城迁入新都大兴城；618年唐建立后改名长安。",
     "links": [
       {
         "label": "维基百科",
@@ -3996,52 +4023,79 @@
     ]
   },
   {
-    "id": "cap-song-xu-anfeng-16212",
+    "id": "cap-song-xu-qishui-1351",
     "dynastyId": "song-xu",
-    "historicalName": "安丰",
-    "modernName": "安徽省淮南市寿县",
+    "historicalName": "蕲水",
+    "modernName": "湖北省黄冈市浠水县",
     "start": {
       "year": 1351,
-      "month": 1,
-      "abs": 16212
+      "month": 10,
+      "abs": 16221
     },
     "end": {
-      "year": 1360,
-      "month": 12,
-      "abs": 16331
+      "year": 1356,
+      "month": 1,
+      "abs": 16272
     },
-    "startAbs": 16212,
-    "endAbs": 16331,
-    "precision": "year",
+    "startAbs": 16221,
+    "endAbs": 16272,
+    "precision": "month",
     "role": "primary",
-    "note": "徐寿辉天完政权都安丰。",
+    "note": "至正十一年十月徐寿辉据蕲水称帝，以蕲水为都；1356年初迁都汉阳。",
     "links": [
       {
         "label": "维基百科",
-        "url": "https://zh.wikipedia.org/wiki/徐寿辉"
+        "url": "https://zh.wikipedia.org/wiki/宋 (徐寿辉)"
       }
     ]
   },
   {
-    "id": "cap-zhou-zhang-chuzhou-16248",
+    "id": "cap-song-xu-hanyang-1356",
+    "dynastyId": "song-xu",
+    "historicalName": "汉阳",
+    "modernName": "湖北省武汉市汉阳区",
+    "start": {
+      "year": 1356,
+      "month": 1,
+      "abs": 16272
+    },
+    "end": {
+      "year": 1359,
+      "month": 12,
+      "abs": 16319
+    },
+    "startAbs": 16272,
+    "endAbs": 16319,
+    "precision": "month",
+    "role": "primary",
+    "note": "1356年初徐宋迁都汉阳；1359年末受陈友谅挟持迁江州。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋 (徐寿辉)"
+      }
+    ]
+  },
+  {
+    "id": "cap-zhou-zhang-gaoyou-1354",
     "dynastyId": "zhou-zhang",
-    "historicalName": "滁州",
-    "modernName": "安徽省滁州市",
+    "historicalName": "高邮",
+    "modernName": "江苏省扬州市高邮市",
     "start": {
       "year": 1354,
       "month": 1,
       "abs": 16248
     },
     "end": {
-      "year": 1367,
-      "month": 12,
-      "abs": 16415
+      "year": 1356,
+      "month": 2,
+      "abs": 16273
     },
     "startAbs": 16248,
-    "endAbs": 16415,
-    "precision": "year",
+    "endAbs": 16273,
+    "precision": "month",
     "role": "primary",
-    "note": "张士诚大周政权据滁州→高邮。",
+    "note": "1354年张士诚在高邮建大周、称诚王；1356年迁都平江。",
     "links": [
       {
         "label": "维基百科",
@@ -4050,25 +4104,133 @@
     ]
   },
   {
-    "id": "cap-song-han-mianyang-16260",
-    "dynastyId": "song-han",
-    "historicalName": "沔阳",
-    "modernName": "湖北省仙桃市",
+    "id": "cap-zhou-zhang-pingjiang-1356",
+    "dynastyId": "zhou-zhang",
+    "historicalName": "平江",
+    "modernName": "江苏省苏州市",
     "start": {
-      "year": 1355,
-      "month": 1,
-      "abs": 16260
+      "year": 1356,
+      "month": 3,
+      "abs": 16274
     },
     "end": {
-      "year": 1366,
-      "month": 12,
-      "abs": 16403
+      "year": 1367,
+      "month": 9,
+      "abs": 16412
     },
-    "startAbs": 16260,
-    "endAbs": 16403,
-    "precision": "year",
+    "startAbs": 16274,
+    "endAbs": 16412,
+    "precision": "month",
     "role": "primary",
-    "note": "陈友谅汉政权初都沔阳。",
+    "note": "1356年三月张士诚据平江并迁都，改平江路为隆平府；1367年平江城破。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/张士诚"
+      }
+    ]
+  },
+  {
+    "id": "cap-song-han-bozhou-1355",
+    "dynastyId": "song-han",
+    "historicalName": "亳州",
+    "modernName": "安徽省亳州市",
+    "start": {
+      "year": 1355,
+      "month": 2,
+      "abs": 16261
+    },
+    "end": {
+      "year": 1356,
+      "month": 12,
+      "abs": 16283
+    },
+    "startAbs": 16261,
+    "endAbs": 16283,
+    "precision": "month",
+    "role": "primary",
+    "note": "1355年二月刘福通拥立韩林儿于亳州，韩宋以亳州为都；1356年底亳州陷落。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋 (韩林儿)"
+      }
+    ]
+  },
+  {
+    "id": "cap-song-han-bianliang-1358",
+    "dynastyId": "song-han",
+    "historicalName": "汴梁",
+    "modernName": "河南省开封市",
+    "start": {
+      "year": 1358,
+      "month": 5,
+      "abs": 16300
+    },
+    "end": {
+      "year": 1359,
+      "month": 8,
+      "abs": 16315
+    },
+    "startAbs": 16300,
+    "endAbs": 16315,
+    "precision": "month",
+    "role": "primary",
+    "note": "1358年韩宋攻占汴梁并迁都；1359年八月城破，退守安丰。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋 (韩林儿)"
+      }
+    ]
+  },
+  {
+    "id": "cap-song-han-anfeng-1359",
+    "dynastyId": "song-han",
+    "historicalName": "安丰",
+    "modernName": "安徽省淮南市寿县",
+    "start": {
+      "year": 1359,
+      "month": 8,
+      "abs": 16315
+    },
+    "end": {
+      "year": 1363,
+      "month": 2,
+      "abs": 16357
+    },
+    "startAbs": 16315,
+    "endAbs": 16357,
+    "precision": "month",
+    "role": "primary",
+    "note": "1359年八月汴梁失守后韩林儿退守安丰；1363年张士诚围攻安丰，韩林儿被朱元璋救出。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋 (韩林儿)"
+      }
+    ]
+  },
+  {
+    "id": "cap-chen-han-jiangzhou-1360",
+    "dynastyId": "chen-han",
+    "historicalName": "江州",
+    "modernName": "江西省九江市",
+    "start": {
+      "year": 1360,
+      "month": 6,
+      "abs": 16325
+    },
+    "end": {
+      "year": 1362,
+      "month": 1,
+      "abs": 16344
+    },
+    "startAbs": 16325,
+    "endAbs": 16344,
+    "precision": "month",
+    "role": "primary",
+    "note": "陈友谅1360年称帝，以江州（今九江）为都；1361—1362年间败退后迁都武昌。",
     "links": [
       {
         "label": "维基百科",
@@ -4077,25 +4239,25 @@
     ]
   },
   {
-    "id": "cap-chen-han-wuchang-1360",
+    "id": "cap-chen-han-wuchang-1362",
     "dynastyId": "chen-han",
     "historicalName": "武昌",
     "modernName": "湖北省武汉市",
     "start": {
-      "year": 1360,
+      "year": 1362,
       "month": 1,
-      "abs": 16320
+      "abs": 16344
     },
     "end": {
       "year": 1364,
       "month": 12,
       "abs": 16379
     },
-    "startAbs": 16320,
+    "startAbs": 16344,
     "endAbs": 16379,
     "precision": "year",
     "role": "primary",
-    "note": "陈友谅迁都武昌。",
+    "note": "陈友谅败退后迁都武昌；1364年武昌陷落，陈理降明。",
     "links": [
       {
         "label": "维基百科",
@@ -4610,19 +4772,20 @@
     "modernName": "四川省成都市",
     "start": {
       "year": 1644,
-      "month": 1,
-      "abs": 19728
+      "month": 12,
+      "abs": 19739,
+      "day": 4
     },
     "end": {
       "year": 1646,
       "month": 12,
       "abs": 19763
     },
-    "startAbs": 19728,
+    "startAbs": 19739,
     "endAbs": 19763,
-    "precision": "year",
+    "precision": "day",
     "role": "primary",
-    "note": "大西以成都为西京。",
+    "note": "1644年12月4日张献忠在成都称帝，国号大西，以成都为西京。",
     "links": [
       {
         "label": "维基百科",
@@ -4631,52 +4794,52 @@
     ]
   },
   {
-    "id": "cap-daxi-xichong-1646",
-    "dynastyId": "daxi",
-    "historicalName": "西充",
-    "modernName": "四川省南充市西充县",
+    "id": "cap-mingzheng-dongdu-1661",
+    "dynastyId": "mingzheng",
+    "historicalName": "东都",
+    "modernName": "台湾省台南市",
     "start": {
-      "year": 1646,
-      "month": 1,
-      "abs": 19752
+      "year": 1661,
+      "month": 4,
+      "abs": 19935
     },
     "end": {
-      "year": 1647,
+      "year": 1664,
       "month": 12,
-      "abs": 19775
+      "abs": 19979
     },
-    "startAbs": 19752,
-    "endAbs": 19775,
-    "precision": "year",
+    "startAbs": 19935,
+    "endAbs": 19979,
+    "precision": "month",
     "role": "primary",
-    "note": "张献忠迁西充。",
+    "note": "1661年郑成功在台南建立承天府，称台湾为东都；1664年郑经改称东宁。",
     "links": [
       {
         "label": "维基百科",
-        "url": "https://zh.wikipedia.org/wiki/大西"
+        "url": "https://zh.wikipedia.org/wiki/台湾首都"
       }
     ]
   },
   {
-    "id": "cap-mingzheng-dongning-19932",
+    "id": "cap-mingzheng-dongning-1664",
     "dynastyId": "mingzheng",
     "historicalName": "东宁",
     "modernName": "台湾省台南市",
     "start": {
-      "year": 1661,
+      "year": 1664,
       "month": 1,
-      "abs": 19932
+      "abs": 19968
     },
     "end": {
       "year": 1683,
-      "month": 12,
-      "abs": 20207
+      "month": 10,
+      "abs": 20205
     },
-    "startAbs": 19932,
-    "endAbs": 20207,
-    "precision": "year",
+    "startAbs": 19968,
+    "endAbs": 20205,
+    "precision": "month",
     "role": "primary",
-    "note": "明郑东宁王国都东宁（今台南）。",
+    "note": "1664年郑经将东都改称东宁；1683年十月郑克塽降清。",
     "links": [
       {
         "label": "维基百科",
@@ -4691,19 +4854,21 @@
     "modernName": "江苏省南京市",
     "start": {
       "year": 1853,
-      "month": 1,
-      "abs": 22236
+      "month": 3,
+      "abs": 22238,
+      "day": 29
     },
     "end": {
       "year": 1864,
-      "month": 12,
-      "abs": 22379
+      "month": 7,
+      "abs": 22374,
+      "day": 19
     },
-    "startAbs": 22236,
-    "endAbs": 22379,
-    "precision": "year",
+    "startAbs": 22238,
+    "endAbs": 22374,
+    "precision": "day",
     "role": "primary",
-    "note": "太平天国天京（南京）。",
+    "note": "1853年3月29日太平天国改江宁为天京并定都；1864年7月19日天京陷落。",
     "links": [
       {
         "label": "维基百科",

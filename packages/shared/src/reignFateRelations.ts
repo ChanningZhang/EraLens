@@ -87,39 +87,6 @@ export type ResolvedFateRelation = {
   toReign: Reign;
 };
 
-/** Surrender/captured near a later killing are usually the same conquest story; abdication is not. */
-const FATE_KINDS_SUPPRESSED_BY_KILLED = new Set<FateRelationKind>([
-  "surrender",
-  "captured",
-]);
-
-/** Group key for the victim side of a fate line. */
-function fateVictimKey(fromReign: Reign): string {
-  if (fromReign.personId !== "system-missing-ruler") {
-    return `person:${fromReign.personId}`;
-  }
-  return `reign:${fromReign.id}`;
-}
-
-/** When a ruler has both killed and surrender/captured, keep only killed. Abdication stays (e.g. 孺子婴禅让王莽后又为刘玄所杀). */
-export function prioritizeKilledFateRelations(
-  resolved: readonly ResolvedFateRelation[],
-): ResolvedFateRelation[] {
-  const killedVictims = new Set<string>();
-  for (const item of resolved) {
-    if (item.relation.kind === "killed") {
-      killedVictims.add(fateVictimKey(item.fromReign));
-    }
-  }
-  if (killedVictims.size === 0) return [...resolved];
-
-  return resolved.filter((item) => {
-    if (!isFateRelationKind(item.relation.kind)) return true;
-    if (!FATE_KINDS_SUPPRESSED_BY_KILLED.has(item.relation.kind)) return true;
-    return !killedVictims.has(fateVictimKey(item.fromReign));
-  });
-}
-
 export function resolveFateRelation(
   relation: Relation,
   reigns: readonly Reign[],
@@ -150,5 +117,5 @@ export function resolveFateRelations(
     const item = resolveFateRelation(relation, reigns);
     if (item) resolved.push(item);
   }
-  return prioritizeKilledFateRelations(resolved);
+  return resolved;
 }

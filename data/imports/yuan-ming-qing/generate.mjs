@@ -395,7 +395,6 @@ const events = [
   eventRange({ id: "taiping-rebellion", name: "太平天国运动", kind: "politics", timeMode: "span", precision: "month", start: ym(1851, 1), end: ym(1864, 7), dynastyIds: ["qing"], participantIds: ["yizhu"], summary: "洪秀全领导太平天国运动，1851年1月金田起义至1864年7月天京陷落，与清廷对峙十余年。" }),
   eventPoint({ id: "xinhai-revolution", name: "辛亥革命", kind: "politics", at: ym(1911), dynastyIds: ["qing"], participantIds: ["sun-yat-sen"], summary: "武昌起义爆发，各省独立，帝制走向终结。" }),
   eventPoint({ id: "lu-jian-enthroned", name: "鲁王监国", kind: "politics", at: ym(1645), dynastyIds: ["ming-south"], participantIds: ["zhu-yihai"], summary: "弘光亡后，朱以海监国于绍兴，与福州隆武政权并立。" }),
-  eventPoint({ id: "shaowu-enthroned", name: "绍武称帝", kind: "politics", at: ym(1646), dynastyIds: ["ming-south"], participantIds: ["zhu-yuyue"], summary: "隆武被俘后，朱聿鐭在广州称帝，与肇庆永历并立。" }),
   eventPoint({
     id: "zheng-recover-taiwan",
     name: "郑成功收复台湾",
@@ -488,6 +487,9 @@ const preSql = [
   "DELETE FROM event_participants WHERE event_id = 'puyi-leaves-forbidden-city';",
   "DELETE FROM event_dynasties WHERE event_id = 'puyi-leaves-forbidden-city';",
   "DELETE FROM events WHERE id = 'puyi-leaves-forbidden-city';",
+  "DELETE FROM event_participants WHERE event_id = 'shaowu-enthroned';",
+  "DELETE FROM event_dynasties WHERE event_id = 'shaowu-enthroned';",
+  "DELETE FROM events WHERE id = 'shaowu-enthroned';",
 ].join("\n");
 
 const sql = ["-- EraLens period import: yuan-ming-qing", "-- Window: 1271-12 .. 1912-02", "BEGIN;", "", preSql, "", "-- persons", ...importPersons.map(personSql), "", "-- dynasties", ...dynasties.map(dynastySql), "", "-- reigns", ...importReigns.map(formatReignSql), "", "-- events", ...events.map(eventSql), "", "-- event_dynasties", ...eventDynastySql, "", "-- event_participants", ...eventParticipantSql, "", "-- relations", ...relations.map(relationSql), "", "COMMIT;", ""].join("\n");

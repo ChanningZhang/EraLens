@@ -3,6 +3,9 @@
 BEGIN;
 
 -- cleanup
+DELETE FROM event_participants WHERE event_id = 'dai-founded';
+DELETE FROM event_dynasties WHERE event_id = 'dai-founded';
+DELETE FROM events WHERE id = 'dai-founded';
 DELETE FROM reigns WHERE id IN (
   'reign-xue-r0-xue-chunqiu',
   'reign-teng-r0-teng-chunqiu',
@@ -305,14 +308,10 @@ VALUES ('reign-missing-ju-chunqiu--481', 'ju-chunqiu', 'system-missing-ruler', '
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence;
 
 -- events
-INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning) VALUES ('dai-founded', '代王嘉自立', 'politics', 'point', 'year', '赵幽缪王八年，前228年，秦占邯郸后赵嘉逃代自立', -228, 12, -2713, NULL, NULL, NULL, NULL, NULL, NULL, '赵公子嘉逃至代郡，被大夫拥立为代王，延续赵国宗祀。', NULL)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning) VALUES ('zhou-guo-split', '东西周国分立', 'politics', 'point', 'year', '周威公卒，前367年；赵成侯、韩懿侯分周为二', -367, 12, -4381, NULL, NULL, NULL, NULL, NULL, NULL, '西周威公卒后，太子朝据王城为西周惠公，少子根据巩为东周惠公，周王畿分裂为西周国与东周国。', NULL)
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning;
 
 -- event_dynasties
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('dai-founded', 'dai-warring') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('dai-founded', 'zhao-warring') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('zhou-guo-split', 'zhou-guo-west') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('zhou-guo-split', 'zhou-guo-east') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('zhou-guo-split', 'zhou-east') ON CONFLICT DO NOTHING;
@@ -326,7 +325,6 @@ INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('zhanguo', 'zhou-guo-
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('zhanguo', 'zhou-guo-east') ON CONFLICT DO NOTHING;
 
 -- event_participants
-INSERT INTO event_participants (event_id, person_id) VALUES ('dai-founded', 'zhao-jia-dai') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('zhou-guo-split', 'zhou-guo-chao') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('zhou-guo-split', 'zhou-guo-gen') ON CONFLICT DO NOTHING;
 

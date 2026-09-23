@@ -14,6 +14,9 @@ DELETE FROM reigns WHERE id = 'reign-puyi-qing-forbidden';
 DELETE FROM event_participants WHERE event_id = 'puyi-leaves-forbidden-city';
 DELETE FROM event_dynasties WHERE event_id = 'puyi-leaves-forbidden-city';
 DELETE FROM events WHERE id = 'puyi-leaves-forbidden-city';
+DELETE FROM event_participants WHERE event_id = 'shaowu-enthroned';
+DELETE FROM event_dynasties WHERE event_id = 'shaowu-enthroned';
+DELETE FROM events WHERE id = 'shaowu-enthroned';
 
 -- persons
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name)
@@ -548,7 +551,6 @@ INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary) VALUES ('taiping-rebellion', '太平天国运动', 'politics', 'span', 'month', NULL, NULL, NULL, NULL, 1851, 1, 22212, 1864, 7, 22374, '洪秀全领导太平天国运动，1851年1月金田起义至1864年7月天京陷落，与清廷对峙十余年。') ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary) VALUES ('xinhai-revolution', '辛亥革命', 'politics', 'point', 'year', NULL, 1911, 12, 22943, NULL, NULL, NULL, NULL, NULL, NULL, '武昌起义爆发，各省独立，帝制走向终结。') ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary) VALUES ('lu-jian-enthroned', '鲁王监国', 'politics', 'point', 'year', NULL, 1645, 12, 19751, NULL, NULL, NULL, NULL, NULL, NULL, '弘光亡后，朱以海监国于绍兴，与福州隆武政权并立。') ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary;
-INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary) VALUES ('shaowu-enthroned', '绍武称帝', 'politics', 'point', 'year', NULL, 1646, 12, 19763, NULL, NULL, NULL, NULL, NULL, NULL, '隆武被俘后，朱聿鐭在广州称帝，与肇庆永历并立。') ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary) VALUES ('zheng-recover-taiwan', '郑成功收复台湾', 'battle', 'point', 'day', '永历十五年十二月十三日，1662年2月1日，荷军签约投降', 1662, 2, 19945, NULL, NULL, NULL, NULL, NULL, NULL, '郑成功驱逐荷兰殖民者，收复台湾。') ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary;
 
 -- event_dynasties
@@ -622,7 +624,6 @@ INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('treaty-of-renewal-19
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('taiping-rebellion', 'qing') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('xinhai-revolution', 'qing') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('lu-jian-enthroned', 'ming-south') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('shaowu-enthroned', 'ming-south') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('zheng-recover-taiwan', 'ming-south') ON CONFLICT DO NOTHING;
 
 -- event_participants
@@ -719,7 +720,6 @@ INSERT INTO event_participants (event_id, person_id) VALUES ('treaty-of-renewal-
 INSERT INTO event_participants (event_id, person_id) VALUES ('taiping-rebellion', 'yizhu') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('xinhai-revolution', 'sun-yat-sen') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('lu-jian-enthroned', 'zhu-yihai') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('shaowu-enthroned', 'zhu-yuyue') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('zheng-recover-taiwan', 'zheng-chenggong') ON CONFLICT DO NOTHING;
 
 -- relations

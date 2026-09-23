@@ -8,8 +8,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
-import { reignSql as formatReignSql } from "../lib/reignSql.mjs";
-import { dynastySql, formatAppellationCsv, mergeAppellationsIntoPersons, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
+import { dynastySql, formatAppellationCsv, mergeAppellationsIntoPersons, normalizeYearPrecisionAt, personSql, reignSql as formatReignSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -185,24 +184,6 @@ function eventPoint(partial) {
 
 const events = [
   eventPoint({
-    id: "xixia-li-jiqian-rebel",
-    name: "李继迁叛宋",
-    kind: "politics",
-    at: ym(982),
-    dynastyIds: ["xixia"],
-    participantIds: ["li-jiqian"],
-    summary: "党项首领李继迁叛宋，据有夏州，西夏政权肇始。",
-  }),
-  eventPoint({
-    id: "xixia-yuanhao-empire",
-    name: "李元昊称帝",
-    kind: "politics",
-    at: ym(1038),
-    dynastyIds: ["xixia"],
-    participantIds: ["li-yuanhao"],
-    summary: "李元昊称帝，国号大夏，定都兴庆府，与宋辽并立。",
-  }),
-  eventPoint({
     id: "xixia-haoshuichuan-battle",
     name: "好水川之战",
     kind: "battle",
@@ -242,7 +223,6 @@ for (const group of reignGroups) {
   }
 }
 relations.push(
-  { id: "rel-xixia-yuanhao-empire", fromRef: "event:xixia-yuanhao-empire", toRef: "dynasty:xixia", kind: "other" },
   { id: "rel-xixia-haoshuichuan-yuanhao", fromRef: "event:xixia-haoshuichuan-battle", toRef: "person:li-yuanhao", kind: "battle" },
 );
 
@@ -290,6 +270,10 @@ const sql = [
   "-- EraLens period import: xixia",
   "-- Window: 982-01 .. 1227-12",
   "BEGIN;",
+  "DELETE FROM relations WHERE id = 'rel-xixia-yuanhao-empire';",
+  "DELETE FROM event_participants WHERE event_id IN ('xixia-li-jiqian-rebel', 'xixia-yuanhao-empire');",
+  "DELETE FROM event_dynasties WHERE event_id IN ('xixia-li-jiqian-rebel', 'xixia-yuanhao-empire');",
+  "DELETE FROM events WHERE id IN ('xixia-li-jiqian-rebel', 'xixia-yuanhao-empire');",
   "", "-- persons", ...importPersons.map(personSql),
   "", "-- dynasties", ...dynasties.map(dynastySql),
   "",
