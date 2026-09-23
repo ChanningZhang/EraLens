@@ -2,7 +2,10 @@ import type { Event } from "@eralens/shared";
 import { eventSpanAbs } from "@eralens/shared";
 import { projectAbs, projectRange, type ViewportState } from "./coordinates";
 
+/** Maximum visual width of an event pill, matching `.marker { max-width }`. */
 export const EVENT_MARKER_WIDTH = 132;
+const EVENT_MARKER_CHROME_WIDTH = 27;
+const EVENT_LABEL_FONT_SIZE = 11;
 /** Border + left padding + half the 5px dot; keeps the pill origin on the time. */
 export const EVENT_MARKER_DOT_OFFSET = 10;
 /** Inset from the stage edge so a stuck label is not flush with the viewport. */
@@ -16,11 +19,36 @@ export type PlacedEvent = {
   event: Event;
   lane: number;
   showBand: boolean;
+  markerWidth: number;
   anchorX: number;
   bandLeft: number;
   bandWidth: number;
   top: number;
 };
+
+/**
+ * Estimate the inline width used by the event label without reading the DOM.
+ * Timeline layout runs before the markers mount, so the estimate must be
+ * deterministic and mirror the 11px sans-serif label closely. CJK glyphs in
+ * the product font are full-em; Latin glyphs use compact approximations.
+ */
+export function eventMarkerWidth(name: string): number {
+  let labelWidth = 0;
+  for (const character of Array.from(name)) {
+    if (/\s/u.test(character)) {
+      labelWidth += EVENT_LABEL_FONT_SIZE * 0.35;
+    } else if (/[\u1100-\u11ff\u2e80-\ua4cf\uf900-\ufaff\uff00-\uffef]/u.test(character)) {
+      labelWidth += EVENT_LABEL_FONT_SIZE;
+    } else if (/[ilI1'.,:;!|]/u.test(character)) {
+      labelWidth += EVENT_LABEL_FONT_SIZE * 0.35;
+    } else if (/[MW@#%&]/u.test(character)) {
+      labelWidth += EVENT_LABEL_FONT_SIZE * 0.9;
+    } else {
+      labelWidth += EVENT_LABEL_FONT_SIZE * 0.62;
+    }
+  }
+  return Math.min(EVENT_MARKER_WIDTH, EVENT_MARKER_CHROME_WIDTH + labelWidth);
+}
 
 export function eventHasBand(event: Event): boolean {
   return event.kind !== "poetry" && (event.timeMode === "span" || event.timeMode === "circa");
@@ -73,8 +101,9 @@ export function eventHitInterval(
 ): { left: number; right: number } {
   const span = eventSpanAbs(event);
   const x = projectAbs(viewport, span.anchorAbs);
+  const markerWidth = eventMarkerWidth(event.name);
   let left = x - EVENT_MARKER_DOT_OFFSET;
-  let right = left + EVENT_MARKER_WIDTH;
+  let right = left + markerWidth;
   if (eventHasBand(event)) {
     const range = projectRange(viewport, span.startAbs, span.endAbs);
     left = Math.min(left, range.left);
@@ -117,10 +146,12 @@ export function layoutEvents(events: Event[], viewport: ViewportState): PlacedEv
     const bandWidth = Math.max(8, range.width);
     const naturalX = projectAbs(viewport, span.anchorAbs);
     const lane = lanes.get(event.id) ?? 0;
+    const markerWidth = eventMarkerWidth(event.name);
     return {
       event,
       lane,
       showBand,
+      markerWidth,
       anchorX: showBand
         ? stickyEventMarkerX({
             anchorX: naturalX,
@@ -128,6 +159,7 @@ export function layoutEvents(events: Event[], viewport: ViewportState): PlacedEv
             bandWidth,
             viewportWidth: viewport.widthPx,
             gutter: viewport.gutterPx,
+            markerWidth,
           })
         : naturalX,
       bandLeft: range.left,

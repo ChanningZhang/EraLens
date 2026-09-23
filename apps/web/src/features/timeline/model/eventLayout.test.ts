@@ -6,6 +6,7 @@ import {
   EVENT_MARKER_DOT_OFFSET,
   EVENT_MARKER_VIEW_PAD,
   EVENT_MARKER_WIDTH,
+  eventMarkerWidth,
   eventHitInterval,
   layoutEvents,
   packEventLanes,
@@ -92,8 +93,35 @@ describe("layoutEvents", () => {
 
     expect(hit.left).toBe(x - EVENT_MARKER_DOT_OFFSET - EVENT_LANE_PAD);
     expect(hit.right).toBe(
-      x - EVENT_MARKER_DOT_OFFSET + EVENT_MARKER_WIDTH + EVENT_LANE_PAD,
+      x - EVENT_MARKER_DOT_OFFSET + eventMarkerWidth(event.name) + EVENT_LANE_PAD,
     );
+  });
+
+  it("lets short, visually separate labels share a lane", () => {
+    const guiSuiShou = EventSchema.parse({
+      id: "poetry-gui-sui-shou",
+      name: "龟虽寿",
+      kind: "poetry",
+      timeMode: "circa",
+      precision: "year",
+      start: { year: 207, month: 1 },
+      end: { year: 210, month: 12 },
+      startAbs: absMonth(207, 1),
+      endAbs: absMonth(210, 12),
+    });
+    const liuBeiTakesYizhou = EventSchema.parse({
+      id: "liu-bei-takes-yizhou",
+      name: "刘备取益州",
+      kind: "politics",
+      precision: "year",
+      at: { year: 214, month: 12 },
+      atAbs: absMonth(214, 12),
+    });
+
+    const placed = layoutEvents([guiSuiShou, liuBeiTakesYizhou], viewport);
+    expect(placed[0]?.lane).toBe(0);
+    expect(placed[1]?.lane).toBe(0);
+    expect(eventMarkerWidth(guiSuiShou.name)).toBeLessThan(EVENT_MARKER_WIDTH);
   });
 
   it("uses a circa poem's anchor without displaying its time band", () => {
