@@ -89,7 +89,7 @@ function dynastyReign(dynastyId, personId, title, posthumous, temple, startYear,
     eraNames,
     claimTrack: claim?.track,
     claimLabel: claim?.label,
-    claimRole: claim?.track ? "rival" : undefined,
+    claimRole: claim?.role ?? (claim?.track ? "rival" : undefined),
   });
 }
 
@@ -338,15 +338,12 @@ const dynasties = [
 const suiReignsCore = [
   dynastyReign("sui", "yang-jian", "隋文帝", "文皇帝", null, 581, 604, eras("reign-yang-jian", [{ name: "开皇", sy: 581, ey: 600 }, { name: "仁寿", sy: 601, ey: 604 }])),
   dynastyReign("sui", "yang-guang", "隋炀帝", "炀皇帝", null, 604, 618, eras("reign-yang-guang", [{ name: "大业", sy: 605, ey: 618 }])),
+  dynastyReign("sui", "yang-hao", "隋秦王", null, null, 618, 618, [], { role: "rival" }),
 ];
 const suiReignsParallel = [
   dynastyReign("sui", "yang-you", "隋恭帝", "恭帝", null, 617, 618, [], {
     track: "changan",
     label: "长安",
-  }),
-  dynastyReign("sui", "yang-hao", "隋秦王", null, null, 618, 618, [], {
-    track: "jiangdu",
-    label: "江都",
   }),
   dynastyReign("sui", "yang-tong", "隋越王", null, null, 618, 619, [], {
     track: "luoyang",
@@ -514,7 +511,7 @@ const songSouthReigns = [
   drDay("song-south", "zhao-bing", "宋帝昺", null, null, 1278, 5, 10, 1279, 3, 19),
 ];
 
-// 杨侑、杨浩、杨侗均另立于隋末主线之外，使用并立 track。
+// 杨侑与杨侗使用并立 track；杨浩留在主行，但标记为非正统继位，不显示金色。
 const reignGroups = [suiReignsCore, tangReigns, zhouWuReigns, wudaiReigns, shiguoReigns, songNorthReigns, songSouthReigns];
 const reigns = applyDocumentedDatesToReigns(
   [suiReigns, xuReigns, tangReigns, zhouWuReigns, wudaiReigns, shiguoReigns, songNorthReigns, songSouthReigns].flat(),
@@ -602,8 +599,11 @@ const events = [
 // ── relations ────────────────────────────────────────────────────────────────
 
 function successionPairs(list) {
+  const conventionalLine = list.filter((reign) => reign.claimRole !== "rival");
   const pairs = [];
-  for (let i = 0; i < list.length - 1; i++) pairs.push([list[i].personId, list[i + 1].personId]);
+  for (let i = 0; i < conventionalLine.length - 1; i++) {
+    pairs.push([conventionalLine[i].personId, conventionalLine[i + 1].personId]);
+  }
   return pairs;
 }
 
@@ -725,7 +725,7 @@ const manifest = {
     "十国各政权收录全部君主；五代收录全部皇帝。",
     "1279 崖山海战为南宋终结；元朝不在本包内。",
     "李显、李旦两度即位，在位拆为两段；690–705 年武周武则天，不与唐中宗重叠。",
-    "隋末并行用 claim_track：杨侑在炀帝仍在位时于长安另立，使用 changan/长安并立 track；江都杨浩、洛阳杨侗也为并立君王。并立者不镀金、不串进主线继承链。",
+    "隋末并行用 claim_track：杨侑在炀帝仍在位时于长安另立，杨侗也在炀帝死讯传至洛阳后另立；二人分别使用 changan/长安、luoyang/洛阳并立 track。杨浩在炀帝被弑后于江都继位，不设并立 track，留在主行；按本包取舍标记 claim_role=rival，因此卡片不镀正统金色。",
     "杨广于618-04-11在江都被宇文化及所弑；宇文化及随后建立许政权，命运线准确挂接至其许帝卡。",
     "杨侗起始在位日按《资治通鉴》卷一八五及《资治通鉴》所记武德元年五月戊辰换算为618-06-22；《旧唐书》异记618-06-21。终点取619-05-23禅位日。",
     "南宋正统金色止于恭帝降元（1276-02）；端宗、帝昺接在恭帝之后走主线继承，但不计正统。",
