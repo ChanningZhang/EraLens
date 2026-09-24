@@ -1,4 +1,4 @@
-import type { Lod, Reign } from "./schema";
+import type { Lod } from "./schema";
 import { TimelineSliceSchema, type TimelineSlice } from "./schema";
 
 export type QueryChunk = {
@@ -50,91 +50,12 @@ export function getAdjacentChunk(
   };
 }
 
-function normalizeReignTitle(title: string): string {
-  return title.replace(/莊/g, "庄").replace(/國/g, "国").trim();
-}
-
-function reignSpanMonths(reign: Reign): number {
-  return reign.endAbs - reign.startAbs + 1;
-}
-
-function reignQualityScore(reign: Reign): number {
-  // Stale imports often keep an overly wide span for the same title.
-  return -reignSpanMonths(reign) / 1000;
-}
-
-function pickBetterReign(a: Reign, b: Reign): Reign {
-  const scoreA = reignQualityScore(a);
-  const scoreB = reignQualityScore(b);
-  if (scoreA !== scoreB) return scoreA > scoreB ? a : b;
-  const spanA = reignSpanMonths(a);
-  const spanB = reignSpanMonths(b);
-  if (spanA !== spanB) return spanA < spanB ? a : b;
-  return a.id.localeCompare(b.id) <= 0 ? a : b;
-}
-
-function spansOverlap(a: Reign, b: Reign): boolean {
-  const start = Math.max(a.startAbs, b.startAbs);
-  const end = Math.min(a.endAbs, b.endAbs);
-  if (start > end) return false;
-  const overlap = end - start + 1;
-  const spanA = reignSpanMonths(a);
-  const spanB = reignSpanMonths(b);
-  // A year-precision succession can share exactly one boundary year (e.g.
-  // the previous ruler ends in December and the next starts in January).
-  // That seam is not a duplicate, even though it is the whole span of a
-  // very short successor.
-  const boundaryYearOverlap =
-    (overlap <= 12 && Math.abs(a.endAbs - b.startAbs) <= 11) ||
-    (overlap <= 12 && Math.abs(b.endAbs - a.startAbs) <= 11);
-  if (boundaryYearOverlap) return false;
-
-  // Stale imports may keep an overly wide span for the same title.  Compare
-  // with the shorter row so a contained, corrected row still replaces it.
-  const smaller = Math.min(spanA, spanB);
-  return overlap >= smaller * 0.5;
-}
-
-/** Drop superseded reign rows that share a title and overlap in time. */
-export function dedupeOverlappingReigns(reigns: Reign[]): Reign[] {
-  const kept: Reign[] = [];
-
-  for (const reign of reigns) {
-    const key = normalizeReignTitle(reign.title);
-    const index = kept.findIndex(
-      (item) =>
-        item.dynastyId === reign.dynastyId &&
-        normalizeReignTitle(item.title) === key &&
-        spansOverlap(item, reign),
-    );
-    if (index < 0) {
-      kept.push(reign);
-      continue;
-    }
-    const existing = kept[index]!;
-    if (existing.personId === reign.personId) {
-      kept[index] = pickBetterReign(existing, reign);
-      continue;
-    }
-    // Same generic title (楚王 / 闽主 / 赞普) across successive rulers is not
-    // a duplicate import when their spans are similarly sized; this also
-    // preserves genuinely concurrent claimant records.  Prefer the tighter
-    // span only when the difference is large enough to indicate stale data.
-    const scoreDiff = Math.abs(reignQualityScore(existing) - reignQualityScore(reign));
-    if (scoreDiff >= 0.35) {
-      kept[index] = pickBetterReign(existing, reign);
-      continue;
-    }
-    kept.push(reign);
-  }
-
-  return kept;
-}
-
 export function mergeTimelineSlices(slices: TimelineSlice[]): TimelineSlice {
   const dynastyMap = new Map<string, TimelineSlice["dynasties"][number]>();
   const dynastyGroupMap = new Map<string, TimelineSlice["dynastyGroups"][number]>();
   const dynastyLaneGroupMap = new Map<string, TimelineSlice["dynastyLaneGroups"][number]>();
+  // The same database row can arrive in several overlapping query chunks.
+  // Merge only that same ID; distinct reign rows always remain visible.
   const reignMap = new Map<string, TimelineSlice["reigns"][number]>();
   const eventMap = new Map<string, TimelineSlice["events"][number]>();
   const personMap = new Map<string, TimelineSlice["persons"][number]>();
@@ -165,7 +86,7 @@ export function mergeTimelineSlices(slices: TimelineSlice[]): TimelineSlice {
     }
   }
 
-  const reigns = dedupeOverlappingReigns([...reignMap.values()]);
+  const reigns = [...reignMap.values()];
   const reignPersonIds = new Set(reigns.map((reign) => reign.personId));
   const persons = [...personMap.values()].filter((person) => {
     if (reignPersonIds.has(person.id)) return true;

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { dedupeOverlappingReigns, listQueryChunks, mergeTimelineSlices } from "./chunks";
+import { listQueryChunks, mergeTimelineSlices } from "./chunks";
 import type { Reign } from "./schema";
 
 describe("listQueryChunks", () => {
@@ -104,7 +104,7 @@ describe("mergeTimelineSlices", () => {
     ]);
   });
 
-  it("drops overlapping duplicate reigns from merged chunks", () => {
+  it("preserves distinct reign IDs even when their spans and titles overlap", () => {
     const stale: Reign = {
       id: "reign-qin-r30-qin",
       dynastyId: "qin",
@@ -151,8 +151,41 @@ describe("mergeTimelineSlices", () => {
       },
     ]);
 
-    expect(merged.reigns.map((reign) => reign.id)).toEqual(["reign-qin-r29-qin"]);
-    expect(merged.persons.map((person) => person.id)).toEqual(["qin-r29"]);
+    expect(merged.reigns.map((reign) => reign.id)).toEqual([stale.id, current.id]);
+    expect(merged.persons.map((person) => person.id)).toEqual(["qin-r30", "qin-r29"]);
+  });
+
+  it("keeps 平王 and 携王 on separate tracks when both titles are blank", () => {
+    const ping: Reign = {
+      id: "reign-ji-yijiu",
+      dynastyId: "zhou-east",
+      personId: "ji-yijiu",
+      title: "",
+      eraNames: [],
+      start: { year: -770, month: 1 },
+      end: { year: -720, month: 12 },
+      startAbs: -9228,
+      endAbs: -8617,
+      precision: "year",
+    };
+    const xie: Reign = {
+      ...ping,
+      id: "reign-ji-yuchen",
+      personId: "ji-yuchen",
+      end: { year: -750, month: 12 },
+      endAbs: -8977,
+      claimTrack: "xie",
+      claimRole: "rival",
+    };
+    const slice = {
+      dynasties: [], dynastyGroups: [], dynastyLaneGroups: [],
+      reigns: [ping, xie], events: [], persons: [], relations: [],
+    };
+
+    expect(mergeTimelineSlices([slice]).reigns.map((reign) => reign.id)).toEqual([
+      ping.id,
+      xie.id,
+    ]);
   });
 
   it("preserves dynasty lane group config across chunks", () => {
@@ -186,113 +219,5 @@ describe("mergeTimelineSlices", () => {
     ]);
 
     expect(merged.dynastyLaneGroups).toEqual([laneGroup]);
-  });
-});
-
-describe("dedupeOverlappingReigns", () => {
-  it("keeps successive rulers who share a generic regnal title", () => {
-    const reign = (
-      id: string,
-      personId: string,
-      dynastyId: string,
-      title: string,
-      startAbs: number,
-      endAbs: number,
-    ): Reign => ({
-      id,
-      dynastyId,
-      personId,
-      title,
-      eraNames: [],
-      start: { year: 1, month: 1 },
-      end: { year: 1, month: 12 },
-      startAbs,
-      endAbs,
-      precision: "year",
-    });
-
-    const chu = [
-      reign("reign-ma-yin", "ma-yin", "chu-nan", "楚王", 10884, 11171),
-      reign("reign-ma-xisheng", "ma-xisheng", "chu-nan", "楚王", 11160, 11195),
-      reign("reign-ma-xifan", "ma-xifan", "chu-nan", "楚王", 11184, 11375),
-      reign("reign-ma-xiguang", "ma-xiguang", "chu-nan", "楚王", 11364, 11375),
-      reign("reign-ma-xie", "ma-xie", "chu-nan", "楚王", 11364, 11411),
-      reign("reign-ma-xichong", "ma-xichong", "chu-nan", "楚王", 11400, 11423),
-    ];
-    expect(dedupeOverlappingReigns(chu).map((item) => item.personId)).toEqual([
-      "ma-yin",
-      "ma-xisheng",
-      "ma-xifan",
-      "ma-xiguang",
-      "ma-xie",
-      "ma-xichong",
-    ]);
-
-    const min = [
-      reign("reign-wang-yanjun", "wang-yanjun", "min-fujian", "闽主", 11112, 11231),
-      reign("reign-wang-jipeng", "wang-jipeng", "min-fujian", "闽主", 11220, 11279),
-      reign("reign-wang-yanxi", "wang-yanxi", "min-fujian", "闽主", 11268, 11327),
-      reign("reign-zhu-wenjin", "zhu-wenjin", "min-fujian", "闽主", 11328, 11339),
-      reign("reign-wang-yanzheng", "wang-yanzheng", "min-fujian", "闽主", 11316, 11351),
-    ];
-    expect(dedupeOverlappingReigns(min).map((item) => item.personId)).toEqual([
-      "wang-yanjun",
-      "wang-jipeng",
-      "wang-yanxi",
-      "zhu-wenjin",
-      "wang-yanzheng",
-    ]);
-  });
-
-  it("keeps distinct rulers who share a title in different eras", () => {
-    const first: Reign = {
-      id: "reign-qin-r14-qin",
-      dynastyId: "qin",
-      personId: "qin-r14",
-      title: "秦惠公",
-      eraNames: [],
-      start: { year: -501, month: 1 },
-      end: { year: -492, month: 12 },
-      startAbs: -6000,
-      endAbs: -5893,
-      precision: "year",
-    };
-    const second: Reign = {
-      id: "reign-qin-r21-qin",
-      dynastyId: "qin",
-      personId: "qin-r21",
-      title: "秦惠公",
-      eraNames: [],
-      start: { year: -400, month: 1 },
-      end: { year: -387, month: 12 },
-      startAbs: -4788,
-      endAbs: -4633,
-      precision: "year",
-    };
-
-    expect(dedupeOverlappingReigns([first, second])).toHaveLength(2);
-  });
-
-  it("keeps a long reign when a successor overlaps only its boundary year", () => {
-    const reign = (id: string, personId: string, startAbs: number, endAbs: number): Reign => ({
-      id,
-      dynastyId: "tubo",
-      personId,
-      title: "赞普",
-      eraNames: [],
-      start: { year: 1, month: 1 },
-      end: { year: 1, month: 12 },
-      startAbs,
-      endAbs,
-      precision: "year",
-    });
-
-    const trisong = reign("reign-tri-song-detsen", "tri-song-detsen", 9060, 9575);
-    const mune = reign("reign-mu-ne-btsan", "mu-ne-btsan", 9564, 9587);
-
-    expect(dedupeOverlappingReigns([trisong, mune]).map((item) => item.personId)).toEqual([
-      "tri-song-detsen",
-      "mu-ne-btsan",
-    ]);
   });
 });
