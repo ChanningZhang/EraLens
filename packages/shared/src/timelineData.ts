@@ -538,15 +538,13 @@ export function buildEntityDetail(
     summary: event.summary,
     content: event.content,
     related: [
-      ...(event.kind === "battle"
-        ? linkedDynasties.map((dynasty) => ({
+      ...linkedDynasties.map((dynasty) => ({
             ref: { type: "dynasty" as const, id: dynasty.id },
             label: dynasty.name,
             subtitle: dynasty.altNames?.[0],
             abs: anchorAbs,
             group: "dynasty" as const,
-          }))
-        : []),
+          })),
       ...event.participantIds
       .map((id) => {
         const summary = buildRelatedSummary({ type: "person", id });

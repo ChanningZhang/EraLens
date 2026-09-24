@@ -10,6 +10,7 @@ import {
   formatYear,
   fromAbsMonth,
   fallbackLaneColorToken,
+  getDynastyLaneGroup,
   resolveDynastyColorValue,
   TIMELINE_RAIL_CHIP_HEIGHT_PX,
   TIMELINE_RAIL_CHIP_TOP_PX,
@@ -23,8 +24,11 @@ import { useTimelineCatalog } from "../hooks/useTimelineCatalog";
 import { useViewport } from "../hooks/useViewport";
 import {
   eventLaneCount,
+  eventTargetReign,
+  EVENT_BADGE_HALF_HEIGHT,
   eventRailHeight,
   layoutEvents,
+  layoutEventBadges,
 } from "../model/eventLayout";
 import { assignLanes } from "../model/laneLayout";
 import { shouldShowEvent, shouldShowPersons } from "../model/lod";
@@ -38,6 +42,7 @@ import {
 import {
   assignReignStacks,
   dynastyLaneHeightForViewport,
+  LANE_PADDING_TOP,
   partitionReignRecords,
 } from "../model/reignClusters";
 import { expandWindow, filterVisibleDynasties } from "../model/visible";
@@ -50,6 +55,7 @@ import { PersonLayer } from "./PersonLayer";
 import { ReignFateLayer } from "./ReignFateLayer";
 import styles from "./TimelineStage.module.css";
 import { layoutReignFates } from "../model/reignFateLayout";
+import { layoutLaneReignBar } from "../model/reignCardLayout";
 
 function laneColorTokenFor(
   map: ReadonlyMap<string, ReturnType<typeof fallbackLaneColorToken>>,
@@ -139,11 +145,26 @@ export function TimelineStage() {
 
   const laneGroups = data?.dynastyLaneGroups ?? [];
 
-  const eventPlaced = useMemo(() => {
-    if (!data) return [];
+  const { railEvents, badgeEvents, badgePositions } = useMemo(() => {
+    if (!data) return { railEvents: [], badgeEvents: [], badgePositions: new Map() };
     const visible = data.events.filter((event) => shouldShowEvent(event, viewport.lod));
-    return layoutEvents(visible, viewport);
-  }, [data, viewport]);
+    const laneIdByDynastyId = new Map<string, string>();
+    for (const dynasty of placed) {
+      laneIdByDynastyId.set(dynasty.id, dynasty.id);
+      const group = getDynastyLaneGroup(dynasty.id, laneGroups);
+      for (const phaseId of group?.phaseDynastyIds ?? []) {
+        laneIdByDynastyId.set(phaseId, dynasty.id);
+      }
+    }
+    const badgePositions = layoutEventBadges(visible, viewport, laneIdByDynastyId);
+    return {
+      railEvents: visible.filter((event) => !badgePositions.has(event.id)),
+      badgeEvents: visible.filter((event) => badgePositions.has(event.id)),
+      badgePositions,
+    };
+  }, [data, viewport, placed, laneGroups]);
+
+  const eventPlaced = useMemo(() => layoutEvents(railEvents, viewport), [railEvents, viewport]);
 
   const railHeight = eventRailHeight(eventLaneCount(eventPlaced));
   const reignsByDynasty = useMemo(() => {
@@ -216,11 +237,37 @@ export function TimelineStage() {
         rowCount > 1
           ? top + height / 2 - chipHeight / 2
           : top + TIMELINE_RAIL_CHIP_TOP_PX;
-      const item = { dynasty, records, reigns, missingReigns, top, height, chipTop, chipHeight };
+      const badgeTop = top + LANE_PADDING_TOP - EVENT_BADGE_HALF_HEIGHT;
+      const item = { dynasty, records, reigns, missingReigns, top, height, badgeTop, chipTop, chipHeight };
       top += height;
       return item;
     });
   }, [placed, railHeight, reignsByDynasty, laneGroups, viewport, personNames, personDisplay]);
+
+  const badgePlaced = useMemo(() => {
+    const laneById = new Map(lanes.map((lane) => [lane.dynasty.id, lane]));
+    return layoutEvents(badgeEvents, viewport).map((item) => {
+      const position = badgePositions.get(item.event.id);
+      const lane = laneById.get(position?.laneId ?? "");
+      const reign = lane && eventTargetReign(item.event, lane.reigns);
+      const card = reign && lane && layoutLaneReignBar(
+        reign,
+        lane.dynasty.id,
+        lane.reigns,
+        viewport,
+        lane.top,
+        personNames.get(reign.personId),
+        personDisplay.get(reign.personId),
+        laneGroups,
+      );
+      return {
+        ...item,
+        badgeOriginX: item.anchorX,
+        anchorX: position?.anchorX ?? item.anchorX,
+        top: card ? card.barTop - EVENT_BADGE_HALF_HEIGHT : lane?.badgeTop ?? item.top,
+      };
+    });
+  }, [badgeEvents, badgePositions, lanes, viewport, personNames, personDisplay, laneGroups]);
 
   const clusterFrames = useMemo(
     () => clusterFramesForLanes(lanes, data?.dynastyGroups ?? []),
@@ -390,6 +437,9 @@ export function TimelineStage() {
           )}
           {eventPlaced.length > 0 && (
             <EventLayer placed={eventPlaced} height={railHeight} />
+          )}
+          {badgePlaced.length > 0 && (
+            <EventLayer placed={badgePlaced} height={contentHeight} laneBadges />
           )}
           {data && placed.length > 0 && fatePlaced.length > 0 && (
             <ReignFateLayer placed={fatePlaced} height={contentHeight} />

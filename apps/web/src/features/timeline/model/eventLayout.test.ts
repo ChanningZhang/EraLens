@@ -1,7 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { EventSchema, absMonth } from "@eralens/shared";
+import { EventSchema, absMonth, type Reign } from "@eralens/shared";
 import { projectAbs } from "./coordinates";
 import {
+  layoutEventBadges,
+  eventTargetReign,
   EVENT_LANE_PAD,
   EVENT_MARKER_DOT_OFFSET,
   EVENT_MARKER_VIEW_PAD,
@@ -12,6 +14,89 @@ import {
   packEventLanes,
   stickyEventMarkerX,
 } from "./eventLayout";
+
+describe("layoutEventBadges", () => {
+  const viewport = { centerAbs: absMonth(-356, 12), pxPerMonth: 3, widthPx: 1000 };
+  const dynastyLanes = new Map([
+    ["qin", "qin"],
+    ["zhou-east", "zhou-west"],
+  ]);
+  const event = (
+    id: string,
+    dynastyIds: string[],
+    atAbs: number,
+    precision: "day" | "month" | "year" | "decade" | "century" = "year",
+  ) => EventSchema.parse({ id, name: id, dynastyIds, atAbs, precision });
+
+  it("puts every single-dynasty event on its visible lane, including a merged phase", () => {
+    const positions = layoutEventBadges([
+      event("reform", ["qin"], absMonth(-356, 12)),
+      event("zhou", ["zhou-east"], absMonth(-356, 12)),
+      event("battle", ["qin", "zhou-east"], absMonth(-356, 12)),
+      event("unmapped", ["unknown"], absMonth(-356, 12)),
+    ], viewport, dynastyLanes);
+    expect(positions.get("reform")?.laneId).toBe("qin");
+    expect(positions.get("zhou")?.laneId).toBe("zhou-west");
+    expect(positions.has("battle")).toBe(false);
+    expect(positions.has("unmapped")).toBe(false);
+  });
+
+  it("keeps the most precise overlapping badge at its time and places the rest to its right", () => {
+    const at = absMonth(-356, 12);
+    const imprecise = event("imprecise", ["qin"], at - 2, "year");
+    const precise = event("precise", ["qin"], at, "day");
+    const month = event("month", ["qin"], at, "month");
+    const positions = layoutEventBadges([imprecise, month, precise], viewport, dynastyLanes);
+    const preciseLeft = positions.get("precise")!.anchorX - EVENT_MARKER_DOT_OFFSET;
+    const monthLeft = positions.get("month")!.anchorX - EVENT_MARKER_DOT_OFFSET;
+    const impreciseLeft = positions.get("imprecise")!.anchorX - EVENT_MARKER_DOT_OFFSET;
+    expect(positions.get("precise")!.anchorX).toBe(projectAbs(viewport, at));
+    expect(monthLeft).toBeGreaterThanOrEqual(preciseLeft + eventMarkerWidth("precise") + EVENT_LANE_PAD);
+    expect(impreciseLeft).toBeGreaterThanOrEqual(monthLeft + eventMarkerWidth("month") + EVENT_LANE_PAD);
+  });
+
+  it("keeps separate badges near their own dates", () => {
+    const early = absMonth(-356, 12);
+    const late = absMonth(-340, 12);
+    const positions = layoutEventBadges([
+      event("early", ["qin"], early),
+      event("late", ["qin"], late),
+    ], viewport, dynastyLanes);
+    expect(positions.get("early")!.anchorX).toBe(projectAbs(viewport, early));
+    expect(positions.get("late")!.anchorX).toBe(projectAbs(viewport, late));
+  });
+});
+
+describe("eventTargetReign", () => {
+  const startAbs = absMonth(-770, 1);
+  const endAbs = absMonth(-750, 12);
+  const reign = (id: string, personId: string): Reign => ({
+    id,
+    personId,
+    dynastyId: "zhou-east",
+    title: "",
+    start: { year: -770, month: 1 },
+    end: { year: -750, month: 12 },
+    startAbs,
+    endAbs,
+    precision: "year",
+    eraNames: [],
+  });
+  const ping = reign("reign-ji-yijiu", "ji-yijiu");
+  const xie = { ...reign("reign-ji-yuchen", "ji-yuchen"), claimTrack: "xie" };
+
+  it("resolves a dated participant to the parallel claimant card", () => {
+    const event = EventSchema.parse({
+      id: "xie-wang-killed",
+      name: "晋文侯杀携王",
+      atAbs: endAbs,
+      dynastyIds: ["zhou-east"],
+      participantIds: ["ji-yuchen"],
+    });
+    expect(eventTargetReign(event, [ping, xie])?.id).toBe(xie.id);
+    expect(eventTargetReign({ ...event, participantIds: ["ji-yijiu", "ji-yuchen"] }, [ping, xie])).toBeNull();
+  });
+});
 
 describe("packEventLanes", () => {
   it("keeps non-overlapping items on one lane", () => {

@@ -299,10 +299,10 @@ describe("buildEntityDetail event", () => {
     const detail = buildEntityDetail(store, { type: "event", id: "muye" });
 
     expect(detail.title).toBe("牧野之战");
-    expect(detail.subtitle).toBe("战事");
+    expect(detail.subtitle).toBe("政治");
     expect(detail.facts).toEqual([
       { label: "时间", value: "公元前1046年" },
-      { label: "类型", value: "战事" },
+      { label: "类型", value: "政治" },
     ]);
   });
 
@@ -344,9 +344,32 @@ describe("buildEntityDetail event", () => {
 
     expect(detail.subtitle).toBe("大西");
     expect(detail.dynastyId).toBe("daxi");
+    expect(detail.related).toEqual([
+      expect.objectContaining({ ref: { type: "dynasty", id: "daxi" }, label: "大西" }),
+    ]);
     expect(detail.facts).toEqual([
       { label: "时间", value: "公元1644年12月" },
-      { label: "类型", value: "政治" },
+      { label: "类型", value: "战事" },
+    ]);
+  });
+
+  it("includes the linked dynasty in a political event's related entities", () => {
+    const store = {
+      dynasties: [{
+        id: "zhou-east", name: "东周", altNames: [], scope: "cn" as const,
+        region: "east_asia", start: { year: -770, month: 1 },
+        end: { year: -256, month: 12 }, startAbs: -9228, endAbs: -3049,
+        precision: "year" as const,
+      }],
+      reigns: [], persons: [], relations: [],
+      events: [EventSchema.parse({
+        id: "xie-wang-killed", name: "晋文侯杀携王", kind: "politics",
+        atAbs: -8977, dynastyIds: ["zhou-east"], participantIds: [],
+      })],
+    };
+    const detail = buildEntityDetail(store, { type: "event", id: "xie-wang-killed" });
+    expect(detail.related).toEqual([
+      expect.objectContaining({ ref: { type: "dynasty", id: "zhou-east" }, label: "东周" }),
     ]);
   });
 

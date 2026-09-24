@@ -10,6 +10,27 @@
   clip-path: inset(0 0 0 var(--timeline-gutter));
 }
 
+.badgeLayer {
+  border-bottom: 0;
+  z-index: 4;
+}
+
+.layer .badgeMarker {
+  border-color: color-mix(in srgb, var(--event-color) 58%, var(--color-border));
+  background: color-mix(in srgb, var(--event-fill) 98%, var(--color-surface));
+  box-shadow:
+    inset 2px 0 0 var(--event-color),
+    0 2px 7px color-mix(in srgb, var(--color-ink) 14%, transparent);
+}
+
+.badgeConnector {
+  position: absolute;
+  top: 11px;
+  height: 1px;
+  background: color-mix(in srgb, var(--color-ink-muted) 45%, transparent);
+  pointer-events: none;
+}
+
 .event {
   position: absolute;
   right: 0;

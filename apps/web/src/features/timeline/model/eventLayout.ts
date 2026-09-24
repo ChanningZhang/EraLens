@@ -1,4 +1,4 @@
-import type { Event } from "@eralens/shared";
+import type { Event, Reign } from "@eralens/shared";
 import { eventSpanAbs } from "@eralens/shared";
 import { projectAbs, projectRange, type ViewportState } from "./coordinates";
 
@@ -12,6 +12,7 @@ export const EVENT_MARKER_DOT_OFFSET = 10;
 export const EVENT_MARKER_VIEW_PAD = 8;
 export const EVENT_ROW_TOP = 8;
 export const EVENT_ROW_STEP = 28;
+export const EVENT_BADGE_HALF_HEIGHT = 12;
 export const EVENT_LANE_PAD = 8;
 export const EVENT_RAIL_MIN_HEIGHT = 64;
 
@@ -21,6 +22,7 @@ export type PlacedEvent = {
   showBand: boolean;
   markerWidth: number;
   anchorX: number;
+  badgeOriginX?: number;
   bandLeft: number;
   bandWidth: number;
   top: number;
@@ -131,6 +133,70 @@ export function packEventLanes(
     lanes.set(item.id, lane);
   }
   return lanes;
+}
+
+export type EventBadgePosition = { laneId: string; anchorX: number };
+
+/** A participant identifies a card only when exactly one linked reign covers the event date. */
+export function eventTargetReign(event: Event, reigns: readonly Reign[]): Reign | null {
+  const { anchorAbs } = eventSpanAbs(event);
+  const matches = reigns.filter((reign) =>
+    event.dynastyIds.includes(reign.dynastyId) &&
+    event.participantIds.includes(reign.personId) &&
+    reign.startAbs <= anchorAbs && anchorAbs <= reign.endAbs,
+  );
+  return matches.length === 1 ? matches[0]! : null;
+}
+
+const EVENT_PRECISION_ORDER: Record<Event["precision"], number> = {
+  day: 5,
+  month: 4,
+  year: 3,
+  decade: 2,
+  century: 1,
+};
+
+/** Place single-dynasty badges on one row, prioritizing the most precise event in each overlap group. */
+export function layoutEventBadges(
+  events: Event[],
+  viewport: ViewportState,
+  laneIdByDynastyId: ReadonlyMap<string, string>,
+): Map<string, EventBadgePosition> {
+  const byLane = new Map<string, { item: PlacedEvent; left: number; right: number }[]>();
+  for (const item of layoutEvents(events, viewport)) {
+    const { event } = item;
+    if (event.dynastyIds.length !== 1) continue;
+    const laneId = laneIdByDynastyId.get(event.dynastyIds[0]!);
+    if (!laneId) continue;
+    const items = byLane.get(laneId) ?? [];
+    const left = item.anchorX - EVENT_MARKER_DOT_OFFSET;
+    items.push({ item, left, right: left + item.markerWidth });
+    byLane.set(laneId, items);
+  }
+  const positions = new Map<string, EventBadgePosition>();
+  for (const [laneId, items] of byLane) {
+    items.sort((a, b) => a.left - b.left || a.item.event.id.localeCompare(b.item.event.id));
+    let lastRight = Number.NEGATIVE_INFINITY;
+    for (let index = 0; index < items.length;) {
+      const group = [items[index++]!];
+      let naturalRight = group[0]!.right;
+      while (index < items.length && items[index]!.left < naturalRight + EVENT_LANE_PAD) {
+        group.push(items[index++]!);
+        naturalRight = Math.max(naturalRight, group.at(-1)!.right);
+      }
+      group.sort((a, b) =>
+        EVENT_PRECISION_ORDER[b.item.event.precision] - EVENT_PRECISION_ORDER[a.item.event.precision] ||
+        eventSpanAbs(a.item.event).anchorAbs - eventSpanAbs(b.item.event).anchorAbs ||
+        a.item.event.id.localeCompare(b.item.event.id),
+      );
+      for (const entry of group) {
+        const left = Math.max(entry.left, lastRight + EVENT_LANE_PAD);
+        positions.set(entry.item.event.id, { laneId, anchorX: left + EVENT_MARKER_DOT_OFFSET });
+        lastRight = left + entry.item.markerWidth;
+      }
+    }
+  }
+  return positions;
 }
 
 export function layoutEvents(events: Event[], viewport: ViewportState): PlacedEvent[] {

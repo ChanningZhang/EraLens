@@ -6,13 +6,14 @@ import styles from "./EventLayer.module.css";
 type Props = {
   placed: PlacedEvent[];
   height: number;
+  laneBadges?: boolean;
 };
 
-export function EventLayer({ placed, height }: Props) {
+export function EventLayer({ placed, height, laneBadges = false }: Props) {
   if (placed.length === 0) return null;
 
   return (
-    <div className={styles.layer} style={{ height }}>
+    <div className={`${styles.layer} ${laneBadges ? styles.badgeLayer : ""}`} style={{ height }}>
       {placed.map((item) => {
         const { event } = item;
         const { anchorAbs } = eventSpanAbs(event);
@@ -31,9 +32,16 @@ export function EventLayer({ placed, height }: Props) {
                 tabIndex={-1}
               />
             )}
+            {laneBadges && item.badgeOriginX != null && item.anchorX > item.badgeOriginX + 1 && (
+              <span
+                className={styles.badgeConnector}
+                style={{ left: item.badgeOriginX, width: item.anchorX - item.badgeOriginX }}
+                aria-hidden="true"
+              />
+            )}
             <button
               type="button"
-              className={styles.marker}
+              className={`${styles.marker} ${laneBadges ? styles.badgeMarker : ""}`}
               data-event-kind={event.kind}
               style={{ left: item.anchorX }}
               onClick={() => {
