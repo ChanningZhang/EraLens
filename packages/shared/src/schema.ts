@@ -255,6 +255,17 @@ export const EventSchema = z
       note: z.string().optional(),
       links: z.array(z.object({ label: z.string(), url: z.string() })).default([]),
     }).optional(),
+    locations: z.array(z.object({
+      id: z.string(),
+      historicalName: z.string(),
+      modernName: z.string(),
+      longitude: z.number(),
+      latitude: z.number(),
+      coordinateSystem: z.string(),
+      precision: z.string(),
+      note: z.string().optional(),
+      links: z.array(z.object({ label: z.string(), url: z.string() })).default([]),
+    })).default([]),
   })
   .superRefine((event, ctx) => {
     if (event.kind === "idiom") {

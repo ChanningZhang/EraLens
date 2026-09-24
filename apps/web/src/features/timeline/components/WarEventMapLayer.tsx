@@ -38,27 +38,30 @@ export function WarEventMapLayer({ events, atAbs, gutterPx, scale, offset }: Pro
   const placed = useMemo(() => {
     if (size.width < 1 || size.height < 1) return [];
     return events.flatMap((event) => {
-      const location = event.location;
-      if (!location) return [];
-      const point = wgs84ToGcj02(location.longitude, location.latitude);
-      const projected = projectGcj02(
-        point.x,
-        point.y,
-        size.width,
-        size.height,
-        resolveChinaMapInsets(gutterPx),
-      );
-      return [{ event, location, x: projected.x, y: projected.y }];
+      const locations = event.locations.length > 0 ? event.locations : event.location ? [event.location] : [];
+      return locations.map((location, index) => {
+        const point = location.coordinateSystem === "GCJ02"
+          ? { x: location.longitude, y: location.latitude }
+          : wgs84ToGcj02(location.longitude, location.latitude);
+        const projected = projectGcj02(
+          point.x,
+          point.y,
+          size.width,
+          size.height,
+          resolveChinaMapInsets(gutterPx),
+        );
+        return { event, location, key: `${event.id}:${location.id}:${index}`, x: projected.x, y: projected.y };
+      });
     });
   }, [events, gutterPx, size.height, size.width]);
 
   return (
     <div ref={containerRef} className={styles.layer} aria-hidden={placed.length === 0}>
-      {placed.map(({ event, location, x, y }) => {
+      {placed.map(({ event, location, key, x, y }) => {
         const isSelected = selection.selected?.type === "event" && selection.selected.id === event.id;
         const tooltip = `${event.name} · ${formatEventTime(event)} · ${location.historicalName}（${location.modernName}）`;
         return (
-          <HoverTooltip key={event.id} text={tooltip}>
+          <HoverTooltip key={key} text={tooltip}>
             {(handlers) => (
               <button
                 type="button"

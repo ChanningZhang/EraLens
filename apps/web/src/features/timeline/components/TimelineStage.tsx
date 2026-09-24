@@ -138,16 +138,34 @@ export function TimelineStage() {
   const laneColorMap = useLaneColorCatalog(allCapitals);
   const labelAnchorAbs = laneLabelAnchorAbs(viewport);
   const activeCapitals = useMemo(
-    () => capitalsActiveAtAbs(capitalsQuery.data ?? [], labelAnchorAbs),
-    [capitalsQuery.data, labelAnchorAbs],
+    () => {
+      const capitals = capitalsQuery.data ?? [];
+      const visible = capitalsActiveAtAbs(capitals, labelAnchorAbs);
+      const selected = selection.selected;
+      if (!selected) return visible;
+      const reign = selected.type === "reign" ? data?.reigns.find((item) => item.id === selected.id) : undefined;
+      const personReigns = selected.type === "person" ? data?.reigns.filter((item) => item.personId === selected.id) ?? [] : [];
+      const dynastyIds = new Set<string>();
+      if (selected.type === "dynasty") dynastyIds.add(selected.id);
+      if (reign) dynastyIds.add(reign.dynastyId);
+      for (const item of personReigns) dynastyIds.add(item.dynastyId);
+      const selectedCapitals = capitals.filter((capital) => {
+        if (selected.type === "capital") return capital.id === selected.id;
+        if (selected.type === "dynasty") return dynastyIds.has(capital.dynastyId);
+        const spans = reign ? [reign] : personReigns;
+        return spans.some((item) => item.dynastyId === capital.dynastyId && capital.startAbs <= item.endAbs && capital.endAbs >= item.startAbs);
+      });
+      return [...new Map([...visible, ...selectedCapitals].map((capital) => [capital.id, capital])).values()];
+    },
+    [capitalsQuery.data, labelAnchorAbs, selection.selected, data?.reigns],
   );
   const nearbyWarEvents = useMemo(() => {
     if (!data) return [];
     const windowStart = viewport.centerAbs - 60;
     const windowEnd = viewport.centerAbs + 60;
     return data.events.filter((event) => {
-      if (event.kind !== "battle" || !event.location) return false;
       const isSelected = selection.selected?.type === "event" && selection.selected.id === event.id;
+      if ((!event.location && event.locations.length === 0) || (event.kind !== "battle" && !isSelected)) return false;
       if (isSelected) return true;
       const span = eventSpanAbs(event);
       return span.startAbs <= windowEnd && span.endAbs >= windowStart;
