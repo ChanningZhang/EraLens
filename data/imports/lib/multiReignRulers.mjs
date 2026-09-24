@@ -15,6 +15,9 @@ function defaultReignId(personId, dynastyId, ordinal) {
 function personUnifyKey(r) {
   const name = r.personName;
   if (!name) return null;
+  // An unknown-name marker is shared by unrelated rulers and cannot identify
+  // one person across multiple source rows.
+  if (/^(?:姬)?[？?]$|^缺失$/.test(name)) return null;
   const discriminator = r.posthumousName ?? r.title ?? "";
   return `${name}|${discriminator}`;
 }

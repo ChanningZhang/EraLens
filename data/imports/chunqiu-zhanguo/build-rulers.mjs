@@ -146,9 +146,9 @@ const TITLE_NAME_OVERRIDES = {
   },
   "wei-weiguo": {
     卫平侯: "姬劲",
-    卫嗣君: "缺失",
-    卫怀君: "缺失",
-    卫元君: "缺失",
+    卫嗣君: "姬？",
+    卫怀君: "姬？",
+    卫元君: "姬？",
   },
 };
 
@@ -156,6 +156,15 @@ const TITLE_NAME_OVERRIDES = {
 /** Pre-Qin card regnal overrides (e.g. 秦王政 → 赵政). Key: personId|dynastyId */
 const REIGN_PREFERRED_APPELLATION_OVERRIDES = {
   "ying-zheng|qin": { kind: "regnal", name: "赵政" },
+  "weiguo-r43|wei-weiguo": { kind: "posthumous", name: "嗣君" },
+  "weiguo-r44|wei-weiguo": { kind: "posthumous", name: "怀君" },
+  "weiguo-r45|wei-weiguo": { kind: "posthumous", name: "元君" },
+};
+
+const POSTHUMOUS_NAME_OVERRIDES = {
+  "weiguo-r43": "嗣君",
+  "weiguo-r44": "怀君",
+  "weiguo-r45": "元君",
 };
 
 const REIGN_YEAR_OVERRIDES = {
@@ -178,6 +187,19 @@ const REIGN_YEAR_OVERRIDES = {
     "齐太公|田和": { start: -391, end: -384 },
     // 康公卒前379年，前391年已被放逐；齐行国君止于废立前一年，其后顺序接田齐。
     "齐康公|姜贷": { start: -404, end: -392 },
+  },
+  "song-chunqiu": {
+    // Early Song chronology follows the estimated reign table citing Shiji
+    // and Chen Mengjia, 西周年代考. These are scholarly estimates, not firm
+    // year-by-year records, so keep interpolation confidence on both edges.
+    宋微子: { start: -1038, end: -1025, interpolated: true, startDateConfidence: "interpolated", endDateConfidence: "interpolated" },
+    宋微仲: { start: -1024, end: -986, interpolated: true, startDateConfidence: "interpolated", endDateConfidence: "interpolated" },
+    宋公稽: { start: -985, end: -942, interpolated: true, startDateConfidence: "interpolated", endDateConfidence: "interpolated" },
+    宋丁公: { start: -941, end: -919, interpolated: true, startDateConfidence: "interpolated", endDateConfidence: "interpolated" },
+    "宋湣公|共": { start: -918, end: -895, interpolated: true, startDateConfidence: "interpolated", endDateConfidence: "interpolated" },
+    "宋湣公|子共": { start: -918, end: -895, interpolated: true, startDateConfidence: "interpolated", endDateConfidence: "interpolated" },
+    宋炀公: { start: -894, end: -879, interpolated: true, startDateConfidence: "interpolated", endDateConfidence: "interpolated" },
+    宋厉公: { start: -878, end: -859, interpolated: true, startDateConfidence: "interpolated", endDateConfidence: "interpolated" },
   },
 };
 
@@ -245,7 +267,7 @@ function applyReignYearOverrides(dynastyId, rulers) {
     const nameKey = normalizeTitle(r.name || "");
     const patch = table[`${titleKey}|${nameKey}`] ?? table[titleKey];
     if (!patch) return r;
-    return { ...r, ...patch, complete: true, interpolated: false };
+    return { ...r, ...patch, complete: true, interpolated: patch.interpolated ?? false };
   });
 }
 
@@ -1072,7 +1094,7 @@ function enrichRulers(dynastyId, rulers) {
         resolvePersonDisplayName(r.title, r.name),
         r.title,
       );
-    const posthumousName = posthumousFromTitle(r.title);
+    const posthumousName = POSTHUMOUS_NAME_OVERRIDES[personId] ?? posthumousFromTitle(r.title);
     const override =
       REIGN_PREFERRED_APPELLATION_OVERRIDES[`${personId}|${dynastyId}`];
     const derivedRegnal = !posthumousName && !override
@@ -1138,13 +1160,13 @@ const BAD_NAME = /出土|原名|之子|改称|称號|称号|别名|又名|又称
 
 /** Expected Song given names (wiki 国君姓名 + 子/戴 prefix). Key: title|startYear */
 const SONG_EXPECTED_NAMES = {
-  "宋微子|-1034": "子启",
-  "宋微仲|-1009": "子衍",
-  "宋公稽|-984": "子稽",
-  "宋丁公|-959": "子申",
-  "宋湣公|-934": "子共",
-  "宋炀公|-909": "子熙",
-  "宋厉公|-884": "子鲋祀",
+  "宋微子|-1038": "子启",
+  "宋微仲|-1024": "子衍",
+  "宋公稽|-985": "子稽",
+  "宋丁公|-941": "子申",
+  "宋湣公|-918": "子共",
+  "宋炀公|-894": "子熙",
+  "宋厉公|-878": "子鲋祀",
   "宋釐公|-858": "子举",
   "宋惠公|-830": "子覵",
   "宋哀公|-800": "子哀公",

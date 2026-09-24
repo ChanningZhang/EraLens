@@ -21,7 +21,10 @@ import { preQinRegnalCardName } from "../lib/preQinCardAppellation.mjs";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 function rulerPerson(id, name, dynastyLabel, title, bio, wikiTitle = name) {
-  return person(id, name, ["君主"], bio ?? `${title}，${dynastyLabel}君主。`, wikiTitle);
+  // For rulers whose given names are lost, store the visible placeholder as
+  // the card appellation so the family name is not shown on the timeline.
+  const posthumousNames = name === "姬？" ? ["？"] : [];
+  return person(id, name, ["君主"], bio ?? `${title}，${dynastyLabel}君主。`, wikiTitle, null, null, [], posthumousNames);
 }
 
 // ── reign definitions (documented and interpolated ruler succession) ─────────

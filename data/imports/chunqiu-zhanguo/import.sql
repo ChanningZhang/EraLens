@@ -812,13 +812,13 @@ INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, 
 VALUES ('weiguo-r42', '姬劲', ARRAY[]::text[], '姬', '子南', NULL, NULL, NULL, NULL, ARRAY['君主'], '卫平侯（姬劲），姬姓子南氏，卫灵公少子公子郢之后；前342–前335年在位。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/卫平侯"}]'::jsonb, '平侯', NULL, '卫平侯')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, title = EXCLUDED.title;
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name, title)
-VALUES ('weiguo-r43', '缺失', ARRAY[]::text[], '姬', '卫', NULL, NULL, NULL, NULL, ARRAY['君主'], '卫嗣君，本名失考，前334–前293年在位。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/卫嗣君"}]'::jsonb, NULL, NULL, '嗣君')
+VALUES ('weiguo-r43', '姬？', ARRAY[]::text[], '姬', '卫', NULL, NULL, NULL, NULL, ARRAY['君主'], '卫嗣君，本名失考，前334–前293年在位。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/卫嗣君"}]'::jsonb, '嗣君', NULL, '嗣君')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, title = EXCLUDED.title;
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name, title)
-VALUES ('weiguo-r44', '缺失', ARRAY[]::text[], '姬', '卫', NULL, NULL, NULL, NULL, ARRAY['君主'], '卫怀君，本名失考，前292–前254年在位。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/卫怀君"}]'::jsonb, NULL, NULL, '怀君')
+VALUES ('weiguo-r44', '姬？', ARRAY[]::text[], '姬', '卫', NULL, NULL, NULL, NULL, ARRAY['君主'], '卫怀君，本名失考，前292–前254年在位。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/卫怀君"}]'::jsonb, '怀君', NULL, '怀君')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, title = EXCLUDED.title;
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name, title)
-VALUES ('weiguo-r45', '缺失', ARRAY[]::text[], '姬', '卫', NULL, NULL, NULL, NULL, ARRAY['君主'], '卫元君，姬姓子南氏，本名失考，前254–前230年在位。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/卫元君"}]'::jsonb, NULL, NULL, '元君')
+VALUES ('weiguo-r45', '姬？', ARRAY[]::text[], '姬', '卫', NULL, NULL, NULL, NULL, ARRAY['君主'], '卫元君，姬姓子南氏，本名失考，前254–前230年在位。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/卫元君"}]'::jsonb, '元君', NULL, '元君')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, title = EXCLUDED.title;
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name, title)
 VALUES ('weiguo-r46', '姬角', ARRAY[]::text[], '姬', '卫', NULL, NULL, NULL, NULL, ARRAY['君主'], '卫国末代君主，未得谥号，前209年秦废卫君角为庶人，卫国至此灭亡，比秦统一早九年。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/君角"}]'::jsonb, NULL, NULL, '君角')
@@ -1687,12 +1687,14 @@ INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-lv-shang-qi-chunqiu', 'qi-chunqiu', 'lv-shang', '',
+  'reign-lv-shang-qi-chunqiu', 'qi-chunqiu', 'lv-shang', '齐太公',
   NULL,
   -1046, 1, NULL, -1011, 12, NULL,
-  -12540, -12109, 'year', 'interpolated', 'interpolated'
+  -12540, -12109, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -1709,9592 +1711,10 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r1-qi-chunqiu', 'qi-chunqiu', 'qi-r1', '',
-  NULL,
-  -1010, 1, NULL, -974, 12, NULL,
-  -12108, -11665, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r2-qi-chunqiu', 'qi-chunqiu', 'qi-r2', '',
-  NULL,
-  -973, 1, NULL, -937, 12, NULL,
-  -11664, -11221, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r3-qi-chunqiu', 'qi-chunqiu', 'qi-r3', '',
-  NULL,
-  -936, 1, NULL, -900, 12, NULL,
-  -11220, -10777, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r4-qi-chunqiu', 'qi-chunqiu', 'qi-r4', '',
-  NULL,
-  -899, 1, NULL, -863, 12, NULL,
-  -10776, -10333, 'year', 'interpolated', NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r5-qi-chunqiu', 'qi-chunqiu', 'qi-r5', '',
-  NULL,
-  -862, 1, NULL, -860, 12, NULL,
-  -10332, -10297, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r6-qi-chunqiu', 'qi-chunqiu', 'qi-r6', '',
-  NULL,
-  -859, 1, NULL, -851, 12, NULL,
-  -10296, -10189, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r7-qi-chunqiu', 'qi-chunqiu', 'qi-r7', '',
-  NULL,
-  -850, 1, NULL, -825, 12, NULL,
-  -10188, -9877, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r8-qi-chunqiu', 'qi-chunqiu', 'qi-r8', '',
-  NULL,
-  -824, 1, NULL, -816, 12, NULL,
-  -9876, -9769, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r9-qi-chunqiu', 'qi-chunqiu', 'qi-r9', '',
-  NULL,
-  -815, 1, NULL, -804, 12, NULL,
-  -9768, -9625, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r10-qi-chunqiu', 'qi-chunqiu', 'qi-r10', '',
-  NULL,
-  -803, 1, NULL, -795, 12, NULL,
-  -9624, -9517, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r11-qi-chunqiu', 'qi-chunqiu', 'qi-r11', '',
-  NULL,
-  -794, 1, NULL, -731, 12, NULL,
-  -9516, -8749, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r12-qi-chunqiu', 'qi-chunqiu', 'qi-r12', '',
-  NULL,
-  -730, 1, NULL, -698, 12, NULL,
-  -8748, -8353, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r13-qi-chunqiu', 'qi-chunqiu', 'qi-r13', '',
-  NULL,
-  -697, 1, NULL, -686, 12, NULL,
-  -8352, -8209, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r14-qi-chunqiu', 'qi-chunqiu', 'qi-r14', '',
-  NULL,
-  -686, 1, NULL, -686, 12, NULL,
-  -8220, -8209, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jiang-xiaobai-qi-chunqiu', 'qi-chunqiu', 'jiang-xiaobai', '',
-  NULL,
-  -685, 1, NULL, -643, 12, NULL,
-  -8208, -7693, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r16-qi-chunqiu', 'qi-chunqiu', 'qi-r16', '',
-  NULL,
-  -643, 1, NULL, -643, 12, NULL,
-  -7704, -7693, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r17-qi-chunqiu', 'qi-chunqiu', 'qi-r17', '',
-  NULL,
-  -642, 1, NULL, -633, 12, NULL,
-  -7692, -7573, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r18-qi-chunqiu', 'qi-chunqiu', 'qi-r18', '',
-  NULL,
-  -632, 1, NULL, -613, 12, NULL,
-  -7572, -7333, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r19-qi-chunqiu', 'qi-chunqiu', 'qi-r19', '',
-  NULL,
-  -613, 1, NULL, -613, 12, NULL,
-  -7344, -7333, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r20-qi-chunqiu', 'qi-chunqiu', 'qi-r20', '',
-  NULL,
-  -612, 1, NULL, -609, 12, NULL,
-  -7332, -7285, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r21-qi-chunqiu', 'qi-chunqiu', 'qi-r21', '',
-  NULL,
-  -608, 1, NULL, -599, 12, NULL,
-  -7284, -7165, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r22-qi-chunqiu', 'qi-chunqiu', 'qi-r22', '',
-  NULL,
-  -598, 1, NULL, -582, 12, NULL,
-  -7164, -6961, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r23-qi-chunqiu', 'qi-chunqiu', 'qi-r23', '',
-  NULL,
-  -581, 1, NULL, -554, 12, NULL,
-  -6960, -6625, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r24-qi-chunqiu', 'qi-chunqiu', 'qi-r24', '',
-  NULL,
-  -553, 1, NULL, -548, 12, NULL,
-  -6624, -6553, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r25-qi-chunqiu', 'qi-chunqiu', 'qi-r25', '',
-  NULL,
-  -547, 1, NULL, -490, 12, NULL,
-  -6552, -5857, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r26-qi-chunqiu', 'qi-chunqiu', 'qi-r26', '',
-  NULL,
-  -489, 1, NULL, -489, 12, NULL,
-  -5856, -5845, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r27-qi-chunqiu', 'qi-chunqiu', 'qi-r27', '',
-  NULL,
-  -488, 1, NULL, -485, 12, NULL,
-  -5844, -5797, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r28-qi-chunqiu', 'qi-chunqiu', 'qi-r28', '',
-  NULL,
-  -484, 1, NULL, -481, 12, NULL,
-  -5796, -5749, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r29-qi-chunqiu', 'qi-chunqiu', 'qi-r29', '',
-  NULL,
-  -480, 1, NULL, -456, 12, NULL,
-  -5748, -5449, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r30-qi-chunqiu', 'qi-chunqiu', 'qi-r30', '',
-  NULL,
-  -455, 1, NULL, -405, 12, NULL,
-  -5448, -4837, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jiang-dai-qi-chunqiu', 'qi-chunqiu', 'jiang-dai', '',
-  NULL,
-  -404, 1, NULL, -392, 12, NULL,
-  -4836, -4681, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-tian-he-qi-chunqiu', 'qi-chunqiu', 'tian-he', '',
-  NULL,
-  -404, 1, NULL, -384, 12, NULL,
-  -4836, -4585, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r33-qi-chunqiu', 'qi-chunqiu', 'qi-r33', '',
-  NULL,
-  -383, 1, NULL, -375, 12, NULL,
-  -4584, -4477, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r34-qi-chunqiu', 'qi-chunqiu', 'qi-r34', '',
-  NULL,
-  -374, 1, NULL, -357, 12, NULL,
-  -4476, -4261, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r35-qi-chunqiu', 'qi-chunqiu', 'qi-r35', '',
-  NULL,
-  -356, 1, NULL, -320, 12, NULL,
-  -4260, -3817, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r36-qi-chunqiu', 'qi-chunqiu', 'qi-r36', '',
-  NULL,
-  -319, 1, NULL, -301, 12, NULL,
-  -3816, -3589, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r37-qi-chunqiu', 'qi-chunqiu', 'qi-r37', '',
-  NULL,
-  -300, 1, NULL, -284, 12, NULL,
-  -3588, -3385, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r38-qi-chunqiu', 'qi-chunqiu', 'qi-r38', '',
-  NULL,
-  -283, 1, NULL, -265, 12, NULL,
-  -3384, -3157, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-qi-r39-qi-chunqiu', 'qi-chunqiu', 'qi-r39', '',
-  NULL,
-  -264, 1, NULL, -221, 12, NULL,
-  -3156, -2629, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-ji-shuyu-jin-chunqiu', 'jin-chunqiu', 'ji-shuyu', '',
-  NULL,
-  -1042, 1, NULL, -1007, 12, NULL,
-  -12492, -12061, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r1-jin-chunqiu', 'jin-chunqiu', 'jin-r1', '',
-  NULL,
-  -1006, 1, NULL, -970, 12, NULL,
-  -12060, -11617, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r2-jin-chunqiu', 'jin-chunqiu', 'jin-r2', '',
-  NULL,
-  -969, 1, NULL, -933, 12, NULL,
-  -11616, -11173, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r3-jin-chunqiu', 'jin-chunqiu', 'jin-r3', '',
-  NULL,
-  -932, 1, NULL, -896, 12, NULL,
-  -11172, -10729, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r4-jin-chunqiu', 'jin-chunqiu', 'jin-r4', '',
-  NULL,
-  -895, 1, NULL, -859, 12, NULL,
-  -10728, -10285, 'year', 'interpolated', NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r5-jin-chunqiu', 'jin-chunqiu', 'jin-r5', '',
-  NULL,
-  -858, 1, NULL, -841, 12, NULL,
-  -10284, -10069, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r6-jin-chunqiu', 'jin-chunqiu', 'jin-r6', '',
-  NULL,
-  -840, 1, NULL, -823, 12, NULL,
-  -10068, -9853, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r7-jin-chunqiu', 'jin-chunqiu', 'jin-r7', '',
-  NULL,
-  -822, 1, NULL, -812, 12, NULL,
-  -9852, -9721, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r8-jin-chunqiu', 'jin-chunqiu', 'jin-r8', '',
-  NULL,
-  -811, 1, NULL, -785, 12, NULL,
-  -9720, -9397, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r9-jin-chunqiu', 'jin-chunqiu', 'jin-r9', '',
-  NULL,
-  -784, 1, NULL, -781, 12, NULL,
-  -9396, -9349, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r10-jin-chunqiu', 'jin-chunqiu', 'jin-r10', '',
-  NULL,
-  -780, 1, NULL, -746, 12, NULL,
-  -9348, -8929, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r11-jin-chunqiu', 'jin-chunqiu', 'jin-r11', '',
-  NULL,
-  -745, 1, NULL, -740, 12, NULL,
-  -8928, -8857, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r12-jin-chunqiu', 'jin-chunqiu', 'jin-r12', '',
-  NULL,
-  -744, 1, NULL, -731, 12, NULL,
-  -8916, -8749, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r13-jin-chunqiu', 'jin-chunqiu', 'jin-r13', '',
-  NULL,
-  -739, 1, NULL, -724, 12, NULL,
-  -8856, -8665, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r14-jin-chunqiu', 'jin-chunqiu', 'jin-r14', '',
-  NULL,
-  -730, 1, NULL, -716, 12, NULL,
-  -8748, -8569, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r15-jin-chunqiu', 'jin-chunqiu', 'jin-r15', '',
-  NULL,
-  -723, 1, NULL, -718, 12, NULL,
-  -8664, -8593, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r16-jin-chunqiu', 'jin-chunqiu', 'jin-r16', '',
-  NULL,
-  -717, 1, NULL, -709, 12, NULL,
-  -8592, -8485, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r17-jin-chunqiu', 'jin-chunqiu', 'jin-r17', '',
-  NULL,
-  -715, 1, NULL, -677, 12, NULL,
-  -8568, -8101, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r18-jin-chunqiu', 'jin-chunqiu', 'jin-r18', '',
-  NULL,
-  -708, 1, NULL, -705, 12, NULL,
-  -8484, -8437, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r19-jin-chunqiu', 'jin-chunqiu', 'jin-r19', '',
-  NULL,
-  -704, 1, NULL, -678, 12, NULL,
-  -8436, -8113, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r20-jin-chunqiu', 'jin-chunqiu', 'jin-r20', '',
-  NULL,
-  -676, 1, NULL, -651, 12, NULL,
-  -8100, -7789, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r21-jin-chunqiu', 'jin-chunqiu', 'jin-r21', '',
-  NULL,
-  -650, 1, NULL, -637, 12, NULL,
-  -7788, -7621, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r22-jin-chunqiu', 'jin-chunqiu', 'jin-r22', '',
-  NULL,
-  -637, 1, NULL, -637, 12, NULL,
-  -7632, -7621, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-ji-chonger-jin-chunqiu', 'jin-chunqiu', 'ji-chonger', '',
-  NULL,
-  -636, 1, NULL, -628, 12, NULL,
-  -7620, -7513, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r24-jin-chunqiu', 'jin-chunqiu', 'jin-r24', '',
-  NULL,
-  -627, 1, NULL, -621, 12, NULL,
-  -7512, -7429, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r25-jin-chunqiu', 'jin-chunqiu', 'jin-r25', '',
-  NULL,
-  -620, 1, NULL, -607, 12, NULL,
-  -7428, -7261, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r26-jin-chunqiu', 'jin-chunqiu', 'jin-r26', '',
-  NULL,
-  -606, 1, NULL, -600, 12, NULL,
-  -7260, -7177, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r27-jin-chunqiu', 'jin-chunqiu', 'jin-r27', '',
-  NULL,
-  -599, 1, NULL, -581, 12, NULL,
-  -7176, -6949, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r28-jin-chunqiu', 'jin-chunqiu', 'jin-r28', '',
-  NULL,
-  -580, 1, NULL, -573, 12, NULL,
-  -6948, -6853, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r29-jin-chunqiu', 'jin-chunqiu', 'jin-r29', '',
-  NULL,
-  -572, 1, NULL, -558, 12, NULL,
-  -6852, -6673, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r30-jin-chunqiu', 'jin-chunqiu', 'jin-r30', '',
-  NULL,
-  -557, 1, NULL, -532, 12, NULL,
-  -6672, -6361, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r31-jin-chunqiu', 'jin-chunqiu', 'jin-r31', '',
-  NULL,
-  -531, 1, NULL, -526, 12, NULL,
-  -6360, -6289, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r32-jin-chunqiu', 'jin-chunqiu', 'jin-r32', '',
-  NULL,
-  -525, 1, NULL, -512, 12, NULL,
-  -6288, -6121, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r33-jin-chunqiu', 'jin-chunqiu', 'jin-r33', '',
-  NULL,
-  -511, 1, NULL, -475, 12, NULL,
-  -6120, -5677, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r34-jin-chunqiu', 'jin-chunqiu', 'jin-r34', '',
-  NULL,
-  -474, 1, NULL, -452, 12, NULL,
-  -5676, -5401, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r35-jin-chunqiu', 'jin-chunqiu', 'jin-r35', '',
-  NULL,
-  -451, 1, NULL, -434, 12, NULL,
-  -5400, -5185, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r36-jin-chunqiu', 'jin-chunqiu', 'jin-r36', '',
-  NULL,
-  -433, 1, NULL, -416, 12, NULL,
-  -5184, -4969, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r37-jin-chunqiu', 'jin-chunqiu', 'jin-r37', '',
-  NULL,
-  -415, 1, NULL, -389, 12, NULL,
-  -4968, -4645, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r38-jin-chunqiu', 'jin-chunqiu', 'jin-r38', '',
-  NULL,
-  -388, 1, NULL, -357, 12, NULL,
-  -4644, -4261, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-jin-r39-jin-chunqiu', 'jin-chunqiu', 'jin-r39', '',
-  NULL,
-  -356, 1, NULL, -349, 12, NULL,
-  -4260, -4165, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r0-chu-chunqiu', 'chu-chunqiu', 'chu-r0', '',
-  NULL,
-  -1042, 1, NULL, -1019, 12, NULL,
-  -12492, -12205, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r1-chu-chunqiu', 'chu-chunqiu', 'chu-r1', '',
-  NULL,
-  -1018, 1, NULL, -995, 12, NULL,
-  -12204, -11917, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r2-chu-chunqiu', 'chu-chunqiu', 'chu-r2', '',
-  NULL,
-  -994, 1, NULL, -970, 12, NULL,
-  -11916, -11617, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r3-chu-chunqiu', 'chu-chunqiu', 'chu-r3', '',
-  NULL,
-  -969, 1, NULL, -946, 12, NULL,
-  -11616, -11329, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r4-chu-chunqiu', 'chu-chunqiu', 'chu-r4', '',
-  NULL,
-  -945, 1, NULL, -922, 12, NULL,
-  -11328, -11041, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r5-chu-chunqiu', 'chu-chunqiu', 'chu-r5', '',
-  NULL,
-  -921, 1, NULL, -897, 12, NULL,
-  -11040, -10741, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r6-chu-chunqiu', 'chu-chunqiu', 'chu-r6', '',
-  NULL,
-  -896, 1, NULL, -873, 12, NULL,
-  -10740, -10453, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r7-chu-chunqiu', 'chu-chunqiu', 'chu-r7', '',
-  NULL,
-  -872, 1, NULL, -848, 12, NULL,
-  -10452, -10153, 'year', 'interpolated', NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r8-chu-chunqiu', 'chu-chunqiu', 'chu-r8', '',
-  NULL,
-  -847, 1, NULL, -838, 12, NULL,
-  -10152, -10033, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r9-chu-chunqiu', 'chu-chunqiu', 'chu-r9', '',
-  NULL,
-  -837, 1, NULL, -828, 12, NULL,
-  -10032, -9913, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r10-chu-chunqiu', 'chu-chunqiu', 'chu-r10', '',
-  NULL,
-  -827, 1, NULL, -822, 12, NULL,
-  -9912, -9841, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r11-chu-chunqiu', 'chu-chunqiu', 'chu-r11', '',
-  NULL,
-  -821, 1, NULL, -800, 12, NULL,
-  -9840, -9577, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r12-chu-chunqiu', 'chu-chunqiu', 'chu-r12', '',
-  NULL,
-  -799, 1, NULL, -791, 12, NULL,
-  -9576, -9469, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r13-chu-chunqiu', 'chu-chunqiu', 'chu-r13', '',
-  NULL,
-  -790, 1, NULL, -764, 12, NULL,
-  -9468, -9145, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r14-chu-chunqiu', 'chu-chunqiu', 'chu-r14', '',
-  NULL,
-  -763, 1, NULL, -758, 12, NULL,
-  -9144, -9073, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r15-chu-chunqiu', 'chu-chunqiu', 'chu-r15', '',
-  NULL,
-  -757, 1, NULL, -741, 12, NULL,
-  -9072, -8869, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r16-chu-chunqiu', 'chu-chunqiu', 'chu-r16', '',
-  NULL,
-  -740, 1, NULL, -690, 12, NULL,
-  -8868, -8257, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r17-chu-chunqiu', 'chu-chunqiu', 'chu-r17', '',
-  NULL,
-  -689, 1, NULL, -675, 12, NULL,
-  -8256, -8077, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r18-chu-chunqiu', 'chu-chunqiu', 'chu-r18', '',
-  NULL,
-  -674, 1, NULL, -672, 12, NULL,
-  -8076, -8041, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r19-chu-chunqiu', 'chu-chunqiu', 'chu-r19', '',
-  NULL,
-  -671, 1, NULL, -626, 12, NULL,
-  -8040, -7489, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r20-chu-chunqiu', 'chu-chunqiu', 'chu-r20', '',
-  NULL,
-  -625, 1, NULL, -614, 12, NULL,
-  -7488, -7345, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-xiong-zhuang-chu-chunqiu', 'chu-chunqiu', 'xiong-zhuang', '',
-  NULL,
-  -613, 1, NULL, -591, 12, NULL,
-  -7344, -7069, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r22-chu-chunqiu', 'chu-chunqiu', 'chu-r22', '',
-  NULL,
-  -590, 1, NULL, -560, 12, NULL,
-  -7068, -6697, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r23-chu-chunqiu', 'chu-chunqiu', 'chu-r23', '',
-  NULL,
-  -559, 1, NULL, -545, 12, NULL,
-  -6696, -6517, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r24-chu-chunqiu', 'chu-chunqiu', 'chu-r24', '',
-  NULL,
-  -544, 1, NULL, -541, 12, NULL,
-  -6516, -6469, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r25-chu-chunqiu', 'chu-chunqiu', 'chu-r25', '',
-  NULL,
-  -540, 1, NULL, -529, 12, NULL,
-  -6468, -6325, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r26-chu-chunqiu', 'chu-chunqiu', 'chu-r26', '',
-  NULL,
-  -529, 1, NULL, -529, 12, NULL,
-  -6336, -6325, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r27-chu-chunqiu', 'chu-chunqiu', 'chu-r27', '',
-  NULL,
-  -528, 1, NULL, -516, 12, NULL,
-  -6324, -6169, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r28-chu-chunqiu', 'chu-chunqiu', 'chu-r28', '',
-  NULL,
-  -515, 1, NULL, -489, 12, NULL,
-  -6168, -5845, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r29-chu-chunqiu', 'chu-chunqiu', 'chu-r29', '',
-  NULL,
-  -488, 1, NULL, -432, 12, NULL,
-  -5844, -5161, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r30-chu-chunqiu', 'chu-chunqiu', 'chu-r30', '',
-  NULL,
-  -431, 1, NULL, -408, 12, NULL,
-  -5160, -4873, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r31-chu-chunqiu', 'chu-chunqiu', 'chu-r31', '',
-  NULL,
-  -407, 1, NULL, -402, 12, NULL,
-  -4872, -4801, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r32-chu-chunqiu', 'chu-chunqiu', 'chu-r32', '',
-  NULL,
-  -401, 1, NULL, -381, 12, NULL,
-  -4800, -4549, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r33-chu-chunqiu', 'chu-chunqiu', 'chu-r33', '',
-  NULL,
-  -380, 1, NULL, -370, 12, NULL,
-  -4548, -4417, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r34-chu-chunqiu', 'chu-chunqiu', 'chu-r34', '',
-  NULL,
-  -369, 1, NULL, -340, 12, NULL,
-  -4416, -4057, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r35-chu-chunqiu', 'chu-chunqiu', 'chu-r35', '',
-  NULL,
-  -339, 1, NULL, -329, 12, NULL,
-  -4056, -3925, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r36-chu-chunqiu', 'chu-chunqiu', 'chu-r36', '',
-  NULL,
-  -328, 1, NULL, -299, 12, NULL,
-  -3924, -3565, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r37-chu-chunqiu', 'chu-chunqiu', 'chu-r37', '',
-  NULL,
-  -298, 1, NULL, -263, 12, NULL,
-  -3564, -3133, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r38-chu-chunqiu', 'chu-chunqiu', 'chu-r38', '',
-  NULL,
-  -262, 1, NULL, -238, 12, NULL,
-  -3132, -2833, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r39-chu-chunqiu', 'chu-chunqiu', 'chu-r39', '',
-  NULL,
-  -237, 1, NULL, -228, 12, NULL,
-  -2832, -2713, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r40-chu-chunqiu', 'chu-chunqiu', 'chu-r40', '',
-  NULL,
-  -228, 1, NULL, -228, 12, NULL,
-  -2724, -2713, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r41-chu-chunqiu', 'chu-chunqiu', 'chu-r41', '',
-  NULL,
-  -227, 1, NULL, -223, 12, NULL,
-  -2712, -2653, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r42-chu-chunqiu', 'chu-chunqiu', 'chu-r42', '',
-  NULL,
-  -223, 1, NULL, -223, 12, NULL,
-  -2664, -2653, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-chu-r43-chu-chunqiu', 'chu-chunqiu', 'chu-r43', '',
-  NULL,
-  -208, 1, NULL, -205, 12, NULL,
-  -2484, -2437, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-ji-shi-yan-chunqiu', 'yan-chunqiu', 'ji-shi', '',
-  NULL,
-  -1044, 1, NULL, -1000, 12, NULL,
-  -12516, -11977, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r1-yan-chunqiu', 'yan-chunqiu', 'yan-r1', '',
-  NULL,
-  -999, 1, NULL, -955, 12, NULL,
-  -11976, -11437, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r2-yan-chunqiu', 'yan-chunqiu', 'yan-r2', '',
-  NULL,
-  -954, 1, NULL, -910, 12, NULL,
-  -11436, -10897, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r3-yan-chunqiu', 'yan-chunqiu', 'yan-r3', '',
-  NULL,
-  -909, 1, NULL, -865, 12, NULL,
-  -10896, -10357, 'year', 'interpolated', NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r4-yan-chunqiu', 'yan-chunqiu', 'yan-r4', '',
-  NULL,
-  -864, 1, NULL, -827, 12, NULL,
-  -10356, -9901, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r5-yan-chunqiu', 'yan-chunqiu', 'yan-r5', '',
-  NULL,
-  -826, 1, NULL, -791, 12, NULL,
-  -9900, -9469, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r6-yan-chunqiu', 'yan-chunqiu', 'yan-r6', '',
-  NULL,
-  -790, 1, NULL, -767, 12, NULL,
-  -9468, -9181, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r7-yan-chunqiu', 'yan-chunqiu', 'yan-r7', '',
-  NULL,
-  -766, 1, NULL, -765, 12, NULL,
-  -9180, -9157, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r8-yan-chunqiu', 'yan-chunqiu', 'yan-r8', '',
-  NULL,
-  -764, 1, NULL, -729, 12, NULL,
-  -9156, -8725, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r9-yan-chunqiu', 'yan-chunqiu', 'yan-r9', '',
-  NULL,
-  -728, 1, NULL, -711, 12, NULL,
-  -8724, -8509, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r10-yan-chunqiu', 'yan-chunqiu', 'yan-r10', '',
-  NULL,
-  -710, 1, NULL, -698, 12, NULL,
-  -8508, -8353, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r11-yan-chunqiu', 'yan-chunqiu', 'yan-r11', '',
-  NULL,
-  -697, 1, NULL, -691, 12, NULL,
-  -8352, -8269, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r12-yan-chunqiu', 'yan-chunqiu', 'yan-r12', '',
-  NULL,
-  -690, 1, NULL, -658, 12, NULL,
-  -8268, -7873, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r13-yan-chunqiu', 'yan-chunqiu', 'yan-r13', '',
-  NULL,
-  -657, 1, NULL, -618, 12, NULL,
-  -7872, -7393, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r14-yan-chunqiu', 'yan-chunqiu', 'yan-r14', '',
-  NULL,
-  -617, 1, NULL, -602, 12, NULL,
-  -7392, -7201, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r15-yan-chunqiu', 'yan-chunqiu', 'yan-r15', '',
-  NULL,
-  -601, 1, NULL, -587, 12, NULL,
-  -7200, -7021, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r16-yan-chunqiu', 'yan-chunqiu', 'yan-r16', '',
-  NULL,
-  -586, 1, NULL, -574, 12, NULL,
-  -7020, -6865, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r17-yan-chunqiu', 'yan-chunqiu', 'yan-r17', '',
-  NULL,
-  -573, 1, NULL, -555, 12, NULL,
-  -6864, -6637, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r18-yan-chunqiu', 'yan-chunqiu', 'yan-r18', '',
-  NULL,
-  -554, 1, NULL, -549, 12, NULL,
-  -6636, -6565, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r19-yan-chunqiu', 'yan-chunqiu', 'yan-r19', '',
-  NULL,
-  -548, 1, NULL, -545, 12, NULL,
-  -6564, -6517, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r20-yan-chunqiu', 'yan-chunqiu', 'yan-r20', '',
-  NULL,
-  -544, 1, NULL, -536, 12, NULL,
-  -6516, -6409, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r21-yan-chunqiu', 'yan-chunqiu', 'yan-r21', '',
-  NULL,
-  -535, 1, NULL, -529, 12, NULL,
-  -6408, -6325, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r22-yan-chunqiu', 'yan-chunqiu', 'yan-r22', '',
-  NULL,
-  -528, 1, NULL, -524, 12, NULL,
-  -6324, -6265, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r23-yan-chunqiu', 'yan-chunqiu', 'yan-r23', '',
-  NULL,
-  -523, 1, NULL, -505, 12, NULL,
-  -6264, -6037, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r24-yan-chunqiu', 'yan-chunqiu', 'yan-r24', '',
-  NULL,
-  -504, 1, NULL, -493, 12, NULL,
-  -6036, -5893, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r25-yan-chunqiu', 'yan-chunqiu', 'yan-r25', '',
-  NULL,
-  -492, 1, NULL, -455, 12, NULL,
-  -5892, -5437, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r26-yan-chunqiu', 'yan-chunqiu', 'yan-r26', '',
-  NULL,
-  -454, 1, NULL, -439, 12, NULL,
-  -5436, -5245, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r27-yan-chunqiu', 'yan-chunqiu', 'yan-r27', '',
-  NULL,
-  -438, 1, NULL, -415, 12, NULL,
-  -5244, -4957, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r28-yan-chunqiu', 'yan-chunqiu', 'yan-r28', '',
-  NULL,
-  -414, 1, NULL, -373, 12, NULL,
-  -4956, -4453, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r14-yan-chunqiu-2', 'yan-chunqiu', 'yan-r14', '',
-  NULL,
-  -372, 1, NULL, -362, 12, NULL,
-  -4452, -4321, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r18-yan-chunqiu-2', 'yan-chunqiu', 'yan-r18', '',
-  NULL,
-  -361, 1, NULL, -333, 12, NULL,
-  -4320, -3973, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r31-yan-chunqiu', 'yan-chunqiu', 'yan-r31', '',
-  NULL,
-  -332, 1, NULL, -321, 12, NULL,
-  -3972, -3829, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r32-yan-chunqiu', 'yan-chunqiu', 'yan-r32', '',
-  NULL,
-  -320, 1, NULL, -314, 12, NULL,
-  -3828, -3745, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r33-yan-chunqiu', 'yan-chunqiu', 'yan-r33', '',
-  NULL,
-  -312, 1, NULL, -279, 12, NULL,
-  -3732, -3325, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r34-yan-chunqiu', 'yan-chunqiu', 'yan-r34', '',
-  NULL,
-  -278, 1, NULL, -271, 12, NULL,
-  -3324, -3229, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r35-yan-chunqiu', 'yan-chunqiu', 'yan-r35', '',
-  NULL,
-  -270, 1, NULL, -258, 12, NULL,
-  -3228, -3073, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r36-yan-chunqiu', 'yan-chunqiu', 'yan-r36', '',
-  NULL,
-  -257, 1, NULL, -255, 12, NULL,
-  -3072, -3037, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-yan-r37-yan-chunqiu', 'yan-chunqiu', 'yan-r37', '',
-  NULL,
-  -254, 1, NULL, -222, 12, NULL,
-  -3036, -2641, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-weizi-song-chunqiu', 'song-chunqiu', 'song-weizi', '',
-  NULL,
-  -1034, 1, NULL, -1010, 12, NULL,
-  -12396, -12097, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r1-song-chunqiu', 'song-chunqiu', 'song-r1', '',
-  NULL,
-  -1009, 1, NULL, -985, 12, NULL,
-  -12096, -11797, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r2-song-chunqiu', 'song-chunqiu', 'song-r2', '',
-  NULL,
-  -984, 1, NULL, -960, 12, NULL,
-  -11796, -11497, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r3-song-chunqiu', 'song-chunqiu', 'song-r3', '',
-  NULL,
-  -959, 1, NULL, -935, 12, NULL,
-  -11496, -11197, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r4-song-chunqiu', 'song-chunqiu', 'song-r4', '',
-  NULL,
-  -934, 1, NULL, -910, 12, NULL,
-  -11196, -10897, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r5-song-chunqiu', 'song-chunqiu', 'song-r5', '',
-  NULL,
-  -909, 1, NULL, -885, 12, NULL,
-  -10896, -10597, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r6-song-chunqiu', 'song-chunqiu', 'song-r6', '',
-  NULL,
-  -884, 1, NULL, -859, 12, NULL,
-  -10596, -10285, 'year', 'interpolated', NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r7-song-chunqiu', 'song-chunqiu', 'song-r7', '',
-  NULL,
-  -858, 1, NULL, -831, 12, NULL,
-  -10284, -9949, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r8-song-chunqiu', 'song-chunqiu', 'song-r8', '',
-  NULL,
-  -830, 1, NULL, -800, 12, NULL,
-  -9948, -9577, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r9-song-chunqiu', 'song-chunqiu', 'song-r9', '',
-  NULL,
-  -800, 1, NULL, -800, 12, NULL,
-  -9588, -9577, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r10-song-chunqiu', 'song-chunqiu', 'song-r10', '',
-  NULL,
-  -799, 1, NULL, -766, 12, NULL,
-  -9576, -9169, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r11-song-chunqiu', 'song-chunqiu', 'song-r11', '',
-  NULL,
-  -765, 1, NULL, -748, 12, NULL,
-  -9168, -8953, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r12-song-chunqiu', 'song-chunqiu', 'song-r12', '',
-  NULL,
-  -747, 1, NULL, -729, 12, NULL,
-  -8952, -8725, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r13-song-chunqiu', 'song-chunqiu', 'song-r13', '',
-  NULL,
-  -728, 1, NULL, -720, 12, NULL,
-  -8724, -8617, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r14-song-chunqiu', 'song-chunqiu', 'song-r14', '',
-  NULL,
-  -719, 1, NULL, -711, 12, NULL,
-  -8616, -8509, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r15-song-chunqiu', 'song-chunqiu', 'song-r15', '',
-  NULL,
-  -710, 1, NULL, -692, 12, NULL,
-  -8508, -8281, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r16-song-chunqiu', 'song-chunqiu', 'song-r16', '',
-  NULL,
-  -691, 1, NULL, -682, 12, NULL,
-  -8280, -8161, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r17-song-chunqiu', 'song-chunqiu', 'song-r17', '',
-  NULL,
-  -682, 1, NULL, -682, 12, NULL,
-  -8172, -8161, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r18-song-chunqiu', 'song-chunqiu', 'song-r18', '',
-  NULL,
-  -681, 1, NULL, -651, 12, NULL,
-  -8160, -7789, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r19-song-chunqiu', 'song-chunqiu', 'song-r19', '',
-  NULL,
-  -650, 1, NULL, -637, 12, NULL,
-  -7788, -7621, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r20-song-chunqiu', 'song-chunqiu', 'song-r20', '',
-  NULL,
-  -636, 1, NULL, -620, 12, NULL,
-  -7620, -7417, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r21-song-chunqiu', 'song-chunqiu', 'song-r21', '',
-  NULL,
-  -620, 1, NULL, -620, 12, NULL,
-  -7428, -7417, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r22-song-chunqiu', 'song-chunqiu', 'song-r22', '',
-  NULL,
-  -619, 1, NULL, -611, 12, NULL,
-  -7416, -7309, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r23-song-chunqiu', 'song-chunqiu', 'song-r23', '',
-  NULL,
-  -610, 1, NULL, -589, 12, NULL,
-  -7308, -7045, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r24-song-chunqiu', 'song-chunqiu', 'song-r24', '',
-  NULL,
-  -588, 1, NULL, -576, 12, NULL,
-  -7044, -6889, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r25-song-chunqiu', 'song-chunqiu', 'song-r25', '',
-  NULL,
-  -575, 1, NULL, -532, 12, NULL,
-  -6888, -6361, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r26-song-chunqiu', 'song-chunqiu', 'song-r26', '',
-  NULL,
-  -531, 1, NULL, -517, 12, NULL,
-  -6360, -6181, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r27-song-chunqiu', 'song-chunqiu', 'song-r27', '',
-  NULL,
-  -516, 1, NULL, -469, 12, NULL,
-  -6180, -5605, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r28-song-chunqiu', 'song-chunqiu', 'song-r28', '',
-  NULL,
-  -468, 1, NULL, -404, 12, NULL,
-  -5604, -4825, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r29-song-chunqiu', 'song-chunqiu', 'song-r29', '',
-  NULL,
-  -403, 1, NULL, -385, 12, NULL,
-  -4824, -4597, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r30-song-chunqiu', 'song-chunqiu', 'song-r30', '',
-  NULL,
-  -384, 1, NULL, -363, 12, NULL,
-  -4596, -4333, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r31-song-chunqiu', 'song-chunqiu', 'song-r31', '',
-  NULL,
-  -362, 1, NULL, -356, 12, NULL,
-  -4332, -4249, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r32-song-chunqiu', 'song-chunqiu', 'song-r32', '',
-  NULL,
-  -355, 1, NULL, -329, 12, NULL,
-  -4248, -3925, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-song-r33-song-chunqiu', 'song-chunqiu', 'song-r33', '',
-  NULL,
-  -328, 1, NULL, -286, 12, NULL,
-  -3924, -3409, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-bo-qin-lu-chunqiu', 'lu-chunqiu', 'bo-qin', '',
-  NULL,
-  -1043, 1, NULL, -998, 12, NULL,
-  -12504, -11953, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r1-lu-chunqiu', 'lu-chunqiu', 'lu-r1', '',
-  NULL,
-  -997, 1, NULL, -994, 12, NULL,
-  -11952, -11905, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r2-lu-chunqiu', 'lu-chunqiu', 'lu-r2', '',
-  NULL,
-  -993, 1, NULL, -988, 12, NULL,
-  -11904, -11833, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r3-lu-chunqiu', 'lu-chunqiu', 'lu-r3', '',
-  NULL,
-  -987, 1, NULL, -974, 12, NULL,
-  -11832, -11665, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r4-lu-chunqiu', 'lu-chunqiu', 'lu-r4', '',
-  NULL,
-  -973, 1, NULL, -924, 12, NULL,
-  -11664, -11065, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r5-lu-chunqiu', 'lu-chunqiu', 'lu-r5', '',
-  NULL,
-  -923, 1, NULL, -887, 12, NULL,
-  -11064, -10621, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r6-lu-chunqiu', 'lu-chunqiu', 'lu-r6', '',
-  NULL,
-  -886, 1, NULL, -855, 12, NULL,
-  -10620, -10237, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r7-lu-chunqiu', 'lu-chunqiu', 'lu-r7', '',
-  NULL,
-  -854, 1, NULL, -825, 12, NULL,
-  -10236, -9877, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r8-lu-chunqiu', 'lu-chunqiu', 'lu-r8', '',
-  NULL,
-  -824, 1, NULL, -816, 12, NULL,
-  -9876, -9769, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r9-lu-chunqiu', 'lu-chunqiu', 'lu-r9', '',
-  NULL,
-  -815, 1, NULL, -807, 12, NULL,
-  -9768, -9661, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r10-lu-chunqiu', 'lu-chunqiu', 'lu-r10', '',
-  NULL,
-  -806, 1, NULL, -796, 12, NULL,
-  -9660, -9529, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r11-lu-chunqiu', 'lu-chunqiu', 'lu-r11', '',
-  NULL,
-  -795, 1, NULL, -769, 12, NULL,
-  -9528, -9205, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r12-lu-chunqiu', 'lu-chunqiu', 'lu-r12', '',
-  NULL,
-  -768, 1, NULL, -723, 12, NULL,
-  -9204, -8653, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r13-lu-chunqiu', 'lu-chunqiu', 'lu-r13', '',
-  NULL,
-  -722, 1, NULL, -712, 12, NULL,
-  -8652, -8521, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r14-lu-chunqiu', 'lu-chunqiu', 'lu-r14', '',
-  NULL,
-  -711, 1, NULL, -694, 12, NULL,
-  -8520, -8305, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r15-lu-chunqiu', 'lu-chunqiu', 'lu-r15', '',
-  NULL,
-  -693, 1, NULL, -662, 12, NULL,
-  -8304, -7921, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r16-lu-chunqiu', 'lu-chunqiu', 'lu-r16', '',
-  NULL,
-  -661, 1, NULL, -660, 12, NULL,
-  -7920, -7897, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r17-lu-chunqiu', 'lu-chunqiu', 'lu-r17', '',
-  NULL,
-  -659, 1, NULL, -627, 12, NULL,
-  -7896, -7501, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r18-lu-chunqiu', 'lu-chunqiu', 'lu-r18', '',
-  NULL,
-  -626, 1, NULL, -609, 12, NULL,
-  -7500, -7285, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r19-lu-chunqiu', 'lu-chunqiu', 'lu-r19', '',
-  NULL,
-  -608, 1, NULL, -591, 12, NULL,
-  -7284, -7069, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r20-lu-chunqiu', 'lu-chunqiu', 'lu-r20', '',
-  NULL,
-  -590, 1, NULL, -573, 12, NULL,
-  -7068, -6853, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r21-lu-chunqiu', 'lu-chunqiu', 'lu-r21', '',
-  NULL,
-  -572, 1, NULL, -542, 12, NULL,
-  -6852, -6481, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r22-lu-chunqiu', 'lu-chunqiu', 'lu-r22', '',
-  NULL,
-  -542, 1, NULL, -542, 12, NULL,
-  -6492, -6481, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r23-lu-chunqiu', 'lu-chunqiu', 'lu-r23', '',
-  NULL,
-  -541, 1, NULL, -510, 12, NULL,
-  -6480, -6097, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r24-lu-chunqiu', 'lu-chunqiu', 'lu-r24', '',
-  NULL,
-  -509, 1, NULL, -495, 12, NULL,
-  -6096, -5917, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r25-lu-chunqiu', 'lu-chunqiu', 'lu-r25', '',
-  NULL,
-  -494, 1, NULL, -468, 12, NULL,
-  -5916, -5593, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r26-lu-chunqiu', 'lu-chunqiu', 'lu-r26', '',
-  NULL,
-  -467, 1, NULL, -437, 12, NULL,
-  -5592, -5221, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r27-lu-chunqiu', 'lu-chunqiu', 'lu-r27', '',
-  NULL,
-  -436, 1, NULL, -416, 12, NULL,
-  -5220, -4969, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r28-lu-chunqiu', 'lu-chunqiu', 'lu-r28', '',
-  NULL,
-  -415, 1, NULL, -383, 12, NULL,
-  -4968, -4573, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r29-lu-chunqiu', 'lu-chunqiu', 'lu-r29', '',
-  NULL,
-  -382, 1, NULL, -353, 12, NULL,
-  -4572, -4213, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r30-lu-chunqiu', 'lu-chunqiu', 'lu-r30', '',
-  NULL,
-  -352, 1, NULL, -344, 12, NULL,
-  -4212, -4105, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r31-lu-chunqiu', 'lu-chunqiu', 'lu-r31', '',
-  NULL,
-  -343, 1, NULL, -323, 12, NULL,
-  -4104, -3853, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r32-lu-chunqiu', 'lu-chunqiu', 'lu-r32', '',
-  NULL,
-  -322, 1, NULL, -303, 12, NULL,
-  -3852, -3613, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r33-lu-chunqiu', 'lu-chunqiu', 'lu-r33', '',
-  NULL,
-  -302, 1, NULL, -280, 12, NULL,
-  -3612, -3337, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-lu-r34-lu-chunqiu', 'lu-chunqiu', 'lu-r34', '',
-  NULL,
-  -279, 1, NULL, -256, 12, NULL,
-  -3336, -3049, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r0-wei-weiguo', 'wei-weiguo', 'weiguo-r0', '',
-  NULL,
-  -1040, 1, NULL, -1017, 12, NULL,
-  -12468, -12181, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r1-wei-weiguo', 'wei-weiguo', 'weiguo-r1', '',
-  NULL,
-  -1016, 1, NULL, -992, 12, NULL,
-  -12180, -11881, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r2-wei-weiguo', 'wei-weiguo', 'weiguo-r2', '',
-  NULL,
-  -991, 1, NULL, -967, 12, NULL,
-  -11880, -11581, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r3-wei-weiguo', 'wei-weiguo', 'weiguo-r3', '',
-  NULL,
-  -966, 1, NULL, -942, 12, NULL,
-  -11580, -11281, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r4-wei-weiguo', 'wei-weiguo', 'weiguo-r4', '',
-  NULL,
-  -941, 1, NULL, -917, 12, NULL,
-  -11280, -10981, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r5-wei-weiguo', 'wei-weiguo', 'weiguo-r5', '',
-  NULL,
-  -916, 1, NULL, -892, 12, NULL,
-  -10980, -10681, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r6-wei-weiguo', 'wei-weiguo', 'weiguo-r6', '',
-  NULL,
-  -891, 1, NULL, -867, 12, NULL,
-  -10680, -10381, 'year', 'interpolated', NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r7-wei-weiguo', 'wei-weiguo', 'weiguo-r7', '',
-  NULL,
-  -866, 1, NULL, -855, 12, NULL,
-  -10380, -10237, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r8-wei-weiguo', 'wei-weiguo', 'weiguo-r8', '',
-  NULL,
-  -854, 1, NULL, -813, 12, NULL,
-  -10236, -9733, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r9-wei-weiguo', 'wei-weiguo', 'weiguo-r9', '',
-  NULL,
-  -813, 1, NULL, -813, 12, NULL,
-  -9744, -9733, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r10-wei-weiguo', 'wei-weiguo', 'weiguo-r10', '',
-  NULL,
-  -812, 1, NULL, -758, 12, NULL,
-  -9732, -9073, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r11-wei-weiguo', 'wei-weiguo', 'weiguo-r11', '',
-  NULL,
-  -757, 1, NULL, -735, 12, NULL,
-  -9072, -8797, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r12-wei-weiguo', 'wei-weiguo', 'weiguo-r12', '',
-  NULL,
-  -734, 1, NULL, -719, 12, NULL,
-  -8796, -8605, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r13-wei-weiguo', 'wei-weiguo', 'weiguo-r13', '',
-  NULL,
-  -719, 1, NULL, -719, 12, NULL,
-  -8616, -8605, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r14-wei-weiguo', 'wei-weiguo', 'weiguo-r14', '',
-  NULL,
-  -718, 1, NULL, -700, 12, NULL,
-  -8604, -8377, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r15-wei-weiguo', 'wei-weiguo', 'weiguo-r15', '',
-  NULL,
-  -699, 1, NULL, -696, 12, NULL,
-  -8376, -8329, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r16-wei-weiguo', 'wei-weiguo', 'weiguo-r16', '',
-  NULL,
-  -695, 1, NULL, -688, 12, NULL,
-  -8328, -8233, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r15-wei-weiguo-2', 'wei-weiguo', 'weiguo-r15', '',
-  NULL,
-  -687, 1, NULL, -669, 12, NULL,
-  -8232, -8005, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r18-wei-weiguo', 'wei-weiguo', 'weiguo-r18', '',
-  NULL,
-  -668, 1, NULL, -660, 12, NULL,
-  -8004, -7897, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r19-wei-weiguo', 'wei-weiguo', 'weiguo-r19', '',
-  NULL,
-  -660, 1, NULL, -660, 12, NULL,
-  -7908, -7897, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r20-wei-weiguo', 'wei-weiguo', 'weiguo-r20', '',
-  NULL,
-  -659, 1, NULL, -635, 12, NULL,
-  -7896, -7597, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r21-wei-weiguo', 'wei-weiguo', 'weiguo-r21', '',
-  NULL,
-  -634, 1, NULL, -632, 12, NULL,
-  -7596, -7561, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r22-wei-weiguo', 'wei-weiguo', 'weiguo-r22', '',
-  NULL,
-  -632, 1, NULL, -632, 12, NULL,
-  -7572, -7561, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r21-wei-weiguo-2', 'wei-weiguo', 'weiguo-r21', '',
-  NULL,
-  -631, 1, NULL, -600, 12, NULL,
-  -7560, -7177, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r23-wei-weiguo', 'wei-weiguo', 'weiguo-r23', '',
-  NULL,
-  -599, 1, NULL, -589, 12, NULL,
-  -7176, -7045, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r24-wei-weiguo', 'wei-weiguo', 'weiguo-r24', '',
-  NULL,
-  -588, 1, NULL, -577, 12, NULL,
-  -7044, -6901, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r25-wei-weiguo', 'wei-weiguo', 'weiguo-r25', '',
-  NULL,
-  -576, 1, NULL, -559, 12, NULL,
-  -6900, -6685, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r26-wei-weiguo', 'wei-weiguo', 'weiguo-r26', '',
-  NULL,
-  -558, 1, NULL, -547, 12, NULL,
-  -6684, -6541, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r25-wei-weiguo-2', 'wei-weiguo', 'weiguo-r25', '',
-  NULL,
-  -546, 1, NULL, -544, 12, NULL,
-  -6540, -6505, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r28-wei-weiguo', 'wei-weiguo', 'weiguo-r28', '',
-  NULL,
-  -543, 1, NULL, -535, 12, NULL,
-  -6504, -6397, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r29-wei-weiguo', 'wei-weiguo', 'weiguo-r29', '',
-  NULL,
-  -534, 1, NULL, -493, 12, NULL,
-  -6396, -5893, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r30-wei-weiguo', 'wei-weiguo', 'weiguo-r30', '',
-  NULL,
-  -492, 1, NULL, -480, 12, NULL,
-  -5892, -5737, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r31-wei-weiguo', 'wei-weiguo', 'weiguo-r31', '',
-  NULL,
-  -479, 1, NULL, -478, 12, NULL,
-  -5736, -5713, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r32-wei-weiguo', 'wei-weiguo', 'weiguo-r32', '',
-  NULL,
-  -478, 1, NULL, -478, 12, NULL,
-  -5724, -5713, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r33-wei-weiguo', 'wei-weiguo', 'weiguo-r33', '',
-  NULL,
-  -477, 1, NULL, -477, 12, NULL,
-  -5712, -5701, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r30-wei-weiguo-2', 'wei-weiguo', 'weiguo-r30', '',
-  NULL,
-  -476, 1, NULL, -470, 12, NULL,
-  -5700, -5617, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r35-wei-weiguo', 'wei-weiguo', 'weiguo-r35', '',
-  NULL,
-  -469, 1, NULL, -465, 12, NULL,
-  -5616, -5557, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r36-wei-weiguo', 'wei-weiguo', 'weiguo-r36', '',
-  NULL,
-  -464, 1, NULL, -432, 12, NULL,
-  -5556, -5161, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r37-wei-weiguo', 'wei-weiguo', 'weiguo-r37', '',
-  NULL,
-  -431, 1, NULL, -426, 12, NULL,
-  -5160, -5089, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r38-wei-weiguo', 'wei-weiguo', 'weiguo-r38', '',
-  NULL,
-  -425, 1, NULL, -415, 12, NULL,
-  -5088, -4957, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r39-wei-weiguo', 'wei-weiguo', 'weiguo-r39', '',
-  NULL,
-  -414, 1, NULL, -383, 12, NULL,
-  -4956, -4573, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r40-wei-weiguo', 'wei-weiguo', 'weiguo-r40', '',
-  NULL,
-  -382, 1, NULL, -372, 12, NULL,
-  -4572, -4441, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r41-wei-weiguo', 'wei-weiguo', 'weiguo-r41', '',
-  NULL,
-  -371, 1, NULL, -343, 12, NULL,
-  -4440, -4093, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r42-wei-weiguo', 'wei-weiguo', 'weiguo-r42', '',
-  NULL,
-  -342, 1, NULL, -335, 12, NULL,
-  -4092, -3997, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r43-wei-weiguo', 'wei-weiguo', 'weiguo-r43', '',
-  NULL,
-  -334, 1, NULL, -293, 12, NULL,
-  -3996, -3493, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r44-wei-weiguo', 'wei-weiguo', 'weiguo-r44', '',
-  NULL,
-  -292, 1, NULL, -254, 12, NULL,
-  -3492, -3025, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r45-wei-weiguo', 'wei-weiguo', 'weiguo-r45', '',
-  NULL,
-  -253, 1, NULL, -230, 12, NULL,
-  -3024, -2737, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-weiguo-r46-wei-weiguo', 'wei-weiguo', 'weiguo-r46', '',
-  NULL,
-  -241, 1, NULL, -209, 12, NULL,
-  -2880, -2485, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r0-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r0', '',
-  NULL,
-  -806, 1, NULL, -771, 12, NULL,
-  -9660, -9229, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r1-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r1', '',
-  NULL,
-  -770, 1, NULL, -744, 12, NULL,
-  -9228, -8905, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r2-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r2', '',
-  NULL,
-  -743, 1, NULL, -701, 12, NULL,
-  -8904, -8389, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r3-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r3', '',
-  NULL,
-  -700, 1, NULL, -700, 12, NULL,
-  -8388, -8377, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r4-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r4', '',
-  NULL,
-  -699, 1, NULL, -697, 12, NULL,
-  -8376, -8341, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r3-zheng-chunqiu-2', 'zheng-chunqiu', 'zheng-r3', '',
-  NULL,
-  -696, 1, NULL, -695, 12, NULL,
-  -8340, -8317, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r6-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r6', '',
-  NULL,
-  -694, 1, NULL, -694, 12, NULL,
-  -8316, -8305, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r7-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r7', '',
-  NULL,
-  -693, 1, NULL, -680, 12, NULL,
-  -8304, -8137, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r4-zheng-chunqiu-2', 'zheng-chunqiu', 'zheng-r4', '',
-  NULL,
-  -679, 1, NULL, -673, 12, NULL,
-  -8136, -8053, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r9-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r9', '',
-  NULL,
-  -672, 1, NULL, -628, 12, NULL,
-  -8052, -7513, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r10-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r10', '',
-  NULL,
-  -627, 1, NULL, -606, 12, NULL,
-  -7512, -7249, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r11-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r11', '',
-  NULL,
-  -605, 1, NULL, -605, 12, NULL,
-  -7248, -7237, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r12-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r12', '',
-  NULL,
-  -604, 1, NULL, -587, 12, NULL,
-  -7236, -7021, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r13-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r13', '',
-  NULL,
-  -586, 1, NULL, -585, 12, NULL,
-  -7020, -6997, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r14-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r14', '',
-  NULL,
-  -584, 1, NULL, -581, 12, NULL,
-  -6996, -6949, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-gongzi-xu-zheng-chunqiu', 'zheng-chunqiu', 'zheng-gongzi-xu', '',
-  NULL,
-  -581, 1, NULL, -581, 12, NULL,
-  -6960, -6949, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r14-zheng-chunqiu-2', 'zheng-chunqiu', 'zheng-r14', '',
-  NULL,
-  -580, 1, NULL, -571, 12, NULL,
-  -6948, -6829, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r15-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r15', '',
-  NULL,
-  -570, 1, NULL, -566, 12, NULL,
-  -6828, -6769, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r16-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r16', '',
-  NULL,
-  -565, 1, NULL, -530, 12, NULL,
-  -6768, -6337, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r17-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r17', '',
-  NULL,
-  -529, 1, NULL, -514, 12, NULL,
-  -6336, -6145, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r18-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r18', '',
-  NULL,
-  -513, 1, NULL, -501, 12, NULL,
-  -6144, -5989, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r19-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r19', '',
-  NULL,
-  -500, 1, NULL, -463, 12, NULL,
-  -5988, -5533, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r20-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r20', '',
-  NULL,
-  -462, 1, NULL, -455, 12, NULL,
-  -5532, -5437, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r21-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r21', '',
-  NULL,
-  -454, 1, NULL, -424, 12, NULL,
-  -5436, -5065, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r22-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r22', '',
-  NULL,
-  -423, 1, NULL, -423, 12, NULL,
-  -5064, -5053, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r23-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r23', '',
-  NULL,
-  -422, 1, NULL, -396, 12, NULL,
-  -5052, -4729, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-zheng-r24-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r24', '',
-  NULL,
-  -395, 1, NULL, -375, 12, NULL,
-  -4728, -4477, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r0-cao-chunqiu', 'cao-chunqiu', 'cao-r0', '',
-  NULL,
-  -1046, 1, NULL, -1016, 12, NULL,
-  -12540, -12169, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r1-cao-chunqiu', 'cao-chunqiu', 'cao-r1', '',
-  NULL,
-  -1015, 1, NULL, -992, 12, NULL,
-  -12168, -11881, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r2-cao-chunqiu', 'cao-chunqiu', 'cao-r2', '',
-  NULL,
-  -991, 1, NULL, -925, 12, NULL,
-  -11880, -11077, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r3-cao-chunqiu', 'cao-chunqiu', 'cao-r3', '',
-  NULL,
-  -924, 1, NULL, -885, 12, NULL,
-  -11076, -10597, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r4-cao-chunqiu', 'cao-chunqiu', 'cao-r4', '',
-  NULL,
-  -884, 1, NULL, -865, 12, NULL,
-  -10596, -10357, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r5-cao-chunqiu', 'cao-chunqiu', 'cao-r5', '',
-  NULL,
-  -864, 1, NULL, -835, 12, NULL,
-  -10356, -9997, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r6-cao-chunqiu', 'cao-chunqiu', 'cao-r6', '',
-  NULL,
-  -834, 1, NULL, -826, 12, NULL,
-  -9996, -9889, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r7-cao-chunqiu', 'cao-chunqiu', 'cao-r7', '',
-  NULL,
-  -825, 1, NULL, -796, 12, NULL,
-  -9888, -9529, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r8-cao-chunqiu', 'cao-chunqiu', 'cao-r8', '',
-  NULL,
-  -795, 1, NULL, -760, 12, NULL,
-  -9528, -9097, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r9-cao-chunqiu', 'cao-chunqiu', 'cao-r9', '',
-  NULL,
-  -760, 1, NULL, -760, 12, NULL,
-  -9108, -9097, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r10-cao-chunqiu', 'cao-chunqiu', 'cao-r10', '',
-  NULL,
-  -759, 1, NULL, -757, 12, NULL,
-  -9096, -9061, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r11-cao-chunqiu', 'cao-chunqiu', 'cao-r11', '',
-  NULL,
-  -756, 1, NULL, -702, 12, NULL,
-  -9060, -8401, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r12-cao-chunqiu', 'cao-chunqiu', 'cao-r12', '',
-  NULL,
-  -701, 1, NULL, -671, 12, NULL,
-  -8400, -8029, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r13-cao-chunqiu', 'cao-chunqiu', 'cao-r13', '',
-  NULL,
-  -670, 1, NULL, -662, 12, NULL,
-  -8028, -7921, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r14-cao-chunqiu', 'cao-chunqiu', 'cao-r14', '',
-  NULL,
-  -661, 1, NULL, -653, 12, NULL,
-  -7920, -7813, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r15-cao-chunqiu', 'cao-chunqiu', 'cao-r15', '',
-  NULL,
-  -652, 1, NULL, -618, 12, NULL,
-  -7812, -7393, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r16-cao-chunqiu', 'cao-chunqiu', 'cao-r16', '',
-  NULL,
-  -617, 1, NULL, -595, 12, NULL,
-  -7392, -7117, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r17-cao-chunqiu', 'cao-chunqiu', 'cao-r17', '',
-  NULL,
-  -594, 1, NULL, -578, 12, NULL,
-  -7116, -6913, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r18-cao-chunqiu', 'cao-chunqiu', 'cao-r18', '',
-  NULL,
-  -577, 1, NULL, -555, 12, NULL,
-  -6912, -6637, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r19-cao-chunqiu', 'cao-chunqiu', 'cao-r19', '',
-  NULL,
-  -554, 1, NULL, -528, 12, NULL,
-  -6636, -6313, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r20-cao-chunqiu', 'cao-chunqiu', 'cao-r20', '',
-  NULL,
-  -527, 1, NULL, -524, 12, NULL,
-  -6312, -6265, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r21-cao-chunqiu', 'cao-chunqiu', 'cao-r21', '',
-  NULL,
-  -523, 1, NULL, -515, 12, NULL,
-  -6264, -6157, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r22-cao-chunqiu', 'cao-chunqiu', 'cao-r22', '',
-  NULL,
-  -514, 1, NULL, -510, 12, NULL,
-  -6156, -6097, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r23-cao-chunqiu', 'cao-chunqiu', 'cao-r23', '',
-  NULL,
-  -509, 1, NULL, -506, 12, NULL,
-  -6096, -6049, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r24-cao-chunqiu', 'cao-chunqiu', 'cao-r24', '',
-  NULL,
-  -505, 1, NULL, -502, 12, NULL,
-  -6048, -6001, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-cao-r25-cao-chunqiu', 'cao-chunqiu', 'cao-r25', '',
-  NULL,
-  -501, 1, NULL, -487, 12, NULL,
-  -6000, -5821, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-pre-r0-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r0', '',
-  NULL,
-  -1100, 1, NULL, -1088, 12, NULL,
-  -13188, -13033, 'year', 'approximate', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-pre-r1-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r1', '',
-  NULL,
-  -1087, 1, NULL, -1074, 12, NULL,
-  -13032, -12865, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-pre-r2-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r2', '',
-  NULL,
-  -1073, 1, NULL, -1061, 12, NULL,
-  -12864, -12709, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-pre-r3-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r3', '',
-  NULL,
-  -1060, 1, NULL, -1047, 12, NULL,
-  -12708, -12541, 'year', 'interpolated', NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-pre-r4-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r4', '',
-  NULL,
-  -1046, 1, NULL, -1015, 12, NULL,
-  -12540, -12157, 'year', NULL, 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-pre-r5-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r5', '',
-  NULL,
-  -1014, 1, NULL, -982, 12, NULL,
-  -12156, -11761, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-pre-r6-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r6', '',
-  NULL,
-  -981, 1, NULL, -949, 12, NULL,
-  -11760, -11365, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-pre-r7-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r7', '',
-  NULL,
-  -948, 1, NULL, -916, 12, NULL,
-  -11364, -10969, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-pre-r8-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r8', '',
-  NULL,
-  -915, 1, NULL, -883, 12, NULL,
-  -10968, -10573, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-pre-r9-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r9', '',
-  NULL,
-  -882, 1, NULL, -850, 12, NULL,
-  -10572, -10177, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-pre-r10-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r10', '',
-  NULL,
-  -849, 1, NULL, -817, 12, NULL,
-  -10176, -9781, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-pre-r11-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r11', '',
-  NULL,
-  -816, 1, NULL, -784, 12, NULL,
-  -9780, -9385, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-pre-r12-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r12', '',
-  NULL,
-  -783, 1, NULL, -751, 12, NULL,
-  -9384, -8989, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-pre-r13-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r13', '',
-  NULL,
-  -750, 1, NULL, -718, 12, NULL,
-  -8988, -8593, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-pre-r14-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r14', '',
-  NULL,
-  -717, 1, NULL, -685, 12, NULL,
-  -8592, -8197, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-pre-r15-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r15', '',
-  NULL,
-  -684, 1, NULL, -652, 12, NULL,
-  -8196, -7801, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-pre-r16-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r16', '',
-  NULL,
-  -651, 1, NULL, -619, 12, NULL,
-  -7800, -7405, 'year', 'interpolated', 'interpolated'
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-pre-r17-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r17', '',
-  NULL,
-  -618, 1, NULL, -586, 12, NULL,
-  -7404, -7009, 'year', 'interpolated', NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-r0-wu-chunqiu', 'wu-chunqiu', 'wu-r0', '',
-  NULL,
-  -585, 1, NULL, -561, 12, NULL,
-  -7008, -6709, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-r1-wu-chunqiu', 'wu-chunqiu', 'wu-r1', '',
-  NULL,
-  -560, 1, NULL, -548, 12, NULL,
-  -6708, -6553, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-r2-wu-chunqiu', 'wu-chunqiu', 'wu-r2', '',
-  NULL,
-  -547, 1, NULL, -544, 12, NULL,
-  -6552, -6505, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-r3-wu-chunqiu', 'wu-chunqiu', 'wu-r3', '',
-  NULL,
-  -543, 1, NULL, -527, 12, NULL,
-  -6504, -6301, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-wu-r4-wu-chunqiu', 'wu-chunqiu', 'wu-r4', '',
-  NULL,
-  -526, 1, NULL, -515, 12, NULL,
-  -6300, -6157, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
-) VALUES (
-  'reign-helu-wu-chunqiu', 'wu-chunqiu', 'helu', '',
-  NULL,
-  -514, 1, NULL, -496, 12, NULL,
-  -6156, -5929, 'year', NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
@@ -11302,7 +1722,11367 @@ INSERT INTO reigns (
   start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
   claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-wu-fu-gai-wu-chunqiu', 'wu-chunqiu', 'wu-fu-gai', '',
+  'reign-qi-r1-qi-chunqiu', 'qi-chunqiu', 'qi-r1', '齐丁公',
+  NULL,
+  -1010, 1, NULL, -974, 12, NULL,
+  -12108, -11665, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r2-qi-chunqiu', 'qi-chunqiu', 'qi-r2', '齐乙公',
+  NULL,
+  -973, 1, NULL, -937, 12, NULL,
+  -11664, -11221, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r3-qi-chunqiu', 'qi-chunqiu', 'qi-r3', '齐癸公',
+  NULL,
+  -936, 1, NULL, -900, 12, NULL,
+  -11220, -10777, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r4-qi-chunqiu', 'qi-chunqiu', 'qi-r4', '齐哀公',
+  NULL,
+  -899, 1, NULL, -863, 12, NULL,
+  -10776, -10333, 'year', 'interpolated', NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r5-qi-chunqiu', 'qi-chunqiu', 'qi-r5', '齐胡公',
+  NULL,
+  -862, 1, NULL, -860, 12, NULL,
+  -10332, -10297, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r6-qi-chunqiu', 'qi-chunqiu', 'qi-r6', '齐献公',
+  NULL,
+  -859, 1, NULL, -851, 12, NULL,
+  -10296, -10189, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r7-qi-chunqiu', 'qi-chunqiu', 'qi-r7', '齐武公',
+  NULL,
+  -850, 1, NULL, -825, 12, NULL,
+  -10188, -9877, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r8-qi-chunqiu', 'qi-chunqiu', 'qi-r8', '齐厉公',
+  NULL,
+  -824, 1, NULL, -816, 12, NULL,
+  -9876, -9769, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r9-qi-chunqiu', 'qi-chunqiu', 'qi-r9', '齐文公',
+  NULL,
+  -815, 1, NULL, -804, 12, NULL,
+  -9768, -9625, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r10-qi-chunqiu', 'qi-chunqiu', 'qi-r10', '齐成公',
+  NULL,
+  -803, 1, NULL, -795, 12, NULL,
+  -9624, -9517, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r11-qi-chunqiu', 'qi-chunqiu', 'qi-r11', '齐庄公',
+  NULL,
+  -794, 1, NULL, -731, 12, NULL,
+  -9516, -8749, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r12-qi-chunqiu', 'qi-chunqiu', 'qi-r12', '齐釐公',
+  NULL,
+  -730, 1, NULL, -698, 12, NULL,
+  -8748, -8353, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r13-qi-chunqiu', 'qi-chunqiu', 'qi-r13', '齐襄公',
+  NULL,
+  -697, 1, NULL, -686, 12, NULL,
+  -8352, -8209, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r14-qi-chunqiu', 'qi-chunqiu', 'qi-r14', '公孙无知',
+  NULL,
+  -686, 1, NULL, -686, 12, NULL,
+  -8220, -8209, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jiang-xiaobai-qi-chunqiu', 'qi-chunqiu', 'jiang-xiaobai', '齐桓公',
+  NULL,
+  -685, 1, NULL, -643, 12, NULL,
+  -8208, -7693, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r16-qi-chunqiu', 'qi-chunqiu', 'qi-r16', '公子无亏',
+  NULL,
+  -643, 1, NULL, -643, 12, NULL,
+  -7704, -7693, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r17-qi-chunqiu', 'qi-chunqiu', 'qi-r17', '齐孝公',
+  NULL,
+  -642, 1, NULL, -633, 12, NULL,
+  -7692, -7573, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r18-qi-chunqiu', 'qi-chunqiu', 'qi-r18', '齐昭公',
+  NULL,
+  -632, 1, NULL, -613, 12, NULL,
+  -7572, -7333, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r19-qi-chunqiu', 'qi-chunqiu', 'qi-r19', '君舍',
+  NULL,
+  -613, 1, NULL, -613, 12, NULL,
+  -7344, -7333, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r20-qi-chunqiu', 'qi-chunqiu', 'qi-r20', '齐懿公',
+  NULL,
+  -612, 1, NULL, -609, 12, NULL,
+  -7332, -7285, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r21-qi-chunqiu', 'qi-chunqiu', 'qi-r21', '齐惠公',
+  NULL,
+  -608, 1, NULL, -599, 12, NULL,
+  -7284, -7165, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r22-qi-chunqiu', 'qi-chunqiu', 'qi-r22', '齐顷公',
+  NULL,
+  -598, 1, NULL, -582, 12, NULL,
+  -7164, -6961, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r23-qi-chunqiu', 'qi-chunqiu', 'qi-r23', '齐灵公',
+  NULL,
+  -581, 1, NULL, -554, 12, NULL,
+  -6960, -6625, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r24-qi-chunqiu', 'qi-chunqiu', 'qi-r24', '齐庄公',
+  NULL,
+  -553, 1, NULL, -548, 12, NULL,
+  -6624, -6553, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r25-qi-chunqiu', 'qi-chunqiu', 'qi-r25', '齐景公',
+  NULL,
+  -547, 1, NULL, -490, 12, NULL,
+  -6552, -5857, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r26-qi-chunqiu', 'qi-chunqiu', 'qi-r26', '安孺子',
+  NULL,
+  -489, 1, NULL, -489, 12, NULL,
+  -5856, -5845, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r27-qi-chunqiu', 'qi-chunqiu', 'qi-r27', '齐悼公',
+  NULL,
+  -488, 1, NULL, -485, 12, NULL,
+  -5844, -5797, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r28-qi-chunqiu', 'qi-chunqiu', 'qi-r28', '齐简公',
+  NULL,
+  -484, 1, NULL, -481, 12, NULL,
+  -5796, -5749, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r29-qi-chunqiu', 'qi-chunqiu', 'qi-r29', '齐平公',
+  NULL,
+  -480, 1, NULL, -456, 12, NULL,
+  -5748, -5449, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r30-qi-chunqiu', 'qi-chunqiu', 'qi-r30', '齐宣公',
+  NULL,
+  -455, 1, NULL, -405, 12, NULL,
+  -5448, -4837, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jiang-dai-qi-chunqiu', 'qi-chunqiu', 'jiang-dai', '齐康公',
+  NULL,
+  -404, 1, NULL, -392, 12, NULL,
+  -4836, -4681, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-tian-he-qi-chunqiu', 'qi-chunqiu', 'tian-he', '齐太公',
+  NULL,
+  -404, 1, NULL, -384, 12, NULL,
+  -4836, -4585, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r33-qi-chunqiu', 'qi-chunqiu', 'qi-r33', '剡',
+  NULL,
+  -383, 1, NULL, -375, 12, NULL,
+  -4584, -4477, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r34-qi-chunqiu', 'qi-chunqiu', 'qi-r34', '齐桓公',
+  NULL,
+  -374, 1, NULL, -357, 12, NULL,
+  -4476, -4261, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r35-qi-chunqiu', 'qi-chunqiu', 'qi-r35', '齐威王',
+  NULL,
+  -356, 1, NULL, -320, 12, NULL,
+  -4260, -3817, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r36-qi-chunqiu', 'qi-chunqiu', 'qi-r36', '齐宣王',
+  NULL,
+  -319, 1, NULL, -301, 12, NULL,
+  -3816, -3589, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r37-qi-chunqiu', 'qi-chunqiu', 'qi-r37', '齐湣王',
+  NULL,
+  -300, 1, NULL, -284, 12, NULL,
+  -3588, -3385, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r38-qi-chunqiu', 'qi-chunqiu', 'qi-r38', '齐襄王',
+  NULL,
+  -283, 1, NULL, -265, 12, NULL,
+  -3384, -3157, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-qi-r39-qi-chunqiu', 'qi-chunqiu', 'qi-r39', '建',
+  NULL,
+  -264, 1, NULL, -221, 12, NULL,
+  -3156, -2629, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-ji-shuyu-jin-chunqiu', 'jin-chunqiu', 'ji-shuyu', '唐叔虞',
+  NULL,
+  -1042, 1, NULL, -1007, 12, NULL,
+  -12492, -12061, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r1-jin-chunqiu', 'jin-chunqiu', 'jin-r1', '燮',
+  NULL,
+  -1006, 1, NULL, -970, 12, NULL,
+  -12060, -11617, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r2-jin-chunqiu', 'jin-chunqiu', 'jin-r2', '晋武侯',
+  NULL,
+  -969, 1, NULL, -933, 12, NULL,
+  -11616, -11173, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r3-jin-chunqiu', 'jin-chunqiu', 'jin-r3', '晋成侯',
+  NULL,
+  -932, 1, NULL, -896, 12, NULL,
+  -11172, -10729, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r4-jin-chunqiu', 'jin-chunqiu', 'jin-r4', '晋厉侯',
+  NULL,
+  -895, 1, NULL, -859, 12, NULL,
+  -10728, -10285, 'year', 'interpolated', NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r5-jin-chunqiu', 'jin-chunqiu', 'jin-r5', '晋靖侯',
+  NULL,
+  -858, 1, NULL, -841, 12, NULL,
+  -10284, -10069, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r6-jin-chunqiu', 'jin-chunqiu', 'jin-r6', '晋釐侯',
+  NULL,
+  -840, 1, NULL, -823, 12, NULL,
+  -10068, -9853, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r7-jin-chunqiu', 'jin-chunqiu', 'jin-r7', '晋献侯',
+  NULL,
+  -822, 1, NULL, -812, 12, NULL,
+  -9852, -9721, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r8-jin-chunqiu', 'jin-chunqiu', 'jin-r8', '晋穆侯',
+  NULL,
+  -811, 1, NULL, -785, 12, NULL,
+  -9720, -9397, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r9-jin-chunqiu', 'jin-chunqiu', 'jin-r9', '晋殇叔',
+  NULL,
+  -784, 1, NULL, -781, 12, NULL,
+  -9396, -9349, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r10-jin-chunqiu', 'jin-chunqiu', 'jin-r10', '晋文侯',
+  NULL,
+  -780, 1, NULL, -746, 12, NULL,
+  -9348, -8929, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r11-jin-chunqiu', 'jin-chunqiu', 'jin-r11', '晋昭侯',
+  NULL,
+  -745, 1, NULL, -740, 12, NULL,
+  -8928, -8857, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r12-jin-chunqiu', 'jin-chunqiu', 'jin-r12', '曲沃桓叔',
+  NULL,
+  -744, 1, NULL, -731, 12, NULL,
+  -8916, -8749, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r13-jin-chunqiu', 'jin-chunqiu', 'jin-r13', '晋孝侯',
+  NULL,
+  -739, 1, NULL, -724, 12, NULL,
+  -8856, -8665, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r14-jin-chunqiu', 'jin-chunqiu', 'jin-r14', '曲沃庄伯',
+  NULL,
+  -730, 1, NULL, -716, 12, NULL,
+  -8748, -8569, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r15-jin-chunqiu', 'jin-chunqiu', 'jin-r15', '晋鄂侯',
+  NULL,
+  -723, 1, NULL, -718, 12, NULL,
+  -8664, -8593, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r16-jin-chunqiu', 'jin-chunqiu', 'jin-r16', '晋哀侯',
+  NULL,
+  -717, 1, NULL, -709, 12, NULL,
+  -8592, -8485, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r17-jin-chunqiu', 'jin-chunqiu', 'jin-r17', '曲沃武公',
+  NULL,
+  -715, 1, NULL, -677, 12, NULL,
+  -8568, -8101, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r18-jin-chunqiu', 'jin-chunqiu', 'jin-r18', '晋小子侯',
+  NULL,
+  -708, 1, NULL, -705, 12, NULL,
+  -8484, -8437, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r19-jin-chunqiu', 'jin-chunqiu', 'jin-r19', '缗',
+  NULL,
+  -704, 1, NULL, -678, 12, NULL,
+  -8436, -8113, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r20-jin-chunqiu', 'jin-chunqiu', 'jin-r20', '晋献公',
+  NULL,
+  -676, 1, NULL, -651, 12, NULL,
+  -8100, -7789, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r21-jin-chunqiu', 'jin-chunqiu', 'jin-r21', '晋惠公',
+  NULL,
+  -650, 1, NULL, -637, 12, NULL,
+  -7788, -7621, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r22-jin-chunqiu', 'jin-chunqiu', 'jin-r22', '晋怀公',
+  NULL,
+  -637, 1, NULL, -637, 12, NULL,
+  -7632, -7621, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-ji-chonger-jin-chunqiu', 'jin-chunqiu', 'ji-chonger', '晋文公',
+  NULL,
+  -636, 1, NULL, -628, 12, NULL,
+  -7620, -7513, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r24-jin-chunqiu', 'jin-chunqiu', 'jin-r24', '晋襄公',
+  NULL,
+  -627, 1, NULL, -621, 12, NULL,
+  -7512, -7429, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r25-jin-chunqiu', 'jin-chunqiu', 'jin-r25', '晋灵公',
+  NULL,
+  -620, 1, NULL, -607, 12, NULL,
+  -7428, -7261, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r26-jin-chunqiu', 'jin-chunqiu', 'jin-r26', '晋成公',
+  NULL,
+  -606, 1, NULL, -600, 12, NULL,
+  -7260, -7177, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r27-jin-chunqiu', 'jin-chunqiu', 'jin-r27', '晋景公',
+  NULL,
+  -599, 1, NULL, -581, 12, NULL,
+  -7176, -6949, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r28-jin-chunqiu', 'jin-chunqiu', 'jin-r28', '晋厉公',
+  NULL,
+  -580, 1, NULL, -573, 12, NULL,
+  -6948, -6853, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r29-jin-chunqiu', 'jin-chunqiu', 'jin-r29', '晋悼公',
+  NULL,
+  -572, 1, NULL, -558, 12, NULL,
+  -6852, -6673, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r30-jin-chunqiu', 'jin-chunqiu', 'jin-r30', '晋平公',
+  NULL,
+  -557, 1, NULL, -532, 12, NULL,
+  -6672, -6361, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r31-jin-chunqiu', 'jin-chunqiu', 'jin-r31', '晋昭公',
+  NULL,
+  -531, 1, NULL, -526, 12, NULL,
+  -6360, -6289, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r32-jin-chunqiu', 'jin-chunqiu', 'jin-r32', '晋顷公',
+  NULL,
+  -525, 1, NULL, -512, 12, NULL,
+  -6288, -6121, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r33-jin-chunqiu', 'jin-chunqiu', 'jin-r33', '晋定公',
+  NULL,
+  -511, 1, NULL, -475, 12, NULL,
+  -6120, -5677, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r34-jin-chunqiu', 'jin-chunqiu', 'jin-r34', '晋出公',
+  NULL,
+  -474, 1, NULL, -452, 12, NULL,
+  -5676, -5401, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r35-jin-chunqiu', 'jin-chunqiu', 'jin-r35', '晋哀公',
+  NULL,
+  -451, 1, NULL, -434, 12, NULL,
+  -5400, -5185, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r36-jin-chunqiu', 'jin-chunqiu', 'jin-r36', '晋幽公',
+  NULL,
+  -433, 1, NULL, -416, 12, NULL,
+  -5184, -4969, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r37-jin-chunqiu', 'jin-chunqiu', 'jin-r37', '晋烈公',
+  NULL,
+  -415, 1, NULL, -389, 12, NULL,
+  -4968, -4645, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r38-jin-chunqiu', 'jin-chunqiu', 'jin-r38', '晋孝公',
+  NULL,
+  -388, 1, NULL, -357, 12, NULL,
+  -4644, -4261, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-jin-r39-jin-chunqiu', 'jin-chunqiu', 'jin-r39', '晋静公',
+  NULL,
+  -356, 1, NULL, -349, 12, NULL,
+  -4260, -4165, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r0-chu-chunqiu', 'chu-chunqiu', 'chu-r0', '熊绎',
+  NULL,
+  -1042, 1, NULL, -1019, 12, NULL,
+  -12492, -12205, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r1-chu-chunqiu', 'chu-chunqiu', 'chu-r1', '熊艾',
+  NULL,
+  -1018, 1, NULL, -995, 12, NULL,
+  -12204, -11917, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r2-chu-chunqiu', 'chu-chunqiu', 'chu-r2', '熊䵣',
+  NULL,
+  -994, 1, NULL, -970, 12, NULL,
+  -11916, -11617, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r3-chu-chunqiu', 'chu-chunqiu', 'chu-r3', '熊胜',
+  NULL,
+  -969, 1, NULL, -946, 12, NULL,
+  -11616, -11329, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r4-chu-chunqiu', 'chu-chunqiu', 'chu-r4', '熊杨',
+  NULL,
+  -945, 1, NULL, -922, 12, NULL,
+  -11328, -11041, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r5-chu-chunqiu', 'chu-chunqiu', 'chu-r5', '熊渠',
+  NULL,
+  -921, 1, NULL, -897, 12, NULL,
+  -11040, -10741, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r6-chu-chunqiu', 'chu-chunqiu', 'chu-r6', '熊挚红',
+  NULL,
+  -896, 1, NULL, -873, 12, NULL,
+  -10740, -10453, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r7-chu-chunqiu', 'chu-chunqiu', 'chu-r7', '熊延',
+  NULL,
+  -872, 1, NULL, -848, 12, NULL,
+  -10452, -10153, 'year', 'interpolated', NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r8-chu-chunqiu', 'chu-chunqiu', 'chu-r8', '熊勇',
+  NULL,
+  -847, 1, NULL, -838, 12, NULL,
+  -10152, -10033, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r9-chu-chunqiu', 'chu-chunqiu', 'chu-r9', '熊严',
+  NULL,
+  -837, 1, NULL, -828, 12, NULL,
+  -10032, -9913, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r10-chu-chunqiu', 'chu-chunqiu', 'chu-r10', '熊霜',
+  NULL,
+  -827, 1, NULL, -822, 12, NULL,
+  -9912, -9841, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r11-chu-chunqiu', 'chu-chunqiu', 'chu-r11', '熊徇',
+  NULL,
+  -821, 1, NULL, -800, 12, NULL,
+  -9840, -9577, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r12-chu-chunqiu', 'chu-chunqiu', 'chu-r12', '熊咢',
+  NULL,
+  -799, 1, NULL, -791, 12, NULL,
+  -9576, -9469, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r13-chu-chunqiu', 'chu-chunqiu', 'chu-r13', '若敖',
+  NULL,
+  -790, 1, NULL, -764, 12, NULL,
+  -9468, -9145, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r14-chu-chunqiu', 'chu-chunqiu', 'chu-r14', '霄敖',
+  NULL,
+  -763, 1, NULL, -758, 12, NULL,
+  -9144, -9073, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r15-chu-chunqiu', 'chu-chunqiu', 'chu-r15', '蚡冒',
+  NULL,
+  -757, 1, NULL, -741, 12, NULL,
+  -9072, -8869, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r16-chu-chunqiu', 'chu-chunqiu', 'chu-r16', '楚武王',
+  NULL,
+  -740, 1, NULL, -690, 12, NULL,
+  -8868, -8257, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r17-chu-chunqiu', 'chu-chunqiu', 'chu-r17', '楚文王',
+  NULL,
+  -689, 1, NULL, -675, 12, NULL,
+  -8256, -8077, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r18-chu-chunqiu', 'chu-chunqiu', 'chu-r18', '堵敖',
+  NULL,
+  -674, 1, NULL, -672, 12, NULL,
+  -8076, -8041, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r19-chu-chunqiu', 'chu-chunqiu', 'chu-r19', '楚成王',
+  NULL,
+  -671, 1, NULL, -626, 12, NULL,
+  -8040, -7489, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r20-chu-chunqiu', 'chu-chunqiu', 'chu-r20', '楚穆王',
+  NULL,
+  -625, 1, NULL, -614, 12, NULL,
+  -7488, -7345, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-xiong-zhuang-chu-chunqiu', 'chu-chunqiu', 'xiong-zhuang', '楚庄王',
+  NULL,
+  -613, 1, NULL, -591, 12, NULL,
+  -7344, -7069, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r22-chu-chunqiu', 'chu-chunqiu', 'chu-r22', '楚共王',
+  NULL,
+  -590, 1, NULL, -560, 12, NULL,
+  -7068, -6697, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r23-chu-chunqiu', 'chu-chunqiu', 'chu-r23', '楚康王',
+  NULL,
+  -559, 1, NULL, -545, 12, NULL,
+  -6696, -6517, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r24-chu-chunqiu', 'chu-chunqiu', 'chu-r24', '郏敖',
+  NULL,
+  -544, 1, NULL, -541, 12, NULL,
+  -6516, -6469, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r25-chu-chunqiu', 'chu-chunqiu', 'chu-r25', '楚灵王',
+  NULL,
+  -540, 1, NULL, -529, 12, NULL,
+  -6468, -6325, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r26-chu-chunqiu', 'chu-chunqiu', 'chu-r26', '比',
+  NULL,
+  -529, 1, NULL, -529, 12, NULL,
+  -6336, -6325, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r27-chu-chunqiu', 'chu-chunqiu', 'chu-r27', '楚平王',
+  NULL,
+  -528, 1, NULL, -516, 12, NULL,
+  -6324, -6169, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r28-chu-chunqiu', 'chu-chunqiu', 'chu-r28', '楚昭王',
+  NULL,
+  -515, 1, NULL, -489, 12, NULL,
+  -6168, -5845, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r29-chu-chunqiu', 'chu-chunqiu', 'chu-r29', '楚惠王',
+  NULL,
+  -488, 1, NULL, -432, 12, NULL,
+  -5844, -5161, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r30-chu-chunqiu', 'chu-chunqiu', 'chu-r30', '楚简王',
+  NULL,
+  -431, 1, NULL, -408, 12, NULL,
+  -5160, -4873, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r31-chu-chunqiu', 'chu-chunqiu', 'chu-r31', '楚声王',
+  NULL,
+  -407, 1, NULL, -402, 12, NULL,
+  -4872, -4801, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r32-chu-chunqiu', 'chu-chunqiu', 'chu-r32', '楚悼王',
+  NULL,
+  -401, 1, NULL, -381, 12, NULL,
+  -4800, -4549, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r33-chu-chunqiu', 'chu-chunqiu', 'chu-r33', '楚肃王',
+  NULL,
+  -380, 1, NULL, -370, 12, NULL,
+  -4548, -4417, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r34-chu-chunqiu', 'chu-chunqiu', 'chu-r34', '楚宣王',
+  NULL,
+  -369, 1, NULL, -340, 12, NULL,
+  -4416, -4057, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r35-chu-chunqiu', 'chu-chunqiu', 'chu-r35', '楚威王',
+  NULL,
+  -339, 1, NULL, -329, 12, NULL,
+  -4056, -3925, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r36-chu-chunqiu', 'chu-chunqiu', 'chu-r36', '楚怀王',
+  NULL,
+  -328, 1, NULL, -299, 12, NULL,
+  -3924, -3565, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r37-chu-chunqiu', 'chu-chunqiu', 'chu-r37', '楚顷襄王',
+  NULL,
+  -298, 1, NULL, -263, 12, NULL,
+  -3564, -3133, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r38-chu-chunqiu', 'chu-chunqiu', 'chu-r38', '楚考烈王',
+  NULL,
+  -262, 1, NULL, -238, 12, NULL,
+  -3132, -2833, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r39-chu-chunqiu', 'chu-chunqiu', 'chu-r39', '楚幽王',
+  NULL,
+  -237, 1, NULL, -228, 12, NULL,
+  -2832, -2713, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r40-chu-chunqiu', 'chu-chunqiu', 'chu-r40', '楚哀王',
+  NULL,
+  -228, 1, NULL, -228, 12, NULL,
+  -2724, -2713, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r41-chu-chunqiu', 'chu-chunqiu', 'chu-r41', '负刍',
+  NULL,
+  -227, 1, NULL, -223, 12, NULL,
+  -2712, -2653, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r42-chu-chunqiu', 'chu-chunqiu', 'chu-r42', '昌平君',
+  NULL,
+  -223, 1, NULL, -223, 12, NULL,
+  -2664, -2653, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-chu-r43-chu-chunqiu', 'chu-chunqiu', 'chu-r43', '义帝',
+  NULL,
+  -208, 1, NULL, -205, 12, NULL,
+  -2484, -2437, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-ji-shi-yan-chunqiu', 'yan-chunqiu', 'ji-shi', '燕召公',
+  NULL,
+  -1044, 1, NULL, -1000, 12, NULL,
+  -12516, -11977, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r1-yan-chunqiu', 'yan-chunqiu', 'yan-r1', '克',
+  NULL,
+  -999, 1, NULL, -955, 12, NULL,
+  -11976, -11437, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r2-yan-chunqiu', 'yan-chunqiu', 'yan-r2', '旨',
+  NULL,
+  -954, 1, NULL, -910, 12, NULL,
+  -11436, -10897, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r3-yan-chunqiu', 'yan-chunqiu', 'yan-r3', '舞',
+  NULL,
+  -909, 1, NULL, -865, 12, NULL,
+  -10896, -10357, 'year', 'interpolated', NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r4-yan-chunqiu', 'yan-chunqiu', 'yan-r4', '燕惠侯',
+  NULL,
+  -864, 1, NULL, -827, 12, NULL,
+  -10356, -9901, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r5-yan-chunqiu', 'yan-chunqiu', 'yan-r5', '燕釐侯',
+  NULL,
+  -826, 1, NULL, -791, 12, NULL,
+  -9900, -9469, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r6-yan-chunqiu', 'yan-chunqiu', 'yan-r6', '燕顷侯',
+  NULL,
+  -790, 1, NULL, -767, 12, NULL,
+  -9468, -9181, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r7-yan-chunqiu', 'yan-chunqiu', 'yan-r7', '燕哀侯',
+  NULL,
+  -766, 1, NULL, -765, 12, NULL,
+  -9180, -9157, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r8-yan-chunqiu', 'yan-chunqiu', 'yan-r8', '燕郑侯',
+  NULL,
+  -764, 1, NULL, -729, 12, NULL,
+  -9156, -8725, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r9-yan-chunqiu', 'yan-chunqiu', 'yan-r9', '燕穆侯',
+  NULL,
+  -728, 1, NULL, -711, 12, NULL,
+  -8724, -8509, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r10-yan-chunqiu', 'yan-chunqiu', 'yan-r10', '燕宣侯',
+  NULL,
+  -710, 1, NULL, -698, 12, NULL,
+  -8508, -8353, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r11-yan-chunqiu', 'yan-chunqiu', 'yan-r11', '燕桓侯',
+  NULL,
+  -697, 1, NULL, -691, 12, NULL,
+  -8352, -8269, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r12-yan-chunqiu', 'yan-chunqiu', 'yan-r12', '燕庄公',
+  NULL,
+  -690, 1, NULL, -658, 12, NULL,
+  -8268, -7873, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r13-yan-chunqiu', 'yan-chunqiu', 'yan-r13', '燕襄公',
+  NULL,
+  -657, 1, NULL, -618, 12, NULL,
+  -7872, -7393, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r14-yan-chunqiu', 'yan-chunqiu', 'yan-r14', '燕桓公',
+  NULL,
+  -617, 1, NULL, -602, 12, NULL,
+  -7392, -7201, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r15-yan-chunqiu', 'yan-chunqiu', 'yan-r15', '燕宣公',
+  NULL,
+  -601, 1, NULL, -587, 12, NULL,
+  -7200, -7021, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r16-yan-chunqiu', 'yan-chunqiu', 'yan-r16', '燕昭公',
+  NULL,
+  -586, 1, NULL, -574, 12, NULL,
+  -7020, -6865, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r17-yan-chunqiu', 'yan-chunqiu', 'yan-r17', '燕武公',
+  NULL,
+  -573, 1, NULL, -555, 12, NULL,
+  -6864, -6637, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r18-yan-chunqiu', 'yan-chunqiu', 'yan-r18', '燕文公',
+  NULL,
+  -554, 1, NULL, -549, 12, NULL,
+  -6636, -6565, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r19-yan-chunqiu', 'yan-chunqiu', 'yan-r19', '燕懿公',
+  NULL,
+  -548, 1, NULL, -545, 12, NULL,
+  -6564, -6517, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r20-yan-chunqiu', 'yan-chunqiu', 'yan-r20', '燕惠公',
+  NULL,
+  -544, 1, NULL, -536, 12, NULL,
+  -6516, -6409, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r21-yan-chunqiu', 'yan-chunqiu', 'yan-r21', '燕悼公',
+  NULL,
+  -535, 1, NULL, -529, 12, NULL,
+  -6408, -6325, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r22-yan-chunqiu', 'yan-chunqiu', 'yan-r22', '燕共公',
+  NULL,
+  -528, 1, NULL, -524, 12, NULL,
+  -6324, -6265, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r23-yan-chunqiu', 'yan-chunqiu', 'yan-r23', '燕平公',
+  NULL,
+  -523, 1, NULL, -505, 12, NULL,
+  -6264, -6037, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r24-yan-chunqiu', 'yan-chunqiu', 'yan-r24', '燕简公',
+  NULL,
+  -504, 1, NULL, -493, 12, NULL,
+  -6036, -5893, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r25-yan-chunqiu', 'yan-chunqiu', 'yan-r25', '燕孝公',
+  NULL,
+  -492, 1, NULL, -455, 12, NULL,
+  -5892, -5437, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r26-yan-chunqiu', 'yan-chunqiu', 'yan-r26', '燕成公',
+  NULL,
+  -454, 1, NULL, -439, 12, NULL,
+  -5436, -5245, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r27-yan-chunqiu', 'yan-chunqiu', 'yan-r27', '燕闵公',
+  NULL,
+  -438, 1, NULL, -415, 12, NULL,
+  -5244, -4957, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r28-yan-chunqiu', 'yan-chunqiu', 'yan-r28', '燕简公',
+  NULL,
+  -414, 1, NULL, -373, 12, NULL,
+  -4956, -4453, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r14-yan-chunqiu-2', 'yan-chunqiu', 'yan-r14', '燕桓公',
+  NULL,
+  -372, 1, NULL, -362, 12, NULL,
+  -4452, -4321, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r18-yan-chunqiu-2', 'yan-chunqiu', 'yan-r18', '燕文公',
+  NULL,
+  -361, 1, NULL, -333, 12, NULL,
+  -4320, -3973, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r31-yan-chunqiu', 'yan-chunqiu', 'yan-r31', '燕易王',
+  NULL,
+  -332, 1, NULL, -321, 12, NULL,
+  -3972, -3829, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r32-yan-chunqiu', 'yan-chunqiu', 'yan-r32', '哙',
+  NULL,
+  -320, 1, NULL, -314, 12, NULL,
+  -3828, -3745, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r33-yan-chunqiu', 'yan-chunqiu', 'yan-r33', '燕昭王',
+  NULL,
+  -312, 1, NULL, -279, 12, NULL,
+  -3732, -3325, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r34-yan-chunqiu', 'yan-chunqiu', 'yan-r34', '燕惠王',
+  NULL,
+  -278, 1, NULL, -271, 12, NULL,
+  -3324, -3229, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r35-yan-chunqiu', 'yan-chunqiu', 'yan-r35', '燕武成王',
+  NULL,
+  -270, 1, NULL, -258, 12, NULL,
+  -3228, -3073, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r36-yan-chunqiu', 'yan-chunqiu', 'yan-r36', '燕孝王',
+  NULL,
+  -257, 1, NULL, -255, 12, NULL,
+  -3072, -3037, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-yan-r37-yan-chunqiu', 'yan-chunqiu', 'yan-r37', '喜',
+  NULL,
+  -254, 1, NULL, -222, 12, NULL,
+  -3036, -2641, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-weizi-song-chunqiu', 'song-chunqiu', 'song-weizi', '微子',
+  NULL,
+  -1038, 1, NULL, -1025, 12, NULL,
+  -12444, -12277, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r1-song-chunqiu', 'song-chunqiu', 'song-r1', '微仲',
+  NULL,
+  -1024, 1, NULL, -986, 12, NULL,
+  -12276, -11809, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r2-song-chunqiu', 'song-chunqiu', 'song-r2', '稽',
+  NULL,
+  -985, 1, NULL, -942, 12, NULL,
+  -11808, -11281, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r3-song-chunqiu', 'song-chunqiu', 'song-r3', '宋丁公',
+  NULL,
+  -941, 1, NULL, -919, 12, NULL,
+  -11280, -11005, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r4-song-chunqiu', 'song-chunqiu', 'song-r4', '宋湣公',
+  NULL,
+  -918, 1, NULL, -895, 12, NULL,
+  -11004, -10717, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r5-song-chunqiu', 'song-chunqiu', 'song-r5', '宋炀公',
+  NULL,
+  -894, 1, NULL, -879, 12, NULL,
+  -10716, -10525, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r6-song-chunqiu', 'song-chunqiu', 'song-r6', '宋厉公',
+  NULL,
+  -878, 1, NULL, -859, 12, NULL,
+  -10524, -10285, 'year', 'interpolated', NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r7-song-chunqiu', 'song-chunqiu', 'song-r7', '宋釐公',
+  NULL,
+  -858, 1, NULL, -831, 12, NULL,
+  -10284, -9949, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r8-song-chunqiu', 'song-chunqiu', 'song-r8', '宋惠公',
+  NULL,
+  -830, 1, NULL, -800, 12, NULL,
+  -9948, -9577, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r9-song-chunqiu', 'song-chunqiu', 'song-r9', '宋哀公',
+  NULL,
+  -800, 1, NULL, -800, 12, NULL,
+  -9588, -9577, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r10-song-chunqiu', 'song-chunqiu', 'song-r10', '宋戴公',
+  NULL,
+  -799, 1, NULL, -766, 12, NULL,
+  -9576, -9169, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r11-song-chunqiu', 'song-chunqiu', 'song-r11', '宋武公',
+  NULL,
+  -765, 1, NULL, -748, 12, NULL,
+  -9168, -8953, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r12-song-chunqiu', 'song-chunqiu', 'song-r12', '宋宣公',
+  NULL,
+  -747, 1, NULL, -729, 12, NULL,
+  -8952, -8725, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r13-song-chunqiu', 'song-chunqiu', 'song-r13', '宋穆公',
+  NULL,
+  -728, 1, NULL, -720, 12, NULL,
+  -8724, -8617, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r14-song-chunqiu', 'song-chunqiu', 'song-r14', '宋殇公',
+  NULL,
+  -719, 1, NULL, -711, 12, NULL,
+  -8616, -8509, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r15-song-chunqiu', 'song-chunqiu', 'song-r15', '宋庄公',
+  NULL,
+  -710, 1, NULL, -692, 12, NULL,
+  -8508, -8281, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r16-song-chunqiu', 'song-chunqiu', 'song-r16', '宋湣公',
+  NULL,
+  -691, 1, NULL, -682, 12, NULL,
+  -8280, -8161, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r17-song-chunqiu', 'song-chunqiu', 'song-r17', '游',
+  NULL,
+  -682, 1, NULL, -682, 12, NULL,
+  -8172, -8161, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r18-song-chunqiu', 'song-chunqiu', 'song-r18', '宋桓公',
+  NULL,
+  -681, 1, NULL, -651, 12, NULL,
+  -8160, -7789, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r19-song-chunqiu', 'song-chunqiu', 'song-r19', '宋襄公',
+  NULL,
+  -650, 1, NULL, -637, 12, NULL,
+  -7788, -7621, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r20-song-chunqiu', 'song-chunqiu', 'song-r20', '宋成公',
+  NULL,
+  -636, 1, NULL, -620, 12, NULL,
+  -7620, -7417, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r21-song-chunqiu', 'song-chunqiu', 'song-r21', '御',
+  NULL,
+  -620, 1, NULL, -620, 12, NULL,
+  -7428, -7417, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r22-song-chunqiu', 'song-chunqiu', 'song-r22', '宋昭公',
+  NULL,
+  -619, 1, NULL, -611, 12, NULL,
+  -7416, -7309, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r23-song-chunqiu', 'song-chunqiu', 'song-r23', '宋文公',
+  NULL,
+  -610, 1, NULL, -589, 12, NULL,
+  -7308, -7045, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r24-song-chunqiu', 'song-chunqiu', 'song-r24', '宋共公',
+  NULL,
+  -588, 1, NULL, -576, 12, NULL,
+  -7044, -6889, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r25-song-chunqiu', 'song-chunqiu', 'song-r25', '宋平公',
+  NULL,
+  -575, 1, NULL, -532, 12, NULL,
+  -6888, -6361, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r26-song-chunqiu', 'song-chunqiu', 'song-r26', '宋元公',
+  NULL,
+  -531, 1, NULL, -517, 12, NULL,
+  -6360, -6181, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r27-song-chunqiu', 'song-chunqiu', 'song-r27', '宋景公',
+  NULL,
+  -516, 1, NULL, -469, 12, NULL,
+  -6180, -5605, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r28-song-chunqiu', 'song-chunqiu', 'song-r28', '宋昭公',
+  NULL,
+  -468, 1, NULL, -404, 12, NULL,
+  -5604, -4825, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r29-song-chunqiu', 'song-chunqiu', 'song-r29', '宋悼公',
+  NULL,
+  -403, 1, NULL, -385, 12, NULL,
+  -4824, -4597, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r30-song-chunqiu', 'song-chunqiu', 'song-r30', '宋休公',
+  NULL,
+  -384, 1, NULL, -363, 12, NULL,
+  -4596, -4333, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r31-song-chunqiu', 'song-chunqiu', 'song-r31', '宋桓公',
+  NULL,
+  -362, 1, NULL, -356, 12, NULL,
+  -4332, -4249, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r32-song-chunqiu', 'song-chunqiu', 'song-r32', '剔成君',
+  NULL,
+  -355, 1, NULL, -329, 12, NULL,
+  -4248, -3925, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-song-r33-song-chunqiu', 'song-chunqiu', 'song-r33', '宋康王',
+  NULL,
+  -328, 1, NULL, -286, 12, NULL,
+  -3924, -3409, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-bo-qin-lu-chunqiu', 'lu-chunqiu', 'bo-qin', '伯禽',
+  NULL,
+  -1043, 1, NULL, -998, 12, NULL,
+  -12504, -11953, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r1-lu-chunqiu', 'lu-chunqiu', 'lu-r1', '鲁考公',
+  NULL,
+  -997, 1, NULL, -994, 12, NULL,
+  -11952, -11905, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r2-lu-chunqiu', 'lu-chunqiu', 'lu-r2', '鲁炀公',
+  NULL,
+  -993, 1, NULL, -988, 12, NULL,
+  -11904, -11833, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r3-lu-chunqiu', 'lu-chunqiu', 'lu-r3', '鲁幽公',
+  NULL,
+  -987, 1, NULL, -974, 12, NULL,
+  -11832, -11665, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r4-lu-chunqiu', 'lu-chunqiu', 'lu-r4', '鲁魏公',
+  NULL,
+  -973, 1, NULL, -924, 12, NULL,
+  -11664, -11065, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r5-lu-chunqiu', 'lu-chunqiu', 'lu-r5', '鲁厉公',
+  NULL,
+  -923, 1, NULL, -887, 12, NULL,
+  -11064, -10621, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r6-lu-chunqiu', 'lu-chunqiu', 'lu-r6', '鲁献公',
+  NULL,
+  -886, 1, NULL, -855, 12, NULL,
+  -10620, -10237, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r7-lu-chunqiu', 'lu-chunqiu', 'lu-r7', '鲁真公',
+  NULL,
+  -854, 1, NULL, -825, 12, NULL,
+  -10236, -9877, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r8-lu-chunqiu', 'lu-chunqiu', 'lu-r8', '鲁武公',
+  NULL,
+  -824, 1, NULL, -816, 12, NULL,
+  -9876, -9769, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r9-lu-chunqiu', 'lu-chunqiu', 'lu-r9', '鲁懿公',
+  NULL,
+  -815, 1, NULL, -807, 12, NULL,
+  -9768, -9661, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r10-lu-chunqiu', 'lu-chunqiu', 'lu-r10', '伯御',
+  NULL,
+  -806, 1, NULL, -796, 12, NULL,
+  -9660, -9529, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r11-lu-chunqiu', 'lu-chunqiu', 'lu-r11', '鲁孝公',
+  NULL,
+  -795, 1, NULL, -769, 12, NULL,
+  -9528, -9205, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r12-lu-chunqiu', 'lu-chunqiu', 'lu-r12', '鲁惠公',
+  NULL,
+  -768, 1, NULL, -723, 12, NULL,
+  -9204, -8653, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r13-lu-chunqiu', 'lu-chunqiu', 'lu-r13', '鲁隐公',
+  NULL,
+  -722, 1, NULL, -712, 12, NULL,
+  -8652, -8521, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r14-lu-chunqiu', 'lu-chunqiu', 'lu-r14', '鲁桓公',
+  NULL,
+  -711, 1, NULL, -694, 12, NULL,
+  -8520, -8305, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r15-lu-chunqiu', 'lu-chunqiu', 'lu-r15', '鲁庄公',
+  NULL,
+  -693, 1, NULL, -662, 12, NULL,
+  -8304, -7921, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r16-lu-chunqiu', 'lu-chunqiu', 'lu-r16', '鲁闵公',
+  NULL,
+  -661, 1, NULL, -660, 12, NULL,
+  -7920, -7897, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r17-lu-chunqiu', 'lu-chunqiu', 'lu-r17', '鲁釐公',
+  NULL,
+  -659, 1, NULL, -627, 12, NULL,
+  -7896, -7501, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r18-lu-chunqiu', 'lu-chunqiu', 'lu-r18', '鲁文公',
+  NULL,
+  -626, 1, NULL, -609, 12, NULL,
+  -7500, -7285, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r19-lu-chunqiu', 'lu-chunqiu', 'lu-r19', '鲁宣公',
+  NULL,
+  -608, 1, NULL, -591, 12, NULL,
+  -7284, -7069, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r20-lu-chunqiu', 'lu-chunqiu', 'lu-r20', '鲁成公',
+  NULL,
+  -590, 1, NULL, -573, 12, NULL,
+  -7068, -6853, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r21-lu-chunqiu', 'lu-chunqiu', 'lu-r21', '鲁襄公',
+  NULL,
+  -572, 1, NULL, -542, 12, NULL,
+  -6852, -6481, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r22-lu-chunqiu', 'lu-chunqiu', 'lu-r22', '君野',
+  NULL,
+  -542, 1, NULL, -542, 12, NULL,
+  -6492, -6481, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r23-lu-chunqiu', 'lu-chunqiu', 'lu-r23', '鲁昭公',
+  NULL,
+  -541, 1, NULL, -510, 12, NULL,
+  -6480, -6097, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r24-lu-chunqiu', 'lu-chunqiu', 'lu-r24', '鲁定公',
+  NULL,
+  -509, 1, NULL, -495, 12, NULL,
+  -6096, -5917, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r25-lu-chunqiu', 'lu-chunqiu', 'lu-r25', '鲁哀公',
+  NULL,
+  -494, 1, NULL, -468, 12, NULL,
+  -5916, -5593, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r26-lu-chunqiu', 'lu-chunqiu', 'lu-r26', '鲁悼公',
+  NULL,
+  -467, 1, NULL, -437, 12, NULL,
+  -5592, -5221, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r27-lu-chunqiu', 'lu-chunqiu', 'lu-r27', '鲁元公',
+  NULL,
+  -436, 1, NULL, -416, 12, NULL,
+  -5220, -4969, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r28-lu-chunqiu', 'lu-chunqiu', 'lu-r28', '鲁穆公',
+  NULL,
+  -415, 1, NULL, -383, 12, NULL,
+  -4968, -4573, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r29-lu-chunqiu', 'lu-chunqiu', 'lu-r29', '鲁共公',
+  NULL,
+  -382, 1, NULL, -353, 12, NULL,
+  -4572, -4213, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r30-lu-chunqiu', 'lu-chunqiu', 'lu-r30', '鲁康公',
+  NULL,
+  -352, 1, NULL, -344, 12, NULL,
+  -4212, -4105, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r31-lu-chunqiu', 'lu-chunqiu', 'lu-r31', '鲁景公',
+  NULL,
+  -343, 1, NULL, -323, 12, NULL,
+  -4104, -3853, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r32-lu-chunqiu', 'lu-chunqiu', 'lu-r32', '鲁平公',
+  NULL,
+  -322, 1, NULL, -303, 12, NULL,
+  -3852, -3613, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r33-lu-chunqiu', 'lu-chunqiu', 'lu-r33', '鲁文公',
+  NULL,
+  -302, 1, NULL, -280, 12, NULL,
+  -3612, -3337, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-lu-r34-lu-chunqiu', 'lu-chunqiu', 'lu-r34', '鲁顷公',
+  NULL,
+  -279, 1, NULL, -256, 12, NULL,
+  -3336, -3049, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r0-wei-weiguo', 'wei-weiguo', 'weiguo-r0', '卫康叔',
+  NULL,
+  -1040, 1, NULL, -1017, 12, NULL,
+  -12468, -12181, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r1-wei-weiguo', 'wei-weiguo', 'weiguo-r1', '卫康伯',
+  NULL,
+  -1016, 1, NULL, -992, 12, NULL,
+  -12180, -11881, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r2-wei-weiguo', 'wei-weiguo', 'weiguo-r2', '卫考伯',
+  NULL,
+  -991, 1, NULL, -967, 12, NULL,
+  -11880, -11581, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r3-wei-weiguo', 'wei-weiguo', 'weiguo-r3', '卫嗣伯',
+  NULL,
+  -966, 1, NULL, -942, 12, NULL,
+  -11580, -11281, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r4-wei-weiguo', 'wei-weiguo', 'weiguo-r4', '卫疌伯',
+  NULL,
+  -941, 1, NULL, -917, 12, NULL,
+  -11280, -10981, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r5-wei-weiguo', 'wei-weiguo', 'weiguo-r5', '卫靖伯',
+  NULL,
+  -916, 1, NULL, -892, 12, NULL,
+  -10980, -10681, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r6-wei-weiguo', 'wei-weiguo', 'weiguo-r6', '卫贞伯',
+  NULL,
+  -891, 1, NULL, -867, 12, NULL,
+  -10680, -10381, 'year', 'interpolated', NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r7-wei-weiguo', 'wei-weiguo', 'weiguo-r7', '卫顷侯',
+  NULL,
+  -866, 1, NULL, -855, 12, NULL,
+  -10380, -10237, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r8-wei-weiguo', 'wei-weiguo', 'weiguo-r8', '卫釐侯',
+  NULL,
+  -854, 1, NULL, -813, 12, NULL,
+  -10236, -9733, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r9-wei-weiguo', 'wei-weiguo', 'weiguo-r9', '卫共伯',
+  NULL,
+  -813, 1, NULL, -813, 12, NULL,
+  -9744, -9733, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r10-wei-weiguo', 'wei-weiguo', 'weiguo-r10', '卫武公',
+  NULL,
+  -812, 1, NULL, -758, 12, NULL,
+  -9732, -9073, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r11-wei-weiguo', 'wei-weiguo', 'weiguo-r11', '卫庄公',
+  NULL,
+  -757, 1, NULL, -735, 12, NULL,
+  -9072, -8797, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r12-wei-weiguo', 'wei-weiguo', 'weiguo-r12', '卫桓公',
+  NULL,
+  -734, 1, NULL, -719, 12, NULL,
+  -8796, -8605, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r13-wei-weiguo', 'wei-weiguo', 'weiguo-r13', '州吁',
+  NULL,
+  -719, 1, NULL, -719, 12, NULL,
+  -8616, -8605, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r14-wei-weiguo', 'wei-weiguo', 'weiguo-r14', '卫宣公',
+  NULL,
+  -718, 1, NULL, -700, 12, NULL,
+  -8604, -8377, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r15-wei-weiguo', 'wei-weiguo', 'weiguo-r15', '卫惠公',
+  NULL,
+  -699, 1, NULL, -696, 12, NULL,
+  -8376, -8329, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r16-wei-weiguo', 'wei-weiguo', 'weiguo-r16', '黔牟',
+  NULL,
+  -695, 1, NULL, -688, 12, NULL,
+  -8328, -8233, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r15-wei-weiguo-2', 'wei-weiguo', 'weiguo-r15', '卫惠公',
+  NULL,
+  -687, 1, NULL, -669, 12, NULL,
+  -8232, -8005, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r18-wei-weiguo', 'wei-weiguo', 'weiguo-r18', '卫懿公',
+  NULL,
+  -668, 1, NULL, -660, 12, NULL,
+  -8004, -7897, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r19-wei-weiguo', 'wei-weiguo', 'weiguo-r19', '卫戴公',
+  NULL,
+  -660, 1, NULL, -660, 12, NULL,
+  -7908, -7897, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r20-wei-weiguo', 'wei-weiguo', 'weiguo-r20', '卫文公',
+  NULL,
+  -659, 1, NULL, -635, 12, NULL,
+  -7896, -7597, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r21-wei-weiguo', 'wei-weiguo', 'weiguo-r21', '卫成公',
+  NULL,
+  -634, 1, NULL, -632, 12, NULL,
+  -7596, -7561, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r22-wei-weiguo', 'wei-weiguo', 'weiguo-r22', '君瑕',
+  NULL,
+  -632, 1, NULL, -632, 12, NULL,
+  -7572, -7561, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r21-wei-weiguo-2', 'wei-weiguo', 'weiguo-r21', '卫成公',
+  NULL,
+  -631, 1, NULL, -600, 12, NULL,
+  -7560, -7177, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r23-wei-weiguo', 'wei-weiguo', 'weiguo-r23', '卫穆公',
+  NULL,
+  -599, 1, NULL, -589, 12, NULL,
+  -7176, -7045, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r24-wei-weiguo', 'wei-weiguo', 'weiguo-r24', '卫定公',
+  NULL,
+  -588, 1, NULL, -577, 12, NULL,
+  -7044, -6901, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r25-wei-weiguo', 'wei-weiguo', 'weiguo-r25', '卫献公',
+  NULL,
+  -576, 1, NULL, -559, 12, NULL,
+  -6900, -6685, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r26-wei-weiguo', 'wei-weiguo', 'weiguo-r26', '卫殇公',
+  NULL,
+  -558, 1, NULL, -547, 12, NULL,
+  -6684, -6541, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r25-wei-weiguo-2', 'wei-weiguo', 'weiguo-r25', '卫献公',
+  NULL,
+  -546, 1, NULL, -544, 12, NULL,
+  -6540, -6505, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r28-wei-weiguo', 'wei-weiguo', 'weiguo-r28', '卫襄公',
+  NULL,
+  -543, 1, NULL, -535, 12, NULL,
+  -6504, -6397, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r29-wei-weiguo', 'wei-weiguo', 'weiguo-r29', '卫灵公',
+  NULL,
+  -534, 1, NULL, -493, 12, NULL,
+  -6396, -5893, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r30-wei-weiguo', 'wei-weiguo', 'weiguo-r30', '卫出公',
+  NULL,
+  -492, 1, NULL, -480, 12, NULL,
+  -5892, -5737, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r31-wei-weiguo', 'wei-weiguo', 'weiguo-r31', '卫庄公',
+  NULL,
+  -479, 1, NULL, -478, 12, NULL,
+  -5736, -5713, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r32-wei-weiguo', 'wei-weiguo', 'weiguo-r32', '斑师',
+  NULL,
+  -478, 1, NULL, -478, 12, NULL,
+  -5724, -5713, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r33-wei-weiguo', 'wei-weiguo', 'weiguo-r33', '君起',
+  NULL,
+  -477, 1, NULL, -477, 12, NULL,
+  -5712, -5701, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r30-wei-weiguo-2', 'wei-weiguo', 'weiguo-r30', '卫出公',
+  NULL,
+  -476, 1, NULL, -470, 12, NULL,
+  -5700, -5617, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r35-wei-weiguo', 'wei-weiguo', 'weiguo-r35', '卫悼公',
+  NULL,
+  -469, 1, NULL, -465, 12, NULL,
+  -5616, -5557, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r36-wei-weiguo', 'wei-weiguo', 'weiguo-r36', '卫敬公',
+  NULL,
+  -464, 1, NULL, -432, 12, NULL,
+  -5556, -5161, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r37-wei-weiguo', 'wei-weiguo', 'weiguo-r37', '卫昭公',
+  NULL,
+  -431, 1, NULL, -426, 12, NULL,
+  -5160, -5089, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r38-wei-weiguo', 'wei-weiguo', 'weiguo-r38', '卫怀公',
+  NULL,
+  -425, 1, NULL, -415, 12, NULL,
+  -5088, -4957, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r39-wei-weiguo', 'wei-weiguo', 'weiguo-r39', '卫慎公',
+  NULL,
+  -414, 1, NULL, -383, 12, NULL,
+  -4956, -4573, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r40-wei-weiguo', 'wei-weiguo', 'weiguo-r40', '卫声公',
+  NULL,
+  -382, 1, NULL, -372, 12, NULL,
+  -4572, -4441, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r41-wei-weiguo', 'wei-weiguo', 'weiguo-r41', '卫成侯',
+  NULL,
+  -371, 1, NULL, -343, 12, NULL,
+  -4440, -4093, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r42-wei-weiguo', 'wei-weiguo', 'weiguo-r42', '卫平侯',
+  NULL,
+  -342, 1, NULL, -335, 12, NULL,
+  -4092, -3997, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r43-wei-weiguo', 'wei-weiguo', 'weiguo-r43', '嗣君',
+  NULL,
+  -334, 1, NULL, -293, 12, NULL,
+  -3996, -3493, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r44-wei-weiguo', 'wei-weiguo', 'weiguo-r44', '怀君',
+  NULL,
+  -292, 1, NULL, -254, 12, NULL,
+  -3492, -3025, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r45-wei-weiguo', 'wei-weiguo', 'weiguo-r45', '元君',
+  NULL,
+  -253, 1, NULL, -230, 12, NULL,
+  -3024, -2737, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-weiguo-r46-wei-weiguo', 'wei-weiguo', 'weiguo-r46', '君角',
+  NULL,
+  -241, 1, NULL, -209, 12, NULL,
+  -2880, -2485, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r0-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r0', '郑桓公',
+  NULL,
+  -806, 1, NULL, -771, 12, NULL,
+  -9660, -9229, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r1-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r1', '郑武公',
+  NULL,
+  -770, 1, NULL, -744, 12, NULL,
+  -9228, -8905, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r2-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r2', '郑庄公',
+  NULL,
+  -743, 1, NULL, -701, 12, NULL,
+  -8904, -8389, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r3-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r3', '郑昭公',
+  NULL,
+  -700, 1, NULL, -700, 12, NULL,
+  -8388, -8377, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r4-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r4', '郑厉公',
+  NULL,
+  -699, 1, NULL, -697, 12, NULL,
+  -8376, -8341, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r3-zheng-chunqiu-2', 'zheng-chunqiu', 'zheng-r3', '郑昭公',
+  NULL,
+  -696, 1, NULL, -695, 12, NULL,
+  -8340, -8317, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r6-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r6', '子亹',
+  NULL,
+  -694, 1, NULL, -694, 12, NULL,
+  -8316, -8305, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r7-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r7', '子婴',
+  NULL,
+  -693, 1, NULL, -680, 12, NULL,
+  -8304, -8137, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r4-zheng-chunqiu-2', 'zheng-chunqiu', 'zheng-r4', '郑厉公',
+  NULL,
+  -679, 1, NULL, -673, 12, NULL,
+  -8136, -8053, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r9-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r9', '郑文公',
+  NULL,
+  -672, 1, NULL, -628, 12, NULL,
+  -8052, -7513, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r10-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r10', '郑穆公',
+  NULL,
+  -627, 1, NULL, -606, 12, NULL,
+  -7512, -7249, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r11-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r11', '郑灵公',
+  NULL,
+  -605, 1, NULL, -605, 12, NULL,
+  -7248, -7237, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r12-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r12', '郑襄公',
+  NULL,
+  -604, 1, NULL, -587, 12, NULL,
+  -7236, -7021, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r13-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r13', '郑悼公',
+  NULL,
+  -586, 1, NULL, -585, 12, NULL,
+  -7020, -6997, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r14-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r14', '郑成公',
+  NULL,
+  -584, 1, NULL, -581, 12, NULL,
+  -6996, -6949, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-gongzi-xu-zheng-chunqiu', 'zheng-chunqiu', 'zheng-gongzi-xu', '公子繻',
+  NULL,
+  -581, 1, NULL, -581, 12, NULL,
+  -6960, -6949, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r14-zheng-chunqiu-2', 'zheng-chunqiu', 'zheng-r14', '郑成公',
+  NULL,
+  -580, 1, NULL, -571, 12, NULL,
+  -6948, -6829, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r15-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r15', '郑釐公',
+  NULL,
+  -570, 1, NULL, -566, 12, NULL,
+  -6828, -6769, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r16-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r16', '郑简公',
+  NULL,
+  -565, 1, NULL, -530, 12, NULL,
+  -6768, -6337, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r17-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r17', '郑定公',
+  NULL,
+  -529, 1, NULL, -514, 12, NULL,
+  -6336, -6145, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r18-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r18', '郑献公',
+  NULL,
+  -513, 1, NULL, -501, 12, NULL,
+  -6144, -5989, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r19-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r19', '郑声公',
+  NULL,
+  -500, 1, NULL, -463, 12, NULL,
+  -5988, -5533, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r20-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r20', '郑哀公',
+  NULL,
+  -462, 1, NULL, -455, 12, NULL,
+  -5532, -5437, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r21-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r21', '郑共公',
+  NULL,
+  -454, 1, NULL, -424, 12, NULL,
+  -5436, -5065, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r22-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r22', '郑幽公',
+  NULL,
+  -423, 1, NULL, -423, 12, NULL,
+  -5064, -5053, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r23-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r23', '郑𦈡公',
+  NULL,
+  -422, 1, NULL, -396, 12, NULL,
+  -5052, -4729, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-zheng-r24-zheng-chunqiu', 'zheng-chunqiu', 'zheng-r24', '郑康公',
+  NULL,
+  -395, 1, NULL, -375, 12, NULL,
+  -4728, -4477, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r0-cao-chunqiu', 'cao-chunqiu', 'cao-r0', '叔振铎',
+  NULL,
+  -1046, 1, NULL, -1016, 12, NULL,
+  -12540, -12169, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r1-cao-chunqiu', 'cao-chunqiu', 'cao-r1', '曹太伯',
+  NULL,
+  -1015, 1, NULL, -992, 12, NULL,
+  -12168, -11881, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r2-cao-chunqiu', 'cao-chunqiu', 'cao-r2', '仲君',
+  NULL,
+  -991, 1, NULL, -925, 12, NULL,
+  -11880, -11077, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r3-cao-chunqiu', 'cao-chunqiu', 'cao-r3', '曹宫伯',
+  NULL,
+  -924, 1, NULL, -885, 12, NULL,
+  -11076, -10597, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r4-cao-chunqiu', 'cao-chunqiu', 'cao-r4', '曹孝伯',
+  NULL,
+  -884, 1, NULL, -865, 12, NULL,
+  -10596, -10357, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r5-cao-chunqiu', 'cao-chunqiu', 'cao-r5', '曹夷伯',
+  NULL,
+  -864, 1, NULL, -835, 12, NULL,
+  -10356, -9997, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r6-cao-chunqiu', 'cao-chunqiu', 'cao-r6', '曹幽伯',
+  NULL,
+  -834, 1, NULL, -826, 12, NULL,
+  -9996, -9889, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r7-cao-chunqiu', 'cao-chunqiu', 'cao-r7', '曹戴伯',
+  NULL,
+  -825, 1, NULL, -796, 12, NULL,
+  -9888, -9529, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r8-cao-chunqiu', 'cao-chunqiu', 'cao-r8', '曹惠伯',
+  NULL,
+  -795, 1, NULL, -760, 12, NULL,
+  -9528, -9097, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r9-cao-chunqiu', 'cao-chunqiu', 'cao-r9', '曹废伯',
+  NULL,
+  -760, 1, NULL, -760, 12, NULL,
+  -9108, -9097, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r10-cao-chunqiu', 'cao-chunqiu', 'cao-r10', '曹穆公',
+  NULL,
+  -759, 1, NULL, -757, 12, NULL,
+  -9096, -9061, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r11-cao-chunqiu', 'cao-chunqiu', 'cao-r11', '曹桓公',
+  NULL,
+  -756, 1, NULL, -702, 12, NULL,
+  -9060, -8401, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r12-cao-chunqiu', 'cao-chunqiu', 'cao-r12', '曹庄公',
+  NULL,
+  -701, 1, NULL, -671, 12, NULL,
+  -8400, -8029, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r13-cao-chunqiu', 'cao-chunqiu', 'cao-r13', '曹釐公',
+  NULL,
+  -670, 1, NULL, -662, 12, NULL,
+  -8028, -7921, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r14-cao-chunqiu', 'cao-chunqiu', 'cao-r14', '曹昭公',
+  NULL,
+  -661, 1, NULL, -653, 12, NULL,
+  -7920, -7813, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r15-cao-chunqiu', 'cao-chunqiu', 'cao-r15', '曹共公',
+  NULL,
+  -652, 1, NULL, -618, 12, NULL,
+  -7812, -7393, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r16-cao-chunqiu', 'cao-chunqiu', 'cao-r16', '曹文公',
+  NULL,
+  -617, 1, NULL, -595, 12, NULL,
+  -7392, -7117, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r17-cao-chunqiu', 'cao-chunqiu', 'cao-r17', '曹宣公',
+  NULL,
+  -594, 1, NULL, -578, 12, NULL,
+  -7116, -6913, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r18-cao-chunqiu', 'cao-chunqiu', 'cao-r18', '曹成公',
+  NULL,
+  -577, 1, NULL, -555, 12, NULL,
+  -6912, -6637, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r19-cao-chunqiu', 'cao-chunqiu', 'cao-r19', '曹武公',
+  NULL,
+  -554, 1, NULL, -528, 12, NULL,
+  -6636, -6313, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r20-cao-chunqiu', 'cao-chunqiu', 'cao-r20', '曹平公',
+  NULL,
+  -527, 1, NULL, -524, 12, NULL,
+  -6312, -6265, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r21-cao-chunqiu', 'cao-chunqiu', 'cao-r21', '曹悼公',
+  NULL,
+  -523, 1, NULL, -515, 12, NULL,
+  -6264, -6157, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r22-cao-chunqiu', 'cao-chunqiu', 'cao-r22', '曹声公',
+  NULL,
+  -514, 1, NULL, -510, 12, NULL,
+  -6156, -6097, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r23-cao-chunqiu', 'cao-chunqiu', 'cao-r23', '曹隐公',
+  NULL,
+  -509, 1, NULL, -506, 12, NULL,
+  -6096, -6049, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r24-cao-chunqiu', 'cao-chunqiu', 'cao-r24', '曹靖公',
+  NULL,
+  -505, 1, NULL, -502, 12, NULL,
+  -6048, -6001, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-cao-r25-cao-chunqiu', 'cao-chunqiu', 'cao-r25', '伯阳',
+  NULL,
+  -501, 1, NULL, -487, 12, NULL,
+  -6000, -5821, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-pre-r0-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r0', '泰伯',
+  NULL,
+  -1100, 1, NULL, -1088, 12, NULL,
+  -13188, -13033, 'year', 'approximate', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-pre-r1-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r1', '仲雍',
+  NULL,
+  -1087, 1, NULL, -1074, 12, NULL,
+  -13032, -12865, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-pre-r2-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r2', '季简',
+  NULL,
+  -1073, 1, NULL, -1061, 12, NULL,
+  -12864, -12709, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-pre-r3-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r3', '叔达',
+  NULL,
+  -1060, 1, NULL, -1047, 12, NULL,
+  -12708, -12541, 'year', 'interpolated', NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-pre-r4-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r4', '周章',
+  NULL,
+  -1046, 1, NULL, -1015, 12, NULL,
+  -12540, -12157, 'year', NULL, 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-pre-r5-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r5', '熊遂',
+  NULL,
+  -1014, 1, NULL, -982, 12, NULL,
+  -12156, -11761, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-pre-r6-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r6', '柯相',
+  NULL,
+  -981, 1, NULL, -949, 12, NULL,
+  -11760, -11365, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-pre-r7-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r7', '彊鸠夷',
+  NULL,
+  -948, 1, NULL, -916, 12, NULL,
+  -11364, -10969, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-pre-r8-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r8', '余桥疑吾',
+  NULL,
+  -915, 1, NULL, -883, 12, NULL,
+  -10968, -10573, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-pre-r9-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r9', '柯卢',
+  NULL,
+  -882, 1, NULL, -850, 12, NULL,
+  -10572, -10177, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-pre-r10-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r10', '周繇',
+  NULL,
+  -849, 1, NULL, -817, 12, NULL,
+  -10176, -9781, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-pre-r11-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r11', '屈羽',
+  NULL,
+  -816, 1, NULL, -784, 12, NULL,
+  -9780, -9385, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-pre-r12-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r12', '夷吾',
+  NULL,
+  -783, 1, NULL, -751, 12, NULL,
+  -9384, -8989, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-pre-r13-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r13', '禽处',
+  NULL,
+  -750, 1, NULL, -718, 12, NULL,
+  -8988, -8593, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-pre-r14-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r14', '转',
+  NULL,
+  -717, 1, NULL, -685, 12, NULL,
+  -8592, -8197, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-pre-r15-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r15', '颇高',
+  NULL,
+  -684, 1, NULL, -652, 12, NULL,
+  -8196, -7801, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-pre-r16-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r16', '句卑',
+  NULL,
+  -651, 1, NULL, -619, 12, NULL,
+  -7800, -7405, 'year', 'interpolated', 'interpolated',
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-pre-r17-wu-chunqiu', 'wu-chunqiu', 'wu-pre-r17', '去齐',
+  NULL,
+  -618, 1, NULL, -586, 12, NULL,
+  -7404, -7009, 'year', 'interpolated', NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-r0-wu-chunqiu', 'wu-chunqiu', 'wu-r0', '寿梦',
+  NULL,
+  -585, 1, NULL, -561, 12, NULL,
+  -7008, -6709, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-r1-wu-chunqiu', 'wu-chunqiu', 'wu-r1', '诸樊',
+  NULL,
+  -560, 1, NULL, -548, 12, NULL,
+  -6708, -6553, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-r2-wu-chunqiu', 'wu-chunqiu', 'wu-r2', '余祭',
+  NULL,
+  -547, 1, NULL, -544, 12, NULL,
+  -6552, -6505, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-r3-wu-chunqiu', 'wu-chunqiu', 'wu-r3', '余昧',
+  NULL,
+  -543, 1, NULL, -527, 12, NULL,
+  -6504, -6301, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-r4-wu-chunqiu', 'wu-chunqiu', 'wu-r4', '僚',
+  NULL,
+  -526, 1, NULL, -515, 12, NULL,
+  -6300, -6157, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-helu-wu-chunqiu', 'wu-chunqiu', 'helu', '阖闾',
+  NULL,
+  -514, 1, NULL, -496, 12, NULL,
+  -6156, -5929, 'year', NULL, NULL,
+  NULL, NULL, NULL
+)
+ON CONFLICT (id) DO UPDATE SET
+  dynasty_id = EXCLUDED.dynasty_id,
+  person_id = EXCLUDED.person_id,
+  title = EXCLUDED.title,
+  era_names = EXCLUDED.era_names,
+  start_year = EXCLUDED.start_year,
+  start_month = EXCLUDED.start_month,
+  start_day = EXCLUDED.start_day,
+  end_year = EXCLUDED.end_year,
+  end_month = EXCLUDED.end_month,
+  end_day = EXCLUDED.end_day,
+  start_abs = EXCLUDED.start_abs,
+  end_abs = EXCLUDED.end_abs,
+  precision = EXCLUDED.precision,
+  start_date_confidence = EXCLUDED.start_date_confidence,
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
+INSERT INTO reigns (
+  id, dynasty_id, person_id, title,
+  era_names,
+  start_year, start_month, start_day, end_year, end_month, end_day,
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
+) VALUES (
+  'reign-wu-fu-gai-wu-chunqiu', 'wu-chunqiu', 'wu-fu-gai', '夫概',
   NULL,
   -505, 1, NULL, -505, 12, NULL,
   -6048, -6037, 'year', NULL, NULL,
@@ -11331,12 +13111,14 @@ INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-fu-chai-wu-chunqiu', 'wu-chunqiu', 'fu-chai', '',
+  'reign-fu-chai-wu-chunqiu', 'wu-chunqiu', 'fu-chai', '夫差',
   NULL,
   -495, 1, NULL, -473, 12, NULL,
-  -5928, -5653, 'year', NULL, NULL
+  -5928, -5653, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11353,17 +13135,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-yue-r3-yue-chunqiu', 'yue-chunqiu', 'yue-r3', '',
+  'reign-yue-r3-yue-chunqiu', 'yue-chunqiu', 'yue-r3', '夫谭',
   NULL,
   -565, 1, NULL, -511, 12, NULL,
-  -6768, -6109, 'year', 'interpolated', NULL
+  -6768, -6109, 'year', 'interpolated', NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11380,17 +13167,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-yue-r4-yue-chunqiu', 'yue-chunqiu', 'yue-r4', '',
+  'reign-yue-r4-yue-chunqiu', 'yue-chunqiu', 'yue-r4', '允常',
   NULL,
   -510, 1, NULL, -497, 12, NULL,
-  -6108, -5941, 'year', NULL, NULL
+  -6108, -5941, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11407,17 +13199,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-gou-jian-yue-chunqiu', 'yue-chunqiu', 'gou-jian', '',
+  'reign-gou-jian-yue-chunqiu', 'yue-chunqiu', 'gou-jian', '勾践',
   NULL,
   -496, 1, NULL, -464, 12, NULL,
-  -5940, -5545, 'year', NULL, NULL
+  -5940, -5545, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11434,17 +13231,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-yue-r6-yue-chunqiu', 'yue-chunqiu', 'yue-r6', '',
+  'reign-yue-r6-yue-chunqiu', 'yue-chunqiu', 'yue-r6', '鹿郢',
   NULL,
   -463, 1, NULL, -458, 12, NULL,
-  -5544, -5473, 'year', NULL, NULL
+  -5544, -5473, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11461,17 +13263,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-yue-r7-yue-chunqiu', 'yue-chunqiu', 'yue-r7', '',
+  'reign-yue-r7-yue-chunqiu', 'yue-chunqiu', 'yue-r7', '不寿',
   NULL,
   -457, 1, NULL, -448, 12, NULL,
-  -5472, -5353, 'year', NULL, NULL
+  -5472, -5353, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11488,17 +13295,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-yue-r8-yue-chunqiu', 'yue-chunqiu', 'yue-r8', '',
+  'reign-yue-r8-yue-chunqiu', 'yue-chunqiu', 'yue-r8', '朱勾',
   NULL,
   -447, 1, NULL, -411, 12, NULL,
-  -5352, -4909, 'year', NULL, NULL
+  -5352, -4909, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11515,17 +13327,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-yue-r9-yue-chunqiu', 'yue-chunqiu', 'yue-r9', '',
+  'reign-yue-r9-yue-chunqiu', 'yue-chunqiu', 'yue-r9', '翳',
   NULL,
   -410, 1, NULL, -375, 12, NULL,
-  -4908, -4477, 'year', NULL, NULL
+  -4908, -4477, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11542,17 +13359,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-yue-r10-yue-chunqiu', 'yue-chunqiu', 'yue-r10', '',
+  'reign-yue-r10-yue-chunqiu', 'yue-chunqiu', 'yue-r10', '错枝',
   NULL,
   -374, 1, NULL, -373, 12, NULL,
-  -4476, -4453, 'year', NULL, NULL
+  -4476, -4453, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11569,17 +13391,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-yue-r11-yue-chunqiu', 'yue-chunqiu', 'yue-r11', '',
+  'reign-yue-r11-yue-chunqiu', 'yue-chunqiu', 'yue-r11', '无余',
   NULL,
   -372, 1, NULL, -361, 12, NULL,
-  -4452, -4309, 'year', NULL, NULL
+  -4452, -4309, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11596,17 +13423,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-yue-r12-yue-chunqiu', 'yue-chunqiu', 'yue-r12', '',
+  'reign-yue-r12-yue-chunqiu', 'yue-chunqiu', 'yue-r12', '无颛',
   NULL,
   -360, 1, NULL, -343, 12, NULL,
-  -4308, -4093, 'year', NULL, NULL
+  -4308, -4093, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11623,17 +13455,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-yue-r13-yue-chunqiu', 'yue-chunqiu', 'yue-r13', '',
+  'reign-yue-r13-yue-chunqiu', 'yue-chunqiu', 'yue-r13', '无彊',
   NULL,
   -342, 1, NULL, -306, 12, NULL,
-  -4092, -3649, 'year', NULL, NULL
+  -4092, -3649, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11650,17 +13487,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-zhongshan-r0-zhongshan', 'zhongshan', 'zhongshan-r0', '',
+  'reign-zhongshan-r0-zhongshan', 'zhongshan', 'zhongshan-r0', '中山文公',
   NULL,
   -424, 1, NULL, -415, 12, NULL,
-  -5076, -4957, 'year', NULL, NULL
+  -5076, -4957, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11677,17 +13519,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-zhongshan-r1-zhongshan', 'zhongshan', 'zhongshan-r1', '',
+  'reign-zhongshan-r1-zhongshan', 'zhongshan', 'zhongshan-r1', '中山武公',
   NULL,
   -414, 1, NULL, -406, 12, NULL,
-  -4956, -4849, 'year', NULL, NULL
+  -4956, -4849, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11704,17 +13551,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-zhongshan-r2-zhongshan', 'zhongshan', 'zhongshan-r2', '',
+  'reign-zhongshan-r2-zhongshan', 'zhongshan', 'zhongshan-r2', '中山桓公',
   NULL,
   -406, 1, NULL, -406, 12, NULL,
-  -4860, -4849, 'year', NULL, NULL
+  -4860, -4849, 'year', 'approximate', 'approximate',
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11731,17 +13583,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-zhongshan-r2-zhongshan-2', 'zhongshan', 'zhongshan-r2', '',
+  'reign-zhongshan-r2-zhongshan-2', 'zhongshan', 'zhongshan-r2', '中山桓公',
   NULL,
   -380, 1, NULL, -350, 12, NULL,
-  -4548, -4177, 'year', NULL, NULL
+  -4548, -4177, 'year', 'approximate', 'approximate',
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11758,17 +13615,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-zhongshan-r3-zhongshan', 'zhongshan', 'zhongshan-r3', '',
+  'reign-zhongshan-r3-zhongshan', 'zhongshan', 'zhongshan-r3', '中山成公',
   NULL,
   -349, 1, NULL, -328, 12, NULL,
-  -4176, -3913, 'year', NULL, NULL
+  -4176, -3913, 'year', 'approximate', NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11785,17 +13647,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-zhongshan-r4-zhongshan', 'zhongshan', 'zhongshan-r4', '',
+  'reign-zhongshan-r4-zhongshan', 'zhongshan', 'zhongshan-r4', '厝',
   NULL,
   -327, 1, NULL, -310, 12, NULL,
-  -3912, -3697, 'year', NULL, 'approximate'
+  -3912, -3697, 'year', NULL, 'approximate',
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11812,17 +13679,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-zhongshan-r5-zhongshan', 'zhongshan', 'zhongshan-r5', '',
+  'reign-zhongshan-r5-zhongshan', 'zhongshan', 'zhongshan-r5', '𧊒',
   NULL,
   -309, 1, NULL, -299, 12, NULL,
-  -3696, -3565, 'year', 'approximate', NULL
+  -3696, -3565, 'year', 'approximate', NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11839,17 +13711,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-zhongshan-r6-zhongshan', 'zhongshan', 'zhongshan-r6', '',
+  'reign-zhongshan-r6-zhongshan', 'zhongshan', 'zhongshan-r6', '尚',
   NULL,
   -298, 1, NULL, -296, 12, NULL,
-  -3564, -3529, 'year', NULL, NULL
+  -3564, -3529, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11866,17 +13743,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-han-jing-han-warring', 'han-warring', 'han-jing', '',
+  'reign-han-jing-han-warring', 'han-warring', 'han-jing', '韩景侯',
   NULL,
   -403, 1, NULL, -400, 12, NULL,
-  -4824, -4777, 'year', NULL, NULL
+  -4824, -4777, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11893,17 +13775,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-han-r1-han-warring', 'han-warring', 'han-r1', '',
+  'reign-han-r1-han-warring', 'han-warring', 'han-r1', '韩烈侯',
   NULL,
   -399, 1, NULL, -387, 12, NULL,
-  -4776, -4621, 'year', NULL, NULL
+  -4776, -4621, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11920,17 +13807,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-han-r2-han-warring', 'han-warring', 'han-r2', '',
+  'reign-han-r2-han-warring', 'han-warring', 'han-r2', '韩文侯',
   NULL,
   -386, 1, NULL, -377, 12, NULL,
-  -4620, -4501, 'year', NULL, NULL
+  -4620, -4501, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11947,17 +13839,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-han-r3-han-warring', 'han-warring', 'han-r3', '',
+  'reign-han-r3-han-warring', 'han-warring', 'han-r3', '韩哀侯',
   NULL,
   -376, 1, NULL, -374, 12, NULL,
-  -4500, -4465, 'year', NULL, NULL
+  -4500, -4465, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -11974,17 +13871,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-han-r4-han-warring', 'han-warring', 'han-r4', '',
+  'reign-han-r4-han-warring', 'han-warring', 'han-r4', '韩共侯',
   NULL,
   -373, 1, NULL, -363, 12, NULL,
-  -4464, -4333, 'year', NULL, NULL
+  -4464, -4333, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12001,17 +13903,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-han-r5-han-warring', 'han-warring', 'han-r5', '',
+  'reign-han-r5-han-warring', 'han-warring', 'han-r5', '韩釐侯',
   NULL,
   -362, 1, NULL, -333, 12, NULL,
-  -4332, -3973, 'year', NULL, NULL
+  -4332, -3973, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12028,17 +13935,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-han-r6-han-warring', 'han-warring', 'han-r6', '',
+  'reign-han-r6-han-warring', 'han-warring', 'han-r6', '韩宣惠王',
   NULL,
   -332, 1, NULL, -312, 12, NULL,
-  -3972, -3721, 'year', NULL, NULL
+  -3972, -3721, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12055,17 +13967,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-han-r7-han-warring', 'han-warring', 'han-r7', '',
+  'reign-han-r7-han-warring', 'han-warring', 'han-r7', '韩襄王',
   NULL,
   -311, 1, NULL, -296, 12, NULL,
-  -3720, -3529, 'year', NULL, NULL
+  -3720, -3529, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12082,17 +13999,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-han-r8-han-warring', 'han-warring', 'han-r8', '',
+  'reign-han-r8-han-warring', 'han-warring', 'han-r8', '韩釐王',
   NULL,
   -295, 1, NULL, -273, 12, NULL,
-  -3528, -3253, 'year', NULL, NULL
+  -3528, -3253, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12109,17 +14031,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-han-r9-han-warring', 'han-warring', 'han-r9', '',
+  'reign-han-r9-han-warring', 'han-warring', 'han-r9', '韩桓惠王',
   NULL,
   -272, 1, NULL, -239, 12, NULL,
-  -3252, -2845, 'year', NULL, NULL
+  -3252, -2845, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12136,17 +14063,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-han-r10-han-warring', 'han-warring', 'han-r10', '',
+  'reign-han-r10-han-warring', 'han-warring', 'han-r10', '安',
   NULL,
   -238, 1, NULL, -230, 12, NULL,
-  -2844, -2737, 'year', NULL, NULL
+  -2844, -2737, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12163,17 +14095,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-zhao-lie-zhao-warring', 'zhao-warring', 'zhao-lie', '',
+  'reign-zhao-lie-zhao-warring', 'zhao-warring', 'zhao-lie', '赵烈侯',
   NULL,
   -403, 1, NULL, -400, 12, NULL,
-  -4824, -4777, 'year', NULL, NULL
+  -4824, -4777, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12190,17 +14127,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-zhao-r1-zhao-warring', 'zhao-warring', 'zhao-r1', '',
+  'reign-zhao-r1-zhao-warring', 'zhao-warring', 'zhao-r1', '赵武侯',
   NULL,
   -399, 1, NULL, -387, 12, NULL,
-  -4776, -4621, 'year', NULL, NULL
+  -4776, -4621, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12217,17 +14159,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-zhao-r2-zhao-warring', 'zhao-warring', 'zhao-r2', '',
+  'reign-zhao-r2-zhao-warring', 'zhao-warring', 'zhao-r2', '赵敬侯',
   NULL,
   -386, 1, NULL, -375, 12, NULL,
-  -4620, -4477, 'year', NULL, NULL
+  -4620, -4477, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12244,17 +14191,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-zhao-r3-zhao-warring', 'zhao-warring', 'zhao-r3', '',
+  'reign-zhao-r3-zhao-warring', 'zhao-warring', 'zhao-r3', '赵成侯',
   NULL,
   -374, 1, NULL, -350, 12, NULL,
-  -4476, -4177, 'year', NULL, NULL
+  -4476, -4177, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12271,17 +14223,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-zhao-r4-zhao-warring', 'zhao-warring', 'zhao-r4', '',
+  'reign-zhao-r4-zhao-warring', 'zhao-warring', 'zhao-r4', '赵肃侯',
   NULL,
   -349, 1, NULL, -326, 12, NULL,
-  -4176, -3889, 'year', NULL, NULL
+  -4176, -3889, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12298,17 +14255,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-zhao-r5-zhao-warring', 'zhao-warring', 'zhao-r5', '',
+  'reign-zhao-r5-zhao-warring', 'zhao-warring', 'zhao-r5', '赵武灵王',
   NULL,
   -325, 1, NULL, -299, 12, NULL,
-  -3888, -3565, 'year', NULL, NULL
+  -3888, -3565, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12325,17 +14287,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-zhao-r6-zhao-warring', 'zhao-warring', 'zhao-r6', '',
+  'reign-zhao-r6-zhao-warring', 'zhao-warring', 'zhao-r6', '赵惠文王',
   NULL,
   -298, 1, NULL, -266, 12, NULL,
-  -3564, -3169, 'year', NULL, NULL
+  -3564, -3169, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12352,17 +14319,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-zhao-r7-zhao-warring', 'zhao-warring', 'zhao-r7', '',
+  'reign-zhao-r7-zhao-warring', 'zhao-warring', 'zhao-r7', '赵孝成王',
   NULL,
   -265, 1, NULL, -245, 12, NULL,
-  -3168, -2917, 'year', NULL, NULL
+  -3168, -2917, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12379,17 +14351,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-zhao-r8-zhao-warring', 'zhao-warring', 'zhao-r8', '',
+  'reign-zhao-r8-zhao-warring', 'zhao-warring', 'zhao-r8', '赵悼襄王',
   NULL,
   -244, 1, NULL, -236, 12, NULL,
-  -2916, -2809, 'year', NULL, NULL
+  -2916, -2809, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12406,17 +14383,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-zhao-r9-zhao-warring', 'zhao-warring', 'zhao-r9', '',
+  'reign-zhao-r9-zhao-warring', 'zhao-warring', 'zhao-r9', '赵幽缪王',
   NULL,
   -235, 1, NULL, -228, 12, NULL,
-  -2808, -2713, 'year', NULL, NULL
+  -2808, -2713, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12433,17 +14415,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-wei-wen-wei-warring', 'wei-warring', 'wei-wen', '',
+  'reign-wei-wen-wei-warring', 'wei-warring', 'wei-wen', '魏文侯',
   NULL,
   -403, 1, NULL, -396, 12, NULL,
-  -4824, -4729, 'year', NULL, NULL
+  -4824, -4729, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12460,17 +14447,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-wei-r1-wei-warring', 'wei-warring', 'wei-r1', '',
+  'reign-wei-r1-wei-warring', 'wei-warring', 'wei-r1', '魏武侯',
   NULL,
   -395, 1, NULL, -370, 12, NULL,
-  -4728, -4417, 'year', NULL, NULL
+  -4728, -4417, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12487,17 +14479,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-wei-r2-wei-warring', 'wei-warring', 'wei-r2', '',
+  'reign-wei-r2-wei-warring', 'wei-warring', 'wei-r2', '魏惠成王',
   NULL,
   -369, 1, NULL, -319, 12, NULL,
-  -4416, -3805, 'year', NULL, NULL
+  -4416, -3805, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12514,17 +14511,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-wei-r3-wei-warring', 'wei-warring', 'wei-r3', '',
+  'reign-wei-r3-wei-warring', 'wei-warring', 'wei-r3', '魏襄王',
   NULL,
   -318, 1, NULL, -296, 12, NULL,
-  -3804, -3529, 'year', NULL, NULL
+  -3804, -3529, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12541,17 +14543,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-wei-r4-wei-warring', 'wei-warring', 'wei-r4', '',
+  'reign-wei-r4-wei-warring', 'wei-warring', 'wei-r4', '魏昭王',
   NULL,
   -295, 1, NULL, -277, 12, NULL,
-  -3528, -3301, 'year', NULL, NULL
+  -3528, -3301, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12568,17 +14575,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-wei-r5-wei-warring', 'wei-warring', 'wei-r5', '',
+  'reign-wei-r5-wei-warring', 'wei-warring', 'wei-r5', '魏安僖王',
   NULL,
   -276, 1, NULL, -243, 12, NULL,
-  -3300, -2893, 'year', NULL, NULL
+  -3300, -2893, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12595,17 +14607,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-wei-r6-wei-warring', 'wei-warring', 'wei-r6', '',
+  'reign-wei-r6-wei-warring', 'wei-warring', 'wei-r6', '魏景湣王',
   NULL,
   -242, 1, NULL, -228, 12, NULL,
-  -2892, -2713, 'year', NULL, NULL
+  -2892, -2713, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12622,17 +14639,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-wei-r7-wei-warring', 'wei-warring', 'wei-r7', '',
+  'reign-wei-r7-wei-warring', 'wei-warring', 'wei-r7', '假',
   NULL,
   -227, 1, NULL, -225, 12, NULL,
-  -2712, -2677, 'year', NULL, NULL
+  -2712, -2677, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12649,17 +14671,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-ying-qi-qin', 'qin', 'ying-qi', '',
+  'reign-ying-qi-qin', 'qin', 'ying-qi', '秦襄公',
   NULL,
   -778, 1, NULL, -766, 12, NULL,
-  -9324, -9169, 'year', NULL, NULL
+  -9324, -9169, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12676,17 +14703,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r1-qin', 'qin', 'qin-r1', '',
+  'reign-qin-r1-qin', 'qin', 'qin-r1', '秦文公',
   NULL,
   -765, 1, NULL, -716, 12, NULL,
-  -9168, -8569, 'year', NULL, NULL
+  -9168, -8569, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12703,17 +14735,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r2-qin', 'qin', 'qin-r2', '',
+  'reign-qin-r2-qin', 'qin', 'qin-r2', '秦宪公',
   NULL,
   -715, 1, NULL, -704, 12, NULL,
-  -8568, -8425, 'year', NULL, NULL
+  -8568, -8425, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12730,17 +14767,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r3-qin', 'qin', 'qin-r3', '',
+  'reign-qin-r3-qin', 'qin', 'qin-r3', '出子',
   NULL,
   -703, 1, NULL, -698, 12, NULL,
-  -8424, -8353, 'year', NULL, NULL
+  -8424, -8353, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12757,17 +14799,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r4-qin', 'qin', 'qin-r4', '',
+  'reign-qin-r4-qin', 'qin', 'qin-r4', '秦武公',
   NULL,
   -697, 1, NULL, -678, 12, NULL,
-  -8352, -8113, 'year', NULL, NULL
+  -8352, -8113, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12784,17 +14831,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r5-qin', 'qin', 'qin-r5', '',
+  'reign-qin-r5-qin', 'qin', 'qin-r5', '秦德公',
   NULL,
   -677, 1, NULL, -676, 12, NULL,
-  -8112, -8089, 'year', NULL, NULL
+  -8112, -8089, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12811,17 +14863,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r6-qin', 'qin', 'qin-r6', '',
+  'reign-qin-r6-qin', 'qin', 'qin-r6', '秦宣公',
   NULL,
   -675, 1, NULL, -664, 12, NULL,
-  -8088, -7945, 'year', NULL, NULL
+  -8088, -7945, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12838,17 +14895,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r7-qin', 'qin', 'qin-r7', '',
+  'reign-qin-r7-qin', 'qin', 'qin-r7', '秦成公',
   NULL,
   -663, 1, NULL, -660, 12, NULL,
-  -7944, -7897, 'year', NULL, NULL
+  -7944, -7897, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12865,17 +14927,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r8-qin', 'qin', 'qin-r8', '',
+  'reign-qin-r8-qin', 'qin', 'qin-r8', '秦穆公',
   NULL,
   -659, 1, NULL, -621, 12, NULL,
-  -7896, -7429, 'year', NULL, NULL
+  -7896, -7429, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12892,17 +14959,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r9-qin', 'qin', 'qin-r9', '',
+  'reign-qin-r9-qin', 'qin', 'qin-r9', '秦康公',
   NULL,
   -620, 1, NULL, -609, 12, NULL,
-  -7428, -7285, 'year', NULL, NULL
+  -7428, -7285, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12919,17 +14991,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r10-qin', 'qin', 'qin-r10', '',
+  'reign-qin-r10-qin', 'qin', 'qin-r10', '秦共公',
   NULL,
   -608, 1, NULL, -605, 12, NULL,
-  -7284, -7237, 'year', NULL, NULL
+  -7284, -7237, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12946,17 +15023,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r11-qin', 'qin', 'qin-r11', '',
+  'reign-qin-r11-qin', 'qin', 'qin-r11', '秦桓公',
   NULL,
   -604, 1, NULL, -577, 12, NULL,
-  -7236, -6901, 'year', NULL, NULL
+  -7236, -6901, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -12973,17 +15055,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r12-qin', 'qin', 'qin-r12', '',
+  'reign-qin-r12-qin', 'qin', 'qin-r12', '秦景公',
   NULL,
   -576, 1, NULL, -537, 12, NULL,
-  -6900, -6421, 'year', NULL, NULL
+  -6900, -6421, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -13000,17 +15087,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r13-qin', 'qin', 'qin-r13', '',
+  'reign-qin-r13-qin', 'qin', 'qin-r13', '秦哀公',
   NULL,
   -536, 1, NULL, -501, 12, NULL,
-  -6420, -5989, 'year', NULL, NULL
+  -6420, -5989, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -13027,17 +15119,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r14-qin', 'qin', 'qin-r14', '',
+  'reign-qin-r14-qin', 'qin', 'qin-r14', '秦惠公',
   NULL,
   -500, 1, NULL, -492, 12, NULL,
-  -5988, -5881, 'year', NULL, NULL
+  -5988, -5881, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -13054,17 +15151,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r15-qin', 'qin', 'qin-r15', '',
+  'reign-qin-r15-qin', 'qin', 'qin-r15', '秦悼公',
   NULL,
   -491, 1, NULL, -477, 12, NULL,
-  -5880, -5701, 'year', NULL, NULL
+  -5880, -5701, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -13081,17 +15183,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r16-qin', 'qin', 'qin-r16', '',
+  'reign-qin-r16-qin', 'qin', 'qin-r16', '秦厉共公',
   NULL,
   -476, 1, NULL, -443, 12, NULL,
-  -5700, -5293, 'year', NULL, NULL
+  -5700, -5293, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -13108,17 +15215,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r17-qin', 'qin', 'qin-r17', '',
+  'reign-qin-r17-qin', 'qin', 'qin-r17', '秦躁公',
   NULL,
   -442, 1, NULL, -429, 12, NULL,
-  -5292, -5125, 'year', NULL, NULL
+  -5292, -5125, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -13135,17 +15247,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r18-qin', 'qin', 'qin-r18', '',
+  'reign-qin-r18-qin', 'qin', 'qin-r18', '秦怀公',
   NULL,
   -428, 1, NULL, -425, 12, NULL,
-  -5124, -5077, 'year', NULL, NULL
+  -5124, -5077, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -13162,17 +15279,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r19-qin', 'qin', 'qin-r19', '',
+  'reign-qin-r19-qin', 'qin', 'qin-r19', '秦灵公',
   NULL,
   -425, 1, NULL, -415, 12, NULL,
-  -5088, -4957, 'year', NULL, NULL
+  -5088, -4957, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -13189,17 +15311,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r20-qin', 'qin', 'qin-r20', '',
+  'reign-qin-r20-qin', 'qin', 'qin-r20', '秦简公',
   NULL,
   -415, 1, NULL, -400, 12, NULL,
-  -4968, -4777, 'year', NULL, NULL
+  -4968, -4777, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -13216,17 +15343,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r21-qin', 'qin', 'qin-r21', '',
+  'reign-qin-r21-qin', 'qin', 'qin-r21', '秦惠公',
   NULL,
   -399, 1, NULL, -387, 12, NULL,
-  -4776, -4621, 'year', NULL, NULL
+  -4776, -4621, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -13243,17 +15375,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r22-qin', 'qin', 'qin-r22', '',
+  'reign-qin-r22-qin', 'qin', 'qin-r22', '秦出公',
   NULL,
   -386, 1, NULL, -385, 12, NULL,
-  -4620, -4597, 'year', NULL, NULL
+  -4620, -4597, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -13270,17 +15407,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r23-qin', 'qin', 'qin-r23', '',
+  'reign-qin-r23-qin', 'qin', 'qin-r23', '秦献公',
   NULL,
   -385, 1, NULL, -362, 12, NULL,
-  -4608, -4321, 'year', NULL, NULL
+  -4608, -4321, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -13297,17 +15439,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-ying-quliang-qin', 'qin', 'ying-quliang', '',
+  'reign-ying-quliang-qin', 'qin', 'ying-quliang', '秦孝公',
   NULL,
   -361, 1, NULL, -338, 12, NULL,
-  -4320, -4033, 'year', NULL, NULL
+  -4320, -4033, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -13324,17 +15471,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r25-qin', 'qin', 'qin-r25', '',
+  'reign-qin-r25-qin', 'qin', 'qin-r25', '秦惠文王',
   NULL,
   -337, 1, NULL, -311, 12, NULL,
-  -4032, -3709, 'year', NULL, NULL
+  -4032, -3709, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -13351,17 +15503,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r26-qin', 'qin', 'qin-r26', '',
+  'reign-qin-r26-qin', 'qin', 'qin-r26', '秦武王',
   NULL,
   -310, 1, NULL, -307, 12, NULL,
-  -3708, -3661, 'year', NULL, NULL
+  -3708, -3661, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -13378,17 +15535,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r27-qin', 'qin', 'qin-r27', '',
+  'reign-qin-r27-qin', 'qin', 'qin-r27', '秦昭襄王',
   NULL,
   -306, 1, NULL, -251, 12, NULL,
-  -3660, -2989, 'year', NULL, NULL
+  -3660, -2989, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -13405,17 +15567,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r28-qin', 'qin', 'qin-r28', '',
+  'reign-qin-r28-qin', 'qin', 'qin-r28', '秦孝文王',
   NULL,
   -250, 1, NULL, -250, 12, NULL,
-  -2988, -2977, 'year', NULL, NULL
+  -2988, -2977, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -13432,17 +15599,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
-  'reign-qin-r29-qin', 'qin', 'qin-r29', '',
+  'reign-qin-r29-qin', 'qin', 'qin-r29', '秦庄襄王',
   NULL,
   -249, 1, NULL, -247, 12, NULL,
-  -2976, -2941, 'year', NULL, NULL
+  -2976, -2941, 'year', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -13459,17 +15631,22 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
   'reign-ying-zheng-qin', 'qin', 'ying-zheng', '赵政',
   NULL,
   -246, 1, NULL, -221, 9, 9,
-  -2940, -2632, 'month', NULL, NULL
+  -2940, -2632, 'month', NULL, NULL,
+  NULL, NULL, NULL
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -13486,7 +15663,10 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;
 
 -- events
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
