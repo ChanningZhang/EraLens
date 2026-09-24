@@ -1,0 +1,78 @@
+{
+  "slug": "commercial-events",
+  "title": "商业与商品传播事件",
+  "window": {
+    "startYear": -138,
+    "startMonth": 1,
+    "endYear": 1842,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "minimal",
+  "generatedAt": "2026-09-24",
+  "counts": {
+    "persons": 0,
+    "dynasties": 0,
+    "reigns": 0,
+    "events": 12,
+    "relations": 0
+  },
+  "sources": [
+    {
+      "label": "李军：《历史上引入中国的农作物》，《人民论坛》",
+      "url": "https://paper.people.com.cn/rmlt/html/2024-05/01/content_26070979.htm"
+    },
+    {
+      "label": "《齐民要术·种瓜第十四》原文（识典古籍）",
+      "url": "https://www.shidianguji.com/book/SBCK071/chapter/SBCK071_18"
+    },
+    {
+      "label": "中国科学院自然科学史研究所：中国农业历史研究·农业生产力与农业地区布局",
+      "url": "https://agri-history.ihns.ac.cn/history/chapter81.htm"
+    },
+    {
+      "label": "中国科学院自然科学史研究所：中国农业历史研究·明清时期的农业（玉米、甘薯）",
+      "url": "https://agri-history.ihns.ac.cn/history/mqny.htm"
+    },
+    {
+      "label": "全国哲学社会科学工作办公室：张箭《辣椒在全球的传播》",
+      "url": "https://www.nopss.gov.cn/n1/2021/0419/c219544-32081773.html"
+    },
+    {
+      "label": "《中国蔬菜》：蔬菜史话（番茄在华早期传播）",
+      "url": "https://www.cnveg.org/CN/article/downloadArticleFile.do?attachType=PDF&id=17840"
+    },
+    {
+      "label": "甘肃省地方史志研究中心：烟草志（《景岳全书》记载）",
+      "url": "https://www.gsdfszw.org.cn/zhy/gssjzxynj/dssjtsycz/201707/P020170705647416465941.pdf"
+    },
+    {
+      "label": "汉中市地方志办公室：汉中古代的茶马互市",
+      "url": "https://hzdqw.hanzhong.gov.cn/hzdfz/xzlsh/202601/39c5a3d722644d43a0ce77d975f73e0e.shtml"
+    },
+    {
+      "label": "中国边疆通史丛书·中国海疆通史（月港、海禁与海贸）",
+      "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web2476/site/attach/0/%E4%B8%AD%E5%9B%BD%E8%BE%B9%E7%96%86%E9%80%9A%E5%8F%B2%E4%B8%9B%E4%B9%A6%C2%B7%E4%B8%AD%E5%9B%BD%E6%B5%B7%E7%96%86%E9%80%9A%E5%8F%B2.pdf"
+    },
+    {
+      "label": "广州市人民政府：回望海丝，探寻广州千年外贸管理史",
+      "url": "https://www.gz.gov.cn/zt/gzydyl/whjl/content/post_8698939.html"
+    },
+    {
+      "label": "香港博物馆学刊：广州十三行外贸与手工艺商品",
+      "url": "https://www.museums.gov.hk/documents/MP-UAT/Brand-Book/HK-Museum-Journal_1_Final.pdf"
+    },
+    {
+      "label": "《南京条约》原文（维基文库）",
+      "url": "https://zh.wikisource.org/zh-hant/%E5%8D%97%E4%BA%AC%E6%A2%9D%E7%B4%84"
+    }
+  ],
+  "notes": [
+    "商业 kind 用于贸易制度、通商格局及跨区域交换传播的重要商品/作物传入事件。农作物节点描述首次传入中国的历史过程；年份无定论时用 circa 范围，不以文献首次出现年份代替引入年份。",
+    "收录黄瓜、玉米、甘薯、辣椒、番茄、烟草的首次传入中国节点。各作物传播路线和具体首传时间的证据强弱不同，日期窗口与 date_note 分别说明估计依据及争议。",
+    "黄瓜经西域传入及其与张骞使团的联系属于通行传播叙述，具体首次携入事件未有可精确断定的年份；用西汉西域交流时期作 circa 窗口，并以《齐民要术》栽培记载作为其已在中国种植的后续证据。",
+    "玉米、辣椒、番茄和烟草的最早文献见载仅作为界定引种时间上限或研究窗口的旁证，不把见载年份当作首次传入年份。",
+    "甘薯传入福建有数条海路及不同人物的地方记载，本包采用约1582—1593年的争议窗口，不裁定唯一首传路线。",
+    "不重复已入库的张骞通西域、郑和下西洋等事件；不确定性通过 circa 窗口或 date_note 表达。"
+  ]
+}

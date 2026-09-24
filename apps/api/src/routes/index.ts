@@ -6,6 +6,7 @@ import {
   eventSpanAbs,
   normalizeSearchTerm,
   personIntersectsAbsWindow,
+  personSearchAnchorAbs,
   personTimelinePlacement,
   SearchHitSchema,
   TimelineCatalogSchema,
@@ -437,6 +438,14 @@ export async function registerRoutes(app: FastifyInstance) {
       }),
     ]);
 
+    const personReigns = personRows.length
+      ? await prisma.reign.findMany({
+          where: { personId: { in: personRows.map((person) => person.id) } },
+          select: { personId: true, startAbs: true },
+          orderBy: { startAbs: "asc" },
+        })
+      : [];
+
     const hits = [
       ...dynastyRows.map((dynasty) => ({
         ref: { type: "dynasty" as const, id: dynasty.id },
@@ -449,7 +458,7 @@ export async function registerRoutes(app: FastifyInstance) {
           ref: { type: "person" as const, id: person.id },
           label: person.name,
           subtitle: person.roles.join(" · "),
-          abs: personTimelinePlacement(person)?.anchorAbs,
+          abs: personSearchAnchorAbs(person, personReigns),
         };
       }),
       ...reignRows.map((reign) => ({

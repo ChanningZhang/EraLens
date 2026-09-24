@@ -35,6 +35,8 @@
 
 事件时间列：`time_mode`（point/span/circa）、`precision`（day/month/year/decade/century）、`date_note`（可选）。
 
+`events.kind` 支持 `battle`、`politics`、`culture`、`disaster`、`commerce`、`finance`、`idiom`、`poetry`、`other`。`commerce` 表示贸易制度、通商格局与重要商品传播事件，界面标签为「商业」；`finance` 表示货币、银行与财政制度转折，界面标签为「金融」。新增 kind 时同步更新 `packages/shared/src/schema.ts`、共享标签函数、界面样式与本节枚举。
+
 - `point`：`at_year` / `at_month` / `at_abs`
 - `span`：`start_*` + `end_*`（真实持续）
 - `circa`：`start_*` + `end_*` 为可能窗口，可选 `at_*` 为最佳估计

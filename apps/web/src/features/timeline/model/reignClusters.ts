@@ -1,13 +1,18 @@
 import {
+  buildPreQinClanContext,
   groupByClaimTrack,
   isParallelClaim,
   isSystemMissingReign,
   layoutBucketsForLaneReigns,
+  reignVisualBounds,
   reignsInLayoutBucket,
   reignsInSameClaimTrack,
+  resolveReignCardLabel,
   type DynastyLaneGroup,
   type Reign,
 } from "@eralens/shared";
+import type { ViewportState } from "./coordinates";
+import { resolveReignBarLayout, resolveReignCaptionPlacement } from "./lod";
 
 /** Matches `.lane { padding: 6px 0 }` in DynastyLane.module.css. */
 export const LANE_PADDING_TOP = 6;
@@ -19,6 +24,8 @@ export const PARALLEL_STACK_ROW_RATIO = 2 / 3;
 export const PARALLEL_STACK_ROW_HEIGHT = STACK_ROW_HEIGHT * PARALLEL_STACK_ROW_RATIO;
 /** Small visual separation between the main row and parallel claimant rows. */
 export const PARALLEL_TRACK_GAP = 4;
+/** Matches the caption's 2px offset and 12px × 1.2 line height in ReignCard.module.css. */
+const CAPTION_BELOW_EXTENT = 2 + 12 * 1.2;
 
 export type StackedReign = {
   reign: Reign;
@@ -183,6 +190,42 @@ export function dynastyLaneHeight(
       ? dynastyBarHeightForReigns(reigns, laneGroups)
       : dynastyBarHeight(rowHeights);
   return LANE_PADDING_Y + barHeight;
+}
+
+/** Reserve the painted card and any caption hanging below its stack row. */
+export function dynastyLaneHeightForViewport(
+  reigns: Reign[],
+  laneGroups: readonly DynastyLaneGroup[],
+  viewport: ViewportState,
+  personNames: ReadonlyMap<string, string>,
+  personDisplay: ReadonlyMap<string, Parameters<typeof buildPreQinClanContext>[0]>,
+): number {
+  const barHeight = dynastyBarHeightForReigns(reigns, laneGroups);
+  const { items, rowCount } = assignReignStacks(reigns, laneGroups);
+  let paintedBottom = barHeight;
+
+  for (const reign of reigns) {
+    const { startAbs, endExclusive, stackIndex } = resolveReignVisualSpan(reign, reigns, laneGroups);
+    const visual = reignVisualBounds(reign, startAbs, endExclusive);
+    const width = Math.max(0, visual.endExclusive - visual.start) * viewport.pxPerMonth;
+    const label = resolveReignCardLabel(reign, personNames.get(reign.personId), {
+      cardWidthPx: width,
+      clan: buildPreQinClanContext(personDisplay.get(reign.personId)),
+    });
+    if (!resolveReignBarLayout(width, [...label].length).captionBelow) continue;
+
+    const overlapsLowerRow = items.some((item) => {
+      if (item.stackIndex <= stackIndex) return false;
+      const span = resolveReignVisualSpan(item.reign, reigns, laneGroups);
+      return span.startAbs < endExclusive && span.endExclusive > startAbs;
+    });
+    if (resolveReignCaptionPlacement({ stackIndex, rowCount, overlapsLowerRow }) !== "below") continue;
+
+    const { unitTop, unitHeight } = resolveStackedCardUnit(reign, reigns, laneGroups);
+    paintedBottom = Math.max(paintedBottom, unitTop + unitHeight + CAPTION_BELOW_EXTENT);
+  }
+
+  return LANE_PADDING_Y + paintedBottom;
 }
 
 export function partitionReignRecords(reigns: readonly Reign[]): {

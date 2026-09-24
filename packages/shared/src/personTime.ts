@@ -1,4 +1,4 @@
-import type { Person } from "./schema";
+import type { Person, Reign } from "./schema";
 import { absFromPoint, rangeIntersectsWindow } from "./time";
 
 export type PersonLifeSpan = {
@@ -57,6 +57,21 @@ export function personTimelinePlacement(
     };
   }
   return null;
+}
+
+/** Search anchor for a person: life dates first, then their earliest reign. */
+export function personSearchAnchorAbs(
+  person: Person,
+  reigns: readonly Pick<Reign, "personId" | "startAbs">[],
+): number | undefined {
+  const placement = personTimelinePlacement(person);
+  if (placement) return placement.anchorAbs;
+  return reigns
+    .filter((reign) => reign.personId === person.id)
+    .reduce<number | undefined>(
+      (earliest, reign) => earliest === undefined ? reign.startAbs : Math.min(earliest, reign.startAbs),
+      undefined,
+    );
 }
 
 /** Window used for viewport intersection tests. */

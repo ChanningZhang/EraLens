@@ -5,6 +5,7 @@ import {
   assignReignStacks,
   dynastyBarHeightForReigns,
   dynastyLaneHeight,
+  dynastyLaneHeightForViewport,
   LANE_PADDING_Y,
   nextLaterStartAbs,
   PARALLEL_TRACK_GAP,
@@ -194,6 +195,20 @@ describe("assignReignStacks", () => {
     expect(resolveReignVisualSpan(hongguang, all).endExclusive).toBe(longwu.startAbs);
     expect(resolveReignVisualSpan(yongli, all).startAbs).toBe(yongli.startAbs);
     expect(resolveReignVisualSpan(luJian, all).endExclusive).toBe(luJian.endAbs + 1);
+  });
+
+  it("reserves space for a short lower-track ruler's hanging caption", () => {
+    const main = reign("main", 0, 120);
+    const upper = { ...reign("upper", 10, 100), claimTrack: "upper" };
+    const lower = { ...reign("lower", 20, 20), title: "绍武帝", claimTrack: "lower" };
+    const all = [main, upper, lower];
+    const viewport = { centerAbs: 60, pxPerMonth: 1, widthPx: 800 };
+    const regularHeight = dynastyLaneHeight([], all);
+    const withCaption = dynastyLaneHeightForViewport(all, [], viewport, new Map(), new Map());
+
+    expect(withCaption).toBeCloseTo(regularHeight + 16.4, 5);
+    expect(dynastyLaneHeightForViewport(all, [], { ...viewport, pxPerMonth: 100 }, new Map(), new Map()))
+      .toBeCloseTo(regularHeight, 5);
   });
 
   it("halves card height only for truly concurrent same-span reigns", () => {

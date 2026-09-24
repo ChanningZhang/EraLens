@@ -1,0 +1,51 @@
+{
+  "slug": "financial-events",
+  "title": "金融重大事件",
+  "window": {
+    "startYear": 1024,
+    "startMonth": 1,
+    "endYear": 1935,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "minimal",
+  "generatedAt": "2026-09-24",
+  "counts": {
+    "persons": 0,
+    "dynasties": 0,
+    "reigns": 0,
+    "events": 3,
+    "relations": 0
+  },
+  "sources": [
+    {
+      "label": "中国国家博物馆：会子版（交子与宋代纸币）",
+      "url": "https://www.chnmuseum.cn/zp/zpml/201812/t20181218_26121.shtml"
+    },
+    {
+      "label": "中国国家博物馆：中华史诗美术大展（官交子发行）",
+      "url": "https://en.chnmuseum.cn/Portals/0/web/exhibition/exhibitions/161120Chines-Epic/"
+    },
+    {
+      "label": "故宫博物院：康熙皇帝（康熙五十一年政策）",
+      "url": "https://www.dpm.org.cn/court/lineage/226256.html"
+    },
+    {
+      "label": "《清史稿·食货志》原文",
+      "url": "https://www.qj.hk/jingdian/book/79/3872.html"
+    },
+    {
+      "label": "美国国务院历史档案：1935年中国币制改革外交文件",
+      "url": "https://history.state.gov/historicaldocuments/frus1935v03/d613"
+    },
+    {
+      "label": "日本外务省外交史料馆：1935年币制改革研究资料",
+      "url": "https://www.mofa.go.jp/mofaj/files/100512963.pdf"
+    }
+  ],
+  "notes": [
+    "金融 kind 用于具有制度影响的货币发行、税收金融化与币制改革节点。",
+    "本批新增官交子、滋生人丁永不加赋、法币改革三条；与商业事件包合计15条，不超过用户设定的上限。",
+    "一条鞭法未另列：已有张居正改革事件涵盖该项改革，避免重复导入。"
+  ]
+}

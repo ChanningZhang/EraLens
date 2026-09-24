@@ -1,4 +1,5 @@
 import { useMemo, useRef, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   buildLaneOrderIndex,
   capitalsActiveAtAbs,
@@ -36,7 +37,7 @@ import {
 } from "../model/personLayout";
 import {
   assignReignStacks,
-  dynastyLaneHeight,
+  dynastyLaneHeightForViewport,
   partitionReignRecords,
 } from "../model/reignClusters";
 import { expandWindow, filterVisibleDynasties } from "../model/visible";
@@ -62,6 +63,7 @@ export function TimelineStage() {
   const mapDragRef = useRef<{ pointerId: number; x: number; y: number } | null>(null);
   const [mapView, setMapView] = useState({ scale: 1, x: 0, y: 0 });
   const stageViewportHeight = useStageViewportHeight(stageRef);
+  const reduceMotion = useReducedMotion();
   const viewport = useViewport();
   const { data, isLoading, error } = useTimelineData();
 
@@ -201,8 +203,14 @@ export function TimelineStage() {
     return placed.map((dynasty) => {
       const records = collectLaneReigns(dynasty.id, reignsByDynasty, laneGroups);
       const { rulers: reigns, missing: missingReigns } = partitionReignRecords(records);
-      const { rowCount, rowHeights } = assignReignStacks(reigns, laneGroups);
-      const height = dynastyLaneHeight(rowHeights, reigns, laneGroups);
+      const { rowCount } = assignReignStacks(reigns, laneGroups);
+      const height = dynastyLaneHeightForViewport(
+        reigns,
+        laneGroups,
+        viewport,
+        personNames,
+        personDisplay,
+      );
       const chipHeight = TIMELINE_RAIL_CHIP_HEIGHT_PX;
       const chipTop =
         rowCount > 1
@@ -212,7 +220,7 @@ export function TimelineStage() {
       top += height;
       return item;
     });
-  }, [placed, railHeight, reignsByDynasty, laneGroups]);
+  }, [placed, railHeight, reignsByDynasty, laneGroups, viewport, personNames, personDisplay]);
 
   const clusterFrames = useMemo(
     () => clusterFramesForLanes(lanes, data?.dynastyGroups ?? []),
@@ -315,16 +323,18 @@ export function TimelineStage() {
       <div className={styles.guideOverlay} aria-hidden="true">
         <div className={styles.viewportPanel} />
       </div>
-      <div
+      <motion.div
         className={styles.content}
-        style={{ minHeight: `max(100%, ${contentHeight}px)` }}
+        animate={{ minHeight: Math.max(stageViewportHeight, contentHeight) }}
+        transition={{ duration: reduceMotion ? 0 : 0.24, ease: [0.2, 0.8, 0.2, 1] }}
       >
         <div className={styles.rail} aria-hidden="true" />
-        <div
+        <motion.div
           className={styles.lanes}
+          animate={{ minHeight: contentHeight }}
+          transition={{ duration: reduceMotion ? 0 : 0.24, ease: [0.2, 0.8, 0.2, 1] }}
           style={{
             position: "relative",
-            minHeight: contentHeight,
             height: "100%",
           }}
         >
@@ -339,37 +349,43 @@ export function TimelineStage() {
                 请确认 API 服务已启动（pnpm --filter @eralens/api dev）
               </p>
             </div>
-          ) : placed.length === 0 && eventPlaced.length === 0 ? (
-            <div className={styles.empty}>
-              <p className={styles.emptyTitle}>{emptyYearLabel} 前后暂无收录</p>
-              <p className={styles.emptyHint}>拖动底部标尺浏览其他年代</p>
-            </div>
           ) : (
             <>
-              {clusterFrames.map(({ group, top, height, left, width }) => (
-                <DynastyClusterFrame
-                  key={group.id}
-                  group={group}
-                  top={top}
-                  height={height}
-                  left={left}
-                  width={width}
-                />
-              ))}
-              {lanes.map(({ dynasty, reigns, missingReigns, top }) => (
-                <DynastyLane
-                  key={dynasty.id}
-                  dynasty={dynasty}
-                  laneColorToken={laneColorTokenFor(laneColorMap, dynasty.id)}
-                  reigns={reigns}
-                  missingReigns={missingReigns}
-                  dynastiesById={dynastiesById}
-                  personNames={personNames}
-                  personClans={personDisplay}
-                  laneGroups={laneGroups}
-                  top={top}
-                />
-              ))}
+              {placed.length === 0 && eventPlaced.length === 0 && (
+                <div className={styles.empty}>
+                  <p className={styles.emptyTitle}>{emptyYearLabel} 前后暂无收录</p>
+                  <p className={styles.emptyHint}>拖动底部标尺浏览其他年代</p>
+                </div>
+              )}
+              <AnimatePresence initial={false}>
+                {clusterFrames.map(({ group, top, height, left, width }) => (
+                  <DynastyClusterFrame
+                    key={group.id}
+                    group={group}
+                    top={top}
+                    height={height}
+                    left={left}
+                    width={width}
+                  />
+                ))}
+              </AnimatePresence>
+              <AnimatePresence initial={false}>
+                {lanes.map(({ dynasty, reigns, missingReigns, top, height }) => (
+                  <DynastyLane
+                    key={dynasty.id}
+                    dynasty={dynasty}
+                    laneColorToken={laneColorTokenFor(laneColorMap, dynasty.id)}
+                    reigns={reigns}
+                    missingReigns={missingReigns}
+                    dynastiesById={dynastiesById}
+                    personNames={personNames}
+                    personClans={personDisplay}
+                    laneGroups={laneGroups}
+                    top={top}
+                    height={height}
+                  />
+                ))}
+              </AnimatePresence>
             </>
           )}
           {eventPlaced.length > 0 && (
@@ -385,8 +401,8 @@ export function TimelineStage() {
               height={personAreaHeight}
             />
           )}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
       <div className={styles.capitalOverlay} aria-hidden={activeCapitals.length === 0}>
         <div className={styles.viewportPanel}>
           <CapitalMapLayer

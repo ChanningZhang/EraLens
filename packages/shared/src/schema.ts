@@ -217,6 +217,8 @@ export const EventKindSchema = z.enum([
   "politics",
   "culture",
   "disaster",
+  "commerce",
+  "finance",
   "idiom",
   "poetry",
   "other",

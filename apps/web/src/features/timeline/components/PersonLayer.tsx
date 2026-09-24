@@ -1,4 +1,5 @@
 import type { PlacedPerson } from "../model/personLayout";
+import { motion, useReducedMotion } from "framer-motion";
 import { PersonCard } from "./PersonCard";
 import styles from "./PersonLayer.module.css";
 
@@ -9,15 +10,17 @@ type Props = {
 };
 
 export function PersonLayer({ placed, top, height }: Props) {
+  const reduceMotion = useReducedMotion();
   return (
-    <div
+    <motion.div
       className={styles.layer}
-      style={{ top, height }}
+      animate={{ top, height }}
+      transition={{ duration: reduceMotion ? 0 : 0.24, ease: [0.2, 0.8, 0.2, 1] }}
       aria-hidden={placed.length === 0}
     >
       {placed.map((item) => (
         <PersonCard key={item.person.id} placed={item} />
       ))}
-    </div>
+    </motion.div>
   );
 }

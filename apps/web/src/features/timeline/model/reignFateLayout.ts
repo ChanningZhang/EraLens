@@ -24,6 +24,9 @@ export type TimelineLaneLayout = {
 export type PlacedReignFate = {
   id: string;
   path: string;
+  eventX: number;
+  destinationX: number;
+  destinationY: number;
   originX: number;
   originY: number;
   tickX: number;
@@ -214,6 +217,9 @@ export function layoutReignFates(
         destinationAnchorX,
         destinationY,
       ),
+      eventX: roundPx(eventX),
+      destinationX: roundPx(destinationAnchorX),
+      destinationY: roundPx(destinationY),
       originX: roundPx(sourceAnchorX),
       originY: roundPx(sourceY),
       tickX: tick.tickX,

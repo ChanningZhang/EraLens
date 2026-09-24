@@ -137,6 +137,18 @@
   --event-dot-rotate: 45deg;
 }
 
+.marker[data-event-kind="commerce"] {
+  --event-color: var(--color-ochre);
+  --event-fill: color-mix(in srgb, var(--color-ochre) 9%, var(--color-surface));
+  --event-dot-radius: 1px;
+}
+
+.marker[data-event-kind="finance"] {
+  --event-color: var(--color-jade);
+  --event-fill: color-mix(in srgb, var(--color-jade) 9%, var(--color-surface));
+  --event-dot-radius: 1px;
+}
+
 .marker[data-event-kind="poetry"],
 .marker[data-event-kind="idiom"] {
   --event-color: var(--color-wisteria);

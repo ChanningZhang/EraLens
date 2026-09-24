@@ -34,6 +34,7 @@ import {
 } from "./schema";
 import {
   personIntersectsAbsWindow,
+  personSearchAnchorAbs,
   personTimelinePlacement,
 } from "./personTime";
 import { normalizeSearchTerm } from "./personSearchTerms";
@@ -576,12 +577,11 @@ export function searchEntities(store: TimelineDataStore, term: string): SearchHi
   }
   for (const person of store.persons) {
     if (personMatchesSearch(person, q)) {
-      const placement = personTimelinePlacement(person);
       hits.push({
         ref: { type: "person", id: person.id },
         label: person.name,
         subtitle: person.roles.join(" · "),
-        abs: placement?.anchorAbs,
+        abs: personSearchAnchorAbs(person, store.reigns),
       });
     }
   }

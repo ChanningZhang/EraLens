@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   TIMELINE_RAIL_INSET_PX,
   TIMELINE_RAIL_LABEL_WIDTH_PX,
@@ -23,7 +23,6 @@ import type { PlacedDynasty } from "../model/laneLayout";
 import {
   assignReignStacks,
   dynastyBarHeightForReigns,
-  dynastyLaneHeight,
   STACK_ROW_HEIGHT,
 } from "../model/reignClusters";
 import { selectionStore } from "../state/selectionStore";
@@ -51,6 +50,7 @@ type Props = {
   >;
   laneGroups: readonly DynastyLaneGroup[];
   top: number;
+  height: number;
 };
 
 export function DynastyLane({
@@ -63,8 +63,10 @@ export function DynastyLane({
   personClans,
   laneGroups,
   top,
+  height,
 }: Props) {
   const viewport = useViewport();
+  const reduceMotion = useReducedMotion();
   const selection = useSelection();
   const labelAnchorAbs = laneLabelAnchorAbs(viewport);
   const laneGroup = getDynastyLaneGroup(dynasty.id, laneGroups);
@@ -92,15 +94,16 @@ export function DynastyLane({
   // Lane floor / gap cards stay on the persisted token. The frozen name
   // chip overlays orthodox gold when the center guide sits in the window.
   const laneColor = resolveDynastyColorValue(activePhaseDynasty, laneColorToken);
-  const { items, rowCount, rowHeights } = assignReignStacks(reigns, laneGroups);
-  const height = dynastyLaneHeight(rowHeights, reigns, laneGroups);
+  const { items, rowCount } = assignReignStacks(reigns, laneGroups);
   const barHeight = dynastyBarHeightForReigns(reigns, laneGroups);
   return (
-    <div
+    <motion.div
       className={styles.lane}
+      initial={reduceMotion ? false : { top: top + 10, height, opacity: 0 }}
+      animate={{ top, height, opacity: 1 }}
+      exit={{ opacity: 0, transition: { duration: reduceMotion ? 0 : 0.14 } }}
+      transition={{ duration: reduceMotion ? 0 : 0.24, ease: [0.2, 0.8, 0.2, 1] }}
       style={{
-        top,
-        height,
         ["--dynasty-color" as string]: laneColor,
         ["--stack-row-height" as string]: `${STACK_ROW_HEIGHT}px`,
         ["--dynasty-bar-height" as string]: `${barHeight}px`,
@@ -182,6 +185,6 @@ export function DynastyLane({
           })}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -56,6 +56,36 @@ const hanLast: Reign = {
 };
 
 describe("layoutReignFates", () => {
+  it("projects fate anchors onto the current horizontal viewport without changing their lane heights", () => {
+    const relation: Relation = {
+      id: "rel-han-r10-ying-zheng-surrender",
+      fromRef: "person:han-r10",
+      toRef: "person:ying-zheng",
+      kind: "surrender",
+      atAbs: absMonth(-230, 12),
+    };
+    const lanes = [
+      { dynastyId: "han-warring", top: 80, records: [hanLast], color: COLOR_VALUES.grape },
+      { dynastyId: "qin", top: 140, records: [yingZhengQin], color: COLOR_VALUES.cinnabar },
+    ];
+    const names = new Map([["han-r10", "韩王安"], ["ying-zheng", "嬴政"]]);
+    const shiftedViewport = {
+      ...viewport,
+      centerAbs: viewport.centerAbs + 12,
+      startAbs: viewport.startAbs + 12,
+      endAbs: viewport.endAbs + 12,
+    };
+    const before = layoutReignFates([relation], [hanLast, yingZhengQin], lanes, viewport, names)[0]!;
+    const after = layoutReignFates([relation], [hanLast, yingZhengQin], lanes, shiftedViewport, names)[0]!;
+
+    expect(after.eventX).toBeCloseTo(projectAbs(shiftedViewport, relation.atAbs), 1);
+    expect(after.eventX - before.eventX).toBeCloseTo(-12 * viewport.pxPerMonth, 1);
+    expect(after.originX - before.originX).toBeCloseTo(-12 * viewport.pxPerMonth, 1);
+    expect(after.destinationX - before.destinationX).toBeCloseTo(-12 * viewport.pxPerMonth, 1);
+    expect(after.originY).toBe(before.originY);
+    expect(after.destinationY).toBe(before.destinationY);
+  });
+
   it("keeps the vertical fate segment at the event date when the receiver accedes later", () => {
     const yangGuang: Reign = {
       id: "reign-yang-guang-sui",
