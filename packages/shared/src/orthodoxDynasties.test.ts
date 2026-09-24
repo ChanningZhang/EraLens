@@ -187,7 +187,7 @@ describe("orthodoxDynasties", () => {
     expect(isOrthodoxReign(hanWest, gaozu)).toBe(true);
   });
 
-  it("gives gold to the Sui main line including orthodox 杨侑", () => {
+  it("keeps the Sui main line gold and parallel claimants unhighlighted", () => {
     const sui = {
       id: "sui",
       startAbs: absMonth(581),
@@ -196,11 +196,11 @@ describe("orthodoxDynasties", () => {
       orthodoxEndAbs: ORTHODOX_END_ABS.sui,
     };
     const yangGuang = { startAbs: absMonth(604), endAbs: absMonth(618) };
-    const yangHao = { startAbs: absMonth(618), endAbs: absMonth(618) };
-    const yangYou = { startAbs: absMonth(617), endAbs: absMonth(618) };
+    const yangHao = { startAbs: absMonth(618), endAbs: absMonth(618), claimTrack: "jiangdu", claimRole: "rival" as const };
+    const yangYou = { startAbs: absMonth(617), endAbs: absMonth(618), claimTrack: "changan", claimRole: "rival" as const };
     expect(isOrthodoxReign(sui, yangGuang)).toBe(true);
-    expect(isOrthodoxReign(sui, yangHao)).toBe(true);
-    expect(isOrthodoxReign(sui, yangYou)).toBe(true);
+    expect(isOrthodoxReign(sui, yangHao)).toBe(false);
+    expect(isOrthodoxReign(sui, yangYou)).toBe(false);
   });
 
   it("marks prc as orthodox from founding in 1949-10", () => {

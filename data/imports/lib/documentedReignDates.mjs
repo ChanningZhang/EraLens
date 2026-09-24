@@ -81,7 +81,10 @@ export const DOCUMENTED_REIGN_DATES = {
   // ── 隋 ──────────────────────────────────────────────────────────────────
   "reign-yang-jian": { start: [581, 3, 4], end: [604, 8, 13] },
   "reign-yang-guang": { start: [604, 8, 13], end: [618, 4, 11] },
-  "reign-yang-hao": { start: [618, 4, 11], end: [618, 5, 24] },
+  // 《新唐书·高祖本纪》：武德元年九月辛未（618-10-23），宇文化及杀秦王浩。
+  "reign-yang-hao": { start: [618, 4, 11], end: [618, 10, 23] },
+  // 即位日据《新唐书·高祖本纪》；终日按本项目采用的公历换算记为619-03-21。
+  "reign-yuwen-huaji-xu": { start: [618, 10, 23], end: [619, 3, 21] },
   "reign-yang-you": { start: [617, 12, 18], end: [618, 6, 12] },
   "reign-yang-tong": { start: [618, 6, 22], end: [619, 5, 23] },
 

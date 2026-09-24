@@ -803,6 +803,15 @@ export function buildFateCatalog() {
       resolveAt: () => ymDay(618, 4, 11),
     },
     {
+      // 《新唐书·高祖本纪》：武德元年九月辛未，宇文化及杀秦王浩并自称皇帝。
+      id: "rel-yang-hao-yuwen-huaji-killed",
+      fromPersonId: "yang-hao",
+      toPersonId: "yuwen-huaji",
+      kind: "killed",
+      eventId: "yang-hao-killed",
+      resolveAt: () => ymDay(618, 10, 23),
+    },
+    {
       id: "rel-yang-you-li-yuan-abdication",
       fromPersonId: "yang-you",
       toPersonId: "li-yuan",

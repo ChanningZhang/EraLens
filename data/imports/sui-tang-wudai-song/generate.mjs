@@ -338,9 +338,12 @@ const dynasties = [
 const suiReignsCore = [
   dynastyReign("sui", "yang-jian", "隋文帝", "文皇帝", null, 581, 604, eras("reign-yang-jian", [{ name: "开皇", sy: 581, ey: 600 }, { name: "仁寿", sy: 601, ey: 604 }])),
   dynastyReign("sui", "yang-guang", "隋炀帝", "炀皇帝", null, 604, 618, eras("reign-yang-guang", [{ name: "大业", sy: 605, ey: 618 }])),
-  dynastyReign("sui", "yang-you", "隋恭帝", "恭帝", null, 617, 618),
 ];
 const suiReignsParallel = [
+  dynastyReign("sui", "yang-you", "隋恭帝", "恭帝", null, 617, 618, [], {
+    track: "changan",
+    label: "长安",
+  }),
   dynastyReign("sui", "yang-hao", "隋秦王", null, null, 618, 618, [], {
     track: "jiangdu",
     label: "江都",
@@ -511,7 +514,7 @@ const songSouthReigns = [
   drDay("song-south", "zhao-bing", "宋帝昺", null, null, 1278, 5, 10, 1279, 3, 19),
 ];
 
-// 杨侑为正统主线；杨浩、杨侗为隋末并立的非正统君王。
+// 杨侑、杨浩、杨侗均另立于隋末主线之外，使用并立 track。
 const reignGroups = [suiReignsCore, tangReigns, zhouWuReigns, wudaiReigns, shiguoReigns, songNorthReigns, songSouthReigns];
 const reigns = applyDocumentedDatesToReigns(
   [suiReigns, xuReigns, tangReigns, zhouWuReigns, wudaiReigns, shiguoReigns, songNorthReigns, songSouthReigns].flat(),
@@ -550,6 +553,17 @@ const events = [
     dynastyIds: ["sui"],
     participantIds: ["yang-guang", "yuwen-huaji"],
     summary: "宇文化及发动江都兵变，隋炀帝杨广被弑；随后江都军拥立杨浩。",
+  }),
+  eventPoint({
+    id: "yang-hao-killed",
+    name: "宇文化及杀秦王杨浩",
+    kind: "politics",
+    precision: "day",
+    dateNote: "武德元年九月辛未，618年10月23日，《新唐书·高祖本纪》记宇文化及杀秦王浩并自称皇帝",
+    at: ymDay(618, 10, 23),
+    dynastyIds: ["sui", "xu"],
+    participantIds: ["yang-hao", "yuwen-huaji"],
+    summary: "宇文化及杀隋秦王杨浩，随后自称皇帝，建立许政权。",
   }),
   eventPoint({ id: "xuanwumen", name: "玄武门之变", kind: "politics", precision: "month", dateNote: "武德九年六月，626年", at: ym(626, 7), dynastyIds: ["tang"], participantIds: ["li-shimin"], summary: "李世民发动政变，杀兄弟即位太子，后登基。" }),
   eventPoint({ id: "hulao-battle", name: "虎牢关之战", kind: "battle", precision: "month", dateNote: "武德四年四月，李世民大败窦建德", at: ym(621, 4), dynastyIds: ["tang"], participantIds: ["li-shimin"], summary: "李世民于虎牢关以少胜多，俘窦建德、王世充，唐朝统一中原。" }),
@@ -654,6 +668,7 @@ const sql = [
   "-- EraLens period import: sui-tang-wudai-song",
   "-- Window: 581-01 .. 1279-12",
   "BEGIN;",
+  "DELETE FROM relations WHERE id = 'rel-yang-guang-yang-you-succession';",
   "DELETE FROM relations WHERE id = 'rel-yang-guang-yang-hao-succession';",
   "DELETE FROM relations WHERE from_type = 'event' AND from_id IN ('zhu-wen-usurp', 'chenqiao-mutiny', 'yang-you-enthroned', 'yang-hao-enthroned', 'yang-tong-enthroned');",
   "DELETE FROM event_participants WHERE event_id IN ('yang-you-enthroned', 'yang-hao-enthroned', 'yang-tong-enthroned');",
@@ -710,7 +725,7 @@ const manifest = {
     "十国各政权收录全部君主；五代收录全部皇帝。",
     "1279 崖山海战为南宋终结；元朝不在本包内。",
     "李显、李旦两度即位，在位拆为两段；690–705 年武周武则天，不与唐中宗重叠。",
-    "隋末并行用 claim_track：主线文帝→炀帝→杨侑（正统）；jiangdu/杨浩、luoyang/杨侗为非正统并立君王，不镀金、不串进主线继承链。",
+    "隋末并行用 claim_track：杨侑在炀帝仍在位时于长安另立，使用 changan/长安并立 track；江都杨浩、洛阳杨侗也为并立君王。并立者不镀金、不串进主线继承链。",
     "杨广于618-04-11在江都被宇文化及所弑；宇文化及随后建立许政权，命运线准确挂接至其许帝卡。",
     "杨侗起始在位日按《资治通鉴》卷一八五及《资治通鉴》所记武德元年五月戊辰换算为618-06-22；《旧唐书》异记618-06-21。终点取619-05-23禅位日。",
     "南宋正统金色止于恭帝降元（1276-02）；端宗、帝昺接在恭帝之后走主线继承，但不计正统。",
