@@ -1,0 +1,184 @@
+{
+  "slug": "event-locations",
+  "title": "战争事件地点",
+  "window": {
+    "startYear": 9999,
+    "startMonth": 1,
+    "endYear": 9999,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "importPhase": "post",
+  "generatedAt": "2026-09-24",
+  "counts": {
+    "persons": 0,
+    "dynasties": 0,
+    "reigns": 0,
+    "events": 0,
+    "relations": 0,
+    "eventLocations": 37
+  },
+  "sources": [
+    {
+      "label": "云州区人民政府：白登之战遗址",
+      "url": "https://www.yunzhou.gov.cn/yzqrmzfz/sqglcyjj/202007/7efb8d970c9c42b9b94471068b663e55.shtml"
+    },
+    {
+      "label": "白登山汉代遗迹调查",
+      "url": "https://m.fx361.com/news/2018/0814/16088578.html"
+    },
+    {
+      "label": "大同市平城区人民政府：白登山定位争议",
+      "url": "https://www.pingcheng.gov.cn/pcqrmzfz/pingcheng1/202407/46e23c04a12f4ae1ad034e0ef57d8039.shtml"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/长坂坡之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/逍遥津之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/汉中之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/定军山之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/樊城之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/濡须之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/街亭之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/石亭之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/五丈原"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/官渡之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/赤壁之戰"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/夷陵之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/桂陵之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/馬陵之戰"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/长平之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/巨鹿之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/垓下"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/昆阳之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/淝水之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/虎牢关之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/项梁"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/郾城之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/采石之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/高梁河之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/襄阳之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/崖门海战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/天京之役"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/高句丽"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/赤眉军"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/元大都"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/土木之变"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/北京保卫战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/萨尔浒之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/宁远之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/松锦之战"
+    },
+    {
+      "label": "地点资料",
+      "url": "https://zh.wikipedia.org/wiki/澎湖海战"
+    }
+  ],
+  "notes": [
+    "仅为可定位到具体遗址或区域的战争事件补地点；战场范围以近似点表达。存在定位争议者在地点 note 中说明。未能可靠定位的战争保持地点为空。",
+    "坐标采用 WGS84；来源链接用于核对古称、今地与地点定位。"
+  ]
+}

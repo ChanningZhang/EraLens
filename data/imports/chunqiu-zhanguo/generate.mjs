@@ -153,6 +153,7 @@ const yueSpan = dynastyReignSpan("yue-chunqiu");
 const zhongshanSpan = dynastyReignSpan("zhongshan");
 
 const DYNASTY_LABELS = {
+  "zou-state": "邹国",
   "qi-chunqiu": "齐国",
   "jin-chunqiu": "晋国",
   "chu-chunqiu": "楚国",
@@ -329,6 +330,17 @@ const persons = [...personById.values()];
 
 
 const dynasties = [
+  {
+    id: "zou-state",
+    name: "邹",
+    altNames: ["邹国", "邾国", "邾娄"],
+    scope: "cn",
+    region: "east_asia",
+    start: ym(-1046),
+    end: ym(-256, 12),
+    precision: "year",
+    note: "周代曹姓诸侯国，春秋称邾或邾娄，战国至孟子时称邹。传统始封年代按周初纪年；楚灭邹年份依战国末年通行说。君主世系跨多种文献辑录，部分在位年依可考君主锚点与连续世系均分插值；前471年至约前382年有未能交叉验证的断层，未跨段补齐。",
+  },
   {
     id: "qi-chunqiu",
     name: "齐",
@@ -899,6 +911,10 @@ const manifest = {
     existingEventDynastyLinks: existingEventDynasties.length,
   },
   sources: [
+    { label: "孟子志：邾国至邹国沿革及孟子里籍（山东省情资料库）", url: "https://shandong-chorography.org/database/zzmj/section/19/article/7/" },
+    { label: "邾国君主世系及所据传世文献", url: "https://zh.wikipedia.org/wiki/邾国" },
+    { label: "邾文公在位年表（《左传》相关纪事）", url: "https://ctext.org/datawiki.pl?if=gb&res=980150" },
+    { label: "邹穆公与孟子", url: "https://ctext.org/dictionary.pl?did=711&if=en" },
     { label: "春秋时期", url: "https://zh.wikipedia.org/wiki/春秋时期" },
     { label: "战国时期", url: "https://zh.wikipedia.org/wiki/战国时期" },
     { label: "战国七雄", url: "https://zh.wikipedia.org/wiki/战国七雄" },
@@ -922,6 +938,7 @@ const manifest = {
   ],
   notes: [
     "收录春秋主要列国与战国七雄（齐楚燕韩赵魏秦）及宋鲁卫郑曹吴越中山等。",
+    "新增邹（春秋称邾、邾娄）国君卡：周初始封至邾武公前796年之间连续七世按共同边界均分；前780年邾子夏父至前678年邾子克之间，按世系所记的一世失考将三段均分；邾文公等依据君主年表收录。邹穆公约前382—前330年依地方人物资料，区间标 approximate。前471至约前382年世系与年代锚点不足，保留空档，不跨断层插值。",
     "列国泳道名用国号（齐、楚、韩），与夏商周秦汉一致，不带「国」；「齐国」等写入 alt_names。",
     "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
     "秦国 upsert 已有 qin 行，将始年延至前778年秦襄公即位，与 qin-han 统一帝国段衔接；清理脚本保留 qin-han 的秦二世、子婴 reign。",

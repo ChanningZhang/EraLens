@@ -132,3 +132,34 @@ export function projectGcj02(
       layout.height;
   return { x, y };
 }
+
+/** Convert domestic WGS84 event coordinates to the GCJ-02 frame used by the map. */
+export function wgs84ToGcj02(lng: number, lat: number): MapPoint {
+  if (lng < 72.004 || lng > 137.8347 || lat < 0.8293 || lat > 55.8271) {
+    return { x: lng, y: lat };
+  }
+  const transformLat = (x: number, y: number) => {
+    let value = -100 + 2 * x + 3 * y + 0.2 * y * y + 0.1 * x * y + 0.2 * Math.sqrt(Math.abs(x));
+    value += ((20 * Math.sin(6 * x * Math.PI) + 20 * Math.sin(2 * x * Math.PI)) * 2) / 3;
+    value += ((20 * Math.sin(y * Math.PI) + 40 * Math.sin((y / 3) * Math.PI)) * 2) / 3;
+    value += ((160 * Math.sin((y / 12) * Math.PI) + 320 * Math.sin((y * Math.PI) / 30)) * 2) / 3;
+    return value;
+  };
+  const transformLng = (x: number, y: number) => {
+    let value = 300 + x + 2 * y + 0.1 * x * x + 0.1 * x * y + 0.1 * Math.sqrt(Math.abs(x));
+    value += ((20 * Math.sin(6 * x * Math.PI) + 20 * Math.sin(2 * x * Math.PI)) * 2) / 3;
+    value += ((20 * Math.sin(x * Math.PI) + 40 * Math.sin((x / 3) * Math.PI)) * 2) / 3;
+    value += ((150 * Math.sin((x / 12) * Math.PI) + 300 * Math.sin((x / 30) * Math.PI)) * 2) / 3;
+    return value;
+  };
+  const a = 6378245;
+  const eccentricity = 0.006693421622965943;
+  const deltaLat = transformLat(lng - 105, lat - 35);
+  const deltaLng = transformLng(lng - 105, lat - 35);
+  const radLat = (lat / 180) * Math.PI;
+  const magic = 1 - eccentricity * Math.sin(radLat) ** 2;
+  const sqrtMagic = Math.sqrt(magic);
+  const adjustedLat = (deltaLat * 180) / (((a * (1 - eccentricity)) / (magic * sqrtMagic)) * Math.PI);
+  const adjustedLng = (deltaLng * 180) / ((a / sqrtMagic) * Math.cos(radLat) * Math.PI);
+  return { x: lng + adjustedLng, y: lat + adjustedLat };
+}

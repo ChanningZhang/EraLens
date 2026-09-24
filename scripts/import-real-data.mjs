@@ -23,6 +23,7 @@ TRUNCATE TABLE
   event_dynasties,
   relations,
   events,
+  event_locations,
   reigns,
   dynasty_capitals,
   dynasties,
@@ -43,6 +44,7 @@ function listPackages() {
         slug: entry.name,
         sql,
         startYear: manifest.window?.startYear ?? Number.MAX_SAFE_INTEGER,
+        importPhase: manifest.importPhase ?? "normal",
       };
     })
     .filter(Boolean)
@@ -143,7 +145,9 @@ function fail(message, detail) {
 }
 
 function main() {
-  const packages = listPackages();
+  const allPackages = listPackages();
+  const packages = allPackages.filter((pkg) => pkg.importPhase !== "post");
+  const postPackages = allPackages.filter((pkg) => pkg.importPhase === "post");
   if (packages.length === 0) fail("No data/imports/{slug}/import.sql found");
 
   waitForPostgres();
@@ -155,7 +159,7 @@ function main() {
   // Some event and capital packages refer to dynasties owned by later period
   // packages. Seed the shared lookup table first so deferred package imports
   // can resolve those foreign keys without changing package ownership/order.
-  preseedDynasties(packages);
+  preseedDynasties(allPackages);
 
   let remaining = packages;
   const maxPasses = packages.length;
@@ -183,6 +187,13 @@ function main() {
       fail("No progress applying imports.");
     }
     remaining = failed;
+  }
+
+  for (const pkg of postPackages) {
+    process.stdout.write(`  [${pkg.slug}] `);
+    const result = dockerPsql(readFileSync(pkg.sql));
+    if (result.status !== 0) fail(`Failed to apply post-import package ${pkg.slug}`, result.stderr || result.stdout);
+    console.log("ok (post-import)");
   }
 
   updatePersonTitles();

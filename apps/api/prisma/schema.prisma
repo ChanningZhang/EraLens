@@ -135,13 +135,31 @@ model Event {
   summary     String?
   meaning     String?
   content     String?
+  locationId  String?             @map("location_id")
+  location    EventLocation?      @relation(fields: [locationId], references: [id], onDelete: SetNull)
   dynasties   EventDynasty[]
   participants EventParticipant[]
 
   @@index([atYear])
   @@index([startYear])
   @@index([endYear])
+  @@index([locationId])
   @@map("events")
+}
+
+model EventLocation {
+  id               String   @id
+  historicalName   String   @map("historical_name")
+  modernName       String   @map("modern_name")
+  longitude        Decimal  @db.Decimal(10, 7)
+  latitude         Decimal  @db.Decimal(10, 7)
+  coordinateSystem String   @default("WGS84") @map("coordinate_system")
+  precision        String   @default("approximate")
+  note             String?
+  links            Json     @default("[]")
+  events           Event[]
+
+  @@map("event_locations")
 }
 
 model EventDynasty {

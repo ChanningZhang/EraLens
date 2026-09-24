@@ -17,6 +17,7 @@ import type {
   DynastyGroup as DbDynastyGroup,
   DynastyLaneGroup as DbDynastyLaneGroup,
   Event as DbEvent,
+  EventLocation as DbEventLocation,
   Person as DbPerson,
   Reign as DbReign,
   Relation as DbRelation,
@@ -125,6 +126,7 @@ export type RawEventRow = {
   summary: string | null;
   meaning: string | null;
   content: string | null;
+  location_id: string | null;
 };
 
 export function mapPerson(row: DbPerson): Person {
@@ -350,6 +352,7 @@ export function mapEvent(
   row: (DbEvent | RawEventRow) & {
     dynasties: { dynastyId: string }[];
     participants: { personId: string }[];
+    location?: DbEventLocation | null;
   },
 ): Event {
   const atYear = "atYear" in row ? row.atYear : row.at_year;
@@ -386,6 +389,18 @@ export function mapEvent(
     summary: row.summary ?? undefined,
     meaning: meaning ?? undefined,
     content: row.content ?? undefined,
+    locationId: ("locationId" in row ? row.locationId : row.location_id) ?? undefined,
+    location: row.location ? {
+      id: row.location.id,
+      historicalName: row.location.historicalName,
+      modernName: row.location.modernName,
+      longitude: Number(row.location.longitude),
+      latitude: Number(row.location.latitude),
+      coordinateSystem: row.location.coordinateSystem,
+      precision: row.location.precision,
+      note: row.location.note ?? undefined,
+      links: Array.isArray(row.location.links) ? row.location.links as { label: string; url: string }[] : [],
+    } : undefined,
   };
 }
 

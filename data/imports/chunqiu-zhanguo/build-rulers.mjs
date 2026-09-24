@@ -229,7 +229,50 @@ const MULTI_REIGN_SPAN_EXPANSIONS = {
 };
 
 // Short enthronements absent from the merged Wikipedia ruler table.
+const zouEarlyNames = [
+  ["zou-r1", "曹挟", "邾子挟"], ["zou-r2", "曹非", "邾子非"],
+  ["zou-r3", "曹成", "邾子成"], ["zou-r4", "曹车辅", "邾子车辅"],
+  ["zou-r5", "曹将新", "邾子将新"], ["zou-r6", "曹訾父", "邾子訾父"],
+  ["zou-r7", "曹夷父", "邾武公"],
+];
+const zouEarlyRulers = zouEarlyNames.map(([personId, personName, title], index) => {
+  const yearAt = (n) => -1046 + Math.floor((251 * n) / 7);
+  return {
+    dynastyId: "zou-state", personId, title, personName, posthumousName: index === 6 ? "武公" : null,
+    startYear: yearAt(index), endYear: yearAt(index + 1) - 1,
+    startDateConfidence: "interpolated",
+    endDateConfidence: index === 6 ? null : "interpolated",
+    reignId: `reign-${personId}-zou-state`,
+  };
+});
+const zouDatedRulers = [
+  ["zou-r8", "曹叔术", "邾子叔术", -795, -781, null],
+  ["zou-r9", "曹夏父", "邾子夏父", -780, -747, null],
+  ["system-missing-ruler", "史料缺", "史料缺", -746, -713, null],
+  ["zou-r11", "曹克", "邾子克", -712, -678, null],
+  ["zou-r12", "曹琐", "邾子琐", -677, -666, null],
+  ["zou-r13", "曹蘧蒢", "邾文公", -665, -615, "文公"],
+  ["zou-r14", "曹貜且", "邾定公", -614, -573, "定公"],
+  ["zou-r15", "曹牼", "邾宣公", -572, -556, "宣公"],
+  ["zou-r16", "曹华", "邾悼公", -555, -541, "悼公"],
+  ["zou-r17", "曹穿", "邾庄公", -540, -507, "庄公"],
+  ["zou-r18", "曹益", "邾隐公", -506, -471, "隐公"],
+  ["zou-mu-gong", "曹某", "邹穆公", -382, -330, "穆公"],
+].map(([personId, personName, title, startYear, endYear, posthumousName]) => ({
+  dynastyId: "zou-state", personId, personName, title, startYear, endYear, posthumousName,
+  ...(personId === "zou-mu-gong"
+    ? { startDateConfidence: "approximate", endDateConfidence: "approximate" }
+    : personId === "zou-r9"
+      ? { endDateConfidence: "interpolated" }
+      : personId === "system-missing-ruler"
+        ? { startDateConfidence: "interpolated", endDateConfidence: "interpolated" }
+        : personId === "zou-r11"
+          ? { startDateConfidence: "interpolated" }
+          : {}),
+  reignId: `reign-${personId}-zou-state`,
+}));
 const CURATED_REIGN_ADDITIONS = {
+  "zou-state": [...zouEarlyRulers, ...zouDatedRulers],
   "wu-chunqiu": [
     {
       dynastyId: "wu-chunqiu",
@@ -1124,6 +1167,7 @@ function enrichRulers(dynastyId, rulers) {
 }
 
 const DYNASTY_SOURCES = {
+  "zou-state": () => [],
   "qi-chunqiu": () => parseQi(),
   "jin-chunqiu": () => parseState("晋国", "jin-chunqiu"),
   "chu-chunqiu": () => parseState("楚国", "chu-chunqiu", { keepFromTitle: "熊绎" }),

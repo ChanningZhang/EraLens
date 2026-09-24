@@ -15,6 +15,7 @@
 .guideOverlay,
 .content,
 .capitalOverlay,
+.warOverlay,
 .mapControlsOverlay {
   grid-area: stack;
 }
@@ -23,6 +24,7 @@
 .mapUnderlay,
 .guideOverlay,
 .capitalOverlay,
+.warOverlay,
 .mapControlsOverlay {
   position: sticky;
   top: 0;
@@ -42,6 +44,10 @@
 }
 
 .capitalOverlay {
+  z-index: 6;
+}
+
+.warOverlay {
   z-index: 6;
 }
 

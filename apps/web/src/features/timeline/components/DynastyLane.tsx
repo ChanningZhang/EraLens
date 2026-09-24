@@ -28,6 +28,8 @@ import {
 import { selectionStore } from "../state/selectionStore";
 import { ReignCard } from "./ReignCard";
 import { ReignGapCard } from "./ReignGapCard";
+import { EventLayer } from "./EventLayer";
+import type { PlacedEvent } from "../model/eventLayout";
 import styles from "./DynastyLane.module.css";
 
 type Props = {
@@ -51,6 +53,7 @@ type Props = {
   laneGroups: readonly DynastyLaneGroup[];
   top: number;
   height: number;
+  badges: PlacedEvent[];
 };
 
 export function DynastyLane({
@@ -64,6 +67,7 @@ export function DynastyLane({
   laneGroups,
   top,
   height,
+  badges,
 }: Props) {
   const viewport = useViewport();
   const reduceMotion = useReducedMotion();
@@ -185,6 +189,7 @@ export function DynastyLane({
           })}
         </div>
       </div>
+      <EventLayer placed={badges} height={height} laneBadges />
     </motion.div>
   );
 }

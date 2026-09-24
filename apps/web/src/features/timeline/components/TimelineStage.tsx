@@ -7,6 +7,7 @@ import {
   collapseDynastyLaneGroups,
   collectLaneReigns,
   compareTimedOrder,
+  eventSpanAbs,
   formatYear,
   fromAbsMonth,
   fallbackLaneColorToken,
@@ -27,8 +28,9 @@ import {
   eventTargetReign,
   EVENT_BADGE_HALF_HEIGHT,
   eventRailHeight,
+  filterViewportEvents,
   layoutEvents,
-  layoutEventBadges,
+  layoutPlacedEventBadges,
 } from "../model/eventLayout";
 import { assignLanes } from "../model/laneLayout";
 import { shouldShowEvent, shouldShowPersons } from "../model/lod";
@@ -41,12 +43,15 @@ import {
 } from "../model/personLayout";
 import {
   assignReignStacks,
+  dynastyBarHeightForReigns,
   dynastyLaneHeightForViewport,
   LANE_PADDING_TOP,
   partitionReignRecords,
+  resolveStackedCardUnit,
 } from "../model/reignClusters";
 import { expandWindow, filterVisibleDynasties } from "../model/visible";
 import { CapitalMapLayer } from "./CapitalMapLayer";
+import { WarEventMapLayer } from "./WarEventMapLayer";
 import { ChinaMapBackground } from "./ChinaMapBackground";
 import { DynastyClusterFrame } from "./DynastyClusterFrame";
 import { DynastyLane } from "./DynastyLane";
@@ -55,7 +60,6 @@ import { PersonLayer } from "./PersonLayer";
 import { ReignFateLayer } from "./ReignFateLayer";
 import styles from "./TimelineStage.module.css";
 import { layoutReignFates } from "../model/reignFateLayout";
-import { layoutLaneReignBar } from "../model/reignCardLayout";
 
 function laneColorTokenFor(
   map: ReadonlyMap<string, ReturnType<typeof fallbackLaneColorToken>>,
@@ -135,6 +139,16 @@ export function TimelineStage() {
     () => capitalsActiveAtAbs(capitalsQuery.data ?? [], labelAnchorAbs),
     [capitalsQuery.data, labelAnchorAbs],
   );
+  const nearbyWarEvents = useMemo(() => {
+    if (!data) return [];
+    const windowStart = viewport.centerAbs - 60;
+    const windowEnd = viewport.centerAbs + 60;
+    return data.events.filter((event) => {
+      if (event.kind !== "battle" || !event.location) return false;
+      const span = eventSpanAbs(event);
+      return span.startAbs <= windowEnd && span.endAbs >= windowStart;
+    });
+  }, [data, viewport.centerAbs]);
   const dynastyNamesById = useMemo(() => {
     const map = new Map<string, string>();
     for (const dynasty of timelineCatalog?.dynasties ?? []) {
@@ -147,7 +161,10 @@ export function TimelineStage() {
 
   const { railEvents, badgeEvents, badgePositions } = useMemo(() => {
     if (!data) return { railEvents: [], badgeEvents: [], badgePositions: new Map() };
-    const visible = data.events.filter((event) => shouldShowEvent(event, viewport.lod));
+    const visible = filterViewportEvents(
+      data.events.filter((event) => shouldShowEvent(event, viewport.lod)),
+      viewport,
+    );
     const laneIdByDynastyId = new Map<string, string>();
     for (const dynasty of placed) {
       laneIdByDynastyId.set(dynasty.id, dynasty.id);
@@ -156,10 +173,11 @@ export function TimelineStage() {
         laneIdByDynastyId.set(phaseId, dynasty.id);
       }
     }
-    const badgePositions = layoutEventBadges(visible, viewport, laneIdByDynastyId);
+    const projected = layoutEvents(visible, viewport);
+    const badgePositions = layoutPlacedEventBadges(projected, laneIdByDynastyId, viewport.widthPx);
     return {
       railEvents: visible.filter((event) => !badgePositions.has(event.id)),
-      badgeEvents: visible.filter((event) => badgePositions.has(event.id)),
+      badgeEvents: projected.filter((item) => badgePositions.has(item.event.id)),
       badgePositions,
     };
   }, [data, viewport, placed, laneGroups]);
@@ -219,19 +237,30 @@ export function TimelineStage() {
     return map;
   }, [data]);
 
+  // Card height depends on zoom and records, not the horizontal pan position.
+  const laneHeightCache = useMemo(
+    () => new Map<string, number>(),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [reignsByDynasty, laneGroups, viewport.pxPerMonth, personNames, personDisplay],
+  );
+
   const lanes = useMemo(() => {
     let top = railHeight;
     return placed.map((dynasty) => {
       const records = collectLaneReigns(dynasty.id, reignsByDynasty, laneGroups);
       const { rulers: reigns, missing: missingReigns } = partitionReignRecords(records);
       const { rowCount } = assignReignStacks(reigns, laneGroups);
-      const height = dynastyLaneHeightForViewport(
-        reigns,
-        laneGroups,
-        viewport,
-        personNames,
-        personDisplay,
-      );
+      let height = laneHeightCache.get(dynasty.id);
+      if (height == null) {
+        height = dynastyLaneHeightForViewport(
+          reigns,
+          laneGroups,
+          viewport,
+          personNames,
+          personDisplay,
+        );
+        laneHeightCache.set(dynasty.id, height);
+      }
       const chipHeight = TIMELINE_RAIL_CHIP_HEIGHT_PX;
       const chipTop =
         rowCount > 1
@@ -242,32 +271,43 @@ export function TimelineStage() {
       top += height;
       return item;
     });
-  }, [placed, railHeight, reignsByDynasty, laneGroups, viewport, personNames, personDisplay]);
+  }, [placed, railHeight, reignsByDynasty, laneGroups, viewport, personNames, personDisplay, laneHeightCache]);
 
   const badgePlaced = useMemo(() => {
     const laneById = new Map(lanes.map((lane) => [lane.dynasty.id, lane]));
-    return layoutEvents(badgeEvents, viewport).map((item) => {
+    return badgeEvents.map((item) => {
       const position = badgePositions.get(item.event.id);
       const lane = laneById.get(position?.laneId ?? "");
       const reign = lane && eventTargetReign(item.event, lane.reigns);
-      const card = reign && lane && layoutLaneReignBar(
-        reign,
-        lane.dynasty.id,
-        lane.reigns,
-        viewport,
-        lane.top,
-        personNames.get(reign.personId),
-        personDisplay.get(reign.personId),
-        laneGroups,
-      );
+      const unit = reign && lane && resolveStackedCardUnit(reign, lane.reigns, laneGroups);
       return {
         ...item,
         badgeOriginX: item.anchorX,
         anchorX: position?.anchorX ?? item.anchorX,
-        top: card ? card.barTop - EVENT_BADGE_HALF_HEIGHT : lane?.badgeTop ?? item.top,
+        top: position?.edge === "bottom"
+          ? lane
+            ? LANE_PADDING_TOP + (unit
+              ? unit.unitTop + unit.unitHeight
+              : dynastyBarHeightForReigns(lane.reigns, laneGroups)) - EVENT_BADGE_HALF_HEIGHT
+            : item.top
+          : unit
+            ? LANE_PADDING_TOP + unit.unitTop - EVENT_BADGE_HALF_HEIGHT
+            : lane ? lane.badgeTop - lane.top : item.top,
       };
     });
-  }, [badgeEvents, badgePositions, lanes, viewport, personNames, personDisplay, laneGroups]);
+  }, [badgeEvents, badgePositions, lanes, laneGroups]);
+
+  const badgesByLane = useMemo(() => {
+    const map = new Map<string, typeof badgePlaced>();
+    for (const badge of badgePlaced) {
+      const laneId = badgePositions.get(badge.event.id)?.laneId;
+      if (!laneId) continue;
+      const items = map.get(laneId) ?? [];
+      items.push(badge);
+      map.set(laneId, items);
+    }
+    return map;
+  }, [badgePlaced, badgePositions]);
 
   const clusterFrames = useMemo(
     () => clusterFramesForLanes(lanes, data?.dynastyGroups ?? []),
@@ -430,6 +470,7 @@ export function TimelineStage() {
                     laneGroups={laneGroups}
                     top={top}
                     height={height}
+                    badges={badgesByLane.get(dynasty.id) ?? []}
                   />
                 ))}
               </AnimatePresence>
@@ -437,9 +478,6 @@ export function TimelineStage() {
           )}
           {eventPlaced.length > 0 && (
             <EventLayer placed={eventPlaced} height={railHeight} />
-          )}
-          {badgePlaced.length > 0 && (
-            <EventLayer placed={badgePlaced} height={contentHeight} laneBadges />
           )}
           {data && placed.length > 0 && fatePlaced.length > 0 && (
             <ReignFateLayer placed={fatePlaced} height={contentHeight} />
@@ -461,6 +499,17 @@ export function TimelineStage() {
             dynastyNamesById={dynastyNamesById}
             laneColorMap={laneColorMap}
             atAbs={labelAnchorAbs}
+            gutterPx={viewport.gutterPx}
+            scale={mapView.scale}
+            offset={{ x: mapView.x, y: mapView.y }}
+          />
+        </div>
+      </div>
+      <div className={styles.warOverlay} aria-hidden={nearbyWarEvents.length === 0}>
+        <div className={styles.viewportPanel}>
+          <WarEventMapLayer
+            events={nearbyWarEvents}
+            atAbs={viewport.centerAbs}
             gutterPx={viewport.gutterPx}
             scale={mapView.scale}
             offset={{ x: mapView.x, y: mapView.y }}

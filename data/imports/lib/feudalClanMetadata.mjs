@@ -18,6 +18,10 @@
 
 /** @type {Record<string, FeudalClanEntry>} */
 export const FEUDAL_DYNASTY_CLAN = {
+  "zou-state": {
+    ancestralXing: "曹",
+    source: "https://shandong-chorography.org/database/zzmj/section/19/article/7/ — 春秋邾国、战国邹国为曹姓封国",
+  },
   xia: {
     ancestralXing: "姒",
     clanShi: "夏",
@@ -271,4 +275,3 @@ export function clanHintForPerson(dynastyId, personId, personName) {
     clanShi: override?.clanShi ?? rule?.clanShi ?? base?.clanShi,
   };
 }
-

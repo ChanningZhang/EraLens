@@ -40,7 +40,7 @@ async function loadStore() {
     prisma.dynasty.findMany(),
     prisma.reign.findMany(),
     prisma.event.findMany({
-      include: { dynasties: true, participants: true },
+      include: { dynasties: true, participants: true, location: true },
     }),
     prisma.relation.findMany(),
   ]);
@@ -58,7 +58,7 @@ async function loadStore() {
 async function loadEventsInWindow(fromAbs: number, toAbs: number) {
   const eventRows = await prisma.$queryRaw<RawEventRow[]>`
     SELECT id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs,
-           start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning, content
+           start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning, content, location_id
     FROM events
     WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')`;
 
@@ -71,6 +71,12 @@ async function loadEventsInWindow(fromAbs: number, toAbs: number) {
       ? prisma.eventParticipant.findMany({ where: { eventId: { in: eventIds } } })
       : Promise.resolve([]),
   ]);
+
+  const locationIds = [...new Set(eventRows.map((row) => row.location_id).filter((id): id is string => id != null))];
+  const locations = locationIds.length
+    ? await prisma.eventLocation.findMany({ where: { id: { in: locationIds } } })
+    : [];
+  const locationById = new Map(locations.map((location) => [location.id, location]));
 
   const dynastiesByEvent = new Map<string, string[]>();
   for (const row of eventDynasties) {
@@ -88,6 +94,7 @@ async function loadEventsInWindow(fromAbs: number, toAbs: number) {
   return eventRows.map((row) =>
     mapEvent({
       ...row,
+      location: row.location_id ? locationById.get(row.location_id) ?? null : null,
       dynasties: (dynastiesByEvent.get(row.id) ?? []).map((dynastyId) => ({ dynastyId })),
       participants: (participantsByEvent.get(row.id) ?? []).map((personId) => ({ personId })),
     }),

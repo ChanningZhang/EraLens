@@ -9,7 +9,7 @@ import {
 import { useEffect, useMemo, useRef, useState } from "react";
 import { HoverTooltip } from "./HoverTooltip";
 import { useSelection } from "../hooks/useSelection";
-import { projectGcj02, resolveChinaMapInsets } from "../model/chinaMapProjection";
+import { projectGcj02, resolveChinaMapInsets, wgs84ToGcj02 } from "../model/chinaMapProjection";
 import { selectionStore } from "../state/selectionStore";
 import styles from "./CapitalMapLayer.module.css";
 
@@ -90,9 +90,12 @@ export function CapitalMapLayer({
       const color = dynasty
         ? resolveDynastyColorValue(dynasty, token, atAbs)
         : COLOR_VALUES[token];
+      const coordinate = capital.coordinateSystem === "WGS84"
+        ? wgs84ToGcj02(capital.longitude, capital.latitude)
+        : { x: capital.longitude, y: capital.latitude };
       const point = projectGcj02(
-        capital.longitude,
-        capital.latitude,
+        coordinate.x,
+        coordinate.y,
         size.width,
         size.height,
         resolveChinaMapInsets(gutterPx),

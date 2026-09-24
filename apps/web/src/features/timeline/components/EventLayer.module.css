@@ -13,6 +13,9 @@
 .badgeLayer {
   border-bottom: 0;
   z-index: 4;
+  contain: layout style;
+  /* Badges straddle the lane's top edge and move with the lane. */
+  clip-path: inset(-16px 0 -16px var(--timeline-gutter));
 }
 
 .layer .badgeMarker {

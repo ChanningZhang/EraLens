@@ -3,6 +3,7 @@ import { EventSchema, absMonth, type Reign } from "@eralens/shared";
 import { projectAbs } from "./coordinates";
 import {
   layoutEventBadges,
+  layoutPlacedEventBadges,
   eventTargetReign,
   EVENT_LANE_PAD,
   EVENT_MARKER_DOT_OFFSET,
@@ -10,6 +11,7 @@ import {
   EVENT_MARKER_WIDTH,
   eventMarkerWidth,
   eventHitInterval,
+  filterViewportEvents,
   layoutEvents,
   packEventLanes,
   stickyEventMarkerX,
@@ -41,29 +43,106 @@ describe("layoutEventBadges", () => {
     expect(positions.has("unmapped")).toBe(false);
   });
 
-  it("keeps the most precise overlapping badge at its time and places the rest to its right", () => {
+  it("keeps span and circa events in the event area even when they belong to one dynasty", () => {
+    const at = absMonth(-356, 12);
+    const point = event("point", ["qin"], at);
+    const ranged = (id: string, timeMode: "span" | "circa") => EventSchema.parse({
+      id,
+      name: id,
+      dynastyIds: ["qin"],
+      timeMode,
+      startAbs: at - 12,
+      endAbs: at + 12,
+      atAbs: at,
+    });
+    const positions = layoutEventBadges([
+      ranged("span", "span"),
+      ranged("circa", "circa"),
+      point,
+    ], viewport, dynastyLanes);
+
+    expect([...positions.keys()]).toEqual(["point"]);
+    expect(positions.get("point")?.anchorX).toBe(projectAbs(viewport, at));
+  });
+
+  it("keeps the most precise overlapping badge at its time and uses the opposite edge for conflicts", () => {
     const at = absMonth(-356, 12);
     const imprecise = event("imprecise", ["qin"], at - 2, "year");
     const precise = event("precise", ["qin"], at, "day");
     const month = event("month", ["qin"], at, "month");
     const positions = layoutEventBadges([imprecise, month, precise], viewport, dynastyLanes);
-    const preciseLeft = positions.get("precise")!.anchorX - EVENT_MARKER_DOT_OFFSET;
-    const monthLeft = positions.get("month")!.anchorX - EVENT_MARKER_DOT_OFFSET;
-    const impreciseLeft = positions.get("imprecise")!.anchorX - EVENT_MARKER_DOT_OFFSET;
     expect(positions.get("precise")!.anchorX).toBe(projectAbs(viewport, at));
-    expect(monthLeft).toBeGreaterThanOrEqual(preciseLeft + eventMarkerWidth("precise") + EVENT_LANE_PAD);
-    expect(impreciseLeft).toBeGreaterThanOrEqual(monthLeft + eventMarkerWidth("month") + EVENT_LANE_PAD);
+    expect(positions.get("precise")!.edge).toBe("top");
+    expect(positions.get("month")!.edge).toBe("bottom");
+    expect(positions.get("month")!.anchorX).toBe(projectAbs(viewport, at));
+    expect(positions.has("imprecise")).toBe(false);
   });
 
   it("keeps separate badges near their own dates", () => {
     const early = absMonth(-356, 12);
-    const late = absMonth(-340, 12);
+    const late = absMonth(-350, 12);
     const positions = layoutEventBadges([
       event("early", ["qin"], early),
       event("late", ["qin"], late),
     ], viewport, dynastyLanes);
     expect(positions.get("early")!.anchorX).toBe(projectAbs(viewport, early));
     expect(positions.get("late")!.anchorX).toBe(projectAbs(viewport, late));
+  });
+
+  it("reserves a later high-precision badge and moves a conflicting earlier badge below", () => {
+    const placed = [
+      { id: "early", anchorX: 10, precision: "year" as const },
+      { id: "middle", anchorX: 80, precision: "year" as const },
+      { id: "precise", anchorX: 190, precision: "month" as const },
+    ].map(({ id, anchorX, precision }) => ({
+      event: event(id, ["qin"], absMonth(-356, 12), precision),
+      anchorX,
+      markerWidth: 100,
+      lane: 0,
+      showBand: false,
+      bandLeft: 0,
+      bandWidth: 0,
+      top: 0,
+    }));
+    const positions = layoutPlacedEventBadges(placed, dynastyLanes);
+
+    expect(positions.get("precise")?.anchorX).toBe(190);
+    expect(positions.get("precise")?.edge).toBe("top");
+    expect(positions.get("early")?.edge).toBe("top");
+    expect(positions.get("middle")?.edge).toBe("bottom");
+    expect(positions.get("middle")?.anchorX).toBe(80);
+  });
+});
+
+describe("filterViewportEvents", () => {
+  const viewport = { centerAbs: absMonth(-845, 12), pxPerMonth: 2, widthPx: 1000, gutterPx: 100 };
+  const point = (id: string, year: number) => EventSchema.parse({
+    id,
+    name: id,
+    atAbs: absMonth(year, 12),
+    precision: "year",
+  });
+
+  it("excludes events returned by neighboring query chunks when their marks are off-screen", () => {
+    const current = point("current", -845);
+    const future = point("future", -770);
+    const past = point("past", -900);
+
+    expect(filterViewportEvents([past, current, future], viewport).map((event) => event.id))
+      .toEqual(["current"]);
+  });
+
+  it("keeps a span while its band is visible after its date label passes the edge", () => {
+    const span = EventSchema.parse({
+      id: "long-span",
+      name: "long-span",
+      timeMode: "span",
+      precision: "year",
+      startAbs: absMonth(-900, 1),
+      endAbs: absMonth(-830, 12),
+    });
+
+    expect(filterViewportEvents([span], viewport)).toEqual([span]);
   });
 });
 

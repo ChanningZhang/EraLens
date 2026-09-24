@@ -154,7 +154,7 @@ export const DateConfidenceSchema = z.enum([
   "interpolated",
 ]);
 
-export const CoordinateSystemSchema = z.enum(["GCJ02"]);
+export const CoordinateSystemSchema = z.enum(["GCJ02", "WGS84"]);
 export type CoordinateSystem = z.infer<typeof CoordinateSystemSchema>;
 
 export const CapitalRoleSchema = z.enum(["primary", "secondary", "temporary"]);
@@ -243,6 +243,18 @@ export const EventSchema = z
     summary: z.string().optional(),
     meaning: z.string().optional(),
     content: z.string().optional(),
+    locationId: z.string().optional(),
+    location: z.object({
+      id: z.string(),
+      historicalName: z.string(),
+      modernName: z.string(),
+      longitude: z.number(),
+      latitude: z.number(),
+      coordinateSystem: z.string(),
+      precision: z.string(),
+      note: z.string().optional(),
+      links: z.array(z.object({ label: z.string(), url: z.string() })).default([]),
+    }).optional(),
   })
   .superRefine((event, ctx) => {
     if (event.kind === "idiom") {

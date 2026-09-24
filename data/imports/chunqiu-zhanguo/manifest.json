@@ -11,15 +11,31 @@
   "depth": "standard",
   "generatedAt": "2026-09-24",
   "counts": {
-    "persons": 441,
-    "dynasties": 16,
-    "reigns": 437,
+    "persons": 460,
+    "dynasties": 17,
+    "reigns": 456,
     "missingReigns": 0,
     "events": 5,
     "relations": 4,
     "existingEventDynastyLinks": 29
   },
   "sources": [
+    {
+      "label": "孟子志：邾国至邹国沿革及孟子里籍（山东省情资料库）",
+      "url": "https://shandong-chorography.org/database/zzmj/section/19/article/7/"
+    },
+    {
+      "label": "邾国君主世系及所据传世文献",
+      "url": "https://zh.wikipedia.org/wiki/邾国"
+    },
+    {
+      "label": "邾文公在位年表（《左传》相关纪事）",
+      "url": "https://ctext.org/datawiki.pl?if=gb&res=980150"
+    },
+    {
+      "label": "邹穆公与孟子",
+      "url": "https://ctext.org/dictionary.pl?did=711&if=en"
+    },
     {
       "label": "春秋时期",
       "url": "https://zh.wikipedia.org/wiki/春秋时期"
@@ -103,6 +119,7 @@
   ],
   "notes": [
     "收录春秋主要列国与战国七雄（齐楚燕韩赵魏秦）及宋鲁卫郑曹吴越中山等。",
+    "新增邹（春秋称邾、邾娄）国君卡：周初始封至邾武公前796年之间连续七世按共同边界均分；前780年邾子夏父至前678年邾子克之间，按世系所记的一世失考将三段均分；邾文公等依据君主年表收录。邹穆公约前382—前330年依地方人物资料，区间标 approximate。前471至约前382年世系与年代锚点不足，保留空档，不跨断层插值。",
     "列国泳道名用国号（齐、楚、韩），与夏商周秦汉一致，不带「国」；「齐国」等写入 alt_names。",
     "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
     "秦国 upsert 已有 qin 行，将始年延至前778年秦襄公即位，与 qin-han 统一帝国段衔接；清理脚本保留 qin-han 的秦二世、子婴 reign。",
@@ -124,6 +141,6 @@
     "未收录薛、滕、杞、莒等小国；未收录战国末期的代、胶东等残余。",
     "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
     "韩赵魏在位仅收录前403年册命立国之后；晋国卿大夫世系（赵简子等）不挂在三国行上。晋国止于前349年静公被杀。",
-    "国君数据由 fetch-wiki-zh-cn.py + build-rulers.mjs 生成，共 437 条在位记录。"
+    "国君数据由 fetch-wiki-zh-cn.py + build-rulers.mjs 生成，共 456 条在位记录。"
   ]
 }

@@ -13,6 +13,8 @@ export const EVENT_MARKER_VIEW_PAD = 8;
 export const EVENT_ROW_TOP = 8;
 export const EVENT_ROW_STEP = 28;
 export const EVENT_BADGE_HALF_HEIGHT = 12;
+/** A badge may nudge within its date column, but must not drift along the lane. */
+export const EVENT_BADGE_MAX_NUDGE = 16;
 export const EVENT_LANE_PAD = 8;
 export const EVENT_RAIL_MIN_HEIGHT = 64;
 
@@ -114,6 +116,15 @@ export function eventHitInterval(
   return { left: left - EVENT_LANE_PAD, right: right + EVENT_LANE_PAD };
 }
 
+/** Query chunks include events outside the current view; only visible marks take layout space. */
+export function filterViewportEvents(events: Event[], viewport: ViewportState): Event[] {
+  const gutter = viewport.gutterPx ?? 0;
+  return events.filter((event) => {
+    const { left, right } = eventHitInterval(event, viewport);
+    return left < viewport.widthPx && right > gutter;
+  });
+}
+
 export function packEventLanes(
   intervals: { id: string; left: number; right: number }[],
 ): Map<string, number> {
@@ -135,7 +146,7 @@ export function packEventLanes(
   return lanes;
 }
 
-export type EventBadgePosition = { laneId: string; anchorX: number };
+export type EventBadgePosition = { laneId: string; anchorX: number; edge: "top" | "bottom" };
 
 /** A participant identifies a card only when exactly one linked reign covers the event date. */
 export function eventTargetReign(event: Event, reigns: readonly Reign[]): Reign | null {
@@ -156,44 +167,68 @@ const EVENT_PRECISION_ORDER: Record<Event["precision"], number> = {
   century: 1,
 };
 
-/** Place single-dynasty badges on one row, prioritizing the most precise event in each overlap group. */
+/** Place single-dynasty badges on lane edges, preferring top and prioritizing precision. */
 export function layoutEventBadges(
   events: Event[],
   viewport: ViewportState,
   laneIdByDynastyId: ReadonlyMap<string, string>,
 ): Map<string, EventBadgePosition> {
-  const byLane = new Map<string, { item: PlacedEvent; left: number; right: number }[]>();
-  for (const item of layoutEvents(events, viewport)) {
+  return layoutPlacedEventBadges(layoutEvents(events, viewport), laneIdByDynastyId, viewport.widthPx);
+}
+
+/** Reuse already projected events so panning does not lay out every badge twice. */
+export function layoutPlacedEventBadges(
+  placed: readonly PlacedEvent[],
+  laneIdByDynastyId: ReadonlyMap<string, string>,
+  viewportWidth = Number.POSITIVE_INFINITY,
+): Map<string, EventBadgePosition> {
+  const byLane = new Map<string, { item: PlacedEvent; left: number }[]>();
+  for (const item of placed) {
     const { event } = item;
+    if (event.timeMode !== "point") continue;
     if (event.dynastyIds.length !== 1) continue;
     const laneId = laneIdByDynastyId.get(event.dynastyIds[0]!);
     if (!laneId) continue;
     const items = byLane.get(laneId) ?? [];
     const left = item.anchorX - EVENT_MARKER_DOT_OFFSET;
-    items.push({ item, left, right: left + item.markerWidth });
+    items.push({ item, left });
     byLane.set(laneId, items);
   }
   const positions = new Map<string, EventBadgePosition>();
   for (const [laneId, items] of byLane) {
-    items.sort((a, b) => a.left - b.left || a.item.event.id.localeCompare(b.item.event.id));
-    let lastRight = Number.NEGATIVE_INFINITY;
-    for (let index = 0; index < items.length;) {
-      const group = [items[index++]!];
-      let naturalRight = group[0]!.right;
-      while (index < items.length && items[index]!.left < naturalRight + EVENT_LANE_PAD) {
-        group.push(items[index++]!);
-        naturalRight = Math.max(naturalRight, group.at(-1)!.right);
+    items.sort((a, b) =>
+      EVENT_PRECISION_ORDER[b.item.event.precision] - EVENT_PRECISION_ORDER[a.item.event.precision] ||
+      eventSpanAbs(a.item.event).anchorAbs - eventSpanAbs(b.item.event).anchorAbs ||
+      a.item.event.id.localeCompare(b.item.event.id),
+    );
+    const occupied: Record<"top" | "bottom", { left: number; right: number }[]> = { top: [], bottom: [] };
+    for (const entry of items) {
+      const width = entry.item.markerWidth;
+      const minLeft = EVENT_MARKER_VIEW_PAD;
+      const maxLeft = Math.max(minLeft, viewportWidth - EVENT_MARKER_VIEW_PAD - width);
+      const naturalLeft = clamp(entry.left, minLeft, maxLeft);
+      let chosen: { edge: "top" | "bottom"; left: number } | undefined;
+      for (const edge of ["top", "bottom"] as const) {
+        const intervals = occupied[edge];
+        const candidates = [naturalLeft];
+        for (const interval of intervals) {
+          candidates.push(interval.right + EVENT_LANE_PAD);
+        }
+        const left = candidates
+          .filter((candidate) => candidate >= naturalLeft && candidate <= maxLeft)
+          .filter((candidate) => candidate - naturalLeft <= EVENT_BADGE_MAX_NUDGE)
+          .filter((candidate) => intervals.every((interval) =>
+            candidate + width + EVENT_LANE_PAD <= interval.left ||
+            candidate >= interval.right + EVENT_LANE_PAD,
+          ))
+          .sort((a, b) => a - b)[0];
+        if (left != null) { chosen = { edge, left }; break; }
       }
-      group.sort((a, b) =>
-        EVENT_PRECISION_ORDER[b.item.event.precision] - EVENT_PRECISION_ORDER[a.item.event.precision] ||
-        eventSpanAbs(a.item.event).anchorAbs - eventSpanAbs(b.item.event).anchorAbs ||
-        a.item.event.id.localeCompare(b.item.event.id),
-      );
-      for (const entry of group) {
-        const left = Math.max(entry.left, lastRight + EVENT_LANE_PAD);
-        positions.set(entry.item.event.id, { laneId, anchorX: left + EVENT_MARKER_DOT_OFFSET });
-        lastRight = left + entry.item.markerWidth;
-      }
+      if (!chosen) continue;
+      positions.set(entry.item.event.id, { laneId, anchorX: chosen.left + EVENT_MARKER_DOT_OFFSET, edge: chosen.edge });
+      const list = occupied[chosen.edge];
+      const insertAt = list.findIndex((interval) => interval.left > chosen!.left);
+      list.splice(insertAt < 0 ? list.length : insertAt, 0, { left: chosen.left, right: chosen.left + width });
     }
   }
   return positions;

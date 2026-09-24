@@ -12,7 +12,7 @@ import { getRepository } from "@/data/repository";
 import { useViewport } from "./useViewport";
 
 const SCOPE = "cn";
-const TIMELINE_CACHE_VERSION = 32;
+const TIMELINE_CACHE_VERSION = 33;
 /** Historical slices do not change at runtime; keep them hot across tab idle. */
 const STALE_TIME = Infinity;
 /** Prefetched neighbors have 0 observers; default 5 min gc would drop them overnight. */
@@ -44,7 +44,7 @@ export function useTimelineData() {
   const queryClient = useQueryClient();
 
   const chunks = useMemo(
-    () => listQueryChunks(viewport.startAbs, viewport.endAbs, viewport.lod),
+    () => listQueryChunks(viewport.startAbs - 60, viewport.endAbs + 60, viewport.lod),
     [viewport.startAbs, viewport.endAbs, viewport.lod],
   );
 
