@@ -852,6 +852,7 @@ INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('kaiyuan-prosperity',
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('anshi-rebellion', 'tang') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('huang-chao-uprising', 'tang') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('gaoliang-river-battle', 'song-north') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('gaoliang-river-battle', 'liao') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('xiangyang-siege', 'song-south') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('xining-reform', 'song-north') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('jingkang-incident', 'song-north') ON CONFLICT DO NOTHING;

@@ -568,7 +568,7 @@ const events = [
   eventRange({ id: "kaiyuan-prosperity", name: "开元盛世", kind: "politics", timeMode: "span", start: ym(713), end: ym(741), dynastyIds: ["tang"], participantIds: ["li-longji"], summary: "唐玄宗前期励精图治，唐朝国力达于鼎盛。" }),
   eventRange({ id: "anshi-rebellion", name: "安史之乱", kind: "battle", timeMode: "span", dateNote: "755–763年", start: ym(755), end: ym(763), dynastyIds: ["tang"], participantIds: ["li-longji", "an-lushan"], summary: "安禄山、史思明叛乱，唐朝由盛转衰。" }),
   eventPoint({ id: "huang-chao-uprising", name: "黄巢起义", kind: "politics", at: ym(875), dynastyIds: ["tang"], participantIds: ["huang-chao"], summary: "黄巢领导农民起义，攻入长安，唐廷名存实亡。" }),
-  eventPoint({ id: "gaoliang-river-battle", name: "高梁河之战", kind: "battle", precision: "month", dateNote: "太平兴国四年六月，宋太宗北伐败于辽", at: ym(979, 6), dynastyIds: ["song-north"], participantIds: ["zhao-kuangyi"], summary: "宋太宗率军北伐辽国，于高梁河被耶律休哥击败，宋军溃退。" }),
+  eventPoint({ id: "gaoliang-river-battle", name: "高梁河之战", kind: "battle", precision: "month", dateNote: "太平兴国四年六月，宋太宗北伐败于辽", at: ym(979, 6), dynastyIds: ["song-north", "liao"], participantIds: ["zhao-kuangyi"], summary: "宋太宗率军北伐辽国，于高梁河被耶律休哥击败，宋军溃退。" }),
   eventRange({ id: "xiangyang-siege", name: "襄樊之战", kind: "battle", timeMode: "span", start: ym(1268), end: ym(1273), dynastyIds: ["song-south"], participantIds: ["zhao-qi"], summary: "蒙古军围攻襄阳、樊城六年，吕文焕降元，南宋长江防线洞开。" }),
   eventRange({ id: "xining-reform", name: "王安石变法", kind: "politics", timeMode: "span", start: ym(1069), end: ym(1085), dynastyIds: ["song-north"], participantIds: ["zhao-xu", "wang-anshi"], summary: "宋神宗用王安石推行新法，富国强兵。" }),
   eventPoint({
@@ -707,6 +707,7 @@ const manifest = {
     { label: "南宋", url: "https://zh.wikipedia.org/wiki/南宋" },
     { label: "安史之乱", url: "https://zh.wikipedia.org/wiki/安史之乱" },
     { label: "靖康之变", url: "https://zh.wikipedia.org/wiki/靖康之变" },
+    { label: "高梁河之战", url: "https://zh.wikipedia.org/wiki/高梁河之战" },
     { label: "宇文化及", url: "https://zh.wikipedia.org/wiki/宇文化及" },
   ],
   notes: [
