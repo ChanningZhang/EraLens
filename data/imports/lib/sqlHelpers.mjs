@@ -330,7 +330,7 @@ VALUES (${sqlStr(c.id)}, ${sqlStr(c.dynastyId)}, ${sqlStr(c.historicalName)}, ${
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence, role = EXCLUDED.role, claim_track = EXCLUDED.claim_track, note = EXCLUDED.note, links = EXCLUDED.links;`;
 }
 
-export function writeImportPackage(dir, { slug, window, persons, dynastyGroups = [], dynasties, reignGroups, reigns, events, relations, supplementalEventDynasties = [], supplementalEventParticipants = [], preSql = "", missingReigns = [], manifest }) {
+export function writeImportPackage(dir, { slug, window, persons, dynastyGroups = [], dynasties, capitals = [], reignGroups, reigns, events, relations, supplementalEventDynasties = [], supplementalEventParticipants = [], preSql = "", missingReigns = [], manifest }) {
   const finalized = finalizeImportReigns(slug, persons, reigns, missingReigns);
   persons = finalized.persons;
   reigns = finalized.reigns;
@@ -355,6 +355,7 @@ export function writeImportPackage(dir, { slug, window, persons, dynastyGroups =
     "", "-- persons", ...persons.map(personSql),
     ...(dynastyGroups.length ? ["", "-- dynasty_groups", ...dynastyGroups.map(dynastyGroupSql)] : []),
     "", "-- dynasties", ...dynasties.map(dynastySql),
+    ...(capitals.length ? ["", "-- dynasty_capitals", ...capitals.map(dynastyCapitalSql)] : []),
     "", "-- reigns", ...reigns.map(reignSql),
     "", "-- events", ...events.map(eventSql),
     "", "-- event_dynasties", ...eventDynastySql, ...supplementalEventDynastySql,

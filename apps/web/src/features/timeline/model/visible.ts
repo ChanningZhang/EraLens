@@ -29,15 +29,12 @@ export function filterVisibleReigns(
 
 export function filterVisibleEvents(
   events: Event[],
-  dynastyIds: Set<string>,
   startAbs: number,
   endAbs: number,
 ): Event[] {
   return events.filter((e) => {
     const span = eventSpanAbs(e);
-    const intersects = rangeIntersectsWindow(span.startAbs, span.endAbs, startAbs, endAbs);
-    const dynastyHit = e.dynastyIds.some((id) => dynastyIds.has(id));
-    return intersects && (dynastyHit || e.dynastyIds.length === 0);
+    return rangeIntersectsWindow(span.startAbs, span.endAbs, startAbs, endAbs);
   });
 }
 

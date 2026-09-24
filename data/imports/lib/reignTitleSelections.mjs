@@ -56,6 +56,7 @@ export const REIGN_TITLE_SELECTIONS = Object.freeze({
 export function resolveReignTitle(reign) {
   const selectedTitle = REIGN_TITLE_SELECTIONS[reign.id];
   if (selectedTitle !== undefined) return selectedTitle;
+  if (typeof reign.title === "string" && reign.title.trim()) return reign.title.trim();
   if (reign.eraNamesAsTitle) return (reign.eraNames ?? []).map((era) => typeof era === "string" ? era : era.name).join("、");
   return "";
 }

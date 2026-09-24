@@ -57,6 +57,42 @@ function dockerPsql(input) {
   );
 }
 
+/** Split SQL on statement terminators outside quoted string literals. */
+function sqlStatements(sql) {
+  const statements = [];
+  let start = 0;
+  let inString = false;
+  for (let i = 0; i < sql.length; i += 1) {
+    if (sql[i] === "'") {
+      if (inString && sql[i + 1] === "'") {
+        i += 1;
+      } else {
+        inString = !inString;
+      }
+    } else if (sql[i] === ";" && !inString) {
+      statements.push(sql.slice(start, i + 1));
+      start = i + 1;
+    }
+  }
+  if (sql.slice(start).trim()) statements.push(sql.slice(start));
+  return statements;
+}
+
+function preseedDynasties(packages) {
+  const inserts = packages.flatMap(({ sql }) =>
+    sqlStatements(readFileSync(sql, "utf8")).filter((statement) =>
+      /^\s*INSERT\s+INTO\s+dynasties\b/i.test(statement),
+    ),
+  );
+  if (inserts.length === 0) return;
+
+  const result = dockerPsql(`BEGIN;\n${inserts.join("\n")}\nCOMMIT;\n`);
+  if (result.status !== 0) {
+    fail("Failed to preseed dynasty rows", result.stderr || result.stdout);
+  }
+  console.log(`Preseeded ${inserts.length} dynasty rows for cross-package references.`);
+}
+
 function sqlString(value) {
   return `'${String(value).replaceAll("'", "''")}'`;
 }
@@ -115,6 +151,11 @@ function main() {
 
   const truncated = dockerPsql(TRUNCATE_SQL);
   if (truncated.status !== 0) fail("Failed to truncate tables", truncated.stderr || truncated.stdout);
+
+  // Some event and capital packages refer to dynasties owned by later period
+  // packages. Seed the shared lookup table first so deferred package imports
+  // can resolve those foreign keys without changing package ownership/order.
+  preseedDynasties(packages);
 
   let remaining = packages;
   const maxPasses = packages.length;

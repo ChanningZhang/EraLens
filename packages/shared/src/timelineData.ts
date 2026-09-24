@@ -75,9 +75,7 @@ export function filterTimeline(
   );
   const visibleEvents = store.events.filter((e) => {
     const { startAbs, endAbs } = eventSpanAbs(e);
-    const intersects = rangeIntersectsWindow(startAbs, endAbs, query.fromAbs, query.toAbs);
-    const dynastyHit = e.dynastyIds.some((id) => dynastyIds.has(id));
-    return intersects && (dynastyHit || e.dynastyIds.length === 0);
+    return rangeIntersectsWindow(startAbs, endAbs, query.fromAbs, query.toAbs);
   });
 
   const visibleReignPersonIds = new Set(visibleReigns.map((r) => r.personId));
@@ -539,7 +537,17 @@ export function buildEntityDetail(
     ],
     summary: event.summary,
     content: event.content,
-    related: event.participantIds
+    related: [
+      ...(event.kind === "battle"
+        ? linkedDynasties.map((dynasty) => ({
+            ref: { type: "dynasty" as const, id: dynasty.id },
+            label: dynasty.name,
+            subtitle: dynasty.altNames?.[0],
+            abs: anchorAbs,
+            group: "dynasty" as const,
+          }))
+        : []),
+      ...event.participantIds
       .map((id) => {
         const summary = buildRelatedSummary({ type: "person", id });
         return summary
@@ -547,6 +555,7 @@ export function buildEntityDetail(
           : null;
       })
       .filter(Boolean) as EntityDetail["related"],
+    ],
     capitalTenures: [],
     links: [],
   };

@@ -54,8 +54,8 @@ async function loadStore() {
   });
 }
 
-/** Events may exist with no dynasty (archaeological cultures). Still return those in empty-lane windows. */
-async function loadEventsInWindow(fromAbs: number, toAbs: number, visibleDynastyIds: string[]) {
+/** Event dynasties provide context; their visibility does not gate the event marker. */
+async function loadEventsInWindow(fromAbs: number, toAbs: number) {
   const eventRows = await prisma.$queryRaw<RawEventRow[]>`
     SELECT id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs,
            start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning, content
@@ -85,18 +85,13 @@ async function loadEventsInWindow(fromAbs: number, toAbs: number, visibleDynasty
     participantsByEvent.set(row.eventId, list);
   }
 
-  return eventRows
-    .map((row) =>
-      mapEvent({
-        ...row,
-        dynasties: (dynastiesByEvent.get(row.id) ?? []).map((dynastyId) => ({ dynastyId })),
-        participants: (participantsByEvent.get(row.id) ?? []).map((personId) => ({ personId })),
-      }),
-    )
-    .filter((event) => {
-      const dynastyHit = event.dynastyIds.some((id: string) => visibleDynastyIds.includes(id));
-      return dynastyHit || event.dynastyIds.length === 0;
-    });
+  return eventRows.map((row) =>
+    mapEvent({
+      ...row,
+      dynasties: (dynastiesByEvent.get(row.id) ?? []).map((dynastyId) => ({ dynastyId })),
+      participants: (participantsByEvent.get(row.id) ?? []).map((personId) => ({ personId })),
+    }),
+  );
 }
 
 const PLACEABLE_NON_RULER_WHERE = {
@@ -124,7 +119,7 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
         WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')`;
 
   const dynastyIds = dynastyRows.map((row) => row.id);
-  const events = await loadEventsInWindow(fromAbs, toAbs, dynastyIds);
+  const events = await loadEventsInWindow(fromAbs, toAbs);
 
   if (dynastyIds.length === 0) {
     const personRows = await prisma.person.findMany({

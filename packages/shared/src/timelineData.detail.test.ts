@@ -283,7 +283,7 @@ describe("buildEntityDetail event", () => {
         {
           id: "muye",
           name: "牧野之战",
-          kind: "battle" as const,
+          kind: "politics" as const,
           timeMode: "point" as const,
           precision: "year" as const,
           at: { year: -1046, month: 12 },
@@ -328,7 +328,7 @@ describe("buildEntityDetail event", () => {
         {
           id: "daxi-founded",
           name: "大西政权建立",
-          kind: "politics" as const,
+          kind: "battle" as const,
           timeMode: "point" as const,
           precision: "day" as const,
           at: { year: 1644, month: 12 },

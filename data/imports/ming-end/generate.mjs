@@ -131,17 +131,6 @@ const reigns = applyDocumentedDatesToReigns(reignGroups.flat());
 
 const events = [
   eventPoint({
-    id: "mingzheng-taiwan-founded",
-    name: "明郑开台",
-    kind: "politics",
-    precision: "day",
-    dateNote: "永历十五年十二月十三日，1662年2月1日，荷军签约投降后据台",
-    at: ymDay(1662, 2, 1),
-    dynastyIds: ["mingzheng", "ming-south"],
-    participantIds: ["zheng-chenggong"],
-    summary: "郑成功收复台湾，建承天府，明郑政权以台湾为复明基地。",
-  }),
-  eventPoint({
     id: "qing-conquer-taiwan",
     name: "清军攻克台湾",
     kind: "battle",
@@ -149,8 +138,8 @@ const events = [
     dateNote: "康熙二十二年十月初八，1683年10月8日郑克塽降清",
     at: ymDay(1683, 10, 8),
     dynastyIds: ["mingzheng", "qing"],
-    participantIds: ["zheng-keshuang"],
-    summary: "施琅率清军于澎湖海战取胜，郑克塽降清，明郑灭亡。",
+    participantIds: ["zheng-keshuang", "xuanye"],
+    summary: "施琅率清军在澎湖海战取胜，郑克塽于同年十月降清，明郑灭亡，台湾纳入清朝统治。",
   }),
 ];
 
@@ -173,7 +162,7 @@ for (const group of reignGroups) {
   }
 }
 relations.push(
-  { id: "rel-mingzheng-taiwan-zheng", fromRef: "event:mingzheng-taiwan-founded", toRef: "person:zheng-chenggong", kind: "politics" },
+  { id: "rel-mingzheng-taiwan-zheng", fromRef: "event:zheng-recover-taiwan", toRef: "person:zheng-chenggong", kind: "politics" },
   { id: "rel-qing-taiwan-zheng-keshuang", fromRef: "event:qing-conquer-taiwan", toRef: "person:zheng-keshuang", kind: "battle" },
 );
 
@@ -207,7 +196,7 @@ const manifest = {
     "明郑三代延平王在位日取维基百科条目公历换算（documentedReignDates，precision=day）。",
     "郑成功、郑经、郑克塽在位与 yuan-ming-qing 已有人物 upsert 衔接。",
     "大西年号亦作大顺，与李自成大顺国号同名异政权。",
-    "明郑开台事件与 zheng-recover-taiwan 并存，本包补 mingzheng 关联。",
+    "郑成功收复台湾（1662）与郑克塽降清（1683）各保留一条跨包共用事件，合并原重复记录的信息与关联。",
     "明朝灭亡、清军入关、南明终结等事件沿用已有 id，补 event_dynasties。",
   ],
 };
@@ -223,5 +212,9 @@ writeImportPackage(__dirname, {
   relations,
   supplementalEventDynasties,
   supplementalEventParticipants,
+  preSql: `DELETE FROM event_dynasties WHERE event_id IN ('mingzheng-taiwan-founded', 'qing-unify-taiwan');
+DELETE FROM event_participants WHERE event_id IN ('mingzheng-taiwan-founded', 'qing-unify-taiwan');
+UPDATE relations SET from_id = 'zheng-recover-taiwan' WHERE from_type = 'event' AND from_id = 'mingzheng-taiwan-founded';
+DELETE FROM events WHERE id IN ('mingzheng-taiwan-founded', 'qing-unify-taiwan');`,
   manifest,
 });

@@ -4,13 +4,42 @@
  */
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { idiomPoint, sqlStr, writeImportPackage, wiki, ym } from "../lib/sqlHelpers.mjs";
+import { idiomPoint, reign, sqlStr, writeImportPackage, wiki, ym } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 function idiomPerson(id, name, roles, bio, wikiTitle, extra = {}) {
   return { id, name, roles, bio, links: wiki(wikiTitle), ...extra };
 }
+
+/** 虢国世系名录；有在位锚点的君主固定在相应周王时期，其余相邻区间按世次均分。 */
+const guoMonarchs = [
+  { id: "guo-r1", name: "姬叔", title: "虢叔", altNames: ["虢叔"], start: -1046, end: -990, bio: "虢叔，姬姓，周文王弟。传统说法以其为西虢始封君；东、西虢封君归属存在异说。具体在位年代不详，时间轴依世系顺序插值。" },
+  { id: "guo-r2", name: "姬郭叔", title: "郭叔", altNames: ["虢叔"], start: -989, end: -934, bio: "郭叔（一作虢叔），西虢君主世系中的第二位，具体世系和年代失载；时间轴依相邻锚点插值。" },
+  { id: "guo-r3", name: "姬虢城公", title: "虢城公", altNames: ["虢成公"], start: -933, end: -878, bio: "虢城公，班簋铭文所见西周虢国人物，名遣为一说；其是否西虢君主及具体年代均有争议。此处按君主列表世次收录，年代在相邻锚点间插值。" },
+  { id: "guo-r4", name: "姬长父", title: "虢公长父", altNames: ["虢厉公", "虢仲", "虢公长父"], start: -877, end: -828, bio: "虢公长父，又称虢厉公、虢仲，主要活动于周厉王时期，曾任卿士并奉命征讨淮夷。起讫年不详，年代按周厉王时期及后续已知君主插值。" },
+  { id: "guo-r5", name: "姬子白", title: "虢宣公", altNames: ["虢季子白", "虢季"], start: -827, end: -805, bio: "虢宣公，亦称虢季子白，周宣王时期率军攻猃狁，相关事迹见虢季子白盘铭文。其与虢文公的世系关系有异说；在位区间按周宣王时期插值。" },
+  { id: "guo-r6", name: "姬季", title: "虢文公", altNames: ["虢季"], start: -804, end: -782, bio: "虢文公，周宣王时期任卿士，曾谏宣王举行籍田礼，事见《国语·周语上》。具体在位年代不详，时间轴按相邻锚点插值。" },
+  { id: "guo-r7", name: "姬鼓", title: "虢石父", altNames: ["虢石甫", "虢公鼓", "虢硕父"], start: -781, end: -771, bio: "虢石父，又称虢公鼓，主要活动于周幽王时期，前775年灭焦为一说。西周灭亡后其世系及去向不详；在位区间按周幽王纪年插值。" },
+  { id: "guo-r8", name: "姬翰", title: "虢公翰", altNames: [], start: -770, end: -721, bio: "虢公翰，西周末至东周初的虢国君主，一说为虢石父之子。具体在位年代及世系关系不详，时间轴依后续春秋纪事插值。" },
+  { id: "guo-r9", name: "姬忌父", title: "虢公忌父", altNames: [], start: -720, end: -708, bio: "虢公忌父，周平王晚年受用为王室卿士，前720年周平王有意分郑伯政于忌父，前715年任右卿士，见《左传·隐公八年》及相关年表。即位年不详，起年依可核纪事定位，终年在后续君主间插值。" },
+  { id: "guo-r10", name: "姬林父", title: "虢公林父", altNames: ["虢仲"], start: -707, end: -703, bio: "虢公林父，姬姓虢氏，曾任周王室卿士。前707年繻葛之战率王室右军，前706、前703年奉命讨伐曲沃，前702年被迫出奔虞国，均见《左传》；在位起讫依所见纪事定位。" },
+  { id: "guo-gong-chou", name: "姬丑", title: "虢公丑", altNames: ["虢公醜", "虢叔"], start: -702, end: -655, bio: "虢公丑（又作虢公醜），春秋时期虢国末代君主。前673年曾与郑厉公协助周惠王平定王子颓之乱；前655年晋献公再次借道于虞伐虢，虢亡后奔周王室。继位年份不详，年代按前任出奔与后续纪事定位。" },
+];
+
+const guoReigns = guoMonarchs.map((ruler, index) =>
+  reign({
+    id: `reign-${ruler.id}-guo-chunqiu`,
+    dynastyId: "guo-chunqiu",
+    personId: ruler.id,
+    title: ruler.title,
+    start: ym(ruler.start),
+    end: ym(ruler.end, 12),
+    precision: "year",
+    startDateConfidence: index === 0 ? null : "interpolated",
+    endDateConfidence: index === guoMonarchs.length - 1 ? null : "interpolated",
+  }),
+);
 
 /** 典故人物：库内尚无者由此包 upsert，已入库的君主/名臣直接引用其 id。 */
 const idiomPersons = [
@@ -33,7 +62,42 @@ const idiomPersons = [
   idiomPerson("cheng-yi", "程颐", ["思想家"], "北宋理学家，程门立雪所候之师。", "程颐"),
   idiomPerson("yang-shi", "杨时", ["思想家"], "北宋学者，程门立雪之一。", "杨时"),
   idiomPerson("zhang-sengyou", "张僧繇", ["画家"], "南北朝画家，安乐寺画龙点睛传说与其相关。", "张僧繇"),
+  ...guoMonarchs.map((ruler) => idiomPerson(ruler.id, ruler.name, ["君主"], ruler.bio, ruler.title, {
+    altNames: ruler.altNames,
+    ancestralXing: "姬",
+    clanShi: "虢",
+  })),
 ];
+
+const guoDynasty = {
+  id: "guo-chunqiu",
+  name: "虢",
+  altNames: ["虢国", "南虢", "西虢"],
+  scope: "cn",
+  region: "east_asia",
+  start: ym(-1046),
+  end: ym(-655, 12),
+  precision: "year",
+  note: "周朝姬姓诸侯国。东、西虢封国及世系归属存在异说；传统始封年代依周初纪年记于前1046年。西虢东迁后据有三门峡一带，南虢以都城上阳为中心；前655年晋献公借道虞国灭虢。君主卡片据《西虢国》君主列表收录，失考区段依世次插值。",
+};
+
+const guoCapital = {
+  id: "capital-guo-shangyang",
+  dynastyId: "guo-chunqiu",
+  historicalName: "上阳",
+  modernName: "河南省三门峡市李家窑遗址一带",
+  longitude: 111.19,
+  latitude: 34.75,
+  coordinateSystem: "WGS84",
+  start: ym(-770),
+  end: ym(-655, 12),
+  startAbs: ym(-770).abs,
+  endAbs: ym(-655, 12).abs,
+  precision: "year",
+  role: "primary",
+  note: "虢都上阳。始年按虢国东迁后在三门峡建都的约数记；遗址位于今三门峡李家窑一带。",
+  links: wiki("虢国"),
+};
 
 const preQinIdioms = [
   // 商周
@@ -143,10 +207,20 @@ const preQinIdioms = [
     name: "唇亡齿寒",
     meaning: "比喻利害密切相关，一方受损另一方也难保全。",
     at: ym(-655),
-    dynastyIds: ["jin-chunqiu"],
+    dynastyIds: ["jin-chunqiu", "guo-chunqiu"],
     participantIds: ["jin-r20"],
     summary: "宫之奇谏虞公：「唇亡齿寒，虞、虢之表也。」晋借道伐虢后灭虞。",
     dateNote: "晋献公借道伐虢，前655年",
+  }),
+  idiomPoint({
+    id: "idiom-jia-dao-fa-guo",
+    name: "假道伐虢",
+    meaning: "以借路为名，行灭亡对方之实；后用来比喻利用对方作为进攻第三方的通道，达到目的后再消灭对方。",
+    at: ym(-655, 12),
+    dynastyIds: ["guo-chunqiu", "jin-chunqiu"],
+    participantIds: ["guo-gong-chou", "jin-r20"],
+    summary: "晋献公先以讨伐虢国为名向虞国借道，灭虢后回师袭灭虞国。《左传·僖公二年、五年》记载了这两次借道与宫之奇的劝谏。",
+    dateNote: "晋灭虢，前655年；《左传》记鲁僖公五年。",
   }),
   idiomPoint({
     id: "idiom-tui-bi-san-she",
@@ -363,11 +437,12 @@ const preQinIdioms = [
     id: "idiom-qi-ren-you-tian",
     name: "杞人忧天",
     meaning: "比喻不必要的或缺乏根据的忧虑和担心。",
-    at: ym(-300),
+    at: ym(-500, 12),
+    precision: "decade",
     dynastyIds: ["qi-state-chunqiu"],
     participantIds: [],
     summary: "《列子》杞国有人忧天地崩坠，身无所寄，废寝食者。",
-    dateNote: "列子寓言，战国",
+    dateNote: "《列子·天瑞》未记具体年代；按杞国仍存续的春秋末期约前500年推定定位",
   }),
   idiomPoint({
     id: "idiom-ke-zhou-qiu-jian",
@@ -871,8 +946,9 @@ writeImportPackage(__dirname, {
   slug: "idioms",
   window: { startYear: -2100, startMonth: 1, endYear: 1600, endMonth: 12 },
   persons: idiomPersons,
-  dynasties: [],
-  reigns: [],
+  dynasties: [guoDynasty],
+  capitals: [guoCapital],
+  reigns: guoReigns,
   events,
   relations,
   preSql: cleanupManagedEventLinks,
@@ -882,11 +958,11 @@ writeImportPackage(__dirname, {
     window: { startYear: -2100, startMonth: 1, endYear: 1600, endMonth: 12 },
     scope: "cn",
     depth: "standard",
-    generatedAt: "2026-09-23",
+    generatedAt: "2026-09-24",
     counts: {
       persons: idiomPersons.length,
-      dynasties: 0,
-      reigns: 0,
+      dynasties: 1,
+      reigns: guoReigns.length,
       events: events.length,
       relations: relations.length,
     },
@@ -925,6 +1001,10 @@ writeImportPackage(__dirname, {
       { label: "程门立雪", url: "https://zh.wikipedia.org/wiki/程门立雪" },
       { label: "精忠报国", url: "https://zh.wikipedia.org/wiki/岳飞" },
       { label: "知行合一", url: "https://zh.wikipedia.org/wiki/王阳明" },
+      { label: "左传·僖公二年、五年（假道伐虢、灭虢及虞）", url: "https://ctext.org/wiki.pl?if=gb&chapter=281703" },
+      { label: "西虢国（君主与虢公丑）", url: "https://zh.wikipedia.org/wiki/西虢国" },
+      { label: "西虢君主纪事与世系", url: "https://zh.wikipedia.org/wiki/西虢国" },
+      { label: "虢国（上阳、三门峡）", url: "https://zh.wikipedia.org/wiki/虢国" },
     ],
     notes: [
       "成语以 kind=idiom 的 point 事件入库，仅在时间轴显示时刻 marker，不画 span/circa 区间。",
@@ -933,9 +1013,13 @@ writeImportPackage(__dirname, {
       "有明确史事者经 relations 指向已有 battle/politics 事件（event→event）。",
       "典故国君引用各时期包已入库的 person id（如 gou-jian、qi-r25）；蔺相如、荆轲等名臣由本包 upsert。",
       "寓言类关联故事发生国，不把典籍作者（韩非、庄子等）当作典故人物。",
+      "杞人忧天原典未记具体年代；按故事中的杞国仍存续这一背景，将 marker 暂定位于约前500年（春秋末期），属推定年代。",
       "已核对并修正成语与君主在位期不一致的条目：鞭长莫及改楚庄王，分道扬镳改北魏孝文帝，毛遂自荐改赵孝成王；杞人忧天与螳螂捕蝉因原典未具名君主而取消具体君主关联。",
       "一鸣惊人、滥竽充数、五十步笑百步、亡羊补牢、完璧归赵、负荆请罪的时间点已调整到对应君主在位期；有纪年争议者在 dateNote 标注约数或异说。",
       "商周补录：酒池肉林、爱屋及乌、周公吐哺、殷鉴不远、债台高筑；酒池肉林的早期史源有争议，殷鉴不远的《大雅·荡》作年有争议，均在 dateNote 标注。",
+      "补录虢国11世君主并建立相续在位卡。可核定位点包括虢公长父活动于周厉王、虢宣公与虢文公活动于周宣王、虢石父活动于周幽王、虢公忌父于前720及前715年的王室任命、虢公林父于前707至前702年的军政纪事、虢公丑在前673至前655年的纪事。名录本身含世系争议；具体失载的起讫边界在锚点之间按世次等分估算，并写入 interpolated。",
+      "补录假道伐虢，按《左传·僖公五年》系于前655年，并关联晋献公与虢公丑。虢条目表示传统所称虢国总体范围，前1046年为周初传统纪年；东、西虢封国及早期世系归属存在异说。",
+      "上阳为虢国都城，今三门峡李家窑遗址一带；地理坐标用于地图定位，具体遗址位置仍以考古测绘为准。",
     ],
   },
 });

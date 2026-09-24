@@ -702,12 +702,14 @@ function reignSql(r) {
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
-  start_abs, end_abs, precision, start_date_confidence, end_date_confidence
+  start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
+  claim_track, claim_label, claim_role
 ) VALUES (
   ${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(resolveReignTitle(r))},
   ${sqlStr(formatAppellationCsv(r.eraNames))},
   ${r.start.year}, ${r.start.month}, ${r.start.day ?? "NULL"}, ${r.end.year}, ${r.end.month}, ${r.end.day ?? "NULL"},
-  ${r.startAbs}, ${r.endAbs}, ${sqlStr(r.precision)}, ${sqlStr(r.startDateConfidence ?? null)}, ${sqlStr(r.endDateConfidence ?? null)}
+  ${r.startAbs}, ${r.endAbs}, ${sqlStr(r.precision)}, ${sqlStr(r.startDateConfidence ?? null)}, ${sqlStr(r.endDateConfidence ?? null)},
+  ${sqlStr(r.claimTrack ?? null)}, ${sqlStr(r.claimLabel ?? null)}, ${sqlStr(r.claimRole ?? null)}
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -724,7 +726,10 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence;`;
+  end_date_confidence = EXCLUDED.end_date_confidence,
+  claim_track = EXCLUDED.claim_track,
+  claim_label = EXCLUDED.claim_label,
+  claim_role = EXCLUDED.claim_role;`;
 }
 
 function eventSql(e) {

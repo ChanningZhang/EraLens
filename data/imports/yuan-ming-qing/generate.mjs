@@ -365,7 +365,6 @@ const events = [
   // 清——战争
   eventRange({ id: "suppress-three-feudatories", name: "平定三藩", kind: "battle", timeMode: "span", start: ym(1673), end: ym(1681), dynastyIds: ["qing"], participantIds: ["xuanye"], summary: "吴三桂等三藩起兵反清，康熙帝历时八年平定，巩固中央集权。" }),
   eventRange({ id: "yaksa-conflict", name: "雅克萨之战", kind: "battle", timeMode: "span", start: ym(1685), end: ym(1686), dynastyIds: ["qing"], participantIds: ["xuanye"], summary: "清军两次进攻沙俄占据的雅克萨，驱逐俄军，奠定东北边界谈判基础。" }),
-  eventPoint({ id: "qing-unify-taiwan", name: "清廷统一台湾", kind: "politics", precision: "month", dateNote: "康熙二十二年，施琅攻克台湾", at: ym(1683, 10), dynastyIds: ["qing"], participantIds: ["xuanye"], summary: "施琅率水师攻克台湾，郑氏政权灭亡，台湾纳入清朝版图。" }),
   eventRange({ id: "jinchuan-campaigns", name: "大小金川之战", kind: "battle", timeMode: "span", start: ym(1747), end: ym(1776), dynastyIds: ["qing"], participantIds: ["hongli"], summary: "乾隆朝两次征讨大小金川土司，历时近三十年，最终改土归流。" }),
   eventRange({ id: "dzungar-campaign", name: "平定准噶尔", kind: "battle", timeMode: "span", start: ym(1755), end: ym(1757), dynastyIds: ["qing"], participantIds: ["hongli"], summary: "乾隆帝平定准噶尔部，统一新疆，奠定西北版图。" }),
   eventRange({ id: "sino-burmese-war", name: "清缅战争", kind: "battle", timeMode: "span", start: ym(1765), end: ym(1769), dynastyIds: ["qing"], participantIds: ["hongli"], summary: "清军与缅甸四次交锋，虽未能彻底征服，但遏制缅军北侵。" }),
@@ -407,9 +406,9 @@ const events = [
     precision: "day",
     dateNote: "永历十五年十二月十三日，1662年2月1日，荷军签约投降",
     at: ymDay(1662, 2, 1),
-    dynastyIds: ["ming-south"],
+    dynastyIds: ["ming-south", "mingzheng"],
     participantIds: ["zheng-chenggong"],
-    summary: "郑成功驱逐荷兰殖民者，收复台湾。",
+    summary: "郑成功迫使荷兰东印度公司守军投降，收复台湾并设承天府，作为奉永历正朔的复明基地。",
   }),
 ];
 
@@ -550,6 +549,9 @@ const manifest = {
     { label: "辛亥革命", url: "https://zh.wikipedia.org/wiki/辛亥革命" },
     { label: "平定三藩", url: "https://zh.wikipedia.org/wiki/平定三藩之乱" },
     { label: "雅克萨之战", url: "https://zh.wikipedia.org/wiki/雅克萨之战" },
+    { label: "郑成功攻台之役", url: "https://zh.wikipedia.org/wiki/郑成功攻臺之役" },
+    { label: "澎湖海战", url: "https://zh.wikipedia.org/wiki/澎湖海战" },
+    { label: "郑克塽", url: "https://zh.wikipedia.org/wiki/郑克塽" },
     { label: "尼布楚条约", url: "https://zh.wikipedia.org/wiki/尼布楚条约" },
     { label: "南京条约", url: "https://zh.wikipedia.org/wiki/南京条约" },
     { label: "第二次鸦片战争", url: "https://zh.wikipedia.org/wiki/第二次鸦片战争" },
@@ -576,7 +578,7 @@ const manifest = {
     "元世祖至元年间部分早于1271年，年号取1271年后窗口。",
     "1912年清帝退位为帝制终结；中华民国不在本包内。",
     "元末割据：徐宋（1351–1360）、韩宋（1355–1366）、大周（1354–1367）、陈汉（1360–1364）、明夏（1362–1371）、吴/西吴（1364–1368，朱元璋称帝前）。",
-    "未收录明郑（1662–1683）等延续政权。",
+    "明郑政权的在位沿革见 ming-end 包；1662 年收复台湾与 1683 年降清事件在本包与 ming-end 包间共用同一事件记录。",
     "南明并行用 claim_track：主线弘光→隆武→永历；lu-jian/朱以海（绍兴监国）、shaowu/朱聿鐭（广州）。不把鲁监国、绍武串进继承链。",
     "晚明三大疑案：梃击案（1615）、红丸案（1620）、移宫案（1620），均取通行月日写入 date_note。",
     "清战争：平定三藩、雅克萨、统一台湾、大小金川、准噶尔、清缅、两次鸦片战争、中法战争、甲午战争、义和团、八国联军。",
