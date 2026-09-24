@@ -113,6 +113,15 @@ ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, moder
 INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
 VALUES ('loc-taiwan-conquest', '澎湖、台湾', '台湾海峡澎湖群岛至台湾岛', 119.57, 23.57, 'WGS84', 'approximate', '事件涵盖澎湖海战与郑克塽在台湾降清，以澎湖为代表性标点。', '[{"label":"地点资料","url":"https://zh.wikipedia.org/wiki/澎湖海战"}]'::jsonb)
 ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-poyang-lake-battle', '鄱阳湖', '江西省鄱阳湖南昌附近水域', 116.2, 29.05, 'WGS84', 'approximate', '战役发生于鄱阳湖及湖口一带水域，取湖区近南昌侧的近似标点；具体交战水域随战事推进而变化。', '[{"label":"鄱阳湖之战","url":"https://zh.wikipedia.org/wiki/鄱阳湖之战"},{"label":"鄱阳湖保护区资料","url":"https://www.fnrrc.com/ziranbaohuqujianjie/9912.html"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-korqin-sea-battle', '捕鱼儿海（贝尔湖）', '中蒙边界贝尔湖一带', 117.706, 47.802, 'WGS84', 'approximate', '捕鱼儿海即今贝尔湖；战场为湖岸及其东北方向营地一带，取湖区作近似标点。', '[{"label":"明太祖第六次北伐（捕鱼儿海之战）","url":"https://zh.wikipedia.org/wiki/明太祖第六次北伐"},{"label":"贝尔湖","url":"https://zh.wikipedia.org/wiki/贝尔湖"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-yinping', '阴平道（阴平故城区域）', '甘肃省陇南市文县鹄衣坝附近', 104.6835, 32.944031, 'WGS84', 'approximate', '以汉代阴平道故城所在的文县区域作近似标点；偷渡路线由此向东南越摩天岭，经今四川平武方向至江油关，坐标不代表全程。阴平道具体线路尚有不同考证。', '[{"label":"《三国志·魏书·邓艾传》","url":"https://zh.wikisource.org/zh-hans/三國志/卷28"},{"label":"蜀道寻踪：阴平古道记","url":"https://cbgc.scol.com.cn/news/5026693"},{"label":"文县中心坐标","url":"https://www.poi86.com/poi/amap/district/621222/2.html"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
 UPDATE events SET location_id = 'loc-baiteng' WHERE id = 'baiteng-siege';
 UPDATE events SET location_id = 'loc-changban' WHERE id = 'changban';
 UPDATE events SET location_id = 'loc-xiaoyaojin' WHERE id = 'xiaoyaojin';
@@ -150,5 +159,8 @@ UPDATE events SET location_id = 'loc-sarhu' WHERE id = 'sarhu-battle';
 UPDATE events SET location_id = 'loc-ningyuan' WHERE id = 'ningyuan-battle';
 UPDATE events SET location_id = 'loc-songjin' WHERE id = 'songjin-campaign';
 UPDATE events SET location_id = 'loc-taiwan-conquest' WHERE id = 'qing-conquer-taiwan';
+UPDATE events SET location_id = 'loc-poyang-lake-battle' WHERE id = 'poyang-lake-battle';
+UPDATE events SET location_id = 'loc-korqin-sea-battle' WHERE id = 'korqin-sea-battle';
+UPDATE events SET location_id = 'loc-yinping' WHERE id = 'deng-ai-crosses-yinping';
 
 COMMIT;

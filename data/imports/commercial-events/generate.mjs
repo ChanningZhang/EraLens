@@ -125,16 +125,6 @@ const events = [
     summary: "清廷将西洋商船贸易集中于广州，外商主要通过广州行商体系交易。广州由此成为清代中西贸易的核心口岸，这一格局延续至鸦片战争前后。",
     dateNote: "乾隆二十二年（1757）政策转折；各口岸执行和限制逐渐落实，不将其解释为所有对外贸易一概中止。",
   }),
-  eventPoint({
-    id: "commerce-treaty-of-nanking-five-ports",
-    name: "南京条约与五口通商",
-    kind: "commerce",
-    at: ym(1842, 8),
-    precision: "month",
-    dynastyIds: ["qing"],
-    summary: "清政府与英国签订《南京条约》，开放广州、厦门、福州、宁波、上海通商，并规定英商可不经公行交易。条约改变了清代对外贸易的口岸、商人中介和关税格局。",
-    dateNote: "道光二十二年七月二十四日（1842年8月29日）签订。",
-  }),
 ];
 
 const sources = [
@@ -155,7 +145,7 @@ const sources = [
 writeImportPackage(new URL(".", import.meta.url).pathname, {
   slug: "commercial-events",
   window: { startYear: -138, startMonth: 1, endYear: 1842, endMonth: 12 },
-  preSql: "DELETE FROM events WHERE id IN ('commerce-cucumber-recorded-in-qimin-yaoshu', 'commerce-maize-earliest-record', 'commerce-chili-earliest-record', 'commerce-tomato-recorded-in-zhipin', 'commerce-tobacco-recorded-in-jingyue-quanshu');\nDELETE FROM event_dynasties WHERE event_id IN ('commerce-cucumber-introduction', 'commerce-maize-introduction', 'commerce-sweet-potato-introduction', 'commerce-chili-introduction', 'commerce-tomato-introduction', 'commerce-tobacco-introduction');",
+  preSql: "DELETE FROM event_dynasties WHERE event_id = 'commerce-treaty-of-nanking-five-ports';\nDELETE FROM events WHERE id = 'commerce-treaty-of-nanking-five-ports';\nDELETE FROM events WHERE id IN ('commerce-cucumber-recorded-in-qimin-yaoshu', 'commerce-maize-earliest-record', 'commerce-chili-earliest-record', 'commerce-tomato-recorded-in-zhipin', 'commerce-tobacco-recorded-in-jingyue-quanshu');\nDELETE FROM event_dynasties WHERE event_id IN ('commerce-cucumber-introduction', 'commerce-maize-introduction', 'commerce-sweet-potato-introduction', 'commerce-chili-introduction', 'commerce-tomato-introduction', 'commerce-tobacco-introduction');",
   persons: [], dynasties: [], reignGroups: [], reigns: [], relations: [], events,
   manifest: {
     slug: "commercial-events",

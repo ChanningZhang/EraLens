@@ -16,7 +16,6 @@ import {
   resolveReignDetailFacts as resolveReignDetailFactsBase,
   resolveReignDetailSubtitle as resolveReignDetailSubtitleBase,
   resolveReignPrimaryLabel as resolveReignPrimaryLabelBase,
-  stripAncestralXing,
   usesPreQinCardLayout,
 } from "./emperorAppellation";
 

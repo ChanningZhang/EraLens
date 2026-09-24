@@ -3,6 +3,8 @@
 BEGIN;
 
 -- cleanup
+DELETE FROM event_dynasties WHERE event_id = 'commerce-treaty-of-nanking-five-ports';
+DELETE FROM events WHERE id = 'commerce-treaty-of-nanking-five-ports';
 DELETE FROM events WHERE id IN ('commerce-cucumber-recorded-in-qimin-yaoshu', 'commerce-maize-earliest-record', 'commerce-chili-earliest-record', 'commerce-tomato-recorded-in-zhipin', 'commerce-tobacco-recorded-in-jingyue-quanshu');
 DELETE FROM event_dynasties WHERE event_id IN ('commerce-cucumber-introduction', 'commerce-maize-introduction', 'commerce-sweet-potato-introduction', 'commerce-chili-introduction', 'commerce-tomato-introduction', 'commerce-tobacco-introduction');
 
@@ -35,8 +37,6 @@ INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning, content = EXCLUDED.content, location_id = EXCLUDED.location_id;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning, content, location_id) VALUES ('commerce-qing-canton-system', '广州一口通商', 'commerce', 'point', 'year', '乾隆二十二年（1757）政策转折；各口岸执行和限制逐渐落实，不将其解释为所有对外贸易一概中止。', 1757, 12, 21095, NULL, NULL, NULL, NULL, NULL, NULL, '清廷将西洋商船贸易集中于广州，外商主要通过广州行商体系交易。广州由此成为清代中西贸易的核心口岸，这一格局延续至鸦片战争前后。', NULL, NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning, content = EXCLUDED.content, location_id = EXCLUDED.location_id;
-INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning, content, location_id) VALUES ('commerce-treaty-of-nanking-five-ports', '南京条约与五口通商', 'commerce', 'point', 'month', '道光二十二年七月二十四日（1842年8月29日）签订。', 1842, 8, 22111, NULL, NULL, NULL, NULL, NULL, NULL, '清政府与英国签订《南京条约》，开放广州、厦门、福州、宁波、上海通商，并规定英商可不经公行交易。条约改变了清代对外贸易的口岸、商人中介和关税格局。', NULL, NULL, NULL)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning, content = EXCLUDED.content, location_id = EXCLUDED.location_id;
 
 -- event_dynasties
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('commerce-song-guangzhou-shipping-office', 'song-north') ON CONFLICT DO NOTHING;
@@ -44,7 +44,6 @@ INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('commerce-song-tea-ho
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('commerce-longqing-yuegang-opening', 'ming') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('commerce-qing-maritime-trade-reopened', 'qing') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('commerce-qing-canton-system', 'qing') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('commerce-treaty-of-nanking-five-ports', 'qing') ON CONFLICT DO NOTHING;
 
 -- event_participants
 

@@ -137,18 +137,6 @@ export function usesPreQinCardLayout(reign: Pick<Reign, "start">): boolean {
   return reign.start.year < PRE_IMPERIAL_START_YEAR;
 }
 
-/** Drop stored 姓 prefix from persons.name (import stores 姓+私名). */
-export function stripAncestralXing(
-  name: string,
-  clan?: PersonDisplayContext | null,
-): string {
-  const xing = clan?.personAncestralXing;
-  if (!xing || !name.startsWith(xing) || name.length <= xing.length) {
-    return name;
-  }
-  return name.slice(xing.length);
-}
-
 function isPlaceholderPersonName(name: string): boolean {
   return PLACEHOLDER_PERSON_NAME.test(name);
 }
@@ -177,7 +165,7 @@ export function resolvePreQinNameFacts(
   const given = reign
     ? resolvePreQinGivenName(reign, personName, clan)
     : personName && !isPlaceholderPersonName(personName)
-      ? stripAncestralXing(personName, clan)
+      ? personName
       : null;
   if (given) facts.push({ label: "名", value: given });
   return facts;
@@ -202,7 +190,7 @@ function resolvePreQinGivenName(
   if (personName === reign.title) {
     return null;
   }
-  const given = stripAncestralXing(personName, personContext);
+  const given = personName;
   if (!given) return null;
   const appellation = resolvePreQinCardPrimary(reign, personContext);
   if (appellation && givenNameIsRedundant(appellation, given)) return null;
@@ -368,6 +356,12 @@ function resolveReignCardAppellation(
   if (title) return { kind: "regnal", name: title };
 
   const eraName = firstEraName(reign);
+
+  // Ming and Qing cards conventionally use era names when no explicit reign
+  // title was stored. This is a period-wide rule, independent of person fields.
+  if (reign.start.year >= MING_QING_START_YEAR && eraName) {
+    return { kind: "era", name: eraName };
+  }
 
   if (reign.start.year >= TEMPLE_ERA_START_YEAR) {
     const temple = resolveTempleAppellation(personContext);

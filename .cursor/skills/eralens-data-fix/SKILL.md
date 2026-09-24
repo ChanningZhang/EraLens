@@ -109,7 +109,9 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 
 **展示规则（只读库，不在修复时破坏）**：
 
-- `resolveEmperorAppellation`：唐以前偏谥号/称号，唐–元偏庙号，明清偏年号。
+- 泳道卡片小字共用同一顺序：非空 `reigns.title` 优先；title 为空时，先秦显示 `persons.name`，秦至南北朝优先 `persons.posthumous_name`，隋至元优先 `persons.temple_name`，明清优先 `reigns.era_names`；民国及以后也沿用 title 优先原则。
+- 明清空 title 时，年号优先于庙号、谥号。明清普通皇帝 `reigns.title` 必须为空；三条显式例外为朱元璋吴王时期（`吴`）、努尔哈赤（`太祖`）、皇太极（`太宗`）。维护这三条以外的明清称号时先核对是否确属用户指定例外，不能把年号再复制进 `title`。
+- `resolveEmperorAppellation` 的详情称谓规则按在位起始年：唐以前偏谥号/称号，唐–元偏庙号，明清偏年号。详情规则与泳道卡片小字规则分开核对。
 - 先秦卡片：主行读 `posthumous_name` / `reigns.title`；副行私名靠 `ancestral_xing` / `clan_shi` 去姓。
 - 先秦 `persons.ancestral_xing` / `persons.clan_shi` 优先写 `feudalClanMetadata.mjs` + `applyFeudalClanMetadata`（导入模板 + 人物级覆盖，不是个案 hardcode）。
 

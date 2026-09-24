@@ -34,6 +34,9 @@ INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, 
 VALUES ('zhou-yu', '周瑜', ARRAY[]::text[], NULL, NULL, 175, 1, 210, 1, ARRAY['军事家'], '孙吴名将，赤壁之战主将之一。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/周瑜"}]'::jsonb, NULL, NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, title = EXCLUDED.title;
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name, title)
+VALUES ('deng-ai', '邓艾', ARRAY[]::text[], NULL, NULL, 197, 1, 264, 1, ARRAY['军事家','将领'], '曹魏将领，景元四年率军由阴平道奇袭江油，参与灭蜀之战。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/邓艾"}]'::jsonb, NULL, NULL, NULL)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, title = EXCLUDED.title;
+INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name, title)
 VALUES ('yuan-shao', '袁绍', ARRAY[]::text[], NULL, NULL, 154, 1, 202, 6, ARRAY['军阀'], '东汉末北方军阀，官渡之战曹操对手。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/袁绍"}]'::jsonb, NULL, NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, title = EXCLUDED.title;
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name, title)
@@ -58,19 +61,19 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_na
 
 -- reigns
 INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence)
-VALUES ('reign-cao-pi', 'wei', 'cao-pi', '魏文帝', '黄初', 220, 12, 11, 226, 6, 29, 2651, 2717, 'day', NULL, NULL)
+VALUES ('reign-cao-pi', 'wei', 'cao-pi', '', '黄初', 220, 12, 11, 226, 6, 29, 2651, 2717, 'day', NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence;
 INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence)
-VALUES ('reign-cao-rui', 'wei', 'cao-rui', '魏明帝', '太和,青龙,景初', 226, 6, 29, 239, 1, 22, 2717, 2868, 'day', NULL, NULL)
+VALUES ('reign-cao-rui', 'wei', 'cao-rui', '', '太和,青龙,景初', 226, 6, 29, 239, 1, 22, 2717, 2868, 'day', NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence;
 INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence)
-VALUES ('reign-liu-bei', 'shu', 'liu-bei', '昭烈帝', '章武', 221, 5, 15, 223, 6, 10, 2656, 2681, 'day', NULL, NULL)
+VALUES ('reign-liu-bei', 'shu', 'liu-bei', '', '章武', 221, 5, 15, 223, 6, 10, 2656, 2681, 'day', NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence;
 INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence)
-VALUES ('reign-liu-shan', 'shu', 'liu-shan', '蜀汉后主', '建兴,延熙,景耀,炎兴', 223, 6, 10, 263, 12, 23, 2681, 3167, 'day', NULL, NULL)
+VALUES ('reign-liu-shan', 'shu', 'liu-shan', '', '建兴,延熙,景耀,炎兴', 223, 6, 10, 263, 12, 23, 2681, 3167, 'day', NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence;
 INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence)
-VALUES ('reign-sun-quan', 'wu', 'sun-quan', '大皇帝', '黄武', 222, 10, 19, 252, 5, 21, 2673, 3028, 'day', NULL, NULL)
+VALUES ('reign-sun-quan', 'wu', 'sun-quan', '', '黄武', 222, 10, 19, 252, 5, 21, 2673, 3028, 'day', NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence;
 
 -- events
@@ -82,6 +85,8 @@ INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning, content = EXCLUDED.content, location_id = EXCLUDED.location_id;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning, content, location_id) VALUES ('yiling', '夷陵之战', 'battle', 'span', 'month', '章武元年七月至二年八月', NULL, NULL, NULL, 221, 7, 2658, 222, 8, 2671, '刘备伐吴复仇，于夷陵大败，蜀汉元气大伤。', NULL, NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning, content = EXCLUDED.content, location_id = EXCLUDED.location_id;
+INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning, content, location_id) VALUES ('deng-ai-crosses-yinping', '邓艾偷渡阴平', 'battle', 'point', 'month', '景元四年冬十月（263年），邓艾自阴平道行军入蜀', 263, 10, 3165, NULL, NULL, NULL, NULL, NULL, NULL, '钟会军受阻于剑阁时，邓艾率军由阴平道穿越险阻，进至江油并击败蜀军，迫使蜀汉政权迅速瓦解。', NULL, NULL, NULL)
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning, content = EXCLUDED.content, location_id = EXCLUDED.location_id;
 
 -- event_dynasties
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('guandu', 'wei') ON CONFLICT DO NOTHING;
@@ -91,6 +96,8 @@ INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('chibi', 'wu') ON CON
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('liu-bei-takes-yizhou', 'shu') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('yiling', 'shu') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('yiling', 'wu') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('deng-ai-crosses-yinping', 'wei') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('deng-ai-crosses-yinping', 'shu') ON CONFLICT DO NOTHING;
 
 -- event_participants
 INSERT INTO event_participants (event_id, person_id) VALUES ('guandu', 'cao-cao') ON CONFLICT DO NOTHING;
@@ -104,6 +111,8 @@ INSERT INTO event_participants (event_id, person_id) VALUES ('liu-bei-takes-yizh
 INSERT INTO event_participants (event_id, person_id) VALUES ('liu-bei-takes-yizhou', 'liu-zhang') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('yiling', 'liu-bei') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('yiling', 'sun-quan') ON CONFLICT DO NOTHING;
+INSERT INTO event_participants (event_id, person_id) VALUES ('deng-ai-crosses-yinping', 'deng-ai') ON CONFLICT DO NOTHING;
+INSERT INTO event_participants (event_id, person_id) VALUES ('deng-ai-crosses-yinping', 'liu-shan') ON CONFLICT DO NOTHING;
 
 -- relations
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_abs, precision, event_id) VALUES ('rel-cao-pi-cao-rui-succession', 'person', 'cao-pi', 'person', 'cao-rui', 'succession', NULL, NULL, NULL, NULL, NULL) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, precision = EXCLUDED.precision, event_id = EXCLUDED.event_id;

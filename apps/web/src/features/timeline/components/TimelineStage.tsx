@@ -23,6 +23,7 @@ import { useLaneColorCatalog } from "../hooks/useLaneColorCatalog";
 import { useStageViewportHeight } from "../hooks/useStageViewportHeight";
 import { useTimelineCatalog } from "../hooks/useTimelineCatalog";
 import { useViewport } from "../hooks/useViewport";
+import { useSelection } from "../hooks/useSelection";
 import {
   eventLaneCount,
   eventTargetReign,
@@ -75,6 +76,7 @@ export function TimelineStage() {
   const stageViewportHeight = useStageViewportHeight(stageRef);
   const reduceMotion = useReducedMotion();
   const viewport = useViewport();
+  const selection = useSelection();
   const { data, isLoading, error } = useTimelineData();
 
   const dynastiesById = useMemo(() => {
@@ -145,10 +147,12 @@ export function TimelineStage() {
     const windowEnd = viewport.centerAbs + 60;
     return data.events.filter((event) => {
       if (event.kind !== "battle" || !event.location) return false;
+      const isSelected = selection.selected?.type === "event" && selection.selected.id === event.id;
+      if (isSelected) return true;
       const span = eventSpanAbs(event);
       return span.startAbs <= windowEnd && span.endAbs >= windowStart;
     });
-  }, [data, viewport.centerAbs]);
+  }, [data, viewport.centerAbs, selection.selected]);
   const dynastyNamesById = useMemo(() => {
     const map = new Map<string, string>();
     for (const dynasty of timelineCatalog?.dynasties ?? []) {

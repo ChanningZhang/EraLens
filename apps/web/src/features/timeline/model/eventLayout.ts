@@ -148,15 +148,17 @@ export function packEventLanes(
 
 export type EventBadgePosition = { laneId: string; anchorX: number; edge: "top" | "bottom" };
 
-/** A participant identifies a card only when exactly one linked reign covers the event date. */
+/** Anchor a dated event to its unique active card, using participants to disambiguate overlap. */
 export function eventTargetReign(event: Event, reigns: readonly Reign[]): Reign | null {
   const { anchorAbs } = eventSpanAbs(event);
-  const matches = reigns.filter((reign) =>
+  const active = reigns.filter((reign) =>
     event.dynastyIds.includes(reign.dynastyId) &&
-    event.participantIds.includes(reign.personId) &&
     reign.startAbs <= anchorAbs && anchorAbs <= reign.endAbs,
   );
-  return matches.length === 1 ? matches[0]! : null;
+  const participants = active.filter((reign) => event.participantIds.includes(reign.personId));
+  if (participants.length === 1) return participants[0]!;
+  if (participants.length > 1) return null;
+  return active.length === 1 ? active[0]! : null;
 }
 
 const EVENT_PRECISION_ORDER: Record<Event["precision"], number> = {

@@ -123,6 +123,7 @@ Task Progress:
 **谥号 / 庙号 / 年号字段**（与商周一致）：
 - **谥号、庙号**写在 `persons.posthumous_name` / `persons.temple_name`（逗号分隔 CSV，同人多值按在位顺序）；卡片取第一个，详情用 `、` 展示全部。
 - **年号**写在 `reigns.era_names`（逗号分隔名称列表，如 `泰定,致和`）；不再使用 `era_names` 子表，各年号起迄年月不入库。
+- 泳道卡片小字先取非空 `reigns.title`。明清（起年 1368 年及以后）空 title 时以 `era_names` 第一项为小字，优先于人物庙号、谥号；不得将明清年号复制到 `reigns.title`。明清普通皇帝 title 留空，仅保留朱元璋吴王时期 `吴`、努尔哈赤 `太祖`、皇太极 `太宗` 三条指定例外。例外 title 来自 `data/imports/lib/reignTitleSelections.mjs` 的显式数据选择。
 - 字段只存谥号/庙号本体，**不带国名或王朝前缀**（如 `武王`、`孝文皇帝`、`太宗`；不要写 `周武王`、`汉孝文皇帝`、`唐太宗`）。
 - **史称**（少帝/废帝/末帝/后主等）写在 `title`，**不得**写入 `posthumous_name`。
 - 国名 + 简称写在 `title`（如 `周武王`、`唐太宗`、`后唐庄宗`），由运行时 `resolveEmperorAppellation` 按年份阈值选用正规字段展示；运行时不从 `title` 推测谥号。

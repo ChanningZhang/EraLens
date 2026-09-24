@@ -38,7 +38,7 @@
 
 - **概述**：面向界面读者，简洁说明王朝/人物的身份、历史脉络与关键事实。只写历史内容；收录范围、资料取舍、年代推算、绘制方式等编辑/实现规范写入导入包的 `manifest.json` `notes`，不要混入概述。
 
-- **称谓**：`resolveEmperorAppellation` 按在位起始年——唐以前偏谥号/称号，唐至元偏庙号，明清偏年号。谥号只读 `posthumous_name`（史称如少帝/末帝/后主不得写入该字段）；庙号/年号同理读正规字段，运行时不从 `title` 推测。`reigns.title` 存卡片用的称号/史称（先秦常去国号，如 `禹`、`君舍`）；不要为「默认该显示庙号」去改 title。先秦（始皇帝以前）卡片主行用入库字段，副行私名靠 `ancestral_xing` / `clan_shi` 去姓，不靠运行时国名表或姓氏表。
+- **称谓**：`resolveEmperorAppellation` 按在位起始年——唐以前偏谥号/称号，唐至元偏庙号，明清偏年号。泳道卡片小字先显示非空 `reigns.title`；title 为空时，先秦显示 `persons.name`，秦至南北朝优先谥号，隋至元优先庙号，明清优先 `reigns.era_names`，民国及以后仍沿用 title 优先原则。明清普通皇帝的 `reigns.title` 留空，年号只存 `era_names`；仅朱元璋吴王时期（“吴”）、努尔哈赤（“太祖”）、皇太极（“太宗”）三条保留 title。明清空 title 时年号优先于庙号、谥号。谥号只读 `posthumous_name`（史称如少帝/末帝/后主不得写入该字段）；庙号/年号同理读正规字段，运行时不从 `title` 推测。`reigns.title` 存其余卡片称号/史称（先秦常去国号，如 `禹`、`君舍`）；不要为「默认该显示庙号」去填 title。先秦（始皇帝以前）卡片主行用入库字段，副行私名靠 `ancestral_xing` / `clan_shi` 去姓，不靠运行时国名表或姓氏表。
 - **卡片**：宽度由在位时长 × `pxPerMonth` 决定，不要为了塞字而拉宽/缩小条。字排不下时改字号或把字写到行空隙（`wrap` / `below`），不改条的时间几何。
 - **并立**：`claim_track` 分行，高度为正常行的 2/3，虚线描边 + 浅填，互不裁切。
 - **相续泳道合并**（`dynasty_lane_groups` + `dynastyLaneGroups.ts`）：配置入库（包 `data/imports/dynasty-lane-groups/`），西周/东周、蒙古/元、吴政权/明/南明等压成一行；左侧冻结名与名牌金色都由泳道**中线**所在相位/`orthodox_*` 决定，不是以左缘为准。组的 lane-order span 不随视口收缩。

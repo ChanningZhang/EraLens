@@ -1,14 +1,21 @@
-/** Explicit reign-title data selected for the remaining title-bearing reigns. */
+/**
+ * Explicit reign-title data for records that have a card-specific title.
+ * Ming/Qing era names belong in era_names and are selected by the shared
+ * period rule, not copied here. Their only emperor-title exceptions are
+ * Zhu Yuanzhang's Wu reign, Nurhaci, and Huang Taiji.
+ */
 export const REIGN_TITLE_SELECTIONS = Object.freeze({
   "reign-liu-bang-han-king-han-west": "沛公",
   "reign-ying-zheng-qin": "赵政",
   "reign-hu-bilie-mongol-empire": "薛禅汗",
-  "reign-hu-bilie-yuan": "元世祖",
-  "reign-hu-bilie-yuan-unified": "元世祖",
+  "reign-hu-bilie-yuan": "世祖",
+  "reign-hu-bilie-yuan-unified": "世祖",
+  "reign-zhu-yuanzhang-wu-zhu": "吴",
   "reign-nurhaci-qing": "太祖",
   "reign-huang-taiji-qing": "太宗",
   "reign-zhu-qiyu-regent-ming": "郕王监国",
   "reign-zhu-yihai-ming-south": "鲁监国",
+  "reign-guo-wei-regent-han-hou": "监国",
   "reign-sun-yat-sen-roc": "临时大总统",
   "reign-yuan-shikai-roc": "大总统",
   "reign-li-yuanhong-roc": "大总统",
@@ -56,7 +63,5 @@ export const REIGN_TITLE_SELECTIONS = Object.freeze({
 export function resolveReignTitle(reign) {
   const selectedTitle = REIGN_TITLE_SELECTIONS[reign.id];
   if (selectedTitle !== undefined) return selectedTitle;
-  if (typeof reign.title === "string" && reign.title.trim()) return reign.title.trim();
-  if (reign.eraNamesAsTitle) return (reign.eraNames ?? []).map((era) => typeof era === "string" ? era : era.name).join("、");
   return "";
 }

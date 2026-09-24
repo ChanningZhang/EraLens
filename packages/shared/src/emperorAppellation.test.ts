@@ -11,7 +11,6 @@ import {
   resolveReignDetailSubtitle as resolveReignDetailSubtitleBase,
   resolveReignPrimaryLabel as resolveReignPrimaryLabelBase,
   resolveReignRelatedLabel as resolveReignRelatedLabelBase,
-  stripAncestralXing,
   usesPreQinCardLayout,
 } from "./emperorAppellation";
 
@@ -611,40 +610,40 @@ describe("resolveReignCardMeta", () => {
     ).toEqual({ label: "称号", name: "人物称号" });
   });
 
-  it("shows Ming and Qing era names stored in the reign title", () => {
+  it("keeps explicit Ming and Qing reign titles ahead of era names", () => {
     expect(
       resolveReignCardMeta(
         source({
           start: { year: 1661, month: 1 },
-          title: "康熙",
-          eraNames: ["康熙"],
+          title: "太祖",
+          eraNames: ["天命"],
         }),
         "爱新觉罗·玄烨",
       ),
-    ).toEqual({ label: "称号", name: "康熙" });
+    ).toEqual({ label: "称号", name: "太祖" });
     expect(
       resolveReignCardMeta(
         source({
           start: { year: 1435, month: 1 },
-          title: "正统",
+          title: "太宗",
           eraNames: ["正统"],
         }),
         "朱祁镇",
       ),
-    ).toEqual({ label: "称号", name: "正统" });
+    ).toEqual({ label: "称号", name: "太宗" });
     expect(
       resolveReignCardMeta(
         source({
           start: { year: 1457, month: 1 },
-          title: "天顺",
+          title: "太宗",
           eraNames: ["天顺"],
         }),
         "朱祁镇",
       ),
-    ).toEqual({ label: "称号", name: "天顺" });
+    ).toEqual({ label: "称号", name: "太宗" });
   });
 
-  it("uses person appellations before era names for every period", () => {
+  it("uses Ming and Qing era names before person appellations", () => {
     expect(
       resolveReignCardMeta(
         source({
@@ -655,7 +654,7 @@ describe("resolveReignCardMeta", () => {
         }),
         "爱新觉罗·玄烨",
       ),
-    ).toEqual({ label: "庙号", name: "圣祖" });
+    ).toEqual({ label: "年号", name: "康熙" });
 
     expect(
       resolveReignCardMeta(
@@ -667,7 +666,7 @@ describe("resolveReignCardMeta", () => {
         }),
         "朱祁镇",
       ),
-    ).toEqual({ label: "庙号", name: "英宗" });
+    ).toEqual({ label: "年号", name: "正统" });
   });
 
   it("keeps the person name while separating multiple reign titles", () => {
@@ -1073,85 +1072,6 @@ describe("pre-Qin card layout", () => {
     expect(usesPreQinCardLayout(source({ start: { year: -221, month: 1 } }))).toBe(
       false,
     );
-  });
-
-  it("strips stored 姓 but keeps 氏 in personal names", () => {
-    expect(
-      stripAncestralXing(
-        "姬发",
-        buildPreQinClanContext({ ancestralXing: "姬" }),
-      ),
-    ).toBe("发");
-    expect(
-      stripAncestralXing(
-        "姜小白",
-        buildPreQinClanContext({ ancestralXing: "姜" }),
-      ),
-    ).toBe("小白");
-    expect(
-      stripAncestralXing(
-        "嬴渠梁",
-        buildPreQinClanContext({ ancestralXing: "嬴" }),
-      ),
-    ).toBe("渠梁");
-    expect(
-      stripAncestralXing(
-        "己狂",
-        buildPreQinClanContext({ ancestralXing: "己" }),
-      ),
-    ).toBe("狂");
-    expect(
-      stripAncestralXing(
-        "姒姑容",
-        buildPreQinClanContext({ ancestralXing: "姒" }),
-      ),
-    ).toBe("姑容");
-    expect(
-      stripAncestralXing(
-        "子成",
-        buildPreQinClanContext({ ancestralXing: "子" }),
-      ),
-    ).toBe("成");
-    expect(
-      stripAncestralXing(
-        "嬴子楚",
-        buildPreQinClanContext({ ancestralXing: "嬴" }),
-      ),
-    ).toBe("子楚");
-    expect(
-      stripAncestralXing(
-        "任好",
-        buildPreQinClanContext({ ancestralXing: "嬴" }),
-      ),
-    ).toBe("任好");
-    expect(
-      stripAncestralXing(
-        "姬宫湦余",
-        buildPreQinClanContext({ ancestralXing: "姬" }),
-      ),
-    ).toBe("宫湦余");
-    expect(stripAncestralXing("吕尚")).toBe("吕尚");
-    expect(stripAncestralXing("熊侣")).toBe("熊侣");
-    expect(stripAncestralXing("田因齐")).toBe("田因齐");
-    expect(stripAncestralXing("魏斯")).toBe("魏斯");
-    expect(
-      stripAncestralXing(
-        "妫因齐",
-        buildPreQinClanContext({ ancestralXing: "妫", clanShi: "田" }),
-      ),
-    ).toBe("因齐");
-    expect(
-      stripAncestralXing(
-        "芈侣",
-        buildPreQinClanContext({ ancestralXing: "芈", clanShi: "熊" }),
-      ),
-    ).toBe("侣");
-    expect(
-      stripAncestralXing(
-        "姜尚",
-        buildPreQinClanContext({ ancestralXing: "姜", clanShi: "吕" }),
-      ),
-    ).toBe("尚");
   });
 
   it("puts appellation on the primary line and the given name on meta", () => {

@@ -47,7 +47,7 @@ function legendReign({
 const persons = [
   {
     id: "feng-fuxi",
-    name: "风伏羲",
+    name: "伏羲",
     altNames: ["伏羲", "太昊", "庖牺"],
     ancestralXing: "风",
     roles: ["君主"],
@@ -56,7 +56,7 @@ const persons = [
   },
   {
     id: "feng-nuwa",
-    name: "风女娲",
+    name: "女娲",
     altNames: ["女娲", "娲皇"],
     ancestralXing: "风",
     roles: ["君主"],
@@ -65,7 +65,7 @@ const persons = [
   },
   {
     id: "jiang-shinian",
-    name: "姜石年",
+    name: "石年",
     altNames: ["神农", "炎帝", "神农氏"],
     ancestralXing: "姜",
     roles: ["君主"],
@@ -74,7 +74,7 @@ const persons = [
   },
   {
     id: "ji-xuanyuan",
-    name: "姬轩辕",
+    name: "轩辕",
     altNames: ["黄帝", "轩辕", "有熊"],
     ancestralXing: "姬",
     roles: ["君主"],
@@ -83,7 +83,7 @@ const persons = [
   },
   {
     id: "ji-zhuanxu",
-    name: "姬颛顼",
+    name: "颛顼",
     altNames: ["颛顼", "高阳"],
     ancestralXing: "姬",
     roles: ["君主"],
@@ -92,7 +92,7 @@ const persons = [
   },
   {
     id: "ji-ku",
-    name: "姬夋",
+    name: "夋",
     altNames: ["帝喾", "高辛", "俊"],
     ancestralXing: "姬",
     roles: ["君主"],
@@ -101,7 +101,7 @@ const persons = [
   },
   {
     id: "ji-zhi",
-    name: "姬挚",
+    name: "挚",
     altNames: ["帝挚", "挚"],
     ancestralXing: "姬",
     roles: ["君主"],
@@ -110,7 +110,7 @@ const persons = [
   },
   {
     id: "yiqi-fangxun",
-    name: "祁放勋",
+    name: "放勋",
     altNames: ["尧", "唐尧", "陶唐", "伊祁放勋", "放勋"],
     ancestralXing: "祁",
     clanShi: "陶唐",
@@ -120,7 +120,7 @@ const persons = [
   },
   {
     id: "yao-chonghua",
-    name: "姚重华",
+    name: "重华",
     altNames: ["舜", "虞舜", "重华"],
     ancestralXing: "姚",
     roles: ["君主"],

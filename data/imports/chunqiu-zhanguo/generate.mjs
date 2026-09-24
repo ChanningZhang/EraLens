@@ -123,7 +123,7 @@ function eventPoint({ id, name, kind, at, precision = "year", dateNote, dynastyI
 // ── persons (rulers + key figures) ──
 
 const EXTRA_PERSONS = [
-  person("wu-fu-gai", "姬夫概", ["君主"], "阖闾之弟。前505年自立为吴王，不久败走楚国；见吴国君主列表。", "吴王夫概"),
+  person("wu-fu-gai", "夫概", ["君主"], "阖闾之弟。前505年自立为吴王，不久败走楚国；见吴国君主列表。", "吴王夫概"),
   person("shang-yang", "商鞅", ["政治家"], "卫国人，秦孝公时主持变法，奠定秦统一基础。", "商鞅", ym(-390), ym(-338)),
   person("wu-qi", "吴起", ["军事家", "政治家"], "魏文侯时名将，后在楚主持变法。", "吴起", ym(-440), ym(-381)),
   person("sun-wu", "孙武", ["军事家"], "齐国军事家，著《孙子兵法》，传为吴王阖闾将。", "孙武"),

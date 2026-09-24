@@ -26,10 +26,10 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_na
 
 -- reigns
 INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence)
-VALUES ('reign-hong-xiuquan-taiping', 'taiping', 'hong-xiuquan', '天王', NULL, 1851, 3, 23, 1864, 6, 1, 22214, 22373, 'day', NULL, NULL)
+VALUES ('reign-hong-xiuquan-taiping', 'taiping', 'hong-xiuquan', '', NULL, 1851, 3, 23, 1864, 6, 1, 22214, 22373, 'day', NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence;
 INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence)
-VALUES ('reign-hong-tianguifu-taiping', 'taiping', 'hong-tianguifu', '幼天王', NULL, 1864, 6, 6, 1864, 7, 19, 22373, 22374, 'day', NULL, NULL)
+VALUES ('reign-hong-tianguifu-taiping', 'taiping', 'hong-tianguifu', '', NULL, 1864, 6, 6, 1864, 7, 19, 22373, 22374, 'day', NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence;
 
 -- events

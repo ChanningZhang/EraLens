@@ -388,7 +388,7 @@ export const EntityDetailSchema = z.object({
         label: z.string(),
         subtitle: z.string().optional(),
         abs: z.number().optional(),
-        group: z.enum(["idiom", "poetry", "event", "reign", "person", "dynasty", "capital"]).optional(),
+        group: z.enum(["idiom", "poetry", "event", "reign", "person", "dynasty", "capital", "location"]).optional(),
       }),
     )
     .default([]),

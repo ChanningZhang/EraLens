@@ -167,6 +167,13 @@ export const FEUDAL_PERSON_CLAN_OVERRIDES = {
     clanShi: "田",
     source: "https://zh.wikipedia.org/wiki/齐国 — 田齐：妫姓田氏",
   },
+  "qi-r33": { ancestralXing: "妫", clanShi: "田", source: "https://zh.wikipedia.org/wiki/齐国 — 田齐：妫姓田氏" },
+  "qi-r34": { ancestralXing: "妫", clanShi: "田", source: "https://zh.wikipedia.org/wiki/齐国 — 田齐：妫姓田氏" },
+  "qi-r35": { ancestralXing: "妫", clanShi: "田", source: "https://zh.wikipedia.org/wiki/齐国 — 田齐：妫姓田氏" },
+  "qi-r36": { ancestralXing: "妫", clanShi: "田", source: "https://zh.wikipedia.org/wiki/齐国 — 田齐：妫姓田氏" },
+  "qi-r37": { ancestralXing: "妫", clanShi: "田", source: "https://zh.wikipedia.org/wiki/齐国 — 田齐：妫姓田氏" },
+  "qi-r38": { ancestralXing: "妫", clanShi: "田", source: "https://zh.wikipedia.org/wiki/齐国 — 田齐：妫姓田氏" },
+  "qi-r39": { ancestralXing: "妫", clanShi: "田", source: "https://zh.wikipedia.org/wiki/齐国 — 田齐：妫姓田氏" },
   "hou-yi": {
     ancestralXing: null,
     clanShi: "有穷",

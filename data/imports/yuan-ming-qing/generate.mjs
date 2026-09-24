@@ -74,11 +74,6 @@ function dr(dynastyId, personId, title, posthumous, temple, sy, ey, eraList = []
   return dynastyReign(dynastyId, personId, title, posthumous, temple, sy, ey, eraNames, null, claim);
 }
 
-function useEraNamesAsTitles(reigns) {
-  return reigns.map((r) => r.eraNames?.length ? { ...r, eraNamesAsTitle: true } : r);
-}
-
-
 // ── persons ────────────────────────────────────────────────────────────────
 
 const persons = [
@@ -256,7 +251,8 @@ const yuanMoReigns = [
 ];
 
 // 明帝在位日取维基百科君主列表通行换算，precision=day。
-const mingReigns = useEraNamesAsTitles([
+// 普通明清皇帝不把年号烘焙到 reign.title；小字规则从 era_names 读取。
+const mingReigns = [
   drDay("ming", "zhu-yuanzhang", "明太祖", "高皇帝", "太祖", 1368, 1, 23, 1398, 6, 24, [{ name: "洪武", sy: 1368, ey: 1398 }]),
   drDay("ming", "zhu-yunwen", "建文帝", null, null, 1398, 6, 30, 1402, 7, 13, [{ name: "建文", sy: 1399, ey: 1402 }]),
   drDay("ming", "zhu-di", "明成祖", "文皇帝", "成祖", 1402, 7, 17, 1424, 8, 12, [{ name: "永乐", sy: 1403, ey: 1424 }]),
@@ -275,14 +271,14 @@ const mingReigns = useEraNamesAsTitles([
   drDay("ming", "zhu-changluo", "明光宗", "贞皇帝", "光宗", 1620, 8, 28, 1620, 9, 26, [{ name: "泰昌", sy: 1620, ey: 1620 }]),
   drDay("ming", "zhu-youjiao", "明熹宗", "哲皇帝", "熹宗", 1620, 9, 26, 1627, 9, 30, [{ name: "天启", sy: 1621, ey: 1627 }]),
   drDay("ming", "zhu-youjian", "明思宗", "毅皇帝", "思宗", 1627, 10, 2, 1644, 4, 25, [{ name: "崇祯", sy: 1628, ey: 1644 }]),
-]);
+];
 
-const mingSouthMain = useEraNamesAsTitles([
+const mingSouthMain = [
   drDay("ming-south", "zhu-yousong", "弘光帝", null, null, 1644, 6, 19, 1645, 6, 15, [{ name: "弘光", sy: 1644, ey: 1645 }]),
   drDay("ming-south", "zhu-yujian", "隆武帝", null, null, 1645, 8, 18, 1646, 10, 6, [{ name: "隆武", sy: 1645, ey: 1646 }]),
   drDay("ming-south", "zhu-youlang", "永历帝", null, null, 1646, 12, 24, 1662, 6, 1, [{ name: "永历", sy: 1646, ey: 1662 }]),
-]);
-const mingSouthParallel = useEraNamesAsTitles([
+];
+const mingSouthParallel = [
   drDay("ming-south", "zhu-yihai", "鲁监国", null, null, 1645, 9, 7, 1653, 3, 1, [], {
     track: "lu-jian",
     label: "绍兴监国",
@@ -291,11 +287,12 @@ const mingSouthParallel = useEraNamesAsTitles([
     track: "shaowu",
     label: "广州",
   }),
-]);
+];
 const mingSouthReigns = [...mingSouthMain, ...mingSouthParallel];
 
 // 清帝在位日取维基百科君主列表通行换算，precision=day。
-const qingReigns = useEraNamesAsTitles([
+// 努尔哈赤、皇太极的显式 title 例外由 reignTitleSelections.mjs 维护。
+const qingReigns = [
   drDay("qing", "nurhaci", "清太祖", "武皇帝", "太祖", 1616, 2, 17, 1626, 9, 30, [{ name: "天命", sy: 1616, ey: 1626 }]),
   drDay("qing", "huang-taiji", "清太宗", "文皇帝", "太宗", 1626, 10, 20, 1643, 9, 21, [
     { name: "天聪", sy: 1627, ey: 1636 },
@@ -311,7 +308,7 @@ const qingReigns = useEraNamesAsTitles([
   drDay("qing", "zaichun", "清穆宗", "毅皇帝", "穆宗", 1861, 11, 11, 1875, 1, 12, [{ name: "同治", sy: 1862, ey: 1874 }]),
   drDay("qing", "zaitian", "清德宗", "景皇帝", "德宗", 1875, 2, 25, 1908, 11, 14, [{ name: "光绪", sy: 1875, ey: 1908 }]),
   drDay("qing", "puyi", "清逊帝", null, null, 1908, 12, 2, 1912, 2, 12, [{ name: "宣统", sy: 1909, ey: 1912 }]),
-]);
+];
 
 const reignGroups = [yuanReignsMain, yuanMoReigns, mingReigns, mingSouthMain, qingReigns];
 const reigns = applyDocumentedDatesToReigns(
@@ -345,8 +342,8 @@ const events = [
   eventRange({ id: "yongle-rule", name: "永乐盛世", kind: "politics", timeMode: "span", start: ym(1403), end: ym(1424), dynastyIds: ["ming"], participantIds: ["zhu-di"], summary: "明成祖迁都北京，派郑和下西洋，国力强盛。" }),
   eventPoint({ id: "jingnan-campaign", name: "靖难之役", kind: "battle", precision: "month", dateNote: "建文四年六月，朱棣攻入南京", at: ym(1402, 7), dynastyIds: ["ming"], participantIds: ["zhu-di", "zhu-yunwen"], summary: "燕王朱棣起兵夺位，攻入南京，建文帝下落成谜，朱棣即位。" }),
   eventRange({ id: "zheng-he-voyages", name: "郑和下西洋", kind: "culture", timeMode: "span", start: ym(1405), end: ym(1433), dynastyIds: ["ming"], participantIds: ["zheng-he", "zhu-di"], summary: "永乐至宣德间七次远航，最远达非洲东岸，宣扬国威。" }),
-  eventPoint({ id: "tumu-crisis", name: "土木堡之变", kind: "battle", at: ym(1449), dynastyIds: ["ming"], participantIds: ["zhu-qizhen"], summary: "明英宗率军北征瓦剌，土木堡被俘，明军主力覆没。" }),
-  eventPoint({ id: "beijing-defense", name: "北京保卫战", kind: "battle", precision: "month", dateNote: "正统十四年十月，于谦督师保卫北京", at: ym(1449, 10), dynastyIds: ["ming"], participantIds: ["yu-qian", "zhu-qiyu"], summary: "土木堡之变后瓦剌兵临北京，于谦拥立景泰帝，击退敌军。" }),
+  eventPoint({ id: "tumu-crisis", name: "土木堡之变", kind: "battle", precision: "month", dateNote: "正统十四年八月十五日（公历1449年9月1日）", at: ym(1449, 9), dynastyIds: ["ming"], participantIds: ["zhu-qizhen"], summary: "明英宗率军北征瓦剌，土木堡被俘，明军主力覆没。" }),
+  eventPoint({ id: "beijing-defense", name: "北京保卫战", kind: "battle", precision: "month", dateNote: "正统十四年十月；瓦剌军十月初一进攻京师", at: ym(1449, 10), dynastyIds: ["ming"], participantIds: ["yu-qian", "zhu-qiyu"], summary: "土木堡之变后瓦剌兵临北京，于谦拥立景泰帝，击退敌军。" }),
   eventPoint({ id: "duomen-restoration", name: "夺门之变", kind: "politics", precision: "month", dateNote: "景泰八年正月十七日，石亨等拥英宗复辟", at: ym(1457, 2), dynastyIds: ["ming"], participantIds: ["zhu-qizhen", "zhu-qiyu"], summary: "石亨、曹吉祥等拥英宗复辟，废景泰帝，于谦被害。" }),
   eventRange({ id: "wanli-campaigns", name: "万历三大征", kind: "battle", timeMode: "span", start: ym(1592), end: ym(1600), dynastyIds: ["ming"], participantIds: ["zhu-yiming"], summary: "万历朝平定宁夏哱拜、朝鲜倭乱、播州杨应龙，耗损国力。" }),
   eventRange({ id: "zhang-juzheng-reforms", name: "张居正改革", kind: "politics", timeMode: "span", start: ym(1572), end: ym(1582), dynastyIds: ["ming"], participantIds: ["zhang-juzheng", "zhu-yiming"], summary: "张居正为首辅，推行考成法、一条鞭法，整顿吏治，史称万历中兴。" }),
@@ -379,7 +376,7 @@ const events = [
   eventRange({ id: "eight-nation-invasion", name: "八国联军侵华", kind: "battle", timeMode: "span", start: ym(1900), end: ym(1901), dynastyIds: ["qing"], participantIds: ["zaitian"], summary: "八国联军攻陷北京，慈禧太后西逃，清廷被迫签订辛丑条约。" }),
   // 清——条约
   eventPoint({ id: "treaty-of-nerchinsk", name: "尼布楚条约", kind: "politics", precision: "month", dateNote: "康熙二十八年七月，中俄签订", at: ym(1689, 8), dynastyIds: ["qing"], participantIds: ["xuanye"], summary: "中俄签订首个边界条约，划定外兴安岭以南、额尔古纳河以东归属，确立东段国界。" }),
-  eventPoint({ id: "treaty-of-nanjing", name: "南京条约", kind: "politics", precision: "month", dateNote: "道光二十二年七月，中英签订", at: ym(1842, 8), dynastyIds: ["qing"], participantIds: ["minning"], summary: "中国近代首个不平等条约：割香港岛、赔款、五口通商、协定关税。" }),
+  eventPoint({ id: "treaty-of-nanjing", name: "南京条约", kind: "politics", precision: "month", dateNote: "道光二十二年七月二十四日（1842年8月29日），中英在南京签订", at: ym(1842, 8), dynastyIds: ["qing"], participantIds: ["minning"], summary: "清政府与英国签订《南京条约》，割让香港岛、赔偿2100万银元，开放广州、厦门、福州、宁波、上海五口通商，并规定英商可不经公行交易、协定进出口税则。条约改变了清代对外贸易的口岸、商人中介和关税格局。" }),
   eventPoint({ id: "treaty-of-bogue", name: "虎门条约", kind: "politics", precision: "month", dateNote: "道光二十三年九月，中英签订", at: ym(1843, 10), dynastyIds: ["qing"], participantIds: ["minning"], summary: "南京条约附件，英国取得片面最惠国待遇、领事裁判权及五口租地。" }),
   eventPoint({ id: "treaty-of-wanghia", name: "望厦条约", kind: "politics", precision: "month", dateNote: "道光二十四年六月，中美签订", at: ym(1844, 7), dynastyIds: ["qing"], participantIds: ["minning"], summary: "中国与美国签订的首个条约，美国获最惠国待遇、领事裁判权及五口通商。" }),
   eventPoint({ id: "treaty-of-whampoa", name: "黄埔条约", kind: "politics", precision: "month", dateNote: "道光二十四年九月，中法签订", at: ym(1844, 10), dynastyIds: ["qing"], participantIds: ["minning"], summary: "中国与法国签订的首个条约，法国获最惠国待遇、领事裁判权及五口通商。" }),
@@ -398,7 +395,6 @@ const events = [
   eventPoint({ id: "treaty-of-renewal-1902", name: "中俄改订条约", kind: "politics", precision: "month", dateNote: "光绪二十八年三月，中俄签订", at: ym(1902, 4), dynastyIds: ["qing"], participantIds: ["zaitian"], summary: "俄国归还庚子事变后侵占的东北三省，但获中东铁路续租等特权。" }),
   eventRange({ id: "taiping-rebellion", name: "太平天国运动", kind: "politics", timeMode: "span", precision: "month", start: ym(1851, 1), end: ym(1864, 7), dynastyIds: ["qing"], participantIds: ["yizhu"], summary: "洪秀全领导太平天国运动，1851年1月金田起义至1864年7月天京陷落，与清廷对峙十余年。" }),
   eventPoint({ id: "xinhai-revolution", name: "辛亥革命", kind: "politics", at: ym(1911), dynastyIds: ["qing"], participantIds: ["sun-yat-sen"], summary: "武昌起义爆发，各省独立，帝制走向终结。" }),
-  eventPoint({ id: "lu-jian-enthroned", name: "鲁王监国", kind: "politics", at: ym(1645), dynastyIds: ["ming-south"], participantIds: ["zhu-yihai"], summary: "弘光亡后，朱以海监国于绍兴，与福州隆武政权并立。" }),
   eventPoint({
     id: "zheng-recover-taiwan",
     name: "郑成功收复台湾",
@@ -479,6 +475,9 @@ const eventDynastySql = events.flatMap((e) => e.dynastyIds.map((d) => `INSERT IN
 const eventParticipantSql = events.flatMap((e) => e.participantIds.map((p) => `INSERT INTO event_participants (event_id, person_id) VALUES (${sqlStr(e.id)}, ${sqlStr(p)}) ON CONFLICT DO NOTHING;`));
 
 const preSql = [
+  "DELETE FROM event_dynasties WHERE event_id = 'lu-jian-enthroned';",
+  "DELETE FROM event_participants WHERE event_id = 'lu-jian-enthroned';",
+  "DELETE FROM events WHERE id = 'lu-jian-enthroned';",
   "DELETE FROM event_dynasties WHERE dynasty_id = 'yuan-north';",
   "DELETE FROM event_participants WHERE event_id = 'yuan-north-end';",
   "DELETE FROM events WHERE id = 'yuan-north-end';",
@@ -571,7 +570,7 @@ const manifest = {
     "元世祖忽必烈定国号至宋恭帝降元（1271-12-18–1276-02-04）拆为独立卡片、主线非正统；降元后同帝续统走金色。",
     "元末漠北三位君主：元惠宗（顺帝北迁续统，1368–1370）、元昭宗（1370–1378）、天元帝（1378–1388）。",
     "清王朝行自1616年努尔哈赤建后金起算，1636年改国号大清；努尔哈赤、皇太极在位计入清 reign，但正统自顺治（福临）入关（1644）起算。",
-    "明清皇帝卡片优先显示年号；朱祁镇两段在位分别用正统、天顺。",
+    "明清卡片小字先取非空reign.title；普通皇帝title留空后按共用规则优先取era_names。三条皇帝title例外为朱元璋吴王时期（吴）、努尔哈赤（太祖）、皇太极（太宗）；朱祁镇两段年号分别为正统、天顺。",
     "徐寿辉谥号应天启运献武皇帝、庙号世宗，为明玉珍1361年追尊；唐至元卡片通例显示庙号，详情列出全部年号。",
     "明玉珍谥号钦文昭武皇帝、庙号太祖，见维基及重庆叡陵《玄宫之碑》。",
     "夺门之变落点取公历 1457 年 2 月（景泰八年正月十七日＝2 月 11 日），与英宗复辟在位日起算一致，不把农历正月写成 1 月。",

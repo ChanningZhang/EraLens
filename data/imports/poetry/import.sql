@@ -3,6 +3,9 @@
 BEGIN;
 
 -- cleanup
+DELETE FROM event_dynasties WHERE event_id = 'poetry-bie-yunjian';
+DELETE FROM event_participants WHERE event_id = 'poetry-bie-yunjian';
+DELETE FROM events WHERE id = 'poetry-bie-yunjian';
 DELETE FROM event_dynasties WHERE event_id = 'poetry-yuanyuanqu';
 DELETE FROM event_participants WHERE event_id = 'poetry-yuanyuanqu';
 DELETE FROM events WHERE id = 'poetry-yuanyuanqu';
@@ -324,11 +327,6 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning, content, location_id) VALUES ('poetry-shihuiyin', '石灰吟', 'poetry', 'circa', 'year', '明代中期，创作年代有不同说法', NULL, NULL, NULL, 1435, 1, 17220, 1450, 12, 17411, '于谦借石灰自况，成为明代忠臣政治伦理的象征性诗篇。', NULL, '千锤万凿出深山，烈火焚烧若等闲。
 粉骨碎身浑不怕，要留清白在人间。', NULL)
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning, content = EXCLUDED.content, location_id = EXCLUDED.location_id;
-INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning, content, location_id) VALUES ('poetry-bie-yunjian', '别云间', 'poetry', 'point', 'year', '弘光元年，抗清被捕前后', 1645, 12, 19751, NULL, NULL, NULL, NULL, NULL, NULL, '夏完淳被捕前所作，表现南明抗清与少年殉国。', NULL, '三年羁旅客，今日又南冠。
-无限山河泪，谁言天地宽。
-已知泉路近，欲别故乡难。
-毅魄归来日，灵旗空际看。', NULL)
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning, content = EXCLUDED.content, location_id = EXCLUDED.location_id;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning, content, location_id) VALUES ('poetry-jihai', '己亥杂诗》其五', 'poetry', 'point', 'year', '道光十九年，龚自珍离京南归途中', 1839, 12, 22079, NULL, NULL, NULL, NULL, NULL, NULL, '龚自珍以落花自况，寄托晚清政治改革与人才培养愿望。', NULL, '浩荡离愁白日斜，吟鞭东指即天涯。
 落红不是无情物，化作春泥更护花。', NULL)
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning, content = EXCLUDED.content, location_id = EXCLUDED.location_id;
@@ -390,7 +388,6 @@ INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-zhengqige', '
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-tongguan-huaigu', 'yuan') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-tianjing-shaqiu', 'yuan') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-shihuiyin', 'ming') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-bie-yunjian', 'ming-south') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-jihai', 'qing') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-fushu-dengcheng', 'qing') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-chunchou', 'qing') ON CONFLICT DO NOTHING;
@@ -435,7 +432,6 @@ INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-zhengqige',
 INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-tongguan-huaigu', 'zhang-yanghao') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-tianjing-shaqiu', 'ma-zhiyuan') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-shihuiyin', 'yu-qian') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-bie-yunjian', 'xia-wanchun') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-jihai', 'gong-zi-zhen') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-fushu-dengcheng', 'lin-zexu') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-chunchou', 'qiu-fengjia') ON CONFLICT DO NOTHING;

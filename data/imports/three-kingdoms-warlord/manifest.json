@@ -11,10 +11,10 @@
   "depth": "standard",
   "generatedAt": "2026-09-18",
   "counts": {
-    "persons": 10,
+    "persons": 11,
     "dynasties": 3,
     "reigns": 5,
-    "events": 4,
+    "events": 5,
     "relations": 6
   },
   "sources": [
@@ -45,6 +45,14 @@
     {
       "label": "曹操",
       "url": "https://zh.wikipedia.org/wiki/曹操"
+    },
+    {
+      "label": "三国志·魏书·邓艾传",
+      "url": "https://zh.wikisource.org/zh-hans/三國志/卷28"
+    },
+    {
+      "label": "阴平古道（路线与今地）",
+      "url": "https://cbgc.scol.com.cn/news/5026693"
     }
   ],
   "notes": [
@@ -54,6 +62,7 @@
     "袁绍（yuan-shao）、刘璋（liu-zhang）仅作人物收录，不建割据王朝行。",
     "曹叡、刘禅在位及年号本包写入；曹芳及孙吴末帝见 three-kingdoms-late。",
     "刘禅降魏日据中文维基 263-12-23，蜀汉王朝行迄月对齐为 263-12。",
-    "在位起止日经 documentedReignDates 提升至 day。"
+    "在位起止日经 documentedReignDates 提升至 day。",
+    "邓艾偷渡阴平据《三国志·魏书·邓艾传》‘冬十月，艾自阴平道行无人之地七百余里’；事件定位点采用阴平故城区域（今甘肃文县鹄衣坝附近），不代表整条古道。"
   ]
 }

@@ -17,7 +17,7 @@
     "reigns": 0,
     "events": 0,
     "relations": 0,
-    "eventLocations": 37
+    "eventLocations": 40
   },
   "sources": [
     {
@@ -175,6 +175,34 @@
     {
       "label": "地点资料",
       "url": "https://zh.wikipedia.org/wiki/澎湖海战"
+    },
+    {
+      "label": "鄱阳湖之战",
+      "url": "https://zh.wikipedia.org/wiki/鄱阳湖之战"
+    },
+    {
+      "label": "鄱阳湖保护区资料",
+      "url": "https://www.fnrrc.com/ziranbaohuqujianjie/9912.html"
+    },
+    {
+      "label": "明太祖第六次北伐（捕鱼儿海之战）",
+      "url": "https://zh.wikipedia.org/wiki/明太祖第六次北伐"
+    },
+    {
+      "label": "贝尔湖",
+      "url": "https://zh.wikipedia.org/wiki/贝尔湖"
+    },
+    {
+      "label": "《三国志·魏书·邓艾传》",
+      "url": "https://zh.wikisource.org/zh-hans/三國志/卷28"
+    },
+    {
+      "label": "蜀道寻踪：阴平古道记",
+      "url": "https://cbgc.scol.com.cn/news/5026693"
+    },
+    {
+      "label": "文县中心坐标",
+      "url": "https://www.poi86.com/poi/amap/district/621222/2.html"
     }
   ],
   "notes": [

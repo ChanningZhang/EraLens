@@ -461,6 +461,13 @@ export function buildEntityDetail(
     abs: anchorAbs,
     group: "dynasty",
   }));
+  const locationRelated: EntityDetail["related"] = event.location ? [{
+    ref,
+    label: event.location.historicalName,
+    subtitle: event.location.modernName,
+    abs: anchorAbs,
+    group: "location",
+  }] : [];
 
   if (event.kind === "idiom") {
     const sourceEventRelated = store.relations
@@ -507,7 +514,7 @@ export function buildEntityDetail(
         ...(event.dateNote ? [{ label: "说明", value: event.dateNote }] : []),
       ],
       summary: event.summary,
-      related: [...dynastyRelated, ...participantRelated, ...sourceEventRelated],
+      related: [...locationRelated, ...dynastyRelated, ...participantRelated, ...sourceEventRelated],
       capitalTenures: [],
       links: [],
     };
@@ -538,6 +545,7 @@ export function buildEntityDetail(
     summary: event.summary,
     content: event.content,
     related: [
+      ...locationRelated,
       ...dynastyRelated,
       ...event.participantIds
       .map((id) => {
