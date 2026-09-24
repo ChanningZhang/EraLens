@@ -9,6 +9,10 @@ DELETE FROM events WHERE id IN ('yang-you-enthroned', 'yang-hao-enthroned', 'yan
 DELETE FROM event_participants WHERE event_id IN ('zhu-wen-usurp', 'chenqiao-mutiny');
 DELETE FROM event_dynasties WHERE event_id IN ('zhu-wen-usurp', 'chenqiao-mutiny');
 DELETE FROM events WHERE id IN ('zhu-wen-usurp', 'chenqiao-mutiny');
+DELETE FROM relations WHERE id = 'rel-yang-tong-li-yuan-killed';
+DELETE FROM event_participants WHERE event_id = 'yang-tong-killed';
+DELETE FROM event_dynasties WHERE event_id = 'yang-tong-killed';
+DELETE FROM events WHERE id = 'yang-tong-killed';
 
 -- remove stale auto-generated 史料缺 (武周期间唐行留白)
 DELETE FROM reigns WHERE dynasty_id IN ('tang') AND person_id = 'system-missing-ruler';
@@ -505,7 +509,7 @@ INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, sta
 VALUES ('reign-yang-hao', 'sui', 'yang-hao', '', NULL, 618, 4, 11, 618, 5, 24, 7419, 7420, 'day', NULL, NULL, 'jiangdu', '江都', 'rival', false)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence, claim_track = EXCLUDED.claim_track, claim_label = EXCLUDED.claim_label, claim_role = EXCLUDED.claim_role, is_informal_monarch = EXCLUDED.is_informal_monarch;
 INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence, claim_track, claim_label, claim_role, is_informal_monarch)
-VALUES ('reign-yang-tong', 'sui', 'yang-tong', '', NULL, 618, 6, 12, 619, 5, 23, 7421, 7432, 'day', NULL, NULL, 'luoyang', '洛阳', 'rival', false)
+VALUES ('reign-yang-tong', 'sui', 'yang-tong', '', NULL, 618, 6, 22, 619, 5, 23, 7421, 7432, 'day', NULL, NULL, 'luoyang', '洛阳', 'rival', false)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence, claim_track = EXCLUDED.claim_track, claim_label = EXCLUDED.claim_label, claim_role = EXCLUDED.claim_role, is_informal_monarch = EXCLUDED.is_informal_monarch;
 INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence, claim_track, claim_label, claim_role, is_informal_monarch)
 VALUES ('reign-yuwen-huaji-xu', 'xu', 'yuwen-huaji', '', '天寿', 618, 9, NULL, 619, 5, NULL, 7424, 7432, 'month', NULL, NULL, NULL, NULL, NULL, false)
@@ -810,8 +814,6 @@ INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary) VALUES ('yang-guang-killed', '江都兵变：隋炀帝被杀', 'politics', 'point', 'day', '大业十四年三月十一丙辰，618年4月11日，宇文化及发动兵变，隋炀帝被弑', 618, 4, 7419, NULL, NULL, NULL, NULL, NULL, NULL, '宇文化及发动江都兵变，隋炀帝杨广被弑；随后江都军拥立杨浩。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary;
-INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary) VALUES ('yang-tong-killed', '杨侗被杀', 'politics', 'point', 'day', '武德二年四月戊寅，619年5月23日，王世充废杀杨侗', 619, 5, 7432, NULL, NULL, NULL, NULL, NULL, NULL, '王世充杀杨侗，自立为帝，名义隋主终结。')
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary) VALUES ('xuanwumen', '玄武门之变', 'politics', 'point', 'month', '武德九年六月，626年', 626, 7, 7518, NULL, NULL, NULL, NULL, NULL, NULL, '李世民发动政变，杀兄弟即位太子，后登基。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary) VALUES ('hulao-battle', '虎牢关之战', 'battle', 'point', 'month', '武德四年四月，李世民大败窦建德', 621, 4, 7455, NULL, NULL, NULL, NULL, NULL, NULL, '李世民于虎牢关以少胜多，俘窦建德、王世充，唐朝统一中原。')
@@ -844,7 +846,6 @@ INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('kaihuang-rule', 'sui
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('grand-canal', 'sui') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('sui-campaign-goguryeo', 'sui') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('yang-guang-killed', 'sui') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('yang-tong-killed', 'sui') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('xuanwumen', 'tang') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('hulao-battle', 'tang') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('zhenguan-rule', 'tang') ON CONFLICT DO NOTHING;
@@ -872,8 +873,6 @@ INSERT INTO event_participants (event_id, person_id) VALUES ('grand-canal', 'yan
 INSERT INTO event_participants (event_id, person_id) VALUES ('sui-campaign-goguryeo', 'yang-guang') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('yang-guang-killed', 'yang-guang') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('yang-guang-killed', 'yuwen-huaji') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('yang-tong-killed', 'wang-shichong') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('yang-tong-killed', 'yang-tong') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('xuanwumen', 'li-shimin') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('hulao-battle', 'li-shimin') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('zhenguan-rule', 'li-shimin') ON CONFLICT DO NOTHING;

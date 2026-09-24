@@ -83,7 +83,7 @@ export const DOCUMENTED_REIGN_DATES = {
   "reign-yang-guang": { start: [604, 8, 13], end: [618, 4, 11] },
   "reign-yang-hao": { start: [618, 4, 11], end: [618, 5, 24] },
   "reign-yang-you": { start: [617, 12, 18], end: [618, 6, 12] },
-  "reign-yang-tong": { start: [618, 6, 12], end: [619, 5, 23] },
+  "reign-yang-tong": { start: [618, 6, 22], end: [619, 5, 23] },
 
   // ── 唐 ──────────────────────────────────────────────────────────────────
   "reign-li-yuan": { start: [618, 6, 18], end: [626, 9, 4] },

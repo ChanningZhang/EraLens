@@ -811,14 +811,6 @@ export function buildFateCatalog() {
       resolveAt: () => atFromReignEnd("reign-yang-you", 618),
     },
     {
-      id: "rel-yang-tong-li-yuan-killed",
-      fromPersonId: "yang-tong",
-      toPersonId: "li-yuan",
-      kind: "killed",
-      eventId: "yang-tong-killed",
-      resolveAt: () => atFromReignEnd("reign-yang-tong", 619),
-    },
-    {
       id: "rel-gao-jichong-zhao-kuangyin-surrender",
       fromPersonId: "gao-jichong",
       toPersonId: "zhao-kuangyin",

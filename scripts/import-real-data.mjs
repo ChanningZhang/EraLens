@@ -64,13 +64,32 @@ function sqlStatements(sql) {
   const statements = [];
   let start = 0;
   let inString = false;
+  let inLineComment = false;
+  let inBlockComment = false;
   for (let i = 0; i < sql.length; i += 1) {
+    if (inLineComment) {
+      if (sql[i] === "\n") inLineComment = false;
+      continue;
+    }
+    if (inBlockComment) {
+      if (sql[i] === "*" && sql[i + 1] === "/") {
+        inBlockComment = false;
+        i += 1;
+      }
+      continue;
+    }
     if (sql[i] === "'") {
       if (inString && sql[i + 1] === "'") {
         i += 1;
       } else {
         inString = !inString;
       }
+    } else if (!inString && sql[i] === "-" && sql[i + 1] === "-") {
+      inLineComment = true;
+      i += 1;
+    } else if (!inString && sql[i] === "/" && sql[i + 1] === "*") {
+      inBlockComment = true;
+      i += 1;
     } else if (sql[i] === ";" && !inString) {
       statements.push(sql.slice(start, i + 1));
       start = i + 1;
@@ -78,6 +97,19 @@ function sqlStatements(sql) {
   }
   if (sql.slice(start).trim()) statements.push(sql.slice(start));
   return statements;
+}
+
+const DEFERRED_INSERT_TABLES = new Set(["event_dynasties"]);
+
+function splitDeferredInserts(sql) {
+  const deferred = [];
+  const regular = sqlStatements(sql).filter((statement) => {
+    const match = statement.match(/^(?:\s|--[^\n]*(?:\n|$))*INSERT\s+INTO\s+([a-z_]+)/i);
+    if (!match || !DEFERRED_INSERT_TABLES.has(match[1].toLowerCase())) return true;
+    deferred.push(statement);
+    return false;
+  });
+  return { regular: regular.join("\n"), deferred };
 }
 
 function preseedDynasties(packages) {
@@ -162,6 +194,7 @@ function main() {
   preseedDynasties(allPackages);
 
   let remaining = packages;
+  const deferredInserts = [];
   const maxPasses = packages.length;
   for (let pass = 1; remaining.length > 0; pass += 1) {
     if (pass > maxPasses) {
@@ -171,9 +204,11 @@ function main() {
     const failed = [];
     for (const pkg of remaining) {
       process.stdout.write(`  [${pkg.slug}] `);
-      const result = dockerPsql(readFileSync(pkg.sql));
+      const { regular, deferred } = splitDeferredInserts(readFileSync(pkg.sql, "utf8"));
+      const result = dockerPsql(regular);
       if (result.status === 0) {
         console.log("ok");
+        deferredInserts.push(...deferred);
       } else {
         console.log(pass === 1 ? "deferred" : "failed");
         failed.push({ ...pkg, error: result.stderr || result.stdout });
@@ -187,6 +222,14 @@ function main() {
       fail("No progress applying imports.");
     }
     remaining = failed;
+  }
+
+  if (deferredInserts.length > 0) {
+    const result = dockerPsql(`BEGIN;\n${deferredInserts.join("\n")}\nCOMMIT;\n`);
+    if (result.status !== 0) {
+      fail("Failed to apply deferred cross-package links", result.stderr || result.stdout);
+    }
+    console.log(`Applied ${deferredInserts.length} deferred cross-package link rows.`);
   }
 
   for (const pkg of postPackages) {
