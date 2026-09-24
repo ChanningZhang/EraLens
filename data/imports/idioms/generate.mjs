@@ -162,16 +162,6 @@ const preQinIdioms = [
     dateNote: "周厉王时期，约前841年；《大雅·荡》作年有争议",
   }),
   idiomPoint({
-    id: "idiom-feng-huo-xi-zhu-hou",
-    name: "烽火戏诸侯",
-    meaning: "比喻戏弄他人、失信取乐，终致祸患。",
-    at: ym(-771),
-    dynastyIds: ["zhou-west"],
-    participantIds: ["ji-gongsheng", "bao-si"],
-    summary: "传说周幽王为博褒姒一笑，屡举烽火戏诸侯，犬戎入侵时诸侯不至。",
-    dateNote: "犬戎之祸前，传说成分",
-  }),
-  idiomPoint({
     id: "idiom-zhai-tai-gao-zhu",
     name: "债台高筑",
     meaning: "形容欠债很多，难以偿还。",
@@ -864,12 +854,6 @@ const events = [
 
 const relations = [
   {
-    id: "rel-idiom-fenghuo-quanrong",
-    fromRef: "event:idiom-feng-huo-xi-zhu-hou",
-    toRef: "event:quanrong-invasion",
-    kind: "other",
-  },
-  {
     id: "rel-idiom-daolu-guoren",
     fromRef: "event:idiom-dao-lu-yi-mu",
     toRef: "event:guoren-riot",
@@ -940,6 +924,10 @@ const managedEventIdsSql = events.map((event) => sqlStr(event.id)).join(", ");
 const cleanupManagedEventLinks = [
   `DELETE FROM event_dynasties WHERE event_id IN (${managedEventIdsSql});`,
   `DELETE FROM event_participants WHERE event_id IN (${managedEventIdsSql});`,
+  "DELETE FROM relations WHERE from_type = 'event' AND from_id = 'idiom-feng-huo-xi-zhu-hou';",
+  "DELETE FROM event_dynasties WHERE event_id = 'idiom-feng-huo-xi-zhu-hou';",
+  "DELETE FROM event_participants WHERE event_id = 'idiom-feng-huo-xi-zhu-hou';",
+  "DELETE FROM events WHERE id = 'idiom-feng-huo-xi-zhu-hou';",
 ].join("\n");
 
 writeImportPackage(__dirname, {
@@ -1008,6 +996,7 @@ writeImportPackage(__dirname, {
     ],
     notes: [
       "成语以 kind=idiom 的 point 事件入库，仅在时间轴显示时刻 marker，不画 span/circa 区间。",
+      "烽火戏诸侯并入夏商周包的犬戎之祸事件说明；该传统叙事史实有争议，不再单独绘制时间轴事件。",
       "meaning 存释义，summary 存典故；王朝经 event_dynasties，人物经 event_participants（仅 person_id）。",
       "participantIds 必须引用 persons.id，禁止写 reign id 或在 relations 中挂 reign。",
       "有明确史事者经 relations 指向已有 battle/politics 事件（event→event）。",

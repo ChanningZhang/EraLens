@@ -353,23 +353,32 @@ describe("buildEntityDetail event", () => {
     ]);
   });
 
-  it("includes the linked dynasty in a political event's related entities", () => {
+  it("includes all linked dynasties in a political event's related entities", () => {
     const store = {
-      dynasties: [{
-        id: "zhou-east", name: "东周", altNames: [], scope: "cn" as const,
-        region: "east_asia", start: { year: -770, month: 1 },
-        end: { year: -256, month: 12 }, startAbs: -9228, endAbs: -3049,
-        precision: "year" as const,
-      }],
+      dynasties: [
+        {
+          id: "zhou-east", name: "东周", altNames: [], scope: "cn" as const,
+          region: "east_asia", start: { year: -770, month: 1 },
+          end: { year: -256, month: 12 }, startAbs: -9228, endAbs: -3049,
+          precision: "year" as const,
+        },
+        {
+          id: "jin", name: "晋", altNames: [], scope: "cn" as const,
+          region: "east_asia", start: { year: -1033, month: 1 },
+          end: { year: -376, month: 12 }, startAbs: -12384, endAbs: -4489,
+          precision: "year" as const,
+        },
+      ],
       reigns: [], persons: [], relations: [],
       events: [EventSchema.parse({
         id: "xie-wang-killed", name: "晋文侯杀携王", kind: "politics",
-        atAbs: -8977, dynastyIds: ["zhou-east"], participantIds: [],
+        atAbs: -8977, dynastyIds: ["zhou-east", "jin"], participantIds: [],
       })],
     };
     const detail = buildEntityDetail(store, { type: "event", id: "xie-wang-killed" });
     expect(detail.related).toEqual([
       expect.objectContaining({ ref: { type: "dynasty", id: "zhou-east" }, label: "东周" }),
+      expect.objectContaining({ ref: { type: "dynasty", id: "jin" }, label: "晋" }),
     ]);
   });
 

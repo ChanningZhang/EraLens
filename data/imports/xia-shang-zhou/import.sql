@@ -998,7 +998,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('quanrong-invasion', '犬戎之祸', 'battle', 'point', 'year', '幽王十一年，前771年', -771, 12, -9229, NULL, NULL, NULL, NULL, NULL, NULL, '申侯联合犬戎攻破镐京，幽王死，西周亡。')
+VALUES ('quanrong-invasion', '犬戎之祸', 'battle', 'point', 'year', '幽王十一年，前771年；烽火戏诸侯为传统叙事，史实有争议', -771, 12, -9229, NULL, NULL, NULL, NULL, NULL, NULL, '申侯联合缯人与犬戎攻周，攻破镐京，周幽王死，西周亡。传统叙事称幽王曾为博褒姒一笑多次举烽火戏诸侯，犬戎来攻时诸侯未至；此说见《史记》，但真实性有争议。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
   kind = EXCLUDED.kind,
@@ -1263,6 +1263,7 @@ INSERT INTO event_participants (event_id, person_id) VALUES ('gonghe-regency', '
 INSERT INTO event_participants (event_id, person_id) VALUES ('xuanwang-zhongxing', 'ji-jing') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('quanrong-invasion', 'ji-gongsheng') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('quanrong-invasion', 'ji-yijiu') ON CONFLICT DO NOTHING;
+INSERT INTO event_participants (event_id, person_id) VALUES ('quanrong-invasion', 'bao-si') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('zhou-dual-kings', 'ji-yijiu') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('zhou-dual-kings', 'ji-yuchen') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('xie-wang-killed', 'ji-yuchen') ON CONFLICT DO NOTHING;

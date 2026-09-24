@@ -454,15 +454,15 @@ export function buildEntityDetail(
     .map((id) => dynastyMap.get(id))
     .filter((dynasty): dynasty is NonNullable<typeof dynasty> => dynasty != null);
   const primaryDynasty = linkedDynasties[0];
+  const dynastyRelated: EntityDetail["related"] = linkedDynasties.map((dynasty) => ({
+    ref: { type: "dynasty", id: dynasty.id },
+    label: dynasty.name,
+    subtitle: dynasty.altNames?.[0],
+    abs: anchorAbs,
+    group: "dynasty",
+  }));
 
   if (event.kind === "idiom") {
-    const dynastyRelated = linkedDynasties.map((dynasty) => ({
-      ref: { type: "dynasty" as const, id: dynasty.id },
-      label: dynasty.name,
-      subtitle: dynasty.altNames?.[0],
-      abs: anchorAbs,
-      group: "dynasty" as const,
-    }));
     const sourceEventRelated = store.relations
       .filter((rel) => rel.fromRef === refKey(ref) && rel.toRef.startsWith("event:"))
       .map((rel) => parseRef(rel.toRef))
@@ -538,13 +538,7 @@ export function buildEntityDetail(
     summary: event.summary,
     content: event.content,
     related: [
-      ...linkedDynasties.map((dynasty) => ({
-            ref: { type: "dynasty" as const, id: dynasty.id },
-            label: dynasty.name,
-            subtitle: dynasty.altNames?.[0],
-            abs: anchorAbs,
-            group: "dynasty" as const,
-          })),
+      ...dynastyRelated,
       ...event.participantIds
       .map((id) => {
         const summary = buildRelatedSummary({ type: "person", id });

@@ -14,8 +14,8 @@
     "persons": 30,
     "dynasties": 1,
     "reigns": 11,
-    "events": 75,
-    "relations": 10
+    "events": 74,
+    "relations": 9
   },
   "sources": [
     {
@@ -173,6 +173,7 @@
   ],
   "notes": [
     "成语以 kind=idiom 的 point 事件入库，仅在时间轴显示时刻 marker，不画 span/circa 区间。",
+    "烽火戏诸侯并入夏商周包的犬戎之祸事件说明；该传统叙事史实有争议，不再单独绘制时间轴事件。",
     "meaning 存释义，summary 存典故；王朝经 event_dynasties，人物经 event_participants（仅 person_id）。",
     "participantIds 必须引用 persons.id，禁止写 reign id 或在 relations 中挂 reign。",
     "有明确史事者经 relations 指向已有 battle/politics 事件（event→event）。",
