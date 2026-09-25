@@ -3,6 +3,7 @@
 BEGIN;
 
 -- cleanup
+DELETE FROM event_dynasties WHERE event_id = 'yelang-xin-killed' AND dynasty_id = 'han-west';
 DELETE FROM event_participants WHERE event_id = 'yelang-xin-killed';
 DELETE FROM event_dynasties WHERE dynasty_id IN ('qiongdu', 'zuodu', 'ranmang', 'baima', 'qielan', 'laomo');
 DELETE FROM event_dynasties WHERE event_id = 'han-destroy-qielan';
@@ -77,7 +78,6 @@ INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('yelang-xin-killed', 
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('tangmeng-tong-yelang', 'han-west') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('han-pacify-southwest-yi', 'han-west') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('dian-surrender-han', 'han-west') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('yelang-xin-killed', 'han-west') ON CONFLICT DO NOTHING;
 
 -- event_participants
 INSERT INTO event_participants (event_id, person_id) VALUES ('tangmeng-tong-yelang', 'yelang-duotong') ON CONFLICT DO NOTHING;

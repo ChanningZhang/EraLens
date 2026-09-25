@@ -145,7 +145,6 @@ const supplementalEventDynasties = [
   { eventId: "tangmeng-tong-yelang", dynastyId: "han-west" },
   { eventId: "han-pacify-southwest-yi", dynastyId: "han-west" },
   { eventId: "dian-surrender-han", dynastyId: "han-west" },
-  { eventId: "yelang-xin-killed", dynastyId: "han-west" },
 ];
 
 // ── relations ────────────────────────────────────────────────────────────────
@@ -177,6 +176,7 @@ const removedReignIds = [
 ];
 
 const preSql = [
+  "DELETE FROM event_dynasties WHERE event_id = 'yelang-xin-killed' AND dynasty_id = 'han-west';",
   "DELETE FROM event_participants WHERE event_id = 'yelang-xin-killed';",
   `DELETE FROM event_dynasties WHERE dynasty_id IN (${removedDynastyIds.map((id) => `'${id}'`).join(", ")});`,
   `DELETE FROM event_dynasties WHERE event_id = 'han-destroy-qielan';`,

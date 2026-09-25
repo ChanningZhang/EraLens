@@ -14,6 +14,7 @@ import { applyFeudalClanMetadata } from "../lib/applyFeudalClanMetadata.mjs";
 import { validateReignDateConfidenceSeams } from "../lib/validateReignSeams.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 import { resolveReignTitle } from "../lib/reignTitleSelections.mjs";
+import { resolveImportedReignIsMain } from "../lib/mainReignIds.mjs";
 import { LEGACY_COLOR_TOKEN, formatAppellationCsv, mergeAppellationsIntoPersons, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -705,18 +706,22 @@ ON CONFLICT (id) DO UPDATE SET
 }
 
 function reignSql(r) {
+  const isMain = resolveImportedReignIsMain(r);
+  const mainCol = isMain == null ? "" : ", is_main";
+  const mainVal = isMain == null ? "" : `, ${isMain}`;
+  const mainUpdate = isMain == null ? "" : ",\n  is_main = EXCLUDED.is_main";
   return `INSERT INTO reigns (
   id, dynasty_id, person_id, title,
   era_names,
   start_year, start_month, start_day, end_year, end_month, end_day,
   start_abs, end_abs, precision, start_date_confidence, end_date_confidence,
-  claim_track, claim_label, claim_role
+  claim_track, claim_label, claim_role${mainCol}
 ) VALUES (
   ${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(resolveReignTitle(r))},
   ${sqlStr(formatAppellationCsv(r.eraNames))},
   ${r.start.year}, ${r.start.month}, ${r.start.day ?? "NULL"}, ${r.end.year}, ${r.end.month}, ${r.end.day ?? "NULL"},
   ${r.startAbs}, ${r.endAbs}, ${sqlStr(r.precision)}, ${sqlStr(r.startDateConfidence ?? null)}, ${sqlStr(r.endDateConfidence ?? null)},
-  ${sqlStr(r.claimTrack ?? null)}, ${sqlStr(r.claimLabel ?? null)}, ${sqlStr(r.claimRole ?? null)}
+  ${sqlStr(r.claimTrack ?? null)}, ${sqlStr(r.claimLabel ?? null)}, ${sqlStr(r.claimRole ?? null)}${mainVal}
 )
 ON CONFLICT (id) DO UPDATE SET
   dynasty_id = EXCLUDED.dynasty_id,
@@ -736,7 +741,7 @@ ON CONFLICT (id) DO UPDATE SET
   end_date_confidence = EXCLUDED.end_date_confidence,
   claim_track = EXCLUDED.claim_track,
   claim_label = EXCLUDED.claim_label,
-  claim_role = EXCLUDED.claim_role;`;
+  claim_role = EXCLUDED.claim_role${mainUpdate};`;
 }
 
 function eventSql(e) {

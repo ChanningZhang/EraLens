@@ -77,7 +77,7 @@ const persons = [
   { id: "si-kongjia", name: "孔甲", ancestralXing: "姒", altNames: ["孔甲"], roles: ["君主"], bio: "不降之子；扃、廑之后由孔甲继。《史记》称其好方鬼神、事淫乱，夏后氏德衰、诸侯畔之；又有扰龙、刘累御龙传说。生卒年无实测。", links: wiki("孔甲") },
   { id: "si-gao", name: "皋", ancestralXing: "姒", altNames: ["皋", "昊"], roles: ["君主"], bio: "孔甲之子，《史记》作帝皋；一作昊。正史几乎无事迹。生卒年无实测。", links: wiki("皋_(夏朝)") },
   { id: "si-fa", name: "发", ancestralXing: "姒", altNames: ["发", "發"], roles: ["君主"], bio: "皋之子，《史记》作帝发，桀之父。《今本竹书纪年》载诸夷宾于王门，事属传说。生卒年无实测。", links: wiki("發_(夏朝)") },
-  { id: "si-jie", name: "履癸", ancestralXing: "姒", altNames: ["履癸", "桀", "夏桀"], roles: ["君主"], bio: "发之子，夏朝末代之王，史称桀。《史记》载其暴虐，鸣条之战为商汤所灭。生卒年无实测。", links: wiki("桀") },
+  { id: "si-jie", name: "履癸", ancestralXing: "姒", altNames: ["履癸", "桀", "夏桀"], posthumousNames: ["桀"], roles: ["君主"], bio: "发之子，夏朝末代之王，谥号桀。《史记》载其暴虐，鸣条之战为商汤所灭。生卒年无实测。", links: wiki("桀") },
   { id: "hou-yi", name: "后羿", altNames: ["羿", "夷羿", "有穷后羿"], clanShi: "有穷", roles: ["君主"], bio: "有穷氏首领，善射。《左传》载其自鉏迁穷石，因夏民以代夏政，不修民事，为寒浞所杀。传说未称夏后，不入夏后氏正统世次。生卒年无实测。", links: wiki("后羿_(夏朝)") },
   { id: "han-zhuo", name: "寒浞", altNames: ["浞", "韩浞"], ancestralXing: "妘", clanShi: "寒", roles: ["君主"], bio: "寒氏，名浞，妘姓。伯明氏谗子弟，后羿用为相，旋杀羿代有穷；使浇灭相。后为少康、靡所灭。非夏后正统，不入十七王继承链。生卒年无实测。", links: wiki("寒浞") },
   { id: "gun", name: "鲧", altNames: ["崇伯鲧", "梼杌"], ancestralXing: "姒", clanShi: "崇", death: ym(-2070), roles: ["政治家"], bio: "禹之父，崇伯。传说奉尧命障洪水九年不成，后被殛于羽山。生卒无实测；卒年取断代工程夏始约前2070年，示禹受禅之前。", links: wiki("鲧") },
@@ -566,7 +566,7 @@ const XIA_MAIN_KINGS = [
   { personId: "si-kongjia", title: "夏孔甲", card: "孔甲", startYear: -1709, endYear: -1679 },
   { personId: "si-gao", title: "夏皋", card: "皋", startYear: -1678, endYear: -1668 },
   { personId: "si-fa", title: "夏发", card: "发", startYear: -1667, endYear: -1652 },
-  { personId: "si-jie", title: "夏桀", card: "桀", startYear: -1651, endYear: -1600 },
+  { personId: "si-jie", title: "夏桀", card: null, startYear: -1651, endYear: -1600 },
 ];
 
 const xiaMainReigns = XIA_MAIN_KINGS.map((king) =>
