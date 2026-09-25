@@ -164,6 +164,19 @@ describe("buildLaneOrderIndex (stable placement)", () => {
     endAbs,
   });
 
+  it("keeps reign-specific capital links out of dynasty lane ordering", () => {
+    const dynasties = [d("sui", 100, 200), d("neighbor", 50, 250)];
+    const capitals = [cap("sui", "河南省洛阳市", 150, 200)];
+    const linkedCapitals = capitals.map((capital) => ({
+      ...capital,
+      reignIds: ["reign-yang-tong"],
+    }));
+
+    expect(buildLaneOrderIndex(dynasties, [], [], linkedCapitals)).toEqual(
+      buildLaneOrderIndex(dynasties, [], [], capitals),
+    );
+  });
+
   it("ranks a same-capital successor above an earlier-starting neighbour, independent of the anchor being visible", () => {
     // 五代(开封 cluster) → 北宋(开封); 大理 starts earlier than 北宋 but at a
     // different city. 北宋 should outrank 大理 globally.

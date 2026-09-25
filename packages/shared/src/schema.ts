@@ -175,6 +175,8 @@ export const DynastyCapitalSchema = z.object({
   endDateConfidence: DateConfidenceSchema.optional(),
   role: CapitalRoleSchema.default("primary"),
   claimTrack: z.string().optional(),
+  /** Explicit reign-capital links; an empty list uses dynasty/time ownership. */
+  reignIds: z.array(z.string()).optional(),
   note: z.string().optional(),
   links: z
     .array(

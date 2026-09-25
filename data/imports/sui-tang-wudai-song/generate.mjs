@@ -313,7 +313,7 @@ const dynastyGroups = [
 const dynasties = [
   { id: "sui", name: "隋", altNames: ["大隋"], scope: "cn", region: "east_asia", start: ym(581, 3), end: ym(619, 5), precision: "month", note: "581年3月杨坚受禅建隋；589年灭陈统一。618年唐建立后，东都杨侗仍续统，至619年5月被废，隋亡。" },
   { id: "xu", name: "许", altNames: ["宇文化及许"], scope: "cn", region: "east_asia", start: ym(618, 9), end: ym(619, 5), precision: "month", note: "宇文化及杀杨浩后自立，国号许，旋为窦建德所败，619年覆亡。" },
-  { id: "xia-dou-jiande", name: "夏", altNames: ["窦夏", "夏王窦建德政权"], scope: "cn", region: "east_asia", start: ym(618), end: ym(621, 12), precision: "year", note: "窦建德于隋末据河北，先称长乐王，后称夏王；621年援郑败亡，窦建德被俘。" },
+  { id: "xia-dou-jiande", name: "夏", altNames: ["窦夏", "夏王窦建德政权"], scope: "cn", region: "east_asia", start: ym(618, 11), end: ym(621, 12), precision: "month", note: "窦建德于618年11月在乐寿建夏称王；621年援郑败亡，窦建德被俘。" },
   { id: "zheng", name: "郑", altNames: ["王世充郑"], scope: "cn", region: "east_asia", start: ym(619), end: ym(621, 12), precision: "year", note: "王世充于619年在洛阳称帝、国号郑；621年降唐，政权覆亡。" },
   { id: "tang", name: "唐", altNames: ["李唐"], scope: "cn", region: "east_asia", start: ym(618, 6), end: ym(907), precision: "month", note: "618年6月李渊受隋恭帝禅让建唐，都长安；907年朱温篡唐，唐亡。" },
   { id: "zhou-wu", name: "武周", altNames: ["周"], scope: "cn", region: "east_asia", start: ym(690), end: ym(705), precision: "year", note: "武则天改国号周，690–705年，后还政李唐。" },
@@ -355,7 +355,7 @@ const suiReignsParallel = [
 ];
 
 const suiReignsRivalStates = [
-  dynastyReign("xia-dou-jiande", "dou-jiande", "夏王", null, null, 618, 621),
+  { ...dynastyReign("xia-dou-jiande", "dou-jiande", "夏王", null, null, 618, 621), start: ym(618, 11), startAbs: absMonth(618, 11), precision: "month" },
   dynastyReign("zheng", "wang-shichong", "郑帝", null, null, 619, 621),
 ];
 const suiReigns = [...suiReignsCore, ...suiReignsParallel];
@@ -671,6 +671,15 @@ const importReigns = merged.reigns;
 
 const eventDynastySql = events.flatMap((e) => e.dynastyIds.map((d) => `INSERT INTO event_dynasties (event_id, dynasty_id) VALUES (${sqlStr(e.id)}, ${sqlStr(d)}) ON CONFLICT DO NOTHING;`));
 const eventParticipantSql = events.flatMap((e) => e.participantIds.map((p) => `INSERT INTO event_participants (event_id, person_id) VALUES (${sqlStr(e.id)}, ${sqlStr(p)}) ON CONFLICT DO NOTHING;`));
+const reignCapitalLinks = [
+  ["reign-yang-you", "cap-sui-daxing-583"],
+  ["reign-yang-you", "cap-sui-changan-618"],
+  ["reign-yang-hao", "cap-sui-jiangdu-618"],
+  ["reign-yang-tong", "cap-sui-luoyang-618"],
+];
+const reignCapitalSql = reignCapitalLinks.map(([reignId, capitalId]) =>
+  `INSERT INTO reign_capitals (reign_id, capital_id) VALUES (${sqlStr(reignId)}, ${sqlStr(capitalId)}) ON CONFLICT DO NOTHING;`,
+);
 
 const sql = [
   "-- EraLens period import: sui-tang-wudai-song",
@@ -686,6 +695,7 @@ const sql = [
   "DELETE FROM event_dynasties WHERE event_id IN ('zhu-wen-usurp', 'chenqiao-mutiny');",
   "DELETE FROM events WHERE id IN ('zhu-wen-usurp', 'chenqiao-mutiny');",
   "DELETE FROM relations WHERE id = 'rel-yang-tong-li-yuan-killed';",
+  "DELETE FROM reign_capitals WHERE reign_id IN ('reign-yang-you', 'reign-yang-hao', 'reign-yang-tong');",
   "DELETE FROM event_participants WHERE event_id = 'yang-tong-killed';",
   "DELETE FROM event_dynasties WHERE event_id = 'yang-tong-killed';",
   "DELETE FROM events WHERE id = 'yang-tong-killed';",
@@ -698,6 +708,7 @@ const sql = [
   "", "-- dynasty_groups", ...dynastyGroups.map(dynastyGroupSql),
   "", "-- dynasties", ...dynasties.map(dynastySql),
   "", "-- reigns", ...importReigns.map(formatReignSql),
+  "", "-- reign_capitals", ...reignCapitalSql,
   "", "-- events", ...events.map(eventSql),
   "", "-- event_dynasties", ...eventDynastySql,
   "", "-- event_participants", ...eventParticipantSql,
@@ -715,7 +726,7 @@ const manifest = {
   scope: "cn",
   depth: "standard",
   generatedAt: "2026-09-13",
-  counts: { persons: importPersons.length, dynasties: dynasties.length, reigns: importReigns.length, events: events.length, relations: relations.length },
+  counts: { persons: importPersons.length, dynasties: dynasties.length, reigns: importReigns.length, reign_capitals: reignCapitalLinks.length, events: events.length, relations: relations.length },
   sources: [
     { label: "隋朝", url: "https://zh.wikipedia.org/wiki/隋朝" },
     { label: "唐朝", url: "https://zh.wikipedia.org/wiki/唐朝" },
@@ -739,8 +750,9 @@ const manifest = {
     "1279 崖山海战为南宋终结；元朝不在本包内。",
     "李显、李旦两度即位，在位拆为两段；690–705 年武周武则天，不与唐中宗重叠。",
     "隋末并行用 claim_track：杨侑在炀帝仍在位时于长安另立，杨侗也在炀帝死讯传至洛阳后另立；二人分别使用 changan/长安、luoyang/洛阳并立 track。杨浩在炀帝被弑后于江都继位，不设并立 track，留在主行；按本包取舍标记 claim_role=rival，因此卡片不镀正统金色。",
+    "隋末在位记录显式关联都城：杨侑→大兴城、长安（按618年江都兵变分段），杨浩→江都，杨侗→东都洛阳。显式关联供在位详情与时间轴地图优先解析；没有关联的在位仍按王朝、时间及 claim_track 匹配。",
     "杨广于618-04-11在江都被宇文化及所弑；宇文化及随后建立许政权，命运线准确挂接至其许帝卡。",
-    "补入夏（窦建德）与郑（王世充）两条隋末政权行及相应年精度在位。夏（窦建德）使用独立 id xia-dou-jiande，避免与上古夏朝 xia 冲突。依据《旧唐书·高祖本纪》：武德元年二月窦建德称长乐王、武德三年正月称夏王；武德二年四月王世充称帝建郑；武德四年五月窦建德败俘、王世充降，七月窦建德被斩、王世充赴蜀途中被仇家所杀。年月按年精度处理，不将史书农历月直接当公历月录入。",
+    "补入夏（窦建德）与郑（王世充）两条隋末政权行及相应在位。夏（窦建德）使用独立 id xia-dou-jiande，避免与上古夏朝 xia 冲突。建夏起于618年11月，参据《中国大百科全书中国历史》所述武德元年十一月建国，以及《通鉴纪事本末》称夏王事在武德元年冬；十一月为史书记载的传统历月，本包按用户指定将展示时间记作618年11月。武德四年五月窦建德败俘、王世充降，七月窦建德被斩。",
     "杨侗起始在位日按《资治通鉴》卷一八五及《资治通鉴》所记武德元年五月戊辰换算为618-06-22；《旧唐书》异记618-06-21。终点取619-05-23禅位日。",
     "南宋正统金色止于恭帝降元（1276-02）；端宗、帝昺接在恭帝之后走主线继承，但不计正统。",
     "北宋、南宋皇帝在位日取维基百科/宋史通行换算，precision=day。",

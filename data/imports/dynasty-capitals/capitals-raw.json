@@ -3001,6 +3001,97 @@
     ]
   },
   {
+    "id": "cap-sui-changan-618",
+    "dynastyId": "sui",
+    "historicalName": "长安",
+    "modernName": "陕西省西安市",
+    "start": {
+      "year": 618,
+      "month": 4,
+      "abs": 7419,
+      "day": 12
+    },
+    "end": {
+      "year": 618,
+      "month": 6,
+      "abs": 7421
+    },
+    "startAbs": 7419,
+    "endAbs": 7421,
+    "precision": "day",
+    "endPrecision": "month",
+    "role": "primary",
+    "claimTrack": "changan",
+    "note": "杨侑在长安的并立阶段：江都兵变后继续在长安，618年六月禅位。杨侑禅位公历换算有6月12日、6月18日等异说，故终点保留六月精度。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杨侑"
+      }
+    ]
+  },
+  {
+    "id": "cap-sui-luoyang-618",
+    "dynastyId": "sui",
+    "historicalName": "东都洛阳",
+    "modernName": "河南省洛阳市",
+    "start": {
+      "year": 618,
+      "month": 6,
+      "abs": 7421,
+      "day": 22
+    },
+    "end": {
+      "year": 619,
+      "month": 5,
+      "abs": 7432,
+      "day": 23
+    },
+    "startAbs": 7421,
+    "endAbs": 7432,
+    "precision": "day",
+    "endPrecision": "day",
+    "role": "primary",
+    "claimTrack": "luoyang",
+    "note": "洛阳留守官于618年6月22日拥立杨侗，至619年5月23日禅位；作为杨侗并立在位期间的都城记录。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杨侗"
+      }
+    ]
+  },
+  {
+    "id": "cap-sui-jiangdu-618",
+    "dynastyId": "sui",
+    "historicalName": "江都",
+    "modernName": "江苏省扬州市",
+    "start": {
+      "year": 618,
+      "month": 4,
+      "abs": 7419,
+      "day": 11
+    },
+    "end": {
+      "year": 618,
+      "month": 10,
+      "abs": 7425,
+      "day": 23
+    },
+    "startAbs": 7419,
+    "endAbs": 7425,
+    "precision": "day",
+    "endPrecision": "day",
+    "role": "primary",
+    "note": "618年4月11日江都兵变后杨浩被拥立，10月23日被杀；记录其短暂在位期间的驻地。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/隋朝"
+      }
+    ]
+  },
+  {
     "id": "cap-tang-changan",
     "dynastyId": "tang",
     "historicalName": "长安",

@@ -1,6 +1,7 @@
 import { useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
+  activeReignsAtAbs,
   buildLaneOrderIndex,
   capitalsActiveAtAbs,
   capitalsForReigns,
@@ -142,9 +143,18 @@ export function TimelineStage() {
   const activeCapitals = useMemo(
     () => {
       const capitals = capitalsQuery.data ?? [];
-      const visible = capitalsActiveAtAbs(capitals, labelAnchorAbs);
+      const activeReigns = activeReignsAtAbs(data?.reigns ?? [], labelAnchorAbs);
+      const activeReignDynasties = new Set(activeReigns.map((reign) => reign.dynastyId));
+      const ownedAtAnchor = capitalsForReigns(activeReigns, data?.reigns ?? [], capitals)
+        .filter((capital) => capital.startAbs <= labelAnchorAbs && capital.endAbs >= labelAnchorAbs);
+      const ownedIds = new Set(ownedAtAnchor.map((capital) => capital.id));
+      const visible = capitalsActiveAtAbs(capitals, labelAnchorAbs).filter(
+        (capital) => !activeReignDynasties.has(capital.dynastyId) || ownedIds.has(capital.id),
+      );
       const selected = selection.selected;
-      if (!selected) return visible;
+      if (!selected) {
+        return [...new Map([...visible, ...ownedAtAnchor].map((capital) => [capital.id, capital])).values()];
+      }
       const reign = selected.type === "reign" ? data?.reigns.find((item) => item.id === selected.id) : undefined;
       const personReigns = selected.type === "person" ? data?.reigns.filter((item) => item.personId === selected.id) ?? [] : [];
       const dynastyIds = new Set<string>();

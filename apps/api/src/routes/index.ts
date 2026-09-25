@@ -319,8 +319,21 @@ export async function registerRoutes(app: FastifyInstance) {
           return { error: "Entity not found" };
         }
         const store = await loadStore();
+        const capitalReigns = await prisma.reignCapital.findMany({
+          where: { capitalId: params.id },
+          select: { reignId: true },
+          orderBy: { reignId: "asc" },
+        });
         const detail = buildEntityDetail(
-          { ...store, capitals: [mapDynastyCapital(row)] },
+          {
+            ...store,
+            capitals: [
+              mapDynastyCapital({
+                ...row,
+                reignIds: capitalReigns.map((item) => item.reignId),
+              }),
+            ],
+          },
           { type: "capital", id: params.id },
         );
         return EntityDetailSchema.parse(detail);
@@ -357,7 +370,9 @@ export async function registerRoutes(app: FastifyInstance) {
                  end_year, end_month, end_day,
                  start_abs, end_abs, precision, end_precision,
                  start_date_confidence, end_date_confidence,
-                 role, claim_track, note, links
+                 role, claim_track,
+                 ARRAY(SELECT rc.reign_id FROM reign_capitals rc WHERE rc.capital_id = dynasty_capitals.id ORDER BY rc.reign_id) AS reign_ids,
+                 note, links
           FROM dynasty_capitals
           WHERE dynasty_id = ${dynasty.id}
           ORDER BY start_abs, role, id`;
@@ -380,7 +395,25 @@ export async function registerRoutes(app: FastifyInstance) {
             where: { dynastyId: { in: dynastyIds } },
             orderBy: [{ startAbs: "asc" }, { role: "asc" }, { id: "asc" }],
           });
-          capitals = rows.map(mapDynastyCapital);
+          const capitalReigns = rows.length
+            ? await prisma.reignCapital.findMany({
+                where: { capitalId: { in: rows.map((item) => item.id) } },
+                select: { capitalId: true, reignId: true },
+                orderBy: [{ capitalId: "asc" }, { reignId: "asc" }],
+              })
+            : [];
+          const reignIdsByCapital = new Map<string, string[]>();
+          for (const item of capitalReigns) {
+            const list = reignIdsByCapital.get(item.capitalId) ?? [];
+            list.push(item.reignId);
+            reignIdsByCapital.set(item.capitalId, list);
+          }
+          capitals = rows.map((row) =>
+            mapDynastyCapital({
+              ...row,
+              reignIds: reignIdsByCapital.get(row.id) ?? [],
+            }),
+          );
         }
       }
 
@@ -512,7 +545,9 @@ export async function registerRoutes(app: FastifyInstance) {
                  end_year, end_month, end_day,
                  start_abs, end_abs, precision, end_precision,
                  start_date_confidence, end_date_confidence,
-                 role, claim_track, note, links
+                 role, claim_track,
+                 ARRAY(SELECT rc.reign_id FROM reign_capitals rc WHERE rc.capital_id = dynasty_capitals.id ORDER BY rc.reign_id) AS reign_ids,
+                 note, links
           FROM dynasty_capitals
           WHERE dynasty_id = ${query.dynastyId}
             AND start_abs <= ${toAbs}::int
@@ -524,7 +559,9 @@ export async function registerRoutes(app: FastifyInstance) {
                  end_year, end_month, end_day,
                  start_abs, end_abs, precision, end_precision,
                  start_date_confidence, end_date_confidence,
-                 role, claim_track, note, links
+                 role, claim_track,
+                 ARRAY(SELECT rc.reign_id FROM reign_capitals rc WHERE rc.capital_id = dynasty_capitals.id ORDER BY rc.reign_id) AS reign_ids,
+                 note, links
           FROM dynasty_capitals
           WHERE start_abs <= ${toAbs}::int
             AND end_abs >= ${fromAbs}::int`;

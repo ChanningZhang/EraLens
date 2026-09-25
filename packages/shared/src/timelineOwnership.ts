@@ -126,7 +126,7 @@ export function activeCapitalsAtAbs<T extends TimedCapital>(capitals: readonly T
   return capitals.filter((capital) => capitalOwnsAbs(capital, capitals, atAbs));
 }
 
-/** One pairing rule for details: same dynasty and track, with owned date ranges intersecting. */
+/** Prefer explicit reign-capital links; otherwise match dynasty, track, and owned date ranges. */
 export function capitalSegmentsForReign(
   reign: Reign,
   reigns: readonly Reign[],
@@ -138,9 +138,12 @@ export function capitalSegmentsForReign(
   endsAtReignBoundary: boolean;
 }> {
   const reignInterval = reignOwnershipInterval(reign, reigns);
-  return capitals.flatMap((capital) => {
-    if (capital.dynastyId !== reign.dynastyId ||
-      (capital.claimTrack ?? null) !== (reign.claimTrack ?? null)) return [];
+  const linked = capitals.filter((capital) => capital.reignIds?.includes(reign.id));
+  const candidates = linked.length > 0
+    ? linked
+    : capitals.filter((capital) => capital.dynastyId === reign.dynastyId);
+  return candidates.flatMap((capital) => {
+    if (linked.length === 0 && (capital.claimTrack ?? null) !== (reign.claimTrack ?? null)) return [];
     const capitalInterval = capitalOwnershipInterval(capital, capitals);
     if (!intervalsIntersect(reignInterval, capitalInterval)) return [];
     // A one-day handoff is owned by the older interval even if a viewport

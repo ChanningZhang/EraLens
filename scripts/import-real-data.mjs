@@ -24,6 +24,7 @@ TRUNCATE TABLE
   relations,
   events,
   event_locations,
+  reign_capitals,
   reigns,
   dynasty_capitals,
   dynasties,

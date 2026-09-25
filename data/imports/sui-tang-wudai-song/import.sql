@@ -11,6 +11,7 @@ DELETE FROM event_participants WHERE event_id IN ('zhu-wen-usurp', 'chenqiao-mut
 DELETE FROM event_dynasties WHERE event_id IN ('zhu-wen-usurp', 'chenqiao-mutiny');
 DELETE FROM events WHERE id IN ('zhu-wen-usurp', 'chenqiao-mutiny');
 DELETE FROM relations WHERE id = 'rel-yang-tong-li-yuan-killed';
+DELETE FROM reign_capitals WHERE reign_id IN ('reign-yang-you', 'reign-yang-hao', 'reign-yang-tong');
 DELETE FROM event_participants WHERE event_id = 'yang-tong-killed';
 DELETE FROM event_dynasties WHERE event_id = 'yang-tong-killed';
 DELETE FROM events WHERE id = 'yang-tong-killed';
@@ -443,7 +444,7 @@ INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_mon
 VALUES ('xu', '许', ARRAY['宇文化及许'], 'cn', 'east_asia', 618, 9, 619, 5, 7424, 7432, 'month', 'ochre', NULL, NULL, '宇文化及杀杨浩后自立，国号许，旋为窦建德所败，619年覆亡。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, parent_id, group_id, note)
-VALUES ('xia-dou-jiande', '夏', ARRAY['窦夏','夏王窦建德政权'], 'cn', 'east_asia', 618, 1, 621, 12, 7416, 7463, 'year', 'ochre', NULL, NULL, '窦建德于隋末据河北，先称长乐王，后称夏王；621年援郑败亡，窦建德被俘。')
+VALUES ('xia-dou-jiande', '夏', ARRAY['窦夏','夏王窦建德政权'], 'cn', 'east_asia', 618, 11, 621, 12, 7426, 7463, 'month', 'ochre', NULL, NULL, '窦建德于618年11月在乐寿建夏称王；621年援郑败亡，窦建德被俘。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, parent_id, group_id, note)
 VALUES ('zheng', '郑', ARRAY['王世充郑'], 'cn', 'east_asia', 619, 1, 621, 12, 7428, 7463, 'year', 'ochre', NULL, NULL, '王世充于619年在洛阳称帝、国号郑；621年降唐，政权覆亡。')
@@ -526,7 +527,7 @@ INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, sta
 VALUES ('reign-yuwen-huaji-xu', 'xu', 'yuwen-huaji', '', '天寿', 618, 10, 23, 619, 3, 21, 7425, 7430, 'day', NULL, NULL, NULL, NULL, NULL, false, false)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence, claim_track = EXCLUDED.claim_track, claim_label = EXCLUDED.claim_label, claim_role = EXCLUDED.claim_role, is_informal_monarch = EXCLUDED.is_informal_monarch, is_main = EXCLUDED.is_main;
 INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence, claim_track, claim_label, claim_role, is_informal_monarch, is_main)
-VALUES ('reign-dou-jiande-xia-dou-jiande', 'xia-dou-jiande', 'dou-jiande', '夏王', NULL, 618, 1, NULL, 621, 12, NULL, 7416, 7463, 'year', NULL, NULL, NULL, NULL, NULL, false, false)
+VALUES ('reign-dou-jiande-xia-dou-jiande', 'xia-dou-jiande', 'dou-jiande', '夏王', NULL, 618, 11, NULL, 621, 12, NULL, 7426, 7463, 'month', NULL, NULL, NULL, NULL, NULL, false, false)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence, claim_track = EXCLUDED.claim_track, claim_label = EXCLUDED.claim_label, claim_role = EXCLUDED.claim_role, is_informal_monarch = EXCLUDED.is_informal_monarch, is_main = EXCLUDED.is_main;
 INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence, claim_track, claim_label, claim_role, is_informal_monarch, is_main)
 VALUES ('reign-wang-shichong-zheng', 'zheng', 'wang-shichong', '郑帝', NULL, 619, 1, NULL, 621, 12, NULL, 7428, 7463, 'year', NULL, NULL, NULL, NULL, NULL, false, false)
@@ -819,6 +820,12 @@ ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXC
 INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence, claim_track, claim_label, claim_role, is_informal_monarch, is_main)
 VALUES ('reign-zhao-bing-song-south', 'song-south', 'zhao-bing', '', NULL, 1278, 5, 10, 1279, 3, 19, 15340, 15350, 'day', NULL, NULL, NULL, NULL, NULL, false, false)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence, claim_track = EXCLUDED.claim_track, claim_label = EXCLUDED.claim_label, claim_role = EXCLUDED.claim_role, is_informal_monarch = EXCLUDED.is_informal_monarch, is_main = EXCLUDED.is_main;
+
+-- reign_capitals
+INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-yang-you', 'cap-sui-daxing-583') ON CONFLICT DO NOTHING;
+INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-yang-you', 'cap-sui-changan-618') ON CONFLICT DO NOTHING;
+INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-yang-hao', 'cap-sui-jiangdu-618') ON CONFLICT DO NOTHING;
+INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-yang-tong', 'cap-sui-luoyang-618') ON CONFLICT DO NOTHING;
 
 -- events
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary) VALUES ('sui-unify', '隋灭陈统一', 'politics', 'point', 'year', NULL, 589, 12, 7079, NULL, NULL, NULL, NULL, NULL, NULL, '隋军灭南陈，南北分裂终结，隋统一全国。')

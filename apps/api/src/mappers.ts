@@ -103,9 +103,12 @@ export type RawDynastyCapitalRow = {
   end_date_confidence: string | null;
   role: string;
   claim_track: string | null;
+  reign_ids: string[] | null;
   note: string | null;
   links: unknown;
 };
+
+type DynastyCapitalRowWithReignIds = DbDynastyCapital & { reignIds?: string[] };
 
 export type RawEventRow = {
   id: string;
@@ -194,7 +197,7 @@ function toCoordinateNumber(value: { toString(): string } | number | string): nu
 }
 
 export function mapDynastyCapital(
-  row: DbDynastyCapital | RawDynastyCapitalRow,
+  row: DynastyCapitalRowWithReignIds | RawDynastyCapitalRow,
 ): DynastyCapital {
   const dynastyId = "dynastyId" in row ? row.dynastyId : row.dynasty_id;
   const historicalName =
@@ -216,6 +219,7 @@ export function mapDynastyCapital(
   const endDateConfidence =
     "endDateConfidence" in row ? row.endDateConfidence : row.end_date_confidence;
   const claimTrack = "claimTrack" in row ? row.claimTrack : row.claim_track;
+  const reignIds: string[] = "reign_ids" in row ? row.reign_ids ?? [] : row.reignIds ?? [];
   const noteValue = row.note;
   const links = (row.links as DynastyCapital["links"]) ?? [];
 
@@ -247,6 +251,7 @@ export function mapDynastyCapital(
       (endDateConfidence as DynastyCapital["endDateConfidence"] | null) ?? undefined,
     role: row.role as DynastyCapital["role"],
     claimTrack: claimTrack ?? undefined,
+    reignIds: reignIds ?? [],
     note: noteValue ?? undefined,
     links,
   };
@@ -365,6 +370,21 @@ export function mapEvent(
   const timeMode = "timeMode" in row ? row.timeMode : row.time_mode;
   const dateNote = "dateNote" in row ? row.dateNote : row.date_note;
   const meaning = row.meaning;
+  const location = row.location
+    ? {
+        id: row.location.id,
+        historicalName: row.location.historicalName,
+        modernName: row.location.modernName,
+        longitude: Number(row.location.longitude),
+        latitude: Number(row.location.latitude),
+        coordinateSystem: row.location.coordinateSystem,
+        precision: row.location.precision,
+        note: row.location.note ?? undefined,
+        links: Array.isArray(row.location.links)
+          ? (row.location.links as { label: string; url: string }[])
+          : [],
+      }
+    : undefined;
 
   return {
     id: row.id,
@@ -388,17 +408,8 @@ export function mapEvent(
     meaning: meaning ?? undefined,
     content: row.content ?? undefined,
     locationId: ("locationId" in row ? row.locationId : row.location_id) ?? undefined,
-    location: row.location ? {
-      id: row.location.id,
-      historicalName: row.location.historicalName,
-      modernName: row.location.modernName,
-      longitude: Number(row.location.longitude),
-      latitude: Number(row.location.latitude),
-      coordinateSystem: row.location.coordinateSystem,
-      precision: row.location.precision,
-      note: row.location.note ?? undefined,
-      links: Array.isArray(row.location.links) ? row.location.links as { label: string; url: string }[] : [],
-    } : undefined,
+    location,
+    locations: location ? [location] : [],
   };
 }
 

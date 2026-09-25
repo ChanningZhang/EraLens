@@ -2,7 +2,9 @@
   position: absolute;
   left: 0;
   right: 0;
-  z-index: 1;
+  /* Lane contents sit above fate links; empty lane space lets pointer events through. */
+  z-index: 6;
+  pointer-events: none;
   padding: 6px 0;
   contain: layout style;
   overflow: visible;

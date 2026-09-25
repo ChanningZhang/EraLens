@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { buildReignCapitalTenures, buildReignTenureCapitalRows, capitalsActiveAtAbs } from "./dynastyCapitals";
+import { capitalsForReigns } from "./timelineOwnership";
 import type { DynastyCapital, Reign } from "./schema";
 
 const tangChangan: DynastyCapital = {
@@ -123,6 +124,41 @@ describe("buildReignCapitalTenures", () => {
           abs: 8544,
         },
       },
+    ]);
+  });
+
+  it("uses explicit reign-capital links ahead of dynasty time ownership", () => {
+    const linkedCapital: DynastyCapital = {
+      ...tangLuoyang,
+      id: "cap-parallel-seat",
+      dynastyId: "other-dynasty",
+      historicalName: "并立据点",
+      modernName: "河南省洛阳市",
+      claimTrack: "other-track",
+      reignIds: [tangReign.id],
+    };
+    const rows = buildReignCapitalTenures(tangReign, [tangChangan, tangLuoyang, linkedCapital]);
+    expect(rows.map((row) => row.capital?.ref.id)).toEqual(["cap-parallel-seat"]);
+    expect(capitalsForReigns([tangReign], [tangReign], [tangChangan, tangLuoyang, linkedCapital]).map((capital) => capital.id)).toEqual([
+      "cap-parallel-seat",
+    ]);
+  });
+
+  it("uses existing dynasty, time, and claim track matching when no explicit link exists", () => {
+    const parallelReign: Reign = {
+      ...tangReign,
+      id: "reign-tang-claimant",
+      claimTrack: "luoyang",
+    };
+    const trackCapital: DynastyCapital = {
+      ...tangLuoyang,
+      claimTrack: "luoyang",
+    };
+    expect(buildReignCapitalTenures(parallelReign, [tangChangan, trackCapital]).map((row) => row.capital?.ref.id)).toEqual([
+      "cap-tang-luoyang",
+    ]);
+    expect(capitalsForReigns([parallelReign], [parallelReign], [tangChangan, trackCapital]).map((capital) => capital.id)).toEqual([
+      "cap-tang-luoyang",
     ]);
   });
 

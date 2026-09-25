@@ -112,7 +112,10 @@ export const mockRepository: TimelineRepository = {
   },
   async getCapitals(fromAbs: number, toAbs: number) {
     const atAbs = Math.round((fromAbs + toAbs) / 2);
-    return capitalsActiveAtAbs(mockCapitals, atAbs);
+    return capitalsActiveAtAbs(mockCapitals, atAbs).map((capital) => ({
+      ...capital,
+      reignIds: capital.reignIds ?? [],
+    }));
   },
   async getPersons() {
     return persons;

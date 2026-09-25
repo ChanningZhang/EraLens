@@ -106,6 +106,7 @@ model Reign {
   isMain              Boolean?    @map("is_main")
   dynasty               Dynasty     @relation(fields: [dynastyId], references: [id])
   person                Person      @relation(fields: [personId], references: [id])
+  capitals              ReignCapital[]
 
   @@index([startYear])
   @@index([endYear])
@@ -233,8 +234,20 @@ model DynastyCapital {
   note                String?
   links               Json     @default("[]")
   dynasty             Dynasty  @relation(fields: [dynastyId], references: [id])
+  reigns              ReignCapital[]
 
   @@index([dynastyId])
   @@index([startAbs, endAbs])
   @@map("dynasty_capitals")
+}
+
+model ReignCapital {
+  reignId   String        @map("reign_id")
+  capitalId String        @map("capital_id")
+  reign     Reign         @relation(fields: [reignId], references: [id], onDelete: Cascade)
+  capital   DynastyCapital @relation(fields: [capitalId], references: [id], onDelete: Cascade)
+
+  @@id([reignId, capitalId])
+  @@index([capitalId])
+  @@map("reign_capitals")
 }

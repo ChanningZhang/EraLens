@@ -18,7 +18,7 @@
 .hit {
   fill: none;
   stroke: transparent;
-  stroke-width: 14;
+  stroke-width: 8;
   stroke-linecap: round;
   stroke-linejoin: round;
   pointer-events: stroke;
@@ -47,6 +47,7 @@
 
 .originHit {
   fill: transparent;
+  r: 4.5px;
   pointer-events: fill;
 }
 
