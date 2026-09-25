@@ -35,8 +35,12 @@ async function fetchTimelineChunk(chunk: QueryChunk, lod: Lod) {
 const CHUNK_QUERY_OPTIONS = {
   staleTime: STALE_TIME,
   gcTime: GC_TIME,
-  refetchOnWindowFocus: false,
-  refetchOnReconnect: false,
+  // Completed historical slices stay cached; failed chunks retry after a
+  // temporary API interruption (for example while a local migration runs).
+  refetchOnWindowFocus: (query: { state: { status: string } }) => query.state.status === "error",
+  refetchOnReconnect: (query: { state: { status: string } }) => query.state.status === "error",
+  refetchInterval: (query: { state: { status: string } }) =>
+    query.state.status === "error" ? 10_000 : false,
 } as const;
 
 export function useTimelineData() {

@@ -172,12 +172,8 @@ export function reignVisualBounds(
     }
   }
 
-  if (clipStartAbs !== undefined) start = Math.max(start, clipStartAbs);
-  if (clipEndExclusive !== undefined) endExclusive = Math.min(endExclusive, clipEndExclusive);
+  const clippedStart = clipStartAbs !== undefined ? Math.max(start, clipStartAbs) : start;
+  const clippedEnd = clipEndExclusive !== undefined ? Math.min(endExclusive, clipEndExclusive) : endExclusive;
 
-  if (endExclusive <= start) {
-    endExclusive = start + 1 / daysInCalendarMonth(reign.end.year, reign.end.month);
-  }
-
-  return { start, endExclusive };
+  return { start: clippedStart, endExclusive: Math.max(clippedStart, clippedEnd) };
 }

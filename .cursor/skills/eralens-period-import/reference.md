@@ -277,7 +277,7 @@ ON CONFLICT (id) DO UPDATE SET
 - `modern_name`：**必填**行政区全称，格式 `{省}{市}` 或直辖市 `北京市`；禁止裸写「西安」「洛阳」
 - `role`：`primary`（京师）/ `secondary`（陪都）/ `temporary`（行在）
 - `claim_track`：并行政权都城时与 `reigns.claim_track` 同一 kebab-case key
-- 时间字段与 `reigns` 一致；年精度起年 `start_month=1`、迄年 `end_month=12`
+- 时间字段与 `reigns` 一致；年精度起年 `start_month=1`、迄年 `end_month=12`。若起点仅知年、终点已知月，保留 `precision='year'`，另填 `end_precision='month'`；不要把占位正月冒充已知起始月份。
 
 ```sql
 INSERT INTO dynasty_capitals (
@@ -285,7 +285,7 @@ INSERT INTO dynasty_capitals (
   longitude, latitude, coordinate_system,
   start_year, start_month, start_day,
   end_year, end_month, end_day,
-  start_abs, end_abs, precision,
+  start_abs, end_abs, precision, end_precision,
   start_date_confidence, end_date_confidence,
   role, claim_track, note, links
 ) VALUES (
@@ -294,7 +294,7 @@ INSERT INTO dynasty_capitals (
   108.9396450, 34.3432070, 'GCJ02',
   618, 1, NULL,
   904, 12, NULL,
-  7416, 10848, 'year',
+  7416, 10848, 'year', NULL,
   NULL, NULL,
   'primary', NULL,
   '唐都长安，高祖至哀帝。',
@@ -316,6 +316,7 @@ ON CONFLICT (id) DO UPDATE SET
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
+  end_precision = EXCLUDED.end_precision,
   start_date_confidence = EXCLUDED.start_date_confidence,
   end_date_confidence = EXCLUDED.end_date_confidence,
   role = EXCLUDED.role,

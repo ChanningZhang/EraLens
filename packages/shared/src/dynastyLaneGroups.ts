@@ -1,6 +1,7 @@
 import { resolveRocLaneRegionLabel } from "./rocTaiwanLeaderDisplay";
 import type { Dynasty, DynastyLaneGroup, Reign } from "./schema";
 import { absMonth } from "./time";
+import { activePhaseIdAtAbs, activeReignsAtAbs } from "./timelineOwnership";
 
 function compareReignOrder(a: Reign, b: Reign): number {
   return (
@@ -54,22 +55,24 @@ function compareDynastyOrder(a: Dynasty, b: Dynasty): number {
 
 export function resolveActivePhaseDynastyId(
   group: DynastyLaneGroup,
-  dynastiesById: ReadonlyMap<string, Pick<Dynasty, "id" | "startAbs">>,
+  dynastiesById: ReadonlyMap<
+    string,
+    Pick<Dynasty, "id" | "startAbs" | "start" | "end" | "precision">
+  >,
   labelAnchorAbs: number,
 ): string {
-  let active = group.phaseDynastyIds[0]!;
-  for (const dynastyId of group.phaseDynastyIds) {
-    const dynasty = dynastiesById.get(dynastyId);
-    if (dynasty && labelAnchorAbs >= dynasty.startAbs) {
-      active = dynastyId;
-    }
-  }
-  return active;
+  const phases = group.phaseDynastyIds
+    .map((id) => dynastiesById.get(id))
+    .filter((phase): phase is NonNullable<typeof phase> => Boolean(phase));
+  return activePhaseIdAtAbs(phases, labelAnchorAbs) ?? group.phaseDynastyIds[0]!;
 }
 
 export function resolveFrozenLaneLabel(
   dynasty: Pick<Dynasty, "id" | "name">,
-  dynastiesById: ReadonlyMap<string, Pick<Dynasty, "id" | "name" | "startAbs">>,
+  dynastiesById: ReadonlyMap<
+    string,
+    Pick<Dynasty, "id" | "name" | "startAbs" | "start" | "end" | "precision">
+  >,
   labelAnchorAbs: number,
   laneGroups: readonly DynastyLaneGroup[],
 ): string {
@@ -88,12 +91,8 @@ export function isFrozenLaneMaster(
   labelAnchorAbs: number,
   reigns: readonly Reign[],
 ): boolean {
-  return reigns.some(
-    (reign) =>
-      reign.dynastyId === dynastyId &&
-      reign.isMain === true &&
-      labelAnchorAbs >= reign.startAbs &&
-      labelAnchorAbs <= reign.endAbs,
+  return activeReignsAtAbs(reigns, labelAnchorAbs).some(
+    (reign) => reign.dynastyId === dynastyId && reign.isMain === true,
   );
 }
 

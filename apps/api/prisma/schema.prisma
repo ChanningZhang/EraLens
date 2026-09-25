@@ -225,6 +225,7 @@ model DynastyCapital {
   startAbs            Int      @map("start_abs")
   endAbs              Int      @map("end_abs")
   precision           String   @default("year")
+  endPrecision        String?  @map("end_precision")
   startDateConfidence String?  @map("start_date_confidence")
   endDateConfidence   String?  @map("end_date_confidence")
   role                String   @default("primary")

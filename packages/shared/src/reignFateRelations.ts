@@ -4,6 +4,12 @@ import {
   type Reign,
   type Relation,
 } from "./schema";
+import {
+  effectiveIntervalEndAbs,
+  effectiveIntervalStartAbs,
+  timelineInterval,
+} from "./timelineIntervals";
+import { reignOwnsAbs, reignOwnershipInterval } from "./timelineOwnership";
 
 export { FATE_RELATION_KINDS, type FateRelationKind };
 
@@ -40,8 +46,8 @@ function parseReignId(ref: string): string | undefined {
   return id || undefined;
 }
 
-function reignContainsAbs(reign: Reign, abs: number): boolean {
-  return reign.startAbs <= abs && abs <= reign.endAbs;
+function reignContainsAbs(reign: Reign, abs: number, reigns: readonly Reign[]): boolean {
+  return reignOwnsAbs(reign, reigns, abs);
 }
 
 /** Victim side: active reign at atAbs, else latest ended reign with endAbs <= atAbs. */
@@ -51,12 +57,14 @@ export function resolveFateFromReign(
   reigns: readonly Reign[],
 ): Reign | undefined {
   const matches = reigns.filter((reign) => reign.personId === personId);
-  const active = matches.find((reign) => reignContainsAbs(reign, atAbs));
+  const active = matches.find((reign) => reignContainsAbs(reign, atAbs, reigns));
   if (active) return active;
 
+  const endOf = (reign: Reign) =>
+    effectiveIntervalEndAbs(timelineInterval(reign.start, reign.end, reign.precision));
   const ended = matches
-    .filter((reign) => reign.endAbs <= atAbs)
-    .sort((a, b) => b.endAbs - a.endAbs || b.startAbs - a.startAbs || b.id.localeCompare(a.id));
+    .filter((reign) => endOf(reign) <= atAbs)
+    .sort((a, b) => endOf(b) - endOf(a) || b.startAbs - a.startAbs || b.id.localeCompare(a.id));
   return ended[0];
 }
 
@@ -69,15 +77,19 @@ export function resolveFateToReign(
   reigns: readonly Reign[],
 ): Reign | undefined {
   const matches = reigns.filter((reign) => reign.personId === personId);
-  const active = matches.find((reign) => reignContainsAbs(reign, atAbs));
+  const active = matches.find((reign) => reignContainsAbs(reign, atAbs, reigns));
   if (active) return active;
 
+  const startOf = (reign: Reign) =>
+    effectiveIntervalStartAbs(
+      reignOwnershipInterval(reign, reigns),
+    );
   const upcoming = matches
     .filter(
       (reign) =>
-        reign.startAbs >= atAbs && reign.startAbs - atAbs <= FATE_TO_REIGN_MAX_LAG_MONTHS,
+        startOf(reign) >= atAbs && startOf(reign) - atAbs <= FATE_TO_REIGN_MAX_LAG_MONTHS,
     )
-    .sort((a, b) => a.startAbs - b.startAbs || a.id.localeCompare(b.id));
+    .sort((a, b) => startOf(a) - startOf(b) || a.id.localeCompare(b.id));
   return upcoming[0];
 }
 

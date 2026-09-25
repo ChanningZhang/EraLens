@@ -1,5 +1,5 @@
 import { firstAppellation } from "./appellationFields";
-import { buildReignTenureCapitalRows, capitalRoleLabel, dynastyCapitalRelatedItems } from "./dynastyCapitals";
+import { buildReignTenureCapitalRows, capitalDateRangeLabel, capitalRoleLabel, dynastyCapitalRelatedItems } from "./dynastyCapitals";
 import { claimDetailFacts } from "./claimTracks";
 import { PRE_IMPERIAL_START_YEAR } from "./appellationPolicy";
 import {
@@ -216,7 +216,7 @@ function buildPersonEntityDetail(
   }
 
   const capitalTenures = personReigns.flatMap((reign) => {
-    const rows = buildReignTenureCapitalRows(reign, store.capitals ?? []);
+    const rows = buildReignTenureCapitalRows(reign, store.capitals ?? [], store.reigns);
     if (personReigns.length < 2) return rows;
     const name = (reign.eraNames.length > 0
       ? reign.eraNames.join("、")
@@ -350,7 +350,7 @@ export function buildEntityDetail(
     const facts = [
       { label: "归属", value: dynasty?.name ?? capital.dynastyId },
       { label: "今址", value: capital.modernName },
-      { label: "时段", value: `${capital.start.year} — ${capital.end.year}` },
+      { label: "时段", value: capitalDateRangeLabel(capital) },
       { label: "地位", value: capitalRoleLabel(capital.role) },
     ];
     if (capital.startDateConfidence && capital.startDateConfidence !== "certain") {

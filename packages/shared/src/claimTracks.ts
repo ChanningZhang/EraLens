@@ -1,4 +1,5 @@
 import type { Reign } from "./schema";
+import { rangesIntersect } from "./time";
 
 /**
  * Concurrent claimants on one dynasty lane (隋末长安杨侑 / 洛阳杨侗, 南明鲁监国 / 绍武).
@@ -127,7 +128,7 @@ export function resolveConcurrencySpans(
     const endAbs = points[i + 1]! - 1;
     if (endAbs < startAbs) continue;
     const trackCount = lanes.filter(
-      (lane) => lane.startAbs <= endAbs && lane.endAbs >= startAbs,
+      (lane) => rangesIntersect(lane.startAbs, lane.endAbs, startAbs, endAbs),
     ).length;
     if (trackCount < 2) continue;
 

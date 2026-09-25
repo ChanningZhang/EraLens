@@ -145,7 +145,8 @@ const persons = [
   person("yang-hao", "杨浩", ["皇帝"], "隋秦王，宇文化及弑炀帝后拥立，为江都隋室续统，旋被废杀。", "杨浩"),
   person("yang-tong", "杨侗", ["皇帝"], "隋越王，王世充等在东都拥立的傀儡皇帝，619年被杀，名义隋主终结。", "杨侗"),
   person("yuwen-huaji", "宇文化及", ["将领", "政治家"], "江都兵变主谋，杀隋炀帝后拥立杨浩。", "宇文化及"),
-  person("wang-shichong", "王世充", ["将领", "政治家"], "隋末割据洛阳，拥立杨侗，后杀之自立。", "王世充"),
+  person("dou-jiande", "窦建德", ["君主", "起义领袖"], "隋末河北割据者，先称长乐王，后建夏称王；援郑败于虎牢，被俘后在长安处死。", "窦建德", { year: 573 }, { year: 621 }),
+  person("wang-shichong", "王世充", ["皇帝", "将领", "政治家"], "隋末据洛阳，拥立杨侗后杀之自立，建郑称帝；621年降唐，赴蜀途中被仇家独孤修德所杀。", "王世充", null, { year: 621 }),
   // 唐
   person("li-yuan", "李渊", ["皇帝"], "唐高祖，太原起兵，建唐定都长安。", "李渊"),
   person("li-shimin", "李世民", ["皇帝"], "唐太宗，玄武门之变后即位，开创贞观之治。", "唐太宗"),
@@ -312,6 +313,8 @@ const dynastyGroups = [
 const dynasties = [
   { id: "sui", name: "隋", altNames: ["大隋"], scope: "cn", region: "east_asia", start: ym(581, 3), end: ym(619, 5), precision: "month", note: "581年3月杨坚受禅建隋；589年灭陈统一。618年唐建立后，东都杨侗仍续统，至619年5月被废，隋亡。" },
   { id: "xu", name: "许", altNames: ["宇文化及许"], scope: "cn", region: "east_asia", start: ym(618, 9), end: ym(619, 5), precision: "month", note: "宇文化及杀杨浩后自立，国号许，旋为窦建德所败，619年覆亡。" },
+  { id: "xia-dou-jiande", name: "夏", altNames: ["窦夏", "夏王窦建德政权"], scope: "cn", region: "east_asia", start: ym(618), end: ym(621, 12), precision: "year", note: "窦建德于隋末据河北，先称长乐王，后称夏王；621年援郑败亡，窦建德被俘。" },
+  { id: "zheng", name: "郑", altNames: ["王世充郑"], scope: "cn", region: "east_asia", start: ym(619), end: ym(621, 12), precision: "year", note: "王世充于619年在洛阳称帝、国号郑；621年降唐，政权覆亡。" },
   { id: "tang", name: "唐", altNames: ["李唐"], scope: "cn", region: "east_asia", start: ym(618, 6), end: ym(907), precision: "month", note: "618年6月李渊受隋恭帝禅让建唐，都长安；907年朱温篡唐，唐亡。" },
   { id: "zhou-wu", name: "武周", altNames: ["周"], scope: "cn", region: "east_asia", start: ym(690), end: ym(705), precision: "year", note: "武则天改国号周，690–705年，后还政李唐。" },
   { id: "liang-hou", name: "后梁", altNames: ["梁"], scope: "cn", region: "east_asia", start: ym(907), end: ym(923), precision: "year", groupId: "wudai", note: "朱温篡唐建梁，都开封；923年后唐灭之。" },
@@ -349,6 +352,11 @@ const suiReignsParallel = [
     track: "luoyang",
     label: "洛阳",
   }),
+];
+
+const suiReignsRivalStates = [
+  dynastyReign("xia-dou-jiande", "dou-jiande", "夏王", null, null, 618, 621),
+  dynastyReign("zheng", "wang-shichong", "郑帝", null, null, 619, 621),
 ];
 const suiReigns = [...suiReignsCore, ...suiReignsParallel];
 const xuReigns = [
@@ -514,7 +522,7 @@ const songSouthReigns = [
 // 杨侑与杨侗使用并立 track；杨浩留在主行，但标记为非正统继位，不显示金色。
 const reignGroups = [suiReignsCore, tangReigns, zhouWuReigns, wudaiReigns, shiguoReigns, songNorthReigns, songSouthReigns];
 const reigns = applyDocumentedDatesToReigns(
-  [suiReigns, xuReigns, tangReigns, zhouWuReigns, wudaiReigns, shiguoReigns, songNorthReigns, songSouthReigns].flat(),
+  [suiReigns, xuReigns, suiReignsRivalStates, tangReigns, zhouWuReigns, wudaiReigns, shiguoReigns, songNorthReigns, songSouthReigns].flat(),
 );
 
 // ── events ───────────────────────────────────────────────────────────────────
@@ -563,7 +571,7 @@ const events = [
     summary: "宇文化及杀隋秦王杨浩，随后自称皇帝，建立许政权。",
   }),
   eventPoint({ id: "xuanwumen", name: "玄武门之变", kind: "politics", precision: "month", dateNote: "武德九年六月，626年", at: ym(626, 7), dynastyIds: ["tang"], participantIds: ["li-shimin"], summary: "李世民发动政变，杀兄弟即位太子，后登基。" }),
-  eventPoint({ id: "hulao-battle", name: "虎牢关之战", kind: "battle", precision: "month", dateNote: "武德四年四月，李世民大败窦建德", at: ym(621, 4), dynastyIds: ["tang"], participantIds: ["li-shimin"], summary: "李世民于虎牢关以少胜多，俘窦建德、王世充，唐朝统一中原。" }),
+  eventPoint({ id: "hulao-battle", name: "虎牢关之战", kind: "battle", precision: "month", dateNote: "武德四年四月，李世民大败窦建德", at: ym(621, 4), dynastyIds: ["tang"], participantIds: ["li-shimin", "dou-jiande", "wang-shichong"], summary: "李世民于虎牢关以少胜多，俘窦建德、王世充，唐朝统一中原。" }),
   eventRange({ id: "zhenguan-rule", name: "贞观之治", kind: "politics", timeMode: "span", start: ym(627), end: ym(649), dynastyIds: ["tang"], participantIds: ["li-shimin"], summary: "唐太宗任贤纳谏，轻徭薄赋，为盛唐奠基。" }),
   eventRange({ id: "kaiyuan-prosperity", name: "开元盛世", kind: "politics", timeMode: "span", start: ym(713), end: ym(741), dynastyIds: ["tang"], participantIds: ["li-longji"], summary: "唐玄宗前期励精图治，唐朝国力达于鼎盛。" }),
   eventRange({ id: "anshi-rebellion", name: "安史之乱", kind: "battle", timeMode: "span", dateNote: "755–763年", start: ym(755), end: ym(763), dynastyIds: ["tang"], participantIds: ["li-longji", "an-lushan"], summary: "安禄山、史思明叛乱，唐朝由盛转衰。" }),
@@ -681,6 +689,7 @@ const sql = [
   "DELETE FROM event_participants WHERE event_id = 'yang-tong-killed';",
   "DELETE FROM event_dynasties WHERE event_id = 'yang-tong-killed';",
   "DELETE FROM events WHERE id = 'yang-tong-killed';",
+  "DELETE FROM reigns WHERE id = 'reign-dou-jiande-xia';",
   "",
   "-- remove stale auto-generated 史料缺 (武周期间唐行留白)",
   sqlDeleteSystemMissingReigns(["tang"], sqlStr),
@@ -717,6 +726,10 @@ const manifest = {
     { label: "靖康之变", url: "https://zh.wikipedia.org/wiki/靖康之变" },
     { label: "高梁河之战", url: "https://zh.wikipedia.org/wiki/高梁河之战" },
     { label: "宇文化及", url: "https://zh.wikipedia.org/wiki/宇文化及" },
+    { label: "旧唐书·高祖本纪", url: "https://zh.wikisource.org/zh-hans/旧唐书/卷1" },
+    { label: "窦建德", url: "https://zh.wikipedia.org/wiki/窦建德" },
+    { label: "王世充", url: "https://zh.wikipedia.org/wiki/王世充" },
+    { label: "虎牢之战", url: "https://zh.wikipedia.org/wiki/虎牢之战" },
   ],
   notes: [
     "覆盖隋（581–618）、唐（618–907）、武周（690–705）、五代十国（907–979）、北宋（960–1127）、南宋（1127–1279）。",
@@ -727,6 +740,7 @@ const manifest = {
     "李显、李旦两度即位，在位拆为两段；690–705 年武周武则天，不与唐中宗重叠。",
     "隋末并行用 claim_track：杨侑在炀帝仍在位时于长安另立，杨侗也在炀帝死讯传至洛阳后另立；二人分别使用 changan/长安、luoyang/洛阳并立 track。杨浩在炀帝被弑后于江都继位，不设并立 track，留在主行；按本包取舍标记 claim_role=rival，因此卡片不镀正统金色。",
     "杨广于618-04-11在江都被宇文化及所弑；宇文化及随后建立许政权，命运线准确挂接至其许帝卡。",
+    "补入夏（窦建德）与郑（王世充）两条隋末政权行及相应年精度在位。夏（窦建德）使用独立 id xia-dou-jiande，避免与上古夏朝 xia 冲突。依据《旧唐书·高祖本纪》：武德元年二月窦建德称长乐王、武德三年正月称夏王；武德二年四月王世充称帝建郑；武德四年五月窦建德败俘、王世充降，七月窦建德被斩、王世充赴蜀途中被仇家所杀。年月按年精度处理，不将史书农历月直接当公历月录入。",
     "杨侗起始在位日按《资治通鉴》卷一八五及《资治通鉴》所记武德元年五月戊辰换算为618-06-22；《旧唐书》异记618-06-21。终点取619-05-23禅位日。",
     "南宋正统金色止于恭帝降元（1276-02）；端宗、帝昺接在恭帝之后走主线继承，但不计正统。",
     "北宋、南宋皇帝在位日取维基百科/宋史通行换算，precision=day。",

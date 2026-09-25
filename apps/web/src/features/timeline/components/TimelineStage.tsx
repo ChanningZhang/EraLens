@@ -3,6 +3,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   buildLaneOrderIndex,
   capitalsActiveAtAbs,
+  capitalsForReigns,
   clusterFramesForLanes,
   collapseDynastyLaneGroups,
   collectLaneReigns,
@@ -10,6 +11,7 @@ import {
   eventSpanAbs,
   formatYear,
   fromAbsMonth,
+  rangesIntersect,
   fallbackLaneColorToken,
   getDynastyLaneGroup,
   resolveDynastyColorValue,
@@ -117,7 +119,7 @@ export function TimelineStage() {
       buffered.endAbs,
     ).filter(
       (dynasty) =>
-        dynasty.startAbs <= viewport.endAbs && dynasty.endAbs >= viewport.startAbs,
+        rangesIntersect(dynasty.startAbs, dynasty.endAbs, viewport.startAbs, viewport.endAbs),
     );
     const collapsed = collapseDynastyLaneGroups(
       visible,
@@ -149,12 +151,11 @@ export function TimelineStage() {
       if (selected.type === "dynasty") dynastyIds.add(selected.id);
       if (reign) dynastyIds.add(reign.dynastyId);
       for (const item of personReigns) dynastyIds.add(item.dynastyId);
-      const selectedCapitals = capitals.filter((capital) => {
-        if (selected.type === "capital") return capital.id === selected.id;
-        if (selected.type === "dynasty") return dynastyIds.has(capital.dynastyId);
-        const spans = reign ? [reign] : personReigns;
-        return spans.some((item) => item.dynastyId === capital.dynastyId && capital.startAbs <= item.endAbs && capital.endAbs >= item.startAbs);
-      });
+      const selectedCapitals = selected.type === "capital"
+        ? capitals.filter((capital) => capital.id === selected.id)
+        : selected.type === "dynasty"
+          ? capitals.filter((capital) => dynastyIds.has(capital.dynastyId))
+          : capitalsForReigns(reign ? [reign] : personReigns, data?.reigns ?? [], capitals);
       return [...new Map([...visible, ...selectedCapitals].map((capital) => [capital.id, capital])).values()];
     },
     [capitalsQuery.data, labelAnchorAbs, selection.selected, data?.reigns],
@@ -168,7 +169,7 @@ export function TimelineStage() {
       if ((!event.location && event.locations.length === 0) || (event.kind !== "battle" && !isSelected)) return false;
       if (isSelected) return true;
       const span = eventSpanAbs(event);
-      return span.startAbs <= windowEnd && span.endAbs >= windowStart;
+      return rangesIntersect(span.startAbs, span.endAbs, windowStart, windowEnd);
     });
   }, [data, viewport.centerAbs, selection.selected]);
   const dynastyNamesById = useMemo(() => {

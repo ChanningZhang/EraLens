@@ -1,5 +1,5 @@
 import type { Event, Reign } from "@eralens/shared";
-import { eventSpanAbs } from "@eralens/shared";
+import { activeReignsAtAbs, eventSpanAbs } from "@eralens/shared";
 import { projectAbs, projectRange, type ViewportState } from "./coordinates";
 
 /** Maximum visual width of an event pill, matching `.marker { max-width }`. */
@@ -151,9 +151,8 @@ export type EventBadgePosition = { laneId: string; anchorX: number; edge: "top" 
 /** Anchor a dated event to its unique active card, using participants to disambiguate overlap. */
 export function eventTargetReign(event: Event, reigns: readonly Reign[]): Reign | null {
   const { anchorAbs } = eventSpanAbs(event);
-  const active = reigns.filter((reign) =>
-    event.dynastyIds.includes(reign.dynastyId) &&
-    reign.startAbs <= anchorAbs && anchorAbs <= reign.endAbs,
+  const active = activeReignsAtAbs(reigns, anchorAbs).filter((reign) =>
+    event.dynastyIds.includes(reign.dynastyId),
   );
   const participants = active.filter((reign) => event.participantIds.includes(reign.personId));
   if (participants.length === 1) return participants[0]!;

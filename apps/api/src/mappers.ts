@@ -98,6 +98,7 @@ export type RawDynastyCapitalRow = {
   start_abs: number;
   end_abs: number;
   precision: string;
+  end_precision: string | null;
   start_date_confidence: string | null;
   end_date_confidence: string | null;
   role: string;
@@ -209,6 +210,7 @@ export function mapDynastyCapital(
   const endDay = "endDay" in row ? row.endDay : row.end_day;
   const startAbs = "startAbs" in row ? row.startAbs : row.start_abs;
   const endAbs = "endAbs" in row ? row.endAbs : row.end_abs;
+  const endPrecision = "endPrecision" in row ? row.endPrecision : row.end_precision;
   const startDateConfidence =
     "startDateConfidence" in row ? row.startDateConfidence : row.start_date_confidence;
   const endDateConfidence =
@@ -238,6 +240,7 @@ export function mapDynastyCapital(
     startAbs,
     endAbs,
     precision: row.precision as DynastyCapital["precision"],
+    endPrecision: (endPrecision as DynastyCapital["endPrecision"] | null) ?? undefined,
     startDateConfidence:
       (startDateConfidence as DynastyCapital["startDateConfidence"] | null) ?? undefined,
     endDateConfidence:

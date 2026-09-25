@@ -1,6 +1,12 @@
 import type { CapitalRole, DynastyCapital, EntityRef, Reign } from "./schema";
 import { isUncertainDateConfidence } from "./reignBoundaries";
-import { formatYear, formatYearMonth, rangeIntersectsWindow } from "./time";
+import { formatYear, formatYearMonth } from "./time";
+import {
+  effectiveIntervalEndPoint,
+  effectiveIntervalStartAbs,
+  effectiveIntervalStartPoint,
+} from "./timelineIntervals";
+import { activeCapitalsAtAbs, capitalSegmentsForReign } from "./timelineOwnership";
 
 type CapitalTimePoint = { year: number; month: number; day?: number };
 
@@ -25,7 +31,7 @@ export function capitalsActiveAtAbs(
   capitals: readonly DynastyCapital[],
   atAbs: number,
 ): DynastyCapital[] {
-  return capitals.filter((capital) => capital.startAbs <= atAbs && capital.endAbs >= atAbs);
+  return activeCapitalsAtAbs(capitals, atAbs);
 }
 
 export type ReignCapitalTenureRow = {
@@ -41,17 +47,6 @@ export type ReignCapitalTenureRow = {
     isInformalMonarch?: boolean;
   };
 };
-
-function segmentTimePoints(
-  reign: Reign,
-  capital: DynastyCapital,
-): { startAbs: number; endAbs: number; start: CapitalTimePoint; end: CapitalTimePoint } {
-  const startAbs = Math.max(reign.startAbs, capital.startAbs);
-  const endAbs = Math.min(reign.endAbs, capital.endAbs);
-  const start = startAbs === reign.startAbs ? reign.start : capital.start;
-  const end = endAbs === reign.endAbs ? reign.end : capital.end;
-  return { startAbs, endAbs, start, end };
-}
 
 function formatTenureRangeLabel(
   start: CapitalTimePoint,
@@ -93,6 +88,17 @@ export function capitalTenureSubtitle(capital: DynastyCapital): string | undefin
   return `${role} · ${capital.modernName}`;
 }
 
+export function capitalDateRangeLabel(capital: DynastyCapital): string {
+  const pointLabel = (point: CapitalTimePoint, precision: DynastyCapital["precision"]) => {
+    if (precision === "day" && point.day != null) {
+      return `${formatYearMonth(point.year, point.month, "compact")}${point.day}日`;
+    }
+    if (precision === "month") return formatYearMonth(point.year, point.month, "compact");
+    return formatYear(point.year, "compact");
+  };
+  return `${pointLabel(capital.start, capital.precision)} — ${pointLabel(capital.end, capital.endPrecision ?? capital.precision)}`;
+}
+
 export function dynastyCapitalRelatedItems(
   dynastyId: string,
   capitals: readonly DynastyCapital[],
@@ -114,7 +120,7 @@ export function dynastyCapitalRelatedItems(
     .map((capital) => ({
       ref: { type: "capital" as const, id: capital.id },
       label: capital.historicalName,
-      subtitle: `${capital.start.year} — ${capital.end.year} · ${capitalRoleLabel(capital.role)}`,
+      subtitle: `${capitalDateRangeLabel(capital)} · ${capitalRoleLabel(capital.role)}`,
       abs: capital.startAbs,
       group: "capital" as const,
     }));
@@ -124,16 +130,11 @@ export function dynastyCapitalRelatedItems(
 export function buildReignCapitalTenures(
   reign: Reign,
   capitals: readonly DynastyCapital[],
+  dynastyReigns: readonly Reign[] = [reign],
 ): ReignCapitalTenureRow[] {
-  return capitals
-    .filter(
-      (capital) =>
-        capital.dynastyId === reign.dynastyId &&
-        (capital.claimTrack ?? null) === (reign.claimTrack ?? null) &&
-        rangeIntersectsWindow(capital.startAbs, capital.endAbs, reign.startAbs, reign.endAbs),
-    )
-    .map((capital) => {
-      const segment = segmentTimePoints(reign, capital);
+  return capitalSegmentsForReign(reign, dynastyReigns, capitals)
+    .map(({ capital, overlapInterval, startsAtReignBoundary, endsAtReignBoundary }) => {
+      const startAbs = effectiveIntervalStartAbs(overlapInterval);
       return {
         capital: {
           ref: { type: "capital" as const, id: capital.id },
@@ -143,18 +144,18 @@ export function buildReignCapitalTenures(
         tenure: {
           ref: { type: "reign" as const, id: reign.id },
           label: formatTenureRangeLabel(
-            segment.start,
-            segment.end,
-            segment.start === reign.start ? reign.precision : capital.precision,
-            segment.end === reign.end ? reign.precision : capital.precision,
-            segment.start === reign.start ? reign.startDateConfidence : undefined,
-            segment.end === reign.end ? reign.endDateConfidence : undefined,
+            effectiveIntervalStartPoint(overlapInterval),
+            effectiveIntervalEndPoint(overlapInterval),
+            startsAtReignBoundary ? reign.precision : capital.precision,
+            endsAtReignBoundary ? reign.precision : (capital.endPrecision ?? capital.precision),
+            startsAtReignBoundary ? reign.startDateConfidence : undefined,
+            endsAtReignBoundary ? reign.endDateConfidence : undefined,
           ),
-          abs: segment.startAbs,
+          abs: startAbs,
           ...(reign.isInformalMonarch ? { isInformalMonarch: true } : {}),
         },
         sortKey: {
-          startAbs: segment.startAbs,
+          startAbs,
           role: CAPITAL_ROLE_ORDER[capital.role],
         },
       };
@@ -172,8 +173,9 @@ export function buildReignCapitalTenures(
 export function buildReignTenureCapitalRows(
   reign: Reign,
   capitals: readonly DynastyCapital[],
+  dynastyReigns: readonly Reign[] = [reign],
 ): ReignCapitalTenureRow[] {
-  const rows = buildReignCapitalTenures(reign, capitals);
+  const rows = buildReignCapitalTenures(reign, capitals, dynastyReigns);
   if (rows.length > 0) return rows;
   return [
     {

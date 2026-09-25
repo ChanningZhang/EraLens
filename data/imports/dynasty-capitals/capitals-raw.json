@@ -2983,14 +2983,16 @@
     },
     "end": {
       "year": 618,
-      "month": 12,
-      "abs": 7427
+      "month": 4,
+      "abs": 7419,
+      "day": 11
     },
     "startAbs": 6996,
-    "endAbs": 7427,
+    "endAbs": 7419,
     "precision": "year",
+    "endPrecision": "day",
     "role": "primary",
-    "note": "开皇三年（583）隋文帝由旧长安城迁入新都大兴城；618年唐建立后改名长安。",
+    "note": "开皇三年（583）隋文帝由旧长安城迁入新都大兴城；本记录按618年4月11日江都兵变后的隋主交界结束。",
     "links": [
       {
         "label": "维基百科",

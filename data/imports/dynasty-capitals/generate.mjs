@@ -132,6 +132,10 @@ writeFileSync(
         { label: "新华网转载光明日报：东周王城考古与东西周分治", url: "https://www.xinhuanet.com/politics/2016-03/19/c_128812971.htm" },
         { label: "史记·周本纪（识典古籍）", url: "https://www.shidianguji.com/book/SK0698/chapter/1l9z5rwhc1547" },
         { label: "高德地图地理编码", url: "https://lbs.amap.com/api/webservice/guide/api/georegeo" },
+        { label: "《资治通鉴》卷188·窦建德迁都洺州", url: "https://zh.wikisource.org/zh-hant/資治通鑑/卷188" },
+        { label: "德州地方志：窦建德事迹", url: "https://dzdywhyjzx.dzu.edu.cn/__local/A/B3/89/AF0F895C2359E0209700DEC01EB_4E11A195_227030.pdf" },
+        { label: "洛阳历史：郑政权都洛阳", url: "https://zh.wikipedia.org/wiki/洛阳历史" },
+        { label: "高德地图：广府古城坐标", url: "https://www.amap.com/place/B013600EA5" },
       ],
       notes: [
         "modernName 记录都城遗址对应的现代地点，必要时细化到遗址/乡镇以区分同一行政市内的不同古城；坐标 GCJ-02，经 Amap maps_geo 烘焙",
@@ -147,6 +151,7 @@ writeFileSync(
         "本次复核修正杨吴广陵、后梁/后晋/后汉/后周汴州、南汉兴王府、闽长乐府、南诏779年迁羊苴咩城、大理羊苴咩城、辽南京析津府、北辽临潢府、西辽虎思斡耳朵、大西西京等古称；今址仍单列于 modernName",
         "本次全量复核修正秦国汧渭之会/平阳今址、隋581—582年旧长安与583年迁入大兴城、徐宋蕲水→汉阳、韩宋亳州→汴梁→安丰、陈汉江州→武昌、张士诚高邮→平江、大西成都起点、明郑东都/东宁古称及太平天国天京起止",
         "本次复核南明都城按政权边界拆分：应天→福州→肇庆/桂林/南宁/安龙/昆明为主线，广州标记 claim_track=shaowu；不再把隆武、绍武都城显示到永历帝详情中",
+        "窦建德夏政权都城分乐寿（金城宫）与洺州（万春宫）两段；《资治通鉴》记‘还洺州，筑万春宫，徙都之’，地方志系于武德二年（619）。由于只录年精度，迁都年的乐寿、洺州区间重叠；王世充郑政权都洛阳，记619—621年。窦建德政权使用唯一 dynasty id xia-dou-jiande，以区别上古夏朝 xia",
         `覆盖 ${new Set(capitals.map((c) => c.dynastyId)).size} 个王朝，${capitals.length} 条都城记录`,
       ],
     },

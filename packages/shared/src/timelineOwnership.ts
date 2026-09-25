@@ -1,0 +1,173 @@
+import { claimTrackOf } from "./claimTracks";
+import type { Dynasty, DynastyCapital, Reign } from "./schema";
+import {
+  effectiveIntervalEndAbs,
+  intervalContainsAbs,
+  intervalPrecedes,
+  intervalsIntersect,
+  leftOpenRightClosedInterval,
+  preserveEarlierIntervalAtOverlap,
+  timelineInterval,
+  type LeftOpenRightClosedInterval,
+} from "./timelineIntervals";
+
+/** A partial capital record is also used while ordering dynasty lanes. */
+export type TimedCapital = Pick<
+  DynastyCapital,
+  "dynastyId" | "modernName" | "startAbs" | "endAbs"
+> & Partial<Pick<DynastyCapital, "id" | "start" | "end" | "precision" | "endPrecision" | "role" | "claimTrack">>;
+
+type OwnershipRecord = Reign | TimedCapital | Pick<Dynasty, "id" | "start" | "end" | "precision">;
+type OwnershipRequest =
+  | { kind: "reign"; item: Reign; peers: readonly Reign[]; scope?: "dynasty" | "lane" }
+  | { kind: "capital"; item: TimedCapital; peers: readonly TimedCapital[] }
+  | { kind: "phase"; item: Pick<Dynasty, "id" | "start" | "end" | "precision">; peers: readonly Pick<Dynasty, "id" | "start" | "end" | "precision">[] };
+
+function sameReignSeries(a: Reign, b: Reign, scope: "dynasty" | "lane"): boolean {
+  return claimTrackOf(a) === claimTrackOf(b) &&
+    (scope === "lane" || a.dynastyId === b.dynastyId);
+}
+
+export function reignOwnershipPeers(
+  reign: Reign,
+  reigns: readonly Reign[],
+  scope: "dynasty" | "lane" = "dynasty",
+): Reign[] {
+  return reigns.filter((item) => sameReignSeries(item, reign, scope));
+}
+
+function recordedInterval(item: OwnershipRecord): LeftOpenRightClosedInterval {
+  if ("start" in item && item.start && "end" in item && item.end) {
+    const endPrecision = "endPrecision" in item ? item.endPrecision : undefined;
+    return timelineInterval(item.start, item.end, item.precision ?? "month", endPrecision ?? item.precision ?? "month");
+  }
+  if ("startAbs" in item && "endAbs" in item) {
+    return leftOpenRightClosedInterval(item.startAbs, item.endAbs);
+  }
+  throw new Error("Timeline ownership requires dated boundaries");
+}
+
+function sameOwnershipSeries(request: OwnershipRequest, peer: OwnershipRecord): boolean {
+  const { item } = request;
+  if (peer === item || ("id" in peer && "id" in item && peer.id && peer.id === item.id)) return false;
+  if (request.kind === "phase") return true;
+  if (request.kind === "reign") {
+    const other = peer as Reign;
+    return sameReignSeries(other, request.item, request.scope ?? "dynasty");
+  }
+  const other = peer as TimedCapital;
+  return request.item.modernName.trim() !== "" &&
+    other.modernName.trim() === request.item.modernName.trim() &&
+    (request.item.role == null || other.role === request.item.role) &&
+    (other.claimTrack ?? null) === (request.item.claimTrack ?? null);
+}
+
+/** The sole category-aware arbitration point for adjacent timeline ownership. */
+export function timelineOwnershipInterval(request: OwnershipRequest): LeftOpenRightClosedInterval {
+  const interval = recordedInterval(request.item);
+  const earlier = request.peers
+    .filter((peer) => sameOwnershipSeries(request, peer))
+    .map(recordedInterval)
+    .filter((peerInterval) => intervalPrecedes(peerInterval, interval));
+  return preserveEarlierIntervalAtOverlap(interval, earlier);
+}
+
+export function reignOwnershipInterval(reign: Reign, reigns: readonly Reign[], scope: "dynasty" | "lane" = "dynasty") {
+  return timelineOwnershipInterval({ kind: "reign", item: reign, peers: reigns, scope });
+}
+
+export function capitalOwnershipInterval(capital: TimedCapital, capitals: readonly TimedCapital[]) {
+  return timelineOwnershipInterval({ kind: "capital", item: capital, peers: capitals });
+}
+
+export function phaseOwnershipInterval(
+  phase: Pick<Dynasty, "id" | "start" | "end" | "precision">,
+  phases: readonly Pick<Dynasty, "id" | "start" | "end" | "precision">[],
+) {
+  return timelineOwnershipInterval({ kind: "phase", item: phase, peers: phases });
+}
+
+export function phaseOwnsAbs(
+  phase: Pick<Dynasty, "id" | "start" | "end" | "precision">,
+  phases: readonly Pick<Dynasty, "id" | "start" | "end" | "precision">[],
+  atAbs: number,
+): boolean {
+  return intervalContainsAbs(phaseOwnershipInterval(phase, phases), atAbs);
+}
+
+export function activePhaseIdAtAbs(
+  phases: readonly Pick<Dynasty, "id" | "start" | "end" | "precision">[],
+  atAbs: number,
+): string | undefined {
+  let active = phases[0]?.id;
+  for (const phase of phases) {
+    if (phaseOwnsAbs(phase, phases, atAbs)) active = phase.id;
+  }
+  const latest = phases.at(-1);
+  if (latest && atAbs >= effectiveIntervalEndAbs(phaseOwnershipInterval(latest, phases))) {
+    return latest.id;
+  }
+  return active;
+}
+
+export function reignOwnsAbs(reign: Reign, reigns: readonly Reign[], atAbs: number): boolean {
+  return intervalContainsAbs(reignOwnershipInterval(reign, reigns), atAbs);
+}
+
+export function capitalOwnsAbs(capital: TimedCapital, capitals: readonly TimedCapital[], atAbs: number): boolean {
+  return intervalContainsAbs(capitalOwnershipInterval(capital, capitals), atAbs);
+}
+
+export function activeReignsAtAbs(reigns: readonly Reign[], atAbs: number): Reign[] {
+  return reigns.filter((reign) => reignOwnsAbs(reign, reigns, atAbs));
+}
+
+export function activeCapitalsAtAbs<T extends TimedCapital>(capitals: readonly T[], atAbs: number): T[] {
+  return capitals.filter((capital) => capitalOwnsAbs(capital, capitals, atAbs));
+}
+
+/** One pairing rule for details: same dynasty and track, with owned date ranges intersecting. */
+export function capitalSegmentsForReign(
+  reign: Reign,
+  reigns: readonly Reign[],
+  capitals: readonly DynastyCapital[],
+): Array<{
+  capital: DynastyCapital;
+  overlapInterval: LeftOpenRightClosedInterval;
+  startsAtReignBoundary: boolean;
+  endsAtReignBoundary: boolean;
+}> {
+  const reignInterval = reignOwnershipInterval(reign, reigns);
+  return capitals.flatMap((capital) => {
+    if (capital.dynastyId !== reign.dynastyId ||
+      (capital.claimTrack ?? null) !== (reign.claimTrack ?? null)) return [];
+    const capitalInterval = capitalOwnershipInterval(capital, capitals);
+    if (!intervalsIntersect(reignInterval, capitalInterval)) return [];
+    // A one-day handoff is owned by the older interval even if a viewport
+    // slice omitted the predecessor reign that would otherwise clip this start.
+    if (reignInterval.startExclusive + 1 === capitalInterval.endInclusive &&
+      capitalInterval.startExclusive < reignInterval.startExclusive) return [];
+    return [{
+      capital,
+      overlapInterval: {
+        startExclusive: Math.max(reignInterval.startExclusive, capitalInterval.startExclusive),
+        endInclusive: Math.min(reignInterval.endInclusive, capitalInterval.endInclusive),
+      },
+      startsAtReignBoundary: reignInterval.startExclusive >= capitalInterval.startExclusive,
+      endsAtReignBoundary: reignInterval.endInclusive <= capitalInterval.endInclusive,
+    }];
+  });
+}
+
+export function capitalsForReigns(
+  selectedReigns: readonly Reign[],
+  allReigns: readonly Reign[],
+  capitals: readonly DynastyCapital[],
+): DynastyCapital[] {
+  const ids = new Set(
+    selectedReigns.flatMap((reign) =>
+      capitalSegmentsForReign(reign, allReigns, capitals).map(({ capital }) => capital.id),
+    ),
+  );
+  return capitals.filter((capital) => ids.has(capital.id));
+}

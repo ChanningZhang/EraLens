@@ -1,4 +1,5 @@
-import type { Dynasty, DynastyCapital, DynastyGroup } from "./schema";
+import type { Dynasty, DynastyGroup } from "./schema";
+import { capitalOwnsAbs, type TimedCapital } from "./timelineOwnership";
 import {
   TIMELINE_RAIL_CHIP_HEIGHT_PX,
   TIMELINE_RAIL_INSET_PX,
@@ -28,23 +29,26 @@ type LaneUnit = {
 };
 
 /** Capital fields the lane rule needs; a subset of `DynastyCapital`. */
-export type LaneCapital = Pick<
-  DynastyCapital,
-  "dynastyId" | "modernName" | "startAbs" | "endAbs"
->;
+export type LaneCapital = TimedCapital;
 
-type CapitalTenure = { city: string; startAbs: number; endAbs: number };
+type CapitalTenure = {
+  city: string;
+  capital: LaneCapital;
+};
 
 /** All capital tenures (any role) per dynasty, for point-in-time lookup. */
 function capitalTenuresByDynastyId(
   capitals: readonly LaneCapital[],
 ): Map<string, CapitalTenure[]> {
   const byDynasty = new Map<string, CapitalTenure[]>();
-  for (const capital of capitals) {
+  const entries = capitals.flatMap((capital) => {
     const city = capital.modernName.trim();
-    if (!city) continue;
+    if (!city) return [];
+    return [{ capital, city }];
+  });
+  for (const { capital, city } of entries) {
     const list = byDynasty.get(capital.dynastyId) ?? [];
-    list.push({ city, startAbs: capital.startAbs, endAbs: capital.endAbs });
+    list.push({ city, capital });
     byDynasty.set(capital.dynastyId, list);
   }
   return byDynasty;
@@ -75,7 +79,9 @@ function orderBySameCapitalSuccession(
     const cities = new Set<string>();
     for (const dynasty of unit.dynasties) {
       for (const tenure of tenuresByDynasty.get(dynasty.id) ?? []) {
-        if (tenure.startAbs <= t && t <= tenure.endAbs) cities.add(tenure.city);
+        if (capitalOwnsAbs(tenure.capital, capitals, t)) {
+          cities.add(tenure.city);
+        }
       }
     }
     return cities;

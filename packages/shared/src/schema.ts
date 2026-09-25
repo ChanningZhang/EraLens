@@ -169,6 +169,8 @@ export const DynastyCapitalSchema = z.object({
   startAbs: z.number(),
   endAbs: z.number(),
   precision: PrecisionSchema.default("year"),
+  /** Optional end boundary precision when the start is known only by year. */
+  endPrecision: PrecisionSchema.optional(),
   startDateConfidence: DateConfidenceSchema.optional(),
   endDateConfidence: DateConfidenceSchema.optional(),
   role: CapitalRoleSchema.default("primary"),

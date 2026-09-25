@@ -8,6 +8,12 @@ import {
   reignsInLayoutBucket,
   reignsInSameClaimTrack,
   resolveReignCardLabel,
+  resolveReignVisualSpan as resolveSharedReignVisualSpan,
+  nextReignOwnershipStartAbs,
+  reignsShareExactSpan,
+  sameStartReigns,
+  sortReignsByCalendar,
+  reignCardSpan as sharedReignCardSpan,
   type DynastyLaneGroup,
   type Reign,
 } from "@eralens/shared";
@@ -43,22 +49,7 @@ export function stackRowHeightForReign(reign: Pick<Reign, "claimTrack">): number
 
 /** Vertical band consumed by one claim track inside a lane bucket. */
 function trackBarHeight(trackReigns: readonly Reign[]): number {
-  if (trackReigns.some(isParallelClaim)) {
-    return PARALLEL_STACK_ROW_HEIGHT;
-  }
-  const sorted = sortReigns(trackReigns);
-  let index = 0;
-  while (index < sorted.length) {
-    let end = index + 1;
-    while (end < sorted.length && sorted[end]!.startAbs === sorted[index]!.startAbs) {
-      end += 1;
-    }
-    if (sameSpanGroup(sorted.slice(index, end))) {
-      return STACK_ROW_HEIGHT;
-    }
-    index = end;
-  }
-  return STACK_ROW_HEIGHT;
+  return trackReigns.some(isParallelClaim) ? PARALLEL_STACK_ROW_HEIGHT : STACK_ROW_HEIGHT;
 }
 
 function rowOffsetToUnitTop(
@@ -109,8 +100,8 @@ export function resolveStackedCardUnit(
   const trackPeers = placement?.peers ?? trackPeersOf(reign, reigns, laneGroups);
   const trackTop = rowOffsetToUnitTop(reign, reigns, laneGroups);
 
-  const group = sameStartGroup(reign, trackPeers);
-  if (sameSpanGroup(group) && !isParallelClaim(reign)) {
+  const group = sameStartReigns(reign, trackPeers);
+  if (reignsShareExactSpan(group) && !isParallelClaim(reign)) {
     const indexInGroup = group.findIndex((item) => item.id === reign.id);
     const unitHeight = STACK_ROW_HEIGHT / group.length;
     return { unitTop: trackTop + indexInGroup * unitHeight, unitHeight };
@@ -238,37 +229,19 @@ export function partitionReignRecords(reigns: readonly Reign[]): {
   };
 }
 
-function sortReigns(reigns: readonly Reign[]): Reign[] {
-  return [...reigns].sort(
-    (a, b) => a.startAbs - b.startAbs || a.endAbs - b.endAbs || a.id.localeCompare(b.id),
-  );
-}
-
-function sameStartGroup(reign: Reign, reigns: readonly Reign[]): Reign[] {
-  return sortReigns(reigns).filter((item) => item.startAbs === reign.startAbs);
-}
-
-function sameSpanGroup(group: Reign[]): boolean {
-  return group.length > 1 && group.every((item) => item.endAbs === group[0]!.endAbs);
-}
-
 /**
  * Sub-rows needed inside one claim track. Same-start, same-end rulers that
  * truly overlap (副主席共同代行) stack; sequential same-year reigns with
  * different abs bounds stay on one sub-row.
  */
 function trackSubRowCount(trackReigns: readonly Reign[]): number {
-  const sorted = sortReigns(trackReigns);
+  const sorted = sortReignsByCalendar(trackReigns);
   let rowCount = 1;
   let index = 0;
   while (index < sorted.length) {
-    let end = index + 1;
-    while (end < sorted.length && sorted[end]!.startAbs === sorted[index]!.startAbs) {
-      end += 1;
-    }
-    const group = sorted.slice(index, end);
-    if (sameSpanGroup(group)) rowCount = Math.max(rowCount, group.length);
-    index = end;
+    const group = sameStartReigns(sorted[index]!, sorted);
+    if (reignsShareExactSpan(group)) rowCount = Math.max(rowCount, group.length);
+    index += group.length;
   }
   return rowCount;
 }
@@ -323,8 +296,8 @@ function trackPeersOf(
 }
 
 function subStackIndexOf(reign: Reign, trackPeers: readonly Reign[]): number {
-  const group = sameStartGroup(reign, trackPeers);
-  if (!sameSpanGroup(group)) return 0;
+  const group = sameStartReigns(reign, trackPeers);
+  if (!reignsShareExactSpan(group)) return 0;
   return Math.max(0, group.findIndex((item) => item.id === reign.id));
 }
 
@@ -342,27 +315,8 @@ export function resolveReignVisualSpan(
   const placement = placements.get(reign.id);
   const trackPeers = placement?.peers ?? trackPeersOf(reign, reigns, laneGroups);
   const rowOffset = placement?.rowOffset ?? 0;
-  const group = sameStartGroup(reign, trackPeers);
-  const nextLater = nextLaterStartAbs(reign, trackPeers);
-
-  if (sameSpanGroup(group)) {
-    const stackIndex = group.findIndex((item) => item.id === reign.id);
-    const { endExclusive } = reignCardSpan(reign.startAbs, reign.endAbs, nextLater);
-    return {
-      startAbs: reign.startAbs,
-      endExclusive,
-      stackIndex: rowOffset + Math.max(0, stackIndex),
-    };
-  }
-
-  const ordered = [...group].sort(
-    (a, b) => a.endAbs - b.endAbs || a.id.localeCompare(b.id),
-  );
-  const index = ordered.findIndex((item) => item.id === reign.id);
-  const visualStart =
-    index <= 0 ? reign.startAbs : ordered[index - 1]!.endAbs + 1;
-  const { endExclusive } = reignCardSpan(visualStart, reign.endAbs, nextLater);
-  return { startAbs: visualStart, endExclusive, stackIndex: rowOffset };
+  const span = resolveSharedReignVisualSpan(reign, trackPeers);
+  return { ...span, stackIndex: rowOffset + span.stackIndex };
 }
 
 export function assignReignStacks(
@@ -380,7 +334,7 @@ export function assignReignStacks(
 
   for (const bucket of effectiveBuckets) {
     for (const lane of groupByClaimTrack(bucket)) {
-      for (const reign of sortReigns(lane.reigns)) {
+      for (const reign of sortReignsByCalendar(lane.reigns)) {
         const rowOffset = placements.get(reign.id)?.rowOffset ?? 0;
         items.push({
           reign,
@@ -397,8 +351,7 @@ export function nextLaterStartAbs(
   reign: Reign,
   reigns: readonly Reign[],
 ): number | undefined {
-  const sorted = sortReigns(reigns);
-  return sorted.find((item) => item.startAbs > reign.startAbs)?.startAbs;
+  return nextReignOwnershipStartAbs(reign, reigns);
 }
 
 /**
@@ -410,12 +363,5 @@ export function reignCardSpan(
   endAbs: number,
   nextStartAbs?: number,
 ): { startAbs: number; endExclusive: number } {
-  const naturalEndExclusive = endAbs + 1;
-  const endExclusive =
-    nextStartAbs !== undefined &&
-    nextStartAbs > startAbs &&
-    nextStartAbs <= naturalEndExclusive
-      ? nextStartAbs
-      : naturalEndExclusive;
-  return { startAbs, endExclusive };
+  return sharedReignCardSpan(startAbs, endAbs, nextStartAbs);
 }

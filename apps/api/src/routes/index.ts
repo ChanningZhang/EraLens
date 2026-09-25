@@ -355,7 +355,7 @@ export async function registerRoutes(app: FastifyInstance) {
                  longitude, latitude, coordinate_system,
                  start_year, start_month, start_day,
                  end_year, end_month, end_day,
-                 start_abs, end_abs, precision,
+                 start_abs, end_abs, precision, end_precision,
                  start_date_confidence, end_date_confidence,
                  role, claim_track, note, links
           FROM dynasty_capitals
@@ -510,7 +510,7 @@ export async function registerRoutes(app: FastifyInstance) {
                  longitude, latitude, coordinate_system,
                  start_year, start_month, start_day,
                  end_year, end_month, end_day,
-                 start_abs, end_abs, precision,
+                 start_abs, end_abs, precision, end_precision,
                  start_date_confidence, end_date_confidence,
                  role, claim_track, note, links
           FROM dynasty_capitals
@@ -522,7 +522,7 @@ export async function registerRoutes(app: FastifyInstance) {
                  longitude, latitude, coordinate_system,
                  start_year, start_month, start_day,
                  end_year, end_month, end_day,
-                 start_abs, end_abs, precision,
+                 start_abs, end_abs, precision, end_precision,
                  start_date_confidence, end_date_confidence,
                  role, claim_track, note, links
           FROM dynasty_capitals

@@ -1,3 +1,5 @@
+import { intervalsIntersect, leftOpenRightClosedInterval } from "./timelineIntervals";
+
 /** Absolute month index using astronomical year numbering (no year 0). */
 export type AbsMonth = number;
 
@@ -49,7 +51,10 @@ export function rangesIntersect(
   bStart: AbsMonth,
   bEnd: AbsMonth,
 ): boolean {
-  return aStart <= bEnd && bStart <= aEnd;
+  return intervalsIntersect(
+    leftOpenRightClosedInterval(aStart, aEnd),
+    leftOpenRightClosedInterval(bStart, bEnd),
+  );
 }
 
 export function rangeIntersectsWindow(

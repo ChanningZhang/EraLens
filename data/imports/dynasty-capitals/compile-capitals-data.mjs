@@ -152,7 +152,7 @@ function toKebab(historicalName) {
  * @param {number} [startMonth]
  * @param {number} endYear
  * @param {number} [endMonth]
- * @param {{ role?: string, note?: string, wikiTitle?: string, id?: string, precision?: "year"|"month"|"day", startDay?: number, endDay?: number, claimTrack?: string }} [opts]
+ * @param {{ role?: string, note?: string, wikiTitle?: string, id?: string, precision?: "year"|"month"|"day", endPrecision?: "year"|"month"|"day", startDay?: number, endDay?: number, claimTrack?: string }} [opts]
  */
 export function entry(
   dynastyId,
@@ -168,6 +168,7 @@ export function entry(
     wikiTitle,
     id,
     precision = "year",
+    endPrecision,
     startDay,
     endDay,
     claimTrack,
@@ -189,6 +190,7 @@ export function entry(
     startAbs: start.abs,
     endAbs: end.abs,
     precision,
+    endPrecision,
     startDateConfidence,
     endDateConfidence,
     role,
@@ -684,8 +686,10 @@ export const capitals = [
     wikiTitle: "唐长安城",
     id: "cap-sui-changan-581",
   }),
-  e("sui", "大兴城", "陕西省西安市", 583, 618, {
-    note: "开皇三年（583）隋文帝由旧长安城迁入新都大兴城；618年唐建立后改名长安。",
+  entry("sui", "大兴城", "陕西省西安市", 583, 1, 618, 4, {
+    endPrecision: "day",
+    endDay: 11,
+    note: "开皇三年（583）隋文帝由旧长安城迁入新都大兴城；本记录按618年4月11日江都兵变后的隋主交界结束。",
     wikiTitle: "大兴城",
     id: "cap-sui-daxing-583",
   }),

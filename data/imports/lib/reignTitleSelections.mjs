@@ -5,6 +5,8 @@
  * Zhu Yuanzhang's Wu reign, Nurhaci, and Huang Taiji.
  */
 export const REIGN_TITLE_SELECTIONS = Object.freeze({
+  "reign-dou-jiande-xia-dou-jiande": "夏王",
+  "reign-wang-shichong-zheng": "郑帝",
   "reign-liu-bang-han-king-han-west": "沛公",
   "reign-ying-zheng-qin": "赵政",
   "reign-hu-bilie-mongol-empire": "薛禅汗",
