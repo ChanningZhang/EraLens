@@ -174,6 +174,7 @@ export function entry(
     claimTrack,
     startDateConfidence,
     endDateConfidence,
+    links,
   } = {},
 ) {
   const start = startDay == null ? ym(startYear, startMonth) : ymDay(startYear, startMonth, startDay);
@@ -196,7 +197,7 @@ export function entry(
     role,
     claimTrack,
     note,
-    links: wikiTitle ? wiki(wikiTitle) : [],
+    links: links ?? (wikiTitle ? wiki(wikiTitle) : []),
   };
 }
 
@@ -205,6 +206,22 @@ const e = (dynastyId, historicalName, modernName, startYear, endYear, opts) =>
   entry(dynastyId, historicalName, modernName, startYear, 1, endYear, 12, opts);
 
 export const capitals = [
+  entry("zou-state", "绎（邾国故城）", "山东省济宁市邹城市峄山镇邾国故城遗址", -614, 1, -256, 12, {
+    note: "邾文公于鲁文公十三年（前614）卜迁于绎，遗址位于今邹城市峄山南麓；仅覆盖有明确迁都年代的阶段。",
+    id: "cap-zou-state-yi-614",
+    links: [
+      { label: "济宁市文化和旅游局：邾国故城", url: "https://whlyj.jining.gov.cn/art/2019/9/10/art_32544_1707935.html" },
+      { label: "中国社会科学网：邾国故城遗址田野考古取得重大进展", url: "https://www.cssn.cn/dfpd/djbd/202506/t20250619_5880249.shtml" },
+    ],
+  }),
+  entry("xu", "魏县", "河北省邯郸市大名县魏城村旧魏县城", 618, 1, 619, 12, {
+    note: "宇文化及兵败后退至魏县并在此称帝建立许政权。现址采用今大名县魏城村旧魏县治定位；起讫仅按年精度记载。",
+    id: "cap-xu-weixian-618",
+    links: [
+      { label: "刘卫民：魏县治邑新考", url: "https://m.thepaper.cn/newsDetail_forward_2333423" },
+      { label: "《隋唐之际割据政权之一：许国》", url: "https://bkso.baidu.com/item/%E8%AE%B8%E5%9B%BD/9990400" },
+    ],
+  }),
   // ── 传说时代 ──────────────────────────────────────────────────────────────
   e("san-huang", "宛丘", "河南省周口市淮阳区", -2804, -2465, {
     note: "三皇传说都城，伏羲女娲神农皆传都宛丘（陈）。",
@@ -713,13 +730,36 @@ export const capitals = [
     id: "cap-sui-luoyang-618",
   }),
   entry("sui", "江都", "江苏省扬州市", 618, 4, 618, 10, {
-    startDay: 11,
+    startDay: 12,
     endDay: 23,
     precision: "day",
     endPrecision: "day",
-    note: "618年4月11日江都兵变后杨浩被拥立，10月23日被杀；记录其短暂在位期间的驻地。",
+    note: "杨广于618年4月11日在江都被弑；江都自次日（4月12日）起计为杨浩时期都城，至10月23日杨浩被杀。",
     wikiTitle: "隋朝",
     id: "cap-sui-jiangdu-618",
+  }),
+  e("xia-dou-jiande", "乐寿（金城宫）", "河北省沧州市献县", 618, 619, {
+    note: "窦建德政权初都乐寿，称金城宫；武德二年（619）迁都洺州。年精度记录覆盖迁都年。",
+    links: [
+      { label: "德州地方志：窦建德", url: "https://dzdywhyjzx.dzu.edu.cn/__local/A/B3/89/AF0F895C2359E0209700DEC01EB_4E11A195_227030.pdf" },
+    ],
+    id: "cap-xia-dou-jiande-leshou-618",
+  }),
+  e("xia-dou-jiande", "洺州（万春宫）", "河北省邯郸市永年区广府古城", 619, 621, {
+    note: "武德二年（619）窦建德迁都洺州，筑万春宫；年精度区间与乐寿在迁都年重叠。",
+    links: [
+      { label: "《资治通鉴》卷188", url: "https://zh.wikisource.org/zh-hant/資治通鑑/卷188" },
+      { label: "高德地图：广府古城坐标", url: "https://www.amap.com/place/B013600EA5" },
+    ],
+    id: "cap-xia-dou-jiande-mingzhou-619",
+  }),
+  e("zheng", "洛阳", "河南省洛阳市", 619, 621, {
+    note: "王世充于619年在洛阳建郑称帝，621年降唐；按政权存续年份记录。",
+    links: [
+      { label: "洛阳历史（含郑都洛阳条目）", url: "https://zh.wikipedia.org/wiki/洛阳历史" },
+      { label: "《新唐书·王世充传》", url: "https://zh.wikisource.org/zh-hans/新唐書/卷085" },
+    ],
+    id: "cap-zheng-luoyang-619",
   }),
   entry("tang", "长安", "陕西省西安市", 618, 6, 903, 12, {
     precision: "month",
@@ -1158,7 +1198,7 @@ const EXPECTED_DYNASTY_IDS = [
   "jin-east", "zhao-back", "tuyuhun", "yan-front", "ranwei", "qin-front", "xiyan", "yan-back",
   "qin-back", "qin-xi", "liang-back", "wei-north", "liang-south", "liang-north", "yan-south",
   "liang-xi", "xia-hu", "yan-north", "song-liu", "qi-nan", "liang-nan", "wei-east", "wei-west",
-  "qi-bei", "xiliang", "chen-nan", "zhou-bei", "sui", "tang", "tubo", "nanzhao", "zhou-wu",
+  "qi-bei", "xiliang", "chen-nan", "zhou-bei", "sui", "xia-dou-jiande", "zheng", "tang", "tubo", "nanzhao", "zhou-wu",
   "huihu", "wu-shi", "liang-hou", "chu-nan", "shu-qian", "wuyue", "min-fujian", "liao",
   "han-nan", "tang-hou", "jingnan", "shu-hou", "jin-hou", "tang-nan", "dali", "han-hou",
   "han-bei", "zhou-hou", "song-north", "xixia", "jin-nvzhen", "beiliao", "xiliao", "song-south",

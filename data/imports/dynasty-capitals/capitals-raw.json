@@ -43,13 +43,13 @@
     "end": {
       "year": 619,
       "month": 12,
-      "abs": 7451
+      "abs": 7439
     },
     "startAbs": 7416,
-    "endAbs": 7451,
+    "endAbs": 7439,
     "precision": "year",
     "role": "primary",
-    "note": "宇文化及兵败后退至魏县并在此称帝建立许政权。现址采用今大名县魏城村旧魏县治定位；起讫仅按政权存在年份记年精度。",
+    "note": "宇文化及兵败后退至魏县并在此称帝建立许政权。现址采用今大名县魏城村旧魏县治定位；起讫仅按年精度记载。",
     "links": [
       {
         "label": "刘卫民：魏县治邑新考",
@@ -3132,7 +3132,7 @@
       "year": 618,
       "month": 4,
       "abs": 7419,
-      "day": 11
+      "day": 12
     },
     "end": {
       "year": 618,
@@ -3145,11 +3145,100 @@
     "precision": "day",
     "endPrecision": "day",
     "role": "primary",
-    "note": "618年4月11日江都兵变后杨浩被拥立，10月23日被杀；记录其短暂在位期间的驻地。",
+    "note": "杨广于618年4月11日在江都被弑；江都自次日（4月12日）起计为杨浩时期都城，至10月23日杨浩被杀。",
     "links": [
       {
         "label": "维基百科",
         "url": "https://zh.wikipedia.org/wiki/隋朝"
+      }
+    ]
+  },
+  {
+    "id": "cap-xia-dou-jiande-leshou-618",
+    "dynastyId": "xia-dou-jiande",
+    "historicalName": "乐寿（金城宫）",
+    "modernName": "河北省沧州市献县",
+    "start": {
+      "year": 618,
+      "month": 1,
+      "abs": 7416
+    },
+    "end": {
+      "year": 619,
+      "month": 12,
+      "abs": 7439
+    },
+    "startAbs": 7416,
+    "endAbs": 7439,
+    "precision": "year",
+    "role": "primary",
+    "note": "窦建德政权初都乐寿，称金城宫；武德二年（619）迁都洺州。年精度记录覆盖迁都年。",
+    "links": [
+      {
+        "label": "德州地方志：窦建德",
+        "url": "https://dzdywhyjzx.dzu.edu.cn/__local/A/B3/89/AF0F895C2359E0209700DEC01EB_4E11A195_227030.pdf"
+      }
+    ]
+  },
+  {
+    "id": "cap-xia-dou-jiande-mingzhou-619",
+    "dynastyId": "xia-dou-jiande",
+    "historicalName": "洺州（万春宫）",
+    "modernName": "河北省邯郸市永年区广府古城",
+    "start": {
+      "year": 619,
+      "month": 1,
+      "abs": 7428
+    },
+    "end": {
+      "year": 621,
+      "month": 12,
+      "abs": 7463
+    },
+    "startAbs": 7428,
+    "endAbs": 7463,
+    "precision": "year",
+    "role": "primary",
+    "note": "武德二年（619）窦建德迁都洺州，筑万春宫；年精度区间与乐寿在迁都年重叠。",
+    "links": [
+      {
+        "label": "《资治通鉴》卷188",
+        "url": "https://zh.wikisource.org/zh-hant/資治通鑑/卷188"
+      },
+      {
+        "label": "高德地图：广府古城坐标",
+        "url": "https://www.amap.com/place/B013600EA5"
+      }
+    ]
+  },
+  {
+    "id": "cap-zheng-luoyang-619",
+    "dynastyId": "zheng",
+    "historicalName": "洛阳",
+    "modernName": "河南省洛阳市",
+    "start": {
+      "year": 619,
+      "month": 1,
+      "abs": 7428
+    },
+    "end": {
+      "year": 621,
+      "month": 12,
+      "abs": 7463
+    },
+    "startAbs": 7428,
+    "endAbs": 7463,
+    "precision": "year",
+    "role": "primary",
+    "note": "王世充于619年在洛阳建郑称帝，621年降唐；按政权存续年份记录。",
+    "links": [
+      {
+        "label": "洛阳历史（含郑都洛阳条目）",
+        "url": "https://zh.wikipedia.org/wiki/洛阳历史"
+      },
+      {
+        "label": "《新唐书·王世充传》",
+        "url": "https://zh.wikisource.org/zh-hans/新唐書/卷085"
       }
     ]
   },

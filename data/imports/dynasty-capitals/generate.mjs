@@ -70,6 +70,7 @@ const removalSql = REMOVED_CAPITAL_IDS.map(
 const sql = [
   "-- EraLens period import: dynasty-capitals",
   "BEGIN;",
+  "DELETE FROM reign_capitals WHERE reign_id = 'reign-yang-guang' AND capital_id = 'cap-sui-jiangdu-618';",
   "",
   ...(removalSql.length ? ["-- removed capitals", ...removalSql, ""] : []),
   "-- dynasty_capitals",
