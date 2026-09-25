@@ -17,7 +17,7 @@ DELETE FROM events WHERE id IN ('houyi-dai-xia','hanzhuo-cuan-xia');
 
 -- persons
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name, title)
-VALUES ('si-yu', '文命', ARRAY['禹','大禹','夏禹','文命'], '姒', '夏', NULL, NULL, NULL, NULL, ARRAY['君主'], '夏朝开国之君，姒姓，名文命，史称禹、大禹。传说继父鲧治水，受舜禅，都阳城；《史记·夏本纪》以其为夏后氏始。生卒年无实测。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/禹"}]'::jsonb, NULL, NULL, '禹')
+VALUES ('si-yu', '禹', ARRAY['文命','大禹','夏禹'], '姒', '夏', NULL, NULL, NULL, NULL, ARRAY['君主'], '夏朝开国之君，姒姓，传说名文命，后世尊称大禹。传说继父鲧治水，受舜禅，都阳城；《史记·夏本纪》以其为夏后氏始。生卒年无实测。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/禹"}]'::jsonb, NULL, NULL, '禹')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, title = EXCLUDED.title;
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name, title)
 VALUES ('si-qi', '启', ARRAY['启','夏后启'], '姒', '夏', NULL, NULL, NULL, NULL, ARRAY['君主'], '禹之子。传统记载益避启，诸侯归启，变禅让为世袭，史称家天下。《尚书·甘誓》载其伐有扈氏。生卒年无实测。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/启_(夏朝)"}]'::jsonb, NULL, NULL, '启')
