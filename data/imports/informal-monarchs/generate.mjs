@@ -203,6 +203,8 @@ const clearInformalReigns = [
 const manifest = {
   slug: "informal-monarchs",
   title: "非正式国君",
+  importPhase: "post",
+  postImportOrder: 40,
   window: { startYear: -841, startMonth: 1, endYear: 2026, endMonth: 9 },
   scope: "cn",
   depth: "supplemental",

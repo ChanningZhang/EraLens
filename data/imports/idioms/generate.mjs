@@ -954,6 +954,8 @@ writeImportPackage(__dirname, {
   manifest: {
     slug: "idioms",
     title: "成语典故（point 事件）",
+    importPhase: "post",
+    postImportOrder: 50,
     window: { startYear: -2100, startMonth: 1, endYear: 1600, endMonth: 12 },
     scope: "cn",
     depth: "standard",

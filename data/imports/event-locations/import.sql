@@ -63,7 +63,7 @@ INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitu
 VALUES ('loc-feishui', '淝水', '安徽省淮南市寿县东南', 116.82, 32.5, 'WGS84', 'approximate', NULL, '[{"label":"地点资料","url":"https://zh.wikipedia.org/wiki/淝水之战"}]'::jsonb)
 ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
 INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
-VALUES ('loc-hulao', '虎牢关', '河南省郑州市荥阳市汜水镇虎牢关遗址', 113.13, 34.91, 'WGS84', 'approximate', NULL, '[{"label":"地点资料","url":"https://zh.wikipedia.org/wiki/虎牢关之战"}]'::jsonb)
+VALUES ('loc-hulao', '虎牢关', '河南省郑州市荥阳市汜水镇虎牢关遗址', 113.13, 34.91, 'WGS84', 'approximate', NULL, '[{"label":"地点资料","url":"https://zh.wikipedia.org/wiki/虎牢之战"}]'::jsonb)
 ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
 INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
 VALUES ('loc-qin-liang-dingtao', '定陶', '山东省菏泽市定陶区', 115.57, 35.07, 'WGS84', 'approximate', NULL, '[{"label":"地点资料","url":"https://zh.wikipedia.org/wiki/项梁"}]'::jsonb)

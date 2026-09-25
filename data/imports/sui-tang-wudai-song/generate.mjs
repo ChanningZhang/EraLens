@@ -313,8 +313,8 @@ const dynastyGroups = [
 const dynasties = [
   { id: "sui", name: "隋", altNames: ["大隋"], scope: "cn", region: "east_asia", start: ym(581, 3), end: ym(619, 5), precision: "month", note: "581年3月杨坚受禅建隋；589年灭陈统一。618年唐建立后，东都杨侗仍续统，至619年5月被废，隋亡。" },
   { id: "xu", name: "许", altNames: ["宇文化及许"], scope: "cn", region: "east_asia", start: ym(618, 9), end: ym(619, 5), precision: "month", note: "宇文化及杀杨浩后自立，国号许，旋为窦建德所败，619年覆亡。" },
-  { id: "xia-dou-jiande", name: "夏", altNames: ["窦夏", "夏王窦建德政权"], scope: "cn", region: "east_asia", start: ym(618, 11), end: ym(621, 12), precision: "month", note: "窦建德于618年11月在乐寿建夏称王；621年援郑败亡，窦建德被俘。" },
-  { id: "zheng", name: "郑", altNames: ["王世充郑"], scope: "cn", region: "east_asia", start: ym(619), end: ym(621, 12), precision: "year", note: "王世充于619年在洛阳称帝、国号郑；621年降唐，政权覆亡。" },
+  { id: "xia-dou-jiande", name: "夏", altNames: ["窦夏", "夏王窦建德政权"], scope: "cn", region: "east_asia", start: ym(618, 11), end: ym(621, 5), precision: "month", note: "窦建德于618年11月在乐寿建夏称王；621年5月虎牢战败被俘，夏政权覆亡。" },
+  { id: "zheng", name: "郑", altNames: ["王世充郑"], scope: "cn", region: "east_asia", start: ym(619), end: ym(621, 6), precision: "month", note: "王世充于619年在洛阳称帝、国号郑；621年6月4日（武德四年五月丙寅）降唐，政权覆亡。" },
   { id: "tang", name: "唐", altNames: ["李唐"], scope: "cn", region: "east_asia", start: ym(618, 6), end: ym(907), precision: "month", note: "618年6月李渊受隋恭帝禅让建唐，都长安；907年朱温篡唐，唐亡。" },
   { id: "zhou-wu", name: "武周", altNames: ["周"], scope: "cn", region: "east_asia", start: ym(690), end: ym(705), precision: "year", note: "武则天改国号周，690–705年，后还政李唐。" },
   { id: "liang-hou", name: "后梁", altNames: ["梁"], scope: "cn", region: "east_asia", start: ym(907), end: ym(923), precision: "year", groupId: "wudai", note: "朱温篡唐建梁，都开封；923年后唐灭之。" },
@@ -355,8 +355,8 @@ const suiReignsParallel = [
 ];
 
 const suiReignsRivalStates = [
-  { ...dynastyReign("xia-dou-jiande", "dou-jiande", "夏王", null, null, 618, 621), start: ym(618, 11), startAbs: absMonth(618, 11), precision: "month" },
-  dynastyReign("zheng", "wang-shichong", "郑帝", null, null, 619, 621),
+  { ...dynastyReign("xia-dou-jiande", "dou-jiande", "夏王", null, null, 618, 621), start: ym(618, 11), startAbs: absMonth(618, 11), end: ym(621, 5), endAbs: absMonth(621, 5), precision: "month" },
+  { ...dynastyReign("zheng", "wang-shichong", "郑帝", null, null, 619, 621), end: ym(621, 6), endAbs: absMonth(621, 6), precision: "month" },
 ];
 const suiReigns = [...suiReignsCore, ...suiReignsParallel];
 const xuReigns = [
@@ -571,7 +571,7 @@ const events = [
     summary: "宇文化及杀隋秦王杨浩，随后自称皇帝，建立许政权。",
   }),
   eventPoint({ id: "xuanwumen", name: "玄武门之变", kind: "politics", precision: "month", dateNote: "武德九年六月，626年", at: ym(626, 7), dynastyIds: ["tang"], participantIds: ["li-shimin"], summary: "李世民发动政变，杀兄弟即位太子，后登基。" }),
-  eventPoint({ id: "hulao-battle", name: "虎牢关之战", kind: "battle", precision: "month", dateNote: "武德四年四月，李世民大败窦建德", at: ym(621, 4), dynastyIds: ["tang"], participantIds: ["li-shimin", "dou-jiande", "wang-shichong"], summary: "李世民于虎牢关以少胜多，俘窦建德、王世充，唐朝统一中原。" }),
+  eventPoint({ id: "hulao-battle", name: "虎牢之战", kind: "battle", precision: "month", dateNote: "武德四年五月，李世民大败窦建德；王世充于同月丙寅（公历621年6月4日）降唐", at: ym(621, 5), dynastyIds: ["tang"], participantIds: ["li-shimin", "dou-jiande", "wang-shichong"], summary: "李世民于虎牢关以少胜多，窦建德被俘；失去外援的王世充随后降唐，唐朝平定夏、郑。" }),
   eventRange({ id: "zhenguan-rule", name: "贞观之治", kind: "politics", timeMode: "span", start: ym(627), end: ym(649), dynastyIds: ["tang"], participantIds: ["li-shimin"], summary: "唐太宗任贤纳谏，轻徭薄赋，为盛唐奠基。" }),
   eventRange({ id: "kaiyuan-prosperity", name: "开元盛世", kind: "politics", timeMode: "span", start: ym(713), end: ym(741), dynastyIds: ["tang"], participantIds: ["li-longji"], summary: "唐玄宗前期励精图治，唐朝国力达于鼎盛。" }),
   eventRange({ id: "anshi-rebellion", name: "安史之乱", kind: "battle", timeMode: "span", dateNote: "755–763年", start: ym(755), end: ym(763), dynastyIds: ["tang"], participantIds: ["li-longji", "an-lushan"], summary: "安禄山、史思明叛乱，唐朝由盛转衰。" }),
@@ -752,7 +752,7 @@ const manifest = {
     "隋末并行用 claim_track：杨侑在炀帝仍在位时于长安另立，杨侗也在炀帝死讯传至洛阳后另立；二人分别使用 changan/长安、luoyang/洛阳并立 track。杨浩在炀帝被弑后于江都继位，不设并立 track，留在主行；按本包取舍标记 claim_role=rival，因此卡片不镀正统金色。",
     "隋末在位记录显式关联都城：杨侑→大兴城、长安（按618年江都兵变分段），杨浩→江都，杨侗→东都洛阳。显式关联供在位详情与时间轴地图优先解析；没有关联的在位仍按王朝、时间及 claim_track 匹配。",
     "杨广于618-04-11在江都被宇文化及所弑；宇文化及随后建立许政权，命运线准确挂接至其许帝卡。",
-    "补入夏（窦建德）与郑（王世充）两条隋末政权行及相应在位。夏（窦建德）使用独立 id xia-dou-jiande，避免与上古夏朝 xia 冲突。建夏起于618年11月，参据《中国大百科全书中国历史》所述武德元年十一月建国，以及《通鉴纪事本末》称夏王事在武德元年冬；十一月为史书记载的传统历月，本包按用户指定将展示时间记作618年11月。武德四年五月窦建德败俘、王世充降，七月窦建德被斩。",
+    "补入夏（窦建德）与郑（王世充）两条隋末政权行及相应在位。夏（窦建德）使用独立 id xia-dou-jiande，避免与上古夏朝 xia 冲突。建夏起于618年11月，参据《中国大百科全书中国历史》所述武德元年十一月建国，以及《通鉴纪事本末》称夏王事在武德元年冬；十一月为史书记载的传统历月，本包按用户指定将展示时间记作618年11月。武德四年五月虎牢之战窦建德败俘；王世充于五月丙寅（公历621年6月4日）降唐；窦建德七月被斩。",
     "杨侗起始在位日按《资治通鉴》卷一八五及《资治通鉴》所记武德元年五月戊辰换算为618-06-22；《旧唐书》异记618-06-21。终点取619-05-23禅位日。",
     "南宋正统金色止于恭帝降元（1276-02）；端宗、帝昺接在恭帝之后走主线继承，但不计正统。",
     "北宋、南宋皇帝在位日取维基百科/宋史通行换算，precision=day。",

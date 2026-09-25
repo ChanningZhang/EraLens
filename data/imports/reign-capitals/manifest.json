@@ -1,0 +1,32 @@
+{
+  "slug": "reign-capitals",
+  "title": "全库君主与都城关联",
+  "window": {
+    "startYear": -2804,
+    "startMonth": 1,
+    "endYear": 2026,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "importPhase": "post",
+  "generatedAt": "2026-09-25",
+  "counts": {
+    "reign_capitals": "derived from overlapping reign and capital intervals"
+  },
+  "sources": [
+    {
+      "label": "EraLens curated reign and capital intervals",
+      "url": "https://zh.wikipedia.org/wiki/中国古代都城"
+    },
+    {
+      "label": "忽必烈迁都中都（北京地方志资料，见相关事件导入条目）",
+      "url": "https://www.bjdsdfz.cn/jcdq.jhtml"
+    }
+  ],
+  "notes": [
+    "关联由在位区间与都城区间的日历年/月 AbsMonth 重叠生成；都城有 claim_track 时只关联同轨道在位者，无 claim_track 的都城记录可供同王朝内重叠的在位者共用。",
+    "每次时期包全量导入后重建关联，避免迁都或在位区间修订留下过期连接。",
+    "忽必烈在位跨越蒙古帝国与元的目录分期；1264—1271年中都段显式关联至 reign-hu-bilie-mongol-empire。"
+  ]
+}

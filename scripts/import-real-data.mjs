@@ -46,6 +46,7 @@ function listPackages() {
         sql,
         startYear: manifest.window?.startYear ?? Number.MAX_SAFE_INTEGER,
         importPhase: manifest.importPhase ?? "normal",
+        postImportOrder: manifest.postImportOrder ?? 0,
       };
     })
     .filter(Boolean)
@@ -100,7 +101,16 @@ function sqlStatements(sql) {
   return statements;
 }
 
-const DEFERRED_INSERT_TABLES = new Set(["event_dynasties"]);
+// These tables are cross-package associations or supplemental records. Their
+// referenced entities may be owned by packages later in the import order, so
+// applying them with the owning package can roll back that package's core rows
+// and create a retry cycle (for example, capitals <-> reign capitals).
+const DEFERRED_INSERT_TABLES = new Set([
+  "dynasty_capitals",
+  "event_dynasties",
+  "event_participants",
+  "reign_capitals",
+]);
 
 function splitDeferredInserts(sql) {
   const deferred = [];
@@ -180,7 +190,9 @@ function fail(message, detail) {
 function main() {
   const allPackages = listPackages();
   const packages = allPackages.filter((pkg) => pkg.importPhase !== "post");
-  const postPackages = allPackages.filter((pkg) => pkg.importPhase === "post");
+  const postPackages = allPackages
+    .filter((pkg) => pkg.importPhase === "post")
+    .sort((a, b) => a.postImportOrder - b.postImportOrder || a.startYear - b.startYear || a.slug.localeCompare(b.slug));
   if (packages.length === 0) fail("No data/imports/{slug}/import.sql found");
 
   waitForPostgres();
@@ -225,19 +237,21 @@ function main() {
     remaining = failed;
   }
 
+  for (const pkg of postPackages) {
+    process.stdout.write(`  [${pkg.slug}] `);
+    const { regular, deferred } = splitDeferredInserts(readFileSync(pkg.sql, "utf8"));
+    const result = dockerPsql(regular);
+    if (result.status !== 0) fail(`Failed to apply post-import package ${pkg.slug}`, result.stderr || result.stdout);
+    deferredInserts.push(...deferred);
+    console.log("ok (post-import)");
+  }
+
   if (deferredInserts.length > 0) {
     const result = dockerPsql(`BEGIN;\n${deferredInserts.join("\n")}\nCOMMIT;\n`);
     if (result.status !== 0) {
       fail("Failed to apply deferred cross-package links", result.stderr || result.stdout);
     }
     console.log(`Applied ${deferredInserts.length} deferred cross-package link rows.`);
-  }
-
-  for (const pkg of postPackages) {
-    process.stdout.write(`  [${pkg.slug}] `);
-    const result = dockerPsql(readFileSync(pkg.sql));
-    if (result.status !== 0) fail(`Failed to apply post-import package ${pkg.slug}`, result.stderr || result.stdout);
-    console.log("ok (post-import)");
   }
 
   updatePersonTitles();

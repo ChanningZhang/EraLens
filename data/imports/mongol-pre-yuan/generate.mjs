@@ -306,6 +306,8 @@ writeFileSync(path.join(__dirname, "import.sql"), sql);
 const manifest = {
   slug: "mongol-pre-yuan",
   title: "元朝建立前的蒙古帝国",
+  importPhase: "post",
+  postImportOrder: 30,
   window: { startYear: 1206, startMonth: 1, endYear: 1271, endMonth: 12 },
   scope: "cn",
   depth: "standard",

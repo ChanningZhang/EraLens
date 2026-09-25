@@ -50,5 +50,7 @@
     "联蒙灭金事件见 song-liao-jin，本包补充 mongol-empire 关联。",
     "未收录钦察、伊利、察合台等汗国分治时期。",
     "在位年取维基百科君主列表，precision=year。"
-  ]
+  ],
+  "importPhase": "post",
+  "postImportOrder": 30
 }

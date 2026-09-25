@@ -1405,6 +1405,8 @@ writeFileSync(path.join(__dirname, "import.sql"), sql);
 
 const manifest = {
   slug: "xia-shang-zhou",
+  importPhase: "post",
+  postImportOrder: 10,
   title: "夏商周",
   window: { startYear: -2070, startMonth: 1, endYear: -256, endMonth: 12 },
   scope: "cn",

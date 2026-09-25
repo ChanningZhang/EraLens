@@ -382,6 +382,8 @@ writeFileSync(path.join(__dirname, "import.sql"), sql);
 const manifest = {
   slug: "song-liao-jin",
   title: "宋辽金对峙（含南宋时期）",
+  importPhase: "post",
+  postImportOrder: 20,
   window: { startYear: 916, startMonth: 1, endYear: 1234, endMonth: 12 },
   scope: "cn",
   depth: "standard",

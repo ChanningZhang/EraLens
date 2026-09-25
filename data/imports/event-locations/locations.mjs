@@ -21,7 +21,7 @@ export const locations = [
   { id: "loc-gaixia", eventId: "gaixia", historicalName: "垓下", modernName: "安徽省宿州市灵璧县东南一带", longitude: 117.62, latitude: 33.43, note: "垓下位置存在灵璧、固镇等说，采用灵璧东南说作近似标点。", links: [{ label: "地点资料", url: "https://zh.wikipedia.org/wiki/垓下" }] },
   { id: "loc-kunyang", eventId: "kunyang-battle", historicalName: "昆阳", modernName: "河南省平顶山市叶县古城一带", longitude: 113.35, latitude: 33.62, links: [{ label: "地点资料", url: "https://zh.wikipedia.org/wiki/昆阳之战" }] },
   { id: "loc-feishui", eventId: "feishui-battle", historicalName: "淝水", modernName: "安徽省淮南市寿县东南", longitude: 116.82, latitude: 32.50, links: [{ label: "地点资料", url: "https://zh.wikipedia.org/wiki/淝水之战" }] },
-  { id: "loc-hulao", eventId: "hulao-battle", historicalName: "虎牢关", modernName: "河南省郑州市荥阳市汜水镇虎牢关遗址", longitude: 113.13, latitude: 34.91, links: [{ label: "地点资料", url: "https://zh.wikipedia.org/wiki/虎牢关之战" }] },
+  { id: "loc-hulao", eventId: "hulao-battle", historicalName: "虎牢关", modernName: "河南省郑州市荥阳市汜水镇虎牢关遗址", longitude: 113.13, latitude: 34.91, links: [{ label: "地点资料", url: "https://zh.wikipedia.org/wiki/虎牢之战" }] },
   { id: "loc-qin-liang-dingtao", eventId: "xiangliang-death", historicalName: "定陶", modernName: "山东省菏泽市定陶区", longitude: 115.57, latitude: 35.07, links: [{ label: "地点资料", url: "https://zh.wikipedia.org/wiki/项梁" }] },
   { id: "loc-yancheng", eventId: "yancheng-battle", historicalName: "郾城", modernName: "河南省漯河市郾城区", longitude: 113.98, latitude: 33.59, links: [{ label: "地点资料", url: "https://zh.wikipedia.org/wiki/郾城之战" }] },
   { id: "loc-caishi", eventId: "caishi-battle", historicalName: "采石矶", modernName: "安徽省马鞍山市雨山区采石街道", longitude: 118.49, latitude: 31.66, links: [{ label: "地点资料", url: "https://zh.wikipedia.org/wiki/采石之战" }] },

@@ -1,5 +1,67 @@
 [
   {
+    "id": "cap-zou-state-yi-614",
+    "dynastyId": "zou-state",
+    "historicalName": "绎（邾国故城）",
+    "modernName": "山东省济宁市邹城市峄山镇邾国故城遗址",
+    "start": {
+      "year": -614,
+      "month": 1,
+      "abs": -7356
+    },
+    "end": {
+      "year": -256,
+      "month": 12,
+      "abs": -3049
+    },
+    "startAbs": -7356,
+    "endAbs": -3049,
+    "precision": "year",
+    "role": "primary",
+    "note": "邾文公于鲁文公十三年（前614）卜迁于绎，遗址位于今邹城市峄山南麓；仅覆盖有明确迁都年代的阶段。",
+    "links": [
+      {
+        "label": "济宁市文化和旅游局：邾国故城",
+        "url": "https://whlyj.jining.gov.cn/art/2019/9/10/art_32544_1707935.html"
+      },
+      {
+        "label": "中国社会科学网：邾国故城遗址田野考古取得重大进展",
+        "url": "https://www.cssn.cn/dfpd/djbd/202506/t20250619_5880249.shtml"
+      }
+    ]
+  },
+  {
+    "id": "cap-xu-weixian-618",
+    "dynastyId": "xu",
+    "historicalName": "魏县",
+    "modernName": "河北省邯郸市大名县魏城村旧魏县城",
+    "start": {
+      "year": 618,
+      "month": 1,
+      "abs": 7416
+    },
+    "end": {
+      "year": 619,
+      "month": 12,
+      "abs": 7451
+    },
+    "startAbs": 7416,
+    "endAbs": 7451,
+    "precision": "year",
+    "role": "primary",
+    "note": "宇文化及兵败后退至魏县并在此称帝建立许政权。现址采用今大名县魏城村旧魏县治定位；起讫仅按政权存在年份记年精度。",
+    "links": [
+      {
+        "label": "刘卫民：魏县治邑新考",
+        "url": "https://m.thepaper.cn/newsDetail_forward_2333423"
+      },
+      {
+        "label": "《隋唐之际割据政权之一：许国》",
+        "url": "https://bkso.baidu.com/item/%E8%AE%B8%E5%9B%BD/9990400"
+      }
+    ]
+  },
+  {
     "id": "cap-san-huang-wanqiu-2804",
     "dynastyId": "san-huang",
     "historicalName": "宛丘",
