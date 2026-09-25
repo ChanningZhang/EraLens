@@ -98,6 +98,13 @@ export const JIN_NANBEI_REIGN_DATES = {
   "reign-yuwen-yan": { start: [579, 4, 16], end: [581, 3, 4] },
 
   // ── 十六国（维基百科条目已给出公历月/日）────────────────────────────────
+  // 后秦：姚苌白雀元年四月甲寅即万年秦王，公历 384-05-07；其余据年号起讫与《资治通鉴》所载在位年/月，未将农历日期伪换算为公历日。
+  "reign-yao-chang": { start: [384, 5, 7], end: [393, 12], precision: "month" },
+  "reign-yao-xing": { start: [393, 12], end: [416, 1], precision: "month" },
+  "reign-yao-hong": { start: [416, 1], end: [417, 9], precision: "month" },
+  // 前秦：苻健正月丙辰即天王位（公历 351-03-04）；其后各段依皇始、寿光、永兴/太初、延初年号月序，保留月精度，不把农历月日伪作公历日。
+  "reign-fu-jian": { start: [351, 3, 4], end: [355, 7], precision: "month" },
+  "reign-fu-sheng": { start: [355, 7], end: [357, 7], precision: "month" },
   "reign-fu-jian-ming": { start: [357, 7], end: [385, 10, 16] },
   // 苻丕：坚死（385-10-16）后至晋阳称帝；太元十一年十月为晋将冯该所杀（该月＝386-11-08–12-07）。
   "reign-fu-pi": { start: [385, 10], end: [386, 11] },
@@ -132,7 +139,6 @@ export const JIN_NANBEI_REIGN_DATES = {
   // 升平至 376 年八月；八月十五＝376-09-14。
   "reign-zhang-tianxi": { start: [363, 1], end: [376, 9] },
   // 永和至 417 年八月；八月十五＝417-09-11。
-  "reign-yao-hong": { start: [416, 1], end: [417, 9] },
   // 胜光 / 永弘至 431 年六月；六月十五＝431-07-10。
   "reign-helian-ding": { start: [428, 1], end: [431, 7] },
   "reign-qifu-mumo": { start: [428, 1], end: [431, 7] },

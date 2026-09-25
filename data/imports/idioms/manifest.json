@@ -14,7 +14,7 @@
     "persons": 30,
     "dynasties": 1,
     "reigns": 11,
-    "events": 74,
+    "events": 75,
     "relations": 9
   },
   "sources": [
@@ -41,6 +41,10 @@
     {
       "label": "鞭长莫及（楚庄王伐郑）",
       "url": "https://zh.wikipedia.org/wiki/楚庄王"
+    },
+    {
+      "label": "司马昭之心，路人皆知（《三国志·魏书·高贵乡公纪》裴注引《汉晋春秋》）",
+      "url": "https://ctext.org/text.pl?if=gb&node=602124&remap=gb"
     },
     {
       "label": "分道扬镳（北魏孝文帝）",

@@ -200,7 +200,7 @@ const persons = [
   person("feng-ba", "冯跋", ["皇帝"], "北燕开国皇帝，据和龙。", "冯跋"),
   person("feng-hong", "冯弘", ["皇帝"], "北燕昭成帝，冯跋之弟；436年和龙陷于北魏，出奔高句丽。", "冯弘"),
   // 后秦
-  person("yao-chang", "姚苌", ["皇帝"], "后秦武昭皇帝，苻坚旧臣，淝水后杀苻坚建后秦。", "姚苌"),
+  person("yao-chang", "姚苌", ["皇帝"], "后秦武昭帝，羌族首领。淝水之战后于384年起兵，自称万年秦王，建立后秦；385年擒杀苻坚。", "姚苌"),
   person("yao-xing", "姚兴", ["皇帝"], "后秦文桓皇帝，崇佛，与东晋刘裕、北魏拓跋珪同时。", "姚兴"),
   person("yao-hong", "姚泓", ["皇帝"], "后秦末帝，为刘裕北伐所灭。", "姚泓"),
   // 西秦
@@ -1043,13 +1043,16 @@ const manifest = {
     { label: "晋朝君主列表", url: "https://zh.wikipedia.org/wiki/晋朝君主列表" },
     { label: "五胡十六国", url: "https://zh.wikipedia.org/wiki/五胡十六国" },
     { label: "五胡十六国君主列表", url: "https://zh.wikipedia.org/wiki/五胡十六国君主列表" },
+    { label: "后秦", url: "https://zh.wikipedia.org/wiki/后秦" },
+    { label: "姚苌", url: "https://ctext.org/datawiki.pl?if=gb&remap=gb&res=47300" },
+    { label: "姚泓", url: "https://zh.wikipedia.org/wiki/姚泓" },
     { label: "淝水之战", url: "https://zh.wikipedia.org/wiki/淝水之战" },
     { label: "永嘉之乱", url: "https://zh.wikipedia.org/wiki/永嘉之乱" },
   ],
   notes: [
     "覆盖西晋（266–316）、东晋（317–420）及崔鸿《十六国春秋》所列十六国（304–439）。",
     "十六国同属 dynasty_groups.wuhu（狭义 304–439，据中文维基「五胡十六国」）；西晋/东晋不入组。前凉 301 可露在框外。",
-    "两晋皇帝在位日取维基百科君主条目公历换算（documentedReignDates，precision=day）；十六国多数仍为 year，汉赵同年更替者用 month，苻坚/后燕四帝/慕容超已补维基公历月日。",
+    "两晋皇帝在位日取维基百科君主条目公历换算（documentedReignDates，precision=day）；十六国多数仍为 year，汉赵同年更替者用 month，前秦苻健/苻生及后秦三帝按可核月份补精度，苻坚/后燕四帝/慕容超已补维基公历月日。后秦姚苌即位日据白雀元年四月甲寅（公历 384-05-07）；其他农历日期未可靠换算为公历日者只录月精度。",
     "后燕通行四帝（慕容垂→慕容宝→慕容盛→慕容熙）；398年兰汗篡位约三月，不另建 reign。",
     "晋怀帝统治迄日取洛阳陷落被俘（311-07-13），非 313-03-14 卒年；惠帝迄日取中毒日 307-01-08，以免叠在怀帝起日。",
     "西晋 upsert 已有 jin-west 行；胡夏 id 为 xia-hu，避免与夏朝 xia 冲突。",

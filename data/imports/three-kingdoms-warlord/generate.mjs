@@ -309,7 +309,7 @@ const events = [
     precision: "month",
     dateNote: "建安五年六月，曹操大败袁绍",
     at: ym(200, 6),
-    dynastyIds: ["wei"],
+    dynastyIds: [],
     participantIds: ["cao-cao", "yuan-shao"],
     summary: "曹操以少胜多，大败袁绍，奠定统一北方基础。",
   }),
@@ -331,7 +331,7 @@ const events = [
     precision: "year",
     dateNote: "建安十九年，214年",
     at: ym(214),
-    dynastyIds: ["shu"],
+    dynastyIds: [],
     participantIds: ["liu-bei", "liu-zhang"],
     summary: "刘备围成都，刘璋出降，益州归刘备。",
   }),
@@ -364,6 +364,7 @@ const events = [
 const supplementalEventDynasties = [];
 
 const preSql = [
+  "DELETE FROM event_dynasties WHERE event_id IN ('guandu', 'liu-bei-takes-yizhou');",
   "DELETE FROM event_dynasties WHERE dynasty_id IN ('yuan-hebei', 'yizhou-liu');",
   "DELETE FROM relations WHERE id IN ('rel-cao-cao-cao-pi-succession', 'rel-cao-pi-cao-pi-succession', 'rel-liu-bei-liu-bei-succession', 'rel-sun-quan-sun-quan-succession');",
   "DELETE FROM reigns WHERE id IN ('reign-yuan-shao-hebei', 'reign-liu-zhang-yizhou', 'reign-cao-cao-wei', 'reign-cao-pi-king', 'reign-liu-bei-warlord', 'reign-sun-quan-warlord');",
