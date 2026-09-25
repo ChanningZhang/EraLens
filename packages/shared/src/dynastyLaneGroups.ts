@@ -1,4 +1,3 @@
-import { isOrthodoxAt, type OrthodoxDynasty } from "./orthodoxDynasties";
 import { resolveRocLaneRegionLabel } from "./rocTaiwanLeaderDisplay";
 import type { Dynasty, DynastyLaneGroup, Reign } from "./schema";
 import { absMonth } from "./time";
@@ -83,26 +82,19 @@ export function resolveFrozenLaneLabel(
   return resolveRocLaneRegionLabel(dynasty.id, base, labelAnchorAbs);
 }
 
-type FrozenLaneOrthodoxDynasty = OrthodoxDynasty & Pick<Dynasty, "id" | "startAbs">;
-
-/**
- * Frozen name chip gold uses the same center-guide abs as the phase label.
- * Lane floor, fate lines, and gap cards stay on the persisted token.
- */
-export function isFrozenLaneOrthodox(
-  dynasty: FrozenLaneOrthodoxDynasty,
-  dynastiesById: ReadonlyMap<string, FrozenLaneOrthodoxDynasty>,
+/** Frozen name chip follows the master reign at the shared timeline center. */
+export function isFrozenLaneMaster(
+  dynastyId: string,
   labelAnchorAbs: number,
-  laneGroups: readonly DynastyLaneGroup[],
+  reigns: readonly Reign[],
 ): boolean {
-  const group = getDynastyLaneGroup(dynasty.id, laneGroups);
-  const active =
-    group == null
-      ? dynasty
-      : dynastiesById.get(
-          resolveActivePhaseDynastyId(group, dynastiesById, labelAnchorAbs),
-        ) ?? dynasty;
-  return isOrthodoxAt(active, labelAnchorAbs);
+  return reigns.some(
+    (reign) =>
+      reign.dynastyId === dynastyId &&
+      reign.isMain === true &&
+      labelAnchorAbs >= reign.startAbs &&
+      labelAnchorAbs <= reign.endAbs,
+  );
 }
 
 function toDynastyMap(dynasties: Dynasty[] | ReadonlyMap<string, Dynasty>): Map<string, Dynasty> {

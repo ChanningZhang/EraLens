@@ -51,9 +51,9 @@ VALUES ('liang-taihou', '梁太后', ARRAY[]::text[], NULL, NULL, NULL, NULL, NU
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, title = EXCLUDED.title;
 
 -- dynasties
-INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs, parent_id, group_id, note)
-VALUES ('xixia', '西夏', ARRAY['大夏','党项西夏'], 'cn', 'east_asia', 982, 1, 1227, 1, 11784, 14724, 'year', 'ochre', NULL, NULL, NULL, NULL, '党项李氏，982年李继迁叛宋自立；1038年李元昊称帝，国号大夏；1227年蒙古攻灭。')
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, orthodox_from_abs = EXCLUDED.orthodox_from_abs, orthodox_end_abs = EXCLUDED.orthodox_end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
+INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, parent_id, group_id, note)
+VALUES ('xixia', '西夏', ARRAY['大夏','党项西夏'], 'cn', 'east_asia', 982, 1, 1227, 1, 11784, 14724, 'year', 'ochre', NULL, NULL, '党项李氏，982年李继迁叛宋自立；1038年李元昊称帝，国号大夏；1227年蒙古攻灭。')
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 
 -- cleanup renamed / orphaned reigns (li-xian person id collision with 唐中宗)
 DELETE FROM reigns WHERE id = 'reign-li-xian-xixia-xixia';

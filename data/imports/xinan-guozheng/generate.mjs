@@ -9,6 +9,7 @@ import {
   person,
   dr,
   eventPoint,
+  idiomPoint,
   writeImportPackage,
   ym,
   successionPairs,
@@ -129,14 +130,14 @@ const events = [
     participantIds: ["dian-changqiang"],
     summary: "汉武帝元封二年，滇王尝羌率众降汉，设益州郡。",
   }),
-  eventPoint({
+  idiomPoint({
     id: "yelang-xin-killed",
-    name: "夜郎王兴被杀",
-    kind: "politics",
-    at: ym(-27),
+    name: "夜郎自大",
+    at: ym(-122),
     dynastyIds: ["yelang"],
-    participantIds: ["yelang-xin"],
-    summary: "夜郎王兴为邛郿侯陈立所杀，夜郎国亡。",
+    participantIds: ["yelang-duotong"],
+    summary: "《史记·西南夷列传》记载夜郎侯多同问汉使“汉孰与我大”，后世凝为成语“夜郎自大”。",
+    meaning: "比喻见识狭窄、眼光短浅而自以为了不起。",
   }),
 ];
 
@@ -176,6 +177,7 @@ const removedReignIds = [
 ];
 
 const preSql = [
+  "DELETE FROM event_participants WHERE event_id = 'yelang-xin-killed';",
   `DELETE FROM event_dynasties WHERE dynasty_id IN (${removedDynastyIds.map((id) => `'${id}'`).join(", ")});`,
   `DELETE FROM event_dynasties WHERE event_id = 'han-destroy-qielan';`,
   `DELETE FROM event_participants WHERE person_id IN (${removedPersonIds.map((id) => `'${id}'`).join(", ")});`,

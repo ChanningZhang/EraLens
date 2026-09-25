@@ -179,7 +179,7 @@ pnpm db:down      # 停止容器
 `dynasty_lane_groups` 表（包 `data/imports/dynasty-lane-groups/`）把前后相续的政权压成一行；运行时 `dynastyLaneGroups.ts` 只读 API 下发的配置，不再硬编码组列表。左侧冻结名与名牌金色随**舞台中线**切换，例如：
 
 - 西周 → 东周
-- 蒙古帝国 → 元（金色正统仍按元的 `orthodox_*` 截断，北元段不上金）
+- 蒙古帝国 → 元（元末 `is_main` 标记止于顺帝北逃，北元段不上金）
 - 吴政权 → 明 → 南明
 
 合并行的排序跨度取配置的 `laneOrderStartAbs/EndAbs`，不因早期相位滚出视口而缩短。西晋/东晋是分开的两行（曾合并过，已拆回）。
@@ -206,7 +206,7 @@ pnpm db:down      # 停止容器
 
 金色是运行时覆盖。泳道本色由前端 `assignLaneColorTokens` 按视口泳道顺序分配（24 色：cinnabar、mineral、ochre、indigo、moss、wisteria、grape、stone、jade、coral、plum、azure、amber、clay、sage、slate、crimson、bronze、rose、lime、navy、peacock、copper、mulberry）；库内 `color_token` 仅为 NOT NULL 占位。`gold` 不作为泳道本色。左侧冻结名牌在舞台中线落入该行正统窗口时叠金，移出后回到本色；命运虚线与泳道底始终本色。
 
-**运行时**只读库字段 `orthodox_from_abs` / `orthodox_end_abs`（`packages/shared/src/orthodoxDynasties.ts` 不再用内置表 fallback）。**导入**时用 `data/imports/lib/orthodoxDynasties.mjs` 烘焙到各包 `dynasties` INSERT。并立 track 不上金；延迟起算的 12 月宽限（如清入关）仍是 runtime 抽象规则。
+主线身份保存在 `reigns.is_main`，通过数据库迁移从原正统时间窗口映射到主线 reign。并立 track 与 `claim_role=rival` 不标主线；运行时不再根据时间窗口推导主线身份。
 
 | 类型 | 例子 |
 |------|------|

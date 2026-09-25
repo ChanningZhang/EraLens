@@ -182,7 +182,6 @@ const dynasties = [
     start: WEI_FOUNDED,
     end: ym(266, 2),
     precision: "month",
-    orthodoxFromAbs: WEI_FOUNDED.abs,
     groupId: "sanguo",
     note: "220年曹丕受禅称帝，代汉建魏。",
   },
@@ -419,7 +418,7 @@ const manifest = {
   notes: [
     "魏蜀吴同属 dynasty_groups.sanguo（狭义 220–280，据中文维基「三国」）；组 span 用年精度，不被成员月精度撑开或截短。",
     "魏蜀吴王朝行分别自曹丕称帝（220-12）、刘备称帝（221-5）、孙权称王（222-10）起；称帝前不建 reign。",
-    "wei 的 orthodox_from_abs 与王朝始年同为 220 年 12 月曹丕称帝。",
+    "wei 的 主线起点 与王朝始年同为 220 年 12 月曹丕称帝。",
     "袁绍（yuan-shao）、刘璋（liu-zhang）仅作人物收录，不建割据王朝行。",
     "曹叡、刘禅在位及年号本包写入；曹芳及孙吴末帝见 three-kingdoms-late。",
     "刘禅降魏日据中文维基 263-12-23，蜀汉王朝行迄月对齐为 263-12。",

@@ -4,7 +4,7 @@ import {
   claimDetailFacts,
   claimTrackOf,
   groupByClaimTrack,
-  isNonOrthodoxLine,
+  isNonMasterLine,
   MAIN_CLAIM_TRACK,
   resolveConcurrencySpans,
 } from "./claimTracks";
@@ -159,14 +159,14 @@ describe("claimDetailFacts", () => {
   });
 });
 
-describe("isNonOrthodoxLine", () => {
-  it("treats parallel tracks and main-row rivals as non-orthodox", () => {
-    expect(isNonOrthodoxLine(reign("yang-you", 617, 618, { claimTrack: "changan" }))).toBe(
+describe("isNonMasterLine", () => {
+  it("treats parallel tracks and main-row rivals as non-master", () => {
+    expect(isNonMasterLine(reign("yang-you", 617, 618, { claimTrack: "changan" }))).toBe(
       true,
     );
-    expect(isNonOrthodoxLine(reign("hou-yi", -2006, -1999, { claimRole: "rival" }))).toBe(
+    expect(isNonMasterLine(reign("hou-yi", -2006, -1999, { claimRole: "rival" }))).toBe(
       true,
     );
-    expect(isNonOrthodoxLine(reign("si-qi", -2061, -2046))).toBe(false);
+    expect(isNonMasterLine(reign("si-qi", -2061, -2046))).toBe(false);
   });
 });

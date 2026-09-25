@@ -17,7 +17,7 @@ export type TimelineLaneLayout = {
   top: number;
   /** Full lane records before `partitionReignRecords` (rulers + 史料缺). */
   records: readonly Reign[];
-  /** Lane 本色 from the dynasty token. Never orthodox gold. */
+  /** Lane 本色 from the dynasty token. Never master gold. */
   color: string;
 };
 

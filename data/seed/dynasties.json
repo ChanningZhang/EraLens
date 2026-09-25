@@ -108,9 +108,7 @@
     "endAbs": 2651,
     "precision": "year",
     "colorToken": "ochre",
-    "note": "光武帝刘秀建立",
-    "orthodoxFromAbs": 300
-  },
+    "note": "光武帝刘秀建立"},
   {
     "id": "wei",
     "name": "曹魏",
@@ -131,7 +129,6 @@
     "endAbs": 3193,
     "precision": "month",
     "colorToken": "indigo",
-    "orthodoxFromAbs": 2651,
     "parentId": "three-kingdoms"
   },
   {
@@ -194,7 +191,5 @@
     "startAbs": 3193,
     "endAbs": 3795,
     "precision": "month",
-    "colorToken": "stone",
-    "orthodoxFromAbs": 3193
-  }
+    "colorToken": "stone"}
 ]

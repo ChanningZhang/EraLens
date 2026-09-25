@@ -110,8 +110,6 @@ async function main() {
           endAbs: dynasty.endAbs,
           precision: dynasty.precision,
           colorToken: dynasty.colorToken ?? "cinnabar",
-          orthodoxFromAbs: dynasty.orthodoxFromAbs,
-          orthodoxEndAbs: dynasty.orthodoxEndAbs,
           parentId: dynasty.parentId,
           groupId: dynasty.groupId,
           note: dynasty.note,
@@ -136,6 +134,7 @@ async function main() {
           startAbs: reign.startAbs,
           endAbs: reign.endAbs,
           precision: reign.precision,
+          isMain: reign.isMain,
         },
       });
     }

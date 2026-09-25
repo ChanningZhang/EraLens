@@ -3,9 +3,7 @@ import {
   TIMELINE_RAIL_INSET_PX,
   TIMELINE_RAIL_LABEL_WIDTH_PX,
   getDynastyLaneGroup,
-  isFrozenLaneOrthodox,
-  isOrthodoxReign,
-  overlapsOrthodoxSpan,
+  isFrozenLaneMaster,
   resolveActivePhaseDynastyId,
   resolveDynastyColorValue,
   resolveFrozenLaneLabel,
@@ -86,17 +84,12 @@ export function DynastyLane({
     labelAnchorAbs,
     laneGroups,
   );
-  const frozenOrthodox = isFrozenLaneOrthodox(
-    dynasty,
-    dynastiesById,
-    labelAnchorAbs,
-    laneGroups,
-  );
+  const frozenMaster = isFrozenLaneMaster(activePhaseDynasty.id, labelAnchorAbs, reigns);
   const selected =
     selection.selected?.type === "dynasty" &&
     selection.selected.id === activePhaseDynasty.id;
   // Lane floor / gap cards stay on the persisted token. The frozen name
-  // chip overlays orthodox gold when the center guide sits in the window.
+  // chip overlays gold when the center guide falls within a master reign.
   const laneColor = resolveDynastyColorValue(activePhaseDynasty, laneColorToken);
   const { items, rowCount } = assignReignStacks(reigns, laneGroups);
   const barHeight = dynastyBarHeightForReigns(reigns, laneGroups);
@@ -120,7 +113,7 @@ export function DynastyLane({
         className={[
           styles.frozenLabel,
           selected ? styles.selected : "",
-          frozenOrthodox ? "orthodoxGold" : "",
+          frozenMaster ? "masterGold" : "",
         ]
           .filter(Boolean)
           .join(" ")}
@@ -159,16 +152,11 @@ export function DynastyLane({
               gap={gap}
               dynasty={dynasty as Dynasty}
               color={laneColor}
-              orthodox={overlapsOrthodoxSpan(
-                dynasty,
-                gap.startAbs,
-                gap.endAbs,
-              )}
             />
           ))}
           {items.map(({ reign }) => {
             const reignDynasty = dynastiesById.get(reign.dynastyId) ?? dynasty;
-            const orthodox = isOrthodoxReign(reignDynasty, reign);
+            const main = reign.isMain === true;
             return (
               <ReignCard
                 key={reign.id}
@@ -182,7 +170,7 @@ export function DynastyLane({
                 reigns={reigns}
                 personName={personNames.get(reign.personId)}
                 personClan={personClans.get(reign.personId)}
-                orthodox={orthodox}
+                master={main}
                 laneGroups={laneGroups}
               />
             );

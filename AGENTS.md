@@ -41,7 +41,7 @@
 - **称谓**：`resolveEmperorAppellation` 按在位起始年——唐以前偏谥号/称号，唐至元偏庙号，明清偏年号。泳道卡片小字先显示非空 `reigns.title`；title 为空时，先秦显示 `persons.name`，秦至南北朝优先谥号，隋至元优先庙号，明清优先 `reigns.era_names`，民国及以后仍沿用 title 优先原则。明清普通皇帝的 `reigns.title` 留空，年号只存 `era_names`；仅朱元璋吴王时期（“吴”）、努尔哈赤（“太祖”）、皇太极（“太宗”）三条保留 title。明清空 title 时年号优先于庙号、谥号。谥号只读 `posthumous_name`（史称如少帝/末帝/后主不得写入该字段）；庙号/年号同理读正规字段，运行时不从 `title` 推测。`reigns.title` 存其余卡片称号/史称（先秦常去国号，如 `禹`、`君舍`）；不要为「默认该显示庙号」去填 title。先秦（始皇帝以前）卡片主行用入库字段，副行私名靠 `ancestral_xing` / `clan_shi` 去姓，不靠运行时国名表或姓氏表。
 - **卡片**：宽度由在位时长 × `pxPerMonth` 决定，不要为了塞字而拉宽/缩小条。字排不下时改字号或把字写到行空隙（`wrap` / `below`），不改条的时间几何。
 - **并立**：`claim_track` 分行，高度为正常行的 2/3，虚线描边 + 浅填，互不裁切。
-- **相续泳道合并**（`dynasty_lane_groups` + `dynastyLaneGroups.ts`）：配置入库（包 `data/imports/dynasty-lane-groups/`），西周/东周、蒙古/元、吴政权/明/南明等压成一行；左侧冻结名与名牌金色都由泳道**中线**所在相位/`orthodox_*` 决定，不是以左缘为准。组的 lane-order span 不随视口收缩。
+- **相续泳道合并**（`dynasty_lane_groups` + `dynastyLaneGroups.ts`）：配置入库（包 `data/imports/dynasty-lane-groups/`），西周/东周、蒙古/元、吴政权/明/南明等压成一行；左侧冻结名与名牌金色都由泳道**中线**所在相位/是否有 `is_main=true` 的 reign 覆盖中线决定，不是以左缘为准。组的 lane-order span 不随视口收缩。
 - **并存 cluster**（`dynasty_groups`）：三国、五胡十六国、南北朝、五代十国等各占一行、贴在一起套框。框的起止用组自己的 span，不被成员更早建国年撑大。
 - **人物层**：无 reign 且有可核生卒的 `persons` 画在王朝行下方。皇帝不要再出现在人物栏。
 - **详情**：右侧抽屉覆盖，不挤压泳道和标尺。点击帝王卡、事件、人物、左侧王朝名都走同一详情组件。
@@ -49,13 +49,13 @@
 
 ## 正统金色
 
-规则在 `packages/shared/src/orthodoxDynasties.ts`（导入侧 `data/imports/lib/orthodoxDynasties.mjs` 须同步，由 `dynastySql` 烘焙）。运行时**只读**库字段 `orthodox_from_abs` / `orthodox_end_abs`。
+主线标记保存在 `reigns.is_main`。金色为主线 reign 的展示覆盖色；并立 track、`claim_role=rival` 不标主线。
 
 - 大一统自起始即为正统：商周、东汉、西东晋、隋唐、武周、南北宋、明、中华民国、中华人民共和国。夏自启（家天下）始为正统，禹受禅不上金。
 - 延迟起算：秦自前 221；西汉自刘邦称帝（前 202 年 2 月），沛公/汉王段不上金；清自 1644（福临），努尔哈赤、皇太极不上金；元自 1276 年 2 月宋恭帝降，忽必烈定国号至降宋前拆段非正统。
 - 截断：隋金色可覆盖到 618 年末（江都杨浩）；元止于 1368（北逃后北元非正统）；南宋止于 1276 年 2 月（端宗、帝昺非正统）。
 - 并立 track、主行 `claim_role=rival`（有穷代夏等非约定主线）、王莽/更始等不上金。魏蜀吴称帝前不建帝王卡。
-- 左侧冻结名牌用与相位名相同的舞台中线 `labelAnchorAbs`：`isOrthodoxAt` 为真则叠金，否则本色。
+- 左侧冻结名牌用与相位名相同的舞台中线 `labelAnchorAbs`：中线落在 `is_main=true` 的 reign 内则叠金，否则本色。
 
 ## 跨王朝命运线
 

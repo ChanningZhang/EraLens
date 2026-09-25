@@ -12,7 +12,6 @@ import { alignReignSeamConfidences } from "../lib/alignReignSeamConfidences.mjs"
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { applyFeudalClanMetadata } from "../lib/applyFeudalClanMetadata.mjs";
 import { validateReignDateConfidenceSeams } from "../lib/validateReignSeams.mjs";
-import { ORTHODOX_FROM_START } from "../lib/orthodoxDynasties.mjs";
 import { finalizeImportReigns } from "../lib/missingReigns.mjs";
 import { resolveReignTitle } from "../lib/reignTitleSelections.mjs";
 import { LEGACY_COLOR_TOKEN, formatAppellationCsv, mergeAppellationsIntoPersons, normalizeYearPrecisionAt, personSql } from "../lib/sqlHelpers.mjs";
@@ -682,17 +681,14 @@ const relations = [
 
 
 function dynastySql(d) {
-  const orthodoxFromAbs =
-    d.orthodoxFromAbs ??
-    (d.id === "qin" ? absMonth(-221) : ORTHODOX_FROM_START.has(d.id) ? d.start.abs : null);
   return `INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token, orthodox_from_abs, parent_id, note
+  start_abs, end_abs, precision, color_token, parent_id, note
 ) VALUES (
   ${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlArray(d.altNames)}, ${sqlStr(d.scope)}, ${sqlStr(d.region)},
   ${d.start.year}, ${d.start.month}, ${d.end.year}, ${d.end.month},
-  ${d.start.abs}, ${d.end.abs}, ${sqlStr(d.precision)}, ${sqlStr(LEGACY_COLOR_TOKEN)}, ${orthodoxFromAbs ?? "NULL"}, NULL,
+  ${d.start.abs}, ${d.end.abs}, ${sqlStr(d.precision)}, ${sqlStr(LEGACY_COLOR_TOKEN)}, NULL,
   ${sqlStr(d.note)}
 )
 ON CONFLICT (id) DO UPDATE SET
@@ -705,7 +701,6 @@ ON CONFLICT (id) DO UPDATE SET
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
-  orthodox_from_abs = EXCLUDED.orthodox_from_abs,
   note = EXCLUDED.note;`;
 }
 

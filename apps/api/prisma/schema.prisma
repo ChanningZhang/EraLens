@@ -67,8 +67,6 @@ model Dynasty {
   endAbs      Int              @map("end_abs")
   precision   String           @default("year")
   colorToken  String           @map("color_token")
-  orthodoxFromAbs Int?         @map("orthodox_from_abs")
-  orthodoxEndAbs  Int?         @map("orthodox_end_abs")
   parentId    String?          @map("parent_id")
   groupId     String?          @map("group_id")
   note        String?
@@ -105,6 +103,7 @@ model Reign {
   claimLabel            String?     @map("claim_label")
   claimRole             String?     @map("claim_role")
   isInformalMonarch     Boolean     @default(false) @map("is_informal_monarch")
+  isMain              Boolean?    @map("is_main")
   dynasty               Dynasty     @relation(fields: [dynastyId], references: [id])
   person                Person      @relation(fields: [personId], references: [id])
 

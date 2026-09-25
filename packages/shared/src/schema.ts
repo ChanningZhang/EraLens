@@ -94,10 +94,6 @@ export const DynastySchema = z.object({
   precision: PrecisionSchema.default("year"),
   /** Legacy DB placeholder; lane colors are assigned at render time. */
   colorToken: ColorTokenSchema.optional(),
-  /** AbsMonth from which this dynasty is displayed as orthodox (gold). Overrides built-in rules when set. */
-  orthodoxFromAbs: z.number().optional(),
-  /** AbsMonth after which orthodox (gold) display ends, even if the dynasty continues. */
-  orthodoxEndAbs: z.number().optional(),
   parentId: z.string().optional(),
   groupId: z.string().optional(),
   note: z.string().optional(),
@@ -140,7 +136,7 @@ export const AppellationKindSchema = z.enum([
 ]);
 
 /**
- * Marker for a ruler who is not on the conventionally counted orthodox line.
+ * Marker for a ruler who is not on the conventionally counted master line.
  * With `claimTrack`: concurrent claimant (隋末三帝并立, 南明鲁监国 / 绍武),
  * secondary parallel row. Without `claimTrack`: sequential usurper on the main
  * row (有穷代夏), no gold and no extra stack. Absent means main succession.
@@ -210,6 +206,8 @@ export const ReignSchema = z.object({
   claimRole: ClaimRoleSchema.optional(),
   /** Non-formal sovereign: regent, acting head, joint vice-chair, etc. Renders with diagonal stripes. */
   isInformalMonarch: z.boolean().default(false),
+  /** Explicitly marked main-line ruler; null/omitted means unclassified. */
+  isMain: z.boolean().nullable().optional(),
 });
 
 export const EventKindSchema = z.enum([

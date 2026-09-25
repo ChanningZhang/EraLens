@@ -260,7 +260,7 @@ describe("layoutReignFates", () => {
     expect(placed[0]!.originY).toBe(points[0]!.y);
   });
 
-  it("uses the source lane 本色, never orthodox gold", () => {
+  it("uses the source lane 本色, never master gold", () => {
     const jinWest: Dynasty = {
       id: "jin-west",
       name: "西晋",

@@ -42,28 +42,28 @@
   border-right-color: transparent;
 }
 
-.card:hover:not(:global(.orthodoxGold)):not(.selected) {
+.card:hover:not(:global(.masterGold)):not(.selected) {
   background: color-mix(in srgb, var(--card-color) 20%, var(--color-surface));
   box-shadow: 0 2px 8px rgba(27, 25, 23, 0.08);
 }
 
-.card:global(.orthodoxGold) {
+.card:global(.masterGold) {
   position: absolute;
-  border-color: color-mix(in srgb, var(--orthodox-gold-divider) 72%, transparent) !important;
+  border-color: color-mix(in srgb, var(--master-gold-divider) 72%, transparent) !important;
 }
 
-.card:global(.orthodoxGold) .content,
-.card:global(.orthodoxGold) .name,
-.card:global(.orthodoxGold) .meta {
+.card:global(.masterGold) .content,
+.card:global(.masterGold) .name,
+.card:global(.masterGold) .meta {
   position: relative;
   z-index: 2;
 }
 
-.card:global(.orthodoxGold).selected {
+.card:global(.masterGold).selected {
   box-shadow:
-    inset 0 1px 0 var(--orthodox-gold-specular),
+    inset 0 1px 0 var(--master-gold-specular),
     inset 0 -2px 0 var(--color-ochre),
-    0 0 0 1px var(--orthodox-gold-border),
+    0 0 0 1px var(--master-gold-border),
     0 3px 12px color-mix(in srgb, var(--color-ink) 12%, transparent);
 }
 
@@ -105,7 +105,7 @@
 
 /*
  * Informal monarchs (regents, acting heads, joint vice-chairs) show diagonal
- * stripes. Painted on ::after so they sit above .orthodoxGold's background
+ * stripes. Painted on ::after so they sit above .masterGold's background
  * shorthand (!important) and its ::before sheen — background-image on the
  * card itself is wiped by the gold fill.
  */
@@ -125,13 +125,13 @@
   );
 }
 
-.informalMonarch:global(.orthodoxGold)::after {
+.informalMonarch:global(.masterGold)::after {
   background-image: repeating-linear-gradient(
     -45deg,
     transparent,
     transparent 5px,
-    color-mix(in srgb, var(--orthodox-gold-divider) 20%, transparent) 5px,
-    color-mix(in srgb, var(--orthodox-gold-divider) 20%, transparent) 9px
+    color-mix(in srgb, var(--master-gold-divider) 20%, transparent) 5px,
+    color-mix(in srgb, var(--master-gold-divider) 20%, transparent) 9px
   );
 }
 

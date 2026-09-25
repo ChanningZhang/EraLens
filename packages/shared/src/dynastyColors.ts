@@ -1,12 +1,5 @@
-import { isNonOrthodoxLine } from "./claimTracks";
 import { orderDynastiesForLanes, type LaneCapital } from "./dynastyClusterGroups";
 import { collapseDynastyLaneGroups } from "./dynastyLaneGroups";
-import {
-  isOrthodoxAt,
-  isOrthodoxReign,
-  resolveOrthodoxEndAbs,
-  type OrthodoxDynasty,
-} from "./orthodoxDynasties";
 import {
   COLOR_TOKENS,
   COLOR_VALUES,
@@ -17,7 +10,7 @@ import {
   type Reign,
 } from "./schema";
 
-export const ORTHODOX_COLOR_TOKEN: ColorToken = "gold";
+export const MASTER_COLOR_TOKEN: ColorToken = "gold";
 
 function parseHex(hex: string): [number, number, number] {
   const value = hex.slice(1);
@@ -35,9 +28,9 @@ function rgbDistance(a: [number, number, number], b: [number, number, number]): 
   return Math.sqrt(dr * dr + dg * dg + db * db);
 }
 
-/** Palette tokens used for dynasty assignment; orthodox gold is runtime-only. */
+/** Palette tokens used for dynasty assignment; master gold is runtime-only. */
 const ASSIGNABLE_COLOR_TOKENS = COLOR_TOKENS.filter(
-  (token) => token !== ORTHODOX_COLOR_TOKEN && COLOR_VALUES[token] != null,
+  (token) => token !== MASTER_COLOR_TOKEN && COLOR_VALUES[token] != null,
 );
 
 const TOKEN_RGB = Object.fromEntries(
@@ -206,57 +199,35 @@ export function buildStableLaneColorMap(
 
 /**
  * Runtime display color for a dynasty lane. Uses the assigned lane token;
- * orthodox windows still override to gold when `atAbs` is given.
+ * master status is stored on individual reigns, so dynasty lanes use their base color.
  */
 export function resolveDynastyColorToken(
-  dynasty: OrthodoxDynasty,
+  _dynasty: Pick<Dynasty, "id">,
   laneColorToken: ColorToken,
-  atAbs?: number,
 ): ColorToken {
-  if (atAbs != null && isOrthodoxAt(dynasty, atAbs)) {
-    return ORTHODOX_COLOR_TOKEN;
-  }
   return laneColorToken;
 }
 
 export function resolveDynastyColorValue(
-  dynasty: OrthodoxDynasty,
+  dynasty: Pick<Dynasty, "id">,
   laneColorToken: ColorToken,
-  atAbs?: number,
 ): string {
-  return COLOR_VALUES[resolveDynastyColorToken(dynasty, laneColorToken, atAbs)];
+  return COLOR_VALUES[resolveDynastyColorToken(dynasty, laneColorToken)];
 }
 
-/**
- * Reign-card / reign-detail color. Gold only when the reign itself is
- * orthodox — not merely because its start month still sits on the dynasty's
- * orthodox cutoff (e.g. 元惠宗 1368 after Yuan orthodox ends).
- */
+/** Master reigns receive the gold overlay; other reigns keep their lane color. */
 export function resolveReignColorToken(
-  dynasty: OrthodoxDynasty & { endAbs: number },
-  reign: Pick<Reign, "startAbs" | "endAbs" | "claimTrack" | "claimRole">,
+  _dynasty: Pick<Dynasty, "id">,
+  reign: Pick<Reign, "isMain">,
   laneColorToken: ColorToken,
 ): ColorToken {
-  if (isOrthodoxReign(dynasty, reign)) return ORTHODOX_COLOR_TOKEN;
-  if (isNonOrthodoxLine(reign)) return laneColorToken;
-  const orthodoxEnd = resolveOrthodoxEndAbs(dynasty);
-  if (orthodoxEnd != null && reign.startAbs >= orthodoxEnd) {
-    return laneColorToken;
-  }
-  return resolveDynastyColorToken(dynasty, laneColorToken, reign.startAbs);
+  return reign.isMain === true ? MASTER_COLOR_TOKEN : laneColorToken;
 }
 
 export function resolveReignColorValue(
-  dynasty: OrthodoxDynasty & { endAbs: number },
-  reign: Pick<Reign, "startAbs" | "endAbs" | "claimTrack" | "claimRole">,
+  dynasty: Pick<Dynasty, "id">,
+  reign: Pick<Reign, "isMain">,
   laneColorToken: ColorToken,
 ): string {
   return COLOR_VALUES[resolveReignColorToken(dynasty, reign, laneColorToken)];
-}
-
-export function isOrthodoxDisplayAt(
-  dynasty: OrthodoxDynasty,
-  atAbs: number,
-): boolean {
-  return isOrthodoxAt(dynasty, atAbs);
 }

@@ -113,14 +113,14 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
   const dynastyRows = scope
     ? await prisma.$queryRaw<RawDynastyRow[]>`
         SELECT id, name, alt_names, scope, region, start_year, start_month, end_year, end_month,
-               start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs,
+               start_abs, end_abs, precision, color_token,
                parent_id, group_id, note
         FROM dynasties
         WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')
           AND scope = ${scope}`
     : await prisma.$queryRaw<RawDynastyRow[]>`
         SELECT id, name, alt_names, scope, region, start_year, start_month, end_year, end_month,
-               start_abs, end_abs, precision, color_token, orthodox_from_abs, orthodox_end_abs,
+               start_abs, end_abs, precision, color_token,
                parent_id, group_id, note
         FROM dynasties
         WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')`;
@@ -151,7 +151,7 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
            start_year, start_month, start_day, end_year, end_month, end_day,
            start_abs, end_abs, precision,
            start_date_confidence, end_date_confidence,
-           claim_track, claim_label, claim_role, is_informal_monarch
+           claim_track, claim_label, claim_role, is_informal_monarch, is_main
     FROM reigns
     WHERE dynasty_id = ANY(${dynastyIds}::text[])
       AND span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')`;

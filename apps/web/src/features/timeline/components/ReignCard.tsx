@@ -53,7 +53,7 @@ type Props = {
     posthumousNames?: string[];
     templeNames?: string[];
   };
-  orthodox?: boolean;
+  master?: boolean;
   laneGroups?: readonly DynastyLaneGroup[];
 };
 
@@ -64,7 +64,7 @@ export function ReignCard({
   reigns,
   personName: personNameFromTimeline,
   personClan,
-  orthodox = false,
+  master = false,
   laneGroups = [],
 }: Props) {
   const viewport = useViewport();
@@ -171,7 +171,7 @@ export function ReignCard({
       detail === "wrap" ? styles.wrap : "",
       uncertainStart ? styles.uncertainStart : "",
       uncertainEnd ? styles.uncertainEnd : "",
-      orthodox ? "orthodoxGold" : "",
+      master ? "masterGold" : "",
       selected ? styles.selected : "",
       parallel ? styles.parallel : "",
       compactStack ? styles.compactStack : "",
@@ -184,7 +184,7 @@ export function ReignCard({
     detail,
     uncertainStart,
     uncertainEnd,
-    orthodox,
+    master,
     selected,
     parallel,
     compactStack,

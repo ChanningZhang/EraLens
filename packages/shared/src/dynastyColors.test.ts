@@ -8,7 +8,7 @@ import {
   buildStableLaneColorMap,
   colorTokenDistance,
   fallbackLaneColorToken,
-  ORTHODOX_COLOR_TOKEN,
+  MASTER_COLOR_TOKEN,
   resolveDynastyColorToken,
   resolveReignColorToken,
 } from "./dynastyColors";
@@ -22,7 +22,7 @@ function mockDynasties(count: number) {
 }
 
 describe("assignLaneColorTokens", () => {
-  it("supports twenty-four assignable palette tokens plus orthodox gold", () => {
+  it("supports twenty-four assignable palette tokens plus master gold", () => {
     expect(COLOR_TOKENS).toHaveLength(25);
     expect(COLOR_TOKENS).toContain("gold");
   });
@@ -249,93 +249,18 @@ describe("buildLaneOrderIndex (stable placement)", () => {
 });
 
 describe("resolveReignColorToken", () => {
-  const yuan = {
-    id: "yuan",
-    startAbs: absMonth(1271, 12),
-    endAbs: absMonth(1388),
-    orthodoxFromAbs: absMonth(1276, 2),
-    orthodoxEndAbs: absMonth(1368),
-  };
+  const dynasty = { id: "sample" };
   const laneColor = "indigo" as const;
 
-  it("keeps gold for orthodox Yuan reigns but not for 元惠宗 starting at the cutoff", () => {
-    expect(
-      resolveReignColorToken(yuan, {
-        startAbs: absMonth(1333, 7),
-        endAbs: absMonth(1368, 1),
-      }, laneColor),
-    ).toBe(ORTHODOX_COLOR_TOKEN);
-    expect(
-      resolveReignColorToken(yuan, {
-        startAbs: absMonth(1368),
-        endAbs: absMonth(1370, 5),
-      }, laneColor),
-    ).toBe("indigo");
-    expect(
-      resolveReignColorToken(yuan, {
-        startAbs: absMonth(1370, 5),
-        endAbs: absMonth(1378, 5),
-      }, laneColor),
-    ).toBe("indigo");
-  });
-
-  it("does not use the cutoff month's orthodox-at color for the post-orthodox card", () => {
-    expect(resolveDynastyColorToken(yuan, laneColor, absMonth(1368))).toBe(
-      ORTHODOX_COLOR_TOKEN,
+  it("uses the gold overlay only for explicitly marked main-line reigns", () => {
+    expect(resolveReignColorToken(dynasty, { isMain: true }, laneColor)).toBe(
+      MASTER_COLOR_TOKEN,
     );
-    expect(
-      resolveReignColorToken(yuan, {
-        startAbs: absMonth(1368),
-        endAbs: absMonth(1370, 5),
-      }, laneColor),
-    ).not.toBe(resolveDynastyColorToken(yuan, laneColor, absMonth(1368)));
-  });
-
-  it("keeps song-south post-orthodox reigns on the lane base token", () => {
-    const songSouth = {
-      id: "song-south",
-      startAbs: absMonth(1127),
-      endAbs: absMonth(1279),
-      orthodoxFromAbs: absMonth(1127),
-      orthodoxEndAbs: absMonth(1276, 2, 4),
-    };
-    const songLane = "jade" as const;
-
-    expect(
-      resolveReignColorToken(songSouth, {
-        startAbs: absMonth(1276, 6),
-        endAbs: absMonth(1278, 5),
-      }, songLane),
-    ).toBe("jade");
-    expect(resolveDynastyColorToken(songSouth, songLane)).toBe("jade");
-    expect(
-      resolveReignColorToken(songSouth, {
-        startAbs: absMonth(1276, 6),
-        endAbs: absMonth(1278, 5),
-      }, songLane),
-    ).toBe(resolveDynastyColorToken(songSouth, songLane));
-  });
-
-  it("keeps main-row rival reigns on the lane base token inside an orthodox window", () => {
-    const xia = {
-      id: "xia",
-      startAbs: absMonth(-2070),
-      endAbs: absMonth(-1600, 12),
-      orthodoxFromAbs: absMonth(-2061),
-    };
-    const xiaLane = "ochre" as const;
-    expect(
-      resolveReignColorToken(xia, {
-        startAbs: absMonth(-2006),
-        endAbs: absMonth(-1999, 12),
-        claimRole: "rival",
-      }, xiaLane),
-    ).toBe("ochre");
-    expect(
-      resolveReignColorToken(xia, {
-        startAbs: absMonth(-2061),
-        endAbs: absMonth(-2046, 12),
-      }, xiaLane),
-    ).toBe(ORTHODOX_COLOR_TOKEN);
+    expect(resolveReignColorToken(dynasty, { isMain: null }, laneColor)).toBe(
+      laneColor,
+    );
+    expect(resolveReignColorToken(dynasty, { isMain: false }, laneColor)).toBe(
+      laneColor,
+    );
   });
 });

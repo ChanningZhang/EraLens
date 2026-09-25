@@ -15,7 +15,6 @@ import {
   resolveDynastyColorToken,
   resolveReignColorToken,
 } from "./dynastyColors";
-import { resolveOrthodoxFromAbs } from "./orthodoxDynasties";
 import { eventKindLabel, eventSpanAbs, formatEventTime } from "./eventTime";
 import {
   TimelineSliceSchema,
@@ -377,7 +376,7 @@ export function buildEntityDetail(
         ? resolveDynastyColorToken(
             dynasty,
             fallbackLaneColorToken(dynasty.id),
-            resolveOrthodoxFromAbs(dynasty) ?? dynasty.startAbs,
+
           )
         : undefined,
       facts,
@@ -416,7 +415,7 @@ export function buildEntityDetail(
       colorToken: resolveDynastyColorToken(
         dynasty,
         fallbackLaneColorToken(dynasty.id),
-        resolveOrthodoxFromAbs(dynasty) ?? dynasty.startAbs,
+
       ),
       facts: [
         { label: "起止", value: `${dynasty.start.year} — ${dynasty.end.year}` },
@@ -504,7 +503,7 @@ export function buildEntityDetail(
         ? resolveDynastyColorToken(
             primaryDynasty,
             fallbackLaneColorToken(primaryDynasty.id),
-            resolveOrthodoxFromAbs(primaryDynasty) ?? primaryDynasty.startAbs,
+
           )
         : undefined,
       facts: [
@@ -532,7 +531,7 @@ export function buildEntityDetail(
       ? resolveDynastyColorToken(
           primaryDynasty,
           fallbackLaneColorToken(primaryDynasty.id),
-          resolveOrthodoxFromAbs(primaryDynasty) ?? primaryDynasty.startAbs,
+
         )
       : undefined,
     facts: [

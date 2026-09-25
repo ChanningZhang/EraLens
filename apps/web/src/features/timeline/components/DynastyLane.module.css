@@ -43,7 +43,7 @@
     box-shadow var(--motion-fast);
 }
 
-.frozenLabel:hover:not(:global(.orthodoxGold)) {
+.frozenLabel:hover:not(:global(.masterGold)) {
   background: color-mix(in srgb, var(--dynasty-color) 20%, var(--color-surface));
   border-color: color-mix(in srgb, var(--dynasty-color) 28%, var(--color-border));
 }
@@ -53,21 +53,21 @@
   box-shadow: var(--selection-shadow);
 }
 
-.frozenLabel:global(.orthodoxGold) {
-  border-color: color-mix(in srgb, var(--orthodox-gold-divider) 72%, transparent) !important;
+.frozenLabel:global(.masterGold) {
+  border-color: color-mix(in srgb, var(--master-gold-divider) 72%, transparent) !important;
 }
 
-.frozenLabel:global(.orthodoxGold) .labelText,
-.frozenLabel:global(.orthodoxGold) .name {
+.frozenLabel:global(.masterGold) .labelText,
+.frozenLabel:global(.masterGold) .name {
   position: relative;
   z-index: 2;
 }
 
-.frozenLabel:global(.orthodoxGold).selected {
+.frozenLabel:global(.masterGold).selected {
   box-shadow:
-    inset 0 1px 0 var(--orthodox-gold-specular),
+    inset 0 1px 0 var(--master-gold-specular),
     inset 0 -2px 0 var(--color-ochre),
-    0 0 0 1px var(--orthodox-gold-border),
+    0 0 0 1px var(--master-gold-border),
     0 3px 12px color-mix(in srgb, var(--color-ink) 12%, transparent);
 }
 

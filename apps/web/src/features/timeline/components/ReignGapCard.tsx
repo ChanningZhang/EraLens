@@ -12,10 +12,9 @@ type Props = {
   gap: Reign;
   dynasty: Dynasty;
   color: string;
-  orthodox?: boolean;
 };
 
-export function ReignGapCard({ gap, dynasty, color, orthodox = false }: Props) {
+export function ReignGapCard({ gap, dynasty, color }: Props) {
   const viewport = useViewport();
   const left = projectAbs(viewport, gap.startAbs);
   const endExclusive = gap.endAbs + 1;
@@ -35,7 +34,6 @@ export function ReignGapCard({ gap, dynasty, color, orthodox = false }: Props) {
           <div
             className={[
               styles.card,
-              orthodox ? "orthodoxGold orthodoxGold--muted orthodoxGold--dashed" : "",
             ]
               .filter(Boolean)
               .join(" ")}

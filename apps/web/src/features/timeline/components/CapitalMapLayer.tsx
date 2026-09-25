@@ -88,7 +88,7 @@ export function CapitalMapLayer({
       const dynasty = dynastiesById.get(capital.dynastyId);
       const token = laneColorMap.get(capital.dynastyId) ?? fallbackLaneColorToken(capital.dynastyId);
       const color = dynasty
-        ? resolveDynastyColorValue(dynasty, token, atAbs)
+        ? resolveDynastyColorValue(dynasty, token)
         : COLOR_VALUES[token];
       const coordinate = capital.coordinateSystem === "WGS84"
         ? wgs84ToGcj02(capital.longitude, capital.latitude)

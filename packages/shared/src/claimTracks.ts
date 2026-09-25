@@ -12,7 +12,7 @@ import type { Reign } from "./schema";
  * - `claimRole` — `rival` for a reign that is not the conventionally counted
  *   line. With `claimTrack` it is a concurrent claimant on a secondary row.
  *   Without `claimTrack` it stays sequential on the main row (有穷代夏) but
- *   still skips orthodox gold and the main succession chain.
+ *   still skips master gold and the main succession chain.
  *
  * Sequencing, clipping, and succession chains stay *inside* a track. Tracks
  * stack so overlapping reigns render side by side.
@@ -27,8 +27,8 @@ export function isParallelClaim(reign: Pick<Reign, "claimTrack">): boolean {
   return claimTrackOf(reign) !== MAIN_CLAIM_TRACK;
 }
 
-/** Not the conventionally counted orthodox line (parallel track or rival marker). */
-export function isNonOrthodoxLine(
+/** Not the conventionally counted master line (parallel track or rival marker). */
+export function isNonMasterLine(
   reign: Pick<Reign, "claimTrack" | "claimRole">,
 ): boolean {
   return isParallelClaim(reign) || reign.claimRole === "rival";

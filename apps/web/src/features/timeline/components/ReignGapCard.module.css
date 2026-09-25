@@ -24,19 +24,6 @@
   overflow: hidden;
 }
 
-.card:global(.orthodoxGold) {
-  position: absolute;
-  border-color: color-mix(in srgb, var(--orthodox-gold-divider) 68%, transparent) !important;
-}
-
-.card:hover:not(:global(.orthodoxGold)) {
-  background: color-mix(in srgb, var(--card-color) 10%, transparent);
-}
-
-.card:global(.orthodoxGold) .label {
-  position: relative;
-  z-index: 2;
-}
 
 .label {
   margin: 0;

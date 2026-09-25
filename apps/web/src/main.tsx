@@ -6,7 +6,7 @@ import { installTimelineWheel } from "./features/timeline/hooks/useTimelineWheel
 import "./design/tokens.css";
 import "./design/rareCjkFont.css";
 import "./design/typography.css";
-import "./design/orthodoxGold.css";
+import "./design/masterGold.css";
 
 installTimelineWheel();
 
