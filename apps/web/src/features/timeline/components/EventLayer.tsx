@@ -3,6 +3,15 @@ import { selectionStore } from "../state/selectionStore";
 import { eventSpanAbs } from "@eralens/shared";
 import styles from "./EventLayer.module.css";
 
+export function EventKindPreview({ kind, label }: { kind: string; label: string }) {
+  return (
+    <span className={`${styles.marker} ${styles.settingsSample}`} data-event-kind={kind} aria-hidden="true">
+      <span className={styles.dot} />
+      <span className={styles.label}>{label}</span>
+    </span>
+  );
+}
+
 type Props = {
   placed: PlacedEvent[];
   height: number;
@@ -32,16 +41,9 @@ export function EventLayer({ placed, height, laneBadges = false }: Props) {
                 tabIndex={-1}
               />
             )}
-            {laneBadges && item.badgeOriginX != null && item.anchorX > item.badgeOriginX + 1 && (
-              <span
-                className={styles.badgeConnector}
-                style={{ left: item.badgeOriginX, width: item.anchorX - item.badgeOriginX }}
-                aria-hidden="true"
-              />
-            )}
             <button
               type="button"
-              className={`${styles.marker} ${laneBadges ? styles.badgeMarker : ""}`}
+              className={`${styles.marker} ${laneBadges ? styles.badgeMarker : ""} ${event.isApproximate ? styles.approximateMarker : ""}`}
               data-event-kind={event.kind}
               style={{ left: item.anchorX }}
               onClick={() => {
@@ -51,6 +53,7 @@ export function EventLayer({ placed, height, laneBadges = false }: Props) {
             >
               <span className={styles.dot} />
               <span className={styles.label}>{event.name}</span>
+              {event.isApproximate && <span className={styles.approximateTag}>约</span>}
             </button>
           </div>
         );

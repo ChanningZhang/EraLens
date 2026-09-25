@@ -122,6 +122,7 @@ model Event {
   kind        String              @default("other")
   timeMode    String              @default("point") @map("time_mode")
   precision   String              @default("year")
+  isApproximate Boolean              @default(false) @map("is_approximate")
   dateNote    String?             @map("date_note")
   atYear      Int?                @map("at_year")
   atMonth     Int?                @map("at_month")
@@ -250,4 +251,12 @@ model ReignCapital {
   @@id([reignId, capitalId])
   @@index([capitalId])
   @@map("reign_capitals")
+}
+
+model SysConfig {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("sys_config")
 }

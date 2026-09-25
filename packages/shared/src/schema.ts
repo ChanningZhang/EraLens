@@ -220,11 +220,24 @@ export const EventKindSchema = z.enum([
   "culture",
   "disaster",
   "commerce",
+  "agriculture",
   "finance",
   "idiom",
   "poetry",
   "other",
 ]);
+
+export const EventDisplayConfigSchema = z.object({
+  kinds: z.record(EventKindSchema, z.boolean()),
+});
+export type EventDisplayConfig = z.infer<typeof EventDisplayConfigSchema>;
+
+export const DEFAULT_EVENT_DISPLAY_CONFIG: EventDisplayConfig = {
+  kinds: {
+    battle: true, politics: true, culture: true, disaster: true, commerce: true,
+    agriculture: true, finance: true, idiom: true, poetry: true, other: true,
+  },
+};
 
 export const EventSchema = z
   .object({
@@ -233,6 +246,8 @@ export const EventSchema = z
     kind: EventKindSchema.default("other"),
     timeMode: EventTimeModeSchema.default("point"),
     precision: EventPrecisionSchema.default("year"),
+    /** Date is known only approximately; independent from circa range semantics. */
+    isApproximate: z.boolean().default(false),
     dateNote: z.string().optional(),
     start: TimePointSchema.optional(),
     end: TimePointSchema.optional(),

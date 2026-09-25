@@ -1,5 +1,22 @@
 [
   {
+    "id": "cap-zhou-east-xie-770",
+    "dynastyId": "zhou-east",
+    "historicalName": "携（虢）",
+    "modernName": "河南省洛阳市",
+    "start": { "year": -770, "month": 1, "abs": -9228 },
+    "end": { "year": -750, "month": 12, "abs": -8989 },
+    "startAbs": -9228,
+    "endAbs": -8989,
+    "precision": "year",
+    "role": "primary",
+    "claimTrack": "xie",
+    "note": "周携王一系据《左传正义》引《竹书纪年》立于携，《清华简·系年》称诸侯立余臣于虢（携），并记晋文侯于携（虢）杀惠王。携的确切位置未详；按虢地关联记为今洛阳市级范围，不代表已确认具体遗址。",
+    "links": [
+      { "label": "周携王（引《左传正义》《清华简·系年》）", "url": "https://zh.wikipedia.org/wiki/周携王" }
+    ]
+  },
+  {
     "id": "cap-zou-state-yi-614",
     "dynastyId": "zou-state",
     "historicalName": "绎（邾国故城）",

@@ -1,6 +1,8 @@
 import {
   buildEntityDetail,
+  DEFAULT_EVENT_DISPLAY_CONFIG,
   DynastyCapitalSchema,
+  EventDisplayConfigSchema,
   EntityDetailSchema,
   eventKindLabel,
   eventSpanAbs,
@@ -57,7 +59,7 @@ async function loadStore() {
 /** Event dynasties provide context; their visibility does not gate the event marker. */
 async function loadEventsInWindow(fromAbs: number, toAbs: number) {
   const eventRows = await prisma.$queryRaw<RawEventRow[]>`
-    SELECT id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs,
+    SELECT id, name, kind, time_mode, precision, is_approximate, date_note, at_year, at_month, at_abs,
            start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning, content, location_id
     FROM events
     WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')`;
@@ -244,6 +246,22 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
 }
 
 export async function registerRoutes(app: FastifyInstance) {
+  app.get("/settings/events", async () => {
+    const row = await prisma.sysConfig.findUnique({ where: { key: "event-display" } });
+    const parsed = row ? EventDisplayConfigSchema.safeParse(row.value) : null;
+    return parsed?.success ? parsed.data : DEFAULT_EVENT_DISPLAY_CONFIG;
+  });
+
+  app.put("/settings/events", async (request, reply) => {
+    const parsed = EventDisplayConfigSchema.safeParse(request.body);
+    if (!parsed.success) return reply.code(400).send({ error: "Invalid event display settings" });
+    await prisma.sysConfig.upsert({
+      where: { key: "event-display" },
+      create: { key: "event-display", value: parsed.data },
+      update: { value: parsed.data },
+    });
+    return parsed.data;
+  });
   app.get("/health", async () => ({ ok: true }));
 
   app.get("/bounds", async (_request, reply) => {

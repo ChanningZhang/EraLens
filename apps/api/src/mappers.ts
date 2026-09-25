@@ -116,6 +116,7 @@ export type RawEventRow = {
   kind: string;
   time_mode: string;
   precision: string;
+  is_approximate: boolean;
   date_note: string | null;
   at_year: number | null;
   at_month: number | null;
@@ -392,6 +393,7 @@ export function mapEvent(
     kind: row.kind as Event["kind"],
     timeMode: (timeMode as Event["timeMode"] | null) ?? "point",
     precision: (row.precision as Event["precision"] | null) ?? "year",
+    isApproximate: ("isApproximate" in row ? row.isApproximate : row.is_approximate) ?? false,
     dateNote: dateNote ?? undefined,
     at: atYear != null && atMonth != null ? { year: atYear, month: atMonth } : undefined,
     start:

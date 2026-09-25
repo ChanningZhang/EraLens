@@ -24,7 +24,6 @@ export type PlacedEvent = {
   showBand: boolean;
   markerWidth: number;
   anchorX: number;
-  badgeOriginX?: number;
   bandLeft: number;
   bandWidth: number;
   top: number;
@@ -36,7 +35,7 @@ export type PlacedEvent = {
  * deterministic and mirror the 11px sans-serif label closely. CJK glyphs in
  * the product font are full-em; Latin glyphs use compact approximations.
  */
-export function eventMarkerWidth(name: string): number {
+export function eventMarkerWidth(name: string, approximate = false): number {
   let labelWidth = 0;
   for (const character of Array.from(name)) {
     if (/\s/u.test(character)) {
@@ -51,7 +50,7 @@ export function eventMarkerWidth(name: string): number {
       labelWidth += EVENT_LABEL_FONT_SIZE * 0.62;
     }
   }
-  return Math.min(EVENT_MARKER_WIDTH, EVENT_MARKER_CHROME_WIDTH + labelWidth);
+  return Math.min(EVENT_MARKER_WIDTH, EVENT_MARKER_CHROME_WIDTH + labelWidth + (approximate ? 18 : 0));
 }
 
 export function eventHasBand(event: Event): boolean {
@@ -105,7 +104,7 @@ export function eventHitInterval(
 ): { left: number; right: number } {
   const span = eventSpanAbs(event);
   const x = projectAbs(viewport, span.anchorAbs);
-  const markerWidth = eventMarkerWidth(event.name);
+  const markerWidth = eventMarkerWidth(event.name, event.isApproximate);
   let left = x - EVENT_MARKER_DOT_OFFSET;
   let right = left + markerWidth;
   if (eventHasBand(event)) {
@@ -147,6 +146,10 @@ export function packEventLanes(
 }
 
 export type EventBadgePosition = { laneId: string; anchorX: number; edge: "top" | "bottom" };
+
+function eventCanDriftHorizontally(event: Event): boolean {
+  return event.isApproximate;
+}
 
 /** Anchor a dated event to its unique active card, using participants to disambiguate overlap. */
 export function eventTargetReign(event: Event, reigns: readonly Reign[]): Reign | null {
@@ -207,17 +210,25 @@ export function layoutPlacedEventBadges(
       const width = entry.item.markerWidth;
       const minLeft = EVENT_MARKER_VIEW_PAD;
       const maxLeft = Math.max(minLeft, viewportWidth - EVENT_MARKER_VIEW_PAD - width);
-      const naturalLeft = clamp(entry.left, minLeft, maxLeft);
+      const canDrift = eventCanDriftHorizontally(entry.item.event);
+      const naturalLeft = canDrift ? entry.left : clamp(entry.left, minLeft, maxLeft);
       let chosen: { edge: "top" | "bottom"; left: number } | undefined;
+      const searchRadius = canDrift
+        ? Math.max(1, items.length) * (EVENT_MARKER_WIDTH + EVENT_LANE_PAD)
+        : EVENT_BADGE_MAX_NUDGE;
       for (const edge of ["top", "bottom"] as const) {
         const intervals = occupied[edge];
         const candidates = [naturalLeft];
-        for (const interval of intervals) {
-          candidates.push(interval.right + EVENT_LANE_PAD);
+        if (canDrift) {
+          for (let offset = 12; offset <= searchRadius; offset += 12) {
+            candidates.push(naturalLeft - offset, naturalLeft + offset);
+          }
+        } else {
+          for (const interval of intervals) candidates.push(interval.right + EVENT_LANE_PAD);
         }
         const left = candidates
-          .filter((candidate) => candidate >= naturalLeft && candidate <= maxLeft)
-          .filter((candidate) => candidate - naturalLeft <= EVENT_BADGE_MAX_NUDGE)
+          .filter((candidate) => canDrift || (candidate >= minLeft && candidate <= maxLeft))
+          .filter((candidate) => Math.abs(candidate - naturalLeft) <= searchRadius)
           .filter((candidate) => intervals.every((interval) =>
             candidate + width + EVENT_LANE_PAD <= interval.left ||
             candidate >= interval.right + EVENT_LANE_PAD,
@@ -226,7 +237,11 @@ export function layoutPlacedEventBadges(
         if (left != null) { chosen = { edge, left }; break; }
       }
       if (!chosen) continue;
-      positions.set(entry.item.event.id, { laneId, anchorX: chosen.left + EVENT_MARKER_DOT_OFFSET, edge: chosen.edge });
+      positions.set(entry.item.event.id, {
+        laneId,
+        anchorX: chosen.left + EVENT_MARKER_DOT_OFFSET,
+        edge: chosen.edge,
+      });
       const list = occupied[chosen.edge];
       const insertAt = list.findIndex((interval) => interval.left > chosen!.left);
       list.splice(insertAt < 0 ? list.length : insertAt, 0, { left: chosen.left, right: chosen.left + width });
@@ -236,25 +251,68 @@ export function layoutPlacedEventBadges(
 }
 
 export function layoutEvents(events: Event[], viewport: ViewportState): PlacedEvent[] {
-  const intervals = events.map((event) => ({
+  const exactEvents = events.filter((event) => !(event.isApproximate && event.timeMode === "point"));
+  const intervals = exactEvents.map((event) => ({
     id: event.id,
     ...eventHitInterval(event, viewport),
   }));
   const lanes = packEventLanes(intervals);
+  const approximatePoints = events
+    .filter((event) => event.isApproximate && event.timeMode === "point")
+    .map((event) => ({ event, naturalX: projectAbs(viewport, eventSpanAbs(event).anchorAbs), width: eventMarkerWidth(event.name, event.isApproximate) }))
+    .sort((a, b) => a.naturalX - b.naturalX || a.event.id.localeCompare(b.event.id));
+  const occupied: { left: number; right: number }[][] = [];
+  for (const event of exactEvents) {
+    const lane = lanes.get(event.id) ?? 0;
+    const list = occupied[lane] ?? (occupied[lane] = []);
+    list.push(eventHitInterval(event, viewport));
+  }
+  const approximatePlacement = new Map<string, { lane: number; anchorX: number }>();
+  for (const entry of approximatePoints) {
+    const naturalLeft = entry.naturalX - EVENT_MARKER_DOT_OFFSET;
+    // Candidate offsets are relative to the absolute time anchor, never to the
+    // viewport edges. Panning therefore translates labels without reassigning
+    // their slots or lanes.
+    const searchRadius = Math.max(1, events.length) * (EVENT_MARKER_WIDTH + EVENT_LANE_PAD);
+    const candidates = [naturalLeft];
+    for (let offset = 12; offset <= searchRadius; offset += 12) {
+      candidates.push(naturalLeft - offset, naturalLeft + offset);
+    }
+    let lane = 0;
+    let chosenLeft: number | undefined;
+    for (; lane < occupied.length + 1; lane += 1) {
+      const laneIntervals = occupied[lane] ?? (occupied[lane] = []);
+      chosenLeft = candidates.find((left) => laneIntervals.every((interval) =>
+        left + entry.width + EVENT_LANE_PAD <= interval.left ||
+        left >= interval.right + EVENT_LANE_PAD,
+      ));
+      if (chosenLeft != null) {
+        laneIntervals.push({ left: chosenLeft, right: chosenLeft + entry.width });
+        break;
+      }
+    }
+    if (chosenLeft != null) {
+      approximatePlacement.set(entry.event.id, {
+        lane,
+        anchorX: chosenLeft + EVENT_MARKER_DOT_OFFSET,
+      });
+    }
+  }
   return events.map((event) => {
     const span = eventSpanAbs(event);
     const showBand = eventHasBand(event);
     const range = projectRange(viewport, span.startAbs, span.endAbs);
     const bandWidth = Math.max(8, range.width);
     const naturalX = projectAbs(viewport, span.anchorAbs);
-    const lane = lanes.get(event.id) ?? 0;
-    const markerWidth = eventMarkerWidth(event.name);
+    const approximate = approximatePlacement.get(event.id);
+    const lane = approximate?.lane ?? lanes.get(event.id) ?? 0;
+    const markerWidth = eventMarkerWidth(event.name, event.isApproximate);
     return {
       event,
       lane,
       showBand,
       markerWidth,
-      anchorX: showBand
+      anchorX: approximate?.anchorX ?? (showBand
         ? stickyEventMarkerX({
             anchorX: naturalX,
             bandLeft: range.left,
@@ -263,7 +321,7 @@ export function layoutEvents(events: Event[], viewport: ViewportState): PlacedEv
             gutter: viewport.gutterPx,
             markerWidth,
           })
-        : naturalX,
+        : naturalX),
       bandLeft: range.left,
       bandWidth,
       top: EVENT_ROW_TOP + lane * EVENT_ROW_STEP,

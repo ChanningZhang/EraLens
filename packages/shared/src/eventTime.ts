@@ -19,6 +19,8 @@ export function eventKindLabel(kind: Event["kind"]): string {
       return "灾害";
     case "commerce":
       return "商业";
+    case "agriculture":
+      return "农业";
     case "finance":
       return "金融";
     case "idiom":

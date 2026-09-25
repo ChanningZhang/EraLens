@@ -19,6 +19,7 @@ import {
   TIMELINE_RAIL_CHIP_HEIGHT_PX,
   TIMELINE_RAIL_CHIP_TOP_PX,
   type Dynasty,
+  type EventDisplayConfig,
 } from "@eralens/shared";
 import { useDataBounds, useTimelineData } from "../hooks/useTimelineData";
 import { useDynastyCapitals } from "../hooks/useDynastyCapitals";
@@ -72,7 +73,7 @@ function laneColorTokenFor(
   return map.get(dynastyId) ?? fallbackLaneColorToken(dynastyId);
 }
 
-export function TimelineStage() {
+export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConfig }) {
   const stageRef = useRef<HTMLDivElement>(null);
   const mapDragRef = useRef<{ pointerId: number; x: number; y: number } | null>(null);
   const [mapView, setMapView] = useState({ scale: 1, x: 0, y: 0 });
@@ -175,13 +176,11 @@ export function TimelineStage() {
     const windowStart = viewport.centerAbs - 60;
     const windowEnd = viewport.centerAbs + 60;
     return data.events.filter((event) => {
-      const isSelected = selection.selected?.type === "event" && selection.selected.id === event.id;
-      if ((!event.location && event.locations.length === 0) || (event.kind !== "battle" && !isSelected)) return false;
-      if (isSelected) return true;
+      if (!eventDisplay.kinds[event.kind] || (!event.location && event.locations.length === 0) || event.kind !== "battle") return false;
       const span = eventSpanAbs(event);
       return rangesIntersect(span.startAbs, span.endAbs, windowStart, windowEnd);
     });
-  }, [data, viewport.centerAbs, selection.selected]);
+  }, [data, viewport.centerAbs, eventDisplay]);
   const dynastyNamesById = useMemo(() => {
     const map = new Map<string, string>();
     for (const dynasty of timelineCatalog?.dynasties ?? []) {
@@ -192,12 +191,10 @@ export function TimelineStage() {
 
   const laneGroups = data?.dynastyLaneGroups ?? [];
 
-  const { railEvents, badgeEvents, badgePositions } = useMemo(() => {
-    if (!data) return { railEvents: [], badgeEvents: [], badgePositions: new Map() };
-    const visible = filterViewportEvents(
-      data.events.filter((event) => shouldShowEvent(event, viewport.lod)),
-      viewport,
-    );
+  const { badgeEvents, badgePositions } = useMemo(() => {
+    if (!data) return { badgeEvents: [], badgePositions: new Map() };
+    const candidates = data.events.filter((event) => eventDisplay.kinds[event.kind] && shouldShowEvent(event, viewport.lod));
+    const visible = filterViewportEvents(candidates, viewport);
     const laneIdByDynastyId = new Map<string, string>();
     for (const dynasty of placed) {
       laneIdByDynastyId.set(dynasty.id, dynasty.id);
@@ -206,16 +203,27 @@ export function TimelineStage() {
         laneIdByDynastyId.set(phaseId, dynasty.id);
       }
     }
-    const projected = layoutEvents(visible, viewport);
+    const projected = layoutEvents(candidates, viewport);
     const badgePositions = layoutPlacedEventBadges(projected, laneIdByDynastyId, viewport.widthPx);
+    const visibleIds = new Set(visible.map((event) => event.id));
     return {
-      railEvents: visible.filter((event) => !badgePositions.has(event.id)),
-      badgeEvents: projected.filter((item) => badgePositions.has(item.event.id)),
+      badgeEvents: projected.filter((item) => visibleIds.has(item.event.id) && badgePositions.has(item.event.id)),
       badgePositions,
     };
-  }, [data, viewport, placed, laneGroups]);
+  }, [data, viewport, placed, laneGroups, eventDisplay]);
 
-  const eventPlaced = useMemo(() => layoutEvents(railEvents, viewport), [railEvents, viewport]);
+  const eventCandidates = useMemo(
+    () => data?.events.filter((event) => eventDisplay.kinds[event.kind] && shouldShowEvent(event, viewport.lod) && !badgePositions.has(event.id)) ?? [],
+    [data, eventDisplay, viewport.lod, badgePositions],
+  );
+  const eventPlaced = useMemo(
+    () => {
+      const placedEvents = layoutEvents(eventCandidates, viewport);
+      const visibleIds = new Set(filterViewportEvents(eventCandidates, viewport).map((event) => event.id));
+      return placedEvents.filter((item) => visibleIds.has(item.event.id));
+    },
+    [eventCandidates, viewport],
+  );
 
   const railHeight = eventRailHeight(eventLaneCount(eventPlaced));
   const reignsByDynasty = useMemo(() => {
@@ -315,7 +323,6 @@ export function TimelineStage() {
       const unit = reign && lane && resolveStackedCardUnit(reign, lane.reigns, laneGroups);
       return {
         ...item,
-        badgeOriginX: item.anchorX,
         anchorX: position?.anchorX ?? item.anchorX,
         top: position?.edge === "bottom"
           ? lane

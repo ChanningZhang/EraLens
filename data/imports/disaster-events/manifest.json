@@ -1,0 +1,65 @@
+{
+  "slug": "disaster-events",
+  "title": "跨时期重大灾害事件",
+  "window": {
+    "startYear": 11,
+    "startMonth": 1,
+    "endYear": 1879,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "minimal",
+  "generatedAt": "2026-09-25",
+  "counts": {
+    "persons": 0,
+    "dynasties": 0,
+    "reigns": 0,
+    "events": 4,
+    "relations": 0
+  },
+  "sources": [
+    {
+      "label": "《三国志·魏书·文帝纪》注引曹丕《与吴质书》",
+      "url": "https://zh.wikisource.org/zh-hans/與吳質書"
+    },
+    {
+      "label": "中央研究院历史语言研究所：林富士《东汉晚期的疫疠与宗教》",
+      "url": "https://www.ihp.sinica.edu.tw/~linfs/fslin/e-han.pdf"
+    },
+    {
+      "label": "《汉书·王莽传》",
+      "url": "https://zh.wikisource.org/zh-hans/漢書/卷099中"
+    },
+    {
+      "label": "《后汉书·王景传》",
+      "url": "https://zh.wikisource.org/zh-hans/後漢書/卷76"
+    },
+    {
+      "label": "水利知识服务平台：中国黄河水利史",
+      "url": "https://www.shuizhishi.cn/c/2020-04-09/520973.shtml"
+    },
+    {
+      "label": "中央研究院历史语言研究所：明代北京的瘟疫与帝国医疗体系的应变",
+      "url": "https://www11.ihp.sinica.edu.tw/storage/w2_file/3028acXZKHg.pdf"
+    },
+    {
+      "label": "北京市人民政府：北京历史上的疫情防控",
+      "url": "https://www.visitbeijing.com.cn/article/47QoNewiJhe"
+    },
+    {
+      "label": "Journal of Chinese History, Cambridge University Press: Drought and Famine in Northwest China",
+      "url": "https://www.cambridge.org/core/journals/journal-of-chinese-history/article/drought-and-famine-in-northwest-china-a-late-victorian-tragedy/5693EF8F6E7B5BDAED2802E185D26F56"
+    },
+    {
+      "label": "中国人民大学清史研究所：丁戊奇荒研究资料",
+      "url": "https://iqh.ruc.edu.cn/old/zgzhslt/ztyj_zh/mq/d42483df837e43e9a15226525fd321e2.htm"
+    }
+  ],
+  "notes": [
+    "本包收录对广域人口、社会或水系造成显著影响，且不能由王朝泳道与君主在位信息表达的灾害事件。",
+    "建安疫病依曹丕书信、曹植《说疫气》及相关研究记为217年；不把其扩展为196—217年的单场疫情，也不推断鼠疫或伤寒病原。",
+    "新莽黄河决口至王景治河按史载锚点表示长期河患的概略区间，并非逐年连续洪水记录。",
+    "崇祯十六年疫情按年精度记录；原始史籍月序为农历。病原与死亡规模存在史料及研究不确定性。",
+    "丁戊奇荒各研究的起讫口径不一；区间包含旱象发展至灾情缓解，未录入争议较大的死亡人数估计。"
+  ]
+}

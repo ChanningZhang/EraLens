@@ -26,12 +26,10 @@
     0 2px 7px color-mix(in srgb, var(--color-ink) 14%, transparent);
 }
 
-.badgeConnector {
-  position: absolute;
-  top: 11px;
-  height: 1px;
-  background: color-mix(in srgb, var(--color-ink-muted) 45%, transparent);
-  pointer-events: none;
+.approximateTag {
+  font-size: 10px;
+  opacity: 0.72;
+  flex: 0 0 auto;
 }
 
 .event {
@@ -119,6 +117,18 @@
   transform: translateX(calc(-1 * var(--dot-nudge))) translateY(-1px);
 }
 
+.settingsSample {
+  position: relative;
+  display: inline-flex;
+  max-width: none;
+  min-height: 24px;
+  padding: 3px 8px 3px 6px;
+  transform: none;
+  cursor: default;
+  pointer-events: none;
+  backdrop-filter: none;
+}
+
 .dot {
   flex: 0 0 auto;
   width: var(--dot-size);
@@ -164,6 +174,12 @@
 .marker[data-event-kind="commerce"] {
   --event-color: var(--color-ochre);
   --event-fill: color-mix(in srgb, var(--color-ochre) 9%, var(--color-surface));
+  --event-dot-radius: 1px;
+}
+
+.marker[data-event-kind="agriculture"] {
+  --event-color: var(--color-jade);
+  --event-fill: color-mix(in srgb, var(--color-jade) 9%, var(--color-surface));
   --event-dot-radius: 1px;
 }
 

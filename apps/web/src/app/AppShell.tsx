@@ -1,16 +1,21 @@
 import { useEffect, useRef, useState } from "react";
 import { getRepository } from "@/data/repository";
 import {
+  DEFAULT_EVENT_DISPLAY_CONFIG,
+  EventKindSchema,
+  eventKindLabel,
   TIMELINE_GUTTER_PX,
   TIMELINE_RAIL_INSET_PX,
   TIMELINE_RAIL_LABEL_WIDTH_PX,
   type SearchHit,
 } from "@eralens/shared";
+import type { EventDisplayConfig } from "@eralens/shared";
 import { DetailPanel } from "@/features/detail/components/DetailPanel";
 import { ResizeHandle } from "@/features/detail/components/ResizeHandle";
 import { CursorGuide } from "@/features/timeline/components/CursorGuide";
 import { Ruler } from "@/features/timeline/components/Ruler";
 import { TimelineStage } from "@/features/timeline/components/TimelineStage";
+import { EventKindPreview } from "@/features/timeline/components/EventLayer";
 import { useSelection } from "@/features/timeline/hooks/useSelection";
 import { useTimelineWheel } from "@/features/timeline/hooks/useTimelineWheel";
 import { useViewport } from "@/features/timeline/hooks/useViewport";
@@ -27,6 +32,40 @@ export function AppShell() {
   useTimelineWheel();
   const [search, setSearch] = useState("");
   const [searchHits, setSearchHits] = useState<SearchHit[]>([]);
+  const [eventSettingsOpen, setEventSettingsOpen] = useState(false);
+  const [eventDisplay, setEventDisplay] = useState<EventDisplayConfig>(DEFAULT_EVENT_DISPLAY_CONFIG);
+  const eventKinds = EventKindSchema.options;
+
+  useEffect(() => {
+    let active = true;
+    const source = import.meta.env.VITE_DATA_SOURCE ?? "http";
+    const load = async () => {
+      try {
+        if (source === "http") {
+          const response = await fetch(`${import.meta.env.VITE_API_BASE ?? "/api"}/settings/events`);
+          if (response.ok && active) setEventDisplay(await response.json());
+        } else {
+          const stored = localStorage.getItem("eralens-event-display");
+          if (stored && active) setEventDisplay(JSON.parse(stored));
+        }
+      } catch { /* Keep defaults available while settings are unreachable. */ }
+    };
+    void load();
+    return () => { active = false; };
+  }, []);
+
+  const updateEventKind = async (kind: (typeof eventKinds)[number], enabled: boolean) => {
+    const next = { kinds: { ...eventDisplay.kinds, [kind]: enabled } };
+    setEventDisplay(next);
+    const source = import.meta.env.VITE_DATA_SOURCE ?? "http";
+    try {
+      if (source === "http") {
+        await fetch(`${import.meta.env.VITE_API_BASE ?? "/api"}/settings/events`, {
+          method: "PUT", headers: { "content-type": "application/json" }, body: JSON.stringify(next),
+        });
+      } else localStorage.setItem("eralens-event-display", JSON.stringify(next));
+    } catch { /* The current session still uses the selected values. */ }
+  };
 
   useEffect(() => {
     if (boundsQuery.data) {
@@ -175,11 +214,23 @@ export function AppShell() {
             </span>
           </div>
         </div>
+        <div className={styles.settingsWrap}>
+          <button type="button" className={styles.settingsButton} aria-label="事件显示设置" title="事件显示设置" aria-expanded={eventSettingsOpen} onClick={() => setEventSettingsOpen((open) => !open)}>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm8 4.7v-2.4l-2-.7a6.2 6.2 0 0 0-.6-1.4l.9-1.9-1.7-1.7-1.9.9a6.2 6.2 0 0 0-1.4-.6l-.7-2h-2.4l-.7 2a6.2 6.2 0 0 0-1.4.6l-1.9-.9-1.7 1.7.9 1.9a6.2 6.2 0 0 0-.6 1.4l-2 .7v2.4l2 .7c.1.5.3 1 .6 1.4l-.9 1.9 1.7 1.7 1.9-.9c.4.3.9.5 1.4.6l.7 2h2.4l.7-2c.5-.1 1-.3 1.4-.6l1.9.9 1.7-1.7-.9-1.9c.3-.4.5-.9.6-1.4l2-.7Z"/></svg>
+          </button>
+          {eventSettingsOpen && <section className={styles.settingsPanel} aria-label="事件展示设置">
+            <h2>事件展示</h2>
+            {eventKinds.map((kind) => <label key={kind} className={styles.settingsOption}>
+              <input type="checkbox" aria-label={`显示${eventKindLabel(kind)}事件`} checked={eventDisplay.kinds[kind] ?? true} onChange={(event) => void updateEventKind(kind, event.target.checked)} />
+              <EventKindPreview kind={kind} label={eventKindLabel(kind)} />
+            </label>)}
+          </section>}
+        </div>
       </header>
 
       <div className={styles.body}>
         <div ref={stageRef} className={styles.stageWrap}>
-          <TimelineStage />
+          <TimelineStage eventDisplay={eventDisplay} />
         </div>
       </div>
 

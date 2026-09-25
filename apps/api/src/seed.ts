@@ -147,6 +147,7 @@ async function main() {
           kind: event.kind,
           timeMode: event.timeMode,
           precision: event.precision,
+          isApproximate: event.isApproximate,
           dateNote: event.dateNote,
           atYear: event.at?.year,
           atMonth: event.at?.month,

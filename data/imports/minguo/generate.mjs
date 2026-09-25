@@ -240,7 +240,7 @@ const events = [
     precision: "day",
     dateNote: "1924年11月5日，国民军将溥仪逐出紫禁城",
     at: ymDay(1924, 11, 5),
-    dynastyIds: ["roc", "qing"],
+    dynastyIds: ["qing"],
     participantIds: ["puyi", "feng-yuxiang"],
     summary: "冯玉祥北京政变后执行修正清室优待条件，溥仪被逐出紫禁城，逊清小朝廷终结。",
   }),
