@@ -7,6 +7,7 @@ import {
   projectAbs,
   projectClippedRange,
   projectRange,
+  worldPanOffsetX,
 } from "./coordinates";
 
 describe("projectRange", () => {
@@ -64,6 +65,14 @@ describe("projectRange", () => {
       expect(centerGuideX({ ...viewport, centerAbs: viewport.centerAbs + offset })).toBe(
         expected,
       );
+    }
+  });
+
+  it("projects world-positioned cards exactly like the regular timeline geometry", () => {
+    const viewport = { centerAbs: 7000.37, pxPerMonth: 3.25, widthPx: 1200, gutterPx: 104 };
+    for (const abs of [6800, 7000, 7250]) {
+      expect(worldPanOffsetX(viewport) + abs * viewport.pxPerMonth)
+        .toBeCloseTo(projectAbs(viewport, abs), 8);
     }
   });
 });

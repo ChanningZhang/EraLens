@@ -2,6 +2,7 @@ import {
   fateRelationLabel,
   isFateRelationKind,
   resolveFateRelations,
+  type ResolvedFateRelation,
   resolveReignCardLabel,
   buildPreQinClanContext,
   type Relation,
@@ -10,6 +11,7 @@ import {
 import { expandWindow } from "./visible";
 import { clampAbsToBarX, layoutLaneReignBar, type ReignCardLayout } from "./reignCardLayout";
 import { partitionReignRecords } from "./reignClusters";
+import type { PreparedReignGeometry } from "./reignClusters";
 import { getWindow, projectAbs, type ViewportState } from "./coordinates";
 
 export type TimelineLaneLayout = {
@@ -19,6 +21,7 @@ export type TimelineLaneLayout = {
   records: readonly Reign[];
   /** Lane 本色 from the dynasty token. Never master gold. */
   color: string;
+  geometryByReignId?: ReadonlyMap<string, PreparedReignGeometry>;
 };
 
 export type PlacedReignFate = {
@@ -141,15 +144,22 @@ export function layoutReignFates(
     posthumousNames?: string[];
     templeNames?: string[];
   }> = new Map(),
+  resolvedRelations?: readonly ResolvedFateRelation[],
 ): PlacedReignFate[] {
   const { startAbs, endAbs } = getWindow(viewport);
   const buffered = expandWindow(startAbs, endAbs, 120);
+  const candidates = (resolvedRelations ?? resolveFateRelations(relations, reigns)).filter(
+    ({ relation }) => relation.atAbs >= buffered.startAbs && relation.atAbs <= buffered.endAbs,
+  );
+  if (candidates.length === 0) return [];
+  const neededReigns = new Set(candidates.flatMap(({ fromReign, toReign }) => [fromReign.id, toReign.id]));
   const layoutByReignId = new Map<string, ReignCardLayout>();
   const colorByReignId = new Map<string, string>();
 
   for (const lane of lanes) {
     const { rulers } = partitionReignRecords(lane.records);
     for (const reign of lane.records) {
+      if (!neededReigns.has(reign.id)) continue;
       colorByReignId.set(reign.id, lane.color);
       const layout = layoutLaneReignBar(
         reign,
@@ -158,17 +168,17 @@ export function layoutReignFates(
         viewport,
         lane.top,
         personNames.get(reign.personId),
+        buildPreQinClanContext(personDisplay.get(reign.personId)),
+        [],
+        lane.geometryByReignId?.get(reign.id),
       );
       if (layout) layoutByReignId.set(reign.id, layout);
     }
   }
 
   const placed: PlacedReignFate[] = [];
-  for (const item of resolveFateRelations(relations, reigns)) {
+  for (const item of candidates) {
     const { relation, fromReign, toReign } = item;
-    if (relation.atAbs < buffered.startAbs || relation.atAbs > buffered.endAbs) {
-      continue;
-    }
 
     const fromLayout = layoutByReignId.get(fromReign.id);
     const toLayout = layoutByReignId.get(toReign.id);

@@ -1,6 +1,5 @@
 import { formatAbsSpanTooltip, type Dynasty, type Reign } from "@eralens/shared";
-import { useViewport } from "../hooks/useViewport";
-import { projectAbs } from "../model/coordinates";
+import { memo } from "react";
 import { HoverTooltip } from "./HoverTooltip";
 import styles from "./ReignGapCard.module.css";
 
@@ -12,13 +11,13 @@ type Props = {
   gap: Reign;
   dynasty: Dynasty;
   color: string;
+  pxPerMonth: number;
 };
 
-export function ReignGapCard({ gap, dynasty, color }: Props) {
-  const viewport = useViewport();
-  const left = projectAbs(viewport, gap.startAbs);
+function ReignGapCardImpl({ gap, dynasty, color, pxPerMonth }: Props) {
+  const left = gap.startAbs * pxPerMonth;
   const endExclusive = gap.endAbs + 1;
-  const width = Math.max(1, projectAbs(viewport, endExclusive) - left);
+  const width = Math.max(1, (endExclusive - gap.startAbs) * pxPerMonth);
   if (width < MIN_GAP_PX) return null;
 
   const showLabel = width >= LABEL_MIN_PX;
@@ -48,3 +47,5 @@ export function ReignGapCard({ gap, dynasty, color }: Props) {
     </div>
   );
 }
+
+export const ReignGapCard = memo(ReignGapCardImpl);

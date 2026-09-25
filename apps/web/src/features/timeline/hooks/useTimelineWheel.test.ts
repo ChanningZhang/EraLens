@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   applyStageVerticalScroll,
+  createFramePanAccumulator,
   isStageVerticallyScrollable,
   isZoomWheel,
   resolveWheelAction,
@@ -27,6 +28,28 @@ describe("resolveWheelAction", () => {
 
   it("leaves vertical scrolling to nested panels", () => {
     expect(resolveWheelAction(4, 40, false, false)).toBe("ignore");
+  });
+});
+
+describe("createFramePanAccumulator", () => {
+  it("applies one cumulative pan per frame and flushes before a zoom", () => {
+    const applied: number[] = [];
+    const callbacks = new Map<number, FrameRequestCallback>();
+    let nextId = 1;
+    const pan = createFramePanAccumulator(
+      (delta) => applied.push(delta),
+      (callback) => { const id = nextId++; callbacks.set(id, callback); return id; },
+      (id) => { callbacks.delete(id); },
+    );
+    pan.queue(-12);
+    pan.queue(-8);
+    expect(callbacks.size).toBe(1);
+    callbacks.get(1)?.(0);
+    expect(applied).toEqual([-20]);
+    pan.queue(9);
+    pan.flush();
+    expect(applied).toEqual([-20, 9]);
+    expect(callbacks.size).toBe(0);
   });
 });
 

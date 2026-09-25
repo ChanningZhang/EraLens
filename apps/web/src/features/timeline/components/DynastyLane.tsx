@@ -1,4 +1,5 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { memo } from "react";
 import {
   TIMELINE_RAIL_INSET_PX,
   TIMELINE_RAIL_LABEL_WIDTH_PX,
@@ -13,15 +14,13 @@ import {
   type DynastyLaneGroup,
   type Reign,
 } from "@eralens/shared";
-import { useMemo } from "react";
 import { useSelection } from "../hooks/useSelection";
 import { useViewport } from "../hooks/useViewport";
-import { laneLabelAnchorAbs } from "../model/coordinates";
+import { laneLabelAnchorAbs, worldPanOffsetX } from "../model/coordinates";
 import type { PlacedDynasty } from "../model/laneLayout";
 import {
-  assignReignStacks,
-  dynastyBarHeightForReigns,
   STACK_ROW_HEIGHT,
+  type PreparedReignGeometry,
 } from "../model/reignClusters";
 import { selectionStore } from "../state/selectionStore";
 import { ReignCard } from "./ReignCard";
@@ -34,7 +33,11 @@ type Props = {
   dynasty: PlacedDynasty;
   laneColorToken: ColorToken;
   reigns: Reign[];
-  missingReigns: Reign[];
+  visibleReigns: Reign[];
+  visibleMissingReigns: Reign[];
+  reignGeometry: ReadonlyMap<string, PreparedReignGeometry>;
+  rowCount: number;
+  barHeight: number;
   dynastiesById: Map<string, Dynasty>;
   personNames: Map<string, string>;
   personClans: Map<
@@ -54,11 +57,68 @@ type Props = {
   badges: PlacedEvent[];
 };
 
+type LaneCardsProps = Pick<Props,
+  "visibleReigns" | "visibleMissingReigns" | "reignGeometry" | "dynastiesById" |
+  "personNames" | "personClans" | "laneColorToken"
+> & { fallbackDynasty: Dynasty; laneColor: string; pxPerMonth: number };
+
+const LaneCards = memo(function LaneCards({
+  visibleReigns, visibleMissingReigns, reignGeometry, dynastiesById,
+  personNames, personClans, laneColorToken, fallbackDynasty, laneColor, pxPerMonth,
+}: LaneCardsProps) {
+  return (
+    <>
+      {visibleMissingReigns.map((gap) => (
+        <ReignGapCard
+          key={gap.id}
+          gap={gap}
+          dynasty={dynastiesById.get(gap.dynastyId) ?? fallbackDynasty}
+          color={laneColor}
+          pxPerMonth={pxPerMonth}
+        />
+      ))}
+      {visibleReigns.map((reign) => {
+        const reignDynasty = dynastiesById.get(reign.dynastyId) ?? fallbackDynasty;
+        const geometry = reignGeometry.get(reign.id);
+        if (!geometry) return null;
+        return (
+          <ReignCard
+            key={reign.id}
+            reign={reign}
+            dynasty={reignDynasty}
+            color={resolveReignColorValue(reignDynasty, reign, laneColorToken)}
+            geometry={geometry}
+            pxPerMonth={pxPerMonth}
+            personName={personNames.get(reign.personId)}
+            personClan={personClans.get(reign.personId)}
+            master={reign.isMain === true}
+          />
+        );
+      })}
+    </>
+  );
+}, (a, b) =>
+  a.visibleReigns === b.visibleReigns &&
+  a.visibleMissingReigns === b.visibleMissingReigns &&
+  a.reignGeometry === b.reignGeometry &&
+  a.dynastiesById === b.dynastiesById &&
+  a.personNames === b.personNames &&
+  a.personClans === b.personClans &&
+  a.laneColorToken === b.laneColorToken &&
+  a.laneColor === b.laneColor &&
+  a.pxPerMonth === b.pxPerMonth &&
+  a.fallbackDynasty.id === b.fallbackDynasty.id,
+);
+
 export function DynastyLane({
   dynasty,
   laneColorToken,
   reigns,
-  missingReigns,
+  visibleReigns,
+  visibleMissingReigns,
+  reignGeometry,
+  rowCount,
+  barHeight,
   dynastiesById,
   personNames,
   personClans,
@@ -71,6 +131,7 @@ export function DynastyLane({
   const reduceMotion = useReducedMotion();
   const selection = useSelection();
   const labelAnchorAbs = laneLabelAnchorAbs(viewport);
+  const cardPanX = worldPanOffsetX(viewport);
   const laneGroup = getDynastyLaneGroup(dynasty.id, laneGroups);
   const activePhaseDynasty =
     laneGroup == null
@@ -91,8 +152,6 @@ export function DynastyLane({
   // Lane floor / gap cards stay on the persisted token. The frozen name
   // chip overlays gold when the center guide falls within a master reign.
   const laneColor = resolveDynastyColorValue(activePhaseDynasty, laneColorToken);
-  const { items, rowCount } = assignReignStacks(reigns, laneGroups);
-  const barHeight = dynastyBarHeightForReigns(reigns, laneGroups);
   return (
     <motion.div
       className={styles.lane}
@@ -145,36 +204,19 @@ export function DynastyLane({
       </button>
 
       <div className={styles.reignSequence}>
-        <div className={styles.cards}>
-          {missingReigns.map((gap) => (
-            <ReignGapCard
-              key={gap.id}
-              gap={gap}
-              dynasty={dynasty as Dynasty}
-              color={laneColor}
-            />
-          ))}
-          {items.map(({ reign }) => {
-            const reignDynasty = dynastiesById.get(reign.dynastyId) ?? dynasty;
-            const main = reign.isMain === true;
-            return (
-              <ReignCard
-                key={reign.id}
-                reign={reign}
-                dynasty={reignDynasty as Dynasty}
-                color={resolveReignColorValue(
-                  reignDynasty as Dynasty,
-                  reign,
-                  laneColorToken,
-                )}
-                reigns={reigns}
-                personName={personNames.get(reign.personId)}
-                personClan={personClans.get(reign.personId)}
-                master={main}
-                laneGroups={laneGroups}
-              />
-            );
-          })}
+        <div className={styles.cards} style={{ transform: `translateX(${cardPanX}px)` }}>
+          <LaneCards
+            visibleReigns={visibleReigns}
+            visibleMissingReigns={visibleMissingReigns}
+            reignGeometry={reignGeometry}
+            dynastiesById={dynastiesById}
+            personNames={personNames}
+            personClans={personClans}
+            laneColorToken={laneColorToken}
+            fallbackDynasty={dynasty}
+            laneColor={laneColor}
+            pxPerMonth={viewport.pxPerMonth}
+          />
         </div>
       </div>
       <EventLayer placed={badges} height={height} laneBadges />

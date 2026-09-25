@@ -334,6 +334,16 @@ export function eventLaneCount(placed: PlacedEvent[]): number {
   return Math.max(...placed.map((item) => item.lane)) + 1;
 }
 
+/** Remove rows vacated by badges without repeating event projection and packing. */
+export function compactEventLanes(placed: PlacedEvent[]): PlacedEvent[] {
+  const used = [...new Set(placed.map((item) => item.lane))].sort((a, b) => a - b);
+  const ranks = new Map(used.map((lane, index) => [lane, index]));
+  return placed.map((item) => {
+    const lane = ranks.get(item.lane) ?? 0;
+    return { ...item, lane, top: EVENT_ROW_TOP + lane * EVENT_ROW_STEP };
+  });
+}
+
 export function eventRailHeight(laneCount: number): number {
   if (laneCount <= 0) return EVENT_RAIL_MIN_HEIGHT;
   return Math.max(

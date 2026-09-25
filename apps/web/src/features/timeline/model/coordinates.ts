@@ -25,6 +25,11 @@ export function projectAbs(state: ViewportState, abs: AbsMonth): number {
   return gutterPxOf(state) + absToX(abs, startAbs, state.pxPerMonth);
 }
 
+/** Offset for cards positioned at their absolute month × scale. */
+export function worldPanOffsetX(state: ViewportState): number {
+  return gutterPxOf(state) - getWindow(state).startAbs * state.pxPerMonth;
+}
+
 export function absFromStageX(state: ViewportState, x: number): AbsMonth {
   const { startAbs } = getWindow(state);
   return startAbs + (x - gutterPxOf(state)) / state.pxPerMonth;

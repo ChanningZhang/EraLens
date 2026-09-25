@@ -9,6 +9,35 @@ const EDITABLE = "input, textarea, select, [contenteditable='true']";
 const WHEEL_OPTS: AddEventListenerOptions = { capture: true, passive: false };
 const GESTURE_OPTS: AddEventListenerOptions = { capture: true, passive: false };
 
+export function createFramePanAccumulator(
+  apply: (deltaPx: number) => void,
+  schedule: (callback: FrameRequestCallback) => number,
+  cancel: (id: number) => void,
+) {
+  let pending = 0;
+  let frame: number | null = null;
+  const flush = () => {
+    if (frame !== null) cancel(frame);
+    frame = null;
+    const delta = pending;
+    pending = 0;
+    if (delta !== 0) apply(delta);
+  };
+  return {
+    queue(deltaPx: number) {
+      pending += deltaPx;
+      if (frame === null) frame = schedule(() => flush());
+    },
+    flush,
+  };
+}
+
+const wheelPan = createFramePanAccumulator(
+  (deltaPx) => viewportStore.panByPixels(deltaPx),
+  (callback) => requestAnimationFrame(callback),
+  (id) => cancelAnimationFrame(id),
+);
+
 /** Mac trackpad pinch synthesizes ctrlKey; Cmd+scroll uses metaKey. */
 export function isZoomWheel(event: Pick<WheelEvent, "ctrlKey" | "metaKey">): boolean {
   return event.ctrlKey || event.metaKey;
@@ -122,6 +151,7 @@ function onWheel(event: WheelEvent) {
   event.preventDefault();
 
   if (action === "zoom") {
+    wheelPan.flush();
     const factor = wheelZoomFactor(event.deltaY);
     if (Math.abs(factor - 1) > 0.0005) {
       viewportStore.zoomBy(factor, resolveAnchorAbs(event.clientX));
@@ -129,7 +159,7 @@ function onWheel(event: WheelEvent) {
     return;
   }
 
-  viewportStore.panByPixels(-(event.deltaX + event.deltaY));
+  wheelPan.queue(-wheelDeltaPx(event.deltaX + event.deltaY, event.deltaMode));
 }
 
 type WebKitGestureEvent = Event & {

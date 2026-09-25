@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { memo, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   activeReignsAtAbs,
@@ -16,10 +16,12 @@ import {
   fallbackLaneColorToken,
   getDynastyLaneGroup,
   resolveDynastyColorValue,
+  resolveFateRelations,
   TIMELINE_RAIL_CHIP_HEIGHT_PX,
   TIMELINE_RAIL_CHIP_TOP_PX,
   type Dynasty,
   type EventDisplayConfig,
+  type Reign,
 } from "@eralens/shared";
 import { useDataBounds, useTimelineData } from "../hooks/useTimelineData";
 import { useDynastyCapitals } from "../hooks/useDynastyCapitals";
@@ -29,6 +31,7 @@ import { useTimelineCatalog } from "../hooks/useTimelineCatalog";
 import { useViewport } from "../hooks/useViewport";
 import { useSelection } from "../hooks/useSelection";
 import {
+  compactEventLanes,
   eventLaneCount,
   eventTargetReign,
   EVENT_BADGE_HALF_HEIGHT,
@@ -52,9 +55,10 @@ import {
   dynastyLaneHeightForViewport,
   LANE_PADDING_TOP,
   partitionReignRecords,
+  prepareLaneReignGeometry,
   resolveStackedCardUnit,
 } from "../model/reignClusters";
-import { expandWindow, filterVisibleDynasties } from "../model/visible";
+import { expandWindow, filterVisibleCardReigns, filterVisibleDynasties, filterVisibleGapReigns, filterVisiblePlacedPersons } from "../model/visible";
 import { CapitalMapLayer } from "./CapitalMapLayer";
 import { WarEventMapLayer } from "./WarEventMapLayer";
 import { ChinaMapBackground } from "./ChinaMapBackground";
@@ -66,6 +70,8 @@ import { ReignFateLayer } from "./ReignFateLayer";
 import styles from "./TimelineStage.module.css";
 import { layoutReignFates } from "../model/reignFateLayout";
 
+const StableChinaMapBackground = memo(ChinaMapBackground);
+
 function laneColorTokenFor(
   map: ReadonlyMap<string, ReturnType<typeof fallbackLaneColorToken>>,
   dynastyId: string,
@@ -73,10 +79,15 @@ function laneColorTokenFor(
   return map.get(dynastyId) ?? fallbackLaneColorToken(dynastyId);
 }
 
+function sameReignIds(a: readonly Reign[] | undefined, b: readonly Reign[]): boolean {
+  return a !== undefined && a.length === b.length && a.every((reign, index) => reign.id === b[index]?.id);
+}
+
 export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConfig }) {
   const stageRef = useRef<HTMLDivElement>(null);
   const mapDragRef = useRef<{ pointerId: number; x: number; y: number } | null>(null);
   const [mapView, setMapView] = useState({ scale: 1, x: 0, y: 0 });
+  const mapOffset = useMemo(() => ({ x: mapView.x, y: mapView.y }), [mapView.x, mapView.y]);
   const stageViewportHeight = useStageViewportHeight(stageRef);
   const reduceMotion = useReducedMotion();
   const viewport = useViewport();
@@ -191,8 +202,8 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
 
   const laneGroups = data?.dynastyLaneGroups ?? [];
 
-  const { badgeEvents, badgePositions } = useMemo(() => {
-    if (!data) return { badgeEvents: [], badgePositions: new Map() };
+  const { badgeEvents, badgePositions, eventPlaced } = useMemo(() => {
+    if (!data) return { badgeEvents: [], badgePositions: new Map(), eventPlaced: [] };
     const candidates = data.events.filter((event) => eventDisplay.kinds[event.kind] && shouldShowEvent(event, viewport.lod));
     const visible = filterViewportEvents(candidates, viewport);
     const laneIdByDynastyId = new Map<string, string>();
@@ -209,21 +220,9 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     return {
       badgeEvents: projected.filter((item) => visibleIds.has(item.event.id) && badgePositions.has(item.event.id)),
       badgePositions,
+      eventPlaced: compactEventLanes(projected.filter((item) => visibleIds.has(item.event.id) && !badgePositions.has(item.event.id))),
     };
   }, [data, viewport, placed, laneGroups, eventDisplay]);
-
-  const eventCandidates = useMemo(
-    () => data?.events.filter((event) => eventDisplay.kinds[event.kind] && shouldShowEvent(event, viewport.lod) && !badgePositions.has(event.id)) ?? [],
-    [data, eventDisplay, viewport.lod, badgePositions],
-  );
-  const eventPlaced = useMemo(
-    () => {
-      const placedEvents = layoutEvents(eventCandidates, viewport);
-      const visibleIds = new Set(filterViewportEvents(eventCandidates, viewport).map((event) => event.id));
-      return placedEvents.filter((item) => visibleIds.has(item.event.id));
-    },
-    [eventCandidates, viewport],
-  );
 
   const railHeight = eventRailHeight(eventLaneCount(eventPlaced));
   const reignsByDynasty = useMemo(() => {
@@ -278,9 +277,17 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     return map;
   }, [data]);
 
-  // Card height depends on zoom and records, not the horizontal pan position.
-  const laneHeightCache = useMemo(
-    () => new Map<string, number>(),
+  // Ownership, stacking, and caption height are independent of pan position.
+  const lanePreparedCache = useMemo(
+    () => new Map<string, {
+      records: NonNullable<typeof data>["reigns"];
+      reigns: NonNullable<typeof data>["reigns"];
+      missingReigns: NonNullable<typeof data>["reigns"];
+      geometry: ReturnType<typeof prepareLaneReignGeometry>;
+      height: number;
+      visibleReigns?: Reign[];
+      visibleMissingReigns?: Reign[];
+    }>(),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [reignsByDynasty, laneGroups, viewport.pxPerMonth, personNames, personDisplay],
   );
@@ -288,31 +295,40 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   const lanes = useMemo(() => {
     let top = railHeight;
     return placed.map((dynasty) => {
-      const records = collectLaneReigns(dynasty.id, reignsByDynasty, laneGroups);
-      const { rulers: reigns, missing: missingReigns } = partitionReignRecords(records);
-      const { rowCount } = assignReignStacks(reigns, laneGroups);
-      let height = laneHeightCache.get(dynasty.id);
-      if (height == null) {
-        height = dynastyLaneHeightForViewport(
+      let prepared = lanePreparedCache.get(dynasty.id);
+      if (!prepared) {
+        const records = collectLaneReigns(dynasty.id, reignsByDynasty, laneGroups);
+        const { rulers: reigns, missing: missingReigns } = partitionReignRecords(records);
+        const geometry = prepareLaneReignGeometry(reigns, laneGroups);
+        const height = dynastyLaneHeightForViewport(
           reigns,
           laneGroups,
           viewport,
           personNames,
           personDisplay,
         );
-        laneHeightCache.set(dynasty.id, height);
+        prepared = { records, reigns, missingReigns, geometry, height };
+        lanePreparedCache.set(dynasty.id, prepared);
       }
+      const { records, reigns, missingReigns, geometry, height } = prepared;
+      const { rowCount } = geometry;
+      const nextVisibleReigns = filterVisibleCardReigns(reigns, geometry.byId, viewport.startAbs, viewport.endAbs, viewport.pxPerMonth);
+      const nextVisibleMissingReigns = filterVisibleGapReigns(missingReigns, viewport.startAbs, viewport.endAbs, viewport.pxPerMonth);
+      if (!sameReignIds(prepared.visibleReigns, nextVisibleReigns)) prepared.visibleReigns = nextVisibleReigns;
+      if (!sameReignIds(prepared.visibleMissingReigns, nextVisibleMissingReigns)) prepared.visibleMissingReigns = nextVisibleMissingReigns;
+      const visibleReigns = prepared.visibleReigns!;
+      const visibleMissingReigns = prepared.visibleMissingReigns!;
       const chipHeight = TIMELINE_RAIL_CHIP_HEIGHT_PX;
       const chipTop =
         rowCount > 1
           ? top + height / 2 - chipHeight / 2
           : top + TIMELINE_RAIL_CHIP_TOP_PX;
       const badgeTop = top + LANE_PADDING_TOP - EVENT_BADGE_HALF_HEIGHT;
-      const item = { dynasty, records, reigns, missingReigns, top, height, badgeTop, chipTop, chipHeight };
+      const item = { dynasty, records, reigns, missingReigns, visibleReigns, visibleMissingReigns, geometry, top, height, badgeTop, chipTop, chipHeight };
       top += height;
       return item;
     });
-  }, [placed, railHeight, reignsByDynasty, laneGroups, viewport, personNames, personDisplay, laneHeightCache]);
+  }, [placed, railHeight, reignsByDynasty, laneGroups, viewport, personNames, personDisplay, lanePreparedCache]);
 
   const badgePlaced = useMemo(() => {
     const laneById = new Map(lanes.map((lane) => [lane.dynasty.id, lane]));
@@ -354,15 +370,21 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     [lanes, data?.dynastyGroups],
   );
 
+  const resolvedFates = useMemo(
+    () => data?.relations?.length ? resolveFateRelations(data.relations, data.reigns) : [],
+    [data],
+  );
+
   const fatePlaced = useMemo(() => {
-    if (!data?.relations?.length) return [];
+    if (!data?.relations?.length || resolvedFates.length === 0) return [];
     return layoutReignFates(
       data.relations,
       data.reigns,
-      lanes.map(({ dynasty, records, top }) => ({
+      lanes.map(({ dynasty, records, geometry, top }) => ({
         dynastyId: dynasty.id,
         top,
         records,
+        geometryByReignId: geometry.byId,
         color: resolveDynastyColorValue(
           dynasty,
           laneColorTokenFor(laneColorMap, dynasty.id),
@@ -371,8 +393,9 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       viewport,
       personNames,
       personDisplay,
+      resolvedFates,
     );
-  }, [data, lanes, laneColorMap, viewport, personNames, personDisplay]);
+  }, [data, lanes, laneColorMap, viewport, personNames, personDisplay, resolvedFates]);
 
   const dynastiesBottom = lanes.at(-1)
     ? lanes.at(-1)!.top + lanes.at(-1)!.height
@@ -388,6 +411,10 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     if (visiblePersons.length === 0) return [];
     return layoutPersons(visiblePersons, viewport);
   }, [visiblePersons, viewport]);
+  const mountedPersons = useMemo(
+    () => filterVisiblePlacedPersons(personPlaced, viewport.widthPx, viewport.gutterPx),
+    [personPlaced, viewport.widthPx, viewport.gutterPx],
+  );
 
   const personAreaHeight = personLayerHeight(personPlaced);
   const personLayerTop = dynastiesBottom + (personAreaHeight > 0 ? PERSON_LAYER_GAP : 0);
@@ -440,10 +467,10 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     >
       <div className={styles.mapUnderlay} aria-hidden="true">
         <div className={styles.viewportPanel}>
-          <ChinaMapBackground
+          <StableChinaMapBackground
             gutterPx={viewport.gutterPx}
             scale={mapView.scale}
-            offset={{ x: mapView.x, y: mapView.y }}
+            offset={mapOffset}
           />
         </div>
       </div>
@@ -497,13 +524,17 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
                 ))}
               </AnimatePresence>
               <AnimatePresence initial={false}>
-                {lanes.map(({ dynasty, reigns, missingReigns, top, height }) => (
+                {lanes.map(({ dynasty, reigns, visibleReigns, visibleMissingReigns, geometry, top, height }) => (
                   <DynastyLane
                     key={dynasty.id}
                     dynasty={dynasty}
                     laneColorToken={laneColorTokenFor(laneColorMap, dynasty.id)}
                     reigns={reigns}
-                    missingReigns={missingReigns}
+                    visibleReigns={visibleReigns}
+                    visibleMissingReigns={visibleMissingReigns}
+                    reignGeometry={geometry.byId}
+                    rowCount={geometry.rowCount}
+                    barHeight={geometry.barHeight}
                     dynastiesById={dynastiesById}
                     personNames={personNames}
                     personClans={personDisplay}
@@ -524,7 +555,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
           )}
           {showPersonLayer && (
             <PersonLayer
-              placed={personPlaced}
+              placed={mountedPersons}
               top={personLayerTop}
               height={personAreaHeight}
             />
@@ -541,7 +572,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
             atAbs={labelAnchorAbs}
             gutterPx={viewport.gutterPx}
             scale={mapView.scale}
-            offset={{ x: mapView.x, y: mapView.y }}
+            offset={mapOffset}
           />
         </div>
       </div>
@@ -552,7 +583,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
             atAbs={viewport.centerAbs}
             gutterPx={viewport.gutterPx}
             scale={mapView.scale}
-            offset={{ x: mapView.x, y: mapView.y }}
+            offset={mapOffset}
           />
         </div>
       </div>

@@ -22,6 +22,12 @@ function chunkKey(chunk: QueryChunk) {
   return ["timeline-chunk", TIMELINE_CACHE_VERSION, chunk.fromAbs, chunk.toAbs, SCOPE] as const;
 }
 
+function sameChunks(a: readonly QueryChunk[], b: readonly QueryChunk[]): boolean {
+  return a.length === b.length && a.every((chunk, index) =>
+    chunk.fromAbs === b[index]?.fromAbs && chunk.toAbs === b[index]?.toAbs,
+  );
+}
+
 async function fetchTimelineChunk(chunk: QueryChunk, lod: Lod) {
   const repo = await getRepository();
   return repo.getTimeline({
@@ -47,17 +53,21 @@ export function useTimelineData() {
   const viewport = useViewport();
   const queryClient = useQueryClient();
 
-  const chunks = useMemo(
-    () => listQueryChunks(viewport.startAbs - 60, viewport.endAbs + 60, viewport.lod),
-    [viewport.startAbs, viewport.endAbs, viewport.lod],
-  );
+  const requestedChunks = listQueryChunks(viewport.startAbs - 60, viewport.endAbs + 60, viewport.lod);
+  const stableChunksRef = useRef<{ lod: Lod; chunks: QueryChunk[] } | null>(null);
+  if (!stableChunksRef.current || stableChunksRef.current.lod !== viewport.lod ||
+      !sameChunks(stableChunksRef.current.chunks, requestedChunks)) {
+    stableChunksRef.current = { lod: viewport.lod, chunks: requestedChunks };
+  }
+  const chunks = stableChunksRef.current.chunks;
 
+  const queryOptions = useMemo(() => chunks.map((chunk) => ({
+    queryKey: chunkKey(chunk),
+    queryFn: () => fetchTimelineChunk(chunk, viewport.lod),
+    ...CHUNK_QUERY_OPTIONS,
+  })), [chunks, viewport.lod]);
   const chunkQueries = useQueries({
-    queries: chunks.map((chunk) => ({
-      queryKey: chunkKey(chunk),
-      queryFn: () => fetchTimelineChunk(chunk, viewport.lod),
-      ...CHUNK_QUERY_OPTIONS,
-    })),
+    queries: queryOptions,
   });
 
   const lastCompleteDataRef = useRef<TimelineSlice | undefined>(undefined);

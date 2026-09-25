@@ -72,12 +72,42 @@ export function timelineOwnershipInterval(request: OwnershipRequest): LeftOpenRi
   return preserveEarlierIntervalAtOverlap(interval, earlier);
 }
 
+/** Timeline slices and lane records are immutable; a new array is a new ownership revision. */
+const reignIntervalCache = new WeakMap<readonly Reign[], {
+  length: number;
+  dynasty: WeakMap<Reign, LeftOpenRightClosedInterval>;
+  lane: WeakMap<Reign, LeftOpenRightClosedInterval>;
+}>();
+const capitalIntervalCache = new WeakMap<readonly TimedCapital[], {
+  length: number;
+  intervals: WeakMap<TimedCapital, LeftOpenRightClosedInterval>;
+}>();
+
 export function reignOwnershipInterval(reign: Reign, reigns: readonly Reign[], scope: "dynasty" | "lane" = "dynasty") {
-  return timelineOwnershipInterval({ kind: "reign", item: reign, peers: reigns, scope });
+  let cached = reignIntervalCache.get(reigns);
+  if (!cached || cached.length !== reigns.length) {
+    cached = { length: reigns.length, dynasty: new WeakMap(), lane: new WeakMap() };
+    reignIntervalCache.set(reigns, cached);
+  }
+  const byReign = cached[scope];
+  const existing = byReign.get(reign);
+  if (existing) return existing;
+  const interval = timelineOwnershipInterval({ kind: "reign", item: reign, peers: reigns, scope });
+  byReign.set(reign, interval);
+  return interval;
 }
 
 export function capitalOwnershipInterval(capital: TimedCapital, capitals: readonly TimedCapital[]) {
-  return timelineOwnershipInterval({ kind: "capital", item: capital, peers: capitals });
+  let cached = capitalIntervalCache.get(capitals);
+  if (!cached || cached.length !== capitals.length) {
+    cached = { length: capitals.length, intervals: new WeakMap() };
+    capitalIntervalCache.set(capitals, cached);
+  }
+  const existing = cached.intervals.get(capital);
+  if (existing) return existing;
+  const interval = timelineOwnershipInterval({ kind: "capital", item: capital, peers: capitals });
+  cached.intervals.set(capital, interval);
+  return interval;
 }
 
 export function phaseOwnershipInterval(
@@ -119,11 +149,16 @@ export function capitalOwnsAbs(capital: TimedCapital, capitals: readonly TimedCa
 }
 
 export function activeReignsAtAbs(reigns: readonly Reign[], atAbs: number): Reign[] {
-  return reigns.filter((reign) => reignOwnsAbs(reign, reigns, atAbs));
+  // Recorded month bounds are a cheap superset of the precise ownership interval.
+  return reigns.filter((reign) =>
+    reign.startAbs <= atAbs && atAbs < reign.endAbs + 1 && reignOwnsAbs(reign, reigns, atAbs),
+  );
 }
 
 export function activeCapitalsAtAbs<T extends TimedCapital>(capitals: readonly T[], atAbs: number): T[] {
-  return capitals.filter((capital) => capitalOwnsAbs(capital, capitals, atAbs));
+  return capitals.filter((capital) =>
+    capital.startAbs <= atAbs && atAbs < capital.endAbs + 1 && capitalOwnsAbs(capital, capitals, atAbs),
+  );
 }
 
 /** Prefer explicit reign-capital links; otherwise match dynasty, track, and owned date ranges. */

@@ -43,6 +43,46 @@ export type StackedCardUnit = {
   unitHeight: number;
 };
 
+/** Pan-independent card geometry. Build once per lane data revision. */
+export type PreparedReignGeometry = StackedCardUnit & {
+  startAbs: number;
+  endExclusive: number;
+  visualStart: number;
+  visualEndExclusive: number;
+  stackIndex: number;
+  rowCount: number;
+  overlapsLowerRow: boolean;
+};
+
+export function prepareLaneReignGeometry(
+  reigns: Reign[],
+  laneGroups: readonly DynastyLaneGroup[] = [],
+): { items: StackedReign[]; byId: Map<string, PreparedReignGeometry>; barHeight: number; rowCount: number } {
+  const { items, rowCount } = assignReignStacks(reigns, laneGroups);
+  const spans = new Map(reigns.map((reign) => [reign.id, resolveReignVisualSpan(reign, reigns, laneGroups)]));
+  const byId = new Map<string, PreparedReignGeometry>();
+  let barHeight = STACK_ROW_HEIGHT;
+  for (const { reign } of items) {
+    const span = spans.get(reign.id)!;
+    const visual = reignVisualBounds(reign, span.startAbs, span.endExclusive);
+    const unit = resolveStackedCardUnit(reign, reigns, laneGroups);
+    barHeight = Math.max(barHeight, unit.unitTop + unit.unitHeight);
+    byId.set(reign.id, {
+      ...span,
+      ...unit,
+      visualStart: visual.start,
+      visualEndExclusive: visual.endExclusive,
+      rowCount,
+      overlapsLowerRow: items.some((item) => {
+        if (item.stackIndex <= span.stackIndex) return false;
+        const lower = spans.get(item.reign.id)!;
+        return lower.startAbs < span.endExclusive && lower.endExclusive > span.startAbs;
+      }),
+    });
+  }
+  return { items, byId, barHeight, rowCount };
+}
+
 export function stackRowHeightForReign(reign: Pick<Reign, "claimTrack">): number {
   return isParallelClaim(reign) ? PARALLEL_STACK_ROW_HEIGHT : STACK_ROW_HEIGHT;
 }

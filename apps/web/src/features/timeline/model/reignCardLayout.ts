@@ -12,6 +12,7 @@ import {
   resolveReignVisualSpan,
   resolveStackedCardUnit,
   STACK_ROW_HEIGHT,
+  type PreparedReignGeometry,
 } from "./reignClusters";
 import { projectAbs, type ViewportState } from "./coordinates";
 import { resolveReignBarLayout } from "./lod";
@@ -62,11 +63,12 @@ export function layoutLaneReignBar(
   personName?: string,
   clan?: PreQinClanContext | null,
   laneGroups: readonly DynastyLaneGroup[] = [],
+  geometry?: PreparedReignGeometry,
 ): ReignCardLayout | null {
   if (isSystemMissingReign(reign)) {
     return layoutMissingReignBar(reign, dynastyId, laneTop, viewport);
   }
-  return layoutRulerReignBar(reign, dynastyId, rulers, viewport, laneTop, personName, clan, laneGroups);
+  return layoutRulerReignBar(reign, dynastyId, rulers, viewport, laneTop, personName, clan, laneGroups, geometry);
 }
 
 function layoutRulerReignBar(
@@ -78,10 +80,13 @@ function layoutRulerReignBar(
   personName?: string,
   clan?: PreQinClanContext | null,
   laneGroups: readonly DynastyLaneGroup[] = [],
+  geometry?: PreparedReignGeometry,
 ): ReignCardLayout | null {
-  const { startAbs, endExclusive } = resolveReignVisualSpan(reign, reigns, laneGroups);
-  const { unitTop, unitHeight } = resolveStackedCardUnit(reign, reigns, laneGroups);
-  const visual = reignVisualBounds(reign, startAbs, endExclusive);
+  const span = geometry ?? resolveReignVisualSpan(reign, reigns, laneGroups);
+  const { unitTop, unitHeight } = geometry ?? resolveStackedCardUnit(reign, reigns, laneGroups);
+  const visual = geometry
+    ? { start: geometry.visualStart, endExclusive: geometry.visualEndExclusive }
+    : reignVisualBounds(reign, span.startAbs, span.endExclusive);
   const durationMonths = visual.endExclusive - visual.start;
   const visualWidth = Math.max(0, durationMonths * viewport.pxPerMonth);
   if (visualWidth <= 0) return null;

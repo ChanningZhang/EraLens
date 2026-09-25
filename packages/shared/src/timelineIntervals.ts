@@ -114,8 +114,8 @@ export function intervalContainsAbs(
   interval: LeftOpenRightClosedInterval,
   abs: AbsMonth,
 ): boolean {
-  return interval.startExclusive < dayNumber(pointFromAbsMonth(abs)) &&
-    dayNumber(pointFromAbsMonth(abs)) <= interval.endInclusive;
+  const day = dayNumber(pointFromAbsMonth(abs));
+  return interval.startExclusive < day && day <= interval.endInclusive;
 }
 
 export function intervalsIntersect(

@@ -205,6 +205,11 @@ const REIGN_YEAR_OVERRIDES = {
 
 /** Wiki 诸侯表合并复位段 → 多条 reign。Key: dynastyId → personName */
 const MULTI_REIGN_SPAN_EXPANSIONS = {
+  "zou-state": {
+    // 《左传》及邾隐公条目记其前506—前487年在位，后由邾桓公继位；
+    // 前473年隐公复位。按年精度顺序继位规则，前473年仍归桓公，复位段自前472年起。
+    // 邹国君主来自 curated additions，未经过此 wiki 行拆分器；拆分记录在下方直接建模。
+  },
   "zhongshan": {
     // 中山桓公先于魏灭中山时在位，约前380年复国后再次在位。
     "中山桓公": [
@@ -256,7 +261,8 @@ const zouDatedRulers = [
   ["zou-r15", "曹牼", "邾宣公", -572, -556, "宣公"],
   ["zou-r16", "曹华", "邾悼公", -555, -541, "悼公"],
   ["zou-r17", "曹穿", "邾庄公", -540, -507, "庄公"],
-  ["zou-r18", "曹益", "邾隐公", -506, -471, "隐公"],
+  ["zou-r18", "曹益", "邾隐公", -506, -487, "隐公"],
+  ["zou-r19", "曹革", "邾桓公", -486, -473, "桓公"],
   ["zou-mu-gong", "曹某", "邹穆公", -382, -330, "穆公"],
 ].map(([personId, personName, title, startYear, endYear, posthumousName]) => ({
   dynastyId: "zou-state", personId, personName, title, startYear, endYear, posthumousName,
@@ -272,7 +278,46 @@ const zouDatedRulers = [
   reignId: `reign-${personId}-zou-state`,
 }));
 const CURATED_REIGN_ADDITIONS = {
-  "zou-state": [...zouEarlyRulers, ...zouDatedRulers],
+  "zou-state": [
+    ...zouEarlyRulers,
+    ...zouDatedRulers,
+    {
+      dynastyId: "zou-state", personId: "zou-r18", personName: "曹益", title: "邾隐公",
+      posthumousName: "隐公", startYear: -472, endYear: -471, ordinal: 2,
+      reignId: "reign-zou-r18-zou-state-2",
+    },
+    {
+      dynastyId: "zou-state", personId: "zou-he", personName: "曹何", title: "邾子何",
+      posthumousName: null, startYear: -470, endYear: -456,
+      endDateConfidence: "interpolated", reignId: "reign-zou-he-zou-state",
+    },
+    {
+      dynastyId: "zou-state", personId: "system-missing-ruler", personName: "史料缺", title: "史料缺",
+      startYear: -455, endYear: -441, startDateConfidence: "interpolated", endDateConfidence: "interpolated",
+      reignId: "reign-zou-missing-after-he-1",
+    },
+    {
+      dynastyId: "zou-state", personId: "system-missing-ruler", personName: "史料缺", title: "史料缺",
+      startYear: -440, endYear: -426, startDateConfidence: "interpolated", endDateConfidence: "interpolated",
+      reignId: "reign-zou-missing-after-he-2",
+    },
+    {
+      dynastyId: "zou-state", personId: "zou-kaogong", personName: "曹考公", title: "邾娄考公",
+      posthumousName: "考公", startYear: -425, endYear: -411,
+      startDateConfidence: "interpolated", endDateConfidence: "interpolated",
+      reignId: "reign-zou-kaogong-zou-state",
+    },
+    {
+      dynastyId: "zou-state", personId: "system-missing-ruler", personName: "史料缺", title: "史料缺",
+      startYear: -410, endYear: -396, startDateConfidence: "interpolated", endDateConfidence: "interpolated",
+      reignId: "reign-zou-missing-after-kaogong-1",
+    },
+    {
+      dynastyId: "zou-state", personId: "system-missing-ruler", personName: "史料缺", title: "史料缺",
+      startYear: -395, endYear: -383, startDateConfidence: "interpolated", endDateConfidence: "interpolated",
+      reignId: "reign-zou-missing-after-kaogong-2",
+    },
+  ],
   "wu-chunqiu": [
     {
       dynastyId: "wu-chunqiu",

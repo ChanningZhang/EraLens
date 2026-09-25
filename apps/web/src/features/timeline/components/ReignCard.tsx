@@ -1,13 +1,11 @@
-import { useMemo } from "react";
+import { memo, useMemo } from "react";
 import {
   type Dynasty,
-  type DynastyLaneGroup,
   type Reign,
   buildPreQinClanContext,
   formatReignSpanTooltip,
   DATE_CONFIDENCE_LABEL,
   isUncertainDateConfidence,
-  reignVisualBounds,
   isParallelClaim,
   PARALLEL_CLAIM_LABEL,
   resolveReignCardGivenName,
@@ -18,8 +16,6 @@ import {
 import { useQuery } from "@tanstack/react-query";
 import { getRepository } from "@/data/repository";
 import { useSelection } from "../hooks/useSelection";
-import { useViewport } from "../hooks/useViewport";
-import { projectAbs } from "../model/coordinates";
 import {
   buildReignCardTooltip,
   resolveReignBarLayout,
@@ -27,12 +23,11 @@ import {
   shouldShowReignCardMeta,
 } from "../model/lod";
 import {
-  assignReignStacks,
-  resolveReignVisualSpan,
-  resolveStackedCardUnit,
   STACK_ROW_HEIGHT,
+  type PreparedReignGeometry,
 } from "../model/reignClusters";
 import { selectionStore } from "../state/selectionStore";
+import { viewportStore } from "../state/viewportStore";
 import { HoverTooltip } from "./HoverTooltip";
 import { ReignWavyEdge } from "./ReignWavyEdge";
 import styles from "./ReignCard.module.css";
@@ -44,7 +39,6 @@ type Props = {
   reign: Reign;
   dynasty: Dynasty;
   color: string;
-  reigns: Reign[];
   personName?: string;
   personClan?: {
     title?: string;
@@ -54,43 +48,31 @@ type Props = {
     templeNames?: string[];
   };
   master?: boolean;
-  laneGroups?: readonly DynastyLaneGroup[];
+  geometry: PreparedReignGeometry;
+  pxPerMonth: number;
 };
 
-export function ReignCard({
+function ReignCardImpl({
   reign,
   dynasty,
   color,
-  reigns,
   personName: personNameFromTimeline,
   personClan,
   master = false,
-  laneGroups = [],
+  geometry,
+  pxPerMonth,
 }: Props) {
-  const viewport = useViewport();
   const selection = useSelection();
-  const { startAbs, endExclusive, stackIndex } = resolveReignVisualSpan(
-    reign,
-    reigns,
-    laneGroups,
-  );
-  const { items, rowCount } = assignReignStacks(reigns, laneGroups);
-  const { unitTop, unitHeight } = resolveStackedCardUnit(reign, reigns, laneGroups);
+  const { unitTop, unitHeight, stackIndex, rowCount, overlapsLowerRow } = geometry;
   const compactStack = unitHeight < STACK_ROW_HEIGHT;
-  const overlapsLowerRow = items.some((item) => {
-    if (item.stackIndex <= stackIndex) return false;
-    const span = resolveReignVisualSpan(item.reign, reigns, laneGroups);
-    return span.startAbs < endExclusive && span.endExclusive > startAbs;
-  });
   const captionPlacement = resolveReignCaptionPlacement({
     stackIndex,
     rowCount,
     overlapsLowerRow,
   });
-  const visual = reignVisualBounds(reign, startAbs, endExclusive);
-  const durationMonths = visual.endExclusive - visual.start;
-  const visualWidth = Math.max(0, durationMonths * viewport.pxPerMonth);
-  const anchor = (visual.start + visual.endExclusive) / 2;
+  const durationMonths = geometry.visualEndExclusive - geometry.visualStart;
+  const visualWidth = Math.max(0, durationMonths * pxPerMonth);
+  const anchor = (geometry.visualStart + geometry.visualEndExclusive) / 2;
   const uncertainStart = isUncertainDateConfidence(reign.startDateConfidence);
   const uncertainEnd = isUncertainDateConfidence(reign.endDateConfidence);
   const seamInsetLeft = uncertainStart ? UNCERTAIN_SEAM_GAP_PX : 0;
@@ -113,56 +95,38 @@ export function ReignCard({
   });
 
   const personName = personNameFromTimeline ?? personQuery.data;
-  const clan = buildPreQinClanContext(personClan);
-  const label = resolveReignCardLabel(reign, personName, {
-    cardWidthPx: visualWidth,
-    clan,
-  });
-  const barLayout = resolveReignBarLayout(visualWidth, [...label].length);
-  const left = barLayout.centerOnAnchor
-    ? projectAbs(viewport, anchor) - barLayout.unitWidthPx / 2
-    : projectAbs(viewport, visual.start);
-  const detail = barLayout.captionBelow ? "below" : barLayout.textLayout.level;
-  const parallel = isParallelClaim(reign);
-  const meta = resolveReignCardMeta(reign, personName, clan);
-  const metaGlyphCount = meta ? [...meta.name].length : 0;
-  const showMeta = shouldShowReignCardMeta(
-    barLayout.barWidthPx,
-    [...label].length,
-    metaGlyphCount,
-  );
-  const givenName = resolveReignCardGivenName(reign, personName, clan);
-  const regionLabel = resolveRocReignRegionLabel(reign, dynasty.name);
-  const tooltipName =
-    givenName && givenName !== label
+  const { label, barLayout, detail, parallel, meta, showMeta, regionLabel, claimTooltip, tooltipText } = useMemo(() => {
+    const clan = buildPreQinClanContext(personClan);
+    const label = resolveReignCardLabel(reign, personName, { cardWidthPx: visualWidth, clan });
+    const labelLength = [...label].length;
+    const barLayout = resolveReignBarLayout(visualWidth, labelLength);
+    const detail = barLayout.captionBelow ? "below" : barLayout.textLayout.level;
+    const parallel = isParallelClaim(reign);
+    const meta = resolveReignCardMeta(reign, personName, clan);
+    const showMeta = shouldShowReignCardMeta(barLayout.barWidthPx, labelLength, meta ? [...meta.name].length : 0);
+    const givenName = resolveReignCardGivenName(reign, personName, clan);
+    const regionLabel = resolveRocReignRegionLabel(reign, dynasty.name);
+    const tooltipName = givenName && givenName !== label
       ? givenName
-      : personName && personName !== label
-        ? personName
-        : label;
-  const timeTooltip = formatReignSpanTooltip(reign);
-  const dateConfidenceNote = [
-    uncertainStart && reign.startDateConfidence
-      ? `起年${DATE_CONFIDENCE_LABEL[reign.startDateConfidence]}`
-      : null,
-    uncertainEnd && reign.endDateConfidence
-      ? `迄年${DATE_CONFIDENCE_LABEL[reign.endDateConfidence]}`
-      : null,
-  ]
-    .filter(Boolean)
-    .join("；");
-  const claimTooltip = parallel
-    ? `${PARALLEL_CLAIM_LABEL}${reign.claimLabel ? `・${reign.claimLabel}` : ""}`
-    : undefined;
-  const tooltipText = buildReignCardTooltip({
-    detail,
-    showMeta,
-    meta,
-    tooltipName,
-    timeTooltip: dateConfidenceNote
-      ? `${timeTooltip}\n${dateConfidenceNote}`
-      : timeTooltip,
-    claimTooltip,
-  });
+      : personName && personName !== label ? personName : label;
+    const timeTooltip = formatReignSpanTooltip(reign);
+    const dateConfidenceNote = [
+      uncertainStart && reign.startDateConfidence ? `起年${DATE_CONFIDENCE_LABEL[reign.startDateConfidence]}` : null,
+      uncertainEnd && reign.endDateConfidence ? `迄年${DATE_CONFIDENCE_LABEL[reign.endDateConfidence]}` : null,
+    ].filter(Boolean).join("；");
+    const claimTooltip = parallel
+      ? `${PARALLEL_CLAIM_LABEL}${reign.claimLabel ? `・${reign.claimLabel}` : ""}`
+      : undefined;
+    const tooltipText = buildReignCardTooltip({
+      detail, showMeta, meta, tooltipName,
+      timeTooltip: dateConfidenceNote ? `${timeTooltip}\n${dateConfidenceNote}` : timeTooltip,
+      claimTooltip,
+    });
+    return { label, barLayout, detail, parallel, meta, showMeta, regionLabel, claimTooltip, tooltipText };
+  }, [reign, personName, personClan, dynasty.name, visualWidth, uncertainStart, uncertainEnd]);
+  const left = barLayout.centerOnAnchor
+    ? anchor * pxPerMonth - barLayout.unitWidthPx / 2
+    : geometry.visualStart * pxPerMonth;
 
   const className = useMemo(() => {
     return [
@@ -234,7 +198,7 @@ export function ReignCard({
                   reign.startAbs,
                   { focusReignId: reign.id },
                 );
-                selectionStore.syncToUrl(viewport.centerAbs);
+                selectionStore.syncToUrl(viewportStore.getSnapshot().centerAbs);
               }}
               aria-label={
                 claimTooltip
@@ -266,3 +230,5 @@ export function ReignCard({
     </div>
   );
 }
+
+export const ReignCard = memo(ReignCardImpl);

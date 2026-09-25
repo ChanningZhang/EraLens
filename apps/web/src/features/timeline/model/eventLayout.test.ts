@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { EventSchema, absMonth, type Reign } from "@eralens/shared";
 import { projectAbs } from "./coordinates";
 import {
+  compactEventLanes,
   layoutEventBadges,
   layoutPlacedEventBadges,
   eventTargetReign,
@@ -16,6 +17,19 @@ import {
   packEventLanes,
   stickyEventMarkerX,
 } from "./eventLayout";
+
+describe("compactEventLanes", () => {
+  it("removes vacated badge rows while retaining collision-free rail placement", () => {
+    const atAbs = absMonth(500, 12);
+    const viewport = { centerAbs: atAbs, pxPerMonth: 2, widthPx: 1000 };
+    const events = ["badge", "rail-a", "rail-b"].map((id) => EventSchema.parse({
+      id, name: id, atAbs, precision: "year", dynastyIds: ["d"],
+    }));
+    const all = layoutEvents(events, viewport);
+    const rail = compactEventLanes(all.filter((item) => item.event.id !== "badge"));
+    expect(rail.map((item) => item.lane)).toEqual([0, 1]);
+  });
+});
 
 describe("layoutEventBadges", () => {
   const viewport = { centerAbs: absMonth(-356, 12), pxPerMonth: 3, widthPx: 1000 };
