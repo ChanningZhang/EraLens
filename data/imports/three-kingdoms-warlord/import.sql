@@ -90,11 +90,10 @@ INSERT INTO events (id, name, kind, time_mode, precision, is_approximate, date_n
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, is_approximate = EXCLUDED.is_approximate, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning, content = EXCLUDED.content, location_id = EXCLUDED.location_id;
 
 -- event_dynasties
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('guandu', 'han-east') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('chibi', 'wei') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('chibi', 'shu') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('chibi', 'wu') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('liu-bei-takes-yizhou', 'han-east') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('liu-bei-takes-yizhou', 'shu') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('yiling', 'shu') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('yiling', 'wu') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('deng-ai-crosses-yinping', 'wei') ON CONFLICT DO NOTHING;
