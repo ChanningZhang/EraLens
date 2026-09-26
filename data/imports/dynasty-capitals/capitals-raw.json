@@ -2036,33 +2036,6 @@
     ]
   },
   {
-    "id": "cap-han-zhao-changan-304",
-    "dynastyId": "han-zhao",
-    "historicalName": "长安",
-    "modernName": "陕西省西安市",
-    "start": {
-      "year": 304,
-      "month": 1,
-      "abs": 3648
-    },
-    "end": {
-      "year": 329,
-      "month": 12,
-      "abs": 3959
-    },
-    "startAbs": 3648,
-    "endAbs": 3959,
-    "precision": "year",
-    "role": "primary",
-    "note": "前赵（汉赵）都城长安。",
-    "links": [
-      {
-        "label": "维基百科",
-        "url": "https://zh.wikipedia.org/wiki/前赵"
-      }
-    ]
-  },
-  {
     "id": "cap-cheng-han-chengdu-304",
     "dynastyId": "cheng-han",
     "historicalName": "成都",
@@ -5368,6 +5341,161 @@
       {
         "label": "维基百科",
         "url": "https://zh.wikipedia.org/wiki/北京市"
+      }
+    ]
+  },
+  {
+    "id": "cap-han-zhao-zuoguocheng-304",
+    "dynastyId": "han-zhao",
+    "historicalName": "左国城",
+    "modernName": "山西省吕梁市方山县",
+    "start": {
+      "year": 304,
+      "month": 1,
+      "abs": 3648
+    },
+    "end": {
+      "year": 304,
+      "month": 12,
+      "abs": 3659
+    },
+    "startAbs": 3648,
+    "endAbs": 3659,
+    "precision": "year",
+    "role": "primary",
+    "note": "刘渊304年在左国城建汉称王。现代地名定位到方山县范围；南村城址被认为是左国城相关遗址，坐标为县域约略点。",
+    "links": [
+      {
+        "label": "《晋书·载记第一·刘元海》",
+        "url": "https://zh.wikisource.org/zh-hans/晋书/卷101"
+      },
+      {
+        "label": "汉赵（迁都沿革）",
+        "url": "https://zh.wikipedia.org/wiki/汉赵"
+      }
+    ]
+  },
+  {
+    "id": "cap-han-zhao-liting-305",
+    "dynastyId": "han-zhao",
+    "historicalName": "黎亭",
+    "modernName": "山西省长治市壶关县",
+    "start": {
+      "year": 305,
+      "month": 1,
+      "abs": 3660
+    },
+    "end": {
+      "year": 307,
+      "month": 12,
+      "abs": 3695
+    },
+    "startAbs": 3660,
+    "endAbs": 3695,
+    "precision": "year",
+    "role": "primary",
+    "note": "305年离石一带饥荒，刘渊迁黎亭就食；此处按都城迁移沿革记录，现代定位仅至壶关县范围，非已确认遗址坐标。",
+    "links": [
+      {
+        "label": "《晋书·载记第一·刘元海》",
+        "url": "https://zh.wikisource.org/zh-hans/晋书/卷101"
+      },
+      {
+        "label": "汉赵（迁都沿革）",
+        "url": "https://zh.wikipedia.org/wiki/汉赵"
+      }
+    ]
+  },
+  {
+    "id": "cap-han-zhao-puzi-308",
+    "dynastyId": "han-zhao",
+    "historicalName": "蒲子",
+    "modernName": "山西省临汾市隰县",
+    "start": {
+      "year": 308,
+      "month": 1,
+      "abs": 3696
+    },
+    "end": {
+      "year": 308,
+      "month": 12,
+      "abs": 3707
+    },
+    "startAbs": 3696,
+    "endAbs": 3707,
+    "precision": "year",
+    "role": "primary",
+    "note": "308年刘渊迁都蒲子，308年十月称帝；现代定位至今隰县范围，未把县城中心当作已确认古城遗址。",
+    "links": [
+      {
+        "label": "《晋书·载记第一·刘元海》",
+        "url": "https://zh.wikisource.org/zh-hans/晋书/卷101"
+      },
+      {
+        "label": "汉赵（迁都沿革）",
+        "url": "https://zh.wikipedia.org/wiki/汉赵"
+      }
+    ]
+  },
+  {
+    "id": "cap-han-zhao-pingyang-309",
+    "dynastyId": "han-zhao",
+    "historicalName": "平阳",
+    "modernName": "山西省临汾市",
+    "start": {
+      "year": 309,
+      "month": 1,
+      "abs": 3708
+    },
+    "end": {
+      "year": 318,
+      "month": 12,
+      "abs": 3827
+    },
+    "startAbs": 3708,
+    "endAbs": 3827,
+    "precision": "year",
+    "role": "primary",
+    "note": "309年刘渊自蒲子迁都平阳。平阳在今临汾一带，坐标为城市范围约略点。318年靳准之乱后平阳失守。",
+    "links": [
+      {
+        "label": "《晋书·载记第一·刘元海》",
+        "url": "https://zh.wikisource.org/zh-hans/晋书/卷101"
+      },
+      {
+        "label": "汉赵（迁都沿革）",
+        "url": "https://zh.wikipedia.org/wiki/汉赵"
+      }
+    ]
+  },
+  {
+    "id": "cap-han-zhao-changan-319",
+    "dynastyId": "han-zhao",
+    "historicalName": "长安",
+    "modernName": "陕西省西安市",
+    "start": {
+      "year": 319,
+      "month": 1,
+      "abs": 3828
+    },
+    "end": {
+      "year": 329,
+      "month": 12,
+      "abs": 3959
+    },
+    "startAbs": 3828,
+    "endAbs": 3959,
+    "precision": "year",
+    "role": "primary",
+    "note": "刘曜平定靳准之乱后于319年迁都长安并改国号为赵；329年为后赵所灭。",
+    "links": [
+      {
+        "label": "《晋书·载记第一·刘元海》",
+        "url": "https://zh.wikisource.org/zh-hans/晋书/卷101"
+      },
+      {
+        "label": "汉赵（迁都沿革）",
+        "url": "https://zh.wikipedia.org/wiki/汉赵"
       }
     ]
   }

@@ -127,6 +127,14 @@ function ReignCardImpl({
   const left = barLayout.centerOnAnchor
     ? anchor * pxPerMonth - barLayout.unitWidthPx / 2
     : geometry.visualStart * pxPerMonth;
+  const selectReign = () => {
+    selectionStore.select(
+      { type: "person", id: reign.personId },
+      reign.startAbs,
+      { focusReignId: reign.id },
+    );
+    selectionStore.syncToUrl(viewportStore.getSnapshot().centerAbs);
+  };
 
   const className = useMemo(() => {
     return [
@@ -192,14 +200,7 @@ function ReignCardImpl({
                     }
                   : {}),
               }}
-              onClick={() => {
-                selectionStore.select(
-                  { type: "person", id: reign.personId },
-                  reign.startAbs,
-                  { focusReignId: reign.id },
-                );
-                selectionStore.syncToUrl(viewportStore.getSnapshot().centerAbs);
-              }}
+              onClick={selectReign}
               aria-label={
                 claimTooltip
                   ? `${label} ${regionLabel} ${claimTooltip}`
@@ -219,13 +220,16 @@ function ReignCardImpl({
         {uncertainEnd && <ReignWavyEdge side="right" />}
       </div>
       {detail === "below" && (
-        <span
+        <button
+          type="button"
           className={
             captionPlacement === "above" ? styles.captionAbove : styles.caption
           }
+          onClick={selectReign}
+          aria-label={`${label} 在位详情`}
         >
           {label}
-        </span>
+        </button>
       )}
     </div>
   );
