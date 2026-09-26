@@ -297,6 +297,10 @@ const events = [
 // Supplemental links for events already in sui-tang-wudai-song
 const supplementalEventDynasties = [
   { eventId: "jingkang-incident", dynastyId: "jin-nvzhen" },
+];
+// A previously imported version incorrectly linked辽 to the 1127靖康之变.
+// Connection imports are additive, so remove this stale edge explicitly.
+const removedSupplementalEventDynasties = [
   { eventId: "jingkang-incident", dynastyId: "liao" },
 ];
 
@@ -356,6 +360,9 @@ const eventDynastySql = events.flatMap((e) => e.dynastyIds.map((d) => `INSERT IN
 const supplementalEventDynastySql = supplementalEventDynasties.map(
   ({ eventId, dynastyId }) => `INSERT INTO event_dynasties (event_id, dynasty_id) VALUES (${sqlStr(eventId)}, ${sqlStr(dynastyId)}) ON CONFLICT DO NOTHING;`,
 );
+const removedSupplementalEventDynastySql = removedSupplementalEventDynasties.map(
+  ({ eventId, dynastyId }) => `DELETE FROM event_dynasties WHERE event_id = ${sqlStr(eventId)} AND dynasty_id = ${sqlStr(dynastyId)};`,
+);
 const eventParticipantSql = events.flatMap((e) => e.participantIds.map((p) => `INSERT INTO event_participants (event_id, person_id) VALUES (${sqlStr(e.id)}, ${sqlStr(p)}) ON CONFLICT DO NOTHING;`));
 
 const sql = [
@@ -370,7 +377,7 @@ const sql = [
   "", "-- dynasties", ...dynasties.map(dynastySql),
   "", "-- reigns", ...importReigns.map(formatReignSql),
   "", "-- events", ...events.map(eventSql),
-  "", "-- event_dynasties", ...eventDynastySql, ...supplementalEventDynastySql,
+  "", "-- event_dynasties", ...eventDynastySql, ...supplementalEventDynastySql, ...removedSupplementalEventDynastySql,
   "", "-- event_participants", ...eventParticipantSql,
   "", "-- relations", ...relations.map(relationSql),
   "", "COMMIT;", "",
@@ -409,6 +416,7 @@ const manifest = {
     "覆盖辽（916–1125）、女真金（1115–1234）及宋辽金对峙重大事件。",
     "金朝 id 为 jin-nvzhen，避免与两晋 jin-west/jin-east、后晋 jin-hou 冲突。",
     "南宋/北宋王朝与皇帝见 sui-tang-wudai-song；本包补充 event_dynasties 关联靖康之变、南宋建立。",
+    "移除靖康之变与辽朝的错误关联：辽于1125年覆亡，靖康之变发生于1125–1127年，1127年北宋覆亡阶段由金军直接攻宋；本包生成 SQL 显式删除旧关联。",
     "未收录西辽、北辽、东辽等辽亡后残余政权。",
     "辽金皇帝在位日取中国君主列表/维基百科通行换算，precision=day；1234年蔡州陷落同年更替用 month；承麟在位不足一日用 day。",
     "辽太祖卒至太宗即位间述律太后摄政、未立新帝，时间轴留白，不标史料缺。",

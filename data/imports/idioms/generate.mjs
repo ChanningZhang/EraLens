@@ -718,7 +718,7 @@ const events = [
     name: "三顾茅庐",
     meaning: "比喻诚心诚意地一再邀请或拜访。",
     at: ym(207),
-    dynastyIds: [],
+    dynastyIds: ["shu"],
     participantIds: ["liu-bei", "zhuge-liang"],
     summary: "刘备三次拜访诸葛亮于隆中，终请其出山。",
   }),
@@ -737,7 +737,7 @@ const events = [
     name: "望梅止渴",
     meaning: "比喻用空想安慰自己。",
     at: ym(208, 12),
-    dynastyIds: [],
+    dynastyIds: ["wei"],
     participantIds: ["cao-cao"],
     summary: "曹操行军士渴，言前有梅林，军士思梅生津而解渴。",
   }),
@@ -833,16 +833,6 @@ const events = [
 
   // 明
   idiomPoint({
-    id: "idiom-fen-shen-sui-gu",
-    name: "粉身碎骨",
-    meaning: "指牺牲生命，多指为某种目的而牺牲。",
-    at: ym(1449, 10),
-    dynastyIds: ["ming"],
-    participantIds: ["yu-qian"],
-    summary: "于谦《石灰吟》：「粉身碎骨浑不怕，要留清白在人间。」",
-    dateNote: "北京保卫战前后",
-  }),
-  idiomPoint({
     id: "idiom-zhi-xing-he-yi",
     name: "知行合一",
     meaning: "认识事物的道理与在现实中运用此道理，是密不可分的。",
@@ -912,12 +902,6 @@ const relations = [
     toRef: "event:yancheng-battle",
     kind: "other",
   },
-  {
-    id: "rel-idiom-fenshen-beijing",
-    fromRef: "event:idiom-fen-shen-sui-gu",
-    toRef: "event:beijing-defense",
-    kind: "other",
-  },
 ];
 
 for (const event of events) {
@@ -939,6 +923,10 @@ const cleanupManagedEventLinks = [
   "DELETE FROM event_dynasties WHERE event_id = 'idiom-feng-huo-xi-zhu-hou';",
   "DELETE FROM event_participants WHERE event_id = 'idiom-feng-huo-xi-zhu-hou';",
   "DELETE FROM events WHERE id = 'idiom-feng-huo-xi-zhu-hou';",
+  "DELETE FROM relations WHERE (from_type = 'event' AND from_id = 'idiom-fen-shen-sui-gu') OR (to_type = 'event' AND to_id = 'idiom-fen-shen-sui-gu');",
+  "DELETE FROM event_dynasties WHERE event_id = 'idiom-fen-shen-sui-gu';",
+  "DELETE FROM event_participants WHERE event_id = 'idiom-fen-shen-sui-gu';",
+  "DELETE FROM events WHERE id = 'idiom-fen-shen-sui-gu';",
 ].join("\n");
 
 writeImportPackage(__dirname, {
@@ -1019,6 +1007,7 @@ writeImportPackage(__dirname, {
       "有明确史事者经 relations 指向已有 battle/politics 事件（event→event）。",
       "典故国君引用各时期包已入库的 person id（如 gou-jian、qi-r25）；蔺相如、荆轲等名臣由本包 upsert。",
       "寓言类仅在典故文本或其直接叙事框架明确出现某国时关联该国；不依据作者国籍、作品成书背景或后世人物传说补挂王朝。文本未明确国名的东施效颦、相濡以沫、对牛弹琴、井底之蛙、失斧疑邻不关联具体王朝。朝三暮四据《列子·黄帝》“宋有狙公”关联宋；年代未详，时间轴暂定位约前320年。",
+      "三顾茅庐按用户指定关联蜀汉；望梅止渴按用户指定关联曹魏。两事及曹操诗歌年代均早于三国政权建立，王朝关联按人物/后世政权归属展示，不表示事件发生时政权已建立。",
       "杞人忧天原典未记具体年代；按故事中的杞国仍存续这一背景，将 marker 暂定位于约前500年（春秋末期），属推定年代。",
       "守株待兔出自《韩非子·五蠹》，原文仅称‘宋人’，没有纪年；因故事背景明确为宋国，将 marker 暂置约前300年，落在宋国前286年灭亡之前。此为寓言设定推测，不代表史实纪年。",
       "郑人买履原典《韩非子·外储说左上》仅称‘郑人’，没有纪年，无法考定具体年份；原定位前280年已晚于郑国前375年亡国。为使寓言故事背景与郑国存续期相符，marker 暂置约前400年，dateNote 明示为推测，不代表史实纪年。",

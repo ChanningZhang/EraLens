@@ -397,6 +397,7 @@ const sql = [
   "-- remove stale auto-generated 史料缺 (元首空缺期应留白)",
   sqlDeleteSystemMissingReigns(["roc"], sqlStr),
   "DELETE FROM relations WHERE id = 'rel-jiang-jieshi-jiang-jieshi-succession';",
+  "DELETE FROM event_dynasties WHERE event_id = 'puyi-leaves-forbidden-city';",
   "",
   "-- persons",
   ...importPersons.map(personSql),

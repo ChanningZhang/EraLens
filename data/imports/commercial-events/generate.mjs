@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { eventPoint, eventYear, writeImportPackage } from "../lib/sqlHelpers.mjs";
+import { eventPoint, eventRange, eventYear, ym, writeImportPackage } from "../lib/sqlHelpers.mjs";
 
 const events = [
   eventPoint({
@@ -9,7 +9,6 @@ const events = [
     kind: "agriculture",
     precision: "year",
     at: eventYear(1534),
-    dynastyIds: [],
     summary: "玉米原产美洲，明代经海路及可能的陆路传入中国。1534年《巩县志》所见“玉麦”是早期记载之一；其耐旱、适应性强，后来在山地和旱地广泛种植。具体首传地点与路线尚有争议。",
     dateNote: "1534年《巩县志》有“玉麦”记载，是目前常见的中国早期文献记录之一；以该最早记载年作单点，不等同于实际首次传入年。",
   }),
@@ -20,7 +19,6 @@ const events = [
     kind: "agriculture",
     precision: "year",
     at: eventYear(1582),
-    dynastyIds: [],
     summary: "甘薯原产美洲，经海上贸易网络传入福建。关于陈益、陈振龙等人的引种时间和路线，地方记载并不一致；甘薯耐瘠、高产，后来成为重要的粮食补充和救荒作物。",
     dateNote: "福建引种记载有万历十年（1582）、万历十一至十二年及万历二十一年（1593）等说法；按要求取最早提及的1582年，保留不同记载的分歧。",
   }),
@@ -31,7 +29,6 @@ const events = [
     kind: "agriculture",
     precision: "year",
     at: eventYear(1570),
-    dynastyIds: [],
     summary: "辣椒原产美洲，随跨洋贸易传入亚洲并进入中国。早期多作观赏或药用植物，之后逐渐进入饮食，在各地形成不同的食用习惯。中国首传的路线和年份尚不能确考。",
     dateNote: "具体首传路线和年份未定；现有研究常置于16世纪后期至17世纪前期。按截图所列范围取最早年份1570作单点，表示最早提及的年代而非确切传入年。",
   }),
@@ -42,7 +39,6 @@ const events = [
     kind: "agriculture",
     precision: "year",
     at: eventYear(1617),
-    dynastyIds: [],
     summary: "番茄原产美洲，随海上贸易传播至亚洲并传入中国。中国首传时间和路线未能确证；明代文献中的相关名称提供了早期在华线索，番茄初期较为稀见，后来才普遍成为食用蔬菜。",
     dateNote: "中国首传时间难以确考；1617年周文华《汝南圃史·植品》被用作番茄在华早期名称记载。按该最早文献线索取单点，不视为实际引种年。",
   }),
@@ -53,7 +49,6 @@ const events = [
     kind: "agriculture",
     precision: "year",
     at: eventYear(1540),
-    dynastyIds: [],
     summary: "烟草原产美洲，经菲律宾吕宋及海上贸易网络传入中国，随后由东南沿海向内地传播。早期兼作药用，后来成为广泛种植和消费的经济作物。具体首传年份仍有争议。",
     dateNote: "烟草传入时间有16至17世纪等说；按资料提及的最早年份1540作单点。1624年《景岳全书》回述万历年间闽、广已有烟草，均不能据此断定准确首传年。",
   }),
@@ -156,37 +151,38 @@ const mergedCropIds = new Set([
 ]);
 const mergedCrops = screenshotCrops.filter((crop) => mergedCropIds.has(crop.id));
 const separateCrops = screenshotCrops.filter((crop) => !mergedCropIds.has(crop.id));
-const qingCropIds = new Set([
-  "agri-onion-introduction",
-  "agri-cabbage-introduction",
-  "agri-cauliflower-introduction",
-  "agri-zucchini-introduction",
-  "agri-western-apple-introduction",
-]);
-
-events.push(...separateCrops.map((crop) => eventPoint({
+events.push(...separateCrops.filter((crop) => crop.id !== "agri-luffa-introduction").map((crop) => eventPoint({
   id: crop.id,
   name: crop.name,
   kind: "agriculture",
   at: eventYear(crop.year),
-  dynastyIds: qingCropIds.has(crop.id) ? ["qing"] : [],
   summary: crop.summary,
   dateNote: crop.note,
   isApproximate: true,
 })));
 
 events.push(eventPoint({
+  id: "agri-luffa-introduction",
+  name: "丝瓜传入中国",
+  kind: "agriculture",
+  at: eventYear(960),
+  summary: "丝瓜原产地通常认为在南亚，经陆上或海上交通传入中国南方。丝瓜至迟在宋代已有栽培，宋元时期逐步传播；具体传入年份和路线难以考定。",
+  dateNote: "实际传入年份难以考定。以宋代起始年（960）作为单点年代锚点，仅表示至宋代已见传播与栽培线索，不代表确切首传年。",
+  isApproximate: true,
+}));
+
+events.push(eventPoint({
   id: "agri-crops-introduction",
   name: "汉代作物传入",
   kind: "agriculture",
   at: eventYear(Math.min(...mergedCrops.map((crop) => crop.year))),
-  dynastyIds: [],
   summary: `黄瓜、葡萄、石榴、核桃、大蒜、胡荽、芝麻、苜蓿、胡椒、豌豆、蚕豆、豇豆等作物在汉代前后经陆上交通传播至中国。古代记载将其中若干种与西域交流联系起来；各作物的来源、传播路线和具体传入时间并不相同。`,
   dateNote: "传统记述将部分作物的传入与汉代西域交流联系起来；具体年代和路线因作物及史料而异。",
   isApproximate: true,
 }));
 
 const sources = [
+  { label: "河南日报：丝瓜具体传入年代尚不易考定", url: "https://news.hndaily.cn/html/2016-09/19/content_25_3.htm" },
   { label: "韩天琪：《从丝绸之路传来的农作物》，《中国科学报》/科学网", url: "https://news.sciencenet.cn/sbhtmlnews/2015/10/304975.shtm" },
   { label: "中国农业科学院农业历史研究所：中国农业科技史年表", url: "https://agri-history.ihns.ac.cn/table.htm" },
   { label: "中国农业科学院农业历史研究所：《中国农业科技史·栽培植物》", url: "https://agri-history.ihns.ac.cn/books/zgnyycyl4.htm" },
@@ -195,6 +191,7 @@ const sources = [
   { label: "中国农业科学院农业历史研究所：油料作物（芝麻）", url: "https://agri-history.ihns.ac.cn/agrobiology/oil%20crops.htm" },
   { label: "李军：《历史上引入中国的农作物》，《人民论坛》", url: "https://paper.people.com.cn/rmlt/html/2024-05/01/content_26070979.htm" },
   { label: "《齐民要术·种瓜第十四》原文（识典古籍）", url: "https://www.shidianguji.com/book/SBCK071/chapter/SBCK071_18" },
+  { label: "《齐民要术》版本与成书年代（中国哲学书电子化计划）", url: "https://ctext.org/wiki.pl?if=gb&res=509572" },
   { label: "中国科学院自然科学史研究所：中国农业历史研究·农业生产力与农业地区布局", url: "https://agri-history.ihns.ac.cn/history/chapter81.htm" },
   { label: "中国科学院自然科学史研究所：中国农业历史研究·明清时期的农业（玉米、甘薯）", url: "https://agri-history.ihns.ac.cn/history/mqny.htm" },
   { label: "全国哲学社会科学工作办公室：张箭《辣椒在全球的传播》", url: "https://www.nopss.gov.cn/n1/2021/0419/c219544-32081773.html" },
@@ -210,7 +207,11 @@ const sources = [
 writeImportPackage(new URL(".", import.meta.url).pathname, {
   slug: "commercial-events",
   window: { startYear: -138, startMonth: 1, endYear: 1911, endMonth: 12 },
-  preSql: "DELETE FROM event_dynasties WHERE event_id = 'commerce-treaty-of-nanking-five-ports';\nDELETE FROM events WHERE id = 'commerce-treaty-of-nanking-five-ports';\nDELETE FROM events WHERE id IN ('commerce-cucumber-recorded-in-qimin-yaoshu', 'commerce-maize-earliest-record', 'commerce-chili-earliest-record', 'commerce-tomato-recorded-in-zhipin', 'commerce-tobacco-recorded-in-jingyue-quanshu');\nDELETE FROM event_dynasties WHERE event_id IN ('commerce-cucumber-introduction', 'commerce-maize-introduction', 'commerce-sweet-potato-introduction', 'commerce-chili-introduction', 'commerce-tomato-introduction', 'commerce-tobacco-introduction');\nDELETE FROM events WHERE id IN ('commerce-cucumber-introduction', 'agri-grape-introduction', 'agri-pomegranate-introduction', 'agri-walnut-introduction', 'agri-garlic-introduction', 'agri-coriander-introduction', 'agri-sesame-introduction', 'agri-alfalfa-introduction', 'agri-pepper-introduction', 'agri-pea-introduction', 'agri-broad-bean-introduction', 'agri-cowpea-introduction');",
+  preSql: `DELETE FROM event_dynasties WHERE event_id IN (${events.filter((event) => event.kind === "agriculture").map((event) => `'${event.id}'`).join(", ")}, 'commerce-cucumber-introduction', 'agri-grape-introduction', 'agri-pomegranate-introduction', 'agri-walnut-introduction', 'agri-garlic-introduction', 'agri-coriander-introduction', 'agri-sesame-introduction', 'agri-alfalfa-introduction', 'agri-pepper-introduction', 'agri-pea-introduction', 'agri-broad-bean-introduction', 'agri-cowpea-introduction');
+DELETE FROM event_dynasties WHERE event_id = 'commerce-treaty-of-nanking-five-ports';
+DELETE FROM events WHERE id = 'commerce-treaty-of-nanking-five-ports';
+DELETE FROM events WHERE id IN ('commerce-cucumber-recorded-in-qimin-yaoshu', 'commerce-maize-earliest-record', 'commerce-chili-earliest-record', 'commerce-tomato-recorded-in-zhipin', 'commerce-tobacco-recorded-in-jingyue-quanshu');
+DELETE FROM events WHERE id IN ('commerce-cucumber-introduction', 'agri-grape-introduction', 'agri-pomegranate-introduction', 'agri-walnut-introduction', 'agri-garlic-introduction', 'agri-coriander-introduction', 'agri-sesame-introduction', 'agri-alfalfa-introduction', 'agri-pepper-introduction', 'agri-pea-introduction', 'agri-broad-bean-introduction', 'agri-cowpea-introduction');`,
   persons: [], dynasties: [], reignGroups: [], reigns: [], relations: [], events,
   manifest: {
     slug: "commercial-events",
@@ -230,6 +231,9 @@ writeImportPackage(new URL(".", import.meta.url).pathname, {
       "汉代前后经陆上交通传播的作物包括黄瓜、葡萄、石榴、核桃、大蒜、胡荽、芝麻、苜蓿、胡椒及多种豆类；古代作物名称与具体来源、路线存在考证差异。",
       "有关胡豆、胡荽、胡麻等古代名物，名称在不同时期可能指向不同作物；概要保留常用作物名，date_note 提示文献名物辨析的不确定性。",
       "不重复已入库的张骞通西域、郑和下西洋等事件；不确定的首传年份只作单点显示，并在 date_note 中明确其证据性质。",
+      "中国相关作物传入、见载与栽培事件不关联王朝；年代锚点表示传播叙述或早期文献线索，不等于由某一王朝直接推动。",
+      "无花果与现代草莓未关联王朝：前者只有魏晋南北朝或唐代等宽泛时期说法，后者只有近现代年代锚点；证据不足以证明实际传入政权。",
+      "丝瓜实际首传年难以考定，按用户要求以宋代起始年960作近似单点年代锚点，并在 date_note 中说明不代表确切首传年；马铃薯传入时间及路线存在争议，1650年锚点不足以确定由明或清直接推动，故不关联两朝。"
     ],
   },
 });

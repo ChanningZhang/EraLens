@@ -6,6 +6,7 @@ BEGIN;
 -- remove stale auto-generated 史料缺 (元首空缺期应留白)
 DELETE FROM reigns WHERE dynasty_id IN ('roc') AND person_id = 'system-missing-ruler';
 DELETE FROM relations WHERE id = 'rel-jiang-jieshi-jiang-jieshi-succession';
+DELETE FROM event_dynasties WHERE event_id = 'puyi-leaves-forbidden-city';
 
 -- persons
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name, title)

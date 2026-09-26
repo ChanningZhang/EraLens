@@ -65,6 +65,7 @@ writeImportPackage(__dirname, {
     "DELETE FROM relations WHERE id = 'rel-ji-yan-qin-r27-killed';",
     "DELETE FROM relations WHERE id = 'rel-murong-yong-fu-jian-ming-killed';",
     "DELETE FROM relations WHERE id = 'rel-yang-nandang-fu-jian-ming-surrender';",
+    "DELETE FROM relations WHERE id = 'rel-puyi-duan-qirui-surrender';",
     "DELETE FROM relations WHERE id = 'rel-yang-guang-li-yuan-killed';",
     "DELETE FROM relations WHERE id IN (",
     "  'rel-zhou-guo-gen-qin-r29-killed',",
@@ -133,7 +134,6 @@ writeImportPackage(__dirname, {
       { label: "刘盆子", url: "https://zh.wikipedia.org/wiki/刘盆子" },
       { label: "段兴智", url: "https://zh.wikipedia.org/wiki/段兴智" },
       { label: "溥仪出宫", url: "https://zh.wikipedia.org/wiki/%E8%BF%85%E6%B8%85%E7%9A%87%E5%AE%A4%E5%B0%8F%E6%9C%9D%E5%BB%B7" },
-      { label: "段祺瑞", url: "https://zh.wikipedia.org/wiki/%E6%AE%B5%E7%A5%BA%E7%91%9E" },
       { label: "旧唐书·高祖本纪", url: "https://zh.wikisource.org/zh-hans/旧唐书/卷1" },
       { label: "旧唐书·王世充窦建德列传", url: "https://ctext.org/wiki.pl?chapter=27357&if=gb" },
       { label: "资治通鉴·卷187", url: "https://zh.wikisource.org/zh-hans/资治通鉴/卷187" },
@@ -168,7 +168,6 @@ writeImportPackage(__dirname, {
       "赫连定于431年六月为吐谷浑慕璝所俘，432年被送至北魏后为拓跋焘处死；分别记录 captured 与 killed 两条命运线。",
       "十六国等农历月用寿星历 sxtwl 换公历：有日（李势三月十七、牧犍九月丙戌、石虎四月廿三）升日；仅月者取望日所在公历月。宝藏王九月＝668-10，耶律淳六月＝1122-07。",
       "石虎349年病死，旧目录误作冉闵所杀已删；改挂石鉴→冉闵（永和六年闰二月）。",
-      "溥仪 1924 出宫：退位后无单独 reign 卡，受害方仍挂宣统 reign，victimMaxLagMonths=156；接收方挂 11 月 24 日就任的段祺瑞临时执政（出宫当日黄郛摄行未建卡）。",
     ],
   },
 });

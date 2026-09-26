@@ -267,6 +267,7 @@ const events = [
     precision: "year",
     dateNote: "炎黄之际传说战役，年代不可考；取神农末至黄帝初窗口。",
     at: ym(-2465, 12),
+    dynastyIds: ["san-huang", "wu-di"],
     summary: "传说炎帝末与黄帝阪泉之战，又逐鹿之战胜蚩尤。年代为文献系年，非考古断代。",
   }),
   eventPoint({
@@ -276,6 +277,7 @@ const events = [
     precision: "year",
     dateNote: "尧世末舜摄政、禅让传说；取尧在位末年约前2110年。",
     at: ym(-2110, 12),
+    dynastyIds: ["wu-di"],
     summary: "《史记》载尧禅舜；舜摄政不另建在位卡，以事件标于尧世末。",
   }),
   eventPoint({
@@ -285,6 +287,7 @@ const events = [
     precision: "year",
     dateNote: "舜禅禹、禹继夏后氏；取舜迄年前2071年。",
     at: ym(-2071, 12),
+    dynastyIds: ["wu-di", "xia"],
     summary: "舜禅禹，禹建夏后氏，接断代工程夏始前2070年。",
   }),
 ];

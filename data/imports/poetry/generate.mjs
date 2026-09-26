@@ -2,7 +2,7 @@
 /** Famous classical poems as timeline events. */
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { eventPoint, eventRange, person, writeImportPackage, ym } from "../lib/sqlHelpers.mjs";
+import { eventPoint, person, writeImportPackage, ym } from "../lib/sqlHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -38,64 +38,48 @@ function poemPoint({ id, name, year, dynastyIds = [], participantIds = [], dateN
   return eventPoint({ id, name: name.replace(/^《|》$/g, ""), kind: "poetry", at: ym(year, 12), dynastyIds, participantIds, dateNote, summary });
 }
 
-function poemCirca({ id, name, startYear, endYear, dynastyIds = [], participantIds = [], dateNote, summary }) {
-  return eventRange({
-    id,
-    name: name.replace(/^《|》$/g, ""),
-    kind: "poetry",
-    timeMode: "circa",
-    precision: "year",
-    start: ym(startYear, 1),
-    end: ym(endYear, 12),
-    dynastyIds,
-    participantIds,
-    dateNote,
-    summary,
-  });
-}
-
 const events = [
-  poemCirca({ id: "poetry-wuyi", name: "《无衣》", startYear: -475, endYear: -221, dynastyIds: ["qin"], dateNote: "春秋战国之际；传统归入《诗经·秦风》", summary: "秦地军民同仇敌忾、共赴战场的诗篇。" }),
+  poemPoint({ id: "poetry-wuyi", name: "《无衣》", year: -348, dynastyIds: ["qin"], dateNote: "春秋战国之际；传统归入《诗经·秦风》", summary: "秦地军民同仇敌忾、共赴战场的诗篇。" }),
   poemPoint({ id: "poetry-gaixia-ge", name: "《垓下歌》", year: -202, dynastyIds: ["chu-west", "han-west"], participantIds: ["xiang-yu"], dateNote: "前202年，垓下兵败前后", summary: "项羽在垓下之战前后的绝命歌，见证楚汉战争终局。" }),
   poemPoint({ id: "poetry-da-feng-ge", name: "《大风歌》", year: -195, dynastyIds: ["han-west"], participantIds: ["liu-bang"], dateNote: "前195年，平定英布后归途", summary: "刘邦平定淮南王英布后所作，表现汉初帝国与诸侯政治。" }),
-  poemPoint({ id: "poetry-duan-ge-xing", name: "《短歌行》", year: 208, dynastyIds: ["han-east"], participantIds: ["cao-cao"], dateNote: "建安十三年前后，年代有争议", summary: "曹操借宴饮歌咏求贤与统一天下的政治抱负。" }),
-  poemPoint({ id: "poetry-guan-cang-hai", name: "《观沧海》", year: 207, dynastyIds: ["han-east"], participantIds: ["cao-cao"], dateNote: "建安十二年，北征乌桓后", summary: "曹操北征乌桓后登临碣石所作，写山海气象与统一抱负。" }),
-  poemCirca({ id: "poetry-gui-sui-shou", name: "《龟虽寿》", startYear: 207, endYear: 210, dynastyIds: ["han-east"], participantIds: ["cao-cao"], dateNote: "建安十二年至十五年前后", summary: "曹操晚年抒写建功立业与老当益壮的政治志向。" }),
-  poemCirca({ id: "poetry-yin-jiu", name: "《饮酒》其五", startYear: 400, endYear: 420, dynastyIds: ["jin-east"], participantIds: ["tao-yuanming"], dateNote: "东晋末至刘宋初，具体年份不详", summary: "陶渊明归隐后所作的田园诗，反映士人对政治秩序的退避。" }),
-  poemCirca({ id: "poetry-mulan", name: "《木兰诗》", startYear: 386, endYear: 534, dynastyIds: ["wei-north"], dateNote: "北朝民歌，成篇年代有争议", summary: "北朝战争背景下木兰代父从军的乐府叙事诗。" }),
-  poemCirca({ id: "poetry-chile-ge", name: "《敕勒歌》", startYear: 450, endYear: 580, dynastyIds: ["wei-north", "qi-bei"], dateNote: "北朝民歌，流传与定型年代不详", summary: "北方草原与军旅生活相关的著名民歌。" }),
-  poemCirca({ id: "poetry-chun-xiao", name: "《春晓》", startYear: 710, endYear: 740, dynastyIds: ["tang"], participantIds: ["meng-hao-ran"], dateNote: "盛唐，约开元年间", summary: "孟浩然的春日晓眠诗，代表盛唐山水田园诗的日常审美。" }),
-  poemCirca({ id: "poetry-dengguanquelou", name: "《登鹳雀楼》", startYear: 720, endYear: 742, dynastyIds: ["tang"], participantIds: ["wang-zhi-huan"], dateNote: "盛唐，具体创作年份不详", summary: "王之涣登临鹳雀楼所作的登高诗，关联河东名楼与盛唐气象。" }),
-  poemCirca({ id: "poetry-liangzhou", name: "《凉州词》", startYear: 720, endYear: 742, dynastyIds: ["tang"], participantIds: ["wang-zhi-huan"], dateNote: "盛唐，凉州与玉门关边塞背景", summary: "王之涣的边塞名篇，表现河西边防的孤城、羌笛与军旅情境。" }),
-  poemCirca({ id: "poetry-chusai-wang-changling", name: "《出塞》", startYear: 720, endYear: 756, dynastyIds: ["tang"], participantIds: ["wang-chang-ling"], dateNote: "盛唐，边塞诗，具体年份不详", summary: "王昌龄借边关与戍守书写唐代边疆战争和将士心愿。" }),
-  poemCirca({ id: "poetry-congjunxing", name: "《从军行》", startYear: 720, endYear: 756, dynastyIds: ["tang"], participantIds: ["wang-chang-ling"], dateNote: "盛唐，西北边塞背景", summary: "王昌龄边塞组诗，描写戍边、出征与报国。" }),
+  poemPoint({ id: "poetry-duan-ge-xing", name: "《短歌行》", year: 208, dynastyIds: ["wei"], participantIds: ["cao-cao"], dateNote: "建安十三年前后，年代有争议", summary: "曹操借宴饮歌咏求贤与统一天下的政治抱负。" }),
+  poemPoint({ id: "poetry-guan-cang-hai", name: "《观沧海》", year: 207, dynastyIds: ["wei"], participantIds: ["cao-cao"], dateNote: "建安十二年，北征乌桓后", summary: "曹操北征乌桓后登临碣石所作，写山海气象与统一抱负。" }),
+  poemPoint({ id: "poetry-gui-sui-shou", name: "《龟虽寿》", year: 208, dynastyIds: ["wei"], participantIds: ["cao-cao"], dateNote: "建安十二年至十五年前后", summary: "曹操晚年抒写建功立业与老当益壮的政治志向。" }),
+  poemPoint({ id: "poetry-yin-jiu", name: "《饮酒》其五", year: 410, dynastyIds: ["jin-east"], participantIds: ["tao-yuanming"], dateNote: "东晋末至刘宋初，具体年份不详", summary: "陶渊明归隐后所作的田园诗，反映士人对政治秩序的退避。" }),
+  poemPoint({ id: "poetry-mulan", name: "《木兰诗》", year: 460, dynastyIds: ["wei-north"], dateNote: "北朝民歌，成篇年代有争议", summary: "北朝战争背景下木兰代父从军的乐府叙事诗。" }),
+  poemPoint({ id: "poetry-chile-ge", name: "《敕勒歌》", year: 515, dynastyIds: ["wei-north", "qi-bei"], dateNote: "北朝民歌，流传与定型年代不详", summary: "北方草原与军旅生活相关的著名民歌。" }),
+  poemPoint({ id: "poetry-chun-xiao", name: "《春晓》", year: 725, dynastyIds: ["tang"], participantIds: ["meng-hao-ran"], dateNote: "盛唐，约开元年间", summary: "孟浩然的春日晓眠诗，代表盛唐山水田园诗的日常审美。" }),
+  poemPoint({ id: "poetry-dengguanquelou", name: "《登鹳雀楼》", year: 731, dynastyIds: ["tang"], participantIds: ["wang-zhi-huan"], dateNote: "盛唐，具体创作年份不详", summary: "王之涣登临鹳雀楼所作的登高诗，关联河东名楼与盛唐气象。" }),
+  poemPoint({ id: "poetry-liangzhou", name: "《凉州词》", year: 731, dynastyIds: ["tang"], participantIds: ["wang-zhi-huan"], dateNote: "盛唐，凉州与玉门关边塞背景", summary: "王之涣的边塞名篇，表现河西边防的孤城、羌笛与军旅情境。" }),
+  poemPoint({ id: "poetry-chusai-wang-changling", name: "《出塞》", year: 738, dynastyIds: ["tang"], participantIds: ["wang-chang-ling"], dateNote: "盛唐，边塞诗，具体年份不详", summary: "王昌龄借边关与戍守书写唐代边疆战争和将士心愿。" }),
+  poemPoint({ id: "poetry-congjunxing", name: "《从军行》", year: 738, dynastyIds: ["tang"], participantIds: ["wang-chang-ling"], dateNote: "盛唐，西北边塞背景", summary: "王昌龄边塞组诗，描写戍边、出征与报国。" }),
   poemPoint({ id: "poetry-huanghelou", name: "《黄鹤楼》", year: 725, dynastyIds: ["tang"], participantIds: ["cui-hao"], dateNote: "盛唐，具体创作年份约在开元年间", summary: "崔颢登黄鹤楼怀古，连接江城地标与历史兴亡感。" }),
   poemPoint({ id: "poetry-wangyue", name: "《望岳》", year: 736, dynastyIds: ["tang"], participantIds: ["du-fu"], dateNote: "开元二十四年前后，游齐赵时", summary: "杜甫登临泰山所作，表现盛唐山河与个人政治抱负。" }),
-  poemCirca({ id: "poetry-shudaonan", name: "《蜀道难》", startYear: 740, endYear: 744, dynastyIds: ["tang"], participantIds: ["li-bai"], dateNote: "天宝初年，具体年份有争议", summary: "李白借蜀道艰险写行旅、山川和政治道路的险阻。" }),
-  poemCirca({ id: "poetry-jingyesi", name: "《静夜思》", startYear: 725, endYear: 730, dynastyIds: ["tang"], participantIds: ["li-bai"], dateNote: "盛唐早期，具体地点与年份不详", summary: "李白羁旅夜宿时的思乡名篇。" }),
-  poemCirca({ id: "poetry-jiangjinjiu", name: "《将进酒》", startYear: 750, endYear: 753, dynastyIds: ["tang"], participantIds: ["li-bai"], dateNote: "天宝年间，约在嵩山一带", summary: "李白借宴饮抒写人生失意与不平之气。" }),
+  poemPoint({ id: "poetry-shudaonan", name: "《蜀道难》", year: 742, dynastyIds: ["tang"], participantIds: ["li-bai"], dateNote: "天宝初年，具体年份有争议", summary: "李白借蜀道艰险写行旅、山川和政治道路的险阻。" }),
+  poemPoint({ id: "poetry-jingyesi", name: "《静夜思》", year: 727, dynastyIds: ["tang"], participantIds: ["li-bai"], dateNote: "盛唐早期，具体地点与年份不详", summary: "李白羁旅夜宿时的思乡名篇。" }),
+  poemPoint({ id: "poetry-jiangjinjiu", name: "《将进酒》", year: 751, dynastyIds: ["tang"], participantIds: ["li-bai"], dateNote: "天宝年间，约在嵩山一带", summary: "李白借宴饮抒写人生失意与不平之气。" }),
   poemPoint({ id: "poetry-zaofabaidicheng", name: "《早发白帝城》", year: 759, dynastyIds: ["tang"], participantIds: ["li-bai"], dateNote: "乾元二年，流放夜郎遇赦后", summary: "李白遇赦后自白帝城顺江东下所作。" }),
   poemPoint({ id: "poetry-chunwang", name: "《春望》", year: 757, dynastyIds: ["tang"], participantIds: ["du-fu"], dateNote: "至德二载，长安陷于叛军期间", summary: "杜甫身陷长安时目睹国破城残所作，记录安史之乱的社会创伤。" }),
   poemPoint({ id: "poetry-shuxiang", name: "《蜀相》", year: 760, dynastyIds: ["tang"], participantIds: ["du-fu"], dateNote: "上元元年，成都武侯祠", summary: "杜甫凭吊诸葛亮，寄托安史乱后对贤相与政治理想的追慕。" }),
   poemPoint({ id: "poetry-wenguanjun", name: "《闻官军收河南河北》", year: 763, dynastyIds: ["tang"], participantIds: ["du-fu"], dateNote: "宝应元年，安史之乱结束消息传来", summary: "杜甫听闻唐军收复河南河北后的喜极而作。" }),
   poemPoint({ id: "poetry-denggao", name: "《登高》", year: 767, dynastyIds: ["tang"], participantIds: ["du-fu"], dateNote: "大历二年，夔州", summary: "杜甫晚年登高所作，包含乱后漂泊与国家衰败的沉郁感。" }),
-  poemCirca({ id: "poetry-fengqiao-yebo", name: "《枫桥夜泊》", startYear: 750, endYear: 770, dynastyIds: ["tang"], participantIds: ["zhang-ji"], dateNote: "安史之乱后，约8世纪中叶；具体年份不详", summary: "张继夜泊苏州枫桥所作，连接江南古迹、战乱后羁旅与城市记忆。" }),
+  poemPoint({ id: "poetry-fengqiao-yebo", name: "《枫桥夜泊》", year: 760, dynastyIds: ["tang"], participantIds: ["zhang-ji"], dateNote: "安史之乱后，约8世纪中叶；具体年份不详", summary: "张继夜泊苏州枫桥所作，连接江南古迹、战乱后羁旅与城市记忆。" }),
   poemPoint({ id: "poetry-jiangxue", name: "《江雪》", year: 805, dynastyIds: ["tang"], participantIds: ["liu-zong-yuan"], dateNote: "永贞革新失败后，柳宗元被贬永州时期", summary: "柳宗元贬谪永州时所作，写孤绝江山与政治失意。" }),
-  poemCirca({ id: "poetry-youzimeng", name: "《游子吟》", startYear: 795, endYear: 815, dynastyIds: ["tang"], participantIds: ["meng-jiao"], dateNote: "中唐，具体年份不详", summary: "孟郊游子行役时歌咏母爱与离别。" }),
-  poemCirca({ id: "poetry-minnong", name: "《悯农》", startYear: 795, endYear: 830, dynastyIds: ["tang"], participantIds: ["li-shen"], dateNote: "中唐，具体年份不详", summary: "李绅悯惜农民劳作与民生艰辛的名篇。" }),
+  poemPoint({ id: "poetry-youzimeng", name: "《游子吟》", year: 805, dynastyIds: ["tang"], participantIds: ["meng-jiao"], dateNote: "中唐，具体年份不详", summary: "孟郊游子行役时歌咏母爱与离别。" }),
+  poemPoint({ id: "poetry-minnong", name: "《悯农》", year: 812, dynastyIds: ["tang"], participantIds: ["li-shen"], dateNote: "中唐，具体年份不详", summary: "李绅悯惜农民劳作与民生艰辛的名篇。" }),
   poemPoint({ id: "poetry-wuyixiang", name: "《乌衣巷》", year: 824, dynastyIds: ["tang"], participantIds: ["liu-yu-xi"], dateNote: "宝历二年，金陵；咏六朝旧迹", summary: "刘禹锡凭吊金陵乌衣巷，以燕子旧巢写六朝门阀与王朝兴亡。" }),
   poemPoint({ id: "poetry-boqinhua", name: "《泊秦淮》", year: 824, dynastyIds: ["tang"], participantIds: ["du-mu"], dateNote: "晚唐，约大和年间", summary: "杜牧夜泊秦淮，借南朝旧都讽喻晚唐政治忧患。" }),
-  poemCirca({ id: "poetry-chibi-du-mu", name: "《赤壁》", startYear: 840, endYear: 850, dynastyIds: ["tang"], participantIds: ["du-mu"], dateNote: "晚唐，具体创作年份不详", summary: "杜牧凭吊赤壁古战场，以三国旧事寄托历史兴亡感。" }),
+  poemPoint({ id: "poetry-chibi-du-mu", name: "《赤壁》", year: 845, dynastyIds: ["tang"], participantIds: ["du-mu"], dateNote: "晚唐，具体创作年份不详", summary: "杜牧凭吊赤壁古战场，以三国旧事寄托历史兴亡感。" }),
   poemPoint({ id: "poetry-tixilinbi", name: "《题西林壁》", year: 1084, dynastyIds: ["song-north"], participantIds: ["su-shi"], dateNote: "元丰七年，庐山西林寺", summary: "苏轼游庐山题壁，写观察视角与山川名胜。" }),
   poemPoint({ id: "poetry-yinhu-chuqing", name: "《饮湖上初晴后雨》", year: 1073, dynastyIds: ["song-north"], participantIds: ["su-shi"], dateNote: "熙宁六年前后，杭州", summary: "苏轼任杭州通判时咏西湖名篇。" }),
   poemPoint({ id: "poetry-youshanxicun", name: "《游山西村》", year: 1167, dynastyIds: ["song-south"], participantIds: ["lu-you"], dateNote: "乾道三年，山阴", summary: "陆游闲居山阴时所作，写南宋乡村社会与民情。" }),
   poemPoint({ id: "poetry-shufen", name: "《书愤》", year: 1186, dynastyIds: ["song-south"], participantIds: ["lu-you"], dateNote: "淳熙十三年，蜀中", summary: "陆游追忆抗金经历，表达南宋恢复故土的政治抱负。" }),
   poemPoint({ id: "poetry-shier", name: "《示儿》", year: 1210, dynastyIds: ["song-south"], participantIds: ["lu-you"], dateNote: "嘉定三年，临终前", summary: "陆游临终前嘱咐子孙勿忘北定中原。" }),
-  poemCirca({ id: "poetry-guolingdingyang", name: "《过零丁洋》", startYear: 1278, endYear: 1279, dynastyIds: ["song-south", "yuan"], participantIds: ["wen-tianxiang"], dateNote: "祥兴元年至二年，宋元战争期间", summary: "文天祥被俘途中经过零丁洋所作，关联南宋覆亡。" }),
-  poemPoint({ id: "poetry-zhengqige", name: "《正气歌》", year: 1279, dynastyIds: ["song-south", "yuan"], participantIds: ["wen-tianxiang"], dateNote: "至元十六年前后，大都狱中", summary: "文天祥在元大都狱中歌咏忠节与历史正气。" }),
-  poemCirca({ id: "poetry-tongguan-huaigu", name: "《山坡羊·潼关怀古》", startYear: 1315, endYear: 1325, dynastyIds: ["yuan"], participantIds: ["zhang-yanghao"], dateNote: "元代，赴关中赈灾途中", summary: "张养浩凭吊潼关，借历代兴亡关注百姓疾苦。" }),
-  poemCirca({ id: "poetry-tianjing-shaqiu", name: "《天净沙·秋思》", startYear: 1300, endYear: 1321, dynastyIds: ["yuan"], participantIds: ["ma-zhiyuan"], dateNote: "元代，具体创作年份不详", summary: "马致远羁旅秋思的散曲名篇。" }),
-  poemCirca({ id: "poetry-shihuiyin", name: "《石灰吟》", startYear: 1435, endYear: 1450, dynastyIds: ["ming"], participantIds: ["yu-qian"], dateNote: "明代中期，创作年代有不同说法", summary: "于谦借石灰自况，成为明代忠臣政治伦理的象征性诗篇。" }),
+  poemPoint({ id: "poetry-guolingdingyang", name: "《过零丁洋》", year: 1278, dynastyIds: ["song-south"], participantIds: ["wen-tianxiang"], dateNote: "祥兴元年至二年，宋元战争期间", summary: "文天祥被俘途中经过零丁洋所作，关联南宋覆亡。" }),
+  poemPoint({ id: "poetry-zhengqige", name: "《正气歌》", year: 1281, dynastyIds: ["song-south"], participantIds: ["wen-tianxiang"], dateNote: "至元十八年夏（1281），大都狱中", summary: "南宋覆亡后，文天祥被囚元大都，仍拒绝降元；他在狱中作《正气歌》，借古代忠义人物抒写坚守气节的决心。" }),
+  poemPoint({ id: "poetry-tongguan-huaigu", name: "《山坡羊·潼关怀古》", year: 1320, dynastyIds: ["yuan"], participantIds: ["zhang-yanghao"], dateNote: "元代，赴关中赈灾途中", summary: "张养浩凭吊潼关，借历代兴亡关注百姓疾苦。" }),
+  poemPoint({ id: "poetry-tianjing-shaqiu", name: "《天净沙·秋思》", year: 1310, dynastyIds: ["yuan"], participantIds: ["ma-zhiyuan"], dateNote: "元代，具体创作年份不详", summary: "马致远羁旅秋思的散曲名篇。" }),
+  poemPoint({ id: "poetry-shihuiyin", name: "《石灰吟》", year: 1442, dynastyIds: ["ming"], participantIds: ["yu-qian"], dateNote: "明代中期，创作年代有不同说法", summary: "于谦借石灰自况，成为明代忠臣政治伦理的象征性诗篇。" }),
   poemPoint({ id: "poetry-jihai", name: "《己亥杂诗》其五", year: 1839, dynastyIds: ["qing"], participantIds: ["gong-zi-zhen"], dateNote: "道光十九年，龚自珍离京南归途中", summary: "龚自珍以落花自况，寄托晚清政治改革与人才培养愿望。" }),
   poemPoint({ id: "poetry-fushu-dengcheng", name: "《赴戍登程口占示家人》", year: 1842, dynastyIds: ["qing"], participantIds: ["lin-zexu"], dateNote: "道光二十二年八月，西安赴伊犁途中", summary: "林则徐被遣戍伊犁、告别家人时所作。" }),
   poemPoint({ id: "poetry-chunchou", name: "《春愁》", year: 1895, dynastyIds: ["qing"], participantIds: ["qiu-fengjia"], dateNote: "甲午战败、台湾割让前后，具体月份不详", summary: "丘逢甲写甲午战败与台湾割让后的家国之愁。" }),
@@ -166,6 +150,8 @@ writeImportPackage(__dirname, {
   events,
   relations: [],
   preSql: [
+    "DELETE FROM event_dynasties WHERE event_id IN ('poetry-duan-ge-xing', 'poetry-guan-cang-hai', 'poetry-gui-sui-shou');",
+    "DELETE FROM event_dynasties WHERE event_id = 'poetry-zhengqige';",
     "DELETE FROM event_dynasties WHERE event_id = 'poetry-bie-yunjian';",
     "DELETE FROM event_participants WHERE event_id = 'poetry-bie-yunjian';",
     "DELETE FROM events WHERE id = 'poetry-bie-yunjian';",
@@ -182,12 +168,16 @@ writeImportPackage(__dirname, {
     depth: "standard",
     generatedAt: "2026-09-23",
     counts: { persons: poetryPersons.length, dynasties: 0, reigns: 0, events: events.length, relations: 0 },
-    sources: events.map((event) => ({ label: event.name, url: sourceFor(event) })),
+    sources: [
+      ...events.map((event) => ({ label: event.name, url: sourceFor(event) })),
+      { label: "广东省政协文化和文史资料委员会：《文天祥在广东》", url: "https://www.gdwsw.gov.cn/shsy/content/post_25851.html" },
+    ],
     notes: [
       "首批按知名度优先收录；事件标题保留诗名，kind=poetry 仅作为类型标签。",
-      "无法确定具体年份的作品使用 circa 窗口；窗口是创作年代或流传定型年代的工作取值，不表示精确创作日。",
+      "所有诗歌统一使用年精度 point；年代不详或有争议者以原估计窗口中间年作为时间轴代表点，date_note 保留不确定性，不表示确知创作年。",
       "《凉州词》《出塞》《枫桥夜泊》《登鹳雀楼》等采用盛唐或安史之乱后的大致年代；不同文献可能有异说。",
       "未保存整首诗正文，只保存名篇索引、作者、年代、背景摘要与来源链接。",
+      "《正气歌》据文史广东所载1281年5月16日创作；按用户指定的时期归属，《过零丁洋》《正气歌》均关联南宋。",
     ],
   },
 });

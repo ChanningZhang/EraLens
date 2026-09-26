@@ -180,7 +180,7 @@ const persons = [
 // ── dynasties ──────────────────────────────────────────────────────────────
 
 const dynasties = [
-  { id: "yuan", name: "元", altNames: ["大元", "蒙元", "北元", "残元", "故元"], scope: "cn", region: "east_asia", start: ym(1271, 12), end: ym(1388), precision: "year", note: "忽必烈1271年定国号大元；1368年顺帝北逃漠北继续称大元至1388年天元帝被杀，元朝终结。" },
+  { id: "yuan", name: "元", altNames: ["大元", "蒙元", "北元", "残元", "故元"], scope: "cn", region: "east_asia", start: ym(1271, 12), end: ym(1388, 11), precision: "month", note: "忽必烈1271年定国号大元；1368年顺帝北逃漠北继续称大元。北元延续至1388年11月天元帝被杀，政权终结。" },
   // 元末割据政权（称帝/称王）
   { id: "song-xu", name: "徐宋", altNames: ["宋", "天完"], scope: "cn", region: "east_asia", start: ym(1351, 10), end: ym(1360, 6), precision: "year", note: "徐寿辉1351年蕲州称帝，国号宋，传世多作天完；1360年陈友谅弑之。" },
   { id: "song-han", name: "韩宋", altNames: ["宋", "小明王"], scope: "cn", region: "east_asia", start: ym(1355, 2), end: ym(1366, 12), precision: "year", note: "刘福通拥韩林儿为帝，号小明王，年号龙凤；1366年溺亡，韩宋亡。" },
@@ -343,7 +343,7 @@ const events = [
   eventPoint({ id: "poyang-lake-battle", name: "鄱阳湖之战", kind: "battle", at: ym(1363, 10), dynastyIds: ["chen-han", "wu-zhu"], participantIds: ["chen-youliang", "zhu-yuanzhang"], summary: "朱元璋与陈友谅鄱阳湖决战，陈友谅中流矢阵亡，陈汉大势已去。" }),
   eventPoint({ id: "han-liner-death", name: "韩林儿溺亡", kind: "politics", at: ym(1366, 12), dynastyIds: ["song-han", "wu-zhu"], participantIds: ["han-liner", "zhu-yuanzhang"], summary: "朱元璋遣廖永忠迎韩林儿至应天，渡江时船沉，小明王遇难，韩宋亡。" }),
   eventPoint({ id: "ming-capture-dadu", name: "明军攻占大都", kind: "battle", precision: "month", dateNote: "洪武元年八月，明军克大都", at: ym(1368, 8), dynastyIds: ["ming", "yuan"], participantIds: ["zhu-yuanzhang", "togon-temur"], summary: "明军北伐攻克大都，元顺帝北逃，元朝失去中原。" }),
-  eventPoint({ id: "korqin-sea-battle", name: "捕鱼儿海之战", kind: "battle", at: ym(1388), dynastyIds: ["yuan", "ming"], participantIds: ["togus-temur"], summary: "明将蓝玉率军深入漠北，大破北元，俘北元宗室。" }),
+  eventPoint({ id: "korqin-sea-battle", name: "捕鱼儿海之战", kind: "battle", precision: "month", dateNote: "洪武二十一年四月十二日（公历1388年5月18日），蓝玉袭破元嗣君于捕鱼儿海", at: ym(1388, 5), dynastyIds: ["yuan", "ming"], participantIds: ["togus-temur"], summary: "明将蓝玉率军深入漠北，突袭元天元帝驻地并大破元军；天元帝逃脱后同年被部将杀害，北元随之终结。" }),
   eventRange({ id: "yongle-rule", name: "永乐盛世", kind: "politics", timeMode: "span", start: ym(1403), end: ym(1424), dynastyIds: ["ming"], participantIds: ["zhu-di"], summary: "明成祖迁都北京，派郑和下西洋，国力强盛。" }),
   eventPoint({ id: "jingnan-campaign", name: "靖难之役", kind: "battle", precision: "month", dateNote: "建文四年六月，朱棣攻入南京", at: ym(1402, 7), dynastyIds: ["ming"], participantIds: ["zhu-di", "zhu-yunwen"], summary: "燕王朱棣起兵夺位，攻入南京，建文帝下落成谜，朱棣即位。" }),
   eventRange({ id: "zheng-he-voyages", name: "郑和下西洋", kind: "culture", timeMode: "span", start: ym(1405), end: ym(1433), dynastyIds: ["ming"], participantIds: ["zheng-he", "zhu-di"], summary: "永乐至宣德间七次远航，最远达非洲东岸，宣扬国威。" }),
@@ -360,7 +360,7 @@ const events = [
   eventPoint({ id: "tingji-case", name: "梃击案", kind: "politics", precision: "month", dateNote: "万历四十三年五月初四，张差闯慈庆宫击太子", at: ym(1615, 5), dynastyIds: ["ming"], participantIds: ["zhu-changluo", "zheng-guifei"], summary: "狂人张差持梃闯宫击太子朱常洛，牵连郑贵妃，晚明三大疑案之一。" }),
   eventPoint({ id: "hongwan-case", name: "红丸案", kind: "politics", precision: "month", dateNote: "泰昌元年八月二十九日，光宗服用红丸暴毙", at: ym(1620, 8), dynastyIds: ["ming"], participantIds: ["zhu-changluo", "fang-congze"], summary: "明光宗即位仅月余，服李可灼所献红丸后暴亡，疑案缠身。" }),
   eventPoint({ id: "yigong-case", name: "移宫案", kind: "politics", precision: "month", dateNote: "泰昌元年九月，熹宗即位后逼李选侍迁出乾清宫", at: ym(1620, 9), dynastyIds: ["ming"], participantIds: ["zhu-youjiao", "li-xuanshi"], summary: "光宗死后李选侍据乾清宫不肯迁出，东林党力主逼迁，熹宗即位后李选侍移居别宫。" }),
-  eventPoint({ id: "yuan-chonghuan-executed", name: "袁崇焕冤杀", kind: "politics", precision: "month", dateNote: "崇祯三年八月十六日，磔于市", at: ym(1630, 8), dynastyIds: ["ming"], participantIds: ["yuan-chonghuan", "zhu-youjian"], summary: "崇祯帝中皇太极反间计，以通敌罪处死袁崇焕，辽东防线崩溃。" }),
+  eventPoint({ id: "yuan-chonghuan-executed", name: "袁崇焕冤杀", kind: "politics", precision: "month", dateNote: "崇祯三年八月十六日，磔于市", at: ym(1630, 8), dynastyIds: ["ming", "qing"], participantIds: ["yuan-chonghuan", "zhu-youjian"], summary: "后金方面施行反间计，使崇祯帝疑袁崇焕通敌；袁崇焕被捕并处死，辽东战局随之恶化。" }),
   eventPoint({ id: "yuan-moves-capital-to-dadu", name: "元朝迁都大都", kind: "politics", at: ym(1272), dynastyIds: ["yuan"], participantIds: ["hu-bilie"], summary: "忽必烈将中都改名大都，并以新城为元朝都城；上都继续作为夏都。", dateNote: "至元九年（1272年）命名大都并建都；按年精度记录都城迁移阶段。" }),
   eventPoint({ id: "qing-enter-pass", name: "清军入关", kind: "politics", at: ym(1644), dynastyIds: ["qing"], participantIds: ["fulin"], summary: "吴三桂引清军入关，清军占领北京；顺治帝同年由盛京迁都北京，盛京保留陪都地位，清廷由此入主中原。" }),
   eventRange({ id: "kangqian-prosperity", name: "康乾盛世", kind: "politics", timeMode: "span", start: ym(1661), end: ym(1796), dynastyIds: ["qing"], participantIds: ["xuanye", "hongli"], summary: "康熙、雍正、乾隆三朝国力强盛，疆域辽阔。" }),
@@ -518,6 +518,9 @@ const manifest = {
   counts: { persons: persons.length, dynasties: dynasties.length, reigns: reigns.length, events: events.length, relations: relations.length },
   sources: [
     { label: "元朝", url: "https://zh.wikipedia.org/wiki/元朝" },
+    { label: "《明史·太祖本纪》（卷三）", url: "https://zh.wikisource.org/zh-hans/明史/卷3" },
+    { label: "《明史》卷二百五十九·袁崇焕传", url: "https://zh.wikisource.org/zh-hans/明史/卷259" },
+    { label: "《明实录·太祖高皇帝实录》洪武二十一年四月", url: "https://sillok.history.go.kr/mc/id/msilok_001_1920_0010_0010_0050_0010" },
     { label: "元朝君主列表", url: "https://zh.wikipedia.org/wiki/元朝君主列表" },
     { label: "元文宗", url: "https://zh.wikipedia.org/wiki/元文宗" },
     { label: "元明宗", url: "https://zh.wikipedia.org/wiki/元明宗" },
@@ -597,6 +600,7 @@ const manifest = {
     "明非帝王人物：张居正、海瑞、戚继光、王阳明、严嵩、唐寅、李时珍、徐光启、徐霞客、魏忠贤、刘基、于谦、郑和等；张居正改革（1572–1582）为 span 事件。",
     "元明清皇帝在位日取维基百科君主列表通行换算，precision=day；南明弘光/隆武/永历及鲁监国、绍武亦升级日精度。",
     "元文宗两度即位（1328-10-16–1329-02-27、1329-09-08–1332-09-02），中间为明宗；第一次止于明宗和宁即位，正式送玺在 1329-04-03。",
+    "捕鱼儿海之战据《明实录》记洪武二十一年四月，按公历资料落在1388年5月；元/北元政权延续至1388年11月天元帝被杀，避免年精度点落在1月的错误结束边界。袁崇焕冤杀加入后金（本项目合并标为清）关联，依据《明史·袁崇焕传》反间计记载。",
     "两都之战天顺帝用 claim_track=shangdu（1328-10-04–1328-11-14），不串主线继承；泰定崩至文宗即位、明宗崩至文宗复位的短空档不标史料缺。",
   ],
 };

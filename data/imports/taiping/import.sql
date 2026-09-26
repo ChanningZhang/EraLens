@@ -2,6 +2,9 @@
 -- Window: 1851-01 .. 1864-07
 BEGIN;
 
+-- cleanup
+DELETE FROM event_dynasties WHERE event_id IN ('jintian-uprising', 'hong-xiuquan-enthroned', 'taiping-capital-tianjing', 'hong-tianguifu-captured') AND dynasty_id = 'qing';
+
 -- persons
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name, title)
 VALUES ('hong-xiuquan', '洪秀全', ARRAY[]::text[], NULL, NULL, 1814, 1, 1864, 6, ARRAY['皇帝','起义领袖'], '太平天国创建者，金田起义后称天王，定都天京；同治三年四月二十七日（1864年6月1日）病逝于南京。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/洪秀全"}]'::jsonb, NULL, NULL, '天王')
@@ -50,12 +53,9 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('jintian-uprising', 'taiping') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('hong-xiuquan-enthroned', 'taiping') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('taiping-capital-tianjing', 'taiping') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('taiping-capital-tianjing', 'qing') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('tianjing-incident', 'taiping') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('fall-of-tianjing', 'taiping') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('fall-of-tianjing', 'qing') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('hong-tianguifu-captured', 'taiping') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('hong-tianguifu-captured', 'qing') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('taiping-rebellion', 'taiping') ON CONFLICT DO NOTHING;
 
 -- event_participants

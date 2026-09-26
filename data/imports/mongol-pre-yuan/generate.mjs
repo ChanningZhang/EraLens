@@ -190,9 +190,9 @@ const events = [
     timeMode: "span",
     start: ym(1235),
     end: ym(1279),
-    dynastyIds: ["mongol-empire", "song-south"],
+    dynastyIds: ["mongol-empire", "yuan", "song-south"],
     participantIds: ["hu-bilie", "mongke"],
-    summary: "蒙古自窝阔台至忽必烈长期南征，经襄樊之战、崖山海战，最终灭南宋。",
+    summary: "蒙古自窝阔台时期起持续南征；忽必烈于1271年定国号大元后战争仍继续，经襄樊之战、崖山海战，1279年灭南宋。",
   }),
 ];
 
