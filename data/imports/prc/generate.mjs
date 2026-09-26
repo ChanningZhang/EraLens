@@ -23,7 +23,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 function prcOffice({ id, personId, title, start, end }) {
   const [sy, sm, sd] = start;
-  const [ey, em, ed] = end;
+  const [ey, em, ed] = end ?? [];
   return reign({
     id: id ?? `reign-${personId}-prc`,
     dynastyId: "prc",
@@ -32,7 +32,8 @@ function prcOffice({ id, personId, title, start, end }) {
     posthumousName: null,
     templeName: null,
     start: sd != null ? { ...ym(sy, sm), day: sd } : ym(sy, sm),
-    end: ed != null ? { ...ym(ey, em), day: ed } : ym(ey, em),
+    end: end == null ? null : ed != null ? { ...ym(ey, em), day: ed } : ym(ey, em),
+    endAbs: end == null ? ym(2026, 9).abs : undefined,
     precision: sd != null && ed != null ? "day" : "month",
   });
 }
@@ -143,7 +144,7 @@ const persons = [
     "xi-jinping",
     "习近平",
     ["政治家"],
-    "2013年3月14日当选国家主席，其后连任。任期收录截至2026年9月。",
+    "2013年3月14日当选国家主席，其后连任。",
     "习近平",
     ym(1953, 6),
   ),
@@ -323,7 +324,7 @@ const restoredReigns = [
     personId: "xi-jinping",
     title: "国家主席",
     start: [2013, 3, 14],
-    end: [2026, 9],
+    end: null,
   }),
 ];
 
@@ -507,7 +508,7 @@ const manifest = {
   window: { startYear: 1949, startMonth: 10, endYear: 2026, endMonth: 9 },
   scope: "cn",
   depth: "standard",
-  generatedAt: "2026-09-19",
+  generatedAt: "2026-09-26",
   counts: {
     persons: persons.length,
     dynasties: dynasties.length,
@@ -532,7 +533,7 @@ const manifest = {
     "毛泽东分两段：1949-10-01 中央人民政府主席至 1954-09-27；同日当选国家主席至 1959-04-27。宪法改职称，比照民国国民政府主席/总统分卡。刘少奇 1959-04-27 至 1968-10-31。",
     "1968-10-31 至 1972-02-24 宋庆龄、董必武以国家副主席共同代行主席职权，合并为一个联合主体卡片；两人的独立人物记录仍保留。董必武 1972-02-24 起以国家代主席名义行职权，至 1975-01-17。",
     "1975-01-17 至 1983-06-18 宪法不设国家主席，全国人大常委会集体行使元首职权，建机构卡；委员长朱德、叶剑英不另建主席卡。宋庆龄名誉主席（1981）为荣誉称号，不建 reign。",
-    "李先念 1983-06-18 复设后首任，杨尚昆、江泽民、胡锦涛、习近平接任。连任不拆卡。习近平任期收录截至 2026-09。",
+    "李先念 1983-06-18 复设后首任，杨尚昆、江泽民、胡锦涛、习近平接任。连任不拆卡。",
     "华国锋、胡耀邦、赵紫阳只建 persons。国民政府迁台并非投降、禅让或被俘，不画跨朝命运线。国共内战事件 civil-war 补挂 prc。",
   ],
 };

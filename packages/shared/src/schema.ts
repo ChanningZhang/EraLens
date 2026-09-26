@@ -199,6 +199,8 @@ export const ReignSchema = z.object({
   end: TimePointSchema,
   startAbs: z.number(),
   endAbs: z.number(),
+  /** End date is open/unknown; endAbs may still cap rendering at the current data window. */
+  isOngoing: z.boolean().optional(),
   precision: PrecisionSchema.default("year"),
   /** Omitted = certain. Mark approximate/interpolated when the year is estimated. */
   startDateConfidence: DateConfidenceSchema.optional(),

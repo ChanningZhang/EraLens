@@ -55,6 +55,7 @@ function formatTenureRangeLabel(
   endPrecision = startPrecision,
   startConfidence?: Reign["startDateConfidence"],
   endConfidence?: Reign["endDateConfidence"],
+  isOngoing = false,
 ): string {
   const formatPoint = (
     point: CapitalTimePoint,
@@ -72,6 +73,7 @@ function formatTenureRangeLabel(
   };
 
   const startLabel = formatPoint(start, startPrecision, startConfidence);
+  if (isOngoing) return `${startLabel} — 至今`;
   const endLabel = formatPoint(end, endPrecision, endConfidence);
   return startLabel === endLabel && startLabel !== "？"
     ? startLabel
@@ -150,6 +152,7 @@ export function buildReignCapitalTenures(
             endsAtReignBoundary ? reign.precision : (capital.endPrecision ?? capital.precision),
             startsAtReignBoundary ? reign.startDateConfidence : undefined,
             endsAtReignBoundary ? reign.endDateConfidence : undefined,
+            endsAtReignBoundary && reign.isOngoing,
           ),
           abs: startAbs,
           ...(reign.isInformalMonarch ? { isInformalMonarch: true } : {}),
@@ -188,6 +191,7 @@ export function buildReignTenureCapitalRows(
           reign.precision,
           reign.startDateConfidence,
           reign.endDateConfidence,
+          reign.isOngoing,
         ),
         abs: reign.startAbs,
         ...(reign.isInformalMonarch ? { isInformalMonarch: true } : {}),

@@ -268,7 +268,6 @@ export const DOCUMENTED_REIGN_DATES = {
   "reign-chen-shuibian-roc": { start: [2000, 5, 20], end: [2008, 5, 20] },
   "reign-ma-yingjiu-roc": { start: [2008, 5, 20], end: [2016, 5, 20] },
   "reign-cai-yingwen-roc": { start: [2016, 5, 20], end: [2024, 5, 20] },
-  "reign-lai-qingde-roc": { start: [2024, 5, 20], end: [2026, 9], precision: "month" },
 
   // ── 中华人民共和国国家元首（主席 / 副主席代行 / 代主席 / 人大常委会）──
   "reign-mao-zedong-prc": { start: [1949, 10, 1], end: [1954, 9, 27] },
@@ -281,7 +280,6 @@ export const DOCUMENTED_REIGN_DATES = {
   "reign-yang-shangkun-prc": { start: [1988, 4, 8], end: [1993, 3, 27] },
   "reign-jiang-zemin-prc": { start: [1993, 3, 27], end: [2003, 3, 15] },
   "reign-hu-jintao-prc": { start: [2003, 3, 15], end: [2013, 3, 14] },
-  "reign-xi-jinping-prc": { start: [2013, 3, 14], end: [2026, 9], precision: "month" },
 };
 
 function lookupDoc(reign) {
@@ -295,11 +293,11 @@ export function applyDocumentedDates(reign) {
   const doc = lookupDoc(reign);
   if (!doc) return reign;
   const start = point(doc.start);
-  const end = point(doc.end);
+  const end = doc.end ? point(doc.end) : null;
   const precision =
     doc.precision ??
-    (doc.start[2] != null && doc.end[2] != null ? "day" : "month");
-  return { ...reign, start, end, startAbs: start.abs, endAbs: end.abs, precision };
+    (doc.start[2] != null && doc.end?.[2] != null ? "day" : "month");
+  return { ...reign, start, end, startAbs: start.abs, endAbs: end?.abs ?? null, precision };
 }
 
 export function applyDocumentedDatesToReigns(reigns) {

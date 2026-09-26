@@ -106,6 +106,7 @@ export function reign({
   templeName,
   start,
   end,
+  endAbs: explicitEndAbs = null,
   precision = "year",
   startDateConfidence = null,
   endDateConfidence = null,
@@ -125,7 +126,7 @@ export function reign({
     start,
     end,
     startAbs: start.abs,
-    endAbs: end.abs,
+    endAbs: explicitEndAbs ?? end?.abs ?? null,
     precision,
     startDateConfidence,
     endDateConfidence,
@@ -303,7 +304,7 @@ export function reignSql(r) {
   const mainVal = isMain != null ? `, ${isMain}` : "";
   const mainUpdate = isMain != null ? ", is_main = EXCLUDED.is_main" : "";
   return `INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence${claimCols}${informalCol}${mainCol})
-VALUES (${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(resolveReignTitle(r))}, ${sqlStr(formatAppellationCsv(r.eraNames))}, ${r.start.year}, ${r.start.month}, ${r.start.day ?? "NULL"}, ${r.end.year}, ${r.end.month}, ${r.end.day ?? "NULL"}, ${r.startAbs}, ${r.endAbs}, ${sqlStr(r.precision)}, ${sqlStr(r.startDateConfidence ?? null)}, ${sqlStr(r.endDateConfidence ?? null)}${claimVals}${informalVal}${mainVal})
+VALUES (${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(resolveReignTitle(r))}, ${sqlStr(formatAppellationCsv(r.eraNames))}, ${r.start.year}, ${r.start.month}, ${r.start.day ?? "NULL"}, ${r.end?.year ?? "NULL"}, ${r.end?.month ?? "NULL"}, ${r.end?.day ?? "NULL"}, ${r.startAbs}, ${r.endAbs ?? "NULL"}, ${sqlStr(r.precision)}, ${sqlStr(r.startDateConfidence ?? null)}, ${sqlStr(r.endDateConfidence ?? null)}${claimVals}${informalVal}${mainVal})
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence${claimUpdates}${informalUpdate}${mainUpdate};`;
 }
 

@@ -44,12 +44,12 @@ function person(id, name, roles, bio, wikiTitle, birth = null, death = null, alt
 }
 
 function reign({ id, dynastyId, personId, title, posthumousName, templeName, start, end, precision = "year", eraNames = [], isInformalMonarch = false }) {
-  return { id, dynastyId, personId, title, posthumousName, templeName, eraNames, start, end, startAbs: start.abs, endAbs: end.abs, precision, isInformalMonarch };
+  return { id, dynastyId, personId, title, posthumousName, templeName, eraNames, start, end, startAbs: start.abs, endAbs: end?.abs ?? ym(2026, 9).abs, precision, isInformalMonarch };
 }
 
 function rocOffice({ id, personId, title, start, end, isInformalMonarch = false }) {
   const [sy, sm, sd] = start;
-  const [ey, em, ed] = end;
+  const [ey, em, ed] = end ?? [];
   return reign({
     id: id ?? `reign-${personId}-roc`,
     dynastyId: "roc",
@@ -58,7 +58,7 @@ function rocOffice({ id, personId, title, start, end, isInformalMonarch = false 
     posthumousName: null,
     templeName: null,
     start: sd != null ? { ...ym(sy, sm), day: sd } : ym(sy, sm),
-    end: ed != null ? { ...ym(ey, em), day: ed } : ym(ey, em),
+    end: end == null ? null : ed != null ? { ...ym(ey, em), day: ed } : ym(ey, em),
     precision: sd != null && ed != null ? "day" : "month",
     isInformalMonarch,
   });
@@ -164,7 +164,7 @@ const rocReigns = [
   rocOffice({ personId: "chen-shuibian", title: "总统", start: [2000, 5, 20], end: [2008, 5, 20] }),
   rocOffice({ personId: "ma-yingjiu", title: "总统", start: [2008, 5, 20], end: [2016, 5, 20] }),
   rocOffice({ personId: "cai-yingwen", title: "总统", start: [2016, 5, 20], end: [2024, 5, 20] }),
-  rocOffice({ personId: "lai-qingde", title: "总统", start: [2024, 5, 20], end: [2026, 9] }),
+  rocOffice({ personId: "lai-qingde", title: "总统", start: [2024, 5, 20], end: null }),
 ];
 
 // 孙中山护法军政府、广州/武汉国民政府（1925–1928 汪兆铭等）及汪精卫伪政权不建 reign
@@ -433,7 +433,7 @@ const manifest = {
   window: { startYear: 1912, startMonth: 1, endYear: 2026, endMonth: 9 },
   scope: "cn",
   depth: "standard",
-  generatedAt: "2026-09-19",
+  generatedAt: "2026-09-26",
   counts: { persons: persons.length, dynasties: dynasties.length, reigns: reigns.length, events: events.length, relations: relations.length },
   sources: [
     { label: "中华民国", url: "https://zh.wikipedia.org/wiki/中华民国" },
@@ -450,7 +450,7 @@ const manifest = {
     "不收录：护法军政府、1925–1928 广州/武汉国民政府（汪兆铭等，维基详表仅列 1928 年后主席）、汪精卫伪政权。",
     "国务院摄行按维基「中华民国国家元首列表」建 informal reign：周自齐、高凌霨、黄郛、胡惟德（两段）、颜惠庆、杜锡珪、顾维钧。",
     "谭延闿维基自 1928-02-07 任南京国民政府主席，与张作霖安国军政府并立至 6 月；主线自张作霖 1928-06-03 离京后接谭，避免叠卡。",
-    "正统金色截于 1949 年 9 月（十月一日中华人民共和国成立后迁台续统不上金）。1949 年后的台湾地区任期在 reign.title 统一标为「领导人」，人物概述不用「总统」。赖清德任期收录截至 2026-09。",
+    "正统金色截于 1949 年 9 月（十月一日中华人民共和国成立后迁台续统不上金）。1949 年后的台湾地区任期在 reign.title 统一标为「领导人」，人物概述不用「总统」。",
   ],
 };
 writeFileSync(path.join(__dirname, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);

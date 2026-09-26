@@ -10,6 +10,7 @@ import {
   type Reign,
   type Relation,
   type TimelineDataStore,
+  fromAbsMonth,
 } from "@eralens/shared";
 import type {
   Dynasty as DbDynasty,
@@ -66,8 +67,8 @@ export type RawReignRow = {
   start_year: number;
   start_month: number;
   start_day: number | null;
-  end_year: number;
-  end_month: number;
+  end_year: number | null;
+  end_month: number | null;
   end_day: number | null;
   start_abs: number;
   end_abs: number;
@@ -333,12 +334,14 @@ export function mapReign(row: DbReign | RawReignRow): Reign {
       ...(startDay != null ? { day: startDay } : {}),
     },
     end: {
-      year: endYear,
-      month: endMonth,
+      // Open-ended reigns retain an end_abs display cap for the current import window.
+      year: endYear ?? fromAbsMonth(endAbs).year,
+      month: endMonth ?? fromAbsMonth(endAbs).month,
       ...(endDay != null ? { day: endDay } : {}),
     },
     startAbs,
     endAbs,
+    isOngoing: endYear == null || endMonth == null,
     precision: row.precision as Reign["precision"],
     startDateConfidence:
       (startDateConfidence as Reign["startDateConfidence"] | null) ?? undefined,

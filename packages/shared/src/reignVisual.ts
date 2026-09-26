@@ -95,6 +95,12 @@ function formatSmartDayDuration(reign: Reign, days: number): string {
 
 /** Hover label for a reign, honoring day precision when present. */
 export function formatReignSpanTooltip(reign: Reign): string {
+  if (reign.isOngoing) {
+    const startLabel = reign.precision === "month" || reign.precision === "day"
+      ? formatYearMonth(reign.start.year, reign.start.month, "compact")
+      : formatYear(reign.start.year, "compact");
+    return `${startLabel} — 至今`;
+  }
   if (reign.precision === "day" && reign.start.day != null && reign.end.day != null) {
     const startLabel = formatYearMonthDay(reign.start.year, reign.start.month, reign.start.day);
     const endLabel = formatYearMonthDay(reign.end.year, reign.end.month, reign.end.day);
@@ -133,7 +139,7 @@ export function formatReignSpanTooltip(reign: Reign): string {
 
 type ReignYearRangeFields = Pick<
   Reign,
-  "start" | "end" | "startDateConfidence" | "endDateConfidence"
+  "start" | "end" | "startDateConfidence" | "endDateConfidence" | "isOngoing"
 >;
 
 /** Detail-panel year range; uncertain endpoints are intentionally rendered as `？`. */
@@ -141,6 +147,7 @@ export function formatReignYearRange(reign: ReignYearRangeFields): string {
   const start = isUncertainDateConfidence(reign.startDateConfidence)
     ? "？"
     : String(reign.start.year);
+  if (reign.isOngoing) return `${start} — 至今`;
   const end = isUncertainDateConfidence(reign.endDateConfidence)
     ? "？"
     : String(reign.end.year);
