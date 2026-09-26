@@ -1991,15 +1991,15 @@
       "abs": 3192
     },
     "end": {
-      "year": 316,
+      "year": 311,
       "month": 12,
-      "abs": 3803
+      "abs": 3738
     },
     "startAbs": 3192,
-    "endAbs": 3803,
+    "endAbs": 3738,
     "precision": "year",
     "role": "primary",
-    "note": "西晋都城洛阳。",
+    "note": "西晋前期都城洛阳；311年洛阳陷落，晋廷迁至长安。",
     "links": [
       {
         "label": "维基百科",
@@ -5394,6 +5394,37 @@
       {
         "label": "维基百科",
         "url": "https://zh.wikipedia.org/wiki/北京市"
+      }
+    ]
+  },
+  {
+    "id": "cap-jin-west-changan-313",
+    "dynastyId": "jin-west",
+    "historicalName": "长安",
+    "modernName": "陕西省西安市",
+    "start": {
+      "year": 313,
+      "month": 1,
+      "abs": 3756
+    },
+    "end": {
+      "year": 316,
+      "month": 12,
+      "abs": 3803
+    },
+    "startAbs": 3756,
+    "endAbs": 3803,
+    "precision": "year",
+    "role": "primary",
+    "note": "晋愍帝于长安即位；316年长安陷落，愍帝出降，西晋灭亡。",
+    "links": [
+      {
+        "label": "晋愍帝",
+        "url": "https://zh.wikipedia.org/wiki/晋愍帝"
+      },
+      {
+        "label": "中国哲学书电子化计划《晋书·愍帝纪》",
+        "url": "https://ctext.org/datawiki.pl?if=gb&remap=gb&res=26844"
       }
     ]
   }

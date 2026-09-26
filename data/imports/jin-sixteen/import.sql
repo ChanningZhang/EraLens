@@ -14,7 +14,7 @@ INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, 
 VALUES ('sima-chi', '司马炽', ARRAY[]::text[], NULL, NULL, NULL, NULL, NULL, NULL, ARRAY['皇帝'], '晋怀帝，永嘉之乱中被刘曜俘虏。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/司马炽"}]'::jsonb, '孝怀皇帝', NULL, '晋怀帝')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, title = EXCLUDED.title;
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name, title)
-VALUES ('sima-ye', '司马邺', ARRAY[]::text[], NULL, NULL, NULL, NULL, NULL, NULL, ARRAY['皇帝'], '晋愍帝，西晋末代皇帝，长安陷落后被杀。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/司马邺"}]'::jsonb, '孝愍皇帝', NULL, '晋愍帝')
+VALUES ('sima-ye', '司马邺', ARRAY[]::text[], NULL, NULL, NULL, NULL, NULL, NULL, ARRAY['皇帝'], '晋愍帝，西晋末代皇帝。313年在长安即位；316年长安陷落后出降汉赵，被迁至平阳，318年遇害。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/司马邺"}]'::jsonb, '孝愍皇帝', NULL, '晋愍帝')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, title = EXCLUDED.title;
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name, title)
 VALUES ('sima-rui', '司马睿', ARRAY[]::text[], NULL, NULL, 276, 1, 323, 1, ARRAY['皇帝'], '晋元帝，南渡建康，开创东晋。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/司马睿"}]'::jsonb, '元皇帝', '中宗', '晋元帝')
@@ -276,7 +276,7 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_na
 
 -- dynasties
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, parent_id, group_id, note)
-VALUES ('jin-west', '西晋', ARRAY['晋','司马晋'], 'cn', 'east_asia', 266, 2, 316, 12, 3193, 3803, 'month', 'ochre', NULL, NULL, '司马炎代魏建晋，都洛阳；316年12月愍帝出降长安，西晋灭亡。')
+VALUES ('jin-west', '西晋', ARRAY['晋','司马晋'], 'cn', 'east_asia', 266, 2, 316, 12, 3193, 3803, 'month', 'ochre', NULL, NULL, '司马炎代魏建晋，都洛阳；永嘉之乱后愍帝在长安即位，316年12月出降汉赵，西晋灭亡。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, parent_id, group_id, note)
 VALUES ('jin-east', '东晋', ARRAY['晋'], 'cn', 'east_asia', 317, 1, 420, 7, 3804, 5046, 'year', 'ochre', NULL, NULL, '司马睿南渡建康，与北方十六国对峙；420年刘裕代晋。')
