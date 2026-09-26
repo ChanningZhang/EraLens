@@ -3,6 +3,7 @@
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { eventPoint, person, writeImportPackage, ym } from "../lib/sqlHelpers.mjs";
+import { ymDay } from "../lib/reignDateHelpers.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -70,6 +71,8 @@ const events = [
   poemPoint({ id: "poetry-wuyixiang", name: "《乌衣巷》", year: 824, dynastyIds: ["tang"], participantIds: ["liu-yu-xi"], dateNote: "宝历二年，金陵；咏六朝旧迹", summary: "刘禹锡凭吊金陵乌衣巷，以燕子旧巢写六朝门阀与王朝兴亡。" }),
   poemPoint({ id: "poetry-boqinhua", name: "《泊秦淮》", year: 824, dynastyIds: ["tang"], participantIds: ["du-mu"], dateNote: "晚唐，约大和年间", summary: "杜牧夜泊秦淮，借南朝旧都讽喻晚唐政治忧患。" }),
   poemPoint({ id: "poetry-chibi-du-mu", name: "《赤壁》", year: 845, dynastyIds: ["tang"], participantIds: ["du-mu"], dateNote: "晚唐，具体创作年份不详", summary: "杜牧凭吊赤壁古战场，以三国旧事寄托历史兴亡感。" }),
+  eventPoint({ id: "poetry-yumeiren-li-yu", name: "虞美人·春花秋月何时了", kind: "poetry", precision: "day", at: ymDay(978, 7, 7), dynastyIds: ["tang-nan"], participantIds: ["li-yu-nantang"], dateNote: "后世传说系于太平兴国三年七夕；宋代记载对李煜卒日有七月初七、初八异说，创作日与历法对应均有争议。为配合本包采用的初八卒日，时间轴代表日设为978年7月7日，早于命运线一日，不视为确证", summary: "南唐后主李煜被俘后追忆故国，以春花秋月、故国宫阙和一江春水写亡国之痛；词作系于其去世前夕的说法见于后世传闻，具体创作日不能确考。" }),
+  poemPoint({ id: "poetry-xiangjianhuan-li-yu", name: "《相见欢·无言独上西楼》", year: 976, dynastyIds: ["tang-nan"], participantIds: ["li-yu-nantang"], dateNote: "南唐亡国、李煜被俘后所作；具体创作年份不详，以976年作为亡国后阶段的时间轴代表年", summary: "南唐后主李煜亡国被俘后，借独上西楼、残月梧桐与剪不断的离愁，抒写离开故国的哀痛；词作一般系于其降宋后的后期创作。" }),
   poemPoint({ id: "poetry-tixilinbi", name: "《题西林壁》", year: 1084, dynastyIds: ["song-north"], participantIds: ["su-shi"], dateNote: "元丰七年，庐山西林寺", summary: "苏轼游庐山题壁，写观察视角与山川名胜。" }),
   poemPoint({ id: "poetry-yinhu-chuqing", name: "《饮湖上初晴后雨》", year: 1073, dynastyIds: ["song-north"], participantIds: ["su-shi"], dateNote: "熙宁六年前后，杭州", summary: "苏轼任杭州通判时咏西湖名篇。" }),
   poemPoint({ id: "poetry-youshanxicun", name: "《游山西村》", year: 1167, dynastyIds: ["song-south"], participantIds: ["lu-you"], dateNote: "乾道三年，山阴", summary: "陆游闲居山阴时所作，写南宋乡村社会与民情。" }),
@@ -118,6 +121,8 @@ const poemTexts = {
   "poetry-wuyixiang": `朱雀桥边野草花，乌衣巷口夕阳斜。\n旧时王谢堂前燕，飞入寻常百姓家。`,
   "poetry-boqinhua": `烟笼寒水月笼沙，夜泊秦淮近酒家。\n商女不知亡国恨，隔江犹唱后庭花。`,
   "poetry-chibi-du-mu": `折戟沉沙铁未销，自将磨洗认前朝。\n东风不与周郎便，铜雀春深锁二乔。`,
+  "poetry-yumeiren-li-yu": `春花秋月何时了？往事知多少。\n小楼昨夜又东风，故国不堪回首月明中。\n雕栏玉砌应犹在，只是朱颜改。\n问君能有几多愁？恰似一江春水向东流。`,
+  "poetry-xiangjianhuan-li-yu": `无言独上西楼，月如钩。\n寂寞梧桐深院锁清秋。\n剪不断，理还乱，是离愁。\n别是一般滋味在心头。`,
   "poetry-tixilinbi": `横看成岭侧成峰，远近高低各不同。\n不识庐山真面目，只缘身在此山中。`,
   "poetry-yinhu-chuqing": `水光潋滟晴方好，山色空蒙雨亦奇。\n欲把西湖比西子，淡妆浓抹总相宜。`,
   "poetry-youshanxicun": `莫笑农家腊酒浑，丰年留客足鸡豚。\n山重水复疑无路，柳暗花明又一村。\n箫鼓追随春社近，衣冠简朴古风存。\n从今若许闲乘月，拄杖无时夜叩门。`,
@@ -171,6 +176,7 @@ writeImportPackage(__dirname, {
     sources: [
       ...events.map((event) => ({ label: event.name, url: sourceFor(event) })),
       { label: "广东省政协文化和文史资料委员会：《文天祥在广东》", url: "https://www.gdwsw.gov.cn/shsy/content/post_25851.html" },
+      { label: "方震华：《悲剧故事的形成——李煜之死与相关传说》", url: "https://homepage.ntu.edu.tw/~bcla/e_book/102/10202.pdf" },
     ],
     notes: [
       "首批按知名度优先收录；事件标题保留诗名，kind=poetry 仅作为类型标签。",
@@ -178,6 +184,7 @@ writeImportPackage(__dirname, {
       "《凉州词》《出塞》《枫桥夜泊》《登鹳雀楼》等采用盛唐或安史之乱后的大致年代；不同文献可能有异说。",
       "未保存整首诗正文，只保存名篇索引、作者、年代、背景摘要与来源链接。",
       "《正气歌》据文史广东所载1281年5月16日创作；按用户指定的时期归属，《过零丁洋》《正气歌》均关联南宋。",
+      "《虞美人·春花秋月何时了》与李煜之死相连的叙述源自后世传闻。方震华《悲剧故事的形成——李煜之死与相关传说》梳理宋代材料，指出卒日有七月初七、初八异说，较早墓志记七月初八遘疾；本包沿用初八命运线，并将词的传闻代表日记为初七以保持先后，日期及历法对应不作为确证。《相见欢·无言独上西楼》系于亡国被俘后的后期。两词均依用户指定关联南唐泳道。",
     ],
   },
 });

@@ -5,6 +5,7 @@ import {
   type ResolvedFateRelation,
   resolveReignCardLabel,
   buildPreQinClanContext,
+  absMonthAtDay,
   type Relation,
   type Reign,
 } from "@eralens/shared";
@@ -179,14 +180,15 @@ export function layoutReignFates(
   const placed: PlacedReignFate[] = [];
   for (const item of candidates) {
     const { relation, fromReign, toReign } = item;
+    const relationAbs = relation.at ? absMonthAtDay(relation.at) : relation.atAbs!;
 
     const fromLayout = layoutByReignId.get(fromReign.id);
     const toLayout = layoutByReignId.get(toReign.id);
     if (!fromLayout || !toLayout) continue;
 
-    const eventX = projectAbs(viewport, relation.atAbs);
-    const sourceAnchorX = clampAbsToBarX(relation.atAbs, fromLayout, viewport);
-    const destinationAnchorX = clampAbsToBarX(relation.atAbs, toLayout, viewport);
+    const eventX = projectAbs(viewport, relationAbs);
+    const sourceAnchorX = clampAbsToBarX(relationAbs, fromLayout, viewport);
+    const destinationAnchorX = clampAbsToBarX(relationAbs, toLayout, viewport);
     // If the event is outside a card, approach it from the card midline. When
     // it is inside the source card, dock at the edge facing the destination.
     const sourceY = Math.abs(eventX - sourceAnchorX) > ORTHOGONAL_EPSILON_PX

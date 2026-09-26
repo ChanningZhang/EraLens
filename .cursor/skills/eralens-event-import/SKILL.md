@@ -43,6 +43,7 @@ description: >-
 ## 时间建模
 
 - `point`：明确时点。填 `at_*`；只知年份时 `precision='year'`，占位月必须为 12，可用 `eventYear()` / `eventPoint()`。
+- 确知公历年月日时用 `precision='day'`，`at` / `start` / `end` 带 `day` 字段（SQL 对应 `at_day` / `start_day` / `end_day`）；农历月日须先可靠换算，不能直接写入公历日字段。
 - `span`：事件真实持续一段时间。填 `start_*`、`end_*`；不能用来表示“大约”。
 - `circa`：发生于估计窗口或诸说不一。填 `start_*`、`end_*`；可另填通行估计 `at_*`，并在 `date_note` 说明。
 - `precision` 只能使用 `day | month | year | decade | century`；已知月份才写 `month`，已知日期才写 `day`。

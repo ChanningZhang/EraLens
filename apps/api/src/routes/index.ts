@@ -59,8 +59,8 @@ async function loadStore() {
 /** Event dynasties provide context; their visibility does not gate the event marker. */
 async function loadEventsInWindow(fromAbs: number, toAbs: number) {
   const eventRows = await prisma.$queryRaw<RawEventRow[]>`
-    SELECT id, name, kind, time_mode, precision, is_approximate, date_note, at_year, at_month, at_abs,
-           start_year, start_month, start_abs, end_year, end_month, end_abs, summary, meaning, content, location_id
+    SELECT id, name, kind, time_mode, precision, is_approximate, date_note, at_year, at_month, at_day, at_abs,
+           start_year, start_month, start_day, start_abs, end_year, end_month, end_day, end_abs, summary, meaning, content, location_id
     FROM events
     WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')`;
 
@@ -205,13 +205,14 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
       kind: string;
       at_year: number | null;
       at_month: number | null;
+      at_day: number | null;
       at_abs: number | null;
       precision: string | null;
       event_id: string | null;
     }[]
   >`
     SELECT id, from_type, from_id, to_type, to_id, kind,
-           at_year, at_month, at_abs, precision, event_id
+           at_year, at_month, at_day, at_abs, precision, event_id
     FROM relations
     WHERE kind IN ('killed', 'surrender', 'abdication', 'captured')
       AND at_abs IS NOT NULL
@@ -228,6 +229,7 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
       kind: row.kind,
       atYear: row.at_year,
       atMonth: row.at_month,
+      atDay: row.at_day,
       atAbs: row.at_abs,
       precision: row.precision,
       eventId: row.event_id,

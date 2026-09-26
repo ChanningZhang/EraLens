@@ -6,6 +6,7 @@ export type AbsMonth = number;
 export type TimePoint = {
   year: number;
   month: number;
+  day?: number;
 };
 
 export type TimeRange = {
@@ -37,6 +38,15 @@ export function fromAbsMonth(abs: AbsMonth): TimePoint {
 
 export function absFromPoint(point: TimePoint): AbsMonth {
   return absMonth(point.year, point.month);
+}
+
+/** Position a known Gregorian day within its month while keeping stored AbsMonth values integral. */
+export function absMonthAtDay(point: TimePoint): number {
+  if (point.day == null) return absMonth(point.year, point.month);
+  const astroYear = toAstroYear(point.year);
+  const leap = astroYear % 4 === 0 && (astroYear % 100 !== 0 || astroYear % 400 === 0);
+  const days = point.month === 2 ? (leap ? 29 : 28) : ([4, 6, 9, 11].includes(point.month) ? 30 : 31);
+  return absMonth(point.year, point.month) + (point.day - 1) / days;
 }
 
 export function rangeToAbs(range: TimeRange): { startAbs: AbsMonth; endAbs: AbsMonth } {

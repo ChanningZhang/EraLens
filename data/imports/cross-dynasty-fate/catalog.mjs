@@ -1032,7 +1032,7 @@ export function buildFateCatalog() {
       resolveAt: () => atFromReignEnd("reign-li-yu-nantang-tang-nan", 975),
     },
     {
-      // 降宋后太平兴国三年七月八日（978-07-08）遘疾薨；牵机药之说见《默记》，接收方为太宗。
+      // 降宋后太平兴国三年七月八日（本目录日期记为978-07-08）；徐鉉墓誌铭记遘疾薨，牵机药说见南宋《默记》，史料有异。
       // 赵匡胤已于开宝九年（976）去世。https://zh.wikipedia.org/wiki/李煜
       id: "rel-li-yu-nantang-zhao-kuangyi-killed",
       fromPersonId: "li-yu-nantang",

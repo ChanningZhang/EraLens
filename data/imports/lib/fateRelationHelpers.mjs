@@ -10,8 +10,47 @@ const FATE_VICTIM_MAX_LAG_MONTHS = 24;
 const FATE_KILLED_VICTIM_MAX_LAG_MONTHS = 48;
 const REIGN_ROW_RE =
   /VALUES\s*\(\s*'(reign-[^']+)',\s*'([^']+)',\s*'([^']+)'[\s\S]*?,\s*(-?\d+),\s*(-?\d+),\s*(NULL|-?\d+),\s*(-?\d+),\s*(-?\d+),\s*(NULL|-?\d+),\s*(-?\d+),\s*(-?\d+),\s*'([^']+)'/g;
-const EVENT_ROW_RE =
-  /INSERT INTO events \([^)]*\) VALUES \('((?:[^']|'')*)',\s*'(?:[^']|'')*',\s*'(?:[^']|'')*',\s*'(?:[^']|'')*',\s*'([^']*)',\s*(?:NULL|'(?:[^']|'')*'),\s*(-?\d+),\s*(-?\d+),\s*(-?\d+)/g;
+const EVENT_INSERT_RE = /INSERT INTO events \(([^)]*)\) VALUES \(/g;
+
+function parseSqlTuple(sql, openParen) {
+  const values = [];
+  let valueStart = openParen + 1;
+  let depth = 0;
+  let quoted = false;
+  for (let index = valueStart; index < sql.length; index += 1) {
+    const char = sql[index];
+    if (char === "'" && quoted && sql[index + 1] === "'") {
+      index += 1;
+      continue;
+    }
+    if (char === "'") {
+      quoted = !quoted;
+      continue;
+    }
+    if (quoted) continue;
+    if (char === "(") depth += 1;
+    else if (char === ")") {
+      if (depth === 0) {
+        values.push(sql.slice(valueStart, index).trim());
+        return values;
+      }
+      depth -= 1;
+    } else if (char === "," && depth === 0) {
+      values.push(sql.slice(valueStart, index).trim());
+      valueStart = index + 1;
+    }
+  }
+  return null;
+}
+
+function parseSqlValue(raw) {
+  if (raw === "NULL") return null;
+  if (raw === "TRUE") return true;
+  if (raw === "FALSE") return false;
+  if (/^-?\d+$/.test(raw)) return Number(raw);
+  if (raw.startsWith("'") && raw.endsWith("'")) return raw.slice(1, -1).replaceAll("''", "'");
+  return raw;
+}
 
 /** @type {Map<string, {id:string,end:{year:number,month:number,day?:number},precision:string}>} */
 let importedReignById = new Map();
@@ -167,20 +206,26 @@ export function validateFateCatalog(catalog, reigns) {
 
 /** Load event rows from all period import.sql files (for event↔fate alignment). */
 export function loadEventsFromImports(importsRoot = path.join(path.dirname(fileURLToPath(import.meta.url)), "..")) {
-  /** @type {Map<string, {id:string,precision:string,atAbs:number,atYear:number,atMonth:number}>} */
+  /** @type {Map<string, {id:string,precision:string,atAbs:number,atYear:number,atMonth:number,atDay:number|null}>} */
   const events = new Map();
   for (const slug of readdirSync(importsRoot)) {
     const sqlPath = path.join(importsRoot, slug, "import.sql");
     try {
       const sql = readFileSync(sqlPath, "utf8");
-      for (const match of sql.matchAll(EVENT_ROW_RE)) {
-        const [, id, precision, atYear, atMonth, atAbs] = match;
-        events.set(id, {
-          id,
-          precision,
-          atYear: Number(atYear),
-          atMonth: Number(atMonth),
-          atAbs: Number(atAbs),
+      for (const match of sql.matchAll(EVENT_INSERT_RE)) {
+        const columns = match[1].split(",").map((column) => column.trim());
+        const openParen = match.index + match[0].length - 1;
+        const rawValues = parseSqlTuple(sql, openParen);
+        if (!rawValues) continue;
+        const row = Object.fromEntries(columns.map((column, index) => [column, parseSqlValue(rawValues[index])]));
+        if (row.id == null || row.at_abs == null || row.at_year == null || row.at_month == null) continue;
+        events.set(row.id, {
+          id: row.id,
+          precision: row.precision,
+          atYear: row.at_year,
+          atMonth: row.at_month,
+          atDay: row.at_day ?? null,
+          atAbs: row.at_abs,
         });
       }
     } catch {
@@ -198,11 +243,16 @@ export function validateEventFateAlignment(catalog, events) {
     const event = events.get(entry.eventId);
     if (!event) continue;
     const at = entry.resolveAt();
-    if (at.abs !== event.atAbs) {
+    const aligned = event.precision === "day"
+      ? at.year === event.atYear && at.month === event.atMonth && at.day === event.atDay
+      : event.precision === "month"
+        ? at.year === event.atYear && at.month === event.atMonth
+        : at.year === event.atYear;
+    if (!aligned) {
       failures.push({
         id: entry.id,
         eventId: entry.eventId,
-        reason: `event ${entry.eventId} at_abs=${event.atAbs} != fate at_abs=${at.abs}`,
+        reason: `event ${entry.eventId} at=${event.atYear}-${event.atMonth}-${event.atDay ?? "?"} != fate at=${at.year}-${at.month}-${at.day ?? "?"}`,
       });
     }
   }

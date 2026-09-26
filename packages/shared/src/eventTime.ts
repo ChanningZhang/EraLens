@@ -1,5 +1,5 @@
 import type { Event, EventPrecision, Lod } from "./schema";
-import { formatYear, formatYearMonth } from "./time";
+import { absMonthAtDay, formatYear, formatYearMonth } from "./time";
 
 export type EventSpan = {
   startAbs: number;
@@ -33,14 +33,18 @@ export function eventKindLabel(kind: Event["kind"]): string {
 }
 
 export function eventSpanAbs(event: {
+  at?: { year: number; month: number; day?: number };
   atAbs?: number;
+  start?: { year: number; month: number; day?: number };
+  end?: { year: number; month: number; day?: number };
   startAbs?: number;
   endAbs?: number;
 }): EventSpan {
-  const startAbs = event.startAbs ?? event.atAbs ?? 0;
-  const endAbs = event.endAbs ?? event.atAbs ?? startAbs;
+  const atAbs = event.at ? absMonthAtDay(event.at) : event.atAbs;
+  const startAbs = event.start ? absMonthAtDay(event.start) : event.startAbs ?? atAbs ?? 0;
+  const endAbs = event.end ? absMonthAtDay(event.end) : event.endAbs ?? atAbs ?? startAbs;
   const anchorAbs =
-    event.atAbs ?? (startAbs === endAbs ? startAbs : (startAbs + endAbs) / 2);
+    atAbs ?? (startAbs === endAbs ? startAbs : (startAbs + endAbs) / 2);
   return { startAbs, endAbs, anchorAbs };
 }
 
@@ -48,7 +52,11 @@ function formatByPrecision(
   year: number,
   month: number,
   precision: EventPrecision,
+  day?: number,
 ): string {
+  if (precision === "day" && day != null) {
+    return `${formatYearMonth(year, month)}${day}日`;
+  }
   if (precision === "month" || precision === "day") {
     return formatYearMonth(year, month);
   }
@@ -56,10 +64,10 @@ function formatByPrecision(
 }
 
 function formatPoint(
-  point: { year: number; month: number },
+  point: { year: number; month: number; day?: number },
   precision: EventPrecision,
 ): string {
-  return formatByPrecision(point.year, point.month, precision);
+  return formatByPrecision(point.year, point.month, precision, point.day);
 }
 
 export function formatEventTime(event: Event): string {

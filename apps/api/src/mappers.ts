@@ -121,12 +121,15 @@ export type RawEventRow = {
   date_note: string | null;
   at_year: number | null;
   at_month: number | null;
+  at_day: number | null;
   at_abs: number | null;
   start_year: number | null;
   start_month: number | null;
+  start_day: number | null;
   start_abs: number | null;
   end_year: number | null;
   end_month: number | null;
+  end_day: number | null;
   end_abs: number | null;
   summary: string | null;
   meaning: string | null;
@@ -364,12 +367,15 @@ export function mapEvent(
 ): Event {
   const atYear = "atYear" in row ? row.atYear : row.at_year;
   const atMonth = "atMonth" in row ? row.atMonth : row.at_month;
+  const atDay = "atDay" in row ? row.atDay : row.at_day;
   const atAbs = "atAbs" in row ? row.atAbs : row.at_abs;
   const startYear = "startYear" in row ? row.startYear : row.start_year;
   const startMonth = "startMonth" in row ? row.startMonth : row.start_month;
+  const startDay = "startDay" in row ? row.startDay : row.start_day;
   const startAbs = "startAbs" in row ? row.startAbs : row.start_abs;
   const endYear = "endYear" in row ? row.endYear : row.end_year;
   const endMonth = "endMonth" in row ? row.endMonth : row.end_month;
+  const endDay = "endDay" in row ? row.endDay : row.end_day;
   const endAbs = "endAbs" in row ? row.endAbs : row.end_abs;
   const timeMode = "timeMode" in row ? row.timeMode : row.time_mode;
   const dateNote = "dateNote" in row ? row.dateNote : row.date_note;
@@ -398,12 +404,12 @@ export function mapEvent(
     precision: (row.precision as Event["precision"] | null) ?? "year",
     isApproximate: ("isApproximate" in row ? row.isApproximate : row.is_approximate) ?? false,
     dateNote: dateNote ?? undefined,
-    at: atYear != null && atMonth != null ? { year: atYear, month: atMonth } : undefined,
+    at: atYear != null && atMonth != null ? { year: atYear, month: atMonth, ...(atDay != null ? { day: atDay } : {}) } : undefined,
     start:
       startYear != null && startMonth != null
-        ? { year: startYear, month: startMonth }
+        ? { year: startYear, month: startMonth, ...(startDay != null ? { day: startDay } : {}) }
         : undefined,
-    end: endYear != null && endMonth != null ? { year: endYear, month: endMonth } : undefined,
+    end: endYear != null && endMonth != null ? { year: endYear, month: endMonth, ...(endDay != null ? { day: endDay } : {}) } : undefined,
     atAbs: atAbs ?? undefined,
     startAbs: startAbs ?? undefined,
     endAbs: endAbs ?? undefined,
@@ -426,7 +432,7 @@ export function mapRelation(row: DbRelation): Relation {
     kind: row.kind as Relation["kind"],
     at:
       row.atYear != null && row.atMonth != null
-        ? { year: row.atYear, month: row.atMonth }
+        ? { year: row.atYear, month: row.atMonth, ...(row.atDay != null ? { day: row.atDay } : {}) }
         : undefined,
     atAbs: row.atAbs ?? undefined,
     precision: (row.precision as Relation["precision"]) ?? undefined,

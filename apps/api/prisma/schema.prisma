@@ -126,12 +126,15 @@ model Event {
   dateNote    String?             @map("date_note")
   atYear      Int?                @map("at_year")
   atMonth     Int?                @map("at_month")
+  atDay       Int?                @map("at_day")
   atAbs       Int?                @map("at_abs")
   startYear   Int?                @map("start_year")
   startMonth  Int?                @map("start_month")
+  startDay    Int?                @map("start_day")
   startAbs    Int?                @map("start_abs")
   endYear     Int?                @map("end_year")
   endMonth    Int?                @map("end_month")
+  endDay      Int?                @map("end_day")
   endAbs      Int?                @map("end_abs")
   summary     String?
   meaning     String?
@@ -192,6 +195,7 @@ model Relation {
   kind      String
   atYear    Int?    @map("at_year")
   atMonth   Int?    @map("at_month")
+  atDay     Int?    @map("at_day")
   atAbs     Int?    @map("at_abs")
   precision String? @default("year")
   eventId   String? @map("event_id")
