@@ -1,6 +1,6 @@
 {
   "slug": "event-locations",
-  "title": "战争事件地点",
+  "title": "事件地点",
   "window": {
     "startYear": 9999,
     "startMonth": 1,
@@ -17,9 +17,117 @@
     "reigns": 0,
     "events": 0,
     "relations": 0,
-    "eventLocations": 41
+    "eventLocations": 63
   },
   "sources": [
+    {
+      "label": "北京市地方志：忽必烈迁都中都、元迁都大都",
+      "url": "https://www.bjdsdfz.cn/jcdq.jhtml"
+    },
+    {
+      "label": "东周王城遗址",
+      "url": "https://zh.wikipedia.org/wiki/东周王城"
+    },
+    {
+      "label": "陕西省地方志：西安市志",
+      "url": "https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsxz/xbsxz/xas_16198/201405/P020240923625160882829.pdf"
+    },
+    {
+      "label": "《旧唐书·则天皇后本纪》",
+      "url": "https://zh.wikisource.org/zh-hans/舊唐書/卷六"
+    },
+    {
+      "label": "《旧唐书·昭宗本纪》",
+      "url": "https://zh.wikisource.org/zh-hans/舊唐書/卷二十上"
+    },
+    {
+      "label": "《旧唐书·中宗本纪》",
+      "url": "https://zh.wikisource.org/zh-hans/舊唐書/卷七"
+    },
+    {
+      "label": "《宋史·高宗本纪》",
+      "url": "https://zh.wikisource.org/zh-hans/宋史/卷二十五"
+    },
+    {
+      "label": "中国大运河博物馆：永乐迁都",
+      "url": "https://m.canalmuseum.org.cn/res/mpwork/be39852bcd974f12962108850c059dfb.pdf"
+    },
+    {
+      "label": "重庆市政协：国民政府迁都重庆史料",
+      "url": "https://www.cqzx.gov.cn"
+    },
+    {
+      "label": "国民政府还都南京",
+      "url": "https://zh.wikipedia.org/wiki/國民政府還都"
+    },
+    {
+      "label": "成周",
+      "url": "https://zh.wikipedia.org/wiki/成周"
+    },
+    {
+      "label": "殷墟",
+      "url": "https://zh.wikipedia.org/wiki/殷墟"
+    },
+    {
+      "label": "故宫博物院：清廷迁都北京",
+      "url": "https://www.dpm.org.cn/court/event/159873.html"
+    },
+    {
+      "label": "太平天国定都天京",
+      "url": "https://zh.wikipedia.org/wiki/天京"
+    },
+    {
+      "label": "《史记·项羽本纪》",
+      "url": "https://zh.wikisource.org/wiki/史記/卷007"
+    },
+    {
+      "label": "鸿门宴遗址地址与定位",
+      "url": "https://ditu.amap.com/place/B001D00964"
+    },
+    {
+      "label": "《史记·陈涉世家》",
+      "url": "https://zh.wikisource.org/wiki/史記/卷048"
+    },
+    {
+      "label": "大泽乡历史地名",
+      "url": "https://www.cidianwang.com/lishi/diming/5/36215jk.htm"
+    },
+    {
+      "label": "《汉书·西域传》",
+      "url": "https://zh.wikisource.org/wiki/漢書/卷096下"
+    },
+    {
+      "label": "央广网：乌垒城与西域都护府驻地",
+      "url": "https://www.cnr.cn/yuleguangbo/pinlvxinw/20161221/t20161221_523372915.shtml"
+    },
+    {
+      "label": "轮台县西域都护府遗址群考古资料",
+      "url": "https://www.xjlt.gov.cn/xjltx/c1104328/202503/10f62e4cb6d84501b372a5966eb9b518/files/42.%E8%BD%AE%E5%8F%B0%E5%8E%BF%E8%A5%BF%E5%9F%9F%E9%83%BD%E6%8A%A4%E5%BA%9C%E9%81%97%E5%9D%80%E7%BE%A4%EF%BC%88%E5%8D%93%E5%B0%94%E5%BA%93%E7%89%B9%E5%8F%A4%E5%9F%8E%EF%BC%89%E8%80%83%E5%8F%A4%E9%81%97%E5%9D%80%E5%85%AC%E5%9B%AD%E7%A0%94%E7%A9%B6%E4%BF%9D%E6%8A%A4%E4%B8%AD%E5%BF%832025%E5%B9%B4%E5%8D%95%E4%BD%8D%E9%A2%84%E7%AE%97%E5%85%AC%E5%BC%80%E6%8A%A5%E5%91%8A-20251126165408544.pdf"
+    },
+    {
+      "label": "《后汉书·皇甫嵩朱儁列传》",
+      "url": "https://zh.wikisource.org/wiki/後漢書/卷071"
+    },
+    {
+      "label": "黄巾之乱：起义范围与冀州中心",
+      "url": "https://www.cne3online.com/culture/view/11543616/11561454609091.shtml"
+    },
+    {
+      "label": "《新唐书·黄巢传》",
+      "url": "https://zh.wikisource.org/wiki/新唐書/卷225下"
+    },
+    {
+      "label": "山东地情档案：黄巢籍贯考略",
+      "url": "https://shandong-chorography.org/database/fa01/section/3/article/60/"
+    },
+    {
+      "label": "《续资治通鉴长编》卷一",
+      "url": "https://zh.wikisource.org/wiki/續資治通鑑長編/卷001"
+    },
+    {
+      "label": "封丘县人民政府：陈桥驿",
+      "url": "https://www.fengqiu.gov.cn/mlfq/tpfq/1074690.html"
+    },
     {
       "label": "《三国志·魏书·齐王纪》",
       "url": "https://zh.wikisource.org/zh-hans/三國志/卷04"
@@ -215,22 +323,10 @@
     {
       "label": "文县中心坐标",
       "url": "https://www.poi86.com/poi/amap/district/621222/2.html"
-    },
-    {
-      "label": "《三国志·魏书·齐王纪》",
-      "url": "https://zh.wikisource.org/zh-hans/三國志/卷04"
-    },
-    {
-      "label": "高平陵",
-      "url": "https://zh.wikipedia.org/wiki/高平陵"
-    },
-    {
-      "label": "河南省文物局文保名录",
-      "url": "https://wgl.kaifeng.gov.cn/kfswhgdhlyj/swgljwbdw/1805436537969889280/M71CbQHO.pdf"
     }
   ],
   "notes": [
-    "仅为可定位到具体遗址或区域的战争事件补地点；战场范围以近似点表达。存在定位争议者在地点 note 中说明。未能可靠定位的战争保持地点为空。",
+    "为可定位到具体遗址或区域的事件补地点；迁都事件取迁入地作为代表点，多地点或大范围事件在地点 note 中说明代表点含义。不能可靠定位的事件保持地点为空。",
     "坐标采用 WGS84；来源链接用于核对古称、今地与地点定位。"
   ]
 }

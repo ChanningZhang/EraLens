@@ -3,6 +3,72 @@ BEGIN;
 
 -- event_locations
 INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-kublai-moves-capital-to-zhongdu', '中都（今北京）', '北京市', 116.397, 39.916, 'WGS84', 'approximate', '以迁入的金中都旧城区域为代表点；忽必烈此后在中都东北营建元大都，坐标不表示元大都城址。', '[{"label":"北京市地方志：忽必烈迁都中都、元迁都大都","url":"https://www.bjdsdfz.cn/jcdq.jhtml"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-zhou-nanwang-moves-to-western-zhou-capital', '西周国王城', '河南省洛阳市西工区东周王城遗址', 112.437, 34.672, 'WGS84', 'approximate', '周赧王迁居西周国王城的代表点；具体迁居年份有异说，遗址定位依都城资料。', '[{"label":"东周王城遗址","url":"https://zh.wikipedia.org/wiki/东周王城"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-sui-moves-to-daxing', '大兴城', '陕西省西安市', 108.939, 34.248, 'WGS84', 'approximate', '迁入新建大兴城，坐标取西安城市范围的代表点，不表示单一宫殿或遗址坐标。', '[{"label":"陕西省地方志：西安市志","url":"https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsxz/xbsxz/xas_16198/201405/P020240923625160882829.pdf"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-wu-zhou-moves-capital-to-luoyang', '神都洛阳', '河南省洛阳市', 112.454, 34.619, 'WGS84', 'approximate', '迁都目的地为洛阳；坐标取古城区域中心。', '[{"label":"《旧唐书·则天皇后本纪》","url":"https://zh.wikisource.org/zh-hans/舊唐書/卷六"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-tang-forced-move-to-luoyang', '东都洛阳', '河南省洛阳市', 112.454, 34.619, 'WGS84', 'approximate', '事件中心是唐廷被迫迁入洛阳；坐标取古城区域中心。', '[{"label":"《旧唐书·昭宗本纪》","url":"https://zh.wikisource.org/zh-hans/舊唐書/卷二十上"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-tang-restored-capital-to-changan', '长安', '陕西省西安市', 108.94, 34.34, 'WGS84', 'approximate', '以唐朝还都目的地长安为代表点，取城市范围中心。', '[{"label":"《旧唐书·中宗本纪》","url":"https://zh.wikisource.org/zh-hans/舊唐書/卷七"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-song-moves-capital-to-linan', '临安府', '浙江省杭州市', 120.155, 30.274, 'WGS84', 'approximate', '以南宋正式定为行在的临安府为代表点，取杭州城市范围中心。', '[{"label":"《宋史·高宗本纪》","url":"https://zh.wikisource.org/zh-hans/宋史/卷二十五"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-ming-moves-capital-to-beijing', '北京', '北京市', 116.397, 39.916, 'WGS84', 'approximate', '迁都目的地为北京；坐标取城市范围中心。', '[{"label":"中国大运河博物馆：永乐迁都","url":"https://m.canalmuseum.org.cn/res/mpwork/be39852bcd974f12962108850c059dfb.pdf"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-roc-moves-wartime-government-to-chongqing', '重庆', '重庆市', 106.551, 29.563, 'WGS84', 'approximate', '国民政府迁渝，以重庆主城区为代表点；不表示迁移路线或战时陪都全部范围。', '[{"label":"重庆市政协：国民政府迁都重庆史料","url":"https://www.cqzx.gov.cn"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-roc-returns-capital-to-nanjing', '南京', '江苏省南京市', 118.797, 32.06, 'WGS84', 'approximate', '还都目的地南京，以城市范围中心为代表点。', '[{"label":"国民政府还都南京","url":"https://zh.wikipedia.org/wiki/國民政府還都"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-zhou-jingwang-moves-to-chengzhou', '成周（汉魏洛阳故城区域）', '河南省洛阳市瀍河回族区汉魏洛阳故城', 112.589, 34.728, 'WGS84', 'approximate', '迁都目的地为成周；坐标取汉魏洛阳故城区域，具体古城范围按遗址定位。', '[{"label":"成周","url":"https://zh.wikipedia.org/wiki/成周"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-pangeng-move-yin', '殷（殷墟）', '河南省安阳市殷都区殷墟遗址', 114.316, 36.125, 'WGS84', 'approximate', '以盘庚迁殷后的商都殷为代表点；遗址范围较大，坐标仅作区域定位。', '[{"label":"殷墟","url":"https://zh.wikipedia.org/wiki/殷墟"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-pingwang-eastward', '东周王城', '河南省洛阳市西工区东周王城遗址', 112.437, 34.672, 'WGS84', 'approximate', '平王东迁的目的地为王城；坐标取东周王城遗址区域。', '[{"label":"东周王城遗址","url":"https://zh.wikipedia.org/wiki/东周王城"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-yuan-moves-capital-to-dadu', '大都（元大都）', '北京市', 116.397, 39.916, 'WGS84', 'approximate', '以元大都城址区域为迁都目的地代表点；上都继续作为夏都，事件地点仅标示新定都中心。', '[{"label":"北京市地方志：忽必烈迁都中都、元迁都大都","url":"https://www.bjdsdfz.cn/jcdq.jhtml"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-qing-enter-pass', '北京', '北京市', 116.397, 39.916, 'WGS84', 'approximate', '清廷迁都目的地为北京；该事件同时叙述清军入关，地点点位只标迁都中心，不代表军事行动范围。', '[{"label":"故宫博物院：清廷迁都北京","url":"https://www.dpm.org.cn/court/event/159873.html"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-taiping-capital-tianjing', '天京（江宁）', '江苏省南京市', 118.797, 32.06, 'WGS84', 'approximate', '太平军攻克江宁后以此为都，坐标取南京城市范围中心。', '[{"label":"太平天国定都天京","url":"https://zh.wikipedia.org/wiki/天京"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-hongmen-banquet', '新丰鸿门', '陕西省西安市临潼区新丰街道鸿门堡村鸿门坂遗址', 109.272, 34.412, 'WGS84', 'approximate', '《史记·项羽本纪》称项羽驻军新丰鸿门。采用今鸿门堡村鸿门坂遗址附近作代表点；宴会遗址为后世认定位置，不将景区建筑视为汉代原址。', '[{"label":"《史记·项羽本纪》","url":"https://zh.wikisource.org/wiki/史記/卷007"},{"label":"鸿门宴遗址地址与定位","url":"https://ditu.amap.com/place/B001D00964"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-daze-township', '大泽乡', '安徽省宿州市埇桥区大泽乡镇一带', 117.19, 33.65, 'WGS84', 'approximate', '《史记·陈涉世家》记九百戍卒屯大泽乡并在此起事。今大泽乡镇为通行对应地，古乡具体边界及起事点未能精确复原，坐标仅标示区域。', '[{"label":"《史记·陈涉世家》","url":"https://zh.wikisource.org/wiki/史記/卷048"},{"label":"大泽乡历史地名","url":"https://www.cidianwang.com/lishi/diming/5/36215jk.htm"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-wulei-city', '乌垒城（西域都护府治所）', '新疆维吾尔自治区巴音郭楞蒙古自治州轮台县东南乌垒古城区域', 84.25, 41.55, 'WGS84', 'approximate', '西域都护府初治乌垒城，故以轮台县境内遗址区域为设置地点代表。乌垒城具体考古对应遗址尚有不同意见，奎玉克协海尔古城、卓尔库特古城等均有相关考证；坐标仅示轮台县东南候选区域，不代表已确认遗址中心。', '[{"label":"《汉书·西域传》","url":"https://zh.wikisource.org/wiki/漢書/卷096下"},{"label":"央广网：乌垒城与西域都护府驻地","url":"https://www.cnr.cn/yuleguangbo/pinlvxinw/20161221/t20161221_523372915.shtml"},{"label":"轮台县西域都护府遗址群考古资料","url":"https://www.xjlt.gov.cn/xjltx/c1104328/202503/10f62e4cb6d84501b372a5966eb9b518/files/42.%E8%BD%AE%E5%8F%B0%E5%8E%BF%E8%A5%BF%E5%9F%9F%E9%83%BD%E6%8A%A4%E5%BA%9C%E9%81%97%E5%9D%80%E7%BE%A4%EF%BC%88%E5%8D%93%E5%B0%94%E5%BA%93%E7%89%B9%E5%8F%A4%E5%9F%8E%EF%BC%89%E8%80%83%E5%8F%A4%E9%81%97%E5%9D%80%E5%85%AC%E5%9B%AD%E7%A0%94%E7%A9%B6%E4%BF%9D%E6%8A%A4%E4%B8%AD%E5%BF%832025%E5%B9%B4%E5%8D%95%E4%BD%8D%E9%A2%84%E7%AE%97%E5%85%AC%E5%BC%80%E6%8A%A5%E5%91%8A-20251126165408544.pdf"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-julu-yellow-turban', '巨鹿郡及冀州起义中心', '河北省邢台市巨鹿县一带', 115.037, 37.221, 'WGS84', 'approximate', '黄巾军在多个州郡同时起事，张角领导的核心力量活动于冀州，后以广宗等地为据点。此处取巨鹿郡作为起义组织的代表区域，不表示全部起义范围或单一爆发点。', '[{"label":"《后汉书·皇甫嵩朱儁列传》","url":"https://zh.wikisource.org/wiki/後漢書/卷071"},{"label":"黄巾之乱：起义范围与冀州中心","url":"https://www.cne3online.com/culture/view/11543616/11561454609091.shtml"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-yuanju', '曹州冤句', '山东省菏泽市牡丹区西南一带', 115.35, 35.1, 'WGS84', 'approximate', '黄巢起义持续十余年并转战多地；据乾符二年黄巢在曹州冤句起兵的记载，取冤句故地作起事代表点。冤句故城具体位置有考证差异，坐标仅表示菏泽西南区域。', '[{"label":"《新唐书·黄巢传》","url":"https://zh.wikisource.org/wiki/新唐書/卷225下"},{"label":"山东地情档案：黄巢籍贯考略","url":"https://shandong-chorography.org/database/fa01/section/3/article/60/"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-chenqiao', '陈桥驿', '河南省新乡市封丘县陈桥镇陈桥村', 114.46, 35.03, 'WGS84', 'approximate', '《续资治通鉴长编》卷一记赵匡胤军至陈桥驿后被拥立。按封丘县陈桥镇陈桥村陈桥驿遗址区域定位，坐标为遗址近似点。', '[{"label":"《续资治通鉴长编》卷一","url":"https://zh.wikisource.org/wiki/續資治通鑑長編/卷001"},{"label":"封丘县人民政府：陈桥驿","url":"https://www.fengqiu.gov.cn/mlfq/tpfq/1074690.html"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
 VALUES ('loc-gaoping-tombs-incident', '洛阳（洛水浮桥）；高平陵在今汝阳县茹店村一带', '河南省洛阳市；高平陵遗址位于洛阳市汝阳县茹店村一带', 112.453, 34.619, 'WGS84', 'approximate', '政变主行动为司马懿控制京城洛阳及洛水浮桥，坐标取洛阳古城区域中心；曹芳当日赴高平陵谒陵，高平陵遗址约在今汝阳县茹店村。该点表示政变控制中心，不表示陵址坐标。', '[{"label":"《三国志·魏书·齐王纪》","url":"https://zh.wikisource.org/zh-hans/三國志/卷04"},{"label":"高平陵","url":"https://zh.wikipedia.org/wiki/高平陵"},{"label":"河南省文物局：第七批全国重点文物保护单位保护范围和建设控制地带","url":"https://wgl.kaifeng.gov.cn/kfswhgdhlyj/swgljwbdw/1805436537969889280/M71CbQHO.pdf"}]'::jsonb)
 ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
 INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
@@ -125,6 +191,28 @@ ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, moder
 INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
 VALUES ('loc-yinping', '阴平道（阴平故城区域）', '甘肃省陇南市文县鹄衣坝附近', 104.6835, 32.944031, 'WGS84', 'approximate', '以汉代阴平道故城所在的文县区域作近似标点；偷渡路线由此向东南越摩天岭，经今四川平武方向至江油关，坐标不代表全程。阴平道具体线路尚有不同考证。', '[{"label":"《三国志·魏书·邓艾传》","url":"https://zh.wikisource.org/zh-hans/三國志/卷28"},{"label":"蜀道寻踪：阴平古道记","url":"https://cbgc.scol.com.cn/news/5026693"},{"label":"文县中心坐标","url":"https://www.poi86.com/poi/amap/district/621222/2.html"}]'::jsonb)
 ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+UPDATE events SET location_id = 'loc-kublai-moves-capital-to-zhongdu' WHERE id = 'kublai-moves-capital-to-zhongdu';
+UPDATE events SET location_id = 'loc-zhou-nanwang-moves-to-western-zhou-capital' WHERE id = 'zhou-nanwang-moves-to-western-zhou-capital';
+UPDATE events SET location_id = 'loc-sui-moves-to-daxing' WHERE id = 'sui-moves-to-daxing';
+UPDATE events SET location_id = 'loc-wu-zhou-moves-capital-to-luoyang' WHERE id = 'wu-zhou-moves-capital-to-luoyang';
+UPDATE events SET location_id = 'loc-tang-forced-move-to-luoyang' WHERE id = 'tang-forced-move-to-luoyang';
+UPDATE events SET location_id = 'loc-tang-restored-capital-to-changan' WHERE id = 'tang-restored-capital-to-changan';
+UPDATE events SET location_id = 'loc-song-moves-capital-to-linan' WHERE id = 'song-moves-capital-to-linan';
+UPDATE events SET location_id = 'loc-ming-moves-capital-to-beijing' WHERE id = 'ming-moves-capital-to-beijing';
+UPDATE events SET location_id = 'loc-roc-moves-wartime-government-to-chongqing' WHERE id = 'roc-moves-wartime-government-to-chongqing';
+UPDATE events SET location_id = 'loc-roc-returns-capital-to-nanjing' WHERE id = 'roc-returns-capital-to-nanjing';
+UPDATE events SET location_id = 'loc-zhou-jingwang-moves-to-chengzhou' WHERE id = 'zhou-jingwang-moves-to-chengzhou';
+UPDATE events SET location_id = 'loc-pangeng-move-yin' WHERE id = 'pangeng-move-yin';
+UPDATE events SET location_id = 'loc-pingwang-eastward' WHERE id = 'pingwang-eastward';
+UPDATE events SET location_id = 'loc-yuan-moves-capital-to-dadu' WHERE id = 'yuan-moves-capital-to-dadu';
+UPDATE events SET location_id = 'loc-qing-enter-pass' WHERE id = 'qing-enter-pass';
+UPDATE events SET location_id = 'loc-taiping-capital-tianjing' WHERE id = 'taiping-capital-tianjing';
+UPDATE events SET location_id = 'loc-hongmen-banquet' WHERE id = 'hongmen-banquet';
+UPDATE events SET location_id = 'loc-daze-township' WHERE id = 'daze-uprising';
+UPDATE events SET location_id = 'loc-wulei-city' WHERE id = 'western-han-protectorate-of-western-regions';
+UPDATE events SET location_id = 'loc-julu-yellow-turban' WHERE id = 'yellow-turban';
+UPDATE events SET location_id = 'loc-yuanju' WHERE id = 'huang-chao-uprising';
+UPDATE events SET location_id = 'loc-chenqiao' WHERE id = 'chenqiao-mutiny';
 UPDATE events SET location_id = 'loc-gaoping-tombs-incident' WHERE id = 'gaoping-tombs-incident';
 UPDATE events SET location_id = 'loc-baiteng' WHERE id = 'baiteng-siege';
 UPDATE events SET location_id = 'loc-changban' WHERE id = 'changban';

@@ -604,7 +604,7 @@ const events = [
     precision: "year",
     dateNote: "秦王子婴投降，前207年",
     at: ym(-207),
-    dynastyIds: ["qin"],
+    dynastyIds: ["han-west"],
     participantIds: ["liu-bang", "ying-ziying"],
     summary: "刘邦率军入咸阳，子婴投降，秦朝名义上灭亡。",
   }),
