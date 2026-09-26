@@ -3,6 +3,9 @@ BEGIN;
 
 -- event_locations
 INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-gaoping-tombs-incident', '洛阳（洛水浮桥）；高平陵在今汝阳县茹店村一带', '河南省洛阳市；高平陵遗址位于洛阳市汝阳县茹店村一带', 112.453, 34.619, 'WGS84', 'approximate', '政变主行动为司马懿控制京城洛阳及洛水浮桥，坐标取洛阳古城区域中心；曹芳当日赴高平陵谒陵，高平陵遗址约在今汝阳县茹店村。该点表示政变控制中心，不表示陵址坐标。', '[{"label":"《三国志·魏书·齐王纪》","url":"https://zh.wikisource.org/zh-hans/三國志/卷04"},{"label":"高平陵","url":"https://zh.wikipedia.org/wiki/高平陵"},{"label":"河南省文物局：第七批全国重点文物保护单位保护范围和建设控制地带","url":"https://wgl.kaifeng.gov.cn/kfswhgdhlyj/swgljwbdw/1805436537969889280/M71CbQHO.pdf"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
 VALUES ('loc-baiteng', '白登山', '山西省大同市云州区周士庄镇马铺山', 113.37025, 40.13972, 'WGS84', 'approximate', '采用马铺山说作近似定位；白登山的具体位置仍有争议，另有采凉山等说。', '[{"label":"云州区人民政府：白登之战遗址","url":"https://www.yunzhou.gov.cn/yzqrmzfz/sqglcyjj/202007/7efb8d970c9c42b9b94471068b663e55.shtml"},{"label":"白登山汉代遗迹调查","url":"https://m.fx361.com/news/2018/0814/16088578.html"},{"label":"大同市平城区人民政府：白登山定位争议","url":"https://www.pingcheng.gov.cn/pcqrmzfz/pingcheng1/202407/46e23c04a12f4ae1ad034e0ef57d8039.shtml"}]'::jsonb)
 ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
 INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
@@ -122,6 +125,7 @@ ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, moder
 INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
 VALUES ('loc-yinping', '阴平道（阴平故城区域）', '甘肃省陇南市文县鹄衣坝附近', 104.6835, 32.944031, 'WGS84', 'approximate', '以汉代阴平道故城所在的文县区域作近似标点；偷渡路线由此向东南越摩天岭，经今四川平武方向至江油关，坐标不代表全程。阴平道具体线路尚有不同考证。', '[{"label":"《三国志·魏书·邓艾传》","url":"https://zh.wikisource.org/zh-hans/三國志/卷28"},{"label":"蜀道寻踪：阴平古道记","url":"https://cbgc.scol.com.cn/news/5026693"},{"label":"文县中心坐标","url":"https://www.poi86.com/poi/amap/district/621222/2.html"}]'::jsonb)
 ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+UPDATE events SET location_id = 'loc-gaoping-tombs-incident' WHERE id = 'gaoping-tombs-incident';
 UPDATE events SET location_id = 'loc-baiteng' WHERE id = 'baiteng-siege';
 UPDATE events SET location_id = 'loc-changban' WHERE id = 'changban';
 UPDATE events SET location_id = 'loc-xiaoyaojin' WHERE id = 'xiaoyaojin';

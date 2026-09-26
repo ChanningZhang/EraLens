@@ -3,17 +3,6 @@ import { eventPoint, eventYear, writeImportPackage } from "../lib/sqlHelpers.mjs
 
 const events = [
   eventPoint({
-    id: "commerce-cucumber-introduction",
-    isApproximate: true,
-    name: "黄瓜传入中原",
-    kind: "agriculture",
-    precision: "year",
-    at: eventYear(-138),
-    dynastyIds: [],
-    summary: "黄瓜又称胡瓜，原产地及具体首传路线仍有不同说法。传统记述将其与张骞通西域联系起来；北魏《齐民要术》已记载栽培方法，证明当时已在中国种植。",
-    dateNote: "传统记述将黄瓜（胡瓜）与张骞通西域相联系。按其前138年首次出使作为最早叙述时点；此为传播叙事的年代锚点，不能证明黄瓜确切引种年。",
-  }),
-  eventPoint({
     id: "commerce-maize-introduction",
     isApproximate: true,
     name: "玉米传入中国",
@@ -116,6 +105,7 @@ const events = [
 ];
 
 const screenshotCrops = [
+  { id: "commerce-cucumber-introduction", name: "黄瓜（胡瓜）", year: -138, summary: "黄瓜又称胡瓜，原产地及具体首传路线仍有不同说法。传统记述将其与张骞通西域联系起来；北魏《齐民要术》已记载栽培方法，证明当时已在中国种植。", note: "传统记述将黄瓜（胡瓜）与张骞通西域相联系。按其前138年首次出使作为最早叙述时点；此为传播叙事的年代锚点，不能证明黄瓜确切引种年。" },
   { id: "agri-grape-introduction", name: "葡萄经西域传入", year: -138, summary: "葡萄原生种早已见于中国文献；张骞通西域后，从大宛引入适于酿酒的栽培品种，在长安一带推广。汉代以后葡萄栽培和酿酒逐渐发展。", note: "《汉书·西域传》记汉使引入蒲陶并种于离宫馆旁；按张骞前138年首次出使作最早记述锚点，不将其视为确切引种年份。" },
   { id: "agri-pomegranate-introduction", name: "石榴传入中国", year: -138, summary: "石榴原产西亚，经西域交通传入中国，汉代已进入宫苑和园圃栽培。石榴后来成为常见果树，也形成多子寓意。", note: "截图将石榴列为西汉张骞通西域传入；用前138年作为所述传播时期的最早年份。" },
   { id: "agri-walnut-introduction", name: "核桃（胡桃）传入中国", year: -138, summary: "核桃又称胡桃，传统记述将其由西域传入与张骞出使相联系。它作为坚果和木本油料逐步在中国栽培。", note: "截图标注西汉、张骞带回；以张骞前138年首次出使作为最早叙述时点，传统归因不等于已证实的单次引种。" },
@@ -150,7 +140,24 @@ const screenshotCrops = [
   { id: "agri-strawberry-introduction", name: "现代草莓传入中国", year: 1911, summary: "现代栽培草莓由欧洲品种杂交培育而来，近代传入中国后逐步开展栽培，与中国原有野生草莓资源不同。", note: "截图列为近现代引入，未给出更早确年；取1911年作为近现代时期起点的年代锚点，确切首传年需进一步考证。" },
 ];
 
-events.push(...screenshotCrops.map((crop) => eventPoint({
+const mergedCropIds = new Set([
+  "commerce-cucumber-introduction",
+  "agri-grape-introduction",
+  "agri-pomegranate-introduction",
+  "agri-walnut-introduction",
+  "agri-garlic-introduction",
+  "agri-coriander-introduction",
+  "agri-sesame-introduction",
+  "agri-alfalfa-introduction",
+  "agri-pepper-introduction",
+  "agri-pea-introduction",
+  "agri-broad-bean-introduction",
+  "agri-cowpea-introduction",
+]);
+const mergedCrops = screenshotCrops.filter((crop) => mergedCropIds.has(crop.id));
+const separateCrops = screenshotCrops.filter((crop) => !mergedCropIds.has(crop.id));
+
+events.push(...separateCrops.map((crop) => eventPoint({
   id: crop.id,
   name: crop.name,
   kind: "agriculture",
@@ -160,6 +167,17 @@ events.push(...screenshotCrops.map((crop) => eventPoint({
   dateNote: crop.note,
   isApproximate: true,
 })));
+
+events.push(eventPoint({
+  id: "agri-crops-introduction",
+  name: "汉代作物传入",
+  kind: "agriculture",
+  at: eventYear(Math.min(...mergedCrops.map((crop) => crop.year))),
+  dynastyIds: [],
+  summary: `黄瓜、葡萄、石榴、核桃、大蒜、胡荽、芝麻、苜蓿、胡椒、豌豆、蚕豆、豇豆等作物在汉代前后经陆上交通传播至中国。古代记载将其中若干种与西域交流联系起来；各作物的来源、传播路线和具体传入时间并不相同。`,
+  dateNote: "传统记述将部分作物的传入与汉代西域交流联系起来；具体年代和路线因作物及史料而异。",
+  isApproximate: true,
+}));
 
 const sources = [
   { label: "韩天琪：《从丝绸之路传来的农作物》，《中国科学报》/科学网", url: "https://news.sciencenet.cn/sbhtmlnews/2015/10/304975.shtm" },
@@ -185,7 +203,7 @@ const sources = [
 writeImportPackage(new URL(".", import.meta.url).pathname, {
   slug: "commercial-events",
   window: { startYear: -138, startMonth: 1, endYear: 1911, endMonth: 12 },
-  preSql: "DELETE FROM event_dynasties WHERE event_id = 'commerce-treaty-of-nanking-five-ports';\nDELETE FROM events WHERE id = 'commerce-treaty-of-nanking-five-ports';\nDELETE FROM events WHERE id IN ('commerce-cucumber-recorded-in-qimin-yaoshu', 'commerce-maize-earliest-record', 'commerce-chili-earliest-record', 'commerce-tomato-recorded-in-zhipin', 'commerce-tobacco-recorded-in-jingyue-quanshu');\nDELETE FROM event_dynasties WHERE event_id IN ('commerce-cucumber-introduction', 'commerce-maize-introduction', 'commerce-sweet-potato-introduction', 'commerce-chili-introduction', 'commerce-tomato-introduction', 'commerce-tobacco-introduction');",
+  preSql: "DELETE FROM event_dynasties WHERE event_id = 'commerce-treaty-of-nanking-five-ports';\nDELETE FROM events WHERE id = 'commerce-treaty-of-nanking-five-ports';\nDELETE FROM events WHERE id IN ('commerce-cucumber-recorded-in-qimin-yaoshu', 'commerce-maize-earliest-record', 'commerce-chili-earliest-record', 'commerce-tomato-recorded-in-zhipin', 'commerce-tobacco-recorded-in-jingyue-quanshu');\nDELETE FROM event_dynasties WHERE event_id IN ('commerce-cucumber-introduction', 'commerce-maize-introduction', 'commerce-sweet-potato-introduction', 'commerce-chili-introduction', 'commerce-tomato-introduction', 'commerce-tobacco-introduction');\nDELETE FROM events WHERE id IN ('commerce-cucumber-introduction', 'agri-grape-introduction', 'agri-pomegranate-introduction', 'agri-walnut-introduction', 'agri-garlic-introduction', 'agri-coriander-introduction', 'agri-sesame-introduction', 'agri-alfalfa-introduction', 'agri-pepper-introduction', 'agri-pea-introduction', 'agri-broad-bean-introduction', 'agri-cowpea-introduction');",
   persons: [], dynasties: [], reignGroups: [], reigns: [], relations: [], events,
   manifest: {
     slug: "commercial-events",
@@ -202,7 +220,7 @@ writeImportPackage(new URL(".", import.meta.url).pathname, {
       "黄瓜前138年依据张骞首次出使的传统联系，不视为已证实的引种年份；《齐民要术》记载用于确认北魏时已栽培。",
       "玉米采用1534年《巩县志》“玉麦”早期记载；甘薯采用万历十年（1582）这一较早引种说法；其余作物按来源所列最早年份落点。",
       "截图中仅标明朝代、世纪或时代段的作物，用对应段落最早的年份作为显示锚点，并在事件 date_note 中标明其为年代锚点，不表示首传已精确考定。",
-      "本包新录入葡萄、石榴、核桃、无花果、苜蓿、胡蒜、胡荽、胡麻、胡椒、豌豆、蚕豆、豇豆、茄子、菠菜、西瓜、占城稻、胡萝卜、丝瓜、亚洲棉、花生、马铃薯、南瓜、向日葵、腰果、菠萝、菜豆、洋葱、卷心菜、花菜、西葫芦、西洋苹果及现代草莓等截图条目。",
+      "汉代前后经陆上交通传播的作物包括黄瓜、葡萄、石榴、核桃、大蒜、胡荽、芝麻、苜蓿、胡椒及多种豆类；古代作物名称与具体来源、路线存在考证差异。",
       "有关胡豆、胡荽、胡麻等古代名物，名称在不同时期可能指向不同作物；概要保留常用作物名，date_note 提示文献名物辨析的不确定性。",
       "不重复已入库的张骞通西域、郑和下西洋等事件；不确定的首传年份只作单点显示，并在 date_note 中明确其证据性质。",
     ],

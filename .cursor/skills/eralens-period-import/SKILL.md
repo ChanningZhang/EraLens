@@ -11,6 +11,11 @@ description: >-
 
 将用户指定的历史时期（如「唐朝贞观」「北宋仁宗」）转为可执行的 SQL，写入 PostgreSQL。不要生成或更新 `data/seed/*.json`。
 
+单项任务优先使用专门 Skill：添加或丰富事件见
+[eralens-event-import](../eralens-event-import/SKILL.md)，添加或丰富在位信息见
+[eralens-reign-import](../eralens-reign-import/SKILL.md)，添加都城或事件地点见
+[eralens-geography-import](../eralens-geography-import/SKILL.md)。本 Skill 负责跨实体的完整时期包。
+
 ## 触发后先确认
 
 向用户确认（缺省可推断）：

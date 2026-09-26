@@ -16,6 +16,7 @@ import {
   layoutEvents,
   packEventLanes,
   stickyEventMarkerX,
+  eventRailHeight,
 } from "./eventLayout";
 
 describe("compactEventLanes", () => {
@@ -103,26 +104,6 @@ describe("layoutEventBadges", () => {
     expect(positions.get("late")!.anchorX).toBe(projectAbs(viewport, late));
   });
 
-  it("packs explicitly approximate badges horizontally while preserving their time anchors", () => {
-    const at = absMonth(-356, 12);
-    const approximate = (id: string) => EventSchema.parse({
-      id,
-      name: id,
-      dynastyIds: ["qin"],
-      atAbs: at,
-      precision: "year",
-      isApproximate: true,
-    });
-    const placed = ["one", "two", "three", "four"].map((id) => ({
-      event: approximate(id), anchorX: 400, markerWidth: 100, lane: 0,
-      showBand: false, bandLeft: 0, bandWidth: 0, top: 0,
-    }));
-    const positions = layoutPlacedEventBadges(placed, dynastyLanes, 1000);
-    const xs = [...positions.values()].map((position) => position.anchorX);
-
-    expect(new Set(xs).size).toBe(4);
-  });
-
   it("reserves a later high-precision badge and moves a conflicting earlier badge below", () => {
     const placed = [
       { id: "early", anchorX: 10, precision: "year" as const },
@@ -180,8 +161,8 @@ describe("filterViewportEvents", () => {
   });
 });
 
-describe("layoutEvents approximate rail packing", () => {
-  it("spreads approximate events with a shared year across horizontal rail positions", () => {
+describe("approximate events", () => {
+  it("use the same vertical lane packing as other point events", () => {
     const at = absMonth(-138, 12);
     const events = ["胡瓜传入", "石榴传入", "核桃传入", "胡蒜传入", "胡荽传入", "胡麻传入", "胡椒传入", "豌豆传入"].map((name, index) =>
       EventSchema.parse({
@@ -195,26 +176,14 @@ describe("layoutEvents approximate rail packing", () => {
     const viewport = { centerAbs: at, pxPerMonth: 3, widthPx: 1200 };
     const placed = layoutEvents(events, viewport);
 
-    expect(new Set(placed.map((item) => item.anchorX)).size).toBe(events.length);
-    expect(new Set(placed.map((item) => item.lane)).size).toBeLessThan(events.length);
+    expect(new Set(placed.map((item) => item.anchorX))).toEqual(new Set([projectAbs(viewport, at)]));
+    expect(new Set(placed.map((item) => item.lane)).size).toBe(events.length);
   });
+});
 
-  it("keeps rail slot offsets fixed while the timeline pans", () => {
-    const at = absMonth(-138, 12);
-    const events = ["黄瓜传入中原", "葡萄经西域传入", "石榴传入中国", "核桃传入中国"].map((name, index) =>
-      EventSchema.parse({ id: `crop-${index}`, name, atAbs: at, isApproximate: true }),
-    );
-    const firstViewport = { centerAbs: at, pxPerMonth: 3, widthPx: 1200 };
-    const nextViewport = { ...firstViewport, centerAbs: at + 7 };
-    const first = layoutEvents(events, firstViewport);
-    const next = layoutEvents(events, nextViewport);
-
-    for (let index = 0; index < events.length; index += 1) {
-      expect(next[index]!.lane).toBe(first[index]!.lane);
-      expect(next[index]!.anchorX - first[index]!.anchorX).toBe(
-        projectAbs(nextViewport, at) - projectAbs(firstViewport, at),
-      );
-    }
+describe("eventRailHeight", () => {
+  it("reserves the full height for all event lanes", () => {
+    expect(eventRailHeight(8)).toBeGreaterThan(eventRailHeight(6));
   });
 });
 

@@ -10,16 +10,28 @@
   "scope": "cn",
   "depth": "standard",
   "importPhase": "post",
-  "generatedAt": "2026-09-24",
+  "generatedAt": "2026-09-26",
   "counts": {
     "persons": 0,
     "dynasties": 0,
     "reigns": 0,
     "events": 0,
     "relations": 0,
-    "eventLocations": 40
+    "eventLocations": 41
   },
   "sources": [
+    {
+      "label": "《三国志·魏书·齐王纪》",
+      "url": "https://zh.wikisource.org/zh-hans/三國志/卷04"
+    },
+    {
+      "label": "高平陵",
+      "url": "https://zh.wikipedia.org/wiki/高平陵"
+    },
+    {
+      "label": "河南省文物局：第七批全国重点文物保护单位保护范围和建设控制地带",
+      "url": "https://wgl.kaifeng.gov.cn/kfswhgdhlyj/swgljwbdw/1805436537969889280/M71CbQHO.pdf"
+    },
     {
       "label": "云州区人民政府：白登之战遗址",
       "url": "https://www.yunzhou.gov.cn/yzqrmzfz/sqglcyjj/202007/7efb8d970c9c42b9b94471068b663e55.shtml"
@@ -203,6 +215,18 @@
     {
       "label": "文县中心坐标",
       "url": "https://www.poi86.com/poi/amap/district/621222/2.html"
+    },
+    {
+      "label": "《三国志·魏书·齐王纪》",
+      "url": "https://zh.wikisource.org/zh-hans/三國志/卷04"
+    },
+    {
+      "label": "高平陵",
+      "url": "https://zh.wikipedia.org/wiki/高平陵"
+    },
+    {
+      "label": "河南省文物局文保名录",
+      "url": "https://wgl.kaifeng.gov.cn/kfswhgdhlyj/swgljwbdw/1805436537969889280/M71CbQHO.pdf"
     }
   ],
   "notes": [

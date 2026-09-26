@@ -9,6 +9,7 @@ import {
   person,
   reign,
   eras,
+  eventPoint,
   writeImportPackage,
   ym,
   successionPairs,
@@ -44,6 +45,7 @@ function dynastyReignMonth(
 }
 
 const persons = [
+  person("sima-yi", "司马懿", ["政治家", "军事家"], "曹魏权臣，正始十年发动高平陵之变，控制曹魏朝政。", "司马懿", ym(179), ym(251, 9)),
   person("cao-fang", "曹芳", ["皇帝"], "曹魏第三位皇帝，魏明帝养子，后被司马师废为齐王；晋封邵陵县公，谥厉。", "曹芳", ym(231), ym(274)),
   person("cao-mao", "曹髦", ["皇帝"], "曹魏第四位皇帝，文帝孙，甘露五年被司马昭部卒所害。史称高贵乡公；无谥号、无庙号。", "曹髦", ym(241), ym(260, 5)),
   person("cao-huan", "曹奂", ["皇帝"], "曹魏末代皇帝，咸熙二年禅位于司马炎，曹魏终结。", "曹奂", ym(246), ym(302)),
@@ -141,6 +143,21 @@ relations.push(
   },
 );
 
+const events = [
+  eventPoint({
+    id: "gaoping-tombs-incident",
+    name: "高平陵之变",
+    kind: "politics",
+    precision: "year",
+    dateNote: "魏正始十年（249）；《三国志·魏书·齐王纪》系于正月甲午，未据可靠历算资料换算公历月日。",
+    at: ym(249),
+    locationId: "loc-gaoping-tombs-incident",
+    dynastyIds: ["wei"],
+    participantIds: ["sima-yi", "cao-fang"],
+    summary: "曹芳赴高平陵谒陵时，司马懿控制洛阳及洛水浮桥，迫使曹爽交出兵权并夷其三族，曹魏政局转由司马氏掌握。",
+  }),
+];
+
 const manifest = {
   slug: "three-kingdoms-late",
   title: "三国后期：曹魏与孙吴末帝",
@@ -152,13 +169,16 @@ const manifest = {
     persons: persons.length,
     dynasties: 0,
     reigns: reigns.length,
-    events: 0,
+    events: events.length,
     relations: relations.length,
   },
   sources: [
     { label: "曹魏", url: "https://zh.wikipedia.org/wiki/曹魏" },
     { label: "曹魏皇帝列表", url: "https://zh.wikipedia.org/wiki/曹魏皇帝列表" },
     { label: "曹芳", url: "https://zh.wikipedia.org/wiki/曹芳" },
+    { label: "《三国志·魏书·齐王纪》", url: "https://zh.wikisource.org/zh-hans/三國志/卷04" },
+    { label: "高平陵", url: "https://zh.wikipedia.org/wiki/高平陵" },
+    { label: "河南省文物局：第七批全国重点文物保护单位保护范围和建设控制地带", url: "https://wgl.kaifeng.gov.cn/kfswhgdhlyj/swgljwbdw/1805436537969889280/M71CbQHO.pdf" },
     { label: "曹髦", url: "https://zh.wikipedia.org/wiki/曹髦" },
     { label: "曹奂", url: "https://zh.wikipedia.org/wiki/曹奂" },
     { label: "孙吴", url: "https://zh.wikipedia.org/wiki/孙吴" },
@@ -173,6 +193,7 @@ const manifest = {
     "曹芳晋谥厉，作邵陵厉公；title 用《三国志》齐王。曹髦、孙亮无谥号，title 用高贵乡公、会稽王。孙皓无谥号，title 用吴末帝。封号不写入 posthumous_name。",
     "孙皓第四个年号为建衡，旧误作建兴（孙亮年号）。",
     "曹魏、孙吴王朝行与曹丕、曹叡、孙权在位由 three-kingdoms-warlord 写入，本包仅补其后人物与在位。",
+    "增补高平陵之变：依据《三国志·魏书·齐王纪》记正始十年正月甲午曹芳谒高平陵、司马懿据洛水浮桥控制洛阳；年精度录入，不将农历日期换算成公历日。地点标记洛阳政变中心；高平陵遗址位于今河南省洛阳市汝阳县茹店村一带。",
   ],
 };
 
@@ -183,7 +204,7 @@ writeImportPackage(__dirname, {
   dynasties: [],
   reignGroups,
   reigns,
-  events: [],
+  events,
   relations,
   manifest,
 });

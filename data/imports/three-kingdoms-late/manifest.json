@@ -11,10 +11,10 @@
   "depth": "standard",
   "generatedAt": "2026-09-18",
   "counts": {
-    "persons": 6,
+    "persons": 7,
     "dynasties": 0,
     "reigns": 6,
-    "events": 0,
+    "events": 1,
     "relations": 6
   },
   "sources": [
@@ -29,6 +29,18 @@
     {
       "label": "曹芳",
       "url": "https://zh.wikipedia.org/wiki/曹芳"
+    },
+    {
+      "label": "《三国志·魏书·齐王纪》",
+      "url": "https://zh.wikisource.org/zh-hans/三國志/卷04"
+    },
+    {
+      "label": "高平陵",
+      "url": "https://zh.wikipedia.org/wiki/高平陵"
+    },
+    {
+      "label": "河南省文物局：第七批全国重点文物保护单位保护范围和建设控制地带",
+      "url": "https://wgl.kaifeng.gov.cn/kfswhgdhlyj/swgljwbdw/1805436537969889280/M71CbQHO.pdf"
     },
     {
       "label": "曹髦",
@@ -64,6 +76,7 @@
     "在位起止据《三国志》及维基百科通行公历换算，经 documentedReignDates 提升至 day。",
     "曹芳晋谥厉，作邵陵厉公；title 用《三国志》齐王。曹髦、孙亮无谥号，title 用高贵乡公、会稽王。孙皓无谥号，title 用吴末帝。封号不写入 posthumous_name。",
     "孙皓第四个年号为建衡，旧误作建兴（孙亮年号）。",
-    "曹魏、孙吴王朝行与曹丕、曹叡、孙权在位由 three-kingdoms-warlord 写入，本包仅补其后人物与在位。"
+    "曹魏、孙吴王朝行与曹丕、曹叡、孙权在位由 three-kingdoms-warlord 写入，本包仅补其后人物与在位。",
+    "增补高平陵之变：依据《三国志·魏书·齐王纪》记正始十年正月甲午曹芳谒高平陵、司马懿据洛水浮桥控制洛阳；年精度录入，不将农历日期换算成公历日。地点标记洛阳政变中心；高平陵遗址位于今河南省洛阳市汝阳县茹店村一带。"
   ]
 }

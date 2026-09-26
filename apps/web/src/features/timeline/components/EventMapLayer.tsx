@@ -4,7 +4,7 @@ import { HoverTooltip } from "./HoverTooltip";
 import { useSelection } from "../hooks/useSelection";
 import { projectGcj02, resolveChinaMapInsets, wgs84ToGcj02 } from "../model/chinaMapProjection";
 import { selectionStore } from "../state/selectionStore";
-import styles from "./WarEventMapLayer.module.css";
+import styles from "./EventMapLayer.module.css";
 
 type Props = {
   events: readonly Event[];
@@ -14,7 +14,7 @@ type Props = {
   offset: { x: number; y: number };
 };
 
-export function WarEventMapLayer({ events, atAbs, gutterPx, scale, offset }: Props) {
+export function EventMapLayer({ events, atAbs, gutterPx, scale, offset }: Props) {
   const selection = useSelection();
   const containerRef = useRef<HTMLDivElement>(null);
   const [size, setSize] = useState({ width: 0, height: 0 });

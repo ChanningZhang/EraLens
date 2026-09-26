@@ -31,7 +31,6 @@ import { useTimelineCatalog } from "../hooks/useTimelineCatalog";
 import { useViewport } from "../hooks/useViewport";
 import { useSelection } from "../hooks/useSelection";
 import {
-  compactEventLanes,
   eventLaneCount,
   eventTargetReign,
   EVENT_BADGE_HALF_HEIGHT,
@@ -60,7 +59,7 @@ import {
 } from "../model/reignClusters";
 import { expandWindow, filterVisibleCardReigns, filterVisibleDynasties, filterVisibleGapReigns, filterVisiblePlacedPersons } from "../model/visible";
 import { CapitalMapLayer } from "./CapitalMapLayer";
-import { WarEventMapLayer } from "./WarEventMapLayer";
+import { EventMapLayer } from "./EventMapLayer";
 import { ChinaMapBackground } from "./ChinaMapBackground";
 import { DynastyClusterFrame } from "./DynastyClusterFrame";
 import { DynastyLane } from "./DynastyLane";
@@ -182,16 +181,18 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     },
     [capitalsQuery.data, labelAnchorAbs, selection.selected, data?.reigns],
   );
-  const nearbyWarEvents = useMemo(() => {
+  const nearbyEvents = useMemo(() => {
     if (!data) return [];
     const windowStart = viewport.centerAbs - 60;
     const windowEnd = viewport.centerAbs + 60;
+    const selectedEventId = selection.selected?.type === "event" ? selection.selected.id : undefined;
     return data.events.filter((event) => {
-      if (!eventDisplay.kinds[event.kind] || (!event.location && event.locations.length === 0) || event.kind !== "battle") return false;
+      if ((!eventDisplay.kinds[event.kind] && event.id !== selectedEventId) || (!event.location && event.locations.length === 0)) return false;
+      if (event.id === selectedEventId) return true;
       const span = eventSpanAbs(event);
       return rangesIntersect(span.startAbs, span.endAbs, windowStart, windowEnd);
     });
-  }, [data, viewport.centerAbs, eventDisplay]);
+  }, [data, viewport.centerAbs, eventDisplay, selection.selected]);
   const dynastyNamesById = useMemo(() => {
     const map = new Map<string, string>();
     for (const dynasty of timelineCatalog?.dynasties ?? []) {
@@ -202,10 +203,12 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
 
   const laneGroups = data?.dynastyLaneGroups ?? [];
 
-  const { badgeEvents, badgePositions, eventPlaced } = useMemo(() => {
-    if (!data) return { badgeEvents: [], badgePositions: new Map(), eventPlaced: [] };
-    const candidates = data.events.filter((event) => eventDisplay.kinds[event.kind] && shouldShowEvent(event, viewport.lod));
-    const visible = filterViewportEvents(candidates, viewport);
+  const { railEvents, badgeEvents, badgePositions } = useMemo(() => {
+    if (!data) return { railEvents: [], badgeEvents: [], badgePositions: new Map() };
+    const visible = filterViewportEvents(
+      data.events.filter((event) => eventDisplay.kinds[event.kind] && shouldShowEvent(event, viewport.lod)),
+      viewport,
+    );
     const laneIdByDynastyId = new Map<string, string>();
     for (const dynasty of placed) {
       laneIdByDynastyId.set(dynasty.id, dynasty.id);
@@ -214,15 +217,17 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
         laneIdByDynastyId.set(phaseId, dynasty.id);
       }
     }
-    const projected = layoutEvents(candidates, viewport);
+    const projected = layoutEvents(visible, viewport);
     const badgePositions = layoutPlacedEventBadges(projected, laneIdByDynastyId, viewport.widthPx);
     const visibleIds = new Set(visible.map((event) => event.id));
     return {
+      railEvents: visible.filter((event) => !badgePositions.has(event.id)),
       badgeEvents: projected.filter((item) => visibleIds.has(item.event.id) && badgePositions.has(item.event.id)),
       badgePositions,
-      eventPlaced: compactEventLanes(projected.filter((item) => visibleIds.has(item.event.id) && !badgePositions.has(item.event.id))),
     };
   }, [data, viewport, placed, laneGroups, eventDisplay]);
+
+  const eventPlaced = useMemo(() => layoutEvents(railEvents, viewport), [railEvents, viewport]);
 
   const railHeight = eventRailHeight(eventLaneCount(eventPlaced));
   const reignsByDynasty = useMemo(() => {
@@ -576,10 +581,10 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
           />
         </div>
       </div>
-      <div className={styles.warOverlay} aria-hidden={nearbyWarEvents.length === 0}>
+      <div className={styles.eventOverlay} aria-hidden={nearbyEvents.length === 0}>
         <div className={styles.viewportPanel}>
-          <WarEventMapLayer
-            events={nearbyWarEvents}
+          <EventMapLayer
+            events={nearbyEvents}
             atAbs={viewport.centerAbs}
             gutterPx={viewport.gutterPx}
             scale={mapView.scale}

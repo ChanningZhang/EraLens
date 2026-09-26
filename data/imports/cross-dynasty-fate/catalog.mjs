@@ -305,12 +305,15 @@ export function buildFateCatalog() {
       resolveAt: () => atFromReignEnd("reign-wang-mang", 23),
     },
     {
-      id: "rel-liu-xuan-liu-panzi-killed",
+      id: "rel-liu-xuan-liu-panzi-surrender",
       fromPersonId: "liu-xuan",
       toPersonId: "liu-panzi",
-      kind: "killed",
-      eventId: "chimei-capture-changan",
-      resolveAt: () => atFromReignEnd("reign-liu-xuan", 25),
+      kind: "surrender",
+      eventId: null,
+      // Lunar October: Liu Xuan surrendered and delivered the imperial seal
+      // to Liu Penzi. No verified Gregorian conversion; use the year bucket.
+      resolveAt: () => ym(25, 12),
+      precision: "year",
     },
     {
       id: "rel-liu-panzi-liu-xiu-surrender",

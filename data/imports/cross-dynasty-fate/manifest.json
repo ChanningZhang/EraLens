@@ -19,6 +19,10 @@
   },
   "sources": [
     {
+      "label": "更始帝：投降上玺绶与后来被杀分属两事",
+      "url": "https://zh.wikipedia.org/wiki/更始帝"
+    },
+    {
       "label": "各时期 import 包 events 与 documentedReignDates",
       "url": "https://zh.wikipedia.org/wiki/中国朝代"
     },
@@ -140,6 +144,7 @@
     }
   ],
   "notes": [
+    "刘玄→刘盆子为投降上玺绶，改为surrender并清理旧killed记录；后被张卬、谢禄谋杀另属一事。来源记25年农历十月请降，未核得可靠公历换算，关系保留年精度并按约定锚在25年12月，不与九月赤眉入长安事件绑定。",
     "仅 person→person，kind∈killed|surrender|abdication|captured。",
     "at_abs 优先取受害方 documented / 已入库月日迄；年精度事件取 event 年 12 月。有月/日史料的事件须同步升 precision，与命运线 at_abs 一致。",
     "同朝 succession 不写入；B 方无 reign 卡者改挂当时在位君主（成汉/南燕/后秦→晋帝，太平天国→同治）。",

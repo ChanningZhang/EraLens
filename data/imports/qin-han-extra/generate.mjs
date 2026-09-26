@@ -66,9 +66,30 @@ const nanyueReigns = [
   dr("nanyue", "zhao-jiande", "南越王", null, null, -111, -111),
 ];
 
+// The sources date the accession only to lunar June. 建武's calendar anchor
+// gives June 22 = Gregorian 25-08-05, hence June 15 = 25-07-29. Use that
+// month's midpoint as an explicitly approximate shared transition, not an
+// asserted accession day. Ownership arbitration determines the actual seam.
+const chimeiAccession = ymDay(25, 7, 29);
 const chimeiReigns = [
-  dr("chimei", "fan-chong", "赤眉首领", null, null, 23, 27),
-  dr("chimei", "liu-panzi", "赤眉帝", null, null, 25, 27),
+  {
+    ...dr("chimei", "fan-chong", "赤眉首领", null, null, 23, 25),
+    end: chimeiAccession,
+    endAbs: chimeiAccession.abs,
+    precision: "day",
+    startDateConfidence: "approximate",
+    endDateConfidence: "approximate",
+    isInformalMonarch: true,
+  },
+  {
+    ...dr("chimei", "liu-panzi", "赤眉帝", null, null, 25, 27),
+    start: chimeiAccession,
+    startAbs: chimeiAccession.abs,
+    end: ymDay(27, 3, 15),
+    endAbs: ymDay(27, 3, 15).abs,
+    precision: "day",
+    startDateConfidence: "approximate",
+  },
 ];
 
 const reignGroups = [nanyueReigns, chimeiReigns];
@@ -138,8 +159,10 @@ const manifest = {
     { label: "赤眉军", url: "https://zh.wikipedia.org/wiki/赤眉军" },
     { label: "刘盆子", url: "https://zh.wikipedia.org/wiki/刘盆子" },
     { label: "樊崇", url: "https://zh.wikipedia.org/wiki/樊崇" },
+    { label: "建武历法锚点：六月廿二为25年8月5日", url: "https://zh.wikipedia.org/wiki/建武_(东汉)" },
   ],
   notes: [
+    "樊崇首领阶段结束于刘盆子登基，两记录使用同一接续锚点，由timelineOwnership统一裁定；樊崇此后任御史大夫，不另建并立帝位。登基仅知25年农历六月，具体日失考；以建武六月廿二=公历25-08-05为历法锚点，推得六月十五=25-07-29，取该月中点为约数，樊崇迄边和刘盆子起边均标approximate，不宣称为实际登基日。樊崇阶段原有23年起点仍为年内占位，日精度下标approximate。刘盆子退位取维基公历27-03-15。",
     "南越赵氏五世（赵佗至赵建德），前203–前111；赤眉为西汉末过渡政权（23–27）。",
     "赵兴为吕嘉所杀后赵建德即位，同年汉军灭南越。",
     "赤眉入长安事件关联更始帝刘玄（见 qin-han 包 liu-xuan）。",
