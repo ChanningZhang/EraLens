@@ -930,10 +930,26 @@ export const capitals = [
     wikiTitle: "应天府",
     id: "cap-song-south-yingtian",
   }),
-  e("song-south", "临安", "浙江省杭州市", 1130, 1279, {
-    note: "南宋行在临安。",
+  entry("song-south", "临安", "浙江省杭州市", 1130, 1, 1276, 2, {
+    precision: "year",
+    endPrecision: "day",
+    endDay: 4,
+    note: "南宋行在临安。德祐二年正月十八日（1276年2月4日），宋廷奉传国玺降元，临安不再由南宋朝廷控制。",
     wikiTitle: "临安",
     id: "cap-song-south-linan",
+  }),
+  entry("song-south", "福安府", "福建省福州市", 1276, 6, 1276, 12, {
+    role: "temporary",
+    precision: "day",
+    startDay: 14,
+    endDay: 21,
+    endPrecision: "day",
+    note: "德祐二年五月初一（1276年6月14日）端宗在福州即位，升福州为福安府并定为行都；景炎元年十一月十五日（1276年12月21日）宋廷撤离福州。此后海上行朝辗转流动，无固定都城。",
+    wikiTitle: "福安府",
+    id: "cap-song-south-fuan-1276",
+    links: [
+      { label: "福州市档案信息网：再说帝封江的来历", url: "https://daj.fuzhou.gov.cn/zz/wszt/tslm/msfq/202104/t20210401_4066868.htm" },
+    ],
   }),
 
   // ── 蒙元明初群雄 ──────────────────────────────────────────────────────────

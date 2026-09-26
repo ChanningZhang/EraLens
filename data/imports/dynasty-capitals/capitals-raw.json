@@ -1,22 +1,5 @@
 [
   {
-    "id": "cap-zhou-east-xie-770",
-    "dynastyId": "zhou-east",
-    "historicalName": "携（虢）",
-    "modernName": "河南省洛阳市",
-    "start": { "year": -770, "month": 1, "abs": -9228 },
-    "end": { "year": -750, "month": 12, "abs": -8989 },
-    "startAbs": -9228,
-    "endAbs": -8989,
-    "precision": "year",
-    "role": "primary",
-    "claimTrack": "xie",
-    "note": "周携王一系据《左传正义》引《竹书纪年》立于携，《清华简·系年》称诸侯立余臣于虢（携），并记晋文侯于携（虢）杀惠王。携的确切位置未详；按虢地关联记为今洛阳市级范围，不代表已确认具体遗址。",
-    "links": [
-      { "label": "周携王（引《左传正义》《清华简·系年》）", "url": "https://zh.wikipedia.org/wiki/周携王" }
-    ]
-  },
-  {
     "id": "cap-zou-state-yi-614",
     "dynastyId": "zou-state",
     "historicalName": "绎（邾国故城）",
@@ -4188,19 +4171,51 @@
       "abs": 13560
     },
     "end": {
-      "year": 1279,
-      "month": 12,
-      "abs": 15359
+      "year": 1276,
+      "month": 2,
+      "abs": 15313,
+      "day": 4
     },
     "startAbs": 13560,
-    "endAbs": 15359,
+    "endAbs": 15313,
     "precision": "year",
+    "endPrecision": "day",
     "role": "primary",
-    "note": "南宋行在临安。",
+    "note": "南宋行在临安。德祐二年正月十八日（1276年2月4日），宋廷奉传国玺降元，临安不再由南宋朝廷控制。",
     "links": [
       {
         "label": "维基百科",
         "url": "https://zh.wikipedia.org/wiki/临安"
+      }
+    ]
+  },
+  {
+    "id": "cap-song-south-fuan-1276",
+    "dynastyId": "song-south",
+    "historicalName": "福安府",
+    "modernName": "福建省福州市",
+    "start": {
+      "year": 1276,
+      "month": 6,
+      "abs": 15317,
+      "day": 14
+    },
+    "end": {
+      "year": 1276,
+      "month": 12,
+      "abs": 15323,
+      "day": 21
+    },
+    "startAbs": 15317,
+    "endAbs": 15323,
+    "precision": "day",
+    "endPrecision": "day",
+    "role": "temporary",
+    "note": "德祐二年五月初一（1276年6月14日）端宗在福州即位，升福州为福安府并定为行都；景炎元年十一月十五日（1276年12月21日）宋廷撤离福州。此后海上行朝辗转流动，无固定都城。",
+    "links": [
+      {
+        "label": "福州市档案信息网：再说帝封江的来历",
+        "url": "https://daj.fuzhou.gov.cn/zz/wszt/tslm/msfq/202104/t20210401_4066868.htm"
       }
     ]
   },

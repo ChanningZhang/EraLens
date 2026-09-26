@@ -3,6 +3,9 @@
 -- Track-specific capitals are limited to the matching claim track.
 BEGIN;
 
+-- Rebuild from current reign and capital intervals so corrected periods do not leave stale links.
+DELETE FROM reign_capitals;
+
 INSERT INTO reign_capitals (reign_id, capital_id)
 SELECT r.id, c.id
 FROM reigns r
