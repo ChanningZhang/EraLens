@@ -151,7 +151,6 @@ const events = [
     precision: "year",
     dateNote: "魏正始十年（249）；《三国志·魏书·齐王纪》系于正月甲午，未据可靠历算资料换算公历月日。",
     at: ym(249),
-    locationId: "loc-gaoping-tombs-incident",
     dynastyIds: ["wei"],
     participantIds: ["sima-yi", "cao-fang"],
     summary: "曹芳赴高平陵谒陵时，司马懿控制洛阳及洛水浮桥，迫使曹爽交出兵权并夷其三族，曹魏政局转由司马氏掌握。",

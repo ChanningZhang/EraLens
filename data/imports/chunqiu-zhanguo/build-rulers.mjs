@@ -253,7 +253,7 @@ const zouEarlyRulers = zouEarlyNames.map(([personId, personName, title], index) 
 const zouDatedRulers = [
   ["zou-r8", "曹叔术", "邾子叔术", -795, -781, null],
   ["zou-r9", "曹夏父", "邾子夏父", -780, -747, null],
-  ["system-missing-ruler", "史料缺", "史料缺", -746, -713, null],
+  ["zou-r10", "？", "？", -746, -713, null],
   ["zou-r11", "曹克", "邾子克", -712, -678, null],
   ["zou-r12", "曹琐", "邾子琐", -677, -666, null],
   ["zou-r13", "曹蘧蒢", "邾文公", -665, -615, "文公"],
@@ -270,7 +270,7 @@ const zouDatedRulers = [
     ? { startDateConfidence: "approximate", endDateConfidence: "approximate" }
     : personId === "zou-r9"
       ? { endDateConfidence: "interpolated" }
-      : personId === "system-missing-ruler"
+      : personId === "zou-r10"
         ? { startDateConfidence: "interpolated", endDateConfidence: "interpolated" }
         : personId === "zou-r11"
           ? { startDateConfidence: "interpolated" }
@@ -292,29 +292,24 @@ const CURATED_REIGN_ADDITIONS = {
       endDateConfidence: "interpolated", reignId: "reign-zou-he-zou-state",
     },
     {
-      dynastyId: "zou-state", personId: "system-missing-ruler", personName: "史料缺", title: "史料缺",
-      startYear: -455, endYear: -441, startDateConfidence: "interpolated", endDateConfidence: "interpolated",
+      dynastyId: "zou-state", personId: "zou-missing-after-he-1", personName: "？", title: "？",
+      startYear: -455, endYear: -437, startDateConfidence: "interpolated", endDateConfidence: "interpolated",
       reignId: "reign-zou-missing-after-he-1",
     },
     {
-      dynastyId: "zou-state", personId: "system-missing-ruler", personName: "史料缺", title: "史料缺",
-      startYear: -440, endYear: -426, startDateConfidence: "interpolated", endDateConfidence: "interpolated",
-      reignId: "reign-zou-missing-after-he-2",
-    },
-    {
       dynastyId: "zou-state", personId: "zou-kaogong", personName: "曹考公", title: "邾娄考公",
-      posthumousName: "考公", startYear: -425, endYear: -411,
+      posthumousName: "考公", startYear: -436, endYear: -419,
       startDateConfidence: "interpolated", endDateConfidence: "interpolated",
       reignId: "reign-zou-kaogong-zou-state",
     },
     {
-      dynastyId: "zou-state", personId: "system-missing-ruler", personName: "史料缺", title: "史料缺",
-      startYear: -410, endYear: -396, startDateConfidence: "interpolated", endDateConfidence: "interpolated",
+      dynastyId: "zou-state", personId: "zou-missing-after-kaogong-1", personName: "？", title: "？",
+      startYear: -418, endYear: -401, startDateConfidence: "interpolated", endDateConfidence: "interpolated",
       reignId: "reign-zou-missing-after-kaogong-1",
     },
     {
-      dynastyId: "zou-state", personId: "system-missing-ruler", personName: "史料缺", title: "史料缺",
-      startYear: -395, endYear: -383, startDateConfidence: "interpolated", endDateConfidence: "interpolated",
+      dynastyId: "zou-state", personId: "zou-missing-after-kaogong-2", personName: "？", title: "？",
+      startYear: -400, endYear: -383, startDateConfidence: "interpolated", endDateConfidence: "interpolated",
       reignId: "reign-zou-missing-after-kaogong-2",
     },
   ],

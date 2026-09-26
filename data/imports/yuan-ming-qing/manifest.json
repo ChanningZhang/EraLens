@@ -11,10 +11,10 @@
   "depth": "standard",
   "generatedAt": "2026-09-13",
   "counts": {
-    "persons": 87,
+    "persons": 91,
     "dynasties": 10,
     "reigns": 58,
-    "events": 61,
+    "events": 62,
     "relations": 71
   },
   "sources": [
@@ -85,6 +85,14 @@
     {
       "label": "清朝",
       "url": "https://zh.wikipedia.org/wiki/清朝"
+    },
+    {
+      "label": "戊戌变法（故宫博物院）",
+      "url": "https://www.dpm.org.cn/lemmas/241774.html"
+    },
+    {
+      "label": "戊戌维新概览（中国文化研究院）",
+      "url": "https://chiculture.org.hk/sc/photo-story/174"
     },
     {
       "label": "故宫博物院：清廷迁都北京",

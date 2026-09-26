@@ -144,7 +144,6 @@ const events = [
 ];
 
 const supplementalEventDynasties = [
-  { eventId: "qing-enter-pass", dynastyId: "dashun" },
   { eventId: "zheng-recover-taiwan", dynastyId: "mingzheng" },
 ];
 
@@ -213,6 +212,7 @@ writeImportPackage(__dirname, {
   supplementalEventDynasties,
   supplementalEventParticipants,
   preSql: `DELETE FROM event_dynasties WHERE event_id IN ('mingzheng-taiwan-founded', 'qing-unify-taiwan');
+DELETE FROM event_dynasties WHERE event_id = 'qing-enter-pass' AND dynasty_id = 'dashun';
 DELETE FROM event_participants WHERE event_id IN ('mingzheng-taiwan-founded', 'qing-unify-taiwan');
 UPDATE relations SET from_id = 'zheng-recover-taiwan' WHERE from_type = 'event' AND from_id = 'mingzheng-taiwan-founded';
 DELETE FROM events WHERE id IN ('mingzheng-taiwan-founded', 'qing-unify-taiwan');`,

@@ -87,6 +87,11 @@ INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('commerce-song-tea-ho
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('commerce-longqing-yuegang-opening', 'ming') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('commerce-qing-maritime-trade-reopened', 'qing') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('commerce-qing-canton-system', 'qing') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('agri-onion-introduction', 'qing') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('agri-cabbage-introduction', 'qing') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('agri-cauliflower-introduction', 'qing') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('agri-zucchini-introduction', 'qing') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('agri-western-apple-introduction', 'qing') ON CONFLICT DO NOTHING;
 
 -- event_participants
 

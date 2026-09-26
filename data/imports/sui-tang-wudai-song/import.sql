@@ -3,13 +3,13 @@
 BEGIN;
 DELETE FROM relations WHERE id = 'rel-yang-guang-yang-you-succession';
 DELETE FROM relations WHERE id = 'rel-yang-guang-yang-hao-succession';
-DELETE FROM relations WHERE from_type = 'event' AND from_id IN ('zhu-wen-usurp', 'chenqiao-mutiny', 'yang-you-enthroned', 'yang-hao-enthroned', 'yang-tong-enthroned');
+DELETE FROM relations WHERE from_type = 'event' AND from_id IN ('zhu-wen-usurp', 'yang-you-enthroned', 'yang-hao-enthroned', 'yang-tong-enthroned');
 DELETE FROM event_participants WHERE event_id IN ('yang-you-enthroned', 'yang-hao-enthroned', 'yang-tong-enthroned');
 DELETE FROM event_dynasties WHERE event_id IN ('yang-you-enthroned', 'yang-hao-enthroned', 'yang-tong-enthroned');
 DELETE FROM events WHERE id IN ('yang-you-enthroned', 'yang-hao-enthroned', 'yang-tong-enthroned');
-DELETE FROM event_participants WHERE event_id IN ('zhu-wen-usurp', 'chenqiao-mutiny');
-DELETE FROM event_dynasties WHERE event_id IN ('zhu-wen-usurp', 'chenqiao-mutiny');
-DELETE FROM events WHERE id IN ('zhu-wen-usurp', 'chenqiao-mutiny');
+DELETE FROM event_participants WHERE event_id = 'zhu-wen-usurp';
+DELETE FROM event_dynasties WHERE event_id = 'zhu-wen-usurp';
+DELETE FROM events WHERE id = 'zhu-wen-usurp';
 DELETE FROM relations WHERE id = 'rel-yang-tong-li-yuan-killed';
 DELETE FROM reign_capitals WHERE reign_id IN ('reign-yang-you', 'reign-yang-hao', 'reign-yang-tong');
 DELETE FROM event_participants WHERE event_id = 'yang-tong-killed';

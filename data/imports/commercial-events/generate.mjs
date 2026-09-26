@@ -156,13 +156,20 @@ const mergedCropIds = new Set([
 ]);
 const mergedCrops = screenshotCrops.filter((crop) => mergedCropIds.has(crop.id));
 const separateCrops = screenshotCrops.filter((crop) => !mergedCropIds.has(crop.id));
+const qingCropIds = new Set([
+  "agri-onion-introduction",
+  "agri-cabbage-introduction",
+  "agri-cauliflower-introduction",
+  "agri-zucchini-introduction",
+  "agri-western-apple-introduction",
+]);
 
 events.push(...separateCrops.map((crop) => eventPoint({
   id: crop.id,
   name: crop.name,
   kind: "agriculture",
   at: eventYear(crop.year),
-  dynastyIds: [],
+  dynastyIds: qingCropIds.has(crop.id) ? ["qing"] : [],
   summary: crop.summary,
   dateNote: crop.note,
   isApproximate: true,

@@ -38,7 +38,8 @@ description: >-
 
 先定性再建模：
 
-- **史料缺**：明确应有国君，但姓名或世次失载。写普通 reign，`person_id='system-missing-ruler'`、`title='史料缺'`，id 为 `reign-missing-{dynasty}-{start-year}`。
+- **史料缺**：相邻可考君主之间确有应有国君的历史空白，但史料完全不能确认中间君主人数或世次。写普通 reign，`person_id='system-missing-ruler'`、`title='史料缺'`，id 为 `reign-missing-{dynasty}-{start-year}`。
+- **已知有若干失名君主**：谱系、世次或其他材料明确可知两位已知君主之间有 N 任君主，即使姓名失载，也必须逐任建立独立普通 reign 和独立 person（如滕国的 `persons.name='？'`、`reigns.title='？'` 形式）。姓名未知时，数据层 `persons.name` 只存 `？`，不拼姓氏；姓氏仍由 `ancestral_xing` 等专用字段表达。按共同锚点顺序分配区间时标 `interpolated`。不得用 `system-missing-ruler` / “史料缺”代替已知任数的君主。
 - **无国君**：亡国、尚未复立、改朝换号或该行本不设君。不写 reign，自然留白。
 - **年代失考**：知道是谁但边界为推算/均分。使用 `start_date_confidence` / `end_date_confidence` 的 `approximate | interpolated`，不用“史料缺”占位。
 - **资料未收齐**：继续查证，不能因为当前深度不足就标成“史料缺”。
@@ -66,7 +67,8 @@ description: >-
 - `reigns.era_names` 存年号 CSV。自汉武帝起使用；不要再建 `era_names` 子表。
 - `reigns.title` 存其余卡片称号/史称。少帝、末帝、后主不是谥号；无谥号的先秦称号写不带国名本体。
 - 明清普通皇帝 `title` 留空，卡片优先取年号；仅 `AGENTS.md` 明列的三条记录保留 title。
-- `bio` 只写简洁历史概述，不写收录方法、年代插值或绘制规范；这些写进 manifest notes。
+- **人物/在位概述不能过于简单**：`bio` 应简略交代人物身份与世系/继承背景、主要相关人物或政权关系、在位年代，以及能说明其历史脉络的关键事迹或转折。保持精炼但信息完整，不能只写身份标签、单句评价或空泛结论；资料不足时如实限定，不补造细节。
+- `bio` 只写历史内容，不写收录方法、年代插值或绘制规范；这些写进 manifest notes。
 - 修改人物、reign 归属/称号或王朝名后，确认 `persons.search_terms` 触发器刷新；批量改写后执行 `SELECT rebuild_person_search_terms();`。
 
 ## 工作流
@@ -97,6 +99,7 @@ node data/imports/lib/auditPreQinXingShi.mjs
 - [ ] 无重复 person/reign，无未定性的空白
 - [ ] 原始史料日期与接续裁定可追溯，精度和 confidence 正确
 - [ ] 插值只发生在连续世系与可信共同锚点之间
+- [ ] 人物/在位概述简洁说明身份背景、相关人物、在位年代和关键历史脉络
 - [ ] 并立、主线、`is_main` 与 `claim_role` 语义正确
 - [ ] 姓氏、谥号、庙号、年号、title 各归其列
 - [ ] 校验和审计通过，卡片、详情、搜索、tooltip 均符合预期

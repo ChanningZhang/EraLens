@@ -156,6 +156,7 @@ const persons = [
   person("deng-shichang", "邓世昌", ["军事家"], "北洋海军管带，甲午黄海海战殉国。", "邓世昌", ym(1849), ym(1894)),
   person("kang-youwei", "康有为", ["政治家", "思想家"], "维新派领袖，戊戌变法主持者。", "康有为", ym(1858), ym(1927)),
   person("liang-qichao", "梁启超", ["政治家", "思想家"], "维新派骨干，戊戌后推动立宪与启蒙。", "梁启超", ym(1873), ym(1929)),
+  person("tan-sitong", "谭嗣同", ["政治家", "思想家"], "戊戌维新人物，变法失败后遇害，列为戊戌六君子。", "谭嗣同", ym(1865), ym(1898)),
   // 清
   person("nurhaci", "努尔哈赤", ["皇帝"], "清太祖，统一女真，建立后金。", "努尔哈赤"),
   person("huang-taiji", "皇太极", ["皇帝"], "清太宗，改国号大清，完善八旗。", "皇太极"),
@@ -166,6 +167,9 @@ const persons = [
   person("yongyan", "颙琰", ["皇帝"], "清仁宗嘉庆，白莲教起义在其朝。", "嘉庆帝"),
   person("minning", "旻宁", ["皇帝"], "清宣宗道光，鸦片战争在其朝。", "道光帝"),
   person("yizhu", "奕詝", ["皇帝"], "清文宗咸丰，太平天国与第二次鸦片战争。", "咸丰帝"),
+  person("ci-xi", "慈禧", ["皇太后", "政治家"], "叶赫那拉氏，咸丰帝妃、同治帝生母，与恭亲王奕訢发动辛酉政变并开始垂帘听政。", "慈禧"),
+  person("ci-an", "慈安", ["皇太后", "政治家"], "钮祜禄氏，咸丰帝皇后；辛酉政变后与慈禧共同垂帘听政。", "慈安"),
+  person("yi-xin", "奕訢", ["政治家"], "恭亲王，与慈禧等发动辛酉政变，参与晚清政务。", "恭親王"),
   person("zaichun", "载淳", ["皇帝"], "清穆宗同治，慈禧垂帘听政。", "同治帝"),
   person("zaitian", "载湉", ["皇帝"], "清德宗光绪，戊戌变法、庚子事变。", "光绪帝"),
   person("puyi", "溥仪", ["皇帝"], "清末帝，宣统退位，中国帝制终结。", "溥仪"),
@@ -331,6 +335,7 @@ function eventRange(partial) {
 }
 
 const events = [
+  eventRange({ id: "wuxu-reform", name: "戊戌变法", kind: "politics", timeMode: "span", precision: "year", dateNote: "光绪二十四年四月二十三日至八月初六（公历1898年6月11日至9月21日），共103天", start: ym(1898), end: ym(1898), dynastyIds: ["qing"], participantIds: ["zaitian", "kang-youwei", "liang-qichao", "tan-sitong"], summary: "甲午战败与列强瓜分危机推动维新思潮发展。光绪帝采纳康有为等人的建议，自1898年6月起颁布新政，涉及政治、教育、经济和军事，试图改革清朝制度；慈禧太后于9月发动政变，囚禁光绪帝并废止新法，康有为、梁启超出走，谭嗣同等六人被杀。变法虽仅持续103天，却推动了近代中国的思想启蒙。" }),
   // 元——战争
   eventRange({ id: "war-of-two-capitals", name: "两都之战", kind: "battle", timeMode: "span", start: ym(1328), end: ym(1329), dynastyIds: ["yuan"], participantIds: ["tugh-temur", "ragibagh"], summary: "元文宗与元天顺帝阿速吉八争夺大都，文宗获胜，天顺帝在位仅一月。" }),
   eventRange({ id: "red-turban-uprising", name: "红巾起义", kind: "battle", timeMode: "span", start: ym(1351), end: ym(1368), dynastyIds: ["yuan"], participantIds: ["togon-temur", "liu-futong", "xu-shouhui"], summary: "刘福通、徐寿辉等发动红巾军起义，席卷南北，元统治根基动摇。" }),
@@ -357,7 +362,7 @@ const events = [
   eventPoint({ id: "yigong-case", name: "移宫案", kind: "politics", precision: "month", dateNote: "泰昌元年九月，熹宗即位后逼李选侍迁出乾清宫", at: ym(1620, 9), dynastyIds: ["ming"], participantIds: ["zhu-youjiao", "li-xuanshi"], summary: "光宗死后李选侍据乾清宫不肯迁出，东林党力主逼迁，熹宗即位后李选侍移居别宫。" }),
   eventPoint({ id: "yuan-chonghuan-executed", name: "袁崇焕冤杀", kind: "politics", precision: "month", dateNote: "崇祯三年八月十六日，磔于市", at: ym(1630, 8), dynastyIds: ["ming"], participantIds: ["yuan-chonghuan", "zhu-youjian"], summary: "崇祯帝中皇太极反间计，以通敌罪处死袁崇焕，辽东防线崩溃。" }),
   eventPoint({ id: "yuan-moves-capital-to-dadu", name: "元朝迁都大都", kind: "politics", at: ym(1272), dynastyIds: ["yuan"], participantIds: ["hu-bilie"], summary: "忽必烈将中都改名大都，并以新城为元朝都城；上都继续作为夏都。", dateNote: "至元九年（1272年）命名大都并建都；按年精度记录都城迁移阶段。" }),
-  eventPoint({ id: "qing-enter-pass", name: "清军入关", kind: "politics", at: ym(1644), dynastyIds: ["qing", "ming"], participantIds: ["fulin"], summary: "吴三桂引清军入关，清军占领北京；顺治帝同年由盛京迁都北京，盛京保留陪都地位，清廷由此入主中原。" }),
+  eventPoint({ id: "qing-enter-pass", name: "清军入关", kind: "politics", at: ym(1644), dynastyIds: ["qing"], participantIds: ["fulin"], summary: "吴三桂引清军入关，清军占领北京；顺治帝同年由盛京迁都北京，盛京保留陪都地位，清廷由此入主中原。" }),
   eventRange({ id: "kangqian-prosperity", name: "康乾盛世", kind: "politics", timeMode: "span", start: ym(1661), end: ym(1796), dynastyIds: ["qing"], participantIds: ["xuanye", "hongli"], summary: "康熙、雍正、乾隆三朝国力强盛，疆域辽阔。" }),
   // 清——战争
   eventRange({ id: "suppress-three-feudatories", name: "平定三藩", kind: "battle", timeMode: "span", start: ym(1673), end: ym(1681), dynastyIds: ["qing"], participantIds: ["xuanye"], summary: "吴三桂等三藩起兵反清，康熙帝历时八年平定，巩固中央集权。" }),
@@ -402,7 +407,7 @@ const events = [
     precision: "day",
     dateNote: "永历十五年十二月十三日，1662年2月1日，荷军签约投降",
     at: ymDay(1662, 2, 1),
-    dynastyIds: ["ming-south", "mingzheng"],
+    dynastyIds: ["mingzheng"],
     participantIds: ["zheng-chenggong"],
     summary: "郑成功迫使荷兰东印度公司守军投降，收复台湾并设承天府，作为奉永历正朔的复明基地。",
   }),
@@ -475,6 +480,8 @@ const eventDynastySql = events.flatMap((e) => e.dynastyIds.map((d) => `INSERT IN
 const eventParticipantSql = events.flatMap((e) => e.participantIds.map((p) => `INSERT INTO event_participants (event_id, person_id) VALUES (${sqlStr(e.id)}, ${sqlStr(p)}) ON CONFLICT DO NOTHING;`));
 
 const preSql = [
+  "DELETE FROM event_dynasties WHERE event_id = 'qing-enter-pass';",
+  "DELETE FROM event_dynasties WHERE event_id = 'zheng-recover-taiwan' AND dynasty_id = 'ming-south';",
   "DELETE FROM event_dynasties WHERE event_id = 'lu-jian-enthroned';",
   "DELETE FROM event_participants WHERE event_id = 'lu-jian-enthroned';",
   "DELETE FROM events WHERE id = 'lu-jian-enthroned';",
@@ -527,6 +534,8 @@ const manifest = {
     { label: "脱古思帖木儿", url: "https://zh.wikipedia.org/wiki/脱古思帖木儿" },
     { label: "明朝", url: "https://zh.wikipedia.org/wiki/明朝" },
     { label: "清朝", url: "https://zh.wikipedia.org/wiki/清朝" },
+    { label: "戊戌变法（故宫博物院）", url: "https://www.dpm.org.cn/lemmas/241774.html" },
+    { label: "戊戌维新概览（中国文化研究院）", url: "https://chiculture.org.hk/sc/photo-story/174" },
     { label: "故宫博物院：清廷迁都北京", url: "https://www.dpm.org.cn/court/event/159873.html" },
     { label: "忽必烈与迁都中都、定都大都（北京市地方志）", url: "https://www.bjdsdfz.cn/jcdq.jhtml" },
     { label: "南明", url: "https://zh.wikipedia.org/wiki/南明" },

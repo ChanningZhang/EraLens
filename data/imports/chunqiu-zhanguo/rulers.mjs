@@ -109,15 +109,15 @@ export const rulersByDynasty = {
     },
     {
       "dynastyId": "zou-state",
-      "personId": "system-missing-ruler",
-      "personName": "史料缺",
-      "title": "史料缺",
+      "personId": "zou-r10",
+      "personName": "？",
+      "title": "？",
       "startYear": -746,
       "endYear": -713,
       "posthumousName": null,
       "startDateConfidence": "interpolated",
       "endDateConfidence": "interpolated",
-      "reignId": "reign-system-missing-ruler-zou-state"
+      "reignId": "reign-zou-r10-zou-state"
     },
     {
       "dynastyId": "zou-state",
@@ -234,25 +234,14 @@ export const rulersByDynasty = {
     },
     {
       "dynastyId": "zou-state",
-      "personId": "system-missing-ruler",
-      "personName": "史料缺",
-      "title": "史料缺",
+      "personId": "zou-missing-after-he-1",
+      "personName": "？",
+      "title": "？",
       "startYear": -455,
-      "endYear": -441,
+      "endYear": -437,
       "startDateConfidence": "interpolated",
       "endDateConfidence": "interpolated",
       "reignId": "reign-zou-missing-after-he-1"
-    },
-    {
-      "dynastyId": "zou-state",
-      "personId": "system-missing-ruler",
-      "personName": "史料缺",
-      "title": "史料缺",
-      "startYear": -440,
-      "endYear": -426,
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
-      "reignId": "reign-zou-missing-after-he-2"
     },
     {
       "dynastyId": "zou-state",
@@ -260,29 +249,29 @@ export const rulersByDynasty = {
       "personName": "曹考公",
       "title": "邾娄考公",
       "posthumousName": "考公",
-      "startYear": -425,
-      "endYear": -411,
+      "startYear": -436,
+      "endYear": -419,
       "startDateConfidence": "interpolated",
       "endDateConfidence": "interpolated",
       "reignId": "reign-zou-kaogong-zou-state"
     },
     {
       "dynastyId": "zou-state",
-      "personId": "system-missing-ruler",
-      "personName": "史料缺",
-      "title": "史料缺",
-      "startYear": -410,
-      "endYear": -396,
+      "personId": "zou-missing-after-kaogong-1",
+      "personName": "？",
+      "title": "？",
+      "startYear": -418,
+      "endYear": -401,
       "startDateConfidence": "interpolated",
       "endDateConfidence": "interpolated",
       "reignId": "reign-zou-missing-after-kaogong-1"
     },
     {
       "dynastyId": "zou-state",
-      "personId": "system-missing-ruler",
-      "personName": "史料缺",
-      "title": "史料缺",
-      "startYear": -395,
+      "personId": "zou-missing-after-kaogong-2",
+      "personName": "？",
+      "title": "？",
+      "startYear": -400,
       "endYear": -383,
       "startDateConfidence": "interpolated",
       "endDateConfidence": "interpolated",
@@ -6143,6 +6132,6 @@ export const rulersByDynasty = {
 
 export const rulerStats = {
   dynasties: 17,
-  reigns: 464,
-  generatedAt: "2026-09-25",
+  reigns: 463,
+  generatedAt: "2026-09-26",
 };

@@ -55,6 +55,7 @@ description: >-
 ## 内容与关联
 
 - `name` 简短可检索；`summary` 写事实摘要；长说明放 `content`；争议日期放 `date_note`。
+- **事件概述不能过于简单**：应让读者不看其他资料也能简略理解事件的历史背景、起因或前因、关键经过/转折、结果与影响，并点明相关政权、主要人物及事件年代。按事件重要性取舍细节，避免只写「某年发生某事」或一句空泛结论；不确定的内容须保留限定，不补造细节。
 - 概述只写历史内容。收录取舍、编辑方法和推算过程写 `manifest.json` 的 `notes`。
 - `event_dynasties` 关联事件实际涉及或直接影响的王朝，不因同年存在就泛关联。
 - `event_participants.person_id` 只能引用 `persons.id`；国君也引用 person，不引用 reign。
@@ -87,6 +88,7 @@ node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/impor
 ## 验收
 
 - [ ] 每条事件都有可核来源，争议取舍进入 `date_note` 或 manifest notes
+- [ ] 概述简洁但交代背景、相关人物、年代、经过和结果/影响，不是过短标签或空泛结论
 - [ ] 无同义重复；事件提供泳道、reign、都城无法表达的新信息
 - [ ] `point/span/circa` 与精度语义正确，年精度点落在 12 月
 - [ ] 王朝、人物、地点关联引用正确实体
