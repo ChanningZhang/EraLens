@@ -17094,6 +17094,7 @@ INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('maling-battle', 'wei
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('maling-battle', 'qi-chunqiu') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('changping-battle', 'qin') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('changping-battle', 'zhao-warring') ON CONFLICT DO NOTHING;
+INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('xie-wang-killed', 'jin-chunqiu') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('kuiqiu', 'qi-chunqiu') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('kuiqiu', 'lu-chunqiu') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('kuiqiu', 'song-chunqiu') ON CONFLICT DO NOTHING;
@@ -17140,6 +17141,7 @@ INSERT INTO event_participants (event_id, person_id) VALUES ('wuqi-reform-wei', 
 INSERT INTO event_participants (event_id, person_id) VALUES ('guiling-battle', 'sun-bin') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('maling-battle', 'sun-bin') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('changping-battle', 'bai-qi') ON CONFLICT DO NOTHING;
+INSERT INTO event_participants (event_id, person_id) VALUES ('xie-wang-killed', 'jin-r10') ON CONFLICT DO NOTHING;
 
 -- relations
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_abs, precision, event_id)

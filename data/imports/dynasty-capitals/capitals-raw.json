@@ -413,6 +413,34 @@
     ]
   },
   {
+    "id": "cap-zhou-east-xie-770",
+    "dynastyId": "zhou-east",
+    "historicalName": "携",
+    "modernName": "陕西省西安市",
+    "start": {
+      "year": -770,
+      "month": 1,
+      "abs": -9228
+    },
+    "end": {
+      "year": -750,
+      "month": 12,
+      "abs": -8977
+    },
+    "startAbs": -9228,
+    "endAbs": -8977,
+    "precision": "year",
+    "role": "primary",
+    "claimTrack": "xie",
+    "note": "《左传正义》引《竹书纪年》称虢公翰于携立王；携地通常认为在镐京附近，具体位置未详。清华简《系年》另记携王由诸侯立于虢，故此处只标示陕西西安一带的约略地望，不代表已确认城址。",
+    "links": [
+      {
+        "label": "周携王（据《左传正义》引《竹书纪年》及地望讨论）",
+        "url": "https://zh.wikipedia.org/wiki/周携王"
+      }
+    ]
+  },
+  {
     "id": "cap-zhou-east-wangcheng-770",
     "dynastyId": "zhou-east",
     "historicalName": "王城",

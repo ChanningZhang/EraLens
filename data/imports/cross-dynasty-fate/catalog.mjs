@@ -9,6 +9,15 @@ import { atFromReignEnd } from "../lib/fateRelationHelpers.mjs";
 /** @returns {Array<{id:string,fromPersonId?:string,fromReignId?:string,toPersonId:string,kind:string,eventId:string|null,resolveAt:()=>object,precision?:string|null}>} */
 export function buildFateCatalog() {
   return [
+    {
+      // 晋文侯于前750年杀携王，线的终点必须落在晋文侯的在位卡。
+      id: "rel-ji-yuchen-jin-wenhou-killed",
+      fromPersonId: "ji-yuchen",
+      toPersonId: "jin-r10",
+      kind: "killed",
+      eventId: "xie-wang-killed",
+      resolveAt: () => ym(-750, 12),
+    },
     // ── 春秋战国 ────────────────────────────────────────────────────────────
     {
       id: "rel-han-r10-ying-zheng-surrender",

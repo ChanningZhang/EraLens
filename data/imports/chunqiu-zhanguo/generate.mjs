@@ -640,6 +640,7 @@ const events = [
 
 // Link existing events (from xia-shang-zhou) to new state rows
 const existingEventDynasties = [
+  ["xie-wang-killed", "jin-chunqiu"],
   ["kuiqiu", "qi-chunqiu"],
   ["kuiqiu", "lu-chunqiu"],
   ["kuiqiu", "song-chunqiu"],
@@ -677,6 +678,10 @@ const existingEventDynasties = [
   ["baijia-zhengming", "qi-chunqiu"],
   ["baijia-zhengming", "chu-chunqiu"],
   ["baijia-zhengming", "wei-warring"],
+];
+
+const existingEventParticipants = [
+  ["xie-wang-killed", "jin-r10"],
 ];
 
 const relations = [
@@ -865,6 +870,12 @@ const eventParticipantSql = events.flatMap((e) =>
       `INSERT INTO event_participants (event_id, person_id) VALUES (${sqlStr(e.id)}, ${sqlStr(personId)}) ON CONFLICT DO NOTHING;`,
   ),
 );
+eventParticipantSql.push(
+  ...existingEventParticipants.map(
+    ([eventId, personId]) =>
+      `INSERT INTO event_participants (event_id, person_id) VALUES (${sqlStr(eventId)}, ${sqlStr(personId)}) ON CONFLICT DO NOTHING;`,
+  ),
+);
 
 const sql = [
   "-- EraLens period import: chunqiu-zhanguo",
@@ -917,6 +928,7 @@ const manifest = {
     events: events.length,
     relations: relations.length,
     existingEventDynastyLinks: existingEventDynasties.length,
+    existingEventParticipantLinks: existingEventParticipants.length,
   },
   sources: [
     { label: "孟子志：邾国至邹国沿革及孟子里籍（山东省情资料库）", url: "https://shandong-chorography.org/database/zzmj/section/19/article/7/" },
@@ -928,6 +940,7 @@ const manifest = {
     { label: "战国七雄", url: "https://zh.wikipedia.org/wiki/战国七雄" },
     { label: "齐国", url: "https://zh.wikipedia.org/wiki/齐国" },
     { label: "晋国", url: "https://zh.wikipedia.org/wiki/晋国" },
+    { label: "晋文侯（前780—前746年在位）", url: "https://zh.wikipedia.org/wiki/晋文侯" },
     { label: "楚国", url: "https://zh.wikipedia.org/wiki/楚国" },
     { label: "宋国君主列表", url: "https://zh.wikipedia.org/wiki/宋国#宋國君主列表及在位年份" },
     { label: "卫国君主列表", url: "https://zh.wikipedia.org/wiki/卫国#卫国君主列表及在位年份" },
@@ -967,6 +980,7 @@ const manifest = {
     "中山国王朝起迄与国君泳道首尾一致，为文公前424年至王尚前296年；不提前至桓公复兴传说起点前478。桓公约前406年在魏灭中山时在位，约前380年复国后再次在位；两段通过同人多次在位配置拆开，中间魏属中山期仍保留空档，不补史料缺占位。",
     "未收录薛、滕、杞、莒等小国；未收录战国末期的代、胶东等残余。",
     "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
+    "补充‘晋文侯杀携王’事件与晋国及晋文侯（jin-r10）的关联；命运线终点据此前750年在位的晋文侯卡，不连周平王。",
     "逐条复核夏商周包既有事件的诸侯国关联：《左传·僖公九年》载葵丘与会者为鲁、齐、宋、卫、郑、许、曹及周王使者；补入本包有建模泳道的鲁、宋、卫、郑、曹（许未建王朝实体）。城濮之战补入受战事直接影响的宋、曹、卫：宋受楚围而晋出兵救援，晋先伐曹、卫并以复国交涉，原有关联晋、楚保留。依据《中国哲学书电子化计划》所录《左传·僖公九年》 https://ctext.org/chun-qiu-zuo-zhuan/xi-gong-jiu-nian/zhs ，以及《菏泽历史文化集萃·城濮之战》 https://shandong-chorography.org/database/bh/section/22/article/66/ 。",
     "韩赵魏在位仅收录前403年册命立国之后；晋国卿大夫世系（赵简子等）不挂在三国行上。晋国止于前349年静公被杀。",
     `国君数据由 fetch-wiki-zh-cn.py + build-rulers.mjs 生成，共 ${rulerStats.reigns} 条在位记录。`,

@@ -98,6 +98,7 @@ writeFileSync(
       generatedAt: new Date().toISOString().slice(0, 10),
       counts: { dynasty_capitals: capitals.length },
       sources: [
+        { label: "周携王：携地与虢地诸说、《左传正义》引《竹书纪年》及《清华简·系年》", url: "https://zh.wikipedia.org/wiki/周携王" },
         { label: "维基百科", url: "https://zh.wikipedia.org/wiki/中国古代都城" },
         { label: "后汉书·光武帝纪", url: "https://ctext.org/hou-han-shu/guang-wu-di-ji-shang/zhs" },
         { label: "刘宋（维基百科）", url: "https://zh.wikipedia.org/wiki/刘宋" },
@@ -144,6 +145,7 @@ writeFileSync(
         { label: "许政权（隋唐之际割据政权之一）", url: "https://bkso.baidu.com/item/%E8%AE%B8%E5%9B%BD/9990400" },
       ],
       notes: [
+        "周携王在携或虢地活动的具体王都存在史料与地望争议；本次按《左传正义》引《竹书纪年》的‘立王于携’和携地近镐京说，新增 claim_track=xie 的陕西西安约略地望，未将行政区中心当作已确认遗址。",
         "modernName 记录都城遗址对应的现代地点，必要时细化到遗址/乡镇以区分同一行政市内的不同古城；坐标 GCJ-02，经 Amap maps_geo 烘焙",
         "薛国都城定位到今滕州市官桥镇薛国故城遗址；滕国都城定位到今滕州市姜屯镇滕国故城遗址。二者位于同一县级市但为不同遗址，不能按同一现代地点参与泳道同都城排序。",
         "东周国都城按始封地巩记录，今址对应巩义市康店镇康北村东周故城遗址；不得与西周国王城（今洛阳）合并。导入时删除数据库遗留的东周国王城记录。",
