@@ -554,17 +554,6 @@ const events = [
     summary: "秦将战国北方边塞连接延展，形成后世长城雏形。",
   }),
   eventPoint({
-    id: "yingzheng-death",
-    name: "秦始皇驾崩",
-    kind: "politics",
-    precision: "month",
-    dateNote: "《史记》载始皇三十七年七月丙寅崩于沙丘；出土历谱显示七月无丙寅，按相邻八月丙寅推算约为前210年7月，具体日期有争议",
-    at: ym(-210, 7),
-    dynastyIds: ["qin"],
-    participantIds: ["ying-zheng"],
-    summary: "秦始皇东巡途中病逝，赵高与李斯篡改遗诏立胡亥。",
-  }),
-  eventPoint({
     id: "daze-uprising",
     name: "大泽乡起义",
     kind: "politics",

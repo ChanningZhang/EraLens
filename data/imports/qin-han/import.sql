@@ -332,14 +332,6 @@ ON CONFLICT (id) DO UPDATE SET
   end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
   summary = EXCLUDED.summary;
 INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
-VALUES ('yingzheng-death', '秦始皇驾崩', 'politics', 'point', 'month', '《史记》载始皇三十七年七月丙寅崩于沙丘；出土历谱显示七月无丙寅，按相邻八月丙寅推算约为前210年7月，具体日期有争议', -210, 7, -2502, NULL, NULL, NULL, NULL, NULL, NULL, '秦始皇东巡途中病逝，赵高与李斯篡改遗诏立胡亥。')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
-  date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_abs = EXCLUDED.at_abs,
-  start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_abs = EXCLUDED.start_abs,
-  end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_abs = EXCLUDED.end_abs,
-  summary = EXCLUDED.summary;
-INSERT INTO events (id, name, kind, time_mode, precision, date_note, at_year, at_month, at_abs, start_year, start_month, start_abs, end_year, end_month, end_abs, summary)
 VALUES ('daze-uprising', '大泽乡起义', 'politics', 'point', 'year', '秦二世元年七月，前209年', -209, 12, -2485, NULL, NULL, NULL, NULL, NULL, NULL, '陈胜、吴广揭竿而起，秦末农民战争爆发。')
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision,
@@ -512,7 +504,6 @@ ON CONFLICT (id) DO UPDATE SET
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('qin-standardize', 'qin') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('burn-books', 'qin') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('great-wall-qin', 'qin') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('yingzheng-death', 'qin') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('daze-uprising', 'qin') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('julu-battle', 'qin') ON CONFLICT DO NOTHING;
 INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('julu-battle', 'chu-west') ON CONFLICT DO NOTHING;
@@ -546,7 +537,6 @@ INSERT INTO event_participants (event_id, person_id) VALUES ('qin-standardize', 
 INSERT INTO event_participants (event_id, person_id) VALUES ('burn-books', 'ying-zheng') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('burn-books', 'li-si') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('great-wall-qin', 'ying-zheng') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('yingzheng-death', 'ying-zheng') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('daze-uprising', 'chen-sheng') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('daze-uprising', 'wu-guang') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('julu-battle', 'xiang-yu') ON CONFLICT DO NOTHING;

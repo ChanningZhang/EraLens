@@ -3,7 +3,7 @@ import { shouldShowEventAtLod, type Event, type Lod } from "@eralens/shared";
 export const LOD_THRESHOLDS = {
   millennium: 0.05,
   century: 0.35,
-  decade: 1.2,
+  decade: 0.8,
   month: 4,
 } as const;
 
