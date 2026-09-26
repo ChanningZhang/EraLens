@@ -1991,15 +1991,15 @@
       "abs": 3192
     },
     "end": {
-      "year": 311,
+      "year": 316,
       "month": 12,
-      "abs": 3738
+      "abs": 3803
     },
     "startAbs": 3192,
-    "endAbs": 3738,
+    "endAbs": 3803,
     "precision": "year",
     "role": "primary",
-    "note": "西晋前期都城洛阳；311年洛阳陷落，晋廷迁至长安。",
+    "note": "西晋都城洛阳。",
     "links": [
       {
         "label": "维基百科",
@@ -2062,25 +2062,25 @@
     ]
   },
   {
-    "id": "cap-han-zhao-changan-304",
+    "id": "cap-han-zhao-changan-319",
     "dynastyId": "han-zhao",
     "historicalName": "长安",
     "modernName": "陕西省西安市",
     "start": {
-      "year": 304,
+      "year": 319,
       "month": 1,
-      "abs": 3648
+      "abs": 3828
     },
     "end": {
       "year": 329,
       "month": 12,
       "abs": 3959
     },
-    "startAbs": 3648,
+    "startAbs": 3828,
     "endAbs": 3959,
     "precision": "year",
     "role": "primary",
-    "note": "前赵（汉赵）都城长安。",
+    "note": "前赵（汉赵）刘曜于319年由平阳迁都长安；此前都城先后为左国城、黎亭、蒲子、平阳。",
     "links": [
       {
         "label": "维基百科",
@@ -5394,37 +5394,6 @@
       {
         "label": "维基百科",
         "url": "https://zh.wikipedia.org/wiki/北京市"
-      }
-    ]
-  },
-  {
-    "id": "cap-jin-west-changan-313",
-    "dynastyId": "jin-west",
-    "historicalName": "长安",
-    "modernName": "陕西省西安市",
-    "start": {
-      "year": 313,
-      "month": 1,
-      "abs": 3756
-    },
-    "end": {
-      "year": 316,
-      "month": 12,
-      "abs": 3803
-    },
-    "startAbs": 3756,
-    "endAbs": 3803,
-    "precision": "year",
-    "role": "primary",
-    "note": "晋愍帝于长安即位；316年长安陷落，愍帝出降，西晋灭亡。",
-    "links": [
-      {
-        "label": "晋愍帝",
-        "url": "https://zh.wikipedia.org/wiki/晋愍帝"
-      },
-      {
-        "label": "中国哲学书电子化计划《晋书·愍帝纪》",
-        "url": "https://ctext.org/datawiki.pl?if=gb&remap=gb&res=26844"
       }
     ]
   }
