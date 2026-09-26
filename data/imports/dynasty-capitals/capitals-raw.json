@@ -413,34 +413,6 @@
     ]
   },
   {
-    "id": "cap-zhou-east-xie-770",
-    "dynastyId": "zhou-east",
-    "historicalName": "携",
-    "modernName": "陕西省西安市",
-    "start": {
-      "year": -770,
-      "month": 1,
-      "abs": -9228
-    },
-    "end": {
-      "year": -750,
-      "month": 12,
-      "abs": -8977
-    },
-    "startAbs": -9228,
-    "endAbs": -8977,
-    "precision": "year",
-    "role": "primary",
-    "claimTrack": "xie",
-    "note": "《左传正义》引《竹书纪年》称虢公翰于携立王；携地通常认为在镐京附近，具体位置未详。清华简《系年》另记携王由诸侯立于虢，故此处只标示陕西西安一带的约略地望，不代表已确认城址。",
-    "links": [
-      {
-        "label": "周携王（据《左传正义》引《竹书纪年》及地望讨论）",
-        "url": "https://zh.wikipedia.org/wiki/周携王"
-      }
-    ]
-  },
-  {
     "id": "cap-zhou-east-wangcheng-770",
     "dynastyId": "zhou-east",
     "historicalName": "王城",
@@ -1182,15 +1154,15 @@
       "abs": -6768
     },
     "end": {
-      "year": -334,
+      "year": -469,
       "month": 12,
-      "abs": -3985
+      "abs": -5605
     },
     "startAbs": -6768,
-    "endAbs": -3985,
+    "endAbs": -5605,
     "precision": "year",
     "role": "primary",
-    "note": "越国初都会稽。",
+    "note": "越国初都会稽；勾践时期迁都琅琊前，会稽为都。",
     "links": [
       {
         "label": "维基百科",
@@ -1199,29 +1171,83 @@
     ]
   },
   {
-    "id": "cap-yue-chunqiu-langya-333",
+    "id": "cap-yue-chunqiu-langya-468",
     "dynastyId": "yue-chunqiu",
     "historicalName": "琅琊",
     "modernName": "山东省青岛市黄岛区",
     "start": {
-      "year": -333,
+      "year": -468,
       "month": 1,
-      "abs": -3984
+      "abs": -5604
+    },
+    "end": {
+      "year": -380,
+      "month": 12,
+      "abs": -4537
+    },
+    "startAbs": -5604,
+    "endAbs": -4537,
+    "precision": "year",
+    "role": "primary",
+    "note": "越王勾践灭吴后迁都琅琊；翳于前379年迁都姑苏。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/琅琊"
+      }
+    ]
+  },
+  {
+    "id": "cap-yue-chunqiu-gusu-379",
+    "dynastyId": "yue-chunqiu",
+    "historicalName": "姑苏",
+    "modernName": "江苏省苏州市",
+    "start": {
+      "year": -379,
+      "month": 1,
+      "abs": -4536
+    },
+    "end": {
+      "year": -361,
+      "month": 12,
+      "abs": -4309
+    },
+    "startAbs": -4536,
+    "endAbs": -4309,
+    "precision": "year",
+    "role": "primary",
+    "note": "越王翳于前379年迁都姑苏；无颛于前360年迁回会稽。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/姑苏"
+      }
+    ]
+  },
+  {
+    "id": "cap-yue-chunqiu-kuaiji-360",
+    "dynastyId": "yue-chunqiu",
+    "historicalName": "会稽",
+    "modernName": "浙江省绍兴市",
+    "start": {
+      "year": -360,
+      "month": 1,
+      "abs": -4308
     },
     "end": {
       "year": -306,
       "month": 12,
       "abs": -3649
     },
-    "startAbs": -3984,
+    "startAbs": -4308,
     "endAbs": -3649,
     "precision": "year",
     "role": "primary",
-    "note": "越王勾践后迁琅琊。",
+    "note": "越王无颛迁回会稽；越国亡于前306年。",
     "links": [
       {
         "label": "维基百科",
-        "url": "https://zh.wikipedia.org/wiki/琅琊"
+        "url": "https://zh.wikipedia.org/wiki/会稽"
       }
     ]
   },
@@ -2032,6 +2058,33 @@
       {
         "label": "维基百科",
         "url": "https://zh.wikipedia.org/wiki/前凉"
+      }
+    ]
+  },
+  {
+    "id": "cap-han-zhao-changan-304",
+    "dynastyId": "han-zhao",
+    "historicalName": "长安",
+    "modernName": "陕西省西安市",
+    "start": {
+      "year": 304,
+      "month": 1,
+      "abs": 3648
+    },
+    "end": {
+      "year": 329,
+      "month": 12,
+      "abs": 3959
+    },
+    "startAbs": 3648,
+    "endAbs": 3959,
+    "precision": "year",
+    "role": "primary",
+    "note": "前赵（汉赵）都城长安。",
+    "links": [
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/前赵"
       }
     ]
   },
@@ -5341,161 +5394,6 @@
       {
         "label": "维基百科",
         "url": "https://zh.wikipedia.org/wiki/北京市"
-      }
-    ]
-  },
-  {
-    "id": "cap-han-zhao-zuoguocheng-304",
-    "dynastyId": "han-zhao",
-    "historicalName": "左国城",
-    "modernName": "山西省吕梁市方山县",
-    "start": {
-      "year": 304,
-      "month": 1,
-      "abs": 3648
-    },
-    "end": {
-      "year": 304,
-      "month": 12,
-      "abs": 3659
-    },
-    "startAbs": 3648,
-    "endAbs": 3659,
-    "precision": "year",
-    "role": "primary",
-    "note": "刘渊304年在左国城建汉称王。现代地名定位到方山县范围；南村城址被认为是左国城相关遗址，坐标为县域约略点。",
-    "links": [
-      {
-        "label": "《晋书·载记第一·刘元海》",
-        "url": "https://zh.wikisource.org/zh-hans/晋书/卷101"
-      },
-      {
-        "label": "汉赵（迁都沿革）",
-        "url": "https://zh.wikipedia.org/wiki/汉赵"
-      }
-    ]
-  },
-  {
-    "id": "cap-han-zhao-liting-305",
-    "dynastyId": "han-zhao",
-    "historicalName": "黎亭",
-    "modernName": "山西省长治市壶关县",
-    "start": {
-      "year": 305,
-      "month": 1,
-      "abs": 3660
-    },
-    "end": {
-      "year": 307,
-      "month": 12,
-      "abs": 3695
-    },
-    "startAbs": 3660,
-    "endAbs": 3695,
-    "precision": "year",
-    "role": "primary",
-    "note": "305年离石一带饥荒，刘渊迁黎亭就食；此处按都城迁移沿革记录，现代定位仅至壶关县范围，非已确认遗址坐标。",
-    "links": [
-      {
-        "label": "《晋书·载记第一·刘元海》",
-        "url": "https://zh.wikisource.org/zh-hans/晋书/卷101"
-      },
-      {
-        "label": "汉赵（迁都沿革）",
-        "url": "https://zh.wikipedia.org/wiki/汉赵"
-      }
-    ]
-  },
-  {
-    "id": "cap-han-zhao-puzi-308",
-    "dynastyId": "han-zhao",
-    "historicalName": "蒲子",
-    "modernName": "山西省临汾市隰县",
-    "start": {
-      "year": 308,
-      "month": 1,
-      "abs": 3696
-    },
-    "end": {
-      "year": 308,
-      "month": 12,
-      "abs": 3707
-    },
-    "startAbs": 3696,
-    "endAbs": 3707,
-    "precision": "year",
-    "role": "primary",
-    "note": "308年刘渊迁都蒲子，308年十月称帝；现代定位至今隰县范围，未把县城中心当作已确认古城遗址。",
-    "links": [
-      {
-        "label": "《晋书·载记第一·刘元海》",
-        "url": "https://zh.wikisource.org/zh-hans/晋书/卷101"
-      },
-      {
-        "label": "汉赵（迁都沿革）",
-        "url": "https://zh.wikipedia.org/wiki/汉赵"
-      }
-    ]
-  },
-  {
-    "id": "cap-han-zhao-pingyang-309",
-    "dynastyId": "han-zhao",
-    "historicalName": "平阳",
-    "modernName": "山西省临汾市",
-    "start": {
-      "year": 309,
-      "month": 1,
-      "abs": 3708
-    },
-    "end": {
-      "year": 318,
-      "month": 12,
-      "abs": 3827
-    },
-    "startAbs": 3708,
-    "endAbs": 3827,
-    "precision": "year",
-    "role": "primary",
-    "note": "309年刘渊自蒲子迁都平阳。平阳在今临汾一带，坐标为城市范围约略点。318年靳准之乱后平阳失守。",
-    "links": [
-      {
-        "label": "《晋书·载记第一·刘元海》",
-        "url": "https://zh.wikisource.org/zh-hans/晋书/卷101"
-      },
-      {
-        "label": "汉赵（迁都沿革）",
-        "url": "https://zh.wikipedia.org/wiki/汉赵"
-      }
-    ]
-  },
-  {
-    "id": "cap-han-zhao-changan-319",
-    "dynastyId": "han-zhao",
-    "historicalName": "长安",
-    "modernName": "陕西省西安市",
-    "start": {
-      "year": 319,
-      "month": 1,
-      "abs": 3828
-    },
-    "end": {
-      "year": 329,
-      "month": 12,
-      "abs": 3959
-    },
-    "startAbs": 3828,
-    "endAbs": 3959,
-    "precision": "year",
-    "role": "primary",
-    "note": "刘曜平定靳准之乱后于319年迁都长安并改国号为赵；329年为后赵所灭。",
-    "links": [
-      {
-        "label": "《晋书·载记第一·刘元海》",
-        "url": "https://zh.wikisource.org/zh-hans/晋书/卷101"
-      },
-      {
-        "label": "汉赵（迁都沿革）",
-        "url": "https://zh.wikipedia.org/wiki/汉赵"
       }
     ]
   }

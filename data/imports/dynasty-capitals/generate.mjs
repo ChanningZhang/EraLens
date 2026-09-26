@@ -30,6 +30,7 @@ const REMOVED_CAPITAL_IDS = [
   "cap-zhou-east-luoyi-770",
   "cap-han-gengshi-changan-23",
   "cap-chimei-changan-23",
+  "cap-yue-chunqiu-langya-333",
 ];
 
 const raw = JSON.parse(readFileSync(path.join(__dirname, "capitals-raw.json"), "utf8"));
