@@ -649,6 +649,17 @@ const preQinIdioms = [
 const events = [
   ...preQinIdioms,
 
+  idiomPoint({
+    id: "idiom-feng-lang-ju-xu",
+    name: "封狼居胥",
+    meaning: "比喻建立显赫战功，常用来形容将领远征并取得重大胜利。",
+    at: ym(-119),
+    dynastyIds: ["han-west"],
+    participantIds: ["huo-qubing", "liu-che"],
+    summary: "汉武帝元狩四年（前119年），霍去病率军深入漠北击败匈奴左部，登狼居胥山祭天、于姑衍山祭地后返师。后世以“封狼居胥”概括这一战功，成为建功边疆的典故。",
+    dateNote: "元狩四年，前119年；典出《史记·卫将军骠骑列传》及《汉书·卫青霍去病传》",
+  }),
+
   // 秦
   idiomPoint({
     id: "idiom-zhi-lu-wei-ma",
@@ -854,6 +865,12 @@ const events = [
 ];
 
 const relations = [
+  {
+    id: "rel-idiom-feng-lang-ju-xu-mobei",
+    fromRef: "event:idiom-feng-lang-ju-xu",
+    toRef: "event:mobei-battle",
+    kind: "other",
+  },
   {
     id: "rel-idiom-daolu-guoren",
     fromRef: "event:idiom-dao-lu-yi-mu",

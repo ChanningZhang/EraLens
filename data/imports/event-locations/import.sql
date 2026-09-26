@@ -3,6 +3,9 @@ BEGIN;
 
 -- event_locations
 INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-feng-lang-ju-xu', '狼居胥山', '蒙古国肯特山脉一带', 109.5, 48.5, 'WGS84', 'approximate', '狼居胥山通常比定为今蒙古国肯特山一带，具体对应仍有历史地理争议；坐标为山脉区域近似代表点，不指向确定峰顶。另有其他考定，故精度为 approximate。', '[{"label":"《汉书·卫青霍去病传》","url":"https://zh.wikisource.org/zh-hans/漢書/卷055"},{"label":"肯特山（蒙古国）","url":"https://zh.wikipedia.org/wiki/肯特山_(蒙古国)"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
 VALUES ('loc-kublai-moves-capital-to-zhongdu', '中都（今北京）', '北京市', 116.397, 39.916, 'WGS84', 'approximate', '以迁入的金中都旧城区域为代表点；忽必烈此后在中都东北营建元大都，坐标不表示元大都城址。', '[{"label":"北京市地方志：忽必烈迁都中都、元迁都大都","url":"https://www.bjdsdfz.cn/jcdq.jhtml"}]'::jsonb)
 ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
 INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
@@ -191,6 +194,7 @@ ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, moder
 INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
 VALUES ('loc-yinping', '阴平道（阴平故城区域）', '甘肃省陇南市文县鹄衣坝附近', 104.6835, 32.944031, 'WGS84', 'approximate', '以汉代阴平道故城所在的文县区域作近似标点；偷渡路线由此向东南越摩天岭，经今四川平武方向至江油关，坐标不代表全程。阴平道具体线路尚有不同考证。', '[{"label":"《三国志·魏书·邓艾传》","url":"https://zh.wikisource.org/zh-hans/三國志/卷28"},{"label":"蜀道寻踪：阴平古道记","url":"https://cbgc.scol.com.cn/news/5026693"},{"label":"文县中心坐标","url":"https://www.poi86.com/poi/amap/district/621222/2.html"}]'::jsonb)
 ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+UPDATE events SET location_id = 'loc-feng-lang-ju-xu' WHERE id = 'idiom-feng-lang-ju-xu';
 UPDATE events SET location_id = 'loc-kublai-moves-capital-to-zhongdu' WHERE id = 'kublai-moves-capital-to-zhongdu';
 UPDATE events SET location_id = 'loc-zhou-nanwang-moves-to-western-zhou-capital' WHERE id = 'zhou-nanwang-moves-to-western-zhou-capital';
 UPDATE events SET location_id = 'loc-sui-moves-to-daxing' WHERE id = 'sui-moves-to-daxing';

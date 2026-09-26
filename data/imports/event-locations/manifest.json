@@ -17,9 +17,17 @@
     "reigns": 0,
     "events": 0,
     "relations": 0,
-    "eventLocations": 63
+    "eventLocations": 64
   },
   "sources": [
+    {
+      "label": "《汉书·卫青霍去病传》",
+      "url": "https://zh.wikisource.org/zh-hans/漢書/卷055"
+    },
+    {
+      "label": "肯特山（蒙古国）",
+      "url": "https://zh.wikipedia.org/wiki/肯特山_(蒙古国)"
+    },
     {
       "label": "北京市地方志：忽必烈迁都中都、元迁都大都",
       "url": "https://www.bjdsdfz.cn/jcdq.jhtml"

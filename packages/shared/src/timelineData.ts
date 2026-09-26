@@ -468,20 +468,28 @@ export function buildEntityDetail(
     group: "location",
   }] : [];
 
+  // Event relations describe an association, so either endpoint should expose
+  // the other event in its detail view regardless of stored direction.
+  const associatedEventRelated = store.relations
+    .filter((rel) => {
+      const isEventPair = rel.fromRef.startsWith("event:") && rel.toRef.startsWith("event:");
+      return isEventPair && (rel.fromRef === refKey(ref) || rel.toRef === refKey(ref));
+    })
+    .map((rel) => {
+      const otherRef = rel.fromRef === refKey(ref) ? rel.toRef : rel.fromRef;
+      const parsed = parseRef(otherRef);
+      if (!parsed) return null;
+      const summary = buildRelatedSummary(parsed);
+      const otherEvent = eventMap.get(parsed.id);
+      return {
+        ...summary,
+        abs: otherEvent ? eventSpanAbs(otherEvent).anchorAbs : anchorAbs,
+        group: otherEvent?.kind === "idiom" ? "idiom" as const : "event" as const,
+      };
+    })
+    .filter((item): item is NonNullable<typeof item> => item != null);
+
   if (event.kind === "idiom") {
-    const sourceEventRelated = store.relations
-      .filter((rel) => rel.fromRef === refKey(ref) && rel.toRef.startsWith("event:"))
-      .map((rel) => parseRef(rel.toRef))
-      .filter((parsed): parsed is EntityRef => parsed != null)
-      .map((parsed) => {
-        const summary = buildRelatedSummary(parsed);
-        const sourceEvent = eventMap.get(parsed.id);
-        return {
-          ...summary,
-          abs: sourceEvent ? eventSpanAbs(sourceEvent).anchorAbs : anchorAbs,
-          group: "event" as const,
-        };
-      });
     const participantRelated = event.participantIds
       .map((id) => {
         const summary = buildRelatedSummary({ type: "person", id });
@@ -514,7 +522,7 @@ export function buildEntityDetail(
         ...(event.isApproximate ? [{ label: "日期精度", value: "非精确" }] : []),
       ],
       summary: event.summary,
-      related: [...locationRelated, ...dynastyRelated, ...participantRelated, ...sourceEventRelated],
+      related: [...locationRelated, ...dynastyRelated, ...participantRelated, ...associatedEventRelated],
       capitalTenures: [],
       links: [],
     };
@@ -556,6 +564,7 @@ export function buildEntityDetail(
           : null;
       })
       .filter(Boolean) as EntityDetail["related"],
+      ...associatedEventRelated,
     ],
     capitalTenures: [],
     links: [],
