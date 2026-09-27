@@ -40,8 +40,8 @@ function layoutMissingReignBar(
   const barLeft = projectAbs(viewport, gap.startAbs);
   const barRight = projectAbs(viewport, endExclusive);
   if (barRight <= barLeft) return null;
-  const barTop = laneTop + LANE_PADDING_TOP;
-  const barHeight = STACK_ROW_HEIGHT;
+  const barTop = laneTop + (viewport.presentation?.lanePaddingPx ?? LANE_PADDING_TOP);
+  const barHeight = viewport.presentation?.rowHeightPx ?? STACK_ROW_HEIGHT;
   return {
     reignId: gap.id,
     dynastyId,
@@ -83,7 +83,7 @@ function layoutRulerReignBar(
   geometry?: PreparedReignGeometry,
 ): ReignCardLayout | null {
   const span = geometry ?? resolveReignVisualSpan(reign, reigns, laneGroups);
-  const { unitTop, unitHeight } = geometry ?? resolveStackedCardUnit(reign, reigns, laneGroups);
+  const { unitTop, unitHeight } = geometry ?? resolveStackedCardUnit(reign, reigns, laneGroups, viewport.presentation?.rowHeightPx);
   const visual = geometry
     ? { start: geometry.visualStart, endExclusive: geometry.visualEndExclusive }
     : reignVisualBounds(reign, span.startAbs, span.endExclusive);
@@ -103,11 +103,11 @@ function layoutRulerReignBar(
     cardWidthPx: visualWidth,
     clan,
   });
-  const barLayout = resolveReignBarLayout(visualWidth, [...label].length);
+  const barLayout = resolveReignBarLayout(visualWidth, [...label].length, unitHeight);
   const unitLeft = barLayout.centerOnAnchor
     ? projectAbs(viewport, anchor) - barLayout.unitWidthPx / 2
     : projectAbs(viewport, visual.start);
-  const barTop = laneTop + LANE_PADDING_TOP + unitTop;
+  const barTop = laneTop + (viewport.presentation?.lanePaddingPx ?? LANE_PADDING_TOP) + unitTop;
   const rowHeight = unitHeight;
 
   let barLeft: number;

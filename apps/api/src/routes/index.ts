@@ -42,7 +42,11 @@ async function loadStore() {
     prisma.dynasty.findMany(),
     prisma.reign.findMany(),
     prisma.event.findMany({
-      include: { dynasties: true, participants: true, location: true },
+      include: {
+        dynasties: { orderBy: { dynastyId: "asc" } },
+        participants: { orderBy: { personId: "asc" } },
+        location: true,
+      },
     }),
     prisma.relation.findMany(),
   ]);
@@ -67,10 +71,10 @@ async function loadEventsInWindow(fromAbs: number, toAbs: number) {
   const eventIds = eventRows.map((row) => row.id);
   const [eventDynasties, eventParticipants] = await Promise.all([
     eventIds.length
-      ? prisma.eventDynasty.findMany({ where: { eventId: { in: eventIds } } })
+      ? prisma.eventDynasty.findMany({ where: { eventId: { in: eventIds } }, orderBy: [{ eventId: "asc" }, { dynastyId: "asc" }] })
       : Promise.resolve([]),
     eventIds.length
-      ? prisma.eventParticipant.findMany({ where: { eventId: { in: eventIds } } })
+      ? prisma.eventParticipant.findMany({ where: { eventId: { in: eventIds } }, orderBy: [{ eventId: "asc" }, { personId: "asc" }] })
       : Promise.resolve([]),
   ]);
 
@@ -461,15 +465,18 @@ export async function registerRoutes(app: FastifyInstance) {
     const [personRows, dynastyRows, reignRows, eventRows, capitalRows] = await Promise.all([
       prisma.person.findMany({
         where: { searchTerms: { has: q } },
+        orderBy: { id: "asc" },
         take: 12,
       }),
       prisma.dynasty.findMany({
         where: { name: { contains: q, mode: "insensitive" } },
+        orderBy: { id: "asc" },
         take: 12,
       }),
       prisma.reign.findMany({
         where: { eraNames: { contains: q, mode: "insensitive" } },
         include: { person: true, dynasty: true },
+        orderBy: { id: "asc" },
         take: 12,
       }),
       prisma.event.findMany({
@@ -479,6 +486,7 @@ export async function registerRoutes(app: FastifyInstance) {
             { meaning: { contains: q, mode: "insensitive" } },
           ],
         },
+        orderBy: { id: "asc" },
         take: 12,
       }),
       prisma.dynastyCapital.findMany({
@@ -489,6 +497,7 @@ export async function registerRoutes(app: FastifyInstance) {
           ],
         },
         include: { dynasty: true },
+        orderBy: { id: "asc" },
         take: 12,
       }),
     ]);
@@ -571,7 +580,8 @@ export async function registerRoutes(app: FastifyInstance) {
           FROM dynasty_capitals
           WHERE dynasty_id = ${query.dynastyId}
             AND start_abs <= ${toAbs}::int
-            AND end_abs >= ${fromAbs}::int`
+            AND end_abs >= ${fromAbs}::int
+          ORDER BY start_abs, role, id`
       : await prisma.$queryRaw<RawDynastyCapitalRow[]>`
           SELECT id, dynasty_id, historical_name, modern_name,
                  longitude, latitude, coordinate_system,
@@ -584,7 +594,8 @@ export async function registerRoutes(app: FastifyInstance) {
                  note, links
           FROM dynasty_capitals
           WHERE start_abs <= ${toAbs}::int
-            AND end_abs >= ${fromAbs}::int`;
+            AND end_abs >= ${fromAbs}::int
+          ORDER BY start_abs, role, id`;
 
     return DynastyCapitalSchema.array().parse(rows.map(mapDynastyCapital));
   });

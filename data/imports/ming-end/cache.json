@@ -1,0 +1,501 @@
+{
+  "slug": "ming-end",
+  "window": {
+    "startYear": 1644,
+    "startMonth": 1,
+    "endYear": 1683,
+    "endMonth": 10
+  },
+  "persons": [
+    {
+      "id": "li-zicheng",
+      "name": "李自成",
+      "roles": [
+        "皇帝",
+        "起义领袖"
+      ],
+      "bio": "明末闯王，1644年在西安称帝建大顺，旋克北京，明亡；次年兵败被杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/李自成"
+        }
+      ],
+      "birth": {
+        "year": 1606,
+        "month": 9,
+        "abs": 19280
+      },
+      "death": {
+        "year": 1645,
+        "month": 5,
+        "abs": 19744
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "大顺皇帝"
+    },
+    {
+      "id": "zhang-xianzhong",
+      "name": "张献忠",
+      "roles": [
+        "皇帝",
+        "起义领袖"
+      ],
+      "bio": "明末农民军领袖，1644年于成都称帝，国号大西；1647年1月2日战死于西充凤凰山。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/张献忠"
+        }
+      ],
+      "birth": {
+        "year": 1606,
+        "month": 1,
+        "abs": 19272
+      },
+      "death": {
+        "year": 1647,
+        "month": 1,
+        "abs": 19764
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "大西皇帝"
+    },
+    {
+      "id": "zheng-chenggong",
+      "name": "郑成功",
+      "roles": [
+        "君主",
+        "军事家"
+      ],
+      "bio": "南明延平王，1662年驱逐荷兰、收复台湾，建立明郑东宁政权；同年病逝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑成功"
+        }
+      ],
+      "birth": {
+        "year": 1624,
+        "month": 1,
+        "abs": 19488
+      },
+      "death": {
+        "year": 1662,
+        "month": 6,
+        "abs": 19949
+      },
+      "altNames": [],
+      "posthumousNames": [
+        "武王"
+      ],
+      "templeNames": [],
+      "title": "延平王"
+    },
+    {
+      "id": "zheng-jing",
+      "name": "郑经",
+      "roles": [
+        "君主"
+      ],
+      "bio": "郑成功嫡长子，1662年嗣延平王，据台湾奉永历正朔；1681年卒。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑经"
+        }
+      ],
+      "birth": {
+        "year": 1642,
+        "month": 10,
+        "abs": 19713
+      },
+      "death": {
+        "year": 1681,
+        "month": 3,
+        "abs": 20174
+      },
+      "altNames": [],
+      "posthumousNames": [
+        "文王"
+      ],
+      "templeNames": [],
+      "title": "延平王"
+    },
+    {
+      "id": "zheng-keshuang",
+      "name": "郑克塽",
+      "roles": [
+        "君主"
+      ],
+      "bio": "郑经之子，1681年嗣延平王；1683年澎湖战败降清，明郑终结。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑克塽"
+        }
+      ],
+      "birth": {
+        "year": 1670,
+        "month": 1,
+        "abs": 20040
+      },
+      "death": {
+        "year": 1707,
+        "month": 1,
+        "abs": 20484
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "延平王"
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "dashun",
+      "name": "大顺",
+      "altNames": [
+        "李顺"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 1644,
+        "month": 1,
+        "abs": 19728
+      },
+      "end": {
+        "year": 1645,
+        "month": 12,
+        "abs": 19751
+      },
+      "precision": "year",
+      "note": "李自成1644年正月西安称帝，年号永昌；克北京后旋败，1645年李自成阵亡，政权瓦解。"
+    },
+    {
+      "id": "daxi",
+      "name": "大西",
+      "altNames": [
+        "西"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 1644,
+        "month": 12,
+        "abs": 19739
+      },
+      "end": {
+        "year": 1647,
+        "month": 12,
+        "abs": 19775
+      },
+      "precision": "month",
+      "note": "张献忠1644年十二月成都称帝，年号大顺；1647年1月战死于西充，余部至同年归顺南明。"
+    },
+    {
+      "id": "mingzheng",
+      "name": "明郑",
+      "altNames": [
+        "东宁",
+        "延平"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 1661,
+        "month": 6,
+        "abs": 19937
+      },
+      "end": {
+        "year": 1683,
+        "month": 10,
+        "abs": 20205
+      },
+      "precision": "month",
+      "note": "郑成功1662年收复台湾后建承天府，奉永历正朔；1683年郑克塽降清，东宁终结。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-li-zicheng-dashun",
+      "dynastyId": "dashun",
+      "personId": "li-zicheng",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "永昌"
+      ],
+      "start": {
+        "year": 1644,
+        "month": 1,
+        "abs": 19728
+      },
+      "end": {
+        "year": 1645,
+        "month": 5,
+        "abs": 19744,
+        "day": 17
+      },
+      "startAbs": 19728,
+      "endAbs": 19744,
+      "precision": "month",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zhang-xianzhong-daxi",
+      "dynastyId": "daxi",
+      "personId": "zhang-xianzhong",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "大顺"
+      ],
+      "start": {
+        "year": 1644,
+        "month": 12,
+        "abs": 19739,
+        "day": 4
+      },
+      "end": {
+        "year": 1647,
+        "month": 1,
+        "abs": 19764,
+        "day": 2
+      },
+      "startAbs": 19739,
+      "endAbs": 19764,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-chenggong-mingzheng",
+      "dynastyId": "mingzheng",
+      "personId": "zheng-chenggong",
+      "title": "",
+      "posthumousName": "武王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1661,
+        "month": 6,
+        "abs": 19937,
+        "day": 14
+      },
+      "end": {
+        "year": 1662,
+        "month": 6,
+        "abs": 19949,
+        "day": 23
+      },
+      "startAbs": 19937,
+      "endAbs": 19949,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-jing-mingzheng",
+      "dynastyId": "mingzheng",
+      "personId": "zheng-jing",
+      "title": "",
+      "posthumousName": "文王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1662,
+        "month": 6,
+        "abs": 19949,
+        "day": 29
+      },
+      "end": {
+        "year": 1681,
+        "month": 3,
+        "abs": 20174,
+        "day": 17
+      },
+      "startAbs": 19949,
+      "endAbs": 20174,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-keshuang-mingzheng",
+      "dynastyId": "mingzheng",
+      "personId": "zheng-keshuang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1681,
+        "month": 3,
+        "abs": 20174,
+        "day": 20
+      },
+      "end": {
+        "year": 1683,
+        "month": 10,
+        "abs": 20205,
+        "day": 8
+      },
+      "startAbs": 20174,
+      "endAbs": 20205,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    }
+  ],
+  "events": [
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "day",
+      "dynastyIds": [
+        "mingzheng",
+        "qing"
+      ],
+      "participantIds": [
+        "zheng-keshuang",
+        "xuanye"
+      ],
+      "id": "qing-conquer-taiwan",
+      "name": "清军攻克台湾",
+      "dateNote": "康熙二十二年十月初八，1683年10月8日郑克塽降清",
+      "at": {
+        "year": 1683,
+        "month": 10,
+        "abs": 20205,
+        "day": 8
+      },
+      "summary": "施琅率清军在澎湖海战取胜，郑克塽于同年十月降清，明郑灭亡，台湾纳入清朝统治。",
+      "atAbs": 20205
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-zheng-chenggong-zheng-jing-succession",
+      "fromRef": "person:zheng-chenggong",
+      "toRef": "person:zheng-jing",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zheng-jing-zheng-keshuang-succession",
+      "fromRef": "person:zheng-jing",
+      "toRef": "person:zheng-keshuang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-mingzheng-taiwan-zheng",
+      "fromRef": "event:zheng-recover-taiwan",
+      "toRef": "person:zheng-chenggong",
+      "kind": "politics"
+    },
+    {
+      "id": "rel-qing-taiwan-zheng-keshuang",
+      "fromRef": "event:qing-conquer-taiwan",
+      "toRef": "person:zheng-keshuang",
+      "kind": "battle"
+    }
+  ],
+  "supplementalEventDynasties": [
+    {
+      "eventId": "zheng-recover-taiwan",
+      "dynastyId": "mingzheng"
+    }
+  ],
+  "supplementalEventParticipants": [],
+  "preSql": "DELETE FROM event_dynasties WHERE event_id IN ('mingzheng-taiwan-founded', 'qing-unify-taiwan');\nDELETE FROM event_dynasties WHERE event_id = 'qing-enter-pass' AND dynasty_id = 'dashun';\nDELETE FROM event_participants WHERE event_id IN ('mingzheng-taiwan-founded', 'qing-unify-taiwan');\nUPDATE relations SET from_id = 'zheng-recover-taiwan' WHERE from_type = 'event' AND from_id = 'mingzheng-taiwan-founded';\nDELETE FROM events WHERE id IN ('mingzheng-taiwan-founded', 'qing-unify-taiwan');",
+  "manifest": {
+    "slug": "ming-end",
+    "title": "明末清初过渡政权",
+    "window": {
+      "startYear": 1644,
+      "startMonth": 1,
+      "endYear": 1683,
+      "endMonth": 10
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-09-27",
+    "counts": {
+      "persons": 5,
+      "dynasties": 3,
+      "reigns": 5,
+      "events": 1,
+      "relations": 4,
+      "supplementalEventDynastyLinks": 1,
+      "supplementalEventParticipantLinks": 0
+    },
+    "sources": [
+      {
+        "label": "大顺 (政权)",
+        "url": "https://zh.wikipedia.org/wiki/大顺_(政权)"
+      },
+      {
+        "label": "大西",
+        "url": "https://zh.wikipedia.org/wiki/大西"
+      },
+      {
+        "label": "李自成",
+        "url": "https://zh.wikipedia.org/wiki/李自成"
+      },
+      {
+        "label": "张献忠",
+        "url": "https://zh.wikipedia.org/wiki/张献忠"
+      },
+      {
+        "label": "明郑",
+        "url": "https://zh.wikipedia.org/wiki/明郑"
+      },
+      {
+        "label": "郑经",
+        "url": "https://zh.wikipedia.org/wiki/郑经"
+      },
+      {
+        "label": "澎湖海战",
+        "url": "https://zh.wikipedia.org/wiki/澎湖海战"
+      }
+    ],
+    "notes": [
+      "收录大顺（1644–1645）、大西（1644–1647）、明郑/东宁（1661–1683）。",
+      "明郑三代延平王在位日取维基百科条目公历换算（已核定公历日期直接记录在缓存，precision=day）。",
+      "郑成功、郑经、郑克塽在位与 yuan-ming-qing 已有人物 upsert 衔接。",
+      "大西年号亦作大顺，与李自成大顺国号同名异政权。",
+      "郑成功收复台湾（1662）与郑克塽降清（1683）各保留一条跨包共用事件，合并原重复记录的信息与关联。",
+      "明朝灭亡、清军入关、南明终结等事件沿用已有 id，补 event_dynasties。"
+    ]
+  }
+}

@@ -1,0 +1,1302 @@
+{
+  "slug": "nanbei-sixteen-extra",
+  "window": {
+    "startYear": 296,
+    "startMonth": 1,
+    "endYear": 587,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "xiao-cha",
+      "name": "萧詧",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "梁武帝孙、昭明太子第三子。555年西魏立于江陵，建立西梁（后梁），年号大定。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/萧詧"
+        }
+      ],
+      "birth": {
+        "year": 519,
+        "month": 1,
+        "abs": 6228
+      },
+      "death": {
+        "year": 562,
+        "month": 2,
+        "abs": 6745
+      },
+      "altNames": [],
+      "posthumousNames": [
+        "宣皇帝"
+      ],
+      "templeNames": [
+        "中宗"
+      ],
+      "title": "梁宣帝"
+    },
+    {
+      "id": "xiao-kui",
+      "name": "萧巋",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "西梁第二代皇帝，萧詧之子，562–585年在位，年号天保。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/萧巋"
+        }
+      ],
+      "birth": {
+        "year": 542,
+        "month": 1,
+        "abs": 6504
+      },
+      "death": {
+        "year": 585,
+        "month": 5,
+        "abs": 7024
+      },
+      "altNames": [],
+      "posthumousNames": [
+        "孝明皇帝"
+      ],
+      "templeNames": [
+        "世宗"
+      ],
+      "title": "梁明帝"
+    },
+    {
+      "id": "xiao-cong",
+      "name": "萧琮",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "西梁末帝，萧巋之子，585–587年在位；隋废梁后封莒国公，大业三年卒。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/萧琮"
+        }
+      ],
+      "birth": {
+        "year": 558,
+        "month": 1,
+        "abs": 6696
+      },
+      "death": {
+        "year": 607,
+        "month": 1,
+        "abs": 7284
+      },
+      "altNames": [],
+      "posthumousNames": [
+        "孝靖皇帝"
+      ],
+      "templeNames": [],
+      "title": "梁孝靖帝"
+    },
+    {
+      "id": "ran-min",
+      "name": "冉闵",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "石虎养孙，本姓冉，后赵时姓名石闵。石虎病死后诸子争位，350年杀石鉴称帝，国号魏，年号永兴；352年败于前燕，慕容儁斩于龙城。谥平帝；前燕谥武悼天王。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/冉闵"
+        }
+      ],
+      "birth": null,
+      "death": {
+        "year": 352,
+        "month": 6,
+        "abs": 4229
+      },
+      "altNames": [],
+      "posthumousNames": [
+        "平帝"
+      ],
+      "templeNames": [],
+      "title": "魏平帝"
+    },
+    {
+      "id": "murong-hong",
+      "name": "慕容泓",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "西燕开国皇帝，前燕末帝慕容暐之弟；384年华阴称济北王，同年为部将所杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/慕容泓"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "西燕皇帝"
+    },
+    {
+      "id": "murong-chong",
+      "name": "慕容冲",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "西燕威皇帝，慕容儁之子、慕容暐之弟；385年阿房称帝，386年为韩延所杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/慕容冲"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "威皇帝"
+      ],
+      "templeNames": [],
+      "title": "西燕威皇帝"
+    },
+    {
+      "id": "duan-sui",
+      "name": "段随",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "西燕将领，386年二月被拥立为燕王，三月为慕容恒、慕容永所杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段隨"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "西燕皇帝"
+    },
+    {
+      "id": "murong-hao",
+      "name": "慕容顗",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "西燕皇帝，前燕宜都王慕容桓之子；386年三月即位，旋为慕容韬所诱杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/建明_(西燕)"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "西燕皇帝"
+    },
+    {
+      "id": "murong-yao",
+      "name": "慕容瑶",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "西燕皇帝，慕容冲之子；386年三月即位，为慕容永所擒杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/慕容瑶"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "西燕皇帝"
+    },
+    {
+      "id": "murong-zhong",
+      "name": "慕容忠",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "西燕皇帝，慕容泓之子；386年三月即位，六月为刁云所杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/慕容忠"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "西燕皇帝"
+    },
+    {
+      "id": "murong-yong",
+      "name": "慕容永",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "西燕末帝，慕容廆侄孙；386年六月称河东王、十月称帝，394年为后燕慕容垂所灭。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/慕容永"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "西燕皇帝"
+    },
+    {
+      "id": "yang-maosou",
+      "name": "杨茂搜",
+      "roles": [
+        "君主"
+      ],
+      "bio": "前仇池开国君主，296年率部据仇池，自号辅国将军、右贤王。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杨茂搜"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "仇池王"
+    },
+    {
+      "id": "yang-nandi",
+      "name": "杨难敌",
+      "roles": [
+        "君主"
+      ],
+      "bio": "前仇池君主，317–334年在位，前赵封为武都王。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杨难敌"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "仇池王"
+    },
+    {
+      "id": "yang-yi-chouchi",
+      "name": "杨毅",
+      "roles": [
+        "君主"
+      ],
+      "bio": "前仇池君主，334–337年在位，自号龙骧将军、左贤王、下辨公。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杨毅_(仇池)"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "仇池王"
+    },
+    {
+      "id": "yang-chu",
+      "name": "杨初",
+      "roles": [
+        "君主"
+      ],
+      "bio": "前仇池君主，337–355年在位，东晋封仇池公、天水公。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杨初_(仇池)"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "仇池王"
+    },
+    {
+      "id": "yang-guo-chouchi",
+      "name": "杨国",
+      "roles": [
+        "君主"
+      ],
+      "bio": "前仇池君主，355–356年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杨国_(仇池)"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "仇池王"
+    },
+    {
+      "id": "yang-jun-chouchi",
+      "name": "杨俊",
+      "roles": [
+        "君主"
+      ],
+      "bio": "前仇池君主，356–360年在位，东晋封为仇池公。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杨俊_(仇池)"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "仇池王"
+    },
+    {
+      "id": "yang-shi-chouchi",
+      "name": "杨世",
+      "roles": [
+        "君主"
+      ],
+      "bio": "前仇池君主，360–370年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杨世_(仇池)"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "仇池王"
+    },
+    {
+      "id": "yang-tong-chouchi",
+      "name": "杨统",
+      "roles": [
+        "君主"
+      ],
+      "bio": "前仇池君主，370年在位，史料有争议。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杨统_(仇池)"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "仇池王"
+    },
+    {
+      "id": "yang-zuan-chouchi",
+      "name": "杨纂",
+      "roles": [
+        "君主"
+      ],
+      "bio": "前仇池末代君主，370–371年在位，371年前秦灭仇池。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杨纂_(仇池)"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "仇池王"
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "xiliang",
+      "name": "西梁",
+      "altNames": [
+        "后梁",
+        "萧梁"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 555,
+        "month": 2,
+        "abs": 6661
+      },
+      "end": {
+        "year": 587,
+        "month": 10,
+        "abs": 7053
+      },
+      "precision": "month",
+      "groupId": "nan-chao",
+      "note": "555年萧詧在西魏支持下称帝于江陵；587年隋废西梁，萧琮为末帝。"
+    },
+    {
+      "id": "ranwei",
+      "name": "冉魏",
+      "altNames": [
+        "魏",
+        "冉魏"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 350,
+        "month": 1,
+        "abs": 4200
+      },
+      "end": {
+        "year": 352,
+        "month": 12,
+        "abs": 4235
+      },
+      "precision": "year",
+      "note": "350年冉闵杀后赵石鉴称帝，国号魏；352年败于前燕。不入崔鸿十六国。"
+    },
+    {
+      "id": "xiyan",
+      "name": "西燕",
+      "altNames": [
+        "燕"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 384,
+        "month": 1,
+        "abs": 4608
+      },
+      "end": {
+        "year": 394,
+        "month": 1,
+        "abs": 4728
+      },
+      "precision": "year",
+      "note": "384年慕容泓称帝，都长子；394年慕容永为后燕所灭。不入崔鸿十六国。"
+    },
+    {
+      "id": "chouchi",
+      "name": "仇池",
+      "altNames": [
+        "前仇池",
+        "氐仇池"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 296,
+        "month": 1,
+        "abs": 3552
+      },
+      "end": {
+        "year": 371,
+        "month": 1,
+        "abs": 4452
+      },
+      "precision": "year",
+      "note": "296年杨茂搜据仇池；371年前秦灭前仇池。杨腾为东汉迁入祖，不算君主。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-xiao-cha-xiliang",
+      "dynastyId": "xiliang",
+      "personId": "xiao-cha",
+      "title": "",
+      "posthumousName": "宣皇帝",
+      "templeName": "中宗",
+      "eraNames": [
+        "大定"
+      ],
+      "start": {
+        "year": 555,
+        "month": 2,
+        "abs": 6661
+      },
+      "end": {
+        "year": 562,
+        "month": 2,
+        "abs": 6745
+      },
+      "startAbs": 6661,
+      "endAbs": 6745,
+      "precision": "month",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-xiao-kui-xiliang",
+      "dynastyId": "xiliang",
+      "personId": "xiao-kui",
+      "title": "",
+      "posthumousName": "孝明皇帝",
+      "templeName": "世宗",
+      "eraNames": [
+        "天保"
+      ],
+      "start": {
+        "year": 562,
+        "month": 2,
+        "abs": 6745
+      },
+      "end": {
+        "year": 585,
+        "month": 5,
+        "abs": 7024
+      },
+      "startAbs": 6745,
+      "endAbs": 7024,
+      "precision": "month",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-xiao-cong-xiliang",
+      "dynastyId": "xiliang",
+      "personId": "xiao-cong",
+      "title": "",
+      "posthumousName": "孝靖皇帝",
+      "templeName": null,
+      "eraNames": [
+        "广运"
+      ],
+      "start": {
+        "year": 585,
+        "month": 5,
+        "abs": 7024
+      },
+      "end": {
+        "year": 587,
+        "month": 10,
+        "abs": 7053,
+        "day": 26
+      },
+      "startAbs": 7024,
+      "endAbs": 7053,
+      "precision": "month",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-ran-min-ranwei",
+      "dynastyId": "ranwei",
+      "personId": "ran-min",
+      "title": "",
+      "posthumousName": "平帝",
+      "templeName": null,
+      "eraNames": [
+        "永兴"
+      ],
+      "start": {
+        "year": 350,
+        "month": 4,
+        "abs": 4203
+      },
+      "end": {
+        "year": 352,
+        "month": 6,
+        "abs": 4229,
+        "day": 1
+      },
+      "startAbs": 4203,
+      "endAbs": 4229,
+      "precision": "month",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-murong-hong-xiyan",
+      "dynastyId": "xiyan",
+      "personId": "murong-hong",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "燕兴"
+      ],
+      "start": {
+        "year": 384,
+        "month": 2,
+        "abs": 4609
+      },
+      "end": {
+        "year": 384,
+        "month": 11,
+        "abs": 4618
+      },
+      "startAbs": 4609,
+      "endAbs": 4618,
+      "precision": "month",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-murong-chong-xiyan",
+      "dynastyId": "xiyan",
+      "personId": "murong-chong",
+      "title": "",
+      "posthumousName": "威皇帝",
+      "templeName": null,
+      "eraNames": [
+        "更始"
+      ],
+      "start": {
+        "year": 385,
+        "month": 1,
+        "abs": 4620
+      },
+      "end": {
+        "year": 386,
+        "month": 2,
+        "abs": 4633
+      },
+      "startAbs": 4620,
+      "endAbs": 4633,
+      "precision": "month",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-sui-xiyan",
+      "dynastyId": "xiyan",
+      "personId": "duan-sui",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "昌平"
+      ],
+      "start": {
+        "year": 386,
+        "month": 2,
+        "abs": 4633
+      },
+      "end": {
+        "year": 386,
+        "month": 3,
+        "abs": 4634
+      },
+      "startAbs": 4633,
+      "endAbs": 4634,
+      "precision": "month",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-murong-hao-xiyan",
+      "dynastyId": "xiyan",
+      "personId": "murong-hao",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "建明"
+      ],
+      "start": {
+        "year": 386,
+        "month": 3,
+        "abs": 4634
+      },
+      "end": {
+        "year": 386,
+        "month": 3,
+        "abs": 4634
+      },
+      "startAbs": 4634,
+      "endAbs": 4634,
+      "precision": "month",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-murong-yao-xiyan",
+      "dynastyId": "xiyan",
+      "personId": "murong-yao",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "建平"
+      ],
+      "start": {
+        "year": 386,
+        "month": 3,
+        "abs": 4634
+      },
+      "end": {
+        "year": 386,
+        "month": 3,
+        "abs": 4634
+      },
+      "startAbs": 4634,
+      "endAbs": 4634,
+      "precision": "month",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-murong-zhong-xiyan",
+      "dynastyId": "xiyan",
+      "personId": "murong-zhong",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "建武"
+      ],
+      "start": {
+        "year": 386,
+        "month": 3,
+        "abs": 4634
+      },
+      "end": {
+        "year": 386,
+        "month": 6,
+        "abs": 4637
+      },
+      "startAbs": 4634,
+      "endAbs": 4637,
+      "precision": "month",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-murong-yong-xiyan",
+      "dynastyId": "xiyan",
+      "personId": "murong-yong",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "中兴"
+      ],
+      "start": {
+        "year": 386,
+        "month": 6,
+        "abs": 4637
+      },
+      "end": {
+        "year": 394,
+        "month": 9,
+        "abs": 4736
+      },
+      "startAbs": 4637,
+      "endAbs": 4736,
+      "precision": "month",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yang-maosou-chouchi",
+      "dynastyId": "chouchi",
+      "personId": "yang-maosou",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 296,
+        "month": 1,
+        "abs": 3552
+      },
+      "end": {
+        "year": 317,
+        "month": 12,
+        "abs": 3815
+      },
+      "startAbs": 3552,
+      "endAbs": 3815,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yang-nandi-chouchi",
+      "dynastyId": "chouchi",
+      "personId": "yang-nandi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 317,
+        "month": 1,
+        "abs": 3804
+      },
+      "end": {
+        "year": 334,
+        "month": 12,
+        "abs": 4019
+      },
+      "startAbs": 3804,
+      "endAbs": 4019,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yang-yi-chouchi-chouchi",
+      "dynastyId": "chouchi",
+      "personId": "yang-yi-chouchi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 334,
+        "month": 1,
+        "abs": 4008
+      },
+      "end": {
+        "year": 337,
+        "month": 12,
+        "abs": 4055
+      },
+      "startAbs": 4008,
+      "endAbs": 4055,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yang-chu-chouchi",
+      "dynastyId": "chouchi",
+      "personId": "yang-chu",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 337,
+        "month": 1,
+        "abs": 4044
+      },
+      "end": {
+        "year": 355,
+        "month": 12,
+        "abs": 4271
+      },
+      "startAbs": 4044,
+      "endAbs": 4271,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yang-guo-chouchi-chouchi",
+      "dynastyId": "chouchi",
+      "personId": "yang-guo-chouchi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 355,
+        "month": 1,
+        "abs": 4260
+      },
+      "end": {
+        "year": 356,
+        "month": 12,
+        "abs": 4283
+      },
+      "startAbs": 4260,
+      "endAbs": 4283,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yang-jun-chouchi-chouchi",
+      "dynastyId": "chouchi",
+      "personId": "yang-jun-chouchi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 356,
+        "month": 1,
+        "abs": 4272
+      },
+      "end": {
+        "year": 360,
+        "month": 12,
+        "abs": 4331
+      },
+      "startAbs": 4272,
+      "endAbs": 4331,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yang-shi-chouchi-chouchi",
+      "dynastyId": "chouchi",
+      "personId": "yang-shi-chouchi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 360,
+        "month": 1,
+        "abs": 4320
+      },
+      "end": {
+        "year": 370,
+        "month": 12,
+        "abs": 4451
+      },
+      "startAbs": 4320,
+      "endAbs": 4451,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yang-tong-chouchi-chouchi",
+      "dynastyId": "chouchi",
+      "personId": "yang-tong-chouchi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 370,
+        "month": 1,
+        "abs": 4440
+      },
+      "end": {
+        "year": 370,
+        "month": 12,
+        "abs": 4451
+      },
+      "startAbs": 4440,
+      "endAbs": 4451,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yang-zuan-chouchi-chouchi",
+      "dynastyId": "chouchi",
+      "personId": "yang-zuan-chouchi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 370,
+        "month": 1,
+        "abs": 4440
+      },
+      "end": {
+        "year": 371,
+        "month": 12,
+        "abs": 4463
+      },
+      "startAbs": 4440,
+      "endAbs": 4463,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    }
+  ],
+  "events": [],
+  "relations": [
+    {
+      "id": "rel-xiao-cha-xiao-kui-succession",
+      "fromRef": "person:xiao-cha",
+      "toRef": "person:xiao-kui",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-xiao-kui-xiao-cong-succession",
+      "fromRef": "person:xiao-kui",
+      "toRef": "person:xiao-cong",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-murong-hong-murong-chong-succession",
+      "fromRef": "person:murong-hong",
+      "toRef": "person:murong-chong",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-murong-chong-duan-sui-succession",
+      "fromRef": "person:murong-chong",
+      "toRef": "person:duan-sui",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-sui-murong-hao-succession",
+      "fromRef": "person:duan-sui",
+      "toRef": "person:murong-hao",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-murong-hao-murong-yao-succession",
+      "fromRef": "person:murong-hao",
+      "toRef": "person:murong-yao",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-murong-yao-murong-zhong-succession",
+      "fromRef": "person:murong-yao",
+      "toRef": "person:murong-zhong",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-murong-zhong-murong-yong-succession",
+      "fromRef": "person:murong-zhong",
+      "toRef": "person:murong-yong",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yang-maosou-yang-nandi-succession",
+      "fromRef": "person:yang-maosou",
+      "toRef": "person:yang-nandi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yang-nandi-yang-yi-chouchi-succession",
+      "fromRef": "person:yang-nandi",
+      "toRef": "person:yang-yi-chouchi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yang-yi-chouchi-yang-chu-succession",
+      "fromRef": "person:yang-yi-chouchi",
+      "toRef": "person:yang-chu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yang-chu-yang-guo-chouchi-succession",
+      "fromRef": "person:yang-chu",
+      "toRef": "person:yang-guo-chouchi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yang-guo-chouchi-yang-jun-chouchi-succession",
+      "fromRef": "person:yang-guo-chouchi",
+      "toRef": "person:yang-jun-chouchi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yang-jun-chouchi-yang-shi-chouchi-succession",
+      "fromRef": "person:yang-jun-chouchi",
+      "toRef": "person:yang-shi-chouchi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yang-shi-chouchi-yang-tong-chouchi-succession",
+      "fromRef": "person:yang-shi-chouchi",
+      "toRef": "person:yang-tong-chouchi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yang-tong-chouchi-yang-zuan-chouchi-succession",
+      "fromRef": "person:yang-tong-chouchi",
+      "toRef": "person:yang-zuan-chouchi",
+      "kind": "succession"
+    }
+  ],
+  "supplementalEventDynasties": [],
+  "supplementalEventParticipants": [],
+  "preSql": "DELETE FROM event_participants WHERE event_id = 'xiliang-founded' AND person_id = 'xiao-zhuang';\nDELETE FROM relations WHERE id = 'rel-xiao-zhuang-xiao-cong-succession';\nDELETE FROM reigns WHERE id = 'reign-xiao-zhuang-xiliang';\nDELETE FROM persons WHERE id = 'xiao-zhuang';\nDELETE FROM relations WHERE id IN (\n  'rel-yang-teng-yang-chu-succession',\n  'rel-yang-chu-yang-lan-succession',\n  'rel-yang-lan-yang-fu-succession',\n  'rel-yang-fu-yang-nandang-succession'\n);\nDELETE FROM reigns WHERE id IN (\n  'reign-yang-teng-chouchi',\n  'reign-yang-lan-chouchi',\n  'reign-yang-fu-chouchi',\n  'reign-yang-nandang-chouchi'\n);\nDELETE FROM persons WHERE id IN ('yang-teng', 'yang-lan', 'yang-fu', 'yang-nandang');\nDELETE FROM relations WHERE id IN (\n  'rel-murong-chong-murong-yong-succession',\n  'rel-duan-sui-murong-yi-xiyan-succession',\n  'rel-murong-yi-xiyan-murong-yao-succession'\n);\nDELETE FROM reigns WHERE id = 'reign-murong-yi-xiyan-xiyan';\nDELETE FROM persons WHERE id = 'murong-yi-xiyan';",
+  "manifest": {
+    "slug": "nanbei-sixteen-extra",
+    "title": "南北朝与十六国补充政权",
+    "window": {
+      "startYear": 296,
+      "startMonth": 1,
+      "endYear": 587,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-09-27",
+    "counts": {
+      "persons": 20,
+      "dynasties": 4,
+      "reigns": 20,
+      "events": 0,
+      "relations": 16
+    },
+    "sources": [
+      {
+        "label": "西梁",
+        "url": "https://zh.wikipedia.org/wiki/后梁_(南朝)"
+      },
+      {
+        "label": "萧詧",
+        "url": "https://zh.wikipedia.org/wiki/萧詧"
+      },
+      {
+        "label": "萧巋",
+        "url": "https://zh.wikipedia.org/wiki/萧巋"
+      },
+      {
+        "label": "萧琮",
+        "url": "https://zh.wikipedia.org/wiki/萧琮"
+      },
+      {
+        "label": "冉魏",
+        "url": "https://zh.wikipedia.org/wiki/%E5%86%89%E9%AD%8F"
+      },
+      {
+        "label": "冉闵",
+        "url": "https://zh.wikipedia.org/wiki/冉闵"
+      },
+      {
+        "label": "西燕",
+        "url": "https://zh.wikipedia.org/wiki/%E8%A5%BF%E7%87%95"
+      },
+      {
+        "label": "仇池",
+        "url": "https://zh.wikipedia.org/wiki/%E4%BB%87%E6%B1%A0"
+      },
+      {
+        "label": "五胡十六国君主列表",
+        "url": "https://zh.wikipedia.org/zh-hans/%E4%BA%94%E8%83%A1%E5%8D%81%E5%85%AD%E5%9B%BD%E5%90%9B%E4%B8%BB%E5%88%97%E8%A1%A8"
+      }
+    ],
+    "notes": [
+      "补充 jin-sixteen / nanbei-chao 未收录的西梁、冉魏、西燕、前仇池。",
+      "冉魏、西燕、仇池均不入崔鸿《十六国春秋》，不属 dynasty_groups.wuhu，单独成行（与十六国框分开）。西梁属 dynasty_groups.nan-chao（555–587，落在南朝框 420–589 内，与南陈并存）。",
+      "西梁 id 为 xiliang，与十六国西凉 liang-xi 区分。三帝为萧詧、萧巋、萧琮；萧庄是王琳在郢州另立的梁帝，不属江陵西梁。",
+      "萧詧起迄月取维基即位（555年2月）与《周书》保定二年二月薨；萧巋接天保始年二月，卒于天保二十四年五月；萧琮亡国取广运二年九月十九日（587年10月26日）。",
+      "仇池取296–371前仇池窗口，九君为杨茂搜、杨难敌、杨毅、杨初、杨国、杨俊、杨世、杨统、杨纂；杨统年有争议仍单列。杨难当属后仇池，不在此包。",
+      "南梁（liang-nan）、后赵（zhao-back）、后燕（yan-back）复用已有 dynasty id 作事件关联。",
+      "冉闵杀的是后赵石鉴，不是石虎（349年病死）。称谓取染华墓志谥平帝（维基作魏平帝）；前燕追谥武悼天王写入 bio。年号永兴。起年取永兴始闰二月（350年闰二月望≈4月），迄日取维基 352-06-01。太子冉智是否继位史料有缺，不另建 reign。",
+      "西燕通行七帝（慕容泓→慕容冲→段随→慕容顗→慕容瑶→慕容忠→慕容永）；386年政变频繁，诸短祚君主用 month 精度依《资治通鉴》晋纪二十八排月。",
+      "慕容泓为慕容暐之弟，非慕容垂之子；慕容冲称帝在阿房（385年），非长子。"
+    ]
+  }
+}

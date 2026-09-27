@@ -1,0 +1,1534 @@
+{
+  "slug": "overview-enrichment",
+  "window": {
+    "startYear": 9999,
+    "startMonth": 1,
+    "endYear": 9999,
+    "endMonth": 12
+  },
+  "persons": [],
+  "dynasties": [],
+  "updates": [
+    {
+      "table": "dynasties",
+      "id": "chu-nan",
+      "column": "note",
+      "value": "可以指： *马楚，五代十国时一政权，位于今天湖南省。* 战国后期到秦汉时的地理概念，为楚国的南部边荒之地。"
+    },
+    {
+      "table": "dynasties",
+      "id": "han-bei",
+      "column": "note",
+      "value": "北漢（951年2月24日－979年6月3日），由沙陀部建立，是中国五代十国時在今山西省北部、陕西省、河北省局部的政權，為十国之一。统治范围包括今山西北部、陕西、河北部分地区。"
+    },
+    {
+      "table": "dynasties",
+      "id": "han-hou",
+      "column": "note",
+      "value": "刘知远建后汉；951年郭威代汉。（947年—951年）"
+    },
+    {
+      "table": "dynasties",
+      "id": "han-nan",
+      "column": "note",
+      "value": "是五代十国时期的政权之一，位于现广东、广西、海南、香港、澳门以及越南北部（后失）。971年在北宋开国战争时被灭。"
+    },
+    {
+      "table": "dynasties",
+      "id": "jin-hou",
+      "column": "note",
+      "value": "是中国历史上五代十国时期的第三个朝代，从后晋高祖石敬瑭936年灭后唐开国到契丹947年灭后晋一共经历了两个皇帝，總計11年。为与司马氏的晋朝相区别，又别称为石晋。"
+    },
+    {
+      "table": "dynasties",
+      "id": "jingnan",
+      "column": "note",
+      "value": "又称南平、北楚，是五代时十国之一。值得注意的是，荊南雖被列为「十國」之一，但始終没有正式立国，始终是一个割據藩镇。"
+    },
+    {
+      "table": "dynasties",
+      "id": "liang-nan",
+      "column": "note",
+      "value": "梁（502年5月1日－557年11月12日），史稱南梁、蕭梁、前梁、南朝梁，是中国历史上南北朝时期南朝的第三个朝代，由南齐宗室蕭衍称帝，改國號為梁，首都建康（今江苏南京）。永元二年（501年），萧衍攻入南齐首都建康，梁天监元年（502年），萧衍强迫齐和帝萧宝融禅位，萧衍正式称……。"
+    },
+    {
+      "table": "dynasties",
+      "id": "min-fujian",
+      "column": "note",
+      "value": "闽，五代十国的十國之一，由闽王王審知於909年建立。926年，嗣王王延翰称大闽国王，正式建立闽国。"
+    },
+    {
+      "table": "dynasties",
+      "id": "qi-nan",
+      "column": "note",
+      "value": "齊（479年—502年）是中国历史上南北朝时期南朝第二个朝代。史称南齐（以与北朝的北齐相区别）或萧齐，有时亦与南梁合称“齐梁”。"
+    },
+    {
+      "table": "dynasties",
+      "id": "shu-qian",
+      "column": "note",
+      "value": "是中国五代十国时期由王建建立的政权，十国之一。前蜀疆域辽阔，东控荆襄，南通南诏，西达维州（今四川理县），北过秦州（今甘肃天水），占领了今天四川、湖北、陕西以及甘肃大部，重庆、贵州以及云南部分地区，方圆数千里。"
+    },
+    {
+      "table": "dynasties",
+      "id": "tang-nan",
+      "column": "note",
+      "value": "是五代十國的十國之一，定都金陵府，建隆二年（961年）短暂迁都南昌府（号“南都”），歷時38年，有烈祖李昪、元宗李璟和後主李煜三位君主。南唐开国皇帝李昪原名徐知诰，为杨吴权臣徐温养子。"
+    },
+    {
+      "table": "dynasties",
+      "id": "wu-shi",
+      "column": "note",
+      "value": "吴是五代时期十国之一，为楊隆演所建，又称杨吴、南吴、弘農、淮南。唐昭宗景福元年（892年）杨行密为唐淮南节度使，据扬州。"
+    },
+    {
+      "table": "dynasties",
+      "id": "wuyue",
+      "column": "note",
+      "value": "钱镠据两浙；978年钱俶纳土归宋。（907年—978年）"
+    },
+    {
+      "table": "persons",
+      "id": "ayurbarwada",
+      "column": "bio",
+      "value": "元仁宗，恢复科举，与元武宗约定兄终弟及。"
+    },
+    {
+      "table": "persons",
+      "id": "chai-rong",
+      "column": "bio",
+      "value": "后周世宗，励精图治，北伐南征。在后周（954年—959年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "chai-zongxun",
+      "column": "bio",
+      "value": "周恭帝郭宗训，五代时期后周皇帝，周世宗郭荣第四子。显德六年（959年）封为梁王。"
+    },
+    {
+      "table": "persons",
+      "id": "chen-baxian",
+      "column": "bio",
+      "value": "陳武帝陈霸先，字兴国，小字法生，吴兴郡长城县（今浙江长兴）人，南北朝時代陳朝開國皇帝。557年接受梁敬帝萧方智的禪位建立陳朝，557年－559年在位。"
+    },
+    {
+      "table": "persons",
+      "id": "chen-bozong",
+      "column": "bio",
+      "value": "陈废帝，为叔父陈顼所废。在南陈（566年—568年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "chen-qian",
+      "column": "bio",
+      "value": "陈文帝，陈霸先侄，励精图治。在南陈（559年—566年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "chen-shubao",
+      "column": "bio",
+      "value": "陈后主，玉树后庭花，隋灭陈。在南陈（582年—589年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "chen-xu",
+      "column": "bio",
+      "value": "陈宣帝，陈朝中兴，北伐齐。在南陈（568年—582年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "gao-baorong",
+      "column": "bio",
+      "value": "南平貞懿王高保融，字德長，五代時期荊南君主（渤海郡王、南平王）。為高從誨之第三子。"
+    },
+    {
+      "table": "persons",
+      "id": "gao-baoxu",
+      "column": "bio",
+      "value": "荆南第四代君主。在荆南（960年—962年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "gao-conghe",
+      "column": "bio",
+      "value": "荆南第二代君主，高季兴之子。在荆南（928年—948年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "gao-heng",
+      "column": "bio",
+      "value": "北齐幼主，北齐末代，为北周所俘。在北齐（577年—578年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "gao-jichong",
+      "column": "bio",
+      "value": "荆南末主，纳土归宋。在荆南（962年—963年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "gao-jixing",
+      "column": "bio",
+      "value": "荆南（南平）开国，据江陵。在荆南（924年—928年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "gao-wei",
+      "column": "bio",
+      "value": "北齐后主，宠信小人，为北周所灭。在北齐（569年—577年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "gao-yan",
+      "column": "bio",
+      "value": "齊孝昭帝高演，字延安，勃海郡蓨县（今河北省衡水市景县）人，北齐第三任皇帝（560年－561年在位）。他是東魏权臣高欢第六子，文宣帝同母弟，在位一年。"
+    },
+    {
+      "table": "persons",
+      "id": "gao-yin",
+      "column": "bio",
+      "value": "北齐废帝，文宣帝子，为叔父高演所废杀。在北齐（559年—560年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "gao-zhan",
+      "column": "bio",
+      "value": "齊武成帝高湛，小字步落稽，勃海郡蓨县（今河北省衡水市景县）人，北齐第四位皇帝，561－565年在位，565 - 569年居太上皇，在位四年，实际掌权七年餘。東魏權臣高歡第九子，文襄帝高澄、文宣帝高洋、孝昭帝高演之同母弟。"
+    },
+    {
+      "table": "persons",
+      "id": "guo-wei",
+      "column": "bio",
+      "value": "周太祖郭威，字文仲，小名“郭雀兒”，籍貫邢州堯山（今河北隆堯）。五代時期後周開國皇帝（951年—954年）。"
+    },
+    {
+      "table": "persons",
+      "id": "hongli",
+      "column": "bio",
+      "value": "爱新觉罗·弘历，清高宗，雍正帝第四子。乾隆朝平定准噶尔、回部等地，编纂《四库全书》；在位六十年后禅位，仍以太上皇训政至1799年。"
+    },
+    {
+      "table": "persons",
+      "id": "huang-taiji",
+      "column": "bio",
+      "value": "爱新觉罗·皇太极，努尔哈赤第八子，清太宗。1626年继承汗位，改革政制、整编八旗；1636年改国号为大清并称帝，为清军入关奠定基础。"
+    },
+    {
+      "table": "persons",
+      "id": "irinchibal",
+      "column": "bio",
+      "value": "元宁宗，幼年即位，在位仅两月。"
+    },
+    {
+      "table": "persons",
+      "id": "khayishan",
+      "column": "bio",
+      "value": "元武宗海山，元仁宗之兄。兄弟约定兄终弟及，武宗死后仁宗继位。"
+    },
+    {
+      "table": "persons",
+      "id": "khoshila",
+      "column": "bio",
+      "value": "元明宗，文宗之兄，即位仅一月被害。在元（1329年—1329年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "li-ang",
+      "column": "bio",
+      "value": "唐穆宗次子，唐敬宗之弟，唐武宗之兄。827年至840年在位，后世称唐文宗。"
+    },
+    {
+      "table": "persons",
+      "id": "li-bian",
+      "column": "bio",
+      "value": "南唐烈祖李，字正倫，小字彭奴，五代十國時期南唐開國皇帝，徐州人，原名徐知誥，是南吳權臣徐溫養子，南唐第1任國主兼開國皇帝。李昪登基後便励精图治，使南唐的國力大為提升。"
+    },
+    {
+      "table": "persons",
+      "id": "li-chen-tang",
+      "column": "bio",
+      "value": "初名怡，封光王后以皇太叔身份继位。846年至859年在位，励行改革，开创晚唐少有的稳定局面，史称大中之治。"
+    },
+    {
+      "table": "persons",
+      "id": "li-chun",
+      "column": "bio",
+      "value": "原名李淳，唐顺宗之子。805年至820年在位，任用将相削平藩镇，促成元和中兴。"
+    },
+    {
+      "table": "persons",
+      "id": "li-chunyou",
+      "column": "bio",
+      "value": "夏桓宗，在位十三年，蒙古势力崛起之际。在西夏（1193年—1206年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "li-conghou",
+      "column": "bio",
+      "value": "后唐闵帝，在位仅三个月。在后唐（933年—934年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "li-congke",
+      "column": "bio",
+      "value": "后唐末帝，为石敬瑭联契丹所灭。在后唐（934年—937年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "li-cui",
+      "column": "bio",
+      "value": "初名温，唐宣宗长子。859年至873年在位，晚唐国势继续衰落。"
+    },
+    {
+      "table": "persons",
+      "id": "li-cunxu",
+      "column": "bio",
+      "value": "唐莊宗李存，山西应县人，沙陀族，本姓朱邪，因其父是河東節度使李克用受唐懿宗赐姓而改姓李，諱存-{勖}-，亦作存，唐光启元年正月（885年12月）生于山西应县（一说晋阳宫），五代時期后唐开国皇帝。小名“亚子”，藝名“李天下”，以勇猛闻名。"
+    },
+    {
+      "table": "persons",
+      "id": "li-dan",
+      "column": "bio",
+      "value": "唐高宗与武则天之子，两度即位、两度禅让。684年至690年及710年至712年在位，第二次退位后尊为太上皇。"
+    },
+    {
+      "table": "persons",
+      "id": "li-dewang",
+      "column": "bio",
+      "value": "夏献宗，1223年嗣位，蒙古持续围攻。在西夏（1223年—1226年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "li-heng",
+      "column": "bio",
+      "value": "马嵬驿后即位，借助郭子仪等平定安史之乱。756年至762年在位。"
+    },
+    {
+      "table": "persons",
+      "id": "li-heng-mu",
+      "column": "bio",
+      "value": "原名宥，唐宪宗第三子。820年至824年在位，后世称唐穆宗。"
+    },
+    {
+      "table": "persons",
+      "id": "li-jing-nantang",
+      "column": "bio",
+      "value": "南唐元宗李璟，字伯玉，原稱徐景通、徐瑶，南唐建立後，復本姓李，改名璟。對後周稱臣後，又為避後周信祖諱，而改名景，徐州人，南唐烈祖長子。"
+    },
+    {
+      "table": "persons",
+      "id": "li-kuo",
+      "column": "bio",
+      "value": "唐代宗长子。779年至805年在位，前期整顿财政、平定叛乱，晚年削藩失利。"
+    },
+    {
+      "table": "persons",
+      "id": "li-longji",
+      "column": "bio",
+      "value": "唐睿宗第三子，712年至756年在位。前期开创开元盛世，后期怠政并爆发安史之乱，退位后为太上皇。"
+    },
+    {
+      "table": "persons",
+      "id": "li-siyuan",
+      "column": "bio",
+      "value": "唐明宗李亶，初名嗣源，小名邈佶烈，应州金城县（今山西省应县）人，沙陀族，五代十国时期后唐第二位皇帝（926年6月3日－933年12月15日在位），在位八年。唐河东节度使李克用之养子，生父為汾州刺史李霓。"
+    },
+    {
+      "table": "persons",
+      "id": "li-song",
+      "column": "bio",
+      "value": "唐德宗长子。805年即位，在位不足一年，因病禅位于唐宪宗，后世称唐顺宗。"
+    },
+    {
+      "table": "persons",
+      "id": "li-xian",
+      "column": "bio",
+      "value": "原名李哲，两度即位。684年初及705年至710年在位，复位后恢复唐朝，最终在政变中去世。"
+    },
+    {
+      "table": "persons",
+      "id": "li-xuan-tang",
+      "column": "bio",
+      "value": "唐懿宗第五子，873年至888年在位。其时爆发黄巢之乱，长安一度陷落，僖宗曾避难入蜀。"
+    },
+    {
+      "table": "persons",
+      "id": "li-yan-tang",
+      "column": "bio",
+      "value": "原名李瀍，唐穆宗第五子。840年至846年在位，推行会昌灭佛等政策，晚年服丹药去世。"
+    },
+    {
+      "table": "persons",
+      "id": "li-ye-tang",
+      "column": "bio",
+      "value": "唐懿宗第七子，888年至904年在位。曾试图削弱藩镇，却长期受军阀挟制，最终被朱温劫持杀害。"
+    },
+    {
+      "table": "persons",
+      "id": "li-yu-nantang",
+      "column": "bio",
+      "value": "原名從嘉，後改名煜，字重光，號鍾山隐士、钟峰隐者、白蓮居士、蓮峰居士等，為南唐末代国主，史稱李後主。南唐亡后，被掳入宋，封违命侯，后被宋太宗毒死。"
+    },
+    {
+      "table": "persons",
+      "id": "li-yu-tang",
+      "column": "bio",
+      "value": "唐肃宗庶长子，曾任天下兵马元帅并收复长安。762年至779年在位，后世称唐代宗。"
+    },
+    {
+      "table": "persons",
+      "id": "li-yuan",
+      "column": "bio",
+      "value": "字叔德，唐朝开国皇帝。618年至626年在位，建立唐朝并统一关中及中原大部，后禅位于李世民。"
+    },
+    {
+      "table": "persons",
+      "id": "li-zhan",
+      "column": "bio",
+      "value": "唐穆宗长子，15岁即位。824年至826年在位，后世称唐敬宗，年少时为宦官所弑。"
+    },
+    {
+      "table": "persons",
+      "id": "li-zhi",
+      "column": "bio",
+      "value": "唐太宗第九子，649年至683年在位。前期有永徽之治，后与武则天共同执政，唐朝疆域在其时期达到高峰。"
+    },
+    {
+      "table": "persons",
+      "id": "li-zhu-tang",
+      "column": "bio",
+      "value": "原名祚，唐昭宗第九子。904年至907年在位，朱温逼其禅位，唐朝随之灭亡。"
+    },
+    {
+      "table": "persons",
+      "id": "li-zunxu",
+      "column": "bio",
+      "value": "夏神宗，蒙古反复侵夏，国力日衰。在西夏（1211年—1223年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-ao",
+      "column": "bio",
+      "value": "刘驁，字太孫。漢朝皇帝，其正式諡号为「孝成皇帝」，后世省略「孝」字称「汉成帝」，汉元帝長子，母孝元皇后王政君（王莽姑母）。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-bang",
+      "column": "bio",
+      "value": "汉高祖劉邦，字季，原名刘季，沛丰邑中阳里（今江蘇省豐縣）人，中国秦末汉初的軍事家、政治家，汉朝开国皇帝，也是中国历史上第一位平民阶级出身的皇帝。秦末世乱之际，其參與以楚國為首的反秦起義，成為諸侯之一。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-bao",
+      "column": "bio",
+      "value": "刘保，东汉皇帝（125年12月16日－144年9月20日在位），其正式諡號為「孝順皇帝」，後世省略「孝」字稱「漢順帝」。汉安帝和宫人李氏之子。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-bian",
+      "column": "bio",
+      "value": "汉后少帝，灵帝长子，为董卓所废。在东汉（189年—189年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-bin",
+      "column": "bio",
+      "value": "南汉殇帝，在位仅两年。在南汉（942年—943年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-bing",
+      "column": "bio",
+      "value": "刘炳（漢安二年至永嘉元年正月初六戊戌日，即公元），东汉皇帝（建康元年八月初六庚午日至永嘉元年正月初六戊戌日，即西元144年9月20日－145年2月15日在位），东汉第九位皇帝，在位僅五個月，享年还不满三周岁，其正式諡號為「孝沖皇帝」，後世省略「孝」字稱「漢沖帝」。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-chang",
+      "column": "bio",
+      "value": "南汉末帝，为宋所灭。在南汉（958年—971年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-chengyou",
+      "column": "bio",
+      "value": "后汉隐帝，后汉末代，为郭威所代。在后汉（948年—951年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-jiyuan",
+      "column": "bio",
+      "value": "北汉末帝，为宋所灭。在北汉（968年—979年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-jun",
+      "column": "bio",
+      "value": "宋孝武帝，平讨元凶，后期穷兵黩武。在刘宋（453年—464年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-jun-bei",
+      "column": "bio",
+      "value": "可以指： * 刘钧 (陈王)，东汉陈王 * 刘钧 (北汉)，五代十国时北汉睿宗 * 刘钧 (围棋)，世界业余围棋锦标赛冠军 * 刘钧 (演员)，中国演员 * 刘钧 (香港)，招商銀行香港分行行長暨招商永隆銀行行政總裁。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-kan",
+      "column": "bio",
+      "value": "漢平帝劉（公元），原名劉箕子，后改名衎，漢朝皇帝（公元前1年10月17日－公元6年2月3日在位），其正式諡號為「孝平皇帝」，後世省略「孝」字稱「漢平帝」。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-min",
+      "column": "bio",
+      "value": "北汉世祖，据太原。在北汉（951年—954年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-qi",
+      "column": "bio",
+      "value": "汉景帝刘启，汉文帝长子。在位期间平定七国之乱，削弱诸侯王势力，与文帝并称文景之治。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-shao",
+      "column": "bio",
+      "value": "可以指： * 劉邵 (河間王)，两汉之际河間王 * 刘劭 (三国)，曹魏时期政治人物 * 刘劭 (晋朝) * 刘劭 (南北朝)（424年－453年），中国南北朝時期劉宋的第四位皇帝。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-sheng",
+      "column": "bio",
+      "value": "南汉中宗，残暴，南汉由盛转衰。在南汉（943年—958年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-shi",
+      "column": "bio",
+      "value": "劉，漢朝皇帝，其正式諡號為「孝元皇帝」，後世省略「孝」字稱「漢元帝」。汉宣帝长子，生于民间，母恭哀皇后许平君。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-xin",
+      "column": "bio",
+      "value": "劉欣，出生于定陶（今山东省菏泽市定陶区），漢朝皇帝，在位6年，其正式諡號為「孝哀皇帝」，後世省略「孝」字稱「漢哀帝」。劉欣是汉元帝孙，汉成帝弟定陶恭王刘康之子，母丁氏。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-yan",
+      "column": "bio",
+      "value": "南汉高祖，据岭南。在南汉（917年—942年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-yi-shao",
+      "column": "bio",
+      "value": "可以指： * 西汉前少帝 （前188—前184年）在位。* 西汉后少帝 （前184—前180年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-yifu",
+      "column": "bio",
+      "value": "小字车兵，彭城綏輿里（今安徽省蕭縣）人。中国南北朝時期宋朝的第二位皇帝，宋武帝刘裕长子，母親是夫人張氏。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-yilong",
+      "column": "bio",
+      "value": "宋文帝，元嘉之治，后被太子刘劭所弑。在刘宋（424年—453年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-ying",
+      "column": "bio",
+      "value": "汉惠帝，高祖嫡子，在位推行与民休息。在西汉（前195年—前188年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-yu-fei",
+      "column": "bio",
+      "value": "宋后废帝，为萧道成所杀。在刘宋（472年—477年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-yu-song",
+      "column": "bio",
+      "value": "宋明帝，屠戮宗室，宋室由盛转衰。在刘宋（465年—472年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-zhao",
+      "column": "bio",
+      "value": "汉和帝刘肇，汉章帝第四子。亲政后清除窦氏外戚势力，勤于政事，东汉国力达到鼎盛。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-zhi",
+      "column": "bio",
+      "value": "刘志，东汉皇帝（146年8月1日－168年1月25日在位），其正式諡號為「孝桓皇帝」，後世省略「孝」字稱「漢桓帝」，他是汉章帝曾孙，河間孝王劉開之孫，蠡吾侯劉翼之子，在位21年。他在位时，东汉国力逐渐衰落，为黄巾之乱埋下伏笔。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-zhiyuan",
+      "column": "bio",
+      "value": "后汉高祖，沙陀族，建后汉。在后汉（947年—948年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-zhuang",
+      "column": "bio",
+      "value": "漢明帝劉莊，原名刘阳，字子丽，东汉皇帝，在位十八年。諡「孝明皇帝」，後世省略「孝」字稱「漢明帝」，庙号显宗。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-zhun",
+      "column": "bio",
+      "value": "宋顺帝，刘宋末代，萧道成代宋。在刘宋（477年—479年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-ziye",
+      "column": "bio",
+      "value": "小字法师，南北朝時期南朝宋皇帝，史稱「前廢帝」。为宋武帝曾孙，宋文帝孙，宋孝武帝刘骏长子，生母為文穆皇后王憲嫄。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-zuan",
+      "column": "bio",
+      "value": "刘缵，一名续，东汉皇帝，145年3月6日－146年7月26日在位，时间仅1年4個月。諡號為「孝質皇帝」，後世省略「孝」字稱「漢質帝」。"
+    },
+    {
+      "table": "persons",
+      "id": "liu-zuo",
+      "column": "bio",
+      "value": "劉，汉明帝刘庄第五子，东汉皇帝（75年9月5日—88年4月9日在位），其正式諡號為「孝章皇帝」，後世省略「孝」字稱「漢章帝」，庙号肃宗。在位13年，享年31岁。"
+    },
+    {
+      "table": "persons",
+      "id": "ma-xichong",
+      "column": "bio",
+      "value": "楚末，为南唐所灭。在楚（951年—951年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "ma-xie",
+      "column": "bio",
+      "value": "楚国君主，与马希广争位。在楚（947年—950年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "ma-xifan",
+      "column": "bio",
+      "value": "楚国第三代君主，马楚鼎盛在其朝。在楚（932年—947年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "ma-xiguang",
+      "column": "bio",
+      "value": "楚国君主，在位仅数月。在楚（947年—947年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "ma-xisheng",
+      "column": "bio",
+      "value": "楚国第二代君主，马殷之子。在楚（930年—932年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "ma-yin",
+      "column": "bio",
+      "value": "楚武穆王马殷，字霸图，许州鄢陵县（今河南鄢陵）人，五代十国时期南楚开国君王。"
+    },
+    {
+      "table": "persons",
+      "id": "meng-chang",
+      "column": "bio",
+      "value": "孟，初名仁赞，表字保元，山西太原人。後蜀高祖孟知祥第三子（据孟知祥夫妇墓誌铭则为第五子，疑两位兄长因早夭未序齿），母李贵妃。"
+    },
+    {
+      "table": "persons",
+      "id": "meng-zhixiang",
+      "column": "bio",
+      "value": "後蜀高祖孟知祥，字保胤，邢州龙冈（今河北邢台市西南）人。后唐太祖李克用婿。"
+    },
+    {
+      "table": "persons",
+      "id": "minning",
+      "column": "bio",
+      "value": "爱新觉罗·旻宁，嘉庆帝次子，清宣宗。道光朝面对鸦片输入与边疆、财政问题，1839年命林则徐禁烟；鸦片战争失败后签订《南京条约》。"
+    },
+    {
+      "table": "persons",
+      "id": "nurhaci",
+      "column": "bio",
+      "value": "爱新觉罗·努尔哈赤，建州女真首领，清太祖。1616年建立后金，统一女真各部并创建八旗；对明战争中于宁远失利，1626年病逝。"
+    },
+    {
+      "table": "persons",
+      "id": "puyi",
+      "column": "bio",
+      "value": "爱新觉罗·溥仪，道光帝曾孙、光绪帝侄子，清朝末代皇帝。1908年即位，1912年清帝退位，结束清朝统治与中国帝制；后曾任满洲国执政、皇帝。"
+    },
+    {
+      "table": "persons",
+      "id": "qian-chu",
+      "column": "bio",
+      "value": "吴越忠懿王钱俶，原名钱弘俶，因犯宋宣祖赵弘殷名讳，入宋後避諱，只称钱俶。字文德，小字虎子，五代十國時期吳越國文穆王錢元瓘第九子，吳越最后一位國王。"
+    },
+    {
+      "table": "persons",
+      "id": "qian-hongcong",
+      "column": "bio",
+      "value": "吴越忠逊王，在位仅一年。在吴越（947年—948年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "qian-hongzuo",
+      "column": "bio",
+      "value": "吴越忠悼王，年少即位。在吴越（941年—947年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "qian-liu",
+      "column": "bio",
+      "value": "吴越太祖钱，字具美（一作巨美），小名婆留，漢族，杭州临安縣（今浙江省杭州市临安区）人。五代十国时期吴越國開國君主。"
+    },
+    {
+      "table": "persons",
+      "id": "qian-yuangui",
+      "column": "bio",
+      "value": "吴越文穆王，钱镠之子。在吴越（932年—941年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "ragibagh",
+      "column": "bio",
+      "value": "元天顺帝，两都之战，在位仅一月。在元（1328年—1328年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "shi-chonggui",
+      "column": "bio",
+      "value": "晉出帝石重贵，942年－946年在位。天福七年（942年），后晋高祖石敬瑭死，重贵繼位，沿用高祖天福年号，天福九年（944年）七月改元開運。"
+    },
+    {
+      "table": "persons",
+      "id": "shi-jingtang",
+      "column": "bio",
+      "value": "晉高祖石敬瑭，五代十国時期的后晋开国皇帝（在位：936年11月28日－942年7月28日）。庙号高祖，谥号圣文章武明德孝皇帝。"
+    },
+    {
+      "table": "persons",
+      "id": "shidebala",
+      "column": "bio",
+      "value": "元英宗，元仁宗长子，在位期间推行新政，后于南坡之变中遇害。"
+    },
+    {
+      "table": "persons",
+      "id": "sun-yat-sen",
+      "column": "bio",
+      "value": "辛亥革命领袖，中华民国临时大总统。在中华民国（1912年—1912年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "temur",
+      "column": "bio",
+      "value": "元成宗铁穆耳，元世祖忽必烈之孙、真金第三子，在位约十三年。"
+    },
+    {
+      "table": "persons",
+      "id": "tian-shi",
+      "column": "bio",
+      "value": "秦末軍事人物，秦末齐国人，田儋的儿子，原田齐公族，秦末民變時的六國群雄之一。秦二世二年（前208年）六月，秦少府章邯於臨濟擊殺齐王田儋，田建的弟弟田假自立為王。"
+    },
+    {
+      "table": "persons",
+      "id": "togon-temur",
+      "column": "bio",
+      "value": "元顺帝，元朝末代，红巾起义，退居漠北。在元（1333年—1370年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "tugh-temur",
+      "column": "bio",
+      "value": "元文宗图帖睦尔，元武宗次子。两都之战后即位，曾让位于兄和世㻋；和世㻋死后复位，在位至1332年。"
+    },
+    {
+      "table": "persons",
+      "id": "tuoba-gui",
+      "column": "bio",
+      "value": "拓跋珪，又名涉-{珪}-、-{什}-翼圭、翼圭、開，北魏开国皇帝，代王拓跋什翼犍之孙，獻明帝拓跋寔和献明皇后之遺腹子。"
+    },
+    {
+      "table": "persons",
+      "id": "tuoba-hong",
+      "column": "bio",
+      "value": "2001年列为世界文化遗产。魏獻文帝拓跋弘，字万民，鮮卑名第豆胤，魏文成帝拓跋濬長子，生母李贵人，南北朝時期北魏第六位皇帝。"
+    },
+    {
+      "table": "persons",
+      "id": "tuoba-jun",
+      "column": "bio",
+      "value": "2001年列为世界文化遗产。魏文成帝拓跋濬，鮮卑名烏雷，拥有「直懃」（直勤）头衔，南北朝時期北魏的第四代皇帝。"
+    },
+    {
+      "table": "persons",
+      "id": "tuoba-kuo",
+      "column": "bio",
+      "value": "拓跋廓，原姓元，河南郡洛阳县（今河南省洛阳市东）人，西魏文帝元宝炬四子，西魏十二大将军之一，后为西魏末代皇帝。"
+    },
+    {
+      "table": "persons",
+      "id": "tuoba-si",
+      "column": "bio",
+      "value": "拓跋嗣，鮮卑名木末，北魏第二位皇帝，409年—423年在位。"
+    },
+    {
+      "table": "persons",
+      "id": "tuoba-tao",
+      "column": "bio",
+      "value": "北魏太武帝拓跋焘，明元帝拓跋嗣之子，在位期间攻灭胡夏、北燕和北凉，统一华北。"
+    },
+    {
+      "table": "persons",
+      "id": "tuoba-yu",
+      "column": "bio",
+      "value": "北魏南安王，太武帝被杀后继位，旋被诛。在北魏（452年—452年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "wang-jian-shu",
+      "column": "bio",
+      "value": "前蜀高祖王建，许州舞阳人。唐末入蜀，逐步控制西川并据成都；907年称帝建立前蜀，死后由其子王衍继位。"
+    },
+    {
+      "table": "persons",
+      "id": "wang-jipeng",
+      "column": "bio",
+      "value": "闽国第四代君主，王延钧之子。在闽（935年—939年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "wang-shenzhi",
+      "column": "bio",
+      "value": "闽国奠基者，据福建。在闽（909年—925年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "wang-yan-shu",
+      "column": "bio",
+      "value": "可以是: * 王衍 (西晋)，西晋时期司徒 * 王衍 (冉魏)，五胡十六国时期冉魏侍中 * 王衍 (南北朝)，南北朝北魏、东魏政治人物 * 王衍 (前蜀)，前蜀最后一位君主。"
+    },
+    {
+      "table": "persons",
+      "id": "wang-yanhan",
+      "column": "bio",
+      "value": "现藏于福建博物院。閩嗣王王延翰，字子逸，五代十国時期閩國第二任君主，也是正式建国后的第一任君主，王審知的長子。"
+    },
+    {
+      "table": "persons",
+      "id": "wang-yanjun",
+      "column": "bio",
+      "value": "闽国第三代君主，后称王鏞。在闽（927年—935年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "wang-yanxi",
+      "column": "bio",
+      "value": "闽景宗王延羲，继位後改名王曦，五代十国時期閩國第五任君主，王審知之子，王延翰、王延鈞之弟，王延政之兄，王繼鵬之叔。"
+    },
+    {
+      "table": "persons",
+      "id": "wang-yanzheng",
+      "column": "bio",
+      "value": "閩天德帝王延政，五代十国時期閩國末任君主，也是殷国唯一君主。"
+    },
+    {
+      "table": "persons",
+      "id": "wu-zetian",
+      "column": "bio",
+      "value": "武则天是中国历史上唯一正式称帝的女性，建立武周，后传位于唐中宗。"
+    },
+    {
+      "table": "persons",
+      "id": "xiao-baojuan",
+      "column": "bio",
+      "value": "东昏侯，荒淫，为萧衍所废。在南齐（499年—501年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "xiao-baorong",
+      "column": "bio",
+      "value": "齐和帝，南齐末代，萧衍代齐。在南齐（501年—502年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "xiao-daocheng",
+      "column": "bio",
+      "value": "齐高帝，代宋建齐，定都建康。在南齐（479年—482年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "xiao-fangzhi",
+      "column": "bio",
+      "value": "梁敬帝，南梁末代，陈霸先代梁。在南梁（555年—557年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "xiao-gang",
+      "column": "bio",
+      "value": "梁简文帝，侯景拥立，后被杀。在南梁（549年—551年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "xiao-luan",
+      "column": "bio",
+      "value": "齐明帝，杀侄自立，大杀齐室。在南齐（494年—498年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "xiao-yi",
+      "column": "bio",
+      "value": "梁元帝，江陵称帝，后为西魏所杀。在南梁（552年—555年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "xiao-ze",
+      "column": "bio",
+      "value": "齐武帝，永明之治，南齐极盛。在南齐（482年—493年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "xiao-zhaowen",
+      "column": "bio",
+      "value": "南齐海陵王，在位仅二十三日。在南齐（494年—495年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "xiao-zhaoye",
+      "column": "bio",
+      "value": "南齐郁林王，荒乱，为萧鸾所废杀。在南齐（494年—494年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "xue-r2",
+      "column": "bio",
+      "value": "薛襄公，薛国君主。在薛（前510年—前498年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "xue-r3",
+      "column": "bio",
+      "value": "公比，薛国君主。在薛（前497年—前497年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "xue-r4",
+      "column": "bio",
+      "value": "是春秋时代薛国国君，任姓，伯爵，名夷。鲁定公十三年（前497年），薛国人弑杀薛公比，拥立公子夷为君。"
+    },
+    {
+      "table": "persons",
+      "id": "yang-jian",
+      "column": "bio",
+      "value": "隋文帝，代北周建隋，后灭陈统一天下。在隋（581年—604年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "yang-longyan",
+      "column": "bio",
+      "value": "杨吴第三代君主，后晋封吴王。在吴（918年—920年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "yang-xingmi",
+      "column": "bio",
+      "value": "吴国奠基者，据淮南。在吴（902年—905年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "yeshuntuemur",
+      "column": "bio",
+      "value": "元泰定帝，在位五年。在元（1323年—1328年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "yinzhen",
+      "column": "bio",
+      "value": "爱新觉罗·胤禛，康熙帝第四子，清世宗。即位后整顿财政，推行摊丁入亩、耗羡归公等政策，实行改土归流并设军机处，加强中央集权。"
+    },
+    {
+      "table": "persons",
+      "id": "yizhu",
+      "column": "bio",
+      "value": "爱新觉罗·奕詝，道光帝第四子，清文宗。咸丰朝爆发太平天国运动，清廷又在第二次鸦片战争中战败；英法联军攻入北京后，他避居热河并于1861年病逝。"
+    },
+    {
+      "table": "persons",
+      "id": "yongyan",
+      "column": "bio",
+      "value": "爱新觉罗·颙琰，乾隆帝第十五子，清仁宗。亲政后诛和珅，镇压白莲教起义；其后清廷财政、吏治与边防问题逐渐加重。"
+    },
+    {
+      "table": "persons",
+      "id": "yuan-hong",
+      "column": "bio",
+      "value": "北魏孝文帝，迁都洛阳，汉化改革。在北魏（471年—499年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "yuan-ke",
+      "column": "bio",
+      "value": "北魏宣武帝，孝文帝子。在北魏（499年—515年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "yuan-lang",
+      "column": "bio",
+      "value": "「圓」是完整、豐滿的意思，「塱」則是開朗的土地或是高起之江岸。元朗是指給左起凹頭的蠔殼山，右至屯門的大頭山的一連串山丘，像一個圓圈地圍繞著的平地，從字面上推測，古時元朗是一塊水源充足的沼澤低地。"
+    },
+    {
+      "table": "persons",
+      "id": "yuan-qin",
+      "column": "bio",
+      "value": "西魏废帝，为宇文泰所废杀。在西魏（551年—554年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "yuan-xu",
+      "column": "bio",
+      "value": "元诩，河南郡洛阳县（今河南省洛阳市东）人，魏宣武帝元恪第二子，生母胡充华，是南北朝时期北魏的皇帝，在位13年。"
+    },
+    {
+      "table": "persons",
+      "id": "yuan-ye",
+      "column": "bio",
+      "value": "北魏长广王，尔朱氏所立，后被废杀。在北魏（530年—531年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "yuwen-huaji",
+      "column": "bio",
+      "value": "江都兵变主谋，杀隋炀帝后拥立杨浩。在许（618年—619年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "yuwen-jue",
+      "column": "bio",
+      "value": "北周孝闵帝，代西魏建周，为宇文护所杀。在北周（557年—557年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "yuwen-yan",
+      "column": "bio",
+      "value": "北周静帝，北周末代，杨坚代周。在北周（579年—581年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "yuwen-yong",
+      "column": "bio",
+      "value": "北周武帝，灭佛，灭北齐，统一北方。在北周（560年—578年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "yuwen-yu",
+      "column": "bio",
+      "value": "北周明帝，宇文觉之兄，为宇文护所毒杀。在北周（557年—560年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "yuwen-yun",
+      "column": "bio",
+      "value": "北周宣帝，荒淫，传位予子后崩。在北周（578年—579年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zaichun",
+      "column": "bio",
+      "value": "爱新觉罗·载淳，咸丰帝之子，清穆宗。幼年即位，由慈安太后与慈禧太后垂帘听政；同治朝平定太平天国等内乱，实行洋务，1875年病逝。"
+    },
+    {
+      "table": "persons",
+      "id": "zaitian",
+      "column": "bio",
+      "value": "爱新觉罗·载湉，醇亲王奕譞之子，清德宗。亲政后支持康有为等推行戊戌变法；庚子事变后清廷推进新政，1908年病逝。"
+    },
+    {
+      "table": "persons",
+      "id": "fulin",
+      "column": "bio",
+      "value": "爱新觉罗·福临，皇太极第九子，清世祖。幼年即位，由多尔衮摄政；1644年清军入关并迁都北京，顺治亲政后整顿政务，确立清朝对中原的统治。"
+    },
+    {
+      "table": "persons",
+      "id": "xuanye",
+      "column": "bio",
+      "value": "爱新觉罗·玄烨，顺治帝第三子，清圣祖。亲政后平定三藩、统一台湾，抗击准噶尔并签订《尼布楚条约》，康熙朝国势与疆域进一步发展。"
+    },
+    {
+      "table": "persons",
+      "id": "yinzhen",
+      "column": "bio",
+      "value": "爱新觉罗·胤禛，康熙帝第四子，清世宗。即位后整顿财政，推行摊丁入亩、耗羡归公等政策，实行改土归流并设军机处，加强中央集权。"
+    },
+    {
+      "table": "persons",
+      "id": "zhao-bing",
+      "column": "bio",
+      "value": "宋帝昺，崖山海战殉国，南宋亡。在南宋（1278年—1279年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhao-dun",
+      "column": "bio",
+      "value": "宋光宗，淳熙内禅。在南宋（1189年—1194年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhao-gou",
+      "column": "bio",
+      "value": "宋高宗，南渡建南宋，杀岳飞。在南宋（1127年—1162年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhao-heng",
+      "column": "bio",
+      "value": "宋真宗，澶渊之盟在其朝。在北宋（997年—1022年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhao-huan",
+      "column": "bio",
+      "value": "宋钦宗，靖康之变被俘，北宋亡。在北宋（1126年—1127年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhao-ji",
+      "column": "bio",
+      "value": "宋徽宗，崇道兴艺术，靖康之耻。在北宋（1100年—1126年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhao-jia-dai",
+      "column": "bio",
+      "value": "代王，代国君主。在代（前228年—前222年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhao-kuangyi",
+      "column": "bio",
+      "value": "宋太宗，完成统一，幽州之战失利。在北宋（976年—997年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhao-kuangyin",
+      "column": "bio",
+      "value": "宋太祖趙匡，祖籍涿郡（今河北省保定市清苑區一帶），中國北宋開國皇帝。父親為趙弘殷，母親為杜氏。"
+    },
+    {
+      "table": "persons",
+      "id": "zhao-kuo",
+      "column": "bio",
+      "value": "宋宁宗，开禧北伐。在南宋（1194年—1224年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhao-qi",
+      "column": "bio",
+      "value": "趙，曾賜名趙孟啟、趙孜，1253年立為皇子，賜名趙禥，是南宋皇帝（1264年11月16日－1274年8月12日在位），宋太祖的第十一世孫，宋理宗侄子。生父為榮王赵与芮，生母隆國夫人黄定喜。"
+    },
+    {
+      "table": "persons",
+      "id": "zhao-shen",
+      "column": "bio",
+      "value": "宋孝宗，乾淳之治，南宋中兴。在南宋（1162年—1189年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhao-shi",
+      "column": "bio",
+      "value": "宋恭帝，降元，南宋实质亡。在南宋（1274年—1276年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhao-shi-duan",
+      "column": "bio",
+      "value": "宋端宗，流亡途中崩。在南宋（1276年—1278年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhao-shu",
+      "column": "bio",
+      "value": "宋英宗，在位仅四年。在北宋（1063年—1067年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhao-xu",
+      "column": "bio",
+      "value": "宋神宗，王安石变法在其朝。在北宋（1067年—1085年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhao-yun",
+      "column": "bio",
+      "value": "宋理宗，联蒙灭金，后蒙攻宋。在南宋（1224年—1264年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhao-zhe",
+      "column": "bio",
+      "value": "赵煦，宋朝皇帝（1085年4月1日－1100年2月23日在位），為宋神宗第六子，母亲为钦成皇后朱氏。原名傭，曾封为延安郡王。"
+    },
+    {
+      "table": "persons",
+      "id": "zhao-zhen",
+      "column": "bio",
+      "value": "趙禎，宋朝皇帝（1022年3月23日－1063年4月30日在位）。初名受益，是宋真宗赵恒的第六子，也是唯一活到成年的皇子，生母李宸妃。"
+    },
+    {
+      "table": "persons",
+      "id": "zheng-chenggong",
+      "column": "bio",
+      "value": "抗清名将，收复台湾。在明郑（1661年—1662年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhou-guo-zao",
+      "column": "bio",
+      "value": "中国历史上的古国名，在今日河南洛陽一帶，战国时期的一个小国。"
+    },
+    {
+      "table": "persons",
+      "id": "zhu-changluo",
+      "column": "bio",
+      "value": "明光宗，红丸案，在位仅一月。在明（1620年—1620年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhu-gaochi",
+      "column": "bio",
+      "value": "明仁宗，永乐之后与民休息。在明（1424年—1425年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhu-houcong",
+      "column": "bio",
+      "value": "明世宗，大礼议，崇道，庚戌之变。在明（1521年—1567年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhu-houzhao",
+      "column": "bio",
+      "value": "明武宗，好微行，豹房。在明（1505年—1521年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhu-jianshen",
+      "column": "bio",
+      "value": "明宪宗，宠信万贵妃，设西厂。在明（1464年—1487年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhu-qizhen",
+      "column": "bio",
+      "value": "明英宗，土木堡被俘，复辟后杀于谦。在明（1435年—1464年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhu-wen",
+      "column": "bio",
+      "value": "后梁太祖，篡唐建梁，都开封。在后梁（907年—912年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhu-wenjin",
+      "column": "bio",
+      "value": "闽国叛将，短暂篡位。在闽（944年—945年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhu-yiming",
+      "column": "bio",
+      "value": "明神宗，万历三大征，后期怠政。在明（1572年—1620年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhu-youcheng",
+      "column": "bio",
+      "value": "明孝宗，弘治中兴，一夫一后。在明（1487年—1505年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhu-yougui",
+      "column": "bio",
+      "value": "后梁末帝，弑父自立，旋被杀。在后梁（912年—913年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhu-youjian",
+      "column": "bio",
+      "value": "明思宗，崇祯，煤山自缢，明亡。在明（1627年—1644年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhu-youjiao",
+      "column": "bio",
+      "value": "明熹宗，木匠皇帝，魏忠贤专权。在明（1620年—1627年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhu-yousong",
+      "column": "bio",
+      "value": "弘光帝，南明首任，都南京，被俘处死。在南明（1644年—1645年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhu-youzhen",
+      "column": "bio",
+      "value": "后梁末帝，为后唐所灭。在后梁（913年—923年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhu-yunwen",
+      "column": "bio",
+      "value": "建文帝，削藩引发靖难之役，下落成谜。在明（1398年—1402年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhu-zaihou",
+      "column": "bio",
+      "value": "明穆宗，隆庆开关，与蒙古互市。在明（1567年—1572年）在位。"
+    },
+    {
+      "table": "persons",
+      "id": "zhu-zhanji",
+      "column": "bio",
+      "value": "明宣宗，仁宣之治。在明（1425年—1435年）在位。"
+    }
+  ],
+  "manifest": {
+    "slug": "overview-enrichment",
+    "description": "补全当前概述少于20字的帝王与王朝信息。",
+    "sources": [
+      "https://zh.wikipedia.org/wiki/%E5%8D%97%E6%A5%9A",
+      "https://zh.wikipedia.org/wiki/%E5%8C%97%E6%B1%89",
+      "https://zh.wikipedia.org/wiki/%E5%90%8E%E6%B1%89",
+      "https://zh.wikipedia.org/wiki/%E5%8D%97%E6%B1%89",
+      "https://zh.wikipedia.org/wiki/%E5%90%8E%E6%99%8B",
+      "https://zh.wikipedia.org/wiki/%E8%8D%86%E5%8D%97",
+      "https://zh.wikipedia.org/wiki/%E5%8D%97%E6%A2%81",
+      "https://zh.wikipedia.org/wiki/%E9%97%BD%E5%9B%BD",
+      "https://zh.wikipedia.org/wiki/%E5%8D%97%E9%BD%90",
+      "https://zh.wikipedia.org/wiki/%E5%89%8D%E8%9C%80",
+      "https://zh.wikipedia.org/wiki/%E5%8D%97%E5%94%90",
+      "https://zh.wikipedia.org/wiki/%E6%9D%A8%E5%90%B4",
+      "https://zh.wikipedia.org/wiki/%E5%90%B4%E8%B6%8A",
+      "https://zh.wikipedia.org/wiki/%E5%85%83%E4%BB%81%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%91%A8%E4%B8%96%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E6%9F%B4%E5%AE%97%E8%AE%AD",
+      "https://zh.wikipedia.org/wiki/%E9%99%88%E9%9C%B8%E5%85%88",
+      "https://zh.wikipedia.org/wiki/%E9%99%88%E4%BC%AF%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E9%99%88%E8%92%A8",
+      "https://zh.wikipedia.org/wiki/%E9%99%88%E5%8F%94%E5%AE%9D",
+      "https://zh.wikipedia.org/wiki/%E9%99%88%E9%A1%BC",
+      "https://zh.wikipedia.org/wiki/%E9%AB%98%E4%BF%9D%E8%9E%8D",
+      "https://zh.wikipedia.org/wiki/%E9%AB%98%E4%BF%9D%E5%8B%96",
+      "https://zh.wikipedia.org/wiki/%E9%AB%98%E4%BB%8E%E8%AF%B2",
+      "https://zh.wikipedia.org/wiki/%E9%AB%98%E6%81%92",
+      "https://zh.wikipedia.org/wiki/%E9%AB%98%E7%BB%A7%E5%86%B2",
+      "https://zh.wikipedia.org/wiki/%E9%AB%98%E5%AD%A3%E5%85%B4",
+      "https://zh.wikipedia.org/wiki/%E9%AB%98%E7%BA%AC",
+      "https://zh.wikipedia.org/wiki/%E9%BD%90%E5%AD%9D%E6%98%AD%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E9%BD%90%E5%BA%9F%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E9%BD%90%E6%AD%A6%E6%88%90%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E9%83%AD%E5%A8%81",
+      "https://zh.wikipedia.org/wiki/%E4%B9%BE%E9%9A%86%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E7%9A%87%E5%A4%AA%E6%9E%81",
+      "https://zh.wikipedia.org/wiki/%E5%85%83%E5%AE%81%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%85%83%E6%AD%A6%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%92%8C%E4%B8%96%E3%BB%8B",
+      "https://zh.wikipedia.org/wiki/%E5%94%90%E6%96%87%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E6%9D%8E%E6%98%AA",
+      "https://zh.wikipedia.org/wiki/%E5%94%90%E5%AE%A3%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%94%90%E5%AE%AA%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E6%9D%8E%E7%BA%AF%E4%BD%91",
+      "https://zh.wikipedia.org/wiki/%E6%9D%8E%E4%BB%8E%E5%8E%9A",
+      "https://zh.wikipedia.org/wiki/%E6%9D%8E%E4%BB%8E%E7%8F%82",
+      "https://zh.wikipedia.org/wiki/%E5%94%90%E6%87%BF%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E6%9D%8E%E5%AD%98%E5%8B%96",
+      "https://zh.wikipedia.org/wiki/%E5%94%90%E7%9D%BF%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E6%9D%8E%E5%BE%B7%E6%97%BA",
+      "https://zh.wikipedia.org/wiki/%E5%94%90%E8%82%83%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%94%90%E7%A9%86%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E6%9D%8E%E7%92%9F",
+      "https://zh.wikipedia.org/wiki/%E5%94%90%E5%BE%B7%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%94%90%E7%8E%84%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E6%9D%8E%E5%97%A3%E6%BA%90",
+      "https://zh.wikipedia.org/wiki/%E5%94%90%E9%A1%BA%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%94%90%E4%B8%AD%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%94%90%E5%83%96%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%94%90%E6%AD%A6%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%94%90%E6%98%AD%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E6%9D%8E%E7%85%9C",
+      "https://zh.wikipedia.org/wiki/%E5%94%90%E4%BB%A3%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E6%9D%8E%E6%B8%8A",
+      "https://zh.wikipedia.org/wiki/%E5%94%90%E6%95%AC%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%94%90%E9%AB%98%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%94%90%E5%93%80%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E6%9D%8E%E9%81%B5%E9%A1%BC",
+      "https://zh.wikipedia.org/wiki/%E6%B1%89%E6%88%90%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%88%98%E9%82%A6",
+      "https://zh.wikipedia.org/wiki/%E6%B1%89%E9%A1%BA%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E6%B1%89%E5%B0%91%E5%B8%9D%E5%88%98%E8%BE%A9",
+      "https://zh.wikipedia.org/wiki/%E5%88%98%E7%8E%A2",
+      "https://zh.wikipedia.org/wiki/%E6%B1%89%E5%86%B2%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%88%98%E9%8B%B9",
+      "https://zh.wikipedia.org/wiki/%E5%88%98%E6%89%BF%E7%A5%90",
+      "https://zh.wikipedia.org/wiki/%E5%88%98%E7%BB%A7%E5%85%83",
+      "https://zh.wikipedia.org/wiki/%E5%88%98%E9%AA%8F",
+      "https://zh.wikipedia.org/wiki/%E5%88%98%E9%92%A7",
+      "https://zh.wikipedia.org/wiki/%E6%B1%89%E5%B9%B3%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%88%98%E6%97%BB",
+      "https://zh.wikipedia.org/wiki/%E6%B1%89%E6%99%AF%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%88%98%E5%8A%AD",
+      "https://zh.wikipedia.org/wiki/%E5%88%98%E6%99%9F",
+      "https://zh.wikipedia.org/wiki/%E6%B1%89%E5%85%83%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E6%B1%89%E5%93%80%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%88%98%E9%BE%91",
+      "https://zh.wikipedia.org/wiki/%E6%B1%89%E5%B0%91%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%88%98%E4%B9%89%E7%AC%A6",
+      "https://zh.wikipedia.org/wiki/%E5%88%98%E4%B9%89%E9%9A%86",
+      "https://zh.wikipedia.org/wiki/%E5%88%98%E7%9B%88",
+      "https://zh.wikipedia.org/wiki/%E5%88%98%E6%98%B1",
+      "https://zh.wikipedia.org/wiki/%E5%88%98%E5%BD%A7",
+      "https://zh.wikipedia.org/wiki/%E6%B1%89%E5%92%8C%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E6%B1%89%E6%A1%93%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%88%98%E7%9F%A5%E8%BF%9C",
+      "https://zh.wikipedia.org/wiki/%E6%B1%89%E6%98%8E%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%88%98%E5%87%86",
+      "https://zh.wikipedia.org/wiki/%E5%88%98%E5%AD%90%E4%B8%9A",
+      "https://zh.wikipedia.org/wiki/%E6%B1%89%E8%B4%A8%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E6%B1%89%E7%AB%A0%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E9%A9%AC%E5%B8%8C%E5%B4%87",
+      "https://zh.wikipedia.org/wiki/%E9%A9%AC%E5%B8%8C%E8%90%BC",
+      "https://zh.wikipedia.org/wiki/%E9%A9%AC%E5%B8%8C%E8%8C%83",
+      "https://zh.wikipedia.org/wiki/%E9%A9%AC%E5%B8%8C%E5%B9%BF",
+      "https://zh.wikipedia.org/wiki/%E9%A9%AC%E5%B8%8C%E5%A3%B0",
+      "https://zh.wikipedia.org/wiki/%E9%A9%AC%E6%AE%B7",
+      "https://zh.wikipedia.org/wiki/%E5%AD%9F%E6%98%B6",
+      "https://zh.wikipedia.org/wiki/%E5%AD%9F%E7%9F%A5%E7%A5%A5",
+      "https://zh.wikipedia.org/wiki/%E9%81%93%E5%85%89%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%8A%AA%E5%B0%94%E5%93%88%E8%B5%A4",
+      "https://zh.wikipedia.org/wiki/%E6%BA%A5%E4%BB%AA",
+      "https://zh.wikipedia.org/wiki/%E9%92%B1%E4%BF%B6",
+      "https://zh.wikipedia.org/wiki/%E9%92%B1%E5%BC%98%E5%80%A7",
+      "https://zh.wikipedia.org/wiki/%E9%92%B1%E5%BC%98%E4%BD%90",
+      "https://zh.wikipedia.org/wiki/%E9%92%B1%E9%95%A0",
+      "https://zh.wikipedia.org/wiki/%E9%92%B1%E5%85%83%E7%93%98",
+      "https://zh.wikipedia.org/wiki/%E9%98%BF%E9%80%9F%E5%90%89%E5%85%AB",
+      "https://zh.wikipedia.org/wiki/%E7%9F%B3%E9%87%8D%E8%B4%B5",
+      "https://zh.wikipedia.org/wiki/%E7%9F%B3%E6%95%AC%E7%91%AD",
+      "https://zh.wikipedia.org/wiki/%E5%85%83%E8%8B%B1%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%AD%99%E4%B8%AD%E5%B1%B1",
+      "https://zh.wikipedia.org/wiki/%E5%85%83%E6%88%90%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E7%94%B0%E5%B7%BF",
+      "https://zh.wikipedia.org/wiki/%E5%85%83%E9%A1%BA%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%85%83%E6%96%87%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E9%AD%8F%E9%81%93%E6%AD%A6%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E9%AD%8F%E7%8C%AE%E6%96%87%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E9%AD%8F%E6%96%87%E6%88%90%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E9%AD%8F%E6%81%AD%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E9%AD%8F%E6%98%8E%E5%85%83%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E9%AD%8F%E5%A4%AA%E6%AD%A6%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%85%83%E4%BD%99",
+      "https://zh.wikipedia.org/wiki/%E7%8E%8B%E5%BB%BA",
+      "https://zh.wikipedia.org/wiki/%E7%8E%8B%E7%BB%A7%E9%B9%8F",
+      "https://zh.wikipedia.org/wiki/%E7%8E%8B%E5%AE%A1%E7%9F%A5",
+      "https://zh.wikipedia.org/wiki/%E7%8E%8B%E8%A1%8D",
+      "https://zh.wikipedia.org/wiki/%E7%8E%8B%E5%BB%B6%E7%BF%B0",
+      "https://zh.wikipedia.org/wiki/%E7%8E%8B%E5%BB%B6%E9%92%A7",
+      "https://zh.wikipedia.org/wiki/%E7%8E%8B%E5%BB%B6%E7%BE%B2",
+      "https://zh.wikipedia.org/wiki/%E7%8E%8B%E5%BB%B6%E6%94%BF",
+      "https://zh.wikipedia.org/wiki/%E6%AD%A6%E5%88%99%E5%A4%A9",
+      "https://zh.wikipedia.org/wiki/%E8%90%A7%E5%AE%9D%E5%8D%B7",
+      "https://zh.wikipedia.org/wiki/%E8%90%A7%E5%AE%9D%E8%9E%8D",
+      "https://zh.wikipedia.org/wiki/%E8%90%A7%E9%81%93%E6%88%90",
+      "https://zh.wikipedia.org/wiki/%E8%90%A7%E6%96%B9%E6%99%BA",
+      "https://zh.wikipedia.org/wiki/%E8%90%A7%E7%BA%B2",
+      "https://zh.wikipedia.org/wiki/%E8%90%A7%E9%B8%BE",
+      "https://zh.wikipedia.org/wiki/%E8%90%A7%E7%BB%8E",
+      "https://zh.wikipedia.org/wiki/%E8%90%A7%E8%B5%9C",
+      "https://zh.wikipedia.org/wiki/%E8%90%A7%E6%98%AD%E6%96%87",
+      "https://zh.wikipedia.org/wiki/%E8%90%A7%E6%98%AD%E4%B8%9A",
+      "https://zh.wikipedia.org/wiki/%E8%96%9B%E8%A5%84%E5%85%AC",
+      "https://zh.wikipedia.org/wiki/%E8%96%9B%E5%85%AC%E6%AF%94",
+      "https://zh.wikipedia.org/wiki/%E8%96%9B%E6%83%A0%E5%85%AC",
+      "https://zh.wikipedia.org/wiki/%E6%9D%A8%E5%9D%9A",
+      "https://zh.wikipedia.org/wiki/%E6%9D%A8%E9%9A%86%E6%BC%94",
+      "https://zh.wikipedia.org/wiki/%E6%9D%A8%E8%A1%8C%E5%AF%86",
+      "https://zh.wikipedia.org/wiki/%E5%85%83%E6%B3%B0%E5%AE%9A%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E9%9B%8D%E6%AD%A3%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%92%B8%E4%B8%B0%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%98%89%E5%BA%86%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E9%AD%8F%E5%AD%9D%E6%96%87%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E9%AD%8F%E5%AE%A3%E6%AD%A6%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%85%83%E6%9C%97",
+      "https://zh.wikipedia.org/wiki/%E5%85%83%E9%92%A6",
+      "https://zh.wikipedia.org/wiki/%E9%AD%8F%E5%AD%9D%E6%98%8E%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%85%83%E6%99%94",
+      "https://zh.wikipedia.org/wiki/%E5%AE%87%E6%96%87%E5%8C%96%E5%8F%8A",
+      "https://zh.wikipedia.org/wiki/%E5%91%A8%E5%AD%9D%E9%97%B5%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%91%A8%E9%9D%99%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%91%A8%E6%AD%A6%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%91%A8%E6%98%8E%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%91%A8%E5%AE%A3%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%90%8C%E6%B2%BB%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%85%89%E7%BB%AA%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E9%A1%BA%E6%B2%BB%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%BA%B7%E7%86%99%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%AE%8B%E5%B8%9D%E6%98%BA",
+      "https://zh.wikipedia.org/wiki/%E5%AE%8B%E5%85%89%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%AE%8B%E9%AB%98%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%AE%8B%E7%9C%9F%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%AE%8B%E9%92%A6%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%AE%8B%E5%BE%BD%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E4%BB%A3%E7%8E%8B%E5%98%89",
+      "https://zh.wikipedia.org/wiki/%E8%B5%B5%E5%85%89%E4%B9%89",
+      "https://zh.wikipedia.org/wiki/%E8%B5%B5%E5%8C%A1%E8%83%A4",
+      "https://zh.wikipedia.org/wiki/%E5%AE%8B%E5%AE%81%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%AE%8B%E5%BA%A6%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%AE%8B%E5%AD%9D%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%AE%8B%E6%81%AD%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E5%AE%8B%E7%AB%AF%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%AE%8B%E8%8B%B1%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%AE%8B%E7%A5%9E%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%AE%8B%E7%90%86%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%AE%8B%E5%93%B2%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E5%AE%8B%E4%BB%81%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E9%83%91%E6%88%90%E5%8A%9F",
+      "https://zh.wikipedia.org/wiki/%E8%A5%BF%E5%91%A8%E5%9B%BD",
+      "https://zh.wikipedia.org/wiki/%E6%98%8E%E5%85%89%E5%AE%97",
+      "https://zh.wikipedia.org/wiki/%E6%9C%B1%E9%AB%98%E7%82%BD",
+      "https://zh.wikipedia.org/wiki/%E6%9C%B1%E5%8E%9A%E7%86%9C",
+      "https://zh.wikipedia.org/wiki/%E6%9C%B1%E5%8E%9A%E7%85%A7",
+      "https://zh.wikipedia.org/wiki/%E6%9C%B1%E8%A7%81%E6%B7%B1",
+      "https://zh.wikipedia.org/wiki/%E6%9C%B1%E7%A5%81%E9%95%87",
+      "https://zh.wikipedia.org/wiki/%E6%9C%B1%E6%B8%A9",
+      "https://zh.wikipedia.org/wiki/%E6%9C%B1%E6%96%87%E8%BF%9B",
+      "https://zh.wikipedia.org/wiki/%E6%9C%B1%E7%BF%8A%E9%92%A7",
+      "https://zh.wikipedia.org/wiki/%E6%9C%B1%E7%A5%90%E6%A8%98",
+      "https://zh.wikipedia.org/wiki/%E6%9C%B1%E5%8F%8B%E7%8F%AA",
+      "https://zh.wikipedia.org/wiki/%E5%B4%87%E7%A5%AF%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E6%9C%B1%E7%94%B1%E6%A0%A1",
+      "https://zh.wikipedia.org/wiki/%E5%BC%98%E5%85%89%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E6%9C%B1%E5%8F%8B%E8%B4%9E",
+      "https://zh.wikipedia.org/wiki/%E5%BB%BA%E6%96%87%E5%B8%9D",
+      "https://zh.wikipedia.org/wiki/%E6%9C%B1%E8%BD%BD%E5%9D%96",
+      "https://zh.wikipedia.org/wiki/%E6%9C%B1%E7%9E%BB%E5%9F%BA"
+    ],
+    "notes": [
+      "优先使用中文维基百科导言最多两句；未匹配到条目的记录仅补充数据库中已核对的在位跨度，并标记 fallback。",
+      "2026-09 数据审计修复：清理拓跋焘概述中的维基模板残片和 <br> 标记；重写 6 条含空模板参数残留及 6 条以省略号截断的概述（重复记录合并），保留简洁可读的事实摘要。"
+    ]
+  }
+}

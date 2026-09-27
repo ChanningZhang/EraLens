@@ -1,6 +1,6 @@
 import { formatAbsSpanTooltip, type Dynasty, type Reign } from "@eralens/shared";
 import { memo } from "react";
-import { HoverTooltip } from "./HoverTooltip";
+import { InfoPopover } from "./InfoPopover";
 import styles from "./ReignGapCard.module.css";
 
 const MIN_GAP_PX = 10;
@@ -28,7 +28,7 @@ function ReignGapCardImpl({ gap, dynasty, color, pxPerMonth }: Props) {
 
   return (
     <div className={styles.unit} style={{ left, width, top: 0 }}>
-      <HoverTooltip text={tooltipText}>
+      <InfoPopover text={tooltipText}>
         {(handlers) => (
           <div
             className={[
@@ -38,12 +38,14 @@ function ReignGapCardImpl({ gap, dynasty, color, pxPerMonth }: Props) {
               .join(" ")}
             style={{ ["--card-color" as string]: color }}
             aria-label={`${dynasty.name} 史料缺`}
+            role="img"
+            tabIndex={0}
             {...handlers}
           >
             {showLabel && <p className={styles.label}>史料缺</p>}
           </div>
         )}
-      </HoverTooltip>
+      </InfoPopover>
     </div>
   );
 }

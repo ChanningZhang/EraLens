@@ -1,67 +1,43 @@
 import { formatEventTime, type Event } from "@eralens/shared";
-import { useEffect, useMemo, useRef, useState } from "react";
-import { HoverTooltip } from "./HoverTooltip";
+import { useMemo } from "react";
+import { InfoPopover } from "./InfoPopover";
 import { useSelection } from "../hooks/useSelection";
-import { projectGcj02, resolveChinaMapInsets, wgs84ToGcj02 } from "../model/chinaMapProjection";
+import { projectGcj02InLayout, wgs84ToGcj02, type ChinaMapLayout } from "../model/chinaMapProjection";
 import { selectionStore } from "../state/selectionStore";
 import styles from "./EventMapLayer.module.css";
 
 type Props = {
   events: readonly Event[];
   atAbs: number;
-  gutterPx: number;
+  layout: ChinaMapLayout | null;
   scale: number;
   offset: { x: number; y: number };
 };
 
-export function EventMapLayer({ events, atAbs, gutterPx, scale, offset }: Props) {
+export function EventMapLayer({ events, atAbs, layout, scale, offset }: Props) {
   const selection = useSelection();
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [size, setSize] = useState({ width: 0, height: 0 });
-
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-    const apply = (width: number, height: number) => {
-      if (width < 1 || height < 1) return;
-      setSize({ width, height });
-    };
-    apply(el.clientWidth, el.clientHeight);
-    const observer = new ResizeObserver((entries) => {
-      const rect = entries[0]?.contentRect;
-      if (rect) apply(rect.width, rect.height);
-    });
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
 
   const placed = useMemo(() => {
-    if (size.width < 1 || size.height < 1) return [];
+    if (!layout) return [];
     return events.flatMap((event) => {
       const locations = event.locations.length > 0 ? event.locations : event.location ? [event.location] : [];
       return locations.map((location, index) => {
         const point = location.coordinateSystem === "GCJ02"
           ? { x: location.longitude, y: location.latitude }
           : wgs84ToGcj02(location.longitude, location.latitude);
-        const projected = projectGcj02(
-          point.x,
-          point.y,
-          size.width,
-          size.height,
-          resolveChinaMapInsets(gutterPx),
-        );
+        const projected = projectGcj02InLayout(point.x, point.y, layout);
         return { event, location, key: `${event.id}:${location.id}:${index}`, x: projected.x, y: projected.y };
       });
     });
-  }, [events, gutterPx, size.height, size.width]);
+  }, [events, layout]);
 
   return (
-    <div ref={containerRef} className={styles.layer} aria-hidden={placed.length === 0}>
+    <div className={styles.layer} aria-hidden={placed.length === 0}>
       {placed.map(({ event, location, key, x, y }) => {
         const isSelected = selection.selected?.type === "event" && selection.selected.id === event.id;
         const tooltip = `${event.name} · ${formatEventTime(event)} · ${location.historicalName}（${location.modernName}）`;
         return (
-          <HoverTooltip key={key} text={tooltip}>
+          <InfoPopover key={key} text={tooltip}>
             {(handlers) => (
               <button
                 type="button"
@@ -79,7 +55,7 @@ export function EventMapLayer({ events, atAbs, gutterPx, scale, offset }: Props)
                 <span className={styles.label}>{event.name}</span>
               </button>
             )}
-          </HoverTooltip>
+          </InfoPopover>
         );
       })}
     </div>

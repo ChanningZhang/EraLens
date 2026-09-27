@@ -3,6 +3,7 @@ import type { EntityDetail, EntityRef } from "@eralens/shared";
 import { getRepository } from "@/data/repository";
 import { useLaneColorValue } from "@/features/timeline/hooks/useLaneColor";
 import { useSelection } from "@/features/timeline/hooks/useSelection";
+import { isNativeApp, openExternalSource } from "@/data/mobileUpdates";
 import { useViewport } from "@/features/timeline/hooks/useViewport";
 import {
   type SelectionState,
@@ -240,9 +241,17 @@ export function DetailPanel() {
                       }
                     >
                       {row.tenure.name ?? row.tenure.label}
+                      {!row.tenure.name && row.tenure.duration && (
+                        <span className={styles.tenureDuration}> · {row.tenure.duration}</span>
+                      )}
                     </span>
                     {row.tenure.name && (
-                      <span className={styles.capitalTenureSub}>{row.tenure.label}</span>
+                      <span className={styles.capitalTenureSub}>
+                        {row.tenure.label}
+                        {row.tenure.duration && (
+                          <span className={styles.tenureDuration}> · {row.tenure.duration}</span>
+                        )}
+                      </span>
                     )}
                   </button>
                   {row.capital && (
@@ -312,6 +321,12 @@ export function DetailPanel() {
                   className={styles.link}
                   target="_blank"
                   rel="noreferrer"
+                  onClick={(event) => {
+                    if (isNativeApp()) {
+                      event.preventDefault();
+                      void openExternalSource(link.url).catch(() => { /* The source can be opened again when a network is available. */ });
+                    }
+                  }}
                 >
                   {link.label}
                 </a>

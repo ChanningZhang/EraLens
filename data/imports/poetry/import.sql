@@ -87,10 +87,6 @@ INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, 
 VALUES ('tan-sitong', '谭嗣同', ARRAY[]::text[], NULL, NULL, NULL, NULL, NULL, NULL, ARRAY['政治家','诗人'], '戊戌维新人物，戊戌六君子之一。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/谭嗣同"}]'::jsonb, NULL, NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, title = EXCLUDED.title;
 
--- dynasties
-
--- reigns
-
 -- events
 INSERT INTO events (id, name, kind, time_mode, precision, is_approximate, date_note, at_year, at_month, at_day, at_abs, start_year, start_month, start_day, start_abs, end_year, end_month, end_day, end_abs, summary, meaning, content, location_id) VALUES ('poetry-wuyi', '无衣', 'poetry', 'point', 'year', FALSE, '春秋战国之际；传统归入《诗经·秦风》', -348, 12, NULL, -4153, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '秦地军民同仇敌忾、共赴战场的诗篇。', NULL, '岂曰无衣？与子同袍。
 王于兴师，修我戈矛。与子同仇！
@@ -450,7 +446,5 @@ INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-jihai', 'go
 INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-fushu-dengcheng', 'lin-zexu') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-chunchou', 'qiu-fengjia') ON CONFLICT DO NOTHING;
 INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-yuzhong-tibi', 'tan-sitong') ON CONFLICT DO NOTHING;
-
--- relations
 
 COMMIT;

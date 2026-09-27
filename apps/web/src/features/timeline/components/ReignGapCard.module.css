@@ -24,6 +24,11 @@
   overflow: hidden;
 }
 
+.card:focus-visible {
+  outline: 2px solid var(--color-ochre);
+  outline-offset: 2px;
+}
+
 
 .label {
   margin: 0;

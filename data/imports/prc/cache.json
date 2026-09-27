@@ -1,0 +1,1330 @@
+{
+  "slug": "prc",
+  "window": {
+    "startYear": 1949,
+    "startMonth": 10,
+    "endYear": 2026,
+    "endMonth": 9
+  },
+  "persons": [
+    {
+      "id": "mao-zedong",
+      "name": "毛泽东",
+      "roles": [
+        "政治家",
+        "军事家"
+      ],
+      "bio": "1949年10月1日出任中央人民政府主席，1954年9月27日当选国家主席，至1959年4月27日不连任。其后仍任中共中央主席、中央军委主席，1976年9月9日在北京逝世。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/毛泽东"
+        }
+      ],
+      "birth": {
+        "year": 1893,
+        "month": 12,
+        "abs": 22727
+      },
+      "death": {
+        "year": 1976,
+        "month": 9,
+        "abs": 23720
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "国家主席"
+    },
+    {
+      "id": "liu-shaoqi",
+      "name": "刘少奇",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "1959年4月27日当选国家主席，1965年连任；1968年10月31日中共八届十二中全会撤销党内外职务。1969年11月12日在开封逝世。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘少奇"
+        }
+      ],
+      "birth": {
+        "year": 1898,
+        "month": 11,
+        "abs": 22786
+      },
+      "death": {
+        "year": 1969,
+        "month": 11,
+        "abs": 23638
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "国家主席"
+    },
+    {
+      "id": "dong-biwu",
+      "name": "董必武",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "国家副主席。1968年10月31日起与宋庆龄共同代行国家主席职权；1972年2月24日起以中华人民共和国代主席名义行使职权，至1975年1月17日四届全国人大一次会议修宪废除国家主席。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/董必武"
+        }
+      ],
+      "birth": {
+        "year": 1886,
+        "month": 3,
+        "abs": 22634
+      },
+      "death": {
+        "year": 1975,
+        "month": 4,
+        "abs": 23703
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "国家代主席"
+    },
+    {
+      "id": "song-qingling",
+      "name": "宋庆龄",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "国家副主席。1968年10月31日至1972年2月24日与董必武共同代行国家主席职权。1981年5月16日被授予中华人民共和国名誉主席称号。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋庆龄"
+        }
+      ],
+      "birth": {
+        "year": 1893,
+        "month": 1,
+        "abs": 22716
+      },
+      "death": {
+        "year": 1981,
+        "month": 5,
+        "abs": 23776
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "song-qingling-dong-biwu",
+      "name": "宋庆龄、董必武",
+      "roles": [
+        "政治家",
+        "联合代行国家元首"
+      ],
+      "bio": "1968年10月31日至1972年2月24日，与董必武（按联合主体记录）共同以国家副主席身份代行国家主席职权。个人资料分别保留在宋庆龄、董必武人物记录中。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/中华人民共和国国家元首列表"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [
+        "董必武、宋庆龄"
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "国家副主席共同代行国家主席职权"
+    },
+    {
+      "id": "npc-standing-committee",
+      "name": "全国人大常委会",
+      "roles": [
+        "机构"
+      ],
+      "bio": "1975年1月17日四届全国人大一次会议修宪废除国家主席，改由全国人民代表大会常务委员会集体行使国家元首职权，至1983年6月18日六届全国人大一次会议选举李先念为国家主席。期间委员长为朱德（1975–1976）、叶剑英（1978–1983）；朱德逝世至叶剑英就任之间由宋庆龄等副委员长集体代理。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/全国人民代表大会常务委员会"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [
+        "人大常委会",
+        "全国人民代表大会常务委员会"
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "全国人大常委会"
+    },
+    {
+      "id": "zhu-de",
+      "name": "朱德",
+      "roles": [
+        "军事家",
+        "政治家"
+      ],
+      "bio": "开国元帅。1975年1月17日四届全国人大一次会议当选全国人大常委会委员长，1976年7月6日在任上去世。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/朱德"
+        }
+      ],
+      "birth": {
+        "year": 1886,
+        "month": 12,
+        "abs": 22643
+      },
+      "death": {
+        "year": 1976,
+        "month": 7,
+        "abs": 23718
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "li-xiannian",
+      "name": "李先念",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "1983年6月18日六届全国人大一次会议当选国家主席，为修宪恢复国家主席后的首任，至1988年4月8日卸任。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/李先念"
+        }
+      ],
+      "birth": {
+        "year": 1909,
+        "month": 6,
+        "abs": 22913
+      },
+      "death": {
+        "year": 1992,
+        "month": 6,
+        "abs": 23909
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "国家主席"
+    },
+    {
+      "id": "yang-shangkun",
+      "name": "杨尚昆",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "1988年4月8日当选国家主席，至1993年3月27日卸任。恢复国家主席后唯一一任非中共中央政治局常委担任的国家主席。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杨尚昆"
+        }
+      ],
+      "birth": {
+        "year": 1907,
+        "month": 7,
+        "abs": 22890
+      },
+      "death": {
+        "year": 1998,
+        "month": 9,
+        "abs": 23984
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "国家主席"
+    },
+    {
+      "id": "jiang-zemin",
+      "name": "江泽民",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "1993年3月27日当选国家主席，1998年连任，至2003年3月15日卸任。此前1989年起任中共中央总书记。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/江泽民"
+        }
+      ],
+      "birth": {
+        "year": 1926,
+        "month": 8,
+        "abs": 23119
+      },
+      "death": {
+        "year": 2022,
+        "month": 11,
+        "abs": 24274
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "国家主席"
+    },
+    {
+      "id": "hu-jintao",
+      "name": "胡锦涛",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "2003年3月15日当选国家主席，2008年连任，至2013年3月14日卸任。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/胡锦涛"
+        }
+      ],
+      "birth": {
+        "year": 1942,
+        "month": 12,
+        "abs": 23315
+      },
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "国家主席"
+    },
+    {
+      "id": "xi-jinping",
+      "name": "习近平",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "2013年3月14日当选国家主席，其后连任。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/习近平"
+        }
+      ],
+      "birth": {
+        "year": 1953,
+        "month": 6,
+        "abs": 23441
+      },
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "国家主席"
+    },
+    {
+      "id": "zhou-enlai",
+      "name": "周恩来",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "开国总理，长期主持国务院；1976年1月8日在北京逝世。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周恩来"
+        }
+      ],
+      "birth": {
+        "year": 1898,
+        "month": 3,
+        "abs": 22778
+      },
+      "death": {
+        "year": 1976,
+        "month": 1,
+        "abs": 23712
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "deng-xiaoping",
+      "name": "邓小平",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "1978年十一届三中全会后成为实际最高领导人，推动改革开放；曾任中共中央军委主席，从未担任国家主席。1997年2月19日逝世。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/邓小平"
+        }
+      ],
+      "birth": {
+        "year": 1904,
+        "month": 8,
+        "abs": 22855
+      },
+      "death": {
+        "year": 1997,
+        "month": 2,
+        "abs": 23965
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "hua-guofeng",
+      "name": "华国锋",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "毛泽东逝世后任中共中央主席、中央军委主席、国务院总理；未担任国家主席。2008年8月20日逝世。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/华国锋"
+        }
+      ],
+      "birth": {
+        "year": 1921,
+        "month": 2,
+        "abs": 23053
+      },
+      "death": {
+        "year": 2008,
+        "month": 8,
+        "abs": 24103
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "lin-biao",
+      "name": "林彪",
+      "roles": [
+        "军事家",
+        "政治家"
+      ],
+      "bio": "元帅，九大党章曾写为接班人；1971年9月13日乘机出逃，在蒙古温都尔汗坠机身亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/林彪"
+        }
+      ],
+      "birth": {
+        "year": 1907,
+        "month": 12,
+        "abs": 22895
+      },
+      "death": {
+        "year": 1971,
+        "month": 9,
+        "abs": 23660
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "jiang-qing",
+      "name": "江青",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "毛泽东夫人，文化大革命中中央文革小组成员；1976年10月被捕，后以林彪、江青反革命集团案受审。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/江青"
+        }
+      ],
+      "birth": {
+        "year": 1914,
+        "month": 3,
+        "abs": 22970
+      },
+      "death": {
+        "year": 1991,
+        "month": 5,
+        "abs": 23896
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "peng-dehuai",
+      "name": "彭德怀",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "开国元帅，中国人民志愿军司令员兼政治委员，指挥抗美援朝战争。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/彭德怀"
+        }
+      ],
+      "birth": {
+        "year": 1898,
+        "month": 10,
+        "abs": 22785
+      },
+      "death": {
+        "year": 1974,
+        "month": 11,
+        "abs": 23698
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "ye-jianying",
+      "name": "叶剑英",
+      "roles": [
+        "军事家",
+        "政治家"
+      ],
+      "bio": "元帅。1976年10月与华国锋等粉碎「四人帮」；1978–1983年任全国人大常委会委员长。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/叶剑英"
+        }
+      ],
+      "birth": {
+        "year": 1897,
+        "month": 4,
+        "abs": 22767
+      },
+      "death": {
+        "year": 1986,
+        "month": 10,
+        "abs": 23841
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "hu-yaobang",
+      "name": "胡耀邦",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "1980年代任中共中央总书记，主持拨乱反正；1987年辞职，1989年4月15日逝世。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/胡耀邦"
+        }
+      ],
+      "birth": {
+        "year": 1915,
+        "month": 11,
+        "abs": 22990
+      },
+      "death": {
+        "year": 1989,
+        "month": 4,
+        "abs": 23871
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "zhao-ziyang",
+      "name": "赵紫阳",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "1980年代任国务院总理、中共中央总书记；1989年免职，2005年1月17日逝世。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赵紫阳"
+        }
+      ],
+      "birth": {
+        "year": 1919,
+        "month": 10,
+        "abs": 23037
+      },
+      "death": {
+        "year": 2005,
+        "month": 1,
+        "abs": 24060
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "prc",
+      "name": "中华人民共和国",
+      "altNames": [
+        "新中国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 1949,
+        "month": 10,
+        "abs": 23397
+      },
+      "end": {
+        "year": 2026,
+        "month": 9,
+        "abs": 24320
+      },
+      "precision": "month",
+      "note": "1949年10月1日成立。正统自起始。元首按维基百科「中华人民共和国国家元首列表」收录中央人民政府主席、国家主席、国家副主席代行、国家代主席及废除主席期间的全国人大常委会，截至2026年9月。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-mao-zedong-prc",
+      "dynastyId": "prc",
+      "personId": "mao-zedong",
+      "title": "中央人民政府主席",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1949,
+        "month": 10,
+        "abs": 23397,
+        "day": 1
+      },
+      "end": {
+        "year": 1954,
+        "month": 9,
+        "abs": 23456,
+        "day": 27
+      },
+      "startAbs": 23397,
+      "endAbs": 23456,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-mao-zedong-prc-2",
+      "dynastyId": "prc",
+      "personId": "mao-zedong",
+      "title": "国家主席",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1954,
+        "month": 9,
+        "abs": 23456,
+        "day": 27
+      },
+      "end": {
+        "year": 1959,
+        "month": 4,
+        "abs": 23511,
+        "day": 27
+      },
+      "startAbs": 23456,
+      "endAbs": 23511,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-shaoqi-prc",
+      "dynastyId": "prc",
+      "personId": "liu-shaoqi",
+      "title": "国家主席",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1959,
+        "month": 4,
+        "abs": 23511,
+        "day": 27
+      },
+      "end": {
+        "year": 1968,
+        "month": 10,
+        "abs": 23625,
+        "day": 31
+      },
+      "startAbs": 23511,
+      "endAbs": 23625,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-dong-biwu-prc",
+      "dynastyId": "prc",
+      "personId": "dong-biwu",
+      "title": "国家代主席",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1972,
+        "month": 2,
+        "abs": 23665,
+        "day": 24
+      },
+      "end": {
+        "year": 1975,
+        "month": 1,
+        "abs": 23700,
+        "day": 17
+      },
+      "startAbs": 23665,
+      "endAbs": 23700,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-npc-standing-committee-prc",
+      "dynastyId": "prc",
+      "personId": "npc-standing-committee",
+      "title": "全国人大常委会",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1975,
+        "month": 1,
+        "abs": 23700,
+        "day": 17
+      },
+      "end": {
+        "year": 1983,
+        "month": 6,
+        "abs": 23801,
+        "day": 18
+      },
+      "startAbs": 23700,
+      "endAbs": 23801,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-li-xiannian-prc",
+      "dynastyId": "prc",
+      "personId": "li-xiannian",
+      "title": "国家主席",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1983,
+        "month": 6,
+        "abs": 23801,
+        "day": 18
+      },
+      "end": {
+        "year": 1988,
+        "month": 4,
+        "abs": 23859,
+        "day": 8
+      },
+      "startAbs": 23801,
+      "endAbs": 23859,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-yang-shangkun-prc",
+      "dynastyId": "prc",
+      "personId": "yang-shangkun",
+      "title": "国家主席",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1988,
+        "month": 4,
+        "abs": 23859,
+        "day": 8
+      },
+      "end": {
+        "year": 1993,
+        "month": 3,
+        "abs": 23918,
+        "day": 27
+      },
+      "startAbs": 23859,
+      "endAbs": 23918,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-jiang-zemin-prc",
+      "dynastyId": "prc",
+      "personId": "jiang-zemin",
+      "title": "国家主席",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1993,
+        "month": 3,
+        "abs": 23918,
+        "day": 27
+      },
+      "end": {
+        "year": 2003,
+        "month": 3,
+        "abs": 24038,
+        "day": 15
+      },
+      "startAbs": 23918,
+      "endAbs": 24038,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-hu-jintao-prc",
+      "dynastyId": "prc",
+      "personId": "hu-jintao",
+      "title": "国家主席",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 2003,
+        "month": 3,
+        "abs": 24038,
+        "day": 15
+      },
+      "end": {
+        "year": 2013,
+        "month": 3,
+        "abs": 24158,
+        "day": 14
+      },
+      "startAbs": 24038,
+      "endAbs": 24158,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-xi-jinping-prc",
+      "dynastyId": "prc",
+      "personId": "xi-jinping",
+      "title": "国家主席",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 2013,
+        "month": 3,
+        "abs": 24158,
+        "day": 14
+      },
+      "end": null,
+      "startAbs": 24158,
+      "endAbs": 24320,
+      "precision": "month",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-song-qingling-dong-biwu-prc",
+      "dynastyId": "prc",
+      "personId": "song-qingling-dong-biwu",
+      "title": "国家副主席共同代行国家主席职权",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1968,
+        "month": 10,
+        "abs": 23625,
+        "day": 31
+      },
+      "end": {
+        "year": 1972,
+        "month": 2,
+        "abs": 23665,
+        "day": 24
+      },
+      "startAbs": 23625,
+      "endAbs": 23665,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": true
+    }
+  ],
+  "events": [
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "precision": "month",
+      "dynastyIds": [
+        "prc"
+      ],
+      "participantIds": [
+        "mao-zedong",
+        "zhou-enlai",
+        "peng-dehuai"
+      ],
+      "id": "korean-war",
+      "name": "抗美援朝",
+      "dateNote": "1950年10月志愿军入朝，至1953年7月朝鲜停战协定签字",
+      "start": {
+        "year": 1950,
+        "month": 10,
+        "abs": 23409
+      },
+      "end": {
+        "year": 1953,
+        "month": 7,
+        "abs": 23442
+      },
+      "summary": "中国人民志愿军入朝作战，1953年7月签订停战协定。",
+      "startAbs": 23409,
+      "endAbs": 23442
+    },
+    {
+      "kind": "politics",
+      "timeMode": "span",
+      "precision": "year",
+      "dynastyIds": [
+        "prc"
+      ],
+      "participantIds": [
+        "mao-zedong"
+      ],
+      "id": "great-leap-forward",
+      "name": "大跃进",
+      "dateNote": "1958年八大二次会议提出总路线，至1961年国民经济调整",
+      "start": {
+        "year": 1958,
+        "month": 1,
+        "abs": 23496
+      },
+      "end": {
+        "year": 1961,
+        "month": 12,
+        "abs": 23543
+      },
+      "summary": "以钢为纲的跃进运动与人民公社化，随后出现三年困难，国民经济被迫调整。",
+      "startAbs": 23496,
+      "endAbs": 23543
+    },
+    {
+      "kind": "politics",
+      "timeMode": "span",
+      "precision": "month",
+      "dynastyIds": [
+        "prc"
+      ],
+      "participantIds": [
+        "mao-zedong",
+        "liu-shaoqi",
+        "lin-biao",
+        "jiang-qing",
+        "zhou-enlai"
+      ],
+      "id": "cultural-revolution",
+      "name": "文化大革命",
+      "dateNote": "1966年5月「五一六通知」至1976年10月粉碎「四人帮」",
+      "start": {
+        "year": 1966,
+        "month": 5,
+        "abs": 23596
+      },
+      "end": {
+        "year": 1976,
+        "month": 10,
+        "abs": 23721
+      },
+      "summary": "长达十年的政治运动，党和国家领导层与社会秩序受到严重冲击，至粉碎「四人帮」结束。",
+      "startAbs": 23596,
+      "endAbs": 23721
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "day",
+      "dynastyIds": [
+        "prc"
+      ],
+      "participantIds": [
+        "lin-biao",
+        "mao-zedong"
+      ],
+      "id": "lin-biao-incident",
+      "name": "九一三事件",
+      "dateNote": "1971年9月13日，林彪乘机出逃，坠于蒙古温都尔汗",
+      "at": {
+        "year": 1971,
+        "month": 9,
+        "abs": 23660
+      },
+      "summary": "林彪乘机出逃坠亡，接班人安排破裂。",
+      "atAbs": 23660
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "day",
+      "dynastyIds": [
+        "prc"
+      ],
+      "participantIds": [
+        "hua-guofeng",
+        "jiang-qing",
+        "ye-jianying"
+      ],
+      "id": "gang-of-four-arrested",
+      "name": "粉碎「四人帮」",
+      "dateNote": "1976年10月6日，华国锋、叶剑英等在怀仁堂拘禁江青等",
+      "at": {
+        "year": 1976,
+        "month": 10,
+        "abs": 23721
+      },
+      "summary": "江青、张春桥、姚文元、王洪文被隔离审查，文化大革命结束。",
+      "atAbs": 23721
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "day",
+      "dynastyIds": [
+        "prc"
+      ],
+      "participantIds": [
+        "deng-xiaoping",
+        "hua-guofeng"
+      ],
+      "id": "third-plenum-1978",
+      "name": "十一届三中全会",
+      "dateNote": "1978年12月18日至22日",
+      "at": {
+        "year": 1978,
+        "month": 12,
+        "abs": 23747
+      },
+      "summary": "决定把工作重点转到社会主义现代化建设，改革开放起步。",
+      "atAbs": 23747
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "prc"
+      ],
+      "participantIds": [
+        "deng-xiaoping"
+      ],
+      "id": "deng-southern-tour",
+      "name": "邓小平南巡",
+      "dateNote": "1992年1–2月视察武昌、深圳、珠海、上海",
+      "at": {
+        "year": 1992,
+        "month": 1,
+        "abs": 23904
+      },
+      "summary": "邓小平南方谈话推动新一轮改革开放。",
+      "atAbs": 23904
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "day",
+      "dynastyIds": [
+        "prc"
+      ],
+      "participantIds": [
+        "jiang-zemin"
+      ],
+      "id": "hong-kong-handover",
+      "name": "香港回归",
+      "dateNote": "1997年7月1日，中华人民共和国对香港恢复行使主权",
+      "at": {
+        "year": 1997,
+        "month": 7,
+        "abs": 23970
+      },
+      "summary": "香港特别行政区成立，英国结束对香港的管治。",
+      "atAbs": 23970
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "day",
+      "dynastyIds": [
+        "prc"
+      ],
+      "participantIds": [
+        "jiang-zemin"
+      ],
+      "id": "macau-handover",
+      "name": "澳门回归",
+      "dateNote": "1999年12月20日，中华人民共和国对澳门恢复行使主权",
+      "at": {
+        "year": 1999,
+        "month": 12,
+        "abs": 23999
+      },
+      "summary": "澳门特别行政区成立，葡萄牙结束对澳门的管治。",
+      "atAbs": 23999
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "day",
+      "dynastyIds": [
+        "prc"
+      ],
+      "participantIds": [
+        "jiang-zemin"
+      ],
+      "id": "china-joins-wto",
+      "name": "加入世界贸易组织",
+      "dateNote": "2001年12月11日正式成为世界贸易组织成员",
+      "at": {
+        "year": 2001,
+        "month": 12,
+        "abs": 24023
+      },
+      "summary": "中国加入世界贸易组织，对外开放进入新阶段。",
+      "atAbs": 24023
+    },
+    {
+      "kind": "culture",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "prc"
+      ],
+      "participantIds": [
+        "hu-jintao"
+      ],
+      "id": "beijing-olympics-2008",
+      "name": "北京奥运会",
+      "dateNote": "2008年8月8日至24日",
+      "at": {
+        "year": 2008,
+        "month": 8,
+        "abs": 24103
+      },
+      "summary": "第二十九届夏季奥林匹克运动会在北京举行。",
+      "atAbs": 24103
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "prc"
+      ],
+      "participantIds": [
+        "hu-jintao",
+        "xi-jinping"
+      ],
+      "id": "eighteenth-party-congress",
+      "name": "中共十八大",
+      "dateNote": "2012年11月8日至14日，15日十八届一中全会选举习近平为总书记",
+      "at": {
+        "year": 2012,
+        "month": 11,
+        "abs": 24154
+      },
+      "summary": "胡锦涛卸任总书记，习近平当选中共中央总书记、中央军委主席。国家主席至2013年3月交接。",
+      "atAbs": 24154
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-mao-zedong-liu-shaoqi-succession",
+      "fromRef": "person:mao-zedong",
+      "toRef": "person:liu-shaoqi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-npc-standing-committee-li-xiannian-succession",
+      "fromRef": "person:npc-standing-committee",
+      "toRef": "person:li-xiannian",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-xiannian-yang-shangkun-succession",
+      "fromRef": "person:li-xiannian",
+      "toRef": "person:yang-shangkun",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yang-shangkun-jiang-zemin-succession",
+      "fromRef": "person:yang-shangkun",
+      "toRef": "person:jiang-zemin",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-jiang-zemin-hu-jintao-succession",
+      "fromRef": "person:jiang-zemin",
+      "toRef": "person:hu-jintao",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-hu-jintao-xi-jinping-succession",
+      "fromRef": "person:hu-jintao",
+      "toRef": "person:xi-jinping",
+      "kind": "succession"
+    }
+  ],
+  "supplementalEventDynasties": [
+    {
+      "eventId": "civil-war",
+      "dynastyId": "prc"
+    }
+  ],
+  "supplementalEventParticipants": [],
+  "preSql": "DELETE FROM reigns WHERE dynasty_id IN ('prc') AND person_id = 'system-missing-ruler';\nDELETE FROM reigns WHERE id IN ('reign-hua-guofeng-prc', 'reign-deng-xiaoping-prc', 'reign-song-qingling-prc', 'reign-dong-biwu-prc-vice');\nDELETE FROM relations WHERE id IN ('rel-mao-zedong-hua-guofeng-succession', 'rel-hua-guofeng-deng-xiaoping-succession', 'rel-deng-xiaoping-jiang-zemin-succession');",
+  "manifest": {
+    "slug": "prc",
+    "title": "中华人民共和国",
+    "window": {
+      "startYear": 1949,
+      "startMonth": 10,
+      "endYear": 2026,
+      "endMonth": 9
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-09-26",
+    "counts": {
+      "persons": 21,
+      "dynasties": 1,
+      "reigns": 11,
+      "events": 12,
+      "relations": 6,
+      "supplementalEventDynastyLinks": 1
+    },
+    "sources": [
+      {
+        "label": "中华人民共和国国家元首列表",
+        "url": "https://zh.wikipedia.org/wiki/中华人民共和国国家元首列表"
+      },
+      {
+        "label": "中华人民共和国主席",
+        "url": "https://zh.wikipedia.org/wiki/中华人民共和国主席"
+      },
+      {
+        "label": "全国人民代表大会常务委员会",
+        "url": "https://zh.wikipedia.org/wiki/全国人民代表大会常务委员会"
+      },
+      {
+        "label": "中华人民共和国",
+        "url": "https://zh.wikipedia.org/wiki/中华人民共和国"
+      },
+      {
+        "label": "中华人民共和国历史",
+        "url": "https://zh.wikipedia.org/wiki/中华人民共和国历史"
+      },
+      {
+        "label": "抗美援朝",
+        "url": "https://zh.wikipedia.org/wiki/抗美援朝"
+      },
+      {
+        "label": "文化大革命",
+        "url": "https://zh.wikipedia.org/wiki/文化大革命"
+      },
+      {
+        "label": "中国共产党第十一届中央委员会第三次全体会议",
+        "url": "https://zh.wikipedia.org/wiki/中国共产党第十一届中央委员会第三次全体会议"
+      }
+    ],
+    "notes": [
+      "覆盖中华人民共和国（1949-10–2026-09），单行 prc 王朝。正统自开国日起算；民国金色已截于 1949-09。",
+      "主线按维基百科「中华人民共和国国家元首列表」：中央人民政府主席、国家主席、国家副主席代行、国家代主席、废除主席期间的全国人大常委会。中共中央总书记、中央军委主席不建 reign。邓小平从未任国家主席，只作 person。",
+      "毛泽东分两段：1949-10-01 中央人民政府主席至 1954-09-27；同日当选国家主席至 1959-04-27。宪法改职称，比照民国国民政府主席/总统分卡。刘少奇 1959-04-27 至 1968-10-31。",
+      "1968-10-31 至 1972-02-24 宋庆龄、董必武以国家副主席共同代行主席职权，合并为一个联合主体卡片；两人的独立人物记录仍保留。董必武 1972-02-24 起以国家代主席名义行职权，至 1975-01-17。",
+      "1975-01-17 至 1983-06-18 宪法不设国家主席，全国人大常委会集体行使元首职权，建机构卡；委员长朱德、叶剑英不另建主席卡。宋庆龄名誉主席（1981）为荣誉称号，不建 reign。",
+      "李先念 1983-06-18 复设后首任，杨尚昆、江泽民、胡锦涛、习近平接任。连任不拆卡。",
+      "华国锋、胡耀邦、赵紫阳只建 persons。国民政府迁台并非投降、禅让或被俘，不画跨朝命运线。国共内战事件 civil-war 补挂 prc。"
+    ]
+  }
+}

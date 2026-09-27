@@ -1,9 +1,5 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
-import { finalizeImportReigns } from "./missingReigns.mjs";
-import { PERSON_TITLE_SELECTIONS } from "./personTitleSelections.mjs";
-import { resolveReignTitle } from "./reignTitleSelections.mjs";
-import { resolveImportedReignIsMain } from "./mainReignIds.mjs";
 
 export function toAstroYear(year) {
   return year > 0 ? year : year + 1;
@@ -29,6 +25,7 @@ export function sqlJson(value) {
   if (value == null) return "NULL";
   return `${sqlStr(JSON.stringify(value))}::jsonb`;
 }
+
 export function ym(year, month = 1) {
   return { year, month, abs: absMonth(year, month) };
 }
@@ -168,37 +165,6 @@ export function dr(dynastyId, personId, title, posthumous, temple, sy, ey, eraLi
   );
 }
 
-/** Move reign-level 庙谥 onto person rows before SQL export. */
-export function mergeAppellationsIntoPersons(persons, reigns) {
-  const personMap = new Map(persons.map((p) => [p.id, { ...p, posthumousNames: [...(p.posthumousNames ?? [])], templeNames: [...(p.templeNames ?? [])] }]));
-  for (const reign of reigns) {
-    const person = personMap.get(reign.personId);
-    if (!person) continue;
-    if (reign.posthumousName && !person.posthumousNames.includes(reign.posthumousName)) {
-      person.posthumousNames.push(reign.posthumousName);
-    }
-    if (reign.templeName && !person.templeNames.includes(reign.templeName)) {
-      person.templeNames.push(reign.templeName);
-    }
-  }
-  const lastReignByPerson = new Map();
-  for (const reign of reigns) {
-    const current = lastReignByPerson.get(reign.personId);
-    if (!current || reign.startAbs > current.startAbs || (reign.startAbs === current.startAbs && (reign.endAbs > current.endAbs || (reign.endAbs === current.endAbs && reign.id.localeCompare(current.id) > 0)))) {
-      lastReignByPerson.set(reign.personId, reign);
-    }
-  }
-  for (const person of personMap.values()) {
-    person.title = PERSON_TITLE_SELECTIONS[person.id] ?? lastReignByPerson.get(person.id)?.title ?? person.title ?? null;
-  }
-  return {
-    persons: [...personMap.values()],
-    reigns: reigns.map((r) => ({
-      ...r,
-      eraNames: normalizeEraNameList(r.eraNames),
-    })),
-  };
-}
 
 export function eventPoint(partial) {
   const precision = partial.precision ?? "year";
@@ -284,7 +250,7 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_na
 }
 
 export function reignSql(r) {
-  const isMain = resolveImportedReignIsMain(r);
+  const isMain = r.isMain;
   const claimCols =
     r.claimTrack != null || r.claimLabel != null || r.claimRole != null
       ? ", claim_track, claim_label, claim_role"
@@ -304,12 +270,12 @@ export function reignSql(r) {
   const mainVal = isMain != null ? `, ${isMain}` : "";
   const mainUpdate = isMain != null ? ", is_main = EXCLUDED.is_main" : "";
   return `INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence${claimCols}${informalCol}${mainCol})
-VALUES (${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(resolveReignTitle(r))}, ${sqlStr(formatAppellationCsv(r.eraNames))}, ${r.start.year}, ${r.start.month}, ${r.start.day ?? "NULL"}, ${r.end?.year ?? "NULL"}, ${r.end?.month ?? "NULL"}, ${r.end?.day ?? "NULL"}, ${r.startAbs}, ${r.endAbs ?? "NULL"}, ${sqlStr(r.precision)}, ${sqlStr(r.startDateConfidence ?? null)}, ${sqlStr(r.endDateConfidence ?? null)}${claimVals}${informalVal}${mainVal})
+VALUES (${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(r.title ?? null)}, ${sqlStr(formatAppellationCsv(r.eraNames))}, ${r.start.year}, ${r.start.month}, ${r.start.day ?? "NULL"}, ${r.end?.year ?? "NULL"}, ${r.end?.month ?? "NULL"}, ${r.end?.day ?? "NULL"}, ${r.startAbs}, ${r.endAbs ?? "NULL"}, ${sqlStr(r.precision)}, ${sqlStr(r.startDateConfidence ?? null)}, ${sqlStr(r.endDateConfidence ?? null)}${claimVals}${informalVal}${mainVal})
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence${claimUpdates}${informalUpdate}${mainUpdate};`;
 }
 
 export function eventSql(e) {
-  const at = normalizeYearPrecisionAt(e.at, e.precision ?? "year");
+  const at = e.at;
   const cols = ["id", "name", "kind", "time_mode", "precision", "is_approximate", "date_note", "at_year", "at_month", "at_day", "at_abs", "start_year", "start_month", "start_day", "start_abs", "end_year", "end_month", "end_day", "end_abs", "summary", "meaning", "content", "location_id"];
   const vals = [sqlStr(e.id), sqlStr(e.name), sqlStr(e.kind), sqlStr(e.timeMode), sqlStr(e.precision), e.isApproximate ? "TRUE" : "FALSE", sqlStr(e.dateNote ?? null), at?.year ?? "NULL", at?.month ?? "NULL", at?.day ?? "NULL", at?.abs ?? e.atAbs ?? "NULL", e.start?.year ?? "NULL", e.start?.month ?? "NULL", e.start?.day ?? "NULL", e.startAbs ?? "NULL", e.end?.year ?? "NULL", e.end?.month ?? "NULL", e.end?.day ?? "NULL", e.endAbs ?? "NULL", sqlStr(e.summary ?? null), sqlStr(e.meaning ?? null), sqlStr(e.content ?? null), sqlStr(e.locationId ?? null)];
   return `INSERT INTO events (${cols.join(", ")}) VALUES (${vals.join(", ")})
@@ -339,13 +305,27 @@ VALUES (${sqlStr(c.id)}, ${sqlStr(c.dynastyId)}, ${sqlStr(c.historicalName)}, ${
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, end_precision = EXCLUDED.end_precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence, role = EXCLUDED.role, claim_track = EXCLUDED.claim_track, note = EXCLUDED.note, links = EXCLUDED.links;`;
 }
 
-export function writeImportPackage(dir, { slug, window, persons, dynastyGroups = [], dynasties, capitals = [], reignGroups, reigns, events, relations, supplementalEventDynasties = [], supplementalEventParticipants = [], preSql = "", missingReigns = [], manifest }) {
-  const finalized = finalizeImportReigns(slug, persons, reigns, missingReigns);
-  persons = finalized.persons;
-  reigns = finalized.reigns;
-  missingReigns = finalized.missingReigns;
-
-  ({ persons, reigns } = mergeAppellationsIntoPersons(persons, reigns));
+/** Write a cache of already-resolved records without applying data-specific transformations. */
+export function writePreparedImportPackage(dir, {
+  slug,
+  window = { startYear: 9999, startMonth: 1, endYear: 9999, endMonth: 12 },
+  persons = [],
+  dynastyGroups = [],
+  dynastyLaneGroups = [],
+  dynasties = [],
+  capitals = [],
+  reigns = [],
+  reignCapitals = [],
+  events = [],
+  eventLocations = [],
+  updates = [],
+  relations = [],
+  supplementalEventDynasties = [],
+  supplementalEventParticipants = [],
+  preSql = "",
+  postSql = "",
+  manifest,
+}) {
 
   const eventDynastySql = events.flatMap((e) => e.dynastyIds.map((d) => `INSERT INTO event_dynasties (event_id, dynasty_id) VALUES (${sqlStr(e.id)}, ${sqlStr(d)}) ON CONFLICT DO NOTHING;`));
   const supplementalEventDynastySql = supplementalEventDynasties.map(
@@ -361,15 +341,24 @@ export function writeImportPackage(dir, { slug, window, persons, dynastyGroups =
     `-- Window: ${window.startYear}-${String(window.startMonth).padStart(2, "0")} .. ${window.endYear}-${String(window.endMonth).padStart(2, "0")}`,
     "BEGIN;",
     ...(preSql ? ["", "-- cleanup", preSql] : []),
-    "", "-- persons", ...persons.map(personSql),
+    ...(persons.length ? ["", "-- persons", ...persons.map(personSql)] : []),
     ...(dynastyGroups.length ? ["", "-- dynasty_groups", ...dynastyGroups.map(dynastyGroupSql)] : []),
-    "", "-- dynasties", ...dynasties.map(dynastySql),
+    ...(dynasties.length ? ["", "-- dynasties", ...dynasties.map(dynastySql)] : []),
     ...(capitals.length ? ["", "-- dynasty_capitals", ...capitals.map(dynastyCapitalSql)] : []),
-    "", "-- reigns", ...reigns.map(reignSql),
-    "", "-- events", ...events.map(eventSql),
-    "", "-- event_dynasties", ...eventDynastySql, ...supplementalEventDynastySql,
-    "", "-- event_participants", ...eventParticipantSql, ...supplementalEventParticipantSql,
-    "", "-- relations", ...relations.map(relationSql),
+    ...(dynastyLaneGroups.length ? ["", "-- dynasty_lane_groups", ...dynastyLaneGroups.map(dynastyLaneGroupSql)] : []),
+    ...(reigns.length ? ["", "-- reigns", ...reigns.map(reignSql)] : []),
+    ...(reignCapitals.length ? ["", "-- reign_capitals", ...reignCapitals.map(({ reignId, capitalId }) => `INSERT INTO reign_capitals (reign_id, capital_id) VALUES (${sqlStr(reignId)}, ${sqlStr(capitalId)}) ON CONFLICT DO NOTHING;`)] : []),
+    ...(events.length ? ["", "-- events", ...events.map(eventSql)] : []),
+    ...(eventDynastySql.length || supplementalEventDynastySql.length ? ["", "-- event_dynasties", ...eventDynastySql, ...supplementalEventDynastySql] : []),
+    ...(eventParticipantSql.length || supplementalEventParticipantSql.length ? ["", "-- event_participants", ...eventParticipantSql, ...supplementalEventParticipantSql] : []),
+    ...(relations.length ? ["", "-- relations", ...relations.map(relationSql)] : []),
+    ...(eventLocations.length ? ["", "-- event_locations", ...eventLocations.flatMap((location) => [eventLocationSql(location), `UPDATE events SET location_id = ${sqlStr(location.id)} WHERE id = ${sqlStr(location.eventId)};`])] : []),
+    ...(updates.length ? ["", "-- updates", ...updates.map((update) => {
+      const allowed = { persons: new Set(["bio"]), dynasties: new Set(["note"]) };
+      if (!allowed[update.table]?.has(update.column)) throw new Error(`Unsupported cached update: ${update.table}.${update.column}`);
+      return `UPDATE ${update.table} SET ${update.column} = ${sqlStr(update.value)} WHERE id = ${sqlStr(update.id)};`;
+    })] : []),
+    ...(postSql ? ["", postSql] : []),
     "", "COMMIT;", "",
   ].join("\n");
 
@@ -377,6 +366,6 @@ export function writeImportPackage(dir, { slug, window, persons, dynastyGroups =
   writeFileSync(path.join(dir, "import.sql"), sql);
   writeFileSync(path.join(dir, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);
   console.log(
-    `[${slug}] ${persons.length} persons, ${dynasties.length} dynasties, ${reigns.length} reigns (${missingReigns.length} missing), ${events.length} events`,
+    `[${slug}] ${persons.length} persons, ${dynasties.length} dynasties, ${reigns.length} reigns, ${events.length} events`,
   );
 }

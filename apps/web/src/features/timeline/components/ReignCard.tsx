@@ -23,12 +23,11 @@ import {
   shouldShowReignCardMeta,
 } from "../model/lod";
 import {
-  STACK_ROW_HEIGHT,
   type PreparedReignGeometry,
 } from "../model/reignClusters";
 import { selectionStore } from "../state/selectionStore";
 import { viewportStore } from "../state/viewportStore";
-import { HoverTooltip } from "./HoverTooltip";
+import { InfoPopover } from "./InfoPopover";
 import { ReignWavyEdge } from "./ReignWavyEdge";
 import styles from "./ReignCard.module.css";
 
@@ -50,6 +49,7 @@ type Props = {
   master?: boolean;
   geometry: PreparedReignGeometry;
   pxPerMonth: number;
+  rowHeight: number;
 };
 
 function ReignCardImpl({
@@ -61,10 +61,11 @@ function ReignCardImpl({
   master = false,
   geometry,
   pxPerMonth,
+  rowHeight,
 }: Props) {
   const selection = useSelection();
   const { unitTop, unitHeight, stackIndex, rowCount, overlapsLowerRow } = geometry;
-  const compactStack = unitHeight < STACK_ROW_HEIGHT;
+  const compactStack = unitHeight < rowHeight;
   const captionPlacement = resolveReignCaptionPlacement({
     stackIndex,
     rowCount,
@@ -99,11 +100,11 @@ function ReignCardImpl({
     const clan = buildPreQinClanContext(personClan);
     const label = resolveReignCardLabel(reign, personName, { cardWidthPx: visualWidth, clan });
     const labelLength = [...label].length;
-    const barLayout = resolveReignBarLayout(visualWidth, labelLength);
+    const barLayout = resolveReignBarLayout(visualWidth, labelLength, unitHeight);
     const detail = barLayout.captionBelow ? "below" : barLayout.textLayout.level;
     const parallel = isParallelClaim(reign);
     const meta = resolveReignCardMeta(reign, personName, clan);
-    const showMeta = shouldShowReignCardMeta(barLayout.barWidthPx, labelLength, meta ? [...meta.name].length : 0);
+    const showMeta = shouldShowReignCardMeta(barLayout.barWidthPx, labelLength, meta ? [...meta.name].length : 0, unitHeight);
     const givenName = resolveReignCardGivenName(reign, personName, clan);
     const regionLabel = resolveRocReignRegionLabel(reign, dynasty.name);
     const tooltipName = givenName && givenName !== label
@@ -123,7 +124,7 @@ function ReignCardImpl({
       claimTooltip,
     });
     return { label, barLayout, detail, parallel, meta, showMeta, regionLabel, claimTooltip, tooltipText };
-  }, [reign, personName, personClan, dynasty.name, visualWidth, uncertainStart, uncertainEnd]);
+  }, [reign, personName, personClan, dynasty.name, visualWidth, uncertainStart, uncertainEnd, unitHeight]);
   const left = barLayout.centerOnAnchor
     ? anchor * pxPerMonth - barLayout.unitWidthPx / 2
     : geometry.visualStart * pxPerMonth;
@@ -178,7 +179,7 @@ function ReignCardImpl({
         style={{ ["--card-color" as string]: color }}
       >
         {uncertainStart && <ReignWavyEdge side="left" />}
-        <HoverTooltip text={tooltipText}>
+        <InfoPopover text={tooltipText}>
           {(handlers) => (
             <button
               type="button"
@@ -194,11 +195,8 @@ function ReignCardImpl({
                       left: seamInsetLeft,
                       right: seamInsetRight,
                     }),
-                ...(detail === "wrap"
-                  ? {
-                      ["--card-name-size" as string]: `${barLayout.textLayout.nameFontPx}px`,
-                    }
-                  : {}),
+                ["--card-name-size" as string]: `${barLayout.textLayout.nameFontPx}px`,
+                ["--card-meta-size" as string]: `${barLayout.textLayout.metaFontPx}px`,
               }}
               onClick={selectReign}
               aria-label={
@@ -216,7 +214,7 @@ function ReignCardImpl({
               )}
             </button>
           )}
-        </HoverTooltip>
+        </InfoPopover>
         {uncertainEnd && <ReignWavyEdge side="right" />}
       </div>
       {detail === "below" && (

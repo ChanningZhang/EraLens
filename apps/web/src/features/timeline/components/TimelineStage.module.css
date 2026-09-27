@@ -6,7 +6,12 @@
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: none;
-  touch-action: pan-y;
+  /* Touch gestures are routed through the stage so horizontal timeline panning
+     also works when the gesture starts on an interactive lane card. */
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
   background: var(--color-paper);
   contain: layout paint style;
 }
@@ -60,19 +65,21 @@
   left: calc(var(--timeline-gutter) + 14px);
   bottom: 14px;
   display: grid;
-  width: 38px;
+  width: 46px;
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--color-ochre) 24%, var(--color-border));
   border-radius: 12px;
+  background: var(--color-surface);
   background: color-mix(in srgb, var(--color-surface) 92%, transparent);
   box-shadow: 0 4px 14px color-mix(in srgb, var(--color-ink) 14%, transparent), inset 0 1px 0 white;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   pointer-events: auto;
 }
 
 .mapControls button {
-  width: 36px;
-  height: 34px;
+  width: 44px;
+  min-height: 44px;
   border: 0;
   background: transparent;
   color: var(--color-ink);
@@ -145,6 +152,48 @@
     10px 0 24px color-mix(in srgb, var(--color-ochre) 10%, transparent);
 }
 
+.eventExpandButton {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  display: grid;
+  width: 40px;
+  height: 14px;
+  place-items: center;
+  border: 1px solid color-mix(in srgb, var(--color-ochre) 24%, var(--color-border));
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-surface) 96%, transparent);
+  color: color-mix(in srgb, var(--color-ink-secondary) 78%, var(--color-ochre));
+  box-shadow: 0 1px 4px color-mix(in srgb, var(--color-ink) 12%, transparent), inset 0 1px 0 white;
+  cursor: pointer;
+  pointer-events: auto;
+  transform: translateX(-50%);
+  transition: border-color var(--motion-fast), color var(--motion-fast), box-shadow var(--motion-fast), background var(--motion-fast);
+}
+
+.eventExpandButton:hover {
+  border-color: color-mix(in srgb, var(--color-ochre) 52%, var(--color-border));
+  background: var(--color-surface);
+  color: var(--color-ochre);
+  box-shadow: 0 2px 7px color-mix(in srgb, var(--color-ink) 16%, transparent), inset 0 1px 0 white;
+}
+
+.eventExpandButton svg {
+  display: block;
+  width: 10px;
+  height: 6px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+}
+
+.eventExpandButton:focus-visible {
+  outline: 2px solid var(--color-ochre);
+  outline-offset: 2px;
+}
+
 .content {
   position: relative;
   z-index: 2;
@@ -180,3 +229,7 @@
   font-size: 14px;
   color: var(--color-ink-muted);
 }
+
+:global([data-narrow="true"]) .empty { padding: 16px; text-align: center; }
+:global([data-narrow="true"]) .emptyHint { font-size: 12px; overflow-wrap: anywhere; }
+:global([data-narrow="true"]) .mapControls { left: calc(var(--timeline-gutter) + 8px); bottom: 8px; }

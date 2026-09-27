@@ -1,5 +1,7 @@
 import type { EntityRef } from "@eralens/shared";
-import { encodeYearMonthParam, parseYearMonthParam, type AbsMonth } from "@eralens/shared";
+import type { AbsMonth } from "@eralens/shared";
+import { readSelectionUrlState, writeSelectionUrlState } from "./selectionUrlState";
+import { loadDetailWidth, saveDetailWidth } from "./userSettings";
 
 export type SelectionState = {
   selected: EntityRef | null;
@@ -23,89 +25,32 @@ type SelectOptions = {
   focusReignId?: string | null;
 };
 
-const DETAIL_WIDTH_KEY = "eralens.detailWidth";
 const DEFAULT_WIDTH = 360;
 const MIN_WIDTH = 360;
 const MAX_WIDTH = 640;
 
-function readStoredWidth(): number {
-  const raw = localStorage.getItem(DETAIL_WIDTH_KEY);
-  const parsed = raw ? Number(raw) : DEFAULT_WIDTH;
-  if (Number.isFinite(parsed)) {
-    return Math.min(MAX_WIDTH, Math.max(MIN_WIDTH, parsed));
-  }
-  return DEFAULT_WIDTH;
-}
+function syncUrl(state: SelectionState, centerAbs?: AbsMonth) { writeSelectionUrlState(state, centerAbs); }
 
-function parseUrlState(): Partial<SelectionState> {
-  const params = new URLSearchParams(window.location.search);
-  const sel = params.get("sel");
-  const w = params.get("w");
-  const y = params.get("y");
-  const focusReign = params.get("r");
-  const next: Partial<SelectionState> = {};
-  if (sel) {
-    const [type, ...rest] = sel.split(":");
-    const id = rest.join(":");
-    if (
-      type === "dynasty" ||
-      type === "reign" ||
-      type === "person" ||
-      type === "event" ||
-      type === "capital"
-    ) {
-      next.selected = { type, id };
-      next.detailOpen = true;
-    }
-  }
-  if (w) {
-    const width = Number(w);
-    if (Number.isFinite(width)) next.detailWidth = width;
-  }
-  if (y) {
-    const abs = parseYearMonthParam(y);
-    if (abs !== null) next.highlightAbs = abs;
-  }
-  if (focusReign) {
-    next.focusReignId = focusReign;
-  } else if (next.selected?.type === "reign") {
-    next.focusReignId = next.selected.id;
-  }
-  return next;
-}
-
-function syncUrl(state: SelectionState, centerAbs?: AbsMonth) {
-  const params = new URLSearchParams(window.location.search);
-  if (state.selected && state.detailOpen) {
-    params.set("sel", `${state.selected.type}:${state.selected.id}`);
-    params.set("w", String(Math.round(state.detailWidth)));
-  } else {
-    params.delete("sel");
-    params.delete("w");
-  }
-  if (state.focusReignId) {
-    params.set("r", state.focusReignId);
-  } else {
-    params.delete("r");
-  }
-  if (centerAbs !== undefined) {
-    params.set("y", encodeYearMonthParam(centerAbs));
-  }
-  const next = `${window.location.pathname}?${params.toString()}`;
-  window.history.replaceState(null, "", next);
-}
-
+const initialUrlState = readSelectionUrlState();
 let state: SelectionState = {
   selected: null,
   detailOpen: false,
-  detailWidth: readStoredWidth(),
+  detailWidth: DEFAULT_WIDTH,
   highlightAbs: null,
   focusReignId: null,
   detailHistory: [],
-  ...parseUrlState(),
+  ...initialUrlState,
 };
 
 const listeners = new Set<SelectionListener>();
+
+if (initialUrlState.detailWidth === undefined) {
+  void loadDetailWidth().then((width) => {
+    if (width == null) return;
+    state = { ...state, detailWidth: Math.min(MAX_WIDTH, Math.max(MIN_WIDTH, width)) };
+    notify();
+  }).catch(() => { /* Default width remains available if settings cannot be read. */ });
+}
 
 function notify() {
   for (const listener of listeners) {
@@ -222,7 +167,7 @@ export const selectionStore = {
   setDetailWidth(width: number) {
     const clamped = Math.min(MAX_WIDTH, Math.max(MIN_WIDTH, width));
     state = { ...state, detailWidth: clamped };
-    localStorage.setItem(DETAIL_WIDTH_KEY, String(clamped));
+    void saveDetailWidth(clamped);
     syncUrl(state);
     notify();
   },

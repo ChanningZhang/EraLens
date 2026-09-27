@@ -1,8 +1,8 @@
 -- EraLens period import: dynasty-capitals
+-- Window: -2804-01 .. 2026-12
 BEGIN;
-DELETE FROM reign_capitals WHERE reign_id = 'reign-yang-guang' AND capital_id = 'cap-sui-jiangdu-618';
-INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-sima-ye', 'cap-jin-west-changan-313') ON CONFLICT DO NOTHING;
 
+-- cleanup
 -- removed capitals
 DELETE FROM dynasty_capitals WHERE id = 'cap-roc-taibei-23388';
 DELETE FROM dynasty_capitals WHERE id = 'cap-nanzhao-taihecheng-649';

@@ -10,7 +10,7 @@ import {
   TEMPLE_ERA_START_YEAR,
 } from "./appellationPolicy";
 import type { AppellationKind, Reign } from "./schema";
-import { formatReignYearRange } from "./reignVisual";
+import { formatReignDurationLabel, formatReignYearRange } from "./reignVisual";
 
 export {
   MING_QING_START_YEAR,
@@ -289,13 +289,23 @@ export function resolveReignDetailSubtitle(
 }
 
 type ReignDetailFactsFields = ReignAppellationFields &
-  Pick<Reign, "start" | "end" | "eraNames" | "startDateConfidence" | "endDateConfidence">;
+  Pick<
+    Reign,
+    | "end"
+    | "startAbs"
+    | "endAbs"
+    | "precision"
+    | "isOngoing"
+    | "startDateConfidence"
+    | "endDateConfidence"
+  >;
 
 /** Structured facts for reign detail panels. */
 export function resolveReignDetailFacts(
   reign: ReignDetailFactsFields,
   personName?: string | null,
   personContext?: PersonDisplayContext | null,
+  options: { durationLabel?: string | null } = {},
 ): Array<{ label: string; value: string }> {
   const facts = [
     { label: "在位", value: formatReignYearRange(reign) },
@@ -314,6 +324,12 @@ export function resolveReignDetailFacts(
   const eras = eraNameList(reign);
   if (eras.length) {
     facts.push({ label: "年号", value: eras.join("、") });
+  }
+  const duration = options.durationLabel === undefined
+    ? formatReignDurationLabel(reign)
+    : options.durationLabel;
+  if (duration) {
+    facts.push({ label: "在位", value: duration });
   }
   return facts;
 }

@@ -1,0 +1,3343 @@
+{
+  "slug": "qin-han",
+  "window": {
+    "startYear": -221,
+    "startMonth": 1,
+    "endYear": 220,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "ying-zheng",
+      "name": "嬴政",
+      "altNames": [
+        "赵政"
+      ],
+      "birth": {
+        "year": -259,
+        "month": 1,
+        "abs": -3096
+      },
+      "death": {
+        "year": -210,
+        "month": 1,
+        "abs": -2508
+      },
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "秦始皇帝，灭六国统一天下，建立中国首个大一统中央集权帝国。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦始皇"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "秦始皇"
+    },
+    {
+      "id": "ying-huhai",
+      "name": "胡亥",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "秦二世皇帝，赵高矫诏即位，秦政益暴，终致天下反叛。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦二世"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "秦二世"
+    },
+    {
+      "id": "ying-ziying",
+      "name": "子婴",
+      "roles": [
+        "君主"
+      ],
+      "bio": "秦末秦王，赵高废二世后立之，刘邦入关后投降，秦朝终结。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦王子婴"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "秦王子婴"
+    },
+    {
+      "id": "li-si",
+      "name": "李斯",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "秦相，助嬴政统一，推行郡县、书同文，后因赵高陷害被诛。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/李斯"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "chen-sheng",
+      "name": "陈胜",
+      "roles": [
+        "起义领袖"
+      ],
+      "bio": "大泽乡起义领袖，首开秦末农民战争。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/陈胜"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "wu-guang",
+      "name": "吴广",
+      "roles": [
+        "起义领袖"
+      ],
+      "bio": "与陈胜共举大泽乡义旗，后称王于张楚。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/吴广"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "xiang-yu",
+      "name": "项羽",
+      "birth": {
+        "year": -232,
+        "month": 1,
+        "abs": -2772
+      },
+      "death": {
+        "year": -202,
+        "month": 1,
+        "abs": -2412
+      },
+      "roles": [
+        "霸王",
+        "军事家"
+      ],
+      "bio": "西楚霸王，巨鹿破秦军，垓下败于刘邦后自刎。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/项羽"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "西楚霸王"
+    },
+    {
+      "id": "liu-bang",
+      "name": "刘邦",
+      "birth": {
+        "year": -256,
+        "month": 1,
+        "abs": -3060
+      },
+      "death": {
+        "year": -195,
+        "month": 1,
+        "abs": -2328
+      },
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉高祖，楚汉之争胜项羽，建立西汉。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘邦"
+        }
+      ],
+      "posthumousNames": [
+        "高皇帝"
+      ],
+      "templeNames": [
+        "太祖"
+      ],
+      "title": "汉高祖"
+    },
+    {
+      "id": "lv-zhi",
+      "name": "吕雉",
+      "roles": [
+        "皇后",
+        "政治家"
+      ],
+      "bio": "汉高祖皇后，惠帝后临朝称制，史称吕后。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/吕雉"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "xiao-he",
+      "name": "萧何",
+      "birth": {
+        "year": -257,
+        "month": 1,
+        "abs": -3072
+      },
+      "death": {
+        "year": -193,
+        "month": 1,
+        "abs": -2304
+      },
+      "roles": [
+        "政治家"
+      ],
+      "bio": "汉初相国，定都长安、制律令，与韩信、张良并称三杰。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/萧何"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "han-xin",
+      "name": "韩信",
+      "birth": {
+        "year": -231,
+        "month": 1,
+        "abs": -2760
+      },
+      "death": {
+        "year": -196,
+        "month": 1,
+        "abs": -2340
+      },
+      "roles": [
+        "军事家"
+      ],
+      "bio": "汉初大将，破赵燕齐楚，垓下围项羽，后遭诛。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/韩信"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "zhang-liang",
+      "name": "张良",
+      "birth": {
+        "year": -250,
+        "month": 1,
+        "abs": -2988
+      },
+      "death": {
+        "year": -186,
+        "month": 1,
+        "abs": -2220
+      },
+      "roles": [
+        "政治家",
+        "军事家"
+      ],
+      "bio": "汉初谋臣，鸿门宴护刘邦，功成身退。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/张良"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "liu-ying",
+      "name": "刘盈",
+      "birth": {
+        "year": -211,
+        "month": 1,
+        "abs": -2520
+      },
+      "death": {
+        "year": -188,
+        "month": 1,
+        "abs": -2244
+      },
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉惠帝，高祖嫡子，在位推行与民休息。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘盈"
+        }
+      ],
+      "posthumousNames": [
+        "孝惠皇帝"
+      ],
+      "templeNames": [],
+      "title": "汉惠帝"
+    },
+    {
+      "id": "liu-gong",
+      "name": "刘？",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "史称前少帝，惠帝子；史、汉未载其名，为吕后所废杀，汉朝未正式承认。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/西汉前少帝"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "汉前少帝"
+    },
+    {
+      "id": "liu-hong-shao",
+      "name": "刘弘",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "史称后少帝，吕氏所立，文帝即位后被废，汉朝未正式承认。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘弘"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "汉后少帝"
+    },
+    {
+      "id": "liu-heng",
+      "name": "刘恒",
+      "birth": {
+        "year": -203,
+        "month": 1,
+        "abs": -2424
+      },
+      "death": {
+        "year": -157,
+        "month": 1,
+        "abs": -1872
+      },
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉文帝，铲除诸吕后即位，与景帝共创文景之治。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉文帝"
+        }
+      ],
+      "posthumousNames": [
+        "孝文皇帝"
+      ],
+      "templeNames": [
+        "太宗"
+      ],
+      "title": "汉文帝"
+    },
+    {
+      "id": "liu-qi",
+      "name": "刘启",
+      "birth": {
+        "year": -188,
+        "month": 1,
+        "abs": -2244
+      },
+      "death": {
+        "year": -141,
+        "month": 1,
+        "abs": -1680
+      },
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉景帝，平定七国之乱，延续轻徭薄赋。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉景帝"
+        }
+      ],
+      "posthumousNames": [
+        "孝景皇帝"
+      ],
+      "templeNames": [],
+      "title": "汉景帝"
+    },
+    {
+      "id": "liu-che",
+      "name": "刘彻",
+      "birth": {
+        "year": -156,
+        "month": 1,
+        "abs": -1860
+      },
+      "death": {
+        "year": -87,
+        "month": 1,
+        "abs": -1032
+      },
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉武帝，开疆拓土、独尊儒术，西汉国力达于鼎盛。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉武帝"
+        }
+      ],
+      "posthumousNames": [
+        "孝武皇帝"
+      ],
+      "templeNames": [
+        "世宗"
+      ],
+      "title": "汉武帝"
+    },
+    {
+      "id": "liu-fuling",
+      "name": "刘弗陵",
+      "birth": {
+        "year": -94,
+        "month": 1,
+        "abs": -1116
+      },
+      "death": {
+        "year": -74,
+        "month": 1,
+        "abs": -876
+      },
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉昭帝，武帝少子，与宣帝之间史称昭宣之治。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉昭帝"
+        }
+      ],
+      "posthumousNames": [
+        "孝昭皇帝"
+      ],
+      "templeNames": [],
+      "title": "汉昭帝"
+    },
+    {
+      "id": "liu-he",
+      "name": "刘贺",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉废帝，昭帝崩后由霍光等拥立，在位仅二十七日即被废。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘贺"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "汉废帝"
+    },
+    {
+      "id": "liu-xun",
+      "name": "刘询",
+      "birth": {
+        "year": -91,
+        "month": 1,
+        "abs": -1080
+      },
+      "death": {
+        "year": -48,
+        "month": 1,
+        "abs": -564
+      },
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉宣帝，武帝曾孙，中兴汉室，史称昭宣之治。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉宣帝"
+        }
+      ],
+      "posthumousNames": [
+        "孝宣皇帝"
+      ],
+      "templeNames": [],
+      "title": "汉宣帝"
+    },
+    {
+      "id": "liu-shi",
+      "name": "刘奭",
+      "birth": {
+        "year": -75,
+        "month": 1,
+        "abs": -888
+      },
+      "death": {
+        "year": -33,
+        "month": 1,
+        "abs": -384
+      },
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉元帝，昭君出塞在其朝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉元帝"
+        }
+      ],
+      "posthumousNames": [
+        "孝元皇帝"
+      ],
+      "templeNames": [],
+      "title": "汉元帝"
+    },
+    {
+      "id": "liu-ao",
+      "name": "刘骜",
+      "birth": {
+        "year": -51,
+        "month": 1,
+        "abs": -600
+      },
+      "death": {
+        "year": -7,
+        "month": 1,
+        "abs": -72
+      },
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉成帝，外戚王氏势力渐盛。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉成帝"
+        }
+      ],
+      "posthumousNames": [
+        "孝成皇帝"
+      ],
+      "templeNames": [],
+      "title": "汉成帝"
+    },
+    {
+      "id": "liu-xin",
+      "name": "刘欣",
+      "birth": {
+        "year": -27,
+        "month": 1,
+        "abs": -312
+      },
+      "death": {
+        "year": -1,
+        "month": 1,
+        "abs": 0
+      },
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉哀帝，在位短暂，西汉由盛转衰。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉哀帝"
+        }
+      ],
+      "posthumousNames": [
+        "孝哀皇帝"
+      ],
+      "templeNames": [],
+      "title": "汉哀帝"
+    },
+    {
+      "id": "liu-kan",
+      "name": "刘衎",
+      "birth": {
+        "year": -9,
+        "month": 1,
+        "abs": -96
+      },
+      "death": {
+        "year": 6,
+        "month": 1,
+        "abs": 72
+      },
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉平帝，王莽摄政，西汉实亡于其朝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉平帝"
+        }
+      ],
+      "posthumousNames": [
+        "孝平皇帝"
+      ],
+      "templeNames": [],
+      "title": "汉平帝"
+    },
+    {
+      "id": "ruzi-ying",
+      "name": "刘婴",
+      "death": {
+        "year": 24,
+        "month": 1,
+        "abs": 288
+      },
+      "roles": [
+        "君主"
+      ],
+      "bio": "孺子婴，平帝死后王莽立为太子而未正式登基，新莽代汉；更始二年春为刘玄所杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/孺子婴"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "孺子婴"
+    },
+    {
+      "id": "zhang-qian",
+      "name": "张骞",
+      "birth": {
+        "year": -164,
+        "month": 1,
+        "abs": -1956
+      },
+      "death": {
+        "year": -114,
+        "month": 1,
+        "abs": -1356
+      },
+      "roles": [
+        "外交家"
+      ],
+      "bio": "汉武帝时两次出使西域，开辟丝绸之路。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/张骞"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "zhang-han",
+      "name": "章邯",
+      "roles": [
+        "将领"
+      ],
+      "bio": "秦末名将，巨鹿败后降楚，后降汉封雍王。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/章邯"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "xiang-liang",
+      "name": "项梁",
+      "roles": [
+        "起义领袖",
+        "将领"
+      ],
+      "bio": "项羽叔父，会稽起兵反秦，立楚怀王，战死于定陶。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/项梁"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "wei-bao",
+      "name": "魏豹",
+      "roles": [
+        "诸侯"
+      ],
+      "bio": "魏王豹，秦末复立魏国，楚汉间反复，终为韩信所灭。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/魏王豹"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "wei-qing",
+      "name": "卫青",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "汉武帝时大将，屡破匈奴，封大将军。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫青"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "huo-qubing",
+      "name": "霍去病",
+      "birth": {
+        "year": -140,
+        "month": 1,
+        "abs": -1668
+      },
+      "death": {
+        "year": -117,
+        "month": 1,
+        "abs": -1392
+      },
+      "roles": [
+        "军事家"
+      ],
+      "bio": "汉武帝时名将，河西、漠北连破匈奴，封冠军侯。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/霍去病"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "wang-mang",
+      "name": "王莽",
+      "birth": {
+        "year": -45,
+        "month": 1,
+        "abs": -528
+      },
+      "death": {
+        "year": 23,
+        "month": 1,
+        "abs": 276
+      },
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "新莽开国皇帝，外戚出身，篡汉自立，改革失败，绿林起义而亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/王莽"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "新莽皇帝"
+    },
+    {
+      "id": "liu-xuan",
+      "name": "刘玄",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "更始帝，绿林军拥立，新莽亡后短暂称帝，后为赤眉所杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/更始帝"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "更始帝"
+    },
+    {
+      "id": "liu-xiu",
+      "name": "刘秀",
+      "birth": {
+        "year": -5,
+        "month": 1,
+        "abs": -48
+      },
+      "death": {
+        "year": 57,
+        "month": 1,
+        "abs": 684
+      },
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "光武帝，东汉开国皇帝，昆阳之战后统一天下。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘秀"
+        }
+      ],
+      "posthumousNames": [
+        "光武皇帝"
+      ],
+      "templeNames": [
+        "世祖"
+      ],
+      "title": "汉光武帝"
+    },
+    {
+      "id": "liu-zhuang",
+      "name": "刘庄",
+      "birth": {
+        "year": 28,
+        "month": 1,
+        "abs": 336
+      },
+      "death": {
+        "year": 75,
+        "month": 1,
+        "abs": 900
+      },
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉明帝，光武帝子，继续巩固东汉统治。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉明帝"
+        }
+      ],
+      "posthumousNames": [
+        "孝明皇帝"
+      ],
+      "templeNames": [
+        "显宗"
+      ],
+      "title": "汉明帝"
+    },
+    {
+      "id": "liu-zuo",
+      "name": "刘炟",
+      "birth": {
+        "year": 57,
+        "month": 1,
+        "abs": 684
+      },
+      "death": {
+        "year": 88,
+        "month": 1,
+        "abs": 1056
+      },
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉章帝，明帝子，东汉前期国力稳固。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉章帝"
+        }
+      ],
+      "posthumousNames": [
+        "孝章皇帝"
+      ],
+      "templeNames": [
+        "肃宗"
+      ],
+      "title": "汉章帝"
+    },
+    {
+      "id": "liu-zhao",
+      "name": "刘肇",
+      "birth": {
+        "year": 79,
+        "month": 1,
+        "abs": 948
+      },
+      "death": {
+        "year": 106,
+        "month": 1,
+        "abs": 1272
+      },
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉和帝，章帝子，东汉国力达于鼎盛。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉和帝"
+        }
+      ],
+      "posthumousNames": [
+        "孝和皇帝"
+      ],
+      "templeNames": [],
+      "title": "汉和帝"
+    },
+    {
+      "id": "liu-long",
+      "name": "刘隆",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉殇帝，和帝子，即位百日而崩，中国历史上最短命皇帝之一。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉殇帝"
+        }
+      ],
+      "posthumousNames": [
+        "孝殇皇帝"
+      ],
+      "templeNames": [],
+      "title": "汉殇帝"
+    },
+    {
+      "id": "liu-hu",
+      "name": "刘祜",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉安帝，东汉中期皇帝，外戚宦官势力渐盛。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉安帝"
+        }
+      ],
+      "posthumousNames": [
+        "孝安皇帝"
+      ],
+      "templeNames": [],
+      "title": "汉安帝"
+    },
+    {
+      "id": "liu-yi-shao",
+      "name": "刘懿",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉前少帝，安帝子，在位数月即卒。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉少帝"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "汉前少帝"
+    },
+    {
+      "id": "liu-bao",
+      "name": "刘保",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉顺帝，东汉中后期皇帝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉顺帝"
+        }
+      ],
+      "posthumousNames": [
+        "孝顺皇帝"
+      ],
+      "templeNames": [],
+      "title": "汉顺帝"
+    },
+    {
+      "id": "liu-bing",
+      "name": "刘炳",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉冲帝，顺帝子，在位不足两年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉冲帝"
+        }
+      ],
+      "posthumousNames": [
+        "孝冲皇帝"
+      ],
+      "templeNames": [],
+      "title": "汉冲帝"
+    },
+    {
+      "id": "liu-zuan",
+      "name": "刘缵",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉质帝，在位一年余，为梁太后所害。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉质帝"
+        }
+      ],
+      "posthumousNames": [
+        "孝质皇帝"
+      ],
+      "templeNames": [],
+      "title": "汉质帝"
+    },
+    {
+      "id": "liu-zhi",
+      "name": "刘志",
+      "birth": {
+        "year": 132,
+        "month": 1,
+        "abs": 1584
+      },
+      "death": {
+        "year": 168,
+        "month": 1,
+        "abs": 2016
+      },
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉桓帝，诛灭梁氏外戚，后期宦官专权。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉桓帝"
+        }
+      ],
+      "posthumousNames": [
+        "孝桓皇帝"
+      ],
+      "templeNames": [],
+      "title": "汉桓帝"
+    },
+    {
+      "id": "liu-hong",
+      "name": "刘宏",
+      "birth": {
+        "year": 157,
+        "month": 1,
+        "abs": 1884
+      },
+      "death": {
+        "year": 189,
+        "month": 1,
+        "abs": 2268
+      },
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉灵帝，东汉末年皇帝，黄巾起义在其朝爆发。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉灵帝"
+        }
+      ],
+      "posthumousNames": [
+        "孝灵皇帝"
+      ],
+      "templeNames": [],
+      "title": "汉灵帝"
+    },
+    {
+      "id": "liu-bian",
+      "name": "刘辩",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉后少帝，灵帝长子，为董卓所废。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉少帝刘辩"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "汉后少帝"
+    },
+    {
+      "id": "liu-xie",
+      "name": "刘协",
+      "birth": {
+        "year": 181,
+        "month": 1,
+        "abs": 2172
+      },
+      "death": {
+        "year": 234,
+        "month": 1,
+        "abs": 2808
+      },
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "汉献帝，东汉末代皇帝，曹丕受禅后东汉终结。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/汉献帝"
+        }
+      ],
+      "posthumousNames": [
+        "孝献皇帝"
+      ],
+      "templeNames": [],
+      "title": "汉献帝"
+    },
+    {
+      "id": "zhao-gao",
+      "name": "赵高",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "秦宦官，矫诏立胡亥，指鹿为马，后被子婴诛杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赵高"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "huo-guang",
+      "name": "霍光",
+      "death": {
+        "year": -68,
+        "month": 1,
+        "abs": -804
+      },
+      "roles": [
+        "政治家"
+      ],
+      "bio": "汉昭帝辅政大臣，废立昌邑王、拥立宣帝，权倾朝野。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/霍光"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "wang-zhaojun",
+      "name": "王昭君",
+      "birth": {
+        "year": -52,
+        "month": 1,
+        "abs": -612
+      },
+      "death": {
+        "year": -15,
+        "month": 1,
+        "abs": -168
+      },
+      "roles": [
+        "后妃"
+      ],
+      "bio": "汉元帝宫人，自愿和亲匈奴，昭君出塞。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/王昭君"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "dou-taihou",
+      "name": "窦太后",
+      "roles": [
+        "太后",
+        "政治家"
+      ],
+      "bio": "汉文帝皇后，景帝生母，崇尚黄老，文景之治重要推手。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/窦太后"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "liang-taihou",
+      "name": "梁太后",
+      "roles": [
+        "太后",
+        "政治家"
+      ],
+      "bio": "汉顺帝皇后，质帝、桓帝朝临朝，毒杀质帝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/梁妢"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "dong-zhongshu",
+      "name": "董仲舒",
+      "birth": {
+        "year": -179,
+        "month": 1,
+        "abs": -2136
+      },
+      "death": {
+        "year": -104,
+        "month": 1,
+        "abs": -1236
+      },
+      "roles": [
+        "思想家"
+      ],
+      "bio": "汉武帝时大儒，独尊儒术理论奠基者。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/董仲舒"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "si-ma-qian",
+      "name": "司马迁",
+      "birth": {
+        "year": -145,
+        "month": 1,
+        "abs": -1728
+      },
+      "death": {
+        "year": -86,
+        "month": 1,
+        "abs": -1020
+      },
+      "roles": [
+        "史学家"
+      ],
+      "bio": "汉武帝时太史令，著史记，中国第一部纪传体通史。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/司马迁"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "ban-chao",
+      "name": "班超",
+      "birth": {
+        "year": 32,
+        "month": 1,
+        "abs": 384
+      },
+      "death": {
+        "year": 102,
+        "month": 1,
+        "abs": 1224
+      },
+      "roles": [
+        "外交家",
+        "军事家"
+      ],
+      "bio": "东汉名将，投笔从戎，通西域三十六年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/班超"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "cai-lun",
+      "name": "蔡伦",
+      "roles": [
+        "发明家"
+      ],
+      "bio": "东汉宦官，改进造纸术，纸张普及为之勃兴。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/蔡伦"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "chu-west",
+      "name": "西楚",
+      "altNames": [
+        "楚"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -206,
+        "month": 1,
+        "abs": -2460
+      },
+      "end": {
+        "year": -202,
+        "month": 12,
+        "abs": -2401
+      },
+      "precision": "year",
+      "note": "项羽分封后自立西楚霸王，都彭城；垓下败亡，政权终结。"
+    },
+    {
+      "id": "han-west",
+      "name": "西汉",
+      "altNames": [
+        "前汉",
+        "汉"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -202,
+        "month": 2,
+        "abs": -2411
+      },
+      "end": {
+        "year": 9,
+        "month": 1,
+        "abs": 108
+      },
+      "precision": "month",
+      "note": "以刘邦前202年2月称帝、定国号汉为西汉正式建国边界；前206年受封汉王为前置政权史，不并入王朝行。孺子婴于9年1月10日禅让，王莽代汉，西汉终结。"
+    },
+    {
+      "id": "xin",
+      "name": "新",
+      "altNames": [
+        "新莽"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 9,
+        "month": 1,
+        "abs": 108
+      },
+      "end": {
+        "year": 23,
+        "month": 10,
+        "abs": 285
+      },
+      "precision": "month",
+      "note": "王莽于9年1月10日受孺子婴禅让，改国号为新；地皇四年绿林攻入长安，王莽被杀。"
+    },
+    {
+      "id": "han-gengshi",
+      "name": "更始",
+      "altNames": [
+        "玄汉"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 23,
+        "month": 1,
+        "abs": 276
+      },
+      "end": {
+        "year": 25,
+        "month": 10,
+        "abs": 309
+      },
+      "precision": "year",
+      "note": "绿林军拥立更始帝刘玄，复汉号；赤眉入长安后刘玄降被杀。"
+    },
+    {
+      "id": "han-east",
+      "name": "东汉",
+      "altNames": [
+        "后汉"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 25,
+        "month": 8,
+        "abs": 307
+      },
+      "end": {
+        "year": 220,
+        "month": 11,
+        "abs": 2650
+      },
+      "precision": "month",
+      "note": "25年8月刘秀即位重建汉室，定都洛阳；220年11月献帝禅让曹丕，东汉终结。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-ying-zheng",
+      "dynastyId": "qin",
+      "personId": "ying-zheng",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -221,
+        "month": 9,
+        "abs": -2632,
+        "day": 10
+      },
+      "end": {
+        "year": -210,
+        "month": 7,
+        "abs": -2502,
+        "day": 11
+      },
+      "startAbs": -2632,
+      "endAbs": -2502,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-ying-huhai",
+      "dynastyId": "qin",
+      "personId": "ying-huhai",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -210,
+        "month": 8,
+        "abs": -2501,
+        "day": 9
+      },
+      "end": {
+        "year": -207,
+        "month": 10,
+        "abs": -2463,
+        "day": 1
+      },
+      "startAbs": -2501,
+      "endAbs": -2463,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-ying-ziying",
+      "dynastyId": "qin",
+      "personId": "ying-ziying",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -207,
+        "month": 10,
+        "abs": -2463,
+        "day": 1
+      },
+      "end": {
+        "year": -207,
+        "month": 11,
+        "abs": -2462,
+        "day": 17
+      },
+      "startAbs": -2463,
+      "endAbs": -2462,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-xiang-yu",
+      "dynastyId": "chu-west",
+      "personId": "xiang-yu",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -206,
+        "month": 3,
+        "abs": -2458,
+        "day": 12
+      },
+      "end": {
+        "year": -202,
+        "month": 2,
+        "abs": -2411,
+        "day": 28
+      },
+      "startAbs": -2458,
+      "endAbs": -2411,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-liu-bang-han-king-han-west",
+      "dynastyId": "han-west",
+      "personId": "liu-bang",
+      "title": "沛公",
+      "eraNames": [],
+      "start": {
+        "year": -209,
+        "month": 9,
+        "abs": -2488
+      },
+      "end": {
+        "year": -202,
+        "month": 2,
+        "abs": -2411,
+        "day": 27
+      },
+      "startAbs": -2488,
+      "endAbs": -2411,
+      "precision": "month",
+      "isMain": false
+    },
+    {
+      "id": "reign-liu-bang",
+      "dynastyId": "han-west",
+      "personId": "liu-bang",
+      "title": "",
+      "posthumousName": "高皇帝",
+      "templeName": "太祖",
+      "eraNames": [],
+      "start": {
+        "year": -202,
+        "month": 2,
+        "abs": -2411,
+        "day": 28
+      },
+      "end": {
+        "year": -195,
+        "month": 6,
+        "abs": -2323,
+        "day": 1
+      },
+      "startAbs": -2411,
+      "endAbs": -2323,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-ying",
+      "dynastyId": "han-west",
+      "personId": "liu-ying",
+      "title": "",
+      "posthumousName": "孝惠皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -195,
+        "month": 6,
+        "abs": -2323,
+        "day": 26
+      },
+      "end": {
+        "year": -188,
+        "month": 9,
+        "abs": -2236,
+        "day": 26
+      },
+      "startAbs": -2323,
+      "endAbs": -2236,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-gong",
+      "dynastyId": "han-west",
+      "personId": "liu-gong",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -188,
+        "month": 9,
+        "abs": -2236,
+        "day": 27
+      },
+      "end": {
+        "year": -184,
+        "month": 6,
+        "abs": -2191,
+        "day": 15
+      },
+      "startAbs": -2236,
+      "endAbs": -2191,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-hong-shao",
+      "dynastyId": "han-west",
+      "personId": "liu-hong-shao",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -184,
+        "month": 6,
+        "abs": -2191,
+        "day": 15
+      },
+      "end": {
+        "year": -180,
+        "month": 11,
+        "abs": -2138,
+        "day": 14
+      },
+      "startAbs": -2191,
+      "endAbs": -2138,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-heng",
+      "dynastyId": "han-west",
+      "personId": "liu-heng",
+      "title": "",
+      "posthumousName": "孝文皇帝",
+      "templeName": "太宗",
+      "eraNames": [],
+      "start": {
+        "year": -180,
+        "month": 11,
+        "abs": -2138,
+        "day": 14
+      },
+      "end": {
+        "year": -157,
+        "month": 7,
+        "abs": -1866,
+        "day": 6
+      },
+      "startAbs": -2138,
+      "endAbs": -1866,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-qi",
+      "dynastyId": "han-west",
+      "personId": "liu-qi",
+      "title": "",
+      "posthumousName": "孝景皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -157,
+        "month": 7,
+        "abs": -1866,
+        "day": 14
+      },
+      "end": {
+        "year": -141,
+        "month": 3,
+        "abs": -1678,
+        "day": 9
+      },
+      "startAbs": -1866,
+      "endAbs": -1678,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-che",
+      "dynastyId": "han-west",
+      "personId": "liu-che",
+      "title": "",
+      "posthumousName": "孝武皇帝",
+      "templeName": "世宗",
+      "eraNames": [
+        "建元",
+        "元光",
+        "元朔",
+        "元狩",
+        "元鼎",
+        "元封",
+        "太初",
+        "天汉",
+        "太始",
+        "征和",
+        "后元"
+      ],
+      "start": {
+        "year": -141,
+        "month": 3,
+        "abs": -1678,
+        "day": 9
+      },
+      "end": {
+        "year": -87,
+        "month": 3,
+        "abs": -1030,
+        "day": 29
+      },
+      "startAbs": -1678,
+      "endAbs": -1030,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-fuling",
+      "dynastyId": "han-west",
+      "personId": "liu-fuling",
+      "title": "",
+      "posthumousName": "孝昭皇帝",
+      "templeName": null,
+      "eraNames": [
+        "始元",
+        "元凤",
+        "元平"
+      ],
+      "start": {
+        "year": -87,
+        "month": 3,
+        "abs": -1030,
+        "day": 30
+      },
+      "end": {
+        "year": -74,
+        "month": 6,
+        "abs": -871,
+        "day": 5
+      },
+      "startAbs": -1030,
+      "endAbs": -871,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-he",
+      "dynastyId": "han-west",
+      "personId": "liu-he",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -74,
+        "month": 7,
+        "abs": -870,
+        "day": 18
+      },
+      "end": {
+        "year": -74,
+        "month": 8,
+        "abs": -869,
+        "day": 14
+      },
+      "startAbs": -870,
+      "endAbs": -869,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-xun",
+      "dynastyId": "han-west",
+      "personId": "liu-xun",
+      "title": "",
+      "posthumousName": "孝宣皇帝",
+      "templeName": null,
+      "eraNames": [
+        "本初",
+        "地节",
+        "元康",
+        "神爵",
+        "五凤",
+        "甘露",
+        "黄龙"
+      ],
+      "start": {
+        "year": -74,
+        "month": 9,
+        "abs": -868,
+        "day": 10
+      },
+      "end": {
+        "year": -48,
+        "month": 1,
+        "abs": -564,
+        "day": 10
+      },
+      "startAbs": -868,
+      "endAbs": -564,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-shi",
+      "dynastyId": "han-west",
+      "personId": "liu-shi",
+      "title": "",
+      "posthumousName": "孝元皇帝",
+      "templeName": null,
+      "eraNames": [
+        "初元",
+        "永光",
+        "建昭",
+        "竟宁"
+      ],
+      "start": {
+        "year": -48,
+        "month": 1,
+        "abs": -564,
+        "day": 29
+      },
+      "end": {
+        "year": -33,
+        "month": 7,
+        "abs": -378,
+        "day": 8
+      },
+      "startAbs": -564,
+      "endAbs": -378,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-ao",
+      "dynastyId": "han-west",
+      "personId": "liu-ao",
+      "title": "",
+      "posthumousName": "孝成皇帝",
+      "templeName": null,
+      "eraNames": [
+        "建始",
+        "河平",
+        "阳朔",
+        "鸿嘉",
+        "永始",
+        "元延",
+        "绥和"
+      ],
+      "start": {
+        "year": -33,
+        "month": 8,
+        "abs": -377,
+        "day": 4
+      },
+      "end": {
+        "year": -7,
+        "month": 4,
+        "abs": -69,
+        "day": 17
+      },
+      "startAbs": -377,
+      "endAbs": -69,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-xin",
+      "dynastyId": "han-west",
+      "personId": "liu-xin",
+      "title": "",
+      "posthumousName": "孝哀皇帝",
+      "templeName": null,
+      "eraNames": [
+        "建平",
+        "元寿"
+      ],
+      "start": {
+        "year": -7,
+        "month": 5,
+        "abs": -68,
+        "day": 7
+      },
+      "end": {
+        "year": -1,
+        "month": 8,
+        "abs": 7,
+        "day": 15
+      },
+      "startAbs": -68,
+      "endAbs": 7,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-kan",
+      "dynastyId": "han-west",
+      "personId": "liu-kan",
+      "title": "",
+      "posthumousName": "孝平皇帝",
+      "templeName": null,
+      "eraNames": [
+        "元始"
+      ],
+      "start": {
+        "year": -1,
+        "month": 10,
+        "abs": 9,
+        "day": 17
+      },
+      "end": {
+        "year": 6,
+        "month": 2,
+        "abs": 73,
+        "day": 3
+      },
+      "startAbs": 9,
+      "endAbs": 73,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-ruzi-ying",
+      "dynastyId": "han-west",
+      "personId": "ruzi-ying",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "居摄"
+      ],
+      "start": {
+        "year": 6,
+        "month": 4,
+        "abs": 75,
+        "day": 17
+      },
+      "end": {
+        "year": 9,
+        "month": 1,
+        "abs": 108,
+        "day": 10
+      },
+      "startAbs": 75,
+      "endAbs": 108,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-wang-mang",
+      "dynastyId": "xin",
+      "personId": "wang-mang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "始建国",
+        "天凤",
+        "地皇"
+      ],
+      "start": {
+        "year": 9,
+        "month": 1,
+        "abs": 108,
+        "day": 10
+      },
+      "end": {
+        "year": 23,
+        "month": 10,
+        "abs": 285,
+        "day": 6
+      },
+      "startAbs": 108,
+      "endAbs": 285,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-liu-xuan",
+      "dynastyId": "han-gengshi",
+      "personId": "liu-xuan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "更始"
+      ],
+      "start": {
+        "year": 23,
+        "month": 3,
+        "abs": 278,
+        "day": 11
+      },
+      "end": {
+        "year": 25,
+        "month": 10,
+        "abs": 309,
+        "day": 4
+      },
+      "startAbs": 278,
+      "endAbs": 309,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-liu-xiu",
+      "dynastyId": "han-east",
+      "personId": "liu-xiu",
+      "title": "",
+      "posthumousName": "光武皇帝",
+      "templeName": "世祖",
+      "eraNames": [
+        "建武",
+        "建武中元"
+      ],
+      "start": {
+        "year": 25,
+        "month": 8,
+        "abs": 307,
+        "day": 5
+      },
+      "end": {
+        "year": 57,
+        "month": 3,
+        "abs": 686,
+        "day": 29
+      },
+      "startAbs": 307,
+      "endAbs": 686,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-zhuang",
+      "dynastyId": "han-east",
+      "personId": "liu-zhuang",
+      "title": "",
+      "posthumousName": "孝明皇帝",
+      "templeName": "显宗",
+      "eraNames": [
+        "永平"
+      ],
+      "start": {
+        "year": 57,
+        "month": 3,
+        "abs": 686,
+        "day": 29
+      },
+      "end": {
+        "year": 75,
+        "month": 9,
+        "abs": 908,
+        "day": 5
+      },
+      "startAbs": 686,
+      "endAbs": 908,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-zuo",
+      "dynastyId": "han-east",
+      "personId": "liu-zuo",
+      "title": "",
+      "posthumousName": "孝章皇帝",
+      "templeName": "肃宗",
+      "eraNames": [
+        "建初",
+        "元和",
+        "章和"
+      ],
+      "start": {
+        "year": 75,
+        "month": 9,
+        "abs": 908,
+        "day": 5
+      },
+      "end": {
+        "year": 88,
+        "month": 4,
+        "abs": 1059,
+        "day": 9
+      },
+      "startAbs": 908,
+      "endAbs": 1059,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-zhao",
+      "dynastyId": "han-east",
+      "personId": "liu-zhao",
+      "title": "",
+      "posthumousName": "孝和皇帝",
+      "templeName": null,
+      "eraNames": [
+        "永元",
+        "元兴"
+      ],
+      "start": {
+        "year": 88,
+        "month": 4,
+        "abs": 1059,
+        "day": 9
+      },
+      "end": {
+        "year": 106,
+        "month": 2,
+        "abs": 1273,
+        "day": 13
+      },
+      "startAbs": 1059,
+      "endAbs": 1273,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-long",
+      "dynastyId": "han-east",
+      "personId": "liu-long",
+      "title": "",
+      "posthumousName": "孝殇皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 106,
+        "month": 2,
+        "abs": 1273,
+        "day": 13
+      },
+      "end": {
+        "year": 106,
+        "month": 9,
+        "abs": 1280,
+        "day": 21
+      },
+      "startAbs": 1273,
+      "endAbs": 1280,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-hu",
+      "dynastyId": "han-east",
+      "personId": "liu-hu",
+      "title": "",
+      "posthumousName": "孝安皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 106,
+        "month": 9,
+        "abs": 1280,
+        "day": 21
+      },
+      "end": {
+        "year": 125,
+        "month": 4,
+        "abs": 1503,
+        "day": 30
+      },
+      "startAbs": 1280,
+      "endAbs": 1503,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-yi-shao",
+      "dynastyId": "han-east",
+      "personId": "liu-yi-shao",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 125,
+        "month": 5,
+        "abs": 1504,
+        "day": 18
+      },
+      "end": {
+        "year": 125,
+        "month": 12,
+        "abs": 1511,
+        "day": 10
+      },
+      "startAbs": 1504,
+      "endAbs": 1511,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-bao",
+      "dynastyId": "han-east",
+      "personId": "liu-bao",
+      "title": "",
+      "posthumousName": "孝顺皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 125,
+        "month": 12,
+        "abs": 1511,
+        "day": 10
+      },
+      "end": {
+        "year": 144,
+        "month": 9,
+        "abs": 1736,
+        "day": 20
+      },
+      "startAbs": 1511,
+      "endAbs": 1736,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-bing",
+      "dynastyId": "han-east",
+      "personId": "liu-bing",
+      "title": "",
+      "posthumousName": "孝冲皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 144,
+        "month": 9,
+        "abs": 1736,
+        "day": 20
+      },
+      "end": {
+        "year": 145,
+        "month": 2,
+        "abs": 1741,
+        "day": 15
+      },
+      "startAbs": 1736,
+      "endAbs": 1741,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-zuan",
+      "dynastyId": "han-east",
+      "personId": "liu-zuan",
+      "title": "",
+      "posthumousName": "孝质皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 145,
+        "month": 3,
+        "abs": 1742,
+        "day": 6
+      },
+      "end": {
+        "year": 146,
+        "month": 7,
+        "abs": 1758,
+        "day": 26
+      },
+      "startAbs": 1742,
+      "endAbs": 1758,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-zhi",
+      "dynastyId": "han-east",
+      "personId": "liu-zhi",
+      "title": "",
+      "posthumousName": "孝桓皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 146,
+        "month": 8,
+        "abs": 1759,
+        "day": 1
+      },
+      "end": {
+        "year": 168,
+        "month": 1,
+        "abs": 2016,
+        "day": 25
+      },
+      "startAbs": 1759,
+      "endAbs": 2016,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-hong",
+      "dynastyId": "han-east",
+      "personId": "liu-hong",
+      "title": "",
+      "posthumousName": "孝灵皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 168,
+        "month": 2,
+        "abs": 2017,
+        "day": 17
+      },
+      "end": {
+        "year": 189,
+        "month": 5,
+        "abs": 2272,
+        "day": 13
+      },
+      "startAbs": 2017,
+      "endAbs": 2272,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-bian",
+      "dynastyId": "han-east",
+      "personId": "liu-bian",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 189,
+        "month": 5,
+        "abs": 2272,
+        "day": 15
+      },
+      "end": {
+        "year": 189,
+        "month": 9,
+        "abs": 2276,
+        "day": 28
+      },
+      "startAbs": 2272,
+      "endAbs": 2276,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-xie",
+      "dynastyId": "han-east",
+      "personId": "liu-xie",
+      "title": "",
+      "posthumousName": "孝献皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 189,
+        "month": 9,
+        "abs": 2276,
+        "day": 29
+      },
+      "end": {
+        "year": 220,
+        "month": 11,
+        "abs": 2650,
+        "day": 25
+      },
+      "startAbs": 2276,
+      "endAbs": 2650,
+      "precision": "day",
+      "isMain": true
+    }
+  ],
+  "events": [
+    {
+      "kind": "culture",
+      "precision": "year",
+      "dynastyIds": [
+        "qin"
+      ],
+      "participantIds": [
+        "ying-zheng",
+        "li-si"
+      ],
+      "id": "qin-standardize",
+      "name": "书同文车同轨",
+      "timeMode": "span",
+      "dateNote": "统一后推行文字、度量衡、车轨及郡县制，具体月份不详",
+      "start": {
+        "year": -221,
+        "month": 1,
+        "abs": -2640
+      },
+      "end": {
+        "year": -210,
+        "month": 12,
+        "abs": -2497
+      },
+      "summary": "秦始皇统一文字、度量衡与道路车轨，推行郡县制。",
+      "startAbs": -2640,
+      "endAbs": -2497
+    },
+    {
+      "kind": "culture",
+      "precision": "year",
+      "dynastyIds": [
+        "qin"
+      ],
+      "participantIds": [
+        "ying-zheng",
+        "li-si"
+      ],
+      "id": "burn-books",
+      "name": "焚书坑儒",
+      "timeMode": "circa",
+      "dateNote": "焚书约前213年，坑儒约前212年，取两年窗口",
+      "start": {
+        "year": -213,
+        "month": 1,
+        "abs": -2544
+      },
+      "end": {
+        "year": -212,
+        "month": 12,
+        "abs": -2521
+      },
+      "at": {
+        "year": -213,
+        "month": 12,
+        "abs": -2533
+      },
+      "summary": "秦始皇下令焚毁非实用典籍，后又坑杀批评朝政的儒生。",
+      "startAbs": -2544,
+      "endAbs": -2521,
+      "atAbs": -2533
+    },
+    {
+      "kind": "other",
+      "precision": "decade",
+      "dynastyIds": [
+        "qin"
+      ],
+      "participantIds": [
+        "ying-zheng"
+      ],
+      "id": "great-wall-qin",
+      "name": "修筑长城",
+      "timeMode": "circa",
+      "dateNote": "秦统一后连接燕赵秦旧塞，具体起工年月诸说不一",
+      "start": {
+        "year": -221,
+        "month": 1,
+        "abs": -2640
+      },
+      "end": {
+        "year": -210,
+        "month": 12,
+        "abs": -2497
+      },
+      "at": {
+        "year": -215,
+        "month": 1,
+        "abs": -2568
+      },
+      "summary": "秦将战国北方边塞连接延展，形成后世长城雏形。",
+      "startAbs": -2640,
+      "endAbs": -2497,
+      "atAbs": -2568
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "qin"
+      ],
+      "participantIds": [
+        "chen-sheng",
+        "wu-guang"
+      ],
+      "id": "daze-uprising",
+      "name": "大泽乡起义",
+      "dateNote": "秦二世元年七月，前209年",
+      "at": {
+        "year": -209,
+        "month": 12,
+        "abs": -2485
+      },
+      "summary": "陈胜、吴广揭竿而起，秦末农民战争爆发。",
+      "atAbs": -2485
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "qin",
+        "chu-west"
+      ],
+      "participantIds": [
+        "xiang-yu",
+        "zhang-han",
+        "xiang-liang"
+      ],
+      "id": "julu-battle",
+      "name": "巨鹿之战",
+      "dateNote": "秦二世三年，前207年，项羽破秦军主力",
+      "at": {
+        "year": -207,
+        "month": 12,
+        "abs": -2461
+      },
+      "summary": "项羽破釜沉舟，大破章邯所率秦军，秦亡势成。",
+      "atAbs": -2461
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "chu-west"
+      ],
+      "participantIds": [
+        "xiang-liang",
+        "xiang-yu"
+      ],
+      "id": "xiangliang-death",
+      "name": "项梁战死定陶",
+      "dateNote": "秦二世三年九月，前208年",
+      "at": {
+        "year": -208,
+        "month": 12,
+        "abs": -2473
+      },
+      "summary": "项梁战死于定陶，项羽继其军权。",
+      "atAbs": -2473
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "han-west"
+      ],
+      "participantIds": [
+        "liu-bang",
+        "ying-ziying"
+      ],
+      "id": "liu-enter-xianyang",
+      "name": "刘邦入关",
+      "dateNote": "秦王子婴投降，前207年",
+      "at": {
+        "year": -207,
+        "month": 12,
+        "abs": -2461
+      },
+      "summary": "刘邦率军入咸阳，子婴投降，秦朝名义上灭亡。",
+      "atAbs": -2461
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "chu-west",
+        "han-west"
+      ],
+      "participantIds": [
+        "liu-bang",
+        "xiang-yu",
+        "zhang-liang"
+      ],
+      "id": "hongmen-banquet",
+      "name": "鸿门宴",
+      "dateNote": "汉王元年，前206年",
+      "at": {
+        "year": -206,
+        "month": 12,
+        "abs": -2449
+      },
+      "summary": "刘邦赴项羽之会，张良等周旋，刘邦脱险。",
+      "atAbs": -2449
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "chu-west",
+        "han-west"
+      ],
+      "participantIds": [
+        "liu-bang",
+        "xiang-yu",
+        "han-xin",
+        "zhang-liang"
+      ],
+      "id": "chu-han-war",
+      "name": "楚汉战争",
+      "timeMode": "span",
+      "dateNote": "项羽自立西楚霸王至垓下败亡，前206–前202年",
+      "start": {
+        "year": -206,
+        "month": 1,
+        "abs": -2460
+      },
+      "end": {
+        "year": -202,
+        "month": 12,
+        "abs": -2401
+      },
+      "summary": "刘邦与项羽争夺天下，历时四年。",
+      "startAbs": -2460,
+      "endAbs": -2401
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "chu-west",
+        "han-west"
+      ],
+      "participantIds": [
+        "liu-bang",
+        "xiang-yu",
+        "han-xin"
+      ],
+      "id": "gaixia",
+      "name": "垓下之战",
+      "dateNote": "汉五年十二月，前202年",
+      "at": {
+        "year": -202,
+        "month": 12,
+        "abs": -2401
+      },
+      "summary": "韩信等合围项羽于垓下，项羽兵败自刎，楚亡汉兴。",
+      "atAbs": -2401
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "han-west"
+      ],
+      "participantIds": [
+        "liu-bang"
+      ],
+      "id": "baiteng-siege",
+      "name": "白登之围",
+      "dateNote": "汉七年，前200年，高祖被匈奴围困于白登山",
+      "at": {
+        "year": -200,
+        "month": 12,
+        "abs": -2377
+      },
+      "summary": "刘邦北击匈奴失利被围，脱险后改行和亲政策。",
+      "atAbs": -2377
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "han-west"
+      ],
+      "participantIds": [
+        "liu-qi"
+      ],
+      "id": "qiguo-rebellion",
+      "name": "七国之乱",
+      "timeMode": "span",
+      "dateNote": "景帝三年，前154年",
+      "start": {
+        "year": -154,
+        "month": 1,
+        "abs": -1836
+      },
+      "end": {
+        "year": -154,
+        "month": 12,
+        "abs": -1825
+      },
+      "summary": "吴楚等七国起兵反中央，景帝命周亚夫平定。",
+      "startAbs": -1836,
+      "endAbs": -1825
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "han-west"
+      ],
+      "participantIds": [
+        "lv-zhi"
+      ],
+      "id": "lv-regency",
+      "name": "吕后称制",
+      "timeMode": "span",
+      "dateNote": "惠帝崩后吕后临朝，前188–前180年",
+      "start": {
+        "year": -188,
+        "month": 1,
+        "abs": -2244
+      },
+      "end": {
+        "year": -180,
+        "month": 12,
+        "abs": -2137
+      },
+      "summary": "吕后专擅朝政，大封吕氏，至文帝即位结束。",
+      "startAbs": -2244,
+      "endAbs": -2137
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "han-west"
+      ],
+      "participantIds": [
+        "liu-heng",
+        "liu-qi"
+      ],
+      "id": "wenjing-rule",
+      "name": "文景之治",
+      "timeMode": "span",
+      "start": {
+        "year": -180,
+        "month": 1,
+        "abs": -2148
+      },
+      "end": {
+        "year": -141,
+        "month": 12,
+        "abs": -1669
+      },
+      "summary": "文帝景帝轻徭薄赋、与民休息，国力恢复。",
+      "startAbs": -2148,
+      "endAbs": -1669
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "han-west"
+      ],
+      "participantIds": [
+        "liu-che"
+      ],
+      "id": "wu-han-expansion",
+      "name": "汉武帝开疆",
+      "timeMode": "span",
+      "start": {
+        "year": -141,
+        "month": 1,
+        "abs": -1680
+      },
+      "end": {
+        "year": -87,
+        "month": 12,
+        "abs": -1021
+      },
+      "summary": "武帝北击匈奴、通西域、南平百越、东并闽越，西汉疆域大幅扩展。",
+      "startAbs": -1680,
+      "endAbs": -1021
+    },
+    {
+      "kind": "culture",
+      "precision": "year",
+      "dynastyIds": [
+        "han-west"
+      ],
+      "participantIds": [
+        "liu-che",
+        "zhang-qian"
+      ],
+      "id": "zhangqian-mission",
+      "name": "张骞通西域",
+      "timeMode": "circa",
+      "dateNote": "武帝建元三年首次出使，前138年；二使前119年，取主要窗口",
+      "start": {
+        "year": -138,
+        "month": 1,
+        "abs": -1644
+      },
+      "end": {
+        "year": -114,
+        "month": 12,
+        "abs": -1345
+      },
+      "at": {
+        "year": -138,
+        "month": 12,
+        "abs": -1633
+      },
+      "summary": "张骞两次出使西域，开辟丝绸之路，沟通中西。",
+      "startAbs": -1644,
+      "endAbs": -1345,
+      "atAbs": -1633
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "han-west"
+      ],
+      "participantIds": [
+        "liu-che",
+        "huo-qubing"
+      ],
+      "id": "hexi-battle",
+      "name": "河西之战",
+      "dateNote": "元狩二年，前121年，霍去病两次西进",
+      "at": {
+        "year": -121,
+        "month": 12,
+        "abs": -1429
+      },
+      "summary": "霍去病大破匈奴，夺取河西走廊，置武威、酒泉等郡。",
+      "atAbs": -1429
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "han-west"
+      ],
+      "participantIds": [
+        "liu-che",
+        "wei-qing",
+        "huo-qubing"
+      ],
+      "id": "mobei-battle",
+      "name": "漠北之战",
+      "dateNote": "元狩四年，前119年，卫青、霍去病分道出击",
+      "at": {
+        "year": -119,
+        "month": 12,
+        "abs": -1405
+      },
+      "summary": "汉军深入漠北，大破匈奴主力，匈奴远遁，无力南犯。",
+      "atAbs": -1405
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "han-west"
+      ],
+      "participantIds": [
+        "liu-che"
+      ],
+      "id": "dayuan-expedition",
+      "name": "远征大宛",
+      "timeMode": "circa",
+      "dateNote": "太初二年，前103–前101年，李广利两征大宛",
+      "start": {
+        "year": -103,
+        "month": 1,
+        "abs": -1224
+      },
+      "end": {
+        "year": -101,
+        "month": 12,
+        "abs": -1189
+      },
+      "at": {
+        "year": -102,
+        "month": 12,
+        "abs": -1201
+      },
+      "summary": "汉武帝遣军远征大宛，历时三年，终斩其王。",
+      "startAbs": -1224,
+      "endAbs": -1189,
+      "atAbs": -1201
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "han-west"
+      ],
+      "participantIds": [
+        "liu-che"
+      ],
+      "id": "wugu-case",
+      "name": "巫蛊之祸",
+      "dateNote": "征和二年，前91年",
+      "at": {
+        "year": -91,
+        "month": 12,
+        "abs": -1069
+      },
+      "summary": "武帝晚年巫蛊案牵连太子刘据，朝局动荡。",
+      "atAbs": -1069
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "han-west"
+      ],
+      "participantIds": [
+        "liu-fuling",
+        "liu-xun"
+      ],
+      "id": "zhaoxuan-rule",
+      "name": "昭宣之治",
+      "timeMode": "span",
+      "start": {
+        "year": -87,
+        "month": 1,
+        "abs": -1032
+      },
+      "end": {
+        "year": -48,
+        "month": 12,
+        "abs": -553
+      },
+      "summary": "昭帝、宣帝励精图治，西汉中兴。",
+      "startAbs": -1032,
+      "endAbs": -553
+    },
+    {
+      "kind": "culture",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "han-west"
+      ],
+      "participantIds": [
+        "liu-shi",
+        "wang-zhaojun"
+      ],
+      "id": "zhaojun-chusai",
+      "name": "昭君出塞",
+      "dateNote": "竟宁元年，前33年",
+      "at": {
+        "year": -33,
+        "month": 12,
+        "abs": -373
+      },
+      "summary": "元帝以王昭君嫁呼韩邪单于，汉匈和好。",
+      "atAbs": -373
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "xin",
+        "han-gengshi"
+      ],
+      "participantIds": [
+        "liu-xiu",
+        "wang-mang"
+      ],
+      "id": "kunyang-battle",
+      "name": "昆阳之战",
+      "dateNote": "更始元年，23年，刘秀以少胜多破王莽军",
+      "at": {
+        "year": 23,
+        "month": 12,
+        "abs": 287
+      },
+      "summary": "刘秀率绿林军于昆阳大破王莽主力，新莽覆亡在即。",
+      "atAbs": 287
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "han-east"
+      ],
+      "participantIds": [
+        "liu-hong"
+      ],
+      "id": "yellow-turban",
+      "name": "黄巾起义",
+      "dateNote": "灵帝建宁二年，184年",
+      "at": {
+        "year": 184,
+        "month": 12,
+        "abs": 2219
+      },
+      "summary": "张角领导黄巾起义，东汉统治根基动摇，群雄割据。",
+      "atAbs": 2219
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-ying-zheng-ying-huhai-succession",
+      "fromRef": "person:ying-zheng",
+      "toRef": "person:ying-huhai",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ying-huhai-ying-ziying-succession",
+      "fromRef": "person:ying-huhai",
+      "toRef": "person:ying-ziying",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-bang-liu-bang-succession",
+      "fromRef": "person:liu-bang",
+      "toRef": "person:liu-bang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-bang-liu-ying-succession",
+      "fromRef": "person:liu-bang",
+      "toRef": "person:liu-ying",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-ying-liu-gong-succession",
+      "fromRef": "person:liu-ying",
+      "toRef": "person:liu-gong",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-gong-liu-hong-shao-succession",
+      "fromRef": "person:liu-gong",
+      "toRef": "person:liu-hong-shao",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-hong-shao-liu-heng-succession",
+      "fromRef": "person:liu-hong-shao",
+      "toRef": "person:liu-heng",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-heng-liu-qi-succession",
+      "fromRef": "person:liu-heng",
+      "toRef": "person:liu-qi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-qi-liu-che-succession",
+      "fromRef": "person:liu-qi",
+      "toRef": "person:liu-che",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-che-liu-fuling-succession",
+      "fromRef": "person:liu-che",
+      "toRef": "person:liu-fuling",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-fuling-liu-he-succession",
+      "fromRef": "person:liu-fuling",
+      "toRef": "person:liu-he",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-he-liu-xun-succession",
+      "fromRef": "person:liu-he",
+      "toRef": "person:liu-xun",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-xun-liu-shi-succession",
+      "fromRef": "person:liu-xun",
+      "toRef": "person:liu-shi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-shi-liu-ao-succession",
+      "fromRef": "person:liu-shi",
+      "toRef": "person:liu-ao",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-ao-liu-xin-succession",
+      "fromRef": "person:liu-ao",
+      "toRef": "person:liu-xin",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-xin-liu-kan-succession",
+      "fromRef": "person:liu-xin",
+      "toRef": "person:liu-kan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-kan-ruzi-ying-succession",
+      "fromRef": "person:liu-kan",
+      "toRef": "person:ruzi-ying",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-xiu-liu-zhuang-succession",
+      "fromRef": "person:liu-xiu",
+      "toRef": "person:liu-zhuang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-zhuang-liu-zuo-succession",
+      "fromRef": "person:liu-zhuang",
+      "toRef": "person:liu-zuo",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-zuo-liu-zhao-succession",
+      "fromRef": "person:liu-zuo",
+      "toRef": "person:liu-zhao",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-zhao-liu-long-succession",
+      "fromRef": "person:liu-zhao",
+      "toRef": "person:liu-long",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-long-liu-hu-succession",
+      "fromRef": "person:liu-long",
+      "toRef": "person:liu-hu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-hu-liu-yi-shao-succession",
+      "fromRef": "person:liu-hu",
+      "toRef": "person:liu-yi-shao",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-yi-shao-liu-bao-succession",
+      "fromRef": "person:liu-yi-shao",
+      "toRef": "person:liu-bao",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-bao-liu-bing-succession",
+      "fromRef": "person:liu-bao",
+      "toRef": "person:liu-bing",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-bing-liu-zuan-succession",
+      "fromRef": "person:liu-bing",
+      "toRef": "person:liu-zuan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-zuan-liu-zhi-succession",
+      "fromRef": "person:liu-zuan",
+      "toRef": "person:liu-zhi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-zhi-liu-hong-succession",
+      "fromRef": "person:liu-zhi",
+      "toRef": "person:liu-hong",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-hong-liu-bian-succession",
+      "fromRef": "person:liu-hong",
+      "toRef": "person:liu-bian",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-bian-liu-xie-succession",
+      "fromRef": "person:liu-bian",
+      "toRef": "person:liu-xie",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-gaixia-liu-bang",
+      "fromRef": "event:gaixia",
+      "toRef": "person:liu-bang",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-gaixia-xiang-yu",
+      "fromRef": "event:gaixia",
+      "toRef": "person:xiang-yu",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-chu-han-liu-bang",
+      "fromRef": "event:chu-han-war",
+      "toRef": "person:liu-bang",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-julu-xiang-yu",
+      "fromRef": "event:julu-battle",
+      "toRef": "person:xiang-yu",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-mobei-huo-qubing",
+      "fromRef": "event:mobei-battle",
+      "toRef": "person:huo-qubing",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-kunyang-liu-xiu",
+      "fromRef": "event:kunyang-battle",
+      "toRef": "person:liu-xiu",
+      "kind": "battle"
+    }
+  ],
+  "supplementalEventDynasties": [],
+  "supplementalEventParticipants": [],
+  "preSql": "DELETE FROM event_participants WHERE event_id = 'wang-mang-usurp';\nDELETE FROM event_dynasties WHERE event_id = 'wang-mang-usurp';\nDELETE FROM events WHERE id = 'wang-mang-usurp';",
+  "reignCapitals": [],
+  "manifest": {
+    "slug": "qin-han",
+    "title": "秦汉（含新莽、更始、东汉）",
+    "window": {
+      "startYear": -221,
+      "startMonth": 1,
+      "endYear": 220,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-09-12",
+    "counts": {
+      "persons": 57,
+      "dynasties": 5,
+      "reigns": 36,
+      "events": 24,
+      "relations": 36
+    },
+    "sources": [
+      {
+        "label": "秦朝",
+        "url": "https://zh.wikipedia.org/wiki/秦朝"
+      },
+      {
+        "label": "西汉",
+        "url": "https://zh.wikipedia.org/wiki/西汉"
+      },
+      {
+        "label": "东汉",
+        "url": "https://zh.wikipedia.org/wiki/东汉"
+      },
+      {
+        "label": "新朝",
+        "url": "https://zh.wikipedia.org/wiki/新朝"
+      },
+      {
+        "label": "更始政权",
+        "url": "https://zh.wikipedia.org/wiki/更始政权"
+      },
+      {
+        "label": "汉朝君主列表",
+        "url": "https://zh.wikipedia.org/wiki/汉朝君主列表"
+      },
+      {
+        "label": "西楚",
+        "url": "https://zh.wikipedia.org/wiki/西楚"
+      },
+      {
+        "label": "楚汉战争",
+        "url": "https://zh.wikipedia.org/wiki/楚汉战争"
+      },
+      {
+        "label": "漠北之战",
+        "url": "https://zh.wikipedia.org/wiki/漠北之战"
+      },
+      {
+        "label": "巨鹿之战",
+        "url": "https://zh.wikipedia.org/wiki/巨鹿之战"
+      },
+      {
+        "label": "《史记·秦始皇本纪》",
+        "url": "https://ctext.org/shiji/qin-shi-huang-ben-ji/zhs"
+      },
+      {
+        "label": "周家台秦墓历谱与秦始皇卒日考证",
+        "url": "https://lls.cssn.cn/ztyj/ztyj_zgts/202203/P020220311557775770956.pdf"
+      }
+    ],
+    "notes": [
+      "覆盖秦统一（前221）至东汉终结（220年），含西楚、新莽、更始等过渡政权。",
+      "王朝与皇帝在位年取《史记》《后汉书》系统常见年表（与维基百科汉朝君主列表一致），precision=year。",
+      "秦末诸侯（章邯、项梁、魏豹等）以人物与事件收录，不另建诸侯国王朝行。",
+      "武帝时期补录河西之战、漠北之战、远征大宛等重大战役。",
+      "吕后临朝不建皇帝 reign，以 span 事件「吕后称制」表示。",
+      "东汉前/后少帝在位极短，仍列入在位卡片；年号自武帝（西汉）及光武（东汉）起写入 era_names。",
+      "秦始皇卒日《史记》记为七月丙寅，但周家台秦墓历谱所示该月无丙寅；按相邻八月丙寅推算约落在前210年公历7月，事件仅标月精度，不标日精度。",
+      "未收录三国曹魏及赤眉军刘盆子政权，以免超出两汉主线。"
+    ]
+  }
+}

@@ -16,6 +16,8 @@ import {
   resolveReignColorToken,
 } from "./dynastyColors";
 import { eventKindLabel, eventSpanAbs, formatEventTime } from "./eventTime";
+import { formatReignDurationLabel } from "./reignVisual";
+import { reignOwnershipInterval } from "./timelineOwnership";
 import {
   TimelineSliceSchema,
   type Dynasty,
@@ -122,7 +124,7 @@ function truncateText(text: string, max = 36): string {
 
 function sortEventsByAnchor(events: Event[]): Event[] {
   return [...events].sort(
-    (a, b) => eventSpanAbs(a).anchorAbs - eventSpanAbs(b).anchorAbs,
+    (a, b) => eventSpanAbs(a).anchorAbs - eventSpanAbs(b).anchorAbs || a.id.localeCompare(b.id),
   );
 }
 
@@ -217,13 +219,15 @@ function buildPersonEntityDetail(
 
   const capitalTenures = personReigns.flatMap((reign) => {
     const rows = buildReignTenureCapitalRows(reign, store.capitals ?? [], store.reigns);
-    if (personReigns.length < 2) return rows;
-    const name = (reign.eraNames.length > 0
-      ? reign.eraNames.join("、")
-      : reign.title).trim();
+    const name = personReigns.length < 2
+      ? ""
+      : (reign.eraNames.length > 0 ? reign.eraNames.join("、") : reign.title).trim();
     return rows.map((row) => ({
       ...row,
-      tenure: { ...row.tenure, ...(name ? { name } : {}) },
+      tenure: {
+        ...row.tenure,
+        ...(name ? { name } : {}),
+      },
     }));
   });
   const clan = buildPreQinClanContext(person);
@@ -257,9 +261,13 @@ function buildPersonEntityDetail(
 
   const facts = focusReign
     ? [
-        ...resolveReignDetailFacts(focusReign, person.name, clan).filter(
-          (fact) => fact.label !== "在位",
-        ),
+        ...resolveReignDetailFacts(focusReign, person.name, clan, {
+          durationLabel:
+            formatReignDurationLabel(
+              focusReign,
+              reignOwnershipInterval(focusReign, store.reigns),
+            ) ?? null,
+        }),
         ...claimDetailFacts(focusReign),
       ]
     : [

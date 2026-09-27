@@ -20,6 +20,12 @@
   transition: transform var(--motion-fast);
 }
 
+.marker::before {
+  position: absolute;
+  inset: -12px -8px;
+  content: "";
+}
+
 .marker:hover {
   transform: translate(-6px, -50%) scale(1.03);
 }

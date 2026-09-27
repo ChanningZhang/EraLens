@@ -1,0 +1,2237 @@
+{
+  "slug": "nanzhao-dali",
+  "window": {
+    "startYear": 649,
+    "startMonth": 1,
+    "endYear": 1254,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "xi-nuoluo",
+      "name": "细奴逻",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蒙舍诏首领，蒙姓，649年即位，谥奇嘉王，庙号高祖。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/细奴逻"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "奇嘉王"
+      ],
+      "templeNames": [
+        "高祖"
+      ],
+      "title": "诏王"
+    },
+    {
+      "id": "luo-sheng",
+      "name": "逻盛",
+      "roles": [
+        "君主"
+      ],
+      "bio": "细奴逻之子，谥兴宗王，庙号世宗。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/逻盛"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "兴宗王"
+      ],
+      "templeNames": [
+        "世宗"
+      ],
+      "title": "诏王"
+    },
+    {
+      "id": "sheng-luopi",
+      "name": "盛逻皮",
+      "roles": [
+        "君主"
+      ],
+      "bio": "逻盛之子，谥威成王，庙号太宗。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/盛逻皮"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "威成王"
+      ],
+      "templeNames": [
+        "太宗"
+      ],
+      "title": "诏王"
+    },
+    {
+      "id": "pi-luoge",
+      "name": "皮逻阁",
+      "roles": [
+        "君主"
+      ],
+      "bio": "盛逻皮之子，唐封云南王，赐名归义，738年统一六诏。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/皮逻阁"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "归义王"
+      ],
+      "templeNames": [],
+      "title": "云南王"
+    },
+    {
+      "id": "ge-luofeng",
+      "name": "阁罗凤",
+      "roles": [
+        "君主"
+      ],
+      "bio": "皮逻阁之子，唐封云南王，谥神武王，天宝年间与唐战并与吐蕃结盟。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/阁罗凤"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "神武王"
+      ],
+      "templeNames": [],
+      "title": "云南王"
+    },
+    {
+      "id": "yi-mouxun",
+      "name": "异牟寻",
+      "roles": [
+        "君主"
+      ],
+      "bio": "阁罗凤之孙、凤伽异之子，谥孝桓王，复臣于唐。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/异牟寻"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "孝桓王"
+      ],
+      "templeNames": [],
+      "title": "南诏王"
+    },
+    {
+      "id": "xun-gequan",
+      "name": "寻阁劝",
+      "roles": [
+        "君主"
+      ],
+      "bio": "异牟寻之子，亦称新觉劝，谥孝惠王，在位仅一年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/寻阁劝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "孝惠王"
+      ],
+      "templeNames": [],
+      "title": "南诏王"
+    },
+    {
+      "id": "quan-longsheng",
+      "name": "劝龙晟",
+      "roles": [
+        "君主"
+      ],
+      "bio": "寻阁劝之子，谥幽王。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/劝龙晟"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "幽王"
+      ],
+      "templeNames": [],
+      "title": "南诏王"
+    },
+    {
+      "id": "quan-lisheng",
+      "name": "劝利晟",
+      "roles": [
+        "君主"
+      ],
+      "bio": "劝龙晟之弟，谥靖王。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/劝利晟"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "靖王"
+      ],
+      "templeNames": [],
+      "title": "南诏王"
+    },
+    {
+      "id": "quan-fengyou",
+      "name": "劝丰祐",
+      "roles": [
+        "君主"
+      ],
+      "bio": "劝利晟之弟，谥昭成王，在位三十余年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/劝丰祐"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "昭成王"
+      ],
+      "templeNames": [],
+      "title": "南诏王"
+    },
+    {
+      "id": "shi-long",
+      "name": "世隆",
+      "roles": [
+        "君主",
+        "皇帝"
+      ],
+      "bio": "劝丰祐之子，亦称酋龙，僭称帝号，改国号大礼，谥景庄帝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/世隆"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "景庄帝"
+      ],
+      "templeNames": [],
+      "title": "皇帝"
+    },
+    {
+      "id": "long-shun",
+      "name": "隆舜",
+      "roles": [
+        "君主",
+        "皇帝"
+      ],
+      "bio": "世隆之子，亦称法，改国号大封民，谥武宣帝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/隆舜"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "武宣帝"
+      ],
+      "templeNames": [],
+      "title": "皇帝"
+    },
+    {
+      "id": "shun-huazhen",
+      "name": "舜化贞",
+      "roles": [
+        "君主",
+        "皇帝"
+      ],
+      "bio": "隆舜之子，南诏末代君主，谥孝哀帝，902年亡于郑买嗣。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/舜化贞"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "孝哀帝"
+      ],
+      "templeNames": [],
+      "title": "皇帝"
+    },
+    {
+      "id": "duan-siping",
+      "name": "段思平",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理太祖，937年灭大义宁建国，国号大理。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段思平"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "圣神文武皇帝"
+      ],
+      "templeNames": [
+        "太祖"
+      ],
+      "title": "大理太祖"
+    },
+    {
+      "id": "duan-siying",
+      "name": "段思英",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理第二任皇帝，段思平之子，在位一年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段思英"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "大理皇帝"
+    },
+    {
+      "id": "duan-siliang",
+      "name": "段思良",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理第三任皇帝，段思平之弟。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段思良"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "圣慈文武皇帝"
+      ],
+      "templeNames": [],
+      "title": "大理皇帝"
+    },
+    {
+      "id": "duan-sicong",
+      "name": "段思聪",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理第四任皇帝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段思聪"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "至道广慈皇帝"
+      ],
+      "templeNames": [],
+      "title": "大理皇帝"
+    },
+    {
+      "id": "duan-sushun",
+      "name": "段素顺",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理第五任皇帝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段素顺"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "应道皇帝"
+      ],
+      "templeNames": [],
+      "title": "大理皇帝"
+    },
+    {
+      "id": "duan-suying",
+      "name": "段素英",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理第六任皇帝，在位二十四年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段素英"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "昭明皇帝"
+      ],
+      "templeNames": [],
+      "title": "大理皇帝"
+    },
+    {
+      "id": "duan-sulian",
+      "name": "段素廉",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理第七任皇帝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段素廉"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "宣肃皇帝"
+      ],
+      "templeNames": [],
+      "title": "大理皇帝"
+    },
+    {
+      "id": "duan-sulong",
+      "name": "段素隆",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理第八任皇帝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段素隆"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "秉义皇帝"
+      ],
+      "templeNames": [],
+      "title": "大理皇帝"
+    },
+    {
+      "id": "duan-suzhen",
+      "name": "段素真",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理第九任皇帝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段素真"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "圣德皇帝"
+      ],
+      "templeNames": [],
+      "title": "大理皇帝"
+    },
+    {
+      "id": "duan-suxing",
+      "name": "段素兴",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理第十任皇帝，荒淫失政被废。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段素兴"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "天明皇帝"
+      ],
+      "templeNames": [],
+      "title": "大理皇帝"
+    },
+    {
+      "id": "duan-silian",
+      "name": "段思廉",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理世宗，在位三十一年，大理中期重要君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段思廉"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "孝德皇帝"
+      ],
+      "templeNames": [
+        "世宗"
+      ],
+      "title": "大理世宗"
+    },
+    {
+      "id": "duan-lianyi",
+      "name": "段廉义",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理第十二任皇帝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段廉义"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "上德皇帝"
+      ],
+      "templeNames": [],
+      "title": "大理皇帝"
+    },
+    {
+      "id": "yang-yizhen",
+      "name": "杨义贞",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "1080年篡位，杀段廉义，不被广泛承认为正统君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杨义贞"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "上明皇帝"
+      ],
+      "templeNames": [],
+      "title": "大理皇帝"
+    },
+    {
+      "id": "duan-shouhui",
+      "name": "段寿辉",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理第十四任皇帝，杨义贞之后即位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段寿辉"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "上明皇帝"
+      ],
+      "templeNames": [],
+      "title": "大理皇帝"
+    },
+    {
+      "id": "duan-zhengming",
+      "name": "段正明",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理第十五任皇帝，后让位于高升泰。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段正明"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "保定皇帝"
+      ],
+      "templeNames": [],
+      "title": "大理皇帝"
+    },
+    {
+      "id": "gao-shengtai",
+      "name": "高升泰",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "1094–1096年称帝，国号大中国，后还政段氏。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/高升泰"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "富有圣德表正皇帝"
+      ],
+      "templeNames": [],
+      "title": "大中国皇帝"
+    },
+    {
+      "id": "duan-zhengchun",
+      "name": "段正淳",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理中宗，金庸《天龙八部》段誉原型，在位十二年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段正淳"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "文安皇帝"
+      ],
+      "templeNames": [
+        "中宗"
+      ],
+      "title": "大理中宗"
+    },
+    {
+      "id": "duan-zhengyan",
+      "name": "段正严",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理宪宗，本名段和誉，与宋修好，国势安定。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段和誉"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "宣仁皇帝"
+      ],
+      "templeNames": [
+        "宪宗"
+      ],
+      "title": "大理宪宗"
+    },
+    {
+      "id": "duan-zhengxing",
+      "name": "段正兴",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理景宗，在位二十四年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段正兴"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "正康皇帝"
+      ],
+      "templeNames": [
+        "景宗"
+      ],
+      "title": "大理景宗"
+    },
+    {
+      "id": "duan-zhixing",
+      "name": "段智兴",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理宣宗，崇佛兴盛，在位近三十年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段智兴"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "功极皇帝"
+      ],
+      "templeNames": [
+        "宣宗"
+      ],
+      "title": "大理宣宗"
+    },
+    {
+      "id": "duan-zhilian",
+      "name": "段智廉",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理第十九任皇帝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段智廉"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "亨天皇帝"
+      ],
+      "templeNames": [],
+      "title": "大理皇帝"
+    },
+    {
+      "id": "duan-zhixiang",
+      "name": "段智祥",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理神宗，在位三十四年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段智祥"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [
+        "神宗"
+      ],
+      "title": "大理神宗"
+    },
+    {
+      "id": "duan-xiangxing",
+      "name": "段祥兴",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理第二十任皇帝，蒙古南侵之际在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段祥兴"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "孝义皇帝"
+      ],
+      "templeNames": [],
+      "title": "大理皇帝"
+    },
+    {
+      "id": "duan-xingzhi",
+      "name": "段兴智",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "大理末代皇帝，1253年蒙古灭大理，后任云南总管。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段兴智"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "大理皇帝"
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "nanzhao",
+      "name": "南诏",
+      "altNames": [
+        "蒙舍诏",
+        "大礼",
+        "大封民"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 649,
+        "month": 1,
+        "abs": 7788
+      },
+      "end": {
+        "year": 902,
+        "month": 12,
+        "abs": 10835
+      },
+      "precision": "year",
+      "note": "蒙舍诏细奴逻起于649年；738年皮逻阁统一六诏后南诏国号始显；902年亡于郑买嗣。"
+    },
+    {
+      "id": "dali",
+      "name": "大理",
+      "altNames": [
+        "大理国",
+        "后大理"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 937,
+        "month": 1,
+        "abs": 11244
+      },
+      "end": {
+        "year": 1253,
+        "month": 12,
+        "abs": 15047
+      },
+      "precision": "year",
+      "note": "937年段思平建国；1094–1096年高升泰短暂称帝（大中国）；1253年蒙古灭大理。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-xi-nuoluo-nanzhao",
+      "dynastyId": "nanzhao",
+      "personId": "xi-nuoluo",
+      "title": "",
+      "posthumousName": "奇嘉王",
+      "templeName": "高祖",
+      "eraNames": [],
+      "start": {
+        "year": 649,
+        "month": 1,
+        "abs": 7788
+      },
+      "end": {
+        "year": 674,
+        "month": 12,
+        "abs": 8099
+      },
+      "startAbs": 7788,
+      "endAbs": 8099,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-luo-sheng-nanzhao",
+      "dynastyId": "nanzhao",
+      "personId": "luo-sheng",
+      "title": "",
+      "posthumousName": "兴宗王",
+      "templeName": "世宗",
+      "eraNames": [],
+      "start": {
+        "year": 674,
+        "month": 1,
+        "abs": 8088
+      },
+      "end": {
+        "year": 712,
+        "month": 12,
+        "abs": 8555
+      },
+      "startAbs": 8088,
+      "endAbs": 8555,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-sheng-luopi-nanzhao",
+      "dynastyId": "nanzhao",
+      "personId": "sheng-luopi",
+      "title": "",
+      "posthumousName": "威成王",
+      "templeName": "太宗",
+      "eraNames": [],
+      "start": {
+        "year": 712,
+        "month": 1,
+        "abs": 8544
+      },
+      "end": {
+        "year": 728,
+        "month": 12,
+        "abs": 8747
+      },
+      "startAbs": 8544,
+      "endAbs": 8747,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-pi-luoge-nanzhao",
+      "dynastyId": "nanzhao",
+      "personId": "pi-luoge",
+      "title": "",
+      "posthumousName": "归义王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 728,
+        "month": 1,
+        "abs": 8736
+      },
+      "end": {
+        "year": 748,
+        "month": 12,
+        "abs": 8987
+      },
+      "startAbs": 8736,
+      "endAbs": 8987,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-ge-luofeng-nanzhao",
+      "dynastyId": "nanzhao",
+      "personId": "ge-luofeng",
+      "title": "",
+      "posthumousName": "神武王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 748,
+        "month": 1,
+        "abs": 8976
+      },
+      "end": {
+        "year": 779,
+        "month": 12,
+        "abs": 9359
+      },
+      "startAbs": 8976,
+      "endAbs": 9359,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yi-mouxun-nanzhao",
+      "dynastyId": "nanzhao",
+      "personId": "yi-mouxun",
+      "title": "",
+      "posthumousName": "孝桓王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 779,
+        "month": 1,
+        "abs": 9348
+      },
+      "end": {
+        "year": 808,
+        "month": 12,
+        "abs": 9707
+      },
+      "startAbs": 9348,
+      "endAbs": 9707,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-xun-gequan-nanzhao",
+      "dynastyId": "nanzhao",
+      "personId": "xun-gequan",
+      "title": "",
+      "posthumousName": "孝惠王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 808,
+        "month": 1,
+        "abs": 9696
+      },
+      "end": {
+        "year": 809,
+        "month": 12,
+        "abs": 9719
+      },
+      "startAbs": 9696,
+      "endAbs": 9719,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-quan-longsheng-nanzhao",
+      "dynastyId": "nanzhao",
+      "personId": "quan-longsheng",
+      "title": "",
+      "posthumousName": "幽王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 809,
+        "month": 1,
+        "abs": 9708
+      },
+      "end": {
+        "year": 816,
+        "month": 12,
+        "abs": 9803
+      },
+      "startAbs": 9708,
+      "endAbs": 9803,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-quan-lisheng-nanzhao",
+      "dynastyId": "nanzhao",
+      "personId": "quan-lisheng",
+      "title": "",
+      "posthumousName": "靖王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 816,
+        "month": 1,
+        "abs": 9792
+      },
+      "end": {
+        "year": 823,
+        "month": 12,
+        "abs": 9887
+      },
+      "startAbs": 9792,
+      "endAbs": 9887,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-quan-fengyou-nanzhao",
+      "dynastyId": "nanzhao",
+      "personId": "quan-fengyou",
+      "title": "",
+      "posthumousName": "昭成王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 823,
+        "month": 1,
+        "abs": 9876
+      },
+      "end": {
+        "year": 859,
+        "month": 12,
+        "abs": 10319
+      },
+      "startAbs": 9876,
+      "endAbs": 10319,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-shi-long-nanzhao",
+      "dynastyId": "nanzhao",
+      "personId": "shi-long",
+      "title": "",
+      "posthumousName": "景庄帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 859,
+        "month": 1,
+        "abs": 10308
+      },
+      "end": {
+        "year": 877,
+        "month": 12,
+        "abs": 10535
+      },
+      "startAbs": 10308,
+      "endAbs": 10535,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-long-shun-nanzhao",
+      "dynastyId": "nanzhao",
+      "personId": "long-shun",
+      "title": "",
+      "posthumousName": "武宣帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 877,
+        "month": 1,
+        "abs": 10524
+      },
+      "end": {
+        "year": 897,
+        "month": 12,
+        "abs": 10775
+      },
+      "startAbs": 10524,
+      "endAbs": 10775,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-shun-huazhen-nanzhao",
+      "dynastyId": "nanzhao",
+      "personId": "shun-huazhen",
+      "title": "",
+      "posthumousName": "孝哀帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 897,
+        "month": 1,
+        "abs": 10764
+      },
+      "end": {
+        "year": 902,
+        "month": 12,
+        "abs": 10835
+      },
+      "startAbs": 10764,
+      "endAbs": 10835,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-siping-dali",
+      "dynastyId": "dali",
+      "personId": "duan-siping",
+      "title": "",
+      "posthumousName": "圣神文武皇帝",
+      "templeName": "太祖",
+      "eraNames": [
+        "文德"
+      ],
+      "start": {
+        "year": 937,
+        "month": 1,
+        "abs": 11244
+      },
+      "end": {
+        "year": 944,
+        "month": 12,
+        "abs": 11339
+      },
+      "startAbs": 11244,
+      "endAbs": 11339,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-siying-dali",
+      "dynastyId": "dali",
+      "personId": "duan-siying",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 944,
+        "month": 1,
+        "abs": 11328
+      },
+      "end": {
+        "year": 945,
+        "month": 12,
+        "abs": 11351
+      },
+      "startAbs": 11328,
+      "endAbs": 11351,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-siliang-dali",
+      "dynastyId": "dali",
+      "personId": "duan-siliang",
+      "title": "",
+      "posthumousName": "圣慈文武皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 945,
+        "month": 1,
+        "abs": 11340
+      },
+      "end": {
+        "year": 952,
+        "month": 12,
+        "abs": 11435
+      },
+      "startAbs": 11340,
+      "endAbs": 11435,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-sicong-dali",
+      "dynastyId": "dali",
+      "personId": "duan-sicong",
+      "title": "",
+      "posthumousName": "至道广慈皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 952,
+        "month": 1,
+        "abs": 11424
+      },
+      "end": {
+        "year": 968,
+        "month": 12,
+        "abs": 11627
+      },
+      "startAbs": 11424,
+      "endAbs": 11627,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-sushun-dali",
+      "dynastyId": "dali",
+      "personId": "duan-sushun",
+      "title": "",
+      "posthumousName": "应道皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 968,
+        "month": 1,
+        "abs": 11616
+      },
+      "end": {
+        "year": 985,
+        "month": 12,
+        "abs": 11831
+      },
+      "startAbs": 11616,
+      "endAbs": 11831,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-suying-dali",
+      "dynastyId": "dali",
+      "personId": "duan-suying",
+      "title": "",
+      "posthumousName": "昭明皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 985,
+        "month": 1,
+        "abs": 11820
+      },
+      "end": {
+        "year": 1009,
+        "month": 12,
+        "abs": 12119
+      },
+      "startAbs": 11820,
+      "endAbs": 12119,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-sulian-dali",
+      "dynastyId": "dali",
+      "personId": "duan-sulian",
+      "title": "",
+      "posthumousName": "宣肃皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1009,
+        "month": 1,
+        "abs": 12108
+      },
+      "end": {
+        "year": 1022,
+        "month": 12,
+        "abs": 12275
+      },
+      "startAbs": 12108,
+      "endAbs": 12275,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-sulong-dali",
+      "dynastyId": "dali",
+      "personId": "duan-sulong",
+      "title": "",
+      "posthumousName": "秉义皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1022,
+        "month": 1,
+        "abs": 12264
+      },
+      "end": {
+        "year": 1026,
+        "month": 12,
+        "abs": 12323
+      },
+      "startAbs": 12264,
+      "endAbs": 12323,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-suzhen-dali",
+      "dynastyId": "dali",
+      "personId": "duan-suzhen",
+      "title": "",
+      "posthumousName": "圣德皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1026,
+        "month": 1,
+        "abs": 12312
+      },
+      "end": {
+        "year": 1041,
+        "month": 12,
+        "abs": 12503
+      },
+      "startAbs": 12312,
+      "endAbs": 12503,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-suxing-dali",
+      "dynastyId": "dali",
+      "personId": "duan-suxing",
+      "title": "",
+      "posthumousName": "天明皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1041,
+        "month": 1,
+        "abs": 12492
+      },
+      "end": {
+        "year": 1044,
+        "month": 12,
+        "abs": 12539
+      },
+      "startAbs": 12492,
+      "endAbs": 12539,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-silian-dali",
+      "dynastyId": "dali",
+      "personId": "duan-silian",
+      "title": "",
+      "posthumousName": "孝德皇帝",
+      "templeName": "世宗",
+      "eraNames": [],
+      "start": {
+        "year": 1044,
+        "month": 1,
+        "abs": 12528
+      },
+      "end": {
+        "year": 1075,
+        "month": 12,
+        "abs": 12911
+      },
+      "startAbs": 12528,
+      "endAbs": 12911,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-lianyi-dali",
+      "dynastyId": "dali",
+      "personId": "duan-lianyi",
+      "title": "",
+      "posthumousName": "上德皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1075,
+        "month": 1,
+        "abs": 12900
+      },
+      "end": {
+        "year": 1080,
+        "month": 12,
+        "abs": 12971
+      },
+      "startAbs": 12900,
+      "endAbs": 12971,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yang-yizhen-dali",
+      "dynastyId": "dali",
+      "personId": "yang-yizhen",
+      "title": "",
+      "posthumousName": "上明皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1080,
+        "month": 1,
+        "abs": 12960
+      },
+      "end": {
+        "year": 1080,
+        "month": 12,
+        "abs": 12971
+      },
+      "startAbs": 12960,
+      "endAbs": 12971,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-shouhui-dali",
+      "dynastyId": "dali",
+      "personId": "duan-shouhui",
+      "title": "",
+      "posthumousName": "上明皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1080,
+        "month": 1,
+        "abs": 12960
+      },
+      "end": {
+        "year": 1081,
+        "month": 12,
+        "abs": 12983
+      },
+      "startAbs": 12960,
+      "endAbs": 12983,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-zhengming-dali",
+      "dynastyId": "dali",
+      "personId": "duan-zhengming",
+      "title": "",
+      "posthumousName": "保定皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1081,
+        "month": 1,
+        "abs": 12972
+      },
+      "end": {
+        "year": 1094,
+        "month": 12,
+        "abs": 13139
+      },
+      "startAbs": 12972,
+      "endAbs": 13139,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-gao-shengtai-dali",
+      "dynastyId": "dali",
+      "personId": "gao-shengtai",
+      "title": "",
+      "posthumousName": "富有圣德表正皇帝",
+      "templeName": null,
+      "eraNames": [
+        "上治"
+      ],
+      "start": {
+        "year": 1094,
+        "month": 1,
+        "abs": 13128
+      },
+      "end": {
+        "year": 1096,
+        "month": 12,
+        "abs": 13163
+      },
+      "startAbs": 13128,
+      "endAbs": 13163,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-zhengchun-dali",
+      "dynastyId": "dali",
+      "personId": "duan-zhengchun",
+      "title": "",
+      "posthumousName": "文安皇帝",
+      "templeName": "中宗",
+      "eraNames": [],
+      "start": {
+        "year": 1096,
+        "month": 1,
+        "abs": 13152
+      },
+      "end": {
+        "year": 1108,
+        "month": 12,
+        "abs": 13307
+      },
+      "startAbs": 13152,
+      "endAbs": 13307,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-zhengyan-dali",
+      "dynastyId": "dali",
+      "personId": "duan-zhengyan",
+      "title": "",
+      "posthumousName": "宣仁皇帝",
+      "templeName": "宪宗",
+      "eraNames": [],
+      "start": {
+        "year": 1108,
+        "month": 1,
+        "abs": 13296
+      },
+      "end": {
+        "year": 1147,
+        "month": 12,
+        "abs": 13775
+      },
+      "startAbs": 13296,
+      "endAbs": 13775,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-zhengxing-dali",
+      "dynastyId": "dali",
+      "personId": "duan-zhengxing",
+      "title": "",
+      "posthumousName": "正康皇帝",
+      "templeName": "景宗",
+      "eraNames": [],
+      "start": {
+        "year": 1147,
+        "month": 1,
+        "abs": 13764
+      },
+      "end": {
+        "year": 1171,
+        "month": 12,
+        "abs": 14063
+      },
+      "startAbs": 13764,
+      "endAbs": 14063,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-zhixing-dali",
+      "dynastyId": "dali",
+      "personId": "duan-zhixing",
+      "title": "",
+      "posthumousName": "功极皇帝",
+      "templeName": "宣宗",
+      "eraNames": [],
+      "start": {
+        "year": 1171,
+        "month": 1,
+        "abs": 14052
+      },
+      "end": {
+        "year": 1200,
+        "month": 12,
+        "abs": 14411
+      },
+      "startAbs": 14052,
+      "endAbs": 14411,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-zhilian-dali",
+      "dynastyId": "dali",
+      "personId": "duan-zhilian",
+      "title": "",
+      "posthumousName": "亨天皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1200,
+        "month": 1,
+        "abs": 14400
+      },
+      "end": {
+        "year": 1204,
+        "month": 12,
+        "abs": 14459
+      },
+      "startAbs": 14400,
+      "endAbs": 14459,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-zhixiang-dali",
+      "dynastyId": "dali",
+      "personId": "duan-zhixiang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "神宗",
+      "eraNames": [],
+      "start": {
+        "year": 1204,
+        "month": 1,
+        "abs": 14448
+      },
+      "end": {
+        "year": 1238,
+        "month": 12,
+        "abs": 14867
+      },
+      "startAbs": 14448,
+      "endAbs": 14867,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-xiangxing-dali",
+      "dynastyId": "dali",
+      "personId": "duan-xiangxing",
+      "title": "",
+      "posthumousName": "孝义皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1238,
+        "month": 1,
+        "abs": 14856
+      },
+      "end": {
+        "year": 1251,
+        "month": 12,
+        "abs": 15023
+      },
+      "startAbs": 14856,
+      "endAbs": 15023,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duan-xingzhi-dali",
+      "dynastyId": "dali",
+      "personId": "duan-xingzhi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1251,
+        "month": 1,
+        "abs": 15012
+      },
+      "end": {
+        "year": 1254,
+        "month": 12,
+        "abs": 15059
+      },
+      "startAbs": 15012,
+      "endAbs": 15059,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    }
+  ],
+  "events": [
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "dali",
+        "mongol-empire"
+      ],
+      "participantIds": [
+        "duan-xingzhi"
+      ],
+      "id": "mongol-conquer-dali",
+      "name": "大理覆亡",
+      "dateNote": "1253年忽必烈攻大理城破；1254年段兴智于昆泽被俘降蒙",
+      "at": {
+        "year": 1254,
+        "month": 12,
+        "abs": 15059
+      },
+      "summary": "蒙哥汗命忽必烈南征，1253年攻破大理，段兴智出降，大理国亡。",
+      "atAbs": 15059
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-xi-nuoluo-luo-sheng-succession",
+      "fromRef": "person:xi-nuoluo",
+      "toRef": "person:luo-sheng",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-luo-sheng-sheng-luopi-succession",
+      "fromRef": "person:luo-sheng",
+      "toRef": "person:sheng-luopi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-sheng-luopi-pi-luoge-succession",
+      "fromRef": "person:sheng-luopi",
+      "toRef": "person:pi-luoge",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-pi-luoge-ge-luofeng-succession",
+      "fromRef": "person:pi-luoge",
+      "toRef": "person:ge-luofeng",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ge-luofeng-yi-mouxun-succession",
+      "fromRef": "person:ge-luofeng",
+      "toRef": "person:yi-mouxun",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yi-mouxun-xun-gequan-succession",
+      "fromRef": "person:yi-mouxun",
+      "toRef": "person:xun-gequan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-xun-gequan-quan-longsheng-succession",
+      "fromRef": "person:xun-gequan",
+      "toRef": "person:quan-longsheng",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-quan-longsheng-quan-lisheng-succession",
+      "fromRef": "person:quan-longsheng",
+      "toRef": "person:quan-lisheng",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-quan-lisheng-quan-fengyou-succession",
+      "fromRef": "person:quan-lisheng",
+      "toRef": "person:quan-fengyou",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-quan-fengyou-shi-long-succession",
+      "fromRef": "person:quan-fengyou",
+      "toRef": "person:shi-long",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-shi-long-long-shun-succession",
+      "fromRef": "person:shi-long",
+      "toRef": "person:long-shun",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-long-shun-shun-huazhen-succession",
+      "fromRef": "person:long-shun",
+      "toRef": "person:shun-huazhen",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-siping-duan-siying-succession",
+      "fromRef": "person:duan-siping",
+      "toRef": "person:duan-siying",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-siying-duan-siliang-succession",
+      "fromRef": "person:duan-siying",
+      "toRef": "person:duan-siliang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-siliang-duan-sicong-succession",
+      "fromRef": "person:duan-siliang",
+      "toRef": "person:duan-sicong",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-sicong-duan-sushun-succession",
+      "fromRef": "person:duan-sicong",
+      "toRef": "person:duan-sushun",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-sushun-duan-suying-succession",
+      "fromRef": "person:duan-sushun",
+      "toRef": "person:duan-suying",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-suying-duan-sulian-succession",
+      "fromRef": "person:duan-suying",
+      "toRef": "person:duan-sulian",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-sulian-duan-sulong-succession",
+      "fromRef": "person:duan-sulian",
+      "toRef": "person:duan-sulong",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-sulong-duan-suzhen-succession",
+      "fromRef": "person:duan-sulong",
+      "toRef": "person:duan-suzhen",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-suzhen-duan-suxing-succession",
+      "fromRef": "person:duan-suzhen",
+      "toRef": "person:duan-suxing",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-suxing-duan-silian-succession",
+      "fromRef": "person:duan-suxing",
+      "toRef": "person:duan-silian",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-silian-duan-lianyi-succession",
+      "fromRef": "person:duan-silian",
+      "toRef": "person:duan-lianyi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-lianyi-yang-yizhen-succession",
+      "fromRef": "person:duan-lianyi",
+      "toRef": "person:yang-yizhen",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yang-yizhen-duan-shouhui-succession",
+      "fromRef": "person:yang-yizhen",
+      "toRef": "person:duan-shouhui",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-shouhui-duan-zhengming-succession",
+      "fromRef": "person:duan-shouhui",
+      "toRef": "person:duan-zhengming",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-zhengming-gao-shengtai-succession",
+      "fromRef": "person:duan-zhengming",
+      "toRef": "person:gao-shengtai",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-gao-shengtai-duan-zhengchun-succession",
+      "fromRef": "person:gao-shengtai",
+      "toRef": "person:duan-zhengchun",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-zhengchun-duan-zhengyan-succession",
+      "fromRef": "person:duan-zhengchun",
+      "toRef": "person:duan-zhengyan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-zhengyan-duan-zhengxing-succession",
+      "fromRef": "person:duan-zhengyan",
+      "toRef": "person:duan-zhengxing",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-zhengxing-duan-zhixing-succession",
+      "fromRef": "person:duan-zhengxing",
+      "toRef": "person:duan-zhixing",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-zhixing-duan-zhilian-succession",
+      "fromRef": "person:duan-zhixing",
+      "toRef": "person:duan-zhilian",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-zhilian-duan-zhixiang-succession",
+      "fromRef": "person:duan-zhilian",
+      "toRef": "person:duan-zhixiang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-zhixiang-duan-xiangxing-succession",
+      "fromRef": "person:duan-zhixiang",
+      "toRef": "person:duan-xiangxing",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-xiangxing-duan-xingzhi-succession",
+      "fromRef": "person:duan-xiangxing",
+      "toRef": "person:duan-xingzhi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-mongol-conquer-dali",
+      "fromRef": "event:mongol-conquer-dali",
+      "toRef": "dynasty:dali",
+      "kind": "battle"
+    }
+  ],
+  "supplementalEventDynasties": [],
+  "supplementalEventParticipants": [
+    {
+      "eventId": "mongol-conquer-dali",
+      "personId": "hu-bilie"
+    }
+  ],
+  "preSql": "",
+  "manifest": {
+    "slug": "nanzhao-dali",
+    "title": "南诏与大理",
+    "window": {
+      "startYear": 649,
+      "startMonth": 1,
+      "endYear": 1254,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-09-13",
+    "counts": {
+      "persons": 37,
+      "dynasties": 2,
+      "reigns": 37,
+      "events": 1,
+      "relations": 36
+    },
+    "sources": [
+      {
+        "label": "六诏君主列表",
+        "url": "https://zh.wikipedia.org/wiki/六诏君主列表"
+      },
+      {
+        "label": "南诏",
+        "url": "https://zh.wikipedia.org/wiki/南诏"
+      },
+      {
+        "label": "大理君主列表",
+        "url": "https://zh.wikipedia.org/wiki/大理君主列表"
+      },
+      {
+        "label": "大理国",
+        "url": "https://zh.wikipedia.org/wiki/大理国"
+      },
+      {
+        "label": "段思平",
+        "url": "https://zh.wikipedia.org/wiki/段思平"
+      },
+      {
+        "label": "蒙古攻灭大理",
+        "url": "https://zh.wikipedia.org/wiki/蒙古攻灭大理"
+      }
+    ],
+    "notes": [
+      "覆盖南诏十三世君主（649–902）与大理国皇帝（937–1253）。",
+      "南诏人物名用本名，在位 title 用诏王/云南王/南诏王/皇帝等爵号，谥号与庙号分列。",
+      "南诏王朝始年取细奴逻即位（649），立国事件取738年皮逻阁统一六诏。",
+      "杨义贞（1080）与高升泰（1094–1096）按维基君主列表收录。",
+      "蒙古灭大理事件补充关联 mongol-empire 王朝与 hu-bilie（忽必烈，见 mongol-pre-yuan）。",
+      "在位年取维基百科君主列表常见年表，precision=year。"
+    ]
+  }
+}

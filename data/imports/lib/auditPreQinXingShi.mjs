@@ -8,7 +8,9 @@ import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildPreQinClanContext, resolvePreQinXingShi } from "./preQinClanContext.mjs";
-import { rulersByDynasty } from "../chunqiu-zhanguo/rulers.mjs";
+const { reigns: cachedReigns } = JSON.parse(
+  readFileSync(new URL("../chunqiu-zhanguo/cache.json", import.meta.url), "utf8"),
+);
 
 const PRE_IMPERIAL_START_YEAR = -221;
 
@@ -92,24 +94,22 @@ function main() {
   const missing = [];
   const seenReign = new Set();
 
-  for (const [dynastyId, rulers] of Object.entries(rulersByDynasty)) {
-    for (const ruler of rulers) {
-      if (ruler.startYear >= PRE_IMPERIAL_START_YEAR) continue;
-      const key = `${ruler.personId}:${dynastyId}`;
-      if (seenReign.has(key)) continue;
-      seenReign.add(key);
-      const person = persons.get(ruler.personId);
-      const clan = buildPreQinClanContext(person);
-      const gaps = auditRow(clan);
-      if (gaps.length) {
-        missing.push({
-          dynastyId,
-          title: ruler.title,
-          personId: ruler.personId,
-          personName: ruler.personName ?? person?.name,
-          gaps,
-        });
-      }
+  for (const reign of cachedReigns) {
+    if (reign.start.year >= PRE_IMPERIAL_START_YEAR) continue;
+    const key = `${reign.personId}:${reign.dynastyId}`;
+    if (seenReign.has(key)) continue;
+    seenReign.add(key);
+    const person = persons.get(reign.personId);
+    const clan = buildPreQinClanContext(person);
+    const gaps = auditRow(clan);
+    if (gaps.length) {
+      missing.push({
+        dynastyId: reign.dynastyId,
+        title: reign.title,
+        personId: reign.personId,
+        personName: person?.name,
+        gaps,
+      });
     }
   }
 

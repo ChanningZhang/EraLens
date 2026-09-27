@@ -1,4 +1,4 @@
-import { absToX, computeWindow, type AbsMonth } from "@eralens/shared";
+import { absToX, computeWindow, type AbsMonth, type TimelinePresentation } from "@eralens/shared";
 
 export type ViewportState = {
   centerAbs: AbsMonth;
@@ -6,6 +6,7 @@ export type ViewportState = {
   widthPx: number;
   /** Left inset reserved for the dynasty-name rail. */
   gutterPx?: number;
+  presentation?: TimelinePresentation;
 };
 
 export function gutterPxOf(state: ViewportState): number {

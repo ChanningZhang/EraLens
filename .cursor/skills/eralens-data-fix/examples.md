@@ -6,19 +6,24 @@
 
 **错误做法**：在 `emperorAppellation.ts` 加 `if (personId === 'li-shimin') return '太宗'`。
 
-**正确做法**（`data/imports/tang-…/generate.mjs` 或 rulers 源）：
+**正确做法**（直接修改所属导入包的 JSON 源缓存）：
 
 ```javascript
 {
-  personId: "li-shimin",
-  name: "李世民",
-  templeName: "太宗",
-  posthumousName: "文武皇帝",
-  title: "唐太宗",
+  "persons": [{
+    "id": "li-shimin",
+    "name": "李世民",
+    "templeNames": ["太宗"],
+    "posthumousNames": ["文武皇帝"]
+  }],
+  "reigns": [{
+    "personId": "li-shimin",
+    "title": "唐太宗"
+  }]
 }
 ```
 
-`mergeAppellationsIntoPersons()` 会把庙谥合并进 `persons` 再导出 SQL。
+SQL 生成器直接序列化这些缓存字段。
 
 ---
 

@@ -1,0 +1,4229 @@
+{
+  "slug": "chunqiu-minor",
+  "window": {
+    "startYear": -750,
+    "startMonth": 1,
+    "endYear": -206,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "system-missing-ruler",
+      "name": "史料缺",
+      "roles": [
+        "系统占位"
+      ],
+      "bio": "EraLens 系统保留人物，仅用于标记经考证确认的国君资料缺失区间。",
+      "links": [],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "史料缺"
+    },
+    {
+      "id": "xue-r1",
+      "name": "谷",
+      "roles": [
+        "君主"
+      ],
+      "bio": "《左传·昭公三十一年》载前511年卒；在位始年不详，不承接前代拉满。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/薛献公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "献公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "任",
+      "title": "薛献公"
+    },
+    {
+      "id": "xue-r2",
+      "name": "定",
+      "roles": [
+        "君主"
+      ],
+      "bio": "薛襄公，薛国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/薛襄公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "襄公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "任",
+      "title": "薛襄公"
+    },
+    {
+      "id": "xue-r3",
+      "name": "比",
+      "roles": [
+        "君主"
+      ],
+      "bio": "公比，薛国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/薛公比"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "任",
+      "title": "公比"
+    },
+    {
+      "id": "xue-r4",
+      "name": "夷",
+      "roles": [
+        "君主"
+      ],
+      "bio": "薛惠公，薛国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/薛惠公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "惠公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "任",
+      "title": "薛惠公"
+    },
+    {
+      "id": "teng-r0",
+      "name": "绣",
+      "roles": [
+        "君主"
+      ],
+      "bio": "周武王所封的滕国始封君。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕错叔"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "错叔"
+    },
+    {
+      "id": "teng-r20",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "西周成康之际滕国第二世君，见《吾鬲》及《滕侯簋》铭文；本名失考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "？"
+    },
+    {
+      "id": "teng-r21",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "西周康王时期滕国第三世君，见《滕侯方鼎》《滕侯簋》铭文；本名失考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕侯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "？"
+    },
+    {
+      "id": "teng-r22",
+      "name": "命仲",
+      "roles": [
+        "君主"
+      ],
+      "bio": "西周康昭之际滕国第四世君，见《滕虎簋》铭文。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/命仲"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "命仲"
+    },
+    {
+      "id": "teng-r23",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "命仲之子、滕伯文之父，西周昭王时期；姓名失载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕侯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "？"
+    },
+    {
+      "id": "teng-r24",
+      "name": "文",
+      "roles": [
+        "君主"
+      ],
+      "bio": "西周昭穆之际滕国第六世君，见《礼记·檀弓上》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕伯文"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "伯文"
+    },
+    {
+      "id": "teng-r25",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "滕国第7世君，世次据《世本》及杜预《春秋释例》推定，姓名失载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/？"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "？"
+    },
+    {
+      "id": "teng-r26",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "滕国第8世君，世次据《世本》及杜预《春秋释例》推定，姓名失载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/？"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "？"
+    },
+    {
+      "id": "teng-r27",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "滕国第9世君，世次据《世本》及杜预《春秋释例》推定，姓名失载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/？"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "？"
+    },
+    {
+      "id": "teng-r28",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "滕国第10世君，世次据《世本》及杜预《春秋释例》推定，姓名失载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/？"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "？"
+    },
+    {
+      "id": "teng-r29",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "滕国第11世君，世次据《世本》及杜预《春秋释例》推定，姓名失载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/？"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "？"
+    },
+    {
+      "id": "teng-r30",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "滕国第12世君，世次据《世本》及杜预《春秋释例》推定，姓名失载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/？"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "？"
+    },
+    {
+      "id": "teng-r1",
+      "name": "穀",
+      "roles": [
+        "君主"
+      ],
+      "bio": "《春秋》隐公七年载其卒于前716年；旧谱名穀（亦作毂）。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕庄公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "滕侯"
+    },
+    {
+      "id": "teng-r13",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "《左传·隐公十一年》所载滕侯，前715至前711年在位；本名失考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕侯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "？"
+    },
+    {
+      "id": "teng-r12",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "《左传·桓公二年》（前710年）记载其朝鲁；本名及卒年失考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕子"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "？"
+    },
+    {
+      "id": "teng-r11",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "《左传·庄公十六年》（前678年）记载的滕君；本名失考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕子"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "？"
+    },
+    {
+      "id": "teng-r7",
+      "name": "婴齐",
+      "roles": [
+        "君主"
+      ],
+      "bio": "前641年为宋所执；按《世本》及杜预《春秋释例》为滕国第十七世君。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕宣公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "宣公"
+    },
+    {
+      "id": "teng-r10",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "《左传·僖公二十二年》（前638年）记载的滕君；本名失考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕子"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "？"
+    },
+    {
+      "id": "teng-r8",
+      "name": "郑",
+      "roles": [
+        "君主"
+      ],
+      "bio": "滕宣公之后、滕昭公之前的滕君；在位年代失考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕孝侯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "孝侯"
+    },
+    {
+      "id": "teng-r9",
+      "name": "元",
+      "roles": [
+        "君主"
+      ],
+      "bio": "前615年朝鲁，前600年卒；姓名另有毛伯等异说。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕昭公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "昭公"
+    },
+    {
+      "id": "teng-r33",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "滕隐公之后第1世，列入《世本》所谓隐公后六世，姓名失载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/？"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "？"
+    },
+    {
+      "id": "teng-r34",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "滕隐公之后第2世，列入《世本》所谓隐公后六世，姓名失载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/？"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "？"
+    },
+    {
+      "id": "teng-r35",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "滕隐公之后第3世，列入《世本》所谓隐公后六世，姓名失载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/？"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "？"
+    },
+    {
+      "id": "teng-r36",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "滕隐公之后第4世，列入《世本》所谓隐公后六世，姓名失载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/？"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "？"
+    },
+    {
+      "id": "teng-r37",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "滕隐公之后第5世，列入《世本》所谓隐公后六世，姓名失载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/？"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "？"
+    },
+    {
+      "id": "teng-r31",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "《世本》称滕隐公后六世，张志鹏《滕国新考》据《古本竹书纪年》推为前414年初次亡于越时的末代滕君；本名失载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/？"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "？"
+    },
+    {
+      "id": "teng-r2",
+      "name": "寿",
+      "roles": [
+        "君主"
+      ],
+      "bio": "滕文公（寿），前599–前575年在位。为世子时曾见孟子问政，即位后遣然友问丧礼于邹；史载最详的滕国君主，《孟子·滕文公》上下篇即以其事为纲。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕文公_(春秋)"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "文公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "滕文公"
+    },
+    {
+      "id": "teng-r3",
+      "name": "原",
+      "roles": [
+        "君主"
+      ],
+      "bio": "滕成公（原），文公之子，前574–前539年在位。史书记载有限，继文公之后守国。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕成公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "成公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "滕成公"
+    },
+    {
+      "id": "teng-r4",
+      "name": "宁",
+      "roles": [
+        "君主"
+      ],
+      "bio": "滕悼公（宁），成公之子，前538–前514年在位，在位二十五年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕悼公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "悼公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "滕悼公"
+    },
+    {
+      "id": "teng-r5",
+      "name": "结",
+      "roles": [
+        "君主"
+      ],
+      "bio": "滕顷公（结），悼公之子，前513–前491年在位。小国向鲁朝贡，前491年卒。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕顷公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "顷公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "滕顷公"
+    },
+    {
+      "id": "teng-r6",
+      "name": "虞毋",
+      "roles": [
+        "君主"
+      ],
+      "bio": "滕隐公（虞毋），顷公之子，前490–前484年在位。为春秋可考末代滕君之一，其后世系失考至越灭滕复国。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕隐公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "隐公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "滕隐公"
+    },
+    {
+      "id": "qi-state-r1",
+      "name": "武公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "杞武公，夏后姒姓后裔，前750–前704年在位。本包可考杞君始于此，在位四十七年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杞武公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "武公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姒",
+      "title": "杞武公"
+    },
+    {
+      "id": "qi-state-r1b",
+      "name": "靖公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "杞靖公，武公之后，前703–前681年在位。史书记载有限。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杞靖公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "靖公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姒",
+      "title": "杞靖公"
+    },
+    {
+      "id": "qi-state-gong",
+      "name": "共公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "杞共公，前680–前673年在位，在位八年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杞共公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "共公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姒",
+      "title": "杞共公"
+    },
+    {
+      "id": "qi-state-de",
+      "name": "德公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "杞德公，前672–前655年在位。夏礼遗存之小国，孔子曾欲至杞考夏礼而叹「杞不足徵」。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杞德公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "德公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姒",
+      "title": "杞德公"
+    },
+    {
+      "id": "qi-state-r1c",
+      "name": "成公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "杞成公，前654–前637年在位。在位时将国都迁至缘陵（今山东昌乐东南）。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杞成公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "成公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姒",
+      "title": "杞成公"
+    },
+    {
+      "id": "qi-state-r2",
+      "name": "姑容",
+      "roles": [
+        "君主"
+      ],
+      "bio": "杞桓公（姑容），前636–前567年在位，在位七十年，为杞国在位最久之君。屡遭强邻压迫迁国，《列子·天瑞》「杞人忧天」故事或与此忧患有关。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杞桓公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "桓公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姒",
+      "title": "杞桓公"
+    },
+    {
+      "id": "qi-state-xiao",
+      "name": "匄",
+      "roles": [
+        "君主"
+      ],
+      "bio": "杞孝公（匄），桓公之子，前566–前550年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杞孝公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "孝公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姒",
+      "title": "杞孝公"
+    },
+    {
+      "id": "qi-state-r3",
+      "name": "益姑",
+      "roles": [
+        "君主"
+      ],
+      "bio": "杞文公（益姑），前549–前536年在位。在位时迁都淳于（今山东安丘东北）。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杞文公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "文公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姒",
+      "title": "杞文公"
+    },
+    {
+      "id": "qi-state-r4",
+      "name": "郁",
+      "roles": [
+        "君主"
+      ],
+      "bio": "杞平公（郁），前535–前518年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杞平公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "平公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姒",
+      "title": "杞平公"
+    },
+    {
+      "id": "qi-state-dao",
+      "name": "成",
+      "roles": [
+        "君主"
+      ],
+      "bio": "杞悼公（成），前517–前506年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杞悼公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "悼公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姒",
+      "title": "杞悼公"
+    },
+    {
+      "id": "qi-state-yin",
+      "name": "乞",
+      "roles": [
+        "君主"
+      ],
+      "bio": "悼公之子，在位七月即为弟僖公所弑；死年与悼公同在前506年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杞隐公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "隐公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姒",
+      "title": "杞隐公"
+    },
+    {
+      "id": "qi-state-xi",
+      "name": "遂",
+      "roles": [
+        "君主"
+      ],
+      "bio": "杞僖公（遂），弑兄隐公自立，前505–前487年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杞僖公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "僖公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姒",
+      "title": "杞僖公"
+    },
+    {
+      "id": "qi-state-r5",
+      "name": "维",
+      "roles": [
+        "君主"
+      ],
+      "bio": "杞湣公（维），前486–前471年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杞湣公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "湣公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姒",
+      "title": "杞湣公"
+    },
+    {
+      "id": "qi-state-ai",
+      "name": "阏路",
+      "roles": [
+        "君主"
+      ],
+      "bio": "杞哀公（阏路），前470–前461年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杞哀公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "哀公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姒",
+      "title": "杞哀公"
+    },
+    {
+      "id": "qi-state-chu",
+      "name": "欶",
+      "roles": [
+        "君主"
+      ],
+      "bio": "杞出公（欶），前460–前449年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杞出公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "出公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姒",
+      "title": "杞出公"
+    },
+    {
+      "id": "qi-state-r6",
+      "name": "春",
+      "roles": [
+        "君主"
+      ],
+      "bio": "杞简公（春），末代君主，前448–前445年在位。前445年为齐所灭，杞国亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杞简公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "简公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姒",
+      "title": "杞简公"
+    },
+    {
+      "id": "ju-r1",
+      "name": "庶其",
+      "roles": [
+        "君主"
+      ],
+      "bio": "莒纪公（庶其），前615–前609年在位。偏爱少子季佗、慢待太子仆；仆杀己自立为厉公（《左传·文公十八年》）。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/莒纪公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "纪公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "己",
+      "title": "莒纪公"
+    },
+    {
+      "id": "ju-r1b",
+      "name": "季佗",
+      "roles": [
+        "君主"
+      ],
+      "bio": "莒厉公（季佗），纪公之子，弑父自立，前608–前580年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/莒厉公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "厉公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "己",
+      "title": "莒厉公"
+    },
+    {
+      "id": "ju-r2",
+      "name": "朱",
+      "roles": [
+        "君主"
+      ],
+      "bio": "莒渠丘公（朱），前579–前577年在位。疑为厉公之子，史载甚略。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/莒渠丘公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "渠丘公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "己",
+      "title": "莒渠丘公"
+    },
+    {
+      "id": "ju-r3",
+      "name": "密州",
+      "roles": [
+        "君主"
+      ],
+      "bio": "莒犂比公（密州），前576–前542年在位。据《左传》称其「虐」、好争战，为莒国最活跃时期；死后莒渐衰。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/莒犂比公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "犂比公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "己",
+      "title": "莒犂比公"
+    },
+    {
+      "id": "ju-r4",
+      "name": "舆",
+      "roles": [
+        "君主"
+      ],
+      "bio": "莒子舆（展舆），犂比公子，前541年在位仅一年。犂比公暴虐时先被立为太子，终短暂即位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/莒子舆"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "己",
+      "title": "子舆"
+    },
+    {
+      "id": "ju-r5",
+      "name": "去疾",
+      "roles": [
+        "君主"
+      ],
+      "bio": "莒著丘公（去疾），犂比公子，前540–前528年在位。著丘公卒后，子郊公狂与弟庚舆争立，引发内乱。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/莒著丘公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "著丘公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "己",
+      "title": "莒著丘公"
+    },
+    {
+      "id": "ju-r6",
+      "name": "庚舆",
+      "roles": [
+        "君主"
+      ],
+      "bio": "莒共公（庚舆），犂比公子，好铸剑以人试刃，暴虐失国，前527–前519年在位。国人逐之，迎郊公狂复位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/莒共公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "共公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "己",
+      "title": "莒共公"
+    },
+    {
+      "id": "ju-r7",
+      "name": "狂",
+      "roles": [
+        "君主"
+      ],
+      "bio": "莒郊公（狂），著丘公子，两度在位（前528年数月、前518–前481年）。柱厉叔知其不遇而去海上，后返国殉之；前481年卒。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/莒郊公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "郊公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "己",
+      "title": "莒郊公"
+    },
+    {
+      "id": "zhao-jia-dai",
+      "name": "嘉",
+      "roles": [
+        "君主"
+      ],
+      "bio": "代王，代国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/代王嘉"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "嬴",
+      "clanShi": "赵",
+      "title": "代王"
+    },
+    {
+      "id": "tian-shi",
+      "name": "巿",
+      "roles": [
+        "君主"
+      ],
+      "bio": "胶东王，胶东君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/田巿"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "妫",
+      "clanShi": "田",
+      "title": "胶东王"
+    },
+    {
+      "id": "zhou-guo-jie",
+      "name": "揭",
+      "roles": [
+        "君主"
+      ],
+      "bio": "周考王之弟，封于王城，续周公之职，为西周国始祖。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/西周国"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "桓公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "西周桓公"
+    },
+    {
+      "id": "zhou-guo-zao",
+      "name": "灶",
+      "roles": [
+        "君主"
+      ],
+      "bio": "西周威公，西周国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/西周国"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "威公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "西周威公"
+    },
+    {
+      "id": "zhou-guo-chao",
+      "name": "朝",
+      "roles": [
+        "君主"
+      ],
+      "bio": "西周威公太子；前367年威公卒后与弟根分国，朝据王城为西周惠公。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/西周国"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "惠公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "西周惠公"
+    },
+    {
+      "id": "zhou-guo-wugong",
+      "name": "武公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "西周惠公长子，承惠公为西周国君，文公之父。《史记·周本纪》及《史记集解》引徐广注可证其世系，但未载本名；部分后世君主表称其名共之，出处未详。在位起讫年无可靠记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/西周武公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "武公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "武公"
+    },
+    {
+      "id": "zhou-guo-jiu",
+      "name": "咎",
+      "roles": [
+        "君主"
+      ],
+      "bio": "西周末任君，前256年秦攻西周国，纳土降秦后卒。中间武公世系在位年失考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/西周国"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "文公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "西周文公"
+    },
+    {
+      "id": "zhou-guo-gen",
+      "name": "班",
+      "roles": [
+        "君主"
+      ],
+      "bio": "西周威公少子，《韩非子》作根，《纪年》作杰；赵韩扶持下据巩为东周惠公。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/东周国"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "惠公"
+      ],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": "东周惠公"
+    },
+    {
+      "id": "teng-r16",
+      "name": "麇",
+      "roles": [
+        "君主"
+      ],
+      "bio": "《世本》所载考公麇；赵岐注《孟子》认为即复国后的滕定公，前324年卒。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕考公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": null
+    },
+    {
+      "id": "teng-r17",
+      "name": "弘",
+      "roles": [
+        "君主"
+      ],
+      "bio": "《世本》所载元公弘；赵岐注《孟子》认为即滕文公，前323至前316年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕元公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": null
+    },
+    {
+      "id": "teng-r18",
+      "name": "昃",
+      "roles": [
+        "君主"
+      ],
+      "bio": "据滕侯昃戈、敦铭文，属战国中期；可能是复国后的滕君，具体年代有争议。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕侯昃"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": null
+    },
+    {
+      "id": "teng-r19",
+      "name": "丘",
+      "roles": [
+        "君主"
+      ],
+      "bio": "后世谱系说列为亡国君，前315至前296年；复旦《滕国新考》认为末代君主失名，故不据此建在位卡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕公丘"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "ancestralXing": "姬",
+      "title": null
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "xue-chunqiu",
+      "name": "薛",
+      "altNames": [
+        "薛国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -511,
+        "month": 1,
+        "abs": -6120
+      },
+      "end": {
+        "year": -327,
+        "month": 12,
+        "abs": -3901
+      },
+      "precision": "year",
+      "note": "任姓小国；可考君主自薛献公（前511年卒）起；前327年齐魏共灭薛。西周薛伯等早期君主在位年失考，不收录。"
+    },
+    {
+      "id": "teng-chunqiu",
+      "name": "滕",
+      "altNames": [
+        "滕国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -1045,
+        "month": 1,
+        "abs": -12528
+      },
+      "end": {
+        "year": -296,
+        "month": 12,
+        "abs": -3529
+      },
+      "precision": "year",
+      "note": "姬姓诸侯国，周武王封错叔绣。前414年一度为越所灭，后复国，前296年为宋所灭。"
+    },
+    {
+      "id": "qi-state-chunqiu",
+      "name": "杞",
+      "altNames": [
+        "杞国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -750,
+        "month": 1,
+        "abs": -8988
+      },
+      "end": {
+        "year": -445,
+        "month": 12,
+        "abs": -5317
+      },
+      "precision": "year",
+      "note": "自杞武公起有通行在位年；东楼公等更早君主失考。前445年为齐所灭。"
+    },
+    {
+      "id": "ju-chunqiu",
+      "name": "莒",
+      "altNames": [
+        "莒国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -1046,
+        "month": 1,
+        "abs": -12540
+      },
+      "end": {
+        "year": -431,
+        "month": 12,
+        "abs": -5149
+      },
+      "precision": "year",
+      "note": "周初（断代工程取前1046年）封兹舆期；至春秋早期世系与具体在位年长期失载，以史料缺占位至前616年，后接可考莒君；前481年后至前431年楚灭莒前再以史料缺占位。"
+    },
+    {
+      "id": "dai-warring",
+      "name": "代",
+      "altNames": [
+        "代国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -228,
+        "month": 1,
+        "abs": -2724
+      },
+      "end": {
+        "year": -222,
+        "month": 12,
+        "abs": -2641
+      },
+      "precision": "year",
+      "note": "前228年赵嘉于代郡自立代王；前222年秦将王贲灭代。"
+    },
+    {
+      "id": "jiaodong-warring",
+      "name": "胶东",
+      "altNames": [
+        "胶东国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -221,
+        "month": 1,
+        "abs": -2640
+      },
+      "end": {
+        "year": -206,
+        "month": 12,
+        "abs": -2449
+      },
+      "precision": "year",
+      "note": "秦灭齐后即墨一带齐宗室残余；田巿等据胶东，至楚汉之际并入分封格局。"
+    },
+    {
+      "id": "zhou-guo-west",
+      "name": "西周国",
+      "altNames": [
+        "西周",
+        "西周公国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -440,
+        "month": 1,
+        "abs": -5268
+      },
+      "end": {
+        "year": -256,
+        "month": 12,
+        "abs": -3049
+      },
+      "precision": "year",
+      "note": "战国周王畿小国，都王城（洛阳）；前440年周考王封弟揭所立，非西周王朝（zhou-west）。前367年威公卒后与东周国分立；前256年秦灭。"
+    },
+    {
+      "id": "zhou-guo-east",
+      "name": "东周国",
+      "altNames": [
+        "东周",
+        "东周公国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -367,
+        "month": 1,
+        "abs": -4392
+      },
+      "end": {
+        "year": -249,
+        "month": 12,
+        "abs": -2965
+      },
+      "precision": "year",
+      "note": "战国周王畿小国，都巩（巩义）；前367年由西周威公少子根所立，非东周王朝（zhou-east）。前249年秦庄襄王灭。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-xue-r1-xue-chunqiu",
+      "dynastyId": "xue-chunqiu",
+      "personId": "xue-r1",
+      "title": "",
+      "posthumousName": "献公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -511,
+        "month": 1,
+        "abs": -6120
+      },
+      "end": {
+        "year": -511,
+        "month": 12,
+        "abs": -6109
+      },
+      "startAbs": -6120,
+      "endAbs": -6109,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-xue-r2-xue-chunqiu",
+      "dynastyId": "xue-chunqiu",
+      "personId": "xue-r2",
+      "title": "",
+      "posthumousName": "襄公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -510,
+        "month": 1,
+        "abs": -6108
+      },
+      "end": {
+        "year": -498,
+        "month": 12,
+        "abs": -5953
+      },
+      "startAbs": -6108,
+      "endAbs": -5953,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-xue-r3-xue-chunqiu",
+      "dynastyId": "xue-chunqiu",
+      "personId": "xue-r3",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -497,
+        "month": 1,
+        "abs": -5952
+      },
+      "end": {
+        "year": -497,
+        "month": 12,
+        "abs": -5941
+      },
+      "startAbs": -5952,
+      "endAbs": -5941,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-xue-r4-xue-chunqiu",
+      "dynastyId": "xue-chunqiu",
+      "personId": "xue-r4",
+      "title": "",
+      "posthumousName": "惠公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -496,
+        "month": 1,
+        "abs": -5940
+      },
+      "end": {
+        "year": -485,
+        "month": 12,
+        "abs": -5797
+      },
+      "startAbs": -5940,
+      "endAbs": -5797,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r0-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r0",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -1045,
+        "month": 1,
+        "abs": -12528
+      },
+      "end": {
+        "year": -1043,
+        "month": 12,
+        "abs": -12493
+      },
+      "startAbs": -12528,
+      "endAbs": -12493,
+      "precision": "year",
+      "startDateConfidence": "approximate",
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r20-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r20",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -1042,
+        "month": 1,
+        "abs": -12492
+      },
+      "end": {
+        "year": -1021,
+        "month": 12,
+        "abs": -12229
+      },
+      "startAbs": -12492,
+      "endAbs": -12229,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r21-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r21",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -1020,
+        "month": 1,
+        "abs": -12228
+      },
+      "end": {
+        "year": -1001,
+        "month": 12,
+        "abs": -11989
+      },
+      "startAbs": -12228,
+      "endAbs": -11989,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r22-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r22",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -1000,
+        "month": 1,
+        "abs": -11988
+      },
+      "end": {
+        "year": -990,
+        "month": 12,
+        "abs": -11857
+      },
+      "startAbs": -11988,
+      "endAbs": -11857,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r23-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r23",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -989,
+        "month": 1,
+        "abs": -11856
+      },
+      "end": {
+        "year": -978,
+        "month": 12,
+        "abs": -11713
+      },
+      "startAbs": -11856,
+      "endAbs": -11713,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r24-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r24",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -977,
+        "month": 1,
+        "abs": -11712
+      },
+      "end": {
+        "year": -950,
+        "month": 12,
+        "abs": -11377
+      },
+      "startAbs": -11712,
+      "endAbs": -11377,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r25-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r25",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -949,
+        "month": 1,
+        "abs": -11376
+      },
+      "end": {
+        "year": -916,
+        "month": 12,
+        "abs": -10969
+      },
+      "startAbs": -11376,
+      "endAbs": -10969,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r26-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r26",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -915,
+        "month": 1,
+        "abs": -10968
+      },
+      "end": {
+        "year": -882,
+        "month": 12,
+        "abs": -10561
+      },
+      "startAbs": -10968,
+      "endAbs": -10561,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r27-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r27",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -881,
+        "month": 1,
+        "abs": -10560
+      },
+      "end": {
+        "year": -848,
+        "month": 12,
+        "abs": -10153
+      },
+      "startAbs": -10560,
+      "endAbs": -10153,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r28-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r28",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -847,
+        "month": 1,
+        "abs": -10152
+      },
+      "end": {
+        "year": -815,
+        "month": 12,
+        "abs": -9757
+      },
+      "startAbs": -10152,
+      "endAbs": -9757,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r29-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r29",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -814,
+        "month": 1,
+        "abs": -9756
+      },
+      "end": {
+        "year": -782,
+        "month": 12,
+        "abs": -9361
+      },
+      "startAbs": -9756,
+      "endAbs": -9361,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r30-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r30",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -781,
+        "month": 1,
+        "abs": -9360
+      },
+      "end": {
+        "year": -749,
+        "month": 12,
+        "abs": -8965
+      },
+      "startAbs": -9360,
+      "endAbs": -8965,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r1-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r1",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -748,
+        "month": 1,
+        "abs": -8964
+      },
+      "end": {
+        "year": -716,
+        "month": 12,
+        "abs": -8569
+      },
+      "startAbs": -8964,
+      "endAbs": -8569,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r13-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r13",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -715,
+        "month": 1,
+        "abs": -8568
+      },
+      "end": {
+        "year": -711,
+        "month": 12,
+        "abs": -8509
+      },
+      "startAbs": -8568,
+      "endAbs": -8509,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r12-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r12",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -710,
+        "month": 1,
+        "abs": -8508
+      },
+      "end": {
+        "year": -695,
+        "month": 12,
+        "abs": -8317
+      },
+      "startAbs": -8508,
+      "endAbs": -8317,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r11-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r11",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -694,
+        "month": 1,
+        "abs": -8316
+      },
+      "end": {
+        "year": -660,
+        "month": 12,
+        "abs": -7897
+      },
+      "startAbs": -8316,
+      "endAbs": -7897,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r7-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r7",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -659,
+        "month": 1,
+        "abs": -7896
+      },
+      "end": {
+        "year": -640,
+        "month": 12,
+        "abs": -7657
+      },
+      "startAbs": -7896,
+      "endAbs": -7657,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r10-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r10",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -639,
+        "month": 1,
+        "abs": -7656
+      },
+      "end": {
+        "year": -631,
+        "month": 12,
+        "abs": -7549
+      },
+      "startAbs": -7656,
+      "endAbs": -7549,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r8-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r8",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -630,
+        "month": 1,
+        "abs": -7548
+      },
+      "end": {
+        "year": -623,
+        "month": 12,
+        "abs": -7453
+      },
+      "startAbs": -7548,
+      "endAbs": -7453,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r9-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r9",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -622,
+        "month": 1,
+        "abs": -7452
+      },
+      "end": {
+        "year": -600,
+        "month": 12,
+        "abs": -7177
+      },
+      "startAbs": -7452,
+      "endAbs": -7177,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r33-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r33",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -483,
+        "month": 1,
+        "abs": -5784
+      },
+      "end": {
+        "year": -472,
+        "month": 12,
+        "abs": -5641
+      },
+      "startAbs": -5784,
+      "endAbs": -5641,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r34-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r34",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -471,
+        "month": 1,
+        "abs": -5640
+      },
+      "end": {
+        "year": -460,
+        "month": 12,
+        "abs": -5497
+      },
+      "startAbs": -5640,
+      "endAbs": -5497,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r35-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r35",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -459,
+        "month": 1,
+        "abs": -5496
+      },
+      "end": {
+        "year": -448,
+        "month": 12,
+        "abs": -5353
+      },
+      "startAbs": -5496,
+      "endAbs": -5353,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r36-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r36",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -447,
+        "month": 1,
+        "abs": -5352
+      },
+      "end": {
+        "year": -436,
+        "month": 12,
+        "abs": -5209
+      },
+      "startAbs": -5352,
+      "endAbs": -5209,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r37-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r37",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -435,
+        "month": 1,
+        "abs": -5208
+      },
+      "end": {
+        "year": -425,
+        "month": 12,
+        "abs": -5077
+      },
+      "startAbs": -5208,
+      "endAbs": -5077,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r31-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r31",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -424,
+        "month": 1,
+        "abs": -5076
+      },
+      "end": {
+        "year": -414,
+        "month": 12,
+        "abs": -4945
+      },
+      "startAbs": -5076,
+      "endAbs": -4945,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r2-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r2",
+      "title": "",
+      "posthumousName": "文公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -599,
+        "month": 1,
+        "abs": -7176
+      },
+      "end": {
+        "year": -575,
+        "month": 12,
+        "abs": -6877
+      },
+      "startAbs": -7176,
+      "endAbs": -6877,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r3-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r3",
+      "title": "",
+      "posthumousName": "成公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -574,
+        "month": 1,
+        "abs": -6876
+      },
+      "end": {
+        "year": -539,
+        "month": 12,
+        "abs": -6445
+      },
+      "startAbs": -6876,
+      "endAbs": -6445,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r4-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r4",
+      "title": "",
+      "posthumousName": "悼公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -538,
+        "month": 1,
+        "abs": -6444
+      },
+      "end": {
+        "year": -514,
+        "month": 12,
+        "abs": -6145
+      },
+      "startAbs": -6444,
+      "endAbs": -6145,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r5-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r5",
+      "title": "",
+      "posthumousName": "顷公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -513,
+        "month": 1,
+        "abs": -6144
+      },
+      "end": {
+        "year": -491,
+        "month": 12,
+        "abs": -5869
+      },
+      "startAbs": -6144,
+      "endAbs": -5869,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-teng-r6-teng-chunqiu",
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r6",
+      "title": "",
+      "posthumousName": "隐公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -490,
+        "month": 1,
+        "abs": -5868
+      },
+      "end": {
+        "year": -484,
+        "month": 12,
+        "abs": -5785
+      },
+      "startAbs": -5868,
+      "endAbs": -5785,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-qi-state-r1-qi-state-chunqiu",
+      "dynastyId": "qi-state-chunqiu",
+      "personId": "qi-state-r1",
+      "title": "",
+      "posthumousName": "武公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -750,
+        "month": 1,
+        "abs": -8988
+      },
+      "end": {
+        "year": -704,
+        "month": 12,
+        "abs": -8425
+      },
+      "startAbs": -8988,
+      "endAbs": -8425,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-qi-state-r1b-qi-state-chunqiu",
+      "dynastyId": "qi-state-chunqiu",
+      "personId": "qi-state-r1b",
+      "title": "",
+      "posthumousName": "靖公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -703,
+        "month": 1,
+        "abs": -8424
+      },
+      "end": {
+        "year": -681,
+        "month": 12,
+        "abs": -8149
+      },
+      "startAbs": -8424,
+      "endAbs": -8149,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-qi-state-gong-qi-state-chunqiu",
+      "dynastyId": "qi-state-chunqiu",
+      "personId": "qi-state-gong",
+      "title": "",
+      "posthumousName": "共公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -680,
+        "month": 1,
+        "abs": -8148
+      },
+      "end": {
+        "year": -673,
+        "month": 12,
+        "abs": -8053
+      },
+      "startAbs": -8148,
+      "endAbs": -8053,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-qi-state-de-qi-state-chunqiu",
+      "dynastyId": "qi-state-chunqiu",
+      "personId": "qi-state-de",
+      "title": "",
+      "posthumousName": "德公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -672,
+        "month": 1,
+        "abs": -8052
+      },
+      "end": {
+        "year": -655,
+        "month": 12,
+        "abs": -7837
+      },
+      "startAbs": -8052,
+      "endAbs": -7837,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-qi-state-r1c-qi-state-chunqiu",
+      "dynastyId": "qi-state-chunqiu",
+      "personId": "qi-state-r1c",
+      "title": "",
+      "posthumousName": "成公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -654,
+        "month": 1,
+        "abs": -7836
+      },
+      "end": {
+        "year": -637,
+        "month": 12,
+        "abs": -7621
+      },
+      "startAbs": -7836,
+      "endAbs": -7621,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-qi-state-r2-qi-state-chunqiu",
+      "dynastyId": "qi-state-chunqiu",
+      "personId": "qi-state-r2",
+      "title": "",
+      "posthumousName": "桓公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -636,
+        "month": 1,
+        "abs": -7620
+      },
+      "end": {
+        "year": -567,
+        "month": 12,
+        "abs": -6781
+      },
+      "startAbs": -7620,
+      "endAbs": -6781,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-qi-state-xiao-qi-state-chunqiu",
+      "dynastyId": "qi-state-chunqiu",
+      "personId": "qi-state-xiao",
+      "title": "",
+      "posthumousName": "孝公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -566,
+        "month": 1,
+        "abs": -6780
+      },
+      "end": {
+        "year": -550,
+        "month": 12,
+        "abs": -6577
+      },
+      "startAbs": -6780,
+      "endAbs": -6577,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-qi-state-r3-qi-state-chunqiu",
+      "dynastyId": "qi-state-chunqiu",
+      "personId": "qi-state-r3",
+      "title": "",
+      "posthumousName": "文公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -549,
+        "month": 1,
+        "abs": -6576
+      },
+      "end": {
+        "year": -536,
+        "month": 12,
+        "abs": -6409
+      },
+      "startAbs": -6576,
+      "endAbs": -6409,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-qi-state-r4-qi-state-chunqiu",
+      "dynastyId": "qi-state-chunqiu",
+      "personId": "qi-state-r4",
+      "title": "",
+      "posthumousName": "平公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -535,
+        "month": 1,
+        "abs": -6408
+      },
+      "end": {
+        "year": -518,
+        "month": 12,
+        "abs": -6193
+      },
+      "startAbs": -6408,
+      "endAbs": -6193,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-qi-state-dao-qi-state-chunqiu",
+      "dynastyId": "qi-state-chunqiu",
+      "personId": "qi-state-dao",
+      "title": "",
+      "posthumousName": "悼公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -517,
+        "month": 1,
+        "abs": -6192
+      },
+      "end": {
+        "year": -506,
+        "month": 12,
+        "abs": -6049
+      },
+      "startAbs": -6192,
+      "endAbs": -6049,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-qi-state-yin-qi-state-chunqiu",
+      "dynastyId": "qi-state-chunqiu",
+      "personId": "qi-state-yin",
+      "title": "",
+      "posthumousName": "隐公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -506,
+        "month": 1,
+        "abs": -6060
+      },
+      "end": {
+        "year": -506,
+        "month": 12,
+        "abs": -6049
+      },
+      "startAbs": -6060,
+      "endAbs": -6049,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-qi-state-xi-qi-state-chunqiu",
+      "dynastyId": "qi-state-chunqiu",
+      "personId": "qi-state-xi",
+      "title": "",
+      "posthumousName": "僖公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -505,
+        "month": 1,
+        "abs": -6048
+      },
+      "end": {
+        "year": -487,
+        "month": 12,
+        "abs": -5821
+      },
+      "startAbs": -6048,
+      "endAbs": -5821,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-qi-state-r5-qi-state-chunqiu",
+      "dynastyId": "qi-state-chunqiu",
+      "personId": "qi-state-r5",
+      "title": "",
+      "posthumousName": "湣公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -486,
+        "month": 1,
+        "abs": -5820
+      },
+      "end": {
+        "year": -471,
+        "month": 12,
+        "abs": -5629
+      },
+      "startAbs": -5820,
+      "endAbs": -5629,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-qi-state-ai-qi-state-chunqiu",
+      "dynastyId": "qi-state-chunqiu",
+      "personId": "qi-state-ai",
+      "title": "",
+      "posthumousName": "哀公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -470,
+        "month": 1,
+        "abs": -5628
+      },
+      "end": {
+        "year": -461,
+        "month": 12,
+        "abs": -5509
+      },
+      "startAbs": -5628,
+      "endAbs": -5509,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-qi-state-chu-qi-state-chunqiu",
+      "dynastyId": "qi-state-chunqiu",
+      "personId": "qi-state-chu",
+      "title": "",
+      "posthumousName": "出公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -460,
+        "month": 1,
+        "abs": -5508
+      },
+      "end": {
+        "year": -449,
+        "month": 12,
+        "abs": -5365
+      },
+      "startAbs": -5508,
+      "endAbs": -5365,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-qi-state-r6-qi-state-chunqiu",
+      "dynastyId": "qi-state-chunqiu",
+      "personId": "qi-state-r6",
+      "title": "",
+      "posthumousName": "简公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -448,
+        "month": 1,
+        "abs": -5364
+      },
+      "end": {
+        "year": -445,
+        "month": 12,
+        "abs": -5317
+      },
+      "startAbs": -5364,
+      "endAbs": -5317,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-ju-r1-ju-chunqiu",
+      "dynastyId": "ju-chunqiu",
+      "personId": "ju-r1",
+      "title": "",
+      "posthumousName": "纪公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -615,
+        "month": 1,
+        "abs": -7368
+      },
+      "end": {
+        "year": -609,
+        "month": 12,
+        "abs": -7285
+      },
+      "startAbs": -7368,
+      "endAbs": -7285,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-ju-r1b-ju-chunqiu",
+      "dynastyId": "ju-chunqiu",
+      "personId": "ju-r1b",
+      "title": "",
+      "posthumousName": "厉公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -608,
+        "month": 1,
+        "abs": -7284
+      },
+      "end": {
+        "year": -580,
+        "month": 12,
+        "abs": -6937
+      },
+      "startAbs": -7284,
+      "endAbs": -6937,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-ju-r2-ju-chunqiu",
+      "dynastyId": "ju-chunqiu",
+      "personId": "ju-r2",
+      "title": "",
+      "posthumousName": "渠丘公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -579,
+        "month": 1,
+        "abs": -6936
+      },
+      "end": {
+        "year": -577,
+        "month": 12,
+        "abs": -6901
+      },
+      "startAbs": -6936,
+      "endAbs": -6901,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-ju-r3-ju-chunqiu",
+      "dynastyId": "ju-chunqiu",
+      "personId": "ju-r3",
+      "title": "",
+      "posthumousName": "犂比公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -576,
+        "month": 1,
+        "abs": -6900
+      },
+      "end": {
+        "year": -542,
+        "month": 12,
+        "abs": -6481
+      },
+      "startAbs": -6900,
+      "endAbs": -6481,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-ju-r4-ju-chunqiu",
+      "dynastyId": "ju-chunqiu",
+      "personId": "ju-r4",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -541,
+        "month": 1,
+        "abs": -6480
+      },
+      "end": {
+        "year": -541,
+        "month": 12,
+        "abs": -6469
+      },
+      "startAbs": -6480,
+      "endAbs": -6469,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-ju-r5-ju-chunqiu",
+      "dynastyId": "ju-chunqiu",
+      "personId": "ju-r5",
+      "title": "",
+      "posthumousName": "著丘公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -540,
+        "month": 1,
+        "abs": -6468
+      },
+      "end": {
+        "year": -528,
+        "month": 12,
+        "abs": -6313
+      },
+      "startAbs": -6468,
+      "endAbs": -6313,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-ju-r6-ju-chunqiu",
+      "dynastyId": "ju-chunqiu",
+      "personId": "ju-r6",
+      "title": "",
+      "posthumousName": "共公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -527,
+        "month": 1,
+        "abs": -6312
+      },
+      "end": {
+        "year": -519,
+        "month": 12,
+        "abs": -6205
+      },
+      "startAbs": -6312,
+      "endAbs": -6205,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-ju-r7-ju-chunqiu",
+      "dynastyId": "ju-chunqiu",
+      "personId": "ju-r7",
+      "title": "",
+      "posthumousName": "郊公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -518,
+        "month": 1,
+        "abs": -6204
+      },
+      "end": {
+        "year": -481,
+        "month": 12,
+        "abs": -5749
+      },
+      "startAbs": -6204,
+      "endAbs": -5749,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zhao-jia-dai-dai-warring",
+      "dynastyId": "dai-warring",
+      "personId": "zhao-jia-dai",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -228,
+        "month": 1,
+        "abs": -2724
+      },
+      "end": {
+        "year": -222,
+        "month": 12,
+        "abs": -2641
+      },
+      "startAbs": -2724,
+      "endAbs": -2641,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-tian-shi-jiaodong-warring",
+      "dynastyId": "jiaodong-warring",
+      "personId": "tian-shi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -221,
+        "month": 1,
+        "abs": -2640
+      },
+      "end": {
+        "year": -206,
+        "month": 12,
+        "abs": -2449
+      },
+      "startAbs": -2640,
+      "endAbs": -2449,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zhou-guo-jie-zhou-guo-west",
+      "dynastyId": "zhou-guo-west",
+      "personId": "zhou-guo-jie",
+      "title": "",
+      "posthumousName": "桓公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -440,
+        "month": 1,
+        "abs": -5268
+      },
+      "end": {
+        "year": -415,
+        "month": 12,
+        "abs": -4957
+      },
+      "startAbs": -5268,
+      "endAbs": -4957,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zhou-guo-zao-zhou-guo-west",
+      "dynastyId": "zhou-guo-west",
+      "personId": "zhou-guo-zao",
+      "title": "",
+      "posthumousName": "威公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -414,
+        "month": 1,
+        "abs": -4956
+      },
+      "end": {
+        "year": -367,
+        "month": 12,
+        "abs": -4381
+      },
+      "startAbs": -4956,
+      "endAbs": -4381,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zhou-guo-chao-zhou-guo-west",
+      "dynastyId": "zhou-guo-west",
+      "personId": "zhou-guo-chao",
+      "title": "",
+      "posthumousName": "惠公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -366,
+        "month": 1,
+        "abs": -4380
+      },
+      "end": {
+        "year": -330,
+        "month": 12,
+        "abs": -3937
+      },
+      "startAbs": -4380,
+      "endAbs": -3937,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zhou-guo-wugong-zhou-guo-west",
+      "dynastyId": "zhou-guo-west",
+      "personId": "zhou-guo-wugong",
+      "title": "",
+      "posthumousName": "武公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -329,
+        "month": 1,
+        "abs": -3936
+      },
+      "end": {
+        "year": -293,
+        "month": 12,
+        "abs": -3493
+      },
+      "startAbs": -3936,
+      "endAbs": -3493,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zhou-guo-jiu-zhou-guo-west",
+      "dynastyId": "zhou-guo-west",
+      "personId": "zhou-guo-jiu",
+      "title": "",
+      "posthumousName": "文公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -292,
+        "month": 1,
+        "abs": -3492
+      },
+      "end": {
+        "year": -256,
+        "month": 12,
+        "abs": -3049
+      },
+      "startAbs": -3492,
+      "endAbs": -3049,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zhou-guo-gen-zhou-guo-east",
+      "dynastyId": "zhou-guo-east",
+      "personId": "zhou-guo-gen",
+      "title": "",
+      "posthumousName": "惠公",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -366,
+        "month": 1,
+        "abs": -4380
+      },
+      "end": {
+        "year": -360,
+        "month": 12,
+        "abs": -4297
+      },
+      "startAbs": -4380,
+      "endAbs": -4297,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-missing-zhou-guo-east--360",
+      "dynastyId": "zhou-guo-east",
+      "personId": "system-missing-ruler",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -360,
+        "month": 1,
+        "abs": -4308
+      },
+      "end": {
+        "year": -249,
+        "month": 12,
+        "abs": -2965
+      },
+      "startAbs": -4308,
+      "endAbs": -2965,
+      "precision": "year",
+      "isMain": false
+    },
+    {
+      "id": "reign-missing-xue-chunqiu--485",
+      "dynastyId": "xue-chunqiu",
+      "personId": "system-missing-ruler",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -485,
+        "month": 1,
+        "abs": -5808
+      },
+      "end": {
+        "year": -327,
+        "month": 12,
+        "abs": -3901
+      },
+      "startAbs": -5808,
+      "endAbs": -3901,
+      "precision": "year",
+      "isMain": false
+    },
+    {
+      "id": "reign-missing-teng-chunqiu--296",
+      "dynastyId": "teng-chunqiu",
+      "personId": "system-missing-ruler",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -296,
+        "month": 1,
+        "abs": -3540
+      },
+      "end": {
+        "year": -296,
+        "month": 12,
+        "abs": -3529
+      },
+      "startAbs": -3540,
+      "endAbs": -3529,
+      "precision": "year",
+      "isMain": false
+    },
+    {
+      "id": "reign-missing-ju-chunqiu--1046",
+      "dynastyId": "ju-chunqiu",
+      "personId": "system-missing-ruler",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -1046,
+        "month": 1,
+        "abs": -12540
+      },
+      "end": {
+        "year": -616,
+        "month": 12,
+        "abs": -7369
+      },
+      "startAbs": -12540,
+      "endAbs": -7369,
+      "precision": "year",
+      "isMain": false
+    },
+    {
+      "id": "reign-missing-ju-chunqiu--481",
+      "dynastyId": "ju-chunqiu",
+      "personId": "system-missing-ruler",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -481,
+        "month": 1,
+        "abs": -5760
+      },
+      "end": {
+        "year": -431,
+        "month": 12,
+        "abs": -5149
+      },
+      "startAbs": -5760,
+      "endAbs": -5149,
+      "precision": "year",
+      "isMain": false
+    }
+  ],
+  "events": [
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-guo-west",
+        "zhou-guo-east",
+        "zhou-east"
+      ],
+      "participantIds": [
+        "zhou-guo-chao",
+        "zhou-guo-gen"
+      ],
+      "id": "zhou-guo-split",
+      "name": "东西周国分立",
+      "dateNote": "周威公卒，前367年；赵成侯、韩懿侯分周为二",
+      "at": {
+        "year": -367,
+        "month": 12,
+        "abs": -4381
+      },
+      "summary": "西周威公卒后，太子朝据王城为西周惠公，少子根据巩为东周惠公，周王畿分裂为西周国与东周国。",
+      "atAbs": -4381
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-xue-r1-xue-r2-succession",
+      "fromRef": "person:xue-r1",
+      "toRef": "person:xue-r2",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-xue-r2-xue-r3-succession",
+      "fromRef": "person:xue-r2",
+      "toRef": "person:xue-r3",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-xue-r3-xue-r4-succession",
+      "fromRef": "person:xue-r3",
+      "toRef": "person:xue-r4",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r0-teng-r20-succession",
+      "fromRef": "person:teng-r0",
+      "toRef": "person:teng-r20",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r20-teng-r21-succession",
+      "fromRef": "person:teng-r20",
+      "toRef": "person:teng-r21",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r21-teng-r22-succession",
+      "fromRef": "person:teng-r21",
+      "toRef": "person:teng-r22",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r22-teng-r23-succession",
+      "fromRef": "person:teng-r22",
+      "toRef": "person:teng-r23",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r23-teng-r24-succession",
+      "fromRef": "person:teng-r23",
+      "toRef": "person:teng-r24",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r24-teng-r25-succession",
+      "fromRef": "person:teng-r24",
+      "toRef": "person:teng-r25",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r25-teng-r26-succession",
+      "fromRef": "person:teng-r25",
+      "toRef": "person:teng-r26",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r26-teng-r27-succession",
+      "fromRef": "person:teng-r26",
+      "toRef": "person:teng-r27",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r27-teng-r28-succession",
+      "fromRef": "person:teng-r27",
+      "toRef": "person:teng-r28",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r28-teng-r29-succession",
+      "fromRef": "person:teng-r28",
+      "toRef": "person:teng-r29",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r29-teng-r30-succession",
+      "fromRef": "person:teng-r29",
+      "toRef": "person:teng-r30",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r30-teng-r1-succession",
+      "fromRef": "person:teng-r30",
+      "toRef": "person:teng-r1",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r1-teng-r13-succession",
+      "fromRef": "person:teng-r1",
+      "toRef": "person:teng-r13",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r13-teng-r12-succession",
+      "fromRef": "person:teng-r13",
+      "toRef": "person:teng-r12",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r12-teng-r11-succession",
+      "fromRef": "person:teng-r12",
+      "toRef": "person:teng-r11",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r11-teng-r7-succession",
+      "fromRef": "person:teng-r11",
+      "toRef": "person:teng-r7",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r7-teng-r10-succession",
+      "fromRef": "person:teng-r7",
+      "toRef": "person:teng-r10",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r10-teng-r8-succession",
+      "fromRef": "person:teng-r10",
+      "toRef": "person:teng-r8",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r8-teng-r9-succession",
+      "fromRef": "person:teng-r8",
+      "toRef": "person:teng-r9",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r9-teng-r33-succession",
+      "fromRef": "person:teng-r9",
+      "toRef": "person:teng-r33",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r33-teng-r34-succession",
+      "fromRef": "person:teng-r33",
+      "toRef": "person:teng-r34",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r34-teng-r35-succession",
+      "fromRef": "person:teng-r34",
+      "toRef": "person:teng-r35",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r35-teng-r36-succession",
+      "fromRef": "person:teng-r35",
+      "toRef": "person:teng-r36",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r36-teng-r37-succession",
+      "fromRef": "person:teng-r36",
+      "toRef": "person:teng-r37",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r37-teng-r31-succession",
+      "fromRef": "person:teng-r37",
+      "toRef": "person:teng-r31",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r31-teng-r2-succession",
+      "fromRef": "person:teng-r31",
+      "toRef": "person:teng-r2",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r2-teng-r3-succession",
+      "fromRef": "person:teng-r2",
+      "toRef": "person:teng-r3",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r3-teng-r4-succession",
+      "fromRef": "person:teng-r3",
+      "toRef": "person:teng-r4",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r4-teng-r5-succession",
+      "fromRef": "person:teng-r4",
+      "toRef": "person:teng-r5",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-teng-r5-teng-r6-succession",
+      "fromRef": "person:teng-r5",
+      "toRef": "person:teng-r6",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-qi-state-r1-qi-state-r1b-succession",
+      "fromRef": "person:qi-state-r1",
+      "toRef": "person:qi-state-r1b",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-qi-state-r1b-qi-state-gong-succession",
+      "fromRef": "person:qi-state-r1b",
+      "toRef": "person:qi-state-gong",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-qi-state-gong-qi-state-de-succession",
+      "fromRef": "person:qi-state-gong",
+      "toRef": "person:qi-state-de",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-qi-state-de-qi-state-r1c-succession",
+      "fromRef": "person:qi-state-de",
+      "toRef": "person:qi-state-r1c",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-qi-state-r1c-qi-state-r2-succession",
+      "fromRef": "person:qi-state-r1c",
+      "toRef": "person:qi-state-r2",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-qi-state-r2-qi-state-xiao-succession",
+      "fromRef": "person:qi-state-r2",
+      "toRef": "person:qi-state-xiao",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-qi-state-xiao-qi-state-r3-succession",
+      "fromRef": "person:qi-state-xiao",
+      "toRef": "person:qi-state-r3",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-qi-state-r3-qi-state-r4-succession",
+      "fromRef": "person:qi-state-r3",
+      "toRef": "person:qi-state-r4",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-qi-state-r4-qi-state-dao-succession",
+      "fromRef": "person:qi-state-r4",
+      "toRef": "person:qi-state-dao",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-qi-state-dao-qi-state-yin-succession",
+      "fromRef": "person:qi-state-dao",
+      "toRef": "person:qi-state-yin",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-qi-state-yin-qi-state-xi-succession",
+      "fromRef": "person:qi-state-yin",
+      "toRef": "person:qi-state-xi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-qi-state-xi-qi-state-r5-succession",
+      "fromRef": "person:qi-state-xi",
+      "toRef": "person:qi-state-r5",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-qi-state-r5-qi-state-ai-succession",
+      "fromRef": "person:qi-state-r5",
+      "toRef": "person:qi-state-ai",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-qi-state-ai-qi-state-chu-succession",
+      "fromRef": "person:qi-state-ai",
+      "toRef": "person:qi-state-chu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-qi-state-chu-qi-state-r6-succession",
+      "fromRef": "person:qi-state-chu",
+      "toRef": "person:qi-state-r6",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ju-r1-ju-r1b-succession",
+      "fromRef": "person:ju-r1",
+      "toRef": "person:ju-r1b",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ju-r1b-ju-r2-succession",
+      "fromRef": "person:ju-r1b",
+      "toRef": "person:ju-r2",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ju-r2-ju-r3-succession",
+      "fromRef": "person:ju-r2",
+      "toRef": "person:ju-r3",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ju-r3-ju-r4-succession",
+      "fromRef": "person:ju-r3",
+      "toRef": "person:ju-r4",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ju-r4-ju-r5-succession",
+      "fromRef": "person:ju-r4",
+      "toRef": "person:ju-r5",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ju-r5-ju-r6-succession",
+      "fromRef": "person:ju-r5",
+      "toRef": "person:ju-r6",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ju-r6-ju-r7-succession",
+      "fromRef": "person:ju-r6",
+      "toRef": "person:ju-r7",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhou-guo-jie-zhou-guo-zao-succession",
+      "fromRef": "person:zhou-guo-jie",
+      "toRef": "person:zhou-guo-zao",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhou-guo-zao-zhou-guo-chao-succession",
+      "fromRef": "person:zhou-guo-zao",
+      "toRef": "person:zhou-guo-chao",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhou-guo-chao-zhou-guo-wugong-succession",
+      "fromRef": "person:zhou-guo-chao",
+      "toRef": "person:zhou-guo-wugong",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhou-guo-wugong-zhou-guo-jiu-succession",
+      "fromRef": "person:zhou-guo-wugong",
+      "toRef": "person:zhou-guo-jiu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhou-guo-split-chao",
+      "fromRef": "event:zhou-guo-split",
+      "toRef": "person:zhou-guo-chao",
+      "kind": "politics"
+    },
+    {
+      "id": "rel-zhou-guo-split-gen",
+      "fromRef": "event:zhou-guo-split",
+      "toRef": "person:zhou-guo-gen",
+      "kind": "politics"
+    }
+  ],
+  "supplementalEventDynasties": [
+    {
+      "eventId": "chunqiu",
+      "dynastyId": "xue-chunqiu"
+    },
+    {
+      "eventId": "chunqiu",
+      "dynastyId": "teng-chunqiu"
+    },
+    {
+      "eventId": "chunqiu",
+      "dynastyId": "qi-state-chunqiu"
+    },
+    {
+      "eventId": "chunqiu",
+      "dynastyId": "ju-chunqiu"
+    },
+    {
+      "eventId": "zhanguo",
+      "dynastyId": "dai-warring"
+    },
+    {
+      "eventId": "zhanguo",
+      "dynastyId": "jiaodong-warring"
+    },
+    {
+      "eventId": "zhanguo",
+      "dynastyId": "zhou-guo-west"
+    },
+    {
+      "eventId": "zhanguo",
+      "dynastyId": "zhou-guo-east"
+    }
+  ],
+  "supplementalEventParticipants": [],
+  "preSql": "DELETE FROM reigns WHERE id = 'reign-missing-zhou-guo-west--365';\nDELETE FROM event_participants WHERE event_id = 'dai-founded';\nDELETE FROM event_dynasties WHERE event_id = 'dai-founded';\nDELETE FROM events WHERE id = 'dai-founded';\nDELETE FROM relations WHERE id = 'rel-dai-founded-zhao-jia';\nDELETE FROM reigns WHERE id IN (\n  'reign-xue-r0-xue-chunqiu',\n  'reign-teng-r0-teng-chunqiu',\n  'reign-teng-r1-teng-chunqiu',\n  'reign-teng-r7-teng-chunqiu',\n  'reign-qi-state-r0-qi-state-chunqiu',\n  'reign-ju-r0-ju-chunqiu',\n  'reign-ju-r6-ju-chunqiu'\n);\nDELETE FROM persons WHERE id IN ('xue-r0','qi-state-r0','ju-r0','zhou-guo-sijun')\n  AND id NOT IN (SELECT person_id FROM reigns);\nDELETE FROM reigns WHERE id = 'reign-missing-teng-chunqiu--484';\nDELETE FROM reigns WHERE id = 'reign-teng-r32-teng-chunqiu';\nDELETE FROM persons WHERE id = 'teng-r32' AND id NOT IN (SELECT person_id FROM reigns);\nDELETE FROM reigns WHERE id = 'reign-zhou-guo-sijun-zhou-guo-east';",
+  "manifest": {
+    "slug": "chunqiu-minor",
+    "title": "春秋小国与战国残余",
+    "window": {
+      "startYear": -750,
+      "startMonth": 1,
+      "endYear": -206,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-09-23",
+    "counts": {
+      "persons": 71,
+      "dynasties": 8,
+      "reigns": 67,
+      "events": 1,
+      "relations": 61,
+      "supplementalEventDynastyLinks": 8
+    },
+    "sources": [
+      {
+        "label": "薛国",
+        "url": "https://zh.wikipedia.org/wiki/薛国"
+      },
+      {
+        "label": "滕国",
+        "url": "https://zh.wikipedia.org/wiki/滕国"
+      },
+      {
+        "label": "滕国新考",
+        "url": "https://www.fdgwz.org.cn/Web/Show/1428"
+      },
+      {
+        "label": "夏商周断代工程西周年表（周王年代）",
+        "url": "https://zh.wikipedia.org/wiki/周朝纪年"
+      },
+      {
+        "label": "杞国",
+        "url": "https://zh.wikipedia.org/wiki/杞国"
+      },
+      {
+        "label": "莒国",
+        "url": "https://zh.wikipedia.org/wiki/莒国"
+      },
+      {
+        "label": "代国 (战国)",
+        "url": "https://zh.wikipedia.org/wiki/代国_(战国)"
+      },
+      {
+        "label": "西周国",
+        "url": "https://zh.wikipedia.org/wiki/西周国"
+      },
+      {
+        "label": "西周武公",
+        "url": "https://zh.wikipedia.org/wiki/西周武公"
+      },
+      {
+        "label": "史记·周本纪",
+        "url": "https://ctext.org/shiji/zhou-ben-ji"
+      },
+      {
+        "label": "东周国",
+        "url": "https://zh.wikipedia.org/wiki/东周国"
+      },
+      {
+        "label": "周朝诸侯国君主列表",
+        "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+      }
+    ],
+    "notes": [
+      "各国人物的 ancestral_xing / clan_shi 按史料整理后直接记录在 cache.json（薛任、滕姬、杞姒、莒己、代嬴赵、胶东妫田、西周国/东周国姬）。",
+      "除滕国外，其他小国仍仅收录有明确在位年的君主；无世次或连续君主数量依据的年代空白不强行拉满。",
+      "薛献公仅知前511年卒（左传），不填虚始年；齐庄公/卫武公/曹桓公/宋昭公长年在维基或史记有载，保留。",
+      "莒国起始按《莒国》条目所载周武王元年/前1046年修正；《莒国》明载周初至鲁隐公元年史文空缺，始封兹舆期后多世失考，故从前1046至前616年用系统史料缺占位，再接现有可考君主记录。",
+      "《莒国》条目所列前1046年与夏商周断代工程克商纪年相同；按年精度年桶记王朝起点。",
+      "薛国自薛献公起；滕国起点前移至错叔绣始封的约前1045年；杞国自武公起。",
+      "滕国早期世系按张志鹏《滕国新考》及金文断代校正：叔绣始封；二世在成康之际；三世在康王期；四世命仲在康昭之际；五世为命仲之子、滕伯文之父，在昭王期；六世滕伯文在昭穆之际。此前错误地将始封至前716年整体均分，造成前三处时代错位。前六世采用夏商周断代工程周王年代作为时代锚点，并以相邻时代之间的估算年份表达宽泛在位段；这些不是滕君确切即位/卒年，内侧边界标 interpolated。其后第七至十三世（滕侯毂）仅在六世之后至前716年卒年锚点间均分，标 interpolated。前484年隐公卒至前414年越灭滕依《世本》‘隐公后六世’分六段。",
+      "滕国君主本名失载时，persons.name 记为姬？，reigns.title 记为？；不以世次说明或爵称代替姓名。",
+      "春秋中段按《春秋》《左传》记事年夹定顺序君主，再在相邻锚点间均分连续在位段，均标 interpolated。前414年越灭滕至复国期间为实际亡国期，泳道内不画君主在位卡；复国后考公麇/定公、元公弘/文公按赵岐注对应。滕侯昃年代有争议；滕公丘属于另一谱系说，不作为确证在位记录。前296年末代君主失名，史料缺占位限于该年。",
+      "薛国泳道起年取薛献公（前511，左传仅载卒年），不提前至西周薛伯；惠公之后至灭国用史料缺占位。",
+      "杞桓公在位70年、高句丽太祖王等长年在史料中有记载，保留。",
+      "代王嘉 person id 为 zhao-jia-dai，与赵桓子 zhao-r2 区分。",
+      "薛、滕、杞、莒、代用国号，不带「国」。西周国/东周国例外：史记、战国策原文称西周、东周（君称西周君、东周君）；后世为与王朝分期西周/东周消歧，维基百科与杨宽《战国史料编年辑证》等通行作西周国、东周国。",
+      "东西周惠公泳道的年精度起年统一记为前366年；前367年为西周威公卒、周王畿分立之年，东周国的分立事件仍按前367年记。",
+      "清理对已在本包中删除的 dai-founded 事件的孤儿关系；该关系不再写入 relations。",
+      "杞国列王按维基「杞国」君主表（在位年份已是逾年切分）；隐公仅前506年七月，与悼公死年同桶。滕悼公迄前514、顷公起前513，与维基在位年数一致。",
+      "西周武公承西周惠公、为西周文公之父；《史记·周本纪》及《史记集解》引徐广注支持其世系，但均未载本名。《周朝诸侯国君主列表》列名共之，未标明该名所据原始文献；《西周国》君主表则列姓名不详，故数据库不把共之记作确证本名。惠公从有据的前366年起始，惠公、武公、文公具体继位年失考；以三位连续君主在前366年至前256年（含两端）共111年间各分37年作插值，区间分别为前366—前330、前329—前293、前292—前256，内侧边界均标 interpolated，前366与前256锚点保持确定。此均分为年代估算，不是史料所载在位年数。东周惠公之后至秦灭前仍为史料缺。"
+    ]
+  }
+}

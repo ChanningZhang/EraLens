@@ -233,18 +233,31 @@ export type ClusterFramePlacement = {
 
 /** Horizontal / bottom air around left-rail dynasty chips. */
 export const CLUSTER_CHIP_FRAME_PAD_X_PX = 5;
-/**
- * Keep the frame inside the last chip's bottom edge. The lane itself already
- * provides the vertical breathing room before the next dynasty chip; adding
- * frame padding here makes the group border visually stick to that chip.
- */
-export const CLUSTER_CHIP_FRAME_PAD_BOTTOM_PX = 0;
+/** Leave a visible margin below the last chip when the next lane has room. */
+export const CLUSTER_CHIP_FRAME_PAD_BOTTOM_PX = 8;
 /** Extra top air so the group name can sit on the frame edge. */
 export const CLUSTER_CHIP_FRAME_PAD_TOP_PX = 11;
+const CLUSTER_FRAME_MIN_GAP_PX = 4;
+
+/** Extra lane space needed after a group, based on the current row geometry. */
+export function clusterLaneGapForPresentation(presentation: {
+  rowHeightPx: number;
+  lanePaddingPx: number;
+  railChipHeightPx: number;
+}, nextHasClusterFrame: boolean): number {
+  const naturalChipGap =
+    presentation.rowHeightPx + presentation.lanePaddingPx * 2 - presentation.railChipHeightPx;
+  const desiredChipGap =
+    CLUSTER_CHIP_FRAME_PAD_BOTTOM_PX +
+    (nextHasClusterFrame ? CLUSTER_CHIP_FRAME_PAD_TOP_PX : 0) +
+    CLUSTER_FRAME_MIN_GAP_PX;
+  return Math.max(0, desiredChipGap - naturalChipGap);
+}
 
 export function clusterFramesForLanes(
   lanes: readonly PlacedLaneMetrics[],
   dynastyGroups: readonly DynastyGroup[],
+  rail: { insetPx: number; labelWidthPx: number } = { insetPx: TIMELINE_RAIL_INSET_PX, labelWidthPx: TIMELINE_RAIL_LABEL_WIDTH_PX },
 ): ClusterFramePlacement[] {
   const groupById = new Map(dynastyGroups.map((group) => [group.id, group]));
   const lanesByGroupId = new Map<string, PlacedLaneMetrics[]>();
@@ -261,8 +274,8 @@ export function clusterFramesForLanes(
   const padX = CLUSTER_CHIP_FRAME_PAD_X_PX;
   const padTop = CLUSTER_CHIP_FRAME_PAD_TOP_PX;
   const padBottom = CLUSTER_CHIP_FRAME_PAD_BOTTOM_PX;
-  const left = TIMELINE_RAIL_INSET_PX - padX;
-  const width = TIMELINE_RAIL_LABEL_WIDTH_PX + padX * 2;
+  const left = rail.insetPx - padX;
+  const width = rail.labelWidthPx + padX * 2;
 
   for (const [groupId, groupLanes] of lanesByGroupId) {
     const group = groupById.get(groupId);
@@ -271,12 +284,24 @@ export function clusterFramesForLanes(
     const chipBottom = Math.max(
       ...groupLanes.map((lane) => lane.chipTop + lane.chipHeight),
     );
+    const nextLane = lanes
+      .filter((lane) => lane.chipTop >= chipBottom)
+      .sort((a, b) => a.chipTop - b.chipTop)[0];
+    const nextFrameTop = nextLane
+      ? nextLane.dynasty.groupId && groupById.has(nextLane.dynasty.groupId)
+        ? nextLane.chipTop - padTop
+        : nextLane.chipTop
+      : Infinity;
+    const bottomPad = Math.max(
+      0,
+      Math.min(padBottom, nextFrameTop - chipBottom - CLUSTER_FRAME_MIN_GAP_PX),
+    );
     frames.push({
       group,
       left,
       width,
       top: chipTop - padTop,
-      height: chipBottom - chipTop + padTop + padBottom,
+      height: chipBottom - chipTop + padTop + bottomPad,
     });
   }
 

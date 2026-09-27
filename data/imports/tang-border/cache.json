@@ -1,0 +1,4022 @@
+{
+  "slug": "tang-border",
+  "window": {
+    "startYear": -37,
+    "startMonth": 1,
+    "endYear": 842,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "namri-songtsen",
+      "name": "南日松赞",
+      "roles": [
+        "君主"
+      ],
+      "bio": "吐蕃赞普，松赞干布之父，统一各部，奠定吐蕃帝国基础。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/南日松赞"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "赞普"
+    },
+    {
+      "id": "songtsen-gampo",
+      "name": "松赞干布",
+      "roles": [
+        "君主"
+      ],
+      "bio": "吐蕃赞普，创制藏文，迎娶文成公主，与唐和亲。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/松赞干布"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "赞普"
+    },
+    {
+      "id": "mangsong-mangtsen",
+      "name": "芒松芒赞",
+      "roles": [
+        "君主"
+      ],
+      "bio": "吐蕃赞普，松赞干布之孙，幼年即位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/芒松芒赞"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "赞普"
+    },
+    {
+      "id": "dusong-mangje",
+      "name": "杜松芒赞",
+      "roles": [
+        "君主"
+      ],
+      "bio": "吐蕃赞普，亦称赤都松赞、杜松芒波杰。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杜松芒赞"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "赞普"
+    },
+    {
+      "id": "tri-detsug-nyima",
+      "name": "赤德祖赞",
+      "roles": [
+        "君主"
+      ],
+      "bio": "吐蕃赞普，亦称弃隶缩赞，与唐长期对峙。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赤德祖赞"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "赞普"
+    },
+    {
+      "id": "tri-song-detsen",
+      "name": "赤松德赞",
+      "roles": [
+        "君主"
+      ],
+      "bio": "吐蕃赞普，崇佛，与唐会盟，帝国鼎盛期君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赤松德赞"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "赞普"
+    },
+    {
+      "id": "mu-ne-btsan",
+      "name": "穆尼赞普",
+      "roles": [
+        "君主"
+      ],
+      "bio": "吐蕃赞普，亦称木奈赞普，在位极短。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/穆尼赞普"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "赞普"
+    },
+    {
+      "id": "tri-desong-btsan",
+      "name": "赤德松赞",
+      "roles": [
+        "君主"
+      ],
+      "bio": "吐蕃赞普，穆尼赞普之弟，继续推行佛教。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赤德松赞"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "赞普"
+    },
+    {
+      "id": "tri-tsug-lde-btsan",
+      "name": "赤祖德赞",
+      "roles": [
+        "君主"
+      ],
+      "bio": "吐蕃赞普，年号彝泰，吐蕃晚期重要君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赤祖德赞"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "赞普"
+    },
+    {
+      "id": "lang-darma",
+      "name": "朗达玛",
+      "roles": [
+        "君主"
+      ],
+      "bio": "吐蕃末代赞普，禁佛，842年被杀，帝国分裂。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/朗达玛"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "赞普"
+    },
+    {
+      "id": "murong-tuyuhun",
+      "name": "慕容吐谷浑",
+      "roles": [
+        "君主"
+      ],
+      "bio": "吐谷浑奠基者，率部西迁，建立政权。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/慕容吐谷浑"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "河南王"
+    },
+    {
+      "id": "tuyan",
+      "name": "吐延",
+      "roles": [
+        "君主"
+      ],
+      "bio": "慕容吐谷浑长子，继守青海。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/吐延"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "河南王"
+    },
+    {
+      "id": "yeyan",
+      "name": "叶延",
+      "roles": [
+        "君主"
+      ],
+      "bio": "329年确立吐谷浑国号，以父名为氏。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/叶延"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "吐谷浑王"
+    },
+    {
+      "id": "suixi",
+      "name": "碎奚",
+      "roles": [
+        "君主"
+      ],
+      "bio": "吐谷浑王，向前秦称臣。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/碎奚"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "吐谷浑王"
+    },
+    {
+      "id": "shilian",
+      "name": "视连",
+      "roles": [
+        "君主"
+      ],
+      "bio": "白兰王，臣服西秦。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/视连"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "白兰王"
+    },
+    {
+      "id": "shipi",
+      "name": "视罴",
+      "roles": [
+        "君主"
+      ],
+      "bio": "吐谷浑王，继续据守青海。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/视罴"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "吐谷浑王"
+    },
+    {
+      "id": "wuheti",
+      "name": "乌纥提",
+      "roles": [
+        "君主"
+      ],
+      "bio": "大单于，吐谷浑中期君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/乌纥提"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "大单于"
+    },
+    {
+      "id": "shulogan",
+      "name": "树洛干",
+      "roles": [
+        "君主"
+      ],
+      "bio": "戊寅可汗，武王，吐谷浑重要君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/树洛干"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "武王"
+      ],
+      "templeNames": [],
+      "title": "戊寅可汗"
+    },
+    {
+      "id": "achen",
+      "name": "阿豺",
+      "roles": [
+        "君主"
+      ],
+      "bio": "白兰王威王，吐谷浑名臣型君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/阿豺"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "威王"
+      ],
+      "templeNames": [],
+      "title": "白兰王"
+    },
+    {
+      "id": "mugui",
+      "name": "慕璝",
+      "roles": [
+        "君主"
+      ],
+      "bio": "惠王陇西王，吐谷浑势力扩张。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/慕璝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "陇西王"
+      ],
+      "templeNames": [],
+      "title": "惠王"
+    },
+    {
+      "id": "muliyan",
+      "name": "慕利延",
+      "roles": [
+        "君主"
+      ],
+      "bio": "河南王，慕璝之弟。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/慕利延"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "河南王"
+    },
+    {
+      "id": "shiyin",
+      "name": "拾寅",
+      "roles": [
+        "君主"
+      ],
+      "bio": "河南王西平王，与北魏交涉频繁。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/拾寅"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "西平王"
+      ],
+      "templeNames": [],
+      "title": "河南王"
+    },
+    {
+      "id": "duyihou",
+      "name": "度易侯",
+      "roles": [
+        "君主"
+      ],
+      "bio": "河南王，吐谷浑中期君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/度易侯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "河南王"
+    },
+    {
+      "id": "fulianchou",
+      "name": "伏连筹",
+      "roles": [
+        "君主"
+      ],
+      "bio": "吐谷浑可汗，在位五十年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/伏连筹"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "可汗"
+    },
+    {
+      "id": "kuailv",
+      "name": "夸吕",
+      "roles": [
+        "君主"
+      ],
+      "bio": "吐谷浑可汗，与隋、唐往来。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/夸吕"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "可汗"
+    },
+    {
+      "id": "shifu",
+      "name": "世伏",
+      "roles": [
+        "君主"
+      ],
+      "bio": "吐谷浑可汗，夸吕之子。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/世伏"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "可汗"
+    },
+    {
+      "id": "fuyun",
+      "name": "伏允",
+      "roles": [
+        "君主"
+      ],
+      "bio": "步萨钵可汗，与唐、吐蕃长期角力，635年被杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/伏允"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "步萨钵可汗"
+    },
+    {
+      "id": "murong-shun",
+      "name": "慕容顺",
+      "roles": [
+        "君主"
+      ],
+      "bio": "甘豆可汗，伏允之子，唐册封西平郡王。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/慕容顺"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "甘豆可汗"
+    },
+    {
+      "id": "nuohabo",
+      "name": "慕容诺曷钵",
+      "roles": [
+        "君主"
+      ],
+      "bio": "勤豆可汗，吐谷浑末代可汗，663年亡国投唐。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/慕容诺曷钵"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "河源郡王"
+      ],
+      "templeNames": [],
+      "title": "勤豆可汗"
+    },
+    {
+      "id": "gao-zhumeng",
+      "name": "高朱蒙",
+      "roles": [
+        "君主"
+      ],
+      "bio": "东明圣王，高句丽开国君主，朱蒙。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/朱蒙"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "东明圣王"
+    },
+    {
+      "id": "liuli-ming-wang",
+      "name": "琉璃明王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽第二代君主，名类利、孺留，东明圣王之子。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/琉璃明王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "琉璃明王"
+    },
+    {
+      "id": "daewuseong",
+      "name": "大武神王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽君主，名无恤，扩张辽东。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/大武神王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "大武神王"
+    },
+    {
+      "id": "minzhong-wang",
+      "name": "闵中王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽君主，名解色朱，大武神王之弟，太子年幼时被推举继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/閔中王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "闵中王"
+    },
+    {
+      "id": "muben-wang",
+      "name": "慕本王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽君主，名解忧，大武神王之子，被侍从杜鲁刺杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/慕本王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "慕本王"
+    },
+    {
+      "id": "taizu-wang",
+      "name": "太祖王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽太祖王，名宫，长期在位，国势渐强。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/太祖王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "太祖王"
+    },
+    {
+      "id": "cida-wang",
+      "name": "次大王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽君主，名遂成，太祖王之嗣。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/次大王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "次大王"
+    },
+    {
+      "id": "xingda-wang",
+      "name": "新大王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽君主，名伯固，新大王时期。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/新大王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "新大王"
+    },
+    {
+      "id": "guguo-chuan-wang",
+      "name": "故国川王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽君主，名男武，迁都国内城。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/故国川王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "故国川王"
+    },
+    {
+      "id": "shanshang-wang",
+      "name": "山上王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽君主，名延优，山上王时期。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/山上王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "山上王"
+    },
+    {
+      "id": "dongchuan-wang",
+      "name": "东川王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽君主，名忧位居，东川王时期。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/东川王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "东川王"
+    },
+    {
+      "id": "zhongchuan-wang",
+      "name": "中川王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽君主，名然弗，东川王之子。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/中川王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "中川王"
+    },
+    {
+      "id": "xichuan-wang",
+      "name": "西川王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽君主，名药卢，中川王之子。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/西川王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "西川王"
+    },
+    {
+      "id": "fengshang-wang",
+      "name": "烽上王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽君主，名相夫，为大臣所废后自杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/烽上王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "烽上王"
+    },
+    {
+      "id": "meichuan-wang",
+      "name": "美川王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "好壤王，名乙弗，高句丽重要君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/美川王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "美川王"
+    },
+    {
+      "id": "guguo-yuan-wang",
+      "name": "故国原王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽君主，名斯由，故国原王时期。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/故国原王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "故国原王"
+    },
+    {
+      "id": "xiaoshoulin-wang",
+      "name": "小兽林王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽君主，名丘夫，迁都平壤前夕。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/小兽林王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "小兽林王"
+    },
+    {
+      "id": "guguo-rang-wang",
+      "name": "故国壤王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽君主，名伊连，小兽林王之弟、好太王之父。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/故国壤王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "故国壤王"
+    },
+    {
+      "id": "guangkaitu-wang",
+      "name": "广开土王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽鼎盛君主，名谈德，扩张辽东与半岛。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/广开土王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "广开土王"
+    },
+    {
+      "id": "changsheng-wang",
+      "name": "长寿王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽君主，名巨连，长期在位，国势稳定。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/长寿王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "长寿王"
+    },
+    {
+      "id": "wenzhi-wang",
+      "name": "文咨王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "文惠王，名罗云，高句丽文咨王时期。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/文咨王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "文咨王"
+    },
+    {
+      "id": "ancang-wang",
+      "name": "安藏王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽君主，名兴安，文咨王之子。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/安藏王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "安藏王"
+    },
+    {
+      "id": "anyuan-wang",
+      "name": "安原王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽君主，名宝延，安藏王之弟。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/安原王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "安原王"
+    },
+    {
+      "id": "yangyuan-wang",
+      "name": "阳原王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽君主，名平成，安原王长子。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/阳原王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "阳原王"
+    },
+    {
+      "id": "pingyuan-wang",
+      "name": "平原王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽平原王，名阳成。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/平原王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "平原王"
+    },
+    {
+      "id": "yingyang-wang",
+      "name": "婴阳王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽婴阳王，名元，与隋、唐对峙。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/婴阳王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "婴阳王"
+    },
+    {
+      "id": "rongliu-wang",
+      "name": "荣留王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽荣留王，名建武，唐初君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/荣留王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "荣留王"
+    },
+    {
+      "id": "baozang-wang",
+      "name": "宝藏王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高句丽末代君主，名宝藏，668年亡于唐。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宝藏王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "宝藏王"
+    },
+    {
+      "id": "guli-peiluo",
+      "name": "骨力裴罗",
+      "roles": [
+        "可汗",
+        "君主"
+      ],
+      "bio": "药罗葛氏，744年统一漠北，唐封怀仁可汗。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/骨力裴罗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "怀仁可汗"
+    },
+    {
+      "id": "mo-yanchuo",
+      "name": "磨延啜",
+      "roles": [
+        "可汗",
+        "君主"
+      ],
+      "bio": "骨力裴罗之子，唐封英武可汗。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/磨延啜"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "英武可汗"
+    },
+    {
+      "id": "ya-yanchuo",
+      "name": "移地健",
+      "roles": [
+        "可汗",
+        "君主"
+      ],
+      "bio": "药罗葛氏，磨延啜次子，唐封英义可汗，后世常称牟羽可汗，引入摩尼教为国教。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/牟羽可汗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "英义可汗"
+    },
+    {
+      "id": "huairen-kehan",
+      "name": "顿莫贺达干",
+      "roles": [
+        "可汗",
+        "君主"
+      ],
+      "bio": "杀移地健自立，唐封长寿天亲可汗。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/顿莫贺达干"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "长寿天亲可汗"
+    },
+    {
+      "id": "fengcheng-kehan",
+      "name": "多逻斯",
+      "roles": [
+        "可汗",
+        "君主"
+      ],
+      "bio": "顿莫贺达干之子，唐封忠贞可汗，在位仅一年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/忠贞可汗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "忠贞可汗"
+    },
+    {
+      "id": "jieyu-jiasi",
+      "name": "阿啜",
+      "roles": [
+        "可汗",
+        "君主"
+      ],
+      "bio": "多逻斯之弟，唐封奉诚可汗。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/奉诚可汗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "奉诚可汗"
+    },
+    {
+      "id": "huaixin-kehan",
+      "name": "骨咄禄",
+      "roles": [
+        "可汗",
+        "君主"
+      ],
+      "bio": "阿跌氏，唐封怀信可汗，阿啜之后继统。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/怀信可汗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "怀信可汗"
+    },
+    {
+      "id": "fengyi-kehan",
+      "name": "滕里",
+      "roles": [
+        "可汗",
+        "君主"
+      ],
+      "bio": "本名失载，怀信可汗之后，唐封滕里可汗。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滕里可汗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "滕里可汗"
+    },
+    {
+      "id": "anyuan-kehan",
+      "name": "保义",
+      "roles": [
+        "可汗",
+        "君主"
+      ],
+      "bio": "本名失载，硖跌氏，怀信可汗庶长子，唐封保义可汗。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/保义可汗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "保义可汗"
+    },
+    {
+      "id": "zhongzhen-kehan",
+      "name": "崇德",
+      "roles": [
+        "可汗",
+        "君主"
+      ],
+      "bio": "本名失载，唐封崇德可汗。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/崇德可汗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "崇德可汗"
+    },
+    {
+      "id": "zhongjing-kehan",
+      "name": "曷萨特勤",
+      "roles": [
+        "可汗",
+        "君主"
+      ],
+      "bio": "硖跌氏，崇德可汗之弟，唐封昭礼可汗。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/昭礼可汗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "昭礼可汗"
+    },
+    {
+      "id": "aidengli-kehan",
+      "name": "胡特勤",
+      "roles": [
+        "可汗",
+        "君主"
+      ],
+      "bio": "昭礼可汗从子，唐封彰信可汗。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/彰信可汗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "彰信可汗"
+    },
+    {
+      "id": "kasa-kehan",
+      "name": "葛萨",
+      "roles": [
+        "可汗",
+        "君主"
+      ],
+      "bio": "亦称㕎馺特勤，篡位，唐封㕎馺可汗，840年牙帐陷落时被杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/㕎馺可汗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "㕎馺可汗"
+    },
+    {
+      "id": "wujie-kehan",
+      "name": "乌希特勤",
+      "roles": [
+        "可汗",
+        "君主"
+      ],
+      "bio": "亦称乌介特勤，840年南逃，唐封乌介可汗，846年被杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/乌介可汗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "enzhen-kehan",
+      "name": "遏捻特勤",
+      "roles": [
+        "可汗",
+        "君主"
+      ],
+      "bio": "唐封遏捻可汗，846—848年在位，回鹘南迁时期末代可汗。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/遏捻可汗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "tubo",
+      "name": "吐蕃",
+      "altNames": [
+        "吐番",
+        "大蕃"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 618,
+        "month": 1,
+        "abs": 7416
+      },
+      "end": {
+        "year": 842,
+        "month": 1,
+        "abs": 10104
+      },
+      "precision": "year",
+      "note": "618年南日松赞统一青藏高原诸部；842年朗达玛被杀，帝国分裂。"
+    },
+    {
+      "id": "tuyuhun",
+      "name": "吐谷浑",
+      "altNames": [
+        "吐谷浑汗国",
+        "白兰"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 329,
+        "month": 1,
+        "abs": 3948
+      },
+      "end": {
+        "year": 663,
+        "month": 1,
+        "abs": 7956
+      },
+      "precision": "year",
+      "note": "329年叶延确立国号；663年吐蕃灭之，诺曷钵投唐。"
+    },
+    {
+      "id": "gaogouli",
+      "name": "高句丽",
+      "altNames": [
+        "高句骊",
+        "高丽"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -37,
+        "month": 1,
+        "abs": -432
+      },
+      "end": {
+        "year": 668,
+        "month": 1,
+        "abs": 8016
+      },
+      "precision": "year",
+      "note": "前37年朱蒙建国；668年唐将薛仁贵等灭之，宝藏王被俘。"
+    },
+    {
+      "id": "huihu",
+      "name": "回鹘",
+      "altNames": [
+        "回纥",
+        "回纥汗国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 744,
+        "month": 1,
+        "abs": 8928
+      },
+      "end": {
+        "year": 840,
+        "month": 1,
+        "abs": 10080
+      },
+      "precision": "year",
+      "note": "744年骨力裴罗建国；840年黠戛斯攻破牙帐，㕎馺可汗被杀，漠北汗国终结。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-namri-songtsen-tubo",
+      "dynastyId": "tubo",
+      "personId": "namri-songtsen",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 618,
+        "month": 1,
+        "abs": 7416
+      },
+      "end": {
+        "year": 629,
+        "month": 12,
+        "abs": 7559
+      },
+      "startAbs": 7416,
+      "endAbs": 7559,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-songtsen-gampo-tubo",
+      "dynastyId": "tubo",
+      "personId": "songtsen-gampo",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 629,
+        "month": 1,
+        "abs": 7548
+      },
+      "end": {
+        "year": 650,
+        "month": 12,
+        "abs": 7811
+      },
+      "startAbs": 7548,
+      "endAbs": 7811,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-mangsong-mangtsen-tubo",
+      "dynastyId": "tubo",
+      "personId": "mangsong-mangtsen",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 650,
+        "month": 1,
+        "abs": 7800
+      },
+      "end": {
+        "year": 676,
+        "month": 12,
+        "abs": 8123
+      },
+      "startAbs": 7800,
+      "endAbs": 8123,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-dusong-mangje-tubo",
+      "dynastyId": "tubo",
+      "personId": "dusong-mangje",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 676,
+        "month": 1,
+        "abs": 8112
+      },
+      "end": {
+        "year": 704,
+        "month": 12,
+        "abs": 8459
+      },
+      "startAbs": 8112,
+      "endAbs": 8459,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-tri-detsug-nyima-tubo",
+      "dynastyId": "tubo",
+      "personId": "tri-detsug-nyima",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 704,
+        "month": 1,
+        "abs": 8448
+      },
+      "end": {
+        "year": 755,
+        "month": 12,
+        "abs": 9071
+      },
+      "startAbs": 8448,
+      "endAbs": 9071,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-tri-song-detsen-tubo",
+      "dynastyId": "tubo",
+      "personId": "tri-song-detsen",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 755,
+        "month": 1,
+        "abs": 9060
+      },
+      "end": {
+        "year": 797,
+        "month": 12,
+        "abs": 9575
+      },
+      "startAbs": 9060,
+      "endAbs": 9575,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-mu-ne-btsan-tubo",
+      "dynastyId": "tubo",
+      "personId": "mu-ne-btsan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 797,
+        "month": 1,
+        "abs": 9564
+      },
+      "end": {
+        "year": 798,
+        "month": 12,
+        "abs": 9587
+      },
+      "startAbs": 9564,
+      "endAbs": 9587,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-tri-desong-btsan-tubo",
+      "dynastyId": "tubo",
+      "personId": "tri-desong-btsan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 798,
+        "month": 1,
+        "abs": 9576
+      },
+      "end": {
+        "year": 815,
+        "month": 12,
+        "abs": 9791
+      },
+      "startAbs": 9576,
+      "endAbs": 9791,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-tri-tsug-lde-btsan-tubo",
+      "dynastyId": "tubo",
+      "personId": "tri-tsug-lde-btsan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 815,
+        "month": 1,
+        "abs": 9780
+      },
+      "end": {
+        "year": 838,
+        "month": 12,
+        "abs": 10067
+      },
+      "startAbs": 9780,
+      "endAbs": 10067,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-lang-darma-tubo",
+      "dynastyId": "tubo",
+      "personId": "lang-darma",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 838,
+        "month": 1,
+        "abs": 10056
+      },
+      "end": {
+        "year": 842,
+        "month": 12,
+        "abs": 10115
+      },
+      "startAbs": 10056,
+      "endAbs": 10115,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-murong-tuyuhun-tuyuhun",
+      "dynastyId": "tuyuhun",
+      "personId": "murong-tuyuhun",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 285,
+        "month": 1,
+        "abs": 3420
+      },
+      "end": {
+        "year": 317,
+        "month": 12,
+        "abs": 3815
+      },
+      "startAbs": 3420,
+      "endAbs": 3815,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-tuyan-tuyuhun",
+      "dynastyId": "tuyuhun",
+      "personId": "tuyan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 317,
+        "month": 1,
+        "abs": 3804
+      },
+      "end": {
+        "year": 329,
+        "month": 12,
+        "abs": 3959
+      },
+      "startAbs": 3804,
+      "endAbs": 3959,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yeyan-tuyuhun",
+      "dynastyId": "tuyuhun",
+      "personId": "yeyan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 329,
+        "month": 1,
+        "abs": 3948
+      },
+      "end": {
+        "year": 351,
+        "month": 12,
+        "abs": 4223
+      },
+      "startAbs": 3948,
+      "endAbs": 4223,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-suixi-tuyuhun",
+      "dynastyId": "tuyuhun",
+      "personId": "suixi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 351,
+        "month": 1,
+        "abs": 4212
+      },
+      "end": {
+        "year": 371,
+        "month": 12,
+        "abs": 4463
+      },
+      "startAbs": 4212,
+      "endAbs": 4463,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-shilian-tuyuhun",
+      "dynastyId": "tuyuhun",
+      "personId": "shilian",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 371,
+        "month": 1,
+        "abs": 4452
+      },
+      "end": {
+        "year": 390,
+        "month": 12,
+        "abs": 4691
+      },
+      "startAbs": 4452,
+      "endAbs": 4691,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-shipi-tuyuhun",
+      "dynastyId": "tuyuhun",
+      "personId": "shipi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 390,
+        "month": 1,
+        "abs": 4680
+      },
+      "end": {
+        "year": 400,
+        "month": 12,
+        "abs": 4811
+      },
+      "startAbs": 4680,
+      "endAbs": 4811,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-wuheti-tuyuhun",
+      "dynastyId": "tuyuhun",
+      "personId": "wuheti",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 400,
+        "month": 1,
+        "abs": 4800
+      },
+      "end": {
+        "year": 405,
+        "month": 12,
+        "abs": 4871
+      },
+      "startAbs": 4800,
+      "endAbs": 4871,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-shulogan-tuyuhun",
+      "dynastyId": "tuyuhun",
+      "personId": "shulogan",
+      "title": "",
+      "posthumousName": "武王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 405,
+        "month": 1,
+        "abs": 4860
+      },
+      "end": {
+        "year": 417,
+        "month": 12,
+        "abs": 5015
+      },
+      "startAbs": 4860,
+      "endAbs": 5015,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-achen-tuyuhun",
+      "dynastyId": "tuyuhun",
+      "personId": "achen",
+      "title": "",
+      "posthumousName": "威王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 417,
+        "month": 1,
+        "abs": 5004
+      },
+      "end": {
+        "year": 424,
+        "month": 12,
+        "abs": 5099
+      },
+      "startAbs": 5004,
+      "endAbs": 5099,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-mugui-tuyuhun",
+      "dynastyId": "tuyuhun",
+      "personId": "mugui",
+      "title": "",
+      "posthumousName": "陇西王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 424,
+        "month": 1,
+        "abs": 5088
+      },
+      "end": {
+        "year": 436,
+        "month": 12,
+        "abs": 5243
+      },
+      "startAbs": 5088,
+      "endAbs": 5243,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-muliyan-tuyuhun",
+      "dynastyId": "tuyuhun",
+      "personId": "muliyan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 436,
+        "month": 1,
+        "abs": 5232
+      },
+      "end": {
+        "year": 452,
+        "month": 12,
+        "abs": 5435
+      },
+      "startAbs": 5232,
+      "endAbs": 5435,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-shiyin-tuyuhun",
+      "dynastyId": "tuyuhun",
+      "personId": "shiyin",
+      "title": "",
+      "posthumousName": "西平王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 452,
+        "month": 1,
+        "abs": 5424
+      },
+      "end": {
+        "year": 481,
+        "month": 12,
+        "abs": 5783
+      },
+      "startAbs": 5424,
+      "endAbs": 5783,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-duyihou-tuyuhun",
+      "dynastyId": "tuyuhun",
+      "personId": "duyihou",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 481,
+        "month": 1,
+        "abs": 5772
+      },
+      "end": {
+        "year": 490,
+        "month": 12,
+        "abs": 5891
+      },
+      "startAbs": 5772,
+      "endAbs": 5891,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-fulianchou-tuyuhun",
+      "dynastyId": "tuyuhun",
+      "personId": "fulianchou",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 490,
+        "month": 1,
+        "abs": 5880
+      },
+      "end": {
+        "year": 540,
+        "month": 12,
+        "abs": 6491
+      },
+      "startAbs": 5880,
+      "endAbs": 6491,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-kuailv-tuyuhun",
+      "dynastyId": "tuyuhun",
+      "personId": "kuailv",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 540,
+        "month": 1,
+        "abs": 6480
+      },
+      "end": {
+        "year": 591,
+        "month": 12,
+        "abs": 7103
+      },
+      "startAbs": 6480,
+      "endAbs": 7103,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-shifu-tuyuhun",
+      "dynastyId": "tuyuhun",
+      "personId": "shifu",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 591,
+        "month": 1,
+        "abs": 7092
+      },
+      "end": {
+        "year": 597,
+        "month": 12,
+        "abs": 7175
+      },
+      "startAbs": 7092,
+      "endAbs": 7175,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-fuyun-tuyuhun",
+      "dynastyId": "tuyuhun",
+      "personId": "fuyun",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 597,
+        "month": 1,
+        "abs": 7164
+      },
+      "end": {
+        "year": 635,
+        "month": 12,
+        "abs": 7631
+      },
+      "startAbs": 7164,
+      "endAbs": 7631,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-murong-shun-tuyuhun",
+      "dynastyId": "tuyuhun",
+      "personId": "murong-shun",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 635,
+        "month": 1,
+        "abs": 7620
+      },
+      "end": {
+        "year": 635,
+        "month": 12,
+        "abs": 7631
+      },
+      "startAbs": 7620,
+      "endAbs": 7631,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-nuohabo-tuyuhun",
+      "dynastyId": "tuyuhun",
+      "personId": "nuohabo",
+      "title": "",
+      "posthumousName": "河源郡王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 635,
+        "month": 1,
+        "abs": 7620
+      },
+      "end": {
+        "year": 663,
+        "month": 12,
+        "abs": 7967
+      },
+      "startAbs": 7620,
+      "endAbs": 7967,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-gao-zhumeng-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "gao-zhumeng",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -37,
+        "month": 1,
+        "abs": -432
+      },
+      "end": {
+        "year": -19,
+        "month": 12,
+        "abs": -205
+      },
+      "startAbs": -432,
+      "endAbs": -205,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-liuli-ming-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "liuli-ming-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -19,
+        "month": 1,
+        "abs": -216
+      },
+      "end": {
+        "year": 18,
+        "month": 12,
+        "abs": 227
+      },
+      "startAbs": -216,
+      "endAbs": 227,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-daewuseong-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "daewuseong",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 18,
+        "month": 1,
+        "abs": 216
+      },
+      "end": {
+        "year": 44,
+        "month": 12,
+        "abs": 539
+      },
+      "startAbs": 216,
+      "endAbs": 539,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-minzhong-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "minzhong-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 44,
+        "month": 1,
+        "abs": 528
+      },
+      "end": {
+        "year": 48,
+        "month": 12,
+        "abs": 587
+      },
+      "startAbs": 528,
+      "endAbs": 587,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-muben-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "muben-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 48,
+        "month": 1,
+        "abs": 576
+      },
+      "end": {
+        "year": 53,
+        "month": 12,
+        "abs": 647
+      },
+      "startAbs": 576,
+      "endAbs": 647,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-taizu-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "taizu-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 53,
+        "month": 1,
+        "abs": 636
+      },
+      "end": {
+        "year": 146,
+        "month": 12,
+        "abs": 1763
+      },
+      "startAbs": 636,
+      "endAbs": 1763,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-cida-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "cida-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 146,
+        "month": 1,
+        "abs": 1752
+      },
+      "end": {
+        "year": 165,
+        "month": 12,
+        "abs": 1991
+      },
+      "startAbs": 1752,
+      "endAbs": 1991,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-xingda-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "xingda-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 165,
+        "month": 1,
+        "abs": 1980
+      },
+      "end": {
+        "year": 179,
+        "month": 12,
+        "abs": 2159
+      },
+      "startAbs": 1980,
+      "endAbs": 2159,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-guguo-chuan-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "guguo-chuan-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 179,
+        "month": 1,
+        "abs": 2148
+      },
+      "end": {
+        "year": 197,
+        "month": 12,
+        "abs": 2375
+      },
+      "startAbs": 2148,
+      "endAbs": 2375,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-shanshang-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "shanshang-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 197,
+        "month": 1,
+        "abs": 2364
+      },
+      "end": {
+        "year": 227,
+        "month": 12,
+        "abs": 2735
+      },
+      "startAbs": 2364,
+      "endAbs": 2735,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-dongchuan-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "dongchuan-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 227,
+        "month": 1,
+        "abs": 2724
+      },
+      "end": {
+        "year": 248,
+        "month": 12,
+        "abs": 2987
+      },
+      "startAbs": 2724,
+      "endAbs": 2987,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zhongchuan-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "zhongchuan-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 248,
+        "month": 1,
+        "abs": 2976
+      },
+      "end": {
+        "year": 270,
+        "month": 12,
+        "abs": 3251
+      },
+      "startAbs": 2976,
+      "endAbs": 3251,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-xichuan-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "xichuan-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 270,
+        "month": 1,
+        "abs": 3240
+      },
+      "end": {
+        "year": 292,
+        "month": 12,
+        "abs": 3515
+      },
+      "startAbs": 3240,
+      "endAbs": 3515,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-fengshang-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "fengshang-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 292,
+        "month": 1,
+        "abs": 3504
+      },
+      "end": {
+        "year": 300,
+        "month": 12,
+        "abs": 3611
+      },
+      "startAbs": 3504,
+      "endAbs": 3611,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-meichuan-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "meichuan-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 300,
+        "month": 1,
+        "abs": 3600
+      },
+      "end": {
+        "year": 331,
+        "month": 12,
+        "abs": 3983
+      },
+      "startAbs": 3600,
+      "endAbs": 3983,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-guguo-yuan-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "guguo-yuan-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 331,
+        "month": 1,
+        "abs": 3972
+      },
+      "end": {
+        "year": 371,
+        "month": 12,
+        "abs": 4463
+      },
+      "startAbs": 3972,
+      "endAbs": 4463,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-xiaoshoulin-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "xiaoshoulin-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 371,
+        "month": 1,
+        "abs": 4452
+      },
+      "end": {
+        "year": 384,
+        "month": 12,
+        "abs": 4619
+      },
+      "startAbs": 4452,
+      "endAbs": 4619,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-guguo-rang-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "guguo-rang-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 384,
+        "month": 1,
+        "abs": 4608
+      },
+      "end": {
+        "year": 391,
+        "month": 12,
+        "abs": 4703
+      },
+      "startAbs": 4608,
+      "endAbs": 4703,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-guangkaitu-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "guangkaitu-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 391,
+        "month": 1,
+        "abs": 4692
+      },
+      "end": {
+        "year": 412,
+        "month": 12,
+        "abs": 4955
+      },
+      "startAbs": 4692,
+      "endAbs": 4955,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-changsheng-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "changsheng-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 412,
+        "month": 1,
+        "abs": 4944
+      },
+      "end": {
+        "year": 491,
+        "month": 12,
+        "abs": 5903
+      },
+      "startAbs": 4944,
+      "endAbs": 5903,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-wenzhi-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "wenzhi-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 491,
+        "month": 1,
+        "abs": 5892
+      },
+      "end": {
+        "year": 519,
+        "month": 12,
+        "abs": 6239
+      },
+      "startAbs": 5892,
+      "endAbs": 6239,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-ancang-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "ancang-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 519,
+        "month": 1,
+        "abs": 6228
+      },
+      "end": {
+        "year": 531,
+        "month": 12,
+        "abs": 6383
+      },
+      "startAbs": 6228,
+      "endAbs": 6383,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-anyuan-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "anyuan-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 531,
+        "month": 1,
+        "abs": 6372
+      },
+      "end": {
+        "year": 545,
+        "month": 12,
+        "abs": 6551
+      },
+      "startAbs": 6372,
+      "endAbs": 6551,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yangyuan-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "yangyuan-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 545,
+        "month": 1,
+        "abs": 6540
+      },
+      "end": {
+        "year": 559,
+        "month": 12,
+        "abs": 6719
+      },
+      "startAbs": 6540,
+      "endAbs": 6719,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-pingyuan-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "pingyuan-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 559,
+        "month": 1,
+        "abs": 6708
+      },
+      "end": {
+        "year": 590,
+        "month": 12,
+        "abs": 7091
+      },
+      "startAbs": 6708,
+      "endAbs": 7091,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yingyang-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "yingyang-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 590,
+        "month": 1,
+        "abs": 7080
+      },
+      "end": {
+        "year": 618,
+        "month": 12,
+        "abs": 7427
+      },
+      "startAbs": 7080,
+      "endAbs": 7427,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-rongliu-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "rongliu-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 618,
+        "month": 1,
+        "abs": 7416
+      },
+      "end": {
+        "year": 642,
+        "month": 12,
+        "abs": 7715
+      },
+      "startAbs": 7416,
+      "endAbs": 7715,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-baozang-wang-gaogouli",
+      "dynastyId": "gaogouli",
+      "personId": "baozang-wang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 642,
+        "month": 1,
+        "abs": 7704
+      },
+      "end": {
+        "year": 668,
+        "month": 10,
+        "abs": 8025
+      },
+      "startAbs": 7704,
+      "endAbs": 8025,
+      "precision": "month",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-guli-peiluo-huihu",
+      "dynastyId": "huihu",
+      "personId": "guli-peiluo",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 744,
+        "month": 1,
+        "abs": 8928
+      },
+      "end": {
+        "year": 747,
+        "month": 12,
+        "abs": 8975
+      },
+      "startAbs": 8928,
+      "endAbs": 8975,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-mo-yanchuo-huihu",
+      "dynastyId": "huihu",
+      "personId": "mo-yanchuo",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 747,
+        "month": 1,
+        "abs": 8964
+      },
+      "end": {
+        "year": 759,
+        "month": 12,
+        "abs": 9119
+      },
+      "startAbs": 8964,
+      "endAbs": 9119,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-ya-yanchuo-huihu",
+      "dynastyId": "huihu",
+      "personId": "ya-yanchuo",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 759,
+        "month": 1,
+        "abs": 9108
+      },
+      "end": {
+        "year": 780,
+        "month": 12,
+        "abs": 9371
+      },
+      "startAbs": 9108,
+      "endAbs": 9371,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-huairen-kehan-huihu",
+      "dynastyId": "huihu",
+      "personId": "huairen-kehan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 780,
+        "month": 1,
+        "abs": 9360
+      },
+      "end": {
+        "year": 789,
+        "month": 12,
+        "abs": 9479
+      },
+      "startAbs": 9360,
+      "endAbs": 9479,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-fengcheng-kehan-huihu",
+      "dynastyId": "huihu",
+      "personId": "fengcheng-kehan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 789,
+        "month": 1,
+        "abs": 9468
+      },
+      "end": {
+        "year": 790,
+        "month": 12,
+        "abs": 9491
+      },
+      "startAbs": 9468,
+      "endAbs": 9491,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-jieyu-jiasi-huihu",
+      "dynastyId": "huihu",
+      "personId": "jieyu-jiasi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 790,
+        "month": 1,
+        "abs": 9480
+      },
+      "end": {
+        "year": 795,
+        "month": 12,
+        "abs": 9551
+      },
+      "startAbs": 9480,
+      "endAbs": 9551,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-huaixin-kehan-huihu",
+      "dynastyId": "huihu",
+      "personId": "huaixin-kehan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 795,
+        "month": 1,
+        "abs": 9540
+      },
+      "end": {
+        "year": 805,
+        "month": 12,
+        "abs": 9671
+      },
+      "startAbs": 9540,
+      "endAbs": 9671,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-fengyi-kehan-huihu",
+      "dynastyId": "huihu",
+      "personId": "fengyi-kehan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 805,
+        "month": 1,
+        "abs": 9660
+      },
+      "end": {
+        "year": 808,
+        "month": 12,
+        "abs": 9707
+      },
+      "startAbs": 9660,
+      "endAbs": 9707,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-anyuan-kehan-huihu",
+      "dynastyId": "huihu",
+      "personId": "anyuan-kehan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 808,
+        "month": 1,
+        "abs": 9696
+      },
+      "end": {
+        "year": 821,
+        "month": 12,
+        "abs": 9863
+      },
+      "startAbs": 9696,
+      "endAbs": 9863,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zhongzhen-kehan-huihu",
+      "dynastyId": "huihu",
+      "personId": "zhongzhen-kehan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 821,
+        "month": 1,
+        "abs": 9852
+      },
+      "end": {
+        "year": 824,
+        "month": 12,
+        "abs": 9899
+      },
+      "startAbs": 9852,
+      "endAbs": 9899,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zhongjing-kehan-huihu",
+      "dynastyId": "huihu",
+      "personId": "zhongjing-kehan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 824,
+        "month": 1,
+        "abs": 9888
+      },
+      "end": {
+        "year": 832,
+        "month": 12,
+        "abs": 9995
+      },
+      "startAbs": 9888,
+      "endAbs": 9995,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-aidengli-kehan-huihu",
+      "dynastyId": "huihu",
+      "personId": "aidengli-kehan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 832,
+        "month": 1,
+        "abs": 9984
+      },
+      "end": {
+        "year": 839,
+        "month": 12,
+        "abs": 10079
+      },
+      "startAbs": 9984,
+      "endAbs": 10079,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-kasa-kehan-huihu",
+      "dynastyId": "huihu",
+      "personId": "kasa-kehan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 839,
+        "month": 1,
+        "abs": 10068
+      },
+      "end": {
+        "year": 840,
+        "month": 12,
+        "abs": 10091
+      },
+      "startAbs": 10068,
+      "endAbs": 10091,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    }
+  ],
+  "events": [
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "gaogouli",
+        "tang"
+      ],
+      "participantIds": [
+        "baozang-wang"
+      ],
+      "id": "gaogouli-destroyed-tang",
+      "name": "高句丽覆亡",
+      "dateNote": "总章元年九月，668年10月，宝藏王被俘",
+      "at": {
+        "year": 668,
+        "month": 10,
+        "abs": 8025
+      },
+      "summary": "唐军攻灭高句丽，宝藏王被俘，高句丽亡国。",
+      "atAbs": 8025
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-namri-songtsen-songtsen-gampo-succession",
+      "fromRef": "person:namri-songtsen",
+      "toRef": "person:songtsen-gampo",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-songtsen-gampo-mangsong-mangtsen-succession",
+      "fromRef": "person:songtsen-gampo",
+      "toRef": "person:mangsong-mangtsen",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-mangsong-mangtsen-dusong-mangje-succession",
+      "fromRef": "person:mangsong-mangtsen",
+      "toRef": "person:dusong-mangje",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-dusong-mangje-tri-detsug-nyima-succession",
+      "fromRef": "person:dusong-mangje",
+      "toRef": "person:tri-detsug-nyima",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-tri-detsug-nyima-tri-song-detsen-succession",
+      "fromRef": "person:tri-detsug-nyima",
+      "toRef": "person:tri-song-detsen",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-tri-song-detsen-mu-ne-btsan-succession",
+      "fromRef": "person:tri-song-detsen",
+      "toRef": "person:mu-ne-btsan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-mu-ne-btsan-tri-desong-btsan-succession",
+      "fromRef": "person:mu-ne-btsan",
+      "toRef": "person:tri-desong-btsan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-tri-desong-btsan-tri-tsug-lde-btsan-succession",
+      "fromRef": "person:tri-desong-btsan",
+      "toRef": "person:tri-tsug-lde-btsan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-tri-tsug-lde-btsan-lang-darma-succession",
+      "fromRef": "person:tri-tsug-lde-btsan",
+      "toRef": "person:lang-darma",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-murong-tuyuhun-tuyan-succession",
+      "fromRef": "person:murong-tuyuhun",
+      "toRef": "person:tuyan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-tuyan-yeyan-succession",
+      "fromRef": "person:tuyan",
+      "toRef": "person:yeyan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yeyan-suixi-succession",
+      "fromRef": "person:yeyan",
+      "toRef": "person:suixi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-suixi-shilian-succession",
+      "fromRef": "person:suixi",
+      "toRef": "person:shilian",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-shilian-shipi-succession",
+      "fromRef": "person:shilian",
+      "toRef": "person:shipi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-shipi-wuheti-succession",
+      "fromRef": "person:shipi",
+      "toRef": "person:wuheti",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-wuheti-shulogan-succession",
+      "fromRef": "person:wuheti",
+      "toRef": "person:shulogan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-shulogan-achen-succession",
+      "fromRef": "person:shulogan",
+      "toRef": "person:achen",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-achen-mugui-succession",
+      "fromRef": "person:achen",
+      "toRef": "person:mugui",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-mugui-muliyan-succession",
+      "fromRef": "person:mugui",
+      "toRef": "person:muliyan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-muliyan-shiyin-succession",
+      "fromRef": "person:muliyan",
+      "toRef": "person:shiyin",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-shiyin-duyihou-succession",
+      "fromRef": "person:shiyin",
+      "toRef": "person:duyihou",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duyihou-fulianchou-succession",
+      "fromRef": "person:duyihou",
+      "toRef": "person:fulianchou",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-fulianchou-kuailv-succession",
+      "fromRef": "person:fulianchou",
+      "toRef": "person:kuailv",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-kuailv-shifu-succession",
+      "fromRef": "person:kuailv",
+      "toRef": "person:shifu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-shifu-fuyun-succession",
+      "fromRef": "person:shifu",
+      "toRef": "person:fuyun",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-fuyun-murong-shun-succession",
+      "fromRef": "person:fuyun",
+      "toRef": "person:murong-shun",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-murong-shun-nuohabo-succession",
+      "fromRef": "person:murong-shun",
+      "toRef": "person:nuohabo",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-gao-zhumeng-liuli-ming-wang-succession",
+      "fromRef": "person:gao-zhumeng",
+      "toRef": "person:liuli-ming-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liuli-ming-wang-daewuseong-succession",
+      "fromRef": "person:liuli-ming-wang",
+      "toRef": "person:daewuseong",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-daewuseong-minzhong-wang-succession",
+      "fromRef": "person:daewuseong",
+      "toRef": "person:minzhong-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-minzhong-wang-muben-wang-succession",
+      "fromRef": "person:minzhong-wang",
+      "toRef": "person:muben-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-muben-wang-taizu-wang-succession",
+      "fromRef": "person:muben-wang",
+      "toRef": "person:taizu-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-taizu-wang-cida-wang-succession",
+      "fromRef": "person:taizu-wang",
+      "toRef": "person:cida-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-cida-wang-xingda-wang-succession",
+      "fromRef": "person:cida-wang",
+      "toRef": "person:xingda-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-xingda-wang-guguo-chuan-wang-succession",
+      "fromRef": "person:xingda-wang",
+      "toRef": "person:guguo-chuan-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-guguo-chuan-wang-shanshang-wang-succession",
+      "fromRef": "person:guguo-chuan-wang",
+      "toRef": "person:shanshang-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-shanshang-wang-dongchuan-wang-succession",
+      "fromRef": "person:shanshang-wang",
+      "toRef": "person:dongchuan-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-dongchuan-wang-zhongchuan-wang-succession",
+      "fromRef": "person:dongchuan-wang",
+      "toRef": "person:zhongchuan-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhongchuan-wang-xichuan-wang-succession",
+      "fromRef": "person:zhongchuan-wang",
+      "toRef": "person:xichuan-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-xichuan-wang-fengshang-wang-succession",
+      "fromRef": "person:xichuan-wang",
+      "toRef": "person:fengshang-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-fengshang-wang-meichuan-wang-succession",
+      "fromRef": "person:fengshang-wang",
+      "toRef": "person:meichuan-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-meichuan-wang-guguo-yuan-wang-succession",
+      "fromRef": "person:meichuan-wang",
+      "toRef": "person:guguo-yuan-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-guguo-yuan-wang-xiaoshoulin-wang-succession",
+      "fromRef": "person:guguo-yuan-wang",
+      "toRef": "person:xiaoshoulin-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-xiaoshoulin-wang-guguo-rang-wang-succession",
+      "fromRef": "person:xiaoshoulin-wang",
+      "toRef": "person:guguo-rang-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-guguo-rang-wang-guangkaitu-wang-succession",
+      "fromRef": "person:guguo-rang-wang",
+      "toRef": "person:guangkaitu-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-guangkaitu-wang-changsheng-wang-succession",
+      "fromRef": "person:guangkaitu-wang",
+      "toRef": "person:changsheng-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-changsheng-wang-wenzhi-wang-succession",
+      "fromRef": "person:changsheng-wang",
+      "toRef": "person:wenzhi-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-wenzhi-wang-ancang-wang-succession",
+      "fromRef": "person:wenzhi-wang",
+      "toRef": "person:ancang-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ancang-wang-anyuan-wang-succession",
+      "fromRef": "person:ancang-wang",
+      "toRef": "person:anyuan-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-anyuan-wang-yangyuan-wang-succession",
+      "fromRef": "person:anyuan-wang",
+      "toRef": "person:yangyuan-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yangyuan-wang-pingyuan-wang-succession",
+      "fromRef": "person:yangyuan-wang",
+      "toRef": "person:pingyuan-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-pingyuan-wang-yingyang-wang-succession",
+      "fromRef": "person:pingyuan-wang",
+      "toRef": "person:yingyang-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yingyang-wang-rongliu-wang-succession",
+      "fromRef": "person:yingyang-wang",
+      "toRef": "person:rongliu-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-rongliu-wang-baozang-wang-succession",
+      "fromRef": "person:rongliu-wang",
+      "toRef": "person:baozang-wang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-guli-peiluo-mo-yanchuo-succession",
+      "fromRef": "person:guli-peiluo",
+      "toRef": "person:mo-yanchuo",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-mo-yanchuo-ya-yanchuo-succession",
+      "fromRef": "person:mo-yanchuo",
+      "toRef": "person:ya-yanchuo",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ya-yanchuo-huairen-kehan-succession",
+      "fromRef": "person:ya-yanchuo",
+      "toRef": "person:huairen-kehan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-huairen-kehan-fengcheng-kehan-succession",
+      "fromRef": "person:huairen-kehan",
+      "toRef": "person:fengcheng-kehan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-fengcheng-kehan-jieyu-jiasi-succession",
+      "fromRef": "person:fengcheng-kehan",
+      "toRef": "person:jieyu-jiasi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-jieyu-jiasi-huaixin-kehan-succession",
+      "fromRef": "person:jieyu-jiasi",
+      "toRef": "person:huaixin-kehan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-huaixin-kehan-fengyi-kehan-succession",
+      "fromRef": "person:huaixin-kehan",
+      "toRef": "person:fengyi-kehan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-fengyi-kehan-anyuan-kehan-succession",
+      "fromRef": "person:fengyi-kehan",
+      "toRef": "person:anyuan-kehan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-anyuan-kehan-zhongzhen-kehan-succession",
+      "fromRef": "person:anyuan-kehan",
+      "toRef": "person:zhongzhen-kehan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhongzhen-kehan-zhongjing-kehan-succession",
+      "fromRef": "person:zhongzhen-kehan",
+      "toRef": "person:zhongjing-kehan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhongjing-kehan-aidengli-kehan-succession",
+      "fromRef": "person:zhongjing-kehan",
+      "toRef": "person:aidengli-kehan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-aidengli-kehan-kasa-kehan-succession",
+      "fromRef": "person:aidengli-kehan",
+      "toRef": "person:kasa-kehan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-gaogouli-destroyed",
+      "fromRef": "event:gaogouli-destroyed-tang",
+      "toRef": "dynasty:gaogouli",
+      "kind": "battle"
+    }
+  ],
+  "supplementalEventDynasties": [],
+  "supplementalEventParticipants": [],
+  "preSql": "DELETE FROM relations WHERE id IN (\n  'rel-gao-zhumeng-daewuseong-succession',\n  'rel-daewuseong-taizu-wang-succession',\n  'rel-dongchuan-wang-meichuan-wang-succession',\n  'rel-xiaoshoulin-wang-guangkaitu-wang-succession',\n  'rel-wenzhi-wang-pingyuan-wang-succession'\n);",
+  "manifest": {
+    "slug": "tang-border",
+    "title": "唐代边陲政权（吐蕃·吐谷浑·高句丽·回鹘）",
+    "window": {
+      "startYear": -37,
+      "startMonth": 1,
+      "endYear": 842,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-09-18",
+    "counts": {
+      "persons": 72,
+      "dynasties": 4,
+      "reigns": 70,
+      "events": 1,
+      "relations": 67
+    },
+    "sources": [
+      {
+        "label": "吐蕃",
+        "url": "https://zh.wikipedia.org/wiki/%E5%90%90%E8%95%83"
+      },
+      {
+        "label": "吐蕃君主列表",
+        "url": "https://zh.wikipedia.org/zh-cn/%E5%90%90%E8%95%83%E5%90%9B%E4%B8%BB%E5%88%97%E8%A1%A8"
+      },
+      {
+        "label": "吐谷浑",
+        "url": "https://zh.wikipedia.org/wiki/%E5%90%90%E8%B0%B7%E6%B5%91"
+      },
+      {
+        "label": "吐谷浑首领列表",
+        "url": "https://zh.wikipedia.org/wiki/%E5%90%90%E8%B0%B7%E6%B5%91%E9%A6%96%E9%A2%86%E5%88%97%E8%A1%A8"
+      },
+      {
+        "label": "高句丽君主列表",
+        "url": "https://zh.wikipedia.org/wiki/%E9%AB%98%E5%8F%A5%E4%B8%BD%E5%90%9B%E4%B8%BB%E5%88%97%E8%A1%A8"
+      },
+      {
+        "label": "回鹘",
+        "url": "https://zh.wikipedia.org/wiki/%E5%9B%9E%E9%B9%81"
+      },
+      {
+        "label": "回鹘可汗列表",
+        "url": "https://zh.wikipedia.org/wiki/%E5%9B%9E%E9%B9%98%E5%8F%AF%E6%B1%97%E5%88%97%E8%A1%A8"
+      },
+      {
+        "label": "唐灭高句丽",
+        "url": "https://zh.wikipedia.org/wiki/%E9%AB%98%E5%8F%A5%E4%B8%BD"
+      }
+    ],
+    "notes": [
+      "吐蕃在位年取维基百科帝国时期标准列表（618–842），含南日松赞至朗达玛。",
+      "吐谷浑含慕容吐谷浑至诺曷钵完整首领序列；王朝窗口取329–663。",
+      "高句丽取维基百科君主列表28王（东明圣王至宝藏王）；故国川王以前年代有争议，precision=year，在位年依三国史记/维基列表。报德王（安胜，670–683）为亡国后新罗境内残部，不入高句丽王朝行。",
+      "回鹘可汗序列据维基百科回鹘可汗列表（744–840）；人物名用本名，在位 title 用唐封称号，尊号不入人物名。",
+      "唐（tang）复用 sui-tang-wudai-song 已有 id，本包仅关联 event_dynasties。"
+    ]
+  }
+}

@@ -8,6 +8,8 @@ import {
   buildEntityDetail,
   buildPersonSearchTerms,
   computeBounds,
+  DEFAULT_EVENT_DISPLAY_CONFIG,
+  EventDisplayConfigSchema,
   filterTimeline,
   searchEntities,
   type Dynasty,
@@ -18,6 +20,7 @@ import {
   type Relation,
 } from "@eralens/shared";
 import type { TimelineQuery, TimelineRepository } from "../repository";
+import { createPlatformSettings } from "@eralens/data-access";
 import { generateBulkDynasties, generateBulkReigns } from "./bulkGenerator";
 
 import dynastiesJson from "../../../../../data/seed/dynasties.json";
@@ -78,6 +81,7 @@ const mockCapitals: DynastyCapital[] = [
 ];
 
 const store = { dynasties, reigns, persons, events, relations, capitals: mockCapitals };
+const settings = createPlatformSettings();
 
 export const mockRepository: TimelineRepository = {
   async getTimeline(query: TimelineQuery) {
@@ -117,15 +121,11 @@ export const mockRepository: TimelineRepository = {
       reignIds: capital.reignIds ?? [],
     }));
   },
-  async getPersons() {
-    return persons;
+  async getEventDisplayConfig() {
+    const stored = await settings.get("eralens-event-display");
+    return stored ? EventDisplayConfigSchema.parse(JSON.parse(stored)) : DEFAULT_EVENT_DISPLAY_CONFIG;
   },
-  async getReigns() {
-    return reigns;
-  },
-  async getEvents() {
-    return events;
+  async setEventDisplayConfig(config) {
+    await settings.set("eralens-event-display", JSON.stringify(config));
   },
 };
-
-export type { Dynasty, Reign, Person, Event, Relation };

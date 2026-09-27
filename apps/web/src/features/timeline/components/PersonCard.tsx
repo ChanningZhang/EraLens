@@ -6,7 +6,7 @@ import { EVENT_MARKER_DOT_OFFSET } from "../model/eventLayout";
 import { personDetailLevel } from "../model/lod";
 import type { PlacedPerson } from "../model/personLayout";
 import { selectionStore } from "../state/selectionStore";
-import { HoverTooltip } from "./HoverTooltip";
+import { InfoPopover } from "./InfoPopover";
 import styles from "./PersonCard.module.css";
 
 type Props = {
@@ -33,7 +33,7 @@ export function PersonCard({ placed }: Props) {
     const kindLabel = personPointKindLabel(pointKind);
 
     return (
-      <HoverTooltip text={timeTooltip}>
+      <InfoPopover text={timeTooltip}>
         {(handlers) => (
           <button
             type="button"
@@ -66,7 +66,7 @@ export function PersonCard({ placed }: Props) {
             )}
           </button>
         )}
-      </HoverTooltip>
+      </InfoPopover>
     );
   }
 
@@ -77,7 +77,7 @@ export function PersonCard({ placed }: Props) {
   const labelLeft = Math.max(6, viewport.gutterPx + 8 - left);
 
   return (
-    <HoverTooltip text={timeTooltip}>
+    <InfoPopover text={timeTooltip}>
       {(handlers) => (
         <button
           type="button"
@@ -114,6 +114,6 @@ export function PersonCard({ placed }: Props) {
           )}
         </button>
       )}
-    </HoverTooltip>
+    </InfoPopover>
   );
 }

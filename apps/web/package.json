@@ -6,12 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
+    "build:ios": "tsc --noEmit && vite build --mode ios",
     "preview": "vite preview",
     "lint": "tsc --noEmit",
     "test": "vitest run"
   },
   "dependencies": {
+    "@eralens/data-access": "workspace:*",
     "@eralens/shared": "workspace:*",
+    "@capacitor-community/sqlite": "8.1.1",
+    "@capacitor/core": "8.5.2",
     "@tanstack/react-query": "^5.66.0",
     "framer-motion": "^12.4.7",
     "react": "^19.0.0",

@@ -44,9 +44,9 @@ docker compose exec -T db psql -U eralens -d eralens -c \
 
 ```
 Task Progress:
-- [ ] 1. 核对史料（维基/正史），不要只信 generate.mjs 现值
+- [ ] 1. 核对史料（维基/正史），不要只信当前缓存值
 - [ ] 2. 对照 schema，判定每个字符串应进哪一列
-- [ ] 3. 改 data/imports/{slug}/ 源（generate.mjs、rulers.mjs、manifest notes）
+- [ ] 3. 直接改 data/imports/{slug}/ 的 JSON 源缓存和 manifest notes
 - [ ] 4. 重新 generate → 校验 SQL → 导入
 - [ ] 5. 跑审计脚本 + 浏览器验收
 ```
@@ -69,12 +69,12 @@ Task Progress:
 | 前端 / API 映射 | 仅当数据已正确 | ❌ 用 hardcode 掩盖脏数据 |
 | `@eralens/shared` | 抽象规则、schema | ❌ 单实体特例（须用户同意） |
 
-找到实体所属的 import 包：搜 `person_id` / `reign_id` 于 `data/imports/**/import.sql` 或 `generate.mjs`。
+找到实体所属的 import 包：优先在 `data/imports/**/cache.json` 中搜人物 / 在位 ID，确认实体来源后直接修改缓存。
 
 ### 3. 生成与入库
 
 ```bash
-node data/imports/{slug}/generate.mjs
+node data/imports/generate.mjs {slug}
 node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/imports/{slug}/import.sql
 .cursor/skills/eralens-period-import/scripts/apply-sql.sh data/imports/{slug}/import.sql
 ```
@@ -114,7 +114,7 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 - 明清空 title 时，年号优先于庙号、谥号。明清普通皇帝 `reigns.title` 必须为空；三条显式例外为朱元璋吴王时期（`吴`）、努尔哈赤（`太祖`）、皇太极（`太宗`）。维护这三条以外的明清称号时先核对是否确属用户指定例外，不能把年号再复制进 `title`。
 - `resolveEmperorAppellation` 的详情称谓规则按在位起始年：唐以前偏谥号/称号，唐–元偏庙号，明清偏年号。详情规则与泳道卡片小字规则分开核对。
 - 先秦卡片：主行读 `posthumous_name` / `reigns.title`；副行私名靠 `ancestral_xing` / `clan_shi` 去姓。
-- 先秦 `persons.ancestral_xing` / `persons.clan_shi` 优先写 `feudalClanMetadata.mjs` + `applyFeudalClanMetadata`（导入模板 + 人物级覆盖，不是个案 hardcode）。
+- 先秦 `persons.ancestralXing` / `persons.clanShi` 直接写入时期包 `cache.json`；不要在生成时套模板或人物覆盖。
 
 字段细则与 INSERT 模板见 [reference.md](reference.md)；正反例见 [examples.md](examples.md)。
 
@@ -127,7 +127,7 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 | 史称「少帝」当谥号显示 | 误写入 `posthumous_name` | 移到 `title`，清空 `posthumous_name` |
 | 检索「姜子牙」无结果 | 未建 `alt_names` | 加 `alt_names`，不改 API 特判 |
 | 上下叠两张卡 | 库内重复 `reign` / 旧宽跨度行 | SQL 去重或合并，禁止 CSS 遮盖 |
-| 年份与维基不一致 | 源数据错或未做死年继位切年 | 改 rulers/源数据 + `deathYearSuccession` 规则，不手写 abs |
+| 年份与维基不一致 | 源数据错或未按死年继位规则切年 | 核对史料后直接修正 `cache.json` 的日期与对应 `*_abs` |
 | 空白该不该填 | 未定性 | 史料缺 → `system-missing-ruler`；无国君 → 不写 reign |
 
 ## 何时可以改代码

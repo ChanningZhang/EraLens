@@ -7,7 +7,6 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { PERSON_TITLE_SELECTIONS } from "../data/imports/lib/personTitleSelections.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
@@ -123,11 +122,13 @@ function splitDeferredInserts(sql) {
   return { regular: regular.join("\n"), deferred };
 }
 
+function insertsInto(statement, table) {
+  return new RegExp(`^(?:\\s|--[^\\n]*(?:\\n|$))*INSERT\\s+INTO\\s+${table}\\b`, "i").test(statement);
+}
+
 function preseedDynasties(packages) {
   const inserts = packages.flatMap(({ sql }) =>
-    sqlStatements(readFileSync(sql, "utf8")).filter((statement) =>
-      /^\s*INSERT\s+INTO\s+dynasties\b/i.test(statement),
-    ),
+    sqlStatements(readFileSync(sql, "utf8")).filter((statement) => insertsInto(statement, "dynasties")),
   );
   if (inserts.length === 0) return;
 
@@ -138,35 +139,17 @@ function preseedDynasties(packages) {
   console.log(`Preseeded ${inserts.length} dynasty rows for cross-package references.`);
 }
 
-function sqlString(value) {
-  return `'${String(value).replaceAll("'", "''")}'`;
-}
+function preseedDynastyGroups(packages) {
+  const inserts = packages.flatMap(({ sql }) =>
+    sqlStatements(readFileSync(sql, "utf8")).filter((statement) => insertsInto(statement, "dynasty_groups")),
+  );
+  if (inserts.length === 0) return;
 
-function updatePersonTitles() {
-  const selectedTitles = Object.entries(PERSON_TITLE_SELECTIONS)
-    .map(([personId, title]) => `WHEN p.id = ${sqlString(personId)} THEN ${sqlString(title)}`)
-    .join("\n    ");
-  const selectedIds = Object.keys(PERSON_TITLE_SELECTIONS).map(sqlString).join(", ");
-  const sql = `
-UPDATE persons AS p
-SET title = CASE
-  WHEN p.id = 'system-missing-ruler' THEN '史料缺'
-  ${selectedTitles}
-  ELSE (
-    SELECT r.title
-    FROM reigns AS r
-    WHERE r.person_id = p.id
-    ORDER BY r.start_abs DESC, r.end_abs DESC, r.id DESC
-    LIMIT 1
-  )
-END
-WHERE p.id = 'system-missing-ruler'
-   OR p.id IN (${selectedIds})
-   OR EXISTS (SELECT 1 FROM reigns AS r WHERE r.person_id = p.id);
-`;
-  const result = dockerPsql(sql);
-  if (result.status !== 0) fail("Failed to populate persons.title", result.stderr || result.stdout);
-  console.log("Updated persons.title from the latest reign title and selected multi-reign titles.");
+  const result = dockerPsql(`BEGIN;\n${inserts.join("\n")}\nCOMMIT;\n`);
+  if (result.status !== 0) {
+    fail("Failed to preseed dynasty group rows", result.stderr || result.stdout);
+  }
+  console.log(`Preseeded ${inserts.length} dynasty group rows for cross-package references.`);
 }
 
 function waitForPostgres() {
@@ -201,9 +184,10 @@ function main() {
   const truncated = dockerPsql(TRUNCATE_SQL);
   if (truncated.status !== 0) fail("Failed to truncate tables", truncated.stderr || truncated.stdout);
 
-  // Some event and capital packages refer to dynasties owned by later period
-  // packages. Seed the shared lookup table first so deferred package imports
-  // can resolve those foreign keys without changing package ownership/order.
+  // Cross-package references must exist before package order starts. Dynasty
+  // groups are the parent lookup for dynasty rows, which in turn are referenced
+  // by events, capitals, and later periods.
+  preseedDynastyGroups(allPackages);
   preseedDynasties(allPackages);
 
   let remaining = packages;
@@ -253,8 +237,6 @@ function main() {
     }
     console.log(`Applied ${deferredInserts.length} deferred cross-package link rows.`);
   }
-
-  updatePersonTitles();
 
   console.log("Done.");
 }

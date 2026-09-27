@@ -1,5 +1,8 @@
+-- EraLens period import: overview-enrichment
+-- Window: 9999-01 .. 9999-12
 BEGIN;
 
+-- updates
 UPDATE dynasties SET note = '可以指： *马楚，五代十国时一政权，位于今天湖南省。* 战国后期到秦汉时的地理概念，为楚国的南部边荒之地。' WHERE id = 'chu-nan';
 UPDATE dynasties SET note = '北漢（951年2月24日－979年6月3日），由沙陀部建立，是中国五代十国時在今山西省北部、陕西省、河北省局部的政權，為十国之一。统治范围包括今山西北部、陕西、河北部分地区。' WHERE id = 'han-bei';
 UPDATE dynasties SET note = '刘知远建后汉；951年郭威代汉。（947年—951年）' WHERE id = 'han-hou';
@@ -13,7 +16,7 @@ UPDATE dynasties SET note = '是中国五代十国时期由王建建立的政权
 UPDATE dynasties SET note = '是五代十國的十國之一，定都金陵府，建隆二年（961年）短暂迁都南昌府（号“南都”），歷時38年，有烈祖李昪、元宗李璟和後主李煜三位君主。南唐开国皇帝李昪原名徐知诰，为杨吴权臣徐温养子。' WHERE id = 'tang-nan';
 UPDATE dynasties SET note = '吴是五代时期十国之一，为楊隆演所建，又称杨吴、南吴、弘農、淮南。唐昭宗景福元年（892年）杨行密为唐淮南节度使，据扬州。' WHERE id = 'wu-shi';
 UPDATE dynasties SET note = '钱镠据两浙；978年钱俶纳土归宋。（907年—978年）' WHERE id = 'wuyue';
-UPDATE persons SET bio = '愛育黎拔力八達（；，，梵语意为寿山），中国元朝皇帝及蒙古帝国大汗，于公元1311年4月至1320年3月在位，共计近9年。元仁宗早年助兄长海山即位，被海山立为皇太子（元朝的皇位继承人一律称皇太子），相约兄终弟及，叔侄相传。' WHERE id = 'ayurbarwada';
+UPDATE persons SET bio = '元仁宗，恢复科举，与元武宗约定兄终弟及。' WHERE id = 'ayurbarwada';
 UPDATE persons SET bio = '后周世宗，励精图治，北伐南征。在后周（954年—959年）在位。' WHERE id = 'chai-rong';
 UPDATE persons SET bio = '周恭帝郭宗训，五代时期后周皇帝，周世宗郭荣第四子。显德六年（959年）封为梁王。' WHERE id = 'chai-zongxun';
 UPDATE persons SET bio = '陳武帝陈霸先，字兴国，小字法生，吴兴郡长城县（今浙江长兴）人，南北朝時代陳朝開國皇帝。557年接受梁敬帝萧方智的禪位建立陳朝，557年－559年在位。' WHERE id = 'chen-baxian';
@@ -34,8 +37,8 @@ UPDATE persons SET bio = '齊武成帝高湛，小字步落稽，勃海郡蓨县
 UPDATE persons SET bio = '周太祖郭威，字文仲，小名“郭雀兒”，籍貫邢州堯山（今河北隆堯）。五代時期後周開國皇帝（951年—954年）。' WHERE id = 'guo-wei';
 UPDATE persons SET bio = '爱新觉罗·弘历，清高宗，雍正帝第四子。乾隆朝平定准噶尔、回部等地，编纂《四库全书》；在位六十年后禅位，仍以太上皇训政至1799年。' WHERE id = 'hongli';
 UPDATE persons SET bio = '爱新觉罗·皇太极，努尔哈赤第八子，清太宗。1626年继承汗位，改革政制、整编八旗；1636年改国号为大清并称帝，为清军入关奠定基础。' WHERE id = 'huang-taiji';
-UPDATE persons SET bio = '元寧宗懿璘质班（，，）是元朝皇帝，蒙古帝国大汗。1332年10月23日－1332年12月14日在位，在位2个月。' WHERE id = 'irinchibal';
-UPDATE persons SET bio = '海山（；），孛儿只斤氏，是中国元朝皇帝及蒙古帝国大汗，于1307年6月至1311年1月在位近4年。1309年2月，群臣为其上汉文尊号统天继圣钦文英武大章孝皇帝。' WHERE id = 'khayishan';
+UPDATE persons SET bio = '元宁宗，幼年即位，在位仅两月。' WHERE id = 'irinchibal';
+UPDATE persons SET bio = '元武宗海山，元仁宗之兄。兄弟约定兄终弟及，武宗死后仁宗继位。' WHERE id = 'khayishan';
 UPDATE persons SET bio = '元明宗，文宗之兄，即位仅一月被害。在元（1329年—1329年）在位。' WHERE id = 'khoshila';
 UPDATE persons SET bio = '唐穆宗次子，唐敬宗之弟，唐武宗之兄。827年至840年在位，后世称唐文宗。' WHERE id = 'li-ang';
 UPDATE persons SET bio = '南唐烈祖李，字正倫，小字彭奴，五代十國時期南唐開國皇帝，徐州人，原名徐知誥，是南吳權臣徐溫養子，南唐第1任國主兼開國皇帝。李昪登基後便励精图治，使南唐的國力大為提升。' WHERE id = 'li-bian';
@@ -79,7 +82,7 @@ UPDATE persons SET bio = '宋孝武帝，平讨元凶，后期穷兵黩武。在
 UPDATE persons SET bio = '可以指： * 刘钧 (陈王)，东汉陈王 * 刘钧 (北汉)，五代十国时北汉睿宗 * 刘钧 (围棋)，世界业余围棋锦标赛冠军 * 刘钧 (演员)，中国演员 * 刘钧 (香港)，招商銀行香港分行行長暨招商永隆銀行行政總裁。' WHERE id = 'liu-jun-bei';
 UPDATE persons SET bio = '漢平帝劉（公元），原名劉箕子，后改名衎，漢朝皇帝（公元前1年10月17日－公元6年2月3日在位），其正式諡號為「孝平皇帝」，後世省略「孝」字稱「漢平帝」。' WHERE id = 'liu-kan';
 UPDATE persons SET bio = '北汉世祖，据太原。在北汉（951年—954年）在位。' WHERE id = 'liu-min';
-UPDATE persons SET bio = '刘啓，为漢朝皇帝（前157年7月14日－前141年3月9日在位），在位16年，享年48岁，其正式諡號為「孝景皇帝」，後世省略「孝」字稱「漢景帝」，景帝後元三年正月甲子（前141年3月9日）崩于未央宮，二月癸酉（3月18日）葬于阳陵（今陕西高陵县西南）。为汉文帝刘恒長子，母……。' WHERE id = 'liu-qi';
+UPDATE persons SET bio = '汉景帝刘启，汉文帝长子。在位期间平定七国之乱，削弱诸侯王势力，与文帝并称文景之治。' WHERE id = 'liu-qi';
 UPDATE persons SET bio = '可以指： * 劉邵 (河間王)，两汉之际河間王 * 刘劭 (三国)，曹魏时期政治人物 * 刘劭 (晋朝) * 刘劭 (南北朝)（424年－453年），中国南北朝時期劉宋的第四位皇帝。' WHERE id = 'liu-shao';
 UPDATE persons SET bio = '南汉中宗，残暴，南汉由盛转衰。在南汉（943年—958年）在位。' WHERE id = 'liu-sheng';
 UPDATE persons SET bio = '劉，漢朝皇帝，其正式諡號為「孝元皇帝」，後世省略「孝」字稱「漢元帝」。汉宣帝长子，生于民间，母恭哀皇后许平君。' WHERE id = 'liu-shi';
@@ -91,7 +94,7 @@ UPDATE persons SET bio = '宋文帝，元嘉之治，后被太子刘劭所弑。
 UPDATE persons SET bio = '汉惠帝，高祖嫡子，在位推行与民休息。在西汉（前195年—前188年）在位。' WHERE id = 'liu-ying';
 UPDATE persons SET bio = '宋后废帝，为萧道成所杀。在刘宋（472年—477年）在位。' WHERE id = 'liu-yu-fei';
 UPDATE persons SET bio = '宋明帝，屠戮宗室，宋室由盛转衰。在刘宋（465年—472年）在位。' WHERE id = 'liu-yu-song';
-UPDATE persons SET bio = '刘肇，东汉皇帝（88年4月9日－106年2月13日在位），在位17年，得年僅27岁，其正式諡號為「孝和皇帝」，後世省略「孝」字稱「漢和帝」，他是汉明帝孙，章帝第四子，母贵人梁氏，死後庙号穆宗（后于汉献帝初平元年除去庙号），葬于慎陵。由於年幼即位，權力被外戚所挾制，及長後利……。' WHERE id = 'liu-zhao';
+UPDATE persons SET bio = '汉和帝刘肇，汉章帝第四子。亲政后清除窦氏外戚势力，勤于政事，东汉国力达到鼎盛。' WHERE id = 'liu-zhao';
 UPDATE persons SET bio = '刘志，东汉皇帝（146年8月1日－168年1月25日在位），其正式諡號為「孝桓皇帝」，後世省略「孝」字稱「漢桓帝」，他是汉章帝曾孙，河間孝王劉開之孫，蠡吾侯劉翼之子，在位21年。他在位时，东汉国力逐渐衰落，为黄巾之乱埋下伏笔。' WHERE id = 'liu-zhi';
 UPDATE persons SET bio = '后汉高祖，沙陀族，建后汉。在后汉（947年—948年）在位。' WHERE id = 'liu-zhiyuan';
 UPDATE persons SET bio = '漢明帝劉莊，原名刘阳，字子丽，东汉皇帝，在位十八年。諡「孝明皇帝」，後世省略「孝」字稱「漢明帝」，庙号显宗。' WHERE id = 'liu-zhuang';
@@ -118,20 +121,20 @@ UPDATE persons SET bio = '吴越文穆王，钱镠之子。在吴越（932年—
 UPDATE persons SET bio = '元天顺帝，两都之战，在位仅一月。在元（1328年—1328年）在位。' WHERE id = 'ragibagh';
 UPDATE persons SET bio = '晉出帝石重贵，942年－946年在位。天福七年（942年），后晋高祖石敬瑭死，重贵繼位，沿用高祖天福年号，天福九年（944年）七月改元開運。' WHERE id = 'shi-chonggui';
 UPDATE persons SET bio = '晉高祖石敬瑭，五代十国時期的后晋开国皇帝（在位：936年11月28日－942年7月28日）。庙号高祖，谥号圣文章武明德孝皇帝。' WHERE id = 'shi-jingtang';
-UPDATE persons SET bio = '硕德八剌（；；），是元朝皇帝，蒙古帝国大汗，1320年4月19日—1323年9月4日在位，在位3年零5个月，是元仁宗之子。1321年11月28日，群臣为硕德八剌上汉语尊号继天体道敬文仁武大昭孝皇帝。' WHERE id = 'shidebala';
+UPDATE persons SET bio = '元英宗，元仁宗长子，在位期间推行新政，后于南坡之变中遇害。' WHERE id = 'shidebala';
 UPDATE persons SET bio = '辛亥革命领袖，中华民国临时大总统。在中华民国（1912年—1912年）在位。' WHERE id = 'sun-yat-sen';
-UPDATE persons SET bio = '铁穆耳（；），孛儿只斤氏，元朝皇帝及蒙古帝国大汗，于1294年5月至1307年2月在位，共约13年。元成宗系元世祖忽必烈孙，是世祖太子真金的第三子，他在其父、兄或早逝或推让后被立为储君，并于忽必烈逝世后即位。' WHERE id = 'temur';
+UPDATE persons SET bio = '元成宗铁穆耳，元世祖忽必烈之孙、真金第三子，在位约十三年。' WHERE id = 'temur';
 UPDATE persons SET bio = '秦末軍事人物，秦末齐国人，田儋的儿子，原田齐公族，秦末民變時的六國群雄之一。秦二世二年（前208年）六月，秦少府章邯於臨濟擊殺齐王田儋，田建的弟弟田假自立為王。' WHERE id = 'tian-shi';
 UPDATE persons SET bio = '元顺帝，元朝末代，红巾起义，退居漠北。在元（1333年—1370年）在位。' WHERE id = 'togon-temur';
-UPDATE persons SET bio = '图帖睦尔（；），是元朝皇帝，蒙古帝国大汗，两次在位，第一次在位时间为1328年10月16日—1329年4月3日；後復位，第二次在位时间为1329年9月8日—1332年9月2日，在位时间共4年，他是元武宗的次子。1330年5月25日，群臣为图帖睦尔上汉语尊号钦天统圣至德诚功大文……。' WHERE id = 'tugh-temur';
+UPDATE persons SET bio = '元文宗图帖睦尔，元武宗次子。两都之战后即位，曾让位于兄和世㻋；和世㻋死后复位，在位至1332年。' WHERE id = 'tugh-temur';
 UPDATE persons SET bio = '拓跋珪，又名涉-{珪}-、-{什}-翼圭、翼圭、開，北魏开国皇帝，代王拓跋什翼犍之孙，獻明帝拓跋寔和献明皇后之遺腹子。' WHERE id = 'tuoba-gui';
 UPDATE persons SET bio = '2001年列为世界文化遗产。魏獻文帝拓跋弘，字万民，鮮卑名第豆胤，魏文成帝拓跋濬長子，生母李贵人，南北朝時期北魏第六位皇帝。' WHERE id = 'tuoba-hong';
 UPDATE persons SET bio = '2001年列为世界文化遗产。魏文成帝拓跋濬，鮮卑名烏雷，拥有「直懃」（直勤）头衔，南北朝時期北魏的第四代皇帝。' WHERE id = 'tuoba-jun';
 UPDATE persons SET bio = '拓跋廓，原姓元，河南郡洛阳县（今河南省洛阳市东）人，西魏文帝元宝炬四子，西魏十二大将军之一，后为西魏末代皇帝。' WHERE id = 'tuoba-kuo';
 UPDATE persons SET bio = '拓跋嗣，鮮卑名木末，北魏第二位皇帝，409年—423年在位。' WHERE id = 'tuoba-si';
-UPDATE persons SET bio = ']]：428年二月—431年<br> 延和：432年—435年正月<br>太延：435年—440年六月<br>太平真君：440年六月—451年六月<br>正平：451年六月—452年二月 }} 魏太武帝拓跋焘，鮮卑名狸伐，北魏第三位皇帝（423年12月27日—452年3月……。' WHERE id = 'tuoba-tao';
+UPDATE persons SET bio = '北魏太武帝拓跋焘，明元帝拓跋嗣之子，在位期间攻灭胡夏、北燕和北凉，统一华北。' WHERE id = 'tuoba-tao';
 UPDATE persons SET bio = '北魏南安王，太武帝被杀后继位，旋被诛。在北魏（452年—452年）在位。' WHERE id = 'tuoba-yu';
-UPDATE persons SET bio = '可以指： * 王建 (三國)，中國三國時期，軍閥公孫淵的部下 * 王建 (北魏)，中國五胡十六國時期北魏將領，在參合陂之戰後向魏道武帝建議坑殺投降的後燕軍士 * 王建 (北周)，中國南北朝時代北周官員。其孫王仁恭在隋朝末年被軍閥劉武周所殺 * 王建 (唐朝)，中國唐朝詩人 *……。' WHERE id = 'wang-jian-shu';
+UPDATE persons SET bio = '前蜀高祖王建，许州舞阳人。唐末入蜀，逐步控制西川并据成都；907年称帝建立前蜀，死后由其子王衍继位。' WHERE id = 'wang-jian-shu';
 UPDATE persons SET bio = '闽国第四代君主，王延钧之子。在闽（935年—939年）在位。' WHERE id = 'wang-jipeng';
 UPDATE persons SET bio = '闽国奠基者，据福建。在闽（909年—925年）在位。' WHERE id = 'wang-shenzhi';
 UPDATE persons SET bio = '可以是: * 王衍 (西晋)，西晋时期司徒 * 王衍 (冉魏)，五胡十六国时期冉魏侍中 * 王衍 (南北朝)，南北朝北魏、东魏政治人物 * 王衍 (前蜀)，前蜀最后一位君主。' WHERE id = 'wang-yan-shu';
@@ -139,7 +142,7 @@ UPDATE persons SET bio = '现藏于福建博物院。閩嗣王王延翰，字子
 UPDATE persons SET bio = '闽国第三代君主，后称王鏞。在闽（927年—935年）在位。' WHERE id = 'wang-yanjun';
 UPDATE persons SET bio = '闽景宗王延羲，继位後改名王曦，五代十国時期閩國第五任君主，王審知之子，王延翰、王延鈞之弟，王延政之兄，王繼鵬之叔。' WHERE id = 'wang-yanxi';
 UPDATE persons SET bio = '閩天德帝王延政，五代十国時期閩國末任君主，也是殷国唯一君主。' WHERE id = 'wang-yanzheng';
-UPDATE persons SET bio = '武曌，通稱武則天、武后，原名不詳，賜號武媚，亦稱武媚娘、天后等，籍貫并州文水縣（今山西省文水县），出生時間及出生地有爭議，武周的開國皇帝、唐高宗的皇后，諡號則天順聖皇后，尊號則天大聖皇帝，在帝位共14年餘，是中国历史上唯一一位被廣泛承認的女皇帝。武則天十四歲入宮為唐太宗才……。' WHERE id = 'wu-zetian';
+UPDATE persons SET bio = '武则天是中国历史上唯一正式称帝的女性，建立武周，后传位于唐中宗。' WHERE id = 'wu-zetian';
 UPDATE persons SET bio = '东昏侯，荒淫，为萧衍所废。在南齐（499年—501年）在位。' WHERE id = 'xiao-baojuan';
 UPDATE persons SET bio = '齐和帝，南齐末代，萧衍代齐。在南齐（501年—502年）在位。' WHERE id = 'xiao-baorong';
 UPDATE persons SET bio = '齐高帝，代宋建齐，定都建康。在南齐（479年—482年）在位。' WHERE id = 'xiao-daocheng';

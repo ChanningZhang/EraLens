@@ -22,6 +22,7 @@
   border: 1px solid color-mix(in srgb, var(--card-color) 18%, var(--color-border));
   border-radius: var(--radius-sm);
   background: color-mix(in srgb, var(--card-color) 16%, var(--color-surface));
+  color: var(--color-ink);
   cursor: pointer;
   transition:
     transform var(--motion-fast),
@@ -211,7 +212,7 @@
 .name {
   margin: 0;
   font-family: var(--font-serif);
-  font-size: 15px;
+  font-size: var(--card-name-size, 15px);
   font-weight: 600;
   line-height: 1;
   white-space: nowrap;
@@ -222,7 +223,7 @@
 
 .meta {
   margin: 0;
-  font-size: 11px;
+  font-size: var(--card-meta-size, 11px);
   line-height: 1;
   color: var(--color-ink-muted);
   white-space: nowrap;

@@ -1,10 +1,11 @@
-import { memo, useMemo, useRef, useState } from "react";
+import { memo, useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   activeReignsAtAbs,
   buildLaneOrderIndex,
   capitalsActiveAtAbs,
   capitalsForReigns,
+  clusterLaneGapForPresentation,
   clusterFramesForLanes,
   collapseDynastyLaneGroups,
   collectLaneReigns,
@@ -17,8 +18,6 @@ import {
   getDynastyLaneGroup,
   resolveDynastyColorValue,
   resolveFateRelations,
-  TIMELINE_RAIL_CHIP_HEIGHT_PX,
-  TIMELINE_RAIL_CHIP_TOP_PX,
   type Dynasty,
   type EventDisplayConfig,
   type Reign,
@@ -26,10 +25,12 @@ import {
 import { useDataBounds, useTimelineData } from "../hooks/useTimelineData";
 import { useDynastyCapitals } from "../hooks/useDynastyCapitals";
 import { useLaneColorCatalog } from "../hooks/useLaneColorCatalog";
-import { useStageViewportHeight } from "../hooks/useStageViewportHeight";
+import { useStageViewportSize } from "../hooks/useStageViewportHeight";
+import { resolveChinaMapInsets, resolveChinaMapLayout } from "../model/chinaMapProjection";
 import { useTimelineCatalog } from "../hooks/useTimelineCatalog";
 import { useViewport } from "../hooks/useViewport";
 import { useSelection } from "../hooks/useSelection";
+import { viewportStore } from "../state/viewportStore";
 import {
   eventLaneCount,
   eventTargetReign,
@@ -41,7 +42,7 @@ import {
 } from "../model/eventLayout";
 import { assignLanes } from "../model/laneLayout";
 import { shouldShowEvent, shouldShowPersons } from "../model/lod";
-import { centerGuideX, laneLabelAnchorAbs } from "../model/coordinates";
+import { absFromStageX, centerGuideX, laneLabelAnchorAbs } from "../model/coordinates";
 import {
   layoutPersons,
   PERSON_LAYER_BOTTOM_PAD,
@@ -52,10 +53,8 @@ import {
   assignReignStacks,
   dynastyBarHeightForReigns,
   dynastyLaneHeightForViewport,
-  LANE_PADDING_TOP,
   partitionReignRecords,
   prepareLaneReignGeometry,
-  resolveStackedCardUnit,
 } from "../model/reignClusters";
 import { expandWindow, filterVisibleCardReigns, filterVisibleDynasties, filterVisibleGapReigns, filterVisiblePlacedPersons } from "../model/visible";
 import { CapitalMapLayer } from "./CapitalMapLayer";
@@ -70,6 +69,7 @@ import styles from "./TimelineStage.module.css";
 import { layoutReignFates } from "../model/reignFateLayout";
 
 const StableChinaMapBackground = memo(ChinaMapBackground);
+const EVENT_CONTROL_LANE_CLEARANCE = 10;
 
 function laneColorTokenFor(
   map: ReadonlyMap<string, ReturnType<typeof fallbackLaneColorToken>>,
@@ -84,14 +84,157 @@ function sameReignIds(a: readonly Reign[] | undefined, b: readonly Reign[]): boo
 
 export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConfig }) {
   const stageRef = useRef<HTMLDivElement>(null);
-  const mapDragRef = useRef<{ pointerId: number; x: number; y: number } | null>(null);
-  const [mapView, setMapView] = useState({ scale: 1, x: 0, y: 0 });
-  const mapOffset = useMemo(() => ({ x: mapView.x, y: mapView.y }), [mapView.x, mapView.y]);
-  const stageViewportHeight = useStageViewportHeight(stageRef);
-  const reduceMotion = useReducedMotion();
+  const timelinePointersRef = useRef(new Map<number, { x: number; y: number }>());
+  const timelineGestureRef = useRef<{
+    mode: "pending" | "pan" | "scroll" | "pinch";
+    x: number;
+    y: number;
+    time: number;
+    velocity: number;
+    distance: number;
+  } | null>(null);
+  const timelineInertiaRef = useRef<number | null>(null);
+  const [eventsExpanded, setEventsExpanded] = useState(false);
+  const stageViewportSize = useStageViewportSize(stageRef);
+  const stageViewportHeight = stageViewportSize.height;
   const viewport = useViewport();
+  const mapVerticalAlignment = stageViewportSize.height > stageViewportSize.width
+    ? "bottom"
+    : "center";
+  const mapLayout = useMemo(() => {
+    if (stageViewportSize.width < 1 || stageViewportSize.height < 1) return null;
+    return resolveChinaMapLayout(
+      stageViewportSize.width,
+      stageViewportSize.height,
+      resolveChinaMapInsets(viewport.gutterPx),
+      mapVerticalAlignment,
+    );
+  }, [mapVerticalAlignment, stageViewportSize.height, stageViewportSize.width, viewport.gutterPx]);
+  const reduceMotion = useReducedMotion();
   const selection = useSelection();
   const { data, isLoading, error } = useTimelineData();
+
+  const stopTimelineInertia = () => {
+    if (timelineInertiaRef.current !== null) {
+      cancelAnimationFrame(timelineInertiaRef.current);
+      timelineInertiaRef.current = null;
+    }
+  };
+
+  const startTimelineInertia = (initialVelocity: number) => {
+    let velocity = initialVelocity;
+    const step = () => {
+      if (Math.abs(velocity) < 0.012) {
+        timelineInertiaRef.current = null;
+        return;
+      }
+      const before = viewportStore.getSnapshot().centerAbs;
+      viewportStore.panByPixels(velocity * 16);
+      if (viewportStore.getSnapshot().centerAbs === before) {
+        timelineInertiaRef.current = null;
+        return;
+      }
+      velocity *= 0.9;
+      timelineInertiaRef.current = requestAnimationFrame(step);
+    };
+    if (Math.abs(velocity) > 0.045) timelineInertiaRef.current = requestAnimationFrame(step);
+  };
+
+  const onStagePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (event.pointerType !== "touch") return;
+    stopTimelineInertia();
+    timelinePointersRef.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    const points = [...timelinePointersRef.current.values()];
+    if (points.length >= 2) {
+      const [a, b] = points;
+      timelineGestureRef.current = {
+        mode: "pinch",
+        x: (a.x + b.x) / 2,
+        y: (a.y + b.y) / 2,
+        time: performance.now(),
+        velocity: 0,
+        distance: Math.max(1, Math.hypot(a.x - b.x, a.y - b.y)),
+      };
+    } else {
+      timelineGestureRef.current = {
+        mode: "pending",
+        x: event.clientX,
+        y: event.clientY,
+        time: performance.now(),
+        velocity: 0,
+        distance: 0,
+      };
+    }
+    event.currentTarget.setPointerCapture(event.pointerId);
+  };
+
+  const onStagePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (!timelinePointersRef.current.has(event.pointerId)) return;
+    timelinePointersRef.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    const points = [...timelinePointersRef.current.values()];
+    const gesture = timelineGestureRef.current;
+    if (!gesture) return;
+    if (points.length >= 2) {
+      const [a, b] = points;
+      const distance = Math.max(1, Math.hypot(a.x - b.x, a.y - b.y));
+      const midpointX = (a.x + b.x) / 2;
+      if (gesture.mode === "pinch" && gesture.distance > 0) {
+        const rect = event.currentTarget.getBoundingClientRect();
+        const localX = midpointX - rect.left;
+        const viewport = viewportStore.getSnapshot();
+        const anchorAbs = localX < viewport.gutterPx || localX > rect.width
+          ? viewport.centerAbs
+          : absFromStageX(viewport, localX);
+        viewportStore.zoomBy(distance / gesture.distance, anchorAbs);
+      }
+      timelineGestureRef.current = { ...gesture, mode: "pinch", distance, x: midpointX, y: (a.y + b.y) / 2 };
+      event.preventDefault();
+      return;
+    }
+
+    const dx = event.clientX - gesture.x;
+    const dy = event.clientY - gesture.y;
+    if (gesture.mode === "pending") {
+      if (Math.max(Math.abs(dx), Math.abs(dy)) < 7) return;
+      if (Math.abs(dx) >= Math.abs(dy) * 1.2) {
+        timelineGestureRef.current = { ...gesture, mode: "pan", x: event.clientX, y: event.clientY, time: performance.now() };
+      } else {
+        event.currentTarget.scrollTop -= dy;
+        timelineGestureRef.current = { ...gesture, mode: "scroll", x: event.clientX, y: event.clientY };
+      }
+      event.preventDefault();
+      return;
+    }
+    if (gesture.mode === "scroll") {
+      event.currentTarget.scrollTop -= dy;
+      timelineGestureRef.current = { ...gesture, x: event.clientX, y: event.clientY };
+      event.preventDefault();
+      return;
+    }
+    if (gesture.mode !== "pan") return;
+    const now = performance.now();
+    const delta = event.clientX - gesture.x;
+    const dt = now - gesture.time;
+    viewportStore.panByPixels(delta);
+    timelineGestureRef.current = {
+      ...gesture,
+      x: event.clientX,
+      y: event.clientY,
+      time: now,
+      velocity: dt > 0 ? delta / dt : gesture.velocity,
+    };
+    event.preventDefault();
+  };
+
+  const onStagePointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (!timelinePointersRef.current.has(event.pointerId)) return;
+    timelinePointersRef.current.delete(event.pointerId);
+    const gesture = timelineGestureRef.current;
+    timelineGestureRef.current = null;
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+    if (gesture?.mode === "pan" && timelinePointersRef.current.size === 0) startTimelineInertia(gesture.velocity);
+  };
+  useEffect(() => () => stopTimelineInertia(), []);
 
   const dynastiesById = useMemo(() => {
     const map = new Map<string, Dynasty>();
@@ -229,7 +372,13 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
 
   const eventPlaced = useMemo(() => layoutEvents(railEvents, viewport), [railEvents, viewport]);
 
-  const railHeight = eventRailHeight(eventLaneCount(eventPlaced));
+  const totalEventLanes = eventLaneCount(eventPlaced);
+  const canExpandEvents = totalEventLanes > 3;
+  const showAllEvents = !canExpandEvents || eventsExpanded;
+  const visibleEventPlaced = showAllEvents
+    ? eventPlaced
+    : eventPlaced.filter((item) => item.lane < 3);
+  const railHeight = eventRailHeight(showAllEvents ? totalEventLanes : Math.min(totalEventLanes, 3));
   const reignsByDynasty = useMemo(() => {
     const map = new Map<string, typeof data extends undefined ? never : NonNullable<typeof data>["reigns"]>();
     if (!data) return map;
@@ -294,17 +443,25 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       visibleMissingReigns?: Reign[];
     }>(),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [reignsByDynasty, laneGroups, viewport.pxPerMonth, personNames, personDisplay],
+    [reignsByDynasty, laneGroups, viewport.pxPerMonth, viewport.presentation.rowHeightPx, viewport.presentation.lanePaddingPx, personNames, personDisplay],
   );
 
   const lanes = useMemo(() => {
-    let top = railHeight;
+    let top = railHeight + EVENT_CONTROL_LANE_CLEARANCE;
+    const clusterGroupIds = new Set((data?.dynastyGroups ?? []).map((group) => group.id));
+    let previousClusterId: string | null = null;
     return placed.map((dynasty) => {
+      const clusterId =
+        dynasty.groupId && clusterGroupIds.has(dynasty.groupId) ? dynasty.groupId : null;
+      if (previousClusterId && clusterId !== previousClusterId) {
+        top += clusterLaneGapForPresentation(viewport.presentation, clusterId !== null);
+      }
+      previousClusterId = clusterId;
       let prepared = lanePreparedCache.get(dynasty.id);
       if (!prepared) {
         const records = collectLaneReigns(dynasty.id, reignsByDynasty, laneGroups);
         const { rulers: reigns, missing: missingReigns } = partitionReignRecords(records);
-        const geometry = prepareLaneReignGeometry(reigns, laneGroups);
+        const geometry = prepareLaneReignGeometry(reigns, laneGroups, viewport.presentation.rowHeightPx);
         const height = dynastyLaneHeightForViewport(
           reigns,
           laneGroups,
@@ -323,17 +480,17 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       if (!sameReignIds(prepared.visibleMissingReigns, nextVisibleMissingReigns)) prepared.visibleMissingReigns = nextVisibleMissingReigns;
       const visibleReigns = prepared.visibleReigns!;
       const visibleMissingReigns = prepared.visibleMissingReigns!;
-      const chipHeight = TIMELINE_RAIL_CHIP_HEIGHT_PX;
+      const chipHeight = viewport.presentation.railChipHeightPx;
       const chipTop =
         rowCount > 1
           ? top + height / 2 - chipHeight / 2
-          : top + TIMELINE_RAIL_CHIP_TOP_PX;
-      const badgeTop = top + LANE_PADDING_TOP - EVENT_BADGE_HALF_HEIGHT;
+          : top + viewport.presentation.railChipTopPx;
+      const badgeTop = top + viewport.presentation.lanePaddingPx - EVENT_BADGE_HALF_HEIGHT;
       const item = { dynasty, records, reigns, missingReigns, visibleReigns, visibleMissingReigns, geometry, top, height, badgeTop, chipTop, chipHeight };
       top += height;
       return item;
     });
-  }, [placed, railHeight, reignsByDynasty, laneGroups, viewport, personNames, personDisplay, lanePreparedCache]);
+  }, [data?.dynastyGroups, placed, railHeight, reignsByDynasty, laneGroups, viewport, personNames, personDisplay, lanePreparedCache]);
 
   const badgePlaced = useMemo(() => {
     const laneById = new Map(lanes.map((lane) => [lane.dynasty.id, lane]));
@@ -341,22 +498,22 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       const position = badgePositions.get(item.event.id);
       const lane = laneById.get(position?.laneId ?? "");
       const reign = lane && eventTargetReign(item.event, lane.reigns);
-      const unit = reign && lane && resolveStackedCardUnit(reign, lane.reigns, laneGroups);
+      const unit = reign && lane && lane.geometry.byId.get(reign.id);
       return {
         ...item,
         anchorX: position?.anchorX ?? item.anchorX,
         top: position?.edge === "bottom"
           ? lane
-            ? LANE_PADDING_TOP + (unit
+            ? viewport.presentation.lanePaddingPx + (unit
               ? unit.unitTop + unit.unitHeight
-              : dynastyBarHeightForReigns(lane.reigns, laneGroups)) - EVENT_BADGE_HALF_HEIGHT
+              : dynastyBarHeightForReigns(lane.reigns, laneGroups, viewport.presentation.rowHeightPx)) - EVENT_BADGE_HALF_HEIGHT
             : item.top
           : unit
-            ? LANE_PADDING_TOP + unit.unitTop - EVENT_BADGE_HALF_HEIGHT
+            ? viewport.presentation.lanePaddingPx + unit.unitTop - EVENT_BADGE_HALF_HEIGHT
             : lane ? lane.badgeTop - lane.top : item.top,
       };
     });
-  }, [badgeEvents, badgePositions, lanes, laneGroups]);
+  }, [badgeEvents, badgePositions, lanes, laneGroups, viewport.presentation]);
 
   const badgesByLane = useMemo(() => {
     const map = new Map<string, typeof badgePlaced>();
@@ -371,8 +528,11 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   }, [badgePlaced, badgePositions]);
 
   const clusterFrames = useMemo(
-    () => clusterFramesForLanes(lanes, data?.dynastyGroups ?? []),
-    [lanes, data?.dynastyGroups],
+    () => viewport.presentation.railCollapsed ? [] : clusterFramesForLanes(lanes, data?.dynastyGroups ?? [], {
+      insetPx: viewport.presentation.railInsetPx,
+      labelWidthPx: viewport.presentation.railLabelWidthPx,
+    }),
+    [lanes, data?.dynastyGroups, viewport.presentation],
   );
 
   const resolvedFates = useMemo(
@@ -441,28 +601,12 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       className={styles.stage}
       data-timeline-pan
       data-timeline-stage
-      onPointerDown={(event) => {
-        if (event.button !== 0 || !(event.target instanceof Element)) return;
-        if (event.target.closest("button, a, input, textarea, select, [role='button']")) return;
-        const mapBox = event.currentTarget.querySelector("[data-china-map-box]");
-        const rect = mapBox?.getBoundingClientRect();
-        if (!rect || event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) return;
-        mapDragRef.current = { pointerId: event.pointerId, x: event.clientX, y: event.clientY };
-        event.currentTarget.setPointerCapture(event.pointerId);
-        event.preventDefault();
-      }}
-      onPointerMove={(event) => {
-        const drag = mapDragRef.current;
-        if (!drag || drag.pointerId !== event.pointerId) return;
-        setMapView((view) => ({ ...view, x: view.x + event.clientX - drag.x, y: view.y + event.clientY - drag.y }));
-        mapDragRef.current = { ...drag, x: event.clientX, y: event.clientY };
-      }}
-      onPointerUp={(event) => {
-        if (mapDragRef.current?.pointerId !== event.pointerId) return;
-        mapDragRef.current = null;
-        if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
-      }}
-      onPointerCancel={() => { mapDragRef.current = null; }}
+      data-testid="timeline-workspace"
+      data-map-vertical-alignment={mapVerticalAlignment}
+      onPointerDown={onStagePointerDown}
+      onPointerMove={onStagePointerMove}
+      onPointerUp={onStagePointerUp}
+      onPointerCancel={onStagePointerUp}
       style={{
         ["--center-guide-x" as string]: `${centerGuideX(viewport)}px`,
         ...(stageViewportHeight > 0
@@ -473,9 +617,9 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       <div className={styles.mapUnderlay} aria-hidden="true">
         <div className={styles.viewportPanel}>
           <StableChinaMapBackground
-            gutterPx={viewport.gutterPx}
-            scale={mapView.scale}
-            offset={mapOffset}
+            layout={mapLayout}
+            scale={1}
+            offset={{ x: 0, y: 0 }}
           />
         </div>
       </div>
@@ -525,6 +669,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
                     height={height}
                     left={left}
                     width={width}
+                    compact={viewport.presentation.compact}
                   />
                 ))}
               </AnimatePresence>
@@ -553,7 +698,24 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
             </>
           )}
           {eventPlaced.length > 0 && (
-            <EventLayer placed={eventPlaced} height={railHeight} />
+            <>
+              <EventLayer placed={visibleEventPlaced} height={railHeight} />
+              {canExpandEvents && (
+                <button
+                  type="button"
+                  className={styles.eventExpandButton}
+                  style={{ top: railHeight - 7 }}
+                  aria-label={eventsExpanded ? "收拢事件" : "展开更多事件"}
+                  title={eventsExpanded ? "收拢事件" : "展开更多事件"}
+                  onPointerDown={(event) => event.stopPropagation()}
+                  onClick={() => setEventsExpanded((expanded) => !expanded)}
+                >
+                  <svg aria-hidden="true" viewBox="0 0 12 7" focusable="false">
+                    <path d={eventsExpanded ? "M1 6 6 1l5 5" : "m1 1 5 5 5-5"} />
+                  </svg>
+                </button>
+              )}
+            </>
           )}
           {data && placed.length > 0 && fatePlaced.length > 0 && (
             <ReignFateLayer placed={fatePlaced} height={contentHeight} />
@@ -575,9 +737,9 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
             dynastyNamesById={dynastyNamesById}
             laneColorMap={laneColorMap}
             atAbs={labelAnchorAbs}
-            gutterPx={viewport.gutterPx}
-            scale={mapView.scale}
-            offset={mapOffset}
+            layout={mapLayout}
+            scale={1}
+            offset={{ x: 0, y: 0 }}
           />
         </div>
       </div>
@@ -586,19 +748,10 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
           <EventMapLayer
             events={nearbyEvents}
             atAbs={viewport.centerAbs}
-            gutterPx={viewport.gutterPx}
-            scale={mapView.scale}
-            offset={mapOffset}
+            layout={mapLayout}
+            scale={1}
+            offset={{ x: 0, y: 0 }}
           />
-        </div>
-      </div>
-      <div className={styles.mapControlsOverlay}>
-        <div className={styles.viewportPanel}>
-          <div className={styles.mapControls} role="group" aria-label="地图缩放">
-            <button type="button" onClick={() => setMapView((view) => ({ ...view, scale: Math.min(2.8, view.scale + 0.2) }))} aria-label="放大地图" title="放大">+</button>
-            <span aria-hidden="true" />
-            <button type="button" onClick={() => setMapView((view) => ({ ...view, scale: Math.max(0.7, view.scale - 0.2) }))} aria-label="缩小地图" title="缩小">−</button>
-          </div>
         </div>
       </div>
     </div>

@@ -15,7 +15,7 @@ description: >-
 ## 开始前
 
 1. 明确事件范围、时间窗口与期望深度；可从用户描述推断时不要停下来追问。
-2. 搜索维基百科、正史、政府或学术资料核对事实。不能只根据现有 `generate.mjs` 改写。
+2. 搜索维基百科、正史、政府或学术资料核对事实。不能只根据现有缓存改写。
 3. 搜索 `data/imports/**` 和数据库中的同名、同义事件。已有同一事实时补字段或关联，不新建重复事件。
 4. 找到事件所属时期包；跨时期集中数据按既有专包维护，不要把修订只写进生成后的 `import.sql`。
 
@@ -51,7 +51,7 @@ description: >-
 - 先确认日期使用农历还是公历。不得把农历月日直接当公历录入；不能可靠换算时保留原文并降低精度，换算后须在 `date_note` 写依据。
 - 所有 `*_abs` 用 `absMonth()` 或项目生成器计算，禁止手填。
 
-`kind` 使用现有枚举：`battle | politics | culture | disaster | commerce | finance | idiom | poetry | other`。新增枚举必须同步 Zod、Prisma、共享标签、界面样式和入库 Skill，不能只在数据里发明新值。
+`kind` 使用现有枚举：`battle | politics | culture | disaster | commerce | agriculture | finance | idiom | poetry | other`。`agriculture` 用于农业生产、作物引种及相关农业技术传播。新增枚举必须同步 Zod、Prisma、共享标签、界面样式和入库 Skill，不能只在数据里发明新值。
 
 ## 内容与关联
 
@@ -72,8 +72,8 @@ description: >-
 Task Progress:
 - [ ] 1. 查史料并列出候选事件、日期、关联和来源
 - [ ] 2. 查重并执行收录判断
-- [ ] 3. 修改 data/imports/{slug}/ 的源数据或生成器
-- [ ] 4. 运行 generate.mjs 生成 import.sql 与 manifest.json
+- [ ] 3. 直接修改 data/imports/{slug}/cache.json
+- [ ] 4. 运行统一生成命令，生成 PostgreSQL `import.sql` 与 manifest.json
 - [ ] 5. 校验 SQL
 - [ ] 6. 增量导入或全量重灌
 - [ ] 7. 验证 API、详情关联与时间轴显示
@@ -82,7 +82,7 @@ Task Progress:
 使用 `data/imports/lib/sqlHelpers.mjs` 的 `eventSql()` 和共享日期助手。默认 UPSERT `events`，连接表 `ON CONFLICT DO NOTHING`；删除已废弃事件时同时清理其连接与关系。不要修改 `data/seed/*.json` 修生产数据，也不要手改生成后的 SQL 而不改源。
 
 ```bash
-node data/imports/{slug}/generate.mjs
+node data/imports/generate.mjs {slug}
 node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/imports/{slug}/import.sql
 .cursor/skills/eralens-period-import/scripts/apply-sql.sh data/imports/{slug}/import.sql
 ```

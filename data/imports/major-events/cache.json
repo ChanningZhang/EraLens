@@ -1,0 +1,856 @@
+{
+  "slug": "major-events",
+  "window": {
+    "startYear": -770,
+    "startMonth": 1,
+    "endYear": 1946,
+    "endMonth": 12
+  },
+  "persons": [],
+  "dynastyGroups": [],
+  "dynasties": [],
+  "capitals": [],
+  "reigns": [],
+  "events": [
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "mongol-empire"
+      ],
+      "participantIds": [],
+      "id": "kublai-court-at-kaiping",
+      "name": "忽必烈以开平为汗廷",
+      "at": {
+        "year": 1260,
+        "month": 12,
+        "abs": 15131
+      },
+      "summary": "忽必烈在开平即大汗位，与仍据和林的阿里不哥争位；开平成为忽必烈一方的政治中心，蒙古帝国一度出现两个汗廷。",
+      "dateNote": "中统元年（1260年）；此时汗位之争未结束，不将开平写成蒙古帝国唯一都城。",
+      "atAbs": 15131
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "mongol-empire"
+      ],
+      "participantIds": [],
+      "id": "kublai-moves-capital-to-zhongdu",
+      "name": "忽必烈迁都中都",
+      "at": {
+        "year": 1267,
+        "month": 12,
+        "abs": 15215
+      },
+      "summary": "忽必烈由上都迁往中都（今北京），上都转为陪都，并在中都东北营建新城。",
+      "dateNote": "至元四年（1267年）；北京地方志资料记为迁都中都之年。",
+      "atAbs": 15215
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-east"
+      ],
+      "participantIds": [],
+      "id": "zhou-nanwang-moves-to-western-zhou-capital",
+      "name": "赧王徙居西周",
+      "at": {
+        "year": -314,
+        "month": 12,
+        "abs": -3745
+      },
+      "summary": "周赧王被迫迁居西周国王城，当时此处仍是西周国都；这是寄居避难，不表述为正式迁都。",
+      "dateNote": "仅知周赧王时期发生，具体年份有异说；以都城资料采用的约前314年作为年精度锚点。",
+      "atAbs": -3745
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "sui"
+      ],
+      "participantIds": [],
+      "id": "sui-moves-to-daxing",
+      "name": "隋文帝迁都大兴",
+      "at": {
+        "year": 583,
+        "month": 12,
+        "abs": 7007
+      },
+      "summary": "隋文帝迁入新建的大兴城，取代旧长安城成为隋朝都城。",
+      "dateNote": "开皇三年（583年）；新城营建与迁入按年精度记录。",
+      "atAbs": 7007
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-wu"
+      ],
+      "participantIds": [],
+      "id": "wu-zhou-moves-capital-to-luoyang",
+      "name": "武周迁都洛阳",
+      "at": {
+        "year": 690,
+        "month": 12,
+        "abs": 8291
+      },
+      "summary": "武则天称帝建立武周，以洛阳为都并称神都，政治中心由长安转至洛阳。",
+      "dateNote": "天授元年（690年）；采用武周建立并以洛阳为都的年份。",
+      "atAbs": 8291
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "tang"
+      ],
+      "participantIds": [],
+      "id": "tang-forced-move-to-luoyang",
+      "name": "昭宗东迁洛阳",
+      "at": {
+        "year": 904,
+        "month": 12,
+        "abs": 10859
+      },
+      "summary": "朱全忠迫使唐昭宗离开长安迁往洛阳，长安遭到毁坏，唐朝政治中心自此未能恢复。",
+      "dateNote": "天祐元年（904年）正月迁都；《旧唐书·昭宗本纪》记载此事。",
+      "atAbs": 10859
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "tang"
+      ],
+      "participantIds": [],
+      "id": "tang-restored-capital-to-changan",
+      "name": "唐中宗还都长安",
+      "at": {
+        "year": 706,
+        "month": 12,
+        "abs": 8483
+      },
+      "summary": "神龙政变后唐朝复辟，中宗次年还都长安，结束武周时期以洛阳为政治中心的阶段。",
+      "dateNote": "神龙二年（706年）还都长安；武周复唐发生于705年。",
+      "atAbs": 8483
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "song-south"
+      ],
+      "participantIds": [],
+      "id": "song-moves-capital-to-linan",
+      "name": "南宋定都临安",
+      "at": {
+        "year": 1138,
+        "month": 12,
+        "abs": 13667
+      },
+      "summary": "宋高宗正式以临安为行在，临安由此成为南宋长期的政治中心。",
+      "dateNote": "绍兴八年（1138年）；此处取正式定临安为行在之年，不将此前数次临幸混作定都。",
+      "atAbs": 13667
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "ming"
+      ],
+      "participantIds": [],
+      "id": "ming-moves-capital-to-beijing",
+      "name": "永乐迁都北京",
+      "at": {
+        "year": 1421,
+        "month": 12,
+        "abs": 17063
+      },
+      "summary": "明成祖将都城由南京迁至北京，南京保留留都地位。",
+      "dateNote": "永乐十九年（1421年）正式迁都。",
+      "atAbs": 17063
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [],
+      "id": "roc-moves-wartime-government-to-chongqing",
+      "name": "国民政府迁都重庆",
+      "at": {
+        "year": 1937,
+        "month": 11,
+        "abs": 23254
+      },
+      "summary": "抗日战争全面爆发后，国民政府迁往重庆，重庆成为战时陪都和全国抗战的重要政治中心。",
+      "dateNote": "1937年11月国民政府决定迁渝；重庆市政协资料记载迁移过程。",
+      "atAbs": 23254
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [],
+      "id": "roc-returns-capital-to-nanjing",
+      "name": "国民政府还都南京",
+      "at": {
+        "year": 1946,
+        "month": 5,
+        "abs": 23356
+      },
+      "summary": "抗战胜利后，国民政府由重庆还都南京。",
+      "dateNote": "1946年5月还都南京。",
+      "atAbs": 23356
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-east"
+      ],
+      "participantIds": [],
+      "id": "zhou-jingwang-moves-to-chengzhou",
+      "name": "周敬王迁都成周",
+      "at": {
+        "year": -510,
+        "month": 12,
+        "abs": -6097
+      },
+      "summary": "王子朝之乱后，王城仍有其党羽活动。周敬王据杜预注的传统解释迁居王城以东的新成周，以避乱自安。",
+      "dateNote": "前510年营建新城并迁居的通行系年；《左传》记王子朝之乱，迁居缘由见杜预注。",
+      "atAbs": -6097
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "jin-hou",
+        "liao"
+      ],
+      "participantIds": [],
+      "id": "later-jin-cedes-yanyun",
+      "name": "后晋割让燕云十六州",
+      "at": {
+        "year": 936,
+        "month": 12,
+        "abs": 11243
+      },
+      "summary": "石敬瑭借契丹援助赢得帝位，向辽割让燕云十六州，北方门户自此长期处于辽、金控制之下。",
+      "dateNote": "936年后晋建国及相关契丹册立、割地约定；具体交割过程跨越936年前后。",
+      "atAbs": 11243
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-hou",
+        "liao"
+      ],
+      "participantIds": [],
+      "id": "later-zhou-recovers-ying-mo",
+      "name": "后周北伐收复瀛、莫二州",
+      "at": {
+        "year": 959,
+        "month": 12,
+        "abs": 11519
+      },
+      "summary": "后周世宗北伐，收复燕云南部的瀛州、莫州等地，但未能完成燕云十六州的整体收复。",
+      "dateNote": "显德六年（959年）北伐；州县归属与进军阶段按年精度处理。",
+      "atAbs": 11519
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "song-north",
+        "jin-nvzhen",
+        "liao"
+      ],
+      "participantIds": [],
+      "id": "song-jin-maritime-alliance",
+      "name": "宋金海上之盟",
+      "at": {
+        "year": 1120,
+        "month": 12,
+        "abs": 13451
+      },
+      "summary": "宋与金约定夹攻辽，宋希望借此取得燕云；辽亡后宋金关系迅速破裂，最终引向靖康之变。",
+      "dateNote": "宣和二年（1120年）订盟；条约内容与实际执行过程跨越1120—1123年。",
+      "atAbs": 13451
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "song-north",
+        "jin-nvzhen"
+      ],
+      "participantIds": [],
+      "id": "song-recovers-yanyun-six-prefectures",
+      "name": "北宋短暂收复燕京及六州",
+      "at": {
+        "year": 1123,
+        "month": 12,
+        "abs": 13487
+      },
+      "summary": "辽亡后金将燕京及附近六州交给北宋，宋短暂取得燕云南部，但实际控制很快因宋金冲突而动摇。",
+      "dateNote": "宣和五年（1123年）；此处采用年精度，不把部分州县交割误写为十六州全部收复。",
+      "atAbs": 13487
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "jin-nvzhen",
+        "song-north"
+      ],
+      "participantIds": [],
+      "id": "jin-reclaims-yanyun",
+      "name": "金重新夺取燕云",
+      "at": {
+        "year": 1125,
+        "month": 12,
+        "abs": 13511
+      },
+      "summary": "宋金矛盾激化后，金军重新控制燕云并南下攻宋，北宋北部防线崩溃，次年开封陷落。",
+      "dateNote": "1125—1126年金军重夺燕云并南下；以1125年为事件起点，靖康之变另有独立事件。",
+      "atAbs": 13511
+    },
+    {
+      "kind": "politics",
+      "timeMode": "circa",
+      "precision": "year",
+      "dynastyIds": [
+        "tang",
+        "jin-hou"
+      ],
+      "participantIds": [],
+      "id": "heirloom-seal-lost",
+      "name": "传国玉玺失踪",
+      "start": {
+        "year": 936,
+        "month": 1,
+        "abs": 11232
+      },
+      "end": {
+        "year": 937,
+        "month": 12,
+        "abs": 11255
+      },
+      "at": {
+        "year": 936,
+        "month": 12,
+        "abs": 11243
+      },
+      "summary": "后唐末帝李从珂兵败自焚，传统记载称传国玉玺随之失去下落；此后宋太祖受禅时已不见传国玺。",
+      "dateNote": "传国玺失踪的具体时点与是否毁于火中存在记载差异，取后唐灭亡前后窗口。",
+      "startAbs": 11232,
+      "endAbs": 11255,
+      "atAbs": 11243
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "song-south",
+        "mongol-empire"
+      ],
+      "participantIds": [],
+      "id": "song-mongol-duanping-enter-luo",
+      "name": "端平入洛",
+      "at": {
+        "year": 1234,
+        "month": 12,
+        "abs": 14819
+      },
+      "summary": "南宋趁蒙古主力北撤，出兵收复开封、洛阳、商丘等北宋旧地。宋军一度进入洛阳，因补给困难且蒙古军反击而撤退；此役加剧了宋蒙对立。",
+      "dateNote": "端平元年（1234年）六月至八月，传统历月；以1234年作年精度锚点。此役常称「端平入洛」，也有研究称「端平三京之役」。",
+      "atAbs": 14819
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "qin"
+      ],
+      "participantIds": [],
+      "id": "qin-unifies-china",
+      "name": "秦统一中国",
+      "at": {
+        "year": -221,
+        "month": 12,
+        "abs": -2629
+      },
+      "summary": "秦灭齐完成六国统一，结束战国长期分裂，建立中国历史上第一个大一统帝国。",
+      "dateNote": "秦王政二十六年，前221年；作为特别重大总纲事件保留，不等同于秦统一制度事件。",
+      "atAbs": -2629
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "han-west"
+      ],
+      "participantIds": [],
+      "id": "western-han-protectorate-of-western-regions",
+      "name": "西域都护府建立",
+      "at": {
+        "year": -60,
+        "month": 12,
+        "abs": -697
+      },
+      "summary": "西汉在西域设置都护，标志中央政权对西域的经略由军事往来推进到持续行政管理。",
+      "dateNote": "神爵二年，前60年；具体设置月份不详。",
+      "atAbs": -697
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "han-west"
+      ],
+      "participantIds": [],
+      "id": "western-han-grace-order",
+      "name": "推恩令颁行",
+      "at": {
+        "year": -127,
+        "month": 12,
+        "abs": -1501
+      },
+      "summary": "汉武帝采纳主父偃建议，允许诸侯王将封地分给子弟为列侯，由朝廷另立侯国。诸侯王国因此逐代析分，中央对地方的控制加强。",
+      "dateNote": "元朔二年（前127年）；《汉书·主父偃传》载偃建议推恩，武帝从其计。",
+      "atAbs": -1501
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "han-west"
+      ],
+      "participantIds": [],
+      "id": "western-han-salt-iron-monopoly",
+      "name": "盐铁官营",
+      "at": {
+        "year": -119,
+        "month": 12,
+        "abs": -1405
+      },
+      "summary": "汉武帝将盐、铁经营纳入国家专营，由官府设官管理生产和销售，以增加财政收入、支持对匈奴战争。",
+      "dateNote": "元狩四年（前119年）前后推行；盐铁专营的设置与各地落实并非单一日期。",
+      "atAbs": -1405
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "han-east"
+      ],
+      "participantIds": [
+        "liu-bian"
+      ],
+      "id": "he-jin-killed",
+      "name": "何进被杀",
+      "at": {
+        "year": 189,
+        "month": 9,
+        "abs": 2276
+      },
+      "summary": "大将军何进谋划诛除宦官，计划泄露后被宦官诱杀于宫中。袁绍等率军攻入宫禁，戚宦冲突演变为朝廷武装混战，为董卓控制洛阳创造了局势。",
+      "dateNote": "《后汉书·孝灵帝纪》记为中平六年八月戊辰；据该年历日换算为公历189年9月22日。",
+      "atAbs": 2276
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "han-east"
+      ],
+      "participantIds": [
+        "liu-bian"
+      ],
+      "id": "dong-zhuo-enters-luoyang",
+      "name": "董卓进京",
+      "at": {
+        "year": 189,
+        "month": 9,
+        "abs": 2276
+      },
+      "summary": "董卓率军进入洛阳并控制朝廷，随后废黜汉少帝刘辩、拥立刘协为帝，东汉皇权由此进一步受制于军阀。",
+      "dateNote": "中平六年八月末；按《后汉书·孝灵帝纪》所载少帝等于八月辛未还宫及董卓迎回少帝的记事，取公历189年9月25日为董卓护送少帝返回洛阳的年内节点；9月28日为其废立皇帝之日，不取作进京时间。",
+      "atAbs": 2276
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "sui"
+      ],
+      "participantIds": [],
+      "id": "sui-establishes-jinshi-examination",
+      "name": "隋代设进士科",
+      "at": {
+        "year": 605,
+        "month": 12,
+        "abs": 7271
+      },
+      "summary": "隋炀帝设进士科，以考试选拔人才，成为科举制度形成的重要节点。此后考试取士逐步发展为历代官员选拔的重要途径。",
+      "dateNote": "通行说法系于大业元年（605）；部分地方志记为大业二年（606），故按年精度记为制度开端的通行系年。",
+      "atAbs": 7271
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "tang"
+      ],
+      "participantIds": [],
+      "id": "tang-two-tax-law",
+      "name": "两税法推行",
+      "at": {
+        "year": 780,
+        "month": 12,
+        "abs": 9371
+      },
+      "summary": "唐德宗采纳杨炎建议，按居住地和资产等确定税额，分夏、秋两季征收，取代以丁身为主要依据的租庸调征收格局。",
+      "dateNote": "建中元年（780年）颁行；《旧唐书·杨炎传》及《资治通鉴》记其制度与施行。",
+      "atAbs": 9371
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "tang"
+      ],
+      "participantIds": [],
+      "id": "tang-tubo-changqing-alliance",
+      "name": "唐蕃长庆会盟",
+      "at": {
+        "year": 821,
+        "month": 12,
+        "abs": 9863
+      },
+      "summary": "唐与吐蕃订立长庆会盟，约定边界与和平关系，是唐蕃长期战争后重要的边疆秩序节点。",
+      "dateNote": "长庆元年至二年（821—822年）分阶段立碑、会盟，采用821年作为事件锚点。",
+      "atAbs": 9863
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [],
+      "id": "qing-establishes-ili-general",
+      "name": "清设伊犁将军",
+      "at": {
+        "year": 1762,
+        "month": 12,
+        "abs": 21155
+      },
+      "summary": "清廷在平定准噶尔后设置伊犁将军，建立对新疆军政事务的常设统辖机构。",
+      "dateNote": "乾隆二十七年（1762年）；机构设置月份不详。",
+      "atAbs": 21155
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "zhao-warring"
+      ],
+      "participantIds": [
+        "zhao-r5"
+      ],
+      "id": "zhao-saqiu-coup",
+      "name": "沙丘宫变",
+      "at": {
+        "year": -295,
+        "month": 12,
+        "abs": -3517
+      },
+      "summary": "赵武灵王退位为主父后，仍试图调整赵国继承安排。前295年，他与赵惠文王赵何同游沙丘，公子章及田不礼借主父之名召赵何，起兵争位；赵成、李兑平乱后围困主父宫，赵武灵王被幽禁三月有余而饿死。事件加剧赵国统治集团内耗。",
+      "dateNote": "赵惠文王四年（前295年），据《史记·赵世家》；史书记沙丘之乱与围困经过，未载可确定的公历月日。沙丘宫具体地望有平乡、广宗等说。",
+      "atAbs": -3517
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-wu",
+        "tang"
+      ],
+      "participantIds": [
+        "li-xian",
+        "wu-zetian"
+      ],
+      "id": "shenlong-coup",
+      "name": "神龙政变",
+      "at": {
+        "year": 705,
+        "month": 12,
+        "abs": 8471
+      },
+      "summary": "武则天病重之际，张柬之等朝臣联合禁军诛杀张易之、张昌宗，控制宫廷并促使太子李显监国。武则天随后退位，李显复位为唐中宗，武周结束、唐朝复辟；此后朝廷仍受韦后及其党羽影响。",
+      "dateNote": "长安五年正月癸卯发动，传统历日对应公历705年2月20日；按年精度记录。",
+      "atAbs": 8471
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "tang"
+      ],
+      "participantIds": [
+        "li-longji",
+        "li-dan",
+        "wei-hou"
+      ],
+      "id": "tanglong-coup",
+      "name": "唐隆政变",
+      "at": {
+        "year": 710,
+        "month": 12,
+        "abs": 8531
+      },
+      "summary": "唐中宗死后，韦太后临朝并控制禁军。临淄王李隆基与太平公主联络禁军发动政变，诛杀韦太后及安乐公主等韦氏势力；少帝李重茂退位，李旦复位为唐睿宗，李隆基被立为皇太子。",
+      "dateNote": "景龙四年六月二十日（唐隆元年，710年）；传统历日换算为公历7月21日，按年精度记录。",
+      "atAbs": 8531
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "tang"
+      ],
+      "participantIds": [
+        "li-ang"
+      ],
+      "id": "ganlu-coup",
+      "name": "甘露之变",
+      "at": {
+        "year": 835,
+        "month": 12,
+        "abs": 10031
+      },
+      "summary": "唐文宗与李训、郑注谋划削弱宦官势力，借左金吾仗院出现甘露的消息诱宦官前往察看，伏兵却未能制胜。仇士良等宦官挟持文宗并调禁军反击，李训等人出逃后被杀，王涯、贾餗、舒元舆等朝臣遭株连；宦官此后进一步控制朝政。",
+      "dateNote": "大和九年十一月二十一日，传统历日；按年精度记为835年，不将农历日期直接作为公历日期。",
+      "atAbs": 10031
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-hou",
+        "song-north"
+      ],
+      "participantIds": [
+        "zhao-kuangyin",
+        "chai-zongxun"
+      ],
+      "id": "chenqiao-mutiny",
+      "name": "陈桥兵变",
+      "at": {
+        "year": 960,
+        "month": 12,
+        "abs": 11531
+      },
+      "summary": "后周显德七年，朝廷命殿前都点检赵匡胤率军北上应对北汉、契丹来报。军队行至陈桥驿后拥立赵匡胤，赵随即率军返回开封，后周恭帝柴宗训禅位，赵匡胤建立宋朝。兵变以军队拥立完成政权更替，也开启北宋统一进程。",
+      "dateNote": "显德七年正月初三至初四（960年）；《续资治通鉴长编》等记陈桥拥立与次日入京，按年精度记录。",
+      "atAbs": 11531
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "ci-xi",
+        "ci-an",
+        "yi-xin",
+        "zaichun"
+      ],
+      "id": "xinyou-coup",
+      "name": "辛酉政变",
+      "at": {
+        "year": 1861,
+        "month": 12,
+        "abs": 22343
+      },
+      "summary": "咸丰帝在热河病逝前安排载淳继位，并命载垣、端华、肃顺等八大臣赞襄政务。慈禧与慈安两宫太后联合恭亲王奕訢，在咸丰梓宫回京期间解除八大臣权力，载垣、端华被逼自尽，肃顺被处斩；两宫随后垂帘听政，清廷权力格局由此改变。",
+      "dateNote": "咸丰十一年（1861年，辛酉年）；故宫博物院资料记九月三十日发动、十一月初一开始垂帘听政，均为传统历日，故按年精度记录。",
+      "atAbs": 22343
+    }
+  ],
+  "relations": [],
+  "supplementalEventDynasties": [],
+  "supplementalEventParticipants": [],
+  "preSql": "DELETE FROM events WHERE id IN ('shang-moves-capital-to-yin', 'zhou-pingwang-moves-east', 'song-gaozong-establishes-capital-yingtian');",
+  "manifest": {
+    "slug": "major-events",
+    "title": "跨时期重大事件补充",
+    "window": {
+      "startYear": -770,
+      "startMonth": 1,
+      "endYear": 1946,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "minimal",
+    "generatedAt": "2026-09-23",
+    "counts": {
+      "persons": 0,
+      "dynasties": 0,
+      "reigns": 0,
+      "events": 35,
+      "relations": 0
+    },
+    "sources": [
+      {
+        "label": "中国政府网：中国历史概况",
+        "url": "https://www.gov.cn/test/2005-05/24/content_436.htm"
+      },
+      {
+        "label": "吕梁市地方志：石敬瑭",
+        "url": "https://www.lvliang.gov.cn/zjll/mlll/lsmr/201804/t20180416_520518.html"
+      },
+      {
+        "label": "燕云十六州",
+        "url": "https://zh.wikipedia.org/wiki/%E7%87%95%E9%9B%B2%E5%8D%81%E5%85%AD%E5%B7%9E"
+      },
+      {
+        "label": "湖北省文化和旅游厅：和氏璧的千年流转",
+        "url": "https://wlt.hubei.gov.cn/bmdt/ztzl/zshb/201912/t20191226_1799401.shtml"
+      },
+      {
+        "label": "河北省档案馆：传国玉玺失踪记载",
+        "url": "https://www.hbda.gov.cn/uploads/4/file/public/201712/20171204134917_85ngxdl1xq.pdf"
+      },
+      {
+        "label": "河北省民族事务委员会：蒙古汗庭迁移与开平",
+        "url": "https://mw.hebei.gov.cn/system/2024/05/30/030291616.shtml"
+      },
+      {
+        "label": "北京市地方志：忽必烈迁都中都、元迁都大都",
+        "url": "https://www.bjdsdfz.cn/jcdq.jhtml"
+      },
+      {
+        "label": "唐蕃会盟",
+        "url": "https://zh.wikipedia.org/wiki/%E5%94%90%E8%95%83%E4%BC%9A%E7%9B%9F"
+      },
+      {
+        "label": "伊犁将军",
+        "url": "https://zh.wikipedia.org/wiki/%E4%BC%8A%E7%8A%81%E5%B0%86%E5%86%9B"
+      },
+      {
+        "label": "陕西省地方志：汉武纪年大事记（推恩策）",
+        "url": "https://dfz.shaanxi.gov.cn/zslm/fzzlk/dqcs/201706/P020240924681697197239.pdf"
+      },
+      {
+        "label": "维基百科：董卓进京（引《后汉书》等）",
+        "url": "https://zh.wikipedia.org/wiki/董卓進京"
+      },
+      {
+        "label": "维基百科：东汉（末年乱世）",
+        "url": "https://zh.wikipedia.org/wiki/东汉"
+      },
+      {
+        "label": "台州史志网：税制沿革（均田、两税法）",
+        "url": "https://tzsz.zjtz.gov.cn/art/2018/12/14/art_1229209663_54438074.html"
+      },
+      {
+        "label": "中国国家档案局：清代金榜简介（科举制度）",
+        "url": "https://www.saac.gov.cn/daj/lhgjk/201808/5d6abe19006d47489327b05524a38cc5.shtml"
+      },
+      {
+        "label": "中国历史研究院：唐代两税法研究",
+        "url": "https://hrcz.cass.cn/sxqy/zgs/202502/t20250228_5853789.shtml"
+      },
+      {
+        "label": "维基百科：端平入洛",
+        "url": "https://zh.wikipedia.org/wiki/端平入洛"
+      },
+      {
+        "label": "《廿二史劄記》卷二十六：端平入洛之师",
+        "url": "https://zh.wikisource.org/wiki/廿二史劄記/卷26"
+      },
+      {
+        "label": "《史记·赵世家》：沙丘之乱",
+        "url": "https://ctext.org/shiji/zhao-shi-jia/zh"
+      },
+      {
+        "label": "神龙政变",
+        "url": "https://zh.wikipedia.org/wiki/神龙革命"
+      },
+      {
+        "label": "唐隆政变",
+        "url": "https://zh.wikipedia.org/wiki/唐隆政变"
+      },
+      {
+        "label": "甘露之变",
+        "url": "https://zh.wikipedia.org/wiki/甘露之变"
+      },
+      {
+        "label": "《续资治通鉴长编》卷一：陈桥兵变",
+        "url": "https://zh.wikisource.org/wiki/續資治通鑑長編/卷001"
+      },
+      {
+        "label": "故宫博物院：辛酉政变",
+        "url": "https://www.dpm.org.cn/court/event/156213.html"
+      }
+    ],
+    "notes": [
+      "本包只补充无法由泳道直接读出的疆域、跨政权关系、政治象征和特别重大结构性转折，不重复普通王朝建立、皇帝即位或一般迁都。",
+      "燕云十六州拆为割让、局部收复、短暂取得与重新失陷，避免一个事件覆盖全部复杂过程。",
+      "传国玉玺失踪采用936—937年 circa 窗口；不把传统记载中的焚毁说写成确定事实。",
+      "已存在的张骞通西域、秦统一制度、尼布楚条约、左宗棠收复新疆等事件不在本包重复导入。",
+      "新增制度政策事件：推恩令、盐铁官营、隋代设进士科、唐代两税法。孝文帝改革（含均田制）、张居正改革（含一条鞭法）及清初固定丁额政策已有对应事件，不再重复拆分。",
+      "新增六起政变事件。传统历日转公历的日期只写入说明，事件轴统一按公历年精度记录；沙丘宫的具体地望保留异说。",
+      "何进被杀与董卓进京均发生于汉少帝刘辩在位期间，时间点按史料定位到189年9月（何进被杀为9月22日，董卓迎少帝还宫为9月25日），并同时关联东汉与刘辩。事件时间轴按月投影，故统一落在9月；9月28日是董卓废立皇帝之日，不作为进京时间。",
+      "前510年迁居成周事件补充都城记录未表达的政治原因；缘由据杜预注，前510年为通行系年。",
+      "端平入洛依传统历月记端平元年六月至八月，事件采用1234年年精度；其范围亦称端平三京之役。",
+      "迁都事件按正统窗口与都城包中的首都变更记录核对；同时存在陪都、留都或多京时不把政治中心往来误作迁都。仅收录有通行系年或可核史料的迁都、还都节点；周赧王迁居王城依资料记作约前314年。夏代都邑变动年代争议较大，不按都城阶段边界自动造事件。元代迁往大都早于本项目采用的正统起算点（1276），但按用户要求仍纳入蒙古／元都城迁移序列。盘庚迁殷、平王东迁已由对应时期包收录，本包不再重复；清廷迁都北京并入「清军入关」事件，不另拆一条。1127年赵构在应天即位属于继统节点，不另建迁都事件。"
+    ]
+  }
+}

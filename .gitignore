@@ -1,7 +1,11 @@
 node_modules
+.build/
+apps/web/public/assets/databases/
 dist
 .DS_Store
 *.local
 .env
 coverage
 .vite
+data/mobile/*.sqlite
+data/mobile/*.sqlite-*

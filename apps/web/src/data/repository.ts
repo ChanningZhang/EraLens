@@ -1,48 +1,25 @@
-import type {
-  DynastyCapital,
-  EntityDetail,
-  EntityRef,
-  Event,
-  Lod,
-  Person,
-  Reign,
-  SearchHit,
-  TimelineCatalog,
-  TimelineSlice,
-} from "@eralens/shared";
-
-export interface TimelineQuery {
-  fromAbs: number;
-  toAbs: number;
-  scope?: string;
-  lod: Lod;
-}
-
-export interface TimelineRepository {
-  getTimeline(q: TimelineQuery): Promise<TimelineSlice>;
-  getTimelineCatalog(scope?: string): Promise<TimelineCatalog>;
-  getEntity(ref: EntityRef, options?: { focusReignId?: string }): Promise<EntityDetail>;
-  search(term: string): Promise<SearchHit[]>;
-  getBounds(): Promise<{ minAbs: number; maxAbs: number }>;
-  getCapitals(fromAbs: number, toAbs: number): Promise<DynastyCapital[]>;
-  getPersons(): Promise<Person[]>;
-  getReigns(): Promise<Reign[]>;
-  getEvents(): Promise<Event[]>;
-}
-
-export async function createRepository(): Promise<TimelineRepository> {
-  const source = import.meta.env.VITE_DATA_SOURCE ?? "http";
-  if (source === "http") {
-    return (await import("./http/repository")).httpRepository;
-  }
-  return (await import("./mock/repository")).mockRepository;
-}
+import { closePlatformRepository, createPlatformRepository } from "@eralens/data-access";
+import type { TimelineRepository } from "@eralens/data-access";
+export type { TimelineRepository, TimelineQuery } from "@eralens/data-access";
 
 let repositoryPromise: Promise<TimelineRepository> | null = null;
 
+async function createRepository(): Promise<TimelineRepository> {
+  const source = import.meta.env.VITE_DATA_SOURCE;
+  const mockRepository = source === "mock" ? (await import("./mock/repository")).mockRepository : undefined;
+  return createPlatformRepository({
+    source,
+    apiBase: import.meta.env.VITE_API_BASE ?? "/api",
+    mockRepository,
+  });
+}
+
 export function getRepository(): Promise<TimelineRepository> {
-  if (!repositoryPromise) {
-    repositoryPromise = createRepository();
-  }
+  repositoryPromise ??= createRepository();
   return repositoryPromise;
+}
+
+export async function closeRepositoryForContentUpdate(): Promise<void> {
+  await closePlatformRepository();
+  repositoryPromise = null;
 }

@@ -32,7 +32,7 @@
 .ringShell {
   position: relative;
   z-index: 1;
-  height: 58px;
+  height: var(--ruler-ring-height, 58px);
   margin: 0 0 0 var(--timeline-gutter);
 }
 
@@ -137,3 +137,7 @@
   background: color-mix(in srgb, var(--color-surface) 92%, transparent);
   box-shadow: 0 0 12px 8px color-mix(in srgb, var(--color-surface) 88%, transparent);
 }
+
+:global([data-narrow="true"]) .ruler { --ruler-edge-fade: 24px; }
+:global([data-narrow="true"]) .zoomHint { right: 6px; font-size: 9px; }
+:global([data-narrow="true"]) .gestureHint { display: none; }

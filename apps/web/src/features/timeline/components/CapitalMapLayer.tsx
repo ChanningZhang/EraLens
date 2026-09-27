@@ -6,10 +6,10 @@ import {
   type Dynasty,
   type DynastyCapital,
 } from "@eralens/shared";
-import { useEffect, useMemo, useRef, useState } from "react";
-import { HoverTooltip } from "./HoverTooltip";
+import { useMemo } from "react";
+import { InfoPopover } from "./InfoPopover";
 import { useSelection } from "../hooks/useSelection";
-import { projectGcj02, resolveChinaMapInsets, wgs84ToGcj02 } from "../model/chinaMapProjection";
+import { projectGcj02InLayout, wgs84ToGcj02, type ChinaMapLayout } from "../model/chinaMapProjection";
 import { selectionStore } from "../state/selectionStore";
 import styles from "./CapitalMapLayer.module.css";
 
@@ -27,7 +27,7 @@ type Props = {
   dynastyNamesById: ReadonlyMap<string, string>;
   laneColorMap: ReadonlyMap<string, ColorToken>;
   atAbs: number;
-  gutterPx: number;
+  layout: ChinaMapLayout | null;
   scale: number;
   offset: { x: number; y: number };
 };
@@ -56,33 +56,13 @@ export function CapitalMapLayer({
   dynastyNamesById,
   laneColorMap,
   atAbs,
-  gutterPx,
+  layout,
   scale,
   offset,
 }: Props) {
   const selection = useSelection();
-  const containerRef = useRef<HTMLDivElement>(null);
-  const [size, setSize] = useState({ width: 0, height: 0 });
-
-  useEffect(() => {
-    const el = containerRef.current;
-    if (!el) return;
-    const apply = (width: number, height: number) => {
-      if (width < 1 || height < 1) return;
-      setSize({ width, height });
-    };
-    apply(el.clientWidth, el.clientHeight);
-    const observer = new ResizeObserver((entries) => {
-      const rect = entries[0]?.contentRect;
-      if (!rect) return;
-      apply(rect.width, rect.height);
-    });
-    observer.observe(el);
-    return () => observer.disconnect();
-  }, []);
-
   const placed = useMemo(() => {
-    if (size.width < 1 || size.height < 1 || capitals.length === 0) return [];
+    if (!layout || capitals.length === 0) return [];
 
     return capitals.map((capital) => {
       const dynasty = dynastiesById.get(capital.dynastyId);
@@ -93,13 +73,7 @@ export function CapitalMapLayer({
       const coordinate = capital.coordinateSystem === "WGS84"
         ? wgs84ToGcj02(capital.longitude, capital.latitude)
         : { x: capital.longitude, y: capital.latitude };
-      const point = projectGcj02(
-        coordinate.x,
-        coordinate.y,
-        size.width,
-        size.height,
-        resolveChinaMapInsets(gutterPx),
-      );
+      const point = projectGcj02InLayout(coordinate.x, coordinate.y, layout);
       return {
         capital,
         dynastyName: resolveDynastyName(capital, dynastiesById, dynastyNamesById),
@@ -113,19 +87,17 @@ export function CapitalMapLayer({
     capitals,
     dynastiesById,
     dynastyNamesById,
-    gutterPx,
+    layout,
     laneColorMap,
-    size.height,
-    size.width,
   ]);
 
   return (
-    <div ref={containerRef} className={styles.layer} aria-hidden={placed.length === 0}>
+    <div className={styles.layer} aria-hidden={placed.length === 0}>
       {placed.map(({ capital, dynastyName, x, y, color }) => {
         const isSelected =
           selection.selected?.type === "capital" && selection.selected.id === capital.id;
         return (
-        <HoverTooltip
+        <InfoPopover
           key={capital.id}
           text={`${dynastyName} · ${capital.historicalName} · ${capital.modernName}`}
         >
@@ -149,7 +121,7 @@ export function CapitalMapLayer({
               <span className={styles.label}>{dynastyName}</span>
             </button>
           )}
-        </HoverTooltip>
+        </InfoPopover>
         );
       })}
     </div>

@@ -1,0 +1,667 @@
+{
+  "slug": "three-kingdoms-battles",
+  "window": {
+    "startYear": 208,
+    "startMonth": 1,
+    "endYear": 234,
+    "endMonth": 8
+  },
+  "persons": [
+    {
+      "id": "guan-yu",
+      "name": "关羽",
+      "roles": [
+        "将领"
+      ],
+      "bio": "蜀汉名将，襄樊之战北伐曹魏，兵败被俘遇害。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/关羽"
+        }
+      ],
+      "birth": {
+        "year": 160,
+        "month": 1,
+        "abs": 1920
+      },
+      "death": {
+        "year": 220,
+        "month": 1,
+        "abs": 2640
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "zhang-fei",
+      "name": "张飞",
+      "roles": [
+        "将领"
+      ],
+      "bio": "蜀汉名将，长坂之战掩护刘备撤退，后镇守阆中。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/张飞"
+        }
+      ],
+      "birth": {
+        "year": 168,
+        "month": 1,
+        "abs": 2016
+      },
+      "death": {
+        "year": 221,
+        "month": 6,
+        "abs": 2657
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "lu-xun",
+      "name": "陆逊",
+      "roles": [
+        "军事家",
+        "政治家"
+      ],
+      "bio": "孙吴名将，夷陵之战、石亭之战主将，后官至丞相。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/陆逊"
+        }
+      ],
+      "birth": {
+        "year": 183,
+        "month": 1,
+        "abs": 2196
+      },
+      "death": {
+        "year": 245,
+        "month": 8,
+        "abs": 2947
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "huang-zhong",
+      "name": "黄忠",
+      "roles": [
+        "将领"
+      ],
+      "bio": "蜀汉名将，定军山斩夏侯渊，助刘备夺取汉中。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/黄忠"
+        }
+      ],
+      "birth": null,
+      "death": {
+        "year": 220,
+        "month": 1,
+        "abs": 2640
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "xiahou-yuan",
+      "name": "夏侯渊",
+      "roles": [
+        "将领"
+      ],
+      "bio": "曹魏名将，镇守汉中，定军山之战阵亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/夏侯渊"
+        }
+      ],
+      "birth": null,
+      "death": {
+        "year": 219,
+        "month": 1,
+        "abs": 2628
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "zhang-liao",
+      "name": "张辽",
+      "roles": [
+        "将领"
+      ],
+      "bio": "曹魏名将，逍遥津之战以八百破孙权十万。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/张辽"
+        }
+      ],
+      "birth": {
+        "year": 169,
+        "month": 1,
+        "abs": 2028
+      },
+      "death": {
+        "year": 222,
+        "month": 9,
+        "abs": 2672
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "cao-ren",
+      "name": "曹仁",
+      "roles": [
+        "将领"
+      ],
+      "bio": "曹魏名将，镇守樊城，襄樊之战拒关羽。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/曹仁"
+        }
+      ],
+      "birth": {
+        "year": 168,
+        "month": 1,
+        "abs": 2016
+      },
+      "death": {
+        "year": 223,
+        "month": 4,
+        "abs": 2679
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "ma-su",
+      "name": "马谡",
+      "roles": [
+        "将领"
+      ],
+      "bio": "蜀汉将领，街亭之战违诸葛亮节度，兵败被斩。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/马谡"
+        }
+      ],
+      "birth": null,
+      "death": {
+        "year": 228,
+        "month": 1,
+        "abs": 2736
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "zhang-he",
+      "name": "张郃",
+      "roles": [
+        "将领"
+      ],
+      "bio": "曹魏名将，街亭之战击败马谡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/张郃"
+        }
+      ],
+      "birth": null,
+      "death": {
+        "year": 231,
+        "month": 8,
+        "abs": 2779
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "cao-xiu",
+      "name": "曹休",
+      "roles": [
+        "将领"
+      ],
+      "bio": "曹魏宗室将领，石亭之战大败于陆逊。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/曹休"
+        }
+      ],
+      "birth": null,
+      "death": {
+        "year": 228,
+        "month": 6,
+        "abs": 2741
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [],
+  "capitals": [],
+  "reigns": [],
+  "events": [
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "han-east"
+      ],
+      "participantIds": [
+        "liu-bei",
+        "cao-cao",
+        "zhang-fei",
+        "zhuge-liang"
+      ],
+      "id": "changban",
+      "name": "长坂之战",
+      "dateNote": "建安十三年，208年，刘备南逃于长坂遭曹军追击",
+      "at": {
+        "year": 208,
+        "month": 12,
+        "abs": 2507
+      },
+      "summary": "曹操南下荆州，刘备携百姓南奔，于长坂遭曹军追上；张飞断后，赵云救主，奠定孙刘联盟基础。",
+      "atAbs": 2507
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "wei",
+        "wu"
+      ],
+      "participantIds": [
+        "zhang-liao",
+        "sun-quan",
+        "cao-ren"
+      ],
+      "id": "xiaoyaojin",
+      "name": "逍遥津之战",
+      "dateNote": "建安二十年七月，张辽八百破孙权",
+      "at": {
+        "year": 215,
+        "month": 7,
+        "abs": 2586
+      },
+      "summary": "张辽率八百壮士夜袭逍遥津，大破孙权军，威震江东。",
+      "atAbs": 2586
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "precision": "month",
+      "dynastyIds": [
+        "shu",
+        "wei"
+      ],
+      "participantIds": [
+        "liu-bei",
+        "cao-cao",
+        "huang-zhong",
+        "xiahou-yuan"
+      ],
+      "id": "hanzhong",
+      "name": "汉中之战",
+      "dateNote": "建安二十二年至二十四年五月",
+      "start": {
+        "year": 217,
+        "month": 1,
+        "abs": 2604
+      },
+      "end": {
+        "year": 219,
+        "month": 5,
+        "abs": 2632
+      },
+      "summary": "刘备与曹操争夺汉中，历时近两年，刘备最终占据汉中并称汉中王。",
+      "startAbs": 2604,
+      "endAbs": 2632
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "shu",
+        "wei"
+      ],
+      "participantIds": [
+        "huang-zhong",
+        "xiahou-yuan"
+      ],
+      "id": "dingjunshan",
+      "name": "定军山之战",
+      "dateNote": "建安二十四年正月，黄忠斩夏侯渊",
+      "at": {
+        "year": 219,
+        "month": 1,
+        "abs": 2628
+      },
+      "summary": "黄忠于定军山斩曹魏大将夏侯渊，汉中战局逆转，刘备军占上风。",
+      "atAbs": 2628
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "precision": "month",
+      "dynastyIds": [
+        "shu",
+        "wei"
+      ],
+      "participantIds": [
+        "guan-yu",
+        "cao-ren"
+      ],
+      "id": "xiangfan",
+      "name": "襄樊之战",
+      "dateNote": "建安二十四年七月至十二月",
+      "start": {
+        "year": 219,
+        "month": 7,
+        "abs": 2634
+      },
+      "end": {
+        "year": 219,
+        "month": 12,
+        "abs": 2639
+      },
+      "summary": "关羽北伐襄樊，水淹七军威震华夏，后遭吕蒙偷袭荆州，兵败被俘遇害。",
+      "startAbs": 2634,
+      "endAbs": 2639
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "precision": "year",
+      "dynastyIds": [
+        "wei",
+        "wu"
+      ],
+      "participantIds": [
+        "sun-quan",
+        "zhang-liao"
+      ],
+      "id": "ruxu",
+      "name": "濡须之战",
+      "dateNote": "黄初三年至四年，222–223年",
+      "start": {
+        "year": 222,
+        "month": 1,
+        "abs": 2664
+      },
+      "end": {
+        "year": 223,
+        "month": 1,
+        "abs": 2676
+      },
+      "summary": "曹魏攻吴濡须口，双方对峙数月，最终议和罢兵。",
+      "startAbs": 2664,
+      "endAbs": 2676
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "shu",
+        "wei"
+      ],
+      "participantIds": [
+        "zhuge-liang",
+        "ma-su",
+        "zhang-he"
+      ],
+      "id": "jieting",
+      "name": "街亭之战",
+      "dateNote": "建兴六年春，228年",
+      "at": {
+        "year": 228,
+        "month": 12,
+        "abs": 2747
+      },
+      "summary": "诸葛亮第一次北伐，马谡守街亭违令，兵败于张郃，蜀军被迫撤退。",
+      "atAbs": 2747
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "wu",
+        "wei"
+      ],
+      "participantIds": [
+        "lu-xun",
+        "cao-xiu"
+      ],
+      "id": "shiting",
+      "name": "石亭之战",
+      "dateNote": "黄初七年七月，228年",
+      "at": {
+        "year": 228,
+        "month": 7,
+        "abs": 2742
+      },
+      "summary": "陆逊于石亭大败曹休，斩获甚众，孙吴北方边境得以巩固。",
+      "atAbs": 2742
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "precision": "month",
+      "dynastyIds": [
+        "shu",
+        "wei"
+      ],
+      "participantIds": [
+        "zhuge-liang"
+      ],
+      "id": "wuzhangyuan",
+      "name": "五丈原之战",
+      "dateNote": "建兴十二年二月至八月",
+      "start": {
+        "year": 234,
+        "month": 2,
+        "abs": 2809
+      },
+      "end": {
+        "year": 234,
+        "month": 8,
+        "abs": 2815
+      },
+      "summary": "诸葛亮最后一次北伐，屯兵五丈原与魏军对峙，八月病逝军中，蜀军退归。",
+      "startAbs": 2809,
+      "endAbs": 2815
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-changban-liu-bei",
+      "fromRef": "event:changban",
+      "toRef": "person:liu-bei",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-xiaoyaojin-zhang-liao",
+      "fromRef": "event:xiaoyaojin",
+      "toRef": "person:zhang-liao",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-hanzhong-liu-bei",
+      "fromRef": "event:hanzhong",
+      "toRef": "person:liu-bei",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-dingjunshan-huang-zhong",
+      "fromRef": "event:dingjunshan",
+      "toRef": "person:huang-zhong",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-xiangfan-guan-yu",
+      "fromRef": "event:xiangfan",
+      "toRef": "person:guan-yu",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-jieting-zhuge",
+      "fromRef": "event:jieting",
+      "toRef": "person:zhuge-liang",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-shiting-lu-xun",
+      "fromRef": "event:shiting",
+      "toRef": "person:lu-xun",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-wuzhangyuan-zhuge",
+      "fromRef": "event:wuzhangyuan",
+      "toRef": "person:zhuge-liang",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-yiling-lu-xun",
+      "fromRef": "event:yiling",
+      "toRef": "person:lu-xun",
+      "kind": "battle"
+    }
+  ],
+  "supplementalEventDynasties": [
+    {
+      "eventId": "changban",
+      "dynastyId": "wei"
+    },
+    {
+      "eventId": "changban",
+      "dynastyId": "shu"
+    }
+  ],
+  "supplementalEventParticipants": [
+    {
+      "eventId": "yiling",
+      "personId": "lu-xun"
+    },
+    {
+      "eventId": "xiangfan",
+      "personId": "liu-bei"
+    }
+  ],
+  "preSql": "",
+  "manifest": {
+    "slug": "three-kingdoms-battles",
+    "title": "三国著名战役补充",
+    "window": {
+      "startYear": 208,
+      "startMonth": 1,
+      "endYear": 234,
+      "endMonth": 8
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-09-13",
+    "counts": {
+      "persons": 10,
+      "dynasties": 0,
+      "reigns": 0,
+      "events": 9,
+      "relations": 9
+    },
+    "sources": [
+      {
+        "label": "长坂之战",
+        "url": "https://zh.wikipedia.org/wiki/长坂之战"
+      },
+      {
+        "label": "逍遥津之战",
+        "url": "https://zh.wikipedia.org/wiki/逍遥津之战"
+      },
+      {
+        "label": "汉中之战",
+        "url": "https://zh.wikipedia.org/wiki/汉中之战"
+      },
+      {
+        "label": "定军山之战",
+        "url": "https://zh.wikipedia.org/wiki/定军山之战"
+      },
+      {
+        "label": "襄樊之战",
+        "url": "https://zh.wikipedia.org/wiki/樊城之战"
+      },
+      {
+        "label": "濡须之战",
+        "url": "https://zh.wikipedia.org/wiki/濡须之战"
+      },
+      {
+        "label": "街亭之战",
+        "url": "https://zh.wikipedia.org/wiki/街亭之战"
+      },
+      {
+        "label": "石亭之战",
+        "url": "https://zh.wikipedia.org/wiki/石亭之战"
+      },
+      {
+        "label": "五丈原",
+        "url": "https://zh.wikipedia.org/wiki/五丈原"
+      },
+      {
+        "label": "关羽",
+        "url": "https://zh.wikipedia.org/wiki/关羽"
+      },
+      {
+        "label": "陆逊",
+        "url": "https://zh.wikipedia.org/wiki/陆逊"
+      },
+      {
+        "label": "张辽",
+        "url": "https://zh.wikipedia.org/wiki/张辽"
+      }
+    ],
+    "notes": [
+      "官渡、赤壁、夷陵已在 three-kingdoms-warlord 包中，本包补充其余著名战役。",
+      "长坂之战关联东汉（han-east），并 supplemental 关联魏、蜀割据行。",
+      "夷陵之战补充陆逊为参战人物（supplemental participant）。",
+      "定军山为汉中之战关键节点，单独建点事件以便检索。",
+      "人物生卒据《三国志》及维基百科通行换算，不详处 birth/death 留 NULL。"
+    ]
+  }
+}

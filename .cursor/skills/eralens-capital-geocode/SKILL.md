@@ -8,7 +8,7 @@ description: >-
 
 # EraLens 都城地理编码
 
-为 `dynasty_capitals` 表补数据：调研都城时段 → 高德取点 → 烘焙进 `generate.mjs` → 生成 SQL 导入。
+为 `dynasty_capitals` 表补数据：调研都城时段 → 高德取点 → 写入对应包 `cache.json` → 统一生成 SQL。
 
 **不要**在运行时 API 调高德；坐标与 `modern_name` 一并写入 `data/imports/{slug}/`。
 
@@ -29,7 +29,7 @@ Task Progress:
 - [ ] 1. 调研：核对维基/年表，确定 historical_name、时段、role
 - [ ] 2. 写 modern_name：省/市全称（见下）
 - [ ] 3. 高德取点：maps_geo → maps_regeocode 校验
-- [ ] 4. 写入 generate.mjs，运行 node generate.mjs
+- [ ] 4. 直接写入 `data/imports/dynasty-capitals/cache.json`，运行 `node data/imports/generate.mjs dynasty-capitals`
 - [ ] 5. 校验：node .cursor/skills/eralens-period-import/scripts/validate-import.mjs
 - [ ] 6. 入库：pnpm db:import 或 scripts/apply-sql.sh
 ```
@@ -52,7 +52,7 @@ Task Progress:
 2. 调用 `maps_geo`：`address` = 完整 modernName，`city` = 市级简称 hint（如 `西安`）。
 3. 用 `maps_regeocode` 反查返回坐标，确认 `province` / `city` 与 modernName 一致。
 4. 歧义时用 `maps_text_search` + `maps_search_detail`，仍须落到唯一行政区全称。
-5. 将 `longitude`、`latitude`（GCJ-02）硬编码进 `generate.mjs`。
+5. 将 `longitude`、`latitude`（GCJ-02）直接写入 `cache.json`。
 6. 在 `manifest.json` 的 `notes` 记录 geocode 来源（地址串、日期）。
 
 ## dynasty_capitals 字段
@@ -76,4 +76,4 @@ Task Progress:
 
 ## 试点包
 
-参考 [data/imports/dynasty-capitals/generate.mjs](../../../data/imports/dynasty-capitals/generate.mjs)。
+参考 [data/imports/dynasty-capitals/cache.json](../../../data/imports/dynasty-capitals/cache.json)。

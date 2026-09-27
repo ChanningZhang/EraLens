@@ -127,7 +127,7 @@ function formatSpanPointLabel(
     : formatYearMonth(point.year, point.month, style);
 }
 
-function formatAbsSpanDuration(
+export function formatAbsSpanDurationLabel(
   start: TimePoint,
   end: TimePoint,
   startAbs: AbsMonth,
@@ -157,7 +157,7 @@ export function formatAbsSpanTooltip(
   }
   const startLabel = formatSpanPointLabel(start, precision, "compact");
   const endLabel = formatSpanPointLabel(end, precision, "compact");
-  const duration = formatAbsSpanDuration(start, end, startAbs, endAbs, precision);
+  const duration = formatAbsSpanDurationLabel(start, end, startAbs, endAbs, precision);
   return `${startLabel} — ${endLabel} · ${duration}`;
 }
 

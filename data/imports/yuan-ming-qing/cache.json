@@ -1,0 +1,6184 @@
+{
+  "slug": "yuan-ming-qing",
+  "window": {
+    "startYear": 1271,
+    "startMonth": 12,
+    "endYear": 1912,
+    "endMonth": 2
+  },
+  "persons": [
+    {
+      "id": "hu-bilie",
+      "name": "忽必烈",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "元世祖，成吉思汗之孙，1271年定国号大元，灭南宋统一。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/忽必烈"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "圣德神功文武皇帝"
+      ],
+      "templeNames": [
+        "世祖"
+      ],
+      "title": "元世祖"
+    },
+    {
+      "id": "temur",
+      "name": "铁穆耳",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "元成宗，忽必烈之孙，守成之君。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/元成宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "钦明广孝皇帝"
+      ],
+      "templeNames": [
+        "成宗"
+      ],
+      "title": "元成宗"
+    },
+    {
+      "id": "khayishan",
+      "name": "海山",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "元武宗，海山即位，后兄死弟立。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/元武宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "仁惠宣孝皇帝"
+      ],
+      "templeNames": [
+        "武宗"
+      ],
+      "title": "元武宗"
+    },
+    {
+      "id": "ayurbarwada",
+      "name": "爱育黎拔力八达",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "元仁宗，恢复科举，与武宗约兄终弟及。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/元仁宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "圣文钦孝皇帝"
+      ],
+      "templeNames": [
+        "仁宗"
+      ],
+      "title": "元仁宗"
+    },
+    {
+      "id": "shidebala",
+      "name": "硕德八剌",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "元英宗，被南坡之变弑杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/元英宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "睿圣文孝皇帝"
+      ],
+      "templeNames": [
+        "英宗"
+      ],
+      "title": "元英宗"
+    },
+    {
+      "id": "yeshuntuemur",
+      "name": "也孙铁木儿",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "元泰定帝，在位五年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/元泰定帝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "元泰定帝"
+    },
+    {
+      "id": "ragibagh",
+      "name": "阿速吉八",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "元天顺帝，两都之战，在位仅一月。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/阿速吉八"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "元天顺帝"
+    },
+    {
+      "id": "tugh-temur",
+      "name": "图帖睦尔",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "元文宗，两都之战后即位，传位弟又夺位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/元文宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "圣明元孝皇帝"
+      ],
+      "templeNames": [
+        "文宗"
+      ],
+      "title": "元文宗"
+    },
+    {
+      "id": "khoshila",
+      "name": "和世㻋",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "元明宗，文宗之兄，即位仅一月被害。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/和世㻋"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "翼献景孝皇帝"
+      ],
+      "templeNames": [
+        "明宗"
+      ],
+      "title": "元明宗"
+    },
+    {
+      "id": "irinchibal",
+      "name": "懿璘质班",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "元宁宗，幼年即位，在位仅两月。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/元宁宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "冲圣嗣孝皇帝"
+      ],
+      "templeNames": [
+        "宁宗"
+      ],
+      "title": "元宁宗"
+    },
+    {
+      "id": "togon-temur",
+      "name": "妥懽帖睦尔",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "元顺帝，元朝末代，红巾起义，退居漠北。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/元顺帝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "顺帝"
+      ],
+      "templeNames": [
+        "惠宗"
+      ],
+      "title": "元惠宗"
+    },
+    {
+      "id": "xu-shouhui",
+      "name": "徐寿辉",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "元末红巾军领袖，1351年称帝，国号宋，传世文献多作天完；1360年为陈友谅所杀。明玉珍追谥应天启运献武皇帝，庙号世宗。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/徐寿辉"
+        }
+      ],
+      "birth": {
+        "year": 1320,
+        "month": 1,
+        "abs": 15840
+      },
+      "death": {
+        "year": 1360,
+        "month": 1,
+        "abs": 16320
+      },
+      "posthumousNames": [
+        "应天启运献武皇帝"
+      ],
+      "templeNames": [
+        "世宗"
+      ],
+      "title": "徐宋世宗"
+    },
+    {
+      "id": "chen-youliang",
+      "name": "陈友谅",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "元末陈汉建立者，1359年自立汉王，1360年弑徐寿辉称帝，国号汉；1363年鄱阳湖之战阵亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/陈友谅"
+        }
+      ],
+      "birth": {
+        "year": 1320,
+        "month": 1,
+        "abs": 15840
+      },
+      "death": {
+        "year": 1363,
+        "month": 1,
+        "abs": 16356
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "陈汉帝"
+    },
+    {
+      "id": "chen-li",
+      "name": "陈理",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "陈友谅次子，1363年鄱阳湖战后继位，改元德寿；1364年降明，陈汉亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/陈理_(元末)"
+        }
+      ],
+      "birth": {
+        "year": 1351,
+        "month": 1,
+        "abs": 16212
+      },
+      "death": {
+        "year": 1408,
+        "month": 1,
+        "abs": 16896
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "陈汉帝"
+    },
+    {
+      "id": "han-liner",
+      "name": "韩林儿",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "韩山童之子，号小明王，1355年被刘福通拥立称帝，国号宋；1366年溺亡于瓜洲渡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/韩林儿"
+        }
+      ],
+      "birth": null,
+      "death": {
+        "year": 1366,
+        "month": 1,
+        "abs": 16392
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "小明王"
+    },
+    {
+      "id": "zhang-shicheng",
+      "name": "张士诚",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "盐贩出身，1354年高邮建国号大周，自称诚王；1363年再号吴王；1367年平江败亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/张士诚"
+        }
+      ],
+      "birth": {
+        "year": 1321,
+        "month": 1,
+        "abs": 15852
+      },
+      "death": {
+        "year": 1367,
+        "month": 1,
+        "abs": 16404
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "诚王"
+    },
+    {
+      "id": "ming-yuzhen",
+      "name": "明玉珍",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "元末明夏建立者，徐寿辉部将，1362年重庆称帝，国号夏，据有两川；病逝后谥钦文昭武皇帝，庙号太祖。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/明玉珍"
+        }
+      ],
+      "birth": {
+        "year": 1329,
+        "month": 1,
+        "abs": 15948
+      },
+      "death": {
+        "year": 1366,
+        "month": 1,
+        "abs": 16392
+      },
+      "posthumousNames": [
+        "钦文昭武皇帝"
+      ],
+      "templeNames": [
+        "太祖"
+      ],
+      "title": "明夏太祖"
+    },
+    {
+      "id": "ming-sheng",
+      "name": "明升",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "明玉珍之子，1366年嗣位；1371年明军灭夏，降明。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/明升"
+        }
+      ],
+      "birth": null,
+      "death": {
+        "year": 1371,
+        "month": 1,
+        "abs": 16452
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "明夏帝"
+    },
+    {
+      "id": "liu-futong",
+      "name": "刘福通",
+      "roles": [
+        "起义领袖"
+      ],
+      "bio": "红巾军首领，拥立韩林儿为小明王，三路北伐；1363年安丰之战战死。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘福通"
+        }
+      ],
+      "birth": null,
+      "death": {
+        "year": 1363,
+        "month": 1,
+        "abs": 16356
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "ayushiridara",
+      "name": "爱猷识理达腊",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "北元昭宗，元顺帝长子，1370年嗣位，改元宣光。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/爱猷识理达腊"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "昭宗"
+      ],
+      "title": "元昭宗"
+    },
+    {
+      "id": "togus-temur",
+      "name": "脱古思帖木儿",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "北元末主天元帝，1388年捕鱼儿海之战后为也速迭儿所杀，北元终结。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/脱古思帖木儿"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "天元帝"
+    },
+    {
+      "id": "zhu-yuanzhang",
+      "name": "朱元璋",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "出身濠州贫苦农家，参加郭子兴领导的红巾军后崛起，攻占集庆并经营应天；鄱阳湖之战击败陈友谅，继而平定江南诸势力。1368年称帝建立明朝，定都南京；在位期间整饬吏治、编制黄册鱼鳞图册，并废丞相以强化中央集权。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/朱元璋"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "高皇帝"
+      ],
+      "templeNames": [
+        "太祖"
+      ],
+      "title": "明太祖"
+    },
+    {
+      "id": "zhu-yunwen",
+      "name": "朱允炆",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "建文帝，削藩引发靖难之役，下落成谜。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/建文帝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "建文帝"
+    },
+    {
+      "id": "zhu-di",
+      "name": "朱棣",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "明成祖，靖难之役即位，迁都北京，派郑和下西洋。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/朱棣"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "文皇帝"
+      ],
+      "templeNames": [
+        "成祖"
+      ],
+      "title": "明成祖"
+    },
+    {
+      "id": "zhu-gaochi",
+      "name": "朱高炽",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "明仁宗，永乐之后与民休息。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/朱高炽"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "昭皇帝"
+      ],
+      "templeNames": [
+        "仁宗"
+      ],
+      "title": "明仁宗"
+    },
+    {
+      "id": "zhu-zhanji",
+      "name": "朱瞻基",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "明宣宗，仁宣之治。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/朱瞻基"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "章皇帝"
+      ],
+      "templeNames": [
+        "宣宗"
+      ],
+      "title": "明宣宗"
+    },
+    {
+      "id": "zhu-qizhen",
+      "name": "朱祁镇",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "明英宗，土木堡被俘，复辟后杀于谦。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/朱祁镇"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "睿皇帝"
+      ],
+      "templeNames": [
+        "英宗"
+      ],
+      "title": "明英宗"
+    },
+    {
+      "id": "zhu-qiyu",
+      "name": "朱祁钰",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "明代宗，土木堡之变后即位，后被英宗复辟。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/朱祁钰"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "景皇帝"
+      ],
+      "templeNames": [
+        "代宗"
+      ],
+      "title": "明代宗"
+    },
+    {
+      "id": "zhu-jianshen",
+      "name": "朱见深",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "明宪宗，宠信万贵妃，设西厂。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/朱见深"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "纯皇帝"
+      ],
+      "templeNames": [
+        "宪宗"
+      ],
+      "title": "明宪宗"
+    },
+    {
+      "id": "zhu-youcheng",
+      "name": "朱祐樘",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "明孝宗，弘治中兴，一夫一后。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/朱祐樘"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "达皇帝"
+      ],
+      "templeNames": [
+        "孝宗"
+      ],
+      "title": "明孝宗"
+    },
+    {
+      "id": "zhu-houzhao",
+      "name": "朱厚照",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "明武宗，好微行，豹房。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/朱厚照"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "毅皇帝"
+      ],
+      "templeNames": [
+        "武宗"
+      ],
+      "title": "明武宗"
+    },
+    {
+      "id": "zhu-houcong",
+      "name": "朱厚熜",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "明世宗，大礼议，崇道，庚戌之变。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/朱厚熜"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "肃皇帝"
+      ],
+      "templeNames": [
+        "世宗"
+      ],
+      "title": "明世宗"
+    },
+    {
+      "id": "zhu-zaihou",
+      "name": "朱载坖",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "明穆宗，隆庆开关，与蒙古互市。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/朱载坖"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "庄皇帝"
+      ],
+      "templeNames": [
+        "穆宗"
+      ],
+      "title": "明穆宗"
+    },
+    {
+      "id": "zhu-yiming",
+      "name": "朱翊钧",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "明神宗，万历三大征，后期怠政。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/朱翊钧"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "显皇帝"
+      ],
+      "templeNames": [
+        "神宗"
+      ],
+      "title": "明神宗"
+    },
+    {
+      "id": "zhu-changluo",
+      "name": "朱常洛",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "明光宗，红丸案，在位仅一月。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/明光宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "贞皇帝"
+      ],
+      "templeNames": [
+        "光宗"
+      ],
+      "title": "明光宗"
+    },
+    {
+      "id": "zhu-youjiao",
+      "name": "朱由校",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "明熹宗，木匠皇帝，魏忠贤专权。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/朱由校"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "哲皇帝"
+      ],
+      "templeNames": [
+        "熹宗"
+      ],
+      "title": "明熹宗"
+    },
+    {
+      "id": "zhu-youjian",
+      "name": "朱由检",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "明思宗，崇祯，煤山自缢，明亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/崇祯帝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "毅皇帝"
+      ],
+      "templeNames": [
+        "思宗"
+      ],
+      "title": "明思宗"
+    },
+    {
+      "id": "zhu-yousong",
+      "name": "朱由崧",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "弘光帝，南明首任，都南京，被俘处死。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/弘光帝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "弘光帝"
+    },
+    {
+      "id": "zhu-yujian",
+      "name": "朱聿键",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "隆武帝，南明，都福州，清军攻汀州时被俘。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/隆武帝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "隆武帝"
+    },
+    {
+      "id": "zhu-yihai",
+      "name": "朱以海",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "鲁监国，弘光亡后监国于绍兴，与隆武、永历并立；后入海，1653年去监国号。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/朱以海"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "鲁监国"
+    },
+    {
+      "id": "zhu-yuyue",
+      "name": "朱聿鐭",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "绍武帝，隆武之弟，1646年广州称帝，与肇庆永历并立，旋为清军所破。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/绍武帝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "绍武帝"
+    },
+    {
+      "id": "zhu-youlang",
+      "name": "朱由榔",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "永历帝，南明末帝，肇庆称帝，与鲁监国、绍武并立，后为吴三桂所害。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/永历帝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "永历帝"
+    },
+    {
+      "id": "zheng-chenggong",
+      "name": "郑成功",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "抗清名将，收复台湾。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑成功"
+        }
+      ],
+      "birth": {
+        "year": 1624,
+        "month": 1,
+        "abs": 19488
+      },
+      "death": {
+        "year": 1662,
+        "month": 1,
+        "abs": 19944
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "yu-qian",
+      "name": "于谦",
+      "roles": [
+        "政治家",
+        "军事家"
+      ],
+      "bio": "土木堡之变后保卫北京，后被英宗冤杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/于谦"
+        }
+      ],
+      "birth": {
+        "year": 1398,
+        "month": 1,
+        "abs": 16776
+      },
+      "death": {
+        "year": 1457,
+        "month": 2,
+        "abs": 17485
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "guan-hanqing",
+      "name": "关汉卿",
+      "roles": [
+        "文学家"
+      ],
+      "bio": "元杂剧代表作家，窦娥冤作者。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/关汉卿"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "liu-ji",
+      "name": "刘基",
+      "roles": [
+        "政治家",
+        "军事家"
+      ],
+      "bio": "明初谋臣，辅佐朱元璋定天下，封诚意伯。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘基"
+        }
+      ],
+      "birth": {
+        "year": 1311,
+        "month": 1,
+        "abs": 15732
+      },
+      "death": {
+        "year": 1375,
+        "month": 1,
+        "abs": 16500
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "lan-yu",
+      "name": "蓝玉",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "明初大将，捕鱼儿海大破北元，后涉党案被诛。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/蓝玉"
+        }
+      ],
+      "birth": null,
+      "death": {
+        "year": 1393,
+        "month": 1,
+        "abs": 16716
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "zhang-juzheng",
+      "name": "张居正",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "明神宗首辅，推行考成法、一条鞭法等改革，史称万历中兴。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/张居正"
+        }
+      ],
+      "birth": {
+        "year": 1525,
+        "month": 1,
+        "abs": 18300
+      },
+      "death": {
+        "year": 1582,
+        "month": 1,
+        "abs": 18984
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "hai-rui",
+      "name": "海瑞",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "明代清官，上疏骂嘉靖，任上刚直不阿。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/海瑞"
+        }
+      ],
+      "birth": {
+        "year": 1514,
+        "month": 1,
+        "abs": 18168
+      },
+      "death": {
+        "year": 1587,
+        "month": 1,
+        "abs": 19044
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "qi-jiguang",
+      "name": "戚继光",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "明代抗倭名将，组建戚家军，平定东南倭患。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/戚继光"
+        }
+      ],
+      "birth": {
+        "year": 1528,
+        "month": 1,
+        "abs": 18336
+      },
+      "death": {
+        "year": 1588,
+        "month": 1,
+        "abs": 19056
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "wang-yangming",
+      "name": "王阳明",
+      "roles": [
+        "思想家",
+        "军事家"
+      ],
+      "bio": "明代心学集大成者，提出知行合一，平宁王之乱。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/王阳明"
+        }
+      ],
+      "birth": {
+        "year": 1472,
+        "month": 1,
+        "abs": 17664
+      },
+      "death": {
+        "year": 1529,
+        "month": 1,
+        "abs": 18348
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "yan-song",
+      "name": "严嵩",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "嘉靖朝权相，专擅朝政二十年，后遭徐阶等弹劾倒台。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/严嵩"
+        }
+      ],
+      "birth": {
+        "year": 1480,
+        "month": 1,
+        "abs": 17760
+      },
+      "death": {
+        "year": 1567,
+        "month": 1,
+        "abs": 18804
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "tang-yin",
+      "name": "唐寅",
+      "roles": [
+        "画家",
+        "诗人"
+      ],
+      "bio": "明代吴门画派代表，江南四大才子之一，桃花庵歌作者。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/唐寅"
+        }
+      ],
+      "birth": {
+        "year": 1470,
+        "month": 1,
+        "abs": 17640
+      },
+      "death": {
+        "year": 1524,
+        "month": 1,
+        "abs": 18288
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "li-shizhen",
+      "name": "李时珍",
+      "roles": [
+        "医学家"
+      ],
+      "bio": "明代医药学家，本草纲目作者。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/李时珍"
+        }
+      ],
+      "birth": {
+        "year": 1518,
+        "month": 1,
+        "abs": 18216
+      },
+      "death": {
+        "year": 1593,
+        "month": 1,
+        "abs": 19116
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "xu-guangqi",
+      "name": "徐光启",
+      "roles": [
+        "科学家",
+        "政治家"
+      ],
+      "bio": "明代科学家，与利玛窦合译几何原本，主持历法改革。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/徐光启"
+        }
+      ],
+      "birth": {
+        "year": 1562,
+        "month": 1,
+        "abs": 18744
+      },
+      "death": {
+        "year": 1633,
+        "month": 1,
+        "abs": 19596
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "xu-xiake",
+      "name": "徐霞客",
+      "roles": [
+        "地理学家"
+      ],
+      "bio": "明代地理学家、旅行家，徐霞客游记作者。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/徐霞客"
+        }
+      ],
+      "birth": {
+        "year": 1587,
+        "month": 1,
+        "abs": 19044
+      },
+      "death": {
+        "year": 1641,
+        "month": 1,
+        "abs": 19692
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "yuan-chonghuan",
+      "name": "袁崇焕",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "明末督师，宁远大捷、宁锦大捷，后被崇祯冤杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/袁崇焕"
+        }
+      ],
+      "birth": {
+        "year": 1584,
+        "month": 1,
+        "abs": 19008
+      },
+      "death": {
+        "year": 1630,
+        "month": 1,
+        "abs": 19560
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "zheng-guifei",
+      "name": "郑贵妃",
+      "roles": [
+        "后妃"
+      ],
+      "bio": "万历帝宠妃，梃击案牵连其党，国本之争核心人物。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑贵妃"
+        }
+      ],
+      "birth": {
+        "year": 1565,
+        "month": 1,
+        "abs": 18780
+      },
+      "death": {
+        "year": 1630,
+        "month": 1,
+        "abs": 19560
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "li-xuanshi",
+      "name": "李选侍",
+      "roles": [
+        "后妃"
+      ],
+      "bio": "明光宗宠妃，光宗死后据乾清宫不肯迁出，引发移宫案。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/李选侍"
+        }
+      ],
+      "birth": null,
+      "death": {
+        "year": 1627,
+        "month": 1,
+        "abs": 19524
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "fang-congze",
+      "name": "方从哲",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "明末首辅，泰昌朝红丸案关键人物，后被东林党弹劾。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/方从哲"
+        }
+      ],
+      "birth": {
+        "year": 1562,
+        "month": 1,
+        "abs": 18744
+      },
+      "death": {
+        "year": 1627,
+        "month": 1,
+        "abs": 19524
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "wei-zhongxian",
+      "name": "魏忠贤",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "明末权阉，天启朝专权，东林党争对手，后自缢。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/魏忠贤"
+        }
+      ],
+      "birth": {
+        "year": 1568,
+        "month": 1,
+        "abs": 18816
+      },
+      "death": {
+        "year": 1627,
+        "month": 1,
+        "abs": 19524
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "zheng-he",
+      "name": "郑和",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "明代航海家，永乐朝率船队七下西洋，沟通中外。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑和"
+        }
+      ],
+      "birth": {
+        "year": 1371,
+        "month": 1,
+        "abs": 16452
+      },
+      "death": {
+        "year": 1433,
+        "month": 1,
+        "abs": 17196
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "dorgon",
+      "name": "多尔衮",
+      "roles": [
+        "政治家",
+        "军事家"
+      ],
+      "bio": "清摄政王，入关定鼎北京，主导清初统治。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/多尔衮"
+        }
+      ],
+      "birth": {
+        "year": 1612,
+        "month": 1,
+        "abs": 19344
+      },
+      "death": {
+        "year": 1650,
+        "month": 1,
+        "abs": 19800
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "huang-zongxi",
+      "name": "黄宗羲",
+      "roles": [
+        "思想家"
+      ],
+      "bio": "明末清初思想家，明夷待访录作者，批判君主专制。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/黄宗羲"
+        }
+      ],
+      "birth": {
+        "year": 1610,
+        "month": 1,
+        "abs": 19320
+      },
+      "death": {
+        "year": 1695,
+        "month": 1,
+        "abs": 20340
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "gu-yanwu",
+      "name": "顾炎武",
+      "roles": [
+        "思想家"
+      ],
+      "bio": "明末清初思想家，日知录作者，经世致用代表。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/顾炎武"
+        }
+      ],
+      "birth": {
+        "year": 1613,
+        "month": 1,
+        "abs": 19356
+      },
+      "death": {
+        "year": 1682,
+        "month": 1,
+        "abs": 20184
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "cao-xueqin",
+      "name": "曹雪芹",
+      "roles": [
+        "文学家"
+      ],
+      "bio": "清代小说家，红楼梦作者。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/曹雪芹"
+        }
+      ],
+      "birth": {
+        "year": 1715,
+        "month": 1,
+        "abs": 20580
+      },
+      "death": {
+        "year": 1763,
+        "month": 1,
+        "abs": 21156
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "ji-xiaolan",
+      "name": "纪晓岚",
+      "roles": [
+        "文学家",
+        "政治家"
+      ],
+      "bio": "清代学者，四库全书总纂官，阅微草堂笔记作者。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/纪晓岚"
+        }
+      ],
+      "birth": {
+        "year": 1724,
+        "month": 1,
+        "abs": 20688
+      },
+      "death": {
+        "year": 1805,
+        "month": 1,
+        "abs": 21660
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "zeng-guofan",
+      "name": "曾国藩",
+      "roles": [
+        "政治家",
+        "军事家"
+      ],
+      "bio": "晚清重臣，湘军创建者，平定太平天国。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/曾国藩"
+        }
+      ],
+      "birth": {
+        "year": 1811,
+        "month": 1,
+        "abs": 21732
+      },
+      "death": {
+        "year": 1872,
+        "month": 1,
+        "abs": 22464
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "li-hongzhang",
+      "name": "李鸿章",
+      "roles": [
+        "政治家",
+        "军事家"
+      ],
+      "bio": "晚清重臣，洋务运动代表，签订多项条约。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/李鸿章"
+        }
+      ],
+      "birth": {
+        "year": 1823,
+        "month": 1,
+        "abs": 21876
+      },
+      "death": {
+        "year": 1901,
+        "month": 1,
+        "abs": 22812
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "zuo-zongtang",
+      "name": "左宗棠",
+      "roles": [
+        "政治家",
+        "军事家"
+      ],
+      "bio": "晚清重臣，收复新疆，洋务派代表。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/左宗棠"
+        }
+      ],
+      "birth": {
+        "year": 1812,
+        "month": 1,
+        "abs": 21744
+      },
+      "death": {
+        "year": 1885,
+        "month": 1,
+        "abs": 22620
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "deng-shichang",
+      "name": "邓世昌",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "北洋海军管带，甲午黄海海战殉国。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/邓世昌"
+        }
+      ],
+      "birth": {
+        "year": 1849,
+        "month": 1,
+        "abs": 22188
+      },
+      "death": {
+        "year": 1894,
+        "month": 1,
+        "abs": 22728
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "kang-youwei",
+      "name": "康有为",
+      "roles": [
+        "政治家",
+        "思想家"
+      ],
+      "bio": "维新派领袖，戊戌变法主持者。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/康有为"
+        }
+      ],
+      "birth": {
+        "year": 1858,
+        "month": 1,
+        "abs": 22296
+      },
+      "death": {
+        "year": 1927,
+        "month": 1,
+        "abs": 23124
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "liang-qichao",
+      "name": "梁启超",
+      "roles": [
+        "政治家",
+        "思想家"
+      ],
+      "bio": "维新派骨干，戊戌后推动立宪与启蒙。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/梁启超"
+        }
+      ],
+      "birth": {
+        "year": 1873,
+        "month": 1,
+        "abs": 22476
+      },
+      "death": {
+        "year": 1929,
+        "month": 1,
+        "abs": 23148
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "tan-sitong",
+      "name": "谭嗣同",
+      "roles": [
+        "政治家",
+        "思想家"
+      ],
+      "bio": "戊戌维新人物，变法失败后遇害，列为戊戌六君子。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/谭嗣同"
+        }
+      ],
+      "birth": {
+        "year": 1865,
+        "month": 1,
+        "abs": 22380
+      },
+      "death": {
+        "year": 1898,
+        "month": 1,
+        "abs": 22776
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "nurhaci",
+      "name": "努尔哈赤",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "清太祖，统一女真，建立后金。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/努尔哈赤"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "武皇帝"
+      ],
+      "templeNames": [
+        "太祖"
+      ],
+      "title": "清太祖"
+    },
+    {
+      "id": "huang-taiji",
+      "name": "皇太极",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "清太宗，改国号大清，完善八旗。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/皇太极"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "文皇帝"
+      ],
+      "templeNames": [
+        "太宗"
+      ],
+      "title": "清太宗"
+    },
+    {
+      "id": "fulin",
+      "name": "福临",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "清世祖，六岁即位，多尔衮摄政，清军入关。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/顺治帝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "章皇帝"
+      ],
+      "templeNames": [
+        "世祖"
+      ],
+      "title": "清世祖"
+    },
+    {
+      "id": "xuanye",
+      "name": "玄烨",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "清圣祖康熙，平三藩、收台湾、亲征准噶尔。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/康熙帝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "仁皇帝"
+      ],
+      "templeNames": [
+        "圣祖"
+      ],
+      "title": "清圣祖"
+    },
+    {
+      "id": "yinzhen",
+      "name": "胤禛",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "清世宗雍正，勤政改革，设军机处。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/雍正帝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "宪皇帝"
+      ],
+      "templeNames": [
+        "世宗"
+      ],
+      "title": "清世宗"
+    },
+    {
+      "id": "hongli",
+      "name": "弘历",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "清高宗乾隆，康乾盛世顶峰，后闭关。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/乾隆帝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "纯皇帝"
+      ],
+      "templeNames": [
+        "高宗"
+      ],
+      "title": "清高宗"
+    },
+    {
+      "id": "yongyan",
+      "name": "颙琰",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "清仁宗嘉庆，白莲教起义在其朝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/嘉庆帝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "睿皇帝"
+      ],
+      "templeNames": [
+        "仁宗"
+      ],
+      "title": "清仁宗"
+    },
+    {
+      "id": "minning",
+      "name": "旻宁",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "清宣宗道光，鸦片战争在其朝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/道光帝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "成皇帝"
+      ],
+      "templeNames": [
+        "宣宗"
+      ],
+      "title": "清宣宗"
+    },
+    {
+      "id": "yizhu",
+      "name": "奕詝",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "清文宗咸丰，太平天国与第二次鸦片战争。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/咸丰帝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "显皇帝"
+      ],
+      "templeNames": [
+        "文宗"
+      ],
+      "title": "清文宗"
+    },
+    {
+      "id": "ci-xi",
+      "name": "慈禧",
+      "roles": [
+        "皇太后",
+        "政治家"
+      ],
+      "bio": "叶赫那拉氏，咸丰帝妃、同治帝生母，与恭亲王奕訢发动辛酉政变并开始垂帘听政。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/慈禧"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "ci-an",
+      "name": "慈安",
+      "roles": [
+        "皇太后",
+        "政治家"
+      ],
+      "bio": "钮祜禄氏，咸丰帝皇后；辛酉政变后与慈禧共同垂帘听政。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/慈安"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "yi-xin",
+      "name": "奕訢",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "恭亲王，与慈禧等发动辛酉政变，参与晚清政务。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/恭親王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "zaichun",
+      "name": "载淳",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "清穆宗同治，慈禧垂帘听政。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/同治帝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "毅皇帝"
+      ],
+      "templeNames": [
+        "穆宗"
+      ],
+      "title": "清穆宗"
+    },
+    {
+      "id": "zaitian",
+      "name": "载湉",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "清德宗光绪，戊戌变法、庚子事变。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/光绪帝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "景皇帝"
+      ],
+      "templeNames": [
+        "德宗"
+      ],
+      "title": "清德宗"
+    },
+    {
+      "id": "puyi",
+      "name": "溥仪",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "清末帝，宣统退位，中国帝制终结。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/溥仪"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "清逊帝"
+    },
+    {
+      "id": "lin-zexu",
+      "name": "林则徐",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "禁烟英雄，虎门销烟主持者。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/林则徐"
+        }
+      ],
+      "birth": {
+        "year": 1785,
+        "month": 1,
+        "abs": 21420
+      },
+      "death": {
+        "year": 1850,
+        "month": 1,
+        "abs": 22200
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "sun-yat-sen",
+      "name": "孙中山",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "辛亥革命领袖，中华民国临时大总统。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/孙中山"
+        }
+      ],
+      "birth": {
+        "year": 1866,
+        "month": 1,
+        "abs": 22392
+      },
+      "death": {
+        "year": 1925,
+        "month": 1,
+        "abs": 23100
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "临时大总统"
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "yuan",
+      "name": "元",
+      "altNames": [
+        "大元",
+        "蒙元",
+        "北元",
+        "残元",
+        "故元"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 1271,
+        "month": 12,
+        "abs": 15263
+      },
+      "end": {
+        "year": 1388,
+        "month": 11,
+        "abs": 16666
+      },
+      "precision": "month",
+      "note": "忽必烈1271年定国号大元；1368年顺帝北逃漠北继续称大元。北元延续至1388年11月天元帝被杀，政权终结。"
+    },
+    {
+      "id": "song-xu",
+      "name": "徐宋",
+      "altNames": [
+        "宋",
+        "天完"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 1351,
+        "month": 10,
+        "abs": 16221
+      },
+      "end": {
+        "year": 1360,
+        "month": 6,
+        "abs": 16325
+      },
+      "precision": "year",
+      "note": "徐寿辉1351年蕲州称帝，国号宋，传世多作天完；1360年陈友谅弑之。"
+    },
+    {
+      "id": "song-han",
+      "name": "韩宋",
+      "altNames": [
+        "宋",
+        "小明王"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 1355,
+        "month": 2,
+        "abs": 16261
+      },
+      "end": {
+        "year": 1366,
+        "month": 12,
+        "abs": 16403
+      },
+      "precision": "year",
+      "note": "刘福通拥韩林儿为帝，号小明王，年号龙凤；1366年溺亡，韩宋亡。"
+    },
+    {
+      "id": "zhou-zhang",
+      "name": "大周",
+      "altNames": [
+        "周"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 1354,
+        "month": 1,
+        "abs": 16248
+      },
+      "end": {
+        "year": 1367,
+        "month": 9,
+        "abs": 16412
+      },
+      "precision": "year",
+      "note": "张士诚1354年高邮建国，自称诚王；1363年再号吴王；1367年平江败亡。"
+    },
+    {
+      "id": "chen-han",
+      "name": "陈汉",
+      "altNames": [
+        "汉",
+        "大汉"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 1360,
+        "month": 6,
+        "abs": 16325
+      },
+      "end": {
+        "year": 1364,
+        "month": 1,
+        "abs": 16368
+      },
+      "precision": "year",
+      "note": "陈友谅1360年称帝，国号汉；1363年鄱阳湖阵亡，子陈理继位；1364年降明。"
+    },
+    {
+      "id": "xia-ming",
+      "name": "明夏",
+      "altNames": [
+        "夏",
+        "大夏"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 1362,
+        "month": 1,
+        "abs": 16344
+      },
+      "end": {
+        "year": 1371,
+        "month": 1,
+        "abs": 16452
+      },
+      "precision": "year",
+      "note": "明玉珍1362年重庆称帝，国号夏，据两川；1371年明灭夏。"
+    },
+    {
+      "id": "wu-zhu",
+      "name": "吴",
+      "altNames": [
+        "西吴"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 1364,
+        "month": 1,
+        "abs": 16368
+      },
+      "end": {
+        "year": 1368,
+        "month": 1,
+        "abs": 16416
+      },
+      "precision": "year",
+      "note": "朱元璋1364年自立吴王，仍用龙凤年号；1367年改元吴，1368年称帝建明。"
+    },
+    {
+      "id": "ming",
+      "name": "明",
+      "altNames": [
+        "大明"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 1368,
+        "month": 1,
+        "abs": 16416
+      },
+      "end": {
+        "year": 1644,
+        "month": 4,
+        "abs": 19731
+      },
+      "precision": "month",
+      "note": "1368年1月朱元璋称帝建明，定都南京后迁北京；1644年4月崇祯自缢，明亡。"
+    },
+    {
+      "id": "ming-south",
+      "name": "南明",
+      "altNames": [
+        "明"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 1644,
+        "month": 1,
+        "abs": 19728
+      },
+      "end": {
+        "year": 1662,
+        "month": 1,
+        "abs": 19944
+      },
+      "precision": "year",
+      "note": "明亡后朱氏多支并立：通行主线弘光→隆武→永历；鲁监国、绍武为并行朝廷。1662年永历帝殉，南明终结。"
+    },
+    {
+      "id": "qing",
+      "name": "清",
+      "altNames": [
+        "大清",
+        "后金"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 1616,
+        "month": 2,
+        "abs": 19393
+      },
+      "end": {
+        "year": 1912,
+        "month": 2,
+        "abs": 22945
+      },
+      "precision": "month",
+      "note": "1616年2月努尔哈赤建后金，1636年改国号大清；1912年2月宣统退位。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-hu-bilie-yuan",
+      "dynastyId": "yuan",
+      "personId": "hu-bilie",
+      "title": "世祖",
+      "posthumousName": "圣德神功文武皇帝",
+      "templeName": "世祖",
+      "eraNames": [
+        "至元"
+      ],
+      "start": {
+        "year": 1271,
+        "month": 12,
+        "abs": 15263,
+        "day": 18
+      },
+      "end": {
+        "year": 1276,
+        "month": 2,
+        "abs": 15313,
+        "day": 4
+      },
+      "startAbs": 15263,
+      "endAbs": 15313,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-hu-bilie-yuan-unified",
+      "dynastyId": "yuan",
+      "personId": "hu-bilie",
+      "title": "世祖",
+      "posthumousName": "圣德神功文武皇帝",
+      "templeName": "世祖",
+      "eraNames": [
+        "至元"
+      ],
+      "start": {
+        "year": 1276,
+        "month": 2,
+        "abs": 15313,
+        "day": 4
+      },
+      "end": {
+        "year": 1294,
+        "month": 2,
+        "abs": 15529,
+        "day": 18
+      },
+      "startAbs": 15313,
+      "endAbs": 15529,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-temur-yuan",
+      "dynastyId": "yuan",
+      "personId": "temur",
+      "title": "",
+      "posthumousName": "钦明广孝皇帝",
+      "templeName": "成宗",
+      "eraNames": [],
+      "start": {
+        "year": 1294,
+        "month": 5,
+        "abs": 15532,
+        "day": 10
+      },
+      "end": {
+        "year": 1307,
+        "month": 2,
+        "abs": 15685,
+        "day": 10
+      },
+      "startAbs": 15532,
+      "endAbs": 15685,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-khayishan-yuan",
+      "dynastyId": "yuan",
+      "personId": "khayishan",
+      "title": "",
+      "posthumousName": "仁惠宣孝皇帝",
+      "templeName": "武宗",
+      "eraNames": [],
+      "start": {
+        "year": 1307,
+        "month": 6,
+        "abs": 15689,
+        "day": 21
+      },
+      "end": {
+        "year": 1311,
+        "month": 1,
+        "abs": 15732,
+        "day": 27
+      },
+      "startAbs": 15689,
+      "endAbs": 15732,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-ayurbarwada-yuan",
+      "dynastyId": "yuan",
+      "personId": "ayurbarwada",
+      "title": "",
+      "posthumousName": "圣文钦孝皇帝",
+      "templeName": "仁宗",
+      "eraNames": [],
+      "start": {
+        "year": 1311,
+        "month": 4,
+        "abs": 15735,
+        "day": 7
+      },
+      "end": {
+        "year": 1320,
+        "month": 3,
+        "abs": 15842,
+        "day": 1
+      },
+      "startAbs": 15735,
+      "endAbs": 15842,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-shidebala-yuan",
+      "dynastyId": "yuan",
+      "personId": "shidebala",
+      "title": "",
+      "posthumousName": "睿圣文孝皇帝",
+      "templeName": "英宗",
+      "eraNames": [],
+      "start": {
+        "year": 1320,
+        "month": 4,
+        "abs": 15843,
+        "day": 19
+      },
+      "end": {
+        "year": 1323,
+        "month": 9,
+        "abs": 15884,
+        "day": 4
+      },
+      "startAbs": 15843,
+      "endAbs": 15884,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-yeshuntuemur-yuan",
+      "dynastyId": "yuan",
+      "personId": "yeshuntuemur",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "泰定",
+        "致和"
+      ],
+      "start": {
+        "year": 1323,
+        "month": 9,
+        "abs": 15884,
+        "day": 4
+      },
+      "end": {
+        "year": 1328,
+        "month": 8,
+        "abs": 15943,
+        "day": 15
+      },
+      "startAbs": 15884,
+      "endAbs": 15943,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-tugh-temur-yuan",
+      "dynastyId": "yuan",
+      "personId": "tugh-temur",
+      "title": "",
+      "posthumousName": "圣明元孝皇帝",
+      "templeName": "文宗",
+      "eraNames": [
+        "天历"
+      ],
+      "start": {
+        "year": 1328,
+        "month": 10,
+        "abs": 15945,
+        "day": 16
+      },
+      "end": {
+        "year": 1329,
+        "month": 2,
+        "abs": 15949,
+        "day": 27
+      },
+      "startAbs": 15945,
+      "endAbs": 15949,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-khoshila-yuan",
+      "dynastyId": "yuan",
+      "personId": "khoshila",
+      "title": "",
+      "posthumousName": "翼献景孝皇帝",
+      "templeName": "明宗",
+      "eraNames": [],
+      "start": {
+        "year": 1329,
+        "month": 2,
+        "abs": 15949,
+        "day": 27
+      },
+      "end": {
+        "year": 1329,
+        "month": 8,
+        "abs": 15955,
+        "day": 30
+      },
+      "startAbs": 15949,
+      "endAbs": 15955,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-tugh-temur-yuan-2",
+      "dynastyId": "yuan",
+      "personId": "tugh-temur",
+      "title": "",
+      "posthumousName": "圣明元孝皇帝",
+      "templeName": "文宗",
+      "eraNames": [
+        "天历",
+        "至顺"
+      ],
+      "start": {
+        "year": 1329,
+        "month": 9,
+        "abs": 15956,
+        "day": 8
+      },
+      "end": {
+        "year": 1332,
+        "month": 9,
+        "abs": 15992,
+        "day": 2
+      },
+      "startAbs": 15956,
+      "endAbs": 15992,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-irinchibal-yuan",
+      "dynastyId": "yuan",
+      "personId": "irinchibal",
+      "title": "",
+      "posthumousName": "冲圣嗣孝皇帝",
+      "templeName": "宁宗",
+      "eraNames": [],
+      "start": {
+        "year": 1332,
+        "month": 9,
+        "abs": 15992,
+        "day": 2
+      },
+      "end": {
+        "year": 1332,
+        "month": 12,
+        "abs": 15995,
+        "day": 14
+      },
+      "startAbs": 15992,
+      "endAbs": 15995,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-togon-temur-yuan",
+      "dynastyId": "yuan",
+      "personId": "togon-temur",
+      "title": "",
+      "posthumousName": "顺帝",
+      "templeName": "惠宗",
+      "eraNames": [],
+      "start": {
+        "year": 1333,
+        "month": 7,
+        "abs": 16002,
+        "day": 19
+      },
+      "end": {
+        "year": 1368,
+        "month": 1,
+        "abs": 16416,
+        "day": 23
+      },
+      "startAbs": 16002,
+      "endAbs": 16416,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-togon-temur-yuan-north",
+      "dynastyId": "yuan",
+      "personId": "togon-temur",
+      "title": "",
+      "posthumousName": "顺帝",
+      "templeName": "惠宗",
+      "eraNames": [
+        "至正"
+      ],
+      "start": {
+        "year": 1368,
+        "month": 1,
+        "abs": 16416,
+        "day": 23
+      },
+      "end": {
+        "year": 1370,
+        "month": 5,
+        "abs": 16444,
+        "day": 23
+      },
+      "startAbs": 16416,
+      "endAbs": 16444,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-ayushiridara-yuan",
+      "dynastyId": "yuan",
+      "personId": "ayushiridara",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "昭宗",
+      "eraNames": [
+        "宣光"
+      ],
+      "start": {
+        "year": 1370,
+        "month": 5,
+        "abs": 16444,
+        "day": 27
+      },
+      "end": {
+        "year": 1378,
+        "month": 5,
+        "abs": 16540,
+        "day": 10
+      },
+      "startAbs": 16444,
+      "endAbs": 16540,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-togus-temur-yuan",
+      "dynastyId": "yuan",
+      "personId": "togus-temur",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "天元"
+      ],
+      "start": {
+        "year": 1378,
+        "month": 5,
+        "abs": 16540,
+        "day": 13
+      },
+      "end": {
+        "year": 1388,
+        "month": 11,
+        "abs": 16666,
+        "day": 1
+      },
+      "startAbs": 16540,
+      "endAbs": 16666,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-ragibagh-yuan",
+      "dynastyId": "yuan",
+      "personId": "ragibagh",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "天顺"
+      ],
+      "start": {
+        "year": 1328,
+        "month": 10,
+        "abs": 15945,
+        "day": 4
+      },
+      "end": {
+        "year": 1328,
+        "month": 11,
+        "abs": 15946,
+        "day": 14
+      },
+      "startAbs": 15945,
+      "endAbs": 15946,
+      "precision": "day",
+      "claimTrack": "shangdu",
+      "claimLabel": "上都",
+      "claimRole": "rival",
+      "isMain": false
+    },
+    {
+      "id": "reign-xu-shouhui-song-xu",
+      "dynastyId": "song-xu",
+      "personId": "xu-shouhui",
+      "title": "",
+      "posthumousName": "应天启运献武皇帝",
+      "templeName": "世宗",
+      "eraNames": [
+        "治平",
+        "太平",
+        "天启",
+        "天定"
+      ],
+      "start": {
+        "year": 1351,
+        "month": 8,
+        "abs": 16219,
+        "day": 15
+      },
+      "end": {
+        "year": 1360,
+        "month": 6,
+        "abs": 16325,
+        "day": 16
+      },
+      "startAbs": 16219,
+      "endAbs": 16325,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-han-liner-song-han",
+      "dynastyId": "song-han",
+      "personId": "han-liner",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "龙凤"
+      ],
+      "start": {
+        "year": 1355,
+        "month": 2,
+        "abs": 16261,
+        "day": 15
+      },
+      "end": {
+        "year": 1366,
+        "month": 12,
+        "abs": 16403,
+        "day": 14
+      },
+      "startAbs": 16261,
+      "endAbs": 16403,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-zhang-shicheng-zhou-zhang",
+      "dynastyId": "zhou-zhang",
+      "personId": "zhang-shicheng",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "天佑"
+      ],
+      "start": {
+        "year": 1354,
+        "month": 1,
+        "abs": 16248,
+        "day": 17
+      },
+      "end": {
+        "year": 1367,
+        "month": 9,
+        "abs": 16412,
+        "day": 1
+      },
+      "startAbs": 16248,
+      "endAbs": 16412,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-youliang-chen-han",
+      "dynastyId": "chen-han",
+      "personId": "chen-youliang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "大义"
+      ],
+      "start": {
+        "year": 1360,
+        "month": 6,
+        "abs": 16325,
+        "day": 16
+      },
+      "end": {
+        "year": 1363,
+        "month": 10,
+        "abs": 16365,
+        "day": 3
+      },
+      "startAbs": 16325,
+      "endAbs": 16365,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-li-chen-han",
+      "dynastyId": "chen-han",
+      "personId": "chen-li",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "德寿"
+      ],
+      "start": {
+        "year": 1363,
+        "month": 10,
+        "abs": 16365,
+        "day": 3
+      },
+      "end": {
+        "year": 1364,
+        "month": 2,
+        "abs": 16369,
+        "day": 28
+      },
+      "startAbs": 16365,
+      "endAbs": 16369,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-ming-yuzhen-xia-ming",
+      "dynastyId": "xia-ming",
+      "personId": "ming-yuzhen",
+      "title": "",
+      "posthumousName": "钦文昭武皇帝",
+      "templeName": "太祖",
+      "eraNames": [
+        "天统"
+      ],
+      "start": {
+        "year": 1362,
+        "month": 3,
+        "abs": 16346,
+        "day": 22
+      },
+      "end": {
+        "year": 1366,
+        "month": 3,
+        "abs": 16394,
+        "day": 17
+      },
+      "startAbs": 16346,
+      "endAbs": 16394,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-ming-sheng-xia-ming",
+      "dynastyId": "xia-ming",
+      "personId": "ming-sheng",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "天统"
+      ],
+      "start": {
+        "year": 1366,
+        "month": 3,
+        "abs": 16394,
+        "day": 17
+      },
+      "end": {
+        "year": 1371,
+        "month": 6,
+        "abs": 16457,
+        "day": 21
+      },
+      "startAbs": 16394,
+      "endAbs": 16457,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-zhu-yuanzhang-wu-zhu",
+      "dynastyId": "wu-zhu",
+      "personId": "zhu-yuanzhang",
+      "title": "吴",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "吴"
+      ],
+      "start": {
+        "year": 1364,
+        "month": 2,
+        "abs": 16369,
+        "day": 15
+      },
+      "end": {
+        "year": 1368,
+        "month": 1,
+        "abs": 16416,
+        "day": 23
+      },
+      "startAbs": 16369,
+      "endAbs": 16416,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-zhu-yuanzhang-ming",
+      "dynastyId": "ming",
+      "personId": "zhu-yuanzhang",
+      "title": "",
+      "posthumousName": "高皇帝",
+      "templeName": "太祖",
+      "eraNames": [
+        "洪武"
+      ],
+      "start": {
+        "year": 1368,
+        "month": 1,
+        "abs": 16416,
+        "day": 23
+      },
+      "end": {
+        "year": 1398,
+        "month": 6,
+        "abs": 16781,
+        "day": 24
+      },
+      "startAbs": 16416,
+      "endAbs": 16781,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhu-yunwen-ming",
+      "dynastyId": "ming",
+      "personId": "zhu-yunwen",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "建文"
+      ],
+      "start": {
+        "year": 1398,
+        "month": 6,
+        "abs": 16781,
+        "day": 30
+      },
+      "end": {
+        "year": 1402,
+        "month": 7,
+        "abs": 16830,
+        "day": 13
+      },
+      "startAbs": 16781,
+      "endAbs": 16830,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhu-di-ming",
+      "dynastyId": "ming",
+      "personId": "zhu-di",
+      "title": "",
+      "posthumousName": "文皇帝",
+      "templeName": "成祖",
+      "eraNames": [
+        "永乐"
+      ],
+      "start": {
+        "year": 1402,
+        "month": 7,
+        "abs": 16830,
+        "day": 17
+      },
+      "end": {
+        "year": 1424,
+        "month": 8,
+        "abs": 17095,
+        "day": 12
+      },
+      "startAbs": 16830,
+      "endAbs": 17095,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhu-gaochi-ming",
+      "dynastyId": "ming",
+      "personId": "zhu-gaochi",
+      "title": "",
+      "posthumousName": "昭皇帝",
+      "templeName": "仁宗",
+      "eraNames": [
+        "洪熙"
+      ],
+      "start": {
+        "year": 1424,
+        "month": 8,
+        "abs": 17095,
+        "day": 12
+      },
+      "end": {
+        "year": 1425,
+        "month": 5,
+        "abs": 17104,
+        "day": 29
+      },
+      "startAbs": 17095,
+      "endAbs": 17104,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhu-zhanji-ming",
+      "dynastyId": "ming",
+      "personId": "zhu-zhanji",
+      "title": "",
+      "posthumousName": "章皇帝",
+      "templeName": "宣宗",
+      "eraNames": [
+        "宣德"
+      ],
+      "start": {
+        "year": 1425,
+        "month": 5,
+        "abs": 17104,
+        "day": 29
+      },
+      "end": {
+        "year": 1435,
+        "month": 1,
+        "abs": 17220,
+        "day": 31
+      },
+      "startAbs": 17104,
+      "endAbs": 17220,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhu-qizhen-ming",
+      "dynastyId": "ming",
+      "personId": "zhu-qizhen",
+      "title": "",
+      "posthumousName": "睿皇帝",
+      "templeName": "英宗",
+      "eraNames": [
+        "正统"
+      ],
+      "start": {
+        "year": 1435,
+        "month": 1,
+        "abs": 17220,
+        "day": 31
+      },
+      "end": {
+        "year": 1449,
+        "month": 9,
+        "abs": 17396,
+        "day": 22
+      },
+      "startAbs": 17220,
+      "endAbs": 17396,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhu-qiyu-ming",
+      "dynastyId": "ming",
+      "personId": "zhu-qiyu",
+      "title": "",
+      "posthumousName": "景皇帝",
+      "templeName": "代宗",
+      "eraNames": [
+        "景泰"
+      ],
+      "start": {
+        "year": 1449,
+        "month": 9,
+        "abs": 17396,
+        "day": 22
+      },
+      "end": {
+        "year": 1457,
+        "month": 2,
+        "abs": 17485,
+        "day": 24
+      },
+      "startAbs": 17396,
+      "endAbs": 17485,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhu-qizhen-ming-2",
+      "dynastyId": "ming",
+      "personId": "zhu-qizhen",
+      "title": "",
+      "posthumousName": "睿皇帝",
+      "templeName": "英宗",
+      "eraNames": [
+        "天顺"
+      ],
+      "start": {
+        "year": 1457,
+        "month": 2,
+        "abs": 17485,
+        "day": 11
+      },
+      "end": {
+        "year": 1464,
+        "month": 2,
+        "abs": 17569,
+        "day": 23
+      },
+      "startAbs": 17485,
+      "endAbs": 17569,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhu-jianshen-ming",
+      "dynastyId": "ming",
+      "personId": "zhu-jianshen",
+      "title": "",
+      "posthumousName": "纯皇帝",
+      "templeName": "宪宗",
+      "eraNames": [
+        "成化"
+      ],
+      "start": {
+        "year": 1464,
+        "month": 2,
+        "abs": 17569,
+        "day": 23
+      },
+      "end": {
+        "year": 1487,
+        "month": 9,
+        "abs": 17852,
+        "day": 9
+      },
+      "startAbs": 17569,
+      "endAbs": 17852,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhu-youcheng-ming",
+      "dynastyId": "ming",
+      "personId": "zhu-youcheng",
+      "title": "",
+      "posthumousName": "达皇帝",
+      "templeName": "孝宗",
+      "eraNames": [
+        "弘治"
+      ],
+      "start": {
+        "year": 1487,
+        "month": 9,
+        "abs": 17852,
+        "day": 9
+      },
+      "end": {
+        "year": 1505,
+        "month": 6,
+        "abs": 18065,
+        "day": 8
+      },
+      "startAbs": 17852,
+      "endAbs": 18065,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhu-houzhao-ming",
+      "dynastyId": "ming",
+      "personId": "zhu-houzhao",
+      "title": "",
+      "posthumousName": "毅皇帝",
+      "templeName": "武宗",
+      "eraNames": [
+        "正德"
+      ],
+      "start": {
+        "year": 1505,
+        "month": 6,
+        "abs": 18065,
+        "day": 8
+      },
+      "end": {
+        "year": 1521,
+        "month": 4,
+        "abs": 18255,
+        "day": 20
+      },
+      "startAbs": 18065,
+      "endAbs": 18255,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhu-houcong-ming",
+      "dynastyId": "ming",
+      "personId": "zhu-houcong",
+      "title": "",
+      "posthumousName": "肃皇帝",
+      "templeName": "世宗",
+      "eraNames": [
+        "嘉靖"
+      ],
+      "start": {
+        "year": 1521,
+        "month": 5,
+        "abs": 18256,
+        "day": 27
+      },
+      "end": {
+        "year": 1567,
+        "month": 1,
+        "abs": 18804,
+        "day": 23
+      },
+      "startAbs": 18256,
+      "endAbs": 18804,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhu-zaihou-ming",
+      "dynastyId": "ming",
+      "personId": "zhu-zaihou",
+      "title": "",
+      "posthumousName": "庄皇帝",
+      "templeName": "穆宗",
+      "eraNames": [
+        "隆庆"
+      ],
+      "start": {
+        "year": 1567,
+        "month": 1,
+        "abs": 18804,
+        "day": 23
+      },
+      "end": {
+        "year": 1572,
+        "month": 7,
+        "abs": 18870,
+        "day": 5
+      },
+      "startAbs": 18804,
+      "endAbs": 18870,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhu-yiming-ming",
+      "dynastyId": "ming",
+      "personId": "zhu-yiming",
+      "title": "",
+      "posthumousName": "显皇帝",
+      "templeName": "神宗",
+      "eraNames": [
+        "万历"
+      ],
+      "start": {
+        "year": 1572,
+        "month": 7,
+        "abs": 18870,
+        "day": 5
+      },
+      "end": {
+        "year": 1620,
+        "month": 8,
+        "abs": 19447,
+        "day": 18
+      },
+      "startAbs": 18870,
+      "endAbs": 19447,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhu-changluo-ming",
+      "dynastyId": "ming",
+      "personId": "zhu-changluo",
+      "title": "",
+      "posthumousName": "贞皇帝",
+      "templeName": "光宗",
+      "eraNames": [
+        "泰昌"
+      ],
+      "start": {
+        "year": 1620,
+        "month": 8,
+        "abs": 19447,
+        "day": 28
+      },
+      "end": {
+        "year": 1620,
+        "month": 9,
+        "abs": 19448,
+        "day": 26
+      },
+      "startAbs": 19447,
+      "endAbs": 19448,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhu-youjiao-ming",
+      "dynastyId": "ming",
+      "personId": "zhu-youjiao",
+      "title": "",
+      "posthumousName": "哲皇帝",
+      "templeName": "熹宗",
+      "eraNames": [
+        "天启"
+      ],
+      "start": {
+        "year": 1620,
+        "month": 9,
+        "abs": 19448,
+        "day": 26
+      },
+      "end": {
+        "year": 1627,
+        "month": 9,
+        "abs": 19532,
+        "day": 30
+      },
+      "startAbs": 19448,
+      "endAbs": 19532,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhu-youjian-ming",
+      "dynastyId": "ming",
+      "personId": "zhu-youjian",
+      "title": "",
+      "posthumousName": "毅皇帝",
+      "templeName": "思宗",
+      "eraNames": [
+        "崇祯"
+      ],
+      "start": {
+        "year": 1627,
+        "month": 10,
+        "abs": 19533,
+        "day": 2
+      },
+      "end": {
+        "year": 1644,
+        "month": 4,
+        "abs": 19731,
+        "day": 25
+      },
+      "startAbs": 19533,
+      "endAbs": 19731,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhu-yousong-ming-south",
+      "dynastyId": "ming-south",
+      "personId": "zhu-yousong",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "弘光"
+      ],
+      "start": {
+        "year": 1644,
+        "month": 6,
+        "abs": 19733,
+        "day": 19
+      },
+      "end": {
+        "year": 1645,
+        "month": 6,
+        "abs": 19745,
+        "day": 15
+      },
+      "startAbs": 19733,
+      "endAbs": 19745,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-zhu-yujian-ming-south",
+      "dynastyId": "ming-south",
+      "personId": "zhu-yujian",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "隆武"
+      ],
+      "start": {
+        "year": 1645,
+        "month": 8,
+        "abs": 19747,
+        "day": 18
+      },
+      "end": {
+        "year": 1646,
+        "month": 10,
+        "abs": 19761,
+        "day": 6
+      },
+      "startAbs": 19747,
+      "endAbs": 19761,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-zhu-youlang-ming-south",
+      "dynastyId": "ming-south",
+      "personId": "zhu-youlang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "永历"
+      ],
+      "start": {
+        "year": 1646,
+        "month": 12,
+        "abs": 19763,
+        "day": 24
+      },
+      "end": {
+        "year": 1662,
+        "month": 6,
+        "abs": 19949,
+        "day": 1
+      },
+      "startAbs": 19763,
+      "endAbs": 19949,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-zhu-yihai-ming-south",
+      "dynastyId": "ming-south",
+      "personId": "zhu-yihai",
+      "title": "鲁监国",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1645,
+        "month": 9,
+        "abs": 19748,
+        "day": 7
+      },
+      "end": {
+        "year": 1653,
+        "month": 3,
+        "abs": 19838,
+        "day": 1
+      },
+      "startAbs": 19748,
+      "endAbs": 19838,
+      "precision": "day",
+      "claimTrack": "lu-jian",
+      "claimLabel": "绍兴监国",
+      "claimRole": "rival",
+      "isMain": false
+    },
+    {
+      "id": "reign-zhu-yuyue-ming-south",
+      "dynastyId": "ming-south",
+      "personId": "zhu-yuyue",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "绍武"
+      ],
+      "start": {
+        "year": 1646,
+        "month": 12,
+        "abs": 19763,
+        "day": 11
+      },
+      "end": {
+        "year": 1647,
+        "month": 1,
+        "abs": 19764,
+        "day": 20
+      },
+      "startAbs": 19763,
+      "endAbs": 19764,
+      "precision": "day",
+      "claimTrack": "shaowu",
+      "claimLabel": "广州",
+      "claimRole": "rival",
+      "isMain": false
+    },
+    {
+      "id": "reign-nurhaci-qing",
+      "dynastyId": "qing",
+      "personId": "nurhaci",
+      "title": "太祖",
+      "posthumousName": "武皇帝",
+      "templeName": "太祖",
+      "eraNames": [
+        "天命"
+      ],
+      "start": {
+        "year": 1616,
+        "month": 2,
+        "abs": 19393,
+        "day": 17
+      },
+      "end": {
+        "year": 1626,
+        "month": 9,
+        "abs": 19520,
+        "day": 30
+      },
+      "startAbs": 19393,
+      "endAbs": 19520,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-huang-taiji-qing",
+      "dynastyId": "qing",
+      "personId": "huang-taiji",
+      "title": "太宗",
+      "posthumousName": "文皇帝",
+      "templeName": "太宗",
+      "eraNames": [
+        "天聪",
+        "崇德"
+      ],
+      "start": {
+        "year": 1626,
+        "month": 10,
+        "abs": 19521,
+        "day": 20
+      },
+      "end": {
+        "year": 1643,
+        "month": 9,
+        "abs": 19724,
+        "day": 21
+      },
+      "startAbs": 19521,
+      "endAbs": 19724,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-fulin-qing",
+      "dynastyId": "qing",
+      "personId": "fulin",
+      "title": "",
+      "posthumousName": "章皇帝",
+      "templeName": "世祖",
+      "eraNames": [
+        "顺治"
+      ],
+      "start": {
+        "year": 1643,
+        "month": 10,
+        "abs": 19725,
+        "day": 30
+      },
+      "end": {
+        "year": 1661,
+        "month": 2,
+        "abs": 19933,
+        "day": 5
+      },
+      "startAbs": 19725,
+      "endAbs": 19933,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-xuanye-qing",
+      "dynastyId": "qing",
+      "personId": "xuanye",
+      "title": "",
+      "posthumousName": "仁皇帝",
+      "templeName": "圣祖",
+      "eraNames": [
+        "康熙"
+      ],
+      "start": {
+        "year": 1661,
+        "month": 2,
+        "abs": 19933,
+        "day": 5
+      },
+      "end": {
+        "year": 1722,
+        "month": 12,
+        "abs": 20675,
+        "day": 20
+      },
+      "startAbs": 19933,
+      "endAbs": 20675,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-yinzhen-qing",
+      "dynastyId": "qing",
+      "personId": "yinzhen",
+      "title": "",
+      "posthumousName": "宪皇帝",
+      "templeName": "世宗",
+      "eraNames": [
+        "雍正"
+      ],
+      "start": {
+        "year": 1722,
+        "month": 12,
+        "abs": 20675,
+        "day": 27
+      },
+      "end": {
+        "year": 1735,
+        "month": 10,
+        "abs": 20829,
+        "day": 8
+      },
+      "startAbs": 20675,
+      "endAbs": 20829,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-hongli-qing",
+      "dynastyId": "qing",
+      "personId": "hongli",
+      "title": "",
+      "posthumousName": "纯皇帝",
+      "templeName": "高宗",
+      "eraNames": [
+        "乾隆"
+      ],
+      "start": {
+        "year": 1735,
+        "month": 10,
+        "abs": 20829,
+        "day": 18
+      },
+      "end": {
+        "year": 1796,
+        "month": 2,
+        "abs": 21553,
+        "day": 8
+      },
+      "startAbs": 20829,
+      "endAbs": 21553,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-yongyan-qing",
+      "dynastyId": "qing",
+      "personId": "yongyan",
+      "title": "",
+      "posthumousName": "睿皇帝",
+      "templeName": "仁宗",
+      "eraNames": [
+        "嘉庆"
+      ],
+      "start": {
+        "year": 1796,
+        "month": 2,
+        "abs": 21553,
+        "day": 9
+      },
+      "end": {
+        "year": 1820,
+        "month": 9,
+        "abs": 21848,
+        "day": 2
+      },
+      "startAbs": 21553,
+      "endAbs": 21848,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-minning-qing",
+      "dynastyId": "qing",
+      "personId": "minning",
+      "title": "",
+      "posthumousName": "成皇帝",
+      "templeName": "宣宗",
+      "eraNames": [
+        "道光"
+      ],
+      "start": {
+        "year": 1820,
+        "month": 10,
+        "abs": 21849,
+        "day": 3
+      },
+      "end": {
+        "year": 1850,
+        "month": 2,
+        "abs": 22201,
+        "day": 25
+      },
+      "startAbs": 21849,
+      "endAbs": 22201,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-yizhu-qing",
+      "dynastyId": "qing",
+      "personId": "yizhu",
+      "title": "",
+      "posthumousName": "显皇帝",
+      "templeName": "文宗",
+      "eraNames": [
+        "咸丰"
+      ],
+      "start": {
+        "year": 1850,
+        "month": 3,
+        "abs": 22202,
+        "day": 9
+      },
+      "end": {
+        "year": 1861,
+        "month": 8,
+        "abs": 22339,
+        "day": 22
+      },
+      "startAbs": 22202,
+      "endAbs": 22339,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zaichun-qing",
+      "dynastyId": "qing",
+      "personId": "zaichun",
+      "title": "",
+      "posthumousName": "毅皇帝",
+      "templeName": "穆宗",
+      "eraNames": [
+        "同治"
+      ],
+      "start": {
+        "year": 1861,
+        "month": 11,
+        "abs": 22342,
+        "day": 11
+      },
+      "end": {
+        "year": 1875,
+        "month": 1,
+        "abs": 22500,
+        "day": 12
+      },
+      "startAbs": 22342,
+      "endAbs": 22500,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zaitian-qing",
+      "dynastyId": "qing",
+      "personId": "zaitian",
+      "title": "",
+      "posthumousName": "景皇帝",
+      "templeName": "德宗",
+      "eraNames": [
+        "光绪"
+      ],
+      "start": {
+        "year": 1875,
+        "month": 2,
+        "abs": 22501,
+        "day": 25
+      },
+      "end": {
+        "year": 1908,
+        "month": 11,
+        "abs": 22906,
+        "day": 14
+      },
+      "startAbs": 22501,
+      "endAbs": 22906,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-puyi-qing",
+      "dynastyId": "qing",
+      "personId": "puyi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "宣统"
+      ],
+      "start": {
+        "year": 1908,
+        "month": 12,
+        "abs": 22907,
+        "day": 2
+      },
+      "end": {
+        "year": 1912,
+        "month": 2,
+        "abs": 22945,
+        "day": 12
+      },
+      "startAbs": 22907,
+      "endAbs": 22945,
+      "precision": "day",
+      "isMain": true
+    }
+  ],
+  "events": [
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "zaitian",
+        "kang-youwei",
+        "liang-qichao",
+        "tan-sitong"
+      ],
+      "id": "wuxu-reform",
+      "name": "戊戌变法",
+      "timeMode": "span",
+      "dateNote": "光绪二十四年四月二十三日至八月初六（公历1898年6月11日至9月21日），共103天",
+      "start": {
+        "year": 1898,
+        "month": 1,
+        "abs": 22776
+      },
+      "end": {
+        "year": 1898,
+        "month": 1,
+        "abs": 22776
+      },
+      "summary": "甲午战败与列强瓜分危机推动维新思潮发展。光绪帝采纳康有为等人的建议，自1898年6月起颁布新政，涉及政治、教育、经济和军事，试图改革清朝制度；慈禧太后于9月发动政变，囚禁光绪帝并废止新法，康有为、梁启超出走，谭嗣同等六人被杀。变法虽仅持续103天，却推动了近代中国的思想启蒙。",
+      "startAbs": 22776,
+      "endAbs": 22776
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "yuan"
+      ],
+      "participantIds": [
+        "tugh-temur",
+        "ragibagh"
+      ],
+      "id": "war-of-two-capitals",
+      "name": "两都之战",
+      "timeMode": "span",
+      "start": {
+        "year": 1328,
+        "month": 1,
+        "abs": 15936
+      },
+      "end": {
+        "year": 1329,
+        "month": 1,
+        "abs": 15948
+      },
+      "summary": "元文宗与元天顺帝阿速吉八争夺大都，文宗获胜，天顺帝在位仅一月。",
+      "startAbs": 15936,
+      "endAbs": 15948
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "yuan"
+      ],
+      "participantIds": [
+        "togon-temur",
+        "liu-futong",
+        "xu-shouhui"
+      ],
+      "id": "red-turban-uprising",
+      "name": "红巾起义",
+      "timeMode": "span",
+      "start": {
+        "year": 1351,
+        "month": 1,
+        "abs": 16212
+      },
+      "end": {
+        "year": 1368,
+        "month": 1,
+        "abs": 16416
+      },
+      "summary": "刘福通、徐寿辉等发动红巾军起义，席卷南北，元统治根基动摇。",
+      "startAbs": 16212,
+      "endAbs": 16416
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "song-xu",
+        "chen-han"
+      ],
+      "participantIds": [
+        "chen-youliang",
+        "xu-shouhui"
+      ],
+      "id": "chen-kills-xu",
+      "name": "陈友谅弑徐寿辉",
+      "at": {
+        "year": 1360,
+        "month": 6,
+        "abs": 16325
+      },
+      "summary": "陈友谅于采石杀徐寿辉，自立称帝，国号汉，徐宋亡。",
+      "atAbs": 16325
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "chen-han",
+        "wu-zhu"
+      ],
+      "participantIds": [
+        "chen-youliang",
+        "zhu-yuanzhang"
+      ],
+      "id": "poyang-lake-battle",
+      "name": "鄱阳湖之战",
+      "at": {
+        "year": 1363,
+        "month": 10,
+        "abs": 16365
+      },
+      "summary": "朱元璋与陈友谅鄱阳湖决战，陈友谅中流矢阵亡，陈汉大势已去。",
+      "atAbs": 16365
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "song-han",
+        "wu-zhu"
+      ],
+      "participantIds": [
+        "han-liner",
+        "zhu-yuanzhang"
+      ],
+      "id": "han-liner-death",
+      "name": "韩林儿溺亡",
+      "at": {
+        "year": 1366,
+        "month": 12,
+        "abs": 16403
+      },
+      "summary": "朱元璋遣廖永忠迎韩林儿至应天，渡江时船沉，小明王遇难，韩宋亡。",
+      "atAbs": 16403
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "ming",
+        "yuan"
+      ],
+      "participantIds": [
+        "zhu-yuanzhang",
+        "togon-temur"
+      ],
+      "id": "ming-capture-dadu",
+      "name": "明军攻占大都",
+      "dateNote": "洪武元年八月，明军克大都",
+      "at": {
+        "year": 1368,
+        "month": 8,
+        "abs": 16423
+      },
+      "summary": "明军北伐攻克大都，元顺帝北逃，元朝失去中原。",
+      "atAbs": 16423
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "yuan",
+        "ming"
+      ],
+      "participantIds": [
+        "togus-temur"
+      ],
+      "id": "korqin-sea-battle",
+      "name": "捕鱼儿海之战",
+      "dateNote": "洪武二十一年四月十二日（公历1388年5月18日），蓝玉袭破元嗣君于捕鱼儿海",
+      "at": {
+        "year": 1388,
+        "month": 5,
+        "abs": 16660
+      },
+      "summary": "明将蓝玉率军深入漠北，突袭元天元帝驻地并大破元军；天元帝逃脱后同年被部将杀害，北元随之终结。",
+      "atAbs": 16660
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "ming"
+      ],
+      "participantIds": [
+        "zhu-di"
+      ],
+      "id": "yongle-rule",
+      "name": "永乐盛世",
+      "timeMode": "span",
+      "start": {
+        "year": 1403,
+        "month": 1,
+        "abs": 16836
+      },
+      "end": {
+        "year": 1424,
+        "month": 1,
+        "abs": 17088
+      },
+      "summary": "明成祖迁都北京，派郑和下西洋，国力强盛。",
+      "startAbs": 16836,
+      "endAbs": 17088
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "ming"
+      ],
+      "participantIds": [
+        "zhu-di",
+        "zhu-yunwen"
+      ],
+      "id": "jingnan-campaign",
+      "name": "靖难之役",
+      "dateNote": "建文四年六月，朱棣攻入南京",
+      "at": {
+        "year": 1402,
+        "month": 7,
+        "abs": 16830
+      },
+      "summary": "燕王朱棣起兵夺位，攻入南京，建文帝下落成谜，朱棣即位。",
+      "atAbs": 16830
+    },
+    {
+      "kind": "culture",
+      "precision": "year",
+      "dynastyIds": [
+        "ming"
+      ],
+      "participantIds": [
+        "zheng-he",
+        "zhu-di"
+      ],
+      "id": "zheng-he-voyages",
+      "name": "郑和下西洋",
+      "timeMode": "span",
+      "start": {
+        "year": 1405,
+        "month": 1,
+        "abs": 16860
+      },
+      "end": {
+        "year": 1433,
+        "month": 1,
+        "abs": 17196
+      },
+      "summary": "永乐至宣德间七次远航，最远达非洲东岸，宣扬国威。",
+      "startAbs": 16860,
+      "endAbs": 17196
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "ming"
+      ],
+      "participantIds": [
+        "zhu-qizhen"
+      ],
+      "id": "tumu-crisis",
+      "name": "土木堡之变",
+      "dateNote": "正统十四年八月十五日（公历1449年9月1日）",
+      "at": {
+        "year": 1449,
+        "month": 9,
+        "abs": 17396
+      },
+      "summary": "明英宗率军北征瓦剌，土木堡被俘，明军主力覆没。",
+      "atAbs": 17396
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "ming"
+      ],
+      "participantIds": [
+        "yu-qian",
+        "zhu-qiyu"
+      ],
+      "id": "beijing-defense",
+      "name": "北京保卫战",
+      "dateNote": "正统十四年十月；瓦剌军十月初一进攻京师",
+      "at": {
+        "year": 1449,
+        "month": 10,
+        "abs": 17397
+      },
+      "summary": "土木堡之变后瓦剌兵临北京，于谦拥立景泰帝，击退敌军。",
+      "atAbs": 17397
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "ming"
+      ],
+      "participantIds": [
+        "zhu-qizhen",
+        "zhu-qiyu"
+      ],
+      "id": "duomen-restoration",
+      "name": "夺门之变",
+      "dateNote": "景泰八年正月十七日，石亨等拥英宗复辟",
+      "at": {
+        "year": 1457,
+        "month": 2,
+        "abs": 17485
+      },
+      "summary": "石亨、曹吉祥等拥英宗复辟，废景泰帝，于谦被害。",
+      "atAbs": 17485
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "ming"
+      ],
+      "participantIds": [
+        "zhu-yiming"
+      ],
+      "id": "wanli-campaigns",
+      "name": "万历三大征",
+      "timeMode": "span",
+      "start": {
+        "year": 1592,
+        "month": 1,
+        "abs": 19104
+      },
+      "end": {
+        "year": 1600,
+        "month": 1,
+        "abs": 19200
+      },
+      "summary": "万历朝平定宁夏哱拜、朝鲜倭乱、播州杨应龙，耗损国力。",
+      "startAbs": 19104,
+      "endAbs": 19200
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "ming"
+      ],
+      "participantIds": [
+        "zhang-juzheng",
+        "zhu-yiming"
+      ],
+      "id": "zhang-juzheng-reforms",
+      "name": "张居正改革",
+      "timeMode": "span",
+      "start": {
+        "year": 1572,
+        "month": 1,
+        "abs": 18864
+      },
+      "end": {
+        "year": 1582,
+        "month": 1,
+        "abs": 18984
+      },
+      "summary": "张居正为首辅，推行考成法、一条鞭法，整顿吏治，史称万历中兴。",
+      "startAbs": 18864,
+      "endAbs": 18984
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "ming"
+      ],
+      "participantIds": [
+        "qi-jiguang",
+        "zhu-houcong"
+      ],
+      "id": "anti-wokou-campaign",
+      "name": "抗倭战争",
+      "timeMode": "span",
+      "start": {
+        "year": 1555,
+        "month": 1,
+        "abs": 18660
+      },
+      "end": {
+        "year": 1567,
+        "month": 1,
+        "abs": 18804
+      },
+      "summary": "戚继光组建戚家军，于台州、福建等地屡败倭寇，平定东南倭患。",
+      "startAbs": 18660,
+      "endAbs": 18804
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "ming",
+        "qing"
+      ],
+      "participantIds": [
+        "zhu-yiming",
+        "nurhaci"
+      ],
+      "id": "sarhu-battle",
+      "name": "萨尔浒之战",
+      "dateNote": "万历四十七年三月，后金大败明军",
+      "at": {
+        "year": 1619,
+        "month": 3,
+        "abs": 19430
+      },
+      "summary": "努尔哈赤以少胜多，明军四路溃败，辽东战局逆转。",
+      "atAbs": 19430
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "ming",
+        "qing"
+      ],
+      "participantIds": [
+        "yuan-chonghuan",
+        "huang-taiji",
+        "nurhaci"
+      ],
+      "id": "ningyuan-battle",
+      "name": "宁远之战",
+      "dateNote": "天启六年正月，袁崇焕守宁远",
+      "at": {
+        "year": 1626,
+        "month": 1,
+        "abs": 19512
+      },
+      "summary": "袁崇焕率红夷大炮守宁远，击伤努尔哈赤，后金首次攻明受挫。",
+      "atAbs": 19512
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "ming",
+        "qing"
+      ],
+      "participantIds": [
+        "zhu-youjian",
+        "huang-taiji"
+      ],
+      "id": "songjin-campaign",
+      "name": "松锦之战",
+      "timeMode": "span",
+      "start": {
+        "year": 1640,
+        "month": 1,
+        "abs": 19680
+      },
+      "end": {
+        "year": 1642,
+        "month": 1,
+        "abs": 19704
+      },
+      "summary": "清军围攻松山、锦州，洪承畴降清，明军关外主力覆没，辽东防线崩溃。",
+      "startAbs": 19680,
+      "endAbs": 19704
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "ming"
+      ],
+      "participantIds": [
+        "zhu-changluo",
+        "zheng-guifei"
+      ],
+      "id": "tingji-case",
+      "name": "梃击案",
+      "dateNote": "万历四十三年五月初四，张差闯慈庆宫击太子",
+      "at": {
+        "year": 1615,
+        "month": 5,
+        "abs": 19384
+      },
+      "summary": "狂人张差持梃闯宫击太子朱常洛，牵连郑贵妃，晚明三大疑案之一。",
+      "atAbs": 19384
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "ming"
+      ],
+      "participantIds": [
+        "zhu-changluo",
+        "fang-congze"
+      ],
+      "id": "hongwan-case",
+      "name": "红丸案",
+      "dateNote": "泰昌元年八月二十九日，光宗服用红丸暴毙",
+      "at": {
+        "year": 1620,
+        "month": 8,
+        "abs": 19447
+      },
+      "summary": "明光宗即位仅月余，服李可灼所献红丸后暴亡，疑案缠身。",
+      "atAbs": 19447
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "ming"
+      ],
+      "participantIds": [
+        "zhu-youjiao",
+        "li-xuanshi"
+      ],
+      "id": "yigong-case",
+      "name": "移宫案",
+      "dateNote": "泰昌元年九月，熹宗即位后逼李选侍迁出乾清宫",
+      "at": {
+        "year": 1620,
+        "month": 9,
+        "abs": 19448
+      },
+      "summary": "光宗死后李选侍据乾清宫不肯迁出，东林党力主逼迁，熹宗即位后李选侍移居别宫。",
+      "atAbs": 19448
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "ming",
+        "qing"
+      ],
+      "participantIds": [
+        "yuan-chonghuan",
+        "zhu-youjian"
+      ],
+      "id": "yuan-chonghuan-executed",
+      "name": "袁崇焕冤杀",
+      "dateNote": "崇祯三年八月十六日，磔于市",
+      "at": {
+        "year": 1630,
+        "month": 8,
+        "abs": 19567
+      },
+      "summary": "后金方面施行反间计，使崇祯帝疑袁崇焕通敌；袁崇焕被捕并处死，辽东战局随之恶化。",
+      "atAbs": 19567
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "yuan"
+      ],
+      "participantIds": [
+        "hu-bilie"
+      ],
+      "id": "yuan-moves-capital-to-dadu",
+      "name": "元朝迁都大都",
+      "at": {
+        "year": 1272,
+        "month": 12,
+        "abs": 15275
+      },
+      "summary": "忽必烈将中都改名大都，并以新城为元朝都城；上都继续作为夏都。",
+      "dateNote": "至元九年（1272年）命名大都并建都；按年精度记录都城迁移阶段。",
+      "atAbs": 15275
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "fulin"
+      ],
+      "id": "qing-enter-pass",
+      "name": "清军入关",
+      "at": {
+        "year": 1644,
+        "month": 12,
+        "abs": 19739
+      },
+      "summary": "吴三桂引清军入关，清军占领北京；顺治帝同年由盛京迁都北京，盛京保留陪都地位，清廷由此入主中原。",
+      "atAbs": 19739
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "xuanye",
+        "hongli"
+      ],
+      "id": "kangqian-prosperity",
+      "name": "康乾盛世",
+      "timeMode": "span",
+      "start": {
+        "year": 1661,
+        "month": 1,
+        "abs": 19932
+      },
+      "end": {
+        "year": 1796,
+        "month": 1,
+        "abs": 21552
+      },
+      "summary": "康熙、雍正、乾隆三朝国力强盛，疆域辽阔。",
+      "startAbs": 19932,
+      "endAbs": 21552
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "xuanye"
+      ],
+      "id": "suppress-three-feudatories",
+      "name": "平定三藩",
+      "timeMode": "span",
+      "start": {
+        "year": 1673,
+        "month": 1,
+        "abs": 20076
+      },
+      "end": {
+        "year": 1681,
+        "month": 1,
+        "abs": 20172
+      },
+      "summary": "吴三桂等三藩起兵反清，康熙帝历时八年平定，巩固中央集权。",
+      "startAbs": 20076,
+      "endAbs": 20172
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "xuanye"
+      ],
+      "id": "yaksa-conflict",
+      "name": "雅克萨之战",
+      "timeMode": "span",
+      "start": {
+        "year": 1685,
+        "month": 1,
+        "abs": 20220
+      },
+      "end": {
+        "year": 1686,
+        "month": 1,
+        "abs": 20232
+      },
+      "summary": "清军两次进攻沙俄占据的雅克萨，驱逐俄军，奠定东北边界谈判基础。",
+      "startAbs": 20220,
+      "endAbs": 20232
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "hongli"
+      ],
+      "id": "jinchuan-campaigns",
+      "name": "大小金川之战",
+      "timeMode": "span",
+      "start": {
+        "year": 1747,
+        "month": 1,
+        "abs": 20964
+      },
+      "end": {
+        "year": 1776,
+        "month": 1,
+        "abs": 21312
+      },
+      "summary": "乾隆朝两次征讨大小金川土司，历时近三十年，最终改土归流。",
+      "startAbs": 20964,
+      "endAbs": 21312
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "hongli"
+      ],
+      "id": "dzungar-campaign",
+      "name": "平定准噶尔",
+      "timeMode": "span",
+      "start": {
+        "year": 1755,
+        "month": 1,
+        "abs": 21060
+      },
+      "end": {
+        "year": 1757,
+        "month": 1,
+        "abs": 21084
+      },
+      "summary": "乾隆帝平定准噶尔部，统一新疆，奠定西北版图。",
+      "startAbs": 21060,
+      "endAbs": 21084
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "hongli"
+      ],
+      "id": "sino-burmese-war",
+      "name": "清缅战争",
+      "timeMode": "span",
+      "start": {
+        "year": 1765,
+        "month": 1,
+        "abs": 21180
+      },
+      "end": {
+        "year": 1769,
+        "month": 1,
+        "abs": 21228
+      },
+      "summary": "清军与缅甸四次交锋，虽未能彻底征服，但遏制缅军北侵。",
+      "startAbs": 21180,
+      "endAbs": 21228
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "minning",
+        "lin-zexu"
+      ],
+      "id": "humen-opium-destruction",
+      "name": "虎门销烟",
+      "dateNote": "道光十九年六月，林则徐在虎门销毁鸦片",
+      "at": {
+        "year": 1839,
+        "month": 6,
+        "abs": 22073
+      },
+      "summary": "林则徐奉命查禁鸦片，于虎门公开销毁洋商鸦片，成为第一次鸦片战争导火索。",
+      "atAbs": 22073
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "minning",
+        "lin-zexu"
+      ],
+      "id": "opium-war",
+      "name": "第一次鸦片战争",
+      "timeMode": "span",
+      "start": {
+        "year": 1840,
+        "month": 1,
+        "abs": 22080
+      },
+      "end": {
+        "year": 1842,
+        "month": 1,
+        "abs": 22104
+      },
+      "summary": "英国以鸦片贸易争端发动战争，清军战败，被迫签订南京条约。",
+      "startAbs": 22080,
+      "endAbs": 22104
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "zuo-zongtang",
+        "zaitian"
+      ],
+      "id": "zuo-recover-xinjiang",
+      "name": "左宗棠收复新疆",
+      "timeMode": "span",
+      "start": {
+        "year": 1876,
+        "month": 1,
+        "abs": 22512
+      },
+      "end": {
+        "year": 1878,
+        "month": 1,
+        "abs": 22536
+      },
+      "summary": "左宗棠率湘军西征，先后克复乌鲁木齐、吐鲁番、喀什噶尔，平定阿古柏，新疆重归清朝。",
+      "startAbs": 22512,
+      "endAbs": 22536
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "zaitian"
+      ],
+      "id": "sino-tibetan-war",
+      "name": "隆务关之战",
+      "timeMode": "span",
+      "start": {
+        "year": 1888,
+        "month": 1,
+        "abs": 22656
+      },
+      "end": {
+        "year": 1889,
+        "month": 1,
+        "abs": 22668
+      },
+      "summary": "英军入侵西藏隆务关，清军反击后议和，签订中英续议藏印条约。",
+      "startAbs": 22656,
+      "endAbs": 22668
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "yizhu"
+      ],
+      "id": "second-opium-war",
+      "name": "第二次鸦片战争",
+      "timeMode": "span",
+      "start": {
+        "year": 1856,
+        "month": 1,
+        "abs": 22272
+      },
+      "end": {
+        "year": 1860,
+        "month": 1,
+        "abs": 22320
+      },
+      "summary": "英法联军再度进攻，攻陷大沽、北京，圆明园被焚，清政府签订天津、北京条约。",
+      "startAbs": 22272,
+      "endAbs": 22320
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "zaitian",
+        "zuo-zongtang"
+      ],
+      "id": "sino-french-war",
+      "name": "中法战争",
+      "timeMode": "span",
+      "start": {
+        "year": 1883,
+        "month": 12,
+        "abs": 22607
+      },
+      "end": {
+        "year": 1885,
+        "month": 4,
+        "abs": 22623
+      },
+      "summary": "法国侵略越南，清军与黑旗军在北圻、台湾等地抗击法军，镇南关大捷后议和。",
+      "startAbs": 22607,
+      "endAbs": 22623
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "zaitian",
+        "deng-shichang",
+        "li-hongzhang"
+      ],
+      "id": "first-sino-japanese-war",
+      "name": "甲午战争",
+      "timeMode": "span",
+      "start": {
+        "year": 1894,
+        "month": 7,
+        "abs": 22734
+      },
+      "end": {
+        "year": 1895,
+        "month": 4,
+        "abs": 22743
+      },
+      "summary": "日本挑起战争，黄海海战、辽东陆战清军失利，北洋海军覆没，签订马关条约。",
+      "startAbs": 22734,
+      "endAbs": 22743
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "zaitian"
+      ],
+      "id": "boxer-rebellion",
+      "name": "义和团运动",
+      "timeMode": "span",
+      "start": {
+        "year": 1899,
+        "month": 1,
+        "abs": 22788
+      },
+      "end": {
+        "year": 1901,
+        "month": 1,
+        "abs": 22812
+      },
+      "summary": "山东等地义和团起事，反洋教、扶清灭洋，引发八国联军侵华。",
+      "startAbs": 22788,
+      "endAbs": 22812
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "zaitian"
+      ],
+      "id": "eight-nation-invasion",
+      "name": "八国联军侵华",
+      "timeMode": "span",
+      "start": {
+        "year": 1900,
+        "month": 1,
+        "abs": 22800
+      },
+      "end": {
+        "year": 1901,
+        "month": 1,
+        "abs": 22812
+      },
+      "summary": "八国联军攻陷北京，慈禧太后西逃，清廷被迫签订辛丑条约。",
+      "startAbs": 22800,
+      "endAbs": 22812
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "xuanye"
+      ],
+      "id": "treaty-of-nerchinsk",
+      "name": "尼布楚条约",
+      "dateNote": "康熙二十八年七月，中俄签订",
+      "at": {
+        "year": 1689,
+        "month": 8,
+        "abs": 20275
+      },
+      "summary": "中俄签订首个边界条约，划定外兴安岭以南、额尔古纳河以东归属，确立东段国界。",
+      "atAbs": 20275
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "minning"
+      ],
+      "id": "treaty-of-nanjing",
+      "name": "南京条约",
+      "dateNote": "道光二十二年七月二十四日（1842年8月29日），中英在南京签订",
+      "at": {
+        "year": 1842,
+        "month": 8,
+        "abs": 22111
+      },
+      "summary": "清政府与英国签订《南京条约》，割让香港岛、赔偿2100万银元，开放广州、厦门、福州、宁波、上海五口通商，并规定英商可不经公行交易、协定进出口税则。条约改变了清代对外贸易的口岸、商人中介和关税格局。",
+      "atAbs": 22111
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "minning"
+      ],
+      "id": "treaty-of-bogue",
+      "name": "虎门条约",
+      "dateNote": "道光二十三年九月，中英签订",
+      "at": {
+        "year": 1843,
+        "month": 10,
+        "abs": 22125
+      },
+      "summary": "南京条约附件，英国取得片面最惠国待遇、领事裁判权及五口租地。",
+      "atAbs": 22125
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "minning"
+      ],
+      "id": "treaty-of-wanghia",
+      "name": "望厦条约",
+      "dateNote": "道光二十四年六月，中美签订",
+      "at": {
+        "year": 1844,
+        "month": 7,
+        "abs": 22134
+      },
+      "summary": "中国与美国签订的首个条约，美国获最惠国待遇、领事裁判权及五口通商。",
+      "atAbs": 22134
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "minning"
+      ],
+      "id": "treaty-of-whampoa",
+      "name": "黄埔条约",
+      "dateNote": "道光二十四年九月，中法签订",
+      "at": {
+        "year": 1844,
+        "month": 10,
+        "abs": 22137
+      },
+      "summary": "中国与法国签订的首个条约，法国获最惠国待遇、领事裁判权及五口通商。",
+      "atAbs": 22137
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "yizhu"
+      ],
+      "id": "treaty-of-aigun",
+      "name": "瑷珲条约",
+      "dateNote": "咸丰八年五月，中俄签订",
+      "at": {
+        "year": 1858,
+        "month": 5,
+        "abs": 22300
+      },
+      "summary": "俄国趁第二次鸦片战争割占黑龙江以北、乌苏里江以东大片领土。",
+      "atAbs": 22300
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "yizhu"
+      ],
+      "id": "treaty-of-tientsin",
+      "name": "天津条约",
+      "dateNote": "咸丰八年五月，与英法美俄分别签订",
+      "at": {
+        "year": 1858,
+        "month": 6,
+        "abs": 22301
+      },
+      "summary": "列强增开通商口岸、允许外国公使驻京、内河航行等特权，进一步打开中国。",
+      "atAbs": 22301
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "yizhu"
+      ],
+      "id": "convention-of-peking",
+      "name": "北京条约",
+      "dateNote": "咸丰十年九月，与英法俄签订",
+      "at": {
+        "year": 1860,
+        "month": 10,
+        "abs": 22329
+      },
+      "summary": "割九龙司、增赔款、准许英法公使驻京，俄国确认瑷珲条约并割占乌苏里江以东。",
+      "atAbs": 22329
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "zaichun"
+      ],
+      "id": "sino-japanese-amity-treaty",
+      "name": "中日修好条规",
+      "dateNote": "同治十年七月，中日签订",
+      "at": {
+        "year": 1871,
+        "month": 7,
+        "abs": 22458
+      },
+      "summary": "中国与日本签订的首个条约，互认领事裁判权，为日后甲午战争埋下伏笔。",
+      "atAbs": 22458
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "zaichun"
+      ],
+      "id": "treaty-of-chefoo",
+      "name": "烟台条约",
+      "dateNote": "光绪二年八月，中英签订",
+      "at": {
+        "year": 1876,
+        "month": 9,
+        "abs": 22520
+      },
+      "summary": "马嘉理案后签订，英国获滇缅通商、驻重庆领事等特权，并承认英国对缅甸的支配。",
+      "atAbs": 22520
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "zaitian",
+        "zuo-zongtang"
+      ],
+      "id": "treaty-of-saint-petersburg",
+      "name": "伊犁条约",
+      "dateNote": "光绪七年正月，中俄签订",
+      "at": {
+        "year": 1881,
+        "month": 2,
+        "abs": 22573
+      },
+      "summary": "俄国归还伊犁，但割占霍尔果斯以西七万余平方公里，赔款九百万卢布。",
+      "atAbs": 22573
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "zaitian"
+      ],
+      "id": "treaty-of-sino-french",
+      "name": "中法新约",
+      "dateNote": "光绪十一年六月，中法签订",
+      "at": {
+        "year": 1885,
+        "month": 6,
+        "abs": 22625
+      },
+      "summary": "中法战争议和，中国承认法国对越南的保护权，西南门户洞开。",
+      "atAbs": 22625
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "zaitian"
+      ],
+      "id": "convention-of-sikkim",
+      "name": "中英续议藏印条约",
+      "dateNote": "光绪十六年十二月，中英签订",
+      "at": {
+        "year": 1890,
+        "month": 12,
+        "abs": 22691
+      },
+      "summary": "隆务关之战后议和，划定藏印边界，承认英国对锡金的保护。",
+      "atAbs": 22691
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "zaitian"
+      ],
+      "id": "convention-of-burma",
+      "name": "中英续议滇缅条约",
+      "dateNote": "光绪二十年十二月，中英签订",
+      "at": {
+        "year": 1894,
+        "month": 12,
+        "abs": 22739
+      },
+      "summary": "划定滇缅边界，开放蛮耗为商埠，英国进一步渗透西南边疆。",
+      "atAbs": 22739
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "zaitian",
+        "li-hongzhang"
+      ],
+      "id": "treaty-of-shimonoseki",
+      "name": "马关条约",
+      "dateNote": "光绪二十一年四月，中日签订",
+      "at": {
+        "year": 1895,
+        "month": 4,
+        "abs": 22743
+      },
+      "summary": "割辽东、台湾及澎湖，赔款二亿两，开放沙市等口岸，允许日本在华设厂。",
+      "atAbs": 22743
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "zaitian",
+        "li-hongzhang"
+      ],
+      "id": "triple-intervention",
+      "name": "三国干涉还辽",
+      "dateNote": "光绪二十一年四月，俄法德迫使日本归还辽东",
+      "at": {
+        "year": 1895,
+        "month": 4,
+        "abs": 22743
+      },
+      "summary": "马关条约割辽东后，俄法德联合施压，日本同意归还辽东半岛，清政府另付赎款。",
+      "atAbs": 22743
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "zaitian",
+        "li-hongzhang"
+      ],
+      "id": "boxer-protocol",
+      "name": "辛丑条约",
+      "dateNote": "光绪二十七年七月，与十一国签订",
+      "at": {
+        "year": 1901,
+        "month": 9,
+        "abs": 22820
+      },
+      "summary": "赔款四亿五千万两、使馆区、拆炮台、惩办官员，中国完全沦为半殖民地半封建社会。",
+      "atAbs": 22820
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "zaitian"
+      ],
+      "id": "treaty-of-renewal-1902",
+      "name": "中俄改订条约",
+      "dateNote": "光绪二十八年三月，中俄签订",
+      "at": {
+        "year": 1902,
+        "month": 4,
+        "abs": 22827
+      },
+      "summary": "俄国归还庚子事变后侵占的东北三省，但获中东铁路续租等特权。",
+      "atAbs": 22827
+    },
+    {
+      "kind": "politics",
+      "precision": "month",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "yizhu"
+      ],
+      "id": "taiping-rebellion",
+      "name": "太平天国运动",
+      "timeMode": "span",
+      "start": {
+        "year": 1851,
+        "month": 1,
+        "abs": 22212
+      },
+      "end": {
+        "year": 1864,
+        "month": 7,
+        "abs": 22374
+      },
+      "summary": "洪秀全领导太平天国运动，1851年1月金田起义至1864年7月天京陷落，与清廷对峙十余年。",
+      "startAbs": 22212,
+      "endAbs": 22374
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "sun-yat-sen"
+      ],
+      "id": "xinhai-revolution",
+      "name": "辛亥革命",
+      "at": {
+        "year": 1911,
+        "month": 12,
+        "abs": 22943
+      },
+      "summary": "武昌起义爆发，各省独立，帝制走向终结。",
+      "atAbs": 22943
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "day",
+      "dynastyIds": [
+        "mingzheng"
+      ],
+      "participantIds": [
+        "zheng-chenggong"
+      ],
+      "id": "zheng-recover-taiwan",
+      "name": "郑成功收复台湾",
+      "dateNote": "永历十五年十二月十三日，1662年2月1日，荷军签约投降",
+      "at": {
+        "year": 1662,
+        "month": 2,
+        "abs": 19945,
+        "day": 1
+      },
+      "summary": "郑成功迫使荷兰东印度公司守军投降，收复台湾并设承天府，作为奉永历正朔的复明基地。",
+      "atAbs": 19945
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-hu-bilie-hu-bilie-succession",
+      "fromRef": "person:hu-bilie",
+      "toRef": "person:hu-bilie",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-hu-bilie-temur-succession",
+      "fromRef": "person:hu-bilie",
+      "toRef": "person:temur",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-temur-khayishan-succession",
+      "fromRef": "person:temur",
+      "toRef": "person:khayishan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-khayishan-ayurbarwada-succession",
+      "fromRef": "person:khayishan",
+      "toRef": "person:ayurbarwada",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ayurbarwada-shidebala-succession",
+      "fromRef": "person:ayurbarwada",
+      "toRef": "person:shidebala",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-shidebala-yeshuntuemur-succession",
+      "fromRef": "person:shidebala",
+      "toRef": "person:yeshuntuemur",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yeshuntuemur-tugh-temur-succession",
+      "fromRef": "person:yeshuntuemur",
+      "toRef": "person:tugh-temur",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-tugh-temur-khoshila-succession",
+      "fromRef": "person:tugh-temur",
+      "toRef": "person:khoshila",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-khoshila-tugh-temur-succession",
+      "fromRef": "person:khoshila",
+      "toRef": "person:tugh-temur",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-tugh-temur-irinchibal-succession",
+      "fromRef": "person:tugh-temur",
+      "toRef": "person:irinchibal",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-irinchibal-togon-temur-succession",
+      "fromRef": "person:irinchibal",
+      "toRef": "person:togon-temur",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-togon-temur-togon-temur-succession",
+      "fromRef": "person:togon-temur",
+      "toRef": "person:togon-temur",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-togon-temur-ayushiridara-succession",
+      "fromRef": "person:togon-temur",
+      "toRef": "person:ayushiridara",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ayushiridara-togus-temur-succession",
+      "fromRef": "person:ayushiridara",
+      "toRef": "person:togus-temur",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-xu-shouhui-han-liner-succession",
+      "fromRef": "person:xu-shouhui",
+      "toRef": "person:han-liner",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-han-liner-zhang-shicheng-succession",
+      "fromRef": "person:han-liner",
+      "toRef": "person:zhang-shicheng",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhang-shicheng-chen-youliang-succession",
+      "fromRef": "person:zhang-shicheng",
+      "toRef": "person:chen-youliang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-youliang-chen-li-succession",
+      "fromRef": "person:chen-youliang",
+      "toRef": "person:chen-li",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-li-ming-yuzhen-succession",
+      "fromRef": "person:chen-li",
+      "toRef": "person:ming-yuzhen",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ming-yuzhen-ming-sheng-succession",
+      "fromRef": "person:ming-yuzhen",
+      "toRef": "person:ming-sheng",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ming-sheng-zhu-yuanzhang-succession",
+      "fromRef": "person:ming-sheng",
+      "toRef": "person:zhu-yuanzhang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-yuanzhang-zhu-yunwen-succession",
+      "fromRef": "person:zhu-yuanzhang",
+      "toRef": "person:zhu-yunwen",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-yunwen-zhu-di-succession",
+      "fromRef": "person:zhu-yunwen",
+      "toRef": "person:zhu-di",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-di-zhu-gaochi-succession",
+      "fromRef": "person:zhu-di",
+      "toRef": "person:zhu-gaochi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-gaochi-zhu-zhanji-succession",
+      "fromRef": "person:zhu-gaochi",
+      "toRef": "person:zhu-zhanji",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-zhanji-zhu-qizhen-succession",
+      "fromRef": "person:zhu-zhanji",
+      "toRef": "person:zhu-qizhen",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-qizhen-zhu-qiyu-succession",
+      "fromRef": "person:zhu-qizhen",
+      "toRef": "person:zhu-qiyu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-qiyu-zhu-qizhen-succession",
+      "fromRef": "person:zhu-qiyu",
+      "toRef": "person:zhu-qizhen",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-qizhen-zhu-jianshen-succession",
+      "fromRef": "person:zhu-qizhen",
+      "toRef": "person:zhu-jianshen",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-jianshen-zhu-youcheng-succession",
+      "fromRef": "person:zhu-jianshen",
+      "toRef": "person:zhu-youcheng",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-youcheng-zhu-houzhao-succession",
+      "fromRef": "person:zhu-youcheng",
+      "toRef": "person:zhu-houzhao",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-houzhao-zhu-houcong-succession",
+      "fromRef": "person:zhu-houzhao",
+      "toRef": "person:zhu-houcong",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-houcong-zhu-zaihou-succession",
+      "fromRef": "person:zhu-houcong",
+      "toRef": "person:zhu-zaihou",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-zaihou-zhu-yiming-succession",
+      "fromRef": "person:zhu-zaihou",
+      "toRef": "person:zhu-yiming",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-yiming-zhu-changluo-succession",
+      "fromRef": "person:zhu-yiming",
+      "toRef": "person:zhu-changluo",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-changluo-zhu-youjiao-succession",
+      "fromRef": "person:zhu-changluo",
+      "toRef": "person:zhu-youjiao",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-youjiao-zhu-youjian-succession",
+      "fromRef": "person:zhu-youjiao",
+      "toRef": "person:zhu-youjian",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-yousong-zhu-yujian-succession",
+      "fromRef": "person:zhu-yousong",
+      "toRef": "person:zhu-yujian",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-yujian-zhu-youlang-succession",
+      "fromRef": "person:zhu-yujian",
+      "toRef": "person:zhu-youlang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-nurhaci-huang-taiji-succession",
+      "fromRef": "person:nurhaci",
+      "toRef": "person:huang-taiji",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-huang-taiji-fulin-succession",
+      "fromRef": "person:huang-taiji",
+      "toRef": "person:fulin",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-fulin-xuanye-succession",
+      "fromRef": "person:fulin",
+      "toRef": "person:xuanye",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-xuanye-yinzhen-succession",
+      "fromRef": "person:xuanye",
+      "toRef": "person:yinzhen",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yinzhen-hongli-succession",
+      "fromRef": "person:yinzhen",
+      "toRef": "person:hongli",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-hongli-yongyan-succession",
+      "fromRef": "person:hongli",
+      "toRef": "person:yongyan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yongyan-minning-succession",
+      "fromRef": "person:yongyan",
+      "toRef": "person:minning",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-minning-yizhu-succession",
+      "fromRef": "person:minning",
+      "toRef": "person:yizhu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yizhu-zaichun-succession",
+      "fromRef": "person:yizhu",
+      "toRef": "person:zaichun",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zaichun-zaitian-succession",
+      "fromRef": "person:zaichun",
+      "toRef": "person:zaitian",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zaitian-puyi-succession",
+      "fromRef": "person:zaitian",
+      "toRef": "person:puyi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-kills-xu",
+      "fromRef": "event:chen-kills-xu",
+      "toRef": "person:chen-youliang",
+      "kind": "other"
+    },
+    {
+      "id": "rel-poyang-chen-youliang",
+      "fromRef": "event:poyang-lake-battle",
+      "toRef": "person:chen-youliang",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-tumu-zhu-qizhen",
+      "fromRef": "event:tumu-crisis",
+      "toRef": "person:zhu-qizhen",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-jingnan-zhu-di",
+      "fromRef": "event:jingnan-campaign",
+      "toRef": "person:zhu-di",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-beijing-yu-qian",
+      "fromRef": "event:beijing-defense",
+      "toRef": "person:yu-qian",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-tingji-zhu-changluo",
+      "fromRef": "event:tingji-case",
+      "toRef": "person:zhu-changluo",
+      "kind": "other"
+    },
+    {
+      "id": "rel-hongwan-zhu-changluo",
+      "fromRef": "event:hongwan-case",
+      "toRef": "person:zhu-changluo",
+      "kind": "other"
+    },
+    {
+      "id": "rel-yigong-zhu-youjiao",
+      "fromRef": "event:yigong-case",
+      "toRef": "person:zhu-youjiao",
+      "kind": "other"
+    },
+    {
+      "id": "rel-opium-lin-zexu",
+      "fromRef": "event:opium-war",
+      "toRef": "person:lin-zexu",
+      "kind": "other"
+    },
+    {
+      "id": "rel-sino-japanese-deng",
+      "fromRef": "event:first-sino-japanese-war",
+      "toRef": "person:deng-shichang",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-shimonoseki-li",
+      "fromRef": "event:treaty-of-shimonoseki",
+      "toRef": "person:li-hongzhang",
+      "kind": "other"
+    },
+    {
+      "id": "rel-boxer-protocol-li",
+      "fromRef": "event:boxer-protocol",
+      "toRef": "person:li-hongzhang",
+      "kind": "other"
+    },
+    {
+      "id": "rel-sino-french-zuo",
+      "fromRef": "event:sino-french-war",
+      "toRef": "person:zuo-zongtang",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-humen-lin-zexu",
+      "fromRef": "event:humen-opium-destruction",
+      "toRef": "person:lin-zexu",
+      "kind": "other"
+    },
+    {
+      "id": "rel-xinjiang-zuo",
+      "fromRef": "event:zuo-recover-xinjiang",
+      "toRef": "person:zuo-zongtang",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-ili-zuo",
+      "fromRef": "event:treaty-of-saint-petersburg",
+      "toRef": "person:zuo-zongtang",
+      "kind": "other"
+    },
+    {
+      "id": "rel-sarhu-nurhaci",
+      "fromRef": "event:sarhu-battle",
+      "toRef": "person:nurhaci",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-ningyuan-yuan",
+      "fromRef": "event:ningyuan-battle",
+      "toRef": "person:yuan-chonghuan",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-wokou-qi",
+      "fromRef": "event:anti-wokou-campaign",
+      "toRef": "person:qi-jiguang",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-red-turban-liu",
+      "fromRef": "event:red-turban-uprising",
+      "toRef": "person:liu-futong",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-zhang-reforms",
+      "fromRef": "event:zhang-juzheng-reforms",
+      "toRef": "person:zhang-juzheng",
+      "kind": "other"
+    }
+  ],
+  "supplementalEventDynasties": [],
+  "supplementalEventParticipants": [],
+  "preSql": "DELETE FROM event_dynasties WHERE event_id = 'qing-enter-pass';\nDELETE FROM event_dynasties WHERE event_id = 'zheng-recover-taiwan' AND dynasty_id = 'ming-south';\nDELETE FROM event_dynasties WHERE event_id = 'lu-jian-enthroned';\nDELETE FROM event_participants WHERE event_id = 'lu-jian-enthroned';\nDELETE FROM events WHERE id = 'lu-jian-enthroned';\nDELETE FROM event_dynasties WHERE dynasty_id = 'yuan-north';\nDELETE FROM event_participants WHERE event_id = 'yuan-north-end';\nDELETE FROM events WHERE id = 'yuan-north-end';\nDELETE FROM reigns WHERE dynasty_id = 'yuan-north';\nDELETE FROM dynasties WHERE id = 'yuan-north';\n-- remove stale auto-generated 史料缺 (两都之战并行叠放、驾崩至即位短空档应留白)\nDELETE FROM reigns WHERE dynasty_id IN ('yuan') AND person_id = 'system-missing-ruler';\nDELETE FROM relations WHERE id IN ('rel-yeshuntuemur-ragibagh-succession', 'rel-ragibagh-tugh-temur-succession', 'rel-khoshila-irinchibal-succession');\nDELETE FROM reigns WHERE id = 'reign-puyi-qing-forbidden';\nDELETE FROM event_participants WHERE event_id = 'puyi-leaves-forbidden-city';\nDELETE FROM event_dynasties WHERE event_id = 'puyi-leaves-forbidden-city';\nDELETE FROM events WHERE id = 'puyi-leaves-forbidden-city';\nDELETE FROM events WHERE id = 'qing-moves-capital-to-beijing';\nDELETE FROM event_participants WHERE event_id = 'shaowu-enthroned';\nDELETE FROM event_dynasties WHERE event_id = 'shaowu-enthroned';\nDELETE FROM events WHERE id = 'shaowu-enthroned';",
+  "reignCapitals": [],
+  "manifest": {
+    "slug": "yuan-ming-qing",
+    "title": "元明清（含南明）",
+    "window": {
+      "startYear": 1271,
+      "startMonth": 12,
+      "endYear": 1912,
+      "endMonth": 2
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-09-13",
+    "counts": {
+      "persons": 91,
+      "dynasties": 10,
+      "reigns": 58,
+      "events": 62,
+      "relations": 71
+    },
+    "sources": [
+      {
+        "label": "元朝",
+        "url": "https://zh.wikipedia.org/wiki/元朝"
+      },
+      {
+        "label": "《明史·太祖本纪》（卷三）",
+        "url": "https://zh.wikisource.org/zh-hans/明史/卷3"
+      },
+      {
+        "label": "《明史》卷二百五十九·袁崇焕传",
+        "url": "https://zh.wikisource.org/zh-hans/明史/卷259"
+      },
+      {
+        "label": "《明实录·太祖高皇帝实录》洪武二十一年四月",
+        "url": "https://sillok.history.go.kr/mc/id/msilok_001_1920_0010_0010_0050_0010"
+      },
+      {
+        "label": "元朝君主列表",
+        "url": "https://zh.wikipedia.org/wiki/元朝君主列表"
+      },
+      {
+        "label": "元文宗",
+        "url": "https://zh.wikipedia.org/wiki/元文宗"
+      },
+      {
+        "label": "元明宗",
+        "url": "https://zh.wikipedia.org/wiki/元明宗"
+      },
+      {
+        "label": "元天顺帝",
+        "url": "https://zh.wikipedia.org/wiki/阿速吉八"
+      },
+      {
+        "label": "北元",
+        "url": "https://zh.wikipedia.org/wiki/北元"
+      },
+      {
+        "label": "徐寿辉",
+        "url": "https://zh.wikipedia.org/wiki/徐寿辉"
+      },
+      {
+        "label": "陈友谅",
+        "url": "https://zh.wikipedia.org/wiki/陈友谅"
+      },
+      {
+        "label": "陈汉",
+        "url": "https://zh.wikipedia.org/wiki/陈汉"
+      },
+      {
+        "label": "韩林儿",
+        "url": "https://zh.wikipedia.org/wiki/韩林儿"
+      },
+      {
+        "label": "张士诚",
+        "url": "https://zh.wikipedia.org/wiki/张士诚"
+      },
+      {
+        "label": "明玉珍",
+        "url": "https://zh.wikipedia.org/wiki/明玉珍"
+      },
+      {
+        "label": "鄱阳湖之战",
+        "url": "https://zh.wikipedia.org/wiki/鄱阳湖之战"
+      },
+      {
+        "label": "爱猷识理达腊",
+        "url": "https://zh.wikipedia.org/wiki/爱猷识理达腊"
+      },
+      {
+        "label": "脱古思帖木儿",
+        "url": "https://zh.wikipedia.org/wiki/脱古思帖木儿"
+      },
+      {
+        "label": "明朝",
+        "url": "https://zh.wikipedia.org/wiki/明朝"
+      },
+      {
+        "label": "清朝",
+        "url": "https://zh.wikipedia.org/wiki/清朝"
+      },
+      {
+        "label": "戊戌变法（故宫博物院）",
+        "url": "https://www.dpm.org.cn/lemmas/241774.html"
+      },
+      {
+        "label": "戊戌维新概览（中国文化研究院）",
+        "url": "https://chiculture.org.hk/sc/photo-story/174"
+      },
+      {
+        "label": "故宫博物院：清廷迁都北京",
+        "url": "https://www.dpm.org.cn/court/event/159873.html"
+      },
+      {
+        "label": "忽必烈与迁都中都、定都大都（北京市地方志）",
+        "url": "https://www.bjdsdfz.cn/jcdq.jhtml"
+      },
+      {
+        "label": "南明",
+        "url": "https://zh.wikipedia.org/wiki/南明"
+      },
+      {
+        "label": "朱以海",
+        "url": "https://zh.wikipedia.org/wiki/朱以海"
+      },
+      {
+        "label": "绍武帝",
+        "url": "https://zh.wikipedia.org/wiki/绍武帝"
+      },
+      {
+        "label": "土木堡之变",
+        "url": "https://zh.wikipedia.org/wiki/土木堡之变"
+      },
+      {
+        "label": "夺门之变",
+        "url": "https://zh.wikipedia.org/wiki/夺门之变"
+      },
+      {
+        "label": "靖难之役",
+        "url": "https://zh.wikipedia.org/wiki/靖难之役"
+      },
+      {
+        "label": "郑和下西洋",
+        "url": "https://zh.wikipedia.org/wiki/郑和下西洋"
+      },
+      {
+        "label": "梃击案",
+        "url": "https://zh.wikipedia.org/wiki/梃击案"
+      },
+      {
+        "label": "红丸案",
+        "url": "https://zh.wikipedia.org/wiki/红丸案"
+      },
+      {
+        "label": "移宫案",
+        "url": "https://zh.wikipedia.org/wiki/移宫案"
+      },
+      {
+        "label": "袁崇焕",
+        "url": "https://zh.wikipedia.org/wiki/袁崇焕"
+      },
+      {
+        "label": "张居正",
+        "url": "https://zh.wikipedia.org/wiki/张居正"
+      },
+      {
+        "label": "王阳明",
+        "url": "https://zh.wikipedia.org/wiki/王阳明"
+      },
+      {
+        "label": "严嵩",
+        "url": "https://zh.wikipedia.org/wiki/严嵩"
+      },
+      {
+        "label": "唐寅",
+        "url": "https://zh.wikipedia.org/wiki/唐寅"
+      },
+      {
+        "label": "徐光启",
+        "url": "https://zh.wikipedia.org/wiki/徐光启"
+      },
+      {
+        "label": "辛亥革命",
+        "url": "https://zh.wikipedia.org/wiki/辛亥革命"
+      },
+      {
+        "label": "平定三藩",
+        "url": "https://zh.wikipedia.org/wiki/平定三藩之乱"
+      },
+      {
+        "label": "雅克萨之战",
+        "url": "https://zh.wikipedia.org/wiki/雅克萨之战"
+      },
+      {
+        "label": "郑成功攻台之役",
+        "url": "https://zh.wikipedia.org/wiki/郑成功攻臺之役"
+      },
+      {
+        "label": "澎湖海战",
+        "url": "https://zh.wikipedia.org/wiki/澎湖海战"
+      },
+      {
+        "label": "郑克塽",
+        "url": "https://zh.wikipedia.org/wiki/郑克塽"
+      },
+      {
+        "label": "尼布楚条约",
+        "url": "https://zh.wikipedia.org/wiki/尼布楚条约"
+      },
+      {
+        "label": "南京条约",
+        "url": "https://zh.wikipedia.org/wiki/南京条约"
+      },
+      {
+        "label": "第二次鸦片战争",
+        "url": "https://zh.wikipedia.org/wiki/第二次鸦片战争"
+      },
+      {
+        "label": "中法战争",
+        "url": "https://zh.wikipedia.org/wiki/中法战争"
+      },
+      {
+        "label": "甲午战争",
+        "url": "https://zh.wikipedia.org/wiki/甲午战争"
+      },
+      {
+        "label": "马关条约",
+        "url": "https://zh.wikipedia.org/wiki/马关条约"
+      },
+      {
+        "label": "辛丑条约",
+        "url": "https://zh.wikipedia.org/wiki/辛丑条约"
+      },
+      {
+        "label": "虎门条约",
+        "url": "https://zh.wikipedia.org/wiki/虎门条约"
+      },
+      {
+        "label": "望厦条约",
+        "url": "https://zh.wikipedia.org/wiki/望厦条约"
+      },
+      {
+        "label": "黄埔条约",
+        "url": "https://zh.wikipedia.org/wiki/黄埔条约"
+      },
+      {
+        "label": "伊犁条约",
+        "url": "https://zh.wikipedia.org/wiki/中俄伊犁条约"
+      },
+      {
+        "label": "虎门销烟",
+        "url": "https://zh.wikipedia.org/wiki/虎门销烟"
+      },
+      {
+        "label": "左宗棠收复新疆",
+        "url": "https://zh.wikipedia.org/wiki/左宗棠平乱"
+      }
+    ],
+    "notes": [
+      "覆盖元（1271–1388，含漠北延续；正统金色自1276恭帝降元起至1368）、明（1368–1644）、南明（1644–1662）、清（1636–1912）。",
+      "元世祖忽必烈定国号至宋恭帝降元（1271-12-18–1276-02-04）拆为独立卡片、主线非正统；降元后同帝续统走金色。",
+      "元末漠北三位君主：元惠宗（顺帝北迁续统，1368–1370）、元昭宗（1370–1378）、天元帝（1378–1388）。",
+      "清王朝行自1616年努尔哈赤建后金起算，1636年改国号大清；努尔哈赤、皇太极在位计入清 reign，但正统自顺治（福临）入关（1644）起算。",
+      "明清卡片小字先取非空reign.title；普通皇帝title留空后按共用规则优先取era_names。三条皇帝title例外为朱元璋吴王时期（吴）、努尔哈赤（太祖）、皇太极（太宗）；朱祁镇两段年号分别为正统、天顺。",
+      "徐寿辉谥号应天启运献武皇帝、庙号世宗，为明玉珍1361年追尊；唐至元卡片通例显示庙号，详情列出全部年号。",
+      "明玉珍谥号钦文昭武皇帝、庙号太祖，见维基及重庆叡陵《玄宫之碑》。",
+      "夺门之变落点取公历 1457 年 2 月（景泰八年正月十七日＝2 月 11 日），与英宗复辟在位日起算一致，不把农历正月写成 1 月。",
+      "元世祖至元年间部分早于1271年，年号取1271年后窗口。",
+      "1912年清帝退位为帝制终结；中华民国不在本包内。",
+      "元末割据：徐宋（1351–1360）、韩宋（1355–1366）、大周（1354–1367）、陈汉（1360–1364）、明夏（1362–1371）、吴/西吴（1364–1368，朱元璋称帝前）。",
+      "明郑政权的在位沿革见 ming-end 包；1662 年收复台湾与 1683 年降清事件在本包与 ming-end 包间共用同一事件记录。",
+      "南明并行用 claim_track：主线弘光→隆武→永历；lu-jian/朱以海（绍兴监国）、shaowu/朱聿鐭（广州）。不把鲁监国、绍武串进继承链。",
+      "晚明三大疑案：梃击案（1615）、红丸案（1620）、移宫案（1620），均取通行月日写入 date_note。",
+      "清战争：平定三藩、雅克萨、统一台湾、大小金川、准噶尔、清缅、两次鸦片战争、中法战争、甲午战争、义和团、八国联军。",
+      "清条约：尼布楚（1689，平等边界条约）、南京、虎门、望厦、黄埔、瑷珲、天津、北京、中日修好条规、烟台、伊犁、中法新约、藏印、滇缅、马关、辛丑、中俄改订；条约月日取通行说法写入 date_note。",
+      "鸦片战争事件 id 仍为 opium-war，名称改为「第一次鸦片战争」并改为 span（1840–1842）。",
+      "补充战争：虎门销烟、左宗棠收复新疆、隆务关之战；三国干涉还辽为马关条约后续外交事件。",
+      "元明战争：两都之战、红巾起义、明军攻占大都、抗倭战争、萨尔浒、宁远、松锦之战。",
+      "明非帝王人物：张居正、海瑞、戚继光、王阳明、严嵩、唐寅、李时珍、徐光启、徐霞客、魏忠贤、刘基、于谦、郑和等；张居正改革（1572–1582）为 span 事件。",
+      "元明清皇帝在位日取维基百科君主列表通行换算，precision=day；南明弘光/隆武/永历及鲁监国、绍武亦升级日精度。",
+      "元文宗两度即位（1328-10-16–1329-02-27、1329-09-08–1332-09-02），中间为明宗；第一次止于明宗和宁即位，正式送玺在 1329-04-03。",
+      "捕鱼儿海之战据《明实录》记洪武二十一年四月，按公历资料落在1388年5月；元/北元政权延续至1388年11月天元帝被杀，避免年精度点落在1月的错误结束边界。袁崇焕冤杀加入后金（本项目合并标为清）关联，依据《明史·袁崇焕传》反间计记载。",
+      "两都之战天顺帝用 claim_track=shangdu（1328-10-04–1328-11-14），不串主线继承；泰定崩至文宗即位、明宗崩至文宗复位的短空档不标史料缺。"
+    ]
+  }
+}

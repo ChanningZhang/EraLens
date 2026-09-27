@@ -1,0 +1,24 @@
+{
+  "capturedOn": "2026-09-27",
+  "source": "local Fastify API backed by the current PostgreSQL database",
+  "base": "http://localhost:3001/api",
+  "bounds": { "minAbs": -83988, "maxAbs": 24320 },
+  "catalog": { "dynastyCount": 128 },
+  "timelineWindows": [
+    { "id": "zhou", "years": [-1046, -771], "abs": [-12540, -9229], "lod": "year", "counts": { "dynasties": 17, "dynastyGroups": 0, "dynastyLaneGroups": 2, "reigns": 141, "events": 16, "persons": 143, "relations": 1 }, "samples": { "dynasties": ["qi-chunqiu", "teng-chunqiu", "ju-chunqiu"], "events": ["muye", "xuanwang-zhongxing", "quanrong-invasion"] }, "capitals": 12 },
+    { "id": "era-boundary", "years": [-1, 1], "abs": [0, 23], "lod": "year", "counts": { "dynasties": 2, "dynastyGroups": 0, "dynastyLaneGroups": 2, "reigns": 3, "events": 0, "persons": 3, "relations": 0 }, "samples": { "dynasties": ["han-west", "gaogouli"], "events": [] }, "capitals": 2 },
+    { "id": "three-kingdoms", "years": [220, 280], "abs": [2640, 3371], "lod": "year", "counts": { "dynasties": 6, "dynastyGroups": 1, "dynastyLaneGroups": 2, "reigns": 17, "events": 12, "persons": 32, "relations": 4 }, "samples": { "dynasties": ["shu", "wu", "gaogouli"], "events": ["agri-fig-introduction", "jin-unify-wu", "idiom-le-bu-si-shu"] }, "capitals": 6 },
+    { "id": "north-south", "years": [420, 589], "abs": [5040, 7079], "lod": "year", "counts": { "dynasties": 20, "dynastyGroups": 3, "dynastyLaneGroups": 2, "reigns": 82, "events": 17, "persons": 86, "relations": 21 }, "samples": { "dynasties": ["jin-east", "qin-xi", "liang-xi"], "events": ["wuhu-chaos", "poetry-mulan", "idiom-fen-dao-yang-biao"] }, "capitals": 23 },
+    { "id": "sui-tang", "years": [581, 907], "abs": [6972, 10895], "lod": "year", "counts": { "dynasties": 19, "dynastyGroups": 4, "dynastyLaneGroups": 2, "reigns": 87, "events": 49, "persons": 103, "relations": 16 }, "samples": { "dynasties": ["tuyuhun", "gaogouli", "chen-nan"], "events": ["sui-establishes-jinshi-examination", "tang-two-tax-law", "tang-tubo-changqing-alliance"] }, "capitals": 27 },
+    { "id": "song-liao-jin", "years": [960, 1279], "abs": [11520, 15359], "lod": "year", "counts": { "dynasties": 18, "dynastyGroups": 2, "dynastyLaneGroups": 2, "reigns": 100, "events": 51, "persons": 112, "relations": 20 }, "samples": { "dynasties": ["jin-nvzhen", "dali", "beiliao"], "events": ["kublai-court-at-kaiping", "song-jin-maritime-alliance", "song-recovers-yanyun-six-prefectures"] }, "capitals": 26 },
+    { "id": "ming-qing", "years": [1368, 1912], "abs": [16416, 22955], "lod": "year", "counts": { "dynasties": 11, "dynastyGroups": 0, "dynastyLaneGroups": 2, "reigns": 50, "events": 98, "persons": 83, "relations": 9 }, "samples": { "dynasties": ["xia-ming", "wu-zhu", "daxi"], "events": ["qing-establishes-ili-general", "xinyou-coup", "commerce-maize-introduction"] }, "capitals": 25 },
+    { "id": "modern", "years": [1912, 2026], "abs": [22944, 24323], "lod": "year", "counts": { "dynasties": 3, "dynastyGroups": 0, "dynastyLaneGroups": 2, "reigns": 43, "events": 27, "persons": 45, "relations": 1 }, "samples": { "dynasties": ["qing", "roc", "prc"], "events": ["finance-fabi-reform", "korean-war", "great-leap-forward"] }, "capitals": 5 }
+  ],
+  "searchSamples": {
+    "唐": [{ "type": "dynasty", "id": "tang", "label": "唐" }, { "type": "dynasty", "id": "tang-hou", "label": "后唐" }],
+    "李隆基": [{ "type": "person", "id": "li-longji", "label": "李隆基", "subtitle": "皇帝", "abs": 8552 }],
+    "长安": [{ "type": "reign", "id": "reign-wu-zetian-zhou-wu", "label": "长安", "subtitle": "武则天 · 武周", "abs": 8289 }, { "type": "capital", "id": "cap-chimei-changan-25", "label": "长安", "subtitle": "陕西省西安市 · 赤眉 · 都城", "abs": 308 }, { "type": "capital", "id": "cap-han-gengshi-changan-24", "label": "长安", "subtitle": "陕西省西安市 · 更始 · 都城", "abs": 289 }],
+    "开元": [{ "type": "reign", "id": "reign-li-longji", "label": "开元", "subtitle": "李隆基 · 唐", "abs": 8552 }, { "type": "event", "id": "kaiyuan-prosperity", "label": "开元盛世", "subtitle": "政治", "abs": 8724 }],
+    "赤壁": [{ "type": "event", "id": "chibi", "label": "赤壁之战", "subtitle": "战事", "abs": 2507 }, { "type": "event", "id": "poetry-chibi-du-mu", "label": "赤壁", "subtitle": "诗歌", "abs": 10151 }]
+  }
+}

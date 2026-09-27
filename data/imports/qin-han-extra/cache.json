@@ -1,0 +1,541 @@
+{
+  "slug": "qin-han-extra",
+  "window": {
+    "startYear": -203,
+    "startMonth": 1,
+    "endYear": 27,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "zhao-tuo",
+      "name": "赵佗",
+      "roles": [
+        "君主"
+      ],
+      "bio": "南越开国君主，秦将，秦亡后据岭南自立，前203年建南越国。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赵佗"
+        }
+      ],
+      "birth": {
+        "year": -240,
+        "month": 1,
+        "abs": -2868
+      },
+      "death": {
+        "year": -137,
+        "month": 1,
+        "abs": -1632
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "南越武王"
+    },
+    {
+      "id": "zhao-mo",
+      "name": "赵眜",
+      "roles": [
+        "君主"
+      ],
+      "bio": "南越文王，赵佗孙，在位期间与汉朝修好。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赵眜"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "南越文王"
+    },
+    {
+      "id": "zhao-yingqi",
+      "name": "赵婴齐",
+      "roles": [
+        "君主"
+      ],
+      "bio": "南越明王，赵眜之子，归汉入朝，卒于长安。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赵婴齐"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "南越明王"
+    },
+    {
+      "id": "zhao-xing",
+      "name": "赵兴",
+      "roles": [
+        "君主"
+      ],
+      "bio": "南越末王之一，赵婴齐之子，年幼即位，为吕嘉所杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赵兴"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "南越王"
+    },
+    {
+      "id": "zhao-jiande",
+      "name": "赵建德",
+      "roles": [
+        "君主"
+      ],
+      "bio": "南越末代君主，吕嘉所立，前111年汉军灭南越时被俘。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赵建德"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "南越王"
+    },
+    {
+      "id": "liu-panzi",
+      "name": "刘盆子",
+      "roles": [
+        "君主"
+      ],
+      "bio": "赤眉军所立皇帝，西汉末被立为帝，后降刘秀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘盆子"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "赤眉帝"
+    },
+    {
+      "id": "fan-chong",
+      "name": "樊崇",
+      "roles": [
+        "起义领袖"
+      ],
+      "bio": "赤眉军首领，拥立刘盆子称帝，后降刘秀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/樊崇"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "赤眉首领"
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "nanyue",
+      "name": "南越",
+      "altNames": [
+        "南越国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -203,
+        "month": 1,
+        "abs": -2424
+      },
+      "end": {
+        "year": -111,
+        "month": 1,
+        "abs": -1320
+      },
+      "precision": "year",
+      "note": "赵佗据岭南自立，前203年建国；前111年汉武帝遣军灭南越，设九郡。"
+    },
+    {
+      "id": "chimei",
+      "name": "赤眉",
+      "altNames": [
+        "赤眉军"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 23,
+        "month": 1,
+        "abs": 276
+      },
+      "end": {
+        "year": 27,
+        "month": 1,
+        "abs": 324
+      },
+      "precision": "year",
+      "note": "新莽末赤眉起义军政权，樊崇为首，25年立刘盆子为帝，27年降刘秀。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-zhao-tuo-nanyue",
+      "dynastyId": "nanyue",
+      "personId": "zhao-tuo",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -203,
+        "month": 1,
+        "abs": -2424
+      },
+      "end": {
+        "year": -137,
+        "month": 12,
+        "abs": -1621
+      },
+      "startAbs": -2424,
+      "endAbs": -1621,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zhao-mo-nanyue",
+      "dynastyId": "nanyue",
+      "personId": "zhao-mo",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -137,
+        "month": 1,
+        "abs": -1632
+      },
+      "end": {
+        "year": -122,
+        "month": 12,
+        "abs": -1441
+      },
+      "startAbs": -1632,
+      "endAbs": -1441,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zhao-yingqi-nanyue",
+      "dynastyId": "nanyue",
+      "personId": "zhao-yingqi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -122,
+        "month": 1,
+        "abs": -1452
+      },
+      "end": {
+        "year": -112,
+        "month": 12,
+        "abs": -1321
+      },
+      "startAbs": -1452,
+      "endAbs": -1321,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zhao-xing-nanyue",
+      "dynastyId": "nanyue",
+      "personId": "zhao-xing",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -112,
+        "month": 1,
+        "abs": -1332
+      },
+      "end": {
+        "year": -111,
+        "month": 12,
+        "abs": -1309
+      },
+      "startAbs": -1332,
+      "endAbs": -1309,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zhao-jiande-nanyue",
+      "dynastyId": "nanyue",
+      "personId": "zhao-jiande",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -111,
+        "month": 1,
+        "abs": -1320
+      },
+      "end": {
+        "year": -111,
+        "month": 12,
+        "abs": -1309
+      },
+      "startAbs": -1320,
+      "endAbs": -1309,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-fan-chong-chimei",
+      "dynastyId": "chimei",
+      "personId": "fan-chong",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 23,
+        "month": 1,
+        "abs": 276
+      },
+      "end": {
+        "year": 25,
+        "month": 7,
+        "abs": 306,
+        "day": 29
+      },
+      "startAbs": 276,
+      "endAbs": 306,
+      "precision": "day",
+      "startDateConfidence": "approximate",
+      "endDateConfidence": "approximate",
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isInformalMonarch": true,
+      "isMain": false
+    },
+    {
+      "id": "reign-liu-panzi-chimei",
+      "dynastyId": "chimei",
+      "personId": "liu-panzi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 25,
+        "month": 7,
+        "abs": 306,
+        "day": 29
+      },
+      "end": {
+        "year": 27,
+        "month": 3,
+        "abs": 326,
+        "day": 15
+      },
+      "startAbs": 306,
+      "endAbs": 326,
+      "precision": "day",
+      "startDateConfidence": "approximate",
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    }
+  ],
+  "events": [
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "day",
+      "dynastyIds": [
+        "chimei"
+      ],
+      "participantIds": [
+        "fan-chong",
+        "liu-panzi"
+      ],
+      "id": "chimei-capture-changan",
+      "name": "赤眉入长安",
+      "dateNote": "建武元年九月庚辰，25年10月4日，更始帝刘玄被杀",
+      "at": {
+        "year": 25,
+        "month": 10,
+        "abs": 309,
+        "day": 4
+      },
+      "summary": "赤眉军攻入长安，杀更始帝刘玄，立刘盆子为帝，更始政权终结。",
+      "atAbs": 309
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-zhao-tuo-zhao-mo-succession",
+      "fromRef": "person:zhao-tuo",
+      "toRef": "person:zhao-mo",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhao-mo-zhao-yingqi-succession",
+      "fromRef": "person:zhao-mo",
+      "toRef": "person:zhao-yingqi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhao-yingqi-zhao-xing-succession",
+      "fromRef": "person:zhao-yingqi",
+      "toRef": "person:zhao-xing",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhao-xing-zhao-jiande-succession",
+      "fromRef": "person:zhao-xing",
+      "toRef": "person:zhao-jiande",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-fan-chong-liu-panzi-succession",
+      "fromRef": "person:fan-chong",
+      "toRef": "person:liu-panzi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chimei-changan",
+      "fromRef": "event:chimei-capture-changan",
+      "toRef": "dynasty:chimei",
+      "kind": "battle"
+    }
+  ],
+  "supplementalEventDynasties": [
+    {
+      "eventId": "chimei-capture-changan",
+      "dynastyId": "han-gengshi"
+    }
+  ],
+  "supplementalEventParticipants": [
+    {
+      "eventId": "chimei-capture-changan",
+      "personId": "liu-xuan"
+    }
+  ],
+  "preSql": "",
+  "manifest": {
+    "slug": "qin-han-extra",
+    "title": "秦汉补充：南越与赤眉",
+    "window": {
+      "startYear": -203,
+      "startMonth": 1,
+      "endYear": 27,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-09-13",
+    "counts": {
+      "persons": 7,
+      "dynasties": 2,
+      "reigns": 7,
+      "events": 1,
+      "relations": 6
+    },
+    "sources": [
+      {
+        "label": "南越国",
+        "url": "https://zh.wikipedia.org/wiki/南越国"
+      },
+      {
+        "label": "赵佗",
+        "url": "https://zh.wikipedia.org/wiki/赵佗"
+      },
+      {
+        "label": "南越国君主列表",
+        "url": "https://zh.wikipedia.org/wiki/南越国君主列表"
+      },
+      {
+        "label": "赤眉军",
+        "url": "https://zh.wikipedia.org/wiki/赤眉军"
+      },
+      {
+        "label": "刘盆子",
+        "url": "https://zh.wikipedia.org/wiki/刘盆子"
+      },
+      {
+        "label": "樊崇",
+        "url": "https://zh.wikipedia.org/wiki/樊崇"
+      },
+      {
+        "label": "建武历法锚点：六月廿二为25年8月5日",
+        "url": "https://zh.wikipedia.org/wiki/建武_(东汉)"
+      }
+    ],
+    "notes": [
+      "樊崇首领阶段结束于刘盆子登基，两记录使用同一接续锚点，由timelineOwnership统一裁定；樊崇此后任御史大夫，不另建并立帝位。登基仅知25年农历六月，具体日失考；以建武六月廿二=公历25-08-05为历法锚点，推得六月十五=25-07-29，取该月中点为约数，樊崇迄边和刘盆子起边均标approximate，不宣称为实际登基日。樊崇阶段原有23年起点仍为年内占位，日精度下标approximate。刘盆子退位取维基公历27-03-15。",
+      "南越赵氏五世（赵佗至赵建德），前203–前111；赤眉为西汉末过渡政权（23–27）。",
+      "赵兴为吕嘉所杀后赵建德即位，同年汉军灭南越。",
+      "赤眉入长安事件关联更始帝刘玄（见 qin-han 包 liu-xuan）。",
+      "西汉、更始关联见 qin-han 包，本包以 supplemental 补充。",
+      "precision=year，scope=cn，region=east_asia。"
+    ]
+  }
+}

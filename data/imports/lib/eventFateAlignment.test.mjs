@@ -1,15 +1,16 @@
 import { describe, it } from "node:test";
 import assert from "node:assert/strict";
 import path from "node:path";
+import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
-import { buildFateCatalog } from "../cross-dynasty-fate/catalog.mjs";
 import { loadEventsFromImports, validateEventFateAlignment } from "./fateRelationHelpers.mjs";
 
 const importsRoot = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
+const cache = JSON.parse(readFileSync(path.join(importsRoot, "cross-dynasty-fate", "cache.json"), "utf8"));
 
 describe("validateEventFateAlignment", () => {
   it("aligns sui-tang day-precision events with linked fate lines", () => {
-    const catalog = buildFateCatalog();
+    const catalog = cache.relations;
     const events = loadEventsFromImports(importsRoot);
     const linked = new Set([
       "tang-founded",

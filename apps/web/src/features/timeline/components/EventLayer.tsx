@@ -1,6 +1,6 @@
 import type { PlacedEvent } from "../model/eventLayout";
 import { selectionStore } from "../state/selectionStore";
-import { eventSpanAbs } from "@eralens/shared";
+import { eventSpanAbs, formatEventTime } from "@eralens/shared";
 import styles from "./EventLayer.module.css";
 
 export function EventKindPreview({ kind, label }: { kind: string; label: string }) {
@@ -49,7 +49,7 @@ export function EventLayer({ placed, height, laneBadges = false }: Props) {
               onClick={() => {
                 selectionStore.select({ type: "event", id: event.id }, anchorAbs);
               }}
-              aria-label={event.name}
+              aria-label={`${event.name}，${formatEventTime(event)}`}
             >
               <span className={styles.dot} />
               <span className={styles.label}>{event.name}</span>
