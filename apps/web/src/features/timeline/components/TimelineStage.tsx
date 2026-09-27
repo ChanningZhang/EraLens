@@ -68,6 +68,7 @@ import styles from "./TimelineStage.module.css";
 import { layoutReignFates } from "../model/reignFateLayout";
 
 const StableChinaMapBackground = memo(ChinaMapBackground);
+const EVENT_CONTROL_LANE_CLEARANCE = 10;
 
 function laneColorTokenFor(
   map: ReadonlyMap<string, ReturnType<typeof fallbackLaneColorToken>>,
@@ -502,7 +503,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   );
 
   const lanes = useMemo(() => {
-    let top = railHeight;
+    let top = railHeight + EVENT_CONTROL_LANE_CLEARANCE;
     return placed.map((dynasty) => {
       let prepared = lanePreparedCache.get(dynasty.id);
       if (!prepared) {
