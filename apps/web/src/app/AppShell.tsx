@@ -112,6 +112,17 @@ export function AppShell() {
   return (
     <div
       className={styles.appShell}
+      onClick={(event) => {
+        if (!selection.detailOpen) return;
+        const target = event.target;
+        if (
+          target instanceof Element &&
+          target.closest("button, a, input, textarea, select, [role='button'], [role='dialog'], [aria-modal='true'], [data-detail-drawer]")
+        ) {
+          return;
+        }
+        selectionStore.clearSelection();
+      }}
       data-narrow={presentation.narrow}
       data-compact={presentation.compact}
       data-rail-collapsed={presentation.railCollapsed}
@@ -132,7 +143,11 @@ export function AppShell() {
           expanded={!presentation.railCollapsed}
           expandLabel="展开王朝栏"
           collapseLabel="折叠王朝栏"
-          onClick={() => updateLayout({ railCollapsed: !preferences.railCollapsed })}
+          onClick={() => {
+            const nextCollapsed = !preferences.railCollapsed;
+            updateLayout({ railCollapsed: nextCollapsed });
+            if (nextCollapsed) setEventSettingsOpen(false);
+          }}
         />}
         <div className={styles.brand}>
           {!presentation.railCollapsed && <>
@@ -195,9 +210,12 @@ export function AppShell() {
       </div>
 
       <Ruler />
-      <div className={styles.settingsWrap}>
+      {!presentation.railCollapsed && <div className={styles.settingsWrap}>
         <button type="button" className={styles.settingsButton} aria-label="显示设置" title="显示设置" aria-expanded={eventSettingsOpen} onClick={() => setEventSettingsOpen((open) => !open)}>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm8 4.7v-2.4l-2-.7a6.2 6.2 0 0 0-.6-1.4l.9-1.9-1.7-1.7-1.9.9a6.2 6.2 0 0 0-1.4-.6l-.7-2h-2.4l-.7 2a6.2 6.2 0 0 0-1.4.6l-1.9-.9-1.7 1.7.9 1.9a6.2 6.2 0 0 0-.6 1.4l-2 .7v2.4l2 .7c.1.5.3 1 .6 1.4l-.9 1.9 1.7 1.7 1.9-.9c.4.3.9.5 1.4.6l.7 2h2.4l.7-2c.5-.1 1-.3 1.4-.6l1.9.9 1.7-1.7-.9-1.9c.3-.4.5-.9.6-1.4l2-.7Z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m9.9 2.5 4.2 0 .6 2.1c.7.2 1.3.5 1.9.9l2-.7 2.1 3.6-1.5 1.5a7 7 0 0 1 0 2.2l1.5 1.5-2.1 3.6-2-.7c-.6.4-1.2.7-1.9.9l-.6 2.1H9.9l-.6-2.1c-.7-.2-1.3-.5-1.9-.9l-2 .7-2.1-3.6 1.5-1.5a7 7 0 0 1 0-2.2L3.3 8.4l2.1-3.6 2 .7c.6-.4 1.2-.7 1.9-.9Z" />
+            <circle cx="12" cy="11" r="3.2" />
+          </svg>
         </button>
         {eventSettingsOpen && <section className={styles.settingsPanel} aria-label="显示设置">
           <h2>时间轴布局</h2>
@@ -207,16 +225,19 @@ export function AppShell() {
           </label>
           <button className={styles.autoLayoutButton} type="button" onClick={() => updateLayout({ density: "auto" })} disabled={preferences.density === "auto"}>按屏幕自动调整</button>
           <h2>事件展示</h2>
-          {eventKinds.map((kind) => <label key={kind} className={styles.settingsOption}>
-            <input type="checkbox" aria-label={`显示${eventKindLabel(kind)}事件`} checked={eventDisplay.kinds[kind] ?? true} onChange={(event) => void updateEventKind(kind, event.target.checked)} />
-            <EventKindPreview kind={kind} label={eventKindLabel(kind)} />
-          </label>)}
+          <div className={styles.eventSettingsGrid}>
+            {eventKinds.map((kind) => <label key={kind} className={styles.settingsOption}>
+              <input type="checkbox" aria-label={`显示${eventKindLabel(kind)}事件`} checked={eventDisplay.kinds[kind] ?? true} onChange={(event) => void updateEventKind(kind, event.target.checked)} />
+              <EventKindPreview kind={kind} label={eventKindLabel(kind)} />
+            </label>)}
+          </div>
         </section>}
-      </div>
+      </div>}
       <CursorGuide stageRef={stageRef} />
       {selection.detailOpen && (
         <div
           className={styles.detailDrawer}
+          data-detail-drawer
           style={{ ["--detail-width" as string]: `${selection.detailWidth}px` }}
         >
           <ResizeHandle />

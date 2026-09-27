@@ -1,7 +1,6 @@
 import { firstAppellation } from "./appellationFields";
 import {
   isRocTaiwanLeaderReign,
-  ROC_TAIWAN_LEADER_OFFICE_LABEL,
   resolveRocReignDetailSubtitle,
 } from "./rocTaiwanLeaderDisplay";
 import {
@@ -98,10 +97,6 @@ export function resolveEmperorAppellation(
   reign: ReignAppellationFields,
   personContext?: PersonDisplayContext | null,
 ): EmperorAppellation | null {
-  if (isRocTaiwanLeaderReign(reign)) {
-    return { kind: "regnal", name: ROC_TAIWAN_LEADER_OFFICE_LABEL };
-  }
-
   const eraName = firstEraName(reign);
   const year = reign.start.year;
 
@@ -268,8 +263,12 @@ export function resolveReignDetailSubtitle(
   personName?: string | null,
   personContext?: PersonDisplayContext | null,
 ): string {
+  const appellation = resolveEmperorAppellation(reign, personContext);
+  const conventional = appellation?.name ?? reign.title;
   if (isRocTaiwanLeaderReign(reign)) {
-    return resolveRocReignDetailSubtitle();
+    return [resolveRocReignDetailSubtitle(), conventional]
+      .filter(Boolean)
+      .join(" · ");
   }
   const dynastyPart = dynastyName ?? "";
   const primary = resolveReignPrimaryLabel(reign, personName, personContext);
@@ -280,12 +279,10 @@ export function resolveReignDetailSubtitle(
     }
     return dynastyPart || primary;
   }
-  const appellation = resolveEmperorAppellation(reign, personContext);
-  const conventional = appellation?.name ?? reign.title;
   if (conventional === primary || conventional === personName) {
     return dynastyPart || primary;
   }
-  return dynastyPart ? `${dynastyPart} · ${conventional}` : conventional;
+  return [dynastyPart, conventional].filter(Boolean).join(" · ");
 }
 
 type ReignDetailFactsFields = ReignAppellationFields &

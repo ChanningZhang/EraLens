@@ -164,7 +164,7 @@
       "altNames": [
         "蒋中正"
       ],
-      "title": "领导人"
+      "title": ""
     },
     {
       "id": "li-zongren",
@@ -263,7 +263,7 @@
         "abs": 23856
       },
       "altNames": [],
-      "title": "领导人"
+      "title": ""
     },
     {
       "id": "li-denghui",
@@ -289,7 +289,7 @@
         "abs": 24246
       },
       "altNames": [],
-      "title": "领导人"
+      "title": ""
     },
     {
       "id": "chen-shuibian",
@@ -311,7 +311,7 @@
       },
       "death": null,
       "altNames": [],
-      "title": "领导人"
+      "title": ""
     },
     {
       "id": "ma-yingjiu",
@@ -333,7 +333,7 @@
       },
       "death": null,
       "altNames": [],
-      "title": "领导人"
+      "title": ""
     },
     {
       "id": "cai-yingwen",
@@ -355,7 +355,7 @@
       },
       "death": null,
       "altNames": [],
-      "title": "领导人"
+      "title": ""
     },
     {
       "id": "lai-qingde",
@@ -377,7 +377,7 @@
       },
       "death": null,
       "altNames": [],
-      "title": "领导人"
+      "title": ""
     },
     {
       "id": "duan-qirui",
@@ -1384,7 +1384,7 @@
       "id": "reign-jiang-jieshi-roc-2",
       "dynastyId": "roc",
       "personId": "jiang-jieshi",
-      "title": "领导人",
+      "title": "",
       "posthumousName": null,
       "templeName": null,
       "eraNames": [],
@@ -1410,7 +1410,7 @@
       "id": "reign-yan-jiagan-roc",
       "dynastyId": "roc",
       "personId": "yan-jiagan",
-      "title": "领导人",
+      "title": "",
       "posthumousName": null,
       "templeName": null,
       "eraNames": [],
@@ -1436,7 +1436,7 @@
       "id": "reign-jiang-jingguo-roc",
       "dynastyId": "roc",
       "personId": "jiang-jingguo",
-      "title": "领导人",
+      "title": "",
       "posthumousName": null,
       "templeName": null,
       "eraNames": [],
@@ -1462,7 +1462,7 @@
       "id": "reign-li-denghui-roc",
       "dynastyId": "roc",
       "personId": "li-denghui",
-      "title": "领导人",
+      "title": "",
       "posthumousName": null,
       "templeName": null,
       "eraNames": [],
@@ -1488,7 +1488,7 @@
       "id": "reign-chen-shuibian-roc",
       "dynastyId": "roc",
       "personId": "chen-shuibian",
-      "title": "领导人",
+      "title": "",
       "posthumousName": null,
       "templeName": null,
       "eraNames": [],
@@ -1514,7 +1514,7 @@
       "id": "reign-ma-yingjiu-roc",
       "dynastyId": "roc",
       "personId": "ma-yingjiu",
-      "title": "领导人",
+      "title": "",
       "posthumousName": null,
       "templeName": null,
       "eraNames": [],
@@ -1540,7 +1540,7 @@
       "id": "reign-cai-yingwen-roc",
       "dynastyId": "roc",
       "personId": "cai-yingwen",
-      "title": "领导人",
+      "title": "",
       "posthumousName": null,
       "templeName": null,
       "eraNames": [],
@@ -1566,7 +1566,7 @@
       "id": "reign-lai-qingde-roc",
       "dynastyId": "roc",
       "personId": "lai-qingde",
-      "title": "领导人",
+      "title": "",
       "posthumousName": null,
       "templeName": null,
       "eraNames": [],

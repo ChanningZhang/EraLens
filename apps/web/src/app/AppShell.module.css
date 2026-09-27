@@ -31,7 +31,7 @@
 
 .brandTitle {
   margin: 0;
-  font-family: var(--font-serif);
+  font-family: "EraLens Brand Serif", var(--font-serif);
   font-size: 17px;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -116,7 +116,7 @@
   cursor: pointer;
 }
 
-.settingsButton svg { width: 19px; height: 19px; fill: currentColor; }
+.settingsButton svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .settingsButton:hover { color: var(--color-ink); border-color: var(--color-accent); }
 
 .settingsPanel {
@@ -124,7 +124,8 @@
   bottom: calc(100% + 8px);
   left: calc(100% + 8px);
   z-index: 20;
-  width: 210px;
+  width: 300px;
+  max-width: calc(100vw - 72px);
   max-height: min(70vh, 420px);
   overflow: auto;
   padding: 14px;
@@ -141,7 +142,16 @@
 
 .settingsPanel h2 { margin: 0 0 10px; font: 600 14px var(--font-serif); }
 .settingsOption { display: flex; align-items: center; gap: 9px; min-height: 44px; font-size: 13px; cursor: pointer; }
-.settingsOption input { accent-color: var(--color-accent); }
+.settingsOption input { accent-color: var(--color-ink-secondary); }
+.eventSettingsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 8px;
+  row-gap: 2px;
+}
+.eventSettingsGrid .settingsOption { min-width: 0; min-height: 34px; gap: 7px; }
+.eventSettingsGrid .settingsOption input { flex: 0 0 auto; }
+.eventSettingsGrid .settingsOption > span { min-width: 0; }
 
 .autoLayoutButton {
   min-height: 44px;

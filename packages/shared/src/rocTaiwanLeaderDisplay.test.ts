@@ -24,7 +24,7 @@ describe("rocTaiwanLeaderDisplay", () => {
     ).toBe("明");
   });
 
-  it("uses 台湾地区 · 领导人 for ROC reigns starting in 1950 or later", () => {
+  it("uses 台湾地区 for ROC reigns starting in 1950 or later", () => {
     expect(
       isRocTaiwanLeaderReign({
         dynastyId: "roc",
@@ -43,7 +43,7 @@ describe("rocTaiwanLeaderDisplay", () => {
         start: { year: 2000, month: 5 },
       }),
     ).toBe(true);
-    expect(resolveRocReignDetailSubtitle()).toBe("台湾地区 · 领导人");
+    expect(resolveRocReignDetailSubtitle()).toBe("台湾地区");
     expect(
       resolveRocReignRegionLabel(
         { dynastyId: "roc", start: { year: 2016, month: 5 } },
