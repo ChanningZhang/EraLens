@@ -590,6 +590,8 @@ const top = alignment === "bottom"
 
 ### 第 4 批：触控交互统一（4–7 天）
 
+状态：代码实现完成，TypeScript 检查通过；iPhone/iPad 真机与 VoiceOver 实测纳入第 6 批验收。
+
 任务：
 
 - 将 Tooltip 改造为 hover/focus/touch 可用的 `InfoPopover`。

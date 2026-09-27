@@ -28,7 +28,7 @@ import {
 } from "../model/reignClusters";
 import { selectionStore } from "../state/selectionStore";
 import { viewportStore } from "../state/viewportStore";
-import { HoverTooltip } from "./HoverTooltip";
+import { InfoPopover } from "./InfoPopover";
 import { ReignWavyEdge } from "./ReignWavyEdge";
 import styles from "./ReignCard.module.css";
 
@@ -178,7 +178,7 @@ function ReignCardImpl({
         style={{ ["--card-color" as string]: color }}
       >
         {uncertainStart && <ReignWavyEdge side="left" />}
-        <HoverTooltip text={tooltipText}>
+        <InfoPopover text={tooltipText}>
           {(handlers) => (
             <button
               type="button"
@@ -216,7 +216,7 @@ function ReignCardImpl({
               )}
             </button>
           )}
-        </HoverTooltip>
+        </InfoPopover>
         {uncertainEnd && <ReignWavyEdge side="right" />}
       </div>
       {detail === "below" && (

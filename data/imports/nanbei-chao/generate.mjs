@@ -747,6 +747,7 @@ const sql = [
   "DELETE FROM event_participants WHERE event_id IN ('song-liu-founded', 'qi-nan-founded', 'liang-nan-founded', 'chen-nan-founded', 'qi-bei-founded', 'zhou-bei-founded', 'yang-jian-usurp', 'sui-chen-unify');",
   "DELETE FROM event_dynasties WHERE event_id IN ('song-liu-founded', 'qi-nan-founded', 'liang-nan-founded', 'chen-nan-founded', 'qi-bei-founded', 'zhou-bei-founded', 'yang-jian-usurp', 'sui-chen-unify');",
   "DELETE FROM events WHERE id IN ('song-liu-founded', 'qi-nan-founded', 'liang-nan-founded', 'chen-nan-founded', 'qi-bei-founded', 'zhou-bei-founded', 'yang-jian-usurp', 'sui-chen-unify');",
+  "DELETE FROM relations WHERE id = 'rel-songliu-liu-yu-jin';",
   "",
   "-- persons",
   ...importPersons.map(personSql),

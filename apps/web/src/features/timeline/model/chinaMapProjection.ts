@@ -38,6 +38,8 @@ export type ChinaMapLayout = {
   height: number;
 };
 
+export type ChinaMapVerticalAlignment = "center" | "bottom";
+
 /** Project latitude into display space (must match generate-china-outline.mjs). */
 export function projectChinaLatitude(lat: number): number {
   return (
@@ -82,6 +84,7 @@ export function resolveChinaMapLayout(
   width: number,
   height: number,
   padding: number | ChinaMapInsets = 16,
+  verticalAlignment: ChinaMapVerticalAlignment = "center",
 ): ChinaMapLayout {
   const insets = normalizeInsets(padding);
   const { minLng, maxLng, minLat, maxLat } = CHINA_MAP_BOUNDS;
@@ -108,10 +111,28 @@ export function resolveChinaMapLayout(
   // space remains on the right as intentional breathing room.
   return {
     left: insets.left,
-    top: insets.top + (maxInnerH - innerH) / 2,
+    top: verticalAlignment === "bottom"
+      ? height - insets.bottom - innerH
+      : insets.top + (maxInnerH - innerH) / 2,
     width: innerW,
     height: innerH,
   };
+}
+
+export function projectGcj02InLayout(
+  lng: number,
+  lat: number,
+  layout: ChinaMapLayout,
+): MapPoint {
+  const { minLng, maxLng, minLat, maxLat } = CHINA_MAP_BOUNDS;
+  const lngSpan = maxLng - minLng;
+  const latSpan = projectChinaLatitude(maxLat) - projectChinaLatitude(minLat);
+  const x = layout.left + ((lng - minLng) / lngSpan) * layout.width;
+  const y =
+    layout.top +
+    ((projectChinaLatitude(maxLat) - projectChinaLatitude(lat)) / latSpan) *
+      layout.height;
+  return { x, y };
 }
 
 export function projectGcj02(
@@ -121,16 +142,11 @@ export function projectGcj02(
   height: number,
   padding: number | ChinaMapInsets = 16,
 ): MapPoint {
-  const { minLng, maxLng, minLat, maxLat } = CHINA_MAP_BOUNDS;
-  const layout = resolveChinaMapLayout(width, height, padding);
-  const lngSpan = maxLng - minLng;
-  const latSpan = projectChinaLatitude(maxLat) - projectChinaLatitude(minLat);
-  const x = layout.left + ((lng - minLng) / lngSpan) * layout.width;
-  const y =
-    layout.top +
-    ((projectChinaLatitude(maxLat) - projectChinaLatitude(lat)) / latSpan) *
-      layout.height;
-  return { x, y };
+  return projectGcj02InLayout(
+    lng,
+    lat,
+    resolveChinaMapLayout(width, height, padding),
+  );
 }
 
 /** Convert domestic WGS84 event coordinates to the GCJ-02 frame used by the map. */

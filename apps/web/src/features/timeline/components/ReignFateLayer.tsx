@@ -1,6 +1,6 @@
 import type { PlacedReignFate } from "../model/reignFateLayout";
 import { motion, useReducedMotion } from "framer-motion";
-import { HoverTooltip } from "./HoverTooltip";
+import { InfoPopover } from "./InfoPopover";
 import styles from "./ReignFateLayer.module.css";
 
 type Props = {
@@ -17,7 +17,7 @@ export function ReignFateLayer({ placed, height }: Props) {
     <svg
       className={styles.layer}
       style={{ height }}
-      role="img"
+      role="group"
       aria-label="跨王朝帝王关系"
     >
       {placed.map((item) => {
@@ -27,11 +27,13 @@ export function ReignFateLayer({ placed, height }: Props) {
           { x1: item.eventX, x2: item.destinationX, y1: item.destinationY, y2: item.destinationY },
         ];
         return (
-          <HoverTooltip key={item.id} text={item.tooltip} followPointer>
+          <InfoPopover key={item.id} text={item.tooltip} followPointer>
             {(handlers) => (
             <g
               className={styles.link}
               style={{ ["--card-color" as string]: item.color }}
+              role="img"
+              tabIndex={0}
               aria-label={item.tooltip}
               {...handlers}
             >
@@ -92,7 +94,7 @@ export function ReignFateLayer({ placed, height }: Props) {
               />
             </g>
             )}
-          </HoverTooltip>
+          </InfoPopover>
         );
       })}
     </svg>

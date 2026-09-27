@@ -29,18 +29,19 @@ Apple Team 尚未配置；这不阻止无签名模拟器构建，连接开发者
 
 基线截图目录：[baseline-screenshots](baseline-screenshots/)。已保存 iPhone 17 Pro 模拟器 iOS 26.4 的首页竖屏与横屏截图；页面外壳正常显示，数据区显示 API 不可用提示。应补采桌面首页、上述八个历史窗口和五类详情抽屉的 Web 截图；最低版本与 iPad 截图也待补。
 
-性能记录项：冷启动至首屏、首个 timeline 响应、窗口切换、搜索响应、详情打开、缩放期间帧率与峰值内存。桌面/浏览器和最低版本 iOS 设备分别记录。当前主机没有可用 Simulator runtime 或已连接设备，尚未采集这些截图与运行时数值；不要将 Vite 构建耗时当成应用性能基线。
+性能记录项：冷启动至首屏、首个 timeline 响应、窗口切换、搜索响应、详情打开、缩放期间帧率与峰值内存。桌面/浏览器和最低版本 iOS 设备分别记录。尚未采集这些性能数值；不要将 Vite 构建耗时当成应用性能基线。
 
 ## 当前可重复构建记录
 
-`pnpm --filter @eralens/web build:ios`：Vite 6.4.3 成功，输出 CSS 45.61 kB、repository chunk 1.39 kB、主 JS 716.48 kB（gzip 分别为 9.09 / 0.57 / 234.53 kB）。主 JS 超过 500 kB 的 Vite 提示作为首轮包体记录，不在第 0 批调整代码拆分。
+`pnpm --filter @eralens/web build:ios`：Vite 6.4.3 成功，输出 CSS 45.61 kB、SQLite probe chunk 1.12 kB、两个 Web 插件 chunk 1.25 / 9.63 kB、主 JS 769.06 kB（gzip 分别为 9.09 / 0.71 / 0.58 / 1.34 / 248.20 kB）。主 JS 超过 500 kB 的 Vite 提示作为首轮包体记录，不在第 2 批调整代码拆分。
 
 ## 设备覆盖状态
 
 - Xcode 26.4 已安装，iOS SDK 26.4 可用。
-- `xcrun simctl list runtimes` 当前没有已安装的模拟器 runtime。
+- 已安装 iOS 26.4 Simulator runtime；iPhone 17 Pro 与 iPad (A16) 模拟器可用。
 - `xcrun devicectl list devices` 当前未发现连接设备。
-- iOS 16.2 离线启动、旋转、`color-mix()` 运行时显示和 SQLite 真机探针因此尚未完成。
+- iOS 16.2 runtime 和真机仍不可用，最低版本及真机运行验证尚未完成。
 - iOS 26.4 iPhone 17 Pro 已完成空壳构建、启动和横竖屏旋转；探针 SQLite `integrity_check` 为 `ok`，参数查询回执为“秦始皇统一六国 / -221”，WebKit 返回 `color(srgb 0.5 0 0.5)`。
-- iPad (A16) iOS 26.4 已安装并启动空壳；iPad 可旋转，但现有 Web 界面尚未适配横屏与 2:1 分区，此项留在第 3 批。
+- 第 2 批构建已在 iPhone 17 Pro / iOS 26.4 安装启动，首页显示本地 SQLite 时间轴数据。
+- iPad (A16) iOS 26.4 已安装并启动第 2 批构建；竖屏与横屏都显示本地 SQLite 时间轴数据。2:1 分屏适配尚未验证，留在第 3 批。
 - 真机 SQLite 探针和 iOS 16.2 运行时仍待完成。

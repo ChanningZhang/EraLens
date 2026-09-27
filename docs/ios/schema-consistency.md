@@ -2,6 +2,19 @@
 
 第 0 批冻结事件类型基线。`agriculture` 已存在于共享契约和真实导入数据；迁移只补齐文档枚举，不改变数据分类。第 1 批快照全量 Zod 校验另外发现真实关系数据含 `politics`，因此关系枚举同步补齐并将 SQLite `contractVersion` 从 1 提升到 2。
 
+## 第 2 批 Repository 与查询一致性
+
+- Repository 契约和 HTTP / SQLite 装配位于 `packages/data-access/`。Web 默认使用 HTTP；Capacitor 原生平台默认使用 SQLite；`VITE_DATA_SOURCE=mock` 仍只用于开发 Mock。
+- `SqliteTimelineRepository` 首次访问时读取快照各实体表并按 shared Zod schema 映射，后续通过 `filterTimeline()`、`buildEntityDetail()`、`searchEntities()` 等 shared 规则提供查询结果。
+- 事件显示设置由 Repository 持久化；iOS 使用 Capacitor Preferences，Web 使用 localStorage，HTTP 模式沿用 API 设置端点。详情 URL 状态移入 `selectionUrlState.ts`，详情宽度设置移入 `userSettings.ts`。
+- `getPersons() / getReigns() / getEvents()` 原本只有 Mock 有实现、没有调用方，已从 Repository 契约移除。
+- `pnpm data:mobile:contract` 对比八个固定历史窗口、四种 LOD、五类详情、搜索、bounds、catalog 和 capitals；比较前只对无顺序语义的 ID 集合规范排序。`pnpm data:mobile:sqlite-smoke` 可在没有 API 的情况下跑 SQLite 查询冒烟检查。
+- `pnpm ios:sync` 现在先校验正式快照，再把 `eralens-content.sqlite` 复制为 Capacitor assets 所需的 `eralens-content.db`，最后构建 Web 并同步原生工程。
+
+全量对照已通过：从本机 PostgreSQL 重建快照后，SQLite 完整性、外键与全量 Zod 校验通过（schema 1 / contract 2）；Repository 对照通过 52 组比较，覆盖八个固定窗口、四种 LOD、五类详情、搜索、bounds、catalog 和 capitals。先前发现的 11 条悬空关系已按来源修复：删除两个指向已删除事件的事件关联；重放命运线源，更新九条有效的人物命运关系，其中陈叔宝降隋改为关联现存的 `sui-unify`，其余过期事件关联清空。
+
+iPhone 17 Pro 与 iPad (A16) / iOS 26.4 模拟器验证：首次启动暴露本机 `apps/web/.env` 的 HTTP 配置覆盖了原生 SQLite 自动选择；新增 `.env.ios` 明确指定 `VITE_DATA_SOURCE=sqlite` 后，重跑 `pnpm ios:sync`、模拟器构建、安装并启动成功。两台设备页面均显示本地快照中的时间轴数据，无需 API 服务。
+
 | 契约项 | 当前定义位置 | 当前状态 |
 |---|---|---|
 | `EventKindSchema` | `packages/shared/src/schema.ts` | `battle`, `politics`, `culture`, `disaster`, `commerce`, `agriculture`, `finance`, `idiom`, `poetry`, `other` |

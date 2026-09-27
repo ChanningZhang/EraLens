@@ -6,7 +6,8 @@ const config: CapacitorConfig = {
   webDir: "../web/dist",
   bundledWebRuntime: false,
   ios: {
-    contentInset: "automatic",
+    // CSS env(safe-area-inset-*) is the single source for the shared React UI.
+    contentInset: "never",
   },
 };
 

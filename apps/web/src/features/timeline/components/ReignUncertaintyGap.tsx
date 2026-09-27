@@ -10,7 +10,7 @@ import {
   assignReignStacks,
   stackRowOffset,
 } from "../model/reignClusters";
-import { HoverTooltip } from "./HoverTooltip";
+import { InfoPopover } from "./InfoPopover";
 import styles from "./ReignUncertaintyGap.module.css";
 
 const MIN_RENDER_PX = 4;
@@ -78,13 +78,15 @@ export function ReignUncertaintyGap({ boundary, rulers, color }: Props) {
         ["--gap-color" as string]: color,
       }}
     >
-      <HoverTooltip text={tooltipText}>
+      <InfoPopover text={tooltipText}>
         {(handlers) => (
           <div
             className={[styles.gap, isJunction ? styles.junction : ""]
               .filter(Boolean)
               .join(" ")}
             aria-label="年代失考"
+            role="img"
+            tabIndex={0}
             {...handlers}
           >
             <WavyEdge side="left" />
@@ -92,7 +94,7 @@ export function ReignUncertaintyGap({ boundary, rulers, color }: Props) {
             <WavyEdge side="right" />
           </div>
         )}
-      </HoverTooltip>
+      </InfoPopover>
     </div>
   );
 }

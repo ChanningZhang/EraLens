@@ -1,4 +1,4 @@
-import { memo, useMemo, useRef, useState } from "react";
+import { memo, useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import {
   activeReignsAtAbs,
@@ -26,10 +26,12 @@ import {
 import { useDataBounds, useTimelineData } from "../hooks/useTimelineData";
 import { useDynastyCapitals } from "../hooks/useDynastyCapitals";
 import { useLaneColorCatalog } from "../hooks/useLaneColorCatalog";
-import { useStageViewportHeight } from "../hooks/useStageViewportHeight";
+import { useStageViewportSize } from "../hooks/useStageViewportHeight";
+import { resolveChinaMapInsets, resolveChinaMapLayout } from "../model/chinaMapProjection";
 import { useTimelineCatalog } from "../hooks/useTimelineCatalog";
 import { useViewport } from "../hooks/useViewport";
 import { useSelection } from "../hooks/useSelection";
+import { viewportStore } from "../state/viewportStore";
 import {
   eventLaneCount,
   eventTargetReign,
@@ -41,7 +43,7 @@ import {
 } from "../model/eventLayout";
 import { assignLanes } from "../model/laneLayout";
 import { shouldShowEvent, shouldShowPersons } from "../model/lod";
-import { centerGuideX, laneLabelAnchorAbs } from "../model/coordinates";
+import { absFromStageX, centerGuideX, laneLabelAnchorAbs } from "../model/coordinates";
 import {
   layoutPersons,
   PERSON_LAYER_BOTTOM_PAD,
@@ -84,14 +86,213 @@ function sameReignIds(a: readonly Reign[] | undefined, b: readonly Reign[]): boo
 
 export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConfig }) {
   const stageRef = useRef<HTMLDivElement>(null);
-  const mapDragRef = useRef<{ pointerId: number; x: number; y: number } | null>(null);
+  const mapPointersRef = useRef(new Map<number, { x: number; y: number }>());
+  const mapGestureRef = useRef<{ distance: number; midpoint: { x: number; y: number } } | null>(null);
+  const timelinePointersRef = useRef(new Map<number, { x: number; y: number }>());
+  const timelineGestureRef = useRef<{
+    mode: "pending" | "pan" | "pinch";
+    x: number;
+    y: number;
+    time: number;
+    velocity: number;
+    distance: number;
+  } | null>(null);
+  const timelineInertiaRef = useRef<number | null>(null);
   const [mapView, setMapView] = useState({ scale: 1, x: 0, y: 0 });
   const mapOffset = useMemo(() => ({ x: mapView.x, y: mapView.y }), [mapView.x, mapView.y]);
-  const stageViewportHeight = useStageViewportHeight(stageRef);
-  const reduceMotion = useReducedMotion();
+  const stageViewportSize = useStageViewportSize(stageRef);
+  const stageViewportHeight = stageViewportSize.height;
   const viewport = useViewport();
+  const mapVerticalAlignment = stageViewportSize.height > stageViewportSize.width
+    ? "bottom"
+    : "center";
+  const mapLayout = useMemo(() => {
+    if (stageViewportSize.width < 1 || stageViewportSize.height < 1) return null;
+    return resolveChinaMapLayout(
+      stageViewportSize.width,
+      stageViewportSize.height,
+      resolveChinaMapInsets(viewport.gutterPx),
+      mapVerticalAlignment,
+    );
+  }, [mapVerticalAlignment, stageViewportSize.height, stageViewportSize.width, viewport.gutterPx]);
+  const reduceMotion = useReducedMotion();
   const selection = useSelection();
   const { data, isLoading, error } = useTimelineData();
+
+  const stopTimelineInertia = () => {
+    if (timelineInertiaRef.current !== null) {
+      cancelAnimationFrame(timelineInertiaRef.current);
+      timelineInertiaRef.current = null;
+    }
+  };
+
+  const startTimelineInertia = (initialVelocity: number) => {
+    let velocity = initialVelocity;
+    const step = () => {
+      if (Math.abs(velocity) < 0.012) {
+        timelineInertiaRef.current = null;
+        return;
+      }
+      const before = viewportStore.getSnapshot().centerAbs;
+      viewportStore.panByPixels(velocity * 16);
+      if (viewportStore.getSnapshot().centerAbs === before) {
+        timelineInertiaRef.current = null;
+        return;
+      }
+      velocity *= 0.9;
+      timelineInertiaRef.current = requestAnimationFrame(step);
+    };
+    if (Math.abs(velocity) > 0.045) timelineInertiaRef.current = requestAnimationFrame(step);
+  };
+
+  const onStagePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (!(event.target instanceof Element)) return;
+    const target = event.target;
+    const isButton = target.closest("button, a, input, textarea, select, [role='button']");
+    const mapBox = event.currentTarget.querySelector("[data-china-map-box]");
+    const mapRect = mapBox?.getBoundingClientRect();
+    const onMap = Boolean(mapRect && event.clientX >= mapRect.left && event.clientX <= mapRect.right && event.clientY >= mapRect.top && event.clientY <= mapRect.bottom);
+
+    if (onMap && !isButton && (event.pointerType === "touch" || event.button === 0)) {
+      mapPointersRef.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      const points = [...mapPointersRef.current.values()];
+      if (points.length >= 2) {
+        const [a, b] = points;
+        mapGestureRef.current = {
+          distance: Math.hypot(a.x - b.x, a.y - b.y),
+          midpoint: { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 },
+        };
+      } else {
+        mapGestureRef.current = null;
+      }
+      event.currentTarget.setPointerCapture(event.pointerId);
+      if (event.pointerType === "touch") event.preventDefault();
+      return;
+    }
+
+    if (event.pointerType !== "touch" || isButton || onMap) return;
+    stopTimelineInertia();
+    timelinePointersRef.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    const points = [...timelinePointersRef.current.values()];
+    if (points.length >= 2) {
+      const [a, b] = points;
+      timelineGestureRef.current = {
+        mode: "pinch",
+        x: (a.x + b.x) / 2,
+        y: (a.y + b.y) / 2,
+        time: performance.now(),
+        velocity: 0,
+        distance: Math.max(1, Math.hypot(a.x - b.x, a.y - b.y)),
+      };
+    } else {
+      timelineGestureRef.current = {
+        mode: "pending",
+        x: event.clientX,
+        y: event.clientY,
+        time: performance.now(),
+        velocity: 0,
+        distance: 0,
+      };
+    }
+    event.currentTarget.setPointerCapture(event.pointerId);
+  };
+
+  const onStagePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
+    const mapPoint = mapPointersRef.current.get(event.pointerId);
+    if (mapPoint) {
+      const previous = { ...mapPoint };
+      mapPointersRef.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      const points = [...mapPointersRef.current.values()];
+      if (points.length >= 2) {
+        const [a, b] = points;
+        const nextDistance = Math.max(1, Math.hypot(a.x - b.x, a.y - b.y));
+        const midpoint = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+        const last = mapGestureRef.current;
+        if (last && last.distance > 0) {
+          const stageRect = event.currentTarget.getBoundingClientRect();
+          const anchorX = last.midpoint.x - stageRect.left;
+          const anchorY = last.midpoint.y - stageRect.top;
+          const factor = nextDistance / last.distance;
+          setMapView((view) => {
+            const scale = Math.max(0.7, Math.min(2.8, view.scale * factor));
+            const applied = scale / view.scale;
+            return {
+              scale,
+              x: anchorX - (anchorX - view.x) * applied,
+              y: anchorY - (anchorY - view.y) * applied,
+            };
+          });
+        }
+        mapGestureRef.current = { distance: nextDistance, midpoint };
+      } else {
+        setMapView((view) => ({ ...view, x: view.x + event.clientX - previous.x, y: view.y + event.clientY - previous.y }));
+      }
+      if (event.pointerType === "touch") event.preventDefault();
+      return;
+    }
+
+    if (!timelinePointersRef.current.has(event.pointerId)) return;
+    timelinePointersRef.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
+    const points = [...timelinePointersRef.current.values()];
+    const gesture = timelineGestureRef.current;
+    if (!gesture) return;
+    if (points.length >= 2) {
+      const [a, b] = points;
+      const distance = Math.max(1, Math.hypot(a.x - b.x, a.y - b.y));
+      const midpointX = (a.x + b.x) / 2;
+      if (gesture.mode === "pinch" && gesture.distance > 0) {
+        const rect = event.currentTarget.getBoundingClientRect();
+        const localX = midpointX - rect.left;
+        const viewport = viewportStore.getSnapshot();
+        const anchorAbs = localX < viewport.gutterPx || localX > rect.width
+          ? viewport.centerAbs
+          : absFromStageX(viewport, localX);
+        viewportStore.zoomBy(distance / gesture.distance, anchorAbs);
+      }
+      timelineGestureRef.current = { ...gesture, mode: "pinch", distance, x: midpointX, y: (a.y + b.y) / 2 };
+      event.preventDefault();
+      return;
+    }
+
+    const dx = event.clientX - gesture.x;
+    const dy = event.clientY - gesture.y;
+    if (gesture.mode === "pending") {
+      if (Math.abs(dx) < 7 || Math.abs(dx) < Math.abs(dy) * 1.2) return;
+      timelineGestureRef.current = { ...gesture, mode: "pan", x: event.clientX, y: event.clientY, time: performance.now() };
+      event.preventDefault();
+      return;
+    }
+    if (gesture.mode !== "pan") return;
+    const now = performance.now();
+    const delta = event.clientX - gesture.x;
+    const dt = now - gesture.time;
+    viewportStore.panByPixels(delta);
+    timelineGestureRef.current = {
+      ...gesture,
+      x: event.clientX,
+      y: event.clientY,
+      time: now,
+      velocity: dt > 0 ? delta / dt : gesture.velocity,
+    };
+    event.preventDefault();
+  };
+
+  const onStagePointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
+    if (mapPointersRef.current.has(event.pointerId)) {
+      mapPointersRef.current.delete(event.pointerId);
+      const points = [...mapPointersRef.current.values()];
+      if (points.length < 2) mapGestureRef.current = null;
+      if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+      return;
+    }
+    if (!timelinePointersRef.current.has(event.pointerId)) return;
+    timelinePointersRef.current.delete(event.pointerId);
+    const gesture = timelineGestureRef.current;
+    timelineGestureRef.current = null;
+    if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
+    if (gesture?.mode === "pan" && timelinePointersRef.current.size === 0) startTimelineInertia(gesture.velocity);
+  };
+  useEffect(() => () => stopTimelineInertia(), []);
 
   const dynastiesById = useMemo(() => {
     const map = new Map<string, Dynasty>();
@@ -441,28 +642,12 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       className={styles.stage}
       data-timeline-pan
       data-timeline-stage
-      onPointerDown={(event) => {
-        if (event.button !== 0 || !(event.target instanceof Element)) return;
-        if (event.target.closest("button, a, input, textarea, select, [role='button']")) return;
-        const mapBox = event.currentTarget.querySelector("[data-china-map-box]");
-        const rect = mapBox?.getBoundingClientRect();
-        if (!rect || event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) return;
-        mapDragRef.current = { pointerId: event.pointerId, x: event.clientX, y: event.clientY };
-        event.currentTarget.setPointerCapture(event.pointerId);
-        event.preventDefault();
-      }}
-      onPointerMove={(event) => {
-        const drag = mapDragRef.current;
-        if (!drag || drag.pointerId !== event.pointerId) return;
-        setMapView((view) => ({ ...view, x: view.x + event.clientX - drag.x, y: view.y + event.clientY - drag.y }));
-        mapDragRef.current = { ...drag, x: event.clientX, y: event.clientY };
-      }}
-      onPointerUp={(event) => {
-        if (mapDragRef.current?.pointerId !== event.pointerId) return;
-        mapDragRef.current = null;
-        if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
-      }}
-      onPointerCancel={() => { mapDragRef.current = null; }}
+      data-testid="timeline-workspace"
+      data-map-vertical-alignment={mapVerticalAlignment}
+      onPointerDown={onStagePointerDown}
+      onPointerMove={onStagePointerMove}
+      onPointerUp={onStagePointerUp}
+      onPointerCancel={onStagePointerUp}
       style={{
         ["--center-guide-x" as string]: `${centerGuideX(viewport)}px`,
         ...(stageViewportHeight > 0
@@ -473,7 +658,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       <div className={styles.mapUnderlay} aria-hidden="true">
         <div className={styles.viewportPanel}>
           <StableChinaMapBackground
-            gutterPx={viewport.gutterPx}
+            layout={mapLayout}
             scale={mapView.scale}
             offset={mapOffset}
           />
@@ -575,7 +760,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
             dynastyNamesById={dynastyNamesById}
             laneColorMap={laneColorMap}
             atAbs={labelAnchorAbs}
-            gutterPx={viewport.gutterPx}
+            layout={mapLayout}
             scale={mapView.scale}
             offset={mapOffset}
           />
@@ -586,7 +771,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
           <EventMapLayer
             events={nearbyEvents}
             atAbs={viewport.centerAbs}
-            gutterPx={viewport.gutterPx}
+            layout={mapLayout}
             scale={mapView.scale}
             offset={mapOffset}
           />

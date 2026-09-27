@@ -122,7 +122,7 @@ function truncateText(text: string, max = 36): string {
 
 function sortEventsByAnchor(events: Event[]): Event[] {
   return [...events].sort(
-    (a, b) => eventSpanAbs(a).anchorAbs - eventSpanAbs(b).anchorAbs,
+    (a, b) => eventSpanAbs(a).anchorAbs - eventSpanAbs(b).anchorAbs || a.id.localeCompare(b.id),
   );
 }
 

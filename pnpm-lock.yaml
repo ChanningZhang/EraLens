@@ -14,6 +14,9 @@ importers:
 
   apps/api:
     dependencies:
+      '@eralens/data-access':
+        specifier: workspace:*
+        version: link:../../packages/data-access
       '@eralens/shared':
         specifier: workspace:*
         version: link:../../packages/shared
@@ -70,6 +73,9 @@ importers:
       '@capacitor/core':
         specifier: 8.5.2
         version: 8.5.2
+      '@eralens/data-access':
+        specifier: workspace:*
+        version: link:../../packages/data-access
       '@eralens/shared':
         specifier: workspace:*
         version: link:../../packages/shared
@@ -110,6 +116,21 @@ importers:
       vitest:
         specifier: ^3.0.5
         version: 3.2.7(@types/node@22.20.2)(jiti@2.7.0)(tsx@4.23.13)
+
+  packages/data-access:
+    dependencies:
+      '@capacitor-community/sqlite':
+        specifier: 8.1.1
+        version: 8.1.1(@capacitor/core@8.5.2)
+      '@capacitor/core':
+        specifier: 8.5.2
+        version: 8.5.2
+      '@capacitor/preferences':
+        specifier: 8.0.1
+        version: 8.0.1(@capacitor/core@8.5.2)
+      '@eralens/shared':
+        specifier: workspace:*
+        version: link:../shared
 
   packages/shared:
     dependencies:

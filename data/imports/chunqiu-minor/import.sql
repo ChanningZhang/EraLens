@@ -7,6 +7,7 @@ DELETE FROM reigns WHERE id = 'reign-missing-zhou-guo-west--365';
 DELETE FROM event_participants WHERE event_id = 'dai-founded';
 DELETE FROM event_dynasties WHERE event_id = 'dai-founded';
 DELETE FROM events WHERE id = 'dai-founded';
+DELETE FROM relations WHERE id = 'rel-dai-founded-zhao-jia';
 DELETE FROM reigns WHERE id IN (
   'reign-xue-r0-xue-chunqiu',
   'reign-teng-r0-teng-chunqiu',

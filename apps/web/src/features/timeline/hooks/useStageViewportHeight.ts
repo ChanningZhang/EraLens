@@ -1,16 +1,24 @@
 import { useEffect, useState, type RefObject } from "react";
 
-/** Tracks the scrollport height of TimelineStage (not the tall lane content). */
-export function useStageViewportHeight(stageRef: RefObject<HTMLElement | null>): number {
-  const [height, setHeight] = useState(0);
+export type StageViewportSize = { width: number; height: number };
+
+/** Tracks the scrollport size of TimelineStage (not the tall lane content). */
+export function useStageViewportSize(stageRef: RefObject<HTMLElement | null>): StageViewportSize {
+  const [size, setSize] = useState<StageViewportSize>({ width: 0, height: 0 });
 
   useEffect(() => {
     const el = stageRef.current;
     if (!el) return;
 
     const apply = () => {
-      const next = el.clientHeight;
-      if (next > 0) setHeight(next);
+      const next = { width: el.clientWidth, height: el.clientHeight };
+      if (next.width > 0 && next.height > 0) {
+        setSize((previous) =>
+          previous.width === next.width && previous.height === next.height
+            ? previous
+            : next,
+        );
+      }
     };
 
     apply();
@@ -19,5 +27,5 @@ export function useStageViewportHeight(stageRef: RefObject<HTMLElement | null>):
     return () => observer.disconnect();
   }, [stageRef]);
 
-  return height;
+  return size;
 }

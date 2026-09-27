@@ -60,7 +60,7 @@
   left: calc(var(--timeline-gutter) + 14px);
   bottom: 14px;
   display: grid;
-  width: 38px;
+  width: 46px;
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--color-ochre) 24%, var(--color-border));
   border-radius: 12px;
@@ -73,8 +73,8 @@
 }
 
 .mapControls button {
-  width: 36px;
-  height: 34px;
+  width: 44px;
+  min-height: 44px;
   border: 0;
   background: transparent;
   color: var(--color-ink);
