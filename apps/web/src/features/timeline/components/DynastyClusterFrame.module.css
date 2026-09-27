@@ -14,6 +14,7 @@
   top: 0;
   /* Align with frozen dynasty chips (inset); offset frame border + padX. */
   left: 4px;
+  /* Place the group name on the frame's top edge, like a fieldset legend. */
   transform: translateY(-50%);
   padding: 0 5px;
   font-family: var(--font-serif);
@@ -24,8 +25,4 @@
   color: color-mix(in srgb, var(--color-ochre) 42%, var(--color-ink-secondary));
   background: color-mix(in srgb, var(--color-ochre) 9%, var(--color-paper));
   white-space: nowrap;
-}
-
-.compact .legend {
-  transform: translateY(0);
 }

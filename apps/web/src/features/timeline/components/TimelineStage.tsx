@@ -450,13 +450,19 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     let top = railHeight + EVENT_CONTROL_LANE_CLEARANCE;
     const clusterGroupIds = new Set((data?.dynastyGroups ?? []).map((group) => group.id));
     let previousClusterId: string | null = null;
+    let hasPreviousLane = false;
     return placed.map((dynasty) => {
       const clusterId =
         dynasty.groupId && clusterGroupIds.has(dynasty.groupId) ? dynasty.groupId : null;
-      if (previousClusterId && clusterId !== previousClusterId) {
+      if (
+        hasPreviousLane &&
+        previousClusterId !== clusterId &&
+        (previousClusterId !== null || clusterId !== null)
+      ) {
         top += clusterLaneGapForPresentation(viewport.presentation, clusterId !== null);
       }
       previousClusterId = clusterId;
+      hasPreviousLane = true;
       let prepared = lanePreparedCache.get(dynasty.id);
       if (!prepared) {
         const records = collectLaneReigns(dynasty.id, reignsByDynasty, laneGroups);
@@ -669,7 +675,6 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
                     height={height}
                     left={left}
                     width={width}
-                    compact={viewport.presentation.compact}
                   />
                 ))}
               </AnimatePresence>
