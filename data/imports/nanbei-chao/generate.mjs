@@ -667,7 +667,6 @@ for (const group of reignGroups) {
 relations.push(
   { id: "rel-houjing-xiao-yan", fromRef: "event:houjing-rebellion", toRef: "person:hou-jing", kind: "battle" },
   { id: "rel-zhouqi-yuwen-yong", fromRef: "event:zhou-qi-unify", toRef: "person:yuwen-yong", kind: "battle" },
-  { id: "rel-songliu-liu-yu-jin", fromRef: "event:song-liu-founded", toRef: "person:liu-yu-jin", kind: "succession" },
 );
 
 // ── SQL generation (same helpers as jin-sixteen) ─────────────────────────────
@@ -817,6 +816,7 @@ const manifest = {
     "补入侯景所建汉政权（han-houjing）：552年正月至五月以建康为都；萧栋按551年10月2日至552年1月1日的实日期间补入南梁主线。",
     "589 年隋灭陈为南北朝终结事件；隋（581–）不在本包内。",
     "西梁行在 nanbei-sixteen-extra，group_id 为 nan-chao，不另立组。",
+    "清理对本包已删除的 song-liu-founded 事件的孤儿关系；该关系不再写入 relations。",
   ],
 };
 writeFileSync(path.join(__dirname, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);

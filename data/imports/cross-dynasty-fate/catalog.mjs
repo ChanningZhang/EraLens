@@ -282,7 +282,6 @@ export function buildFateCatalog() {
       fromPersonId: "ruzi-ying",
       toPersonId: "wang-mang",
       kind: "abdication",
-      eventId: "wang-mang-usurp",
       resolveAt: () => atFromReignEnd("reign-ruzi-ying", 9),
     },
     {
@@ -672,7 +671,6 @@ export function buildFateCatalog() {
       fromPersonId: "liu-zhun",
       toPersonId: "xiao-daocheng",
       kind: "abdication",
-      eventId: "qi-nan-founded",
       resolveAt: () => atFromReignEnd("reign-liu-zhun", 479),
     },
     {
@@ -680,7 +678,6 @@ export function buildFateCatalog() {
       fromPersonId: "xiao-baorong",
       toPersonId: "xiao-yan",
       kind: "abdication",
-      eventId: "liang-nan-founded",
       resolveAt: () => atFromReignEnd("reign-xiao-baorong", 502),
     },
     {
@@ -729,7 +726,6 @@ export function buildFateCatalog() {
       fromPersonId: "xiao-fangzhi",
       toPersonId: "chen-baxian",
       kind: "abdication",
-      eventId: "chen-nan-founded",
       resolveAt: () => atFromReignEnd("reign-xiao-fangzhi", 557),
     },
     {
@@ -737,7 +733,6 @@ export function buildFateCatalog() {
       fromPersonId: "tuoba-kuo",
       toPersonId: "yuwen-jue",
       kind: "abdication",
-      eventId: "zhou-bei-founded",
       resolveAt: () => atFromReignEnd("reign-tuoba-kuo", 557),
     },
     {
@@ -753,7 +748,6 @@ export function buildFateCatalog() {
       fromPersonId: "yuwen-yan",
       toPersonId: "yang-jian",
       kind: "abdication",
-      eventId: "yang-jian-usurp",
       resolveAt: () => atFromReignEnd("reign-yuwen-yan", 581),
     },
     {
@@ -761,7 +755,7 @@ export function buildFateCatalog() {
       fromPersonId: "chen-shubao",
       toPersonId: "yang-jian",
       kind: "surrender",
-      eventId: "sui-chen-unify",
+      eventId: "sui-unify",
       resolveAt: () => atFromReignEnd("reign-chen-shubao", 589),
     },
     {
@@ -777,7 +771,6 @@ export function buildFateCatalog() {
       fromPersonId: "yuan-shan-jian",
       toPersonId: "gao-yang",
       kind: "abdication",
-      eventId: "qi-bei-founded",
       resolveAt: () => atFromReignEnd("reign-yuan-shan-jian", 550),
     },
     {
@@ -885,7 +878,6 @@ export function buildFateCatalog() {
       fromPersonId: "li-zhu-tang",
       toPersonId: "zhu-wen",
       kind: "abdication",
-      eventId: "zhu-wen-usurp",
       resolveAt: () => atFromReignEnd("reign-li-zhu-tang", 907),
     },
     {

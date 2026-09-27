@@ -64,8 +64,10 @@
   overflow: hidden;
   border: 1px solid color-mix(in srgb, var(--color-ochre) 24%, var(--color-border));
   border-radius: 12px;
+  background: var(--color-surface);
   background: color-mix(in srgb, var(--color-surface) 92%, transparent);
   box-shadow: 0 4px 14px color-mix(in srgb, var(--color-ink) 14%, transparent), inset 0 1px 0 white;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   pointer-events: auto;
 }

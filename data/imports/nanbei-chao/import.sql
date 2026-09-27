@@ -644,8 +644,5 @@ ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind)
 VALUES ('rel-zhouqi-yuwen-yong', 'event', 'zhou-qi-unify', 'person', 'yuwen-yong', 'battle')
 ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
-INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind)
-VALUES ('rel-songliu-liu-yu-jin', 'event', 'song-liu-founded', 'person', 'liu-yu-jin', 'succession')
-ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 
 COMMIT;

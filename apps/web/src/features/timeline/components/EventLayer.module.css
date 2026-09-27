@@ -94,6 +94,7 @@
   border: var(--marker-border) solid
     color-mix(in srgb, var(--event-color) 34%, var(--color-border));
   border-radius: 999px;
+  background: var(--event-fill);
   background: color-mix(in srgb, var(--event-fill) 96%, transparent);
   color: color-mix(in srgb, var(--event-color) 48%, var(--color-ink-secondary));
   box-shadow:
@@ -102,6 +103,7 @@
   pointer-events: auto;
   cursor: pointer;
   white-space: nowrap;
+  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   transition:
     border-color var(--motion-fast),

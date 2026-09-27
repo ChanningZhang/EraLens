@@ -14,7 +14,13 @@
     "db:migrate": "pnpm --filter @eralens/api db:migrate",
     "db:seed": "pnpm --filter @eralens/api db:seed",
     "db:import": "node scripts/import-real-data.mjs",
-    "db:setup": "pnpm db:up && pnpm db:migrate && pnpm db:import"
+    "db:setup": "pnpm db:up && pnpm db:migrate && pnpm db:import",
+    "data:mobile:build": "pnpm --filter @eralens/api exec tsx scripts/export-mobile-sqlite.ts",
+    "data:mobile:validate": "pnpm --filter @eralens/api exec tsx scripts/validate-mobile-sqlite.ts",
+    "data:mobile:diff": "node scripts/data-mobile-diff.mjs",
+    "release:classify": "node scripts/release-classify.mjs",
+    "ios:sync": "pnpm --filter @eralens/ios probe:db && pnpm --filter @eralens/web build:ios && pnpm --filter @eralens/ios sync",
+    "ios:build:sim": "xcodebuild -project apps/ios/ios/App/App.xcodeproj -scheme App -configuration Debug -destination 'generic/platform=iOS Simulator' -derivedDataPath .build/ios/DerivedData -clonedSourcePackagesDirPath .build/ios/SourcePackages CODE_SIGNING_ALLOWED=NO build"
   },
   "devDependencies": {
     "typescript": "^5.7.3"

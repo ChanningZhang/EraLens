@@ -618,7 +618,6 @@ for (const group of reignGroups) {
   }
 }
 relations.push(
-  { id: "rel-dai-founded-zhao-jia", fromRef: "event:dai-founded", toRef: "person:zhao-jia-dai", kind: "politics" },
   { id: "rel-zhou-guo-split-chao", fromRef: "event:zhou-guo-split", toRef: "person:zhou-guo-chao", kind: "politics" },
   { id: "rel-zhou-guo-split-gen", fromRef: "event:zhou-guo-split", toRef: "person:zhou-guo-gen", kind: "politics" },
 );
@@ -689,6 +688,7 @@ const manifest = {
     "代王嘉 person id 为 zhao-jia-dai，与赵桓子 zhao-r2 区分。",
     "薛、滕、杞、莒、代用国号，不带「国」。西周国/东周国例外：史记、战国策原文称西周、东周（君称西周君、东周君）；后世为与王朝分期西周/东周消歧，维基百科与杨宽《战国史料编年辑证》等通行作西周国、东周国。",
     "东西周惠公泳道的年精度起年统一记为前366年；前367年为西周威公卒、周王畿分立之年，东周国的分立事件仍按前367年记。",
+    "清理对已在本包中删除的 dai-founded 事件的孤儿关系；该关系不再写入 relations。",
     "杞国列王按维基「杞国」君主表（在位年份已是逾年切分）；隐公仅前506年七月，与悼公死年同桶。滕悼公迄前514、顷公起前513，与维基在位年数一致。",
     "西周武公承西周惠公、为西周文公之父；《史记·周本纪》及《史记集解》引徐广注支持其世系，但均未载本名。《周朝诸侯国君主列表》列名共之，未标明该名所据原始文献；《西周国》君主表则列姓名不详，故数据库不把共之记作确证本名。惠公从有据的前366年起始，惠公、武公、文公具体继位年失考；以三位连续君主在前366年至前256年（含两端）共111年间各分37年作插值，区间分别为前366—前330、前329—前293、前292—前256，内侧边界均标 interpolated，前366与前256锚点保持确定。此均分为年代估算，不是史料所载在位年数。东周惠公之后至秦灭前仍为史料缺。",
   ],

@@ -51,7 +51,7 @@ description: >-
 - 先确认日期使用农历还是公历。不得把农历月日直接当公历录入；不能可靠换算时保留原文并降低精度，换算后须在 `date_note` 写依据。
 - 所有 `*_abs` 用 `absMonth()` 或项目生成器计算，禁止手填。
 
-`kind` 使用现有枚举：`battle | politics | culture | disaster | commerce | finance | idiom | poetry | other`。新增枚举必须同步 Zod、Prisma、共享标签、界面样式和入库 Skill，不能只在数据里发明新值。
+`kind` 使用现有枚举：`battle | politics | culture | disaster | commerce | agriculture | finance | idiom | poetry | other`。`agriculture` 用于农业生产、作物引种及相关农业技术传播。新增枚举必须同步 Zod、Prisma、共享标签、界面样式和入库 Skill，不能只在数据里发明新值。
 
 ## 内容与关联
 

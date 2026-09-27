@@ -54,9 +54,11 @@
   padding: 9px 13px;
   border: 1px solid var(--color-border);
   border-radius: 999px;
+  background: var(--color-surface);
   background: color-mix(in srgb, var(--color-surface) 94%, transparent);
   color: var(--color-ink);
   box-shadow: 0 4px 16px color-mix(in srgb, var(--color-ink) 9%, transparent);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
 
@@ -95,8 +97,10 @@
   border: 1px solid var(--color-border);
   border-radius: 50%;
   color: var(--color-ink-secondary);
+  background: var(--color-surface);
   background: color-mix(in srgb, var(--color-surface) 94%, transparent);
   box-shadow: 0 4px 16px color-mix(in srgb, var(--color-ink) 9%, transparent);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   cursor: pointer;
 }
@@ -114,8 +118,10 @@
   padding: 14px;
   border: 1px solid var(--color-border);
   border-radius: 12px;
+  background: var(--color-surface);
   background: color-mix(in srgb, var(--color-surface) 97%, transparent);
   box-shadow: 0 12px 32px color-mix(in srgb, var(--color-ink) 16%, transparent);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   color: var(--color-ink);
 }
@@ -136,10 +142,12 @@
   padding: 8px 12px;
   border: 1px solid color-mix(in srgb, var(--color-border) 84%, transparent);
   border-radius: 10px;
+  background: var(--color-surface);
   background: color-mix(in srgb, var(--color-surface) 94%, transparent);
   box-shadow: 0 5px 18px color-mix(in srgb, var(--color-ink) 9%, transparent);
   color: var(--color-ink-secondary);
   pointer-events: auto;
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
 }
 

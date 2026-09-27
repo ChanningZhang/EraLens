@@ -2,8 +2,11 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "node:path";
 
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
+  build: {
+    target: mode === "ios" ? "safari16.2" : undefined,
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "src"),
@@ -18,4 +21,4 @@ export default defineConfig({
       },
     },
   },
-});
+}));

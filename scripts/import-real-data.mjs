@@ -123,11 +123,13 @@ function splitDeferredInserts(sql) {
   return { regular: regular.join("\n"), deferred };
 }
 
+function insertsInto(statement, table) {
+  return new RegExp(`^(?:\\s|--[^\\n]*(?:\\n|$))*INSERT\\s+INTO\\s+${table}\\b`, "i").test(statement);
+}
+
 function preseedDynasties(packages) {
   const inserts = packages.flatMap(({ sql }) =>
-    sqlStatements(readFileSync(sql, "utf8")).filter((statement) =>
-      /^\s*INSERT\s+INTO\s+dynasties\b/i.test(statement),
-    ),
+    sqlStatements(readFileSync(sql, "utf8")).filter((statement) => insertsInto(statement, "dynasties")),
   );
   if (inserts.length === 0) return;
 
@@ -136,6 +138,19 @@ function preseedDynasties(packages) {
     fail("Failed to preseed dynasty rows", result.stderr || result.stdout);
   }
   console.log(`Preseeded ${inserts.length} dynasty rows for cross-package references.`);
+}
+
+function preseedDynastyGroups(packages) {
+  const inserts = packages.flatMap(({ sql }) =>
+    sqlStatements(readFileSync(sql, "utf8")).filter((statement) => insertsInto(statement, "dynasty_groups")),
+  );
+  if (inserts.length === 0) return;
+
+  const result = dockerPsql(`BEGIN;\n${inserts.join("\n")}\nCOMMIT;\n`);
+  if (result.status !== 0) {
+    fail("Failed to preseed dynasty group rows", result.stderr || result.stdout);
+  }
+  console.log(`Preseeded ${inserts.length} dynasty group rows for cross-package references.`);
 }
 
 function sqlString(value) {
@@ -201,9 +216,10 @@ function main() {
   const truncated = dockerPsql(TRUNCATE_SQL);
   if (truncated.status !== 0) fail("Failed to truncate tables", truncated.stderr || truncated.stdout);
 
-  // Some event and capital packages refer to dynasties owned by later period
-  // packages. Seed the shared lookup table first so deferred package imports
-  // can resolve those foreign keys without changing package ownership/order.
+  // Cross-package references must exist before package order starts. Dynasty
+  // groups are the parent lookup for dynasty rows, which in turn are referenced
+  // by events, capitals, and later periods.
+  preseedDynastyGroups(allPackages);
   preseedDynasties(allPackages);
 
   let remaining = packages;

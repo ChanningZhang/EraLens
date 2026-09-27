@@ -1,0 +1,4 @@
+interface:
+  display_name: "EraLens iOS CLI"
+  short_description: "使用命令行构建、运行和调试 EraLens iOS 应用"
+  default_prompt: "使用命令行构建并调试 EraLens iOS 应用。"

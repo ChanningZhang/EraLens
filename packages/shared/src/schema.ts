@@ -234,6 +234,19 @@ export const EventDisplayConfigSchema = z.object({
 });
 export type EventDisplayConfig = z.infer<typeof EventDisplayConfigSchema>;
 
+export const EventLocationSchema = z.object({
+  id: z.string(),
+  historicalName: z.string(),
+  modernName: z.string(),
+  longitude: z.number(),
+  latitude: z.number(),
+  coordinateSystem: z.string(),
+  precision: z.string(),
+  note: z.string().optional(),
+  links: z.array(z.object({ label: z.string(), url: z.string() })).default([]),
+});
+export type EventLocation = z.infer<typeof EventLocationSchema>;
+
 export const DEFAULT_EVENT_DISPLAY_CONFIG: EventDisplayConfig = {
   kinds: {
     battle: true, politics: true, culture: true, disaster: true, commerce: true,
@@ -263,28 +276,8 @@ export const EventSchema = z
     meaning: z.string().optional(),
     content: z.string().optional(),
     locationId: z.string().optional(),
-    location: z.object({
-      id: z.string(),
-      historicalName: z.string(),
-      modernName: z.string(),
-      longitude: z.number(),
-      latitude: z.number(),
-      coordinateSystem: z.string(),
-      precision: z.string(),
-      note: z.string().optional(),
-      links: z.array(z.object({ label: z.string(), url: z.string() })).default([]),
-    }).optional(),
-    locations: z.array(z.object({
-      id: z.string(),
-      historicalName: z.string(),
-      modernName: z.string(),
-      longitude: z.number(),
-      latitude: z.number(),
-      coordinateSystem: z.string(),
-      precision: z.string(),
-      note: z.string().optional(),
-      links: z.array(z.object({ label: z.string(), url: z.string() })).default([]),
-    })).default([]),
+    location: EventLocationSchema.optional(),
+    locations: z.array(EventLocationSchema).default([]),
   })
   .superRefine((event, ctx) => {
     if (event.kind === "idiom") {
@@ -324,6 +317,7 @@ export const EventSchema = z
 
 export const RelationKindSchema = z.enum([
   "succession",
+  "politics",
   "battle",
   "alliance",
   "enthronement",
