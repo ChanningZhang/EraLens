@@ -28,6 +28,8 @@ type Props = {
 
 type Position = { x: number; y: number };
 
+let activeTouchPopover: { id: symbol; dismiss: () => void } | null = null;
+
 function anchorPosition(element: Element, followPointer: boolean, event?: ReactPointerEvent<Element>): Position {
   if (followPointer && event) return { x: event.clientX, y: event.clientY + GAP };
   const rect = element.getBoundingClientRect();
@@ -36,6 +38,7 @@ function anchorPosition(element: Element, followPointer: boolean, event?: ReactP
 
 export function InfoPopover({ text, followPointer = false, children }: Props) {
   const id = useId();
+  const touchPopoverId = useRef(Symbol("touch-popover"));
   const [position, setPosition] = useState<Position | null>(null);
   const [visible, setVisible] = useState(false);
   const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -50,7 +53,41 @@ export function InfoPopover({ text, followPointer = false, children }: Props) {
     touchDismissTimer.current = null;
   };
 
-  useEffect(() => clearTimers, []);
+  const dismissTouchPopover = () => {
+    clearTimers();
+    setVisible(false);
+    longPressShown.current = false;
+    if (activeTouchPopover?.id === touchPopoverId.current) activeTouchPopover = null;
+  };
+  const scheduleTouchDismiss = () => {
+    if (touchDismissTimer.current) clearTimeout(touchDismissTimer.current);
+    touchDismissTimer.current = setTimeout(dismissTouchPopover, TOUCH_VISIBLE_MS);
+  };
+
+  useEffect(() => {
+    const onPointerUp = (event: PointerEvent) => {
+      if (event.pointerType !== "touch" || !longPressShown.current) return;
+      scheduleTouchDismiss();
+    };
+    const onPointerCancel = (event: PointerEvent) => {
+      if (event.pointerType === "touch" && longPressShown.current) dismissTouchPopover();
+    };
+    const onPointerDown = (event: PointerEvent) => {
+      if (event.pointerType === "touch" && activeTouchPopover?.id !== touchPopoverId.current) {
+        activeTouchPopover?.dismiss();
+      }
+    };
+    window.addEventListener("pointerup", onPointerUp);
+    window.addEventListener("pointercancel", onPointerCancel);
+    window.addEventListener("pointerdown", onPointerDown, true);
+    return () => {
+      window.removeEventListener("pointerup", onPointerUp);
+      window.removeEventListener("pointercancel", onPointerCancel);
+      window.removeEventListener("pointerdown", onPointerDown, true);
+      clearTimers();
+      if (activeTouchPopover?.id === touchPopoverId.current) activeTouchPopover = null;
+    };
+  }, []);
 
   const handlers: InfoHandlers = {
     "aria-describedby": id,
@@ -81,6 +118,8 @@ export function InfoPopover({ text, followPointer = false, children }: Props) {
       const target = event.currentTarget;
       longPressTimer.current = setTimeout(() => {
         longPressShown.current = true;
+        activeTouchPopover?.dismiss();
+        activeTouchPopover = { id: touchPopoverId.current, dismiss: dismissTouchPopover };
         setPosition(anchorPosition(target, false));
         setVisible(true);
       }, LONG_PRESS_MS);
@@ -92,17 +131,11 @@ export function InfoPopover({ text, followPointer = false, children }: Props) {
       if (!longPressShown.current) return;
       // A long press is an information gesture, not an activation of the card.
       event.preventDefault();
-      event.stopPropagation();
-      touchDismissTimer.current = setTimeout(() => {
-        setVisible(false);
-        longPressShown.current = false;
-        touchDismissTimer.current = null;
-      }, TOUCH_VISIBLE_MS);
+      scheduleTouchDismiss();
+      // Also schedule locally for browsers that dispatch pointerup to the card.
     },
     onPointerCancel: () => {
-      clearTimers();
-      setVisible(false);
-      longPressShown.current = false;
+      dismissTouchPopover();
     },
     onContextMenu: (event) => {
       if (longPressShown.current) event.preventDefault();

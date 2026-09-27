@@ -23,7 +23,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "title": "大总统"
     },
     {
       "id": "li-yuanhong",
@@ -40,7 +41,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "title": "大总统"
     },
     {
       "id": "feng-guozhang",
@@ -58,7 +60,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "title": "代理大总统"
     },
     {
       "id": "xu-shichang",
@@ -75,7 +78,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "title": "大总统"
     },
     {
       "id": "cao-kun",
@@ -93,7 +97,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "title": "大总统"
     },
     {
       "id": "zhang-zuolin",
@@ -111,7 +116,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "title": "陆海军大元帅"
     },
     {
       "id": "lin-sen",
@@ -128,7 +134,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "title": "国民政府主席"
     },
     {
       "id": "jiang-jieshi",
@@ -156,7 +163,8 @@
       },
       "altNames": [
         "蒋中正"
-      ]
+      ],
+      "title": "领导人"
     },
     {
       "id": "li-zongren",
@@ -174,7 +182,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "title": "代总统"
     },
     {
       "id": "tan-yankai",
@@ -201,7 +210,8 @@
       },
       "altNames": [
         "谭延闓"
-      ]
+      ],
+      "title": "国民政府主席"
     },
     {
       "id": "yan-jiagan",
@@ -226,7 +236,8 @@
         "month": 12,
         "abs": 23927
       },
-      "altNames": []
+      "altNames": [],
+      "title": "领导人"
     },
     {
       "id": "jiang-jingguo",
@@ -251,7 +262,8 @@
         "month": 1,
         "abs": 23856
       },
-      "altNames": []
+      "altNames": [],
+      "title": "领导人"
     },
     {
       "id": "li-denghui",
@@ -276,7 +288,8 @@
         "month": 7,
         "abs": 24246
       },
-      "altNames": []
+      "altNames": [],
+      "title": "领导人"
     },
     {
       "id": "chen-shuibian",
@@ -297,7 +310,8 @@
         "abs": 23409
       },
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "title": "领导人"
     },
     {
       "id": "ma-yingjiu",
@@ -318,7 +332,8 @@
         "abs": 23406
       },
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "title": "领导人"
     },
     {
       "id": "cai-yingwen",
@@ -339,7 +354,8 @@
         "abs": 23479
       },
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "title": "领导人"
     },
     {
       "id": "lai-qingde",
@@ -360,7 +376,8 @@
         "abs": 23517
       },
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "title": "领导人"
     },
     {
       "id": "duan-qirui",
@@ -378,7 +395,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "title": "临时执政"
     },
     {
       "id": "zhou-ziqi",
@@ -395,7 +413,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "title": "国务院摄行"
     },
     {
       "id": "gao-lingwei",
@@ -412,7 +431,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "title": "国务院摄行"
     },
     {
       "id": "huang-fu",
@@ -429,7 +449,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "title": "国务院摄行"
     },
     {
       "id": "hu-weide",
@@ -447,7 +468,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "title": "国务院摄行"
     },
     {
       "id": "yan-huiqing",
@@ -465,7 +487,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "title": "国务院摄行"
     },
     {
       "id": "du-xigui",
@@ -483,7 +506,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "title": "国务院摄行"
     },
     {
       "id": "gu-weijun",
@@ -503,7 +527,8 @@
       "death": null,
       "altNames": [
         "V. K. Wellington Koo"
-      ]
+      ],
+      "title": "国务院摄行"
     },
     {
       "id": "wu-peifu",
@@ -763,7 +788,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "title": "国家主席"
     }
   ],
   "dynastyGroups": [],

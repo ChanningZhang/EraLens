@@ -6,7 +6,9 @@
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: none;
-  touch-action: pan-y;
+  /* Touch gestures are routed through the stage so horizontal timeline panning
+     also works when the gesture starts on an interactive lane card. */
+  touch-action: none;
   background: var(--color-paper);
   contain: layout paint style;
 }

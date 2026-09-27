@@ -86,7 +86,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   const stageRef = useRef<HTMLDivElement>(null);
   const timelinePointersRef = useRef(new Map<number, { x: number; y: number }>());
   const timelineGestureRef = useRef<{
-    mode: "pending" | "pan" | "pinch";
+    mode: "pending" | "pan" | "scroll" | "pinch";
     x: number;
     y: number;
     time: number;
@@ -195,8 +195,19 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     const dx = event.clientX - gesture.x;
     const dy = event.clientY - gesture.y;
     if (gesture.mode === "pending") {
-      if (Math.abs(dx) < 7 || Math.abs(dx) < Math.abs(dy) * 1.2) return;
-      timelineGestureRef.current = { ...gesture, mode: "pan", x: event.clientX, y: event.clientY, time: performance.now() };
+      if (Math.max(Math.abs(dx), Math.abs(dy)) < 7) return;
+      if (Math.abs(dx) >= Math.abs(dy) * 1.2) {
+        timelineGestureRef.current = { ...gesture, mode: "pan", x: event.clientX, y: event.clientY, time: performance.now() };
+      } else {
+        event.currentTarget.scrollTop -= dy;
+        timelineGestureRef.current = { ...gesture, mode: "scroll", x: event.clientX, y: event.clientY };
+      }
+      event.preventDefault();
+      return;
+    }
+    if (gesture.mode === "scroll") {
+      event.currentTarget.scrollTop -= dy;
+      timelineGestureRef.current = { ...gesture, x: event.clientX, y: event.clientY };
       event.preventDefault();
       return;
     }
