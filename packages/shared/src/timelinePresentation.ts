@@ -15,15 +15,13 @@ export function resolveTimelinePresentation(widthPx: number, preferences = DEFAU
   const narrow = widthPx <= 600;
   const compact = preferences.density === "compact" || (preferences.density === "auto" && narrow);
   const railCollapsed = narrow && preferences.railCollapsed;
-  const expandedGutter = narrow ? Math.round(Math.min(88, Math.max(72, widthPx * 0.2))) : TIMELINE_GUTTER_PX;
-  const railInset = narrow ? 6 : TIMELINE_RAIL_INSET_PX;
   return {
     narrow,
     compact,
     railCollapsed,
-    gutterPx: railCollapsed ? 12 : expandedGutter,
-    railInsetPx: railInset,
-    railLabelWidthPx: narrow ? expandedGutter - railInset - 8 : TIMELINE_RAIL_LABEL_WIDTH_PX,
+    gutterPx: railCollapsed ? 12 : TIMELINE_GUTTER_PX,
+    railInsetPx: TIMELINE_RAIL_INSET_PX,
+    railLabelWidthPx: TIMELINE_RAIL_LABEL_WIDTH_PX,
     rowHeightPx: compact ? 32 : 36,
     lanePaddingPx: 4,
     railChipHeightPx: 36,

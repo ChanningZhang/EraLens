@@ -125,21 +125,25 @@ export function filterViewportEvents(events: Event[], viewport: ViewportState): 
 }
 
 export function packEventLanes(
-  intervals: { id: string; left: number; right: number }[],
+  intervals: { id: string; left: number; right: number; priority?: number }[],
 ): Map<string, number> {
   const sorted = [...intervals].sort(
-    (a, b) => a.left - b.left || a.right - b.right || a.id.localeCompare(b.id),
+    (a, b) =>
+      (b.priority ?? 0) - (a.priority ?? 0) ||
+      a.left - b.left ||
+      a.right - b.right ||
+      a.id.localeCompare(b.id),
   );
-  const laneEnds: number[] = [];
+  const laneIntervals: { left: number; right: number }[][] = [];
   const lanes = new Map<string, number>();
   for (const item of sorted) {
-    let lane = laneEnds.findIndex((end) => end <= item.left);
-    if (lane === -1) {
-      lane = laneEnds.length;
-      laneEnds.push(item.right);
-    } else {
-      laneEnds[lane] = item.right;
-    }
+    let lane = laneIntervals.findIndex((intervals) => intervals.every((interval) =>
+      item.right <= interval.left || item.left >= interval.right,
+    ));
+    if (lane === -1) lane = laneIntervals.length;
+    const intervals = laneIntervals[lane] ?? [];
+    intervals.push({ left: item.left, right: item.right });
+    laneIntervals[lane] = intervals;
     lanes.set(item.id, lane);
   }
   return lanes;
@@ -167,7 +171,12 @@ const EVENT_PRECISION_ORDER: Record<Event["precision"], number> = {
   century: 1,
 };
 
-/** Place single-dynasty badges on lane edges, preferring top and prioritizing precision. */
+/** Political and military events win badge collisions before precision is considered. */
+function eventBadgeKindPriority(event: Event): number {
+  return event.kind === "politics" || event.kind === "battle" ? 1 : 0;
+}
+
+/** Place single-dynasty badges on lane edges, prioritizing kind and then precision. */
 export function layoutEventBadges(
   events: Event[],
   viewport: ViewportState,
@@ -197,6 +206,7 @@ export function layoutPlacedEventBadges(
   const positions = new Map<string, EventBadgePosition>();
   for (const [laneId, items] of byLane) {
     items.sort((a, b) =>
+      eventBadgeKindPriority(b.item.event) - eventBadgeKindPriority(a.item.event) ||
       EVENT_PRECISION_ORDER[b.item.event.precision] - EVENT_PRECISION_ORDER[a.item.event.precision] ||
       eventSpanAbs(a.item.event).anchorAbs - eventSpanAbs(b.item.event).anchorAbs ||
       a.item.event.id.localeCompare(b.item.event.id),
@@ -239,6 +249,7 @@ export function layoutPlacedEventBadges(
 export function layoutEvents(events: Event[], viewport: ViewportState): PlacedEvent[] {
   const intervals = events.map((event) => ({
     id: event.id,
+    priority: eventBadgeKindPriority(event),
     ...eventHitInterval(event, viewport),
   }));
   const lanes = packEventLanes(intervals);

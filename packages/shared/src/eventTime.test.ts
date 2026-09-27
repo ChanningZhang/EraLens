@@ -14,7 +14,7 @@ function parseEvent(input: Record<string, unknown>) {
 
 describe("eventKindLabel", () => {
   it("maps stored kinds to Chinese labels", () => {
-    expect(eventKindLabel("battle")).toBe("战事");
+    expect(eventKindLabel("battle")).toBe("军事");
     expect(eventKindLabel("politics")).toBe("政治");
     expect(eventKindLabel("culture")).toBe("文化");
     expect(eventKindLabel("disaster")).toBe("灾害");

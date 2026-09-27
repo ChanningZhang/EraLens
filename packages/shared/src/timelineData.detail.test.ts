@@ -349,7 +349,7 @@ describe("buildEntityDetail event", () => {
     ]);
     expect(detail.facts).toEqual([
       { label: "时间", value: "公元1644年12月" },
-      { label: "类型", value: "战事" },
+      { label: "类型", value: "军事" },
     ]);
   });
 

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { getRepository } from "@/data/repository";
+import { ExpandToggle } from "@/components/ExpandToggle";
 import {
   EventKindSchema,
   eventKindLabel,
@@ -125,23 +126,19 @@ export function AppShell() {
       }}
     >
       <header className={styles.header} aria-label="EraLens 导航">
-        {presentation.narrow && <button
-          type="button"
+        {presentation.narrow && <ExpandToggle
           className={styles.railToggle}
-          aria-label={presentation.railCollapsed ? "展开王朝栏" : "折叠王朝栏"}
-          title={presentation.railCollapsed ? "展开王朝栏" : "折叠王朝栏"}
-          aria-expanded={!presentation.railCollapsed}
+          axis="horizontal"
+          expanded={!presentation.railCollapsed}
+          expandLabel="展开王朝栏"
+          collapseLabel="折叠王朝栏"
           onClick={() => updateLayout({ railCollapsed: !preferences.railCollapsed })}
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3" y="4" width="18" height="16" rx="3" />
-            <path d="M9 4v16" />
-            <path d={presentation.railCollapsed ? "m13 9 3 3-3 3" : "m16 9-3 3 3 3"} />
-          </svg>
-        </button>}
+        />}
         <div className={styles.brand}>
-          <h1 className={styles.brandTitle}>EraLens</h1>
-          <p className={styles.brandSub}>历史透镜</p>
+          {!presentation.railCollapsed && <>
+            <h1 className={styles.brandTitle}>EraLens</h1>
+            <p className={styles.brandSub}>历史透镜</p>
+          </>}
         </div>
         <div className={styles.searchWrap}>
           <input

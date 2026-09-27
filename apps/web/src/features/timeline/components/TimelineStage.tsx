@@ -1,5 +1,6 @@
 import { memo, useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { ExpandToggle } from "@/components/ExpandToggle";
 import {
   activeReignsAtAbs,
   buildLaneOrderIndex,
@@ -70,6 +71,7 @@ import { layoutReignFates } from "../model/reignFateLayout";
 
 const StableChinaMapBackground = memo(ChinaMapBackground);
 const EVENT_CONTROL_LANE_CLEARANCE = 10;
+const DEFAULT_VISIBLE_EVENT_LANES = 2;
 
 function laneColorTokenFor(
   map: ReadonlyMap<string, ReturnType<typeof fallbackLaneColorToken>>,
@@ -373,12 +375,12 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   const eventPlaced = useMemo(() => layoutEvents(railEvents, viewport), [railEvents, viewport]);
 
   const totalEventLanes = eventLaneCount(eventPlaced);
-  const canExpandEvents = totalEventLanes > 3;
+  const canExpandEvents = totalEventLanes > DEFAULT_VISIBLE_EVENT_LANES;
   const showAllEvents = !canExpandEvents || eventsExpanded;
   const visibleEventPlaced = showAllEvents
     ? eventPlaced
-    : eventPlaced.filter((item) => item.lane < 3);
-  const railHeight = eventRailHeight(showAllEvents ? totalEventLanes : Math.min(totalEventLanes, 3));
+    : eventPlaced.filter((item) => item.lane < DEFAULT_VISIBLE_EVENT_LANES);
+  const railHeight = eventRailHeight(showAllEvents ? totalEventLanes : Math.min(totalEventLanes, DEFAULT_VISIBLE_EVENT_LANES));
   const reignsByDynasty = useMemo(() => {
     const map = new Map<string, typeof data extends undefined ? never : NonNullable<typeof data>["reigns"]>();
     if (!data) return map;
@@ -706,19 +708,14 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
             <>
               <EventLayer placed={visibleEventPlaced} height={railHeight} />
               {canExpandEvents && (
-                <button
-                  type="button"
+                <ExpandToggle
                   className={styles.eventExpandButton}
                   style={{ top: railHeight - 7 }}
-                  aria-label={eventsExpanded ? "收拢事件" : "展开更多事件"}
-                  title={eventsExpanded ? "收拢事件" : "展开更多事件"}
-                  onPointerDown={(event) => event.stopPropagation()}
+                  expanded={eventsExpanded}
+                  expandLabel="展开更多事件"
+                  collapseLabel="收拢事件"
                   onClick={() => setEventsExpanded((expanded) => !expanded)}
-                >
-                  <svg aria-hidden="true" viewBox="0 0 12 7" focusable="false">
-                    <path d={eventsExpanded ? "M1 6 6 1l5 5" : "m1 1 5 5 5-5"} />
-                  </svg>
-                </button>
+                />
               )}
             </>
           )}
