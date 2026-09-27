@@ -1,12 +1,17 @@
 import type { CapitalRole, DynastyCapital, EntityRef, Reign } from "./schema";
 import { isUncertainDateConfidence } from "./reignBoundaries";
-import { formatYear, formatYearMonth } from "./time";
+import { formatDaySpanDuration, formatReignDurationLabel } from "./reignVisual";
+import { formatAbsSpanDurationLabel, formatYear, formatYearMonth, absMonth } from "./time";
 import {
   effectiveIntervalEndPoint,
   effectiveIntervalStartAbs,
   effectiveIntervalStartPoint,
 } from "./timelineIntervals";
-import { activeCapitalsAtAbs, capitalSegmentsForReign } from "./timelineOwnership";
+import {
+  activeCapitalsAtAbs,
+  capitalSegmentsForReign,
+  reignOwnershipInterval,
+} from "./timelineOwnership";
 
 type CapitalTimePoint = { year: number; month: number; day?: number };
 
@@ -45,6 +50,7 @@ export type ReignCapitalTenureRow = {
     label: string;
     abs: number;
     isInformalMonarch?: boolean;
+    duration?: string;
   };
 };
 
@@ -69,7 +75,7 @@ function formatTenureRangeLabel(
     if (precision === "month") {
       return formatYearMonth(point.year, point.month, "compact");
     }
-    return `${point.year}`;
+    return formatYear(point.year, "compact");
   };
 
   const startLabel = formatPoint(start, startPrecision, startConfidence);
@@ -137,6 +143,23 @@ export function buildReignCapitalTenures(
   return capitalSegmentsForReign(reign, dynastyReigns, capitals)
     .map(({ capital, overlapInterval, startsAtReignBoundary, endsAtReignBoundary }) => {
       const startAbs = effectiveIntervalStartAbs(overlapInterval);
+      const start = effectiveIntervalStartPoint(overlapInterval);
+      const end = effectiveIntervalEndPoint(overlapInterval);
+      const startPrecision = startsAtReignBoundary ? reign.precision : capital.precision;
+      const endPrecision = endsAtReignBoundary
+        ? reign.precision
+        : (capital.endPrecision ?? capital.precision);
+      const duration = endsAtReignBoundary && reign.isOngoing
+        ? undefined
+        : startPrecision === "day" || endPrecision === "day"
+          ? formatDaySpanDuration(start, end, overlapInterval.endInclusive - overlapInterval.startExclusive)
+          : formatAbsSpanDurationLabel(
+              start,
+              end,
+              absMonth(start.year, start.month),
+              absMonth(end.year, end.month),
+              startPrecision === "year" && endPrecision === "year" ? "year" : "month",
+            );
       return {
         capital: {
           ref: { type: "capital" as const, id: capital.id },
@@ -146,15 +169,16 @@ export function buildReignCapitalTenures(
         tenure: {
           ref: { type: "reign" as const, id: reign.id },
           label: formatTenureRangeLabel(
-            effectiveIntervalStartPoint(overlapInterval),
-            effectiveIntervalEndPoint(overlapInterval),
-            startsAtReignBoundary ? reign.precision : capital.precision,
-            endsAtReignBoundary ? reign.precision : (capital.endPrecision ?? capital.precision),
+            start,
+            end,
+            startPrecision,
+            endPrecision,
             startsAtReignBoundary ? reign.startDateConfidence : undefined,
             endsAtReignBoundary ? reign.endDateConfidence : undefined,
             endsAtReignBoundary && reign.isOngoing,
           ),
           abs: startAbs,
+          ...(duration ? { duration } : {}),
           ...(reign.isInformalMonarch ? { isInformalMonarch: true } : {}),
         },
         sortKey: {
@@ -180,6 +204,10 @@ export function buildReignTenureCapitalRows(
 ): ReignCapitalTenureRow[] {
   const rows = buildReignCapitalTenures(reign, capitals, dynastyReigns);
   if (rows.length > 0) return rows;
+  const duration = formatReignDurationLabel(
+    reign,
+    reignOwnershipInterval(reign, dynastyReigns),
+  );
   return [
     {
       tenure: {
@@ -194,6 +222,7 @@ export function buildReignTenureCapitalRows(
           reign.isOngoing,
         ),
         abs: reign.startAbs,
+        ...(duration ? { duration } : {}),
         ...(reign.isInformalMonarch ? { isInformalMonarch: true } : {}),
       },
     },

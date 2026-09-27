@@ -9,6 +9,9 @@
   /* Touch gestures are routed through the stage so horizontal timeline panning
      also works when the gesture starts on an interactive lane card. */
   touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
   background: var(--color-paper);
   contain: layout paint style;
 }

@@ -256,6 +256,11 @@
   font-weight: 600;
 }
 
+.tenureDuration {
+  color: var(--color-ink-secondary);
+  font-weight: 400;
+}
+
 .tenureLabel {
   font-weight: 400;
 }

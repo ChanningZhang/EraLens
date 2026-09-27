@@ -429,6 +429,7 @@ export const EntityDetailSchema = z.object({
         tenure: z.object({
           ref: EntityRefSchema,
           label: z.string(),
+          duration: z.string().optional(),
           name: z.string().optional(),
           abs: z.number(),
           isInformalMonarch: z.boolean().optional(),

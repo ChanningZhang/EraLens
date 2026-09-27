@@ -1,6 +1,29 @@
 import type { Reign } from "./schema";
-import { formatAbsSpanTooltip, formatYear, formatYearMonth } from "./time";
+import {
+  absMonth,
+  formatAbsSpanDurationLabel,
+  formatAbsSpanTooltip,
+  formatYear,
+  formatYearMonth,
+} from "./time";
 import { isUncertainDateConfidence } from "./reignBoundaries";
+import {
+  effectiveIntervalEndPoint,
+  effectiveIntervalStartPoint,
+  type LeftOpenRightClosedInterval,
+} from "./timelineIntervals";
+
+type ReignSpanFields = Pick<
+  Reign,
+  | "start"
+  | "end"
+  | "startAbs"
+  | "endAbs"
+  | "precision"
+  | "isOngoing"
+  | "startDateConfidence"
+  | "endDateConfidence"
+>;
 
 /** Days in a Gregorian calendar month (historical dates use proleptic Gregorian). */
 export function daysInCalendarMonth(year: number, month: number): number {
@@ -22,7 +45,9 @@ function monthEndFraction(
 }
 
 /** Whole-day count for day-precision reigns; null when only month/year precision is known. */
-export function reignDurationDays(reign: Reign): number | null {
+export function reignDurationDays(
+  reign: Pick<Reign, "precision" | "start" | "end" | "startAbs" | "endAbs">,
+): number | null {
   if (reign.precision !== "day") return null;
   const startDay = reign.start.day ?? 1;
   const endDay = reign.end.day ?? startDay;
@@ -78,7 +103,7 @@ function calendarYearsMonths(
 }
 
 /** Day-precision spans: days under a month, months under a year, else years + months. */
-function formatSmartDayDuration(reign: Reign, days: number): string {
+function formatSmartDayDuration(reign: Pick<Reign, "start" | "end">, days: number): string {
   if (days <= 0) return "不足1天";
   if (days === 1) return "1天";
 
@@ -93,8 +118,17 @@ function formatSmartDayDuration(reign: Reign, days: number): string {
   return `${days}天`;
 }
 
+/** Duration suffix for an exact, inclusive day interval, matching reign tooltips. */
+export function formatDaySpanDuration(
+  start: Reign["start"],
+  end: Reign["end"],
+  days: number,
+): string {
+  return formatSmartDayDuration({ start, end }, days);
+}
+
 /** Hover label for a reign, honoring day precision when present. */
-export function formatReignSpanTooltip(reign: Reign): string {
+export function formatReignSpanTooltip(reign: ReignSpanFields): string {
   if (reign.isOngoing) {
     const startLabel = reign.precision === "month" || reign.precision === "day"
       ? formatYearMonth(reign.start.year, reign.start.month, "compact")
@@ -135,6 +169,38 @@ export function formatReignSpanTooltip(reign: Reign): string {
     ? "？－？"
     : `${startLabel} — ${endLabel}`;
   return `${range}${duration}`;
+}
+
+/** Duration suffix from the same rules used by the reign tooltip. */
+export function formatReignDurationLabel(
+  reign: ReignSpanFields,
+  interval?: LeftOpenRightClosedInterval,
+): string | undefined {
+  if (interval) {
+    if (reign.isOngoing) return undefined;
+    const start = effectiveIntervalStartPoint(interval);
+    const end = effectiveIntervalEndPoint(interval);
+    if (reign.precision === "day") {
+      return formatDaySpanDuration(
+        start,
+        end,
+        interval.endInclusive - interval.startExclusive,
+      );
+    }
+    return formatAbsSpanDurationLabel(
+      start,
+      end,
+      absMonth(start.year, start.month),
+      absMonth(end.year, end.month),
+      reign.precision,
+    );
+  }
+  const tooltipDuration = formatReignSpanTooltip(reign).match(/ · (.+)$/)?.[1];
+  if (tooltipDuration || reign.isOngoing) return tooltipDuration;
+  if (reign.precision === "year") return "1年";
+  if (reign.precision === "month") return "1个月";
+  const days = reignDurationDays(reign);
+  return days == null ? undefined : formatDaySpanDuration(reign.start, reign.end, days);
 }
 
 type ReignYearRangeFields = Pick<

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import { readFileSync } from "node:fs";
-import { parseReignsFromSql } from "../../../../data/imports/lib/parseReignsFromSql.mjs";
+import path from "node:path";
 import { validateReignDateConfidenceSeams } from "../../../../data/imports/lib/validateReignSeams.mjs";
 
 const file = process.argv[2];
@@ -90,11 +90,16 @@ for (const match of sql.matchAll(eventInsertRe)) {
 const absFields = sql.match(/\b(start_abs|end_abs|at_abs)\s*,\s*(-?\d+)/gi) ?? [];
 // Heuristic: flag obviously unquoted negative in wrong context — light check only
 
-const reigns = parseReignsFromSql(sql);
-if (reigns.length) {
-  for (const seamError of validateReignDateConfidenceSeams(reigns)) {
+// The cache is the source of truth; validate its reign seams instead of
+// reparsing generated SQL through a separate parser.
+const cachePath = path.join(path.dirname(path.resolve(file)), "cache.json");
+try {
+  const cache = JSON.parse(readFileSync(cachePath, "utf8"));
+  for (const seamError of validateReignDateConfidenceSeams(cache.reigns ?? [])) {
     errors.push(`Reign seam mismatch: ${seamError}`);
   }
+} catch (error) {
+  errors.push(`Could not read adjacent cache.json for reign seam validation: ${error.message}`);
 }
 
 if (errors.length) {

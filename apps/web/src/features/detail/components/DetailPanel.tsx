@@ -241,9 +241,17 @@ export function DetailPanel() {
                       }
                     >
                       {row.tenure.name ?? row.tenure.label}
+                      {!row.tenure.name && row.tenure.duration && (
+                        <span className={styles.tenureDuration}> · {row.tenure.duration}</span>
+                      )}
                     </span>
                     {row.tenure.name && (
-                      <span className={styles.capitalTenureSub}>{row.tenure.label}</span>
+                      <span className={styles.capitalTenureSub}>
+                        {row.tenure.label}
+                        {row.tenure.duration && (
+                          <span className={styles.tenureDuration}> · {row.tenure.duration}</span>
+                        )}
+                      </span>
                     )}
                   </button>
                   {row.capital && (
