@@ -4444,24 +4444,8 @@
       "capitalId": "cap-song-north-bianjing"
     },
     {
-      "reignId": "reign-zheng-chenggong-mingzheng",
-      "capitalId": "cap-mingzheng-dongdu-1661"
-    },
-    {
       "reignId": "reign-zheng-gongzi-xu-zheng-chunqiu",
       "capitalId": "cap-zheng-chunqiu-xinzheng-806"
-    },
-    {
-      "reignId": "reign-zheng-jing-mingzheng",
-      "capitalId": "cap-mingzheng-dongdu-1661"
-    },
-    {
-      "reignId": "reign-zheng-jing-mingzheng",
-      "capitalId": "cap-mingzheng-dongning-1664"
-    },
-    {
-      "reignId": "reign-zheng-keshuang-mingzheng",
-      "capitalId": "cap-mingzheng-dongning-1664"
     },
     {
       "reignId": "reign-zheng-r0-zheng-chunqiu",
@@ -4958,9 +4942,116 @@
     {
       "reignId": "reign-zou-r19-zou-state",
       "capitalId": "cap-zou-state-yi-614"
+    },
+    {
+      "reignId": "reign-liu-yuan",
+      "capitalId": "cap-han-zhao-zuoguocheng-304"
+    },
+    {
+      "reignId": "reign-liu-yuan",
+      "capitalId": "cap-han-zhao-liting-305"
+    },
+    {
+      "reignId": "reign-liu-yuan",
+      "capitalId": "cap-han-zhao-puzi-308"
+    },
+    {
+      "reignId": "reign-liu-yuan",
+      "capitalId": "cap-han-zhao-pingyang-309"
+    },
+    {
+      "reignId": "reign-liu-he-zhao",
+      "capitalId": "cap-han-zhao-pingyang-309"
+    },
+    {
+      "reignId": "reign-liu-cong",
+      "capitalId": "cap-han-zhao-pingyang-309"
+    },
+    {
+      "reignId": "reign-liu-can",
+      "capitalId": "cap-han-zhao-pingyang-309"
+    },
+    {
+      "reignId": "reign-liu-yao-jin",
+      "capitalId": "cap-han-zhao-pingyang-309"
+    },
+    {
+      "reignId": "reign-ragibagh-yuan",
+      "capitalId": "cap-yuan-shangdu-15120"
+    },
+    {
+      "reignId": "reign-togon-temur-yuan-north",
+      "capitalId": "cap-yuan-yingchang-1369"
+    },
+    {
+      "reignId": "reign-ayushiridara-yuan",
+      "capitalId": "cap-yuan-yingchang-1369"
+    },
+    {
+      "reignId": "reign-ayushiridara-yuan",
+      "capitalId": "cap-yuan-helin-1370"
+    },
+    {
+      "reignId": "reign-togus-temur-yuan",
+      "capitalId": "cap-yuan-helin-1370"
+    },
+    {
+      "reignId": "reign-nurhaci-qing",
+      "capitalId": "cap-qing-hetuala-1616"
+    },
+    {
+      "reignId": "reign-nurhaci-qing",
+      "capitalId": "cap-qing-jiefan-1620"
+    },
+    {
+      "reignId": "reign-nurhaci-qing",
+      "capitalId": "cap-qing-liaoyang-1621"
+    },
+    {
+      "reignId": "reign-nurhaci-qing",
+      "capitalId": "cap-qing-shenyang-1625"
+    },
+    {
+      "reignId": "reign-huang-taiji-qing",
+      "capitalId": "cap-qing-shenyang-1625"
+    },
+    {
+      "reignId": "reign-zhu-yihai-ming-south",
+      "capitalId": "cap-ming-south-shaoxing-1645"
+    },
+    {
+      "reignId": "reign-xi-nuoluo-nanzhao",
+      "capitalId": "cap-nanzhao-tucheng-649"
+    },
+    {
+      "reignId": "reign-luo-sheng-nanzhao",
+      "capitalId": "cap-nanzhao-tucheng-649"
+    },
+    {
+      "reignId": "reign-sheng-luopi-nanzhao",
+      "capitalId": "cap-nanzhao-tucheng-649"
+    },
+    {
+      "reignId": "reign-pi-luoge-nanzhao",
+      "capitalId": "cap-nanzhao-tucheng-649"
+    },
+    {
+      "reignId": "reign-zheng-chenggong-mingzheng",
+      "capitalId": "cap-mingzheng-dongdu-1661"
+    },
+    {
+      "reignId": "reign-zheng-jing-mingzheng",
+      "capitalId": "cap-mingzheng-dongdu-1661"
+    },
+    {
+      "reignId": "reign-zheng-keshuang-mingzheng",
+      "capitalId": "cap-mingzheng-dongdu-1661"
+    },
+    {
+      "reignId": "reign-yang-you",
+      "capitalId": "cap-sui-daxing-583"
     }
   ],
-  "preSql": "DELETE FROM reign_capitals;",
   "postSql": "",
   "manifest": {
     "slug": "reign-capitals",
@@ -4976,7 +5067,7 @@
     "importPhase": "post",
     "generatedAt": "2026-09-27",
     "counts": {
-      "reign_capitals": 1238
+      "reign_capitals": 1261
     },
     "sources": [
       {
@@ -4986,13 +5077,41 @@
       {
         "label": "忽必烈迁都中都（北京地方志资料，见相关事件导入条目）",
         "url": "https://www.bjdsdfz.cn/jcdq.jhtml"
+      },
+      {
+        "label": "《晋书·载记第一·刘元海》",
+        "url": "https://www.shidianguji.com/book/LS0005/chapter/LS0005_1413"
+      },
+      {
+        "label": "故宫博物院：努尔哈赤年表",
+        "url": "https://www.dpm.org.cn/court/lineage/226250.html"
+      },
+      {
+        "label": "克什克腾旗人民法院：应昌路故城遗址",
+        "url": "https://m.thepaper.cn/newsDetail_forward_27639224"
+      },
+      {
+        "label": "故宫博物院：绍武政权与南明",
+        "url": "https://www.dpm.org.cn/court/event/160184.html"
+      },
+      {
+        "label": "《明太祖实录》：元昭宗、天元帝北迁及捕鱼儿海战事",
+        "url": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E5%85%83_(%E5%8C%97%E5%85%83)"
       }
     ],
     "notes": [
       "reign_capitals 关联作为已核定数据记录在 cache.json；修正任一在位或都城区间时，直接更新对应关系缓存。",
       "都城有 claim_track 时只关联同轨道在位者；没有 claim_track 的都城记录按缓存中显式列出的关系处理。",
       "精确到日的相邻交接按原关系口径保留给前一都城。",
-      "忽必烈在位跨越蒙古帝国与元的目录分期；其蒙古帝国在位记录与元中都的关系显式记录。"
+      "忽必烈在位跨越蒙古帝国与元的目录分期；其蒙古帝国在位记录与元中都的关系显式记录。",
+      "补录汉赵刘渊、刘和、刘聪、刘粲及刘曜的分段都城关联；年精度迁都边界采用迁入地年桶。",
+      "补录阿速吉八—上都、元顺帝北迁后—应昌、元昭宗/天元帝—和林；应昌记录标为 temporary，和林按主要政治中心记录。",
+      "补录努尔哈赤与赫图阿拉—界藩—辽阳—沈阳的都城关联；另将沈阳关联至皇太极，盛京名称阶段沿用既有记录。",
+      "朱以海只关联绍兴的鲁监国轨道都城，不关联同期南明主线或绍武轨道的都城。",
+      "清都城改名不拆分实体：沈阳/盛京阶段使用同一都城记录，努尔哈赤、皇太极按在位时段关联。",
+      "补录细奴逻、逻盛、盛逻皮与皮逻阁迁都前至738年阶段的图城关联；樊崇时期未发现固定都城依据，仍不将流动作战据点记作国都。",
+      "明郑郑成功、郑经、郑克塽统一关联同一条台南都城记录“东都/东宁”；都城改名不另建实体。",
+      "所有 reign_capitals 关联统一由本包逐行拥有；其他导入包只引用，不重复写入。"
     ]
   }
 }

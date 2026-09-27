@@ -72,6 +72,10 @@
   box-shadow: 0 1px 5px color-mix(in srgb, var(--color-accent) 32%, transparent);
 }
 
+.lifeLine.selected::before {
+  opacity: 1;
+}
+
 .selected.lineVisible::before {
   opacity: 1;
 }

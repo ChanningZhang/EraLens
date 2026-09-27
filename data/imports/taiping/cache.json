@@ -291,7 +291,8 @@
         "abs": 22238
       },
       "summary": "太平军攻克江宁，改南京为天京并定都，与清朝形成南北对峙。",
-      "atAbs": 22238
+      "atAbs": 22238,
+      "locationId": "loc-taiping-capital-tianjing"
     },
     {
       "kind": "politics",
@@ -335,7 +336,8 @@
         "abs": 22374
       },
       "summary": "湘军攻破天京，幼天王洪天贵福出逃，太平天国政权覆亡。",
-      "atAbs": 22374
+      "atAbs": 22374,
+      "locationId": "loc-tianjing"
     },
     {
       "kind": "politics",
@@ -413,14 +415,6 @@
     {
       "eventId": "fall-of-tianjing",
       "personId": "zeng-guofan"
-    },
-    {
-      "eventId": "hong-tianguifu-captured",
-      "personId": "hong-tianguifu"
-    },
-    {
-      "eventId": "hong-tianguifu-captured",
-      "personId": "zaichun"
     }
   ],
   "preSql": "DELETE FROM event_dynasties WHERE event_id IN ('jintian-uprising', 'hong-xiuquan-enthroned', 'taiping-capital-tianjing', 'hong-tianguifu-captured') AND dynasty_id = 'qing';",

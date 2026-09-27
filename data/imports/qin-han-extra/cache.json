@@ -426,7 +426,8 @@
         "day": 4
       },
       "summary": "赤眉军攻入长安，杀更始帝刘玄，立刘盆子为帝，更始政权终结。",
-      "atAbs": 309
+      "atAbs": 309,
+      "locationId": "loc-chimei-changan"
     }
   ],
   "relations": [

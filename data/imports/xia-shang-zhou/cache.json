@@ -1638,36 +1638,6 @@
       "title": null
     },
     {
-      "id": "lv-shang",
-      "name": "尚",
-      "ancestralXing": "姜",
-      "clanShi": "吕",
-      "birth": {
-        "year": -1156,
-        "month": 1,
-        "abs": -13860
-      },
-      "death": {
-        "year": -1017,
-        "month": 1,
-        "abs": -12192
-      },
-      "roles": [
-        "军事家",
-        "政治家"
-      ],
-      "bio": "姜太公（姜子牙），辅武王克商，封于齐。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/姜子牙"
-        }
-      ],
-      "posthumousNames": [],
-      "templeNames": [],
-      "title": null
-    },
-    {
       "id": "ji-song",
       "name": "诵",
       "ancestralXing": "姬",
@@ -2408,24 +2378,6 @@
       "title": "周赧王"
     },
     {
-      "id": "jiang-xiaobai",
-      "name": "小白",
-      "ancestralXing": "姜",
-      "roles": [
-        "诸侯"
-      ],
-      "bio": "齐桓公，春秋首霸，葵丘会盟。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/齐桓公"
-        }
-      ],
-      "posthumousNames": [],
-      "templeNames": [],
-      "title": null
-    },
-    {
       "id": "guan-zhong",
       "name": "管仲",
       "roles": [
@@ -2436,24 +2388,6 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/管仲"
-        }
-      ],
-      "posthumousNames": [],
-      "templeNames": [],
-      "title": null
-    },
-    {
-      "id": "ji-chonger",
-      "name": "重耳",
-      "ancestralXing": "姬",
-      "roles": [
-        "诸侯"
-      ],
-      "bio": "晋文公，城濮之战胜楚，成为中原霸主。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/晋文公"
         }
       ],
       "posthumousNames": [],
@@ -2522,24 +2456,6 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/褒姒"
-        }
-      ],
-      "posthumousNames": [],
-      "templeNames": [],
-      "title": null
-    },
-    {
-      "id": "ji-shi",
-      "name": "奭",
-      "ancestralXing": "姬",
-      "roles": [
-        "政治家"
-      ],
-      "bio": "召公奭，周武王弟，与周公旦分陕而治，辅佐成康。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/召公奭"
         }
       ],
       "posthumousNames": [],
@@ -5063,7 +4979,8 @@
       "summary": "盘庚迁都于殷（今安阳），此后商亦称殷。",
       "startAbs": -15708,
       "endAbs": -15457,
-      "atAbs": -15588
+      "atAbs": -15588,
+      "locationId": "loc-pangeng-move-yin"
     },
     {
       "kind": "politics",
@@ -5444,7 +5361,8 @@
         "abs": -9217
       },
       "summary": "平王迁都洛邑，东周开始，王室逐渐失去对诸侯的实质控制。",
-      "atAbs": -9217
+      "atAbs": -9217,
+      "locationId": "loc-pingwang-eastward"
     },
     {
       "kind": "politics",

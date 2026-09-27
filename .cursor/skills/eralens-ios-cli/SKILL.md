@@ -31,6 +31,7 @@ description: >-
 
 - 优先使用仓库已经提供的 `pnpm ios:*` 和 `data:mobile:*` 脚本；没有脚本时才组合底层命令。
 - iOS 同步顺序必须是：数据快照（如该构建需要）→ Web production build → `cap sync ios` → `xcodebuild`。不能用旧 Web bundle 或手工向 Xcode 拖数据库。
+- 真实历史数据变更必须先写入 `data/imports/{slug}/cache.json`（来源和说明写入其中的 `manifest.sources` / `manifest.notes`），再通过统一导入流程更新数据库；移动端 SQLite 从 PostgreSQL 导出。Xcode build/run 不执行包 SQL，也不生成历史数据。
 - 离线验收构建不得配置 live reload URL，也不得从开发服务器加载页面。
 - 从工程中发现 workspace、scheme、bundle id、product name 和 App 路径；不要假定它们永远叫 `App` 或 `EraLens`。
 - 模拟器命令使用明确 UDID。存在多个 booted 设备时不要使用含糊的 `booted` 目标。

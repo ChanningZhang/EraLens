@@ -15,8 +15,8 @@ description: >-
 ## 铁律
 
 1. 先搜索维基百科、正史、可靠年表、考古或学术资料，不能只凭现有生成器补数据。
-2. 修 `data/imports/{slug}/` 的源数据和生成器，不改 `data/seed/*.json`，不在前端/API 写单一人物特判。
-3. 所有对象共用 `Reign`、`reignSql()`、`layoutLaneReignBar` 和 `timelineOwnership.ts`；不得为缺载、短祚或某朝另造一套坐标/裁定。
+2. 直接修改 `data/imports/{slug}/cache.json` 中已核实的人物和在位事实，不改 `data/seed/*.json`，不新增包级生成器或前端/API 个案特判。
+3. 所有对象共用 `Reign`、统一 SQL 序列化器、`layoutLaneReignBar` 和 `timelineOwnership.ts`；不得为缺载、短祚或某朝另造一套坐标/裁定。
 4. `*_abs` 必须由 `absMonth()` 或共享助手计算，禁止手填生成列 `span`。
 
 ## 调研与盘点
@@ -44,7 +44,7 @@ description: >-
 - **年代失考**：知道是谁但边界为推算/均分。使用 `start_date_confidence` / `end_date_confidence` 的 `approximate | interpolated`，不用“史料缺”占位。
 - **资料未收齐**：继续查证，不能因为当前深度不足就标成“史料缺”。
 
-若世系连续但多数王年失载：交叉核对若干可考君主、明确纪事或可靠年表作为共同起讫锚点；将同一锚点窗口内的连续世次按顺序均分，标 `interpolated`。锚点自身及贴着确定锚点的边保持确定。世系中断、锚点不足、不共时或只剩传统积年时，不跨断层插值，并在 manifest notes 写清无法填充的区段。
+若世系连续但多数王年失载：交叉核对若干可考君主、明确纪事或可靠年表作为共同起讫锚点；将同一锚点窗口内的连续世次按顺序均分，标 `interpolated`。锚点自身及贴着确定锚点的边保持确定。世系中断、锚点不足、不共时或只剩传统积年时，不跨断层插值，并在 `cache.json.manifest.notes` 写清无法填充的区段。
 
 日历相接的两王交界两侧必须同为失考或同为确定；可用共享边界校验规则核对，修正后把置信度直接写入 `cache.json`。灭国留白不相接，各自保留自己的边界状态。
 
@@ -68,7 +68,7 @@ description: >-
 - `reigns.title` 存其余卡片称号/史称。少帝、末帝、后主不是谥号；无谥号的先秦称号写不带国名本体。
 - 明清普通皇帝 `title` 留空，卡片优先取年号；仅 `AGENTS.md` 明列的三条记录保留 title。
 - **人物/在位概述不能过于简单**：`bio` 应简略交代人物身份与世系/继承背景、主要相关人物或政权关系、在位年代，以及能说明其历史脉络的关键事迹或转折。保持精炼但信息完整，不能只写身份标签、单句评价或空泛结论；资料不足时如实限定，不补造细节。
-- `bio` 只写历史内容，不写收录方法、年代插值或绘制规范；这些写进 manifest notes。
+- `bio` 只写历史内容，不写收录方法、年代插值或绘制规范；这些写进 `cache.json.manifest.notes`。
 - 修改人物、reign 归属/称号或王朝名后，确认 `persons.search_terms` 触发器刷新；批量改写后执行 `SELECT rebuild_person_search_terms();`。
 
 ## 工作流
@@ -84,7 +84,7 @@ Task Progress:
 - [ ] 7. 验收卡片、搜索、详情、正统色与并立布局
 ```
 
-直接修改 `data/imports/{slug}/cache.json`，将已核定的日期、称谓、置信度和世系关系写入记录。用统一命令生成 SQL；生成流程不解析 Wiki、不做朝代特判、年份补丁或自动插值。AbsMonth 按共享定义计算，不能为单个朝代另造处理脚本。
+直接修改 `data/imports/{slug}/cache.json`，将已核定的日期、称谓、置信度和世系关系写入记录；来源与取舍也写在该文件的 `manifest.sources` / `manifest.notes`。缓存使用 camelCase 字段，日期包含 `year`、`month`、`abs`；例如数据库的 `start_date_confidence` 对应缓存 `startDateConfidence`，主线标记使用 `isMain`，track 字段使用 `claimTrack` / `claimRole`。人物称谓放在 person/reign 各自字段。用统一命令生成 SQL；生成流程只序列化缓存，不解析 Wiki、不做朝代特判、年份补丁或自动插值。AbsMonth 按共享定义计算，不能为单个朝代另造处理脚本。
 
 ```bash
 node data/imports/generate.mjs {slug}
@@ -93,6 +93,8 @@ node data/imports/lib/auditImperialAppellationFields.mjs
 node data/imports/lib/auditPreQinXingShi.mjs
 .cursor/skills/eralens-period-import/scripts/apply-sql.sh data/imports/{slug}/import.sql
 ```
+
+校验器从 SQL 同目录的 `cache.json` 核对接续精度；校验失败时修缓存并重新生成，不要修生成的 SQL。`apply-sql.sh` 是单包增量导入；全量重载前先运行 `node data/imports/generate.mjs --all`，再执行 `pnpm db:import`。它会清空并重载本地 PostgreSQL，再构建和校验移动端 SQLite，但不会从缓存生成 SQL。Xcode 启动不执行导入脚本。
 
 ## 验收
 

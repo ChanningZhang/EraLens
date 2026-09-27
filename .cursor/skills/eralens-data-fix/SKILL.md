@@ -46,18 +46,20 @@ docker compose exec -T db psql -U eralens -d eralens -c \
 Task Progress:
 - [ ] 1. 核对史料（维基/正史），不要只信当前缓存值
 - [ ] 2. 对照 schema，判定每个字符串应进哪一列
-- [ ] 3. 直接改 data/imports/{slug}/ 的 JSON 源缓存和 manifest notes
+- [ ] 3. 直接改 `data/imports/{slug}/cache.json`，来源/取舍写入该文件的 `manifest.sources` / `manifest.notes`
 - [ ] 4. 重新 generate → 校验 SQL → 导入
 - [ ] 5. 跑审计脚本 + 浏览器验收
 ```
 
+各包 `cache.json` 是事实源，字段为 camelCase；来源与说明放在 `cache.json.manifest.sources` / `cache.json.manifest.notes`，生成器据此输出 `manifest.json` 与 PostgreSQL `import.sql`。校验器从 SQL 同目录缓存检查接续边界；失败时修缓存并重生成，不能直接修改 SQL。`apply-sql.sh` 用于单包增量导入；全量重载前运行 `node data/imports/generate.mjs --all`，再执行 `pnpm db:import`。后者清空并重载本地 PostgreSQL，再导出移动端 SQLite，但不会生成 SQL。Xcode 启动不执行导入命令。
+
 ### 1. 调研
 
 - 用 WebSearch / 百科 / 正史核对**原始**起迄年与姓名结构。
-- 修复君主卡缺失或扩充古国泳道时，若存在连续世系但多数君主无明确王年，先交叉核对多个可考君主/纪事，确定共同年代锚点，再将锚点间的连续世次按数量均分，插值君主标 `interpolated`，保留史料可核边界。世系断裂、没有共同锚点或只靠传统积年时不得跨断层补齐；将缺口性质写入 manifest notes。不能仅因多数年份失载而只建一条无君主的泳道。
+- 修复君主卡缺失或扩充古国泳道时，若存在连续世系但多数君主无明确王年，先交叉核对多个可考君主/纪事，确定共同年代锚点，再将锚点间的连续世次按数量均分，插值君主标 `interpolated`，保留史料可核边界。世系断裂、没有共同锚点或只靠传统积年时不得跨断层补齐；将缺口性质写入 `cache.json.manifest.notes`。不能仅因多数年份失载而只建一条无君主的泳道。
 - 改年、切年、正统窗口前，用来源的**原始在位年**，不要在已后移过的日期上再切。
 - 处理相邻时间段时（包括年、月、日精度和混合精度，同一记录起止边界精度不同），必须调用 `packages/shared/src/timelineOwnership.ts` 统一裁定对象归属；底层 `timelineIntervals.ts` 负责左开右闭日期运算。在位、都城、合并泳道相位及相关时点归属的分组规则不得散落到调用侧，也不得手写 `+1` 截断。先判断记录是否确为先后接续；并立君主、不同都城/角色等真实并存数据应保留并行，并通过 `claim_track` 或实体语义分组表达。
-- 争议取舍写入对应 `manifest.json` 的 `notes`，并附 `sources`。
+- 争议取舍写入对应 `cache.json.manifest.notes`，并在 `cache.json.manifest.sources` 附来源。
 
 ### 2. 修哪里
 

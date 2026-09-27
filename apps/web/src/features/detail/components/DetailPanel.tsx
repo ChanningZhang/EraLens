@@ -211,7 +211,7 @@ export function DetailPanel() {
 
         {capitalTenures.length > 0 && (
           <section className={styles.section}>
-            <h3 className={styles.sectionTitle}>在位</h3>
+            <h3 className={styles.sectionTitle}>都城</h3>
             <div className={styles.capitalTenureList}>
               {capitalTenures.map((row) => (
                 <div

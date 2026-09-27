@@ -8,20 +8,6 @@
   },
   "persons": [
     {
-      "id": "system-missing-ruler",
-      "name": "史料缺",
-      "roles": [
-        "系统占位"
-      ],
-      "bio": "EraLens 系统保留人物，仅用于标记经考证确认的国君资料缺失区间。",
-      "links": [],
-      "birth": null,
-      "death": null,
-      "posthumousNames": [],
-      "templeNames": [],
-      "title": "史料缺"
-    },
-    {
       "id": "yelang-duotong",
       "name": "多同",
       "roles": [

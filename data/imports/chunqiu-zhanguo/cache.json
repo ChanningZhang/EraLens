@@ -10158,27 +10158,6 @@
       "clanShi": "赵"
     },
     {
-      "id": "ying-zheng",
-      "name": "政",
-      "roles": [
-        "君主"
-      ],
-      "bio": "即位年幼，后亲政灭六国。前221年称帝，建立秦朝，中国首次大一统，开启帝制时代，事迹见《史记》。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/赵政"
-        }
-      ],
-      "birth": null,
-      "death": null,
-      "posthumousNames": [],
-      "templeNames": [],
-      "title": "秦始皇",
-      "ancestralXing": "嬴",
-      "clanShi": "赵"
-    },
-    {
       "id": "shang-yang",
       "name": "商鞅",
       "roles": [
@@ -23934,7 +23913,8 @@
       "participantIds": [
         "sun-bin"
       ],
-      "summary": "孙膑围魏救赵，于桂陵大败魏军，开创围魏救赵战法。"
+      "summary": "孙膑围魏救赵，于桂陵大败魏军，开创围魏救赵战法。",
+      "locationId": "loc-guiling"
     },
     {
       "id": "maling-battle",
@@ -23956,7 +23936,8 @@
       "participantIds": [
         "sun-bin"
       ],
-      "summary": "孙膑减灶诱敌，于马陵伏击魏军，庞涓战死，魏国元气大伤。"
+      "summary": "孙膑减灶诱敌，于马陵伏击魏军，庞涓战死，魏国元气大伤。",
+      "locationId": "loc-maling"
     },
     {
       "id": "changping-battle",
@@ -23978,7 +23959,8 @@
       "participantIds": [
         "bai-qi"
       ],
-      "summary": "白起于长平围歼赵军四十余万，赵国一蹶不振，秦统一大势已定。"
+      "summary": "白起于长平围歼赵军四十余万，赵国一蹶不振，秦统一大势已定。",
+      "locationId": "loc-changping"
     }
   ],
   "relations": [

@@ -8,23 +8,6 @@
   },
   "persons": [
     {
-      "id": "bao-si",
-      "name": "褒姒",
-      "roles": [
-        "后妃"
-      ],
-      "bio": "周幽王宠妃，传说与烽火戏诸侯、犬戎之祸相关。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/褒姒"
-        }
-      ],
-      "posthumousNames": [],
-      "templeNames": [],
-      "title": null
-    },
-    {
       "id": "cao-gui",
       "name": "曹刿",
       "roles": [
@@ -2155,7 +2138,8 @@
       },
       "summary": "汉武帝元狩四年（前119年），霍去病率军深入漠北击败匈奴左部，登狼居胥山祭天、于姑衍山祭地后返师。后世以“封狼居胥”概括这一战功，成为建功边疆的典故。",
       "dateNote": "元狩四年，前119年；典出《史记·卫将军骠骑列传》及《汉书·卫青霍去病传》",
-      "atAbs": -1405
+      "atAbs": -1405,
+      "locationId": "loc-feng-lang-ju-xu"
     },
     {
       "kind": "idiom",
@@ -2432,7 +2416,6 @@
       "timeMode": "point",
       "precision": "year",
       "dynastyIds": [
-        "tang",
         "zhou-wu"
       ],
       "participantIds": [

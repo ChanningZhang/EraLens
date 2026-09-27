@@ -3548,7 +3548,8 @@
         "abs": 8025
       },
       "summary": "唐军攻灭高句丽，宝藏王被俘，高句丽亡国。",
-      "atAbs": 8025
+      "atAbs": 8025,
+      "locationId": "loc-gaogouli-pyongyang"
     }
   ],
   "relations": [

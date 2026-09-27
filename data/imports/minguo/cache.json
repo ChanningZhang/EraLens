@@ -754,42 +754,6 @@
       "birth": null,
       "death": null,
       "altNames": []
-    },
-    {
-      "id": "zhou-enlai",
-      "name": "周恩来",
-      "roles": [
-        "政治家"
-      ],
-      "bio": "中共领导人，国共合作与抗战时期重要人物。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/周恩来"
-        }
-      ],
-      "birth": null,
-      "death": null,
-      "altNames": []
-    },
-    {
-      "id": "mao-zedong",
-      "name": "毛泽东",
-      "roles": [
-        "政治家",
-        "军事家"
-      ],
-      "bio": "中国共产党主要缔造者，1949年建立中华人民共和国。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/毛泽东"
-        }
-      ],
-      "birth": null,
-      "death": null,
-      "altNames": [],
-      "title": "国家主席"
     }
   ],
   "dynastyGroups": [],

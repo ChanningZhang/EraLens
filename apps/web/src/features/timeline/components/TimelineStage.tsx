@@ -326,8 +326,8 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   );
   const nearbyEvents = useMemo(() => {
     if (!data) return [];
-    const windowStart = viewport.centerAbs - 36;
-    const windowEnd = viewport.centerAbs + 36;
+    const windowStart = viewport.centerAbs - 12;
+    const windowEnd = viewport.centerAbs + 12;
     const selectedEventId = selection.selected?.type === "event" ? selection.selected.id : undefined;
     return data.events.filter((event) => {
       if ((!eventDisplay.kinds[event.kind] && event.id !== selectedEventId) || (!event.location && event.locations.length === 0)) return false;

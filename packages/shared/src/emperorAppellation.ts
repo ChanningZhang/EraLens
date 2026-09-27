@@ -307,8 +307,16 @@ export function resolveReignDetailFacts(
   personContext?: PersonDisplayContext | null,
   options: { durationLabel?: string | null } = {},
 ): Array<{ label: string; value: string }> {
+  const duration = options.durationLabel === undefined
+    ? formatReignDurationLabel(reign)
+    : options.durationLabel;
   const facts = [
-    { label: "在位", value: formatReignYearRange(reign) },
+    {
+      label: "在位",
+      value: duration
+        ? `${formatReignYearRange(reign)} · ${duration}`
+        : formatReignYearRange(reign),
+    },
   ];
   if (usesPreQinCardLayout(reign)) {
     facts.push(...resolvePreQinNameFacts(personName, personContext, reign));
@@ -324,12 +332,6 @@ export function resolveReignDetailFacts(
   const eras = eraNameList(reign);
   if (eras.length) {
     facts.push({ label: "年号", value: eras.join("、") });
-  }
-  const duration = options.durationLabel === undefined
-    ? formatReignDurationLabel(reign)
-    : options.durationLabel;
-  if (duration) {
-    facts.push({ label: "在位", value: duration });
   }
   return facts;
 }

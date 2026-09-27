@@ -8,7 +8,7 @@ description: >-
 
 # EraLens 事件添加与丰富
 
-只处理事件及其直接关联。新建完整时期包时仍使用
+只处理事件及其直接关联。真实数据的唯一记录源是 `data/imports/{slug}/cache.json`，新增或修改的事件及关联直接写入对应数组；来源和取舍写入同一缓存内的 `manifest.sources` / `manifest.notes`。不要新增包级 `.mjs`、Wiki 加工脚本或手写生成 SQL。新建完整时期包时仍使用
 [eralens-period-import](../eralens-period-import/SKILL.md)；需要单独补地点时同时使用
 [eralens-geography-import](../eralens-geography-import/SKILL.md)。
 
@@ -42,14 +42,14 @@ description: >-
 
 ## 时间建模
 
-- `point`：明确时点。填 `at_*`；只知年份时 `precision='year'`，占位月必须为 12，可用 `eventYear()` / `eventPoint()`。
+- `point`：明确时点。缓存中直接填写 `at: { year, month, abs }`；只知年份时 `precision='year'`，占位月必须为 12。
 - 确知公历年月日时用 `precision='day'`，`at` / `start` / `end` 带 `day` 字段（SQL 对应 `at_day` / `start_day` / `end_day`）；农历月日须先可靠换算，不能直接写入公历日字段。
 - `span`：事件真实持续一段时间。填 `start_*`、`end_*`；不能用来表示“大约”。
 - `circa`：发生于估计窗口或诸说不一。填 `start_*`、`end_*`；可另填通行估计 `at_*`，并在 `date_note` 说明。
 - `precision` 只能使用 `day | month | year | decade | century`；已知月份才写 `month`，已知日期才写 `day`。
 - 来源写“约某年”但只给一个年份时，忠实记为该年桶，不自动扩成 `circa`。只有跨年范围、多说冲突或导入者推算才使用不确定窗口。
 - 先确认日期使用农历还是公历。不得把农历月日直接当公历录入；不能可靠换算时保留原文并降低精度，换算后须在 `date_note` 写依据。
-- 所有 `*_abs` 用 `absMonth()` 或项目生成器计算，禁止手填。
+- 所有 `*_abs` 用共享定义 `absMonth()` 或 `compute-abs.mjs` 核算后写入缓存；统一生成器不会计算或修正日期。
 
 `kind` 使用现有枚举：`battle | politics | culture | disaster | commerce | agriculture | finance | idiom | poetry | other`。`agriculture` 用于农业生产、作物引种及相关农业技术传播。新增枚举必须同步 Zod、Prisma、共享标签、界面样式和入库 Skill，不能只在数据里发明新值。
 
@@ -57,7 +57,7 @@ description: >-
 
 - `name` 简短可检索；`summary` 写事实摘要；长说明放 `content`；争议日期放 `date_note`。
 - **事件概述不能过于简单**：应让读者不看其他资料也能简略理解事件的历史背景、起因或前因、关键经过/转折、结果与影响，并点明相关政权、主要人物及事件年代。按事件重要性取舍细节，避免只写「某年发生某事」或一句空泛结论；不确定的内容须保留限定，不补造细节。
-- 概述只写历史内容。收录取舍、编辑方法和推算过程写 `manifest.json` 的 `notes`。
+- 概述只写历史内容。收录取舍、编辑方法和推算过程写 `cache.json.manifest.notes`；来源写 `cache.json.manifest.sources`。
 - `event_dynasties` 关联事件实际涉及或直接影响的王朝，不因同年存在就泛关联。
 - 起义或新政权自身的建号、领袖即位、迁都/定都、内部政变、末代君主被俘等事件，默认只关联该政权。事件发生于反抗旧朝、由旧朝军队镇压或影响双方，并不足以自动关联旧朝；只有旧朝作为事件主体直接参战、签约、被取代等且事件本身表达该关系时，才关联旧朝。长期战争/运动跨度事件可关联交战双方；单次战役也可关联直接交战双方。摘要中可照实叙述对手和影响，但不要用摘要中的对抗关系替代关联判定。
 - `event_participants.person_id` 只能引用 `persons.id`；国君也引用 person，不引用 reign。
@@ -79,7 +79,7 @@ Task Progress:
 - [ ] 7. 验证 API、详情关联与时间轴显示
 ```
 
-使用 `data/imports/lib/sqlHelpers.mjs` 的 `eventSql()` 和共享日期助手。默认 UPSERT `events`，连接表 `ON CONFLICT DO NOTHING`；删除已废弃事件时同时清理其连接与关系。不要修改 `data/seed/*.json` 修生产数据，也不要手改生成后的 SQL 而不改源。
+事件记录使用缓存中的 camelCase 字段，例如 `at: { year, month, abs }`、`dynastyIds`、`participantIds`；事件地点放在 `eventLocations` 集合，额外关系放在 `relations`。统一序列化器负责生成事件与连接表 SQL。删除已废弃事件时，在缓存中维护明确的清理语句，清除旧数据库中的连接与关系。不要修改 `data/seed/*.json` 修生产数据，也不要手改生成后的 SQL。
 
 ```bash
 node data/imports/generate.mjs {slug}
@@ -87,9 +87,11 @@ node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/impor
 .cursor/skills/eralens-period-import/scripts/apply-sql.sh data/imports/{slug}/import.sql
 ```
 
+校验器会读取 SQL 同目录的 `cache.json` 检查在位边界；失败时修缓存、重新生成，再校验。单包增量写 PostgreSQL 用 `apply-sql.sh`；全量重载前先运行 `node data/imports/generate.mjs --all`，再执行 `pnpm db:import`。该命令会清空并重载本地 PostgreSQL，随后导出和校验移动端 SQLite，但不会从缓存生成 SQL。Xcode 不执行导入包 SQL。
+
 ## 验收
 
-- [ ] 每条事件都有可核来源，争议取舍进入 `date_note` 或 manifest notes
+- [ ] 每条事件都有可核来源，争议取舍进入 `date_note` 或 `cache.json.manifest.notes`
 - [ ] 概述简洁但交代背景、相关人物、年代、经过和结果/影响，不是过短标签或空泛结论
 - [ ] 无同义重复；事件提供泳道、reign、都城无法表达的新信息
 - [ ] `point/span/circa` 与精度语义正确，年精度点落在 12 月

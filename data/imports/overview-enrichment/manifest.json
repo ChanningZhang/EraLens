@@ -1,6 +1,6 @@
 {
   "slug": "overview-enrichment",
-  "description": "补全当前概述少于20字的帝王与王朝信息。",
+  "description": "已停用：概述字段已迁入各实体所属包，不再生成覆盖更新。",
   "sources": [
     "https://zh.wikipedia.org/wiki/%E5%8D%97%E6%A5%9A",
     "https://zh.wikipedia.org/wiki/%E5%8C%97%E6%B1%89",
@@ -216,10 +216,25 @@
     "https://zh.wikipedia.org/wiki/%E6%9C%B1%E5%8F%8B%E8%B4%9E",
     "https://zh.wikipedia.org/wiki/%E5%BB%BA%E6%96%87%E5%B8%9D",
     "https://zh.wikipedia.org/wiki/%E6%9C%B1%E8%BD%BD%E5%9D%96",
-    "https://zh.wikipedia.org/wiki/%E6%9C%B1%E7%9E%BB%E5%9F%BA"
+    "https://zh.wikipedia.org/wiki/%E6%9C%B1%E7%9E%BB%E5%9F%BA",
+    "https://zh.wikipedia.org/wiki/%E6%88%90%E5%90%89%E6%80%9D%E6%B1%97",
+    "https://zh.wikipedia.org/wiki/%E7%AA%9D%E9%98%94%E5%8F%B0",
+    "https://zh.wikipedia.org/wiki/%E8%B4%B5%E7%94%B1",
+    "https://zh.wikipedia.org/wiki/%E8%92%99%E5%93%A5",
+    "https://zh.wikipedia.org/wiki/%E5%85%83%E4%B8%96%E7%A5%96",
+    "https://zh.wikipedia.org/wiki/%E6%B3%B0%E5%AE%9A%E5%B8%9D",
+    "https://zh.wikipedia.org/wiki/%E5%A4%A9%E9%A1%BA%E5%B8%9D",
+    "https://zh.wikipedia.org/wiki/%E5%85%83%E6%98%8E%E5%AE%97",
+    "https://zh.wikipedia.org/wiki/%E4%B8%9C%E8%BE%BD%E5%9B%BD",
+    "https://zh.wikisource.org/wiki/宋史",
+    "https://zh.wikisource.org/zh-hans/元史",
+    "https://ctext.org/wiki.pl?chapter=653902&if=en&remap=gb"
   ],
   "notes": [
     "优先使用中文维基百科导言最多两句；未匹配到条目的记录仅补充数据库中已核对的在位跨度，并标记 fallback。",
-    "2026-09 数据审计修复：清理拓跋焘概述中的维基模板残片和 <br> 标记；重写 6 条含空模板参数残留及 6 条以省略号截断的概述（重复记录合并），保留简洁可读的事实摘要。"
+    "2026-09 数据审计修复：清理拓跋焘概述中的维基模板残片和 <br> 标记；重写 6 条含空模板参数残留及 6 条以省略号截断的概述（重复记录合并），保留简洁可读的事实摘要。",
+    "2026-09：按用户请求扩充南宋九帝、蒙古大汗、元朝历帝及东辽（含姚里氏摄政）概述；人物事实以《宋史》《元史》本纪/列传及对应条目交叉整理，东辽继承沿革依据《元史·耶律留哥等传》。忽必烈在蒙古与元记录中共用人物，均保留各自时期语境。",
+    "与辽、金、大理、北宋、西夏、北辽、西辽基础导入包的君主概述保持一致，避免后置 bio 覆盖旧值。",
+    "本包的覆盖式人物概述和王朝概述已逐行迁入对应实体的唯一所有者包；此包不再写入其他包拥有的数据库行。"
   ]
 }

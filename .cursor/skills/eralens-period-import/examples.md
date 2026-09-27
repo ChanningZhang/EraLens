@@ -1,5 +1,7 @@
 # 示例：贞观窗口增量导入
 
+先在 `data/imports/tang-zhenguan/cache.json` 写入已核实记录，包括缓存内部的 `manifest.sources` / `manifest.notes`；以下 SQL 是统一生成器的输出示意，不能手工维护。缓存格式见 [reference.md](reference.md)。
+
 用户请求：「导入唐太宗贞观年间（627–649）数据」
 
 ## manifest.json
@@ -79,6 +81,7 @@ COMMIT;
 
 ```bash
 node .cursor/skills/eralens-period-import/scripts/compute-abs.mjs 627 1   # → 7524
+node data/imports/generate.mjs tang-zhenguan
 node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/imports/tang-zhenguan/import.sql
 .cursor/skills/eralens-period-import/scripts/apply-sql.sh data/imports/tang-zhenguan/import.sql
 curl -s "http://localhost:3001/api/timeline?from=7524&to=7795&scope=cn" | jq '.dynasties[].name,.reigns[].title'

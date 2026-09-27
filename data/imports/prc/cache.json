@@ -726,7 +726,8 @@
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": true
+      "isMain": true,
+      "isInformalMonarch": false
     },
     {
       "id": "reign-npc-standing-committee-prc",
@@ -756,7 +757,8 @@
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": true
+      "isMain": true,
+      "isInformalMonarch": true
     },
     {
       "id": "reign-li-xiannian-prc",
@@ -931,7 +933,8 @@
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": true
+      "isMain": true,
+      "isInformalMonarch": true
     }
   ],
   "events": [

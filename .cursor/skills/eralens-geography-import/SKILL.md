@@ -8,6 +8,8 @@ description: >-
 
 # EraLens 地理信息添加与丰富
 
+地理记录也以对应包 `cache.json` 为唯一事实源：都城写入 `capitals`，地点写入 `eventLocations`，事件引用写入 `events[].locationId`；来源与取舍写入同一缓存的 `manifest.sources` / `manifest.notes`。缓存字段用 camelCase（如 `historicalName`、`modernName`、`dynastyId`、`coordinateSystem`）；下文的 snake_case 名称是数据库列名。不要维护另外的 raw JSON、坐标文件或包级生成器。
+
 本 Skill 统一处理两类地理数据：
 
 - `dynasty_capitals` / `reign_capitals`：王朝都城、陪都、行在及其时段和君主对应；
@@ -23,7 +25,7 @@ description: >-
 2. 不能只凭同名现代城市定位。古城遗址、迁址、同城不同遗址必须区分；同一古称在不同时期可能对应不同地点。
 3. 对长距离战役、路线、流域或多地点事件，只选有历史意义的代表点，并在 `note` 说明该点不代表全部范围。
 4. 无法可靠定位或诸说无法取舍时宁可留空；若采用一种通行说，`precision='approximate'` 并记录其他说法和来源。
-5. 历史概述只写历史事实。地理编码方法、代表点选择和数据取舍写入 `note` 或 manifest notes。
+5. 历史概述只写历史事实。地理编码方法、代表点选择和数据取舍写入 `note` 或 `cache.json.manifest.notes`。
 
 ## 坐标与地名
 
@@ -44,8 +46,9 @@ description: >-
 - 并立政权的都城用与 reign 相同的 `claim_track`。同一王朝/track 在同一时段有多个都城时，必须由角色或史料语义说明共存。
 - 都城只属于特定君主或不能由王朝、track、日期无歧义推断时，写 `reign_capitals` 显式关联。更新前先清理该 reign 的陈旧关联，再 `ON CONFLICT DO NOTHING` 插入正确集合。
 - 王朝更名、合并泳道或相位变化不改变历史都城实体；不要为了布局复制同一都城记录。
+- 同一实际城址仅发生改名时，不要按古称拆成多条都城记录；在 `historical_name` 按历史先后用 `/` 连接旧名与新名（如“沈阳/盛京”），保留一条连续都城记录。若都城角色、claim track 或具体城址另有真实变化，按其语义保留必要时段/实体区分，名称仍可用 `/` 表示同址别名；现代行政区或近似坐标相同本身不足以证明同一城址。
 
-ID 使用 `cap-{dynasty}-{place-kebab}`；同地多次迁入时追加起年。优先修改 `data/imports/dynasty-capitals/capitals-raw.json` 与坐标文件，再运行其生成器。
+ID 使用 `cap-{dynasty}-{place-kebab}`；同地多次迁入时追加起年。都城记录直接写入 `data/imports/dynasty-capitals/cache.json` 的 `capitals` 数组；坐标和地名都随记录保存。
 
 ## 事件地点
 
@@ -53,13 +56,13 @@ ID 使用 `cap-{dynasty}-{place-kebab}`；同地多次迁入时追加起年。�
 - 一条事件当前只有一个 `location_id`。涉及多处时选叙事中心或关键转折点，并在 `historical_name`、`modern_name`、`note` 清楚说明范围；不要伪装成精确单点。
 - 地点 id 使用 `loc-{event-or-place-kebab}`。先查是否已有可复用地点，但只有历史语义和代表点完全一致时才复用。
 - `precision` 默认 `approximate`；只有坐标确指已确认遗址或设施时才使用更高精度，并保留来源。
-- 维护 `data/imports/event-locations/locations.mjs`，通过 `eventLocationSql()` UPSERT 地点，再更新 `events.location_id`。事件不存在时先处理事件本体，不能留下无效 UPDATE。
+- 地点记录直接写入 `data/imports/event-locations/cache.json` 的 `eventLocations` 数组。事件的 `locationId` 写在对应事件记录中；事件不存在时先处理事件本体，不能留下无效关联。
 
 ## 时间、历法与不确定性
 
 - 都城时段也必须核对原始史料日期和历法。农历月日不得直接当公历；可靠换算后在 `note` 记录原日期与依据。
 - `start_date_confidence` / `end_date_confidence` 仅表示导入者推算或插值边界。史料只写“约某年”但可忠实落入该年桶时，不自动加 confidence。
-- 所有 `start_abs` / `end_abs` 使用 `absMonth()` 或共享生成器计算，不手填。
+- 所有 `start.abs` / `end.abs` 使用 `absMonth()` 或 `compute-abs.mjs` 核算后直接写入缓存；统一生成器只负责 SQL 序列化。
 
 ## 工作流
 
@@ -68,25 +71,24 @@ Task Progress:
 - [ ] 1. 确定地理对象类型、时间窗和关联实体
 - [ ] 2. 查史料核对古称、今址、角色、时段和争议
 - [ ] 3. 获取与坐标系一致的坐标并反向核验
-- [ ] 4. 修改 capitals-raw/coordinates 或 event-locations 源数据
+- [ ] 4. 直接编辑对应包 `cache.json` 与 manifest 来源说明
 - [ ] 5. 运行生成器并校验 SQL、外键和现代地名
 - [ ] 6. 导入数据库
 - [ ] 7. 验收地图点、时间轴归属、详情关联和争议说明
 ```
 
 ```bash
-# 王朝都城
-node data/imports/generate.mjs dynasty-capitals
-
-# 事件地点
-node data/imports/generate.mjs event-locations
+# 王朝都城或事件地点包
+node data/imports/generate.mjs {slug}
 
 # 通用校验与导入
 node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/imports/{slug}/import.sql
 .cursor/skills/eralens-period-import/scripts/apply-sql.sh data/imports/{slug}/import.sql
 ```
 
-需要全量重灌时使用 `pnpm db:import`；不要运行 `pnpm db:seed` 覆盖真实数据。不要只改生成后的 `import.sql`，必须同步源文件和 `manifest.json` 的来源、计数、notes。
+生成器为全部导入包共用，只生成 PostgreSQL `import.sql`。校验器从 SQL 同目录的 `cache.json` 检查 reign 接续精度；失败时应修缓存并重新生成。单包增量导入用 `apply-sql.sh`；全量 `pnpm db:import` 前运行 `node data/imports/generate.mjs --all`，因为 db:import 会清空并重载本地 PostgreSQL、导出移动端 SQLite，但不会从缓存生成 SQL。Xcode 不执行包内 SQL。
+
+需要全量重灌时使用 `pnpm db:import`；不要运行 `pnpm db:seed` 覆盖真实数据。不要只改生成后的 `import.sql`；直接改对应 `cache.json` 和其中的 `manifest.sources` / `manifest.notes` / `manifest.counts`。计数要在缓存中维护，最终 `manifest.json` 由统一生成器输出。
 
 ## 验收
 

@@ -3,6 +3,7 @@ import { readdirSync, statSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { generateCachedPackageFromDirectory } from "./lib/generateCachedPackage.mjs";
+import { auditPackageOwnership } from "./lib/auditPackageOwnership.mjs";
 
 const importsRoot = path.dirname(fileURLToPath(import.meta.url));
 const target = process.argv[2];
@@ -17,6 +18,8 @@ const slugs = target === "--all"
     return statSync(dir).isDirectory() && statSync(path.join(dir, "cache.json"), { throwIfNoEntry: false });
   }).sort()
   : [target];
+
+auditPackageOwnership(importsRoot);
 
 for (const slug of slugs) {
   if (slug !== path.basename(slug) || slug.startsWith(".")) {

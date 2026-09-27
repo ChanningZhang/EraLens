@@ -4441,7 +4441,8 @@
         "abs": 4607
       },
       "summary": "苻坚率百万大军南征东晋，于淝水惨败，前秦迅速崩溃，北方再分裂。",
-      "atAbs": 4607
+      "atAbs": 4607,
+      "locationId": "loc-feishui"
     },
     {
       "kind": "battle",

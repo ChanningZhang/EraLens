@@ -614,7 +614,8 @@
         "abs": 2405
       },
       "summary": "曹操以少胜多，大败袁绍，奠定统一北方基础。",
-      "atAbs": 2405
+      "atAbs": 2405,
+      "locationId": "loc-guandu"
     },
     {
       "kind": "battle",
@@ -641,7 +642,8 @@
         "abs": 2507
       },
       "summary": "孙刘联军于赤壁大败曹操，三国鼎立格局初步形成。",
-      "atAbs": 2507
+      "atAbs": 2507,
+      "locationId": "loc-chibi"
     },
     {
       "kind": "politics",
@@ -692,7 +694,8 @@
       },
       "summary": "刘备伐吴复仇，于夷陵大败，蜀汉元气大伤。",
       "startAbs": 2658,
-      "endAbs": 2671
+      "endAbs": 2671,
+      "locationId": "loc-yiling"
     },
     {
       "kind": "battle",
@@ -715,7 +718,8 @@
         "abs": 3165
       },
       "summary": "钟会军受阻于剑阁时，邓艾率军由阴平道穿越险阻，进至江油并击败蜀军，迫使蜀汉政权迅速瓦解。",
-      "atAbs": 3165
+      "atAbs": 3165,
+      "locationId": "loc-yinping"
     }
   ],
   "relations": [
