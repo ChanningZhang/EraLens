@@ -13,7 +13,7 @@
     "db:down": "docker compose down",
     "db:migrate": "pnpm --filter @eralens/api db:migrate",
     "db:seed": "pnpm --filter @eralens/api db:seed",
-    "db:import": "node scripts/import-real-data.mjs",
+    "db:import": "node scripts/import-real-data.mjs && pnpm data:mobile:build && pnpm data:mobile:validate",
     "db:setup": "pnpm db:up && pnpm db:migrate && pnpm db:import",
     "data:mobile:build": "pnpm --filter @eralens/api exec tsx scripts/export-mobile-sqlite.ts",
     "data:mobile:validate": "pnpm --filter @eralens/api exec tsx scripts/validate-mobile-sqlite.ts",

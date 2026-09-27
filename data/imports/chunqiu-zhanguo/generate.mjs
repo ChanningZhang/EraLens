@@ -3,11 +3,19 @@
  * Generate EraLens import SQL for Spring-Autumn & Warring States feudal states.
  * AbsMonth must match packages/shared/src/time.ts
  */
-import { writeFileSync, mkdirSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { rulersByDynasty, rulerStats } from "./rulers.mjs";
-import { RULER_BIO_OVERRIDES, WIKI_TITLE_BY_PERSON_ID } from "./ruler-bios.mjs";
+const { rulersByDynasty } = JSON.parse(
+  readFileSync(new URL("./rulers.json", import.meta.url), "utf8"),
+);
+const rulerStats = {
+  dynasties: Object.keys(rulersByDynasty).length,
+  reigns: Object.values(rulersByDynasty).reduce((total, rulers) => total + rulers.length, 0),
+};
+const { RULER_BIO_OVERRIDES, WIKI_TITLE_BY_PERSON_ID } = JSON.parse(
+  readFileSync(new URL("./ruler-bios.json", import.meta.url), "utf8"),
+);
 import { alignReignSeamConfidences } from "../lib/alignReignSeamConfidences.mjs";
 import { applyDocumentedDatesToReigns } from "../lib/documentedReignDates.mjs";
 import { applyFeudalClanMetadata } from "../lib/applyFeudalClanMetadata.mjs";
@@ -36,6 +44,76 @@ function sqlArray(values) {
 function sqlJson(value) {
   if (value == null) return "NULL";
   return `${sqlStr(JSON.stringify(value))}::jsonb`;
+}
+function parsePgTextArrayItems(raw) {
+  const items = [];
+  let i = 0;
+  while (i < raw.length) {
+    while (/[\s,]/.test(raw[i] ?? "")) i++;
+    if (i >= raw.length) break;
+    if (raw[i] !== "'") throw new Error(`Unsupported PostgreSQL text[] item: ${raw.slice(i)}`);
+    i++;
+    let value = "";
+    while (i < raw.length) {
+      if (raw[i] === "'" && raw[i + 1] === "'") {
+        value += "'";
+        i += 2;
+      } else if (raw[i] === "'") {
+        i++;
+        break;
+      } else {
+        value += raw[i++];
+      }
+    }
+    items.push(value);
+  }
+  return items;
+}
+
+function replacePgTextArrays(sql) {
+  let output = "";
+  let offset = 0;
+  while (true) {
+    const start = sql.indexOf("ARRAY[", offset);
+    if (start < 0) return output + sql.slice(offset);
+    output += sql.slice(offset, start);
+    let cursor = start + "ARRAY[".length;
+    let inQuote = false;
+    for (; cursor < sql.length; cursor++) {
+      if (sql[cursor] === "'" && sql[cursor + 1] === "'" && inQuote) {
+        cursor++;
+      } else if (sql[cursor] === "'") {
+        inQuote = !inQuote;
+      } else if (sql[cursor] === "]" && !inQuote) {
+        break;
+      }
+    }
+    if (cursor >= sql.length) {
+      throw new Error(`Unsupported PostgreSQL ARRAY expression near: ${sql.slice(start, start + 80)}`);
+    }
+    output += sqlStr(JSON.stringify(parsePgTextArrayItems(sql.slice(start + 6, cursor))));
+    offset = cursor + (sql.slice(cursor + 1, cursor + 9) === "::text[]" ? 9 : 1);
+  }
+}
+
+function toSqliteSql(postgresSql) {
+  let sqliteSql = replacePgTextArrays(postgresSql);
+  sqliteSql = sqliteSql.replace(/::jsonb\b/g, "");
+
+  // PostgreSQL uses a data-modifying CTE to collect people from removed reigns.
+  // SQLite gets the same cleanup semantics through a temporary table.
+  sqliteSql = sqliteSql.replace(
+    /WITH stale AS \(\s*DELETE FROM reigns\s+WHERE ([\s\S]*?)\s+RETURNING person_id\s*\)\s*DELETE FROM persons p([\s\S]*?);/g,
+    (_match, staleWhere, personDeleteWhere) => [
+      "DROP TABLE IF EXISTS temp._stale_chunqiu_reign_people;",
+      `CREATE TEMP TABLE _stale_chunqiu_reign_people AS SELECT DISTINCT person_id FROM reigns WHERE ${staleWhere};`,
+      `DELETE FROM reigns WHERE ${staleWhere};`,
+      `DELETE FROM persons AS p${personDeleteWhere.replace(/\bFROM stale\b/g, "FROM _stale_chunqiu_reign_people")};`,
+      "DROP TABLE _stale_chunqiu_reign_people;",
+    ].join("\n"),
+  );
+  sqliteSql = sqliteSql.replace(/DELETE FROM persons p\b/g, "DELETE FROM persons AS p");
+  return sqliteSql;
 }
 function ym(year, month = 1) {
   return { year, month, abs: absMonth(year, month) };
@@ -177,7 +255,7 @@ function rulerPerson(r) {
   const displayName =
     r.personName && !/^[0-9]+$/.test(r.personName) && !/^[0-9]+年$/.test(r.personName)
       ? r.personName
-      : r.title;
+      : "";
   const wikiTitle = WIKI_TITLE_BY_PERSON_ID[r.personId] ?? r.title;
   return person(
     r.personId,
@@ -912,6 +990,7 @@ const sql = [
 
 mkdirSync(__dirname, { recursive: true });
 writeFileSync(path.join(__dirname, "import.sql"), sql);
+writeFileSync(path.join(__dirname, "import.sqlite.sql"), toSqliteSql(sql));
 
 const manifest = {
   slug: "chunqiu-zhanguo",
@@ -919,7 +998,7 @@ const manifest = {
   window: { startYear: -1046, startMonth: 1, endYear: -207, endMonth: 12 },
   scope: "cn",
   depth: "standard",
-  generatedAt: rulerStats.generatedAt,
+  generatedAt: new Date().toISOString().slice(0, 10),
   counts: {
     persons: importPersons.length,
     dynasties: dynasties.length,
@@ -965,6 +1044,7 @@ const manifest = {
     "秦国 upsert 已有 qin 行，将始年延至前778年秦襄公即位，与 qin-han 统一帝国段衔接；清理脚本保留 qin-han 的秦二世、子婴 reign。",
     "各国国君世系取维基百科大陆简体（zh-cn）诸侯君主列表与《史记》年表；按表头读取称号/姓名/在位年份，不用本地繁简转换。",
     "年精度顺序继位按逾年改元切年（死年归旧王、新王次年起算，见 deathYearSuccession.mjs；用维基原始起年检测，避免孝文王占死后庄襄王不再后移）。维基在位年份常与死年重叠（如秦文公起前766年）；一年短祚、秦灵公/简公/献公未逾年改元、曲沃与翼并立不后移。魏惠王称王前后合并为一条在位（前369–前319）。",
+    "燕前文公（前554—前549）与燕后文公（前361—前333）是不同世次的两位燕君，分属燕武公之后与燕桓公之后；源表虽均简称燕文公，导入时拆为 yan-r18 与 yan-r30 两个人物，后者本名失载、谥文公。依据《史记·燕召公世家》与《周朝诸侯国君主列表》。",
     "西周早中期无在位年的国君原则上在相邻锚点之间按世系均分，均分结果标 start/end_date_confidence=interpolated。宋微子至宋厉公采用《宋国君主列表》所列《史记·宋世家》与陈梦家《西周年代考》推定年份，仍标 interpolated；宋釐公前858年为后续年表锚点。",
     "卫康叔至卫贞伯现有资料仅能按其处于周成王、康王、昭王、穆王、共王、懿王/孝王时期作宽区间约束；康叔约前1040年以后，卫贞伯卒年前867年，顷侯自前866年起有年表。未将周王世代误作卫君个人的精确在位年。",
     "楚早期熊绎至熊杨仍按世系均分。熊渠及熊挚红、熊延年代存在资料异说，不以低质量二手列表改写为确定年份；熊勇及以后采用诸侯君主表/相关研究所载年表锚点，所有本由推算确定的边界仍标 interpolated。",
@@ -972,7 +1052,7 @@ const manifest = {
     "齐太公不用维基齐国表的前1122年（旧克商年），与西周始年（前1046）对齐。",
     "田氏代齐为顺序接续，不是并立：宣公→康公→田和→侯剡。齐国表田和前404–前384年是田悼子卒后的领袖年；田和称君取条目前391年自立，前386年周安王列为诸侯。康公卒前379年，前391年被放逐后不在齐行续画，在位迄前392年。",
     "卫国人物 id 用 weiguo- 前缀，避免与战国魏 wei-r* 冲突；燕召公用 ji-shi，避免与宋恭帝 zhao-shi 冲突。",
-    "同人多次即位拆多条 reign（reignId 后缀 -2），与唐/明一致；维基合并年表由 build-rulers.mjs 条目校正展开，不做运行时 split。",
+    "同人多次即位拆多条 reign（reignId 后缀 -2），与唐/明一致；在位记录直接维护于 rulers.json，不从 Wiki 原始文本自动推断或覆盖。",
     "吴国条目列出泰伯至去齐的连续世系但未给出各君主在位年，并称建国约在前12世纪、寿梦始有准确纪年。《史记·吴太伯世家》记载武王克殷时周章已君吴；以西周建国年（前1046）为周章起年确定锚点，锚点前后的无年表连续君主分别按世系均分，失考边标记 interpolated。寿梦起点保留年表锚点。前505年夫概自立，按条目列作短暂并立君主，使用 rival claim track。",
     "郑成公被晋扣留期间，前581年三月子如立公子繻，四月郑人杀繻并立髡顽，郑伯随后归国（《左传·成公十年》）；在位序列按郑成公第一次在位→公子繻短暂即位→郑成公复位排列。年精度边界沿用前581年。",
     "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 precision: year。",
@@ -983,13 +1063,13 @@ const manifest = {
     "补充‘晋文侯杀携王’事件与晋国及晋文侯（jin-r10）的关联；命运线终点据此前750年在位的晋文侯卡，不连周平王。",
     "逐条复核夏商周包既有事件的诸侯国关联：《左传·僖公九年》载葵丘与会者为鲁、齐、宋、卫、郑、许、曹及周王使者；补入本包有建模泳道的鲁、宋、卫、郑、曹（许未建王朝实体）。城濮之战补入受战事直接影响的宋、曹、卫：宋受楚围而晋出兵救援，晋先伐曹、卫并以复国交涉，原有关联晋、楚保留。依据《中国哲学书电子化计划》所录《左传·僖公九年》 https://ctext.org/chun-qiu-zuo-zhuan/xi-gong-jiu-nian/zhs ，以及《菏泽历史文化集萃·城濮之战》 https://shandong-chorography.org/database/bh/section/22/article/66/ 。",
     "韩赵魏在位仅收录前403年册命立国之后；晋国卿大夫世系（赵简子等）不挂在三国行上。晋国止于前349年静公被杀。",
-    `国君数据由 fetch-wiki-zh-cn.py + build-rulers.mjs 生成，共 ${rulerStats.reigns} 条在位记录。`,
+    `国君名录共 ${rulerStats.reigns} 条在位记录，直接维护于 rulers.json；人物简介和 Wiki 条目对应关系维护于 ruler-bios.json。运行本 generate.mjs 将本包数据转换为 PostgreSQL import.sql 和 SQLite import.sqlite.sql。`,
   ],
 };
 writeFileSync(path.join(__dirname, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);
 
 console.log(
-  `Wrote import.sql + manifest.json: ${importPersons.length} persons, ${dynasties.length} dynasties, ${importReigns.length} reigns (${missingReigns.length} missing), ${events.length} events, ${relations.length} relations, ${existingEventDynasties.length} event_dynasty links`,
+  `Wrote import.sql, import.sqlite.sql + manifest.json: ${importPersons.length} persons, ${dynasties.length} dynasties, ${importReigns.length} reigns (${missingReigns.length} missing), ${events.length} events, ${relations.length} relations, ${existingEventDynasties.length} event_dynasty links`,
 );
 console.log("Sample abs:", {
   qiStart: absMonth(-1046, 1),

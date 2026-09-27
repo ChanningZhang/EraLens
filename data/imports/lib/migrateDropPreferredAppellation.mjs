@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /**
  * One-shot migration: merge preferred_appellation into title and strip the column
- * from baked import.sql files and chunqiu-zhanguo/rulers.mjs.
+ * from baked import.sql files and chunqiu-zhanguo/rulers.json.
  */
-import { readFileSync, writeFileSync, readdirSync } from "node:fs";
+import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -104,16 +104,6 @@ function migrateReignInsert(sql) {
   });
 }
 
-function migrateRulersMjs(content) {
-  return content.replace(
-    /"title": "((?:\\.|[^"\\])*)"(?:,\s*"personName": "((?:\\.|[^"\\])*)")?,\s*"posthumousName": ([^,]+),\s*"preferredAppellation": \{\s*"kind": "regnal",\s*"name": "((?:\\.|[^"\\])*)"\s*\}/g,
-    (_m, _title, personNamePart, posthumousName, prefName) => {
-      const personSegment = personNamePart ? `, "personName": "${personNamePart}"` : "";
-      return `"title": "${prefName}"${personSegment}, "posthumousName": ${posthumousName}`;
-    },
-  );
-}
-
 function walkImportSql(dir, out = []) {
   for (const ent of readdirSync(dir, { withFileTypes: true })) {
     const p = path.join(dir, ent.name);
@@ -134,12 +124,23 @@ for (const file of walkImportSql(root)) {
   }
 }
 
-const rulersPath = path.join(root, "chunqiu-zhanguo", "rulers.mjs");
-const rulersBefore = readFileSync(rulersPath, "utf8");
-const rulersAfter = migrateRulersMjs(rulersBefore);
-if (rulersAfter !== rulersBefore) {
-  writeFileSync(rulersPath, rulersAfter);
-  console.log("updated chunqiu-zhanguo/rulers.mjs");
+const rulersPath = path.join(root, "chunqiu-zhanguo", "rulers.json");
+if (existsSync(rulersPath)) {
+  const rulers = JSON.parse(readFileSync(rulersPath, "utf8"));
+  let rulersChanged = false;
+  for (const dynastyRulers of Object.values(rulers.rulersByDynasty ?? {})) {
+    for (const ruler of dynastyRulers) {
+      if (ruler.preferredAppellation?.kind === "regnal") {
+        ruler.title = ruler.preferredAppellation.name;
+        delete ruler.preferredAppellation;
+        rulersChanged = true;
+      }
+    }
+  }
+  if (rulersChanged) {
+    writeFileSync(rulersPath, `${JSON.stringify(rulers, null, 2)}\n`);
+    console.log("updated chunqiu-zhanguo/rulers.json");
+  }
 }
 
 console.log(`Done. ${changed} import.sql file(s) updated.`);

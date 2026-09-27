@@ -8,7 +8,9 @@ import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildPreQinClanContext, resolvePreQinXingShi } from "./preQinClanContext.mjs";
-import { rulersByDynasty } from "../chunqiu-zhanguo/rulers.mjs";
+const { rulersByDynasty } = JSON.parse(
+  readFileSync(new URL("../chunqiu-zhanguo/rulers.json", import.meta.url), "utf8"),
+);
 
 const PRE_IMPERIAL_START_YEAR = -221;
 

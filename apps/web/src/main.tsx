@@ -6,13 +6,6 @@ import { installTimelineWheel } from "./features/timeline/hooks/useTimelineWheel
 import "./design/tokens.css";
 import "./design/rareCjkFont.css";
 import "./design/typography.css";
-import { Capacitor } from "@capacitor/core";
-
-if (Capacitor.isNativePlatform()) {
-  void import("./data/iosSqliteProbe")
-    .then(({ runIosSqliteProbe }) => runIosSqliteProbe())
-    .catch((error: unknown) => console.error("[EraLens] bundled SQLite probe failed", error));
-}
 import "./design/masterGold.css";
 
 installTimelineWheel();

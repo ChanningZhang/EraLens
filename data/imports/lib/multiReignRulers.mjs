@@ -2,8 +2,8 @@
  * Abstract multi-reign rules: same person, multiple explicit reign records.
  * Wiki king-lists may merge restoration spans or assign duplicate row indices.
  *
- * Curated span splits live in each import package (cf. chunqiu-zhanguo/build-rulers.mjs),
- * baked into rulers.mjs → import.sql → PostgreSQL. Not a runtime split.
+ * Curated span splits live in each import package's source data, baked into
+ * its import.sql → PostgreSQL. Not a runtime split.
  */
 
 function defaultReignId(personId, dynastyId, ordinal) {
@@ -18,7 +18,9 @@ function personUnifyKey(r) {
   // An unknown-name marker is shared by unrelated rulers and cannot identify
   // one person across multiple source rows.
   if (/^(?:姬)?[？?]$|^缺失$/.test(name)) return null;
-  const discriminator = r.posthumousName ?? r.title ?? "";
+  // A shared posthumous name does not prove identity when the source titles
+  // distinguish separate rulers (for example, 前文公 and 后文公).
+  const discriminator = r.title ?? r.posthumousName ?? "";
   return `${name}|${discriminator}`;
 }
 
