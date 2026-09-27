@@ -48,10 +48,10 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_na
 
 -- dynasties
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, parent_id, group_id, note)
-VALUES ('xiliao', '西辽', ARRAY['哈剌契丹','黑契丹'], 'cn', 'east_asia', 1124, 1, 1218, 12, 13488, 14627, 'year', 'ochre', NULL, NULL, '耶律大石辽亡后西迁，1124年镇州称王；1218年蒙古攻灭。')
+VALUES ('xiliao', '西辽', ARRAY['哈剌契丹','黑契丹'], 'cn', 'east_asia', 1124, 1, 1218, 12, 13488, 14627, 'year', 'ochre', NULL, NULL, '辽亡前后，宗室耶律大石率部西行，依托可敦城及漠北诸部整军；此后进入中亚，以巴拉沙衮为中心建立西辽，又称哈剌契丹。西辽控制中亚绿洲与商路，1141年卡特万之战后势力扩展至河中地区；此后因内乱和屈出律夺权而衰弱，1218年为蒙古所灭。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, parent_id, group_id, note)
-VALUES ('beiliao', '北辽', ARRAY['燕京辽'], 'cn', 'east_asia', 1122, 1, 1123, 12, 13464, 13487, 'year', 'ochre', NULL, NULL, '1122年耶律淳于燕京称帝，1123年旋亡；萧德妃称制不另建 reign。')
+VALUES ('beiliao', '北辽', ARRAY['燕京辽'], 'cn', 'east_asia', 1122, 1, 1123, 12, 13464, 13487, 'year', 'ochre', NULL, NULL, '辽朝末年金军南下，辽宗室与留守官员在燕京拥立耶律淳，1122年建立短暂的北辽。耶律淳死后，萧德妃称制主持政务；金军攻取燕京，北辽于1123年瓦解，萧德妃随后归附天祚帝。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, parent_id, group_id, note)
 VALUES ('dongliao', '东辽', ARRAY['辽'], 'cn', 'east_asia', 1213, 1, 1269, 12, 14556, 15239, 'year', 'ochre', NULL, NULL, '1213年耶律留哥称辽王；1269年耶律古乃去职，广宁并入东京。')

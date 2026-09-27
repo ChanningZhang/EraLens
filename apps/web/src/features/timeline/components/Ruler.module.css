@@ -1,7 +1,7 @@
 .ruler {
   --ruler-edge-fade: 64px;
   position: relative;
-  padding: 6px 0;
+  min-height: 0;
   border-top: 1px solid var(--color-border);
   background: var(--color-surface);
   user-select: none;
@@ -32,13 +32,13 @@
 .ringShell {
   position: relative;
   z-index: 1;
-  height: var(--ruler-ring-height, 58px);
+  height: 100%;
   margin: 0 0 0 var(--timeline-gutter);
 }
 
 .ringTrack {
   position: absolute;
-  inset: 3px 0 0;
+  inset: 0;
   overflow: hidden;
   overscroll-behavior: none;
   cursor: grab;
@@ -124,20 +124,4 @@
   white-space: nowrap;
 }
 
-.zoomHint {
-  position: absolute;
-  right: 18px;
-  bottom: 6px;
-  z-index: 3;
-  font-size: 10px;
-  color: var(--color-ink-muted);
-  pointer-events: none;
-  padding: 2px 6px;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--color-surface) 92%, transparent);
-  box-shadow: 0 0 12px 8px color-mix(in srgb, var(--color-surface) 88%, transparent);
-}
-
 :global([data-narrow="true"]) .ruler { --ruler-edge-fade: 24px; }
-:global([data-narrow="true"]) .zoomHint { right: 6px; font-size: 9px; }
-:global([data-narrow="true"]) .gestureHint { display: none; }

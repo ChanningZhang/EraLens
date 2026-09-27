@@ -86,7 +86,7 @@
   align-items: center;
   gap: 3px;
   max-width: 132px;
-  padding: 1px 4px 1px 14px;
+  padding: 1px 4px 1px 18px;
   border-radius: 3px;
   background: color-mix(in srgb, var(--color-paper) 74%, transparent);
   box-shadow: 0 0 7px color-mix(in srgb, var(--color-paper) 74%, transparent);
@@ -96,7 +96,7 @@
 .personSelectDot {
   position: absolute;
   z-index: 5;
-  width: 20px;
+  width: 18px;
   height: 20px;
   padding: 0;
   border: 0;

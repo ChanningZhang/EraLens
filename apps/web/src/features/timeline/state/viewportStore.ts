@@ -1,5 +1,6 @@
 import {
   clampAbs,
+  absMonth,
   quantizeWindowForQuery,
   DEFAULT_TIMELINE_LAYOUT_PREFERENCES,
   resolveTimelinePresentation,
@@ -23,7 +24,7 @@ export type ViewportSnapshot = {
 
 type ViewportListener = () => void;
 
-const DEFAULT_CENTER = 2400; // ~200 CE
+const DEFAULT_CENTER = absMonth(-221, 1); // Qin Shi Huang's unification of China
 const DEFAULT_PX_PER_MONTH = 1.5;
 const MIN_PX = 0.08;
 const MAX_PX = 12;

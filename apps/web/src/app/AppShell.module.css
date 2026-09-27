@@ -1,10 +1,11 @@
 .appShell {
+  --ruler-shift: 0px;
   position: relative;
   display: grid;
   grid-template-rows: 1fr var(--ruler-height);
   height: 100%;
   padding: env(safe-area-inset-top) env(safe-area-inset-right)
-    env(safe-area-inset-bottom) env(safe-area-inset-left);
+    calc(env(safe-area-inset-bottom) - var(--ruler-shift)) env(safe-area-inset-left);
   min-height: 0;
   background: var(--color-paper);
   overscroll-behavior: none;
@@ -13,7 +14,7 @@
 .header {
   position: absolute;
   inset: env(safe-area-inset-top) env(safe-area-inset-right)
-    calc(var(--ruler-height) + env(safe-area-inset-bottom)) env(safe-area-inset-left);
+    calc(var(--ruler-height) + env(safe-area-inset-bottom) - var(--ruler-shift)) env(safe-area-inset-left);
   z-index: 10;
   pointer-events: none;
 }
@@ -89,7 +90,7 @@
 .settingsWrap {
   position: absolute;
   left: env(safe-area-inset-left);
-  bottom: env(safe-area-inset-bottom);
+  bottom: calc(env(safe-area-inset-bottom) - var(--ruler-shift));
   z-index: 30;
   display: grid;
   place-items: center;
@@ -183,11 +184,17 @@
 
 .appShell[data-narrow="true"] {
   --ruler-height: 60px;
-  --ruler-ring-height: 47px;
 }
 
 .appShell[data-narrow="true"] .searchInput { height: 44px; font-size: 16px; padding: 9px 10px; }
 .appShell[data-narrow="true"] .searchResults { max-height: min(50dvh, 280px); }
+
+@media (orientation: landscape) and (max-height: 560px) {
+  .appShell {
+    --ruler-shift: env(safe-area-inset-bottom);
+    --ruler-height: 52px;
+  }
+}
 
 .searchResult {
   display: flex;

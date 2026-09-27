@@ -10,7 +10,6 @@ import {
 import {
   activeCapitalsAtAbs,
   capitalSegmentsForReign,
-  reignOwnershipInterval,
 } from "./timelineOwnership";
 
 type CapitalTimePoint = { year: number; month: number; day?: number };
@@ -204,10 +203,9 @@ export function buildReignTenureCapitalRows(
 ): ReignCapitalTenureRow[] {
   const rows = buildReignCapitalTenures(reign, capitals, dynastyReigns);
   if (rows.length > 0) return rows;
-  const duration = formatReignDurationLabel(
-    reign,
-    reignOwnershipInterval(reign, dynastyReigns),
-  );
+  // The detail row describes the recorded reign span. Ownership clipping is
+  // for timeline placement and must not rewrite the tenure's displayed length.
+  const duration = formatReignDurationLabel(reign);
   return [
     {
       tenure: {

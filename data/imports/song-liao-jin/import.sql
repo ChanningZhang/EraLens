@@ -82,10 +82,10 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_na
 
 -- dynasties
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, parent_id, group_id, note)
-VALUES ('liao', '辽', ARRAY['契丹','大辽'], 'cn', 'east_asia', 916, 1, 1125, 1, 10992, 13500, 'year', 'ochre', NULL, NULL, '契丹耶律氏，916年太祖称帝；1125年金灭辽。')
+VALUES ('liao', '辽', ARRAY['契丹','大辽'], 'cn', 'east_asia', 916, 1, 1125, 1, 10992, 13500, 'year', 'ochre', NULL, NULL, '辽由契丹耶律氏建立，耶律阿保机统一契丹诸部，916年称帝，947年定国号辽。辽以南、北面官分别治理农耕与草原地区，兼采中原制度并保留契丹旧制；鼎盛时控制燕云地区，与北宋长期对峙。澶渊之盟后，宋辽边境长期相对安定，互市和人员往来增多。女真兴起后辽国势衰落，1125年天祚帝被金军俘获，辽亡。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, parent_id, group_id, note)
-VALUES ('jin-nvzhen', '金', ARRAY['大金','女真金'], 'cn', 'east_asia', 1115, 1, 1234, 1, 13380, 14808, 'year', 'ochre', NULL, NULL, '女真完颜氏，1115年太祖完颜阿骨打于会宁称帝，国号大金；1125年灭辽，1127年靖康之变灭北宋；1234年蒙古与南宋联军破蔡州，金亡。')
+VALUES ('jin-nvzhen', '金', ARRAY['大金','女真金'], 'cn', 'east_asia', 1115, 1, 1234, 1, 13380, 14808, 'year', 'ochre', NULL, NULL, '女真完颜氏建立的王朝。完颜阿骨打于1115年称帝建国，先后灭辽、灭北宋，统治中国北方；金朝在中都等地推行中原官制，同时保留猛安谋克等女真制度。此后金与南宋长期对峙，1141年议和后边界和关系相对稳定。蒙古兴起后金国力渐衰，1234年蒙古与南宋联军攻破蔡州，金亡。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 
 -- reigns

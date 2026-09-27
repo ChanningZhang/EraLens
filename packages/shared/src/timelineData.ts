@@ -17,7 +17,6 @@ import {
 } from "./dynastyColors";
 import { eventKindLabel, eventSpanAbs, formatEventTime } from "./eventTime";
 import { formatReignDurationLabel } from "./reignVisual";
-import { reignOwnershipInterval } from "./timelineOwnership";
 import {
   TimelineSliceSchema,
   type Dynasty,
@@ -263,10 +262,7 @@ function buildPersonEntityDetail(
     ? [
         ...resolveReignDetailFacts(focusReign, person.name, clan, {
           durationLabel:
-            formatReignDurationLabel(
-              focusReign,
-              reignOwnershipInterval(focusReign, store.reigns),
-            ) ?? null,
+            formatReignDurationLabel(focusReign) ?? null,
         }),
         ...claimDetailFacts(focusReign),
       ]

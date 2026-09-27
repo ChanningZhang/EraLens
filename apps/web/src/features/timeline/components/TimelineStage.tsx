@@ -639,7 +639,6 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
         animate={{ minHeight: Math.max(stageViewportHeight, contentHeight) }}
         transition={{ duration: reduceMotion ? 0 : 0.24, ease: [0.2, 0.8, 0.2, 1] }}
       >
-        <div className={styles.rail} aria-hidden="true" />
         <motion.div
           className={styles.lanes}
           animate={{ minHeight: contentHeight }}

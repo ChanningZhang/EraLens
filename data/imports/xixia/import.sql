@@ -54,7 +54,7 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_na
 
 -- dynasties
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, parent_id, group_id, note)
-VALUES ('xixia', '西夏', ARRAY['大夏','党项西夏'], 'cn', 'east_asia', 982, 1, 1227, 1, 11784, 14724, 'year', 'ochre', NULL, NULL, '党项李氏，982年李继迁叛宋自立；1038年李元昊称帝，国号大夏；1227年蒙古攻灭。')
+VALUES ('xixia', '西夏', ARRAY['大夏','党项西夏'], 'cn', 'east_asia', 982, 1, 1227, 1, 11784, 14724, 'year', 'ochre', NULL, NULL, '党项李氏原据夏州一带，李继迁时期逐步摆脱宋朝控制并扩展至河西；1038年李元昊称帝，国号大夏，定都兴庆府，宋人因其地在西而称西夏。西夏在党项旧制基础上设置官僚机构，创制并推行西夏文字，翻译佛经、发展佛教文化。其政权与北宋、辽长期并立，先后交战、议和并开展贸易；金灭辽后，又处于宋金之间。蒙古自13世纪初持续进攻，1227年西夏为蒙古所灭。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 
 -- reigns

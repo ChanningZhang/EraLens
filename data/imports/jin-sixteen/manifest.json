@@ -53,6 +53,90 @@
     {
       "label": "永嘉之乱",
       "url": "https://zh.wikipedia.org/wiki/永嘉之乱"
+    },
+    {
+      "label": "《晋书》载记第二十一（李雄、李班、李期、李寿、李势）",
+      "url": "https://ctext.org/wiki.pl?chapter=306313&if=gb&remap=gb"
+    },
+    {
+      "label": "《晋书》载记第三（刘曜）",
+      "url": "https://ctext.org/wiki.pl?chapter=419800&if=gb&remap=gb"
+    },
+    {
+      "label": "《晋书》载记第五（石勒）",
+      "url": "https://ctext.org/wiki.pl?chapter=211671&if=gb"
+    },
+    {
+      "label": "《晋书》载记第八（慕容廆）",
+      "url": "https://ctext.org/wiki.pl?chapter=234321&if=gb&remap=gb"
+    },
+    {
+      "label": "《晋书》载记第九（慕容皝）",
+      "url": "https://ctext.org/wiki.pl?chapter=369736&if=en"
+    },
+    {
+      "label": "《晋书》载记第十一（慕容暐）",
+      "url": "https://ctext.org/wiki.pl?chapter=72438&if=gb&remap=gb"
+    },
+    {
+      "label": "《晋书》载记第十三（苻坚）",
+      "url": "https://ctext.org/wiki.pl?chapter=952985&if=en&remap=gb"
+    },
+    {
+      "label": "《晋书》载记第十六至十八（姚氏后秦）",
+      "url": "https://ctext.org/wiki.pl?chapter=118587&if=en"
+    },
+    {
+      "label": "《晋书》载记第二十六（秃发氏南凉）",
+      "url": "https://ctext.org/wiki.pl?chapter=464972&if=en&remap=gb"
+    },
+    {
+      "label": "《晋书》载记第二十七（慕容德）",
+      "url": "https://ctext.org/wiki.pl?chapter=109211&if=en"
+    },
+    {
+      "label": "《晋书》载记第二十九（沮渠蒙逊）",
+      "url": "https://ctext.org/wiki.pl?chapter=490007&if=en"
+    },
+    {
+      "label": "《晋书》载记第三十（赫连氏夏）",
+      "url": "https://ctext.org/wiki.pl?chapter=211298&if=gb&remap=gb"
+    },
+    {
+      "label": "《晋书》载记第二十二（北凉）",
+      "url": "https://ctext.org/wiki.pl?chapter=87016&if=gb&remap=gb"
+    },
+    {
+      "label": "《五胡十六国君主列表》",
+      "url": "https://zh.wikipedia.org/wiki/五胡十六国君主列表"
+    },
+    {
+      "label": "《晋书》帝纪（Chinese Text Project）",
+      "url": "https://ctext.org/datawiki.pl?if=gb&remap=gb&res=840582"
+    },
+    {
+      "label": "《晋书》帝纪第三·武帝（Chinese Text Project）",
+      "url": "https://ctext.org/wiki.pl?chapter=484762&if=en"
+    },
+    {
+      "label": "《晋书》帝纪第七·成帝、康帝（Chinese Text Project）",
+      "url": "https://ctext.org/wiki.pl?chapter=345411&if=en&remap=gb"
+    },
+    {
+      "label": "《晋书》帝纪第九·简文帝、孝武帝（Chinese Text Project）",
+      "url": "https://ctext.org/wiki.pl?chapter=157457&if=en&remap=gb"
+    },
+    {
+      "label": "《晋书》帝纪第十·安帝、恭帝（Chinese Text Project）",
+      "url": "https://ctext.org/wiki.pl?chapter=242119&if=en&remap=gb"
+    },
+    {
+      "label": "故宫博物院：《晋书》",
+      "url": "https://www.dpm.org.cn/lemmas/242944.html"
+    },
+    {
+      "label": "《中国大百科全书·中国历史（1）》“晋”条",
+      "url": "https://szzy.7lue.cn/read/1a0ee984fa9c5a8c237bd9367a608356/be1436a9472e0b6b4e09f6d9d208d8cf.md"
     }
   ],
   "notes": [
@@ -66,6 +150,8 @@
     "前秦通行六帝（苻健→苻生→苻坚→苻丕→苻登→苻崇）；追尊苻洪、苻雄及叛臣窦冲不建 reign。旧包曾把苻崇误接到苻坚之后，已拆开。",
     "439 年北魏灭北凉为十六国终结事件；北魏本身归入南北朝，不在此包内。",
     "后赵石虎之后补石世、石遵、石鉴、石祗。石虎349年病死，冉闵杀的是石鉴而非石虎；石祗于襄国续统至351年，与冉魏并立。月取农历望日所在公历月。",
-    "未收录冉魏、西燕、仇池等《十六国春秋》以外的小国。"
+    "未收录冉魏、西燕、仇池等《十六国春秋》以外的小国。",
+    "本次补充五胡十六国相关人物 bio（成汉至胡夏，含张氏前凉）及各国 dynasties.note；以《晋书·载记》相关传记核对人物关系与政权脉络，并参考本包列出的五胡十六国君主年表核对主要更替和灭亡节点。概述为便于详情阅读的提要，具体在位边界仍以本包 reign 日期字段为准；部分史料对称王/称帝、改国号及短期共治的记年口径不同，概述按本包政权序列简述。",
+    "本次补充西晋、东晋15位皇帝人物 bio 及两朝 dynasty.note；依据《晋书》帝纪核对继承关系、朝政转折与主要事件，并参考故宫博物院《晋书》说明及《中国大百科全书》“晋”条概述。人物与政权概述为详情提要；准确在位边界以包内 reign 日期字段为准。"
   ]
 }
