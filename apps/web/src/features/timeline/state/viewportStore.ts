@@ -1,7 +1,10 @@
 import {
   clampAbs,
   quantizeWindowForQuery,
-  TIMELINE_GUTTER_PX,
+  DEFAULT_TIMELINE_LAYOUT_PREFERENCES,
+  resolveTimelinePresentation,
+  type TimelineLayoutPreferences,
+  type TimelinePresentation,
   type AbsMonth,
 } from "@eralens/shared";
 import { getWindow } from "../model/coordinates";
@@ -12,6 +15,7 @@ export type ViewportSnapshot = {
   pxPerMonth: number;
   widthPx: number;
   gutterPx: number;
+  presentation: TimelinePresentation;
   startAbs: AbsMonth;
   endAbs: AbsMonth;
   lod: ReturnType<typeof resolveLod>;
@@ -30,13 +34,15 @@ const DEFAULT_MAX_ABS = 25_000;
 let centerAbs = DEFAULT_CENTER;
 let pxPerMonth = DEFAULT_PX_PER_MONTH;
 let widthPx = 1200;
+let layoutPreferences = DEFAULT_TIMELINE_LAYOUT_PREFERENCES;
 let minAbs = DEFAULT_MIN_ABS;
 let maxAbs = DEFAULT_MAX_ABS;
 
 const listeners = new Set<ViewportListener>();
 
 function buildSnapshot(): ViewportSnapshot {
-  const gutterPx = TIMELINE_GUTTER_PX;
+  const presentation = resolveTimelinePresentation(widthPx, layoutPreferences);
+  const gutterPx = presentation.gutterPx;
   const { startAbs, endAbs } = getWindow({
     centerAbs,
     pxPerMonth,
@@ -49,6 +55,7 @@ function buildSnapshot(): ViewportSnapshot {
     widthPx,
     gutterPx,
     startAbs,
+    presentation,
     endAbs,
     lod: resolveLod(pxPerMonth),
   };
@@ -75,6 +82,11 @@ export const viewportStore = {
   },
   getSnapshot,
   getServerSnapshot: getSnapshot,
+  setLayoutPreferences(next: TimelineLayoutPreferences) {
+    if (layoutPreferences.railCollapsed === next.railCollapsed && layoutPreferences.density === next.density) return;
+    layoutPreferences = next;
+    notify();
+  },
   setBounds(min: AbsMonth, max: AbsMonth) {
     if (minAbs === min && maxAbs === max) return;
     minAbs = min;

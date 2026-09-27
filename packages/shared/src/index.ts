@@ -13,6 +13,7 @@ export * from "./timelineData";
 export * from "./chunks";
 export * from "./dynastyColors";
 export * from "./dynastyLaneGroups";
+export * from "./timelinePresentation";
 export * from "./dynastyClusterGroups";
 export * from "./claimTracks";
 export * from "./systemReigns";

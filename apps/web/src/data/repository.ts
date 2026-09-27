@@ -1,4 +1,4 @@
-import { createPlatformRepository } from "@eralens/data-access";
+import { closePlatformRepository, createPlatformRepository } from "@eralens/data-access";
 import type { TimelineRepository } from "@eralens/data-access";
 export type { TimelineRepository, TimelineQuery } from "@eralens/data-access";
 
@@ -17,4 +17,9 @@ async function createRepository(): Promise<TimelineRepository> {
 export function getRepository(): Promise<TimelineRepository> {
   repositoryPromise ??= createRepository();
   return repositoryPromise;
+}
+
+export async function closeRepositoryForContentUpdate(): Promise<void> {
+  await closePlatformRepository();
+  repositoryPromise = null;
 }

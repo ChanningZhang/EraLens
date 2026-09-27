@@ -1,8 +1,6 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { memo } from "react";
 import {
-  TIMELINE_RAIL_INSET_PX,
-  TIMELINE_RAIL_LABEL_WIDTH_PX,
   getDynastyLaneGroup,
   isFrozenLaneMaster,
   resolveActivePhaseDynastyId,
@@ -19,7 +17,6 @@ import { useViewport } from "../hooks/useViewport";
 import { laneLabelAnchorAbs, worldPanOffsetX } from "../model/coordinates";
 import type { PlacedDynasty } from "../model/laneLayout";
 import {
-  STACK_ROW_HEIGHT,
   type PreparedReignGeometry,
 } from "../model/reignClusters";
 import { selectionStore } from "../state/selectionStore";
@@ -60,11 +57,11 @@ type Props = {
 type LaneCardsProps = Pick<Props,
   "visibleReigns" | "visibleMissingReigns" | "reignGeometry" | "dynastiesById" |
   "personNames" | "personClans" | "laneColorToken"
-> & { fallbackDynasty: Dynasty; laneColor: string; pxPerMonth: number };
+> & { fallbackDynasty: Dynasty; laneColor: string; pxPerMonth: number; rowHeight: number };
 
 const LaneCards = memo(function LaneCards({
   visibleReigns, visibleMissingReigns, reignGeometry, dynastiesById,
-  personNames, personClans, laneColorToken, fallbackDynasty, laneColor, pxPerMonth,
+  personNames, personClans, laneColorToken, fallbackDynasty, laneColor, pxPerMonth, rowHeight,
 }: LaneCardsProps) {
   return (
     <>
@@ -89,6 +86,7 @@ const LaneCards = memo(function LaneCards({
             color={resolveReignColorValue(reignDynasty, reign, laneColorToken)}
             geometry={geometry}
             pxPerMonth={pxPerMonth}
+            rowHeight={rowHeight}
             personName={personNames.get(reign.personId)}
             personClan={personClans.get(reign.personId)}
             master={reign.isMain === true}
@@ -107,6 +105,7 @@ const LaneCards = memo(function LaneCards({
   a.laneColorToken === b.laneColorToken &&
   a.laneColor === b.laneColor &&
   a.pxPerMonth === b.pxPerMonth &&
+  a.rowHeight === b.rowHeight &&
   a.fallbackDynasty.id === b.fallbackDynasty.id,
 );
 
@@ -161,13 +160,10 @@ export function DynastyLane({
       transition={{ duration: reduceMotion ? 0 : 0.24, ease: [0.2, 0.8, 0.2, 1] }}
       style={{
         ["--dynasty-color" as string]: laneColor,
-        ["--stack-row-height" as string]: `${STACK_ROW_HEIGHT}px`,
         ["--dynasty-bar-height" as string]: `${barHeight}px`,
-        ["--timeline-rail-inset" as string]: `${TIMELINE_RAIL_INSET_PX}px`,
-        ["--timeline-rail-label-width" as string]: `${TIMELINE_RAIL_LABEL_WIDTH_PX}px`,
       }}
     >
-      <button
+      {!viewport.presentation.railCollapsed && <button
         type="button"
         className={[
           styles.frozenLabel,
@@ -201,7 +197,7 @@ export function DynastyLane({
             </motion.span>
           </AnimatePresence>
         </span>
-      </button>
+      </button>}
 
       <div className={styles.reignSequence}>
         <div className={styles.cards} style={{ transform: `translateX(${cardPanX}px)` }}>
@@ -216,6 +212,7 @@ export function DynastyLane({
             fallbackDynasty={dynasty}
             laneColor={laneColor}
             pxPerMonth={viewport.pxPerMonth}
+            rowHeight={viewport.presentation.rowHeightPx}
           />
         </div>
       </div>

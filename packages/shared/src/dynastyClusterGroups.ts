@@ -245,6 +245,7 @@ export const CLUSTER_CHIP_FRAME_PAD_TOP_PX = 11;
 export function clusterFramesForLanes(
   lanes: readonly PlacedLaneMetrics[],
   dynastyGroups: readonly DynastyGroup[],
+  rail: { insetPx: number; labelWidthPx: number } = { insetPx: TIMELINE_RAIL_INSET_PX, labelWidthPx: TIMELINE_RAIL_LABEL_WIDTH_PX },
 ): ClusterFramePlacement[] {
   const groupById = new Map(dynastyGroups.map((group) => [group.id, group]));
   const lanesByGroupId = new Map<string, PlacedLaneMetrics[]>();
@@ -261,8 +262,8 @@ export function clusterFramesForLanes(
   const padX = CLUSTER_CHIP_FRAME_PAD_X_PX;
   const padTop = CLUSTER_CHIP_FRAME_PAD_TOP_PX;
   const padBottom = CLUSTER_CHIP_FRAME_PAD_BOTTOM_PX;
-  const left = TIMELINE_RAIL_INSET_PX - padX;
-  const width = TIMELINE_RAIL_LABEL_WIDTH_PX + padX * 2;
+  const left = rail.insetPx - padX;
+  const width = rail.labelWidthPx + padX * 2;
 
   for (const [groupId, groupLanes] of lanesByGroupId) {
     const group = groupById.get(groupId);

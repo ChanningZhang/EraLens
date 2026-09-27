@@ -60,12 +60,13 @@ export type ReignBarLayout = {
 export function resolveReignBarLayout(
   visualWidthPx: number,
   labelGlyphCount = 3,
+  cardHeightPx = CARD_HEIGHT,
 ): ReignBarLayout {
   const barWidthPx = Math.max(0, visualWidthPx);
   const hitExpanded = barWidthPx < REIGN_BAR_HIT_MIN_PX;
   const unitWidthPx = hitExpanded ? REIGN_BAR_HIT_MIN_PX : barWidthPx;
   const barInsetPx = hitExpanded ? (unitWidthPx - barWidthPx) / 2 : 0;
-  const textLayout = resolveReignCardTextLayout(barWidthPx, labelGlyphCount);
+  const textLayout = resolveReignCardTextLayout(barWidthPx, labelGlyphCount, cardHeightPx);
   const captionBelow = textLayout.level === "below";
 
   return {
@@ -108,10 +109,11 @@ function wrappedFits(
   cardWidthPx: number,
   glyphCount: number,
   fontPx: number,
+  cardHeightPx: number,
 ): boolean {
   const lines = wrappedLineCount(cardWidthPx, glyphCount, fontPx);
   if (lines === null) return false;
-  const innerHeight = CARD_HEIGHT - WRAP_PAD_Y;
+  const innerHeight = cardHeightPx - WRAP_PAD_Y;
   return lines * lineHeightForFont(fontPx) <= innerHeight;
 }
 
@@ -131,20 +133,24 @@ function singleLineFits(
 export function resolveReignCardTextLayout(
   cardWidthPx: number,
   glyphCount = 3,
+  cardHeightPx = CARD_HEIGHT,
 ): ReignCardTextLayout {
+  const nameFont = cardHeightPx < CARD_HEIGHT ? 13 : NAME_FONT_DEFAULT;
+  const wrapFont = cardHeightPx < CARD_HEIGHT ? 13 : NAME_FONT_WRAP_DEFAULT;
+  const metaFont = cardHeightPx < CARD_HEIGHT ? 10 : META_FONT_DEFAULT;
   if (
     cardWidthPx >= FULL_MIN_WIDTH &&
-    singleLineFits(cardWidthPx, glyphCount, NAME_FONT_DEFAULT)
+    singleLineFits(cardWidthPx, glyphCount, nameFont)
   ) {
     return {
       level: "full",
-      nameFontPx: NAME_FONT_DEFAULT,
-      metaFontPx: META_FONT_DEFAULT,
+      nameFontPx: nameFont,
+      metaFontPx: metaFont,
     };
   }
 
-  for (let fontPx = NAME_FONT_WRAP_DEFAULT; fontPx >= MIN_WRAP_FONT; fontPx--) {
-    if (wrappedFits(cardWidthPx, glyphCount, fontPx)) {
+  for (let fontPx = wrapFont; fontPx >= MIN_WRAP_FONT; fontPx--) {
+    if (wrappedFits(cardWidthPx, glyphCount, fontPx, cardHeightPx)) {
       return {
         level: "wrap",
         nameFontPx: fontPx,
@@ -192,8 +198,9 @@ export function shouldShowReignCardMeta(
   cardWidthPx: number,
   nameGlyphCount = 3,
   metaGlyphCount = 0,
+  cardHeightPx = CARD_HEIGHT,
 ): boolean {
-  const layout = resolveReignCardTextLayout(cardWidthPx, nameGlyphCount);
+  const layout = resolveReignCardTextLayout(cardWidthPx, nameGlyphCount, cardHeightPx);
   if (layout.level !== "full" || metaGlyphCount <= 0) return false;
 
   const nameWidth = nameGlyphCount * glyphPxForFont(layout.nameFontPx);

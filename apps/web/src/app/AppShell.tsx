@@ -3,9 +3,6 @@ import { getRepository } from "@/data/repository";
 import {
   EventKindSchema,
   eventKindLabel,
-  TIMELINE_GUTTER_PX,
-  TIMELINE_RAIL_INSET_PX,
-  TIMELINE_RAIL_LABEL_WIDTH_PX,
   type SearchHit,
 } from "@eralens/shared";
 import { DetailPanel } from "@/features/detail/components/DetailPanel";
@@ -19,6 +16,7 @@ import { useTimelineWheel } from "@/features/timeline/hooks/useTimelineWheel";
 import { useViewport } from "@/features/timeline/hooks/useViewport";
 import { useDataBounds } from "@/features/timeline/hooks/useTimelineData";
 import { useEventDisplaySettings } from "./useEventDisplaySettings";
+import { useTimelineLayoutSettings } from "./useTimelineLayoutSettings";
 import { selectionStore } from "@/features/timeline/state/selectionStore";
 import { viewportStore } from "@/features/timeline/state/viewportStore";
 import styles from "./AppShell.module.css";
@@ -33,6 +31,8 @@ export function AppShell() {
   const [searchHits, setSearchHits] = useState<SearchHit[]>([]);
   const [eventSettingsOpen, setEventSettingsOpen] = useState(false);
   const { eventDisplay, updateEventKind } = useEventDisplaySettings();
+  const { preferences, updateLayout } = useTimelineLayoutSettings();
+  const presentation = viewport.presentation;
   const eventKinds = EventKindSchema.options;
 
   useEffect(() => {
@@ -111,13 +111,34 @@ export function AppShell() {
   return (
     <div
       className={styles.appShell}
+      data-narrow={presentation.narrow}
+      data-compact={presentation.compact}
+      data-rail-collapsed={presentation.railCollapsed}
       style={{
-        ["--timeline-gutter" as string]: `${TIMELINE_GUTTER_PX}px`,
-        ["--timeline-rail-inset" as string]: `${TIMELINE_RAIL_INSET_PX}px`,
-        ["--timeline-rail-label-width" as string]: `${TIMELINE_RAIL_LABEL_WIDTH_PX}px`,
+        ["--timeline-gutter" as string]: `${presentation.gutterPx}px`,
+        ["--timeline-rail-inset" as string]: `${presentation.railInsetPx}px`,
+        ["--timeline-rail-label-width" as string]: `${presentation.railLabelWidthPx}px`,
+        ["--timeline-rail-chip-top" as string]: `${presentation.railChipTopPx}px`,
+        ["--timeline-rail-chip-height" as string]: `${presentation.railChipHeightPx}px`,
+        ["--stack-row-height" as string]: `${presentation.rowHeightPx}px`,
+        ["--lane-padding" as string]: `${presentation.lanePaddingPx}px`,
       }}
     >
-      <header className={styles.header} aria-label="EraLens 导航与图例">
+      <header className={styles.header} aria-label="EraLens 导航">
+        {presentation.narrow && <button
+          type="button"
+          className={styles.railToggle}
+          aria-label={presentation.railCollapsed ? "展开王朝栏" : "折叠王朝栏"}
+          title={presentation.railCollapsed ? "展开王朝栏" : "折叠王朝栏"}
+          aria-expanded={!presentation.railCollapsed}
+          onClick={() => updateLayout({ railCollapsed: !preferences.railCollapsed })}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="16" rx="3" />
+            <path d="M9 4v16" />
+            <path d={presentation.railCollapsed ? "m13 9 3 3-3 3" : "m16 9-3 3 3 3"} />
+          </svg>
+        </button>}
         <div className={styles.brand}>
           <h1 className={styles.brandTitle}>EraLens</h1>
           <p className={styles.brandSub}>历史透镜</p>
@@ -126,6 +147,7 @@ export function AppShell() {
           <input
             className={styles.searchInput}
             placeholder="搜索人物、王朝、年号、都城、事件…"
+            aria-label="搜索人物、王朝、年号、都城、事件"
             value={search}
             onChange={async (e) => {
               const value = e.target.value;
@@ -176,35 +198,23 @@ export function AppShell() {
       </div>
 
       <Ruler />
-      <div className={styles.cornerDock} aria-label="时间轴图例与设置">
-        <div className={styles.cornerDockHeader}>
-          <span className={styles.cornerDockTitle}>图例</span>
-          <div className={styles.settingsWrap}>
-            <button type="button" className={styles.settingsButton} aria-label="事件显示设置" title="事件显示设置" aria-expanded={eventSettingsOpen} onClick={() => setEventSettingsOpen((open) => !open)}>
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm8 4.7v-2.4l-2-.7a6.2 6.2 0 0 0-.6-1.4l.9-1.9-1.7-1.7-1.9.9a6.2 6.2 0 0 0-1.4-.6l-.7-2h-2.4l-.7 2a6.2 6.2 0 0 0-1.4.6l-1.9-.9-1.7 1.7.9 1.9a6.2 6.2 0 0 0-.6 1.4l-2 .7v2.4l2 .7c.1.5.3 1 .6 1.4l-.9 1.9 1.7 1.7 1.9-.9c.4.3.9.5 1.4.6l.7 2h2.4l.7-2c.5-.1 1-.3 1.4-.6l1.9.9 1.7-1.7-.9-1.9c.3-.4.5-.9.6-1.4l2-.7Z"/></svg>
-            </button>
-            {eventSettingsOpen && <section className={styles.settingsPanel} aria-label="事件展示设置">
-              <h2>事件展示</h2>
-              {eventKinds.map((kind) => <label key={kind} className={styles.settingsOption}>
-                <input type="checkbox" aria-label={`显示${eventKindLabel(kind)}事件`} checked={eventDisplay.kinds[kind] ?? true} onChange={(event) => void updateEventKind(kind, event.target.checked)} />
-                <EventKindPreview kind={kind} label={eventKindLabel(kind)} />
-              </label>)}
-            </section>}
-          </div>
-        </div>
-        <div className={styles.legendItems}>
-          <span className={styles.legendItem}>
-            <span className={`${styles.legendSwatch} ${styles.legendStripes}`} aria-hidden="true" />
-            非正式君主
-          </span>
-          <span className={styles.legendItem}>
-            <svg className={`${styles.legendSwatch} ${styles.legendWave}`} viewBox="0 0 24 12" aria-hidden="true">
-              <path d="M3 0 C1 1 5 2 3 3 C1 4 5 5 3 6 C1 7 5 8 3 9 C1 10 5 11 3 12" />
-              <path d="M21 0 C19 1 23 2 21 3 C19 4 23 5 21 6 C19 7 23 8 21 9 C19 10 23 11 21 12" />
-            </svg>
-            年代失考
-          </span>
-        </div>
+      <div className={styles.settingsWrap}>
+        <button type="button" className={styles.settingsButton} aria-label="显示设置" title="显示设置" aria-expanded={eventSettingsOpen} onClick={() => setEventSettingsOpen((open) => !open)}>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm8 4.7v-2.4l-2-.7a6.2 6.2 0 0 0-.6-1.4l.9-1.9-1.7-1.7-1.9.9a6.2 6.2 0 0 0-1.4-.6l-.7-2h-2.4l-.7 2a6.2 6.2 0 0 0-1.4.6l-1.9-.9-1.7 1.7.9 1.9a6.2 6.2 0 0 0-.6 1.4l-2 .7v2.4l2 .7c.1.5.3 1 .6 1.4l-.9 1.9 1.7 1.7 1.9-.9c.4.3.9.5 1.4.6l.7 2h2.4l.7-2c.5-.1 1-.3 1.4-.6l1.9.9 1.7-1.7-.9-1.9c.3-.4.5-.9.6-1.4l2-.7Z"/></svg>
+        </button>
+        {eventSettingsOpen && <section className={styles.settingsPanel} aria-label="显示设置">
+          <h2>时间轴布局</h2>
+          <label className={styles.settingsOption}>
+            <input type="checkbox" checked={presentation.compact} onChange={(event) => updateLayout({ density: event.target.checked ? "compact" : "comfortable" })} />
+            紧凑泳道
+          </label>
+          <button className={styles.autoLayoutButton} type="button" onClick={() => updateLayout({ density: "auto" })} disabled={preferences.density === "auto"}>按屏幕自动调整</button>
+          <h2>事件展示</h2>
+          {eventKinds.map((kind) => <label key={kind} className={styles.settingsOption}>
+            <input type="checkbox" aria-label={`显示${eventKindLabel(kind)}事件`} checked={eventDisplay.kinds[kind] ?? true} onChange={(event) => void updateEventKind(kind, event.target.checked)} />
+            <EventKindPreview kind={kind} label={eventKindLabel(kind)} />
+          </label>)}
+        </section>}
       </div>
       <CursorGuide stageRef={stageRef} />
       {selection.detailOpen && (

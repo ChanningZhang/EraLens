@@ -57,15 +57,16 @@ export type PreparedReignGeometry = StackedCardUnit & {
 export function prepareLaneReignGeometry(
   reigns: Reign[],
   laneGroups: readonly DynastyLaneGroup[] = [],
+  rowHeight = STACK_ROW_HEIGHT,
 ): { items: StackedReign[]; byId: Map<string, PreparedReignGeometry>; barHeight: number; rowCount: number } {
   const { items, rowCount } = assignReignStacks(reigns, laneGroups);
   const spans = new Map(reigns.map((reign) => [reign.id, resolveReignVisualSpan(reign, reigns, laneGroups)]));
   const byId = new Map<string, PreparedReignGeometry>();
-  let barHeight = STACK_ROW_HEIGHT;
+  let barHeight = rowHeight;
   for (const { reign } of items) {
     const span = spans.get(reign.id)!;
     const visual = reignVisualBounds(reign, span.startAbs, span.endExclusive);
-    const unit = resolveStackedCardUnit(reign, reigns, laneGroups);
+    const unit = resolveStackedCardUnit(reign, reigns, laneGroups, rowHeight);
     barHeight = Math.max(barHeight, unit.unitTop + unit.unitHeight);
     byId.set(reign.id, {
       ...span,
@@ -134,34 +135,36 @@ export function resolveStackedCardUnit(
   reign: Reign,
   reigns: Reign[],
   laneGroups: readonly DynastyLaneGroup[] = [],
+  rowHeight = STACK_ROW_HEIGHT,
 ): StackedCardUnit {
   const { placements } = resolveTrackPlacements(reigns, laneGroups);
   const placement = placements.get(reign.id);
   const trackPeers = placement?.peers ?? trackPeersOf(reign, reigns, laneGroups);
-  const trackTop = rowOffsetToUnitTop(reign, reigns, laneGroups);
+  const trackTop = rowOffsetToUnitTop(reign, reigns, laneGroups) * rowHeight / STACK_ROW_HEIGHT;
 
   const group = sameStartReigns(reign, trackPeers);
   if (reignsShareExactSpan(group) && !isParallelClaim(reign)) {
     const indexInGroup = group.findIndex((item) => item.id === reign.id);
-    const unitHeight = STACK_ROW_HEIGHT / group.length;
+    const unitHeight = rowHeight / group.length;
     return { unitTop: trackTop + indexInGroup * unitHeight, unitHeight };
   }
 
   if (isParallelClaim(reign)) {
-    return { unitTop: trackTop, unitHeight: PARALLEL_STACK_ROW_HEIGHT };
+    return { unitTop: trackTop, unitHeight: rowHeight * PARALLEL_STACK_ROW_RATIO };
   }
 
-  return { unitTop: trackTop, unitHeight: STACK_ROW_HEIGHT };
+  return { unitTop: trackTop, unitHeight: rowHeight };
 }
 
 export function dynastyBarHeightForReigns(
   reigns: Reign[],
   laneGroups: readonly DynastyLaneGroup[] = [],
+  rowHeight = STACK_ROW_HEIGHT,
 ): number {
-  if (reigns.length === 0) return STACK_ROW_HEIGHT;
-  let maxBottom = STACK_ROW_HEIGHT;
+  if (reigns.length === 0) return rowHeight;
+  let maxBottom = rowHeight;
   for (const reign of reigns) {
-    const { unitTop, unitHeight } = resolveStackedCardUnit(reign, reigns, laneGroups);
+    const { unitTop, unitHeight } = resolveStackedCardUnit(reign, reigns, laneGroups, rowHeight);
     maxBottom = Math.max(maxBottom, unitTop + unitHeight);
   }
   return maxBottom;
@@ -231,7 +234,9 @@ export function dynastyLaneHeightForViewport(
   personNames: ReadonlyMap<string, string>,
   personDisplay: ReadonlyMap<string, Parameters<typeof buildPreQinClanContext>[0]>,
 ): number {
-  const barHeight = dynastyBarHeightForReigns(reigns, laneGroups);
+  const rowHeight = viewport.presentation?.rowHeightPx ?? STACK_ROW_HEIGHT;
+  const padding = viewport.presentation?.lanePaddingPx ?? LANE_PADDING_TOP;
+  const barHeight = dynastyBarHeightForReigns(reigns, laneGroups, rowHeight);
   const { items, rowCount } = assignReignStacks(reigns, laneGroups);
   let paintedBottom = barHeight;
 
@@ -243,7 +248,8 @@ export function dynastyLaneHeightForViewport(
       cardWidthPx: width,
       clan: buildPreQinClanContext(personDisplay.get(reign.personId)),
     });
-    if (!resolveReignBarLayout(width, [...label].length).captionBelow) continue;
+    const unit = resolveStackedCardUnit(reign, reigns, laneGroups, rowHeight);
+    if (!resolveReignBarLayout(width, [...label].length, unit.unitHeight).captionBelow) continue;
 
     const overlapsLowerRow = items.some((item) => {
       if (item.stackIndex <= stackIndex) return false;
@@ -252,11 +258,11 @@ export function dynastyLaneHeightForViewport(
     });
     if (resolveReignCaptionPlacement({ stackIndex, rowCount, overlapsLowerRow }) !== "below") continue;
 
-    const { unitTop, unitHeight } = resolveStackedCardUnit(reign, reigns, laneGroups);
+    const { unitTop, unitHeight } = unit;
     paintedBottom = Math.max(paintedBottom, unitTop + unitHeight + CAPTION_BELOW_EXTENT);
   }
 
-  return LANE_PADDING_Y + paintedBottom;
+  return padding * 2 + paintedBottom;
 }
 
 export function partitionReignRecords(reigns: readonly Reign[]): {

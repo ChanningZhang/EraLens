@@ -3,6 +3,7 @@ import type { EntityDetail, EntityRef } from "@eralens/shared";
 import { getRepository } from "@/data/repository";
 import { useLaneColorValue } from "@/features/timeline/hooks/useLaneColor";
 import { useSelection } from "@/features/timeline/hooks/useSelection";
+import { isNativeApp, openExternalSource } from "@/data/mobileUpdates";
 import { useViewport } from "@/features/timeline/hooks/useViewport";
 import {
   type SelectionState,
@@ -312,6 +313,12 @@ export function DetailPanel() {
                   className={styles.link}
                   target="_blank"
                   rel="noreferrer"
+                  onClick={(event) => {
+                    if (isNativeApp()) {
+                      event.preventDefault();
+                      void openExternalSource(link.url).catch(() => { /* The source can be opened again when a network is available. */ });
+                    }
+                  }}
                 >
                   {link.label}
                 </a>

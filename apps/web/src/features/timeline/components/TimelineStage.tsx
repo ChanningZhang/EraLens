@@ -17,8 +17,6 @@ import {
   getDynastyLaneGroup,
   resolveDynastyColorValue,
   resolveFateRelations,
-  TIMELINE_RAIL_CHIP_HEIGHT_PX,
-  TIMELINE_RAIL_CHIP_TOP_PX,
   type Dynasty,
   type EventDisplayConfig,
   type Reign,
@@ -54,10 +52,8 @@ import {
   assignReignStacks,
   dynastyBarHeightForReigns,
   dynastyLaneHeightForViewport,
-  LANE_PADDING_TOP,
   partitionReignRecords,
   prepareLaneReignGeometry,
-  resolveStackedCardUnit,
 } from "../model/reignClusters";
 import { expandWindow, filterVisibleCardReigns, filterVisibleDynasties, filterVisibleGapReigns, filterVisiblePlacedPersons } from "../model/visible";
 import { CapitalMapLayer } from "./CapitalMapLayer";
@@ -99,6 +95,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   } | null>(null);
   const timelineInertiaRef = useRef<number | null>(null);
   const [mapView, setMapView] = useState({ scale: 1, x: 0, y: 0 });
+  const [eventsExpanded, setEventsExpanded] = useState(false);
   const mapOffset = useMemo(() => ({ x: mapView.x, y: mapView.y }), [mapView.x, mapView.y]);
   const stageViewportSize = useStageViewportSize(stageRef);
   const stageViewportHeight = stageViewportSize.height;
@@ -430,7 +427,13 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
 
   const eventPlaced = useMemo(() => layoutEvents(railEvents, viewport), [railEvents, viewport]);
 
-  const railHeight = eventRailHeight(eventLaneCount(eventPlaced));
+  const totalEventLanes = eventLaneCount(eventPlaced);
+  const canExpandEvents = totalEventLanes > 3;
+  const showAllEvents = !canExpandEvents || eventsExpanded;
+  const visibleEventPlaced = showAllEvents
+    ? eventPlaced
+    : eventPlaced.filter((item) => item.lane < 3);
+  const railHeight = eventRailHeight(showAllEvents ? totalEventLanes : Math.min(totalEventLanes, 3));
   const reignsByDynasty = useMemo(() => {
     const map = new Map<string, typeof data extends undefined ? never : NonNullable<typeof data>["reigns"]>();
     if (!data) return map;
@@ -495,7 +498,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       visibleMissingReigns?: Reign[];
     }>(),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [reignsByDynasty, laneGroups, viewport.pxPerMonth, personNames, personDisplay],
+    [reignsByDynasty, laneGroups, viewport.pxPerMonth, viewport.presentation.rowHeightPx, viewport.presentation.lanePaddingPx, personNames, personDisplay],
   );
 
   const lanes = useMemo(() => {
@@ -505,7 +508,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       if (!prepared) {
         const records = collectLaneReigns(dynasty.id, reignsByDynasty, laneGroups);
         const { rulers: reigns, missing: missingReigns } = partitionReignRecords(records);
-        const geometry = prepareLaneReignGeometry(reigns, laneGroups);
+        const geometry = prepareLaneReignGeometry(reigns, laneGroups, viewport.presentation.rowHeightPx);
         const height = dynastyLaneHeightForViewport(
           reigns,
           laneGroups,
@@ -524,12 +527,12 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       if (!sameReignIds(prepared.visibleMissingReigns, nextVisibleMissingReigns)) prepared.visibleMissingReigns = nextVisibleMissingReigns;
       const visibleReigns = prepared.visibleReigns!;
       const visibleMissingReigns = prepared.visibleMissingReigns!;
-      const chipHeight = TIMELINE_RAIL_CHIP_HEIGHT_PX;
+      const chipHeight = viewport.presentation.railChipHeightPx;
       const chipTop =
         rowCount > 1
           ? top + height / 2 - chipHeight / 2
-          : top + TIMELINE_RAIL_CHIP_TOP_PX;
-      const badgeTop = top + LANE_PADDING_TOP - EVENT_BADGE_HALF_HEIGHT;
+          : top + viewport.presentation.railChipTopPx;
+      const badgeTop = top + viewport.presentation.lanePaddingPx - EVENT_BADGE_HALF_HEIGHT;
       const item = { dynasty, records, reigns, missingReigns, visibleReigns, visibleMissingReigns, geometry, top, height, badgeTop, chipTop, chipHeight };
       top += height;
       return item;
@@ -542,22 +545,22 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       const position = badgePositions.get(item.event.id);
       const lane = laneById.get(position?.laneId ?? "");
       const reign = lane && eventTargetReign(item.event, lane.reigns);
-      const unit = reign && lane && resolveStackedCardUnit(reign, lane.reigns, laneGroups);
+      const unit = reign && lane && lane.geometry.byId.get(reign.id);
       return {
         ...item,
         anchorX: position?.anchorX ?? item.anchorX,
         top: position?.edge === "bottom"
           ? lane
-            ? LANE_PADDING_TOP + (unit
+            ? viewport.presentation.lanePaddingPx + (unit
               ? unit.unitTop + unit.unitHeight
-              : dynastyBarHeightForReigns(lane.reigns, laneGroups)) - EVENT_BADGE_HALF_HEIGHT
+              : dynastyBarHeightForReigns(lane.reigns, laneGroups, viewport.presentation.rowHeightPx)) - EVENT_BADGE_HALF_HEIGHT
             : item.top
           : unit
-            ? LANE_PADDING_TOP + unit.unitTop - EVENT_BADGE_HALF_HEIGHT
+            ? viewport.presentation.lanePaddingPx + unit.unitTop - EVENT_BADGE_HALF_HEIGHT
             : lane ? lane.badgeTop - lane.top : item.top,
       };
     });
-  }, [badgeEvents, badgePositions, lanes, laneGroups]);
+  }, [badgeEvents, badgePositions, lanes, laneGroups, viewport.presentation]);
 
   const badgesByLane = useMemo(() => {
     const map = new Map<string, typeof badgePlaced>();
@@ -572,8 +575,11 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   }, [badgePlaced, badgePositions]);
 
   const clusterFrames = useMemo(
-    () => clusterFramesForLanes(lanes, data?.dynastyGroups ?? []),
-    [lanes, data?.dynastyGroups],
+    () => viewport.presentation.railCollapsed ? [] : clusterFramesForLanes(lanes, data?.dynastyGroups ?? [], {
+      insetPx: viewport.presentation.railInsetPx,
+      labelWidthPx: viewport.presentation.railLabelWidthPx,
+    }),
+    [lanes, data?.dynastyGroups, viewport.presentation],
   );
 
   const resolvedFates = useMemo(
@@ -738,7 +744,24 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
             </>
           )}
           {eventPlaced.length > 0 && (
-            <EventLayer placed={eventPlaced} height={railHeight} />
+            <>
+              <EventLayer placed={visibleEventPlaced} height={railHeight} />
+              {canExpandEvents && (
+                <button
+                  type="button"
+                  className={styles.eventExpandButton}
+                  style={{ top: railHeight - 7 }}
+                  aria-label={eventsExpanded ? "收拢事件" : "展开更多事件"}
+                  title={eventsExpanded ? "收拢事件" : "展开更多事件"}
+                  onPointerDown={(event) => event.stopPropagation()}
+                  onClick={() => setEventsExpanded((expanded) => !expanded)}
+                >
+                  <svg aria-hidden="true" viewBox="0 0 12 7" focusable="false">
+                    <path d={eventsExpanded ? "M1 6 6 1l5 5" : "m1 1 5 5 5-5"} />
+                  </svg>
+                </button>
+              )}
+            </>
           )}
           {data && placed.length > 0 && fatePlaced.length > 0 && (
             <ReignFateLayer placed={fatePlaced} height={contentHeight} />

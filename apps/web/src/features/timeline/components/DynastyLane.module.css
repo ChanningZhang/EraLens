@@ -5,7 +5,7 @@
   /* Lane contents sit above fate links; empty lane space lets pointer events through. */
   z-index: 6;
   pointer-events: none;
-  padding: 6px 0;
+  padding: var(--lane-padding, 6px) 0;
   contain: layout style;
   overflow: visible;
 }
@@ -20,7 +20,7 @@
 
 .frozenLabel {
   position: absolute;
-  top: 8px;
+  top: var(--timeline-rail-chip-top, 8px);
   left: var(--timeline-rail-inset, 12px);
   z-index: 6;
   display: inline-flex;
@@ -28,7 +28,7 @@
   justify-content: center;
   width: var(--timeline-rail-label-width, 80px);
   min-width: var(--timeline-rail-label-width, 80px);
-  height: 36px;
+  height: var(--timeline-rail-chip-height, 36px);
   padding: 0 8px;
   appearance: none;
   background: color-mix(in srgb, var(--dynasty-color) 16%, var(--color-surface));
@@ -102,4 +102,14 @@
 
 .cards > * {
   pointer-events: auto;
+}
+
+.frozenLabel::before {
+  content: "";
+  position: absolute;
+  inset: -4px 0;
+}
+
+:global([data-narrow="true"]) .frozenLabel {
+  padding: 0 4px;
 }
