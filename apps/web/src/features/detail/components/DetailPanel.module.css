@@ -237,6 +237,7 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
   background: var(--color-paper);
+  color: var(--color-ink);
   cursor: pointer;
   text-align: left;
 }

@@ -83,8 +83,6 @@ function sameReignIds(a: readonly Reign[] | undefined, b: readonly Reign[]): boo
 
 export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConfig }) {
   const stageRef = useRef<HTMLDivElement>(null);
-  const mapPointersRef = useRef(new Map<number, { x: number; y: number }>());
-  const mapGestureRef = useRef<{ distance: number; midpoint: { x: number; y: number } } | null>(null);
   const timelinePointersRef = useRef(new Map<number, { x: number; y: number }>());
   const timelineGestureRef = useRef<{
     mode: "pending" | "pan" | "pinch";
@@ -95,9 +93,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     distance: number;
   } | null>(null);
   const timelineInertiaRef = useRef<number | null>(null);
-  const [mapView, setMapView] = useState({ scale: 1, x: 0, y: 0 });
   const [eventsExpanded, setEventsExpanded] = useState(false);
-  const mapOffset = useMemo(() => ({ x: mapView.x, y: mapView.y }), [mapView.x, mapView.y]);
   const stageViewportSize = useStageViewportSize(stageRef);
   const stageViewportHeight = stageViewportSize.height;
   const viewport = useViewport();
@@ -144,31 +140,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   };
 
   const onStagePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
-    if (!(event.target instanceof Element)) return;
-    const target = event.target;
-    const isButton = target.closest("button, a, input, textarea, select, [role='button']");
-    const mapBox = event.currentTarget.querySelector("[data-china-map-box]");
-    const mapRect = mapBox?.getBoundingClientRect();
-    const onMap = Boolean(mapRect && event.clientX >= mapRect.left && event.clientX <= mapRect.right && event.clientY >= mapRect.top && event.clientY <= mapRect.bottom);
-
-    if (onMap && !isButton && (event.pointerType === "touch" || event.button === 0)) {
-      mapPointersRef.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
-      const points = [...mapPointersRef.current.values()];
-      if (points.length >= 2) {
-        const [a, b] = points;
-        mapGestureRef.current = {
-          distance: Math.hypot(a.x - b.x, a.y - b.y),
-          midpoint: { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 },
-        };
-      } else {
-        mapGestureRef.current = null;
-      }
-      event.currentTarget.setPointerCapture(event.pointerId);
-      if (event.pointerType === "touch") event.preventDefault();
-      return;
-    }
-
-    if (event.pointerType !== "touch" || isButton || onMap) return;
+    if (event.pointerType !== "touch") return;
     stopTimelineInertia();
     timelinePointersRef.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
     const points = [...timelinePointersRef.current.values()];
@@ -196,39 +168,6 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   };
 
   const onStagePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
-    const mapPoint = mapPointersRef.current.get(event.pointerId);
-    if (mapPoint) {
-      const previous = { ...mapPoint };
-      mapPointersRef.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
-      const points = [...mapPointersRef.current.values()];
-      if (points.length >= 2) {
-        const [a, b] = points;
-        const nextDistance = Math.max(1, Math.hypot(a.x - b.x, a.y - b.y));
-        const midpoint = { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
-        const last = mapGestureRef.current;
-        if (last && last.distance > 0) {
-          const stageRect = event.currentTarget.getBoundingClientRect();
-          const anchorX = last.midpoint.x - stageRect.left;
-          const anchorY = last.midpoint.y - stageRect.top;
-          const factor = nextDistance / last.distance;
-          setMapView((view) => {
-            const scale = Math.max(0.7, Math.min(2.8, view.scale * factor));
-            const applied = scale / view.scale;
-            return {
-              scale,
-              x: anchorX - (anchorX - view.x) * applied,
-              y: anchorY - (anchorY - view.y) * applied,
-            };
-          });
-        }
-        mapGestureRef.current = { distance: nextDistance, midpoint };
-      } else {
-        setMapView((view) => ({ ...view, x: view.x + event.clientX - previous.x, y: view.y + event.clientY - previous.y }));
-      }
-      if (event.pointerType === "touch") event.preventDefault();
-      return;
-    }
-
     if (!timelinePointersRef.current.has(event.pointerId)) return;
     timelinePointersRef.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
     const points = [...timelinePointersRef.current.values()];
@@ -276,13 +215,6 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   };
 
   const onStagePointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
-    if (mapPointersRef.current.has(event.pointerId)) {
-      mapPointersRef.current.delete(event.pointerId);
-      const points = [...mapPointersRef.current.values()];
-      if (points.length < 2) mapGestureRef.current = null;
-      if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
-      return;
-    }
     if (!timelinePointersRef.current.has(event.pointerId)) return;
     timelinePointersRef.current.delete(event.pointerId);
     const gesture = timelineGestureRef.current;
@@ -666,8 +598,8 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
         <div className={styles.viewportPanel}>
           <StableChinaMapBackground
             layout={mapLayout}
-            scale={mapView.scale}
-            offset={mapOffset}
+            scale={1}
+            offset={{ x: 0, y: 0 }}
           />
         </div>
       </div>
@@ -785,8 +717,8 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
             laneColorMap={laneColorMap}
             atAbs={labelAnchorAbs}
             layout={mapLayout}
-            scale={mapView.scale}
-            offset={mapOffset}
+            scale={1}
+            offset={{ x: 0, y: 0 }}
           />
         </div>
       </div>
@@ -796,18 +728,9 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
             events={nearbyEvents}
             atAbs={viewport.centerAbs}
             layout={mapLayout}
-            scale={mapView.scale}
-            offset={mapOffset}
+            scale={1}
+            offset={{ x: 0, y: 0 }}
           />
-        </div>
-      </div>
-      <div className={styles.mapControlsOverlay}>
-        <div className={styles.viewportPanel}>
-          <div className={styles.mapControls} role="group" aria-label="地图缩放">
-            <button type="button" onClick={() => setMapView((view) => ({ ...view, scale: Math.min(2.8, view.scale + 0.2) }))} aria-label="放大地图" title="放大">+</button>
-            <span aria-hidden="true" />
-            <button type="button" onClick={() => setMapView((view) => ({ ...view, scale: Math.max(0.7, view.scale - 0.2) }))} aria-label="缩小地图" title="缩小">−</button>
-          </div>
         </div>
       </div>
     </div>
