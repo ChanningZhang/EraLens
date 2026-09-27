@@ -25,7 +25,7 @@ export function resolveTimelinePresentation(widthPx: number, preferences = DEFAU
     railInsetPx: railInset,
     railLabelWidthPx: narrow ? expandedGutter - railInset - 8 : TIMELINE_RAIL_LABEL_WIDTH_PX,
     rowHeightPx: compact ? 36 : 40,
-    lanePaddingPx: compact ? 4 : 6,
+    lanePaddingPx: 6,
     railChipHeightPx: 36,
     railChipTopPx: compact ? 4 : 8,
   };

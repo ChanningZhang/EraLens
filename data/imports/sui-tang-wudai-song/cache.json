@@ -1,0 +1,7329 @@
+{
+  "slug": "sui-tang-wudai-song",
+  "window": {
+    "startYear": 581,
+    "startMonth": 1,
+    "endYear": 1279,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "yang-guang",
+      "name": "杨广",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "隋炀帝，开运河、三征高句丽；江都时期仍为名义皇帝，与长安杨侑并存；江都兵变被杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/隋炀帝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "炀皇帝"
+      ],
+      "templeNames": [],
+      "title": "隋炀帝"
+    },
+    {
+      "id": "yang-you",
+      "name": "杨侑",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "隋恭帝，李渊拥立时炀帝尚在江都，尊炀帝为太上皇；后禅让建唐。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杨侑"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "恭帝"
+      ],
+      "templeNames": [],
+      "title": "隋恭帝"
+    },
+    {
+      "id": "yang-hao",
+      "name": "杨浩",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "隋秦王，宇文化及弑炀帝后拥立，为江都隋室续统，旋被废杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杨浩"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "隋秦王"
+    },
+    {
+      "id": "yang-tong",
+      "name": "杨侗",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "隋越王，王世充等在东都拥立的傀儡皇帝，619年被杀，名义隋主终结。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杨侗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "隋越王"
+    },
+    {
+      "id": "yuwen-huaji",
+      "name": "宇文化及",
+      "roles": [
+        "将领",
+        "政治家"
+      ],
+      "bio": "江都兵变主谋，杀隋炀帝后拥立杨浩。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宇文化及"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "许帝"
+    },
+    {
+      "id": "dou-jiande",
+      "name": "窦建德",
+      "roles": [
+        "君主",
+        "起义领袖"
+      ],
+      "bio": "隋末河北割据者，先称长乐王，后建夏称王；援郑败于虎牢，被俘后在长安处死。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/窦建德"
+        }
+      ],
+      "birth": {
+        "year": 573
+      },
+      "death": {
+        "year": 621
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "夏王"
+    },
+    {
+      "id": "wang-shichong",
+      "name": "王世充",
+      "roles": [
+        "皇帝",
+        "将领",
+        "政治家"
+      ],
+      "bio": "隋末据洛阳，拥立杨侗后杀之自立，建郑称帝；621年降唐，赴蜀途中被仇家独孤修德所杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/王世充"
+        }
+      ],
+      "birth": null,
+      "death": {
+        "year": 621
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "郑帝"
+    },
+    {
+      "id": "li-yuan",
+      "name": "李渊",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "唐高祖，太原起兵，建唐定都长安。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/李渊"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "神尧皇帝"
+      ],
+      "templeNames": [
+        "高祖"
+      ],
+      "title": "唐高祖"
+    },
+    {
+      "id": "li-shimin",
+      "name": "李世民",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "唐太宗，玄武门之变后即位，开创贞观之治。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/唐太宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "文武皇帝"
+      ],
+      "templeNames": [
+        "太宗"
+      ],
+      "title": "唐太宗"
+    },
+    {
+      "id": "li-zhi",
+      "name": "李治",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "唐高宗，永徽年间与武则天共治。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/唐高宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "天皇大帝"
+      ],
+      "templeNames": [
+        "高宗"
+      ],
+      "title": "唐高宗"
+    },
+    {
+      "id": "li-xian",
+      "name": "李显",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "唐中宗，两度即位，韦后乱政在其朝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/唐中宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "中宗"
+      ],
+      "title": "唐中宗"
+    },
+    {
+      "id": "li-dan",
+      "name": "李旦",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "唐睿宗，两度即位，后禅位玄宗。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/唐睿宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "睿宗"
+      ],
+      "title": "唐睿宗"
+    },
+    {
+      "id": "wu-zetian",
+      "name": "武则天",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "中国历史上唯一女皇帝，改国号周。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/武则天"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "则天皇帝"
+    },
+    {
+      "id": "li-longji",
+      "name": "李隆基",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "唐玄宗，开元盛世，安史之乱在其朝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/唐玄宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "至道大明孝皇帝"
+      ],
+      "templeNames": [
+        "玄宗"
+      ],
+      "title": "唐玄宗"
+    },
+    {
+      "id": "li-heng",
+      "name": "李亨",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "唐肃宗，马嵬驿后即位，平定安史之乱。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/唐肃宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "肃宗"
+      ],
+      "title": "唐肃宗"
+    },
+    {
+      "id": "li-yu-tang",
+      "name": "李豫",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "唐代宗，平定安史余部。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/唐代宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "代宗"
+      ],
+      "title": "唐代宗"
+    },
+    {
+      "id": "li-kuo",
+      "name": "李适",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "唐德宗，后期藩镇坐大。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/唐德宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "德宗"
+      ],
+      "title": "唐德宗"
+    },
+    {
+      "id": "li-song",
+      "name": "李诵",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "唐顺宗，在位仅八个月。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/唐顺宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "顺宗"
+      ],
+      "title": "唐顺宗"
+    },
+    {
+      "id": "li-chun",
+      "name": "李纯",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "唐宪宗，元和中兴。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/唐宪宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "宪宗"
+      ],
+      "title": "唐宪宗"
+    },
+    {
+      "id": "li-heng-mu",
+      "name": "李恒",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "唐穆宗，宴游无度，藩镇复叛。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/唐穆宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "穆宗"
+      ],
+      "title": "唐穆宗"
+    },
+    {
+      "id": "li-zhan",
+      "name": "李湛",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "唐敬宗，荒淫，为宦官所杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/唐敬宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "敬宗"
+      ],
+      "title": "唐敬宗"
+    },
+    {
+      "id": "li-ang",
+      "name": "李昂",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "唐文宗，甘露之变在其朝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/唐文宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "文宗"
+      ],
+      "title": "唐文宗"
+    },
+    {
+      "id": "li-yan-tang",
+      "name": "李炎",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "唐武宗，会昌灭佛。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/唐武宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "武宗"
+      ],
+      "title": "唐武宗"
+    },
+    {
+      "id": "li-chen-tang",
+      "name": "李忱",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "唐宣宗，大中之治，晚唐中兴。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/唐宣宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "宣宗"
+      ],
+      "title": "唐宣宗"
+    },
+    {
+      "id": "li-cui",
+      "name": "李漼",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "唐懿宗，奢靡，唐由盛转衰。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/唐懿宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "懿宗"
+      ],
+      "title": "唐懿宗"
+    },
+    {
+      "id": "li-xuan-tang",
+      "name": "李儇",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "唐僖宗，黄巢起义在其朝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/唐僖宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "僖宗"
+      ],
+      "title": "唐僖宗"
+    },
+    {
+      "id": "li-ye-tang",
+      "name": "李晔",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "唐昭宗，为朱温控制，后被杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/唐昭宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "昭宗"
+      ],
+      "title": "唐昭宗"
+    },
+    {
+      "id": "li-zhu-tang",
+      "name": "李柷",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "唐哀帝，朱温篡唐，唐亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/唐哀帝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "哀帝"
+      ],
+      "templeNames": [],
+      "title": "唐哀帝"
+    },
+    {
+      "id": "zhu-wen",
+      "name": "朱温",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "原名朱温，参加黄巢起义后降唐，凭宣武军起家并控制唐廷。907年代唐称帝，建立后梁、定都开封；在位期间以武力重组藩镇，晚年因继承问题被子朱友珪弑杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/朱温"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "太祖"
+      ],
+      "title": "后梁太祖"
+    },
+    {
+      "id": "zhu-yougui",
+      "name": "朱友珪",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "朱温之子，初封郢王。912年发动政变弑父即位，次年遭弟朱友贞与将领袁象先起兵推翻，自杀身亡，后梁政局持续动荡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/朱友珪"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "后梁末帝"
+    },
+    {
+      "id": "zhu-youzhen",
+      "name": "朱友贞",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "朱温之子，朱友珪死后由开封群臣拥立，在位期间与后唐李存勖长期交战。923年后唐军攻入开封，后梁灭亡，朱友贞自尽。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/朱友贞"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "后梁末帝"
+    },
+    {
+      "id": "li-cunxu",
+      "name": "李存勖",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "李克用之子，继承河东晋王与沙陀军事集团。923年称帝建后唐，灭后梁并迁都洛阳；在位后期宠信伶人、用人失当，兵变中被杀，后唐随之进入内乱。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/李存勖"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "庄宗"
+      ],
+      "title": "后唐庄宗"
+    },
+    {
+      "id": "li-siyuan",
+      "name": "李嗣源",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "李克用养子，沙陀将领，曾助李存勖建立后唐。926年兵变后入洛阳即位，在位时裁减宫廷开支、整顿吏治，史称明宗之治；死后诸子争位，后唐迅速失序。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/李嗣源"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "明宗"
+      ],
+      "title": "后唐明宗"
+    },
+    {
+      "id": "li-conghou",
+      "name": "李从厚",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "李嗣源第三子，明宗死后继位。即位后试图调动李从珂、石敬瑭等藩镇将领，引发政变；在位数月即被李从珂废黜，后被杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/李从厚"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "闵帝"
+      ],
+      "templeNames": [],
+      "title": "后唐闵帝"
+    },
+    {
+      "id": "li-congke",
+      "name": "李从珂",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "李嗣源养子，原镇凤翔。934年起兵推翻闵帝李从厚后即位，面对石敬瑭在河东反叛并向契丹求援；契丹与晋军攻入洛阳时自焚，后唐灭亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/李从珂"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "后唐末帝"
+    },
+    {
+      "id": "shi-jingtang",
+      "name": "石敬瑭",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "李嗣源女婿，后唐河东节度使。936年借契丹兵推翻李从珂，建立后晋并以契丹为父国；割让燕云十六州、岁输财物，后晋因此长期受制于契丹。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/石敬瑭"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "高祖"
+      ],
+      "title": "后晋高祖"
+    },
+    {
+      "id": "shi-chonggui",
+      "name": "石重贵",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "石敬瑭侄，石敬瑭死后由宰相冯道等拥立。即位初向契丹称孙，随后拒绝臣服并与之交战；946至947年契丹南下攻陷开封，后晋亡，石重贵被迁往北方。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/石重贵"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "出帝"
+      ],
+      "templeNames": [],
+      "title": "后晋出帝"
+    },
+    {
+      "id": "liu-zhiyuan",
+      "name": "刘知远",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "沙陀将领，长期任后晋河东节度使。契丹灭后晋、撤军北返后，他于947年在太原称帝，建立后汉并进据开封；即位不久病逝，由子刘承祐继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘知远"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "高祖"
+      ],
+      "title": "后汉高祖"
+    },
+    {
+      "id": "liu-chengyou",
+      "name": "刘承祐",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "刘知远之子，947年继位时年幼，由权臣与武将辅政。954年疑忌枢密使郭威而诛其家，郭威起兵攻入开封；刘承祐在逃亡中被杀，后汉亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘承祐"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "隐帝"
+      ],
+      "templeNames": [],
+      "title": "后汉隐帝"
+    },
+    {
+      "id": "guo-wei",
+      "name": "郭威",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "后汉枢密使，出身军伍，因刘承祐诛其家而起兵。950年入开封后受拥立，建立后周；在位时整顿军政、减轻赋役并抑制藩镇，死后由养子柴荣继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郭威"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "太祖"
+      ],
+      "title": "后周太祖"
+    },
+    {
+      "id": "chai-rong",
+      "name": "柴荣",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "郭威养子，继承后周帝位，在位954—959年。改革军政、整顿财政并多次亲征，先后取秦凤、淮南等地，推动统一进程；北伐契丹途中病重返京，留下年幼之子继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周世宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "世宗"
+      ],
+      "title": "后周世宗"
+    },
+    {
+      "id": "chai-zongxun",
+      "name": "柴宗训",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "柴荣之子，959年继位时年幼，由符太后与大臣辅政。960年赵匡胤发动陈桥兵变，柴宗训禅位，后周亡；宋朝建立后被封郑王。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/柴宗训"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "恭帝"
+      ],
+      "templeNames": [],
+      "title": "后周恭帝"
+    },
+    {
+      "id": "yang-xingmi",
+      "name": "杨行密",
+      "roles": [
+        "君主"
+      ],
+      "bio": "庐州人，唐末起兵后任淮南节度使，与孙儒等军阀争夺江淮。控制扬州及淮南后受封吴王，为杨吴奠基；其子杨渥继位，政权由权臣徐温掌握。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杨行密"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "太祖"
+      ],
+      "title": "吴太祖"
+    },
+    {
+      "id": "yang-wo",
+      "name": "杨渥",
+      "roles": [
+        "君主"
+      ],
+      "bio": "杨行密长子，905年继承淮南节度使之位。徐温、张颢等权臣相争，杨渥试图亲政而遭废杀；杨隆演继位，杨吴实权转入徐氏。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杨渥"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "吴王"
+    },
+    {
+      "id": "yang-longyan",
+      "name": "杨隆演",
+      "roles": [
+        "君主"
+      ],
+      "bio": "杨行密次子，杨渥死后由徐温拥立。徐温掌握军政，杨隆演先受封吴王，919年建立吴国；其在位期间为权臣控制，死后杨溥继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杨隆演"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "吴王"
+    },
+    {
+      "id": "yang-pu",
+      "name": "杨溥",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "杨行密之子、杨隆演之弟，徐温死后由徐知诰继续掌权。927年称帝，国号吴；937年徐知诰迫其禅位，吴亡，杨溥被迁居润州并于次年去世。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杨溥"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "吴末帝"
+    },
+    {
+      "id": "li-bian",
+      "name": "李昪",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "本名徐知诰，徐温养子，长期掌握杨吴军政。937年迫吴睿帝杨溥禅位，先建齐、后改国号唐，史称南唐；在位时休兵息民、发展江淮经济，传位于子李璟。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/李昪"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "烈祖"
+      ],
+      "title": "南唐烈祖"
+    },
+    {
+      "id": "li-jing-nantang",
+      "name": "李璟",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "李昪长子，943年继位。南唐国力一度强盛，随后发动兼并闽、楚之战，却遭后周进攻并于958年割江北地、去帝号称国主；死后李煜继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/李璟"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "元宗"
+      ],
+      "title": "南唐元宗"
+    },
+    {
+      "id": "li-yu-nantang",
+      "name": "李煜",
+      "roles": [
+        "君主"
+      ],
+      "bio": "李璟第六子，961年继位，承受后周以来的割地与称臣局面。向宋称臣以保境，975年宋军攻陷金陵后出降，南唐亡；被俘至汴京，后以词作著称。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/李煜"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "南唐后主"
+    },
+    {
+      "id": "qian-liu",
+      "name": "钱镠",
+      "roles": [
+        "君主"
+      ],
+      "bio": "杭州临安人，唐末以镇压浙西地方势力起家，受任镇海、镇东节度使。907年受封吴越王，控制两浙并以杭州为中心；在位时兴修海塘、水利，奠定吴越长期偏安基础。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/钱镠"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "武肃王"
+      ],
+      "templeNames": [],
+      "title": "吴越武肃王"
+    },
+    {
+      "id": "qian-yuangui",
+      "name": "钱元瓘",
+      "roles": [
+        "君主"
+      ],
+      "bio": "钱镠第七子，继承吴越王位，在位期间维持对后唐、后晋的臣属关系并经营两浙。934年杭州火灾后重建城郭，941年去世，子钱弘佐继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/钱元瓘"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "文穆王"
+      ],
+      "templeNames": [],
+      "title": "吴越文穆王"
+    },
+    {
+      "id": "qian-hongzuo",
+      "name": "钱弘佐",
+      "roles": [
+        "君主"
+      ],
+      "bio": "钱元瓘之子，年少继位，由元老水丘昭券等辅政。吴越继续向中原王朝称臣，钱弘佐在位六年后去世，弟钱弘倧继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/钱弘佐"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "忠悼王"
+      ],
+      "templeNames": [],
+      "title": "吴越忠悼王"
+    },
+    {
+      "id": "qian-hongcong",
+      "name": "钱弘倧",
+      "roles": [
+        "君主"
+      ],
+      "bio": "钱元瓘之子，钱弘佐死后继位。权臣胡进思发动政变将其废黜并幽禁，钱弘俶随后即位，吴越王位转入另一支。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/钱弘倧"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "忠逊王"
+      ],
+      "templeNames": [],
+      "title": "吴越忠逊王"
+    },
+    {
+      "id": "qian-chu",
+      "name": "钱俶",
+      "roles": [
+        "君主"
+      ],
+      "bio": "钱元瓘第九子，原名钱弘俶，947年后实际执掌吴越，后改名钱俶。向后周、北宋持续称臣，978年纳土归宋，保全两浙百姓与宗族。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/钱俶"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "忠懿王"
+      ],
+      "templeNames": [],
+      "title": "吴越忠懿王"
+    },
+    {
+      "id": "wang-shenzhi",
+      "name": "王审知",
+      "roles": [
+        "君主"
+      ],
+      "bio": "光州固始人，与兄王潮随军入闽并控制福建，王潮死后继任。受封闽王，定都福州，在位时奉中原正朔、轻徭薄赋并发展海上贸易，为闽政权奠基。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/王审知"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "太祖"
+      ],
+      "title": "闽太祖"
+    },
+    {
+      "id": "wang-yanhan",
+      "name": "王延翰",
+      "roles": [
+        "君主"
+      ],
+      "bio": "王审知长子，王审知死后继位。骄奢并与弟王延钧失和，926年被王延钧、王延禀起兵杀害，闽国由王延钧掌权。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/王延翰"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "闽主"
+    },
+    {
+      "id": "wang-yanjun",
+      "name": "王延钧",
+      "roles": [
+        "君主"
+      ],
+      "bio": "王审知次子，联合王延禀推翻兄长王延翰后掌权，后称帝、改名王鏻。晚年猜忌宗室与大臣，934年被子王继鹏发动政变杀死。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/王延钧"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "闽主"
+    },
+    {
+      "id": "wang-jipeng",
+      "name": "王继鹏",
+      "roles": [
+        "君主"
+      ],
+      "bio": "王延钧之子，改名王昶，杀父后继位并称帝。宠信宦官、兴建宫室，国内政变频仍；939年被叔父王延羲所杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/王继鹏"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "闽主"
+    },
+    {
+      "id": "wang-yanxi",
+      "name": "王延羲",
+      "roles": [
+        "君主"
+      ],
+      "bio": "王审知之子，王继鹏死后即位，后改名王曦并称帝。统治期间闽国内乱加剧，部将朱文进与连重遇发动兵变将其杀死，闽国分裂。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/王延羲"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "闽主"
+    },
+    {
+      "id": "zhu-wenjin",
+      "name": "朱文进",
+      "roles": [
+        "君主"
+      ],
+      "bio": "闽将，因王延羲猜忌而与连重遇发动政变，杀王延羲后自立为闽主。王氏宗室王延政自建州起兵反攻，朱文进在位仅数月即被杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/朱文进"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "闽主"
+    },
+    {
+      "id": "wang-yanzheng",
+      "name": "王延政",
+      "roles": [
+        "君主"
+      ],
+      "bio": "王审知之子，长期镇守建州，与福州王氏政权对立。朱文进被杀后入据福州并称帝，改国号大殷、后复称闽；945年南唐军攻陷建州，王延政出降，闽亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/王延政"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "闽主"
+    },
+    {
+      "id": "liu-yan",
+      "name": "刘龑",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "原名刘岩，刘隐之弟，继承其在岭南的军政基础。917年在广州称帝，国号大越，次年改汉，史称南汉；在位时扩张岭南并强化宫廷统治，传位于子刘玢。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘龑"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "高祖"
+      ],
+      "title": "南汉高祖"
+    },
+    {
+      "id": "liu-bin",
+      "name": "刘玢",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "刘龑次子，刘龑死后继位。统治仅一年多即被弟刘晟与党羽发动政变杀害，南汉皇位由刘晟承接。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘玢"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "殇帝"
+      ],
+      "templeNames": [],
+      "title": "南汉殇帝"
+    },
+    {
+      "id": "liu-sheng",
+      "name": "刘晟",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "刘龑之子，杀兄刘玢后即位。以严酷手段清除宗室和大臣，南汉政局趋于封闭；死后子刘鋹继位，宋军于971年灭南汉。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘晟"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "中宗"
+      ],
+      "title": "南汉中宗"
+    },
+    {
+      "id": "liu-chang",
+      "name": "刘鋹",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "刘晟之子，958年继位时年幼，朝政由宦官与近臣把持。面对北宋南征未能组织有效抵抗，971年广州失守后出降，南汉亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘鋹"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "南汉末帝"
+    },
+    {
+      "id": "wang-jian-shu",
+      "name": "王建",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "许州舞阳人，唐末入蜀任职，逐步控制西川并据成都。907年称帝建前蜀，扩展至两川及汉中；晚年因继承安排引发宫廷冲突，死后子王衍继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/王建"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "高祖"
+      ],
+      "title": "前蜀高祖"
+    },
+    {
+      "id": "wang-yan-shu",
+      "name": "王衍",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "王建幼子，918年继位。统治期间宠信近臣、巡游奢侈，前蜀防务松弛；925年后唐军攻入成都，王衍出降，前蜀亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/王衍"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "前蜀末帝"
+    },
+    {
+      "id": "meng-zhixiang",
+      "name": "孟知祥",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "后唐明宗李嗣源女婿，曾任西川节度使，逐步兼并东川并控制两川。934年在成都称帝建立后蜀，同年去世，子孟昶继位并完成政权交接。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/孟知祥"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "高祖"
+      ],
+      "title": "后蜀高祖"
+    },
+    {
+      "id": "meng-chang",
+      "name": "孟昶",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "孟知祥之子，934年继位，在位三十余年。前期整顿蜀地政务、兴修水利，后期政治渐趋奢靡；965年宋军入成都后出降，后蜀亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/孟昶"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "恭孝王"
+      ],
+      "templeNames": [],
+      "title": "后蜀后主"
+    },
+    {
+      "id": "gao-jixing",
+      "name": "高季兴",
+      "roles": [
+        "君主"
+      ],
+      "bio": "陕州人，早年为朱温部将，后镇守荆南江陵。后唐建立后据地自立，受封南平王；凭江陵交通位置与周边政权往来、互市，开创荆南政权。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/高季兴"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "武信王"
+      ],
+      "templeNames": [],
+      "title": "荆南武信王"
+    },
+    {
+      "id": "gao-conghe",
+      "name": "高从诲",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高季兴之子，继承荆南政权，在位时与后唐、后晋及南方诸国保持往来，借朝贡与贸易维持小国地位。死后子高保融继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/高从诲"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "文献王"
+      ],
+      "templeNames": [],
+      "title": "荆南文献王"
+    },
+    {
+      "id": "gao-baorong",
+      "name": "高保融",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高从诲之子，948年继位。荆南继续向中原王朝称臣，借江陵水陆交通经营朝贡和转口贸易；去世后弟高保勖继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/高保融"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "贞懿王"
+      ],
+      "templeNames": [],
+      "title": "荆南贞懿王"
+    },
+    {
+      "id": "gao-baoxu",
+      "name": "高保勖",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高从诲之子、高保融之弟，继承荆南王位。即位后不久病重去世，由侄高继冲继位，政权继续维持江陵一隅。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/高保勖"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "贞献王"
+      ],
+      "templeNames": [],
+      "title": "荆南贞献王"
+    },
+    {
+      "id": "gao-jichong",
+      "name": "高继冲",
+      "roles": [
+        "君主"
+      ],
+      "bio": "高保融之子，962年继承荆南。宋军平定湖南后进逼江陵，高继冲于963年纳土归宋，荆南政权结束。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/高继冲"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "荆南末王"
+    },
+    {
+      "id": "ma-yin",
+      "name": "马殷",
+      "roles": [
+        "君主"
+      ],
+      "bio": "许州鄢陵人，唐末随秦宗权部将孙儒转战，后控制湖南并以潭州为中心。受后梁封楚王，建立马楚政权；在位时发展茶业、鼓励商贸并维持对中原称臣。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/马殷"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "武王"
+      ],
+      "templeNames": [],
+      "title": "楚武王"
+    },
+    {
+      "id": "ma-xisheng",
+      "name": "马希声",
+      "roles": [
+        "君主"
+      ],
+      "bio": "马殷之子，继承楚王位，在位时间较短。延续父亲对后梁的臣属关系，死后弟马希范继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/马希声"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "楚王"
+    },
+    {
+      "id": "ma-xifan",
+      "name": "马希范",
+      "roles": [
+        "君主"
+      ],
+      "bio": "马殷之子，继位后扩建长沙城与宫室，并维持马楚对后晋、后汉的朝贡关系。其统治时期政权疆域与财赋达到高峰，但宫廷营建和赏赐耗费增加；死后诸弟争位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/马希范"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "楚王"
+    },
+    {
+      "id": "ma-xiguang",
+      "name": "马希广",
+      "roles": [
+        "君主"
+      ],
+      "bio": "马殷之子，马希范死后由部分大臣拥立。兄长马希萼不服，率军争夺潭州，马希广兵败被杀，楚国内战扩大。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/马希广"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "楚王"
+    },
+    {
+      "id": "ma-xie",
+      "name": "马希萼",
+      "roles": [
+        "君主"
+      ],
+      "bio": "马殷之子，长期镇守朗州，与兄马希广争夺楚王位。攻下潭州后即位，但将领拥立其弟马希崇反叛；南唐乘乱出兵，马希萼被俘，楚国亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/马希萼"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "楚王"
+    },
+    {
+      "id": "ma-xichong",
+      "name": "马希崇",
+      "roles": [
+        "君主"
+      ],
+      "bio": "马殷之子，参与推翻兄长马希萼后短暂掌权。951年南唐军入长沙，马希崇出降并被迁往金陵，马楚政权结束。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/马希崇"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "楚王"
+    },
+    {
+      "id": "liu-min",
+      "name": "刘旻",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "本名刘崇，后汉高祖刘知远之弟。郭威代汉建周后，他在太原称帝，建立北汉并依附契丹，与后周及北宋长期争战；死后子刘钧继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘旻"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "世祖"
+      ],
+      "title": "北汉世祖"
+    },
+    {
+      "id": "liu-jun-bei",
+      "name": "刘钧",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "刘旻之子，954年继位，改名刘钧。北汉继续以契丹为外援，对后周、北宋用兵并数次遭败；968年去世后，养子刘继恩、刘继元相继继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘钧"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "睿皇帝"
+      ],
+      "templeNames": [],
+      "title": "北汉睿皇帝"
+    },
+    {
+      "id": "liu-jiyuan",
+      "name": "刘继元",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "刘钧养子，继刘继恩被杀后即位。北汉在北宋持续围攻下日益困窘，979年宋太宗亲征太原，刘继元出降，北汉亡，宋完成对中原与北方主要地区的统一。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘继元"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "北汉末帝"
+    },
+    {
+      "id": "zhao-kuangyin",
+      "name": "赵匡胤",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "宋太祖，陈桥兵变建宋，杯酒释兵权。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赵匡胤"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "太祖"
+      ],
+      "title": "宋太祖"
+    },
+    {
+      "id": "zhao-kuangyi",
+      "name": "赵光义",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "宋太宗，完成统一，幽州之战失利。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赵光义"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "太宗"
+      ],
+      "title": "宋太宗"
+    },
+    {
+      "id": "zhao-heng",
+      "name": "赵恒",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "宋真宗，澶渊之盟在其朝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋真宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "真宗"
+      ],
+      "title": "宋真宗"
+    },
+    {
+      "id": "zhao-zhen",
+      "name": "赵祯",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "宋仁宗，庆历新政，北宋极盛。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋仁宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "仁宗"
+      ],
+      "title": "宋仁宗"
+    },
+    {
+      "id": "zhao-shu",
+      "name": "赵曙",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "宋英宗，在位仅四年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋英宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "英宗"
+      ],
+      "title": "宋英宗"
+    },
+    {
+      "id": "zhao-xu",
+      "name": "赵顼",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "宋神宗，王安石变法在其朝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋神宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "神宗"
+      ],
+      "title": "宋神宗"
+    },
+    {
+      "id": "zhao-zhe",
+      "name": "赵煦",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "宋哲宗，元祐更化与绍圣绍述。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋哲宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "哲宗"
+      ],
+      "title": "宋哲宗"
+    },
+    {
+      "id": "zhao-ji",
+      "name": "赵佶",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "宋徽宗，崇道兴艺术，靖康之耻。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋徽宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "徽宗"
+      ],
+      "title": "宋徽宗"
+    },
+    {
+      "id": "zhao-huan",
+      "name": "赵桓",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "宋钦宗，靖康之变被俘，北宋亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋钦宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "钦宗"
+      ],
+      "title": "宋钦宗"
+    },
+    {
+      "id": "zhao-gou",
+      "name": "赵构",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "宋高宗，南渡建南宋，杀岳飞。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋高宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "高宗"
+      ],
+      "title": "宋高宗"
+    },
+    {
+      "id": "zhao-shen",
+      "name": "赵昚",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "宋孝宗，乾淳之治，南宋中兴。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋孝宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "孝宗"
+      ],
+      "title": "宋孝宗"
+    },
+    {
+      "id": "zhao-dun",
+      "name": "赵惇",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "宋光宗，淳熙内禅。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋光宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "光宗"
+      ],
+      "title": "宋光宗"
+    },
+    {
+      "id": "zhao-kuo",
+      "name": "赵扩",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "宋宁宗，开禧北伐。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋宁宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "宁宗"
+      ],
+      "title": "宋宁宗"
+    },
+    {
+      "id": "zhao-yun",
+      "name": "赵昀",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "宋理宗，联蒙灭金，后蒙攻宋。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋理宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "理宗"
+      ],
+      "title": "宋理宗"
+    },
+    {
+      "id": "zhao-qi",
+      "name": "赵禥",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "宋度宗，度宗荒怠，宋势日衰。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋度宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "度宗"
+      ],
+      "title": "宋度宗"
+    },
+    {
+      "id": "zhao-shi",
+      "name": "赵显",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "宋恭帝，降元，南宋实质亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋恭帝"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "恭帝"
+      ],
+      "title": "宋恭帝"
+    },
+    {
+      "id": "zhao-shi-duan",
+      "name": "赵昰",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "宋端宗，流亡途中崩。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋端宗"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [
+        "端宗"
+      ],
+      "title": "宋端宗"
+    },
+    {
+      "id": "zhao-bing",
+      "name": "赵昺",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "宋帝昺，崖山海战殉国，南宋亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋帝昺"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "宋帝昺"
+    },
+    {
+      "id": "an-lushan",
+      "name": "安禄山",
+      "roles": [
+        "将领"
+      ],
+      "bio": "安史之乱发动者，范阳节度使。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/安禄山"
+        }
+      ],
+      "birth": {
+        "year": 703,
+        "month": 1,
+        "abs": 8436
+      },
+      "death": {
+        "year": 761,
+        "month": 1,
+        "abs": 9132
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "huang-chao",
+      "name": "黄巢",
+      "roles": [
+        "起义领袖"
+      ],
+      "bio": "唐末农民起义领袖，攻入长安。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/黄巢"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "wang-anshi",
+      "name": "王安石",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "北宋改革家，熙宁变法主持者。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/王安石"
+        }
+      ],
+      "birth": {
+        "year": 1021,
+        "month": 1,
+        "abs": 12252
+      },
+      "death": {
+        "year": 1086,
+        "month": 1,
+        "abs": 13032
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "wei-zheng",
+      "name": "魏征",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "唐太宗时名相，以直言敢谏著称，为贞观之治奠基。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/魏征"
+        }
+      ],
+      "birth": {
+        "year": 580,
+        "month": 1,
+        "abs": 6960
+      },
+      "death": {
+        "year": 643,
+        "month": 1,
+        "abs": 7716
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "fang-xuanling",
+      "name": "房玄龄",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "唐初宰相，与杜如晦并称房谋杜断。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/房玄龄"
+        }
+      ],
+      "birth": {
+        "year": 579,
+        "month": 1,
+        "abs": 6948
+      },
+      "death": {
+        "year": 648,
+        "month": 1,
+        "abs": 7776
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "du-ruhui",
+      "name": "杜如晦",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "唐初宰相，辅佐李世民定策夺位、治理天下。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杜如晦"
+        }
+      ],
+      "birth": {
+        "year": 585,
+        "month": 1,
+        "abs": 7020
+      },
+      "death": {
+        "year": 630,
+        "month": 1,
+        "abs": 7560
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "li-jing-tang",
+      "name": "李靖",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "唐初名将，平定江南、北击突厥，封卫国公。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/李靖"
+        }
+      ],
+      "birth": {
+        "year": 571,
+        "month": 1,
+        "abs": 6852
+      },
+      "death": {
+        "year": 649,
+        "month": 1,
+        "abs": 7788
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "guo-ziyi",
+      "name": "郭子仪",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "平定安史之乱功臣，再造唐朝，封汾阳王。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郭子仪"
+        }
+      ],
+      "birth": {
+        "year": 697,
+        "month": 1,
+        "abs": 8364
+      },
+      "death": {
+        "year": 781,
+        "month": 1,
+        "abs": 9372
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "di-renjie",
+      "name": "狄仁杰",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "武周名臣，断案如神，后复为宰相。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/狄仁杰"
+        }
+      ],
+      "birth": {
+        "year": 630,
+        "month": 1,
+        "abs": 7560
+      },
+      "death": {
+        "year": 700,
+        "month": 1,
+        "abs": 8400
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "li-bai",
+      "name": "李白",
+      "roles": [
+        "诗人"
+      ],
+      "bio": "盛唐诗人，诗仙，浪漫主义诗歌代表。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/李白"
+        }
+      ],
+      "birth": {
+        "year": 701,
+        "month": 1,
+        "abs": 8412
+      },
+      "death": {
+        "year": 762,
+        "month": 1,
+        "abs": 9144
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "du-fu",
+      "name": "杜甫",
+      "roles": [
+        "诗人"
+      ],
+      "bio": "盛唐诗人，诗圣，现实主义诗歌高峰。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杜甫"
+        }
+      ],
+      "birth": {
+        "year": 712,
+        "month": 1,
+        "abs": 8544
+      },
+      "death": {
+        "year": 770,
+        "month": 1,
+        "abs": 9240
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "wang-wei",
+      "name": "王维",
+      "roles": [
+        "诗人",
+        "画家"
+      ],
+      "bio": "盛唐诗人画家，山水田园诗代表。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/王维"
+        }
+      ],
+      "birth": {
+        "year": 701,
+        "month": 1,
+        "abs": 8412
+      },
+      "death": {
+        "year": 761,
+        "month": 1,
+        "abs": 9132
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "bai-juyi",
+      "name": "白居易",
+      "roles": [
+        "诗人"
+      ],
+      "bio": "中唐诗人，新乐府运动代表，长恨歌、琵琶行作者。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/白居易"
+        }
+      ],
+      "birth": {
+        "year": 772,
+        "month": 1,
+        "abs": 9264
+      },
+      "death": {
+        "year": 846,
+        "month": 1,
+        "abs": 10152
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "han-yu",
+      "name": "韩愈",
+      "roles": [
+        "文学家"
+      ],
+      "bio": "中唐古文运动领袖，唐宋八大家之首。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/韩愈"
+        }
+      ],
+      "birth": {
+        "year": 768,
+        "month": 1,
+        "abs": 9216
+      },
+      "death": {
+        "year": 824,
+        "month": 1,
+        "abs": 9888
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "du-mu",
+      "name": "杜牧",
+      "roles": [
+        "诗人"
+      ],
+      "bio": "晚唐诗人，与李商隐并称小李杜。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杜牧"
+        }
+      ],
+      "birth": {
+        "year": 803,
+        "month": 1,
+        "abs": 9636
+      },
+      "death": {
+        "year": 852,
+        "month": 1,
+        "abs": 10224
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "yan-zhenqing",
+      "name": "颜真卿",
+      "roles": [
+        "书法家",
+        "政治家"
+      ],
+      "bio": "唐代书法家，颜体创始人，安史之乱中守平原。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/颜真卿"
+        }
+      ],
+      "birth": {
+        "year": 709,
+        "month": 1,
+        "abs": 8508
+      },
+      "death": {
+        "year": 784,
+        "month": 1,
+        "abs": 9408
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "xuanzang",
+      "name": "玄奘",
+      "roles": [
+        "高僧",
+        "学者"
+      ],
+      "bio": "西行取经，回国后主持译经，创唯识宗。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/玄奘"
+        }
+      ],
+      "birth": {
+        "year": 602,
+        "month": 1,
+        "abs": 7224
+      },
+      "death": {
+        "year": 664,
+        "month": 1,
+        "abs": 7968
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "jianzhen",
+      "name": "鉴真",
+      "roles": [
+        "高僧"
+      ],
+      "bio": "六次东渡日本，传播佛教与唐文化。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鉴真"
+        }
+      ],
+      "birth": {
+        "year": 688,
+        "month": 1,
+        "abs": 8256
+      },
+      "death": {
+        "year": 763,
+        "month": 1,
+        "abs": 9156
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "yang-guifei",
+      "name": "杨玉环",
+      "roles": [
+        "后妃"
+      ],
+      "bio": "唐玄宗宠妃，马嵬驿之变中被赐死。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杨贵妃"
+        }
+      ],
+      "birth": {
+        "year": 719,
+        "month": 1,
+        "abs": 8628
+      },
+      "death": {
+        "year": 756,
+        "month": 1,
+        "abs": 9072
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "shangguan-waner",
+      "name": "上官婉儿",
+      "roles": [
+        "政治家",
+        "诗人"
+      ],
+      "bio": "武则天、中宗朝女官，掌制诰，诗文名世。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/上官婉儿"
+        }
+      ],
+      "birth": {
+        "year": 664,
+        "month": 1,
+        "abs": 7968
+      },
+      "death": {
+        "year": 710,
+        "month": 1,
+        "abs": 8520
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "wei-hou",
+      "name": "韦后",
+      "roles": [
+        "皇后",
+        "政治家"
+      ],
+      "bio": "唐中宗皇后，神龙政变后擅权，效法武则天，景龙政变中被杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/韦皇后"
+        }
+      ],
+      "birth": {
+        "year": 644,
+        "month": 1,
+        "abs": 7728
+      },
+      "death": {
+        "year": 710,
+        "month": 7,
+        "abs": 8526
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "xue-rengui",
+      "name": "薛仁贵",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "唐将，白袍将军，征高句丽、击突厥。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/薛仁贵"
+        }
+      ],
+      "birth": {
+        "year": 614,
+        "month": 1,
+        "abs": 7368
+      },
+      "death": {
+        "year": 683,
+        "month": 1,
+        "abs": 8196
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "zhang-xun",
+      "name": "张巡",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "安史之乱中死守睢阳，阻叛军南下。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/张巡"
+        }
+      ],
+      "birth": null,
+      "death": {
+        "year": 757,
+        "month": 1,
+        "abs": 9084
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "fan-zhongyan",
+      "name": "范仲淹",
+      "roles": [
+        "政治家",
+        "文学家"
+      ],
+      "bio": "北宋名臣，庆历新政主持者，岳阳楼记作者。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/范仲淹"
+        }
+      ],
+      "birth": {
+        "year": 989,
+        "month": 1,
+        "abs": 11868
+      },
+      "death": {
+        "year": 1052,
+        "month": 1,
+        "abs": 12624
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "bao-zheng",
+      "name": "包拯",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "北宋名臣，以清廉刚正著称，开封府尹。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/包拯"
+        }
+      ],
+      "birth": {
+        "year": 999,
+        "month": 1,
+        "abs": 11988
+      },
+      "death": {
+        "year": 1062,
+        "month": 1,
+        "abs": 12744
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "ouyang-xiu",
+      "name": "欧阳修",
+      "roles": [
+        "文学家",
+        "政治家"
+      ],
+      "bio": "北宋文坛领袖，唐宋八大家之一，主持庆历新政。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/欧阳修"
+        }
+      ],
+      "birth": {
+        "year": 1007,
+        "month": 1,
+        "abs": 12084
+      },
+      "death": {
+        "year": 1072,
+        "month": 1,
+        "abs": 12864
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "si-ma-guang",
+      "name": "司马光",
+      "roles": [
+        "史学家",
+        "政治家"
+      ],
+      "bio": "北宋史学家，主编资治通鉴，元祐更化代表。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/司马光"
+        }
+      ],
+      "birth": {
+        "year": 1019,
+        "month": 1,
+        "abs": 12228
+      },
+      "death": {
+        "year": 1086,
+        "month": 1,
+        "abs": 13032
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "su-shi",
+      "name": "苏轼",
+      "roles": [
+        "文学家",
+        "政治家"
+      ],
+      "bio": "北宋文学家，唐宋八大家之一，诗词书画皆精。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/苏轼"
+        }
+      ],
+      "birth": {
+        "year": 1037,
+        "month": 1,
+        "abs": 12444
+      },
+      "death": {
+        "year": 1101,
+        "month": 1,
+        "abs": 13212
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "shen-kuo",
+      "name": "沈括",
+      "roles": [
+        "科学家"
+      ],
+      "bio": "北宋科学家，梦溪笔谈作者，天文历法、物理皆有建树。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/沈括"
+        }
+      ],
+      "birth": {
+        "year": 1031,
+        "month": 1,
+        "abs": 12372
+      },
+      "death": {
+        "year": 1095,
+        "month": 1,
+        "abs": 13140
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "xin-qiji",
+      "name": "辛弃疾",
+      "roles": [
+        "词人",
+        "军事家"
+      ],
+      "bio": "南宋词人，抗金名将，豪放词派代表。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/辛弃疾"
+        }
+      ],
+      "birth": {
+        "year": 1140,
+        "month": 1,
+        "abs": 13680
+      },
+      "death": {
+        "year": 1207,
+        "month": 1,
+        "abs": 14484
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "lu-you",
+      "name": "陆游",
+      "roles": [
+        "诗人"
+      ],
+      "bio": "南宋爱国诗人，诗词文俱工，存诗近万首。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/陆游"
+        }
+      ],
+      "birth": {
+        "year": 1125,
+        "month": 1,
+        "abs": 13500
+      },
+      "death": {
+        "year": 1210,
+        "month": 1,
+        "abs": 14520
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "han-shizhong",
+      "name": "韩世忠",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "南宋抗金名将，黄天荡之战大败金军。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/韩世忠"
+        }
+      ],
+      "birth": {
+        "year": 1089,
+        "month": 1,
+        "abs": 13068
+      },
+      "death": {
+        "year": 1151,
+        "month": 1,
+        "abs": 13812
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "li-gang",
+      "name": "李纲",
+      "roles": [
+        "政治家",
+        "军事家"
+      ],
+      "bio": "北宋末宰相，力主抗金，靖康之变前后多次起用。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/李纲"
+        }
+      ],
+      "birth": {
+        "year": 1083,
+        "month": 1,
+        "abs": 12996
+      },
+      "death": {
+        "year": 1140,
+        "month": 1,
+        "abs": 13680
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "wen-tianxiang",
+      "name": "文天祥",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "南宋末丞相，抗元被俘，作正气歌，就义于大都。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/文天祥"
+        }
+      ],
+      "birth": {
+        "year": 1236,
+        "month": 1,
+        "abs": 14832
+      },
+      "death": {
+        "year": 1283,
+        "month": 1,
+        "abs": 15396
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    }
+  ],
+  "dynastyGroups": [
+    {
+      "id": "wudai",
+      "name": "五代",
+      "altNames": [],
+      "scope": "cn",
+      "start": {
+        "year": 907,
+        "month": 1,
+        "abs": 10884
+      },
+      "end": {
+        "year": 960,
+        "month": 12,
+        "abs": 11531
+      },
+      "precision": "year",
+      "note": "907–960年北方五代更迭。"
+    },
+    {
+      "id": "shiguo",
+      "name": "十国",
+      "altNames": [],
+      "scope": "cn",
+      "start": {
+        "year": 907,
+        "month": 1,
+        "abs": 10884
+      },
+      "end": {
+        "year": 979,
+        "month": 12,
+        "abs": 11759
+      },
+      "precision": "year",
+      "note": "907–979年南方十国割据。"
+    }
+  ],
+  "dynasties": [
+    {
+      "id": "sui",
+      "name": "隋",
+      "altNames": [
+        "大隋"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 581,
+        "month": 3,
+        "abs": 6974
+      },
+      "end": {
+        "year": 619,
+        "month": 5,
+        "abs": 7432
+      },
+      "precision": "month",
+      "note": "581年3月杨坚受禅建隋；589年灭陈统一。618年唐建立后，东都杨侗仍续统，至619年5月被废，隋亡。"
+    },
+    {
+      "id": "xu",
+      "name": "许",
+      "altNames": [
+        "宇文化及许"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 618,
+        "month": 9,
+        "abs": 7424
+      },
+      "end": {
+        "year": 619,
+        "month": 5,
+        "abs": 7432
+      },
+      "precision": "month",
+      "note": "宇文化及杀杨浩后自立，国号许，旋为窦建德所败，619年覆亡。"
+    },
+    {
+      "id": "xia-dou-jiande",
+      "name": "夏",
+      "altNames": [
+        "窦夏",
+        "夏王窦建德政权"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 618,
+        "month": 11,
+        "abs": 7426
+      },
+      "end": {
+        "year": 621,
+        "month": 5,
+        "abs": 7456
+      },
+      "precision": "month",
+      "note": "窦建德于618年11月在乐寿建夏称王；621年5月虎牢战败被俘，夏政权覆亡。"
+    },
+    {
+      "id": "zheng",
+      "name": "郑",
+      "altNames": [
+        "王世充郑"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 619,
+        "month": 1,
+        "abs": 7428
+      },
+      "end": {
+        "year": 621,
+        "month": 6,
+        "abs": 7457
+      },
+      "precision": "month",
+      "note": "王世充于619年在洛阳称帝、国号郑；621年6月4日（武德四年五月丙寅）降唐，政权覆亡。"
+    },
+    {
+      "id": "tang",
+      "name": "唐",
+      "altNames": [
+        "李唐"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 618,
+        "month": 6,
+        "abs": 7421
+      },
+      "end": {
+        "year": 907,
+        "month": 1,
+        "abs": 10884
+      },
+      "precision": "month",
+      "note": "618年6月李渊受隋恭帝禅让建唐，都长安；907年朱温篡唐，唐亡。"
+    },
+    {
+      "id": "zhou-wu",
+      "name": "武周",
+      "altNames": [
+        "周"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 690,
+        "month": 1,
+        "abs": 8280
+      },
+      "end": {
+        "year": 705,
+        "month": 1,
+        "abs": 8460
+      },
+      "precision": "year",
+      "note": "武则天改国号周，690–705年，后还政李唐。"
+    },
+    {
+      "id": "liang-hou",
+      "name": "后梁",
+      "altNames": [
+        "梁"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 907,
+        "month": 1,
+        "abs": 10884
+      },
+      "end": {
+        "year": 923,
+        "month": 1,
+        "abs": 11076
+      },
+      "precision": "year",
+      "groupId": "wudai",
+      "note": "朱温篡唐建梁，都开封；923年后唐灭之。"
+    },
+    {
+      "id": "tang-hou",
+      "name": "后唐",
+      "altNames": [
+        "唐"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 923,
+        "month": 1,
+        "abs": 11076
+      },
+      "end": {
+        "year": 936,
+        "month": 1,
+        "abs": 11232
+      },
+      "precision": "year",
+      "groupId": "wudai",
+      "note": "李存勖灭梁称帝；936年石敬瑭联契丹灭之。"
+    },
+    {
+      "id": "jin-hou",
+      "name": "后晋",
+      "altNames": [
+        "晋"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 936,
+        "month": 1,
+        "abs": 11232
+      },
+      "end": {
+        "year": 947,
+        "month": 1,
+        "abs": 11364
+      },
+      "precision": "year",
+      "groupId": "wudai",
+      "note": "石敬瑭割燕云十六州；947年契丹灭晋。"
+    },
+    {
+      "id": "han-hou",
+      "name": "后汉",
+      "altNames": [
+        "汉"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 947,
+        "month": 1,
+        "abs": 11364
+      },
+      "end": {
+        "year": 951,
+        "month": 1,
+        "abs": 11412
+      },
+      "precision": "year",
+      "groupId": "wudai",
+      "note": "刘知远建后汉；951年郭威代汉。"
+    },
+    {
+      "id": "zhou-hou",
+      "name": "后周",
+      "altNames": [
+        "周"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 951,
+        "month": 1,
+        "abs": 11412
+      },
+      "end": {
+        "year": 960,
+        "month": 1,
+        "abs": 11520
+      },
+      "precision": "year",
+      "groupId": "wudai",
+      "note": "郭威建后周；960年赵匡胤陈桥兵变代周。"
+    },
+    {
+      "id": "wu-shi",
+      "name": "吴",
+      "altNames": [
+        "杨吴",
+        "十国吴"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 902,
+        "month": 1,
+        "abs": 10824
+      },
+      "end": {
+        "year": 937,
+        "month": 1,
+        "abs": 11244
+      },
+      "precision": "year",
+      "groupId": "shiguo",
+      "note": "杨行密据淮南；937年为南唐所灭。"
+    },
+    {
+      "id": "tang-nan",
+      "name": "南唐",
+      "altNames": [
+        "唐"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 937,
+        "month": 1,
+        "abs": 11244
+      },
+      "end": {
+        "year": 975,
+        "month": 1,
+        "abs": 11700
+      },
+      "precision": "year",
+      "groupId": "shiguo",
+      "note": "李昪代吴建南唐；975年宋灭之。"
+    },
+    {
+      "id": "wuyue",
+      "name": "吴越",
+      "altNames": [
+        "吴越国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 907,
+        "month": 1,
+        "abs": 10884
+      },
+      "end": {
+        "year": 978,
+        "month": 1,
+        "abs": 11736
+      },
+      "precision": "year",
+      "groupId": "shiguo",
+      "note": "钱镠据两浙；978年钱俶纳土归宋。"
+    },
+    {
+      "id": "min-fujian",
+      "name": "闽",
+      "altNames": [
+        "闽国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 909,
+        "month": 1,
+        "abs": 10908
+      },
+      "end": {
+        "year": 945,
+        "month": 1,
+        "abs": 11340
+      },
+      "precision": "year",
+      "groupId": "shiguo",
+      "note": "王审知据福建；945年内乱灭亡。"
+    },
+    {
+      "id": "han-nan",
+      "name": "南汉",
+      "altNames": [
+        "汉"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 917,
+        "month": 1,
+        "abs": 11004
+      },
+      "end": {
+        "year": 971,
+        "month": 1,
+        "abs": 11652
+      },
+      "precision": "year",
+      "groupId": "shiguo",
+      "note": "刘龑据岭南；971年宋灭之。"
+    },
+    {
+      "id": "shu-qian",
+      "name": "前蜀",
+      "altNames": [
+        "蜀"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 907,
+        "month": 1,
+        "abs": 10884
+      },
+      "end": {
+        "year": 925,
+        "month": 1,
+        "abs": 11100
+      },
+      "precision": "year",
+      "groupId": "shiguo",
+      "note": "王建据成都；925年后唐灭之。"
+    },
+    {
+      "id": "shu-hou",
+      "name": "后蜀",
+      "altNames": [
+        "蜀"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 934,
+        "month": 1,
+        "abs": 11208
+      },
+      "end": {
+        "year": 965,
+        "month": 2,
+        "abs": 11581
+      },
+      "precision": "year",
+      "groupId": "shiguo",
+      "note": "孟知祥据成都；965年正月辛卯孟昶出降，宋灭之。"
+    },
+    {
+      "id": "jingnan",
+      "name": "荆南",
+      "altNames": [
+        "南平"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 924,
+        "month": 1,
+        "abs": 11088
+      },
+      "end": {
+        "year": 963,
+        "month": 1,
+        "abs": 11556
+      },
+      "precision": "year",
+      "groupId": "shiguo",
+      "note": "高季兴据江陵；963年纳土归宋。"
+    },
+    {
+      "id": "chu-nan",
+      "name": "楚",
+      "altNames": [
+        "马楚"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 907,
+        "month": 1,
+        "abs": 10884
+      },
+      "end": {
+        "year": 951,
+        "month": 1,
+        "abs": 11412
+      },
+      "precision": "year",
+      "groupId": "shiguo",
+      "note": "马殷据湖南；951年南唐灭楚。"
+    },
+    {
+      "id": "han-bei",
+      "name": "北汉",
+      "altNames": [
+        "汉"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 951,
+        "month": 1,
+        "abs": 11412
+      },
+      "end": {
+        "year": 979,
+        "month": 1,
+        "abs": 11748
+      },
+      "precision": "year",
+      "groupId": "shiguo",
+      "note": "刘旻据太原；979年宋灭之，十国终结。"
+    },
+    {
+      "id": "song-north",
+      "name": "北宋",
+      "altNames": [
+        "宋"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 960,
+        "month": 2,
+        "abs": 11521
+      },
+      "end": {
+        "year": 1127,
+        "month": 3,
+        "abs": 13526
+      },
+      "precision": "month",
+      "note": "960年2月陈桥兵变后赵匡胤建宋；1127年3月靖康之变，北宋亡。南宋于同年6月重建宋室。"
+    },
+    {
+      "id": "song-south",
+      "name": "南宋",
+      "altNames": [
+        "宋"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 1127,
+        "month": 6,
+        "abs": 13529
+      },
+      "end": {
+        "year": 1279,
+        "month": 3,
+        "abs": 15350
+      },
+      "precision": "month",
+      "note": "1127年6月12日赵构即位，南宋重建宋室；1279年3月崖山海战，南宋亡。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-yang-jian",
+      "dynastyId": "sui",
+      "personId": "yang-jian",
+      "title": "",
+      "posthumousName": "文皇帝",
+      "templeName": null,
+      "eraNames": [
+        "开皇",
+        "仁寿"
+      ],
+      "start": {
+        "year": 581,
+        "month": 3,
+        "abs": 6974,
+        "day": 4
+      },
+      "end": {
+        "year": 604,
+        "month": 8,
+        "abs": 7255,
+        "day": 13
+      },
+      "startAbs": 6974,
+      "endAbs": 7255,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-yang-guang",
+      "dynastyId": "sui",
+      "personId": "yang-guang",
+      "title": "",
+      "posthumousName": "炀皇帝",
+      "templeName": null,
+      "eraNames": [
+        "大业"
+      ],
+      "start": {
+        "year": 604,
+        "month": 8,
+        "abs": 7255,
+        "day": 13
+      },
+      "end": {
+        "year": 618,
+        "month": 4,
+        "abs": 7419,
+        "day": 11
+      },
+      "startAbs": 7255,
+      "endAbs": 7419,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-yang-hao",
+      "dynastyId": "sui",
+      "personId": "yang-hao",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 618,
+        "month": 4,
+        "abs": 7419,
+        "day": 11
+      },
+      "end": {
+        "year": 618,
+        "month": 10,
+        "abs": 7425,
+        "day": 23
+      },
+      "startAbs": 7419,
+      "endAbs": 7425,
+      "precision": "day",
+      "claimRole": "rival",
+      "isMain": false
+    },
+    {
+      "id": "reign-yang-you",
+      "dynastyId": "sui",
+      "personId": "yang-you",
+      "title": "",
+      "posthumousName": "恭帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 617,
+        "month": 12,
+        "abs": 7415,
+        "day": 18
+      },
+      "end": {
+        "year": 618,
+        "month": 6,
+        "abs": 7421,
+        "day": 12
+      },
+      "startAbs": 7415,
+      "endAbs": 7421,
+      "precision": "day",
+      "claimTrack": "changan",
+      "claimLabel": "长安",
+      "claimRole": "rival",
+      "isMain": false
+    },
+    {
+      "id": "reign-yang-tong",
+      "dynastyId": "sui",
+      "personId": "yang-tong",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 618,
+        "month": 6,
+        "abs": 7421,
+        "day": 22
+      },
+      "end": {
+        "year": 619,
+        "month": 5,
+        "abs": 7432,
+        "day": 23
+      },
+      "startAbs": 7421,
+      "endAbs": 7432,
+      "precision": "day",
+      "claimTrack": "luoyang",
+      "claimLabel": "洛阳",
+      "claimRole": "rival",
+      "isMain": false
+    },
+    {
+      "id": "reign-yuwen-huaji-xu",
+      "dynastyId": "xu",
+      "personId": "yuwen-huaji",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "天寿"
+      ],
+      "start": {
+        "year": 618,
+        "month": 10,
+        "abs": 7425,
+        "day": 23
+      },
+      "end": {
+        "year": 619,
+        "month": 3,
+        "abs": 7430,
+        "day": 21
+      },
+      "startAbs": 7425,
+      "endAbs": 7430,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-dou-jiande-xia-dou-jiande",
+      "dynastyId": "xia-dou-jiande",
+      "personId": "dou-jiande",
+      "title": "夏王",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 618,
+        "month": 11,
+        "abs": 7426
+      },
+      "end": {
+        "year": 621,
+        "month": 5,
+        "abs": 7456
+      },
+      "startAbs": 7426,
+      "endAbs": 7456,
+      "precision": "month",
+      "isMain": false
+    },
+    {
+      "id": "reign-wang-shichong-zheng",
+      "dynastyId": "zheng",
+      "personId": "wang-shichong",
+      "title": "郑帝",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 619,
+        "month": 1,
+        "abs": 7428
+      },
+      "end": {
+        "year": 621,
+        "month": 6,
+        "abs": 7457
+      },
+      "startAbs": 7428,
+      "endAbs": 7457,
+      "precision": "month",
+      "isMain": false
+    },
+    {
+      "id": "reign-li-yuan",
+      "dynastyId": "tang",
+      "personId": "li-yuan",
+      "title": "",
+      "posthumousName": "神尧皇帝",
+      "templeName": "高祖",
+      "eraNames": [],
+      "start": {
+        "year": 618,
+        "month": 6,
+        "abs": 7421,
+        "day": 18
+      },
+      "end": {
+        "year": 626,
+        "month": 9,
+        "abs": 7520,
+        "day": 4
+      },
+      "startAbs": 7421,
+      "endAbs": 7520,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-li-shimin",
+      "dynastyId": "tang",
+      "personId": "li-shimin",
+      "title": "",
+      "posthumousName": "文武皇帝",
+      "templeName": "太宗",
+      "eraNames": [
+        "贞观"
+      ],
+      "start": {
+        "year": 626,
+        "month": 9,
+        "abs": 7520,
+        "day": 4
+      },
+      "end": {
+        "year": 649,
+        "month": 7,
+        "abs": 7794,
+        "day": 10
+      },
+      "startAbs": 7520,
+      "endAbs": 7794,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-li-zhi",
+      "dynastyId": "tang",
+      "personId": "li-zhi",
+      "title": "",
+      "posthumousName": "天皇大帝",
+      "templeName": "高宗",
+      "eraNames": [],
+      "start": {
+        "year": 649,
+        "month": 7,
+        "abs": 7794,
+        "day": 11
+      },
+      "end": {
+        "year": 683,
+        "month": 12,
+        "abs": 8207,
+        "day": 27
+      },
+      "startAbs": 7794,
+      "endAbs": 8207,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-li-xian",
+      "dynastyId": "tang",
+      "personId": "li-xian",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "中宗",
+      "eraNames": [],
+      "start": {
+        "year": 684,
+        "month": 1,
+        "abs": 8208,
+        "day": 3
+      },
+      "end": {
+        "year": 684,
+        "month": 2,
+        "abs": 8209,
+        "day": 26
+      },
+      "startAbs": 8208,
+      "endAbs": 8209,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-li-dan",
+      "dynastyId": "tang",
+      "personId": "li-dan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "睿宗",
+      "eraNames": [],
+      "start": {
+        "year": 684,
+        "month": 2,
+        "abs": 8209,
+        "day": 27
+      },
+      "end": {
+        "year": 690,
+        "month": 10,
+        "abs": 8289,
+        "day": 14
+      },
+      "startAbs": 8209,
+      "endAbs": 8289,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-li-xian-2",
+      "dynastyId": "tang",
+      "personId": "li-xian",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "中宗",
+      "eraNames": [],
+      "start": {
+        "year": 705,
+        "month": 2,
+        "abs": 8461,
+        "day": 23
+      },
+      "end": {
+        "year": 710,
+        "month": 7,
+        "abs": 8526,
+        "day": 3
+      },
+      "startAbs": 8461,
+      "endAbs": 8526,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-li-dan-2",
+      "dynastyId": "tang",
+      "personId": "li-dan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "睿宗",
+      "eraNames": [],
+      "start": {
+        "year": 710,
+        "month": 7,
+        "abs": 8526,
+        "day": 8
+      },
+      "end": {
+        "year": 712,
+        "month": 9,
+        "abs": 8552,
+        "day": 8
+      },
+      "startAbs": 8526,
+      "endAbs": 8552,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-li-longji",
+      "dynastyId": "tang",
+      "personId": "li-longji",
+      "title": "",
+      "posthumousName": "至道大明孝皇帝",
+      "templeName": "玄宗",
+      "eraNames": [
+        "开元",
+        "天宝"
+      ],
+      "start": {
+        "year": 712,
+        "month": 9,
+        "abs": 8552,
+        "day": 8
+      },
+      "end": {
+        "year": 756,
+        "month": 8,
+        "abs": 9079,
+        "day": 12
+      },
+      "startAbs": 8552,
+      "endAbs": 9079,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-li-heng",
+      "dynastyId": "tang",
+      "personId": "li-heng",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "肃宗",
+      "eraNames": [],
+      "start": {
+        "year": 756,
+        "month": 8,
+        "abs": 9079,
+        "day": 12
+      },
+      "end": {
+        "year": 762,
+        "month": 5,
+        "abs": 9148,
+        "day": 16
+      },
+      "startAbs": 9079,
+      "endAbs": 9148,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-li-yu-tang",
+      "dynastyId": "tang",
+      "personId": "li-yu-tang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "代宗",
+      "eraNames": [],
+      "start": {
+        "year": 762,
+        "month": 5,
+        "abs": 9148,
+        "day": 18
+      },
+      "end": {
+        "year": 779,
+        "month": 6,
+        "abs": 9353,
+        "day": 10
+      },
+      "startAbs": 9148,
+      "endAbs": 9353,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-li-kuo",
+      "dynastyId": "tang",
+      "personId": "li-kuo",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "德宗",
+      "eraNames": [],
+      "start": {
+        "year": 779,
+        "month": 6,
+        "abs": 9353,
+        "day": 12
+      },
+      "end": {
+        "year": 805,
+        "month": 2,
+        "abs": 9661,
+        "day": 25
+      },
+      "startAbs": 9353,
+      "endAbs": 9661,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-li-song",
+      "dynastyId": "tang",
+      "personId": "li-song",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "顺宗",
+      "eraNames": [],
+      "start": {
+        "year": 805,
+        "month": 2,
+        "abs": 9661,
+        "day": 28
+      },
+      "end": {
+        "year": 805,
+        "month": 8,
+        "abs": 9667,
+        "day": 31
+      },
+      "startAbs": 9661,
+      "endAbs": 9667,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-li-chun",
+      "dynastyId": "tang",
+      "personId": "li-chun",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "宪宗",
+      "eraNames": [],
+      "start": {
+        "year": 805,
+        "month": 9,
+        "abs": 9668,
+        "day": 5
+      },
+      "end": {
+        "year": 820,
+        "month": 2,
+        "abs": 9841,
+        "day": 14
+      },
+      "startAbs": 9668,
+      "endAbs": 9841,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-li-heng-mu",
+      "dynastyId": "tang",
+      "personId": "li-heng-mu",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "穆宗",
+      "eraNames": [],
+      "start": {
+        "year": 820,
+        "month": 2,
+        "abs": 9841,
+        "day": 20
+      },
+      "end": {
+        "year": 824,
+        "month": 2,
+        "abs": 9889,
+        "day": 25
+      },
+      "startAbs": 9841,
+      "endAbs": 9889,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-li-zhan",
+      "dynastyId": "tang",
+      "personId": "li-zhan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "敬宗",
+      "eraNames": [],
+      "start": {
+        "year": 824,
+        "month": 2,
+        "abs": 9889,
+        "day": 25
+      },
+      "end": {
+        "year": 826,
+        "month": 12,
+        "abs": 9923,
+        "day": 8
+      },
+      "startAbs": 9889,
+      "endAbs": 9923,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-li-ang",
+      "dynastyId": "tang",
+      "personId": "li-ang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "文宗",
+      "eraNames": [],
+      "start": {
+        "year": 827,
+        "month": 1,
+        "abs": 9924,
+        "day": 13
+      },
+      "end": {
+        "year": 840,
+        "month": 4,
+        "abs": 10083,
+        "day": 10
+      },
+      "startAbs": 9924,
+      "endAbs": 10083,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-li-yan-tang",
+      "dynastyId": "tang",
+      "personId": "li-yan-tang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "武宗",
+      "eraNames": [],
+      "start": {
+        "year": 840,
+        "month": 4,
+        "abs": 10083,
+        "day": 10
+      },
+      "end": {
+        "year": 846,
+        "month": 4,
+        "abs": 10155,
+        "day": 22
+      },
+      "startAbs": 10083,
+      "endAbs": 10155,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-li-chen-tang",
+      "dynastyId": "tang",
+      "personId": "li-chen-tang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "宣宗",
+      "eraNames": [],
+      "start": {
+        "year": 846,
+        "month": 4,
+        "abs": 10155,
+        "day": 25
+      },
+      "end": {
+        "year": 859,
+        "month": 9,
+        "abs": 10316,
+        "day": 13
+      },
+      "startAbs": 10155,
+      "endAbs": 10316,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-li-cui",
+      "dynastyId": "tang",
+      "personId": "li-cui",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "懿宗",
+      "eraNames": [],
+      "start": {
+        "year": 859,
+        "month": 9,
+        "abs": 10316,
+        "day": 13
+      },
+      "end": {
+        "year": 873,
+        "month": 8,
+        "abs": 10483,
+        "day": 15
+      },
+      "startAbs": 10316,
+      "endAbs": 10483,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-li-xuan-tang",
+      "dynastyId": "tang",
+      "personId": "li-xuan-tang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "僖宗",
+      "eraNames": [],
+      "start": {
+        "year": 873,
+        "month": 8,
+        "abs": 10483,
+        "day": 16
+      },
+      "end": {
+        "year": 888,
+        "month": 4,
+        "abs": 10659,
+        "day": 20
+      },
+      "startAbs": 10483,
+      "endAbs": 10659,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-li-ye-tang",
+      "dynastyId": "tang",
+      "personId": "li-ye-tang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "昭宗",
+      "eraNames": [],
+      "start": {
+        "year": 888,
+        "month": 4,
+        "abs": 10659,
+        "day": 22
+      },
+      "end": {
+        "year": 904,
+        "month": 9,
+        "abs": 10856,
+        "day": 22
+      },
+      "startAbs": 10659,
+      "endAbs": 10856,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-li-zhu-tang",
+      "dynastyId": "tang",
+      "personId": "li-zhu-tang",
+      "title": "",
+      "posthumousName": "哀帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 904,
+        "month": 9,
+        "abs": 10856,
+        "day": 27
+      },
+      "end": {
+        "year": 907,
+        "month": 5,
+        "abs": 10888,
+        "day": 12
+      },
+      "startAbs": 10856,
+      "endAbs": 10888,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-wu-zetian-zhou-wu",
+      "dynastyId": "zhou-wu",
+      "personId": "wu-zetian",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "天授",
+        "万岁通天",
+        "万岁登封",
+        "神功",
+        "圣历",
+        "久视",
+        "大足",
+        "长安"
+      ],
+      "start": {
+        "year": 690,
+        "month": 10,
+        "abs": 8289,
+        "day": 16
+      },
+      "end": {
+        "year": 705,
+        "month": 2,
+        "abs": 8461,
+        "day": 22
+      },
+      "startAbs": 8289,
+      "endAbs": 8461,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhu-wen-liang-hou",
+      "dynastyId": "liang-hou",
+      "personId": "zhu-wen",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "太祖",
+      "eraNames": [],
+      "start": {
+        "year": 907,
+        "month": 6,
+        "abs": 10889,
+        "day": 1
+      },
+      "end": {
+        "year": 912,
+        "month": 7,
+        "abs": 10950,
+        "day": 2
+      },
+      "startAbs": 10889,
+      "endAbs": 10950,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-zhu-yougui-liang-hou",
+      "dynastyId": "liang-hou",
+      "personId": "zhu-yougui",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 912,
+        "month": 7,
+        "abs": 10950,
+        "day": 2
+      },
+      "end": {
+        "year": 913,
+        "month": 3,
+        "abs": 10958,
+        "day": 27
+      },
+      "startAbs": 10950,
+      "endAbs": 10958,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-zhu-youzhen-liang-hou",
+      "dynastyId": "liang-hou",
+      "personId": "zhu-youzhen",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 913,
+        "month": 3,
+        "abs": 10958,
+        "day": 27
+      },
+      "end": {
+        "year": 923,
+        "month": 11,
+        "abs": 11086,
+        "day": 19
+      },
+      "startAbs": 10958,
+      "endAbs": 11086,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-li-cunxu-tang-hou",
+      "dynastyId": "tang-hou",
+      "personId": "li-cunxu",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "庄宗",
+      "eraNames": [],
+      "start": {
+        "year": 923,
+        "month": 5,
+        "abs": 11080,
+        "day": 14
+      },
+      "end": {
+        "year": 926,
+        "month": 6,
+        "abs": 11117,
+        "day": 5
+      },
+      "startAbs": 11080,
+      "endAbs": 11117,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-li-siyuan-tang-hou",
+      "dynastyId": "tang-hou",
+      "personId": "li-siyuan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "明宗",
+      "eraNames": [],
+      "start": {
+        "year": 926,
+        "month": 6,
+        "abs": 11117,
+        "day": 11
+      },
+      "end": {
+        "year": 933,
+        "month": 12,
+        "abs": 11207,
+        "day": 25
+      },
+      "startAbs": 11117,
+      "endAbs": 11207,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-li-conghou-tang-hou",
+      "dynastyId": "tang-hou",
+      "personId": "li-conghou",
+      "title": "",
+      "posthumousName": "闵帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 933,
+        "month": 12,
+        "abs": 11207,
+        "day": 25
+      },
+      "end": {
+        "year": 934,
+        "month": 5,
+        "abs": 11212,
+        "day": 24
+      },
+      "startAbs": 11207,
+      "endAbs": 11212,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-li-congke-tang-hou",
+      "dynastyId": "tang-hou",
+      "personId": "li-congke",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 934,
+        "month": 5,
+        "abs": 11212,
+        "day": 24
+      },
+      "end": {
+        "year": 937,
+        "month": 1,
+        "abs": 11244,
+        "day": 11
+      },
+      "startAbs": 11212,
+      "endAbs": 11244,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-shi-jingtang-jin-hou",
+      "dynastyId": "jin-hou",
+      "personId": "shi-jingtang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "高祖",
+      "eraNames": [],
+      "start": {
+        "year": 936,
+        "month": 11,
+        "abs": 11242,
+        "day": 28
+      },
+      "end": {
+        "year": 942,
+        "month": 7,
+        "abs": 11310,
+        "day": 28
+      },
+      "startAbs": 11242,
+      "endAbs": 11310,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-shi-chonggui-jin-hou",
+      "dynastyId": "jin-hou",
+      "personId": "shi-chonggui",
+      "title": "",
+      "posthumousName": "出帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 942,
+        "month": 7,
+        "abs": 11310,
+        "day": 28
+      },
+      "end": {
+        "year": 947,
+        "month": 1,
+        "abs": 11364,
+        "day": 16
+      },
+      "startAbs": 11310,
+      "endAbs": 11364,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-liu-zhiyuan-han-hou",
+      "dynastyId": "han-hou",
+      "personId": "liu-zhiyuan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "高祖",
+      "eraNames": [],
+      "start": {
+        "year": 947,
+        "month": 3,
+        "abs": 11366,
+        "day": 10
+      },
+      "end": {
+        "year": 948,
+        "month": 3,
+        "abs": 11378,
+        "day": 30
+      },
+      "startAbs": 11366,
+      "endAbs": 11378,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-liu-chengyou-han-hou",
+      "dynastyId": "han-hou",
+      "personId": "liu-chengyou",
+      "title": "",
+      "posthumousName": "隐帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 948,
+        "month": 3,
+        "abs": 11378,
+        "day": 30
+      },
+      "end": {
+        "year": 951,
+        "month": 1,
+        "abs": 11412,
+        "day": 2
+      },
+      "startAbs": 11378,
+      "endAbs": 11412,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-guo-wei-zhou-hou",
+      "dynastyId": "zhou-hou",
+      "personId": "guo-wei",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "太祖",
+      "eraNames": [],
+      "start": {
+        "year": 951,
+        "month": 2,
+        "abs": 11413,
+        "day": 13
+      },
+      "end": {
+        "year": 954,
+        "month": 2,
+        "abs": 11449,
+        "day": 22
+      },
+      "startAbs": 11413,
+      "endAbs": 11449,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-chai-rong-zhou-hou",
+      "dynastyId": "zhou-hou",
+      "personId": "chai-rong",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "世宗",
+      "eraNames": [],
+      "start": {
+        "year": 954,
+        "month": 2,
+        "abs": 11449,
+        "day": 22
+      },
+      "end": {
+        "year": 959,
+        "month": 7,
+        "abs": 11514,
+        "day": 27
+      },
+      "startAbs": 11449,
+      "endAbs": 11514,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-chai-zongxun-zhou-hou",
+      "dynastyId": "zhou-hou",
+      "personId": "chai-zongxun",
+      "title": "",
+      "posthumousName": "恭帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 959,
+        "month": 7,
+        "abs": 11514,
+        "day": 28
+      },
+      "end": {
+        "year": 960,
+        "month": 2,
+        "abs": 11521,
+        "day": 3
+      },
+      "startAbs": 11514,
+      "endAbs": 11521,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-yang-xingmi-wu-shi",
+      "dynastyId": "wu-shi",
+      "personId": "yang-xingmi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "太祖",
+      "eraNames": [],
+      "start": {
+        "year": 902,
+        "month": 6,
+        "abs": 10829,
+        "day": 18
+      },
+      "end": {
+        "year": 905,
+        "month": 12,
+        "abs": 10871,
+        "day": 24
+      },
+      "startAbs": 10829,
+      "endAbs": 10871,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-yang-wo-wu-shi",
+      "dynastyId": "wu-shi",
+      "personId": "yang-wo",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 905,
+        "month": 12,
+        "abs": 10871,
+        "day": 24
+      },
+      "end": {
+        "year": 918,
+        "month": 6,
+        "abs": 11021,
+        "day": 15
+      },
+      "startAbs": 10871,
+      "endAbs": 11021,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-yang-longyan-wu-shi",
+      "dynastyId": "wu-shi",
+      "personId": "yang-longyan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 918,
+        "month": 6,
+        "abs": 11021,
+        "day": 15
+      },
+      "end": {
+        "year": 920,
+        "month": 12,
+        "abs": 11051,
+        "day": 24
+      },
+      "startAbs": 11021,
+      "endAbs": 11051,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-yang-pu-wu-shi",
+      "dynastyId": "wu-shi",
+      "personId": "yang-pu",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 920,
+        "month": 12,
+        "abs": 11051,
+        "day": 24
+      },
+      "end": {
+        "year": 937,
+        "month": 11,
+        "abs": 11254,
+        "day": 17
+      },
+      "startAbs": 11051,
+      "endAbs": 11254,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-li-bian-tang-nan",
+      "dynastyId": "tang-nan",
+      "personId": "li-bian",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "烈祖",
+      "eraNames": [],
+      "start": {
+        "year": 937,
+        "month": 10,
+        "abs": 11253,
+        "day": 11
+      },
+      "end": {
+        "year": 943,
+        "month": 3,
+        "abs": 11318,
+        "day": 30
+      },
+      "startAbs": 11253,
+      "endAbs": 11318,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-li-jing-nantang-tang-nan",
+      "dynastyId": "tang-nan",
+      "personId": "li-jing-nantang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "元宗",
+      "eraNames": [],
+      "start": {
+        "year": 943,
+        "month": 3,
+        "abs": 11318,
+        "day": 30
+      },
+      "end": {
+        "year": 961,
+        "month": 11,
+        "abs": 11542,
+        "day": 18
+      },
+      "startAbs": 11318,
+      "endAbs": 11542,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-li-yu-nantang-tang-nan",
+      "dynastyId": "tang-nan",
+      "personId": "li-yu-nantang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 961,
+        "month": 11,
+        "abs": 11542,
+        "day": 18
+      },
+      "end": {
+        "year": 975,
+        "month": 11,
+        "abs": 11710,
+        "day": 24
+      },
+      "startAbs": 11542,
+      "endAbs": 11710,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-qian-liu-wuyue",
+      "dynastyId": "wuyue",
+      "personId": "qian-liu",
+      "title": "",
+      "posthumousName": "武肃王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 907,
+        "month": 5,
+        "abs": 10888,
+        "day": 15
+      },
+      "end": {
+        "year": 932,
+        "month": 5,
+        "abs": 11188,
+        "day": 6
+      },
+      "startAbs": 10888,
+      "endAbs": 11188,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-qian-yuangui-wuyue",
+      "dynastyId": "wuyue",
+      "personId": "qian-yuangui",
+      "title": "",
+      "posthumousName": "文穆王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 932,
+        "month": 5,
+        "abs": 11188,
+        "day": 6
+      },
+      "end": {
+        "year": 941,
+        "month": 8,
+        "abs": 11299,
+        "day": 24
+      },
+      "startAbs": 11188,
+      "endAbs": 11299,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-qian-hongzuo-wuyue",
+      "dynastyId": "wuyue",
+      "personId": "qian-hongzuo",
+      "title": "",
+      "posthumousName": "忠悼王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 941,
+        "month": 8,
+        "abs": 11299,
+        "day": 24
+      },
+      "end": {
+        "year": 947,
+        "month": 3,
+        "abs": 11366,
+        "day": 25
+      },
+      "startAbs": 11299,
+      "endAbs": 11366,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-qian-hongcong-wuyue",
+      "dynastyId": "wuyue",
+      "personId": "qian-hongcong",
+      "title": "",
+      "posthumousName": "忠逊王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 947,
+        "month": 3,
+        "abs": 11366,
+        "day": 25
+      },
+      "end": {
+        "year": 948,
+        "month": 2,
+        "abs": 11377,
+        "day": 13
+      },
+      "startAbs": 11366,
+      "endAbs": 11377,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-qian-chu-wuyue",
+      "dynastyId": "wuyue",
+      "personId": "qian-chu",
+      "title": "",
+      "posthumousName": "忠懿王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 948,
+        "month": 2,
+        "abs": 11377,
+        "day": 13
+      },
+      "end": {
+        "year": 978,
+        "month": 5,
+        "abs": 11740,
+        "day": 4
+      },
+      "startAbs": 11377,
+      "endAbs": 11740,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-wang-shenzhi-min-fujian",
+      "dynastyId": "min-fujian",
+      "personId": "wang-shenzhi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "太祖",
+      "eraNames": [],
+      "start": {
+        "year": 909,
+        "month": 1,
+        "abs": 10908,
+        "day": 15
+      },
+      "end": {
+        "year": 925,
+        "month": 12,
+        "abs": 11111,
+        "day": 30
+      },
+      "startAbs": 10908,
+      "endAbs": 11111,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-wang-yanhan-min-fujian",
+      "dynastyId": "min-fujian",
+      "personId": "wang-yanhan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 925,
+        "month": 12,
+        "abs": 11111,
+        "day": 30
+      },
+      "end": {
+        "year": 927,
+        "month": 1,
+        "abs": 11124,
+        "day": 14
+      },
+      "startAbs": 11111,
+      "endAbs": 11124,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-wang-yanjun-min-fujian",
+      "dynastyId": "min-fujian",
+      "personId": "wang-yanjun",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 927,
+        "month": 1,
+        "abs": 11124,
+        "day": 14
+      },
+      "end": {
+        "year": 935,
+        "month": 11,
+        "abs": 11230,
+        "day": 17
+      },
+      "startAbs": 11124,
+      "endAbs": 11230,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-wang-jipeng-min-fujian",
+      "dynastyId": "min-fujian",
+      "personId": "wang-jipeng",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 935,
+        "month": 11,
+        "abs": 11230,
+        "day": 18
+      },
+      "end": {
+        "year": 939,
+        "month": 8,
+        "abs": 11275,
+        "day": 29
+      },
+      "startAbs": 11230,
+      "endAbs": 11275,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-wang-yanxi-min-fujian",
+      "dynastyId": "min-fujian",
+      "personId": "wang-yanxi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 939,
+        "month": 8,
+        "abs": 11275,
+        "day": 30
+      },
+      "end": {
+        "year": 944,
+        "month": 4,
+        "abs": 11331,
+        "day": 8
+      },
+      "startAbs": 11275,
+      "endAbs": 11331,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-zhu-wenjin-min-fujian",
+      "dynastyId": "min-fujian",
+      "personId": "zhu-wenjin",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 944,
+        "month": 4,
+        "abs": 11331,
+        "day": 8
+      },
+      "end": {
+        "year": 945,
+        "month": 2,
+        "abs": 11341,
+        "day": 14
+      },
+      "startAbs": 11331,
+      "endAbs": 11341,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-wang-yanzheng-min-fujian",
+      "dynastyId": "min-fujian",
+      "personId": "wang-yanzheng",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 943,
+        "month": 3,
+        "abs": 11318
+      },
+      "end": {
+        "year": 945,
+        "month": 10,
+        "abs": 11349,
+        "day": 2
+      },
+      "startAbs": 11318,
+      "endAbs": 11349,
+      "precision": "month",
+      "isMain": false
+    },
+    {
+      "id": "reign-liu-yan-han-nan",
+      "dynastyId": "han-nan",
+      "personId": "liu-yan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "高祖",
+      "eraNames": [],
+      "start": {
+        "year": 917,
+        "month": 9,
+        "abs": 11012,
+        "day": 5
+      },
+      "end": {
+        "year": 942,
+        "month": 6,
+        "abs": 11309,
+        "day": 10
+      },
+      "startAbs": 11012,
+      "endAbs": 11309,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-liu-bin-han-nan",
+      "dynastyId": "han-nan",
+      "personId": "liu-bin",
+      "title": "",
+      "posthumousName": "殇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 942,
+        "month": 6,
+        "abs": 11309,
+        "day": 10
+      },
+      "end": {
+        "year": 943,
+        "month": 4,
+        "abs": 11319,
+        "day": 15
+      },
+      "startAbs": 11309,
+      "endAbs": 11319,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-liu-sheng-han-nan",
+      "dynastyId": "han-nan",
+      "personId": "liu-sheng",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "中宗",
+      "eraNames": [],
+      "start": {
+        "year": 943,
+        "month": 4,
+        "abs": 11319,
+        "day": 15
+      },
+      "end": {
+        "year": 958,
+        "month": 9,
+        "abs": 11504,
+        "day": 18
+      },
+      "startAbs": 11319,
+      "endAbs": 11504,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-liu-chang-han-nan",
+      "dynastyId": "han-nan",
+      "personId": "liu-chang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 958,
+        "month": 9,
+        "abs": 11504,
+        "day": 18
+      },
+      "end": {
+        "year": 971,
+        "month": 3,
+        "abs": 11654,
+        "day": 4
+      },
+      "startAbs": 11504,
+      "endAbs": 11654,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-wang-jian-shu-shu-qian",
+      "dynastyId": "shu-qian",
+      "personId": "wang-jian-shu",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "高祖",
+      "eraNames": [],
+      "start": {
+        "year": 907,
+        "month": 4,
+        "abs": 10887,
+        "day": 18
+      },
+      "end": {
+        "year": 918,
+        "month": 7,
+        "abs": 11022,
+        "day": 11
+      },
+      "startAbs": 10887,
+      "endAbs": 11022,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-wang-yan-shu-shu-qian",
+      "dynastyId": "shu-qian",
+      "personId": "wang-yan-shu",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 918,
+        "month": 7,
+        "abs": 11022,
+        "day": 11
+      },
+      "end": {
+        "year": 925,
+        "month": 11,
+        "abs": 11110,
+        "day": 29
+      },
+      "startAbs": 11022,
+      "endAbs": 11110,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-meng-zhixiang-shu-hou",
+      "dynastyId": "shu-hou",
+      "personId": "meng-zhixiang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "高祖",
+      "eraNames": [],
+      "start": {
+        "year": 934,
+        "month": 3,
+        "abs": 11210,
+        "day": 25
+      },
+      "end": {
+        "year": 934,
+        "month": 9,
+        "abs": 11216,
+        "day": 7
+      },
+      "startAbs": 11210,
+      "endAbs": 11216,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-meng-chang-shu-hou",
+      "dynastyId": "shu-hou",
+      "personId": "meng-chang",
+      "title": "",
+      "posthumousName": "恭孝王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 934,
+        "month": 9,
+        "abs": 11216,
+        "day": 7
+      },
+      "end": {
+        "year": 965,
+        "month": 2,
+        "abs": 11581,
+        "day": 23
+      },
+      "startAbs": 11216,
+      "endAbs": 11581,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-gao-jixing-jingnan",
+      "dynastyId": "jingnan",
+      "personId": "gao-jixing",
+      "title": "",
+      "posthumousName": "武信王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 924,
+        "month": 6,
+        "abs": 11093,
+        "day": 18
+      },
+      "end": {
+        "year": 928,
+        "month": 1,
+        "abs": 11136,
+        "day": 28
+      },
+      "startAbs": 11093,
+      "endAbs": 11136,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-gao-conghe-jingnan",
+      "dynastyId": "jingnan",
+      "personId": "gao-conghe",
+      "title": "",
+      "posthumousName": "文献王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 928,
+        "month": 1,
+        "abs": 11136,
+        "day": 28
+      },
+      "end": {
+        "year": 948,
+        "month": 7,
+        "abs": 11382,
+        "day": 28
+      },
+      "startAbs": 11136,
+      "endAbs": 11382,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-gao-baorong-jingnan",
+      "dynastyId": "jingnan",
+      "personId": "gao-baorong",
+      "title": "",
+      "posthumousName": "贞懿王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 948,
+        "month": 7,
+        "abs": 11382,
+        "day": 28
+      },
+      "end": {
+        "year": 960,
+        "month": 9,
+        "abs": 11528,
+        "day": 9
+      },
+      "startAbs": 11382,
+      "endAbs": 11528,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-gao-baoxu-jingnan",
+      "dynastyId": "jingnan",
+      "personId": "gao-baoxu",
+      "title": "",
+      "posthumousName": "贞献王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 960,
+        "month": 9,
+        "abs": 11528,
+        "day": 9
+      },
+      "end": {
+        "year": 962,
+        "month": 11,
+        "abs": 11554,
+        "day": 19
+      },
+      "startAbs": 11528,
+      "endAbs": 11554,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-gao-jichong-jingnan",
+      "dynastyId": "jingnan",
+      "personId": "gao-jichong",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 962,
+        "month": 11,
+        "abs": 11554,
+        "day": 19
+      },
+      "end": {
+        "year": 963,
+        "month": 3,
+        "abs": 11558,
+        "day": 17
+      },
+      "startAbs": 11554,
+      "endAbs": 11558,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-ma-yin-chu-nan",
+      "dynastyId": "chu-nan",
+      "personId": "ma-yin",
+      "title": "",
+      "posthumousName": "武王",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 907,
+        "month": 5,
+        "abs": 10888,
+        "day": 15
+      },
+      "end": {
+        "year": 930,
+        "month": 12,
+        "abs": 11171,
+        "day": 2
+      },
+      "startAbs": 10888,
+      "endAbs": 11171,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-ma-xisheng-chu-nan",
+      "dynastyId": "chu-nan",
+      "personId": "ma-xisheng",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 930,
+        "month": 12,
+        "abs": 11171,
+        "day": 2
+      },
+      "end": {
+        "year": 932,
+        "month": 8,
+        "abs": 11191,
+        "day": 15
+      },
+      "startAbs": 11171,
+      "endAbs": 11191,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-ma-xifan-chu-nan",
+      "dynastyId": "chu-nan",
+      "personId": "ma-xifan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 932,
+        "month": 8,
+        "abs": 11191,
+        "day": 15
+      },
+      "end": {
+        "year": 947,
+        "month": 5,
+        "abs": 11368,
+        "day": 30
+      },
+      "startAbs": 11191,
+      "endAbs": 11368,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-ma-xiguang-chu-nan",
+      "dynastyId": "chu-nan",
+      "personId": "ma-xiguang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 947,
+        "month": 1,
+        "abs": 11364
+      },
+      "end": {
+        "year": 947,
+        "month": 12,
+        "abs": 11375
+      },
+      "startAbs": 11364,
+      "endAbs": 11375,
+      "precision": "year",
+      "isMain": false
+    },
+    {
+      "id": "reign-ma-xie-chu-nan",
+      "dynastyId": "chu-nan",
+      "personId": "ma-xie",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 947,
+        "month": 1,
+        "abs": 11364
+      },
+      "end": {
+        "year": 950,
+        "month": 12,
+        "abs": 11411
+      },
+      "startAbs": 11364,
+      "endAbs": 11411,
+      "precision": "year",
+      "isMain": false
+    },
+    {
+      "id": "reign-ma-xichong-chu-nan",
+      "dynastyId": "chu-nan",
+      "personId": "ma-xichong",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 951,
+        "month": 1,
+        "abs": 11412
+      },
+      "end": {
+        "year": 951,
+        "month": 11,
+        "abs": 11422,
+        "day": 16
+      },
+      "startAbs": 11412,
+      "endAbs": 11422,
+      "precision": "month",
+      "isMain": false
+    },
+    {
+      "id": "reign-liu-min-han-bei",
+      "dynastyId": "han-bei",
+      "personId": "liu-min",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "世祖",
+      "eraNames": [],
+      "start": {
+        "year": 951,
+        "month": 5,
+        "abs": 11416,
+        "day": 18
+      },
+      "end": {
+        "year": 954,
+        "month": 11,
+        "abs": 11458,
+        "day": 24
+      },
+      "startAbs": 11416,
+      "endAbs": 11458,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-liu-jun-bei-han-bei",
+      "dynastyId": "han-bei",
+      "personId": "liu-jun-bei",
+      "title": "",
+      "posthumousName": "睿皇帝",
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 954,
+        "month": 11,
+        "abs": 11458,
+        "day": 24
+      },
+      "end": {
+        "year": 968,
+        "month": 10,
+        "abs": 11625,
+        "day": 12
+      },
+      "startAbs": 11458,
+      "endAbs": 11625,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-liu-jiyuan-han-bei",
+      "dynastyId": "han-bei",
+      "personId": "liu-jiyuan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 968,
+        "month": 10,
+        "abs": 11625,
+        "day": 12
+      },
+      "end": {
+        "year": 979,
+        "month": 6,
+        "abs": 11753,
+        "day": 1
+      },
+      "startAbs": 11625,
+      "endAbs": 11753,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-zhao-kuangyin-song-north",
+      "dynastyId": "song-north",
+      "personId": "zhao-kuangyin",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "太祖",
+      "eraNames": [
+        "建隆",
+        "乾德",
+        "开宝"
+      ],
+      "start": {
+        "year": 960,
+        "month": 2,
+        "abs": 11521,
+        "day": 4
+      },
+      "end": {
+        "year": 976,
+        "month": 11,
+        "abs": 11722,
+        "day": 14
+      },
+      "startAbs": 11521,
+      "endAbs": 11722,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhao-kuangyi-song-north",
+      "dynastyId": "song-north",
+      "personId": "zhao-kuangyi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "太宗",
+      "eraNames": [],
+      "start": {
+        "year": 976,
+        "month": 11,
+        "abs": 11722,
+        "day": 14
+      },
+      "end": {
+        "year": 997,
+        "month": 5,
+        "abs": 11968,
+        "day": 8
+      },
+      "startAbs": 11722,
+      "endAbs": 11968,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhao-heng-song-north",
+      "dynastyId": "song-north",
+      "personId": "zhao-heng",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "真宗",
+      "eraNames": [],
+      "start": {
+        "year": 997,
+        "month": 5,
+        "abs": 11968,
+        "day": 8
+      },
+      "end": {
+        "year": 1022,
+        "month": 3,
+        "abs": 12266,
+        "day": 23
+      },
+      "startAbs": 11968,
+      "endAbs": 12266,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhao-zhen-song-north",
+      "dynastyId": "song-north",
+      "personId": "zhao-zhen",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "仁宗",
+      "eraNames": [
+        "天圣",
+        "明道",
+        "景祐",
+        "庆历"
+      ],
+      "start": {
+        "year": 1022,
+        "month": 3,
+        "abs": 12266,
+        "day": 23
+      },
+      "end": {
+        "year": 1063,
+        "month": 4,
+        "abs": 12759,
+        "day": 30
+      },
+      "startAbs": 12266,
+      "endAbs": 12759,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhao-shu-song-north",
+      "dynastyId": "song-north",
+      "personId": "zhao-shu",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "英宗",
+      "eraNames": [],
+      "start": {
+        "year": 1063,
+        "month": 4,
+        "abs": 12759,
+        "day": 30
+      },
+      "end": {
+        "year": 1067,
+        "month": 1,
+        "abs": 12804,
+        "day": 25
+      },
+      "startAbs": 12759,
+      "endAbs": 12804,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhao-xu-song-north",
+      "dynastyId": "song-north",
+      "personId": "zhao-xu",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "神宗",
+      "eraNames": [
+        "熙宁",
+        "元丰"
+      ],
+      "start": {
+        "year": 1067,
+        "month": 1,
+        "abs": 12804,
+        "day": 25
+      },
+      "end": {
+        "year": 1085,
+        "month": 4,
+        "abs": 13023,
+        "day": 1
+      },
+      "startAbs": 12804,
+      "endAbs": 13023,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhao-zhe-song-north",
+      "dynastyId": "song-north",
+      "personId": "zhao-zhe",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "哲宗",
+      "eraNames": [],
+      "start": {
+        "year": 1085,
+        "month": 4,
+        "abs": 13023,
+        "day": 1
+      },
+      "end": {
+        "year": 1100,
+        "month": 2,
+        "abs": 13201,
+        "day": 23
+      },
+      "startAbs": 13023,
+      "endAbs": 13201,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhao-ji-song-north",
+      "dynastyId": "song-north",
+      "personId": "zhao-ji",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "徽宗",
+      "eraNames": [],
+      "start": {
+        "year": 1100,
+        "month": 2,
+        "abs": 13201,
+        "day": 23
+      },
+      "end": {
+        "year": 1126,
+        "month": 1,
+        "abs": 13512,
+        "day": 18
+      },
+      "startAbs": 13201,
+      "endAbs": 13512,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhao-huan-song-north",
+      "dynastyId": "song-north",
+      "personId": "zhao-huan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "钦宗",
+      "eraNames": [],
+      "start": {
+        "year": 1126,
+        "month": 1,
+        "abs": 13512,
+        "day": 18
+      },
+      "end": {
+        "year": 1127,
+        "month": 6,
+        "abs": 13529,
+        "day": 12
+      },
+      "startAbs": 13512,
+      "endAbs": 13529,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhao-gou-song-south",
+      "dynastyId": "song-south",
+      "personId": "zhao-gou",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "高宗",
+      "eraNames": [],
+      "start": {
+        "year": 1127,
+        "month": 6,
+        "abs": 13529,
+        "day": 12
+      },
+      "end": {
+        "year": 1162,
+        "month": 7,
+        "abs": 13950,
+        "day": 24
+      },
+      "startAbs": 13529,
+      "endAbs": 13950,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhao-shen-song-south",
+      "dynastyId": "song-south",
+      "personId": "zhao-shen",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "孝宗",
+      "eraNames": [],
+      "start": {
+        "year": 1162,
+        "month": 7,
+        "abs": 13950,
+        "day": 24
+      },
+      "end": {
+        "year": 1189,
+        "month": 2,
+        "abs": 14269,
+        "day": 18
+      },
+      "startAbs": 13950,
+      "endAbs": 14269,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhao-dun-song-south",
+      "dynastyId": "song-south",
+      "personId": "zhao-dun",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "光宗",
+      "eraNames": [],
+      "start": {
+        "year": 1189,
+        "month": 2,
+        "abs": 14269,
+        "day": 18
+      },
+      "end": {
+        "year": 1194,
+        "month": 7,
+        "abs": 14334,
+        "day": 24
+      },
+      "startAbs": 14269,
+      "endAbs": 14334,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhao-kuo-song-south",
+      "dynastyId": "song-south",
+      "personId": "zhao-kuo",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "宁宗",
+      "eraNames": [],
+      "start": {
+        "year": 1194,
+        "month": 7,
+        "abs": 14334,
+        "day": 24
+      },
+      "end": {
+        "year": 1224,
+        "month": 9,
+        "abs": 14696,
+        "day": 18
+      },
+      "startAbs": 14334,
+      "endAbs": 14696,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhao-yun-song-south",
+      "dynastyId": "song-south",
+      "personId": "zhao-yun",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "理宗",
+      "eraNames": [],
+      "start": {
+        "year": 1224,
+        "month": 9,
+        "abs": 14696,
+        "day": 18
+      },
+      "end": {
+        "year": 1264,
+        "month": 11,
+        "abs": 15178,
+        "day": 16
+      },
+      "startAbs": 14696,
+      "endAbs": 15178,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhao-qi-song-south",
+      "dynastyId": "song-south",
+      "personId": "zhao-qi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "度宗",
+      "eraNames": [],
+      "start": {
+        "year": 1264,
+        "month": 11,
+        "abs": 15178,
+        "day": 16
+      },
+      "end": {
+        "year": 1274,
+        "month": 8,
+        "abs": 15295,
+        "day": 12
+      },
+      "startAbs": 15178,
+      "endAbs": 15295,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhao-shi-song-south",
+      "dynastyId": "song-south",
+      "personId": "zhao-shi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "恭帝",
+      "eraNames": [],
+      "start": {
+        "year": 1274,
+        "month": 8,
+        "abs": 15295,
+        "day": 12
+      },
+      "end": {
+        "year": 1276,
+        "month": 2,
+        "abs": 15313,
+        "day": 4
+      },
+      "startAbs": 15295,
+      "endAbs": 15313,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-zhao-shi-duan-song-south",
+      "dynastyId": "song-south",
+      "personId": "zhao-shi-duan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "端宗",
+      "eraNames": [],
+      "start": {
+        "year": 1276,
+        "month": 6,
+        "abs": 15317,
+        "day": 14
+      },
+      "end": {
+        "year": 1278,
+        "month": 5,
+        "abs": 15340,
+        "day": 8
+      },
+      "startAbs": 15317,
+      "endAbs": 15340,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-zhao-bing-song-south",
+      "dynastyId": "song-south",
+      "personId": "zhao-bing",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1278,
+        "month": 5,
+        "abs": 15340,
+        "day": 10
+      },
+      "end": {
+        "year": 1279,
+        "month": 3,
+        "abs": 15350,
+        "day": 19
+      },
+      "startAbs": 15340,
+      "endAbs": 15350,
+      "precision": "day",
+      "isMain": false
+    }
+  ],
+  "events": [
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "sui",
+        "chen-nan"
+      ],
+      "participantIds": [
+        "yang-jian"
+      ],
+      "id": "sui-unify",
+      "name": "隋灭陈统一",
+      "at": {
+        "year": 589,
+        "month": 12,
+        "abs": 7079
+      },
+      "summary": "隋军灭南陈，南北分裂终结，隋统一全国。",
+      "atAbs": 7079
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "sui"
+      ],
+      "participantIds": [
+        "yang-jian"
+      ],
+      "id": "kaihuang-rule",
+      "name": "开皇之治",
+      "timeMode": "span",
+      "start": {
+        "year": 581,
+        "month": 1,
+        "abs": 6972
+      },
+      "end": {
+        "year": 600,
+        "month": 1,
+        "abs": 7200
+      },
+      "summary": "隋文帝励精图治，轻徭薄赋，国力强盛。",
+      "startAbs": 6972,
+      "endAbs": 7200
+    },
+    {
+      "kind": "culture",
+      "precision": "year",
+      "dynastyIds": [
+        "sui"
+      ],
+      "participantIds": [
+        "yang-guang"
+      ],
+      "id": "grand-canal",
+      "name": "开凿大运河",
+      "timeMode": "span",
+      "dateNote": "605年起大规模开凿，连通南北",
+      "start": {
+        "year": 605,
+        "month": 1,
+        "abs": 7260
+      },
+      "end": {
+        "year": 610,
+        "month": 1,
+        "abs": 7320
+      },
+      "summary": "隋炀帝下令开凿大运河，贯通南北交通。",
+      "startAbs": 7260,
+      "endAbs": 7320
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "sui"
+      ],
+      "participantIds": [
+        "yang-guang"
+      ],
+      "id": "sui-campaign-goguryeo",
+      "name": "隋炀帝三征高丽",
+      "timeMode": "span",
+      "start": {
+        "year": 612,
+        "month": 1,
+        "abs": 7344
+      },
+      "end": {
+        "year": 614,
+        "month": 1,
+        "abs": 7368
+      },
+      "summary": "隋炀帝三次大规模远征高句丽，劳民伤财，隋军惨败，国力大损。",
+      "startAbs": 7344,
+      "endAbs": 7368
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "day",
+      "dynastyIds": [
+        "sui"
+      ],
+      "participantIds": [
+        "yang-guang",
+        "yuwen-huaji"
+      ],
+      "id": "yang-guang-killed",
+      "name": "江都兵变：隋炀帝被杀",
+      "dateNote": "大业十四年三月十一丙辰，618年4月11日，宇文化及发动兵变，隋炀帝被弑",
+      "at": {
+        "year": 618,
+        "month": 4,
+        "abs": 7419,
+        "day": 11
+      },
+      "summary": "宇文化及发动江都兵变，隋炀帝杨广被弑；随后江都军拥立杨浩。",
+      "atAbs": 7419
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "day",
+      "dynastyIds": [
+        "sui",
+        "xu"
+      ],
+      "participantIds": [
+        "yang-hao",
+        "yuwen-huaji"
+      ],
+      "id": "yang-hao-killed",
+      "name": "宇文化及杀秦王杨浩",
+      "dateNote": "武德元年九月辛未，618年10月23日，《新唐书·高祖本纪》记宇文化及杀秦王浩并自称皇帝",
+      "at": {
+        "year": 618,
+        "month": 10,
+        "abs": 7425,
+        "day": 23
+      },
+      "summary": "宇文化及杀隋秦王杨浩，随后自称皇帝，建立许政权。",
+      "atAbs": 7425
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "tang"
+      ],
+      "participantIds": [
+        "li-shimin"
+      ],
+      "id": "xuanwumen",
+      "name": "玄武门之变",
+      "dateNote": "武德九年六月，626年",
+      "at": {
+        "year": 626,
+        "month": 7,
+        "abs": 7518
+      },
+      "summary": "李世民发动政变，杀兄弟即位太子，后登基。",
+      "atAbs": 7518
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "tang"
+      ],
+      "participantIds": [
+        "li-shimin",
+        "dou-jiande",
+        "wang-shichong"
+      ],
+      "id": "hulao-battle",
+      "name": "虎牢之战",
+      "dateNote": "武德四年五月，李世民大败窦建德；王世充于同月丙寅（公历621年6月4日）降唐",
+      "at": {
+        "year": 621,
+        "month": 5,
+        "abs": 7456
+      },
+      "summary": "李世民于虎牢关以少胜多，窦建德被俘；失去外援的王世充随后降唐，唐朝平定夏、郑。",
+      "atAbs": 7456
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "tang"
+      ],
+      "participantIds": [
+        "li-shimin"
+      ],
+      "id": "zhenguan-rule",
+      "name": "贞观之治",
+      "timeMode": "span",
+      "start": {
+        "year": 627,
+        "month": 1,
+        "abs": 7524
+      },
+      "end": {
+        "year": 649,
+        "month": 1,
+        "abs": 7788
+      },
+      "summary": "唐太宗任贤纳谏，轻徭薄赋，为盛唐奠基。",
+      "startAbs": 7524,
+      "endAbs": 7788
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "tang"
+      ],
+      "participantIds": [
+        "li-longji"
+      ],
+      "id": "kaiyuan-prosperity",
+      "name": "开元盛世",
+      "timeMode": "span",
+      "start": {
+        "year": 713,
+        "month": 1,
+        "abs": 8556
+      },
+      "end": {
+        "year": 741,
+        "month": 1,
+        "abs": 8892
+      },
+      "summary": "唐玄宗前期励精图治，唐朝国力达于鼎盛。",
+      "startAbs": 8556,
+      "endAbs": 8892
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "tang"
+      ],
+      "participantIds": [
+        "li-longji",
+        "an-lushan"
+      ],
+      "id": "anshi-rebellion",
+      "name": "安史之乱",
+      "timeMode": "span",
+      "dateNote": "755–763年",
+      "start": {
+        "year": 755,
+        "month": 1,
+        "abs": 9060
+      },
+      "end": {
+        "year": 763,
+        "month": 1,
+        "abs": 9156
+      },
+      "summary": "安禄山、史思明叛乱，唐朝由盛转衰。",
+      "startAbs": 9060,
+      "endAbs": 9156
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "tang"
+      ],
+      "participantIds": [
+        "huang-chao"
+      ],
+      "id": "huang-chao-uprising",
+      "name": "黄巢起义",
+      "at": {
+        "year": 875,
+        "month": 12,
+        "abs": 10511
+      },
+      "summary": "黄巢领导农民起义，攻入长安，唐廷名存实亡。",
+      "atAbs": 10511
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "song-north",
+        "liao"
+      ],
+      "participantIds": [
+        "zhao-kuangyi"
+      ],
+      "id": "gaoliang-river-battle",
+      "name": "高梁河之战",
+      "dateNote": "太平兴国四年六月，宋太宗北伐败于辽",
+      "at": {
+        "year": 979,
+        "month": 6,
+        "abs": 11753
+      },
+      "summary": "宋太宗率军北伐辽国，于高梁河被耶律休哥击败，宋军溃退。",
+      "atAbs": 11753
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "song-south",
+        "mongol-empire",
+        "yuan"
+      ],
+      "participantIds": [
+        "zhao-qi"
+      ],
+      "id": "xiangyang-siege",
+      "name": "襄樊之战",
+      "timeMode": "span",
+      "start": {
+        "year": 1268,
+        "month": 1,
+        "abs": 15216
+      },
+      "end": {
+        "year": 1273,
+        "month": 1,
+        "abs": 15276
+      },
+      "summary": "蒙古军围攻襄阳、樊城；战争跨越1271年忽必烈改国号大元，1273年吕文焕降元，南宋长江防线洞开。",
+      "startAbs": 15216,
+      "endAbs": 15276
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "song-north"
+      ],
+      "participantIds": [
+        "zhao-xu",
+        "wang-anshi"
+      ],
+      "id": "xining-reform",
+      "name": "王安石变法",
+      "timeMode": "span",
+      "start": {
+        "year": 1069,
+        "month": 1,
+        "abs": 12828
+      },
+      "end": {
+        "year": 1085,
+        "month": 1,
+        "abs": 13020
+      },
+      "summary": "宋神宗用王安石推行新法，富国强兵。",
+      "startAbs": 12828,
+      "endAbs": 13020
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "day",
+      "dynastyIds": [
+        "song-north"
+      ],
+      "participantIds": [
+        "zhao-ji",
+        "zhao-huan"
+      ],
+      "id": "jingkang-incident",
+      "name": "靖康之变",
+      "dateNote": "天会五年二月初六，1127年3月20日，金废徽钦二帝为庶人",
+      "at": {
+        "year": 1127,
+        "month": 3,
+        "abs": 13526,
+        "day": 20
+      },
+      "summary": "金军破开封，俘徽钦二帝，北宋灭亡。",
+      "atAbs": 13526
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "day",
+      "dynastyIds": [
+        "song-south",
+        "yuan"
+      ],
+      "participantIds": [
+        "zhao-bing"
+      ],
+      "id": "yashan-battle",
+      "name": "崖山海战",
+      "dateNote": "祥兴二年二月初六，1279年3月19日，陆秀夫负帝昺殉国",
+      "at": {
+        "year": 1279,
+        "month": 3,
+        "abs": 15350,
+        "day": 19
+      },
+      "summary": "元军于崖山击败宋军，陆秀夫负帝昺殉国，南宋亡。",
+      "atAbs": 15350
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "liang-hou",
+        "tang-hou",
+        "jin-hou",
+        "han-hou",
+        "zhou-hou",
+        "wu-shi",
+        "tang-nan"
+      ],
+      "participantIds": [
+        "zhu-wen"
+      ],
+      "id": "wudai-shiguo",
+      "name": "五代十国",
+      "timeMode": "span",
+      "dateNote": "907–979年，北方五代更迭，南方十国并存",
+      "start": {
+        "year": 907,
+        "month": 1,
+        "abs": 10884
+      },
+      "end": {
+        "year": 979,
+        "month": 1,
+        "abs": 11748
+      },
+      "summary": "唐亡后北方短命王朝更迭，南方十国割据，至宋统一。",
+      "startAbs": 10884,
+      "endAbs": 11748
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-yang-jian-yang-guang-succession",
+      "fromRef": "person:yang-jian",
+      "toRef": "person:yang-guang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-yuan-li-shimin-succession",
+      "fromRef": "person:li-yuan",
+      "toRef": "person:li-shimin",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-shimin-li-zhi-succession",
+      "fromRef": "person:li-shimin",
+      "toRef": "person:li-zhi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-zhi-li-xian-succession",
+      "fromRef": "person:li-zhi",
+      "toRef": "person:li-xian",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-xian-li-dan-succession",
+      "fromRef": "person:li-xian",
+      "toRef": "person:li-dan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-dan-li-xian-succession",
+      "fromRef": "person:li-dan",
+      "toRef": "person:li-xian",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-xian-li-dan-succession",
+      "fromRef": "person:li-xian",
+      "toRef": "person:li-dan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-dan-li-longji-succession",
+      "fromRef": "person:li-dan",
+      "toRef": "person:li-longji",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-longji-li-heng-succession",
+      "fromRef": "person:li-longji",
+      "toRef": "person:li-heng",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-heng-li-yu-tang-succession",
+      "fromRef": "person:li-heng",
+      "toRef": "person:li-yu-tang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-yu-tang-li-kuo-succession",
+      "fromRef": "person:li-yu-tang",
+      "toRef": "person:li-kuo",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-kuo-li-song-succession",
+      "fromRef": "person:li-kuo",
+      "toRef": "person:li-song",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-song-li-chun-succession",
+      "fromRef": "person:li-song",
+      "toRef": "person:li-chun",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-chun-li-heng-mu-succession",
+      "fromRef": "person:li-chun",
+      "toRef": "person:li-heng-mu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-heng-mu-li-zhan-succession",
+      "fromRef": "person:li-heng-mu",
+      "toRef": "person:li-zhan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-zhan-li-ang-succession",
+      "fromRef": "person:li-zhan",
+      "toRef": "person:li-ang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-ang-li-yan-tang-succession",
+      "fromRef": "person:li-ang",
+      "toRef": "person:li-yan-tang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-yan-tang-li-chen-tang-succession",
+      "fromRef": "person:li-yan-tang",
+      "toRef": "person:li-chen-tang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-chen-tang-li-cui-succession",
+      "fromRef": "person:li-chen-tang",
+      "toRef": "person:li-cui",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-cui-li-xuan-tang-succession",
+      "fromRef": "person:li-cui",
+      "toRef": "person:li-xuan-tang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-xuan-tang-li-ye-tang-succession",
+      "fromRef": "person:li-xuan-tang",
+      "toRef": "person:li-ye-tang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-ye-tang-li-zhu-tang-succession",
+      "fromRef": "person:li-ye-tang",
+      "toRef": "person:li-zhu-tang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-wen-zhu-yougui-succession",
+      "fromRef": "person:zhu-wen",
+      "toRef": "person:zhu-yougui",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-yougui-zhu-youzhen-succession",
+      "fromRef": "person:zhu-yougui",
+      "toRef": "person:zhu-youzhen",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-youzhen-li-cunxu-succession",
+      "fromRef": "person:zhu-youzhen",
+      "toRef": "person:li-cunxu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-cunxu-li-siyuan-succession",
+      "fromRef": "person:li-cunxu",
+      "toRef": "person:li-siyuan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-siyuan-li-conghou-succession",
+      "fromRef": "person:li-siyuan",
+      "toRef": "person:li-conghou",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-conghou-li-congke-succession",
+      "fromRef": "person:li-conghou",
+      "toRef": "person:li-congke",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-congke-shi-jingtang-succession",
+      "fromRef": "person:li-congke",
+      "toRef": "person:shi-jingtang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-shi-jingtang-shi-chonggui-succession",
+      "fromRef": "person:shi-jingtang",
+      "toRef": "person:shi-chonggui",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-shi-chonggui-liu-zhiyuan-succession",
+      "fromRef": "person:shi-chonggui",
+      "toRef": "person:liu-zhiyuan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-zhiyuan-liu-chengyou-succession",
+      "fromRef": "person:liu-zhiyuan",
+      "toRef": "person:liu-chengyou",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-chengyou-guo-wei-succession",
+      "fromRef": "person:liu-chengyou",
+      "toRef": "person:guo-wei",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-guo-wei-chai-rong-succession",
+      "fromRef": "person:guo-wei",
+      "toRef": "person:chai-rong",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chai-rong-chai-zongxun-succession",
+      "fromRef": "person:chai-rong",
+      "toRef": "person:chai-zongxun",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yang-xingmi-yang-wo-succession",
+      "fromRef": "person:yang-xingmi",
+      "toRef": "person:yang-wo",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yang-wo-yang-longyan-succession",
+      "fromRef": "person:yang-wo",
+      "toRef": "person:yang-longyan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yang-longyan-yang-pu-succession",
+      "fromRef": "person:yang-longyan",
+      "toRef": "person:yang-pu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yang-pu-li-bian-succession",
+      "fromRef": "person:yang-pu",
+      "toRef": "person:li-bian",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-bian-li-jing-nantang-succession",
+      "fromRef": "person:li-bian",
+      "toRef": "person:li-jing-nantang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-jing-nantang-li-yu-nantang-succession",
+      "fromRef": "person:li-jing-nantang",
+      "toRef": "person:li-yu-nantang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-yu-nantang-qian-liu-succession",
+      "fromRef": "person:li-yu-nantang",
+      "toRef": "person:qian-liu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-qian-liu-qian-yuangui-succession",
+      "fromRef": "person:qian-liu",
+      "toRef": "person:qian-yuangui",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-qian-yuangui-qian-hongzuo-succession",
+      "fromRef": "person:qian-yuangui",
+      "toRef": "person:qian-hongzuo",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-qian-hongzuo-qian-hongcong-succession",
+      "fromRef": "person:qian-hongzuo",
+      "toRef": "person:qian-hongcong",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-qian-hongcong-qian-chu-succession",
+      "fromRef": "person:qian-hongcong",
+      "toRef": "person:qian-chu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-qian-chu-wang-shenzhi-succession",
+      "fromRef": "person:qian-chu",
+      "toRef": "person:wang-shenzhi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-wang-shenzhi-wang-yanhan-succession",
+      "fromRef": "person:wang-shenzhi",
+      "toRef": "person:wang-yanhan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-wang-yanhan-wang-yanjun-succession",
+      "fromRef": "person:wang-yanhan",
+      "toRef": "person:wang-yanjun",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-wang-yanjun-wang-jipeng-succession",
+      "fromRef": "person:wang-yanjun",
+      "toRef": "person:wang-jipeng",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-wang-jipeng-wang-yanxi-succession",
+      "fromRef": "person:wang-jipeng",
+      "toRef": "person:wang-yanxi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-wang-yanxi-zhu-wenjin-succession",
+      "fromRef": "person:wang-yanxi",
+      "toRef": "person:zhu-wenjin",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhu-wenjin-wang-yanzheng-succession",
+      "fromRef": "person:zhu-wenjin",
+      "toRef": "person:wang-yanzheng",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-wang-yanzheng-liu-yan-succession",
+      "fromRef": "person:wang-yanzheng",
+      "toRef": "person:liu-yan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-yan-liu-bin-succession",
+      "fromRef": "person:liu-yan",
+      "toRef": "person:liu-bin",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-bin-liu-sheng-succession",
+      "fromRef": "person:liu-bin",
+      "toRef": "person:liu-sheng",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-sheng-liu-chang-succession",
+      "fromRef": "person:liu-sheng",
+      "toRef": "person:liu-chang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-chang-wang-jian-shu-succession",
+      "fromRef": "person:liu-chang",
+      "toRef": "person:wang-jian-shu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-wang-jian-shu-wang-yan-shu-succession",
+      "fromRef": "person:wang-jian-shu",
+      "toRef": "person:wang-yan-shu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-wang-yan-shu-meng-zhixiang-succession",
+      "fromRef": "person:wang-yan-shu",
+      "toRef": "person:meng-zhixiang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-meng-zhixiang-meng-chang-succession",
+      "fromRef": "person:meng-zhixiang",
+      "toRef": "person:meng-chang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-meng-chang-gao-jixing-succession",
+      "fromRef": "person:meng-chang",
+      "toRef": "person:gao-jixing",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-gao-jixing-gao-conghe-succession",
+      "fromRef": "person:gao-jixing",
+      "toRef": "person:gao-conghe",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-gao-conghe-gao-baorong-succession",
+      "fromRef": "person:gao-conghe",
+      "toRef": "person:gao-baorong",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-gao-baorong-gao-baoxu-succession",
+      "fromRef": "person:gao-baorong",
+      "toRef": "person:gao-baoxu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-gao-baoxu-gao-jichong-succession",
+      "fromRef": "person:gao-baoxu",
+      "toRef": "person:gao-jichong",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-gao-jichong-ma-yin-succession",
+      "fromRef": "person:gao-jichong",
+      "toRef": "person:ma-yin",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ma-yin-ma-xisheng-succession",
+      "fromRef": "person:ma-yin",
+      "toRef": "person:ma-xisheng",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ma-xisheng-ma-xifan-succession",
+      "fromRef": "person:ma-xisheng",
+      "toRef": "person:ma-xifan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ma-xifan-ma-xiguang-succession",
+      "fromRef": "person:ma-xifan",
+      "toRef": "person:ma-xiguang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ma-xiguang-ma-xie-succession",
+      "fromRef": "person:ma-xiguang",
+      "toRef": "person:ma-xie",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ma-xie-ma-xichong-succession",
+      "fromRef": "person:ma-xie",
+      "toRef": "person:ma-xichong",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ma-xichong-liu-min-succession",
+      "fromRef": "person:ma-xichong",
+      "toRef": "person:liu-min",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-min-liu-jun-bei-succession",
+      "fromRef": "person:liu-min",
+      "toRef": "person:liu-jun-bei",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-jun-bei-liu-jiyuan-succession",
+      "fromRef": "person:liu-jun-bei",
+      "toRef": "person:liu-jiyuan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhao-kuangyin-zhao-kuangyi-succession",
+      "fromRef": "person:zhao-kuangyin",
+      "toRef": "person:zhao-kuangyi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhao-kuangyi-zhao-heng-succession",
+      "fromRef": "person:zhao-kuangyi",
+      "toRef": "person:zhao-heng",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhao-heng-zhao-zhen-succession",
+      "fromRef": "person:zhao-heng",
+      "toRef": "person:zhao-zhen",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhao-zhen-zhao-shu-succession",
+      "fromRef": "person:zhao-zhen",
+      "toRef": "person:zhao-shu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhao-shu-zhao-xu-succession",
+      "fromRef": "person:zhao-shu",
+      "toRef": "person:zhao-xu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhao-xu-zhao-zhe-succession",
+      "fromRef": "person:zhao-xu",
+      "toRef": "person:zhao-zhe",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhao-zhe-zhao-ji-succession",
+      "fromRef": "person:zhao-zhe",
+      "toRef": "person:zhao-ji",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhao-ji-zhao-huan-succession",
+      "fromRef": "person:zhao-ji",
+      "toRef": "person:zhao-huan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhao-gou-zhao-shen-succession",
+      "fromRef": "person:zhao-gou",
+      "toRef": "person:zhao-shen",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhao-shen-zhao-dun-succession",
+      "fromRef": "person:zhao-shen",
+      "toRef": "person:zhao-dun",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhao-dun-zhao-kuo-succession",
+      "fromRef": "person:zhao-dun",
+      "toRef": "person:zhao-kuo",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhao-kuo-zhao-yun-succession",
+      "fromRef": "person:zhao-kuo",
+      "toRef": "person:zhao-yun",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhao-yun-zhao-qi-succession",
+      "fromRef": "person:zhao-yun",
+      "toRef": "person:zhao-qi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhao-qi-zhao-shi-succession",
+      "fromRef": "person:zhao-qi",
+      "toRef": "person:zhao-shi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhao-shi-zhao-shi-duan-succession",
+      "fromRef": "person:zhao-shi",
+      "toRef": "person:zhao-shi-duan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhao-shi-duan-zhao-bing-succession",
+      "fromRef": "person:zhao-shi-duan",
+      "toRef": "person:zhao-bing",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-xuanwumen-li-shimin",
+      "fromRef": "event:xuanwumen",
+      "toRef": "person:li-shimin",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-hulao-li-shimin",
+      "fromRef": "event:hulao-battle",
+      "toRef": "person:li-shimin",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-anshi-an-lushan",
+      "fromRef": "event:anshi-rebellion",
+      "toRef": "person:an-lushan",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-gaoliang-zhao",
+      "fromRef": "event:gaoliang-river-battle",
+      "toRef": "person:zhao-kuangyi",
+      "kind": "battle"
+    }
+  ],
+  "supplementalEventDynasties": [],
+  "supplementalEventParticipants": [],
+  "preSql": "DELETE FROM relations WHERE id = 'rel-yang-guang-yang-you-succession';\nDELETE FROM relations WHERE id = 'rel-yang-guang-yang-hao-succession';\nDELETE FROM relations WHERE from_type = 'event' AND from_id IN ('zhu-wen-usurp', 'yang-you-enthroned', 'yang-hao-enthroned', 'yang-tong-enthroned');\nDELETE FROM event_participants WHERE event_id IN ('yang-you-enthroned', 'yang-hao-enthroned', 'yang-tong-enthroned');\nDELETE FROM event_dynasties WHERE event_id IN ('yang-you-enthroned', 'yang-hao-enthroned', 'yang-tong-enthroned');\nDELETE FROM events WHERE id IN ('yang-you-enthroned', 'yang-hao-enthroned', 'yang-tong-enthroned');\nDELETE FROM event_participants WHERE event_id = 'zhu-wen-usurp';\nDELETE FROM event_dynasties WHERE event_id = 'zhu-wen-usurp';\nDELETE FROM events WHERE id = 'zhu-wen-usurp';\nDELETE FROM relations WHERE id = 'rel-yang-tong-li-yuan-killed';\nDELETE FROM reign_capitals WHERE reign_id IN ('reign-yang-you', 'reign-yang-hao', 'reign-yang-tong');\nDELETE FROM event_participants WHERE event_id = 'yang-tong-killed';\nDELETE FROM event_dynasties WHERE event_id = 'yang-tong-killed';\nDELETE FROM events WHERE id = 'yang-tong-killed';\nDELETE FROM reigns WHERE id = 'reign-dou-jiande-xia';\n\n-- remove stale auto-generated 史料缺 (武周期间唐行留白)\nDELETE FROM reigns WHERE dynasty_id IN ('tang') AND person_id = 'system-missing-ruler';",
+  "reignCapitals": [
+    {
+      "reignId": "reign-yang-you",
+      "capitalId": "cap-sui-daxing-583"
+    },
+    {
+      "reignId": "reign-yang-you",
+      "capitalId": "cap-sui-changan-618"
+    },
+    {
+      "reignId": "reign-yang-hao",
+      "capitalId": "cap-sui-jiangdu-618"
+    },
+    {
+      "reignId": "reign-yang-tong",
+      "capitalId": "cap-sui-luoyang-618"
+    }
+  ],
+  "manifest": {
+    "slug": "sui-tang-wudai-song",
+    "title": "隋唐宋（含五代十国、武周）",
+    "window": {
+      "startYear": 581,
+      "startMonth": 1,
+      "endYear": 1279,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-09-13",
+    "counts": {
+      "persons": 135,
+      "dynasties": 23,
+      "reigns": 104,
+      "reign_capitals": 4,
+      "events": 18,
+      "relations": 95
+    },
+    "sources": [
+      {
+        "label": "隋朝",
+        "url": "https://zh.wikipedia.org/wiki/隋朝"
+      },
+      {
+        "label": "唐朝",
+        "url": "https://zh.wikipedia.org/wiki/唐朝"
+      },
+      {
+        "label": "五代十国",
+        "url": "https://zh.wikipedia.org/wiki/五代十国"
+      },
+      {
+        "label": "新五代史",
+        "url": "https://zh.wikisource.org/zh-hans/新五代史"
+      },
+      {
+        "label": "旧五代史",
+        "url": "https://zh.wikisource.org/zh-hans/旧五代史"
+      },
+      {
+        "label": "十国春秋",
+        "url": "https://zh.wikisource.org/zh-hans/十国春秋"
+      },
+      {
+        "label": "北宋",
+        "url": "https://zh.wikipedia.org/wiki/北宋"
+      },
+      {
+        "label": "南宋",
+        "url": "https://zh.wikipedia.org/wiki/南宋"
+      },
+      {
+        "label": "安史之乱",
+        "url": "https://zh.wikipedia.org/wiki/安史之乱"
+      },
+      {
+        "label": "靖康之变",
+        "url": "https://zh.wikipedia.org/wiki/靖康之变"
+      },
+      {
+        "label": "高梁河之战",
+        "url": "https://zh.wikipedia.org/wiki/高梁河之战"
+      },
+      {
+        "label": "宇文化及",
+        "url": "https://zh.wikipedia.org/wiki/宇文化及"
+      },
+      {
+        "label": "旧唐书·高祖本纪",
+        "url": "https://zh.wikisource.org/zh-hans/旧唐书/卷1"
+      },
+      {
+        "label": "窦建德",
+        "url": "https://zh.wikipedia.org/wiki/窦建德"
+      },
+      {
+        "label": "王世充",
+        "url": "https://zh.wikipedia.org/wiki/王世充"
+      },
+      {
+        "label": "虎牢之战",
+        "url": "https://zh.wikipedia.org/wiki/虎牢之战"
+      }
+    ],
+    "notes": [
+      "覆盖隋（581–618）、唐（618–907）、武周（690–705）、五代十国（907–979）、北宋（960–1127）、南宋（1127–1279）。",
+      "杨坚（yang-jian）复用 nanbei-chao 已有 id；后梁 id 为 liang-hou，避免与十六国后凉 liang-back 冲突。",
+      "十国吴 id 为 wu-shi，避免与三国孙吴 wu 冲突；前蜀/后蜀为 shu-qian/shu-hou，避免与蜀汉 shu 冲突。",
+      "十国各政权收录全部君主；五代收录全部皇帝。",
+      "1279 崖山海战为南宋终结；元朝不在本包内。",
+      "襄樊之战跨越1271年忽必烈改国号大元，关联南宋、蒙古帝国与元；崖山海战为1279年元军灭南宋，关联南宋与元。",
+      "李显、李旦两度即位，在位拆为两段；690–705 年武周武则天，不与唐中宗重叠。",
+      "隋末并行用 claim_track：杨侑在炀帝仍在位时于长安另立，杨侗也在炀帝死讯传至洛阳后另立；二人分别使用 changan/长安、luoyang/洛阳并立 track。杨浩在炀帝被弑后于江都继位，不设并立 track，留在主行；按本包取舍标记 claim_role=rival，因此卡片不镀正统金色。",
+      "隋末在位记录显式关联都城：杨侑→大兴城、长安（按618年江都兵变分段），杨浩→江都，杨侗→东都洛阳。显式关联供在位详情与时间轴地图优先解析；没有关联的在位仍按王朝、时间及 claim_track 匹配。",
+      "杨广于618-04-11在江都被宇文化及所弑；宇文化及随后建立许政权，命运线准确挂接至其许帝卡。",
+      "补入夏（窦建德）与郑（王世充）两条隋末政权行及相应在位。夏（窦建德）使用独立 id xia-dou-jiande，避免与上古夏朝 xia 冲突。建夏起于618年11月，参据《中国大百科全书中国历史》所述武德元年十一月建国，以及《通鉴纪事本末》称夏王事在武德元年冬；十一月为史书记载的传统历月，本包按用户指定将展示时间记作618年11月。武德四年五月虎牢之战窦建德败俘；王世充于五月丙寅（公历621年6月4日）降唐；窦建德七月被斩。",
+      "杨侗起始在位日按《资治通鉴》卷一八五及《资治通鉴》所记武德元年五月戊辰换算为618-06-22；《旧唐书》异记618-06-21。终点取619-05-23禅位日。",
+      "南宋正统金色止于恭帝降元（1276-02）；端宗、帝昺接在恭帝之后走主线继承，但不计正统。",
+      "北宋、南宋皇帝在位日取维基百科/宋史通行换算，precision=day。",
+      "闽王延翰至朱文进、楚马希声/马希范在位日取维基百科条目公历换算（已核定公历日期直接记录在缓存）；马希广以后及王延政仍仅年/月。",
+      "孟昶史称后主，宋追封楚王谥恭孝，posthumous_name 为恭孝王；出降取续资治通鉴乾德三年正月辛卯（965-02-23），不作卒年六月。"
+    ]
+  }
+}

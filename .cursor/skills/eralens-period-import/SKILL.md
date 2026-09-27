@@ -51,9 +51,9 @@ description: >-
 ```
 Task Progress:
 - [ ] 1. 调研：列出王朝、在位、人物、事件、关系及来源
-- [ ] 2. 建模：分配 id、计算 start_abs/end_abs（color_token 由 sqlHelpers 占位，勿手填）
+- [ ] 2. 将已核定记录直接写入 `data/imports/{slug}/cache.json`（计算 `start_abs/end_abs`，不写缓存加工脚本）
 - [ ] 3. 冲突检查：查询 DB 已有 id
-- [ ] 4. 写 SQL：data/imports/{slug}/import.sql + manifest.json
+- [ ] 4. 运行通用生成器，输出 PostgreSQL `import.sql` 和 `manifest.json`
 - [ ] 5. 校验：node .cursor/skills/eralens-period-import/scripts/validate-import.mjs
 - [ ] 6. 入库：scripts/apply-sql.sh
 - [ ] 7. 验收：curl timeline/entity + 浏览器时间轴
@@ -69,7 +69,7 @@ Task Progress:
 - **甄别历法**：录入日期前确认来源使用农历还是公历。不得把农历月日直接作为公历月日录入或参与公历换算；来源只记农历日期时，应保留原始记载并在 `date_note` 说明历法。只有依据可靠历法换算资料确认对应日期后，才录入换算后的公历日期，并在 `date_note` 记录原始农历日期及换算依据；无法确认时不要伪造公历月日，按已知精度记录。
 - 王朝 / 在位月不确定：标 `precision: year`，用月初 / 月末占位。
 - **史料记作“约某年 / 约前某年”**：将该年视为史料给出的确定年桶，按 `precision: year` 记录；reign 不填 `start_date_confidence` / `end_date_confidence`，事件不因此改用 `circa`。这里的“确定”表示忠实采用史料所载年份，不代表史料精确到月日。只有年份由导入者自行推算、插值，或来源给出的是跨年范围 / 多种互相冲突的年份时，才按推算或 `circa` 规则处理。
-- **年精度顺序继位切年**（先秦通行，与英文维基国王表 / 逾年改元一致；实现见 `data/imports/lib/deathYearSuccession.mjs`）：
+- **年精度顺序继位切年**（先秦通行，与英文维基国王表 / 逾年改元一致；按以下规则核定后，将最终日期直接写入 `cache.json`）：
   - **死年整年归旧王**，新王从**下一年**起算。维基「在位年份」常把死年同时写作新王起年（如秦文公「前766年－前716年」叠在襄公卒年），时间轴按年桶绘制时不要把这一年画成两人并立。
   - 不要把公历 1 月 1 日当成即位日；1–12 月只是年桶占位。中国年本身也不是公历元旦起算。
   - 切年检测必须用维基/来源的**原始起迄年**，不要在已经后移的前王上再判断（否则秦孝文王占死后，庄襄王会停在死年）。同一人改元续任（魏惠王称王）先合并为一条在位，再切年。
@@ -117,7 +117,7 @@ Task Progress:
 - 事件 `{topic}`：`xuanwumen`、`muye`
 - 关系 `rel-{from}-{to}-{kind}`
 
-`persons.name` 用可检索的常用名（禹、姬发、孔子、韦后）。**入库时君主姓名须带姓**（如莒郊公写 `己狂` 而非 `狂`，薛献公写 `任谷` 而非 `谷`），便于搜索；时间轴卡片在始皇帝以前主行显示谥号/称号，由 `resolveReignCardLabel` 处理，不要为迁就卡片去改姓名字段。维基诸侯表若只给「国君本名」，须结合该国姓氏（如莒己、滕姬、杞姒）补全；仅知谥号而本名失考时，可用 `{姓}{谥号}`（如 `姒武公`）。先秦王朝/人物须写入 `ancestral_xing` / `clan_shi`（`feudalClanMetadata.mjs` + `applyFeudalClanMetadata`），运行时只按该字段去姓，不维护姓氏表。常用称呼与人工别名仍写 `persons.alt_names`；数据库会把姓名、别名、姓/氏组合、庙谥、reign title、朝代名 + 庙谥预生成到 `persons.search_terms`。
+`persons.name` 用可检索的常用名（禹、姬发、孔子、韦后）。**入库时君主姓名须带姓**（如莒郊公写 `己狂` 而非 `狂`，薛献公写 `任谷` 而非 `谷`），便于搜索；时间轴卡片在始皇帝以前主行显示谥号/称号，由 `resolveReignCardLabel` 处理，不要为迁就卡片去改姓名字段。维基诸侯表若只给「国君本名」，须结合该国姓氏（如莒己、滕姬、杞姒）补全；仅知谥号而本名失考时，可用 `{姓}{谥号}`（如 `姒武公`）。先秦王朝/人物须在 `cache.json` 直接写入 `ancestralXing` / `clanShi`；生成器和运行时不套姓氏默认表。常用称呼与人工别名仍写 `persons.alt_names`；数据库会把姓名、别名、姓/氏组合、庙谥、reign title、朝代名 + 庙谥预生成到 `persons.search_terms`。
 
 **人物搜索词与索引（强制）**：
 
@@ -130,12 +130,12 @@ Task Progress:
 **谥号 / 庙号 / 年号字段**（与商周一致）：
 - **谥号、庙号**写在 `persons.posthumous_name` / `persons.temple_name`（逗号分隔 CSV，同人多值按在位顺序）；卡片取第一个，详情用 `、` 展示全部。
 - **年号**写在 `reigns.era_names`（逗号分隔名称列表，如 `泰定,致和`）；不再使用 `era_names` 子表，各年号起迄年月不入库。
-- 泳道卡片小字先取非空 `reigns.title`。明清（起年 1368 年及以后）空 title 时以 `era_names` 第一项为小字，优先于人物庙号、谥号；不得将明清年号复制到 `reigns.title`。明清普通皇帝 title 留空，仅保留朱元璋吴王时期 `吴`、努尔哈赤 `太祖`、皇太极 `太宗` 三条指定例外。例外 title 来自 `data/imports/lib/reignTitleSelections.mjs` 的显式数据选择。
+- 泳道卡片小字先取非空 `reigns.title`。明清（起年 1368 年及以后）空 title 时以 `era_names` 第一项为小字，优先于人物庙号、谥号；不得将明清年号复制到 `reigns.title`。明清普通皇帝 `reigns.title` 留空，仅在史料称谓确需显示时将最终称号直接写入 `cache.json`；生成器不再按 ID 选择或覆盖称谓。
 - 字段只存谥号/庙号本体，**不带国名或王朝前缀**（如 `武王`、`孝文皇帝`、`太宗`；不要写 `周武王`、`汉孝文皇帝`、`唐太宗`）。
 - **史称**（少帝/废帝/末帝/后主等）写在 `title`，**不得**写入 `posthumous_name`。
 - 国名 + 简称写在 `title`（如 `周武王`、`唐太宗`、`后唐庄宗`），由运行时 `resolveEmperorAppellation` 按年份阈值选用正规字段展示；运行时不从 `title` 推测谥号。
-- 若 `title` 已含国号简称（`唐肃宗`、`吴越武肃王`），须在对应 **person** 上写出无国号的庙谥 CSV（`肃宗`、`武肃王`）。generate 可仍在 reign 对象上暂写 `posthumousName`/`templeName`，`mergeAppellationsIntoPersons()` 会合并到 person 再导出 SQL。
-- 无谥号的先秦/regnal 称号直接写入 `reigns.title` 的**不带国名本体**（`若敖`、`夫差`、`王厝`、`禹`）；导入时可用 `preQinCardAppellation.mjs` 从带国号的史料标题拆出后再 bake 进 `title`。
+- 若 `title` 已含国号简称（`唐肃宗`、`吴越武肃王`），须在 `cache.json` 对应 **person** 记录上直接写出无国号的庙谥 CSV（`肃宗`、`武肃王`）；庙谥不在生成阶段从 reign 合并。
+- 无谥号的先秦/regnal 称号直接写入 `reigns.title` 的**不带国名本体**（`若敖`、`夫差`、`王厝`、`禹`）；在 `cache.json` 直接维护不带国名的 `reigns.title`。
 - `persons.name` 入库即为可展示私名（不带维基「原名/后改名」残渣）；古文异体可留在 `bio`。
 
 先秦角色用 `君主`/`天子`，不用 `皇帝`。年号自汉武帝起，写入 `reigns.era_names`；先秦省略该列（NULL）。
@@ -183,7 +183,7 @@ node .cursor/skills/eralens-period-import/scripts/compute-abs.mjs -1046 1  # -12
 
 - 世系连续但在位年由导入者推算或插值时，在 `reigns` 行标注 `start_date_confidence` / `end_date_confidence`：`approximate`、`interpolated`（确定值默认 NULL）。**来源原文仅记“约某年”的年份不属于此处的 approximate，不加置信度标记。**
 - 前端按本卡 `start_date_confidence` / `end_date_confidence` 在起年/迄年边画波浪线。日历相接的两王交界两侧必须同为失考或同为确定；贴着年表锚点的一侧不打失考标记。灭国留白不相接，各画自己的失考边。
-- `build-rulers.mjs` 对 `fillUndatedYears` 在锚点窗口内按连续世系**均分**在位年（不设 35 年上限），并自动打 `interpolated`；有年表锚点的边界保持 NULL。缺少两端锚点或世系中断时，不跨断层均分。
+- 推算或插值结果直接写入导入包 JSON 缓存，并为相应边界写 `interpolated`；生成器不得在读取缓存时推算、均分或修补单个朝代的记录。缺少两端锚点或世系中断时，不跨断层均分。
 - 灭国、亡国等确实无国君的空档：若需占位用史料缺；若仅年代不可考则靠 confidence + 波浪线，不要混用。
 
 ### 3. 冲突检查
@@ -287,10 +287,10 @@ curl -s "http://localhost:3001/api/bounds"
 - **史事对照**：有明确对应 battle/politics 事件时，用 `relations` 从成语 `event:idiom-*` 指向已有 `event:*`（`kind: other`），不写 reign 端点。
 - **展示语义**：成语详情关联 person；person 详情关联成语；reign 详情**不**因 person 间接列出成语。时间轴上成语只按 `at_abs` 画点。
 
-生成：`node data/imports/idioms/generate.mjs` → `import.sql` + `manifest.json`。
+生成：`node data/imports/generate.mjs idioms` → `import.sql` + `manifest.json`。
 
 ## 附加资源
 
 - 列定义与 INSERT 模板：[reference.md](reference.md)
 - 贞观示例：[examples.md](examples.md)
-- 先秦大批量：`data/imports/xia-shang-zhou/`（generate.mjs → import.sql）
+- 先秦大批量：`data/imports/xia-shang-zhou/`（统一生成器 → PostgreSQL SQL）

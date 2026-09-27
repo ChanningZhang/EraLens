@@ -1,0 +1,483 @@
+{
+  "slug": "taiping",
+  "window": {
+    "startYear": 1851,
+    "startMonth": 1,
+    "endYear": 1864,
+    "endMonth": 7
+  },
+  "persons": [
+    {
+      "id": "hong-xiuquan",
+      "name": "洪秀全",
+      "roles": [
+        "皇帝",
+        "起义领袖"
+      ],
+      "bio": "太平天国创建者，金田起义后称天王，定都天京；同治三年四月二十七日（1864年6月1日）病逝于南京。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/洪秀全"
+        }
+      ],
+      "birth": {
+        "year": 1814,
+        "month": 1,
+        "abs": 21768
+      },
+      "death": {
+        "year": 1864,
+        "month": 6,
+        "abs": 22373
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "天王"
+    },
+    {
+      "id": "hong-tianguifu",
+      "name": "洪天贵福",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "洪秀全长子，幼天王；洪秀全死后于六月初六继位，天京陷落后被俘处死。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/洪天贵福"
+        }
+      ],
+      "birth": {
+        "year": 1849,
+        "month": 11,
+        "abs": 22198
+      },
+      "death": {
+        "year": 1864,
+        "month": 11,
+        "abs": 22378
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "幼天王"
+    },
+    {
+      "id": "yang-xiuqing",
+      "name": "杨秀清",
+      "roles": [
+        "政治家",
+        "军事家"
+      ],
+      "bio": "太平天国东王，定都天京后掌军政大权；咸丰六年八月初四（1856年9月2日）天京事变中被北王韦昌辉所杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杨秀清"
+        }
+      ],
+      "birth": {
+        "year": 1823,
+        "month": 1,
+        "abs": 21876
+      },
+      "death": {
+        "year": 1856,
+        "month": 9,
+        "abs": 22280
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "li-xiucheng",
+      "name": "李秀成",
+      "roles": [
+        "军事家",
+        "政治家"
+      ],
+      "bio": "太平天国忠王，后期主持军政；同治三年七月初六（1864年8月7日）城破后被俘处死。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/李秀成"
+        }
+      ],
+      "birth": {
+        "year": 1823,
+        "month": 1,
+        "abs": 21876
+      },
+      "death": {
+        "year": 1864,
+        "month": 8,
+        "abs": 22375
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "shi-dakai",
+      "name": "石达开",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "太平天国翼王，西征名将；咸丰七年出走后转战西南，同治二年五月初十（1863年6月10日）大渡河兵败被俘。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/石达开"
+        }
+      ],
+      "birth": {
+        "year": 1831,
+        "month": 1,
+        "abs": 21972
+      },
+      "death": {
+        "year": 1863,
+        "month": 6,
+        "abs": 22361
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "taiping",
+      "name": "太平天国",
+      "altNames": [
+        "太平天囯",
+        "天囯"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 1851,
+        "month": 3,
+        "abs": 22214
+      },
+      "end": {
+        "year": 1864,
+        "month": 7,
+        "abs": 22374
+      },
+      "precision": "month",
+      "note": "1851年3月23日洪秀全登基称天王、正号太平天国；1853年3月定都天京（南京）；1864年7月19日天京陷落，政权覆亡。与清廷并立，非正统。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-hong-xiuquan-taiping",
+      "dynastyId": "taiping",
+      "personId": "hong-xiuquan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1851,
+        "month": 3,
+        "abs": 22214,
+        "day": 23
+      },
+      "end": {
+        "year": 1864,
+        "month": 6,
+        "abs": 22373,
+        "day": 1
+      },
+      "startAbs": 22214,
+      "endAbs": 22373,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-hong-tianguifu-taiping",
+      "dynastyId": "taiping",
+      "personId": "hong-tianguifu",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1864,
+        "month": 6,
+        "abs": 22373,
+        "day": 6
+      },
+      "end": {
+        "year": 1864,
+        "month": 7,
+        "abs": 22374,
+        "day": 19
+      },
+      "startAbs": 22373,
+      "endAbs": 22374,
+      "precision": "day",
+      "isMain": false
+    }
+  ],
+  "events": [
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "day",
+      "dynastyIds": [
+        "taiping"
+      ],
+      "participantIds": [
+        "hong-xiuquan"
+      ],
+      "id": "jintian-uprising",
+      "name": "金田起义",
+      "dateNote": "咸丰元年十一月十一日，1851年1月11日",
+      "at": {
+        "year": 1851,
+        "month": 1,
+        "abs": 22212
+      },
+      "summary": "洪秀全于广西桂平金田举兵，揭开太平天国运动序幕；称帝建号另见三月登基。",
+      "atAbs": 22212
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "day",
+      "dynastyIds": [
+        "taiping"
+      ],
+      "participantIds": [
+        "hong-xiuquan"
+      ],
+      "id": "hong-xiuquan-enthroned",
+      "name": "洪秀全登基",
+      "dateNote": "咸丰元年二月二十一日，1851年3月23日，广西武宣",
+      "at": {
+        "year": 1851,
+        "month": 3,
+        "abs": 22214
+      },
+      "summary": "洪秀全于广西武宣登基，称太平天王，后改称天王，正号太平天国。",
+      "atAbs": 22214
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "day",
+      "dynastyIds": [
+        "taiping"
+      ],
+      "participantIds": [
+        "hong-xiuquan"
+      ],
+      "id": "taiping-capital-tianjing",
+      "name": "定都天京",
+      "dateNote": "咸丰三年二月初十，1853年3月19日攻克江宁；三月十九日洪秀全入城",
+      "at": {
+        "year": 1853,
+        "month": 3,
+        "abs": 22238
+      },
+      "summary": "太平军攻克江宁，改南京为天京并定都，与清朝形成南北对峙。",
+      "atAbs": 22238
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "day",
+      "dynastyIds": [
+        "taiping"
+      ],
+      "participantIds": [
+        "yang-xiuqing",
+        "hong-xiuquan"
+      ],
+      "id": "tianjing-incident",
+      "name": "天京事变",
+      "dateNote": "咸丰六年八月初四，1856年9月2日东王杨秀清被诛",
+      "at": {
+        "year": 1856,
+        "month": 9,
+        "abs": 22280
+      },
+      "summary": "北王韦昌辉诛杀东王杨秀清，太平天国领导层内讧，元气大伤。",
+      "atAbs": 22280
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "day",
+      "dynastyIds": [
+        "taiping"
+      ],
+      "participantIds": [
+        "hong-tianguifu",
+        "li-xiucheng"
+      ],
+      "id": "fall-of-tianjing",
+      "name": "天京陷落",
+      "dateNote": "同治三年六月十六日，1864年7月19日",
+      "at": {
+        "year": 1864,
+        "month": 7,
+        "abs": 22374
+      },
+      "summary": "湘军攻破天京，幼天王洪天贵福出逃，太平天国政权覆亡。",
+      "atAbs": 22374
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "day",
+      "dynastyIds": [
+        "taiping"
+      ],
+      "participantIds": [
+        "hong-tianguifu",
+        "zaichun"
+      ],
+      "id": "hong-tianguifu-captured",
+      "name": "幼天王被俘",
+      "dateNote": "同治三年九月二十二日，1864年10月25日，江西石城",
+      "at": {
+        "year": 1864,
+        "month": 10,
+        "abs": 22377,
+        "day": 25
+      },
+      "summary": "湘军追擒幼天王洪天贵福于江西石城，太平天国余绪终结。",
+      "atAbs": 22377
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-hong-xiuquan-hong-tianguifu-succession",
+      "fromRef": "person:hong-xiuquan",
+      "toRef": "person:hong-tianguifu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-jintian-hong",
+      "fromRef": "event:jintian-uprising",
+      "toRef": "person:hong-xiuquan",
+      "kind": "politics"
+    },
+    {
+      "id": "rel-hong-enthroned",
+      "fromRef": "event:hong-xiuquan-enthroned",
+      "toRef": "person:hong-xiuquan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-tianjing-capital",
+      "fromRef": "event:taiping-capital-tianjing",
+      "toRef": "dynasty:taiping",
+      "kind": "politics"
+    },
+    {
+      "id": "rel-tianjing-incident-yang",
+      "fromRef": "event:tianjing-incident",
+      "toRef": "person:yang-xiuqing",
+      "kind": "politics"
+    },
+    {
+      "id": "rel-fall-tianjing",
+      "fromRef": "event:fall-of-tianjing",
+      "toRef": "dynasty:taiping",
+      "kind": "battle"
+    }
+  ],
+  "supplementalEventDynasties": [
+    {
+      "eventId": "taiping-rebellion",
+      "dynastyId": "taiping"
+    }
+  ],
+  "supplementalEventParticipants": [
+    {
+      "eventId": "taiping-rebellion",
+      "personId": "hong-xiuquan"
+    },
+    {
+      "eventId": "fall-of-tianjing",
+      "personId": "zeng-guofan"
+    },
+    {
+      "eventId": "hong-tianguifu-captured",
+      "personId": "hong-tianguifu"
+    },
+    {
+      "eventId": "hong-tianguifu-captured",
+      "personId": "zaichun"
+    }
+  ],
+  "preSql": "DELETE FROM event_dynasties WHERE event_id IN ('jintian-uprising', 'hong-xiuquan-enthroned', 'taiping-capital-tianjing', 'hong-tianguifu-captured') AND dynasty_id = 'qing';",
+  "manifest": {
+    "slug": "taiping",
+    "title": "太平天国",
+    "window": {
+      "startYear": 1851,
+      "startMonth": 1,
+      "endYear": 1864,
+      "endMonth": 7
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-09-27",
+    "counts": {
+      "persons": 5,
+      "dynasties": 1,
+      "reigns": 2,
+      "events": 6,
+      "relations": 6,
+      "supplementalEventDynastyLinks": 1,
+      "supplementalEventParticipantLinks": 4
+    },
+    "sources": [
+      {
+        "label": "太平天国",
+        "url": "https://zh.wikipedia.org/wiki/太平天国"
+      },
+      {
+        "label": "司法部：太平天国与清政府对峙",
+        "url": "https://www.moj.gov.cn/pub/sfbgw/jgsz/gjjwzsfbjjz/zyzsfbjjzsj/201910/t20191029_184865.html"
+      },
+      {
+        "label": "洪秀全",
+        "url": "https://zh.wikipedia.org/wiki/洪秀全"
+      },
+      {
+        "label": "洪天贵福",
+        "url": "https://zh.wikipedia.org/wiki/洪天贵福"
+      },
+      {
+        "label": "天京事变",
+        "url": "https://zh.wikipedia.org/wiki/天京事变"
+      },
+      {
+        "label": "李秀成",
+        "url": "https://zh.wikipedia.org/wiki/李秀成"
+      }
+    ],
+    "notes": [
+      "收录太平天国王朝行及洪秀全、幼天王洪天贵福在位；与清廷并立，不设正统。",
+      "君主在位日取维基百科通行公历换算，precision=day；王朝行仅至月（schema 无 start_day）。",
+      "洪秀全在位自 1851-03-23 武宣登基（非金田起义）；至 1864-06-01 病逝。幼天王：1864-06-06 继位至 1864-07-19 天京陷落。",
+      "太平天国以干支纪年，不设传统年号，故省略 era_names。",
+      "金田起义、洪秀全登基、定都天京及幼天王被俘均为太平天国自身事件，只关联太平天国；反清背景、清军参与镇压或事件造成双方对峙，不单独构成清朝事件关联。",
+      "taiping-rebellion 事件沿用 yuan-ming-qing 已有 id，本包补 taiping 王朝与洪秀全参与关联。"
+    ]
+  }
+}

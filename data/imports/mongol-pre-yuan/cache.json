@@ -1,0 +1,613 @@
+{
+  "slug": "mongol-pre-yuan",
+  "window": {
+    "startYear": 1206,
+    "startMonth": 1,
+    "endYear": 1271,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "temujin",
+      "name": "铁木真",
+      "roles": [
+        "大汗"
+      ],
+      "bio": "成吉思汗，统一蒙古诸部，1206年建国，开创大蒙古国。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/成吉思汗"
+        }
+      ],
+      "birth": {
+        "year": 1162
+      },
+      "death": {
+        "year": 1227
+      },
+      "posthumousNames": [
+        "法天启运圣武皇帝"
+      ],
+      "templeNames": [
+        "太祖"
+      ],
+      "title": "成吉思汗"
+    },
+    {
+      "id": "ogedei",
+      "name": "窝阔台",
+      "roles": [
+        "大汗"
+      ],
+      "bio": "蒙古帝国第二任大汗，成吉思汗第三子，灭金、西征欧洲。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/窝阔台"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "英文皇帝"
+      ],
+      "templeNames": [
+        "太宗"
+      ],
+      "title": "窝阔台汗"
+    },
+    {
+      "id": "guyuk",
+      "name": "贵由",
+      "roles": [
+        "大汗"
+      ],
+      "bio": "蒙古帝国第三任大汗，窝阔台之子，在位不足两年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/贵由"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "钦定皇帝"
+      ],
+      "templeNames": [
+        "定宗"
+      ],
+      "title": "贵由汗"
+    },
+    {
+      "id": "mongke",
+      "name": "蒙哥",
+      "roles": [
+        "大汗"
+      ],
+      "bio": "蒙古帝国第四任大汗，拖雷长子，攻宋、灭大理，帝国分裂前最后一位普遍承认的大汗。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/蒙哥"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "桓肃皇帝"
+      ],
+      "templeNames": [
+        "宪宗"
+      ],
+      "title": "蒙哥汗"
+    },
+    {
+      "id": "hu-bilie",
+      "name": "忽必烈",
+      "roles": [
+        "大汗",
+        "皇帝"
+      ],
+      "bio": "成吉思汗之孙，1260年即位大汗，1271年定国号大元；元朝皇帝见 yuan-ming-qing。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/忽必烈"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "元世祖"
+    },
+    {
+      "id": "ariq-boke",
+      "name": "阿里不哥",
+      "roles": [
+        "大汗"
+      ],
+      "bio": "拖雷幼子，1260年与忽必烈争位，1264年败亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/阿里不哥"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "tolui",
+      "name": "拖雷",
+      "roles": [
+        "宗王"
+      ],
+      "bio": "成吉思汗幼子，1227–1229年监国，蒙哥、忽必烈、阿里不哥之父。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/拖雷"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "mongol-empire",
+      "name": "蒙古帝国",
+      "altNames": [
+        "大蒙古国",
+        "蒙古汗国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 1206,
+        "month": 1,
+        "abs": 14472
+      },
+      "end": {
+        "year": 1271,
+        "month": 12,
+        "abs": 15263
+      },
+      "precision": "year",
+      "note": "1206年铁木真称成吉思汗建国；1271年忽必烈定国号大元，中原史语境转入元朝。帝国诸汗国此后分治。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-temujin-mongol-empire",
+      "dynastyId": "mongol-empire",
+      "personId": "temujin",
+      "title": "",
+      "posthumousName": "法天启运圣武皇帝",
+      "templeName": "太祖",
+      "eraNames": [],
+      "start": {
+        "year": 1206,
+        "month": 5,
+        "abs": 14476,
+        "day": 15
+      },
+      "end": {
+        "year": 1227,
+        "month": 8,
+        "abs": 14731,
+        "day": 25
+      },
+      "startAbs": 14476,
+      "endAbs": 14731,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-ogedei-mongol-empire",
+      "dynastyId": "mongol-empire",
+      "personId": "ogedei",
+      "title": "",
+      "posthumousName": "英文皇帝",
+      "templeName": "太宗",
+      "eraNames": [],
+      "start": {
+        "year": 1229,
+        "month": 9,
+        "abs": 14756,
+        "day": 13
+      },
+      "end": {
+        "year": 1241,
+        "month": 12,
+        "abs": 14903,
+        "day": 11
+      },
+      "startAbs": 14756,
+      "endAbs": 14903,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-guyuk-mongol-empire",
+      "dynastyId": "mongol-empire",
+      "personId": "guyuk",
+      "title": "",
+      "posthumousName": "钦定皇帝",
+      "templeName": "定宗",
+      "eraNames": [],
+      "start": {
+        "year": 1246,
+        "month": 8,
+        "abs": 14959,
+        "day": 24
+      },
+      "end": {
+        "year": 1248,
+        "month": 4,
+        "abs": 14979,
+        "day": 20
+      },
+      "startAbs": 14959,
+      "endAbs": 14979,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-mongke-mongol-empire",
+      "dynastyId": "mongol-empire",
+      "personId": "mongke",
+      "title": "",
+      "posthumousName": "桓肃皇帝",
+      "templeName": "宪宗",
+      "eraNames": [],
+      "start": {
+        "year": 1251,
+        "month": 7,
+        "abs": 15018,
+        "day": 1
+      },
+      "end": {
+        "year": 1259,
+        "month": 8,
+        "abs": 15115,
+        "day": 11
+      },
+      "startAbs": 15018,
+      "endAbs": 15115,
+      "precision": "day",
+      "isMain": false
+    },
+    {
+      "id": "reign-hu-bilie-mongol-empire",
+      "dynastyId": "mongol-empire",
+      "personId": "hu-bilie",
+      "title": "薛禅汗",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1260,
+        "month": 5,
+        "abs": 15124,
+        "day": 5
+      },
+      "end": {
+        "year": 1271,
+        "month": 12,
+        "abs": 15263,
+        "day": 18
+      },
+      "startAbs": 15124,
+      "endAbs": 15263,
+      "precision": "day",
+      "isMain": false
+    }
+  ],
+  "events": [
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "mongol-empire",
+        "jin-nvzhen"
+      ],
+      "participantIds": [
+        "temujin",
+        "ogedei"
+      ],
+      "id": "mongol-campaign-jin",
+      "name": "蒙古攻金",
+      "timeMode": "span",
+      "start": {
+        "year": 1211,
+        "month": 1,
+        "abs": 14532
+      },
+      "end": {
+        "year": 1234,
+        "month": 1,
+        "abs": 14808
+      },
+      "summary": "成吉思汗至窝阔台时期对金朝发动长期战争，1234年蔡州陷落，金亡。",
+      "startAbs": 14532,
+      "endAbs": 14808
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "mongol-empire"
+      ],
+      "participantIds": [
+        "temujin"
+      ],
+      "id": "mongol-west-campaign",
+      "name": "西征花剌子模",
+      "timeMode": "circa",
+      "dateNote": "1219–1225年，史料月日不一",
+      "start": {
+        "year": 1219,
+        "month": 1,
+        "abs": 14628
+      },
+      "end": {
+        "year": 1225,
+        "month": 1,
+        "abs": 14700
+      },
+      "at": {
+        "year": 1221,
+        "month": 12,
+        "abs": 14663
+      },
+      "summary": "成吉思汗率军西征花剌子模，兵锋远达中亚，奠定蒙古西征格局。",
+      "startAbs": 14628,
+      "endAbs": 14700,
+      "atAbs": 14663
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "mongol-empire"
+      ],
+      "participantIds": [
+        "tolui"
+      ],
+      "id": "tolui-regency",
+      "name": "拖雷监国",
+      "timeMode": "circa",
+      "dateNote": "1227–1229年，库里尔台推举窝阔台前",
+      "start": {
+        "year": 1227,
+        "month": 1,
+        "abs": 14724
+      },
+      "end": {
+        "year": 1229,
+        "month": 1,
+        "abs": 14748
+      },
+      "summary": "成吉思汗去世后幼子拖雷监国，两年后库里尔台推举窝阔台继位。",
+      "startAbs": 14724,
+      "endAbs": 14748
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "mongol-empire"
+      ],
+      "participantIds": [
+        "mongke"
+      ],
+      "id": "mongke-death",
+      "name": "蒙哥汗驾崩",
+      "dateNote": "1259年攻宋四川军中",
+      "at": {
+        "year": 1259,
+        "month": 12,
+        "abs": 15119
+      },
+      "summary": "蒙哥汗攻宋途中于四川去世，忽必烈与阿里不哥随即展开汗位之争。",
+      "atAbs": 15119
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "mongol-empire"
+      ],
+      "participantIds": [
+        "hu-bilie",
+        "ariq-boke"
+      ],
+      "id": "great-khan-contention",
+      "name": "忽必烈与阿里不哥争位",
+      "timeMode": "span",
+      "start": {
+        "year": 1260,
+        "month": 1,
+        "abs": 15120
+      },
+      "end": {
+        "year": 1264,
+        "month": 1,
+        "abs": 15168
+      },
+      "summary": "蒙哥死后忽必烈与阿里不哥各举忽里台互不承认，1264年忽必烈获胜，帝国走向分裂。",
+      "startAbs": 15120,
+      "endAbs": 15168
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "mongol-empire",
+        "yuan",
+        "song-south"
+      ],
+      "participantIds": [
+        "hu-bilie",
+        "mongke"
+      ],
+      "id": "mongol-campaign-song",
+      "name": "蒙古攻宋",
+      "timeMode": "span",
+      "start": {
+        "year": 1235,
+        "month": 1,
+        "abs": 14820
+      },
+      "end": {
+        "year": 1279,
+        "month": 1,
+        "abs": 15348
+      },
+      "summary": "蒙古自窝阔台时期起持续南征；忽必烈于1271年定国号大元后战争仍继续，经襄樊之战、崖山海战，1279年灭南宋。",
+      "startAbs": 14820,
+      "endAbs": 15348
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-temujin-ogedei-succession",
+      "fromRef": "person:temujin",
+      "toRef": "person:ogedei",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ogedei-guyuk-succession",
+      "fromRef": "person:ogedei",
+      "toRef": "person:guyuk",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-guyuk-mongke-succession",
+      "fromRef": "person:guyuk",
+      "toRef": "person:mongke",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-mongke-hu-bilie-succession",
+      "fromRef": "person:mongke",
+      "toRef": "person:hu-bilie",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-great-khan-hu-bilie",
+      "fromRef": "event:great-khan-contention",
+      "toRef": "person:hu-bilie",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-great-khan-ariq-boke",
+      "fromRef": "event:great-khan-contention",
+      "toRef": "person:ariq-boke",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-mongol-song-hu-bilie",
+      "fromRef": "event:mongol-campaign-song",
+      "toRef": "person:hu-bilie",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-temujin-tolui-succession",
+      "fromRef": "person:temujin",
+      "toRef": "person:tolui",
+      "kind": "other"
+    }
+  ],
+  "supplementalEventDynasties": [
+    {
+      "eventId": "song-jin-alliance-mongol",
+      "dynastyId": "mongol-empire"
+    },
+    {
+      "eventId": "mongol-campaign-song",
+      "dynastyId": "song-south"
+    },
+    {
+      "eventId": "xiangyang-siege",
+      "dynastyId": "mongol-empire"
+    }
+  ],
+  "supplementalEventParticipants": [
+    {
+      "eventId": "song-jin-alliance-mongol",
+      "personId": "ogedei"
+    }
+  ],
+  "preSql": "-- remove stale auto-generated 史料缺 (regency gaps are intentional blanks)\nDELETE FROM reigns WHERE dynasty_id IN ('mongol-empire') AND person_id = 'system-missing-ruler';",
+  "reignCapitals": [],
+  "manifest": {
+    "slug": "mongol-pre-yuan",
+    "title": "元朝建立前的蒙古帝国",
+    "importPhase": "post",
+    "postImportOrder": 30,
+    "window": {
+      "startYear": 1206,
+      "startMonth": 1,
+      "endYear": 1271,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-09-12",
+    "counts": {
+      "persons": 7,
+      "dynasties": 1,
+      "reigns": 5,
+      "events": 6,
+      "relations": 8
+    },
+    "sources": [
+      {
+        "label": "蒙古帝国",
+        "url": "https://zh.wikipedia.org/wiki/蒙古帝国"
+      },
+      {
+        "label": "成吉思汗",
+        "url": "https://zh.wikipedia.org/wiki/成吉思汗"
+      },
+      {
+        "label": "窝阔台",
+        "url": "https://zh.wikipedia.org/wiki/窝阔台"
+      },
+      {
+        "label": "蒙哥",
+        "url": "https://zh.wikipedia.org/wiki/蒙哥"
+      },
+      {
+        "label": "忽必烈",
+        "url": "https://zh.wikipedia.org/wiki/忽必烈"
+      },
+      {
+        "label": "蒙古帝国大汗列表",
+        "url": "https://zh.wikipedia.org/wiki/蒙古帝国大汗列表"
+      }
+    ],
+    "notes": [
+      "覆盖大蒙古国（1206–1271），五位普遍承认的大汗：成吉思汗、窝阔台、贵由、蒙哥、忽必烈（薛禅汗）。",
+      "1227–1229拖雷监国、1241–1246乃马真称制、1248–1251海迷失称制以事件收录，不建 reign；大汗间隔留白（同唐武周留白）。",
+      "忽必烈 1271 年定国号大元后见 yuan-ming-qing；本包 reign-hu-bilie-mongol-empire 止于 1271。",
+      "联蒙灭金事件见 song-liao-jin，本包补充 mongol-empire 关联。",
+      "未收录钦察、伊利、察合台等汗国分治时期。",
+      "在位年取维基百科君主列表，precision=year。"
+    ]
+  }
+}

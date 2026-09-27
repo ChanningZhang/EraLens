@@ -25,3 +25,7 @@
   background: color-mix(in srgb, var(--color-ochre) 9%, var(--color-paper));
   white-space: nowrap;
 }
+
+.compact .legend {
+  transform: translateY(0);
+}

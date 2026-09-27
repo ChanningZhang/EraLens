@@ -76,10 +76,10 @@ Task Progress:
 
 ```bash
 # 王朝都城
-node data/imports/dynasty-capitals/generate.mjs
+node data/imports/generate.mjs dynasty-capitals
 
 # 事件地点
-node data/imports/event-locations/generate.mjs
+node data/imports/generate.mjs event-locations
 
 # 通用校验与导入
 node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/imports/{slug}/import.sql

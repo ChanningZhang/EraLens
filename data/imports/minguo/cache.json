@@ -1,0 +1,2152 @@
+{
+  "slug": "minguo",
+  "window": {
+    "startYear": 1912,
+    "startMonth": 1,
+    "endYear": 2026,
+    "endMonth": 9
+  },
+  "persons": [
+    {
+      "id": "yuan-shikai",
+      "name": "袁世凯",
+      "roles": [
+        "政治家",
+        "军事家"
+      ],
+      "bio": "北洋首领，曾任大总统，称帝失败。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/袁世凯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "li-yuanhong",
+      "name": "黎元洪",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "武昌起义后任湖北都督，后两度任大总统。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/黎元洪"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "feng-guozhang",
+      "name": "冯国璋",
+      "roles": [
+        "军事家",
+        "政治家"
+      ],
+      "bio": "直系军阀首领，曾任副总统、大总统。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/冯国璋"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "xu-shichang",
+      "name": "徐世昌",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "北洋元老，曾任大总统。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/徐世昌"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "cao-kun",
+      "name": "曹锟",
+      "roles": [
+        "军事家",
+        "政治家"
+      ],
+      "bio": "直系军阀，贿选大总统。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/曹锟"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "zhang-zuolin",
+      "name": "张作霖",
+      "roles": [
+        "军事家",
+        "政治家"
+      ],
+      "bio": "奉系军阀首领，据东北，皇姑屯事件中遇刺。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/张作霖"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "lin-sen",
+      "name": "林森",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "国民政府主席，长期虚位元首。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/林森"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "jiang-jieshi",
+      "name": "蒋介石",
+      "roles": [
+        "军事家",
+        "政治家"
+      ],
+      "bio": "黄埔军校校长，北伐统一，曾任国民政府主席；1949年迁台后继续主政，1975年卒于台北。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/蒋介石"
+        }
+      ],
+      "birth": {
+        "year": 1887,
+        "month": 10,
+        "abs": 22653
+      },
+      "death": {
+        "year": 1975,
+        "month": 4,
+        "abs": 23703
+      },
+      "altNames": [
+        "蒋中正"
+      ]
+    },
+    {
+      "id": "li-zongren",
+      "name": "李宗仁",
+      "roles": [
+        "军事家",
+        "政治家"
+      ],
+      "bio": "桂系首领，蒋中正引退后代理元首，1950年蒋复行视事后解除代理。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/李宗仁"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "tan-yankai",
+      "name": "谭延闿",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "国民党元老，宁汉合流后任南京国民政府主席，后任行政院院长。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/谭延闿"
+        }
+      ],
+      "birth": {
+        "year": 1880,
+        "month": 1,
+        "abs": 22560
+      },
+      "death": {
+        "year": 1930,
+        "month": 9,
+        "abs": 23168
+      },
+      "altNames": [
+        "谭延闓"
+      ]
+    },
+    {
+      "id": "yan-jiagan",
+      "name": "严家淦",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "蒋中正逝世后继任台湾地区领导人。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/严家淦"
+        }
+      ],
+      "birth": {
+        "year": 1905,
+        "month": 10,
+        "abs": 22869
+      },
+      "death": {
+        "year": 1993,
+        "month": 12,
+        "abs": 23927
+      },
+      "altNames": []
+    },
+    {
+      "id": "jiang-jingguo",
+      "name": "蒋经国",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "蒋中正长子，继任领导人，任内推动十大建设。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/蒋经国"
+        }
+      ],
+      "birth": {
+        "year": 1910,
+        "month": 4,
+        "abs": 22923
+      },
+      "death": {
+        "year": 1988,
+        "month": 1,
+        "abs": 23856
+      },
+      "altNames": []
+    },
+    {
+      "id": "li-denghui",
+      "name": "李登辉",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "蒋经国逝世后继任，后为首次全民直选当选的领导人。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/李登辉"
+        }
+      ],
+      "birth": {
+        "year": 1923,
+        "month": 1,
+        "abs": 23076
+      },
+      "death": {
+        "year": 2020,
+        "month": 7,
+        "abs": 24246
+      },
+      "altNames": []
+    },
+    {
+      "id": "chen-shuibian",
+      "name": "陈水扁",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "2000年当选，行宪后首次政党轮替。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/陈水扁"
+        }
+      ],
+      "birth": {
+        "year": 1950,
+        "month": 10,
+        "abs": 23409
+      },
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "ma-yingjiu",
+      "name": "马英九",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "2008年当选领导人，行宪后第二次政党轮替。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/马英九"
+        }
+      ],
+      "birth": {
+        "year": 1950,
+        "month": 7,
+        "abs": 23406
+      },
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "cai-yingwen",
+      "name": "蔡英文",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "2016年当选，首位女性领导人。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/蔡英文"
+        }
+      ],
+      "birth": {
+        "year": 1956,
+        "month": 8,
+        "abs": 23479
+      },
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "lai-qingde",
+      "name": "赖清德",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "2024年就任台湾地区领导人。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赖清德"
+        }
+      ],
+      "birth": {
+        "year": 1959,
+        "month": 10,
+        "abs": 23517
+      },
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "duan-qirui",
+      "name": "段祺瑞",
+      "roles": [
+        "军事家",
+        "政治家"
+      ],
+      "bio": "皖系军阀首领，曾任国务总理、临时执政。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/段祺瑞"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "zhou-ziqi",
+      "name": "周自齐",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "交通系，徐世昌去职后以国务总理摄行大总统职权。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周自齐"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "gao-lingwei",
+      "name": "高凌霨",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "直系，黎元洪去职后以国务总理摄行大总统职权。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/高凌霨"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "huang-fu",
+      "name": "黄郛",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "北京政变后摄行大总统职权，迎段祺瑞入京任临时执政。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/黄郛"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "hu-weide",
+      "name": "胡惟德",
+      "roles": [
+        "外交家",
+        "政治家"
+      ],
+      "bio": "两度以国务总理摄行临时执政或大总统职权。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/胡惟德"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "yan-huiqing",
+      "name": "颜惠庆",
+      "roles": [
+        "外交家",
+        "政治家"
+      ],
+      "bio": "段祺瑞去职后组摄政内阁，以国务院名义摄行大总统职权。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/颜惠庆"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "du-xigui",
+      "name": "杜锡珪",
+      "roles": [
+        "军事家",
+        "政治家"
+      ],
+      "bio": "海军总长代理国务总理，摄行大总统职权。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杜锡珪"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "gu-weijun",
+      "name": "顾维钧",
+      "roles": [
+        "外交家",
+        "政治家"
+      ],
+      "bio": "国务总理兼外交总长，摄行大总统职权至安国军政府成立。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/顾维钧"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [
+        "V. K. Wellington Koo"
+      ]
+    },
+    {
+      "id": "wu-peifu",
+      "name": "吴佩孚",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "直系军阀，「玉帅」，北洋名将。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/吴佩孚"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "sun-chuanfang",
+      "name": "孙传芳",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "直系军阀，据东南五省。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/孙传芳"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "feng-yuxiang",
+      "name": "冯玉祥",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "西北军首领，北京政变发动者。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/冯玉祥"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "yan-xishan",
+      "name": "阎锡山",
+      "roles": [
+        "军事家",
+        "政治家"
+      ],
+      "bio": "晋系军阀，据山西三十八年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/阎锡山"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "lu-rongting",
+      "name": "陆荣廷",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "旧桂系军阀，据广西。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/陆荣廷"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "tang-jiyao",
+      "name": "唐继尧",
+      "roles": [
+        "军事家",
+        "政治家"
+      ],
+      "bio": "滇系军阀，据云南。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/唐继尧"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "long-yun",
+      "name": "龙云",
+      "roles": [
+        "军事家",
+        "政治家"
+      ],
+      "bio": "滇系军阀，云南王。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/龙云"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "liu-xiang",
+      "name": "刘湘",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "川系军阀，四川王。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘湘"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "liu-wenhui",
+      "name": "刘文辉",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "川系军阀，刘湘之叔。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘文辉"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "chen-jiongming",
+      "name": "陈炯明",
+      "roles": [
+        "军事家",
+        "政治家"
+      ],
+      "bio": "粤系军阀，曾叛孙中山。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/陈炯明"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "ma-bufang",
+      "name": "马步芳",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "马家军，据青海。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/马步芳"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "cai-e",
+      "name": "蔡锷",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "护国战争领袖，滇军名将。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/蔡锷"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "zhang-xueliang",
+      "name": "张学良",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "奉系继承人，西安事变发动者，东北易帜。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/张学良"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "zhou-enlai",
+      "name": "周恩来",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "中共领导人，国共合作与抗战时期重要人物。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周恩来"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "mao-zedong",
+      "name": "毛泽东",
+      "roles": [
+        "政治家",
+        "军事家"
+      ],
+      "bio": "中国共产党主要缔造者，1949年建立中华人民共和国。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/毛泽东"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "roc",
+      "name": "中华民国",
+      "altNames": [
+        "民国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 1912,
+        "month": 1,
+        "abs": 22944
+      },
+      "end": {
+        "year": 2026,
+        "month": 9,
+        "abs": 24320
+      },
+      "precision": "month",
+      "note": "1912年孙中山任临时大总统肇建；1949年中央迁台后续统。正统金色截于1949年9月。元首收录截至2026年9月。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-sun-yat-sen-roc",
+      "dynastyId": "roc",
+      "personId": "sun-yat-sen",
+      "title": "临时大总统",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1912,
+        "month": 1,
+        "abs": 22944,
+        "day": 1
+      },
+      "end": {
+        "year": 1912,
+        "month": 3,
+        "abs": 22946,
+        "day": 10
+      },
+      "startAbs": 22944,
+      "endAbs": 22946,
+      "precision": "day",
+      "isInformalMonarch": false,
+      "isMain": true
+    },
+    {
+      "id": "reign-yuan-shikai-roc",
+      "dynastyId": "roc",
+      "personId": "yuan-shikai",
+      "title": "大总统",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1912,
+        "month": 3,
+        "abs": 22946,
+        "day": 10
+      },
+      "end": {
+        "year": 1916,
+        "month": 6,
+        "abs": 22997,
+        "day": 6
+      },
+      "startAbs": 22946,
+      "endAbs": 22997,
+      "precision": "day",
+      "isInformalMonarch": false,
+      "isMain": true
+    },
+    {
+      "id": "reign-li-yuanhong-roc",
+      "dynastyId": "roc",
+      "personId": "li-yuanhong",
+      "title": "大总统",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1916,
+        "month": 6,
+        "abs": 22997,
+        "day": 7
+      },
+      "end": {
+        "year": 1917,
+        "month": 7,
+        "abs": 23010,
+        "day": 6
+      },
+      "startAbs": 22997,
+      "endAbs": 23010,
+      "precision": "day",
+      "isInformalMonarch": false,
+      "isMain": true
+    },
+    {
+      "id": "reign-feng-guozhang-roc",
+      "dynastyId": "roc",
+      "personId": "feng-guozhang",
+      "title": "代理大总统",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1917,
+        "month": 7,
+        "abs": 23010,
+        "day": 6
+      },
+      "end": {
+        "year": 1918,
+        "month": 10,
+        "abs": 23025,
+        "day": 10
+      },
+      "startAbs": 23010,
+      "endAbs": 23025,
+      "precision": "day",
+      "isInformalMonarch": false,
+      "isMain": true
+    },
+    {
+      "id": "reign-xu-shichang-roc",
+      "dynastyId": "roc",
+      "personId": "xu-shichang",
+      "title": "大总统",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1918,
+        "month": 10,
+        "abs": 23025,
+        "day": 10
+      },
+      "end": {
+        "year": 1922,
+        "month": 6,
+        "abs": 23069,
+        "day": 2
+      },
+      "startAbs": 23025,
+      "endAbs": 23069,
+      "precision": "day",
+      "isInformalMonarch": false,
+      "isMain": true
+    },
+    {
+      "id": "reign-zhou-ziqi-roc",
+      "dynastyId": "roc",
+      "personId": "zhou-ziqi",
+      "title": "国务院摄行",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1922,
+        "month": 6,
+        "abs": 23069,
+        "day": 2
+      },
+      "end": {
+        "year": 1922,
+        "month": 6,
+        "abs": 23069,
+        "day": 11
+      },
+      "startAbs": 23069,
+      "endAbs": 23069,
+      "precision": "day",
+      "isInformalMonarch": true,
+      "isMain": true
+    },
+    {
+      "id": "reign-li-yuanhong-roc-2",
+      "dynastyId": "roc",
+      "personId": "li-yuanhong",
+      "title": "大总统",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1922,
+        "month": 6,
+        "abs": 23069,
+        "day": 11
+      },
+      "end": {
+        "year": 1923,
+        "month": 6,
+        "abs": 23081,
+        "day": 13
+      },
+      "startAbs": 23069,
+      "endAbs": 23081,
+      "precision": "day",
+      "isInformalMonarch": false,
+      "isMain": true
+    },
+    {
+      "id": "reign-gao-lingwei-roc",
+      "dynastyId": "roc",
+      "personId": "gao-lingwei",
+      "title": "国务院摄行",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1923,
+        "month": 6,
+        "abs": 23081,
+        "day": 14
+      },
+      "end": {
+        "year": 1923,
+        "month": 10,
+        "abs": 23085,
+        "day": 10
+      },
+      "startAbs": 23081,
+      "endAbs": 23085,
+      "precision": "day",
+      "isInformalMonarch": true,
+      "isMain": true
+    },
+    {
+      "id": "reign-cao-kun-roc",
+      "dynastyId": "roc",
+      "personId": "cao-kun",
+      "title": "大总统",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1923,
+        "month": 10,
+        "abs": 23085,
+        "day": 10
+      },
+      "end": {
+        "year": 1924,
+        "month": 11,
+        "abs": 23098,
+        "day": 2
+      },
+      "startAbs": 23085,
+      "endAbs": 23098,
+      "precision": "day",
+      "isInformalMonarch": false,
+      "isMain": true
+    },
+    {
+      "id": "reign-huang-fu-roc",
+      "dynastyId": "roc",
+      "personId": "huang-fu",
+      "title": "国务院摄行",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1924,
+        "month": 11,
+        "abs": 23098,
+        "day": 2
+      },
+      "end": {
+        "year": 1924,
+        "month": 11,
+        "abs": 23098,
+        "day": 24
+      },
+      "startAbs": 23098,
+      "endAbs": 23098,
+      "precision": "day",
+      "isInformalMonarch": true,
+      "isMain": true
+    },
+    {
+      "id": "reign-duan-qirui-roc",
+      "dynastyId": "roc",
+      "personId": "duan-qirui",
+      "title": "临时执政",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1924,
+        "month": 11,
+        "abs": 23098,
+        "day": 24
+      },
+      "end": {
+        "year": 1926,
+        "month": 4,
+        "abs": 23115,
+        "day": 20
+      },
+      "startAbs": 23098,
+      "endAbs": 23115,
+      "precision": "day",
+      "isInformalMonarch": true,
+      "isMain": true
+    },
+    {
+      "id": "reign-hu-weide-roc",
+      "dynastyId": "roc",
+      "personId": "hu-weide",
+      "title": "国务院摄行",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1926,
+        "month": 4,
+        "abs": 23115,
+        "day": 20
+      },
+      "end": {
+        "year": 1926,
+        "month": 5,
+        "abs": 23116,
+        "day": 13
+      },
+      "startAbs": 23115,
+      "endAbs": 23116,
+      "precision": "day",
+      "isInformalMonarch": true,
+      "isMain": true
+    },
+    {
+      "id": "reign-yan-huiqing-roc",
+      "dynastyId": "roc",
+      "personId": "yan-huiqing",
+      "title": "国务院摄行",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1926,
+        "month": 5,
+        "abs": 23116,
+        "day": 13
+      },
+      "end": {
+        "year": 1926,
+        "month": 6,
+        "abs": 23117,
+        "day": 23
+      },
+      "startAbs": 23116,
+      "endAbs": 23117,
+      "precision": "day",
+      "isInformalMonarch": true,
+      "isMain": true
+    },
+    {
+      "id": "reign-du-xigui-roc",
+      "dynastyId": "roc",
+      "personId": "du-xigui",
+      "title": "国务院摄行",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1926,
+        "month": 6,
+        "abs": 23117,
+        "day": 23
+      },
+      "end": {
+        "year": 1926,
+        "month": 10,
+        "abs": 23121,
+        "day": 1
+      },
+      "startAbs": 23117,
+      "endAbs": 23121,
+      "precision": "day",
+      "isInformalMonarch": true,
+      "isMain": true
+    },
+    {
+      "id": "reign-gu-weijun-roc",
+      "dynastyId": "roc",
+      "personId": "gu-weijun",
+      "title": "国务院摄行",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1926,
+        "month": 10,
+        "abs": 23121,
+        "day": 1
+      },
+      "end": {
+        "year": 1927,
+        "month": 6,
+        "abs": 23129,
+        "day": 16
+      },
+      "startAbs": 23121,
+      "endAbs": 23129,
+      "precision": "day",
+      "isInformalMonarch": true,
+      "isMain": true
+    },
+    {
+      "id": "reign-hu-weide-roc-2",
+      "dynastyId": "roc",
+      "personId": "hu-weide",
+      "title": "国务院摄行",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1927,
+        "month": 6,
+        "abs": 23129,
+        "day": 16
+      },
+      "end": {
+        "year": 1927,
+        "month": 6,
+        "abs": 23129,
+        "day": 18
+      },
+      "startAbs": 23129,
+      "endAbs": 23129,
+      "precision": "day",
+      "isInformalMonarch": true,
+      "isMain": true
+    },
+    {
+      "id": "reign-zhang-zuolin-roc",
+      "dynastyId": "roc",
+      "personId": "zhang-zuolin",
+      "title": "陆海军大元帅",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1927,
+        "month": 6,
+        "abs": 23129,
+        "day": 18
+      },
+      "end": {
+        "year": 1928,
+        "month": 6,
+        "abs": 23141,
+        "day": 3
+      },
+      "startAbs": 23129,
+      "endAbs": 23141,
+      "precision": "day",
+      "isInformalMonarch": true,
+      "isMain": true
+    },
+    {
+      "id": "reign-tan-yankai-roc",
+      "dynastyId": "roc",
+      "personId": "tan-yankai",
+      "title": "国民政府主席",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1928,
+        "month": 6,
+        "abs": 23141,
+        "day": 4
+      },
+      "end": {
+        "year": 1928,
+        "month": 10,
+        "abs": 23145,
+        "day": 10
+      },
+      "startAbs": 23141,
+      "endAbs": 23145,
+      "precision": "day",
+      "isInformalMonarch": false,
+      "isMain": true
+    },
+    {
+      "id": "reign-jiang-jieshi-chairman-1-roc",
+      "dynastyId": "roc",
+      "personId": "jiang-jieshi",
+      "title": "国民政府主席",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1928,
+        "month": 10,
+        "abs": 23145,
+        "day": 10
+      },
+      "end": {
+        "year": 1931,
+        "month": 12,
+        "abs": 23183,
+        "day": 15
+      },
+      "startAbs": 23145,
+      "endAbs": 23183,
+      "precision": "day",
+      "isInformalMonarch": false,
+      "isMain": true
+    },
+    {
+      "id": "reign-lin-sen-roc",
+      "dynastyId": "roc",
+      "personId": "lin-sen",
+      "title": "国民政府主席",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1931,
+        "month": 12,
+        "abs": 23183,
+        "day": 15
+      },
+      "end": {
+        "year": 1943,
+        "month": 8,
+        "abs": 23323,
+        "day": 1
+      },
+      "startAbs": 23183,
+      "endAbs": 23323,
+      "precision": "day",
+      "isInformalMonarch": false,
+      "isMain": true
+    },
+    {
+      "id": "reign-jiang-jieshi-chairman-roc",
+      "dynastyId": "roc",
+      "personId": "jiang-jieshi",
+      "title": "国民政府主席",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1943,
+        "month": 8,
+        "abs": 23323,
+        "day": 1
+      },
+      "end": {
+        "year": 1948,
+        "month": 5,
+        "abs": 23380,
+        "day": 20
+      },
+      "startAbs": 23323,
+      "endAbs": 23380,
+      "precision": "day",
+      "isInformalMonarch": false,
+      "isMain": true
+    },
+    {
+      "id": "reign-jiang-jieshi-roc",
+      "dynastyId": "roc",
+      "personId": "jiang-jieshi",
+      "title": "总统",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1948,
+        "month": 5,
+        "abs": 23380,
+        "day": 20
+      },
+      "end": {
+        "year": 1949,
+        "month": 1,
+        "abs": 23388,
+        "day": 21
+      },
+      "startAbs": 23380,
+      "endAbs": 23388,
+      "precision": "day",
+      "isInformalMonarch": false,
+      "isMain": true
+    },
+    {
+      "id": "reign-li-zongren-roc",
+      "dynastyId": "roc",
+      "personId": "li-zongren",
+      "title": "代总统",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1949,
+        "month": 1,
+        "abs": 23388,
+        "day": 21
+      },
+      "end": {
+        "year": 1950,
+        "month": 3,
+        "abs": 23402,
+        "day": 1
+      },
+      "startAbs": 23388,
+      "endAbs": 23402,
+      "precision": "day",
+      "isInformalMonarch": false,
+      "isMain": true
+    },
+    {
+      "id": "reign-jiang-jieshi-roc-2",
+      "dynastyId": "roc",
+      "personId": "jiang-jieshi",
+      "title": "领导人",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1950,
+        "month": 3,
+        "abs": 23402,
+        "day": 1
+      },
+      "end": {
+        "year": 1975,
+        "month": 4,
+        "abs": 23703,
+        "day": 5
+      },
+      "startAbs": 23402,
+      "endAbs": 23703,
+      "precision": "day",
+      "isInformalMonarch": false,
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-jiagan-roc",
+      "dynastyId": "roc",
+      "personId": "yan-jiagan",
+      "title": "领导人",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1975,
+        "month": 4,
+        "abs": 23703,
+        "day": 6
+      },
+      "end": {
+        "year": 1978,
+        "month": 5,
+        "abs": 23740,
+        "day": 20
+      },
+      "startAbs": 23703,
+      "endAbs": 23740,
+      "precision": "day",
+      "isInformalMonarch": false,
+      "isMain": false
+    },
+    {
+      "id": "reign-jiang-jingguo-roc",
+      "dynastyId": "roc",
+      "personId": "jiang-jingguo",
+      "title": "领导人",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1978,
+        "month": 5,
+        "abs": 23740,
+        "day": 20
+      },
+      "end": {
+        "year": 1988,
+        "month": 1,
+        "abs": 23856,
+        "day": 13
+      },
+      "startAbs": 23740,
+      "endAbs": 23856,
+      "precision": "day",
+      "isInformalMonarch": false,
+      "isMain": false
+    },
+    {
+      "id": "reign-li-denghui-roc",
+      "dynastyId": "roc",
+      "personId": "li-denghui",
+      "title": "领导人",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1988,
+        "month": 1,
+        "abs": 23856,
+        "day": 13
+      },
+      "end": {
+        "year": 2000,
+        "month": 5,
+        "abs": 24004,
+        "day": 20
+      },
+      "startAbs": 23856,
+      "endAbs": 24004,
+      "precision": "day",
+      "isInformalMonarch": false,
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-shuibian-roc",
+      "dynastyId": "roc",
+      "personId": "chen-shuibian",
+      "title": "领导人",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 2000,
+        "month": 5,
+        "abs": 24004,
+        "day": 20
+      },
+      "end": {
+        "year": 2008,
+        "month": 5,
+        "abs": 24100,
+        "day": 20
+      },
+      "startAbs": 24004,
+      "endAbs": 24100,
+      "precision": "day",
+      "isInformalMonarch": false,
+      "isMain": false
+    },
+    {
+      "id": "reign-ma-yingjiu-roc",
+      "dynastyId": "roc",
+      "personId": "ma-yingjiu",
+      "title": "领导人",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 2008,
+        "month": 5,
+        "abs": 24100,
+        "day": 20
+      },
+      "end": {
+        "year": 2016,
+        "month": 5,
+        "abs": 24196,
+        "day": 20
+      },
+      "startAbs": 24100,
+      "endAbs": 24196,
+      "precision": "day",
+      "isInformalMonarch": false,
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-yingwen-roc",
+      "dynastyId": "roc",
+      "personId": "cai-yingwen",
+      "title": "领导人",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 2016,
+        "month": 5,
+        "abs": 24196,
+        "day": 20
+      },
+      "end": {
+        "year": 2024,
+        "month": 5,
+        "abs": 24292,
+        "day": 20
+      },
+      "startAbs": 24196,
+      "endAbs": 24292,
+      "precision": "day",
+      "isInformalMonarch": false,
+      "isMain": false
+    },
+    {
+      "id": "reign-lai-qingde-roc",
+      "dynastyId": "roc",
+      "personId": "lai-qingde",
+      "title": "领导人",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 2024,
+        "month": 5,
+        "abs": 24292,
+        "day": 20
+      },
+      "end": null,
+      "startAbs": 24292,
+      "endAbs": 24320,
+      "precision": "month",
+      "isInformalMonarch": false,
+      "isMain": false
+    }
+  ],
+  "events": [
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "yuan-shikai"
+      ],
+      "id": "yuan-shikai-emperor",
+      "name": "袁世凯称帝",
+      "at": {
+        "year": 1915,
+        "month": 12,
+        "abs": 22991
+      },
+      "summary": "袁世凯改国号中华帝国，遭全国反对，83天后取消。",
+      "atAbs": 22991
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "cai-e",
+        "yuan-shikai",
+        "tang-jiyao"
+      ],
+      "timeMode": "span",
+      "id": "national-protection-war",
+      "name": "护国战争",
+      "dateNote": "1915–1916年，蔡锷等讨袁",
+      "start": {
+        "year": 1915,
+        "month": 12,
+        "abs": 22991
+      },
+      "end": {
+        "year": 1916,
+        "month": 6,
+        "abs": 22997
+      },
+      "summary": "蔡锷、唐继尧等起兵讨袁，袁世凯称帝失败。",
+      "startAbs": 22991,
+      "endAbs": 22997
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [],
+      "id": "may-fourth",
+      "name": "五四运动",
+      "dateNote": "1919年5月4日",
+      "at": {
+        "year": 1919,
+        "month": 5,
+        "abs": 23032
+      },
+      "summary": "北京学生抗议巴黎和会山东问题，新文化运动与爱国运动高潮。",
+      "atAbs": 23032
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "day",
+      "dynastyIds": [
+        "qing"
+      ],
+      "participantIds": [
+        "puyi",
+        "feng-yuxiang"
+      ],
+      "id": "puyi-leaves-forbidden-city",
+      "name": "溥仪出宫",
+      "dateNote": "1924年11月5日，国民军将溥仪逐出紫禁城",
+      "at": {
+        "year": 1924,
+        "month": 11,
+        "abs": 23098,
+        "day": 5
+      },
+      "summary": "冯玉祥北京政变后执行修正清室优待条件，溥仪被逐出紫禁城，逊清小朝廷终结。",
+      "atAbs": 23098
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "duan-qirui",
+        "wu-peifu",
+        "zhang-zuolin",
+        "yan-xishan",
+        "feng-yuxiang",
+        "lu-rongting",
+        "tang-jiyao",
+        "liu-xiang"
+      ],
+      "timeMode": "span",
+      "id": "warlord-era",
+      "name": "军阀割据",
+      "dateNote": "1916年袁死至1928年东北易帜，北洋诸系及地方军阀混战",
+      "start": {
+        "year": 1916,
+        "month": 1,
+        "abs": 22992
+      },
+      "end": {
+        "year": 1928,
+        "month": 1,
+        "abs": 23136
+      },
+      "summary": "北洋分裂，直皖直奉混战，地方割据，中央名义大于实权。",
+      "startAbs": 22992,
+      "endAbs": 23136
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "jiang-jieshi"
+      ],
+      "timeMode": "span",
+      "id": "northern-expedition",
+      "name": "北伐战争",
+      "start": {
+        "year": 1926,
+        "month": 7,
+        "abs": 23118
+      },
+      "end": {
+        "year": 1928,
+        "month": 12,
+        "abs": 23147
+      },
+      "summary": "国民革命军自广州北伐，推翻北洋军阀，统一全国。",
+      "startAbs": 23118,
+      "endAbs": 23147
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "zhang-xueliang"
+      ],
+      "id": "northeast-flag-change",
+      "name": "东北易帜",
+      "at": {
+        "year": 1928,
+        "month": 12,
+        "abs": 23147
+      },
+      "summary": "张学良宣布服从国民政府，改挂青天白日旗，名义上全国统一。",
+      "atAbs": 23147
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "zhang-xueliang"
+      ],
+      "id": "mukden-incident",
+      "name": "九一八事变",
+      "dateNote": "1931年9月18日",
+      "at": {
+        "year": 1931,
+        "month": 9,
+        "abs": 23180
+      },
+      "summary": "日本关东军发动事变，侵占东北，十四年抗战开始。",
+      "atAbs": 23180
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "zhang-xueliang",
+        "jiang-jieshi",
+        "zhou-enlai"
+      ],
+      "id": "xi-an-incident",
+      "name": "西安事变",
+      "dateNote": "1936年12月12日",
+      "at": {
+        "year": 1936,
+        "month": 12,
+        "abs": 23243
+      },
+      "summary": "张学良、杨虎城逼蒋抗日，和平解决，国共二次合作。",
+      "atAbs": 23243
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "jiang-jieshi",
+        "mao-zedong",
+        "zhou-enlai",
+        "yan-xishan"
+      ],
+      "timeMode": "span",
+      "id": "resistance-war",
+      "name": "抗日战争",
+      "dateNote": "1937–1945年，全面抗战",
+      "start": {
+        "year": 1937,
+        "month": 7,
+        "abs": 23250
+      },
+      "end": {
+        "year": 1945,
+        "month": 9,
+        "abs": 23348
+      },
+      "summary": "全民族抗战，1945年日本投降，台湾光复。",
+      "startAbs": 23250,
+      "endAbs": 23348
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "jiang-jieshi",
+        "mao-zedong",
+        "li-zongren"
+      ],
+      "timeMode": "span",
+      "id": "civil-war",
+      "name": "解放战争",
+      "start": {
+        "year": 1946,
+        "month": 1,
+        "abs": 23352
+      },
+      "end": {
+        "year": 1949,
+        "month": 12,
+        "abs": 23399
+      },
+      "summary": "国共内战，三大战役后国民党退守台湾，大陆政权更迭。",
+      "startAbs": 23352,
+      "endAbs": 23399
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "jiang-jieshi",
+        "li-zongren"
+      ],
+      "id": "roc-mainland-end",
+      "name": "国民政府迁台",
+      "dateNote": "1949年12月，中央迁台北，大陆时期结束",
+      "at": {
+        "year": 1949,
+        "month": 12,
+        "abs": 23399
+      },
+      "summary": "解放军渡江后国民党退守台湾，中华民国大陆时期终结。",
+      "atAbs": 23399
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-sun-yat-sen-yuan-shikai-succession",
+      "fromRef": "person:sun-yat-sen",
+      "toRef": "person:yuan-shikai",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yuan-shikai-li-yuanhong-succession",
+      "fromRef": "person:yuan-shikai",
+      "toRef": "person:li-yuanhong",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-yuanhong-feng-guozhang-succession",
+      "fromRef": "person:li-yuanhong",
+      "toRef": "person:feng-guozhang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-feng-guozhang-xu-shichang-succession",
+      "fromRef": "person:feng-guozhang",
+      "toRef": "person:xu-shichang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-xu-shichang-zhou-ziqi-succession",
+      "fromRef": "person:xu-shichang",
+      "toRef": "person:zhou-ziqi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhou-ziqi-li-yuanhong-succession",
+      "fromRef": "person:zhou-ziqi",
+      "toRef": "person:li-yuanhong",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-yuanhong-gao-lingwei-succession",
+      "fromRef": "person:li-yuanhong",
+      "toRef": "person:gao-lingwei",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-gao-lingwei-cao-kun-succession",
+      "fromRef": "person:gao-lingwei",
+      "toRef": "person:cao-kun",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-cao-kun-huang-fu-succession",
+      "fromRef": "person:cao-kun",
+      "toRef": "person:huang-fu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-huang-fu-duan-qirui-succession",
+      "fromRef": "person:huang-fu",
+      "toRef": "person:duan-qirui",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-duan-qirui-hu-weide-succession",
+      "fromRef": "person:duan-qirui",
+      "toRef": "person:hu-weide",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-hu-weide-yan-huiqing-succession",
+      "fromRef": "person:hu-weide",
+      "toRef": "person:yan-huiqing",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yan-huiqing-du-xigui-succession",
+      "fromRef": "person:yan-huiqing",
+      "toRef": "person:du-xigui",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-du-xigui-gu-weijun-succession",
+      "fromRef": "person:du-xigui",
+      "toRef": "person:gu-weijun",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-gu-weijun-hu-weide-succession",
+      "fromRef": "person:gu-weijun",
+      "toRef": "person:hu-weide",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-hu-weide-zhang-zuolin-succession",
+      "fromRef": "person:hu-weide",
+      "toRef": "person:zhang-zuolin",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhang-zuolin-tan-yankai-succession",
+      "fromRef": "person:zhang-zuolin",
+      "toRef": "person:tan-yankai",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-tan-yankai-jiang-jieshi-succession",
+      "fromRef": "person:tan-yankai",
+      "toRef": "person:jiang-jieshi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-jiang-jieshi-lin-sen-succession",
+      "fromRef": "person:jiang-jieshi",
+      "toRef": "person:lin-sen",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-lin-sen-jiang-jieshi-succession",
+      "fromRef": "person:lin-sen",
+      "toRef": "person:jiang-jieshi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-jiang-jieshi-li-zongren-succession",
+      "fromRef": "person:jiang-jieshi",
+      "toRef": "person:li-zongren",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-zongren-jiang-jieshi-succession",
+      "fromRef": "person:li-zongren",
+      "toRef": "person:jiang-jieshi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-jiang-jieshi-yan-jiagan-succession",
+      "fromRef": "person:jiang-jieshi",
+      "toRef": "person:yan-jiagan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yan-jiagan-jiang-jingguo-succession",
+      "fromRef": "person:yan-jiagan",
+      "toRef": "person:jiang-jingguo",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-jiang-jingguo-li-denghui-succession",
+      "fromRef": "person:jiang-jingguo",
+      "toRef": "person:li-denghui",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-li-denghui-chen-shuibian-succession",
+      "fromRef": "person:li-denghui",
+      "toRef": "person:chen-shuibian",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-shuibian-ma-yingjiu-succession",
+      "fromRef": "person:chen-shuibian",
+      "toRef": "person:ma-yingjiu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ma-yingjiu-cai-yingwen-succession",
+      "fromRef": "person:ma-yingjiu",
+      "toRef": "person:cai-yingwen",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-cai-yingwen-lai-qingde-succession",
+      "fromRef": "person:cai-yingwen",
+      "toRef": "person:lai-qingde",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-northern-jiang",
+      "fromRef": "event:northern-expedition",
+      "toRef": "person:jiang-jieshi",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-xian-zhang",
+      "fromRef": "event:xi-an-incident",
+      "toRef": "person:zhang-xueliang",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-protection-cai-e",
+      "fromRef": "event:national-protection-war",
+      "toRef": "person:cai-e",
+      "kind": "battle"
+    }
+  ],
+  "supplementalEventDynasties": [
+    {
+      "eventId": "xinhai-revolution",
+      "dynastyId": "roc"
+    }
+  ],
+  "supplementalEventParticipants": [],
+  "preSql": "-- remove stale auto-generated 史料缺 (元首空缺期应留白)\nDELETE FROM reigns WHERE dynasty_id IN ('roc') AND person_id = 'system-missing-ruler';\nDELETE FROM relations WHERE id = 'rel-jiang-jieshi-jiang-jieshi-succession';\nDELETE FROM event_dynasties WHERE event_id = 'puyi-leaves-forbidden-city';",
+  "reignCapitals": [],
+  "manifest": {
+    "slug": "minguo",
+    "title": "中华民国",
+    "window": {
+      "startYear": 1912,
+      "startMonth": 1,
+      "endYear": 2026,
+      "endMonth": 9
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-09-26",
+    "counts": {
+      "persons": 40,
+      "dynasties": 1,
+      "reigns": 31,
+      "events": 12,
+      "relations": 32
+    },
+    "sources": [
+      {
+        "label": "中华民国",
+        "url": "https://zh.wikipedia.org/wiki/中华民国"
+      },
+      {
+        "label": "中华民国国家元首列表",
+        "url": "https://zh.wikipedia.org/wiki/中华民国国家元首列表"
+      },
+      {
+        "label": "北洋政府",
+        "url": "https://zh.wikipedia.org/wiki/北洋政府"
+      },
+      {
+        "label": "军阀",
+        "url": "https://zh.wikipedia.org/wiki/军阀"
+      },
+      {
+        "label": "五四运动",
+        "url": "https://zh.wikipedia.org/wiki/五四运动"
+      },
+      {
+        "label": "抗日战争",
+        "url": "https://zh.wikipedia.org/wiki/抗日战争"
+      }
+    ],
+    "notes": [
+      "覆盖中华民国（1912–2026-09），单行 roc 王朝；各路军阀仅作 persons，不建独立王朝。中华人民共和国不在本包内。",
+      "国家元首按维基百科「中华民国国家元首列表」收录（临时大总统、大总统、国民政府主席、总统）。连任不拆卡。",
+      "孙中山（sun-yat-sen）复用已有 id。蒋介石分四段：国民政府主席 1928–1931、1943–1948，总统 1948–1949、1950–1975。",
+      "不收录：护法军政府、1925–1928 广州/武汉国民政府（汪兆铭等，维基详表仅列 1928 年后主席）、汪精卫伪政权。",
+      "国务院摄行按维基「中华民国国家元首列表」建 informal reign：周自齐、高凌霨、黄郛、胡惟德（两段）、颜惠庆、杜锡珪、顾维钧。",
+      "谭延闿维基自 1928-02-07 任南京国民政府主席，与张作霖安国军政府并立至 6 月；主线自张作霖 1928-06-03 离京后接谭，避免叠卡。",
+      "正统金色截于 1949 年 9 月（十月一日中华人民共和国成立后迁台续统不上金）。1949 年后的台湾地区任期在 reign.title 统一标为「领导人」，人物概述不用「总统」。"
+    ]
+  }
+}

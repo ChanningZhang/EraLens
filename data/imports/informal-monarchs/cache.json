@@ -1,0 +1,403 @@
+{
+  "slug": "informal-monarchs",
+  "window": {
+    "startYear": -841,
+    "startMonth": 1,
+    "endYear": 2026,
+    "endMonth": 9
+  },
+  "persons": [
+    {
+      "id": "gonghe-regency",
+      "name": "周公、召公",
+      "roles": [
+        "摄政"
+      ],
+      "bio": "周厉王出奔后，周公、召公共和行政（一说共伯和摄政）。前841–前828年，共和行政。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/共和_(西周)"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [
+        "共伯和",
+        "周公",
+        "召公"
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "共和行政"
+    },
+    {
+      "id": "shulvping",
+      "name": "述律平",
+      "roles": [
+        "太后"
+      ],
+      "bio": "辽太祖耶律阿保机皇后，应天太后。926年太祖崩后称制，927年推举太宗即位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/述律平"
+        }
+      ],
+      "birth": {
+        "year": 879,
+        "month": 1,
+        "abs": 10548
+      },
+      "death": {
+        "year": 953,
+        "month": 1,
+        "abs": 11436
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "应天太后称制"
+    },
+    {
+      "id": "toregene-khatun",
+      "name": "乃马真后",
+      "roles": [
+        "皇后"
+      ],
+      "bio": "窝阔台皇后，窝阔台汗崩后称制，1241–1246年监国，直到贵由即位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/乃马真后"
+        }
+      ],
+      "birth": null,
+      "death": {
+        "year": 1246,
+        "month": 1,
+        "abs": 14952
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "称制皇后"
+    },
+    {
+      "id": "oghul-qaimish",
+      "name": "海迷失后",
+      "roles": [
+        "皇后"
+      ],
+      "bio": "贵由皇后，贵由汗崩后称制，1248–1251年监国，蒙哥即位后被处死。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/海迷失后"
+        }
+      ],
+      "birth": null,
+      "death": {
+        "year": 1251,
+        "month": 1,
+        "abs": 15012
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "称制皇后"
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-gonghe-zhou-west",
+      "dynastyId": "zhou-west",
+      "personId": "gonghe-regency",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -841,
+        "month": 1,
+        "abs": -10080
+      },
+      "end": {
+        "year": -828,
+        "month": 12,
+        "abs": -9913
+      },
+      "startAbs": -10080,
+      "endAbs": -9913,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isInformalMonarch": true,
+      "isMain": true
+    },
+    {
+      "id": "reign-shulvping-liao",
+      "dynastyId": "liao",
+      "personId": "shulvping",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 926,
+        "month": 9,
+        "day": 6,
+        "abs": 11120
+      },
+      "end": {
+        "year": 927,
+        "month": 12,
+        "day": 10,
+        "abs": 11135
+      },
+      "startAbs": 11120,
+      "endAbs": 11135,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isInformalMonarch": true,
+      "isMain": false
+    },
+    {
+      "id": "reign-guo-wei-regent-han-hou",
+      "dynastyId": "han-hou",
+      "personId": "guo-wei",
+      "title": "监国",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 951,
+        "month": 1,
+        "day": 2,
+        "abs": 11412
+      },
+      "end": {
+        "year": 951,
+        "month": 2,
+        "day": 12,
+        "abs": 11413
+      },
+      "startAbs": 11412,
+      "endAbs": 11413,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isInformalMonarch": true,
+      "isMain": false
+    },
+    {
+      "id": "reign-tolui-mongol",
+      "dynastyId": "mongol-empire",
+      "personId": "tolui",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1227,
+        "month": 8,
+        "day": 25,
+        "abs": 14731
+      },
+      "end": {
+        "year": 1229,
+        "month": 9,
+        "day": 12,
+        "abs": 14756
+      },
+      "startAbs": 14731,
+      "endAbs": 14756,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isInformalMonarch": true,
+      "isMain": false
+    },
+    {
+      "id": "reign-toregene-mongol",
+      "dynastyId": "mongol-empire",
+      "personId": "toregene-khatun",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1241,
+        "month": 12,
+        "day": 11,
+        "abs": 14903
+      },
+      "end": {
+        "year": 1246,
+        "month": 8,
+        "day": 23,
+        "abs": 14959
+      },
+      "startAbs": 14903,
+      "endAbs": 14959,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isInformalMonarch": true,
+      "isMain": false
+    },
+    {
+      "id": "reign-oghul-qaimish-mongol",
+      "dynastyId": "mongol-empire",
+      "personId": "oghul-qaimish",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1248,
+        "month": 4,
+        "day": 20,
+        "abs": 14979
+      },
+      "end": {
+        "year": 1251,
+        "month": 6,
+        "day": 30,
+        "abs": 15017
+      },
+      "startAbs": 14979,
+      "endAbs": 15017,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isInformalMonarch": true,
+      "isMain": false
+    },
+    {
+      "id": "reign-zhu-qiyu-regent-ming",
+      "dynastyId": "ming",
+      "personId": "zhu-qiyu",
+      "title": "郕王监国",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1449,
+        "month": 9,
+        "day": 6,
+        "abs": 17396
+      },
+      "end": {
+        "year": 1449,
+        "month": 9,
+        "day": 22,
+        "abs": 17396
+      },
+      "startAbs": 17396,
+      "endAbs": 17396,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isInformalMonarch": true,
+      "isMain": true
+    }
+  ],
+  "events": [],
+  "relations": [],
+  "supplementalEventDynasties": [],
+  "supplementalEventParticipants": [],
+  "preSql": "UPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-ruzi-ying';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-zhou-ziqi-roc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-gao-lingwei-roc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-huang-fu-roc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-hu-weide-roc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-yan-huiqing-roc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-du-xigui-roc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-gu-weijun-roc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-hu-weide-roc-2';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-duan-qirui-roc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-zhang-zuolin-roc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-song-qingling-dong-biwu-prc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-npc-standing-committee-prc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-zhu-yihai-ming-south';\nUPDATE reigns SET is_informal_monarch = false WHERE id = 'reign-dong-biwu-prc';\nDELETE FROM reigns WHERE id = 'reign-wang-mang-regent';\nDELETE FROM persons WHERE id = 'wang-mang-regent';",
+  "manifest": {
+    "slug": "informal-monarchs",
+    "title": "非正式国君",
+    "importPhase": "post",
+    "postImportOrder": 40,
+    "window": {
+      "startYear": -841,
+      "startMonth": 1,
+      "endYear": 2026,
+      "endMonth": 9
+    },
+    "scope": "cn",
+    "depth": "supplemental",
+    "generatedAt": "2026-09-27",
+    "counts": {
+      "persons": 4,
+      "dynasties": 0,
+      "reigns": 7,
+      "events": 0,
+      "relations": 0
+    },
+    "description": "Informal monarchs: regents, acting heads, joint vice-chairs, and non-formal sovereigns. Marks existing reigns and inserts missing ones with is_informal_monarch = true.",
+    "sources": [
+      {
+        "label": "维基百科 - 共和行政",
+        "url": "https://zh.wikipedia.org/wiki/共和_(西周)"
+      },
+      {
+        "label": "维基百科 - 述律平",
+        "url": "https://zh.wikipedia.org/wiki/述律平"
+      },
+      {
+        "label": "维基百科 - 郭威",
+        "url": "https://zh.wikipedia.org/wiki/郭威"
+      },
+      {
+        "label": "维基百科 - 拖雷",
+        "url": "https://zh.wikipedia.org/wiki/拖雷"
+      },
+      {
+        "label": "维基百科 - 乃马真后",
+        "url": "https://zh.wikipedia.org/wiki/乃马真后"
+      },
+      {
+        "label": "维基百科 - 海迷失后",
+        "url": "https://zh.wikipedia.org/wiki/海迷失后"
+      },
+      {
+        "label": "维基百科 - 朱祁钰",
+        "url": "https://zh.wikipedia.org/wiki/朱祁钰"
+      },
+      {
+        "label": "维基百科 - 朱以海",
+        "url": "https://zh.wikipedia.org/wiki/朱以海"
+      }
+    ],
+    "notes": [
+      "共和行政（前841–828）：史料争议，一说周公、召公共和，一说共伯和摄政；此处建 reign 以承载非正式国君标记。",
+      "述律平（926–927）：应天太后称制，推举太宗前为非正式国君。",
+      "郭威监国（950–951）：后汉末年监国，后建后周；监国期为非正式国君。",
+      "拖雷、乃马真后、海迷失后：蒙古帝国监国/称制，非正式可汗。",
+      "朱祁钰监国（1449-09-06 至 09-22）：土木堡之变后监国约16天，9月22日即位为明代宗。",
+      "鲁王朱以海：绍兴监国，南明并立政权，非正式皇帝。",
+      "段祺瑞、张作霖：北洋军阀时期临时执政、陆海军大元帅，非正式国家元首。",
+      "宋庆龄、董必武、全国人大常委会：国家副主席代行、代主席、机构行使元首职权，非正式国家主席。"
+    ]
+  }
+}

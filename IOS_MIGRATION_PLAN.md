@@ -189,7 +189,7 @@ Test                 -> InMemoryTimelineRepository
 | PostgreSQL | 开发、全量导入、Web API、复杂审计 | 否，由 imports 生成 |
 | SQLite 内容快照 | iOS 离线发布与本地查询 | 否，由 PostgreSQL 导出 |
 
-禁止从 iOS SQLite 反向改历史资料，也禁止人工同时维护 PostgreSQL SQL 和 SQLite SQL。
+禁止从 iOS SQLite 反向改历史资料。历史数据通过 PostgreSQL 导入 SQL 维护，SQLite 内容快照由 PostgreSQL 导出。
 
 ### 5.2 SQLite 内容 schema
 
@@ -332,7 +332,7 @@ Application Support/candidate.sqlite.tmp ← GitHub 数据发布包
 
 ### 5.7 发布前判断“仅数据更新”还是“必须发应用”
 
-不能只根据“改动位于 `data/imports/`”判断。当前不少数据写在 `generate.mjs` 中，生成器同时可能包含规则代码。发布分类必须同时检查：**Git 改动路径、运行时契约指纹、最终 SQLite 内容**。
+不能只根据“改动位于 `data/imports/`”判断。事实数据保存在各包 `cache.json`，统一生成器和 SQL 序列化器也属于数据基础设施。发布分类必须同时检查：**Git 改动路径、运行时契约指纹、最终 SQLite 内容**。
 
 #### 自动分类结果
 
@@ -370,12 +370,12 @@ pnpm release:classify --base <last-data-tag-or-app-tag>
 
 #### 必须人工复核的改动
 
-- 任意 `generate.mjs` 发生变化，因为其中可能同时包含事实数据和生成逻辑。
+- 统一生成器或共享 SQL 序列化器发生变化，因为这会改变所有缓存包的 SQL 输出。
 - manifest notes/sources 之外的导入包结构调整。
 - 表计数发生异常幅度变化、某个时期整体消失、主键大规模重命名或关系大量删除。
 - 导出器生成的 search entries、AbsMonth 或预计算字段变化，但源数据 diff 无法直接解释。
 
-长期应把包内的大段事实记录从 `generate.mjs` 迁入 JSON / `.mjs` 纯数据模块，把所有生成逻辑收敛到 `data/imports/lib/`。这样路径分类器才可能稳定地把纯内容提交判为 `DATA_ONLY`。
+事实记录应直接维护在各包的 `cache.json`；包级生成器不再各自保存事实或特殊处理。这样路径分类器才可能稳定地把纯内容提交判为 `DATA_ONLY`。
 
 #### CI 发布门禁
 

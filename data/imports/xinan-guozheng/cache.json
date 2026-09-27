@@ -1,0 +1,497 @@
+{
+  "slug": "xinan-guozheng",
+  "window": {
+    "startYear": -300,
+    "startMonth": 1,
+    "endYear": -27,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "system-missing-ruler",
+      "name": "史料缺",
+      "roles": [
+        "系统占位"
+      ],
+      "bio": "EraLens 系统保留人物，仅用于标记经考证确认的国君资料缺失区间。",
+      "links": [],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "史料缺"
+    },
+    {
+      "id": "yelang-duotong",
+      "name": "多同",
+      "roles": [
+        "君主"
+      ],
+      "bio": "夜郎侯，汉武帝遣唐蒙通夜郎时在位；《史记》载其国为西南夷最大。在位起讫无通行记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/夜郎"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "夜郎侯"
+    },
+    {
+      "id": "yelang-xin",
+      "name": "兴",
+      "roles": [
+        "君主"
+      ],
+      "bio": "夜郎王，前27年被邛郿侯陈立所杀，夜郎国亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/夜郎"
+        }
+      ],
+      "birth": null,
+      "death": {
+        "year": -27,
+        "month": 1,
+        "abs": -312
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "夜郎王"
+    },
+    {
+      "id": "zhuang-qiao",
+      "name": "庄蹻",
+      "roles": [
+        "君主"
+      ],
+      "bio": "楚将，入滇称滇王，据滇池，开创滇国世系。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/庄蹻"
+        }
+      ],
+      "birth": null,
+      "death": {
+        "year": -256,
+        "month": 1,
+        "abs": -3060
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "滇王"
+    },
+    {
+      "id": "dian-changqiang",
+      "name": "尝羌",
+      "roles": [
+        "君主"
+      ],
+      "bio": "滇王，汉武帝元封二年率众降汉，设益州郡。中间世系多失考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/滇国"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "滇王"
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "yelang",
+      "name": "夜郎",
+      "altNames": [
+        "夜郎国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -300,
+        "month": 1,
+        "abs": -3588
+      },
+      "end": {
+        "year": -27,
+        "month": 1,
+        "abs": -312
+      },
+      "precision": "year",
+      "note": "战国时已有夜郎；汉武帝时夜郎侯多同，末王兴前27年被诛。君主在位年多失考，不强行拉满王朝跨度。"
+    },
+    {
+      "id": "dian",
+      "name": "滇",
+      "altNames": [
+        "滇国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -279,
+        "month": 1,
+        "abs": -3336
+      },
+      "end": {
+        "year": -109,
+        "month": 1,
+        "abs": -1296
+      },
+      "precision": "year",
+      "note": "楚将庄蹻入滇称王；武帝元封二年（前109）尝羌降汉，设益州郡。庄蹻与尝羌之间世系失考。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-yelang-duotong-yelang",
+      "dynastyId": "yelang",
+      "personId": "yelang-duotong",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -140,
+        "month": 1,
+        "abs": -1668
+      },
+      "end": {
+        "year": -120,
+        "month": 12,
+        "abs": -1417
+      },
+      "startAbs": -1668,
+      "endAbs": -1417,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yelang-xin-yelang",
+      "dynastyId": "yelang",
+      "personId": "yelang-xin",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -30,
+        "month": 1,
+        "abs": -348
+      },
+      "end": {
+        "year": -27,
+        "month": 12,
+        "abs": -301
+      },
+      "startAbs": -348,
+      "endAbs": -301,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-zhuang-qiao-dian",
+      "dynastyId": "dian",
+      "personId": "zhuang-qiao",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -279,
+        "month": 1,
+        "abs": -3336
+      },
+      "end": {
+        "year": -256,
+        "month": 12,
+        "abs": -3049
+      },
+      "startAbs": -3336,
+      "endAbs": -3049,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-dian-changqiang-dian",
+      "dynastyId": "dian",
+      "personId": "dian-changqiang",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -115,
+        "month": 1,
+        "abs": -1368
+      },
+      "end": {
+        "year": -109,
+        "month": 12,
+        "abs": -1285
+      },
+      "startAbs": -1368,
+      "endAbs": -1285,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-missing-yelang--119",
+      "dynastyId": "yelang",
+      "personId": "system-missing-ruler",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -119,
+        "month": 1,
+        "abs": -1416
+      },
+      "end": {
+        "year": -31,
+        "month": 12,
+        "abs": -349
+      },
+      "startAbs": -1416,
+      "endAbs": -349,
+      "precision": "year",
+      "isMain": false
+    },
+    {
+      "id": "reign-missing-dian--255",
+      "dynastyId": "dian",
+      "personId": "system-missing-ruler",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": -255,
+        "month": 1,
+        "abs": -3048
+      },
+      "end": {
+        "year": -116,
+        "month": 12,
+        "abs": -1369
+      },
+      "startAbs": -3048,
+      "endAbs": -1369,
+      "precision": "year",
+      "isMain": false
+    }
+  ],
+  "events": [
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "yelang"
+      ],
+      "participantIds": [
+        "yelang-duotong"
+      ],
+      "id": "tangmeng-tong-yelang",
+      "name": "唐蒙通夜郎",
+      "at": {
+        "year": -135,
+        "month": 12,
+        "abs": -1597
+      },
+      "summary": "汉武帝遣唐蒙出使夜郎，夜郎侯多同归附，开西南夷通道。",
+      "atAbs": -1597
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [],
+      "participantIds": [],
+      "id": "han-pacify-southwest-yi",
+      "name": "汉平西南夷",
+      "at": {
+        "year": -111,
+        "month": 12,
+        "abs": -1309
+      },
+      "summary": "汉武帝遣郭昌、卫广等伐西南夷，且兰（头兰）及邛都、莋都、冉駹、白马等国为汉所灭。",
+      "atAbs": -1309
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "dian"
+      ],
+      "participantIds": [
+        "dian-changqiang"
+      ],
+      "id": "dian-surrender-han",
+      "name": "滇国降汉",
+      "at": {
+        "year": -109,
+        "month": 12,
+        "abs": -1285
+      },
+      "summary": "汉武帝元封二年，滇王尝羌率众降汉，设益州郡。",
+      "atAbs": -1285
+    },
+    {
+      "kind": "idiom",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "yelang"
+      ],
+      "participantIds": [
+        "yelang-duotong"
+      ],
+      "id": "yelang-xin-killed",
+      "name": "夜郎自大",
+      "at": {
+        "year": -122,
+        "month": 12,
+        "abs": -1441
+      },
+      "summary": "《史记·西南夷列传》记载夜郎侯多同问汉使“汉孰与我大”，后世凝为成语“夜郎自大”。",
+      "meaning": "比喻见识狭窄、眼光短浅而自以为了不起。",
+      "atAbs": -1441
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-yelang-duotong-yelang-xin-succession",
+      "fromRef": "person:yelang-duotong",
+      "toRef": "person:yelang-xin",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zhuang-qiao-dian-changqiang-succession",
+      "fromRef": "person:zhuang-qiao",
+      "toRef": "person:dian-changqiang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-tangmeng-yelang",
+      "fromRef": "event:tangmeng-tong-yelang",
+      "toRef": "dynasty:yelang",
+      "kind": "other"
+    },
+    {
+      "id": "rel-han-pacify-southwest-yi",
+      "fromRef": "event:han-pacify-southwest-yi",
+      "toRef": "dynasty:han-west",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-dian-surrender",
+      "fromRef": "event:dian-surrender-han",
+      "toRef": "dynasty:dian",
+      "kind": "other"
+    },
+    {
+      "id": "rel-yelang-xin-killed",
+      "fromRef": "event:yelang-xin-killed",
+      "toRef": "person:yelang-xin",
+      "kind": "other"
+    }
+  ],
+  "supplementalEventDynasties": [
+    {
+      "eventId": "tangmeng-tong-yelang",
+      "dynastyId": "han-west"
+    },
+    {
+      "eventId": "han-pacify-southwest-yi",
+      "dynastyId": "han-west"
+    },
+    {
+      "eventId": "dian-surrender-han",
+      "dynastyId": "han-west"
+    }
+  ],
+  "supplementalEventParticipants": [],
+  "preSql": "DELETE FROM event_dynasties WHERE event_id = 'yelang-xin-killed' AND dynasty_id = 'han-west';\nDELETE FROM event_participants WHERE event_id = 'yelang-xin-killed';\nDELETE FROM event_dynasties WHERE dynasty_id IN ('qiongdu', 'zuodu', 'ranmang', 'baima', 'qielan', 'laomo');\nDELETE FROM event_dynasties WHERE event_id = 'han-destroy-qielan';\nDELETE FROM event_participants WHERE person_id IN ('qiong-jun', 'zuo-hou', 'qielan-jun');\nDELETE FROM event_participants WHERE event_id = 'han-destroy-qielan';\nDELETE FROM relations WHERE id = 'rel-han-destroy-qielan';\nDELETE FROM reigns WHERE id IN ('reign-qiong-jun-qiongdu', 'reign-zuo-hou-zuodu', 'reign-qielan-jun-qielan');\nDELETE FROM reigns WHERE dynasty_id IN ('qiongdu', 'zuodu', 'ranmang', 'baima', 'qielan', 'laomo');\nDELETE FROM persons WHERE id IN ('qiong-jun', 'zuo-hou', 'qielan-jun');\nDELETE FROM dynasties WHERE id IN ('qiongdu', 'zuodu', 'ranmang', 'baima', 'qielan', 'laomo');\nDELETE FROM events WHERE id = 'han-destroy-qielan';",
+  "manifest": {
+    "slug": "xinan-guozheng",
+    "title": "西汉西南夷诸国（含夜郎）",
+    "window": {
+      "startYear": -300,
+      "startMonth": 1,
+      "endYear": -27,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-09-13",
+    "counts": {
+      "persons": 4,
+      "dynasties": 2,
+      "reigns": 4,
+      "events": 4,
+      "relations": 6
+    },
+    "sources": [
+      {
+        "label": "史记·西南夷列传",
+        "url": "https://zh.wikipedia.org/wiki/西南夷"
+      },
+      {
+        "label": "夜郎",
+        "url": "https://zh.wikipedia.org/wiki/夜郎"
+      },
+      {
+        "label": "滇国",
+        "url": "https://zh.wikipedia.org/wiki/滇国"
+      },
+      {
+        "label": "庄蹻",
+        "url": "https://zh.wikipedia.org/wiki/庄蹻"
+      }
+    ],
+    "notes": [
+      "覆盖夜郎、滇国两大西南夷政权；其余小国仅保留汉平西南夷事件，不单独建王朝行。",
+      "君主在位年无通行记载时，仅取史料锚点前后短窗口，禁止用王朝起讫年硬填。",
+      "多同取唐蒙通夜郎（前135）前后约二十年；兴取被杀前数年；尝羌取降汉前数年。",
+      "庄蹻与尝羌之间、多同与兴之间世系失考，中间空缺不补齐。",
+      "precision=year，scope=cn，region=east_asia。"
+    ]
+  }
+}

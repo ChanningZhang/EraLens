@@ -1,0 +1,4998 @@
+{
+  "slug": "reign-capitals",
+  "window": {
+    "startYear": -2804,
+    "startMonth": 1,
+    "endYear": 2026,
+    "endMonth": 12
+  },
+  "reignCapitals": [
+    {
+      "reignId": "reign-achen-tuyuhun",
+      "capitalId": "cap-tuyuhun-fushicheng-329"
+    },
+    {
+      "reignId": "reign-aidengli-kehan-huihu",
+      "capitalId": "cap-huihu-yahzhang-8928"
+    },
+    {
+      "reignId": "reign-ancang-wang-gaogouli",
+      "capitalId": "cap-gaogouli-pyongyang-428"
+    },
+    {
+      "reignId": "reign-anyuan-kehan-huihu",
+      "capitalId": "cap-huihu-yahzhang-8928"
+    },
+    {
+      "reignId": "reign-anyuan-wang-gaogouli",
+      "capitalId": "cap-gaogouli-pyongyang-428"
+    },
+    {
+      "reignId": "reign-ayurbarwada-yuan",
+      "capitalId": "cap-yuan-dadu"
+    },
+    {
+      "reignId": "reign-ayurbarwada-yuan",
+      "capitalId": "cap-yuan-shangdu-15120"
+    },
+    {
+      "reignId": "reign-baozang-wang-gaogouli",
+      "capitalId": "cap-gaogouli-pyongyang-428"
+    },
+    {
+      "reignId": "reign-bo-qin-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-cao-fang",
+      "capitalId": "cap-wei-luoyang-220"
+    },
+    {
+      "reignId": "reign-cao-huan",
+      "capitalId": "cap-wei-luoyang-220"
+    },
+    {
+      "reignId": "reign-cao-kun-roc",
+      "capitalId": "cap-roc-南京-1912"
+    },
+    {
+      "reignId": "reign-cao-mao",
+      "capitalId": "cap-wei-luoyang-220"
+    },
+    {
+      "reignId": "reign-cao-pi",
+      "capitalId": "cap-wei-luoyang-220"
+    },
+    {
+      "reignId": "reign-cao-r0-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r1-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r10-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r11-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r12-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r13-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r14-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r15-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r16-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r17-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r18-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r19-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r2-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r20-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r21-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r22-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r23-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r24-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r25-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r3-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r4-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r5-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r6-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r7-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r8-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-r9-cao-chunqiu",
+      "capitalId": "cap-cao-chunqiu-taoqiu-1046"
+    },
+    {
+      "reignId": "reign-cao-rui",
+      "capitalId": "cap-wei-luoyang-220"
+    },
+    {
+      "reignId": "reign-chai-rong-zhou-hou",
+      "capitalId": "cap-zhou-hou-kaifeng-951"
+    },
+    {
+      "reignId": "reign-chai-zongxun-zhou-hou",
+      "capitalId": "cap-zhou-hou-kaifeng-951"
+    },
+    {
+      "reignId": "reign-changsheng-wang-gaogouli",
+      "capitalId": "cap-gaogouli-guoneicheng-37"
+    },
+    {
+      "reignId": "reign-changsheng-wang-gaogouli",
+      "capitalId": "cap-gaogouli-pyongyang-428"
+    },
+    {
+      "reignId": "reign-chen-baxian",
+      "capitalId": "cap-chen-nan-jiankang-557"
+    },
+    {
+      "reignId": "reign-chen-bozong",
+      "capitalId": "cap-chen-nan-jiankang-557"
+    },
+    {
+      "reignId": "reign-chen-li-chen-han",
+      "capitalId": "cap-chen-han-wuchang-1362"
+    },
+    {
+      "reignId": "reign-chen-qian",
+      "capitalId": "cap-chen-nan-jiankang-557"
+    },
+    {
+      "reignId": "reign-chen-shubao",
+      "capitalId": "cap-chen-nan-jiankang-557"
+    },
+    {
+      "reignId": "reign-chen-xu",
+      "capitalId": "cap-chen-nan-jiankang-557"
+    },
+    {
+      "reignId": "reign-chen-youliang-chen-han",
+      "capitalId": "cap-chen-han-jiangzhou-1360"
+    },
+    {
+      "reignId": "reign-chen-youliang-chen-han",
+      "capitalId": "cap-chen-han-wuchang-1362"
+    },
+    {
+      "reignId": "reign-chu-r0-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-danyang-1042"
+    },
+    {
+      "reignId": "reign-chu-r1-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-danyang-1042"
+    },
+    {
+      "reignId": "reign-chu-r10-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-danyang-1042"
+    },
+    {
+      "reignId": "reign-chu-r11-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-danyang-1042"
+    },
+    {
+      "reignId": "reign-chu-r12-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-danyang-1042"
+    },
+    {
+      "reignId": "reign-chu-r13-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-danyang-1042"
+    },
+    {
+      "reignId": "reign-chu-r14-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-danyang-1042"
+    },
+    {
+      "reignId": "reign-chu-r15-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-danyang-1042"
+    },
+    {
+      "reignId": "reign-chu-r16-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-danyang-1042"
+    },
+    {
+      "reignId": "reign-chu-r17-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-danyang-1042"
+    },
+    {
+      "reignId": "reign-chu-r17-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-ying-688"
+    },
+    {
+      "reignId": "reign-chu-r18-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-ying-688"
+    },
+    {
+      "reignId": "reign-chu-r19-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-ying-688"
+    },
+    {
+      "reignId": "reign-chu-r2-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-danyang-1042"
+    },
+    {
+      "reignId": "reign-chu-r20-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-ying-688"
+    },
+    {
+      "reignId": "reign-chu-r22-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-ying-688"
+    },
+    {
+      "reignId": "reign-chu-r23-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-ying-688"
+    },
+    {
+      "reignId": "reign-chu-r24-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-ying-688"
+    },
+    {
+      "reignId": "reign-chu-r25-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-ying-688"
+    },
+    {
+      "reignId": "reign-chu-r26-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-ying-688"
+    },
+    {
+      "reignId": "reign-chu-r27-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-ying-688"
+    },
+    {
+      "reignId": "reign-chu-r28-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-ying-688"
+    },
+    {
+      "reignId": "reign-chu-r29-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-ying-688"
+    },
+    {
+      "reignId": "reign-chu-r3-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-danyang-1042"
+    },
+    {
+      "reignId": "reign-chu-r30-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-ying-688"
+    },
+    {
+      "reignId": "reign-chu-r31-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-ying-688"
+    },
+    {
+      "reignId": "reign-chu-r32-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-ying-688"
+    },
+    {
+      "reignId": "reign-chu-r33-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-ying-688"
+    },
+    {
+      "reignId": "reign-chu-r34-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-ying-688"
+    },
+    {
+      "reignId": "reign-chu-r35-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-ying-688"
+    },
+    {
+      "reignId": "reign-chu-r36-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-ying-688"
+    },
+    {
+      "reignId": "reign-chu-r37-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-chen-277"
+    },
+    {
+      "reignId": "reign-chu-r37-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-ying-688"
+    },
+    {
+      "reignId": "reign-chu-r38-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-chen-277"
+    },
+    {
+      "reignId": "reign-chu-r38-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-shouchun-240"
+    },
+    {
+      "reignId": "reign-chu-r39-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-shouchun-240"
+    },
+    {
+      "reignId": "reign-chu-r4-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-danyang-1042"
+    },
+    {
+      "reignId": "reign-chu-r40-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-shouchun-240"
+    },
+    {
+      "reignId": "reign-chu-r41-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-shouchun-240"
+    },
+    {
+      "reignId": "reign-chu-r42-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-shouchun-240"
+    },
+    {
+      "reignId": "reign-chu-r5-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-danyang-1042"
+    },
+    {
+      "reignId": "reign-chu-r6-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-danyang-1042"
+    },
+    {
+      "reignId": "reign-chu-r7-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-danyang-1042"
+    },
+    {
+      "reignId": "reign-chu-r8-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-danyang-1042"
+    },
+    {
+      "reignId": "reign-chu-r9-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-danyang-1042"
+    },
+    {
+      "reignId": "reign-cida-wang-gaogouli",
+      "capitalId": "cap-gaogouli-guoneicheng-37"
+    },
+    {
+      "reignId": "reign-daewuseong-gaogouli",
+      "capitalId": "cap-gaogouli-guoneicheng-37"
+    },
+    {
+      "reignId": "reign-dian-changqiang-dian",
+      "capitalId": "cap-dian-dianchi-279"
+    },
+    {
+      "reignId": "reign-dong-biwu-prc",
+      "capitalId": "cap-prc-beijing-1949"
+    },
+    {
+      "reignId": "reign-dongchuan-wang-gaogouli",
+      "capitalId": "cap-gaogouli-guoneicheng-37"
+    },
+    {
+      "reignId": "reign-dou-jiande-xia-dou-jiande",
+      "capitalId": "cap-xia-dou-jiande-leshou-618"
+    },
+    {
+      "reignId": "reign-dou-jiande-xia-dou-jiande",
+      "capitalId": "cap-xia-dou-jiande-mingzhou-619"
+    },
+    {
+      "reignId": "reign-du-xigui-roc",
+      "capitalId": "cap-roc-南京-1912"
+    },
+    {
+      "reignId": "reign-duan-lianyi-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-duan-qirui-roc",
+      "capitalId": "cap-roc-南京-1912"
+    },
+    {
+      "reignId": "reign-duan-shouhui-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-duan-sicong-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-duan-silian-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-duan-siliang-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-duan-siping-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-duan-siying-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-duan-sui-xiyan",
+      "capitalId": "cap-xiyan-changzi-384"
+    },
+    {
+      "reignId": "reign-duan-sulian-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-duan-sulong-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-duan-sushun-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-duan-suxing-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-duan-suying-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-duan-suzhen-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-duan-xiangxing-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-duan-xingzhi-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-duan-zhengchun-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-duan-zhengming-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-duan-zhengxing-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-duan-zhengyan-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-duan-zhilian-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-duan-zhixiang-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-duan-zhixing-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-dusong-mangje-tubo",
+      "capitalId": "cap-tubo-luosuo-618"
+    },
+    {
+      "reignId": "reign-duyihou-tuyuhun",
+      "capitalId": "cap-tuyuhun-fushicheng-329"
+    },
+    {
+      "reignId": "reign-feng-ba",
+      "capitalId": "cap-yan-north-longcheng-407"
+    },
+    {
+      "reignId": "reign-feng-fuxi",
+      "capitalId": "cap-san-huang-wanqiu-2804"
+    },
+    {
+      "reignId": "reign-feng-guozhang-roc",
+      "capitalId": "cap-roc-南京-1912"
+    },
+    {
+      "reignId": "reign-feng-hong",
+      "capitalId": "cap-yan-north-longcheng-407"
+    },
+    {
+      "reignId": "reign-feng-nuwa",
+      "capitalId": "cap-san-huang-wanqiu-2804"
+    },
+    {
+      "reignId": "reign-fengcheng-kehan-huihu",
+      "capitalId": "cap-huihu-yahzhang-8928"
+    },
+    {
+      "reignId": "reign-fengshang-wang-gaogouli",
+      "capitalId": "cap-gaogouli-guoneicheng-37"
+    },
+    {
+      "reignId": "reign-fengyi-kehan-huihu",
+      "capitalId": "cap-huihu-yahzhang-8928"
+    },
+    {
+      "reignId": "reign-fu-chai-wu-chunqiu",
+      "capitalId": "cap-wu-chunqiu-gusu-585"
+    },
+    {
+      "reignId": "reign-fu-chong",
+      "capitalId": "cap-qin-front-changan-351"
+    },
+    {
+      "reignId": "reign-fu-deng",
+      "capitalId": "cap-qin-front-changan-351"
+    },
+    {
+      "reignId": "reign-fu-jian",
+      "capitalId": "cap-qin-front-changan-351"
+    },
+    {
+      "reignId": "reign-fu-jian-ming",
+      "capitalId": "cap-qin-front-changan-351"
+    },
+    {
+      "reignId": "reign-fu-pi",
+      "capitalId": "cap-qin-front-changan-351"
+    },
+    {
+      "reignId": "reign-fu-sheng",
+      "capitalId": "cap-qin-front-changan-351"
+    },
+    {
+      "reignId": "reign-fulianchou-tuyuhun",
+      "capitalId": "cap-tuyuhun-fushicheng-329"
+    },
+    {
+      "reignId": "reign-fulin-qing",
+      "capitalId": "cap-qing-beijing"
+    },
+    {
+      "reignId": "reign-fulin-qing",
+      "capitalId": "cap-qing-shengjing"
+    },
+    {
+      "reignId": "reign-fuyun-tuyuhun",
+      "capitalId": "cap-tuyuhun-fushicheng-329"
+    },
+    {
+      "reignId": "reign-gao-baorong-jingnan",
+      "capitalId": "cap-jingnan-jiangling-924"
+    },
+    {
+      "reignId": "reign-gao-baoxu-jingnan",
+      "capitalId": "cap-jingnan-jiangling-924"
+    },
+    {
+      "reignId": "reign-gao-conghe-jingnan",
+      "capitalId": "cap-jingnan-jiangling-924"
+    },
+    {
+      "reignId": "reign-gao-heng",
+      "capitalId": "cap-qi-bei-ye-550"
+    },
+    {
+      "reignId": "reign-gao-jichong-jingnan",
+      "capitalId": "cap-jingnan-jiangling-924"
+    },
+    {
+      "reignId": "reign-gao-jixing-jingnan",
+      "capitalId": "cap-jingnan-jiangling-924"
+    },
+    {
+      "reignId": "reign-gao-lingwei-roc",
+      "capitalId": "cap-roc-南京-1912"
+    },
+    {
+      "reignId": "reign-gao-shengtai-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-gao-wei",
+      "capitalId": "cap-qi-bei-ye-550"
+    },
+    {
+      "reignId": "reign-gao-yan",
+      "capitalId": "cap-qi-bei-ye-550"
+    },
+    {
+      "reignId": "reign-gao-yang",
+      "capitalId": "cap-qi-bei-ye-550"
+    },
+    {
+      "reignId": "reign-gao-yin",
+      "capitalId": "cap-qi-bei-ye-550"
+    },
+    {
+      "reignId": "reign-gao-zhan",
+      "capitalId": "cap-qi-bei-ye-550"
+    },
+    {
+      "reignId": "reign-gao-zhumeng-gaogouli",
+      "capitalId": "cap-gaogouli-guoneicheng-37"
+    },
+    {
+      "reignId": "reign-ge-luofeng-nanzhao",
+      "capitalId": "cap-nanzhao-taihecheng-739"
+    },
+    {
+      "reignId": "reign-ge-luofeng-nanzhao",
+      "capitalId": "cap-nanzhao-yangjumei-779"
+    },
+    {
+      "reignId": "reign-gonghe-zhou-west",
+      "capitalId": "cap-zhou-west-haojing-1046"
+    },
+    {
+      "reignId": "reign-gou-jian-yue-chunqiu",
+      "capitalId": "cap-yue-chunqiu-kuaiji-565"
+    },
+    {
+      "reignId": "reign-gou-jian-yue-chunqiu",
+      "capitalId": "cap-yue-chunqiu-langya-468"
+    },
+    {
+      "reignId": "reign-gu-weijun-roc",
+      "capitalId": "cap-roc-南京-1912"
+    },
+    {
+      "reignId": "reign-guangkaitu-wang-gaogouli",
+      "capitalId": "cap-gaogouli-guoneicheng-37"
+    },
+    {
+      "reignId": "reign-guguo-chuan-wang-gaogouli",
+      "capitalId": "cap-gaogouli-guoneicheng-37"
+    },
+    {
+      "reignId": "reign-guguo-rang-wang-gaogouli",
+      "capitalId": "cap-gaogouli-guoneicheng-37"
+    },
+    {
+      "reignId": "reign-guguo-yuan-wang-gaogouli",
+      "capitalId": "cap-gaogouli-guoneicheng-37"
+    },
+    {
+      "reignId": "reign-guli-peiluo-huihu",
+      "capitalId": "cap-huihu-yahzhang-8928"
+    },
+    {
+      "reignId": "reign-guo-wei-regent-han-hou",
+      "capitalId": "cap-han-hou-kaifeng-947"
+    },
+    {
+      "reignId": "reign-guo-wei-zhou-hou",
+      "capitalId": "cap-zhou-hou-kaifeng-951"
+    },
+    {
+      "reignId": "reign-guyuk-mongol-empire",
+      "capitalId": "cap-mongol-empire-karakorum-1206"
+    },
+    {
+      "reignId": "reign-han-jing-han-warring",
+      "capitalId": "cap-han-warring-pingyang-403"
+    },
+    {
+      "reignId": "reign-han-liner-song-han",
+      "capitalId": "cap-song-han-anfeng-1359"
+    },
+    {
+      "reignId": "reign-han-liner-song-han",
+      "capitalId": "cap-song-han-bianliang-1358"
+    },
+    {
+      "reignId": "reign-han-liner-song-han",
+      "capitalId": "cap-song-han-bozhou-1355"
+    },
+    {
+      "reignId": "reign-han-r1-han-warring",
+      "capitalId": "cap-han-warring-pingyang-403"
+    },
+    {
+      "reignId": "reign-han-r10-han-warring",
+      "capitalId": "cap-han-warring-xinzheng-375"
+    },
+    {
+      "reignId": "reign-han-r2-han-warring",
+      "capitalId": "cap-han-warring-pingyang-403"
+    },
+    {
+      "reignId": "reign-han-r3-han-warring",
+      "capitalId": "cap-han-warring-pingyang-403"
+    },
+    {
+      "reignId": "reign-han-r3-han-warring",
+      "capitalId": "cap-han-warring-xinzheng-375"
+    },
+    {
+      "reignId": "reign-han-r4-han-warring",
+      "capitalId": "cap-han-warring-xinzheng-375"
+    },
+    {
+      "reignId": "reign-han-r5-han-warring",
+      "capitalId": "cap-han-warring-xinzheng-375"
+    },
+    {
+      "reignId": "reign-han-r6-han-warring",
+      "capitalId": "cap-han-warring-xinzheng-375"
+    },
+    {
+      "reignId": "reign-han-r7-han-warring",
+      "capitalId": "cap-han-warring-xinzheng-375"
+    },
+    {
+      "reignId": "reign-han-r8-han-warring",
+      "capitalId": "cap-han-warring-xinzheng-375"
+    },
+    {
+      "reignId": "reign-han-r9-han-warring",
+      "capitalId": "cap-han-warring-xinzheng-375"
+    },
+    {
+      "reignId": "reign-han-zhuo",
+      "capitalId": "cap-xia-diqiu-1989"
+    },
+    {
+      "reignId": "reign-han-zhuo",
+      "capitalId": "cap-xia-yangcheng-2070"
+    },
+    {
+      "reignId": "reign-helian-bobo",
+      "capitalId": "cap-xia-hu-tongwancheng-407"
+    },
+    {
+      "reignId": "reign-helian-chang",
+      "capitalId": "cap-xia-hu-tongwancheng-407"
+    },
+    {
+      "reignId": "reign-helian-ding",
+      "capitalId": "cap-xia-hu-tongwancheng-407"
+    },
+    {
+      "reignId": "reign-helu-wu-chunqiu",
+      "capitalId": "cap-wu-chunqiu-gusu-585"
+    },
+    {
+      "reignId": "reign-hong-tianguifu-taiping",
+      "capitalId": "cap-taiping-tianjing-1853"
+    },
+    {
+      "reignId": "reign-hong-xiuquan-taiping",
+      "capitalId": "cap-taiping-tianjing-1853"
+    },
+    {
+      "reignId": "reign-hongli-qing",
+      "capitalId": "cap-qing-beijing"
+    },
+    {
+      "reignId": "reign-hou-jing",
+      "capitalId": "cap-han-houjing-jiankang-552"
+    },
+    {
+      "reignId": "reign-hou-yi",
+      "capitalId": "cap-xia-yangcheng-2070"
+    },
+    {
+      "reignId": "reign-hu-bilie-mongol-empire",
+      "capitalId": "cap-mongol-empire-karakorum-1206"
+    },
+    {
+      "reignId": "reign-hu-bilie-mongol-empire",
+      "capitalId": "cap-yuan-zhongdu-15168"
+    },
+    {
+      "reignId": "reign-hu-bilie-yuan",
+      "capitalId": "cap-yuan-dadu"
+    },
+    {
+      "reignId": "reign-hu-bilie-yuan",
+      "capitalId": "cap-yuan-kaiping-15252"
+    },
+    {
+      "reignId": "reign-hu-bilie-yuan",
+      "capitalId": "cap-yuan-shangdu-15120"
+    },
+    {
+      "reignId": "reign-hu-bilie-yuan",
+      "capitalId": "cap-yuan-zhongdu-15168"
+    },
+    {
+      "reignId": "reign-hu-bilie-yuan-unified",
+      "capitalId": "cap-yuan-dadu"
+    },
+    {
+      "reignId": "reign-hu-bilie-yuan-unified",
+      "capitalId": "cap-yuan-shangdu-15120"
+    },
+    {
+      "reignId": "reign-hu-jintao-prc",
+      "capitalId": "cap-prc-beijing-1949"
+    },
+    {
+      "reignId": "reign-hu-weide-roc",
+      "capitalId": "cap-roc-南京-1912"
+    },
+    {
+      "reignId": "reign-hu-weide-roc-2",
+      "capitalId": "cap-roc-南京-1912"
+    },
+    {
+      "reignId": "reign-huairen-kehan-huihu",
+      "capitalId": "cap-huihu-yahzhang-8928"
+    },
+    {
+      "reignId": "reign-huaixin-kehan-huihu",
+      "capitalId": "cap-huihu-yahzhang-8928"
+    },
+    {
+      "reignId": "reign-huang-fu-roc",
+      "capitalId": "cap-roc-南京-1912"
+    },
+    {
+      "reignId": "reign-huang-taiji-qing",
+      "capitalId": "cap-qing-shengjing"
+    },
+    {
+      "reignId": "reign-irinchibal-yuan",
+      "capitalId": "cap-yuan-dadu"
+    },
+    {
+      "reignId": "reign-irinchibal-yuan",
+      "capitalId": "cap-yuan-shangdu-15120"
+    },
+    {
+      "reignId": "reign-ji-ban",
+      "capitalId": "cap-zhou-east-wangcheng-770"
+    },
+    {
+      "reignId": "reign-ji-bian",
+      "capitalId": "cap-zhou-east-chengzhou-519"
+    },
+    {
+      "reignId": "reign-ji-chonger-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-ji-ding",
+      "capitalId": "cap-zhou-east-chengzhou-519"
+    },
+    {
+      "reignId": "reign-ji-fa",
+      "capitalId": "cap-zhou-west-haojing-1046"
+    },
+    {
+      "reignId": "reign-ji-gai",
+      "capitalId": "cap-zhou-east-chengzhou-519"
+    },
+    {
+      "reignId": "reign-ji-gongsheng",
+      "capitalId": "cap-zhou-west-haojing-1046"
+    },
+    {
+      "reignId": "reign-ji-gui",
+      "capitalId": "cap-zhou-east-wangcheng-770"
+    },
+    {
+      "reignId": "reign-ji-hu",
+      "capitalId": "cap-zhou-west-haojing-1046"
+    },
+    {
+      "reignId": "reign-ji-huqi",
+      "capitalId": "cap-zhou-east-wangcheng-770"
+    },
+    {
+      "reignId": "reign-ji-jian",
+      "capitalId": "cap-zhou-west-haojing-1046"
+    },
+    {
+      "reignId": "reign-ji-jiao",
+      "capitalId": "cap-zhou-east-chengzhou-519"
+    },
+    {
+      "reignId": "reign-ji-jie",
+      "capitalId": "cap-zhou-east-chengzhou-519"
+    },
+    {
+      "reignId": "reign-ji-jing",
+      "capitalId": "cap-zhou-west-haojing-1046"
+    },
+    {
+      "reignId": "reign-ji-ku",
+      "capitalId": "cap-wu-di-diqiu-2356"
+    },
+    {
+      "reignId": "reign-ji-lang",
+      "capitalId": "cap-zhou-east-wangcheng-770"
+    },
+    {
+      "reignId": "reign-ji-lin",
+      "capitalId": "cap-zhou-east-wangcheng-770"
+    },
+    {
+      "reignId": "reign-ji-man",
+      "capitalId": "cap-zhou-west-haojing-1046"
+    },
+    {
+      "reignId": "reign-ji-meng",
+      "capitalId": "cap-zhou-east-wangcheng-770"
+    },
+    {
+      "reignId": "reign-ji-pifang",
+      "capitalId": "cap-zhou-west-haojing-1046"
+    },
+    {
+      "reignId": "reign-ji-quji",
+      "capitalId": "cap-zhou-east-chengzhou-519"
+    },
+    {
+      "reignId": "reign-ji-ren",
+      "capitalId": "cap-zhou-east-chengzhou-519"
+    },
+    {
+      "reignId": "reign-ji-renchen",
+      "capitalId": "cap-zhou-east-wangcheng-770"
+    },
+    {
+      "reignId": "reign-ji-shi-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-ji-shu",
+      "capitalId": "cap-zhou-east-chengzhou-519"
+    },
+    {
+      "reignId": "reign-ji-shuyu-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-ji-song",
+      "capitalId": "cap-zhou-west-haojing-1046"
+    },
+    {
+      "reignId": "reign-ji-tuo",
+      "capitalId": "cap-zhou-east-wangcheng-770"
+    },
+    {
+      "reignId": "reign-ji-wei",
+      "capitalId": "cap-zhou-east-chengzhou-519"
+    },
+    {
+      "reignId": "reign-ji-wu",
+      "capitalId": "cap-zhou-east-chengzhou-519"
+    },
+    {
+      "reignId": "reign-ji-xi",
+      "capitalId": "cap-zhou-east-chengzhou-519"
+    },
+    {
+      "reignId": "reign-ji-xia",
+      "capitalId": "cap-zhou-west-haojing-1046"
+    },
+    {
+      "reignId": "reign-ji-xie",
+      "capitalId": "cap-zhou-west-haojing-1046"
+    },
+    {
+      "reignId": "reign-ji-xiexin",
+      "capitalId": "cap-zhou-east-wangcheng-770"
+    },
+    {
+      "reignId": "reign-ji-xuanyuan",
+      "capitalId": "cap-wu-di-youxiong-2464"
+    },
+    {
+      "reignId": "reign-ji-yan",
+      "capitalId": "cap-zhou-east-wangcheng-314"
+    },
+    {
+      "reignId": "reign-ji-yi",
+      "capitalId": "cap-zhou-east-wangcheng-770"
+    },
+    {
+      "reignId": "reign-ji-yihu",
+      "capitalId": "cap-zhou-west-haojing-1046"
+    },
+    {
+      "reignId": "reign-ji-yijiu",
+      "capitalId": "cap-zhou-east-wangcheng-770"
+    },
+    {
+      "reignId": "reign-ji-yu",
+      "capitalId": "cap-zhou-east-wangcheng-770"
+    },
+    {
+      "reignId": "reign-ji-zhao",
+      "capitalId": "cap-zhou-west-haojing-1046"
+    },
+    {
+      "reignId": "reign-ji-zheng",
+      "capitalId": "cap-zhou-east-wangcheng-770"
+    },
+    {
+      "reignId": "reign-ji-zhi",
+      "capitalId": "cap-wu-di-bo-2208"
+    },
+    {
+      "reignId": "reign-ji-zhi",
+      "capitalId": "cap-wu-di-diqiu-2356"
+    },
+    {
+      "reignId": "reign-ji-zhuanxu",
+      "capitalId": "cap-wu-di-diqiu-2356"
+    },
+    {
+      "reignId": "reign-ji-zhuanxu",
+      "capitalId": "cap-wu-di-youxiong-2464"
+    },
+    {
+      "reignId": "reign-jiang-dai-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-jiang-jieshi-chairman-1-roc",
+      "capitalId": "cap-roc-南京-1912"
+    },
+    {
+      "reignId": "reign-jiang-jieshi-chairman-roc",
+      "capitalId": "cap-roc-chongqing-1937"
+    },
+    {
+      "reignId": "reign-jiang-jieshi-chairman-roc",
+      "capitalId": "cap-roc-nanjing-23348"
+    },
+    {
+      "reignId": "reign-jiang-jieshi-roc",
+      "capitalId": "cap-roc-nanjing-23348"
+    },
+    {
+      "reignId": "reign-jiang-shinian",
+      "capitalId": "cap-san-huang-wanqiu-2804"
+    },
+    {
+      "reignId": "reign-jiang-xiaobai-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-jiang-zemin-prc",
+      "capitalId": "cap-prc-beijing-1949"
+    },
+    {
+      "reignId": "reign-jieyu-jiasi-huihu",
+      "capitalId": "cap-huihu-yahzhang-8928"
+    },
+    {
+      "reignId": "reign-jin-r1-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r10-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r11-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r12-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r13-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r14-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r15-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r16-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r17-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r18-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r19-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r2-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r20-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r21-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r22-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r24-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r25-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r26-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r27-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r27-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-xinjiang-584"
+    },
+    {
+      "reignId": "reign-jin-r28-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-xinjiang-584"
+    },
+    {
+      "reignId": "reign-jin-r29-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-xinjiang-584"
+    },
+    {
+      "reignId": "reign-jin-r3-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r30-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-xinjiang-584"
+    },
+    {
+      "reignId": "reign-jin-r31-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-xinjiang-584"
+    },
+    {
+      "reignId": "reign-jin-r32-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-xinjiang-584"
+    },
+    {
+      "reignId": "reign-jin-r33-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-xinjiang-584"
+    },
+    {
+      "reignId": "reign-jin-r34-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-xinjiang-584"
+    },
+    {
+      "reignId": "reign-jin-r35-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-xinjiang-584"
+    },
+    {
+      "reignId": "reign-jin-r36-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-xinjiang-584"
+    },
+    {
+      "reignId": "reign-jin-r37-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-xinjiang-584"
+    },
+    {
+      "reignId": "reign-jin-r38-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-xinjiang-584"
+    },
+    {
+      "reignId": "reign-jin-r39-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-xinjiang-584"
+    },
+    {
+      "reignId": "reign-jin-r4-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r5-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r6-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r7-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r8-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-jin-r9-jin-chunqiu",
+      "capitalId": "cap-jin-chunqiu-jiang-1042"
+    },
+    {
+      "reignId": "reign-ju-r1-ju-chunqiu",
+      "capitalId": "cap-ju-chunqiu-ju-615"
+    },
+    {
+      "reignId": "reign-ju-r1b-ju-chunqiu",
+      "capitalId": "cap-ju-chunqiu-ju-615"
+    },
+    {
+      "reignId": "reign-ju-r2-ju-chunqiu",
+      "capitalId": "cap-ju-chunqiu-ju-615"
+    },
+    {
+      "reignId": "reign-ju-r3-ju-chunqiu",
+      "capitalId": "cap-ju-chunqiu-ju-615"
+    },
+    {
+      "reignId": "reign-ju-r4-ju-chunqiu",
+      "capitalId": "cap-ju-chunqiu-ju-615"
+    },
+    {
+      "reignId": "reign-ju-r5-ju-chunqiu",
+      "capitalId": "cap-ju-chunqiu-ju-615"
+    },
+    {
+      "reignId": "reign-ju-r6-ju-chunqiu",
+      "capitalId": "cap-ju-chunqiu-ju-615"
+    },
+    {
+      "reignId": "reign-ju-r7-ju-chunqiu",
+      "capitalId": "cap-ju-chunqiu-ju-615"
+    },
+    {
+      "reignId": "reign-juqu-mengxun",
+      "capitalId": "cap-liang-north-zhangye-397"
+    },
+    {
+      "reignId": "reign-juqu-mujian",
+      "capitalId": "cap-liang-north-zhangye-397"
+    },
+    {
+      "reignId": "reign-kasa-kehan-huihu",
+      "capitalId": "cap-huihu-yahzhang-8928"
+    },
+    {
+      "reignId": "reign-khayishan-yuan",
+      "capitalId": "cap-yuan-dadu"
+    },
+    {
+      "reignId": "reign-khayishan-yuan",
+      "capitalId": "cap-yuan-shangdu-15120"
+    },
+    {
+      "reignId": "reign-khoshila-yuan",
+      "capitalId": "cap-yuan-dadu"
+    },
+    {
+      "reignId": "reign-khoshila-yuan",
+      "capitalId": "cap-yuan-shangdu-15120"
+    },
+    {
+      "reignId": "reign-kuailv-tuyuhun",
+      "capitalId": "cap-tuyuhun-fushicheng-329"
+    },
+    {
+      "reignId": "reign-lang-darma-tubo",
+      "capitalId": "cap-tubo-luosuo-618"
+    },
+    {
+      "reignId": "reign-li-ang",
+      "capitalId": "cap-tang-changan"
+    },
+    {
+      "reignId": "reign-li-ang",
+      "capitalId": "cap-tang-luoyang"
+    },
+    {
+      "reignId": "reign-li-anquan-xixia",
+      "capitalId": "cap-xixia-xingqing-982"
+    },
+    {
+      "reignId": "reign-li-ban",
+      "capitalId": "cap-cheng-han-chengdu-304"
+    },
+    {
+      "reignId": "reign-li-bian-tang-nan",
+      "capitalId": "cap-tang-nan-jinling-937"
+    },
+    {
+      "reignId": "reign-li-bingchang-xixia",
+      "capitalId": "cap-xixia-xingqing-982"
+    },
+    {
+      "reignId": "reign-li-chen-tang",
+      "capitalId": "cap-tang-changan"
+    },
+    {
+      "reignId": "reign-li-chen-tang",
+      "capitalId": "cap-tang-luoyang"
+    },
+    {
+      "reignId": "reign-li-chun",
+      "capitalId": "cap-tang-changan"
+    },
+    {
+      "reignId": "reign-li-chun",
+      "capitalId": "cap-tang-luoyang"
+    },
+    {
+      "reignId": "reign-li-chunyou-xixia",
+      "capitalId": "cap-xixia-xingqing-982"
+    },
+    {
+      "reignId": "reign-li-conghou-tang-hou",
+      "capitalId": "cap-tang-hou-luoyang-923"
+    },
+    {
+      "reignId": "reign-li-congke-tang-hou",
+      "capitalId": "cap-tang-hou-luoyang-923"
+    },
+    {
+      "reignId": "reign-li-cui",
+      "capitalId": "cap-tang-changan"
+    },
+    {
+      "reignId": "reign-li-cui",
+      "capitalId": "cap-tang-luoyang"
+    },
+    {
+      "reignId": "reign-li-cunxu-tang-hou",
+      "capitalId": "cap-tang-hou-luoyang-923"
+    },
+    {
+      "reignId": "reign-li-dan",
+      "capitalId": "cap-tang-changan"
+    },
+    {
+      "reignId": "reign-li-dan",
+      "capitalId": "cap-tang-luoyang"
+    },
+    {
+      "reignId": "reign-li-dan-2",
+      "capitalId": "cap-tang-changan"
+    },
+    {
+      "reignId": "reign-li-dan-2",
+      "capitalId": "cap-tang-luoyang"
+    },
+    {
+      "reignId": "reign-li-deming-xixia",
+      "capitalId": "cap-xixia-xingqing-982"
+    },
+    {
+      "reignId": "reign-li-dewang-xixia",
+      "capitalId": "cap-xixia-xingqing-982"
+    },
+    {
+      "reignId": "reign-li-gao",
+      "capitalId": "cap-liang-xi-jiuquan-400"
+    },
+    {
+      "reignId": "reign-li-heng",
+      "capitalId": "cap-tang-changan"
+    },
+    {
+      "reignId": "reign-li-heng",
+      "capitalId": "cap-tang-luoyang"
+    },
+    {
+      "reignId": "reign-li-heng-mu",
+      "capitalId": "cap-tang-changan"
+    },
+    {
+      "reignId": "reign-li-heng-mu",
+      "capitalId": "cap-tang-luoyang"
+    },
+    {
+      "reignId": "reign-li-jing-nantang-tang-nan",
+      "capitalId": "cap-tang-nan-jinling-937"
+    },
+    {
+      "reignId": "reign-li-jiqian-xixia",
+      "capitalId": "cap-xixia-xingqing-982"
+    },
+    {
+      "reignId": "reign-li-kuo",
+      "capitalId": "cap-tang-changan"
+    },
+    {
+      "reignId": "reign-li-kuo",
+      "capitalId": "cap-tang-luoyang"
+    },
+    {
+      "reignId": "reign-li-liangzuo-xixia",
+      "capitalId": "cap-xixia-xingqing-982"
+    },
+    {
+      "reignId": "reign-li-longji",
+      "capitalId": "cap-tang-changan"
+    },
+    {
+      "reignId": "reign-li-longji",
+      "capitalId": "cap-tang-luoyang"
+    },
+    {
+      "reignId": "reign-li-qi",
+      "capitalId": "cap-cheng-han-chengdu-304"
+    },
+    {
+      "reignId": "reign-li-qianshun-xixia",
+      "capitalId": "cap-xixia-xingqing-982"
+    },
+    {
+      "reignId": "reign-li-renxiao-xixia",
+      "capitalId": "cap-xixia-xingqing-982"
+    },
+    {
+      "reignId": "reign-li-shi",
+      "capitalId": "cap-cheng-han-chengdu-304"
+    },
+    {
+      "reignId": "reign-li-shimin",
+      "capitalId": "cap-tang-changan"
+    },
+    {
+      "reignId": "reign-li-shou",
+      "capitalId": "cap-cheng-han-chengdu-304"
+    },
+    {
+      "reignId": "reign-li-siyuan-tang-hou",
+      "capitalId": "cap-tang-hou-luoyang-923"
+    },
+    {
+      "reignId": "reign-li-song",
+      "capitalId": "cap-tang-changan"
+    },
+    {
+      "reignId": "reign-li-song",
+      "capitalId": "cap-tang-luoyang"
+    },
+    {
+      "reignId": "reign-li-xian",
+      "capitalId": "cap-tang-changan"
+    },
+    {
+      "reignId": "reign-li-xian",
+      "capitalId": "cap-tang-luoyang"
+    },
+    {
+      "reignId": "reign-li-xian-2",
+      "capitalId": "cap-tang-changan"
+    },
+    {
+      "reignId": "reign-li-xian-2",
+      "capitalId": "cap-tang-luoyang"
+    },
+    {
+      "reignId": "reign-li-xian-xixia",
+      "capitalId": "cap-xixia-xingqing-982"
+    },
+    {
+      "reignId": "reign-li-xiannian-prc",
+      "capitalId": "cap-prc-beijing-1949"
+    },
+    {
+      "reignId": "reign-li-xin",
+      "capitalId": "cap-liang-xi-jiuquan-400"
+    },
+    {
+      "reignId": "reign-li-xiong",
+      "capitalId": "cap-cheng-han-chengdu-304"
+    },
+    {
+      "reignId": "reign-li-xuan-tang",
+      "capitalId": "cap-tang-changan"
+    },
+    {
+      "reignId": "reign-li-xuan-tang",
+      "capitalId": "cap-tang-luoyang"
+    },
+    {
+      "reignId": "reign-li-yan-tang",
+      "capitalId": "cap-tang-changan"
+    },
+    {
+      "reignId": "reign-li-yan-tang",
+      "capitalId": "cap-tang-luoyang"
+    },
+    {
+      "reignId": "reign-li-ye-tang",
+      "capitalId": "cap-tang-changan"
+    },
+    {
+      "reignId": "reign-li-ye-tang",
+      "capitalId": "cap-tang-luoyang"
+    },
+    {
+      "reignId": "reign-li-ye-tang",
+      "capitalId": "cap-tang-luoyang-904"
+    },
+    {
+      "reignId": "reign-li-yu-nantang-tang-nan",
+      "capitalId": "cap-tang-nan-jinling-937"
+    },
+    {
+      "reignId": "reign-li-yu-tang",
+      "capitalId": "cap-tang-changan"
+    },
+    {
+      "reignId": "reign-li-yu-tang",
+      "capitalId": "cap-tang-luoyang"
+    },
+    {
+      "reignId": "reign-li-yuan",
+      "capitalId": "cap-tang-changan"
+    },
+    {
+      "reignId": "reign-li-yuanhao-xixia",
+      "capitalId": "cap-xixia-xingqing-982"
+    },
+    {
+      "reignId": "reign-li-yuanhong-roc",
+      "capitalId": "cap-roc-南京-1912"
+    },
+    {
+      "reignId": "reign-li-yuanhong-roc-2",
+      "capitalId": "cap-roc-南京-1912"
+    },
+    {
+      "reignId": "reign-li-zhan",
+      "capitalId": "cap-tang-changan"
+    },
+    {
+      "reignId": "reign-li-zhan",
+      "capitalId": "cap-tang-luoyang"
+    },
+    {
+      "reignId": "reign-li-zhi",
+      "capitalId": "cap-tang-changan"
+    },
+    {
+      "reignId": "reign-li-zhi",
+      "capitalId": "cap-tang-luoyang"
+    },
+    {
+      "reignId": "reign-li-zhu-tang",
+      "capitalId": "cap-tang-luoyang-904"
+    },
+    {
+      "reignId": "reign-li-zicheng-dashun",
+      "capitalId": "cap-dashun-beijing-19728"
+    },
+    {
+      "reignId": "reign-li-zicheng-dashun",
+      "capitalId": "cap-dashun-xian-19728"
+    },
+    {
+      "reignId": "reign-li-zongren-roc",
+      "capitalId": "cap-roc-nanjing-23348"
+    },
+    {
+      "reignId": "reign-li-zunxu-xixia",
+      "capitalId": "cap-xixia-xingqing-982"
+    },
+    {
+      "reignId": "reign-lin-sen-roc",
+      "capitalId": "cap-roc-chongqing-1937"
+    },
+    {
+      "reignId": "reign-lin-sen-roc",
+      "capitalId": "cap-roc-南京-1912"
+    },
+    {
+      "reignId": "reign-liu-ao",
+      "capitalId": "cap-han-west-changan"
+    },
+    {
+      "reignId": "reign-liu-bang",
+      "capitalId": "cap-han-west-changan"
+    },
+    {
+      "reignId": "reign-liu-bang-han-king-han-west",
+      "capitalId": "cap-han-west-changan"
+    },
+    {
+      "reignId": "reign-liu-bao",
+      "capitalId": "cap-han-east-luoyang"
+    },
+    {
+      "reignId": "reign-liu-bei",
+      "capitalId": "cap-shu-chengdu-221"
+    },
+    {
+      "reignId": "reign-liu-bian",
+      "capitalId": "cap-han-east-luoyang"
+    },
+    {
+      "reignId": "reign-liu-bin-han-nan",
+      "capitalId": "cap-han-nan-guangzhou-11004"
+    },
+    {
+      "reignId": "reign-liu-bing",
+      "capitalId": "cap-han-east-luoyang"
+    },
+    {
+      "reignId": "reign-liu-chang-han-nan",
+      "capitalId": "cap-han-nan-guangzhou-11004"
+    },
+    {
+      "reignId": "reign-liu-che",
+      "capitalId": "cap-han-west-changan"
+    },
+    {
+      "reignId": "reign-liu-chengyou-han-hou",
+      "capitalId": "cap-han-hou-kaifeng-947"
+    },
+    {
+      "reignId": "reign-liu-fuling",
+      "capitalId": "cap-han-west-changan"
+    },
+    {
+      "reignId": "reign-liu-gong",
+      "capitalId": "cap-han-west-changan"
+    },
+    {
+      "reignId": "reign-liu-he",
+      "capitalId": "cap-han-west-changan"
+    },
+    {
+      "reignId": "reign-liu-heng",
+      "capitalId": "cap-han-west-changan"
+    },
+    {
+      "reignId": "reign-liu-hong",
+      "capitalId": "cap-han-east-luoyang"
+    },
+    {
+      "reignId": "reign-liu-hong-shao",
+      "capitalId": "cap-han-west-changan"
+    },
+    {
+      "reignId": "reign-liu-hu",
+      "capitalId": "cap-han-east-luoyang"
+    },
+    {
+      "reignId": "reign-liu-jiyuan-han-bei",
+      "capitalId": "cap-han-bei-taiyuan-951"
+    },
+    {
+      "reignId": "reign-liu-jun",
+      "capitalId": "cap-song-liu-jiankang-420"
+    },
+    {
+      "reignId": "reign-liu-jun-bei-han-bei",
+      "capitalId": "cap-han-bei-taiyuan-951"
+    },
+    {
+      "reignId": "reign-liu-kan",
+      "capitalId": "cap-han-west-changan"
+    },
+    {
+      "reignId": "reign-liu-long",
+      "capitalId": "cap-han-east-luoyang"
+    },
+    {
+      "reignId": "reign-liu-min-han-bei",
+      "capitalId": "cap-han-bei-taiyuan-951"
+    },
+    {
+      "reignId": "reign-liu-panzi-chimei",
+      "capitalId": "cap-chimei-changan-25"
+    },
+    {
+      "reignId": "reign-liu-qi",
+      "capitalId": "cap-han-west-changan"
+    },
+    {
+      "reignId": "reign-liu-shan",
+      "capitalId": "cap-shu-chengdu-221"
+    },
+    {
+      "reignId": "reign-liu-shao",
+      "capitalId": "cap-song-liu-jiankang-420"
+    },
+    {
+      "reignId": "reign-liu-shaoqi-prc",
+      "capitalId": "cap-prc-beijing-1949"
+    },
+    {
+      "reignId": "reign-liu-sheng-han-nan",
+      "capitalId": "cap-han-nan-guangzhou-11004"
+    },
+    {
+      "reignId": "reign-liu-shi",
+      "capitalId": "cap-han-west-changan"
+    },
+    {
+      "reignId": "reign-liu-xie",
+      "capitalId": "cap-han-east-luoyang"
+    },
+    {
+      "reignId": "reign-liu-xin",
+      "capitalId": "cap-han-west-changan"
+    },
+    {
+      "reignId": "reign-liu-xiu",
+      "capitalId": "cap-han-east-luoyang"
+    },
+    {
+      "reignId": "reign-liu-xuan",
+      "capitalId": "cap-han-gengshi-changan-24"
+    },
+    {
+      "reignId": "reign-liu-xuan",
+      "capitalId": "cap-han-gengshi-wan-23"
+    },
+    {
+      "reignId": "reign-liu-xun",
+      "capitalId": "cap-han-west-changan"
+    },
+    {
+      "reignId": "reign-liu-yan-han-nan",
+      "capitalId": "cap-han-nan-guangzhou-11004"
+    },
+    {
+      "reignId": "reign-liu-yao-jin",
+      "capitalId": "cap-han-zhao-changan-319"
+    },
+    {
+      "reignId": "reign-liu-yi-shao",
+      "capitalId": "cap-han-east-luoyang"
+    },
+    {
+      "reignId": "reign-liu-yifu",
+      "capitalId": "cap-song-liu-jiankang-420"
+    },
+    {
+      "reignId": "reign-liu-yilong",
+      "capitalId": "cap-song-liu-jiankang-420"
+    },
+    {
+      "reignId": "reign-liu-ying",
+      "capitalId": "cap-han-west-changan"
+    },
+    {
+      "reignId": "reign-liu-yu-fei",
+      "capitalId": "cap-song-liu-jiankang-420"
+    },
+    {
+      "reignId": "reign-liu-yu-jin",
+      "capitalId": "cap-song-liu-jiankang-420"
+    },
+    {
+      "reignId": "reign-liu-yu-song",
+      "capitalId": "cap-song-liu-jiankang-420"
+    },
+    {
+      "reignId": "reign-liu-zhao",
+      "capitalId": "cap-han-east-luoyang"
+    },
+    {
+      "reignId": "reign-liu-zhi",
+      "capitalId": "cap-han-east-luoyang"
+    },
+    {
+      "reignId": "reign-liu-zhiyuan-han-hou",
+      "capitalId": "cap-han-hou-kaifeng-947"
+    },
+    {
+      "reignId": "reign-liu-zhuang",
+      "capitalId": "cap-han-east-luoyang"
+    },
+    {
+      "reignId": "reign-liu-zhun",
+      "capitalId": "cap-song-liu-jiankang-420"
+    },
+    {
+      "reignId": "reign-liu-ziye",
+      "capitalId": "cap-song-liu-jiankang-420"
+    },
+    {
+      "reignId": "reign-liu-zuan",
+      "capitalId": "cap-han-east-luoyang"
+    },
+    {
+      "reignId": "reign-liu-zuo",
+      "capitalId": "cap-han-east-luoyang"
+    },
+    {
+      "reignId": "reign-liuli-ming-wang-gaogouli",
+      "capitalId": "cap-gaogouli-guoneicheng-37"
+    },
+    {
+      "reignId": "reign-long-shun-nanzhao",
+      "capitalId": "cap-nanzhao-yangjumei-779"
+    },
+    {
+      "reignId": "reign-lu-guang",
+      "capitalId": "cap-liang-back-guzang-386"
+    },
+    {
+      "reignId": "reign-lu-long",
+      "capitalId": "cap-liang-back-guzang-386"
+    },
+    {
+      "reignId": "reign-lu-r1-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r10-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r11-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r12-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r13-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r14-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r15-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r16-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r17-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r18-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r19-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r2-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r20-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r21-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r22-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r23-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r24-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r25-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r26-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r27-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r28-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r29-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r3-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r30-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r31-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r32-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r33-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r34-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r4-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r5-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r6-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r7-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r8-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-r9-lu-chunqiu",
+      "capitalId": "cap-lu-chunqiu-qufu-1042"
+    },
+    {
+      "reignId": "reign-lu-zuan",
+      "capitalId": "cap-liang-back-guzang-386"
+    },
+    {
+      "reignId": "reign-lv-shang-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-ma-xichong-chu-nan",
+      "capitalId": "cap-chu-nan-changsha-10884"
+    },
+    {
+      "reignId": "reign-ma-xie-chu-nan",
+      "capitalId": "cap-chu-nan-changsha-10884"
+    },
+    {
+      "reignId": "reign-ma-xifan-chu-nan",
+      "capitalId": "cap-chu-nan-changsha-10884"
+    },
+    {
+      "reignId": "reign-ma-xiguang-chu-nan",
+      "capitalId": "cap-chu-nan-changsha-10884"
+    },
+    {
+      "reignId": "reign-ma-xisheng-chu-nan",
+      "capitalId": "cap-chu-nan-changsha-10884"
+    },
+    {
+      "reignId": "reign-ma-yin-chu-nan",
+      "capitalId": "cap-chu-nan-changsha-10884"
+    },
+    {
+      "reignId": "reign-mangsong-mangtsen-tubo",
+      "capitalId": "cap-tubo-luosuo-618"
+    },
+    {
+      "reignId": "reign-mao-zedong-prc",
+      "capitalId": "cap-prc-beijing-1949"
+    },
+    {
+      "reignId": "reign-mao-zedong-prc-2",
+      "capitalId": "cap-prc-beijing-1949"
+    },
+    {
+      "reignId": "reign-meichuan-wang-gaogouli",
+      "capitalId": "cap-gaogouli-guoneicheng-37"
+    },
+    {
+      "reignId": "reign-meng-chang-shu-hou",
+      "capitalId": "cap-shu-hou-chengdu-934"
+    },
+    {
+      "reignId": "reign-meng-zhixiang-shu-hou",
+      "capitalId": "cap-shu-hou-chengdu-934"
+    },
+    {
+      "reignId": "reign-ming-sheng-xia-ming",
+      "capitalId": "cap-xia-ming-chongqing-1362"
+    },
+    {
+      "reignId": "reign-ming-yuzhen-xia-ming",
+      "capitalId": "cap-xia-ming-chongqing-1362"
+    },
+    {
+      "reignId": "reign-minning-qing",
+      "capitalId": "cap-qing-beijing"
+    },
+    {
+      "reignId": "reign-minzhong-wang-gaogouli",
+      "capitalId": "cap-gaogouli-guoneicheng-37"
+    },
+    {
+      "reignId": "reign-missing-dian--255",
+      "capitalId": "cap-dian-dianchi-279"
+    },
+    {
+      "reignId": "reign-missing-ju-chunqiu--481",
+      "capitalId": "cap-ju-chunqiu-ju-615"
+    },
+    {
+      "reignId": "reign-missing-teng-chunqiu--296",
+      "capitalId": "cap-teng-chunqiu-teng-599"
+    },
+    {
+      "reignId": "reign-missing-xue-chunqiu--485",
+      "capitalId": "cap-xue-chunqiu-xue-511"
+    },
+    {
+      "reignId": "reign-missing-yelang--119",
+      "capitalId": "cap-yelang-yelang-300"
+    },
+    {
+      "reignId": "reign-missing-zhou-guo-east--360",
+      "capitalId": "cap-zhou-guo-east-gong-367"
+    },
+    {
+      "reignId": "reign-mo-yanchuo-huihu",
+      "capitalId": "cap-huihu-yahzhang-8928"
+    },
+    {
+      "reignId": "reign-mongke-mongol-empire",
+      "capitalId": "cap-mongol-empire-karakorum-1206"
+    },
+    {
+      "reignId": "reign-mu-ne-btsan-tubo",
+      "capitalId": "cap-tubo-luosuo-618"
+    },
+    {
+      "reignId": "reign-muben-wang-gaogouli",
+      "capitalId": "cap-gaogouli-guoneicheng-37"
+    },
+    {
+      "reignId": "reign-mugui-tuyuhun",
+      "capitalId": "cap-tuyuhun-fushicheng-329"
+    },
+    {
+      "reignId": "reign-muliyan-tuyuhun",
+      "capitalId": "cap-tuyuhun-fushicheng-329"
+    },
+    {
+      "reignId": "reign-murong-bao",
+      "capitalId": "cap-yan-back-longcheng-398"
+    },
+    {
+      "reignId": "reign-murong-bao",
+      "capitalId": "cap-yan-back-zhongshan-384"
+    },
+    {
+      "reignId": "reign-murong-chao",
+      "capitalId": "cap-yan-south-guanggu-398"
+    },
+    {
+      "reignId": "reign-murong-chong-xiyan",
+      "capitalId": "cap-xiyan-changzi-384"
+    },
+    {
+      "reignId": "reign-murong-chui",
+      "capitalId": "cap-yan-back-zhongshan-384"
+    },
+    {
+      "reignId": "reign-murong-de-yan",
+      "capitalId": "cap-yan-south-guanggu-398"
+    },
+    {
+      "reignId": "reign-murong-hao-xiyan",
+      "capitalId": "cap-xiyan-changzi-384"
+    },
+    {
+      "reignId": "reign-murong-hong-xiyan",
+      "capitalId": "cap-xiyan-changzi-384"
+    },
+    {
+      "reignId": "reign-murong-huang",
+      "capitalId": "cap-yan-front-ji-348"
+    },
+    {
+      "reignId": "reign-murong-huang",
+      "capitalId": "cap-yan-front-longcheng-337"
+    },
+    {
+      "reignId": "reign-murong-jun",
+      "capitalId": "cap-yan-front-ji-348"
+    },
+    {
+      "reignId": "reign-murong-jun",
+      "capitalId": "cap-yan-front-ye-358"
+    },
+    {
+      "reignId": "reign-murong-sheng",
+      "capitalId": "cap-yan-back-longcheng-398"
+    },
+    {
+      "reignId": "reign-murong-shun-tuyuhun",
+      "capitalId": "cap-tuyuhun-fushicheng-329"
+    },
+    {
+      "reignId": "reign-murong-wei",
+      "capitalId": "cap-yan-front-ye-358"
+    },
+    {
+      "reignId": "reign-murong-xi",
+      "capitalId": "cap-yan-back-longcheng-398"
+    },
+    {
+      "reignId": "reign-murong-yao-xiyan",
+      "capitalId": "cap-xiyan-changzi-384"
+    },
+    {
+      "reignId": "reign-murong-yong-xiyan",
+      "capitalId": "cap-xiyan-changzi-384"
+    },
+    {
+      "reignId": "reign-murong-zhong-xiyan",
+      "capitalId": "cap-xiyan-changzi-384"
+    },
+    {
+      "reignId": "reign-namri-songtsen-tubo",
+      "capitalId": "cap-tubo-luosuo-618"
+    },
+    {
+      "reignId": "reign-npc-standing-committee-prc",
+      "capitalId": "cap-prc-beijing-1949"
+    },
+    {
+      "reignId": "reign-nuohabo-tuyuhun",
+      "capitalId": "cap-tuyuhun-fushicheng-329"
+    },
+    {
+      "reignId": "reign-ogedei-mongol-empire",
+      "capitalId": "cap-mongol-empire-karakorum-1206"
+    },
+    {
+      "reignId": "reign-oghul-qaimish-mongol",
+      "capitalId": "cap-mongol-empire-karakorum-1206"
+    },
+    {
+      "reignId": "reign-pi-luoge-nanzhao",
+      "capitalId": "cap-nanzhao-taihecheng-739"
+    },
+    {
+      "reignId": "reign-pingyuan-wang-gaogouli",
+      "capitalId": "cap-gaogouli-pyongyang-428"
+    },
+    {
+      "reignId": "reign-puyi-qing",
+      "capitalId": "cap-qing-beijing"
+    },
+    {
+      "reignId": "reign-qi-r1-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r10-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r11-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r12-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r13-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r14-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r16-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r17-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r18-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r19-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r2-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r20-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r21-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r22-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r23-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r24-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r25-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r26-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r27-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r28-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r29-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r3-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r30-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r33-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r34-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r35-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r36-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r37-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r38-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r39-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r4-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r5-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r6-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r7-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r8-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-r9-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-qi-state-ai-qi-state-chunqiu",
+      "capitalId": "cap-qi-state-chunqiu-qi-750"
+    },
+    {
+      "reignId": "reign-qi-state-chu-qi-state-chunqiu",
+      "capitalId": "cap-qi-state-chunqiu-qi-750"
+    },
+    {
+      "reignId": "reign-qi-state-dao-qi-state-chunqiu",
+      "capitalId": "cap-qi-state-chunqiu-qi-750"
+    },
+    {
+      "reignId": "reign-qi-state-de-qi-state-chunqiu",
+      "capitalId": "cap-qi-state-chunqiu-qi-750"
+    },
+    {
+      "reignId": "reign-qi-state-gong-qi-state-chunqiu",
+      "capitalId": "cap-qi-state-chunqiu-qi-750"
+    },
+    {
+      "reignId": "reign-qi-state-r1-qi-state-chunqiu",
+      "capitalId": "cap-qi-state-chunqiu-qi-750"
+    },
+    {
+      "reignId": "reign-qi-state-r1b-qi-state-chunqiu",
+      "capitalId": "cap-qi-state-chunqiu-qi-750"
+    },
+    {
+      "reignId": "reign-qi-state-r1c-qi-state-chunqiu",
+      "capitalId": "cap-qi-state-chunqiu-qi-750"
+    },
+    {
+      "reignId": "reign-qi-state-r2-qi-state-chunqiu",
+      "capitalId": "cap-qi-state-chunqiu-qi-750"
+    },
+    {
+      "reignId": "reign-qi-state-r3-qi-state-chunqiu",
+      "capitalId": "cap-qi-state-chunqiu-qi-750"
+    },
+    {
+      "reignId": "reign-qi-state-r4-qi-state-chunqiu",
+      "capitalId": "cap-qi-state-chunqiu-qi-750"
+    },
+    {
+      "reignId": "reign-qi-state-r5-qi-state-chunqiu",
+      "capitalId": "cap-qi-state-chunqiu-qi-750"
+    },
+    {
+      "reignId": "reign-qi-state-r6-qi-state-chunqiu",
+      "capitalId": "cap-qi-state-chunqiu-qi-750"
+    },
+    {
+      "reignId": "reign-qi-state-xi-qi-state-chunqiu",
+      "capitalId": "cap-qi-state-chunqiu-qi-750"
+    },
+    {
+      "reignId": "reign-qi-state-xiao-qi-state-chunqiu",
+      "capitalId": "cap-qi-state-chunqiu-qi-750"
+    },
+    {
+      "reignId": "reign-qi-state-yin-qi-state-chunqiu",
+      "capitalId": "cap-qi-state-chunqiu-qi-750"
+    },
+    {
+      "reignId": "reign-qian-chu-wuyue",
+      "capitalId": "cap-wuyue-hangzhou-907"
+    },
+    {
+      "reignId": "reign-qian-hongcong-wuyue",
+      "capitalId": "cap-wuyue-hangzhou-907"
+    },
+    {
+      "reignId": "reign-qian-hongzuo-wuyue",
+      "capitalId": "cap-wuyue-hangzhou-907"
+    },
+    {
+      "reignId": "reign-qian-liu-wuyue",
+      "capitalId": "cap-wuyue-hangzhou-907"
+    },
+    {
+      "reignId": "reign-qian-yuangui-wuyue",
+      "capitalId": "cap-wuyue-hangzhou-907"
+    },
+    {
+      "reignId": "reign-qifu-chipan",
+      "capitalId": "cap-qin-xi-fuhan-385"
+    },
+    {
+      "reignId": "reign-qifu-gan",
+      "capitalId": "cap-qin-xi-fuhan-385"
+    },
+    {
+      "reignId": "reign-qifu-guoren",
+      "capitalId": "cap-qin-xi-fuhan-385"
+    },
+    {
+      "reignId": "reign-qifu-mumo",
+      "capitalId": "cap-qin-xi-fuhan-385"
+    },
+    {
+      "reignId": "reign-qin-r1-qin",
+      "capitalId": "cap-qin-qianhui-762"
+    },
+    {
+      "reignId": "reign-qin-r1-qin",
+      "capitalId": "cap-qin-xiqi-778"
+    },
+    {
+      "reignId": "reign-qin-r10-qin",
+      "capitalId": "cap-qin-yong-677"
+    },
+    {
+      "reignId": "reign-qin-r11-qin",
+      "capitalId": "cap-qin-yong-677"
+    },
+    {
+      "reignId": "reign-qin-r12-qin",
+      "capitalId": "cap-qin-yong-677"
+    },
+    {
+      "reignId": "reign-qin-r13-qin",
+      "capitalId": "cap-qin-yong-677"
+    },
+    {
+      "reignId": "reign-qin-r14-qin",
+      "capitalId": "cap-qin-yong-677"
+    },
+    {
+      "reignId": "reign-qin-r15-qin",
+      "capitalId": "cap-qin-yong-677"
+    },
+    {
+      "reignId": "reign-qin-r16-qin",
+      "capitalId": "cap-qin-yong-677"
+    },
+    {
+      "reignId": "reign-qin-r17-qin",
+      "capitalId": "cap-qin-yong-677"
+    },
+    {
+      "reignId": "reign-qin-r18-qin",
+      "capitalId": "cap-qin-yong-677"
+    },
+    {
+      "reignId": "reign-qin-r19-qin",
+      "capitalId": "cap-qin-yong-677"
+    },
+    {
+      "reignId": "reign-qin-r2-qin",
+      "capitalId": "cap-qin-pingyang-714"
+    },
+    {
+      "reignId": "reign-qin-r2-qin",
+      "capitalId": "cap-qin-qianhui-762"
+    },
+    {
+      "reignId": "reign-qin-r20-qin",
+      "capitalId": "cap-qin-yong-677"
+    },
+    {
+      "reignId": "reign-qin-r21-qin",
+      "capitalId": "cap-qin-yong-677"
+    },
+    {
+      "reignId": "reign-qin-r22-qin",
+      "capitalId": "cap-qin-yong-677"
+    },
+    {
+      "reignId": "reign-qin-r23-qin",
+      "capitalId": "cap-qin-liyue-383"
+    },
+    {
+      "reignId": "reign-qin-r23-qin",
+      "capitalId": "cap-qin-yong-677"
+    },
+    {
+      "reignId": "reign-qin-r25-qin",
+      "capitalId": "cap-qin-xianyang"
+    },
+    {
+      "reignId": "reign-qin-r26-qin",
+      "capitalId": "cap-qin-xianyang"
+    },
+    {
+      "reignId": "reign-qin-r27-qin",
+      "capitalId": "cap-qin-xianyang"
+    },
+    {
+      "reignId": "reign-qin-r28-qin",
+      "capitalId": "cap-qin-xianyang"
+    },
+    {
+      "reignId": "reign-qin-r29-qin",
+      "capitalId": "cap-qin-xianyang"
+    },
+    {
+      "reignId": "reign-qin-r3-qin",
+      "capitalId": "cap-qin-pingyang-714"
+    },
+    {
+      "reignId": "reign-qin-r4-qin",
+      "capitalId": "cap-qin-pingyang-714"
+    },
+    {
+      "reignId": "reign-qin-r5-qin",
+      "capitalId": "cap-qin-pingyang-714"
+    },
+    {
+      "reignId": "reign-qin-r5-qin",
+      "capitalId": "cap-qin-yong-677"
+    },
+    {
+      "reignId": "reign-qin-r6-qin",
+      "capitalId": "cap-qin-yong-677"
+    },
+    {
+      "reignId": "reign-qin-r7-qin",
+      "capitalId": "cap-qin-yong-677"
+    },
+    {
+      "reignId": "reign-qin-r8-qin",
+      "capitalId": "cap-qin-yong-677"
+    },
+    {
+      "reignId": "reign-qin-r9-qin",
+      "capitalId": "cap-qin-yong-677"
+    },
+    {
+      "reignId": "reign-qu-chulu-xiliao",
+      "capitalId": "cap-xiliao-husi-13476"
+    },
+    {
+      "reignId": "reign-quan-fengyou-nanzhao",
+      "capitalId": "cap-nanzhao-yangjumei-779"
+    },
+    {
+      "reignId": "reign-quan-lisheng-nanzhao",
+      "capitalId": "cap-nanzhao-yangjumei-779"
+    },
+    {
+      "reignId": "reign-quan-longsheng-nanzhao",
+      "capitalId": "cap-nanzhao-yangjumei-779"
+    },
+    {
+      "reignId": "reign-ran-min-ranwei",
+      "capitalId": "cap-ranwei-ye-350"
+    },
+    {
+      "reignId": "reign-rongliu-wang-gaogouli",
+      "capitalId": "cap-gaogouli-pyongyang-428"
+    },
+    {
+      "reignId": "reign-ruzi-ying",
+      "capitalId": "cap-han-west-changan"
+    },
+    {
+      "reignId": "reign-shanshang-wang-gaogouli",
+      "capitalId": "cap-gaogouli-guoneicheng-37"
+    },
+    {
+      "reignId": "reign-shi-chonggui-jin-hou",
+      "capitalId": "cap-jin-hou-taiyuan-936"
+    },
+    {
+      "reignId": "reign-shi-hong",
+      "capitalId": "cap-zhao-back-xiangguo-319"
+    },
+    {
+      "reignId": "reign-shi-hu",
+      "capitalId": "cap-zhao-back-xiangguo-319"
+    },
+    {
+      "reignId": "reign-shi-hu",
+      "capitalId": "cap-zhao-back-ye-336"
+    },
+    {
+      "reignId": "reign-shi-jian",
+      "capitalId": "cap-zhao-back-ye-336"
+    },
+    {
+      "reignId": "reign-shi-jingtang-jin-hou",
+      "capitalId": "cap-jin-hou-taiyuan-936"
+    },
+    {
+      "reignId": "reign-shi-le",
+      "capitalId": "cap-zhao-back-xiangguo-319"
+    },
+    {
+      "reignId": "reign-shi-long-nanzhao",
+      "capitalId": "cap-nanzhao-yangjumei-779"
+    },
+    {
+      "reignId": "reign-shi-shi",
+      "capitalId": "cap-zhao-back-ye-336"
+    },
+    {
+      "reignId": "reign-shi-zhi",
+      "capitalId": "cap-zhao-back-ye-336"
+    },
+    {
+      "reignId": "reign-shi-zun",
+      "capitalId": "cap-zhao-back-ye-336"
+    },
+    {
+      "reignId": "reign-shidebala-yuan",
+      "capitalId": "cap-yuan-dadu"
+    },
+    {
+      "reignId": "reign-shidebala-yuan",
+      "capitalId": "cap-yuan-shangdu-15120"
+    },
+    {
+      "reignId": "reign-shifu-tuyuhun",
+      "capitalId": "cap-tuyuhun-fushicheng-329"
+    },
+    {
+      "reignId": "reign-shilian-tuyuhun",
+      "capitalId": "cap-tuyuhun-fushicheng-329"
+    },
+    {
+      "reignId": "reign-shipi-tuyuhun",
+      "capitalId": "cap-tuyuhun-fushicheng-329"
+    },
+    {
+      "reignId": "reign-shiyin-tuyuhun",
+      "capitalId": "cap-tuyuhun-fushicheng-329"
+    },
+    {
+      "reignId": "reign-shulogan-tuyuhun",
+      "capitalId": "cap-tuyuhun-fushicheng-329"
+    },
+    {
+      "reignId": "reign-shulvping-liao",
+      "capitalId": "cap-liao-shangjing-916"
+    },
+    {
+      "reignId": "reign-shun-huazhen-nanzhao",
+      "capitalId": "cap-nanzhao-yangjumei-779"
+    },
+    {
+      "reignId": "reign-si-bujiang",
+      "capitalId": "cap-xia-zhenxun-1899"
+    },
+    {
+      "reignId": "reign-si-fa",
+      "capitalId": "cap-xia-xihe-1699"
+    },
+    {
+      "reignId": "reign-si-gao",
+      "capitalId": "cap-xia-xihe-1699"
+    },
+    {
+      "reignId": "reign-si-huai",
+      "capitalId": "cap-xia-diqiu-1989"
+    },
+    {
+      "reignId": "reign-si-huai",
+      "capitalId": "cap-xia-zhenxun-1899"
+    },
+    {
+      "reignId": "reign-si-jie",
+      "capitalId": "cap-xia-xihe-1699"
+    },
+    {
+      "reignId": "reign-si-jin",
+      "capitalId": "cap-xia-zhenxun-1899"
+    },
+    {
+      "reignId": "reign-si-jiong",
+      "capitalId": "cap-xia-zhenxun-1899"
+    },
+    {
+      "reignId": "reign-si-kongjia",
+      "capitalId": "cap-xia-xihe-1699"
+    },
+    {
+      "reignId": "reign-si-kongjia",
+      "capitalId": "cap-xia-zhenxun-1899"
+    },
+    {
+      "reignId": "reign-si-mang",
+      "capitalId": "cap-xia-zhenxun-1899"
+    },
+    {
+      "reignId": "reign-si-qi",
+      "capitalId": "cap-xia-yangcheng-2070"
+    },
+    {
+      "reignId": "reign-si-shaokang",
+      "capitalId": "cap-xia-diqiu-1989"
+    },
+    {
+      "reignId": "reign-si-taikang",
+      "capitalId": "cap-xia-yangcheng-2070"
+    },
+    {
+      "reignId": "reign-si-xiang",
+      "capitalId": "cap-xia-yangcheng-2070"
+    },
+    {
+      "reignId": "reign-si-xie",
+      "capitalId": "cap-xia-zhenxun-1899"
+    },
+    {
+      "reignId": "reign-si-yu",
+      "capitalId": "cap-xia-yangcheng-2070"
+    },
+    {
+      "reignId": "reign-si-zhongkang",
+      "capitalId": "cap-xia-yangcheng-2070"
+    },
+    {
+      "reignId": "reign-si-zhu",
+      "capitalId": "cap-xia-diqiu-1989"
+    },
+    {
+      "reignId": "reign-sima-chi",
+      "capitalId": "cap-jin-west-luoyang-266"
+    },
+    {
+      "reignId": "reign-sima-dan",
+      "capitalId": "cap-jin-east-jiankang-317"
+    },
+    {
+      "reignId": "reign-sima-dewen",
+      "capitalId": "cap-jin-east-jiankang-317"
+    },
+    {
+      "reignId": "reign-sima-dezong",
+      "capitalId": "cap-jin-east-jiankang-317"
+    },
+    {
+      "reignId": "reign-sima-pi",
+      "capitalId": "cap-jin-east-jiankang-317"
+    },
+    {
+      "reignId": "reign-sima-rui",
+      "capitalId": "cap-jin-east-jiankang-317"
+    },
+    {
+      "reignId": "reign-sima-shao",
+      "capitalId": "cap-jin-east-jiankang-317"
+    },
+    {
+      "reignId": "reign-sima-yan",
+      "capitalId": "cap-jin-west-luoyang-266"
+    },
+    {
+      "reignId": "reign-sima-yan-cheng",
+      "capitalId": "cap-jin-east-jiankang-317"
+    },
+    {
+      "reignId": "reign-sima-yao",
+      "capitalId": "cap-jin-east-jiankang-317"
+    },
+    {
+      "reignId": "reign-sima-ye",
+      "capitalId": "cap-jin-west-luoyang-266"
+    },
+    {
+      "reignId": "reign-sima-yi-jin",
+      "capitalId": "cap-jin-east-jiankang-317"
+    },
+    {
+      "reignId": "reign-sima-yu-jin",
+      "capitalId": "cap-jin-east-jiankang-317"
+    },
+    {
+      "reignId": "reign-sima-yue",
+      "capitalId": "cap-jin-east-jiankang-317"
+    },
+    {
+      "reignId": "reign-sima-zhong",
+      "capitalId": "cap-jin-west-luoyang-266"
+    },
+    {
+      "reignId": "reign-song-qingling-dong-biwu-prc",
+      "capitalId": "cap-prc-beijing-1949"
+    },
+    {
+      "reignId": "reign-song-r1-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r10-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r11-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r12-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r13-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r14-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r15-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r16-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r17-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r18-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r19-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r2-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r20-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r21-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r22-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r23-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r24-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r25-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r26-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r27-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r28-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r29-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r3-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r30-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r31-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r32-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r33-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r4-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r5-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r6-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r7-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r8-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-r9-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-song-weizi-song-chunqiu",
+      "capitalId": "cap-song-chunqiu-shangqiu-1034"
+    },
+    {
+      "reignId": "reign-songtsen-gampo-tubo",
+      "capitalId": "cap-tubo-luosuo-618"
+    },
+    {
+      "reignId": "reign-suixi-tuyuhun",
+      "capitalId": "cap-tuyuhun-fushicheng-329"
+    },
+    {
+      "reignId": "reign-sun-hao",
+      "capitalId": "cap-wu-jianye-222"
+    },
+    {
+      "reignId": "reign-sun-liang",
+      "capitalId": "cap-wu-jianye-222"
+    },
+    {
+      "reignId": "reign-sun-quan",
+      "capitalId": "cap-wu-jianye-222"
+    },
+    {
+      "reignId": "reign-sun-xiu",
+      "capitalId": "cap-wu-jianye-222"
+    },
+    {
+      "reignId": "reign-sun-yat-sen-roc",
+      "capitalId": "cap-roc-南京-1912"
+    },
+    {
+      "reignId": "reign-taizu-wang-gaogouli",
+      "capitalId": "cap-gaogouli-guoneicheng-37"
+    },
+    {
+      "reignId": "reign-tan-yankai-roc",
+      "capitalId": "cap-roc-南京-1912"
+    },
+    {
+      "reignId": "reign-temujin-mongol-empire",
+      "capitalId": "cap-mongol-empire-karakorum-1206"
+    },
+    {
+      "reignId": "reign-temur-yuan",
+      "capitalId": "cap-yuan-dadu"
+    },
+    {
+      "reignId": "reign-temur-yuan",
+      "capitalId": "cap-yuan-shangdu-15120"
+    },
+    {
+      "reignId": "reign-teng-r2-teng-chunqiu",
+      "capitalId": "cap-teng-chunqiu-teng-599"
+    },
+    {
+      "reignId": "reign-teng-r3-teng-chunqiu",
+      "capitalId": "cap-teng-chunqiu-teng-599"
+    },
+    {
+      "reignId": "reign-teng-r31-teng-chunqiu",
+      "capitalId": "cap-teng-chunqiu-teng-599"
+    },
+    {
+      "reignId": "reign-teng-r33-teng-chunqiu",
+      "capitalId": "cap-teng-chunqiu-teng-599"
+    },
+    {
+      "reignId": "reign-teng-r34-teng-chunqiu",
+      "capitalId": "cap-teng-chunqiu-teng-599"
+    },
+    {
+      "reignId": "reign-teng-r35-teng-chunqiu",
+      "capitalId": "cap-teng-chunqiu-teng-599"
+    },
+    {
+      "reignId": "reign-teng-r36-teng-chunqiu",
+      "capitalId": "cap-teng-chunqiu-teng-599"
+    },
+    {
+      "reignId": "reign-teng-r37-teng-chunqiu",
+      "capitalId": "cap-teng-chunqiu-teng-599"
+    },
+    {
+      "reignId": "reign-teng-r4-teng-chunqiu",
+      "capitalId": "cap-teng-chunqiu-teng-599"
+    },
+    {
+      "reignId": "reign-teng-r5-teng-chunqiu",
+      "capitalId": "cap-teng-chunqiu-teng-599"
+    },
+    {
+      "reignId": "reign-teng-r6-teng-chunqiu",
+      "capitalId": "cap-teng-chunqiu-teng-599"
+    },
+    {
+      "reignId": "reign-tian-he-qi-chunqiu",
+      "capitalId": "cap-qi-chunqiu-linzi-1046"
+    },
+    {
+      "reignId": "reign-tian-shi-jiaodong-warring",
+      "capitalId": "cap-jiaodong-warring-jimo-221"
+    },
+    {
+      "reignId": "reign-togon-temur-yuan",
+      "capitalId": "cap-yuan-dadu"
+    },
+    {
+      "reignId": "reign-togon-temur-yuan",
+      "capitalId": "cap-yuan-shangdu-15120"
+    },
+    {
+      "reignId": "reign-togon-temur-yuan-north",
+      "capitalId": "cap-yuan-dadu"
+    },
+    {
+      "reignId": "reign-togon-temur-yuan-north",
+      "capitalId": "cap-yuan-shangdu-15120"
+    },
+    {
+      "reignId": "reign-tolui-mongol",
+      "capitalId": "cap-mongol-empire-karakorum-1206"
+    },
+    {
+      "reignId": "reign-toregene-mongol",
+      "capitalId": "cap-mongol-empire-karakorum-1206"
+    },
+    {
+      "reignId": "reign-tri-desong-btsan-tubo",
+      "capitalId": "cap-tubo-luosuo-618"
+    },
+    {
+      "reignId": "reign-tri-detsug-nyima-tubo",
+      "capitalId": "cap-tubo-luosuo-618"
+    },
+    {
+      "reignId": "reign-tri-song-detsen-tubo",
+      "capitalId": "cap-tubo-luosuo-618"
+    },
+    {
+      "reignId": "reign-tri-tsug-lde-btsan-tubo",
+      "capitalId": "cap-tubo-luosuo-618"
+    },
+    {
+      "reignId": "reign-tufa-lilugu",
+      "capitalId": "cap-liang-south-guzang-397"
+    },
+    {
+      "reignId": "reign-tufa-rutan",
+      "capitalId": "cap-liang-south-guzang-397"
+    },
+    {
+      "reignId": "reign-tufa-rutan",
+      "capitalId": "cap-liang-south-ledu-405"
+    },
+    {
+      "reignId": "reign-tufa-wugu",
+      "capitalId": "cap-liang-south-guzang-397"
+    },
+    {
+      "reignId": "reign-tugh-temur-yuan",
+      "capitalId": "cap-yuan-dadu"
+    },
+    {
+      "reignId": "reign-tugh-temur-yuan",
+      "capitalId": "cap-yuan-shangdu-15120"
+    },
+    {
+      "reignId": "reign-tugh-temur-yuan-2",
+      "capitalId": "cap-yuan-dadu"
+    },
+    {
+      "reignId": "reign-tugh-temur-yuan-2",
+      "capitalId": "cap-yuan-shangdu-15120"
+    },
+    {
+      "reignId": "reign-tuoba-gui",
+      "capitalId": "cap-wei-north-pingcheng-398"
+    },
+    {
+      "reignId": "reign-tuoba-gui",
+      "capitalId": "cap-wei-north-shengle-386"
+    },
+    {
+      "reignId": "reign-tuoba-hong",
+      "capitalId": "cap-wei-north-pingcheng-398"
+    },
+    {
+      "reignId": "reign-tuoba-jun",
+      "capitalId": "cap-wei-north-pingcheng-398"
+    },
+    {
+      "reignId": "reign-tuoba-kuo",
+      "capitalId": "cap-wei-west-changan-535"
+    },
+    {
+      "reignId": "reign-tuoba-si",
+      "capitalId": "cap-wei-north-pingcheng-398"
+    },
+    {
+      "reignId": "reign-tuoba-tao",
+      "capitalId": "cap-wei-north-pingcheng-398"
+    },
+    {
+      "reignId": "reign-tuoba-yu",
+      "capitalId": "cap-wei-north-pingcheng-398"
+    },
+    {
+      "reignId": "reign-tuyan-tuyuhun",
+      "capitalId": "cap-tuyuhun-fushicheng-329"
+    },
+    {
+      "reignId": "reign-wang-jian-shu-shu-qian",
+      "capitalId": "cap-shu-qian-chengdu-907"
+    },
+    {
+      "reignId": "reign-wang-jipeng-min-fujian",
+      "capitalId": "cap-min-fujian-fuzhou-909"
+    },
+    {
+      "reignId": "reign-wang-mang",
+      "capitalId": "cap-xin-changan-9"
+    },
+    {
+      "reignId": "reign-wang-shenzhi-min-fujian",
+      "capitalId": "cap-min-fujian-fuzhou-909"
+    },
+    {
+      "reignId": "reign-wang-shichong-zheng",
+      "capitalId": "cap-zheng-luoyang-619"
+    },
+    {
+      "reignId": "reign-wang-yan-shu-shu-qian",
+      "capitalId": "cap-shu-qian-chengdu-907"
+    },
+    {
+      "reignId": "reign-wang-yanhan-min-fujian",
+      "capitalId": "cap-min-fujian-fuzhou-909"
+    },
+    {
+      "reignId": "reign-wang-yanjun-min-fujian",
+      "capitalId": "cap-min-fujian-fuzhou-909"
+    },
+    {
+      "reignId": "reign-wang-yanxi-min-fujian",
+      "capitalId": "cap-min-fujian-fuzhou-909"
+    },
+    {
+      "reignId": "reign-wang-yanzheng-min-fujian",
+      "capitalId": "cap-min-fujian-fuzhou-909"
+    },
+    {
+      "reignId": "reign-wanyan-aguda-jin-nvzhen",
+      "capitalId": "cap-jin-nvzhen-huining-1115"
+    },
+    {
+      "reignId": "reign-wanyan-chenglin-jin-nvzhen",
+      "capitalId": "cap-jin-nvzhen-bianjing-1215"
+    },
+    {
+      "reignId": "reign-wanyan-dan-jin-nvzhen",
+      "capitalId": "cap-jin-nvzhen-huining-1115"
+    },
+    {
+      "reignId": "reign-wanyan-jing-jin-nvzhen",
+      "capitalId": "cap-jin-nvzhen-zhongdu-1154"
+    },
+    {
+      "reignId": "reign-wanyan-liang-jin-nvzhen",
+      "capitalId": "cap-jin-nvzhen-huining-1115"
+    },
+    {
+      "reignId": "reign-wanyan-liang-jin-nvzhen",
+      "capitalId": "cap-jin-nvzhen-zhongdu-1154"
+    },
+    {
+      "reignId": "reign-wanyan-sheng-jin-nvzhen",
+      "capitalId": "cap-jin-nvzhen-huining-1115"
+    },
+    {
+      "reignId": "reign-wanyan-shouxu-jin-nvzhen",
+      "capitalId": "cap-jin-nvzhen-bianjing-1215"
+    },
+    {
+      "reignId": "reign-wanyan-xun-jin-nvzhen",
+      "capitalId": "cap-jin-nvzhen-bianjing-1215"
+    },
+    {
+      "reignId": "reign-wanyan-xun-jin-nvzhen",
+      "capitalId": "cap-jin-nvzhen-zhongdu-1154"
+    },
+    {
+      "reignId": "reign-wanyan-yong-jin-nvzhen",
+      "capitalId": "cap-jin-nvzhen-zhongdu-1154"
+    },
+    {
+      "reignId": "reign-wanyan-yongji-jin-nvzhen",
+      "capitalId": "cap-jin-nvzhen-zhongdu-1154"
+    },
+    {
+      "reignId": "reign-wei-r1-wei-warring",
+      "capitalId": "cap-wei-warring-anyi-2397"
+    },
+    {
+      "reignId": "reign-wei-r2-wei-warring",
+      "capitalId": "cap-wei-warring-anyi-2397"
+    },
+    {
+      "reignId": "reign-wei-r2-wei-warring",
+      "capitalId": "cap-wei-warring-daliang-360"
+    },
+    {
+      "reignId": "reign-wei-r3-wei-warring",
+      "capitalId": "cap-wei-warring-daliang-360"
+    },
+    {
+      "reignId": "reign-wei-r4-wei-warring",
+      "capitalId": "cap-wei-warring-daliang-360"
+    },
+    {
+      "reignId": "reign-wei-r5-wei-warring",
+      "capitalId": "cap-wei-warring-daliang-360"
+    },
+    {
+      "reignId": "reign-wei-r6-wei-warring",
+      "capitalId": "cap-wei-warring-daliang-360"
+    },
+    {
+      "reignId": "reign-wei-r7-wei-warring",
+      "capitalId": "cap-wei-warring-daliang-360"
+    },
+    {
+      "reignId": "reign-wei-wen-wei-warring",
+      "capitalId": "cap-wei-warring-anyi-2397"
+    },
+    {
+      "reignId": "reign-weiguo-r0-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r1-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r10-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r11-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r12-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r13-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r14-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r15-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r15-wei-weiguo-2",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r16-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r18-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r19-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r2-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r20-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r21-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r21-wei-weiguo-2",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r22-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r23-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r24-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r25-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r25-wei-weiguo-2",
+      "capitalId": "cap-wei-weiguo-diqiu-558"
+    },
+    {
+      "reignId": "reign-weiguo-r26-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-diqiu-558"
+    },
+    {
+      "reignId": "reign-weiguo-r28-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-diqiu-558"
+    },
+    {
+      "reignId": "reign-weiguo-r29-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-diqiu-558"
+    },
+    {
+      "reignId": "reign-weiguo-r3-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r30-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-diqiu-558"
+    },
+    {
+      "reignId": "reign-weiguo-r30-wei-weiguo-2",
+      "capitalId": "cap-wei-weiguo-diqiu-558"
+    },
+    {
+      "reignId": "reign-weiguo-r31-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-diqiu-558"
+    },
+    {
+      "reignId": "reign-weiguo-r32-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-diqiu-558"
+    },
+    {
+      "reignId": "reign-weiguo-r33-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-diqiu-558"
+    },
+    {
+      "reignId": "reign-weiguo-r35-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-diqiu-558"
+    },
+    {
+      "reignId": "reign-weiguo-r36-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-diqiu-558"
+    },
+    {
+      "reignId": "reign-weiguo-r37-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-diqiu-558"
+    },
+    {
+      "reignId": "reign-weiguo-r38-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-diqiu-558"
+    },
+    {
+      "reignId": "reign-weiguo-r39-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-diqiu-558"
+    },
+    {
+      "reignId": "reign-weiguo-r4-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r40-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-diqiu-558"
+    },
+    {
+      "reignId": "reign-weiguo-r41-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-diqiu-558"
+    },
+    {
+      "reignId": "reign-weiguo-r42-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-diqiu-558"
+    },
+    {
+      "reignId": "reign-weiguo-r43-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-diqiu-558"
+    },
+    {
+      "reignId": "reign-weiguo-r44-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-diqiu-558"
+    },
+    {
+      "reignId": "reign-weiguo-r45-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-diqiu-558"
+    },
+    {
+      "reignId": "reign-weiguo-r46-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-diqiu-558"
+    },
+    {
+      "reignId": "reign-weiguo-r5-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r6-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r7-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r8-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-weiguo-r9-wei-weiguo",
+      "capitalId": "cap-wei-weiguo-chaoge-1040"
+    },
+    {
+      "reignId": "reign-wenzhi-wang-gaogouli",
+      "capitalId": "cap-gaogouli-pyongyang-428"
+    },
+    {
+      "reignId": "reign-wu-r0-wu-chunqiu",
+      "capitalId": "cap-wu-chunqiu-gusu-585"
+    },
+    {
+      "reignId": "reign-wu-r1-wu-chunqiu",
+      "capitalId": "cap-wu-chunqiu-gusu-585"
+    },
+    {
+      "reignId": "reign-wu-r2-wu-chunqiu",
+      "capitalId": "cap-wu-chunqiu-gusu-585"
+    },
+    {
+      "reignId": "reign-wu-r3-wu-chunqiu",
+      "capitalId": "cap-wu-chunqiu-gusu-585"
+    },
+    {
+      "reignId": "reign-wu-r4-wu-chunqiu",
+      "capitalId": "cap-wu-chunqiu-gusu-585"
+    },
+    {
+      "reignId": "reign-wu-zetian-zhou-wu",
+      "capitalId": "cap-zhou-wu-shendu-690"
+    },
+    {
+      "reignId": "reign-wuheti-tuyuhun",
+      "capitalId": "cap-tuyuhun-fushicheng-329"
+    },
+    {
+      "reignId": "reign-xi-jinping-prc",
+      "capitalId": "cap-prc-beijing-1949"
+    },
+    {
+      "reignId": "reign-xiang-yu",
+      "capitalId": "cap-chu-west-pengcheng-206"
+    },
+    {
+      "reignId": "reign-xiao-baojuan",
+      "capitalId": "cap-qi-nan-jiankang-479"
+    },
+    {
+      "reignId": "reign-xiao-baorong",
+      "capitalId": "cap-qi-nan-jiankang-479"
+    },
+    {
+      "reignId": "reign-xiao-cha-xiliang",
+      "capitalId": "cap-xiliang-jiangling-555"
+    },
+    {
+      "reignId": "reign-xiao-cong-xiliang",
+      "capitalId": "cap-xiliang-jiangling-555"
+    },
+    {
+      "reignId": "reign-xiao-daocheng",
+      "capitalId": "cap-qi-nan-jiankang-479"
+    },
+    {
+      "reignId": "reign-xiao-dong",
+      "capitalId": "cap-liang-nan-jiankang-502"
+    },
+    {
+      "reignId": "reign-xiao-fangzhi",
+      "capitalId": "cap-liang-nan-jiankang-502"
+    },
+    {
+      "reignId": "reign-xiao-gang",
+      "capitalId": "cap-liang-nan-jiankang-502"
+    },
+    {
+      "reignId": "reign-xiao-kui-xiliang",
+      "capitalId": "cap-xiliang-jiangling-555"
+    },
+    {
+      "reignId": "reign-xiao-luan",
+      "capitalId": "cap-qi-nan-jiankang-479"
+    },
+    {
+      "reignId": "reign-xiao-tabuyan-xiliao",
+      "capitalId": "cap-xiliao-husi-13476"
+    },
+    {
+      "reignId": "reign-xiao-yan",
+      "capitalId": "cap-liang-nan-jiankang-502"
+    },
+    {
+      "reignId": "reign-xiao-yi",
+      "capitalId": "cap-liang-nan-jiankang-502"
+    },
+    {
+      "reignId": "reign-xiao-ze",
+      "capitalId": "cap-qi-nan-jiankang-479"
+    },
+    {
+      "reignId": "reign-xiao-zhaowen",
+      "capitalId": "cap-qi-nan-jiankang-479"
+    },
+    {
+      "reignId": "reign-xiao-zhaoye",
+      "capitalId": "cap-qi-nan-jiankang-479"
+    },
+    {
+      "reignId": "reign-xiaoshoulin-wang-gaogouli",
+      "capitalId": "cap-gaogouli-guoneicheng-37"
+    },
+    {
+      "reignId": "reign-xichuan-wang-gaogouli",
+      "capitalId": "cap-gaogouli-guoneicheng-37"
+    },
+    {
+      "reignId": "reign-xingda-wang-gaogouli",
+      "capitalId": "cap-gaogouli-guoneicheng-37"
+    },
+    {
+      "reignId": "reign-xiong-zhuang-chu-chunqiu",
+      "capitalId": "cap-chu-chunqiu-ying-688"
+    },
+    {
+      "reignId": "reign-xu-shichang-roc",
+      "capitalId": "cap-roc-南京-1912"
+    },
+    {
+      "reignId": "reign-xu-shouhui-song-xu",
+      "capitalId": "cap-song-xu-hanyang-1356"
+    },
+    {
+      "reignId": "reign-xu-shouhui-song-xu",
+      "capitalId": "cap-song-xu-qishui-1351"
+    },
+    {
+      "reignId": "reign-xuanye-qing",
+      "capitalId": "cap-qing-beijing"
+    },
+    {
+      "reignId": "reign-xue-r1-xue-chunqiu",
+      "capitalId": "cap-xue-chunqiu-xue-511"
+    },
+    {
+      "reignId": "reign-xue-r2-xue-chunqiu",
+      "capitalId": "cap-xue-chunqiu-xue-511"
+    },
+    {
+      "reignId": "reign-xue-r3-xue-chunqiu",
+      "capitalId": "cap-xue-chunqiu-xue-511"
+    },
+    {
+      "reignId": "reign-xue-r4-xue-chunqiu",
+      "capitalId": "cap-xue-chunqiu-xue-511"
+    },
+    {
+      "reignId": "reign-xun-gequan-nanzhao",
+      "capitalId": "cap-nanzhao-yangjumei-779"
+    },
+    {
+      "reignId": "reign-ya-yanchuo-huihu",
+      "capitalId": "cap-huihu-yahzhang-8928"
+    },
+    {
+      "reignId": "reign-yan-huiqing-roc",
+      "capitalId": "cap-roc-南京-1912"
+    },
+    {
+      "reignId": "reign-yan-r1-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r10-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r11-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r12-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r13-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r14-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r14-yan-chunqiu-2",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r15-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r16-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r17-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r18-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r19-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r2-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r20-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r21-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r22-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r23-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r24-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r25-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r26-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r27-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r28-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r3-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r30-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r31-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r32-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r33-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r34-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r35-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r36-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r37-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r4-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r5-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r6-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r7-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r8-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yan-r9-yan-chunqiu",
+      "capitalId": "cap-yan-chunqiu-ji-1044"
+    },
+    {
+      "reignId": "reign-yang-chu-chouchi",
+      "capitalId": "cap-chouchi-chouchi-296"
+    },
+    {
+      "reignId": "reign-yang-guang",
+      "capitalId": "cap-sui-daxing-583"
+    },
+    {
+      "reignId": "reign-yang-guang",
+      "capitalId": "cap-sui-jiangdu-618"
+    },
+    {
+      "reignId": "reign-yang-guo-chouchi-chouchi",
+      "capitalId": "cap-chouchi-chouchi-296"
+    },
+    {
+      "reignId": "reign-yang-hao",
+      "capitalId": "cap-sui-jiangdu-618"
+    },
+    {
+      "reignId": "reign-yang-jian",
+      "capitalId": "cap-sui-changan-581"
+    },
+    {
+      "reignId": "reign-yang-jian",
+      "capitalId": "cap-sui-daxing-583"
+    },
+    {
+      "reignId": "reign-yang-jun-chouchi-chouchi",
+      "capitalId": "cap-chouchi-chouchi-296"
+    },
+    {
+      "reignId": "reign-yang-longyan-wu-shi",
+      "capitalId": "cap-wu-shi-hangzhou-902"
+    },
+    {
+      "reignId": "reign-yang-maosou-chouchi",
+      "capitalId": "cap-chouchi-chouchi-296"
+    },
+    {
+      "reignId": "reign-yang-nandi-chouchi",
+      "capitalId": "cap-chouchi-chouchi-296"
+    },
+    {
+      "reignId": "reign-yang-pu-wu-shi",
+      "capitalId": "cap-wu-shi-hangzhou-902"
+    },
+    {
+      "reignId": "reign-yang-shangkun-prc",
+      "capitalId": "cap-prc-beijing-1949"
+    },
+    {
+      "reignId": "reign-yang-shi-chouchi-chouchi",
+      "capitalId": "cap-chouchi-chouchi-296"
+    },
+    {
+      "reignId": "reign-yang-tong",
+      "capitalId": "cap-sui-luoyang-618"
+    },
+    {
+      "reignId": "reign-yang-tong-chouchi-chouchi",
+      "capitalId": "cap-chouchi-chouchi-296"
+    },
+    {
+      "reignId": "reign-yang-wo-wu-shi",
+      "capitalId": "cap-wu-shi-hangzhou-902"
+    },
+    {
+      "reignId": "reign-yang-xingmi-wu-shi",
+      "capitalId": "cap-wu-shi-hangzhou-902"
+    },
+    {
+      "reignId": "reign-yang-yi-chouchi-chouchi",
+      "capitalId": "cap-chouchi-chouchi-296"
+    },
+    {
+      "reignId": "reign-yang-yizhen-dali",
+      "capitalId": "cap-dali-taihecheng-11244"
+    },
+    {
+      "reignId": "reign-yang-you",
+      "capitalId": "cap-sui-changan-618"
+    },
+    {
+      "reignId": "reign-yang-zuan-chouchi-chouchi",
+      "capitalId": "cap-chouchi-chouchi-296"
+    },
+    {
+      "reignId": "reign-yangyuan-wang-gaogouli",
+      "capitalId": "cap-gaogouli-pyongyang-428"
+    },
+    {
+      "reignId": "reign-yao-chang",
+      "capitalId": "cap-qin-back-changan-384"
+    },
+    {
+      "reignId": "reign-yao-chonghua",
+      "capitalId": "cap-wu-di-pingyang-2139"
+    },
+    {
+      "reignId": "reign-yao-hong",
+      "capitalId": "cap-qin-back-changan-384"
+    },
+    {
+      "reignId": "reign-yao-li-shi-dongliao",
+      "capitalId": "cap-dongliao-kaiyuan-14556"
+    },
+    {
+      "reignId": "reign-yao-xing",
+      "capitalId": "cap-qin-back-changan-384"
+    },
+    {
+      "reignId": "reign-yelang-duotong-yelang",
+      "capitalId": "cap-yelang-yelang-300"
+    },
+    {
+      "reignId": "reign-yelang-xin-yelang",
+      "capitalId": "cap-yelang-yelang-300"
+    },
+    {
+      "reignId": "reign-yelu-abaoji-liao",
+      "capitalId": "cap-liao-shangjing-916"
+    },
+    {
+      "reignId": "reign-yelu-chun-beiliao",
+      "capitalId": "cap-beiliao-linhuang-13464"
+    },
+    {
+      "reignId": "reign-yelu-dashi-xiliao",
+      "capitalId": "cap-xiliao-husi-13476"
+    },
+    {
+      "reignId": "reign-yelu-deguang-liao",
+      "capitalId": "cap-liao-shangjing-916"
+    },
+    {
+      "reignId": "reign-yelu-deguang-liao",
+      "capitalId": "cap-liao-南京-938"
+    },
+    {
+      "reignId": "reign-yelu-gunai-dongliao",
+      "capitalId": "cap-dongliao-kaiyuan-14556"
+    },
+    {
+      "reignId": "reign-yelu-hongji-liao",
+      "capitalId": "cap-liao-shangjing-916"
+    },
+    {
+      "reignId": "reign-yelu-hongji-liao",
+      "capitalId": "cap-liao-南京-938"
+    },
+    {
+      "reignId": "reign-yelu-jing-liao",
+      "capitalId": "cap-liao-shangjing-916"
+    },
+    {
+      "reignId": "reign-yelu-jing-liao",
+      "capitalId": "cap-liao-南京-938"
+    },
+    {
+      "reignId": "reign-yelu-liuge-dongliao",
+      "capitalId": "cap-dongliao-kaiyuan-14556"
+    },
+    {
+      "reignId": "reign-yelu-longxu-liao",
+      "capitalId": "cap-liao-shangjing-916"
+    },
+    {
+      "reignId": "reign-yelu-longxu-liao",
+      "capitalId": "cap-liao-南京-938"
+    },
+    {
+      "reignId": "reign-yelu-pusuwan-xiliao",
+      "capitalId": "cap-xiliao-husi-13476"
+    },
+    {
+      "reignId": "reign-yelu-ruan-liao",
+      "capitalId": "cap-liao-shangjing-916"
+    },
+    {
+      "reignId": "reign-yelu-ruan-liao",
+      "capitalId": "cap-liao-南京-938"
+    },
+    {
+      "reignId": "reign-yelu-shouguonu-dongliao",
+      "capitalId": "cap-dongliao-kaiyuan-14556"
+    },
+    {
+      "reignId": "reign-yelu-xian-liao",
+      "capitalId": "cap-liao-shangjing-916"
+    },
+    {
+      "reignId": "reign-yelu-xian-liao",
+      "capitalId": "cap-liao-南京-938"
+    },
+    {
+      "reignId": "reign-yelu-xieshe-dongliao",
+      "capitalId": "cap-dongliao-kaiyuan-14556"
+    },
+    {
+      "reignId": "reign-yelu-yanxi-liao",
+      "capitalId": "cap-liao-shangjing-916"
+    },
+    {
+      "reignId": "reign-yelu-yanxi-liao",
+      "capitalId": "cap-liao-南京-938"
+    },
+    {
+      "reignId": "reign-yelu-yilie-xiliao",
+      "capitalId": "cap-xiliao-husi-13476"
+    },
+    {
+      "reignId": "reign-yelu-zhilugu-xiliao",
+      "capitalId": "cap-xiliao-husi-13476"
+    },
+    {
+      "reignId": "reign-yelu-zongzhen-liao",
+      "capitalId": "cap-liao-shangjing-916"
+    },
+    {
+      "reignId": "reign-yelu-zongzhen-liao",
+      "capitalId": "cap-liao-南京-938"
+    },
+    {
+      "reignId": "reign-yeshuntuemur-yuan",
+      "capitalId": "cap-yuan-dadu"
+    },
+    {
+      "reignId": "reign-yeshuntuemur-yuan",
+      "capitalId": "cap-yuan-shangdu-15120"
+    },
+    {
+      "reignId": "reign-yeyan-tuyuhun",
+      "capitalId": "cap-tuyuhun-fushicheng-329"
+    },
+    {
+      "reignId": "reign-yi-mouxun-nanzhao",
+      "capitalId": "cap-nanzhao-taihecheng-739"
+    },
+    {
+      "reignId": "reign-yi-mouxun-nanzhao",
+      "capitalId": "cap-nanzhao-yangjumei-779"
+    },
+    {
+      "reignId": "reign-ying-huhai",
+      "capitalId": "cap-qin-xianyang"
+    },
+    {
+      "reignId": "reign-ying-qi-qin",
+      "capitalId": "cap-qin-xiqi-778"
+    },
+    {
+      "reignId": "reign-ying-quliang-qin",
+      "capitalId": "cap-qin-liyue-383"
+    },
+    {
+      "reignId": "reign-ying-quliang-qin",
+      "capitalId": "cap-qin-xianyang"
+    },
+    {
+      "reignId": "reign-ying-zheng",
+      "capitalId": "cap-qin-xianyang"
+    },
+    {
+      "reignId": "reign-ying-zheng-qin",
+      "capitalId": "cap-qin-xianyang"
+    },
+    {
+      "reignId": "reign-ying-ziying",
+      "capitalId": "cap-qin-xianyang"
+    },
+    {
+      "reignId": "reign-yingyang-wang-gaogouli",
+      "capitalId": "cap-gaogouli-pyongyang-428"
+    },
+    {
+      "reignId": "reign-yinzhen-qing",
+      "capitalId": "cap-qing-beijing"
+    },
+    {
+      "reignId": "reign-yiqi-fangxun",
+      "capitalId": "cap-wu-di-bo-2208"
+    },
+    {
+      "reignId": "reign-yiqi-fangxun",
+      "capitalId": "cap-wu-di-pingyang-2139"
+    },
+    {
+      "reignId": "reign-yizhu-qing",
+      "capitalId": "cap-qing-beijing"
+    },
+    {
+      "reignId": "reign-yongyan-qing",
+      "capitalId": "cap-qing-beijing"
+    },
+    {
+      "reignId": "reign-yuan-bao-ju",
+      "capitalId": "cap-wei-west-changan-535"
+    },
+    {
+      "reignId": "reign-yuan-hong",
+      "capitalId": "cap-wei-north-luoyang-494"
+    },
+    {
+      "reignId": "reign-yuan-hong",
+      "capitalId": "cap-wei-north-pingcheng-398"
+    },
+    {
+      "reignId": "reign-yuan-ke",
+      "capitalId": "cap-wei-north-luoyang-494"
+    },
+    {
+      "reignId": "reign-yuan-lang",
+      "capitalId": "cap-wei-north-luoyang-494"
+    },
+    {
+      "reignId": "reign-yuan-qin",
+      "capitalId": "cap-wei-west-changan-535"
+    },
+    {
+      "reignId": "reign-yuan-shan-jian",
+      "capitalId": "cap-wei-east-ye-534"
+    },
+    {
+      "reignId": "reign-yuan-shikai-roc",
+      "capitalId": "cap-roc-南京-1912"
+    },
+    {
+      "reignId": "reign-yuan-xiu",
+      "capitalId": "cap-wei-north-luoyang-494"
+    },
+    {
+      "reignId": "reign-yuan-xu",
+      "capitalId": "cap-wei-north-luoyang-494"
+    },
+    {
+      "reignId": "reign-yuan-ye",
+      "capitalId": "cap-wei-north-luoyang-494"
+    },
+    {
+      "reignId": "reign-yuan-zi-you",
+      "capitalId": "cap-wei-north-luoyang-494"
+    },
+    {
+      "reignId": "reign-yue-r10-yue-chunqiu",
+      "capitalId": "cap-yue-chunqiu-gusu-379"
+    },
+    {
+      "reignId": "reign-yue-r11-yue-chunqiu",
+      "capitalId": "cap-yue-chunqiu-gusu-379"
+    },
+    {
+      "reignId": "reign-yue-r12-yue-chunqiu",
+      "capitalId": "cap-yue-chunqiu-kuaiji-360"
+    },
+    {
+      "reignId": "reign-yue-r13-yue-chunqiu",
+      "capitalId": "cap-yue-chunqiu-kuaiji-360"
+    },
+    {
+      "reignId": "reign-yue-r3-yue-chunqiu",
+      "capitalId": "cap-yue-chunqiu-kuaiji-565"
+    },
+    {
+      "reignId": "reign-yue-r4-yue-chunqiu",
+      "capitalId": "cap-yue-chunqiu-kuaiji-565"
+    },
+    {
+      "reignId": "reign-yue-r6-yue-chunqiu",
+      "capitalId": "cap-yue-chunqiu-langya-468"
+    },
+    {
+      "reignId": "reign-yue-r7-yue-chunqiu",
+      "capitalId": "cap-yue-chunqiu-langya-468"
+    },
+    {
+      "reignId": "reign-yue-r8-yue-chunqiu",
+      "capitalId": "cap-yue-chunqiu-langya-468"
+    },
+    {
+      "reignId": "reign-yue-r9-yue-chunqiu",
+      "capitalId": "cap-yue-chunqiu-gusu-379"
+    },
+    {
+      "reignId": "reign-yue-r9-yue-chunqiu",
+      "capitalId": "cap-yue-chunqiu-langya-468"
+    },
+    {
+      "reignId": "reign-yuwen-huaji-xu",
+      "capitalId": "cap-xu-weixian-618"
+    },
+    {
+      "reignId": "reign-yuwen-jue",
+      "capitalId": "cap-zhou-bei-changan-557"
+    },
+    {
+      "reignId": "reign-yuwen-yan",
+      "capitalId": "cap-zhou-bei-changan-557"
+    },
+    {
+      "reignId": "reign-yuwen-yong",
+      "capitalId": "cap-zhou-bei-changan-557"
+    },
+    {
+      "reignId": "reign-yuwen-yu",
+      "capitalId": "cap-zhou-bei-changan-557"
+    },
+    {
+      "reignId": "reign-yuwen-yun",
+      "capitalId": "cap-zhou-bei-changan-557"
+    },
+    {
+      "reignId": "reign-zaichun-qing",
+      "capitalId": "cap-qing-beijing"
+    },
+    {
+      "reignId": "reign-zaitian-qing",
+      "capitalId": "cap-qing-beijing"
+    },
+    {
+      "reignId": "reign-zhang-chonghua",
+      "capitalId": "cap-liang-front-guzang-301"
+    },
+    {
+      "reignId": "reign-zhang-gui",
+      "capitalId": "cap-liang-front-guzang-301"
+    },
+    {
+      "reignId": "reign-zhang-jun",
+      "capitalId": "cap-liang-front-guzang-301"
+    },
+    {
+      "reignId": "reign-zhang-mao",
+      "capitalId": "cap-liang-front-guzang-301"
+    },
+    {
+      "reignId": "reign-zhang-shi",
+      "capitalId": "cap-liang-front-guzang-301"
+    },
+    {
+      "reignId": "reign-zhang-shicheng-zhou-zhang",
+      "capitalId": "cap-zhou-zhang-gaoyou-1354"
+    },
+    {
+      "reignId": "reign-zhang-shicheng-zhou-zhang",
+      "capitalId": "cap-zhou-zhang-pingjiang-1356"
+    },
+    {
+      "reignId": "reign-zhang-tianxi",
+      "capitalId": "cap-liang-front-guzang-301"
+    },
+    {
+      "reignId": "reign-zhang-xianzhong-daxi",
+      "capitalId": "cap-daxi-chengdu-1644"
+    },
+    {
+      "reignId": "reign-zhang-xuanjing",
+      "capitalId": "cap-liang-front-guzang-301"
+    },
+    {
+      "reignId": "reign-zhang-zuo",
+      "capitalId": "cap-liang-front-guzang-301"
+    },
+    {
+      "reignId": "reign-zhang-zuolin-roc",
+      "capitalId": "cap-roc-南京-1912"
+    },
+    {
+      "reignId": "reign-zhao-dun-song-south",
+      "capitalId": "cap-song-south-linan"
+    },
+    {
+      "reignId": "reign-zhao-gou-song-south",
+      "capitalId": "cap-song-south-linan"
+    },
+    {
+      "reignId": "reign-zhao-gou-song-south",
+      "capitalId": "cap-song-south-yingtian"
+    },
+    {
+      "reignId": "reign-zhao-heng-song-north",
+      "capitalId": "cap-song-north-bianjing"
+    },
+    {
+      "reignId": "reign-zhao-huan-song-north",
+      "capitalId": "cap-song-north-bianjing"
+    },
+    {
+      "reignId": "reign-zhao-ji-song-north",
+      "capitalId": "cap-song-north-bianjing"
+    },
+    {
+      "reignId": "reign-zhao-jia-dai-dai-warring",
+      "capitalId": "cap-dai-warring-dai-228"
+    },
+    {
+      "reignId": "reign-zhao-jiande-nanyue",
+      "capitalId": "cap-nanyue-panyu-203"
+    },
+    {
+      "reignId": "reign-zhao-kuangyi-song-north",
+      "capitalId": "cap-song-north-bianjing"
+    },
+    {
+      "reignId": "reign-zhao-kuangyin-song-north",
+      "capitalId": "cap-song-north-bianjing"
+    },
+    {
+      "reignId": "reign-zhao-kuo-song-south",
+      "capitalId": "cap-song-south-linan"
+    },
+    {
+      "reignId": "reign-zhao-lie-zhao-warring",
+      "capitalId": "cap-zhao-warring-jinyang-403"
+    },
+    {
+      "reignId": "reign-zhao-mo-nanyue",
+      "capitalId": "cap-nanyue-panyu-203"
+    },
+    {
+      "reignId": "reign-zhao-qi-song-south",
+      "capitalId": "cap-song-south-linan"
+    },
+    {
+      "reignId": "reign-zhao-r1-zhao-warring",
+      "capitalId": "cap-zhao-warring-jinyang-403"
+    },
+    {
+      "reignId": "reign-zhao-r2-zhao-warring",
+      "capitalId": "cap-zhao-warring-handan-385"
+    },
+    {
+      "reignId": "reign-zhao-r2-zhao-warring",
+      "capitalId": "cap-zhao-warring-jinyang-403"
+    },
+    {
+      "reignId": "reign-zhao-r3-zhao-warring",
+      "capitalId": "cap-zhao-warring-handan-385"
+    },
+    {
+      "reignId": "reign-zhao-r4-zhao-warring",
+      "capitalId": "cap-zhao-warring-handan-385"
+    },
+    {
+      "reignId": "reign-zhao-r5-zhao-warring",
+      "capitalId": "cap-zhao-warring-handan-385"
+    },
+    {
+      "reignId": "reign-zhao-r6-zhao-warring",
+      "capitalId": "cap-zhao-warring-handan-385"
+    },
+    {
+      "reignId": "reign-zhao-r7-zhao-warring",
+      "capitalId": "cap-zhao-warring-handan-385"
+    },
+    {
+      "reignId": "reign-zhao-r8-zhao-warring",
+      "capitalId": "cap-zhao-warring-handan-385"
+    },
+    {
+      "reignId": "reign-zhao-r9-zhao-warring",
+      "capitalId": "cap-zhao-warring-handan-385"
+    },
+    {
+      "reignId": "reign-zhao-shen-song-south",
+      "capitalId": "cap-song-south-linan"
+    },
+    {
+      "reignId": "reign-zhao-shi-duan-song-south",
+      "capitalId": "cap-song-south-fuan-1276"
+    },
+    {
+      "reignId": "reign-zhao-shi-song-south",
+      "capitalId": "cap-song-south-linan"
+    },
+    {
+      "reignId": "reign-zhao-shu-song-north",
+      "capitalId": "cap-song-north-bianjing"
+    },
+    {
+      "reignId": "reign-zhao-tuo-nanyue",
+      "capitalId": "cap-nanyue-panyu-203"
+    },
+    {
+      "reignId": "reign-zhao-xing-nanyue",
+      "capitalId": "cap-nanyue-panyu-203"
+    },
+    {
+      "reignId": "reign-zhao-xu-song-north",
+      "capitalId": "cap-song-north-bianjing"
+    },
+    {
+      "reignId": "reign-zhao-yingqi-nanyue",
+      "capitalId": "cap-nanyue-panyu-203"
+    },
+    {
+      "reignId": "reign-zhao-yun-song-south",
+      "capitalId": "cap-song-south-linan"
+    },
+    {
+      "reignId": "reign-zhao-zhe-song-north",
+      "capitalId": "cap-song-north-bianjing"
+    },
+    {
+      "reignId": "reign-zhao-zhen-song-north",
+      "capitalId": "cap-song-north-bianjing"
+    },
+    {
+      "reignId": "reign-zheng-chenggong-mingzheng",
+      "capitalId": "cap-mingzheng-dongdu-1661"
+    },
+    {
+      "reignId": "reign-zheng-gongzi-xu-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-jing-mingzheng",
+      "capitalId": "cap-mingzheng-dongdu-1661"
+    },
+    {
+      "reignId": "reign-zheng-jing-mingzheng",
+      "capitalId": "cap-mingzheng-dongning-1664"
+    },
+    {
+      "reignId": "reign-zheng-keshuang-mingzheng",
+      "capitalId": "cap-mingzheng-dongning-1664"
+    },
+    {
+      "reignId": "reign-zheng-r0-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r1-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r10-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r11-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r12-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r13-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r14-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r14-zheng-chunqiu-2",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r15-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r16-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r17-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r18-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r19-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r2-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r20-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r21-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r22-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r23-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r24-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r3-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r3-zheng-chunqiu-2",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r4-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r4-zheng-chunqiu-2",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r6-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r7-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-r9-zheng-chunqiu",
+      "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zhongchuan-wang-gaogouli",
+      "capitalId": "cap-gaogouli-guoneicheng-37"
+    },
+    {
+      "reignId": "reign-zhongjing-kehan-huihu",
+      "capitalId": "cap-huihu-yahzhang-8928"
+    },
+    {
+      "reignId": "reign-zhongshan-r0-zhongshan",
+      "capitalId": "cap-zhongshan-lingshou-424"
+    },
+    {
+      "reignId": "reign-zhongshan-r1-zhongshan",
+      "capitalId": "cap-zhongshan-lingshou-424"
+    },
+    {
+      "reignId": "reign-zhongshan-r2-zhongshan",
+      "capitalId": "cap-zhongshan-lingshou-424"
+    },
+    {
+      "reignId": "reign-zhongshan-r2-zhongshan-2",
+      "capitalId": "cap-zhongshan-lingshou-424"
+    },
+    {
+      "reignId": "reign-zhongshan-r3-zhongshan",
+      "capitalId": "cap-zhongshan-lingshou-424"
+    },
+    {
+      "reignId": "reign-zhongshan-r4-zhongshan",
+      "capitalId": "cap-zhongshan-lingshou-424"
+    },
+    {
+      "reignId": "reign-zhongshan-r5-zhongshan",
+      "capitalId": "cap-zhongshan-lingshou-424"
+    },
+    {
+      "reignId": "reign-zhongshan-r6-zhongshan",
+      "capitalId": "cap-zhongshan-lingshou-424"
+    },
+    {
+      "reignId": "reign-zhongzhen-kehan-huihu",
+      "capitalId": "cap-huihu-yahzhang-8928"
+    },
+    {
+      "reignId": "reign-zhou-guo-chao-zhou-guo-west",
+      "capitalId": "cap-zhou-guo-west-wangcheng-440"
+    },
+    {
+      "reignId": "reign-zhou-guo-gen-zhou-guo-east",
+      "capitalId": "cap-zhou-guo-east-gong-367"
+    },
+    {
+      "reignId": "reign-zhou-guo-jie-zhou-guo-west",
+      "capitalId": "cap-zhou-guo-west-wangcheng-440"
+    },
+    {
+      "reignId": "reign-zhou-guo-jiu-zhou-guo-west",
+      "capitalId": "cap-zhou-guo-west-wangcheng-440"
+    },
+    {
+      "reignId": "reign-zhou-guo-wugong-zhou-guo-west",
+      "capitalId": "cap-zhou-guo-west-wangcheng-440"
+    },
+    {
+      "reignId": "reign-zhou-guo-zao-zhou-guo-west",
+      "capitalId": "cap-zhou-guo-west-wangcheng-440"
+    },
+    {
+      "reignId": "reign-zhou-ziqi-roc",
+      "capitalId": "cap-roc-南京-1912"
+    },
+    {
+      "reignId": "reign-zhu-changluo-ming",
+      "capitalId": "cap-ming-beijing"
+    },
+    {
+      "reignId": "reign-zhu-di-ming",
+      "capitalId": "cap-ming-beijing"
+    },
+    {
+      "reignId": "reign-zhu-di-ming",
+      "capitalId": "cap-ming-nanjing"
+    },
+    {
+      "reignId": "reign-zhu-gaochi-ming",
+      "capitalId": "cap-ming-beijing"
+    },
+    {
+      "reignId": "reign-zhu-houcong-ming",
+      "capitalId": "cap-ming-beijing"
+    },
+    {
+      "reignId": "reign-zhu-houzhao-ming",
+      "capitalId": "cap-ming-beijing"
+    },
+    {
+      "reignId": "reign-zhu-jianshen-ming",
+      "capitalId": "cap-ming-beijing"
+    },
+    {
+      "reignId": "reign-zhu-qiyu-ming",
+      "capitalId": "cap-ming-beijing"
+    },
+    {
+      "reignId": "reign-zhu-qiyu-regent-ming",
+      "capitalId": "cap-ming-beijing"
+    },
+    {
+      "reignId": "reign-zhu-qizhen-ming",
+      "capitalId": "cap-ming-beijing"
+    },
+    {
+      "reignId": "reign-zhu-qizhen-ming-2",
+      "capitalId": "cap-ming-beijing"
+    },
+    {
+      "reignId": "reign-zhu-wen-liang-hou",
+      "capitalId": "cap-liang-hou-kaifeng-907"
+    },
+    {
+      "reignId": "reign-zhu-wenjin-min-fujian",
+      "capitalId": "cap-min-fujian-fuzhou-909"
+    },
+    {
+      "reignId": "reign-zhu-yiming-ming",
+      "capitalId": "cap-ming-beijing"
+    },
+    {
+      "reignId": "reign-zhu-youcheng-ming",
+      "capitalId": "cap-ming-beijing"
+    },
+    {
+      "reignId": "reign-zhu-yougui-liang-hou",
+      "capitalId": "cap-liang-hou-kaifeng-907"
+    },
+    {
+      "reignId": "reign-zhu-youjian-ming",
+      "capitalId": "cap-ming-beijing"
+    },
+    {
+      "reignId": "reign-zhu-youjiao-ming",
+      "capitalId": "cap-ming-beijing"
+    },
+    {
+      "reignId": "reign-zhu-youlang-ming-south",
+      "capitalId": "cap-ming-south-anlong-1651"
+    },
+    {
+      "reignId": "reign-zhu-youlang-ming-south",
+      "capitalId": "cap-ming-south-guilin-1647"
+    },
+    {
+      "reignId": "reign-zhu-youlang-ming-south",
+      "capitalId": "cap-ming-south-kunming-1656"
+    },
+    {
+      "reignId": "reign-zhu-youlang-ming-south",
+      "capitalId": "cap-ming-south-nanning-1648"
+    },
+    {
+      "reignId": "reign-zhu-youlang-ming-south",
+      "capitalId": "cap-ming-south-nanning-1649"
+    },
+    {
+      "reignId": "reign-zhu-youlang-ming-south",
+      "capitalId": "cap-ming-south-zhaoqing-1646"
+    },
+    {
+      "reignId": "reign-zhu-youlang-ming-south",
+      "capitalId": "cap-ming-south-zhaoqing-1648"
+    },
+    {
+      "reignId": "reign-zhu-yousong-ming-south",
+      "capitalId": "cap-ming-south-yingtian-1644"
+    },
+    {
+      "reignId": "reign-zhu-youzhen-liang-hou",
+      "capitalId": "cap-liang-hou-kaifeng-907"
+    },
+    {
+      "reignId": "reign-zhu-yuanzhang-ming",
+      "capitalId": "cap-ming-nanjing"
+    },
+    {
+      "reignId": "reign-zhu-yuanzhang-wu-zhu",
+      "capitalId": "cap-wu-zhu-yingtian-1364"
+    },
+    {
+      "reignId": "reign-zhu-yujian-ming-south",
+      "capitalId": "cap-ming-south-fuzhou-1645"
+    },
+    {
+      "reignId": "reign-zhu-yunwen-ming",
+      "capitalId": "cap-ming-nanjing"
+    },
+    {
+      "reignId": "reign-zhu-yuyue-ming-south",
+      "capitalId": "cap-ming-south-广州-1646"
+    },
+    {
+      "reignId": "reign-zhu-zaihou-ming",
+      "capitalId": "cap-ming-beijing"
+    },
+    {
+      "reignId": "reign-zhu-zhanji-ming",
+      "capitalId": "cap-ming-beijing"
+    },
+    {
+      "reignId": "reign-zhuang-qiao-dian",
+      "capitalId": "cap-dian-dianchi-279"
+    },
+    {
+      "reignId": "reign-zi-dixin",
+      "capitalId": "cap-shang-yin-1209"
+    },
+    {
+      "reignId": "reign-zi-diyi",
+      "capitalId": "cap-shang-yin-1209"
+    },
+    {
+      "reignId": "reign-zi-gengding",
+      "capitalId": "cap-shang-yin-1209"
+    },
+    {
+      "reignId": "reign-zi-hedanjia",
+      "capitalId": "cap-shang-bo-1600"
+    },
+    {
+      "reignId": "reign-zi-linxin",
+      "capitalId": "cap-shang-yin-1209"
+    },
+    {
+      "reignId": "reign-zi-nangeng",
+      "capitalId": "cap-shang-bo-1600"
+    },
+    {
+      "reignId": "reign-zi-pangeng",
+      "capitalId": "cap-shang-bo-1600"
+    },
+    {
+      "reignId": "reign-zi-pangeng",
+      "capitalId": "cap-shang-zhenxun-1299"
+    },
+    {
+      "reignId": "reign-zi-taigeng",
+      "capitalId": "cap-shang-bo-1600"
+    },
+    {
+      "reignId": "reign-zi-taijia",
+      "capitalId": "cap-shang-bo-1600"
+    },
+    {
+      "reignId": "reign-zi-taiwu",
+      "capitalId": "cap-shang-bo-1600"
+    },
+    {
+      "reignId": "reign-zi-tang",
+      "capitalId": "cap-shang-bo-1600"
+    },
+    {
+      "reignId": "reign-zi-waibing",
+      "capitalId": "cap-shang-bo-1600"
+    },
+    {
+      "reignId": "reign-zi-wairen",
+      "capitalId": "cap-shang-bo-1600"
+    },
+    {
+      "reignId": "reign-zi-wending",
+      "capitalId": "cap-shang-yin-1209"
+    },
+    {
+      "reignId": "reign-zi-woding",
+      "capitalId": "cap-shang-bo-1600"
+    },
+    {
+      "reignId": "reign-zi-wojia",
+      "capitalId": "cap-shang-bo-1600"
+    },
+    {
+      "reignId": "reign-zi-wuding",
+      "capitalId": "cap-shang-yin-1209"
+    },
+    {
+      "reignId": "reign-zi-wuding",
+      "capitalId": "cap-shang-zhenxun-1299"
+    },
+    {
+      "reignId": "reign-zi-wuyi",
+      "capitalId": "cap-shang-yin-1209"
+    },
+    {
+      "reignId": "reign-zi-xiaojia",
+      "capitalId": "cap-shang-bo-1600"
+    },
+    {
+      "reignId": "reign-zi-xiaoxin",
+      "capitalId": "cap-shang-zhenxun-1299"
+    },
+    {
+      "reignId": "reign-zi-xiaoyi",
+      "capitalId": "cap-shang-zhenxun-1299"
+    },
+    {
+      "reignId": "reign-zi-yangjia",
+      "capitalId": "cap-shang-bo-1600"
+    },
+    {
+      "reignId": "reign-zi-yongji",
+      "capitalId": "cap-shang-bo-1600"
+    },
+    {
+      "reignId": "reign-zi-zhongding",
+      "capitalId": "cap-shang-bo-1600"
+    },
+    {
+      "reignId": "reign-zi-zhongren",
+      "capitalId": "cap-shang-bo-1600"
+    },
+    {
+      "reignId": "reign-zi-zuding",
+      "capitalId": "cap-shang-bo-1600"
+    },
+    {
+      "reignId": "reign-zi-zugeng",
+      "capitalId": "cap-shang-yin-1209"
+    },
+    {
+      "reignId": "reign-zi-zujia",
+      "capitalId": "cap-shang-yin-1209"
+    },
+    {
+      "reignId": "reign-zi-zuxin",
+      "capitalId": "cap-shang-bo-1600"
+    },
+    {
+      "reignId": "reign-zi-zuyi",
+      "capitalId": "cap-shang-bo-1600"
+    },
+    {
+      "reignId": "reign-zou-he-zou-state",
+      "capitalId": "cap-zou-state-yi-614"
+    },
+    {
+      "reignId": "reign-zou-kaogong-zou-state",
+      "capitalId": "cap-zou-state-yi-614"
+    },
+    {
+      "reignId": "reign-zou-missing-after-he-1",
+      "capitalId": "cap-zou-state-yi-614"
+    },
+    {
+      "reignId": "reign-zou-missing-after-kaogong-1",
+      "capitalId": "cap-zou-state-yi-614"
+    },
+    {
+      "reignId": "reign-zou-missing-after-kaogong-2",
+      "capitalId": "cap-zou-state-yi-614"
+    },
+    {
+      "reignId": "reign-zou-mu-gong-zou-state",
+      "capitalId": "cap-zou-state-yi-614"
+    },
+    {
+      "reignId": "reign-zou-r14-zou-state",
+      "capitalId": "cap-zou-state-yi-614"
+    },
+    {
+      "reignId": "reign-zou-r15-zou-state",
+      "capitalId": "cap-zou-state-yi-614"
+    },
+    {
+      "reignId": "reign-zou-r16-zou-state",
+      "capitalId": "cap-zou-state-yi-614"
+    },
+    {
+      "reignId": "reign-zou-r17-zou-state",
+      "capitalId": "cap-zou-state-yi-614"
+    },
+    {
+      "reignId": "reign-zou-r18-zou-state",
+      "capitalId": "cap-zou-state-yi-614"
+    },
+    {
+      "reignId": "reign-zou-r18-zou-state-2",
+      "capitalId": "cap-zou-state-yi-614"
+    },
+    {
+      "reignId": "reign-zou-r19-zou-state",
+      "capitalId": "cap-zou-state-yi-614"
+    }
+  ],
+  "preSql": "DELETE FROM reign_capitals;",
+  "postSql": "",
+  "manifest": {
+    "slug": "reign-capitals",
+    "title": "全库君主与都城关联",
+    "window": {
+      "startYear": -2804,
+      "startMonth": 1,
+      "endYear": 2026,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "importPhase": "post",
+    "generatedAt": "2026-09-27",
+    "counts": {
+      "reign_capitals": 1238
+    },
+    "sources": [
+      {
+        "label": "EraLens curated reign and capital intervals",
+        "url": "https://zh.wikipedia.org/wiki/中国古代都城"
+      },
+      {
+        "label": "忽必烈迁都中都（北京地方志资料，见相关事件导入条目）",
+        "url": "https://www.bjdsdfz.cn/jcdq.jhtml"
+      }
+    ],
+    "notes": [
+      "reign_capitals 关联作为已核定数据记录在 cache.json；修正任一在位或都城区间时，直接更新对应关系缓存。",
+      "都城有 claim_track 时只关联同轨道在位者；没有 claim_track 的都城记录按缓存中显式列出的关系处理。",
+      "精确到日的相邻交接按原关系口径保留给前一都城。",
+      "忽必烈在位跨越蒙古帝国与元的目录分期；其蒙古帝国在位记录与元中都的关系显式记录。"
+    ]
+  }
+}

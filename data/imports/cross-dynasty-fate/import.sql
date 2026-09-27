@@ -37,18 +37,6 @@ DELETE FROM relations WHERE id IN (
   'rel-shi-hu-ran-min-killed'
 );
 
--- persons
-
--- dynasties
-
--- reigns
-
--- events
-
--- event_dynasties
-
--- event_participants
-
 -- relations
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_day, at_abs, precision, event_id) VALUES ('rel-ji-yuchen-jin-wenhou-killed', 'person', 'ji-yuchen', 'person', 'jin-r10', 'killed', -750, 12, NULL, -8977, 'year', 'xie-wang-killed') ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, precision = EXCLUDED.precision, event_id = EXCLUDED.event_id;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_day, at_abs, precision, event_id) VALUES ('rel-han-r10-ying-zheng-surrender', 'person', 'han-r10', 'person', 'ying-zheng', 'surrender', -230, 12, NULL, -2737, 'year', NULL) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, precision = EXCLUDED.precision, event_id = EXCLUDED.event_id;

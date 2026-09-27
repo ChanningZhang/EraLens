@@ -1,5 +1,8 @@
+-- EraLens period import: overview-enrichment
+-- Window: 9999-01 .. 9999-12
 BEGIN;
 
+-- updates
 UPDATE dynasties SET note = '可以指： *马楚，五代十国时一政权，位于今天湖南省。* 战国后期到秦汉时的地理概念，为楚国的南部边荒之地。' WHERE id = 'chu-nan';
 UPDATE dynasties SET note = '北漢（951年2月24日－979年6月3日），由沙陀部建立，是中国五代十国時在今山西省北部、陕西省、河北省局部的政權，為十国之一。统治范围包括今山西北部、陕西、河北部分地区。' WHERE id = 'han-bei';
 UPDATE dynasties SET note = '刘知远建后汉；951年郭威代汉。（947年—951年）' WHERE id = 'han-hou';

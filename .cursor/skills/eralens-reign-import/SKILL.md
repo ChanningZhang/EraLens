@@ -46,7 +46,7 @@ description: >-
 
 若世系连续但多数王年失载：交叉核对若干可考君主、明确纪事或可靠年表作为共同起讫锚点；将同一锚点窗口内的连续世次按顺序均分，标 `interpolated`。锚点自身及贴着确定锚点的边保持确定。世系中断、锚点不足、不共时或只剩传统积年时，不跨断层插值，并在 manifest notes 写清无法填充的区段。
 
-日历相接的两王交界两侧必须同为失考或同为确定；使用 `alignReignSeamConfidences.mjs` / `validateReignSeams.mjs` 检查。灭国留白不相接，各自保留自己的边界状态。
+日历相接的两王交界两侧必须同为失考或同为确定；可用共享边界校验规则核对，修正后把置信度直接写入 `cache.json`。灭国留白不相接，各自保留自己的边界状态。
 
 ## 并立、主线与正统
 
@@ -77,17 +77,17 @@ description: >-
 Task Progress:
 - [ ] 1. 查史料并保存原始年代、世系、称谓和来源
 - [ ] 2. 盘点现有人物/reign，定性空白与并立
-- [ ] 3. 修改 data/imports/{slug}/ 的人物和 reign 源数据
+- [ ] 3. 直接修改 data/imports/{slug}/cache.json 中的人物和 reign 记录
 - [ ] 4. 运行 generate.mjs
 - [ ] 5. 校验 import.sql、接续边界和称谓字段
 - [ ] 6. 增量导入或全量重灌
 - [ ] 7. 验收卡片、搜索、详情、正统色与并立布局
 ```
 
-优先使用 `data/imports/lib/reignSql.mjs`、`reignDateHelpers.mjs`、`deathYearSuccession.mjs`、`build-rulers.mjs` 和 `sqlHelpers.mjs` 的共享能力，不复制规则。
+直接修改 `data/imports/{slug}/cache.json`，将已核定的日期、称谓、置信度和世系关系写入记录。用统一命令生成 SQL；生成流程不解析 Wiki、不做朝代特判、年份补丁或自动插值。AbsMonth 按共享定义计算，不能为单个朝代另造处理脚本。
 
 ```bash
-node data/imports/{slug}/generate.mjs
+node data/imports/generate.mjs {slug}
 node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/imports/{slug}/import.sql
 node data/imports/lib/auditImperialAppellationFields.mjs
 node data/imports/lib/auditPreQinXingShi.mjs

@@ -1,0 +1,830 @@
+{
+  "slug": "three-kingdoms-warlord",
+  "window": {
+    "startYear": 208,
+    "startMonth": 12,
+    "endYear": 280,
+    "endMonth": 5
+  },
+  "persons": [
+    {
+      "id": "cao-cao",
+      "name": "曹操",
+      "roles": [
+        "政治家",
+        "军事家",
+        "文学家"
+      ],
+      "bio": "东汉末权臣，魏武帝（追尊），官渡之战主将。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/曹操"
+        }
+      ],
+      "birth": {
+        "year": 155,
+        "month": 1,
+        "abs": 1860
+      },
+      "death": {
+        "year": 220,
+        "month": 3,
+        "abs": 2642
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "cao-pi",
+      "name": "曹丕",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "曹魏开国皇帝，魏文帝，受汉献帝禅让。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/曹丕"
+        }
+      ],
+      "birth": {
+        "year": 187,
+        "month": 1,
+        "abs": 2244
+      },
+      "death": {
+        "year": 226,
+        "month": 6,
+        "abs": 2717
+      },
+      "altNames": [],
+      "posthumousNames": [
+        "文皇帝"
+      ],
+      "templeNames": [
+        "高祖"
+      ],
+      "title": "魏文帝"
+    },
+    {
+      "id": "cao-rui",
+      "name": "曹叡",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "曹魏第二位皇帝，魏明帝；无子，传位养子曹芳。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/曹叡"
+        }
+      ],
+      "birth": {
+        "year": 206,
+        "month": 1,
+        "abs": 2472
+      },
+      "death": {
+        "year": 239,
+        "month": 1,
+        "abs": 2868
+      },
+      "altNames": [],
+      "posthumousNames": [
+        "明皇帝"
+      ],
+      "templeNames": [
+        "烈祖"
+      ],
+      "title": "魏明帝"
+    },
+    {
+      "id": "liu-bei",
+      "name": "刘备",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "蜀汉开国皇帝，昭烈帝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘备"
+        }
+      ],
+      "birth": {
+        "year": 161,
+        "month": 1,
+        "abs": 1932
+      },
+      "death": {
+        "year": 223,
+        "month": 6,
+        "abs": 2681
+      },
+      "altNames": [],
+      "posthumousNames": [
+        "昭烈皇帝"
+      ],
+      "templeNames": [
+        "烈祖"
+      ],
+      "title": "昭烈帝"
+    },
+    {
+      "id": "liu-shan",
+      "name": "刘禅",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "蜀汉后主，刘备之子；263年降魏，蜀汉亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘禅"
+        }
+      ],
+      "birth": {
+        "year": 207,
+        "month": 1,
+        "abs": 2484
+      },
+      "death": {
+        "year": 271,
+        "month": 1,
+        "abs": 3252
+      },
+      "altNames": [],
+      "posthumousNames": [
+        "孝怀皇帝"
+      ],
+      "templeNames": [],
+      "title": "蜀汉后主"
+    },
+    {
+      "id": "sun-quan",
+      "name": "孙权",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "孙吴开国皇帝，先称吴王，后称帝。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/孙权"
+        }
+      ],
+      "birth": {
+        "year": 182,
+        "month": 7,
+        "abs": 2190
+      },
+      "death": {
+        "year": 252,
+        "month": 5,
+        "abs": 3028
+      },
+      "altNames": [],
+      "posthumousNames": [
+        "大皇帝"
+      ],
+      "templeNames": [
+        "太祖"
+      ],
+      "title": "大皇帝"
+    },
+    {
+      "id": "zhuge-liang",
+      "name": "诸葛亮",
+      "roles": [
+        "政治家",
+        "军事家"
+      ],
+      "bio": "蜀汉丞相，赤壁之战参与者，后主朝北伐。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/诸葛亮"
+        }
+      ],
+      "birth": {
+        "year": 181,
+        "month": 1,
+        "abs": 2172
+      },
+      "death": {
+        "year": 234,
+        "month": 8,
+        "abs": 2815
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "zhou-yu",
+      "name": "周瑜",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "孙吴名将，赤壁之战主将之一。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周瑜"
+        }
+      ],
+      "birth": {
+        "year": 175,
+        "month": 1,
+        "abs": 2100
+      },
+      "death": {
+        "year": 210,
+        "month": 1,
+        "abs": 2520
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "deng-ai",
+      "name": "邓艾",
+      "roles": [
+        "军事家",
+        "将领"
+      ],
+      "bio": "曹魏将领，景元四年率军由阴平道奇袭江油，参与灭蜀之战。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/邓艾"
+        }
+      ],
+      "birth": {
+        "year": 197,
+        "month": 1,
+        "abs": 2364
+      },
+      "death": {
+        "year": 264,
+        "month": 1,
+        "abs": 3168
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "yuan-shao",
+      "name": "袁绍",
+      "roles": [
+        "军阀"
+      ],
+      "bio": "东汉末北方军阀，官渡之战曹操对手。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/袁绍"
+        }
+      ],
+      "birth": {
+        "year": 154,
+        "month": 1,
+        "abs": 1848
+      },
+      "death": {
+        "year": 202,
+        "month": 6,
+        "abs": 2429
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "liu-zhang",
+      "name": "刘璋",
+      "roles": [
+        "军阀"
+      ],
+      "bio": "益州牧，刘焉之子；引刘备入蜀后失益州，东汉末地方势力。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/刘璋"
+        }
+      ],
+      "birth": {
+        "year": 176,
+        "month": 1,
+        "abs": 2112
+      },
+      "death": {
+        "year": 219,
+        "month": 1,
+        "abs": 2628
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    }
+  ],
+  "dynastyGroups": [
+    {
+      "id": "sanguo",
+      "name": "三国",
+      "altNames": [],
+      "scope": "cn",
+      "start": {
+        "year": 220,
+        "month": 1,
+        "abs": 2640
+      },
+      "end": {
+        "year": 280,
+        "month": 12,
+        "abs": 3371
+      },
+      "precision": "year",
+      "note": "220–280年三国（曹魏、蜀汉、孙吴）；狭义自曹丕代汉至晋灭吴。"
+    }
+  ],
+  "dynasties": [
+    {
+      "id": "wei",
+      "name": "曹魏",
+      "altNames": [
+        "魏"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 220,
+        "month": 12,
+        "abs": 2651
+      },
+      "end": {
+        "year": 266,
+        "month": 2,
+        "abs": 3193
+      },
+      "precision": "month",
+      "groupId": "sanguo",
+      "note": "220年曹丕受禅称帝，代汉建魏。"
+    },
+    {
+      "id": "shu",
+      "name": "蜀汉",
+      "altNames": [
+        "蜀",
+        "季汉"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 221,
+        "month": 5,
+        "abs": 2656
+      },
+      "end": {
+        "year": 263,
+        "month": 12,
+        "abs": 3167
+      },
+      "precision": "month",
+      "groupId": "sanguo",
+      "note": "221年刘备于成都称帝，国号汉，史称蜀汉。"
+    },
+    {
+      "id": "wu",
+      "name": "孙吴",
+      "altNames": [
+        "吴"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 222,
+        "month": 10,
+        "abs": 2673
+      },
+      "end": {
+        "year": 280,
+        "month": 5,
+        "abs": 3364
+      },
+      "precision": "month",
+      "groupId": "sanguo",
+      "note": "222年孙权称吴王，229年称帝；王朝行自称王始。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-cao-pi",
+      "dynastyId": "wei",
+      "personId": "cao-pi",
+      "title": "",
+      "posthumousName": "文皇帝",
+      "templeName": "高祖",
+      "eraNames": [
+        "黄初"
+      ],
+      "start": {
+        "year": 220,
+        "month": 12,
+        "abs": 2651,
+        "day": 11
+      },
+      "end": {
+        "year": 226,
+        "month": 6,
+        "abs": 2717,
+        "day": 29
+      },
+      "startAbs": 2651,
+      "endAbs": 2717,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-cao-rui",
+      "dynastyId": "wei",
+      "personId": "cao-rui",
+      "title": "",
+      "posthumousName": "明皇帝",
+      "templeName": "烈祖",
+      "eraNames": [
+        "太和",
+        "青龙",
+        "景初"
+      ],
+      "start": {
+        "year": 226,
+        "month": 6,
+        "abs": 2717,
+        "day": 29
+      },
+      "end": {
+        "year": 239,
+        "month": 1,
+        "abs": 2868,
+        "day": 22
+      },
+      "startAbs": 2717,
+      "endAbs": 2868,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-liu-bei",
+      "dynastyId": "shu",
+      "personId": "liu-bei",
+      "title": "",
+      "posthumousName": "昭烈皇帝",
+      "templeName": "烈祖",
+      "eraNames": [
+        "章武"
+      ],
+      "start": {
+        "year": 221,
+        "month": 5,
+        "abs": 2656,
+        "day": 15
+      },
+      "end": {
+        "year": 223,
+        "month": 6,
+        "abs": 2681,
+        "day": 10
+      },
+      "startAbs": 2656,
+      "endAbs": 2681,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-liu-shan",
+      "dynastyId": "shu",
+      "personId": "liu-shan",
+      "title": "",
+      "posthumousName": "孝怀皇帝",
+      "templeName": null,
+      "eraNames": [
+        "建兴",
+        "延熙",
+        "景耀",
+        "炎兴"
+      ],
+      "start": {
+        "year": 223,
+        "month": 6,
+        "abs": 2681,
+        "day": 10
+      },
+      "end": {
+        "year": 263,
+        "month": 12,
+        "abs": 3167,
+        "day": 23
+      },
+      "startAbs": 2681,
+      "endAbs": 3167,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-sun-quan",
+      "dynastyId": "wu",
+      "personId": "sun-quan",
+      "title": "",
+      "posthumousName": "大皇帝",
+      "templeName": "太祖",
+      "eraNames": [
+        "黄武"
+      ],
+      "start": {
+        "year": 222,
+        "month": 10,
+        "abs": 2673,
+        "day": 19
+      },
+      "end": {
+        "year": 252,
+        "month": 5,
+        "abs": 3028,
+        "day": 21
+      },
+      "startAbs": 2673,
+      "endAbs": 3028,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    }
+  ],
+  "events": [
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [],
+      "participantIds": [
+        "cao-cao",
+        "yuan-shao"
+      ],
+      "id": "guandu",
+      "name": "官渡之战",
+      "dateNote": "建安五年六月，曹操大败袁绍",
+      "at": {
+        "year": 200,
+        "month": 6,
+        "abs": 2405
+      },
+      "summary": "曹操以少胜多，大败袁绍，奠定统一北方基础。",
+      "atAbs": 2405
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "wei",
+        "shu",
+        "wu"
+      ],
+      "participantIds": [
+        "cao-cao",
+        "liu-bei",
+        "sun-quan",
+        "zhuge-liang",
+        "zhou-yu"
+      ],
+      "id": "chibi",
+      "name": "赤壁之战",
+      "dateNote": "建安十三年十二月，孙刘联军大败曹操",
+      "at": {
+        "year": 208,
+        "month": 12,
+        "abs": 2507
+      },
+      "summary": "孙刘联军于赤壁大败曹操，三国鼎立格局初步形成。",
+      "atAbs": 2507
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "shu"
+      ],
+      "participantIds": [
+        "liu-bei",
+        "liu-zhang"
+      ],
+      "id": "liu-bei-takes-yizhou",
+      "name": "刘备取益州",
+      "dateNote": "建安十九年，214年",
+      "at": {
+        "year": 214,
+        "month": 12,
+        "abs": 2579
+      },
+      "summary": "刘备围成都，刘璋出降，益州归刘备。",
+      "atAbs": 2579
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "precision": "month",
+      "dynastyIds": [
+        "shu",
+        "wu"
+      ],
+      "participantIds": [
+        "liu-bei",
+        "sun-quan"
+      ],
+      "id": "yiling",
+      "name": "夷陵之战",
+      "dateNote": "章武元年七月至二年八月",
+      "start": {
+        "year": 221,
+        "month": 7,
+        "abs": 2658
+      },
+      "end": {
+        "year": 222,
+        "month": 8,
+        "abs": 2671
+      },
+      "summary": "刘备伐吴复仇，于夷陵大败，蜀汉元气大伤。",
+      "startAbs": 2658,
+      "endAbs": 2671
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "wei",
+        "shu"
+      ],
+      "participantIds": [
+        "deng-ai",
+        "liu-shan"
+      ],
+      "id": "deng-ai-crosses-yinping",
+      "name": "邓艾偷渡阴平",
+      "dateNote": "景元四年冬十月（263年），邓艾自阴平道行军入蜀",
+      "at": {
+        "year": 263,
+        "month": 10,
+        "abs": 3165
+      },
+      "summary": "钟会军受阻于剑阁时，邓艾率军由阴平道穿越险阻，进至江油并击败蜀军，迫使蜀汉政权迅速瓦解。",
+      "atAbs": 3165
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-cao-pi-cao-rui-succession",
+      "fromRef": "person:cao-pi",
+      "toRef": "person:cao-rui",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-liu-bei-liu-shan-succession",
+      "fromRef": "person:liu-bei",
+      "toRef": "person:liu-shan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-guandu-cao-cao",
+      "fromRef": "event:guandu",
+      "toRef": "person:cao-cao",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-chibi-cao-cao",
+      "fromRef": "event:chibi",
+      "toRef": "person:cao-cao",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-chibi-zhuge",
+      "fromRef": "event:chibi",
+      "toRef": "person:zhuge-liang",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-yiling-liu-bei",
+      "fromRef": "event:yiling",
+      "toRef": "person:liu-bei",
+      "kind": "battle"
+    }
+  ],
+  "supplementalEventDynasties": [],
+  "supplementalEventParticipants": [],
+  "preSql": "DELETE FROM event_dynasties WHERE event_id IN ('guandu', 'liu-bei-takes-yizhou');\nDELETE FROM event_dynasties WHERE dynasty_id IN ('yuan-hebei', 'yizhou-liu');\nDELETE FROM relations WHERE id IN ('rel-cao-cao-cao-pi-succession', 'rel-cao-pi-cao-pi-succession', 'rel-liu-bei-liu-bei-succession', 'rel-sun-quan-sun-quan-succession');\nDELETE FROM reigns WHERE id IN ('reign-yuan-shao-hebei', 'reign-liu-zhang-yizhou', 'reign-cao-cao-wei', 'reign-cao-pi-king', 'reign-liu-bei-warlord', 'reign-sun-quan-warlord');\nDELETE FROM dynasties WHERE id IN ('yuan-hebei', 'yizhou-liu');",
+  "manifest": {
+    "slug": "three-kingdoms-warlord",
+    "title": "三国割据：赤壁后魏蜀吴",
+    "window": {
+      "startYear": 208,
+      "startMonth": 12,
+      "endYear": 280,
+      "endMonth": 5
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-09-18",
+    "counts": {
+      "persons": 11,
+      "dynasties": 3,
+      "reigns": 5,
+      "events": 5,
+      "relations": 6
+    },
+    "sources": [
+      {
+        "label": "三国",
+        "url": "https://zh.wikipedia.org/wiki/三国"
+      },
+      {
+        "label": "赤壁之战",
+        "url": "https://zh.wikipedia.org/wiki/赤壁之战"
+      },
+      {
+        "label": "曹魏",
+        "url": "https://zh.wikipedia.org/wiki/曹魏"
+      },
+      {
+        "label": "蜀汉",
+        "url": "https://zh.wikipedia.org/wiki/蜀汉"
+      },
+      {
+        "label": "孙吴",
+        "url": "https://zh.wikipedia.org/wiki/孙吴"
+      },
+      {
+        "label": "刘璋",
+        "url": "https://zh.wikipedia.org/wiki/刘璋"
+      },
+      {
+        "label": "曹操",
+        "url": "https://zh.wikipedia.org/wiki/曹操"
+      },
+      {
+        "label": "三国志·魏书·邓艾传",
+        "url": "https://zh.wikisource.org/zh-hans/三國志/卷28"
+      },
+      {
+        "label": "阴平古道（路线与今地）",
+        "url": "https://cbgc.scol.com.cn/news/5026693"
+      }
+    ],
+    "notes": [
+      "魏蜀吴同属 dynasty_groups.sanguo（狭义 220–280，据中文维基「三国」）；组 span 用年精度，不被成员月精度撑开或截短。",
+      "魏蜀吴王朝行分别自曹丕称帝（220-12）、刘备称帝（221-5）、孙权称王（222-10）起；称帝前不建 reign。",
+      "wei 的 主线起点 与王朝始年同为 220 年 12 月曹丕称帝。",
+      "袁绍（yuan-shao）、刘璋（liu-zhang）仅作人物收录，不建割据王朝行。按事件关联口径，官渡之战不关联东汉；刘备取益州仅关联蜀汉。",
+      "曹叡、刘禅在位及年号本包写入；曹芳及孙吴末帝见 three-kingdoms-late。",
+      "刘禅降魏日据中文维基 263-12-23，蜀汉王朝行迄月对齐为 263-12。",
+      "在位起止日经 已核定公历日期直接记录在缓存 提升至 day。",
+      "邓艾偷渡阴平据《三国志·魏书·邓艾传》‘冬十月，艾自阴平道行无人之地七百余里’；事件定位点采用阴平故城区域（今甘肃文县鹄衣坝附近），不代表整条古道。"
+    ]
+  }
+}

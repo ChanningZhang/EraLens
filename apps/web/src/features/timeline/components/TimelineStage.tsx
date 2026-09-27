@@ -5,6 +5,7 @@ import {
   buildLaneOrderIndex,
   capitalsActiveAtAbs,
   capitalsForReigns,
+  clusterLaneGapForPresentation,
   clusterFramesForLanes,
   collapseDynastyLaneGroups,
   collectLaneReigns,
@@ -436,7 +437,15 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
 
   const lanes = useMemo(() => {
     let top = railHeight + EVENT_CONTROL_LANE_CLEARANCE;
+    const clusterGroupIds = new Set((data?.dynastyGroups ?? []).map((group) => group.id));
+    let previousClusterId: string | null = null;
     return placed.map((dynasty) => {
+      const clusterId =
+        dynasty.groupId && clusterGroupIds.has(dynasty.groupId) ? dynasty.groupId : null;
+      if (previousClusterId && clusterId !== previousClusterId) {
+        top += clusterLaneGapForPresentation(viewport.presentation, clusterId !== null);
+      }
+      previousClusterId = clusterId;
       let prepared = lanePreparedCache.get(dynasty.id);
       if (!prepared) {
         const records = collectLaneReigns(dynasty.id, reignsByDynasty, laneGroups);
@@ -470,7 +479,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       top += height;
       return item;
     });
-  }, [placed, railHeight, reignsByDynasty, laneGroups, viewport, personNames, personDisplay, lanePreparedCache]);
+  }, [data?.dynastyGroups, placed, railHeight, reignsByDynasty, laneGroups, viewport, personNames, personDisplay, lanePreparedCache]);
 
   const badgePlaced = useMemo(() => {
     const laneById = new Map(lanes.map((lane) => [lane.dynasty.id, lane]));
@@ -649,6 +658,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
                     height={height}
                     left={left}
                     width={width}
+                    compact={viewport.presentation.compact}
                   />
                 ))}
               </AnimatePresence>

@@ -1,0 +1,939 @@
+{
+  "slug": "liao-remnants",
+  "window": {
+    "startYear": 1122,
+    "startMonth": 1,
+    "endYear": 1269,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "yelu-dashi",
+      "name": "耶律大石",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "西辽德宗，辽亡后西迁建国，定都虎思，称霸中亚。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/耶律大石"
+        }
+      ],
+      "birth": {
+        "year": 1087,
+        "month": 1,
+        "abs": 13044
+      },
+      "death": {
+        "year": 1143,
+        "month": 1,
+        "abs": 13716
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [
+        "德宗"
+      ],
+      "title": "西辽德宗"
+    },
+    {
+      "id": "xiao-tabuyan",
+      "name": "萧塔不烟",
+      "roles": [
+        "皇帝",
+        "政治家"
+      ],
+      "bio": "西辽感天皇后，耶律大石妻，1143–1150年临朝称制。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/萧塔不烟"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "感天皇后"
+    },
+    {
+      "id": "yelu-yilie",
+      "name": "耶律夷列",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "西辽仁宗，耶律大石之子，1150–1163年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/耶律夷列"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [
+        "仁宗"
+      ],
+      "title": "西辽仁宗"
+    },
+    {
+      "id": "yelu-pusuwan",
+      "name": "耶律普速完",
+      "roles": [
+        "皇帝",
+        "政治家"
+      ],
+      "bio": "西辽承天太后，耶律夷列之妹，1163–1177年临朝称制。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/耶律普速完"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "承天太后"
+    },
+    {
+      "id": "yelu-zhilugu",
+      "name": "耶律直鲁古",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "西辽第五任君主，1177–1211年在位，后被屈出律篡位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/耶律直鲁古"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "西辽皇帝"
+    },
+    {
+      "id": "qu-chulu",
+      "name": "屈出律",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "乃蛮部王子，娶耶律直鲁古之女，1211年篡位，1218年西辽亡于蒙古。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/屈出律"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "西辽皇帝"
+    },
+    {
+      "id": "yelu-chun",
+      "name": "耶律淳",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "辽末宗室，金攻辽时于燕京称帝，国号北辽，在位仅一年余。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/耶律淳"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "北辽皇帝"
+    },
+    {
+      "id": "xiao-defei",
+      "name": "萧德妃",
+      "roles": [
+        "后妃",
+        "政治家"
+      ],
+      "bio": "耶律淳妃，耶律淳死后临朝称制，北辽旋亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/萧德妃"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "yelu-liuge",
+      "name": "耶律留哥",
+      "roles": [
+        "君主"
+      ],
+      "bio": "金末契丹将领，1213年称辽王、国号辽，改元天统；拒称帝，蒙古仍封辽王。史称东辽。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/耶律留哥"
+        }
+      ],
+      "birth": {
+        "year": 1165,
+        "month": 1,
+        "abs": 13980
+      },
+      "death": {
+        "year": 1220,
+        "month": 1,
+        "abs": 14640
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "辽王"
+    },
+    {
+      "id": "yao-li-shi",
+      "name": "姚里氏",
+      "roles": [
+        "王后",
+        "政治家"
+      ],
+      "bio": "耶律留哥妻，元史立为妃；留哥卒后佩虎符权领其众七年，请以嫡子薛阇袭爵。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/姚里氏"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "王后"
+    },
+    {
+      "id": "yelu-xieshe",
+      "name": "耶律薛阇",
+      "roles": [
+        "君主"
+      ],
+      "bio": "耶律留哥嫡长子，1226年袭辽王爵，后行广宁路都元帅府事。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/耶律薛阇"
+        }
+      ],
+      "birth": {
+        "year": 1193,
+        "month": 1,
+        "abs": 14316
+      },
+      "death": {
+        "year": 1238,
+        "month": 1,
+        "abs": 14856
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "辽王"
+    },
+    {
+      "id": "yelu-shouguonu",
+      "name": "耶律收国奴",
+      "roles": [
+        "君主"
+      ],
+      "bio": "耶律薛阇之子，1238年袭爵，行广宁府路总管军民万户府事，易名石剌。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/耶律收国奴"
+        }
+      ],
+      "birth": {
+        "year": 1215,
+        "month": 1,
+        "abs": 14580
+      },
+      "death": {
+        "year": 1259,
+        "month": 1,
+        "abs": 15108
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "辽王"
+    },
+    {
+      "id": "yelu-gunai",
+      "name": "耶律古乃",
+      "roles": [
+        "君主"
+      ],
+      "bio": "耶律收国奴长子，1259年嗣爵；至元六年广宁并入东京，去职同年卒。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/耶律古乃"
+        }
+      ],
+      "birth": {
+        "year": 1234,
+        "month": 1,
+        "abs": 14808
+      },
+      "death": {
+        "year": 1269,
+        "month": 1,
+        "abs": 15228
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "辽王"
+    },
+    {
+      "id": "yelu-sibu",
+      "name": "耶律厮不",
+      "roles": [
+        "宗室"
+      ],
+      "bio": "留哥属下郡王，1216年僭帝号于澄州，国号辽、改元天威，史称后辽；月余被杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/耶律厮不"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "xiliao",
+      "name": "西辽",
+      "altNames": [
+        "哈剌契丹",
+        "黑契丹"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 1124,
+        "month": 1,
+        "abs": 13488
+      },
+      "end": {
+        "year": 1218,
+        "month": 12,
+        "abs": 14627
+      },
+      "precision": "year",
+      "note": "耶律大石辽亡后西迁，1124年镇州称王；1218年蒙古攻灭。"
+    },
+    {
+      "id": "beiliao",
+      "name": "北辽",
+      "altNames": [
+        "燕京辽"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 1122,
+        "month": 1,
+        "abs": 13464
+      },
+      "end": {
+        "year": 1123,
+        "month": 12,
+        "abs": 13487
+      },
+      "precision": "year",
+      "note": "1122年耶律淳于燕京称帝，1123年旋亡；萧德妃称制不另建 reign。"
+    },
+    {
+      "id": "dongliao",
+      "name": "东辽",
+      "altNames": [
+        "辽"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 1213,
+        "month": 1,
+        "abs": 14556
+      },
+      "end": {
+        "year": 1269,
+        "month": 12,
+        "abs": 15239
+      },
+      "precision": "year",
+      "note": "1213年耶律留哥称辽王；1269年耶律古乃去职，广宁并入东京。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-yelu-dashi-xiliao",
+      "dynastyId": "xiliao",
+      "personId": "yelu-dashi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "德宗",
+      "eraNames": [
+        "延庆",
+        "康国"
+      ],
+      "start": {
+        "year": 1124,
+        "month": 9,
+        "abs": 13496
+      },
+      "end": {
+        "year": 1143,
+        "month": 12,
+        "abs": 13727
+      },
+      "startAbs": 13496,
+      "endAbs": 13727,
+      "precision": "month",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-xiao-tabuyan-xiliao",
+      "dynastyId": "xiliao",
+      "personId": "xiao-tabuyan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "咸清"
+      ],
+      "start": {
+        "year": 1143,
+        "month": 1,
+        "abs": 13716
+      },
+      "end": {
+        "year": 1150,
+        "month": 12,
+        "abs": 13811
+      },
+      "startAbs": 13716,
+      "endAbs": 13811,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yelu-yilie-xiliao",
+      "dynastyId": "xiliao",
+      "personId": "yelu-yilie",
+      "title": "",
+      "posthumousName": null,
+      "templeName": "仁宗",
+      "eraNames": [
+        "绍兴"
+      ],
+      "start": {
+        "year": 1150,
+        "month": 1,
+        "abs": 13800
+      },
+      "end": {
+        "year": 1163,
+        "month": 12,
+        "abs": 13967
+      },
+      "startAbs": 13800,
+      "endAbs": 13967,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yelu-pusuwan-xiliao",
+      "dynastyId": "xiliao",
+      "personId": "yelu-pusuwan",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "崇福"
+      ],
+      "start": {
+        "year": 1163,
+        "month": 1,
+        "abs": 13956
+      },
+      "end": {
+        "year": 1177,
+        "month": 12,
+        "abs": 14135
+      },
+      "startAbs": 13956,
+      "endAbs": 14135,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yelu-zhilugu-xiliao",
+      "dynastyId": "xiliao",
+      "personId": "yelu-zhilugu",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "天禧"
+      ],
+      "start": {
+        "year": 1177,
+        "month": 1,
+        "abs": 14124
+      },
+      "end": {
+        "year": 1211,
+        "month": 12,
+        "abs": 14543
+      },
+      "startAbs": 14124,
+      "endAbs": 14543,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-qu-chulu-xiliao",
+      "dynastyId": "xiliao",
+      "personId": "qu-chulu",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1211,
+        "month": 1,
+        "abs": 14532
+      },
+      "end": {
+        "year": 1218,
+        "month": 4,
+        "abs": 14619
+      },
+      "startAbs": 14532,
+      "endAbs": 14619,
+      "precision": "month",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yelu-chun-beiliao",
+      "dynastyId": "beiliao",
+      "personId": "yelu-chun",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1122,
+        "month": 4,
+        "abs": 13467,
+        "day": 22
+      },
+      "end": {
+        "year": 1122,
+        "month": 7,
+        "abs": 13470,
+        "day": 20
+      },
+      "startAbs": 13467,
+      "endAbs": 13470,
+      "precision": "day",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yelu-liuge-dongliao",
+      "dynastyId": "dongliao",
+      "personId": "yelu-liuge",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "天统"
+      ],
+      "start": {
+        "year": 1213,
+        "month": 3,
+        "abs": 14558
+      },
+      "end": {
+        "year": 1220,
+        "month": 12,
+        "abs": 14651
+      },
+      "startAbs": 14558,
+      "endAbs": 14651,
+      "precision": "month",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yao-li-shi-dongliao",
+      "dynastyId": "dongliao",
+      "personId": "yao-li-shi",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1220,
+        "month": 1,
+        "abs": 14640
+      },
+      "end": {
+        "year": 1226,
+        "month": 12,
+        "abs": 14723
+      },
+      "startAbs": 14640,
+      "endAbs": 14723,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yelu-xieshe-dongliao",
+      "dynastyId": "dongliao",
+      "personId": "yelu-xieshe",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1226,
+        "month": 1,
+        "abs": 14712
+      },
+      "end": {
+        "year": 1238,
+        "month": 12,
+        "abs": 14867
+      },
+      "startAbs": 14712,
+      "endAbs": 14867,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yelu-shouguonu-dongliao",
+      "dynastyId": "dongliao",
+      "personId": "yelu-shouguonu",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1238,
+        "month": 1,
+        "abs": 14856
+      },
+      "end": {
+        "year": 1259,
+        "month": 12,
+        "abs": 15119
+      },
+      "startAbs": 14856,
+      "endAbs": 15119,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-yelu-gunai-dongliao",
+      "dynastyId": "dongliao",
+      "personId": "yelu-gunai",
+      "title": "",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [],
+      "start": {
+        "year": 1259,
+        "month": 1,
+        "abs": 15108
+      },
+      "end": {
+        "year": 1269,
+        "month": 12,
+        "abs": 15239
+      },
+      "startAbs": 15108,
+      "endAbs": 15239,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false
+    }
+  ],
+  "events": [
+    {
+      "kind": "politics",
+      "timeMode": "span",
+      "precision": "month",
+      "dynastyIds": [
+        "beiliao"
+      ],
+      "participantIds": [
+        "xiao-defei"
+      ],
+      "id": "beiliao-xiao-defei-regency",
+      "name": "萧德妃称制",
+      "dateNote": "保大二年六月耶律淳卒后临朝改元德兴；逾年北辽亡",
+      "start": {
+        "year": 1122,
+        "month": 7,
+        "abs": 13470
+      },
+      "end": {
+        "year": 1123,
+        "month": 1,
+        "abs": 13476
+      },
+      "summary": "耶律淳死后萧德妃临朝称制，北辽不久即亡。",
+      "startAbs": 13470,
+      "endAbs": 13476
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "dongliao"
+      ],
+      "participantIds": [
+        "yelu-sibu",
+        "yelu-liuge"
+      ],
+      "id": "dongliao-yelu-sibu-rebel",
+      "name": "耶律厮不叛乱",
+      "dateNote": "元史太祖十一年丙子（1216年）僭帝号于澄州，改元天威，方阅月被杀",
+      "at": {
+        "year": 1216,
+        "month": 2,
+        "abs": 14593
+      },
+      "summary": "耶律厮不僭帝号于澄州，国号辽、改元天威；月余被杀，其后金山、统古与、喊舍相继自立。",
+      "atAbs": 14593
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-yelu-dashi-xiao-tabuyan-succession",
+      "fromRef": "person:yelu-dashi",
+      "toRef": "person:xiao-tabuyan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-xiao-tabuyan-yelu-yilie-succession",
+      "fromRef": "person:xiao-tabuyan",
+      "toRef": "person:yelu-yilie",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yelu-yilie-yelu-pusuwan-succession",
+      "fromRef": "person:yelu-yilie",
+      "toRef": "person:yelu-pusuwan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yelu-pusuwan-yelu-zhilugu-succession",
+      "fromRef": "person:yelu-pusuwan",
+      "toRef": "person:yelu-zhilugu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yelu-zhilugu-qu-chulu-succession",
+      "fromRef": "person:yelu-zhilugu",
+      "toRef": "person:qu-chulu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yelu-liuge-yao-li-shi-succession",
+      "fromRef": "person:yelu-liuge",
+      "toRef": "person:yao-li-shi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yao-li-shi-yelu-xieshe-succession",
+      "fromRef": "person:yao-li-shi",
+      "toRef": "person:yelu-xieshe",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yelu-xieshe-yelu-shouguonu-succession",
+      "fromRef": "person:yelu-xieshe",
+      "toRef": "person:yelu-shouguonu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-yelu-shouguonu-yelu-gunai-succession",
+      "fromRef": "person:yelu-shouguonu",
+      "toRef": "person:yelu-gunai",
+      "kind": "succession"
+    }
+  ],
+  "supplementalEventDynasties": [
+    {
+      "eventId": "jin-destroy-liao",
+      "dynastyId": "beiliao"
+    }
+  ],
+  "supplementalEventParticipants": [],
+  "preSql": "",
+  "manifest": {
+    "slug": "liao-remnants",
+    "title": "辽残余政权（西辽、北辽、东辽）",
+    "window": {
+      "startYear": 1122,
+      "startMonth": 1,
+      "endYear": 1269,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-09-17",
+    "counts": {
+      "persons": 14,
+      "dynasties": 3,
+      "reigns": 12,
+      "events": 2,
+      "relations": 9
+    },
+    "sources": [
+      {
+        "label": "西辽",
+        "url": "https://zh.wikipedia.org/wiki/西辽"
+      },
+      {
+        "label": "耶律大石",
+        "url": "https://zh.wikipedia.org/wiki/耶律大石"
+      },
+      {
+        "label": "北辽",
+        "url": "https://zh.wikipedia.org/wiki/北辽"
+      },
+      {
+        "label": "东辽国",
+        "url": "https://zh.wikipedia.org/wiki/东辽国"
+      },
+      {
+        "label": "耶律留哥",
+        "url": "https://zh.wikipedia.org/wiki/耶律留哥"
+      },
+      {
+        "label": "姚里氏",
+        "url": "https://zh.wikipedia.org/wiki/姚里氏"
+      },
+      {
+        "label": "元史·耶律留哥传",
+        "url": "https://zh.wikisource.org/wiki/元史/卷149"
+      },
+      {
+        "label": "辽朝君主列表",
+        "url": "https://zh.wikipedia.org/wiki/辽朝君主列表"
+      }
+    ],
+    "notes": [
+      "覆盖西辽（1124–1218）、北辽（1122–1123）、东辽（1213–1269）三个残余政权。",
+      "song-liao-jin 有 yelu-* 辽朝皇帝但无 yelu-dashi，本包新建西辽人物。",
+      "萧德妃称制以事件收录，不建 reign；耶律厮不等叛乱亦以事件收录。",
+      "西辽灭亡事件补充关联 mongol-empire 与 temujin（见 mongol-pre-yuan）。",
+      "北辽建立事件补充关联 liao 王朝（见 song-liao-jin）。",
+      "在位年取维基百科常见年表；耶律大石、耶律留哥、屈出律等有月日锚点的见 已核定公历日期直接记录在缓存。",
+      "东辽无庙号谥号。元史：留哥自立为辽王、拒称帝，蒙古仍封辽王；子孙袭爵。姚里氏为妃/王后，权领其众七年，不袭王爵。称号写在 reigns.title（辽王/王后），避免留哥年号天统盖过王号。",
+      "文献年号多作元统；辽宁出土官印署天统三年，从出土作天统，起迄取维基天统条 1213–1216。"
+    ]
+  }
+}

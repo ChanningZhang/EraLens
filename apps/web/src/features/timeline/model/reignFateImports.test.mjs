@@ -1,9 +1,11 @@
 import { describe, expect, it } from "vitest";
+import { readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { resolveFateRelations } from "@eralens/shared";
 import { loadReignsFromImports } from "../../../../../../data/imports/lib/fateRelationHelpers.mjs";
-import { buildFateCatalog } from "../../../../../../data/imports/cross-dynasty-fate/catalog.mjs";
 import { layoutReignFates } from "./reignFateLayout";
+
+const fateCache = JSON.parse(readFileSync(fileURLToPath(new URL("../../../../../../data/imports/cross-dynasty-fate/cache.json", import.meta.url)), "utf8"));
 
 describe("imported Chimei fate endpoints", () => {
   it("resolves and draws both connections through Liu Penzi's effective reign", () => {
@@ -12,13 +14,7 @@ describe("imported Chimei fate endpoints", () => {
     const emperor = reigns.find((reign) => reign.id === "reign-liu-panzi-chimei");
     expect(leader.end).toEqual(emperor.start);
     const ids = ["rel-liu-xuan-liu-panzi-surrender", "rel-liu-panzi-liu-xiu-surrender"];
-    const relations = buildFateCatalog().filter((entry) => ids.includes(entry.id)).map((entry) => ({
-      id: entry.id,
-      fromRef: `person:${entry.fromPersonId}`,
-      toRef: `person:${entry.toPersonId}`,
-      kind: entry.kind,
-      atAbs: entry.resolveAt().abs,
-    }));
+    const relations = fateCache.relations.filter((entry) => ids.includes(entry.id));
     expect(resolveFateRelations(relations, reigns).map((item) => item.relation.id)).toEqual(ids);
     expect(relations.map((relation) => relation.kind)).toEqual(["surrender", "surrender"]);
     const oldReigns = reigns.map((reign) => reign.id === leader.id

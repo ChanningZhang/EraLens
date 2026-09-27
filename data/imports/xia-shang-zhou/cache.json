@@ -1,0 +1,6212 @@
+{
+  "slug": "xia-shang-zhou",
+  "window": {
+    "startYear": -2070,
+    "startMonth": 1,
+    "endYear": -256,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "si-yu",
+      "name": "禹",
+      "ancestralXing": "姒",
+      "altNames": [
+        "文命",
+        "大禹",
+        "夏禹"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "夏朝开国之君，姒姓，传说名文命，后世尊称大禹。传说继父鲧治水，受舜禅，都阳城；《史记·夏本纪》以其为夏后氏始。生卒年无实测。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/禹"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "禹",
+      "clanShi": "夏"
+    },
+    {
+      "id": "si-qi",
+      "name": "启",
+      "ancestralXing": "姒",
+      "altNames": [
+        "启",
+        "夏后启"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "禹之子。传统记载益避启，诸侯归启，变禅让为世袭，史称家天下。《尚书·甘誓》载其伐有扈氏。生卒年无实测。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/启_(夏朝)"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "启",
+      "clanShi": "夏"
+    },
+    {
+      "id": "si-taikang",
+      "name": "太康",
+      "ancestralXing": "姒",
+      "altNames": [
+        "太康"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "启之子。《史记》载太康失国；《左传》谓后羿因夏民以代夏政，《五子之歌》托为太康兄弟所作。生卒年无实测。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/太康_(夏朝)"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "太康",
+      "clanShi": "夏"
+    },
+    {
+      "id": "si-zhongkang",
+      "name": "仲康",
+      "ancestralXing": "姒",
+      "altNames": [
+        "仲康",
+        "中康"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "太康之弟，《史记·夏本纪》作中康。后羿代夏之际夏后氏仍记其世次，子为相。生卒年无实测。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/中康"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "仲康",
+      "clanShi": "夏"
+    },
+    {
+      "id": "si-xiang",
+      "name": "相",
+      "ancestralXing": "姒",
+      "altNames": [
+        "相"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "仲康之子。寒浞当国时夏后；《左传》载过浇灭斟灌、斟鄩，杀相。后缗方娠逃归有仍，生少康。生卒年无实测。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/相_(夏朝)"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "相",
+      "clanShi": "夏"
+    },
+    {
+      "id": "si-shaokang",
+      "name": "少康",
+      "ancestralXing": "姒",
+      "altNames": [
+        "少康"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "相之子，有仍所生。自有虞起兵，与靡灭寒浞，使女艾灭浇、季杼灭豷，恢复夏政，史称少康中兴。生卒年无实测。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/少康"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "少康",
+      "clanShi": "夏"
+    },
+    {
+      "id": "si-zhu",
+      "name": "杼",
+      "ancestralXing": "姒",
+      "altNames": [
+        "杼",
+        "予",
+        "季杼"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "少康之子，《史记》作帝予，亦作杼、季杼。少康中兴时诱杀寒豷于戈；《国语》称其能帅禹，夏后氏报祭。生卒年无实测。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/杼"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "杼",
+      "clanShi": "夏"
+    },
+    {
+      "id": "si-huai",
+      "name": "槐",
+      "ancestralXing": "姒",
+      "altNames": [
+        "槐",
+        "芬",
+        "帝宁"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "杼之子，《史记》作帝槐；《今本竹书纪年》等或作芬、帝宁。正史几乎无事迹。生卒年无实测。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/槐_(夏朝)"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "槐",
+      "clanShi": "夏"
+    },
+    {
+      "id": "si-mang",
+      "name": "芒",
+      "ancestralXing": "姒",
+      "altNames": [
+        "芒",
+        "荒"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "槐之子，《史记》作帝芒；一作荒。《今本竹书纪年》载其以玄珪宾于河，事属传说。生卒年无实测。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/芒_(夏朝)"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "芒",
+      "clanShi": "夏"
+    },
+    {
+      "id": "si-xie",
+      "name": "泄",
+      "ancestralXing": "姒",
+      "altNames": [
+        "泄"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "芒之子，《史记》作帝泄。《今本竹书纪年》载命畎夷、白夷、赤夷、玄夷、风夷、阳夷，事属传说。生卒年无实测。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/泄"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "泄",
+      "clanShi": "夏"
+    },
+    {
+      "id": "si-bujiang",
+      "name": "不降",
+      "ancestralXing": "姒",
+      "altNames": [
+        "不降"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "泄之子。《史记》载不降崩、弟扃立，是夏世次中少见的兄终弟及。生卒年无实测。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/不降"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "不降",
+      "clanShi": "夏"
+    },
+    {
+      "id": "si-jiong",
+      "name": "扃",
+      "ancestralXing": "姒",
+      "altNames": [
+        "扃"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "不降之弟。兄终弟及，子为廑。正史几乎无事迹。生卒年无实测。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/扃"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "扃",
+      "clanShi": "夏"
+    },
+    {
+      "id": "si-jin",
+      "name": "廑",
+      "ancestralXing": "姒",
+      "altNames": [
+        "廑",
+        "胤甲"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "扃之子，《史记》作帝廑；《今本竹书纪年》或作胤甲，并载天有妖孽、十日并出，事属传说。生卒年无实测。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/廑"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "廑",
+      "clanShi": "夏"
+    },
+    {
+      "id": "si-kongjia",
+      "name": "孔甲",
+      "ancestralXing": "姒",
+      "altNames": [
+        "孔甲"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "不降之子；扃、廑之后由孔甲继。《史记》称其好方鬼神、事淫乱，夏后氏德衰、诸侯畔之；又有扰龙、刘累御龙传说。生卒年无实测。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/孔甲"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "孔甲",
+      "clanShi": "夏"
+    },
+    {
+      "id": "si-gao",
+      "name": "皋",
+      "ancestralXing": "姒",
+      "altNames": [
+        "皋",
+        "昊"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "孔甲之子，《史记》作帝皋；一作昊。正史几乎无事迹。生卒年无实测。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/皋_(夏朝)"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "皋",
+      "clanShi": "夏"
+    },
+    {
+      "id": "si-fa",
+      "name": "发",
+      "ancestralXing": "姒",
+      "altNames": [
+        "发",
+        "發"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "皋之子，《史记》作帝发，桀之父。《今本竹书纪年》载诸夷宾于王门，事属传说。生卒年无实测。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/發_(夏朝)"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "发",
+      "clanShi": "夏"
+    },
+    {
+      "id": "si-jie",
+      "name": "履癸",
+      "ancestralXing": "姒",
+      "altNames": [
+        "履癸",
+        "桀",
+        "夏桀"
+      ],
+      "posthumousNames": [
+        "桀"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "发之子，夏朝末代之王，谥号桀。《史记》载其暴虐，鸣条之战为商汤所灭。生卒年无实测。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/桀"
+        }
+      ],
+      "templeNames": [],
+      "title": null,
+      "clanShi": "夏"
+    },
+    {
+      "id": "hou-yi",
+      "name": "后羿",
+      "altNames": [
+        "羿",
+        "夷羿",
+        "有穷后羿"
+      ],
+      "clanShi": "有穷",
+      "roles": [
+        "君主"
+      ],
+      "bio": "有穷氏首领，善射。《左传》载其自鉏迁穷石，因夏民以代夏政，不修民事，为寒浞所杀。传说未称夏后，不入夏后氏正统世次。生卒年无实测。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/后羿_(夏朝)"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "后羿",
+      "ancestralXing": null
+    },
+    {
+      "id": "han-zhuo",
+      "name": "寒浞",
+      "altNames": [
+        "浞",
+        "韩浞"
+      ],
+      "ancestralXing": "妘",
+      "clanShi": "寒",
+      "roles": [
+        "君主"
+      ],
+      "bio": "寒氏，名浞，妘姓。伯明氏谗子弟，后羿用为相，旋杀羿代有穷；使浇灭相。后为少康、靡所灭。非夏后正统，不入十七王继承链。生卒年无实测。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/寒浞"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "寒浞"
+    },
+    {
+      "id": "gun",
+      "name": "鲧",
+      "altNames": [
+        "崇伯鲧",
+        "梼杌"
+      ],
+      "ancestralXing": "姒",
+      "clanShi": "崇",
+      "death": {
+        "year": -2070,
+        "month": 1,
+        "abs": -24828
+      },
+      "roles": [
+        "政治家"
+      ],
+      "bio": "禹之父，崇伯。传说奉尧命障洪水九年不成，后被殛于羽山。生卒无实测；卒年取断代工程夏始约前2070年，示禹受禅之前。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲧"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "gao-yao",
+      "name": "皋陶",
+      "altNames": [
+        "咎繇"
+      ],
+      "ancestralXing": "偃",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "尧舜禹时掌刑之臣，传说制五刑、造狱。禹曾欲禅位于他，先禹而卒。生卒年不可考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/皋陶"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "bo-yi",
+      "name": "伯益",
+      "altNames": [
+        "益",
+        "柏翳",
+        "大费"
+      ],
+      "ancestralXing": "嬴",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "舜禹时虞官，佐禹治水；禹卒后一度受禅，传统记载启继位而益避居。生卒年不可考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/伯益"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "tu-shan-shi",
+      "name": "涂山氏",
+      "altNames": [
+        "女娇",
+        "涂山女"
+      ],
+      "clanShi": "涂山",
+      "roles": [
+        "后妃"
+      ],
+      "bio": "传说禹之妃、启之母，涂山氏女，或名女娇。《吕氏春秋》有涂山女作歌之说。生卒年不可考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/涂山氏"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "hou-min",
+      "name": "后缗",
+      "altNames": [
+        "缗"
+      ],
+      "clanShi": "有仍",
+      "roles": [
+        "后妃"
+      ],
+      "bio": "有仍氏女，夏后相之妻。相为浇所灭时方娠，逃出自窦，归于有仍，生少康。见《左传·哀公元年》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/后缗"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "han-jiao",
+      "name": "浇",
+      "altNames": [
+        "过浇",
+        "奡"
+      ],
+      "ancestralXing": "妘",
+      "clanShi": "寒",
+      "roles": [
+        "将领"
+      ],
+      "bio": "寒浞之子，处过，故称过浇。《左传》载其灭斟灌、斟鄩并杀相，后为少康遣女艾所灭。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/浇"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "mo-xi",
+      "name": "妹喜",
+      "altNames": [
+        "末喜",
+        "妹嬉"
+      ],
+      "clanShi": "有施",
+      "roles": [
+        "后妃"
+      ],
+      "bio": "有施氏女，传说夏桀伐有施而得，为桀妃；传统叙事常将其与夏亡并提，事属传说。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/妹喜"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "guan-longpang",
+      "name": "关龙逢",
+      "altNames": [
+        "关龙逄",
+        "龙逢"
+      ],
+      "death": {
+        "year": -1600,
+        "month": 1,
+        "abs": -19188
+      },
+      "roles": [
+        "政治家"
+      ],
+      "bio": "夏桀时谏臣。传说桀通宵宴乐，关龙逢进黄图强谏被杀。生卒无实测；卒年取夏商分界约前1600年，示桀世之末。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/关龙逢"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "zi-tang",
+      "name": "履",
+      "ancestralXing": "子",
+      "altNames": [
+        "汤",
+        "成汤",
+        "天乙",
+        "大乙"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "商朝开国之君，子姓，名履，又称成汤、天乙；鸣条之战灭夏。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/商汤"
+        }
+      ],
+      "posthumousNames": [
+        "武王"
+      ],
+      "templeNames": [
+        "高祖"
+      ],
+      "title": "商汤",
+      "clanShi": "殷"
+    },
+    {
+      "id": "yi-yin",
+      "name": "伊尹",
+      "altNames": [
+        "伊挚",
+        "阿衡",
+        "保衡"
+      ],
+      "clanShi": "伊",
+      "birth": {
+        "year": -1649,
+        "month": 1,
+        "abs": -19776
+      },
+      "death": {
+        "year": -1540,
+        "month": 1,
+        "abs": -18468
+      },
+      "roles": [
+        "政治家"
+      ],
+      "bio": "商初重臣，名挚，有莘氏媵臣出身；辅汤灭夏，历外丙、仲壬、太甲、沃丁。传说曾放太甲于桐宫。传统生年取维基前1649年；卒年按《今本竹书》沃丁八年，对到本表沃丁窗为前1540年。皆非实测。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/伊尹"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "zhong-hui",
+      "name": "仲虺",
+      "altNames": [
+        "莱朱"
+      ],
+      "clanShi": "薛",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "商汤左相，奚仲之后，居薛；与伊尹并相。《尚书》有仲虺之诰。生卒年不可考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/仲虺"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "zi-waibing",
+      "name": "胜",
+      "ancestralXing": "子",
+      "altNames": [
+        "外丙",
+        "卜丙"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "汤之子，太丁之弟。《孟子》《今本竹书纪年》在位二年，《史记》作三年；甲骨或作卜丙。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/外丙"
+        }
+      ],
+      "posthumousNames": [
+        "外丙"
+      ],
+      "templeNames": [],
+      "title": "商外丙",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-zhongren",
+      "name": "庸",
+      "ancestralXing": "子",
+      "altNames": [
+        "仲壬",
+        "中壬"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "汤之子、外丙之弟，亦称中壬。孟子、史记均记在位四年；周祭未见其名，即位与否有争议。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/仲壬"
+        }
+      ],
+      "posthumousNames": [
+        "仲壬"
+      ],
+      "templeNames": [],
+      "title": "商仲壬",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-taijia",
+      "name": "至",
+      "ancestralXing": "子",
+      "altNames": [
+        "太甲"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "汤之孙，名至；商朝早期重要君主，与伊尹传说相关。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/太甲"
+        }
+      ],
+      "posthumousNames": [
+        "太甲"
+      ],
+      "templeNames": [
+        "太宗"
+      ],
+      "title": "商太甲",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-woding",
+      "name": "绚",
+      "ancestralXing": "子",
+      "altNames": [
+        "沃丁"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "太甲之子，名绚；伊尹卒后仍用伊尹诸子及咎单为政。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/沃丁"
+        }
+      ],
+      "posthumousNames": [
+        "沃丁"
+      ],
+      "templeNames": [],
+      "title": "商沃丁",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-taigeng",
+      "name": "辩",
+      "ancestralXing": "子",
+      "altNames": [
+        "太庚",
+        "大庚"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "沃丁之弟，名辩，又称大庚。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/太庚"
+        }
+      ],
+      "posthumousNames": [
+        "太庚"
+      ],
+      "templeNames": [],
+      "title": "商太庚",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-xiaojia",
+      "name": "高",
+      "ancestralXing": "子",
+      "altNames": [
+        "小甲"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "太庚之子，名高，商代早中期君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/小甲"
+        }
+      ],
+      "posthumousNames": [
+        "小甲"
+      ],
+      "templeNames": [],
+      "title": "商小甲",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-yongji",
+      "name": "伷",
+      "ancestralXing": "子",
+      "altNames": [
+        "雍己"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "小甲之弟，名伷；传统记载此际诸侯不朝、殷道始衰。甲骨周祭或次太戊之后。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/雍己"
+        }
+      ],
+      "posthumousNames": [
+        "雍己"
+      ],
+      "templeNames": [],
+      "title": "商雍己",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-taiwu",
+      "name": "密",
+      "ancestralXing": "子",
+      "altNames": [
+        "太戊",
+        "大戊"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "雍己之弟，名密，又称大戊；传统称中宗，与伊陟、巫咸辅政而复兴。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/太戊"
+        }
+      ],
+      "posthumousNames": [
+        "太戊"
+      ],
+      "templeNames": [
+        "中宗"
+      ],
+      "title": "商太戊",
+      "clanShi": "殷"
+    },
+    {
+      "id": "yi-zhi",
+      "name": "伊陟",
+      "clanShi": "伊",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "伊尹之子，太戊时为相。传说亳有祥桑榖合生，伊陟劝太戊修德，殷道复兴。生卒年不可考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/伊陟"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "wu-xian",
+      "name": "巫咸",
+      "roles": [
+        "政治家",
+        "学者"
+      ],
+      "bio": "太戊时大臣，与伊陟并治；后世亦传为巫师、星历之祖。生卒年不可考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/巫咸"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "zi-zhongding",
+      "name": "庄",
+      "ancestralXing": "子",
+      "altNames": [
+        "仲丁",
+        "中丁"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "太戊之子，名庄；迁于嚣，九世之乱始。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/仲丁"
+        }
+      ],
+      "posthumousNames": [
+        "仲丁"
+      ],
+      "templeNames": [],
+      "title": "商仲丁",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-wairen",
+      "name": "发",
+      "ancestralXing": "子",
+      "altNames": [
+        "外壬",
+        "卜壬"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "仲丁之弟，名发；甲骨或作卜壬，九世之乱中继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/外壬"
+        }
+      ],
+      "posthumousNames": [
+        "外壬"
+      ],
+      "templeNames": [],
+      "title": "商外壬",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-hedanjia",
+      "name": "整",
+      "ancestralXing": "子",
+      "altNames": [
+        "河亶甲",
+        "戔甲"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "外壬之弟，名整；甲骨作戔甲，传统记载曾迁于相。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/河亶甲"
+        }
+      ],
+      "posthumousNames": [
+        "河亶甲"
+      ],
+      "templeNames": [],
+      "title": "商河亶甲",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-zuyi",
+      "name": "滕",
+      "ancestralXing": "子",
+      "altNames": [
+        "祖乙"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "河亶甲之子，名滕；传统记载迁邢、殷道再兴。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/祖乙"
+        }
+      ],
+      "posthumousNames": [
+        "祖乙"
+      ],
+      "templeNames": [],
+      "title": "商祖乙",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-zuxin",
+      "name": "旦",
+      "ancestralXing": "子",
+      "altNames": [
+        "祖辛"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "祖乙之子，名旦，商代早中期君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/祖辛"
+        }
+      ],
+      "posthumousNames": [
+        "祖辛"
+      ],
+      "templeNames": [],
+      "title": "商祖辛",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-wojia",
+      "name": "踰",
+      "ancestralXing": "子",
+      "altNames": [
+        "沃甲",
+        "开甲",
+        "羌甲"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "祖辛之弟，名踰；竹书或作开甲，甲骨或作羌甲。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/沃甲"
+        }
+      ],
+      "posthumousNames": [
+        "沃甲"
+      ],
+      "templeNames": [],
+      "title": "商沃甲",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-zuding",
+      "name": "新",
+      "ancestralXing": "子",
+      "altNames": [
+        "祖丁"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "沃甲之侄、祖辛之子，名新；传统记载居庇。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/祖丁"
+        }
+      ],
+      "posthumousNames": [
+        "祖丁"
+      ],
+      "templeNames": [],
+      "title": "商祖丁",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-nangeng",
+      "name": "更",
+      "ancestralXing": "子",
+      "altNames": [
+        "南庚"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "沃甲之子，名更；传统记载自庇迁于奄。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/南庚"
+        }
+      ],
+      "posthumousNames": [
+        "南庚"
+      ],
+      "templeNames": [],
+      "title": "商南庚",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-yangjia",
+      "name": "和",
+      "ancestralXing": "子",
+      "altNames": [
+        "阳甲"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "祖丁之子、盘庚之兄，名和；传统记载此际殷衰。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/阳甲"
+        }
+      ],
+      "posthumousNames": [
+        "阳甲"
+      ],
+      "templeNames": [],
+      "title": "商阳甲",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-pangeng",
+      "name": "旬",
+      "ancestralXing": "子",
+      "altNames": [
+        "盘庚"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "祖丁之子，名旬；约前1300年迁都于殷，晚商以此为界。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/盘庚"
+        }
+      ],
+      "posthumousNames": [
+        "盘庚"
+      ],
+      "templeNames": [
+        "世祖"
+      ],
+      "title": "商盘庚",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-xiaoxin",
+      "name": "颂",
+      "ancestralXing": "子",
+      "altNames": [
+        "小辛"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "盘庚之弟，名颂；迁殷后继位，传统记载殷道再衰。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/小辛"
+        }
+      ],
+      "posthumousNames": [
+        "小辛"
+      ],
+      "templeNames": [],
+      "title": "商小辛",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-xiaoyi",
+      "name": "敛",
+      "ancestralXing": "子",
+      "altNames": [
+        "小乙"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "小辛之弟、武丁之父，名敛；传统记载仍居殷。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/小乙_(商朝)"
+        }
+      ],
+      "posthumousNames": [
+        "小乙"
+      ],
+      "templeNames": [],
+      "title": "商小乙",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-wuding",
+      "name": "昭",
+      "ancestralXing": "子",
+      "altNames": [
+        "武丁"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "小乙之子，名昭；商高宗，甲骨文所见盛世之王，史称武丁中兴。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/武丁"
+        }
+      ],
+      "posthumousNames": [
+        "武丁"
+      ],
+      "templeNames": [
+        "高宗"
+      ],
+      "title": "商王武丁",
+      "clanShi": "殷"
+    },
+    {
+      "id": "fu-hao",
+      "name": "妇好",
+      "altNames": [
+        "帚好"
+      ],
+      "death": {
+        "year": -1200,
+        "month": 1,
+        "abs": -14388
+      },
+      "roles": [
+        "王后",
+        "军事家"
+      ],
+      "bio": "武丁配偶，甲骨所见女将、祭司，殷墟有墓。生年不详；卒于武丁在世时，年取考古通行约前1200年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/妇好"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "gan-pan",
+      "name": "甘盘",
+      "altNames": [
+        "甘盤"
+      ],
+      "roles": [
+        "政治家"
+      ],
+      "bio": "小乙、武丁时大臣。传说小乙命其傅武丁；武丁即位后为卿士，不久卒，傅说继之。《尚书·君奭》以之与伊尹、伊陟并称。生卒年不可考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/甘盘"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "fu-yue",
+      "name": "傅说",
+      "altNames": [
+        "傅說"
+      ],
+      "roles": [
+        "政治家"
+      ],
+      "bio": "武丁之相。传说原在傅岩版筑为胥靡，武丁梦得圣人而举以为相，助成武丁中兴。生卒年不可考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/傅说"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "zi-zugeng",
+      "name": "跃",
+      "ancestralXing": "子",
+      "altNames": [
+        "祖庚",
+        "曜"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "武丁之子，名跃，一作曜；甲骨文作「且庚」。断代工程将祖庚至庚丁合为前1191–前1148年，年精度下四王平分。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/祖庚"
+        }
+      ],
+      "posthumousNames": [
+        "祖庚"
+      ],
+      "templeNames": [],
+      "title": "商王祖庚",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-zujia",
+      "name": "载",
+      "ancestralXing": "子",
+      "altNames": [
+        "祖甲"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "武丁之子、祖庚之弟，名载；甲骨文作「且甲」。与祖庚、廪辛、庚丁同属断代工程前1191–前1148年窗口。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/祖甲"
+        }
+      ],
+      "posthumousNames": [
+        "祖甲"
+      ],
+      "templeNames": [],
+      "title": "商王祖甲",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-linxin",
+      "name": "先",
+      "ancestralXing": "子",
+      "altNames": [
+        "廪辛",
+        "冯辛"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "祖甲之子，名先；竹书或作冯辛。与祖庚、祖甲、庚丁同属断代工程前1191–前1148年窗口。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/廪辛"
+        }
+      ],
+      "posthumousNames": [
+        "廪辛"
+      ],
+      "templeNames": [],
+      "title": "商王廪辛",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-gengding",
+      "name": "嚣",
+      "ancestralXing": "子",
+      "altNames": [
+        "庚丁",
+        "康丁"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "廪辛之弟，名嚣；甲骨作文丁前的康丁，《史记》作庚丁。四王窗口之末，死年归本王，武乙次年起算。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/康丁"
+        }
+      ],
+      "posthumousNames": [
+        "庚丁"
+      ],
+      "templeNames": [],
+      "title": "商王庚丁",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-wuyi",
+      "name": "瞿",
+      "ancestralXing": "子",
+      "altNames": [
+        "武乙"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "庚丁之子，名瞿；晚商之王，断代工程定其在位前1147–前1113年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/武乙"
+        }
+      ],
+      "posthumousNames": [
+        "武乙"
+      ],
+      "templeNames": [],
+      "title": "商王武乙",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-wending",
+      "name": "托",
+      "ancestralXing": "子",
+      "altNames": [
+        "文丁",
+        "太丁"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "武乙之子，名托；晚商之王，《史记》或作太丁。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/文丁"
+        }
+      ],
+      "posthumousNames": [
+        "文丁"
+      ],
+      "templeNames": [],
+      "title": "商王文丁",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-diyi",
+      "name": "羡",
+      "ancestralXing": "子",
+      "altNames": [
+        "帝乙"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "文丁之子、帝辛之父，名羡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/帝乙"
+        }
+      ],
+      "posthumousNames": [
+        "帝乙"
+      ],
+      "templeNames": [],
+      "title": "商王帝乙",
+      "clanShi": "殷"
+    },
+    {
+      "id": "zi-dixin",
+      "name": "受",
+      "ancestralXing": "子",
+      "altNames": [
+        "帝辛",
+        "纣",
+        "受德"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "商朝末代之王，名受，一名受德；周谥纣，牧野之战亡于周。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/帝辛"
+        }
+      ],
+      "posthumousNames": [
+        "纣"
+      ],
+      "templeNames": [],
+      "title": "商王帝辛",
+      "clanShi": "殷"
+    },
+    {
+      "id": "bi-gan",
+      "name": "比干",
+      "ancestralXing": "子",
+      "death": {
+        "year": -1046,
+        "month": 1,
+        "abs": -12540
+      },
+      "roles": [
+        "政治家",
+        "宗室"
+      ],
+      "bio": "商末少师，文丁之子、帝辛叔父。《论语》与微子、箕子并称殷有三仁。传说强谏被剖心。生年不详；死年取牧野之年（断代工程前1046年），示纣末。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/比干"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "ji-zi",
+      "name": "箕子",
+      "altNames": [
+        "胥余"
+      ],
+      "ancestralXing": "子",
+      "roles": [
+        "政治家",
+        "宗室"
+      ],
+      "bio": "商末宗室，帝辛诸父或庶兄。传说谏纣被囚，武王克商后访之，后走朝鲜。生卒年不可考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/箕子"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "ji-chang",
+      "name": "昌",
+      "ancestralXing": "姬",
+      "roles": [
+        "西伯",
+        "君主"
+      ],
+      "bio": "商末周部族领袖，周武王之父。受商封为西伯，发展周人势力并经营岐周；周人追尊为文王，其政治与军事基础由武王承接，最终灭商建周。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周文王"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "ji-fa",
+      "name": "发",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周文王之子，继承周人势力，联合诸侯伐商。前1046年牧野之战击败商纣王，灭商后建立周王朝并分封宗亲、功臣；不久去世，子成王年幼继位，由周公旦辅政。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周武王"
+        }
+      ],
+      "posthumousNames": [
+        "武王"
+      ],
+      "templeNames": [],
+      "title": "周武王"
+    },
+    {
+      "id": "ji-dan",
+      "name": "旦",
+      "ancestralXing": "姬",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "周公旦，武王之弟，成王初摄政，东征平三监。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周公旦"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "lv-shang",
+      "name": "尚",
+      "ancestralXing": "姜",
+      "clanShi": "吕",
+      "birth": {
+        "year": -1156,
+        "month": 1,
+        "abs": -13860
+      },
+      "death": {
+        "year": -1017,
+        "month": 1,
+        "abs": -12192
+      },
+      "roles": [
+        "军事家",
+        "政治家"
+      ],
+      "bio": "姜太公（姜子牙），辅武王克商，封于齐。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/姜子牙"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "ji-song",
+      "name": "诵",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周武王之子，西周第二代天子，前1042—前1021年在位。即位初年由周公旦摄政，管叔、蔡叔与武庚叛乱，后由周公东征平定；亲政后营建雒邑、分封诸侯，巩固周在东方的统治。其子康王继位，二王时期后世称“成康之治”。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周成王"
+        }
+      ],
+      "posthumousNames": [
+        "成王"
+      ],
+      "templeNames": [],
+      "title": "周成王"
+    },
+    {
+      "id": "ji-zhao",
+      "name": "钊",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周成王之子，前1020—前996年在位。承接成王时期的政局，延续分封与礼制秩序；《史记》称成康之际天下安宁。其子昭王继位，周王室在昭王时期开始面对南方军事行动与统治压力。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周康王"
+        }
+      ],
+      "posthumousNames": [
+        "康王"
+      ],
+      "templeNames": [],
+      "title": "周康王"
+    },
+    {
+      "id": "ji-xia",
+      "name": "瑕",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周康王之子，前995—前977年在位。史籍记其多次南征荆楚；《竹书纪年》及后世注引记载其南征渡汉水后未能返回，具体死因说法不一。其子穆王继位，昭王时期常被视作周势转衰的开端。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周昭王"
+        }
+      ],
+      "posthumousNames": [
+        "昭王"
+      ],
+      "templeNames": [],
+      "title": "周昭王"
+    },
+    {
+      "id": "ji-man",
+      "name": "满",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周昭王之子，前976—前923年在位，是西周在位较久的天子之一。传世记载称其曾西巡并与西北诸部交往，也记有征徐、会合诸侯等事；《穆天子传》保存了相关西行叙事，但其内容兼有传说成分。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周穆王"
+        }
+      ],
+      "posthumousNames": [
+        "穆王"
+      ],
+      "templeNames": [],
+      "title": "周穆王"
+    },
+    {
+      "id": "ji-yihu",
+      "name": "繄扈",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周穆王之子，前922—前900年在位。其时西周王室仍维持对诸侯的统治，但传世史籍关于具体政事记载不多；共王之后，王位由其子懿王继承。年代采用本项目所用断代年表。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周共王"
+        }
+      ],
+      "posthumousNames": [
+        "共王"
+      ],
+      "templeNames": [],
+      "title": "周共王"
+    },
+    {
+      "id": "ji-jian",
+      "name": "囏",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周共王之子，前899—前892年在位。传世记载称西北戎狄侵扰加剧，周人承受边患；其元年系年与“天再旦”日食记录有关，古史年代存在不同方案。本项目沿用所采用的断代年表。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周懿王"
+        }
+      ],
+      "posthumousNames": [
+        "懿王"
+      ],
+      "templeNames": [],
+      "title": "周懿王"
+    },
+    {
+      "id": "ji-pifang",
+      "name": "辟方",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周共王之弟，前891—前886年在位，越过懿王一系继位。其时秦人先祖非子为周室养马有功，孝王封其于秦邑，令其延续嬴姓祭祀，是秦国兴起的重要早期背景。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周孝王"
+        }
+      ],
+      "posthumousNames": [
+        "孝王"
+      ],
+      "templeNames": [],
+      "title": "周孝王"
+    },
+    {
+      "id": "ji-xie",
+      "name": "燮",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周孝王之后继位，前885—前878年在位。关于其个人政事，传世记载较少；《史记·周本纪》记周室此时衰微、诸侯渐强。其后厉王继位，周王室与诸侯关系继续紧张。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周夷王"
+        }
+      ],
+      "posthumousNames": [
+        "夷王"
+      ],
+      "templeNames": [],
+      "title": "周夷王"
+    },
+    {
+      "id": "ji-hu",
+      "name": "胡",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周夷王之子，前877—前841年在位。任用荣夷公推行“专利”，并令卫巫监视议论，引发国人不满；前841年国人暴动，厉王出奔彘地。此后周、召二公行政（另有共伯和摄政说），史称共和。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周厉王"
+        }
+      ],
+      "posthumousNames": [
+        "厉王"
+      ],
+      "templeNames": [],
+      "title": "周厉王"
+    },
+    {
+      "id": "ji-jing",
+      "name": "静",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周厉王之子，共和行政结束后于前827年即位，前782年去世。宣王整顿政事、出兵经营边疆，周室一度恢复影响，后世称“宣王中兴”；晚年征戎失利，王室再度显露衰势。其子幽王继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周宣王"
+        }
+      ],
+      "posthumousNames": [
+        "宣王"
+      ],
+      "templeNames": [],
+      "title": "周宣王"
+    },
+    {
+      "id": "ji-gongsheng",
+      "name": "宫湦",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周宣王之子，前781—前771年在位。废申后及太子宜臼，改立褒姒为后、伯服为太子；申侯联合缯与犬戎攻周，幽王于骊山一带被杀。前771年镐京失陷，西周结束，诸侯随后拥立宜臼为平王并东迁洛邑。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周幽王"
+        }
+      ],
+      "posthumousNames": [
+        "幽王"
+      ],
+      "templeNames": [],
+      "title": "周幽王"
+    },
+    {
+      "id": "ji-yijiu",
+      "name": "宜臼",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周幽王之子，申侯等拥立为王，与虢公翰所立的周携王并立。前770年东迁洛邑，后世奉其为东周正统；在位至前720年，周室自此以洛邑为中心，王权与领土均较西周大幅收缩。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周平王"
+        }
+      ],
+      "posthumousNames": [
+        "平王"
+      ],
+      "templeNames": [],
+      "title": "周平王"
+    },
+    {
+      "id": "ji-yuchen",
+      "name": "余臣",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周携王（携惠王），幽王弟；虢公翰等拥立于携，与平王并立；前750年晋文侯杀之。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周携王"
+        }
+      ],
+      "posthumousNames": [
+        "携王"
+      ],
+      "templeNames": [],
+      "title": "周携王"
+    },
+    {
+      "id": "ji-lin",
+      "name": "林",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周平王之孙，因父早逝继位，前719—前697年在位。试图收回郑庄公的王室卿士职权，引发周郑交恶；前707年亲率诸侯伐郑，在繻葛战败并受伤，王室威信进一步受损。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周桓王"
+        }
+      ],
+      "posthumousNames": [
+        "桓王"
+      ],
+      "templeNames": [],
+      "title": "周桓王"
+    },
+    {
+      "id": "ji-tuo",
+      "name": "佗",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周桓王之子，前696—前682年在位。庄王三年，周公黑肩谋立王子克，事泄后被诛，王子克出奔，王室内部政争暂告平息；其子周釐王继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周庄王"
+        }
+      ],
+      "posthumousNames": [
+        "庄王"
+      ],
+      "templeNames": [],
+      "title": "周庄王"
+    },
+    {
+      "id": "ji-huqi",
+      "name": "胡齐",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周庄王之子，亦作周僖王，前681—前677年在位。其在位时间较短，周王室对诸侯的控制已弱，诸侯间兼并与争盟持续发展；死后由其子周惠王继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周釐王"
+        }
+      ],
+      "posthumousNames": [
+        "釐王"
+      ],
+      "templeNames": [],
+      "title": "周釐王"
+    },
+    {
+      "id": "ji-lang",
+      "name": "阆",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周釐王之子，前676—前652年在位。即位初年宠信王子颓，引发王子颓之乱；郑、虢等国出兵平乱后复位。其后周室仍依赖诸侯援助，王权难复西周旧势。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周惠王"
+        }
+      ],
+      "posthumousNames": [
+        "惠王"
+      ],
+      "templeNames": [],
+      "title": "周惠王"
+    },
+    {
+      "id": "ji-zheng",
+      "name": "郑",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周惠王之子，前651—前619年在位。王子带之乱中被迫出奔，后由晋文公出兵护送复位；周襄王以河阳之会召见诸侯，反映王室权威已须借助霸主维系。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周襄王"
+        }
+      ],
+      "posthumousNames": [
+        "襄王"
+      ],
+      "templeNames": [],
+      "title": "周襄王"
+    },
+    {
+      "id": "ji-renchen",
+      "name": "壬臣",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周襄王之子，前618—前613年在位。继位时东周王室财力与领地有限，诸侯争霸的政治格局已成；在位期间史事记载不多，死后由其子周匡王继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周顷王"
+        }
+      ],
+      "posthumousNames": [
+        "顷王"
+      ],
+      "templeNames": [],
+      "title": "周顷王"
+    },
+    {
+      "id": "ji-ban",
+      "name": "班",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周顷王之子，前612—前607年在位。其时周王室已难主导诸侯政治，国势与王畿规模有限；传世史籍对其个人政事记载较少，死后由其弟周定王继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周匡王"
+        }
+      ],
+      "posthumousNames": [
+        "匡王"
+      ],
+      "templeNames": [],
+      "title": "周匡王"
+    },
+    {
+      "id": "ji-yu",
+      "name": "瑜",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周匡王之弟，前606—前586年在位。楚庄王北上问鼎时，王孙满以九鼎象征周室天命，拒绝楚王窥周之意；此事显示周王室名义地位尚存，而实际力量已不及强国。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周定王"
+        }
+      ],
+      "posthumousNames": [
+        "定王"
+      ],
+      "templeNames": [],
+      "title": "周定王"
+    },
+    {
+      "id": "ji-yi",
+      "name": "夷",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周定王之子，前585—前572年在位。春秋中期诸侯会盟与晋楚争霸仍是政治主轴，周王室主要维持礼制与名分；现存史籍关于其个人政事记载有限。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周简王"
+        }
+      ],
+      "posthumousNames": [
+        "简王"
+      ],
+      "templeNames": [],
+      "title": "周简王"
+    },
+    {
+      "id": "ji-xiexin",
+      "name": "泄心",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周简王之子，前571—前545年在位。其时晋、楚长期争夺诸侯，周王室影响力有限；太子晋早逝，王子贵继位，是为周景王。传世记载还保留了太子晋以直谏闻名的故事。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周灵王"
+        }
+      ],
+      "posthumousNames": [
+        "灵王"
+      ],
+      "templeNames": [],
+      "title": "周灵王"
+    },
+    {
+      "id": "ji-gui",
+      "name": "贵",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周灵王之子，前544—前520年在位。春秋晚期周王室内政与诸侯势力交错；景王死后，王子朝与王子猛争位，王室陷入内乱，王子猛短暂即位为周悼王。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周景王"
+        }
+      ],
+      "posthumousNames": [
+        "景王"
+      ],
+      "templeNames": [],
+      "title": "周景王"
+    },
+    {
+      "id": "ji-meng",
+      "name": "猛",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周景王之子，前520年短暂即位为王，谥悼王。景王死后，王子朝与王子猛争位；悼王在位数月即死，王位由其弟周敬王继承，王子朝之乱仍持续多年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周悼王"
+        }
+      ],
+      "posthumousNames": [
+        "悼王"
+      ],
+      "templeNames": [],
+      "title": "周悼王"
+    },
+    {
+      "id": "ji-gai",
+      "name": "匄",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周景王之子、周悼王之弟，前519—前477年在位。即位后王子朝据王城作乱，周敬王一度居于成周，后在晋等诸侯支持下平乱；其晚年三家分晋的局面渐趋形成。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周敬王"
+        }
+      ],
+      "posthumousNames": [
+        "敬王"
+      ],
+      "templeNames": [],
+      "title": "周敬王"
+    },
+    {
+      "id": "ji-ren",
+      "name": "仁",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周敬王之子，前476—前469年在位，处于春秋战国之交。此时晋国卿族势力坐大，诸侯兼并加剧；周室政治地位持续下降，史籍对其个人政事少有详载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周元王"
+        }
+      ],
+      "posthumousNames": [
+        "元王"
+      ],
+      "templeNames": [],
+      "title": "周元王"
+    },
+    {
+      "id": "ji-jie",
+      "name": "介",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周元王之子，前468—前442年在位。周王室衰微之际，晋国韩、赵、魏等卿族逐步掌握实权；周贞定王死后，诸子相继争位，周室政局更加动荡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周贞定王"
+        }
+      ],
+      "posthumousNames": [
+        "贞定王"
+      ],
+      "templeNames": [],
+      "title": "周贞定王"
+    },
+    {
+      "id": "ji-quji",
+      "name": "去疾",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周贞定王之子，前441年继位为周哀王，仅三个月即被弟叔袭杀。《史记·周本纪》记其短暂在位，是东周王室继承危机加深的表现。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周哀王"
+        }
+      ],
+      "posthumousNames": [
+        "哀王"
+      ],
+      "templeNames": [],
+      "title": "周哀王"
+    },
+    {
+      "id": "ji-shu",
+      "name": "叔",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周贞定王之子，前441年杀兄周哀王而立，称周思王；在位五个月，又被弟嵬所杀。此后嵬即位为周考王，王室短期内连续发生弑立。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周思王"
+        }
+      ],
+      "posthumousNames": [
+        "思王"
+      ],
+      "templeNames": [],
+      "title": "周思王"
+    },
+    {
+      "id": "ji-wei",
+      "name": "嵬",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周思王之弟，前440—前426年在位。此前周哀王、周思王相继被杀，考王在王室内乱后继位；据《史记·周本纪》，考王封其弟于河南，是东周王畿分裂为西周国的重要背景。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周考王"
+        }
+      ],
+      "posthumousNames": [
+        "考王"
+      ],
+      "templeNames": [],
+      "title": "周考王"
+    },
+    {
+      "id": "ji-wu",
+      "name": "午",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周考王之子，前425—前402年在位。前403年册命韩、赵、魏为诸侯，史称三家分晋；此举确认了诸侯国卿族裂土自立的既成事实，常被视作战国时代的重要标志。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周威烈王"
+        }
+      ],
+      "posthumousNames": [
+        "威烈王"
+      ],
+      "templeNames": [],
+      "title": "周威烈王"
+    },
+    {
+      "id": "ji-jiao",
+      "name": "骄",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周威烈王之子，前401—前376年在位。周王室已无力约束诸侯，韩、赵、魏持续扩张；三家分晋的政治格局形成后，周天子对诸侯名分的确认更显形式化。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周安王"
+        }
+      ],
+      "posthumousNames": [
+        "安王"
+      ],
+      "templeNames": [],
+      "title": "周安王"
+    },
+    {
+      "id": "ji-xi",
+      "name": "喜",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周安王之子，前375—前369年在位。战国诸侯兼并加剧，周王室仅保有洛邑周边王畿，政治影响日益有限；传世记载主要着眼于诸侯兴替，其个人事迹不详。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周烈王"
+        }
+      ],
+      "posthumousNames": [
+        "烈王"
+      ],
+      "templeNames": [],
+      "title": "周烈王"
+    },
+    {
+      "id": "ji-bian",
+      "name": "扁",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周烈王之弟，前368—前321年在位，是东周在位较久的天子。战国七雄相继称王，周王室失去对诸侯的实际控制；前344年魏惠王在逢泽会诸侯称王，显示天子名号已难独尊。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周显王"
+        }
+      ],
+      "posthumousNames": [
+        "显王"
+      ],
+      "templeNames": [],
+      "title": "周显王"
+    },
+    {
+      "id": "ji-ding",
+      "name": "定",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周显王之子，前320—前315年在位。战国后期秦、齐等国势力迅速增强，周王室日益依附于王畿诸侯；其子周赧王继位后，周室最终在秦国扩张中灭亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周慎靓王"
+        }
+      ],
+      "posthumousNames": [
+        "慎靓王"
+      ],
+      "templeNames": [],
+      "title": "周慎靓王"
+    },
+    {
+      "id": "ji-yan",
+      "name": "延",
+      "ancestralXing": "姬",
+      "roles": [
+        "天子"
+      ],
+      "bio": "周慎靓王之子，东周末代天子，前314—前256年在位。王室分居西周国、东周国，赧王曾迁居西周国并合纵攻秦，未能扭转局势；前256年秦取九鼎、灭西周，赧王卒，周王朝结束。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周赧王"
+        }
+      ],
+      "posthumousNames": [
+        "赧王"
+      ],
+      "templeNames": [],
+      "title": "周赧王"
+    },
+    {
+      "id": "jiang-xiaobai",
+      "name": "小白",
+      "ancestralXing": "姜",
+      "roles": [
+        "诸侯"
+      ],
+      "bio": "齐桓公，春秋首霸，葵丘会盟。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/齐桓公"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "guan-zhong",
+      "name": "管仲",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "齐桓公之相，助齐称霸。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/管仲"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "ji-chonger",
+      "name": "重耳",
+      "ancestralXing": "姬",
+      "roles": [
+        "诸侯"
+      ],
+      "bio": "晋文公，城濮之战胜楚，成为中原霸主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/晋文公"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "kong-qiu",
+      "name": "丘",
+      "ancestralXing": "子",
+      "clanShi": "孔",
+      "birth": {
+        "year": -551,
+        "month": 1,
+        "abs": -6600
+      },
+      "death": {
+        "year": -479,
+        "month": 1,
+        "abs": -5736
+      },
+      "roles": [
+        "思想家"
+      ],
+      "bio": "孔子，儒家开创者，传统生卒前551–前479年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/孔子"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "da-ji",
+      "name": "妲己",
+      "death": {
+        "year": -1046,
+        "month": 1,
+        "abs": -12540
+      },
+      "roles": [
+        "后妃"
+      ],
+      "bio": "传说中商末帝辛宠妃。生卒无实测；卒年取牧野之年（前1046年），示商亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/妲己"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "bao-si",
+      "name": "褒姒",
+      "roles": [
+        "后妃"
+      ],
+      "bio": "周幽王宠妃，传说与烽火戏诸侯、犬戎之祸相关。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/褒姒"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "ji-shi",
+      "name": "奭",
+      "ancestralXing": "姬",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "召公奭，周武王弟，与周公旦分陕而治，辅佐成康。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/召公奭"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "xia",
+      "name": "夏",
+      "altNames": [
+        "夏后氏"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -2070,
+        "month": 1,
+        "abs": -24828
+      },
+      "end": {
+        "year": -1600,
+        "month": 12,
+        "abs": -19177
+      },
+      "precision": "year",
+      "note": "王朝窗口取断代工程前2070–前1600。各王起迄依今本《竹书纪年》在位年数自夏始顺推（桀用《帝王世纪》五十二年以接商汤），全部标 interpolated。相、少康之间有穷后羿、寒浞占夏行而非夏后正统。"
+    },
+    {
+      "id": "shang",
+      "name": "商",
+      "altNames": [
+        "殷",
+        "殷商"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -1600,
+        "month": 1,
+        "abs": -19188
+      },
+      "end": {
+        "year": -1046,
+        "month": 1,
+        "abs": -12540
+      },
+      "precision": "year",
+      "note": "断代工程：商始约前1600年，盘庚迁殷约前1300年，武王克商前1046年。"
+    },
+    {
+      "id": "zhou-west",
+      "name": "西周",
+      "altNames": [
+        "周"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -1046,
+        "month": 1,
+        "abs": -12540
+      },
+      "end": {
+        "year": -771,
+        "month": 12,
+        "abs": -9229
+      },
+      "precision": "year",
+      "note": "武王克商至犬戎破镐。列王年取夏商周断代工程《夏商周年表》。"
+    },
+    {
+      "id": "zhou-east",
+      "name": "东周",
+      "altNames": [
+        "周"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -770,
+        "month": 1,
+        "abs": -9228
+      },
+      "end": {
+        "year": -256,
+        "month": 12,
+        "abs": -3049
+      },
+      "precision": "year",
+      "note": "平王东迁至秦灭周。前770–前750年与携王二王并立，后世以平王为正统（claim_track 主线）。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-si-yu",
+      "dynastyId": "xia",
+      "personId": "si-yu",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -2070,
+        "month": 1,
+        "abs": -24828
+      },
+      "end": {
+        "year": -2061,
+        "month": 12,
+        "abs": -24709
+      },
+      "startAbs": -24828,
+      "endAbs": -24709,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "isMain": false
+    },
+    {
+      "id": "reign-si-qi",
+      "dynastyId": "xia",
+      "personId": "si-qi",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -2060,
+        "month": 1,
+        "abs": -24708
+      },
+      "end": {
+        "year": -2045,
+        "month": 12,
+        "abs": -24517
+      },
+      "startAbs": -24708,
+      "endAbs": -24517,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "isMain": true
+    },
+    {
+      "id": "reign-si-taikang",
+      "dynastyId": "xia",
+      "personId": "si-taikang",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -2044,
+        "month": 1,
+        "abs": -24516
+      },
+      "end": {
+        "year": -2041,
+        "month": 12,
+        "abs": -24469
+      },
+      "startAbs": -24516,
+      "endAbs": -24469,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "isMain": true
+    },
+    {
+      "id": "reign-si-zhongkang",
+      "dynastyId": "xia",
+      "personId": "si-zhongkang",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -2040,
+        "month": 1,
+        "abs": -24468
+      },
+      "end": {
+        "year": -2028,
+        "month": 12,
+        "abs": -24313
+      },
+      "startAbs": -24468,
+      "endAbs": -24313,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "isMain": true
+    },
+    {
+      "id": "reign-si-xiang",
+      "dynastyId": "xia",
+      "personId": "si-xiang",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -2027,
+        "month": 1,
+        "abs": -24312
+      },
+      "end": {
+        "year": -2000,
+        "month": 12,
+        "abs": -23977
+      },
+      "startAbs": -24312,
+      "endAbs": -23977,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "isMain": true
+    },
+    {
+      "id": "reign-si-shaokang",
+      "dynastyId": "xia",
+      "personId": "si-shaokang",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -1959,
+        "month": 1,
+        "abs": -23496
+      },
+      "end": {
+        "year": -1939,
+        "month": 12,
+        "abs": -23245
+      },
+      "startAbs": -23496,
+      "endAbs": -23245,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "isMain": true
+    },
+    {
+      "id": "reign-si-zhu",
+      "dynastyId": "xia",
+      "personId": "si-zhu",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -1938,
+        "month": 1,
+        "abs": -23244
+      },
+      "end": {
+        "year": -1922,
+        "month": 12,
+        "abs": -23041
+      },
+      "startAbs": -23244,
+      "endAbs": -23041,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "isMain": true
+    },
+    {
+      "id": "reign-si-huai",
+      "dynastyId": "xia",
+      "personId": "si-huai",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -1921,
+        "month": 1,
+        "abs": -23040
+      },
+      "end": {
+        "year": -1878,
+        "month": 12,
+        "abs": -22513
+      },
+      "startAbs": -23040,
+      "endAbs": -22513,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "isMain": true
+    },
+    {
+      "id": "reign-si-mang",
+      "dynastyId": "xia",
+      "personId": "si-mang",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -1877,
+        "month": 1,
+        "abs": -22512
+      },
+      "end": {
+        "year": -1820,
+        "month": 12,
+        "abs": -21817
+      },
+      "startAbs": -22512,
+      "endAbs": -21817,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "isMain": true
+    },
+    {
+      "id": "reign-si-xie",
+      "dynastyId": "xia",
+      "personId": "si-xie",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -1819,
+        "month": 1,
+        "abs": -21816
+      },
+      "end": {
+        "year": -1795,
+        "month": 12,
+        "abs": -21517
+      },
+      "startAbs": -21816,
+      "endAbs": -21517,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "isMain": true
+    },
+    {
+      "id": "reign-si-bujiang",
+      "dynastyId": "xia",
+      "personId": "si-bujiang",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -1794,
+        "month": 1,
+        "abs": -21516
+      },
+      "end": {
+        "year": -1736,
+        "month": 12,
+        "abs": -20809
+      },
+      "startAbs": -21516,
+      "endAbs": -20809,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "isMain": true
+    },
+    {
+      "id": "reign-si-jiong",
+      "dynastyId": "xia",
+      "personId": "si-jiong",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -1735,
+        "month": 1,
+        "abs": -20808
+      },
+      "end": {
+        "year": -1718,
+        "month": 12,
+        "abs": -20593
+      },
+      "startAbs": -20808,
+      "endAbs": -20593,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "isMain": true
+    },
+    {
+      "id": "reign-si-jin",
+      "dynastyId": "xia",
+      "personId": "si-jin",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -1717,
+        "month": 1,
+        "abs": -20592
+      },
+      "end": {
+        "year": -1710,
+        "month": 12,
+        "abs": -20497
+      },
+      "startAbs": -20592,
+      "endAbs": -20497,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "isMain": true
+    },
+    {
+      "id": "reign-si-kongjia",
+      "dynastyId": "xia",
+      "personId": "si-kongjia",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -1709,
+        "month": 1,
+        "abs": -20496
+      },
+      "end": {
+        "year": -1679,
+        "month": 12,
+        "abs": -20125
+      },
+      "startAbs": -20496,
+      "endAbs": -20125,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "isMain": true
+    },
+    {
+      "id": "reign-si-gao",
+      "dynastyId": "xia",
+      "personId": "si-gao",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -1678,
+        "month": 1,
+        "abs": -20124
+      },
+      "end": {
+        "year": -1668,
+        "month": 12,
+        "abs": -19993
+      },
+      "startAbs": -20124,
+      "endAbs": -19993,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "isMain": true
+    },
+    {
+      "id": "reign-si-fa",
+      "dynastyId": "xia",
+      "personId": "si-fa",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -1667,
+        "month": 1,
+        "abs": -19992
+      },
+      "end": {
+        "year": -1652,
+        "month": 12,
+        "abs": -19801
+      },
+      "startAbs": -19992,
+      "endAbs": -19801,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "isMain": true
+    },
+    {
+      "id": "reign-si-jie",
+      "dynastyId": "xia",
+      "personId": "si-jie",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -1651,
+        "month": 1,
+        "abs": -19800
+      },
+      "end": {
+        "year": -1600,
+        "month": 12,
+        "abs": -19177
+      },
+      "startAbs": -19800,
+      "endAbs": -19177,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "isMain": true
+    },
+    {
+      "id": "reign-hou-yi",
+      "dynastyId": "xia",
+      "personId": "hou-yi",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -1999,
+        "month": 1,
+        "abs": -23976
+      },
+      "end": {
+        "year": -1992,
+        "month": 12,
+        "abs": -23881
+      },
+      "startAbs": -23976,
+      "endAbs": -23881,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "claimRole": "rival",
+      "isMain": false
+    },
+    {
+      "id": "reign-han-zhuo",
+      "dynastyId": "xia",
+      "personId": "han-zhuo",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -1991,
+        "month": 1,
+        "abs": -23880
+      },
+      "end": {
+        "year": -1960,
+        "month": 12,
+        "abs": -23497
+      },
+      "startAbs": -23880,
+      "endAbs": -23497,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "claimRole": "rival",
+      "isMain": false
+    },
+    {
+      "id": "reign-zi-tang",
+      "dynastyId": "shang",
+      "personId": "zi-tang",
+      "title": "",
+      "posthumousName": "武王",
+      "templeName": "高祖",
+      "eraNames": [],
+      "start": {
+        "year": -1600,
+        "month": 1,
+        "abs": -19188
+      },
+      "end": {
+        "year": -1571,
+        "month": 12,
+        "abs": -18829
+      },
+      "startAbs": -19188,
+      "endAbs": -18829,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-waibing",
+      "dynastyId": "shang",
+      "personId": "zi-waibing",
+      "title": "",
+      "posthumousName": "外丙",
+      "eraNames": [],
+      "start": {
+        "year": -1570,
+        "month": 1,
+        "abs": -18828
+      },
+      "end": {
+        "year": -1566,
+        "month": 12,
+        "abs": -18769
+      },
+      "startAbs": -18828,
+      "endAbs": -18769,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": "interpolated",
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-zhongren",
+      "dynastyId": "shang",
+      "personId": "zi-zhongren",
+      "title": "",
+      "posthumousName": "仲壬",
+      "eraNames": [],
+      "start": {
+        "year": -1565,
+        "month": 1,
+        "abs": -18768
+      },
+      "end": {
+        "year": -1561,
+        "month": 12,
+        "abs": -18709
+      },
+      "startAbs": -18768,
+      "endAbs": -18709,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-taijia",
+      "dynastyId": "shang",
+      "personId": "zi-taijia",
+      "title": "",
+      "posthumousName": "太甲",
+      "templeName": "太宗",
+      "eraNames": [],
+      "start": {
+        "year": -1560,
+        "month": 1,
+        "abs": -18708
+      },
+      "end": {
+        "year": -1548,
+        "month": 12,
+        "abs": -18553
+      },
+      "startAbs": -18708,
+      "endAbs": -18553,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-woding",
+      "dynastyId": "shang",
+      "personId": "zi-woding",
+      "title": "",
+      "posthumousName": "沃丁",
+      "eraNames": [],
+      "start": {
+        "year": -1547,
+        "month": 1,
+        "abs": -18552
+      },
+      "end": {
+        "year": -1529,
+        "month": 12,
+        "abs": -18325
+      },
+      "startAbs": -18552,
+      "endAbs": -18325,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-taigeng",
+      "dynastyId": "shang",
+      "personId": "zi-taigeng",
+      "title": "",
+      "posthumousName": "太庚",
+      "eraNames": [],
+      "start": {
+        "year": -1528,
+        "month": 1,
+        "abs": -18324
+      },
+      "end": {
+        "year": -1524,
+        "month": 12,
+        "abs": -18265
+      },
+      "startAbs": -18324,
+      "endAbs": -18265,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-xiaojia",
+      "dynastyId": "shang",
+      "personId": "zi-xiaojia",
+      "title": "",
+      "posthumousName": "小甲",
+      "eraNames": [],
+      "start": {
+        "year": -1523,
+        "month": 1,
+        "abs": -18264
+      },
+      "end": {
+        "year": -1507,
+        "month": 12,
+        "abs": -18061
+      },
+      "startAbs": -18264,
+      "endAbs": -18061,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-yongji",
+      "dynastyId": "shang",
+      "personId": "zi-yongji",
+      "title": "",
+      "posthumousName": "雍己",
+      "eraNames": [],
+      "start": {
+        "year": -1506,
+        "month": 1,
+        "abs": -18060
+      },
+      "end": {
+        "year": -1495,
+        "month": 12,
+        "abs": -17917
+      },
+      "startAbs": -18060,
+      "endAbs": -17917,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-taiwu",
+      "dynastyId": "shang",
+      "personId": "zi-taiwu",
+      "title": "",
+      "posthumousName": "太戊",
+      "templeName": "中宗",
+      "eraNames": [],
+      "start": {
+        "year": -1494,
+        "month": 1,
+        "abs": -17916
+      },
+      "end": {
+        "year": -1420,
+        "month": 12,
+        "abs": -17017
+      },
+      "startAbs": -17916,
+      "endAbs": -17017,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-zhongding",
+      "dynastyId": "shang",
+      "personId": "zi-zhongding",
+      "title": "",
+      "posthumousName": "仲丁",
+      "eraNames": [],
+      "start": {
+        "year": -1419,
+        "month": 1,
+        "abs": -17016
+      },
+      "end": {
+        "year": -1411,
+        "month": 12,
+        "abs": -16909
+      },
+      "startAbs": -17016,
+      "endAbs": -16909,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-wairen",
+      "dynastyId": "shang",
+      "personId": "zi-wairen",
+      "title": "",
+      "posthumousName": "外壬",
+      "eraNames": [],
+      "start": {
+        "year": -1410,
+        "month": 1,
+        "abs": -16908
+      },
+      "end": {
+        "year": -1401,
+        "month": 12,
+        "abs": -16789
+      },
+      "startAbs": -16908,
+      "endAbs": -16789,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-hedanjia",
+      "dynastyId": "shang",
+      "personId": "zi-hedanjia",
+      "title": "",
+      "posthumousName": "河亶甲",
+      "eraNames": [],
+      "start": {
+        "year": -1400,
+        "month": 1,
+        "abs": -16788
+      },
+      "end": {
+        "year": -1392,
+        "month": 12,
+        "abs": -16681
+      },
+      "startAbs": -16788,
+      "endAbs": -16681,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-zuyi",
+      "dynastyId": "shang",
+      "personId": "zi-zuyi",
+      "title": "",
+      "posthumousName": "祖乙",
+      "eraNames": [],
+      "start": {
+        "year": -1391,
+        "month": 1,
+        "abs": -16680
+      },
+      "end": {
+        "year": -1373,
+        "month": 12,
+        "abs": -16453
+      },
+      "startAbs": -16680,
+      "endAbs": -16453,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-zuxin",
+      "dynastyId": "shang",
+      "personId": "zi-zuxin",
+      "title": "",
+      "posthumousName": "祖辛",
+      "eraNames": [],
+      "start": {
+        "year": -1372,
+        "month": 1,
+        "abs": -16452
+      },
+      "end": {
+        "year": -1359,
+        "month": 12,
+        "abs": -16285
+      },
+      "startAbs": -16452,
+      "endAbs": -16285,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-wojia",
+      "dynastyId": "shang",
+      "personId": "zi-wojia",
+      "title": "",
+      "posthumousName": "沃甲",
+      "eraNames": [],
+      "start": {
+        "year": -1358,
+        "month": 1,
+        "abs": -16284
+      },
+      "end": {
+        "year": -1339,
+        "month": 12,
+        "abs": -16045
+      },
+      "startAbs": -16284,
+      "endAbs": -16045,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-zuding",
+      "dynastyId": "shang",
+      "personId": "zi-zuding",
+      "title": "",
+      "posthumousName": "祖丁",
+      "eraNames": [],
+      "start": {
+        "year": -1338,
+        "month": 1,
+        "abs": -16044
+      },
+      "end": {
+        "year": -1330,
+        "month": 12,
+        "abs": -15937
+      },
+      "startAbs": -16044,
+      "endAbs": -15937,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-nangeng",
+      "dynastyId": "shang",
+      "personId": "zi-nangeng",
+      "title": "",
+      "posthumousName": "南庚",
+      "eraNames": [],
+      "start": {
+        "year": -1329,
+        "month": 1,
+        "abs": -15936
+      },
+      "end": {
+        "year": -1324,
+        "month": 12,
+        "abs": -15865
+      },
+      "startAbs": -15936,
+      "endAbs": -15865,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-yangjia",
+      "dynastyId": "shang",
+      "personId": "zi-yangjia",
+      "title": "",
+      "posthumousName": "阳甲",
+      "eraNames": [],
+      "start": {
+        "year": -1323,
+        "month": 1,
+        "abs": -15864
+      },
+      "end": {
+        "year": -1311,
+        "month": 12,
+        "abs": -15709
+      },
+      "startAbs": -15864,
+      "endAbs": -15709,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-pangeng",
+      "dynastyId": "shang",
+      "personId": "zi-pangeng",
+      "title": "",
+      "posthumousName": "盘庚",
+      "templeName": "世祖",
+      "eraNames": [],
+      "start": {
+        "year": -1310,
+        "month": 1,
+        "abs": -15708
+      },
+      "end": {
+        "year": -1280,
+        "month": 12,
+        "abs": -15337
+      },
+      "startAbs": -15708,
+      "endAbs": -15337,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-xiaoxin",
+      "dynastyId": "shang",
+      "personId": "zi-xiaoxin",
+      "title": "",
+      "posthumousName": "小辛",
+      "eraNames": [],
+      "start": {
+        "year": -1279,
+        "month": 1,
+        "abs": -15336
+      },
+      "end": {
+        "year": -1277,
+        "month": 12,
+        "abs": -15301
+      },
+      "startAbs": -15336,
+      "endAbs": -15301,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-xiaoyi",
+      "dynastyId": "shang",
+      "personId": "zi-xiaoyi",
+      "title": "",
+      "posthumousName": "小乙",
+      "eraNames": [],
+      "start": {
+        "year": -1276,
+        "month": 1,
+        "abs": -15300
+      },
+      "end": {
+        "year": -1251,
+        "month": 12,
+        "abs": -14989
+      },
+      "startAbs": -15300,
+      "endAbs": -14989,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-wuding",
+      "dynastyId": "shang",
+      "personId": "zi-wuding",
+      "title": "",
+      "posthumousName": "武丁",
+      "templeName": "高宗",
+      "eraNames": [],
+      "start": {
+        "year": -1250,
+        "month": 1,
+        "abs": -14988
+      },
+      "end": {
+        "year": -1192,
+        "month": 12,
+        "abs": -14281
+      },
+      "startAbs": -14988,
+      "endAbs": -14281,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-zugeng",
+      "dynastyId": "shang",
+      "personId": "zi-zugeng",
+      "title": "",
+      "posthumousName": "祖庚",
+      "eraNames": [],
+      "start": {
+        "year": -1191,
+        "month": 1,
+        "abs": -14280
+      },
+      "end": {
+        "year": -1181,
+        "month": 12,
+        "abs": -14149
+      },
+      "startAbs": -14280,
+      "endAbs": -14149,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": "interpolated",
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-zujia",
+      "dynastyId": "shang",
+      "personId": "zi-zujia",
+      "title": "",
+      "posthumousName": "祖甲",
+      "eraNames": [],
+      "start": {
+        "year": -1180,
+        "month": 1,
+        "abs": -14148
+      },
+      "end": {
+        "year": -1170,
+        "month": 12,
+        "abs": -14017
+      },
+      "startAbs": -14148,
+      "endAbs": -14017,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-linxin",
+      "dynastyId": "shang",
+      "personId": "zi-linxin",
+      "title": "",
+      "posthumousName": "廪辛",
+      "eraNames": [],
+      "start": {
+        "year": -1169,
+        "month": 1,
+        "abs": -14016
+      },
+      "end": {
+        "year": -1159,
+        "month": 12,
+        "abs": -13885
+      },
+      "startAbs": -14016,
+      "endAbs": -13885,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": "interpolated",
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-gengding",
+      "dynastyId": "shang",
+      "personId": "zi-gengding",
+      "title": "",
+      "posthumousName": "庚丁",
+      "eraNames": [],
+      "start": {
+        "year": -1158,
+        "month": 1,
+        "abs": -13884
+      },
+      "end": {
+        "year": -1148,
+        "month": 12,
+        "abs": -13753
+      },
+      "startAbs": -13884,
+      "endAbs": -13753,
+      "precision": "year",
+      "startDateConfidence": "interpolated",
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-wuyi",
+      "dynastyId": "shang",
+      "personId": "zi-wuyi",
+      "title": "",
+      "posthumousName": "武乙",
+      "eraNames": [],
+      "start": {
+        "year": -1147,
+        "month": 1,
+        "abs": -13752
+      },
+      "end": {
+        "year": -1113,
+        "month": 12,
+        "abs": -13333
+      },
+      "startAbs": -13752,
+      "endAbs": -13333,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-wending",
+      "dynastyId": "shang",
+      "personId": "zi-wending",
+      "title": "",
+      "posthumousName": "文丁",
+      "eraNames": [],
+      "start": {
+        "year": -1112,
+        "month": 1,
+        "abs": -13332
+      },
+      "end": {
+        "year": -1102,
+        "month": 12,
+        "abs": -13201
+      },
+      "startAbs": -13332,
+      "endAbs": -13201,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-diyi",
+      "dynastyId": "shang",
+      "personId": "zi-diyi",
+      "title": "",
+      "posthumousName": "帝乙",
+      "eraNames": [],
+      "start": {
+        "year": -1101,
+        "month": 1,
+        "abs": -13200
+      },
+      "end": {
+        "year": -1076,
+        "month": 12,
+        "abs": -12889
+      },
+      "startAbs": -13200,
+      "endAbs": -12889,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-zi-dixin",
+      "dynastyId": "shang",
+      "personId": "zi-dixin",
+      "title": "",
+      "posthumousName": "纣",
+      "eraNames": [],
+      "start": {
+        "year": -1075,
+        "month": 1,
+        "abs": -12888
+      },
+      "end": {
+        "year": -1046,
+        "month": 1,
+        "abs": -12540
+      },
+      "startAbs": -12888,
+      "endAbs": -12540,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-fa",
+      "dynastyId": "zhou-west",
+      "personId": "ji-fa",
+      "title": "",
+      "posthumousName": "武王",
+      "eraNames": [],
+      "start": {
+        "year": -1046,
+        "month": 1,
+        "abs": -12540
+      },
+      "end": {
+        "year": -1043,
+        "month": 12,
+        "abs": -12493
+      },
+      "startAbs": -12540,
+      "endAbs": -12493,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-song",
+      "dynastyId": "zhou-west",
+      "personId": "ji-song",
+      "title": "",
+      "posthumousName": "成王",
+      "eraNames": [],
+      "start": {
+        "year": -1042,
+        "month": 1,
+        "abs": -12492
+      },
+      "end": {
+        "year": -1021,
+        "month": 12,
+        "abs": -12229
+      },
+      "startAbs": -12492,
+      "endAbs": -12229,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-zhao",
+      "dynastyId": "zhou-west",
+      "personId": "ji-zhao",
+      "title": "",
+      "posthumousName": "康王",
+      "eraNames": [],
+      "start": {
+        "year": -1020,
+        "month": 1,
+        "abs": -12228
+      },
+      "end": {
+        "year": -996,
+        "month": 12,
+        "abs": -11929
+      },
+      "startAbs": -12228,
+      "endAbs": -11929,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-xia",
+      "dynastyId": "zhou-west",
+      "personId": "ji-xia",
+      "title": "",
+      "posthumousName": "昭王",
+      "eraNames": [],
+      "start": {
+        "year": -995,
+        "month": 1,
+        "abs": -11928
+      },
+      "end": {
+        "year": -977,
+        "month": 12,
+        "abs": -11701
+      },
+      "startAbs": -11928,
+      "endAbs": -11701,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-man",
+      "dynastyId": "zhou-west",
+      "personId": "ji-man",
+      "title": "",
+      "posthumousName": "穆王",
+      "eraNames": [],
+      "start": {
+        "year": -976,
+        "month": 1,
+        "abs": -11700
+      },
+      "end": {
+        "year": -923,
+        "month": 12,
+        "abs": -11053
+      },
+      "startAbs": -11700,
+      "endAbs": -11053,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-yihu",
+      "dynastyId": "zhou-west",
+      "personId": "ji-yihu",
+      "title": "",
+      "posthumousName": "共王",
+      "eraNames": [],
+      "start": {
+        "year": -922,
+        "month": 1,
+        "abs": -11052
+      },
+      "end": {
+        "year": -900,
+        "month": 12,
+        "abs": -10777
+      },
+      "startAbs": -11052,
+      "endAbs": -10777,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-jian",
+      "dynastyId": "zhou-west",
+      "personId": "ji-jian",
+      "title": "",
+      "posthumousName": "懿王",
+      "eraNames": [],
+      "start": {
+        "year": -899,
+        "month": 1,
+        "abs": -10776
+      },
+      "end": {
+        "year": -892,
+        "month": 12,
+        "abs": -10681
+      },
+      "startAbs": -10776,
+      "endAbs": -10681,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-pifang",
+      "dynastyId": "zhou-west",
+      "personId": "ji-pifang",
+      "title": "",
+      "posthumousName": "孝王",
+      "eraNames": [],
+      "start": {
+        "year": -891,
+        "month": 1,
+        "abs": -10680
+      },
+      "end": {
+        "year": -886,
+        "month": 12,
+        "abs": -10609
+      },
+      "startAbs": -10680,
+      "endAbs": -10609,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-xie",
+      "dynastyId": "zhou-west",
+      "personId": "ji-xie",
+      "title": "",
+      "posthumousName": "夷王",
+      "eraNames": [],
+      "start": {
+        "year": -885,
+        "month": 1,
+        "abs": -10608
+      },
+      "end": {
+        "year": -878,
+        "month": 12,
+        "abs": -10513
+      },
+      "startAbs": -10608,
+      "endAbs": -10513,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-hu",
+      "dynastyId": "zhou-west",
+      "personId": "ji-hu",
+      "title": "",
+      "posthumousName": "厉王",
+      "eraNames": [],
+      "start": {
+        "year": -877,
+        "month": 1,
+        "abs": -10512
+      },
+      "end": {
+        "year": -841,
+        "month": 12,
+        "abs": -10069
+      },
+      "startAbs": -10512,
+      "endAbs": -10069,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-jing",
+      "dynastyId": "zhou-west",
+      "personId": "ji-jing",
+      "title": "",
+      "posthumousName": "宣王",
+      "eraNames": [],
+      "start": {
+        "year": -827,
+        "month": 1,
+        "abs": -9912
+      },
+      "end": {
+        "year": -782,
+        "month": 12,
+        "abs": -9361
+      },
+      "startAbs": -9912,
+      "endAbs": -9361,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-gongsheng",
+      "dynastyId": "zhou-west",
+      "personId": "ji-gongsheng",
+      "title": "",
+      "posthumousName": "幽王",
+      "eraNames": [],
+      "start": {
+        "year": -781,
+        "month": 1,
+        "abs": -9360
+      },
+      "end": {
+        "year": -771,
+        "month": 12,
+        "abs": -9229
+      },
+      "startAbs": -9360,
+      "endAbs": -9229,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-yijiu",
+      "dynastyId": "zhou-east",
+      "personId": "ji-yijiu",
+      "title": "",
+      "posthumousName": "平王",
+      "eraNames": [],
+      "start": {
+        "year": -770,
+        "month": 1,
+        "abs": -9228
+      },
+      "end": {
+        "year": -720,
+        "month": 12,
+        "abs": -8617
+      },
+      "startAbs": -9228,
+      "endAbs": -8617,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-yuchen",
+      "dynastyId": "zhou-east",
+      "personId": "ji-yuchen",
+      "title": "",
+      "posthumousName": "携王",
+      "eraNames": [],
+      "start": {
+        "year": -770,
+        "month": 1,
+        "abs": -9228
+      },
+      "end": {
+        "year": -750,
+        "month": 12,
+        "abs": -8977
+      },
+      "startAbs": -9228,
+      "endAbs": -8977,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "claimTrack": "xie",
+      "claimLabel": "携",
+      "claimRole": "rival",
+      "isMain": false
+    },
+    {
+      "id": "reign-ji-lin",
+      "dynastyId": "zhou-east",
+      "personId": "ji-lin",
+      "title": "",
+      "posthumousName": "桓王",
+      "eraNames": [],
+      "start": {
+        "year": -719,
+        "month": 1,
+        "abs": -8616
+      },
+      "end": {
+        "year": -697,
+        "month": 12,
+        "abs": -8341
+      },
+      "startAbs": -8616,
+      "endAbs": -8341,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-tuo",
+      "dynastyId": "zhou-east",
+      "personId": "ji-tuo",
+      "title": "",
+      "posthumousName": "庄王",
+      "eraNames": [],
+      "start": {
+        "year": -696,
+        "month": 1,
+        "abs": -8340
+      },
+      "end": {
+        "year": -682,
+        "month": 12,
+        "abs": -8161
+      },
+      "startAbs": -8340,
+      "endAbs": -8161,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-huqi",
+      "dynastyId": "zhou-east",
+      "personId": "ji-huqi",
+      "title": "",
+      "posthumousName": "釐王",
+      "eraNames": [],
+      "start": {
+        "year": -681,
+        "month": 1,
+        "abs": -8160
+      },
+      "end": {
+        "year": -677,
+        "month": 12,
+        "abs": -8101
+      },
+      "startAbs": -8160,
+      "endAbs": -8101,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-lang",
+      "dynastyId": "zhou-east",
+      "personId": "ji-lang",
+      "title": "",
+      "posthumousName": "惠王",
+      "eraNames": [],
+      "start": {
+        "year": -676,
+        "month": 1,
+        "abs": -8100
+      },
+      "end": {
+        "year": -652,
+        "month": 12,
+        "abs": -7801
+      },
+      "startAbs": -8100,
+      "endAbs": -7801,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-zheng",
+      "dynastyId": "zhou-east",
+      "personId": "ji-zheng",
+      "title": "",
+      "posthumousName": "襄王",
+      "eraNames": [],
+      "start": {
+        "year": -651,
+        "month": 1,
+        "abs": -7800
+      },
+      "end": {
+        "year": -619,
+        "month": 12,
+        "abs": -7405
+      },
+      "startAbs": -7800,
+      "endAbs": -7405,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-renchen",
+      "dynastyId": "zhou-east",
+      "personId": "ji-renchen",
+      "title": "",
+      "posthumousName": "顷王",
+      "eraNames": [],
+      "start": {
+        "year": -618,
+        "month": 1,
+        "abs": -7404
+      },
+      "end": {
+        "year": -613,
+        "month": 12,
+        "abs": -7333
+      },
+      "startAbs": -7404,
+      "endAbs": -7333,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-ban",
+      "dynastyId": "zhou-east",
+      "personId": "ji-ban",
+      "title": "",
+      "posthumousName": "匡王",
+      "eraNames": [],
+      "start": {
+        "year": -612,
+        "month": 1,
+        "abs": -7332
+      },
+      "end": {
+        "year": -607,
+        "month": 12,
+        "abs": -7261
+      },
+      "startAbs": -7332,
+      "endAbs": -7261,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-yu",
+      "dynastyId": "zhou-east",
+      "personId": "ji-yu",
+      "title": "",
+      "posthumousName": "定王",
+      "eraNames": [],
+      "start": {
+        "year": -606,
+        "month": 1,
+        "abs": -7260
+      },
+      "end": {
+        "year": -586,
+        "month": 12,
+        "abs": -7009
+      },
+      "startAbs": -7260,
+      "endAbs": -7009,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-yi",
+      "dynastyId": "zhou-east",
+      "personId": "ji-yi",
+      "title": "",
+      "posthumousName": "简王",
+      "eraNames": [],
+      "start": {
+        "year": -585,
+        "month": 1,
+        "abs": -7008
+      },
+      "end": {
+        "year": -572,
+        "month": 12,
+        "abs": -6841
+      },
+      "startAbs": -7008,
+      "endAbs": -6841,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-xiexin",
+      "dynastyId": "zhou-east",
+      "personId": "ji-xiexin",
+      "title": "",
+      "posthumousName": "灵王",
+      "eraNames": [],
+      "start": {
+        "year": -571,
+        "month": 1,
+        "abs": -6840
+      },
+      "end": {
+        "year": -545,
+        "month": 12,
+        "abs": -6517
+      },
+      "startAbs": -6840,
+      "endAbs": -6517,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-gui",
+      "dynastyId": "zhou-east",
+      "personId": "ji-gui",
+      "title": "",
+      "posthumousName": "景王",
+      "eraNames": [],
+      "start": {
+        "year": -544,
+        "month": 1,
+        "abs": -6516
+      },
+      "end": {
+        "year": -521,
+        "month": 12,
+        "abs": -6229
+      },
+      "startAbs": -6516,
+      "endAbs": -6229,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-meng",
+      "dynastyId": "zhou-east",
+      "personId": "ji-meng",
+      "title": "",
+      "posthumousName": "悼王",
+      "eraNames": [],
+      "start": {
+        "year": -520,
+        "month": 1,
+        "abs": -6228
+      },
+      "end": {
+        "year": -520,
+        "month": 12,
+        "abs": -6217
+      },
+      "startAbs": -6228,
+      "endAbs": -6217,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-gai",
+      "dynastyId": "zhou-east",
+      "personId": "ji-gai",
+      "title": "",
+      "posthumousName": "敬王",
+      "eraNames": [],
+      "start": {
+        "year": -519,
+        "month": 1,
+        "abs": -6216
+      },
+      "end": {
+        "year": -477,
+        "month": 12,
+        "abs": -5701
+      },
+      "startAbs": -6216,
+      "endAbs": -5701,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-ren",
+      "dynastyId": "zhou-east",
+      "personId": "ji-ren",
+      "title": "",
+      "posthumousName": "元王",
+      "eraNames": [],
+      "start": {
+        "year": -476,
+        "month": 1,
+        "abs": -5700
+      },
+      "end": {
+        "year": -469,
+        "month": 12,
+        "abs": -5605
+      },
+      "startAbs": -5700,
+      "endAbs": -5605,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-jie",
+      "dynastyId": "zhou-east",
+      "personId": "ji-jie",
+      "title": "",
+      "posthumousName": "贞定王",
+      "eraNames": [],
+      "start": {
+        "year": -468,
+        "month": 1,
+        "abs": -5604
+      },
+      "end": {
+        "year": -442,
+        "month": 12,
+        "abs": -5281
+      },
+      "startAbs": -5604,
+      "endAbs": -5281,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-quji",
+      "dynastyId": "zhou-east",
+      "personId": "ji-quji",
+      "title": "",
+      "posthumousName": "哀王",
+      "eraNames": [],
+      "start": {
+        "year": -441,
+        "month": 1,
+        "abs": -5280
+      },
+      "end": {
+        "year": -441,
+        "month": 3,
+        "abs": -5278
+      },
+      "startAbs": -5280,
+      "endAbs": -5278,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-shu",
+      "dynastyId": "zhou-east",
+      "personId": "ji-shu",
+      "title": "",
+      "posthumousName": "思王",
+      "eraNames": [],
+      "start": {
+        "year": -441,
+        "month": 4,
+        "abs": -5277
+      },
+      "end": {
+        "year": -441,
+        "month": 12,
+        "abs": -5269
+      },
+      "startAbs": -5277,
+      "endAbs": -5269,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-wei",
+      "dynastyId": "zhou-east",
+      "personId": "ji-wei",
+      "title": "",
+      "posthumousName": "考王",
+      "eraNames": [],
+      "start": {
+        "year": -440,
+        "month": 1,
+        "abs": -5268
+      },
+      "end": {
+        "year": -426,
+        "month": 12,
+        "abs": -5089
+      },
+      "startAbs": -5268,
+      "endAbs": -5089,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-wu",
+      "dynastyId": "zhou-east",
+      "personId": "ji-wu",
+      "title": "",
+      "posthumousName": "威烈王",
+      "eraNames": [],
+      "start": {
+        "year": -425,
+        "month": 1,
+        "abs": -5088
+      },
+      "end": {
+        "year": -402,
+        "month": 12,
+        "abs": -4801
+      },
+      "startAbs": -5088,
+      "endAbs": -4801,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-jiao",
+      "dynastyId": "zhou-east",
+      "personId": "ji-jiao",
+      "title": "",
+      "posthumousName": "安王",
+      "eraNames": [],
+      "start": {
+        "year": -401,
+        "month": 1,
+        "abs": -4800
+      },
+      "end": {
+        "year": -376,
+        "month": 12,
+        "abs": -4489
+      },
+      "startAbs": -4800,
+      "endAbs": -4489,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-xi",
+      "dynastyId": "zhou-east",
+      "personId": "ji-xi",
+      "title": "",
+      "posthumousName": "烈王",
+      "eraNames": [],
+      "start": {
+        "year": -375,
+        "month": 1,
+        "abs": -4488
+      },
+      "end": {
+        "year": -369,
+        "month": 12,
+        "abs": -4405
+      },
+      "startAbs": -4488,
+      "endAbs": -4405,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-bian",
+      "dynastyId": "zhou-east",
+      "personId": "ji-bian",
+      "title": "",
+      "posthumousName": "显王",
+      "eraNames": [],
+      "start": {
+        "year": -368,
+        "month": 1,
+        "abs": -4404
+      },
+      "end": {
+        "year": -321,
+        "month": 12,
+        "abs": -3829
+      },
+      "startAbs": -4404,
+      "endAbs": -3829,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-ding",
+      "dynastyId": "zhou-east",
+      "personId": "ji-ding",
+      "title": "",
+      "posthumousName": "慎靓王",
+      "eraNames": [],
+      "start": {
+        "year": -320,
+        "month": 1,
+        "abs": -3828
+      },
+      "end": {
+        "year": -315,
+        "month": 12,
+        "abs": -3757
+      },
+      "startAbs": -3828,
+      "endAbs": -3757,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    },
+    {
+      "id": "reign-ji-yan",
+      "dynastyId": "zhou-east",
+      "personId": "ji-yan",
+      "title": "",
+      "posthumousName": "赧王",
+      "eraNames": [],
+      "start": {
+        "year": -314,
+        "month": 1,
+        "abs": -3756
+      },
+      "end": {
+        "year": -256,
+        "month": 12,
+        "abs": -3049
+      },
+      "startAbs": -3756,
+      "endAbs": -3049,
+      "precision": "year",
+      "startDateConfidence": null,
+      "endDateConfidence": null,
+      "isMain": true
+    }
+  ],
+  "events": [
+    {
+      "kind": "other",
+      "precision": "century",
+      "dynastyIds": [
+        "xia"
+      ],
+      "participantIds": [
+        "si-yu",
+        "gun",
+        "gao-yao",
+        "bo-yi",
+        "tu-shan-shi"
+      ],
+      "dateNote": "传说时代，具体年月不可考；窗口取夏朝建立前后的世纪尺度",
+      "id": "yu-flood-control",
+      "name": "大禹治水",
+      "timeMode": "circa",
+      "start": {
+        "year": -2100,
+        "month": 1,
+        "abs": -25188
+      },
+      "end": {
+        "year": -2070,
+        "month": 12,
+        "abs": -24817
+      },
+      "at": {
+        "year": -2070,
+        "month": 1,
+        "abs": -24828
+      },
+      "summary": "传说禹疏导洪水，其后受禅，为夏后氏开国叙事的核心。",
+      "startAbs": -25188,
+      "endAbs": -24817,
+      "atAbs": -24828
+    },
+    {
+      "kind": "battle",
+      "precision": "decade",
+      "dynastyIds": [
+        "xia"
+      ],
+      "participantIds": [
+        "si-qi"
+      ],
+      "dateNote": "《尚书·甘誓》载启伐有扈；绝对年取今本竹书年数自夏始顺推后的启在位段，标推算",
+      "id": "gan-battle",
+      "name": "甘之战",
+      "timeMode": "circa",
+      "start": {
+        "year": -2060,
+        "month": 1,
+        "abs": -24708
+      },
+      "end": {
+        "year": -2045,
+        "month": 12,
+        "abs": -24517
+      },
+      "at": {
+        "year": -2053,
+        "month": 1,
+        "abs": -24624
+      },
+      "summary": "夏启讨伐有扈氏，传统视为世袭王权确立过程中的战争。",
+      "startAbs": -24708,
+      "endAbs": -24517,
+      "atAbs": -24624
+    },
+    {
+      "kind": "politics",
+      "precision": "decade",
+      "dynastyIds": [
+        "xia"
+      ],
+      "participantIds": [
+        "si-taikang",
+        "hou-yi"
+      ],
+      "dateNote": "太康失位传说。窗口取太康在位段（前2044–前2041）。",
+      "id": "taikang-lost",
+      "name": "太康失国",
+      "timeMode": "circa",
+      "start": {
+        "year": -2044,
+        "month": 1,
+        "abs": -24516
+      },
+      "end": {
+        "year": -2041,
+        "month": 12,
+        "abs": -24469
+      },
+      "at": {
+        "year": -2044,
+        "month": 12,
+        "abs": -24505
+      },
+      "summary": "太康失位，有穷后羿因夏民以代夏政。",
+      "startAbs": -24516,
+      "endAbs": -24469,
+      "atAbs": -24505
+    },
+    {
+      "kind": "politics",
+      "precision": "decade",
+      "dynastyIds": [
+        "xia"
+      ],
+      "participantIds": [
+        "si-shaokang",
+        "hou-min",
+        "han-zhuo",
+        "han-jiao"
+      ],
+      "dateNote": "少康灭寒浞、恢复夏政；窗口取今本竹书年数顺推后的少康在位段，标推算",
+      "id": "shaokang-zhongxing",
+      "name": "少康中兴",
+      "timeMode": "circa",
+      "start": {
+        "year": -1959,
+        "month": 1,
+        "abs": -23496
+      },
+      "end": {
+        "year": -1939,
+        "month": 12,
+        "abs": -23245
+      },
+      "at": {
+        "year": -1959,
+        "month": 1,
+        "abs": -23496
+      },
+      "summary": "后缗逃归有仍生少康；少康自有虞起兵，消灭寒浞、过浇，恢复夏后氏统治。",
+      "startAbs": -23496,
+      "endAbs": -23245,
+      "atAbs": -23496
+    },
+    {
+      "kind": "politics",
+      "precision": "decade",
+      "dynastyIds": [
+        "xia"
+      ],
+      "participantIds": [
+        "si-kongjia"
+      ],
+      "dateNote": "《史记·夏本纪》记孔甲好鬼神、夏德衰；绝对年取今本竹书年数顺推后的孔甲在位段，标推算",
+      "id": "kongjia-decline",
+      "name": "孔甲乱德",
+      "timeMode": "circa",
+      "start": {
+        "year": -1709,
+        "month": 1,
+        "abs": -20496
+      },
+      "end": {
+        "year": -1679,
+        "month": 12,
+        "abs": -20125
+      },
+      "at": {
+        "year": -1694,
+        "month": 1,
+        "abs": -20316
+      },
+      "summary": "帝孔甲好方鬼神、事淫乱，夏后氏德衰、诸侯畔之；又有扰龙、刘累御龙传说。",
+      "startAbs": -20496,
+      "endAbs": -20125,
+      "atAbs": -20316
+    },
+    {
+      "kind": "politics",
+      "precision": "decade",
+      "dynastyIds": [
+        "xia"
+      ],
+      "participantIds": [
+        "si-jie",
+        "guan-longpang"
+      ],
+      "dateNote": "桀杀关龙逢出于《韩诗外传》等，具体年份不可考；窗取桀在位末段，标推算",
+      "id": "guanlongpang-remonstrance",
+      "name": "关龙逢谏桀",
+      "timeMode": "circa",
+      "start": {
+        "year": -1609,
+        "month": 1,
+        "abs": -19296
+      },
+      "end": {
+        "year": -1600,
+        "month": 12,
+        "abs": -19177
+      },
+      "at": {
+        "year": -1600,
+        "month": 1,
+        "abs": -19188
+      },
+      "summary": "传说夏桀通宵宴乐，关龙逢进黄图强谏，被桀所杀。",
+      "startAbs": -19296,
+      "endAbs": -19177,
+      "atAbs": -19188
+    },
+    {
+      "kind": "battle",
+      "precision": "decade",
+      "dynastyIds": [
+        "xia",
+        "shang"
+      ],
+      "participantIds": [
+        "si-jie",
+        "zi-tang",
+        "yi-yin",
+        "zhong-hui",
+        "mo-xi"
+      ],
+      "dateNote": "夏商分界取断代工程约前1600年，战役月日不详",
+      "id": "mingtiao",
+      "name": "鸣条之战",
+      "timeMode": "circa",
+      "start": {
+        "year": -1610,
+        "month": 1,
+        "abs": -19308
+      },
+      "end": {
+        "year": -1600,
+        "month": 12,
+        "abs": -19177
+      },
+      "at": {
+        "year": -1600,
+        "month": 1,
+        "abs": -19188
+      },
+      "summary": "商汤与伊尹在鸣条击败夏桀，夏亡商兴。",
+      "startAbs": -19308,
+      "endAbs": -19177,
+      "atAbs": -19188
+    },
+    {
+      "kind": "politics",
+      "precision": "decade",
+      "dynastyIds": [
+        "shang"
+      ],
+      "participantIds": [
+        "yi-yin",
+        "zi-taijia"
+      ],
+      "dateNote": "桐宫放逐出于《史记》等传说，具体年份不可考",
+      "id": "yiyin-taijia",
+      "name": "伊尹放太甲",
+      "timeMode": "circa",
+      "start": {
+        "year": -1560,
+        "month": 1,
+        "abs": -18708
+      },
+      "end": {
+        "year": -1548,
+        "month": 12,
+        "abs": -18553
+      },
+      "at": {
+        "year": -1555,
+        "month": 1,
+        "abs": -18648
+      },
+      "summary": "传说太甲不遵汤法，伊尹放之于桐，三年后迎归复位。",
+      "startAbs": -18708,
+      "endAbs": -18553,
+      "atAbs": -18648
+    },
+    {
+      "kind": "politics",
+      "precision": "decade",
+      "dynastyIds": [
+        "shang"
+      ],
+      "participantIds": [
+        "zi-taiwu",
+        "yi-zhi",
+        "wu-xian"
+      ],
+      "dateNote": "《史记》记太戊立伊陟为相、用巫咸；绝对年取本表太戊在位前十年（竹书积年，非实测）",
+      "id": "taiwu-revival",
+      "name": "太戊修德",
+      "timeMode": "circa",
+      "start": {
+        "year": -1494,
+        "month": 1,
+        "abs": -17916
+      },
+      "end": {
+        "year": -1485,
+        "month": 12,
+        "abs": -17797
+      },
+      "at": {
+        "year": -1494,
+        "month": 1,
+        "abs": -17916
+      },
+      "summary": "太戊以伊陟为相，用巫咸；传说亳有祥桑榖，修德后枯死，殷道复兴。",
+      "startAbs": -17916,
+      "endAbs": -17797,
+      "atAbs": -17916
+    },
+    {
+      "kind": "politics",
+      "precision": "decade",
+      "dynastyIds": [
+        "shang"
+      ],
+      "participantIds": [
+        "zi-pangeng"
+      ],
+      "dateNote": "断代工程估定迁殷约前1300年，起迄年不详",
+      "id": "pangeng-move-yin",
+      "name": "盘庚迁殷",
+      "timeMode": "circa",
+      "start": {
+        "year": -1310,
+        "month": 1,
+        "abs": -15708
+      },
+      "end": {
+        "year": -1290,
+        "month": 12,
+        "abs": -15457
+      },
+      "at": {
+        "year": -1300,
+        "month": 1,
+        "abs": -15588
+      },
+      "summary": "盘庚迁都于殷（今安阳），此后商亦称殷。",
+      "startAbs": -15708,
+      "endAbs": -15457,
+      "atAbs": -15588
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "shang"
+      ],
+      "participantIds": [
+        "zi-wuding",
+        "fu-hao",
+        "fu-yue",
+        "gan-pan"
+      ],
+      "dateNote": "在位年取断代工程前1250–前1192年",
+      "id": "wuding-zhongxing",
+      "name": "武丁中兴",
+      "timeMode": "span",
+      "start": {
+        "year": -1250,
+        "month": 1,
+        "abs": -14988
+      },
+      "end": {
+        "year": -1192,
+        "month": 12,
+        "abs": -14281
+      },
+      "summary": "武丁对外用兵、内修祭祀，晚商达到鼎盛；甘盘、傅说辅政，妇好亦主征伐。",
+      "startAbs": -14988,
+      "endAbs": -14281
+    },
+    {
+      "kind": "politics",
+      "precision": "decade",
+      "dynastyIds": [
+        "shang"
+      ],
+      "participantIds": [
+        "zi-wuding",
+        "fu-yue",
+        "gan-pan"
+      ],
+      "dateNote": "《史记》《说命》记武丁梦傅说、举于傅岩；年份不详，窗取武丁在位前十年",
+      "id": "fuyue-fuyan",
+      "name": "武丁举傅说",
+      "timeMode": "circa",
+      "start": {
+        "year": -1250,
+        "month": 1,
+        "abs": -14988
+      },
+      "end": {
+        "year": -1241,
+        "month": 12,
+        "abs": -14869
+      },
+      "at": {
+        "year": -1250,
+        "month": 1,
+        "abs": -14988
+      },
+      "summary": "传说傅说在傅岩版筑，武丁按梦中形象求得，举以为相。",
+      "startAbs": -14988,
+      "endAbs": -14869,
+      "atAbs": -14988
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "shang"
+      ],
+      "participantIds": [
+        "zi-dixin",
+        "bi-gan"
+      ],
+      "dateNote": "《今本竹书》系于帝辛末年杀王子比干；绝对年取牧野前1046年，月日不详",
+      "id": "bigan-killed",
+      "name": "比干谏死",
+      "timeMode": "circa",
+      "start": {
+        "year": -1047,
+        "month": 1,
+        "abs": -12552
+      },
+      "end": {
+        "year": -1046,
+        "month": 12,
+        "abs": -12529
+      },
+      "at": {
+        "year": -1046,
+        "month": 12,
+        "abs": -12529
+      },
+      "summary": "传说比干强谏帝辛，被剖心而死；与微子、箕子并称殷有三仁。",
+      "startAbs": -12552,
+      "endAbs": -12529,
+      "atAbs": -12529
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "month",
+      "dynastyIds": [
+        "shang",
+        "zhou-west"
+      ],
+      "participantIds": [
+        "zi-dixin",
+        "ji-fa",
+        "lv-shang",
+        "da-ji"
+      ],
+      "id": "muye",
+      "name": "牧野之战",
+      "dateNote": "断代工程取前1046年1月20日；月取正月，日不入库",
+      "at": {
+        "year": -1046,
+        "month": 1,
+        "abs": -12540
+      },
+      "summary": "周武王会师牧野克商，商周分界。",
+      "atAbs": -12540
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-west"
+      ],
+      "participantIds": [
+        "ji-song",
+        "ji-dan"
+      ],
+      "dateNote": "成王初、周公摄政期间，绝对年据西周初框架",
+      "id": "sanjian-rebellion",
+      "name": "三监之乱",
+      "timeMode": "circa",
+      "start": {
+        "year": -1042,
+        "month": 1,
+        "abs": -12492
+      },
+      "end": {
+        "year": -1036,
+        "month": 12,
+        "abs": -12409
+      },
+      "at": {
+        "year": -1041,
+        "month": 12,
+        "abs": -12469
+      },
+      "summary": "管蔡霍三监联合武庚叛周，周公东征平定，大规模封建东土。",
+      "startAbs": -12492,
+      "endAbs": -12409,
+      "atAbs": -12469
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-west"
+      ],
+      "participantIds": [
+        "ji-song",
+        "ji-zhao",
+        "ji-dan"
+      ],
+      "dateNote": "对应断代工程成王、康王在位年",
+      "id": "chengkang-rule",
+      "name": "成康之治",
+      "timeMode": "span",
+      "start": {
+        "year": -1042,
+        "month": 1,
+        "abs": -12492
+      },
+      "end": {
+        "year": -996,
+        "month": 12,
+        "abs": -11929
+      },
+      "summary": "西周早期政治相对安定，传统称刑错四十余年不用。",
+      "startAbs": -12492,
+      "endAbs": -11929
+    },
+    {
+      "kind": "battle",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-west"
+      ],
+      "participantIds": [
+        "ji-xia"
+      ],
+      "dateNote": "昭王卒年取断代工程前977年，南征次数与月份不详",
+      "id": "zhaowang-south",
+      "name": "昭王南征",
+      "timeMode": "circa",
+      "start": {
+        "year": -995,
+        "month": 1,
+        "abs": -11928
+      },
+      "end": {
+        "year": -977,
+        "month": 12,
+        "abs": -11701
+      },
+      "at": {
+        "year": -977,
+        "month": 12,
+        "abs": -11701
+      },
+      "summary": "周昭王多次南征荆楚，传说还师渡汉水而卒。",
+      "startAbs": -11928,
+      "endAbs": -11701,
+      "atAbs": -11701
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-west"
+      ],
+      "participantIds": [
+        "ji-hu"
+      ],
+      "id": "guoren-riot",
+      "name": "国人暴动",
+      "dateNote": "共和元年即前841年，为中国有确切纪年之始",
+      "at": {
+        "year": -841,
+        "month": 12,
+        "abs": -10069
+      },
+      "summary": "厉王专利，国人暴动，王奔彘，周召共和行政。",
+      "atAbs": -10069
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-west"
+      ],
+      "participantIds": [
+        "ji-hu"
+      ],
+      "dateNote": "前841–前828年，一说周召二公共和，一说共伯和摄政",
+      "id": "gonghe-regency",
+      "name": "共和行政",
+      "timeMode": "span",
+      "start": {
+        "year": -841,
+        "month": 1,
+        "abs": -10080
+      },
+      "end": {
+        "year": -828,
+        "month": 12,
+        "abs": -9913
+      },
+      "summary": "厉王出奔后的十四年无王期，至宣王即位结束。",
+      "startAbs": -10080,
+      "endAbs": -9913
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-west"
+      ],
+      "participantIds": [
+        "ji-jing"
+      ],
+      "id": "xuanwang-zhongxing",
+      "name": "宣王中兴",
+      "timeMode": "span",
+      "start": {
+        "year": -827,
+        "month": 1,
+        "abs": -9912
+      },
+      "end": {
+        "year": -782,
+        "month": 12,
+        "abs": -9361
+      },
+      "summary": "宣王整顿朝政、征伐玁狁，西周国势一度回升。",
+      "startAbs": -9912,
+      "endAbs": -9361
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-west"
+      ],
+      "participantIds": [
+        "ji-gongsheng",
+        "ji-yijiu",
+        "bao-si"
+      ],
+      "id": "quanrong-invasion",
+      "name": "犬戎之祸",
+      "dateNote": "幽王十一年，前771年；烽火戏诸侯为传统叙事，史实有争议",
+      "at": {
+        "year": -771,
+        "month": 12,
+        "abs": -9229
+      },
+      "summary": "申侯联合缯人与犬戎攻周，攻破镐京，周幽王死，西周亡。传统叙事称幽王曾为博褒姒一笑多次举烽火戏诸侯，犬戎来攻时诸侯未至；此说见《史记》，但真实性有争议。",
+      "atAbs": -9229
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-east"
+      ],
+      "participantIds": [
+        "ji-yijiu",
+        "ji-yuchen"
+      ],
+      "id": "zhou-dual-kings",
+      "name": "二王并立",
+      "dateNote": "前771年幽王死后",
+      "at": {
+        "year": -771,
+        "month": 12,
+        "abs": -9229
+      },
+      "summary": "申侯等立平王，虢公翰等立携王；后世以平王东迁为东周正统。",
+      "atAbs": -9229
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-east"
+      ],
+      "participantIds": [
+        "ji-yuchen"
+      ],
+      "id": "xie-wang-killed",
+      "name": "晋文侯杀携王",
+      "dateNote": "前750年",
+      "at": {
+        "year": -750,
+        "month": 12,
+        "abs": -8977
+      },
+      "summary": "晋文侯攻灭携王，二王并立终结，平王正统确立。",
+      "atAbs": -8977
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-east"
+      ],
+      "participantIds": [
+        "ji-yijiu"
+      ],
+      "id": "pingwang-eastward",
+      "name": "平王东迁",
+      "dateNote": "平王元年，前770年",
+      "at": {
+        "year": -770,
+        "month": 12,
+        "abs": -9217
+      },
+      "summary": "平王迁都洛邑，东周开始，王室逐渐失去对诸侯的实质控制。",
+      "atAbs": -9217
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-east"
+      ],
+      "participantIds": [],
+      "dateNote": "平王东迁（前770）至三家分晋（前403）；与战国以册命立国为界",
+      "id": "chunqiu",
+      "name": "春秋",
+      "timeMode": "span",
+      "start": {
+        "year": -770,
+        "month": 1,
+        "abs": -9228
+      },
+      "end": {
+        "year": -403,
+        "month": 12,
+        "abs": -4813
+      },
+      "summary": "诸侯争霸、礼崩乐坏，周天子共主名存实亡。",
+      "startAbs": -9228,
+      "endAbs": -4813
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-east"
+      ],
+      "participantIds": [
+        "jiang-xiaobai",
+        "guan-zhong",
+        "ji-zheng"
+      ],
+      "id": "kuiqiu",
+      "name": "葵丘之盟",
+      "dateNote": "齐桓公三十五年，鲁僖公九年，前651年",
+      "at": {
+        "year": -651,
+        "month": 12,
+        "abs": -7789
+      },
+      "summary": "齐桓公会诸侯于葵丘，周襄王赐胙，齐霸达到顶点。",
+      "atAbs": -7789
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-east"
+      ],
+      "participantIds": [
+        "ji-chonger"
+      ],
+      "id": "chengpu",
+      "name": "城濮之战",
+      "dateNote": "鲁僖公二十八年，前632年",
+      "at": {
+        "year": -632,
+        "month": 12,
+        "abs": -7561
+      },
+      "summary": "楚围宋，宋向晋求援。晋先攻曹，因卫拒绝借道，又出兵伐卫；楚将宛春提出复曹、卫以换取楚军解宋围。晋采纳先轸之策，扣留宛春，暗中许诺复曹、卫，借此离间楚与曹、卫；又依晋文公旧诺退避三舍，最终在城濮击败楚军。战后晋复曹、卫，并于践土会盟，确立霸主地位。",
+      "atAbs": -7561
+    },
+    {
+      "kind": "politics",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-east"
+      ],
+      "participantIds": [],
+      "dateNote": "以三家分晋、周天子册命韩赵魏为诸侯（前403）为起点，迄秦统一前221年",
+      "id": "zhanguo",
+      "name": "战国",
+      "timeMode": "span",
+      "start": {
+        "year": -403,
+        "month": 1,
+        "abs": -4824
+      },
+      "end": {
+        "year": -221,
+        "month": 12,
+        "abs": -2629
+      },
+      "summary": "七雄兼并，变法图强，至秦始皇统一而结束。",
+      "startAbs": -4824,
+      "endAbs": -2629
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "precision": "year",
+      "dynastyIds": [
+        "zhou-east"
+      ],
+      "participantIds": [
+        "ji-wu"
+      ],
+      "id": "sanjia-fenjin",
+      "name": "三家分晋",
+      "dateNote": "周威烈王二十三年正式命韩赵魏为诸侯，前403年",
+      "at": {
+        "year": -403,
+        "month": 12,
+        "abs": -4813
+      },
+      "summary": "周天子承认韩、赵、魏，战国格局形成的标志性事件。",
+      "atAbs": -4813
+    },
+    {
+      "kind": "culture",
+      "precision": "century",
+      "dynastyIds": [
+        "zhou-east"
+      ],
+      "participantIds": [
+        "kong-qiu"
+      ],
+      "dateNote": "思想活跃期约自春秋晚期至秦统一，并无单一起迄年",
+      "id": "baijia-zhengming",
+      "name": "百家争鸣",
+      "timeMode": "circa",
+      "start": {
+        "year": -551,
+        "month": 1,
+        "abs": -6600
+      },
+      "end": {
+        "year": -221,
+        "month": 12,
+        "abs": -2629
+      },
+      "at": {
+        "year": -400,
+        "month": 1,
+        "abs": -4788
+      },
+      "summary": "儒墨道法名等学派并起，塑造此后中国思想传统。",
+      "startAbs": -6600,
+      "endAbs": -2629,
+      "atAbs": -4788
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-si-yu-si-qi-succession",
+      "fromRef": "person:si-yu",
+      "toRef": "person:si-qi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-si-qi-si-taikang-succession",
+      "fromRef": "person:si-qi",
+      "toRef": "person:si-taikang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-si-taikang-si-zhongkang-succession",
+      "fromRef": "person:si-taikang",
+      "toRef": "person:si-zhongkang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-si-zhongkang-si-xiang-succession",
+      "fromRef": "person:si-zhongkang",
+      "toRef": "person:si-xiang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-si-xiang-si-shaokang-succession",
+      "fromRef": "person:si-xiang",
+      "toRef": "person:si-shaokang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-si-shaokang-si-zhu-succession",
+      "fromRef": "person:si-shaokang",
+      "toRef": "person:si-zhu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-si-zhu-si-huai-succession",
+      "fromRef": "person:si-zhu",
+      "toRef": "person:si-huai",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-si-huai-si-mang-succession",
+      "fromRef": "person:si-huai",
+      "toRef": "person:si-mang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-si-mang-si-xie-succession",
+      "fromRef": "person:si-mang",
+      "toRef": "person:si-xie",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-si-xie-si-bujiang-succession",
+      "fromRef": "person:si-xie",
+      "toRef": "person:si-bujiang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-si-bujiang-si-jiong-succession",
+      "fromRef": "person:si-bujiang",
+      "toRef": "person:si-jiong",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-si-jiong-si-jin-succession",
+      "fromRef": "person:si-jiong",
+      "toRef": "person:si-jin",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-si-jin-si-kongjia-succession",
+      "fromRef": "person:si-jin",
+      "toRef": "person:si-kongjia",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-si-kongjia-si-gao-succession",
+      "fromRef": "person:si-kongjia",
+      "toRef": "person:si-gao",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-si-gao-si-fa-succession",
+      "fromRef": "person:si-gao",
+      "toRef": "person:si-fa",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-si-fa-si-jie-succession",
+      "fromRef": "person:si-fa",
+      "toRef": "person:si-jie",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-tang-zi-waibing-succession",
+      "fromRef": "person:zi-tang",
+      "toRef": "person:zi-waibing",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-waibing-zi-zhongren-succession",
+      "fromRef": "person:zi-waibing",
+      "toRef": "person:zi-zhongren",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-zhongren-zi-taijia-succession",
+      "fromRef": "person:zi-zhongren",
+      "toRef": "person:zi-taijia",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-taijia-zi-woding-succession",
+      "fromRef": "person:zi-taijia",
+      "toRef": "person:zi-woding",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-woding-zi-taigeng-succession",
+      "fromRef": "person:zi-woding",
+      "toRef": "person:zi-taigeng",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-taigeng-zi-xiaojia-succession",
+      "fromRef": "person:zi-taigeng",
+      "toRef": "person:zi-xiaojia",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-xiaojia-zi-yongji-succession",
+      "fromRef": "person:zi-xiaojia",
+      "toRef": "person:zi-yongji",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-yongji-zi-taiwu-succession",
+      "fromRef": "person:zi-yongji",
+      "toRef": "person:zi-taiwu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-taiwu-zi-zhongding-succession",
+      "fromRef": "person:zi-taiwu",
+      "toRef": "person:zi-zhongding",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-zhongding-zi-wairen-succession",
+      "fromRef": "person:zi-zhongding",
+      "toRef": "person:zi-wairen",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-wairen-zi-hedanjia-succession",
+      "fromRef": "person:zi-wairen",
+      "toRef": "person:zi-hedanjia",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-hedanjia-zi-zuyi-succession",
+      "fromRef": "person:zi-hedanjia",
+      "toRef": "person:zi-zuyi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-zuyi-zi-zuxin-succession",
+      "fromRef": "person:zi-zuyi",
+      "toRef": "person:zi-zuxin",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-zuxin-zi-wojia-succession",
+      "fromRef": "person:zi-zuxin",
+      "toRef": "person:zi-wojia",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-wojia-zi-zuding-succession",
+      "fromRef": "person:zi-wojia",
+      "toRef": "person:zi-zuding",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-zuding-zi-nangeng-succession",
+      "fromRef": "person:zi-zuding",
+      "toRef": "person:zi-nangeng",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-nangeng-zi-yangjia-succession",
+      "fromRef": "person:zi-nangeng",
+      "toRef": "person:zi-yangjia",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-yangjia-zi-pangeng-succession",
+      "fromRef": "person:zi-yangjia",
+      "toRef": "person:zi-pangeng",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-pangeng-zi-xiaoxin-succession",
+      "fromRef": "person:zi-pangeng",
+      "toRef": "person:zi-xiaoxin",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-xiaoxin-zi-xiaoyi-succession",
+      "fromRef": "person:zi-xiaoxin",
+      "toRef": "person:zi-xiaoyi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-xiaoyi-zi-wuding-succession",
+      "fromRef": "person:zi-xiaoyi",
+      "toRef": "person:zi-wuding",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-wuding-zi-zugeng-succession",
+      "fromRef": "person:zi-wuding",
+      "toRef": "person:zi-zugeng",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-zugeng-zi-zujia-succession",
+      "fromRef": "person:zi-zugeng",
+      "toRef": "person:zi-zujia",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-zujia-zi-linxin-succession",
+      "fromRef": "person:zi-zujia",
+      "toRef": "person:zi-linxin",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-linxin-zi-gengding-succession",
+      "fromRef": "person:zi-linxin",
+      "toRef": "person:zi-gengding",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-gengding-zi-wuyi-succession",
+      "fromRef": "person:zi-gengding",
+      "toRef": "person:zi-wuyi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-wuyi-zi-wending-succession",
+      "fromRef": "person:zi-wuyi",
+      "toRef": "person:zi-wending",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-wending-zi-diyi-succession",
+      "fromRef": "person:zi-wending",
+      "toRef": "person:zi-diyi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-zi-diyi-zi-dixin-succession",
+      "fromRef": "person:zi-diyi",
+      "toRef": "person:zi-dixin",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-fa-ji-song-succession",
+      "fromRef": "person:ji-fa",
+      "toRef": "person:ji-song",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-song-ji-zhao-succession",
+      "fromRef": "person:ji-song",
+      "toRef": "person:ji-zhao",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-zhao-ji-xia-succession",
+      "fromRef": "person:ji-zhao",
+      "toRef": "person:ji-xia",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-xia-ji-man-succession",
+      "fromRef": "person:ji-xia",
+      "toRef": "person:ji-man",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-man-ji-yihu-succession",
+      "fromRef": "person:ji-man",
+      "toRef": "person:ji-yihu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-yihu-ji-jian-succession",
+      "fromRef": "person:ji-yihu",
+      "toRef": "person:ji-jian",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-jian-ji-pifang-succession",
+      "fromRef": "person:ji-jian",
+      "toRef": "person:ji-pifang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-pifang-ji-xie-succession",
+      "fromRef": "person:ji-pifang",
+      "toRef": "person:ji-xie",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-xie-ji-hu-succession",
+      "fromRef": "person:ji-xie",
+      "toRef": "person:ji-hu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-hu-ji-jing-succession",
+      "fromRef": "person:ji-hu",
+      "toRef": "person:ji-jing",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-jing-ji-gongsheng-succession",
+      "fromRef": "person:ji-jing",
+      "toRef": "person:ji-gongsheng",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-yijiu-ji-lin-succession",
+      "fromRef": "person:ji-yijiu",
+      "toRef": "person:ji-lin",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-lin-ji-tuo-succession",
+      "fromRef": "person:ji-lin",
+      "toRef": "person:ji-tuo",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-tuo-ji-huqi-succession",
+      "fromRef": "person:ji-tuo",
+      "toRef": "person:ji-huqi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-huqi-ji-lang-succession",
+      "fromRef": "person:ji-huqi",
+      "toRef": "person:ji-lang",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-lang-ji-zheng-succession",
+      "fromRef": "person:ji-lang",
+      "toRef": "person:ji-zheng",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-zheng-ji-renchen-succession",
+      "fromRef": "person:ji-zheng",
+      "toRef": "person:ji-renchen",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-renchen-ji-ban-succession",
+      "fromRef": "person:ji-renchen",
+      "toRef": "person:ji-ban",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-ban-ji-yu-succession",
+      "fromRef": "person:ji-ban",
+      "toRef": "person:ji-yu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-yu-ji-yi-succession",
+      "fromRef": "person:ji-yu",
+      "toRef": "person:ji-yi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-yi-ji-xiexin-succession",
+      "fromRef": "person:ji-yi",
+      "toRef": "person:ji-xiexin",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-xiexin-ji-gui-succession",
+      "fromRef": "person:ji-xiexin",
+      "toRef": "person:ji-gui",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-gui-ji-meng-succession",
+      "fromRef": "person:ji-gui",
+      "toRef": "person:ji-meng",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-meng-ji-gai-succession",
+      "fromRef": "person:ji-meng",
+      "toRef": "person:ji-gai",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-gai-ji-ren-succession",
+      "fromRef": "person:ji-gai",
+      "toRef": "person:ji-ren",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-ren-ji-jie-succession",
+      "fromRef": "person:ji-ren",
+      "toRef": "person:ji-jie",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-jie-ji-quji-succession",
+      "fromRef": "person:ji-jie",
+      "toRef": "person:ji-quji",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-quji-ji-shu-succession",
+      "fromRef": "person:ji-quji",
+      "toRef": "person:ji-shu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-shu-ji-wei-succession",
+      "fromRef": "person:ji-shu",
+      "toRef": "person:ji-wei",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-wei-ji-wu-succession",
+      "fromRef": "person:ji-wei",
+      "toRef": "person:ji-wu",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-wu-ji-jiao-succession",
+      "fromRef": "person:ji-wu",
+      "toRef": "person:ji-jiao",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-jiao-ji-xi-succession",
+      "fromRef": "person:ji-jiao",
+      "toRef": "person:ji-xi",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-xi-ji-bian-succession",
+      "fromRef": "person:ji-xi",
+      "toRef": "person:ji-bian",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-bian-ji-ding-succession",
+      "fromRef": "person:ji-bian",
+      "toRef": "person:ji-ding",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-ding-ji-yan-succession",
+      "fromRef": "person:ji-ding",
+      "toRef": "person:ji-yan",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-ji-chang-ji-fa-succession",
+      "fromRef": "person:ji-chang",
+      "toRef": "person:ji-fa",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-hou-yi-han-zhuo-succession",
+      "fromRef": "person:hou-yi",
+      "toRef": "person:han-zhuo",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-mingtiao-tang",
+      "fromRef": "event:mingtiao",
+      "toRef": "person:zi-tang",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-muye-fa",
+      "fromRef": "event:muye",
+      "toRef": "person:ji-fa",
+      "kind": "battle"
+    },
+    {
+      "id": "rel-chengpu-chonger",
+      "fromRef": "event:chengpu",
+      "toRef": "person:ji-chonger",
+      "kind": "battle"
+    }
+  ],
+  "supplementalEventDynasties": [],
+  "supplementalEventParticipants": [],
+  "preSql": "DELETE FROM event_dynasties WHERE dynasty_id = 'zhou';\nDELETE FROM reigns WHERE dynasty_id = 'zhou';\nDELETE FROM dynasties WHERE id = 'zhou';\nDELETE FROM reigns WHERE id = 'reign-missing-zhou-west--840';\nDELETE FROM reigns WHERE id = 'reign-missing-shang--1570';\nDELETE FROM reigns WHERE dynasty_id = 'xia' AND person_id = 'system-missing-ruler';\nDELETE FROM relations WHERE id LIKE 'rel-si-%-succession';\nDELETE FROM relations WHERE id IN ('rel-zi-tang-zi-taijia-succession','rel-ji-yijiu-ji-yuchen-succession','rel-ji-yuchen-ji-lin-succession','rel-hou-yi-han-zhuo-succession');\nDELETE FROM event_participants WHERE event_id IN ('taikang-lost','houyi-dai-xia','hanzhuo-cuan-xia');\nDELETE FROM event_dynasties WHERE event_id IN ('houyi-dai-xia','hanzhuo-cuan-xia');\nDELETE FROM events WHERE id IN ('houyi-dai-xia','hanzhuo-cuan-xia');",
+  "reignCapitals": [],
+  "manifest": {
+    "slug": "xia-shang-zhou",
+    "importPhase": "post",
+    "postImportOrder": 10,
+    "title": "夏商周",
+    "window": {
+      "startYear": -2070,
+      "startMonth": 1,
+      "endYear": -256,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-09-19",
+    "counts": {
+      "persons": 114,
+      "dynasties": 4,
+      "reigns": 87,
+      "events": 30,
+      "relations": 85
+    },
+    "sources": [
+      {
+        "label": "夏商周断代工程",
+        "url": "https://zh.wikipedia.org/wiki/夏商周断代工程"
+      },
+      {
+        "label": "夏商周年表",
+        "url": "https://zh.wikipedia.org/wiki/夏商周年表"
+      },
+      {
+        "label": "周朝君主列表",
+        "url": "https://zh.wikipedia.org/wiki/周朝君主列表"
+      },
+      {
+        "label": "商朝君主列表",
+        "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+      },
+      {
+        "label": "今本竹书纪年·夏纪",
+        "url": "https://zh.wikisource.org/wiki/今本竹書紀年/夏紀"
+      },
+      {
+        "label": "夏朝",
+        "url": "https://zh.wikipedia.org/wiki/夏朝"
+      },
+      {
+        "label": "夏朝君主列表",
+        "url": "https://zh.wikipedia.org/wiki/夏朝君主列表"
+      },
+      {
+        "label": "史记·夏本纪",
+        "url": "https://zh.wikisource.org/wiki/史記/卷02"
+      },
+      {
+        "label": "史记·殷本纪",
+        "url": "https://zh.wikisource.org/wiki/史記/卷03"
+      },
+      {
+        "label": "伊尹",
+        "url": "https://zh.wikipedia.org/wiki/伊尹"
+      },
+      {
+        "label": "妇好",
+        "url": "https://zh.wikipedia.org/wiki/妇好"
+      },
+      {
+        "label": "傅说",
+        "url": "https://zh.wikipedia.org/wiki/傅说"
+      },
+      {
+        "label": "比干",
+        "url": "https://zh.wikipedia.org/wiki/比干"
+      },
+      {
+        "label": "百度百科·夏商周断代工程（西周年表）",
+        "url": "https://baike.baidu.com/item/夏商周断代工程/2331516"
+      }
+    ],
+    "notes": [
+      "王朝起迄与晚商、西周列王年优先采用夏商周断代工程2000年《夏商周年表》；该工程方法与结论在学界仍有争议，作教材通行框架而非定论。",
+      "夏代具体王年工程未给出。十七王起迄依今本《竹书纪年》在位年数自断代工程夏始前2070年顺推，全部标 interpolated（卡片起迄波浪线）。桀取《帝王世纪》五十二年（前1651–前1600）以接商汤。正统金色自启起（家天下），禹受禅不上金。",
+      "后羿、寒浞为有穷代夏君主，写入夏行在位卡（相、少康之间串行，不填 claim_track）。claim_role=rival：不上正统金色、不串进十七王继承链。年取推算前1999–前1992、前1991–前1960。二人之间另串后羿→寒浞继承。",
+      "夏王 persons.name 带姒姓；禹以“禹”为名、“文命”为检索别名，桀以履癸为名；禹/桀/太康等卡片称号写在 reigns.title。",
+      "商王 persons.name 取维基/今本竹书纪年所载私名并加子姓（子履、子昭、子受等）；日名与史称写入 alt_names，卡片主行仍用日名/谥号。",
+      "汤庙号取甲骨/文献高祖（高祖乙），不取太祖。盘庚庙号世祖依维基分类。帝辛私名受，周谥纣仍作 posthumous_name。",
+      "汤与太甲之间旧「史料缺」改为外丙、仲壬（史记、孟子世系）。二人传统年数为外丙二或三年、仲壬四年，在汤迄年与太甲起年锚点之间按二王平分，标 interpolated。仲壬不见于周祭，与沃丁同属有争议君主，仍从史记收录。",
+      "太甲至盘庚之间诸王（沃丁至阳甲）取《竹书纪年》在位年数顺序，首尾衔接既有太甲（迄前1548）、盘庚（起前1310）锚点；非断代工程实测，precision=year。",
+      "盘庚至武丁之间补入小辛、小乙；小辛取竹书纪年三年，小乙年数依盘庚（迄前1280）与武丁（起前1250）锚点填满并标 interpolated。",
+      "晚商祖庚、祖甲、廪辛、庚丁：夏商周年表合为前1191–前1148年，工程未给出各王起迄；年精度下按四王平分（各11年）并标 interpolated。武乙从前1147年起（死年归庚丁），文丁从前1112年起，与年表一致。",
+      "东周列王取《史记》系统常见年表（与维基百科周朝君主列表一致）。敬王取前519–前477年。年精度顺序继位：死年归旧王、新王次年起算。携王与平王同从前770年起（英文维基 770–750 BCE），不从前771年幽王死年画起。哀王、思王同年先后相残，非并立；史记仅记「立三月」「立五月」，无历月，贞定王年精度迄前442年，前441年按此时长切开（1–3月 / 4–12月），不作历日。",
+      "共和行政不建在位卡片（非王），仅作 span 事件；厉王出奔至宣王即位间西周行留白，不用史料缺占位。周公旦不另建称王记录。",
+      "夏商周无年号，不写入 era_names。",
+      "未单列春秋战国诸侯国为王朝行，以免超出「夏商周」王室主线。",
+      "东周二王并立用 claim_track：主线平王→桓王…（正统金色）；xie/携王为并行对手（前770–前750），不镀金、不串进继承链。",
+      "夏商非帝王人物：伊尹生年取维基传统前1649年，卒年按今本竹书沃丁八年对到本表沃丁窗为前1540年；妇好卒年取考古通行约前1200年；鲧、关龙逢、比干、妲己仅有与夏始/夏亡/牧野绑定的估列卒年，便于人物层落点。仲虺、皋陶、伯益、伊陟、巫咸、甘盘、傅说、箕子生卒不明不填，以免正月占位。微子启已是宋国始封君 song-weizi，不在此包重复建人。"
+    ]
+  }
+}

@@ -86,7 +86,7 @@ curl -s "http://localhost:3001/api/timeline?from=7524&to=7795&scope=cn" | jq '.d
 
 ## 先秦大批量
 
-`data/imports/xia-shang-zhou/`：`generate.mjs` 用同一套 `absMonth()` 写出 `import.sql`。年份用负数（前 1046 年 → `-1046`），无年号则省略 `era_names`。验收窗口例如：
+`data/imports/xia-shang-zhou/cache.json`：直接保存核定记录和 `absMonth()` 结果。统一生成器只序列化缓存为 SQL。年份用负数（前 1046 年 → `-1046`），无年号则省略 `era_names`。验收窗口例如：
 
 ```bash
 curl -s "http://localhost:3001/api/timeline?from=-12540&to=-9228&scope=cn" | jq '.dynasties[].name'
