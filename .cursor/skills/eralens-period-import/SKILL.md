@@ -3,13 +3,15 @@ name: eralens-period-import
 description: >-
   为 EraLens 搜集指定历史时期数据，校验 AbsMonth 与 schema，生成完整 PostgreSQL
   INSERT/UPSERT 脚本并导入 Docker 数据库。Use when the user asks to collect historical
-  period data, generate seed SQL, import dynasties/reigns/events into EraLens, or
+  period data, generate PostgreSQL import SQL, import dynasties/reigns/events into EraLens, or
   expand timeline coverage for a dynasty or era.
 ---
 
 # EraLens 时期数据导入
 
 将用户指定的历史时期（如「唐朝贞观」「北宋仁宗」）转为可执行的 SQL，写入 PostgreSQL。不要生成或更新 `data/seed/*.json`。
+
+真实导入包以 `data/imports/{slug}/cache.json` 为唯一记录源，来源与处理说明直接写在 `cache.json.manifest.sources` / `cache.json.manifest.notes`。已核定数据直接写进缓存；不要新增包级 `.mjs`、Wiki 抓取/加工脚本或按朝代修补代码。唯一生成入口是 `node data/imports/generate.mjs {slug}`；它只把缓存序列化为 `import.sql` 和 `manifest.json`，不补年份、不改称谓、不解析 Wiki。生成产物不手工编辑。
 
 单项任务优先使用专门 Skill：添加或丰富事件见
 [eralens-event-import](../eralens-event-import/SKILL.md)，添加或丰富在位信息见
@@ -53,11 +55,13 @@ Task Progress:
 - [ ] 1. 调研：列出王朝、在位、人物、事件、关系及来源
 - [ ] 2. 将已核定记录直接写入 `data/imports/{slug}/cache.json`（计算 `start_abs/end_abs`，不写缓存加工脚本）
 - [ ] 3. 冲突检查：查询 DB 已有 id
-- [ ] 4. 运行通用生成器，输出 PostgreSQL `import.sql` 和 `manifest.json`
-- [ ] 5. 校验：node .cursor/skills/eralens-period-import/scripts/validate-import.mjs
+- [ ] 4. 运行统一生成器，输出 PostgreSQL `import.sql` 并刷新 `manifest.json`
+- [ ] 5. 校验：`node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/imports/{slug}/import.sql`
 - [ ] 6. 入库：scripts/apply-sql.sh
 - [ ] 7. 验收：curl timeline/entity + 浏览器时间轴
 ```
+
+缓存采用 camelCase 字段；时间以 `{ "year", "month", "abs" }` 结构保存，人物、王朝、在位、事件和关系分别放在顶层数组中。都城与事件地点使用 `capitals` / `eventLocations` 等缓存集合；来源说明位于同一个文件的 `manifest` 对象内。SQL 列名由共享序列化器映射。包结构、示例和完整生成命令见 [`data/imports/README.md`](../../../data/imports/README.md)。
 
 ### 1. 调研
 
@@ -85,7 +89,7 @@ Task Progress:
   - 来源明确表明该期存在国君、但姓名或具体世次失载，才写一条系统缺失占位 reign。
   - 历史上确实无人统治该王朝行（改朝换号、中断、摄政期不设君等），不写 reign，前端自然留白。例如武周期间的唐行不写占位。
   - 只是本次导入深度不足或尚未搜集完整，必须继续查证/补齐，不能标成「史料缺」。
-- **君主有世系、仅部分在位年可考**：先从编年史、传世文献、考古铭文和可靠君主表交叉核对数个可定年的君主/纪事，建立相互独立的时间锚点。凡世系连续且位于同一组可信起讫锚点之间的失载君主，按次序均分锚点之间的年段，标 `interpolated`；有文献支持的君主年份及锚点相接的确定边界不标插值。两端年表锚点之间即使相隔多代，也可把全部已知世次纳入均分，不得只录一个空泳道或只录孤立锚点。世系中断、国君姓名/世次实质失考、锚点不共时或只靠传统积年推算时，不跨断层均分；先继续查证，并将不能填充的区段及原因写入 `manifest.json` `notes`。已知某段确有君主而姓名失载时，依“史料缺”规则用占位 reign，不要把它误当作无国君空白。
+- **君主有世系、仅部分在位年可考**：先从编年史、传世文献、考古铭文和可靠君主表交叉核对数个可定年的君主/纪事，建立相互独立的时间锚点。凡世系连续且位于同一组可信起讫锚点之间的失载君主，按次序均分锚点之间的年段，标 `interpolated`；有文献支持的君主年份及锚点相接的确定边界不标插值。两端年表锚点之间即使相隔多代，也可把全部已知世次纳入均分，不得只录一个空泳道或只录孤立锚点。世系中断、国君姓名/世次实质失考、锚点不共时或只靠传统积年推算时，不跨断层均分；先继续查证，并将不能填充的区段及原因写入 `cache.json.manifest.notes`。已知某段确有君主而姓名失载时，依“史料缺”规则用占位 reign，不要把它误当作无国君空白。
 - 无实测或无通行王年（夏代、商前期常见）：遵循上一条先找共同锚点和连续世系；仅当缺少可交叉验证的起讫锚点、世系有断层或只能依传统积年推算时，才只收关键人物，事件用 `circa` + `date_note`，不得跨断层补满君主。
 - 摄政、共和等非王时期建**事件**，不建 reign。
 - **并立称君**（隋末三帝、南明鲁监国/绍武）留在同一王朝行，用 `claim_track` 分行同时显示，不要拆成多个王朝：
@@ -95,7 +99,7 @@ Task Progress:
   - 通行主线 succession 只串不填 track、且无 `claim_role=rival` 的君主（文帝→炀帝，弘光→隆武→永历）；并行 track 内的君主彼此可串，但不与主线混链。
   - 正统金色只覆主线。炀帝尚在时被拥立的杨侑不镀金；弑帝后的江都续统（杨浩）走主线。先后代政、不入正统世次的君主（有穷后羿/寒浞）走主行串行，不填 `claim_track`；标 `claim_role=rival`，不上金、不串进通行继承链，二人之间可另写 succession。
 - 按用户字面范围收录：说「夏商周」只收三代王室，不自动展开春秋列国；同一王室可按习惯分期拆行（`zhou-west` / `zhou-east`，`wei-east` / `wei-west`，比照东汉）。东魏、西魏虽仍用国号魏，通行史书作独立北朝王朝，各占一行，不用把孝静帝/西魏诸帝留在北魏 `claim_track`。
-- 每条实体记录来源（URL 或书名卷页），写入 `manifest.json` 的 `sources`；争议取舍写入 `notes`。
+- 每条实体记录来源（URL 或书名卷页），写入 `cache.json.manifest.sources`；争议取舍写入 `cache.json.manifest.notes`。`manifest.json` 是统一生成器输出的文件。
 - 只收录与**指定时期窗口相交**的实体；长跨度王朝（如唐）可只补窗口内在位与事件，勿重复插入已存在的完整王朝行（用 upsert 更新或跳过）。
 - **非帝王人物**（`persons`，不建 `reign`）与君主同等重要，按深度收录：
   - **standard / detailed**：除主要皇帝外，应补**影响政局或广为检索**的非君主——名臣、名将、诗人学者，以及**后宫/宗室政治人物**（如吕后、韦后、太平公主、上官婉儿）。
@@ -157,7 +161,7 @@ node .cursor/skills/eralens-period-import/scripts/compute-abs.mjs -2070 1  # -24
 node .cursor/skills/eralens-period-import/scripts/compute-abs.mjs -1046 1  # -12540
 ```
 
-数十条以上的王世/事件：在 `data/imports/{slug}/` 写生成器调用同一 `absMonth()`，禁止手填 `*_abs`。
+批量核算 `*_abs` 时使用同一 `absMonth()` 定义或 `compute-abs.mjs`；把核定结果直接写入缓存。不要为导入包增加生成/加工脚本，也不要让生成器推算或改写这些值。
 
 **枚举**（见 [reference.md](reference.md)）：
 
@@ -177,7 +181,7 @@ node .cursor/skills/eralens-period-import/scripts/compute-abs.mjs -1046 1  # -12
 - 缺失区间仍写入普通 `reigns` 表，`person_id = 'system-missing-ruler'`，`title = '史料缺'`，起止时间为查证后的缺失范围。
 - 不添加年号、谥号、庙号（`title` 保持 `史料缺`）。
 - 不增加 `missing` 字段、不建单独 gap 表。前端只根据保留的 `person_id` 将该 reign 渲染为虚线框。
-- 没有占位 reign 的时间空档一律留白，不由前端自动推断为资料缺失；导入脚本也**不会**根据相邻君主间隔自动插入 `reign-missing-*`，仅 `getCuratedMissingReigns` 或包内显式传入的占位会写入库。
+- 没有占位 reign 的时间空档一律留白，不由前端自动推断为资料缺失；统一生成器不会根据相邻君主间隔自动插入 `reign-missing-*`，缓存中必须显式列出经核实的占位记录。
 
 **在位年失考 / 推算边界**（与史料缺区分）：
 
@@ -197,29 +201,31 @@ docker exec eralens-postgres psql -U eralens -d eralens -c \
 
 新 id 不得与库中已有重复（除非 upsert 同一实体）。不要改 `data/seed/*.json`：那是 Mock / `pnpm db:seed` 用的样本，本 skill 只产出 SQL 并写入 PostgreSQL。
 
-### 4. 生成 SQL
+### 4. 从缓存生成 SQL
 
-输出目录：`data/imports/{period-slug}/`
+唯一事实源是 `data/imports/{period-slug}/cache.json`；史料来源和取舍也记入该文件内的 `manifest.sources` / `manifest.notes`。目录中的 `import.sql` 和 `manifest.json` 都是生成产物，不要直接维护。
 
-- `import.sql` — 完整可执行脚本
-- `manifest.json` — 元数据（见 [reference.md](reference.md)）
+运行统一入口：
 
-**脚本结构**（顺序不可乱）：
+```bash
+node data/imports/generate.mjs {slug}
+```
 
-1. `BEGIN;`
-2. `persons`
-3. `dynasty_groups`（可选；三国/五胡十六国/南北朝/五代十国等并存时期分组）
-4. `dynasties`（成员通过 `group_id` 引用组）
-5. `reigns`（含 `era_names` CSV）
-6. `events`
-7. `event_dynasties`
-8. `event_participants`
-9. `relations`
-10. `COMMIT;`
+这会从 `cache.json` 序列化 PostgreSQL `import.sql` 和 `manifest.json`；清点后同步维护缓存内 `manifest.counts` / `manifest.generatedAt`。全量重新生成：`node data/imports/generate.mjs --all`。每个包不再有自己的生成器；序列化规则只维护在 `data/imports/lib/sqlHelpers.mjs`。
+
+**统一生成器输出顺序**（不要手写或在包里另造这条序列化逻辑）：
+
+1. `BEGIN;`，然后执行 `preSql` 中的旧库清理
+2. `persons`、`dynasty_groups`、`dynasties`
+3. `dynasty_capitals`、`dynasty_lane_groups`
+4. `reigns`（含 `era_names` CSV）与 `reign_capitals`
+5. `events`、`event_dynasties`、`event_participants`
+6. `relations`、`event_locations` 及缓存显式列出的更新
+7. 执行 `postSql` 中的旧库清理，再 `COMMIT;`
 
 默认用 `INSERT ... ON CONFLICT (id) DO UPDATE SET ...`（persons/dynasties/reigns/events/relations）。连接表用 `ON CONFLICT DO NOTHING`。
 
-模板与转义规则见 [reference.md](reference.md)；完整示例见 [examples.md](examples.md)。
+SQL 列映射示例见 [reference.md](reference.md)；数据录入请以 `cache.json` 结构为准，不能把 SQL 示例当作手写源文件。
 
 ### 5. 校验
 
@@ -227,15 +233,17 @@ docker exec eralens-postgres psql -U eralens -d eralens -c \
 node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/imports/{slug}/import.sql
 ```
 
-必须通过后再入库。若失败，修复 SQL 并重跑。校验只看 INSERT **列名**里的生成列 `span`；`time_mode` 取值 `'span'` 合法。禁止再写 `era_names` 表或 `reigns.posthumous_name`/`temple_name`。
+必须通过后再入库。校验会检查 SQL 结构，并读取同目录 `cache.json` 校验在位接续边界；若失败，回到缓存修正后重新生成，再重跑校验。它只看 INSERT **列名**里的生成列 `span`；`time_mode` 取值 `'span'` 合法。禁止再写 `era_names` 表或 `reigns.posthumous_name`/`temple_name`。
 
 ### 6. 入库
 
-确保数据库已启动：`pnpm db:up`
+确保数据库已启动：`pnpm db:up`。单包增量导入前运行 `node data/imports/generate.mjs {slug}`、校验后用 `apply-sql.sh`；全量 `pnpm db:import` 前运行 `node data/imports/generate.mjs --all`，因为 db:import 本身不会从缓存生成 SQL。
 
 ```bash
 .cursor/skills/eralens-period-import/scripts/apply-sql.sh data/imports/{slug}/import.sql
 ```
+
+上面是单包增量导入。`pnpm db:import` 会清空并重载本地 PostgreSQL 的真实数据包，随后从 PostgreSQL 构建并校验移动端 SQLite 数据库；不要把它当作 Xcode 启动时执行的脚本。Xcode 使用已导出的 SQLite 文件。导入包本身只生成 PostgreSQL `import.sql`。
 
 导入后若时间轴出现君主卡片上下叠放，运行去重脚本清理旧版 import 残留的孤儿记录：
 
@@ -267,11 +275,11 @@ curl -s "http://localhost:3001/api/bounds"
   - `span` / `circa`：`start_abs` 与 `end_abs` 均非空；circa 的 `at_abs` 可选（最佳估计）
 - 不要用 `span` 去表示「大约何时」。持续用 `time_mode=span`，不确定用 `circa` + `date_note`。
 - 中文名称用 UTF-8；SQL 字符串中单引号写 `''`。
-- 对争议年代在 `manifest.json` 的 `notes` 与事件 `date_note` 说明取舍，不 silently 编造精确到月。
+- 对争议年代在 `cache.json.manifest.notes` 与事件 `dateNote` 说明取舍，不 silently 编造精确到月。
 - 生卒不明则 `birth_*` / `death_*` 用 NULL，不要用正月占位冒充已知。
-- 各包 `personSql` 优先用 `data/imports/lib/sqlHelpers.mjs` 的共享模板（含 `alt_names`、姓氏列）。
+- 人物、在位等记录写入 `cache.json`；所有 SQL 统一由 `data/imports/lib/sqlHelpers.mjs` 序列化，禁止在导入包里调用模板另造生成路径。
 - 修改人物、reign 归属/称号或王朝名称后，确认 `persons.search_terms` 已由触发器刷新；批量更新后运行 `SELECT rebuild_person_search_terms();` 并验证 GIN 查询。
-- 正统金色：`dynastySql()` + `orthodoxDynasties.mjs` 烘焙 `orthodox_*`；相续泳道组走 `data/imports/dynasty-lane-groups/`。
+- `isMain` 等事实标记直接维护在 `cache.json`；相续泳道组记录维护在 `data/imports/dynasty-lane-groups/cache.json`，再用统一生成器生成 SQL。
 
 ## 成语典故（`data/imports/idioms/`）
 

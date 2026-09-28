@@ -29,6 +29,11 @@ export function absMonth(year: number, month = 1): AbsMonth {
   return astro * 12 + (month - 1);
 }
 
+/** Midpoint used to center an interval in the viewport. */
+export function midpointAbs(startAbs: AbsMonth, endAbs: AbsMonth): AbsMonth {
+  return startAbs + (endAbs - startAbs) / 2;
+}
+
 export function fromAbsMonth(abs: AbsMonth): TimePoint {
   const wholeAbs = Math.round(abs);
   const astroYear = Math.floor(wholeAbs / 12);

@@ -114,4 +114,4 @@ vim data/seed/timeline.json
 pnpm db:seed
 ```
 
-应改 `data/imports/{slug}/` 并 `pnpm db:import`。
+应直接改 `data/imports/{slug}/cache.json`（包含 `manifest.sources` / `manifest.notes`），运行统一生成器并用校验器检查，再导入。需要全量重载 PostgreSQL 和重建移动端 SQLite 时才运行 `pnpm db:import`；它不会代替缓存生成 SQL。

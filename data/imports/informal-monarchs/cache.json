@@ -117,8 +117,6 @@
       "dynastyId": "zhou-west",
       "personId": "gonghe-regency",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -841,
@@ -146,8 +144,6 @@
       "dynastyId": "liao",
       "personId": "shulvping",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 926,
@@ -177,8 +173,6 @@
       "dynastyId": "han-hou",
       "personId": "guo-wei",
       "title": "监国",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 951,
@@ -208,8 +202,6 @@
       "dynastyId": "mongol-empire",
       "personId": "tolui",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1227,
@@ -239,8 +231,6 @@
       "dynastyId": "mongol-empire",
       "personId": "toregene-khatun",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1241,
@@ -270,8 +260,6 @@
       "dynastyId": "mongol-empire",
       "personId": "oghul-qaimish",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1248,
@@ -301,8 +289,6 @@
       "dynastyId": "ming",
       "personId": "zhu-qiyu",
       "title": "郕王监国",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1449,
@@ -332,7 +318,7 @@
   "relations": [],
   "supplementalEventDynasties": [],
   "supplementalEventParticipants": [],
-  "preSql": "UPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-ruzi-ying';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-zhou-ziqi-roc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-gao-lingwei-roc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-huang-fu-roc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-hu-weide-roc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-yan-huiqing-roc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-du-xigui-roc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-gu-weijun-roc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-hu-weide-roc-2';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-duan-qirui-roc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-zhang-zuolin-roc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-song-qingling-dong-biwu-prc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-npc-standing-committee-prc';\nUPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-zhu-yihai-ming-south';\nUPDATE reigns SET is_informal_monarch = false WHERE id = 'reign-dong-biwu-prc';\nDELETE FROM reigns WHERE id = 'reign-wang-mang-regent';\nDELETE FROM persons WHERE id = 'wang-mang-regent';",
+  "preSql": "DELETE FROM reigns WHERE id = 'reign-wang-mang-regent';\nDELETE FROM persons WHERE id = 'wang-mang-regent';",
   "manifest": {
     "slug": "informal-monarchs",
     "title": "非正式国君",
@@ -354,7 +340,7 @@
       "events": 0,
       "relations": 0
     },
-    "description": "Informal monarchs: regents, acting heads, joint vice-chairs, and non-formal sovereigns. Marks existing reigns and inserts missing ones with is_informal_monarch = true.",
+    "description": "非正式君主/摄政记录；新建记录由本包拥有，既有在位标记归并到原在位所属包。",
     "sources": [
       {
         "label": "维基百科 - 共和行政",
@@ -397,7 +383,8 @@
       "朱祁钰监国（1449-09-06 至 09-22）：土木堡之变后监国约16天，9月22日即位为明代宗。",
       "鲁王朱以海：绍兴监国，南明并立政权，非正式皇帝。",
       "段祺瑞、张作霖：北洋军阀时期临时执政、陆海军大元帅，非正式国家元首。",
-      "宋庆龄、董必武、全国人大常委会：国家副主席代行、代主席、机构行使元首职权，非正式国家主席。"
+      "宋庆龄、董必武、全国人大常委会：国家副主席代行、代主席、机构行使元首职权，非正式国家主席。",
+      "既有 reign 的 isInformalMonarch 标记已迁入对应在位记录的唯一所有者包；本包不再通过 UPDATE 改写其他包记录。"
     ]
   }
 }

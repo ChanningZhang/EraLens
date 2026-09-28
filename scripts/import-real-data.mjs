@@ -152,6 +152,19 @@ function preseedDynastyGroups(packages) {
   console.log(`Preseeded ${inserts.length} dynasty group rows for cross-package references.`);
 }
 
+function preseedRows(packages, table, label) {
+  const inserts = packages.flatMap(({ sql }) =>
+    sqlStatements(readFileSync(sql, "utf8")).filter((statement) => insertsInto(statement, table)),
+  );
+  if (inserts.length === 0) return;
+
+  const result = dockerPsql(`BEGIN;\n${inserts.join("\n")}\nCOMMIT;\n`);
+  if (result.status !== 0) {
+    fail(`Failed to preseed ${label} rows`, result.stderr || result.stdout);
+  }
+  console.log(`Preseeded ${inserts.length} ${label} rows for cross-package references.`);
+}
+
 function waitForPostgres() {
   const deadline = Date.now() + 60_000;
   while (Date.now() < deadline) {
@@ -186,9 +199,13 @@ function main() {
 
   // Cross-package references must exist before package order starts. Dynasty
   // groups are the parent lookup for dynasty rows, which in turn are referenced
-  // by events, capitals, and later periods.
+  // by events, capitals, and later periods. Persons and event locations are
+  // also shared references used by period packages imported earlier than their
+  // owner package (notably late-period relations and cross-period event data).
   preseedDynastyGroups(allPackages);
   preseedDynasties(allPackages);
+  preseedRows(allPackages, "persons", "person");
+  preseedRows(allPackages, "event_locations", "event location");
 
   let remaining = packages;
   const deferredInserts = [];

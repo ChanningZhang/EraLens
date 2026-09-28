@@ -8,20 +8,6 @@
   },
   "persons": [
     {
-      "id": "system-missing-ruler",
-      "name": "史料缺",
-      "roles": [
-        "系统占位"
-      ],
-      "bio": "EraLens 系统保留人物，仅用于标记经考证确认的国君资料缺失区间。",
-      "links": [],
-      "birth": null,
-      "death": null,
-      "posthumousNames": [],
-      "templeNames": [],
-      "title": "史料缺"
-    },
-    {
       "id": "yelang-duotong",
       "name": "多同",
       "roles": [
@@ -162,8 +148,6 @@
       "dynastyId": "yelang",
       "personId": "yelang-duotong",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -140,
@@ -190,8 +174,6 @@
       "dynastyId": "yelang",
       "personId": "yelang-xin",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -30,
@@ -218,8 +200,6 @@
       "dynastyId": "dian",
       "personId": "zhuang-qiao",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -279,
@@ -246,8 +226,6 @@
       "dynastyId": "dian",
       "personId": "dian-changqiang",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -115,
@@ -274,8 +252,6 @@
       "dynastyId": "yelang",
       "personId": "system-missing-ruler",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -119,
@@ -297,8 +273,6 @@
       "dynastyId": "dian",
       "personId": "system-missing-ruler",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -255,

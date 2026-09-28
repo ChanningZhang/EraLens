@@ -177,6 +177,7 @@ function ReignCardImpl({
       <div
         className={styles.cardShell}
         style={{ ["--card-color" as string]: color }}
+        onClick={selectReign}
       >
         {uncertainStart && <ReignWavyEdge side="left" />}
         <InfoPopover text={tooltipText}>
@@ -198,7 +199,10 @@ function ReignCardImpl({
                 ["--card-name-size" as string]: `${barLayout.textLayout.nameFontPx}px`,
                 ["--card-meta-size" as string]: `${barLayout.textLayout.metaFontPx}px`,
               }}
-              onClick={selectReign}
+              onClick={(event) => {
+                event.stopPropagation();
+                selectReign();
+              }}
               aria-label={
                 claimTooltip
                   ? `${label} ${regionLabel} ${claimTooltip}`

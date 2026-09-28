@@ -2222,15 +2222,15 @@
         "abs": 3192
       },
       "end": {
-        "year": 316,
+        "year": 304,
         "month": 12,
-        "abs": 3803
+        "abs": 3659
       },
       "startAbs": 3192,
-      "endAbs": 3803,
+      "endAbs": 3659,
       "precision": "year",
       "role": "primary",
-      "note": "西晋都城洛阳。",
+      "note": "西晋建都洛阳至晋惠帝永安元年（304）被张方挟往长安前；迁出记于农历十一月，按年精度保留边界。",
       "links": [
         {
           "label": "维基百科",
@@ -3795,7 +3795,7 @@
       "id": "cap-nanzhao-taihecheng-739",
       "dynastyId": "nanzhao",
       "historicalName": "太和城",
-      "modernName": "云南省大理白族自治州巍山彝族回族自治县",
+      "modernName": "云南省大理白族自治州大理市太和村太和城遗址",
       "start": {
         "year": 739,
         "month": 1,
@@ -3810,15 +3810,19 @@
       "endAbs": 9359,
       "precision": "year",
       "role": "primary",
-      "note": "南诏前期都城太和城（巍山）；779年迁都羊苴咩城。",
+      "note": "南诏于739年迁都太和城（今大理市太和村太和城遗址）；779年迁都羊苴咩城。坐标为遗址级近似点。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/南诏"
+          "label": "《旧唐书·南诏蛮》迁居大和城纪年考辨",
+          "url": "https://lfglib.cn/ecohistory/zhongwai/216801.html"
+        },
+        {
+          "label": "高德地图：太和城遗址",
+          "url": "https://www.amap.com/place/B03680I9BN"
         }
       ],
-      "longitude": 100.306977,
-      "latitude": 25.227065,
+      "longitude": 100.198061,
+      "latitude": 25.633246,
       "coordinateSystem": "GCJ02"
     },
     {
@@ -4819,7 +4823,7 @@
     {
       "id": "cap-yuan-kaiping-15252",
       "dynastyId": "yuan",
-      "historicalName": "开平",
+      "historicalName": "开平/上都",
       "modernName": "内蒙古自治区锡林郭勒盟正蓝旗",
       "start": {
         "year": 1271,
@@ -4835,11 +4839,15 @@
       "endAbs": 15287,
       "precision": "year",
       "role": "primary",
-      "note": "元初开平（上都前身）。",
+      "note": "开平为上都改名前称，指同一遗址；此记录保留来源中的 primary 角色区间，古称并列为“开平/上都”。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/开平"
+        },
+        {
+          "label": "正蓝旗人民政府：元上都遗址",
+          "url": "https://www.zlq.gov.cn/zlq/mlzlq/ysdwh/ysdyz/a2734909246a4c1290578dd4d88aa954/index.shtml"
         }
       ],
       "longitude": 115.991648,
@@ -4849,7 +4857,7 @@
     {
       "id": "cap-yuan-shangdu-15120",
       "dynastyId": "yuan",
-      "historicalName": "上都",
+      "historicalName": "开平/上都",
       "modernName": "内蒙古自治区锡林郭勒盟正蓝旗",
       "start": {
         "year": 1260,
@@ -4865,11 +4873,15 @@
       "endAbs": 16427,
       "precision": "year",
       "role": "secondary",
-      "note": "元上都（开平）。",
+      "note": "元上都遗址的前称为开平府；定都大都后，上都保留为夏都/陪都。本记录保留既有 secondary 角色区间，古称并列为“开平/上都”。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/元上都"
+        },
+        {
+          "label": "正蓝旗人民政府：元上都遗址",
+          "url": "https://www.zlq.gov.cn/zlq/mlzlq/ysdwh/ysdyz/a2734909246a4c1290578dd4d88aa954/index.shtml"
         }
       ],
       "longitude": 115.991648,
@@ -5329,7 +5341,7 @@
     {
       "id": "cap-qing-shengjing",
       "dynastyId": "qing",
-      "historicalName": "盛京",
+      "historicalName": "沈阳/盛京",
       "modernName": "辽宁省沈阳市",
       "start": {
         "year": 1636,
@@ -5345,7 +5357,7 @@
       "endAbs": 19731,
       "precision": "year",
       "role": "secondary",
-      "note": "清定都盛京后入关。",
+      "note": "沈阳于1634年改称盛京；清迁都北京后盛京为陪都。本记录保留1636—1644年 secondary 角色区间，古称并列为“沈阳/盛京”。",
       "links": [
         {
           "label": "维基百科",
@@ -5794,7 +5806,7 @@
     {
       "id": "cap-mingzheng-dongdu-1661",
       "dynastyId": "mingzheng",
-      "historicalName": "东都",
+      "historicalName": "东都/东宁",
       "modernName": "台湾省台南市",
       "start": {
         "year": 1661,
@@ -5802,49 +5814,31 @@
         "abs": 19935
       },
       "end": {
-        "year": 1664,
-        "month": 12,
-        "abs": 19979
-      },
-      "startAbs": 19935,
-      "endAbs": 19979,
-      "precision": "month",
-      "role": "primary",
-      "note": "1661年郑成功在台南建立承天府，称台湾为东都；1664年郑经改称东宁。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/台湾首都"
-        }
-      ],
-      "longitude": 120.189139,
-      "latitude": 22.989779,
-      "coordinateSystem": "GCJ02"
-    },
-    {
-      "id": "cap-mingzheng-dongning-1664",
-      "dynastyId": "mingzheng",
-      "historicalName": "东宁",
-      "modernName": "台湾省台南市",
-      "start": {
-        "year": 1664,
-        "month": 1,
-        "abs": 19968
-      },
-      "end": {
         "year": 1683,
         "month": 10,
         "abs": 20205
       },
-      "startAbs": 19968,
+      "startAbs": 19935,
       "endAbs": 20205,
       "precision": "month",
       "role": "primary",
-      "note": "1664年郑经将东都改称东宁；1683年十月郑克塽降清。",
+      "note": "郑成功于1661年以台湾为东都；郑经于1664年改称东宁。两名指台南承天府同一都城，合并为一条记录；1683年十月郑克塽降清后结束。",
       "links": [
         {
           "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/台湾首都"
+        },
+        {
+          "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/明郑"
+        },
+        {
+          "label": "台南市政府：历史沿革",
+          "url": "https://origin-www.tainan.gov.tw/cp.aspx?n=13291"
+        },
+        {
+          "label": "中央研究院台湾史研究所：明郑时期台湾行政疆域图",
+          "url": "https://thcts.sinica.edu.tw/themes/rb02.php"
         }
       ],
       "longitude": 120.189139,
@@ -6002,6 +5996,507 @@
       "longitude": 116.407387,
       "latitude": 39.904179,
       "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "cap-han-zhao-zuoguocheng-304",
+      "dynastyId": "han-zhao",
+      "historicalName": "左国城",
+      "modernName": "山西省吕梁市方山县",
+      "start": {
+        "year": 304,
+        "month": 1,
+        "abs": 3648
+      },
+      "end": {
+        "year": 304,
+        "month": 12,
+        "abs": 3659
+      },
+      "startAbs": 3648,
+      "endAbs": 3659,
+      "precision": "year",
+      "role": "primary",
+      "note": "刘渊建汉初都于离石左国城。左国城具体遗址地望仍有异说；坐标采用方山县行政区约略点，不代表已确认城址。迁都年份的年桶归入迁入地，不表示公历1月1日即迁。",
+      "links": [
+        {
+          "label": "《晋书·载记第一·刘元海》",
+          "url": "https://www.shidianguji.com/book/LS0005/chapter/LS0005_1413"
+        },
+        {
+          "label": "高德地图地理编码与地点检索",
+          "url": "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+        }
+      ],
+      "longitude": 111.244309,
+      "latitude": 37.895017,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "cap-han-zhao-liting-305",
+      "dynastyId": "han-zhao",
+      "historicalName": "黎亭",
+      "modernName": "山西省长治市壶关县",
+      "start": {
+        "year": 305,
+        "month": 1,
+        "abs": 3660
+      },
+      "end": {
+        "year": 307,
+        "month": 12,
+        "abs": 3695
+      },
+      "startAbs": 3660,
+      "endAbs": 3695,
+      "precision": "year",
+      "role": "primary",
+      "note": "《晋书》记离石大饥后迁于黎亭；地望按今壶关县一带约略定位，未指认具体遗址。迁都年份的年桶归入迁入地。",
+      "links": [
+        {
+          "label": "《晋书·载记第一·刘元海》",
+          "url": "https://www.shidianguji.com/book/LS0005/chapter/LS0005_1413"
+        },
+        {
+          "label": "高德地图地理编码与地点检索",
+          "url": "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+        }
+      ],
+      "longitude": 113.206836,
+      "latitude": 36.115645,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "cap-han-zhao-puzi-308",
+      "dynastyId": "han-zhao",
+      "historicalName": "蒲子",
+      "modernName": "山西省临汾市隰县",
+      "start": {
+        "year": 308,
+        "month": 1,
+        "abs": 3696
+      },
+      "end": {
+        "year": 308,
+        "month": 12,
+        "abs": 3707
+      },
+      "startAbs": 3696,
+      "endAbs": 3707,
+      "precision": "year",
+      "role": "primary",
+      "note": "刘渊迁都蒲子，后于永嘉二年迁都平阳；坐标采用隰县行政区约略点，不代表已确认城址。迁都年份的年桶归入迁入地。",
+      "links": [
+        {
+          "label": "《晋书·载记第一·刘元海》",
+          "url": "https://www.shidianguji.com/book/LS0005/chapter/LS0005_1413"
+        },
+        {
+          "label": "高德地图地理编码与地点检索",
+          "url": "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+        }
+      ],
+      "longitude": 110.940752,
+      "latitude": 36.693345,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "cap-han-zhao-pingyang-309",
+      "dynastyId": "han-zhao",
+      "historicalName": "平阳",
+      "modernName": "山西省临汾市尧都区",
+      "start": {
+        "year": 309,
+        "month": 1,
+        "abs": 3708
+      },
+      "end": {
+        "year": 318,
+        "month": 12,
+        "abs": 3827
+      },
+      "startAbs": 3708,
+      "endAbs": 3827,
+      "precision": "year",
+      "role": "primary",
+      "note": "刘渊迁都平阳，汉赵后续君主沿用，刘曜于319年迁都长安。坐标为尧都区行政区约略点。迁都年份的年桶归入迁入地。",
+      "links": [
+        {
+          "label": "《晋书·载记第一·刘元海》",
+          "url": "https://www.shidianguji.com/book/LS0005/chapter/LS0005_1413"
+        },
+        {
+          "label": "高德地图地理编码与地点检索",
+          "url": "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+        }
+      ],
+      "longitude": 111.578797,
+      "latitude": 36.082463,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "cap-yuan-yingchang-1369",
+      "dynastyId": "yuan",
+      "historicalName": "应昌",
+      "modernName": "内蒙古自治区赤峰市克什克腾旗达日罕乌拉苏木应昌路故城遗址",
+      "start": {
+        "year": 1369,
+        "month": 1,
+        "abs": 16428
+      },
+      "end": {
+        "year": 1370,
+        "month": 12,
+        "abs": 16451
+      },
+      "startAbs": 16428,
+      "endAbs": 16451,
+      "precision": "year",
+      "role": "temporary",
+      "note": "元顺帝北撤后驻跸应昌；1370年应昌被明军攻克，爱猷识理达腊出逃和林。年精度记录迁入、陷落所在年；高德地点为应昌路故城墓葬区附近代表点。",
+      "links": [
+        {
+          "label": "克什克腾旗人民法院：应昌路故城遗址",
+          "url": "https://m.thepaper.cn/newsDetail_forward_27639224"
+        },
+        {
+          "label": "高德地图：应昌路故城遗址",
+          "url": "https://www.amap.com/place/B0FFGSZSFZ"
+        }
+      ],
+      "longitude": 116.487067,
+      "latitude": 43.269985,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "cap-yuan-helin-1370",
+      "dynastyId": "yuan",
+      "historicalName": "和林（哈拉和林）",
+      "modernName": "蒙古国前杭爱省哈拉和林古城遗址",
+      "start": {
+        "year": 1370,
+        "month": 1,
+        "abs": 16440
+      },
+      "end": {
+        "year": 1388,
+        "month": 12,
+        "abs": 16667
+      },
+      "startAbs": 16440,
+      "endAbs": 16667,
+      "precision": "year",
+      "role": "primary",
+      "note": "元昭宗应昌失守后退至和林；元天元帝时期和林仍为北元的政治中心。蒙古草原汗庭具有移动性，本记录表示主要都城/政治中心，不表示汗廷全年固定驻于城内。坐标为遗址WGS84。",
+      "links": [
+        {
+          "label": "《明太祖实录》：元昭宗、天元帝北迁及捕鱼儿海战事",
+          "url": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E5%85%83_(%E5%8C%97%E5%85%83)"
+        },
+        {
+          "label": "哈拉和林古城地理位置（WGS84）",
+          "url": "https://mapcarta.com/16407530"
+        }
+      ],
+      "longitude": 102.83333,
+      "latitude": 47.23333,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "cap-qing-hetuala-1616",
+      "dynastyId": "qing",
+      "historicalName": "赫图阿拉（兴京）",
+      "modernName": "辽宁省抚顺市新宾满族自治县永陵镇赫图阿拉城遗址",
+      "start": {
+        "year": 1616,
+        "month": 1,
+        "abs": 19392
+      },
+      "end": {
+        "year": 1619,
+        "month": 12,
+        "abs": 19439
+      },
+      "startAbs": 19392,
+      "endAbs": 19439,
+      "precision": "year",
+      "role": "primary",
+      "note": "努尔哈赤于1616年在赫图阿拉建立后金；年精度边界按迁都年桶归入新都。坐标为高德景区点。",
+      "links": [
+        {
+          "label": "故宫博物院：努尔哈赤年表",
+          "url": "https://www.dpm.org.cn/court/lineage/226250.html"
+        },
+        {
+          "label": "高德地图：赫图阿拉城",
+          "url": "https://www.amap.com/place/B019D00ZWN"
+        }
+      ],
+      "longitude": 124.874263,
+      "latitude": 41.705298,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "cap-qing-jiefan-1620",
+      "dynastyId": "qing",
+      "historicalName": "界藩城",
+      "modernName": "辽宁省抚顺市新宾满族自治县永陵镇二道村附近界藩山城遗址",
+      "start": {
+        "year": 1620,
+        "month": 1,
+        "abs": 19440
+      },
+      "end": {
+        "year": 1620,
+        "month": 12,
+        "abs": 19451
+      },
+      "startAbs": 19440,
+      "endAbs": 19451,
+      "precision": "year",
+      "role": "primary",
+      "note": "故宫博物院年表记天命五年（1620）十月迁都界藩城。年精度年桶归入迁入地；坐标为永陵镇二道村附近约略点，未指认为精确遗址坐标。",
+      "links": [
+        {
+          "label": "故宫博物院：努尔哈赤年表",
+          "url": "https://www.dpm.org.cn/court/lineage/226250.html"
+        },
+        {
+          "label": "高德地图地理编码与地点检索",
+          "url": "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+        }
+      ],
+      "longitude": 124.849567,
+      "latitude": 41.670843,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "cap-qing-liaoyang-1621",
+      "dynastyId": "qing",
+      "historicalName": "辽阳（东京）",
+      "modernName": "辽宁省辽阳市白塔区",
+      "start": {
+        "year": 1621,
+        "month": 1,
+        "abs": 19452
+      },
+      "end": {
+        "year": 1624,
+        "month": 12,
+        "abs": 19499
+      },
+      "startAbs": 19452,
+      "endAbs": 19499,
+      "precision": "year",
+      "role": "primary",
+      "note": "后金于1621年迁都辽阳；坐标为白塔区行政区约略点，不代表东京城遗址精确位置。年精度边界按迁都年桶归入新都。",
+      "links": [
+        {
+          "label": "故宫博物院：努尔哈赤年表",
+          "url": "https://www.dpm.org.cn/court/lineage/226250.html"
+        },
+        {
+          "label": "高德地图地理编码与地点检索",
+          "url": "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+        }
+      ],
+      "longitude": 123.174347,
+      "latitude": 41.270397,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "cap-qing-shenyang-1625",
+      "dynastyId": "qing",
+      "historicalName": "沈阳/盛京",
+      "modernName": "辽宁省沈阳市",
+      "start": {
+        "year": 1625,
+        "month": 1,
+        "abs": 19500
+      },
+      "end": {
+        "year": 1635,
+        "month": 12,
+        "abs": 19631
+      },
+      "startAbs": 19500,
+      "endAbs": 19631,
+      "precision": "year",
+      "role": "primary",
+      "note": "努尔哈赤于1625年迁都沈阳；皇太极于天聪八年（1634）改称“天眷盛京”，简称盛京。城市改名沿用同一都城记录，坐标为城市级约略点。",
+      "links": [
+        {
+          "label": "高德地图地理编码与地点检索",
+          "url": "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+        },
+        {
+          "label": "故宫博物院：努尔哈赤年表",
+          "url": "https://www.dpm.org.cn/court/lineage/226250.html"
+        },
+        {
+          "label": "沈阳故宫博物院：三月初四是沈阳城的纪念日",
+          "url": "https://www.sypm.org.cn/xinwen_1/1154050075920269312.html"
+        },
+        {
+          "label": "沈阳市民政局：沈阳地名沿革",
+          "url": "https://mzj.shenyang.gov.cn/xxgk/mzfc/202209/P020220919596378727460.pdf"
+        }
+      ],
+      "longitude": 123.464675,
+      "latitude": 41.677576,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "cap-ming-south-shaoxing-1645",
+      "dynastyId": "ming-south",
+      "historicalName": "绍兴",
+      "modernName": "浙江省绍兴市越城区",
+      "start": {
+        "year": 1645,
+        "month": 1,
+        "abs": 19740
+      },
+      "end": {
+        "year": 1646,
+        "month": 12,
+        "abs": 19763
+      },
+      "startAbs": 19740,
+      "endAbs": 19763,
+      "precision": "year",
+      "role": "primary",
+      "claimTrack": "lu-jian",
+      "note": "朱以海于1645年在绍兴监国；1646年绍兴失守后出走。与南明主线及绍武并立政权分轨记录，坐标为越城区行政区约略点。",
+      "links": [
+        {
+          "label": "故宫博物院：绍武政权与南明",
+          "url": "https://www.dpm.org.cn/court/event/160184.html"
+        },
+        {
+          "label": "高德地图地理编码与地点检索",
+          "url": "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+        }
+      ],
+      "longitude": 120.582338,
+      "latitude": 29.989092,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "cap-nanzhao-tucheng-649",
+      "dynastyId": "nanzhao",
+      "historicalName": "图城",
+      "modernName": "云南省大理白族自治州巍山彝族回族自治县大仓镇团山村山龙山于图山城址",
+      "start": {
+        "year": 649,
+        "month": 1,
+        "abs": 7788
+      },
+      "end": {
+        "year": 738,
+        "month": 12,
+        "abs": 8867
+      },
+      "startAbs": 7788,
+      "endAbs": 8867,
+      "precision": "year",
+      "role": "primary",
+      "note": "巍山县政府资料称细奴逻于649年建蒙舍诏、定都图城，738年皮逻阁迁都大理太和城。图城遗址约在今大仓镇团山村山龙山于图山顶；坐标为遗址近似点，年界只按年桶表示。个别考古资料将始建年记为650年。",
+      "links": [
+        {
+          "label": "巍山彝族回族自治县人民政府：南诏古都",
+          "url": "https://www.dlweishan.gov.cn/wsxrmzf/c103396/pc/content/1983764863900553216/content_1983764863900553216.html"
+        },
+        {
+          "label": "澎湃新闻：国家历史文化名城·云南巍山（遗址资料）",
+          "url": "https://www.thepaper.cn/newsDetail_forward_29300950"
+        },
+        {
+          "label": "高德地图：山龙山于图山城址",
+          "url": "https://www.amap.com/place/B0FFKC2VLR"
+        }
+      ],
+      "longitude": 100.223126,
+      "latitude": 25.348365,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "cap-jin-west-changan-304",
+      "dynastyId": "jin-west",
+      "historicalName": "长安",
+      "modernName": "陕西省西安市未央区汉长安城遗址",
+      "start": {
+        "year": 304,
+        "month": 1,
+        "abs": 3648
+      },
+      "end": {
+        "year": 306,
+        "month": 6,
+        "day": 10,
+        "abs": 3677
+      },
+      "startAbs": 3648,
+      "endAbs": 3677,
+      "precision": "year",
+      "endPrecision": "day",
+      "role": "temporary",
+      "note": "永安元年（304）张方挟持晋惠帝司马衷及公卿至长安，司马颙以征西府为宫；惠帝于306年6月11日还洛阳。洛阳留台仍承制行事，故此处记长安为短期朝廷实际驻地（行在），洛阳仍保留西晋京师都城记录。起点按年精度表示，史载为农历十一月，未将农历日直接换作公历月日。",
+      "links": [
+        {
+          "label": "《晋书·惠帝纪》",
+          "url": "https://www.shidianguji.com/book/LS0005/chapter/LS0005_52"
+        },
+        {
+          "label": "陕西省地方志：西安市志",
+          "url": "https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsxz/xbsxz/xas_16198/201405/P020240923625160882829.pdf"
+        },
+        {
+          "label": "中国人民大学清史研究所：先秦至明代地理研究（引《西安历史地图集》）",
+          "url": "https://iqh.ruc.edu.cn/old/zglsdlyj/lsdl_lzjj/xqzmddlyj/490272705243483b96edc6a7eea546cd.htm"
+        }
+      ],
+      "longitude": 108.849843,
+      "latitude": 34.293244,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "cap-jin-west-luoyang-306",
+      "dynastyId": "jin-west",
+      "historicalName": "洛阳",
+      "modernName": "河南省洛阳市",
+      "start": {
+        "year": 306,
+        "month": 6,
+        "day": 11,
+        "abs": 3677
+      },
+      "end": {
+        "year": 316,
+        "month": 12,
+        "abs": 3803
+      },
+      "startAbs": 3677,
+      "endAbs": 3803,
+      "precision": "day",
+      "endPrecision": "year",
+      "role": "primary",
+      "note": "晋惠帝于306年6月11日还洛阳后，洛阳恢复为西晋都城；本记录承接304年此前的洛阳都城阶段。",
+      "links": [
+        {
+          "label": "《晋书·惠帝纪》：304年西迁及306年奉帝还洛阳",
+          "url": "https://www.shidianguji.com/book/LS0005/chapter/LS0005_52"
+        },
+        {
+          "label": "维基百科：西晋",
+          "url": "https://zh.wikipedia.org/wiki/西晋"
+        },
+        {
+          "label": "晋惠帝（归洛阳日期换算）",
+          "url": "https://zh.wikipedia.org/wiki/晋惠帝"
+        }
+      ],
+      "longitude": 112.453895,
+      "latitude": 34.619702,
+      "coordinateSystem": "GCJ02"
     }
   ],
   "reigns": [],
@@ -6010,7 +6505,7 @@
   "eventLocations": [],
   "updates": [],
   "relations": [],
-  "preSql": "-- removed capitals\nDELETE FROM dynasty_capitals WHERE id = 'cap-roc-taibei-23388';\nDELETE FROM dynasty_capitals WHERE id = 'cap-nanzhao-taihecheng-649';\nDELETE FROM dynasty_capitals WHERE id = 'cap-daxi-xijing-1644';\nDELETE FROM dynasty_capitals WHERE id = 'cap-daxi-xichong-1646';\nDELETE FROM dynasty_capitals WHERE id = 'cap-sui-daxing-581';\nDELETE FROM dynasty_capitals WHERE id = 'cap-song-xu-anfeng-16212';\nDELETE FROM dynasty_capitals WHERE id = 'cap-zhou-zhang-chuzhou-16248';\nDELETE FROM dynasty_capitals WHERE id = 'cap-song-han-mianyang-16260';\nDELETE FROM dynasty_capitals WHERE id = 'cap-chen-han-wuchang-1360';\nDELETE FROM dynasty_capitals WHERE id = 'cap-mingzheng-dongning-19932';\nDELETE FROM dynasty_capitals WHERE id = 'cap-taiping-tianjing-1853';\nDELETE FROM dynasty_capitals WHERE id = 'cap-han-zhao-changan-304';\nDELETE FROM dynasty_capitals WHERE id = 'cap-qin-liyue-424';\nDELETE FROM dynasty_capitals WHERE id = 'cap-qin-qianhui-709';\nDELETE FROM dynasty_capitals WHERE id = 'cap-zhou-guo-east-wangcheng-367';\nDELETE FROM dynasty_capitals WHERE id = 'cap-zhou-east-luoyi-770';\nDELETE FROM dynasty_capitals WHERE id = 'cap-han-gengshi-changan-23';\nDELETE FROM dynasty_capitals WHERE id = 'cap-chimei-changan-23';\nDELETE FROM dynasty_capitals WHERE id = 'cap-yue-chunqiu-langya-333';",
+  "preSql": "-- removed capitals\nDELETE FROM dynasty_capitals WHERE id = 'cap-roc-taibei-23388';\nDELETE FROM dynasty_capitals WHERE id = 'cap-nanzhao-taihecheng-649';\nDELETE FROM dynasty_capitals WHERE id = 'cap-daxi-xijing-1644';\nDELETE FROM dynasty_capitals WHERE id = 'cap-daxi-xichong-1646';\nDELETE FROM dynasty_capitals WHERE id = 'cap-sui-daxing-581';\nDELETE FROM dynasty_capitals WHERE id = 'cap-song-xu-anfeng-16212';\nDELETE FROM dynasty_capitals WHERE id = 'cap-zhou-zhang-chuzhou-16248';\nDELETE FROM dynasty_capitals WHERE id = 'cap-song-han-mianyang-16260';\nDELETE FROM dynasty_capitals WHERE id = 'cap-chen-han-wuchang-1360';\nDELETE FROM dynasty_capitals WHERE id = 'cap-mingzheng-dongning-19932';\nDELETE FROM dynasty_capitals WHERE id = 'cap-taiping-tianjing-1853';\nDELETE FROM dynasty_capitals WHERE id = 'cap-han-zhao-changan-304';\nDELETE FROM dynasty_capitals WHERE id = 'cap-qin-liyue-424';\nDELETE FROM dynasty_capitals WHERE id = 'cap-qin-qianhui-709';\nDELETE FROM dynasty_capitals WHERE id = 'cap-zhou-guo-east-wangcheng-367';\nDELETE FROM dynasty_capitals WHERE id = 'cap-zhou-east-luoyi-770';\nDELETE FROM dynasty_capitals WHERE id = 'cap-han-gengshi-changan-23';\nDELETE FROM dynasty_capitals WHERE id = 'cap-chimei-changan-23';\nDELETE FROM dynasty_capitals WHERE id = 'cap-yue-chunqiu-langya-333';\nDELETE FROM dynasty_capitals WHERE id = 'cap-qing-shengjing-1634';\nDELETE FROM dynasty_capitals WHERE id = 'cap-mingzheng-dongning-1664';",
   "postSql": "",
   "manifest": {
     "slug": "dynasty-capitals",
@@ -6025,7 +6520,7 @@
     "depth": "standard",
     "generatedAt": "2026-09-27",
     "counts": {
-      "dynasty_capitals": 198
+      "dynasty_capitals": 211
     },
     "sources": [
       {
@@ -6215,6 +6710,54 @@
       {
         "label": "汉赵都城迁移沿革",
         "url": "https://zh.wikipedia.org/wiki/汉赵"
+      },
+      {
+        "label": "《晋书·载记第一·刘元海》",
+        "url": "https://www.shidianguji.com/book/LS0005/chapter/LS0005_1413"
+      },
+      {
+        "label": "故宫博物院：努尔哈赤年表",
+        "url": "https://www.dpm.org.cn/court/lineage/226250.html"
+      },
+      {
+        "label": "克什克腾旗人民法院：应昌路故城遗址",
+        "url": "https://m.thepaper.cn/newsDetail_forward_27639224"
+      },
+      {
+        "label": "故宫博物院：绍武政权与南明",
+        "url": "https://www.dpm.org.cn/court/event/160184.html"
+      },
+      {
+        "label": "《明太祖实录》：元昭宗、天元帝北迁及捕鱼儿海战事",
+        "url": "https://zh.wikipedia.org/wiki/%E5%A4%A9%E5%85%83_(%E5%8C%97%E5%85%83)"
+      },
+      {
+        "label": "高德地图：应昌路故城遗址",
+        "url": "https://www.amap.com/place/B0FFGSZSFZ"
+      },
+      {
+        "label": "高德地图：赫图阿拉城",
+        "url": "https://www.amap.com/place/B019D00ZWN"
+      },
+      {
+        "label": "哈拉和林古城地理位置（WGS84）",
+        "url": "https://mapcarta.com/16407530"
+      },
+      {
+        "label": "《晋书·惠帝纪》：惠帝西迁长安、洛阳留台及306年还洛阳",
+        "url": "https://www.shidianguji.com/book/LS0005/chapter/LS0005_52"
+      },
+      {
+        "label": "中国人民大学清史研究所：先秦至明代地理研究（引《西安历史地图集》西晋时期图）",
+        "url": "https://iqh.ruc.edu.cn/old/zglsdlyj/lsdl_lzjj/xqzmddlyj/490272705243483b96edc6a7eea546cd.htm"
+      },
+      {
+        "label": "《晋书·惠帝纪》：惠帝306年六月还洛阳",
+        "url": "https://www.shidianguji.com/book/LS0005/chapter/LS0005_52"
+      },
+      {
+        "label": "晋惠帝：306年6月11日奉帝还洛阳日期换算",
+        "url": "https://zh.wikipedia.org/wiki/晋惠帝"
       }
     ],
     "notes": [
@@ -6238,7 +6781,18 @@
       "窦建德夏政权都城分乐寿（金城宫）与洺州（万春宫）两段；《资治通鉴》记‘还洺州，筑万春宫，徙都之’，地方志系于武德二年（619）。由于只录年精度，迁都年的乐寿、洺州区间重叠；王世充郑政权都洛阳，记619—621年。窦建德政权使用唯一 dynasty id xia-dou-jiande，以区别上古夏朝 xia",
       "南宋临安都城阶段截止德祐二年正月十八日（1276年2月4日）宋廷降元；福州于德祐二年五月初一（1276年6月14日）端宗即位后升为福安府并定为行都，景炎元年十一月十五日（1276年12月21日）宋廷撤离后转为海上行朝，不再记固定陆上都城。依据福州市档案信息网及《宋史·瀛国公本纪》相关纪事。",
       "覆盖 127 个王朝，198 条都城记录",
-      "移除指向不存在的 cap-jin-west-changan-313 的 reign_capitals 关联；对应西晋长安都城记录已不在当前都城数据集中。"
+      "移除指向不存在的 cap-jin-west-changan-313 的 reign_capitals 关联；对应西晋长安都城记录已不在当前都城数据集中。",
+      "补录汉赵左国城、黎亭、蒲子、平阳的分期都城；按迁都所载年份划分年桶，精确月日不明时不伪造日界。左国城、黎亭、蒲子、平阳定位为现代县区约略点。",
+      "补录北元应昌与和林阶段。应昌按达里诺尔西畔应昌路故城定位；和林坐标采用蒙古国哈拉和林古城遗址WGS84。年精度只表达主要都城/政治中心，不把移动汗庭等同全年固定驻地。",
+      "补录努尔哈赤赫图阿拉、界藩、辽阳、沈阳都城序列。迁都年份按年精度归入迁入地；界藩及辽阳采用行政区/邻近村约略坐标，现代城市中心不冒充古城遗址。",
+      "补录朱以海鲁监国驻绍兴记录，claim_track=lu-jian，与南明主线及绍武政权分轨；绍兴失守后出走，不把主线都城继续关联给朱以海。",
+      "新增都城坐标按地点精度采用高德GCJ-02；哈拉和林位于蒙古国，采用遗址WGS84坐标。",
+      "清都城名称按历史改名合并为同一都城记录：努尔哈赤迁都时称沈阳，皇太极于1634年改称“天眷盛京”，记录名称写作“沈阳/盛京”，时段为1625—1635年。",
+      "补录南诏早期都城图城（649—738），为细奴逻、逻盛、盛逻皮及皮逻阁迁都前阶段提供直接关联；按巍山县政府资料取649建都、738迁往太和，另注部分考古资料将图山筑城记为650。并校正太和城现代地点至大理市太和村遗址及其地图坐标。",
+      "将明郑台南同一都城东都、东宁两条改名记录合并为单条“东都/东宁”（1661—1683）；元开平/上都、清沈阳/盛京虽同址，但原记录角色时段不同，保留角色区间并统一别名写法。",
+      "补录晋惠帝永安元年（304）被张方挟至长安至306年六月还洛阳的短期朝廷驻地。依《晋书》同时记载洛阳留台承制行事，保留洛阳 primary 都城，在长安以 temporary 记录皇帝与朝廷实际所在；起点只记年精度，农历十一月不冒充公历月份。地点取汉长安城遗址代表点，行宫为征西府但具体府址未考定。",
+      "拆分西晋洛阳都城为304年惠帝被挟往长安前、306年六月惠帝还洛阳后两段；中间以长安 temporary 行在记录朝廷实际驻地。迁入、迁出按现有史料精度表示，不把农历日期冒充公历月日。",
+      "洛阳后段起点使用306年6月11日，即《晋书》所记光熙元年五月己亥的公历日期；长安行在止于6月10日，避免两都记录在日精度边界重叠。"
     ]
   }
 }

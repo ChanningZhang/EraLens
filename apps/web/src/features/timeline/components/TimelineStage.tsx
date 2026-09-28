@@ -1,5 +1,6 @@
 import { memo, useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
+import { ExpandToggle } from "@/components/ExpandToggle";
 import {
   activeReignsAtAbs,
   buildLaneOrderIndex,
@@ -70,6 +71,7 @@ import { layoutReignFates } from "../model/reignFateLayout";
 
 const StableChinaMapBackground = memo(ChinaMapBackground);
 const EVENT_CONTROL_LANE_CLEARANCE = 10;
+const DEFAULT_VISIBLE_EVENT_LANES = 2;
 
 function laneColorTokenFor(
   map: ReadonlyMap<string, ReturnType<typeof fallbackLaneColorToken>>,
@@ -110,7 +112,6 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       mapVerticalAlignment,
     );
   }, [mapVerticalAlignment, stageViewportSize.height, stageViewportSize.width, viewport.gutterPx]);
-  const reduceMotion = useReducedMotion();
   const selection = useSelection();
   const { data, isLoading, error } = useTimelineData();
 
@@ -326,8 +327,8 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   );
   const nearbyEvents = useMemo(() => {
     if (!data) return [];
-    const windowStart = viewport.centerAbs - 36;
-    const windowEnd = viewport.centerAbs + 36;
+    const windowStart = viewport.centerAbs - 12;
+    const windowEnd = viewport.centerAbs + 12;
     const selectedEventId = selection.selected?.type === "event" ? selection.selected.id : undefined;
     return data.events.filter((event) => {
       if ((!eventDisplay.kinds[event.kind] && event.id !== selectedEventId) || (!event.location && event.locations.length === 0)) return false;
@@ -373,12 +374,12 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   const eventPlaced = useMemo(() => layoutEvents(railEvents, viewport), [railEvents, viewport]);
 
   const totalEventLanes = eventLaneCount(eventPlaced);
-  const canExpandEvents = totalEventLanes > 3;
+  const canExpandEvents = totalEventLanes > DEFAULT_VISIBLE_EVENT_LANES;
   const showAllEvents = !canExpandEvents || eventsExpanded;
   const visibleEventPlaced = showAllEvents
     ? eventPlaced
-    : eventPlaced.filter((item) => item.lane < 3);
-  const railHeight = eventRailHeight(showAllEvents ? totalEventLanes : Math.min(totalEventLanes, 3));
+    : eventPlaced.filter((item) => item.lane < DEFAULT_VISIBLE_EVENT_LANES);
+  const railHeight = eventRailHeight(showAllEvents ? totalEventLanes : Math.min(totalEventLanes, DEFAULT_VISIBLE_EVENT_LANES));
   const reignsByDynasty = useMemo(() => {
     const map = new Map<string, typeof data extends undefined ? never : NonNullable<typeof data>["reigns"]>();
     if (!data) return map;
@@ -450,13 +451,19 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     let top = railHeight + EVENT_CONTROL_LANE_CLEARANCE;
     const clusterGroupIds = new Set((data?.dynastyGroups ?? []).map((group) => group.id));
     let previousClusterId: string | null = null;
+    let hasPreviousLane = false;
     return placed.map((dynasty) => {
       const clusterId =
         dynasty.groupId && clusterGroupIds.has(dynasty.groupId) ? dynasty.groupId : null;
-      if (previousClusterId && clusterId !== previousClusterId) {
+      if (
+        hasPreviousLane &&
+        previousClusterId !== clusterId &&
+        (previousClusterId !== null || clusterId !== null)
+      ) {
         top += clusterLaneGapForPresentation(viewport.presentation, clusterId !== null);
       }
       previousClusterId = clusterId;
+      hasPreviousLane = true;
       let prepared = lanePreparedCache.get(dynasty.id);
       if (!prepared) {
         const records = collectLaneReigns(dynasty.id, reignsByDynasty, laneGroups);
@@ -626,18 +633,15 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       <div className={styles.guideOverlay} aria-hidden="true">
         <div className={styles.viewportPanel} />
       </div>
-      <motion.div
+      <div
         className={styles.content}
-        animate={{ minHeight: Math.max(stageViewportHeight, contentHeight) }}
-        transition={{ duration: reduceMotion ? 0 : 0.24, ease: [0.2, 0.8, 0.2, 1] }}
+        style={{ minHeight: Math.max(stageViewportHeight, contentHeight) }}
       >
-        <div className={styles.rail} aria-hidden="true" />
-        <motion.div
+        <div
           className={styles.lanes}
-          animate={{ minHeight: contentHeight }}
-          transition={{ duration: reduceMotion ? 0 : 0.24, ease: [0.2, 0.8, 0.2, 1] }}
           style={{
             position: "relative",
+            minHeight: contentHeight,
             height: "100%",
           }}
         >
@@ -669,7 +673,6 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
                     height={height}
                     left={left}
                     width={width}
-                    compact={viewport.presentation.compact}
                   />
                 ))}
               </AnimatePresence>
@@ -701,19 +704,14 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
             <>
               <EventLayer placed={visibleEventPlaced} height={railHeight} />
               {canExpandEvents && (
-                <button
-                  type="button"
+                <ExpandToggle
                   className={styles.eventExpandButton}
                   style={{ top: railHeight - 7 }}
-                  aria-label={eventsExpanded ? "收拢事件" : "展开更多事件"}
-                  title={eventsExpanded ? "收拢事件" : "展开更多事件"}
-                  onPointerDown={(event) => event.stopPropagation()}
+                  expanded={eventsExpanded}
+                  expandLabel="展开更多事件"
+                  collapseLabel="收拢事件"
                   onClick={() => setEventsExpanded((expanded) => !expanded)}
-                >
-                  <svg aria-hidden="true" viewBox="0 0 12 7" focusable="false">
-                    <path d={eventsExpanded ? "M1 6 6 1l5 5" : "m1 1 5 5 5-5"} />
-                  </svg>
-                </button>
+                />
               )}
             </>
           )}
@@ -727,8 +725,8 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
               height={personAreaHeight}
             />
           )}
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
       <div className={styles.capitalOverlay} aria-hidden={activeCapitals.length === 0}>
         <div className={styles.viewportPanel}>
           <CapitalMapLayer

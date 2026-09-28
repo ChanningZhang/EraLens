@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { getRepository } from "@/data/repository";
+import { ExpandToggle } from "@/components/ExpandToggle";
 import {
   EventKindSchema,
   eventKindLabel,
@@ -26,14 +27,40 @@ export function AppShell() {
   const selection = useSelection();
   const boundsQuery = useDataBounds();
   const stageRef = useRef<HTMLDivElement>(null);
+  const searchWrapRef = useRef<HTMLDivElement>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
   useTimelineWheel();
   const [search, setSearch] = useState("");
+  const [searchExpanded, setSearchExpanded] = useState(false);
   const [searchHits, setSearchHits] = useState<SearchHit[]>([]);
   const [eventSettingsOpen, setEventSettingsOpen] = useState(false);
   const { eventDisplay, updateEventKind } = useEventDisplaySettings();
   const { preferences, updateLayout } = useTimelineLayoutSettings();
   const presentation = viewport.presentation;
   const eventKinds = EventKindSchema.options;
+
+  const selectSearchHit = (hit: SearchHit) => {
+    selectionStore.select(hit.ref, hit.abs);
+    if (hit.abs !== undefined) viewportStore.jumpToAbs(hit.abs);
+    setSearchHits([]);
+    setSearchExpanded(false);
+  };
+
+  useEffect(() => {
+    if (searchExpanded) searchInputRef.current?.focus();
+  }, [searchExpanded]);
+
+  useEffect(() => {
+    if (!searchExpanded) return;
+    const onPointerDown = (event: PointerEvent) => {
+      if (event.target instanceof Node && !searchWrapRef.current?.contains(event.target)) {
+        setSearchExpanded(false);
+        setSearchHits([]);
+      }
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, [searchExpanded]);
 
   useEffect(() => {
     if (boundsQuery.data) {
@@ -111,6 +138,17 @@ export function AppShell() {
   return (
     <div
       className={styles.appShell}
+      onClick={(event) => {
+        if (!selection.detailOpen) return;
+        const target = event.target;
+        if (
+          target instanceof Element &&
+          target.closest("button, a, input, textarea, select, [role='button'], [role='dialog'], [aria-modal='true'], [data-detail-drawer]")
+        ) {
+          return;
+        }
+        selectionStore.clearSelection();
+      }}
       data-narrow={presentation.narrow}
       data-compact={presentation.compact}
       data-rail-collapsed={presentation.railCollapsed}
@@ -125,26 +163,39 @@ export function AppShell() {
       }}
     >
       <header className={styles.header} aria-label="EraLens 导航">
-        {presentation.narrow && <button
-          type="button"
+        {presentation.narrow && <ExpandToggle
           className={styles.railToggle}
-          aria-label={presentation.railCollapsed ? "展开王朝栏" : "折叠王朝栏"}
-          title={presentation.railCollapsed ? "展开王朝栏" : "折叠王朝栏"}
-          aria-expanded={!presentation.railCollapsed}
-          onClick={() => updateLayout({ railCollapsed: !preferences.railCollapsed })}
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <rect x="3" y="4" width="18" height="16" rx="3" />
-            <path d="M9 4v16" />
-            <path d={presentation.railCollapsed ? "m13 9 3 3-3 3" : "m16 9-3 3 3 3"} />
-          </svg>
-        </button>}
+          axis="horizontal"
+          expanded={!presentation.railCollapsed}
+          expandLabel="展开王朝栏"
+          collapseLabel="折叠王朝栏"
+          onClick={() => {
+            const nextCollapsed = !preferences.railCollapsed;
+            updateLayout({ railCollapsed: nextCollapsed });
+            if (nextCollapsed) setEventSettingsOpen(false);
+          }}
+        />}
         <div className={styles.brand}>
-          <h1 className={styles.brandTitle}>EraLens</h1>
-          <p className={styles.brandSub}>历史透镜</p>
+          {!presentation.railCollapsed && <>
+            <h1 className={styles.brandTitle}>EraLens</h1>
+            <p className={styles.brandSub}>历史透镜</p>
+          </>}
         </div>
-        <div className={styles.searchWrap}>
+        <div ref={searchWrapRef} className={styles.searchWrap} data-expanded={searchExpanded}>
+          <button
+            type="button"
+            className={styles.searchToggle}
+            aria-label="打开搜索"
+            aria-expanded={searchExpanded}
+            onClick={() => setSearchExpanded(true)}
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="10.8" cy="10.8" r="6.3" />
+              <path d="m15.5 15.5 4.2 4.2" />
+            </svg>
+          </button>
           <input
+            ref={searchInputRef}
             className={styles.searchInput}
             placeholder="搜索人物、王朝、年号、都城、事件…"
             aria-label="搜索人物、王朝、年号、都城、事件"
@@ -160,11 +211,14 @@ export function AppShell() {
               setSearchHits(await repo.search(value));
             }}
             onKeyDown={(e) => {
-              if (e.key === "Enter" && searchHits[0]) {
-                const hit = searchHits[0];
-                selectionStore.select(hit.ref, hit.abs);
-                if (hit.abs !== undefined) viewportStore.jumpToAbs(hit.abs);
+              if (e.key === "Escape" && searchExpanded) {
+                setSearchExpanded(false);
                 setSearchHits([]);
+                e.currentTarget.blur();
+                return;
+              }
+              if (e.key === "Enter" && searchHits[0]) {
+                selectSearchHit(searchHits[0]);
               }
             }}
           />
@@ -176,10 +230,8 @@ export function AppShell() {
                   type="button"
                   className={styles.searchResult}
                   onClick={() => {
-                    selectionStore.select(hit.ref, hit.abs);
-                    if (hit.abs !== undefined) viewportStore.jumpToAbs(hit.abs);
+                    selectSearchHit(hit);
                     setSearch("");
-                    setSearchHits([]);
                   }}
                 >
                   <span>{hit.label}</span>
@@ -198,9 +250,12 @@ export function AppShell() {
       </div>
 
       <Ruler />
-      <div className={styles.settingsWrap}>
+      {!presentation.railCollapsed && <div className={styles.settingsWrap}>
         <button type="button" className={styles.settingsButton} aria-label="显示设置" title="显示设置" aria-expanded={eventSettingsOpen} onClick={() => setEventSettingsOpen((open) => !open)}>
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7Zm8 4.7v-2.4l-2-.7a6.2 6.2 0 0 0-.6-1.4l.9-1.9-1.7-1.7-1.9.9a6.2 6.2 0 0 0-1.4-.6l-.7-2h-2.4l-.7 2a6.2 6.2 0 0 0-1.4.6l-1.9-.9-1.7 1.7.9 1.9a6.2 6.2 0 0 0-.6 1.4l-2 .7v2.4l2 .7c.1.5.3 1 .6 1.4l-.9 1.9 1.7 1.7 1.9-.9c.4.3.9.5 1.4.6l.7 2h2.4l.7-2c.5-.1 1-.3 1.4-.6l1.9.9 1.7-1.7-.9-1.9c.3-.4.5-.9.6-1.4l2-.7Z"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m9.9 2.5 4.2 0 .6 2.1c.7.2 1.3.5 1.9.9l2-.7 2.1 3.6-1.5 1.5a7 7 0 0 1 0 2.2l1.5 1.5-2.1 3.6-2-.7c-.6.4-1.2.7-1.9.9l-.6 2.1H9.9l-.6-2.1c-.7-.2-1.3-.5-1.9-.9l-2 .7-2.1-3.6 1.5-1.5a7 7 0 0 1 0-2.2L3.3 8.4l2.1-3.6 2 .7c.6-.4 1.2-.7 1.9-.9Z" />
+            <circle cx="12" cy="11" r="3.2" />
+          </svg>
         </button>
         {eventSettingsOpen && <section className={styles.settingsPanel} aria-label="显示设置">
           <h2>时间轴布局</h2>
@@ -210,16 +265,19 @@ export function AppShell() {
           </label>
           <button className={styles.autoLayoutButton} type="button" onClick={() => updateLayout({ density: "auto" })} disabled={preferences.density === "auto"}>按屏幕自动调整</button>
           <h2>事件展示</h2>
-          {eventKinds.map((kind) => <label key={kind} className={styles.settingsOption}>
-            <input type="checkbox" aria-label={`显示${eventKindLabel(kind)}事件`} checked={eventDisplay.kinds[kind] ?? true} onChange={(event) => void updateEventKind(kind, event.target.checked)} />
-            <EventKindPreview kind={kind} label={eventKindLabel(kind)} />
-          </label>)}
+          <div className={styles.eventSettingsGrid}>
+            {eventKinds.map((kind) => <label key={kind} className={styles.settingsOption}>
+              <input type="checkbox" aria-label={`显示${eventKindLabel(kind)}事件`} checked={eventDisplay.kinds[kind] ?? true} onChange={(event) => void updateEventKind(kind, event.target.checked)} />
+              <EventKindPreview kind={kind} label={eventKindLabel(kind)} />
+            </label>)}
+          </div>
         </section>}
-      </div>
+      </div>}
       <CursorGuide stageRef={stageRef} />
       {selection.detailOpen && (
         <div
           className={styles.detailDrawer}
+          data-detail-drawer
           style={{ ["--detail-width" as string]: `${selection.detailWidth}px` }}
         >
           <ResizeHandle />

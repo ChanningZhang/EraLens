@@ -57,6 +57,46 @@
     {
       "label": "孝文帝改革",
       "url": "https://zh.wikipedia.org/wiki/北魏孝文帝改革"
+    },
+    {
+      "label": "宋书（刘宋本纪、列传）",
+      "url": "https://ctext.org/datawiki.pl?if=gb&remap=gb&res=973033"
+    },
+    {
+      "label": "南齐书（本纪、列传）",
+      "url": "https://ctext.org/wiki.pl?chapter=6203970&if=en&remap=gb"
+    },
+    {
+      "label": "梁书（本纪、列传）",
+      "url": "https://ctext.org/datawiki.pl?if=gb&res=133354"
+    },
+    {
+      "label": "陈书（本纪、列传）",
+      "url": "https://ctext.org/datawiki.pl?if=gb&remap=gb&res=773592"
+    },
+    {
+      "label": "魏书（北魏本纪、列传）",
+      "url": "https://ctext.org/wiki.pl?if=gb&res=801592"
+    },
+    {
+      "label": "北史（北朝本纪、列传）",
+      "url": "https://ctext.org/wiki.pl?if=gb&res=1424556"
+    },
+    {
+      "label": "北齐书（本纪、列传）",
+      "url": "https://ctext.org/datawiki.pl?if=gb&res=329466"
+    },
+    {
+      "label": "周书（西魏、北周本纪、列传）",
+      "url": "https://ctext.org/wiki.pl?if=gb&remap=gb&res=466908"
+    },
+    {
+      "label": "隋书·高祖纪",
+      "url": "https://zh.wikisource.org/zh-hans/隋书/卷1"
+    },
+    {
+      "label": "资治通鉴·隋纪",
+      "url": "https://zh.wikisource.org/zh-hans/资治通鉴/卷175"
     }
   ],
   "notes": [
@@ -68,6 +108,8 @@
     "补入侯景所建汉政权（han-houjing）：552年正月至五月以建康为都；萧栋按551年10月2日至552年1月1日的实日期间补入南梁主线。",
     "589 年隋灭陈为南北朝终结事件；隋（581–）不在本包内。",
     "西梁行在 nanbei-sixteen-extra，group_id 为 nan-chao，不另立组。",
-    "清理对本包已删除的 song-liu-founded 事件的孤儿关系；该关系不再写入 relations。"
+    "清理对本包已删除的 song-liu-founded 事件的孤儿关系；该关系不再写入 relations。",
+    "本次补充南朝与北朝相关帝王的人物概述及十个政权的简史说明；身份、继承、关键政治脉络以《宋书》《南齐书》《梁书》《陈书》《魏书》《北史》《北齐书》《周书》对应本纪、列传互校，概述中的在位年份沿用本包已录区间。侯景称帝及南北朝大事以相关史书和君主年表交叉核对。",
+    "2026-09：按用户请求扩充杨坚概述，补充其北周皇后身份、受禅建隋、灭陈统一、开皇时期制度与治理背景及杨广继位脉络；据《隋书·高祖纪》《资治通鉴·隋纪》，在位日期仍沿用隋唐包记录。"
   ]
 }

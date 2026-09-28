@@ -1,3 +1,14 @@
+/* Noto Serif SC 600 subset for the Latin EraLens wordmark.
+   Keep the brand glyphs consistent across platforms without bundling the full CJK font. */
+@font-face {
+  font-family: "EraLens Brand Serif";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/eralens-brand-serif.woff2") format("woff2");
+  unicode-range: U+0045, U+004C, U+0061, U+0065, U+006E, U+0072-0073;
+}
+
 .serif {
   font-family: var(--font-serif);
 }

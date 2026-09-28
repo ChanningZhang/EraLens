@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useViewport } from "../hooks/useViewport";
 import { projectAbs } from "../model/coordinates";
-import { buildRulerTicks, getRulerTickSteps } from "../model/rulerTicks";
+import { buildRulerTicks } from "../model/rulerTicks";
 import { viewportStore } from "../state/viewportStore";
 import styles from "./Ruler.module.css";
 
@@ -16,19 +16,10 @@ export function Ruler() {
   const velocityRef = useRef(0);
   const lastMoveRef = useRef<{ x: number; t: number } | null>(null);
 
-  const tickSteps = getRulerTickSteps(viewport.pxPerMonth);
-
   const ticks = useMemo(
     () => buildRulerTicks(viewport.startAbs, viewport.endAbs, viewport.pxPerMonth),
     [viewport.startAbs, viewport.endAbs, viewport.pxPerMonth],
   );
-
-  const zoomHint = useMemo(() => {
-    if (tickSteps.labelYears === 1) return "每年";
-    if (tickSteps.labelYears === 5) return "每 5 年";
-    if (tickSteps.labelYears === 10) return "每 10 年";
-    return `每 ${tickSteps.labelYears} 年`;
-  }, [tickSteps.labelYears]);
 
   const flushPendingPan = () => {
     if (panFrameRef.current !== null) {
@@ -124,7 +115,7 @@ export function Ruler() {
           onPointerCancel={onPointerUp}
           role="slider"
           aria-label="时间标尺"
-          aria-valuetext={`年份标签${zoomHint}`}
+          aria-valuetext="年份标签"
         >
           <div className={styles.scaleViewport}>
             <div className={styles.tickBand}>
@@ -154,7 +145,6 @@ export function Ruler() {
               })}
             </div>
           </div>
-          <span className={styles.zoomHint}>{zoomHint}<span className={styles.gestureHint}> · 双指捏合缩放</span></span>
         </div>
       </div>
     </div>

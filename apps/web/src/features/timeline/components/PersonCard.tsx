@@ -1,5 +1,4 @@
 import { formatAbsSpanTooltip, personPointKindLabel } from "@eralens/shared";
-import { useState } from "react";
 import { useSelection } from "../hooks/useSelection";
 import { useViewport } from "../hooks/useViewport";
 import { EVENT_MARKER_DOT_OFFSET } from "../model/eventLayout";
@@ -11,12 +10,13 @@ import styles from "./PersonCard.module.css";
 
 type Props = {
   placed: PlacedPerson;
+  lineVisible: boolean;
+  onSelectLine: () => void;
 };
 
-export function PersonCard({ placed }: Props) {
+export function PersonCard({ placed, lineVisible, onSelectLine }: Props) {
   const viewport = useViewport();
   const selection = useSelection();
-  const [nameHovered, setNameHovered] = useState(false);
   const { person, top, startAbs, endAbs, mode, pointKind } = placed;
   const selected =
     selection.selected?.type === "person" &&
@@ -74,45 +74,55 @@ export function PersonCard({ placed }: Props) {
   const detail = personDetailLevel(viewport.lod, width);
   // A lifespan can begin before the visible window. Keep its small label at
   // the timeline edge in that case, rather than leaving an unexplained line.
-  const labelLeft = Math.max(6, viewport.gutterPx + 8 - left);
+  const labelLeft = Math.max(6, viewport.gutterPx + 2 - left);
 
   return (
     <InfoPopover text={timeTooltip}>
       {(handlers) => (
-        <button
-          type="button"
+        <>
+          <button
+            type="button"
             className={[
               styles.card,
               styles.lifeLine,
-              nameHovered ? styles.lineVisible : "",
+              lineVisible ? styles.lineVisible : "",
               detail === "dot" ? styles.dot : "",
-            selected ? styles.selected : "",
-          ]
-            .filter(Boolean)
-            .join(" ")}
-          style={{ left, width, top }}
-          onClick={() => {
-            selectionStore.select({ type: "person", id: person.id }, startAbs);
-            selectionStore.syncToUrl(viewport.centerAbs);
-          }}
-          aria-label={role ? `${person.name}，${role}` : person.name}
-          {...handlers}
-        >
-          {detail !== "dot" && (
-            <span className={styles.label} style={{ left: labelLeft }}>
-              <span
-                className={styles.name}
-                onMouseEnter={() => setNameHovered(true)}
-                onMouseLeave={() => setNameHovered(false)}
-              >
-                {person.name}
+              selected ? styles.selected : "",
+            ]
+              .filter(Boolean)
+              .join(" ")}
+            style={{ left, width, top }}
+            onClick={() => {
+              selectionStore.select({ type: "person", id: person.id }, startAbs);
+              selectionStore.syncToUrl(viewport.centerAbs);
+            }}
+            aria-label={role ? `${person.name}，${role}` : person.name}
+            {...handlers}
+          >
+            {detail !== "dot" && (
+              <span className={styles.label} style={{ left: labelLeft }}>
+                <span className={styles.name}>{person.name}</span>
+                {detail === "full" && role && (
+                  <span className={styles.role}>{role}</span>
+                )}
               </span>
-              {detail === "full" && role && (
-                <span className={styles.role}>{role}</span>
-              )}
-            </span>
+            )}
+          </button>
+          {detail !== "dot" && (
+            <button
+              type="button"
+              className={`${styles.personSelectDot} ${lineVisible ? styles.personSelectDotActive : ""}`}
+              style={{ left: left + labelLeft + 6, top: top + 9 }}
+              aria-label={`${lineVisible ? "取消显示" : "显示"}${person.name}的生平横线`}
+              aria-pressed={lineVisible}
+              onPointerDown={(event) => event.stopPropagation()}
+              onClick={(event) => {
+                event.stopPropagation();
+                onSelectLine();
+              }}
+            />
           )}
-        </button>
+        </>
       )}
     </InfoPopover>
   );

@@ -10,7 +10,9 @@ description: >-
 
 为 `dynasty_capitals` 表补数据：调研都城时段 → 高德取点 → 写入对应包 `cache.json` → 统一生成 SQL。
 
-**不要**在运行时 API 调高德；坐标与 `modern_name` 一并写入 `data/imports/{slug}/`。
+`data/imports/dynasty-capitals/cache.json` 是都城事实与来源说明的唯一源文件：记录放入 `capitals`，来源/编码说明放入其中的 `manifest.sources` / `manifest.notes`。不要另建坐标表、raw 文件或包级生成脚本；生成的 `manifest.json` 和 `import.sql` 不手工修改。
+
+**不要**在运行时 API 调高德；坐标与 `modernName` 一并写入 `data/imports/dynasty-capitals/cache.json` 的 `capitals` 记录。
 
 ## 前置
 
@@ -29,10 +31,12 @@ Task Progress:
 - [ ] 1. 调研：核对维基/年表，确定 historical_name、时段、role
 - [ ] 2. 写 modern_name：省/市全称（见下）
 - [ ] 3. 高德取点：maps_geo → maps_regeocode 校验
-- [ ] 4. 直接写入 `data/imports/dynasty-capitals/cache.json`，运行 `node data/imports/generate.mjs dynasty-capitals`
-- [ ] 5. 校验：node .cursor/skills/eralens-period-import/scripts/validate-import.mjs
-- [ ] 6. 入库：pnpm db:import 或 scripts/apply-sql.sh
+- [ ] 4. 将核实后的坐标直接写入 `data/imports/dynasty-capitals/cache.json` 的 `capitals` 记录及 `manifest.sources` / `manifest.notes`
+- [ ] 5. 运行统一生成器并用同目录缓存校验 SQL
+- [ ] 6. 用 `apply-sql.sh` 单包增量导入，或按需执行全量 `pnpm db:import`
 ```
+
+导入包只生成 PostgreSQL `import.sql`；单包增量导入生成该包后用 `apply-sql.sh`。全量 `pnpm db:import` 前先运行 `node data/imports/generate.mjs --all`；db:import 会清空并重载本地 PostgreSQL 后构建移动端 SQLite，但不会生成 SQL。Xcode 启动不会运行这条数据导入命令。
 
 ## modern_name 规范（必填）
 
@@ -53,11 +57,11 @@ Task Progress:
 3. 用 `maps_regeocode` 反查返回坐标，确认 `province` / `city` 与 modernName 一致。
 4. 歧义时用 `maps_text_search` + `maps_search_detail`，仍须落到唯一行政区全称。
 5. 将 `longitude`、`latitude`（GCJ-02）直接写入 `cache.json`。
-6. 在 `manifest.json` 的 `notes` 记录 geocode 来源（地址串、日期）。
+6. 在 `cache.json.manifest.notes` 记录 geocode 来源（地址串、日期）。
 
 ## dynasty_capitals 字段
 
-见 [eralens-period-import reference.md](../eralens-period-import/reference.md) 的 `dynasty_capitals` 节。
+缓存字段采用 camelCase（如 `historicalName`、`modernName`、`dynastyId`、`coordinateSystem`、`start`、`end`）；SQL 列名与缓存字段对应关系见 [eralens-period-import reference.md](../eralens-period-import/reference.md) 的 `dynasty_capitals` 节。
 
 要点：
 

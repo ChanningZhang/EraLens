@@ -72,7 +72,7 @@
         "君主",
         "军事家"
       ],
-      "bio": "南明延平王，1662年驱逐荷兰、收复台湾，建立明郑东宁政权；同年病逝。",
+      "bio": "抗清名将，收复台湾。在明郑（1661年—1662年）在位。",
       "links": [
         {
           "label": "维基百科",
@@ -229,8 +229,6 @@
       "dynastyId": "dashun",
       "personId": "li-zicheng",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "永昌"
       ],
@@ -260,8 +258,6 @@
       "dynastyId": "daxi",
       "personId": "zhang-xianzhong",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "大顺"
       ],
@@ -292,8 +288,6 @@
       "dynastyId": "mingzheng",
       "personId": "zheng-chenggong",
       "title": "",
-      "posthumousName": "武王",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1661,
@@ -322,8 +316,6 @@
       "dynastyId": "mingzheng",
       "personId": "zheng-jing",
       "title": "",
-      "posthumousName": "文王",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1662,
@@ -352,8 +344,6 @@
       "dynastyId": "mingzheng",
       "personId": "zheng-keshuang",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1681,
@@ -401,7 +391,8 @@
         "day": 8
       },
       "summary": "施琅率清军在澎湖海战取胜，郑克塽于同年十月降清，明郑灭亡，台湾纳入清朝统治。",
-      "atAbs": 20205
+      "atAbs": 20205,
+      "locationId": "loc-taiwan-conquest"
     }
   ],
   "relations": [
@@ -430,14 +421,9 @@
       "kind": "battle"
     }
   ],
-  "supplementalEventDynasties": [
-    {
-      "eventId": "zheng-recover-taiwan",
-      "dynastyId": "mingzheng"
-    }
-  ],
+  "supplementalEventDynasties": [],
   "supplementalEventParticipants": [],
-  "preSql": "DELETE FROM event_dynasties WHERE event_id IN ('mingzheng-taiwan-founded', 'qing-unify-taiwan');\nDELETE FROM event_dynasties WHERE event_id = 'qing-enter-pass' AND dynasty_id = 'dashun';\nDELETE FROM event_participants WHERE event_id IN ('mingzheng-taiwan-founded', 'qing-unify-taiwan');\nUPDATE relations SET from_id = 'zheng-recover-taiwan' WHERE from_type = 'event' AND from_id = 'mingzheng-taiwan-founded';\nDELETE FROM events WHERE id IN ('mingzheng-taiwan-founded', 'qing-unify-taiwan');",
+  "preSql": "DELETE FROM event_dynasties WHERE event_id IN ('mingzheng-taiwan-founded', 'qing-unify-taiwan');\nDELETE FROM event_dynasties WHERE event_id = 'qing-enter-pass' AND dynasty_id = 'dashun';\nDELETE FROM event_participants WHERE event_id IN ('mingzheng-taiwan-founded', 'qing-unify-taiwan');\nDELETE FROM relations WHERE from_type = 'event' AND from_id = 'mingzheng-taiwan-founded';\nDELETE FROM events WHERE id IN ('mingzheng-taiwan-founded', 'qing-unify-taiwan');",
   "manifest": {
     "slug": "ming-end",
     "title": "明末清初过渡政权",

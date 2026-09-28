@@ -49,11 +49,16 @@
 
 禁止：在 `apps/web`、`apps/api` 加 `displayNameOverrides['li-shimin'] = …`。
 
-## manifest notes 示例
+## cache.json 中的 manifest notes 示例
 
 ```json
-"notes": [
+"manifest": {
+  "sources": [{ "label": "《左传》昭公三十一年", "url": "https://example.invalid/source" }],
+  "notes": [
   "曹髦无谥，title 用高贵乡公；封号不写入 posthumous_name",
   "莒郊公本名狂，入库 name=己狂，姓己来自诸侯表"
-]
+  ]
+}
 ```
+
+该对象位于包 `cache.json` 顶层；`manifest.json` 是统一生成器写出的副本，不直接编辑。

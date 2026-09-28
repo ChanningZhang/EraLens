@@ -951,7 +951,13 @@ describe("resolveReignCardMeta", () => {
 });
 
 describe("resolveReignDetailSubtitle", () => {
-  it("matches reign card appellation for Song and Liao emperors", () => {
+  it("prefers a nonempty reign title over person-level appellations", () => {
+    const liuBang = source({
+      start: { year: -209, month: 9 },
+      title: "沛公",
+      posthumousName: "高皇帝",
+      templeName: "太祖",
+    });
     const songReign = source({
       start: { year: 960, month: 1 },
       title: "宋太祖",
@@ -965,15 +971,18 @@ describe("resolveReignDetailSubtitle", () => {
       eraNames: ["统和"],
     });
 
+    expect(resolveReignDetailSubtitle(liuBang, "西汉", "刘邦")).toBe(
+      "西汉 · 沛公",
+    );
     expect(resolveReignDetailSubtitle(songReign, "北宋", "赵匡胤")).toBe(
-      "北宋 · 太祖",
+      "北宋 · 宋太祖",
     );
     expect(resolveReignDetailSubtitle(liaoReign, "辽", "耶律隆绪")).toBe(
-      "辽 · 圣宗",
+      "辽 · 辽圣宗",
     );
   });
 
-  it("uses 台湾地区 · 领导人 for ROC leaders from 1950 onward", () => {
+  it("uses 台湾地区 and the reign title for ROC leaders from 1950 onward", () => {
     const chen = source({
       dynastyId: "roc",
       start: { year: 2000, month: 5 },
@@ -997,18 +1006,27 @@ describe("resolveReignDetailSubtitle", () => {
     });
 
     expect(resolveReignDetailSubtitle(chen, "中华民国", "陈水扁")).toBe(
-      "台湾地区 · 领导人",
+      "台湾地区 · 总统",
     );
     expect(resolveReignDetailSubtitle(jiang, "中华民国", "蒋介石")).toBe(
-      "台湾地区 · 领导人",
+      "台湾地区 · 总统",
     );
     expect(resolveReignDetailSubtitle(li, "中华民国", "李宗仁")).toBe(
       "中华民国 · 代总统",
     );
-    expect(resolveEmperorAppellation(chen)).toEqual({
-      kind: "regnal",
-      name: "领导人",
-    });
+    expect(resolveEmperorAppellation(chen)?.name).toBe("总统");
+    expect(
+      resolveReignDetailSubtitle(
+        source({
+          dynastyId: "roc",
+          start: { year: 2024, month: 5 },
+          title: "",
+          eraNames: [],
+        }),
+        "中华民国",
+        "赖清德",
+      ),
+    ).toBe("台湾地区");
   });
 });
 

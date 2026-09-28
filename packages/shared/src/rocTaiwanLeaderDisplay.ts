@@ -1,11 +1,10 @@
 import type { Reign } from "./schema";
 import { absMonth } from "./time";
 
-/** 1950 年迁台后续统，界面改称「台湾地区 · 领导人」。 */
+/** 1950 年迁台后续统，界面使用「台湾地区」作为地区标签。 */
 export const ROC_TAIWAN_LEADER_DISPLAY_START_YEAR = 1950;
 export const ROC_TAIWAN_LEADER_DISPLAY_START_ABS = absMonth(1950);
 export const ROC_TAIWAN_LEADER_REGION_LABEL = "台湾地区";
-export const ROC_TAIWAN_LEADER_OFFICE_LABEL = "领导人";
 
 export type RocReignDisplayFields = Pick<Reign, "dynastyId" | "start">;
 
@@ -41,5 +40,5 @@ export function resolveRocLaneRegionLabel(
 }
 
 export function resolveRocReignDetailSubtitle(): string {
-  return `${ROC_TAIWAN_LEADER_REGION_LABEL} · ${ROC_TAIWAN_LEADER_OFFICE_LABEL}`;
+  return ROC_TAIWAN_LEADER_REGION_LABEL;
 }

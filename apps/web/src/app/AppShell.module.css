@@ -1,10 +1,11 @@
 .appShell {
+  --ruler-shift: 0px;
   position: relative;
   display: grid;
   grid-template-rows: 1fr var(--ruler-height);
   height: 100%;
   padding: env(safe-area-inset-top) env(safe-area-inset-right)
-    env(safe-area-inset-bottom) env(safe-area-inset-left);
+    calc(env(safe-area-inset-bottom) - var(--ruler-shift)) env(safe-area-inset-left);
   min-height: 0;
   background: var(--color-paper);
   overscroll-behavior: none;
@@ -13,7 +14,7 @@
 .header {
   position: absolute;
   inset: env(safe-area-inset-top) env(safe-area-inset-right)
-    calc(var(--ruler-height) + env(safe-area-inset-bottom)) env(safe-area-inset-left);
+    calc(var(--ruler-height) + env(safe-area-inset-bottom) - var(--ruler-shift)) env(safe-area-inset-left);
   z-index: 10;
   pointer-events: none;
 }
@@ -31,7 +32,7 @@
 
 .brandTitle {
   margin: 0;
-  font-family: var(--font-serif);
+  font-family: "EraLens Brand Serif", var(--font-serif);
   font-size: 17px;
   font-weight: 600;
   letter-spacing: 0.04em;
@@ -49,18 +50,24 @@
   position: absolute;
   top: 12px;
   left: calc(var(--timeline-gutter) + 116px);
-  width: min(167px, calc(100% - var(--timeline-gutter) - 140px));
+  width: min(140px, calc(100% - var(--timeline-gutter) - 140px));
   pointer-events: auto;
+}
+
+.searchToggle {
+  display: none;
 }
 
 .searchInput {
   width: 100%;
-  padding: 9px 13px;
+  height: 32px;
+  padding: 5px 12px;
   border: 1px solid var(--color-border);
   border-radius: 999px;
   background: var(--color-surface);
   background: color-mix(in srgb, var(--color-surface) 94%, transparent);
   color: var(--color-ink);
+  font-size: 14px;
   box-shadow: 0 4px 16px color-mix(in srgb, var(--color-ink) 9%, transparent);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
@@ -89,11 +96,12 @@
 .settingsWrap {
   position: absolute;
   left: env(safe-area-inset-left);
-  bottom: env(safe-area-inset-bottom);
-  z-index: 30;
+  bottom: calc(env(safe-area-inset-bottom) - var(--ruler-shift));
+  z-index: 15;
   display: grid;
   place-items: center;
   width: var(--timeline-gutter);
+  min-width: 44px;
   height: var(--ruler-height);
   pointer-events: none;
 }
@@ -115,7 +123,7 @@
   cursor: pointer;
 }
 
-.settingsButton svg { width: 19px; height: 19px; fill: currentColor; }
+.settingsButton svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
 .settingsButton:hover { color: var(--color-ink); border-color: var(--color-accent); }
 
 .settingsPanel {
@@ -123,7 +131,8 @@
   bottom: calc(100% + 8px);
   left: calc(100% + 8px);
   z-index: 20;
-  width: 210px;
+  width: 300px;
+  max-width: calc(100vw - 72px);
   max-height: min(70vh, 420px);
   overflow: auto;
   padding: 14px;
@@ -140,7 +149,16 @@
 
 .settingsPanel h2 { margin: 0 0 10px; font: 600 14px var(--font-serif); }
 .settingsOption { display: flex; align-items: center; gap: 9px; min-height: 44px; font-size: 13px; cursor: pointer; }
-.settingsOption input { accent-color: var(--color-accent); }
+.settingsOption input { accent-color: var(--color-ink-secondary); }
+.eventSettingsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 8px;
+  row-gap: 2px;
+}
+.eventSettingsGrid .settingsOption { min-width: 0; min-height: 34px; gap: 7px; }
+.eventSettingsGrid .settingsOption input { flex: 0 0 auto; }
+.eventSettingsGrid .settingsOption > span { min-width: 0; }
 
 .autoLayoutButton {
   min-height: 44px;
@@ -157,80 +175,31 @@
 .autoLayoutButton:disabled { opacity: 0.5; cursor: default; }
 
 .railToggle {
-  flex: 0 0 44px;
-  width: 44px;
-  height: 44px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
-  background: var(--color-surface);
-  color: var(--color-ink-secondary);
-  cursor: pointer;
-  pointer-events: auto;
+  position: absolute;
+  top: 8px;
+  left: calc(var(--timeline-gutter) - 7px);
+  width: 14px;
+  height: 40px;
 }
 
-.railToggle svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+/* Keep the chevron on the rail edge with a wider transparent touch target. */
+.railToggle::before { content: ""; position: absolute; inset: -2px -15px; }
 
-.railToggle:focus-visible,
 .settingsButton:focus-visible,
 .autoLayoutButton:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 
 .appShell[data-narrow="true"] {
   --ruler-height: 60px;
-  --ruler-ring-height: 47px;
-  grid-template-rows: 56px 1fr var(--ruler-height);
 }
 
-.appShell[data-narrow="true"] .header {
-  position: relative;
-  inset: auto;
-  grid-row: 1;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 60px 6px 8px;
-  min-width: 0;
-  background: var(--color-paper);
-}
+.appShell[data-narrow="true"] .searchInput { height: 32px; font-size: 16px; padding: 5px 10px; }
+.appShell[data-narrow="true"] .searchResults { max-height: min(50dvh, 280px); }
 
-.appShell[data-narrow="true"] .brand {
-  position: static;
-  flex: 0 0 auto;
-  width: auto;
-}
-
-.appShell[data-narrow="true"] .brandTitle { font-size: 14px; letter-spacing: 0; }
-.appShell[data-narrow="true"] .brandSub { display: none; }
-
-.appShell[data-narrow="true"] .searchWrap {
-  position: relative;
-  inset: auto;
-  width: auto;
-  min-width: 0;
-  flex: 1;
-}
-
-.appShell[data-narrow="true"] .searchInput { height: 44px; font-size: 16px; padding: 9px 10px; }
-.appShell[data-narrow="true"] .searchResults { left: -116px; right: -52px; max-height: min(50dvh, 280px); }
-.appShell[data-narrow="true"] .body { grid-row: 2; }
-
-.appShell[data-narrow="true"] .settingsWrap {
-  top: calc(env(safe-area-inset-top) + 6px);
-  right: calc(env(safe-area-inset-right) + 8px);
-  bottom: auto;
-  left: auto;
-  width: 44px;
-  height: 44px;
-}
-
-.appShell[data-narrow="true"] .settingsPanel {
-  top: calc(100% + 8px);
-  right: 0;
-  bottom: auto;
-  left: auto;
-  width: min(280px, calc(100vw - 16px - env(safe-area-inset-left) - env(safe-area-inset-right)));
-  max-height: min(65dvh, 480px);
+@media (orientation: landscape) and (max-height: 560px) {
+  .appShell {
+    --ruler-shift: env(safe-area-inset-bottom);
+    --ruler-height: 52px;
+  }
 }
 
 .searchResult {
@@ -303,7 +272,77 @@
 
 @media (max-width: 960px) {
   .searchWrap {
-    width: min(200px, calc(100% - var(--timeline-gutter) - 140px));
+    top: 10px;
+    right: max(12px, env(safe-area-inset-right));
+    left: auto;
+    width: 40px;
+    height: 40px;
+    transition: width 180ms ease;
+  }
+
+  .searchWrap[data-expanded="true"] {
+    width: min(140px, calc(100vw - 72px - env(safe-area-inset-left) - env(safe-area-inset-right)));
+  }
+
+  .searchToggle {
+    position: absolute;
+    inset: 0 0 auto auto;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    color: var(--color-ink-secondary);
+    background: var(--color-surface);
+    background: color-mix(in srgb, var(--color-surface) 94%, transparent);
+    box-shadow: 0 4px 16px color-mix(in srgb, var(--color-ink) 9%, transparent);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+    transition: opacity 100ms ease;
+  }
+
+  .searchToggle svg {
+    width: 19px;
+    height: 19px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+  }
+
+  .searchWrap[data-expanded="true"] .searchToggle {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .searchInput,
+  .appShell[data-narrow="true"] .searchInput {
+    width: 100%;
+    height: 34px;
+    padding: 6px 42px 6px 10px;
+    font-size: 16px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 100ms ease;
+  }
+
+  .searchWrap[data-expanded="true"] .searchInput {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .searchWrap:not([data-expanded="true"]) .searchResults {
+    display: none;
+  }
+
+  .searchWrap[data-expanded="true"] .searchResults {
+    left: auto;
+    right: 0;
+    width: min(320px, calc(100vw - 24px));
   }
 
   .detailDrawer {
@@ -319,6 +358,23 @@
     max-height: min(55vh, calc(100vh - env(safe-area-inset-top)));
     max-height: min(55dvh, calc(100dvh - env(safe-area-inset-top)));
     box-shadow: 0 -8px 24px rgba(27, 25, 23, 0.12);
+  }
+}
+
+@media (max-width: 960px) and (orientation: landscape) {
+  .detailDrawer {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    animation-name: drawerIn;
+  }
+
+  .detailWrap {
+    width: min(var(--detail-width, var(--detail-default-width)), 80vw);
+    height: 100%;
+    max-height: none;
+    box-shadow: -12px 0 32px rgba(27, 25, 23, 0.12);
   }
 }
 

@@ -4,8 +4,9 @@
   align-items: center;
   gap: 6px;
   min-width: 8px;
-  height: 44px;
-  transform: translateY(-13px);
+  /* Keep the hit area inside its 22px lane. A 44px transparent button here
+     overlaps neighbouring people and can steal taps from their labels. */
+  height: 18px;
   padding: 0;
   border: 0;
   border-radius: 0;
@@ -31,18 +32,6 @@
   box-shadow: 0 1px 0 color-mix(in srgb, var(--color-paper) 80%, transparent);
   opacity: 0;
   transition: opacity var(--motion-fast), background var(--motion-fast), box-shadow var(--motion-fast);
-}
-
-.lifeLine::after {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 4px;
-  height: 4px;
-  content: "";
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--color-stone) 72%, var(--color-border));
-  transform: translate(-1px, -50%);
 }
 
 .card:hover {
@@ -72,12 +61,12 @@
   box-shadow: 0 1px 5px color-mix(in srgb, var(--color-accent) 32%, transparent);
 }
 
-.selected.lineVisible::before {
+.lifeLine.selected::before {
   opacity: 1;
 }
 
-.selected::after {
-  background: var(--color-accent);
+.selected.lineVisible::before {
+  opacity: 1;
 }
 
 .dot {
@@ -89,11 +78,6 @@
   width: 8px;
 }
 
-.dot::after {
-  width: 5px;
-  height: 5px;
-}
-
 .label {
   position: absolute;
   top: 50%;
@@ -102,11 +86,56 @@
   align-items: center;
   gap: 3px;
   max-width: 132px;
-  padding: 1px 4px;
+  padding: 1px 4px 1px 18px;
   border-radius: 3px;
   background: color-mix(in srgb, var(--color-paper) 74%, transparent);
   box-shadow: 0 0 7px color-mix(in srgb, var(--color-paper) 74%, transparent);
   transform: translateY(-50%);
+}
+
+.personSelectDot {
+  position: absolute;
+  z-index: 5;
+  width: 18px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+.personSelectDot::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 7px;
+  height: 7px;
+  border: 1px solid color-mix(in srgb, var(--color-stone) 52%, var(--color-border));
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--color-paper) 86%, var(--color-stone) 14%);
+  content: "";
+  transform: translate(-50%, -50%);
+  transition: width var(--motion-fast), height var(--motion-fast), border-color var(--motion-fast), background var(--motion-fast), box-shadow var(--motion-fast);
+}
+
+.personSelectDot:hover::before {
+  border-color: var(--color-stone);
+  background: var(--color-surface);
+}
+
+.personSelectDotActive::before {
+  width: 9px;
+  height: 9px;
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 16%, transparent);
+}
+
+.personSelectDot:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 1px;
 }
 
 .name {
@@ -119,7 +148,7 @@
 
 .pointMarker::before {
   position: absolute;
-  inset: -10px -8px;
+  inset: 0;
   content: "";
 }
 
@@ -142,8 +171,8 @@
   align-items: center;
   gap: 6px;
   max-width: 132px;
-  min-height: 44px;
-  padding: 3px 8px 3px var(--marker-pad-left);
+  min-height: 18px;
+  padding: 1px 8px 1px var(--marker-pad-left);
   border: var(--marker-border) solid color-mix(in srgb, var(--color-stone) 35%, var(--color-border));
   border-radius: 999px;
   background: color-mix(in srgb, var(--color-surface) 92%, var(--color-stone) 8%);

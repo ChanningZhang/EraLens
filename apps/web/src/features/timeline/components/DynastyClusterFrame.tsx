@@ -8,14 +8,13 @@ type Props = {
   height: number;
   left: number;
   width: number;
-  compact?: boolean;
 };
 
-export function DynastyClusterFrame({ group, top, height, left, width, compact = false }: Props) {
+export function DynastyClusterFrame({ group, top, height, left, width }: Props) {
   const reduceMotion = useReducedMotion();
   return (
     <motion.div
-      className={`${styles.frame} ${compact ? styles.compact : ""}`}
+      className={styles.frame}
       aria-hidden="true"
       initial={reduceMotion ? false : { top: top + 10, height, opacity: 0 }}
       animate={{ top, height, opacity: 1 }}

@@ -352,7 +352,7 @@ export function writePreparedImportPackage(dir, {
     ...(eventDynastySql.length || supplementalEventDynastySql.length ? ["", "-- event_dynasties", ...eventDynastySql, ...supplementalEventDynastySql] : []),
     ...(eventParticipantSql.length || supplementalEventParticipantSql.length ? ["", "-- event_participants", ...eventParticipantSql, ...supplementalEventParticipantSql] : []),
     ...(relations.length ? ["", "-- relations", ...relations.map(relationSql)] : []),
-    ...(eventLocations.length ? ["", "-- event_locations", ...eventLocations.flatMap((location) => [eventLocationSql(location), `UPDATE events SET location_id = ${sqlStr(location.id)} WHERE id = ${sqlStr(location.eventId)};`])] : []),
+    ...(eventLocations.length ? ["", "-- event_locations", ...eventLocations.map(eventLocationSql)] : []),
     ...(updates.length ? ["", "-- updates", ...updates.map((update) => {
       const allowed = { persons: new Set(["bio"]), dynasties: new Set(["note"]) };
       if (!allowed[update.table]?.has(update.column)) throw new Error(`Unsupported cached update: ${update.table}.${update.column}`);
@@ -366,6 +366,6 @@ export function writePreparedImportPackage(dir, {
   writeFileSync(path.join(dir, "import.sql"), sql);
   writeFileSync(path.join(dir, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);
   console.log(
-    `[${slug}] ${persons.length} persons, ${dynasties.length} dynasties, ${reigns.length} reigns, ${events.length} events`,
+    `[${slug}] ${persons.length} persons, ${dynasties.length} dynasties, ${capitals.length} capitals, ${reigns.length} reigns, ${events.length} events`,
   );
 }

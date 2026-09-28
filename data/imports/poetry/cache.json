@@ -29,27 +29,6 @@
       "title": null
     },
     {
-      "id": "tao-yuanming",
-      "name": "陶渊明",
-      "roles": [
-        "诗人",
-        "文学家"
-      ],
-      "bio": "东晋诗人，田园诗代表。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/陶渊明"
-        }
-      ],
-      "birth": null,
-      "death": null,
-      "altNames": [],
-      "posthumousNames": [],
-      "templeNames": [],
-      "title": null
-    },
-    {
       "id": "meng-hao-ran",
       "name": "孟浩然",
       "roles": [
@@ -120,48 +99,6 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/崔颢"
-        }
-      ],
-      "birth": null,
-      "death": null,
-      "altNames": [],
-      "posthumousNames": [],
-      "templeNames": [],
-      "title": null
-    },
-    {
-      "id": "du-fu",
-      "name": "杜甫",
-      "roles": [
-        "诗人",
-        "文学家"
-      ],
-      "bio": "盛唐诗人，诗圣，现实主义诗歌代表。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/杜甫"
-        }
-      ],
-      "birth": null,
-      "death": null,
-      "altNames": [],
-      "posthumousNames": [],
-      "templeNames": [],
-      "title": null
-    },
-    {
-      "id": "li-bai",
-      "name": "李白",
-      "roles": [
-        "诗人",
-        "文学家"
-      ],
-      "bio": "盛唐诗人，诗仙，浪漫主义诗歌代表。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/李白"
         }
       ],
       "birth": null,
@@ -267,92 +204,6 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/刘禹锡"
-        }
-      ],
-      "birth": null,
-      "death": null,
-      "altNames": [],
-      "posthumousNames": [],
-      "templeNames": [],
-      "title": null
-    },
-    {
-      "id": "du-mu",
-      "name": "杜牧",
-      "roles": [
-        "诗人",
-        "文学家",
-        "政治家"
-      ],
-      "bio": "晚唐诗人、政治家，与李商隐并称小李杜。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/杜牧"
-        }
-      ],
-      "birth": null,
-      "death": null,
-      "altNames": [],
-      "posthumousNames": [],
-      "templeNames": [],
-      "title": null
-    },
-    {
-      "id": "su-shi",
-      "name": "苏轼",
-      "roles": [
-        "诗人",
-        "文学家",
-        "政治家"
-      ],
-      "bio": "北宋文学家、政治家，诗词文书画皆精。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/苏轼"
-        }
-      ],
-      "birth": null,
-      "death": null,
-      "altNames": [],
-      "posthumousNames": [],
-      "templeNames": [],
-      "title": null
-    },
-    {
-      "id": "lu-you",
-      "name": "陆游",
-      "roles": [
-        "诗人",
-        "文学家"
-      ],
-      "bio": "南宋爱国诗人，诗词文俱工。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/陆游"
-        }
-      ],
-      "birth": null,
-      "death": null,
-      "altNames": [],
-      "posthumousNames": [],
-      "templeNames": [],
-      "title": null
-    },
-    {
-      "id": "wen-tianxiang",
-      "name": "文天祥",
-      "roles": [
-        "诗人",
-        "政治家"
-      ],
-      "bio": "南宋末丞相、抗元人物。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/文天祥"
         }
       ],
       "birth": null,
@@ -479,27 +330,6 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/丘逢甲"
-        }
-      ],
-      "birth": null,
-      "death": null,
-      "altNames": [],
-      "posthumousNames": [],
-      "templeNames": [],
-      "title": null
-    },
-    {
-      "id": "tan-sitong",
-      "name": "谭嗣同",
-      "roles": [
-        "政治家",
-        "诗人"
-      ],
-      "bio": "戊戌维新人物，戊戌六君子之一。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/谭嗣同"
         }
       ],
       "birth": null,

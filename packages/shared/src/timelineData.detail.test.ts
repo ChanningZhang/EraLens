@@ -54,7 +54,7 @@ describe("buildEntityDetail reign", () => {
 
     expect(detail.ref).toEqual({ type: "person", id: "zhao-kuangyin" });
     expect(detail.title).toBe("赵匡胤");
-    expect(detail.subtitle).toBe("北宋 · 太祖");
+    expect(detail.subtitle).toBe("北宋 · 宋太祖");
     expect(detail.facts).toEqual([
       { label: "庙号", value: "太祖" },
       { label: "年号", value: "建隆" },
@@ -349,7 +349,7 @@ describe("buildEntityDetail event", () => {
     ]);
     expect(detail.facts).toEqual([
       { label: "时间", value: "公元1644年12月" },
-      { label: "类型", value: "战事" },
+      { label: "类型", value: "军事" },
     ]);
   });
 
@@ -742,8 +742,8 @@ describe("buildEntityDetail person", () => {
     expect(detail.capitalTenures[0]?.tenure.label).toBe("1436 — 1449");
     expect(detail.capitalTenures[1]?.tenure.label).toBe("1457 — 1464");
     expect(detail.capitalTenures.map((row) => row.tenure.name)).toEqual([
-      "正统",
-      "明英宗",
+      undefined,
+      undefined,
     ]);
   });
 
@@ -893,7 +893,7 @@ describe("buildEntityDetail person", () => {
     });
   });
 
-  it("lists all reign tenures when focusing one reign on a multi-reign person", () => {
+  it("limits capital tenures to the focused reign on a multi-reign person", () => {
     const store = {
       dynasties: [
         {
@@ -967,9 +967,8 @@ describe("buildEntityDetail person", () => {
     );
 
     expect(detail.title).toBe("朱元璋");
-    expect(detail.subtitle).toBe("明 · 洪武");
+    expect(detail.subtitle).toBe("明 · 明太祖");
     expect(detail.capitalTenures.map((row) => row.tenure.ref.id)).toEqual([
-      "reign-zhu-yuanzhang-wu-zhu",
       "reign-zhu-yuanzhang-ming",
     ]);
   });

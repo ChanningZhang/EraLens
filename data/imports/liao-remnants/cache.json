@@ -13,7 +13,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "西辽德宗，辽亡后西迁建国，定都虎思，称霸中亚。",
+      "bio": "辽太祖后裔，辽亡后率部西行，联结西域势力并于1124年前后建立西辽，号葛儿汗。其政权以巴拉沙衮为中心，控制中亚绿洲与交通要地；在位1124—1143年。",
       "links": [
         {
           "label": "维基百科",
@@ -44,7 +44,7 @@
         "皇帝",
         "政治家"
       ],
-      "bio": "西辽感天皇后，耶律大石妻，1143–1150年临朝称制。",
+      "bio": "耶律大石遗孀，西辽感天皇后。大石死后她以摄政者身份维持政权，并在其子耶律夷列成年后交还权力；临朝称制1143—1150年。",
       "links": [
         {
           "label": "维基百科",
@@ -64,7 +64,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "西辽仁宗，耶律大石之子，1150–1163年在位。",
+      "bio": "耶律大石之子、萧塔不烟之后的西辽君主，承接父辈在中亚建立的统治。其在位期间西辽继续控制七河与河中部分地区；在位1150—1163年。",
       "links": [
         {
           "label": "维基百科",
@@ -87,7 +87,7 @@
         "皇帝",
         "政治家"
       ],
-      "bio": "西辽承天太后，耶律夷列之妹，1163–1177年临朝称制。",
+      "bio": "耶律夷列之妹，西辽承天太后，兄长死后以摄政身份掌政。她在宫廷冲突中被处死，耶律直鲁古随后即位；临朝称制1163—1177年。",
       "links": [
         {
           "label": "维基百科",
@@ -107,7 +107,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "西辽第五任君主，1177–1211年在位，后被屈出律篡位。",
+      "bio": "耶律夷列之子、耶律普速完之后继位，统治西辽后期。乃蛮王子屈出律借婚姻与宫廷政变夺权，直鲁古被废，西辽逐渐走向覆亡；在位1177—1211年。",
       "links": [
         {
           "label": "维基百科",
@@ -127,7 +127,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "乃蛮部王子，娶耶律直鲁古之女，1211年篡位，1218年西辽亡于蒙古。",
+      "bio": "乃蛮王子，娶耶律直鲁古之女后夺取西辽权位。其统治引发当地穆斯林反抗，蒙古军西征时攻入西辽，屈出律于1218年被俘处死，政权灭亡；在位1211—1218年。",
       "links": [
         {
           "label": "维基百科",
@@ -147,7 +147,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "辽末宗室，金攻辽时于燕京称帝，国号北辽，在位仅一年余。",
+      "bio": "辽朝宗室，金军南下时在燕京被拥立为帝，建立短暂的北辽政权，与天祚帝所代表的辽廷并存。其去世后北辽迅速失去凝聚力，燕京亦于1122年被金军攻取；在位1122年。",
       "links": [
         {
           "label": "维基百科",
@@ -358,7 +358,7 @@
         "abs": 14627
       },
       "precision": "year",
-      "note": "耶律大石辽亡后西迁，1124年镇州称王；1218年蒙古攻灭。"
+      "note": "辽亡前后，宗室耶律大石率部西行，依托可敦城及漠北诸部整军；此后进入中亚，以巴拉沙衮为中心建立西辽，又称哈剌契丹。西辽控制中亚绿洲与商路，1141年卡特万之战后势力扩展至河中地区；此后因内乱和屈出律夺权而衰弱，1218年为蒙古所灭。"
     },
     {
       "id": "beiliao",
@@ -379,7 +379,7 @@
         "abs": 13487
       },
       "precision": "year",
-      "note": "1122年耶律淳于燕京称帝，1123年旋亡；萧德妃称制不另建 reign。"
+      "note": "辽朝末年金军南下，辽宗室与留守官员在燕京拥立耶律淳，1122年建立短暂的北辽。耶律淳死后，萧德妃称制主持政务；金军攻取燕京，北辽于1123年瓦解，萧德妃随后归附天祚帝。"
     },
     {
       "id": "dongliao",
@@ -410,8 +410,6 @@
       "dynastyId": "xiliao",
       "personId": "yelu-dashi",
       "title": "",
-      "posthumousName": null,
-      "templeName": "德宗",
       "eraNames": [
         "延庆",
         "康国"
@@ -441,8 +439,6 @@
       "dynastyId": "xiliao",
       "personId": "xiao-tabuyan",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "咸清"
       ],
@@ -471,8 +467,6 @@
       "dynastyId": "xiliao",
       "personId": "yelu-yilie",
       "title": "",
-      "posthumousName": null,
-      "templeName": "仁宗",
       "eraNames": [
         "绍兴"
       ],
@@ -501,8 +495,6 @@
       "dynastyId": "xiliao",
       "personId": "yelu-pusuwan",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "崇福"
       ],
@@ -531,8 +523,6 @@
       "dynastyId": "xiliao",
       "personId": "yelu-zhilugu",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "天禧"
       ],
@@ -561,8 +551,6 @@
       "dynastyId": "xiliao",
       "personId": "qu-chulu",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1211,
@@ -589,8 +577,6 @@
       "dynastyId": "beiliao",
       "personId": "yelu-chun",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1122,
@@ -619,8 +605,6 @@
       "dynastyId": "dongliao",
       "personId": "yelu-liuge",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "天统"
       ],
@@ -649,8 +633,6 @@
       "dynastyId": "dongliao",
       "personId": "yao-li-shi",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1220,
@@ -677,8 +659,6 @@
       "dynastyId": "dongliao",
       "personId": "yelu-xieshe",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1226,
@@ -705,8 +685,6 @@
       "dynastyId": "dongliao",
       "personId": "yelu-shouguonu",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1238,
@@ -733,8 +711,6 @@
       "dynastyId": "dongliao",
       "personId": "yelu-gunai",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1259,
@@ -923,6 +899,18 @@
       {
         "label": "辽朝君主列表",
         "url": "https://zh.wikipedia.org/wiki/辽朝君主列表"
+      },
+      {
+        "label": "辽史",
+        "url": "https://zh.wikisource.org/zh-hans/辽史"
+      },
+      {
+        "label": "西辽史研究资料：《辽史·西辽外记》",
+        "url": "https://zh.wikisource.org/zh-hans/辽史/卷30"
+      },
+      {
+        "label": "《契丹国志》",
+        "url": "https://zh.wikisource.org/zh-hans/契丹国志"
       }
     ],
     "notes": [
@@ -933,7 +921,9 @@
       "北辽建立事件补充关联 liao 王朝（见 song-liao-jin）。",
       "在位年取维基百科常见年表；耶律大石、耶律留哥、屈出律等有月日锚点的见 已核定公历日期直接记录在缓存。",
       "东辽无庙号谥号。元史：留哥自立为辽王、拒称帝，蒙古仍封辽王；子孙袭爵。姚里氏为妃/王后，权领其众七年，不袭王爵。称号写在 reigns.title（辽王/王后），避免留哥年号天统盖过王号。",
-      "文献年号多作元统；辽宁出土官印署天统三年，从出土作天统，起迄取维基天统条 1213–1216。"
+      "文献年号多作元统；辽宁出土官印署天统三年，从出土作天统，起迄取维基天统条 1213–1216。",
+      "本次补充人物概述：以正史本纪、专题史料及君主年表交叉核对身份、世系、在位时期与重要转折；大理早期君主的记载不足处明确保留不详。",
+      "2026-09：按用户请求扩充北辽、西辽王朝概述，依据《辽史·天祚帝纪》《辽史·西辽外记》《契丹国志》及本包既有记录整理。北辽概述区分耶律淳在位与萧德妃称制；西辽按耶律大石西迁、建都巴拉沙衮及蒙古征服的历史脉络叙述。"
     ]
   }
 }

@@ -3,21 +3,6 @@
 BEGIN;
 
 -- cleanup
-UPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-ruzi-ying';
-UPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-zhou-ziqi-roc';
-UPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-gao-lingwei-roc';
-UPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-huang-fu-roc';
-UPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-hu-weide-roc';
-UPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-yan-huiqing-roc';
-UPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-du-xigui-roc';
-UPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-gu-weijun-roc';
-UPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-hu-weide-roc-2';
-UPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-duan-qirui-roc';
-UPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-zhang-zuolin-roc';
-UPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-song-qingling-dong-biwu-prc';
-UPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-npc-standing-committee-prc';
-UPDATE reigns SET is_informal_monarch = true WHERE id = 'reign-zhu-yihai-ming-south';
-UPDATE reigns SET is_informal_monarch = false WHERE id = 'reign-dong-biwu-prc';
 DELETE FROM reigns WHERE id = 'reign-wang-mang-regent';
 DELETE FROM persons WHERE id = 'wang-mang-regent';
 

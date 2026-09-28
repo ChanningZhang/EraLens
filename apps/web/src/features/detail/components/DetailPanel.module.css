@@ -219,7 +219,7 @@
 
 .capitalTenureRow {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
   gap: var(--space-2);
 }
 
@@ -298,5 +298,14 @@
     border-top: 1px solid var(--color-border);
     border-radius: 12px 12px 0 0;
     box-shadow: 0 -8px 24px rgba(27, 25, 23, 0.12);
+  }
+}
+
+@media (max-width: 960px) and (orientation: landscape) {
+  .panel {
+    border-left: 1px solid var(--color-border);
+    border-top: none;
+    border-radius: 12px 0 0 12px;
+    box-shadow: -12px 0 32px rgba(27, 25, 23, 0.12);
   }
 }

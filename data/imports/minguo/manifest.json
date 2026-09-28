@@ -41,6 +41,22 @@
     {
       "label": "抗日战争",
       "url": "https://zh.wikipedia.org/wiki/抗日战争"
+    },
+    {
+      "label": "中華民國總統府：歷任總統",
+      "url": "https://www.president.gov.tw/qrcode/16c"
+    },
+    {
+      "label": "中華民國總統府：歷任總統（英文）",
+      "url": "https://english.president.gov.tw/Page/81"
+    },
+    {
+      "label": "中華民國大陸政府：民國歷史紀要",
+      "url": "https://www.rocmgov.org/rocevents"
+    },
+    {
+      "label": "南京总统府：历史沿革",
+      "url": "https://www.njztf.cn/about.html"
     }
   ],
   "notes": [

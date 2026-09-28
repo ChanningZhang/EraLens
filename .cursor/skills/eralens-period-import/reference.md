@@ -1,6 +1,36 @@
 # EraLens 导入参考
 
-## manifest.json
+## 当前数据源与文件格式
+
+真实数据只编辑 `data/imports/{slug}/cache.json`。缓存顶层使用 camelCase，日期是 `{ year, month, abs }`；数组包括 `persons`、`dynastyGroups`、`dynastyLaneGroups`、`dynasties`、`capitals`、`reigns`、`reignCapitals`、`events`、`eventLocations`、`relations` 及 supplemental link 集合。来源和取舍写入同一缓存中的 `manifest.sources` / `manifest.notes`。`manifest.json`、`import.sql` 是统一生成器输出，禁止手工修改；不要新建包级 Wiki 转换或数据生成脚本。
+
+缓存示意（省略非必要字段）：
+
+```json
+{
+  "slug": "example-period",
+  "window": { "startYear": 626, "startMonth": 1, "endYear": 649, "endMonth": 12 },
+  "persons": [{ "id": "li-shimin", "name": "李世民", "title": "唐太宗", "posthumousNames": ["文武皇帝"], "templeNames": ["太宗"] }],
+  "dynastyGroups": [],
+  "dynastyLaneGroups": [],
+  "dynasties": [{ "id": "tang", "name": "唐", "start": { "year": 618, "month": 6, "abs": 7421 }, "end": { "year": 907, "month": 5, "abs": 10888 } }],
+  "capitals": [],
+  "reigns": [{ "id": "reign-li-shimin", "dynastyId": "tang", "personId": "li-shimin", "title": "唐太宗", "start": { "year": 626, "month": 9, "abs": 7520 }, "end": { "year": 649, "month": 7, "abs": 7794 }, "startAbs": 7520, "endAbs": 7794, "eraNames": ["贞观"], "isMain": true }],
+  "reignCapitals": [],
+  "events": [{ "id": "example-event", "name": "示例事件", "kind": "politics", "timeMode": "point", "precision": "year", "at": { "year": 627, "month": 12, "abs": 7535 }, "dynastyIds": ["tang"], "participantIds": ["li-shimin"] }],
+  "eventLocations": [],
+  "relations": [],
+  "supplementalEventDynasties": [],
+  "supplementalEventParticipants": [],
+  "manifest": { "slug": "example-period", "title": "示例时期", "generatedAt": "2026-09-27", "counts": { "persons": 1, "dynasties": 1, "reigns": 1, "events": 1 }, "sources": [], "notes": [] },
+  "preSql": "",
+  "postSql": ""
+}
+```
+
+正常录入只改这些缓存记录及 `manifest`。新增或删除记录时同步维护缓存中的 `manifest.counts`，修订时更新 `manifest.generatedAt`；生成器按缓存原样输出元数据，不自动计算或修复数量。`preSql` / `postSql` 仅在确实需要清理历史数据库残留时使用，不能用于转换或覆盖缓存数据。生成与导入步骤见 [时期数据导入 Skill](./SKILL.md) 和 [数据包说明](../../../data/imports/README.md)。
+
+## 生成的 manifest.json 格式
 
 ```json
 {
@@ -28,20 +58,24 @@
 | dynasty_lane_groups | id |
 | reigns | id |
 | dynasty_capitals | id |
+| reign_capitals | (reign_id, capital_id) |
 | events | id |
+| event_locations | id |
 | event_dynasties | (event_id, dynasty_id) |
 | event_participants | (event_id, person_id) |
 | relations | id |
 
 事件时间列：`time_mode`（point/span/circa）、`precision`（day/month/year/decade/century）、`date_note`（可选）。
 
-`events.kind` 支持 `battle`、`politics`、`culture`、`disaster`、`commerce`、`finance`、`idiom`、`poetry`、`other`。`commerce` 表示贸易制度、通商格局与重要商品传播事件，界面标签为「商业」；`finance` 表示货币、银行与财政制度转折，界面标签为「金融」。新增 kind 时同步更新 `packages/shared/src/schema.ts`、共享标签函数、界面样式与本节枚举。
+`events.kind` 支持 `battle`、`politics`、`culture`、`disaster`、`commerce`、`agriculture`、`finance`、`idiom`、`poetry`、`other`。`commerce` 表示贸易制度、通商格局与重要商品传播事件，界面标签为「商业」；`finance` 表示货币、银行与财政制度转折，界面标签为「金融」。新增 kind 时同步更新 `packages/shared/src/schema.ts`、共享标签函数、界面样式与本节枚举。
 
 - `point`：`at_year` / `at_month` / `at_abs`
 - `span`：`start_*` + `end_*`（真实持续）
 - `circa`：`start_*` + `end_*` 为可能窗口，可选 `at_*` 为最佳估计
 
-## INSERT 模板
+## 生成 SQL 的列映射示例（不是数据录入格式）
+
+以下 SQL 仅说明缓存字段如何映射到数据库列，不能作为源文件编辑。需要新增/修复数据时改上方所示 `cache.json`，再运行统一生成器。
 
 ### persons
 
@@ -51,7 +85,7 @@
 INSERT INTO persons (
   id, name, alt_names, ancestral_xing, clan_shi,
   birth_year, birth_month, death_year, death_month,
-  roles, bio, links, posthumous_name, temple_name
+  roles, bio, links, posthumous_name, temple_name, title
 )
 VALUES (
   'li-shimin',
@@ -62,7 +96,7 @@ VALUES (
   ARRAY['皇帝','军事家'],
   '唐太宗，开创贞观之治。',
   '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/李世民"}]'::jsonb,
-  '文武皇帝', '太宗'
+  '文武皇帝', '太宗', '唐太宗'
 )
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
@@ -77,7 +111,8 @@ ON CONFLICT (id) DO UPDATE SET
   bio = EXCLUDED.bio,
   links = EXCLUDED.links,
   posthumous_name = EXCLUDED.posthumous_name,
-  temple_name = EXCLUDED.temple_name;
+  temple_name = EXCLUDED.temple_name,
+  title = EXCLUDED.title;
 ```
 
 检索别名（如 `lv-shang` → `姜子牙`）写入 `alt_names`，不要在前端或 shared 维护硬编码映射。`search_terms` 不写进 INSERT；数据库触发器根据人物字段、关联 reign 与王朝统一生成。
@@ -128,7 +163,7 @@ ON CONFLICT (id) DO UPDATE SET
   links = EXCLUDED.links;
 ```
 
-（旧模板省略 `alt_names` / 姓氏列时，请改用 `data/imports/lib/sqlHelpers.mjs` 的 `personSql`。）
+新人物同样写入缓存中的 `persons` 数组，再由统一生成器写出完整字段。
 
 ### dynasty_groups
 
@@ -170,7 +205,6 @@ INSERT INTO dynasties (
   id, name, alt_names, scope, region,
   start_year, start_month, end_year, end_month,
   start_abs, end_abs, precision, color_token,
-  orthodox_from_abs, orthodox_end_abs,
   parent_id, group_id, note
 ) VALUES (
   'tang',
@@ -178,9 +212,8 @@ INSERT INTO dynasties (
   ARRAY['李唐'],
   'cn', 'east_asia',
   618, 6, 907, 5,
-  7420, 10889,  -- 用 compute-abs.mjs 验算
-  'month', 'cinnabar',
-  7420, NULL,   -- 自起始即正统；截断用 orthodox_end_abs
+  7421, 10888,  -- 用 compute-abs.mjs 验算
+  'month', 'ochre',
   NULL, NULL,
   '李渊建立，朱温篡唐终结'
 )
@@ -194,15 +227,12 @@ ON CONFLICT (id) DO UPDATE SET
   start_abs = EXCLUDED.start_abs,
   end_abs = EXCLUDED.end_abs,
   precision = EXCLUDED.precision,
-  color_token = EXCLUDED.color_token,
-  orthodox_from_abs = EXCLUDED.orthodox_from_abs,
-  orthodox_end_abs = EXCLUDED.orthodox_end_abs,
   parent_id = EXCLUDED.parent_id,
   group_id = EXCLUDED.group_id,
   note = EXCLUDED.note;
 ```
 
-正统起迄由 `data/imports/lib/orthodoxDynasties.mjs` 与 `dynastySql()` 烘焙；运行时只读这两列，不再内置 per-dynasty 表。
+主线分类直接保存在缓存中每条 `reigns[].isMain`，统一序列化器输出 `reigns.is_main`；没有按王朝 ID 选择称谓或生成标记的导入代码。
 
 ### reigns
 
@@ -329,7 +359,7 @@ ON CONFLICT (id) DO UPDATE SET
 
 ### events（点事件 point）
 
-发生时刻明确。月未知时 `precision='year'`，`at_month` 用 **12** 占位（与泳道年桶右缘一致；界面不显示 12 月）。生成器用 `eventYear(year)` 或 `eventPoint`（会把旧的正月占位改成 12）。已知月份则 `precision='month'|'day'`。
+发生时刻明确。月未知时 `precision='year'`，缓存里的 `at.month` 用 **12** 占位（与泳道年桶右缘一致；界面不显示 12 月）。缓存必须保存已核定的 `{ year, month, abs }`；生成器不会把旧的正月占位改成 12。已知月份则 `precision='month'|'day'`。
 
 ```sql
 INSERT INTO events (
@@ -533,7 +563,7 @@ ON CONFLICT (id) DO UPDATE SET
 
 | 数据 | 入库 | 运行时 |
 |---|---|---|
-| 正统金色起迄 | `orthodox_from_abs` / `orthodox_end_abs`（`orthodoxDynasties.mjs` + `dynastySql`） | 只读 DB 列 |
+| 主线分类 | `cache.json.reigns[].isMain` → `reigns.is_main` | 运行时据此展示主线/正统标记 |
 | 相续泳道合并 | `dynasty_lane_groups` | API 下发，`dynastyLaneGroups.ts` 无硬编码组 |
 | 检索别名 | `persons.alt_names` | 作为人工来源字段，由触发器合并进 `search_terms` |
 | 人物搜索索引 | `persons.search_terms` | 预生成姓名、别名、姓/氏组合、庙谥、title、朝代 + 庙谥；`text[]` GIN 完整词查询 |

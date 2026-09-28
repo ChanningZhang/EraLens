@@ -10,7 +10,7 @@ export type EventSpan = {
 export function eventKindLabel(kind: Event["kind"]): string {
   switch (kind) {
     case "battle":
-      return "战事";
+      return "军事";
     case "politics":
       return "政治";
     case "culture":

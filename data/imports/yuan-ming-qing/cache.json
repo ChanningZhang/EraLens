@@ -8,35 +8,12 @@
   },
   "persons": [
     {
-      "id": "hu-bilie",
-      "name": "忽必烈",
-      "roles": [
-        "皇帝"
-      ],
-      "bio": "元世祖，成吉思汗之孙，1271年定国号大元，灭南宋统一。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/忽必烈"
-        }
-      ],
-      "birth": null,
-      "death": null,
-      "posthumousNames": [
-        "圣德神功文武皇帝"
-      ],
-      "templeNames": [
-        "世祖"
-      ],
-      "title": "元世祖"
-    },
-    {
       "id": "temur",
       "name": "铁穆耳",
       "roles": [
         "皇帝"
       ],
-      "bio": "元成宗，忽必烈之孙，守成之君。",
+      "bio": "铁穆耳，元成宗，忽必烈之孙。即位后确认忽必烈以来的制度与对外和议，暂停大规模征战，并处理西北诸王与元廷的冲突；在位后期健康恶化且未明确继承人，死后发生皇位继承争议。",
       "links": [
         {
           "label": "维基百科",
@@ -59,7 +36,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "元武宗，海山即位，后兄死弟立。",
+      "bio": "海山，元武宗，长期在北方统兵，元成宗去世后在军队与蒙古宗王支持下即位。他以封赏和扩张官僚体系巩固新政权，并与弟爱育黎拔力八达约定兄终弟及；其朝财政开支扩大，纸币贬值加剧。",
       "links": [
         {
           "label": "维基百科",
@@ -82,7 +59,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "元仁宗，恢复科举，与武宗约兄终弟及。",
+      "bio": "爱育黎拔力八达，元仁宗，元武宗之弟，依兄弟间的继承约定即位。其朝恢复科举取士，重用儒臣并调整财政与官制，推动元廷采用较多中原文官制度；身后由子硕德八剌继位。",
       "links": [
         {
           "label": "维基百科",
@@ -105,7 +82,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "元英宗，被南坡之变弑杀。",
+      "bio": "硕德八剌，元英宗，元仁宗之子。即位后在拜住辅佐下推行以儒家制度整顿朝政的改革，试图削弱权臣势力；1323年南坡之变中被铁失等人弑杀，改革随之中断。",
       "links": [
         {
           "label": "维基百科",
@@ -128,7 +105,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "元泰定帝，在位五年。",
+      "bio": "也孙铁木儿，元泰定帝，元武宗之侄，在大都与上都政治势力支持下即位。其朝以稳固蒙古宗王与勋贵为要务；1328年去世后，权臣拥立其子阿速吉八，随即引发两都之战。",
       "links": [
         {
           "label": "维基百科",
@@ -147,7 +124,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "元天顺帝，两都之战，在位仅一月。",
+      "bio": "阿速吉八，元天顺帝，也孙铁木儿之子。泰定帝去世后，他在上都由权臣倒剌沙拥立；同年，支持图帖睦尔的势力在大都发动政变并赢得两都之战，阿速吉八败亡，在位仅数周。",
       "links": [
         {
           "label": "维基百科",
@@ -166,7 +143,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "元文宗，两都之战后即位，传位弟又夺位。",
+      "bio": "图帖睦尔，元文宗，元武宗之子。两都之战中获胜后即位，曾让位于兄长和世㻋；和世㻋去世后复位。其朝设奎章阁、召集文臣编修典籍，皇位反复更替与权臣斗争仍持续。",
       "links": [
         {
           "label": "维基百科",
@@ -189,7 +166,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "元明宗，文宗之兄，即位仅一月被害。",
+      "bio": "和世㻋，元明宗，元武宗长子，曾长期流寓漠北。1328年在上都即位，次年与弟图帖睦尔会合并恢复兄弟继位安排；不久在赴大都途中去世，史籍记其死于宴会之后，死因说法不一。",
       "links": [
         {
           "label": "维基百科",
@@ -212,7 +189,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "元宁宗，幼年即位，在位仅两月。",
+      "bio": "懿璘质班，元宁宗，元明宗幼子。1332年由权臣拥立时年仅七岁，在位约两个月便病逝；随后元廷迎立其异母兄妥懽帖睦尔。",
       "links": [
         {
           "label": "维基百科",
@@ -235,7 +212,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "元顺帝，元朝末代，红巾起义，退居漠北。",
+      "bio": "妥懽帖睦尔，元顺帝，元朝在中原的末代皇帝。其长期在位期间朝廷屡受权臣与派系斗争影响，黄河水患、财政危机及红巾军起义相继爆发；1368年明军攻入大都，他北走上都，元廷退居漠北。",
       "links": [
         {
           "label": "维基百科",
@@ -258,7 +235,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "元末红巾军领袖，1351年称帝，国号宋，传世文献多作天完；1360年为陈友谅所杀。明玉珍追谥应天启运献武皇帝，庙号世宗。",
+      "bio": "罗田人，元末红巾军首领。1351年在蕲水起事称帝，以蕲水为都，后迁汉阳；部众一度扩展至湖广、江西等地，政权称宋，史籍亦称天完。陈友谅掌握军政后挟其东下，1360年在采石被杀。明玉珍后来追谥应天启运献武皇帝、庙号世宗。",
       "links": [
         {
           "label": "维基百科",
@@ -289,7 +266,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "元末陈汉建立者，1359年自立汉王，1360年弑徐寿辉称帝，国号汉；1363年鄱阳湖之战阵亡。",
+      "bio": "原为徐寿辉部将，后兼并倪文俊余部并控制江西、湖广多地。1359年自称汉王，次年在采石杀徐寿辉后称帝、国号汉，定都江州，后迁武昌。与朱元璋争夺长江中下游，1363年鄱阳湖之战兵败，中流矢身亡。",
       "links": [
         {
           "label": "维基百科",
@@ -316,7 +293,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "陈友谅次子，1363年鄱阳湖战后继位，改元德寿；1364年降明，陈汉亡。",
+      "bio": "陈友谅次子。父亲在鄱阳湖战死后于武昌继位，改元德寿；朱元璋次年亲征，陈理出降，陈汉政权告终，后被封归德侯。",
       "links": [
         {
           "label": "维基百科",
@@ -343,7 +320,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "韩山童之子，号小明王，1355年被刘福通拥立称帝，国号宋；1366年溺亡于瓜洲渡。",
+      "bio": "韩山童之子，红巾军拥立的宋政权君主，号小明王。1355年刘福通等在亳州奉其称帝，年号龙凤；韩宋势力曾据汴梁，失守后退守安丰。刘福通战死后，他投奔朱元璋，1366年渡江途中溺亡，政权随之终结。",
       "links": [
         {
           "label": "维基百科",
@@ -366,7 +343,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "盐贩出身，1354年高邮建国号大周，自称诚王；1363年再号吴王；1367年平江败亡。",
+      "bio": "泰州盐贩，1353年起兵反元，次年在高邮称诚王、国号周，建元天祐。1356年据平江（今苏州）并以之为中心经营江南，1363年称吴王。朱元璋军围攻平江近一年，城破后张士诚被俘，政权于1367年覆亡。",
       "links": [
         {
           "label": "维基百科",
@@ -393,7 +370,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "元末明夏建立者，徐寿辉部将，1362年重庆称帝，国号夏，据有两川；病逝后谥钦文昭武皇帝，庙号太祖。",
+      "bio": "随州人，初聚乡里自保，后归附徐寿辉并任元帅。1357年乘势攻取重庆，逐步据有四川大部；1362年在重庆称帝，国号夏，建元天统。建置官署、国子监并开科取士，赋税取十分之一。1366年病逝，谥钦文昭武皇帝、庙号太祖。",
       "links": [
         {
           "label": "维基百科",
@@ -424,7 +401,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "明玉珍之子，1366年嗣位；1371年明军灭夏，降明。",
+      "bio": "明玉珍之子，父死后于1366年继位为夏主。1371年明军攻入重庆，明升出降，明夏亡；后被迁往高丽。",
       "links": [
         {
           "label": "维基百科",
@@ -510,7 +487,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "出身濠州贫苦农家，参加郭子兴领导的红巾军后崛起，攻占集庆并经营应天；鄱阳湖之战击败陈友谅，继而平定江南诸势力。1368年称帝建立明朝，定都南京；在位期间整饬吏治、编制黄册鱼鳞图册，并废丞相以强化中央集权。",
+      "bio": "濠州钟离人，元末投郭子兴红巾军，逐步建立自己的军队。1356年据集庆（后改应天府），以江南为根基扩张；先后击败陈友谅、张士诚等势力。1364年称吴王，初仍奉韩宋龙凤年号，1367年改用吴年号并遣军北伐；1368年在应天称帝、国号明。即位后整顿赋役与户籍、强化中央集权，后废中书省和丞相制度。",
       "links": [
         {
           "label": "维基百科",
@@ -533,7 +510,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "建文帝，削藩引发靖难之役，下落成谜。",
+      "bio": "朱元璋之孙、皇太子朱标之子，1398年承祖父之位。建文帝推行削藩，引发叔父燕王朱棣起兵的靖难之役；1402年南京失守后下落不明，朱棣即位。",
       "links": [
         {
           "label": "维基百科",
@@ -552,7 +529,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "明成祖，靖难之役即位，迁都北京，派郑和下西洋。",
+      "bio": "朱元璋第四子，初封燕王，驻守北平。建文帝削藩后起兵，历经靖难之役攻入南京并即位；在位期间迁都北京、经营北方边防，派郑和多次下西洋，并编修《永乐大典》。",
       "links": [
         {
           "label": "维基百科",
@@ -575,7 +552,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "明仁宗，永乐之后与民休息。",
+      "bio": "朱棣长子，长期以太子身份留守北京并监国，1424年继位。其即位后调整永乐时期部分政策，起用士人、减轻刑狱与赋役，力图休养生息；在位不足一年，由子朱瞻基继位。",
       "links": [
         {
           "label": "维基百科",
@@ -598,7 +575,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "明宣宗，仁宣之治。",
+      "bio": "朱高炽长子，自幼随祖父朱棣参与北征，1425年继位。其在位时与“三杨”等大臣共同理政，延续宽政并整顿边务，形成所谓“仁宣之治”；死后由子朱祁镇继位。",
       "links": [
         {
           "label": "维基百科",
@@ -621,7 +598,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "明英宗，土木堡被俘，复辟后杀于谦。",
+      "bio": "朱瞻基长子，先后两度在位（1435—1449、1457—1464）。首次在位时宦官王振权势上升，1449年亲征瓦剌并在土木堡被俘；弟朱祁钰继位后，他被迎回幽居，1457年经夺门之变复位，随后处死于谦等人。",
       "links": [
         {
           "label": "维基百科",
@@ -644,7 +621,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "明代宗，土木堡之变后即位，后被英宗复辟。",
+      "bio": "朱瞻基次子、朱祁镇之弟。土木堡之变后，群臣拥立其为帝以稳定局势；他组织北京保卫战、任用于谦等人击退瓦剌，后改立太子。1457年朱祁镇复位，朱祁钰不久去世。",
       "links": [
         {
           "label": "维基百科",
@@ -667,7 +644,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "明宪宗，宠信万贵妃，设西厂。",
+      "bio": "朱祁镇长子，曾在土木堡之变后被立为太子，父亲复位后恢复储位，1464年即位。其在位时平反于谦冤案、恢复景泰帝名号，同时宠信万贵妃并设西厂；晚年由子朱祐樘继位。",
       "links": [
         {
           "label": "维基百科",
@@ -690,7 +667,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "明孝宗，弘治中兴，一夫一后。",
+      "bio": "朱见深之子，1487年继位。其在位时整顿吏治、减轻部分赋役，任用王恕等官员，政治相对稳定，后世称“弘治中兴”；他长期专宠张皇后，死后由子朱厚照继位。",
       "links": [
         {
           "label": "维基百科",
@@ -713,7 +690,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "明武宗，好微行，豹房。",
+      "bio": "朱祐樘长子，十五岁即位。其在位时宠信宦官刘瑾，后亲自出巡并以“威武大将军”等名号活动；1519年宁王朱宸濠叛乱被平定，朱厚照次年无嗣去世，由堂弟朱厚熜入继。",
       "links": [
         {
           "label": "维基百科",
@@ -736,7 +713,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "明世宗，大礼议，崇道，庚戌之变。",
+      "bio": "兴献王朱祐杬之子，朱厚照无嗣后由宗室入继大统。即位初年围绕生父尊号爆发“大礼议”，其后长期居西苑修道、以严嵩等人理政；在位期间遭遇倭寇侵扰和俺答汗兵临北京的庚戌之变。",
       "links": [
         {
           "label": "维基百科",
@@ -759,7 +736,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "明穆宗，隆庆开关，与蒙古互市。",
+      "bio": "朱厚熜第三子，1567年继位。其在位时起用高拱、张居正等人调整政务，隆庆年间开放海贸并与蒙古俺答部议和互市；死后由十岁的儿子朱翊钧继位。",
       "links": [
         {
           "label": "维基百科",
@@ -782,7 +759,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "明神宗，万历三大征，后期怠政。",
+      "bio": "朱载坖之子，十岁即位，初由李太后与张居正辅政。张居正改革推动整顿吏治、清丈田地与赋税改革；亲政后，明军平定宁夏、播州并援朝抗倭，后期皇帝长期不理朝政，党争与财政危机加剧。",
       "links": [
         {
           "label": "维基百科",
@@ -805,7 +782,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "明光宗，红丸案，在位仅一月。",
+      "bio": "朱翊钧长子，长期受册立之争影响，1620年继位。其即位后调整部分父朝旧政，却在位仅约一个月便病逝；围绕其服用红丸及死因的争议成为“红丸案”，由子朱由校继位。",
       "links": [
         {
           "label": "维基百科",
@@ -828,7 +805,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "明熹宗，木匠皇帝，魏忠贤专权。",
+      "bio": "朱常洛长子，十六岁继位。其在位时魏忠贤与客氏势力扩张，东林党争及辽东战事持续；皇帝本人喜好木作，故后世有“木匠皇帝”之称。1627年无子去世，由弟朱由检继位。",
       "links": [
         {
           "label": "维基百科",
@@ -851,7 +828,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "明思宗，崇祯，煤山自缢，明亡。",
+      "bio": "朱常洛第五子、朱由校之弟，1627年即位。其勤于政务但面对后金战争、灾荒、财政枯竭与农民起义，内外交困；李自成军攻入北京后，朱由检于1644年自缢，明朝在北京的统治结束。",
       "links": [
         {
           "label": "维基百科",
@@ -874,7 +851,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "弘光帝，南明首任，都南京，被俘处死。",
+      "bio": "弘光帝，南明首任，都南京，被俘处死。在南明（1644年—1645年）在位。",
       "links": [
         {
           "label": "维基百科",
@@ -962,33 +939,6 @@
       "posthumousNames": [],
       "templeNames": [],
       "title": "永历帝"
-    },
-    {
-      "id": "zheng-chenggong",
-      "name": "郑成功",
-      "roles": [
-        "军事家"
-      ],
-      "bio": "抗清名将，收复台湾。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/郑成功"
-        }
-      ],
-      "birth": {
-        "year": 1624,
-        "month": 1,
-        "abs": 19488
-      },
-      "death": {
-        "year": 1662,
-        "month": 1,
-        "abs": 19944
-      },
-      "posthumousNames": [],
-      "templeNames": [],
-      "title": null
     },
     {
       "id": "yu-qian",
@@ -1830,7 +1780,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "清太祖，统一女真，建立后金。",
+      "bio": "爱新觉罗·努尔哈赤，建州女真首领，清太祖。1616年建立后金，统一女真各部并创建八旗；对明战争中于宁远失利，1626年病逝。",
       "links": [
         {
           "label": "维基百科",
@@ -1853,7 +1803,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "清太宗，改国号大清，完善八旗。",
+      "bio": "爱新觉罗·皇太极，努尔哈赤第八子，清太宗。1626年继承汗位，改革政制、整编八旗；1636年改国号为大清并称帝，为清军入关奠定基础。",
       "links": [
         {
           "label": "维基百科",
@@ -1876,7 +1826,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "清世祖，六岁即位，多尔衮摄政，清军入关。",
+      "bio": "爱新觉罗·福临，皇太极第九子，清世祖。幼年即位，由多尔衮摄政；1644年清军入关并迁都北京，顺治亲政后整顿政务，确立清朝对中原的统治。",
       "links": [
         {
           "label": "维基百科",
@@ -1899,7 +1849,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "清圣祖康熙，平三藩、收台湾、亲征准噶尔。",
+      "bio": "爱新觉罗·玄烨，顺治帝第三子，清圣祖。亲政后平定三藩、统一台湾，抗击准噶尔并签订《尼布楚条约》，康熙朝国势与疆域进一步发展。",
       "links": [
         {
           "label": "维基百科",
@@ -1922,7 +1872,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "清世宗雍正，勤政改革，设军机处。",
+      "bio": "爱新觉罗·胤禛，康熙帝第四子，清世宗。即位后整顿财政，推行摊丁入亩、耗羡归公等政策，实行改土归流并设军机处，加强中央集权。",
       "links": [
         {
           "label": "维基百科",
@@ -1945,7 +1895,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "清高宗乾隆，康乾盛世顶峰，后闭关。",
+      "bio": "爱新觉罗·弘历，清高宗，雍正帝第四子。乾隆朝平定准噶尔、回部等地，编纂《四库全书》；在位六十年后禅位，仍以太上皇训政至1799年。",
       "links": [
         {
           "label": "维基百科",
@@ -1968,7 +1918,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "清仁宗嘉庆，白莲教起义在其朝。",
+      "bio": "爱新觉罗·颙琰，乾隆帝第十五子，清仁宗。亲政后诛和珅，镇压白莲教起义；其后清廷财政、吏治与边防问题逐渐加重。",
       "links": [
         {
           "label": "维基百科",
@@ -1991,7 +1941,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "清宣宗道光，鸦片战争在其朝。",
+      "bio": "爱新觉罗·旻宁，嘉庆帝次子，清宣宗。道光朝面对鸦片输入与边疆、财政问题，1839年命林则徐禁烟；鸦片战争失败后签订《南京条约》。",
       "links": [
         {
           "label": "维基百科",
@@ -2014,7 +1964,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "清文宗咸丰，太平天国与第二次鸦片战争。",
+      "bio": "爱新觉罗·奕詝，道光帝第四子，清文宗。咸丰朝爆发太平天国运动，清廷又在第二次鸦片战争中战败；英法联军攻入北京后，他避居热河并于1861年病逝。",
       "links": [
         {
           "label": "维基百科",
@@ -2096,7 +2046,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "清穆宗同治，慈禧垂帘听政。",
+      "bio": "爱新觉罗·载淳，咸丰帝之子，清穆宗。幼年即位，由慈安太后与慈禧太后垂帘听政；同治朝平定太平天国等内乱，实行洋务，1875年病逝。",
       "links": [
         {
           "label": "维基百科",
@@ -2119,7 +2069,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "清德宗光绪，戊戌变法、庚子事变。",
+      "bio": "爱新觉罗·载湉，醇亲王奕譞之子，清德宗。亲政后支持康有为等推行戊戌变法；庚子事变后清廷推进新政，1908年病逝。",
       "links": [
         {
           "label": "维基百科",
@@ -2142,7 +2092,7 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "清末帝，宣统退位，中国帝制终结。",
+      "bio": "爱新觉罗·溥仪，道光帝曾孙、光绪帝侄子，清朝末代皇帝。1908年即位，1912年清帝退位，结束清朝统治与中国帝制；后曾任满洲国执政、皇帝。",
       "links": [
         {
           "label": "维基百科",
@@ -2188,7 +2138,7 @@
       "roles": [
         "政治家"
       ],
-      "bio": "辛亥革命领袖，中华民国临时大总统。",
+      "bio": "孙中山是近代革命运动的重要领袖，参与组织兴中会、同盟会并推动反清革命。武昌起义后各省代表推举他为中华民国临时大总统，1912年在南京就职；清帝退位后，他依约让位于袁世凯，转而致力于改组政党与推动革命。",
       "links": [
         {
           "label": "维基百科",
@@ -2257,7 +2207,7 @@
         "abs": 16325
       },
       "precision": "year",
-      "note": "徐寿辉1351年蕲州称帝，国号宋，传世多作天完；1360年陈友谅弑之。"
+      "note": "元末红巾军建立的区域政权。徐寿辉1351年在蕲水称帝，后迁都汉阳，势力一度扩展至湖广、江西；国号及政权称谓在史籍中有宋、天完等不同记载。陈友谅掌权并于1360年杀徐寿辉，徐宋由此终结。"
     },
     {
       "id": "song-han",
@@ -2279,7 +2229,7 @@
         "abs": 16403
       },
       "precision": "year",
-      "note": "刘福通拥韩林儿为帝，号小明王，年号龙凤；1366年溺亡，韩宋亡。"
+      "note": "红巾军北方主力拥立韩林儿建立的宋政权，号小明王、建元龙凤。刘福通主持军政，曾据亳州并攻取汴梁，元军反攻后退守安丰；刘福通战死后韩林儿投奔朱元璋，1366年渡江途中溺亡，政权告终。"
     },
     {
       "id": "zhou-zhang",
@@ -2300,7 +2250,7 @@
         "abs": 16412
       },
       "precision": "year",
-      "note": "张士诚1354年高邮建国，自称诚王；1363年再号吴王；1367年平江败亡。"
+      "note": "张士诚起兵后于1354年在高邮称诚王、国号周，建元天祐，1356年据平江并以江南为根基。1363年改称吴王；朱元璋军围攻平江，城破后张士诚被俘，政权于1367年覆亡。"
     },
     {
       "id": "chen-han",
@@ -2322,7 +2272,7 @@
         "abs": 16368
       },
       "precision": "year",
-      "note": "陈友谅1360年称帝，国号汉；1363年鄱阳湖阵亡，子陈理继位；1364年降明。"
+      "note": "陈友谅由徐寿辉部将崛起，控制湖广、江西等地，1360年杀徐寿辉后称帝、国号汉。政权以江州、武昌为中心，与朱元璋争夺长江流域；1363年鄱阳湖战败，陈友谅阵亡，子陈理继位，次年出降，陈汉亡。"
     },
     {
       "id": "xia-ming",
@@ -2344,7 +2294,7 @@
         "abs": 16452
       },
       "precision": "year",
-      "note": "明玉珍1362年重庆称帝，国号夏，据两川；1371年明灭夏。"
+      "note": "明玉珍由徐寿辉部将转而经营四川，1362年在重庆称帝、国号夏，建元天统，以四川为核心并据有周边地区。政权设置官署、学校并实行较轻赋税；明玉珍死后子明升继位，1371年明军攻取重庆，明夏亡。"
     },
     {
       "id": "wu-zhu",
@@ -2365,7 +2315,7 @@
         "abs": 16416
       },
       "precision": "year",
-      "note": "朱元璋1364年自立吴王，仍用龙凤年号；1367年改元吴，1368年称帝建明。"
+      "note": "朱元璋以应天为中心经营江南，击败陈友谅、张士诚后，于1364年称吴王，起初仍奉韩宋龙凤年号。1367年改用吴年号并发动北伐；次年在应天称帝、建立明朝，吴政权阶段结束。"
     },
     {
       "id": "ming",
@@ -2386,7 +2336,7 @@
         "abs": 19731
       },
       "precision": "month",
-      "note": "1368年1月朱元璋称帝建明，定都南京后迁北京；1644年4月崇祯自缢，明亡。"
+      "note": "朱元璋于1368年建立明朝，初都南京；永乐年间迁都北京，经营北方边防并开展郑和下西洋等对外活动。明代前中期中央集权持续加强，农业、手工业与商业发展，后期经历财政压力、边疆战争和政治纷争。1644年李自成军攻入北京，崇祯帝自缢，明朝中央政权覆亡；南方明室政权此后继续抵抗。"
     },
     {
       "id": "ming-south",
@@ -2439,8 +2389,6 @@
       "dynastyId": "yuan",
       "personId": "hu-bilie",
       "title": "世祖",
-      "posthumousName": "圣德神功文武皇帝",
-      "templeName": "世祖",
       "eraNames": [
         "至元"
       ],
@@ -2466,8 +2414,6 @@
       "dynastyId": "yuan",
       "personId": "hu-bilie",
       "title": "世祖",
-      "posthumousName": "圣德神功文武皇帝",
-      "templeName": "世祖",
       "eraNames": [
         "至元"
       ],
@@ -2493,8 +2439,6 @@
       "dynastyId": "yuan",
       "personId": "temur",
       "title": "",
-      "posthumousName": "钦明广孝皇帝",
-      "templeName": "成宗",
       "eraNames": [],
       "start": {
         "year": 1294,
@@ -2518,8 +2462,6 @@
       "dynastyId": "yuan",
       "personId": "khayishan",
       "title": "",
-      "posthumousName": "仁惠宣孝皇帝",
-      "templeName": "武宗",
       "eraNames": [],
       "start": {
         "year": 1307,
@@ -2543,8 +2485,6 @@
       "dynastyId": "yuan",
       "personId": "ayurbarwada",
       "title": "",
-      "posthumousName": "圣文钦孝皇帝",
-      "templeName": "仁宗",
       "eraNames": [],
       "start": {
         "year": 1311,
@@ -2568,8 +2508,6 @@
       "dynastyId": "yuan",
       "personId": "shidebala",
       "title": "",
-      "posthumousName": "睿圣文孝皇帝",
-      "templeName": "英宗",
       "eraNames": [],
       "start": {
         "year": 1320,
@@ -2593,8 +2531,6 @@
       "dynastyId": "yuan",
       "personId": "yeshuntuemur",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "泰定",
         "致和"
@@ -2621,8 +2557,6 @@
       "dynastyId": "yuan",
       "personId": "tugh-temur",
       "title": "",
-      "posthumousName": "圣明元孝皇帝",
-      "templeName": "文宗",
       "eraNames": [
         "天历"
       ],
@@ -2648,8 +2582,6 @@
       "dynastyId": "yuan",
       "personId": "khoshila",
       "title": "",
-      "posthumousName": "翼献景孝皇帝",
-      "templeName": "明宗",
       "eraNames": [],
       "start": {
         "year": 1329,
@@ -2673,8 +2605,6 @@
       "dynastyId": "yuan",
       "personId": "tugh-temur",
       "title": "",
-      "posthumousName": "圣明元孝皇帝",
-      "templeName": "文宗",
       "eraNames": [
         "天历",
         "至顺"
@@ -2701,8 +2631,6 @@
       "dynastyId": "yuan",
       "personId": "irinchibal",
       "title": "",
-      "posthumousName": "冲圣嗣孝皇帝",
-      "templeName": "宁宗",
       "eraNames": [],
       "start": {
         "year": 1332,
@@ -2726,8 +2654,6 @@
       "dynastyId": "yuan",
       "personId": "togon-temur",
       "title": "",
-      "posthumousName": "顺帝",
-      "templeName": "惠宗",
       "eraNames": [],
       "start": {
         "year": 1333,
@@ -2751,8 +2677,6 @@
       "dynastyId": "yuan",
       "personId": "togon-temur",
       "title": "",
-      "posthumousName": "顺帝",
-      "templeName": "惠宗",
       "eraNames": [
         "至正"
       ],
@@ -2777,9 +2701,7 @@
       "id": "reign-ayushiridara-yuan",
       "dynastyId": "yuan",
       "personId": "ayushiridara",
-      "title": "",
-      "posthumousName": null,
-      "templeName": "昭宗",
+      "title": "昭宗",
       "eraNames": [
         "宣光"
       ],
@@ -2805,8 +2727,6 @@
       "dynastyId": "yuan",
       "personId": "togus-temur",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "天元"
       ],
@@ -2832,8 +2752,6 @@
       "dynastyId": "yuan",
       "personId": "ragibagh",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "天顺"
       ],
@@ -2862,8 +2780,6 @@
       "dynastyId": "song-xu",
       "personId": "xu-shouhui",
       "title": "",
-      "posthumousName": "应天启运献武皇帝",
-      "templeName": "世宗",
       "eraNames": [
         "治平",
         "太平",
@@ -2892,8 +2808,6 @@
       "dynastyId": "song-han",
       "personId": "han-liner",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "龙凤"
       ],
@@ -2919,8 +2833,6 @@
       "dynastyId": "zhou-zhang",
       "personId": "zhang-shicheng",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "天佑"
       ],
@@ -2946,8 +2858,6 @@
       "dynastyId": "chen-han",
       "personId": "chen-youliang",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "大义"
       ],
@@ -2973,8 +2883,6 @@
       "dynastyId": "chen-han",
       "personId": "chen-li",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "德寿"
       ],
@@ -3000,8 +2908,6 @@
       "dynastyId": "xia-ming",
       "personId": "ming-yuzhen",
       "title": "",
-      "posthumousName": "钦文昭武皇帝",
-      "templeName": "太祖",
       "eraNames": [
         "天统"
       ],
@@ -3027,8 +2933,6 @@
       "dynastyId": "xia-ming",
       "personId": "ming-sheng",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "天统"
       ],
@@ -3054,8 +2958,6 @@
       "dynastyId": "wu-zhu",
       "personId": "zhu-yuanzhang",
       "title": "吴",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "吴"
       ],
@@ -3081,8 +2983,6 @@
       "dynastyId": "ming",
       "personId": "zhu-yuanzhang",
       "title": "",
-      "posthumousName": "高皇帝",
-      "templeName": "太祖",
       "eraNames": [
         "洪武"
       ],
@@ -3108,8 +3008,6 @@
       "dynastyId": "ming",
       "personId": "zhu-yunwen",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "建文"
       ],
@@ -3135,8 +3033,6 @@
       "dynastyId": "ming",
       "personId": "zhu-di",
       "title": "",
-      "posthumousName": "文皇帝",
-      "templeName": "成祖",
       "eraNames": [
         "永乐"
       ],
@@ -3162,8 +3058,6 @@
       "dynastyId": "ming",
       "personId": "zhu-gaochi",
       "title": "",
-      "posthumousName": "昭皇帝",
-      "templeName": "仁宗",
       "eraNames": [
         "洪熙"
       ],
@@ -3189,8 +3083,6 @@
       "dynastyId": "ming",
       "personId": "zhu-zhanji",
       "title": "",
-      "posthumousName": "章皇帝",
-      "templeName": "宣宗",
       "eraNames": [
         "宣德"
       ],
@@ -3216,8 +3108,6 @@
       "dynastyId": "ming",
       "personId": "zhu-qizhen",
       "title": "",
-      "posthumousName": "睿皇帝",
-      "templeName": "英宗",
       "eraNames": [
         "正统"
       ],
@@ -3243,8 +3133,6 @@
       "dynastyId": "ming",
       "personId": "zhu-qiyu",
       "title": "",
-      "posthumousName": "景皇帝",
-      "templeName": "代宗",
       "eraNames": [
         "景泰"
       ],
@@ -3270,8 +3158,6 @@
       "dynastyId": "ming",
       "personId": "zhu-qizhen",
       "title": "",
-      "posthumousName": "睿皇帝",
-      "templeName": "英宗",
       "eraNames": [
         "天顺"
       ],
@@ -3297,8 +3183,6 @@
       "dynastyId": "ming",
       "personId": "zhu-jianshen",
       "title": "",
-      "posthumousName": "纯皇帝",
-      "templeName": "宪宗",
       "eraNames": [
         "成化"
       ],
@@ -3324,8 +3208,6 @@
       "dynastyId": "ming",
       "personId": "zhu-youcheng",
       "title": "",
-      "posthumousName": "达皇帝",
-      "templeName": "孝宗",
       "eraNames": [
         "弘治"
       ],
@@ -3351,8 +3233,6 @@
       "dynastyId": "ming",
       "personId": "zhu-houzhao",
       "title": "",
-      "posthumousName": "毅皇帝",
-      "templeName": "武宗",
       "eraNames": [
         "正德"
       ],
@@ -3378,8 +3258,6 @@
       "dynastyId": "ming",
       "personId": "zhu-houcong",
       "title": "",
-      "posthumousName": "肃皇帝",
-      "templeName": "世宗",
       "eraNames": [
         "嘉靖"
       ],
@@ -3405,8 +3283,6 @@
       "dynastyId": "ming",
       "personId": "zhu-zaihou",
       "title": "",
-      "posthumousName": "庄皇帝",
-      "templeName": "穆宗",
       "eraNames": [
         "隆庆"
       ],
@@ -3432,8 +3308,6 @@
       "dynastyId": "ming",
       "personId": "zhu-yiming",
       "title": "",
-      "posthumousName": "显皇帝",
-      "templeName": "神宗",
       "eraNames": [
         "万历"
       ],
@@ -3459,8 +3333,6 @@
       "dynastyId": "ming",
       "personId": "zhu-changluo",
       "title": "",
-      "posthumousName": "贞皇帝",
-      "templeName": "光宗",
       "eraNames": [
         "泰昌"
       ],
@@ -3486,8 +3358,6 @@
       "dynastyId": "ming",
       "personId": "zhu-youjiao",
       "title": "",
-      "posthumousName": "哲皇帝",
-      "templeName": "熹宗",
       "eraNames": [
         "天启"
       ],
@@ -3513,8 +3383,6 @@
       "dynastyId": "ming",
       "personId": "zhu-youjian",
       "title": "",
-      "posthumousName": "毅皇帝",
-      "templeName": "思宗",
       "eraNames": [
         "崇祯"
       ],
@@ -3540,8 +3408,6 @@
       "dynastyId": "ming-south",
       "personId": "zhu-yousong",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "弘光"
       ],
@@ -3567,8 +3433,6 @@
       "dynastyId": "ming-south",
       "personId": "zhu-yujian",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "隆武"
       ],
@@ -3594,8 +3458,6 @@
       "dynastyId": "ming-south",
       "personId": "zhu-youlang",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "永历"
       ],
@@ -3621,8 +3483,6 @@
       "dynastyId": "ming-south",
       "personId": "zhu-yihai",
       "title": "鲁监国",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1645,
@@ -3642,15 +3502,14 @@
       "claimTrack": "lu-jian",
       "claimLabel": "绍兴监国",
       "claimRole": "rival",
-      "isMain": false
+      "isMain": false,
+      "isInformalMonarch": true
     },
     {
       "id": "reign-zhu-yuyue-ming-south",
       "dynastyId": "ming-south",
       "personId": "zhu-yuyue",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "绍武"
       ],
@@ -3679,8 +3538,6 @@
       "dynastyId": "qing",
       "personId": "nurhaci",
       "title": "太祖",
-      "posthumousName": "武皇帝",
-      "templeName": "太祖",
       "eraNames": [
         "天命"
       ],
@@ -3706,8 +3563,6 @@
       "dynastyId": "qing",
       "personId": "huang-taiji",
       "title": "太宗",
-      "posthumousName": "文皇帝",
-      "templeName": "太宗",
       "eraNames": [
         "天聪",
         "崇德"
@@ -3734,8 +3589,6 @@
       "dynastyId": "qing",
       "personId": "fulin",
       "title": "",
-      "posthumousName": "章皇帝",
-      "templeName": "世祖",
       "eraNames": [
         "顺治"
       ],
@@ -3761,8 +3614,6 @@
       "dynastyId": "qing",
       "personId": "xuanye",
       "title": "",
-      "posthumousName": "仁皇帝",
-      "templeName": "圣祖",
       "eraNames": [
         "康熙"
       ],
@@ -3788,8 +3639,6 @@
       "dynastyId": "qing",
       "personId": "yinzhen",
       "title": "",
-      "posthumousName": "宪皇帝",
-      "templeName": "世宗",
       "eraNames": [
         "雍正"
       ],
@@ -3815,8 +3664,6 @@
       "dynastyId": "qing",
       "personId": "hongli",
       "title": "",
-      "posthumousName": "纯皇帝",
-      "templeName": "高宗",
       "eraNames": [
         "乾隆"
       ],
@@ -3842,8 +3689,6 @@
       "dynastyId": "qing",
       "personId": "yongyan",
       "title": "",
-      "posthumousName": "睿皇帝",
-      "templeName": "仁宗",
       "eraNames": [
         "嘉庆"
       ],
@@ -3869,8 +3714,6 @@
       "dynastyId": "qing",
       "personId": "minning",
       "title": "",
-      "posthumousName": "成皇帝",
-      "templeName": "宣宗",
       "eraNames": [
         "道光"
       ],
@@ -3896,8 +3739,6 @@
       "dynastyId": "qing",
       "personId": "yizhu",
       "title": "",
-      "posthumousName": "显皇帝",
-      "templeName": "文宗",
       "eraNames": [
         "咸丰"
       ],
@@ -3923,8 +3764,6 @@
       "dynastyId": "qing",
       "personId": "zaichun",
       "title": "",
-      "posthumousName": "毅皇帝",
-      "templeName": "穆宗",
       "eraNames": [
         "同治"
       ],
@@ -3950,8 +3789,6 @@
       "dynastyId": "qing",
       "personId": "zaitian",
       "title": "",
-      "posthumousName": "景皇帝",
-      "templeName": "德宗",
       "eraNames": [
         "光绪"
       ],
@@ -3977,8 +3814,6 @@
       "dynastyId": "qing",
       "personId": "puyi",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "宣统"
       ],
@@ -4128,7 +3963,8 @@
         "abs": 16365
       },
       "summary": "朱元璋与陈友谅鄱阳湖决战，陈友谅中流矢阵亡，陈汉大势已去。",
-      "atAbs": 16365
+      "atAbs": 16365,
+      "locationId": "loc-poyang-lake-battle"
     },
     {
       "kind": "politics",
@@ -4173,7 +4009,8 @@
         "abs": 16423
       },
       "summary": "明军北伐攻克大都，元顺帝北逃，元朝失去中原。",
-      "atAbs": 16423
+      "atAbs": 16423,
+      "locationId": "loc-ming-capture-dadu"
     },
     {
       "kind": "battle",
@@ -4195,7 +4032,8 @@
         "abs": 16660
       },
       "summary": "明将蓝玉率军深入漠北，突袭元天元帝驻地并大破元军；天元帝逃脱后同年被部将杀害，北元随之终结。",
-      "atAbs": 16660
+      "atAbs": 16660,
+      "locationId": "loc-korqin-sea-battle"
     },
     {
       "kind": "politics",
@@ -4291,7 +4129,8 @@
         "abs": 17396
       },
       "summary": "明英宗率军北征瓦剌，土木堡被俘，明军主力覆没。",
-      "atAbs": 17396
+      "atAbs": 17396,
+      "locationId": "loc-tumu"
     },
     {
       "kind": "battle",
@@ -4313,7 +4152,8 @@
         "abs": 17397
       },
       "summary": "土木堡之变后瓦剌兵临北京，于谦拥立景泰帝，击退敌军。",
-      "atAbs": 17397
+      "atAbs": 17397,
+      "locationId": "loc-beijing-defense"
     },
     {
       "kind": "politics",
@@ -4438,7 +4278,8 @@
         "abs": 19430
       },
       "summary": "努尔哈赤以少胜多，明军四路溃败，辽东战局逆转。",
-      "atAbs": 19430
+      "atAbs": 19430,
+      "locationId": "loc-sarhu"
     },
     {
       "kind": "battle",
@@ -4462,7 +4303,8 @@
         "abs": 19512
       },
       "summary": "袁崇焕率红夷大炮守宁远，击伤努尔哈赤，后金首次攻明受挫。",
-      "atAbs": 19512
+      "atAbs": 19512,
+      "locationId": "loc-ningyuan"
     },
     {
       "kind": "battle",
@@ -4490,7 +4332,8 @@
       },
       "summary": "清军围攻松山、锦州，洪承畴降清，明军关外主力覆没，辽东防线崩溃。",
       "startAbs": 19680,
-      "endAbs": 19704
+      "endAbs": 19704,
+      "locationId": "loc-songjin"
     },
     {
       "kind": "politics",
@@ -4600,7 +4443,8 @@
       },
       "summary": "忽必烈将中都改名大都，并以新城为元朝都城；上都继续作为夏都。",
       "dateNote": "至元九年（1272年）命名大都并建都；按年精度记录都城迁移阶段。",
-      "atAbs": 15275
+      "atAbs": 15275,
+      "locationId": "loc-yuan-moves-capital-to-dadu"
     },
     {
       "kind": "politics",
@@ -4620,7 +4464,8 @@
         "abs": 19739
       },
       "summary": "吴三桂引清军入关，清军占领北京；顺治帝同年由盛京迁都北京，盛京保留陪都地位，清廷由此入主中原。",
-      "atAbs": 19739
+      "atAbs": 19739,
+      "locationId": "loc-qing-enter-pass"
     },
     {
       "kind": "politics",
@@ -5895,7 +5740,7 @@
   ],
   "supplementalEventDynasties": [],
   "supplementalEventParticipants": [],
-  "preSql": "DELETE FROM event_dynasties WHERE event_id = 'qing-enter-pass';\nDELETE FROM event_dynasties WHERE event_id = 'zheng-recover-taiwan' AND dynasty_id = 'ming-south';\nDELETE FROM event_dynasties WHERE event_id = 'lu-jian-enthroned';\nDELETE FROM event_participants WHERE event_id = 'lu-jian-enthroned';\nDELETE FROM events WHERE id = 'lu-jian-enthroned';\nDELETE FROM event_dynasties WHERE dynasty_id = 'yuan-north';\nDELETE FROM event_participants WHERE event_id = 'yuan-north-end';\nDELETE FROM events WHERE id = 'yuan-north-end';\nDELETE FROM reigns WHERE dynasty_id = 'yuan-north';\nDELETE FROM dynasties WHERE id = 'yuan-north';\n-- remove stale auto-generated 史料缺 (两都之战并行叠放、驾崩至即位短空档应留白)\nDELETE FROM reigns WHERE dynasty_id IN ('yuan') AND person_id = 'system-missing-ruler';\nDELETE FROM relations WHERE id IN ('rel-yeshuntuemur-ragibagh-succession', 'rel-ragibagh-tugh-temur-succession', 'rel-khoshila-irinchibal-succession');\nDELETE FROM reigns WHERE id = 'reign-puyi-qing-forbidden';\nDELETE FROM event_participants WHERE event_id = 'puyi-leaves-forbidden-city';\nDELETE FROM event_dynasties WHERE event_id = 'puyi-leaves-forbidden-city';\nDELETE FROM events WHERE id = 'puyi-leaves-forbidden-city';\nDELETE FROM events WHERE id = 'qing-moves-capital-to-beijing';\nDELETE FROM event_participants WHERE event_id = 'shaowu-enthroned';\nDELETE FROM event_dynasties WHERE event_id = 'shaowu-enthroned';\nDELETE FROM events WHERE id = 'shaowu-enthroned';",
+  "preSql": "DELETE FROM event_dynasties WHERE event_id = 'qing-enter-pass';\nDELETE FROM event_dynasties WHERE event_id = 'zheng-recover-taiwan' AND dynasty_id = 'ming-south';\nDELETE FROM event_dynasties WHERE event_id = 'lu-jian-enthroned';\nDELETE FROM event_participants WHERE event_id = 'lu-jian-enthroned';\nDELETE FROM events WHERE id = 'lu-jian-enthroned';\nDELETE FROM event_dynasties WHERE dynasty_id = 'yuan-north';\nDELETE FROM event_participants WHERE event_id = 'yuan-north-end';\nDELETE FROM events WHERE id = 'yuan-north-end';\nDELETE FROM reigns WHERE dynasty_id = 'yuan-north';\nDELETE FROM dynasties WHERE id = 'yuan-north';\n-- remove stale auto-generated 史料缺 (两都之战并行叠放、驾崩至即位短空档应留白)\nDELETE FROM reigns WHERE dynasty_id IN ('yuan') AND person_id = 'system-missing-ruler';\nDELETE FROM relations WHERE id IN ('rel-yeshuntuemur-ragibagh-succession', 'rel-ragibagh-tugh-temur-succession', 'rel-khoshila-irinchibal-succession');\nDELETE FROM reigns WHERE id = 'reign-puyi-qing-forbidden';\nDELETE FROM events WHERE id = 'qing-moves-capital-to-beijing';\nDELETE FROM event_participants WHERE event_id = 'shaowu-enthroned';\nDELETE FROM event_dynasties WHERE event_id = 'shaowu-enthroned';\nDELETE FROM events WHERE id = 'shaowu-enthroned';",
   "reignCapitals": [],
   "manifest": {
     "slug": "yuan-ming-qing",
@@ -6152,6 +5997,30 @@
       {
         "label": "左宗棠收复新疆",
         "url": "https://zh.wikipedia.org/wiki/左宗棠平乱"
+      },
+      {
+        "label": "故宫博物院：宫廷世系",
+        "url": "https://www.dpm.org.cn/court/lineages.html"
+      },
+      {
+        "label": "故宫博物院：永乐皇帝",
+        "url": "https://www.dpm.org.cn/court/lineage/226257.html"
+      },
+      {
+        "label": "故宫博物院：建文皇帝",
+        "url": "https://www.dpm.org.cn/court/lineage/226245.html"
+      },
+      {
+        "label": "《明史》卷一百二十三·陈友谅、明玉珍等传",
+        "url": "https://zh.wikisource.org/zh-hans/明史/卷123"
+      },
+      {
+        "label": "《新元史》卷二百二十五·韩林儿、张士诚传",
+        "url": "https://zh.wikisource.org/wiki/新元史/卷225"
+      },
+      {
+        "label": "《明史》卷一·太祖本纪",
+        "url": "https://zh.wikisource.org/zh-hans/明史/卷1"
       }
     ],
     "notes": [

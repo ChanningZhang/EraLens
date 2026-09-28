@@ -129,75 +129,34 @@
     var(--center-guide-x, var(--timeline-gutter)) 0 / 48px 100%;
 }
 
-.rail {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 0;
-  width: var(--timeline-gutter);
-  pointer-events: none;
-  background:
-    linear-gradient(
-      to right,
-      transparent 0,
-      transparent calc(100% - 12px),
-      color-mix(in srgb, var(--color-paper) 55%, transparent) 100%
-    ),
-    var(--timeline-rail-bg);
-  border-right: 1px solid var(--timeline-rail-edge);
-  box-shadow:
-    inset 0 1px 0 var(--timeline-rail-sheen),
-    inset -12px 0 20px color-mix(in srgb, var(--color-paper) 28%, transparent),
-    10px 0 24px color-mix(in srgb, var(--color-ochre) 10%, transparent);
-}
-
 .eventExpandButton {
   position: absolute;
   z-index: 5;
   left: 50%;
-  display: grid;
   width: 40px;
   height: 14px;
-  place-items: center;
-  border: 1px solid color-mix(in srgb, var(--color-ochre) 24%, var(--color-border));
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--color-surface) 96%, transparent);
-  color: color-mix(in srgb, var(--color-ink-secondary) 78%, var(--color-ochre));
-  box-shadow: 0 1px 4px color-mix(in srgb, var(--color-ink) 12%, transparent), inset 0 1px 0 white;
-  cursor: pointer;
-  pointer-events: auto;
   transform: translateX(-50%);
-  transition: border-color var(--motion-fast), color var(--motion-fast), box-shadow var(--motion-fast), background var(--motion-fast);
-}
-
-.eventExpandButton:hover {
-  border-color: color-mix(in srgb, var(--color-ochre) 52%, var(--color-border));
-  background: var(--color-surface);
-  color: var(--color-ochre);
-  box-shadow: 0 2px 7px color-mix(in srgb, var(--color-ink) 16%, transparent), inset 0 1px 0 white;
-}
-
-.eventExpandButton svg {
-  display: block;
-  width: 10px;
-  height: 6px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 1.6;
-}
-
-.eventExpandButton:focus-visible {
-  outline: 2px solid var(--color-ochre);
-  outline-offset: 2px;
 }
 
 .content {
   position: relative;
   z-index: 2;
   min-height: 100%;
+  background:
+    linear-gradient(
+      to right,
+      transparent calc(var(--timeline-gutter) - 1px),
+      var(--timeline-rail-edge) calc(var(--timeline-gutter) - 1px),
+      var(--timeline-rail-edge) var(--timeline-gutter),
+      transparent var(--timeline-gutter)
+    ) 0 0 / 100% 100% no-repeat,
+    linear-gradient(
+      to right,
+      transparent 0,
+      transparent calc(100% - 12px),
+      color-mix(in srgb, var(--color-paper) 55%, transparent) 100%
+    ) 0 0 / var(--timeline-gutter) 100% no-repeat,
+    var(--timeline-rail-bg) 0 0 / var(--timeline-gutter) 100% no-repeat;
 }
 
 .lanes {
