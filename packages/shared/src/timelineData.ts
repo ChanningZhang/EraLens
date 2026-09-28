@@ -13,7 +13,10 @@ import {
   resolveReignColorToken,
 } from "./dynastyColors";
 import { eventKindLabel, eventSpanAbs, formatEventTime } from "./eventTime";
-import { formatReignYearRange } from "./reignVisual";
+import {
+  formatReignDurationLabel,
+  formatReignYearRange,
+} from "./reignVisual";
 import {
   TimelineSliceSchema,
   type Dynasty,
@@ -277,7 +280,13 @@ function buildPersonEntityDetail(
     ...(factReigns.length
       ? [{
           label: "在位",
-          value: factReigns.map(formatReignYearRange).join("\n"),
+          value: factReigns
+            .map((reign) => {
+              const range = formatReignYearRange(reign);
+              const duration = formatReignDurationLabel(reign);
+              return duration ? `${range} · ${duration}` : range;
+            })
+            .join("\n"),
         }]
       : []),
     ...commonFacts,

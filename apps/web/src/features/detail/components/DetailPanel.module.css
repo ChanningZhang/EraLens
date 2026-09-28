@@ -168,6 +168,22 @@
   line-height: 1.7;
 }
 
+.reignFactValue {
+  display: grid;
+  grid-template-columns: max-content max-content max-content;
+  justify-content: end;
+  column-gap: 0.35em;
+  text-align: left;
+}
+
+.reignFactLine {
+  display: contents;
+}
+
+.reignFactSeparator {
+  text-align: center;
+}
+
 .factBlock {
   flex-direction: column;
   gap: var(--space-1);

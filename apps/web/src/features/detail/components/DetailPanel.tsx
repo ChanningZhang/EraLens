@@ -216,7 +216,24 @@ export function DetailPanel() {
                   }
                 >
                   <span className={styles.factLabel}>{fact.label}</span>
-                  <span className={styles.factValue}>{fact.value}</span>
+                  {fact.label === "在位" && fact.value.includes("\n") ? (
+                    <span className={`${styles.factValue} ${styles.reignFactValue}`}>
+                      {fact.value.split("\n").map((line, index) => {
+                        const separator = line.lastIndexOf(" · ");
+                        const range = separator >= 0 ? line.slice(0, separator) : line;
+                        const duration = separator >= 0 ? line.slice(separator + 3) : "";
+                        return (
+                          <span className={styles.reignFactLine} key={`${line}:${index}`}>
+                            <span>{range}</span>
+                            <span className={styles.reignFactSeparator}>{duration ? "·" : ""}</span>
+                            <span>{duration}</span>
+                          </span>
+                        );
+                      })}
+                    </span>
+                  ) : (
+                    <span className={styles.factValue}>{fact.value}</span>
+                  )}
                 </div>
               ))}
             </div>

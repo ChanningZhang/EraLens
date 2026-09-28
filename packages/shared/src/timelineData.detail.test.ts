@@ -992,8 +992,8 @@ describe("buildEntityDetail person", () => {
           title: "正统",
           start: { year: 1435, month: 1 },
           end: { year: 1449, month: 9 },
-          startAbs: 10,
-          endAbs: 20,
+          startAbs: 17220,
+          endAbs: 17396,
           eraNames: ["正统"],
         }),
         reign({
@@ -1003,8 +1003,8 @@ describe("buildEntityDetail person", () => {
           title: "天顺",
           start: { year: 1457, month: 2 },
           end: { year: 1464, month: 2 },
-          startAbs: 30,
-          endAbs: 40,
+          startAbs: 17485,
+          endAbs: 17569,
           eraNames: ["天顺"],
         }),
       ],
@@ -1035,10 +1035,10 @@ describe("buildEntityDetail person", () => {
     expect(unfocused.reignCount).toBe(2);
     expect(focused.reignCount).toBe(2);
     expect(unfocused.facts.filter((fact) => fact.label === "在位")).toEqual([
-      { label: "在位", value: "1435 — 1449\n1457 — 1464" },
+      { label: "在位", value: "1435 — 1449 · 15年\n1457 — 1464 · 8年" },
     ]);
     expect(focused.facts.filter((fact) => fact.label === "在位")).toEqual([
-      { label: "在位", value: "1435 — 1449" },
+      { label: "在位", value: "1435 — 1449 · 15年" },
     ]);
     expect(unfocused.facts.filter((fact) => fact.label === "年号")).toEqual([
       { label: "年号", value: "正统，天顺" },
