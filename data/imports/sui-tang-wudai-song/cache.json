@@ -170,7 +170,7 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "神尧皇帝"
+        "神尧大圣大光孝皇帝"
       ],
       "templeNames": [
         "高祖"
@@ -193,7 +193,7 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "文武皇帝"
+        "文武大圣大广孝皇帝"
       ],
       "templeNames": [
         "太宗"
@@ -216,7 +216,7 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "天皇大帝"
+        "天皇大圣大弘孝皇帝"
       ],
       "templeNames": [
         "高宗"
@@ -238,7 +238,9 @@
       ],
       "birth": null,
       "death": null,
-      "posthumousNames": [],
+      "posthumousNames": [
+        "大和大圣大昭孝皇帝"
+      ],
       "templeNames": [
         "中宗"
       ],
@@ -259,7 +261,9 @@
       ],
       "birth": null,
       "death": null,
-      "posthumousNames": [],
+      "posthumousNames": [
+        "玄真大圣大兴孝皇帝"
+      ],
       "templeNames": [
         "睿宗"
       ],
@@ -300,7 +304,7 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "至道大明孝皇帝"
+        "至道大圣大明孝皇帝"
       ],
       "templeNames": [
         "玄宗"
@@ -322,7 +326,9 @@
       ],
       "birth": null,
       "death": null,
-      "posthumousNames": [],
+      "posthumousNames": [
+        "文明武德大圣大宣孝皇帝"
+      ],
       "templeNames": [
         "肃宗"
       ],
@@ -343,7 +349,9 @@
       ],
       "birth": null,
       "death": null,
-      "posthumousNames": [],
+      "posthumousNames": [
+        "睿文孝武皇帝"
+      ],
       "templeNames": [
         "代宗"
       ],
@@ -364,7 +372,9 @@
       ],
       "birth": null,
       "death": null,
-      "posthumousNames": [],
+      "posthumousNames": [
+        "神武孝文皇帝"
+      ],
       "templeNames": [
         "德宗"
       ],
@@ -385,7 +395,9 @@
       ],
       "birth": null,
       "death": null,
-      "posthumousNames": [],
+      "posthumousNames": [
+        "至德弘道大圣大安孝皇帝"
+      ],
       "templeNames": [
         "顺宗"
       ],
@@ -406,7 +418,9 @@
       ],
       "birth": null,
       "death": null,
-      "posthumousNames": [],
+      "posthumousNames": [
+        "昭文章武大圣至神孝皇帝"
+      ],
       "templeNames": [
         "宪宗"
       ],
@@ -427,7 +441,9 @@
       ],
       "birth": null,
       "death": null,
-      "posthumousNames": [],
+      "posthumousNames": [
+        "睿圣文惠孝皇帝"
+      ],
       "templeNames": [
         "穆宗"
       ],
@@ -448,7 +464,9 @@
       ],
       "birth": null,
       "death": null,
-      "posthumousNames": [],
+      "posthumousNames": [
+        "睿武昭愍孝皇帝"
+      ],
       "templeNames": [
         "敬宗"
       ],
@@ -469,7 +487,9 @@
       ],
       "birth": null,
       "death": null,
-      "posthumousNames": [],
+      "posthumousNames": [
+        "元圣昭献孝皇帝"
+      ],
       "templeNames": [
         "文宗"
       ],
@@ -490,7 +510,9 @@
       ],
       "birth": null,
       "death": null,
-      "posthumousNames": [],
+      "posthumousNames": [
+        "至道昭肃孝皇帝"
+      ],
       "templeNames": [
         "武宗"
       ],
@@ -511,7 +533,9 @@
       ],
       "birth": null,
       "death": null,
-      "posthumousNames": [],
+      "posthumousNames": [
+        "元圣至明成武献文睿智章仁神聪懿道大孝皇帝"
+      ],
       "templeNames": [
         "宣宗"
       ],
@@ -532,7 +556,9 @@
       ],
       "birth": null,
       "death": null,
-      "posthumousNames": [],
+      "posthumousNames": [
+        "昭圣恭惠孝皇帝"
+      ],
       "templeNames": [
         "懿宗"
       ],
@@ -553,7 +579,9 @@
       ],
       "birth": null,
       "death": null,
-      "posthumousNames": [],
+      "posthumousNames": [
+        "惠圣恭定孝皇帝"
+      ],
       "templeNames": [
         "僖宗"
       ],
@@ -574,7 +602,9 @@
       ],
       "birth": null,
       "death": null,
-      "posthumousNames": [],
+      "posthumousNames": [
+        "圣穆景文孝皇帝"
+      ],
       "templeNames": [
         "昭宗"
       ],
@@ -596,7 +626,7 @@
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "哀帝"
+        "昭宣光烈孝皇帝"
       ],
       "templeNames": [],
       "title": "唐哀帝"
@@ -3747,7 +3777,9 @@
       "dynastyId": "tang",
       "personId": "li-yuan",
       "title": "",
-      "eraNames": [],
+      "eraNames": [
+        "武德"
+      ],
       "start": {
         "year": 618,
         "month": 6,
@@ -3795,7 +3827,22 @@
       "dynastyId": "tang",
       "personId": "li-zhi",
       "title": "",
-      "eraNames": [],
+      "eraNames": [
+        "永徽",
+        "显庆",
+        "龙朔",
+        "麟德",
+        "乾封",
+        "总章",
+        "咸亨",
+        "上元",
+        "仪凤",
+        "调露",
+        "永隆",
+        "开耀",
+        "永淳",
+        "弘道"
+      ],
       "start": {
         "year": 649,
         "month": 7,
@@ -3818,7 +3865,9 @@
       "dynastyId": "tang",
       "personId": "li-xian",
       "title": "",
-      "eraNames": [],
+      "eraNames": [
+        "嗣圣"
+      ],
       "start": {
         "year": 684,
         "month": 1,
@@ -3841,7 +3890,9 @@
       "dynastyId": "tang",
       "personId": "li-dan",
       "title": "",
-      "eraNames": [],
+      "eraNames": [
+        "文明"
+      ],
       "start": {
         "year": 684,
         "month": 2,
@@ -3864,7 +3915,10 @@
       "dynastyId": "tang",
       "personId": "li-xian",
       "title": "",
-      "eraNames": [],
+      "eraNames": [
+        "神龙",
+        "景龙"
+      ],
       "start": {
         "year": 705,
         "month": 2,
@@ -3887,7 +3941,11 @@
       "dynastyId": "tang",
       "personId": "li-dan",
       "title": "",
-      "eraNames": [],
+      "eraNames": [
+        "景云",
+        "太极",
+        "延和"
+      ],
       "start": {
         "year": 710,
         "month": 7,
@@ -3911,6 +3969,7 @@
       "personId": "li-longji",
       "title": "",
       "eraNames": [
+        "先天",
         "开元",
         "天宝"
       ],
@@ -3936,7 +3995,12 @@
       "dynastyId": "tang",
       "personId": "li-heng",
       "title": "",
-      "eraNames": [],
+      "eraNames": [
+        "至德",
+        "乾元",
+        "上元",
+        "宝应"
+      ],
       "start": {
         "year": 756,
         "month": 8,
@@ -3959,7 +4023,12 @@
       "dynastyId": "tang",
       "personId": "li-yu-tang",
       "title": "",
-      "eraNames": [],
+      "eraNames": [
+        "宝应",
+        "广德",
+        "永泰",
+        "大历"
+      ],
       "start": {
         "year": 762,
         "month": 5,
@@ -3982,7 +4051,11 @@
       "dynastyId": "tang",
       "personId": "li-kuo",
       "title": "",
-      "eraNames": [],
+      "eraNames": [
+        "建中",
+        "兴元",
+        "贞元"
+      ],
       "start": {
         "year": 779,
         "month": 6,
@@ -4005,7 +4078,9 @@
       "dynastyId": "tang",
       "personId": "li-song",
       "title": "",
-      "eraNames": [],
+      "eraNames": [
+        "永贞"
+      ],
       "start": {
         "year": 805,
         "month": 2,
@@ -4028,7 +4103,9 @@
       "dynastyId": "tang",
       "personId": "li-chun",
       "title": "",
-      "eraNames": [],
+      "eraNames": [
+        "元和"
+      ],
       "start": {
         "year": 805,
         "month": 9,
@@ -4051,7 +4128,9 @@
       "dynastyId": "tang",
       "personId": "li-heng-mu",
       "title": "",
-      "eraNames": [],
+      "eraNames": [
+        "长庆"
+      ],
       "start": {
         "year": 820,
         "month": 2,
@@ -4074,7 +4153,9 @@
       "dynastyId": "tang",
       "personId": "li-zhan",
       "title": "",
-      "eraNames": [],
+      "eraNames": [
+        "宝历"
+      ],
       "start": {
         "year": 824,
         "month": 2,
@@ -4097,7 +4178,11 @@
       "dynastyId": "tang",
       "personId": "li-ang",
       "title": "",
-      "eraNames": [],
+      "eraNames": [
+        "宝历",
+        "大和",
+        "开成"
+      ],
       "start": {
         "year": 827,
         "month": 1,
@@ -4120,7 +4205,9 @@
       "dynastyId": "tang",
       "personId": "li-yan-tang",
       "title": "",
-      "eraNames": [],
+      "eraNames": [
+        "会昌"
+      ],
       "start": {
         "year": 840,
         "month": 4,
@@ -4143,7 +4230,9 @@
       "dynastyId": "tang",
       "personId": "li-chen-tang",
       "title": "",
-      "eraNames": [],
+      "eraNames": [
+        "大中"
+      ],
       "start": {
         "year": 846,
         "month": 4,
@@ -4166,7 +4255,10 @@
       "dynastyId": "tang",
       "personId": "li-cui",
       "title": "",
-      "eraNames": [],
+      "eraNames": [
+        "大中",
+        "咸通"
+      ],
       "start": {
         "year": 859,
         "month": 9,
@@ -4189,7 +4281,14 @@
       "dynastyId": "tang",
       "personId": "li-xuan-tang",
       "title": "",
-      "eraNames": [],
+      "eraNames": [
+        "咸通",
+        "乾符",
+        "广明",
+        "中和",
+        "光启",
+        "文德"
+      ],
       "start": {
         "year": 873,
         "month": 8,
@@ -4212,7 +4311,15 @@
       "dynastyId": "tang",
       "personId": "li-ye-tang",
       "title": "",
-      "eraNames": [],
+      "eraNames": [
+        "龙纪",
+        "大顺",
+        "景福",
+        "乾宁",
+        "光化",
+        "天复",
+        "天祐"
+      ],
       "start": {
         "year": 888,
         "month": 4,
@@ -4235,7 +4342,9 @@
       "dynastyId": "tang",
       "personId": "li-zhu-tang",
       "title": "",
-      "eraNames": [],
+      "eraNames": [
+        "天祐"
+      ],
       "start": {
         "year": 904,
         "month": 9,
@@ -7143,6 +7252,26 @@
       {
         "label": "隋（山西大学云冈学研究院历史纪年）",
         "url": "https://ygx.sxu.edu.cn/portals/13s"
+      },
+      {
+        "label": "中国君主列表·唐",
+        "url": "https://zh.wikipedia.org/wiki/中国君主列表#唐"
+      },
+      {
+        "label": "唐朝君主列表",
+        "url": "https://zh.wikipedia.org/wiki/唐朝君主列表"
+      },
+      {
+        "label": "唐朝年号列表",
+        "url": "https://zh.wikipedia.org/wiki/唐朝年号列表"
+      },
+      {
+        "label": "《旧唐书》",
+        "url": "https://zh.wikisource.org/zh-hans/旧唐书"
+      },
+      {
+        "label": "《新唐书》",
+        "url": "https://zh.wikisource.org/zh-hans/新唐书"
       }
     ],
     "notes": [
@@ -7166,7 +7295,8 @@
       "2026-09：按请求扩充唐代历帝（含中宗、睿宗两次在位语境）及武则天人物概述，并重写唐、武周王朝概述。人物世系与朝政转折据《旧唐书》《新唐书》《资治通鉴》交叉整理；唐代文化与鼎盛概述参考中国国家博物馆及中国历史研究院资料。",
       "2026-09：按用户请求扩充北宋王朝概述，依据《宋史》本纪及相关制度、食货、选举志，概述建国与统一进程、中央政治与社会文化、宋辽关系及靖康之变；北宋起讫仍以本包日期记录为准。",
       "2026-09：按用户请求进一步丰富北宋王朝概述，补充建国统一、中央政治与科举、经济文化、宋辽关系、王安石变法及靖康之变；依据《中国大百科全书·中国历史》宋条及山西大学云冈学研究院所列参考资料，起讫仍按本包日期。",
-      "2026-09：修正杨广、杨侗人物概述并核实隋末在位日期。杨广618年4月11日遇弑；《资治通鉴》记杨侗于同年五月戊辰（公历6月22日）在炀帝凶问传至东都后即位；杨侑则于6月12日已禅位。杨侗仍按隋末地方政权展示取舍保留洛阳 track。依据《隋书·恭帝纪》《越王侗传》及《资治通鉴·唐纪一》。"
+      "2026-09：修正杨广、杨侗人物概述并核实隋末在位日期。杨广618年4月11日遇弑；《资治通鉴》记杨侗于同年五月戊辰（公历6月22日）在炀帝凶问传至东都后即位；杨侑则于6月12日已禅位。杨侗仍按隋末地方政权展示取舍保留洛阳 track。依据《隋书·恭帝纪》《越王侗传》及《资治通鉴·唐纪一》。",
+      "2026-09：补齐唐朝20位帝王（含中宗、睿宗两段在位）的完整谥号与各自实际在位段使用的年号。谥号以《中国君主列表·唐》所列追谥为准，并与《旧唐书》《新唐书》互校；年号按《唐朝年号列表》及《旧唐书》《新唐书》纪年核对。武周690–705年年号仍归武则天的武周在位记录；李旦684–690年阶段仅记文明，不将武后临朝改元重复计入李旦，李显嗣圣段与复位后的神龙、景龙分别记录。"
     ]
   }
 }
