@@ -377,20 +377,30 @@ export function resolveReignCardAppellation(
   return null;
 }
 
-/** Detail headings prefer the conventional period appellation; title is fallback only. */
+/** Person-detail heading rule, separate from swimlane card title selection. */
+function resolvePersonDetailAppellation(
+  reign: ReignAppellationFields | null | undefined,
+  personContext?: PersonDisplayContext | null,
+): EmperorAppellation | null {
+  const posthumous = resolvePosthumousAppellation(personContext);
+  const temple = resolveTempleAppellation(personContext);
+  if (!reign) return posthumous ?? temple;
+
+  return reign.start.year >= TEMPLE_ERA_START_YEAR
+    ? temple ?? posthumous
+    : posthumous ?? temple;
+}
+
+/** Person-detail headings use period appellations before falling back to title. */
 export function resolveReignDetailHeading(
   reign: ReignAppellationFields | null | undefined,
   dynastyName?: string | null,
   personName?: string | null,
   personContext?: PersonDisplayContext | null,
 ): string {
-  const appellation = reign
-    ? resolveEmperorAppellation(reign, personContext)?.name
-    : (
-        resolvePosthumousAppellation(personContext) ??
-        resolveTempleAppellation(personContext)
-      )?.name;
-  const name = appellation ?? reign?.title.trim() ?? personName ?? "";
+  const appellation = resolvePersonDetailAppellation(reign, personContext)?.name;
+  const reignTitle = reign?.title.trim();
+  const name = appellation || reignTitle || personName || "";
   return [dynastyName, name].filter(Boolean).join(" · ");
 }
 

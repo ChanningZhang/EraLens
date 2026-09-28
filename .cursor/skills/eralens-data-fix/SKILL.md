@@ -114,7 +114,7 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 
 - 泳道卡片小字优先显示非空 `reigns.title`；title 为空时按年代选择人物庙谥：唐代起（包括明清）庙号优先于谥号，唐以前谥号优先。`reigns.era_names` 不参与称呼选择。
 - 明清皇帝的年号式泳道卡片称呼在导入时预先写入 `reigns.title`；`era_names` 仍保存完整年号列表，供详情事实展示和数据检索使用。朱元璋吴王段（`吴`）、努尔哈赤（`太祖`）、皇太极（`太宗`）保留原称号例外。
-- 人物页称谓不优先 `reigns.title`：按在位起始年，唐以前谥号优先，唐代起（包括明清）庙号优先，缺失时再回退到另一种庙谥及 `reigns.title`。
+- 人物详情页不优先 `reigns.title`：按在位起始年选择庙谥，唐以前谥号优先，唐代起（包括明清）庙号优先，再回退到另一种庙谥，最后才回退 `reigns.title`。此规则与泳道卡片优先 title 的规则分开维护。
 - 先秦卡片：主行读 `posthumous_name` / `reigns.title`；副行私名靠 `ancestral_xing` / `clan_shi` 去姓。
 - 先秦 `persons.ancestralXing` / `persons.clanShi` 直接写入时期包 `cache.json`；不要在生成时套模板或人物覆盖。
 
