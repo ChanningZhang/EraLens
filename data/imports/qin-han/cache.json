@@ -9,9 +9,9 @@
   "persons": [
     {
       "id": "ying-zheng",
-      "name": "嬴政",
+      "name": "赵政",
       "altNames": [
-        "赵政"
+        "嬴政"
       ],
       "birth": {
         "year": -259,
@@ -1470,7 +1470,7 @@
       "id": "reign-ying-zheng",
       "dynastyId": "qin",
       "personId": "ying-zheng",
-      "title": "",
+      "title": "始皇帝",
       "eraNames": [],
       "start": {
         "year": -221,
