@@ -25,7 +25,7 @@ describe("cursorGuideStageX", () => {
 describe("formatCursorGuideLabel", () => {
   it("shows compact years that match the ruler", () => {
     expect(formatCursorGuideLabel(absMonth(200, 6), 1.5)).toBe("200年");
-    expect(formatCursorGuideLabel(absMonth(-221, 10), 1.5)).toBe("前221年");
+    expect(formatCursorGuideLabel(absMonth(-221, 10), 1.5)).toBe("-221年");
   });
 
   it("adds the month when zoomed to month lod", () => {

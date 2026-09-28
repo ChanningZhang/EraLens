@@ -119,6 +119,10 @@ export function DetailPanel() {
 
   const capitalTenures = detailQuery.data?.capitalTenures ?? [];
   const relatedItems = detailQuery.data?.related ?? [];
+  const canOpenPersonOverview =
+    selection.selected?.type === "person" &&
+    selection.focusReignId != null &&
+    (detailQuery.data?.reignCount ?? 0) > 1;
 
   if (!selection.selected) return null;
 
@@ -136,7 +140,29 @@ export function DetailPanel() {
             <p className={styles.error}>无法加载详情</p>
           ) : (
             <>
-              <h2 className={styles.title}>{detailQuery.data?.title}</h2>
+              <h2 className={styles.title}>
+                {canOpenPersonOverview ? (
+                  <button
+                    type="button"
+                    className={styles.titleLink}
+                    title="查看人物全部在位信息"
+                    onClick={() => {
+                      if (selection.selected?.type !== "person") return;
+                      selectionStore.navigateToDetail(
+                        selection.selected,
+                        undefined,
+                        viewport.centerAbs,
+                        { focusReignId: null },
+                      );
+                      selectionStore.syncToUrl(viewport.centerAbs);
+                    }}
+                  >
+                    {detailQuery.data?.title}
+                  </button>
+                ) : (
+                  detailQuery.data?.title
+                )}
+              </h2>
               {detailQuery.data?.subtitle && (
                 <p className={styles.subtitle}>{detailQuery.data.subtitle}</p>
               )}
@@ -182,7 +208,9 @@ export function DetailPanel() {
                 <div
                   key={fact.label}
                   className={
-                    fact.value.length > 36
+                    fact.value.includes("\n")
+                      ? `${styles.fact} ${styles.factMultiline}`
+                      : fact.value.length > 36
                       ? `${styles.fact} ${styles.factBlock}`
                       : styles.fact
                   }

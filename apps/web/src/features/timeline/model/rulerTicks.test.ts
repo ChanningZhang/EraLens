@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { absMonth } from "@eralens/shared";
 import { buildRulerTicks, getRulerTickSteps } from "./rulerTicks";
 
 describe("rulerTicks", () => {
@@ -24,5 +25,11 @@ describe("rulerTicks", () => {
     expect(labels).toContain("200");
     expect(labels).toContain("210");
     expect(ticks.some((t) => t.kind === "minor")).toBe(true);
+  });
+
+  it("uses a minus sign for BCE labels", () => {
+    const ticks = buildRulerTicks(absMonth(-30), absMonth(-10), 1.5);
+    const labels = ticks.filter((tick) => tick.kind === "label").map((tick) => tick.text);
+    expect(labels).toContain("-20");
   });
 });

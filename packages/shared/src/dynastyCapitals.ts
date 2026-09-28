@@ -69,12 +69,12 @@ function formatTenureRangeLabel(
   ): string => {
     if (isUncertainDateConfidence(confidence)) return "？";
     if (precision === "day" && point.day != null) {
-      return `${formatYearMonth(point.year, point.month, "compact")}${point.day}日`;
+      return `${formatYearMonth(point.year, point.month)}${point.day}日`;
     }
     if (precision === "month") {
-      return formatYearMonth(point.year, point.month, "compact");
+      return formatYearMonth(point.year, point.month);
     }
-    return formatYear(point.year, "compact");
+    return formatYear(point.year);
   };
 
   const startLabel = formatPoint(start, startPrecision, startConfidence);
@@ -98,10 +98,10 @@ export function capitalTenureSubtitle(capital: DynastyCapital): string | undefin
 export function capitalDateRangeLabel(capital: DynastyCapital): string {
   const pointLabel = (point: CapitalTimePoint, precision: DynastyCapital["precision"]) => {
     if (precision === "day" && point.day != null) {
-      return `${formatYearMonth(point.year, point.month, "compact")}${point.day}日`;
+      return `${formatYearMonth(point.year, point.month)}${point.day}日`;
     }
-    if (precision === "month") return formatYearMonth(point.year, point.month, "compact");
-    return formatYear(point.year, "compact");
+    if (precision === "month") return formatYearMonth(point.year, point.month);
+    return formatYear(point.year);
   };
   return `${pointLabel(capital.start, capital.precision)} — ${pointLabel(capital.end, capital.endPrecision ?? capital.precision)}`;
 }

@@ -65,8 +65,8 @@ description: >-
 - `persons.name` 保存可检索全名；君主入库须带姓。先秦同时维护 `ancestral_xing` / `clan_shi`。
 - `persons.posthumous_name`、`persons.temple_name` 只存谥号/庙号本体，不带国号；多值用逗号 CSV。
 - `reigns.era_names` 存年号 CSV。自汉武帝起使用；不要再建 `era_names` 子表。
-- `reigns.title` 存其余卡片称号/史称。少帝、末帝、后主不是谥号；无谥号的先秦称号写不带国名本体。
-- 明清普通皇帝 `title` 留空，卡片优先取年号；仅 `AGENTS.md` 明列的三条记录保留 title。
+- `reigns.title` 存泳道卡片称号/史称。少帝、末帝、后主不是谥号；无谥号的先秦称号写不带国名本体；明清皇帝的年号式卡片称呼也在导入时明确写入此列。朱元璋吴王段（吴）、努尔哈赤（太祖）、皇太极（太宗）保留原称号例外。
+- 运行时称呼不读取 `era_names`：人物页按年代取庙谥，唐代起（包括明清）庙号优先于谥号，唐以前谥号优先；泳道卡片仍优先展示非空 `reigns.title`。
 - **人物/在位概述不能过于简单**：`bio` 应简略交代人物身份与世系/继承背景、主要相关人物或政权关系、在位年代，以及能说明其历史脉络的关键事迹或转折。保持精炼但信息完整，不能只写身份标签、单句评价或空泛结论；资料不足时如实限定，不补造细节。
 - `bio` 只写历史内容，不写收录方法、年代插值或绘制规范；这些写进 `cache.json.manifest.notes`。
 - 修改人物、reign 归属/称号或王朝名后，确认 `persons.search_terms` 触发器刷新；批量改写后执行 `SELECT rebuild_person_search_terms();`。

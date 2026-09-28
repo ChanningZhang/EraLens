@@ -236,7 +236,7 @@ ON CONFLICT (id) DO UPDATE SET
 
 ### reigns
 
-卡片称谓由运行时 `resolveEmperorAppellation` / `resolveReignCardLabel` 按 `appellationPolicy.ts` 的年份阈值计算；始皇帝以前主行用谥号或诸侯称号（不带国名）。谥号/庙号读 **person** 的 CSV 字段；史称（少帝/末帝/后主等）不得写入 `posthumous_name`。无谥号的 regnal 称号直接写入 `reigns.title` 本体（`夫差`、`王厝`、`禹`），不要写 `吴王夫差`。`persons.name` 仍用可展示私名（姬发、禹），便于搜索；维基别名须在导入时清洗。
+泳道卡片小字优先读取 `reigns.title`，title 为空时才按 `appellationPolicy.ts` 的年份阈值取人物庙谥；人物页不优先 title。唐代起（包括明清）庙号优先于谥号，唐以前谥号优先；始皇帝以前主行用谥号或诸侯称号（不带国名）。称呼选择不读取 `era_names`。史称（少帝/末帝/后主等）不得写入 `posthumous_name`；明清年号式泳道卡片称呼及其他无庙谥的 regnal 称号直接写入 `reigns.title`，其中朱元璋吴王段（`吴`）、努尔哈赤（`太祖`）、皇太极（`太宗`）保留原称号例外。`persons.name` 仍用可展示私名（姬发、禹），便于搜索；维基别名须在导入时清洗。
 
 `persons.posthumous_name` / `persons.temple_name` 与商周数据一致：**只存谥号/庙号本体，不带国名**（`武王`、`孝文皇帝`、`太宗`）。同人多值用逗号连接。国名简称写在 `title`（`周武王`、`唐太宗`）。先秦副行去姓靠 `persons.ancestral_xing` / `persons.clan_shi`，运行时不再维护姓氏表。
 
@@ -297,7 +297,7 @@ ON CONFLICT (id) DO UPDATE SET
 
 ### reigns.era_names
 
-年号自汉武帝起，写入 `reigns.era_names` 逗号分隔名称（如 `泰定,致和`）。先秦省略（NULL）。**不再**使用 `era_names` 子表，各年号起迄年月不入库；界面与称谓只读名称列表。
+年号自汉武帝起，写入 `reigns.era_names` 逗号分隔名称（如 `泰定,致和`）。先秦省略（NULL）。**不再**使用 `era_names` 子表，各年号起迄年月不入库；界面将该列表用于年号事实展示，称呼选择不读取它。明清用于泳道卡片的年号式称呼另行预存于 `reigns.title`。
 
 ### dynasty_capitals
 
@@ -567,8 +567,8 @@ ON CONFLICT (id) DO UPDATE SET
 | 相续泳道合并 | `dynasty_lane_groups` | API 下发，`dynastyLaneGroups.ts` 无硬编码组 |
 | 检索别名 | `persons.alt_names` | 作为人工来源字段，由触发器合并进 `search_terms` |
 | 人物搜索索引 | `persons.search_terms` | 预生成姓名、别名、姓/氏组合、庙谥、title、朝代 + 庙谥；`text[]` GIN 完整词查询 |
-| 庙号/谥号/先秦称号 | `persons.posthumous_name` / `persons.temple_name` / `reigns.title` | `resolveEmperorAppellation` 按 618/1368/-221 阈值读 person 庙谥 + reign 年号；**不**从 `title` 推导庙谥 |
-| 年号 | `reigns.era_names` CSV | 卡片取第一个，详情 `、` 连接全部 |
+| 庙号/谥号/卡片称号 | `persons.posthumous_name` / `persons.temple_name` / `reigns.title` | 泳道卡片优先 title；人物页以 618 年为分界选择 person 庙谥，明清同样庙号优先；**不**从 title 推导庙谥 |
+| 年号 | `reigns.era_names` CSV | 详情以 `、` 连接全部；不参与称呼选择（明清泳道卡片用语已预存 title） |
 | 姓/氏 | `persons.ancestral_xing` / `persons.clan_shi` | `stripAncestralXing` 读 DB |
 
 入库审计（可选）：

@@ -58,7 +58,7 @@ describe("formatEventTime", () => {
       atAbs: absMonth(200, 1),
       precision: "year",
     });
-    expect(formatEventTime(event)).toBe("公元200年");
+    expect(formatEventTime(event)).toBe("200年");
   });
 
   it("keeps month for month-precision points", () => {
@@ -69,7 +69,7 @@ describe("formatEventTime", () => {
       atAbs: absMonth(208, 12),
       precision: "month",
     });
-    expect(formatEventTime(event)).toBe("公元208年12月");
+    expect(formatEventTime(event)).toBe("208年12月");
   });
 
   it("formats duration spans", () => {
@@ -83,7 +83,7 @@ describe("formatEventTime", () => {
       startAbs: absMonth(221, 7),
       endAbs: absMonth(222, 8),
     });
-    expect(formatEventTime(event)).toBe("公元221年7月 — 公元222年8月");
+    expect(formatEventTime(event)).toBe("221年7月 — 222年8月");
   });
 
   it("prefixes circa ranges with 约", () => {
@@ -97,7 +97,7 @@ describe("formatEventTime", () => {
       startAbs: absMonth(196, 1),
       endAbs: absMonth(220, 12),
     });
-    expect(formatEventTime(event)).toBe("约公元196年 — 公元220年");
+    expect(formatEventTime(event)).toBe("约196年 — 220年");
   });
 });
 

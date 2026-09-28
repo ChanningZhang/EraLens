@@ -12,6 +12,12 @@ import type { SqliteDatabaseProvider, TimelineQuery, TimelineRepository } from "
 import { createPlatformSettings } from "./platformSettings";
 
 type Row = Record<string, unknown>;
+type PersonDetailContext = {
+  person: Person;
+  reign?: Reign;
+  reignIndex?: number;
+  reignCount: number;
+};
 const own = (row: Row, key: string) => row[key] == null ? undefined : row[key];
 const json = <T>(value: unknown, fallback: T): T => {
   if (typeof value !== "string") return (value ?? fallback) as T;
@@ -159,6 +165,140 @@ export class SqliteTimelineRepository implements TimelineRepository {
     };
   }
 
+  private async capitalsForEntity(
+    ref: EntityRef,
+    store: TimelineDataStore,
+  ): Promise<DynastyCapital[]> {
+    const db = await this.dbPromise;
+    let where: string;
+    let values: unknown[];
+
+    if (ref.type === "capital") {
+      where = "dc.id = ?";
+      values = [ref.id];
+    } else if (ref.type === "dynasty") {
+      where = "dc.dynasty_id = ?";
+      values = [ref.id];
+    } else if (ref.type === "person" || ref.type === "reign") {
+      const personId = ref.type === "person"
+        ? ref.id
+        : store.reigns.find((reign) => reign.id === ref.id)?.personId;
+      if (!personId) return [];
+
+      // Match the API detail route: a person's reign-capital context includes
+      // every dynasty they ruled, but excludes other dynasties' capitals.
+      where = `dc.dynasty_id IN (
+        SELECT DISTINCT dynasty_id FROM reigns WHERE person_id = ?
+      )`;
+      values = [personId];
+    } else {
+      // The API builds event details without loading capital rows.
+      return [];
+    }
+
+    const capitalRows = await rows(db, `
+      SELECT dc.*,
+             COALESCE((
+               SELECT json_group_array(link.reign_id)
+               FROM (
+                 SELECT rc.reign_id
+                 FROM reign_capitals AS rc
+                 WHERE rc.capital_id = dc.id
+                 ORDER BY rc.reign_id
+               ) AS link
+             ), '[]') AS detail_reign_ids
+      FROM dynasty_capitals AS dc
+      WHERE ${where}
+      ORDER BY dc.start_abs, dc.role, dc.id
+    `, values);
+    return capitalRows.map((capital) =>
+      mapCapital(capital, strings(capital.detail_reign_ids)),
+    );
+  }
+
+  /** SQLite counterpart of the API's person-detail context query. */
+  private async personDetailContext(
+    ref: EntityRef,
+    focusReignId?: string,
+  ): Promise<PersonDetailContext[] | undefined> {
+    if (ref.type !== "person" && ref.type !== "reign") return undefined;
+    const db = await this.dbPromise;
+    const personId = ref.type === "person" ? ref.id : null;
+    const requestedReignId = ref.type === "reign" ? ref.id : focusReignId ?? null;
+    const result = await rows(db, `
+      WITH request(person_id, focus_reign_id) AS (VALUES (?, ?)),
+      target_person AS (
+        SELECT p.id
+        FROM persons p
+        CROSS JOIN request request_row
+        WHERE p.id = COALESCE(
+          request_row.person_id,
+          (SELECT r.person_id FROM reigns r WHERE r.id = request_row.focus_reign_id)
+        )
+          AND (
+            request_row.focus_reign_id IS NULL
+            OR EXISTS (
+              SELECT 1 FROM reigns r
+              WHERE r.id = request_row.focus_reign_id AND r.person_id = p.id
+            )
+          )
+      ),
+      ranked_reigns AS (
+        SELECT r.*,
+               ROW_NUMBER() OVER (
+                 ORDER BY r.start_abs, COALESCE(r.start_day, 1), r.id
+               ) AS reign_index,
+               COUNT(*) OVER () AS reign_count
+        FROM reigns r
+        JOIN target_person tp ON tp.id = r.person_id
+      )
+      SELECT json_object(
+               'id', p.id, 'name', p.name, 'title', p.title,
+               'alt_names', p.alt_names,
+               'ancestral_xing', p.ancestral_xing, 'clan_shi', p.clan_shi,
+               'birth_year', p.birth_year, 'birth_month', p.birth_month,
+               'death_year', p.death_year, 'death_month', p.death_month,
+               'roles', p.roles, 'bio', p.bio, 'links', p.links,
+               'posthumous_name', p.posthumous_name,
+               'temple_name', p.temple_name,
+               'search_terms', p.search_terms
+             ) AS person_json,
+             CASE WHEN rr.id IS NULL THEN NULL ELSE json_object(
+               'id', rr.id, 'dynasty_id', rr.dynasty_id,
+               'person_id', rr.person_id, 'title', rr.title,
+               'era_names', rr.era_names,
+               'start_year', rr.start_year, 'start_month', rr.start_month,
+               'start_day', rr.start_day,
+               'end_year', rr.end_year, 'end_month', rr.end_month,
+               'end_day', rr.end_day,
+               'start_abs', rr.start_abs, 'end_abs', rr.end_abs,
+               'precision', rr.precision,
+               'start_date_confidence', rr.start_date_confidence,
+               'end_date_confidence', rr.end_date_confidence,
+               'claim_track', rr.claim_track, 'claim_label', rr.claim_label,
+               'claim_role', rr.claim_role,
+               'is_informal_monarch', rr.is_informal_monarch,
+               'is_main', rr.is_main
+             ) END AS reign_json,
+             rr.reign_index,
+             COALESCE(rr.reign_count, 0) AS reign_count
+      FROM target_person tp
+      JOIN persons p ON p.id = tp.id
+      CROSS JOIN request request_row
+      LEFT JOIN ranked_reigns rr
+        ON (request_row.focus_reign_id IS NULL OR rr.id = request_row.focus_reign_id)
+      ORDER BY rr.reign_index
+    `, [personId, requestedReignId]);
+    return result.map((row) => ({
+      person: mapPerson(json<Row>(row.person_json, {})),
+      ...(row.reign_json == null
+        ? {}
+        : { reign: mapReign(json<Row>(row.reign_json, {})) }),
+      ...(row.reign_index == null ? {} : { reignIndex: Number(row.reign_index) }),
+      reignCount: Number(row.reign_count),
+    }));
+  }
+
   async getTimeline(query: TimelineQuery): Promise<TimelineSlice> {
     const slice = filterTimeline(await this.store(), { fromAbs: query.fromAbs, toAbs: query.toAbs, scope: query.scope });
     return {
@@ -177,7 +317,33 @@ export class SqliteTimelineRepository implements TimelineRepository {
   }
 
   async getEntity(ref: EntityRef, options?: { focusReignId?: string }): Promise<EntityDetail> {
-    return buildEntityDetail(await this.store(), ref, { focusReignId: options?.focusReignId });
+    const store = await this.store();
+    const context = await this.personDetailContext(ref, options?.focusReignId);
+    if (context && context.length === 0) throw new Error(`Entity not found: ${ref.id}`);
+    const capitals = await this.capitalsForEntity(ref, store);
+    const contextPerson = context?.[0]?.person;
+    const contextReigns = context?.flatMap((row) => row.reign ? [row.reign] : []) ?? [];
+    const contextReignById = new Map(contextReigns.map((reign) => [reign.id, reign]));
+    const detailStore = contextPerson
+      ? {
+          ...store,
+          persons: store.persons.map((person) =>
+            person.id === contextPerson.id ? contextPerson : person,
+          ),
+          reigns: store.reigns.map((reign) => contextReignById.get(reign.id) ?? reign),
+          capitals,
+        }
+      : { ...store, capitals };
+    return buildEntityDetail(
+      detailStore,
+      ref,
+      {
+        focusReignId: ref.type === "reign" ? ref.id : options?.focusReignId,
+        selectedReignIds: contextReigns.map((reign) => reign.id),
+        focusReignIndex: context?.[0]?.reignIndex,
+        reignCount: context?.[0]?.reignCount,
+      },
+    );
   }
 
   async search(term: string): Promise<SearchHit[]> { return searchEntities(await this.store(), term); }

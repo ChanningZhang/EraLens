@@ -1,13 +1,10 @@
-import { firstAppellation } from "./appellationFields";
 import { buildReignTenureCapitalRows, capitalDateRangeLabel, capitalRoleLabel, dynastyCapitalRelatedItems } from "./dynastyCapitals";
 import { claimDetailFacts } from "./claimTracks";
 import { PRE_IMPERIAL_START_YEAR } from "./appellationPolicy";
 import {
   buildPreQinClanContext,
+  resolveReignDetailHeading,
   resolvePreQinNameFacts,
-  resolveReignDetailFacts,
-  resolveReignDetailSubtitle,
-  resolveReignPrimaryLabel,
   usesPreQinCardLayout,
 } from "./emperorAppellation";
 import {
@@ -16,7 +13,7 @@ import {
   resolveReignColorToken,
 } from "./dynastyColors";
 import { eventKindLabel, eventSpanAbs, formatEventTime } from "./eventTime";
-import { formatReignDurationLabel } from "./reignVisual";
+import { formatReignYearRange } from "./reignVisual";
 import {
   TimelineSliceSchema,
   type Dynasty,
@@ -188,6 +185,12 @@ function fateRelationRelatedItems(
 
 export type PersonDetailOptions = {
   focusReignId?: string;
+  /** Reign rows selected by the single detail query; other rows may be ownership context. */
+  selectedReignIds?: readonly string[];
+  /** One-based chronological position returned by the detail query. */
+  focusReignIndex?: number;
+  /** Total reign records for the person returned by the detail query. */
+  reignCount?: number;
 };
 
 function buildPersonEntityDetail(
@@ -201,8 +204,15 @@ function buildPersonEntityDetail(
   },
 ): Omit<EntityDetail, "ref"> {
   const dynastyMap = new Map(store.dynasties.map((d) => [d.id, d]));
+  const selectedReignIds = options.selectedReignIds
+    ? new Set(options.selectedReignIds)
+    : undefined;
   const personReigns = store.reigns
-    .filter((reign) => reign.personId === person.id)
+    .filter(
+      (reign) =>
+        reign.personId === person.id &&
+        (!selectedReignIds || selectedReignIds.has(reign.id)),
+    )
     .sort(
       (a, b) =>
         a.startAbs - b.startAbs ||
@@ -229,48 +239,50 @@ function buildPersonEntityDetail(
     person.birth != null &&
     person.birth.year < PRE_IMPERIAL_START_YEAR;
 
-  let title: string;
-  let subtitle: string | undefined;
-  if (focusReign) {
-    const dynasty = dynastyMap.get(focusReign.dynastyId);
-    title = resolveReignPrimaryLabel(focusReign, person.name, clan);
-    subtitle = resolveReignDetailSubtitle(
-      focusReign,
-      dynasty?.name,
-      person.name,
-      clan,
-    );
-  } else {
-    title =
-      preQinReign || preQinByBirth
-        ? preQinReign
-          ? resolveReignPrimaryLabel(preQinReign, person.name, clan)
-          : (firstAppellation(person.posthumousNames) ?? person.name)
-        : person.name;
-    subtitle = person.roles.join(" · ");
-  }
+  const focusReignIndex = focusReign
+    ? options.focusReignIndex ?? personReigns.findIndex((reign) => reign.id === focusReign.id) + 1
+    : undefined;
+  const reignCount = options.reignCount ?? personReigns.length;
+  const detailReign = focusReign ?? personReigns[0];
+  const headingDynasty = detailReign ? dynastyMap.get(detailReign.dynastyId) : undefined;
+  const heading = detailReign
+    ? resolveReignDetailHeading(detailReign, headingDynasty?.name, person.name, clan)
+    : person.roles.join(" · ");
+  const subtitle = focusReign && reignCount > 1 && focusReignIndex
+    ? `${heading} · ${focusReignIndex}/${reignCount}`
+    : heading || undefined;
+  const title = person.name;
+  const factReigns = focusReign ? [focusReign] : personReigns;
+  const factEraNames = factReigns.flatMap((reign) =>
+    reign.eraNames.filter(Boolean),
+  );
 
-  const facts = focusReign
-    ? [
-        ...resolveReignDetailFacts(focusReign, person.name, clan, {
-          durationLabel:
-            formatReignDurationLabel(focusReign) ?? null,
-        }),
-        ...claimDetailFacts(focusReign),
-      ]
-    : [
-        ...(preQinReign || preQinByBirth
-          ? resolvePreQinNameFacts(person.name, clan, preQinReign)
-          : []),
-        ...(person.posthumousNames.length
-          ? [{ label: "谥号", value: person.posthumousNames.join("、") }]
-          : []),
-        ...(person.templeNames.length
-          ? [{ label: "庙号", value: person.templeNames.join("、") }]
-          : []),
-        ...(person.birth ? [{ label: "生", value: `${person.birth.year}年` }] : []),
-        ...(person.death ? [{ label: "卒", value: `${person.death.year}年` }] : []),
-      ];
+  const commonFacts = [
+    ...(preQinReign || preQinByBirth
+      ? resolvePreQinNameFacts(person.name, clan, preQinReign)
+      : []),
+    ...((person.posthumousNames ?? []).length
+      ? [{ label: "谥号", value: (person.posthumousNames ?? []).join("、") }]
+      : []),
+    ...((person.templeNames ?? []).length
+      ? [{ label: "庙号", value: (person.templeNames ?? []).join("、") }]
+      : []),
+    ...(factEraNames.length
+      ? [{ label: "年号", value: factEraNames.join("，") }]
+      : []),
+    ...(person.birth ? [{ label: "生", value: `${person.birth.year}年` }] : []),
+    ...(person.death ? [{ label: "卒", value: `${person.death.year}年` }] : []),
+  ];
+  const facts = [
+    ...(factReigns.length
+      ? [{
+          label: "在位",
+          value: factReigns.map(formatReignYearRange).join("\n"),
+        }]
+      : []),
+    ...commonFacts,
+    ...(focusReign ? claimDetailFacts(focusReign) : []),
+  ];
 
   const colorReign = focusReign ?? personReigns[0];
   const colorDynasty = colorReign ? dynastyMap.get(colorReign.dynastyId) : undefined;
@@ -278,6 +290,7 @@ function buildPersonEntityDetail(
   return {
     title,
     subtitle,
+    reignCount,
     dynastyId: colorReign?.dynastyId,
     colorToken:
       colorReign && colorDynasty
@@ -430,7 +443,7 @@ export function buildEntityDetail(
     const reign = reignMap.get(ref.id);
     if (!reign) throw new Error(`Reign not found: ${ref.id}`);
     personRef = { type: "person", id: reign.personId };
-    personOptions = { focusReignId: ref.id };
+    personOptions = { ...options, focusReignId: ref.id };
   }
 
   if (personRef.type === "person") {

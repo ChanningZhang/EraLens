@@ -101,8 +101,8 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 | `clan_shi` | 氏（齐、晋、赵） | 姓 |
 | `posthumous_name` | 谥号本体 CSV（`武王`、`孝文皇帝`） | 国号、`少帝`/`末帝`/`后主` 等史称 |
 | `temple_name` | 庙号本体 CSV（`太宗`、`高祖`） | 国号 |
-| `reigns.title` | 卡片称号/史称（先秦去国号如 `禹`；帝制如 `唐太宗`、`少帝`） | 不应替代庙谥列 |
-| `reigns.era_names` | 年号 CSV（`贞观,永徽`） | — |
+| `reigns.title` | 泳道卡片称号/史称（先秦去国号如 `禹`；帝制如 `唐太宗`、`少帝`；明清预存年号式卡片称呼） | 不应替代庙谥列 |
+| `reigns.era_names` | 完整年号 CSV（`贞观,永徽`），用于事实展示 | 不参与运行时称呼选择 |
 | `alt_names` | 检索别名（`姜子牙` → `lv-shang`） | 与 `name` 重复的私名 |
 | `bio` | 生平、本名异体、争议说明 | 不应替代正规列 |
 
@@ -112,9 +112,9 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 
 **展示规则（只读库，不在修复时破坏）**：
 
-- 泳道卡片小字共用同一顺序：非空 `reigns.title` 优先；title 为空时，先秦显示 `persons.name`，秦至南北朝优先 `persons.posthumous_name`，隋至元优先 `persons.temple_name`，明清优先 `reigns.era_names`；民国及以后也沿用 title 优先原则。
-- 明清空 title 时，年号优先于庙号、谥号。明清普通皇帝 `reigns.title` 必须为空；三条显式例外为朱元璋吴王时期（`吴`）、努尔哈赤（`太祖`）、皇太极（`太宗`）。维护这三条以外的明清称号时先核对是否确属用户指定例外，不能把年号再复制进 `title`。
-- `resolveEmperorAppellation` 的详情称谓规则按在位起始年：唐以前偏谥号/称号，唐–元偏庙号，明清偏年号。详情规则与泳道卡片小字规则分开核对。
+- 泳道卡片小字优先显示非空 `reigns.title`；title 为空时按年代选择人物庙谥：唐代起（包括明清）庙号优先于谥号，唐以前谥号优先。`reigns.era_names` 不参与称呼选择。
+- 明清皇帝的年号式泳道卡片称呼在导入时预先写入 `reigns.title`；`era_names` 仍保存完整年号列表，供详情事实展示和数据检索使用。朱元璋吴王段（`吴`）、努尔哈赤（`太祖`）、皇太极（`太宗`）保留原称号例外。
+- 人物页称谓不优先 `reigns.title`：按在位起始年，唐以前谥号优先，唐代起（包括明清）庙号优先，缺失时再回退到另一种庙谥及 `reigns.title`。
 - 先秦卡片：主行读 `posthumous_name` / `reigns.title`；副行私名靠 `ancestral_xing` / `clan_shi` 去姓。
 - 先秦 `persons.ancestralXing` / `persons.clanShi` 直接写入时期包 `cache.json`；不要在生成时套模板或人物覆盖。
 

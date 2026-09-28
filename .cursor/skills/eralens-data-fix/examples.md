@@ -102,7 +102,7 @@ const DISPLAY_FIX: Record<string, string> = {
 title: "唐高宗天皇大帝大和孝皇帝",
 ```
 
-应拆为 `temple_name`、`posthumous_name`、`era_names` 各列，title 保留通行简称 `唐高宗`。
+应拆为 `temple_name`、`posthumous_name`、`era_names` 各列，title 保留通行简称 `唐高宗`。明清数据仍保留完整 `era_names`，同时把泳道卡片要显示的年号式称呼预存到 `reigns.title`；运行时不再从年号列表挑选称呼。
 
 ---
 

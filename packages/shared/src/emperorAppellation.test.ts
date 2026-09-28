@@ -4,10 +4,12 @@ import {
   buildPreQinClanContext,
   type PersonDisplayContext,
   resolveEmperorAppellation as resolveEmperorAppellationBase,
+  resolveReignCardAppellation,
   resolveReignCardGivenName as resolveReignCardGivenNameBase,
   resolveReignCardLabel as resolveReignCardLabelBase,
   resolveReignCardMeta as resolveReignCardMetaBase,
   resolveReignDetailFacts as resolveReignDetailFactsBase,
+  resolveReignDetailHeading,
   resolveReignDetailSubtitle as resolveReignDetailSubtitleBase,
   resolveReignPrimaryLabel as resolveReignPrimaryLabelBase,
   resolveReignRelatedLabel as resolveReignRelatedLabelBase,
@@ -176,7 +178,7 @@ describe("resolveEmperorAppellation", () => {
     ).toEqual({ kind: "posthumous", name: "炀皇帝" });
   });
 
-  it("uses era name for Yuan rulers who never received a temple name", () => {
+  it("falls back to the stored reign title when no temple name exists", () => {
     expect(
       resolveEmperorAppellation(
         source({
@@ -185,7 +187,7 @@ describe("resolveEmperorAppellation", () => {
           eraNames: ["泰定","致和"],
         }),
       ),
-    ).toEqual({ kind: "era", name: "泰定" });
+    ).toEqual({ kind: "regnal", name: "元泰定帝" });
     expect(
       resolveReignCardMeta(
         source({
@@ -204,7 +206,7 @@ describe("resolveEmperorAppellation", () => {
           eraNames: ["天顺"],
         }),
       ),
-    ).toEqual({ kind: "era", name: "天顺" });
+    ).toEqual({ kind: "regnal", name: "元天顺帝" });
   });
 
   it("uses a temple name from Tang through Yuan", () => {
@@ -243,16 +245,18 @@ describe("resolveEmperorAppellation", () => {
     ).toEqual({ kind: "temple", name: "高祖" });
   });
 
-  it("uses an era name for Ming and Qing", () => {
+  it("prefers temple over posthumous for Ming and Qing too", () => {
     expect(
       resolveEmperorAppellation(
         source({
           start: { year: 1661, month: 1 },
+          title: "康熙",
+          posthumousName: "仁皇帝",
           templeName: "圣祖",
           eraNames: ["康熙"],
         }),
       ),
-    ).toEqual({ kind: "era", name: "康熙" });
+    ).toEqual({ kind: "temple", name: "圣祖" });
   });
 
   it("does not treat {regime}帝 placeholders as posthumous names", () => {
@@ -264,7 +268,7 @@ describe("resolveEmperorAppellation", () => {
           eraNames: ["治平"],
         }),
       ),
-    ).toEqual({ kind: "era", name: "治平" });
+    ).toEqual({ kind: "regnal", name: "徐宋帝" });
     expect(
       resolveEmperorAppellation(
         source({
@@ -273,7 +277,7 @@ describe("resolveEmperorAppellation", () => {
           eraNames: ["大义"],
         }),
       ),
-    ).toEqual({ kind: "era", name: "大义" });
+    ).toEqual({ kind: "regnal", name: "陈汉帝" });
   });
 
   it("uses the temple name for a late Yuan emperor with a recorded 庙号", () => {
@@ -322,25 +326,27 @@ describe("resolveEmperorAppellation", () => {
     ).toEqual({ kind: "temple", name: "高祖" });
   });
 
-  it("uses 正统 then 天顺 for Zhu Qizhen's two reigns", () => {
+  it("does not use era names as appellations for Ming reigns", () => {
     expect(
       resolveEmperorAppellation(
         source({
           start: { year: 1435, month: 1 },
+          title: "正统",
           templeName: "英宗",
           eraNames: ["正统"],
         }),
       ),
-    ).toEqual({ kind: "era", name: "正统" });
+    ).toEqual({ kind: "temple", name: "英宗" });
     expect(
       resolveEmperorAppellation(
         source({
           start: { year: 1457, month: 1 },
+          title: "天顺",
           templeName: "英宗",
           eraNames: ["天顺"],
         }),
       ),
-    ).toEqual({ kind: "era", name: "天顺" });
+    ).toEqual({ kind: "temple", name: "英宗" });
   });
 });
 
@@ -462,6 +468,26 @@ describe("resolveEmperorAppellation for feudal regnal titles", () => {
   });
 });
 
+describe("resolveReignDetailHeading", () => {
+  it("does not give the stored reign title the card metadata priority", () => {
+    const reign = source({
+      start: { year: 1368, month: 1 },
+      title: "洪武",
+      eraNames: ["洪武"],
+      templeName: "太祖",
+    });
+    const personContext = mergePersonContext(reign);
+
+    expect(resolveReignCardAppellation(reign, personContext)).toEqual({
+      kind: "regnal",
+      name: "洪武",
+    });
+    expect(
+      resolveReignDetailHeading(reign, "明", "朱元璋", personContext),
+    ).toBe("明 · 太祖");
+  });
+});
+
 describe("resolveReignDetailSubtitle for Yue kings", () => {
   it("omits a redundant personal name from the dynasty subtitle", () => {
     expect(
@@ -556,7 +582,7 @@ describe("resolveReignCardLabel", () => {
 });
 
 describe("resolveReignCardMeta", () => {
-  it("uses reign title, person appellations, era name, then person title", () => {
+  it("uses reign title, person appellations, then person title", () => {
     expect(
       resolveReignCardMeta(
         source({
@@ -600,50 +626,50 @@ describe("resolveReignCardMeta", () => {
         source({ title: "", eraNames: ["年号"], personTitle: "人物称号" }),
         "人物姓名",
       ),
-    ).toEqual({ label: "年号", name: "年号" });
+    ).toEqual({ label: "称号", name: "人物称号" });
 
     expect(
       resolveReignCardMeta(
-        source({ title: "", personTitle: "人物称号" }),
+        source({ title: "", eraNames: ["年号"] }),
         "人物姓名",
       ),
-    ).toEqual({ label: "称号", name: "人物称号" });
+    ).toBeNull();
   });
 
-  it("keeps explicit Ming and Qing reign titles ahead of era names", () => {
+  it("uses stored Ming and Qing reign titles for card metadata", () => {
     expect(
       resolveReignCardMeta(
         source({
           start: { year: 1661, month: 1 },
-          title: "太祖",
-          eraNames: ["天命"],
+          title: "康熙",
+          eraNames: ["康熙"],
         }),
         "爱新觉罗·玄烨",
       ),
-    ).toEqual({ label: "称号", name: "太祖" });
+    ).toEqual({ label: "称号", name: "康熙" });
     expect(
       resolveReignCardMeta(
         source({
           start: { year: 1435, month: 1 },
-          title: "太宗",
+          title: "正统",
           eraNames: ["正统"],
         }),
         "朱祁镇",
       ),
-    ).toEqual({ label: "称号", name: "太宗" });
+    ).toEqual({ label: "称号", name: "正统" });
     expect(
       resolveReignCardMeta(
         source({
           start: { year: 1457, month: 1 },
-          title: "太宗",
+          title: "天顺",
           eraNames: ["天顺"],
         }),
         "朱祁镇",
       ),
-    ).toEqual({ label: "称号", name: "太宗" });
+    ).toEqual({ label: "称号", name: "天顺" });
   });
 
-  it("uses Ming and Qing era names before person appellations", () => {
+  it("ignores era names and keeps temple-name priority for Ming and Qing", () => {
     expect(
       resolveReignCardMeta(
         source({
@@ -654,7 +680,7 @@ describe("resolveReignCardMeta", () => {
         }),
         "爱新觉罗·玄烨",
       ),
-    ).toEqual({ label: "年号", name: "康熙" });
+    ).toEqual({ label: "庙号", name: "圣祖" });
 
     expect(
       resolveReignCardMeta(
@@ -666,7 +692,7 @@ describe("resolveReignCardMeta", () => {
         }),
         "朱祁镇",
       ),
-    ).toEqual({ label: "年号", name: "正统" });
+    ).toEqual({ label: "庙号", name: "英宗" });
   });
 
   it("keeps the person name while separating multiple reign titles", () => {

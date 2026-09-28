@@ -81,7 +81,7 @@ export function reignDurationDays(
 }
 
 function formatYearMonthDay(year: number, month: number, day: number): string {
-  return `${formatYearMonth(year, month, "compact")}${day}日`;
+  return `${formatYearMonth(year, month)}${day}日`;
 }
 
 function calendarYearsMonths(
@@ -131,8 +131,8 @@ export function formatDaySpanDuration(
 export function formatReignSpanTooltip(reign: ReignSpanFields): string {
   if (reign.isOngoing) {
     const startLabel = reign.precision === "month" || reign.precision === "day"
-      ? formatYearMonth(reign.start.year, reign.start.month, "compact")
-      : formatYear(reign.start.year, "compact");
+      ? formatYearMonth(reign.start.year, reign.start.month)
+      : formatYear(reign.start.year);
     return `${startLabel} — 至今`;
   }
   if (reign.precision === "day" && reign.start.day != null && reign.end.day != null) {
@@ -158,9 +158,9 @@ export function formatReignSpanTooltip(reign: ReignSpanFields): string {
   ): string => {
     if (isUncertainDateConfidence(confidence)) return "？";
     if (reign.precision === "month" || reign.precision === "day") {
-      return formatYearMonth(point.year, point.month, "compact");
+      return formatYearMonth(point.year, point.month);
     }
-    return formatYear(point.year, "compact");
+    return formatYear(point.year);
   };
   const startLabel = formatBoundary(reign.start, reign.startDateConfidence);
   const endLabel = formatBoundary(reign.end, reign.endDateConfidence);

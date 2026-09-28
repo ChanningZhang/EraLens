@@ -2982,7 +2982,7 @@
       "id": "reign-zhu-yuanzhang-ming",
       "dynastyId": "ming",
       "personId": "zhu-yuanzhang",
-      "title": "",
+      "title": "洪武",
       "eraNames": [
         "洪武"
       ],
@@ -3007,7 +3007,7 @@
       "id": "reign-zhu-yunwen-ming",
       "dynastyId": "ming",
       "personId": "zhu-yunwen",
-      "title": "",
+      "title": "建文",
       "eraNames": [
         "建文"
       ],
@@ -3032,7 +3032,7 @@
       "id": "reign-zhu-di-ming",
       "dynastyId": "ming",
       "personId": "zhu-di",
-      "title": "",
+      "title": "永乐",
       "eraNames": [
         "永乐"
       ],
@@ -3057,7 +3057,7 @@
       "id": "reign-zhu-gaochi-ming",
       "dynastyId": "ming",
       "personId": "zhu-gaochi",
-      "title": "",
+      "title": "洪熙",
       "eraNames": [
         "洪熙"
       ],
@@ -3082,7 +3082,7 @@
       "id": "reign-zhu-zhanji-ming",
       "dynastyId": "ming",
       "personId": "zhu-zhanji",
-      "title": "",
+      "title": "宣德",
       "eraNames": [
         "宣德"
       ],
@@ -3107,7 +3107,7 @@
       "id": "reign-zhu-qizhen-ming",
       "dynastyId": "ming",
       "personId": "zhu-qizhen",
-      "title": "",
+      "title": "正统",
       "eraNames": [
         "正统"
       ],
@@ -3132,7 +3132,7 @@
       "id": "reign-zhu-qiyu-ming",
       "dynastyId": "ming",
       "personId": "zhu-qiyu",
-      "title": "",
+      "title": "景泰",
       "eraNames": [
         "景泰"
       ],
@@ -3157,7 +3157,7 @@
       "id": "reign-zhu-qizhen-ming-2",
       "dynastyId": "ming",
       "personId": "zhu-qizhen",
-      "title": "",
+      "title": "天顺",
       "eraNames": [
         "天顺"
       ],
@@ -3182,7 +3182,7 @@
       "id": "reign-zhu-jianshen-ming",
       "dynastyId": "ming",
       "personId": "zhu-jianshen",
-      "title": "",
+      "title": "成化",
       "eraNames": [
         "成化"
       ],
@@ -3207,7 +3207,7 @@
       "id": "reign-zhu-youcheng-ming",
       "dynastyId": "ming",
       "personId": "zhu-youcheng",
-      "title": "",
+      "title": "弘治",
       "eraNames": [
         "弘治"
       ],
@@ -3232,7 +3232,7 @@
       "id": "reign-zhu-houzhao-ming",
       "dynastyId": "ming",
       "personId": "zhu-houzhao",
-      "title": "",
+      "title": "正德",
       "eraNames": [
         "正德"
       ],
@@ -3257,7 +3257,7 @@
       "id": "reign-zhu-houcong-ming",
       "dynastyId": "ming",
       "personId": "zhu-houcong",
-      "title": "",
+      "title": "嘉靖",
       "eraNames": [
         "嘉靖"
       ],
@@ -3282,7 +3282,7 @@
       "id": "reign-zhu-zaihou-ming",
       "dynastyId": "ming",
       "personId": "zhu-zaihou",
-      "title": "",
+      "title": "隆庆",
       "eraNames": [
         "隆庆"
       ],
@@ -3307,7 +3307,7 @@
       "id": "reign-zhu-yiming-ming",
       "dynastyId": "ming",
       "personId": "zhu-yiming",
-      "title": "",
+      "title": "万历",
       "eraNames": [
         "万历"
       ],
@@ -3332,7 +3332,7 @@
       "id": "reign-zhu-changluo-ming",
       "dynastyId": "ming",
       "personId": "zhu-changluo",
-      "title": "",
+      "title": "泰昌",
       "eraNames": [
         "泰昌"
       ],
@@ -3357,7 +3357,7 @@
       "id": "reign-zhu-youjiao-ming",
       "dynastyId": "ming",
       "personId": "zhu-youjiao",
-      "title": "",
+      "title": "天启",
       "eraNames": [
         "天启"
       ],
@@ -3382,7 +3382,7 @@
       "id": "reign-zhu-youjian-ming",
       "dynastyId": "ming",
       "personId": "zhu-youjian",
-      "title": "",
+      "title": "崇祯",
       "eraNames": [
         "崇祯"
       ],
@@ -3407,7 +3407,7 @@
       "id": "reign-zhu-yousong-ming-south",
       "dynastyId": "ming-south",
       "personId": "zhu-yousong",
-      "title": "",
+      "title": "弘光",
       "eraNames": [
         "弘光"
       ],
@@ -3432,7 +3432,7 @@
       "id": "reign-zhu-yujian-ming-south",
       "dynastyId": "ming-south",
       "personId": "zhu-yujian",
-      "title": "",
+      "title": "隆武",
       "eraNames": [
         "隆武"
       ],
@@ -3457,7 +3457,7 @@
       "id": "reign-zhu-youlang-ming-south",
       "dynastyId": "ming-south",
       "personId": "zhu-youlang",
-      "title": "",
+      "title": "永历",
       "eraNames": [
         "永历"
       ],
@@ -3509,7 +3509,7 @@
       "id": "reign-zhu-yuyue-ming-south",
       "dynastyId": "ming-south",
       "personId": "zhu-yuyue",
-      "title": "",
+      "title": "绍武",
       "eraNames": [
         "绍武"
       ],
@@ -3588,7 +3588,7 @@
       "id": "reign-fulin-qing",
       "dynastyId": "qing",
       "personId": "fulin",
-      "title": "",
+      "title": "顺治",
       "eraNames": [
         "顺治"
       ],
@@ -3613,7 +3613,7 @@
       "id": "reign-xuanye-qing",
       "dynastyId": "qing",
       "personId": "xuanye",
-      "title": "",
+      "title": "康熙",
       "eraNames": [
         "康熙"
       ],
@@ -3638,7 +3638,7 @@
       "id": "reign-yinzhen-qing",
       "dynastyId": "qing",
       "personId": "yinzhen",
-      "title": "",
+      "title": "雍正",
       "eraNames": [
         "雍正"
       ],
@@ -3663,7 +3663,7 @@
       "id": "reign-hongli-qing",
       "dynastyId": "qing",
       "personId": "hongli",
-      "title": "",
+      "title": "乾隆",
       "eraNames": [
         "乾隆"
       ],
@@ -3688,7 +3688,7 @@
       "id": "reign-yongyan-qing",
       "dynastyId": "qing",
       "personId": "yongyan",
-      "title": "",
+      "title": "嘉庆",
       "eraNames": [
         "嘉庆"
       ],
@@ -3713,7 +3713,7 @@
       "id": "reign-minning-qing",
       "dynastyId": "qing",
       "personId": "minning",
-      "title": "",
+      "title": "道光",
       "eraNames": [
         "道光"
       ],
@@ -3738,7 +3738,7 @@
       "id": "reign-yizhu-qing",
       "dynastyId": "qing",
       "personId": "yizhu",
-      "title": "",
+      "title": "咸丰",
       "eraNames": [
         "咸丰"
       ],
@@ -3763,7 +3763,7 @@
       "id": "reign-zaichun-qing",
       "dynastyId": "qing",
       "personId": "zaichun",
-      "title": "",
+      "title": "同治",
       "eraNames": [
         "同治"
       ],
@@ -3788,7 +3788,7 @@
       "id": "reign-zaitian-qing",
       "dynastyId": "qing",
       "personId": "zaitian",
-      "title": "",
+      "title": "光绪",
       "eraNames": [
         "光绪"
       ],
@@ -3813,7 +3813,7 @@
       "id": "reign-puyi-qing",
       "dynastyId": "qing",
       "personId": "puyi",
-      "title": "",
+      "title": "宣统",
       "eraNames": [
         "宣统"
       ],
@@ -6028,7 +6028,7 @@
       "元世祖忽必烈定国号至宋恭帝降元（1271-12-18–1276-02-04）拆为独立卡片、主线非正统；降元后同帝续统走金色。",
       "元末漠北三位君主：元惠宗（顺帝北迁续统，1368–1370）、元昭宗（1370–1378）、天元帝（1378–1388）。",
       "清王朝行自1616年努尔哈赤建后金起算，1636年改国号大清；努尔哈赤、皇太极在位计入清 reign，但正统自顺治（福临）入关（1644）起算。",
-      "明清卡片小字先取非空reign.title；普通皇帝title留空后按共用规则优先取era_names。三条皇帝title例外为朱元璋吴王时期（吴）、努尔哈赤（太祖）、皇太极（太宗）；朱祁镇两段年号分别为正统、天顺。",
+      "明、南明、清各在位段将用于泳道卡片展示的首个年号预存于reign.title；完整年号列表仍保存在era_names，仅用于事实展示和检索。三条旧称号例外保持不变：朱元璋吴王段为吴、努尔哈赤为太祖、皇太极为太宗；朱祁镇两段title分别为正统、天顺。人物页不优先title，仍按年代规则取庙号或谥号。",
       "徐寿辉谥号应天启运献武皇帝、庙号世宗，为明玉珍1361年追尊；唐至元卡片通例显示庙号，详情列出全部年号。",
       "明玉珍谥号钦文昭武皇帝、庙号太祖，见维基及重庆叡陵《玄宫之碑》。",
       "夺门之变落点取公历 1457 年 2 月（景泰八年正月十七日＝2 月 11 日），与英宗复辟在位日起算一致，不把农历正月写成 1 月。",

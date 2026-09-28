@@ -20,7 +20,7 @@ function reign(overrides: Partial<Reign> & { templeName?: string }): Reign {
 }
 
 describe("buildEntityDetail reign", () => {
-  it("uses the same appellation on cards and detail panels", () => {
+  it("uses the conventional appellation in the detail heading", () => {
     const store = {
       dynasties: [
         {
@@ -54,23 +54,18 @@ describe("buildEntityDetail reign", () => {
 
     expect(detail.ref).toEqual({ type: "person", id: "zhao-kuangyin" });
     expect(detail.title).toBe("赵匡胤");
-    expect(detail.subtitle).toBe("北宋 · 宋太祖");
+    expect(detail.subtitle).toBe("北宋 · 太祖");
     expect(detail.facts).toEqual([
+      { label: "在位", value: "960 — 976" },
       { label: "庙号", value: "太祖" },
       { label: "年号", value: "建隆" },
     ]);
-    expect(detail.capitalTenures).toEqual([
-      {
-        tenure: {
-          ref: { type: "reign", id: "reign-test" },
-          label: "960 — 976",
-          abs: 0,
-        },
-      },
+    expect(detail.capitalTenures).toMatchObject([
+      { tenure: { ref: { type: "reign", id: "reign-test" }, abs: 0 } },
     ]);
   });
 
-  it("pairs capitals with reign tenure rows and drops the duplicate tenure fact", () => {
+  it("pairs capitals with reign tenure rows while retaining focused reign facts", () => {
     const store = {
       dynasties: [
         {
@@ -149,7 +144,7 @@ describe("buildEntityDetail reign", () => {
 
     const detail = buildEntityDetail(store, { type: "reign", id: "reign-tang-test" });
 
-    expect(detail.facts.map((fact) => fact.label)).not.toContain("在位");
+    expect(detail.facts).toContainEqual({ label: "在位", value: "712 — 756" });
     expect(detail.capitalTenures).toHaveLength(2);
     expect(detail.capitalTenures[0]?.capital.label).toBe("长安");
     expect(detail.capitalTenures[0]?.tenure.label).toBe("712年9月 — 756年8月");
@@ -301,7 +296,7 @@ describe("buildEntityDetail event", () => {
     expect(detail.title).toBe("牧野之战");
     expect(detail.subtitle).toBe("政治");
     expect(detail.facts).toEqual([
-      { label: "时间", value: "公元前1046年" },
+      { label: "时间", value: "-1046年" },
       { label: "类型", value: "政治" },
     ]);
   });
@@ -348,7 +343,7 @@ describe("buildEntityDetail event", () => {
       expect.objectContaining({ ref: { type: "dynasty", id: "daxi" }, label: "大西" }),
     ]);
     expect(detail.facts).toEqual([
-      { label: "时间", value: "公元1644年12月" },
+      { label: "时间", value: "1644年12月" },
       { label: "类型", value: "军事" },
     ]);
   });
@@ -413,7 +408,7 @@ describe("buildEntityDetail event", () => {
 
     expect(detail.subtitle).toBe("文化");
     expect(detail.facts).toEqual([
-      { label: "时间", value: "约公元前2000年 — 公元前1100年" },
+      { label: "时间", value: "约-2000年 — -1100年" },
       { label: "类型", value: "文化" },
       {
         label: "说明",
@@ -938,7 +933,7 @@ describe("buildEntityDetail person", () => {
           id: "reign-zhu-yuanzhang-ming",
           dynastyId: "ming",
           personId: "zhu-yuanzhang",
-          title: "明太祖",
+          title: "洪武",
           start: { year: 1368, month: 1 },
           end: { year: 1398, month: 6 },
           startAbs: 31,
@@ -967,9 +962,89 @@ describe("buildEntityDetail person", () => {
     );
 
     expect(detail.title).toBe("朱元璋");
-    expect(detail.subtitle).toBe("明 · 明太祖");
+    expect(detail.subtitle).toBe("明 · 太祖 · 2/2");
     expect(detail.capitalTenures.map((row) => row.tenure.ref.id)).toEqual([
       "reign-zhu-yuanzhang-ming",
+    ]);
+  });
+
+  it("uses the same appellation heading without a focus reign, minus the ordinal", () => {
+    const store = {
+      dynasties: [
+        {
+          id: "ming",
+          name: "明",
+          scope: "cn" as const,
+          region: "east_asia",
+          start: { year: 1368, month: 1 },
+          end: { year: 1644, month: 12 },
+          startAbs: 100,
+          endAbs: 200,
+          precision: "year" as const,
+          colorToken: "cinnabar" as const,
+        },
+      ],
+      reigns: [
+        reign({
+          id: "reign-zhu-qizhen-ming",
+          dynastyId: "ming",
+          personId: "zhu-qizhen",
+          title: "正统",
+          start: { year: 1435, month: 1 },
+          end: { year: 1449, month: 9 },
+          startAbs: 10,
+          endAbs: 20,
+          eraNames: ["正统"],
+        }),
+        reign({
+          id: "reign-zhu-qizhen-ming-2",
+          dynastyId: "ming",
+          personId: "zhu-qizhen",
+          title: "天顺",
+          start: { year: 1457, month: 2 },
+          end: { year: 1464, month: 2 },
+          startAbs: 30,
+          endAbs: 40,
+          eraNames: ["天顺"],
+        }),
+      ],
+      persons: [
+        {
+          id: "zhu-qizhen",
+          name: "朱祁镇",
+          title: "皇帝",
+          roles: ["皇帝"],
+          posthumousNames: ["睿皇帝"],
+          templeNames: ["英宗"],
+          links: [],
+        },
+      ],
+      events: [],
+      relations: [],
+    };
+
+    const unfocused = buildEntityDetail(store, { type: "person", id: "zhu-qizhen" });
+    const focused = buildEntityDetail(
+      store,
+      { type: "person", id: "zhu-qizhen" },
+      { focusReignId: "reign-zhu-qizhen-ming", reignCount: 2, focusReignIndex: 1 },
+    );
+
+    expect(unfocused.subtitle).toBe("明 · 英宗");
+    expect(focused.subtitle).toBe("明 · 英宗 · 1/2");
+    expect(unfocused.reignCount).toBe(2);
+    expect(focused.reignCount).toBe(2);
+    expect(unfocused.facts.filter((fact) => fact.label === "在位")).toEqual([
+      { label: "在位", value: "1435 — 1449\n1457 — 1464" },
+    ]);
+    expect(focused.facts.filter((fact) => fact.label === "在位")).toEqual([
+      { label: "在位", value: "1435 — 1449" },
+    ]);
+    expect(unfocused.facts.filter((fact) => fact.label === "年号")).toEqual([
+      { label: "年号", value: "正统，天顺" },
+    ]);
+    expect(focused.facts.filter((fact) => fact.label === "年号")).toEqual([
+      { label: "年号", value: "正统" },
     ]);
   });
 });
@@ -1015,7 +1090,7 @@ describe("buildEntityDetail idiom event", () => {
 
     expect(detail.facts).toEqual([
       { label: "释义", value: "比喻诚心诚意地一再邀请或拜访。" },
-      { label: "典故年代", value: "公元207年" },
+      { label: "典故年代", value: "207年" },
       { label: "类型", value: "成语" },
     ]);
     expect(detail.summary).toBe("刘备三请诸葛亮。");

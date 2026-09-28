@@ -132,7 +132,7 @@ describe("shouldShowReignCardMeta", () => {
 });
 
 describe("buildReignCardTooltip", () => {
-  const time = "公元304年1月 — 公元310年7月 · 6年7个月";
+  const time = "304年1月 — 310年7月 · 6年7个月";
 
   it("shows only time when the card already shows name and meta", () => {
     expect(

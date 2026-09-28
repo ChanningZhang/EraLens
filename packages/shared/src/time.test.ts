@@ -27,14 +27,14 @@ describe("time utilities", () => {
     expect(fromAbsMonth(12.49)).toEqual({ year: 1, month: 1 });
   });
 
-  it("formats BCE years", () => {
-    expect(formatYear(-221)).toBe("公元前221年");
-    expect(formatYear(200)).toBe("公元200年");
+  it("formats years with signed numbers and no era prefix", () => {
+    expect(formatYear(-221)).toBe("-221年");
+    expect(formatYear(200)).toBe("200年");
   });
 
   it("formats abs span tooltip for multi-year ranges", () => {
     expect(formatAbsSpanTooltip(absMonth(-221), absMonth(-210))).toBe(
-      "前221年 — 前210年 · 12年",
+      "-221年 — -210年 · 12年",
     );
   });
 
@@ -45,13 +45,13 @@ describe("time utilities", () => {
   it("hides month for year-precision spans stored as Jan–Dec", () => {
     expect(
       formatAbsSpanTooltip(absMonth(-356, 1), absMonth(-320, 12), "year"),
-    ).toBe("前356年 — 前320年 · 37年");
+    ).toBe("-356年 — -320年 · 37年");
   });
 
   it("shows months for month-precision spans", () => {
     expect(
       formatAbsSpanTooltip(absMonth(-356, 3), absMonth(-320, 12), "month"),
-    ).toBe("前356年3月 — 前320年12月 · 36年10个月");
+    ).toBe("-356年3月 — -320年12月 · 36年10个月");
   });
 
   it("collapses same-calendar-year year-precision spans", () => {

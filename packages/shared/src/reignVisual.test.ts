@@ -140,7 +140,7 @@ describe("formatReignSpanTooltip", () => {
           endAbs: absMonth(-320, 12),
         }),
       ),
-    ).toBe("前356年 — 前320年 · 37年");
+    ).toBe("-356年 — -320年 · 37年");
   });
 
   it("replaces uncertain tooltip endpoints with question marks", () => {
@@ -155,7 +155,7 @@ describe("formatReignSpanTooltip", () => {
           startDateConfidence: "interpolated",
         }),
       ),
-    ).toBe("？ — 前863年 · ？年");
+    ).toBe("？ — -863年 · ？年");
   });
 });
 

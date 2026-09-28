@@ -64,7 +64,5 @@ export function buildRulerTicks(
 }
 
 export function formatRulerYear(year: number): string {
-  if (year < 0) return `前${Math.abs(year)}`;
-  if (year === 0) return "元年";
   return `${year}`;
 }

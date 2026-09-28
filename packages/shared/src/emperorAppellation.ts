@@ -4,7 +4,6 @@ import {
   resolveRocReignDetailSubtitle,
 } from "./rocTaiwanLeaderDisplay";
 import {
-  MING_QING_START_YEAR,
   PRE_IMPERIAL_START_YEAR,
   TEMPLE_ERA_START_YEAR,
 } from "./appellationPolicy";
@@ -12,7 +11,6 @@ import type { AppellationKind, Reign } from "./schema";
 import { formatReignDurationLabel, formatReignYearRange } from "./reignVisual";
 
 export {
-  MING_QING_START_YEAR,
   PRE_IMPERIAL_START_YEAR,
   TEMPLE_ERA_START_YEAR,
 } from "./appellationPolicy";
@@ -25,7 +23,6 @@ export type EmperorAppellation = {
 export const APPELLATION_LABELS: Record<AppellationKind, string> = {
   posthumous: "谥号",
   temple: "庙号",
-  era: "年号",
   regnal: "称号",
 };
 
@@ -72,10 +69,6 @@ function eraNameList(reign: ReignAppellationFields): string[] {
   return reign.eraNames.filter(Boolean);
 }
 
-function firstEraName(reign: ReignAppellationFields): string | undefined {
-  return eraNameList(reign)[0];
-}
-
 function resolvePosthumousAppellation(
   personContext?: PersonDisplayContext | null,
 ): EmperorAppellation | null {
@@ -97,12 +90,8 @@ export function resolveEmperorAppellation(
   reign: ReignAppellationFields,
   personContext?: PersonDisplayContext | null,
 ): EmperorAppellation | null {
-  const eraName = firstEraName(reign);
   const year = reign.start.year;
 
-  if (year >= MING_QING_START_YEAR && eraName) {
-    return { kind: "era", name: eraName };
-  }
   if (year >= TEMPLE_ERA_START_YEAR) {
     const temple = resolveTempleAppellation(personContext);
     if (temple) return temple;
@@ -114,15 +103,9 @@ export function resolveEmperorAppellation(
   const temple = resolveTempleAppellation(personContext);
   if (temple) return temple;
 
-  if (year < TEMPLE_ERA_START_YEAR && reign.title) {
-    return { kind: "regnal", name: reign.title };
-  }
-
-  if (eraName) {
-    return { kind: "era", name: eraName };
-  }
-  if (reign.title) {
-    return { kind: "regnal", name: reign.title };
+  const title = reign.title.trim();
+  if (title) {
+    return { kind: "regnal", name: title };
   }
   return null;
 }
@@ -364,20 +347,19 @@ function isRedundantCardMeta(
 }
 
 /** Card small-text preference, independent from the large primary label. */
-function resolveReignCardAppellation(
-  reign: ReignAppellationFields,
+export function resolveReignCardAppellation(
+  reign: ReignAppellationFields | null | undefined,
   personContext?: PersonDisplayContext | null,
 ): EmperorAppellation | null {
+  if (!reign) {
+    return (
+      resolvePosthumousAppellation(personContext) ??
+      resolveTempleAppellation(personContext)
+    );
+  }
+
   const title = reign.title.trim();
   if (title) return { kind: "regnal", name: title };
-
-  const eraName = firstEraName(reign);
-
-  // Ming and Qing cards conventionally use era names when no explicit reign
-  // title was stored. This is a period-wide rule, independent of person fields.
-  if (reign.start.year >= MING_QING_START_YEAR && eraName) {
-    return { kind: "era", name: eraName };
-  }
 
   if (reign.start.year >= TEMPLE_ERA_START_YEAR) {
     const temple = resolveTempleAppellation(personContext);
@@ -390,11 +372,26 @@ function resolveReignCardAppellation(
   const temple = resolveTempleAppellation(personContext);
   if (temple) return temple;
 
-  if (eraName) return { kind: "era", name: eraName };
-
   const personTitle = personContext?.title?.trim();
   if (personTitle) return { kind: "regnal", name: personTitle };
   return null;
+}
+
+/** Detail headings prefer the conventional period appellation; title is fallback only. */
+export function resolveReignDetailHeading(
+  reign: ReignAppellationFields | null | undefined,
+  dynastyName?: string | null,
+  personName?: string | null,
+  personContext?: PersonDisplayContext | null,
+): string {
+  const appellation = reign
+    ? resolveEmperorAppellation(reign, personContext)?.name
+    : (
+        resolvePosthumousAppellation(personContext) ??
+        resolveTempleAppellation(personContext)
+      )?.name;
+  const name = appellation ?? reign?.title.trim() ?? personName ?? "";
+  return [dynastyName, name].filter(Boolean).join(" · ");
 }
 
 /** Secondary line shown when the card has enough space. */

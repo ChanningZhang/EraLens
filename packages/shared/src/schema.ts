@@ -131,7 +131,6 @@ export const PersonSchema = z.object({
 export const AppellationKindSchema = z.enum([
   "posthumous",
   "temple",
-  "era",
   "regnal",
 ]);
 
@@ -402,6 +401,7 @@ export const EntityDetailSchema = z.object({
   subtitle: z.string().optional(),
   dynastyId: z.string().optional(),
   colorToken: ColorTokenSchema.optional(),
+  reignCount: z.number().int().nonnegative().optional(),
   facts: z.array(z.object({ label: z.string(), value: z.string() })).default([]),
   summary: z.string().optional(),
   content: z.string().optional(),

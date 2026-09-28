@@ -15,6 +15,8 @@ import {
   TimelineCatalogSchema,
   TimelineSliceSchema,
   type Event,
+  type Relation,
+  type TimelineDataStore,
 } from "@eralens/shared";
 import type { FastifyInstance } from "fastify";
 import { prisma } from "../db.js";
@@ -36,6 +38,238 @@ import {
 } from "../mappers.js";
 
 const CACHE_HEADER = "public, max-age=60";
+
+type PersonDetailBundleRow = {
+  persons: unknown;
+  dynasties: unknown;
+  reigns: unknown;
+  events: unknown;
+  relations: unknown;
+  selected_reign_ids: unknown;
+  focus_reign_index: number | null;
+  reign_count: number;
+};
+
+function jsonRows(value: unknown): Record<string, unknown>[] {
+  return Array.isArray(value) ? value as Record<string, unknown>[] : [];
+}
+
+function mapBundlePerson(row: Record<string, unknown>) {
+  return mapPerson({
+    id: String(row.id),
+    name: String(row.name),
+    altNames: (row.alt_names as string[] | undefined) ?? [],
+    ancestralXing: row.ancestral_xing as string | null,
+    clanShi: row.clan_shi as string | null,
+    birthYear: row.birth_year as number | null,
+    birthMonth: row.birth_month as number | null,
+    deathYear: row.death_year as number | null,
+    deathMonth: row.death_month as number | null,
+    roles: (row.roles as string[] | undefined) ?? [],
+    bio: row.bio as string | null,
+    links: row.links ?? [],
+    posthumousName: row.posthumous_name as string | null,
+    templeName: row.temple_name as string | null,
+    title: row.title as string | null,
+    searchTerms: (row.search_terms as string[] | undefined) ?? [],
+  });
+}
+
+function mapBundleRelation(row: Record<string, unknown>): Relation {
+  return {
+    id: String(row.id),
+    fromRef: `${String(row.from_type)}:${String(row.from_id)}`,
+    toRef: `${String(row.to_type)}:${String(row.to_id)}`,
+    kind: row.kind as Relation["kind"],
+    ...(row.at_year == null || row.at_month == null
+      ? {}
+      : {
+          at: {
+            year: Number(row.at_year),
+            month: Number(row.at_month),
+            ...(row.at_day == null ? {} : { day: Number(row.at_day) }),
+          },
+        }),
+    ...(row.at_abs == null ? {} : { atAbs: Number(row.at_abs) }),
+    ...(row.precision == null ? {} : { precision: row.precision as Relation["precision"] }),
+    ...(row.event_id == null ? {} : { eventId: String(row.event_id) }),
+  };
+}
+
+/** Person, reign rows, ordinal, and total are intentionally fetched in one SQL statement. */
+async function loadPersonDetailBundle(
+  personId: string | null,
+  focusReignId: string | null,
+): Promise<{
+  store: TimelineDataStore;
+  personId: string;
+  selectedReignIds: string[];
+  focusReignIndex?: number;
+  reignCount: number;
+} | null> {
+  const rows = await prisma.$queryRaw<PersonDetailBundleRow[]>`
+    WITH target_person AS (
+      SELECT p.*
+      FROM persons p
+      WHERE p.id = COALESCE(
+        ${personId}::text,
+        (SELECT r.person_id FROM reigns r WHERE r.id = ${focusReignId}::text)
+      )
+        AND (
+          ${focusReignId}::text IS NULL
+          OR EXISTS (
+            SELECT 1 FROM reigns r
+            WHERE r.id = ${focusReignId}::text AND r.person_id = p.id
+          )
+        )
+    ),
+    ranked_target_reigns AS (
+      SELECT r.*,
+             (ROW_NUMBER() OVER (
+               ORDER BY r.start_abs, COALESCE(r.start_day, 1), r.id
+             ))::int AS reign_index,
+             (COUNT(*) OVER ())::int AS reign_count
+      FROM reigns r
+      JOIN target_person tp ON tp.id = r.person_id
+    ),
+    selected_target_reigns AS (
+      SELECT *
+      FROM ranked_target_reigns
+      WHERE ${focusReignId}::text IS NULL OR id = ${focusReignId}::text
+    ),
+    selected_dynasty_ids AS (
+      SELECT DISTINCT dynasty_id FROM selected_target_reigns
+    ),
+    relevant_relations AS (
+      SELECT rel.*
+      FROM relations rel
+      WHERE EXISTS (
+        SELECT 1
+        FROM selected_target_reigns sr
+        WHERE (rel.from_type = 'reign' AND rel.from_id = sr.id)
+           OR (rel.to_type = 'reign' AND rel.to_id = sr.id)
+      )
+    ),
+    related_reign_ids AS (
+      SELECT from_id AS id FROM relevant_relations WHERE from_type = 'reign'
+      UNION
+      SELECT to_id AS id FROM relevant_relations WHERE to_type = 'reign'
+    ),
+    bundle_reigns AS (
+      SELECT r.*
+      FROM reigns r
+      WHERE r.dynasty_id IN (SELECT dynasty_id FROM selected_dynasty_ids)
+         OR r.id IN (SELECT id FROM related_reign_ids)
+    ),
+    relevant_events AS (
+      SELECT e.*
+      FROM events e
+      WHERE EXISTS (
+        SELECT 1 FROM event_participants ep
+        JOIN target_person tp ON tp.id = ep.person_id
+        WHERE ep.event_id = e.id
+      )
+    ),
+    bundle_dynasty_ids AS (
+      SELECT dynasty_id AS id FROM bundle_reigns
+      UNION
+      SELECT ed.dynasty_id AS id
+      FROM event_dynasties ed
+      JOIN relevant_events e ON e.id = ed.event_id
+    ),
+    bundle_person_ids AS (
+      SELECT id FROM target_person
+      UNION
+      SELECT r.person_id AS id
+      FROM reigns r
+      WHERE r.id IN (SELECT id FROM related_reign_ids)
+      UNION
+      SELECT from_id AS id FROM relevant_relations WHERE from_type = 'person'
+      UNION
+      SELECT to_id AS id FROM relevant_relations WHERE to_type = 'person'
+    )
+    SELECT
+      COALESCE((SELECT jsonb_agg(to_jsonb(p) ORDER BY p.id)
+                FROM persons p WHERE p.id IN (SELECT id FROM bundle_person_ids)), '[]'::jsonb) AS persons,
+      COALESCE((SELECT jsonb_agg(to_jsonb(d) ORDER BY d.id)
+                FROM dynasties d WHERE d.id IN (SELECT id FROM bundle_dynasty_ids)), '[]'::jsonb) AS dynasties,
+      COALESCE((SELECT jsonb_agg(to_jsonb(r) ORDER BY r.start_abs, COALESCE(r.start_day, 1), r.id)
+                FROM bundle_reigns r), '[]'::jsonb) AS reigns,
+      COALESCE((SELECT jsonb_agg(
+        to_jsonb(e) || jsonb_build_object(
+          'dynasties', COALESCE((SELECT jsonb_agg(jsonb_build_object('dynastyId', ed.dynasty_id) ORDER BY ed.dynasty_id)
+                                  FROM event_dynasties ed WHERE ed.event_id = e.id), '[]'::jsonb),
+          'participants', COALESCE((SELECT jsonb_agg(jsonb_build_object('personId', ep.person_id) ORDER BY ep.person_id)
+                                    FROM event_participants ep WHERE ep.event_id = e.id), '[]'::jsonb),
+          'location', (SELECT jsonb_build_object(
+            'id', l.id, 'historicalName', l.historical_name, 'modernName', l.modern_name,
+            'longitude', l.longitude, 'latitude', l.latitude,
+            'coordinateSystem', l.coordinate_system, 'precision', l.precision,
+            'note', l.note, 'links', l.links
+          ) FROM event_locations l WHERE l.id = e.location_id)
+        ) ORDER BY e.id
+      ) FROM relevant_events e), '[]'::jsonb) AS events,
+      COALESCE((SELECT jsonb_agg(to_jsonb(rel) ORDER BY rel.id)
+                FROM relevant_relations rel), '[]'::jsonb) AS relations,
+      COALESCE((SELECT jsonb_agg(sr.id ORDER BY sr.reign_index) FROM selected_target_reigns sr), '[]'::jsonb) AS selected_reign_ids,
+      (SELECT sr.reign_index FROM selected_target_reigns sr WHERE sr.id = ${focusReignId}::text) AS focus_reign_index,
+      COALESCE((SELECT MAX(rtr.reign_count) FROM ranked_target_reigns rtr), 0)::int AS reign_count`;
+
+  const row = rows[0];
+  if (!row) return null;
+  const persons = jsonRows(row.persons).map(mapBundlePerson);
+  const targetPerson = persons.find((person) => person.id === personId) ??
+    persons.find((person) =>
+      jsonRows(row.reigns).some((reign) => reign.id === focusReignId && reign.person_id === person.id)
+    );
+  if (!targetPerson) return null;
+  return {
+    store: {
+      persons,
+      dynasties: jsonRows(row.dynasties).map((value) => mapDynasty(value as never)),
+      reigns: jsonRows(row.reigns).map((value) => mapReign(value as never)),
+      events: jsonRows(row.events).map((value) => mapEvent(value as never)),
+      relations: jsonRows(row.relations).map(mapBundleRelation),
+    },
+    personId: targetPerson.id,
+    selectedReignIds: Array.isArray(row.selected_reign_ids)
+      ? row.selected_reign_ids.map(String)
+      : [],
+    ...(row.focus_reign_index == null ? {} : { focusReignIndex: Number(row.focus_reign_index) }),
+    reignCount: Number(row.reign_count),
+  };
+}
+
+async function loadPersonDetailCapitals(
+  store: TimelineDataStore,
+  selectedReignIds: readonly string[],
+) {
+  const selectedIds = new Set(selectedReignIds);
+  const dynastyIds = [
+    ...new Set(
+      store.reigns
+        .filter((reign) => selectedIds.has(reign.id))
+        .map((reign) => reign.dynastyId),
+    ),
+  ];
+  if (dynastyIds.length === 0) return [];
+  const rows = await prisma.$queryRaw<RawDynastyCapitalRow[]>`
+    SELECT id, dynasty_id, historical_name, modern_name,
+           longitude, latitude, coordinate_system,
+           start_year, start_month, start_day,
+           end_year, end_month, end_day,
+           start_abs, end_abs, precision, end_precision,
+           start_date_confidence, end_date_confidence,
+           role, claim_track,
+           ARRAY(SELECT rc.reign_id FROM reign_capitals rc
+                 WHERE rc.capital_id = dynasty_capitals.id
+                 ORDER BY rc.reign_id) AS reign_ids,
+           note, links
+    FROM dynasty_capitals
+    WHERE dynasty_id = ANY(${dynastyIds}::text[])
+    ORDER BY start_abs, role, id`;
+  return rows.map(mapDynastyCapital);
+}
 
 async function loadStore() {
   const [personRows, dynastyRows, reignRows, eventRows, relationRows] = await Promise.all([
@@ -364,23 +598,40 @@ export async function registerRoutes(app: FastifyInstance) {
         return EntityDetailSchema.parse(detail);
       }
 
-      const store = await loadStore();
       const query = request.query as { focusReign?: string };
       let entityType = params.type;
       let entityId = params.id;
       let focusReignId = query.focusReign;
 
-      if (params.type === "reign") {
-        const reign = store.reigns.find((item) => item.id === params.id);
-        if (!reign) {
+      if (params.type === "person" || params.type === "reign") {
+        const requestedPersonId = params.type === "person" ? params.id : null;
+        focusReignId = params.type === "reign" ? params.id : focusReignId;
+        const bundle = await loadPersonDetailBundle(
+          requestedPersonId,
+          focusReignId ?? null,
+        );
+        if (!bundle) {
           reply.code(404);
           return { error: "Entity not found" };
         }
-        entityType = "person";
-        entityId = reign.personId;
-        focusReignId = params.id;
+        const capitals = await loadPersonDetailCapitals(
+          bundle.store,
+          bundle.selectedReignIds,
+        );
+        const detail = buildEntityDetail(
+          { ...bundle.store, capitals },
+          { type: "person", id: bundle.personId },
+          {
+            focusReignId,
+            selectedReignIds: bundle.selectedReignIds,
+            focusReignIndex: bundle.focusReignIndex,
+            reignCount: bundle.reignCount,
+          },
+        );
+        return EntityDetailSchema.parse(detail);
       }
 
+      const store = await loadStore();
       let capitals;
       if (entityType === "dynasty") {
         const dynasty = store.dynasties.find((item) => item.id === entityId);
@@ -402,44 +653,6 @@ export async function registerRoutes(app: FastifyInstance) {
           WHERE dynasty_id = ${dynasty.id}
           ORDER BY start_abs, role, id`;
         capitals = rows.map(mapDynastyCapital);
-      } else if (entityType === "person") {
-        const person = store.persons.find((item) => item.id === entityId);
-        if (!person) {
-          reply.code(404);
-          return { error: "Entity not found" };
-        }
-        const dynastyIds = [
-          ...new Set(
-            store.reigns
-              .filter((reign) => reign.personId === person.id)
-              .map((reign) => reign.dynastyId),
-          ),
-        ];
-        if (dynastyIds.length > 0) {
-          const rows = await prisma.dynastyCapital.findMany({
-            where: { dynastyId: { in: dynastyIds } },
-            orderBy: [{ startAbs: "asc" }, { role: "asc" }, { id: "asc" }],
-          });
-          const capitalReigns = rows.length
-            ? await prisma.reignCapital.findMany({
-                where: { capitalId: { in: rows.map((item) => item.id) } },
-                select: { capitalId: true, reignId: true },
-                orderBy: [{ capitalId: "asc" }, { reignId: "asc" }],
-              })
-            : [];
-          const reignIdsByCapital = new Map<string, string[]>();
-          for (const item of capitalReigns) {
-            const list = reignIdsByCapital.get(item.capitalId) ?? [];
-            list.push(item.reignId);
-            reignIdsByCapital.set(item.capitalId, list);
-          }
-          capitals = rows.map((row) =>
-            mapDynastyCapital({
-              ...row,
-              reignIds: reignIdsByCapital.get(row.id) ?? [],
-            }),
-          );
-        }
       }
 
       const detail = buildEntityDetail(
@@ -448,7 +661,7 @@ export async function registerRoutes(app: FastifyInstance) {
           type: entityType as "dynasty" | "person" | "event",
           id: entityId,
         },
-        entityType === "person" ? { focusReignId } : {},
+        {},
       );
       return EntityDetailSchema.parse(detail);
     } catch {

@@ -72,6 +72,28 @@
   line-height: 1.2;
 }
 
+.titleLink {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
+.titleLink:hover {
+  color: var(--color-ink-secondary);
+}
+
+.titleLink:focus-visible {
+  outline: 2px solid var(--detail-accent, var(--color-accent));
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
 .subtitle {
   margin: var(--space-1) 0 0;
   font-size: 13px;
@@ -135,6 +157,15 @@
 .factValue {
   min-width: 0;
   text-align: right;
+  white-space: pre-line;
+}
+
+.factMultiline {
+  align-items: center;
+}
+
+.factMultiline .factValue {
+  line-height: 1.7;
 }
 
 .factBlock {
