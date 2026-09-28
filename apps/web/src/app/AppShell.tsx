@@ -163,7 +163,7 @@ export function AppShell() {
       }}
     >
       <header className={styles.header} aria-label="EraLens 导航">
-        {presentation.narrow && <ExpandToggle
+        <ExpandToggle
           className={styles.railToggle}
           axis="horizontal"
           expanded={!presentation.railCollapsed}
@@ -174,7 +174,7 @@ export function AppShell() {
             updateLayout({ railCollapsed: nextCollapsed });
             if (nextCollapsed) setEventSettingsOpen(false);
           }}
-        />}
+        />
         <div className={styles.brand}>
           {!presentation.railCollapsed && <>
             <h1 className={styles.brandTitle}>EraLens</h1>

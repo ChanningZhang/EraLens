@@ -229,6 +229,18 @@ SQL 列映射示例见 [reference.md](reference.md)；数据录入请以 `cache.
 
 ### 5. 校验
 
+导入包新增或修改王朝名、人物名、称谓、庙号或谥号后，先检查时间轴衬线字体子集是否覆盖这些字形：
+
+```bash
+# 只检查当前导入包
+node .cursor/skills/eralens-period-import/scripts/check-timeline-font-coverage.mjs {slug}
+
+# 不带 slug 时检查所有导入包
+node .cursor/skills/eralens-period-import/scripts/check-timeline-font-coverage.mjs
+```
+
+检查器读取 `cache.json` 中的王朝名、人物名/称谓、谥号/庙号和在位称号，与 `apps/web/src/design/timelineSerifFont.css` 的 `unicode-range` 及其字体文件核对。若列出缺字，需把缺失字形加入 `EraLens Lane Serif` 的 WOFF2 子集及对应 CSS 声明，再运行检查器确认通过；新增王朝或人物不能仅因现有字体文件已打包就视为覆盖。
+
 ```bash
 node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/imports/{slug}/import.sql
 ```

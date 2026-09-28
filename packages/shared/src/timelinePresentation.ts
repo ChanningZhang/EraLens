@@ -14,7 +14,7 @@ export const DEFAULT_TIMELINE_LAYOUT_PREFERENCES: TimelineLayoutPreferences = {
 export function resolveTimelinePresentation(widthPx: number, preferences = DEFAULT_TIMELINE_LAYOUT_PREFERENCES) {
   const narrow = widthPx <= 600;
   const compact = preferences.density === "compact" || (preferences.density === "auto" && narrow);
-  const railCollapsed = narrow && preferences.railCollapsed;
+  const railCollapsed = preferences.railCollapsed;
   const rowHeightPx = compact ? 32 : 36;
   const lanePaddingPx = 4;
   return {

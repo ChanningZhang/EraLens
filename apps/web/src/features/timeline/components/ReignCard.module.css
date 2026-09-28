@@ -181,7 +181,7 @@
   position: absolute;
   left: 50%;
   z-index: 2;
-  font-family: var(--font-serif);
+  font-family: "EraLens Lane Serif", var(--font-serif);
   font-size: 12px;
   font-weight: 600;
   line-height: 1.2;
@@ -210,7 +210,7 @@
 
 .name {
   margin: 0;
-  font-family: var(--font-serif);
+  font-family: "EraLens Lane Serif", var(--font-serif);
   font-size: var(--card-name-size, 15px);
   font-weight: 600;
   line-height: 1;

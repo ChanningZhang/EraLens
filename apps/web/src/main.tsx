@@ -7,6 +7,7 @@ import { App } from "./app/App";
 import { installTimelineWheel } from "./features/timeline/hooks/useTimelineWheel";
 import "./design/tokens.css";
 import "./design/rareCjkFont.css";
+import "./design/timelineSerifFont.css";
 import "./design/typography.css";
 import "./design/masterGold.css";
 
