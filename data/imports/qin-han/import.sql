@@ -9,7 +9,7 @@ DELETE FROM events WHERE id = 'wang-mang-usurp';
 
 -- persons
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name, title)
-VALUES ('ying-zheng', '赵政', ARRAY['嬴政'], NULL, NULL, -259, 1, -210, 1, ARRAY['皇帝'], '秦始皇帝，灭六国统一天下，建立中国首个大一统中央集权帝国。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/秦始皇"}]'::jsonb, NULL, NULL, '秦始皇')
+VALUES ('ying-zheng', '嬴政', ARRAY['嬴政','赵政'], '嬴', '赵', -259, 1, -210, 1, ARRAY['皇帝'], '秦始皇帝，灭六国统一天下，建立中国首个大一统中央集权帝国。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/秦始皇"}]'::jsonb, NULL, NULL, '秦始皇')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, title = EXCLUDED.title;
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name, title)
 VALUES ('ying-huhai', '胡亥', ARRAY[]::text[], NULL, NULL, NULL, NULL, NULL, NULL, ARRAY['皇帝'], '秦二世皇帝，赵高矫诏即位，秦政益暴，终致天下反叛。', '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/秦二世"}]'::jsonb, NULL, NULL, '秦二世')

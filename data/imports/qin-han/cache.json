@@ -9,9 +9,10 @@
   "persons": [
     {
       "id": "ying-zheng",
-      "name": "赵政",
+      "name": "嬴政",
       "altNames": [
-        "嬴政"
+        "嬴政",
+        "赵政"
       ],
       "birth": {
         "year": -259,
@@ -35,6 +36,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
+      "ancestralXing": "嬴",
+      "clanShi": "赵",
       "title": "秦始皇"
     },
     {
