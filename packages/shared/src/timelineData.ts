@@ -219,16 +219,7 @@ function buildPersonEntityDetail(
   const capitalReigns = focusReign ? [focusReign] : personReigns;
   const capitalTenures = capitalReigns.flatMap((reign) => {
     const rows = buildReignTenureCapitalRows(reign, store.capitals ?? [], store.reigns);
-    const name = personReigns.length < 2
-      ? ""
-      : (reign.eraNames.length > 0 ? reign.eraNames.join("、") : reign.title).trim();
-    return rows.map((row) => ({
-      ...row,
-      tenure: {
-        ...row.tenure,
-        ...(name ? { name } : {}),
-      },
-    }));
+    return rows;
   });
   const clan = buildPreQinClanContext(person);
   const participantEvents = eventsForPerson(store, person.id);

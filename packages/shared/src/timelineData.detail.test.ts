@@ -742,8 +742,8 @@ describe("buildEntityDetail person", () => {
     expect(detail.capitalTenures[0]?.tenure.label).toBe("1436 — 1449");
     expect(detail.capitalTenures[1]?.tenure.label).toBe("1457 — 1464");
     expect(detail.capitalTenures.map((row) => row.tenure.name)).toEqual([
-      "正统",
-      "明英宗",
+      undefined,
+      undefined,
     ]);
   });
 
