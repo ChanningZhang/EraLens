@@ -51,6 +51,22 @@ describe("createFramePanAccumulator", () => {
     expect(applied).toEqual([-20, 9]);
     expect(callbacks.size).toBe(0);
   });
+
+  it("cancels a queued pan without applying it", () => {
+    const applied: number[] = [];
+    const callbacks = new Map<number, FrameRequestCallback>();
+    const pan = createFramePanAccumulator(
+      (delta) => applied.push(delta),
+      (callback) => { callbacks.set(1, callback); return 1; },
+      (id) => { callbacks.delete(id); },
+    );
+
+    pan.queue(18);
+    pan.cancel();
+
+    expect(callbacks.size).toBe(0);
+    expect(applied).toEqual([]);
+  });
 });
 
 describe("shouldDeferToStageVerticalScroll", () => {

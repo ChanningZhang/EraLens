@@ -1,4 +1,4 @@
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { memo } from "react";
 import {
   getDynastyLaneGroup,
@@ -127,7 +127,6 @@ export function DynastyLane({
   badges,
 }: Props) {
   const viewport = useViewport();
-  const reduceMotion = useReducedMotion();
   const selection = useSelection();
   const labelAnchorAbs = laneLabelAnchorAbs(viewport);
   const cardPanX = worldPanOffsetX(viewport);
@@ -152,13 +151,11 @@ export function DynastyLane({
   // chip overlays gold when the center guide falls within a master reign.
   const laneColor = resolveDynastyColorValue(activePhaseDynasty, laneColorToken);
   return (
-    <motion.div
+    <div
       className={styles.lane}
-      initial={reduceMotion ? false : { top: top + 10, height, opacity: 0 }}
-      animate={{ top, height, opacity: 1 }}
-      exit={{ opacity: 0, transition: { duration: reduceMotion ? 0 : 0.14 } }}
-      transition={{ duration: reduceMotion ? 0 : 0.24, ease: [0.2, 0.8, 0.2, 1] }}
       style={{
+        top,
+        height,
         ["--dynasty-color" as string]: laneColor,
         ["--dynasty-bar-height" as string]: `${barHeight}px`,
       }}
@@ -217,6 +214,6 @@ export function DynastyLane({
         </div>
       </div>
       <EventLayer placed={badges} height={height} laneBadges />
-    </motion.div>
+    </div>
   );
 }

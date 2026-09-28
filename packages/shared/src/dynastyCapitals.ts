@@ -67,7 +67,9 @@ function formatTenureRangeLabel(
     precision: Reign["precision"] | undefined,
     confidence: Reign["startDateConfidence"] | undefined,
   ): string => {
-    if (isUncertainDateConfidence(confidence)) return "？";
+    if ((precision ?? "year") === "year" && isUncertainDateConfidence(confidence)) {
+      return "？";
+    }
     if (precision === "day" && point.day != null) {
       return `${formatYearMonth(point.year, point.month)}${point.day}日`;
     }

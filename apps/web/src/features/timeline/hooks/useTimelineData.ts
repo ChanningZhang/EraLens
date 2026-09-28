@@ -15,8 +15,9 @@ const SCOPE = "cn";
 const TIMELINE_CACHE_VERSION = 35;
 /** Historical slices do not change at runtime; keep them hot across tab idle. */
 const STALE_TIME = Infinity;
-/** Prefetched neighbors have 0 observers; default 5 min gc would drop them overnight. */
-const GC_TIME = 24 * 60 * 60_000;
+/** A short fallback GC prevents a long mobile session from retaining every visited era. */
+const GC_TIME = 5 * 60_000;
+const RETAINED_NEIGHBOR_CHUNKS = 2;
 
 function chunkKey(chunk: QueryChunk) {
   return ["timeline-chunk", TIMELINE_CACHE_VERSION, chunk.fromAbs, chunk.toAbs, SCOPE] as const;
@@ -28,14 +29,27 @@ function sameChunks(a: readonly QueryChunk[], b: readonly QueryChunk[]): boolean
   );
 }
 
-async function fetchTimelineChunk(chunk: QueryChunk, lod: Lod) {
+async function fetchTimelineChunk(chunk: QueryChunk, lod: Lod, signal?: AbortSignal) {
   const repo = await getRepository();
   return repo.getTimeline({
     fromAbs: chunk.fromAbs,
     toAbs: chunk.toAbs,
     lod,
     scope: SCOPE,
+    signal,
   });
+}
+
+export function shouldPruneTimelineChunk(
+  queryKey: readonly unknown[],
+  retainFromAbs: number,
+  retainToAbs: number,
+): boolean {
+  if (queryKey[0] !== "timeline-chunk" || queryKey[1] !== TIMELINE_CACHE_VERSION) return false;
+  const fromAbs = queryKey[2];
+  const toAbs = queryKey[3];
+  if (typeof fromAbs !== "number" || typeof toAbs !== "number") return false;
+  return toAbs < retainFromAbs || fromAbs > retainToAbs;
 }
 
 const CHUNK_QUERY_OPTIONS = {
@@ -63,7 +77,7 @@ export function useTimelineData() {
 
   const queryOptions = useMemo(() => chunks.map((chunk) => ({
     queryKey: chunkKey(chunk),
-    queryFn: () => fetchTimelineChunk(chunk, viewport.lod),
+    queryFn: ({ signal }: { signal: AbortSignal }) => fetchTimelineChunk(chunk, viewport.lod, signal),
     ...CHUNK_QUERY_OPTIONS,
   })), [chunks, viewport.lod]);
   const chunkQueries = useQueries({
@@ -96,6 +110,15 @@ export function useTimelineData() {
   useEffect(() => {
     if (chunks.length === 0) return;
 
+    const chunkSize = chunks[0]!.toAbs - chunks[0]!.fromAbs;
+    const retainFromAbs = chunks[0]!.fromAbs - chunkSize * RETAINED_NEIGHBOR_CHUNKS;
+    const retainToAbs = chunks[chunks.length - 1]!.toAbs + chunkSize * RETAINED_NEIGHBOR_CHUNKS;
+    queryClient.removeQueries({
+      predicate: (query) =>
+        query.getObserversCount() === 0 &&
+        shouldPruneTimelineChunk(query.queryKey, retainFromAbs, retainToAbs),
+    });
+
     const neighbors = [
       getAdjacentChunk(chunks[0]!, -1, viewport.lod),
       getAdjacentChunk(chunks[chunks.length - 1]!, 1, viewport.lod),
@@ -104,7 +127,7 @@ export function useTimelineData() {
     for (const prefetchChunk of neighbors) {
       void queryClient.prefetchQuery({
         queryKey: chunkKey(prefetchChunk),
-        queryFn: () => fetchTimelineChunk(prefetchChunk, viewport.lod),
+        queryFn: ({ signal }) => fetchTimelineChunk(prefetchChunk, viewport.lod, signal),
         ...CHUNK_QUERY_OPTIONS,
       });
     }

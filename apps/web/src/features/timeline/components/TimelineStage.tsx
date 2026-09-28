@@ -1,5 +1,4 @@
 import { memo, useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
-import { AnimatePresence } from "framer-motion";
 import { ExpandToggle } from "@/components/ExpandToggle";
 import {
   activeReignsAtAbs,
@@ -29,6 +28,7 @@ import { useLaneColorCatalog } from "../hooks/useLaneColorCatalog";
 import { useStageViewportSize } from "../hooks/useStageViewportHeight";
 import { resolveChinaMapInsets, resolveChinaMapLayout } from "../model/chinaMapProjection";
 import { useTimelineCatalog } from "../hooks/useTimelineCatalog";
+import { createFramePanAccumulator } from "../hooks/useTimelineWheel";
 import { useViewport } from "../hooks/useViewport";
 import { useSelection } from "../hooks/useSelection";
 import { viewportStore } from "../state/viewportStore";
@@ -96,6 +96,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     distance: number;
   } | null>(null);
   const timelineInertiaRef = useRef<number | null>(null);
+  const timelinePanRef = useRef<ReturnType<typeof createFramePanAccumulator> | null>(null);
   const [eventsExpanded, setEventsExpanded] = useState(false);
   const stageViewportSize = useStageViewportSize(stageRef);
   const stageViewportHeight = stageViewportSize.height;
@@ -120,6 +121,15 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       cancelAnimationFrame(timelineInertiaRef.current);
       timelineInertiaRef.current = null;
     }
+  };
+
+  const timelinePan = () => {
+    timelinePanRef.current ??= createFramePanAccumulator(
+      (deltaPx) => viewportStore.panByPixels(deltaPx),
+      (callback) => requestAnimationFrame(callback),
+      (id) => cancelAnimationFrame(id),
+    );
+    return timelinePanRef.current;
   };
 
   const startTimelineInertia = (initialVelocity: number) => {
@@ -147,6 +157,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     timelinePointersRef.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
     const points = [...timelinePointersRef.current.values()];
     if (points.length >= 2) {
+      timelinePanRef.current?.flush();
       const [a, b] = points;
       timelineGestureRef.current = {
         mode: "pinch",
@@ -180,6 +191,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       const distance = Math.max(1, Math.hypot(a.x - b.x, a.y - b.y));
       const midpointX = (a.x + b.x) / 2;
       if (gesture.mode === "pinch" && gesture.distance > 0) {
+        timelinePan().flush();
         const rect = event.currentTarget.getBoundingClientRect();
         const localX = midpointX - rect.left;
         const viewport = viewportStore.getSnapshot();
@@ -216,7 +228,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     const now = performance.now();
     const delta = event.clientX - gesture.x;
     const dt = now - gesture.time;
-    viewportStore.panByPixels(delta);
+    timelinePan().queue(delta);
     timelineGestureRef.current = {
       ...gesture,
       x: event.clientX,
@@ -232,10 +244,14 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     timelinePointersRef.current.delete(event.pointerId);
     const gesture = timelineGestureRef.current;
     timelineGestureRef.current = null;
+    timelinePanRef.current?.flush();
     if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
     if (gesture?.mode === "pan" && timelinePointersRef.current.size === 0) startTimelineInertia(gesture.velocity);
   };
-  useEffect(() => () => stopTimelineInertia(), []);
+  useEffect(() => () => {
+    stopTimelineInertia();
+    timelinePanRef.current?.cancel();
+  }, []);
 
   const dynastiesById = useMemo(() => {
     const map = new Map<string, Dynasty>();
@@ -651,9 +667,13 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
             </div>
           ) : error && !data ? (
             <div className={styles.empty}>
-              <p className={styles.emptyTitle}>数据加载失败</p>
+              <p className={styles.emptyTitle}>
+                {import.meta.env.VITE_DATA_SOURCE === "sqlite" ? "本地数据加载失败" : "数据加载失败"}
+              </p>
               <p className={styles.emptyHint}>
-                请确认 API 服务已启动（pnpm --filter @eralens/api dev）
+                {import.meta.env.VITE_DATA_SOURCE === "sqlite"
+                  ? "正在自动重试；若持续出现，请完全退出后重新打开应用"
+                  : "请确认 API 服务已启动（pnpm --filter @eralens/api dev）"}
               </p>
             </div>
           ) : (
@@ -664,40 +684,36 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
                   <p className={styles.emptyHint}>拖动底部标尺浏览其他年代</p>
                 </div>
               )}
-              <AnimatePresence initial={false}>
-                {clusterFrames.map(({ group, top, height, left, width }) => (
-                  <DynastyClusterFrame
-                    key={group.id}
-                    group={group}
-                    top={top}
-                    height={height}
-                    left={left}
-                    width={width}
-                  />
-                ))}
-              </AnimatePresence>
-              <AnimatePresence initial={false}>
-                {lanes.map(({ dynasty, reigns, visibleReigns, visibleMissingReigns, geometry, top, height }) => (
-                  <DynastyLane
-                    key={dynasty.id}
-                    dynasty={dynasty}
-                    laneColorToken={laneColorTokenFor(laneColorMap, dynasty.id)}
-                    reigns={reigns}
-                    visibleReigns={visibleReigns}
-                    visibleMissingReigns={visibleMissingReigns}
-                    reignGeometry={geometry.byId}
-                    rowCount={geometry.rowCount}
-                    barHeight={geometry.barHeight}
-                    dynastiesById={dynastiesById}
-                    personNames={personNames}
-                    personClans={personDisplay}
-                    laneGroups={laneGroups}
-                    top={top}
-                    height={height}
-                    badges={badgesByLane.get(dynasty.id) ?? []}
-                  />
-                ))}
-              </AnimatePresence>
+              {clusterFrames.map(({ group, top, height, left, width }) => (
+                <DynastyClusterFrame
+                  key={group.id}
+                  group={group}
+                  top={top}
+                  height={height}
+                  left={left}
+                  width={width}
+                />
+              ))}
+              {lanes.map(({ dynasty, reigns, visibleReigns, visibleMissingReigns, geometry, top, height }) => (
+                <DynastyLane
+                  key={dynasty.id}
+                  dynasty={dynasty}
+                  laneColorToken={laneColorTokenFor(laneColorMap, dynasty.id)}
+                  reigns={reigns}
+                  visibleReigns={visibleReigns}
+                  visibleMissingReigns={visibleMissingReigns}
+                  reignGeometry={geometry.byId}
+                  rowCount={geometry.rowCount}
+                  barHeight={geometry.barHeight}
+                  dynastiesById={dynastiesById}
+                  personNames={personNames}
+                  personClans={personDisplay}
+                  laneGroups={laneGroups}
+                  top={top}
+                  height={height}
+                  badges={badgesByLane.get(dynasty.id) ?? []}
+                />
+              ))}
             </>
           )}
           {eventPlaced.length > 0 && (

@@ -1,5 +1,4 @@
 import type { PlacedReignFate } from "../model/reignFateLayout";
-import { motion, useReducedMotion } from "framer-motion";
 import { InfoPopover } from "./InfoPopover";
 import styles from "./ReignFateLayer.module.css";
 
@@ -9,9 +8,7 @@ type Props = {
 };
 
 export function ReignFateLayer({ placed, height }: Props) {
-  const reduceMotion = useReducedMotion();
   if (placed.length === 0) return null;
-  const transition = { duration: reduceMotion ? 0 : 0.24, ease: [0.2, 0.8, 0.2, 1] as const };
 
   return (
     <svg
@@ -38,57 +35,54 @@ export function ReignFateLayer({ placed, height }: Props) {
               {...handlers}
             >
               {segments.map((segment, index) => (
-                <motion.line
+                <line
                   key={`hit-${index}`}
                   x1={segment.x1}
                   x2={segment.x2}
-                  animate={{ y1: segment.y1, y2: segment.y2 }}
-                  transition={transition}
+                  y1={segment.y1}
+                  y2={segment.y2}
                   className={styles.hit}
                 />
               ))}
-              <motion.line
+              <line
                 x1={item.tickX}
                 x2={item.tickX}
-                animate={{ y1: item.tickTop, y2: item.tickTop + item.tickHeight }}
-                transition={transition}
+                y1={item.tickTop}
+                y2={item.tickTop + item.tickHeight}
                 className={styles.hit}
               />
               {segments.map((segment, index) => (
-                <motion.line
+                <line
                   key={`path-${index}`}
                   x1={segment.x1}
                   x2={segment.x2}
-                  animate={{ y1: segment.y1, y2: segment.y2 }}
-                  transition={transition}
+                  y1={segment.y1}
+                  y2={segment.y2}
                   className={styles.path}
                 />
               ))}
-              <motion.line
+              <line
                 x1={item.tickX}
                 x2={item.tickX}
-                animate={{ y1: item.tickTop, y2: item.tickTop + item.tickHeight }}
-                transition={transition}
+                y1={item.tickTop}
+                y2={item.tickTop + item.tickHeight}
                 className={styles.tick}
               />
-              <motion.circle
+              <circle
                 cx={item.originX}
-                animate={{ cy: item.originY }}
-                transition={transition}
+                cy={item.originY}
                 r={7}
                 className={styles.originHit}
               />
-              <motion.circle
+              <circle
                 cx={item.originX}
-                animate={{ cy: item.originY }}
-                transition={transition}
+                cy={item.originY}
                 r={3.2}
                 className={styles.originRing}
               />
-              <motion.circle
+              <circle
                 cx={item.originX}
-                animate={{ cy: item.originY }}
-                transition={transition}
+                cy={item.originY}
                 r={1.2}
                 className={styles.originCore}
               />

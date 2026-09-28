@@ -8,3 +8,11 @@ export function useViewport() {
     viewportStore.getServerSnapshot,
   );
 }
+
+export function useViewportPresentation() {
+  return useSyncExternalStore(
+    viewportStore.subscribe,
+    () => viewportStore.getSnapshot().presentation,
+    () => viewportStore.getServerSnapshot().presentation,
+  );
+}

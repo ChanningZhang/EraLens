@@ -2122,9 +2122,10 @@
       "id": "an-lushan",
       "name": "安禄山",
       "roles": [
+        "皇帝",
         "将领"
       ],
-      "bio": "安史之乱发动者，范阳节度使。",
+      "bio": "唐朝范阳节度使，安史之乱的发动者。755年起兵反唐，次年在洛阳称帝，国号大燕、年号圣武；其势力一度攻占长安。757年为次子安庆绪所杀，后被史思明追谥光烈皇帝。",
       "links": [
         {
           "label": "维基百科",
@@ -2137,11 +2138,13 @@
         "abs": 8436
       },
       "death": {
-        "year": 761,
+        "year": 757,
         "month": 1,
-        "abs": 9132
+        "abs": 9084
       },
-      "posthumousNames": [],
+      "posthumousNames": [
+        "光烈皇帝"
+      ],
       "templeNames": [],
       "title": null
     },
@@ -2151,7 +2154,7 @@
       "roles": [
         "起义领袖"
       ],
-      "bio": "唐末农民起义领袖，攻入长安。",
+      "bio": "唐末起义领袖，曹州冤句人，曾以盐贩为业。乾符年间起兵反唐，转战南北并于880年攻入长安、称帝建大齐；唐军与沙陀军反攻后，起义军瓦解，黄巢在狼虎谷自杀（一说被杀）。",
       "links": [
         {
           "label": "维基百科",
@@ -2170,7 +2173,7 @@
       "roles": [
         "政治家"
       ],
-      "bio": "北宋改革家，熙宁变法主持者。",
+      "bio": "北宋政治家、文学家，字介甫，号半山，临川人。神宗朝任参知政事、宰相，主持熙宁变法，推行青苗、募役、方田等新法；变法引发长期争论，晚年退居金陵。",
       "links": [
         {
           "label": "维基百科",
@@ -2197,7 +2200,7 @@
       "roles": [
         "政治家"
       ],
-      "bio": "唐太宗时名相，以直言敢谏著称，为贞观之治奠基。",
+      "bio": "唐太宗时名相，以直言敢谏著称，为贞观之治奠基；唐太宗曾命人整理其谏议；魏征死后太宗一度撤毁墓碑，后来又恢复。",
       "links": [
         {
           "label": "维基百科",
@@ -2224,7 +2227,7 @@
       "roles": [
         "政治家"
       ],
-      "bio": "唐初宰相，与杜如晦并称房谋杜断。",
+      "bio": "唐初政治家、史学家，名乔，字玄龄，齐州临淄人。隋末归附秦王李世民，参与谋划并典掌文书；唐太宗即位后任宰相，参与制定制度、监修国史及编纂《晋书》。",
       "links": [
         {
           "label": "维基百科",
@@ -2251,7 +2254,7 @@
       "roles": [
         "政治家"
       ],
-      "bio": "唐初宰相，辅佐李世民定策夺位、治理天下。",
+      "bio": "唐初宰相，辅佐李世民定策夺位、治理天下；杜如晦去世较早，唐太宗追念其谋划才能；后世与房玄龄并称“房谋杜断”。",
       "links": [
         {
           "label": "维基百科",
@@ -2278,7 +2281,7 @@
       "roles": [
         "军事家"
       ],
-      "bio": "唐初名将，平定江南、北击突厥，封卫国公。",
+      "bio": "唐初名将，平定江南、北击突厥，封卫国公；代表战事包括平定萧铣、征讨东突厥与吐谷浑；晚年请辞兵权，著述影响唐代兵学。",
       "links": [
         {
           "label": "维基百科",
@@ -2305,7 +2308,7 @@
       "roles": [
         "军事家"
       ],
-      "bio": "平定安史之乱功臣，再造唐朝，封汾阳王。",
+      "bio": "唐代名将，字子仪，华州郑县人。安史之乱中率军收复长安、洛阳，后参与平定仆固怀恩之乱并迎回唐代宗；历事玄宗至德宗，官至中书令，封汾阳郡王。",
       "links": [
         {
           "label": "维基百科",
@@ -2332,7 +2335,7 @@
       "roles": [
         "政治家"
       ],
-      "bio": "武周名臣，断案如神，后复为宰相。",
+      "bio": "唐代政治家，字怀英，并州太原人。历任大理丞、御史及宰相，以执法审慎、敢于直谏著称；武则天执政时劝其恢复李唐继承，后世将其塑造成断案名臣。",
       "links": [
         {
           "label": "维基百科",
@@ -2359,7 +2362,7 @@
       "roles": [
         "诗人"
       ],
-      "bio": "盛唐诗人，诗仙，浪漫主义诗歌代表。",
+      "bio": "盛唐诗人，字太白，号青莲居士，生地有争议。曾受唐玄宗召入长安任翰林供奉，后离京漫游；诗歌想象瑰奇、气势奔放，与杜甫并称“李杜”，世称“诗仙”。",
       "links": [
         {
           "label": "维基百科",
@@ -2386,7 +2389,7 @@
       "roles": [
         "诗人"
       ],
-      "bio": "盛唐诗人，诗圣，现实主义诗歌高峰。",
+      "bio": "唐代诗人，字子美，自号少陵野老，祖籍襄阳，生于巩县。安史之乱中辗转流离，曾任左拾遗、检校工部员外郎；诗作广写时政与民生，后世尊为“诗圣”。",
       "links": [
         {
           "label": "维基百科",
@@ -2414,7 +2417,7 @@
         "诗人",
         "画家"
       ],
-      "bio": "盛唐诗人画家，山水田园诗代表。",
+      "bio": "唐代诗人、画家，字摩诘，河东蒲州人。早年入仕，安史之乱时曾受伪职，乱平后复职；诗歌多写山水田园，兼擅绘画与音乐，与孟浩然并称“王孟”。",
       "links": [
         {
           "label": "维基百科",
@@ -2441,7 +2444,7 @@
       "roles": [
         "诗人"
       ],
-      "bio": "中唐诗人，新乐府运动代表，长恨歌、琵琶行作者。",
+      "bio": "中唐诗人，新乐府运动代表，长恨歌、琵琶行作者；曾任杭州、苏州刺史，主持疏浚西湖；晚年居洛阳，与刘禹锡唱和并称“刘白”。",
       "links": [
         {
           "label": "维基百科",
@@ -2468,7 +2471,7 @@
       "roles": [
         "文学家"
       ],
-      "bio": "中唐古文运动领袖，唐宋八大家之首。",
+      "bio": "中唐文学家、思想家，字退之，河阳人。倡导古文运动，反对骈俪文风，曾任吏部侍郎；因谏迎佛骨被贬潮州，散文与诗歌对后世影响深远，列唐宋八大家之首。",
       "links": [
         {
           "label": "维基百科",
@@ -2495,7 +2498,7 @@
       "roles": [
         "诗人"
       ],
-      "bio": "晚唐诗人，与李商隐并称小李杜。",
+      "bio": "晚唐诗人、官员，字牧之，京兆万年人。曾任黄州、池州等地刺史，长于七言绝句与咏史诗；与李商隐并称“小李杜”，《阿房宫赋》《泊秦淮》等作品传诵至今。",
       "links": [
         {
           "label": "维基百科",
@@ -2523,7 +2526,7 @@
         "书法家",
         "政治家"
       ],
-      "bio": "唐代书法家，颜体创始人，安史之乱中守平原。",
+      "bio": "唐代书法家，颜体创始人，安史之乱中守平原；颜体书法端庄雄健，代表作《祭侄文稿》；晚年拒绝劝降李希烈而遇害。",
       "links": [
         {
           "label": "维基百科",
@@ -2551,7 +2554,7 @@
         "高僧",
         "学者"
       ],
-      "bio": "西行取经，回国后主持译经，创唯识宗。",
+      "bio": "唐代高僧、译经家，俗姓陈，名祎，洛州缑氏人。贞观年间西行求法，历经中亚抵达印度，回国后在长安主持译经并撰《大唐西域记》，推动唯识学传播。",
       "links": [
         {
           "label": "维基百科",
@@ -2578,7 +2581,7 @@
       "roles": [
         "高僧"
       ],
-      "bio": "六次东渡日本，传播佛教与唐文化。",
+      "bio": "唐代律宗高僧，俗姓淳于，扬州江阳人。受日本僧人邀请，历经多次失败后于753年东渡成功，在日本传戒、建寺并传播佛教戒律与唐代文化。",
       "links": [
         {
           "label": "维基百科",
@@ -2605,7 +2608,7 @@
       "roles": [
         "后妃"
       ],
-      "bio": "唐玄宗宠妃，马嵬驿之变中被赐死。",
+      "bio": "唐玄宗贵妃，名玉环，蒲州永乐人。原为寿王李瑁妃，后入宫受宠；安史之乱中随玄宗西行，马嵬驿兵变后被赐死，具体经过见于唐代史籍与后世文学。",
       "links": [
         {
           "label": "维基百科",
@@ -2633,7 +2636,7 @@
         "政治家",
         "诗人"
       ],
-      "bio": "武则天、中宗朝女官，掌制诰，诗文名世。",
+      "bio": "唐代女官、诗人，陕州陕县人，上官仪孙女。幼年入宫，受武则天赏识，长期掌管诏敕文书；唐中宗时期参与政务并影响宫廷政治，景龙四年在唐隆政变中被杀。",
       "links": [
         {
           "label": "维基百科",
@@ -2661,7 +2664,7 @@
         "皇后",
         "政治家"
       ],
-      "bio": "唐中宗皇后，神龙政变后擅权，效法武则天，景龙政变中被杀。",
+      "bio": "唐中宗皇后。中宗复位后参与朝政并任用韦氏亲属；710年中宗去世后，临淄王李隆基等发动政变，韦后在宫中被杀，韦氏势力随之瓦解。",
       "links": [
         {
           "label": "维基百科",
@@ -2688,7 +2691,7 @@
       "roles": [
         "军事家"
       ],
-      "bio": "唐将，白袍将军，征高句丽、击突厥。",
+      "bio": "唐代将领，名礼，字仁贵，绛州龙门人。贞观末从军，参与征辽东、讨九姓铁勒及征高句丽，后镇守安东；“白袍将军”等传奇多见于后世演义。",
       "links": [
         {
           "label": "维基百科",
@@ -2715,7 +2718,7 @@
       "roles": [
         "军事家"
       ],
-      "bio": "安史之乱中死守睢阳，阻叛军南下。",
+      "bio": "唐代将领，字巡，南阳人。安史之乱中坚守睢阳，守城数月以阻叛军南下江淮，至德二载城破被俘遇害；守城事迹见于两《唐书》，后世对其守城中的食人记载亦有讨论。",
       "links": [
         {
           "label": "维基百科",
@@ -2739,7 +2742,7 @@
         "政治家",
         "文学家"
       ],
-      "bio": "北宋名臣，庆历新政主持者，岳阳楼记作者。",
+      "bio": "北宋名臣，庆历新政主持者，岳阳楼记作者；庆历新政提出改革吏治、选官和军事等措施；“先天下之忧而忧”出自《岳阳楼记》。",
       "links": [
         {
           "label": "维基百科",
@@ -2766,7 +2769,7 @@
       "roles": [
         "政治家"
       ],
-      "bio": "北宋名臣，以清廉刚正著称，开封府尹。",
+      "bio": "北宋官员，字希仁，庐州合肥人。历任监察御史、开封府尹及枢密副使，以执法严明、敢于弹劾权贵闻名；身后谥孝肃，包公形象在戏曲小说中进一步传奇化。",
       "links": [
         {
           "label": "维基百科",
@@ -2794,7 +2797,7 @@
         "文学家",
         "政治家"
       ],
-      "bio": "北宋文坛领袖，唐宋八大家之一，主持庆历新政。",
+      "bio": "北宋文坛领袖，唐宋八大家之一，主持庆历新政；主持编撰《新唐书》，并独撰《新五代史》，提携苏轼、曾巩等后进。",
       "links": [
         {
           "label": "维基百科",
@@ -2822,7 +2825,7 @@
         "史学家",
         "政治家"
       ],
-      "bio": "北宋史学家，主编资治通鉴，元祐更化代表。",
+      "bio": "北宋史学家，主编资治通鉴，元祐更化代表；他与司马康等编修《资治通鉴》；任相时废除部分新法，引发政坛争论。",
       "links": [
         {
           "label": "维基百科",
@@ -2850,7 +2853,7 @@
         "文学家",
         "政治家"
       ],
-      "bio": "北宋文学家，唐宋八大家之一，诗词书画皆精。",
+      "bio": "北宋文学家，唐宋八大家之一，诗词书画皆精；黄州时期写下《赤壁赋》《念奴娇·赤壁怀古》，晚年获赦北归途中病逝。",
       "links": [
         {
           "label": "维基百科",
@@ -2877,7 +2880,7 @@
       "roles": [
         "科学家"
       ],
-      "bio": "北宋科学家，梦溪笔谈作者，天文历法、物理皆有建树。",
+      "bio": "北宋科学家，梦溪笔谈作者，天文历法、物理皆有建树；《梦溪笔谈》记载磁针指南、活字印刷及地貌观察，是宋代科学史重要文献。",
       "links": [
         {
           "label": "维基百科",
@@ -2905,7 +2908,7 @@
         "词人",
         "军事家"
       ],
-      "bio": "南宋词人，抗金名将，豪放词派代表。",
+      "bio": "南宋词人、将领，字幼安，号稼轩，济南历城人。金军南下时在山东起兵，南归后多次上书主张抗金，曾任地方官并整军备战；词作兼有豪放气象与沉郁身世之感。",
       "links": [
         {
           "label": "维基百科",
@@ -2932,7 +2935,7 @@
       "roles": [
         "诗人"
       ],
-      "bio": "南宋爱国诗人，诗词文俱工，存诗近万首。",
+      "bio": "南宋诗人，字务观，号放翁，越州山阴人。仕途屡受主和派排挤，长期主张恢复中原；晚年退居故乡，创作大量诗词，作品兼写抗金抱负、日常生活与乡土风物。",
       "links": [
         {
           "label": "维基百科",
@@ -2959,7 +2962,7 @@
       "roles": [
         "军事家"
       ],
-      "bio": "南宋抗金名将，黄天荡之战大败金军。",
+      "bio": "南宋将领，字良臣，延安人。早年从军抗金，曾在黄天荡与金军交战，后长期镇守两淮；秦桧议和时他当面质问岳飞罪证，晚年退居杭州。",
       "links": [
         {
           "label": "维基百科",
@@ -2987,7 +2990,7 @@
         "政治家",
         "军事家"
       ],
-      "bio": "北宋末宰相，力主抗金，靖康之变前后多次起用。",
+      "bio": "北宋末宰相，力主抗金，靖康之变前后多次起用；靖康年间组织东京防务并反对割地求和，南渡后数度出任宰执。",
       "links": [
         {
           "label": "维基百科",
@@ -3014,7 +3017,7 @@
       "roles": [
         "政治家"
       ],
-      "bio": "南宋末丞相，抗元被俘，作正气歌，就义于大都。",
+      "bio": "南宋末丞相，抗元被俘，作正气歌，就义于大都；被俘后写下《过零丁洋》等诗，拒绝忽必烈劝降，于大都就义。",
       "links": [
         {
           "label": "维基百科",
@@ -3034,6 +3037,71 @@
       "posthumousNames": [],
       "templeNames": [],
       "title": null
+    },
+    {
+      "id": "an-qingxu",
+      "name": "安庆绪",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "安禄山次子。安禄山起兵后封晋王；757年杀父继位，唐军收复长安、洛阳后退守邺城，向史思明求援。759年史思明解围后杀安庆绪并吞并其部众。",
+      "death": {
+        "year": 759
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null,
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/安庆绪"
+        }
+      ]
+    },
+    {
+      "id": "shi-siming",
+      "name": "史思明",
+      "roles": [
+        "皇帝",
+        "将领"
+      ],
+      "bio": "安禄山旧部，曾受唐廷招抚，后复叛。759年杀安庆绪，恢复大燕国号并称帝，先用应天、后改顺天年号；761年为长子史朝义所杀。",
+      "death": {
+        "year": 761
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null,
+      "links": [
+        {
+          "label": "故宫博物院",
+          "url": "https://www.dpm.org.cn/lemmas/239708.html"
+        },
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/史思明"
+        }
+      ]
+    },
+    {
+      "id": "shi-chaoyi",
+      "name": "史朝义",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "史思明长子。761年弑父继位，改元显圣；唐军与回纥军收复洛阳后，他退往莫州一带。763年部将李怀仙降唐，史朝义败亡自尽，安史之乱至此平定。",
+      "death": {
+        "year": 763
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null,
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/史朝义"
+        }
+      ]
     }
   ],
   "dynastyGroups": [
@@ -3574,6 +3642,31 @@
       },
       "precision": "month",
       "note": "1127年靖康之变后，赵构在应天府即位，宋廷南迁并定都临安，疆域以淮河以南及东南为核心，先与金长期对峙，后又面对蒙古扩张。北方人口南迁推动江南开发，临安成为政治与商业中心，手工业、城市文化和海上贸易繁盛。1276年临安陷落后，宋室在东南沿海延续抵抗，1279年崖山战败，南宋覆亡。"
+    },
+    {
+      "id": "yan-anshi",
+      "name": "大燕",
+      "altNames": [
+        "燕",
+        "安史燕"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": 756,
+        "month": 1,
+        "abs": 9072
+      },
+      "end": {
+        "year": 763,
+        "month": 12,
+        "abs": 9167
+      },
+      "precision": "year",
+      "colorToken": "ochre",
+      "note": "安禄山于756年2月5日在洛阳称帝、国号大燕。政权由安禄山、安庆绪、史思明、史朝义先后统治；史朝义政权于763年初败亡，具体自杀日期记载有异，末端以败亡日期范围内的推定日表示。",
+      "startAbs": 9072,
+      "endAbs": 9167
     }
   ],
   "capitals": [],
@@ -6078,6 +6171,115 @@
       "endAbs": 15350,
       "precision": "day",
       "isMain": false
+    },
+    {
+      "id": "reign-an-lushan",
+      "dynastyId": "yan-anshi",
+      "personId": "an-lushan",
+      "title": "",
+      "eraNames": [
+        "圣武"
+      ],
+      "start": {
+        "year": 756,
+        "month": 2,
+        "day": 5,
+        "abs": 9073
+      },
+      "end": {
+        "year": 757,
+        "month": 1,
+        "day": 29,
+        "abs": 9084
+      },
+      "startAbs": 9073,
+      "endAbs": 9084,
+      "precision": "day",
+      "claimRole": "rival",
+      "isMain": false,
+      "endDateConfidence": "approximate"
+    },
+    {
+      "id": "reign-an-qingxu",
+      "dynastyId": "yan-anshi",
+      "personId": "an-qingxu",
+      "title": "",
+      "eraNames": [
+        "天成"
+      ],
+      "start": {
+        "year": 757,
+        "month": 1,
+        "day": 30,
+        "abs": 9084
+      },
+      "end": {
+        "year": 759,
+        "month": 4,
+        "day": 7,
+        "abs": 9111
+      },
+      "startAbs": 9084,
+      "endAbs": 9111,
+      "precision": "day",
+      "claimRole": "rival",
+      "isMain": false
+    },
+    {
+      "id": "reign-shi-siming",
+      "dynastyId": "yan-anshi",
+      "personId": "shi-siming",
+      "title": "",
+      "eraNames": [
+        "应天",
+        "顺天"
+      ],
+      "start": {
+        "year": 759,
+        "month": 4,
+        "day": 8,
+        "abs": 9111
+      },
+      "end": {
+        "year": 761,
+        "month": 4,
+        "day": 17,
+        "abs": 9135
+      },
+      "startAbs": 9111,
+      "endAbs": 9135,
+      "precision": "day",
+      "claimRole": "rival",
+      "isMain": false,
+      "startDateConfidence": "approximate",
+      "endDateConfidence": "approximate"
+    },
+    {
+      "id": "reign-shi-chaoyi",
+      "dynastyId": "yan-anshi",
+      "personId": "shi-chaoyi",
+      "title": "",
+      "eraNames": [
+        "显圣"
+      ],
+      "start": {
+        "year": 761,
+        "month": 4,
+        "day": 18,
+        "abs": 9135
+      },
+      "end": {
+        "year": 763,
+        "month": 1,
+        "day": 30,
+        "abs": 9156
+      },
+      "startAbs": 9135,
+      "endAbs": 9156,
+      "precision": "day",
+      "claimRole": "rival",
+      "isMain": false,
+      "endDateConfidence": "approximate"
     }
   ],
   "events": [
@@ -7117,12 +7319,12 @@
     "depth": "standard",
     "generatedAt": "2026-09-13",
     "counts": {
-      "persons": 135,
-      "dynasties": 23,
-      "reigns": 104,
-      "reign_capitals": 4,
+      "persons": 138,
+      "dynasties": 24,
+      "reigns": 108,
+      "reign_capitals": 0,
       "events": 18,
-      "relations": 95
+      "relations": 94
     },
     "sources": [
       {
@@ -7272,6 +7474,586 @@
       {
         "label": "《新唐书》",
         "url": "https://zh.wikisource.org/zh-hans/新唐书"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/隋炀帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杨侑"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杨浩"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杨侗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/李渊"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐太宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐高宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐中宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐睿宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/武则天"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐玄宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐肃宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐代宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐德宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐顺宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐宪宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐穆宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐敬宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐文宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐武宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐宣宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐懿宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐僖宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐昭宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐哀帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/朱温"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/朱友珪"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/朱友贞"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/李存勖"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/李嗣源"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/李从厚"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/李从珂"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/石敬瑭"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/石重贵"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/刘知远"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/刘承祐"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郭威"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周世宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/柴宗训"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杨行密"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杨渥"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杨隆演"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杨溥"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/李昪"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/李璟"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/李煜"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/钱镠"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/钱元瓘"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/钱弘佐"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/钱弘倧"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/钱俶"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/王审知"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/王延翰"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/王延钧"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/王继鹏"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/王延羲"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/朱文进"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/王延政"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/刘龑"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/刘玢"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/刘晟"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/刘鋹"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/王建"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/王衍"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/孟知祥"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/孟昶"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/高季兴"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/高从诲"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/高保融"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/高保勖"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/高继冲"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/马殷"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/马希声"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/马希范"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/马希广"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/马希萼"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/马希崇"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/刘旻"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/刘钧"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/刘继元"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵匡胤"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵光义"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋真宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋仁宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋英宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋神宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋哲宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋徽宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋钦宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋高宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋孝宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋光宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋宁宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋理宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋度宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋恭帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋端宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋帝昺"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/安禄山"
+      },
+      {
+        "label": "沈睿文《安禄山服散考》节选：安禄山生卒日期",
+        "url": "https://www.thepaper.cn/newsDetail_forward_1310039"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/黄巢"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/王安石"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/魏征"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/房玄龄"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杜如晦"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/李靖"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郭子仪"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/狄仁杰"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/李白"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杜甫"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/王维"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/白居易"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/韩愈"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杜牧"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/颜真卿"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/玄奘"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鉴真"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杨贵妃"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/上官婉儿"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/韦皇后"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/薛仁贵"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/张巡"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/范仲淹"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/包拯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/欧阳修"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/司马光"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/苏轼"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/沈括"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/辛弃疾"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/陆游"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/韩世忠"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/李纲"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/文天祥"
+      },
+      {
+        "label": "姚汝能《安禄山事迹》",
+        "url": "https://zh.wikisource.org/wiki/安祿山事跡"
+      },
+      {
+        "label": "《旧唐书》卷二百上·安禄山、史思明传",
+        "url": "https://zh.wikisource.org/zh-hans/旧唐书/卷200上"
+      },
+      {
+        "label": "故宫博物院：史思明",
+        "url": "https://www.dpm.org.cn/lemmas/239708.html"
+      },
+      {
+        "label": "安庆绪年号天成及墓志校勘",
+        "url": "https://zh.wikipedia.org/wiki/天成_(安庆绪)"
+      },
+      {
+        "label": "大燕（安史之乱）政权与帝王年表",
+        "url": "https://zh.wikipedia.org/wiki/燕_(安史之乱)"
+      },
+      {
+        "label": "史朝义",
+        "url": "https://zh.wikipedia.org/wiki/史朝义"
+      },
+      {
+        "label": "《安禄山事迹》卷下：至德元载正月乙卯朔安禄山在洛阳称帝",
+        "url": "https://zh.wikisource.org/zh-hans/安祿山事跡/卷下"
+      },
+      {
+        "label": "《资治通鉴》卷219：安庆绪乙卯即位，安禄山身后日期与《新唐书》有异",
+        "url": "https://zh.wikisource.org/zh-hans/資治通鑑_(胡三省音注)/卷219"
+      },
+      {
+        "label": "中国哲学书电子化计划：安庆绪于至德二年正月乙卯（757-01-30）杀安禄山",
+        "url": "https://ctext.org/datawiki.pl?if=en&remap=gb&res=799994"
+      },
+      {
+        "label": "中国哲学书电子化计划：乾元二年三月壬申（759-04-07）史思明杀安庆绪；《新唐书》纪史思明戊戌（761-04-22）死，与《资治通鉴》俘获日有别",
+        "url": "https://ctext.org/datawiki.pl?if=en&res=605261"
+      },
+      {
+        "label": "《资治通鉴》卷222：史朝义在上元二年三月甲午（761-04-18）发动兵变并控制政权，史思明随后被杀",
+        "url": "https://zh.wikisource.org/zh-hans/資治通鑑_(胡三省音注)/卷222"
+      },
+      {
+        "label": "《新唐书·肃宗代宗本纪》：史朝义正月甲申自杀；《资治通鉴》另记甲辰首至京师，日期存在冲突",
+        "url": "https://zh.wikisource.org/zh-hans/新唐书/卷006"
       }
     ],
     "notes": [
@@ -7296,7 +8078,12 @@
       "2026-09：按用户请求扩充北宋王朝概述，依据《宋史》本纪及相关制度、食货、选举志，概述建国与统一进程、中央政治与社会文化、宋辽关系及靖康之变；北宋起讫仍以本包日期记录为准。",
       "2026-09：按用户请求进一步丰富北宋王朝概述，补充建国统一、中央政治与科举、经济文化、宋辽关系、王安石变法及靖康之变；依据《中国大百科全书·中国历史》宋条及山西大学云冈学研究院所列参考资料，起讫仍按本包日期。",
       "2026-09：修正杨广、杨侗人物概述并核实隋末在位日期。杨广618年4月11日遇弑；《资治通鉴》记杨侗于同年五月戊辰（公历6月22日）在炀帝凶问传至东都后即位；杨侑则于6月12日已禅位。杨侗仍按隋末地方政权展示取舍保留洛阳 track。依据《隋书·恭帝纪》《越王侗传》及《资治通鉴·唐纪一》。",
-      "2026-09：补齐唐朝20位帝王（含中宗、睿宗两段在位）的完整谥号与各自实际在位段使用的年号。谥号以《中国君主列表·唐》所列追谥为准，并与《旧唐书》《新唐书》互校；年号按《唐朝年号列表》及《旧唐书》《新唐书》纪年核对。武周690–705年年号仍归武则天的武周在位记录；李旦684–690年阶段仅记文明，不将武后临朝改元重复计入李旦，李显嗣圣段与复位后的神龙、景龙分别记录。"
+      "2026-09：补齐唐朝20位帝王（含中宗、睿宗两段在位）的完整谥号与各自实际在位段使用的年号。谥号以《中国君主列表·唐》所列追谥为准，并与《旧唐书》《新唐书》互校；年号按《唐朝年号列表》及《旧唐书》《新唐书》纪年核对。武周690–705年年号仍归武则天的武周在位记录；李旦684–690年阶段仅记文明，不将武后临朝改元重复计入李旦，李显嗣圣段与复位后的神龙、景龙分别记录。",
+      "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
+      "安禄山卒年据《旧唐书》《新唐书》及通行史籍定为757年；原缓存误作761年，已修正。",
+      "安禄山生卒日期据北京大学考古文博学院沈睿文《安禄山服散考》节选：长安三年癸卯正月初一（公历703-01-22）生，至德二年正月初五（公历757-01-29）被杀。人物日期字段只存年月，缓存记为703-01与757-01，日级原记及农历换算依据见本说明；部分二手条目所列703-02-19与该考证不符。",
+      "2026-09：新增安史之乱中的大燕（安史燕）政权及安禄山、安庆绪、史思明、史朝义四位帝王。帝王原始交替年份依史籍记载；时间轴使用年精度，并按“死年归旧王、新王次年起算”规则裁定为756–757、758–759、760–761、762–763，不将农历月日直接换写为公历日期。安庆绪年号据程思泰墓志校勘采用天成（758–759），史思明兼录应天、顺天，史朝义为显圣；四人均标为唐的竞争政权人物，不计主线正统。安禄山、安庆绪、史思明之死均属燕政权内部弑杀；史朝义自尽，本次不新增跨王朝命运线。",
+      "安史燕四帝在位改为日精度：安禄山称帝按《安禄山事迹》正月乙卯朔换算756-02-05；安庆绪即位按乙卯换算757-01-30，安禄山遇害在《新唐书》与《资治通鉴》纪日间有数日差异，采用接续推定757-01-29并标 approximate。安庆绪被史思明杀于乾元二年三月壬申（759-04-07）。史思明称帝只有四月的月记，日界以安庆绪被杀后的759-04-08作为接续推定标记；其结束以史朝义兵变、史思明被控制的761-04-18前一日作为在位终点，史思明实际被杀纪日（《新唐书》戊戌、其他记载甲午）存在差异。史朝义从兵变控制政权日761-04-18起，末端采用史朝义败亡所在月的约略日期并标 approximate；《新唐书》自杀日与《资治通鉴》首级至京日所载干支不一致，故不视为确日。日精度中的 approximate 仅表示确切权力交接/死亡日有争议。"
     ]
   }
 }

@@ -29,6 +29,11 @@ export function createFramePanAccumulator(
       if (frame === null) frame = schedule(() => flush());
     },
     flush,
+    cancel() {
+      if (frame !== null) cancel(frame);
+      frame = null;
+      pending = 0;
+    },
   };
 }
 

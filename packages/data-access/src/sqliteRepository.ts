@@ -128,19 +128,38 @@ async function rows(db: Awaited<ReturnType<SqliteDatabaseProvider["open"]>>, sql
 }
 
 export class SqliteTimelineRepository implements TimelineRepository {
-  private dbPromise: ReturnType<SqliteDatabaseProvider["open"]>;
+  private dbPromise: ReturnType<SqliteDatabaseProvider["open"]> | null = null;
   private storePromise: Promise<TimelineDataStore> | null = null;
   private readonly settings = createPlatformSettings();
 
-  constructor(provider: SqliteDatabaseProvider) { this.dbPromise = provider.open(); }
+  constructor(private readonly provider: SqliteDatabaseProvider) {}
+
+  private database(): ReturnType<SqliteDatabaseProvider["open"]> {
+    if (!this.dbPromise) {
+      const opening = this.provider.open();
+      const recoverable = opening.catch((error) => {
+        if (this.dbPromise === recoverable) this.dbPromise = null;
+        throw error;
+      });
+      this.dbPromise = recoverable;
+    }
+    return this.dbPromise;
+  }
 
   private async store(): Promise<TimelineDataStore> {
-    if (!this.storePromise) this.storePromise = this.loadStore();
+    if (!this.storePromise) {
+      const loading = this.loadStore();
+      const recoverable = loading.catch((error) => {
+        if (this.storePromise === recoverable) this.storePromise = null;
+        throw error;
+      });
+      this.storePromise = recoverable;
+    }
     return this.storePromise;
   }
 
   private async loadStore(): Promise<TimelineDataStore> {
-    const db = await this.dbPromise;
+    const db = await this.database();
     const metadata = await rows(db, "SELECT key, value FROM content_metadata");
     const meta = new Map<string, unknown>(metadata.map((row) => [String(row.key), JSON.parse(String(row.value)) as unknown]));
     if (!meta.has("schema_version") || !meta.has("contract_version")) throw new Error("SQLite content database has no schema metadata");
@@ -152,16 +171,37 @@ export class SqliteTimelineRepository implements TimelineRepository {
       rows(db, "SELECT * FROM relations"), rows(db, "SELECT * FROM dynasty_capitals"), rows(db, "SELECT * FROM reign_capitals"),
     ]);
     const locations = new Map(locationRaw.map((row) => [String(row.id), mapLocation(row)]));
+    const dynastiesByEvent = new Map<string, Row[]>();
+    for (const link of dynLinks) {
+      const eventId = String(link.event_id);
+      const links = dynastiesByEvent.get(eventId) ?? [];
+      links.push(link);
+      dynastiesByEvent.set(eventId, links);
+    }
+    const participantsByEvent = new Map<string, Row[]>();
+    for (const link of participantLinks) {
+      const eventId = String(link.event_id);
+      const links = participantsByEvent.get(eventId) ?? [];
+      links.push(link);
+      participantsByEvent.set(eventId, links);
+    }
+    const reignIdsByCapital = new Map<string, string[]>();
+    for (const link of capitalLinks) {
+      const capitalId = String(link.capital_id);
+      const reignIds = reignIdsByCapital.get(capitalId) ?? [];
+      reignIds.push(String(link.reign_id));
+      reignIdsByCapital.set(capitalId, reignIds);
+    }
     return {
       persons: personsRaw.map(mapPerson), dynasties: dynastiesRaw.map(mapDynasty),
       dynastyGroups: groupsRaw.map(mapGroup), dynastyLaneGroups: lanesRaw.map(mapLaneGroup),
       reigns: reignsRaw.map(mapReign),
       events: eventsRaw.map((event) => mapEvent(event,
-        dynLinks.filter((link) => link.event_id === event.id),
-        participantLinks.filter((link) => link.event_id === event.id),
+        dynastiesByEvent.get(String(event.id)) ?? [],
+        participantsByEvent.get(String(event.id)) ?? [],
         locations.get(String(event.location_id)))),
       relations: relationsRaw.map(mapRelation),
-      capitals: capitalsRaw.map((capital) => mapCapital(capital, capitalLinks.filter((link) => link.capital_id === capital.id).map((link) => String(link.reign_id)))),
+      capitals: capitalsRaw.map((capital) => mapCapital(capital, reignIdsByCapital.get(String(capital.id)) ?? [])),
     };
   }
 
@@ -169,7 +209,7 @@ export class SqliteTimelineRepository implements TimelineRepository {
     ref: EntityRef,
     store: TimelineDataStore,
   ): Promise<DynastyCapital[]> {
-    const db = await this.dbPromise;
+    const db = await this.database();
     let where: string;
     let values: unknown[];
 
@@ -222,7 +262,7 @@ export class SqliteTimelineRepository implements TimelineRepository {
     focusReignId?: string,
   ): Promise<PersonDetailContext[] | undefined> {
     if (ref.type !== "person" && ref.type !== "reign") return undefined;
-    const db = await this.dbPromise;
+    const db = await this.database();
     const personId = ref.type === "person" ? ref.id : null;
     const requestedReignId = ref.type === "reign" ? ref.id : focusReignId ?? null;
     const result = await rows(db, `
@@ -300,7 +340,10 @@ export class SqliteTimelineRepository implements TimelineRepository {
   }
 
   async getTimeline(query: TimelineQuery): Promise<TimelineSlice> {
-    const slice = filterTimeline(await this.store(), { fromAbs: query.fromAbs, toAbs: query.toAbs, scope: query.scope });
+    if (query.signal?.aborted) throw query.signal.reason ?? new DOMException("Timeline query cancelled", "AbortError");
+    const store = await this.store();
+    if (query.signal?.aborted) throw query.signal.reason ?? new DOMException("Timeline query cancelled", "AbortError");
+    const slice = filterTimeline(store, { fromAbs: query.fromAbs, toAbs: query.toAbs, scope: query.scope });
     return {
       ...slice,
       // searchTerms are an offline search index and are not part of the HTTP timeline DTO.
@@ -366,7 +409,12 @@ export class SqliteTimelineRepository implements TimelineRepository {
     await this.settings.set("eralens-event-display", JSON.stringify(config));
   }
 
-  async close(): Promise<void> { (await this.dbPromise).close(); }
+  async close(): Promise<void> {
+    const database = this.dbPromise;
+    this.dbPromise = null;
+    this.storePromise = null;
+    if (database) await (await database).close();
+  }
 }
 
 export function normalizeSqliteSearchTerm(value: string): string { return normalizeSearchTerm(value); }

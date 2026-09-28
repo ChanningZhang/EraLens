@@ -1,6 +1,6 @@
 import type { PlacedPerson } from "../model/personLayout";
 import { useState } from "react";
-import { motion, useReducedMotion } from "framer-motion";
+import { useSelection } from "../hooks/useSelection";
 import { PersonCard } from "./PersonCard";
 import styles from "./PersonLayer.module.css";
 
@@ -11,24 +11,30 @@ type Props = {
 };
 
 export function PersonLayer({ placed, top, height }: Props) {
-  const reduceMotion = useReducedMotion();
   const [activePersonId, setActivePersonId] = useState<string | null>(null);
+  const selection = useSelection();
 
   return (
-    <motion.div
+    <div
       className={styles.layer}
-      animate={{ top, height }}
-      transition={{ duration: reduceMotion ? 0 : 0.24, ease: [0.2, 0.8, 0.2, 1] }}
+      style={{ top, height }}
       aria-hidden={placed.length === 0}
     >
-      {placed.map((item) => (
-        <PersonCard
-          key={item.person.id}
-          placed={item}
-          lineVisible={item.person.id === activePersonId}
-          onSelectLine={() => setActivePersonId((current) => current === item.person.id ? null : item.person.id)}
-        />
-      ))}
-    </motion.div>
+      {placed.map((item) => {
+        const selected =
+          selection.selected?.type === "person" &&
+          selection.selected.id === item.person.id &&
+          selection.focusReignId == null;
+
+        return (
+          <PersonCard
+            key={item.person.id}
+            placed={item}
+            lineVisible={selected || item.person.id === activePersonId}
+            onSelectLine={() => setActivePersonId((current) => current === item.person.id ? null : item.person.id)}
+          />
+        );
+      })}
+    </div>
   );
 }

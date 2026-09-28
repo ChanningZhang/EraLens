@@ -16,6 +16,14 @@
       "capitalId": "cap-huihu-yahzhang-8928"
     },
     {
+      "reignId": "reign-an-lushan",
+      "capitalId": "cap-yan-anshi-luoyang-756"
+    },
+    {
+      "reignId": "reign-an-qingxu",
+      "capitalId": "cap-yan-anshi-ye-757"
+    },
+    {
       "reignId": "reign-ancang-wang-gaogouli",
       "capitalId": "cap-gaogouli-pyongyang-428"
     },
@@ -34,6 +42,14 @@
     {
       "reignId": "reign-ayurbarwada-yuan",
       "capitalId": "cap-yuan-shangdu-15120"
+    },
+    {
+      "reignId": "reign-ayushiridara-yuan",
+      "capitalId": "cap-yuan-helin-1370"
+    },
+    {
+      "reignId": "reign-ayushiridara-yuan",
+      "capitalId": "cap-yuan-yingchang-1369"
     },
     {
       "reignId": "reign-baozang-wang-gaogouli",
@@ -888,6 +904,10 @@
       "capitalId": "cap-qing-shengjing"
     },
     {
+      "reignId": "reign-huang-taiji-qing",
+      "capitalId": "cap-qing-shenyang-1625"
+    },
+    {
       "reignId": "reign-irinchibal-yuan",
       "capitalId": "cap-yuan-dadu"
     },
@@ -1341,11 +1361,11 @@
     },
     {
       "reignId": "reign-li-ang",
-      "capitalId": "cap-tang-changan"
+      "capitalId": "cap-tang-changan-757"
     },
     {
       "reignId": "reign-li-ang",
-      "capitalId": "cap-tang-luoyang"
+      "capitalId": "cap-tang-luoyang-757"
     },
     {
       "reignId": "reign-li-anquan-xixia",
@@ -1365,19 +1385,19 @@
     },
     {
       "reignId": "reign-li-chen-tang",
-      "capitalId": "cap-tang-changan"
+      "capitalId": "cap-tang-changan-757"
     },
     {
       "reignId": "reign-li-chen-tang",
-      "capitalId": "cap-tang-luoyang"
+      "capitalId": "cap-tang-luoyang-757"
     },
     {
       "reignId": "reign-li-chun",
-      "capitalId": "cap-tang-changan"
+      "capitalId": "cap-tang-changan-757"
     },
     {
       "reignId": "reign-li-chun",
-      "capitalId": "cap-tang-luoyang"
+      "capitalId": "cap-tang-luoyang-757"
     },
     {
       "reignId": "reign-li-chunyou-xixia",
@@ -1393,11 +1413,11 @@
     },
     {
       "reignId": "reign-li-cui",
-      "capitalId": "cap-tang-changan"
+      "capitalId": "cap-tang-changan-757"
     },
     {
       "reignId": "reign-li-cui",
-      "capitalId": "cap-tang-luoyang"
+      "capitalId": "cap-tang-luoyang-757"
     },
     {
       "reignId": "reign-li-cunxu-tang-hou",
@@ -1433,19 +1453,19 @@
     },
     {
       "reignId": "reign-li-heng",
-      "capitalId": "cap-tang-changan"
+      "capitalId": "cap-tang-changan-757"
     },
     {
       "reignId": "reign-li-heng",
-      "capitalId": "cap-tang-luoyang"
+      "capitalId": "cap-tang-luoyang-757"
     },
     {
       "reignId": "reign-li-heng-mu",
-      "capitalId": "cap-tang-changan"
+      "capitalId": "cap-tang-changan-757"
     },
     {
       "reignId": "reign-li-heng-mu",
-      "capitalId": "cap-tang-luoyang"
+      "capitalId": "cap-tang-luoyang-757"
     },
     {
       "reignId": "reign-li-jing-nantang-tang-nan",
@@ -1457,11 +1477,11 @@
     },
     {
       "reignId": "reign-li-kuo",
-      "capitalId": "cap-tang-changan"
+      "capitalId": "cap-tang-changan-757"
     },
     {
       "reignId": "reign-li-kuo",
-      "capitalId": "cap-tang-luoyang"
+      "capitalId": "cap-tang-luoyang-757"
     },
     {
       "reignId": "reign-li-liangzuo-xixia",
@@ -1505,11 +1525,11 @@
     },
     {
       "reignId": "reign-li-song",
-      "capitalId": "cap-tang-changan"
+      "capitalId": "cap-tang-changan-757"
     },
     {
       "reignId": "reign-li-song",
-      "capitalId": "cap-tang-luoyang"
+      "capitalId": "cap-tang-luoyang-757"
     },
     {
       "reignId": "reign-li-xian",
@@ -1545,27 +1565,27 @@
     },
     {
       "reignId": "reign-li-xuan-tang",
-      "capitalId": "cap-tang-changan"
+      "capitalId": "cap-tang-changan-757"
     },
     {
       "reignId": "reign-li-xuan-tang",
-      "capitalId": "cap-tang-luoyang"
+      "capitalId": "cap-tang-luoyang-757"
     },
     {
       "reignId": "reign-li-yan-tang",
-      "capitalId": "cap-tang-changan"
+      "capitalId": "cap-tang-changan-757"
     },
     {
       "reignId": "reign-li-yan-tang",
-      "capitalId": "cap-tang-luoyang"
+      "capitalId": "cap-tang-luoyang-757"
     },
     {
       "reignId": "reign-li-ye-tang",
-      "capitalId": "cap-tang-changan"
+      "capitalId": "cap-tang-changan-757"
     },
     {
       "reignId": "reign-li-ye-tang",
-      "capitalId": "cap-tang-luoyang"
+      "capitalId": "cap-tang-luoyang-757"
     },
     {
       "reignId": "reign-li-ye-tang",
@@ -1577,11 +1597,11 @@
     },
     {
       "reignId": "reign-li-yu-tang",
-      "capitalId": "cap-tang-changan"
+      "capitalId": "cap-tang-changan-757"
     },
     {
       "reignId": "reign-li-yu-tang",
-      "capitalId": "cap-tang-luoyang"
+      "capitalId": "cap-tang-luoyang-757"
     },
     {
       "reignId": "reign-li-yuan",
@@ -1601,11 +1621,11 @@
     },
     {
       "reignId": "reign-li-zhan",
-      "capitalId": "cap-tang-changan"
+      "capitalId": "cap-tang-changan-757"
     },
     {
       "reignId": "reign-li-zhan",
-      "capitalId": "cap-tang-luoyang"
+      "capitalId": "cap-tang-luoyang-757"
     },
     {
       "reignId": "reign-li-zhi",
@@ -1676,6 +1696,10 @@
       "capitalId": "cap-han-east-luoyang"
     },
     {
+      "reignId": "reign-liu-can",
+      "capitalId": "cap-han-zhao-pingyang-309"
+    },
+    {
       "reignId": "reign-liu-chang-han-nan",
       "capitalId": "cap-han-nan-guangzhou-11004"
     },
@@ -1688,6 +1712,10 @@
       "capitalId": "cap-han-hou-kaifeng-947"
     },
     {
+      "reignId": "reign-liu-cong",
+      "capitalId": "cap-han-zhao-pingyang-309"
+    },
+    {
       "reignId": "reign-liu-fuling",
       "capitalId": "cap-han-west-changan"
     },
@@ -1698,6 +1726,10 @@
     {
       "reignId": "reign-liu-he",
       "capitalId": "cap-han-west-changan"
+    },
+    {
+      "reignId": "reign-liu-he-zhao",
+      "capitalId": "cap-han-zhao-pingyang-309"
     },
     {
       "reignId": "reign-liu-heng",
@@ -1800,6 +1832,10 @@
       "capitalId": "cap-han-zhao-changan-319"
     },
     {
+      "reignId": "reign-liu-yao-jin",
+      "capitalId": "cap-han-zhao-pingyang-309"
+    },
+    {
       "reignId": "reign-liu-yi-shao",
       "capitalId": "cap-han-east-luoyang"
     },
@@ -1826,6 +1862,22 @@
     {
       "reignId": "reign-liu-yu-song",
       "capitalId": "cap-song-liu-jiankang-420"
+    },
+    {
+      "reignId": "reign-liu-yuan",
+      "capitalId": "cap-han-zhao-liting-305"
+    },
+    {
+      "reignId": "reign-liu-yuan",
+      "capitalId": "cap-han-zhao-pingyang-309"
+    },
+    {
+      "reignId": "reign-liu-yuan",
+      "capitalId": "cap-han-zhao-puzi-308"
+    },
+    {
+      "reignId": "reign-liu-yuan",
+      "capitalId": "cap-han-zhao-zuoguocheng-304"
     },
     {
       "reignId": "reign-liu-zhao",
@@ -2014,6 +2066,10 @@
     {
       "reignId": "reign-lu-zuan",
       "capitalId": "cap-liang-back-guzang-386"
+    },
+    {
+      "reignId": "reign-luo-sheng-nanzhao",
+      "capitalId": "cap-nanzhao-tucheng-649"
     },
     {
       "reignId": "reign-lv-shang-qi-chunqiu",
@@ -2220,6 +2276,22 @@
       "capitalId": "cap-tuyuhun-fushicheng-329"
     },
     {
+      "reignId": "reign-nurhaci-qing",
+      "capitalId": "cap-qing-hetuala-1616"
+    },
+    {
+      "reignId": "reign-nurhaci-qing",
+      "capitalId": "cap-qing-jiefan-1620"
+    },
+    {
+      "reignId": "reign-nurhaci-qing",
+      "capitalId": "cap-qing-liaoyang-1621"
+    },
+    {
+      "reignId": "reign-nurhaci-qing",
+      "capitalId": "cap-qing-shenyang-1625"
+    },
+    {
       "reignId": "reign-ogedei-mongol-empire",
       "capitalId": "cap-mongol-empire-karakorum-1206"
     },
@@ -2230,6 +2302,10 @@
     {
       "reignId": "reign-pi-luoge-nanzhao",
       "capitalId": "cap-nanzhao-taihecheng-739"
+    },
+    {
+      "reignId": "reign-pi-luoge-nanzhao",
+      "capitalId": "cap-nanzhao-tucheng-649"
     },
     {
       "reignId": "reign-pingyuan-wang-gaogouli",
@@ -2628,6 +2704,10 @@
       "capitalId": "cap-nanzhao-yangjumei-779"
     },
     {
+      "reignId": "reign-ragibagh-yuan",
+      "capitalId": "cap-yuan-shangdu-15120"
+    },
+    {
       "reignId": "reign-ran-min-ranwei",
       "capitalId": "cap-ranwei-ye-350"
     },
@@ -2642,6 +2722,18 @@
     {
       "reignId": "reign-shanshang-wang-gaogouli",
       "capitalId": "cap-gaogouli-guoneicheng-37"
+    },
+    {
+      "reignId": "reign-sheng-luopi-nanzhao",
+      "capitalId": "cap-nanzhao-tucheng-649"
+    },
+    {
+      "reignId": "reign-shi-chaoyi",
+      "capitalId": "cap-yan-anshi-fanyang-secondary-759"
+    },
+    {
+      "reignId": "reign-shi-chaoyi",
+      "capitalId": "cap-yan-anshi-luoyang-759"
     },
     {
       "reignId": "reign-shi-chonggui-jin-hou",
@@ -2678,6 +2770,18 @@
     {
       "reignId": "reign-shi-shi",
       "capitalId": "cap-zhao-back-ye-336"
+    },
+    {
+      "reignId": "reign-shi-siming",
+      "capitalId": "cap-yan-anshi-fanyang-759"
+    },
+    {
+      "reignId": "reign-shi-siming",
+      "capitalId": "cap-yan-anshi-fanyang-secondary-759"
+    },
+    {
+      "reignId": "reign-shi-siming",
+      "capitalId": "cap-yan-anshi-luoyang-759"
     },
     {
       "reignId": "reign-shi-zhi",
@@ -2800,6 +2904,10 @@
       "capitalId": "cap-xia-diqiu-1989"
     },
     {
+      "reignId": "reign-sima-chi",
+      "capitalId": "cap-jin-west-luoyang-306"
+    },
+    {
       "reignId": "reign-sima-dan",
       "capitalId": "cap-jin-east-jiankang-317"
     },
@@ -2836,6 +2944,10 @@
       "capitalId": "cap-jin-east-jiankang-317"
     },
     {
+      "reignId": "reign-sima-ye",
+      "capitalId": "cap-jin-west-luoyang-306"
+    },
+    {
       "reignId": "reign-sima-yi-jin",
       "capitalId": "cap-jin-east-jiankang-317"
     },
@@ -2850,6 +2962,18 @@
     {
       "reignId": "reign-sima-zhong",
       "capitalId": "cap-jin-west-luoyang-266"
+    },
+    {
+      "reignId": "reign-sima-zhong-restored",
+      "capitalId": "cap-jin-west-changan-304"
+    },
+    {
+      "reignId": "reign-sima-zhong-restored",
+      "capitalId": "cap-jin-west-luoyang-266"
+    },
+    {
+      "reignId": "reign-sima-zhong-restored",
+      "capitalId": "cap-jin-west-luoyang-306"
     },
     {
       "reignId": "reign-song-qingling-dong-biwu-prc",
@@ -3106,6 +3230,14 @@
     {
       "reignId": "reign-togon-temur-yuan-north",
       "capitalId": "cap-yuan-shangdu-15120"
+    },
+    {
+      "reignId": "reign-togon-temur-yuan-north",
+      "capitalId": "cap-yuan-yingchang-1369"
+    },
+    {
+      "reignId": "reign-togus-temur-yuan",
+      "capitalId": "cap-yuan-helin-1370"
     },
     {
       "reignId": "reign-tolui-mongol",
@@ -3552,6 +3684,10 @@
       "capitalId": "cap-prc-beijing-1949"
     },
     {
+      "reignId": "reign-xi-nuoluo-nanzhao",
+      "capitalId": "cap-nanzhao-tucheng-649"
+    },
+    {
       "reignId": "reign-xiang-yu",
       "capitalId": "cap-chu-west-pengcheng-206"
     },
@@ -3910,6 +4046,10 @@
     {
       "reignId": "reign-yang-you",
       "capitalId": "cap-sui-changan-618"
+    },
+    {
+      "reignId": "reign-yang-you",
+      "capitalId": "cap-sui-daxing-583"
     },
     {
       "reignId": "reign-yang-zuan-chouchi-chouchi",
@@ -4436,8 +4576,20 @@
       "capitalId": "cap-song-north-bianjing"
     },
     {
+      "reignId": "reign-zheng-chenggong-mingzheng",
+      "capitalId": "cap-mingzheng-dongdu-1661"
+    },
+    {
       "reignId": "reign-zheng-gongzi-xu-zheng-chunqiu",
       "capitalId": "cap-zheng-chunqiu-xinzheng-806"
+    },
+    {
+      "reignId": "reign-zheng-jing-mingzheng",
+      "capitalId": "cap-mingzheng-dongdu-1661"
+    },
+    {
+      "reignId": "reign-zheng-keshuang-mingzheng",
+      "capitalId": "cap-mingzheng-dongdu-1661"
     },
     {
       "reignId": "reign-zheng-r0-zheng-chunqiu",
@@ -4666,6 +4818,10 @@
     {
       "reignId": "reign-zhu-wenjin-min-fujian",
       "capitalId": "cap-min-fujian-fuzhou-909"
+    },
+    {
+      "reignId": "reign-zhu-yihai-ming-south",
+      "capitalId": "cap-ming-south-shaoxing-1645"
     },
     {
       "reignId": "reign-zhu-yiming-ming",
@@ -4934,134 +5090,6 @@
     {
       "reignId": "reign-zou-r19-zou-state",
       "capitalId": "cap-zou-state-yi-614"
-    },
-    {
-      "reignId": "reign-liu-yuan",
-      "capitalId": "cap-han-zhao-zuoguocheng-304"
-    },
-    {
-      "reignId": "reign-liu-yuan",
-      "capitalId": "cap-han-zhao-liting-305"
-    },
-    {
-      "reignId": "reign-liu-yuan",
-      "capitalId": "cap-han-zhao-puzi-308"
-    },
-    {
-      "reignId": "reign-liu-yuan",
-      "capitalId": "cap-han-zhao-pingyang-309"
-    },
-    {
-      "reignId": "reign-liu-he-zhao",
-      "capitalId": "cap-han-zhao-pingyang-309"
-    },
-    {
-      "reignId": "reign-liu-cong",
-      "capitalId": "cap-han-zhao-pingyang-309"
-    },
-    {
-      "reignId": "reign-liu-can",
-      "capitalId": "cap-han-zhao-pingyang-309"
-    },
-    {
-      "reignId": "reign-liu-yao-jin",
-      "capitalId": "cap-han-zhao-pingyang-309"
-    },
-    {
-      "reignId": "reign-ragibagh-yuan",
-      "capitalId": "cap-yuan-shangdu-15120"
-    },
-    {
-      "reignId": "reign-togon-temur-yuan-north",
-      "capitalId": "cap-yuan-yingchang-1369"
-    },
-    {
-      "reignId": "reign-ayushiridara-yuan",
-      "capitalId": "cap-yuan-yingchang-1369"
-    },
-    {
-      "reignId": "reign-ayushiridara-yuan",
-      "capitalId": "cap-yuan-helin-1370"
-    },
-    {
-      "reignId": "reign-togus-temur-yuan",
-      "capitalId": "cap-yuan-helin-1370"
-    },
-    {
-      "reignId": "reign-nurhaci-qing",
-      "capitalId": "cap-qing-hetuala-1616"
-    },
-    {
-      "reignId": "reign-nurhaci-qing",
-      "capitalId": "cap-qing-jiefan-1620"
-    },
-    {
-      "reignId": "reign-nurhaci-qing",
-      "capitalId": "cap-qing-liaoyang-1621"
-    },
-    {
-      "reignId": "reign-nurhaci-qing",
-      "capitalId": "cap-qing-shenyang-1625"
-    },
-    {
-      "reignId": "reign-huang-taiji-qing",
-      "capitalId": "cap-qing-shenyang-1625"
-    },
-    {
-      "reignId": "reign-zhu-yihai-ming-south",
-      "capitalId": "cap-ming-south-shaoxing-1645"
-    },
-    {
-      "reignId": "reign-xi-nuoluo-nanzhao",
-      "capitalId": "cap-nanzhao-tucheng-649"
-    },
-    {
-      "reignId": "reign-luo-sheng-nanzhao",
-      "capitalId": "cap-nanzhao-tucheng-649"
-    },
-    {
-      "reignId": "reign-sheng-luopi-nanzhao",
-      "capitalId": "cap-nanzhao-tucheng-649"
-    },
-    {
-      "reignId": "reign-pi-luoge-nanzhao",
-      "capitalId": "cap-nanzhao-tucheng-649"
-    },
-    {
-      "reignId": "reign-zheng-chenggong-mingzheng",
-      "capitalId": "cap-mingzheng-dongdu-1661"
-    },
-    {
-      "reignId": "reign-zheng-jing-mingzheng",
-      "capitalId": "cap-mingzheng-dongdu-1661"
-    },
-    {
-      "reignId": "reign-zheng-keshuang-mingzheng",
-      "capitalId": "cap-mingzheng-dongdu-1661"
-    },
-    {
-      "reignId": "reign-yang-you",
-      "capitalId": "cap-sui-daxing-583"
-    },
-    {
-      "reignId": "reign-sima-zhong-restored",
-      "capitalId": "cap-jin-west-changan-304"
-    },
-    {
-      "reignId": "reign-sima-zhong-restored",
-      "capitalId": "cap-jin-west-luoyang-266"
-    },
-    {
-      "reignId": "reign-sima-chi",
-      "capitalId": "cap-jin-west-luoyang-306"
-    },
-    {
-      "reignId": "reign-sima-ye",
-      "capitalId": "cap-jin-west-luoyang-306"
-    },
-    {
-      "reignId": "reign-sima-zhong-restored",
-      "capitalId": "cap-jin-west-luoyang-306"
     }
   ],
   "postSql": "",
@@ -5079,7 +5107,7 @@
     "importPhase": "post",
     "generatedAt": "2026-09-27",
     "counts": {
-      "reign_capitals": 1264
+      "reign_capitals": 1271
     },
     "sources": [
       {
@@ -5128,8 +5156,10 @@
       "补录细奴逻、逻盛、盛逻皮与皮逻阁迁都前至738年阶段的图城关联；樊崇时期未发现固定都城依据，仍不将流动作战据点记作国都。",
       "明郑郑成功、郑经、郑克塽统一关联同一条台南都城记录“东都/东宁”；都城改名不另建实体。",
       "所有 reign_capitals 关联统一由本包逐行拥有；其他导入包只引用，不重复写入。",
-      "拆分洛阳都城记录后，将司马衷复位期关联到洛阳前段、长安行在和洛阳后段；司马炽、司马邺关联洛阳后段。司马衷首次在位仍关联原洛阳段。"
+      "拆分洛阳都城记录后，将司马衷复位期关联到洛阳前段、长安行在和洛阳后段；司马炽、司马邺关联洛阳后段。司马衷首次在位仍关联原洛阳段。",
+      "补录大燕安禄山—安庆绪—史思明—史朝义与本包大燕专属都城记录的显式关联；范阳作为主都和燕京陪都分别关联，洛阳复归后与范阳陪都并存。",
+      "安史之乱时期拆分唐长安、洛阳都城记录后，同步重建所有唐帝在位—都城关联：只关联与在位时段实际相交的都城阶段；肃宗及以后各帝关联至收复后都城记录，肃宗在失陷至收复期间仍保留无固定都城地理项的在位时段。"
     ]
   },
-  "preSql": "DELETE FROM reign_capitals WHERE (reign_id = 'reign-sima-zhong' AND capital_id = 'cap-jin-west-changan-304') OR (reign_id IN ('reign-sima-chi', 'reign-sima-ye') AND capital_id = 'cap-jin-west-luoyang-266');"
+  "preSql": "DELETE FROM reign_capitals WHERE capital_id IN ('cap-tang-changan', 'cap-tang-changan-757', 'cap-tang-luoyang', 'cap-tang-luoyang-757', 'cap-tang-luoyang-904');\nDELETE FROM reign_capitals WHERE (reign_id = 'reign-sima-zhong' AND capital_id = 'cap-jin-west-changan-304') OR (reign_id IN ('reign-sima-chi', 'reign-sima-ye') AND capital_id = 'cap-jin-west-luoyang-266');"
 }

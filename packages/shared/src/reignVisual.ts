@@ -151,12 +151,13 @@ export function formatReignSpanTooltip(reign: ReignSpanFields): string {
       !isUncertainDateConfidence(reign.endDateConfidence)) {
     return base;
   }
+  const yearUncertain = reign.precision === "year";
 
   const formatBoundary = (
     point: Reign["start"],
     confidence: Reign["startDateConfidence"],
   ): string => {
-    if (isUncertainDateConfidence(confidence)) return "？";
+    if (yearUncertain && isUncertainDateConfidence(confidence)) return "？";
     if (reign.precision === "month" || reign.precision === "day") {
       return formatYearMonth(point.year, point.month);
     }
@@ -164,7 +165,7 @@ export function formatReignSpanTooltip(reign: ReignSpanFields): string {
   };
   const startLabel = formatBoundary(reign.start, reign.startDateConfidence);
   const endLabel = formatBoundary(reign.end, reign.endDateConfidence);
-  const duration = base.includes(" · ") ? " · ？年" : "";
+  const duration = yearUncertain && base.includes(" · ") ? " · ？年" : "";
   const range = startLabel === "？" && endLabel === "？"
     ? "？－？"
     : `${startLabel} — ${endLabel}`;
@@ -205,16 +206,22 @@ export function formatReignDurationLabel(
 
 type ReignYearRangeFields = Pick<
   Reign,
-  "start" | "end" | "startDateConfidence" | "endDateConfidence" | "isOngoing"
+  | "start"
+  | "end"
+  | "precision"
+  | "startDateConfidence"
+  | "endDateConfidence"
+  | "isOngoing"
 >;
 
-/** Detail-panel year range; uncertain endpoints are intentionally rendered as `？`. */
+/** Detail-panel year range; date-level uncertainty should not hide a known year. */
 export function formatReignYearRange(reign: ReignYearRangeFields): string {
-  const start = isUncertainDateConfidence(reign.startDateConfidence)
+  const yearUncertain = reign.precision === "year";
+  const start = yearUncertain && isUncertainDateConfidence(reign.startDateConfidence)
     ? "？"
     : String(reign.start.year);
   if (reign.isOngoing) return `${start} — 至今`;
-  const end = isUncertainDateConfidence(reign.endDateConfidence)
+  const end = yearUncertain && isUncertainDateConfidence(reign.endDateConfidence)
     ? "？"
     : String(reign.end.year);
   return `${start} — ${end}`;

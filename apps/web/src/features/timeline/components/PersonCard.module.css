@@ -62,7 +62,10 @@
 }
 
 .lifeLine.selected::before {
+  background: var(--color-stone);
+  box-shadow: 0 1px 5px color-mix(in srgb, var(--color-ink) 16%, transparent);
   opacity: 1;
+  transition: none;
 }
 
 .selected.lineVisible::before {
@@ -128,9 +131,10 @@
 .personSelectDotActive::before {
   width: 9px;
   height: 9px;
-  border-color: var(--color-accent);
-  background: var(--color-accent);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-accent) 16%, transparent);
+  border-color: var(--color-stone);
+  background: var(--color-stone);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-stone) 16%, transparent);
+  transition: none;
 }
 
 .personSelectDot:focus-visible {

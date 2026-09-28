@@ -14,6 +14,8 @@ export interface TimelineQuery {
   toAbs: number;
   scope?: string;
   lod: Lod;
+  /** Lets viewport changes cancel HTTP work that is no longer visible. */
+  signal?: AbortSignal;
 }
 
 export interface TimelineRepository {

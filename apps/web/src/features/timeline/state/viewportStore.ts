@@ -36,13 +36,13 @@ let centerAbs = DEFAULT_CENTER;
 let pxPerMonth = DEFAULT_PX_PER_MONTH;
 let widthPx = 1200;
 let layoutPreferences = DEFAULT_TIMELINE_LAYOUT_PREFERENCES;
+let presentation = resolveTimelinePresentation(widthPx, layoutPreferences);
 let minAbs = DEFAULT_MIN_ABS;
 let maxAbs = DEFAULT_MAX_ABS;
 
 const listeners = new Set<ViewportListener>();
 
 function buildSnapshot(): ViewportSnapshot {
-  const presentation = resolveTimelinePresentation(widthPx, layoutPreferences);
   const gutterPx = presentation.gutterPx;
   const { startAbs, endAbs } = getWindow({
     centerAbs,
@@ -86,6 +86,7 @@ export const viewportStore = {
   setLayoutPreferences(next: TimelineLayoutPreferences) {
     if (layoutPreferences.railCollapsed === next.railCollapsed && layoutPreferences.density === next.density) return;
     layoutPreferences = next;
+    presentation = resolveTimelinePresentation(widthPx, layoutPreferences);
     notify();
   },
   setBounds(min: AbsMonth, max: AbsMonth) {
@@ -99,6 +100,7 @@ export const viewportStore = {
     const nextWidth = Math.max(320, width);
     if (Math.abs(widthPx - nextWidth) < 0.5) return;
     widthPx = nextWidth;
+    presentation = resolveTimelinePresentation(widthPx, layoutPreferences);
     notify();
   },
   setCenterAbs(next: AbsMonth, { clamp = true } = {}) {

@@ -1139,7 +1139,7 @@
       "roles": [
         "军事家"
       ],
-      "bio": "梁将，七千白袍军入洛阳，威震北魏。",
+      "bio": "南朝梁将领，字子云，义兴国山人。梁武帝时率军护送北魏宗室元颢北上，曾连克洛阳周边城邑；元颢败亡后退兵，部众在河洛地区溃散，陈庆之辗转返回南梁。",
       "links": [
         {
           "label": "维基百科",
@@ -1159,7 +1159,7 @@
         "军事家",
         "政治家"
       ],
-      "bio": "北魏权臣，河阴之变，后为孝庄帝所诛。",
+      "bio": "北魏末年将领、权臣，契胡尔朱部首领。六镇起义后拥兵入洛阳，镇压葛荣并掌控朝政，河阴之变中屠杀朝臣；530年入宫被孝庄帝元子攸伏杀。",
       "links": [
         {
           "label": "维基百科",
@@ -1179,7 +1179,7 @@
         "太后",
         "政治家"
       ],
-      "bio": "北魏文明太后，献文帝、孝文帝朝两度临朝，推动改革。",
+      "bio": "北魏文明太后，献文帝、孝文帝朝两度临朝，推动改革；她推动均田、俸禄等制度变革，并支持孝文帝迁都洛阳及汉化改革。",
       "links": [
         {
           "label": "维基百科",
@@ -1207,7 +1207,7 @@
         "太后",
         "政治家"
       ],
-      "bio": "北魏灵太后，孝明帝生母，毒杀明帝，河阴之变后被沉河。",
+      "bio": "北魏灵太后，孝明帝生母，毒杀明帝，河阴之变后被沉河；她毒杀孝明帝并另立幼主，尔朱荣进军洛阳后将她与幼主投入黄河。",
       "links": [
         {
           "label": "维基百科",
@@ -1230,7 +1230,7 @@
       "roles": [
         "科学家"
       ],
-      "bio": "南朝数学家，精确圆周率，大明历作者。",
+      "bio": "南朝宋、齐时期数学家、天文学家，字文远。将圆周率精算至小数点后七位，制定《大明历》，并研究机械制造；其子祖暅之亦以数学著称。",
       "links": [
         {
           "label": "维基百科",
@@ -1258,22 +1258,18 @@
         "后妃",
         "政治家"
       ],
-      "bio": "陈后主宠妃，与孔、龚二妃干预朝政，隋灭陈时殉。",
+      "bio": "南朝陈后主贵妃，出身寒微，入宫后受陈叔宝宠爱并生育皇子。隋军攻破建康时，她与后主藏入井中后被俘杀害；正史未载其确切生年，后世亦有不同死因叙述。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/张丽华"
         }
       ],
-      "birth": {
-        "year": 559,
-        "month": 1,
-        "abs": 6708
-      },
+      "birth": null,
       "death": {
-        "year": 604,
+        "year": 589,
         "month": 1,
-        "abs": 7248
+        "abs": 7068
       },
       "posthumousNames": [],
       "templeNames": [],
@@ -3451,6 +3447,246 @@
       {
         "label": "资治通鉴·隋纪",
         "url": "https://zh.wikisource.org/zh-hans/资治通鉴/卷175"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/刘义符"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/刘义隆"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/刘劭"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/刘骏"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/刘子业"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/刘彧"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/刘昱"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/刘准"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/萧道成"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/萧赜"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/萧昭业"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/萧昭文"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/萧鸾"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/萧宝卷"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/萧宝融"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/萧衍"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/萧纲"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/萧绎"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/萧方智"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/陈霸先"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/陈蒨"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/陈伯宗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/陈顼"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/陈叔宝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/魏道武帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/魏明元帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/魏太武帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/元余"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/魏文成帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/魏献文帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/魏孝文帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/魏宣武帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/魏孝明帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/魏孝庄帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/元晔"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/元朗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/魏孝武帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/魏孝静帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/元宝炬"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/元钦"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/魏恭帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐文宣帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐废帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐孝昭帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐武成帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/高纬"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/高恒"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周孝闵帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周明帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周武帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周宣帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周静帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/陈庆之"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/尔朱荣"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/冯太后"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/胡太后"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/祖冲之"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/张丽华"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杨坚"
+      },
+      {
+        "label": "中國哲學書電子化計劃：张丽华",
+        "url": "https://ctext.org/dictionary.pl?char=%E5%BC%B5%E9%BA%97%E8%8F%AF&if=gb&remap=gb"
       }
     ],
     "notes": [
@@ -3464,7 +3700,10 @@
       "西梁行在 nanbei-sixteen-extra，group_id 为 nan-chao，不另立组。",
       "清理对本包已删除的 song-liu-founded 事件的孤儿关系；该关系不再写入 relations。",
       "本次补充南朝与北朝相关帝王的人物概述及十个政权的简史说明；身份、继承、关键政治脉络以《宋书》《南齐书》《梁书》《陈书》《魏书》《北史》《北齐书》《周书》对应本纪、列传互校，概述中的在位年份沿用本包已录区间。侯景称帝及南北朝大事以相关史书和君主年表交叉核对。",
-      "2026-09：按用户请求扩充杨坚概述，补充其北周皇后身份、受禅建隋、灭陈统一、开皇时期制度与治理背景及杨广继位脉络；据《隋书·高祖纪》《资治通鉴·隋纪》，在位日期仍沿用隋唐包记录。"
+      "2026-09：按用户请求扩充杨坚概述，补充其北周皇后身份、受禅建隋、灭陈统一、开皇时期制度与治理背景及杨广继位脉络；据《隋书·高祖纪》《资治通鉴·隋纪》，在位日期仍沿用隋唐包记录。",
+      "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
+      "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
+      "张丽华生年史料未载，清除原缓存推定值559；卒年修正为589年。"
     ]
   }
 }

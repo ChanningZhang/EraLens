@@ -65,6 +65,34 @@
     {
       "label": "张辽",
       "url": "https://zh.wikipedia.org/wiki/张辽"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/张飞"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/黄忠"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/夏侯渊"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/曹仁"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/马谡"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/张郃"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/曹休"
     }
   ],
   "notes": [
@@ -72,6 +100,8 @@
     "长坂之战关联东汉（han-east），并 supplemental 关联魏、蜀割据行。",
     "夷陵之战补充陆逊为参战人物（supplemental participant）。",
     "定军山为汉中之战关键节点，单独建点事件以便检索。",
-    "人物生卒据《三国志》及维基百科通行换算，不详处 birth/death 留 NULL。"
+    "人物生卒据《三国志》及维基百科通行换算，不详处 birth/death 留 NULL。",
+    "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
+    "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。"
   ]
 }

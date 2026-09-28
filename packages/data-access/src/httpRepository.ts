@@ -18,8 +18,12 @@ import type { TimelineQuery, TimelineRepository } from "./repository";
 export class HttpTimelineRepository implements TimelineRepository {
   constructor(private readonly apiBase = "/api") {}
 
-  private async fetchJson<T>(path: string, schema: { parse: (data: unknown) => T }): Promise<T> {
-    const response = await fetch(`${this.apiBase}${path}`);
+  private async fetchJson<T>(
+    path: string,
+    schema: { parse: (data: unknown) => T },
+    signal?: AbortSignal,
+  ): Promise<T> {
+    const response = await fetch(`${this.apiBase}${path}`, { signal });
     if (!response.ok) throw new Error(`API error ${response.status}: ${path}`);
     return schema.parse(await response.json());
   }
@@ -29,7 +33,7 @@ export class HttpTimelineRepository implements TimelineRepository {
       from: String(query.fromAbs), to: String(query.toAbs), lod: query.lod,
       ...(query.scope ? { scope: query.scope } : {}),
     });
-    return this.fetchJson(`/timeline?${params}`, TimelineSliceSchema);
+    return this.fetchJson(`/timeline?${params}`, TimelineSliceSchema, query.signal);
   }
 
   getTimelineCatalog(scope?: string): Promise<TimelineCatalog> {

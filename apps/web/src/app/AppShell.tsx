@@ -14,7 +14,7 @@ import { TimelineStage } from "@/features/timeline/components/TimelineStage";
 import { EventKindPreview } from "@/features/timeline/components/EventLayer";
 import { useSelection } from "@/features/timeline/hooks/useSelection";
 import { useTimelineWheel } from "@/features/timeline/hooks/useTimelineWheel";
-import { useViewport } from "@/features/timeline/hooks/useViewport";
+import { useViewport, useViewportPresentation } from "@/features/timeline/hooks/useViewport";
 import { useDataBounds } from "@/features/timeline/hooks/useTimelineData";
 import { useEventDisplaySettings } from "./useEventDisplaySettings";
 import { useTimelineLayoutSettings } from "./useTimelineLayoutSettings";
@@ -22,8 +22,23 @@ import { selectionStore } from "@/features/timeline/state/selectionStore";
 import { viewportStore } from "@/features/timeline/state/viewportStore";
 import styles from "./AppShell.module.css";
 
-export function AppShell() {
+function ViewportUrlSync() {
   const viewport = useViewport();
+  const selection = useSelection();
+
+  useEffect(() => {
+    // URL persistence must not run on every animation frame while panning.
+    const timer = window.setTimeout(() => {
+      selectionStore.syncToUrl(viewport.centerAbs);
+    }, 180);
+    return () => window.clearTimeout(timer);
+  }, [viewport.centerAbs, selection.selected, selection.detailOpen, selection.detailWidth]);
+
+  return null;
+}
+
+export function AppShell() {
+  const presentation = useViewportPresentation();
   const selection = useSelection();
   const boundsQuery = useDataBounds();
   const stageRef = useRef<HTMLDivElement>(null);
@@ -36,7 +51,6 @@ export function AppShell() {
   const [eventSettingsOpen, setEventSettingsOpen] = useState(false);
   const { eventDisplay, updateEventKind } = useEventDisplaySettings();
   const { preferences, updateLayout } = useTimelineLayoutSettings();
-  const presentation = viewport.presentation;
   const eventKinds = EventKindSchema.options;
 
   const selectSearchHit = (hit: SearchHit) => {
@@ -53,7 +67,12 @@ export function AppShell() {
   useEffect(() => {
     if (!searchExpanded) return;
     const onPointerDown = (event: PointerEvent) => {
-      if (event.target instanceof Node && !searchWrapRef.current?.contains(event.target)) {
+      const searchWrap = searchWrapRef.current;
+      const insideSearch = searchWrap !== null && (
+        event.composedPath().includes(searchWrap) ||
+        (event.target instanceof Node && searchWrap.contains(event.target))
+      );
+      if (!insideSearch) {
         setSearchExpanded(false);
         setSearchHits([]);
       }
@@ -101,14 +120,6 @@ export function AppShell() {
       document.removeEventListener("visibilitychange", onVisible);
     };
   }, []);
-
-  useEffect(() => {
-    // URL persistence must not run on every animation frame while panning.
-    const timer = window.setTimeout(() => {
-      selectionStore.syncToUrl(viewport.centerAbs);
-    }, 180);
-    return () => window.clearTimeout(timer);
-  }, [viewport.centerAbs, selection.selected, selection.detailOpen, selection.detailWidth]);
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
@@ -162,6 +173,7 @@ export function AppShell() {
         ["--lane-padding" as string]: `${presentation.lanePaddingPx}px`,
       }}
     >
+      <ViewportUrlSync />
       <header className={styles.header} aria-label="EraLens 导航">
         <ExpandToggle
           className={styles.railToggle}

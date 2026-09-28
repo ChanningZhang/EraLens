@@ -3682,15 +3682,15 @@
         "abs": 7421
       },
       "end": {
-        "year": 903,
-        "month": 12,
-        "abs": 10847
+        "year": 756,
+        "month": 7,
+        "abs": 9078
       },
       "startAbs": 7421,
-      "endAbs": 10847,
+      "endAbs": 9078,
       "precision": "month",
       "role": "primary",
-      "note": "618年六月李渊受隋恭帝杨侑禅让，在长安即皇帝位建立唐朝；903年末前唐都长安。",
+      "note": "618年六月李渊受隋恭帝杨侑禅让，在长安即皇帝位建立唐朝；903年末前唐都长安。安史叛军入长安及唐军收复期间按失守至收复拆分，前段止于756年7月（月份精度）。",
       "links": [
         {
           "label": "维基百科",
@@ -3699,7 +3699,8 @@
       ],
       "longitude": 108.939645,
       "latitude": 34.343207,
-      "coordinateSystem": "GCJ02"
+      "coordinateSystem": "GCJ02",
+      "endPrecision": "month"
     },
     {
       "id": "cap-tang-luoyang",
@@ -3712,15 +3713,15 @@
         "abs": 7884
       },
       "end": {
-        "year": 903,
+        "year": 755,
         "month": 12,
-        "abs": 10847
+        "abs": 9071
       },
       "startAbs": 7884,
-      "endAbs": 10847,
+      "endAbs": 9071,
       "precision": "year",
       "role": "secondary",
-      "note": "唐东都洛阳。",
+      "note": "唐东都洛阳。安史叛军陷洛阳及唐军收复期间按失守至收复拆分，前段止于755年12月（月份精度）。",
       "links": [
         {
           "label": "维基百科",
@@ -3729,7 +3730,8 @@
       ],
       "longitude": 112.453895,
       "latitude": 34.619702,
-      "coordinateSystem": "GCJ02"
+      "coordinateSystem": "GCJ02",
+      "endPrecision": "month"
     },
     {
       "id": "cap-tang-luoyang-904",
@@ -6497,6 +6499,271 @@
       "longitude": 112.453895,
       "latitude": 34.619702,
       "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "cap-tang-changan-757",
+      "dynastyId": "tang",
+      "historicalName": "长安",
+      "modernName": "陕西省西安市",
+      "start": {
+        "year": 757,
+        "month": 11,
+        "abs": 9094
+      },
+      "startAbs": 9094,
+      "precision": "month",
+      "role": "primary",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/长安"
+        }
+      ],
+      "longitude": 108.939645,
+      "latitude": 34.343207,
+      "coordinateSystem": "GCJ02",
+      "end": {
+        "year": 903,
+        "month": 12,
+        "abs": 10847
+      },
+      "endAbs": 10847,
+      "note": "唐军收復後恢復唐朝都城記錄；安史叛军入长安及唐军收复期間不將實際被叛軍控制的城市列作唐朝都城。757年11月為換算後的公曆月精度起點，截止仍至903年末。"
+    },
+    {
+      "id": "cap-tang-luoyang-757",
+      "dynastyId": "tang",
+      "historicalName": "洛阳",
+      "modernName": "河南省洛阳市",
+      "start": {
+        "year": 757,
+        "month": 12,
+        "abs": 9095
+      },
+      "startAbs": 9095,
+      "precision": "month",
+      "role": "secondary",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/洛阳"
+        }
+      ],
+      "longitude": 112.453895,
+      "latitude": 34.619702,
+      "coordinateSystem": "GCJ02",
+      "end": {
+        "year": 903,
+        "month": 12,
+        "abs": 10847
+      },
+      "endAbs": 10847,
+      "note": "唐军收復後恢復唐朝都城記錄；安史叛军陷洛阳及唐军收复期間不將實際被叛軍控制的城市列作唐朝都城。757年12月為換算後的公曆月精度起點，截止仍至903年末。"
+    },
+    {
+      "id": "cap-yan-anshi-luoyang-756",
+      "dynastyId": "yan-anshi",
+      "historicalName": "洛阳",
+      "modernName": "河南省洛阳市",
+      "longitude": 112.453895,
+      "latitude": 34.619702,
+      "coordinateSystem": "GCJ02",
+      "start": {
+        "year": 756,
+        "month": 2,
+        "day": 5,
+        "abs": 9073
+      },
+      "end": {
+        "year": 757,
+        "month": 10,
+        "day": 17,
+        "abs": 9093
+      },
+      "startAbs": 9073,
+      "endAbs": 9093,
+      "precision": "day",
+      "endPrecision": "day",
+      "role": "primary",
+      "reignIds": [
+        "reign-an-lushan"
+      ],
+      "note": "安禄山于洛阳称帝并以此为政权中心；757年唐军收复洛阳、安庆绪北走邺城，故止于迁出前一日。坐标为洛阳市区约略点。",
+      "links": [
+        {
+          "label": "《安禄山事迹》卷下",
+          "url": "https://zh.wikisource.org/zh-hans/安祿山事跡/卷下"
+        },
+        {
+          "label": "《资治通鉴》卷219",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑_(胡三省音注)/卷219"
+        }
+      ]
+    },
+    {
+      "id": "cap-yan-anshi-ye-757",
+      "dynastyId": "yan-anshi",
+      "historicalName": "邺（安成府）",
+      "modernName": "河北省邯郸市临漳县邺城遗址",
+      "longitude": 114.585514,
+      "latitude": 36.322504,
+      "coordinateSystem": "GCJ02",
+      "start": {
+        "year": 757,
+        "month": 10,
+        "day": 18,
+        "abs": 9093
+      },
+      "end": {
+        "year": 759,
+        "month": 4,
+        "day": 6,
+        "abs": 9111
+      },
+      "startAbs": 9093,
+      "endAbs": 9107,
+      "precision": "day",
+      "endPrecision": "day",
+      "role": "primary",
+      "reignIds": [
+        "reign-an-qingxu"
+      ],
+      "note": "安庆绪弃洛阳后退保邺郡，改邺郡为安成府；史思明杀安庆绪并接收其军后，该政权中心转至范阳。定位采用邺城遗址所在临漳县约略坐标。",
+      "links": [
+        {
+          "label": "《资治通鉴》卷219",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑_(胡三省音注)/卷219"
+        },
+        {
+          "label": "《资治通鉴》卷221",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑_(胡三省音注)/卷221"
+        }
+      ]
+    },
+    {
+      "id": "cap-yan-anshi-fanyang-759",
+      "dynastyId": "yan-anshi",
+      "historicalName": "范阳/燕京",
+      "modernName": "北京市（古城址约略定位）",
+      "longitude": 116.407387,
+      "latitude": 39.904179,
+      "coordinateSystem": "GCJ02",
+      "start": {
+        "year": 759,
+        "month": 4,
+        "day": 7,
+        "abs": 9111
+      },
+      "end": {
+        "year": 759,
+        "month": 9,
+        "day": 26,
+        "abs": 9116
+      },
+      "startAbs": 9107,
+      "endAbs": 9112,
+      "precision": "day",
+      "endPrecision": "day",
+      "role": "primary",
+      "reignIds": [
+        "reign-shi-siming"
+      ],
+      "startDateConfidence": "approximate",
+      "note": "史思明杀安庆绪后返回范阳，并于乾元二年四月在范阳称帝、改称燕京；称帝具体公历日未能据可靠历日确定，起点以安庆绪被杀日作为接续标记并标推定。759年九月史军重新进入洛阳，主都阶段止于入城前一日。坐标是北京市区约略点，不代表已确认的唐范阳城址。",
+      "links": [
+        {
+          "label": "《资治通鉴》卷221",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑_(胡三省音注)/卷221"
+        },
+        {
+          "label": "北京日报：史思明建“都”范阳城",
+          "url": "https://peking.bjd.com.cn/content/s63a524c9e4b0450519f694a7.html"
+        }
+      ]
+    },
+    {
+      "id": "cap-yan-anshi-luoyang-759",
+      "dynastyId": "yan-anshi",
+      "historicalName": "洛阳（周京）",
+      "modernName": "河南省洛阳市",
+      "longitude": 112.453895,
+      "latitude": 34.619702,
+      "coordinateSystem": "GCJ02",
+      "start": {
+        "year": 759,
+        "month": 9,
+        "day": 27,
+        "abs": 9116
+      },
+      "end": {
+        "year": 762,
+        "month": 10,
+        "day": 29,
+        "abs": 9153
+      },
+      "startAbs": 9112,
+      "endAbs": 9150,
+      "precision": "day",
+      "endPrecision": "day",
+      "role": "primary",
+      "reignIds": [
+        "reign-shi-siming",
+        "reign-shi-chaoyi"
+      ],
+      "note": "史思明军759年九月再入洛阳后，以洛阳为周京；762年唐军收复洛阳，止于失守前一日。坐标为洛阳市区约略点。",
+      "links": [
+        {
+          "label": "《资治通鉴》卷221",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑_(胡三省音注)/卷221"
+        },
+        {
+          "label": "《资治通鉴》卷222",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑_(胡三省音注)/卷222"
+        }
+      ]
+    },
+    {
+      "id": "cap-yan-anshi-fanyang-secondary-759",
+      "dynastyId": "yan-anshi",
+      "historicalName": "范阳/燕京",
+      "modernName": "北京市（古城址约略定位）",
+      "longitude": 116.407387,
+      "latitude": 39.904179,
+      "coordinateSystem": "GCJ02",
+      "start": {
+        "year": 759,
+        "month": 4,
+        "day": 7,
+        "abs": 9111
+      },
+      "end": {
+        "year": 763,
+        "month": 1,
+        "day": 30,
+        "abs": 9156
+      },
+      "startAbs": 9107,
+      "endAbs": 9153,
+      "precision": "day",
+      "endPrecision": "day",
+      "role": "secondary",
+      "reignIds": [
+        "reign-shi-siming",
+        "reign-shi-chaoyi"
+      ],
+      "startDateConfidence": "approximate",
+      "endDateConfidence": "approximate",
+      "note": "史思明称帝后改范阳为燕京；759年洛阳复入后范阳保留为燕京/后方政治中心，至史朝义败亡前后失去政权控制。末端依史朝义败亡、首级入京的时间范围标推定。坐标是北京市区约略点，不代表已确认的唐范阳城址。",
+      "links": [
+        {
+          "label": "《资治通鉴》卷221",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑_(胡三省音注)/卷221"
+        },
+        {
+          "label": "《资治通鉴》卷222",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑_(胡三省音注)/卷222"
+        }
+      ]
     }
   ],
   "reigns": [],
@@ -6520,7 +6787,7 @@
     "depth": "standard",
     "generatedAt": "2026-09-27",
     "counts": {
-      "dynasty_capitals": 211
+      "dynasty_capitals": 218
     },
     "sources": [
       {
@@ -6758,6 +7025,46 @@
       {
         "label": "晋惠帝：306年6月11日奉帝还洛阳日期换算",
         "url": "https://zh.wikipedia.org/wiki/晋惠帝"
+      },
+      {
+        "label": "《资治通鉴》卷217：天宝十四载十二月丁酉陷东京洛阳",
+        "url": "https://www.yuwenmi.com/guoxue/zizhitongjian/10250.html"
+      },
+      {
+        "label": "《资治通鉴》卷218：潼关失守、玄宗出幸及长安失守日期考异",
+        "url": "https://www.zhonghuashu.com/wiki/資治通鑑_(四庫全書本)/卷218"
+      },
+      {
+        "label": "《资治通鉴》卷220：至德二载九月收复长安、十月收复洛阳",
+        "url": "https://guwensou.com/book/zizhitongjian/a3899209.html"
+      },
+      {
+        "label": "Yuk Tung Liu：中国历代朔闰表（唐、五代），用于农历月份换算",
+        "url": "https://ytliu0.github.io/ChineseCalendar/table_period_simp.html?period=tang5"
+      },
+      {
+        "label": "《安禄山事迹》卷下：安禄山正月乙卯朔于洛阳即位、国号大燕",
+        "url": "https://zh.wikisource.org/zh-hans/安祿山事跡/卷下"
+      },
+      {
+        "label": "《资治通鉴》卷219、221、222：安庆绪退保邺、史思明杀安庆绪与范阳称帝、史朝义政权覆亡",
+        "url": "https://zh.wikisource.org/zh-hans/資治通鑑_(胡三省音注)/卷219"
+      },
+      {
+        "label": "《新唐书·肃宗代宗本纪》：安庆绪被杀、史思明被杀及史朝义自杀纪日",
+        "url": "https://zh.wikisource.org/zh-hans/新唐书/卷006"
+      },
+      {
+        "label": "高德地图：洛阳市地理编码",
+        "url": "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      },
+      {
+        "label": "高德地图：邺城遗址所在临漳县地理编码",
+        "url": "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      },
+      {
+        "label": "高德地图：范阳/北京约略地理编码",
+        "url": "https://lbs.amap.com/api/webservice/guide/api/georegeo"
       }
     ],
     "notes": [
@@ -6792,7 +7099,9 @@
       "将明郑台南同一都城东都、东宁两条改名记录合并为单条“东都/东宁”（1661—1683）；元开平/上都、清沈阳/盛京虽同址，但原记录角色时段不同，保留角色区间并统一别名写法。",
       "补录晋惠帝永安元年（304）被张方挟至长安至306年六月还洛阳的短期朝廷驻地。依《晋书》同时记载洛阳留台承制行事，保留洛阳 primary 都城，在长安以 temporary 记录皇帝与朝廷实际所在；起点只记年精度，农历十一月不冒充公历月份。地点取汉长安城遗址代表点，行宫为征西府但具体府址未考定。",
       "拆分西晋洛阳都城为304年惠帝被挟往长安前、306年六月惠帝还洛阳后两段；中间以长安 temporary 行在记录朝廷实际驻地。迁入、迁出按现有史料精度表示，不把农历日期冒充公历月日。",
-      "洛阳后段起点使用306年6月11日，即《晋书》所记光熙元年五月己亥的公历日期；长安行在止于6月10日，避免两都记录在日精度边界重叠。"
+      "洛阳后段起点使用306年6月11日，即《晋书》所记光熙元年五月己亥的公历日期；长安行在止于6月10日，避免两都记录在日精度边界重叠。",
+      "安史之乱期间唐朝两都按实际失守与收复阶段拆分：洛阳失守据《资治通鉴》天宝十四载十二月丁酉（朔闰历换算到公历755年12月）；长安在天宝十五载农历六月失守。长安失守日《资治通鉴》考异说明诸书缺载，仅《乱离记》记六月二十三日，故不录日精度，按农历六月中点换算为公历月精度。唐军至德二载农历九月收复长安、十月收复洛阳；按朔闰历换算分别以公历757年11月、12月作为月精度恢复点。记录仅表示唐朝实际都城控制阶段，不把叛军占据等同于唐朝都城。",
+      "补录安史之乱大燕洛阳—邺—范阳—洛阳的都城阶段，并单列范阳为燕京的后续陪都记录。洛阳、范阳定位为城市约略点，邺定位为临漳县邺城遗址约略点。只有大燕本包各自拥有的在位记录才显式关联这些都城；唐都洛阳仍由唐包所有。称帝、迁出与攻取日期依纪事记录，范阳称帝起点和史朝义败亡末端按可考日期范围标推定。"
     ]
   }
 }
