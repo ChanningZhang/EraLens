@@ -1,5 +1,5 @@
 import { memo, useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import { ExpandToggle } from "@/components/ExpandToggle";
 import {
   activeReignsAtAbs,
@@ -112,7 +112,6 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       mapVerticalAlignment,
     );
   }, [mapVerticalAlignment, stageViewportSize.height, stageViewportSize.width, viewport.gutterPx]);
-  const reduceMotion = useReducedMotion();
   const selection = useSelection();
   const { data, isLoading, error } = useTimelineData();
 
@@ -634,17 +633,15 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       <div className={styles.guideOverlay} aria-hidden="true">
         <div className={styles.viewportPanel} />
       </div>
-      <motion.div
+      <div
         className={styles.content}
-        animate={{ minHeight: Math.max(stageViewportHeight, contentHeight) }}
-        transition={{ duration: reduceMotion ? 0 : 0.24, ease: [0.2, 0.8, 0.2, 1] }}
+        style={{ minHeight: Math.max(stageViewportHeight, contentHeight) }}
       >
-        <motion.div
+        <div
           className={styles.lanes}
-          animate={{ minHeight: contentHeight }}
-          transition={{ duration: reduceMotion ? 0 : 0.24, ease: [0.2, 0.8, 0.2, 1] }}
           style={{
             position: "relative",
+            minHeight: contentHeight,
             height: "100%",
           }}
         >
@@ -728,8 +725,8 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
               height={personAreaHeight}
             />
           )}
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
       <div className={styles.capitalOverlay} aria-hidden={activeCapitals.length === 0}>
         <div className={styles.viewportPanel}>
           <CapitalMapLayer

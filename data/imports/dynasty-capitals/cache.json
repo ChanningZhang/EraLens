@@ -2222,15 +2222,15 @@
         "abs": 3192
       },
       "end": {
-        "year": 316,
+        "year": 304,
         "month": 12,
-        "abs": 3803
+        "abs": 3659
       },
       "startAbs": 3192,
-      "endAbs": 3803,
+      "endAbs": 3659,
       "precision": "year",
       "role": "primary",
-      "note": "西晋都城洛阳。",
+      "note": "西晋建都洛阳至晋惠帝永安元年（304）被张方挟往长安前；迁出记于农历十一月，按年精度保留边界。",
       "links": [
         {
           "label": "维基百科",
@@ -6417,6 +6417,86 @@
       "longitude": 100.223126,
       "latitude": 25.348365,
       "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "cap-jin-west-changan-304",
+      "dynastyId": "jin-west",
+      "historicalName": "长安",
+      "modernName": "陕西省西安市未央区汉长安城遗址",
+      "start": {
+        "year": 304,
+        "month": 1,
+        "abs": 3648
+      },
+      "end": {
+        "year": 306,
+        "month": 6,
+        "day": 10,
+        "abs": 3677
+      },
+      "startAbs": 3648,
+      "endAbs": 3677,
+      "precision": "year",
+      "endPrecision": "day",
+      "role": "temporary",
+      "note": "永安元年（304）张方挟持晋惠帝司马衷及公卿至长安，司马颙以征西府为宫；惠帝于306年6月11日还洛阳。洛阳留台仍承制行事，故此处记长安为短期朝廷实际驻地（行在），洛阳仍保留西晋京师都城记录。起点按年精度表示，史载为农历十一月，未将农历日直接换作公历月日。",
+      "links": [
+        {
+          "label": "《晋书·惠帝纪》",
+          "url": "https://www.shidianguji.com/book/LS0005/chapter/LS0005_52"
+        },
+        {
+          "label": "陕西省地方志：西安市志",
+          "url": "https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsxz/xbsxz/xas_16198/201405/P020240923625160882829.pdf"
+        },
+        {
+          "label": "中国人民大学清史研究所：先秦至明代地理研究（引《西安历史地图集》）",
+          "url": "https://iqh.ruc.edu.cn/old/zglsdlyj/lsdl_lzjj/xqzmddlyj/490272705243483b96edc6a7eea546cd.htm"
+        }
+      ],
+      "longitude": 108.849843,
+      "latitude": 34.293244,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "cap-jin-west-luoyang-306",
+      "dynastyId": "jin-west",
+      "historicalName": "洛阳",
+      "modernName": "河南省洛阳市",
+      "start": {
+        "year": 306,
+        "month": 6,
+        "day": 11,
+        "abs": 3677
+      },
+      "end": {
+        "year": 316,
+        "month": 12,
+        "abs": 3803
+      },
+      "startAbs": 3677,
+      "endAbs": 3803,
+      "precision": "day",
+      "endPrecision": "year",
+      "role": "primary",
+      "note": "晋惠帝于306年6月11日还洛阳后，洛阳恢复为西晋都城；本记录承接304年此前的洛阳都城阶段。",
+      "links": [
+        {
+          "label": "《晋书·惠帝纪》：304年西迁及306年奉帝还洛阳",
+          "url": "https://www.shidianguji.com/book/LS0005/chapter/LS0005_52"
+        },
+        {
+          "label": "维基百科：西晋",
+          "url": "https://zh.wikipedia.org/wiki/西晋"
+        },
+        {
+          "label": "晋惠帝（归洛阳日期换算）",
+          "url": "https://zh.wikipedia.org/wiki/晋惠帝"
+        }
+      ],
+      "longitude": 112.453895,
+      "latitude": 34.619702,
+      "coordinateSystem": "GCJ02"
     }
   ],
   "reigns": [],
@@ -6440,7 +6520,7 @@
     "depth": "standard",
     "generatedAt": "2026-09-27",
     "counts": {
-      "dynasty_capitals": 209
+      "dynasty_capitals": 211
     },
     "sources": [
       {
@@ -6662,6 +6742,22 @@
       {
         "label": "哈拉和林古城地理位置（WGS84）",
         "url": "https://mapcarta.com/16407530"
+      },
+      {
+        "label": "《晋书·惠帝纪》：惠帝西迁长安、洛阳留台及306年还洛阳",
+        "url": "https://www.shidianguji.com/book/LS0005/chapter/LS0005_52"
+      },
+      {
+        "label": "中国人民大学清史研究所：先秦至明代地理研究（引《西安历史地图集》西晋时期图）",
+        "url": "https://iqh.ruc.edu.cn/old/zglsdlyj/lsdl_lzjj/xqzmddlyj/490272705243483b96edc6a7eea546cd.htm"
+      },
+      {
+        "label": "《晋书·惠帝纪》：惠帝306年六月还洛阳",
+        "url": "https://www.shidianguji.com/book/LS0005/chapter/LS0005_52"
+      },
+      {
+        "label": "晋惠帝：306年6月11日奉帝还洛阳日期换算",
+        "url": "https://zh.wikipedia.org/wiki/晋惠帝"
       }
     ],
     "notes": [
@@ -6693,7 +6789,10 @@
       "新增都城坐标按地点精度采用高德GCJ-02；哈拉和林位于蒙古国，采用遗址WGS84坐标。",
       "清都城名称按历史改名合并为同一都城记录：努尔哈赤迁都时称沈阳，皇太极于1634年改称“天眷盛京”，记录名称写作“沈阳/盛京”，时段为1625—1635年。",
       "补录南诏早期都城图城（649—738），为细奴逻、逻盛、盛逻皮及皮逻阁迁都前阶段提供直接关联；按巍山县政府资料取649建都、738迁往太和，另注部分考古资料将图山筑城记为650。并校正太和城现代地点至大理市太和村遗址及其地图坐标。",
-      "将明郑台南同一都城东都、东宁两条改名记录合并为单条“东都/东宁”（1661—1683）；元开平/上都、清沈阳/盛京虽同址，但原记录角色时段不同，保留角色区间并统一别名写法。"
+      "将明郑台南同一都城东都、东宁两条改名记录合并为单条“东都/东宁”（1661—1683）；元开平/上都、清沈阳/盛京虽同址，但原记录角色时段不同，保留角色区间并统一别名写法。",
+      "补录晋惠帝永安元年（304）被张方挟至长安至306年六月还洛阳的短期朝廷驻地。依《晋书》同时记载洛阳留台承制行事，保留洛阳 primary 都城，在长安以 temporary 记录皇帝与朝廷实际所在；起点只记年精度，农历十一月不冒充公历月份。地点取汉长安城遗址代表点，行宫为征西府但具体府址未考定。",
+      "拆分西晋洛阳都城为304年惠帝被挟往长安前、306年六月惠帝还洛阳后两段；中间以长安 temporary 行在记录朝廷实际驻地。迁入、迁出按现有史料精度表示，不把农历日期冒充公历月日。",
+      "洛阳后段起点使用306年6月11日，即《晋书》所记光熙元年五月己亥的公历日期；长安行在止于6月10日，避免两都记录在日精度边界重叠。"
     ]
   }
 }

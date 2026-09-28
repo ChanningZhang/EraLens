@@ -2,6 +2,9 @@
 -- Window: -2804-01 .. 2026-12
 BEGIN;
 
+-- cleanup
+DELETE FROM reign_capitals WHERE (reign_id = 'reign-sima-zhong' AND capital_id = 'cap-jin-west-changan-304') OR (reign_id IN ('reign-sima-chi', 'reign-sima-ye') AND capital_id = 'cap-jin-west-luoyang-266');
+
 -- reign_capitals
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-achen-tuyuhun', 'cap-tuyuhun-fushicheng-329') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-aidengli-kehan-huihu', 'cap-huihu-yahzhang-8928') ON CONFLICT DO NOTHING;
@@ -701,7 +704,6 @@ INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-si-xie', 'cap-x
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-si-yu', 'cap-xia-yangcheng-2070') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-si-zhongkang', 'cap-xia-yangcheng-2070') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-si-zhu', 'cap-xia-diqiu-1989') ON CONFLICT DO NOTHING;
-INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-sima-chi', 'cap-jin-west-luoyang-266') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-sima-dan', 'cap-jin-east-jiankang-317') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-sima-dewen', 'cap-jin-east-jiankang-317') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-sima-dezong', 'cap-jin-east-jiankang-317') ON CONFLICT DO NOTHING;
@@ -711,7 +713,6 @@ INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-sima-shao', 'ca
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-sima-yan', 'cap-jin-west-luoyang-266') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-sima-yan-cheng', 'cap-jin-east-jiankang-317') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-sima-yao', 'cap-jin-east-jiankang-317') ON CONFLICT DO NOTHING;
-INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-sima-ye', 'cap-jin-west-luoyang-266') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-sima-yi-jin', 'cap-jin-east-jiankang-317') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-sima-yu-jin', 'cap-jin-east-jiankang-317') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-sima-yue', 'cap-jin-east-jiankang-317') ON CONFLICT DO NOTHING;
@@ -1264,5 +1265,10 @@ INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-zheng-chenggong
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-zheng-jing-mingzheng', 'cap-mingzheng-dongdu-1661') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-zheng-keshuang-mingzheng', 'cap-mingzheng-dongdu-1661') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-yang-you', 'cap-sui-daxing-583') ON CONFLICT DO NOTHING;
+INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-sima-zhong-restored', 'cap-jin-west-changan-304') ON CONFLICT DO NOTHING;
+INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-sima-zhong-restored', 'cap-jin-west-luoyang-266') ON CONFLICT DO NOTHING;
+INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-sima-chi', 'cap-jin-west-luoyang-306') ON CONFLICT DO NOTHING;
+INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-sima-ye', 'cap-jin-west-luoyang-306') ON CONFLICT DO NOTHING;
+INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-sima-zhong-restored', 'cap-jin-west-luoyang-306') ON CONFLICT DO NOTHING;
 
 COMMIT;

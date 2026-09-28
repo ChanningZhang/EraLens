@@ -1011,6 +1011,27 @@
           "url": "https://www.poi86.com/poi/amap/district/621222/2.html"
         }
       ]
+    },
+    {
+      "id": "loc-jin-west-court-forced-to-changan",
+      "eventId": "jin-west-court-forced-to-changan",
+      "historicalName": "长安（汉长安城区域）",
+      "modernName": "陕西省西安市未央区汉长安城遗址",
+      "longitude": 108.858889,
+      "latitude": 34.303598,
+      "note": "《晋书》仅记晋惠帝幸长安、以征西府为宫，未能据此确认府址遗址；此点只表示汉长安城区域，不代表具体宫府。坐标采用遗址范围内的近似代表点。",
+      "links": [
+        {
+          "label": "《晋书·惠帝纪》",
+          "url": "https://www.shidianguji.com/book/LS0005/chapter/LS0005_52"
+        },
+        {
+          "label": "汉长安城（DSR地名集，遗址坐标）",
+          "url": "https://dsr.nii.ac.jp/digital-maps/dsr/place-names/0133.html.ja"
+        }
+      ],
+      "coordinateSystem": "WGS84",
+      "precision": "approximate"
     }
   ],
   "manifest": {
@@ -1032,7 +1053,7 @@
       "reigns": 0,
       "events": 0,
       "relations": 0,
-      "eventLocations": 64
+      "eventLocations": 65
     },
     "sources": [
       {
@@ -1346,11 +1367,20 @@
       {
         "label": "文县中心坐标",
         "url": "https://www.poi86.com/poi/amap/district/621222/2.html"
+      },
+      {
+        "label": "《晋书·惠帝纪》：惠帝至长安，以征西府为宫",
+        "url": "https://www.shidianguji.com/book/LS0005/chapter/LS0005_52"
+      },
+      {
+        "label": "汉长安城（DSR地名集，遗址坐标）",
+        "url": "https://dsr.nii.ac.jp/digital-maps/dsr/place-names/0133.html.ja"
       }
     ],
     "notes": [
       "为可定位到具体遗址或区域的事件补地点；迁都事件取迁入地作为代表点，多地点或大范围事件在地点 note 中说明代表点含义。不能可靠定位的事件保持地点为空。",
-      "坐标采用 WGS84；来源链接用于核对古称、今地与地点定位。"
+      "坐标采用 WGS84；来源链接用于核对古称、今地与地点定位。",
+      "新增长安事件地点。史料只定位至长安及征西府，府址具体遗址未定，采用汉长安城遗址范围近似坐标，不指向单一宫殿；事件地点坐标按WGS84记录。"
     ]
   }
 }

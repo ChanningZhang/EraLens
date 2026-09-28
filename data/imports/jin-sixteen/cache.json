@@ -45,21 +45,55 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "司马炎之子，290年继位。皇后贾南风及宗室诸王先后掌权，围绕辅政与皇位爆发八王之乱，中央军政秩序瓦解；311年洛阳陷落后被汉赵俘获，西晋朝廷转至长安。",
+      "bio": "司马炎之子，290年继位。301年司马伦篡位，司马衷被尊为太上皇；司马伦败亡后于同年复位。其统治期间爆发八王之乱，306年返回洛阳，307年1月8日去世。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/司马衷"
         }
       ],
-      "birth": null,
-      "death": null,
+      "birth": {
+        "year": 259,
+        "month": 2
+      },
+      "death": {
+        "year": 307,
+        "month": 1
+      },
       "altNames": [],
       "posthumousNames": [
         "孝惠皇帝"
       ],
       "templeNames": [],
       "title": "晋惠帝"
+    },
+    {
+      "id": "sima-lun",
+      "name": "司马伦",
+      "title": "赵王",
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "司马懿第九子，封赵王，参与八王之乱。301年篡晋惠帝位，自立为帝并改元建始；同年败亡，惠帝复位后被赐死。",
+      "links": [
+        {
+          "label": "《晋书·赵王伦传》",
+          "url": "https://zh.wikisource.org/wiki/晉書/卷059"
+        },
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/司马伦"
+        }
+      ],
+      "birth": null,
+      "death": {
+        "year": 301,
+        "month": 6,
+        "abs": 3617
+      },
+      "altNames": [],
+      "posthumousNames": [],
+      "templeNames": []
     },
     {
       "id": "sima-chi",
@@ -2460,13 +2494,7 @@
         "永熙",
         "永平",
         "元康",
-        "永康",
-        "永宁",
-        "太安",
-        "永安",
-        "建武",
-        "永兴",
-        "光熙"
+        "永康"
       ],
       "start": {
         "year": 290,
@@ -2475,12 +2503,72 @@
         "day": 17
       },
       "end": {
+        "year": 301,
+        "month": 2,
+        "abs": 3613,
+        "day": 3
+      },
+      "startAbs": 3484,
+      "endAbs": 3613,
+      "precision": "day",
+      "isMain": true
+    },
+    {
+      "id": "reign-sima-lun",
+      "dynastyId": "jin-west",
+      "personId": "sima-lun",
+      "title": "赵王",
+      "posthumousName": null,
+      "templeName": null,
+      "eraNames": [
+        "建始"
+      ],
+      "start": {
+        "year": 301,
+        "month": 2,
+        "abs": 3613,
+        "day": 3
+      },
+      "end": {
+        "year": 301,
+        "month": 5,
+        "abs": 3616,
+        "day": 31
+      },
+      "startAbs": 3613,
+      "endAbs": 3616,
+      "precision": "day",
+      "claimRole": "rival",
+      "isMain": true
+    },
+    {
+      "id": "reign-sima-zhong-restored",
+      "dynastyId": "jin-west",
+      "personId": "sima-zhong",
+      "title": "",
+      "posthumousName": "孝惠皇帝",
+      "templeName": null,
+      "eraNames": [
+        "永宁",
+        "太安",
+        "永安",
+        "建武",
+        "永兴",
+        "光熙"
+      ],
+      "start": {
+        "year": 301,
+        "month": 6,
+        "abs": 3617,
+        "day": 1
+      },
+      "end": {
         "year": 307,
         "month": 1,
         "abs": 3684,
         "day": 8
       },
-      "startAbs": 3484,
+      "startAbs": 3617,
       "endAbs": 3684,
       "precision": "day",
       "isMain": true
@@ -4907,11 +4995,11 @@
     },
     "scope": "cn",
     "depth": "standard",
-    "generatedAt": "2026-09-18",
+    "generatedAt": "2026-09-28",
     "counts": {
-      "persons": 88,
+      "persons": 89,
       "dynasties": 18,
-      "reigns": 77,
+      "reigns": 79,
       "events": 9,
       "relations": 62
     },
@@ -5035,6 +5123,22 @@
       {
         "label": "《中国大百科全书·中国历史（1）》“晋”条",
         "url": "https://szzy.7lue.cn/read/1a0ee984fa9c5a8c237bd9367a608356/be1436a9472e0b6b4e09f6d9d208d8cf.md"
+      },
+      {
+        "label": "《晋书·帝纪第四·孝惠帝纪》",
+        "url": "https://zh.wikisource.org/wiki/晉書/卷004"
+      },
+      {
+        "label": "《晋书·列传第二十九·赵王伦传》",
+        "url": "https://zh.wikisource.org/wiki/晉書/卷059"
+      },
+      {
+        "label": "《资治通鉴》卷八十四·晋纪六",
+        "url": "https://ancient-china-books.github.io/zizhitongjian/OEBPS/Text/6228.html"
+      },
+      {
+        "label": "司马伦",
+        "url": "https://zh.wikipedia.org/wiki/司马伦"
       }
     ],
     "notes": [
@@ -5050,7 +5154,8 @@
       "后赵石虎之后补石世、石遵、石鉴、石祗。石虎349年病死，冉闵杀的是石鉴而非石虎；石祗于襄国续统至351年，与冉魏并立。月取农历望日所在公历月。",
       "未收录冉魏、西燕、仇池等《十六国春秋》以外的小国。",
       "本次补充五胡十六国相关人物 bio（成汉至胡夏，含张氏前凉）及各国 dynasties.note；以《晋书·载记》相关传记核对人物关系与政权脉络，并参考本包列出的五胡十六国君主年表核对主要更替和灭亡节点。概述为便于详情阅读的提要，具体在位边界仍以本包 reign 日期字段为准；部分史料对称王/称帝、改国号及短期共治的记年口径不同，概述按本包政权序列简述。",
-      "本次补充西晋、东晋15位皇帝人物 bio 及两朝 dynasty.note；依据《晋书》帝纪核对继承关系、朝政转折与主要事件，并参考故宫博物院《晋书》说明及《中国大百科全书》“晋”条概述。人物与政权概述为详情提要；准确在位边界以包内 reign 日期字段为准。"
+      "本次补充西晋、东晋15位皇帝人物 bio 及两朝 dynasty.note；依据《晋书》帝纪核对继承关系、朝政转折与主要事件，并参考故宫博物院《晋书》说明及《中国大百科全书》“晋”条概述。人物与政权概述为详情提要；准确在位边界以包内 reign 日期字段为准。",
+      "司马伦作为301年顺序篡位者录入西晋主泳道：据《晋书·孝惠帝纪》《资治通鉴》记载正月乙丑篡位、四月惠帝反正；公历日期采用本包沿用的史料年表换算，录301-02-03至301-05-31，且标 claimRole=rival、isMain=false，不计入正统主线。"
     ]
   }
 }

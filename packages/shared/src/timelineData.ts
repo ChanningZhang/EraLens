@@ -40,7 +40,7 @@ import {
 import { normalizeSearchTerm } from "./personSearchTerms";
 import { DATE_CONFIDENCE_LABEL } from "./reignBoundaries";
 import { isFateRelationKind } from "./reignFateRelations";
-import { rangeIntersectsWindow } from "./time";
+import { midpointAbs, rangeIntersectsWindow } from "./time";
 
 export type TimelineFilterQuery = {
   fromAbs: number;
@@ -216,7 +216,8 @@ function buildPersonEntityDetail(
     throw new Error(`Reign not found: ${options.focusReignId}`);
   }
 
-  const capitalTenures = personReigns.flatMap((reign) => {
+  const capitalReigns = focusReign ? [focusReign] : personReigns;
+  const capitalTenures = capitalReigns.flatMap((reign) => {
     const rows = buildReignTenureCapitalRows(reign, store.capitals ?? [], store.reigns);
     const name = personReigns.length < 2
       ? ""
@@ -594,7 +595,7 @@ export function searchEntities(store: TimelineDataStore, term: string): SearchHi
       hits.push({
         ref: { type: "dynasty", id: dynasty.id },
         label: dynasty.name,
-        abs: dynasty.startAbs,
+        abs: midpointAbs(dynasty.startAbs, dynasty.endAbs),
       });
     }
   }
@@ -619,7 +620,7 @@ export function searchEntities(store: TimelineDataStore, term: string): SearchHi
       ref: { type: "reign", id: reign.id },
       label: matchedEraNames[0],
       subtitle: [person?.name, dynasty?.name].filter(Boolean).join(" · ") || undefined,
-      abs: reign.startAbs,
+      abs: midpointAbs(reign.startAbs, reign.endAbs),
     });
   }
   for (const capital of store.capitals ?? []) {
@@ -631,7 +632,7 @@ export function searchEntities(store: TimelineDataStore, term: string): SearchHi
       ref: { type: "capital", id: capital.id },
       label: capital.historicalName,
       subtitle: [capital.modernName, dynasty?.name, "都城"].filter(Boolean).join(" · "),
-      abs: capital.startAbs,
+      abs: midpointAbs(capital.startAbs, capital.endAbs),
     });
   }
   for (const event of store.events) {

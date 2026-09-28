@@ -27,14 +27,40 @@ export function AppShell() {
   const selection = useSelection();
   const boundsQuery = useDataBounds();
   const stageRef = useRef<HTMLDivElement>(null);
+  const searchWrapRef = useRef<HTMLDivElement>(null);
+  const searchInputRef = useRef<HTMLInputElement>(null);
   useTimelineWheel();
   const [search, setSearch] = useState("");
+  const [searchExpanded, setSearchExpanded] = useState(false);
   const [searchHits, setSearchHits] = useState<SearchHit[]>([]);
   const [eventSettingsOpen, setEventSettingsOpen] = useState(false);
   const { eventDisplay, updateEventKind } = useEventDisplaySettings();
   const { preferences, updateLayout } = useTimelineLayoutSettings();
   const presentation = viewport.presentation;
   const eventKinds = EventKindSchema.options;
+
+  const selectSearchHit = (hit: SearchHit) => {
+    selectionStore.select(hit.ref, hit.abs);
+    if (hit.abs !== undefined) viewportStore.jumpToAbs(hit.abs);
+    setSearchHits([]);
+    setSearchExpanded(false);
+  };
+
+  useEffect(() => {
+    if (searchExpanded) searchInputRef.current?.focus();
+  }, [searchExpanded]);
+
+  useEffect(() => {
+    if (!searchExpanded) return;
+    const onPointerDown = (event: PointerEvent) => {
+      if (event.target instanceof Node && !searchWrapRef.current?.contains(event.target)) {
+        setSearchExpanded(false);
+        setSearchHits([]);
+      }
+    };
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
+  }, [searchExpanded]);
 
   useEffect(() => {
     if (boundsQuery.data) {
@@ -155,8 +181,21 @@ export function AppShell() {
             <p className={styles.brandSub}>历史透镜</p>
           </>}
         </div>
-        <div className={styles.searchWrap}>
+        <div ref={searchWrapRef} className={styles.searchWrap} data-expanded={searchExpanded}>
+          <button
+            type="button"
+            className={styles.searchToggle}
+            aria-label="打开搜索"
+            aria-expanded={searchExpanded}
+            onClick={() => setSearchExpanded(true)}
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="10.8" cy="10.8" r="6.3" />
+              <path d="m15.5 15.5 4.2 4.2" />
+            </svg>
+          </button>
           <input
+            ref={searchInputRef}
             className={styles.searchInput}
             placeholder="搜索人物、王朝、年号、都城、事件…"
             aria-label="搜索人物、王朝、年号、都城、事件"
@@ -172,11 +211,14 @@ export function AppShell() {
               setSearchHits(await repo.search(value));
             }}
             onKeyDown={(e) => {
-              if (e.key === "Enter" && searchHits[0]) {
-                const hit = searchHits[0];
-                selectionStore.select(hit.ref, hit.abs);
-                if (hit.abs !== undefined) viewportStore.jumpToAbs(hit.abs);
+              if (e.key === "Escape" && searchExpanded) {
+                setSearchExpanded(false);
                 setSearchHits([]);
+                e.currentTarget.blur();
+                return;
+              }
+              if (e.key === "Enter" && searchHits[0]) {
+                selectSearchHit(searchHits[0]);
               }
             }}
           />
@@ -188,10 +230,8 @@ export function AppShell() {
                   type="button"
                   className={styles.searchResult}
                   onClick={() => {
-                    selectionStore.select(hit.ref, hit.abs);
-                    if (hit.abs !== undefined) viewportStore.jumpToAbs(hit.abs);
+                    selectSearchHit(hit);
                     setSearch("");
-                    setSearchHits([]);
                   }}
                 >
                   <span>{hit.label}</span>

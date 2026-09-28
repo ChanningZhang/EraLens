@@ -50,18 +50,24 @@
   position: absolute;
   top: 12px;
   left: calc(var(--timeline-gutter) + 116px);
-  width: min(167px, calc(100% - var(--timeline-gutter) - 140px));
+  width: min(140px, calc(100% - var(--timeline-gutter) - 140px));
   pointer-events: auto;
+}
+
+.searchToggle {
+  display: none;
 }
 
 .searchInput {
   width: 100%;
-  padding: 9px 13px;
+  height: 32px;
+  padding: 5px 12px;
   border: 1px solid var(--color-border);
   border-radius: 999px;
   background: var(--color-surface);
   background: color-mix(in srgb, var(--color-surface) 94%, transparent);
   color: var(--color-ink);
+  font-size: 14px;
   box-shadow: 0 4px 16px color-mix(in srgb, var(--color-ink) 9%, transparent);
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
@@ -91,7 +97,7 @@
   position: absolute;
   left: env(safe-area-inset-left);
   bottom: calc(env(safe-area-inset-bottom) - var(--ruler-shift));
-  z-index: 30;
+  z-index: 15;
   display: grid;
   place-items: center;
   width: var(--timeline-gutter);
@@ -186,7 +192,7 @@
   --ruler-height: 60px;
 }
 
-.appShell[data-narrow="true"] .searchInput { height: 44px; font-size: 16px; padding: 9px 10px; }
+.appShell[data-narrow="true"] .searchInput { height: 32px; font-size: 16px; padding: 5px 10px; }
 .appShell[data-narrow="true"] .searchResults { max-height: min(50dvh, 280px); }
 
 @media (orientation: landscape) and (max-height: 560px) {
@@ -266,7 +272,77 @@
 
 @media (max-width: 960px) {
   .searchWrap {
-    width: min(200px, calc(100% - var(--timeline-gutter) - 140px));
+    top: 10px;
+    right: max(12px, env(safe-area-inset-right));
+    left: auto;
+    width: 40px;
+    height: 40px;
+    transition: width 180ms ease;
+  }
+
+  .searchWrap[data-expanded="true"] {
+    width: min(140px, calc(100vw - 72px - env(safe-area-inset-left) - env(safe-area-inset-right)));
+  }
+
+  .searchToggle {
+    position: absolute;
+    inset: 0 0 auto auto;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 50%;
+    color: var(--color-ink-secondary);
+    background: var(--color-surface);
+    background: color-mix(in srgb, var(--color-surface) 94%, transparent);
+    box-shadow: 0 4px 16px color-mix(in srgb, var(--color-ink) 9%, transparent);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    cursor: pointer;
+    transition: opacity 100ms ease;
+  }
+
+  .searchToggle svg {
+    width: 19px;
+    height: 19px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+  }
+
+  .searchWrap[data-expanded="true"] .searchToggle {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .searchInput,
+  .appShell[data-narrow="true"] .searchInput {
+    width: 100%;
+    height: 34px;
+    padding: 6px 42px 6px 10px;
+    font-size: 16px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 100ms ease;
+  }
+
+  .searchWrap[data-expanded="true"] .searchInput {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .searchWrap:not([data-expanded="true"]) .searchResults {
+    display: none;
+  }
+
+  .searchWrap[data-expanded="true"] .searchResults {
+    left: auto;
+    right: 0;
+    width: min(320px, calc(100vw - 24px));
   }
 
   .detailDrawer {

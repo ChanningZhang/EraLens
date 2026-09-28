@@ -264,7 +264,8 @@ export function resolveReignDetailSubtitle(
   personContext?: PersonDisplayContext | null,
 ): string {
   const appellation = resolveEmperorAppellation(reign, personContext);
-  const conventional = appellation?.name ?? reign.title;
+  const reignTitle = reign.title.trim();
+  const conventional = reignTitle || appellation?.name;
   if (isRocTaiwanLeaderReign(reign)) {
     return [resolveRocReignDetailSubtitle(), conventional]
       .filter(Boolean)

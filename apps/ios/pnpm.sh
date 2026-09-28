@@ -8,7 +8,7 @@ xcodebuild -project apps/ios/ios/App/App.xcodeproj \
   -clonedSourcePackagesDirPath .build/ios/SourcePackages \
   CODE_SIGNING_ALLOWED=NO build
 
-xcodebuild -project apps/ios/ios/App/App.xcodeproj -scheme App -configuration Debug \
+env -u CC -u CXX -u CPPFLAGS -u LDFLAGS xcodebuild -project apps/ios/ios/App/App.xcodeproj -scheme App -configuration Debug \
   -destination 'platform=iOS Simulator,id=E7EFA5C7-E346-41FA-A50A-745B977DDE84' \
   -derivedDataPath .build/ios/DerivedData \
   -clonedSourcePackagesDirPath .build/ios/SourcePackages \

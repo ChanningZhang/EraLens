@@ -195,5 +195,8 @@ ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, moder
 INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
 VALUES ('loc-yinping', '阴平道（阴平故城区域）', '甘肃省陇南市文县鹄衣坝附近', 104.6835, 32.944031, 'WGS84', 'approximate', '以汉代阴平道故城所在的文县区域作近似标点；偷渡路线由此向东南越摩天岭，经今四川平武方向至江油关，坐标不代表全程。阴平道具体线路尚有不同考证。', '[{"label":"《三国志·魏书·邓艾传》","url":"https://zh.wikisource.org/zh-hans/三國志/卷28"},{"label":"蜀道寻踪：阴平古道记","url":"https://cbgc.scol.com.cn/news/5026693"},{"label":"文县中心坐标","url":"https://www.poi86.com/poi/amap/district/621222/2.html"}]'::jsonb)
 ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
+INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
+VALUES ('loc-jin-west-court-forced-to-changan', '长安（汉长安城区域）', '陕西省西安市未央区汉长安城遗址', 108.858889, 34.303598, 'WGS84', 'approximate', '《晋书》仅记晋惠帝幸长安、以征西府为宫，未能据此确认府址遗址；此点只表示汉长安城区域，不代表具体宫府。坐标采用遗址范围内的近似代表点。', '[{"label":"《晋书·惠帝纪》","url":"https://www.shidianguji.com/book/LS0005/chapter/LS0005_52"},{"label":"汉长安城（DSR地名集，遗址坐标）","url":"https://dsr.nii.ac.jp/digital-maps/dsr/place-names/0133.html.ja"}]'::jsonb)
+ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;
 
 COMMIT;

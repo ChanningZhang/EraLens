@@ -9,6 +9,7 @@
   position: absolute;
   inset: 0;
   min-width: 0;
+  cursor: pointer;
 }
 
 .card {
@@ -76,11 +77,22 @@
 
 .marker {
   padding: 0;
+  border: 0;
   border-radius: 1px;
   min-width: 0;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--card-color) 18%, var(--color-border));
 }
 
-.compactStack {
+.card.marker:global(.masterGold) {
+  border: 0 !important;
+  box-shadow:
+    inset 0 1px 0 var(--master-gold-specular),
+    inset 0 -1px 0 color-mix(in srgb, var(--master-gold-4) 16%, transparent),
+    inset 0 0 0 1px var(--master-gold-border);
+}
+
+.compactStack:not(.marker) {
   padding: 0 6px;
 }
 
@@ -98,6 +110,12 @@
   background: color-mix(in srgb, var(--card-color) 8%, var(--color-surface));
   border-width: 2px;
   border-color: color-mix(in srgb, var(--card-color) 30%, var(--color-border));
+}
+
+.marker.parallel {
+  border: 0;
+  box-shadow:
+    inset 0 0 0 2px color-mix(in srgb, var(--card-color) 30%, var(--color-border));
 }
 
 .parallel:hover {

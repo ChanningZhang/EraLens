@@ -6,6 +6,7 @@ import {
   EntityDetailSchema,
   eventKindLabel,
   eventSpanAbs,
+  midpointAbs,
   normalizeSearchTerm,
   personIntersectsAbsWindow,
   personSearchAnchorAbs,
@@ -328,7 +329,7 @@ export async function registerRoutes(app: FastifyInstance) {
   });
 
   app.get("/entities/:type/:id", async (request, reply) => {
-    reply.header("Cache-Control", CACHE_HEADER);
+    reply.header("Cache-Control", "no-store");
     const params = request.params as { type: string; id: string };
     if (!["dynasty", "reign", "person", "event", "capital"].includes(params.type)) {
       reply.code(400);
@@ -505,7 +506,7 @@ export async function registerRoutes(app: FastifyInstance) {
     const personReigns = personRows.length
       ? await prisma.reign.findMany({
           where: { personId: { in: personRows.map((person) => person.id) } },
-          select: { personId: true, startAbs: true },
+          select: { personId: true, startAbs: true, endAbs: true },
           orderBy: { startAbs: "asc" },
         })
       : [];
@@ -514,7 +515,7 @@ export async function registerRoutes(app: FastifyInstance) {
       ...dynastyRows.map((dynasty) => ({
         ref: { type: "dynasty" as const, id: dynasty.id },
         label: dynasty.name,
-        abs: dynasty.startAbs,
+        abs: midpointAbs(dynasty.startAbs, dynasty.endAbs),
       })),
       ...personRows.map((row) => {
         const person = mapPerson(row);
@@ -533,13 +534,13 @@ export async function registerRoutes(app: FastifyInstance) {
             .map((name) => name.trim())
             .find((name) => normalizeSearchTerm(name).includes(q)) ?? reign.title,
         subtitle: `${reign.person.name} · ${reign.dynasty.name}`,
-        abs: reign.startAbs,
+        abs: midpointAbs(reign.startAbs, reign.endAbs),
       })),
       ...capitalRows.map((capital) => ({
         ref: { type: "capital" as const, id: capital.id },
         label: capital.historicalName,
         subtitle: `${capital.modernName} · ${capital.dynasty.name} · 都城`,
-        abs: capital.startAbs,
+        abs: midpointAbs(capital.startAbs, capital.endAbs),
       })),
       ...eventRows.map((event) => ({
         ref: { type: "event" as const, id: event.id },
