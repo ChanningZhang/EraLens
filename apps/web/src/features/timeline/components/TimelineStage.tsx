@@ -98,6 +98,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   const timelineInertiaRef = useRef<number | null>(null);
   const timelinePanRef = useRef<ReturnType<typeof createFramePanAccumulator> | null>(null);
   const [eventsExpanded, setEventsExpanded] = useState(false);
+  const [mapScale, setMapScale] = useState(1);
   const stageViewportSize = useStageViewportSize(stageRef);
   const stageViewportHeight = stageViewportSize.height;
   const viewport = useViewport();
@@ -641,7 +642,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
         <div className={styles.viewportPanel}>
           <StableChinaMapBackground
             layout={mapLayout}
-            scale={1}
+            scale={mapScale}
             offset={{ x: 0, y: 0 }}
           />
         </div>
@@ -752,7 +753,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
             laneColorMap={laneColorMap}
             atAbs={labelAnchorAbs}
             layout={mapLayout}
-            scale={1}
+            scale={mapScale}
             offset={{ x: 0, y: 0 }}
           />
         </div>
@@ -763,9 +764,34 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
             events={nearbyEvents}
             atAbs={viewport.centerAbs}
             layout={mapLayout}
-            scale={1}
+            scale={mapScale}
             offset={{ x: 0, y: 0 }}
           />
+        </div>
+      </div>
+      <div className={styles.mapControlsOverlay}>
+        <div className={styles.viewportPanel}>
+          <div className={styles.mapControls} role="group" aria-label="地图缩放">
+            <button
+              type="button"
+              onClick={() => setMapScale((scale) => Math.min(2.8, Math.round((scale + 0.2) * 10) / 10))}
+              aria-label="放大地图"
+              title="放大"
+              disabled={mapScale >= 2.8}
+            >
+              +
+            </button>
+            <span aria-hidden="true" />
+            <button
+              type="button"
+              onClick={() => setMapScale((scale) => Math.max(0.7, Math.round((scale - 0.2) * 10) / 10))}
+              aria-label="缩小地图"
+              title="缩小"
+              disabled={mapScale <= 0.7}
+            >
+              −
+            </button>
+          </div>
         </div>
       </div>
     </div>

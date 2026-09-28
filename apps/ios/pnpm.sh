@@ -1,5 +1,8 @@
 xcrun simctl list devices booted
 
+pnpm data:mobile:build
+pnpm data:mobile:validate
+
 pnpm ios:sync
 env -u CC -u CXX -u CPPFLAGS -u LDFLAGS xcodebuild -project apps/ios/ios/App/App.xcodeproj \
   -scheme App -configuration Debug \
