@@ -191,4 +191,4 @@
 
 :global([data-narrow="true"]) .empty { padding: 16px; text-align: center; }
 :global([data-narrow="true"]) .emptyHint { font-size: 12px; overflow-wrap: anywhere; }
-:global([data-narrow="true"]) .mapControls { left: calc(var(--timeline-gutter) + 8px); bottom: 8px; }
+:global([data-narrow="true"]) .mapControls { right: 8px; bottom: 8px; }
