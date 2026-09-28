@@ -2997,8 +2997,6 @@
       "dynastyId": "shang",
       "personId": "zi-tang",
       "title": "",
-      "posthumousName": "武王",
-      "templeName": "高祖",
       "eraNames": [],
       "start": {
         "year": -1600,
@@ -3022,7 +3020,6 @@
       "dynastyId": "shang",
       "personId": "zi-waibing",
       "title": "",
-      "posthumousName": "外丙",
       "eraNames": [],
       "start": {
         "year": -1570,
@@ -3046,7 +3043,6 @@
       "dynastyId": "shang",
       "personId": "zi-zhongren",
       "title": "",
-      "posthumousName": "仲壬",
       "eraNames": [],
       "start": {
         "year": -1565,
@@ -3070,8 +3066,6 @@
       "dynastyId": "shang",
       "personId": "zi-taijia",
       "title": "",
-      "posthumousName": "太甲",
-      "templeName": "太宗",
       "eraNames": [],
       "start": {
         "year": -1560,
@@ -3095,7 +3089,6 @@
       "dynastyId": "shang",
       "personId": "zi-woding",
       "title": "",
-      "posthumousName": "沃丁",
       "eraNames": [],
       "start": {
         "year": -1547,
@@ -3119,7 +3112,6 @@
       "dynastyId": "shang",
       "personId": "zi-taigeng",
       "title": "",
-      "posthumousName": "太庚",
       "eraNames": [],
       "start": {
         "year": -1528,
@@ -3143,7 +3135,6 @@
       "dynastyId": "shang",
       "personId": "zi-xiaojia",
       "title": "",
-      "posthumousName": "小甲",
       "eraNames": [],
       "start": {
         "year": -1523,
@@ -3167,7 +3158,6 @@
       "dynastyId": "shang",
       "personId": "zi-yongji",
       "title": "",
-      "posthumousName": "雍己",
       "eraNames": [],
       "start": {
         "year": -1506,
@@ -3191,8 +3181,6 @@
       "dynastyId": "shang",
       "personId": "zi-taiwu",
       "title": "",
-      "posthumousName": "太戊",
-      "templeName": "中宗",
       "eraNames": [],
       "start": {
         "year": -1494,
@@ -3216,7 +3204,6 @@
       "dynastyId": "shang",
       "personId": "zi-zhongding",
       "title": "",
-      "posthumousName": "仲丁",
       "eraNames": [],
       "start": {
         "year": -1419,
@@ -3240,7 +3227,6 @@
       "dynastyId": "shang",
       "personId": "zi-wairen",
       "title": "",
-      "posthumousName": "外壬",
       "eraNames": [],
       "start": {
         "year": -1410,
@@ -3264,7 +3250,6 @@
       "dynastyId": "shang",
       "personId": "zi-hedanjia",
       "title": "",
-      "posthumousName": "河亶甲",
       "eraNames": [],
       "start": {
         "year": -1400,
@@ -3288,7 +3273,6 @@
       "dynastyId": "shang",
       "personId": "zi-zuyi",
       "title": "",
-      "posthumousName": "祖乙",
       "eraNames": [],
       "start": {
         "year": -1391,
@@ -3312,7 +3296,6 @@
       "dynastyId": "shang",
       "personId": "zi-zuxin",
       "title": "",
-      "posthumousName": "祖辛",
       "eraNames": [],
       "start": {
         "year": -1372,
@@ -3336,7 +3319,6 @@
       "dynastyId": "shang",
       "personId": "zi-wojia",
       "title": "",
-      "posthumousName": "沃甲",
       "eraNames": [],
       "start": {
         "year": -1358,
@@ -3360,7 +3342,6 @@
       "dynastyId": "shang",
       "personId": "zi-zuding",
       "title": "",
-      "posthumousName": "祖丁",
       "eraNames": [],
       "start": {
         "year": -1338,
@@ -3384,7 +3365,6 @@
       "dynastyId": "shang",
       "personId": "zi-nangeng",
       "title": "",
-      "posthumousName": "南庚",
       "eraNames": [],
       "start": {
         "year": -1329,
@@ -3408,7 +3388,6 @@
       "dynastyId": "shang",
       "personId": "zi-yangjia",
       "title": "",
-      "posthumousName": "阳甲",
       "eraNames": [],
       "start": {
         "year": -1323,
@@ -3432,8 +3411,6 @@
       "dynastyId": "shang",
       "personId": "zi-pangeng",
       "title": "",
-      "posthumousName": "盘庚",
-      "templeName": "世祖",
       "eraNames": [],
       "start": {
         "year": -1310,
@@ -3457,7 +3434,6 @@
       "dynastyId": "shang",
       "personId": "zi-xiaoxin",
       "title": "",
-      "posthumousName": "小辛",
       "eraNames": [],
       "start": {
         "year": -1279,
@@ -3481,7 +3457,6 @@
       "dynastyId": "shang",
       "personId": "zi-xiaoyi",
       "title": "",
-      "posthumousName": "小乙",
       "eraNames": [],
       "start": {
         "year": -1276,
@@ -3505,8 +3480,6 @@
       "dynastyId": "shang",
       "personId": "zi-wuding",
       "title": "",
-      "posthumousName": "武丁",
-      "templeName": "高宗",
       "eraNames": [],
       "start": {
         "year": -1250,
@@ -3530,7 +3503,6 @@
       "dynastyId": "shang",
       "personId": "zi-zugeng",
       "title": "",
-      "posthumousName": "祖庚",
       "eraNames": [],
       "start": {
         "year": -1191,
@@ -3554,7 +3526,6 @@
       "dynastyId": "shang",
       "personId": "zi-zujia",
       "title": "",
-      "posthumousName": "祖甲",
       "eraNames": [],
       "start": {
         "year": -1180,
@@ -3578,7 +3549,6 @@
       "dynastyId": "shang",
       "personId": "zi-linxin",
       "title": "",
-      "posthumousName": "廪辛",
       "eraNames": [],
       "start": {
         "year": -1169,
@@ -3602,7 +3572,6 @@
       "dynastyId": "shang",
       "personId": "zi-gengding",
       "title": "",
-      "posthumousName": "庚丁",
       "eraNames": [],
       "start": {
         "year": -1158,
@@ -3626,7 +3595,6 @@
       "dynastyId": "shang",
       "personId": "zi-wuyi",
       "title": "",
-      "posthumousName": "武乙",
       "eraNames": [],
       "start": {
         "year": -1147,
@@ -3650,7 +3618,6 @@
       "dynastyId": "shang",
       "personId": "zi-wending",
       "title": "",
-      "posthumousName": "文丁",
       "eraNames": [],
       "start": {
         "year": -1112,
@@ -3674,7 +3641,6 @@
       "dynastyId": "shang",
       "personId": "zi-diyi",
       "title": "",
-      "posthumousName": "帝乙",
       "eraNames": [],
       "start": {
         "year": -1101,
@@ -3698,7 +3664,6 @@
       "dynastyId": "shang",
       "personId": "zi-dixin",
       "title": "",
-      "posthumousName": "纣",
       "eraNames": [],
       "start": {
         "year": -1075,
@@ -3722,7 +3687,6 @@
       "dynastyId": "zhou-west",
       "personId": "ji-fa",
       "title": "",
-      "posthumousName": "武王",
       "eraNames": [],
       "start": {
         "year": -1046,
@@ -3746,7 +3710,6 @@
       "dynastyId": "zhou-west",
       "personId": "ji-song",
       "title": "",
-      "posthumousName": "成王",
       "eraNames": [],
       "start": {
         "year": -1042,
@@ -3770,7 +3733,6 @@
       "dynastyId": "zhou-west",
       "personId": "ji-zhao",
       "title": "",
-      "posthumousName": "康王",
       "eraNames": [],
       "start": {
         "year": -1020,
@@ -3794,7 +3756,6 @@
       "dynastyId": "zhou-west",
       "personId": "ji-xia",
       "title": "",
-      "posthumousName": "昭王",
       "eraNames": [],
       "start": {
         "year": -995,
@@ -3818,7 +3779,6 @@
       "dynastyId": "zhou-west",
       "personId": "ji-man",
       "title": "",
-      "posthumousName": "穆王",
       "eraNames": [],
       "start": {
         "year": -976,
@@ -3842,7 +3802,6 @@
       "dynastyId": "zhou-west",
       "personId": "ji-yihu",
       "title": "",
-      "posthumousName": "共王",
       "eraNames": [],
       "start": {
         "year": -922,
@@ -3866,7 +3825,6 @@
       "dynastyId": "zhou-west",
       "personId": "ji-jian",
       "title": "",
-      "posthumousName": "懿王",
       "eraNames": [],
       "start": {
         "year": -899,
@@ -3890,7 +3848,6 @@
       "dynastyId": "zhou-west",
       "personId": "ji-pifang",
       "title": "",
-      "posthumousName": "孝王",
       "eraNames": [],
       "start": {
         "year": -891,
@@ -3914,7 +3871,6 @@
       "dynastyId": "zhou-west",
       "personId": "ji-xie",
       "title": "",
-      "posthumousName": "夷王",
       "eraNames": [],
       "start": {
         "year": -885,
@@ -3938,7 +3894,6 @@
       "dynastyId": "zhou-west",
       "personId": "ji-hu",
       "title": "",
-      "posthumousName": "厉王",
       "eraNames": [],
       "start": {
         "year": -877,
@@ -3962,7 +3917,6 @@
       "dynastyId": "zhou-west",
       "personId": "ji-jing",
       "title": "",
-      "posthumousName": "宣王",
       "eraNames": [],
       "start": {
         "year": -827,
@@ -3986,7 +3940,6 @@
       "dynastyId": "zhou-west",
       "personId": "ji-gongsheng",
       "title": "",
-      "posthumousName": "幽王",
       "eraNames": [],
       "start": {
         "year": -781,
@@ -4010,7 +3963,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-yijiu",
       "title": "",
-      "posthumousName": "平王",
       "eraNames": [],
       "start": {
         "year": -770,
@@ -4034,7 +3986,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-yuchen",
       "title": "",
-      "posthumousName": "携王",
       "eraNames": [],
       "start": {
         "year": -770,
@@ -4061,7 +4012,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-lin",
       "title": "",
-      "posthumousName": "桓王",
       "eraNames": [],
       "start": {
         "year": -719,
@@ -4085,7 +4035,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-tuo",
       "title": "",
-      "posthumousName": "庄王",
       "eraNames": [],
       "start": {
         "year": -696,
@@ -4109,7 +4058,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-huqi",
       "title": "",
-      "posthumousName": "釐王",
       "eraNames": [],
       "start": {
         "year": -681,
@@ -4133,7 +4081,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-lang",
       "title": "",
-      "posthumousName": "惠王",
       "eraNames": [],
       "start": {
         "year": -676,
@@ -4157,7 +4104,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-zheng",
       "title": "",
-      "posthumousName": "襄王",
       "eraNames": [],
       "start": {
         "year": -651,
@@ -4181,7 +4127,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-renchen",
       "title": "",
-      "posthumousName": "顷王",
       "eraNames": [],
       "start": {
         "year": -618,
@@ -4205,7 +4150,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-ban",
       "title": "",
-      "posthumousName": "匡王",
       "eraNames": [],
       "start": {
         "year": -612,
@@ -4229,7 +4173,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-yu",
       "title": "",
-      "posthumousName": "定王",
       "eraNames": [],
       "start": {
         "year": -606,
@@ -4253,7 +4196,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-yi",
       "title": "",
-      "posthumousName": "简王",
       "eraNames": [],
       "start": {
         "year": -585,
@@ -4277,7 +4219,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-xiexin",
       "title": "",
-      "posthumousName": "灵王",
       "eraNames": [],
       "start": {
         "year": -571,
@@ -4301,7 +4242,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-gui",
       "title": "",
-      "posthumousName": "景王",
       "eraNames": [],
       "start": {
         "year": -544,
@@ -4325,7 +4265,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-meng",
       "title": "",
-      "posthumousName": "悼王",
       "eraNames": [],
       "start": {
         "year": -520,
@@ -4349,7 +4288,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-gai",
       "title": "",
-      "posthumousName": "敬王",
       "eraNames": [],
       "start": {
         "year": -519,
@@ -4373,7 +4311,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-ren",
       "title": "",
-      "posthumousName": "元王",
       "eraNames": [],
       "start": {
         "year": -476,
@@ -4397,7 +4334,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-jie",
       "title": "",
-      "posthumousName": "贞定王",
       "eraNames": [],
       "start": {
         "year": -468,
@@ -4421,7 +4357,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-quji",
       "title": "",
-      "posthumousName": "哀王",
       "eraNames": [],
       "start": {
         "year": -441,
@@ -4445,7 +4380,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-shu",
       "title": "",
-      "posthumousName": "思王",
       "eraNames": [],
       "start": {
         "year": -441,
@@ -4469,7 +4403,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-wei",
       "title": "",
-      "posthumousName": "考王",
       "eraNames": [],
       "start": {
         "year": -440,
@@ -4493,7 +4426,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-wu",
       "title": "",
-      "posthumousName": "威烈王",
       "eraNames": [],
       "start": {
         "year": -425,
@@ -4517,7 +4449,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-jiao",
       "title": "",
-      "posthumousName": "安王",
       "eraNames": [],
       "start": {
         "year": -401,
@@ -4541,7 +4472,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-xi",
       "title": "",
-      "posthumousName": "烈王",
       "eraNames": [],
       "start": {
         "year": -375,
@@ -4565,7 +4495,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-bian",
       "title": "",
-      "posthumousName": "显王",
       "eraNames": [],
       "start": {
         "year": -368,
@@ -4589,7 +4518,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-ding",
       "title": "",
-      "posthumousName": "慎靓王",
       "eraNames": [],
       "start": {
         "year": -320,
@@ -4613,7 +4541,6 @@
       "dynastyId": "zhou-east",
       "personId": "ji-yan",
       "title": "",
-      "posthumousName": "赧王",
       "eraNames": [],
       "start": {
         "year": -314,

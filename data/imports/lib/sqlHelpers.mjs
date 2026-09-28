@@ -366,6 +366,6 @@ export function writePreparedImportPackage(dir, {
   writeFileSync(path.join(dir, "import.sql"), sql);
   writeFileSync(path.join(dir, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);
   console.log(
-    `[${slug}] ${persons.length} persons, ${dynasties.length} dynasties, ${reigns.length} reigns, ${events.length} events`,
+    `[${slug}] ${persons.length} persons, ${dynasties.length} dynasties, ${capitals.length} capitals, ${reigns.length} reigns, ${events.length} events`,
   );
 }

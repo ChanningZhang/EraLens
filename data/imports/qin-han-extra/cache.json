@@ -208,8 +208,6 @@
       "dynastyId": "nanyue",
       "personId": "zhao-tuo",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -203,
@@ -236,8 +234,6 @@
       "dynastyId": "nanyue",
       "personId": "zhao-mo",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -137,
@@ -264,8 +260,6 @@
       "dynastyId": "nanyue",
       "personId": "zhao-yingqi",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -122,
@@ -292,8 +286,6 @@
       "dynastyId": "nanyue",
       "personId": "zhao-xing",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -112,
@@ -320,8 +312,6 @@
       "dynastyId": "nanyue",
       "personId": "zhao-jiande",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -111,
@@ -348,8 +338,6 @@
       "dynastyId": "chimei",
       "personId": "fan-chong",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 23,
@@ -378,8 +366,6 @@
       "dynastyId": "chimei",
       "personId": "liu-panzi",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 25,

@@ -434,8 +434,6 @@
       "dynastyId": "wei",
       "personId": "cao-pi",
       "title": "",
-      "posthumousName": "文皇帝",
-      "templeName": "高祖",
       "eraNames": [
         "黄初"
       ],
@@ -466,8 +464,6 @@
       "dynastyId": "wei",
       "personId": "cao-rui",
       "title": "",
-      "posthumousName": "明皇帝",
-      "templeName": "烈祖",
       "eraNames": [
         "太和",
         "青龙",
@@ -500,8 +496,6 @@
       "dynastyId": "shu",
       "personId": "liu-bei",
       "title": "",
-      "posthumousName": "昭烈皇帝",
-      "templeName": "烈祖",
       "eraNames": [
         "章武"
       ],
@@ -532,8 +526,6 @@
       "dynastyId": "shu",
       "personId": "liu-shan",
       "title": "",
-      "posthumousName": "孝怀皇帝",
-      "templeName": null,
       "eraNames": [
         "建兴",
         "延熙",
@@ -567,8 +559,6 @@
       "dynastyId": "wu",
       "personId": "sun-quan",
       "title": "",
-      "posthumousName": "大皇帝",
-      "templeName": "太祖",
       "eraNames": [
         "黄武"
       ],

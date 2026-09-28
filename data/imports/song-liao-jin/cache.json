@@ -589,8 +589,6 @@
       "dynastyId": "liao",
       "personId": "yelu-abaoji",
       "title": "",
-      "posthumousName": null,
-      "templeName": "太祖",
       "eraNames": [
         "神册",
         "天赞"
@@ -617,8 +615,6 @@
       "dynastyId": "liao",
       "personId": "yelu-deguang",
       "title": "",
-      "posthumousName": null,
-      "templeName": "太宗",
       "eraNames": [],
       "start": {
         "year": 927,
@@ -642,8 +638,6 @@
       "dynastyId": "liao",
       "personId": "yelu-ruan",
       "title": "",
-      "posthumousName": null,
-      "templeName": "世宗",
       "eraNames": [],
       "start": {
         "year": 947,
@@ -667,8 +661,6 @@
       "dynastyId": "liao",
       "personId": "yelu-jing",
       "title": "",
-      "posthumousName": null,
-      "templeName": "穆宗",
       "eraNames": [],
       "start": {
         "year": 951,
@@ -692,8 +684,6 @@
       "dynastyId": "liao",
       "personId": "yelu-xian",
       "title": "",
-      "posthumousName": null,
-      "templeName": "景宗",
       "eraNames": [],
       "start": {
         "year": 969,
@@ -717,8 +707,6 @@
       "dynastyId": "liao",
       "personId": "yelu-longxu",
       "title": "",
-      "posthumousName": null,
-      "templeName": "圣宗",
       "eraNames": [
         "统和",
         "开泰",
@@ -746,8 +734,6 @@
       "dynastyId": "liao",
       "personId": "yelu-zongzhen",
       "title": "",
-      "posthumousName": null,
-      "templeName": "兴宗",
       "eraNames": [],
       "start": {
         "year": 1031,
@@ -771,8 +757,6 @@
       "dynastyId": "liao",
       "personId": "yelu-hongji",
       "title": "",
-      "posthumousName": null,
-      "templeName": "道宗",
       "eraNames": [],
       "start": {
         "year": 1055,
@@ -796,8 +780,6 @@
       "dynastyId": "liao",
       "personId": "yelu-yanxi",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1101,
@@ -821,8 +803,6 @@
       "dynastyId": "jin-nvzhen",
       "personId": "wanyan-aguda",
       "title": "",
-      "posthumousName": null,
-      "templeName": "太祖",
       "eraNames": [
         "收国",
         "天辅"
@@ -849,8 +829,6 @@
       "dynastyId": "jin-nvzhen",
       "personId": "wanyan-sheng",
       "title": "",
-      "posthumousName": null,
-      "templeName": "太宗",
       "eraNames": [],
       "start": {
         "year": 1123,
@@ -874,8 +852,6 @@
       "dynastyId": "jin-nvzhen",
       "personId": "wanyan-dan",
       "title": "",
-      "posthumousName": null,
-      "templeName": "熙宗",
       "eraNames": [],
       "start": {
         "year": 1135,
@@ -899,8 +875,6 @@
       "dynastyId": "jin-nvzhen",
       "personId": "wanyan-liang",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1150,
@@ -924,8 +898,6 @@
       "dynastyId": "jin-nvzhen",
       "personId": "wanyan-yong",
       "title": "",
-      "posthumousName": null,
-      "templeName": "世宗",
       "eraNames": [
         "大定"
       ],
@@ -951,8 +923,6 @@
       "dynastyId": "jin-nvzhen",
       "personId": "wanyan-jing",
       "title": "",
-      "posthumousName": null,
-      "templeName": "章宗",
       "eraNames": [],
       "start": {
         "year": 1189,
@@ -976,8 +946,6 @@
       "dynastyId": "jin-nvzhen",
       "personId": "wanyan-yongji",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1208,
@@ -1001,8 +969,6 @@
       "dynastyId": "jin-nvzhen",
       "personId": "wanyan-xun",
       "title": "",
-      "posthumousName": null,
-      "templeName": "宣宗",
       "eraNames": [],
       "start": {
         "year": 1213,
@@ -1026,8 +992,6 @@
       "dynastyId": "jin-nvzhen",
       "personId": "wanyan-shouxu",
       "title": "",
-      "posthumousName": null,
-      "templeName": "哀宗",
       "eraNames": [],
       "start": {
         "year": 1223,
@@ -1051,8 +1015,6 @@
       "dynastyId": "jin-nvzhen",
       "personId": "wanyan-chenglin",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1234,

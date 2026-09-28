@@ -2389,8 +2389,6 @@
       "dynastyId": "yuan",
       "personId": "hu-bilie",
       "title": "世祖",
-      "posthumousName": "圣德神功文武皇帝",
-      "templeName": "世祖",
       "eraNames": [
         "至元"
       ],
@@ -2416,8 +2414,6 @@
       "dynastyId": "yuan",
       "personId": "hu-bilie",
       "title": "世祖",
-      "posthumousName": "圣德神功文武皇帝",
-      "templeName": "世祖",
       "eraNames": [
         "至元"
       ],
@@ -2443,8 +2439,6 @@
       "dynastyId": "yuan",
       "personId": "temur",
       "title": "",
-      "posthumousName": "钦明广孝皇帝",
-      "templeName": "成宗",
       "eraNames": [],
       "start": {
         "year": 1294,
@@ -2468,8 +2462,6 @@
       "dynastyId": "yuan",
       "personId": "khayishan",
       "title": "",
-      "posthumousName": "仁惠宣孝皇帝",
-      "templeName": "武宗",
       "eraNames": [],
       "start": {
         "year": 1307,
@@ -2493,8 +2485,6 @@
       "dynastyId": "yuan",
       "personId": "ayurbarwada",
       "title": "",
-      "posthumousName": "圣文钦孝皇帝",
-      "templeName": "仁宗",
       "eraNames": [],
       "start": {
         "year": 1311,
@@ -2518,8 +2508,6 @@
       "dynastyId": "yuan",
       "personId": "shidebala",
       "title": "",
-      "posthumousName": "睿圣文孝皇帝",
-      "templeName": "英宗",
       "eraNames": [],
       "start": {
         "year": 1320,
@@ -2543,8 +2531,6 @@
       "dynastyId": "yuan",
       "personId": "yeshuntuemur",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "泰定",
         "致和"
@@ -2571,8 +2557,6 @@
       "dynastyId": "yuan",
       "personId": "tugh-temur",
       "title": "",
-      "posthumousName": "圣明元孝皇帝",
-      "templeName": "文宗",
       "eraNames": [
         "天历"
       ],
@@ -2598,8 +2582,6 @@
       "dynastyId": "yuan",
       "personId": "khoshila",
       "title": "",
-      "posthumousName": "翼献景孝皇帝",
-      "templeName": "明宗",
       "eraNames": [],
       "start": {
         "year": 1329,
@@ -2623,8 +2605,6 @@
       "dynastyId": "yuan",
       "personId": "tugh-temur",
       "title": "",
-      "posthumousName": "圣明元孝皇帝",
-      "templeName": "文宗",
       "eraNames": [
         "天历",
         "至顺"
@@ -2651,8 +2631,6 @@
       "dynastyId": "yuan",
       "personId": "irinchibal",
       "title": "",
-      "posthumousName": "冲圣嗣孝皇帝",
-      "templeName": "宁宗",
       "eraNames": [],
       "start": {
         "year": 1332,
@@ -2676,8 +2654,6 @@
       "dynastyId": "yuan",
       "personId": "togon-temur",
       "title": "",
-      "posthumousName": "顺帝",
-      "templeName": "惠宗",
       "eraNames": [],
       "start": {
         "year": 1333,
@@ -2701,8 +2677,6 @@
       "dynastyId": "yuan",
       "personId": "togon-temur",
       "title": "",
-      "posthumousName": "顺帝",
-      "templeName": "惠宗",
       "eraNames": [
         "至正"
       ],
@@ -2727,9 +2701,7 @@
       "id": "reign-ayushiridara-yuan",
       "dynastyId": "yuan",
       "personId": "ayushiridara",
-      "title": "",
-      "posthumousName": null,
-      "templeName": "昭宗",
+      "title": "昭宗",
       "eraNames": [
         "宣光"
       ],
@@ -2755,8 +2727,6 @@
       "dynastyId": "yuan",
       "personId": "togus-temur",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "天元"
       ],
@@ -2782,8 +2752,6 @@
       "dynastyId": "yuan",
       "personId": "ragibagh",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "天顺"
       ],
@@ -2812,8 +2780,6 @@
       "dynastyId": "song-xu",
       "personId": "xu-shouhui",
       "title": "",
-      "posthumousName": "应天启运献武皇帝",
-      "templeName": "世宗",
       "eraNames": [
         "治平",
         "太平",
@@ -2842,8 +2808,6 @@
       "dynastyId": "song-han",
       "personId": "han-liner",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "龙凤"
       ],
@@ -2869,8 +2833,6 @@
       "dynastyId": "zhou-zhang",
       "personId": "zhang-shicheng",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "天佑"
       ],
@@ -2896,8 +2858,6 @@
       "dynastyId": "chen-han",
       "personId": "chen-youliang",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "大义"
       ],
@@ -2923,8 +2883,6 @@
       "dynastyId": "chen-han",
       "personId": "chen-li",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "德寿"
       ],
@@ -2950,8 +2908,6 @@
       "dynastyId": "xia-ming",
       "personId": "ming-yuzhen",
       "title": "",
-      "posthumousName": "钦文昭武皇帝",
-      "templeName": "太祖",
       "eraNames": [
         "天统"
       ],
@@ -2977,8 +2933,6 @@
       "dynastyId": "xia-ming",
       "personId": "ming-sheng",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "天统"
       ],
@@ -3004,8 +2958,6 @@
       "dynastyId": "wu-zhu",
       "personId": "zhu-yuanzhang",
       "title": "吴",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "吴"
       ],
@@ -3031,8 +2983,6 @@
       "dynastyId": "ming",
       "personId": "zhu-yuanzhang",
       "title": "",
-      "posthumousName": "高皇帝",
-      "templeName": "太祖",
       "eraNames": [
         "洪武"
       ],
@@ -3058,8 +3008,6 @@
       "dynastyId": "ming",
       "personId": "zhu-yunwen",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "建文"
       ],
@@ -3085,8 +3033,6 @@
       "dynastyId": "ming",
       "personId": "zhu-di",
       "title": "",
-      "posthumousName": "文皇帝",
-      "templeName": "成祖",
       "eraNames": [
         "永乐"
       ],
@@ -3112,8 +3058,6 @@
       "dynastyId": "ming",
       "personId": "zhu-gaochi",
       "title": "",
-      "posthumousName": "昭皇帝",
-      "templeName": "仁宗",
       "eraNames": [
         "洪熙"
       ],
@@ -3139,8 +3083,6 @@
       "dynastyId": "ming",
       "personId": "zhu-zhanji",
       "title": "",
-      "posthumousName": "章皇帝",
-      "templeName": "宣宗",
       "eraNames": [
         "宣德"
       ],
@@ -3166,8 +3108,6 @@
       "dynastyId": "ming",
       "personId": "zhu-qizhen",
       "title": "",
-      "posthumousName": "睿皇帝",
-      "templeName": "英宗",
       "eraNames": [
         "正统"
       ],
@@ -3193,8 +3133,6 @@
       "dynastyId": "ming",
       "personId": "zhu-qiyu",
       "title": "",
-      "posthumousName": "景皇帝",
-      "templeName": "代宗",
       "eraNames": [
         "景泰"
       ],
@@ -3220,8 +3158,6 @@
       "dynastyId": "ming",
       "personId": "zhu-qizhen",
       "title": "",
-      "posthumousName": "睿皇帝",
-      "templeName": "英宗",
       "eraNames": [
         "天顺"
       ],
@@ -3247,8 +3183,6 @@
       "dynastyId": "ming",
       "personId": "zhu-jianshen",
       "title": "",
-      "posthumousName": "纯皇帝",
-      "templeName": "宪宗",
       "eraNames": [
         "成化"
       ],
@@ -3274,8 +3208,6 @@
       "dynastyId": "ming",
       "personId": "zhu-youcheng",
       "title": "",
-      "posthumousName": "达皇帝",
-      "templeName": "孝宗",
       "eraNames": [
         "弘治"
       ],
@@ -3301,8 +3233,6 @@
       "dynastyId": "ming",
       "personId": "zhu-houzhao",
       "title": "",
-      "posthumousName": "毅皇帝",
-      "templeName": "武宗",
       "eraNames": [
         "正德"
       ],
@@ -3328,8 +3258,6 @@
       "dynastyId": "ming",
       "personId": "zhu-houcong",
       "title": "",
-      "posthumousName": "肃皇帝",
-      "templeName": "世宗",
       "eraNames": [
         "嘉靖"
       ],
@@ -3355,8 +3283,6 @@
       "dynastyId": "ming",
       "personId": "zhu-zaihou",
       "title": "",
-      "posthumousName": "庄皇帝",
-      "templeName": "穆宗",
       "eraNames": [
         "隆庆"
       ],
@@ -3382,8 +3308,6 @@
       "dynastyId": "ming",
       "personId": "zhu-yiming",
       "title": "",
-      "posthumousName": "显皇帝",
-      "templeName": "神宗",
       "eraNames": [
         "万历"
       ],
@@ -3409,8 +3333,6 @@
       "dynastyId": "ming",
       "personId": "zhu-changluo",
       "title": "",
-      "posthumousName": "贞皇帝",
-      "templeName": "光宗",
       "eraNames": [
         "泰昌"
       ],
@@ -3436,8 +3358,6 @@
       "dynastyId": "ming",
       "personId": "zhu-youjiao",
       "title": "",
-      "posthumousName": "哲皇帝",
-      "templeName": "熹宗",
       "eraNames": [
         "天启"
       ],
@@ -3463,8 +3383,6 @@
       "dynastyId": "ming",
       "personId": "zhu-youjian",
       "title": "",
-      "posthumousName": "毅皇帝",
-      "templeName": "思宗",
       "eraNames": [
         "崇祯"
       ],
@@ -3490,8 +3408,6 @@
       "dynastyId": "ming-south",
       "personId": "zhu-yousong",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "弘光"
       ],
@@ -3517,8 +3433,6 @@
       "dynastyId": "ming-south",
       "personId": "zhu-yujian",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "隆武"
       ],
@@ -3544,8 +3458,6 @@
       "dynastyId": "ming-south",
       "personId": "zhu-youlang",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "永历"
       ],
@@ -3571,8 +3483,6 @@
       "dynastyId": "ming-south",
       "personId": "zhu-yihai",
       "title": "鲁监国",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1645,
@@ -3600,8 +3510,6 @@
       "dynastyId": "ming-south",
       "personId": "zhu-yuyue",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "绍武"
       ],
@@ -3630,8 +3538,6 @@
       "dynastyId": "qing",
       "personId": "nurhaci",
       "title": "太祖",
-      "posthumousName": "武皇帝",
-      "templeName": "太祖",
       "eraNames": [
         "天命"
       ],
@@ -3657,8 +3563,6 @@
       "dynastyId": "qing",
       "personId": "huang-taiji",
       "title": "太宗",
-      "posthumousName": "文皇帝",
-      "templeName": "太宗",
       "eraNames": [
         "天聪",
         "崇德"
@@ -3685,8 +3589,6 @@
       "dynastyId": "qing",
       "personId": "fulin",
       "title": "",
-      "posthumousName": "章皇帝",
-      "templeName": "世祖",
       "eraNames": [
         "顺治"
       ],
@@ -3712,8 +3614,6 @@
       "dynastyId": "qing",
       "personId": "xuanye",
       "title": "",
-      "posthumousName": "仁皇帝",
-      "templeName": "圣祖",
       "eraNames": [
         "康熙"
       ],
@@ -3739,8 +3639,6 @@
       "dynastyId": "qing",
       "personId": "yinzhen",
       "title": "",
-      "posthumousName": "宪皇帝",
-      "templeName": "世宗",
       "eraNames": [
         "雍正"
       ],
@@ -3766,8 +3664,6 @@
       "dynastyId": "qing",
       "personId": "hongli",
       "title": "",
-      "posthumousName": "纯皇帝",
-      "templeName": "高宗",
       "eraNames": [
         "乾隆"
       ],
@@ -3793,8 +3689,6 @@
       "dynastyId": "qing",
       "personId": "yongyan",
       "title": "",
-      "posthumousName": "睿皇帝",
-      "templeName": "仁宗",
       "eraNames": [
         "嘉庆"
       ],
@@ -3820,8 +3714,6 @@
       "dynastyId": "qing",
       "personId": "minning",
       "title": "",
-      "posthumousName": "成皇帝",
-      "templeName": "宣宗",
       "eraNames": [
         "道光"
       ],
@@ -3847,8 +3739,6 @@
       "dynastyId": "qing",
       "personId": "yizhu",
       "title": "",
-      "posthumousName": "显皇帝",
-      "templeName": "文宗",
       "eraNames": [
         "咸丰"
       ],
@@ -3874,8 +3764,6 @@
       "dynastyId": "qing",
       "personId": "zaichun",
       "title": "",
-      "posthumousName": "毅皇帝",
-      "templeName": "穆宗",
       "eraNames": [
         "同治"
       ],
@@ -3901,8 +3789,6 @@
       "dynastyId": "qing",
       "personId": "zaitian",
       "title": "",
-      "posthumousName": "景皇帝",
-      "templeName": "德宗",
       "eraNames": [
         "光绪"
       ],
@@ -3928,8 +3814,6 @@
       "dynastyId": "qing",
       "personId": "puyi",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "宣统"
       ],
@@ -6122,22 +6006,22 @@
         "label": "故宫博物院：永乐皇帝",
         "url": "https://www.dpm.org.cn/court/lineage/226257.html"
       },
-    {
-      "label": "故宫博物院：建文皇帝",
-      "url": "https://www.dpm.org.cn/court/lineage/226245.html"
-    },
-    {
-      "label": "《明史》卷一百二十三·陈友谅、明玉珍等传",
-      "url": "https://zh.wikisource.org/zh-hans/明史/卷123"
-    },
-    {
-      "label": "《新元史》卷二百二十五·韩林儿、张士诚传",
-      "url": "https://zh.wikisource.org/wiki/新元史/卷225"
-    },
-    {
-      "label": "《明史》卷一·太祖本纪",
-      "url": "https://zh.wikisource.org/zh-hans/明史/卷1"
-    }
+      {
+        "label": "故宫博物院：建文皇帝",
+        "url": "https://www.dpm.org.cn/court/lineage/226245.html"
+      },
+      {
+        "label": "《明史》卷一百二十三·陈友谅、明玉珍等传",
+        "url": "https://zh.wikisource.org/zh-hans/明史/卷123"
+      },
+      {
+        "label": "《新元史》卷二百二十五·韩林儿、张士诚传",
+        "url": "https://zh.wikisource.org/wiki/新元史/卷225"
+      },
+      {
+        "label": "《明史》卷一·太祖本纪",
+        "url": "https://zh.wikisource.org/zh-hans/明史/卷1"
+      }
     ],
     "notes": [
       "覆盖元（1271–1388，含漠北延续；正统金色自1276恭帝降元起至1368）、明（1368–1644）、南明（1644–1662）、清（1636–1912）。",

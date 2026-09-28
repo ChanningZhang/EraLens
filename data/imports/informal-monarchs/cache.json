@@ -117,8 +117,6 @@
       "dynastyId": "zhou-west",
       "personId": "gonghe-regency",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -841,
@@ -146,8 +144,6 @@
       "dynastyId": "liao",
       "personId": "shulvping",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 926,
@@ -177,8 +173,6 @@
       "dynastyId": "han-hou",
       "personId": "guo-wei",
       "title": "监国",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 951,
@@ -208,8 +202,6 @@
       "dynastyId": "mongol-empire",
       "personId": "tolui",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1227,
@@ -239,8 +231,6 @@
       "dynastyId": "mongol-empire",
       "personId": "toregene-khatun",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1241,
@@ -270,8 +260,6 @@
       "dynastyId": "mongol-empire",
       "personId": "oghul-qaimish",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1248,
@@ -301,8 +289,6 @@
       "dynastyId": "ming",
       "personId": "zhu-qiyu",
       "title": "郕王监国",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1449,

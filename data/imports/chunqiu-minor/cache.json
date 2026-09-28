@@ -1769,8 +1769,6 @@
       "dynastyId": "xue-chunqiu",
       "personId": "xue-r1",
       "title": "",
-      "posthumousName": "献公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -511,
@@ -1797,8 +1795,6 @@
       "dynastyId": "xue-chunqiu",
       "personId": "xue-r2",
       "title": "",
-      "posthumousName": "襄公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -510,
@@ -1825,8 +1821,6 @@
       "dynastyId": "xue-chunqiu",
       "personId": "xue-r3",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -497,
@@ -1853,8 +1847,6 @@
       "dynastyId": "xue-chunqiu",
       "personId": "xue-r4",
       "title": "",
-      "posthumousName": "惠公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -496,
@@ -2219,8 +2211,6 @@
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r13",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -715,
@@ -2559,8 +2549,6 @@
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r2",
       "title": "",
-      "posthumousName": "文公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -599,
@@ -2587,8 +2575,6 @@
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r3",
       "title": "",
-      "posthumousName": "成公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -574,
@@ -2615,8 +2601,6 @@
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r4",
       "title": "",
-      "posthumousName": "悼公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -538,
@@ -2643,8 +2627,6 @@
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r5",
       "title": "",
-      "posthumousName": "顷公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -513,
@@ -2671,8 +2653,6 @@
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r6",
       "title": "",
-      "posthumousName": "隐公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -490,
@@ -2699,8 +2679,6 @@
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r1",
       "title": "",
-      "posthumousName": "武公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -750,
@@ -2727,8 +2705,6 @@
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r1b",
       "title": "",
-      "posthumousName": "靖公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -703,
@@ -2755,8 +2731,6 @@
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-gong",
       "title": "",
-      "posthumousName": "共公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -680,
@@ -2783,8 +2757,6 @@
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-de",
       "title": "",
-      "posthumousName": "德公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -672,
@@ -2811,8 +2783,6 @@
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r1c",
       "title": "",
-      "posthumousName": "成公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -654,
@@ -2839,8 +2809,6 @@
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r2",
       "title": "",
-      "posthumousName": "桓公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -636,
@@ -2867,8 +2835,6 @@
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-xiao",
       "title": "",
-      "posthumousName": "孝公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -566,
@@ -2895,8 +2861,6 @@
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r3",
       "title": "",
-      "posthumousName": "文公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -549,
@@ -2923,8 +2887,6 @@
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r4",
       "title": "",
-      "posthumousName": "平公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -535,
@@ -2951,8 +2913,6 @@
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-dao",
       "title": "",
-      "posthumousName": "悼公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -517,
@@ -2979,8 +2939,6 @@
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-yin",
       "title": "",
-      "posthumousName": "隐公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -506,
@@ -3007,8 +2965,6 @@
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-xi",
       "title": "",
-      "posthumousName": "僖公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -505,
@@ -3035,8 +2991,6 @@
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r5",
       "title": "",
-      "posthumousName": "湣公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -486,
@@ -3063,8 +3017,6 @@
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-ai",
       "title": "",
-      "posthumousName": "哀公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -470,
@@ -3091,8 +3043,6 @@
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-chu",
       "title": "",
-      "posthumousName": "出公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -460,
@@ -3119,8 +3069,6 @@
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r6",
       "title": "",
-      "posthumousName": "简公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -448,
@@ -3147,8 +3095,6 @@
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r1",
       "title": "",
-      "posthumousName": "纪公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -615,
@@ -3175,8 +3121,6 @@
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r1b",
       "title": "",
-      "posthumousName": "厉公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -608,
@@ -3203,8 +3147,6 @@
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r2",
       "title": "",
-      "posthumousName": "渠丘公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -579,
@@ -3231,8 +3173,6 @@
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r3",
       "title": "",
-      "posthumousName": "犂比公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -576,
@@ -3259,8 +3199,6 @@
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r4",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -541,
@@ -3287,8 +3225,6 @@
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r5",
       "title": "",
-      "posthumousName": "著丘公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -540,
@@ -3315,8 +3251,6 @@
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r6",
       "title": "",
-      "posthumousName": "共公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -527,
@@ -3343,8 +3277,6 @@
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r7",
       "title": "",
-      "posthumousName": "郊公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -518,
@@ -3371,8 +3303,6 @@
       "dynastyId": "dai-warring",
       "personId": "zhao-jia-dai",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -228,
@@ -3399,8 +3329,6 @@
       "dynastyId": "jiaodong-warring",
       "personId": "tian-shi",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -221,
@@ -3427,8 +3355,6 @@
       "dynastyId": "zhou-guo-west",
       "personId": "zhou-guo-jie",
       "title": "",
-      "posthumousName": "桓公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -440,
@@ -3455,8 +3381,6 @@
       "dynastyId": "zhou-guo-west",
       "personId": "zhou-guo-zao",
       "title": "",
-      "posthumousName": "威公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -414,
@@ -3483,8 +3407,6 @@
       "dynastyId": "zhou-guo-west",
       "personId": "zhou-guo-chao",
       "title": "",
-      "posthumousName": "惠公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -366,
@@ -3511,8 +3433,6 @@
       "dynastyId": "zhou-guo-west",
       "personId": "zhou-guo-wugong",
       "title": "",
-      "posthumousName": "武公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -329,
@@ -3539,8 +3459,6 @@
       "dynastyId": "zhou-guo-west",
       "personId": "zhou-guo-jiu",
       "title": "",
-      "posthumousName": "文公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -292,
@@ -3567,8 +3485,6 @@
       "dynastyId": "zhou-guo-east",
       "personId": "zhou-guo-gen",
       "title": "",
-      "posthumousName": "惠公",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -366,
@@ -3595,8 +3511,6 @@
       "dynastyId": "zhou-guo-east",
       "personId": "system-missing-ruler",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -360,
@@ -3618,8 +3532,6 @@
       "dynastyId": "xue-chunqiu",
       "personId": "system-missing-ruler",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -485,
@@ -3641,8 +3553,6 @@
       "dynastyId": "teng-chunqiu",
       "personId": "system-missing-ruler",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -296,
@@ -3664,8 +3574,6 @@
       "dynastyId": "ju-chunqiu",
       "personId": "system-missing-ruler",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -1046,
@@ -3687,8 +3595,6 @@
       "dynastyId": "ju-chunqiu",
       "personId": "system-missing-ruler",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -481,

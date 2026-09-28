@@ -194,8 +194,6 @@
       "dynastyId": "mongol-empire",
       "personId": "temujin",
       "title": "",
-      "posthumousName": "法天启运圣武皇帝",
-      "templeName": "太祖",
       "eraNames": [],
       "start": {
         "year": 1206,
@@ -219,8 +217,6 @@
       "dynastyId": "mongol-empire",
       "personId": "ogedei",
       "title": "",
-      "posthumousName": "英文皇帝",
-      "templeName": "太宗",
       "eraNames": [],
       "start": {
         "year": 1229,
@@ -244,8 +240,6 @@
       "dynastyId": "mongol-empire",
       "personId": "guyuk",
       "title": "",
-      "posthumousName": "钦定皇帝",
-      "templeName": "定宗",
       "eraNames": [],
       "start": {
         "year": 1246,
@@ -269,8 +263,6 @@
       "dynastyId": "mongol-empire",
       "personId": "mongke",
       "title": "",
-      "posthumousName": "桓肃皇帝",
-      "templeName": "宪宗",
       "eraNames": [],
       "start": {
         "year": 1251,
@@ -294,8 +286,6 @@
       "dynastyId": "mongol-empire",
       "personId": "hu-bilie",
       "title": "薛禅汗",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1260,

@@ -787,8 +787,6 @@
       "dynastyId": "roc",
       "personId": "sun-yat-sen",
       "title": "临时大总统",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1912,
@@ -813,8 +811,6 @@
       "dynastyId": "roc",
       "personId": "yuan-shikai",
       "title": "大总统",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1912,
@@ -839,8 +835,6 @@
       "dynastyId": "roc",
       "personId": "li-yuanhong",
       "title": "大总统",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1916,
@@ -865,8 +859,6 @@
       "dynastyId": "roc",
       "personId": "feng-guozhang",
       "title": "代理大总统",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1917,
@@ -891,8 +883,6 @@
       "dynastyId": "roc",
       "personId": "xu-shichang",
       "title": "大总统",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1918,
@@ -917,8 +907,6 @@
       "dynastyId": "roc",
       "personId": "zhou-ziqi",
       "title": "国务院摄行",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1922,
@@ -943,8 +931,6 @@
       "dynastyId": "roc",
       "personId": "li-yuanhong",
       "title": "大总统",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1922,
@@ -969,8 +955,6 @@
       "dynastyId": "roc",
       "personId": "gao-lingwei",
       "title": "国务院摄行",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1923,
@@ -995,8 +979,6 @@
       "dynastyId": "roc",
       "personId": "cao-kun",
       "title": "大总统",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1923,
@@ -1021,8 +1003,6 @@
       "dynastyId": "roc",
       "personId": "huang-fu",
       "title": "国务院摄行",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1924,
@@ -1047,8 +1027,6 @@
       "dynastyId": "roc",
       "personId": "duan-qirui",
       "title": "临时执政",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1924,
@@ -1073,8 +1051,6 @@
       "dynastyId": "roc",
       "personId": "hu-weide",
       "title": "国务院摄行",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1926,
@@ -1099,8 +1075,6 @@
       "dynastyId": "roc",
       "personId": "yan-huiqing",
       "title": "国务院摄行",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1926,
@@ -1125,8 +1099,6 @@
       "dynastyId": "roc",
       "personId": "du-xigui",
       "title": "国务院摄行",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1926,
@@ -1151,8 +1123,6 @@
       "dynastyId": "roc",
       "personId": "gu-weijun",
       "title": "国务院摄行",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1926,
@@ -1177,8 +1147,6 @@
       "dynastyId": "roc",
       "personId": "hu-weide",
       "title": "国务院摄行",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1927,
@@ -1203,8 +1171,6 @@
       "dynastyId": "roc",
       "personId": "zhang-zuolin",
       "title": "陆海军大元帅",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1927,
@@ -1229,8 +1195,6 @@
       "dynastyId": "roc",
       "personId": "tan-yankai",
       "title": "国民政府主席",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1928,
@@ -1255,8 +1219,6 @@
       "dynastyId": "roc",
       "personId": "jiang-jieshi",
       "title": "国民政府主席",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1928,
@@ -1281,8 +1243,6 @@
       "dynastyId": "roc",
       "personId": "lin-sen",
       "title": "国民政府主席",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1931,
@@ -1307,8 +1267,6 @@
       "dynastyId": "roc",
       "personId": "jiang-jieshi",
       "title": "国民政府主席",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1943,
@@ -1333,8 +1291,6 @@
       "dynastyId": "roc",
       "personId": "jiang-jieshi",
       "title": "总统",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1948,
@@ -1359,8 +1315,6 @@
       "dynastyId": "roc",
       "personId": "li-zongren",
       "title": "代总统",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1949,
@@ -1385,8 +1339,6 @@
       "dynastyId": "roc",
       "personId": "jiang-jieshi",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1950,
@@ -1411,8 +1363,6 @@
       "dynastyId": "roc",
       "personId": "yan-jiagan",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1975,
@@ -1437,8 +1387,6 @@
       "dynastyId": "roc",
       "personId": "jiang-jingguo",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1978,
@@ -1463,8 +1411,6 @@
       "dynastyId": "roc",
       "personId": "li-denghui",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1988,
@@ -1489,8 +1435,6 @@
       "dynastyId": "roc",
       "personId": "chen-shuibian",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 2000,
@@ -1515,8 +1459,6 @@
       "dynastyId": "roc",
       "personId": "ma-yingjiu",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 2008,
@@ -1541,8 +1483,6 @@
       "dynastyId": "roc",
       "personId": "cai-yingwen",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 2016,
@@ -1567,8 +1507,6 @@
       "dynastyId": "roc",
       "personId": "lai-qingde",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 2024,

@@ -356,8 +356,6 @@
       "dynastyId": "xixia",
       "personId": "li-jiqian",
       "title": "",
-      "posthumousName": "光天皇帝",
-      "templeName": "太祖",
       "eraNames": [],
       "start": {
         "year": 982,
@@ -379,8 +377,6 @@
       "dynastyId": "xixia",
       "personId": "li-deming",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1004,
@@ -402,8 +398,6 @@
       "dynastyId": "xixia",
       "personId": "li-yuanhao",
       "title": "",
-      "posthumousName": "武烈皇帝",
-      "templeName": "景宗",
       "eraNames": [
         "显道",
         "开运",
@@ -433,8 +427,6 @@
       "dynastyId": "xixia",
       "personId": "li-liangzuo",
       "title": "",
-      "posthumousName": "昭英皇帝",
-      "templeName": "毅宗",
       "eraNames": [],
       "start": {
         "year": 1048,
@@ -458,8 +450,6 @@
       "dynastyId": "xixia",
       "personId": "li-bingchang",
       "title": "",
-      "posthumousName": "昭简皇帝",
-      "templeName": "惠宗",
       "eraNames": [],
       "start": {
         "year": 1067,
@@ -483,8 +473,6 @@
       "dynastyId": "xixia",
       "personId": "li-qianshun",
       "title": "",
-      "posthumousName": "康靖皇帝",
-      "templeName": "崇宗",
       "eraNames": [
         "天安礼定",
         "贞观"
@@ -511,8 +499,6 @@
       "dynastyId": "xixia",
       "personId": "li-renxiao",
       "title": "",
-      "posthumousName": "圣德皇帝",
-      "templeName": "仁宗",
       "eraNames": [
         "乾佑"
       ],
@@ -538,8 +524,6 @@
       "dynastyId": "xixia",
       "personId": "li-chunyou",
       "title": "",
-      "posthumousName": "昭简皇帝",
-      "templeName": "桓宗",
       "eraNames": [],
       "start": {
         "year": 1193,
@@ -563,8 +547,6 @@
       "dynastyId": "xixia",
       "personId": "li-anquan",
       "title": "",
-      "posthumousName": "敬穆皇帝",
-      "templeName": "襄宗",
       "eraNames": [],
       "start": {
         "year": 1206,
@@ -588,8 +570,6 @@
       "dynastyId": "xixia",
       "personId": "li-zunxu",
       "title": "",
-      "posthumousName": "英武皇帝",
-      "templeName": "神宗",
       "eraNames": [],
       "start": {
         "year": 1211,
@@ -613,8 +593,6 @@
       "dynastyId": "xixia",
       "personId": "li-dewang",
       "title": "",
-      "posthumousName": "南平王",
-      "templeName": "献宗",
       "eraNames": [],
       "start": {
         "year": 1223,
@@ -638,8 +616,6 @@
       "dynastyId": "xixia",
       "personId": "li-xian-xixia",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1226,

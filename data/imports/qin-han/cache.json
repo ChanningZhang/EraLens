@@ -1585,8 +1585,6 @@
       "dynastyId": "han-west",
       "personId": "liu-bang",
       "title": "",
-      "posthumousName": "高皇帝",
-      "templeName": "太祖",
       "eraNames": [],
       "start": {
         "year": -202,
@@ -1610,8 +1608,6 @@
       "dynastyId": "han-west",
       "personId": "liu-ying",
       "title": "",
-      "posthumousName": "孝惠皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -195,
@@ -1635,8 +1631,6 @@
       "dynastyId": "han-west",
       "personId": "liu-gong",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -188,
@@ -1660,8 +1654,6 @@
       "dynastyId": "han-west",
       "personId": "liu-hong-shao",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -184,
@@ -1685,8 +1677,6 @@
       "dynastyId": "han-west",
       "personId": "liu-heng",
       "title": "",
-      "posthumousName": "孝文皇帝",
-      "templeName": "太宗",
       "eraNames": [],
       "start": {
         "year": -180,
@@ -1710,8 +1700,6 @@
       "dynastyId": "han-west",
       "personId": "liu-qi",
       "title": "",
-      "posthumousName": "孝景皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -157,
@@ -1735,8 +1723,6 @@
       "dynastyId": "han-west",
       "personId": "liu-che",
       "title": "",
-      "posthumousName": "孝武皇帝",
-      "templeName": "世宗",
       "eraNames": [
         "建元",
         "元光",
@@ -1772,8 +1758,6 @@
       "dynastyId": "han-west",
       "personId": "liu-fuling",
       "title": "",
-      "posthumousName": "孝昭皇帝",
-      "templeName": null,
       "eraNames": [
         "始元",
         "元凤",
@@ -1801,8 +1785,6 @@
       "dynastyId": "han-west",
       "personId": "liu-he",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -74,
@@ -1826,8 +1808,6 @@
       "dynastyId": "han-west",
       "personId": "liu-xun",
       "title": "",
-      "posthumousName": "孝宣皇帝",
-      "templeName": null,
       "eraNames": [
         "本初",
         "地节",
@@ -1859,8 +1839,6 @@
       "dynastyId": "han-west",
       "personId": "liu-shi",
       "title": "",
-      "posthumousName": "孝元皇帝",
-      "templeName": null,
       "eraNames": [
         "初元",
         "永光",
@@ -1889,8 +1867,6 @@
       "dynastyId": "han-west",
       "personId": "liu-ao",
       "title": "",
-      "posthumousName": "孝成皇帝",
-      "templeName": null,
       "eraNames": [
         "建始",
         "河平",
@@ -1922,8 +1898,6 @@
       "dynastyId": "han-west",
       "personId": "liu-xin",
       "title": "",
-      "posthumousName": "孝哀皇帝",
-      "templeName": null,
       "eraNames": [
         "建平",
         "元寿"
@@ -1950,8 +1924,6 @@
       "dynastyId": "han-west",
       "personId": "liu-kan",
       "title": "",
-      "posthumousName": "孝平皇帝",
-      "templeName": null,
       "eraNames": [
         "元始"
       ],
@@ -1977,8 +1949,6 @@
       "dynastyId": "han-west",
       "personId": "ruzi-ying",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "居摄"
       ],
@@ -2005,8 +1975,6 @@
       "dynastyId": "xin",
       "personId": "wang-mang",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "始建国",
         "天凤",
@@ -2034,8 +2002,6 @@
       "dynastyId": "han-gengshi",
       "personId": "liu-xuan",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "更始"
       ],
@@ -2061,8 +2027,6 @@
       "dynastyId": "han-east",
       "personId": "liu-xiu",
       "title": "",
-      "posthumousName": "光武皇帝",
-      "templeName": "世祖",
       "eraNames": [
         "建武",
         "建武中元"
@@ -2089,8 +2053,6 @@
       "dynastyId": "han-east",
       "personId": "liu-zhuang",
       "title": "",
-      "posthumousName": "孝明皇帝",
-      "templeName": "显宗",
       "eraNames": [
         "永平"
       ],
@@ -2116,8 +2078,6 @@
       "dynastyId": "han-east",
       "personId": "liu-zuo",
       "title": "",
-      "posthumousName": "孝章皇帝",
-      "templeName": "肃宗",
       "eraNames": [
         "建初",
         "元和",
@@ -2145,8 +2105,6 @@
       "dynastyId": "han-east",
       "personId": "liu-zhao",
       "title": "",
-      "posthumousName": "孝和皇帝",
-      "templeName": null,
       "eraNames": [
         "永元",
         "元兴"
@@ -2173,8 +2131,6 @@
       "dynastyId": "han-east",
       "personId": "liu-long",
       "title": "",
-      "posthumousName": "孝殇皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 106,
@@ -2198,8 +2154,6 @@
       "dynastyId": "han-east",
       "personId": "liu-hu",
       "title": "",
-      "posthumousName": "孝安皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 106,
@@ -2223,8 +2177,6 @@
       "dynastyId": "han-east",
       "personId": "liu-yi-shao",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 125,
@@ -2248,8 +2200,6 @@
       "dynastyId": "han-east",
       "personId": "liu-bao",
       "title": "",
-      "posthumousName": "孝顺皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 125,
@@ -2273,8 +2223,6 @@
       "dynastyId": "han-east",
       "personId": "liu-bing",
       "title": "",
-      "posthumousName": "孝冲皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 144,
@@ -2298,8 +2246,6 @@
       "dynastyId": "han-east",
       "personId": "liu-zuan",
       "title": "",
-      "posthumousName": "孝质皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 145,
@@ -2323,8 +2269,6 @@
       "dynastyId": "han-east",
       "personId": "liu-zhi",
       "title": "",
-      "posthumousName": "孝桓皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 146,
@@ -2348,8 +2292,6 @@
       "dynastyId": "han-east",
       "personId": "liu-hong",
       "title": "",
-      "posthumousName": "孝灵皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 168,
@@ -2373,8 +2315,6 @@
       "dynastyId": "han-east",
       "personId": "liu-bian",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 189,
@@ -2398,8 +2338,6 @@
       "dynastyId": "han-east",
       "personId": "liu-xie",
       "title": "",
-      "posthumousName": "孝献皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 189,

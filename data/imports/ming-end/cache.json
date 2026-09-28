@@ -229,8 +229,6 @@
       "dynastyId": "dashun",
       "personId": "li-zicheng",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "永昌"
       ],
@@ -260,8 +258,6 @@
       "dynastyId": "daxi",
       "personId": "zhang-xianzhong",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "大顺"
       ],
@@ -292,8 +288,6 @@
       "dynastyId": "mingzheng",
       "personId": "zheng-chenggong",
       "title": "",
-      "posthumousName": "武王",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1661,
@@ -322,8 +316,6 @@
       "dynastyId": "mingzheng",
       "personId": "zheng-jing",
       "title": "",
-      "posthumousName": "文王",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1662,
@@ -352,8 +344,6 @@
       "dynastyId": "mingzheng",
       "personId": "zheng-keshuang",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 1681,

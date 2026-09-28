@@ -1578,8 +1578,6 @@
       "dynastyId": "wei-north",
       "personId": "tuoba-gui",
       "title": "",
-      "posthumousName": "道武皇帝",
-      "templeName": "太祖",
       "eraNames": [],
       "start": {
         "year": 386,
@@ -1603,8 +1601,6 @@
       "dynastyId": "wei-north",
       "personId": "tuoba-si",
       "title": "",
-      "posthumousName": "明元皇帝",
-      "templeName": "太宗",
       "eraNames": [],
       "start": {
         "year": 409,
@@ -1628,8 +1624,6 @@
       "dynastyId": "wei-north",
       "personId": "tuoba-tao",
       "title": "",
-      "posthumousName": "太武皇帝",
-      "templeName": "世祖",
       "eraNames": [],
       "start": {
         "year": 424,
@@ -1653,8 +1647,6 @@
       "dynastyId": "wei-north",
       "personId": "tuoba-yu",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 452,
@@ -1678,8 +1670,6 @@
       "dynastyId": "wei-north",
       "personId": "tuoba-jun",
       "title": "",
-      "posthumousName": "文成皇帝",
-      "templeName": "高宗",
       "eraNames": [],
       "start": {
         "year": 452,
@@ -1703,8 +1693,6 @@
       "dynastyId": "wei-north",
       "personId": "tuoba-hong",
       "title": "",
-      "posthumousName": "献文皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 465,
@@ -1728,8 +1716,6 @@
       "dynastyId": "wei-north",
       "personId": "yuan-hong",
       "title": "",
-      "posthumousName": "孝文皇帝",
-      "templeName": "高祖",
       "eraNames": [
         "太和"
       ],
@@ -1755,8 +1741,6 @@
       "dynastyId": "wei-north",
       "personId": "yuan-ke",
       "title": "",
-      "posthumousName": "宣武皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 499,
@@ -1780,8 +1764,6 @@
       "dynastyId": "wei-north",
       "personId": "yuan-xu",
       "title": "",
-      "posthumousName": "孝明皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 515,
@@ -1805,8 +1787,6 @@
       "dynastyId": "wei-north",
       "personId": "yuan-zi-you",
       "title": "",
-      "posthumousName": "孝庄皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 528,
@@ -1830,8 +1810,6 @@
       "dynastyId": "wei-north",
       "personId": "yuan-ye",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 530,
@@ -1855,8 +1833,6 @@
       "dynastyId": "wei-north",
       "personId": "yuan-lang",
       "title": "",
-      "posthumousName": "节闵帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 531,
@@ -1880,8 +1856,6 @@
       "dynastyId": "wei-north",
       "personId": "yuan-xiu",
       "title": "",
-      "posthumousName": "孝武皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 532,
@@ -1905,8 +1879,6 @@
       "dynastyId": "wei-east",
       "personId": "yuan-shan-jian",
       "title": "",
-      "posthumousName": "孝静皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 534,
@@ -1930,8 +1902,6 @@
       "dynastyId": "wei-west",
       "personId": "yuan-bao-ju",
       "title": "",
-      "posthumousName": "文皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 535,
@@ -1955,8 +1925,6 @@
       "dynastyId": "wei-west",
       "personId": "yuan-qin",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 551,
@@ -1980,8 +1948,6 @@
       "dynastyId": "wei-west",
       "personId": "tuoba-kuo",
       "title": "",
-      "posthumousName": "恭帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 554,
@@ -2005,8 +1971,6 @@
       "dynastyId": "song-liu",
       "personId": "liu-yu-jin",
       "title": "",
-      "posthumousName": "武皇帝",
-      "templeName": "高祖",
       "eraNames": [
         "永初"
       ],
@@ -2032,8 +1996,6 @@
       "dynastyId": "song-liu",
       "personId": "liu-yifu",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 422,
@@ -2057,8 +2019,6 @@
       "dynastyId": "song-liu",
       "personId": "liu-yilong",
       "title": "",
-      "posthumousName": "文皇帝",
-      "templeName": "太祖",
       "eraNames": [
         "元嘉"
       ],
@@ -2084,8 +2044,6 @@
       "dynastyId": "song-liu",
       "personId": "liu-shao",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 453,
@@ -2109,8 +2067,6 @@
       "dynastyId": "song-liu",
       "personId": "liu-jun",
       "title": "",
-      "posthumousName": "孝武皇帝",
-      "templeName": "世祖",
       "eraNames": [
         "孝建",
         "大明"
@@ -2137,8 +2093,6 @@
       "dynastyId": "song-liu",
       "personId": "liu-ziye",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 464,
@@ -2162,8 +2116,6 @@
       "dynastyId": "song-liu",
       "personId": "liu-yu-song",
       "title": "",
-      "posthumousName": "明皇帝",
-      "templeName": "太宗",
       "eraNames": [],
       "start": {
         "year": 465,
@@ -2187,8 +2139,6 @@
       "dynastyId": "song-liu",
       "personId": "liu-yu-fei",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 472,
@@ -2212,8 +2162,6 @@
       "dynastyId": "song-liu",
       "personId": "liu-zhun",
       "title": "",
-      "posthumousName": "顺皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 477,
@@ -2237,8 +2185,6 @@
       "dynastyId": "qi-nan",
       "personId": "xiao-daocheng",
       "title": "",
-      "posthumousName": "高皇帝",
-      "templeName": "太祖",
       "eraNames": [],
       "start": {
         "year": 479,
@@ -2262,8 +2208,6 @@
       "dynastyId": "qi-nan",
       "personId": "xiao-ze",
       "title": "",
-      "posthumousName": "武皇帝",
-      "templeName": "世祖",
       "eraNames": [
         "永明"
       ],
@@ -2289,8 +2233,6 @@
       "dynastyId": "qi-nan",
       "personId": "xiao-zhaoye",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 494,
@@ -2314,8 +2256,6 @@
       "dynastyId": "qi-nan",
       "personId": "xiao-zhaowen",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 494,
@@ -2339,8 +2279,6 @@
       "dynastyId": "qi-nan",
       "personId": "xiao-luan",
       "title": "",
-      "posthumousName": "明皇帝",
-      "templeName": "高宗",
       "eraNames": [],
       "start": {
         "year": 494,
@@ -2364,8 +2302,6 @@
       "dynastyId": "qi-nan",
       "personId": "xiao-baojuan",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 499,
@@ -2389,8 +2325,6 @@
       "dynastyId": "qi-nan",
       "personId": "xiao-baorong",
       "title": "",
-      "posthumousName": "和帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 501,
@@ -2414,8 +2348,6 @@
       "dynastyId": "liang-nan",
       "personId": "xiao-yan",
       "title": "",
-      "posthumousName": "武皇帝",
-      "templeName": "高祖",
       "eraNames": [
         "天监",
         "普通",
@@ -2447,8 +2379,6 @@
       "dynastyId": "liang-nan",
       "personId": "xiao-gang",
       "title": "",
-      "posthumousName": "简文帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 549,
@@ -2472,8 +2402,6 @@
       "dynastyId": "liang-nan",
       "personId": "xiao-dong",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "天正"
       ],
@@ -2499,8 +2427,6 @@
       "dynastyId": "liang-nan",
       "personId": "xiao-yi",
       "title": "",
-      "posthumousName": "孝元皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 552,
@@ -2524,8 +2450,6 @@
       "dynastyId": "liang-nan",
       "personId": "xiao-fangzhi",
       "title": "",
-      "posthumousName": "敬帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 555,
@@ -2549,8 +2473,6 @@
       "dynastyId": "han-houjing",
       "personId": "hou-jing",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [
         "太始"
       ],
@@ -2576,8 +2498,6 @@
       "dynastyId": "chen-nan",
       "personId": "chen-baxian",
       "title": "",
-      "posthumousName": "武皇帝",
-      "templeName": "高祖",
       "eraNames": [],
       "start": {
         "year": 557,
@@ -2601,8 +2521,6 @@
       "dynastyId": "chen-nan",
       "personId": "chen-qian",
       "title": "",
-      "posthumousName": "文皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 559,
@@ -2626,8 +2544,6 @@
       "dynastyId": "chen-nan",
       "personId": "chen-bozong",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 566,
@@ -2651,8 +2567,6 @@
       "dynastyId": "chen-nan",
       "personId": "chen-xu",
       "title": "",
-      "posthumousName": "宣皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 568,
@@ -2676,8 +2590,6 @@
       "dynastyId": "chen-nan",
       "personId": "chen-shubao",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 582,
@@ -2701,8 +2613,6 @@
       "dynastyId": "qi-bei",
       "personId": "gao-yang",
       "title": "",
-      "posthumousName": "文宣皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 550,
@@ -2726,8 +2636,6 @@
       "dynastyId": "qi-bei",
       "personId": "gao-yin",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 559,
@@ -2751,8 +2659,6 @@
       "dynastyId": "qi-bei",
       "personId": "gao-yan",
       "title": "",
-      "posthumousName": "孝昭皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 560,
@@ -2776,8 +2682,6 @@
       "dynastyId": "qi-bei",
       "personId": "gao-zhan",
       "title": "",
-      "posthumousName": "武成皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 565,
@@ -2801,8 +2705,6 @@
       "dynastyId": "qi-bei",
       "personId": "gao-wei",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 569,
@@ -2826,8 +2728,6 @@
       "dynastyId": "qi-bei",
       "personId": "gao-heng",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 577,
@@ -2851,8 +2751,6 @@
       "dynastyId": "zhou-bei",
       "personId": "yuwen-jue",
       "title": "",
-      "posthumousName": "孝闵帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 557,
@@ -2876,8 +2774,6 @@
       "dynastyId": "zhou-bei",
       "personId": "yuwen-yu",
       "title": "",
-      "posthumousName": "明皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 557,
@@ -2901,8 +2797,6 @@
       "dynastyId": "zhou-bei",
       "personId": "yuwen-yong",
       "title": "",
-      "posthumousName": "武皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 560,
@@ -2926,8 +2820,6 @@
       "dynastyId": "zhou-bei",
       "personId": "yuwen-yun",
       "title": "",
-      "posthumousName": "宣皇帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 578,
@@ -2951,8 +2843,6 @@
       "dynastyId": "zhou-bei",
       "personId": "yuwen-yan",
       "title": "",
-      "posthumousName": "静帝",
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": 579,

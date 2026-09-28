@@ -148,8 +148,6 @@
       "dynastyId": "yelang",
       "personId": "yelang-duotong",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -140,
@@ -176,8 +174,6 @@
       "dynastyId": "yelang",
       "personId": "yelang-xin",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -30,
@@ -204,8 +200,6 @@
       "dynastyId": "dian",
       "personId": "zhuang-qiao",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -279,
@@ -232,8 +226,6 @@
       "dynastyId": "dian",
       "personId": "dian-changqiang",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -115,
@@ -260,8 +252,6 @@
       "dynastyId": "yelang",
       "personId": "system-missing-ruler",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -119,
@@ -283,8 +273,6 @@
       "dynastyId": "dian",
       "personId": "system-missing-ruler",
       "title": "",
-      "posthumousName": null,
-      "templeName": null,
       "eraNames": [],
       "start": {
         "year": -255,
