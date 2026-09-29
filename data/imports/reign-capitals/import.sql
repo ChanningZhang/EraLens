@@ -1205,7 +1205,6 @@ INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-zhu-houcong-min
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-zhu-houzhao-ming', 'cap-ming-beijing') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-zhu-jianshen-ming', 'cap-ming-beijing') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-zhu-qiyu-ming', 'cap-ming-beijing') ON CONFLICT DO NOTHING;
-INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-zhu-qiyu-regent-ming', 'cap-ming-beijing') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-zhu-qizhen-ming', 'cap-ming-beijing') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-zhu-qizhen-ming-2', 'cap-ming-beijing') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-zhu-wen-liang-hou', 'cap-liang-hou-kaifeng-907') ON CONFLICT DO NOTHING;
