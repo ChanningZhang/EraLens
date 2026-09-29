@@ -5,6 +5,7 @@ BEGIN;
 -- cleanup
 DELETE FROM reigns WHERE id = 'reign-wang-mang-regent';
 DELETE FROM persons WHERE id = 'wang-mang-regent';
+DELETE FROM reigns WHERE id = 'reign-zhu-qiyu-regent-ming';
 
 -- persons
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name, title)
@@ -38,9 +39,6 @@ VALUES ('reign-toregene-mongol', 'mongol-empire', 'toregene-khatun', '', NULL, 1
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence, is_informal_monarch = EXCLUDED.is_informal_monarch, is_main = EXCLUDED.is_main;
 INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence, is_informal_monarch, is_main)
 VALUES ('reign-oghul-qaimish-mongol', 'mongol-empire', 'oghul-qaimish', '', NULL, 1248, 4, 20, 1251, 6, 30, 14979, 15017, 'day', NULL, NULL, true, false)
-ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence, is_informal_monarch = EXCLUDED.is_informal_monarch, is_main = EXCLUDED.is_main;
-INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence, is_informal_monarch, is_main)
-VALUES ('reign-zhu-qiyu-regent-ming', 'ming', 'zhu-qiyu', '郕王监国', NULL, 1449, 9, 6, 1449, 9, 22, 17396, 17396, 'day', NULL, NULL, true, true)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence, is_informal_monarch = EXCLUDED.is_informal_monarch, is_main = EXCLUDED.is_main;
 
 COMMIT;

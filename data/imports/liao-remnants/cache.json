@@ -438,7 +438,7 @@
       "id": "reign-xiao-tabuyan-xiliao",
       "dynastyId": "xiliao",
       "personId": "xiao-tabuyan",
-      "title": "",
+      "title": "感天皇后",
       "eraNames": [
         "咸清"
       ],
@@ -460,7 +460,8 @@
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "isInformalMonarch": true
     },
     {
       "id": "reign-yelu-yilie-xiliao",
@@ -915,6 +916,10 @@
       {
         "label": "维基百科",
         "url": "https://zh.wikipedia.org/wiki/萧德妃"
+      },
+      {
+        "label": "《辽史》卷三十·天祚皇帝四（耶律大石）",
+        "url": "https://zh.wikisource.org/zh-hans/辽史/卷30"
       }
     ],
     "notes": [
@@ -928,7 +933,8 @@
       "文献年号多作元统；辽宁出土官印署天统三年，从出土作天统，起迄取维基天统条 1213–1216。",
       "本次补充人物概述：以正史本纪、专题史料及君主年表交叉核对身份、世系、在位时期与重要转折；大理早期君主的记载不足处明确保留不详。",
       "2026-09：按用户请求扩充北辽、西辽王朝概述，依据《辽史·天祚帝纪》《辽史·西辽外记》《契丹国志》及本包既有记录整理。北辽概述区分耶律淳在位与萧德妃称制；西辽按耶律大石西迁、建都巴拉沙衮及蒙古征服的历史脉络叙述。",
-      "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。"
+      "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
+      "萧塔不烟时段（1143—1150）按《辽史》卷三十“遗命皇后权国”“号感天皇后，称制”记载，reigns.title 记“感天皇后”，isInformalMonarch=true 表示称制执政的非正式君主并显示斜纹。"
     ]
   }
 }
