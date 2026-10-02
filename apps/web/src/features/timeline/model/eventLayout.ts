@@ -11,12 +11,14 @@ export const EVENT_MARKER_DOT_OFFSET = 10;
 /** Inset from the stage edge so a stuck label is not flush with the viewport. */
 export const EVENT_MARKER_VIEW_PAD = 8;
 export const EVENT_ROW_TOP = 8;
-export const EVENT_ROW_STEP = 28;
-export const EVENT_BADGE_HALF_HEIGHT = 12;
+/** Shared by event markers, their span alignment, and lane-edge placement. */
+export const EVENT_MARKER_HEIGHT = 20;
+export const EVENT_ROW_GAP = 4;
+export const EVENT_ROW_STEP = EVENT_MARKER_HEIGHT + EVENT_ROW_GAP;
+export const EVENT_BADGE_HALF_HEIGHT = EVENT_MARKER_HEIGHT / 2;
 /** A badge may nudge within its date column, but must not drift along the lane. */
 export const EVENT_BADGE_MAX_NUDGE = 16;
 export const EVENT_LANE_PAD = 8;
-export const EVENT_RAIL_MIN_HEIGHT = 64;
 
 export type PlacedEvent = {
   event: Event;
@@ -307,9 +309,6 @@ export function compactEventLanes(placed: PlacedEvent[]): PlacedEvent[] {
 }
 
 export function eventRailHeight(laneCount: number): number {
-  if (laneCount <= 0) return EVENT_RAIL_MIN_HEIGHT;
-  return Math.max(
-    EVENT_RAIL_MIN_HEIGHT,
-    EVENT_ROW_TOP + laneCount * EVENT_ROW_STEP + EVENT_ROW_TOP,
-  );
+  const rows = Math.max(0, laneCount);
+  return EVENT_ROW_TOP * 2 + rows * EVENT_MARKER_HEIGHT + Math.max(0, rows - 1) * EVENT_ROW_GAP;
 }

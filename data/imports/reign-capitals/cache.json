@@ -16,6 +16,14 @@
       "capitalId": "cap-huihu-yahzhang-8928"
     },
     {
+      "reignId": "reign-an-lushan-uprising",
+      "capitalId": "cap-yan-anshi-fanyang-755"
+    },
+    {
+      "reignId": "reign-an-lushan-uprising",
+      "capitalId": "cap-yan-anshi-luoyang-preaccession-756"
+    },
+    {
       "reignId": "reign-an-lushan",
       "capitalId": "cap-yan-anshi-luoyang-756"
     },
@@ -588,14 +596,6 @@
       "capitalId": "cap-wu-chunqiu-gusu-585"
     },
     {
-      "reignId": "reign-fu-chong",
-      "capitalId": "cap-qin-front-changan-351"
-    },
-    {
-      "reignId": "reign-fu-deng",
-      "capitalId": "cap-qin-front-changan-351"
-    },
-    {
       "reignId": "reign-fu-jian",
       "capitalId": "cap-qin-front-changan-351"
     },
@@ -605,7 +605,7 @@
     },
     {
       "reignId": "reign-fu-pi",
-      "capitalId": "cap-qin-front-changan-351"
+      "capitalId": "cap-qin-front-jinyang-385"
     },
     {
       "reignId": "reign-fu-sheng",
@@ -4805,10 +4805,6 @@
     },
     {
       "reignId": "reign-zhu-youlang-ming-south",
-      "capitalId": "cap-ming-south-nanning-1648"
-    },
-    {
-      "reignId": "reign-zhu-youlang-ming-south",
       "capitalId": "cap-ming-south-nanning-1649"
     },
     {
@@ -5117,6 +5113,22 @@
       {
         "label": "潘明娟《圣都与俗都：晋国都城体系的演变》，《中原文化研究》2021年第2期",
         "url": "https://www.zywhyj.cn/Uploads/PdfFile/2021-03-16/60506026c2527.pdf"
+      },
+      {
+        "label": "《晋书》卷九·孝武帝纪",
+        "url": "https://zh.wikisource.org/zh-hans/晋书/卷009"
+      },
+      {
+        "label": "《晋书》卷一百一十五·苻丕苻登载记",
+        "url": "https://www.zggdwx.com/jinshu/116.html"
+      },
+      {
+        "label": "《资治通鉴》卷二百十七：安禄山于天宝十四载十二月丁酉陷东京洛阳",
+        "url": "https://zh.wikisource.org/zh-hans/資治通鑑_(胡三省音注)/卷217"
+      },
+      {
+        "label": "中国历代朔闰表（唐、五代）：天宝十四载十二月日期换算",
+        "url": "https://ytliu0.github.io/ChineseCalendar/table_period_simp.html?period=tang5"
       }
     ],
     "notes": [
@@ -5136,8 +5148,10 @@
       "补录大燕安禄山—安庆绪—史思明—史朝义与本包大燕专属都城记录的显式关联；范阳作为主都和燕京陪都分别关联，洛阳复归后与范阳陪都并存。",
       "安史之乱时期拆分唐长安、洛阳都城记录后，同步重建所有唐帝在位—都城关联：只关联与在位时段实际相交的都城阶段；肃宗及以后各帝关联至收复后都城记录，肃宗在失陷至收复期间仍保留无固定都城地理项的在位时段。",
       "移除朱祁钰旧监国 reign（reign-zhu-qiyu-regent-ming）的北京都城关联；监国经历已改为单点事件，不再有对应 reign。",
-      "2026-10-02：晋国在位—都城关联按共享 capitalSegmentsForReign/timelineOwnership 重建。曲沃桓叔、庄伯、武公的 quwo 并立段只关联曲沃；翼公室关联翼；武公正式受命后的主线关联翼；惠公及后继按都绛、新田时段归属。删除早期插值在位以及献公、奚齐、卓子近似日期在位的显式都城关联，遵循不确定日期不下沉都城任期的规则；地图与王朝级都城记录保留。清理所有晋国旧显式关联后再插入本包正确集合，避免显式关联绕过 track。"
+      "2026-10-02：晋国在位—都城关联按共享 capitalSegmentsForReign/timelineOwnership 重建。曲沃桓叔、庄伯、武公的 quwo 并立段只关联曲沃；翼公室关联翼；武公正式受命后的主线关联翼；惠公及后继按都绛、新田时段归属。删除早期插值在位以及献公、奚齐、卓子近似日期在位的显式都城关联，遵循不确定日期不下沉都城任期的规则；地图与王朝级都城记录保留。清理所有晋国旧显式关联后再插入本包正确集合，避免显式关联绕过 track。",
+      "2026-10-02：前秦失长安后仅苻丕有可核实的固定都城关联：由长安改为晋阳（385年10月至386年11月，按在位记录所用公历月）。移除苻登、苻冲仍关联长安的错误行；苻登继位后史料所见驻地随军事行动变化，未强行关联为某一固定都城。",
+      "2026-10-02：将安禄山称帝前的在位段显式关联范阳、洛阳两阶段。洛阳陷落日期据《资治通鉴》卷217天宝十四载十二月丁酉（十二日），按朔闰表换算为公历756-01-18；范阳止于前一日，洛阳阶段至安禄山称帝前一日。"
     ]
   },
-  "preSql": "DELETE FROM reign_capitals WHERE capital_id IN ('cap-tang-changan', 'cap-tang-changan-757', 'cap-tang-luoyang', 'cap-tang-luoyang-757', 'cap-tang-luoyang-904');\nDELETE FROM reign_capitals WHERE (reign_id = 'reign-sima-zhong' AND capital_id = 'cap-jin-west-changan-304') OR (reign_id IN ('reign-sima-chi', 'reign-sima-ye') AND capital_id = 'cap-jin-west-luoyang-266');\n-- Rebuild Jin associations, including obsolete explicit cross-track links.\nDELETE FROM reign_capitals WHERE reign_id IN ('reign-ji-shuyu-jin-chunqiu', 'reign-jin-r1-jin-chunqiu', 'reign-jin-r2-jin-chunqiu', 'reign-jin-r3-jin-chunqiu', 'reign-jin-r4-jin-chunqiu', 'reign-jin-r5-jin-chunqiu', 'reign-jin-r6-jin-chunqiu', 'reign-jin-r7-jin-chunqiu', 'reign-jin-r8-jin-chunqiu', 'reign-jin-r9-jin-chunqiu', 'reign-jin-r10-jin-chunqiu', 'reign-jin-r11-jin-chunqiu', 'reign-jin-r12-jin-chunqiu', 'reign-jin-r13-jin-chunqiu', 'reign-jin-r14-jin-chunqiu', 'reign-jin-r15-jin-chunqiu', 'reign-jin-r16-jin-chunqiu', 'reign-jin-r17-jin-chunqiu', 'reign-jin-r17-main-jin-chunqiu', 'reign-jin-r18-jin-chunqiu', 'reign-jin-r19-jin-chunqiu', 'reign-jin-r20-jin-chunqiu', 'reign-jin-r21-jin-chunqiu', 'reign-jin-r22-jin-chunqiu', 'reign-ji-chonger-jin-chunqiu', 'reign-jin-r24-jin-chunqiu', 'reign-jin-r25-jin-chunqiu', 'reign-jin-r26-jin-chunqiu', 'reign-jin-r27-jin-chunqiu', 'reign-jin-r28-jin-chunqiu', 'reign-jin-r29-jin-chunqiu', 'reign-jin-r30-jin-chunqiu', 'reign-jin-r31-jin-chunqiu', 'reign-jin-r32-jin-chunqiu', 'reign-jin-r33-jin-chunqiu', 'reign-jin-r34-jin-chunqiu', 'reign-jin-r35-jin-chunqiu', 'reign-jin-r36-jin-chunqiu', 'reign-jin-r37-jin-chunqiu', 'reign-jin-r38-jin-chunqiu', 'reign-jin-r39-jin-chunqiu', 'reign-jin-xi-qi-jin-chunqiu', 'reign-jin-zhuo-zi-jin-chunqiu');"
+  "preSql": "DELETE FROM reign_capitals WHERE reign_id = 'reign-zhu-youlang-ming-south' AND capital_id = 'cap-ming-south-nanning-1648';\nDELETE FROM reign_capitals WHERE capital_id IN ('cap-tang-changan', 'cap-tang-changan-757', 'cap-tang-luoyang', 'cap-tang-luoyang-757', 'cap-tang-luoyang-904');\nDELETE FROM reign_capitals WHERE (reign_id = 'reign-sima-zhong' AND capital_id = 'cap-jin-west-changan-304') OR (reign_id IN ('reign-sima-chi', 'reign-sima-ye') AND capital_id = 'cap-jin-west-luoyang-266');\n-- Rebuild Jin associations, including obsolete explicit cross-track links.\nDELETE FROM reign_capitals WHERE reign_id IN ('reign-ji-shuyu-jin-chunqiu', 'reign-jin-r1-jin-chunqiu', 'reign-jin-r2-jin-chunqiu', 'reign-jin-r3-jin-chunqiu', 'reign-jin-r4-jin-chunqiu', 'reign-jin-r5-jin-chunqiu', 'reign-jin-r6-jin-chunqiu', 'reign-jin-r7-jin-chunqiu', 'reign-jin-r8-jin-chunqiu', 'reign-jin-r9-jin-chunqiu', 'reign-jin-r10-jin-chunqiu', 'reign-jin-r11-jin-chunqiu', 'reign-jin-r12-jin-chunqiu', 'reign-jin-r13-jin-chunqiu', 'reign-jin-r14-jin-chunqiu', 'reign-jin-r15-jin-chunqiu', 'reign-jin-r16-jin-chunqiu', 'reign-jin-r17-jin-chunqiu', 'reign-jin-r17-main-jin-chunqiu', 'reign-jin-r18-jin-chunqiu', 'reign-jin-r19-jin-chunqiu', 'reign-jin-r20-jin-chunqiu', 'reign-jin-r21-jin-chunqiu', 'reign-jin-r22-jin-chunqiu', 'reign-ji-chonger-jin-chunqiu', 'reign-jin-r24-jin-chunqiu', 'reign-jin-r25-jin-chunqiu', 'reign-jin-r26-jin-chunqiu', 'reign-jin-r27-jin-chunqiu', 'reign-jin-r28-jin-chunqiu', 'reign-jin-r29-jin-chunqiu', 'reign-jin-r30-jin-chunqiu', 'reign-jin-r31-jin-chunqiu', 'reign-jin-r32-jin-chunqiu', 'reign-jin-r33-jin-chunqiu', 'reign-jin-r34-jin-chunqiu', 'reign-jin-r35-jin-chunqiu', 'reign-jin-r36-jin-chunqiu', 'reign-jin-r37-jin-chunqiu', 'reign-jin-r38-jin-chunqiu', 'reign-jin-r39-jin-chunqiu', 'reign-jin-xi-qi-jin-chunqiu', 'reign-jin-zhuo-zi-jin-chunqiu');\nDELETE FROM reign_capitals WHERE reign_id IN ('reign-fu-chong', 'reign-fu-deng', 'reign-fu-pi') AND capital_id = 'cap-qin-front-changan-351';"
 }

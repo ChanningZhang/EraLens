@@ -398,7 +398,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   const visibleEventPlaced = showAllEvents
     ? eventPlaced
     : eventPlaced.filter((item) => item.lane < DEFAULT_VISIBLE_EVENT_LANES);
-  const railHeight = eventRailHeight(showAllEvents ? totalEventLanes : Math.min(totalEventLanes, DEFAULT_VISIBLE_EVENT_LANES));
+  const railHeight = eventRailHeight(eventLaneCount(visibleEventPlaced));
   const reignsByDynasty = useMemo(() => {
     const map = new Map<string, typeof data extends undefined ? never : NonNullable<typeof data>["reigns"]>();
     if (!data) return map;

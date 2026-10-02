@@ -18,7 +18,7 @@
   clip-path: inset(-16px 0 -16px var(--timeline-gutter));
 }
 
-.layer .badgeMarker {
+.badgeLayer .marker {
   border-color: color-mix(in srgb, var(--event-color) 58%, var(--color-border));
   background: color-mix(in srgb, var(--event-fill) 98%, var(--color-surface));
   box-shadow:
@@ -36,7 +36,7 @@
   position: absolute;
   right: 0;
   left: 0;
-  height: 24px;
+  height: var(--event-marker-height);
   pointer-events: none;
 }
 
@@ -79,8 +79,8 @@
   align-items: center;
   gap: 6px;
   max-width: 132px;
-  min-height: 24px;
-  padding: 3px 8px 3px var(--marker-pad-left);
+  height: var(--event-marker-height);
+  padding: 2px 8px 2px var(--marker-pad-left);
   transform: translateX(calc(-1 * var(--dot-nudge)));
   border: var(--marker-border) solid
     color-mix(in srgb, var(--event-color) 34%, var(--color-border));
@@ -118,10 +118,7 @@
 
 .settingsSample {
   position: relative;
-  display: inline-flex;
   max-width: none;
-  min-height: 24px;
-  padding: 3px 8px 3px 6px;
   transform: none;
   cursor: default;
   pointer-events: none;

@@ -1,12 +1,17 @@
-import type { PlacedEvent } from "../model/eventLayout";
+import type { CSSProperties } from "react";
+import { EVENT_MARKER_HEIGHT, type PlacedEvent } from "../model/eventLayout";
 import { selectionStore } from "../state/selectionStore";
 import { eventSpanAbs, formatEventTime } from "@eralens/shared";
 import { isApproximateConfidence } from "@eralens/shared";
 import styles from "./EventLayer.module.css";
 
+const markerSizeStyle: CSSProperties & { "--event-marker-height": string } = {
+  "--event-marker-height": `${EVENT_MARKER_HEIGHT}px`,
+};
+
 export function EventKindPreview({ kind, label }: { kind: string; label: string }) {
   return (
-    <span className={`${styles.marker} ${styles.settingsSample}`} data-event-kind={kind} aria-hidden="true">
+    <span className={`${styles.marker} ${styles.settingsSample}`} style={markerSizeStyle} data-event-kind={kind} aria-hidden="true">
       <span className={styles.dot} />
       <span className={styles.label}>{label}</span>
     </span>
@@ -23,7 +28,7 @@ export function EventLayer({ placed, height, laneBadges = false }: Props) {
   if (placed.length === 0) return null;
 
   return (
-    <div className={`${styles.layer} ${laneBadges ? styles.badgeLayer : ""}`} style={{ height }}>
+    <div className={`${styles.layer} ${laneBadges ? styles.badgeLayer : ""}`} style={{ ...markerSizeStyle, height }}>
       {placed.map((item) => {
         const { event } = item;
         const { anchorAbs } = eventSpanAbs(event);
@@ -46,7 +51,7 @@ export function EventLayer({ placed, height, laneBadges = false }: Props) {
             )}
             <button
               type="button"
-              className={`${styles.marker} ${laneBadges ? styles.badgeMarker : ""} ${approximate ? styles.approximateMarker : ""}`}
+              className={styles.marker}
               data-event-kind={event.kind}
               style={{ left: item.anchorX }}
               onClick={() => {

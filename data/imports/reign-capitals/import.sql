@@ -3,14 +3,18 @@
 BEGIN;
 
 -- cleanup
+DELETE FROM reign_capitals WHERE reign_id = 'reign-zhu-youlang-ming-south' AND capital_id = 'cap-ming-south-nanning-1648';
 DELETE FROM reign_capitals WHERE capital_id IN ('cap-tang-changan', 'cap-tang-changan-757', 'cap-tang-luoyang', 'cap-tang-luoyang-757', 'cap-tang-luoyang-904');
 DELETE FROM reign_capitals WHERE (reign_id = 'reign-sima-zhong' AND capital_id = 'cap-jin-west-changan-304') OR (reign_id IN ('reign-sima-chi', 'reign-sima-ye') AND capital_id = 'cap-jin-west-luoyang-266');
 -- Rebuild Jin associations, including obsolete explicit cross-track links.
 DELETE FROM reign_capitals WHERE reign_id IN ('reign-ji-shuyu-jin-chunqiu', 'reign-jin-r1-jin-chunqiu', 'reign-jin-r2-jin-chunqiu', 'reign-jin-r3-jin-chunqiu', 'reign-jin-r4-jin-chunqiu', 'reign-jin-r5-jin-chunqiu', 'reign-jin-r6-jin-chunqiu', 'reign-jin-r7-jin-chunqiu', 'reign-jin-r8-jin-chunqiu', 'reign-jin-r9-jin-chunqiu', 'reign-jin-r10-jin-chunqiu', 'reign-jin-r11-jin-chunqiu', 'reign-jin-r12-jin-chunqiu', 'reign-jin-r13-jin-chunqiu', 'reign-jin-r14-jin-chunqiu', 'reign-jin-r15-jin-chunqiu', 'reign-jin-r16-jin-chunqiu', 'reign-jin-r17-jin-chunqiu', 'reign-jin-r17-main-jin-chunqiu', 'reign-jin-r18-jin-chunqiu', 'reign-jin-r19-jin-chunqiu', 'reign-jin-r20-jin-chunqiu', 'reign-jin-r21-jin-chunqiu', 'reign-jin-r22-jin-chunqiu', 'reign-ji-chonger-jin-chunqiu', 'reign-jin-r24-jin-chunqiu', 'reign-jin-r25-jin-chunqiu', 'reign-jin-r26-jin-chunqiu', 'reign-jin-r27-jin-chunqiu', 'reign-jin-r28-jin-chunqiu', 'reign-jin-r29-jin-chunqiu', 'reign-jin-r30-jin-chunqiu', 'reign-jin-r31-jin-chunqiu', 'reign-jin-r32-jin-chunqiu', 'reign-jin-r33-jin-chunqiu', 'reign-jin-r34-jin-chunqiu', 'reign-jin-r35-jin-chunqiu', 'reign-jin-r36-jin-chunqiu', 'reign-jin-r37-jin-chunqiu', 'reign-jin-r38-jin-chunqiu', 'reign-jin-r39-jin-chunqiu', 'reign-jin-xi-qi-jin-chunqiu', 'reign-jin-zhuo-zi-jin-chunqiu');
+DELETE FROM reign_capitals WHERE reign_id IN ('reign-fu-chong', 'reign-fu-deng', 'reign-fu-pi') AND capital_id = 'cap-qin-front-changan-351';
 
 -- reign_capitals
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-achen-tuyuhun', 'cap-tuyuhun-fushicheng-329') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-aidengli-kehan-huihu', 'cap-huihu-yahzhang-8928') ON CONFLICT DO NOTHING;
+INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-an-lushan-uprising', 'cap-yan-anshi-fanyang-755') ON CONFLICT DO NOTHING;
+INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-an-lushan-uprising', 'cap-yan-anshi-luoyang-preaccession-756') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-an-lushan', 'cap-yan-anshi-luoyang-756') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-an-qingxu', 'cap-yan-anshi-ye-757') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-ancang-wang-gaogouli', 'cap-gaogouli-pyongyang-428') ON CONFLICT DO NOTHING;
@@ -154,11 +158,9 @@ INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-fengcheng-kehan
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-fengshang-wang-gaogouli', 'cap-gaogouli-guoneicheng-37') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-fengyi-kehan-huihu', 'cap-huihu-yahzhang-8928') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-fu-chai-wu-chunqiu', 'cap-wu-chunqiu-gusu-585') ON CONFLICT DO NOTHING;
-INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-fu-chong', 'cap-qin-front-changan-351') ON CONFLICT DO NOTHING;
-INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-fu-deng', 'cap-qin-front-changan-351') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-fu-jian', 'cap-qin-front-changan-351') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-fu-jian-ming', 'cap-qin-front-changan-351') ON CONFLICT DO NOTHING;
-INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-fu-pi', 'cap-qin-front-changan-351') ON CONFLICT DO NOTHING;
+INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-fu-pi', 'cap-qin-front-jinyang-385') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-fu-sheng', 'cap-qin-front-changan-351') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-fulianchou-tuyuhun', 'cap-tuyuhun-fushicheng-329') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-fulin-qing', 'cap-qing-beijing') ON CONFLICT DO NOTHING;
@@ -1208,7 +1210,6 @@ INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-zhu-youjiao-min
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-zhu-youlang-ming-south', 'cap-ming-south-anlong-1651') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-zhu-youlang-ming-south', 'cap-ming-south-guilin-1647') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-zhu-youlang-ming-south', 'cap-ming-south-kunming-1656') ON CONFLICT DO NOTHING;
-INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-zhu-youlang-ming-south', 'cap-ming-south-nanning-1648') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-zhu-youlang-ming-south', 'cap-ming-south-nanning-1649') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-zhu-youlang-ming-south', 'cap-ming-south-zhaoqing-1646') ON CONFLICT DO NOTHING;
 INSERT INTO reign_capitals (reign_id, capital_id) VALUES ('reign-zhu-youlang-ming-south', 'cap-ming-south-zhaoqing-1648') ON CONFLICT DO NOTHING;
