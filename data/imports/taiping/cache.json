@@ -157,6 +157,7 @@
       "id": "taiping",
       "name": "太平天国",
       "altNames": [
+        "太平天国",
         "太平天囯",
         "天囯"
       ],
@@ -462,6 +463,18 @@
       {
         "label": "李秀成",
         "url": "https://zh.wikipedia.org/wiki/李秀成"
+      },
+      {
+        "label": "《国号》：中国历代国号与史称",
+        "url": "https://zh.wikipedia.org/wiki/国号"
+      },
+      {
+        "label": "《中国政权列表》：各时期政权与国号",
+        "url": "https://zh.wikipedia.org/wiki/中国政权列表"
+      },
+      {
+        "label": "《“国号”中的历史流变》：国号、自称与方位史称",
+        "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
       }
     ],
     "notes": [
@@ -470,7 +483,8 @@
       "洪秀全在位自 1851-03-23 武宣登基（非金田起义）；至 1864-06-01 病逝。幼天王：1864-06-06 继位至 1864-07-19 天京陷落。",
       "太平天国以干支纪年，不设传统年号，故省略 era_names。",
       "金田起义、洪秀全登基、定都天京及幼天王被俘均为太平天国自身事件，只关联太平天国；反清背景、清军参与镇压或事件造成双方对峙，不单独构成清朝事件关联。",
-      "taiping-rebellion 事件沿用 yuan-ming-qing 已有 id，本包补 taiping 王朝与洪秀全参与关联。"
+      "taiping-rebellion 事件沿用 yuan-ming-qing 已有 id，本包补 taiping 王朝与洪秀全参与关联。",
+      "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。"
     ]
   }
 }

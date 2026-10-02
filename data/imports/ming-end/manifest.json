@@ -47,6 +47,22 @@
     {
       "label": "澎湖海战",
       "url": "https://zh.wikipedia.org/wiki/澎湖海战"
+    },
+    {
+      "label": "《国号》：中国历代国号与史称",
+      "url": "https://zh.wikipedia.org/wiki/国号"
+    },
+    {
+      "label": "《中国政权列表》：各时期政权与国号",
+      "url": "https://zh.wikipedia.org/wiki/中国政权列表"
+    },
+    {
+      "label": "《“国号”中的历史流变》：国号、自称与方位史称",
+      "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
+    },
+    {
+      "label": "《明郑》：奉明正朔与国号大明",
+      "url": "https://zh.wikipedia.org/wiki/明鄭"
     }
   ],
   "notes": [
@@ -55,6 +71,7 @@
     "郑成功、郑经、郑克塽在位与 yuan-ming-qing 已有人物 upsert 衔接。",
     "大西年号亦作大顺，与李自成大顺国号同名异政权。",
     "郑成功收复台湾（1662）与郑克塽降清（1683）各保留一条跨包共用事件，合并原重复记录的信息与关联。",
-    "明朝灭亡、清军入关、南明终结等事件沿用已有 id，补 event_dynasties。"
+    "明朝灭亡、清军入关、南明终结等事件沿用已有 id，补 event_dynasties。",
+    "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。明郑奉明正朔，首项采用“大明”，保留地域名称“东宁”和封爵简称“延平”；大顺、大西采用“大顺”“大西”。"
   ]
 }

@@ -138,7 +138,7 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_na
 
 -- dynasties
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, start_day, start_confidence, end_year, end_month, end_day, end_confidence, start_abs, end_abs, color_token, parent_id, group_id, note)
-VALUES ('wei-weiguo', '卫', ARRAY['卫国'], 'cn', 'east_asia', -1040, 1, NULL, 'year', -209, 12, NULL, 'month', -12468, -2485, 'ochre', NULL, NULL, '周成王封康叔封于卫；小国久存，秦二世时废。')
+VALUES ('wei-weiguo', '卫', ARRAY['卫','卫国'], 'cn', 'east_asia', -1040, 1, NULL, 'year', -209, 12, NULL, 'month', -12468, -2485, 'ochre', NULL, NULL, '周成王封康叔封于卫；小国久存，秦二世时废。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_confidence = EXCLUDED.start_confidence, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_confidence = EXCLUDED.end_confidence, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 
 -- reigns

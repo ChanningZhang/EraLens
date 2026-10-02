@@ -74,7 +74,7 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_na
 
 -- dynasties
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, start_day, start_confidence, end_year, end_month, end_day, end_confidence, start_abs, end_abs, color_token, parent_id, group_id, note)
-VALUES ('prc', '中华人民共和国', ARRAY['新中国'], 'cn', 'east_asia', 1949, 10, NULL, 'month', 2026, 9, NULL, 'month', 23397, 24320, 'ochre', NULL, NULL, '1949年10月1日成立。正统自起始。元首按维基百科「中华人民共和国国家元首列表」收录中央人民政府主席、国家主席、国家副主席代行、国家代主席及废除主席期间的全国人大常委会，截至2026年9月。')
+VALUES ('prc', '中华人民共和国', ARRAY['中华人民共和国','新中国'], 'cn', 'east_asia', 1949, 10, NULL, 'month', 2026, 9, NULL, 'month', 23397, 24320, 'ochre', NULL, NULL, '1949年10月1日成立。正统自起始。元首按维基百科「中华人民共和国国家元首列表」收录中央人民政府主席、国家主席、国家副主席代行、国家代主席及废除主席期间的全国人大常委会，截至2026年9月。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_confidence = EXCLUDED.start_confidence, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_confidence = EXCLUDED.end_confidence, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 
 -- reigns

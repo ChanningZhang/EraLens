@@ -45,6 +45,22 @@
     {
       "label": "建武历法锚点：六月廿二为25年8月5日",
       "url": "https://zh.wikipedia.org/wiki/建武_(东汉)"
+    },
+    {
+      "label": "《国号》：中国历代国号与史称",
+      "url": "https://zh.wikipedia.org/wiki/国号"
+    },
+    {
+      "label": "《中国政权列表》：各时期政权与国号",
+      "url": "https://zh.wikipedia.org/wiki/中国政权列表"
+    },
+    {
+      "label": "《“国号”中的历史流变》：国号、自称与方位史称",
+      "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
+    },
+    {
+      "label": "《建世》：赤眉刘盆子政权国号汉",
+      "url": "https://bkso.baidu.com/item/建世/0"
     }
   ],
   "notes": [
@@ -53,6 +69,7 @@
     "赵兴为吕嘉所杀后赵建德即位，同年汉军灭南越。",
     "赤眉入长安事件关联更始帝刘玄（见 qin-han 包 liu-xuan）。",
     "西汉、更始关联见 qin-han 包，本包以 supplemental 补充。",
-    "confidence=year，scope=cn，region=east_asia。"
+    "confidence=year，scope=cn，region=east_asia。",
+    "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。赤眉首项采用25年拥立刘盆子后的国号“汉”；23—25年起义军阶段尚无该帝号政权，静态详情采用称帝后的代表国号，并保留“赤眉军”。"
   ]
 }

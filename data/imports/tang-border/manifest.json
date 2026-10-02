@@ -49,6 +49,22 @@
     {
       "label": "唐灭高句丽",
       "url": "https://zh.wikipedia.org/wiki/%E9%AB%98%E5%8F%A5%E4%B8%BD"
+    },
+    {
+      "label": "《国号》：中国历代国号与史称",
+      "url": "https://zh.wikipedia.org/wiki/国号"
+    },
+    {
+      "label": "《中国政权列表》：各时期政权与国号",
+      "url": "https://zh.wikipedia.org/wiki/中国政权列表"
+    },
+    {
+      "label": "《“国号”中的历史流变》：国号、自称与方位史称",
+      "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
+    },
+    {
+      "label": "《吐蕃》：汉译自称大蕃",
+      "url": "https://zh.wikipedia.org/wiki/吐蕃"
     }
   ],
   "notes": [
@@ -56,6 +72,7 @@
     "吐谷浑含慕容吐谷浑至诺曷钵完整首领序列；王朝窗口取329–663。",
     "高句丽取维基百科君主列表28王（东明圣王至宝藏王）；故国川王以前年代有争议，confidence=year，在位年依三国史记/维基列表。报德王（安胜，670–683）为亡国后新罗境内残部，不入高句丽王朝行。",
     "回鹘可汗序列据维基百科回鹘可汗列表（744–840）；人物名用本名，在位 title 用唐封称号，尊号不入人物名。",
-    "唐（tang）复用 sui-tang-wudai-song 已有 id，本包仅关联 event_dynasties。"
+    "唐（tang）复用 sui-tang-wudai-song 已有 id，本包仅关联 event_dynasties。",
+    "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。"
   ]
 }

@@ -33,6 +33,18 @@
     {
       "label": "庄蹻",
       "url": "https://zh.wikipedia.org/wiki/庄蹻"
+    },
+    {
+      "label": "《国号》：中国历代国号与史称",
+      "url": "https://zh.wikipedia.org/wiki/国号"
+    },
+    {
+      "label": "《中国政权列表》：各时期政权与国号",
+      "url": "https://zh.wikipedia.org/wiki/中国政权列表"
+    },
+    {
+      "label": "《“国号”中的历史流变》：国号、自称与方位史称",
+      "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
     }
   ],
   "notes": [
@@ -40,6 +52,7 @@
     "君主在位年无通行记载时，仅取史料锚点前后短窗口，禁止用王朝起讫年硬填。",
     "多同取唐蒙通夜郎（前135）前后约二十年；兴取被杀前数年；尝羌取降汉前数年。",
     "庄蹻与尝羌之间、多同与兴之间世系失考，中间空缺不补齐。",
-    "confidence=year，scope=cn，region=east_asia。"
+    "confidence=year，scope=cn，region=east_asia。",
+    "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。"
   ]
 }

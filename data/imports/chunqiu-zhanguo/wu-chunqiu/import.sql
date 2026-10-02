@@ -90,7 +90,7 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_na
 
 -- dynasties
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, start_day, start_confidence, end_year, end_month, end_day, end_confidence, start_abs, end_abs, color_token, parent_id, group_id, note)
-VALUES ('wu-chunqiu', '吴', ARRAY['吴国'], 'cn', 'east_asia', -1100, 1, NULL, 'year', -473, 12, NULL, 'month', -13188, -5653, 'ochre', NULL, NULL, '传世世系上溯至泰伯；《史记·吴太伯世家》记载武王克殷时周章已君吴，本项目以西周建国年（前1046）为周章起年确定锚点。锚点前后的无年表连续君主分别按世系均分，失考边标为 interpolated；寿梦起始保留前585年年表锚点。前473年越灭吴。')
+VALUES ('wu-chunqiu', '吴', ARRAY['吴','吴国'], 'cn', 'east_asia', -1100, 1, NULL, 'year', -473, 12, NULL, 'month', -13188, -5653, 'ochre', NULL, NULL, '传世世系上溯至泰伯；《史记·吴太伯世家》记载武王克殷时周章已君吴，本项目以西周建国年（前1046）为周章起年确定锚点。锚点前后的无年表连续君主分别按世系均分，失考边标为 interpolated；寿梦起始保留前585年年表锚点。前473年越灭吴。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_confidence = EXCLUDED.start_confidence, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_confidence = EXCLUDED.end_confidence, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 
 -- reigns

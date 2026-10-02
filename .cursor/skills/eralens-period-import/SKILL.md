@@ -116,6 +116,8 @@ Task Progress:
 
 ### 2. 建模规则
 
+王朝 `altNames` 首项为经核实的国号或自称，供详情副标题使用；其余项保留史称、地域称呼及检索别名。首项可与 `name` 相同，不从史称机械去前缀生成。跨改号时期采用代表自称并在 `manifest.notes` 说明，依据放入 `manifest.sources`。无统一政权自称的集合记录（如三皇、五帝）使用空数组。
+
 **ID 约定**（kebab-case，英文或拼音）：
 
 - 王朝 `{name}`：`tang`、`song-north`、`zhou-west`

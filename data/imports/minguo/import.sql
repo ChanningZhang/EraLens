@@ -126,7 +126,7 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_na
 
 -- dynasties
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, start_day, start_confidence, end_year, end_month, end_day, end_confidence, start_abs, end_abs, color_token, parent_id, group_id, note)
-VALUES ('roc', '中华民国', ARRAY['民国'], 'cn', 'east_asia', 1912, 1, NULL, 'month', 2026, 9, NULL, 'month', 22944, 24320, 'ochre', NULL, NULL, '辛亥革命后，中华民国于1912年建立，先后经历南京临时政府、北京政府、南京国民政府及行宪后的总统制度。民国时期伴随政权更迭、军阀割据、北伐、抗日战争与国共内战；1949年中央政府迁往台湾后，中华民国政府在台湾继续运作。其后经历解除戒严、国会改选和政治民主化，1996年举行首次总统直接选举，2000年实现首次政党轮替。')
+VALUES ('roc', '中华民国', ARRAY['中华民国','民国'], 'cn', 'east_asia', 1912, 1, NULL, 'month', 2026, 9, NULL, 'month', 22944, 24320, 'ochre', NULL, NULL, '辛亥革命后，中华民国于1912年建立，先后经历南京临时政府、北京政府、南京国民政府及行宪后的总统制度。民国时期伴随政权更迭、军阀割据、北伐、抗日战争与国共内战；1949年中央政府迁往台湾后，中华民国政府在台湾继续运作。其后经历解除戒严、国会改选和政治民主化，1996年举行首次总统直接选举，2000年实现首次政党轮替。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_confidence = EXCLUDED.start_confidence, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_confidence = EXCLUDED.end_confidence, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 
 -- reigns

@@ -57,7 +57,7 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_na
 
 -- dynasties
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, start_day, start_confidence, end_year, end_month, end_day, end_confidence, start_abs, end_abs, color_token, parent_id, group_id, note)
-VALUES ('guo-chunqiu', '西虢国', ARRAY['虢国','虢','南虢'], 'cn', 'east_asia', -1046, 1, NULL, 'year', -655, 12, NULL, 'month', -12540, -7837, 'ochre', NULL, NULL, '周朝姬姓诸侯国，本条目聚焦西虢；其东迁后三门峡一带亦称南虢。西虢传统君主序列：虢叔 → 郭叔 → 史料缺 → 城公 → 史料缺 → 厉公 → 宣公 → 文公 → 石父 → 翰 → 忌父 → 林父 → 丑。长父之后的君主，一说为宣公，一说为文公。
+VALUES ('guo-chunqiu', '西虢国', ARRAY['虢','虢国','南虢'], 'cn', 'east_asia', -1046, 1, NULL, 'year', -655, 12, NULL, 'month', -12540, -7837, 'ochre', NULL, NULL, '周朝姬姓诸侯国，本条目聚焦西虢；其东迁后三门峡一带亦称南虢。西虢传统君主序列：虢叔 → 郭叔 → 史料缺 → 城公 → 史料缺 → 厉公 → 宣公 → 文公 → 石父 → 翰 → 忌父 → 林父 → 丑。长父之后的君主，一说为宣公，一说为文公。
 有待考证的西虢君主世系：易父 → 宄公 → 幽叔 → 德叔 → 师丞。五代家族世系见师丞钟，但其是否兼任西虢君主及与主序列的衔接存在争议。
 东、西虢始封君归属存在异说。西虢东迁后三门峡一带称南虢，前655年晋献公借道虞国灭虢。《左传·僖公五年》记虢公丑亡国后出奔京师。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_confidence = EXCLUDED.start_confidence, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_confidence = EXCLUDED.end_confidence, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;

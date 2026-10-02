@@ -132,7 +132,7 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_na
 
 -- dynasties
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, start_day, start_confidence, end_year, end_month, end_day, end_confidence, start_abs, end_abs, color_token, parent_id, group_id, note)
-VALUES ('jin-chunqiu', '晋', ARRAY['晋国'], 'cn', 'east_asia', -1042, 1, NULL, 'year', -349, 12, NULL, 'month', -12492, -4165, 'ochre', NULL, NULL, '周成王封叔虞于唐，其子燮继位后改国号为晋。曲村—天马遗址为西周时期晋国早期都邑，发现连续的晋侯及夫人墓葬；早期都邑与文献所称翼的对应、唐至晋的迁移过程及始用年代仍有争议。昭侯时晋君都翼，曲沃支系与翼公室争位，前678年曲沃武公代翼。献公时都绛，景公前585年迁新田。前403年三家分晋；前376年公室被废、另立傀儡君，前349年静公被杀而国亡。')
+VALUES ('jin-chunqiu', '晋', ARRAY['晋','晋国'], 'cn', 'east_asia', -1042, 1, NULL, 'year', -349, 12, NULL, 'month', -12492, -4165, 'ochre', NULL, NULL, '周成王封叔虞于唐，其子燮继位后改国号为晋。曲村—天马遗址为西周时期晋国早期都邑，发现连续的晋侯及夫人墓葬；早期都邑与文献所称翼的对应、唐至晋的迁移过程及始用年代仍有争议。昭侯时晋君都翼，曲沃支系与翼公室争位，前678年曲沃武公代翼。献公时都绛，景公前585年迁新田。前403年三家分晋；前376年公室被废、另立傀儡君，前349年静公被杀而国亡。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_confidence = EXCLUDED.start_confidence, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_confidence = EXCLUDED.end_confidence, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 
 -- reigns

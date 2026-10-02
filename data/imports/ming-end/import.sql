@@ -28,13 +28,13 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_na
 
 -- dynasties
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, start_day, start_confidence, end_year, end_month, end_day, end_confidence, start_abs, end_abs, color_token, parent_id, group_id, note)
-VALUES ('dashun', '大顺', ARRAY['李顺'], 'cn', 'east_asia', 1644, 1, NULL, 'year', 1645, 12, NULL, 'month', 19728, 19751, 'ochre', NULL, NULL, '李自成1644年正月西安称帝，年号永昌；克北京后旋败，1645年李自成阵亡，政权瓦解。')
+VALUES ('dashun', '大顺', ARRAY['大顺','李顺'], 'cn', 'east_asia', 1644, 1, NULL, 'year', 1645, 12, NULL, 'month', 19728, 19751, 'ochre', NULL, NULL, '李自成1644年正月西安称帝，年号永昌；克北京后旋败，1645年李自成阵亡，政权瓦解。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_confidence = EXCLUDED.start_confidence, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_confidence = EXCLUDED.end_confidence, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, start_day, start_confidence, end_year, end_month, end_day, end_confidence, start_abs, end_abs, color_token, parent_id, group_id, note)
-VALUES ('daxi', '大西', ARRAY['西'], 'cn', 'east_asia', 1644, 12, NULL, 'month', 1647, 12, NULL, 'month', 19739, 19775, 'ochre', NULL, NULL, '张献忠1644年十二月成都称帝，年号大顺；1647年1月战死于西充，余部至同年归顺南明。')
+VALUES ('daxi', '大西', ARRAY['大西','西'], 'cn', 'east_asia', 1644, 12, NULL, 'month', 1647, 12, NULL, 'month', 19739, 19775, 'ochre', NULL, NULL, '张献忠1644年十二月成都称帝，年号大顺；1647年1月战死于西充，余部至同年归顺南明。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_confidence = EXCLUDED.start_confidence, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_confidence = EXCLUDED.end_confidence, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, start_day, start_confidence, end_year, end_month, end_day, end_confidence, start_abs, end_abs, color_token, parent_id, group_id, note)
-VALUES ('mingzheng', '明郑', ARRAY['东宁','延平'], 'cn', 'east_asia', 1661, 6, NULL, 'month', 1683, 10, NULL, 'month', 19937, 20205, 'ochre', NULL, NULL, '郑成功1662年收复台湾后建承天府，奉永历正朔；1683年郑克塽降清，东宁终结。')
+VALUES ('mingzheng', '明郑', ARRAY['大明','东宁','延平'], 'cn', 'east_asia', 1661, 6, NULL, 'month', 1683, 10, NULL, 'month', 19937, 20205, 'ochre', NULL, NULL, '郑成功1662年收复台湾后建承天府，奉永历正朔；1683年郑克塽降清，东宁终结。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_confidence = EXCLUDED.start_confidence, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_confidence = EXCLUDED.end_confidence, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 
 -- reigns

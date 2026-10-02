@@ -18,7 +18,7 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_na
 
 -- dynasties
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, start_day, start_confidence, end_year, end_month, end_day, end_confidence, start_abs, end_abs, color_token, parent_id, group_id, note)
-VALUES ('guo-east', '东虢国', ARRAY['东虢国'], 'cn', 'east_asia', -1046, 1, NULL, 'approximate_year', -767, 12, NULL, 'approximate_year', -12540, -9181, 'ochre', NULL, NULL, '西周姬姓诸侯国，位于制邑（今河南荥阳一带）。通行说为周文王弟虢仲的封国，与西虢分别屏卫周王室。可考人物有虢仲、虢惠叔大林、虢叔旅及末君虢叔；惠叔与旅为父子，其余世系有断层。东、西虢始封君的归属存在异说。东虢为郑所灭，通行系年前767年；《左传》记末君虢叔死于制邑。')
+VALUES ('guo-east', '东虢国', ARRAY['虢','东虢国'], 'cn', 'east_asia', -1046, 1, NULL, 'approximate_year', -767, 12, NULL, 'approximate_year', -12540, -9181, 'ochre', NULL, NULL, '西周姬姓诸侯国，位于制邑（今河南荥阳一带）。通行说为周文王弟虢仲的封国，与西虢分别屏卫周王室。可考人物有虢仲、虢惠叔大林、虢叔旅及末君虢叔；惠叔与旅为父子，其余世系有断层。东、西虢始封君的归属存在异说。东虢为郑所灭，通行系年前767年；《左传》记末君虢叔死于制邑。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_confidence = EXCLUDED.start_confidence, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_confidence = EXCLUDED.end_confidence, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 
 -- reigns

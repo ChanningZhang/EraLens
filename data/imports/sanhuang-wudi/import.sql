@@ -33,10 +33,10 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_na
 
 -- dynasties
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, start_day, start_confidence, end_year, end_month, end_day, end_confidence, start_abs, end_abs, color_token, parent_id, group_id, note)
-VALUES ('san-huang', '三皇', ARRAY['伏羲氏','女娲氏','神农氏'], 'cn', 'east_asia', -2804, 1, NULL, 'year', -2465, 12, NULL, 'month', -33636, -29557, 'ochre', NULL, NULL, '司马贞《三皇本纪》：伏羲、女娲、神农。在位年取《帝王世纪》伏羲一百十年、神农一百二十年；女娲无年，与伏羲同长。')
+VALUES ('san-huang', '三皇', ARRAY[]::text[], 'cn', 'east_asia', -2804, 1, NULL, 'year', -2465, 12, NULL, 'month', -33636, -29557, 'ochre', NULL, NULL, '司马贞《三皇本纪》：伏羲、女娲、神农。在位年取《帝王世纪》伏羲一百十年、神农一百二十年；女娲无年，与伏羲同长。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_confidence = EXCLUDED.start_confidence, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_confidence = EXCLUDED.end_confidence, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, start_day, start_confidence, end_year, end_month, end_day, end_confidence, start_abs, end_abs, color_token, parent_id, group_id, note)
-VALUES ('wu-di', '五帝', ARRAY['黄帝','颛顼','帝喾','尧','舜'], 'cn', 'east_asia', -2464, 1, NULL, 'year', -2071, 12, NULL, 'month', -29556, -24829, 'ochre', NULL, NULL, '《史记·五帝本纪》世系，含帝挚过渡。相对在位年下锚夏始前2071，绝对年代为传说推算。')
+VALUES ('wu-di', '五帝', ARRAY[]::text[], 'cn', 'east_asia', -2464, 1, NULL, 'year', -2071, 12, NULL, 'month', -29556, -24829, 'ochre', NULL, NULL, '《史记·五帝本纪》世系，含帝挚过渡。相对在位年下锚夏始前2071，绝对年代为传说推算。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_confidence = EXCLUDED.start_confidence, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_confidence = EXCLUDED.end_confidence, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 
 -- reigns

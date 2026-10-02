@@ -242,7 +242,7 @@ describe("reignFateRelations", () => {
       id: "reign-wang-mang",
       dynastyId: "xin",
       personId: "wang-mang",
-      title: "新莽皇帝",
+      title: "",
       eraNames: [],
       start: { year: 9, month: 1 },
       end: { year: 23, month: 10 },

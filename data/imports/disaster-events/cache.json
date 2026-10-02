@@ -33,35 +33,6 @@
     },
     {
       "kind": "disaster",
-      "timeMode": "span",
-      "dynastyIds": [
-        "xin",
-        "han-east"
-      ],
-      "participantIds": [],
-      "id": "xin-wei-commandery-yellow-river-breach",
-      "name": "新莽魏郡黄河决口与长期河患",
-      "start": {
-        "year": 11,
-        "month": 1,
-        "abs": 132,
-        "confidence": "approximate_year"
-      },
-      "end": {
-        "year": 69,
-        "month": 12,
-        "abs": 839,
-        "confidence": "approximate_year"
-      },
-      "summary": "始建国三年（11），黄河在魏郡决口，泛滥至清河以东数郡，河水长期扰动下游水系并影响汴渠。东汉明帝永平十二年（69）朝廷命王景、王吴修渠筑堤，治理黄河与汴渠。此区间表示决口后长期河患至系统治理启动的概略时段，不表示每年均发生同等规模洪水。",
-      "dateNote": "《汉书·王莽传》载始建国三年河决魏郡；《后汉书·王景传》载永平十二年（69）修渠筑堤。河患具体逐年起讫不详，故用概略区间，不延伸为精确至70年的连续灾害。；原不确定范围：11年1月至69年12月；按既有事件说明转为持续区间。",
-      "startAbs": 132,
-      "endAbs": 839,
-      "startConfidence": "approximate_year",
-      "endConfidence": "approximate_year"
-    },
-    {
-      "kind": "disaster",
       "timeMode": "point",
       "dynastyIds": [
         "ming"

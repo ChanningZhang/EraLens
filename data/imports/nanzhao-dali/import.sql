@@ -117,7 +117,7 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_na
 
 -- dynasties
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, start_day, start_confidence, end_year, end_month, end_day, end_confidence, start_abs, end_abs, color_token, parent_id, group_id, note)
-VALUES ('nanzhao', '南诏', ARRAY['蒙舍诏','大礼','大封民'], 'cn', 'east_asia', 649, 1, NULL, 'year', 902, 12, NULL, 'month', 7788, 10835, 'ochre', NULL, NULL, '蒙舍诏细奴逻起于649年；738年皮逻阁统一六诏后南诏国号始显；902年亡于郑买嗣。')
+VALUES ('nanzhao', '南诏', ARRAY['大蒙','蒙舍诏','大礼','大封民'], 'cn', 'east_asia', 649, 1, NULL, 'year', 902, 12, NULL, 'month', 7788, 10835, 'ochre', NULL, NULL, '蒙舍诏细奴逻起于649年；738年皮逻阁统一六诏后南诏国号始显；902年亡于郑买嗣。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_confidence = EXCLUDED.start_confidence, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_confidence = EXCLUDED.end_confidence, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;
 INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, start_day, start_confidence, end_year, end_month, end_day, end_confidence, start_abs, end_abs, color_token, parent_id, group_id, note)
 VALUES ('dali', '大理', ARRAY['大理国','后大理'], 'cn', 'east_asia', 937, 1, NULL, 'year', 1253, 12, NULL, 'month', 11244, 15047, 'ochre', NULL, NULL, '937年段思平联合滇东三十七部推翻大义宁，建立大理国，以羊苴咩城为都，政治中心在洱海地区。大理承接南诏的地域与部分制度，同时发展出自身的政区和官僚体系；段氏世袭为主，高氏相国长期辅政。1094年高升泰改国号大中，1096年段氏复位。大理与宋保持朝贡、使节及马匹等贸易往来，佛教深刻影响王室与地方社会。1253年蒙古军攻取大理，段氏归降，此后仍以地方总管身份延续治理。')
