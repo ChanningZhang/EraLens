@@ -338,14 +338,15 @@
       "start": {
         "year": 982,
         "month": 1,
-        "abs": 11784
+        "abs": 11784,
+        "confidence": "year"
       },
       "end": {
         "year": 1227,
         "month": 1,
-        "abs": 14724
+        "abs": 14724,
+        "confidence": "year"
       },
-      "precision": "year",
       "note": "党项李氏原据夏州一带，李继迁时期逐步摆脱宋朝控制并扩展至河西；1038年李元昊称帝，国号大夏，定都兴庆府，宋人因其地在西而称西夏。西夏在党项旧制基础上设置官僚机构，创制并推行西夏文字，翻译佛经、发展佛教文化。其政权与北宋、辽长期并立，先后交战、议和并开展贸易；金灭辽后，又处于宋金之间。蒙古自13世纪初持续进攻，1227年西夏为蒙古所灭。"
     }
   ],
@@ -360,16 +361,17 @@
       "start": {
         "year": 982,
         "month": 1,
-        "abs": 11784
+        "abs": 11784,
+        "confidence": "year"
       },
       "end": {
         "year": 1004,
         "month": 12,
-        "abs": 12059
+        "abs": 12059,
+        "confidence": "year"
       },
       "startAbs": 11784,
       "endAbs": 12059,
-      "precision": "year",
       "isMain": false
     },
     {
@@ -381,16 +383,17 @@
       "start": {
         "year": 1004,
         "month": 1,
-        "abs": 12048
+        "abs": 12048,
+        "confidence": "year"
       },
       "end": {
         "year": 1031,
         "month": 12,
-        "abs": 12383
+        "abs": 12383,
+        "confidence": "year"
       },
       "startAbs": 12048,
       "endAbs": 12383,
-      "precision": "year",
       "isMain": false
     },
     {
@@ -409,17 +412,18 @@
         "year": 1031,
         "month": 10,
         "abs": 12381,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "end": {
         "year": 1048,
         "month": 1,
         "abs": 12576,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "startAbs": 12381,
       "endAbs": 12576,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -432,17 +436,18 @@
         "year": 1048,
         "month": 1,
         "abs": 12576,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "end": {
         "year": 1067,
         "month": 9,
         "abs": 12812,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "startAbs": 12576,
       "endAbs": 12812,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -455,17 +460,18 @@
         "year": 1067,
         "month": 9,
         "abs": 12812,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "end": {
         "year": 1086,
         "month": 8,
         "abs": 13039,
-        "day": 21
+        "day": 21,
+        "confidence": "day"
       },
       "startAbs": 12812,
       "endAbs": 13039,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -481,17 +487,18 @@
         "year": 1086,
         "month": 8,
         "abs": 13039,
-        "day": 21
+        "day": 21,
+        "confidence": "day"
       },
       "end": {
         "year": 1139,
         "month": 7,
         "abs": 13674,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "startAbs": 13039,
       "endAbs": 13674,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -506,17 +513,18 @@
         "year": 1139,
         "month": 7,
         "abs": 13674,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "end": {
         "year": 1193,
         "month": 10,
         "abs": 14325,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "startAbs": 13674,
       "endAbs": 14325,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -529,17 +537,18 @@
         "year": 1193,
         "month": 10,
         "abs": 14325,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "end": {
         "year": 1206,
         "month": 2,
         "abs": 14473,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "startAbs": 14325,
       "endAbs": 14473,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -552,17 +561,18 @@
         "year": 1206,
         "month": 2,
         "abs": 14473,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "end": {
         "year": 1211,
         "month": 9,
         "abs": 14540,
-        "day": 13
+        "day": 13,
+        "confidence": "day"
       },
       "startAbs": 14473,
       "endAbs": 14540,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -575,17 +585,18 @@
         "year": 1211,
         "month": 9,
         "abs": 14540,
-        "day": 13
+        "day": 13,
+        "confidence": "day"
       },
       "end": {
         "year": 1223,
         "month": 12,
         "abs": 14687,
-        "day": 17
+        "day": 17,
+        "confidence": "day"
       },
       "startAbs": 14540,
       "endAbs": 14687,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -598,17 +609,18 @@
         "year": 1223,
         "month": 12,
         "abs": 14687,
-        "day": 17
+        "day": 17,
+        "confidence": "day"
       },
       "end": {
         "year": 1226,
         "month": 9,
         "abs": 14720,
-        "day": 17
+        "day": 17,
+        "confidence": "day"
       },
       "startAbs": 14687,
       "endAbs": 14720,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -621,17 +633,18 @@
         "year": 1226,
         "month": 9,
         "abs": 14720,
-        "day": 17
+        "day": 17,
+        "confidence": "day"
       },
       "end": {
         "year": 1227,
         "month": 7,
         "abs": 14730,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "startAbs": 14720,
       "endAbs": 14730,
-      "precision": "day",
       "isMain": false
     }
   ],
@@ -639,7 +652,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "xixia",
         "song-north"
@@ -653,7 +665,8 @@
       "at": {
         "year": 1041,
         "month": 12,
-        "abs": 12503
+        "abs": 12503,
+        "confidence": "year"
       },
       "summary": "李元昊设伏于好水川，大败宋军，宋名将任福等阵亡。",
       "atAbs": 12503
@@ -661,7 +674,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "xixia",
         "song-north"
@@ -674,7 +686,8 @@
       "at": {
         "year": 1044,
         "month": 12,
-        "abs": 12539
+        "abs": 12539,
+        "confidence": "year"
       },
       "summary": "宋夏议和，宋承认西夏帝号，岁赐银绢，双方罢兵。",
       "atAbs": 12539
@@ -838,7 +851,7 @@
     "notes": [
       "覆盖西夏李氏十二世君主（982–1227）；1038年称帝后与宋辽鼎立，1115年金朝建立后改与宋金并立。",
       "王朝始年取李继迁叛宋自立（982），1038年李元昊称帝国号大夏。",
-      "在位年取维基百科君主列表常见年表，precision=year。",
+      "在位年取维基百科君主列表常见年表，confidence=year。",
       "《射雕英雄传》西夏公主等为小说虚构人物，未收录。",
       "本次补充人物概述：以正史本纪、专题史料及君主年表交叉核对身份、世系、在位时期与重要转折；大理早期君主的记载不足处明确保留不详。",
       "2026-09：按用户请求扩充西夏王朝概述，依据《宋史·夏国传》《辽史·西夏外记》及本包事件记录，概述李氏崛起、1038年称帝、文字与佛教文化、宋辽金关系及蒙古灭夏；未据此调整在位日期。",

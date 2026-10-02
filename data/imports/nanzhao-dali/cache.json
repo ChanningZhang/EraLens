@@ -695,7 +695,10 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": ["段正严","段政严"],
+      "altNames": [
+        "段正严",
+        "段政严"
+      ],
       "posthumousNames": [
         "宣仁皇帝"
       ],
@@ -854,14 +857,15 @@
       "start": {
         "year": 649,
         "month": 1,
-        "abs": 7788
+        "abs": 7788,
+        "confidence": "year"
       },
       "end": {
         "year": 902,
         "month": 12,
-        "abs": 10835
+        "abs": 10835,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "蒙舍诏细奴逻起于649年；738年皮逻阁统一六诏后南诏国号始显；902年亡于郑买嗣。"
     },
     {
@@ -876,14 +880,15 @@
       "start": {
         "year": 937,
         "month": 1,
-        "abs": 11244
+        "abs": 11244,
+        "confidence": "year"
       },
       "end": {
         "year": 1253,
         "month": 12,
-        "abs": 15047
+        "abs": 15047,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "937年段思平联合滇东三十七部推翻大义宁，建立大理国，以羊苴咩城为都，政治中心在洱海地区。大理承接南诏的地域与部分制度，同时发展出自身的政区和官僚体系；段氏世袭为主，高氏相国长期辅政。1094年高升泰改国号大中，1096年段氏复位。大理与宋保持朝贡、使节及马匹等贸易往来，佛教深刻影响王室与地方社会。1253年蒙古军攻取大理，段氏归降，此后仍以地方总管身份延续治理。"
     }
   ],
@@ -898,18 +903,17 @@
       "start": {
         "year": 649,
         "month": 1,
-        "abs": 7788
+        "abs": 7788,
+        "confidence": "year"
       },
       "end": {
         "year": 674,
         "month": 12,
-        "abs": 8099
+        "abs": 8099,
+        "confidence": "year"
       },
       "startAbs": 7788,
       "endAbs": 8099,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -924,18 +928,17 @@
       "start": {
         "year": 674,
         "month": 1,
-        "abs": 8088
+        "abs": 8088,
+        "confidence": "year"
       },
       "end": {
         "year": 712,
         "month": 12,
-        "abs": 8555
+        "abs": 8555,
+        "confidence": "year"
       },
       "startAbs": 8088,
       "endAbs": 8555,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -950,18 +953,17 @@
       "start": {
         "year": 712,
         "month": 1,
-        "abs": 8544
+        "abs": 8544,
+        "confidence": "year"
       },
       "end": {
         "year": 728,
         "month": 12,
-        "abs": 8747
+        "abs": 8747,
+        "confidence": "year"
       },
       "startAbs": 8544,
       "endAbs": 8747,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -976,18 +978,17 @@
       "start": {
         "year": 728,
         "month": 1,
-        "abs": 8736
+        "abs": 8736,
+        "confidence": "year"
       },
       "end": {
         "year": 748,
         "month": 12,
-        "abs": 8987
+        "abs": 8987,
+        "confidence": "year"
       },
       "startAbs": 8736,
       "endAbs": 8987,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1002,18 +1003,17 @@
       "start": {
         "year": 748,
         "month": 1,
-        "abs": 8976
+        "abs": 8976,
+        "confidence": "year"
       },
       "end": {
         "year": 779,
         "month": 12,
-        "abs": 9359
+        "abs": 9359,
+        "confidence": "year"
       },
       "startAbs": 8976,
       "endAbs": 9359,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1028,18 +1028,17 @@
       "start": {
         "year": 779,
         "month": 1,
-        "abs": 9348
+        "abs": 9348,
+        "confidence": "year"
       },
       "end": {
         "year": 808,
         "month": 12,
-        "abs": 9707
+        "abs": 9707,
+        "confidence": "year"
       },
       "startAbs": 9348,
       "endAbs": 9707,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1054,18 +1053,17 @@
       "start": {
         "year": 808,
         "month": 1,
-        "abs": 9696
+        "abs": 9696,
+        "confidence": "year"
       },
       "end": {
         "year": 809,
         "month": 12,
-        "abs": 9719
+        "abs": 9719,
+        "confidence": "year"
       },
       "startAbs": 9696,
       "endAbs": 9719,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1080,18 +1078,17 @@
       "start": {
         "year": 809,
         "month": 1,
-        "abs": 9708
+        "abs": 9708,
+        "confidence": "year"
       },
       "end": {
         "year": 816,
         "month": 12,
-        "abs": 9803
+        "abs": 9803,
+        "confidence": "year"
       },
       "startAbs": 9708,
       "endAbs": 9803,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1106,18 +1103,17 @@
       "start": {
         "year": 816,
         "month": 1,
-        "abs": 9792
+        "abs": 9792,
+        "confidence": "year"
       },
       "end": {
         "year": 823,
         "month": 12,
-        "abs": 9887
+        "abs": 9887,
+        "confidence": "year"
       },
       "startAbs": 9792,
       "endAbs": 9887,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1132,18 +1128,17 @@
       "start": {
         "year": 823,
         "month": 1,
-        "abs": 9876
+        "abs": 9876,
+        "confidence": "year"
       },
       "end": {
         "year": 859,
         "month": 12,
-        "abs": 10319
+        "abs": 10319,
+        "confidence": "year"
       },
       "startAbs": 9876,
       "endAbs": 10319,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1158,18 +1153,17 @@
       "start": {
         "year": 859,
         "month": 1,
-        "abs": 10308
+        "abs": 10308,
+        "confidence": "year"
       },
       "end": {
         "year": 877,
         "month": 12,
-        "abs": 10535
+        "abs": 10535,
+        "confidence": "year"
       },
       "startAbs": 10308,
       "endAbs": 10535,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1184,18 +1178,17 @@
       "start": {
         "year": 877,
         "month": 1,
-        "abs": 10524
+        "abs": 10524,
+        "confidence": "year"
       },
       "end": {
         "year": 897,
         "month": 12,
-        "abs": 10775
+        "abs": 10775,
+        "confidence": "year"
       },
       "startAbs": 10524,
       "endAbs": 10775,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1210,18 +1203,17 @@
       "start": {
         "year": 897,
         "month": 1,
-        "abs": 10764
+        "abs": 10764,
+        "confidence": "year"
       },
       "end": {
         "year": 902,
         "month": 12,
-        "abs": 10835
+        "abs": 10835,
+        "confidence": "year"
       },
       "startAbs": 10764,
       "endAbs": 10835,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1238,18 +1230,17 @@
       "start": {
         "year": 937,
         "month": 1,
-        "abs": 11244
+        "abs": 11244,
+        "confidence": "year"
       },
       "end": {
         "year": 944,
         "month": 12,
-        "abs": 11339
+        "abs": 11339,
+        "confidence": "year"
       },
       "startAbs": 11244,
       "endAbs": 11339,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1264,18 +1255,17 @@
       "start": {
         "year": 944,
         "month": 1,
-        "abs": 11328
+        "abs": 11328,
+        "confidence": "year"
       },
       "end": {
         "year": 945,
         "month": 12,
-        "abs": 11351
+        "abs": 11351,
+        "confidence": "year"
       },
       "startAbs": 11328,
       "endAbs": 11351,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1290,18 +1280,17 @@
       "start": {
         "year": 945,
         "month": 1,
-        "abs": 11340
+        "abs": 11340,
+        "confidence": "year"
       },
       "end": {
         "year": 952,
         "month": 12,
-        "abs": 11435
+        "abs": 11435,
+        "confidence": "year"
       },
       "startAbs": 11340,
       "endAbs": 11435,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1316,18 +1305,17 @@
       "start": {
         "year": 952,
         "month": 1,
-        "abs": 11424
+        "abs": 11424,
+        "confidence": "year"
       },
       "end": {
         "year": 968,
         "month": 12,
-        "abs": 11627
+        "abs": 11627,
+        "confidence": "year"
       },
       "startAbs": 11424,
       "endAbs": 11627,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1342,18 +1330,17 @@
       "start": {
         "year": 968,
         "month": 1,
-        "abs": 11616
+        "abs": 11616,
+        "confidence": "year"
       },
       "end": {
         "year": 985,
         "month": 12,
-        "abs": 11831
+        "abs": 11831,
+        "confidence": "year"
       },
       "startAbs": 11616,
       "endAbs": 11831,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1368,18 +1355,17 @@
       "start": {
         "year": 985,
         "month": 1,
-        "abs": 11820
+        "abs": 11820,
+        "confidence": "year"
       },
       "end": {
         "year": 1009,
         "month": 12,
-        "abs": 12119
+        "abs": 12119,
+        "confidence": "year"
       },
       "startAbs": 11820,
       "endAbs": 12119,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1394,18 +1380,17 @@
       "start": {
         "year": 1009,
         "month": 1,
-        "abs": 12108
+        "abs": 12108,
+        "confidence": "year"
       },
       "end": {
         "year": 1022,
         "month": 12,
-        "abs": 12275
+        "abs": 12275,
+        "confidence": "year"
       },
       "startAbs": 12108,
       "endAbs": 12275,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1420,18 +1405,17 @@
       "start": {
         "year": 1022,
         "month": 1,
-        "abs": 12264
+        "abs": 12264,
+        "confidence": "year"
       },
       "end": {
         "year": 1026,
         "month": 12,
-        "abs": 12323
+        "abs": 12323,
+        "confidence": "year"
       },
       "startAbs": 12264,
       "endAbs": 12323,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1446,18 +1430,17 @@
       "start": {
         "year": 1026,
         "month": 1,
-        "abs": 12312
+        "abs": 12312,
+        "confidence": "year"
       },
       "end": {
         "year": 1041,
         "month": 12,
-        "abs": 12503
+        "abs": 12503,
+        "confidence": "year"
       },
       "startAbs": 12312,
       "endAbs": 12503,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1472,18 +1455,17 @@
       "start": {
         "year": 1041,
         "month": 1,
-        "abs": 12492
+        "abs": 12492,
+        "confidence": "year"
       },
       "end": {
         "year": 1044,
         "month": 12,
-        "abs": 12539
+        "abs": 12539,
+        "confidence": "year"
       },
       "startAbs": 12492,
       "endAbs": 12539,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1498,18 +1480,17 @@
       "start": {
         "year": 1044,
         "month": 1,
-        "abs": 12528
+        "abs": 12528,
+        "confidence": "year"
       },
       "end": {
         "year": 1075,
         "month": 12,
-        "abs": 12911
+        "abs": 12911,
+        "confidence": "year"
       },
       "startAbs": 12528,
       "endAbs": 12911,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1524,18 +1505,17 @@
       "start": {
         "year": 1075,
         "month": 1,
-        "abs": 12900
+        "abs": 12900,
+        "confidence": "year"
       },
       "end": {
         "year": 1080,
         "month": 12,
-        "abs": 12971
+        "abs": 12971,
+        "confidence": "year"
       },
       "startAbs": 12900,
       "endAbs": 12971,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1550,18 +1530,17 @@
       "start": {
         "year": 1080,
         "month": 1,
-        "abs": 12960
+        "abs": 12960,
+        "confidence": "year"
       },
       "end": {
         "year": 1080,
         "month": 12,
-        "abs": 12971
+        "abs": 12971,
+        "confidence": "year"
       },
       "startAbs": 12960,
       "endAbs": 12971,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1576,18 +1555,17 @@
       "start": {
         "year": 1080,
         "month": 1,
-        "abs": 12960
+        "abs": 12960,
+        "confidence": "year"
       },
       "end": {
         "year": 1081,
         "month": 12,
-        "abs": 12983
+        "abs": 12983,
+        "confidence": "year"
       },
       "startAbs": 12960,
       "endAbs": 12983,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1602,18 +1580,17 @@
       "start": {
         "year": 1081,
         "month": 1,
-        "abs": 12972
+        "abs": 12972,
+        "confidence": "year"
       },
       "end": {
         "year": 1094,
         "month": 12,
-        "abs": 13139
+        "abs": 13139,
+        "confidence": "year"
       },
       "startAbs": 12972,
       "endAbs": 13139,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1630,18 +1607,17 @@
       "start": {
         "year": 1094,
         "month": 1,
-        "abs": 13128
+        "abs": 13128,
+        "confidence": "year"
       },
       "end": {
         "year": 1096,
         "month": 12,
-        "abs": 13163
+        "abs": 13163,
+        "confidence": "year"
       },
       "startAbs": 13128,
       "endAbs": 13163,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1656,18 +1632,17 @@
       "start": {
         "year": 1096,
         "month": 1,
-        "abs": 13152
+        "abs": 13152,
+        "confidence": "year"
       },
       "end": {
         "year": 1108,
         "month": 12,
-        "abs": 13307
+        "abs": 13307,
+        "confidence": "year"
       },
       "startAbs": 13152,
       "endAbs": 13307,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1682,18 +1657,17 @@
       "start": {
         "year": 1108,
         "month": 1,
-        "abs": 13296
+        "abs": 13296,
+        "confidence": "year"
       },
       "end": {
         "year": 1147,
         "month": 12,
-        "abs": 13775
+        "abs": 13775,
+        "confidence": "year"
       },
       "startAbs": 13296,
       "endAbs": 13775,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1708,18 +1682,17 @@
       "start": {
         "year": 1147,
         "month": 1,
-        "abs": 13764
+        "abs": 13764,
+        "confidence": "year"
       },
       "end": {
         "year": 1171,
         "month": 12,
-        "abs": 14063
+        "abs": 14063,
+        "confidence": "year"
       },
       "startAbs": 13764,
       "endAbs": 14063,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1734,18 +1707,17 @@
       "start": {
         "year": 1171,
         "month": 1,
-        "abs": 14052
+        "abs": 14052,
+        "confidence": "year"
       },
       "end": {
         "year": 1200,
         "month": 12,
-        "abs": 14411
+        "abs": 14411,
+        "confidence": "year"
       },
       "startAbs": 14052,
       "endAbs": 14411,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1760,18 +1732,17 @@
       "start": {
         "year": 1200,
         "month": 1,
-        "abs": 14400
+        "abs": 14400,
+        "confidence": "year"
       },
       "end": {
         "year": 1204,
         "month": 12,
-        "abs": 14459
+        "abs": 14459,
+        "confidence": "year"
       },
       "startAbs": 14400,
       "endAbs": 14459,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1786,18 +1757,17 @@
       "start": {
         "year": 1204,
         "month": 1,
-        "abs": 14448
+        "abs": 14448,
+        "confidence": "year"
       },
       "end": {
         "year": 1238,
         "month": 12,
-        "abs": 14867
+        "abs": 14867,
+        "confidence": "year"
       },
       "startAbs": 14448,
       "endAbs": 14867,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1812,18 +1782,17 @@
       "start": {
         "year": 1238,
         "month": 1,
-        "abs": 14856
+        "abs": 14856,
+        "confidence": "year"
       },
       "end": {
         "year": 1251,
         "month": 12,
-        "abs": 15023
+        "abs": 15023,
+        "confidence": "year"
       },
       "startAbs": 14856,
       "endAbs": 15023,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1838,18 +1807,17 @@
       "start": {
         "year": 1251,
         "month": 1,
-        "abs": 15012
+        "abs": 15012,
+        "confidence": "year"
       },
       "end": {
         "year": 1254,
         "month": 12,
-        "abs": 15059
+        "abs": 15059,
+        "confidence": "year"
       },
       "startAbs": 15012,
       "endAbs": 15059,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1860,7 +1828,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "dali",
         "mongol-empire"
@@ -1874,7 +1841,8 @@
       "at": {
         "year": 1254,
         "month": 12,
-        "abs": 15059
+        "abs": 15059,
+        "confidence": "year"
       },
       "summary": "蒙哥汗命忽必烈南征，1253年攻破大理，段兴智出降，大理国亡。",
       "atAbs": 15059
@@ -2177,7 +2145,7 @@
       "南诏王朝始年取细奴逻即位（649），立国事件取738年皮逻阁统一六诏。",
       "杨义贞（1080）与高升泰（1094–1096）按维基君主列表收录。",
       "蒙古灭大理事件补充关联 mongol-empire 王朝与 hu-bilie（忽必烈，见 mongol-pre-yuan）。",
-      "在位年取维基百科君主列表常见年表，precision=year。",
+      "在位年取维基百科君主列表常见年表，confidence=year。",
       "本次补充人物概述：以正史本纪、专题史料及君主年表交叉核对身份、世系、在位时期与重要转折；大理早期君主的记载不足处明确保留不详。",
       "2026-09：按用户请求扩充大理王朝概述；关于段氏王统、高氏辅政及与蒙元关系，结合《宋史》相关记载、段氏世次研究及本包已有君主与事件记录整理。对早期政务细节不作无据补写。",
       "2026-09：按用户请求进一步丰富大理王朝概述，补充建国与都城、承袭南诏而又有制度演变、段高政治格局、宋丽往来、佛教影响及蒙古征服后的段氏延续；依据大理州政府资料、全国哲学社会科学工作办公室所载大理国史研究及云南省民委资料。"

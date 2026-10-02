@@ -3,7 +3,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const REIGN_ROW_RE =
-  /VALUES\s*\(\s*'(reign-[^']+)',\s*'([^']+)',\s*'([^']+)'[\s\S]*?,\s*(-?\d+),\s*(-?\d+),\s*(NULL|-?\d+),\s*(-?\d+),\s*(-?\d+),\s*(NULL|-?\d+),\s*(-?\d+),\s*(-?\d+),\s*'([^']+)'/g;
+  /VALUES\s*\(\s*'(reign-[^']+)',\s*'([^']+)',\s*'([^']+)'[\s\S]*?,\s*(-?\d+),\s*(-?\d+),\s*(NULL|-?\d+),\s*(-?\d+),\s*(-?\d+),\s*(NULL|-?\d+),\s*(-?\d+),\s*(-?\d+),\s*'([^']+)',\s*'([^']+)'/g;
 const EVENT_INSERT_RE = /INSERT INTO events \(([^)]*)\) VALUES \(/g;
 
 function parseSqlTuple(sql, openParen) {
@@ -67,7 +67,8 @@ export function loadReignsFromImports(importsRoot = path.join(path.dirname(fileU
           endDayRaw,
           startAbs,
           endAbs,
-          precision,
+          startConfidence,
+          endConfidence,
         ] = match;
         const startDay = startDayRaw === "NULL" ? null : Number(startDayRaw);
         const endDay = endDayRaw === "NULL" ? null : Number(endDayRaw);
@@ -81,15 +82,16 @@ export function loadReignsFromImports(importsRoot = path.join(path.dirname(fileU
             year: Number(startYear),
             month: Number(startMonth),
             ...(startDay != null ? { day: startDay } : {}),
+            confidence: startConfidence,
           },
           end: {
             year: Number(endYear),
             month: Number(endMonth),
             ...(endDay != null ? { day: endDay } : {}),
+            confidence: endConfidence,
           },
           startAbs: Number(startAbs),
           endAbs: Number(endAbs),
-          precision,
         });
       }
     } catch {
@@ -101,7 +103,7 @@ export function loadReignsFromImports(importsRoot = path.join(path.dirname(fileU
 
 /** Load event rows from all period import.sql files (for event↔fate alignment). */
 export function loadEventsFromImports(importsRoot = path.join(path.dirname(fileURLToPath(import.meta.url)), "..")) {
-  /** @type {Map<string, {id:string,precision:string,atAbs:number,atYear:number,atMonth:number,atDay:number|null}>} */
+  /** @type {Map<string, {id:string,confidence:string,atAbs:number,atYear:number,atMonth:number,atDay:number|null}>} */
   const events = new Map();
   for (const slug of readdirSync(importsRoot)) {
     const sqlPath = path.join(importsRoot, slug, "import.sql");
@@ -116,7 +118,7 @@ export function loadEventsFromImports(importsRoot = path.join(path.dirname(fileU
         if (row.id == null || row.at_abs == null || row.at_year == null || row.at_month == null) continue;
         events.set(row.id, {
           id: row.id,
-          precision: row.precision,
+          confidence: row.at_confidence ?? "year",
           atYear: row.at_year,
           atMonth: row.at_month,
           atDay: row.at_day ?? null,
@@ -138,9 +140,10 @@ export function validateEventFateAlignment(catalog, events) {
     const event = events.get(entry.eventId);
     if (!event) continue;
     const at = entry.at;
-    const aligned = event.precision === "day"
+    const level = event.confidence.endsWith("_day") || event.confidence === "day" ? "day" : event.confidence.endsWith("_month") || event.confidence === "month" ? "month" : "year";
+    const aligned = level === "day"
       ? at.year === event.atYear && at.month === event.atMonth && at.day === event.atDay
-      : event.precision === "month"
+      : level === "month"
         ? at.year === event.atYear && at.month === event.atMonth
         : at.year === event.atYear;
     if (!aligned) {

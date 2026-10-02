@@ -2,7 +2,7 @@
 
 ## 当前数据源与文件格式
 
-真实数据只编辑 `data/imports/{slug}/cache.json`。缓存顶层使用 camelCase，日期是 `{ year, month, abs }`；数组包括 `persons`、`dynastyGroups`、`dynastyLaneGroups`、`dynasties`、`capitals`、`reigns`、`reignCapitals`、`events`、`eventLocations`、`relations` 及 supplemental link 集合。来源和取舍写入同一缓存中的 `manifest.sources` / `manifest.notes`。`manifest.json`、`import.sql` 是统一生成器输出，禁止手工修改；不要新建包级 Wiki 转换或数据生成脚本。
+日期统一遵循 [eralens-date-handling](../eralens-date-handling/SKILL.md)。缓存中的日期为 `{ year, month, day?, abs, confidence }`；每个端点分别记录八类 confidence 之一。其余缓存结构和来源维护方法见下方；日期规则不在本参考重复定义。
 
 缓存示意（省略非必要字段）：
 
@@ -13,11 +13,11 @@
   "persons": [{ "id": "li-shimin", "name": "李世民", "title": "唐太宗", "posthumousNames": ["文武皇帝"], "templeNames": ["太宗"] }],
   "dynastyGroups": [],
   "dynastyLaneGroups": [],
-  "dynasties": [{ "id": "tang", "name": "唐", "start": { "year": 618, "month": 6, "abs": 7421 }, "end": { "year": 907, "month": 5, "abs": 10888 } }],
+  "dynasties": [{ "id": "tang", "name": "唐", "start": { "year": 618, "month": 6, "abs": 7421, "confidence": "month" }, "end": { "year": 907, "month": 5, "abs": 10888, "confidence": "month" } }],
   "capitals": [],
-  "reigns": [{ "id": "reign-li-shimin", "dynastyId": "tang", "personId": "li-shimin", "title": "唐太宗", "start": { "year": 626, "month": 9, "abs": 7520 }, "end": { "year": 649, "month": 7, "abs": 7794 }, "startAbs": 7520, "endAbs": 7794, "eraNames": ["贞观"], "isMain": true }],
+  "reigns": [{ "id": "reign-li-shimin", "dynastyId": "tang", "personId": "li-shimin", "title": "唐太宗", "start": { "year": 626, "month": 9, "abs": 7520, "confidence": "month" }, "end": { "year": 649, "month": 7, "abs": 7794, "confidence": "month" }, "startAbs": 7520, "endAbs": 7794, "eraNames": ["贞观"], "isMain": true }],
   "reignCapitals": [],
-  "events": [{ "id": "example-event", "name": "示例事件", "kind": "politics", "timeMode": "point", "precision": "year", "at": { "year": 627, "month": 12, "abs": 7535 }, "dynastyIds": ["tang"], "participantIds": ["li-shimin"] }],
+  "events": [{ "id": "example-event", "name": "示例事件", "kind": "politics", "timeMode": "point", "at": { "year": 627, "month": 12, "abs": 7535, "confidence": "year" }, "dynastyIds": ["tang"], "participantIds": ["li-shimin"] }],
   "eventLocations": [],
   "relations": [],
   "supplementalEventDynasties": [],
@@ -65,13 +65,27 @@
 | event_participants | (event_id, person_id) |
 | relations | id |
 
-事件时间列：`time_mode`（point/span/circa）、`precision`（day/month/year/decade/century）、`date_note`（可选）。
+事件日期列：`time_mode`（point/span）、`at_confidence` / `start_confidence` / `end_confidence`、`date_note`（可选）。日期精度只由每个端点的 confidence 表达；空间定位的 `event_locations.precision` 单独保留。
 
 `events.kind` 支持 `battle`、`politics`、`culture`、`disaster`、`commerce`、`agriculture`、`finance`、`idiom`、`poetry`、`other`。`commerce` 表示贸易制度、通商格局与重要商品传播事件，界面标签为「商业」；`finance` 表示货币、银行与财政制度转折，界面标签为「金融」。新增 kind 时同步更新 `packages/shared/src/schema.ts`、共享标签函数、界面样式与本节枚举。
 
-- `point`：`at_year` / `at_month` / `at_abs`
-- `span`：`start_*` + `end_*`（真实持续）
-- `circa`：`start_*` + `end_*` 为可能窗口，可选 `at_*` 为最佳估计
+- `point`：`at_*` 及单独的 `at_confidence`
+- `span`：`start_*` + `end_*` 及独立端点 confidence，仅用于真实持续过程
+
+### 日期相关 SQL 列模板
+
+统一生成器按端点输出这些日期列；未出现的年月日仍为 `NULL`。数据库已删除旧日期精度列；新数据不得再写入这些字段。
+
+| 实体 | 新日期列 |
+|---|---|
+| `persons` | `birth_year/month/day`, `birth_confidence`, `death_year/month/day`, `death_confidence` |
+| `dynasties`, `dynasty_groups` | `start_year/month/day`, `start_confidence`, `end_year/month/day`, `end_confidence` |
+| `reigns` | `start_year/month/day`, `start_confidence`, `end_year/month/day`, `end_confidence` |
+| `dynasty_capitals` | `start_year/month/day`, `start_confidence`, `end_year/month/day`, `end_confidence` |
+| `events` | point 用 `at_year/month/day`, `at_confidence`；span 用独立 `start_*` / `end_*` 与对应 confidence |
+| `relations` | `at_year/month/day`, `at_confidence` |
+
+SQL 模板不得使用已删除的日期精度列。以下 SQL 片段只示意其他列的映射，不能据其省略的新日期字段手写真实导入 SQL。
 
 ## 生成 SQL 的列映射示例（不是数据录入格式）
 
@@ -165,345 +179,73 @@ ON CONFLICT (id) DO UPDATE SET
 
 新人物同样写入缓存中的 `persons` 数组，再由统一生成器写出完整字段。
 
-### dynasty_groups
+### dynasty_groups 与 dynasties
 
-并存时期分组（三国、五胡十六国、南朝/北朝、五代/十国等）。起止为组的外框与排序锚点，不用成员 min/max。
-
-```sql
-INSERT INTO dynasty_groups (
-  id, name, alt_names, scope,
-  start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, note
-) VALUES (
-  'wudai',
-  '五代',
-  ARRAY[]::text[],
-  'cn',
-  907, 1, 960, 12,
-  10885, 11520,
-  'year',
-  '907–960年北方五代更迭'
-)
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  alt_names = EXCLUDED.alt_names,
-  scope = EXCLUDED.scope,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  note = EXCLUDED.note;
-```
-
-### dynasties
+分组和王朝边界分别写入 `dynasty_groups` 与 `dynasties`。两端日期使用独立的年月日和 confidence；`start_abs` / `end_abs` 继续按 AbsMonth 计算。SQL 由统一生成器从 cache 产生。
 
 ```sql
 INSERT INTO dynasties (
-  id, name, alt_names, scope, region,
-  start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision, color_token,
-  parent_id, group_id, note
-) VALUES (
-  'tang',
-  '唐',
-  ARRAY['李唐'],
-  'cn', 'east_asia',
-  618, 6, 907, 5,
-  7421, 10888,  -- 用 compute-abs.mjs 验算
-  'month', 'ochre',
-  NULL, NULL,
-  '李渊建立，朱温篡唐终结'
-)
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  alt_names = EXCLUDED.alt_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  parent_id = EXCLUDED.parent_id,
-  group_id = EXCLUDED.group_id,
-  note = EXCLUDED.note;
+  id, name, scope, region,
+  start_year, start_month, start_day, start_confidence,
+  end_year, end_month, end_day, end_confidence,
+  start_abs, end_abs, color_token, parent_id, group_id, note
+) VALUES (...);
 ```
-
-主线分类直接保存在缓存中每条 `reigns[].isMain`，统一序列化器输出 `reigns.is_main`；没有按王朝 ID 选择称谓或生成标记的导入代码。
 
 ### reigns
 
-泳道卡片优先读取 `reigns.title`；人物详情页独立按年代优先读取人物庙谥，只有庙谥缺失时才回退 title。唐代起（包括明清）庙号优先于谥号，唐以前谥号优先；始皇帝以前主行用谥号或诸侯称号（不带国名）。称呼选择不读取 `era_names`。史称（少帝/末帝/后主等）不得写入 `posthumous_name`；明清年号式卡片称呼及其他无庙谥的 regnal 称号直接写入 `reigns.title`，其中朱元璋吴王段（`吴`）、努尔哈赤（`太祖`）、皇太极（`太宗`）保留原称号例外。`persons.name` 仍用可展示私名（姬发、禹），便于搜索；维基别名须在导入时清洗。
+泳道卡片优先读取 `reigns.title`；人物详情页按日期处理 Skill 展示置信日期。人物庙号和谥号仍写入 `persons.temple_name` / `persons.posthumous_name`。称呼选择不读取 `era_names`。明清年号式卡片称呼直接写入 `reigns.title`，原有吴王、努尔哈赤和皇太极称号例外照旧。
 
-`persons.posthumous_name` / `persons.temple_name` 与商周数据一致：**只存谥号/庙号本体，不带国名**（`武王`、`孝文皇帝`、`太宗`）。同人多值用逗号连接。国名简称写在 `title`（`周武王`、`唐太宗`）。先秦副行去姓靠 `persons.ancestral_xing` / `persons.clan_shi`，运行时不再维护姓氏表。
+起止日期分别写 `start_year/month/day/start_confidence` 和 `end_year/month/day/end_confidence`。开放终点仍保留空 end date 与 display cap `end_abs`。并立君主使用 `claim_track`、`claim_role` 表达，不改变日期归属规则。
 
 ```sql
 INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision,
-  claim_track, claim_label, claim_role
-) VALUES (
-  'reign-li-shimin',
-  'tang', 'li-shimin', '唐太宗',
-  '贞观',
-  626, 9, 649, 7,
-  7517, 7795, 'month',
-  NULL, NULL, NULL
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  person_id = EXCLUDED.person_id,
-  title = EXCLUDED.title,
-  era_names = EXCLUDED.era_names,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  claim_track = EXCLUDED.claim_track,
-  claim_label = EXCLUDED.claim_label,
-  claim_role = EXCLUDED.claim_role;
-
--- 并行称君示例（南明鲁监国）：仅当与主线皇帝同时另立时才填 claim_track；是否傀儡不影响此判定。
--- 前帝身后才即位（哪怕权臣拥立）走主线，claim_track 留 NULL。并行 track 的 claim_role 一律 rival。
--- 主行上非正统代政（有穷后羿/寒浞）不填 claim_track，只标 claim_role=rival：不上金、不分并立行、不串通行继承链。
-INSERT INTO reigns (
-  id, dynasty_id, person_id, title,
-  era_names,
-  start_year, start_month, end_year, end_month,
-  start_abs, end_abs, precision,
-  claim_track, claim_label, claim_role
-) VALUES (
-  'reign-zhu-yihai-ming-south',
-  'ming-south', 'zhu-yihai', '鲁监国',
-  NULL,
-  '{"kind":"regnal","name":"鲁监国"}'::jsonb,
-  1645, 1, 1653, 12,
-  19740, 19847, 'year',
-  'lu-jian', '绍兴监国', 'rival'
-)
-ON CONFLICT (id) DO UPDATE SET
-  claim_track = EXCLUDED.claim_track,
-  claim_label = EXCLUDED.claim_label,
-  claim_role = EXCLUDED.claim_role;
+  id, dynasty_id, person_id, title, era_names,
+  start_year, start_month, start_day, start_confidence,
+  end_year, end_month, end_day, end_confidence,
+  start_abs, end_abs, claim_track, claim_label, claim_role
+) VALUES (...);
 ```
-
-### reigns.era_names
-
-年号自汉武帝起，写入 `reigns.era_names` 逗号分隔名称（如 `泰定,致和`）。先秦省略（NULL）。**不再**使用 `era_names` 子表，各年号起迄年月不入库；界面将该列表用于年号事实展示，称呼选择不读取它。明清用于泳道卡片的年号式称呼另行预存于 `reigns.title`。
 
 ### dynasty_capitals
 
-王朝在指定时段的都城，供地图撒点。坐标烘焙入库（GCJ-02），运行时不调高德。
-
-- `historical_name`：当时名称（长安、大都、临安）
-- `modern_name`：**必填**行政区全称，格式 `{省}{市}` 或直辖市 `北京市`；禁止裸写「西安」「洛阳」
-- `role`：`primary`（京师）/ `secondary`（陪都）/ `temporary`（行在）
-- `claim_track`：并行政权都城时与 `reigns.claim_track` 同一 kebab-case key
-- 时间字段与 `reigns` 一致；年精度起年 `start_month=1`、迄年 `end_month=12`。若起点仅知年、终点已知月，保留 `precision='year'`，另填 `end_precision='month'`；不要把占位正月冒充已知起始月份。
+都城时间端点与在位日期规则一致，分别使用年月日和 `start_confidence` / `end_confidence`。年桶占位月份不得显示为史料记载的月份。城市坐标的空间定位精度使用 `event_locations.precision`；日期 confidence 不复用空间精度字段。
 
 ```sql
 INSERT INTO dynasty_capitals (
   id, dynasty_id, historical_name, modern_name,
   longitude, latitude, coordinate_system,
-  start_year, start_month, start_day,
-  end_year, end_month, end_day,
-  start_abs, end_abs, precision, end_precision,
-  start_date_confidence, end_date_confidence,
-  role, claim_track, note, links
-) VALUES (
-  'cap-tang-changan',
-  'tang', '长安', '陕西省西安市',
-  108.9396450, 34.3432070, 'GCJ02',
-  618, 1, NULL,
-  904, 12, NULL,
-  7416, 10848, 'year', NULL,
-  NULL, NULL,
-  'primary', NULL,
-  '唐都长安，高祖至哀帝。',
-  '[{"label":"维基百科","url":"https://zh.wikipedia.org/wiki/长安"}]'::jsonb
-)
-ON CONFLICT (id) DO UPDATE SET
-  dynasty_id = EXCLUDED.dynasty_id,
-  historical_name = EXCLUDED.historical_name,
-  modern_name = EXCLUDED.modern_name,
-  longitude = EXCLUDED.longitude,
-  latitude = EXCLUDED.latitude,
-  coordinate_system = EXCLUDED.coordinate_system,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_day = EXCLUDED.start_day,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_day = EXCLUDED.end_day,
-  start_abs = EXCLUDED.start_abs,
-  end_abs = EXCLUDED.end_abs,
-  precision = EXCLUDED.precision,
-  end_precision = EXCLUDED.end_precision,
-  start_date_confidence = EXCLUDED.start_date_confidence,
-  end_date_confidence = EXCLUDED.end_date_confidence,
-  role = EXCLUDED.role,
-  claim_track = EXCLUDED.claim_track,
-  note = EXCLUDED.note,
-  links = EXCLUDED.links;
+  start_year, start_month, start_day, start_confidence,
+  end_year, end_month, end_day, end_confidence,
+  start_abs, end_abs, role, claim_track, note, links
+) VALUES (...);
 ```
 
-地理编码流程见 Skill [eralens-capital-geocode](.cursor/skills/eralens-capital-geocode/SKILL.md)。
+### events（point / span）
 
-### events（点事件 point）
-
-发生时刻明确。月未知时 `precision='year'`，缓存里的 `at.month` 用 **12** 占位（与泳道年桶右缘一致；界面不显示 12 月）。缓存必须保存已核定的 `{ year, month, abs }`；生成器不会把旧的正月占位改成 12。已知月份则 `precision='month'|'day'`。
+事件只用 `point` 或 `span`。point 使用 `at_year/month/day/at_confidence`；span 使用独立起止日期与 confidence。真实持续不足一个日历年的过程记为 point，满一年及以上记为 span；不得从占位年月计算持续时间。点事件无需持续时间精度字段。
 
 ```sql
 INSERT INTO events (
-  id, name, kind, at_year, at_month, at_abs,
-  time_mode, precision, date_note, summary
-)
-VALUES (
-  'xuanwumen',
-  '玄武门之变',
-  'politics',
-              626, 7, 7518,
-  'point', 'month', NULL,
-  '李世民发动政变，即位太子。'
-)
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  kind = EXCLUDED.kind,
-  at_year = EXCLUDED.at_year,
-  at_month = EXCLUDED.at_month,
-  at_abs = EXCLUDED.at_abs,
-  time_mode = EXCLUDED.time_mode,
-  precision = EXCLUDED.precision,
-  date_note = EXCLUDED.date_note,
-  summary = EXCLUDED.summary;
-```
+  id, name, kind, time_mode, at_year, at_month, at_day, at_confidence,
+  date_note, summary, meaning
+) VALUES (...);
 
-### events（持续区间 span）
-
-事件真实持续一段时间，时间轴画细条。不要用 span 表示「大约何时」。
-
-```sql
 INSERT INTO events (
-  id, name, kind,
-  start_year, start_month, start_abs,
-  end_year, end_month, end_abs,
-  time_mode, precision, date_note, summary
-)
-VALUES (
-  'zhenguan-rule',
-  '贞观之治',
-  'politics',
-  627, 1, 7524,
-  649, 7, 7795,
-  'span', 'year', NULL,
-  '轻徭薄赋、任贤纳谏。'
-)
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  kind = EXCLUDED.kind,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_abs = EXCLUDED.start_abs,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_abs = EXCLUDED.end_abs,
-  time_mode = EXCLUDED.time_mode,
-  precision = EXCLUDED.precision,
-  date_note = EXCLUDED.date_note,
-  summary = EXCLUDED.summary;
+  id, name, kind, time_mode,
+  start_year, start_month, start_day, start_confidence,
+  end_year, end_month, end_day, end_confidence,
+  date_note, summary
+) VALUES (...);
 ```
 
-### events（不确定窗口 circa）
+### 旧 circa 记录迁移
 
-大约发生于某窗口，或诸说不一。窗口用 start/end；可选 `at_*` 为学界常用估计。时间轴画淡色虚线带。
-
-```sql
-INSERT INTO events (
-  id, name, kind,
-  start_year, start_month, start_abs,
-  end_year, end_month, end_abs,
-  at_year, at_month, at_abs,
-  time_mode, precision, date_note, summary
-)
-VALUES (
-  'zhenguan-code',
-  '贞观律修订',
-  'politics',
-  627, 1, 7524,
-  637, 12, 7655,
-  637, 1, 7644,
-  'circa', 'year',
-  '具体颁布月不详，取贞观十一年为常用估计',
-  '贞观年间修定律令。'
-)
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  kind = EXCLUDED.kind,
-  start_year = EXCLUDED.start_year,
-  start_month = EXCLUDED.start_month,
-  start_abs = EXCLUDED.start_abs,
-  end_year = EXCLUDED.end_year,
-  end_month = EXCLUDED.end_month,
-  end_abs = EXCLUDED.end_abs,
-  at_year = EXCLUDED.at_year,
-  at_month = EXCLUDED.at_month,
-  at_abs = EXCLUDED.at_abs,
-  time_mode = EXCLUDED.time_mode,
-  precision = EXCLUDED.precision,
-  date_note = EXCLUDED.date_note,
-  summary = EXCLUDED.summary;
-```
+新模型不再使用 `circa`；模糊时点用 point 与 approximate confidence，确有持续过程才用 span。存量 circa 记录须按 [日期处理 Skill](../eralens-date-handling/SKILL.md) 逐项判断能否无损转为 point/span；需要新增史料判断的记录暂缓并登记，不得只按跨度机械转成真实持续过程。
 
 ### events（成语 idiom）
 
-成语典故专用 `kind = idiom`，**只能** `time_mode = point`。时间轴按 `at_abs` 画时刻 marker；`meaning` 必填（释义），`summary` 写典故。
-
-- `event_participants.person_id` 只写 `persons.id`（国君也用 person id，如 `gou-jian`），**禁止** reign id
-- 不在 `relations` 中挂 `reign:*`；人物关联只走 `event_participants`
-- 对照史事可用 `relations`：`event:idiom-*` → `event:*`（`kind: other`）
-
-```sql
-INSERT INTO events (
-  id, name, kind, time_mode, precision, date_note,
-  at_year, at_month, at_abs,
-  summary, meaning
-) VALUES (
-  'idiom-wo-xin-chang-dan',
-  '卧薪尝胆',
-  'idiom',
-  'point', 'year', '越灭吴，前473年',
-  -473, 12, -5653,
-  '勾践战败后屈身事吴，回国卧薪尝胆，最终灭吴称霸。',
-  '形容刻苦自励，发愤图强。'
-)
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  kind = EXCLUDED.kind,
-  time_mode = EXCLUDED.time_mode,
-  precision = EXCLUDED.precision,
-  date_note = EXCLUDED.date_note,
-  at_year = EXCLUDED.at_year,
-  at_month = EXCLUDED.at_month,
-  at_abs = EXCLUDED.at_abs,
-  summary = EXCLUDED.summary,
-  meaning = EXCLUDED.meaning;
-
-INSERT INTO event_dynasties (event_id, dynasty_id)
-VALUES ('idiom-wo-xin-chang-dan', 'yue-chunqiu')
-ON CONFLICT DO NOTHING;
-
-INSERT INTO event_participants (event_id, person_id)
-VALUES ('idiom-wo-xin-chang-dan', 'gou-jian')
-ON CONFLICT DO NOTHING;
-```
+成语典故专用 `kind = idiom`，只能 `time_mode = point`。时间轴按 `at_abs` 画时刻 marker；`meaning` 必填，`summary` 写典故。人物关联使用 `event_participants.person_id`，必须为 `persons.id`；对照史事关联写入 `relations`。
 
 ### event_dynasties / event_participants
 

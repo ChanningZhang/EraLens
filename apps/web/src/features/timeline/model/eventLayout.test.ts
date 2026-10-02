@@ -58,10 +58,10 @@ describe("layoutEventBadges", () => {
     expect(positions.has("unmapped")).toBe(false);
   });
 
-  it("keeps span and circa events in the event area even when they belong to one dynasty", () => {
+  it("keeps spans in the event area even when they belong to one dynasty", () => {
     const at = absMonth(-356, 12);
     const point = event("point", ["qin"], at);
-    const ranged = (id: string, timeMode: "span" | "circa") => EventSchema.parse({
+    const ranged = (id: string, timeMode: "span") => EventSchema.parse({
       id,
       name: id,
       dynastyIds: ["qin"],
@@ -72,7 +72,7 @@ describe("layoutEventBadges", () => {
     });
     const positions = layoutEventBadges([
       ranged("span", "span"),
-      ranged("circa", "circa"),
+      ranged("span-range", "span"),
       point,
     ], viewport, dynastyLanes);
 
@@ -241,11 +241,11 @@ describe("packEventLanes", () => {
 describe("layoutEvents", () => {
   const viewport = { centerAbs: absMonth(208, 1), pxPerMonth: 1.5, widthPx: 1200 };
 
-  it("does not place point events on a circa band they overlap", () => {
-    const circa = EventSchema.parse({
+  it("does not place point events on a span band they overlap", () => {
+    const span = EventSchema.parse({
       id: "jianan-literature",
       name: "建安文学",
-      timeMode: "circa",
+      timeMode: "span",
       precision: "decade",
       start: { year: 196, month: 1 },
       end: { year: 220, month: 12 },
@@ -272,14 +272,14 @@ describe("layoutEvents", () => {
       endAbs: absMonth(222, 8),
     });
 
-    const placed = layoutEvents([circa, chibi, yiling], viewport);
+    const placed = layoutEvents([span, chibi, yiling], viewport);
     const byId = Object.fromEntries(placed.map((item) => [item.event.id, item]));
 
     expect(byId["jianan-literature"]?.showBand).toBe(true);
     expect(byId["chibi"]?.lane).not.toBe(byId["jianan-literature"]?.lane);
     expect(byId["yiling"]?.lane).not.toBe(byId["jianan-literature"]?.lane);
 
-    const band = eventHitInterval(circa, viewport);
+    const band = eventHitInterval(span, viewport);
     const chibiHit = eventHitInterval(chibi, viewport);
     expect(chibiHit.left < band.right && chibiHit.right > band.left).toBe(true);
   });
@@ -307,7 +307,7 @@ describe("layoutEvents", () => {
       id: "poetry-gui-sui-shou",
       name: "龟虽寿",
       kind: "poetry",
-      timeMode: "circa",
+      timeMode: "span",
       precision: "year",
       start: { year: 207, month: 1 },
       end: { year: 210, month: 12 },
@@ -329,12 +329,12 @@ describe("layoutEvents", () => {
     expect(eventMarkerWidth(guiSuiShou.name)).toBeLessThan(EVENT_MARKER_WIDTH);
   });
 
-  it("uses a circa poem's anchor without displaying its time band", () => {
+  it("uses a poem span's anchor without displaying its time band", () => {
     const poem = EventSchema.parse({
       id: "poetry-fengqiao-yebo",
       name: "《枫桥夜泊》",
       kind: "poetry",
-      timeMode: "circa",
+      timeMode: "span",
       precision: "year",
       start: { year: 750, month: 1 },
       end: { year: 770, month: 12 },
@@ -422,12 +422,12 @@ describe("stickyEventMarkerX", () => {
 });
 
 describe("layoutEvents sticky labels", () => {
-  it("keeps a long circa label on-page while the gray band is still visible", () => {
+  it("keeps a long span label on-page while the gray band is still visible", () => {
     const viewport = { centerAbs: absMonth(-300, 1), pxPerMonth: 1.5, widthPx: 1200 };
     const baijia = EventSchema.parse({
       id: "baijia-zhengming",
       name: "百家争鸣",
-      timeMode: "circa",
+      timeMode: "span",
       precision: "century",
       start: { year: -551, month: 1 },
       end: { year: -221, month: 12 },

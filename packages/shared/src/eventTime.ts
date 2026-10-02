@@ -1,4 +1,5 @@
-import type { Event, EventPrecision, Lod } from "./schema";
+import type { Event, HistoricalDateConfidence, Lod } from "./schema";
+import { formatHistoricalDate } from "./historicalDate";
 import { absMonthAtDay, formatYear, formatYearMonth } from "./time";
 
 export type EventSpan = {
@@ -48,65 +49,30 @@ export function eventSpanAbs(event: {
   return { startAbs, endAbs, anchorAbs };
 }
 
-function formatByPrecision(
-  year: number,
-  month: number,
-  precision: EventPrecision,
-  day?: number,
-): string {
-  if (precision === "day" && day != null) {
-    return `${formatYearMonth(year, month)}${day}日`;
-  }
-  if (precision === "month" || precision === "day") {
-    return formatYearMonth(year, month);
-  }
-  return formatYear(year);
-}
-
-function formatPoint(
-  point: { year: number; month: number; day?: number },
-  precision: EventPrecision,
-): string {
-  return formatByPrecision(point.year, point.month, precision, point.day);
-}
-
 export function formatEventTime(event: Event): string {
-  const precision = event.precision;
+  const pointLabel = (point: NonNullable<Event["at"]>, confidence?: HistoricalDateConfidence) =>
+    formatHistoricalDate({ ...point, confidence: confidence ?? point.confidence ?? "year" });
   if (event.timeMode === "span" && event.start && event.end) {
-    return `${formatPoint(event.start, precision)} — ${formatPoint(event.end, precision)}`;
+    return `${pointLabel(event.start, event.startConfidence)} — ${pointLabel(event.end, event.endConfidence)}`;
   }
-  if (event.timeMode === "circa") {
-    if (event.start && event.end) {
-      const sameYear =
-        event.start.year === event.end.year &&
-        precision !== "month" &&
-        precision !== "day";
-      if (sameYear) {
-        return `约${formatYear(event.start.year)}`;
-      }
-      return `约${formatPoint(event.start, precision)} — ${formatPoint(event.end, precision)}`;
-    }
-    if (event.at) {
-      return `约${formatPoint(event.at, precision)}`;
-    }
-  }
-  if (event.at) {
-    return formatPoint(event.at, precision);
-  }
-  if (event.start && event.end) {
-    return `${formatPoint(event.start, precision)} — ${formatPoint(event.end, precision)}`;
-  }
+  if (event.at) return pointLabel(event.at, event.atConfidence);
   return "年代不详";
 }
 
 export function shouldShowEventAtLod(event: Event, lod: Lod): boolean {
-  if (lod === "month" || lod === "decade") return true;
-  if (lod === "century") {
-    return (
-      event.timeMode === "circa" ||
-      event.precision === "decade" ||
-      event.precision === "century"
-    );
-  }
-  return event.precision === "century";
+  void event;
+  void lod;
+  return true;
+}
+
+/** Classify only when endpoint calendar granularity is known; placeholder years return null. */
+export function eventModeForCalendarDuration(
+  start: { year: number; month: number; confidence?: HistoricalDateConfidence },
+  end: { year: number; month: number; confidence?: HistoricalDateConfidence },
+): "point" | "span" | null {
+  const realMonth = (confidence?: HistoricalDateConfidence) =>
+    confidence === "month" || confidence === "day" || confidence === "approximate_month" || confidence === "approximate_day";
+  if (!realMonth(start.confidence) || !realMonth(end.confidence)) return null;
+  const durationMonths = (end.year - start.year) * 12 + end.month - start.month;
+  return durationMonths >= 12 ? "span" : "point";
 }

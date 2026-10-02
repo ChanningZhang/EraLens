@@ -40,6 +40,6 @@
     "君主在位年无通行记载时，仅取史料锚点前后短窗口，禁止用王朝起讫年硬填。",
     "多同取唐蒙通夜郎（前135）前后约二十年；兴取被杀前数年；尝羌取降汉前数年。",
     "庄蹻与尝羌之间、多同与兴之间世系失考，中间空缺不补齐。",
-    "precision=year，scope=cn，region=east_asia。"
+    "confidence=year，scope=cn，region=east_asia。"
   ]
 }

@@ -1,0 +1,364 @@
+{
+  "count": 11,
+  "records": [
+    {
+      "id": "yu-flood-control",
+      "name": "大禹治水",
+      "before": {
+        "timeMode": "circa",
+        "at": {
+          "year": -2070,
+          "month": 1
+        },
+        "start": {
+          "year": -2100,
+          "month": 1
+        },
+        "end": {
+          "year": -2070,
+          "month": 12
+        },
+        "dateNote": "传说时代，具体年月不可考；窗口取夏朝建立前后的世纪尺度"
+      },
+      "after": {
+        "timeMode": "point",
+        "at": {
+          "year": -2070,
+          "month": 1,
+          "confidence": "approximate_year"
+        },
+        "atConfidence": "approximate_year",
+        "dateNote": "传说时代，具体年月不可考；窗口取夏朝建立前后的世纪尺度；mock数据原不确定范围：-2100年1月至-2070年12月。"
+      },
+      "reason": "Mock/seed compatibility only; mapped to the same source package event mode, preserved the mock representative point or range, marked approximate, and retained the original range in dateNote. Not imported into the production database."
+    },
+    {
+      "id": "gan-battle",
+      "name": "甘之战",
+      "before": {
+        "timeMode": "circa",
+        "at": {
+          "year": -2020,
+          "month": 1
+        },
+        "start": {
+          "year": -2025,
+          "month": 1
+        },
+        "end": {
+          "year": -2010,
+          "month": 12
+        },
+        "dateNote": "《尚书·甘誓》载启伐有扈，绝对年代据夏初框架估列"
+      },
+      "after": {
+        "timeMode": "point",
+        "at": {
+          "year": -2020,
+          "month": 1,
+          "confidence": "approximate_year"
+        },
+        "atConfidence": "approximate_year",
+        "dateNote": "《尚书·甘誓》载启伐有扈，绝对年代据夏初框架估列；mock数据原不确定范围：-2025年1月至-2010年12月。"
+      },
+      "reason": "Mock/seed compatibility only; mapped to the same source package event mode, preserved the mock representative point or range, marked approximate, and retained the original range in dateNote. Not imported into the production database."
+    },
+    {
+      "id": "taikang-lost",
+      "name": "太康失国",
+      "before": {
+        "timeMode": "circa",
+        "at": {
+          "year": -1990,
+          "month": 1
+        },
+        "start": {
+          "year": -2009,
+          "month": 1
+        },
+        "end": {
+          "year": -1950,
+          "month": 12
+        },
+        "dateNote": "后羿代夏、寒浞代羿均为传说，窗口置于夏初启之后"
+      },
+      "after": {
+        "timeMode": "point",
+        "at": {
+          "year": -1990,
+          "month": 1,
+          "confidence": "approximate_year"
+        },
+        "atConfidence": "approximate_year",
+        "dateNote": "后羿代夏、寒浞代羿均为传说，窗口置于夏初启之后；mock数据原不确定范围：-2009年1月至-1950年12月。"
+      },
+      "reason": "Mock/seed compatibility only; mapped to the same source package event mode, preserved the mock representative point or range, marked approximate, and retained the original range in dateNote. Not imported into the production database."
+    },
+    {
+      "id": "shaokang-zhongxing",
+      "name": "少康中兴",
+      "before": {
+        "timeMode": "circa",
+        "at": {
+          "year": -1910,
+          "month": 1
+        },
+        "start": {
+          "year": -1920,
+          "month": 1
+        },
+        "end": {
+          "year": -1860,
+          "month": 12
+        },
+        "dateNote": "少康灭寒浞、恢复夏政，年数无实测，仅标相对位置"
+      },
+      "after": {
+        "timeMode": "span",
+        "start": {
+          "year": -1920,
+          "month": 1,
+          "confidence": "approximate_year"
+        },
+        "end": {
+          "year": -1860,
+          "month": 12,
+          "confidence": "approximate_year"
+        },
+        "startConfidence": "approximate_year",
+        "endConfidence": "approximate_year",
+        "dateNote": "少康灭寒浞、恢复夏政，年数无实测，仅标相对位置；mock数据原不确定范围：-1920年1月至-1860年12月。"
+      },
+      "reason": "Mock/seed compatibility only; mapped to the same source package event mode, preserved the mock representative point or range, marked approximate, and retained the original range in dateNote. Not imported into the production database."
+    },
+    {
+      "id": "mingtiao",
+      "name": "鸣条之战",
+      "before": {
+        "timeMode": "circa",
+        "at": {
+          "year": -1600,
+          "month": 1
+        },
+        "start": {
+          "year": -1610,
+          "month": 1
+        },
+        "end": {
+          "year": -1600,
+          "month": 12
+        },
+        "dateNote": "夏商分界取断代工程约前1600年，战役月日不详"
+      },
+      "after": {
+        "timeMode": "point",
+        "at": {
+          "year": -1600,
+          "month": 1,
+          "confidence": "approximate_year"
+        },
+        "atConfidence": "approximate_year",
+        "dateNote": "夏商分界取断代工程约前1600年，战役月日不详；mock数据原不确定范围：-1610年1月至-1600年12月。"
+      },
+      "reason": "Mock/seed compatibility only; mapped to the same source package event mode, preserved the mock representative point or range, marked approximate, and retained the original range in dateNote. Not imported into the production database."
+    },
+    {
+      "id": "yiyin-taijia",
+      "name": "伊尹放太甲",
+      "before": {
+        "timeMode": "circa",
+        "at": {
+          "year": -1555,
+          "month": 1
+        },
+        "start": {
+          "year": -1560,
+          "month": 1
+        },
+        "end": {
+          "year": -1548,
+          "month": 12
+        },
+        "dateNote": "桐宫放逐出于《史记》等传说，具体年份不可考"
+      },
+      "after": {
+        "timeMode": "point",
+        "at": {
+          "year": -1555,
+          "month": 1,
+          "confidence": "approximate_year"
+        },
+        "atConfidence": "approximate_year",
+        "dateNote": "桐宫放逐出于《史记》等传说，具体年份不可考；mock数据原不确定范围：-1560年1月至-1548年12月。"
+      },
+      "reason": "Mock/seed compatibility only; mapped to the same source package event mode, preserved the mock representative point or range, marked approximate, and retained the original range in dateNote. Not imported into the production database."
+    },
+    {
+      "id": "pangeng-move-yin",
+      "name": "盘庚迁殷",
+      "before": {
+        "timeMode": "circa",
+        "at": {
+          "year": -1300,
+          "month": 1
+        },
+        "start": {
+          "year": -1310,
+          "month": 1
+        },
+        "end": {
+          "year": -1290,
+          "month": 12
+        },
+        "dateNote": "断代工程估定迁殷约前1300年，起迄年不详"
+      },
+      "after": {
+        "timeMode": "point",
+        "at": {
+          "year": -1300,
+          "month": 1,
+          "confidence": "approximate_year"
+        },
+        "atConfidence": "approximate_year",
+        "dateNote": "断代工程估定迁殷约前1300年，起迄年不详；mock数据原不确定范围：-1310年1月至-1290年12月。"
+      },
+      "reason": "Mock/seed compatibility only; mapped to the same source package event mode, preserved the mock representative point or range, marked approximate, and retained the original range in dateNote. Not imported into the production database."
+    },
+    {
+      "id": "sanjian-rebellion",
+      "name": "三监之乱",
+      "before": {
+        "timeMode": "circa",
+        "at": {
+          "year": -1041,
+          "month": 12
+        },
+        "start": {
+          "year": -1042,
+          "month": 1
+        },
+        "end": {
+          "year": -1036,
+          "month": 12
+        },
+        "dateNote": "成王初、周公摄政期间，绝对年据西周初框架"
+      },
+      "after": {
+        "timeMode": "span",
+        "start": {
+          "year": -1042,
+          "month": 1,
+          "confidence": "approximate_year"
+        },
+        "end": {
+          "year": -1036,
+          "month": 12,
+          "confidence": "approximate_year"
+        },
+        "startConfidence": "approximate_year",
+        "endConfidence": "approximate_year",
+        "dateNote": "成王初、周公摄政期间，绝对年据西周初框架；mock数据原不确定范围：-1042年1月至-1036年12月。"
+      },
+      "reason": "Mock/seed compatibility only; mapped to the same source package event mode, preserved the mock representative point or range, marked approximate, and retained the original range in dateNote. Not imported into the production database."
+    },
+    {
+      "id": "zhaowang-south",
+      "name": "昭王南征",
+      "before": {
+        "timeMode": "circa",
+        "at": {
+          "year": -977,
+          "month": 12
+        },
+        "start": {
+          "year": -995,
+          "month": 1
+        },
+        "end": {
+          "year": -977,
+          "month": 12
+        },
+        "dateNote": "昭王卒年取断代工程前977年，南征次数与月份不详"
+      },
+      "after": {
+        "timeMode": "point",
+        "at": {
+          "year": -977,
+          "month": 12,
+          "confidence": "approximate_year"
+        },
+        "atConfidence": "approximate_year",
+        "dateNote": "昭王卒年取断代工程前977年，南征次数与月份不详；mock数据原不确定范围：-995年1月至-977年12月。"
+      },
+      "reason": "Mock/seed compatibility only; mapped to the same source package event mode, preserved the mock representative point or range, marked approximate, and retained the original range in dateNote. Not imported into the production database."
+    },
+    {
+      "id": "baijia-zhengming",
+      "name": "百家争鸣",
+      "before": {
+        "timeMode": "circa",
+        "at": {
+          "year": -400,
+          "month": 1
+        },
+        "start": {
+          "year": -551,
+          "month": 1
+        },
+        "end": {
+          "year": -221,
+          "month": 12
+        },
+        "dateNote": "思想活跃期约自春秋晚期至秦统一，并无单一起迄年"
+      },
+      "after": {
+        "timeMode": "span",
+        "start": {
+          "year": -551,
+          "month": 1,
+          "confidence": "approximate_year"
+        },
+        "end": {
+          "year": -221,
+          "month": 12,
+          "confidence": "approximate_year"
+        },
+        "startConfidence": "approximate_year",
+        "endConfidence": "approximate_year",
+        "dateNote": "思想活跃期约自春秋晚期至秦统一，并无单一起迄年；mock数据原不确定范围：-551年1月至-221年12月。"
+      },
+      "reason": "Mock/seed compatibility only; mapped to the same source package event mode, preserved the mock representative point or range, marked approximate, and retained the original range in dateNote. Not imported into the production database."
+    },
+    {
+      "id": "jianan-literature",
+      "name": "建安文学",
+      "before": {
+        "timeMode": "circa",
+        "at": {
+          "year": 215,
+          "month": 1
+        },
+        "start": {
+          "year": 196,
+          "month": 1
+        },
+        "end": {
+          "year": 220,
+          "month": 12
+        },
+        "dateNote": "建安年间文人群体活跃，并无单一发生年月"
+      },
+      "after": {
+        "timeMode": "point",
+        "at": {
+          "year": 215,
+          "month": 1,
+          "confidence": "approximate_year"
+        },
+        "atConfidence": "approximate_year",
+        "dateNote": "建安年间文人群体活跃，并无单一发生年月；mock数据原不确定范围：196年1月至220年12月。"
+      },
+      "reason": "Mock/seed compatibility only; mapped to the same source package event mode, preserved the mock representative point or range, marked approximate, and retained the original range in dateNote. Not imported into the production database."
+    }
+  ]
+}

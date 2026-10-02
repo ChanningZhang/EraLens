@@ -8,6 +8,8 @@ description: >-
 
 # EraLens 地理信息添加与丰富
 
+都城时段及其他地理实体涉及的日期遵循 [eralens-date-handling](../eralens-date-handling/SKILL.md)。地点坐标自身的空间定位精度仍使用本 Skill 的 `event_locations.precision` 规则。
+
 地理记录也以对应包 `cache.json` 为唯一事实源：都城写入 `capitals`，地点写入 `eventLocations`，事件引用写入 `events[].locationId`；来源与取舍写入同一缓存的 `manifest.sources` / `manifest.notes`。缓存字段用 camelCase（如 `historicalName`、`modernName`、`dynastyId`、`coordinateSystem`）；下文的 snake_case 名称是数据库列名。不要维护另外的 raw JSON、坐标文件或包级生成器。
 
 本 Skill 统一处理两类地理数据：
@@ -40,8 +42,7 @@ description: >-
 ## 王朝都城
 
 - `role`：`primary`（京师）、`secondary`（陪都）、`temporary`（行在）。不要因短期驻跸就自动建都城。
-- 年精度起点用 1 月占位、终点用 12 月占位；已知月日才提升精度。
-- 起止精度不同可用 `precision` + `end_precision`，不要把占位正月或十二月冒充已知月份。
+- 时段端点日期、精度和置信度遵循 [eralens-date-handling](../eralens-date-handling/SKILL.md)。
 - 相邻都城时段的归属统一走 `timelineOwnership.ts`；不得手写 `+1` 截断。不同角色、不同地点或并行政权可真实并存，不由区间解析器互相裁掉。
 - 并立政权的都城用与 reign 相同的 `claim_track`。同一王朝/track 在同一时段有多个都城时，必须由角色或史料语义说明共存。
 - 都城只属于特定君主或不能由王朝、track、日期无歧义推断时，写 `reign_capitals` 显式关联。更新前先清理该 reign 的陈旧关联，再 `ON CONFLICT DO NOTHING` 插入正确集合。
@@ -58,10 +59,9 @@ ID 使用 `cap-{dynasty}-{place-kebab}`；同地多次迁入时追加起年。�
 - `precision` 默认 `approximate`；只有坐标确指已确认遗址或设施时才使用更高精度，并保留来源。
 - 地点记录直接写入 `data/imports/event-locations/cache.json` 的 `eventLocations` 数组。事件的 `locationId` 写在对应事件记录中；事件不存在时先处理事件本体，不能留下无效关联。
 
-## 时间、历法与不确定性
+## 日期
 
-- 都城时段也必须核对原始史料日期和历法。农历月日不得直接当公历；可靠换算后在 `note` 记录原日期与依据。
-- `start_date_confidence` / `end_date_confidence` 仅表示导入者推算或插值边界。史料只写“约某年”但可忠实落入该年桶时，不自动加 confidence。
+日期和历法规则统一见 [eralens-date-handling](../eralens-date-handling/SKILL.md)。
 - 所有 `start.abs` / `end.abs` 使用 `absMonth()` 或 `compute-abs.mjs` 核算后直接写入缓存；统一生成器只负责 SQL 序列化。
 
 ## 工作流

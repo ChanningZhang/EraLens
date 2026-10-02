@@ -595,14 +595,15 @@
       "start": {
         "year": 1949,
         "month": 10,
-        "abs": 23397
+        "abs": 23397,
+        "confidence": "month"
       },
       "end": {
         "year": 2026,
         "month": 9,
-        "abs": 24320
+        "abs": 24320,
+        "confidence": "month"
       },
-      "precision": "month",
       "note": "1949年10月1日成立。正统自起始。元首按维基百科「中华人民共和国国家元首列表」收录中央人民政府主席、国家主席、国家副主席代行、国家代主席及废除主席期间的全国人大常委会，截至2026年9月。"
     }
   ],
@@ -618,19 +619,18 @@
         "year": 1949,
         "month": 10,
         "abs": 23397,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "end": {
         "year": 1954,
         "month": 9,
         "abs": 23456,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "startAbs": 23397,
       "endAbs": 23456,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -646,19 +646,18 @@
         "year": 1954,
         "month": 9,
         "abs": 23456,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "end": {
         "year": 1959,
         "month": 4,
         "abs": 23511,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "startAbs": 23456,
       "endAbs": 23511,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -674,19 +673,18 @@
         "year": 1959,
         "month": 4,
         "abs": 23511,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "end": {
         "year": 1968,
         "month": 10,
         "abs": 23625,
-        "day": 31
+        "day": 31,
+        "confidence": "day"
       },
       "startAbs": 23511,
       "endAbs": 23625,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -702,19 +700,18 @@
         "year": 1972,
         "month": 2,
         "abs": 23665,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "end": {
         "year": 1975,
         "month": 1,
         "abs": 23700,
-        "day": 17
+        "day": 17,
+        "confidence": "day"
       },
       "startAbs": 23665,
       "endAbs": 23700,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -731,19 +728,18 @@
         "year": 1975,
         "month": 1,
         "abs": 23700,
-        "day": 17
+        "day": 17,
+        "confidence": "day"
       },
       "end": {
         "year": 1983,
         "month": 6,
         "abs": 23801,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "startAbs": 23700,
       "endAbs": 23801,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -760,19 +756,18 @@
         "year": 1983,
         "month": 6,
         "abs": 23801,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "end": {
         "year": 1988,
         "month": 4,
         "abs": 23859,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "startAbs": 23801,
       "endAbs": 23859,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -788,19 +783,18 @@
         "year": 1988,
         "month": 4,
         "abs": 23859,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "end": {
         "year": 1993,
         "month": 3,
         "abs": 23918,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "startAbs": 23859,
       "endAbs": 23918,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -816,19 +810,18 @@
         "year": 1993,
         "month": 3,
         "abs": 23918,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "end": {
         "year": 2003,
         "month": 3,
         "abs": 24038,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "startAbs": 23918,
       "endAbs": 24038,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -844,19 +837,18 @@
         "year": 2003,
         "month": 3,
         "abs": 24038,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "end": {
         "year": 2013,
         "month": 3,
         "abs": 24158,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "startAbs": 24038,
       "endAbs": 24158,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -872,14 +864,12 @@
         "year": 2013,
         "month": 3,
         "abs": 24158,
-        "day": 14
+        "day": 14,
+        "confidence": "month"
       },
       "end": null,
       "startAbs": 24158,
       "endAbs": 24320,
-      "precision": "month",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -895,19 +885,18 @@
         "year": 1968,
         "month": 10,
         "abs": 23625,
-        "day": 31
+        "day": 31,
+        "confidence": "day"
       },
       "end": {
         "year": 1972,
         "month": 2,
         "abs": 23665,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "startAbs": 23625,
       "endAbs": 23665,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -919,7 +908,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "precision": "month",
       "dynastyIds": [
         "prc"
       ],
@@ -934,12 +922,14 @@
       "start": {
         "year": 1950,
         "month": 10,
-        "abs": 23409
+        "abs": 23409,
+        "confidence": "month"
       },
       "end": {
         "year": 1953,
         "month": 7,
-        "abs": 23442
+        "abs": 23442,
+        "confidence": "month"
       },
       "summary": "中国人民志愿军入朝作战，1953年7月签订停战协定。",
       "startAbs": 23409,
@@ -948,7 +938,6 @@
     {
       "kind": "politics",
       "timeMode": "span",
-      "precision": "year",
       "dynastyIds": [
         "prc"
       ],
@@ -961,12 +950,14 @@
       "start": {
         "year": 1958,
         "month": 1,
-        "abs": 23496
+        "abs": 23496,
+        "confidence": "year"
       },
       "end": {
         "year": 1961,
         "month": 12,
-        "abs": 23543
+        "abs": 23543,
+        "confidence": "year"
       },
       "summary": "以钢为纲的跃进运动与人民公社化，随后出现三年困难，国民经济被迫调整。",
       "startAbs": 23496,
@@ -975,7 +966,6 @@
     {
       "kind": "politics",
       "timeMode": "span",
-      "precision": "month",
       "dynastyIds": [
         "prc"
       ],
@@ -992,12 +982,14 @@
       "start": {
         "year": 1966,
         "month": 5,
-        "abs": 23596
+        "abs": 23596,
+        "confidence": "month"
       },
       "end": {
         "year": 1976,
         "month": 10,
-        "abs": 23721
+        "abs": 23721,
+        "confidence": "month"
       },
       "summary": "长达十年的政治运动，党和国家领导层与社会秩序受到严重冲击，至粉碎「四人帮」结束。",
       "startAbs": 23596,
@@ -1006,7 +998,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "day",
       "dynastyIds": [
         "prc"
       ],
@@ -1020,7 +1011,8 @@
       "at": {
         "year": 1971,
         "month": 9,
-        "abs": 23660
+        "abs": 23660,
+        "confidence": "day"
       },
       "summary": "林彪乘机出逃坠亡，接班人安排破裂。",
       "atAbs": 23660
@@ -1028,7 +1020,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "day",
       "dynastyIds": [
         "prc"
       ],
@@ -1043,7 +1034,8 @@
       "at": {
         "year": 1976,
         "month": 10,
-        "abs": 23721
+        "abs": 23721,
+        "confidence": "day"
       },
       "summary": "江青、张春桥、姚文元、王洪文被隔离审查，文化大革命结束。",
       "atAbs": 23721
@@ -1051,7 +1043,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "day",
       "dynastyIds": [
         "prc"
       ],
@@ -1065,7 +1056,8 @@
       "at": {
         "year": 1978,
         "month": 12,
-        "abs": 23747
+        "abs": 23747,
+        "confidence": "day"
       },
       "summary": "决定把工作重点转到社会主义现代化建设，改革开放起步。",
       "atAbs": 23747
@@ -1073,7 +1065,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "prc"
       ],
@@ -1086,7 +1077,8 @@
       "at": {
         "year": 1992,
         "month": 1,
-        "abs": 23904
+        "abs": 23904,
+        "confidence": "month"
       },
       "summary": "邓小平南方谈话推动新一轮改革开放。",
       "atAbs": 23904
@@ -1094,7 +1086,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "day",
       "dynastyIds": [
         "prc"
       ],
@@ -1107,7 +1098,8 @@
       "at": {
         "year": 1997,
         "month": 7,
-        "abs": 23970
+        "abs": 23970,
+        "confidence": "day"
       },
       "summary": "香港特别行政区成立，英国结束对香港的管治。",
       "atAbs": 23970
@@ -1115,7 +1107,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "day",
       "dynastyIds": [
         "prc"
       ],
@@ -1128,7 +1119,8 @@
       "at": {
         "year": 1999,
         "month": 12,
-        "abs": 23999
+        "abs": 23999,
+        "confidence": "day"
       },
       "summary": "澳门特别行政区成立，葡萄牙结束对澳门的管治。",
       "atAbs": 23999
@@ -1136,7 +1128,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "day",
       "dynastyIds": [
         "prc"
       ],
@@ -1149,7 +1140,8 @@
       "at": {
         "year": 2001,
         "month": 12,
-        "abs": 24023
+        "abs": 24023,
+        "confidence": "day"
       },
       "summary": "中国加入世界贸易组织，对外开放进入新阶段。",
       "atAbs": 24023
@@ -1157,7 +1149,6 @@
     {
       "kind": "culture",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "prc"
       ],
@@ -1170,7 +1161,8 @@
       "at": {
         "year": 2008,
         "month": 8,
-        "abs": 24103
+        "abs": 24103,
+        "confidence": "month"
       },
       "summary": "第二十九届夏季奥林匹克运动会在北京举行。",
       "atAbs": 24103
@@ -1178,7 +1170,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "prc"
       ],
@@ -1192,7 +1183,8 @@
       "at": {
         "year": 2012,
         "month": 11,
-        "abs": 24154
+        "abs": 24154,
+        "confidence": "month"
       },
       "summary": "胡锦涛卸任总书记，习近平当选中共中央总书记、中央军委主席。国家主席至2013年3月交接。",
       "atAbs": 24154

@@ -1,0 +1,11 @@
+{
+  "changes": [
+    {
+      "package": "major-events",
+      "field": "manifest.notes",
+      "before": "传国玉玺失踪采用936—937年 circa 窗口；不把传统记载中的焚毁说写成确定事实。",
+      "after": "传国玉玺失踪取936年作为约略代表时点；936—937年原范围保存在事件 dateNote；传统记载中的焚毁说不视为确定事实。",
+      "reason": "事件已由不确定范围模型迁移为 approximate point；更新包说明以匹配新的 point/span 语义，原 936—937 范围仍保存在该事件 dateNote。"
+    }
+  ]
+}

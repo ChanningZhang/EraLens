@@ -4,7 +4,7 @@
  */
 
 function isUncertain(value) {
-  return value === "interpolated" || value === "approximate";
+  return value?.startsWith("interpolated_") === true || value?.startsWith("approximate_") === true;
 }
 
 function reignEndExclusive(reign) {
@@ -54,11 +54,13 @@ export function validateReignDateConfidenceSeams(reigns) {
       (right) => right.id !== left.id && isCalendarSeamPair(left, right, active),
     );
     for (const right of successors) {
-      const leftUncertain = isUncertain(left.endDateConfidence);
-      const rightUncertain = isUncertain(right.startDateConfidence);
+      const leftConfidence = left.end?.confidence ?? left.endConfidence;
+      const rightConfidence = right.start?.confidence ?? right.startConfidence;
+      const leftUncertain = isUncertain(leftConfidence);
+      const rightUncertain = isUncertain(rightConfidence);
       if (leftUncertain === rightUncertain) continue;
       errors.push(
-        `${left.id} end (${left.endDateConfidence ?? "certain"}) / ${right.id} start (${right.startDateConfidence ?? "certain"}) mismatch`,
+        `${left.id} end (${leftConfidence ?? "year"}) / ${right.id} start (${rightConfidence ?? "year"}) mismatch`,
       );
     }
   }

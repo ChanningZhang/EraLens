@@ -1309,14 +1309,15 @@
       "start": {
         "year": 420,
         "month": 1,
-        "abs": 5040
+        "abs": 5040,
+        "confidence": "year"
       },
       "end": {
         "year": 589,
         "month": 12,
-        "abs": 7079
+        "abs": 7079,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "420–589年南朝（刘宋、南齐、南梁、南陈及江陵西梁）。"
     },
     {
@@ -1327,14 +1328,15 @@
       "start": {
         "year": 420,
         "month": 1,
-        "abs": 5040
+        "abs": 5040,
+        "confidence": "year"
       },
       "end": {
         "year": 581,
         "month": 12,
-        "abs": 6983
+        "abs": 6983,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "420–581年北朝（北魏、东魏、西魏、北齐、北周）。"
     }
   ],
@@ -1351,14 +1353,15 @@
       "start": {
         "year": 386,
         "month": 1,
-        "abs": 4632
+        "abs": 4632,
+        "confidence": "year"
       },
       "end": {
         "year": 535,
         "month": 2,
-        "abs": 6421
+        "abs": 6421,
+        "confidence": "month"
       },
-      "precision": "year",
       "groupId": "bei-chao",
       "note": "拓跋珪386年重建代国并改称魏，439年太武帝灭北凉、统一北方。孝文帝迁都洛阳并推行制度与风俗改革；六镇之乱后政权衰弱，534年分裂为东魏、西魏，535年北魏名义终结。"
     },
@@ -1374,14 +1377,15 @@
       "start": {
         "year": 420,
         "month": 7,
-        "abs": 5046
+        "abs": 5046,
+        "confidence": "year"
       },
       "end": {
         "year": 479,
         "month": 1,
-        "abs": 5748
+        "abs": 5748,
+        "confidence": "year"
       },
-      "precision": "year",
       "groupId": "nan-chao",
       "note": "刘裕420年取代东晋建国，都建康；文帝时期一度出现“元嘉之治”，后因宗室内乱与权臣兴起而衰弱。479年萧道成受禅，刘宋亡、南齐建立。"
     },
@@ -1397,14 +1401,15 @@
       "start": {
         "year": 479,
         "month": 1,
-        "abs": 5748
+        "abs": 5748,
+        "confidence": "year"
       },
       "end": {
         "year": 502,
         "month": 1,
-        "abs": 6024
+        "abs": 6024,
+        "confidence": "year"
       },
-      "precision": "year",
       "groupId": "nan-chao",
       "note": "萧道成479年受禅建齐，都建康；齐武帝时期政治与文化较为兴盛。此后宗室争位、皇帝更迭频繁，萧鸾一支大规模诛杀高帝和武帝后裔，最终于502年被萧衍取代。"
     },
@@ -1420,14 +1425,15 @@
       "start": {
         "year": 502,
         "month": 1,
-        "abs": 6024
+        "abs": 6024,
+        "confidence": "year"
       },
       "end": {
         "year": 557,
         "month": 1,
-        "abs": 6684
+        "abs": 6684,
+        "confidence": "year"
       },
-      "precision": "year",
       "groupId": "nan-chao",
       "note": "萧衍502年取代南齐建梁，都建康；前期推行宽政并崇佛，梁朝文化繁盛。548年侯景之乱攻陷建康、梁武帝被困而死，宗室割据内战延续至557年陈霸先受禅。"
     },
@@ -1443,14 +1449,15 @@
       "start": {
         "year": 552,
         "month": 1,
-        "abs": 6624
+        "abs": 6624,
+        "confidence": "month"
       },
       "end": {
         "year": 552,
         "month": 5,
-        "abs": 6628
+        "abs": 6628,
+        "confidence": "month"
       },
-      "precision": "month",
       "groupId": "nan-chao",
       "note": "侯景原为东魏将领，降梁后于548年发动叛乱并攻陷建康。552年初在建康称帝、国号汉，旋被陈霸先和王僧辩击败，政权仅存数月。"
     },
@@ -1465,14 +1472,15 @@
       "start": {
         "year": 557,
         "month": 1,
-        "abs": 6684
+        "abs": 6684,
+        "confidence": "year"
       },
       "end": {
         "year": 589,
         "month": 1,
-        "abs": 7068
+        "abs": 7068,
+        "confidence": "year"
       },
-      "precision": "year",
       "groupId": "nan-chao",
       "note": "陈霸先557年代梁建陈，都建康；文帝、宣帝时期整顿江南并一度收复淮南。北周灭北齐后陈朝独处江南，589年隋军攻陷建康，陈亡并结束南北朝。"
     },
@@ -1488,14 +1496,15 @@
       "start": {
         "year": 550,
         "month": 1,
-        "abs": 6600
+        "abs": 6600,
+        "confidence": "year"
       },
       "end": {
         "year": 577,
         "month": 1,
-        "abs": 6924
+        "abs": 6924,
+        "confidence": "year"
       },
-      "precision": "year",
       "groupId": "bei-chao",
       "note": "高洋550年取代东魏建齐，都邺；初期整军建制，后期及继位诸帝时朝政渐乱。北周武帝于577年攻灭北齐，北方归于北周。"
     },
@@ -1511,14 +1520,15 @@
       "start": {
         "year": 557,
         "month": 2,
-        "abs": 6685
+        "abs": 6685,
+        "confidence": "month"
       },
       "end": {
         "year": 581,
         "month": 3,
-        "abs": 6974
+        "abs": 6974,
+        "confidence": "month"
       },
-      "precision": "month",
       "groupId": "bei-chao",
       "note": "宇文觉557年受禅建周，都长安，实际政权先受宇文护控制。武帝亲政后整军并于577年灭北齐、统一北方；581年杨坚受禅建隋，北周结束。"
     },
@@ -1533,14 +1543,15 @@
       "start": {
         "year": 534,
         "month": 11,
-        "abs": 6418
+        "abs": 6418,
+        "confidence": "year"
       },
       "end": {
         "year": 550,
         "month": 2,
-        "abs": 6601
+        "abs": 6601,
+        "confidence": "month"
       },
-      "precision": "year",
       "groupId": "bei-chao",
       "note": "高欢控制洛阳朝廷后，于534年迁元善见至邺，东魏由此建立。皇帝长期受高氏挟制，550年高欢之子高洋受禅建北齐，东魏亡。"
     },
@@ -1555,14 +1566,15 @@
       "start": {
         "year": 535,
         "month": 2,
-        "abs": 6421
+        "abs": 6421,
+        "confidence": "year"
       },
       "end": {
         "year": 557,
         "month": 2,
-        "abs": 6685
+        "abs": 6685,
+        "confidence": "month"
       },
-      "precision": "year",
       "groupId": "bei-chao",
       "note": "宇文泰于535年在长安拥立元宝炬，建立西魏，与高欢控制的东魏对峙。西魏朝廷由宇文泰掌握，557年宇文觉受禅建北周，西魏结束。"
     }
@@ -1579,17 +1591,18 @@
         "year": 386,
         "month": 2,
         "abs": 4633,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "end": {
         "year": 409,
         "month": 11,
         "abs": 4918,
-        "day": 6
+        "day": 6,
+        "confidence": "day"
       },
       "startAbs": 4633,
       "endAbs": 4918,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -1602,17 +1615,18 @@
         "year": 409,
         "month": 11,
         "abs": 4918,
-        "day": 6
+        "day": 6,
+        "confidence": "day"
       },
       "end": {
         "year": 423,
         "month": 12,
         "abs": 5087,
-        "day": 6
+        "day": 6,
+        "confidence": "day"
       },
       "startAbs": 4918,
       "endAbs": 5087,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -1625,17 +1639,18 @@
         "year": 424,
         "month": 1,
         "abs": 5088,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "end": {
         "year": 452,
         "month": 3,
         "abs": 5426,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "startAbs": 5088,
       "endAbs": 5426,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -1648,17 +1663,18 @@
         "year": 452,
         "month": 3,
         "abs": 5426,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "end": {
         "year": 452,
         "month": 12,
         "abs": 5435,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "startAbs": 5426,
       "endAbs": 5435,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -1671,17 +1687,18 @@
         "year": 452,
         "month": 12,
         "abs": 5435,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "end": {
         "year": 465,
         "month": 6,
         "abs": 5585,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "startAbs": 5435,
       "endAbs": 5585,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -1694,17 +1711,18 @@
         "year": 465,
         "month": 6,
         "abs": 5585,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "end": {
         "year": 471,
         "month": 9,
         "abs": 5660,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "startAbs": 5585,
       "endAbs": 5660,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -1719,17 +1737,18 @@
         "year": 471,
         "month": 9,
         "abs": 5660,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "end": {
         "year": 499,
         "month": 4,
         "abs": 5991,
-        "day": 26
+        "day": 26,
+        "confidence": "day"
       },
       "startAbs": 5660,
       "endAbs": 5991,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -1742,17 +1761,18 @@
         "year": 499,
         "month": 4,
         "abs": 5991,
-        "day": 26
+        "day": 26,
+        "confidence": "day"
       },
       "end": {
         "year": 515,
         "month": 4,
         "abs": 6183,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "startAbs": 5991,
       "endAbs": 6183,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -1765,17 +1785,18 @@
         "year": 515,
         "month": 4,
         "abs": 6183,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "end": {
         "year": 528,
         "month": 3,
         "abs": 6338,
-        "day": 31
+        "day": 31,
+        "confidence": "day"
       },
       "startAbs": 6183,
       "endAbs": 6338,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -1788,17 +1809,18 @@
         "year": 528,
         "month": 4,
         "abs": 6339,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "end": {
         "year": 530,
         "month": 1,
         "abs": 6360,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "startAbs": 6339,
       "endAbs": 6360,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -1811,17 +1833,18 @@
         "year": 530,
         "month": 1,
         "abs": 6360,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "end": {
         "year": 531,
         "month": 3,
         "abs": 6374,
-        "day": 26
+        "day": 26,
+        "confidence": "day"
       },
       "startAbs": 6360,
       "endAbs": 6374,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -1834,17 +1857,18 @@
         "year": 531,
         "month": 3,
         "abs": 6374,
-        "day": 26
+        "day": 26,
+        "confidence": "day"
       },
       "end": {
         "year": 532,
         "month": 5,
         "abs": 6388,
-        "day": 17
+        "day": 17,
+        "confidence": "day"
       },
       "startAbs": 6374,
       "endAbs": 6388,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -1857,17 +1881,18 @@
         "year": 532,
         "month": 2,
         "abs": 6385,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "end": {
         "year": 535,
         "month": 2,
         "abs": 6421,
-        "day": 3
+        "day": 3,
+        "confidence": "day"
       },
       "startAbs": 6385,
       "endAbs": 6421,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -1880,17 +1905,18 @@
         "year": 534,
         "month": 11,
         "abs": 6418,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "end": {
         "year": 550,
         "month": 2,
         "abs": 6601,
-        "day": 9
+        "day": 9,
+        "confidence": "day"
       },
       "startAbs": 6418,
       "endAbs": 6601,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -1903,17 +1929,18 @@
         "year": 535,
         "month": 2,
         "abs": 6421,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "end": {
         "year": 551,
         "month": 3,
         "abs": 6614,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "startAbs": 6421,
       "endAbs": 6614,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -1926,17 +1953,18 @@
         "year": 551,
         "month": 3,
         "abs": 6614,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "end": {
         "year": 554,
         "month": 12,
         "abs": 6659,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "startAbs": 6614,
       "endAbs": 6659,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -1949,17 +1977,18 @@
         "year": 554,
         "month": 12,
         "abs": 6659,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "end": {
         "year": 557,
         "month": 2,
         "abs": 6685,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "startAbs": 6659,
       "endAbs": 6685,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -1974,17 +2003,18 @@
         "year": 420,
         "month": 7,
         "abs": 5046,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "end": {
         "year": 422,
         "month": 6,
         "abs": 5069,
-        "day": 26
+        "day": 26,
+        "confidence": "day"
       },
       "startAbs": 5046,
       "endAbs": 5069,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -1997,17 +2027,18 @@
         "year": 422,
         "month": 6,
         "abs": 5069,
-        "day": 26
+        "day": 26,
+        "confidence": "day"
       },
       "end": {
         "year": 424,
         "month": 7,
         "abs": 5094,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "startAbs": 5069,
       "endAbs": 5094,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2022,17 +2053,18 @@
         "year": 424,
         "month": 8,
         "abs": 5095,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "end": {
         "year": 453,
         "month": 3,
         "abs": 5438,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "startAbs": 5095,
       "endAbs": 5438,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2045,17 +2077,18 @@
         "year": 453,
         "month": 3,
         "abs": 5438,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "end": {
         "year": 453,
         "month": 5,
         "abs": 5440,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "startAbs": 5438,
       "endAbs": 5440,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2071,17 +2104,18 @@
         "year": 453,
         "month": 5,
         "abs": 5440,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "end": {
         "year": 464,
         "month": 7,
         "abs": 5574,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "startAbs": 5440,
       "endAbs": 5574,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2094,17 +2128,18 @@
         "year": 464,
         "month": 7,
         "abs": 5574,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "end": {
         "year": 465,
         "month": 8,
         "abs": 5587,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "startAbs": 5574,
       "endAbs": 5587,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2117,17 +2152,18 @@
         "year": 465,
         "month": 8,
         "abs": 5587,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "end": {
         "year": 472,
         "month": 5,
         "abs": 5668,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "startAbs": 5587,
       "endAbs": 5668,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2140,17 +2176,18 @@
         "year": 472,
         "month": 9,
         "abs": 5672,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "end": {
         "year": 477,
         "month": 8,
         "abs": 5731,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "startAbs": 5672,
       "endAbs": 5731,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2163,17 +2200,18 @@
         "year": 477,
         "month": 8,
         "abs": 5731,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "end": {
         "year": 479,
         "month": 3,
         "abs": 5750,
-        "day": 30
+        "day": 30,
+        "confidence": "day"
       },
       "startAbs": 5731,
       "endAbs": 5750,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2186,17 +2224,18 @@
         "year": 479,
         "month": 4,
         "abs": 5751,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "end": {
         "year": 482,
         "month": 4,
         "abs": 5787,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "startAbs": 5751,
       "endAbs": 5787,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2211,17 +2250,18 @@
         "year": 482,
         "month": 4,
         "abs": 5787,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "end": {
         "year": 493,
         "month": 7,
         "abs": 5922,
-        "day": 5
+        "day": 5,
+        "confidence": "day"
       },
       "startAbs": 5787,
       "endAbs": 5922,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2234,17 +2274,18 @@
         "year": 494,
         "month": 1,
         "abs": 5928,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "end": {
         "year": 494,
         "month": 11,
         "abs": 5938,
-        "day": 7
+        "day": 7,
+        "confidence": "day"
       },
       "startAbs": 5928,
       "endAbs": 5938,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2257,17 +2298,18 @@
         "year": 494,
         "month": 11,
         "abs": 5938,
-        "day": 7
+        "day": 7,
+        "confidence": "day"
       },
       "end": {
         "year": 495,
         "month": 1,
         "abs": 5940,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "startAbs": 5938,
       "endAbs": 5940,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2280,17 +2322,18 @@
         "year": 494,
         "month": 12,
         "abs": 5939,
-        "day": 5
+        "day": 5,
+        "confidence": "day"
       },
       "end": {
         "year": 498,
         "month": 9,
         "abs": 5984,
-        "day": 7
+        "day": 7,
+        "confidence": "day"
       },
       "startAbs": 5939,
       "endAbs": 5984,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2303,17 +2346,18 @@
         "year": 499,
         "month": 2,
         "abs": 5989,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "end": {
         "year": 501,
         "month": 12,
         "abs": 6023,
-        "day": 31
+        "day": 31,
+        "confidence": "day"
       },
       "startAbs": 5989,
       "endAbs": 6023,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2326,17 +2370,18 @@
         "year": 501,
         "month": 12,
         "abs": 6023,
-        "day": 31
+        "day": 31,
+        "confidence": "day"
       },
       "end": {
         "year": 502,
         "month": 4,
         "abs": 6027,
-        "day": 30
+        "day": 30,
+        "confidence": "day"
       },
       "startAbs": 6023,
       "endAbs": 6027,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2357,17 +2402,18 @@
         "year": 502,
         "month": 5,
         "abs": 6028,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "end": {
         "year": 549,
         "month": 6,
         "abs": 6593,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "startAbs": 6028,
       "endAbs": 6593,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2380,17 +2426,18 @@
         "year": 549,
         "month": 6,
         "abs": 6593,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "end": {
         "year": 551,
         "month": 11,
         "abs": 6622,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "startAbs": 6593,
       "endAbs": 6622,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2405,17 +2452,18 @@
         "year": 551,
         "month": 10,
         "abs": 6621,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "end": {
         "year": 552,
         "month": 1,
         "abs": 6624,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "startAbs": 6621,
       "endAbs": 6624,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2428,17 +2476,18 @@
         "year": 552,
         "month": 11,
         "abs": 6634,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "end": {
         "year": 555,
         "month": 1,
         "abs": 6660,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "startAbs": 6634,
       "endAbs": 6660,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2451,17 +2500,18 @@
         "year": 555,
         "month": 1,
         "abs": 6660,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "end": {
         "year": 557,
         "month": 11,
         "abs": 6694,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "startAbs": 6660,
       "endAbs": 6694,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2476,17 +2526,18 @@
         "year": 552,
         "month": 1,
         "abs": 6624,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "end": {
         "year": 552,
         "month": 5,
         "abs": 6628,
-        "day": 26
+        "day": 26,
+        "confidence": "day"
       },
       "startAbs": 6624,
       "endAbs": 6628,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2499,17 +2550,18 @@
         "year": 557,
         "month": 11,
         "abs": 6694,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "end": {
         "year": 559,
         "month": 8,
         "abs": 6715,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "startAbs": 6694,
       "endAbs": 6715,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2522,17 +2574,18 @@
         "year": 559,
         "month": 8,
         "abs": 6715,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "end": {
         "year": 566,
         "month": 11,
         "abs": 6802,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "startAbs": 6715,
       "endAbs": 6802,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2545,17 +2598,18 @@
         "year": 566,
         "month": 11,
         "abs": 6802,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "end": {
         "year": 568,
         "month": 12,
         "abs": 6827,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "startAbs": 6802,
       "endAbs": 6827,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2568,17 +2622,18 @@
         "year": 568,
         "month": 12,
         "abs": 6827,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "end": {
         "year": 582,
         "month": 2,
         "abs": 6985,
-        "day": 17
+        "day": 17,
+        "confidence": "day"
       },
       "startAbs": 6827,
       "endAbs": 6985,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2591,17 +2646,18 @@
         "year": 582,
         "month": 2,
         "abs": 6985,
-        "day": 17
+        "day": 17,
+        "confidence": "day"
       },
       "end": {
         "year": 589,
         "month": 2,
         "abs": 7069,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "startAbs": 6985,
       "endAbs": 7069,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2614,17 +2670,18 @@
         "year": 550,
         "month": 6,
         "abs": 6605,
-        "day": 9
+        "day": 9,
+        "confidence": "day"
       },
       "end": {
         "year": 559,
         "month": 11,
         "abs": 6718,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "startAbs": 6605,
       "endAbs": 6718,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2637,17 +2694,18 @@
         "year": 559,
         "month": 12,
         "abs": 6719,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "end": {
         "year": 560,
         "month": 9,
         "abs": 6728,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "startAbs": 6719,
       "endAbs": 6728,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2660,17 +2718,18 @@
         "year": 560,
         "month": 9,
         "abs": 6728,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "end": {
         "year": 565,
         "month": 11,
         "abs": 6790,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "startAbs": 6728,
       "endAbs": 6790,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2683,17 +2742,18 @@
         "year": 565,
         "month": 11,
         "abs": 6790,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "end": {
         "year": 569,
         "month": 8,
         "abs": 6835,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "startAbs": 6790,
       "endAbs": 6835,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2706,17 +2766,18 @@
         "year": 569,
         "month": 8,
         "abs": 6835,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "end": {
         "year": 577,
         "month": 12,
         "abs": 6935,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "startAbs": 6835,
       "endAbs": 6935,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2729,17 +2790,18 @@
         "year": 577,
         "month": 12,
         "abs": 6935,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "end": {
         "year": 578,
         "month": 1,
         "abs": 6936,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "startAbs": 6935,
       "endAbs": 6936,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2752,17 +2814,18 @@
         "year": 557,
         "month": 2,
         "abs": 6685,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "end": {
         "year": 557,
         "month": 9,
         "abs": 6692,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "startAbs": 6685,
       "endAbs": 6692,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2775,17 +2838,18 @@
         "year": 557,
         "month": 9,
         "abs": 6692,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "end": {
         "year": 560,
         "month": 5,
         "abs": 6724,
-        "day": 31
+        "day": 31,
+        "confidence": "day"
       },
       "startAbs": 6692,
       "endAbs": 6724,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2798,17 +2862,18 @@
         "year": 560,
         "month": 5,
         "abs": 6724,
-        "day": 31
+        "day": 31,
+        "confidence": "day"
       },
       "end": {
         "year": 578,
         "month": 6,
         "abs": 6941,
-        "day": 21
+        "day": 21,
+        "confidence": "day"
       },
       "startAbs": 6724,
       "endAbs": 6941,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2821,17 +2886,18 @@
         "year": 578,
         "month": 6,
         "abs": 6941,
-        "day": 21
+        "day": 21,
+        "confidence": "day"
       },
       "end": {
         "year": 579,
         "month": 4,
         "abs": 6951,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "startAbs": 6941,
       "endAbs": 6951,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2844,24 +2910,24 @@
         "year": 579,
         "month": 4,
         "abs": 6951,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "end": {
         "year": 581,
         "month": 3,
         "abs": 6974,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "startAbs": 6951,
       "endAbs": 6974,
-      "precision": "day",
       "isMain": false
     }
   ],
   "events": [
     {
       "kind": "politics",
-      "precision": "year",
       "dynastyIds": [
         "song-liu"
       ],
@@ -2874,12 +2940,14 @@
       "start": {
         "year": 424,
         "month": 1,
-        "abs": 5088
+        "abs": 5088,
+        "confidence": "year"
       },
       "end": {
         "year": 453,
         "month": 1,
-        "abs": 5436
+        "abs": 5436,
+        "confidence": "year"
       },
       "summary": "宋文帝刘义隆励精图治，南朝国力达于鼎盛。",
       "startAbs": 5088,
@@ -2887,7 +2955,6 @@
     },
     {
       "kind": "culture",
-      "precision": "year",
       "dynastyIds": [
         "liang-nan"
       ],
@@ -2901,12 +2968,14 @@
       "start": {
         "year": 502,
         "month": 1,
-        "abs": 6024
+        "abs": 6024,
+        "confidence": "year"
       },
       "end": {
         "year": 549,
         "month": 1,
-        "abs": 6588
+        "abs": 6588,
+        "confidence": "year"
       },
       "summary": "梁武帝萧衍崇信佛教，多次舍身，耗费国库。",
       "startAbs": 6024,
@@ -2914,7 +2983,6 @@
     },
     {
       "kind": "politics",
-      "precision": "year",
       "dynastyIds": [
         "liang-nan"
       ],
@@ -2931,12 +2999,14 @@
       "start": {
         "year": 548,
         "month": 1,
-        "abs": 6576
+        "abs": 6576,
+        "confidence": "year"
       },
       "end": {
         "year": 552,
         "month": 1,
-        "abs": 6624
+        "abs": 6624,
+        "confidence": "year"
       },
       "summary": "侯景叛梁，攻陷建康，梁武帝饿死台城，江南凋敝。",
       "startAbs": 6576,
@@ -2944,7 +3014,6 @@
     },
     {
       "kind": "politics",
-      "precision": "year",
       "dynastyIds": [
         "wei-north"
       ],
@@ -2958,12 +3027,14 @@
       "start": {
         "year": 471,
         "month": 1,
-        "abs": 5652
+        "abs": 5652,
+        "confidence": "year"
       },
       "end": {
         "year": 499,
         "month": 1,
-        "abs": 5988
+        "abs": 5988,
+        "confidence": "year"
       },
       "summary": "孝文帝迁都洛阳，改姓元，推行均田制与汉化政策。",
       "startAbs": 5652,
@@ -2972,7 +3043,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "wei-north",
         "wei-east",
@@ -2988,7 +3058,8 @@
       "at": {
         "year": 534,
         "month": 12,
-        "abs": 6419
+        "abs": 6419,
+        "confidence": "year"
       },
       "summary": "孝武帝西迁，高欢立孝静帝于邺；次年宇文泰杀孝武帝立文帝于长安，北魏分裂。",
       "atAbs": 6419
@@ -2996,7 +3067,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhou-bei",
         "qi-bei"
@@ -3011,7 +3081,8 @@
       "at": {
         "year": 577,
         "month": 12,
-        "abs": 6935
+        "abs": 6935,
+        "confidence": "year"
       },
       "summary": "北周武帝攻灭北齐，北方重归统一。",
       "atAbs": 6935
@@ -3019,7 +3090,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "liang-nan",
         "wei-north"
@@ -3033,7 +3103,8 @@
       "at": {
         "year": 528,
         "month": 12,
-        "abs": 6347
+        "abs": 6347,
+        "confidence": "year"
       },
       "summary": "陈庆之率七千白袍军护送元颢入洛，威震北魏。",
       "atAbs": 6347
@@ -3041,7 +3112,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "wei-north"
       ],
@@ -3054,7 +3124,8 @@
       "at": {
         "year": 528,
         "month": 12,
-        "abs": 6347
+        "abs": 6347,
+        "confidence": "year"
       },
       "summary": "尔朱荣于河阴屠杀北魏公卿两千余人，后诛杀孝明帝。",
       "atAbs": 6347
@@ -3691,7 +3762,7 @@
     ],
     "notes": [
       "覆盖南北朝（420–589），含386年立国的北魏；北朝含北魏、东魏、西魏、北齐、北周，南朝含刘宋、南齐、南梁、南陈；江陵西梁（555–587）在 nanbei-sixteen-extra，同属 nan-chao。",
-      "全部53位君主在位日取维基百科君主条目公历换算（已核定公历日期直接记录在缓存，precision=day）。",
+      "全部53位君主在位日取维基百科君主条目公历换算（已核定公历日期直接记录在缓存，confidence=day）。",
       "刘裕（liu-yu-jin）复用 jin-sixteen 已有 id；北魏 id 为 wei-north，避免与曹魏 wei 冲突；东魏 wei-east、西魏 wei-west。",
       "东魏、西魏按通行史书习惯分期各占一行（与北齐、北周并列），不用北魏 claim_track。孝武帝仍属北魏（至535年2月3日）；孝静帝属东魏；文帝→废帝→恭帝属西魏。",
       "南梁 id 为 liang-nan，与十六国南凉 liang-south 区分。",

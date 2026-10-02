@@ -17,14 +17,14 @@ const fail = (message: string): never => { throw new Error(message); };
 const hydrate = (row: Record<string, unknown>) => Object.fromEntries(Object.entries(row).map(([key, raw]) => {
   let value = raw;
   if (["alt_names", "roles", "links", "search_terms", "phase_dynasty_ids", "altNames", "phaseDynastyIds", "searchTerms"].includes(key) && typeof raw === "string") value = JSON.parse(raw);
-  if (["is_informal_monarch", "is_approximate", "is_main", "isInformalMonarch", "isApproximate", "isMain"].includes(key) && raw != null) value = Boolean(raw);
+  if (["is_informal_monarch", "is_main", "isInformalMonarch", "isMain"].includes(key) && raw != null) value = Boolean(raw);
   if (["longitude", "latitude"].includes(key) && raw != null) value = Number(raw);
   return [key.replace(/_([a-z])/g, (_, c: string) => c.toUpperCase()), value];
 }));
 const rawHydrate = (row: Record<string, unknown>) => Object.fromEntries(Object.entries(row).map(([key, raw]) => {
   let value = raw;
   if (["alt_names", "roles", "links", "search_terms", "phase_dynasty_ids"].includes(key) && typeof raw === "string") value = JSON.parse(raw);
-  if (["is_informal_monarch", "is_approximate", "is_main"].includes(key) && raw != null) value = Boolean(raw);
+  if (["is_informal_monarch", "is_main"].includes(key) && raw != null) value = Boolean(raw);
   if (["longitude", "latitude"].includes(key) && raw != null) value = Number(raw);
   return [key, value];
 }));

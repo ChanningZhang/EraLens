@@ -36,11 +36,11 @@ export function eventYear(year) {
 }
 
 /**
- * Year-precision `at` uses month 12 (lane year-end). January is the old
- * placeholder and is rewritten; a real January must be `precision: month`.
+ * Year-confidence `at` uses month 12 (lane year-end). January is the old
+ * placeholder and is rewritten; explicit month confidence preserves January.
  */
-export function normalizeYearPrecisionAt(at, precision = "year") {
-  if (!at || precision !== "year" || at.day != null) return at;
+export function normalizeYearPrecisionAt(at, confidence = "year") {
+  if (!at || confidence !== "year" || at.day != null) return at;
   if (at.month !== 1) return at;
   return ym(at.year, 12);
 }
@@ -52,6 +52,13 @@ export function formatAppellationCsv(values) {
   if (!values?.length) return null;
   const cleaned = values.map((v) => String(v).trim()).filter(Boolean);
   return cleaned.length ? cleaned.join(",") : null;
+}
+
+export function endpointDateConfidence(explicit, date = null) {
+  if (explicit) return explicit;
+  if (date?.day != null) return "day";
+  if (date?.month != null && date.month !== 1) return "month";
+  return "year";
 }
 
 export function parseAppellationCsv(raw) {
@@ -104,9 +111,6 @@ export function reign({
   start,
   end,
   endAbs: explicitEndAbs = null,
-  precision = "year",
-  startDateConfidence = null,
-  endDateConfidence = null,
   eraNames = [],
   claimTrack = null,
   claimLabel = null,
@@ -124,9 +128,6 @@ export function reign({
     end,
     startAbs: start.abs,
     endAbs: explicitEndAbs ?? end?.abs ?? null,
-    precision,
-    startDateConfidence,
-    endDateConfidence,
     claimTrack,
     claimLabel,
     claimRole,
@@ -167,16 +168,14 @@ export function dr(dynastyId, personId, title, posthumous, temple, sy, ey, eraLi
 
 
 export function eventPoint(partial) {
-  const precision = partial.precision ?? "year";
-  const at = normalizeYearPrecisionAt(partial.at, precision);
+  const atConfidence = endpointDateConfidence(partial.at?.confidence ?? partial.atConfidence, partial.at);
+  const at = normalizeYearPrecisionAt(partial.at, atConfidence);
   return {
     kind: "other",
     timeMode: "point",
-    precision: "year",
     dynastyIds: [],
     participantIds: [],
     ...partial,
-    precision,
     at,
     atAbs: at.abs,
   };
@@ -197,16 +196,14 @@ export function idiomPoint(partial) {
 export function eventRange(partial) {
   const start = partial.start;
   const end = partial.end;
-  const precision = partial.precision ?? "year";
-  const at = partial.at ? normalizeYearPrecisionAt(partial.at, precision) : undefined;
+  const atConfidence = endpointDateConfidence(partial.at?.confidence ?? partial.atConfidence, partial.at);
+  const at = partial.at ? normalizeYearPrecisionAt(partial.at, atConfidence) : undefined;
   return {
     kind: "other",
     timeMode: "span",
-    precision: "year",
     dynastyIds: [],
     participantIds: [],
     ...partial,
-    precision,
     start,
     end,
     startAbs: start.abs,
@@ -222,9 +219,9 @@ export function successionPairs(list) {
 }
 
 export function personSql(p) {
-  return `INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, death_year, death_month, roles, bio, links, posthumous_name, temple_name, title)
-VALUES (${sqlStr(p.id)}, ${sqlStr(p.name)}, ${sqlArray(p.altNames ?? [])}, ${sqlStr(p.ancestralXing ?? null)}, ${sqlStr(p.clanShi ?? null)}, ${p.birth?.year ?? "NULL"}, ${p.birth?.month ?? "NULL"}, ${p.death?.year ?? "NULL"}, ${p.death?.month ?? "NULL"}, ${sqlArray(p.roles)}, ${sqlStr(p.bio)}, ${sqlJson(p.links)}, ${sqlStr(formatAppellationCsv(p.posthumousNames))}, ${sqlStr(formatAppellationCsv(p.templeNames))}, ${sqlStr(p.title ?? null)})
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, title = EXCLUDED.title;`;
+  return `INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, birth_day, birth_confidence, death_year, death_month, death_day, death_confidence, roles, bio, links, posthumous_name, temple_name, title)
+VALUES (${sqlStr(p.id)}, ${sqlStr(p.name)}, ${sqlArray(p.altNames ?? [])}, ${sqlStr(p.ancestralXing ?? null)}, ${sqlStr(p.clanShi ?? null)}, ${p.birth?.year ?? "NULL"}, ${p.birth?.month ?? "NULL"}, ${p.birth?.day ?? "NULL"}, ${sqlStr(p.birth ? p.birth.confidence ?? (p.birth.month !== 1 ? "month" : "year") : null)}, ${p.death?.year ?? "NULL"}, ${p.death?.month ?? "NULL"}, ${p.death?.day ?? "NULL"}, ${sqlStr(p.death ? p.death.confidence ?? (p.death.month !== 1 ? "month" : "year") : null)}, ${sqlArray(p.roles)}, ${sqlStr(p.bio)}, ${sqlJson(p.links)}, ${sqlStr(formatAppellationCsv(p.posthumousNames))}, ${sqlStr(formatAppellationCsv(p.templeNames))}, ${sqlStr(p.title ?? null)})
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, birth_day = EXCLUDED.birth_day, birth_confidence = EXCLUDED.birth_confidence, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, death_day = EXCLUDED.death_day, death_confidence = EXCLUDED.death_confidence, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, title = EXCLUDED.title;`;
 }
 
 export function dynastyLaneGroupSql(group) {
@@ -234,9 +231,9 @@ ON CONFLICT (id) DO UPDATE SET primary_dynasty_id = EXCLUDED.primary_dynasty_id,
 }
 
 export function dynastyGroupSql(g) {
-  return `INSERT INTO dynasty_groups (id, name, alt_names, scope, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, note)
-VALUES (${sqlStr(g.id)}, ${sqlStr(g.name)}, ${sqlArray(g.altNames ?? [])}, ${sqlStr(g.scope ?? "cn")}, ${g.start.year}, ${g.start.month}, ${g.end.year}, ${g.end.month}, ${g.start.abs}, ${g.end.abs}, ${sqlStr(g.precision ?? "year")}, ${sqlStr(g.note ?? null)})
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, scope = EXCLUDED.scope, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, note = EXCLUDED.note;`;
+  return `INSERT INTO dynasty_groups (id, name, alt_names, scope, start_year, start_month, start_day, start_confidence, end_year, end_month, end_day, end_confidence, start_abs, end_abs, note)
+VALUES (${sqlStr(g.id)}, ${sqlStr(g.name)}, ${sqlArray(g.altNames ?? [])}, ${sqlStr(g.scope ?? "cn")}, ${g.start.year}, ${g.start.month}, ${g.start.day ?? "NULL"}, ${sqlStr(endpointDateConfidence(g.start.confidence, g.start))}, ${g.end.year}, ${g.end.month}, ${g.end.day ?? "NULL"}, ${sqlStr(endpointDateConfidence(g.end.confidence, g.end))}, ${g.start.abs}, ${g.end.abs}, ${sqlStr(g.note ?? null)})
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, scope = EXCLUDED.scope, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_confidence = EXCLUDED.start_confidence, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_confidence = EXCLUDED.end_confidence, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, note = EXCLUDED.note;`;
 }
 
 /** DB NOT NULL placeholder; runtime lane colors are assigned in the frontend. */
@@ -244,9 +241,9 @@ export const LEGACY_COLOR_TOKEN = "ochre";
 
 export function dynastySql(d) {
   const groupId = d.groupId ? sqlStr(d.groupId) : "NULL";
-  return `INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, end_year, end_month, start_abs, end_abs, precision, color_token, parent_id, group_id, note)
-VALUES (${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlArray(d.altNames)}, ${sqlStr(d.scope)}, ${sqlStr(d.region)}, ${d.start.year}, ${d.start.month}, ${d.end.year}, ${d.end.month}, ${d.start.abs}, ${d.end.abs}, ${sqlStr(d.precision)}, ${sqlStr(LEGACY_COLOR_TOKEN)}, NULL, ${groupId}, ${sqlStr(d.note)})
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, group_id = EXCLUDED.group_id, note = EXCLUDED.note;`;
+  return `INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, start_day, start_confidence, end_year, end_month, end_day, end_confidence, start_abs, end_abs, color_token, parent_id, group_id, note)
+VALUES (${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlArray(d.altNames)}, ${sqlStr(d.scope)}, ${sqlStr(d.region)}, ${d.start.year}, ${d.start.month}, ${d.start.day ?? "NULL"}, ${sqlStr(endpointDateConfidence(d.start.confidence, d.start))}, ${d.end.year}, ${d.end.month}, ${d.end.day ?? "NULL"}, ${sqlStr(endpointDateConfidence(d.end.confidence, d.end))}, ${d.start.abs}, ${d.end.abs}, ${sqlStr(LEGACY_COLOR_TOKEN)}, NULL, ${groupId}, ${sqlStr(d.note)})
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_confidence = EXCLUDED.start_confidence, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_confidence = EXCLUDED.end_confidence, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, group_id = EXCLUDED.group_id, note = EXCLUDED.note;`;
 }
 
 export function reignSql(r) {
@@ -267,17 +264,22 @@ export function reignSql(r) {
   const mainCol = isMain != null ? ", is_main" : "";
   const mainVal = isMain != null ? `, ${isMain}` : "";
   const mainUpdate = isMain != null ? ", is_main = EXCLUDED.is_main" : "";
-  return `INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, start_date_confidence, end_date_confidence${claimCols}${informalCol}${mainCol})
-VALUES (${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(r.title ?? null)}, ${sqlStr(formatAppellationCsv(r.eraNames))}, ${r.start.year}, ${r.start.month}, ${r.start.day ?? "NULL"}, ${r.end?.year ?? "NULL"}, ${r.end?.month ?? "NULL"}, ${r.end?.day ?? "NULL"}, ${r.startAbs}, ${r.endAbs ?? "NULL"}, ${sqlStr(r.precision)}, ${sqlStr(r.startDateConfidence ?? null)}, ${sqlStr(r.endDateConfidence ?? null)}${claimVals}${informalVal}${mainVal})
-ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence${claimUpdates}${informalUpdate}${mainUpdate};`;
+  const startConfidence = endpointDateConfidence(r.start.confidence ?? r.startConfidence, r.start);
+  const endConfidence = endpointDateConfidence(r.end?.confidence ?? r.endConfidence, r.end);
+  return `INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, start_confidence, end_confidence${claimCols}${informalCol}${mainCol})
+VALUES (${sqlStr(r.id)}, ${sqlStr(r.dynastyId)}, ${sqlStr(r.personId)}, ${sqlStr(r.title ?? null)}, ${sqlStr(formatAppellationCsv(r.eraNames))}, ${r.start.year}, ${r.start.month}, ${r.start.day ?? "NULL"}, ${r.end?.year ?? "NULL"}, ${r.end?.month ?? "NULL"}, ${r.end?.day ?? "NULL"}, ${r.startAbs}, ${r.endAbs ?? "NULL"}, ${sqlStr(startConfidence)}, ${sqlStr(endConfidence)}${claimVals}${informalVal}${mainVal})
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, start_confidence = EXCLUDED.start_confidence, end_confidence = EXCLUDED.end_confidence${claimUpdates}${informalUpdate}${mainUpdate};`;
 }
 
 export function eventSql(e) {
   const at = e.at;
-  const cols = ["id", "name", "kind", "time_mode", "precision", "is_approximate", "date_note", "at_year", "at_month", "at_day", "at_abs", "start_year", "start_month", "start_day", "start_abs", "end_year", "end_month", "end_day", "end_abs", "summary", "meaning", "content", "location_id"];
-  const vals = [sqlStr(e.id), sqlStr(e.name), sqlStr(e.kind), sqlStr(e.timeMode), sqlStr(e.precision), e.isApproximate ? "TRUE" : "FALSE", sqlStr(e.dateNote ?? null), at?.year ?? "NULL", at?.month ?? "NULL", at?.day ?? "NULL", at?.abs ?? e.atAbs ?? "NULL", e.start?.year ?? "NULL", e.start?.month ?? "NULL", e.start?.day ?? "NULL", e.startAbs ?? "NULL", e.end?.year ?? "NULL", e.end?.month ?? "NULL", e.end?.day ?? "NULL", e.endAbs ?? "NULL", sqlStr(e.summary ?? null), sqlStr(e.meaning ?? null), sqlStr(e.content ?? null), sqlStr(e.locationId ?? null)];
+  const atConfidence = endpointDateConfidence(at?.confidence ?? e.atConfidence, at);
+  const startConfidence = endpointDateConfidence(e.start?.confidence ?? e.startConfidence, e.start);
+  const endConfidence = endpointDateConfidence(e.end?.confidence ?? e.endConfidence, e.end);
+  const cols = ["id", "name", "kind", "time_mode", "at_confidence", "start_confidence", "end_confidence", "date_note", "at_year", "at_month", "at_day", "at_abs", "start_year", "start_month", "start_day", "start_abs", "end_year", "end_month", "end_day", "end_abs", "summary", "meaning", "content", "location_id"];
+  const vals = [sqlStr(e.id), sqlStr(e.name), sqlStr(e.kind), sqlStr(e.timeMode), sqlStr(at ? atConfidence : null), sqlStr(e.start ? startConfidence : null), sqlStr(e.end ? endConfidence : null), sqlStr(e.dateNote ?? null), at?.year ?? "NULL", at?.month ?? "NULL", at?.day ?? "NULL", at?.abs ?? e.atAbs ?? "NULL", e.start?.year ?? "NULL", e.start?.month ?? "NULL", e.start?.day ?? "NULL", e.startAbs ?? "NULL", e.end?.year ?? "NULL", e.end?.month ?? "NULL", e.end?.day ?? "NULL", e.endAbs ?? "NULL", sqlStr(e.summary ?? null), sqlStr(e.meaning ?? null), sqlStr(e.content ?? null), sqlStr(e.locationId ?? null)];
   return `INSERT INTO events (${cols.join(", ")}) VALUES (${vals.join(", ")})
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, precision = EXCLUDED.precision, is_approximate = EXCLUDED.is_approximate, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning, content = EXCLUDED.content, location_id = EXCLUDED.location_id;`;
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, at_confidence = EXCLUDED.at_confidence, start_confidence = EXCLUDED.start_confidence, end_confidence = EXCLUDED.end_confidence, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning, content = EXCLUDED.content, location_id = EXCLUDED.location_id;`;
 }
 
 export function eventLocationSql(location) {
@@ -294,13 +296,15 @@ function parseRef(raw) {
 export function relationSql(r) {
   const from = parseRef(r.fromRef);
   const to = parseRef(r.toRef);
-  return `INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_day, at_abs, precision, event_id) VALUES (${sqlStr(r.id)}, ${sqlStr(from.type)}, ${sqlStr(from.id)}, ${sqlStr(to.type)}, ${sqlStr(to.id)}, ${sqlStr(r.kind)}, ${r.at?.year ?? "NULL"}, ${r.at?.month ?? "NULL"}, ${r.at?.day ?? "NULL"}, ${r.atAbs ?? "NULL"}, ${sqlStr(r.precision ?? null)}, ${sqlStr(r.eventId ?? null)}) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, precision = EXCLUDED.precision, event_id = EXCLUDED.event_id;`;
+  return `INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_day, at_abs, at_confidence, event_id) VALUES (${sqlStr(r.id)}, ${sqlStr(from.type)}, ${sqlStr(from.id)}, ${sqlStr(to.type)}, ${sqlStr(to.id)}, ${sqlStr(r.kind)}, ${r.at?.year ?? "NULL"}, ${r.at?.month ?? "NULL"}, ${r.at?.day ?? "NULL"}, ${r.atAbs ?? "NULL"}, ${sqlStr(endpointDateConfidence(r.at?.confidence ?? r.atConfidence, r.at))}, ${sqlStr(r.eventId ?? null)}) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, at_confidence = EXCLUDED.at_confidence, event_id = EXCLUDED.event_id;`;
 }
 
 export function dynastyCapitalSql(c) {
-  return `INSERT INTO dynasty_capitals (id, dynasty_id, historical_name, modern_name, longitude, latitude, coordinate_system, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, precision, end_precision, start_date_confidence, end_date_confidence, role, claim_track, note, links)
-VALUES (${sqlStr(c.id)}, ${sqlStr(c.dynastyId)}, ${sqlStr(c.historicalName)}, ${sqlStr(c.modernName)}, ${c.longitude}, ${c.latitude}, ${sqlStr(c.coordinateSystem ?? "GCJ02")}, ${c.start.year}, ${c.start.month}, ${c.start.day ?? "NULL"}, ${c.end.year}, ${c.end.month}, ${c.end.day ?? "NULL"}, ${c.startAbs}, ${c.endAbs}, ${sqlStr(c.precision ?? "year")}, ${sqlStr(c.endPrecision ?? null)}, ${sqlStr(c.startDateConfidence ?? null)}, ${sqlStr(c.endDateConfidence ?? null)}, ${sqlStr(c.role ?? "primary")}, ${sqlStr(c.claimTrack ?? null)}, ${sqlStr(c.note ?? null)}, ${sqlJson(c.links ?? [])})
-ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, precision = EXCLUDED.precision, end_precision = EXCLUDED.end_precision, start_date_confidence = EXCLUDED.start_date_confidence, end_date_confidence = EXCLUDED.end_date_confidence, role = EXCLUDED.role, claim_track = EXCLUDED.claim_track, note = EXCLUDED.note, links = EXCLUDED.links;`;
+  const startConfidence = endpointDateConfidence(c.start?.confidence ?? c.startConfidence, c.start);
+  const endConfidence = endpointDateConfidence(c.end?.confidence ?? c.endConfidence, c.end);
+  return `INSERT INTO dynasty_capitals (id, dynasty_id, historical_name, modern_name, longitude, latitude, coordinate_system, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, start_confidence, end_confidence, role, claim_track, note, links)
+VALUES (${sqlStr(c.id)}, ${sqlStr(c.dynastyId)}, ${sqlStr(c.historicalName)}, ${sqlStr(c.modernName)}, ${c.longitude}, ${c.latitude}, ${sqlStr(c.coordinateSystem ?? "GCJ02")}, ${c.start.year}, ${c.start.month}, ${c.start.day ?? "NULL"}, ${c.end.year}, ${c.end.month}, ${c.end.day ?? "NULL"}, ${c.startAbs}, ${c.endAbs}, ${sqlStr(startConfidence)}, ${sqlStr(endConfidence)}, ${sqlStr(c.role ?? "primary")}, ${sqlStr(c.claimTrack ?? null)}, ${sqlStr(c.note ?? null)}, ${sqlJson(c.links ?? [])})
+ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, start_confidence = EXCLUDED.start_confidence, end_confidence = EXCLUDED.end_confidence, role = EXCLUDED.role, claim_track = EXCLUDED.claim_track, note = EXCLUDED.note, links = EXCLUDED.links;`;
 }
 
 /** Write a cache of already-resolved records without applying data-specific transformations. */

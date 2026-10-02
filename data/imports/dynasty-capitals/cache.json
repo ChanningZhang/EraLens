@@ -19,16 +19,17 @@
       "start": {
         "year": -614,
         "month": 1,
-        "abs": -7356
+        "abs": -7356,
+        "confidence": "year"
       },
       "end": {
         "year": -256,
         "month": 12,
-        "abs": -3049
+        "abs": -3049,
+        "confidence": "month"
       },
       "startAbs": -7356,
       "endAbs": -3049,
-      "precision": "year",
       "role": "primary",
       "note": "邾文公于鲁文公十三年（前614）卜迁于绎，遗址位于今邹城市峄山南麓；仅覆盖有明确迁都年代的阶段。",
       "links": [
@@ -53,16 +54,17 @@
       "start": {
         "year": 618,
         "month": 1,
-        "abs": 7416
+        "abs": 7416,
+        "confidence": "year"
       },
       "end": {
         "year": 619,
         "month": 12,
-        "abs": 7439
+        "abs": 7439,
+        "confidence": "month"
       },
       "startAbs": 7416,
       "endAbs": 7439,
-      "precision": "year",
       "role": "primary",
       "note": "宇文化及兵败后退至魏县并在此称帝建立许政权。现址采用今大名县魏城村旧魏县治定位；起讫仅按年精度记载。",
       "links": [
@@ -87,16 +89,17 @@
       "start": {
         "year": -2804,
         "month": 1,
-        "abs": -33636
+        "abs": -33636,
+        "confidence": "year"
       },
       "end": {
         "year": -2465,
         "month": 12,
-        "abs": -29557
+        "abs": -29557,
+        "confidence": "month"
       },
       "startAbs": -33636,
       "endAbs": -29557,
-      "precision": "year",
       "role": "primary",
       "note": "三皇传说都城，伏羲女娲神农皆传都宛丘（陈）。",
       "links": [
@@ -117,16 +120,17 @@
       "start": {
         "year": -2464,
         "month": 1,
-        "abs": -29556
+        "abs": -29556,
+        "confidence": "year"
       },
       "end": {
         "year": -2357,
         "month": 12,
-        "abs": -28261
+        "abs": -28261,
+        "confidence": "month"
       },
       "startAbs": -29556,
       "endAbs": -28261,
-      "precision": "year",
       "role": "primary",
       "note": "黄帝轩辕氏传说都城有熊（新郑）。",
       "links": [
@@ -147,16 +151,17 @@
       "start": {
         "year": -2356,
         "month": 1,
-        "abs": -28260
+        "abs": -28260,
+        "confidence": "year"
       },
       "end": {
         "year": -2209,
         "month": 12,
-        "abs": -26485
+        "abs": -26485,
+        "confidence": "month"
       },
       "startAbs": -28260,
       "endAbs": -26485,
-      "precision": "year",
       "role": "primary",
       "note": "帝颛顼高阳氏都帝丘。",
       "links": [
@@ -177,16 +182,17 @@
       "start": {
         "year": -2208,
         "month": 1,
-        "abs": -26484
+        "abs": -26484,
+        "confidence": "year"
       },
       "end": {
         "year": -2140,
         "month": 12,
-        "abs": -25657
+        "abs": -25657,
+        "confidence": "month"
       },
       "startAbs": -26484,
       "endAbs": -25657,
-      "precision": "year",
       "role": "primary",
       "note": "帝喾高辛氏及帝挚都亳。",
       "links": [
@@ -207,16 +213,17 @@
       "start": {
         "year": -2139,
         "month": 1,
-        "abs": -25656
+        "abs": -25656,
+        "confidence": "year"
       },
       "end": {
         "year": -2071,
         "month": 12,
-        "abs": -24829
+        "abs": -24829,
+        "confidence": "month"
       },
       "startAbs": -25656,
       "endAbs": -24829,
-      "precision": "year",
       "role": "primary",
       "note": "帝尧、帝舜都平阳。",
       "links": [
@@ -237,16 +244,17 @@
       "start": {
         "year": -2070,
         "month": 1,
-        "abs": -24828
+        "abs": -24828,
+        "confidence": "year"
       },
       "end": {
         "year": -1990,
         "month": 12,
-        "abs": -23857
+        "abs": -23857,
+        "confidence": "month"
       },
       "startAbs": -24828,
       "endAbs": -23857,
-      "precision": "year",
       "role": "primary",
       "note": "夏禹都阳城。",
       "links": [
@@ -267,16 +275,17 @@
       "start": {
         "year": -1989,
         "month": 1,
-        "abs": -23856
+        "abs": -23856,
+        "confidence": "year"
       },
       "end": {
         "year": -1900,
         "month": 12,
-        "abs": -22777
+        "abs": -22777,
+        "confidence": "month"
       },
       "startAbs": -23856,
       "endAbs": -22777,
-      "precision": "year",
       "role": "primary",
       "note": "夏启、相等帝丘。",
       "links": [
@@ -297,16 +306,17 @@
       "start": {
         "year": -1899,
         "month": 1,
-        "abs": -22776
+        "abs": -22776,
+        "confidence": "year"
       },
       "end": {
         "year": -1700,
         "month": 12,
-        "abs": -20377
+        "abs": -20377,
+        "confidence": "month"
       },
       "startAbs": -22776,
       "endAbs": -20377,
-      "precision": "year",
       "role": "primary",
       "note": "太康失国后夏多都斟鄩。",
       "links": [
@@ -327,16 +337,17 @@
       "start": {
         "year": -1699,
         "month": 1,
-        "abs": -20376
+        "abs": -20376,
+        "confidence": "year"
       },
       "end": {
         "year": -1600,
         "month": 12,
-        "abs": -19177
+        "abs": -19177,
+        "confidence": "month"
       },
       "startAbs": -20376,
       "endAbs": -19177,
-      "precision": "year",
       "role": "primary",
       "note": "夏桀都西河。",
       "links": [
@@ -357,16 +368,17 @@
       "start": {
         "year": -1600,
         "month": 1,
-        "abs": -19188
+        "abs": -19188,
+        "confidence": "year"
       },
       "end": {
         "year": -1300,
         "month": 12,
-        "abs": -15577
+        "abs": -15577,
+        "confidence": "month"
       },
       "startAbs": -19188,
       "endAbs": -15577,
-      "precision": "year",
       "role": "primary",
       "note": "商初都亳。",
       "links": [
@@ -387,16 +399,17 @@
       "start": {
         "year": -1299,
         "month": 1,
-        "abs": -15576
+        "abs": -15576,
+        "confidence": "year"
       },
       "end": {
         "year": -1210,
         "month": 12,
-        "abs": -14497
+        "abs": -14497,
+        "confidence": "month"
       },
       "startAbs": -15576,
       "endAbs": -14497,
-      "precision": "year",
       "role": "primary",
       "note": "商中期西亳（偃师）。",
       "links": [
@@ -417,16 +430,17 @@
       "start": {
         "year": -1209,
         "month": 1,
-        "abs": -14496
+        "abs": -14496,
+        "confidence": "year"
       },
       "end": {
         "year": -1046,
         "month": 12,
-        "abs": -12529
+        "abs": -12529,
+        "confidence": "month"
       },
       "startAbs": -14496,
       "endAbs": -12529,
-      "precision": "year",
       "role": "primary",
       "note": "盘庚迁殷后商都殷。",
       "links": [
@@ -447,16 +461,17 @@
       "start": {
         "year": -1046,
         "month": 1,
-        "abs": -12540
+        "abs": -12540,
+        "confidence": "year"
       },
       "end": {
         "year": -771,
         "month": 12,
-        "abs": -9229
+        "abs": -9229,
+        "confidence": "month"
       },
       "startAbs": -12540,
       "endAbs": -9229,
-      "precision": "year",
       "role": "primary",
       "note": "西周都城镐京（宗周）。",
       "links": [
@@ -477,16 +492,17 @@
       "start": {
         "year": -770,
         "month": 1,
-        "abs": -9228
+        "abs": -9228,
+        "confidence": "year"
       },
       "end": {
         "year": -520,
         "month": 12,
-        "abs": -6217
+        "abs": -6217,
+        "confidence": "month"
       },
       "startAbs": -9228,
       "endAbs": -6217,
-      "precision": "year",
       "role": "primary",
       "note": "平王东迁后都王城；今址为洛阳市西工区东周王城遗址。",
       "links": [
@@ -507,17 +523,17 @@
       "start": {
         "year": -519,
         "month": 1,
-        "abs": -6216
+        "abs": -6216,
+        "confidence": "year"
       },
       "end": {
         "year": -315,
         "month": 12,
-        "abs": -3757
+        "abs": -3757,
+        "confidence": "approximate_year"
       },
       "startAbs": -6216,
       "endAbs": -3757,
-      "precision": "year",
-      "endDateConfidence": "approximate",
       "role": "primary",
       "note": "周敬王迁都成周，至赧王迁回王城；今址在白马寺以东汉魏洛阳故城一带。",
       "links": [
@@ -528,7 +544,8 @@
       ],
       "longitude": 112.618163,
       "latitude": 34.7202,
-      "coordinateSystem": "GCJ02"
+      "coordinateSystem": "GCJ02",
+      "endConfidence": "approximate_year"
     },
     {
       "id": "cap-zhou-east-wangcheng-314",
@@ -538,17 +555,17 @@
       "start": {
         "year": -314,
         "month": 1,
-        "abs": -3756
+        "abs": -3756,
+        "confidence": "approximate_year"
       },
       "end": {
         "year": -256,
         "month": 12,
-        "abs": -3049
+        "abs": -3049,
+        "confidence": "month"
       },
       "startAbs": -3756,
       "endAbs": -3049,
-      "precision": "year",
-      "startDateConfidence": "approximate",
       "role": "primary",
       "note": "周赧王时期迁居西周国王城，具体年份未详；前314年仅作约年起点。今址为洛阳市西工区东周王城遗址。",
       "links": [
@@ -559,7 +576,8 @@
       ],
       "longitude": 112.414181,
       "latitude": 34.67794,
-      "coordinateSystem": "GCJ02"
+      "coordinateSystem": "GCJ02",
+      "startConfidence": "approximate_year"
     },
     {
       "id": "cap-cao-chunqiu-taoqiu-1046",
@@ -569,16 +587,17 @@
       "start": {
         "year": -1046,
         "month": 1,
-        "abs": -12540
+        "abs": -12540,
+        "confidence": "year"
       },
       "end": {
         "year": -487,
         "month": 12,
-        "abs": -5821
+        "abs": -5821,
+        "confidence": "month"
       },
       "startAbs": -12540,
       "endAbs": -5821,
-      "precision": "year",
       "role": "primary",
       "note": "曹国都城陶丘。",
       "links": [
@@ -599,16 +618,17 @@
       "start": {
         "year": -1046,
         "month": 1,
-        "abs": -12540
+        "abs": -12540,
+        "confidence": "year"
       },
       "end": {
         "year": -221,
         "month": 12,
-        "abs": -2629
+        "abs": -2629,
+        "confidence": "month"
       },
       "startAbs": -12540,
       "endAbs": -2629,
-      "precision": "year",
       "role": "primary",
       "note": "齐国都城临淄。",
       "links": [
@@ -629,16 +649,17 @@
       "start": {
         "year": -1044,
         "month": 1,
-        "abs": -12516
+        "abs": -12516,
+        "confidence": "year"
       },
       "end": {
         "year": -222,
         "month": 12,
-        "abs": -2641
+        "abs": -2641,
+        "confidence": "month"
       },
       "startAbs": -12516,
       "endAbs": -2641,
-      "precision": "year",
       "role": "primary",
       "note": "燕国都城蓟。",
       "links": [
@@ -659,16 +680,17 @@
       "start": {
         "year": -1042,
         "month": 1,
-        "abs": -12492
+        "abs": -12492,
+        "confidence": "year"
       },
       "end": {
         "year": -256,
         "month": 12,
-        "abs": -3049
+        "abs": -3049,
+        "confidence": "month"
       },
       "startAbs": -12492,
       "endAbs": -3049,
-      "precision": "year",
       "role": "primary",
       "note": "鲁国都城曲阜。",
       "links": [
@@ -689,16 +711,17 @@
       "start": {
         "year": -1042,
         "month": 1,
-        "abs": -12492
+        "abs": -12492,
+        "confidence": "year"
       },
       "end": {
         "year": -585,
         "month": 12,
-        "abs": -6997
+        "abs": -6997,
+        "confidence": "month"
       },
       "startAbs": -12492,
       "endAbs": -6997,
-      "precision": "year",
       "role": "primary",
       "note": "晋国初都绛。",
       "links": [
@@ -719,16 +742,17 @@
       "start": {
         "year": -584,
         "month": 1,
-        "abs": -6996
+        "abs": -6996,
+        "confidence": "year"
       },
       "end": {
         "year": -349,
         "month": 12,
-        "abs": -4165
+        "abs": -4165,
+        "confidence": "month"
       },
       "startAbs": -6996,
       "endAbs": -4165,
-      "precision": "year",
       "role": "primary",
       "note": "晋景公迁新绛。",
       "links": [
@@ -749,16 +773,17 @@
       "start": {
         "year": -1042,
         "month": 1,
-        "abs": -12492
+        "abs": -12492,
+        "confidence": "year"
       },
       "end": {
         "year": -689,
         "month": 12,
-        "abs": -8245
+        "abs": -8245,
+        "confidence": "month"
       },
       "startAbs": -12492,
       "endAbs": -8245,
-      "precision": "year",
       "role": "primary",
       "note": "楚国初都丹阳。",
       "links": [
@@ -779,16 +804,17 @@
       "start": {
         "year": -688,
         "month": 1,
-        "abs": -8244
+        "abs": -8244,
+        "confidence": "year"
       },
       "end": {
         "year": -278,
         "month": 12,
-        "abs": -3313
+        "abs": -3313,
+        "confidence": "month"
       },
       "startAbs": -8244,
       "endAbs": -3313,
-      "precision": "year",
       "role": "primary",
       "note": "楚武王后都郢（纪南城）。",
       "links": [
@@ -809,16 +835,17 @@
       "start": {
         "year": -277,
         "month": 1,
-        "abs": -3312
+        "abs": -3312,
+        "confidence": "year"
       },
       "end": {
         "year": -241,
         "month": 12,
-        "abs": -2869
+        "abs": -2869,
+        "confidence": "month"
       },
       "startAbs": -3312,
       "endAbs": -2869,
-      "precision": "year",
       "role": "primary",
       "note": "秦攻郢后楚昭王迁陈。",
       "links": [
@@ -839,16 +866,17 @@
       "start": {
         "year": -240,
         "month": 1,
-        "abs": -2868
+        "abs": -2868,
+        "confidence": "year"
       },
       "end": {
         "year": -223,
         "month": 12,
-        "abs": -2653
+        "abs": -2653,
+        "confidence": "month"
       },
       "startAbs": -2868,
       "endAbs": -2653,
-      "precision": "year",
       "role": "primary",
       "note": "楚考烈王迁寿春。",
       "links": [
@@ -869,16 +897,17 @@
       "start": {
         "year": -1040,
         "month": 1,
-        "abs": -12468
+        "abs": -12468,
+        "confidence": "year"
       },
       "end": {
         "year": -559,
         "month": 12,
-        "abs": -6685
+        "abs": -6685,
+        "confidence": "month"
       },
       "startAbs": -12468,
       "endAbs": -6685,
-      "precision": "year",
       "role": "primary",
       "note": "卫国初都朝歌。",
       "links": [
@@ -899,16 +928,17 @@
       "start": {
         "year": -558,
         "month": 1,
-        "abs": -6684
+        "abs": -6684,
+        "confidence": "year"
       },
       "end": {
         "year": -209,
         "month": 12,
-        "abs": -2485
+        "abs": -2485,
+        "confidence": "month"
       },
       "startAbs": -6684,
       "endAbs": -2485,
-      "precision": "year",
       "role": "primary",
       "note": "卫懿公后迁都帝丘。",
       "links": [
@@ -929,16 +959,17 @@
       "start": {
         "year": -1034,
         "month": 1,
-        "abs": -12396
+        "abs": -12396,
+        "confidence": "year"
       },
       "end": {
         "year": -286,
         "month": 12,
-        "abs": -3409
+        "abs": -3409,
+        "confidence": "month"
       },
       "startAbs": -12396,
       "endAbs": -3409,
-      "precision": "year",
       "role": "primary",
       "note": "宋国都城商丘。",
       "links": [
@@ -959,16 +990,17 @@
       "start": {
         "year": -806,
         "month": 1,
-        "abs": -9660
+        "abs": -9660,
+        "confidence": "year"
       },
       "end": {
         "year": -375,
         "month": 12,
-        "abs": -4477
+        "abs": -4477,
+        "confidence": "month"
       },
       "startAbs": -9660,
       "endAbs": -4477,
-      "precision": "year",
       "role": "primary",
       "note": "郑国都城新郑。",
       "links": [
@@ -989,16 +1021,17 @@
       "start": {
         "year": -778,
         "month": 1,
-        "abs": -9324
+        "abs": -9324,
+        "confidence": "year"
       },
       "end": {
         "year": -763,
         "month": 12,
-        "abs": -9133
+        "abs": -9133,
+        "confidence": "month"
       },
       "startAbs": -9324,
       "endAbs": -9133,
-      "precision": "year",
       "role": "primary",
       "note": "秦非子至秦文公初年都西垂；前763年秦文公东迁。",
       "links": [
@@ -1019,16 +1052,17 @@
       "start": {
         "year": -762,
         "month": 1,
-        "abs": -9132
+        "abs": -9132,
+        "confidence": "year"
       },
       "end": {
         "year": -714,
         "month": 12,
-        "abs": -8545
+        "abs": -8545,
+        "confidence": "month"
       },
       "startAbs": -9132,
       "endAbs": -8545,
-      "precision": "year",
       "role": "primary",
       "note": "秦文公四年营建汧渭之会；秦宪公二年（前714）迁都平阳。今址据考古与通行地理考证在宝鸡陈仓一带。",
       "links": [
@@ -1049,16 +1083,17 @@
       "start": {
         "year": -714,
         "month": 1,
-        "abs": -8556
+        "abs": -8556,
+        "confidence": "year"
       },
       "end": {
         "year": -677,
         "month": 12,
-        "abs": -8101
+        "abs": -8101,
+        "confidence": "month"
       },
       "startAbs": -8556,
       "endAbs": -8101,
-      "precision": "year",
       "role": "primary",
       "note": "前714年秦宪公自汧渭之会迁都平阳；故址一说在今岐山县西南，一说在陈仓区东南阳平。此处采用岐山县行政区作为地图定位。",
       "links": [
@@ -1079,16 +1114,17 @@
       "start": {
         "year": -677,
         "month": 1,
-        "abs": -8112
+        "abs": -8112,
+        "confidence": "year"
       },
       "end": {
         "year": -383,
         "month": 12,
-        "abs": -4573
+        "abs": -4573,
+        "confidence": "month"
       },
       "startAbs": -8112,
       "endAbs": -4573,
-      "precision": "year",
       "role": "primary",
       "note": "秦德公迁雍，武公后长期为秦都。",
       "links": [
@@ -1109,16 +1145,17 @@
       "start": {
         "year": -383,
         "month": 1,
-        "abs": -4584
+        "abs": -4584,
+        "confidence": "year"
       },
       "end": {
         "year": -350,
         "month": 12,
-        "abs": -4177
+        "abs": -4177,
+        "confidence": "month"
       },
       "startAbs": -4584,
       "endAbs": -4177,
-      "precision": "year",
       "role": "primary",
       "note": "前383年秦献公迁都栎阳；前350年秦孝公迁都咸阳。",
       "links": [
@@ -1139,16 +1176,17 @@
       "start": {
         "year": -350,
         "month": 1,
-        "abs": -4188
+        "abs": -4188,
+        "confidence": "year"
       },
       "end": {
         "year": -207,
         "month": 12,
-        "abs": -2461
+        "abs": -2461,
+        "confidence": "month"
       },
       "startAbs": -4188,
       "endAbs": -2461,
-      "precision": "year",
       "role": "primary",
       "note": "秦孝公迁咸阳；统一后仍为京师。",
       "links": [
@@ -1169,16 +1207,17 @@
       "start": {
         "year": -750,
         "month": 1,
-        "abs": -8988
+        "abs": -8988,
+        "confidence": "year"
       },
       "end": {
         "year": -445,
         "month": 12,
-        "abs": -5317
+        "abs": -5317,
+        "confidence": "month"
       },
       "startAbs": -8988,
       "endAbs": -5317,
-      "precision": "year",
       "role": "primary",
       "note": "杞国都城杞。",
       "links": [
@@ -1199,16 +1238,17 @@
       "start": {
         "year": -615,
         "month": 1,
-        "abs": -7368
+        "abs": -7368,
+        "confidence": "year"
       },
       "end": {
         "year": -431,
         "month": 12,
-        "abs": -5149
+        "abs": -5149,
+        "confidence": "month"
       },
       "startAbs": -7368,
       "endAbs": -5149,
-      "precision": "year",
       "role": "primary",
       "note": "莒国都城莒。",
       "links": [
@@ -1229,16 +1269,17 @@
       "start": {
         "year": -599,
         "month": 1,
-        "abs": -7176
+        "abs": -7176,
+        "confidence": "year"
       },
       "end": {
         "year": -296,
         "month": 12,
-        "abs": -3529
+        "abs": -3529,
+        "confidence": "month"
       },
       "startAbs": -7176,
       "endAbs": -3529,
-      "precision": "year",
       "role": "primary",
       "note": "滕国都城滕。",
       "links": [
@@ -1259,16 +1300,17 @@
       "start": {
         "year": -585,
         "month": 1,
-        "abs": -7008
+        "abs": -7008,
+        "confidence": "year"
       },
       "end": {
         "year": -473,
         "month": 12,
-        "abs": -5653
+        "abs": -5653,
+        "confidence": "month"
       },
       "startAbs": -7008,
       "endAbs": -5653,
-      "precision": "year",
       "role": "primary",
       "note": "吴国都城姑苏。",
       "links": [
@@ -1289,16 +1331,17 @@
       "start": {
         "year": -565,
         "month": 1,
-        "abs": -6768
+        "abs": -6768,
+        "confidence": "year"
       },
       "end": {
         "year": -469,
         "month": 12,
-        "abs": -5605
+        "abs": -5605,
+        "confidence": "month"
       },
       "startAbs": -6768,
       "endAbs": -5605,
-      "precision": "year",
       "role": "primary",
       "note": "越国初都会稽；勾践时期迁都琅琊前，会稽为都。",
       "links": [
@@ -1319,16 +1362,17 @@
       "start": {
         "year": -468,
         "month": 1,
-        "abs": -5604
+        "abs": -5604,
+        "confidence": "year"
       },
       "end": {
         "year": -380,
         "month": 12,
-        "abs": -4537
+        "abs": -4537,
+        "confidence": "month"
       },
       "startAbs": -5604,
       "endAbs": -4537,
-      "precision": "year",
       "role": "primary",
       "note": "越王勾践灭吴后迁都琅琊；翳于前379年迁都姑苏。",
       "links": [
@@ -1349,16 +1393,17 @@
       "start": {
         "year": -379,
         "month": 1,
-        "abs": -4536
+        "abs": -4536,
+        "confidence": "year"
       },
       "end": {
         "year": -361,
         "month": 12,
-        "abs": -4309
+        "abs": -4309,
+        "confidence": "month"
       },
       "startAbs": -4536,
       "endAbs": -4309,
-      "precision": "year",
       "role": "primary",
       "note": "越王翳于前379年迁都姑苏；无颛于前360年迁回会稽。",
       "links": [
@@ -1379,16 +1424,17 @@
       "start": {
         "year": -360,
         "month": 1,
-        "abs": -4308
+        "abs": -4308,
+        "confidence": "year"
       },
       "end": {
         "year": -306,
         "month": 12,
-        "abs": -3649
+        "abs": -3649,
+        "confidence": "month"
       },
       "startAbs": -4308,
       "endAbs": -3649,
-      "precision": "year",
       "role": "primary",
       "note": "越王无颛迁回会稽；越国亡于前306年。",
       "links": [
@@ -1409,16 +1455,17 @@
       "start": {
         "year": -511,
         "month": 1,
-        "abs": -6120
+        "abs": -6120,
+        "confidence": "year"
       },
       "end": {
         "year": -327,
         "month": 12,
-        "abs": -3901
+        "abs": -3901,
+        "confidence": "month"
       },
       "startAbs": -6120,
       "endAbs": -3901,
-      "precision": "year",
       "role": "primary",
       "note": "薛国都城薛。",
       "links": [
@@ -1439,16 +1486,17 @@
       "start": {
         "year": -440,
         "month": 1,
-        "abs": -5268
+        "abs": -5268,
+        "confidence": "year"
       },
       "end": {
         "year": -256,
         "month": 12,
-        "abs": -3049
+        "abs": -3049,
+        "confidence": "month"
       },
       "startAbs": -5268,
       "endAbs": -3049,
-      "precision": "year",
       "role": "primary",
       "note": "西周国都城王城（洛阳）。",
       "links": [
@@ -1469,16 +1517,17 @@
       "start": {
         "year": -424,
         "month": 1,
-        "abs": -5076
+        "abs": -5076,
+        "confidence": "year"
       },
       "end": {
         "year": -296,
         "month": 12,
-        "abs": -3529
+        "abs": -3529,
+        "confidence": "month"
       },
       "startAbs": -5076,
       "endAbs": -3529,
-      "precision": "year",
       "role": "primary",
       "note": "中山国都城灵寿。",
       "links": [
@@ -1499,16 +1548,17 @@
       "start": {
         "year": -403,
         "month": 1,
-        "abs": -4824
+        "abs": -4824,
+        "confidence": "year"
       },
       "end": {
         "year": -375,
         "month": 12,
-        "abs": -4477
+        "abs": -4477,
+        "confidence": "month"
       },
       "startAbs": -4824,
       "endAbs": -4477,
-      "precision": "year",
       "role": "primary",
       "note": "战国韩都平阳。",
       "links": [
@@ -1529,16 +1579,17 @@
       "start": {
         "year": -375,
         "month": 1,
-        "abs": -4488
+        "abs": -4488,
+        "confidence": "year"
       },
       "end": {
         "year": -230,
         "month": 12,
-        "abs": -2737
+        "abs": -2737,
+        "confidence": "month"
       },
       "startAbs": -4488,
       "endAbs": -2737,
-      "precision": "year",
       "role": "primary",
       "note": "韩哀侯迁新郑。",
       "links": [
@@ -1559,16 +1610,17 @@
       "start": {
         "year": -403,
         "month": 1,
-        "abs": -4824
+        "abs": -4824,
+        "confidence": "year"
       },
       "end": {
         "year": -386,
         "month": 12,
-        "abs": -4609
+        "abs": -4609,
+        "confidence": "month"
       },
       "startAbs": -4824,
       "endAbs": -4609,
-      "precision": "year",
       "role": "primary",
       "note": "赵国初都晋阳。",
       "links": [
@@ -1589,16 +1641,17 @@
       "start": {
         "year": -385,
         "month": 1,
-        "abs": -4608
+        "abs": -4608,
+        "confidence": "year"
       },
       "end": {
         "year": -222,
         "month": 12,
-        "abs": -2641
+        "abs": -2641,
+        "confidence": "month"
       },
       "startAbs": -4608,
       "endAbs": -2641,
-      "precision": "year",
       "role": "primary",
       "note": "赵敬侯迁邯郸。",
       "links": [
@@ -1619,16 +1672,17 @@
       "start": {
         "year": -403,
         "month": 1,
-        "abs": -4824
+        "abs": -4824,
+        "confidence": "year"
       },
       "end": {
         "year": -361,
         "month": 12,
-        "abs": -4309
+        "abs": -4309,
+        "confidence": "month"
       },
       "startAbs": -4824,
       "endAbs": -4309,
-      "precision": "year",
       "role": "primary",
       "note": "战国魏初都安邑。",
       "links": [
@@ -1649,16 +1703,17 @@
       "start": {
         "year": -360,
         "month": 1,
-        "abs": -4308
+        "abs": -4308,
+        "confidence": "year"
       },
       "end": {
         "year": -225,
         "month": 12,
-        "abs": -2677
+        "abs": -2677,
+        "confidence": "month"
       },
       "startAbs": -4308,
       "endAbs": -2677,
-      "precision": "year",
       "role": "primary",
       "note": "魏惠王迁大梁。",
       "links": [
@@ -1679,16 +1734,17 @@
       "start": {
         "year": -367,
         "month": 1,
-        "abs": -4392
+        "abs": -4392,
+        "confidence": "year"
       },
       "end": {
         "year": -249,
         "month": 12,
-        "abs": -2965
+        "abs": -2965,
+        "confidence": "month"
       },
       "startAbs": -4392,
       "endAbs": -2965,
-      "precision": "year",
       "role": "primary",
       "note": "东周国始封于巩；今址为巩义市康店镇康北村东周故城遗址。",
       "links": [
@@ -1709,16 +1765,17 @@
       "start": {
         "year": -300,
         "month": 1,
-        "abs": -3588
+        "abs": -3588,
+        "confidence": "year"
       },
       "end": {
         "year": -27,
         "month": 12,
-        "abs": -301
+        "abs": -301,
+        "confidence": "month"
       },
       "startAbs": -3588,
       "endAbs": -301,
-      "precision": "year",
       "role": "primary",
       "note": "夜郎国都城牂牁江一带，今赫章可乐遗址。",
       "links": [
@@ -1739,16 +1796,17 @@
       "start": {
         "year": -279,
         "month": 1,
-        "abs": -3336
+        "abs": -3336,
+        "confidence": "year"
       },
       "end": {
         "year": -109,
         "month": 12,
-        "abs": -1285
+        "abs": -1285,
+        "confidence": "month"
       },
       "startAbs": -3336,
       "endAbs": -1285,
-      "precision": "year",
       "role": "primary",
       "note": "滇国都城滇池（石寨山）。",
       "links": [
@@ -1769,16 +1827,17 @@
       "start": {
         "year": -228,
         "month": 1,
-        "abs": -2724
+        "abs": -2724,
+        "confidence": "year"
       },
       "end": {
         "year": -222,
         "month": 12,
-        "abs": -2641
+        "abs": -2641,
+        "confidence": "month"
       },
       "startAbs": -2724,
       "endAbs": -2641,
-      "precision": "year",
       "role": "primary",
       "note": "代国都城代。",
       "links": [
@@ -1799,16 +1858,17 @@
       "start": {
         "year": -221,
         "month": 1,
-        "abs": -2640
+        "abs": -2640,
+        "confidence": "year"
       },
       "end": {
         "year": -206,
         "month": 12,
-        "abs": -2449
+        "abs": -2449,
+        "confidence": "month"
       },
       "startAbs": -2640,
       "endAbs": -2449,
-      "precision": "year",
       "role": "primary",
       "note": "胶东国都城即墨。",
       "links": [
@@ -1829,16 +1889,17 @@
       "start": {
         "year": -206,
         "month": 1,
-        "abs": -2460
+        "abs": -2460,
+        "confidence": "year"
       },
       "end": {
         "year": -202,
         "month": 12,
-        "abs": -2401
+        "abs": -2401,
+        "confidence": "month"
       },
       "startAbs": -2460,
       "endAbs": -2401,
-      "precision": "year",
       "role": "primary",
       "note": "西楚霸王项羽都彭城。",
       "links": [
@@ -1859,16 +1920,17 @@
       "start": {
         "year": -203,
         "month": 1,
-        "abs": -2424
+        "abs": -2424,
+        "confidence": "year"
       },
       "end": {
         "year": -111,
         "month": 12,
-        "abs": -1309
+        "abs": -1309,
+        "confidence": "month"
       },
       "startAbs": -2424,
       "endAbs": -1309,
-      "precision": "year",
       "role": "primary",
       "note": "南越国都城番禺。",
       "links": [
@@ -1889,16 +1951,17 @@
       "start": {
         "year": -37,
         "month": 1,
-        "abs": -432
+        "abs": -432,
+        "confidence": "year"
       },
       "end": {
         "year": 427,
         "month": 12,
-        "abs": 5135
+        "abs": 5135,
+        "confidence": "month"
       },
       "startAbs": -432,
       "endAbs": 5135,
-      "precision": "year",
       "role": "primary",
       "note": "高句丽初都国内城（丸都）。",
       "links": [
@@ -1919,16 +1982,17 @@
       "start": {
         "year": 428,
         "month": 1,
-        "abs": 5136
+        "abs": 5136,
+        "confidence": "year"
       },
       "end": {
         "year": 668,
         "month": 12,
-        "abs": 8027
+        "abs": 8027,
+        "confidence": "month"
       },
       "startAbs": 5136,
       "endAbs": 8027,
-      "precision": "year",
       "role": "primary",
       "note": "广开土王迁平壤。",
       "links": [
@@ -1949,16 +2013,17 @@
       "start": {
         "year": 9,
         "month": 1,
-        "abs": 108
+        "abs": 108,
+        "confidence": "year"
       },
       "end": {
         "year": 23,
         "month": 12,
-        "abs": 287
+        "abs": 287,
+        "confidence": "month"
       },
       "startAbs": 108,
       "endAbs": 287,
-      "precision": "year",
       "role": "primary",
       "note": "王莽新朝都长安。",
       "links": [
@@ -1979,16 +2044,17 @@
       "start": {
         "year": -202,
         "month": 1,
-        "abs": -2412
+        "abs": -2412,
+        "confidence": "year"
       },
       "end": {
         "year": 9,
         "month": 1,
-        "abs": 108
+        "abs": 108,
+        "confidence": "year"
       },
       "startAbs": -2412,
       "endAbs": 108,
-      "precision": "year",
       "role": "primary",
       "note": "刘邦称帝定都长安；9年1月10日王莽代汉，西汉终结。",
       "links": [
@@ -2009,16 +2075,17 @@
       "start": {
         "year": 25,
         "month": 10,
-        "abs": 309
+        "abs": 309,
+        "confidence": "month"
       },
       "end": {
         "year": 220,
         "month": 12,
-        "abs": 2651
+        "abs": 2651,
+        "confidence": "month"
       },
       "startAbs": 309,
       "endAbs": 2651,
-      "precision": "month",
       "role": "primary",
       "note": "建武元年冬十月，光武帝入洛阳并定都；献帝禅让曹丕，东汉终结。",
       "links": [
@@ -2039,16 +2106,17 @@
       "start": {
         "year": 23,
         "month": 6,
-        "abs": 281
+        "abs": 281,
+        "confidence": "month"
       },
       "end": {
         "year": 24,
         "month": 2,
-        "abs": 289
+        "abs": 289,
+        "confidence": "month"
       },
       "startAbs": 281,
       "endAbs": 289,
-      "precision": "month",
       "role": "primary",
       "note": "更始元年六月刘玄入都宛城；更始二年二月迁都长安。",
       "links": [
@@ -2069,16 +2137,17 @@
       "start": {
         "year": 24,
         "month": 2,
-        "abs": 289
+        "abs": 289,
+        "confidence": "month"
       },
       "end": {
         "year": 25,
         "month": 9,
-        "abs": 308
+        "abs": 308,
+        "confidence": "month"
       },
       "startAbs": 289,
       "endAbs": 308,
-      "precision": "month",
       "role": "primary",
       "note": "更始二年二月刘玄自洛阳迁都长安；更始三年九月赤眉军攻入长安后政权终结。",
       "links": [
@@ -2099,16 +2168,17 @@
       "start": {
         "year": 25,
         "month": 9,
-        "abs": 308
+        "abs": 308,
+        "confidence": "year"
       },
       "end": {
         "year": 26,
         "month": 12,
-        "abs": 323
+        "abs": 323,
+        "confidence": "month"
       },
       "startAbs": 308,
       "endAbs": 323,
-      "precision": "year",
       "role": "primary",
       "note": "赤眉军于25年六月拥立刘盆子，九月攻入长安；26年春退出、秋复入，岁末东撤，长安为其间歇性据点。",
       "links": [
@@ -2129,16 +2199,17 @@
       "start": {
         "year": 220,
         "month": 1,
-        "abs": 2640
+        "abs": 2640,
+        "confidence": "year"
       },
       "end": {
         "year": 266,
         "month": 12,
-        "abs": 3203
+        "abs": 3203,
+        "confidence": "month"
       },
       "startAbs": 2640,
       "endAbs": 3203,
-      "precision": "year",
       "role": "primary",
       "note": "曹魏都城洛阳。",
       "links": [
@@ -2159,16 +2230,17 @@
       "start": {
         "year": 221,
         "month": 1,
-        "abs": 2652
+        "abs": 2652,
+        "confidence": "year"
       },
       "end": {
         "year": 263,
         "month": 12,
-        "abs": 3167
+        "abs": 3167,
+        "confidence": "month"
       },
       "startAbs": 2652,
       "endAbs": 3167,
-      "precision": "year",
       "role": "primary",
       "note": "蜀汉都城成都。",
       "links": [
@@ -2189,16 +2261,17 @@
       "start": {
         "year": 222,
         "month": 1,
-        "abs": 2664
+        "abs": 2664,
+        "confidence": "year"
       },
       "end": {
         "year": 280,
         "month": 12,
-        "abs": 3371
+        "abs": 3371,
+        "confidence": "month"
       },
       "startAbs": 2664,
       "endAbs": 3371,
-      "precision": "year",
       "role": "primary",
       "note": "东吴都城建业。",
       "links": [
@@ -2219,16 +2292,17 @@
       "start": {
         "year": 266,
         "month": 1,
-        "abs": 3192
+        "abs": 3192,
+        "confidence": "year"
       },
       "end": {
         "year": 304,
         "month": 12,
-        "abs": 3659
+        "abs": 3659,
+        "confidence": "month"
       },
       "startAbs": 3192,
       "endAbs": 3659,
-      "precision": "year",
       "role": "primary",
       "note": "西晋建都洛阳至晋惠帝永安元年（304）被张方挟往长安前；迁出记于农历十一月，按年精度保留边界。",
       "links": [
@@ -2249,16 +2323,17 @@
       "start": {
         "year": 296,
         "month": 1,
-        "abs": 3552
+        "abs": 3552,
+        "confidence": "year"
       },
       "end": {
         "year": 371,
         "month": 12,
-        "abs": 4463
+        "abs": 4463,
+        "confidence": "month"
       },
       "startAbs": 3552,
       "endAbs": 4463,
-      "precision": "year",
       "role": "primary",
       "note": "仇池氏据仇池。",
       "links": [
@@ -2279,16 +2354,17 @@
       "start": {
         "year": 301,
         "month": 1,
-        "abs": 3612
+        "abs": 3612,
+        "confidence": "year"
       },
       "end": {
         "year": 376,
         "month": 12,
-        "abs": 4523
+        "abs": 4523,
+        "confidence": "month"
       },
       "startAbs": 3612,
       "endAbs": 4523,
-      "precision": "year",
       "role": "primary",
       "note": "前凉都城姑臧。",
       "links": [
@@ -2309,16 +2385,17 @@
       "start": {
         "year": 319,
         "month": 1,
-        "abs": 3828
+        "abs": 3828,
+        "confidence": "year"
       },
       "end": {
         "year": 329,
         "month": 12,
-        "abs": 3959
+        "abs": 3959,
+        "confidence": "month"
       },
       "startAbs": 3828,
       "endAbs": 3959,
-      "precision": "year",
       "role": "primary",
       "note": "前赵（汉赵）刘曜于319年由平阳迁都长安；此前都城先后为左国城、黎亭、蒲子、平阳。",
       "links": [
@@ -2339,16 +2416,17 @@
       "start": {
         "year": 304,
         "month": 1,
-        "abs": 3648
+        "abs": 3648,
+        "confidence": "year"
       },
       "end": {
         "year": 347,
         "month": 12,
-        "abs": 4175
+        "abs": 4175,
+        "confidence": "month"
       },
       "startAbs": 3648,
       "endAbs": 4175,
-      "precision": "year",
       "role": "primary",
       "note": "成汉都城成都。",
       "links": [
@@ -2369,16 +2447,17 @@
       "start": {
         "year": 317,
         "month": 1,
-        "abs": 3804
+        "abs": 3804,
+        "confidence": "year"
       },
       "end": {
         "year": 420,
         "month": 12,
-        "abs": 5051
+        "abs": 5051,
+        "confidence": "month"
       },
       "startAbs": 3804,
       "endAbs": 5051,
-      "precision": "year",
       "role": "primary",
       "note": "东晋都城建康。",
       "links": [
@@ -2399,16 +2478,17 @@
       "start": {
         "year": 319,
         "month": 1,
-        "abs": 3828
+        "abs": 3828,
+        "confidence": "year"
       },
       "end": {
         "year": 335,
         "month": 12,
-        "abs": 4031
+        "abs": 4031,
+        "confidence": "month"
       },
       "startAbs": 3828,
       "endAbs": 4031,
-      "precision": "year",
       "role": "primary",
       "note": "后赵初都襄国。",
       "links": [
@@ -2429,16 +2509,17 @@
       "start": {
         "year": 336,
         "month": 1,
-        "abs": 4032
+        "abs": 4032,
+        "confidence": "year"
       },
       "end": {
         "year": 351,
         "month": 12,
-        "abs": 4223
+        "abs": 4223,
+        "confidence": "month"
       },
       "startAbs": 4032,
       "endAbs": 4223,
-      "precision": "year",
       "role": "primary",
       "note": "后赵迁邺。",
       "links": [
@@ -2459,16 +2540,17 @@
       "start": {
         "year": 329,
         "month": 1,
-        "abs": 3948
+        "abs": 3948,
+        "confidence": "year"
       },
       "end": {
         "year": 663,
         "month": 12,
-        "abs": 7967
+        "abs": 7967,
+        "confidence": "month"
       },
       "startAbs": 3948,
       "endAbs": 7967,
-      "precision": "year",
       "role": "primary",
       "note": "吐谷浑汗国都城伏俟城（莫贺延碛南）。",
       "links": [
@@ -2489,16 +2571,17 @@
       "start": {
         "year": 337,
         "month": 1,
-        "abs": 4044
+        "abs": 4044,
+        "confidence": "year"
       },
       "end": {
         "year": 347,
         "month": 12,
-        "abs": 4175
+        "abs": 4175,
+        "confidence": "month"
       },
       "startAbs": 4044,
       "endAbs": 4175,
-      "precision": "year",
       "role": "primary",
       "note": "前燕初都龙城。",
       "links": [
@@ -2519,16 +2602,17 @@
       "start": {
         "year": 348,
         "month": 1,
-        "abs": 4176
+        "abs": 4176,
+        "confidence": "year"
       },
       "end": {
         "year": 357,
         "month": 12,
-        "abs": 4295
+        "abs": 4295,
+        "confidence": "month"
       },
       "startAbs": 4176,
       "endAbs": 4295,
-      "precision": "year",
       "role": "primary",
       "note": "前燕迁都蓟。",
       "links": [
@@ -2549,16 +2633,17 @@
       "start": {
         "year": 358,
         "month": 1,
-        "abs": 4296
+        "abs": 4296,
+        "confidence": "year"
       },
       "end": {
         "year": 370,
         "month": 12,
-        "abs": 4451
+        "abs": 4451,
+        "confidence": "month"
       },
       "startAbs": 4296,
       "endAbs": 4451,
-      "precision": "year",
       "role": "primary",
       "note": "前燕慕容垂迁邺。",
       "links": [
@@ -2579,16 +2664,17 @@
       "start": {
         "year": 350,
         "month": 1,
-        "abs": 4200
+        "abs": 4200,
+        "confidence": "year"
       },
       "end": {
         "year": 352,
         "month": 12,
-        "abs": 4235
+        "abs": 4235,
+        "confidence": "month"
       },
       "startAbs": 4200,
       "endAbs": 4235,
-      "precision": "year",
       "role": "primary",
       "note": "冉魏据邺。",
       "links": [
@@ -2609,16 +2695,17 @@
       "start": {
         "year": 351,
         "month": 1,
-        "abs": 4212
+        "abs": 4212,
+        "confidence": "year"
       },
       "end": {
         "year": 394,
         "month": 12,
-        "abs": 4739
+        "abs": 4739,
+        "confidence": "month"
       },
       "startAbs": 4212,
       "endAbs": 4739,
-      "precision": "year",
       "role": "primary",
       "note": "前秦都城长安。",
       "links": [
@@ -2639,16 +2726,17 @@
       "start": {
         "year": 384,
         "month": 1,
-        "abs": 4608
+        "abs": 4608,
+        "confidence": "year"
       },
       "end": {
         "year": 394,
         "month": 12,
-        "abs": 4739
+        "abs": 4739,
+        "confidence": "month"
       },
       "startAbs": 4608,
       "endAbs": 4739,
-      "precision": "year",
       "role": "primary",
       "note": "西燕都城长子。",
       "links": [
@@ -2669,16 +2757,17 @@
       "start": {
         "year": 384,
         "month": 1,
-        "abs": 4608
+        "abs": 4608,
+        "confidence": "year"
       },
       "end": {
         "year": 397,
         "month": 12,
-        "abs": 4775
+        "abs": 4775,
+        "confidence": "month"
       },
       "startAbs": 4608,
       "endAbs": 4775,
-      "precision": "year",
       "role": "primary",
       "note": "后燕初都中山。",
       "links": [
@@ -2699,16 +2788,17 @@
       "start": {
         "year": 398,
         "month": 1,
-        "abs": 4776
+        "abs": 4776,
+        "confidence": "year"
       },
       "end": {
         "year": 409,
         "month": 12,
-        "abs": 4919
+        "abs": 4919,
+        "confidence": "month"
       },
       "startAbs": 4776,
       "endAbs": 4919,
-      "precision": "year",
       "role": "primary",
       "note": "后燕慕容宝迁龙城。",
       "links": [
@@ -2729,16 +2819,17 @@
       "start": {
         "year": 384,
         "month": 1,
-        "abs": 4608
+        "abs": 4608,
+        "confidence": "year"
       },
       "end": {
         "year": 417,
         "month": 12,
-        "abs": 5015
+        "abs": 5015,
+        "confidence": "month"
       },
       "startAbs": 4608,
       "endAbs": 5015,
-      "precision": "year",
       "role": "primary",
       "note": "后秦都城长安。",
       "links": [
@@ -2759,16 +2850,17 @@
       "start": {
         "year": 385,
         "month": 1,
-        "abs": 4620
+        "abs": 4620,
+        "confidence": "year"
       },
       "end": {
         "year": 431,
         "month": 12,
-        "abs": 5183
+        "abs": 5183,
+        "confidence": "month"
       },
       "startAbs": 4620,
       "endAbs": 5183,
-      "precision": "year",
       "role": "primary",
       "note": "西秦都城桴罕。",
       "links": [
@@ -2789,16 +2881,17 @@
       "start": {
         "year": 386,
         "month": 1,
-        "abs": 4632
+        "abs": 4632,
+        "confidence": "year"
       },
       "end": {
         "year": 403,
         "month": 12,
-        "abs": 4847
+        "abs": 4847,
+        "confidence": "month"
       },
       "startAbs": 4632,
       "endAbs": 4847,
-      "precision": "year",
       "role": "primary",
       "note": "后凉都城姑臧。",
       "links": [
@@ -2819,16 +2912,17 @@
       "start": {
         "year": 386,
         "month": 1,
-        "abs": 4632
+        "abs": 4632,
+        "confidence": "year"
       },
       "end": {
         "year": 398,
         "month": 12,
-        "abs": 4787
+        "abs": 4787,
+        "confidence": "month"
       },
       "startAbs": 4632,
       "endAbs": 4787,
-      "precision": "year",
       "role": "primary",
       "note": "北魏初都盛乐。",
       "links": [
@@ -2849,16 +2943,17 @@
       "start": {
         "year": 398,
         "month": 1,
-        "abs": 4776
+        "abs": 4776,
+        "confidence": "year"
       },
       "end": {
         "year": 493,
         "month": 12,
-        "abs": 5927
+        "abs": 5927,
+        "confidence": "month"
       },
       "startAbs": 4776,
       "endAbs": 5927,
-      "precision": "year",
       "role": "primary",
       "note": "北魏迁都平城。",
       "links": [
@@ -2879,16 +2974,17 @@
       "start": {
         "year": 494,
         "month": 1,
-        "abs": 5928
+        "abs": 5928,
+        "confidence": "year"
       },
       "end": {
         "year": 535,
         "month": 12,
-        "abs": 6431
+        "abs": 6431,
+        "confidence": "month"
       },
       "startAbs": 5928,
       "endAbs": 6431,
-      "precision": "year",
       "role": "primary",
       "note": "孝文帝迁洛阳。",
       "links": [
@@ -2909,16 +3005,17 @@
       "start": {
         "year": 397,
         "month": 1,
-        "abs": 4764
+        "abs": 4764,
+        "confidence": "year"
       },
       "end": {
         "year": 404,
         "month": 12,
-        "abs": 4859
+        "abs": 4859,
+        "confidence": "month"
       },
       "startAbs": 4764,
       "endAbs": 4859,
-      "precision": "year",
       "role": "primary",
       "note": "南凉初都姑臧。",
       "links": [
@@ -2939,16 +3036,17 @@
       "start": {
         "year": 405,
         "month": 1,
-        "abs": 4860
+        "abs": 4860,
+        "confidence": "year"
       },
       "end": {
         "year": 414,
         "month": 12,
-        "abs": 4979
+        "abs": 4979,
+        "confidence": "month"
       },
       "startAbs": 4860,
       "endAbs": 4979,
-      "precision": "year",
       "role": "primary",
       "note": "南凉迁都乐都。",
       "links": [
@@ -2969,16 +3067,17 @@
       "start": {
         "year": 397,
         "month": 1,
-        "abs": 4764
+        "abs": 4764,
+        "confidence": "year"
       },
       "end": {
         "year": 439,
         "month": 12,
-        "abs": 5279
+        "abs": 5279,
+        "confidence": "month"
       },
       "startAbs": 4764,
       "endAbs": 5279,
-      "precision": "year",
       "role": "primary",
       "note": "北凉都城张掖→姑臧。",
       "links": [
@@ -2999,16 +3098,17 @@
       "start": {
         "year": 398,
         "month": 1,
-        "abs": 4776
+        "abs": 4776,
+        "confidence": "year"
       },
       "end": {
         "year": 410,
         "month": 12,
-        "abs": 4931
+        "abs": 4931,
+        "confidence": "month"
       },
       "startAbs": 4776,
       "endAbs": 4931,
-      "precision": "year",
       "role": "primary",
       "note": "南燕都城广固。",
       "links": [
@@ -3029,16 +3129,17 @@
       "start": {
         "year": 400,
         "month": 1,
-        "abs": 4800
+        "abs": 4800,
+        "confidence": "year"
       },
       "end": {
         "year": 421,
         "month": 12,
-        "abs": 5063
+        "abs": 5063,
+        "confidence": "month"
       },
       "startAbs": 4800,
       "endAbs": 5063,
-      "precision": "year",
       "role": "primary",
       "note": "西凉都城酒泉→敦煌。",
       "links": [
@@ -3059,16 +3160,17 @@
       "start": {
         "year": 407,
         "month": 1,
-        "abs": 4884
+        "abs": 4884,
+        "confidence": "year"
       },
       "end": {
         "year": 431,
         "month": 12,
-        "abs": 5183
+        "abs": 5183,
+        "confidence": "month"
       },
       "startAbs": 4884,
       "endAbs": 5183,
-      "precision": "year",
       "role": "primary",
       "note": "胡夏都城统万城。",
       "links": [
@@ -3089,16 +3191,17 @@
       "start": {
         "year": 407,
         "month": 1,
-        "abs": 4884
+        "abs": 4884,
+        "confidence": "year"
       },
       "end": {
         "year": 436,
         "month": 12,
-        "abs": 5243
+        "abs": 5243,
+        "confidence": "month"
       },
       "startAbs": 4884,
       "endAbs": 5243,
-      "precision": "year",
       "role": "primary",
       "note": "北燕都城龙城。",
       "links": [
@@ -3119,16 +3222,17 @@
       "start": {
         "year": 420,
         "month": 7,
-        "abs": 5046
+        "abs": 5046,
+        "confidence": "month"
       },
       "end": {
         "year": 479,
         "month": 5,
-        "abs": 5752
+        "abs": 5752,
+        "confidence": "month"
       },
       "startAbs": 5046,
       "endAbs": 5752,
-      "precision": "month",
       "role": "primary",
       "note": "420年七月刘裕受禅建立刘宋，定都建康；479年五月萧道成代宋。",
       "links": [
@@ -3149,16 +3253,17 @@
       "start": {
         "year": 479,
         "month": 1,
-        "abs": 5748
+        "abs": 5748,
+        "confidence": "year"
       },
       "end": {
         "year": 502,
         "month": 12,
-        "abs": 6035
+        "abs": 6035,
+        "confidence": "month"
       },
       "startAbs": 5748,
       "endAbs": 6035,
-      "precision": "year",
       "role": "primary",
       "note": "南齐都城建康。",
       "links": [
@@ -3179,16 +3284,17 @@
       "start": {
         "year": 502,
         "month": 1,
-        "abs": 6024
+        "abs": 6024,
+        "confidence": "year"
       },
       "end": {
         "year": 557,
         "month": 12,
-        "abs": 6695
+        "abs": 6695,
+        "confidence": "month"
       },
       "startAbs": 6024,
       "endAbs": 6695,
-      "precision": "year",
       "role": "primary",
       "note": "南梁都城建康。",
       "links": [
@@ -3209,16 +3315,17 @@
       "start": {
         "year": 552,
         "month": 1,
-        "abs": 6624
+        "abs": 6624,
+        "confidence": "month"
       },
       "end": {
         "year": 552,
         "month": 5,
-        "abs": 6628
+        "abs": 6628,
+        "confidence": "month"
       },
       "startAbs": 6624,
       "endAbs": 6628,
-      "precision": "month",
       "role": "primary",
       "note": "侯景称汉帝期间都城建康；552年五月败亡。",
       "links": [
@@ -3239,16 +3346,17 @@
       "start": {
         "year": 534,
         "month": 1,
-        "abs": 6408
+        "abs": 6408,
+        "confidence": "year"
       },
       "end": {
         "year": 550,
         "month": 12,
-        "abs": 6611
+        "abs": 6611,
+        "confidence": "month"
       },
       "startAbs": 6408,
       "endAbs": 6611,
-      "precision": "year",
       "role": "primary",
       "note": "东魏都城邺。",
       "links": [
@@ -3269,16 +3377,17 @@
       "start": {
         "year": 535,
         "month": 1,
-        "abs": 6420
+        "abs": 6420,
+        "confidence": "year"
       },
       "end": {
         "year": 557,
         "month": 12,
-        "abs": 6695
+        "abs": 6695,
+        "confidence": "month"
       },
       "startAbs": 6420,
       "endAbs": 6695,
-      "precision": "year",
       "role": "primary",
       "note": "西魏都城长安。",
       "links": [
@@ -3299,16 +3408,17 @@
       "start": {
         "year": 550,
         "month": 1,
-        "abs": 6600
+        "abs": 6600,
+        "confidence": "year"
       },
       "end": {
         "year": 577,
         "month": 12,
-        "abs": 6935
+        "abs": 6935,
+        "confidence": "month"
       },
       "startAbs": 6600,
       "endAbs": 6935,
-      "precision": "year",
       "role": "primary",
       "note": "北齐都城邺。",
       "links": [
@@ -3329,16 +3439,17 @@
       "start": {
         "year": 555,
         "month": 1,
-        "abs": 6660
+        "abs": 6660,
+        "confidence": "year"
       },
       "end": {
         "year": 587,
         "month": 12,
-        "abs": 7055
+        "abs": 7055,
+        "confidence": "month"
       },
       "startAbs": 6660,
       "endAbs": 7055,
-      "precision": "year",
       "role": "primary",
       "note": "西梁（萧梁）都城江陵。",
       "links": [
@@ -3359,16 +3470,17 @@
       "start": {
         "year": 557,
         "month": 1,
-        "abs": 6684
+        "abs": 6684,
+        "confidence": "year"
       },
       "end": {
         "year": 589,
         "month": 12,
-        "abs": 7079
+        "abs": 7079,
+        "confidence": "month"
       },
       "startAbs": 6684,
       "endAbs": 7079,
-      "precision": "year",
       "role": "primary",
       "note": "南陈都城建康。",
       "links": [
@@ -3389,16 +3501,17 @@
       "start": {
         "year": 557,
         "month": 1,
-        "abs": 6684
+        "abs": 6684,
+        "confidence": "year"
       },
       "end": {
         "year": 581,
         "month": 12,
-        "abs": 6983
+        "abs": 6983,
+        "confidence": "month"
       },
       "startAbs": 6684,
       "endAbs": 6983,
-      "precision": "year",
       "role": "primary",
       "note": "北周都城长安。",
       "links": [
@@ -3419,16 +3532,17 @@
       "start": {
         "year": 581,
         "month": 1,
-        "abs": 6972
+        "abs": 6972,
+        "confidence": "year"
       },
       "end": {
         "year": 582,
         "month": 12,
-        "abs": 6995
+        "abs": 6995,
+        "confidence": "month"
       },
       "startAbs": 6972,
       "endAbs": 6995,
-      "precision": "year",
       "role": "primary",
       "note": "581年杨坚受禅建立隋朝，沿用北周旧都长安；583年迁入新建的大兴城。",
       "links": [
@@ -3449,18 +3563,18 @@
       "start": {
         "year": 583,
         "month": 1,
-        "abs": 6996
+        "abs": 6996,
+        "confidence": "year"
       },
       "end": {
         "year": 618,
         "month": 4,
         "abs": 7419,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "startAbs": 6996,
       "endAbs": 7419,
-      "precision": "year",
-      "endPrecision": "day",
       "role": "primary",
       "note": "开皇三年（583）隋文帝由旧长安城迁入新都大兴城；本记录按618年4月11日江都兵变后的隋主交界结束。",
       "links": [
@@ -3482,17 +3596,17 @@
         "year": 618,
         "month": 4,
         "abs": 7419,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "end": {
         "year": 618,
         "month": 6,
-        "abs": 7421
+        "abs": 7421,
+        "confidence": "month"
       },
       "startAbs": 7419,
       "endAbs": 7421,
-      "precision": "day",
-      "endPrecision": "month",
       "role": "primary",
       "claimTrack": "changan",
       "note": "杨侑在长安的并立阶段：江都兵变后继续在长安，618年六月禅位。杨侑禅位公历换算有6月12日、6月18日等异说，故终点保留六月精度。",
@@ -3515,18 +3629,18 @@
         "year": 618,
         "month": 6,
         "abs": 7421,
-        "day": 22
+        "day": 22,
+        "confidence": "day"
       },
       "end": {
         "year": 619,
         "month": 5,
         "abs": 7432,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "startAbs": 7421,
       "endAbs": 7432,
-      "precision": "day",
-      "endPrecision": "day",
       "role": "primary",
       "claimTrack": "luoyang",
       "note": "洛阳留守官于618年6月22日拥立杨侗，至619年5月23日禅位；作为杨侗并立在位期间的都城记录。",
@@ -3549,18 +3663,18 @@
         "year": 618,
         "month": 4,
         "abs": 7419,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "end": {
         "year": 618,
         "month": 10,
         "abs": 7425,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "startAbs": 7419,
       "endAbs": 7425,
-      "precision": "day",
-      "endPrecision": "day",
       "role": "primary",
       "note": "杨广于618年4月11日在江都被弑；江都自次日（4月12日）起计为杨浩时期都城，至10月23日杨浩被杀。",
       "links": [
@@ -3581,16 +3695,17 @@
       "start": {
         "year": 618,
         "month": 1,
-        "abs": 7416
+        "abs": 7416,
+        "confidence": "year"
       },
       "end": {
         "year": 619,
         "month": 12,
-        "abs": 7439
+        "abs": 7439,
+        "confidence": "month"
       },
       "startAbs": 7416,
       "endAbs": 7439,
-      "precision": "year",
       "role": "primary",
       "note": "窦建德政权初都乐寿，称金城宫；武德二年（619）迁都洺州。年精度记录覆盖迁都年。",
       "links": [
@@ -3611,16 +3726,17 @@
       "start": {
         "year": 619,
         "month": 1,
-        "abs": 7428
+        "abs": 7428,
+        "confidence": "year"
       },
       "end": {
         "year": 621,
         "month": 12,
-        "abs": 7463
+        "abs": 7463,
+        "confidence": "month"
       },
       "startAbs": 7428,
       "endAbs": 7463,
-      "precision": "year",
       "role": "primary",
       "note": "武德二年（619）窦建德迁都洺州，筑万春宫；年精度区间与乐寿在迁都年重叠。",
       "links": [
@@ -3645,16 +3761,17 @@
       "start": {
         "year": 619,
         "month": 1,
-        "abs": 7428
+        "abs": 7428,
+        "confidence": "year"
       },
       "end": {
         "year": 621,
         "month": 12,
-        "abs": 7463
+        "abs": 7463,
+        "confidence": "month"
       },
       "startAbs": 7428,
       "endAbs": 7463,
-      "precision": "year",
       "role": "primary",
       "note": "王世充于619年在洛阳建郑称帝，621年降唐；按政权存续年份记录。",
       "links": [
@@ -3679,16 +3796,17 @@
       "start": {
         "year": 618,
         "month": 6,
-        "abs": 7421
+        "abs": 7421,
+        "confidence": "month"
       },
       "end": {
         "year": 756,
         "month": 7,
-        "abs": 9078
+        "abs": 9078,
+        "confidence": "month"
       },
       "startAbs": 7421,
       "endAbs": 9078,
-      "precision": "month",
       "role": "primary",
       "note": "618年六月李渊受隋恭帝杨侑禅让，在长安即皇帝位建立唐朝；903年末前唐都长安。安史叛军入长安及唐军收复期间按失守至收复拆分，前段止于756年7月（月份精度）。",
       "links": [
@@ -3699,8 +3817,7 @@
       ],
       "longitude": 108.939645,
       "latitude": 34.343207,
-      "coordinateSystem": "GCJ02",
-      "endPrecision": "month"
+      "coordinateSystem": "GCJ02"
     },
     {
       "id": "cap-tang-luoyang",
@@ -3710,16 +3827,17 @@
       "start": {
         "year": 657,
         "month": 1,
-        "abs": 7884
+        "abs": 7884,
+        "confidence": "year"
       },
       "end": {
         "year": 755,
         "month": 12,
-        "abs": 9071
+        "abs": 9071,
+        "confidence": "month"
       },
       "startAbs": 7884,
       "endAbs": 9071,
-      "precision": "year",
       "role": "secondary",
       "note": "唐东都洛阳。安史叛军陷洛阳及唐军收复期间按失守至收复拆分，前段止于755年12月（月份精度）。",
       "links": [
@@ -3730,8 +3848,7 @@
       ],
       "longitude": 112.453895,
       "latitude": 34.619702,
-      "coordinateSystem": "GCJ02",
-      "endPrecision": "month"
+      "coordinateSystem": "GCJ02"
     },
     {
       "id": "cap-tang-luoyang-904",
@@ -3741,16 +3858,17 @@
       "start": {
         "year": 904,
         "month": 1,
-        "abs": 10848
+        "abs": 10848,
+        "confidence": "year"
       },
       "end": {
         "year": 907,
         "month": 12,
-        "abs": 10895
+        "abs": 10895,
+        "confidence": "month"
       },
       "startAbs": 10848,
       "endAbs": 10895,
-      "precision": "year",
       "role": "primary",
       "note": "904年朱全忠逼唐昭宗迁都洛阳；李柷（唐哀帝）继位后至907年唐亡，洛阳为唐正都。",
       "links": [
@@ -3771,16 +3889,17 @@
       "start": {
         "year": 618,
         "month": 1,
-        "abs": 7416
+        "abs": 7416,
+        "confidence": "year"
       },
       "end": {
         "year": 842,
         "month": 12,
-        "abs": 10115
+        "abs": 10115,
+        "confidence": "month"
       },
       "startAbs": 7416,
       "endAbs": 10115,
-      "precision": "year",
       "role": "primary",
       "note": "吐蕃都城逻些（拉萨）。",
       "links": [
@@ -3801,16 +3920,17 @@
       "start": {
         "year": 739,
         "month": 1,
-        "abs": 8868
+        "abs": 8868,
+        "confidence": "year"
       },
       "end": {
         "year": 779,
         "month": 12,
-        "abs": 9359
+        "abs": 9359,
+        "confidence": "month"
       },
       "startAbs": 8868,
       "endAbs": 9359,
-      "precision": "year",
       "role": "primary",
       "note": "南诏于739年迁都太和城（今大理市太和村太和城遗址）；779年迁都羊苴咩城。坐标为遗址级近似点。",
       "links": [
@@ -3835,16 +3955,17 @@
       "start": {
         "year": 779,
         "month": 1,
-        "abs": 9348
+        "abs": 9348,
+        "confidence": "year"
       },
       "end": {
         "year": 902,
         "month": 12,
-        "abs": 10835
+        "abs": 10835,
+        "confidence": "month"
       },
       "startAbs": 9348,
       "endAbs": 10835,
-      "precision": "year",
       "role": "primary",
       "note": "南诏779年迁都羊苴咩城（又作阳苴咩城、苴咩城）。",
       "links": [
@@ -3865,16 +3986,17 @@
       "start": {
         "year": 690,
         "month": 1,
-        "abs": 8280
+        "abs": 8280,
+        "confidence": "year"
       },
       "end": {
         "year": 705,
         "month": 12,
-        "abs": 8471
+        "abs": 8471,
+        "confidence": "month"
       },
       "startAbs": 8280,
       "endAbs": 8471,
-      "precision": "year",
       "role": "primary",
       "note": "武周以洛阳为神都。",
       "links": [
@@ -3895,16 +4017,17 @@
       "start": {
         "year": 744,
         "month": 1,
-        "abs": 8928
+        "abs": 8928,
+        "confidence": "year"
       },
       "end": {
         "year": 840,
         "month": 12,
-        "abs": 10091
+        "abs": 10091,
+        "confidence": "month"
       },
       "startAbs": 8928,
       "endAbs": 10091,
-      "precision": "year",
       "role": "primary",
       "note": "回鹘汗国牙帐，漠北草原都城。",
       "links": [
@@ -3925,16 +4048,17 @@
       "start": {
         "year": 902,
         "month": 1,
-        "abs": 10824
+        "abs": 10824,
+        "confidence": "year"
       },
       "end": {
         "year": 937,
         "month": 12,
-        "abs": 11255
+        "abs": 11255,
+        "confidence": "month"
       },
       "startAbs": 10824,
       "endAbs": 11255,
-      "precision": "year",
       "role": "primary",
       "note": "杨吴都广陵（今扬州），治所为江都府；不是吴越杭州。",
       "links": [
@@ -3955,16 +4079,17 @@
       "start": {
         "year": 907,
         "month": 1,
-        "abs": 10884
+        "abs": 10884,
+        "confidence": "year"
       },
       "end": {
         "year": 923,
         "month": 12,
-        "abs": 11087
+        "abs": 11087,
+        "confidence": "month"
       },
       "startAbs": 10884,
       "endAbs": 11087,
-      "precision": "year",
       "role": "primary",
       "note": "朱温建后梁，都汴；汴州升为东京开封府。",
       "links": [
@@ -3985,16 +4110,17 @@
       "start": {
         "year": 907,
         "month": 6,
-        "abs": 10889
+        "abs": 10889,
+        "confidence": "month"
       },
       "end": {
         "year": 951,
         "month": 12,
-        "abs": 11423
+        "abs": 11423,
+        "confidence": "month"
       },
       "startAbs": 10889,
       "endAbs": 11423,
-      "precision": "month",
       "role": "primary",
       "note": "907年六月马殷受封楚王，以潭州为都；951年十二月楚亡。",
       "links": [
@@ -4015,16 +4141,17 @@
       "start": {
         "year": 907,
         "month": 9,
-        "abs": 10892
+        "abs": 10892,
+        "confidence": "month"
       },
       "end": {
         "year": 925,
         "month": 12,
-        "abs": 11111
+        "abs": 11111,
+        "confidence": "month"
       },
       "startAbs": 10892,
       "endAbs": 11111,
-      "precision": "month",
       "role": "primary",
       "note": "907年九月王建在成都称帝建立前蜀；925年后唐灭前蜀。",
       "links": [
@@ -4045,16 +4172,17 @@
       "start": {
         "year": 907,
         "month": 6,
-        "abs": 10889
+        "abs": 10889,
+        "confidence": "month"
       },
       "end": {
         "year": 978,
         "month": 6,
-        "abs": 11741
+        "abs": 11741,
+        "confidence": "month"
       },
       "startAbs": 10889,
       "endAbs": 11741,
-      "precision": "month",
       "role": "primary",
       "note": "907年六月钱镠受后梁封为吴越王，史家以此为吴越国之始；978年六月钱俶纳土归宋。",
       "links": [
@@ -4075,16 +4203,17 @@
       "start": {
         "year": 909,
         "month": 1,
-        "abs": 10908
+        "abs": 10908,
+        "confidence": "year"
       },
       "end": {
         "year": 945,
         "month": 12,
-        "abs": 11351
+        "abs": 11351,
+        "confidence": "month"
       },
       "startAbs": 10908,
       "endAbs": 11351,
-      "precision": "year",
       "role": "primary",
       "note": "闽国都福州；933年升为长乐府。",
       "links": [
@@ -4105,16 +4234,17 @@
       "start": {
         "year": 917,
         "month": 1,
-        "abs": 11004
+        "abs": 11004,
+        "confidence": "year"
       },
       "end": {
         "year": 971,
         "month": 12,
-        "abs": 11663
+        "abs": 11663,
+        "confidence": "month"
       },
       "startAbs": 11004,
       "endAbs": 11663,
-      "precision": "year",
       "role": "primary",
       "note": "南汉都兴王府（今广州）；971年宋灭南汉后复称广州。",
       "links": [
@@ -4135,16 +4265,17 @@
       "start": {
         "year": 923,
         "month": 1,
-        "abs": 11076
+        "abs": 11076,
+        "confidence": "year"
       },
       "end": {
         "year": 936,
         "month": 12,
-        "abs": 11243
+        "abs": 11243,
+        "confidence": "month"
       },
       "startAbs": 11076,
       "endAbs": 11243,
-      "precision": "year",
       "role": "primary",
       "note": "后唐都城洛阳。",
       "links": [
@@ -4165,16 +4296,17 @@
       "start": {
         "year": 924,
         "month": 1,
-        "abs": 11088
+        "abs": 11088,
+        "confidence": "year"
       },
       "end": {
         "year": 963,
         "month": 12,
-        "abs": 11567
+        "abs": 11567,
+        "confidence": "month"
       },
       "startAbs": 11088,
       "endAbs": 11567,
-      "precision": "year",
       "role": "primary",
       "note": "荆南都城江陵。",
       "links": [
@@ -4195,16 +4327,17 @@
       "start": {
         "year": 934,
         "month": 1,
-        "abs": 11208
+        "abs": 11208,
+        "confidence": "year"
       },
       "end": {
         "year": 965,
         "month": 12,
-        "abs": 11591
+        "abs": 11591,
+        "confidence": "month"
       },
       "startAbs": 11208,
       "endAbs": 11591,
-      "precision": "year",
       "role": "primary",
       "note": "后蜀都城成都。",
       "links": [
@@ -4225,16 +4358,17 @@
       "start": {
         "year": 936,
         "month": 1,
-        "abs": 11232
+        "abs": 11232,
+        "confidence": "year"
       },
       "end": {
         "year": 947,
         "month": 12,
-        "abs": 11375
+        "abs": 11375,
+        "confidence": "month"
       },
       "startAbs": 11232,
       "endAbs": 11375,
-      "precision": "year",
       "role": "primary",
       "note": "后晋936年自洛阳迁都汴州（东京开封府）；太原为其兴王之地，不是国都。",
       "links": [
@@ -4255,16 +4389,17 @@
       "start": {
         "year": 937,
         "month": 1,
-        "abs": 11244
+        "abs": 11244,
+        "confidence": "year"
       },
       "end": {
         "year": 975,
         "month": 12,
-        "abs": 11711
+        "abs": 11711,
+        "confidence": "month"
       },
       "startAbs": 11244,
       "endAbs": 11711,
-      "precision": "year",
       "role": "primary",
       "note": "南唐都城金陵。",
       "links": [
@@ -4285,16 +4420,17 @@
       "start": {
         "year": 937,
         "month": 1,
-        "abs": 11244
+        "abs": 11244,
+        "confidence": "year"
       },
       "end": {
         "year": 1253,
         "month": 12,
-        "abs": 15047
+        "abs": 15047,
+        "confidence": "month"
       },
       "startAbs": 11244,
       "endAbs": 15047,
-      "precision": "year",
       "role": "primary",
       "note": "大理国都羊苴咩城（又作阳苴咩城、苴咩城）。",
       "links": [
@@ -4315,16 +4451,17 @@
       "start": {
         "year": 947,
         "month": 1,
-        "abs": 11364
+        "abs": 11364,
+        "confidence": "year"
       },
       "end": {
         "year": 951,
         "month": 12,
-        "abs": 11423
+        "abs": 11423,
+        "confidence": "month"
       },
       "startAbs": 11364,
       "endAbs": 11423,
-      "precision": "year",
       "role": "primary",
       "note": "后汉都汴州（东京开封府）。",
       "links": [
@@ -4345,16 +4482,17 @@
       "start": {
         "year": 951,
         "month": 1,
-        "abs": 11412
+        "abs": 11412,
+        "confidence": "year"
       },
       "end": {
         "year": 979,
         "month": 12,
-        "abs": 11759
+        "abs": 11759,
+        "confidence": "month"
       },
       "startAbs": 11412,
       "endAbs": 11759,
-      "precision": "year",
       "role": "primary",
       "note": "北汉都城太原。",
       "links": [
@@ -4375,16 +4513,17 @@
       "start": {
         "year": 951,
         "month": 1,
-        "abs": 11412
+        "abs": 11412,
+        "confidence": "year"
       },
       "end": {
         "year": 960,
         "month": 12,
-        "abs": 11531
+        "abs": 11531,
+        "confidence": "month"
       },
       "startAbs": 11412,
       "endAbs": 11531,
-      "precision": "year",
       "role": "primary",
       "note": "后周都汴州（东京开封府）。",
       "links": [
@@ -4405,16 +4544,17 @@
       "start": {
         "year": 960,
         "month": 1,
-        "abs": 11520
+        "abs": 11520,
+        "confidence": "year"
       },
       "end": {
         "year": 1127,
         "month": 12,
-        "abs": 13535
+        "abs": 13535,
+        "confidence": "month"
       },
       "startAbs": 11520,
       "endAbs": 13535,
-      "precision": "year",
       "role": "primary",
       "note": "北宋都城汴京（开封）。",
       "links": [
@@ -4435,16 +4575,17 @@
       "start": {
         "year": 982,
         "month": 1,
-        "abs": 11784
+        "abs": 11784,
+        "confidence": "year"
       },
       "end": {
         "year": 1227,
         "month": 12,
-        "abs": 14735
+        "abs": 14735,
+        "confidence": "month"
       },
       "startAbs": 11784,
       "endAbs": 14735,
-      "precision": "year",
       "role": "primary",
       "note": "西夏都城兴庆府。",
       "links": [
@@ -4465,16 +4606,17 @@
       "start": {
         "year": 916,
         "month": 1,
-        "abs": 10992
+        "abs": 10992,
+        "confidence": "year"
       },
       "end": {
         "year": 1125,
         "month": 12,
-        "abs": 13511
+        "abs": 13511,
+        "confidence": "month"
       },
       "startAbs": 10992,
       "endAbs": 13511,
-      "precision": "year",
       "role": "primary",
       "note": "辽上京临潢府。",
       "links": [
@@ -4495,16 +4637,17 @@
       "start": {
         "year": 938,
         "month": 1,
-        "abs": 11256
+        "abs": 11256,
+        "confidence": "year"
       },
       "end": {
         "year": 1125,
         "month": 12,
-        "abs": 13511
+        "abs": 13511,
+        "confidence": "month"
       },
       "startAbs": 11256,
       "endAbs": 13511,
-      "precision": "year",
       "role": "secondary",
       "note": "辽南京（析津府，今北京）。",
       "links": [
@@ -4525,16 +4668,17 @@
       "start": {
         "year": 1115,
         "month": 1,
-        "abs": 13380
+        "abs": 13380,
+        "confidence": "year"
       },
       "end": {
         "year": 1153,
         "month": 12,
-        "abs": 13847
+        "abs": 13847,
+        "confidence": "month"
       },
       "startAbs": 13380,
       "endAbs": 13847,
-      "precision": "year",
       "role": "primary",
       "note": "金初都会宁府。",
       "links": [
@@ -4555,16 +4699,17 @@
       "start": {
         "year": 1154,
         "month": 1,
-        "abs": 13848
+        "abs": 13848,
+        "confidence": "year"
       },
       "end": {
         "year": 1214,
         "month": 12,
-        "abs": 14579
+        "abs": 14579,
+        "confidence": "month"
       },
       "startAbs": 13848,
       "endAbs": 14579,
-      "precision": "year",
       "role": "primary",
       "note": "金迁都中都（今北京）。",
       "links": [
@@ -4585,16 +4730,17 @@
       "start": {
         "year": 1215,
         "month": 1,
-        "abs": 14580
+        "abs": 14580,
+        "confidence": "year"
       },
       "end": {
         "year": 1234,
         "month": 12,
-        "abs": 14819
+        "abs": 14819,
+        "confidence": "month"
       },
       "startAbs": 14580,
       "endAbs": 14819,
-      "precision": "year",
       "role": "primary",
       "note": "金末迁都汴京。",
       "links": [
@@ -4615,16 +4761,17 @@
       "start": {
         "year": 1122,
         "month": 1,
-        "abs": 13464
+        "abs": 13464,
+        "confidence": "year"
       },
       "end": {
         "year": 1123,
         "month": 12,
-        "abs": 13487
+        "abs": 13487,
+        "confidence": "month"
       },
       "startAbs": 13464,
       "endAbs": 13487,
-      "precision": "year",
       "role": "primary",
       "note": "北辽据辽上京临潢府。",
       "links": [
@@ -4645,16 +4792,17 @@
       "start": {
         "year": 1124,
         "month": 1,
-        "abs": 13488
+        "abs": 13488,
+        "confidence": "year"
       },
       "end": {
         "year": 1218,
         "month": 12,
-        "abs": 14627
+        "abs": 14627,
+        "confidence": "month"
       },
       "startAbs": 13488,
       "endAbs": 14627,
-      "precision": "year",
       "role": "primary",
       "note": "西辽都城虎思斡耳朵（今托克马克附近）。",
       "links": [
@@ -4675,16 +4823,17 @@
       "start": {
         "year": 1127,
         "month": 1,
-        "abs": 13524
+        "abs": 13524,
+        "confidence": "year"
       },
       "end": {
         "year": 1129,
         "month": 12,
-        "abs": 13559
+        "abs": 13559,
+        "confidence": "month"
       },
       "startAbs": 13524,
       "endAbs": 13559,
-      "precision": "year",
       "role": "temporary",
       "note": "南宋初暂都应天府。",
       "links": [
@@ -4705,18 +4854,18 @@
       "start": {
         "year": 1130,
         "month": 1,
-        "abs": 13560
+        "abs": 13560,
+        "confidence": "year"
       },
       "end": {
         "year": 1276,
         "month": 2,
         "abs": 15313,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "startAbs": 13560,
       "endAbs": 15313,
-      "precision": "year",
-      "endPrecision": "day",
       "role": "primary",
       "note": "南宋行在临安。德祐二年正月十八日（1276年2月4日），宋廷奉传国玺降元，临安不再由南宋朝廷控制。",
       "links": [
@@ -4738,18 +4887,18 @@
         "year": 1276,
         "month": 6,
         "abs": 15317,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "end": {
         "year": 1276,
         "month": 12,
         "abs": 15323,
-        "day": 21
+        "day": 21,
+        "confidence": "day"
       },
       "startAbs": 15317,
       "endAbs": 15323,
-      "precision": "day",
-      "endPrecision": "day",
       "role": "temporary",
       "note": "德祐二年五月初一（1276年6月14日）端宗在福州即位，升福州为福安府并定为行都；景炎元年十一月十五日（1276年12月21日）宋廷撤离福州。此后海上行朝辗转流动，无固定都城。",
       "links": [
@@ -4770,16 +4919,17 @@
       "start": {
         "year": 1206,
         "month": 1,
-        "abs": 14472
+        "abs": 14472,
+        "confidence": "year"
       },
       "end": {
         "year": 1271,
         "month": 12,
-        "abs": 15263
+        "abs": 15263,
+        "confidence": "month"
       },
       "startAbs": 14472,
       "endAbs": 15263,
-      "precision": "year",
       "role": "primary",
       "note": "蒙古帝国汗庭哈拉和林。",
       "links": [
@@ -4800,16 +4950,17 @@
       "start": {
         "year": 1213,
         "month": 1,
-        "abs": 14556
+        "abs": 14556,
+        "confidence": "year"
       },
       "end": {
         "year": 1269,
         "month": 12,
-        "abs": 15239
+        "abs": 15239,
+        "confidence": "month"
       },
       "startAbs": 14556,
       "endAbs": 15239,
-      "precision": "year",
       "role": "primary",
       "note": "东辽都城开原。",
       "links": [
@@ -4830,16 +4981,17 @@
       "start": {
         "year": 1271,
         "month": 1,
-        "abs": 15252
+        "abs": 15252,
+        "confidence": "year"
       },
       "end": {
         "year": 1273,
         "month": 12,
-        "abs": 15287
+        "abs": 15287,
+        "confidence": "month"
       },
       "startAbs": 15252,
       "endAbs": 15287,
-      "precision": "year",
       "role": "primary",
       "note": "开平为上都改名前称，指同一遗址；此记录保留来源中的 primary 角色区间，古称并列为“开平/上都”。",
       "links": [
@@ -4864,16 +5016,17 @@
       "start": {
         "year": 1260,
         "month": 1,
-        "abs": 15120
+        "abs": 15120,
+        "confidence": "year"
       },
       "end": {
         "year": 1368,
         "month": 12,
-        "abs": 16427
+        "abs": 16427,
+        "confidence": "month"
       },
       "startAbs": 15120,
       "endAbs": 16427,
-      "precision": "year",
       "role": "secondary",
       "note": "元上都遗址的前称为开平府；定都大都后，上都保留为夏都/陪都。本记录保留既有 secondary 角色区间，古称并列为“开平/上都”。",
       "links": [
@@ -4898,16 +5051,17 @@
       "start": {
         "year": 1264,
         "month": 1,
-        "abs": 15168
+        "abs": 15168,
+        "confidence": "year"
       },
       "end": {
         "year": 1271,
         "month": 12,
-        "abs": 15263
+        "abs": 15263,
+        "confidence": "month"
       },
       "startAbs": 15168,
       "endAbs": 15263,
-      "precision": "year",
       "role": "primary",
       "note": "元中都（大都前身）。",
       "links": [
@@ -4928,16 +5082,17 @@
       "start": {
         "year": 1272,
         "month": 1,
-        "abs": 15264
+        "abs": 15264,
+        "confidence": "year"
       },
       "end": {
         "year": 1368,
         "month": 12,
-        "abs": 16427
+        "abs": 16427,
+        "confidence": "month"
       },
       "startAbs": 15264,
       "endAbs": 16427,
-      "precision": "year",
       "role": "primary",
       "note": "元大都（今北京）。",
       "links": [
@@ -4958,16 +5113,17 @@
       "start": {
         "year": 1351,
         "month": 10,
-        "abs": 16221
+        "abs": 16221,
+        "confidence": "month"
       },
       "end": {
         "year": 1356,
         "month": 1,
-        "abs": 16272
+        "abs": 16272,
+        "confidence": "year"
       },
       "startAbs": 16221,
       "endAbs": 16272,
-      "precision": "month",
       "role": "primary",
       "note": "至正十一年十月徐寿辉据蕲水称帝，以蕲水为都；1356年初迁都汉阳。",
       "links": [
@@ -4988,16 +5144,17 @@
       "start": {
         "year": 1356,
         "month": 1,
-        "abs": 16272
+        "abs": 16272,
+        "confidence": "month"
       },
       "end": {
         "year": 1359,
         "month": 12,
-        "abs": 16319
+        "abs": 16319,
+        "confidence": "month"
       },
       "startAbs": 16272,
       "endAbs": 16319,
-      "precision": "month",
       "role": "primary",
       "note": "1356年初徐宋迁都汉阳；1359年末受陈友谅挟持迁江州。",
       "links": [
@@ -5018,16 +5175,17 @@
       "start": {
         "year": 1354,
         "month": 1,
-        "abs": 16248
+        "abs": 16248,
+        "confidence": "month"
       },
       "end": {
         "year": 1356,
         "month": 2,
-        "abs": 16273
+        "abs": 16273,
+        "confidence": "month"
       },
       "startAbs": 16248,
       "endAbs": 16273,
-      "precision": "month",
       "role": "primary",
       "note": "1354年张士诚在高邮建大周、称诚王；1356年迁都平江。",
       "links": [
@@ -5048,16 +5206,17 @@
       "start": {
         "year": 1356,
         "month": 3,
-        "abs": 16274
+        "abs": 16274,
+        "confidence": "month"
       },
       "end": {
         "year": 1367,
         "month": 9,
-        "abs": 16412
+        "abs": 16412,
+        "confidence": "month"
       },
       "startAbs": 16274,
       "endAbs": 16412,
-      "precision": "month",
       "role": "primary",
       "note": "1356年三月张士诚据平江并迁都，改平江路为隆平府；1367年平江城破。",
       "links": [
@@ -5078,16 +5237,17 @@
       "start": {
         "year": 1355,
         "month": 2,
-        "abs": 16261
+        "abs": 16261,
+        "confidence": "month"
       },
       "end": {
         "year": 1356,
         "month": 12,
-        "abs": 16283
+        "abs": 16283,
+        "confidence": "month"
       },
       "startAbs": 16261,
       "endAbs": 16283,
-      "precision": "month",
       "role": "primary",
       "note": "1355年二月刘福通拥立韩林儿于亳州，韩宋以亳州为都；1356年底亳州陷落。",
       "links": [
@@ -5108,16 +5268,17 @@
       "start": {
         "year": 1358,
         "month": 5,
-        "abs": 16300
+        "abs": 16300,
+        "confidence": "month"
       },
       "end": {
         "year": 1359,
         "month": 8,
-        "abs": 16315
+        "abs": 16315,
+        "confidence": "month"
       },
       "startAbs": 16300,
       "endAbs": 16315,
-      "precision": "month",
       "role": "primary",
       "note": "1358年韩宋攻占汴梁并迁都；1359年八月城破，退守安丰。",
       "links": [
@@ -5138,16 +5299,17 @@
       "start": {
         "year": 1359,
         "month": 8,
-        "abs": 16315
+        "abs": 16315,
+        "confidence": "month"
       },
       "end": {
         "year": 1363,
         "month": 2,
-        "abs": 16357
+        "abs": 16357,
+        "confidence": "month"
       },
       "startAbs": 16315,
       "endAbs": 16357,
-      "precision": "month",
       "role": "primary",
       "note": "1359年八月汴梁失守后韩林儿退守安丰；1363年张士诚围攻安丰，韩林儿被朱元璋救出。",
       "links": [
@@ -5168,16 +5330,17 @@
       "start": {
         "year": 1360,
         "month": 6,
-        "abs": 16325
+        "abs": 16325,
+        "confidence": "month"
       },
       "end": {
         "year": 1362,
         "month": 1,
-        "abs": 16344
+        "abs": 16344,
+        "confidence": "year"
       },
       "startAbs": 16325,
       "endAbs": 16344,
-      "precision": "month",
       "role": "primary",
       "note": "陈友谅1360年称帝，以江州（今九江）为都；1361—1362年间败退后迁都武昌。",
       "links": [
@@ -5198,16 +5361,17 @@
       "start": {
         "year": 1362,
         "month": 1,
-        "abs": 16344
+        "abs": 16344,
+        "confidence": "year"
       },
       "end": {
         "year": 1364,
         "month": 12,
-        "abs": 16379
+        "abs": 16379,
+        "confidence": "month"
       },
       "startAbs": 16344,
       "endAbs": 16379,
-      "precision": "year",
       "role": "primary",
       "note": "陈友谅败退后迁都武昌；1364年武昌陷落，陈理降明。",
       "links": [
@@ -5228,16 +5392,17 @@
       "start": {
         "year": 1362,
         "month": 1,
-        "abs": 16344
+        "abs": 16344,
+        "confidence": "year"
       },
       "end": {
         "year": 1371,
         "month": 12,
-        "abs": 16463
+        "abs": 16463,
+        "confidence": "month"
       },
       "startAbs": 16344,
       "endAbs": 16463,
-      "precision": "year",
       "role": "primary",
       "note": "明玉珍大夏都城重庆。",
       "links": [
@@ -5258,16 +5423,17 @@
       "start": {
         "year": 1364,
         "month": 1,
-        "abs": 16368
+        "abs": 16368,
+        "confidence": "year"
       },
       "end": {
         "year": 1368,
         "month": 12,
-        "abs": 16427
+        "abs": 16427,
+        "confidence": "month"
       },
       "startAbs": 16368,
       "endAbs": 16427,
-      "precision": "year",
       "role": "primary",
       "note": "朱元璋吴国都城应天。",
       "links": [
@@ -5288,16 +5454,17 @@
       "start": {
         "year": 1368,
         "month": 1,
-        "abs": 16416
+        "abs": 16416,
+        "confidence": "year"
       },
       "end": {
         "year": 1420,
         "month": 12,
-        "abs": 17051
+        "abs": 17051,
+        "confidence": "month"
       },
       "startAbs": 16416,
       "endAbs": 17051,
-      "precision": "year",
       "role": "primary",
       "note": "明初都应天府。",
       "links": [
@@ -5318,16 +5485,17 @@
       "start": {
         "year": 1421,
         "month": 1,
-        "abs": 17052
+        "abs": 17052,
+        "confidence": "month"
       },
       "end": {
         "year": 1644,
         "month": 4,
-        "abs": 19731
+        "abs": 19731,
+        "confidence": "month"
       },
       "startAbs": 17052,
       "endAbs": 19731,
-      "precision": "month",
       "role": "primary",
       "note": "永乐迁都顺天府。",
       "links": [
@@ -5348,16 +5516,17 @@
       "start": {
         "year": 1636,
         "month": 1,
-        "abs": 19632
+        "abs": 19632,
+        "confidence": "year"
       },
       "end": {
         "year": 1644,
         "month": 4,
-        "abs": 19731
+        "abs": 19731,
+        "confidence": "month"
       },
       "startAbs": 19632,
       "endAbs": 19731,
-      "precision": "year",
       "role": "secondary",
       "note": "沈阳于1634年改称盛京；清迁都北京后盛京为陪都。本记录保留1636—1644年 secondary 角色区间，古称并列为“沈阳/盛京”。",
       "links": [
@@ -5378,16 +5547,17 @@
       "start": {
         "year": 1644,
         "month": 5,
-        "abs": 19732
+        "abs": 19732,
+        "confidence": "month"
       },
       "end": {
         "year": 1912,
         "month": 2,
-        "abs": 22945
+        "abs": 22945,
+        "confidence": "month"
       },
       "startAbs": 19732,
       "endAbs": 22945,
-      "precision": "month",
       "role": "primary",
       "note": "清入关后都北京。",
       "links": [
@@ -5409,17 +5579,18 @@
         "year": 1644,
         "month": 6,
         "abs": 19733,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "end": {
         "year": 1645,
         "month": 6,
         "abs": 19745,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "startAbs": 19733,
       "endAbs": 19745,
-      "precision": "day",
       "role": "primary",
       "note": "弘光政权都南京。",
       "links": [
@@ -5441,17 +5612,18 @@
         "year": 1645,
         "month": 8,
         "abs": 19747,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "end": {
         "year": 1646,
         "month": 10,
         "abs": 19761,
-        "day": 6
+        "day": 6,
+        "confidence": "day"
       },
       "startAbs": 19747,
       "endAbs": 19761,
-      "precision": "day",
       "role": "primary",
       "note": "隆武政权都福州。",
       "links": [
@@ -5473,17 +5645,18 @@
         "year": 1646,
         "month": 12,
         "abs": 19763,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "end": {
         "year": 1647,
         "month": 1,
         "abs": 19764,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "startAbs": 19763,
       "endAbs": 19764,
-      "precision": "day",
       "role": "primary",
       "claimTrack": "shaowu",
       "note": "绍武政权都广州。",
@@ -5506,17 +5679,18 @@
         "year": 1646,
         "month": 12,
         "abs": 19763,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "end": {
         "year": 1647,
         "month": 2,
         "abs": 19765,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "startAbs": 19763,
       "endAbs": 19765,
-      "precision": "day",
       "role": "primary",
       "note": "永历帝于肇庆登基。",
       "links": [
@@ -5538,16 +5712,17 @@
         "year": 1647,
         "month": 2,
         "abs": 19765,
-        "day": 21
+        "day": 21,
+        "confidence": "month"
       },
       "end": {
         "year": 1648,
         "month": 12,
-        "abs": 19787
+        "abs": 19787,
+        "confidence": "month"
       },
       "startAbs": 19765,
       "endAbs": 19787,
-      "precision": "month",
       "role": "primary",
       "note": "绍武败后永历退守广西。",
       "links": [
@@ -5568,16 +5743,17 @@
       "start": {
         "year": 1648,
         "month": 8,
-        "abs": 19783
+        "abs": 19783,
+        "confidence": "month"
       },
       "end": {
         "year": 1649,
         "month": 11,
-        "abs": 19798
+        "abs": 19798,
+        "confidence": "month"
       },
       "startAbs": 19783,
       "endAbs": 19798,
-      "precision": "month",
       "role": "primary",
       "note": "永历二年还都肇庆，至永历四年清军进犯后再度西撤。",
       "links": [
@@ -5598,16 +5774,17 @@
       "start": {
         "year": 1648,
         "month": 2,
-        "abs": 19777
+        "abs": 19777,
+        "confidence": "month"
       },
       "end": {
         "year": 1648,
         "month": 8,
-        "abs": 19783
+        "abs": 19783,
+        "confidence": "month"
       },
       "startAbs": 19777,
       "endAbs": 19783,
-      "precision": "month",
       "role": "primary",
       "note": "永历驻南宁，入黔前倚仗孙可望。",
       "links": [
@@ -5628,16 +5805,17 @@
       "start": {
         "year": 1649,
         "month": 11,
-        "abs": 19798
+        "abs": 19798,
+        "confidence": "month"
       },
       "end": {
         "year": 1652,
         "month": 2,
-        "abs": 19825
+        "abs": 19825,
+        "confidence": "month"
       },
       "startAbs": 19798,
       "endAbs": 19825,
-      "precision": "month",
       "role": "primary",
       "note": "永历四年末再驻南宁，后于1652年二月移跸安龙。",
       "links": [
@@ -5658,16 +5836,17 @@
       "start": {
         "year": 1652,
         "month": 2,
-        "abs": 19825
+        "abs": 19825,
+        "confidence": "month"
       },
       "end": {
         "year": 1656,
         "month": 3,
-        "abs": 19874
+        "abs": 19874,
+        "confidence": "month"
       },
       "startAbs": 19825,
       "endAbs": 19874,
-      "precision": "month",
       "role": "primary",
       "note": "孙可望安置永历于安龙府。",
       "links": [
@@ -5688,16 +5867,17 @@
       "start": {
         "year": 1656,
         "month": 3,
-        "abs": 19874
+        "abs": 19874,
+        "confidence": "month"
       },
       "end": {
         "year": 1659,
         "month": 1,
-        "abs": 19908
+        "abs": 19908,
+        "confidence": "year"
       },
       "startAbs": 19874,
       "endAbs": 19908,
-      "precision": "month",
       "role": "primary",
       "note": "李定国迎驾入滇；1659年后流亡缅甸，1662年遇害于昆明。",
       "links": [
@@ -5719,17 +5899,18 @@
         "year": 1644,
         "month": 2,
         "abs": 19729,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "end": {
         "year": 1644,
         "month": 2,
         "abs": 19729,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "startAbs": 19729,
       "endAbs": 19729,
-      "precision": "day",
       "role": "primary",
       "note": "李自成于1644年2月8日（崇祯十七年正月初一）在西安称帝，2月15日率军东进北京；此处按公历日精度记载。",
       "links": [
@@ -5751,17 +5932,18 @@
         "year": 1644,
         "month": 4,
         "abs": 19731,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "end": {
         "year": 1644,
         "month": 6,
         "abs": 19733,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "startAbs": 19731,
       "endAbs": 19733,
-      "precision": "day",
       "role": "primary",
       "note": "大顺军于1644年4月23日进入北京，至1644年6月4日退出；此处按公历日精度记载。",
       "links": [
@@ -5783,16 +5965,17 @@
         "year": 1644,
         "month": 12,
         "abs": 19739,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "end": {
         "year": 1646,
         "month": 12,
-        "abs": 19763
+        "abs": 19763,
+        "confidence": "month"
       },
       "startAbs": 19739,
       "endAbs": 19763,
-      "precision": "day",
       "role": "primary",
       "note": "1644年12月4日张献忠在成都称帝，国号大西，以成都为西京。",
       "links": [
@@ -5813,16 +5996,17 @@
       "start": {
         "year": 1661,
         "month": 4,
-        "abs": 19935
+        "abs": 19935,
+        "confidence": "month"
       },
       "end": {
         "year": 1683,
         "month": 10,
-        "abs": 20205
+        "abs": 20205,
+        "confidence": "month"
       },
       "startAbs": 19935,
       "endAbs": 20205,
-      "precision": "month",
       "role": "primary",
       "note": "郑成功于1661年以台湾为东都；郑经于1664年改称东宁。两名指台南承天府同一都城，合并为一条记录；1683年十月郑克塽降清后结束。",
       "links": [
@@ -5856,17 +6040,18 @@
         "year": 1853,
         "month": 3,
         "abs": 22238,
-        "day": 29
+        "day": 29,
+        "confidence": "day"
       },
       "end": {
         "year": 1864,
         "month": 7,
         "abs": 22374,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "startAbs": 22238,
       "endAbs": 22374,
-      "precision": "day",
       "role": "primary",
       "note": "1853年3月29日太平天国改江宁为天京并定都；1864年7月19日天京陷落。",
       "links": [
@@ -5887,16 +6072,17 @@
       "start": {
         "year": 1912,
         "month": 1,
-        "abs": 22944
+        "abs": 22944,
+        "confidence": "month"
       },
       "end": {
         "year": 1937,
         "month": 11,
-        "abs": 23254
+        "abs": 23254,
+        "confidence": "month"
       },
       "startAbs": 22944,
       "endAbs": 23254,
-      "precision": "month",
       "role": "primary",
       "note": "民国初都南京。",
       "links": [
@@ -5917,16 +6103,17 @@
       "start": {
         "year": 1937,
         "month": 11,
-        "abs": 23254
+        "abs": 23254,
+        "confidence": "month"
       },
       "end": {
         "year": 1946,
         "month": 5,
-        "abs": 23356
+        "abs": 23356,
+        "confidence": "month"
       },
       "startAbs": 23254,
       "endAbs": 23356,
-      "precision": "month",
       "role": "temporary",
       "note": "抗战陪都重庆。",
       "links": [
@@ -5947,16 +6134,17 @@
       "start": {
         "year": 1946,
         "month": 5,
-        "abs": 23356
+        "abs": 23356,
+        "confidence": "month"
       },
       "end": {
         "year": 1949,
         "month": 4,
-        "abs": 23391
+        "abs": 23391,
+        "confidence": "month"
       },
       "startAbs": 23356,
       "endAbs": 23391,
-      "precision": "month",
       "role": "primary",
       "note": "抗战后还都南京。",
       "links": [
@@ -5977,16 +6165,17 @@
       "start": {
         "year": 1949,
         "month": 10,
-        "abs": 23397
+        "abs": 23397,
+        "confidence": "month"
       },
       "end": {
         "year": 2026,
         "month": 12,
-        "abs": 24323
+        "abs": 24323,
+        "confidence": "month"
       },
       "startAbs": 23397,
       "endAbs": 24323,
-      "precision": "month",
       "role": "primary",
       "note": "中华人民共和国首都北京。",
       "links": [
@@ -6007,16 +6196,17 @@
       "start": {
         "year": 304,
         "month": 1,
-        "abs": 3648
+        "abs": 3648,
+        "confidence": "year"
       },
       "end": {
         "year": 304,
         "month": 12,
-        "abs": 3659
+        "abs": 3659,
+        "confidence": "month"
       },
       "startAbs": 3648,
       "endAbs": 3659,
-      "precision": "year",
       "role": "primary",
       "note": "刘渊建汉初都于离石左国城。左国城具体遗址地望仍有异说；坐标采用方山县行政区约略点，不代表已确认城址。迁都年份的年桶归入迁入地，不表示公历1月1日即迁。",
       "links": [
@@ -6041,16 +6231,17 @@
       "start": {
         "year": 305,
         "month": 1,
-        "abs": 3660
+        "abs": 3660,
+        "confidence": "year"
       },
       "end": {
         "year": 307,
         "month": 12,
-        "abs": 3695
+        "abs": 3695,
+        "confidence": "month"
       },
       "startAbs": 3660,
       "endAbs": 3695,
-      "precision": "year",
       "role": "primary",
       "note": "《晋书》记离石大饥后迁于黎亭；地望按今壶关县一带约略定位，未指认具体遗址。迁都年份的年桶归入迁入地。",
       "links": [
@@ -6075,16 +6266,17 @@
       "start": {
         "year": 308,
         "month": 1,
-        "abs": 3696
+        "abs": 3696,
+        "confidence": "year"
       },
       "end": {
         "year": 308,
         "month": 12,
-        "abs": 3707
+        "abs": 3707,
+        "confidence": "month"
       },
       "startAbs": 3696,
       "endAbs": 3707,
-      "precision": "year",
       "role": "primary",
       "note": "刘渊迁都蒲子，后于永嘉二年迁都平阳；坐标采用隰县行政区约略点，不代表已确认城址。迁都年份的年桶归入迁入地。",
       "links": [
@@ -6109,16 +6301,17 @@
       "start": {
         "year": 309,
         "month": 1,
-        "abs": 3708
+        "abs": 3708,
+        "confidence": "year"
       },
       "end": {
         "year": 318,
         "month": 12,
-        "abs": 3827
+        "abs": 3827,
+        "confidence": "month"
       },
       "startAbs": 3708,
       "endAbs": 3827,
-      "precision": "year",
       "role": "primary",
       "note": "刘渊迁都平阳，汉赵后续君主沿用，刘曜于319年迁都长安。坐标为尧都区行政区约略点。迁都年份的年桶归入迁入地。",
       "links": [
@@ -6143,16 +6336,17 @@
       "start": {
         "year": 1369,
         "month": 1,
-        "abs": 16428
+        "abs": 16428,
+        "confidence": "year"
       },
       "end": {
         "year": 1370,
         "month": 12,
-        "abs": 16451
+        "abs": 16451,
+        "confidence": "month"
       },
       "startAbs": 16428,
       "endAbs": 16451,
-      "precision": "year",
       "role": "temporary",
       "note": "元顺帝北撤后驻跸应昌；1370年应昌被明军攻克，爱猷识理达腊出逃和林。年精度记录迁入、陷落所在年；高德地点为应昌路故城墓葬区附近代表点。",
       "links": [
@@ -6177,16 +6371,17 @@
       "start": {
         "year": 1370,
         "month": 1,
-        "abs": 16440
+        "abs": 16440,
+        "confidence": "year"
       },
       "end": {
         "year": 1388,
         "month": 12,
-        "abs": 16667
+        "abs": 16667,
+        "confidence": "month"
       },
       "startAbs": 16440,
       "endAbs": 16667,
-      "precision": "year",
       "role": "primary",
       "note": "元昭宗应昌失守后退至和林；元天元帝时期和林仍为北元的政治中心。蒙古草原汗庭具有移动性，本记录表示主要都城/政治中心，不表示汗廷全年固定驻于城内。坐标为遗址WGS84。",
       "links": [
@@ -6211,16 +6406,17 @@
       "start": {
         "year": 1616,
         "month": 1,
-        "abs": 19392
+        "abs": 19392,
+        "confidence": "year"
       },
       "end": {
         "year": 1619,
         "month": 12,
-        "abs": 19439
+        "abs": 19439,
+        "confidence": "month"
       },
       "startAbs": 19392,
       "endAbs": 19439,
-      "precision": "year",
       "role": "primary",
       "note": "努尔哈赤于1616年在赫图阿拉建立后金；年精度边界按迁都年桶归入新都。坐标为高德景区点。",
       "links": [
@@ -6245,16 +6441,17 @@
       "start": {
         "year": 1620,
         "month": 1,
-        "abs": 19440
+        "abs": 19440,
+        "confidence": "year"
       },
       "end": {
         "year": 1620,
         "month": 12,
-        "abs": 19451
+        "abs": 19451,
+        "confidence": "month"
       },
       "startAbs": 19440,
       "endAbs": 19451,
-      "precision": "year",
       "role": "primary",
       "note": "故宫博物院年表记天命五年（1620）十月迁都界藩城。年精度年桶归入迁入地；坐标为永陵镇二道村附近约略点，未指认为精确遗址坐标。",
       "links": [
@@ -6279,16 +6476,17 @@
       "start": {
         "year": 1621,
         "month": 1,
-        "abs": 19452
+        "abs": 19452,
+        "confidence": "year"
       },
       "end": {
         "year": 1624,
         "month": 12,
-        "abs": 19499
+        "abs": 19499,
+        "confidence": "month"
       },
       "startAbs": 19452,
       "endAbs": 19499,
-      "precision": "year",
       "role": "primary",
       "note": "后金于1621年迁都辽阳；坐标为白塔区行政区约略点，不代表东京城遗址精确位置。年精度边界按迁都年桶归入新都。",
       "links": [
@@ -6313,16 +6511,17 @@
       "start": {
         "year": 1625,
         "month": 1,
-        "abs": 19500
+        "abs": 19500,
+        "confidence": "year"
       },
       "end": {
         "year": 1635,
         "month": 12,
-        "abs": 19631
+        "abs": 19631,
+        "confidence": "month"
       },
       "startAbs": 19500,
       "endAbs": 19631,
-      "precision": "year",
       "role": "primary",
       "note": "努尔哈赤于1625年迁都沈阳；皇太极于天聪八年（1634）改称“天眷盛京”，简称盛京。城市改名沿用同一都城记录，坐标为城市级约略点。",
       "links": [
@@ -6355,16 +6554,17 @@
       "start": {
         "year": 1645,
         "month": 1,
-        "abs": 19740
+        "abs": 19740,
+        "confidence": "year"
       },
       "end": {
         "year": 1646,
         "month": 12,
-        "abs": 19763
+        "abs": 19763,
+        "confidence": "month"
       },
       "startAbs": 19740,
       "endAbs": 19763,
-      "precision": "year",
       "role": "primary",
       "claimTrack": "lu-jian",
       "note": "朱以海于1645年在绍兴监国；1646年绍兴失守后出走。与南明主线及绍武并立政权分轨记录，坐标为越城区行政区约略点。",
@@ -6390,16 +6590,17 @@
       "start": {
         "year": 649,
         "month": 1,
-        "abs": 7788
+        "abs": 7788,
+        "confidence": "year"
       },
       "end": {
         "year": 738,
         "month": 12,
-        "abs": 8867
+        "abs": 8867,
+        "confidence": "month"
       },
       "startAbs": 7788,
       "endAbs": 8867,
-      "precision": "year",
       "role": "primary",
       "note": "巍山县政府资料称细奴逻于649年建蒙舍诏、定都图城，738年皮逻阁迁都大理太和城。图城遗址约在今大仓镇团山村山龙山于图山顶；坐标为遗址近似点，年界只按年桶表示。个别考古资料将始建年记为650年。",
       "links": [
@@ -6428,18 +6629,18 @@
       "start": {
         "year": 304,
         "month": 1,
-        "abs": 3648
+        "abs": 3648,
+        "confidence": "year"
       },
       "end": {
         "year": 306,
         "month": 6,
         "day": 10,
-        "abs": 3677
+        "abs": 3677,
+        "confidence": "day"
       },
       "startAbs": 3648,
       "endAbs": 3677,
-      "precision": "year",
-      "endPrecision": "day",
       "role": "temporary",
       "note": "永安元年（304）张方挟持晋惠帝司马衷及公卿至长安，司马颙以征西府为宫；惠帝于306年6月11日还洛阳。洛阳留台仍承制行事，故此处记长安为短期朝廷实际驻地（行在），洛阳仍保留西晋京师都城记录。起点按年精度表示，史载为农历十一月，未将农历日直接换作公历月日。",
       "links": [
@@ -6469,17 +6670,17 @@
         "year": 306,
         "month": 6,
         "day": 11,
-        "abs": 3677
+        "abs": 3677,
+        "confidence": "day"
       },
       "end": {
         "year": 316,
         "month": 12,
-        "abs": 3803
+        "abs": 3803,
+        "confidence": "year"
       },
       "startAbs": 3677,
       "endAbs": 3803,
-      "precision": "day",
-      "endPrecision": "year",
       "role": "primary",
       "note": "晋惠帝于306年6月11日还洛阳后，洛阳恢复为西晋都城；本记录承接304年此前的洛阳都城阶段。",
       "links": [
@@ -6508,10 +6709,10 @@
       "start": {
         "year": 757,
         "month": 11,
-        "abs": 9094
+        "abs": 9094,
+        "confidence": "month"
       },
       "startAbs": 9094,
-      "precision": "month",
       "role": "primary",
       "links": [
         {
@@ -6525,7 +6726,8 @@
       "end": {
         "year": 903,
         "month": 12,
-        "abs": 10847
+        "abs": 10847,
+        "confidence": "month"
       },
       "endAbs": 10847,
       "note": "唐军收復後恢復唐朝都城記錄；安史叛军入长安及唐军收复期間不將實際被叛軍控制的城市列作唐朝都城。757年11月為換算後的公曆月精度起點，截止仍至903年末。"
@@ -6538,10 +6740,10 @@
       "start": {
         "year": 757,
         "month": 12,
-        "abs": 9095
+        "abs": 9095,
+        "confidence": "month"
       },
       "startAbs": 9095,
-      "precision": "month",
       "role": "secondary",
       "links": [
         {
@@ -6555,7 +6757,8 @@
       "end": {
         "year": 903,
         "month": 12,
-        "abs": 10847
+        "abs": 10847,
+        "confidence": "month"
       },
       "endAbs": 10847,
       "note": "唐军收復後恢復唐朝都城記錄；安史叛军陷洛阳及唐军收复期間不將實際被叛軍控制的城市列作唐朝都城。757年12月為換算後的公曆月精度起點，截止仍至903年末。"
@@ -6572,18 +6775,18 @@
         "year": 756,
         "month": 2,
         "day": 5,
-        "abs": 9073
+        "abs": 9073,
+        "confidence": "day"
       },
       "end": {
         "year": 757,
         "month": 10,
         "day": 17,
-        "abs": 9093
+        "abs": 9093,
+        "confidence": "day"
       },
       "startAbs": 9073,
       "endAbs": 9093,
-      "precision": "day",
-      "endPrecision": "day",
       "role": "primary",
       "reignIds": [
         "reign-an-lushan"
@@ -6612,18 +6815,18 @@
         "year": 757,
         "month": 10,
         "day": 18,
-        "abs": 9093
+        "abs": 9093,
+        "confidence": "day"
       },
       "end": {
         "year": 759,
         "month": 4,
         "day": 6,
-        "abs": 9111
+        "abs": 9111,
+        "confidence": "day"
       },
       "startAbs": 9093,
       "endAbs": 9107,
-      "precision": "day",
-      "endPrecision": "day",
       "role": "primary",
       "reignIds": [
         "reign-an-qingxu"
@@ -6652,23 +6855,22 @@
         "year": 759,
         "month": 4,
         "day": 7,
-        "abs": 9111
+        "abs": 9111,
+        "confidence": "approximate_day"
       },
       "end": {
         "year": 759,
         "month": 9,
         "day": 26,
-        "abs": 9116
+        "abs": 9116,
+        "confidence": "day"
       },
       "startAbs": 9107,
       "endAbs": 9112,
-      "precision": "day",
-      "endPrecision": "day",
       "role": "primary",
       "reignIds": [
         "reign-shi-siming"
       ],
-      "startDateConfidence": "approximate",
       "note": "史思明杀安庆绪后返回范阳，并于乾元二年四月在范阳称帝、改称燕京；称帝具体公历日未能据可靠历日确定，起点以安庆绪被杀日作为接续标记并标推定。759年九月史军重新进入洛阳，主都阶段止于入城前一日。坐标是北京市区约略点，不代表已确认的唐范阳城址。",
       "links": [
         {
@@ -6679,7 +6881,8 @@
           "label": "北京日报：史思明建“都”范阳城",
           "url": "https://peking.bjd.com.cn/content/s63a524c9e4b0450519f694a7.html"
         }
-      ]
+      ],
+      "startConfidence": "approximate_day"
     },
     {
       "id": "cap-yan-anshi-luoyang-759",
@@ -6693,18 +6896,18 @@
         "year": 759,
         "month": 9,
         "day": 27,
-        "abs": 9116
+        "abs": 9116,
+        "confidence": "day"
       },
       "end": {
         "year": 762,
         "month": 10,
         "day": 29,
-        "abs": 9153
+        "abs": 9153,
+        "confidence": "day"
       },
       "startAbs": 9112,
       "endAbs": 9150,
-      "precision": "day",
-      "endPrecision": "day",
       "role": "primary",
       "reignIds": [
         "reign-shi-siming",
@@ -6734,25 +6937,23 @@
         "year": 759,
         "month": 4,
         "day": 7,
-        "abs": 9111
+        "abs": 9111,
+        "confidence": "approximate_day"
       },
       "end": {
         "year": 763,
         "month": 1,
         "day": 30,
-        "abs": 9156
+        "abs": 9156,
+        "confidence": "approximate_day"
       },
       "startAbs": 9107,
       "endAbs": 9153,
-      "precision": "day",
-      "endPrecision": "day",
       "role": "secondary",
       "reignIds": [
         "reign-shi-siming",
         "reign-shi-chaoyi"
       ],
-      "startDateConfidence": "approximate",
-      "endDateConfidence": "approximate",
       "note": "史思明称帝后改范阳为燕京；759年洛阳复入后范阳保留为燕京/后方政治中心，至史朝义败亡前后失去政权控制。末端依史朝义败亡、首级入京的时间范围标推定。坐标是北京市区约略点，不代表已确认的唐范阳城址。",
       "links": [
         {
@@ -6763,7 +6964,9 @@
           "label": "《资治通鉴》卷222",
           "url": "https://zh.wikisource.org/zh-hans/資治通鑑_(胡三省音注)/卷222"
         }
-      ]
+      ],
+      "startConfidence": "approximate_day",
+      "endConfidence": "approximate_day"
     }
   ],
   "reigns": [],

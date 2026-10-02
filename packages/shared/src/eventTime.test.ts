@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { EventSchema } from "./schema";
 import {
   eventKindLabel,
+  eventModeForCalendarDuration,
   eventSpanAbs,
   formatEventTime,
   shouldShowEventAtLod,
@@ -32,7 +33,7 @@ describe("eventSpanAbs", () => {
     });
   });
 
-  it("anchors circa events on atAbs when present", () => {
+  it("uses an explicit representative point when present", () => {
     expect(eventSpanAbs({ startAbs: 100, endAbs: 200, atAbs: 150 })).toEqual({
       startAbs: 100,
       endAbs: 200,
@@ -57,8 +58,9 @@ describe("formatEventTime", () => {
       at: { year: 200, month: 1 },
       atAbs: absMonth(200, 1),
       precision: "year",
+      atConfidence: "approximate_year",
     });
-    expect(formatEventTime(event)).toBe("200年");
+    expect(formatEventTime(event)).toBe("约200年");
   });
 
   it("keeps month for month-precision points", () => {
@@ -86,18 +88,16 @@ describe("formatEventTime", () => {
     expect(formatEventTime(event)).toBe("221年7月 — 222年8月");
   });
 
-  it("prefixes circa ranges with 约", () => {
+  it("formats a point with approximate confidence", () => {
     const event = parseEvent({
       id: "jianan",
       name: "建安文学",
-      timeMode: "circa",
-      precision: "decade",
-      start: { year: 196, month: 1 },
-      end: { year: 220, month: 12 },
-      startAbs: absMonth(196, 1),
-      endAbs: absMonth(220, 12),
+      timeMode: "point",
+      at: { year: 196, month: 12 },
+      atAbs: absMonth(196, 12),
+      atConfidence: "approximate_year",
     });
-    expect(formatEventTime(event)).toBe("约196年 — 220年");
+    expect(formatEventTime(event)).toBe("约196年");
   });
 });
 
@@ -109,39 +109,34 @@ describe("shouldShowEventAtLod", () => {
     atAbs: absMonth(200, 6),
     precision: "month",
   });
-  const circaDecade = parseEvent({
-    id: "circa",
-    name: "约",
-    timeMode: "circa",
-    precision: "decade",
-    start: { year: 196, month: 1 },
-    end: { year: 220, month: 12 },
-    startAbs: absMonth(196, 1),
-    endAbs: absMonth(220, 12),
-  });
-  const century = parseEvent({
-    id: "century",
-    name: "世纪",
-    timeMode: "circa",
-    precision: "century",
-    start: { year: 100, month: 1 },
-    end: { year: 200, month: 12 },
-    startAbs: absMonth(100, 1),
-    endAbs: absMonth(200, 12),
-  });
 
   it("shows all events at decade and month", () => {
     expect(shouldShowEventAtLod(pointMonth, "decade")).toBe(true);
     expect(shouldShowEventAtLod(pointMonth, "month")).toBe(true);
   });
 
-  it("hides precise points at century, keeps circa and coarse precision", () => {
-    expect(shouldShowEventAtLod(pointMonth, "century")).toBe(false);
-    expect(shouldShowEventAtLod(circaDecade, "century")).toBe(true);
+  it("keeps all events participating at every LOD", () => {
+    expect(shouldShowEventAtLod(pointMonth, "century")).toBe(true);
+    expect(shouldShowEventAtLod(pointMonth, "millennium")).toBe(true);
+  });
+});
+
+describe("eventModeForCalendarDuration", () => {
+  it("uses point below the one calendar-year threshold and span at one year", () => {
+    expect(eventModeForCalendarDuration(
+      { year: 200, month: 1, confidence: "month" },
+      { year: 200, month: 12, confidence: "month" },
+    )).toBe("point");
+    expect(eventModeForCalendarDuration(
+      { year: 200, month: 1, confidence: "month" },
+      { year: 201, month: 1, confidence: "month" },
+    )).toBe("span");
   });
 
-  it("only keeps century-precision events at millennium", () => {
-    expect(shouldShowEventAtLod(circaDecade, "millennium")).toBe(false);
-    expect(shouldShowEventAtLod(century, "millennium")).toBe(true);
+  it("does not infer duration from year-bucket placeholder months", () => {
+    expect(eventModeForCalendarDuration(
+      { year: 200, month: 1, confidence: "year" },
+      { year: 201, month: 12, confidence: "year" },
+    )).toBeNull();
   });
 });

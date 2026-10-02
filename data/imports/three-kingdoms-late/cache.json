@@ -228,19 +228,18 @@
         "year": 239,
         "month": 1,
         "abs": 2868,
-        "day": 22
+        "day": 22,
+        "confidence": "day"
       },
       "end": {
         "year": 254,
         "month": 10,
         "abs": 3057,
-        "day": 17
+        "day": 17,
+        "confidence": "day"
       },
       "startAbs": 2868,
       "endAbs": 3057,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -259,19 +258,18 @@
         "year": 254,
         "month": 10,
         "abs": 3057,
-        "day": 17
+        "day": 17,
+        "confidence": "day"
       },
       "end": {
         "year": 260,
         "month": 6,
         "abs": 3125,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "startAbs": 3057,
       "endAbs": 3125,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -290,19 +288,18 @@
         "year": 260,
         "month": 6,
         "abs": 3125,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "end": {
         "year": 266,
         "month": 2,
         "abs": 3193,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "startAbs": 3125,
       "endAbs": 3193,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -322,19 +319,18 @@
         "year": 252,
         "month": 5,
         "abs": 3028,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "end": {
         "year": 258,
         "month": 11,
         "abs": 3106,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "startAbs": 3028,
       "endAbs": 3106,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -352,19 +348,18 @@
         "year": 258,
         "month": 11,
         "abs": 3106,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "end": {
         "year": 264,
         "month": 9,
         "abs": 3176,
-        "day": 3
+        "day": 3,
+        "confidence": "day"
       },
       "startAbs": 3106,
       "endAbs": 3176,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -389,19 +384,18 @@
         "year": 264,
         "month": 9,
         "abs": 3176,
-        "day": 3
+        "day": 3,
+        "confidence": "day"
       },
       "end": {
         "year": 280,
         "month": 5,
         "abs": 3364,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "startAbs": 3176,
       "endAbs": 3364,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -412,7 +406,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "wei"
       ],
@@ -426,7 +419,8 @@
       "at": {
         "year": 249,
         "month": 12,
-        "abs": 2999
+        "abs": 2999,
+        "confidence": "year"
       },
       "summary": "曹芳赴高平陵谒陵时，司马懿控制洛阳及洛水浮桥，迫使曹爽交出兵权并夷其三族，曹魏政局转由司马氏掌握。",
       "atAbs": 2999,

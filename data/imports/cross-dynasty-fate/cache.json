@@ -21,10 +21,10 @@
       "at": {
         "year": -750,
         "month": 12,
-        "abs": -8977
+        "abs": -8977,
+        "confidence": "year"
       },
       "atAbs": -8977,
-      "precision": "year",
       "eventId": "xie-wang-killed"
     },
     {
@@ -35,10 +35,10 @@
       "at": {
         "year": -230,
         "month": 12,
-        "abs": -2737
+        "abs": -2737,
+        "confidence": "year"
       },
       "atAbs": -2737,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -49,10 +49,10 @@
       "at": {
         "year": -228,
         "month": 12,
-        "abs": -2713
+        "abs": -2713,
+        "confidence": "year"
       },
       "atAbs": -2713,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -63,10 +63,10 @@
       "at": {
         "year": -225,
         "month": 12,
-        "abs": -2677
+        "abs": -2677,
+        "confidence": "year"
       },
       "atAbs": -2677,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -77,10 +77,10 @@
       "at": {
         "year": -223,
         "month": 12,
-        "abs": -2653
+        "abs": -2653,
+        "confidence": "year"
       },
       "atAbs": -2653,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -91,10 +91,10 @@
       "at": {
         "year": -222,
         "month": 12,
-        "abs": -2641
+        "abs": -2641,
+        "confidence": "year"
       },
       "atAbs": -2641,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -105,10 +105,10 @@
       "at": {
         "year": -221,
         "month": 12,
-        "abs": -2629
+        "abs": -2629,
+        "confidence": "year"
       },
       "atAbs": -2629,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -119,10 +119,10 @@
       "at": {
         "year": -473,
         "month": 12,
-        "abs": -5653
+        "abs": -5653,
+        "confidence": "year"
       },
       "atAbs": -5653,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -133,10 +133,10 @@
       "at": {
         "year": -222,
         "month": 12,
-        "abs": -2641
+        "abs": -2641,
+        "confidence": "year"
       },
       "atAbs": -2641,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -147,10 +147,10 @@
       "at": {
         "year": -349,
         "month": 12,
-        "abs": -4165
+        "abs": -4165,
+        "confidence": "year"
       },
       "atAbs": -4165,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -161,10 +161,10 @@
       "at": {
         "year": -306,
         "month": 12,
-        "abs": -3649
+        "abs": -3649,
+        "confidence": "year"
       },
       "atAbs": -3649,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -175,10 +175,10 @@
       "at": {
         "year": -286,
         "month": 12,
-        "abs": -3409
+        "abs": -3409,
+        "confidence": "year"
       },
       "atAbs": -3409,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -189,10 +189,10 @@
       "at": {
         "year": -256,
         "month": 12,
-        "abs": -3049
+        "abs": -3049,
+        "confidence": "year"
       },
       "atAbs": -3049,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -203,10 +203,10 @@
       "at": {
         "year": -221,
         "month": 12,
-        "abs": -2629
+        "abs": -2629,
+        "confidence": "year"
       },
       "atAbs": -2629,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -217,10 +217,10 @@
       "at": {
         "year": -296,
         "month": 12,
-        "abs": -3529
+        "abs": -3529,
+        "confidence": "year"
       },
       "atAbs": -3529,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -231,10 +231,10 @@
       "at": {
         "year": -487,
         "month": 12,
-        "abs": -5821
+        "abs": -5821,
+        "confidence": "year"
       },
       "atAbs": -5821,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -245,10 +245,10 @@
       "at": {
         "year": -327,
         "month": 12,
-        "abs": -3901
+        "abs": -3901,
+        "confidence": "year"
       },
       "atAbs": -3901,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -259,10 +259,10 @@
       "at": {
         "year": -296,
         "month": 12,
-        "abs": -3529
+        "abs": -3529,
+        "confidence": "year"
       },
       "atAbs": -3529,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -273,10 +273,10 @@
       "at": {
         "year": -431,
         "month": 12,
-        "abs": -5149
+        "abs": -5149,
+        "confidence": "year"
       },
       "atAbs": -5149,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -287,10 +287,10 @@
       "at": {
         "year": -445,
         "month": 12,
-        "abs": -5317
+        "abs": -5317,
+        "confidence": "year"
       },
       "atAbs": -5317,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -301,10 +301,10 @@
       "at": {
         "year": -375,
         "month": 12,
-        "abs": -4477
+        "abs": -4477,
+        "confidence": "year"
       },
       "atAbs": -4477,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -315,10 +315,10 @@
       "at": {
         "year": -249,
         "month": 12,
-        "abs": -2965
+        "abs": -2965,
+        "confidence": "year"
       },
       "atAbs": -2965,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -329,10 +329,10 @@
       "at": {
         "year": -256,
         "month": 12,
-        "abs": -3049
+        "abs": -3049,
+        "confidence": "year"
       },
       "atAbs": -3049,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -343,10 +343,10 @@
       "at": {
         "year": -206,
         "month": 12,
-        "abs": -2449
+        "abs": -2449,
+        "confidence": "year"
       },
       "atAbs": -2449,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -357,10 +357,10 @@
       "at": {
         "year": -205,
         "month": 12,
-        "abs": -2437
+        "abs": -2437,
+        "confidence": "year"
       },
       "atAbs": -2437,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -373,10 +373,10 @@
         "month": 2,
         "abs": -2411,
         "day": 28,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": -2411,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -387,10 +387,10 @@
       "at": {
         "year": -299,
         "month": 12,
-        "abs": -3565
+        "abs": -3565,
+        "confidence": "year"
       },
       "atAbs": -3565,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -401,10 +401,10 @@
       "at": {
         "year": -645,
         "month": 11,
-        "abs": -7718
+        "abs": -7718,
+        "confidence": "year"
       },
       "atAbs": -7718,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -415,10 +415,10 @@
       "at": {
         "year": -284,
         "month": 12,
-        "abs": -3385
+        "abs": -3385,
+        "confidence": "year"
       },
       "atAbs": -3385,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -429,10 +429,10 @@
       "at": {
         "year": -1600,
         "month": 12,
-        "abs": -19177
+        "abs": -19177,
+        "confidence": "year"
       },
       "atAbs": -19177,
-      "precision": "year",
       "eventId": "mingtiao"
     },
     {
@@ -443,10 +443,10 @@
       "at": {
         "year": -1046,
         "month": 1,
-        "abs": -12540
+        "abs": -12540,
+        "confidence": "year"
       },
       "atAbs": -12540,
-      "precision": "year",
       "eventId": "muye"
     },
     {
@@ -459,10 +459,10 @@
         "month": 11,
         "abs": -2462,
         "day": 17,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": -2462,
-      "precision": "day",
       "eventId": "liu-enter-xianyang"
     },
     {
@@ -475,10 +475,10 @@
         "month": 1,
         "abs": 108,
         "day": 10,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 108,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -489,10 +489,10 @@
       "at": {
         "year": 24,
         "month": 1,
-        "abs": 288
+        "abs": 288,
+        "confidence": "month"
       },
       "atAbs": 288,
-      "precision": "month",
       "eventId": null
     },
     {
@@ -505,10 +505,10 @@
         "month": 11,
         "abs": 2650,
         "day": 25,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 2650,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -521,10 +521,10 @@
         "month": 10,
         "abs": 285,
         "day": 6,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 285,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -535,10 +535,10 @@
       "at": {
         "year": 25,
         "month": 12,
-        "abs": 311
+        "abs": 311,
+        "confidence": "year"
       },
       "atAbs": 311,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -550,10 +550,10 @@
         "year": 27,
         "month": 3,
         "abs": 326,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "atAbs": 326,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -564,10 +564,10 @@
       "at": {
         "year": -111,
         "month": 12,
-        "abs": -1309
+        "abs": -1309,
+        "confidence": "year"
       },
       "atAbs": -1309,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -578,10 +578,10 @@
       "at": {
         "year": -109,
         "month": 12,
-        "abs": -1285
+        "abs": -1285,
+        "confidence": "year"
       },
       "atAbs": -1285,
-      "precision": "year",
       "eventId": "dian-surrender-han"
     },
     {
@@ -592,10 +592,10 @@
       "at": {
         "year": -111,
         "month": 12,
-        "abs": -1309
+        "abs": -1309,
+        "confidence": "year"
       },
       "atAbs": -1309,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -606,10 +606,10 @@
       "at": {
         "year": -27,
         "month": 12,
-        "abs": -301
+        "abs": -301,
+        "confidence": "year"
       },
       "atAbs": -301,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -622,10 +622,10 @@
         "month": 12,
         "abs": 3167,
         "day": 23,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 3167,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -638,10 +638,10 @@
         "month": 2,
         "abs": 3193,
         "day": 4,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 3193,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -654,10 +654,10 @@
         "month": 5,
         "abs": 3364,
         "day": 1,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 3364,
-      "precision": "day",
       "eventId": "jin-unify-wu"
     },
     {
@@ -670,10 +670,10 @@
         "month": 4,
         "abs": 4167,
         "day": 13,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 4167,
-      "precision": "day",
       "eventId": "cheng-han-fall"
     },
     {
@@ -685,10 +685,10 @@
         "year": 311,
         "month": 7,
         "abs": 3738,
-        "day": 13
+        "day": 13,
+        "confidence": "day"
       },
       "atAbs": 3738,
-      "precision": "day",
       "eventId": "yongjia-disaster"
     },
     {
@@ -700,10 +700,10 @@
         "year": 313,
         "month": 3,
         "abs": 3758,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "atAbs": 3758,
-      "precision": "day",
       "eventId": "yongjia-disaster"
     },
     {
@@ -716,10 +716,10 @@
         "month": 12,
         "abs": 3803,
         "day": 11,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 3803,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -731,10 +731,10 @@
         "year": 318,
         "month": 2,
         "abs": 3817,
-        "day": 7
+        "day": 7,
+        "confidence": "day"
       },
       "atAbs": 3817,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -747,10 +747,10 @@
         "month": 7,
         "abs": 5046,
         "day": 10,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 5046,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -763,10 +763,10 @@
         "month": 2,
         "abs": 3949,
         "day": 6,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 3949,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -778,10 +778,10 @@
         "year": 350,
         "month": 4,
         "abs": 4203,
-        "precision": "month"
+        "precision": "month",
+        "confidence": "month"
       },
       "atAbs": 4203,
-      "precision": "month",
       "eventId": null
     },
     {
@@ -792,10 +792,10 @@
       "at": {
         "year": 352,
         "month": 5,
-        "abs": 4228
+        "abs": 4228,
+        "confidence": "month"
       },
       "atAbs": 4228,
-      "precision": "month",
       "eventId": null
     },
     {
@@ -807,10 +807,10 @@
         "year": 352,
         "month": 6,
         "abs": 4229,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "atAbs": 4229,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -823,10 +823,10 @@
         "month": 12,
         "abs": 4451,
         "day": 10,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 4451,
-      "precision": "day",
       "eventId": "fu-jian-unify-north"
     },
     {
@@ -838,10 +838,10 @@
         "year": 371,
         "month": 12,
         "abs": 4463,
-        "precision": "year"
+        "precision": "year",
+        "confidence": "year"
       },
       "atAbs": 4463,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -853,10 +853,10 @@
         "year": 376,
         "month": 9,
         "abs": 4520,
-        "precision": "month"
+        "precision": "month",
+        "confidence": "month"
       },
       "atAbs": 4520,
-      "precision": "month",
       "eventId": "fu-jian-unify-north"
     },
     {
@@ -869,10 +869,10 @@
         "month": 10,
         "abs": 4629,
         "day": 16,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 4629,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -884,10 +884,10 @@
         "year": 394,
         "month": 7,
         "abs": 4734,
-        "precision": "month"
+        "precision": "month",
+        "confidence": "month"
       },
       "atAbs": 4734,
-      "precision": "month",
       "eventId": null
     },
     {
@@ -899,10 +899,10 @@
         "year": 394,
         "month": 11,
         "abs": 4738,
-        "precision": "month"
+        "precision": "month",
+        "confidence": "month"
       },
       "atAbs": 4738,
-      "precision": "month",
       "eventId": null
     },
     {
@@ -914,10 +914,10 @@
         "year": 394,
         "month": 9,
         "abs": 4736,
-        "precision": "month"
+        "precision": "month",
+        "confidence": "month"
       },
       "atAbs": 4736,
-      "precision": "month",
       "eventId": null
     },
     {
@@ -930,10 +930,10 @@
         "month": 3,
         "abs": 4922,
         "day": 25,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 4922,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -946,10 +946,10 @@
         "month": 3,
         "abs": 4922,
         "day": 25,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 4922,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -961,10 +961,10 @@
         "year": 431,
         "month": 7,
         "abs": 5178,
-        "precision": "month"
+        "precision": "month",
+        "confidence": "month"
       },
       "atAbs": 5178,
-      "precision": "month",
       "eventId": null
     },
     {
@@ -976,10 +976,10 @@
         "year": 414,
         "month": 8,
         "abs": 4975,
-        "precision": "month"
+        "precision": "month",
+        "confidence": "month"
       },
       "atAbs": 4975,
-      "precision": "month",
       "eventId": null
     },
     {
@@ -990,10 +990,10 @@
       "at": {
         "year": 415,
         "month": 12,
-        "abs": 4991
+        "abs": 4991,
+        "confidence": "year"
       },
       "atAbs": 4991,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -1005,10 +1005,10 @@
         "year": 417,
         "month": 9,
         "abs": 5012,
-        "precision": "month"
+        "precision": "month",
+        "confidence": "month"
       },
       "atAbs": 5012,
-      "precision": "month",
       "eventId": null
     },
     {
@@ -1020,10 +1020,10 @@
         "year": 403,
         "month": 9,
         "abs": 4844,
-        "precision": "month"
+        "precision": "month",
+        "confidence": "month"
       },
       "atAbs": 4844,
-      "precision": "month",
       "eventId": null
     },
     {
@@ -1035,10 +1035,10 @@
         "year": 436,
         "month": 6,
         "abs": 5237,
-        "precision": "month"
+        "precision": "month",
+        "confidence": "month"
       },
       "atAbs": 5237,
-      "precision": "month",
       "eventId": null
     },
     {
@@ -1050,10 +1050,10 @@
         "year": 420,
         "month": 8,
         "abs": 5047,
-        "precision": "month"
+        "precision": "month",
+        "confidence": "month"
       },
       "atAbs": 5047,
-      "precision": "month",
       "eventId": null
     },
     {
@@ -1066,10 +1066,10 @@
         "month": 9,
         "abs": 4892,
         "day": 14,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 4892,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1080,10 +1080,10 @@
       "at": {
         "year": 431,
         "month": 6,
-        "abs": 5177
+        "abs": 5177,
+        "confidence": "month"
       },
       "atAbs": 5177,
-      "precision": "month",
       "eventId": null
     },
     {
@@ -1094,10 +1094,10 @@
       "at": {
         "year": 432,
         "month": 12,
-        "abs": 5195
+        "abs": 5195,
+        "confidence": "year"
       },
       "atAbs": 5195,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -1110,10 +1110,10 @@
         "month": 10,
         "abs": 5277,
         "day": 18,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 5277,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1126,10 +1126,10 @@
         "month": 3,
         "abs": 5750,
         "day": 30,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 5750,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1142,10 +1142,10 @@
         "month": 4,
         "abs": 6027,
         "day": 30,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 6027,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1157,10 +1157,10 @@
         "year": 552,
         "month": 1,
         "abs": 6624,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "atAbs": 6624,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1172,10 +1172,10 @@
         "year": 551,
         "month": 11,
         "abs": 6622,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "atAbs": 6622,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1187,10 +1187,10 @@
         "year": 552,
         "month": 5,
         "abs": 6628,
-        "day": 26
+        "day": 26,
+        "confidence": "day"
       },
       "atAbs": 6628,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1203,10 +1203,10 @@
         "month": 1,
         "abs": 6660,
         "day": 27,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 6660,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1219,10 +1219,10 @@
         "month": 11,
         "abs": 6694,
         "day": 16,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 6694,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1235,10 +1235,10 @@
         "month": 2,
         "abs": 6685,
         "day": 16,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 6685,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1251,10 +1251,10 @@
         "month": 1,
         "abs": 6936,
         "day": 18,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 6936,
-      "precision": "day",
       "eventId": "zhou-qi-unify"
     },
     {
@@ -1267,10 +1267,10 @@
         "month": 3,
         "abs": 6974,
         "day": 4,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 6974,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1283,10 +1283,10 @@
         "month": 2,
         "abs": 7069,
         "day": 10,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 7069,
-      "precision": "day",
       "eventId": "sui-unify"
     },
     {
@@ -1299,10 +1299,10 @@
         "month": 2,
         "abs": 6421,
         "day": 3,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 6421,
-      "precision": "day",
       "eventId": "wei-split"
     },
     {
@@ -1315,10 +1315,10 @@
         "month": 2,
         "abs": 6601,
         "day": 9,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 6601,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1331,10 +1331,10 @@
         "month": 10,
         "abs": 8289,
         "day": 14,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 8289,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1347,10 +1347,10 @@
         "month": 2,
         "abs": 8461,
         "day": 22,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 8461,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1363,10 +1363,10 @@
         "month": 10,
         "abs": 7053,
         "day": 26,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 7053,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1378,10 +1378,10 @@
         "year": 618,
         "month": 4,
         "abs": 7419,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "atAbs": 7419,
-      "precision": "day",
       "eventId": "yang-guang-killed"
     },
     {
@@ -1393,10 +1393,10 @@
         "year": 618,
         "month": 10,
         "abs": 7425,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "atAbs": 7425,
-      "precision": "day",
       "eventId": "yang-hao-killed"
     },
     {
@@ -1407,10 +1407,10 @@
       "at": {
         "year": 619,
         "month": 12,
-        "abs": 7439
+        "abs": 7439,
+        "confidence": "year"
       },
       "atAbs": 7439,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -1421,10 +1421,10 @@
       "at": {
         "year": 621,
         "month": 12,
-        "abs": 7463
+        "abs": 7463,
+        "confidence": "year"
       },
       "atAbs": 7463,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -1435,10 +1435,10 @@
       "at": {
         "year": 621,
         "month": 12,
-        "abs": 7463
+        "abs": 7463,
+        "confidence": "year"
       },
       "atAbs": 7463,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -1450,10 +1450,10 @@
         "year": 619,
         "month": 3,
         "abs": 7430,
-        "day": 22
+        "day": 22,
+        "confidence": "day"
       },
       "atAbs": 7430,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1464,10 +1464,10 @@
       "at": {
         "year": 621,
         "month": 12,
-        "abs": 7463
+        "abs": 7463,
+        "confidence": "year"
       },
       "atAbs": 7463,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -1480,10 +1480,10 @@
         "month": 6,
         "abs": 7421,
         "day": 12,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 7421,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1496,10 +1496,10 @@
         "month": 3,
         "abs": 11558,
         "day": 17,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 11558,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1512,10 +1512,10 @@
         "month": 5,
         "abs": 10888,
         "day": 12,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 10888,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1528,10 +1528,10 @@
         "month": 2,
         "abs": 11521,
         "day": 3,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 11521,
-      "precision": "day",
       "eventId": "chenqiao-mutiny"
     },
     {
@@ -1543,10 +1543,10 @@
         "year": 1127,
         "month": 3,
         "abs": 13526,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "atAbs": 13526,
-      "precision": "day",
       "eventId": "jingkang-incident"
     },
     {
@@ -1558,10 +1558,10 @@
         "year": 1127,
         "month": 3,
         "abs": 13526,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "atAbs": 13526,
-      "precision": "day",
       "eventId": "jingkang-incident"
     },
     {
@@ -1573,10 +1573,10 @@
         "year": 1161,
         "month": 11,
         "abs": 13942,
-        "day": 26
+        "day": 26,
+        "confidence": "day"
       },
       "atAbs": 13942,
-      "precision": "day",
       "eventId": "caishi-battle"
     },
     {
@@ -1589,10 +1589,10 @@
         "month": 2,
         "abs": 15313,
         "day": 4,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 15313,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1605,10 +1605,10 @@
         "month": 11,
         "abs": 11086,
         "day": 19,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 11086,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1621,10 +1621,10 @@
         "month": 1,
         "abs": 11244,
         "day": 11,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 11244,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1637,10 +1637,10 @@
         "month": 1,
         "abs": 11364,
         "day": 16,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 11364,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1653,10 +1653,10 @@
         "month": 1,
         "abs": 11412,
         "day": 2,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 11412,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1669,10 +1669,10 @@
         "month": 11,
         "abs": 11254,
         "day": 17,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 11254,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1685,10 +1685,10 @@
         "month": 11,
         "abs": 11110,
         "day": 29,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 11110,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1699,10 +1699,10 @@
       "at": {
         "year": 926,
         "month": 4,
-        "abs": 11115
+        "abs": 11115,
+        "confidence": "year"
       },
       "atAbs": 11115,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -1715,10 +1715,10 @@
         "month": 10,
         "abs": 11349,
         "day": 2,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 11349,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1731,10 +1731,10 @@
         "month": 11,
         "abs": 11422,
         "day": 16,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 11422,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1747,10 +1747,10 @@
         "month": 2,
         "abs": 11581,
         "day": 23,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 11581,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1763,10 +1763,10 @@
         "month": 3,
         "abs": 11654,
         "day": 4,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 11654,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1779,10 +1779,10 @@
         "month": 11,
         "abs": 11710,
         "day": 24,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 11710,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1794,10 +1794,10 @@
         "year": 978,
         "month": 7,
         "abs": 11742,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "atAbs": 11742,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1810,10 +1810,10 @@
         "month": 5,
         "abs": 11740,
         "day": 4,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 11740,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1826,10 +1826,10 @@
         "month": 6,
         "abs": 11753,
         "day": 1,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 11753,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1841,10 +1841,10 @@
         "year": 1279,
         "month": 3,
         "abs": 15350,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "atAbs": 15350,
-      "precision": "day",
       "eventId": "yashan-battle"
     },
     {
@@ -1857,10 +1857,10 @@
         "month": 3,
         "abs": 13502,
         "day": 26,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 13502,
-      "precision": "day",
       "eventId": "jin-destroy-liao"
     },
     {
@@ -1873,10 +1873,10 @@
         "month": 2,
         "abs": 14809,
         "day": 9,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 14809,
-      "precision": "day",
       "eventId": "song-jin-alliance-mongol"
     },
     {
@@ -1889,10 +1889,10 @@
         "month": 7,
         "abs": 14730,
         "day": 2,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 14730,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1904,10 +1904,10 @@
         "year": 1254,
         "month": 12,
         "abs": 15059,
-        "precision": "year"
+        "precision": "year",
+        "confidence": "year"
       },
       "atAbs": 15059,
-      "precision": "year",
       "eventId": "mongol-conquer-dali"
     },
     {
@@ -1920,10 +1920,10 @@
         "month": 7,
         "abs": 13470,
         "day": 20,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 13470,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -1935,10 +1935,10 @@
         "year": 1269,
         "month": 12,
         "abs": 15239,
-        "precision": "year"
+        "precision": "year",
+        "confidence": "year"
       },
       "atAbs": 15239,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -1950,10 +1950,10 @@
         "year": 1218,
         "month": 4,
         "abs": 14619,
-        "precision": "month"
+        "precision": "month",
+        "confidence": "month"
       },
       "atAbs": 14619,
-      "precision": "month",
       "eventId": null
     },
     {
@@ -1965,10 +1965,10 @@
         "year": 668,
         "month": 10,
         "abs": 8025,
-        "precision": "month"
+        "precision": "month",
+        "confidence": "month"
       },
       "atAbs": 8025,
-      "precision": "month",
       "eventId": "gaogouli-destroyed-tang"
     },
     {
@@ -1980,10 +1980,10 @@
         "year": 663,
         "month": 12,
         "abs": 7967,
-        "precision": "year"
+        "precision": "year",
+        "confidence": "year"
       },
       "atAbs": 7967,
-      "precision": "year",
       "eventId": null
     },
     {
@@ -1996,10 +1996,10 @@
         "month": 6,
         "abs": 16325,
         "day": 16,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 16325,
-      "precision": "day",
       "eventId": "chen-kills-xu"
     },
     {
@@ -2012,10 +2012,10 @@
         "month": 10,
         "abs": 16365,
         "day": 3,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 16365,
-      "precision": "day",
       "eventId": "poyang-lake-battle"
     },
     {
@@ -2028,10 +2028,10 @@
         "month": 2,
         "abs": 16369,
         "day": 28,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 16369,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -2044,10 +2044,10 @@
         "month": 9,
         "abs": 16412,
         "day": 1,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 16412,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -2060,10 +2060,10 @@
         "month": 6,
         "abs": 16457,
         "day": 21,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 16457,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -2076,10 +2076,10 @@
         "month": 12,
         "abs": 16403,
         "day": 14,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 16403,
-      "precision": "day",
       "eventId": "han-liner-death"
     },
     {
@@ -2091,10 +2091,10 @@
         "year": 1388,
         "month": 11,
         "abs": 16666,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "atAbs": 16666,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -2106,10 +2106,10 @@
         "year": 1644,
         "month": 4,
         "abs": 19731,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "atAbs": 19731,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -2122,10 +2122,10 @@
         "month": 5,
         "abs": 19744,
         "day": 17,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 19744,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -2138,10 +2138,10 @@
         "month": 1,
         "abs": 19764,
         "day": 2,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 19764,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -2153,10 +2153,10 @@
         "year": 1662,
         "month": 6,
         "abs": 19949,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "atAbs": 19949,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -2168,10 +2168,10 @@
         "year": 1912,
         "month": 2,
         "abs": 22945,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "atAbs": 22945,
-      "precision": "day",
       "eventId": null
     },
     {
@@ -2184,10 +2184,10 @@
         "month": 10,
         "abs": 20205,
         "day": 8,
-        "precision": "day"
+        "precision": "day",
+        "confidence": "day"
       },
       "atAbs": 20205,
-      "precision": "day",
       "eventId": "qing-conquer-taiwan"
     },
     {
@@ -2199,10 +2199,10 @@
         "year": 1864,
         "month": 10,
         "abs": 22377,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "atAbs": 22377,
-      "precision": "day",
       "eventId": "hong-tianguifu-captured"
     }
   ],

@@ -7,6 +7,7 @@
 - [在位信息添加与丰富](.cursor/skills/eralens-reign-import/SKILL.md)
 - [地理信息添加与丰富](.cursor/skills/eralens-geography-import/SKILL.md)
 - [数据修复](.cursor/skills/eralens-data-fix/SKILL.md)
+- [日期处理](.cursor/skills/eralens-date-handling/SKILL.md)
 
 ## 项目结构
 
@@ -27,8 +28,7 @@
 - 相邻时间区间的归属统一经过 `packages/shared/src/timelineOwnership.ts`，按精度由 `timelineIntervals.ts` 裁定。调用侧不得自建端点判断、分组规则或手写 `+1 年/月` 截断。
 - 真正并立或语义上可共存的区间保留并行记录，并用 `claim_track` 或对应实体分组表达；不得让接续裁定合并并存数据。
 - 年精度点事件与命运线使用 12 月作为年桶右缘；泳道起年和迄年的占位月份分别为 1 月和 12 月。占位月份不得显示成已知月份。
-- 所有界面时间统一直接显示带符号的年份（如「-221年」「2026年」），不写「公元」「公元前」或「前」；事件轴仍在视口内时，事件名必须可见。
-- 录入历史日期前辨明历法。农历月日不得直接当作公历日期；无可靠换算依据时保留原记载并说明历法。
+- 所有日期的史料精度、历法换算、置信度和展示统一遵循 [日期处理 Skill](.cursor/skills/eralens-date-handling/SKILL.md)。界面年份仍统一显示带符号年份（如「-221年」「2026年」），事件轴仍在视口内时事件名必须可见。
 
 ## 真实数据与验证
 

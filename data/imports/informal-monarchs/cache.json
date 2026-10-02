@@ -121,18 +121,17 @@
       "start": {
         "year": -841,
         "month": 1,
-        "abs": -10080
+        "abs": -10080,
+        "confidence": "year"
       },
       "end": {
         "year": -828,
         "month": 12,
-        "abs": -9913
+        "abs": -9913,
+        "confidence": "year"
       },
       "startAbs": -10080,
       "endAbs": -9913,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -149,19 +148,18 @@
         "year": 926,
         "month": 9,
         "day": 6,
-        "abs": 11120
+        "abs": 11120,
+        "confidence": "day"
       },
       "end": {
         "year": 927,
         "month": 12,
         "day": 10,
-        "abs": 11135
+        "abs": 11135,
+        "confidence": "day"
       },
       "startAbs": 11120,
       "endAbs": 11135,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -178,19 +176,18 @@
         "year": 951,
         "month": 1,
         "day": 2,
-        "abs": 11412
+        "abs": 11412,
+        "confidence": "day"
       },
       "end": {
         "year": 951,
         "month": 2,
         "day": 12,
-        "abs": 11413
+        "abs": 11413,
+        "confidence": "day"
       },
       "startAbs": 11412,
       "endAbs": 11413,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -207,19 +204,18 @@
         "year": 1227,
         "month": 8,
         "day": 25,
-        "abs": 14731
+        "abs": 14731,
+        "confidence": "day"
       },
       "end": {
         "year": 1229,
         "month": 9,
         "day": 12,
-        "abs": 14756
+        "abs": 14756,
+        "confidence": "day"
       },
       "startAbs": 14731,
       "endAbs": 14756,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -236,19 +232,18 @@
         "year": 1241,
         "month": 12,
         "day": 11,
-        "abs": 14903
+        "abs": 14903,
+        "confidence": "day"
       },
       "end": {
         "year": 1246,
         "month": 8,
         "day": 23,
-        "abs": 14959
+        "abs": 14959,
+        "confidence": "day"
       },
       "startAbs": 14903,
       "endAbs": 14959,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -265,19 +260,18 @@
         "year": 1248,
         "month": 4,
         "day": 20,
-        "abs": 14979
+        "abs": 14979,
+        "confidence": "day"
       },
       "end": {
         "year": 1251,
         "month": 6,
         "day": 30,
-        "abs": 15017
+        "abs": 15017,
+        "confidence": "day"
       },
       "startAbs": 14979,
       "endAbs": 15017,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,

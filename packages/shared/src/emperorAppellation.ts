@@ -277,8 +277,6 @@ type ReignDetailFactsFields = ReignAppellationFields &
     | "endAbs"
     | "precision"
     | "isOngoing"
-    | "startDateConfidence"
-    | "endDateConfidence"
   >;
 
 /** Structured facts for reign detail panels. */

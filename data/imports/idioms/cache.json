@@ -582,14 +582,15 @@
       "start": {
         "year": -1046,
         "month": 1,
-        "abs": -12540
+        "abs": -12540,
+        "confidence": "year"
       },
       "end": {
         "year": -655,
         "month": 12,
-        "abs": -7837
+        "abs": -7837,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "周朝姬姓诸侯国。东、西虢封国及世系归属存在异说；传统始封年代依周初纪年记于前1046年。西虢东迁后据有三门峡一带，南虢以都城上阳为中心；前655年晋献公借道虞国灭虢。君主卡片据《西虢国》君主列表收录，失考区段依世次插值。"
     }
   ],
@@ -605,16 +606,17 @@
       "start": {
         "year": -770,
         "month": 1,
-        "abs": -9228
+        "abs": -9228,
+        "confidence": "year"
       },
       "end": {
         "year": -655,
         "month": 12,
-        "abs": -7837
+        "abs": -7837,
+        "confidence": "month"
       },
       "startAbs": -9228,
       "endAbs": -7837,
-      "precision": "year",
       "role": "primary",
       "note": "虢都上阳。始年按虢国东迁后在三门峡建都的约数记；遗址位于今三门峡李家窑一带。",
       "links": [
@@ -635,22 +637,22 @@
       "start": {
         "year": -1046,
         "month": 1,
-        "abs": -12540
+        "abs": -12540,
+        "confidence": "year"
       },
       "end": {
         "year": -990,
         "month": 12,
-        "abs": -11857
+        "abs": -11857,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -12540,
       "endAbs": -11857,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-guo-r2-guo-chunqiu",
@@ -661,22 +663,23 @@
       "start": {
         "year": -989,
         "month": 1,
-        "abs": -11856
+        "abs": -11856,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -934,
         "month": 12,
-        "abs": -11185
+        "abs": -11185,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -11856,
       "endAbs": -11185,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-guo-r3-guo-chunqiu",
@@ -687,22 +690,23 @@
       "start": {
         "year": -933,
         "month": 1,
-        "abs": -11184
+        "abs": -11184,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -878,
         "month": 12,
-        "abs": -10513
+        "abs": -10513,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -11184,
       "endAbs": -10513,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-guo-r4-guo-chunqiu",
@@ -713,22 +717,23 @@
       "start": {
         "year": -877,
         "month": 1,
-        "abs": -10512
+        "abs": -10512,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -828,
         "month": 12,
-        "abs": -9913
+        "abs": -9913,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -10512,
       "endAbs": -9913,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-guo-r5-guo-chunqiu",
@@ -739,22 +744,23 @@
       "start": {
         "year": -827,
         "month": 1,
-        "abs": -9912
+        "abs": -9912,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -805,
         "month": 12,
-        "abs": -9637
+        "abs": -9637,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -9912,
       "endAbs": -9637,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-guo-r6-guo-chunqiu",
@@ -765,22 +771,23 @@
       "start": {
         "year": -804,
         "month": 1,
-        "abs": -9636
+        "abs": -9636,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -782,
         "month": 12,
-        "abs": -9361
+        "abs": -9361,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -9636,
       "endAbs": -9361,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-guo-r7-guo-chunqiu",
@@ -791,22 +798,23 @@
       "start": {
         "year": -781,
         "month": 1,
-        "abs": -9360
+        "abs": -9360,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -771,
         "month": 12,
-        "abs": -9229
+        "abs": -9229,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -9360,
       "endAbs": -9229,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-guo-r8-guo-chunqiu",
@@ -817,22 +825,23 @@
       "start": {
         "year": -770,
         "month": 1,
-        "abs": -9228
+        "abs": -9228,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -721,
         "month": 12,
-        "abs": -8629
+        "abs": -8629,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -9228,
       "endAbs": -8629,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-guo-r9-guo-chunqiu",
@@ -843,22 +852,23 @@
       "start": {
         "year": -720,
         "month": 1,
-        "abs": -8628
+        "abs": -8628,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -708,
         "month": 12,
-        "abs": -8473
+        "abs": -8473,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -8628,
       "endAbs": -8473,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-guo-r10-guo-chunqiu",
@@ -869,22 +879,23 @@
       "start": {
         "year": -707,
         "month": 1,
-        "abs": -8472
+        "abs": -8472,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -703,
         "month": 12,
-        "abs": -8413
+        "abs": -8413,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -8472,
       "endAbs": -8413,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-guo-gong-chou-guo-chunqiu",
@@ -895,29 +906,28 @@
       "start": {
         "year": -702,
         "month": 1,
-        "abs": -8412
+        "abs": -8412,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -655,
         "month": 12,
-        "abs": -7837
+        "abs": -7837,
+        "confidence": "year"
       },
       "startAbs": -8412,
       "endAbs": -7837,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation"
     }
   ],
   "events": [
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "shang"
       ],
@@ -931,7 +941,8 @@
       "at": {
         "year": -1046,
         "month": 12,
-        "abs": -12529
+        "abs": -12529,
+        "confidence": "year"
       },
       "summary": "比干谏纣王被杀，后世以「助纣为虐」喻帮凶为恶。",
       "dateNote": "牧野克商前后",
@@ -940,7 +951,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "shang"
       ],
@@ -953,7 +963,8 @@
       "at": {
         "year": -1046,
         "month": 12,
-        "abs": -12529
+        "abs": -12529,
+        "confidence": "year"
       },
       "summary": "《史记·殷本纪》载纣王以酒为池、悬肉为林，后世以此形容奢靡纵欲。",
       "dateNote": "商纣王末年，前1046年前后；主要见于后世文献，史源有争议",
@@ -962,7 +973,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "shang",
         "zhou-west"
@@ -976,7 +986,8 @@
       "at": {
         "year": -1046,
         "month": 12,
-        "abs": -12529
+        "abs": -12529,
+        "confidence": "year"
       },
       "summary": "《尚书大传·牧誓》载太公说爱人者兼其屋上之乌，后凝结为成语。",
       "dateNote": "武王克商前后，前1046年；典出《尚书大传·牧誓》",
@@ -985,7 +996,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhou-west"
       ],
@@ -998,7 +1008,8 @@
       "at": {
         "year": -1041,
         "month": 12,
-        "abs": -12469
+        "abs": -12469,
+        "confidence": "year"
       },
       "summary": "《史记·鲁周公世家》载周公一沐三握发、一饭三吐哺，起以待士。",
       "dateNote": "周公摄政初期，约前1041年；典出《史记·鲁周公世家》",
@@ -1007,7 +1018,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhou-west"
       ],
@@ -1020,7 +1030,8 @@
       "at": {
         "year": -841,
         "month": 12,
-        "abs": -10069
+        "abs": -10069,
+        "confidence": "year"
       },
       "summary": "周厉王专利暴虐，国人不敢言，道路相遇仅以目示意。",
       "dateNote": "国人暴动前",
@@ -1029,7 +1040,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhou-west"
       ],
@@ -1042,7 +1052,8 @@
       "at": {
         "year": -841,
         "month": 12,
-        "abs": -10069
+        "abs": -10069,
+        "confidence": "year"
       },
       "summary": "《诗经·大雅·荡》以夏亡告诫殷、以殷亡告诫周，后成为鉴戒前事的成语。",
       "dateNote": "周厉王时期，约前841年；《大雅·荡》作年有争议",
@@ -1051,7 +1062,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhou-east"
       ],
@@ -1064,7 +1074,8 @@
       "at": {
         "year": -256,
         "month": 12,
-        "abs": -3049
+        "abs": -3049,
+        "confidence": "year"
       },
       "summary": "周赧王为合纵攻秦向富户借贷，兵散后无力偿还，躲入高台，后称避债台。",
       "dateNote": "周赧王五十九年，前256年；东周亡于秦前后",
@@ -1073,7 +1084,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "qi-chunqiu",
         "lu-chunqiu"
@@ -1088,7 +1098,8 @@
       "at": {
         "year": -684,
         "month": 12,
-        "abs": -8185
+        "abs": -8185,
+        "confidence": "year"
       },
       "summary": "曹刿论战：「一鼓作气，再而衰，三而竭。」齐鲁长勺之战齐师败绩。",
       "dateNote": "鲁庄公十年，前684年",
@@ -1097,7 +1108,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "qi-chunqiu"
       ],
@@ -1111,7 +1121,8 @@
       "at": {
         "year": -664,
         "month": 12,
-        "abs": -7945
+        "abs": -7945,
+        "confidence": "year"
       },
       "summary": "齐桓公征孤竹迷途，管仲曰老马识途，遣老马先导得归。",
       "dateNote": "齐桓公征孤竹，约前664年",
@@ -1120,7 +1131,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "jin-chunqiu",
         "guo-chunqiu"
@@ -1134,7 +1144,8 @@
       "at": {
         "year": -655,
         "month": 12,
-        "abs": -7837
+        "abs": -7837,
+        "confidence": "year"
       },
       "summary": "宫之奇谏虞公：「唇亡齿寒，虞、虢之表也。」晋借道伐虢后灭虞。",
       "dateNote": "晋献公借道伐虢，前655年",
@@ -1143,7 +1154,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "guo-chunqiu",
         "jin-chunqiu"
@@ -1158,7 +1168,8 @@
       "at": {
         "year": -655,
         "month": 12,
-        "abs": -7837
+        "abs": -7837,
+        "confidence": "year"
       },
       "summary": "晋献公先以讨伐虢国为名向虞国借道，灭虢后回师袭灭虞国。《左传·僖公二年、五年》记载了这两次借道与宫之奇的劝谏。",
       "dateNote": "晋灭虢，前655年；《左传》记鲁僖公五年。",
@@ -1167,7 +1178,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "jin-chunqiu",
         "chu-chunqiu"
@@ -1181,7 +1191,8 @@
       "at": {
         "year": -632,
         "month": 12,
-        "abs": -7561
+        "abs": -7561,
+        "confidence": "year"
       },
       "summary": "晋文公对楚军「退避三舍」，城濮之战后晋称霸。",
       "dateNote": "城濮之战前",
@@ -1190,7 +1201,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "chu-chunqiu",
         "zhou-east"
@@ -1204,7 +1214,8 @@
       "at": {
         "year": -605,
         "month": 12,
-        "abs": -7237
+        "abs": -7237,
+        "confidence": "year"
       },
       "summary": "楚庄王问鼎之大小轻重，王孙满答「在德不在鼎」，示争霸野心。",
       "dateNote": "楚庄王问鼎，前605年",
@@ -1213,7 +1224,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "chu-chunqiu",
         "jin-chunqiu",
@@ -1228,7 +1238,8 @@
       "at": {
         "year": -597,
         "month": 12,
-        "abs": -7141
+        "abs": -7141,
+        "confidence": "year"
       },
       "summary": "《左传》楚伐郑，晋欲救，子重曰：「虽我之速，不能及马腹。」喻力所不及。",
       "dateNote": "楚庄王伐郑、晋欲救，前597年",
@@ -1237,7 +1248,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhou-east"
       ],
@@ -1248,7 +1258,8 @@
       "at": {
         "year": -600,
         "month": 12,
-        "abs": -7177
+        "abs": -7177,
+        "confidence": "year"
       },
       "summary": "《国语》载：济人遇风，同舟遇海，相救如左右手。",
       "dateNote": "《国语》寓言，春秋",
@@ -1257,7 +1268,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "wei-north"
       ],
@@ -1270,7 +1280,8 @@
       "at": {
         "year": 493,
         "month": 12,
-        "abs": 5927
+        "abs": 5927,
+        "confidence": "year"
       },
       "summary": "北魏孝文帝迁都洛阳后，洛阳令元志与御史中尉李彪争道，孝文帝命二人分路而行。",
       "dateNote": "北魏孝文帝迁都洛阳后，约493年；典出《北史》",
@@ -1279,7 +1290,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zheng-chunqiu"
       ],
@@ -1292,7 +1302,8 @@
       "at": {
         "year": -701,
         "month": 12,
-        "abs": -8389
+        "abs": -8389,
+        "confidence": "year"
       },
       "summary": "《左传》郑伯克段于鄢，公曰：「多行不义必自毙，子姑待之。」",
       "dateNote": "郑庄公克段，前701年",
@@ -1301,7 +1312,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "chu-chunqiu"
       ],
@@ -1314,7 +1324,8 @@
       "at": {
         "year": -500,
         "month": 12,
-        "abs": -5977
+        "abs": -5977,
+        "confidence": "year"
       },
       "summary": "叶公沈诸梁好龙，室中尽雕龙文；真龙下之，叶公弃而走，失其魂魄。",
       "dateNote": "楚叶公沈诸梁，春秋中叶",
@@ -1323,7 +1334,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "qi-chunqiu"
       ],
@@ -1337,7 +1347,8 @@
       "at": {
         "year": -522,
         "month": 12,
-        "abs": -6241
+        "abs": -6241,
+        "confidence": "year"
       },
       "summary": "晏婴献二桃，公孙接、田开疆、古冶子争功，后二人自杀，古冶子亦自刎。",
       "dateNote": "齐景公时，约前522年",
@@ -1346,7 +1357,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "yue-chunqiu",
         "wu-chunqiu"
@@ -1361,7 +1371,8 @@
       "at": {
         "year": -473,
         "month": 12,
-        "abs": -5653
+        "abs": -5653,
+        "confidence": "year"
       },
       "summary": "勾践战败后屈身事吴，回国卧薪尝胆，最终灭吴称霸。",
       "dateNote": "越灭吴，前473年",
@@ -1370,7 +1381,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "wei-warring",
         "qi-chunqiu",
@@ -1385,7 +1395,8 @@
       "at": {
         "year": -354,
         "month": 12,
-        "abs": -4225
+        "abs": -4225,
+        "confidence": "year"
       },
       "summary": "孙膑围魏救赵，于桂陵大败魏军。",
       "dateNote": "桂陵之战，前354年",
@@ -1394,7 +1405,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "qi-chunqiu"
       ],
@@ -1407,7 +1417,8 @@
       "at": {
         "year": -354,
         "month": 12,
-        "abs": -4225
+        "abs": -4225,
+        "confidence": "year"
       },
       "summary": "齐威王三年不飞不鸣，淳于髡问之，王曰「一鸣而天下惊」。",
       "dateNote": "齐威王在位早期，约前354年；纪年诸说不一",
@@ -1416,7 +1427,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhou-east"
       ],
@@ -1430,7 +1440,8 @@
       "at": {
         "year": -400,
         "month": 12,
-        "abs": -4777
+        "abs": -4777,
+        "confidence": "year"
       },
       "summary": "蔡桓侯讳疾忌医，扁鹊每见病深一层，终不可救。",
       "dateNote": "《韩非子》载扁鹊见蔡桓侯，战国寓言",
@@ -1439,7 +1450,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zou-state"
       ],
@@ -1452,7 +1462,8 @@
       "at": {
         "year": -375,
         "month": 12,
-        "abs": -4477
+        "abs": -4477,
+        "confidence": "year"
       },
       "summary": "孟子幼时，孟母三迁其居，近墓则嬉墓，近市则嬉贾，近学宫则习礼。",
       "dateNote": "孟子少年期于邹国，约前375年",
@@ -1461,7 +1472,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "qi-chunqiu"
       ],
@@ -1474,7 +1484,8 @@
       "at": {
         "year": -310,
         "month": 12,
-        "abs": -3697
+        "abs": -3697,
+        "confidence": "year"
       },
       "summary": "齐宣王使三百人吹竽，南郭处士充数；湣王好一一听之，处士逃。",
       "dateNote": "齐宣王时，约前319—前301年",
@@ -1483,7 +1494,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "wei-warring",
         "zhao-warring"
@@ -1498,7 +1508,8 @@
       "at": {
         "year": -343,
         "month": 12,
-        "abs": -4093
+        "abs": -4093,
+        "confidence": "year"
       },
       "summary": "庞葱将赴邯郸，恐谗言，以「三人成虎」谏魏王，王终不信。",
       "dateNote": "庞葱与太子赴邯郸，前343年",
@@ -1507,7 +1518,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [],
       "participantIds": [],
       "id": "idiom-dong-shi-xiao-pin",
@@ -1516,7 +1526,8 @@
       "at": {
         "year": -320,
         "month": 12,
-        "abs": -3817
+        "abs": -3817,
+        "confidence": "year"
       },
       "summary": "《庄子》东施效西施之颦，邻人闭户不出，见其丑态。",
       "dateNote": "庄子寓言",
@@ -1525,7 +1536,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [],
       "participantIds": [],
       "id": "idiom-xiang-ru-yi-mo",
@@ -1534,7 +1544,8 @@
       "at": {
         "year": -320,
         "month": 12,
-        "abs": -3817
+        "abs": -3817,
+        "confidence": "year"
       },
       "summary": "《庄子》泉涸，鱼相与处于陆，相呴以湿，相濡以沫。",
       "dateNote": "庄子寓言",
@@ -1543,7 +1554,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [],
       "participantIds": [],
       "id": "idiom-dui-niu-tan-qin",
@@ -1552,7 +1562,8 @@
       "at": {
         "year": -320,
         "month": 12,
-        "abs": -3817
+        "abs": -3817,
+        "confidence": "year"
       },
       "summary": "《庄子》公明仪为牛弹清角之操，牛食如故，非牛不闻，不合其耳。",
       "dateNote": "庄子寓言，一说出自牟子",
@@ -1561,7 +1572,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [],
       "participantIds": [],
       "id": "idiom-jing-di-zhi-wa",
@@ -1570,7 +1580,8 @@
       "at": {
         "year": -320,
         "month": 12,
-        "abs": -3817
+        "abs": -3817,
+        "confidence": "year"
       },
       "summary": "《庄子》井蛙不可以语于海者，拘于虚也。",
       "dateNote": "庄子寓言",
@@ -1579,7 +1590,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "song-chunqiu"
       ],
@@ -1590,7 +1600,8 @@
       "at": {
         "year": -320,
         "month": 12,
-        "abs": -3817
+        "abs": -3817,
+        "confidence": "year"
       },
       "summary": "《列子·黄帝》载宋有狙公，约定朝三暮四分给群狙，群狙先怒后喜。",
       "dateNote": "《列子·黄帝》寓言，故事称宋有狙公；年代未详",
@@ -1599,7 +1610,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "wei-warring",
         "chu-chunqiu"
@@ -1611,7 +1621,8 @@
       "at": {
         "year": -310,
         "month": 12,
-        "abs": -3697
+        "abs": -3697,
+        "confidence": "year"
       },
       "summary": "《战国策》有人欲之楚而北行，马良、用多、御善，愈善而离楚愈远。",
       "dateNote": "战国策寓言",
@@ -1620,7 +1631,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "decade",
       "dynastyIds": [
         "qi-state-chunqiu"
       ],
@@ -1631,7 +1641,8 @@
       "at": {
         "year": -500,
         "month": 12,
-        "abs": -5977
+        "abs": -5977,
+        "confidence": "month"
       },
       "summary": "《列子》杞国有人忧天地崩坠，身无所寄，废寝食者。",
       "dateNote": "《列子·天瑞》未记具体年代；按杞国仍存续的春秋末期约前500年推定定位",
@@ -1640,7 +1651,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "chu-chunqiu"
       ],
@@ -1651,7 +1661,8 @@
       "at": {
         "year": -300,
         "month": 12,
-        "abs": -3577
+        "abs": -3577,
+        "confidence": "year"
       },
       "summary": "《列子》楚人渡江剑坠，遽刻其舟曰「是吾剑所从坠」，舟止入水求之。",
       "dateNote": "列子寓言",
@@ -1660,7 +1671,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [],
       "participantIds": [],
       "id": "idiom-shi-fu-yi-lin",
@@ -1669,7 +1679,8 @@
       "at": {
         "year": -300,
         "month": 12,
-        "abs": -3577
+        "abs": -3577,
+        "confidence": "year"
       },
       "summary": "《列子》人有亡斧，意其邻之子；视其行步，窃斧也；既得其斧，视邻之子，不复窃斧。",
       "dateNote": "列子寓言",
@@ -1678,7 +1689,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "wei-warring"
       ],
@@ -1692,7 +1702,8 @@
       "at": {
         "year": -330,
         "month": 12,
-        "abs": -3937
+        "abs": -3937,
+        "confidence": "year"
       },
       "summary": "《孟子》梁惠王问何以利吾国，孟子以五十步笑百步喻其好战本质未改。",
       "dateNote": "孟子答梁惠王，约前330年",
@@ -1701,7 +1712,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "qi-chunqiu"
       ],
@@ -1715,7 +1725,8 @@
       "at": {
         "year": -300,
         "month": 12,
-        "abs": -3577
+        "abs": -3577,
+        "confidence": "year"
       },
       "summary": "《战国策》冯谖谓孟尝君：狡兔有三窟，仅得免其死耳。",
       "dateNote": "冯谖谏孟尝君，战国",
@@ -1724,7 +1735,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "chu-chunqiu"
       ],
@@ -1738,7 +1748,8 @@
       "at": {
         "year": -278,
         "month": 12,
-        "abs": -3313
+        "abs": -3313,
+        "confidence": "year"
       },
       "summary": "《战国策》庄辛谏楚襄王：见兔而顾犬，未为晚也；亡羊而补牢，未为迟也。",
       "dateNote": "楚顷襄王逃至城阳后，约前278年",
@@ -1747,7 +1758,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhao-warring",
         "yan-chunqiu"
@@ -1759,7 +1769,8 @@
       "at": {
         "year": -300,
         "month": 12,
-        "abs": -3577
+        "abs": -3577,
+        "confidence": "year"
       },
       "summary": "《庄子》燕国少年学赵都邯郸之步，未能得能，又失其故步，匍匐而归。",
       "dateNote": "庄子寓言",
@@ -1768,7 +1779,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "song-chunqiu"
       ],
@@ -1781,7 +1791,8 @@
       "at": {
         "year": -300,
         "month": 12,
-        "abs": -3577
+        "abs": -3577,
+        "confidence": "year"
       },
       "summary": "《孟子》宋人揠苗助长，苗既槁矣；喻违背规律之害。",
       "dateNote": "孟子寓言",
@@ -1790,7 +1801,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zheng-chunqiu"
       ],
@@ -1801,7 +1811,8 @@
       "at": {
         "year": -400,
         "month": 12,
-        "abs": -4777
+        "abs": -4777,
+        "confidence": "year"
       },
       "summary": "《韩非子》郑人买履，忘持度而返，市罢不得履，宁信度无自信也。",
       "dateNote": "约前400年（寓言设定推测；原典无纪年）",
@@ -1810,7 +1821,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "chu-chunqiu"
       ],
@@ -1821,7 +1831,8 @@
       "at": {
         "year": -280,
         "month": 12,
-        "abs": -3337
+        "abs": -3337,
+        "confidence": "year"
       },
       "summary": "《韩非子》楚人鬻盾与矛，誉盾坚莫能陷、矛利无不陷，或曰以矛陷盾，弗能应。",
       "dateNote": "韩非子寓言",
@@ -1830,7 +1841,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "song-chunqiu"
       ],
@@ -1841,7 +1851,8 @@
       "at": {
         "year": -300,
         "month": 12,
-        "abs": -3577
+        "abs": -3577,
+        "confidence": "year"
       },
       "summary": "《韩非子》宋人耕田，兔走触株折颈而死，遂守株待兔。",
       "dateNote": "约前300年（寓言设定推测；原典无纪年）",
@@ -1850,7 +1861,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "chu-chunqiu",
         "zheng-chunqiu"
@@ -1862,7 +1872,8 @@
       "at": {
         "year": -275,
         "month": 12,
-        "abs": -3277
+        "abs": -3277,
+        "confidence": "year"
       },
       "summary": "《韩非子》楚人卖珠于郑，椟饰以木兰、薰以桂椒，郑人买其椟而还其珠。",
       "dateNote": "韩非子寓言",
@@ -1871,7 +1882,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "chu-chunqiu"
       ],
@@ -1882,7 +1892,8 @@
       "at": {
         "year": -280,
         "month": 12,
-        "abs": -3337
+        "abs": -3337,
+        "confidence": "year"
       },
       "summary": "《战国策》楚人画蛇，先成者添足，酒不得饮。",
       "dateNote": "战国策寓言",
@@ -1891,7 +1902,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "chu-chunqiu"
       ],
@@ -1902,7 +1912,8 @@
       "at": {
         "year": -275,
         "month": 12,
-        "abs": -3277
+        "abs": -3277,
+        "confidence": "year"
       },
       "summary": "《战国策·楚策》载楚宣王问江乙，江乙以虎狐同行、百兽皆走为喻。",
       "dateNote": "《战国策·楚策》楚宣王问江乙时所举寓言",
@@ -1911,7 +1922,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhao-warring",
         "yan-chunqiu"
@@ -1925,7 +1935,8 @@
       "at": {
         "year": -279,
         "month": 12,
-        "abs": -3325
+        "abs": -3325,
+        "confidence": "year"
       },
       "summary": "《战国策》赵将伐燕，苏代以鹬蚌相争、渔翁得利谏赵王。",
       "dateNote": "苏代谏赵惠文王，前279年",
@@ -1934,7 +1945,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "wu-chunqiu",
         "chu-chunqiu"
@@ -1946,7 +1956,8 @@
       "at": {
         "year": -500,
         "month": 12,
-        "abs": -5977
+        "abs": -5977,
+        "confidence": "year"
       },
       "summary": "《韩非子》螳螂捕蝉，黄雀在后；吴王欲伐荆，门人以此谏止。",
       "dateNote": "吴王欲伐荆的寓言，未具名，约春秋末",
@@ -1955,7 +1966,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhao-warring"
       ],
@@ -1971,7 +1981,8 @@
       "at": {
         "year": -260,
         "month": 12,
-        "abs": -3097
+        "abs": -3097,
+        "confidence": "year"
       },
       "summary": "赵括空谈兵法，长平之战代廉颇为主将，四十万赵军覆没。",
       "dateNote": "长平之战，前260年",
@@ -1980,7 +1991,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhao-warring"
       ],
@@ -1993,7 +2003,8 @@
       "at": {
         "year": -307,
         "month": 12,
-        "abs": -3661
+        "abs": -3661,
+        "confidence": "year"
       },
       "summary": "战国时赵武灵王面对北方游牧势力与中山国的威胁，决定改穿便于骑乘的胡服并训练骑射。赵国贵族公子成起初反对，武灵王亲自劝说后推行改革，增强了赵军机动能力，为此后北拓和攻取中山奠定基础。",
       "dateNote": "赵武灵王十九年，前307年；《史记·赵世家》记其下令招骑射并议胡服。",
@@ -2002,7 +2013,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhao-warring",
         "qin"
@@ -2018,7 +2028,8 @@
       "at": {
         "year": -283,
         "month": 12,
-        "abs": -3373
+        "abs": -3373,
+        "confidence": "year"
       },
       "summary": "蔺相如持和氏璧入秦，以智谋完璧归赵。",
       "dateNote": "赵惠文王十九年，前283年",
@@ -2027,7 +2038,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhao-warring"
       ],
@@ -2042,7 +2052,8 @@
       "at": {
         "year": -279,
         "month": 12,
-        "abs": -3325
+        "abs": -3325,
+        "confidence": "year"
       },
       "summary": "廉颇闻蔺相如避让之由，负荆请罪，二人结为刎颈之交。",
       "dateNote": "渑池之会后将相和，约前279年",
@@ -2051,7 +2062,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhao-warring"
       ],
@@ -2066,7 +2076,8 @@
       "at": {
         "year": -257,
         "month": 12,
-        "abs": -3061
+        "abs": -3061,
+        "confidence": "year"
       },
       "summary": "毛遂自荐随平原君赴楚，按剑而立，说服楚王合纵抗秦。",
       "dateNote": "平原君合纵，前257年",
@@ -2075,7 +2086,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "yan-chunqiu"
       ],
@@ -2088,7 +2098,8 @@
       "at": {
         "year": -279,
         "month": 12,
-        "abs": -3325
+        "abs": -3325,
+        "confidence": "year"
       },
       "summary": "燕昭王问郭隗求贤，郭隗以千金买千里马骨喻厚待贤士。",
       "dateNote": "燕昭王求贤，前279年",
@@ -2097,7 +2108,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "wei-warring"
       ],
@@ -2111,7 +2121,8 @@
       "at": {
         "year": -251,
         "month": 12,
-        "abs": -2989
+        "abs": -2989,
+        "confidence": "year"
       },
       "summary": "《战国策》更羸与魏王处京台，引弓虚发，雁坠，盖其伤弓未愈。",
       "dateNote": "战国策寓言，约前251年",
@@ -2120,7 +2131,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "han-west"
       ],
@@ -2134,7 +2144,8 @@
       "at": {
         "year": -119,
         "month": 12,
-        "abs": -1405
+        "abs": -1405,
+        "confidence": "year"
       },
       "summary": "汉武帝元狩四年（前119年），霍去病率军深入漠北击败匈奴左部，登狼居胥山祭天、于姑衍山祭地后返师。后世以“封狼居胥”概括这一战功，成为建功边疆的典故。",
       "dateNote": "元狩四年，前119年；典出《史记·卫将军骠骑列传》及《汉书·卫青霍去病传》",
@@ -2144,7 +2155,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "qin"
       ],
@@ -2158,7 +2168,8 @@
       "at": {
         "year": -210,
         "month": 12,
-        "abs": -2497
+        "abs": -2497,
+        "confidence": "year"
       },
       "summary": "秦二世时赵高为试探群臣，献鹿称马，凡不顺其意者多遭迫害。",
       "dateNote": "秦二世元年左右",
@@ -2167,7 +2178,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "qin",
         "yan-chunqiu"
@@ -2182,7 +2192,8 @@
       "at": {
         "year": -227,
         "month": 12,
-        "abs": -2701
+        "abs": -2701,
+        "confidence": "year"
       },
       "summary": "荆轲刺秦王，献燕督亢地图，图卷尽头露出匕首。",
       "dateNote": "秦王政二十年",
@@ -2191,7 +2202,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "qin",
         "chu-west"
@@ -2205,7 +2215,8 @@
       "at": {
         "year": -207,
         "month": 12,
-        "abs": -2461
+        "abs": -2461,
+        "confidence": "year"
       },
       "summary": "项羽渡漳水后破釜沉舟，只带三日粮，大破秦军于巨鹿。",
       "dateNote": "巨鹿之战前后",
@@ -2214,7 +2225,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "han-west"
       ],
@@ -2229,7 +2239,8 @@
       "at": {
         "year": -196,
         "month": 12,
-        "abs": -2329
+        "abs": -2329,
+        "confidence": "year"
       },
       "summary": "韩信由萧何举荐而兴，又因萧何入未央宫被害。",
       "atAbs": -2329
@@ -2237,7 +2248,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "han-west"
       ],
@@ -2251,7 +2261,8 @@
       "at": {
         "year": -202,
         "month": 12,
-        "abs": -2401
+        "abs": -2401,
+        "confidence": "year"
       },
       "summary": "汉高祖问韩信能带多少兵，韩信答「臣，多多益善」。",
       "atAbs": -2401
@@ -2259,7 +2270,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "han-west",
         "zhao-warring"
@@ -2273,7 +2283,8 @@
       "at": {
         "year": -204,
         "month": 12,
-        "abs": -2425
+        "abs": -2425,
+        "confidence": "year"
       },
       "summary": "韩信井陉背水列阵，大破赵军。",
       "dateNote": "井陉之战",
@@ -2282,7 +2293,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "shu"
       ],
@@ -2296,7 +2306,8 @@
       "at": {
         "year": 207,
         "month": 12,
-        "abs": 2495
+        "abs": 2495,
+        "confidence": "year"
       },
       "summary": "刘备三次拜访诸葛亮于隆中，终请其出山。",
       "atAbs": 2495
@@ -2304,7 +2315,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "shu",
         "wei"
@@ -2319,7 +2329,8 @@
       "at": {
         "year": 208,
         "month": 12,
-        "abs": 2507
+        "abs": 2507,
+        "confidence": "year"
       },
       "summary": "诸葛亮以草船趁雾向曹营「借」得十万支箭。",
       "dateNote": "赤壁前后",
@@ -2328,7 +2339,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "wei"
       ],
@@ -2341,7 +2351,8 @@
       "at": {
         "year": 208,
         "month": 12,
-        "abs": 2507
+        "abs": 2507,
+        "confidence": "year"
       },
       "summary": "曹操行军士渴，言前有梅林，军士思梅生津而解渴。",
       "atAbs": 2507
@@ -2349,7 +2360,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "shu"
       ],
@@ -2362,7 +2372,8 @@
       "at": {
         "year": 263,
         "month": 12,
-        "abs": 3167
+        "abs": 3167,
+        "confidence": "year"
       },
       "summary": "刘禅降魏后，司马昭问是否思蜀，答「此间乐，不思蜀」。",
       "atAbs": 3167
@@ -2370,7 +2381,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "wei"
       ],
@@ -2383,7 +2393,8 @@
       "at": {
         "year": 260,
         "month": 5,
-        "abs": 3124
+        "abs": 3124,
+        "confidence": "month"
       },
       "summary": "甘露五年，曹髦召见王沈、王经、王业，愤言「司马昭之心，路人所知也」，后凝为成语。",
       "dateNote": "甘露五年五月（260）；《三国志·魏书·高贵乡公纪》裴松之注引《汉晋春秋》，原文作“路人所知也”",
@@ -2392,7 +2403,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "shu"
       ],
@@ -2405,7 +2415,8 @@
       "at": {
         "year": 234,
         "month": 8,
-        "abs": 2815
+        "abs": 2815,
+        "confidence": "year"
       },
       "summary": "诸葛亮《后出师表》：「鞠躬尽瘁，死而后已。」",
       "dateNote": "五丈原病逝前后",
@@ -2414,7 +2425,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhou-wu"
       ],
@@ -2427,7 +2437,8 @@
       "at": {
         "year": 697,
         "month": 12,
-        "abs": 8375
+        "abs": 8375,
+        "confidence": "year"
       },
       "summary": "来俊臣设计大瓮刑具，周兴反受其法。",
       "atAbs": 8375
@@ -2435,7 +2446,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "tang"
       ],
@@ -2448,7 +2458,8 @@
       "at": {
         "year": 550,
         "month": 12,
-        "abs": 6611
+        "abs": 6611,
+        "confidence": "year"
       },
       "summary": "张僧繇在金陵安乐寺画龙，点睛后龙破壁飞去。",
       "dateNote": "梁陈间事，成语通行于唐",
@@ -2457,7 +2468,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "tang"
       ],
@@ -2470,7 +2480,8 @@
       "at": {
         "year": 768,
         "month": 12,
-        "abs": 9227
+        "abs": 9227,
+        "confidence": "year"
       },
       "summary": "唐德宗称狄仁杰「桃李满天下」，后泛指门生众多。",
       "atAbs": 9227
@@ -2478,7 +2489,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "song-south"
       ],
@@ -2491,7 +2501,8 @@
       "at": {
         "year": 1140,
         "month": 12,
-        "abs": 13691
+        "abs": 13691,
+        "confidence": "year"
       },
       "summary": "岳飞背刺「尽忠报国」，抗金名垂青史。",
       "atAbs": 13691
@@ -2499,7 +2510,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "song-north"
       ],
@@ -2513,7 +2523,8 @@
       "at": {
         "year": 1080,
         "month": 12,
-        "abs": 12971
+        "abs": 12971,
+        "confidence": "year"
       },
       "summary": "杨时、游酢候程颐于门外，雪深没膝而不敢惊动。",
       "atAbs": 12971
@@ -2521,7 +2532,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "song-north"
       ],
@@ -2534,7 +2544,8 @@
       "at": {
         "year": 997,
         "month": 12,
-        "abs": 11975
+        "abs": 11975,
+        "confidence": "year"
       },
       "summary": "宋太宗赵恒对读《太平御览》者说：「开卷有益，朕不以为劳。」",
       "atAbs": 11975
@@ -2542,7 +2553,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "ming"
       ],
@@ -2555,7 +2565,8 @@
       "at": {
         "year": 1518,
         "month": 12,
-        "abs": 18227
+        "abs": 18227,
+        "confidence": "year"
       },
       "summary": "王阳明心学主张知与行不可分离，后成常用成语。",
       "atAbs": 18227
@@ -2563,7 +2574,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "ming"
       ],
@@ -2576,7 +2586,8 @@
       "at": {
         "year": 1565,
         "month": 12,
-        "abs": 18791
+        "abs": 18791,
+        "confidence": "year"
       },
       "summary": "海瑞上《治安疏》骂嘉靖，以刚直闻名。",
       "dateNote": "嘉靖四十五年",
@@ -2950,7 +2961,7 @@
       }
     ],
     "notes": [
-      "成语以 kind=idiom 的 point 事件入库，仅在时间轴显示时刻 marker，不画 span/circa 区间。",
+      "成语以 kind=idiom 的 point 事件入库，仅在时间轴显示时刻 marker；日期 confidence 按日期处理 Skill 执行。",
       "烽火戏诸侯并入夏商周包的犬戎之祸事件说明；该传统叙事史实有争议，不再单独绘制时间轴事件。",
       "meaning 存释义，summary 存典故；王朝经 event_dynasties，人物经 event_participants（仅 person_id）。",
       "participantIds 必须引用 persons.id，禁止写 reign id 或在 relations 中挂 reign。",

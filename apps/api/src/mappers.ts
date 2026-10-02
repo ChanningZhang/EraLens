@@ -6,11 +6,13 @@ import {
   type DynastyGroup,
   type DynastyLaneGroup,
   type Event,
+  type HistoricalDateConfidence,
   type Person,
   type Reign,
   type Relation,
   type TimelineDataStore,
   fromAbsMonth,
+  confidencePrecision,
 } from "@eralens/shared";
 import type {
   Dynasty as DbDynasty,
@@ -32,11 +34,14 @@ export type RawDynastyRow = {
   region: string;
   start_year: number;
   start_month: number;
+  start_day?: number | null;
+  start_confidence?: string;
   end_year: number;
   end_month: number;
+  end_day?: number | null;
+  end_confidence?: string;
   start_abs: number;
   end_abs: number;
-  precision: string;
   color_token: string;
   parent_id: string | null;
   group_id: string | null;
@@ -50,11 +55,14 @@ export type RawDynastyGroupRow = {
   scope: string;
   start_year: number;
   start_month: number;
+  start_day?: number | null;
+  start_confidence?: string;
   end_year: number;
   end_month: number;
+  end_day?: number | null;
+  end_confidence?: string;
   start_abs: number;
   end_abs: number;
-  precision: string;
   note: string | null;
 };
 
@@ -72,9 +80,8 @@ export type RawReignRow = {
   end_day: number | null;
   start_abs: number;
   end_abs: number;
-  precision: string;
-  start_date_confidence: string | null;
-  end_date_confidence: string | null;
+  start_confidence?: string;
+  end_confidence?: string;
   claim_track: string | null;
   claim_label: string | null;
   claim_role: string | null;
@@ -98,10 +105,8 @@ export type RawDynastyCapitalRow = {
   end_day: number | null;
   start_abs: number;
   end_abs: number;
-  precision: string;
-  end_precision: string | null;
-  start_date_confidence: string | null;
-  end_date_confidence: string | null;
+  start_confidence?: string;
+  end_confidence?: string;
   role: string;
   claim_track: string | null;
   reign_ids: string[] | null;
@@ -116,8 +121,9 @@ export type RawEventRow = {
   name: string;
   kind: string;
   time_mode: string;
-  precision: string;
-  is_approximate: boolean;
+  at_confidence?: string | null;
+  start_confidence?: string | null;
+  end_confidence?: string | null;
   date_note: string | null;
   at_year: number | null;
   at_month: number | null;
@@ -147,11 +153,11 @@ export function mapPerson(row: DbPerson): Person {
     clanShi: row.clanShi ?? undefined,
     birth:
       row.birthYear != null && row.birthMonth != null
-        ? { year: row.birthYear, month: row.birthMonth }
+        ? { year: row.birthYear, month: row.birthMonth, ...(row.birthDay != null ? { day: row.birthDay } : {}), ...(row.birthConfidence ? { confidence: row.birthConfidence as Person["birth"] extends infer T ? T extends { confidence?: infer C } ? C : never : never } : {}) }
         : undefined,
     death:
       row.deathYear != null && row.deathMonth != null
-        ? { year: row.deathYear, month: row.deathMonth }
+        ? { year: row.deathYear, month: row.deathMonth, ...(row.deathDay != null ? { day: row.deathDay } : {}), ...(row.deathConfidence ? { confidence: row.deathConfidence as NonNullable<Person["death"]>["confidence"] } : {}) }
         : undefined,
     roles: row.roles,
     bio: row.bio ?? undefined,
@@ -178,11 +184,13 @@ export function mapDynastyGroup(
     name: row.name,
     altNames,
     scope: row.scope as DynastyGroup["scope"],
-    start: { year: startYear, month: startMonth },
-    end: { year: endYear, month: endMonth },
+    start: { year: startYear, month: startMonth, ...("startDay" in row && row.startDay != null ? { day: row.startDay } : "start_day" in row && row.start_day != null ? { day: row.start_day } : {}), confidence: (("startConfidence" in row ? row.startConfidence : row.start_confidence) ?? "year") as HistoricalDateConfidence },
+    end: { year: endYear, month: endMonth, ...("endDay" in row && row.endDay != null ? { day: row.endDay } : "end_day" in row && row.end_day != null ? { day: row.end_day } : {}), confidence: (("endConfidence" in row ? row.endConfidence : row.end_confidence) ?? "year") as HistoricalDateConfidence },
     startAbs,
     endAbs,
-    precision: row.precision as DynastyGroup["precision"],
+    precision: confidencePrecision((("startConfidence" in row ? row.startConfidence : row.start_confidence) ?? "year") as HistoricalDateConfidence),
+    startConfidence: ("startConfidence" in row ? row.startConfidence : row.start_confidence) as DynastyGroup["startConfidence"],
+    endConfidence: ("endConfidence" in row ? row.endConfidence : row.end_confidence) as DynastyGroup["endConfidence"],
     note: noteValue ?? undefined,
   };
 }
@@ -218,11 +226,6 @@ export function mapDynastyCapital(
   const endDay = "endDay" in row ? row.endDay : row.end_day;
   const startAbs = "startAbs" in row ? row.startAbs : row.start_abs;
   const endAbs = "endAbs" in row ? row.endAbs : row.end_abs;
-  const endPrecision = "endPrecision" in row ? row.endPrecision : row.end_precision;
-  const startDateConfidence =
-    "startDateConfidence" in row ? row.startDateConfidence : row.start_date_confidence;
-  const endDateConfidence =
-    "endDateConfidence" in row ? row.endDateConfidence : row.end_date_confidence;
   const claimTrack = "claimTrack" in row ? row.claimTrack : row.claim_track;
   const reignIds: string[] = "reign_ids" in row ? row.reign_ids ?? [] : row.reignIds ?? [];
   const noteValue = row.note;
@@ -240,20 +243,20 @@ export function mapDynastyCapital(
       year: startYear,
       month: startMonth,
       ...(startDay != null ? { day: startDay } : {}),
+      confidence: (("startConfidence" in row ? row.startConfidence : row.start_confidence) ?? "year") as HistoricalDateConfidence,
     },
     end: {
       year: endYear,
       month: endMonth,
       ...(endDay != null ? { day: endDay } : {}),
+      confidence: (("endConfidence" in row ? row.endConfidence : row.end_confidence) ?? "year") as HistoricalDateConfidence,
     },
     startAbs,
     endAbs,
-    precision: row.precision as DynastyCapital["precision"],
-    endPrecision: (endPrecision as DynastyCapital["endPrecision"] | null) ?? undefined,
-    startDateConfidence:
-      (startDateConfidence as DynastyCapital["startDateConfidence"] | null) ?? undefined,
-    endDateConfidence:
-      (endDateConfidence as DynastyCapital["endDateConfidence"] | null) ?? undefined,
+    precision: confidencePrecision((("startConfidence" in row ? row.startConfidence : row.start_confidence) ?? "year") as HistoricalDateConfidence),
+    endPrecision: confidencePrecision((("endConfidence" in row ? row.endConfidence : row.end_confidence) ?? "year") as HistoricalDateConfidence),
+    startConfidence: ("startConfidence" in row ? row.startConfidence : row.start_confidence) as DynastyCapital["startConfidence"],
+    endConfidence: ("endConfidence" in row ? row.endConfidence : row.end_confidence) as DynastyCapital["endConfidence"],
     role: row.role as DynastyCapital["role"],
     claimTrack: claimTrack ?? undefined,
     reignIds: reignIds ?? [],
@@ -281,11 +284,13 @@ export function mapDynasty(row: DbDynasty | RawDynastyRow): Dynasty {
     altNames,
     scope: row.scope as Dynasty["scope"],
     region: row.region,
-    start: { year: startYear, month: startMonth },
-    end: { year: endYear, month: endMonth },
+    start: { year: startYear, month: startMonth, ...("startDay" in row && row.startDay != null ? { day: row.startDay } : "start_day" in row && row.start_day != null ? { day: row.start_day } : {}), confidence: (("startConfidence" in row ? row.startConfidence : row.start_confidence) ?? "year") as HistoricalDateConfidence },
+    end: { year: endYear, month: endMonth, ...("endDay" in row && row.endDay != null ? { day: row.endDay } : "end_day" in row && row.end_day != null ? { day: row.end_day } : {}), confidence: (("endConfidence" in row ? row.endConfidence : row.end_confidence) ?? "year") as HistoricalDateConfidence },
     startAbs,
     endAbs,
-    precision: row.precision as Dynasty["precision"],
+    precision: confidencePrecision((("startConfidence" in row ? row.startConfidence : row.start_confidence) ?? "year") as HistoricalDateConfidence),
+    startConfidence: ("startConfidence" in row ? row.startConfidence : row.start_confidence) as Dynasty["startConfidence"],
+    endConfidence: ("endConfidence" in row ? row.endConfidence : row.end_confidence) as Dynasty["endConfidence"],
     colorToken: colorToken as Dynasty["colorToken"],
     parentId: parentId ?? undefined,
     groupId: groupId ?? undefined,
@@ -317,10 +322,6 @@ export function mapReign(row: DbReign | RawReignRow): Reign {
   const claimTrack = "claimTrack" in row ? row.claimTrack : row.claim_track;
   const claimLabel = "claimLabel" in row ? row.claimLabel : row.claim_label;
   const rawClaimRole = "claimRole" in row ? row.claimRole : row.claim_role;
-  const startDateConfidence =
-    "startDateConfidence" in row ? row.startDateConfidence : row.start_date_confidence;
-  const endDateConfidence =
-    "endDateConfidence" in row ? row.endDateConfidence : row.end_date_confidence;
   const isInformalMonarch =
     "isInformalMonarch" in row ? row.isInformalMonarch : row.is_informal_monarch;
   const isMain = "isMain" in row ? row.isMain : row.is_main;
@@ -335,21 +336,21 @@ export function mapReign(row: DbReign | RawReignRow): Reign {
       year: startYear,
       month: startMonth,
       ...(startDay != null ? { day: startDay } : {}),
+      confidence: (("startConfidence" in row ? row.startConfidence : row.start_confidence) ?? "year") as HistoricalDateConfidence,
     },
     end: {
       // Open-ended reigns retain an end_abs display cap for the current import window.
       year: endYear ?? fromAbsMonth(endAbs).year,
       month: endMonth ?? fromAbsMonth(endAbs).month,
       ...(endDay != null ? { day: endDay } : {}),
+      confidence: (("endConfidence" in row ? row.endConfidence : row.end_confidence) ?? "year") as HistoricalDateConfidence,
     },
     startAbs,
     endAbs,
+    precision: confidencePrecision((("startConfidence" in row ? row.startConfidence : row.start_confidence) ?? "year") as HistoricalDateConfidence),
     isOngoing: endYear == null || endMonth == null,
-    precision: row.precision as Reign["precision"],
-    startDateConfidence:
-      (startDateConfidence as Reign["startDateConfidence"] | null) ?? undefined,
-    endDateConfidence:
-      (endDateConfidence as Reign["endDateConfidence"] | null) ?? undefined,
+    startConfidence: ("startConfidence" in row ? row.startConfidence : row.start_confidence) as Reign["startConfidence"],
+    endConfidence: ("endConfidence" in row ? row.endConfidence : row.end_confidence) as Reign["endConfidence"],
     claimTrack: claimTrack ?? undefined,
     claimLabel: claimLabel ?? undefined,
     claimRole: mapClaimRole(rawClaimRole, claimTrack),
@@ -401,15 +402,17 @@ export function mapEvent(
     name: row.name,
     kind: row.kind as Event["kind"],
     timeMode: (timeMode as Event["timeMode"] | null) ?? "point",
-    precision: (row.precision as Event["precision"] | null) ?? "year",
-    isApproximate: ("isApproximate" in row ? row.isApproximate : row.is_approximate) ?? false,
+    precision: confidencePrecision((atYear != null ? (("atConfidence" in row ? row.atConfidence : row.at_confidence) ?? "year") : (("startConfidence" in row ? row.startConfidence : row.start_confidence) ?? "year")) as HistoricalDateConfidence),
+    atConfidence: (("atConfidence" in row ? row.atConfidence : row.at_confidence) ?? undefined) as Event["atConfidence"],
+    startConfidence: (("startConfidence" in row ? row.startConfidence : row.start_confidence) ?? undefined) as Event["startConfidence"],
+    endConfidence: (("endConfidence" in row ? row.endConfidence : row.end_confidence) ?? undefined) as Event["endConfidence"],
     dateNote: dateNote ?? undefined,
-    at: atYear != null && atMonth != null ? { year: atYear, month: atMonth, ...(atDay != null ? { day: atDay } : {}) } : undefined,
+    at: atYear != null && atMonth != null ? { year: atYear, month: atMonth, ...(atDay != null ? { day: atDay } : {}), confidence: (("atConfidence" in row ? row.atConfidence : row.at_confidence) ?? undefined) as HistoricalDateConfidence | undefined } : undefined,
     start:
       startYear != null && startMonth != null
-        ? { year: startYear, month: startMonth, ...(startDay != null ? { day: startDay } : {}) }
+        ? { year: startYear, month: startMonth, ...(startDay != null ? { day: startDay } : {}), confidence: (("startConfidence" in row ? row.startConfidence : row.start_confidence) ?? undefined) as HistoricalDateConfidence | undefined }
         : undefined,
-    end: endYear != null && endMonth != null ? { year: endYear, month: endMonth, ...(endDay != null ? { day: endDay } : {}) } : undefined,
+    end: endYear != null && endMonth != null ? { year: endYear, month: endMonth, ...(endDay != null ? { day: endDay } : {}), confidence: (("endConfidence" in row ? row.endConfidence : row.end_confidence) ?? undefined) as HistoricalDateConfidence | undefined } : undefined,
     atAbs: atAbs ?? undefined,
     startAbs: startAbs ?? undefined,
     endAbs: endAbs ?? undefined,
@@ -435,7 +438,7 @@ export function mapRelation(row: DbRelation): Relation {
         ? { year: row.atYear, month: row.atMonth, ...(row.atDay != null ? { day: row.atDay } : {}) }
         : undefined,
     atAbs: row.atAbs ?? undefined,
-    precision: (row.precision as Relation["precision"]) ?? undefined,
+    atConfidence: (row.atConfidence as Relation["atConfidence"] | null) ?? undefined,
     eventId: row.eventId ?? undefined,
   };
 }

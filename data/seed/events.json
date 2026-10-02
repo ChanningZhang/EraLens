@@ -3,68 +3,53 @@
     "id": "yu-flood-control",
     "name": "大禹治水",
     "kind": "other",
-    "timeMode": "circa",
-    "precision": "century",
+    "timeMode": "point",
     "dynastyIds": [
       "xia"
     ],
     "participantIds": [
       "si-yu"
     ],
-    "dateNote": "传说时代，具体年月不可考；窗口取夏朝建立前后的世纪尺度",
+    "dateNote": "传说时代，具体年月不可考；窗口取夏朝建立前后的世纪尺度；mock数据原不确定范围：-2100年1月至-2070年12月。",
     "at": {
       "year": -2070,
-      "month": 1
+      "month": 1,
+      "confidence": "approximate_year"
     },
     "atAbs": -24828,
-    "start": {
-      "year": -2100,
-      "month": 1
-    },
     "startAbs": -25188,
-    "end": {
-      "year": -2070,
-      "month": 12
-    },
     "endAbs": -24817,
-    "summary": "传说禹疏导洪水，其后受禅，为夏后氏开国叙事的核心。"
+    "summary": "传说禹疏导洪水，其后受禅，为夏后氏开国叙事的核心。",
+    "atConfidence": "approximate_year"
   },
   {
     "id": "gan-battle",
     "name": "甘之战",
     "kind": "battle",
-    "timeMode": "circa",
-    "precision": "decade",
+    "timeMode": "point",
     "dynastyIds": [
       "xia"
     ],
     "participantIds": [
       "si-qi"
     ],
-    "dateNote": "《尚书·甘誓》载启伐有扈，绝对年代据夏初框架估列",
+    "dateNote": "《尚书·甘誓》载启伐有扈，绝对年代据夏初框架估列；mock数据原不确定范围：-2025年1月至-2010年12月。",
     "at": {
       "year": -2020,
-      "month": 1
+      "month": 1,
+      "confidence": "approximate_year"
     },
     "atAbs": -24228,
-    "start": {
-      "year": -2025,
-      "month": 1
-    },
     "startAbs": -24288,
-    "end": {
-      "year": -2010,
-      "month": 12
-    },
     "endAbs": -24097,
-    "summary": "夏启讨伐有扈氏，传统视为世袭王权确立过程中的战争。"
+    "summary": "夏启讨伐有扈氏，传统视为世袭王权确立过程中的战争。",
+    "atConfidence": "approximate_year"
   },
   {
     "id": "taikang-lost",
     "name": "太康失国",
     "kind": "politics",
-    "timeMode": "circa",
-    "precision": "decade",
+    "timeMode": "point",
     "dynastyIds": [
       "xia"
     ],
@@ -72,60 +57,52 @@
       "si-taikang",
       "hou-yi"
     ],
-    "dateNote": "后羿代夏、寒浞代羿均为传说，窗口置于夏初启之后",
+    "dateNote": "后羿代夏、寒浞代羿均为传说，窗口置于夏初启之后；mock数据原不确定范围：-2009年1月至-1950年12月。",
     "at": {
       "year": -1990,
-      "month": 1
+      "month": 1,
+      "confidence": "approximate_year"
     },
     "atAbs": -23868,
-    "start": {
-      "year": -2009,
-      "month": 1
-    },
     "startAbs": -24096,
-    "end": {
-      "year": -1950,
-      "month": 12
-    },
     "endAbs": -23377,
-    "summary": "太康失位，有穷后羿代夏，夏后氏中衰。"
+    "summary": "太康失位，有穷后羿代夏，夏后氏中衰。",
+    "atConfidence": "approximate_year"
   },
   {
     "id": "shaokang-zhongxing",
     "name": "少康中兴",
     "kind": "politics",
-    "timeMode": "circa",
-    "precision": "decade",
+    "timeMode": "span",
     "dynastyIds": [
       "xia"
     ],
     "participantIds": [
       "si-shaokang"
     ],
-    "dateNote": "少康灭寒浞、恢复夏政，年数无实测，仅标相对位置",
-    "at": {
-      "year": -1910,
-      "month": 1
-    },
+    "dateNote": "少康灭寒浞、恢复夏政，年数无实测，仅标相对位置；mock数据原不确定范围：-1920年1月至-1860年12月。",
     "atAbs": -22908,
     "start": {
       "year": -1920,
-      "month": 1
+      "month": 1,
+      "confidence": "approximate_year"
     },
     "startAbs": -23028,
     "end": {
       "year": -1860,
-      "month": 12
+      "month": 12,
+      "confidence": "approximate_year"
     },
     "endAbs": -22297,
-    "summary": "少康自有虞起兵，消灭寒浞，恢复夏后氏统治。"
+    "summary": "少康自有虞起兵，消灭寒浞，恢复夏后氏统治。",
+    "startConfidence": "approximate_year",
+    "endConfidence": "approximate_year"
   },
   {
     "id": "mingtiao",
     "name": "鸣条之战",
     "kind": "battle",
-    "timeMode": "circa",
-    "precision": "decade",
+    "timeMode": "point",
     "dynastyIds": [
       "xia",
       "shang"
@@ -135,30 +112,23 @@
       "zi-tang",
       "yi-yin"
     ],
-    "dateNote": "夏商分界取断代工程约前1600年，战役月日不详",
+    "dateNote": "夏商分界取断代工程约前1600年，战役月日不详；mock数据原不确定范围：-1610年1月至-1600年12月。",
     "at": {
       "year": -1600,
-      "month": 1
+      "month": 1,
+      "confidence": "approximate_year"
     },
     "atAbs": -19188,
-    "start": {
-      "year": -1610,
-      "month": 1
-    },
     "startAbs": -19308,
-    "end": {
-      "year": -1600,
-      "month": 12
-    },
     "endAbs": -19177,
-    "summary": "商汤与伊尹在鸣条击败夏桀，夏亡商兴。"
+    "summary": "商汤与伊尹在鸣条击败夏桀，夏亡商兴。",
+    "atConfidence": "approximate_year"
   },
   {
     "id": "yiyin-taijia",
     "name": "伊尹放太甲",
     "kind": "politics",
-    "timeMode": "circa",
-    "precision": "decade",
+    "timeMode": "point",
     "dynastyIds": [
       "shang"
     ],
@@ -166,60 +136,46 @@
       "yi-yin",
       "zi-taijia"
     ],
-    "dateNote": "桐宫放逐出于《史记》等传说，具体年份不可考",
+    "dateNote": "桐宫放逐出于《史记》等传说，具体年份不可考；mock数据原不确定范围：-1560年1月至-1548年12月。",
     "at": {
       "year": -1555,
-      "month": 1
+      "month": 1,
+      "confidence": "approximate_year"
     },
     "atAbs": -18648,
-    "start": {
-      "year": -1560,
-      "month": 1
-    },
     "startAbs": -18708,
-    "end": {
-      "year": -1548,
-      "month": 12
-    },
     "endAbs": -18553,
-    "summary": "传说太甲不遵汤法，伊尹放之于桐，三年后迎归复位。"
+    "summary": "传说太甲不遵汤法，伊尹放之于桐，三年后迎归复位。",
+    "atConfidence": "approximate_year"
   },
   {
     "id": "pangeng-move-yin",
     "name": "盘庚迁殷",
     "kind": "politics",
-    "timeMode": "circa",
-    "precision": "decade",
+    "timeMode": "point",
     "dynastyIds": [
       "shang"
     ],
     "participantIds": [
       "zi-pangeng"
     ],
-    "dateNote": "断代工程估定迁殷约前1300年，起迄年不详",
+    "dateNote": "断代工程估定迁殷约前1300年，起迄年不详；mock数据原不确定范围：-1310年1月至-1290年12月。",
     "at": {
       "year": -1300,
-      "month": 1
+      "month": 1,
+      "confidence": "approximate_year"
     },
     "atAbs": -15588,
-    "start": {
-      "year": -1310,
-      "month": 1
-    },
     "startAbs": -15708,
-    "end": {
-      "year": -1290,
-      "month": 12
-    },
     "endAbs": -15457,
-    "summary": "盘庚迁都于殷（今安阳），此后商亦称殷。"
+    "summary": "盘庚迁都于殷（今安阳），此后商亦称殷。",
+    "atConfidence": "approximate_year"
   },
   {
     "id": "wuding-zhongxing",
     "name": "武丁中兴",
     "kind": "politics",
     "timeMode": "span",
-    "precision": "year",
     "dynastyIds": [
       "shang"
     ],
@@ -230,12 +186,14 @@
     "dateNote": "在位年取断代工程前1250–前1192年",
     "start": {
       "year": -1250,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "startAbs": -14988,
     "end": {
       "year": -1192,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "endAbs": -14281,
     "summary": "武丁对外用兵、内修祭祀，晚商达到鼎盛，妇好亦主征伐。"
@@ -245,7 +203,6 @@
     "name": "牧野之战",
     "kind": "battle",
     "timeMode": "point",
-    "precision": "month",
     "dynastyIds": [
       "shang",
       "zhou-west"
@@ -258,7 +215,8 @@
     "dateNote": "断代工程取前1046年1月20日；月取正月，日不入库",
     "at": {
       "year": -1046,
-      "month": 1
+      "month": 1,
+      "confidence": "month"
     },
     "atAbs": -12540,
     "summary": "周武王会师牧野克商，商周分界。"
@@ -267,8 +225,7 @@
     "id": "sanjian-rebellion",
     "name": "三监之乱",
     "kind": "battle",
-    "timeMode": "circa",
-    "precision": "year",
+    "timeMode": "span",
     "dynastyIds": [
       "zhou-west"
     ],
@@ -276,30 +233,29 @@
       "ji-song",
       "ji-dan"
     ],
-    "dateNote": "成王初、周公摄政期间，绝对年据西周初框架",
-    "at": {
-      "year": -1041,
-      "month": 12
-    },
+    "dateNote": "成王初、周公摄政期间，绝对年据西周初框架；mock数据原不确定范围：-1042年1月至-1036年12月。",
     "atAbs": -12469,
     "start": {
       "year": -1042,
-      "month": 1
+      "month": 1,
+      "confidence": "approximate_year"
     },
     "startAbs": -12492,
     "end": {
       "year": -1036,
-      "month": 12
+      "month": 12,
+      "confidence": "approximate_year"
     },
     "endAbs": -12409,
-    "summary": "管蔡霍三监联合武庚叛周，周公东征平定，大规模封建东土。"
+    "summary": "管蔡霍三监联合武庚叛周，周公东征平定，大规模封建东土。",
+    "startConfidence": "approximate_year",
+    "endConfidence": "approximate_year"
   },
   {
     "id": "chengkang-rule",
     "name": "成康之治",
     "kind": "politics",
     "timeMode": "span",
-    "precision": "year",
     "dynastyIds": [
       "zhou-west"
     ],
@@ -311,12 +267,14 @@
     "dateNote": "对应断代工程成王、康王在位年",
     "start": {
       "year": -1042,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "startAbs": -12492,
     "end": {
       "year": -996,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "endAbs": -11929,
     "summary": "西周早期政治相对安定，传统称刑错四十余年不用。"
@@ -325,38 +283,30 @@
     "id": "zhaowang-south",
     "name": "昭王南征",
     "kind": "battle",
-    "timeMode": "circa",
-    "precision": "year",
+    "timeMode": "point",
     "dynastyIds": [
       "zhou-west"
     ],
     "participantIds": [
       "ji-xia"
     ],
-    "dateNote": "昭王卒年取断代工程前977年，南征次数与月份不详",
+    "dateNote": "昭王卒年取断代工程前977年，南征次数与月份不详；mock数据原不确定范围：-995年1月至-977年12月。",
     "at": {
       "year": -977,
-      "month": 12
+      "month": 12,
+      "confidence": "approximate_year"
     },
     "atAbs": -11701,
-    "start": {
-      "year": -995,
-      "month": 1
-    },
     "startAbs": -11928,
-    "end": {
-      "year": -977,
-      "month": 12
-    },
     "endAbs": -11701,
-    "summary": "周昭王多次南征荆楚，传说还师渡汉水而卒。"
+    "summary": "周昭王多次南征荆楚，传说还师渡汉水而卒。",
+    "atConfidence": "approximate_year"
   },
   {
     "id": "guoren-riot",
     "name": "国人暴动",
     "kind": "politics",
     "timeMode": "point",
-    "precision": "year",
     "dynastyIds": [
       "zhou-west"
     ],
@@ -366,7 +316,8 @@
     "dateNote": "共和元年即前841年，为中国有确切纪年之始",
     "at": {
       "year": -841,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "atAbs": -10069,
     "summary": "厉王专利，国人暴动，王奔彘，周召共和行政。"
@@ -376,7 +327,6 @@
     "name": "共和行政",
     "kind": "politics",
     "timeMode": "span",
-    "precision": "year",
     "dynastyIds": [
       "zhou-west"
     ],
@@ -386,12 +336,14 @@
     "dateNote": "前841–前828年，一说周召二公共和，一说共伯和摄政",
     "start": {
       "year": -841,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "startAbs": -10080,
     "end": {
       "year": -828,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "endAbs": -9913,
     "summary": "厉王出奔后的十四年无王期，至宣王即位结束。"
@@ -401,7 +353,6 @@
     "name": "宣王中兴",
     "kind": "politics",
     "timeMode": "span",
-    "precision": "year",
     "dynastyIds": [
       "zhou-west"
     ],
@@ -410,12 +361,14 @@
     ],
     "start": {
       "year": -827,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "startAbs": -9912,
     "end": {
       "year": -782,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "endAbs": -9361,
     "summary": "宣王整顿朝政、征伐玁狁，西周国势一度回升。"
@@ -425,7 +378,6 @@
     "name": "犬戎之祸",
     "kind": "battle",
     "timeMode": "point",
-    "precision": "year",
     "dynastyIds": [
       "zhou-west"
     ],
@@ -436,7 +388,8 @@
     "dateNote": "幽王十一年，前771年",
     "at": {
       "year": -771,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "atAbs": -9229,
     "summary": "申侯联合犬戎攻破镐京，幽王死，西周亡。"
@@ -446,7 +399,6 @@
     "name": "二王并立",
     "kind": "politics",
     "timeMode": "point",
-    "precision": "year",
     "dynastyIds": [
       "zhou-east"
     ],
@@ -457,7 +409,8 @@
     "dateNote": "前771年幽王死后",
     "at": {
       "year": -771,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "atAbs": -9229,
     "summary": "申侯等立平王，虢公翰等立携王；后世以平王东迁为东周正统。"
@@ -467,7 +420,6 @@
     "name": "晋文侯杀携王",
     "kind": "politics",
     "timeMode": "point",
-    "precision": "year",
     "dynastyIds": [
       "zhou-east"
     ],
@@ -477,7 +429,8 @@
     "dateNote": "前750年",
     "at": {
       "year": -750,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "atAbs": -8977,
     "summary": "晋文侯攻灭携王，二王并立终结，平王正统确立。"
@@ -487,7 +440,6 @@
     "name": "平王东迁",
     "kind": "politics",
     "timeMode": "point",
-    "precision": "year",
     "dynastyIds": [
       "zhou-east"
     ],
@@ -497,7 +449,8 @@
     "dateNote": "平王元年，前770年",
     "at": {
       "year": -770,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "atAbs": -9217,
     "summary": "平王迁都洛邑，东周开始，王室逐渐失去对诸侯的实质控制。"
@@ -507,7 +460,6 @@
     "name": "春秋",
     "kind": "politics",
     "timeMode": "span",
-    "precision": "year",
     "dynastyIds": [
       "zhou-east"
     ],
@@ -515,12 +467,14 @@
     "dateNote": "平王东迁（前770）至三家分晋（前403）；与战国以册命立国为界",
     "start": {
       "year": -770,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "startAbs": -9228,
     "end": {
       "year": -403,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "endAbs": -4813,
     "summary": "诸侯争霸、礼崩乐坏，周天子共主名存实亡。"
@@ -530,7 +484,6 @@
     "name": "葵丘之盟",
     "kind": "politics",
     "timeMode": "point",
-    "precision": "year",
     "dynastyIds": [
       "zhou-east"
     ],
@@ -542,7 +495,8 @@
     "dateNote": "齐桓公三十五年，鲁僖公九年，前651年",
     "at": {
       "year": -651,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "atAbs": -7789,
     "summary": "齐桓公会诸侯于葵丘，周襄王赐胙，齐霸达到顶点。"
@@ -552,7 +506,6 @@
     "name": "城濮之战",
     "kind": "battle",
     "timeMode": "point",
-    "precision": "year",
     "dynastyIds": [
       "zhou-east"
     ],
@@ -562,7 +515,8 @@
     "dateNote": "鲁僖公二十八年，前632年",
     "at": {
       "year": -632,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "atAbs": -7561,
     "summary": "晋文公败楚于城濮，随后践土会盟，晋霸确立。"
@@ -572,7 +526,6 @@
     "name": "战国",
     "kind": "politics",
     "timeMode": "span",
-    "precision": "year",
     "dynastyIds": [
       "zhou-east"
     ],
@@ -580,12 +533,14 @@
     "dateNote": "以三家分晋、周天子册命韩赵魏为诸侯（前403）为起点，迄秦统一前221年",
     "start": {
       "year": -403,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "startAbs": -4824,
     "end": {
       "year": -221,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "endAbs": -2629,
     "summary": "七雄兼并，变法图强，至秦始皇统一而结束。"
@@ -595,7 +550,6 @@
     "name": "三家分晋",
     "kind": "politics",
     "timeMode": "point",
-    "precision": "year",
     "dynastyIds": [
       "zhou-east"
     ],
@@ -605,7 +559,8 @@
     "dateNote": "周威烈王二十三年正式命韩赵魏为诸侯，前403年",
     "at": {
       "year": -403,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "atAbs": -4813,
     "summary": "周天子承认韩、赵、魏，战国格局形成的标志性事件。"
@@ -614,38 +569,36 @@
     "id": "baijia-zhengming",
     "name": "百家争鸣",
     "kind": "culture",
-    "timeMode": "circa",
-    "precision": "century",
+    "timeMode": "span",
     "dynastyIds": [
       "zhou-east"
     ],
     "participantIds": [
       "kong-qiu"
     ],
-    "dateNote": "思想活跃期约自春秋晚期至秦统一，并无单一起迄年",
-    "at": {
-      "year": -400,
-      "month": 1
-    },
+    "dateNote": "思想活跃期约自春秋晚期至秦统一，并无单一起迄年；mock数据原不确定范围：-551年1月至-221年12月。",
     "atAbs": -4788,
     "start": {
       "year": -551,
-      "month": 1
+      "month": 1,
+      "confidence": "approximate_year"
     },
     "startAbs": -6600,
     "end": {
       "year": -221,
-      "month": 12
+      "month": 12,
+      "confidence": "approximate_year"
     },
     "endAbs": -2629,
-    "summary": "儒墨道法名等学派并起，塑造此后中国思想传统。"
+    "summary": "儒墨道法名等学派并起，塑造此后中国思想传统。",
+    "startConfidence": "approximate_year",
+    "endConfidence": "approximate_year"
   },
   {
     "id": "qin-destroy-zhou",
     "name": "秦灭周",
     "kind": "politics",
     "timeMode": "point",
-    "precision": "year",
     "dynastyIds": [
       "zhou-east"
     ],
@@ -655,7 +608,8 @@
     "dateNote": "赧王五十九年，前256年，秦昭襄王灭西周君",
     "at": {
       "year": -256,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "atAbs": -3049,
     "summary": "秦攻取周王畿，赧王卒，东周灭亡。"
@@ -665,10 +619,10 @@
     "name": "官渡之战",
     "kind": "battle",
     "timeMode": "point",
-    "precision": "month",
     "at": {
       "year": 200,
-      "month": 6
+      "month": 6,
+      "confidence": "month"
     },
     "atAbs": 2405,
     "dynastyIds": [
@@ -685,10 +639,10 @@
     "name": "赤壁之战",
     "kind": "battle",
     "timeMode": "point",
-    "precision": "month",
     "at": {
       "year": 208,
-      "month": 12
+      "month": 12,
+      "confidence": "month"
     },
     "atAbs": 2507,
     "dynastyIds": [
@@ -708,22 +662,14 @@
     "id": "jianan-literature",
     "name": "建安文学",
     "kind": "culture",
-    "timeMode": "circa",
-    "precision": "decade",
-    "dateNote": "建安年间文人群体活跃，并无单一发生年月",
-    "start": {
-      "year": 196,
-      "month": 1
-    },
-    "end": {
-      "year": 220,
-      "month": 12
-    },
+    "timeMode": "point",
+    "dateNote": "建安年间文人群体活跃，并无单一发生年月；mock数据原不确定范围：196年1月至220年12月。",
     "startAbs": 2352,
     "endAbs": 2651,
     "at": {
       "year": 215,
-      "month": 1
+      "month": 1,
+      "confidence": "approximate_year"
     },
     "atAbs": 2580,
     "dynastyIds": [
@@ -732,17 +678,18 @@
     "participantIds": [
       "cao-cao"
     ],
-    "summary": "以曹操、曹丕、曹植及建安七子为代表的诗文高峰。"
+    "summary": "以曹操、曹丕、曹植及建安七子为代表的诗文高峰。",
+    "atConfidence": "approximate_year"
   },
   {
     "id": "wei-founded",
     "name": "曹丕称帝",
     "kind": "politics",
     "timeMode": "point",
-    "precision": "month",
     "at": {
       "year": 220,
-      "month": 12
+      "month": 12,
+      "confidence": "month"
     },
     "atAbs": 2651,
     "dynastyIds": [
@@ -759,14 +706,15 @@
     "name": "夷陵之战",
     "kind": "battle",
     "timeMode": "span",
-    "precision": "month",
     "start": {
       "year": 221,
-      "month": 7
+      "month": 7,
+      "confidence": "month"
     },
     "end": {
       "year": 222,
-      "month": 8
+      "month": 8,
+      "confidence": "month"
     },
     "startAbs": 2658,
     "endAbs": 2671,

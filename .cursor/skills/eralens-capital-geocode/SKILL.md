@@ -8,6 +8,8 @@ description: >-
 
 # EraLens 都城地理编码
 
+都城起止日期遵循 [eralens-date-handling](../eralens-date-handling/SKILL.md)；本 Skill 的 `precision` 仅描述空间坐标定位精度。
+
 为 `dynasty_capitals` 表补数据：调研都城时段 → 高德取点 → 写入对应包 `cache.json` → 统一生成 SQL。
 
 `data/imports/dynasty-capitals/cache.json` 是都城事实与来源说明的唯一源文件：记录放入 `capitals`，来源/编码说明放入其中的 `manifest.sources` / `manifest.notes`。不要另建坐标表、raw 文件或包级生成脚本；生成的 `manifest.json` 和 `import.sql` 不手工修改。
@@ -69,7 +71,7 @@ Task Progress:
 - `dynasty_id`：引用已有 `dynasties.id`
 - `role`：`primary` / `secondary` / `temporary`
 - `claim_track`：并行政权都城时与 `reigns.claim_track` 同一 key
-- 时间：`start_abs` / `end_abs` 用 `absMonth()`；年精度起 1 月、迄 12 月
+- 时间：`start_abs` / `end_abs` 用 `absMonth()`；日期端点遵循 [eralens-date-handling](../eralens-date-handling/SKILL.md)
 - `coordinate_system`：固定 `GCJ02`
 
 ## ID 约定

@@ -168,14 +168,15 @@
       "start": {
         "year": 1644,
         "month": 1,
-        "abs": 19728
+        "abs": 19728,
+        "confidence": "year"
       },
       "end": {
         "year": 1645,
         "month": 12,
-        "abs": 19751
+        "abs": 19751,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "李自成1644年正月西安称帝，年号永昌；克北京后旋败，1645年李自成阵亡，政权瓦解。"
     },
     {
@@ -189,14 +190,15 @@
       "start": {
         "year": 1644,
         "month": 12,
-        "abs": 19739
+        "abs": 19739,
+        "confidence": "month"
       },
       "end": {
         "year": 1647,
         "month": 12,
-        "abs": 19775
+        "abs": 19775,
+        "confidence": "month"
       },
-      "precision": "month",
       "note": "张献忠1644年十二月成都称帝，年号大顺；1647年1月战死于西充，余部至同年归顺南明。"
     },
     {
@@ -211,14 +213,15 @@
       "start": {
         "year": 1661,
         "month": 6,
-        "abs": 19937
+        "abs": 19937,
+        "confidence": "month"
       },
       "end": {
         "year": 1683,
         "month": 10,
-        "abs": 20205
+        "abs": 20205,
+        "confidence": "month"
       },
-      "precision": "month",
       "note": "郑成功1662年收复台湾后建承天府，奉永历正朔；1683年郑克塽降清，东宁终结。"
     }
   ],
@@ -235,19 +238,18 @@
       "start": {
         "year": 1644,
         "month": 1,
-        "abs": 19728
+        "abs": 19728,
+        "confidence": "month"
       },
       "end": {
         "year": 1645,
         "month": 5,
         "abs": 19744,
-        "day": 17
+        "day": 17,
+        "confidence": "month"
       },
       "startAbs": 19728,
       "endAbs": 19744,
-      "precision": "month",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -265,19 +267,18 @@
         "year": 1644,
         "month": 12,
         "abs": 19739,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "end": {
         "year": 1647,
         "month": 1,
         "abs": 19764,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "startAbs": 19739,
       "endAbs": 19764,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -293,19 +294,18 @@
         "year": 1661,
         "month": 6,
         "abs": 19937,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "end": {
         "year": 1662,
         "month": 6,
         "abs": 19949,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "startAbs": 19937,
       "endAbs": 19949,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -321,19 +321,18 @@
         "year": 1662,
         "month": 6,
         "abs": 19949,
-        "day": 29
+        "day": 29,
+        "confidence": "day"
       },
       "end": {
         "year": 1681,
         "month": 3,
         "abs": 20174,
-        "day": 17
+        "day": 17,
+        "confidence": "day"
       },
       "startAbs": 19949,
       "endAbs": 20174,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -349,19 +348,18 @@
         "year": 1681,
         "month": 3,
         "abs": 20174,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "end": {
         "year": 1683,
         "month": 10,
         "abs": 20205,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "startAbs": 20174,
       "endAbs": 20205,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -372,7 +370,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "day",
       "dynastyIds": [
         "mingzheng",
         "qing"
@@ -388,7 +385,8 @@
         "year": 1683,
         "month": 10,
         "abs": 20205,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "summary": "施琅率清军在澎湖海战取胜，郑克塽于同年十月降清，明郑灭亡，台湾纳入清朝统治。",
       "atAbs": 20205,
@@ -477,7 +475,7 @@
     ],
     "notes": [
       "收录大顺（1644–1645）、大西（1644–1647）、明郑/东宁（1661–1683）。",
-      "明郑三代延平王在位日取维基百科条目公历换算（已核定公历日期直接记录在缓存，precision=day）。",
+      "明郑三代延平王在位日取维基百科条目公历换算（已核定公历日期直接记录在缓存，confidence=day）。",
       "郑成功、郑经、郑克塽在位与 yuan-ming-qing 已有人物 upsert 衔接。",
       "大西年号亦作大顺，与李自成大顺国号同名异政权。",
       "郑成功收复台湾（1662）与郑克塽降清（1683）各保留一条跨包共用事件，合并原重复记录的信息与关联。",

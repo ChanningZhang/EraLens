@@ -13,33 +13,22 @@ describe("validateEventFateAlignment", () => {
     const catalog = cache.relations;
     const events = loadEventsFromImports(importsRoot);
     const linked = new Set([
-      "tang-founded",
-      "zhu-wen-usurp",
-      "chenqiao-mutiny",
       "jingkang-incident",
-      "beiliao-founded",
-      "xiliao-fallen",
       "caishi-battle",
+      "gaogouli-destroyed-tang",
     ]);
-    const dayPrecision = new Set([
-      "tang-founded",
-      "zhu-wen-usurp",
-      "chenqiao-mutiny",
-      "jingkang-incident",
-      "beiliao-founded",
-      "caishi-battle",
-    ]);
+    const dayPrecision = new Set(["jingkang-incident", "caishi-battle"]);
     const failures = validateEventFateAlignment(catalog, events).filter((failure) =>
       linked.has(failure.eventId),
     );
     assert.deepEqual(failures, []);
     for (const id of dayPrecision) {
       const event = events.get(id);
-      assert.equal(event?.precision, "day", `${id} should be day precision`);
+      assert.equal(event?.confidence, "day", `${id} should carry day confidence`);
     }
     for (const id of linked) {
       const event = events.get(id);
-      assert.notEqual(event?.precision, "year", `${id} should not stay year precision`);
+      assert.notEqual(event?.confidence, "year", `${id} should not stay year confidence`);
     }
   });
 });

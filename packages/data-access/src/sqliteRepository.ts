@@ -2,6 +2,7 @@ import {
   buildEntityDetail, computeBounds, DynastyCapitalSchema, DynastyGroupSchema,
   DynastyLaneGroupSchema, DynastySchema, EventSchema, EventLocationSchema,
   filterTimeline, fromAbsMonth, normalizeSearchTerm, PersonSchema, RelationSchema, ReignSchema,
+  confidencePrecision,
   searchEntities, type Dynasty, type DynastyCapital, type DynastyGroup,
   type DynastyLaneGroup, type EntityDetail, type EntityRef, type Event,
   type EventDisplayConfig, type Person, type Reign, type Relation,
@@ -35,7 +36,8 @@ function mapPerson(row: Row): Person {
   return PersonSchema.parse({
     id: row.id, name: row.name, title: own(row, "title"), altNames: strings(row.alt_names),
     ancestralXing: own(row, "ancestral_xing"), clanShi: own(row, "clan_shi"),
-    birth: point(row.birth_year, row.birth_month), death: point(row.death_year, row.death_month),
+    birth: point(row.birth_year, row.birth_month, row.birth_day) ? { ...point(row.birth_year, row.birth_month, row.birth_day), confidence: own(row, "birth_confidence") } : undefined,
+    death: point(row.death_year, row.death_month, row.death_day) ? { ...point(row.death_year, row.death_month, row.death_day), confidence: own(row, "death_confidence") } : undefined,
     roles: strings(row.roles), bio: own(row, "bio"), links: json(row.links, []),
     posthumousNames: csv(row.posthumous_name), templeNames: csv(row.temple_name),
     searchTerms: strings(row.search_terms),
@@ -45,8 +47,8 @@ function mapPerson(row: Row): Person {
 function mapDynasty(row: Row): Dynasty {
   return DynastySchema.parse({
     id: row.id, name: row.name, altNames: strings(row.alt_names), scope: row.scope,
-    region: row.region, start: point(row.start_year, row.start_month), end: point(row.end_year, row.end_month),
-    startAbs: Number(row.start_abs), endAbs: Number(row.end_abs), precision: row.precision,
+    region: row.region, start: { ...point(row.start_year, row.start_month, row.start_day), confidence: row.start_confidence }, end: { ...point(row.end_year, row.end_month, row.end_day), confidence: row.end_confidence },
+    startAbs: Number(row.start_abs), endAbs: Number(row.end_abs), precision: confidencePrecision((row.start_confidence ?? "year") as Parameters<typeof confidencePrecision>[0]), startConfidence: row.start_confidence, endConfidence: row.end_confidence,
     colorToken: row.color_token, parentId: own(row, "parent_id"), groupId: own(row, "group_id"), note: own(row, "note"),
   });
 }
@@ -54,8 +56,8 @@ function mapDynasty(row: Row): Dynasty {
 function mapGroup(row: Row): DynastyGroup {
   return DynastyGroupSchema.parse({
     id: row.id, name: row.name, altNames: strings(row.alt_names), scope: row.scope,
-    start: point(row.start_year, row.start_month), end: point(row.end_year, row.end_month),
-    startAbs: Number(row.start_abs), endAbs: Number(row.end_abs), precision: row.precision, note: own(row, "note"),
+    start: { ...point(row.start_year, row.start_month, row.start_day), confidence: row.start_confidence }, end: { ...point(row.end_year, row.end_month, row.end_day), confidence: row.end_confidence },
+    startAbs: Number(row.start_abs), endAbs: Number(row.end_abs), precision: confidencePrecision((row.start_confidence ?? "year") as Parameters<typeof confidencePrecision>[0]), startConfidence: row.start_confidence, endConfidence: row.end_confidence, note: own(row, "note"),
   });
 }
 
@@ -72,11 +74,11 @@ function mapReign(row: Row): Reign {
   const claimTrack = own(row, "claim_track");
   return ReignSchema.parse({
     id: row.id, dynastyId: row.dynasty_id, personId: row.person_id, title: row.title,
-    eraNames: csv(row.era_names), start: point(row.start_year, row.start_month, row.start_day),
-    end: point(row.end_year ?? fallbackEnd.year, row.end_month ?? fallbackEnd.month, row.end_day),
+    eraNames: csv(row.era_names), start: { ...point(row.start_year, row.start_month, row.start_day), confidence: row.start_confidence },
+    end: { ...point(row.end_year ?? fallbackEnd.year, row.end_month ?? fallbackEnd.month, row.end_day), confidence: row.end_confidence },
     startAbs: Number(row.start_abs), endAbs, isOngoing: row.end_year == null || row.end_month == null,
-    precision: row.precision, startDateConfidence: own(row, "start_date_confidence"),
-    endDateConfidence: own(row, "end_date_confidence"), claimTrack, claimLabel: own(row, "claim_label"),
+    precision: confidencePrecision((row.start_confidence ?? "year") as Parameters<typeof confidencePrecision>[0]), startConfidence: row.start_confidence, endConfidence: row.end_confidence,
+    claimTrack, claimLabel: own(row, "claim_label"),
     claimRole: claimTrack || row.claim_role === "rival" ? "rival" : undefined,
     isInformalMonarch: Boolean(row.is_informal_monarch), isMain: row.is_main == null ? undefined : Boolean(row.is_main),
   });
@@ -92,10 +94,11 @@ function mapLocation(row: Row) {
 
 function mapEvent(row: Row, dynasties: Row[], participants: Row[], location?: ReturnType<typeof mapLocation>): Event {
   return EventSchema.parse({
-    id: row.id, name: row.name, kind: row.kind, timeMode: row.time_mode, precision: row.precision,
-    isApproximate: Boolean(row.is_approximate), dateNote: own(row, "date_note"),
-    at: point(row.at_year, row.at_month, row.at_day), start: point(row.start_year, row.start_month, row.start_day),
-    end: point(row.end_year, row.end_month, row.end_day), atAbs: n(row.at_abs), startAbs: n(row.start_abs), endAbs: n(row.end_abs),
+    id: row.id, name: row.name, kind: row.kind, timeMode: row.time_mode, precision: confidencePrecision((row.at_confidence ?? row.start_confidence ?? "year") as Parameters<typeof confidencePrecision>[0]), atConfidence: own(row, "at_confidence"), startConfidence: own(row, "start_confidence"), endConfidence: own(row, "end_confidence"), dateNote: own(row, "date_note"),
+    at: point(row.at_year, row.at_month, row.at_day) ? { ...point(row.at_year, row.at_month, row.at_day), confidence: own(row, "at_confidence") } : undefined,
+    start: point(row.start_year, row.start_month, row.start_day) ? { ...point(row.start_year, row.start_month, row.start_day), confidence: own(row, "start_confidence") } : undefined,
+    end: point(row.end_year, row.end_month, row.end_day) ? { ...point(row.end_year, row.end_month, row.end_day), confidence: own(row, "end_confidence") } : undefined,
+    atAbs: n(row.at_abs), startAbs: n(row.start_abs), endAbs: n(row.end_abs),
     dynastyIds: dynasties.map((link) => String(link.dynasty_id)),
     participantIds: participants.map((link) => String(link.person_id)),
     summary: own(row, "summary"), meaning: own(row, "meaning"), content: own(row, "content"),
@@ -107,7 +110,7 @@ function mapRelation(row: Row): Relation {
   return RelationSchema.parse({
     id: row.id, fromRef: `${row.from_type}:${row.from_id}`, toRef: `${row.to_type}:${row.to_id}`,
     kind: row.kind, at: point(row.at_year, row.at_month, row.at_day), atAbs: n(row.at_abs),
-    precision: own(row, "precision"), eventId: own(row, "event_id"),
+    atConfidence: own(row, "at_confidence"), eventId: own(row, "event_id"),
   });
 }
 
@@ -115,10 +118,9 @@ function mapCapital(row: Row, reignIds: string[]): DynastyCapital {
   return DynastyCapitalSchema.parse({
     id: row.id, dynastyId: row.dynasty_id, historicalName: row.historical_name, modernName: row.modern_name,
     longitude: Number(row.longitude), latitude: Number(row.latitude), coordinateSystem: row.coordinate_system,
-    start: point(row.start_year, row.start_month, row.start_day), end: point(row.end_year, row.end_month, row.end_day),
-    startAbs: Number(row.start_abs), endAbs: Number(row.end_abs), precision: row.precision,
-    endPrecision: own(row, "end_precision"), startDateConfidence: own(row, "start_date_confidence"),
-    endDateConfidence: own(row, "end_date_confidence"), role: row.role, claimTrack: own(row, "claim_track"),
+    start: { ...point(row.start_year, row.start_month, row.start_day), confidence: row.start_confidence }, end: { ...point(row.end_year, row.end_month, row.end_day), confidence: row.end_confidence },
+    startAbs: Number(row.start_abs), endAbs: Number(row.end_abs), precision: confidencePrecision((row.start_confidence ?? "year") as Parameters<typeof confidencePrecision>[0]), endPrecision: confidencePrecision((row.end_confidence ?? "year") as Parameters<typeof confidencePrecision>[0]), startConfidence: row.start_confidence, endConfidence: row.end_confidence,
+    role: row.role, claimTrack: own(row, "claim_track"),
     reignIds, note: own(row, "note"), links: json(row.links, []),
   });
 }
@@ -163,7 +165,7 @@ export class SqliteTimelineRepository implements TimelineRepository {
     const metadata = await rows(db, "SELECT key, value FROM content_metadata");
     const meta = new Map<string, unknown>(metadata.map((row) => [String(row.key), JSON.parse(String(row.value)) as unknown]));
     if (!meta.has("schema_version") || !meta.has("contract_version")) throw new Error("SQLite content database has no schema metadata");
-    if (meta.get("schema_version") !== 1 || meta.get("contract_version") !== 2) throw new Error("SQLite content database version is not supported by this app");
+    if (meta.get("schema_version") !== 2 || meta.get("contract_version") !== 3) throw new Error("SQLite content database version is not supported by this app");
     const [personsRaw, dynastiesRaw, groupsRaw, lanesRaw, reignsRaw, eventsRaw, dynLinks, participantLinks, locationRaw, relationsRaw, capitalsRaw, capitalLinks] = await Promise.all([
       rows(db, "SELECT * FROM persons"), rows(db, "SELECT * FROM dynasties"), rows(db, "SELECT * FROM dynasty_groups"),
       rows(db, "SELECT * FROM dynasty_lane_groups"), rows(db, "SELECT * FROM reigns"), rows(db, "SELECT * FROM events"),
@@ -296,8 +298,10 @@ export class SqliteTimelineRepository implements TimelineRepository {
                'id', p.id, 'name', p.name, 'title', p.title,
                'alt_names', p.alt_names,
                'ancestral_xing', p.ancestral_xing, 'clan_shi', p.clan_shi,
-               'birth_year', p.birth_year, 'birth_month', p.birth_month,
-               'death_year', p.death_year, 'death_month', p.death_month,
+               'birth_year', p.birth_year, 'birth_month', p.birth_month, 'birth_day', p.birth_day,
+               'birth_confidence', p.birth_confidence,
+               'death_year', p.death_year, 'death_month', p.death_month, 'death_day', p.death_day,
+               'death_confidence', p.death_confidence,
                'roles', p.roles, 'bio', p.bio, 'links', p.links,
                'posthumous_name', p.posthumous_name,
                'temple_name', p.temple_name,
@@ -309,12 +313,11 @@ export class SqliteTimelineRepository implements TimelineRepository {
                'era_names', rr.era_names,
                'start_year', rr.start_year, 'start_month', rr.start_month,
                'start_day', rr.start_day,
+               'start_confidence', rr.start_confidence,
                'end_year', rr.end_year, 'end_month', rr.end_month,
                'end_day', rr.end_day,
+               'end_confidence', rr.end_confidence,
                'start_abs', rr.start_abs, 'end_abs', rr.end_abs,
-               'precision', rr.precision,
-               'start_date_confidence', rr.start_date_confidence,
-               'end_date_confidence', rr.end_date_confidence,
                'claim_track', rr.claim_track, 'claim_label', rr.claim_label,
                'claim_role', rr.claim_role,
                'is_informal_monarch', rr.is_informal_monarch,

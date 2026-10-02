@@ -1,3 +1,4 @@
+import { isApproximateConfidence } from "./historicalDate";
 import { buildReignTenureCapitalRows, capitalDateRangeLabel, capitalRoleLabel, dynastyCapitalRelatedItems } from "./dynastyCapitals";
 import { claimDetailFacts } from "./claimTracks";
 import { PRE_IMPERIAL_START_YEAR } from "./appellationPolicy";
@@ -371,16 +372,16 @@ export function buildEntityDetail(
       { label: "时段", value: capitalDateRangeLabel(capital) },
       { label: "地位", value: capitalRoleLabel(capital.role) },
     ];
-    if (capital.startDateConfidence && capital.startDateConfidence !== "certain") {
+    if (capital.start.confidence && capital.start.confidence !== "year") {
       facts.push({
         label: "起始年代",
-        value: DATE_CONFIDENCE_LABEL[capital.startDateConfidence],
+        value: DATE_CONFIDENCE_LABEL[capital.start.confidence],
       });
     }
-    if (capital.endDateConfidence && capital.endDateConfidence !== "certain") {
+    if (capital.end.confidence && capital.end.confidence !== "year") {
       facts.push({
         label: "终止年代",
-        value: DATE_CONFIDENCE_LABEL[capital.endDateConfidence],
+        value: DATE_CONFIDENCE_LABEL[capital.end.confidence],
       });
     }
     return {
@@ -537,7 +538,7 @@ export function buildEntityDetail(
         { label: "典故年代", value: formatEventTime(event) },
         { label: "类型", value: eventKindLabel(event.kind) },
         ...(event.dateNote ? [{ label: "说明", value: event.dateNote }] : []),
-        ...(event.isApproximate ? [{ label: "日期精度", value: "非精确" }] : []),
+        ...((isApproximateConfidence(event.atConfidence ?? event.at?.confidence) || isApproximateConfidence(event.startConfidence ?? event.start?.confidence) || isApproximateConfidence(event.endConfidence ?? event.end?.confidence)) ? [{ label: "日期精度", value: "非精确" }] : []),
       ],
       summary: event.summary,
       related: [...locationRelated, ...dynastyRelated, ...participantRelated, ...associatedEventRelated],
@@ -567,7 +568,7 @@ export function buildEntityDetail(
         : [{ label: "时间", value: formatEventTime(event) }]),
       { label: "类型", value: eventKindLabel(event.kind) },
       ...(event.dateNote ? [{ label: "说明", value: event.dateNote }] : []),
-      ...(event.isApproximate ? [{ label: "日期精度", value: "非精确" }] : []),
+      ...((isApproximateConfidence(event.atConfidence ?? event.at?.confidence) || isApproximateConfidence(event.startConfidence ?? event.start?.confidence) || isApproximateConfidence(event.endConfidence ?? event.end?.confidence)) ? [{ label: "日期精度", value: "非精确" }] : []),
     ],
     summary: event.summary,
     content: event.content,

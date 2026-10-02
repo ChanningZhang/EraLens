@@ -2177,14 +2177,15 @@
       "start": {
         "year": 1271,
         "month": 12,
-        "abs": 15263
+        "abs": 15263,
+        "confidence": "month"
       },
       "end": {
         "year": 1388,
         "month": 11,
-        "abs": 16666
+        "abs": 16666,
+        "confidence": "month"
       },
-      "precision": "month",
       "note": "忽必烈1271年定国号大元；1368年顺帝北逃漠北继续称大元。北元延续至1388年11月天元帝被杀，政权终结。"
     },
     {
@@ -2199,14 +2200,15 @@
       "start": {
         "year": 1351,
         "month": 10,
-        "abs": 16221
+        "abs": 16221,
+        "confidence": "year"
       },
       "end": {
         "year": 1360,
         "month": 6,
-        "abs": 16325
+        "abs": 16325,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "元末红巾军建立的区域政权。徐寿辉1351年在蕲水称帝，后迁都汉阳，势力一度扩展至湖广、江西；国号及政权称谓在史籍中有宋、天完等不同记载。陈友谅掌权并于1360年杀徐寿辉，徐宋由此终结。"
     },
     {
@@ -2221,14 +2223,15 @@
       "start": {
         "year": 1355,
         "month": 2,
-        "abs": 16261
+        "abs": 16261,
+        "confidence": "year"
       },
       "end": {
         "year": 1366,
         "month": 12,
-        "abs": 16403
+        "abs": 16403,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "红巾军北方主力拥立韩林儿建立的宋政权，号小明王、建元龙凤。刘福通主持军政，曾据亳州并攻取汴梁，元军反攻后退守安丰；刘福通战死后韩林儿投奔朱元璋，1366年渡江途中溺亡，政权告终。"
     },
     {
@@ -2242,14 +2245,15 @@
       "start": {
         "year": 1354,
         "month": 1,
-        "abs": 16248
+        "abs": 16248,
+        "confidence": "year"
       },
       "end": {
         "year": 1367,
         "month": 9,
-        "abs": 16412
+        "abs": 16412,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "张士诚起兵后于1354年在高邮称诚王、国号周，建元天祐，1356年据平江并以江南为根基。1363年改称吴王；朱元璋军围攻平江，城破后张士诚被俘，政权于1367年覆亡。"
     },
     {
@@ -2264,14 +2268,15 @@
       "start": {
         "year": 1360,
         "month": 6,
-        "abs": 16325
+        "abs": 16325,
+        "confidence": "year"
       },
       "end": {
         "year": 1364,
         "month": 1,
-        "abs": 16368
+        "abs": 16368,
+        "confidence": "year"
       },
-      "precision": "year",
       "note": "陈友谅由徐寿辉部将崛起，控制湖广、江西等地，1360年杀徐寿辉后称帝、国号汉。政权以江州、武昌为中心，与朱元璋争夺长江流域；1363年鄱阳湖战败，陈友谅阵亡，子陈理继位，次年出降，陈汉亡。"
     },
     {
@@ -2286,14 +2291,15 @@
       "start": {
         "year": 1362,
         "month": 1,
-        "abs": 16344
+        "abs": 16344,
+        "confidence": "year"
       },
       "end": {
         "year": 1371,
         "month": 1,
-        "abs": 16452
+        "abs": 16452,
+        "confidence": "year"
       },
-      "precision": "year",
       "note": "明玉珍由徐寿辉部将转而经营四川，1362年在重庆称帝、国号夏，建元天统，以四川为核心并据有周边地区。政权设置官署、学校并实行较轻赋税；明玉珍死后子明升继位，1371年明军攻取重庆，明夏亡。"
     },
     {
@@ -2307,14 +2313,15 @@
       "start": {
         "year": 1364,
         "month": 1,
-        "abs": 16368
+        "abs": 16368,
+        "confidence": "year"
       },
       "end": {
         "year": 1368,
         "month": 1,
-        "abs": 16416
+        "abs": 16416,
+        "confidence": "year"
       },
-      "precision": "year",
       "note": "朱元璋以应天为中心经营江南，击败陈友谅、张士诚后，于1364年称吴王，起初仍奉韩宋龙凤年号。1367年改用吴年号并发动北伐；次年在应天称帝、建立明朝，吴政权阶段结束。"
     },
     {
@@ -2328,14 +2335,15 @@
       "start": {
         "year": 1368,
         "month": 1,
-        "abs": 16416
+        "abs": 16416,
+        "confidence": "month"
       },
       "end": {
         "year": 1644,
         "month": 4,
-        "abs": 19731
+        "abs": 19731,
+        "confidence": "month"
       },
-      "precision": "month",
       "note": "朱元璋于1368年建立明朝，初都南京；永乐年间迁都北京，经营北方边防并开展郑和下西洋等对外活动。明代前中期中央集权持续加强，农业、手工业与商业发展，后期经历财政压力、边疆战争和政治纷争。1644年李自成军攻入北京，崇祯帝自缢，明朝中央政权覆亡；南方明室政权此后继续抵抗。"
     },
     {
@@ -2349,14 +2357,15 @@
       "start": {
         "year": 1644,
         "month": 1,
-        "abs": 19728
+        "abs": 19728,
+        "confidence": "year"
       },
       "end": {
         "year": 1662,
         "month": 1,
-        "abs": 19944
+        "abs": 19944,
+        "confidence": "year"
       },
-      "precision": "year",
       "note": "明亡后朱氏多支并立：通行主线弘光→隆武→永历；鲁监国、绍武为并行朝廷。1662年永历帝殉，南明终结。"
     },
     {
@@ -2371,14 +2380,15 @@
       "start": {
         "year": 1616,
         "month": 2,
-        "abs": 19393
+        "abs": 19393,
+        "confidence": "month"
       },
       "end": {
         "year": 1912,
         "month": 2,
-        "abs": 22945
+        "abs": 22945,
+        "confidence": "month"
       },
-      "precision": "month",
       "note": "1616年2月努尔哈赤建后金，1636年改国号大清；1912年2月宣统退位。"
     }
   ],
@@ -2396,17 +2406,18 @@
         "year": 1271,
         "month": 12,
         "abs": 15263,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "end": {
         "year": 1276,
         "month": 2,
         "abs": 15313,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "startAbs": 15263,
       "endAbs": 15313,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2421,17 +2432,18 @@
         "year": 1276,
         "month": 2,
         "abs": 15313,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "end": {
         "year": 1294,
         "month": 2,
         "abs": 15529,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "startAbs": 15313,
       "endAbs": 15529,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -2444,17 +2456,18 @@
         "year": 1294,
         "month": 5,
         "abs": 15532,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "end": {
         "year": 1307,
         "month": 2,
         "abs": 15685,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "startAbs": 15532,
       "endAbs": 15685,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -2467,17 +2480,18 @@
         "year": 1307,
         "month": 6,
         "abs": 15689,
-        "day": 21
+        "day": 21,
+        "confidence": "day"
       },
       "end": {
         "year": 1311,
         "month": 1,
         "abs": 15732,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "startAbs": 15689,
       "endAbs": 15732,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -2490,17 +2504,18 @@
         "year": 1311,
         "month": 4,
         "abs": 15735,
-        "day": 7
+        "day": 7,
+        "confidence": "day"
       },
       "end": {
         "year": 1320,
         "month": 3,
         "abs": 15842,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "startAbs": 15735,
       "endAbs": 15842,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -2513,17 +2528,18 @@
         "year": 1320,
         "month": 4,
         "abs": 15843,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "end": {
         "year": 1323,
         "month": 9,
         "abs": 15884,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "startAbs": 15843,
       "endAbs": 15884,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -2539,17 +2555,18 @@
         "year": 1323,
         "month": 9,
         "abs": 15884,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "end": {
         "year": 1328,
         "month": 8,
         "abs": 15943,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "startAbs": 15884,
       "endAbs": 15943,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -2564,17 +2581,18 @@
         "year": 1328,
         "month": 10,
         "abs": 15945,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "end": {
         "year": 1329,
         "month": 2,
         "abs": 15949,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "startAbs": 15945,
       "endAbs": 15949,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -2587,17 +2605,18 @@
         "year": 1329,
         "month": 2,
         "abs": 15949,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "end": {
         "year": 1329,
         "month": 8,
         "abs": 15955,
-        "day": 30
+        "day": 30,
+        "confidence": "day"
       },
       "startAbs": 15949,
       "endAbs": 15955,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -2613,17 +2632,18 @@
         "year": 1329,
         "month": 9,
         "abs": 15956,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "end": {
         "year": 1332,
         "month": 9,
         "abs": 15992,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "startAbs": 15956,
       "endAbs": 15992,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -2636,17 +2656,18 @@
         "year": 1332,
         "month": 9,
         "abs": 15992,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "end": {
         "year": 1332,
         "month": 12,
         "abs": 15995,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "startAbs": 15992,
       "endAbs": 15995,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -2659,17 +2680,18 @@
         "year": 1333,
         "month": 7,
         "abs": 16002,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "end": {
         "year": 1368,
         "month": 1,
         "abs": 16416,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "startAbs": 16002,
       "endAbs": 16416,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -2684,17 +2706,18 @@
         "year": 1368,
         "month": 1,
         "abs": 16416,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "end": {
         "year": 1370,
         "month": 5,
         "abs": 16444,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "startAbs": 16416,
       "endAbs": 16444,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2709,17 +2732,18 @@
         "year": 1370,
         "month": 5,
         "abs": 16444,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "end": {
         "year": 1378,
         "month": 5,
         "abs": 16540,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "startAbs": 16444,
       "endAbs": 16540,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2734,17 +2758,18 @@
         "year": 1378,
         "month": 5,
         "abs": 16540,
-        "day": 13
+        "day": 13,
+        "confidence": "day"
       },
       "end": {
         "year": 1388,
         "month": 11,
         "abs": 16666,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "startAbs": 16540,
       "endAbs": 16666,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2759,17 +2784,18 @@
         "year": 1328,
         "month": 10,
         "abs": 15945,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "end": {
         "year": 1328,
         "month": 11,
         "abs": 15946,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "startAbs": 15945,
       "endAbs": 15946,
-      "precision": "day",
       "claimTrack": "shangdu",
       "claimLabel": "上都",
       "claimRole": "rival",
@@ -2790,17 +2816,18 @@
         "year": 1351,
         "month": 8,
         "abs": 16219,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "end": {
         "year": 1360,
         "month": 6,
         "abs": 16325,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "startAbs": 16219,
       "endAbs": 16325,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2815,17 +2842,18 @@
         "year": 1355,
         "month": 2,
         "abs": 16261,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "end": {
         "year": 1366,
         "month": 12,
         "abs": 16403,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "startAbs": 16261,
       "endAbs": 16403,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2840,17 +2868,18 @@
         "year": 1354,
         "month": 1,
         "abs": 16248,
-        "day": 17
+        "day": 17,
+        "confidence": "day"
       },
       "end": {
         "year": 1367,
         "month": 9,
         "abs": 16412,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "startAbs": 16248,
       "endAbs": 16412,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2865,17 +2894,18 @@
         "year": 1360,
         "month": 6,
         "abs": 16325,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "end": {
         "year": 1363,
         "month": 10,
         "abs": 16365,
-        "day": 3
+        "day": 3,
+        "confidence": "day"
       },
       "startAbs": 16325,
       "endAbs": 16365,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2890,17 +2920,18 @@
         "year": 1363,
         "month": 10,
         "abs": 16365,
-        "day": 3
+        "day": 3,
+        "confidence": "day"
       },
       "end": {
         "year": 1364,
         "month": 2,
         "abs": 16369,
-        "day": 28
+        "day": 28,
+        "confidence": "day"
       },
       "startAbs": 16365,
       "endAbs": 16369,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2915,17 +2946,18 @@
         "year": 1362,
         "month": 3,
         "abs": 16346,
-        "day": 22
+        "day": 22,
+        "confidence": "day"
       },
       "end": {
         "year": 1366,
         "month": 3,
         "abs": 16394,
-        "day": 17
+        "day": 17,
+        "confidence": "day"
       },
       "startAbs": 16346,
       "endAbs": 16394,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2940,17 +2972,18 @@
         "year": 1366,
         "month": 3,
         "abs": 16394,
-        "day": 17
+        "day": 17,
+        "confidence": "day"
       },
       "end": {
         "year": 1371,
         "month": 6,
         "abs": 16457,
-        "day": 21
+        "day": 21,
+        "confidence": "day"
       },
       "startAbs": 16394,
       "endAbs": 16457,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2965,17 +2998,18 @@
         "year": 1364,
         "month": 2,
         "abs": 16369,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "end": {
         "year": 1368,
         "month": 1,
         "abs": 16416,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "startAbs": 16369,
       "endAbs": 16416,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -2990,17 +3024,18 @@
         "year": 1368,
         "month": 1,
         "abs": 16416,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "end": {
         "year": 1398,
         "month": 6,
         "abs": 16781,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "startAbs": 16416,
       "endAbs": 16781,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3015,17 +3050,18 @@
         "year": 1398,
         "month": 6,
         "abs": 16781,
-        "day": 30
+        "day": 30,
+        "confidence": "day"
       },
       "end": {
         "year": 1402,
         "month": 7,
         "abs": 16830,
-        "day": 13
+        "day": 13,
+        "confidence": "day"
       },
       "startAbs": 16781,
       "endAbs": 16830,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3040,17 +3076,18 @@
         "year": 1402,
         "month": 7,
         "abs": 16830,
-        "day": 17
+        "day": 17,
+        "confidence": "day"
       },
       "end": {
         "year": 1424,
         "month": 8,
         "abs": 17095,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "startAbs": 16830,
       "endAbs": 17095,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3065,17 +3102,18 @@
         "year": 1424,
         "month": 8,
         "abs": 17095,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "end": {
         "year": 1425,
         "month": 5,
         "abs": 17104,
-        "day": 29
+        "day": 29,
+        "confidence": "day"
       },
       "startAbs": 17095,
       "endAbs": 17104,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3090,17 +3128,18 @@
         "year": 1425,
         "month": 5,
         "abs": 17104,
-        "day": 29
+        "day": 29,
+        "confidence": "day"
       },
       "end": {
         "year": 1435,
         "month": 1,
         "abs": 17220,
-        "day": 31
+        "day": 31,
+        "confidence": "day"
       },
       "startAbs": 17104,
       "endAbs": 17220,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3115,17 +3154,18 @@
         "year": 1435,
         "month": 1,
         "abs": 17220,
-        "day": 31
+        "day": 31,
+        "confidence": "day"
       },
       "end": {
         "year": 1449,
         "month": 9,
         "abs": 17396,
-        "day": 22
+        "day": 22,
+        "confidence": "day"
       },
       "startAbs": 17220,
       "endAbs": 17396,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3140,17 +3180,18 @@
         "year": 1449,
         "month": 9,
         "abs": 17396,
-        "day": 22
+        "day": 22,
+        "confidence": "day"
       },
       "end": {
         "year": 1457,
         "month": 2,
         "abs": 17485,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "startAbs": 17396,
       "endAbs": 17485,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3165,17 +3206,18 @@
         "year": 1457,
         "month": 2,
         "abs": 17485,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "end": {
         "year": 1464,
         "month": 2,
         "abs": 17569,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "startAbs": 17485,
       "endAbs": 17569,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3190,17 +3232,18 @@
         "year": 1464,
         "month": 2,
         "abs": 17569,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "end": {
         "year": 1487,
         "month": 9,
         "abs": 17852,
-        "day": 9
+        "day": 9,
+        "confidence": "day"
       },
       "startAbs": 17569,
       "endAbs": 17852,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3215,17 +3258,18 @@
         "year": 1487,
         "month": 9,
         "abs": 17852,
-        "day": 9
+        "day": 9,
+        "confidence": "day"
       },
       "end": {
         "year": 1505,
         "month": 6,
         "abs": 18065,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "startAbs": 17852,
       "endAbs": 18065,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3240,17 +3284,18 @@
         "year": 1505,
         "month": 6,
         "abs": 18065,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "end": {
         "year": 1521,
         "month": 4,
         "abs": 18255,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "startAbs": 18065,
       "endAbs": 18255,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3265,17 +3310,18 @@
         "year": 1521,
         "month": 5,
         "abs": 18256,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "end": {
         "year": 1567,
         "month": 1,
         "abs": 18804,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "startAbs": 18256,
       "endAbs": 18804,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3290,17 +3336,18 @@
         "year": 1567,
         "month": 1,
         "abs": 18804,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "end": {
         "year": 1572,
         "month": 7,
         "abs": 18870,
-        "day": 5
+        "day": 5,
+        "confidence": "day"
       },
       "startAbs": 18804,
       "endAbs": 18870,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3315,17 +3362,18 @@
         "year": 1572,
         "month": 7,
         "abs": 18870,
-        "day": 5
+        "day": 5,
+        "confidence": "day"
       },
       "end": {
         "year": 1620,
         "month": 8,
         "abs": 19447,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "startAbs": 18870,
       "endAbs": 19447,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3340,17 +3388,18 @@
         "year": 1620,
         "month": 8,
         "abs": 19447,
-        "day": 28
+        "day": 28,
+        "confidence": "day"
       },
       "end": {
         "year": 1620,
         "month": 9,
         "abs": 19448,
-        "day": 26
+        "day": 26,
+        "confidence": "day"
       },
       "startAbs": 19447,
       "endAbs": 19448,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3365,17 +3414,18 @@
         "year": 1620,
         "month": 9,
         "abs": 19448,
-        "day": 26
+        "day": 26,
+        "confidence": "day"
       },
       "end": {
         "year": 1627,
         "month": 9,
         "abs": 19532,
-        "day": 30
+        "day": 30,
+        "confidence": "day"
       },
       "startAbs": 19448,
       "endAbs": 19532,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3390,17 +3440,18 @@
         "year": 1627,
         "month": 10,
         "abs": 19533,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "end": {
         "year": 1644,
         "month": 4,
         "abs": 19731,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "startAbs": 19533,
       "endAbs": 19731,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3415,17 +3466,18 @@
         "year": 1644,
         "month": 6,
         "abs": 19733,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "end": {
         "year": 1645,
         "month": 6,
         "abs": 19745,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "startAbs": 19733,
       "endAbs": 19745,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -3440,17 +3492,18 @@
         "year": 1645,
         "month": 8,
         "abs": 19747,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "end": {
         "year": 1646,
         "month": 10,
         "abs": 19761,
-        "day": 6
+        "day": 6,
+        "confidence": "day"
       },
       "startAbs": 19747,
       "endAbs": 19761,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -3465,17 +3518,18 @@
         "year": 1646,
         "month": 12,
         "abs": 19763,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "end": {
         "year": 1662,
         "month": 6,
         "abs": 19949,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "startAbs": 19763,
       "endAbs": 19949,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -3488,17 +3542,18 @@
         "year": 1645,
         "month": 9,
         "abs": 19748,
-        "day": 7
+        "day": 7,
+        "confidence": "day"
       },
       "end": {
         "year": 1653,
         "month": 3,
         "abs": 19838,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "startAbs": 19748,
       "endAbs": 19838,
-      "precision": "day",
       "claimTrack": "lu-jian",
       "claimLabel": "绍兴监国",
       "claimRole": "rival",
@@ -3517,17 +3572,18 @@
         "year": 1646,
         "month": 12,
         "abs": 19763,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "end": {
         "year": 1647,
         "month": 1,
         "abs": 19764,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "startAbs": 19763,
       "endAbs": 19764,
-      "precision": "day",
       "claimTrack": "shaowu",
       "claimLabel": "广州",
       "claimRole": "rival",
@@ -3545,17 +3601,18 @@
         "year": 1616,
         "month": 2,
         "abs": 19393,
-        "day": 17
+        "day": 17,
+        "confidence": "day"
       },
       "end": {
         "year": 1626,
         "month": 9,
         "abs": 19520,
-        "day": 30
+        "day": 30,
+        "confidence": "day"
       },
       "startAbs": 19393,
       "endAbs": 19520,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -3571,17 +3628,18 @@
         "year": 1626,
         "month": 10,
         "abs": 19521,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "end": {
         "year": 1643,
         "month": 9,
         "abs": 19724,
-        "day": 21
+        "day": 21,
+        "confidence": "day"
       },
       "startAbs": 19521,
       "endAbs": 19724,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -3596,17 +3654,18 @@
         "year": 1643,
         "month": 10,
         "abs": 19725,
-        "day": 30
+        "day": 30,
+        "confidence": "day"
       },
       "end": {
         "year": 1661,
         "month": 2,
         "abs": 19933,
-        "day": 5
+        "day": 5,
+        "confidence": "day"
       },
       "startAbs": 19725,
       "endAbs": 19933,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3621,17 +3680,18 @@
         "year": 1661,
         "month": 2,
         "abs": 19933,
-        "day": 5
+        "day": 5,
+        "confidence": "day"
       },
       "end": {
         "year": 1722,
         "month": 12,
         "abs": 20675,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "startAbs": 19933,
       "endAbs": 20675,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3646,17 +3706,18 @@
         "year": 1722,
         "month": 12,
         "abs": 20675,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "end": {
         "year": 1735,
         "month": 10,
         "abs": 20829,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "startAbs": 20675,
       "endAbs": 20829,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3671,17 +3732,18 @@
         "year": 1735,
         "month": 10,
         "abs": 20829,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "end": {
         "year": 1796,
         "month": 2,
         "abs": 21553,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "startAbs": 20829,
       "endAbs": 21553,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3696,17 +3758,18 @@
         "year": 1796,
         "month": 2,
         "abs": 21553,
-        "day": 9
+        "day": 9,
+        "confidence": "day"
       },
       "end": {
         "year": 1820,
         "month": 9,
         "abs": 21848,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "startAbs": 21553,
       "endAbs": 21848,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3721,17 +3784,18 @@
         "year": 1820,
         "month": 10,
         "abs": 21849,
-        "day": 3
+        "day": 3,
+        "confidence": "day"
       },
       "end": {
         "year": 1850,
         "month": 2,
         "abs": 22201,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "startAbs": 21849,
       "endAbs": 22201,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3746,17 +3810,18 @@
         "year": 1850,
         "month": 3,
         "abs": 22202,
-        "day": 9
+        "day": 9,
+        "confidence": "day"
       },
       "end": {
         "year": 1861,
         "month": 8,
         "abs": 22339,
-        "day": 22
+        "day": 22,
+        "confidence": "day"
       },
       "startAbs": 22202,
       "endAbs": 22339,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3771,17 +3836,18 @@
         "year": 1861,
         "month": 11,
         "abs": 22342,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "end": {
         "year": 1875,
         "month": 1,
         "abs": 22500,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "startAbs": 22342,
       "endAbs": 22500,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3796,17 +3862,18 @@
         "year": 1875,
         "month": 2,
         "abs": 22501,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "end": {
         "year": 1908,
         "month": 11,
         "abs": 22906,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "startAbs": 22501,
       "endAbs": 22906,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3821,24 +3888,24 @@
         "year": 1908,
         "month": 12,
         "abs": 22907,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "end": {
         "year": 1912,
         "month": 2,
         "abs": 22945,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "startAbs": 22907,
       "endAbs": 22945,
-      "precision": "day",
       "isMain": true
     }
   ],
   "events": [
     {
       "kind": "politics",
-      "precision": "year",
       "dynastyIds": [
         "qing"
       ],
@@ -3855,12 +3922,14 @@
       "start": {
         "year": 1898,
         "month": 1,
-        "abs": 22776
+        "abs": 22776,
+        "confidence": "year"
       },
       "end": {
         "year": 1898,
         "month": 1,
-        "abs": 22776
+        "abs": 22776,
+        "confidence": "year"
       },
       "summary": "甲午战败与列强瓜分危机推动维新思潮发展。光绪帝采纳康有为等人的建议，自1898年6月起颁布新政，涉及政治、教育、经济和军事，试图改革清朝制度；慈禧太后于9月发动政变，囚禁光绪帝并废止新法，康有为、梁启超出走，谭嗣同等六人被杀。变法虽仅持续103天，却推动了近代中国的思想启蒙。",
       "startAbs": 22776,
@@ -3868,7 +3937,6 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "yuan"
       ],
@@ -3882,12 +3950,14 @@
       "start": {
         "year": 1328,
         "month": 1,
-        "abs": 15936
+        "abs": 15936,
+        "confidence": "year"
       },
       "end": {
         "year": 1329,
         "month": 1,
-        "abs": 15948
+        "abs": 15948,
+        "confidence": "year"
       },
       "summary": "元文宗与元天顺帝阿速吉八争夺大都，文宗获胜，天顺帝在位仅一月。",
       "startAbs": 15936,
@@ -3895,7 +3965,6 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "yuan"
       ],
@@ -3910,12 +3979,14 @@
       "start": {
         "year": 1351,
         "month": 1,
-        "abs": 16212
+        "abs": 16212,
+        "confidence": "year"
       },
       "end": {
         "year": 1368,
         "month": 1,
-        "abs": 16416
+        "abs": 16416,
+        "confidence": "year"
       },
       "summary": "刘福通、徐寿辉等发动红巾军起义，席卷南北，元统治根基动摇。",
       "startAbs": 16212,
@@ -3924,7 +3995,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "song-xu",
         "chen-han"
@@ -3938,7 +4008,8 @@
       "at": {
         "year": 1360,
         "month": 6,
-        "abs": 16325
+        "abs": 16325,
+        "confidence": "year"
       },
       "summary": "陈友谅于采石杀徐寿辉，自立称帝，国号汉，徐宋亡。",
       "atAbs": 16325
@@ -3946,7 +4017,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "chen-han",
         "wu-zhu"
@@ -3960,7 +4030,8 @@
       "at": {
         "year": 1363,
         "month": 10,
-        "abs": 16365
+        "abs": 16365,
+        "confidence": "year"
       },
       "summary": "朱元璋与陈友谅鄱阳湖决战，陈友谅中流矢阵亡，陈汉大势已去。",
       "atAbs": 16365,
@@ -3969,7 +4040,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "song-han",
         "wu-zhu"
@@ -3983,7 +4053,8 @@
       "at": {
         "year": 1366,
         "month": 12,
-        "abs": 16403
+        "abs": 16403,
+        "confidence": "year"
       },
       "summary": "朱元璋遣廖永忠迎韩林儿至应天，渡江时船沉，小明王遇难，韩宋亡。",
       "atAbs": 16403
@@ -3991,7 +4062,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "ming",
         "yuan"
@@ -4006,7 +4076,8 @@
       "at": {
         "year": 1368,
         "month": 8,
-        "abs": 16423
+        "abs": 16423,
+        "confidence": "month"
       },
       "summary": "明军北伐攻克大都，元顺帝北逃，元朝失去中原。",
       "atAbs": 16423,
@@ -4015,7 +4086,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "yuan",
         "ming"
@@ -4029,7 +4099,8 @@
       "at": {
         "year": 1388,
         "month": 5,
-        "abs": 16660
+        "abs": 16660,
+        "confidence": "month"
       },
       "summary": "明将蓝玉率军深入漠北，突袭元天元帝驻地并大破元军；天元帝逃脱后同年被部将杀害，北元随之终结。",
       "atAbs": 16660,
@@ -4037,7 +4108,6 @@
     },
     {
       "kind": "politics",
-      "precision": "year",
       "dynastyIds": [
         "ming"
       ],
@@ -4050,12 +4120,14 @@
       "start": {
         "year": 1403,
         "month": 1,
-        "abs": 16836
+        "abs": 16836,
+        "confidence": "year"
       },
       "end": {
         "year": 1424,
         "month": 1,
-        "abs": 17088
+        "abs": 17088,
+        "confidence": "year"
       },
       "summary": "明成祖迁都北京，派郑和下西洋，国力强盛。",
       "startAbs": 16836,
@@ -4064,7 +4136,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "ming"
       ],
@@ -4078,14 +4149,14 @@
       "at": {
         "year": 1402,
         "month": 7,
-        "abs": 16830
+        "abs": 16830,
+        "confidence": "month"
       },
       "summary": "燕王朱棣起兵夺位，攻入南京，建文帝下落成谜，朱棣即位。",
       "atAbs": 16830
     },
     {
       "kind": "culture",
-      "precision": "year",
       "dynastyIds": [
         "ming"
       ],
@@ -4099,12 +4170,14 @@
       "start": {
         "year": 1405,
         "month": 1,
-        "abs": 16860
+        "abs": 16860,
+        "confidence": "year"
       },
       "end": {
         "year": 1433,
         "month": 1,
-        "abs": 17196
+        "abs": 17196,
+        "confidence": "year"
       },
       "summary": "永乐至宣德间七次远航，最远达非洲东岸，宣扬国威。",
       "startAbs": 16860,
@@ -4113,7 +4186,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "ming"
       ],
@@ -4126,7 +4198,8 @@
       "at": {
         "year": 1449,
         "month": 9,
-        "abs": 17396
+        "abs": 17396,
+        "confidence": "month"
       },
       "summary": "明英宗率军北征瓦剌，土木堡被俘，明军主力覆没。",
       "atAbs": 17396,
@@ -4135,7 +4208,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "ming"
       ],
@@ -4149,7 +4221,8 @@
       "at": {
         "year": 1449,
         "month": 10,
-        "abs": 17397
+        "abs": 17397,
+        "confidence": "month"
       },
       "summary": "土木堡之变后瓦剌兵临北京，于谦拥立景泰帝，击退敌军。",
       "atAbs": 17397,
@@ -4158,7 +4231,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "ming"
       ],
@@ -4172,14 +4244,14 @@
       "at": {
         "year": 1457,
         "month": 2,
-        "abs": 17485
+        "abs": 17485,
+        "confidence": "month"
       },
       "summary": "石亨、曹吉祥等拥英宗复辟，废景泰帝，于谦被害。",
       "atAbs": 17485
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "ming"
       ],
@@ -4192,12 +4264,14 @@
       "start": {
         "year": 1592,
         "month": 1,
-        "abs": 19104
+        "abs": 19104,
+        "confidence": "year"
       },
       "end": {
         "year": 1600,
         "month": 1,
-        "abs": 19200
+        "abs": 19200,
+        "confidence": "year"
       },
       "summary": "万历朝平定宁夏哱拜、朝鲜倭乱、播州杨应龙，耗损国力。",
       "startAbs": 19104,
@@ -4205,7 +4279,6 @@
     },
     {
       "kind": "politics",
-      "precision": "year",
       "dynastyIds": [
         "ming"
       ],
@@ -4219,12 +4292,14 @@
       "start": {
         "year": 1572,
         "month": 1,
-        "abs": 18864
+        "abs": 18864,
+        "confidence": "year"
       },
       "end": {
         "year": 1582,
         "month": 1,
-        "abs": 18984
+        "abs": 18984,
+        "confidence": "year"
       },
       "summary": "张居正为首辅，推行考成法、一条鞭法，整顿吏治，史称万历中兴。",
       "startAbs": 18864,
@@ -4232,7 +4307,6 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "ming"
       ],
@@ -4246,12 +4320,14 @@
       "start": {
         "year": 1555,
         "month": 1,
-        "abs": 18660
+        "abs": 18660,
+        "confidence": "year"
       },
       "end": {
         "year": 1567,
         "month": 1,
-        "abs": 18804
+        "abs": 18804,
+        "confidence": "year"
       },
       "summary": "戚继光组建戚家军，于台州、福建等地屡败倭寇，平定东南倭患。",
       "startAbs": 18660,
@@ -4260,7 +4336,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "ming",
         "qing"
@@ -4275,7 +4350,8 @@
       "at": {
         "year": 1619,
         "month": 3,
-        "abs": 19430
+        "abs": 19430,
+        "confidence": "month"
       },
       "summary": "努尔哈赤以少胜多，明军四路溃败，辽东战局逆转。",
       "atAbs": 19430,
@@ -4284,7 +4360,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "ming",
         "qing"
@@ -4300,7 +4375,8 @@
       "at": {
         "year": 1626,
         "month": 1,
-        "abs": 19512
+        "abs": 19512,
+        "confidence": "month"
       },
       "summary": "袁崇焕率红夷大炮守宁远，击伤努尔哈赤，后金首次攻明受挫。",
       "atAbs": 19512,
@@ -4308,7 +4384,6 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "ming",
         "qing"
@@ -4323,12 +4398,14 @@
       "start": {
         "year": 1640,
         "month": 1,
-        "abs": 19680
+        "abs": 19680,
+        "confidence": "year"
       },
       "end": {
         "year": 1642,
         "month": 1,
-        "abs": 19704
+        "abs": 19704,
+        "confidence": "year"
       },
       "summary": "清军围攻松山、锦州，洪承畴降清，明军关外主力覆没，辽东防线崩溃。",
       "startAbs": 19680,
@@ -4338,7 +4415,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "ming"
       ],
@@ -4352,7 +4428,8 @@
       "at": {
         "year": 1615,
         "month": 5,
-        "abs": 19384
+        "abs": 19384,
+        "confidence": "month"
       },
       "summary": "狂人张差持梃闯宫击太子朱常洛，牵连郑贵妃，晚明三大疑案之一。",
       "atAbs": 19384
@@ -4360,7 +4437,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "ming"
       ],
@@ -4374,7 +4450,8 @@
       "at": {
         "year": 1620,
         "month": 8,
-        "abs": 19447
+        "abs": 19447,
+        "confidence": "month"
       },
       "summary": "明光宗即位仅月余，服李可灼所献红丸后暴亡，疑案缠身。",
       "atAbs": 19447
@@ -4382,7 +4459,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "ming"
       ],
@@ -4396,7 +4472,8 @@
       "at": {
         "year": 1620,
         "month": 9,
-        "abs": 19448
+        "abs": 19448,
+        "confidence": "month"
       },
       "summary": "光宗死后李选侍据乾清宫不肯迁出，东林党力主逼迁，熹宗即位后李选侍移居别宫。",
       "atAbs": 19448
@@ -4404,7 +4481,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "ming",
         "qing"
@@ -4419,7 +4495,8 @@
       "at": {
         "year": 1630,
         "month": 8,
-        "abs": 19567
+        "abs": 19567,
+        "confidence": "month"
       },
       "summary": "后金方面施行反间计，使崇祯帝疑袁崇焕通敌；袁崇焕被捕并处死，辽东战局随之恶化。",
       "atAbs": 19567
@@ -4427,7 +4504,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "yuan"
       ],
@@ -4439,7 +4515,8 @@
       "at": {
         "year": 1272,
         "month": 12,
-        "abs": 15275
+        "abs": 15275,
+        "confidence": "year"
       },
       "summary": "忽必烈将中都改名大都，并以新城为元朝都城；上都继续作为夏都。",
       "dateNote": "至元九年（1272年）命名大都并建都；按年精度记录都城迁移阶段。",
@@ -4449,7 +4526,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "qing"
       ],
@@ -4461,7 +4537,8 @@
       "at": {
         "year": 1644,
         "month": 12,
-        "abs": 19739
+        "abs": 19739,
+        "confidence": "year"
       },
       "summary": "吴三桂引清军入关，清军占领北京；顺治帝同年由盛京迁都北京，盛京保留陪都地位，清廷由此入主中原。",
       "atAbs": 19739,
@@ -4469,7 +4546,6 @@
     },
     {
       "kind": "politics",
-      "precision": "year",
       "dynastyIds": [
         "qing"
       ],
@@ -4483,12 +4559,14 @@
       "start": {
         "year": 1661,
         "month": 1,
-        "abs": 19932
+        "abs": 19932,
+        "confidence": "year"
       },
       "end": {
         "year": 1796,
         "month": 1,
-        "abs": 21552
+        "abs": 21552,
+        "confidence": "year"
       },
       "summary": "康熙、雍正、乾隆三朝国力强盛，疆域辽阔。",
       "startAbs": 19932,
@@ -4496,7 +4574,6 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "qing"
       ],
@@ -4509,12 +4586,14 @@
       "start": {
         "year": 1673,
         "month": 1,
-        "abs": 20076
+        "abs": 20076,
+        "confidence": "year"
       },
       "end": {
         "year": 1681,
         "month": 1,
-        "abs": 20172
+        "abs": 20172,
+        "confidence": "year"
       },
       "summary": "吴三桂等三藩起兵反清，康熙帝历时八年平定，巩固中央集权。",
       "startAbs": 20076,
@@ -4522,7 +4601,6 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "qing"
       ],
@@ -4535,12 +4613,14 @@
       "start": {
         "year": 1685,
         "month": 1,
-        "abs": 20220
+        "abs": 20220,
+        "confidence": "year"
       },
       "end": {
         "year": 1686,
         "month": 1,
-        "abs": 20232
+        "abs": 20232,
+        "confidence": "year"
       },
       "summary": "清军两次进攻沙俄占据的雅克萨，驱逐俄军，奠定东北边界谈判基础。",
       "startAbs": 20220,
@@ -4548,7 +4628,6 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "qing"
       ],
@@ -4561,12 +4640,14 @@
       "start": {
         "year": 1747,
         "month": 1,
-        "abs": 20964
+        "abs": 20964,
+        "confidence": "year"
       },
       "end": {
         "year": 1776,
         "month": 1,
-        "abs": 21312
+        "abs": 21312,
+        "confidence": "year"
       },
       "summary": "乾隆朝两次征讨大小金川土司，历时近三十年，最终改土归流。",
       "startAbs": 20964,
@@ -4574,7 +4655,6 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "qing"
       ],
@@ -4587,12 +4667,14 @@
       "start": {
         "year": 1755,
         "month": 1,
-        "abs": 21060
+        "abs": 21060,
+        "confidence": "year"
       },
       "end": {
         "year": 1757,
         "month": 1,
-        "abs": 21084
+        "abs": 21084,
+        "confidence": "year"
       },
       "summary": "乾隆帝平定准噶尔部，统一新疆，奠定西北版图。",
       "startAbs": 21060,
@@ -4600,7 +4682,6 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "qing"
       ],
@@ -4613,12 +4694,14 @@
       "start": {
         "year": 1765,
         "month": 1,
-        "abs": 21180
+        "abs": 21180,
+        "confidence": "year"
       },
       "end": {
         "year": 1769,
         "month": 1,
-        "abs": 21228
+        "abs": 21228,
+        "confidence": "year"
       },
       "summary": "清军与缅甸四次交锋，虽未能彻底征服，但遏制缅军北侵。",
       "startAbs": 21180,
@@ -4627,7 +4710,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "qing"
       ],
@@ -4641,14 +4723,14 @@
       "at": {
         "year": 1839,
         "month": 6,
-        "abs": 22073
+        "abs": 22073,
+        "confidence": "month"
       },
       "summary": "林则徐奉命查禁鸦片，于虎门公开销毁洋商鸦片，成为第一次鸦片战争导火索。",
       "atAbs": 22073
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "qing"
       ],
@@ -4662,12 +4744,14 @@
       "start": {
         "year": 1840,
         "month": 1,
-        "abs": 22080
+        "abs": 22080,
+        "confidence": "year"
       },
       "end": {
         "year": 1842,
         "month": 1,
-        "abs": 22104
+        "abs": 22104,
+        "confidence": "year"
       },
       "summary": "英国以鸦片贸易争端发动战争，清军战败，被迫签订南京条约。",
       "startAbs": 22080,
@@ -4675,7 +4759,6 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "qing"
       ],
@@ -4689,12 +4772,14 @@
       "start": {
         "year": 1876,
         "month": 1,
-        "abs": 22512
+        "abs": 22512,
+        "confidence": "year"
       },
       "end": {
         "year": 1878,
         "month": 1,
-        "abs": 22536
+        "abs": 22536,
+        "confidence": "year"
       },
       "summary": "左宗棠率湘军西征，先后克复乌鲁木齐、吐鲁番、喀什噶尔，平定阿古柏，新疆重归清朝。",
       "startAbs": 22512,
@@ -4702,7 +4787,6 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "qing"
       ],
@@ -4715,12 +4799,14 @@
       "start": {
         "year": 1888,
         "month": 1,
-        "abs": 22656
+        "abs": 22656,
+        "confidence": "year"
       },
       "end": {
         "year": 1889,
         "month": 1,
-        "abs": 22668
+        "abs": 22668,
+        "confidence": "year"
       },
       "summary": "英军入侵西藏隆务关，清军反击后议和，签订中英续议藏印条约。",
       "startAbs": 22656,
@@ -4728,7 +4814,6 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "qing"
       ],
@@ -4741,12 +4826,14 @@
       "start": {
         "year": 1856,
         "month": 1,
-        "abs": 22272
+        "abs": 22272,
+        "confidence": "year"
       },
       "end": {
         "year": 1860,
         "month": 1,
-        "abs": 22320
+        "abs": 22320,
+        "confidence": "year"
       },
       "summary": "英法联军再度进攻，攻陷大沽、北京，圆明园被焚，清政府签订天津、北京条约。",
       "startAbs": 22272,
@@ -4754,7 +4841,6 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "qing"
       ],
@@ -4768,12 +4854,14 @@
       "start": {
         "year": 1883,
         "month": 12,
-        "abs": 22607
+        "abs": 22607,
+        "confidence": "year"
       },
       "end": {
         "year": 1885,
         "month": 4,
-        "abs": 22623
+        "abs": 22623,
+        "confidence": "year"
       },
       "summary": "法国侵略越南，清军与黑旗军在北圻、台湾等地抗击法军，镇南关大捷后议和。",
       "startAbs": 22607,
@@ -4781,7 +4869,6 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "qing"
       ],
@@ -4796,12 +4883,14 @@
       "start": {
         "year": 1894,
         "month": 7,
-        "abs": 22734
+        "abs": 22734,
+        "confidence": "year"
       },
       "end": {
         "year": 1895,
         "month": 4,
-        "abs": 22743
+        "abs": 22743,
+        "confidence": "year"
       },
       "summary": "日本挑起战争，黄海海战、辽东陆战清军失利，北洋海军覆没，签订马关条约。",
       "startAbs": 22734,
@@ -4809,7 +4898,6 @@
     },
     {
       "kind": "politics",
-      "precision": "year",
       "dynastyIds": [
         "qing"
       ],
@@ -4822,12 +4910,14 @@
       "start": {
         "year": 1899,
         "month": 1,
-        "abs": 22788
+        "abs": 22788,
+        "confidence": "year"
       },
       "end": {
         "year": 1901,
         "month": 1,
-        "abs": 22812
+        "abs": 22812,
+        "confidence": "year"
       },
       "summary": "山东等地义和团起事，反洋教、扶清灭洋，引发八国联军侵华。",
       "startAbs": 22788,
@@ -4835,7 +4925,6 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "qing"
       ],
@@ -4848,12 +4937,14 @@
       "start": {
         "year": 1900,
         "month": 1,
-        "abs": 22800
+        "abs": 22800,
+        "confidence": "year"
       },
       "end": {
         "year": 1901,
         "month": 1,
-        "abs": 22812
+        "abs": 22812,
+        "confidence": "year"
       },
       "summary": "八国联军攻陷北京，慈禧太后西逃，清廷被迫签订辛丑条约。",
       "startAbs": 22800,
@@ -4862,7 +4953,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "qing"
       ],
@@ -4875,7 +4965,8 @@
       "at": {
         "year": 1689,
         "month": 8,
-        "abs": 20275
+        "abs": 20275,
+        "confidence": "month"
       },
       "summary": "中俄签订首个边界条约，划定外兴安岭以南、额尔古纳河以东归属，确立东段国界。",
       "atAbs": 20275
@@ -4883,7 +4974,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "qing"
       ],
@@ -4896,7 +4986,8 @@
       "at": {
         "year": 1842,
         "month": 8,
-        "abs": 22111
+        "abs": 22111,
+        "confidence": "month"
       },
       "summary": "清政府与英国签订《南京条约》，割让香港岛、赔偿2100万银元，开放广州、厦门、福州、宁波、上海五口通商，并规定英商可不经公行交易、协定进出口税则。条约改变了清代对外贸易的口岸、商人中介和关税格局。",
       "atAbs": 22111
@@ -4904,7 +4995,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "qing"
       ],
@@ -4917,7 +5007,8 @@
       "at": {
         "year": 1843,
         "month": 10,
-        "abs": 22125
+        "abs": 22125,
+        "confidence": "month"
       },
       "summary": "南京条约附件，英国取得片面最惠国待遇、领事裁判权及五口租地。",
       "atAbs": 22125
@@ -4925,7 +5016,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "qing"
       ],
@@ -4938,7 +5028,8 @@
       "at": {
         "year": 1844,
         "month": 7,
-        "abs": 22134
+        "abs": 22134,
+        "confidence": "month"
       },
       "summary": "中国与美国签订的首个条约，美国获最惠国待遇、领事裁判权及五口通商。",
       "atAbs": 22134
@@ -4946,7 +5037,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "qing"
       ],
@@ -4959,7 +5049,8 @@
       "at": {
         "year": 1844,
         "month": 10,
-        "abs": 22137
+        "abs": 22137,
+        "confidence": "month"
       },
       "summary": "中国与法国签订的首个条约，法国获最惠国待遇、领事裁判权及五口通商。",
       "atAbs": 22137
@@ -4967,7 +5058,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "qing"
       ],
@@ -4980,7 +5070,8 @@
       "at": {
         "year": 1858,
         "month": 5,
-        "abs": 22300
+        "abs": 22300,
+        "confidence": "month"
       },
       "summary": "俄国趁第二次鸦片战争割占黑龙江以北、乌苏里江以东大片领土。",
       "atAbs": 22300
@@ -4988,7 +5079,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "qing"
       ],
@@ -5001,7 +5091,8 @@
       "at": {
         "year": 1858,
         "month": 6,
-        "abs": 22301
+        "abs": 22301,
+        "confidence": "month"
       },
       "summary": "列强增开通商口岸、允许外国公使驻京、内河航行等特权，进一步打开中国。",
       "atAbs": 22301
@@ -5009,7 +5100,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "qing"
       ],
@@ -5022,7 +5112,8 @@
       "at": {
         "year": 1860,
         "month": 10,
-        "abs": 22329
+        "abs": 22329,
+        "confidence": "month"
       },
       "summary": "割九龙司、增赔款、准许英法公使驻京，俄国确认瑷珲条约并割占乌苏里江以东。",
       "atAbs": 22329
@@ -5030,7 +5121,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "qing"
       ],
@@ -5043,7 +5133,8 @@
       "at": {
         "year": 1871,
         "month": 7,
-        "abs": 22458
+        "abs": 22458,
+        "confidence": "month"
       },
       "summary": "中国与日本签订的首个条约，互认领事裁判权，为日后甲午战争埋下伏笔。",
       "atAbs": 22458
@@ -5051,7 +5142,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "qing"
       ],
@@ -5064,7 +5154,8 @@
       "at": {
         "year": 1876,
         "month": 9,
-        "abs": 22520
+        "abs": 22520,
+        "confidence": "month"
       },
       "summary": "马嘉理案后签订，英国获滇缅通商、驻重庆领事等特权，并承认英国对缅甸的支配。",
       "atAbs": 22520
@@ -5072,7 +5163,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "qing"
       ],
@@ -5086,7 +5176,8 @@
       "at": {
         "year": 1881,
         "month": 2,
-        "abs": 22573
+        "abs": 22573,
+        "confidence": "month"
       },
       "summary": "俄国归还伊犁，但割占霍尔果斯以西七万余平方公里，赔款九百万卢布。",
       "atAbs": 22573
@@ -5094,7 +5185,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "qing"
       ],
@@ -5107,7 +5197,8 @@
       "at": {
         "year": 1885,
         "month": 6,
-        "abs": 22625
+        "abs": 22625,
+        "confidence": "month"
       },
       "summary": "中法战争议和，中国承认法国对越南的保护权，西南门户洞开。",
       "atAbs": 22625
@@ -5115,7 +5206,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "qing"
       ],
@@ -5128,7 +5218,8 @@
       "at": {
         "year": 1890,
         "month": 12,
-        "abs": 22691
+        "abs": 22691,
+        "confidence": "month"
       },
       "summary": "隆务关之战后议和，划定藏印边界，承认英国对锡金的保护。",
       "atAbs": 22691
@@ -5136,7 +5227,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "qing"
       ],
@@ -5149,7 +5239,8 @@
       "at": {
         "year": 1894,
         "month": 12,
-        "abs": 22739
+        "abs": 22739,
+        "confidence": "month"
       },
       "summary": "划定滇缅边界，开放蛮耗为商埠，英国进一步渗透西南边疆。",
       "atAbs": 22739
@@ -5157,7 +5248,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "qing"
       ],
@@ -5171,7 +5261,8 @@
       "at": {
         "year": 1895,
         "month": 4,
-        "abs": 22743
+        "abs": 22743,
+        "confidence": "month"
       },
       "summary": "割辽东、台湾及澎湖，赔款二亿两，开放沙市等口岸，允许日本在华设厂。",
       "atAbs": 22743
@@ -5179,7 +5270,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "qing"
       ],
@@ -5193,7 +5283,8 @@
       "at": {
         "year": 1895,
         "month": 4,
-        "abs": 22743
+        "abs": 22743,
+        "confidence": "month"
       },
       "summary": "马关条约割辽东后，俄法德联合施压，日本同意归还辽东半岛，清政府另付赎款。",
       "atAbs": 22743
@@ -5201,7 +5292,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "qing"
       ],
@@ -5215,7 +5305,8 @@
       "at": {
         "year": 1901,
         "month": 9,
-        "abs": 22820
+        "abs": 22820,
+        "confidence": "month"
       },
       "summary": "赔款四亿五千万两、使馆区、拆炮台、惩办官员，中国完全沦为半殖民地半封建社会。",
       "atAbs": 22820
@@ -5223,7 +5314,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "qing"
       ],
@@ -5236,14 +5326,14 @@
       "at": {
         "year": 1902,
         "month": 4,
-        "abs": 22827
+        "abs": 22827,
+        "confidence": "month"
       },
       "summary": "俄国归还庚子事变后侵占的东北三省，但获中东铁路续租等特权。",
       "atAbs": 22827
     },
     {
       "kind": "politics",
-      "precision": "month",
       "dynastyIds": [
         "qing"
       ],
@@ -5256,12 +5346,14 @@
       "start": {
         "year": 1851,
         "month": 1,
-        "abs": 22212
+        "abs": 22212,
+        "confidence": "month"
       },
       "end": {
         "year": 1864,
         "month": 7,
-        "abs": 22374
+        "abs": 22374,
+        "confidence": "month"
       },
       "summary": "洪秀全领导太平天国运动，1851年1月金田起义至1864年7月天京陷落，与清廷对峙十余年。",
       "startAbs": 22212,
@@ -5270,7 +5362,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "qing"
       ],
@@ -5282,7 +5373,8 @@
       "at": {
         "year": 1911,
         "month": 12,
-        "abs": 22943
+        "abs": 22943,
+        "confidence": "year"
       },
       "summary": "武昌起义爆发，各省独立，帝制走向终结。",
       "atAbs": 22943
@@ -5290,7 +5382,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "day",
       "dynastyIds": [
         "mingzheng"
       ],
@@ -5304,7 +5395,8 @@
         "year": 1662,
         "month": 2,
         "abs": 19945,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "summary": "郑成功迫使荷兰东印度公司守军投降，收复台湾并设承天府，作为奉永历正朔的复明基地。",
       "atAbs": 19945
@@ -5312,7 +5404,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "ming"
       ],
@@ -5324,7 +5415,8 @@
       "at": {
         "year": 1449,
         "month": 12,
-        "abs": 17399
+        "abs": 17399,
+        "confidence": "year"
       },
       "summary": "土木堡之变后，英宗被俘，皇太后命郕王朱祁钰监国、总理国政。监国自1449年9月4日至9月21日，共18天。",
       "atAbs": 17399
@@ -6368,7 +6460,7 @@
       "补充战争：虎门销烟、左宗棠收复新疆、隆务关之战；三国干涉还辽为马关条约后续外交事件。",
       "元明战争：两都之战、红巾起义、明军攻占大都、抗倭战争、萨尔浒、宁远、松锦之战。",
       "明非帝王人物：张居正、海瑞、戚继光、王阳明、严嵩、唐寅、李时珍、徐光启、徐霞客、魏忠贤、刘基、于谦、郑和等；张居正改革（1572–1582）为 span 事件。",
-      "元明清皇帝在位日取维基百科君主列表通行换算，precision=day；南明弘光/隆武/永历及鲁监国、绍武亦升级日精度。",
+      "元明清皇帝在位日取维基百科君主列表通行换算，confidence=day；南明弘光/隆武/永历及鲁监国、绍武亦升级日精度。",
       "元文宗两度即位（1328-10-16–1329-02-27、1329-09-08–1332-09-02），中间为明宗；第一次止于明宗和宁即位，正式送玺在 1329-04-03。",
       "捕鱼儿海之战据《明实录》记洪武二十一年四月，按公历资料落在1388年5月；元/北元政权延续至1388年11月天元帝被杀，避免年精度点落在1月的错误结束边界。袁崇焕冤杀加入后金（本项目合并标为清）关联，依据《明史·袁崇焕传》反间计记载。",
       "两都之战天顺帝用 claim_track=shangdu（1328-10-04–1328-11-14），不串主线继承；泰定崩至文宗即位、明宗崩至文宗复位的短空档不标史料缺。",

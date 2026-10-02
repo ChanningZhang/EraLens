@@ -549,14 +549,15 @@
       "start": {
         "year": 916,
         "month": 1,
-        "abs": 10992
+        "abs": 10992,
+        "confidence": "year"
       },
       "end": {
         "year": 1125,
         "month": 1,
-        "abs": 13500
+        "abs": 13500,
+        "confidence": "year"
       },
-      "precision": "year",
       "note": "辽由契丹耶律氏建立，耶律阿保机统一契丹诸部，916年称帝，947年定国号辽。辽以南、北面官分别治理农耕与草原地区，兼采中原制度并保留契丹旧制；鼎盛时控制燕云地区，与北宋长期对峙。澶渊之盟后，宋辽边境长期相对安定，互市和人员往来增多。女真兴起后辽国势衰落，1125年天祚帝被金军俘获，辽亡。"
     },
     {
@@ -571,14 +572,15 @@
       "start": {
         "year": 1115,
         "month": 1,
-        "abs": 13380
+        "abs": 13380,
+        "confidence": "year"
       },
       "end": {
         "year": 1234,
         "month": 1,
-        "abs": 14808
+        "abs": 14808,
+        "confidence": "year"
       },
-      "precision": "year",
       "note": "女真完颜氏建立的王朝。完颜阿骨打于1115年称帝建国，先后灭辽、灭北宋，统治中国北方；金朝在中都等地推行中原官制，同时保留猛安谋克等女真制度。此后金与南宋长期对峙，1141年议和后边界和关系相对稳定。蒙古兴起后金国力渐衰，1234年蒙古与南宋联军攻破蔡州，金亡。"
     }
   ],
@@ -597,17 +599,18 @@
         "year": 916,
         "month": 3,
         "abs": 10994,
-        "day": 17
+        "day": 17,
+        "confidence": "day"
       },
       "end": {
         "year": 926,
         "month": 9,
         "abs": 11120,
-        "day": 6
+        "day": 6,
+        "confidence": "day"
       },
       "startAbs": 10994,
       "endAbs": 11120,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -620,17 +623,18 @@
         "year": 927,
         "month": 12,
         "abs": 11135,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "end": {
         "year": 947,
         "month": 5,
         "abs": 11368,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "startAbs": 11135,
       "endAbs": 11368,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -643,17 +647,18 @@
         "year": 947,
         "month": 5,
         "abs": 11368,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "end": {
         "year": 951,
         "month": 10,
         "abs": 11421,
-        "day": 7
+        "day": 7,
+        "confidence": "day"
       },
       "startAbs": 11368,
       "endAbs": 11421,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -666,17 +671,18 @@
         "year": 951,
         "month": 10,
         "abs": 11421,
-        "day": 7
+        "day": 7,
+        "confidence": "day"
       },
       "end": {
         "year": 969,
         "month": 3,
         "abs": 11630,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "startAbs": 11421,
       "endAbs": 11630,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -689,17 +695,18 @@
         "year": 969,
         "month": 3,
         "abs": 11630,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "end": {
         "year": 982,
         "month": 10,
         "abs": 11793,
-        "day": 13
+        "day": 13,
+        "confidence": "day"
       },
       "startAbs": 11630,
       "endAbs": 11793,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -716,17 +723,18 @@
         "year": 982,
         "month": 10,
         "abs": 11793,
-        "day": 13
+        "day": 13,
+        "confidence": "day"
       },
       "end": {
         "year": 1031,
         "month": 6,
         "abs": 12377,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "startAbs": 11793,
       "endAbs": 12377,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -739,17 +747,18 @@
         "year": 1031,
         "month": 6,
         "abs": 12377,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "end": {
         "year": 1055,
         "month": 8,
         "abs": 12667,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "startAbs": 12377,
       "endAbs": 12667,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -762,17 +771,18 @@
         "year": 1055,
         "month": 8,
         "abs": 12667,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "end": {
         "year": 1101,
         "month": 2,
         "abs": 13213,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "startAbs": 12667,
       "endAbs": 13213,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -785,17 +795,18 @@
         "year": 1101,
         "month": 2,
         "abs": 13213,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "end": {
         "year": 1125,
         "month": 3,
         "abs": 13502,
-        "day": 26
+        "day": 26,
+        "confidence": "day"
       },
       "startAbs": 13213,
       "endAbs": 13502,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -811,17 +822,18 @@
         "year": 1115,
         "month": 1,
         "abs": 13380,
-        "day": 28
+        "day": 28,
+        "confidence": "day"
       },
       "end": {
         "year": 1123,
         "month": 9,
         "abs": 13484,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "startAbs": 13380,
       "endAbs": 13484,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -834,17 +846,18 @@
         "year": 1123,
         "month": 9,
         "abs": 13484,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "end": {
         "year": 1135,
         "month": 12,
         "abs": 13631,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "startAbs": 13484,
       "endAbs": 13631,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -857,17 +870,18 @@
         "year": 1135,
         "month": 12,
         "abs": 13631,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "end": {
         "year": 1149,
         "month": 12,
         "abs": 13799,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "startAbs": 13631,
       "endAbs": 13799,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -880,17 +894,18 @@
         "year": 1150,
         "month": 1,
         "abs": 13800,
-        "day": 9
+        "day": 9,
+        "confidence": "day"
       },
       "end": {
         "year": 1161,
         "month": 12,
         "abs": 13943,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "startAbs": 13800,
       "endAbs": 13943,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -905,17 +920,18 @@
         "year": 1161,
         "month": 10,
         "abs": 13941,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "end": {
         "year": 1189,
         "month": 1,
         "abs": 14268,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "startAbs": 13941,
       "endAbs": 14268,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -928,17 +944,18 @@
         "year": 1189,
         "month": 1,
         "abs": 14268,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "end": {
         "year": 1208,
         "month": 12,
         "abs": 14507,
-        "day": 29
+        "day": 29,
+        "confidence": "day"
       },
       "startAbs": 14268,
       "endAbs": 14507,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -951,17 +968,18 @@
         "year": 1208,
         "month": 12,
         "abs": 14507,
-        "day": 29
+        "day": 29,
+        "confidence": "day"
       },
       "end": {
         "year": 1213,
         "month": 9,
         "abs": 14564,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "startAbs": 14507,
       "endAbs": 14564,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -974,17 +992,18 @@
         "year": 1213,
         "month": 9,
         "abs": 14564,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "end": {
         "year": 1223,
         "month": 1,
         "abs": 14676,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "startAbs": 14564,
       "endAbs": 14676,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -997,17 +1016,18 @@
         "year": 1223,
         "month": 1,
         "abs": 14676,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "end": {
         "year": 1234,
         "month": 2,
         "abs": 14809,
-        "day": 9
+        "day": 9,
+        "confidence": "day"
       },
       "startAbs": 14676,
       "endAbs": 14809,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -1020,17 +1040,18 @@
         "year": 1234,
         "month": 2,
         "abs": 14809,
-        "day": 9
+        "day": 9,
+        "confidence": "day"
       },
       "end": {
         "year": 1234,
         "month": 2,
         "abs": 14809,
-        "day": 9
+        "day": 9,
+        "confidence": "day"
       },
       "startAbs": 14809,
       "endAbs": 14809,
-      "precision": "day",
       "isMain": false
     }
   ],
@@ -1038,7 +1059,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "liao",
         "song-north"
@@ -1052,7 +1072,8 @@
       "at": {
         "year": 1004,
         "month": 12,
-        "abs": 12059
+        "abs": 12059,
+        "confidence": "year"
       },
       "summary": "宋真宗与辽圣宗订立和约，宋岁赐辽银绢，双方罢兵。",
       "atAbs": 12059
@@ -1060,7 +1081,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "day",
       "dynastyIds": [
         "jin-nvzhen",
         "liao"
@@ -1076,7 +1096,8 @@
         "year": 1125,
         "month": 3,
         "abs": 13502,
-        "day": 26
+        "day": 26,
+        "confidence": "day"
       },
       "summary": "金军俘辽天祚帝耶律延禧，辽朝灭亡。",
       "atAbs": 13502
@@ -1084,7 +1105,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "song-south",
         "jin-nvzhen"
@@ -1097,7 +1117,8 @@
       "at": {
         "year": 1140,
         "month": 12,
-        "abs": 13691
+        "abs": 13691,
+        "confidence": "year"
       },
       "summary": "岳飞率岳家军大败金军，收复中原要地。",
       "atAbs": 13691,
@@ -1106,7 +1127,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "song-south",
         "jin-nvzhen"
@@ -1120,7 +1140,8 @@
       "at": {
         "year": 1141,
         "month": 12,
-        "abs": 13703
+        "abs": 13703,
+        "confidence": "year"
       },
       "summary": "宋金议和，割地纳贡，岳飞被害，南北对峙格局确立。",
       "atAbs": 13703
@@ -1128,7 +1149,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "day",
       "dynastyIds": [
         "song-south",
         "jin-nvzhen"
@@ -1144,7 +1164,8 @@
         "year": 1161,
         "month": 11,
         "abs": 13942,
-        "day": 26
+        "day": 26,
+        "confidence": "day"
       },
       "summary": "虞允文督师采石，大败金军，完颜亮兵败被杀。",
       "atAbs": 13942,
@@ -1152,7 +1173,6 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "song-south",
         "jin-nvzhen"
@@ -1166,12 +1186,14 @@
       "start": {
         "year": 1206,
         "month": 1,
-        "abs": 14472
+        "abs": 14472,
+        "confidence": "year"
       },
       "end": {
         "year": 1208,
         "month": 1,
-        "abs": 14496
+        "abs": 14496,
+        "confidence": "year"
       },
       "summary": "宋宁宗朝北伐金朝，初战告捷后失利，嘉定和议复归对峙。",
       "startAbs": 14472,
@@ -1180,7 +1202,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "day",
       "dynastyIds": [
         "song-south",
         "jin-nvzhen"
@@ -1196,7 +1217,8 @@
         "year": 1234,
         "month": 2,
         "abs": 14809,
-        "day": 9
+        "day": 9,
+        "confidence": "day"
       },
       "summary": "宋蒙结盟攻金，金哀宗殉国，金朝灭亡；宋随即遭蒙古南侵。",
       "atAbs": 14809
@@ -1204,7 +1226,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "song-north",
         "liao"
@@ -1218,7 +1239,8 @@
       "at": {
         "year": 986,
         "month": 12,
-        "abs": 11843
+        "abs": 11843,
+        "confidence": "year"
       },
       "summary": "宋太宗遣潘美、杨业等北伐，岐沟关、陈家谷惨败，杨业殉国，宋辽转为守势。",
       "atAbs": 11843
@@ -1550,7 +1572,7 @@
       "南宋/北宋王朝与皇帝见 sui-tang-wudai-song；本包补充 event_dynasties 关联靖康之变、南宋建立。",
       "移除靖康之变与辽朝的错误关联：辽于1125年覆亡，靖康之变发生于1125–1127年，1127年北宋覆亡阶段由金军直接攻宋；本包生成 SQL 显式删除旧关联。",
       "未收录西辽、北辽、东辽等辽亡后残余政权。",
-      "辽金皇帝在位日取中国君主列表/维基百科通行换算，precision=day；1234年蔡州陷落同年更替用 month；承麟在位不足一日用 day。",
+      "辽金皇帝在位日取中国君主列表/维基百科通行换算，confidence=day；1234年蔡州陷落同年更替用 month；承麟在位不足一日用 day。",
       "辽太祖卒至太宗即位间述律太后摄政、未立新帝，时间轴留白，不标史料缺。",
       "本次补充人物概述：以正史本纪、专题史料及君主年表交叉核对身份、世系、在位时期与重要转折；大理早期君主的记载不足处明确保留不详。",
       "2026-09：扩充辽朝王朝概述，依据《辽史》本纪、百官志及《宋史》相关纪传梳理建国、南北面官、宋辽关系和覆亡；在位及国祚边界沿用本包已录记录。",

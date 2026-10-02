@@ -8,6 +8,8 @@ description: >-
 
 # EraLens 数据修复
 
+涉及日期值、端点精度、历法或置信度的修复遵循 [eralens-date-handling](../eralens-date-handling/SKILL.md)。
+
 修复展示、检索、时间轴上的历史数据问题。**默认改数据，不改渲染逻辑。**
 
 ## 铁律
@@ -56,9 +58,9 @@ Task Progress:
 ### 1. 调研
 
 - 用 WebSearch / 百科 / 正史核对**原始**起迄年与姓名结构。
-- 修复君主卡缺失或扩充古国泳道时，若存在连续世系但多数君主无明确王年，先交叉核对多个可考君主/纪事，确定共同年代锚点，再将锚点间的连续世次按数量均分，插值君主标 `interpolated`，保留史料可核边界。世系断裂、没有共同锚点或只靠传统积年时不得跨断层补齐；将缺口性质写入 `cache.json.manifest.notes`。不能仅因多数年份失载而只建一条无君主的泳道。
+- 日期核实、插值与置信度统一遵循 [eralens-date-handling](../eralens-date-handling/SKILL.md)。修复时不能仅因多数年份失载而只建一条无君主的泳道。
 - 改年、切年、正统窗口前，用来源的**原始在位年**，不要在已后移过的日期上再切。
-- 处理相邻时间段时（包括年、月、日精度和混合精度，同一记录起止边界精度不同），必须调用 `packages/shared/src/timelineOwnership.ts` 统一裁定对象归属；底层 `timelineIntervals.ts` 负责左开右闭日期运算。在位、都城、合并泳道相位及相关时点归属的分组规则不得散落到调用侧，也不得手写 `+1` 截断。先判断记录是否确为先后接续；并立君主、不同都城/角色等真实并存数据应保留并行，并通过 `claim_track` 或实体语义分组表达。
+- 处理相邻时间段必须调用 `packages/shared/src/timelineOwnership.ts`；区间端点和混合精度归属遵循 [eralens-date-handling](../eralens-date-handling/SKILL.md)。真正并存的数据保留并行，并通过 `claim_track` 或实体语义分组表达。
 - 争议取舍写入对应 `cache.json.manifest.notes`，并在 `cache.json.manifest.sources` 附来源。
 
 ### 2. 修哪里
@@ -137,7 +139,7 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 仅当**多条记录共用同一抽象规则**且数据已规范仍无法满足时：
 
 1. 在 `@eralens/shared` 或 `data/imports/lib/` 写规则（阈值、字段读取顺序、schema）。
-2. 用数据标记表达例外（`reigns.title`、`claim_track`、`start_date_confidence` 等）。
+2. 用数据标记表达例外（`reigns.title`、`claim_track`、端点 confidence 等）。
 3. **单实体特例必须用户书面同意**；否则一律回到数据层修。
 
 ## 验收

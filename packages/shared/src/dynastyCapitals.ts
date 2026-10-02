@@ -58,14 +58,14 @@ function formatTenureRangeLabel(
   end: CapitalTimePoint,
   startPrecision?: Reign["precision"],
   endPrecision = startPrecision,
-  startConfidence?: Reign["startDateConfidence"],
-  endConfidence?: Reign["endDateConfidence"],
+  startConfidence?: Reign["start"]["confidence"],
+  endConfidence?: Reign["end"]["confidence"],
   isOngoing = false,
 ): string {
   const formatPoint = (
     point: CapitalTimePoint,
     precision: Reign["precision"] | undefined,
-    confidence: Reign["startDateConfidence"] | undefined,
+    confidence: Reign["start"]["confidence"] | undefined,
   ): string => {
     if ((precision ?? "year") === "year" && isUncertainDateConfidence(confidence)) {
       return "？";
@@ -174,8 +174,8 @@ export function buildReignCapitalTenures(
             end,
             startPrecision,
             endPrecision,
-            startsAtReignBoundary ? reign.startDateConfidence : undefined,
-            endsAtReignBoundary ? reign.endDateConfidence : undefined,
+            startsAtReignBoundary ? reign.start.confidence : undefined,
+            endsAtReignBoundary ? reign.end.confidence : undefined,
             endsAtReignBoundary && reign.isOngoing,
           ),
           abs: startAbs,
@@ -217,8 +217,8 @@ export function buildReignTenureCapitalRows(
           reign.end,
           reign.precision,
           reign.precision,
-          reign.startDateConfidence,
-          reign.endDateConfidence,
+          reign.start.confidence,
+          reign.end.confidence,
           reign.isOngoing,
         ),
         abs: reign.startAbs,

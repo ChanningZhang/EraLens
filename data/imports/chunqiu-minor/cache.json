@@ -1602,14 +1602,15 @@
       "start": {
         "year": -511,
         "month": 1,
-        "abs": -6120
+        "abs": -6120,
+        "confidence": "year"
       },
       "end": {
         "year": -327,
         "month": 12,
-        "abs": -3901
+        "abs": -3901,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "任姓小国；可考君主自薛献公（前511年卒）起；前327年齐魏共灭薛。西周薛伯等早期君主在位年失考，不收录。"
     },
     {
@@ -1623,14 +1624,15 @@
       "start": {
         "year": -1045,
         "month": 1,
-        "abs": -12528
+        "abs": -12528,
+        "confidence": "year"
       },
       "end": {
         "year": -296,
         "month": 12,
-        "abs": -3529
+        "abs": -3529,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "姬姓诸侯国，周武王封错叔绣。前414年一度为越所灭，后复国，前296年为宋所灭。"
     },
     {
@@ -1644,14 +1646,15 @@
       "start": {
         "year": -750,
         "month": 1,
-        "abs": -8988
+        "abs": -8988,
+        "confidence": "year"
       },
       "end": {
         "year": -445,
         "month": 12,
-        "abs": -5317
+        "abs": -5317,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "自杞武公起有通行在位年；东楼公等更早君主失考。前445年为齐所灭。"
     },
     {
@@ -1665,14 +1668,15 @@
       "start": {
         "year": -1046,
         "month": 1,
-        "abs": -12540
+        "abs": -12540,
+        "confidence": "year"
       },
       "end": {
         "year": -431,
         "month": 12,
-        "abs": -5149
+        "abs": -5149,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "周初（断代工程取前1046年）封兹舆期；至春秋早期世系与具体在位年长期失载，以史料缺占位至前616年，后接可考莒君；前481年后至前431年楚灭莒前再以史料缺占位。"
     },
     {
@@ -1686,14 +1690,15 @@
       "start": {
         "year": -228,
         "month": 1,
-        "abs": -2724
+        "abs": -2724,
+        "confidence": "year"
       },
       "end": {
         "year": -222,
         "month": 12,
-        "abs": -2641
+        "abs": -2641,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "前228年赵嘉于代郡自立代王；前222年秦将王贲灭代。"
     },
     {
@@ -1707,14 +1712,15 @@
       "start": {
         "year": -221,
         "month": 1,
-        "abs": -2640
+        "abs": -2640,
+        "confidence": "year"
       },
       "end": {
         "year": -206,
         "month": 12,
-        "abs": -2449
+        "abs": -2449,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "秦灭齐后即墨一带齐宗室残余；田巿等据胶东，至楚汉之际并入分封格局。"
     },
     {
@@ -1729,14 +1735,15 @@
       "start": {
         "year": -440,
         "month": 1,
-        "abs": -5268
+        "abs": -5268,
+        "confidence": "year"
       },
       "end": {
         "year": -256,
         "month": 12,
-        "abs": -3049
+        "abs": -3049,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "战国周王畿小国，都王城（洛阳）；前440年周考王封弟揭所立，非西周王朝（zhou-west）。前367年威公卒后与东周国分立；前256年秦灭。"
     },
     {
@@ -1751,14 +1758,15 @@
       "start": {
         "year": -367,
         "month": 1,
-        "abs": -4392
+        "abs": -4392,
+        "confidence": "year"
       },
       "end": {
         "year": -249,
         "month": 12,
-        "abs": -2965
+        "abs": -2965,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "战国周王畿小国，都巩（巩义）；前367年由西周威公少子根所立，非东周王朝（zhou-east）。前249年秦庄襄王灭。"
     }
   ],
@@ -1768,23 +1776,22 @@
       "id": "reign-xue-r1-xue-chunqiu",
       "dynastyId": "xue-chunqiu",
       "personId": "xue-r1",
-      "title": "",
+      "title": "献公",
       "eraNames": [],
       "start": {
         "year": -511,
         "month": 1,
-        "abs": -6120
+        "abs": -6120,
+        "confidence": "year"
       },
       "end": {
         "year": -511,
         "month": 12,
-        "abs": -6109
+        "abs": -6109,
+        "confidence": "year"
       },
       "startAbs": -6120,
       "endAbs": -6109,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1794,23 +1801,22 @@
       "id": "reign-xue-r2-xue-chunqiu",
       "dynastyId": "xue-chunqiu",
       "personId": "xue-r2",
-      "title": "",
+      "title": "襄公",
       "eraNames": [],
       "start": {
         "year": -510,
         "month": 1,
-        "abs": -6108
+        "abs": -6108,
+        "confidence": "year"
       },
       "end": {
         "year": -498,
         "month": 12,
-        "abs": -5953
+        "abs": -5953,
+        "confidence": "year"
       },
       "startAbs": -6108,
       "endAbs": -5953,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1820,23 +1826,22 @@
       "id": "reign-xue-r3-xue-chunqiu",
       "dynastyId": "xue-chunqiu",
       "personId": "xue-r3",
-      "title": "",
+      "title": "公比",
       "eraNames": [],
       "start": {
         "year": -497,
         "month": 1,
-        "abs": -5952
+        "abs": -5952,
+        "confidence": "year"
       },
       "end": {
         "year": -497,
         "month": 12,
-        "abs": -5941
+        "abs": -5941,
+        "confidence": "year"
       },
       "startAbs": -5952,
       "endAbs": -5941,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1846,23 +1851,22 @@
       "id": "reign-xue-r4-xue-chunqiu",
       "dynastyId": "xue-chunqiu",
       "personId": "xue-r4",
-      "title": "",
+      "title": "惠公",
       "eraNames": [],
       "start": {
         "year": -496,
         "month": 1,
-        "abs": -5940
+        "abs": -5940,
+        "confidence": "year"
       },
       "end": {
         "year": -485,
         "month": 12,
-        "abs": -5797
+        "abs": -5797,
+        "confidence": "year"
       },
       "startAbs": -5940,
       "endAbs": -5797,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -1872,361 +1876,370 @@
       "id": "reign-teng-r0-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r0",
-      "title": "",
+      "title": "错叔",
       "eraNames": [],
       "start": {
         "year": -1045,
         "month": 1,
-        "abs": -12528
+        "abs": -12528,
+        "confidence": "approximate_year"
       },
       "end": {
         "year": -1043,
         "month": 12,
-        "abs": -12493
+        "abs": -12493,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -12528,
       "endAbs": -12493,
-      "precision": "year",
-      "startDateConfidence": "approximate",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "approximate_year",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-teng-r20-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r20",
-      "title": "",
+      "title": "？",
       "eraNames": [],
       "start": {
         "year": -1042,
         "month": 1,
-        "abs": -12492
+        "abs": -12492,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -1021,
         "month": 12,
-        "abs": -12229
+        "abs": -12229,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -12492,
       "endAbs": -12229,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r21-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r21",
-      "title": "",
+      "title": "？",
       "eraNames": [],
       "start": {
         "year": -1020,
         "month": 1,
-        "abs": -12228
+        "abs": -12228,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -1001,
         "month": 12,
-        "abs": -11989
+        "abs": -11989,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -12228,
       "endAbs": -11989,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r22-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r22",
-      "title": "",
+      "title": "命仲",
       "eraNames": [],
       "start": {
         "year": -1000,
         "month": 1,
-        "abs": -11988
+        "abs": -11988,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -990,
         "month": 12,
-        "abs": -11857
+        "abs": -11857,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -11988,
       "endAbs": -11857,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r23-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r23",
-      "title": "",
+      "title": "？",
       "eraNames": [],
       "start": {
         "year": -989,
         "month": 1,
-        "abs": -11856
+        "abs": -11856,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -978,
         "month": 12,
-        "abs": -11713
+        "abs": -11713,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -11856,
       "endAbs": -11713,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r24-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r24",
-      "title": "",
+      "title": "伯文",
       "eraNames": [],
       "start": {
         "year": -977,
         "month": 1,
-        "abs": -11712
+        "abs": -11712,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -950,
         "month": 12,
-        "abs": -11377
+        "abs": -11377,
+        "confidence": "year"
       },
       "startAbs": -11712,
       "endAbs": -11377,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r25-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r25",
-      "title": "",
+      "title": "？",
       "eraNames": [],
       "start": {
         "year": -949,
         "month": 1,
-        "abs": -11376
+        "abs": -11376,
+        "confidence": "year"
       },
       "end": {
         "year": -916,
         "month": 12,
-        "abs": -10969
+        "abs": -10969,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -11376,
       "endAbs": -10969,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r26-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r26",
-      "title": "",
+      "title": "？",
       "eraNames": [],
       "start": {
         "year": -915,
         "month": 1,
-        "abs": -10968
+        "abs": -10968,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -882,
         "month": 12,
-        "abs": -10561
+        "abs": -10561,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -10968,
       "endAbs": -10561,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r27-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r27",
-      "title": "",
+      "title": "？",
       "eraNames": [],
       "start": {
         "year": -881,
         "month": 1,
-        "abs": -10560
+        "abs": -10560,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -848,
         "month": 12,
-        "abs": -10153
+        "abs": -10153,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -10560,
       "endAbs": -10153,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r28-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r28",
-      "title": "",
+      "title": "？",
       "eraNames": [],
       "start": {
         "year": -847,
         "month": 1,
-        "abs": -10152
+        "abs": -10152,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -815,
         "month": 12,
-        "abs": -9757
+        "abs": -9757,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -10152,
       "endAbs": -9757,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r29-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r29",
-      "title": "",
+      "title": "？",
       "eraNames": [],
       "start": {
         "year": -814,
         "month": 1,
-        "abs": -9756
+        "abs": -9756,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -782,
         "month": 12,
-        "abs": -9361
+        "abs": -9361,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -9756,
       "endAbs": -9361,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r30-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r30",
-      "title": "",
+      "title": "？",
       "eraNames": [],
       "start": {
         "year": -781,
         "month": 1,
-        "abs": -9360
+        "abs": -9360,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -749,
         "month": 12,
-        "abs": -8965
+        "abs": -8965,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -9360,
       "endAbs": -8965,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r1-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r1",
-      "title": "",
+      "title": "侯",
       "eraNames": [],
       "start": {
         "year": -748,
         "month": 1,
-        "abs": -8964
+        "abs": -8964,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -716,
         "month": 12,
-        "abs": -8569
+        "abs": -8569,
+        "confidence": "year"
       },
       "startAbs": -8964,
       "endAbs": -8569,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r13-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r13",
-      "title": "",
+      "title": "？",
       "eraNames": [],
       "start": {
         "year": -715,
         "month": 1,
-        "abs": -8568
+        "abs": -8568,
+        "confidence": "year"
       },
       "end": {
         "year": -711,
         "month": 12,
-        "abs": -8509
+        "abs": -8509,
+        "confidence": "year"
       },
       "startAbs": -8568,
       "endAbs": -8509,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -2236,335 +2249,342 @@
       "id": "reign-teng-r12-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r12",
-      "title": "",
+      "title": "？",
       "eraNames": [],
       "start": {
         "year": -710,
         "month": 1,
-        "abs": -8508
+        "abs": -8508,
+        "confidence": "year"
       },
       "end": {
         "year": -695,
         "month": 12,
-        "abs": -8317
+        "abs": -8317,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -8508,
       "endAbs": -8317,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r11-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r11",
-      "title": "",
+      "title": "？",
       "eraNames": [],
       "start": {
         "year": -694,
         "month": 1,
-        "abs": -8316
+        "abs": -8316,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -660,
         "month": 12,
-        "abs": -7897
+        "abs": -7897,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -8316,
       "endAbs": -7897,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r7-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r7",
-      "title": "",
+      "title": "宣公",
       "eraNames": [],
       "start": {
         "year": -659,
         "month": 1,
-        "abs": -7896
+        "abs": -7896,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -640,
         "month": 12,
-        "abs": -7657
+        "abs": -7657,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -7896,
       "endAbs": -7657,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r10-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r10",
-      "title": "",
+      "title": "？",
       "eraNames": [],
       "start": {
         "year": -639,
         "month": 1,
-        "abs": -7656
+        "abs": -7656,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -631,
         "month": 12,
-        "abs": -7549
+        "abs": -7549,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -7656,
       "endAbs": -7549,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r8-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r8",
-      "title": "",
+      "title": "孝侯",
       "eraNames": [],
       "start": {
         "year": -630,
         "month": 1,
-        "abs": -7548
+        "abs": -7548,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -623,
         "month": 12,
-        "abs": -7453
+        "abs": -7453,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -7548,
       "endAbs": -7453,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r9-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r9",
-      "title": "",
+      "title": "昭公",
       "eraNames": [],
       "start": {
         "year": -622,
         "month": 1,
-        "abs": -7452
+        "abs": -7452,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -600,
         "month": 12,
-        "abs": -7177
+        "abs": -7177,
+        "confidence": "year"
       },
       "startAbs": -7452,
       "endAbs": -7177,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r33-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r33",
-      "title": "",
+      "title": "？",
       "eraNames": [],
       "start": {
         "year": -483,
         "month": 1,
-        "abs": -5784
+        "abs": -5784,
+        "confidence": "year"
       },
       "end": {
         "year": -472,
         "month": 12,
-        "abs": -5641
+        "abs": -5641,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -5784,
       "endAbs": -5641,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r34-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r34",
-      "title": "",
+      "title": "？",
       "eraNames": [],
       "start": {
         "year": -471,
         "month": 1,
-        "abs": -5640
+        "abs": -5640,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -460,
         "month": 12,
-        "abs": -5497
+        "abs": -5497,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -5640,
       "endAbs": -5497,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r35-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r35",
-      "title": "",
+      "title": "？",
       "eraNames": [],
       "start": {
         "year": -459,
         "month": 1,
-        "abs": -5496
+        "abs": -5496,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -448,
         "month": 12,
-        "abs": -5353
+        "abs": -5353,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -5496,
       "endAbs": -5353,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r36-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r36",
-      "title": "",
+      "title": "？",
       "eraNames": [],
       "start": {
         "year": -447,
         "month": 1,
-        "abs": -5352
+        "abs": -5352,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -436,
         "month": 12,
-        "abs": -5209
+        "abs": -5209,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -5352,
       "endAbs": -5209,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r37-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r37",
-      "title": "",
+      "title": "？",
       "eraNames": [],
       "start": {
         "year": -435,
         "month": 1,
-        "abs": -5208
+        "abs": -5208,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -425,
         "month": 12,
-        "abs": -5077
+        "abs": -5077,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -5208,
       "endAbs": -5077,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r31-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r31",
-      "title": "",
+      "title": "？",
       "eraNames": [],
       "start": {
         "year": -424,
         "month": 1,
-        "abs": -5076
+        "abs": -5076,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -414,
         "month": 12,
-        "abs": -4945
+        "abs": -4945,
+        "confidence": "year"
       },
       "startAbs": -5076,
       "endAbs": -4945,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-teng-r2-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r2",
-      "title": "",
+      "title": "文公",
       "eraNames": [],
       "start": {
         "year": -599,
         "month": 1,
-        "abs": -7176
+        "abs": -7176,
+        "confidence": "year"
       },
       "end": {
         "year": -575,
         "month": 12,
-        "abs": -6877
+        "abs": -6877,
+        "confidence": "year"
       },
       "startAbs": -7176,
       "endAbs": -6877,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -2574,23 +2594,22 @@
       "id": "reign-teng-r3-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r3",
-      "title": "",
+      "title": "成公",
       "eraNames": [],
       "start": {
         "year": -574,
         "month": 1,
-        "abs": -6876
+        "abs": -6876,
+        "confidence": "year"
       },
       "end": {
         "year": -539,
         "month": 12,
-        "abs": -6445
+        "abs": -6445,
+        "confidence": "year"
       },
       "startAbs": -6876,
       "endAbs": -6445,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -2600,23 +2619,22 @@
       "id": "reign-teng-r4-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r4",
-      "title": "",
+      "title": "悼公",
       "eraNames": [],
       "start": {
         "year": -538,
         "month": 1,
-        "abs": -6444
+        "abs": -6444,
+        "confidence": "year"
       },
       "end": {
         "year": -514,
         "month": 12,
-        "abs": -6145
+        "abs": -6145,
+        "confidence": "year"
       },
       "startAbs": -6444,
       "endAbs": -6145,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -2626,23 +2644,22 @@
       "id": "reign-teng-r5-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r5",
-      "title": "",
+      "title": "顷公",
       "eraNames": [],
       "start": {
         "year": -513,
         "month": 1,
-        "abs": -6144
+        "abs": -6144,
+        "confidence": "year"
       },
       "end": {
         "year": -491,
         "month": 12,
-        "abs": -5869
+        "abs": -5869,
+        "confidence": "year"
       },
       "startAbs": -6144,
       "endAbs": -5869,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -2652,23 +2669,22 @@
       "id": "reign-teng-r6-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r6",
-      "title": "",
+      "title": "隐公",
       "eraNames": [],
       "start": {
         "year": -490,
         "month": 1,
-        "abs": -5868
+        "abs": -5868,
+        "confidence": "year"
       },
       "end": {
         "year": -484,
         "month": 12,
-        "abs": -5785
+        "abs": -5785,
+        "confidence": "year"
       },
       "startAbs": -5868,
       "endAbs": -5785,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -2678,23 +2694,22 @@
       "id": "reign-qi-state-r1-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r1",
-      "title": "",
+      "title": "武公",
       "eraNames": [],
       "start": {
         "year": -750,
         "month": 1,
-        "abs": -8988
+        "abs": -8988,
+        "confidence": "year"
       },
       "end": {
         "year": -704,
         "month": 12,
-        "abs": -8425
+        "abs": -8425,
+        "confidence": "year"
       },
       "startAbs": -8988,
       "endAbs": -8425,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -2704,23 +2719,22 @@
       "id": "reign-qi-state-r1b-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r1b",
-      "title": "",
+      "title": "靖公",
       "eraNames": [],
       "start": {
         "year": -703,
         "month": 1,
-        "abs": -8424
+        "abs": -8424,
+        "confidence": "year"
       },
       "end": {
         "year": -681,
         "month": 12,
-        "abs": -8149
+        "abs": -8149,
+        "confidence": "year"
       },
       "startAbs": -8424,
       "endAbs": -8149,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -2730,23 +2744,22 @@
       "id": "reign-qi-state-gong-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-gong",
-      "title": "",
+      "title": "共公",
       "eraNames": [],
       "start": {
         "year": -680,
         "month": 1,
-        "abs": -8148
+        "abs": -8148,
+        "confidence": "year"
       },
       "end": {
         "year": -673,
         "month": 12,
-        "abs": -8053
+        "abs": -8053,
+        "confidence": "year"
       },
       "startAbs": -8148,
       "endAbs": -8053,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -2756,23 +2769,22 @@
       "id": "reign-qi-state-de-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-de",
-      "title": "",
+      "title": "德公",
       "eraNames": [],
       "start": {
         "year": -672,
         "month": 1,
-        "abs": -8052
+        "abs": -8052,
+        "confidence": "year"
       },
       "end": {
         "year": -655,
         "month": 12,
-        "abs": -7837
+        "abs": -7837,
+        "confidence": "year"
       },
       "startAbs": -8052,
       "endAbs": -7837,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -2782,23 +2794,22 @@
       "id": "reign-qi-state-r1c-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r1c",
-      "title": "",
+      "title": "成公",
       "eraNames": [],
       "start": {
         "year": -654,
         "month": 1,
-        "abs": -7836
+        "abs": -7836,
+        "confidence": "year"
       },
       "end": {
         "year": -637,
         "month": 12,
-        "abs": -7621
+        "abs": -7621,
+        "confidence": "year"
       },
       "startAbs": -7836,
       "endAbs": -7621,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -2808,23 +2819,22 @@
       "id": "reign-qi-state-r2-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r2",
-      "title": "",
+      "title": "桓公",
       "eraNames": [],
       "start": {
         "year": -636,
         "month": 1,
-        "abs": -7620
+        "abs": -7620,
+        "confidence": "year"
       },
       "end": {
         "year": -567,
         "month": 12,
-        "abs": -6781
+        "abs": -6781,
+        "confidence": "year"
       },
       "startAbs": -7620,
       "endAbs": -6781,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -2834,23 +2844,22 @@
       "id": "reign-qi-state-xiao-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-xiao",
-      "title": "",
+      "title": "孝公",
       "eraNames": [],
       "start": {
         "year": -566,
         "month": 1,
-        "abs": -6780
+        "abs": -6780,
+        "confidence": "year"
       },
       "end": {
         "year": -550,
         "month": 12,
-        "abs": -6577
+        "abs": -6577,
+        "confidence": "year"
       },
       "startAbs": -6780,
       "endAbs": -6577,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -2860,23 +2869,22 @@
       "id": "reign-qi-state-r3-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r3",
-      "title": "",
+      "title": "文公",
       "eraNames": [],
       "start": {
         "year": -549,
         "month": 1,
-        "abs": -6576
+        "abs": -6576,
+        "confidence": "year"
       },
       "end": {
         "year": -536,
         "month": 12,
-        "abs": -6409
+        "abs": -6409,
+        "confidence": "year"
       },
       "startAbs": -6576,
       "endAbs": -6409,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -2886,23 +2894,22 @@
       "id": "reign-qi-state-r4-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r4",
-      "title": "",
+      "title": "平公",
       "eraNames": [],
       "start": {
         "year": -535,
         "month": 1,
-        "abs": -6408
+        "abs": -6408,
+        "confidence": "year"
       },
       "end": {
         "year": -518,
         "month": 12,
-        "abs": -6193
+        "abs": -6193,
+        "confidence": "year"
       },
       "startAbs": -6408,
       "endAbs": -6193,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -2912,23 +2919,22 @@
       "id": "reign-qi-state-dao-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-dao",
-      "title": "",
+      "title": "悼公",
       "eraNames": [],
       "start": {
         "year": -517,
         "month": 1,
-        "abs": -6192
+        "abs": -6192,
+        "confidence": "year"
       },
       "end": {
         "year": -506,
         "month": 12,
-        "abs": -6049
+        "abs": -6049,
+        "confidence": "year"
       },
       "startAbs": -6192,
       "endAbs": -6049,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -2938,23 +2944,22 @@
       "id": "reign-qi-state-yin-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-yin",
-      "title": "",
+      "title": "隐公",
       "eraNames": [],
       "start": {
         "year": -506,
         "month": 1,
-        "abs": -6060
+        "abs": -6060,
+        "confidence": "year"
       },
       "end": {
         "year": -506,
         "month": 12,
-        "abs": -6049
+        "abs": -6049,
+        "confidence": "year"
       },
       "startAbs": -6060,
       "endAbs": -6049,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -2964,23 +2969,22 @@
       "id": "reign-qi-state-xi-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-xi",
-      "title": "",
+      "title": "僖公",
       "eraNames": [],
       "start": {
         "year": -505,
         "month": 1,
-        "abs": -6048
+        "abs": -6048,
+        "confidence": "year"
       },
       "end": {
         "year": -487,
         "month": 12,
-        "abs": -5821
+        "abs": -5821,
+        "confidence": "year"
       },
       "startAbs": -6048,
       "endAbs": -5821,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -2990,23 +2994,22 @@
       "id": "reign-qi-state-r5-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r5",
-      "title": "",
+      "title": "湣公",
       "eraNames": [],
       "start": {
         "year": -486,
         "month": 1,
-        "abs": -5820
+        "abs": -5820,
+        "confidence": "year"
       },
       "end": {
         "year": -471,
         "month": 12,
-        "abs": -5629
+        "abs": -5629,
+        "confidence": "year"
       },
       "startAbs": -5820,
       "endAbs": -5629,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -3016,23 +3019,22 @@
       "id": "reign-qi-state-ai-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-ai",
-      "title": "",
+      "title": "哀公",
       "eraNames": [],
       "start": {
         "year": -470,
         "month": 1,
-        "abs": -5628
+        "abs": -5628,
+        "confidence": "year"
       },
       "end": {
         "year": -461,
         "month": 12,
-        "abs": -5509
+        "abs": -5509,
+        "confidence": "year"
       },
       "startAbs": -5628,
       "endAbs": -5509,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -3042,23 +3044,22 @@
       "id": "reign-qi-state-chu-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-chu",
-      "title": "",
+      "title": "出公",
       "eraNames": [],
       "start": {
         "year": -460,
         "month": 1,
-        "abs": -5508
+        "abs": -5508,
+        "confidence": "year"
       },
       "end": {
         "year": -449,
         "month": 12,
-        "abs": -5365
+        "abs": -5365,
+        "confidence": "year"
       },
       "startAbs": -5508,
       "endAbs": -5365,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -3068,23 +3069,22 @@
       "id": "reign-qi-state-r6-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r6",
-      "title": "",
+      "title": "简公",
       "eraNames": [],
       "start": {
         "year": -448,
         "month": 1,
-        "abs": -5364
+        "abs": -5364,
+        "confidence": "year"
       },
       "end": {
         "year": -445,
         "month": 12,
-        "abs": -5317
+        "abs": -5317,
+        "confidence": "year"
       },
       "startAbs": -5364,
       "endAbs": -5317,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -3094,23 +3094,22 @@
       "id": "reign-ju-r1-ju-chunqiu",
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r1",
-      "title": "",
+      "title": "纪公",
       "eraNames": [],
       "start": {
         "year": -615,
         "month": 1,
-        "abs": -7368
+        "abs": -7368,
+        "confidence": "year"
       },
       "end": {
         "year": -609,
         "month": 12,
-        "abs": -7285
+        "abs": -7285,
+        "confidence": "year"
       },
       "startAbs": -7368,
       "endAbs": -7285,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -3120,23 +3119,22 @@
       "id": "reign-ju-r1b-ju-chunqiu",
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r1b",
-      "title": "",
+      "title": "厉公",
       "eraNames": [],
       "start": {
         "year": -608,
         "month": 1,
-        "abs": -7284
+        "abs": -7284,
+        "confidence": "year"
       },
       "end": {
         "year": -580,
         "month": 12,
-        "abs": -6937
+        "abs": -6937,
+        "confidence": "year"
       },
       "startAbs": -7284,
       "endAbs": -6937,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -3146,23 +3144,22 @@
       "id": "reign-ju-r2-ju-chunqiu",
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r2",
-      "title": "",
+      "title": "渠丘公",
       "eraNames": [],
       "start": {
         "year": -579,
         "month": 1,
-        "abs": -6936
+        "abs": -6936,
+        "confidence": "year"
       },
       "end": {
         "year": -577,
         "month": 12,
-        "abs": -6901
+        "abs": -6901,
+        "confidence": "year"
       },
       "startAbs": -6936,
       "endAbs": -6901,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -3172,23 +3169,22 @@
       "id": "reign-ju-r3-ju-chunqiu",
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r3",
-      "title": "",
+      "title": "犂比公",
       "eraNames": [],
       "start": {
         "year": -576,
         "month": 1,
-        "abs": -6900
+        "abs": -6900,
+        "confidence": "year"
       },
       "end": {
         "year": -542,
         "month": 12,
-        "abs": -6481
+        "abs": -6481,
+        "confidence": "year"
       },
       "startAbs": -6900,
       "endAbs": -6481,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -3198,23 +3194,22 @@
       "id": "reign-ju-r4-ju-chunqiu",
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r4",
-      "title": "",
+      "title": "子舆",
       "eraNames": [],
       "start": {
         "year": -541,
         "month": 1,
-        "abs": -6480
+        "abs": -6480,
+        "confidence": "year"
       },
       "end": {
         "year": -541,
         "month": 12,
-        "abs": -6469
+        "abs": -6469,
+        "confidence": "year"
       },
       "startAbs": -6480,
       "endAbs": -6469,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -3224,23 +3219,22 @@
       "id": "reign-ju-r5-ju-chunqiu",
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r5",
-      "title": "",
+      "title": "著丘公",
       "eraNames": [],
       "start": {
         "year": -540,
         "month": 1,
-        "abs": -6468
+        "abs": -6468,
+        "confidence": "year"
       },
       "end": {
         "year": -528,
         "month": 12,
-        "abs": -6313
+        "abs": -6313,
+        "confidence": "year"
       },
       "startAbs": -6468,
       "endAbs": -6313,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -3250,23 +3244,22 @@
       "id": "reign-ju-r6-ju-chunqiu",
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r6",
-      "title": "",
+      "title": "共公",
       "eraNames": [],
       "start": {
         "year": -527,
         "month": 1,
-        "abs": -6312
+        "abs": -6312,
+        "confidence": "year"
       },
       "end": {
         "year": -519,
         "month": 12,
-        "abs": -6205
+        "abs": -6205,
+        "confidence": "year"
       },
       "startAbs": -6312,
       "endAbs": -6205,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -3276,23 +3269,22 @@
       "id": "reign-ju-r7-ju-chunqiu",
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r7",
-      "title": "",
+      "title": "郊公",
       "eraNames": [],
       "start": {
         "year": -518,
         "month": 1,
-        "abs": -6204
+        "abs": -6204,
+        "confidence": "year"
       },
       "end": {
         "year": -481,
         "month": 12,
-        "abs": -5749
+        "abs": -5749,
+        "confidence": "year"
       },
       "startAbs": -6204,
       "endAbs": -5749,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -3302,23 +3294,22 @@
       "id": "reign-zhao-jia-dai-dai-warring",
       "dynastyId": "dai-warring",
       "personId": "zhao-jia-dai",
-      "title": "",
+      "title": "王",
       "eraNames": [],
       "start": {
         "year": -228,
         "month": 1,
-        "abs": -2724
+        "abs": -2724,
+        "confidence": "year"
       },
       "end": {
         "year": -222,
         "month": 12,
-        "abs": -2641
+        "abs": -2641,
+        "confidence": "year"
       },
       "startAbs": -2724,
       "endAbs": -2641,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -3328,23 +3319,22 @@
       "id": "reign-tian-shi-jiaodong-warring",
       "dynastyId": "jiaodong-warring",
       "personId": "tian-shi",
-      "title": "",
+      "title": "王",
       "eraNames": [],
       "start": {
         "year": -221,
         "month": 1,
-        "abs": -2640
+        "abs": -2640,
+        "confidence": "year"
       },
       "end": {
         "year": -206,
         "month": 12,
-        "abs": -2449
+        "abs": -2449,
+        "confidence": "year"
       },
       "startAbs": -2640,
       "endAbs": -2449,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -3354,23 +3344,22 @@
       "id": "reign-zhou-guo-jie-zhou-guo-west",
       "dynastyId": "zhou-guo-west",
       "personId": "zhou-guo-jie",
-      "title": "",
+      "title": "桓公",
       "eraNames": [],
       "start": {
         "year": -440,
         "month": 1,
-        "abs": -5268
+        "abs": -5268,
+        "confidence": "year"
       },
       "end": {
         "year": -415,
         "month": 12,
-        "abs": -4957
+        "abs": -4957,
+        "confidence": "year"
       },
       "startAbs": -5268,
       "endAbs": -4957,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -3380,23 +3369,22 @@
       "id": "reign-zhou-guo-zao-zhou-guo-west",
       "dynastyId": "zhou-guo-west",
       "personId": "zhou-guo-zao",
-      "title": "",
+      "title": "威公",
       "eraNames": [],
       "start": {
         "year": -414,
         "month": 1,
-        "abs": -4956
+        "abs": -4956,
+        "confidence": "year"
       },
       "end": {
         "year": -367,
         "month": 12,
-        "abs": -4381
+        "abs": -4381,
+        "confidence": "year"
       },
       "startAbs": -4956,
       "endAbs": -4381,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -3406,101 +3394,101 @@
       "id": "reign-zhou-guo-chao-zhou-guo-west",
       "dynastyId": "zhou-guo-west",
       "personId": "zhou-guo-chao",
-      "title": "",
+      "title": "惠公",
       "eraNames": [],
       "start": {
         "year": -366,
         "month": 1,
-        "abs": -4380
+        "abs": -4380,
+        "confidence": "year"
       },
       "end": {
         "year": -330,
         "month": 12,
-        "abs": -3937
+        "abs": -3937,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -4380,
       "endAbs": -3937,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-zhou-guo-wugong-zhou-guo-west",
       "dynastyId": "zhou-guo-west",
       "personId": "zhou-guo-wugong",
-      "title": "",
+      "title": "武公",
       "eraNames": [],
       "start": {
         "year": -329,
         "month": 1,
-        "abs": -3936
+        "abs": -3936,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -293,
         "month": 12,
-        "abs": -3493
+        "abs": -3493,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -3936,
       "endAbs": -3493,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-zhou-guo-jiu-zhou-guo-west",
       "dynastyId": "zhou-guo-west",
       "personId": "zhou-guo-jiu",
-      "title": "",
+      "title": "文公",
       "eraNames": [],
       "start": {
         "year": -292,
         "month": 1,
-        "abs": -3492
+        "abs": -3492,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -256,
         "month": 12,
-        "abs": -3049
+        "abs": -3049,
+        "confidence": "year"
       },
       "startAbs": -3492,
       "endAbs": -3049,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-zhou-guo-gen-zhou-guo-east",
       "dynastyId": "zhou-guo-east",
       "personId": "zhou-guo-gen",
-      "title": "",
+      "title": "惠公",
       "eraNames": [],
       "start": {
         "year": -366,
         "month": 1,
-        "abs": -4380
+        "abs": -4380,
+        "confidence": "year"
       },
       "end": {
         "year": -360,
         "month": 12,
-        "abs": -4297
+        "abs": -4297,
+        "confidence": "year"
       },
       "startAbs": -4380,
       "endAbs": -4297,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -3510,105 +3498,110 @@
       "id": "reign-missing-zhou-guo-east--360",
       "dynastyId": "zhou-guo-east",
       "personId": "system-missing-ruler",
-      "title": "",
+      "title": "史料缺",
       "eraNames": [],
       "start": {
         "year": -360,
         "month": 1,
-        "abs": -4308
+        "abs": -4308,
+        "confidence": "year"
       },
       "end": {
         "year": -249,
         "month": 12,
-        "abs": -2965
+        "abs": -2965,
+        "confidence": "year"
       },
       "startAbs": -4308,
       "endAbs": -2965,
-      "precision": "year",
       "isMain": false
     },
     {
       "id": "reign-missing-xue-chunqiu--485",
       "dynastyId": "xue-chunqiu",
       "personId": "system-missing-ruler",
-      "title": "",
+      "title": "史料缺",
       "eraNames": [],
       "start": {
         "year": -485,
         "month": 1,
-        "abs": -5808
+        "abs": -5808,
+        "confidence": "year"
       },
       "end": {
         "year": -327,
         "month": 12,
-        "abs": -3901
+        "abs": -3901,
+        "confidence": "year"
       },
       "startAbs": -5808,
       "endAbs": -3901,
-      "precision": "year",
       "isMain": false
     },
     {
       "id": "reign-missing-teng-chunqiu--296",
       "dynastyId": "teng-chunqiu",
       "personId": "system-missing-ruler",
-      "title": "",
+      "title": "史料缺",
       "eraNames": [],
       "start": {
         "year": -296,
         "month": 1,
-        "abs": -3540
+        "abs": -3540,
+        "confidence": "year"
       },
       "end": {
         "year": -296,
         "month": 12,
-        "abs": -3529
+        "abs": -3529,
+        "confidence": "year"
       },
       "startAbs": -3540,
       "endAbs": -3529,
-      "precision": "year",
       "isMain": false
     },
     {
       "id": "reign-missing-ju-chunqiu--1046",
       "dynastyId": "ju-chunqiu",
       "personId": "system-missing-ruler",
-      "title": "",
+      "title": "史料缺",
       "eraNames": [],
       "start": {
         "year": -1046,
         "month": 1,
-        "abs": -12540
+        "abs": -12540,
+        "confidence": "year"
       },
       "end": {
         "year": -616,
         "month": 12,
-        "abs": -7369
+        "abs": -7369,
+        "confidence": "year"
       },
       "startAbs": -12540,
       "endAbs": -7369,
-      "precision": "year",
       "isMain": false
     },
     {
       "id": "reign-missing-ju-chunqiu--481",
       "dynastyId": "ju-chunqiu",
       "personId": "system-missing-ruler",
-      "title": "",
+      "title": "史料缺",
       "eraNames": [],
       "start": {
         "year": -481,
         "month": 1,
-        "abs": -5760
+        "abs": -5760,
+        "confidence": "year"
       },
       "end": {
         "year": -431,
         "month": 12,
-        "abs": -5149
+        "abs": -5149,
+        "confidence": "year"
       },
       "startAbs": -5760,
       "endAbs": -5149,
-      "precision": "year",
       "isMain": false
     }
   ],
@@ -3616,7 +3609,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhou-guo-west",
         "zhou-guo-east",
@@ -3632,7 +3624,8 @@
       "at": {
         "year": -367,
         "month": 12,
-        "abs": -4381
+        "abs": -4381,
+        "confidence": "year"
       },
       "summary": "西周威公卒后，太子朝据王城为西周惠公，少子根据巩为东周惠公，周王畿分裂为西周国与东周国。",
       "atAbs": -4381
@@ -4129,7 +4122,8 @@
       "东西周惠公泳道的年精度起年统一记为前366年；前367年为西周威公卒、周王畿分立之年，东周国的分立事件仍按前367年记。",
       "清理对已在本包中删除的 dai-founded 事件的孤儿关系；该关系不再写入 relations。",
       "杞国列王按维基「杞国」君主表（在位年份已是逾年切分）；隐公仅前506年七月，与悼公死年同桶。滕悼公迄前514、顷公起前513，与维基在位年数一致。",
-      "西周武公承西周惠公、为西周文公之父；《史记·周本纪》及《史记集解》引徐广注支持其世系，但均未载本名。《周朝诸侯国君主列表》列名共之，未标明该名所据原始文献；《西周国》君主表则列姓名不详，故数据库不把共之记作确证本名。惠公从有据的前366年起始，惠公、武公、文公具体继位年失考；以三位连续君主在前366年至前256年（含两端）共111年间各分37年作插值，区间分别为前366—前330、前329—前293、前292—前256，内侧边界均标 interpolated，前366与前256锚点保持确定。此均分为年代估算，不是史料所载在位年数。东周惠公之后至秦灭前仍为史料缺。"
+      "西周武公承西周惠公、为西周文公之父；《史记·周本纪》及《史记集解》引徐广注支持其世系，但均未载本名。《周朝诸侯国君主列表》列名共之，未标明该名所据原始文献；《西周国》君主表则列姓名不详，故数据库不把共之记作确证本名。惠公从有据的前366年起始，惠公、武公、文公具体继位年失考；以三位连续君主在前366年至前256年（含两端）共111年间各分37年作插值，区间分别为前366—前330、前329—前293、前292—前256，内侧边界均标 interpolated，前366与前256锚点保持确定。此均分为年代估算，不是史料所载在位年数。东周惠公之后至秦灭前仍为史料缺。",
+      "称谓复核（2026-10）：本包君主卡片称呼写入对应 reign.title。已有谥号者使用 persons.posthumousNames 的首选本体（不带国名）；无谥号者采用已核对的人物 title，并去除国名前缀；已有非空 reign.title 亦按无国名称呼规则复核。具体来源沿用各人物 links 与本包 manifest.sources。"
     ]
   }
 }

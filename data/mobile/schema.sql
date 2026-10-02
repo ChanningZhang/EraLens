@@ -2,29 +2,29 @@ PRAGMA foreign_keys = ON;
 
 CREATE TABLE persons (
   id TEXT PRIMARY KEY, name TEXT NOT NULL, alt_names TEXT NOT NULL DEFAULT '[]',
-  ancestral_xing TEXT, clan_shi TEXT, birth_year INTEGER, birth_month INTEGER,
-  death_year INTEGER, death_month INTEGER, roles TEXT NOT NULL DEFAULT '[]', bio TEXT,
+  ancestral_xing TEXT, clan_shi TEXT, birth_year INTEGER, birth_month INTEGER, birth_day INTEGER, birth_confidence TEXT,
+  death_year INTEGER, death_month INTEGER, death_day INTEGER, death_confidence TEXT, roles TEXT NOT NULL DEFAULT '[]', bio TEXT,
   links TEXT NOT NULL DEFAULT '[]', posthumous_name TEXT, temple_name TEXT, title TEXT,
   search_terms TEXT NOT NULL DEFAULT '[]'
 );
 CREATE TABLE dynasty_groups (
   id TEXT PRIMARY KEY, name TEXT NOT NULL, alt_names TEXT NOT NULL DEFAULT '[]', scope TEXT NOT NULL,
   start_year INTEGER NOT NULL, start_month INTEGER NOT NULL, end_year INTEGER NOT NULL,
-  end_month INTEGER NOT NULL, start_abs INTEGER NOT NULL, end_abs INTEGER NOT NULL,
-  precision TEXT NOT NULL, note TEXT
+  end_month INTEGER NOT NULL, end_day INTEGER, end_confidence TEXT NOT NULL, start_abs INTEGER NOT NULL, end_abs INTEGER NOT NULL,
+  start_day INTEGER, start_confidence TEXT NOT NULL, note TEXT
 );
 CREATE TABLE dynasties (
   id TEXT PRIMARY KEY, name TEXT NOT NULL, alt_names TEXT NOT NULL DEFAULT '[]', scope TEXT NOT NULL,
   region TEXT NOT NULL, start_year INTEGER NOT NULL, start_month INTEGER NOT NULL, end_year INTEGER NOT NULL,
-  end_month INTEGER NOT NULL, start_abs INTEGER NOT NULL, end_abs INTEGER NOT NULL,
-  precision TEXT NOT NULL, color_token TEXT NOT NULL, parent_id TEXT, group_id TEXT,
+  end_month INTEGER NOT NULL, end_day INTEGER, end_confidence TEXT NOT NULL, start_abs INTEGER NOT NULL, end_abs INTEGER NOT NULL,
+  start_day INTEGER, start_confidence TEXT NOT NULL, color_token TEXT NOT NULL, parent_id TEXT, group_id TEXT,
   note TEXT, FOREIGN KEY(group_id) REFERENCES dynasty_groups(id)
 );
 CREATE TABLE reigns (
   id TEXT PRIMARY KEY, dynasty_id TEXT NOT NULL, person_id TEXT NOT NULL, title TEXT NOT NULL,
   era_names TEXT, start_year INTEGER NOT NULL, start_month INTEGER NOT NULL, start_day INTEGER,
   end_year INTEGER, end_month INTEGER, end_day INTEGER, start_abs INTEGER NOT NULL, end_abs INTEGER NOT NULL,
-  precision TEXT NOT NULL, start_date_confidence TEXT, end_date_confidence TEXT,
+  start_confidence TEXT NOT NULL, end_confidence TEXT NOT NULL,
   claim_track TEXT, claim_label TEXT, claim_role TEXT, is_informal_monarch INTEGER NOT NULL,
   is_main INTEGER, FOREIGN KEY(dynasty_id) REFERENCES dynasties(id), FOREIGN KEY(person_id) REFERENCES persons(id)
 );
@@ -35,7 +35,7 @@ CREATE TABLE event_locations (
 );
 CREATE TABLE events (
   id TEXT PRIMARY KEY, name TEXT NOT NULL, kind TEXT NOT NULL, time_mode TEXT NOT NULL,
-  precision TEXT NOT NULL, is_approximate INTEGER NOT NULL, date_note TEXT,
+  at_confidence TEXT, start_confidence TEXT, end_confidence TEXT, date_note TEXT,
   at_year INTEGER, at_month INTEGER, at_day INTEGER, at_abs INTEGER,
   start_year INTEGER, start_month INTEGER, start_day INTEGER, start_abs INTEGER,
   end_year INTEGER, end_month INTEGER, end_day INTEGER, end_abs INTEGER,
@@ -55,7 +55,7 @@ CREATE TABLE event_participants (
 CREATE TABLE relations (
   id TEXT PRIMARY KEY, from_type TEXT NOT NULL, from_id TEXT NOT NULL, to_type TEXT NOT NULL,
   to_id TEXT NOT NULL, kind TEXT NOT NULL, at_year INTEGER, at_month INTEGER, at_day INTEGER,
-  at_abs INTEGER, precision TEXT, event_id TEXT, UNIQUE(from_type, from_id, to_type, to_id, kind)
+  at_abs INTEGER, at_confidence TEXT, event_id TEXT, UNIQUE(from_type, from_id, to_type, to_id, kind)
 );
 CREATE TABLE dynasty_lane_groups (
   id TEXT PRIMARY KEY, primary_dynasty_id TEXT NOT NULL, phase_dynasty_ids TEXT NOT NULL DEFAULT '[]',
@@ -66,8 +66,8 @@ CREATE TABLE dynasty_capitals (
   longitude REAL NOT NULL, latitude REAL NOT NULL, coordinate_system TEXT NOT NULL,
   start_year INTEGER NOT NULL, start_month INTEGER NOT NULL, start_day INTEGER,
   end_year INTEGER NOT NULL, end_month INTEGER NOT NULL, end_day INTEGER,
-  start_abs INTEGER NOT NULL, end_abs INTEGER NOT NULL, precision TEXT NOT NULL, end_precision TEXT,
-  start_date_confidence TEXT, end_date_confidence TEXT, role TEXT NOT NULL, claim_track TEXT, note TEXT,
+  start_abs INTEGER NOT NULL, end_abs INTEGER NOT NULL, role TEXT NOT NULL, claim_track TEXT, note TEXT,
+  start_confidence TEXT NOT NULL, end_confidence TEXT NOT NULL,
   links TEXT NOT NULL DEFAULT '[]', FOREIGN KEY(dynasty_id) REFERENCES dynasties(id)
 );
 CREATE TABLE reign_capitals (

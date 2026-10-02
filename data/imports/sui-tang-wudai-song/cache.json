@@ -3113,14 +3113,15 @@
       "start": {
         "year": 907,
         "month": 1,
-        "abs": 10884
+        "abs": 10884,
+        "confidence": "year"
       },
       "end": {
         "year": 960,
         "month": 12,
-        "abs": 11531
+        "abs": 11531,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "907–960年北方五代更迭。"
     },
     {
@@ -3131,14 +3132,15 @@
       "start": {
         "year": 907,
         "month": 1,
-        "abs": 10884
+        "abs": 10884,
+        "confidence": "year"
       },
       "end": {
         "year": 979,
         "month": 12,
-        "abs": 11759
+        "abs": 11759,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "907–979年南方十国割据。"
     }
   ],
@@ -3154,14 +3156,15 @@
       "start": {
         "year": 581,
         "month": 3,
-        "abs": 6974
+        "abs": 6974,
+        "confidence": "month"
       },
       "end": {
         "year": 619,
         "month": 5,
-        "abs": 7432
+        "abs": 7432,
+        "confidence": "month"
       },
-      "precision": "month",
       "note": "581年杨坚受禅建隋，589年灭陈结束南北分裂；文帝时期整顿官制、律令与户籍财政，社会经济恢复。炀帝营建东都洛阳、开通沟通南北的运河并发动高句丽战争，持续征发加剧政局危机。618年杨广被杀、李渊建唐后，洛阳杨侗仍延续隋室；619年5月杨侗被废杀，隋亡。隋代制度与交通建设成为唐朝治理和南北经济联系的重要基础。"
     },
     {
@@ -3175,14 +3178,15 @@
       "start": {
         "year": 618,
         "month": 9,
-        "abs": 7424
+        "abs": 7424,
+        "confidence": "month"
       },
       "end": {
         "year": 619,
         "month": 5,
-        "abs": 7432
+        "abs": 7432,
+        "confidence": "month"
       },
-      "precision": "month",
       "note": "宇文化及杀杨浩后自立，国号许，旋为窦建德所败，619年覆亡。"
     },
     {
@@ -3197,14 +3201,15 @@
       "start": {
         "year": 618,
         "month": 11,
-        "abs": 7426
+        "abs": 7426,
+        "confidence": "month"
       },
       "end": {
         "year": 621,
         "month": 5,
-        "abs": 7456
+        "abs": 7456,
+        "confidence": "month"
       },
-      "precision": "month",
       "note": "窦建德于618年11月在乐寿建夏称王；621年5月虎牢战败被俘，夏政权覆亡。"
     },
     {
@@ -3218,14 +3223,15 @@
       "start": {
         "year": 619,
         "month": 1,
-        "abs": 7428
+        "abs": 7428,
+        "confidence": "month"
       },
       "end": {
         "year": 621,
         "month": 6,
-        "abs": 7457
+        "abs": 7457,
+        "confidence": "month"
       },
-      "precision": "month",
       "note": "王世充于619年在洛阳称帝、国号郑；621年6月4日（武德四年五月丙寅）降唐，政权覆亡。"
     },
     {
@@ -3239,14 +3245,15 @@
       "start": {
         "year": 618,
         "month": 6,
-        "abs": 7421
+        "abs": 7421,
+        "confidence": "month"
       },
       "end": {
         "year": 907,
         "month": 1,
-        "abs": 10884
+        "abs": 10884,
+        "confidence": "year"
       },
-      "precision": "month",
       "note": "唐（618–907）由李渊于隋末建立，定都长安，初期经太宗治理和高宗时期的扩张形成强盛帝国；690–705年武则天改国号周，唐中宗复位后恢复李唐。玄宗开元年间臻于鼎盛，安史之乱后中央权力削弱，藩镇、宦官与朝廷长期角力；黄巢起义进一步加剧晚唐危机，907年朱温迫使哀帝禅位，唐亡。唐代科举、律令制度与文学艺术发展显著，长安也是东亚及欧亚交流的重要中心。"
     },
     {
@@ -3260,14 +3267,15 @@
       "start": {
         "year": 690,
         "month": 1,
-        "abs": 8280
+        "abs": 8280,
+        "confidence": "year"
       },
       "end": {
         "year": 705,
         "month": 1,
-        "abs": 8460
+        "abs": 8460,
+        "confidence": "year"
       },
-      "precision": "year",
       "note": "武周是武则天于690年改唐为周后建立的王朝，定都洛阳，至705年神龙政变后唐中宗复位而终。武则天由高宗皇后、临朝太后逐步掌握政权并正式称帝；武周延续唐代官僚与制度，同时通过选官、整顿统治巩固皇权，并以佛教建构政治声望。其统治改变唐朝皇位继承与政治格局，退位后国号复唐。"
     },
     {
@@ -3281,14 +3289,15 @@
       "start": {
         "year": 907,
         "month": 1,
-        "abs": 10884
+        "abs": 10884,
+        "confidence": "year"
       },
       "end": {
         "year": 923,
         "month": 1,
-        "abs": 11076
+        "abs": 11076,
+        "confidence": "year"
       },
-      "precision": "year",
       "groupId": "wudai",
       "note": "唐末朱温凭宣武军控制中原，907年受禅建国、定都开封。后梁延续藩镇主导的政治格局，与河东李克用、李存勖父子长期争战；朱温死后，朱友珪、朱友贞相继卷入宫变与继承冲突。923年后唐军攻入开封，后梁覆亡。"
     },
@@ -3303,14 +3312,15 @@
       "start": {
         "year": 923,
         "month": 1,
-        "abs": 11076
+        "abs": 11076,
+        "confidence": "year"
       },
       "end": {
         "year": 936,
         "month": 1,
-        "abs": 11232
+        "abs": 11232,
+        "confidence": "year"
       },
-      "precision": "year",
       "groupId": "wudai",
       "note": "李存勖于923年灭后梁、建立后唐，定都洛阳；政权由沙陀军事集团发展而来，以唐为国号。明宗李嗣源时期一度整顿吏治、恢复秩序，后唐又于925年灭前蜀。其后皇位更迭与藩镇兵变相互交织，河东节度使石敬瑭借契丹兵攻入洛阳，后唐于936年灭亡。"
     },
@@ -3325,14 +3335,15 @@
       "start": {
         "year": 936,
         "month": 1,
-        "abs": 11232
+        "abs": 11232,
+        "confidence": "year"
       },
       "end": {
         "year": 947,
         "month": 1,
-        "abs": 11364
+        "abs": 11364,
+        "confidence": "year"
       },
-      "precision": "year",
       "groupId": "wudai",
       "note": "石敬瑭于936年借契丹兵推翻后唐、建立后晋，定都开封。为取得契丹支持，他称契丹主为父并割让燕云十六州，后晋因此长期受制于契丹。石重贵即位后改变对契丹的臣属姿态，引发战争；契丹军于946—947年南下攻陷开封，后晋覆亡。"
     },
@@ -3347,14 +3358,15 @@
       "start": {
         "year": 947,
         "month": 1,
-        "abs": 11364
+        "abs": 11364,
+        "confidence": "year"
       },
       "end": {
         "year": 951,
         "month": 1,
-        "abs": 11412
+        "abs": 11412,
+        "confidence": "year"
       },
-      "precision": "year",
       "groupId": "wudai",
       "note": "契丹灭后晋、北撤后，刘知远于947年在太原称帝，随后进入开封建立后汉。后汉以沙陀军政集团为统治核心，疆域和国祚都较短；刘承祐即位后与郭威等将领冲突，950年郭威起兵，次年建立后周，后汉结束。"
     },
@@ -3369,14 +3381,15 @@
       "start": {
         "year": 951,
         "month": 1,
-        "abs": 11412
+        "abs": 11412,
+        "confidence": "year"
       },
       "end": {
         "year": 960,
         "month": 1,
-        "abs": 11520
+        "abs": 11520,
+        "confidence": "year"
       },
-      "precision": "year",
       "groupId": "wudai",
       "note": "郭威于951年建立后周，定都开封；继位的柴荣整顿军队与财政，削弱割据势力，并向南唐用兵、取得淮南等地，使中原政权的统一能力增强。柴荣北伐途中病逝，幼主柴宗训继位。960年赵匡胤发动陈桥兵变，后周禅代为宋，北宋继而推进统一。"
     },
@@ -3392,14 +3405,15 @@
       "start": {
         "year": 902,
         "month": 1,
-        "abs": 10824
+        "abs": 10824,
+        "confidence": "year"
       },
       "end": {
         "year": 937,
         "month": 1,
-        "abs": 11244
+        "abs": 11244,
+        "confidence": "year"
       },
-      "precision": "year",
       "groupId": "shiguo",
       "note": "杨行密以淮南为根基，控制扬州及江淮地区，为杨吴奠定基础。杨隆演时期徐温掌握实权，919年杨氏建立吴国，927年杨溥称帝；政权名义上由杨氏世袭，实际长期受徐氏控制。937年徐知诰迫杨溥禅位，建立南唐，杨吴结束。"
     },
@@ -3414,14 +3428,15 @@
       "start": {
         "year": 937,
         "month": 1,
-        "abs": 11244
+        "abs": 11244,
+        "confidence": "year"
       },
       "end": {
         "year": 975,
         "month": 1,
-        "abs": 11700
+        "abs": 11700,
+        "confidence": "year"
       },
-      "precision": "year",
       "groupId": "shiguo",
       "note": "徐知诰（李昪）于937年取代杨吴，建立南唐，以金陵为都。南唐依托江淮经济与文臣治理，李璟时期一度向闽、楚扩张；但958年败于后周，割让江北地并去帝号，国势转入守成。975年北宋攻陷金陵，后主李煜出降，南唐覆亡。"
     },
@@ -3436,14 +3451,15 @@
       "start": {
         "year": 907,
         "month": 1,
-        "abs": 10884
+        "abs": 10884,
+        "confidence": "year"
       },
       "end": {
         "year": 978,
         "month": 1,
-        "abs": 11736
+        "abs": 11736,
+        "confidence": "year"
       },
-      "precision": "year",
       "groupId": "shiguo",
       "note": "钱镠据有两浙、以杭州为中心，钱氏政权在五代时期受封吴越王，并延续至北宋初。吴越通过向历代中原王朝称臣来维持地方自治，较少卷入北方王朝争战；钱氏经营水利、海塘和区域贸易。978年钱俶纳土归宋，两浙和平并入宋朝。"
     },
@@ -3458,14 +3474,15 @@
       "start": {
         "year": 909,
         "month": 1,
-        "abs": 10908
+        "abs": 10908,
+        "confidence": "year"
       },
       "end": {
         "year": 945,
         "month": 1,
-        "abs": 11340
+        "abs": 11340,
+        "confidence": "year"
       },
-      "precision": "year",
       "groupId": "shiguo",
       "note": "王潮、王审知兄弟控制福建后，由王审知建立王氏政权，以福州为中心。闽地凭山海形势发展港口贸易，并与中原王朝保持册封关系。王审知去世后，继承纷争和福州、建州对立不断削弱政权；945年南唐军攻陷建州，王延政出降，闽亡。"
     },
@@ -3480,14 +3497,15 @@
       "start": {
         "year": 917,
         "month": 1,
-        "abs": 11004
+        "abs": 11004,
+        "confidence": "year"
       },
       "end": {
         "year": 971,
         "month": 1,
-        "abs": 11652
+        "abs": 11652,
+        "confidence": "year"
       },
-      "precision": "year",
       "groupId": "shiguo",
       "note": "刘氏政权以广州为中心，控制岭南并曾向广西及交趾方向扩展；刘龑于917年称帝，次年改国号为汉，史称南汉。广州的港口贸易和岭南地理屏障支撑其长期独立，后期宫廷权争与统治失序加重。971年北宋军攻入广州，刘鋹出降，南汉结束。"
     },
@@ -3502,14 +3520,15 @@
       "start": {
         "year": 907,
         "month": 1,
-        "abs": 10884
+        "abs": 10884,
+        "confidence": "year"
       },
       "end": {
         "year": 925,
         "month": 1,
-        "abs": 11100
+        "abs": 11100,
+        "confidence": "year"
       },
-      "precision": "year",
       "groupId": "shiguo",
       "note": "王建在唐末据有西川，以成都为中心建立前蜀，907年称帝。前蜀以四川盆地为根基，曾控制东川并扩展至汉中等地，借地势和地方资源维持独立。王建死后王衍继位，宫廷用人及边防渐趋松弛；925年后唐军入蜀，王衍出降，前蜀亡。"
     },
@@ -3524,14 +3543,15 @@
       "start": {
         "year": 934,
         "month": 1,
-        "abs": 11208
+        "abs": 11208,
+        "confidence": "year"
       },
       "end": {
         "year": 965,
         "month": 2,
-        "abs": 11581
+        "abs": 11581,
+        "confidence": "month"
       },
-      "precision": "year",
       "groupId": "shiguo",
       "note": "孟知祥在后唐内乱中控制两川，934年于成都建立后蜀。政权以四川盆地为核心，拥有相对稳定的农业和财政基础；孟昶统治前期延续地方治理，后期宫廷开支与防务问题加重。965年北宋军攻入成都，孟昶出降，后蜀覆亡。"
     },
@@ -3546,14 +3566,15 @@
       "start": {
         "year": 924,
         "month": 1,
-        "abs": 11088
+        "abs": 11088,
+        "confidence": "year"
       },
       "end": {
         "year": 963,
         "month": 1,
-        "abs": 11556
+        "abs": 11556,
+        "confidence": "year"
       },
-      "precision": "year",
       "groupId": "shiguo",
       "note": "高季兴以江陵为据点建立荆南政权，后受封南平王。其辖境较小，却扼长江中游水陆交通；政权通过朝贡、贸易和在后唐、后晋及南方诸国之间周旋维持生存，虽列为十国之一，却始终未称帝。963年高继冲纳土归宋，荆南结束。"
     },
@@ -3568,14 +3589,15 @@
       "start": {
         "year": 907,
         "month": 1,
-        "abs": 10884
+        "abs": 10884,
+        "confidence": "year"
       },
       "end": {
         "year": 951,
         "month": 1,
-        "abs": 11412
+        "abs": 11412,
+        "confidence": "year"
       },
-      "precision": "year",
       "groupId": "shiguo",
       "note": "马殷控制湖南、以潭州（长沙）为中心建立马楚，获后梁封楚王。马楚依靠农业、茶叶贸易和与中原王朝的朝贡关系维持地方政权，马希范时期疆域与财赋达到高峰。此后诸王争位引发内战，南唐乘势攻入长沙；951年马希崇出降，马楚亡。"
     },
@@ -3590,14 +3612,15 @@
       "start": {
         "year": 951,
         "month": 1,
-        "abs": 11412
+        "abs": 11412,
+        "confidence": "year"
       },
       "end": {
         "year": 979,
         "month": 1,
-        "abs": 11748
+        "abs": 11748,
+        "confidence": "year"
       },
-      "precision": "year",
       "groupId": "shiguo",
       "note": "后汉宗室刘崇（刘旻）于951年在太原建立北汉，统治核心在今山西北部，是五代结束后仍与北宋对峙的十国之一。北汉依靠契丹援助抵御后周、北宋，但疆域狭小、资源有限，长期处于军事压力之下。979年宋太宗围攻太原，刘继元出降，北汉灭亡。"
     },
@@ -3612,14 +3635,15 @@
       "start": {
         "year": 960,
         "month": 2,
-        "abs": 11521
+        "abs": 11521,
+        "confidence": "month"
       },
       "end": {
         "year": 1127,
         "month": 3,
-        "abs": 13526
+        "abs": 13526,
+        "confidence": "month"
       },
-      "precision": "month",
       "note": "960年赵匡胤在陈桥兵变后建立宋朝、定都开封；太祖、太宗先后平定主要割据政权，形成中原与南方的大体统一。北宋以文官体系、科举和中央机构改革加强中央集权，农业、城市商业、手工业与印刷文化发展。朝廷长期面对辽、西夏等北方政权，1004年澶渊之盟后宋辽维持相对稳定的边境关系。王安石变法引发持续政争；联金灭辽后宋金关系迅速破裂，1127年金军攻陷开封，徽、钦二帝被俘，北宋覆亡，宋室随后在南方延续。"
     },
     {
@@ -3633,14 +3657,15 @@
       "start": {
         "year": 1127,
         "month": 6,
-        "abs": 13529
+        "abs": 13529,
+        "confidence": "month"
       },
       "end": {
         "year": 1279,
         "month": 3,
-        "abs": 15350
+        "abs": 15350,
+        "confidence": "month"
       },
-      "precision": "month",
       "note": "1127年靖康之变后，赵构在应天府即位，宋廷南迁并定都临安，疆域以淮河以南及东南为核心，先与金长期对峙，后又面对蒙古扩张。北方人口南迁推动江南开发，临安成为政治与商业中心，手工业、城市文化和海上贸易繁盛。1276年临安陷落后，宋室在东南沿海延续抵抗，1279年崖山战败，南宋覆亡。"
     },
     {
@@ -3655,14 +3680,15 @@
       "start": {
         "year": 756,
         "month": 1,
-        "abs": 9072
+        "abs": 9072,
+        "confidence": "year"
       },
       "end": {
         "year": 763,
         "month": 12,
-        "abs": 9167
+        "abs": 9167,
+        "confidence": "month"
       },
-      "precision": "year",
       "colorToken": "ochre",
       "note": "安禄山于756年2月5日在洛阳称帝、国号大燕。政权由安禄山、安庆绪、史思明、史朝义先后统治；史朝义政权于763年初败亡，具体自杀日期记载有异，末端以败亡日期范围内的推定日表示。",
       "startAbs": 9072,
@@ -3684,17 +3710,18 @@
         "year": 581,
         "month": 3,
         "abs": 6974,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "end": {
         "year": 604,
         "month": 8,
         "abs": 7255,
-        "day": 13
+        "day": 13,
+        "confidence": "day"
       },
       "startAbs": 6974,
       "endAbs": 7255,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3709,17 +3736,18 @@
         "year": 604,
         "month": 8,
         "abs": 7255,
-        "day": 13
+        "day": 13,
+        "confidence": "day"
       },
       "end": {
         "year": 618,
         "month": 4,
         "abs": 7419,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "startAbs": 7255,
       "endAbs": 7419,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3732,17 +3760,18 @@
         "year": 618,
         "month": 4,
         "abs": 7419,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "end": {
         "year": 618,
         "month": 10,
         "abs": 7425,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "startAbs": 7419,
       "endAbs": 7425,
-      "precision": "day",
       "claimRole": "rival",
       "isMain": false
     },
@@ -3756,17 +3785,18 @@
         "year": 617,
         "month": 12,
         "abs": 7415,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "end": {
         "year": 618,
         "month": 6,
         "abs": 7421,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "startAbs": 7415,
       "endAbs": 7421,
-      "precision": "day",
       "claimTrack": "changan",
       "claimLabel": "长安",
       "claimRole": "rival",
@@ -3782,17 +3812,18 @@
         "year": 618,
         "month": 6,
         "abs": 7421,
-        "day": 22
+        "day": 22,
+        "confidence": "day"
       },
       "end": {
         "year": 619,
         "month": 5,
         "abs": 7432,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "startAbs": 7421,
       "endAbs": 7432,
-      "precision": "day",
       "claimTrack": "luoyang",
       "claimLabel": "洛阳",
       "claimRole": "rival",
@@ -3810,17 +3841,18 @@
         "year": 618,
         "month": 10,
         "abs": 7425,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "end": {
         "year": 619,
         "month": 3,
         "abs": 7430,
-        "day": 21
+        "day": 21,
+        "confidence": "day"
       },
       "startAbs": 7425,
       "endAbs": 7430,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -3832,16 +3864,17 @@
       "start": {
         "year": 618,
         "month": 11,
-        "abs": 7426
+        "abs": 7426,
+        "confidence": "month"
       },
       "end": {
         "year": 621,
         "month": 5,
-        "abs": 7456
+        "abs": 7456,
+        "confidence": "month"
       },
       "startAbs": 7426,
       "endAbs": 7456,
-      "precision": "month",
       "isMain": false
     },
     {
@@ -3853,16 +3886,17 @@
       "start": {
         "year": 619,
         "month": 1,
-        "abs": 7428
+        "abs": 7428,
+        "confidence": "month"
       },
       "end": {
         "year": 621,
         "month": 6,
-        "abs": 7457
+        "abs": 7457,
+        "confidence": "month"
       },
       "startAbs": 7428,
       "endAbs": 7457,
-      "precision": "month",
       "isMain": false
     },
     {
@@ -3877,17 +3911,18 @@
         "year": 618,
         "month": 6,
         "abs": 7421,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "end": {
         "year": 626,
         "month": 9,
         "abs": 7520,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "startAbs": 7421,
       "endAbs": 7520,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3902,17 +3937,18 @@
         "year": 626,
         "month": 9,
         "abs": 7520,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "end": {
         "year": 649,
         "month": 7,
         "abs": 7794,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "startAbs": 7520,
       "endAbs": 7794,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3940,17 +3976,18 @@
         "year": 649,
         "month": 7,
         "abs": 7794,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "end": {
         "year": 683,
         "month": 12,
         "abs": 8207,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "startAbs": 7794,
       "endAbs": 8207,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3965,17 +4002,18 @@
         "year": 684,
         "month": 1,
         "abs": 8208,
-        "day": 3
+        "day": 3,
+        "confidence": "day"
       },
       "end": {
         "year": 684,
         "month": 2,
         "abs": 8209,
-        "day": 26
+        "day": 26,
+        "confidence": "day"
       },
       "startAbs": 8208,
       "endAbs": 8209,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -3990,17 +4028,18 @@
         "year": 684,
         "month": 2,
         "abs": 8209,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "end": {
         "year": 690,
         "month": 10,
         "abs": 8289,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "startAbs": 8209,
       "endAbs": 8289,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -4016,17 +4055,18 @@
         "year": 705,
         "month": 2,
         "abs": 8461,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "end": {
         "year": 710,
         "month": 7,
         "abs": 8526,
-        "day": 3
+        "day": 3,
+        "confidence": "day"
       },
       "startAbs": 8461,
       "endAbs": 8526,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -4043,17 +4083,18 @@
         "year": 710,
         "month": 7,
         "abs": 8526,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "end": {
         "year": 712,
         "month": 9,
         "abs": 8552,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "startAbs": 8526,
       "endAbs": 8552,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -4070,17 +4111,18 @@
         "year": 712,
         "month": 9,
         "abs": 8552,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "end": {
         "year": 756,
         "month": 8,
         "abs": 9079,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "startAbs": 8552,
       "endAbs": 9079,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -4098,17 +4140,18 @@
         "year": 756,
         "month": 8,
         "abs": 9079,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "end": {
         "year": 762,
         "month": 5,
         "abs": 9148,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "startAbs": 9079,
       "endAbs": 9148,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -4126,17 +4169,18 @@
         "year": 762,
         "month": 5,
         "abs": 9148,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "end": {
         "year": 779,
         "month": 6,
         "abs": 9353,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "startAbs": 9148,
       "endAbs": 9353,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -4153,17 +4197,18 @@
         "year": 779,
         "month": 6,
         "abs": 9353,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "end": {
         "year": 805,
         "month": 2,
         "abs": 9661,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "startAbs": 9353,
       "endAbs": 9661,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -4178,17 +4223,18 @@
         "year": 805,
         "month": 2,
         "abs": 9661,
-        "day": 28
+        "day": 28,
+        "confidence": "day"
       },
       "end": {
         "year": 805,
         "month": 8,
         "abs": 9667,
-        "day": 31
+        "day": 31,
+        "confidence": "day"
       },
       "startAbs": 9661,
       "endAbs": 9667,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -4203,17 +4249,18 @@
         "year": 805,
         "month": 9,
         "abs": 9668,
-        "day": 5
+        "day": 5,
+        "confidence": "day"
       },
       "end": {
         "year": 820,
         "month": 2,
         "abs": 9841,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "startAbs": 9668,
       "endAbs": 9841,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -4228,17 +4275,18 @@
         "year": 820,
         "month": 2,
         "abs": 9841,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "end": {
         "year": 824,
         "month": 2,
         "abs": 9889,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "startAbs": 9841,
       "endAbs": 9889,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -4253,17 +4301,18 @@
         "year": 824,
         "month": 2,
         "abs": 9889,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "end": {
         "year": 826,
         "month": 12,
         "abs": 9923,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "startAbs": 9889,
       "endAbs": 9923,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -4280,17 +4329,18 @@
         "year": 827,
         "month": 1,
         "abs": 9924,
-        "day": 13
+        "day": 13,
+        "confidence": "day"
       },
       "end": {
         "year": 840,
         "month": 4,
         "abs": 10083,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "startAbs": 9924,
       "endAbs": 10083,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -4305,17 +4355,18 @@
         "year": 840,
         "month": 4,
         "abs": 10083,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "end": {
         "year": 846,
         "month": 4,
         "abs": 10155,
-        "day": 22
+        "day": 22,
+        "confidence": "day"
       },
       "startAbs": 10083,
       "endAbs": 10155,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -4330,17 +4381,18 @@
         "year": 846,
         "month": 4,
         "abs": 10155,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "end": {
         "year": 859,
         "month": 9,
         "abs": 10316,
-        "day": 13
+        "day": 13,
+        "confidence": "day"
       },
       "startAbs": 10155,
       "endAbs": 10316,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -4356,17 +4408,18 @@
         "year": 859,
         "month": 9,
         "abs": 10316,
-        "day": 13
+        "day": 13,
+        "confidence": "day"
       },
       "end": {
         "year": 873,
         "month": 8,
         "abs": 10483,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "startAbs": 10316,
       "endAbs": 10483,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -4386,17 +4439,18 @@
         "year": 873,
         "month": 8,
         "abs": 10483,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "end": {
         "year": 888,
         "month": 4,
         "abs": 10659,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "startAbs": 10483,
       "endAbs": 10659,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -4417,17 +4471,18 @@
         "year": 888,
         "month": 4,
         "abs": 10659,
-        "day": 22
+        "day": 22,
+        "confidence": "day"
       },
       "end": {
         "year": 904,
         "month": 9,
         "abs": 10856,
-        "day": 22
+        "day": 22,
+        "confidence": "day"
       },
       "startAbs": 10659,
       "endAbs": 10856,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -4442,17 +4497,18 @@
         "year": 904,
         "month": 9,
         "abs": 10856,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "end": {
         "year": 907,
         "month": 5,
         "abs": 10888,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "startAbs": 10856,
       "endAbs": 10888,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -4474,17 +4530,18 @@
         "year": 690,
         "month": 10,
         "abs": 8289,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "end": {
         "year": 705,
         "month": 2,
         "abs": 8461,
-        "day": 22
+        "day": 22,
+        "confidence": "day"
       },
       "startAbs": 8289,
       "endAbs": 8461,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -4497,17 +4554,18 @@
         "year": 907,
         "month": 6,
         "abs": 10889,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "end": {
         "year": 912,
         "month": 7,
         "abs": 10950,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "startAbs": 10889,
       "endAbs": 10950,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -4520,17 +4578,18 @@
         "year": 912,
         "month": 7,
         "abs": 10950,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "end": {
         "year": 913,
         "month": 3,
         "abs": 10958,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "startAbs": 10950,
       "endAbs": 10958,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -4543,17 +4602,18 @@
         "year": 913,
         "month": 3,
         "abs": 10958,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "end": {
         "year": 923,
         "month": 11,
         "abs": 11086,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "startAbs": 10958,
       "endAbs": 11086,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -4566,17 +4626,18 @@
         "year": 923,
         "month": 5,
         "abs": 11080,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "end": {
         "year": 926,
         "month": 6,
         "abs": 11117,
-        "day": 5
+        "day": 5,
+        "confidence": "day"
       },
       "startAbs": 11080,
       "endAbs": 11117,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -4589,17 +4650,18 @@
         "year": 926,
         "month": 6,
         "abs": 11117,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "end": {
         "year": 933,
         "month": 12,
         "abs": 11207,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "startAbs": 11117,
       "endAbs": 11207,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -4612,17 +4674,18 @@
         "year": 933,
         "month": 12,
         "abs": 11207,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "end": {
         "year": 934,
         "month": 5,
         "abs": 11212,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "startAbs": 11207,
       "endAbs": 11212,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -4635,17 +4698,18 @@
         "year": 934,
         "month": 5,
         "abs": 11212,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "end": {
         "year": 937,
         "month": 1,
         "abs": 11244,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "startAbs": 11212,
       "endAbs": 11244,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -4658,17 +4722,18 @@
         "year": 936,
         "month": 11,
         "abs": 11242,
-        "day": 28
+        "day": 28,
+        "confidence": "day"
       },
       "end": {
         "year": 942,
         "month": 7,
         "abs": 11310,
-        "day": 28
+        "day": 28,
+        "confidence": "day"
       },
       "startAbs": 11242,
       "endAbs": 11310,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -4681,17 +4746,18 @@
         "year": 942,
         "month": 7,
         "abs": 11310,
-        "day": 28
+        "day": 28,
+        "confidence": "day"
       },
       "end": {
         "year": 947,
         "month": 1,
         "abs": 11364,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "startAbs": 11310,
       "endAbs": 11364,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -4704,17 +4770,18 @@
         "year": 947,
         "month": 3,
         "abs": 11366,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "end": {
         "year": 948,
         "month": 3,
         "abs": 11378,
-        "day": 30
+        "day": 30,
+        "confidence": "day"
       },
       "startAbs": 11366,
       "endAbs": 11378,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -4727,17 +4794,18 @@
         "year": 948,
         "month": 3,
         "abs": 11378,
-        "day": 30
+        "day": 30,
+        "confidence": "day"
       },
       "end": {
         "year": 951,
         "month": 1,
         "abs": 11412,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "startAbs": 11378,
       "endAbs": 11412,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -4750,17 +4818,18 @@
         "year": 951,
         "month": 2,
         "abs": 11413,
-        "day": 13
+        "day": 13,
+        "confidence": "day"
       },
       "end": {
         "year": 954,
         "month": 2,
         "abs": 11449,
-        "day": 22
+        "day": 22,
+        "confidence": "day"
       },
       "startAbs": 11413,
       "endAbs": 11449,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -4773,17 +4842,18 @@
         "year": 954,
         "month": 2,
         "abs": 11449,
-        "day": 22
+        "day": 22,
+        "confidence": "day"
       },
       "end": {
         "year": 959,
         "month": 7,
         "abs": 11514,
-        "day": 27
+        "day": 27,
+        "confidence": "day"
       },
       "startAbs": 11449,
       "endAbs": 11514,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -4796,17 +4866,18 @@
         "year": 959,
         "month": 7,
         "abs": 11514,
-        "day": 28
+        "day": 28,
+        "confidence": "day"
       },
       "end": {
         "year": 960,
         "month": 2,
         "abs": 11521,
-        "day": 3
+        "day": 3,
+        "confidence": "day"
       },
       "startAbs": 11514,
       "endAbs": 11521,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -4819,17 +4890,18 @@
         "year": 902,
         "month": 6,
         "abs": 10829,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "end": {
         "year": 905,
         "month": 12,
         "abs": 10871,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "startAbs": 10829,
       "endAbs": 10871,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -4842,17 +4914,18 @@
         "year": 905,
         "month": 12,
         "abs": 10871,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "end": {
         "year": 918,
         "month": 6,
         "abs": 11021,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "startAbs": 10871,
       "endAbs": 11021,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -4865,17 +4938,18 @@
         "year": 918,
         "month": 6,
         "abs": 11021,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "end": {
         "year": 920,
         "month": 12,
         "abs": 11051,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "startAbs": 11021,
       "endAbs": 11051,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -4888,17 +4962,18 @@
         "year": 920,
         "month": 12,
         "abs": 11051,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "end": {
         "year": 937,
         "month": 11,
         "abs": 11254,
-        "day": 17
+        "day": 17,
+        "confidence": "day"
       },
       "startAbs": 11051,
       "endAbs": 11254,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -4911,17 +4986,18 @@
         "year": 937,
         "month": 10,
         "abs": 11253,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "end": {
         "year": 943,
         "month": 3,
         "abs": 11318,
-        "day": 30
+        "day": 30,
+        "confidence": "day"
       },
       "startAbs": 11253,
       "endAbs": 11318,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -4934,17 +5010,18 @@
         "year": 943,
         "month": 3,
         "abs": 11318,
-        "day": 30
+        "day": 30,
+        "confidence": "day"
       },
       "end": {
         "year": 961,
         "month": 11,
         "abs": 11542,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "startAbs": 11318,
       "endAbs": 11542,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -4957,17 +5034,18 @@
         "year": 961,
         "month": 11,
         "abs": 11542,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "end": {
         "year": 975,
         "month": 11,
         "abs": 11710,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "startAbs": 11542,
       "endAbs": 11710,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -4980,17 +5058,18 @@
         "year": 907,
         "month": 5,
         "abs": 10888,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "end": {
         "year": 932,
         "month": 5,
         "abs": 11188,
-        "day": 6
+        "day": 6,
+        "confidence": "day"
       },
       "startAbs": 10888,
       "endAbs": 11188,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5003,17 +5082,18 @@
         "year": 932,
         "month": 5,
         "abs": 11188,
-        "day": 6
+        "day": 6,
+        "confidence": "day"
       },
       "end": {
         "year": 941,
         "month": 8,
         "abs": 11299,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "startAbs": 11188,
       "endAbs": 11299,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5026,17 +5106,18 @@
         "year": 941,
         "month": 8,
         "abs": 11299,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "end": {
         "year": 947,
         "month": 3,
         "abs": 11366,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "startAbs": 11299,
       "endAbs": 11366,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5049,17 +5130,18 @@
         "year": 947,
         "month": 3,
         "abs": 11366,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "end": {
         "year": 948,
         "month": 2,
         "abs": 11377,
-        "day": 13
+        "day": 13,
+        "confidence": "day"
       },
       "startAbs": 11366,
       "endAbs": 11377,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5072,17 +5154,18 @@
         "year": 948,
         "month": 2,
         "abs": 11377,
-        "day": 13
+        "day": 13,
+        "confidence": "day"
       },
       "end": {
         "year": 978,
         "month": 5,
         "abs": 11740,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "startAbs": 11377,
       "endAbs": 11740,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5095,17 +5178,18 @@
         "year": 909,
         "month": 1,
         "abs": 10908,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "end": {
         "year": 925,
         "month": 12,
         "abs": 11111,
-        "day": 30
+        "day": 30,
+        "confidence": "day"
       },
       "startAbs": 10908,
       "endAbs": 11111,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5118,17 +5202,18 @@
         "year": 925,
         "month": 12,
         "abs": 11111,
-        "day": 30
+        "day": 30,
+        "confidence": "day"
       },
       "end": {
         "year": 927,
         "month": 1,
         "abs": 11124,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "startAbs": 11111,
       "endAbs": 11124,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5141,17 +5226,18 @@
         "year": 927,
         "month": 1,
         "abs": 11124,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "end": {
         "year": 935,
         "month": 11,
         "abs": 11230,
-        "day": 17
+        "day": 17,
+        "confidence": "day"
       },
       "startAbs": 11124,
       "endAbs": 11230,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5164,17 +5250,18 @@
         "year": 935,
         "month": 11,
         "abs": 11230,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "end": {
         "year": 939,
         "month": 8,
         "abs": 11275,
-        "day": 29
+        "day": 29,
+        "confidence": "day"
       },
       "startAbs": 11230,
       "endAbs": 11275,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5187,17 +5274,18 @@
         "year": 939,
         "month": 8,
         "abs": 11275,
-        "day": 30
+        "day": 30,
+        "confidence": "day"
       },
       "end": {
         "year": 944,
         "month": 4,
         "abs": 11331,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "startAbs": 11275,
       "endAbs": 11331,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5210,17 +5298,18 @@
         "year": 944,
         "month": 4,
         "abs": 11331,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "end": {
         "year": 945,
         "month": 2,
         "abs": 11341,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "startAbs": 11331,
       "endAbs": 11341,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5232,17 +5321,18 @@
       "start": {
         "year": 943,
         "month": 3,
-        "abs": 11318
+        "abs": 11318,
+        "confidence": "month"
       },
       "end": {
         "year": 945,
         "month": 10,
         "abs": 11349,
-        "day": 2
+        "day": 2,
+        "confidence": "month"
       },
       "startAbs": 11318,
       "endAbs": 11349,
-      "precision": "month",
       "isMain": false
     },
     {
@@ -5255,17 +5345,18 @@
         "year": 917,
         "month": 9,
         "abs": 11012,
-        "day": 5
+        "day": 5,
+        "confidence": "day"
       },
       "end": {
         "year": 942,
         "month": 6,
         "abs": 11309,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "startAbs": 11012,
       "endAbs": 11309,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5278,17 +5369,18 @@
         "year": 942,
         "month": 6,
         "abs": 11309,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "end": {
         "year": 943,
         "month": 4,
         "abs": 11319,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "startAbs": 11309,
       "endAbs": 11319,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5301,17 +5393,18 @@
         "year": 943,
         "month": 4,
         "abs": 11319,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "end": {
         "year": 958,
         "month": 9,
         "abs": 11504,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "startAbs": 11319,
       "endAbs": 11504,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5324,17 +5417,18 @@
         "year": 958,
         "month": 9,
         "abs": 11504,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "end": {
         "year": 971,
         "month": 3,
         "abs": 11654,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "startAbs": 11504,
       "endAbs": 11654,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5347,17 +5441,18 @@
         "year": 907,
         "month": 4,
         "abs": 10887,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "end": {
         "year": 918,
         "month": 7,
         "abs": 11022,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "startAbs": 10887,
       "endAbs": 11022,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5370,17 +5465,18 @@
         "year": 918,
         "month": 7,
         "abs": 11022,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "end": {
         "year": 925,
         "month": 11,
         "abs": 11110,
-        "day": 29
+        "day": 29,
+        "confidence": "day"
       },
       "startAbs": 11022,
       "endAbs": 11110,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5393,17 +5489,18 @@
         "year": 934,
         "month": 3,
         "abs": 11210,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "end": {
         "year": 934,
         "month": 9,
         "abs": 11216,
-        "day": 7
+        "day": 7,
+        "confidence": "day"
       },
       "startAbs": 11210,
       "endAbs": 11216,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5416,17 +5513,18 @@
         "year": 934,
         "month": 9,
         "abs": 11216,
-        "day": 7
+        "day": 7,
+        "confidence": "day"
       },
       "end": {
         "year": 965,
         "month": 2,
         "abs": 11581,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "startAbs": 11216,
       "endAbs": 11581,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5439,17 +5537,18 @@
         "year": 924,
         "month": 6,
         "abs": 11093,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "end": {
         "year": 928,
         "month": 1,
         "abs": 11136,
-        "day": 28
+        "day": 28,
+        "confidence": "day"
       },
       "startAbs": 11093,
       "endAbs": 11136,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5462,17 +5561,18 @@
         "year": 928,
         "month": 1,
         "abs": 11136,
-        "day": 28
+        "day": 28,
+        "confidence": "day"
       },
       "end": {
         "year": 948,
         "month": 7,
         "abs": 11382,
-        "day": 28
+        "day": 28,
+        "confidence": "day"
       },
       "startAbs": 11136,
       "endAbs": 11382,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5485,17 +5585,18 @@
         "year": 948,
         "month": 7,
         "abs": 11382,
-        "day": 28
+        "day": 28,
+        "confidence": "day"
       },
       "end": {
         "year": 960,
         "month": 9,
         "abs": 11528,
-        "day": 9
+        "day": 9,
+        "confidence": "day"
       },
       "startAbs": 11382,
       "endAbs": 11528,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5508,17 +5609,18 @@
         "year": 960,
         "month": 9,
         "abs": 11528,
-        "day": 9
+        "day": 9,
+        "confidence": "day"
       },
       "end": {
         "year": 962,
         "month": 11,
         "abs": 11554,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "startAbs": 11528,
       "endAbs": 11554,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5531,17 +5633,18 @@
         "year": 962,
         "month": 11,
         "abs": 11554,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "end": {
         "year": 963,
         "month": 3,
         "abs": 11558,
-        "day": 17
+        "day": 17,
+        "confidence": "day"
       },
       "startAbs": 11554,
       "endAbs": 11558,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5554,17 +5657,18 @@
         "year": 907,
         "month": 5,
         "abs": 10888,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "end": {
         "year": 930,
         "month": 12,
         "abs": 11171,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "startAbs": 10888,
       "endAbs": 11171,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5577,17 +5681,18 @@
         "year": 930,
         "month": 12,
         "abs": 11171,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "end": {
         "year": 932,
         "month": 8,
         "abs": 11191,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "startAbs": 11171,
       "endAbs": 11191,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5600,17 +5705,18 @@
         "year": 932,
         "month": 8,
         "abs": 11191,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "end": {
         "year": 947,
         "month": 5,
         "abs": 11368,
-        "day": 30
+        "day": 30,
+        "confidence": "day"
       },
       "startAbs": 11191,
       "endAbs": 11368,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5622,16 +5728,17 @@
       "start": {
         "year": 947,
         "month": 1,
-        "abs": 11364
+        "abs": 11364,
+        "confidence": "year"
       },
       "end": {
         "year": 947,
         "month": 12,
-        "abs": 11375
+        "abs": 11375,
+        "confidence": "year"
       },
       "startAbs": 11364,
       "endAbs": 11375,
-      "precision": "year",
       "isMain": false
     },
     {
@@ -5643,16 +5750,17 @@
       "start": {
         "year": 947,
         "month": 1,
-        "abs": 11364
+        "abs": 11364,
+        "confidence": "year"
       },
       "end": {
         "year": 950,
         "month": 12,
-        "abs": 11411
+        "abs": 11411,
+        "confidence": "year"
       },
       "startAbs": 11364,
       "endAbs": 11411,
-      "precision": "year",
       "isMain": false
     },
     {
@@ -5664,17 +5772,18 @@
       "start": {
         "year": 951,
         "month": 1,
-        "abs": 11412
+        "abs": 11412,
+        "confidence": "month"
       },
       "end": {
         "year": 951,
         "month": 11,
         "abs": 11422,
-        "day": 16
+        "day": 16,
+        "confidence": "month"
       },
       "startAbs": 11412,
       "endAbs": 11422,
-      "precision": "month",
       "isMain": false
     },
     {
@@ -5687,17 +5796,18 @@
         "year": 951,
         "month": 5,
         "abs": 11416,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "end": {
         "year": 954,
         "month": 11,
         "abs": 11458,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "startAbs": 11416,
       "endAbs": 11458,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5710,17 +5820,18 @@
         "year": 954,
         "month": 11,
         "abs": 11458,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "end": {
         "year": 968,
         "month": 10,
         "abs": 11625,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "startAbs": 11458,
       "endAbs": 11625,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5733,17 +5844,18 @@
         "year": 968,
         "month": 10,
         "abs": 11625,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "end": {
         "year": 979,
         "month": 6,
         "abs": 11753,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "startAbs": 11625,
       "endAbs": 11753,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -5760,17 +5872,18 @@
         "year": 960,
         "month": 2,
         "abs": 11521,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "end": {
         "year": 976,
         "month": 11,
         "abs": 11722,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "startAbs": 11521,
       "endAbs": 11722,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -5783,17 +5896,18 @@
         "year": 976,
         "month": 11,
         "abs": 11722,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "end": {
         "year": 997,
         "month": 5,
         "abs": 11968,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "startAbs": 11722,
       "endAbs": 11968,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -5806,17 +5920,18 @@
         "year": 997,
         "month": 5,
         "abs": 11968,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "end": {
         "year": 1022,
         "month": 3,
         "abs": 12266,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "startAbs": 11968,
       "endAbs": 12266,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -5834,17 +5949,18 @@
         "year": 1022,
         "month": 3,
         "abs": 12266,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "end": {
         "year": 1063,
         "month": 4,
         "abs": 12759,
-        "day": 30
+        "day": 30,
+        "confidence": "day"
       },
       "startAbs": 12266,
       "endAbs": 12759,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -5857,17 +5973,18 @@
         "year": 1063,
         "month": 4,
         "abs": 12759,
-        "day": 30
+        "day": 30,
+        "confidence": "day"
       },
       "end": {
         "year": 1067,
         "month": 1,
         "abs": 12804,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "startAbs": 12759,
       "endAbs": 12804,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -5883,17 +6000,18 @@
         "year": 1067,
         "month": 1,
         "abs": 12804,
-        "day": 25
+        "day": 25,
+        "confidence": "day"
       },
       "end": {
         "year": 1085,
         "month": 4,
         "abs": 13023,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "startAbs": 12804,
       "endAbs": 13023,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -5906,17 +6024,18 @@
         "year": 1085,
         "month": 4,
         "abs": 13023,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "end": {
         "year": 1100,
         "month": 2,
         "abs": 13201,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "startAbs": 13023,
       "endAbs": 13201,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -5929,17 +6048,18 @@
         "year": 1100,
         "month": 2,
         "abs": 13201,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "end": {
         "year": 1126,
         "month": 1,
         "abs": 13512,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "startAbs": 13201,
       "endAbs": 13512,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -5952,17 +6072,18 @@
         "year": 1126,
         "month": 1,
         "abs": 13512,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "end": {
         "year": 1127,
         "month": 6,
         "abs": 13529,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "startAbs": 13512,
       "endAbs": 13529,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -5975,17 +6096,18 @@
         "year": 1127,
         "month": 6,
         "abs": 13529,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "end": {
         "year": 1162,
         "month": 7,
         "abs": 13950,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "startAbs": 13529,
       "endAbs": 13950,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -5998,17 +6120,18 @@
         "year": 1162,
         "month": 7,
         "abs": 13950,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "end": {
         "year": 1189,
         "month": 2,
         "abs": 14269,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "startAbs": 13950,
       "endAbs": 14269,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -6021,17 +6144,18 @@
         "year": 1189,
         "month": 2,
         "abs": 14269,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "end": {
         "year": 1194,
         "month": 7,
         "abs": 14334,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "startAbs": 14269,
       "endAbs": 14334,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -6044,17 +6168,18 @@
         "year": 1194,
         "month": 7,
         "abs": 14334,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "end": {
         "year": 1224,
         "month": 9,
         "abs": 14696,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "startAbs": 14334,
       "endAbs": 14696,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -6067,17 +6192,18 @@
         "year": 1224,
         "month": 9,
         "abs": 14696,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "end": {
         "year": 1264,
         "month": 11,
         "abs": 15178,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "startAbs": 14696,
       "endAbs": 15178,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -6090,17 +6216,18 @@
         "year": 1264,
         "month": 11,
         "abs": 15178,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "end": {
         "year": 1274,
         "month": 8,
         "abs": 15295,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "startAbs": 15178,
       "endAbs": 15295,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -6113,17 +6240,18 @@
         "year": 1274,
         "month": 8,
         "abs": 15295,
-        "day": 12
+        "day": 12,
+        "confidence": "day"
       },
       "end": {
         "year": 1276,
         "month": 2,
         "abs": 15313,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "startAbs": 15295,
       "endAbs": 15313,
-      "precision": "day",
       "isMain": true
     },
     {
@@ -6136,17 +6264,18 @@
         "year": 1276,
         "month": 6,
         "abs": 15317,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "end": {
         "year": 1278,
         "month": 5,
         "abs": 15340,
-        "day": 8
+        "day": 8,
+        "confidence": "day"
       },
       "startAbs": 15317,
       "endAbs": 15340,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -6159,17 +6288,18 @@
         "year": 1278,
         "month": 5,
         "abs": 15340,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "end": {
         "year": 1279,
         "month": 3,
         "abs": 15350,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "startAbs": 15340,
       "endAbs": 15350,
-      "precision": "day",
       "isMain": false
     },
     {
@@ -6184,20 +6314,21 @@
         "year": 756,
         "month": 2,
         "day": 5,
-        "abs": 9073
+        "abs": 9073,
+        "confidence": "day"
       },
       "end": {
         "year": 757,
         "month": 1,
         "day": 29,
-        "abs": 9084
+        "abs": 9084,
+        "confidence": "approximate_day"
       },
       "startAbs": 9073,
       "endAbs": 9084,
-      "precision": "day",
       "claimRole": "rival",
       "isMain": false,
-      "endDateConfidence": "approximate"
+      "endConfidence": "approximate_day"
     },
     {
       "id": "reign-an-qingxu",
@@ -6211,17 +6342,18 @@
         "year": 757,
         "month": 1,
         "day": 30,
-        "abs": 9084
+        "abs": 9084,
+        "confidence": "day"
       },
       "end": {
         "year": 759,
         "month": 4,
         "day": 7,
-        "abs": 9111
+        "abs": 9111,
+        "confidence": "day"
       },
       "startAbs": 9084,
       "endAbs": 9111,
-      "precision": "day",
       "claimRole": "rival",
       "isMain": false
     },
@@ -6238,21 +6370,22 @@
         "year": 759,
         "month": 4,
         "day": 8,
-        "abs": 9111
+        "abs": 9111,
+        "confidence": "approximate_day"
       },
       "end": {
         "year": 761,
         "month": 4,
         "day": 17,
-        "abs": 9135
+        "abs": 9135,
+        "confidence": "approximate_day"
       },
       "startAbs": 9111,
       "endAbs": 9135,
-      "precision": "day",
       "claimRole": "rival",
       "isMain": false,
-      "startDateConfidence": "approximate",
-      "endDateConfidence": "approximate"
+      "startConfidence": "approximate_day",
+      "endConfidence": "approximate_day"
     },
     {
       "id": "reign-shi-chaoyi",
@@ -6266,27 +6399,27 @@
         "year": 761,
         "month": 4,
         "day": 18,
-        "abs": 9135
+        "abs": 9135,
+        "confidence": "day"
       },
       "end": {
         "year": 763,
         "month": 1,
         "day": 30,
-        "abs": 9156
+        "abs": 9156,
+        "confidence": "approximate_day"
       },
       "startAbs": 9135,
       "endAbs": 9156,
-      "precision": "day",
       "claimRole": "rival",
       "isMain": false,
-      "endDateConfidence": "approximate"
+      "endConfidence": "approximate_day"
     }
   ],
   "events": [
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "sui",
         "chen-nan"
@@ -6299,14 +6432,14 @@
       "at": {
         "year": 589,
         "month": 12,
-        "abs": 7079
+        "abs": 7079,
+        "confidence": "year"
       },
       "summary": "隋军灭南陈，南北分裂终结，隋统一全国。",
       "atAbs": 7079
     },
     {
       "kind": "politics",
-      "precision": "year",
       "dynastyIds": [
         "sui"
       ],
@@ -6319,12 +6452,14 @@
       "start": {
         "year": 581,
         "month": 1,
-        "abs": 6972
+        "abs": 6972,
+        "confidence": "year"
       },
       "end": {
         "year": 600,
         "month": 1,
-        "abs": 7200
+        "abs": 7200,
+        "confidence": "year"
       },
       "summary": "隋文帝励精图治，轻徭薄赋，国力强盛。",
       "startAbs": 6972,
@@ -6332,7 +6467,6 @@
     },
     {
       "kind": "culture",
-      "precision": "year",
       "dynastyIds": [
         "sui"
       ],
@@ -6346,12 +6480,14 @@
       "start": {
         "year": 605,
         "month": 1,
-        "abs": 7260
+        "abs": 7260,
+        "confidence": "year"
       },
       "end": {
         "year": 610,
         "month": 1,
-        "abs": 7320
+        "abs": 7320,
+        "confidence": "year"
       },
       "summary": "隋炀帝下令开凿大运河，贯通南北交通。",
       "startAbs": 7260,
@@ -6359,7 +6495,6 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "sui"
       ],
@@ -6372,12 +6507,14 @@
       "start": {
         "year": 612,
         "month": 1,
-        "abs": 7344
+        "abs": 7344,
+        "confidence": "year"
       },
       "end": {
         "year": 614,
         "month": 1,
-        "abs": 7368
+        "abs": 7368,
+        "confidence": "year"
       },
       "summary": "隋炀帝三次大规模远征高句丽，劳民伤财，隋军惨败，国力大损。",
       "startAbs": 7344,
@@ -6386,7 +6523,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "day",
       "dynastyIds": [
         "sui"
       ],
@@ -6401,7 +6537,8 @@
         "year": 618,
         "month": 4,
         "abs": 7419,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "summary": "宇文化及发动江都兵变，隋炀帝杨广被弑；随后江都军拥立杨浩。",
       "atAbs": 7419
@@ -6409,7 +6546,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "day",
       "dynastyIds": [
         "sui",
         "xu"
@@ -6425,7 +6561,8 @@
         "year": 618,
         "month": 10,
         "abs": 7425,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "summary": "宇文化及杀隋秦王杨浩，随后自称皇帝，建立许政权。",
       "atAbs": 7425
@@ -6433,7 +6570,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "tang"
       ],
@@ -6446,7 +6582,8 @@
       "at": {
         "year": 626,
         "month": 7,
-        "abs": 7518
+        "abs": 7518,
+        "confidence": "month"
       },
       "summary": "李世民发动政变，杀兄弟即位太子，后登基。",
       "atAbs": 7518
@@ -6454,7 +6591,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "tang"
       ],
@@ -6469,7 +6605,8 @@
       "at": {
         "year": 621,
         "month": 5,
-        "abs": 7456
+        "abs": 7456,
+        "confidence": "month"
       },
       "summary": "李世民于虎牢关以少胜多，窦建德被俘；失去外援的王世充随后降唐，唐朝平定夏、郑。",
       "atAbs": 7456,
@@ -6477,7 +6614,6 @@
     },
     {
       "kind": "politics",
-      "precision": "year",
       "dynastyIds": [
         "tang"
       ],
@@ -6490,12 +6626,14 @@
       "start": {
         "year": 627,
         "month": 1,
-        "abs": 7524
+        "abs": 7524,
+        "confidence": "year"
       },
       "end": {
         "year": 649,
         "month": 1,
-        "abs": 7788
+        "abs": 7788,
+        "confidence": "year"
       },
       "summary": "唐太宗任贤纳谏，轻徭薄赋，为盛唐奠基。",
       "startAbs": 7524,
@@ -6503,7 +6641,6 @@
     },
     {
       "kind": "politics",
-      "precision": "year",
       "dynastyIds": [
         "tang"
       ],
@@ -6516,12 +6653,14 @@
       "start": {
         "year": 713,
         "month": 1,
-        "abs": 8556
+        "abs": 8556,
+        "confidence": "year"
       },
       "end": {
         "year": 741,
         "month": 1,
-        "abs": 8892
+        "abs": 8892,
+        "confidence": "year"
       },
       "summary": "唐玄宗前期励精图治，唐朝国力达于鼎盛。",
       "startAbs": 8556,
@@ -6529,7 +6668,6 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "tang"
       ],
@@ -6544,12 +6682,14 @@
       "start": {
         "year": 755,
         "month": 1,
-        "abs": 9060
+        "abs": 9060,
+        "confidence": "year"
       },
       "end": {
         "year": 763,
         "month": 1,
-        "abs": 9156
+        "abs": 9156,
+        "confidence": "year"
       },
       "summary": "安禄山、史思明叛乱，唐朝由盛转衰。",
       "startAbs": 9060,
@@ -6558,7 +6698,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "tang"
       ],
@@ -6570,7 +6709,8 @@
       "at": {
         "year": 875,
         "month": 12,
-        "abs": 10511
+        "abs": 10511,
+        "confidence": "year"
       },
       "summary": "黄巢领导农民起义，攻入长安，唐廷名存实亡。",
       "atAbs": 10511,
@@ -6579,7 +6719,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "song-north",
         "liao"
@@ -6593,7 +6732,8 @@
       "at": {
         "year": 979,
         "month": 6,
-        "abs": 11753
+        "abs": 11753,
+        "confidence": "month"
       },
       "summary": "宋太宗率军北伐辽国，于高梁河被耶律休哥击败，宋军溃退。",
       "atAbs": 11753,
@@ -6601,7 +6741,6 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "song-south",
         "mongol-empire",
@@ -6616,12 +6755,14 @@
       "start": {
         "year": 1268,
         "month": 1,
-        "abs": 15216
+        "abs": 15216,
+        "confidence": "year"
       },
       "end": {
         "year": 1273,
         "month": 1,
-        "abs": 15276
+        "abs": 15276,
+        "confidence": "year"
       },
       "summary": "蒙古军围攻襄阳、樊城；战争跨越1271年忽必烈改国号大元，1273年吕文焕降元，南宋长江防线洞开。",
       "startAbs": 15216,
@@ -6630,7 +6771,6 @@
     },
     {
       "kind": "politics",
-      "precision": "year",
       "dynastyIds": [
         "song-north"
       ],
@@ -6644,12 +6784,14 @@
       "start": {
         "year": 1069,
         "month": 1,
-        "abs": 12828
+        "abs": 12828,
+        "confidence": "year"
       },
       "end": {
         "year": 1085,
         "month": 1,
-        "abs": 13020
+        "abs": 13020,
+        "confidence": "year"
       },
       "summary": "宋神宗用王安石推行新法，富国强兵。",
       "startAbs": 12828,
@@ -6658,7 +6800,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "day",
       "dynastyIds": [
         "song-north"
       ],
@@ -6673,7 +6814,8 @@
         "year": 1127,
         "month": 3,
         "abs": 13526,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "summary": "金军破开封，俘徽钦二帝，北宋灭亡。",
       "atAbs": 13526
@@ -6681,7 +6823,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "day",
       "dynastyIds": [
         "song-south",
         "yuan"
@@ -6696,7 +6837,8 @@
         "year": 1279,
         "month": 3,
         "abs": 15350,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "summary": "元军于崖山击败宋军，陆秀夫负帝昺殉国，南宋亡。",
       "atAbs": 15350,
@@ -6704,7 +6846,6 @@
     },
     {
       "kind": "politics",
-      "precision": "year",
       "dynastyIds": [
         "liang-hou",
         "tang-hou",
@@ -6724,12 +6865,14 @@
       "start": {
         "year": 907,
         "month": 1,
-        "abs": 10884
+        "abs": 10884,
+        "confidence": "year"
       },
       "end": {
         "year": 979,
         "month": 1,
-        "abs": 11748
+        "abs": 11748,
+        "confidence": "year"
       },
       "summary": "唐亡后北方短命王朝更迭，南方十国割据，至宋统一。",
       "startAbs": 10884,
@@ -8070,7 +8213,7 @@
       "补入夏（窦建德）与郑（王世充）两条隋末政权行及相应在位。夏（窦建德）使用独立 id xia-dou-jiande，避免与上古夏朝 xia 冲突。建夏起于618年11月，参据《中国大百科全书中国历史》所述武德元年十一月建国，以及《通鉴纪事本末》称夏王事在武德元年冬；十一月为史书记载的传统历月，本包按用户指定将展示时间记作618年11月。武德四年五月虎牢之战窦建德败俘；王世充于五月丙寅（公历621年6月4日）降唐；窦建德七月被斩。",
       "杨侗起始在位日按《资治通鉴》卷一八五及《资治通鉴》所记武德元年五月戊辰换算为618-06-22；《旧唐书》异记618-06-21。终点取619-05-23禅位日。",
       "南宋正统金色止于恭帝降元（1276-02）；端宗、帝昺接在恭帝之后走主线继承，但不计正统。",
-      "北宋、南宋皇帝在位日取维基百科/宋史通行换算，precision=day。",
+      "北宋、南宋皇帝在位日取维基百科/宋史通行换算，confidence=day。",
       "闽王延翰至朱文进、楚马希声/马希范在位日取维基百科条目公历换算（已核定公历日期直接记录在缓存）；马希广以后及王延政仍仅年/月。",
       "孟昶史称后主，宋追封楚王谥恭孝，posthumous_name 为恭孝王；出降取续资治通鉴乾德三年正月辛卯（965-02-23），不作卒年六月。",
       "本次补充人物概述：以正史本纪、专题史料及君主年表交叉核对身份、世系、在位时期与重要转折；大理早期君主的记载不足处明确保留不详。",

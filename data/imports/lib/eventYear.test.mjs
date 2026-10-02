@@ -35,8 +35,7 @@ describe("eventPoint", () => {
     const event = eventPoint({
       id: "xuanwumen",
       name: "玄武门之变",
-      precision: "month",
-      at: ym(626, 7),
+      at: { ...ym(626, 7), confidence: "month" },
     });
     assert.equal(event.at.month, 7);
   });
@@ -46,7 +45,7 @@ describe("eventRange", () => {
   it("normalizes optional year-precision at without moving the span", () => {
     const event = eventRange({
       id: "window",
-      timeMode: "circa",
+      timeMode: "span",
       start: ym(-400),
       end: ym(-350, 12),
       at: ym(-380),

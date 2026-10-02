@@ -12,19 +12,30 @@ export const EventPrecisionSchema = z.enum([
 ]);
 export type EventPrecision = z.infer<typeof EventPrecisionSchema>;
 
-export const EventTimeModeSchema = z.enum(["point", "span", "circa"]);
+export const EventTimeModeSchema = z.enum(["point", "span"]);
 export type EventTimeMode = z.infer<typeof EventTimeModeSchema>;
 
 export const TimePointSchema = z.object({
   year: z.number(),
   month: z.number().int().min(1).max(12),
   day: z.number().int().min(1).max(31).optional(),
+  /** Endpoint-level confidence. Optional only for older/mock inputs during rollout. */
+  confidence: z.enum([
+    "day", "month", "year", "approximate_day", "approximate_month", "approximate_year",
+    "interpolated_by_other", "interpolated_by_generation",
+  ]).optional(),
 });
+export const DateConfidenceSchema = z.enum([
+  "day", "month", "year", "approximate_day", "approximate_month", "approximate_year",
+  "interpolated_by_other", "interpolated_by_generation",
+]);
+export type HistoricalDateConfidence = z.infer<typeof DateConfidenceSchema>;
+export const HistoricalDateSchema = TimePointSchema.extend({ confidence: DateConfidenceSchema });
+export type HistoricalDate = z.infer<typeof HistoricalDateSchema>;
 
 export const TimeRangeSchema = z.object({
   start: TimePointSchema,
   end: TimePointSchema,
-  precision: PrecisionSchema.default("year"),
 });
 
 export const ScopeSchema = z.enum(["cn", "global"]);
@@ -77,7 +88,10 @@ export const DynastyGroupSchema = z.object({
   end: TimePointSchema,
   startAbs: z.number(),
   endAbs: z.number(),
+  /** Derived at the API boundary from endpoint confidence; not persisted. */
   precision: PrecisionSchema.default("year"),
+  startConfidence: DateConfidenceSchema.optional(),
+  endConfidence: DateConfidenceSchema.optional(),
   note: z.string().optional(),
 });
 
@@ -91,7 +105,10 @@ export const DynastySchema = z.object({
   end: TimePointSchema,
   startAbs: z.number(),
   endAbs: z.number(),
+  /** Derived at the API boundary from endpoint confidence; not persisted. */
   precision: PrecisionSchema.default("year"),
+  startConfidence: DateConfidenceSchema.optional(),
+  endConfidence: DateConfidenceSchema.optional(),
   /** Legacy DB placeholder; lane colors are assigned at render time. */
   colorToken: ColorTokenSchema.optional(),
   parentId: z.string().optional(),
@@ -143,7 +160,7 @@ export const AppellationKindSchema = z.enum([
 export const ClaimRoleSchema = z.enum(["rival"]);
 
 /** Trust level for a reign start/end year when sources disagree or are interpolated. */
-export const DateConfidenceSchema = z.enum([
+export const LegacyDateConfidenceSchema = z.enum([
   "certain",
   "approximate",
   "interpolated",
@@ -167,11 +184,11 @@ export const DynastyCapitalSchema = z.object({
   end: TimePointSchema,
   startAbs: z.number(),
   endAbs: z.number(),
+  /** Derived at the API boundary from endpoint confidence; not persisted. */
   precision: PrecisionSchema.default("year"),
-  /** Optional end boundary precision when the start is known only by year. */
   endPrecision: PrecisionSchema.optional(),
-  startDateConfidence: DateConfidenceSchema.optional(),
-  endDateConfidence: DateConfidenceSchema.optional(),
+  startConfidence: DateConfidenceSchema.optional(),
+  endConfidence: DateConfidenceSchema.optional(),
   role: CapitalRoleSchema.default("primary"),
   claimTrack: z.string().optional(),
   /** Explicit reign-capital links; an empty list uses dynasty/time ownership. */
@@ -200,10 +217,10 @@ export const ReignSchema = z.object({
   endAbs: z.number(),
   /** End date is open/unknown; endAbs may still cap rendering at the current data window. */
   isOngoing: z.boolean().optional(),
+  /** Derived at the API boundary from endpoint confidence; not persisted. */
   precision: PrecisionSchema.default("year"),
-  /** Omitted = certain. Mark approximate/interpolated when the year is estimated. */
-  startDateConfidence: DateConfidenceSchema.optional(),
-  endDateConfidence: DateConfidenceSchema.optional(),
+  startConfidence: DateConfidenceSchema.optional(),
+  endConfidence: DateConfidenceSchema.optional(),
   /** Parallel-claim lane key; absent puts the reign on the main track. */
   claimTrack: z.string().optional(),
   /** Short seat label shown on the card (长安 / 洛阳 / 绍兴监国). */
@@ -259,9 +276,11 @@ export const EventSchema = z
     name: z.string(),
     kind: EventKindSchema.default("other"),
     timeMode: EventTimeModeSchema.default("point"),
+    /** Derived presentation granularity; the database stores endpoint confidence. */
     precision: EventPrecisionSchema.default("year"),
-    /** Date is known only approximately; independent from circa range semantics. */
-    isApproximate: z.boolean().default(false),
+    atConfidence: DateConfidenceSchema.optional(),
+    startConfidence: DateConfidenceSchema.optional(),
+    endConfidence: DateConfidenceSchema.optional(),
     dateNote: z.string().optional(),
     start: TimePointSchema.optional(),
     end: TimePointSchema.optional(),
@@ -303,12 +322,12 @@ export const EventSchema = z
       });
     }
     if (
-      (event.timeMode === "span" || event.timeMode === "circa") &&
+      event.timeMode === "span" &&
       (event.startAbs == null || event.endAbs == null)
     ) {
       ctx.addIssue({
         code: z.ZodIssueCode.custom,
-        message: "span/circa events require startAbs and endAbs",
+        message: "span events require startAbs and endAbs",
         path: ["startAbs"],
       });
     }
@@ -344,7 +363,7 @@ export const RelationSchema = z
     kind: RelationKindSchema,
     at: TimePointSchema.optional(),
     atAbs: z.number().optional(),
-    precision: PrecisionSchema.optional(),
+    atConfidence: DateConfidenceSchema.optional(),
     eventId: z.string().optional(),
   })
   .superRefine((relation, ctx) => {

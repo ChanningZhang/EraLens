@@ -347,14 +347,15 @@
       "start": {
         "year": 220,
         "month": 1,
-        "abs": 2640
+        "abs": 2640,
+        "confidence": "year"
       },
       "end": {
         "year": 280,
         "month": 12,
-        "abs": 3371
+        "abs": 3371,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "220–280年三国（曹魏、蜀汉、孙吴）；狭义自曹丕代汉至晋灭吴。"
     }
   ],
@@ -370,14 +371,15 @@
       "start": {
         "year": 220,
         "month": 12,
-        "abs": 2651
+        "abs": 2651,
+        "confidence": "month"
       },
       "end": {
         "year": 266,
         "month": 2,
-        "abs": 3193
+        "abs": 3193,
+        "confidence": "month"
       },
-      "precision": "month",
       "groupId": "sanguo",
       "note": "220年曹丕受汉献帝禅让称帝，国号魏，史称曹魏；以洛阳为都，主要统治中国北方，与蜀汉、孙吴长期对峙。曹氏历经曹丕、曹叡及曹芳、曹髦、曹奂五帝；高平陵之变后司马氏掌握朝政，266年曹奂禅位于司马炎，曹魏为西晋取代。"
     },
@@ -393,14 +395,15 @@
       "start": {
         "year": 221,
         "month": 5,
-        "abs": 2656
+        "abs": 2656,
+        "confidence": "month"
       },
       "end": {
         "year": 263,
         "month": 12,
-        "abs": 3167
+        "abs": 3167,
+        "confidence": "month"
       },
-      "precision": "month",
       "groupId": "sanguo",
       "note": "221年刘备在成都称帝，国号汉，后世称蜀汉或季汉，以益州为核心、成都为都，立国主张承续汉统。刘备死后刘禅在位，诸葛亮等主持政务并多次北伐；蜀汉长期与曹魏交战，263年魏军入蜀、刘禅投降，王朝结束。"
     },
@@ -415,14 +418,15 @@
       "start": {
         "year": 222,
         "month": 10,
-        "abs": 2673
+        "abs": 2673,
+        "confidence": "month"
       },
       "end": {
         "year": 280,
         "month": 5,
-        "abs": 3364
+        "abs": 3364,
+        "confidence": "month"
       },
-      "precision": "month",
       "groupId": "sanguo",
       "note": "孙氏政权立足江东，孙权于222年受魏封吴王，229年称帝，后世称孙吴或东吴；建业是其主要都城，疆域包括长江下游及南方广大地区。孙权之后由孙亮、孙休、孙皓相继即位，孙吴在三国中延续最久，280年孙皓向西晋投降，政权灭亡。"
     }
@@ -441,19 +445,18 @@
         "year": 220,
         "month": 12,
         "abs": 2651,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "end": {
         "year": 226,
         "month": 6,
         "abs": 2717,
-        "day": 29
+        "day": 29,
+        "confidence": "day"
       },
       "startAbs": 2651,
       "endAbs": 2717,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -473,19 +476,18 @@
         "year": 226,
         "month": 6,
         "abs": 2717,
-        "day": 29
+        "day": 29,
+        "confidence": "day"
       },
       "end": {
         "year": 239,
         "month": 1,
         "abs": 2868,
-        "day": 22
+        "day": 22,
+        "confidence": "day"
       },
       "startAbs": 2717,
       "endAbs": 2868,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -503,19 +505,18 @@
         "year": 221,
         "month": 5,
         "abs": 2656,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "end": {
         "year": 223,
         "month": 6,
         "abs": 2681,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "startAbs": 2656,
       "endAbs": 2681,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -536,19 +537,18 @@
         "year": 223,
         "month": 6,
         "abs": 2681,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "end": {
         "year": 263,
         "month": 12,
         "abs": 3167,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "startAbs": 2681,
       "endAbs": 3167,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -566,19 +566,18 @@
         "year": 222,
         "month": 10,
         "abs": 2673,
-        "day": 19
+        "day": 19,
+        "confidence": "day"
       },
       "end": {
         "year": 252,
         "month": 5,
         "abs": 3028,
-        "day": 21
+        "day": 21,
+        "confidence": "day"
       },
       "startAbs": 2673,
       "endAbs": 3028,
-      "precision": "day",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -589,7 +588,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [],
       "participantIds": [
         "cao-cao",
@@ -601,7 +599,8 @@
       "at": {
         "year": 200,
         "month": 6,
-        "abs": 2405
+        "abs": 2405,
+        "confidence": "month"
       },
       "summary": "曹操以少胜多，大败袁绍，奠定统一北方基础。",
       "atAbs": 2405,
@@ -610,7 +609,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "wei",
         "shu",
@@ -629,7 +627,8 @@
       "at": {
         "year": 208,
         "month": 12,
-        "abs": 2507
+        "abs": 2507,
+        "confidence": "month"
       },
       "summary": "孙刘联军于赤壁大败曹操，三国鼎立格局初步形成。",
       "atAbs": 2507,
@@ -638,7 +637,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "shu"
       ],
@@ -652,7 +650,8 @@
       "at": {
         "year": 214,
         "month": 12,
-        "abs": 2579
+        "abs": 2579,
+        "confidence": "year"
       },
       "summary": "刘备围成都，刘璋出降，益州归刘备。",
       "atAbs": 2579
@@ -660,7 +659,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "precision": "month",
       "dynastyIds": [
         "shu",
         "wu"
@@ -675,12 +673,14 @@
       "start": {
         "year": 221,
         "month": 7,
-        "abs": 2658
+        "abs": 2658,
+        "confidence": "month"
       },
       "end": {
         "year": 222,
         "month": 8,
-        "abs": 2671
+        "abs": 2671,
+        "confidence": "month"
       },
       "summary": "刘备伐吴复仇，于夷陵大败，蜀汉元气大伤。",
       "startAbs": 2658,
@@ -690,7 +690,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "wei",
         "shu"
@@ -705,7 +704,8 @@
       "at": {
         "year": 263,
         "month": 10,
-        "abs": 3165
+        "abs": 3165,
+        "confidence": "month"
       },
       "summary": "钟会军受阻于剑阁时，邓艾率军由阴平道穿越险阻，进至江油并击败蜀军，迫使蜀汉政权迅速瓦解。",
       "atAbs": 3165,

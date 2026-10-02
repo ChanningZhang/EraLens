@@ -2476,14 +2476,15 @@
       "start": {
         "year": -2070,
         "month": 1,
-        "abs": -24828
+        "abs": -24828,
+        "confidence": "year"
       },
       "end": {
         "year": -1600,
         "month": 12,
-        "abs": -19177
+        "abs": -19177,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "王朝窗口取断代工程前2070–前1600。各王起迄依今本《竹书纪年》在位年数自夏始顺推（桀用《帝王世纪》五十二年以接商汤），全部标 interpolated。相、少康之间有穷后羿、寒浞占夏行而非夏后正统。"
     },
     {
@@ -2498,14 +2499,15 @@
       "start": {
         "year": -1600,
         "month": 1,
-        "abs": -19188
+        "abs": -19188,
+        "confidence": "year"
       },
       "end": {
         "year": -1046,
         "month": 1,
-        "abs": -12540
+        "abs": -12540,
+        "confidence": "year"
       },
-      "precision": "year",
       "note": "断代工程：商始约前1600年，盘庚迁殷约前1300年，武王克商前1046年。"
     },
     {
@@ -2519,14 +2521,15 @@
       "start": {
         "year": -1046,
         "month": 1,
-        "abs": -12540
+        "abs": -12540,
+        "confidence": "year"
       },
       "end": {
         "year": -771,
         "month": 12,
-        "abs": -9229
+        "abs": -9229,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "武王克商至犬戎破镐。列王年取夏商周断代工程《夏商周年表》。"
     },
     {
@@ -2540,14 +2543,15 @@
       "start": {
         "year": -770,
         "month": 1,
-        "abs": -9228
+        "abs": -9228,
+        "confidence": "year"
       },
       "end": {
         "year": -256,
         "month": 12,
-        "abs": -3049
+        "abs": -3049,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "平王东迁至秦灭周。前770–前750年与携王二王并立，后世以平王为正统（claim_track 主线）。"
     }
   ],
@@ -2562,19 +2566,20 @@
       "start": {
         "year": -2070,
         "month": 1,
-        "abs": -24828
+        "abs": -24828,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -2061,
         "month": 12,
-        "abs": -24709
+        "abs": -24709,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -24828,
       "endAbs": -24709,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-si-qi",
@@ -2585,19 +2590,20 @@
       "start": {
         "year": -2060,
         "month": 1,
-        "abs": -24708
+        "abs": -24708,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -2045,
         "month": 12,
-        "abs": -24517
+        "abs": -24517,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -24708,
       "endAbs": -24517,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
-      "isMain": true
+      "isMain": true,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-si-taikang",
@@ -2608,19 +2614,20 @@
       "start": {
         "year": -2044,
         "month": 1,
-        "abs": -24516
+        "abs": -24516,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -2041,
         "month": 12,
-        "abs": -24469
+        "abs": -24469,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -24516,
       "endAbs": -24469,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
-      "isMain": true
+      "isMain": true,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-si-zhongkang",
@@ -2631,19 +2638,20 @@
       "start": {
         "year": -2040,
         "month": 1,
-        "abs": -24468
+        "abs": -24468,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -2028,
         "month": 12,
-        "abs": -24313
+        "abs": -24313,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -24468,
       "endAbs": -24313,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
-      "isMain": true
+      "isMain": true,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-si-xiang",
@@ -2654,19 +2662,20 @@
       "start": {
         "year": -2027,
         "month": 1,
-        "abs": -24312
+        "abs": -24312,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -2000,
         "month": 12,
-        "abs": -23977
+        "abs": -23977,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -24312,
       "endAbs": -23977,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
-      "isMain": true
+      "isMain": true,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-si-shaokang",
@@ -2677,19 +2686,20 @@
       "start": {
         "year": -1959,
         "month": 1,
-        "abs": -23496
+        "abs": -23496,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -1939,
         "month": 12,
-        "abs": -23245
+        "abs": -23245,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -23496,
       "endAbs": -23245,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
-      "isMain": true
+      "isMain": true,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-si-zhu",
@@ -2700,19 +2710,20 @@
       "start": {
         "year": -1938,
         "month": 1,
-        "abs": -23244
+        "abs": -23244,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -1922,
         "month": 12,
-        "abs": -23041
+        "abs": -23041,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -23244,
       "endAbs": -23041,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
-      "isMain": true
+      "isMain": true,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-si-huai",
@@ -2723,19 +2734,20 @@
       "start": {
         "year": -1921,
         "month": 1,
-        "abs": -23040
+        "abs": -23040,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -1878,
         "month": 12,
-        "abs": -22513
+        "abs": -22513,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -23040,
       "endAbs": -22513,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
-      "isMain": true
+      "isMain": true,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-si-mang",
@@ -2746,19 +2758,20 @@
       "start": {
         "year": -1877,
         "month": 1,
-        "abs": -22512
+        "abs": -22512,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -1820,
         "month": 12,
-        "abs": -21817
+        "abs": -21817,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -22512,
       "endAbs": -21817,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
-      "isMain": true
+      "isMain": true,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-si-xie",
@@ -2769,19 +2782,20 @@
       "start": {
         "year": -1819,
         "month": 1,
-        "abs": -21816
+        "abs": -21816,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -1795,
         "month": 12,
-        "abs": -21517
+        "abs": -21517,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -21816,
       "endAbs": -21517,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
-      "isMain": true
+      "isMain": true,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-si-bujiang",
@@ -2792,19 +2806,20 @@
       "start": {
         "year": -1794,
         "month": 1,
-        "abs": -21516
+        "abs": -21516,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -1736,
         "month": 12,
-        "abs": -20809
+        "abs": -20809,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -21516,
       "endAbs": -20809,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
-      "isMain": true
+      "isMain": true,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-si-jiong",
@@ -2815,19 +2830,20 @@
       "start": {
         "year": -1735,
         "month": 1,
-        "abs": -20808
+        "abs": -20808,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -1718,
         "month": 12,
-        "abs": -20593
+        "abs": -20593,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -20808,
       "endAbs": -20593,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
-      "isMain": true
+      "isMain": true,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-si-jin",
@@ -2838,19 +2854,20 @@
       "start": {
         "year": -1717,
         "month": 1,
-        "abs": -20592
+        "abs": -20592,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -1710,
         "month": 12,
-        "abs": -20497
+        "abs": -20497,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -20592,
       "endAbs": -20497,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
-      "isMain": true
+      "isMain": true,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-si-kongjia",
@@ -2861,19 +2878,20 @@
       "start": {
         "year": -1709,
         "month": 1,
-        "abs": -20496
+        "abs": -20496,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -1679,
         "month": 12,
-        "abs": -20125
+        "abs": -20125,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -20496,
       "endAbs": -20125,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
-      "isMain": true
+      "isMain": true,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-si-gao",
@@ -2884,19 +2902,20 @@
       "start": {
         "year": -1678,
         "month": 1,
-        "abs": -20124
+        "abs": -20124,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -1668,
         "month": 12,
-        "abs": -19993
+        "abs": -19993,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -20124,
       "endAbs": -19993,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
-      "isMain": true
+      "isMain": true,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-si-fa",
@@ -2907,19 +2926,20 @@
       "start": {
         "year": -1667,
         "month": 1,
-        "abs": -19992
+        "abs": -19992,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -1652,
         "month": 12,
-        "abs": -19801
+        "abs": -19801,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -19992,
       "endAbs": -19801,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
-      "isMain": true
+      "isMain": true,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-si-jie",
@@ -2930,19 +2950,20 @@
       "start": {
         "year": -1651,
         "month": 1,
-        "abs": -19800
+        "abs": -19800,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -1600,
         "month": 12,
-        "abs": -19177
+        "abs": -19177,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -19800,
       "endAbs": -19177,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
-      "isMain": true
+      "isMain": true,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-hou-yi",
@@ -2953,20 +2974,21 @@
       "start": {
         "year": -1999,
         "month": 1,
-        "abs": -23976
+        "abs": -23976,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -1992,
         "month": 12,
-        "abs": -23881
+        "abs": -23881,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -23976,
       "endAbs": -23881,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimRole": "rival",
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-han-zhuo",
@@ -2977,20 +2999,21 @@
       "start": {
         "year": -1991,
         "month": 1,
-        "abs": -23880
+        "abs": -23880,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -1960,
         "month": 12,
-        "abs": -23497
+        "abs": -23497,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -23880,
       "endAbs": -23497,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimRole": "rival",
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-zi-tang",
@@ -3001,18 +3024,17 @@
       "start": {
         "year": -1600,
         "month": 1,
-        "abs": -19188
+        "abs": -19188,
+        "confidence": "year"
       },
       "end": {
         "year": -1571,
         "month": 12,
-        "abs": -18829
+        "abs": -18829,
+        "confidence": "year"
       },
       "startAbs": -19188,
       "endAbs": -18829,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3024,19 +3046,19 @@
       "start": {
         "year": -1570,
         "month": 1,
-        "abs": -18828
+        "abs": -18828,
+        "confidence": "year"
       },
       "end": {
         "year": -1566,
         "month": 12,
-        "abs": -18769
+        "abs": -18769,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -18828,
       "endAbs": -18769,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": "interpolated",
-      "isMain": true
+      "isMain": true,
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-zi-zhongren",
@@ -3047,19 +3069,19 @@
       "start": {
         "year": -1565,
         "month": 1,
-        "abs": -18768
+        "abs": -18768,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -1561,
         "month": 12,
-        "abs": -18709
+        "abs": -18709,
+        "confidence": "year"
       },
       "startAbs": -18768,
       "endAbs": -18709,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": null,
-      "isMain": true
+      "isMain": true,
+      "startConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-zi-taijia",
@@ -3070,18 +3092,17 @@
       "start": {
         "year": -1560,
         "month": 1,
-        "abs": -18708
+        "abs": -18708,
+        "confidence": "year"
       },
       "end": {
         "year": -1548,
         "month": 12,
-        "abs": -18553
+        "abs": -18553,
+        "confidence": "year"
       },
       "startAbs": -18708,
       "endAbs": -18553,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3093,18 +3114,17 @@
       "start": {
         "year": -1547,
         "month": 1,
-        "abs": -18552
+        "abs": -18552,
+        "confidence": "year"
       },
       "end": {
         "year": -1529,
         "month": 12,
-        "abs": -18325
+        "abs": -18325,
+        "confidence": "year"
       },
       "startAbs": -18552,
       "endAbs": -18325,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3116,18 +3136,17 @@
       "start": {
         "year": -1528,
         "month": 1,
-        "abs": -18324
+        "abs": -18324,
+        "confidence": "year"
       },
       "end": {
         "year": -1524,
         "month": 12,
-        "abs": -18265
+        "abs": -18265,
+        "confidence": "year"
       },
       "startAbs": -18324,
       "endAbs": -18265,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3139,18 +3158,17 @@
       "start": {
         "year": -1523,
         "month": 1,
-        "abs": -18264
+        "abs": -18264,
+        "confidence": "year"
       },
       "end": {
         "year": -1507,
         "month": 12,
-        "abs": -18061
+        "abs": -18061,
+        "confidence": "year"
       },
       "startAbs": -18264,
       "endAbs": -18061,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3162,18 +3180,17 @@
       "start": {
         "year": -1506,
         "month": 1,
-        "abs": -18060
+        "abs": -18060,
+        "confidence": "year"
       },
       "end": {
         "year": -1495,
         "month": 12,
-        "abs": -17917
+        "abs": -17917,
+        "confidence": "year"
       },
       "startAbs": -18060,
       "endAbs": -17917,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3185,18 +3202,17 @@
       "start": {
         "year": -1494,
         "month": 1,
-        "abs": -17916
+        "abs": -17916,
+        "confidence": "year"
       },
       "end": {
         "year": -1420,
         "month": 12,
-        "abs": -17017
+        "abs": -17017,
+        "confidence": "year"
       },
       "startAbs": -17916,
       "endAbs": -17017,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3208,18 +3224,17 @@
       "start": {
         "year": -1419,
         "month": 1,
-        "abs": -17016
+        "abs": -17016,
+        "confidence": "year"
       },
       "end": {
         "year": -1411,
         "month": 12,
-        "abs": -16909
+        "abs": -16909,
+        "confidence": "year"
       },
       "startAbs": -17016,
       "endAbs": -16909,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3231,18 +3246,17 @@
       "start": {
         "year": -1410,
         "month": 1,
-        "abs": -16908
+        "abs": -16908,
+        "confidence": "year"
       },
       "end": {
         "year": -1401,
         "month": 12,
-        "abs": -16789
+        "abs": -16789,
+        "confidence": "year"
       },
       "startAbs": -16908,
       "endAbs": -16789,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3254,18 +3268,17 @@
       "start": {
         "year": -1400,
         "month": 1,
-        "abs": -16788
+        "abs": -16788,
+        "confidence": "year"
       },
       "end": {
         "year": -1392,
         "month": 12,
-        "abs": -16681
+        "abs": -16681,
+        "confidence": "year"
       },
       "startAbs": -16788,
       "endAbs": -16681,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3277,18 +3290,17 @@
       "start": {
         "year": -1391,
         "month": 1,
-        "abs": -16680
+        "abs": -16680,
+        "confidence": "year"
       },
       "end": {
         "year": -1373,
         "month": 12,
-        "abs": -16453
+        "abs": -16453,
+        "confidence": "year"
       },
       "startAbs": -16680,
       "endAbs": -16453,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3300,18 +3312,17 @@
       "start": {
         "year": -1372,
         "month": 1,
-        "abs": -16452
+        "abs": -16452,
+        "confidence": "year"
       },
       "end": {
         "year": -1359,
         "month": 12,
-        "abs": -16285
+        "abs": -16285,
+        "confidence": "year"
       },
       "startAbs": -16452,
       "endAbs": -16285,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3323,18 +3334,17 @@
       "start": {
         "year": -1358,
         "month": 1,
-        "abs": -16284
+        "abs": -16284,
+        "confidence": "year"
       },
       "end": {
         "year": -1339,
         "month": 12,
-        "abs": -16045
+        "abs": -16045,
+        "confidence": "year"
       },
       "startAbs": -16284,
       "endAbs": -16045,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3346,18 +3356,17 @@
       "start": {
         "year": -1338,
         "month": 1,
-        "abs": -16044
+        "abs": -16044,
+        "confidence": "year"
       },
       "end": {
         "year": -1330,
         "month": 12,
-        "abs": -15937
+        "abs": -15937,
+        "confidence": "year"
       },
       "startAbs": -16044,
       "endAbs": -15937,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3369,18 +3378,17 @@
       "start": {
         "year": -1329,
         "month": 1,
-        "abs": -15936
+        "abs": -15936,
+        "confidence": "year"
       },
       "end": {
         "year": -1324,
         "month": 12,
-        "abs": -15865
+        "abs": -15865,
+        "confidence": "year"
       },
       "startAbs": -15936,
       "endAbs": -15865,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3392,18 +3400,17 @@
       "start": {
         "year": -1323,
         "month": 1,
-        "abs": -15864
+        "abs": -15864,
+        "confidence": "year"
       },
       "end": {
         "year": -1311,
         "month": 12,
-        "abs": -15709
+        "abs": -15709,
+        "confidence": "year"
       },
       "startAbs": -15864,
       "endAbs": -15709,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3415,18 +3422,17 @@
       "start": {
         "year": -1310,
         "month": 1,
-        "abs": -15708
+        "abs": -15708,
+        "confidence": "year"
       },
       "end": {
         "year": -1280,
         "month": 12,
-        "abs": -15337
+        "abs": -15337,
+        "confidence": "year"
       },
       "startAbs": -15708,
       "endAbs": -15337,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3438,18 +3444,17 @@
       "start": {
         "year": -1279,
         "month": 1,
-        "abs": -15336
+        "abs": -15336,
+        "confidence": "year"
       },
       "end": {
         "year": -1277,
         "month": 12,
-        "abs": -15301
+        "abs": -15301,
+        "confidence": "year"
       },
       "startAbs": -15336,
       "endAbs": -15301,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3461,18 +3466,17 @@
       "start": {
         "year": -1276,
         "month": 1,
-        "abs": -15300
+        "abs": -15300,
+        "confidence": "year"
       },
       "end": {
         "year": -1251,
         "month": 12,
-        "abs": -14989
+        "abs": -14989,
+        "confidence": "year"
       },
       "startAbs": -15300,
       "endAbs": -14989,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3484,18 +3488,17 @@
       "start": {
         "year": -1250,
         "month": 1,
-        "abs": -14988
+        "abs": -14988,
+        "confidence": "year"
       },
       "end": {
         "year": -1192,
         "month": 12,
-        "abs": -14281
+        "abs": -14281,
+        "confidence": "year"
       },
       "startAbs": -14988,
       "endAbs": -14281,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3507,19 +3510,19 @@
       "start": {
         "year": -1191,
         "month": 1,
-        "abs": -14280
+        "abs": -14280,
+        "confidence": "year"
       },
       "end": {
         "year": -1181,
         "month": 12,
-        "abs": -14149
+        "abs": -14149,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -14280,
       "endAbs": -14149,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": "interpolated",
-      "isMain": true
+      "isMain": true,
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-zi-zujia",
@@ -3530,19 +3533,20 @@
       "start": {
         "year": -1180,
         "month": 1,
-        "abs": -14148
+        "abs": -14148,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -1170,
         "month": 12,
-        "abs": -14017
+        "abs": -14017,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -14148,
       "endAbs": -14017,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
-      "isMain": true
+      "isMain": true,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-zi-linxin",
@@ -3553,19 +3557,20 @@
       "start": {
         "year": -1169,
         "month": 1,
-        "abs": -14016
+        "abs": -14016,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -1159,
         "month": 12,
-        "abs": -13885
+        "abs": -13885,
+        "confidence": "interpolated_by_generation"
       },
       "startAbs": -14016,
       "endAbs": -13885,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
-      "isMain": true
+      "isMain": true,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-zi-gengding",
@@ -3576,19 +3581,19 @@
       "start": {
         "year": -1158,
         "month": 1,
-        "abs": -13884
+        "abs": -13884,
+        "confidence": "interpolated_by_generation"
       },
       "end": {
         "year": -1148,
         "month": 12,
-        "abs": -13753
+        "abs": -13753,
+        "confidence": "year"
       },
       "startAbs": -13884,
       "endAbs": -13753,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": null,
-      "isMain": true
+      "isMain": true,
+      "startConfidence": "interpolated_by_generation"
     },
     {
       "id": "reign-zi-wuyi",
@@ -3599,18 +3604,17 @@
       "start": {
         "year": -1147,
         "month": 1,
-        "abs": -13752
+        "abs": -13752,
+        "confidence": "year"
       },
       "end": {
         "year": -1113,
         "month": 12,
-        "abs": -13333
+        "abs": -13333,
+        "confidence": "year"
       },
       "startAbs": -13752,
       "endAbs": -13333,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3622,18 +3626,17 @@
       "start": {
         "year": -1112,
         "month": 1,
-        "abs": -13332
+        "abs": -13332,
+        "confidence": "year"
       },
       "end": {
         "year": -1102,
         "month": 12,
-        "abs": -13201
+        "abs": -13201,
+        "confidence": "year"
       },
       "startAbs": -13332,
       "endAbs": -13201,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3645,18 +3648,17 @@
       "start": {
         "year": -1101,
         "month": 1,
-        "abs": -13200
+        "abs": -13200,
+        "confidence": "year"
       },
       "end": {
         "year": -1076,
         "month": 12,
-        "abs": -12889
+        "abs": -12889,
+        "confidence": "year"
       },
       "startAbs": -13200,
       "endAbs": -12889,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3668,18 +3670,17 @@
       "start": {
         "year": -1075,
         "month": 1,
-        "abs": -12888
+        "abs": -12888,
+        "confidence": "year"
       },
       "end": {
         "year": -1046,
         "month": 1,
-        "abs": -12540
+        "abs": -12540,
+        "confidence": "year"
       },
       "startAbs": -12888,
       "endAbs": -12540,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3691,18 +3692,17 @@
       "start": {
         "year": -1046,
         "month": 1,
-        "abs": -12540
+        "abs": -12540,
+        "confidence": "year"
       },
       "end": {
         "year": -1043,
         "month": 12,
-        "abs": -12493
+        "abs": -12493,
+        "confidence": "year"
       },
       "startAbs": -12540,
       "endAbs": -12493,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3714,18 +3714,17 @@
       "start": {
         "year": -1042,
         "month": 1,
-        "abs": -12492
+        "abs": -12492,
+        "confidence": "year"
       },
       "end": {
         "year": -1021,
         "month": 12,
-        "abs": -12229
+        "abs": -12229,
+        "confidence": "year"
       },
       "startAbs": -12492,
       "endAbs": -12229,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3737,18 +3736,17 @@
       "start": {
         "year": -1020,
         "month": 1,
-        "abs": -12228
+        "abs": -12228,
+        "confidence": "year"
       },
       "end": {
         "year": -996,
         "month": 12,
-        "abs": -11929
+        "abs": -11929,
+        "confidence": "year"
       },
       "startAbs": -12228,
       "endAbs": -11929,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3760,18 +3758,17 @@
       "start": {
         "year": -995,
         "month": 1,
-        "abs": -11928
+        "abs": -11928,
+        "confidence": "year"
       },
       "end": {
         "year": -977,
         "month": 12,
-        "abs": -11701
+        "abs": -11701,
+        "confidence": "year"
       },
       "startAbs": -11928,
       "endAbs": -11701,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3783,18 +3780,17 @@
       "start": {
         "year": -976,
         "month": 1,
-        "abs": -11700
+        "abs": -11700,
+        "confidence": "year"
       },
       "end": {
         "year": -923,
         "month": 12,
-        "abs": -11053
+        "abs": -11053,
+        "confidence": "year"
       },
       "startAbs": -11700,
       "endAbs": -11053,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3806,18 +3802,17 @@
       "start": {
         "year": -922,
         "month": 1,
-        "abs": -11052
+        "abs": -11052,
+        "confidence": "year"
       },
       "end": {
         "year": -900,
         "month": 12,
-        "abs": -10777
+        "abs": -10777,
+        "confidence": "year"
       },
       "startAbs": -11052,
       "endAbs": -10777,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3829,18 +3824,17 @@
       "start": {
         "year": -899,
         "month": 1,
-        "abs": -10776
+        "abs": -10776,
+        "confidence": "year"
       },
       "end": {
         "year": -892,
         "month": 12,
-        "abs": -10681
+        "abs": -10681,
+        "confidence": "year"
       },
       "startAbs": -10776,
       "endAbs": -10681,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3852,18 +3846,17 @@
       "start": {
         "year": -891,
         "month": 1,
-        "abs": -10680
+        "abs": -10680,
+        "confidence": "year"
       },
       "end": {
         "year": -886,
         "month": 12,
-        "abs": -10609
+        "abs": -10609,
+        "confidence": "year"
       },
       "startAbs": -10680,
       "endAbs": -10609,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3875,18 +3868,17 @@
       "start": {
         "year": -885,
         "month": 1,
-        "abs": -10608
+        "abs": -10608,
+        "confidence": "year"
       },
       "end": {
         "year": -878,
         "month": 12,
-        "abs": -10513
+        "abs": -10513,
+        "confidence": "year"
       },
       "startAbs": -10608,
       "endAbs": -10513,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3898,18 +3890,17 @@
       "start": {
         "year": -877,
         "month": 1,
-        "abs": -10512
+        "abs": -10512,
+        "confidence": "year"
       },
       "end": {
         "year": -841,
         "month": 12,
-        "abs": -10069
+        "abs": -10069,
+        "confidence": "year"
       },
       "startAbs": -10512,
       "endAbs": -10069,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3921,18 +3912,17 @@
       "start": {
         "year": -827,
         "month": 1,
-        "abs": -9912
+        "abs": -9912,
+        "confidence": "year"
       },
       "end": {
         "year": -782,
         "month": 12,
-        "abs": -9361
+        "abs": -9361,
+        "confidence": "year"
       },
       "startAbs": -9912,
       "endAbs": -9361,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
@@ -3944,64 +3934,61 @@
       "start": {
         "year": -781,
         "month": 1,
-        "abs": -9360
+        "abs": -9360,
+        "confidence": "year"
       },
       "end": {
         "year": -771,
         "month": 12,
-        "abs": -9229
+        "abs": -9229,
+        "confidence": "year"
       },
       "startAbs": -9360,
       "endAbs": -9229,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-yijiu",
       "dynastyId": "zhou-east",
       "personId": "ji-yijiu",
-      "title": "",
+      "title": "平王",
       "eraNames": [],
       "start": {
         "year": -770,
         "month": 1,
-        "abs": -9228
+        "abs": -9228,
+        "confidence": "year"
       },
       "end": {
         "year": -720,
         "month": 12,
-        "abs": -8617
+        "abs": -8617,
+        "confidence": "year"
       },
       "startAbs": -9228,
       "endAbs": -8617,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-yuchen",
       "dynastyId": "zhou-east",
       "personId": "ji-yuchen",
-      "title": "",
+      "title": "携王",
       "eraNames": [],
       "start": {
         "year": -770,
         "month": 1,
-        "abs": -9228
+        "abs": -9228,
+        "confidence": "year"
       },
       "end": {
         "year": -750,
         "month": 12,
-        "abs": -8977
+        "abs": -8977,
+        "confidence": "year"
       },
       "startAbs": -9228,
       "endAbs": -8977,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": "xie",
       "claimLabel": "携",
       "claimRole": "rival",
@@ -4011,559 +3998,534 @@
       "id": "reign-ji-lin",
       "dynastyId": "zhou-east",
       "personId": "ji-lin",
-      "title": "",
+      "title": "桓王",
       "eraNames": [],
       "start": {
         "year": -719,
         "month": 1,
-        "abs": -8616
+        "abs": -8616,
+        "confidence": "year"
       },
       "end": {
         "year": -697,
         "month": 12,
-        "abs": -8341
+        "abs": -8341,
+        "confidence": "year"
       },
       "startAbs": -8616,
       "endAbs": -8341,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-tuo",
       "dynastyId": "zhou-east",
       "personId": "ji-tuo",
-      "title": "",
+      "title": "庄王",
       "eraNames": [],
       "start": {
         "year": -696,
         "month": 1,
-        "abs": -8340
+        "abs": -8340,
+        "confidence": "year"
       },
       "end": {
         "year": -682,
         "month": 12,
-        "abs": -8161
+        "abs": -8161,
+        "confidence": "year"
       },
       "startAbs": -8340,
       "endAbs": -8161,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-huqi",
       "dynastyId": "zhou-east",
       "personId": "ji-huqi",
-      "title": "",
+      "title": "釐王",
       "eraNames": [],
       "start": {
         "year": -681,
         "month": 1,
-        "abs": -8160
+        "abs": -8160,
+        "confidence": "year"
       },
       "end": {
         "year": -677,
         "month": 12,
-        "abs": -8101
+        "abs": -8101,
+        "confidence": "year"
       },
       "startAbs": -8160,
       "endAbs": -8101,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-lang",
       "dynastyId": "zhou-east",
       "personId": "ji-lang",
-      "title": "",
+      "title": "惠王",
       "eraNames": [],
       "start": {
         "year": -676,
         "month": 1,
-        "abs": -8100
+        "abs": -8100,
+        "confidence": "year"
       },
       "end": {
         "year": -652,
         "month": 12,
-        "abs": -7801
+        "abs": -7801,
+        "confidence": "year"
       },
       "startAbs": -8100,
       "endAbs": -7801,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-zheng",
       "dynastyId": "zhou-east",
       "personId": "ji-zheng",
-      "title": "",
+      "title": "襄王",
       "eraNames": [],
       "start": {
         "year": -651,
         "month": 1,
-        "abs": -7800
+        "abs": -7800,
+        "confidence": "year"
       },
       "end": {
         "year": -619,
         "month": 12,
-        "abs": -7405
+        "abs": -7405,
+        "confidence": "year"
       },
       "startAbs": -7800,
       "endAbs": -7405,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-renchen",
       "dynastyId": "zhou-east",
       "personId": "ji-renchen",
-      "title": "",
+      "title": "顷王",
       "eraNames": [],
       "start": {
         "year": -618,
         "month": 1,
-        "abs": -7404
+        "abs": -7404,
+        "confidence": "year"
       },
       "end": {
         "year": -613,
         "month": 12,
-        "abs": -7333
+        "abs": -7333,
+        "confidence": "year"
       },
       "startAbs": -7404,
       "endAbs": -7333,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-ban",
       "dynastyId": "zhou-east",
       "personId": "ji-ban",
-      "title": "",
+      "title": "匡王",
       "eraNames": [],
       "start": {
         "year": -612,
         "month": 1,
-        "abs": -7332
+        "abs": -7332,
+        "confidence": "year"
       },
       "end": {
         "year": -607,
         "month": 12,
-        "abs": -7261
+        "abs": -7261,
+        "confidence": "year"
       },
       "startAbs": -7332,
       "endAbs": -7261,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-yu",
       "dynastyId": "zhou-east",
       "personId": "ji-yu",
-      "title": "",
+      "title": "定王",
       "eraNames": [],
       "start": {
         "year": -606,
         "month": 1,
-        "abs": -7260
+        "abs": -7260,
+        "confidence": "year"
       },
       "end": {
         "year": -586,
         "month": 12,
-        "abs": -7009
+        "abs": -7009,
+        "confidence": "year"
       },
       "startAbs": -7260,
       "endAbs": -7009,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-yi",
       "dynastyId": "zhou-east",
       "personId": "ji-yi",
-      "title": "",
+      "title": "简王",
       "eraNames": [],
       "start": {
         "year": -585,
         "month": 1,
-        "abs": -7008
+        "abs": -7008,
+        "confidence": "year"
       },
       "end": {
         "year": -572,
         "month": 12,
-        "abs": -6841
+        "abs": -6841,
+        "confidence": "year"
       },
       "startAbs": -7008,
       "endAbs": -6841,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-xiexin",
       "dynastyId": "zhou-east",
       "personId": "ji-xiexin",
-      "title": "",
+      "title": "灵王",
       "eraNames": [],
       "start": {
         "year": -571,
         "month": 1,
-        "abs": -6840
+        "abs": -6840,
+        "confidence": "year"
       },
       "end": {
         "year": -545,
         "month": 12,
-        "abs": -6517
+        "abs": -6517,
+        "confidence": "year"
       },
       "startAbs": -6840,
       "endAbs": -6517,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-gui",
       "dynastyId": "zhou-east",
       "personId": "ji-gui",
-      "title": "",
+      "title": "景王",
       "eraNames": [],
       "start": {
         "year": -544,
         "month": 1,
-        "abs": -6516
+        "abs": -6516,
+        "confidence": "year"
       },
       "end": {
         "year": -521,
         "month": 12,
-        "abs": -6229
+        "abs": -6229,
+        "confidence": "year"
       },
       "startAbs": -6516,
       "endAbs": -6229,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-meng",
       "dynastyId": "zhou-east",
       "personId": "ji-meng",
-      "title": "",
+      "title": "悼王",
       "eraNames": [],
       "start": {
         "year": -520,
         "month": 1,
-        "abs": -6228
+        "abs": -6228,
+        "confidence": "year"
       },
       "end": {
         "year": -520,
         "month": 12,
-        "abs": -6217
+        "abs": -6217,
+        "confidence": "year"
       },
       "startAbs": -6228,
       "endAbs": -6217,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-gai",
       "dynastyId": "zhou-east",
       "personId": "ji-gai",
-      "title": "",
+      "title": "敬王",
       "eraNames": [],
       "start": {
         "year": -519,
         "month": 1,
-        "abs": -6216
+        "abs": -6216,
+        "confidence": "year"
       },
       "end": {
         "year": -477,
         "month": 12,
-        "abs": -5701
+        "abs": -5701,
+        "confidence": "year"
       },
       "startAbs": -6216,
       "endAbs": -5701,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-ren",
       "dynastyId": "zhou-east",
       "personId": "ji-ren",
-      "title": "",
+      "title": "元王",
       "eraNames": [],
       "start": {
         "year": -476,
         "month": 1,
-        "abs": -5700
+        "abs": -5700,
+        "confidence": "year"
       },
       "end": {
         "year": -469,
         "month": 12,
-        "abs": -5605
+        "abs": -5605,
+        "confidence": "year"
       },
       "startAbs": -5700,
       "endAbs": -5605,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-jie",
       "dynastyId": "zhou-east",
       "personId": "ji-jie",
-      "title": "",
+      "title": "贞定王",
       "eraNames": [],
       "start": {
         "year": -468,
         "month": 1,
-        "abs": -5604
+        "abs": -5604,
+        "confidence": "year"
       },
       "end": {
         "year": -442,
         "month": 12,
-        "abs": -5281
+        "abs": -5281,
+        "confidence": "year"
       },
       "startAbs": -5604,
       "endAbs": -5281,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-quji",
       "dynastyId": "zhou-east",
       "personId": "ji-quji",
-      "title": "",
+      "title": "哀王",
       "eraNames": [],
       "start": {
         "year": -441,
         "month": 1,
-        "abs": -5280
+        "abs": -5280,
+        "confidence": "year"
       },
       "end": {
         "year": -441,
         "month": 3,
-        "abs": -5278
+        "abs": -5278,
+        "confidence": "year"
       },
       "startAbs": -5280,
       "endAbs": -5278,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-shu",
       "dynastyId": "zhou-east",
       "personId": "ji-shu",
-      "title": "",
+      "title": "思王",
       "eraNames": [],
       "start": {
         "year": -441,
         "month": 4,
-        "abs": -5277
+        "abs": -5277,
+        "confidence": "year"
       },
       "end": {
         "year": -441,
         "month": 12,
-        "abs": -5269
+        "abs": -5269,
+        "confidence": "year"
       },
       "startAbs": -5277,
       "endAbs": -5269,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-wei",
       "dynastyId": "zhou-east",
       "personId": "ji-wei",
-      "title": "",
+      "title": "考王",
       "eraNames": [],
       "start": {
         "year": -440,
         "month": 1,
-        "abs": -5268
+        "abs": -5268,
+        "confidence": "year"
       },
       "end": {
         "year": -426,
         "month": 12,
-        "abs": -5089
+        "abs": -5089,
+        "confidence": "year"
       },
       "startAbs": -5268,
       "endAbs": -5089,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-wu",
       "dynastyId": "zhou-east",
       "personId": "ji-wu",
-      "title": "",
+      "title": "威烈王",
       "eraNames": [],
       "start": {
         "year": -425,
         "month": 1,
-        "abs": -5088
+        "abs": -5088,
+        "confidence": "year"
       },
       "end": {
         "year": -402,
         "month": 12,
-        "abs": -4801
+        "abs": -4801,
+        "confidence": "year"
       },
       "startAbs": -5088,
       "endAbs": -4801,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-jiao",
       "dynastyId": "zhou-east",
       "personId": "ji-jiao",
-      "title": "",
+      "title": "安王",
       "eraNames": [],
       "start": {
         "year": -401,
         "month": 1,
-        "abs": -4800
+        "abs": -4800,
+        "confidence": "year"
       },
       "end": {
         "year": -376,
         "month": 12,
-        "abs": -4489
+        "abs": -4489,
+        "confidence": "year"
       },
       "startAbs": -4800,
       "endAbs": -4489,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-xi",
       "dynastyId": "zhou-east",
       "personId": "ji-xi",
-      "title": "",
+      "title": "烈王",
       "eraNames": [],
       "start": {
         "year": -375,
         "month": 1,
-        "abs": -4488
+        "abs": -4488,
+        "confidence": "year"
       },
       "end": {
         "year": -369,
         "month": 12,
-        "abs": -4405
+        "abs": -4405,
+        "confidence": "year"
       },
       "startAbs": -4488,
       "endAbs": -4405,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-bian",
       "dynastyId": "zhou-east",
       "personId": "ji-bian",
-      "title": "",
+      "title": "显王",
       "eraNames": [],
       "start": {
         "year": -368,
         "month": 1,
-        "abs": -4404
+        "abs": -4404,
+        "confidence": "year"
       },
       "end": {
         "year": -321,
         "month": 12,
-        "abs": -3829
+        "abs": -3829,
+        "confidence": "year"
       },
       "startAbs": -4404,
       "endAbs": -3829,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-ding",
       "dynastyId": "zhou-east",
       "personId": "ji-ding",
-      "title": "",
+      "title": "慎靓王",
       "eraNames": [],
       "start": {
         "year": -320,
         "month": 1,
-        "abs": -3828
+        "abs": -3828,
+        "confidence": "year"
       },
       "end": {
         "year": -315,
         "month": 12,
-        "abs": -3757
+        "abs": -3757,
+        "confidence": "year"
       },
       "startAbs": -3828,
       "endAbs": -3757,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     },
     {
       "id": "reign-ji-yan",
       "dynastyId": "zhou-east",
       "personId": "ji-yan",
-      "title": "",
+      "title": "赧王",
       "eraNames": [],
       "start": {
         "year": -314,
         "month": 1,
-        "abs": -3756
+        "abs": -3756,
+        "confidence": "year"
       },
       "end": {
         "year": -256,
         "month": 12,
-        "abs": -3049
+        "abs": -3049,
+        "confidence": "year"
       },
       "startAbs": -3756,
       "endAbs": -3049,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "isMain": true
     }
   ],
   "events": [
     {
       "kind": "other",
-      "precision": "century",
       "dynastyIds": [
         "xia"
       ],
@@ -4574,66 +4536,44 @@
         "bo-yi",
         "tu-shan-shi"
       ],
-      "dateNote": "传说时代，具体年月不可考；窗口取夏朝建立前后的世纪尺度",
+      "dateNote": "传说时代，具体年月不可考；窗口取夏朝建立前后的世纪尺度；原不确定范围：-2100年1月至-2070年12月；按既有事件说明转为代表时点。",
       "id": "yu-flood-control",
       "name": "大禹治水",
-      "timeMode": "circa",
-      "start": {
-        "year": -2100,
-        "month": 1,
-        "abs": -25188
-      },
-      "end": {
-        "year": -2070,
-        "month": 12,
-        "abs": -24817
-      },
+      "timeMode": "point",
       "at": {
         "year": -2070,
         "month": 1,
-        "abs": -24828
+        "abs": -24828,
+        "confidence": "approximate_year"
       },
       "summary": "传说禹疏导洪水，其后受禅，为夏后氏开国叙事的核心。",
-      "startAbs": -25188,
-      "endAbs": -24817,
-      "atAbs": -24828
+      "atAbs": -24828,
+      "atConfidence": "approximate_year"
     },
     {
       "kind": "battle",
-      "precision": "decade",
       "dynastyIds": [
         "xia"
       ],
       "participantIds": [
         "si-qi"
       ],
-      "dateNote": "《尚书·甘誓》载启伐有扈；绝对年取今本竹书年数自夏始顺推后的启在位段，标推算",
+      "dateNote": "《尚书·甘誓》载启伐有扈；绝对年取今本竹书年数自夏始顺推后的启在位段，标推算；原不确定范围：-2060年1月至-2045年12月；按既有事件说明转为代表时点。",
       "id": "gan-battle",
       "name": "甘之战",
-      "timeMode": "circa",
-      "start": {
-        "year": -2060,
-        "month": 1,
-        "abs": -24708
-      },
-      "end": {
-        "year": -2045,
-        "month": 12,
-        "abs": -24517
-      },
+      "timeMode": "point",
       "at": {
         "year": -2053,
         "month": 1,
-        "abs": -24624
+        "abs": -24624,
+        "confidence": "approximate_year"
       },
       "summary": "夏启讨伐有扈氏，传统视为世袭王权确立过程中的战争。",
-      "startAbs": -24708,
-      "endAbs": -24517,
-      "atAbs": -24624
+      "atAbs": -24624,
+      "atConfidence": "approximate_year"
     },
     {
       "kind": "politics",
-      "precision": "decade",
       "dynastyIds": [
         "xia"
       ],
@@ -4641,33 +4581,22 @@
         "si-taikang",
         "hou-yi"
       ],
-      "dateNote": "太康失位传说。窗口取太康在位段（前2044–前2041）。",
+      "dateNote": "太康失位传说。窗口取太康在位段（前2044–前2041）。；原不确定范围：-2044年1月至-2041年12月；按既有事件说明转为代表时点。",
       "id": "taikang-lost",
       "name": "太康失国",
-      "timeMode": "circa",
-      "start": {
-        "year": -2044,
-        "month": 1,
-        "abs": -24516
-      },
-      "end": {
-        "year": -2041,
-        "month": 12,
-        "abs": -24469
-      },
+      "timeMode": "point",
       "at": {
         "year": -2044,
         "month": 12,
-        "abs": -24505
+        "abs": -24505,
+        "confidence": "approximate_year"
       },
       "summary": "太康失位，有穷后羿因夏民以代夏政。",
-      "startAbs": -24516,
-      "endAbs": -24469,
-      "atAbs": -24505
+      "atAbs": -24505,
+      "atConfidence": "approximate_year"
     },
     {
       "kind": "politics",
-      "precision": "decade",
       "dynastyIds": [
         "xia"
       ],
@@ -4677,66 +4606,60 @@
         "han-zhuo",
         "han-jiao"
       ],
-      "dateNote": "少康灭寒浞、恢复夏政；窗口取今本竹书年数顺推后的少康在位段，标推算",
+      "dateNote": "少康灭寒浞、恢复夏政；窗口取今本竹书年数顺推后的少康在位段，标推算；原不确定范围：-1959年1月至-1939年12月；按既有事件说明转为持续区间。",
       "id": "shaokang-zhongxing",
       "name": "少康中兴",
-      "timeMode": "circa",
+      "timeMode": "span",
       "start": {
         "year": -1959,
         "month": 1,
-        "abs": -23496
+        "abs": -23496,
+        "confidence": "approximate_year"
       },
       "end": {
         "year": -1939,
         "month": 12,
-        "abs": -23245
-      },
-      "at": {
-        "year": -1959,
-        "month": 1,
-        "abs": -23496
+        "abs": -23245,
+        "confidence": "approximate_year"
       },
       "summary": "后缗逃归有仍生少康；少康自有虞起兵，消灭寒浞、过浇，恢复夏后氏统治。",
       "startAbs": -23496,
       "endAbs": -23245,
-      "atAbs": -23496
+      "startConfidence": "approximate_year",
+      "endConfidence": "approximate_year"
     },
     {
       "kind": "politics",
-      "precision": "decade",
       "dynastyIds": [
         "xia"
       ],
       "participantIds": [
         "si-kongjia"
       ],
-      "dateNote": "《史记·夏本纪》记孔甲好鬼神、夏德衰；绝对年取今本竹书年数顺推后的孔甲在位段，标推算",
+      "dateNote": "《史记·夏本纪》记孔甲好鬼神、夏德衰；绝对年取今本竹书年数顺推后的孔甲在位段，标推算；原不确定范围：-1709年1月至-1679年12月；按既有事件说明转为持续区间。",
       "id": "kongjia-decline",
       "name": "孔甲乱德",
-      "timeMode": "circa",
+      "timeMode": "span",
       "start": {
         "year": -1709,
         "month": 1,
-        "abs": -20496
+        "abs": -20496,
+        "confidence": "approximate_year"
       },
       "end": {
         "year": -1679,
         "month": 12,
-        "abs": -20125
-      },
-      "at": {
-        "year": -1694,
-        "month": 1,
-        "abs": -20316
+        "abs": -20125,
+        "confidence": "approximate_year"
       },
       "summary": "帝孔甲好方鬼神、事淫乱，夏后氏德衰、诸侯畔之；又有扰龙、刘累御龙传说。",
       "startAbs": -20496,
       "endAbs": -20125,
-      "atAbs": -20316
+      "startConfidence": "approximate_year",
+      "endConfidence": "approximate_year"
     },
     {
       "kind": "politics",
-      "precision": "decade",
       "dynastyIds": [
         "xia"
       ],
@@ -4744,33 +4667,22 @@
         "si-jie",
         "guan-longpang"
       ],
-      "dateNote": "桀杀关龙逢出于《韩诗外传》等，具体年份不可考；窗取桀在位末段，标推算",
+      "dateNote": "桀杀关龙逢出于《韩诗外传》等，具体年份不可考；窗取桀在位末段，标推算；原不确定范围：-1609年1月至-1600年12月；按既有事件说明转为代表时点。",
       "id": "guanlongpang-remonstrance",
       "name": "关龙逢谏桀",
-      "timeMode": "circa",
-      "start": {
-        "year": -1609,
-        "month": 1,
-        "abs": -19296
-      },
-      "end": {
-        "year": -1600,
-        "month": 12,
-        "abs": -19177
-      },
+      "timeMode": "point",
       "at": {
         "year": -1600,
         "month": 1,
-        "abs": -19188
+        "abs": -19188,
+        "confidence": "approximate_year"
       },
       "summary": "传说夏桀通宵宴乐，关龙逢进黄图强谏，被桀所杀。",
-      "startAbs": -19296,
-      "endAbs": -19177,
-      "atAbs": -19188
+      "atAbs": -19188,
+      "atConfidence": "approximate_year"
     },
     {
       "kind": "battle",
-      "precision": "decade",
       "dynastyIds": [
         "xia",
         "shang"
@@ -4782,33 +4694,22 @@
         "zhong-hui",
         "mo-xi"
       ],
-      "dateNote": "夏商分界取断代工程约前1600年，战役月日不详",
+      "dateNote": "夏商分界取断代工程约前1600年，战役月日不详；原不确定范围：-1610年1月至-1600年12月；按既有事件说明转为代表时点。",
       "id": "mingtiao",
       "name": "鸣条之战",
-      "timeMode": "circa",
-      "start": {
-        "year": -1610,
-        "month": 1,
-        "abs": -19308
-      },
-      "end": {
-        "year": -1600,
-        "month": 12,
-        "abs": -19177
-      },
+      "timeMode": "point",
       "at": {
         "year": -1600,
         "month": 1,
-        "abs": -19188
+        "abs": -19188,
+        "confidence": "approximate_year"
       },
       "summary": "商汤与伊尹在鸣条击败夏桀，夏亡商兴。",
-      "startAbs": -19308,
-      "endAbs": -19177,
-      "atAbs": -19188
+      "atAbs": -19188,
+      "atConfidence": "approximate_year"
     },
     {
       "kind": "politics",
-      "precision": "decade",
       "dynastyIds": [
         "shang"
       ],
@@ -4816,33 +4717,22 @@
         "yi-yin",
         "zi-taijia"
       ],
-      "dateNote": "桐宫放逐出于《史记》等传说，具体年份不可考",
+      "dateNote": "桐宫放逐出于《史记》等传说，具体年份不可考；原不确定范围：-1560年1月至-1548年12月；按既有事件说明转为代表时点。",
       "id": "yiyin-taijia",
       "name": "伊尹放太甲",
-      "timeMode": "circa",
-      "start": {
-        "year": -1560,
-        "month": 1,
-        "abs": -18708
-      },
-      "end": {
-        "year": -1548,
-        "month": 12,
-        "abs": -18553
-      },
+      "timeMode": "point",
       "at": {
         "year": -1555,
         "month": 1,
-        "abs": -18648
+        "abs": -18648,
+        "confidence": "approximate_year"
       },
       "summary": "传说太甲不遵汤法，伊尹放之于桐，三年后迎归复位。",
-      "startAbs": -18708,
-      "endAbs": -18553,
-      "atAbs": -18648
+      "atAbs": -18648,
+      "atConfidence": "approximate_year"
     },
     {
       "kind": "politics",
-      "precision": "decade",
       "dynastyIds": [
         "shang"
       ],
@@ -4851,67 +4741,53 @@
         "yi-zhi",
         "wu-xian"
       ],
-      "dateNote": "《史记》记太戊立伊陟为相、用巫咸；绝对年取本表太戊在位前十年（竹书积年，非实测）",
+      "dateNote": "《史记》记太戊立伊陟为相、用巫咸；绝对年取本表太戊在位前十年（竹书积年，非实测）；原不确定范围：-1494年1月至-1485年12月；按既有事件说明转为持续区间。",
       "id": "taiwu-revival",
       "name": "太戊修德",
-      "timeMode": "circa",
+      "timeMode": "span",
       "start": {
         "year": -1494,
         "month": 1,
-        "abs": -17916
+        "abs": -17916,
+        "confidence": "approximate_year"
       },
       "end": {
         "year": -1485,
         "month": 12,
-        "abs": -17797
-      },
-      "at": {
-        "year": -1494,
-        "month": 1,
-        "abs": -17916
+        "abs": -17797,
+        "confidence": "approximate_year"
       },
       "summary": "太戊以伊陟为相，用巫咸；传说亳有祥桑榖，修德后枯死，殷道复兴。",
       "startAbs": -17916,
       "endAbs": -17797,
-      "atAbs": -17916
+      "startConfidence": "approximate_year",
+      "endConfidence": "approximate_year"
     },
     {
       "kind": "politics",
-      "precision": "decade",
       "dynastyIds": [
         "shang"
       ],
       "participantIds": [
         "zi-pangeng"
       ],
-      "dateNote": "断代工程估定迁殷约前1300年，起迄年不详",
+      "dateNote": "断代工程估定迁殷约前1300年，起迄年不详；原不确定范围：-1310年1月至-1290年12月；按既有事件说明转为代表时点。",
       "id": "pangeng-move-yin",
       "name": "盘庚迁殷",
-      "timeMode": "circa",
-      "start": {
-        "year": -1310,
-        "month": 1,
-        "abs": -15708
-      },
-      "end": {
-        "year": -1290,
-        "month": 12,
-        "abs": -15457
-      },
+      "timeMode": "point",
       "at": {
         "year": -1300,
         "month": 1,
-        "abs": -15588
+        "abs": -15588,
+        "confidence": "approximate_year"
       },
       "summary": "盘庚迁都于殷（今安阳），此后商亦称殷。",
-      "startAbs": -15708,
-      "endAbs": -15457,
       "atAbs": -15588,
-      "locationId": "loc-pangeng-move-yin"
+      "locationId": "loc-pangeng-move-yin",
+      "atConfidence": "approximate_year"
     },
     {
       "kind": "politics",
-      "precision": "year",
       "dynastyIds": [
         "shang"
       ],
@@ -4928,12 +4804,14 @@
       "start": {
         "year": -1250,
         "month": 1,
-        "abs": -14988
+        "abs": -14988,
+        "confidence": "year"
       },
       "end": {
         "year": -1192,
         "month": 12,
-        "abs": -14281
+        "abs": -14281,
+        "confidence": "year"
       },
       "summary": "武丁对外用兵、内修祭祀，晚商达到鼎盛；甘盘、傅说辅政，妇好亦主征伐。",
       "startAbs": -14988,
@@ -4941,7 +4819,6 @@
     },
     {
       "kind": "politics",
-      "precision": "decade",
       "dynastyIds": [
         "shang"
       ],
@@ -4950,33 +4827,22 @@
         "fu-yue",
         "gan-pan"
       ],
-      "dateNote": "《史记》《说命》记武丁梦傅说、举于傅岩；年份不详，窗取武丁在位前十年",
+      "dateNote": "《史记》《说命》记武丁梦傅说、举于傅岩；年份不详，窗取武丁在位前十年；原不确定范围：-1250年1月至-1241年12月；按既有事件说明转为代表时点。",
       "id": "fuyue-fuyan",
       "name": "武丁举傅说",
-      "timeMode": "circa",
-      "start": {
-        "year": -1250,
-        "month": 1,
-        "abs": -14988
-      },
-      "end": {
-        "year": -1241,
-        "month": 12,
-        "abs": -14869
-      },
+      "timeMode": "point",
       "at": {
         "year": -1250,
         "month": 1,
-        "abs": -14988
+        "abs": -14988,
+        "confidence": "approximate_year"
       },
       "summary": "传说傅说在傅岩版筑，武丁按梦中形象求得，举以为相。",
-      "startAbs": -14988,
-      "endAbs": -14869,
-      "atAbs": -14988
+      "atAbs": -14988,
+      "atConfidence": "approximate_year"
     },
     {
       "kind": "politics",
-      "precision": "year",
       "dynastyIds": [
         "shang"
       ],
@@ -4984,34 +4850,23 @@
         "zi-dixin",
         "bi-gan"
       ],
-      "dateNote": "《今本竹书》系于帝辛末年杀王子比干；绝对年取牧野前1046年，月日不详",
+      "dateNote": "《今本竹书》系于帝辛末年杀王子比干；绝对年取牧野前1046年，月日不详；原不确定范围：-1047年1月至-1046年12月；按既有事件说明转为代表时点。",
       "id": "bigan-killed",
       "name": "比干谏死",
-      "timeMode": "circa",
-      "start": {
-        "year": -1047,
-        "month": 1,
-        "abs": -12552
-      },
-      "end": {
-        "year": -1046,
-        "month": 12,
-        "abs": -12529
-      },
+      "timeMode": "point",
       "at": {
         "year": -1046,
         "month": 12,
-        "abs": -12529
+        "abs": -12529,
+        "confidence": "approximate_year"
       },
       "summary": "传说比干强谏帝辛，被剖心而死；与微子、箕子并称殷有三仁。",
-      "startAbs": -12552,
-      "endAbs": -12529,
-      "atAbs": -12529
+      "atAbs": -12529,
+      "atConfidence": "approximate_year"
     },
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "shang",
         "zhou-west"
@@ -5028,14 +4883,14 @@
       "at": {
         "year": -1046,
         "month": 1,
-        "abs": -12540
+        "abs": -12540,
+        "confidence": "month"
       },
       "summary": "周武王会师牧野克商，商周分界。",
       "atAbs": -12540
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "zhou-west"
       ],
@@ -5043,33 +4898,30 @@
         "ji-song",
         "ji-dan"
       ],
-      "dateNote": "成王初、周公摄政期间，绝对年据西周初框架",
+      "dateNote": "成王初、周公摄政期间，绝对年据西周初框架；原不确定范围：-1042年1月至-1036年12月；按既有事件说明转为持续区间。",
       "id": "sanjian-rebellion",
       "name": "三监之乱",
-      "timeMode": "circa",
+      "timeMode": "span",
       "start": {
         "year": -1042,
         "month": 1,
-        "abs": -12492
+        "abs": -12492,
+        "confidence": "approximate_year"
       },
       "end": {
         "year": -1036,
         "month": 12,
-        "abs": -12409
-      },
-      "at": {
-        "year": -1041,
-        "month": 12,
-        "abs": -12469
+        "abs": -12409,
+        "confidence": "approximate_year"
       },
       "summary": "管蔡霍三监联合武庚叛周，周公东征平定，大规模封建东土。",
       "startAbs": -12492,
       "endAbs": -12409,
-      "atAbs": -12469
+      "startConfidence": "approximate_year",
+      "endConfidence": "approximate_year"
     },
     {
       "kind": "politics",
-      "precision": "year",
       "dynastyIds": [
         "zhou-west"
       ],
@@ -5085,12 +4937,14 @@
       "start": {
         "year": -1042,
         "month": 1,
-        "abs": -12492
+        "abs": -12492,
+        "confidence": "year"
       },
       "end": {
         "year": -996,
         "month": 12,
-        "abs": -11929
+        "abs": -11929,
+        "confidence": "year"
       },
       "summary": "西周早期政治相对安定，传统称刑错四十余年不用。",
       "startAbs": -12492,
@@ -5098,41 +4952,29 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "zhou-west"
       ],
       "participantIds": [
         "ji-xia"
       ],
-      "dateNote": "昭王卒年取断代工程前977年，南征次数与月份不详",
+      "dateNote": "昭王卒年取断代工程前977年，南征次数与月份不详；原不确定范围：-995年1月至-977年12月；按既有事件说明转为代表时点。",
       "id": "zhaowang-south",
       "name": "昭王南征",
-      "timeMode": "circa",
-      "start": {
-        "year": -995,
-        "month": 1,
-        "abs": -11928
-      },
-      "end": {
-        "year": -977,
-        "month": 12,
-        "abs": -11701
-      },
+      "timeMode": "point",
       "at": {
         "year": -977,
         "month": 12,
-        "abs": -11701
+        "abs": -11701,
+        "confidence": "approximate_year"
       },
       "summary": "周昭王多次南征荆楚，传说还师渡汉水而卒。",
-      "startAbs": -11928,
-      "endAbs": -11701,
-      "atAbs": -11701
+      "atAbs": -11701,
+      "atConfidence": "approximate_year"
     },
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhou-west"
       ],
@@ -5145,14 +4987,14 @@
       "at": {
         "year": -841,
         "month": 12,
-        "abs": -10069
+        "abs": -10069,
+        "confidence": "year"
       },
       "summary": "厉王专利，国人暴动，王奔彘，周召共和行政。",
       "atAbs": -10069
     },
     {
       "kind": "politics",
-      "precision": "year",
       "dynastyIds": [
         "zhou-west"
       ],
@@ -5166,12 +5008,14 @@
       "start": {
         "year": -841,
         "month": 1,
-        "abs": -10080
+        "abs": -10080,
+        "confidence": "year"
       },
       "end": {
         "year": -828,
         "month": 12,
-        "abs": -9913
+        "abs": -9913,
+        "confidence": "year"
       },
       "summary": "厉王出奔后的十四年无王期，至宣王即位结束。",
       "startAbs": -10080,
@@ -5179,7 +5023,6 @@
     },
     {
       "kind": "politics",
-      "precision": "year",
       "dynastyIds": [
         "zhou-west"
       ],
@@ -5192,12 +5035,14 @@
       "start": {
         "year": -827,
         "month": 1,
-        "abs": -9912
+        "abs": -9912,
+        "confidence": "year"
       },
       "end": {
         "year": -782,
         "month": 12,
-        "abs": -9361
+        "abs": -9361,
+        "confidence": "year"
       },
       "summary": "宣王整顿朝政、征伐玁狁，西周国势一度回升。",
       "startAbs": -9912,
@@ -5206,7 +5051,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhou-west"
       ],
@@ -5221,7 +5065,8 @@
       "at": {
         "year": -771,
         "month": 12,
-        "abs": -9229
+        "abs": -9229,
+        "confidence": "year"
       },
       "summary": "申侯联合缯人与犬戎攻周，攻破镐京，周幽王死，西周亡。传统叙事称幽王曾为博褒姒一笑多次举烽火戏诸侯，犬戎来攻时诸侯未至；此说见《史记》，但真实性有争议。",
       "atAbs": -9229
@@ -5229,7 +5074,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhou-east"
       ],
@@ -5243,7 +5087,8 @@
       "at": {
         "year": -771,
         "month": 12,
-        "abs": -9229
+        "abs": -9229,
+        "confidence": "year"
       },
       "summary": "申侯等立平王，虢公翰等立携王；后世以平王东迁为东周正统。",
       "atAbs": -9229
@@ -5251,7 +5096,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhou-east"
       ],
@@ -5264,7 +5108,8 @@
       "at": {
         "year": -750,
         "month": 12,
-        "abs": -8977
+        "abs": -8977,
+        "confidence": "year"
       },
       "summary": "晋文侯攻灭携王，二王并立终结，平王正统确立。",
       "atAbs": -8977
@@ -5272,7 +5117,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhou-east"
       ],
@@ -5285,7 +5129,8 @@
       "at": {
         "year": -770,
         "month": 12,
-        "abs": -9217
+        "abs": -9217,
+        "confidence": "year"
       },
       "summary": "平王迁都洛邑，东周开始，王室逐渐失去对诸侯的实质控制。",
       "atAbs": -9217,
@@ -5293,7 +5138,6 @@
     },
     {
       "kind": "politics",
-      "precision": "year",
       "dynastyIds": [
         "zhou-east"
       ],
@@ -5305,12 +5149,14 @@
       "start": {
         "year": -770,
         "month": 1,
-        "abs": -9228
+        "abs": -9228,
+        "confidence": "year"
       },
       "end": {
         "year": -403,
         "month": 12,
-        "abs": -4813
+        "abs": -4813,
+        "confidence": "year"
       },
       "summary": "诸侯争霸、礼崩乐坏，周天子共主名存实亡。",
       "startAbs": -9228,
@@ -5319,7 +5165,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhou-east"
       ],
@@ -5334,7 +5179,8 @@
       "at": {
         "year": -651,
         "month": 12,
-        "abs": -7789
+        "abs": -7789,
+        "confidence": "year"
       },
       "summary": "齐桓公会诸侯于葵丘，周襄王赐胙，齐霸达到顶点。",
       "atAbs": -7789
@@ -5342,7 +5188,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhou-east"
       ],
@@ -5355,14 +5200,14 @@
       "at": {
         "year": -632,
         "month": 12,
-        "abs": -7561
+        "abs": -7561,
+        "confidence": "year"
       },
       "summary": "楚围宋，宋向晋求援。晋先攻曹，因卫拒绝借道，又出兵伐卫；楚将宛春提出复曹、卫以换取楚军解宋围。晋采纳先轸之策，扣留宛春，暗中许诺复曹、卫，借此离间楚与曹、卫；又依晋文公旧诺退避三舍，最终在城濮击败楚军。战后晋复曹、卫，并于践土会盟，确立霸主地位。",
       "atAbs": -7561
     },
     {
       "kind": "politics",
-      "precision": "year",
       "dynastyIds": [
         "zhou-east"
       ],
@@ -5374,12 +5219,14 @@
       "start": {
         "year": -403,
         "month": 1,
-        "abs": -4824
+        "abs": -4824,
+        "confidence": "year"
       },
       "end": {
         "year": -221,
         "month": 12,
-        "abs": -2629
+        "abs": -2629,
+        "confidence": "year"
       },
       "summary": "七雄兼并，变法图强，至秦始皇统一而结束。",
       "startAbs": -4824,
@@ -5388,7 +5235,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "zhou-east"
       ],
@@ -5401,43 +5247,41 @@
       "at": {
         "year": -403,
         "month": 12,
-        "abs": -4813
+        "abs": -4813,
+        "confidence": "year"
       },
       "summary": "周天子承认韩、赵、魏，战国格局形成的标志性事件。",
       "atAbs": -4813
     },
     {
       "kind": "culture",
-      "precision": "century",
       "dynastyIds": [
         "zhou-east"
       ],
       "participantIds": [
         "kong-qiu"
       ],
-      "dateNote": "思想活跃期约自春秋晚期至秦统一，并无单一起迄年",
+      "dateNote": "思想活跃期约自春秋晚期至秦统一，并无单一起迄年；原不确定范围：-551年1月至-221年12月；按既有事件说明转为持续区间。",
       "id": "baijia-zhengming",
       "name": "百家争鸣",
-      "timeMode": "circa",
+      "timeMode": "span",
       "start": {
         "year": -551,
         "month": 1,
-        "abs": -6600
+        "abs": -6600,
+        "confidence": "approximate_year"
       },
       "end": {
         "year": -221,
         "month": 12,
-        "abs": -2629
-      },
-      "at": {
-        "year": -400,
-        "month": 1,
-        "abs": -4788
+        "abs": -2629,
+        "confidence": "approximate_year"
       },
       "summary": "儒墨道法名等学派并起，塑造此后中国思想传统。",
       "startAbs": -6600,
       "endAbs": -2629,
-      "atAbs": -4788
+      "startConfidence": "approximate_year",
+      "endConfidence": "approximate_year"
     }
   ],
   "relations": [
@@ -6467,7 +6311,7 @@
       "商王 persons.name 取维基/今本竹书纪年所载私名并加子姓（子履、子昭、子受等）；日名与史称写入 alt_names，卡片主行仍用日名/谥号。",
       "汤庙号取甲骨/文献高祖（高祖乙），不取太祖。盘庚庙号世祖依维基分类。帝辛私名受，周谥纣仍作 posthumous_name。",
       "汤与太甲之间旧「史料缺」改为外丙、仲壬（史记、孟子世系）。二人传统年数为外丙二或三年、仲壬四年，在汤迄年与太甲起年锚点之间按二王平分，标 interpolated。仲壬不见于周祭，与沃丁同属有争议君主，仍从史记收录。",
-      "太甲至盘庚之间诸王（沃丁至阳甲）取《竹书纪年》在位年数顺序，首尾衔接既有太甲（迄前1548）、盘庚（起前1310）锚点；非断代工程实测，precision=year。",
+      "太甲至盘庚之间诸王（沃丁至阳甲）取《竹书纪年》在位年数顺序，首尾衔接既有太甲（迄前1548）、盘庚（起前1310）锚点；非断代工程实测，confidence=year。",
       "盘庚至武丁之间补入小辛、小乙；小辛取竹书纪年三年，小乙年数依盘庚（迄前1280）与武丁（起前1250）锚点填满并标 interpolated。",
       "晚商祖庚、祖甲、廪辛、庚丁：夏商周年表合为前1191–前1148年，工程未给出各王起迄；年精度下按四王平分（各11年）并标 interpolated。武乙从前1147年起（死年归庚丁），文丁从前1112年起，与年表一致。",
       "东周列王取《史记》系统常见年表（与维基百科周朝君主列表一致）。敬王取前519–前477年。年精度顺序继位：死年归旧王、新王次年起算。携王与平王同从前770年起（英文维基 770–750 BCE），不从前771年幽王死年画起。哀王、思王同年先后相残，非并立；史记仅记「立三月」「立五月」，无历月，贞定王年精度迄前442年，前441年按此时长切开（1–3月 / 4–12月），不作历日。",
@@ -6477,7 +6321,8 @@
       "东周二王并立用 claim_track：主线平王→桓王…（正统金色）；xie/携王为并行对手（前770–前750），不镀金、不串进继承链。",
       "夏商非帝王人物：伊尹生年取维基传统前1649年，卒年按今本竹书沃丁八年对到本表沃丁窗为前1540年；妇好卒年取考古通行约前1200年；鲧、关龙逢、比干、妲己仅有与夏始/夏亡/牧野绑定的估列卒年，便于人物层落点。仲虺、皋陶、伯益、伊陟、巫咸、甘盘、傅说、箕子生卒不明不填，以免正月占位。微子启已是宋国始封君 song-weizi，不在此包重复建人。",
       "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
-      "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。"
+      "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
+      "称谓复核（2026-10）：春秋战国时期的东周君主卡片称呼写入 reign.title，取 persons.posthumousNames 的首选谥号本体（不带国名）；来源沿用各人物 links 与本包 manifest.sources。"
     ]
   }
 }

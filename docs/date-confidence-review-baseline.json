@@ -1,0 +1,6140 @@
+{
+  "baselineDate": "2026-10-02",
+  "selectionRule": "Legacy start/end_date_confidence in {approximate, interpolated}, or events.is_approximate=true; spatial precision excluded.",
+  "importPackageCount": 39,
+  "importPackages": {
+    "chunqiu-minor": {
+      "path": "data/imports/chunqiu-minor/cache.json",
+      "sha256": "2b480b8e957afb37a2dc22d18c54d206549ea838068ba14bf9fcac48d8e75c9b"
+    },
+    "chunqiu-zhanguo": {
+      "path": "data/imports/chunqiu-zhanguo/cache.json",
+      "sha256": "e34d430f5192d2dc87caf280f2617831d87addaa7a4c2601e04ef45e26b9272d"
+    },
+    "commercial-events": {
+      "path": "data/imports/commercial-events/cache.json",
+      "sha256": "2444bf50dc9d88890f10e96b9d373dbae13ca3c688d462d70eaf7c8aedc7de41"
+    },
+    "cross-dynasty-fate": {
+      "path": "data/imports/cross-dynasty-fate/cache.json",
+      "sha256": "67d97f36c36c13c568a4a90e95229c287596d4d8c6445126b14169a5fd04a340"
+    },
+    "disaster-events": {
+      "path": "data/imports/disaster-events/cache.json",
+      "sha256": "7929bfdbdcbf4d883e48cd97bac8d3f414ad22a60b3b31c7ec9a1858629499e2"
+    },
+    "dynasty-capitals": {
+      "path": "data/imports/dynasty-capitals/cache.json",
+      "sha256": "4222aa5097e09f1c792de4e0055b07b135f3fcb1e1009df2800863e9b2d54298"
+    },
+    "dynasty-lane-groups": {
+      "path": "data/imports/dynasty-lane-groups/cache.json",
+      "sha256": "8aaf9dec3fcb89ac1bcc62981ca667f6f6e637f37d7b669869f00af65dd077d6"
+    },
+    "event-locations": {
+      "path": "data/imports/event-locations/cache.json",
+      "sha256": "307652911280f9b6c5a6e8b70449dc20977ce4452d1ca22a2b5c805781e516e3"
+    },
+    "financial-events": {
+      "path": "data/imports/financial-events/cache.json",
+      "sha256": "e0c9716b122154717aeff46139b6e21925bc20939b36a5eb285611b9ec910196"
+    },
+    "idioms": {
+      "path": "data/imports/idioms/cache.json",
+      "sha256": "b749f0f6f62f2716f1c30a211deec0c16d2f957e9e3a983df38f84d6b545f017"
+    },
+    "informal-monarchs": {
+      "path": "data/imports/informal-monarchs/cache.json",
+      "sha256": "4ea6647f5353408f7926c946e03076950e336fdb89d1cad7cabdaa61a3b2f19c"
+    },
+    "jin-sixteen": {
+      "path": "data/imports/jin-sixteen/cache.json",
+      "sha256": "54cc42a0cadfb782a698a9258e4452c6e6af540008717188eecb875b903c1a0f"
+    },
+    "liao-remnants": {
+      "path": "data/imports/liao-remnants/cache.json",
+      "sha256": "8d8317374ee655e5a0577567ca49c1d6f518f9a3a3be3b0e48aee3ce1f19e8c1"
+    },
+    "major-events": {
+      "path": "data/imports/major-events/cache.json",
+      "sha256": "3bf82013685a6f066083e0eb765578753ca0d9690f692ca3c0e1695259052e68"
+    },
+    "ming-end": {
+      "path": "data/imports/ming-end/cache.json",
+      "sha256": "622e06d5d0230d1c4e3bbeee05ec38e1e09d25c06ea2429c750d71ddb8f61f3d"
+    },
+    "minguo": {
+      "path": "data/imports/minguo/cache.json",
+      "sha256": "1808ddca750d683c27c63c757e80d4b186304a53852a28d03d7b8c6345c442a5"
+    },
+    "mongol-pre-yuan": {
+      "path": "data/imports/mongol-pre-yuan/cache.json",
+      "sha256": "67c49bbfe871df5dae5849828c80ff29aef756519ad356a37c547a4e7a537379"
+    },
+    "nanbei-chao": {
+      "path": "data/imports/nanbei-chao/cache.json",
+      "sha256": "c7a25e05828e9e4a6b901845a76ce4ff558eb956d5e59b63b811b4ab4fa69678"
+    },
+    "nanbei-sixteen-extra": {
+      "path": "data/imports/nanbei-sixteen-extra/cache.json",
+      "sha256": "d3802c9696f9a4d626075a2684b58a71cf3044abe2ab0cc44a6dbadbefafc5f4"
+    },
+    "nanzhao-dali": {
+      "path": "data/imports/nanzhao-dali/cache.json",
+      "sha256": "dc4dd63cf507250ff798ddab8e8a31182f198380d933c390933ed85b5c7d5519"
+    },
+    "overview-enrichment": {
+      "path": "data/imports/overview-enrichment/cache.json",
+      "sha256": "c292e0f0e2a8e00315d27f586e0af57aadbf529a8b415e92ef6ff88556fd9dfe"
+    },
+    "poetry": {
+      "path": "data/imports/poetry/cache.json",
+      "sha256": "ad3792bd94567fb9d69221ba25136abacd0c51ac8a130e2b2e1346d66f9a1ca0"
+    },
+    "prc": {
+      "path": "data/imports/prc/cache.json",
+      "sha256": "cd7a0981c04600222f5983ef2b03095d308e84c0d2b15746b6a7f129d844d931"
+    },
+    "prehistoric-cultures": {
+      "path": "data/imports/prehistoric-cultures/cache.json",
+      "sha256": "88f25abf8ebc56e203c94ebf286356181b36c829301cb60b6259fb9690220e46"
+    },
+    "qin-han": {
+      "path": "data/imports/qin-han/cache.json",
+      "sha256": "7e67422273d75043cbce03f6d94bc3f06cf37ce0ef9bf839f4cfd5b84cf7fee5"
+    },
+    "qin-han-extra": {
+      "path": "data/imports/qin-han-extra/cache.json",
+      "sha256": "fc5fc3b2771c5d601917624532cab17d2271f8ad298287b97e2b5843842822d2"
+    },
+    "reign-capitals": {
+      "path": "data/imports/reign-capitals/cache.json",
+      "sha256": "ee3a5728ad7187da5aff8eb3ba728abf35aff5e2dba501dd4c51aa40ced6afa0"
+    },
+    "sanhuang-wudi": {
+      "path": "data/imports/sanhuang-wudi/cache.json",
+      "sha256": "c05613bc196e081178f258a9f6833f95d23ddd24eb0e02d78c7396947008635d"
+    },
+    "song-liao-jin": {
+      "path": "data/imports/song-liao-jin/cache.json",
+      "sha256": "62b1bc1f3f94e09b2bef37034086f56a710a4d7a10d395be2a6719df6664ef1a"
+    },
+    "sui-tang-wudai-song": {
+      "path": "data/imports/sui-tang-wudai-song/cache.json",
+      "sha256": "e9f0128a96ed50d990f9f37916a1b32a77cdd3e1f9ebd1e82771c36256467b73"
+    },
+    "taiping": {
+      "path": "data/imports/taiping/cache.json",
+      "sha256": "9e999e89525911203686c03ddd88d7a878704353bfb8bdc7d91ebc4689c60cb1"
+    },
+    "tang-border": {
+      "path": "data/imports/tang-border/cache.json",
+      "sha256": "998e07187556b3377d7911a6420102bf87dc4c36a63fd083e76a5b6a9beb9b6a"
+    },
+    "three-kingdoms-battles": {
+      "path": "data/imports/three-kingdoms-battles/cache.json",
+      "sha256": "82717220c5776c0d4f288035617fbf8fa508639b506ba3f3af8725a4fb4a43b2"
+    },
+    "three-kingdoms-late": {
+      "path": "data/imports/three-kingdoms-late/cache.json",
+      "sha256": "f974788dd3cc644552f855d4427f06845206c5f83ae000c6e414e27bcd8b3af6"
+    },
+    "three-kingdoms-warlord": {
+      "path": "data/imports/three-kingdoms-warlord/cache.json",
+      "sha256": "4b401912ee49608a486fb445379577f14dd8747e2e4318b67a3bfc0cfa6d8fe0"
+    },
+    "xia-shang-zhou": {
+      "path": "data/imports/xia-shang-zhou/cache.json",
+      "sha256": "21bdf7646817a7a2a62ac982ca517d8e0c40b1641b14892d15aaf41fd56d2dcf"
+    },
+    "xinan-guozheng": {
+      "path": "data/imports/xinan-guozheng/cache.json",
+      "sha256": "7bbcbd363a614a19c63226cff7f47dd83ea5a68784d55beb25b51067fd3c1cff"
+    },
+    "xixia": {
+      "path": "data/imports/xixia/cache.json",
+      "sha256": "e6f9af003c86909f6f2044021879b2c27b69dc5450a24e093c9837f6f258ba19"
+    },
+    "yuan-ming-qing": {
+      "path": "data/imports/yuan-ming-qing/cache.json",
+      "sha256": "44b4697394a69d4c434c600bea7335a3fd8e61c9c4fa91d3456924768d95e984"
+    }
+  },
+  "importManifestSha256": "c9d85c498bc93f4b7bea7fbdb8baf7304a6fc4707381807788903a4f71d62334",
+  "databaseSnapshot": "/tmp/eralens-date-migration-prechange-20261002.sql",
+  "databaseBaseline": {
+    "tableCounts": {
+      "persons": 1436,
+      "dynasties": 129,
+      "dynasty_groups": 7,
+      "reigns": 1232,
+      "events": 442,
+      "dynasty_capitals": 219,
+      "relations": 873,
+      "dynasty_lane_groups": 2
+    },
+    "legacySelectedCounts": {
+      "reigns": 154,
+      "capitals": 4,
+      "events": 27,
+      "records": 185,
+      "flaggedEndpoints": 305
+    },
+    "sourceDatabaseSelectedIdComparison": "equal: 185 rows; zero unmatched IDs"
+  },
+  "selectedCounts": {
+    "reigns": {
+      "records": 154,
+      "flagged_endpoints": 273
+    },
+    "capitals": {
+      "records": 4,
+      "flagged_endpoints": 5
+    },
+    "events": {
+      "records": 27,
+      "flagged_endpoints": 27
+    },
+    "records": 185,
+    "flaggedEndpoints": 305,
+    "byFlagCategory": {
+      "approximate": {
+        "records": 17,
+        "endpoints": 23
+      },
+      "interpolated": {
+        "records": 143,
+        "endpoints": 255
+      },
+      "is_approximate": {
+        "records": 27,
+        "endpoints": 27
+      }
+    },
+    "flagOverlapRecords": [
+      {
+        "table": "reigns",
+        "id": "reign-teng-r0-teng-chunqiu"
+      },
+      {
+        "table": "reigns",
+        "id": "reign-wu-pre-r0-wu-chunqiu"
+      }
+    ]
+  },
+  "deferredScope": {
+    "allOtherRecords": "deferred; not counted as reviewed",
+    "unflaggedEndpointsOnSelectedRecords": 38,
+    "spatialApproximate": "excluded"
+  },
+  "databaseOnlyGroupReview": [
+    {
+      "table": "dynasty_groups",
+      "id": "tang-yan-coexistence",
+      "treatment": "deferred/outside selected-date flags; retain unless a separately authorized ownership/data cleanup requires changes"
+    }
+  ],
+  "records": [
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r0-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r0",
+      "flagCategories": [
+        "approximate",
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": -1045,
+            "month": 1,
+            "abs": -12528
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1043,
+            "month": 12,
+            "abs": -12493
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r1-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r1",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -748,
+            "month": 1,
+            "abs": -8964
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r10-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r10",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -639,
+            "month": 1,
+            "abs": -7656
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -631,
+            "month": 12,
+            "abs": -7549
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r11-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r11",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -694,
+            "month": 1,
+            "abs": -8316
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -660,
+            "month": 12,
+            "abs": -7897
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r12-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r12",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -695,
+            "month": 12,
+            "abs": -8317
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r20-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r20",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1042,
+            "month": 1,
+            "abs": -12492
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1021,
+            "month": 12,
+            "abs": -12229
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r21-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r21",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1020,
+            "month": 1,
+            "abs": -12228
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1001,
+            "month": 12,
+            "abs": -11989
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r22-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r22",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1000,
+            "month": 1,
+            "abs": -11988
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -990,
+            "month": 12,
+            "abs": -11857
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r23-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r23",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -989,
+            "month": 1,
+            "abs": -11856
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -978,
+            "month": 12,
+            "abs": -11713
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r24-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r24",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -977,
+            "month": 1,
+            "abs": -11712
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r25-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r25",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -916,
+            "month": 12,
+            "abs": -10969
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r26-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r26",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -915,
+            "month": 1,
+            "abs": -10968
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -882,
+            "month": 12,
+            "abs": -10561
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r27-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r27",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -881,
+            "month": 1,
+            "abs": -10560
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -848,
+            "month": 12,
+            "abs": -10153
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r28-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r28",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -847,
+            "month": 1,
+            "abs": -10152
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -815,
+            "month": 12,
+            "abs": -9757
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r29-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r29",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -814,
+            "month": 1,
+            "abs": -9756
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -782,
+            "month": 12,
+            "abs": -9361
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r30-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r30",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -781,
+            "month": 1,
+            "abs": -9360
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -749,
+            "month": 12,
+            "abs": -8965
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r31-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r31",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -424,
+            "month": 1,
+            "abs": -5076
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r33-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r33",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -472,
+            "month": 12,
+            "abs": -5641
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r34-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r34",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -471,
+            "month": 1,
+            "abs": -5640
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -460,
+            "month": 12,
+            "abs": -5497
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r35-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r35",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -459,
+            "month": 1,
+            "abs": -5496
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -448,
+            "month": 12,
+            "abs": -5353
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r36-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r36",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -447,
+            "month": 1,
+            "abs": -5352
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -436,
+            "month": 12,
+            "abs": -5209
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r37-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r37",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -435,
+            "month": 1,
+            "abs": -5208
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -425,
+            "month": 12,
+            "abs": -5077
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r7-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r7",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -659,
+            "month": 1,
+            "abs": -7896
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -640,
+            "month": 12,
+            "abs": -7657
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r8-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r8",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -630,
+            "month": 1,
+            "abs": -7548
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -623,
+            "month": 12,
+            "abs": -7453
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-teng-r9-teng-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "teng-chunqiu",
+      "personId": "teng-r9",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -622,
+            "month": 1,
+            "abs": -7452
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zhou-guo-chao-zhou-guo-west",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zhou-guo-west",
+      "personId": "zhou-guo-chao",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -330,
+            "month": 12,
+            "abs": -3937
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zhou-guo-jiu-zhou-guo-west",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zhou-guo-west",
+      "personId": "zhou-guo-jiu",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -292,
+            "month": 1,
+            "abs": -3492
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-minor",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zhou-guo-wugong-zhou-guo-west",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zhou-guo-west",
+      "personId": "zhou-guo-wugong",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -329,
+            "month": 1,
+            "abs": -3936
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -293,
+            "month": 12,
+            "abs": -3493
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-chu-r0-chu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "chu-chunqiu",
+      "personId": "chu-r0",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1042,
+            "month": 1,
+            "abs": -12492
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1019,
+            "month": 12,
+            "abs": -12205
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-chu-r1-chu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "chu-chunqiu",
+      "personId": "chu-r1",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1018,
+            "month": 1,
+            "abs": -12204
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -995,
+            "month": 12,
+            "abs": -11917
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-chu-r2-chu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "chu-chunqiu",
+      "personId": "chu-r2",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -994,
+            "month": 1,
+            "abs": -11916
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -970,
+            "month": 12,
+            "abs": -11617
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-chu-r3-chu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "chu-chunqiu",
+      "personId": "chu-r3",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -969,
+            "month": 1,
+            "abs": -11616
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -946,
+            "month": 12,
+            "abs": -11329
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-chu-r4-chu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "chu-chunqiu",
+      "personId": "chu-r4",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -945,
+            "month": 1,
+            "abs": -11328
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -922,
+            "month": 12,
+            "abs": -11041
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-chu-r5-chu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "chu-chunqiu",
+      "personId": "chu-r5",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -921,
+            "month": 1,
+            "abs": -11040
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -897,
+            "month": 12,
+            "abs": -10741
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-chu-r6-chu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "chu-chunqiu",
+      "personId": "chu-r6",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -896,
+            "month": 1,
+            "abs": -10740
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -873,
+            "month": 12,
+            "abs": -10453
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-chu-r7-chu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "chu-chunqiu",
+      "personId": "chu-r7",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -872,
+            "month": 1,
+            "abs": -10452
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-ji-shi-yan-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "yan-chunqiu",
+      "personId": "ji-shi",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1044,
+            "month": 1,
+            "abs": -12516
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1000,
+            "month": 12,
+            "abs": -11977
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-ji-shuyu-jin-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "jin-chunqiu",
+      "personId": "ji-shuyu",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1042,
+            "month": 1,
+            "abs": -12492
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1007,
+            "month": 12,
+            "abs": -12061
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-jin-r1-jin-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "jin-chunqiu",
+      "personId": "jin-r1",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1006,
+            "month": 1,
+            "abs": -12060
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -970,
+            "month": 12,
+            "abs": -11617
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-jin-r2-jin-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "jin-chunqiu",
+      "personId": "jin-r2",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -969,
+            "month": 1,
+            "abs": -11616
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -933,
+            "month": 12,
+            "abs": -11173
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-jin-r3-jin-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "jin-chunqiu",
+      "personId": "jin-r3",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -932,
+            "month": 1,
+            "abs": -11172
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -896,
+            "month": 12,
+            "abs": -10729
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-jin-r4-jin-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "jin-chunqiu",
+      "personId": "jin-r4",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -895,
+            "month": 1,
+            "abs": -10728
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-lv-shang-qi-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "qi-chunqiu",
+      "personId": "lv-shang",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1046,
+            "month": 1,
+            "abs": -12540
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1011,
+            "month": 12,
+            "abs": -12109
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-qi-r1-qi-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "qi-chunqiu",
+      "personId": "qi-r1",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1010,
+            "month": 1,
+            "abs": -12108
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -974,
+            "month": 12,
+            "abs": -11665
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-qi-r2-qi-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "qi-chunqiu",
+      "personId": "qi-r2",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -973,
+            "month": 1,
+            "abs": -11664
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -937,
+            "month": 12,
+            "abs": -11221
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-qi-r3-qi-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "qi-chunqiu",
+      "personId": "qi-r3",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -936,
+            "month": 1,
+            "abs": -11220
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -900,
+            "month": 12,
+            "abs": -10777
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-qi-r4-qi-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "qi-chunqiu",
+      "personId": "qi-r4",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -899,
+            "month": 1,
+            "abs": -10776
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-song-r1-song-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r1",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1024,
+            "month": 1,
+            "abs": -12276
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -986,
+            "month": 12,
+            "abs": -11809
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-song-r2-song-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r2",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -985,
+            "month": 1,
+            "abs": -11808
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -942,
+            "month": 12,
+            "abs": -11281
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-song-r3-song-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r3",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -941,
+            "month": 1,
+            "abs": -11280
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -919,
+            "month": 12,
+            "abs": -11005
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-song-r4-song-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r4",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -918,
+            "month": 1,
+            "abs": -11004
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -895,
+            "month": 12,
+            "abs": -10717
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-song-r5-song-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r5",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -894,
+            "month": 1,
+            "abs": -10716
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -879,
+            "month": 12,
+            "abs": -10525
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-song-r6-song-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r6",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -878,
+            "month": 1,
+            "abs": -10524
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-song-weizi-song-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "song-chunqiu",
+      "personId": "song-weizi",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1038,
+            "month": 1,
+            "abs": -12444
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1025,
+            "month": 12,
+            "abs": -12277
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-weiguo-r0-wei-weiguo",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r0",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1040,
+            "month": 1,
+            "abs": -12468
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1017,
+            "month": 12,
+            "abs": -12181
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-weiguo-r1-wei-weiguo",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r1",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1016,
+            "month": 1,
+            "abs": -12180
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -992,
+            "month": 12,
+            "abs": -11881
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-weiguo-r2-wei-weiguo",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r2",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -991,
+            "month": 1,
+            "abs": -11880
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -967,
+            "month": 12,
+            "abs": -11581
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-weiguo-r3-wei-weiguo",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r3",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -966,
+            "month": 1,
+            "abs": -11580
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -942,
+            "month": 12,
+            "abs": -11281
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-weiguo-r4-wei-weiguo",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r4",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -941,
+            "month": 1,
+            "abs": -11280
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -917,
+            "month": 12,
+            "abs": -10981
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-weiguo-r5-wei-weiguo",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r5",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -916,
+            "month": 1,
+            "abs": -10980
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -892,
+            "month": 12,
+            "abs": -10681
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-weiguo-r6-wei-weiguo",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r6",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -891,
+            "month": 1,
+            "abs": -10680
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-wu-pre-r0-wu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r0",
+      "flagCategories": [
+        "approximate",
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": -1100,
+            "month": 1,
+            "abs": -13188
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1088,
+            "month": 12,
+            "abs": -13033
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-wu-pre-r1-wu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r1",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1087,
+            "month": 1,
+            "abs": -13032
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1074,
+            "month": 12,
+            "abs": -12865
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-wu-pre-r10-wu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r10",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -849,
+            "month": 1,
+            "abs": -10176
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -817,
+            "month": 12,
+            "abs": -9781
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-wu-pre-r11-wu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r11",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -816,
+            "month": 1,
+            "abs": -9780
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -784,
+            "month": 12,
+            "abs": -9385
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-wu-pre-r12-wu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r12",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -783,
+            "month": 1,
+            "abs": -9384
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -751,
+            "month": 12,
+            "abs": -8989
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-wu-pre-r13-wu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r13",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -750,
+            "month": 1,
+            "abs": -8988
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -718,
+            "month": 12,
+            "abs": -8593
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-wu-pre-r14-wu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r14",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -717,
+            "month": 1,
+            "abs": -8592
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -685,
+            "month": 12,
+            "abs": -8197
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-wu-pre-r15-wu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r15",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -684,
+            "month": 1,
+            "abs": -8196
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -652,
+            "month": 12,
+            "abs": -7801
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-wu-pre-r16-wu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r16",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -651,
+            "month": 1,
+            "abs": -7800
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -619,
+            "month": 12,
+            "abs": -7405
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-wu-pre-r17-wu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r17",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -618,
+            "month": 1,
+            "abs": -7404
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-wu-pre-r2-wu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r2",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1073,
+            "month": 1,
+            "abs": -12864
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1061,
+            "month": 12,
+            "abs": -12709
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-wu-pre-r3-wu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r3",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1060,
+            "month": 1,
+            "abs": -12708
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-wu-pre-r4-wu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r4",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1015,
+            "month": 12,
+            "abs": -12157
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-wu-pre-r5-wu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r5",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1014,
+            "month": 1,
+            "abs": -12156
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -982,
+            "month": 12,
+            "abs": -11761
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-wu-pre-r6-wu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r6",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -981,
+            "month": 1,
+            "abs": -11760
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -949,
+            "month": 12,
+            "abs": -11365
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-wu-pre-r7-wu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r7",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -948,
+            "month": 1,
+            "abs": -11364
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -916,
+            "month": 12,
+            "abs": -10969
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-wu-pre-r8-wu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r8",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -915,
+            "month": 1,
+            "abs": -10968
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -883,
+            "month": 12,
+            "abs": -10573
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-wu-pre-r9-wu-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r9",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -882,
+            "month": 1,
+            "abs": -10572
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -850,
+            "month": 12,
+            "abs": -10177
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-yan-r1-yan-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r1",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -999,
+            "month": 1,
+            "abs": -11976
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -955,
+            "month": 12,
+            "abs": -11437
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-yan-r2-yan-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r2",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -954,
+            "month": 1,
+            "abs": -11436
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -910,
+            "month": 12,
+            "abs": -10897
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-yan-r3-yan-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r3",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -909,
+            "month": 1,
+            "abs": -10896
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-yue-r3-yue-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "yue-chunqiu",
+      "personId": "yue-r3",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -565,
+            "month": 1,
+            "abs": -6768
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zhongshan-r2-zhongshan",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zhongshan",
+      "personId": "zhongshan-r2",
+      "flagCategories": [
+        "approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": -406,
+            "month": 1,
+            "abs": -4860
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": -406,
+            "month": 12,
+            "abs": -4849
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zhongshan-r2-zhongshan-2",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zhongshan",
+      "personId": "zhongshan-r2",
+      "flagCategories": [
+        "approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": -380,
+            "month": 1,
+            "abs": -4548
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": -350,
+            "month": 12,
+            "abs": -4177
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zhongshan-r3-zhongshan",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zhongshan",
+      "personId": "zhongshan-r3",
+      "flagCategories": [
+        "approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": -349,
+            "month": 1,
+            "abs": -4176
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zhongshan-r4-zhongshan",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zhongshan",
+      "personId": "zhongshan-r4",
+      "flagCategories": [
+        "approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "end",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": -310,
+            "month": 12,
+            "abs": -3697
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zhongshan-r5-zhongshan",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zhongshan",
+      "personId": "zhongshan-r5",
+      "flagCategories": [
+        "approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": -309,
+            "month": 1,
+            "abs": -3696
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zou-he-zou-state",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zou-state",
+      "personId": "zou-he",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -456,
+            "month": 12,
+            "abs": -5449
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zou-kaogong-zou-state",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zou-state",
+      "personId": "zou-kaogong",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -436,
+            "month": 1,
+            "abs": -5220
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -419,
+            "month": 12,
+            "abs": -5005
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zou-missing-after-he-1",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zou-state",
+      "personId": "zou-missing-after-he-1",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -455,
+            "month": 1,
+            "abs": -5448
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -437,
+            "month": 12,
+            "abs": -5221
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zou-missing-after-kaogong-1",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zou-state",
+      "personId": "zou-missing-after-kaogong-1",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -418,
+            "month": 1,
+            "abs": -5004
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -401,
+            "month": 12,
+            "abs": -4789
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zou-missing-after-kaogong-2",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zou-state",
+      "personId": "zou-missing-after-kaogong-2",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -400,
+            "month": 1,
+            "abs": -4788
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -383,
+            "month": 12,
+            "abs": -4573
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zou-mu-gong-zou-state",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zou-state",
+      "personId": "zou-mu-gong",
+      "flagCategories": [
+        "approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": -382,
+            "month": 1,
+            "abs": -4572
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": -330,
+            "month": 12,
+            "abs": -3937
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zou-r1-zou-state",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zou-state",
+      "personId": "zou-r1",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1046,
+            "month": 1,
+            "abs": -12540
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1012,
+            "month": 12,
+            "abs": -12121
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zou-r10-zou-state",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zou-state",
+      "personId": "zou-r10",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -746,
+            "month": 1,
+            "abs": -8940
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -713,
+            "month": 12,
+            "abs": -8533
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zou-r11-zou-state",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zou-state",
+      "personId": "zou-r11",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -712,
+            "month": 1,
+            "abs": -8532
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zou-r2-zou-state",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zou-state",
+      "personId": "zou-r2",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1011,
+            "month": 1,
+            "abs": -12120
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -976,
+            "month": 12,
+            "abs": -11689
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zou-r3-zou-state",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zou-state",
+      "personId": "zou-r3",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -975,
+            "month": 1,
+            "abs": -11688
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -940,
+            "month": 12,
+            "abs": -11257
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zou-r4-zou-state",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zou-state",
+      "personId": "zou-r4",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -939,
+            "month": 1,
+            "abs": -11256
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -904,
+            "month": 12,
+            "abs": -10825
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zou-r5-zou-state",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zou-state",
+      "personId": "zou-r5",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -903,
+            "month": 1,
+            "abs": -10824
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -868,
+            "month": 12,
+            "abs": -10393
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zou-r6-zou-state",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zou-state",
+      "personId": "zou-r6",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -867,
+            "month": 1,
+            "abs": -10392
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -832,
+            "month": 12,
+            "abs": -9961
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zou-r7-zou-state",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zou-state",
+      "personId": "zou-r7",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -831,
+            "month": 1,
+            "abs": -9960
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "chunqiu-zhanguo",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zou-r9-zou-state",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zou-state",
+      "personId": "zou-r9",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -747,
+            "month": 12,
+            "abs": -8941
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-bean-introduction",
+      "label": "菜豆（四季豆）传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 1600,
+            "month": 12,
+            "abs": 19211
+          }
+        }
+      ],
+      "dateNote": "截图列为明末传入；以17世纪初（1600年）作为明末年代锚点，不代表已考定的首次引入年。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-cabbage-introduction",
+      "label": "卷心菜（洋白菜）传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 1644,
+            "month": 12,
+            "abs": 19739
+          }
+        }
+      ],
+      "dateNote": "截图列为清代传入；以清代起始年1644年作最早时期锚点，确切引种年未明。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-carrot-introduction",
+      "label": "胡萝卜传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 1127,
+            "month": 12,
+            "abs": 13535
+          }
+        }
+      ],
+      "dateNote": "截图列为宋代传入；按宋代起始年960年虽为时期下限，但可核资料称南宋《绍兴本草》已载，取其成书时代起始1127年作为早期见载锚点。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-cashew-introduction",
+      "label": "腰果传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 1600,
+            "month": 12,
+            "abs": 19211
+          }
+        }
+      ],
+      "dateNote": "截图列入明清美洲作物，未给出确年；以明清之际1600年作为所述时期最早年份，表示年代框架而非确切引种年。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-cauliflower-introduction",
+      "label": "花菜传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 1895,
+            "month": 12,
+            "abs": 22751
+          }
+        }
+      ],
+      "dateNote": "清朝农业科技史年表记1895年花椰菜见载；采用该最早明确记载年份。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-champa-rice-introduction",
+      "label": "占城稻引入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 1012,
+            "month": 12,
+            "abs": 12155
+          }
+        }
+      ],
+      "dateNote": "宋真宗大中祥符五年（1012）遣使福建取占城稻并推广，是目前可核的早期大规模引种节点；本事件取此单年。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-cotton-introduction",
+      "label": "亚洲棉传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": -202,
+            "month": 12,
+            "abs": -2401
+          }
+        }
+      ],
+      "dateNote": "人民论坛文章将亚洲棉引入置于西汉；按截图标注的最早时期西汉起始年（前202年）作单点，不代表已有精确到年的引种证据。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-crops-introduction",
+      "label": "汉代作物传入",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": -138,
+            "month": 12,
+            "abs": -1633
+          }
+        }
+      ],
+      "dateNote": "传统记述将部分作物的传入与汉代西域交流联系起来；具体年代和路线因作物及史料而异。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-eggplant-introduction",
+      "label": "茄子传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 544,
+            "month": 12,
+            "abs": 6539
+          }
+        }
+      ],
+      "dateNote": "截图依据《齐民要术》列入魏晋南北朝时期；以该书成书约544年作为可核的早期栽培记载时点。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-fig-introduction",
+      "label": "无花果传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 220,
+            "month": 12,
+            "abs": 2651
+          }
+        }
+      ],
+      "dateNote": "截图记为魏晋南北朝（一说唐代盛行）；取该时期起始年220年作最早提及的年代锚点，不作为确切引种年。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-luffa-introduction",
+      "label": "丝瓜传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 960,
+            "month": 12,
+            "abs": 11531
+          }
+        }
+      ],
+      "dateNote": "实际传入年份难以考定。以宋代起始年（960）作为单点年代锚点，仅表示至宋代已见传播与栽培线索，不代表确切首传年。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-onion-introduction",
+      "label": "洋葱传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 1840,
+            "month": 12,
+            "abs": 22091
+          }
+        }
+      ],
+      "dateNote": "截图列为清末传入；以清末阶段最早年份1840年作单点，作为年代范围下限。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-peanut-introduction",
+      "label": "花生传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 1500,
+            "month": 12,
+            "abs": 18011
+          }
+        }
+      ],
+      "dateNote": "截图将花生列在明代中后期，并提及16世纪初经东南亚传播；取1500年作为其所述范围的最早年份，不视为确切首传年。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-pineapple-introduction",
+      "label": "菠萝（凤梨）传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 1600,
+            "month": 12,
+            "abs": 19211
+          }
+        }
+      ],
+      "dateNote": "截图列为明末由南美传入；按“明末”这一时期的最早年份取1600年作为单点，实际首传年未详。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-potato-introduction",
+      "label": "马铃薯传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 1650,
+            "month": 12,
+            "abs": 19811
+          }
+        }
+      ],
+      "dateNote": "农业史年表将马铃薯传入中国记为17世纪中叶；按世纪中叶取1650年单点。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-pumpkin-introduction",
+      "label": "南瓜传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 1500,
+            "month": 12,
+            "abs": 18011
+          }
+        }
+      ],
+      "dateNote": "截图列为明代美洲作物；按明代时期最早年份1368年无法证明具体引种，依其明代中后期传播叙述取1500年作最早年代锚点。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-spinach-introduction",
+      "label": "菠菜传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 646,
+            "month": 12,
+            "abs": 7763
+          }
+        }
+      ],
+      "dateNote": "农业科技史年表将菠菜传入中国记为646年；采用该早期记载年份。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-strawberry-introduction",
+      "label": "现代草莓传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 1911,
+            "month": 12,
+            "abs": 22943
+          }
+        }
+      ],
+      "dateNote": "截图列为近现代引入，未给出更早确年；取1911年作为近现代时期起点的年代锚点，确切首传年需进一步考证。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-sunflower-introduction",
+      "label": "向日葵传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 1600,
+            "month": 12,
+            "abs": 19211
+          }
+        }
+      ],
+      "dateNote": "截图将向日葵列在美洲作物输入潮中，未给出确切年份；按明清之际最早阶段取1600年作近似单点。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-watermelon-introduction",
+      "label": "西瓜传入中国北方",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 953,
+            "month": 12,
+            "abs": 11447
+          }
+        }
+      ],
+      "dateNote": "农业科技史年表记953年胡桥将西瓜由回纥传入契丹地区；取该最早明确年份。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-western-apple-introduction",
+      "label": "西洋苹果传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 1850,
+            "month": 12,
+            "abs": 22211
+          }
+        }
+      ],
+      "dateNote": "人民论坛文章称19世纪中叶由传教士引入；取1850年作为“19世纪中叶”的单点近似值。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "agri-zucchini-introduction",
+      "label": "西葫芦传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 1890,
+            "month": 12,
+            "abs": 22691
+          }
+        }
+      ],
+      "dateNote": "截图列为清末由北美传入；按19世纪后期取1890年作最早年代锚点，实际首次引种年份尚不确定。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "commerce-chili-introduction",
+      "label": "辣椒传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 1570,
+            "month": 12,
+            "abs": 18851
+          }
+        }
+      ],
+      "dateNote": "具体首传路线和年份未定；现有研究常置于16世纪后期至17世纪前期。按截图所列范围取最早年份1570作单点，表示最早提及的年代而非确切传入年。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "commerce-maize-introduction",
+      "label": "玉米传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 1534,
+            "month": 12,
+            "abs": 18419
+          }
+        }
+      ],
+      "dateNote": "1534年《巩县志》有“玉麦”记载，是目前常见的中国早期文献记录之一；以该最早记载年作单点，不等同于实际首次传入年。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "commerce-sweet-potato-introduction",
+      "label": "甘薯经海路传入福建",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 1582,
+            "month": 12,
+            "abs": 18995
+          }
+        }
+      ],
+      "dateNote": "福建引种记载有万历十年（1582）、万历十一至十二年及万历二十一年（1593）等说法；按要求取最早提及的1582年，保留不同记载的分歧。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "commerce-tobacco-introduction",
+      "label": "烟草传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 1540,
+            "month": 12,
+            "abs": 18491
+          }
+        }
+      ],
+      "dateNote": "烟草传入时间有16至17世纪等说；按资料提及的最早年份1540作单点。1624年《景岳全书》回述万历年间闽、广已有烟草，均不能据此断定准确首传年。"
+    },
+    {
+      "package": "commercial-events",
+      "table": "events",
+      "entityType": "event",
+      "id": "commerce-tomato-introduction",
+      "label": "番茄传入中国",
+      "legacyPrecision": "year",
+      "legacyTimeMode": "point",
+      "dynastyId": null,
+      "personId": null,
+      "flagCategories": [
+        "is_approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "at",
+          "legacyConfidence": "is_approximate",
+          "point": {
+            "year": 1617,
+            "month": 12,
+            "abs": 19415
+          }
+        }
+      ],
+      "dateNote": "中国首传时间难以确考；1617年周文华《汝南圃史·植品》被用作番茄在华早期名称记载。按该最早文献线索取单点，不视为实际引种年。"
+    },
+    {
+      "package": "dynasty-capitals",
+      "table": "dynasty_capitals",
+      "entityType": "capital",
+      "id": "cap-yan-anshi-fanyang-759",
+      "label": "范阳/燕京",
+      "legacyPrecision": "day",
+      "legacyTimeMode": null,
+      "dynastyId": "yan-anshi",
+      "personId": null,
+      "flagCategories": [
+        "approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": 759,
+            "month": 4,
+            "day": 7,
+            "abs": 9111
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "dynasty-capitals",
+      "table": "dynasty_capitals",
+      "entityType": "capital",
+      "id": "cap-yan-anshi-fanyang-secondary-759",
+      "label": "范阳/燕京",
+      "legacyPrecision": "day",
+      "legacyTimeMode": null,
+      "dynastyId": "yan-anshi",
+      "personId": null,
+      "flagCategories": [
+        "approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": 759,
+            "month": 4,
+            "day": 7,
+            "abs": 9111
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": 763,
+            "month": 1,
+            "day": 30,
+            "abs": 9156
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "dynasty-capitals",
+      "table": "dynasty_capitals",
+      "entityType": "capital",
+      "id": "cap-zhou-east-chengzhou-519",
+      "label": "成周",
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zhou-east",
+      "personId": null,
+      "flagCategories": [
+        "approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "end",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": -315,
+            "month": 12,
+            "abs": -3757
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "dynasty-capitals",
+      "table": "dynasty_capitals",
+      "entityType": "capital",
+      "id": "cap-zhou-east-wangcheng-314",
+      "label": "王城",
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "zhou-east",
+      "personId": null,
+      "flagCategories": [
+        "approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": -314,
+            "month": 1,
+            "abs": -3756
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "idioms",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-guo-gong-chou-guo-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-gong-chou",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -702,
+            "month": 1,
+            "abs": -8412
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "idioms",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-guo-r1-guo-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-r1",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -990,
+            "month": 12,
+            "abs": -11857
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "idioms",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-guo-r10-guo-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-r10",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -707,
+            "month": 1,
+            "abs": -8472
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -703,
+            "month": 12,
+            "abs": -8413
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "idioms",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-guo-r2-guo-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-r2",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -989,
+            "month": 1,
+            "abs": -11856
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -934,
+            "month": 12,
+            "abs": -11185
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "idioms",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-guo-r3-guo-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-r3",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -933,
+            "month": 1,
+            "abs": -11184
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -878,
+            "month": 12,
+            "abs": -10513
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "idioms",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-guo-r4-guo-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-r4",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -877,
+            "month": 1,
+            "abs": -10512
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -828,
+            "month": 12,
+            "abs": -9913
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "idioms",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-guo-r5-guo-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-r5",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -827,
+            "month": 1,
+            "abs": -9912
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -805,
+            "month": 12,
+            "abs": -9637
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "idioms",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-guo-r6-guo-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-r6",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -804,
+            "month": 1,
+            "abs": -9636
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -782,
+            "month": 12,
+            "abs": -9361
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "idioms",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-guo-r7-guo-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-r7",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -781,
+            "month": 1,
+            "abs": -9360
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -771,
+            "month": 12,
+            "abs": -9229
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "idioms",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-guo-r8-guo-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-r8",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -770,
+            "month": 1,
+            "abs": -9228
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -721,
+            "month": 12,
+            "abs": -8629
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "idioms",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-guo-r9-guo-chunqiu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-r9",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -720,
+            "month": 1,
+            "abs": -8628
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -708,
+            "month": 12,
+            "abs": -8473
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "qin-han-extra",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-fan-chong-chimei",
+      "label": null,
+      "legacyPrecision": "day",
+      "legacyTimeMode": null,
+      "dynastyId": "chimei",
+      "personId": "fan-chong",
+      "flagCategories": [
+        "approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": 23,
+            "month": 1,
+            "abs": 276
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": 25,
+            "month": 7,
+            "abs": 306,
+            "day": 29
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "qin-han-extra",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-liu-panzi-chimei",
+      "label": null,
+      "legacyPrecision": "day",
+      "legacyTimeMode": null,
+      "dynastyId": "chimei",
+      "personId": "liu-panzi",
+      "flagCategories": [
+        "approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": 25,
+            "month": 7,
+            "abs": 306,
+            "day": 29
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "sanhuang-wudi",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-feng-fuxi",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "san-huang",
+      "personId": "feng-fuxi",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2804,
+            "month": 1,
+            "abs": -33636
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2695,
+            "month": 12,
+            "abs": -32317
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "sanhuang-wudi",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-feng-nuwa",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "san-huang",
+      "personId": "feng-nuwa",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2694,
+            "month": 1,
+            "abs": -32316
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2585,
+            "month": 12,
+            "abs": -30997
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "sanhuang-wudi",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-ji-ku",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-di",
+      "personId": "ji-ku",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2286,
+            "month": 1,
+            "abs": -27420
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2217,
+            "month": 12,
+            "abs": -26581
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "sanhuang-wudi",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-ji-xuanyuan",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-di",
+      "personId": "ji-xuanyuan",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2464,
+            "month": 1,
+            "abs": -29556
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2365,
+            "month": 12,
+            "abs": -28357
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "sanhuang-wudi",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-ji-zhi",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-di",
+      "personId": "ji-zhi",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2216,
+            "month": 1,
+            "abs": -26580
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2208,
+            "month": 12,
+            "abs": -26473
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "sanhuang-wudi",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-ji-zhuanxu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-di",
+      "personId": "ji-zhuanxu",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2364,
+            "month": 1,
+            "abs": -28356
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2287,
+            "month": 12,
+            "abs": -27421
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "sanhuang-wudi",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-jiang-shinian",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "san-huang",
+      "personId": "jiang-shinian",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2584,
+            "month": 1,
+            "abs": -30996
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2465,
+            "month": 12,
+            "abs": -29557
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "sanhuang-wudi",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-yao-chonghua",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-di",
+      "personId": "yao-chonghua",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2109,
+            "month": 1,
+            "abs": -25296
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2071,
+            "month": 12,
+            "abs": -24829
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "sanhuang-wudi",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-yiqi-fangxun",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "wu-di",
+      "personId": "yiqi-fangxun",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2207,
+            "month": 1,
+            "abs": -26472
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2110,
+            "month": 12,
+            "abs": -25297
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "sui-tang-wudai-song",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-an-lushan",
+      "label": null,
+      "legacyPrecision": "day",
+      "legacyTimeMode": null,
+      "dynastyId": "yan-anshi",
+      "personId": "an-lushan",
+      "flagCategories": [
+        "approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "end",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": 757,
+            "month": 1,
+            "day": 29,
+            "abs": 9084
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "sui-tang-wudai-song",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-shi-chaoyi",
+      "label": null,
+      "legacyPrecision": "day",
+      "legacyTimeMode": null,
+      "dynastyId": "yan-anshi",
+      "personId": "shi-chaoyi",
+      "flagCategories": [
+        "approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "end",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": 763,
+            "month": 1,
+            "day": 30,
+            "abs": 9156
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "sui-tang-wudai-song",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-shi-siming",
+      "label": null,
+      "legacyPrecision": "day",
+      "legacyTimeMode": null,
+      "dynastyId": "yan-anshi",
+      "personId": "shi-siming",
+      "flagCategories": [
+        "approximate"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": 759,
+            "month": 4,
+            "day": 8,
+            "abs": 9111
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "approximate",
+          "point": {
+            "year": 761,
+            "month": 4,
+            "day": 17,
+            "abs": 9135
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-han-zhuo",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "xia",
+      "personId": "han-zhuo",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1991,
+            "month": 1,
+            "abs": -23880
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1960,
+            "month": 12,
+            "abs": -23497
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-hou-yi",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "xia",
+      "personId": "hou-yi",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1999,
+            "month": 1,
+            "abs": -23976
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1992,
+            "month": 12,
+            "abs": -23881
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-si-bujiang",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "xia",
+      "personId": "si-bujiang",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1794,
+            "month": 1,
+            "abs": -21516
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1736,
+            "month": 12,
+            "abs": -20809
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-si-fa",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "xia",
+      "personId": "si-fa",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1667,
+            "month": 1,
+            "abs": -19992
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1652,
+            "month": 12,
+            "abs": -19801
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-si-gao",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "xia",
+      "personId": "si-gao",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1678,
+            "month": 1,
+            "abs": -20124
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1668,
+            "month": 12,
+            "abs": -19993
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-si-huai",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "xia",
+      "personId": "si-huai",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1921,
+            "month": 1,
+            "abs": -23040
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1878,
+            "month": 12,
+            "abs": -22513
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-si-jie",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "xia",
+      "personId": "si-jie",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1651,
+            "month": 1,
+            "abs": -19800
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1600,
+            "month": 12,
+            "abs": -19177
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-si-jin",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "xia",
+      "personId": "si-jin",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1717,
+            "month": 1,
+            "abs": -20592
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1710,
+            "month": 12,
+            "abs": -20497
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-si-jiong",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "xia",
+      "personId": "si-jiong",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1735,
+            "month": 1,
+            "abs": -20808
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1718,
+            "month": 12,
+            "abs": -20593
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-si-kongjia",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "xia",
+      "personId": "si-kongjia",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1709,
+            "month": 1,
+            "abs": -20496
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1679,
+            "month": 12,
+            "abs": -20125
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-si-mang",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "xia",
+      "personId": "si-mang",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1877,
+            "month": 1,
+            "abs": -22512
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1820,
+            "month": 12,
+            "abs": -21817
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-si-qi",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "xia",
+      "personId": "si-qi",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2060,
+            "month": 1,
+            "abs": -24708
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2045,
+            "month": 12,
+            "abs": -24517
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-si-shaokang",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "xia",
+      "personId": "si-shaokang",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1959,
+            "month": 1,
+            "abs": -23496
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1939,
+            "month": 12,
+            "abs": -23245
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-si-taikang",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "xia",
+      "personId": "si-taikang",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2044,
+            "month": 1,
+            "abs": -24516
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2041,
+            "month": 12,
+            "abs": -24469
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-si-xiang",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "xia",
+      "personId": "si-xiang",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2027,
+            "month": 1,
+            "abs": -24312
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2000,
+            "month": 12,
+            "abs": -23977
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-si-xie",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "xia",
+      "personId": "si-xie",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1819,
+            "month": 1,
+            "abs": -21816
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1795,
+            "month": 12,
+            "abs": -21517
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-si-yu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "xia",
+      "personId": "si-yu",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2070,
+            "month": 1,
+            "abs": -24828
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2061,
+            "month": 12,
+            "abs": -24709
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-si-zhongkang",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "xia",
+      "personId": "si-zhongkang",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2040,
+            "month": 1,
+            "abs": -24468
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -2028,
+            "month": 12,
+            "abs": -24313
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-si-zhu",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "xia",
+      "personId": "si-zhu",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1938,
+            "month": 1,
+            "abs": -23244
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1922,
+            "month": 12,
+            "abs": -23041
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zi-gengding",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "shang",
+      "personId": "zi-gengding",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1158,
+            "month": 1,
+            "abs": -13884
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zi-linxin",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "shang",
+      "personId": "zi-linxin",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1169,
+            "month": 1,
+            "abs": -14016
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1159,
+            "month": 12,
+            "abs": -13885
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zi-waibing",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "shang",
+      "personId": "zi-waibing",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1566,
+            "month": 12,
+            "abs": -18769
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zi-zhongren",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "shang",
+      "personId": "zi-zhongren",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1565,
+            "month": 1,
+            "abs": -18768
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zi-zugeng",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "shang",
+      "personId": "zi-zugeng",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1181,
+            "month": 12,
+            "abs": -14149
+          }
+        }
+      ],
+      "dateNote": null
+    },
+    {
+      "package": "xia-shang-zhou",
+      "table": "reigns",
+      "entityType": "reign",
+      "id": "reign-zi-zujia",
+      "label": null,
+      "legacyPrecision": "year",
+      "legacyTimeMode": null,
+      "dynastyId": "shang",
+      "personId": "zi-zujia",
+      "flagCategories": [
+        "interpolated"
+      ],
+      "endpoints": [
+        {
+          "endpoint": "start",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1180,
+            "month": 1,
+            "abs": -14148
+          }
+        },
+        {
+          "endpoint": "end",
+          "legacyConfidence": "interpolated",
+          "point": {
+            "year": -1170,
+            "month": 12,
+            "abs": -14017
+          }
+        }
+      ],
+      "dateNote": null
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 import type { Event, Reign } from "@eralens/shared";
-import { activeReignsAtAbs, eventSpanAbs } from "@eralens/shared";
+import { activeReignsAtAbs, eventSpanAbs, isApproximateConfidence, type HistoricalDateConfidence } from "@eralens/shared";
 import { projectAbs, projectRange, type ViewportState } from "./coordinates";
 
 /** Maximum visual width of an event pill, matching `.marker { max-width }`. */
@@ -54,7 +54,7 @@ export function eventMarkerWidth(name: string, approximate = false): number {
 }
 
 export function eventHasBand(event: Event): boolean {
-  return event.kind !== "poetry" && (event.timeMode === "span" || event.timeMode === "circa");
+  return event.kind !== "poetry" && event.timeMode === "span";
 }
 
 function clamp(value: number, min: number, max: number): number {
@@ -62,7 +62,7 @@ function clamp(value: number, min: number, max: number): number {
 }
 
 /**
- * Keep a span/circa label on-screen while any of its gray range is visible.
+ * Keep a span label on-screen while any of its range is visible.
  * Natural time-anchor is used when that pill is fully on the page and still
  * overlaps the remaining band; otherwise the pill pins to the left of the
  * visible band (pulled inward if the remaining sliver is on the far right).
@@ -104,7 +104,7 @@ export function eventHitInterval(
 ): { left: number; right: number } {
   const span = eventSpanAbs(event);
   const x = projectAbs(viewport, span.anchorAbs);
-  const markerWidth = eventMarkerWidth(event.name, event.isApproximate);
+  const markerWidth = eventMarkerWidth(event.name, isApproximateConfidence(event.atConfidence ?? event.at?.confidence));
   let left = x - EVENT_MARKER_DOT_OFFSET;
   let right = left + markerWidth;
   if (eventHasBand(event)) {
@@ -163,13 +163,21 @@ export function eventTargetReign(event: Event, reigns: readonly Reign[]): Reign 
   return active.length === 1 ? active[0]! : null;
 }
 
-const EVENT_PRECISION_ORDER: Record<Event["precision"], number> = {
-  day: 5,
-  month: 4,
-  year: 3,
-  decade: 2,
-  century: 1,
+const EVENT_CONFIDENCE_ORDER: Record<HistoricalDateConfidence, number> = {
+  day: 8,
+  approximate_day: 7,
+  month: 6,
+  approximate_month: 5,
+  year: 4,
+  approximate_year: 3,
+  interpolated_by_other: 2,
+  interpolated_by_generation: 1,
 };
+
+function eventDateConfidence(event: Event): HistoricalDateConfidence {
+  return event.atConfidence ?? event.at?.confidence ?? event.startConfidence ?? event.start?.confidence ??
+    (event.at?.confidence ?? event.start?.confidence ?? "year");
+}
 
 /** Political and military events win badge collisions before precision is considered. */
 function eventBadgeKindPriority(event: Event): number {
@@ -207,7 +215,7 @@ export function layoutPlacedEventBadges(
   for (const [laneId, items] of byLane) {
     items.sort((a, b) =>
       eventBadgeKindPriority(b.item.event) - eventBadgeKindPriority(a.item.event) ||
-      EVENT_PRECISION_ORDER[b.item.event.precision] - EVENT_PRECISION_ORDER[a.item.event.precision] ||
+      EVENT_CONFIDENCE_ORDER[eventDateConfidence(b.item.event)] - EVENT_CONFIDENCE_ORDER[eventDateConfidence(a.item.event)] ||
       eventSpanAbs(a.item.event).anchorAbs - eventSpanAbs(b.item.event).anchorAbs ||
       a.item.event.id.localeCompare(b.item.event.id),
     );
@@ -260,7 +268,7 @@ export function layoutEvents(events: Event[], viewport: ViewportState): PlacedEv
     const bandWidth = Math.max(8, range.width);
     const naturalX = projectAbs(viewport, span.anchorAbs);
     const lane = lanes.get(event.id) ?? 0;
-    const markerWidth = eventMarkerWidth(event.name, event.isApproximate);
+    const markerWidth = eventMarkerWidth(event.name, isApproximateConfidence(event.atConfidence ?? event.at?.confidence));
     return {
       event,
       lane,

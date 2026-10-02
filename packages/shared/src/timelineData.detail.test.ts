@@ -387,7 +387,7 @@ describe("buildEntityDetail event", () => {
           id: "sanxingdui",
           name: "三星堆文化",
           kind: "culture" as const,
-          timeMode: "circa" as const,
+          timeMode: "span" as const,
           precision: "century" as const,
           dateNote:
             "遗址约前2800–前1100。一期属宝墩文化；二三期三星堆文化约前2000–前1400；著名祭祀坑约前1200–前1000，属四期十二桥。不含宝墩一期。",
@@ -1159,7 +1159,7 @@ describe("buildEntityDetail poetry event", () => {
           id: "poetry-fengqiao-yebo",
           name: "枫桥夜泊",
           kind: "poetry" as const,
-          timeMode: "circa" as const,
+          timeMode: "span" as const,
           precision: "year" as const,
           start: { year: 750, month: 1 },
           end: { year: 770, month: 12 },

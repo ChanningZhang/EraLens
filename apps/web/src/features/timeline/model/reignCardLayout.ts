@@ -1,6 +1,6 @@
 import {
   isSystemMissingReign,
-  isUncertainDateConfidence,
+  isInterpolatedConfidence,
   reignVisualBounds,
   resolveReignCardLabel,
   type PreQinClanContext,
@@ -92,10 +92,10 @@ function layoutRulerReignBar(
   if (visualWidth <= 0) return null;
 
   const anchor = (visual.start + visual.endExclusive) / 2;
-  const seamInsetLeft = isUncertainDateConfidence(reign.startDateConfidence)
+  const seamInsetLeft = (isInterpolatedConfidence(reign.start.confidence))
     ? UNCERTAIN_SEAM_GAP_PX
     : 0;
-  const seamInsetRight = isUncertainDateConfidence(reign.endDateConfidence)
+  const seamInsetRight = (isInterpolatedConfidence(reign.end.confidence))
     ? UNCERTAIN_SEAM_GAP_PX
     : 0;
 

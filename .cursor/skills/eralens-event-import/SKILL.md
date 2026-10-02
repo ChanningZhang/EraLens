@@ -8,6 +8,8 @@ description: >-
 
 # EraLens 事件添加与丰富
 
+所有事件日期、精度、历法与置信度遵循 [eralens-date-handling](../eralens-date-handling/SKILL.md)。
+
 只处理事件及其直接关联。真实数据的唯一记录源是 `data/imports/{slug}/cache.json`，新增或修改的事件及关联直接写入对应数组；来源和取舍写入同一缓存内的 `manifest.sources` / `manifest.notes`。不要新增包级 `.mjs`、Wiki 加工脚本或手写生成 SQL。新建完整时期包时仍使用
 [eralens-period-import](../eralens-period-import/SKILL.md)；需要单独补地点时同时使用
 [eralens-geography-import](../eralens-geography-import/SKILL.md)。
@@ -42,14 +44,7 @@ description: >-
 
 ## 时间建模
 
-- `point`：明确时点。缓存中直接填写 `at: { year, month, abs }`；只知年份时 `precision='year'`，占位月必须为 12。
-- 确知公历年月日时用 `precision='day'`，`at` / `start` / `end` 带 `day` 字段（SQL 对应 `at_day` / `start_day` / `end_day`）；农历月日须先可靠换算，不能直接写入公历日字段。
-- `span`：事件真实持续一段时间。填 `start_*`、`end_*`；不能用来表示“大约”。
-- `circa`：发生于估计窗口或诸说不一。填 `start_*`、`end_*`；可另填通行估计 `at_*`，并在 `date_note` 说明。
-- `precision` 只能使用 `day | month | year | decade | century`；已知月份才写 `month`，已知日期才写 `day`。
-- 来源写“约某年”但只给一个年份时，忠实记为该年桶，不自动扩成 `circa`。只有跨年范围、多说冲突或导入者推算才使用不确定窗口。
-- 先确认日期使用农历还是公历。不得把农历月日直接当公历录入；不能可靠换算时保留原文并降低精度，换算后须在 `date_note` 写依据。
-- 所有 `*_abs` 用共享定义 `absMonth()` 或 `compute-abs.mjs` 核算后写入缓存；统一生成器不会计算或修正日期。
+日期和 point/span 的规则以 [eralens-date-handling](../eralens-date-handling/SKILL.md) 为准。事件缓存仍使用 `at`、`start`、`end` 及对应 AbsMonth 字段；`*_abs` 用共享 `absMonth()` 或 `compute-abs.mjs` 核算。
 
 `kind` 使用现有枚举：`battle | politics | culture | disaster | commerce | agriculture | finance | idiom | poetry | other`。`agriculture` 用于农业生产、作物引种及相关农业技术传播。新增枚举必须同步 Zod、Prisma、共享标签、界面样式和入库 Skill，不能只在数据里发明新值。
 
@@ -94,7 +89,7 @@ node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/impor
 - [ ] 每条事件都有可核来源，争议取舍进入 `date_note` 或 `cache.json.manifest.notes`
 - [ ] 概述简洁但交代背景、相关人物、年代、经过和结果/影响，不是过短标签或空泛结论
 - [ ] 无同义重复；事件提供泳道、reign、都城无法表达的新信息
-- [ ] `point/span/circa` 与精度语义正确，年精度点落在 12 月
+- [ ] `point/span` 与日期置信度语义正确，年精度点落在 12 月
 - [ ] 王朝、人物、地点关联引用正确实体
 - [ ] 校验通过，API 与详情抽屉能读取，时间轴形态符合 time mode
 

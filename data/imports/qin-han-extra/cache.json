@@ -169,14 +169,15 @@
       "start": {
         "year": -203,
         "month": 1,
-        "abs": -2424
+        "abs": -2424,
+        "confidence": "year"
       },
       "end": {
         "year": -111,
         "month": 1,
-        "abs": -1320
+        "abs": -1320,
+        "confidence": "year"
       },
-      "precision": "year",
       "note": "赵佗据岭南自立，前203年建国；前111年汉武帝遣军灭南越，设九郡。"
     },
     {
@@ -190,14 +191,15 @@
       "start": {
         "year": 23,
         "month": 1,
-        "abs": 276
+        "abs": 276,
+        "confidence": "year"
       },
       "end": {
         "year": 27,
         "month": 1,
-        "abs": 324
+        "abs": 324,
+        "confidence": "year"
       },
-      "precision": "year",
       "note": "新莽末赤眉起义军政权，樊崇为首，25年立刘盆子为帝，27年降刘秀。"
     }
   ],
@@ -212,18 +214,17 @@
       "start": {
         "year": -203,
         "month": 1,
-        "abs": -2424
+        "abs": -2424,
+        "confidence": "year"
       },
       "end": {
         "year": -137,
         "month": 12,
-        "abs": -1621
+        "abs": -1621,
+        "confidence": "year"
       },
       "startAbs": -2424,
       "endAbs": -1621,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -238,18 +239,17 @@
       "start": {
         "year": -137,
         "month": 1,
-        "abs": -1632
+        "abs": -1632,
+        "confidence": "year"
       },
       "end": {
         "year": -122,
         "month": 12,
-        "abs": -1441
+        "abs": -1441,
+        "confidence": "year"
       },
       "startAbs": -1632,
       "endAbs": -1441,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -264,18 +264,17 @@
       "start": {
         "year": -122,
         "month": 1,
-        "abs": -1452
+        "abs": -1452,
+        "confidence": "year"
       },
       "end": {
         "year": -112,
         "month": 12,
-        "abs": -1321
+        "abs": -1321,
+        "confidence": "year"
       },
       "startAbs": -1452,
       "endAbs": -1321,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -290,18 +289,17 @@
       "start": {
         "year": -112,
         "month": 1,
-        "abs": -1332
+        "abs": -1332,
+        "confidence": "year"
       },
       "end": {
         "year": -111,
         "month": 12,
-        "abs": -1309
+        "abs": -1309,
+        "confidence": "year"
       },
       "startAbs": -1332,
       "endAbs": -1309,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -316,18 +314,17 @@
       "start": {
         "year": -111,
         "month": 1,
-        "abs": -1320
+        "abs": -1320,
+        "confidence": "year"
       },
       "end": {
         "year": -111,
         "month": 12,
-        "abs": -1309
+        "abs": -1309,
+        "confidence": "year"
       },
       "startAbs": -1320,
       "endAbs": -1309,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -342,24 +339,25 @@
       "start": {
         "year": 23,
         "month": 1,
-        "abs": 276
+        "abs": 276,
+        "confidence": "approximate_day"
       },
       "end": {
         "year": 25,
         "month": 7,
         "abs": 306,
-        "day": 29
+        "day": 29,
+        "confidence": "approximate_day"
       },
       "startAbs": 276,
       "endAbs": 306,
-      "precision": "day",
-      "startDateConfidence": "approximate",
-      "endDateConfidence": "approximate",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
       "isInformalMonarch": true,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "approximate_day",
+      "endConfidence": "approximate_day"
     },
     {
       "id": "reign-liu-panzi-chimei",
@@ -371,30 +369,29 @@
         "year": 25,
         "month": 7,
         "abs": 306,
-        "day": 29
+        "day": 29,
+        "confidence": "approximate_day"
       },
       "end": {
         "year": 27,
         "month": 3,
         "abs": 326,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "startAbs": 306,
       "endAbs": 326,
-      "precision": "day",
-      "startDateConfidence": "approximate",
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "approximate_day"
     }
   ],
   "events": [
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "day",
       "dynastyIds": [
         "chimei"
       ],
@@ -409,7 +406,8 @@
         "year": 25,
         "month": 10,
         "abs": 309,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "summary": "赤眉军攻入长安，杀更始帝刘玄，立刘盆子为帝，更始政权终结。",
       "atAbs": 309,
@@ -522,7 +520,7 @@
       "赵兴为吕嘉所杀后赵建德即位，同年汉军灭南越。",
       "赤眉入长安事件关联更始帝刘玄（见 qin-han 包 liu-xuan）。",
       "西汉、更始关联见 qin-han 包，本包以 supplemental 补充。",
-      "precision=year，scope=cn，region=east_asia。"
+      "confidence=year，scope=cn，region=east_asia。"
     ]
   }
 }

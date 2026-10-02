@@ -143,7 +143,7 @@ describe("formatReignSpanTooltip", () => {
     ).toBe("-356年 — -320年 · 37年");
   });
 
-  it("replaces uncertain tooltip endpoints with question marks", () => {
+  it("shows interpolated endpoints as question marks", () => {
     expect(
       formatReignSpanTooltip(
         reign({
@@ -155,7 +155,7 @@ describe("formatReignSpanTooltip", () => {
           startDateConfidence: "interpolated",
         }),
       ),
-    ).toBe("？ — -863年 · ？年");
+    ).toBe("? — -863年");
   });
 });
 

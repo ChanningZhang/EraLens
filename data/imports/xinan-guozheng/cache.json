@@ -109,14 +109,15 @@
       "start": {
         "year": -300,
         "month": 1,
-        "abs": -3588
+        "abs": -3588,
+        "confidence": "year"
       },
       "end": {
         "year": -27,
         "month": 1,
-        "abs": -312
+        "abs": -312,
+        "confidence": "year"
       },
-      "precision": "year",
       "note": "战国时已有夜郎；汉武帝时夜郎侯多同，末王兴前27年被诛。君主在位年多失考，不强行拉满王朝跨度。"
     },
     {
@@ -130,14 +131,15 @@
       "start": {
         "year": -279,
         "month": 1,
-        "abs": -3336
+        "abs": -3336,
+        "confidence": "year"
       },
       "end": {
         "year": -109,
         "month": 1,
-        "abs": -1296
+        "abs": -1296,
+        "confidence": "year"
       },
-      "precision": "year",
       "note": "楚将庄蹻入滇称王；武帝元封二年（前109）尝羌降汉，设益州郡。庄蹻与尝羌之间世系失考。"
     }
   ],
@@ -152,18 +154,17 @@
       "start": {
         "year": -140,
         "month": 1,
-        "abs": -1668
+        "abs": -1668,
+        "confidence": "year"
       },
       "end": {
         "year": -120,
         "month": 12,
-        "abs": -1417
+        "abs": -1417,
+        "confidence": "year"
       },
       "startAbs": -1668,
       "endAbs": -1417,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -178,18 +179,17 @@
       "start": {
         "year": -30,
         "month": 1,
-        "abs": -348
+        "abs": -348,
+        "confidence": "year"
       },
       "end": {
         "year": -27,
         "month": 12,
-        "abs": -301
+        "abs": -301,
+        "confidence": "year"
       },
       "startAbs": -348,
       "endAbs": -301,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -204,18 +204,17 @@
       "start": {
         "year": -279,
         "month": 1,
-        "abs": -3336
+        "abs": -3336,
+        "confidence": "year"
       },
       "end": {
         "year": -256,
         "month": 12,
-        "abs": -3049
+        "abs": -3049,
+        "confidence": "year"
       },
       "startAbs": -3336,
       "endAbs": -3049,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -230,18 +229,17 @@
       "start": {
         "year": -115,
         "month": 1,
-        "abs": -1368
+        "abs": -1368,
+        "confidence": "year"
       },
       "end": {
         "year": -109,
         "month": 12,
-        "abs": -1285
+        "abs": -1285,
+        "confidence": "year"
       },
       "startAbs": -1368,
       "endAbs": -1285,
-      "precision": "year",
-      "startDateConfidence": null,
-      "endDateConfidence": null,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -256,16 +254,17 @@
       "start": {
         "year": -119,
         "month": 1,
-        "abs": -1416
+        "abs": -1416,
+        "confidence": "year"
       },
       "end": {
         "year": -31,
         "month": 12,
-        "abs": -349
+        "abs": -349,
+        "confidence": "year"
       },
       "startAbs": -1416,
       "endAbs": -349,
-      "precision": "year",
       "isMain": false
     },
     {
@@ -277,16 +276,17 @@
       "start": {
         "year": -255,
         "month": 1,
-        "abs": -3048
+        "abs": -3048,
+        "confidence": "year"
       },
       "end": {
         "year": -116,
         "month": 12,
-        "abs": -1369
+        "abs": -1369,
+        "confidence": "year"
       },
       "startAbs": -3048,
       "endAbs": -1369,
-      "precision": "year",
       "isMain": false
     }
   ],
@@ -294,7 +294,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "yelang"
       ],
@@ -306,7 +305,8 @@
       "at": {
         "year": -135,
         "month": 12,
-        "abs": -1597
+        "abs": -1597,
+        "confidence": "year"
       },
       "summary": "汉武帝遣唐蒙出使夜郎，夜郎侯多同归附，开西南夷通道。",
       "atAbs": -1597
@@ -314,7 +314,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [],
       "participantIds": [],
       "id": "han-pacify-southwest-yi",
@@ -322,7 +321,8 @@
       "at": {
         "year": -111,
         "month": 12,
-        "abs": -1309
+        "abs": -1309,
+        "confidence": "year"
       },
       "summary": "汉武帝遣郭昌、卫广等伐西南夷，且兰（头兰）及邛都、莋都、冉駹、白马等国为汉所灭。",
       "atAbs": -1309
@@ -330,7 +330,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "dian"
       ],
@@ -342,7 +341,8 @@
       "at": {
         "year": -109,
         "month": 12,
-        "abs": -1285
+        "abs": -1285,
+        "confidence": "year"
       },
       "summary": "汉武帝元封二年，滇王尝羌率众降汉，设益州郡。",
       "atAbs": -1285
@@ -350,7 +350,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "yelang"
       ],
@@ -362,7 +361,8 @@
       "at": {
         "year": -122,
         "month": 12,
-        "abs": -1441
+        "abs": -1441,
+        "confidence": "year"
       },
       "summary": "《史记·西南夷列传》记载夜郎侯多同问汉使“汉孰与我大”，后世凝为成语“夜郎自大”。",
       "meaning": "比喻见识狭窄、眼光短浅而自以为了不起。",
@@ -465,7 +465,7 @@
       "君主在位年无通行记载时，仅取史料锚点前后短窗口，禁止用王朝起讫年硬填。",
       "多同取唐蒙通夜郎（前135）前后约二十年；兴取被杀前数年；尝羌取降汉前数年。",
       "庄蹻与尝羌之间、多同与兴之间世系失考，中间空缺不补齐。",
-      "precision=year，scope=cn，region=east_asia。"
+      "confidence=year，scope=cn，region=east_asia。"
     ]
   }
 }

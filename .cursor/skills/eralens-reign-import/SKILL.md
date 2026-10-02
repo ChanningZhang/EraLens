@@ -8,6 +8,8 @@ description: >-
 
 # EraLens 在位信息添加与丰富
 
+所有日期录入、精度、历法和端点置信度遵循 [eralens-date-handling](../eralens-date-handling/SKILL.md)。
+
 只处理人物与 `reigns` 直接相关的数据。完整时期导入使用
 [eralens-period-import](../eralens-period-import/SKILL.md)；既有错误修复还应遵守
 [eralens-data-fix](../eralens-data-fix/SKILL.md)。
@@ -31,20 +33,19 @@ description: >-
 - 年精度顺序继位默认“死年整年归旧王，新王从下一年起算”。年月只是年桶占位，不把公历 1 月 1 日冒充即位日。
 - 以下情况不机械后移：一年短祚、史料明确未逾年改元、真正并立/旁支、同年内有可核时长。已知月日时按史料月日。
 - 混合精度和相邻区间统一走 `packages/shared/src/timelineOwnership.ts`，底层由 `timelineIntervals.ts` 按日历日执行边界归属。生成器、API、布局和详情不得另写 `+1 年/月` 或端点判断。
-- 农历月日不得直接当公历。只有可靠换算后才写公历月日，并记录原记载和换算依据；否则按已知精度录入。
-- 来源只写“约某年”时仍按该年桶记录，不加 `approximate` confidence。只有导入者推算、插值或来源给出跨年/冲突范围，才标不确定。
+- 日期精度、历法和 confidence 分类统一遵循 [eralens-date-handling](../eralens-date-handling/SKILL.md)。
 
 ## 空白与失考
 
 先定性再建模：
 
 - **史料缺**：相邻可考君主之间确有应有国君的历史空白，但史料完全不能确认中间君主人数或世次。写普通 reign，`person_id='system-missing-ruler'`、`title='史料缺'`，id 为 `reign-missing-{dynasty}-{start-year}`。
-- **已知有若干失名君主**：谱系、世次或其他材料明确可知两位已知君主之间有 N 任君主，即使姓名失载，也必须逐任建立独立普通 reign 和独立 person（如滕国的 `persons.name='？'`、`reigns.title='？'` 形式）。姓名未知时，数据层 `persons.name` 只存 `？`，不拼姓氏；姓氏仍由 `ancestral_xing` 等专用字段表达。按共同锚点顺序分配区间时标 `interpolated`。不得用 `system-missing-ruler` / “史料缺”代替已知任数的君主。
+- **已知有若干失名君主**：谱系、世次或其他材料明确可知两位已知君主之间有 N 任君主，即使姓名失载，也必须逐任建立独立普通 reign 和独立 person（如滕国的 `persons.name='？'`、`reigns.title='？'` 形式）。姓名未知时，数据层 `persons.name` 只存 `？`，不拼姓氏；姓氏仍由 `ancestral_xing` 等专用字段表达。按共同锚点顺序分配区间时使用日期处理 Skill 规定的插值 confidence。不得用 `system-missing-ruler` / “史料缺”代替已知任数的君主。
 - **无国君**：亡国、尚未复立、改朝换号或该行本不设君。不写 reign，自然留白。
-- **年代失考**：知道是谁但边界为推算/均分。使用 `start_date_confidence` / `end_date_confidence` 的 `approximate | interpolated`，不用“史料缺”占位。
+- **年代失考**：知道是谁但边界为推算/均分。为各端点填写新日期 confidence，不用“史料缺”占位；兼容迁移阶段保留旧字段。
 - **资料未收齐**：继续查证，不能因为当前深度不足就标成“史料缺”。
 
-若世系连续但多数王年失载：交叉核对若干可考君主、明确纪事或可靠年表作为共同起讫锚点；将同一锚点窗口内的连续世次按顺序均分，标 `interpolated`。锚点自身及贴着确定锚点的边保持确定。世系中断、锚点不足、不共时或只剩传统积年时，不跨断层插值，并在 `cache.json.manifest.notes` 写清无法填充的区段。
+世次均分的锚点条件、置信度和留据方式统一遵循 [eralens-date-handling](../eralens-date-handling/SKILL.md)。
 
 日历相接的两王交界两侧必须同为失考或同为确定；可用共享边界校验规则核对，修正后把置信度直接写入 `cache.json`。灭国留白不相接，各自保留自己的边界状态。
 
@@ -84,7 +85,7 @@ Task Progress:
 - [ ] 7. 验收卡片、搜索、详情、正统色与并立布局
 ```
 
-直接修改 `data/imports/{slug}/cache.json`，将已核定的日期、称谓、置信度和世系关系写入记录；来源与取舍也写在该文件的 `manifest.sources` / `manifest.notes`。缓存使用 camelCase 字段，日期包含 `year`、`month`、`abs`；例如数据库的 `start_date_confidence` 对应缓存 `startDateConfidence`，主线标记使用 `isMain`，track 字段使用 `claimTrack` / `claimRole`。人物称谓放在 person/reign 各自字段。用统一命令生成 SQL；生成流程只序列化缓存，不解析 Wiki、不做朝代特判、年份补丁或自动插值。AbsMonth 按共享定义计算，不能为单个朝代另造处理脚本。
+直接修改 `data/imports/{slug}/cache.json`，将已核定的日期、称谓、confidence 和世系关系写入记录；日期格式统一见日期处理 Skill。来源与取舍也写在 `manifest.sources` / `manifest.notes`。主线标记使用 `isMain`，track 字段使用 `claimTrack` / `claimRole`。人物称谓放在 person/reign 各自字段。用统一命令生成 SQL；生成流程只序列化缓存，不解析 Wiki、不做朝代特判、年份补丁或自动插值。AbsMonth 按共享定义计算，不能为单个朝代另造处理脚本。
 
 ```bash
 node data/imports/generate.mjs {slug}

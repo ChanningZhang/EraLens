@@ -306,7 +306,7 @@
     }
   ],
   "notes": [
-    "成语以 kind=idiom 的 point 事件入库，仅在时间轴显示时刻 marker，不画 span/circa 区间。",
+    "成语以 kind=idiom 的 point 事件入库，仅在时间轴显示时刻 marker；日期 confidence 按日期处理 Skill 执行。",
     "烽火戏诸侯并入夏商周包的犬戎之祸事件说明；该传统叙事史实有争议，不再单独绘制时间轴事件。",
     "meaning 存释义，summary 存典故；王朝经 event_dynasties，人物经 event_participants（仅 person_id）。",
     "participantIds 必须引用 persons.id，禁止写 reign id 或在 relations 中挂 reign。",

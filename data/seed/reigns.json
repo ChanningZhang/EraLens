@@ -7,15 +7,16 @@
     "eraNames": [],
     "start": {
       "year": -2070,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -2026,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -24828,
     "endAbs": -24289,
-    "precision": "year",
     "preferredAppellation": {
       "kind": "regnal",
       "name": "禹"
@@ -29,15 +30,16 @@
     "eraNames": [],
     "start": {
       "year": -2025,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -2010,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -24288,
     "endAbs": -24097,
-    "precision": "year",
     "preferredAppellation": {
       "kind": "regnal",
       "name": "启"
@@ -51,15 +53,16 @@
     "eraNames": [],
     "start": {
       "year": -2009,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1990,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -24096,
     "endAbs": -23857,
-    "precision": "year",
     "preferredAppellation": {
       "kind": "regnal",
       "name": "太康"
@@ -73,15 +76,16 @@
     "eraNames": [],
     "start": {
       "year": -1910,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1860,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -22908,
     "endAbs": -22297,
-    "precision": "year",
     "preferredAppellation": {
       "kind": "regnal",
       "name": "少康"
@@ -95,15 +99,16 @@
     "eraNames": [],
     "start": {
       "year": -1650,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1600,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -19788,
     "endAbs": -19177,
-    "precision": "year",
     "preferredAppellation": {
       "kind": "regnal",
       "name": "桀"
@@ -117,15 +122,16 @@
     "eraNames": [],
     "start": {
       "year": -1600,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1571,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -19188,
-    "endAbs": -18829,
-    "precision": "year"
+    "endAbs": -18829
   },
   {
     "id": "reign-zi-taijia",
@@ -135,15 +141,16 @@
     "eraNames": [],
     "start": {
       "year": -1560,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1548,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -18708,
-    "endAbs": -18553,
-    "precision": "year"
+    "endAbs": -18553
   },
   {
     "id": "reign-zi-woding",
@@ -153,15 +160,16 @@
     "eraNames": [],
     "start": {
       "year": -1547,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1529,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -18552,
-    "endAbs": -18325,
-    "precision": "year"
+    "endAbs": -18325
   },
   {
     "id": "reign-zi-taigeng",
@@ -171,15 +179,16 @@
     "eraNames": [],
     "start": {
       "year": -1528,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1524,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -18324,
-    "endAbs": -18265,
-    "precision": "year"
+    "endAbs": -18265
   },
   {
     "id": "reign-zi-xiaojia",
@@ -189,15 +198,16 @@
     "eraNames": [],
     "start": {
       "year": -1523,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1507,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -18264,
-    "endAbs": -18061,
-    "precision": "year"
+    "endAbs": -18061
   },
   {
     "id": "reign-zi-yongji",
@@ -207,15 +217,16 @@
     "eraNames": [],
     "start": {
       "year": -1506,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1495,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -18060,
-    "endAbs": -17917,
-    "precision": "year"
+    "endAbs": -17917
   },
   {
     "id": "reign-zi-taiwu",
@@ -225,15 +236,16 @@
     "eraNames": [],
     "start": {
       "year": -1494,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1420,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -17916,
-    "endAbs": -17017,
-    "precision": "year"
+    "endAbs": -17017
   },
   {
     "id": "reign-zi-zhongding",
@@ -243,15 +255,16 @@
     "eraNames": [],
     "start": {
       "year": -1419,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1411,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -17016,
-    "endAbs": -16909,
-    "precision": "year"
+    "endAbs": -16909
   },
   {
     "id": "reign-zi-wairen",
@@ -261,15 +274,16 @@
     "eraNames": [],
     "start": {
       "year": -1410,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1401,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -16908,
-    "endAbs": -16789,
-    "precision": "year"
+    "endAbs": -16789
   },
   {
     "id": "reign-zi-hedanjia",
@@ -279,15 +293,16 @@
     "eraNames": [],
     "start": {
       "year": -1400,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1392,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -16788,
-    "endAbs": -16681,
-    "precision": "year"
+    "endAbs": -16681
   },
   {
     "id": "reign-zi-zuyi",
@@ -297,15 +312,16 @@
     "eraNames": [],
     "start": {
       "year": -1391,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1373,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -16680,
-    "endAbs": -16453,
-    "precision": "year"
+    "endAbs": -16453
   },
   {
     "id": "reign-zi-zuxin",
@@ -315,15 +331,16 @@
     "eraNames": [],
     "start": {
       "year": -1372,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1359,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -16452,
-    "endAbs": -16285,
-    "precision": "year"
+    "endAbs": -16285
   },
   {
     "id": "reign-zi-wojia",
@@ -333,15 +350,16 @@
     "eraNames": [],
     "start": {
       "year": -1358,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1339,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -16284,
-    "endAbs": -16045,
-    "precision": "year"
+    "endAbs": -16045
   },
   {
     "id": "reign-zi-zuding",
@@ -351,15 +369,16 @@
     "eraNames": [],
     "start": {
       "year": -1338,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1330,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -16044,
-    "endAbs": -15937,
-    "precision": "year"
+    "endAbs": -15937
   },
   {
     "id": "reign-zi-nangeng",
@@ -369,15 +388,16 @@
     "eraNames": [],
     "start": {
       "year": -1329,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1324,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -15936,
-    "endAbs": -15865,
-    "precision": "year"
+    "endAbs": -15865
   },
   {
     "id": "reign-zi-yangjia",
@@ -387,15 +407,16 @@
     "eraNames": [],
     "start": {
       "year": -1323,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1311,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -15864,
-    "endAbs": -15709,
-    "precision": "year"
+    "endAbs": -15709
   },
   {
     "id": "reign-zi-pangeng",
@@ -405,15 +426,16 @@
     "eraNames": [],
     "start": {
       "year": -1310,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1280,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -15708,
-    "endAbs": -15337,
-    "precision": "year"
+    "endAbs": -15337
   },
   {
     "id": "reign-zi-xiaoxin",
@@ -423,15 +445,16 @@
     "eraNames": [],
     "start": {
       "year": -1279,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1277,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -15336,
-    "endAbs": -15301,
-    "precision": "year"
+    "endAbs": -15301
   },
   {
     "id": "reign-zi-xiaoyi",
@@ -441,15 +464,16 @@
     "eraNames": [],
     "start": {
       "year": -1276,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1251,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -15300,
-    "endAbs": -14989,
-    "precision": "year"
+    "endAbs": -14989
   },
   {
     "id": "reign-zi-wuding",
@@ -459,15 +483,16 @@
     "eraNames": [],
     "start": {
       "year": -1250,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1192,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -14988,
-    "endAbs": -14281,
-    "precision": "year"
+    "endAbs": -14281
   },
   {
     "id": "reign-zi-zugeng",
@@ -477,15 +502,16 @@
     "eraNames": [],
     "start": {
       "year": -1191,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1181,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -14280,
-    "endAbs": -14149,
-    "precision": "year"
+    "endAbs": -14149
   },
   {
     "id": "reign-zi-zujia",
@@ -495,15 +521,16 @@
     "eraNames": [],
     "start": {
       "year": -1180,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1170,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -14148,
-    "endAbs": -14017,
-    "precision": "year"
+    "endAbs": -14017
   },
   {
     "id": "reign-zi-linxin",
@@ -513,15 +540,16 @@
     "eraNames": [],
     "start": {
       "year": -1169,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1159,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -14016,
-    "endAbs": -13885,
-    "precision": "year"
+    "endAbs": -13885
   },
   {
     "id": "reign-zi-gengding",
@@ -531,15 +559,16 @@
     "eraNames": [],
     "start": {
       "year": -1158,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1148,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -13884,
-    "endAbs": -13753,
-    "precision": "year"
+    "endAbs": -13753
   },
   {
     "id": "reign-zi-wuyi",
@@ -549,15 +578,16 @@
     "eraNames": [],
     "start": {
       "year": -1147,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1113,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -13752,
-    "endAbs": -13333,
-    "precision": "year"
+    "endAbs": -13333
   },
   {
     "id": "reign-zi-wending",
@@ -567,15 +597,16 @@
     "eraNames": [],
     "start": {
       "year": -1112,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1102,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -13332,
-    "endAbs": -13201,
-    "precision": "year"
+    "endAbs": -13201
   },
   {
     "id": "reign-zi-diyi",
@@ -585,15 +616,16 @@
     "eraNames": [],
     "start": {
       "year": -1101,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1076,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -13200,
-    "endAbs": -12889,
-    "precision": "year"
+    "endAbs": -12889
   },
   {
     "id": "reign-zi-dixin",
@@ -603,15 +635,16 @@
     "eraNames": [],
     "start": {
       "year": -1075,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1046,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "startAbs": -12888,
-    "endAbs": -12540,
-    "precision": "year"
+    "endAbs": -12540
   },
   {
     "id": "reign-ji-fa",
@@ -621,15 +654,16 @@
     "eraNames": [],
     "start": {
       "year": -1046,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1043,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -12540,
-    "endAbs": -12493,
-    "precision": "year"
+    "endAbs": -12493
   },
   {
     "id": "reign-ji-song",
@@ -639,15 +673,16 @@
     "eraNames": [],
     "start": {
       "year": -1042,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -1021,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -12492,
-    "endAbs": -12229,
-    "precision": "year"
+    "endAbs": -12229
   },
   {
     "id": "reign-ji-zhao",
@@ -657,15 +692,16 @@
     "eraNames": [],
     "start": {
       "year": -1020,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -996,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -12228,
-    "endAbs": -11929,
-    "precision": "year"
+    "endAbs": -11929
   },
   {
     "id": "reign-ji-xia",
@@ -675,15 +711,16 @@
     "eraNames": [],
     "start": {
       "year": -995,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -977,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -11928,
-    "endAbs": -11701,
-    "precision": "year"
+    "endAbs": -11701
   },
   {
     "id": "reign-ji-man",
@@ -693,15 +730,16 @@
     "eraNames": [],
     "start": {
       "year": -976,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -923,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -11700,
-    "endAbs": -11053,
-    "precision": "year"
+    "endAbs": -11053
   },
   {
     "id": "reign-ji-yihu",
@@ -711,15 +749,16 @@
     "eraNames": [],
     "start": {
       "year": -922,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -900,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -11052,
-    "endAbs": -10777,
-    "precision": "year"
+    "endAbs": -10777
   },
   {
     "id": "reign-ji-jian",
@@ -729,15 +768,16 @@
     "eraNames": [],
     "start": {
       "year": -899,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -892,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -10776,
-    "endAbs": -10681,
-    "precision": "year"
+    "endAbs": -10681
   },
   {
     "id": "reign-ji-pifang",
@@ -747,15 +787,16 @@
     "eraNames": [],
     "start": {
       "year": -891,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -886,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -10680,
-    "endAbs": -10609,
-    "precision": "year"
+    "endAbs": -10609
   },
   {
     "id": "reign-ji-xie",
@@ -765,15 +806,16 @@
     "eraNames": [],
     "start": {
       "year": -885,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -878,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -10608,
-    "endAbs": -10513,
-    "precision": "year"
+    "endAbs": -10513
   },
   {
     "id": "reign-ji-hu",
@@ -783,15 +825,16 @@
     "eraNames": [],
     "start": {
       "year": -877,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -841,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -10512,
-    "endAbs": -10069,
-    "precision": "year"
+    "endAbs": -10069
   },
   {
     "id": "reign-ji-jing",
@@ -801,15 +844,16 @@
     "eraNames": [],
     "start": {
       "year": -827,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -782,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -9912,
-    "endAbs": -9361,
-    "precision": "year"
+    "endAbs": -9361
   },
   {
     "id": "reign-ji-gongsheng",
@@ -819,15 +863,16 @@
     "eraNames": [],
     "start": {
       "year": -781,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -771,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -9360,
-    "endAbs": -9229,
-    "precision": "year"
+    "endAbs": -9229
   },
   {
     "id": "reign-ji-yijiu",
@@ -837,15 +882,16 @@
     "eraNames": [],
     "start": {
       "year": -770,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -720,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -9228,
-    "endAbs": -8617,
-    "precision": "year"
+    "endAbs": -8617
   },
   {
     "id": "reign-ji-yuchen",
@@ -855,15 +901,16 @@
     "eraNames": [],
     "start": {
       "year": -770,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -750,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -9228,
-    "endAbs": -8977,
-    "precision": "year"
+    "endAbs": -8977
   },
   {
     "id": "reign-ji-lin",
@@ -873,15 +920,16 @@
     "eraNames": [],
     "start": {
       "year": -719,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -697,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -8616,
-    "endAbs": -8341,
-    "precision": "year"
+    "endAbs": -8341
   },
   {
     "id": "reign-ji-tuo",
@@ -891,15 +939,16 @@
     "eraNames": [],
     "start": {
       "year": -696,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -682,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -8340,
-    "endAbs": -8161,
-    "precision": "year"
+    "endAbs": -8161
   },
   {
     "id": "reign-ji-huqi",
@@ -909,15 +958,16 @@
     "eraNames": [],
     "start": {
       "year": -681,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -677,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -8160,
-    "endAbs": -8101,
-    "precision": "year"
+    "endAbs": -8101
   },
   {
     "id": "reign-ji-lang",
@@ -927,15 +977,16 @@
     "eraNames": [],
     "start": {
       "year": -676,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -652,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -8100,
-    "endAbs": -7801,
-    "precision": "year"
+    "endAbs": -7801
   },
   {
     "id": "reign-ji-zheng",
@@ -945,15 +996,16 @@
     "eraNames": [],
     "start": {
       "year": -651,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -619,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -7800,
-    "endAbs": -7405,
-    "precision": "year"
+    "endAbs": -7405
   },
   {
     "id": "reign-ji-renchen",
@@ -963,15 +1015,16 @@
     "eraNames": [],
     "start": {
       "year": -618,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -613,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -7404,
-    "endAbs": -7333,
-    "precision": "year"
+    "endAbs": -7333
   },
   {
     "id": "reign-ji-ban",
@@ -981,15 +1034,16 @@
     "eraNames": [],
     "start": {
       "year": -612,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -607,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -7332,
-    "endAbs": -7261,
-    "precision": "year"
+    "endAbs": -7261
   },
   {
     "id": "reign-ji-yu",
@@ -999,15 +1053,16 @@
     "eraNames": [],
     "start": {
       "year": -606,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -586,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -7260,
-    "endAbs": -7009,
-    "precision": "year"
+    "endAbs": -7009
   },
   {
     "id": "reign-ji-yi",
@@ -1017,15 +1072,16 @@
     "eraNames": [],
     "start": {
       "year": -585,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -572,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -7008,
-    "endAbs": -6841,
-    "precision": "year"
+    "endAbs": -6841
   },
   {
     "id": "reign-ji-xiexin",
@@ -1035,15 +1091,16 @@
     "eraNames": [],
     "start": {
       "year": -571,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -545,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -6840,
-    "endAbs": -6517,
-    "precision": "year"
+    "endAbs": -6517
   },
   {
     "id": "reign-ji-gui",
@@ -1053,15 +1110,16 @@
     "eraNames": [],
     "start": {
       "year": -544,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -521,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -6516,
-    "endAbs": -6229,
-    "precision": "year"
+    "endAbs": -6229
   },
   {
     "id": "reign-ji-meng",
@@ -1071,15 +1129,16 @@
     "eraNames": [],
     "start": {
       "year": -520,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -520,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -6228,
-    "endAbs": -6217,
-    "precision": "year"
+    "endAbs": -6217
   },
   {
     "id": "reign-ji-gai",
@@ -1089,15 +1148,16 @@
     "eraNames": [],
     "start": {
       "year": -519,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -477,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -6216,
-    "endAbs": -5701,
-    "precision": "year"
+    "endAbs": -5701
   },
   {
     "id": "reign-ji-ren",
@@ -1107,15 +1167,16 @@
     "eraNames": [],
     "start": {
       "year": -476,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -469,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -5700,
-    "endAbs": -5605,
-    "precision": "year"
+    "endAbs": -5605
   },
   {
     "id": "reign-ji-jie",
@@ -1125,15 +1186,16 @@
     "eraNames": [],
     "start": {
       "year": -468,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -442,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -5604,
-    "endAbs": -5281,
-    "precision": "year"
+    "endAbs": -5281
   },
   {
     "id": "reign-ji-quji",
@@ -1143,15 +1205,16 @@
     "eraNames": [],
     "start": {
       "year": -441,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -441,
-      "month": 3
+      "month": 3,
+      "confidence": "year"
     },
     "startAbs": -5280,
-    "endAbs": -5278,
-    "precision": "year"
+    "endAbs": -5278
   },
   {
     "id": "reign-ji-shu",
@@ -1161,15 +1224,16 @@
     "eraNames": [],
     "start": {
       "year": -441,
-      "month": 4
+      "month": 4,
+      "confidence": "year"
     },
     "end": {
       "year": -441,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -5277,
-    "endAbs": -5269,
-    "precision": "year"
+    "endAbs": -5269
   },
   {
     "id": "reign-ji-wei",
@@ -1179,15 +1243,16 @@
     "eraNames": [],
     "start": {
       "year": -440,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -426,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -5268,
-    "endAbs": -5089,
-    "precision": "year"
+    "endAbs": -5089
   },
   {
     "id": "reign-ji-wu",
@@ -1197,15 +1262,16 @@
     "eraNames": [],
     "start": {
       "year": -425,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -402,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -5088,
-    "endAbs": -4801,
-    "precision": "year"
+    "endAbs": -4801
   },
   {
     "id": "reign-ji-jiao",
@@ -1215,15 +1281,16 @@
     "eraNames": [],
     "start": {
       "year": -401,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -376,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -4800,
-    "endAbs": -4489,
-    "precision": "year"
+    "endAbs": -4489
   },
   {
     "id": "reign-ji-xi",
@@ -1233,15 +1300,16 @@
     "eraNames": [],
     "start": {
       "year": -375,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -369,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -4488,
-    "endAbs": -4405,
-    "precision": "year"
+    "endAbs": -4405
   },
   {
     "id": "reign-ji-bian",
@@ -1251,15 +1319,16 @@
     "eraNames": [],
     "start": {
       "year": -368,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -321,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -4404,
-    "endAbs": -3829,
-    "precision": "year"
+    "endAbs": -3829
   },
   {
     "id": "reign-ji-ding",
@@ -1269,15 +1338,16 @@
     "eraNames": [],
     "start": {
       "year": -320,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -315,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -3828,
-    "endAbs": -3757,
-    "precision": "year"
+    "endAbs": -3757
   },
   {
     "id": "reign-ji-yan",
@@ -1287,15 +1357,16 @@
     "eraNames": [],
     "start": {
       "year": -314,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": -256,
-      "month": 12
+      "month": 12,
+      "confidence": "year"
     },
     "startAbs": -3756,
-    "endAbs": -3049,
-    "precision": "year"
+    "endAbs": -3049
   },
   {
     "id": "reign-liu-xiu",
@@ -1311,15 +1382,16 @@
     ],
     "start": {
       "year": 25,
-      "month": 1
+      "month": 1,
+      "confidence": "year"
     },
     "end": {
       "year": 57,
-      "month": 3
+      "month": 3,
+      "confidence": "year"
     },
     "startAbs": 300,
-    "endAbs": 686,
-    "precision": "year"
+    "endAbs": 686
   },
   {
     "id": "reign-liu-xie",
@@ -1335,15 +1407,16 @@
     ],
     "start": {
       "year": 189,
-      "month": 9
+      "month": 9,
+      "confidence": "month"
     },
     "end": {
       "year": 220,
-      "month": 12
+      "month": 12,
+      "confidence": "month"
     },
     "startAbs": 2276,
-    "endAbs": 2651,
-    "precision": "month"
+    "endAbs": 2651
   },
   {
     "id": "reign-cao-pi",
@@ -1359,15 +1432,16 @@
     ],
     "start": {
       "year": 220,
-      "month": 12
+      "month": 12,
+      "confidence": "month"
     },
     "end": {
       "year": 226,
-      "month": 6
+      "month": 6,
+      "confidence": "month"
     },
     "startAbs": 2651,
-    "endAbs": 2717,
-    "precision": "month"
+    "endAbs": 2717
   },
   {
     "id": "reign-cao-rui",
@@ -1383,15 +1457,16 @@
     ],
     "start": {
       "year": 226,
-      "month": 6
+      "month": 6,
+      "confidence": "month"
     },
     "end": {
       "year": 239,
-      "month": 1
+      "month": 1,
+      "confidence": "month"
     },
     "startAbs": 2717,
-    "endAbs": 2868,
-    "precision": "month"
+    "endAbs": 2868
   },
   {
     "id": "reign-liu-bei",
@@ -1407,15 +1482,16 @@
     ],
     "start": {
       "year": 221,
-      "month": 5
+      "month": 5,
+      "confidence": "month"
     },
     "end": {
       "year": 223,
-      "month": 6
+      "month": 6,
+      "confidence": "month"
     },
     "startAbs": 2656,
-    "endAbs": 2681,
-    "precision": "month"
+    "endAbs": 2681
   },
   {
     "id": "reign-liu-shan",
@@ -1431,15 +1507,16 @@
     ],
     "start": {
       "year": 223,
-      "month": 6
+      "month": 6,
+      "confidence": "month"
     },
     "end": {
       "year": 263,
-      "month": 11
+      "month": 11,
+      "confidence": "month"
     },
     "startAbs": 2681,
-    "endAbs": 3166,
-    "precision": "month"
+    "endAbs": 3166
   },
   {
     "id": "reign-sun-quan",
@@ -1455,15 +1532,16 @@
     ],
     "start": {
       "year": 222,
-      "month": 10
+      "month": 10,
+      "confidence": "month"
     },
     "end": {
       "year": 252,
-      "month": 4
+      "month": 4,
+      "confidence": "month"
     },
     "startAbs": 2673,
-    "endAbs": 3027,
-    "precision": "month"
+    "endAbs": 3027
   },
   {
     "id": "reign-sun-liang",
@@ -1479,14 +1557,15 @@
     ],
     "start": {
       "year": 252,
-      "month": 5
+      "month": 5,
+      "confidence": "month"
     },
     "end": {
       "year": 258,
-      "month": 11
+      "month": 11,
+      "confidence": "month"
     },
     "startAbs": 3028,
-    "endAbs": 3106,
-    "precision": "month"
+    "endAbs": 3106
   }
 ]

@@ -14,351 +14,219 @@
   "events": [
     {
       "kind": "culture",
-      "timeMode": "circa",
-      "precision": "century",
+      "timeMode": "point",
       "dynastyIds": [],
       "participantIds": [],
       "id": "jiahu",
       "name": "贾湖文化",
-      "dateNote": "贾湖遗址三期约距今9000–7800年；骨笛分期作前7000–前5800。一说属裴李岗文化类型。",
-      "start": {
-        "year": -7000,
-        "month": 1,
-        "abs": -83988
-      },
-      "end": {
-        "year": -5800,
-        "month": 12,
-        "abs": -69577
-      },
+      "dateNote": "贾湖遗址三期约距今9000–7800年；骨笛分期作前7000–前5800。一说属裴李岗文化类型。；原不确定范围：-7000年1月至-5800年12月；按既有事件说明转为代表时点。",
       "at": {
         "year": -6400,
         "month": 1,
-        "abs": -76788
+        "abs": -76788,
+        "confidence": "approximate_year"
       },
       "summary": "河南舞阳贾湖，新石器早期聚落。出土七声音阶骨笛、炭化稻、龟甲契刻符号，为黄河—淮河间早期文化的代表。",
-      "startAbs": -83988,
-      "endAbs": -69577,
-      "atAbs": -76788
+      "atAbs": -76788,
+      "atConfidence": "approximate_year"
     },
     {
       "kind": "culture",
-      "timeMode": "circa",
-      "precision": "century",
+      "timeMode": "point",
       "dynastyIds": [],
       "participantIds": [],
       "id": "hemudu",
       "name": "河姆渡文化",
-      "dateNote": "河姆渡遗址四期碳十四：一期约前5000–前4500，四期约前3600–前3300；亦作前5000–前3000。",
-      "start": {
-        "year": -5000,
-        "month": 1,
-        "abs": -59988
-      },
-      "end": {
-        "year": -3300,
-        "month": 12,
-        "abs": -39577
-      },
+      "dateNote": "河姆渡遗址四期碳十四：一期约前5000–前4500，四期约前3600–前3300；亦作前5000–前3000。；原不确定范围：-5000年1月至-3300年12月；按既有事件说明转为代表时点。",
       "at": {
         "year": -4150,
         "month": 1,
-        "abs": -49788
+        "abs": -49788,
+        "confidence": "approximate_year"
       },
       "summary": "浙江余姚河姆渡，长江下游新石器文化。干栏式建筑、夹炭黑陶与大量栽培稻谷，证明江南史前稻作与定居。",
-      "startAbs": -59988,
-      "endAbs": -39577,
-      "atAbs": -49788
+      "atAbs": -49788,
+      "atConfidence": "approximate_year"
     },
     {
       "kind": "culture",
-      "timeMode": "circa",
-      "precision": "century",
+      "timeMode": "point",
       "dynastyIds": [],
       "participantIds": [],
       "id": "yangshao",
       "name": "仰韶文化",
-      "dateNote": "约前5000–前2700。半坡、庙底沟等为地方类型。",
-      "start": {
-        "year": -5000,
-        "month": 1,
-        "abs": -59988
-      },
-      "end": {
-        "year": -2700,
-        "month": 12,
-        "abs": -32377
-      },
+      "dateNote": "约前5000–前2700。半坡、庙底沟等为地方类型。；原不确定范围：-5000年1月至-2700年12月；按既有事件说明转为代表时点。",
       "at": {
         "year": -3850,
         "month": 1,
-        "abs": -46188
+        "abs": -46188,
+        "confidence": "approximate_year"
       },
       "summary": "以河南渑池仰韶村命名，分布于黄河中游。彩陶、农业村落与半地穴房屋，是中原新石器中期的主干文化。",
-      "startAbs": -59988,
-      "endAbs": -32377,
-      "atAbs": -46188
+      "atAbs": -46188,
+      "atConfidence": "approximate_year"
     },
     {
       "kind": "culture",
-      "timeMode": "circa",
-      "precision": "century",
+      "timeMode": "point",
       "dynastyIds": [],
       "participantIds": [],
       "id": "hongshan",
       "name": "红山文化",
-      "dateNote": "约前4700–前2900，与仰韶中晚期相当。",
-      "start": {
-        "year": -4700,
-        "month": 1,
-        "abs": -56388
-      },
-      "end": {
-        "year": -2900,
-        "month": 12,
-        "abs": -34777
-      },
+      "dateNote": "约前4700–前2900，与仰韶中晚期相当。；原不确定范围：-4700年1月至-2900年12月；按既有事件说明转为代表时点。",
       "at": {
         "year": -3800,
         "month": 1,
-        "abs": -45588
+        "abs": -45588,
+        "confidence": "approximate_year"
       },
       "summary": "西辽河流域新石器文化，内蒙古赤峰红山及辽宁牛河梁为代表。玉龙、积石冢与女神庙，显示早期礼仪中心。",
-      "startAbs": -56388,
-      "endAbs": -34777,
-      "atAbs": -45588
+      "atAbs": -45588,
+      "atConfidence": "approximate_year"
     },
     {
       "kind": "culture",
-      "timeMode": "circa",
-      "precision": "century",
+      "timeMode": "point",
       "dynastyIds": [],
       "participantIds": [],
       "id": "dawenkou",
       "name": "大汶口文化",
-      "dateNote": "约前4300–前2500；一说稍早自前4500，约前2500过渡为龙山。",
-      "start": {
-        "year": -4300,
-        "month": 1,
-        "abs": -51588
-      },
-      "end": {
-        "year": -2500,
-        "month": 12,
-        "abs": -29977
-      },
+      "dateNote": "约前4300–前2500；一说稍早自前4500，约前2500过渡为龙山。；原不确定范围：-4300年1月至-2500年12月；按既有事件说明转为代表时点。",
       "at": {
         "year": -3400,
         "month": 1,
-        "abs": -40788
+        "abs": -40788,
+        "confidence": "approximate_year"
       },
       "summary": "以山东泰安大汶口命名，海岱地区新石器文化。陶鬶、拔牙习俗与陶器刻画符号，下接山东龙山文化。",
-      "startAbs": -51588,
-      "endAbs": -29977,
-      "atAbs": -40788
+      "atAbs": -40788,
+      "atConfidence": "approximate_year"
     },
     {
       "kind": "culture",
-      "timeMode": "circa",
-      "precision": "century",
+      "timeMode": "point",
       "dynastyIds": [],
       "participantIds": [],
       "id": "liangzhu",
       "name": "良渚文化",
-      "dateNote": "通行约前3300–前2300；亦记距今约5300–4000年（约前3300–前2000）。",
-      "start": {
-        "year": -3300,
-        "month": 1,
-        "abs": -39588
-      },
-      "end": {
-        "year": -2300,
-        "month": 12,
-        "abs": -27577
-      },
+      "dateNote": "通行约前3300–前2300；亦记距今约5300–4000年（约前3300–前2000）。；原不确定范围：-3300年1月至-2300年12月；按既有事件说明转为代表时点。",
       "at": {
         "year": -2800,
         "month": 1,
-        "abs": -33588
+        "abs": -33588,
+        "confidence": "approximate_year"
       },
       "summary": "环太湖地区新石器晚期文化。良渚古城、水利系统与琮璧钺玉礼器，常被视为长江下游早期国家形态。",
-      "startAbs": -39588,
-      "endAbs": -27577,
-      "atAbs": -33588
+      "atAbs": -33588,
+      "atConfidence": "approximate_year"
     },
     {
       "kind": "culture",
-      "timeMode": "circa",
-      "precision": "century",
+      "timeMode": "point",
       "dynastyIds": [],
       "participantIds": [],
       "id": "majiayao",
       "name": "马家窑文化",
-      "dateNote": "约前3300–前2100。马家窑、半山、马厂为同一文化诸类型。",
-      "start": {
-        "year": -3300,
-        "month": 1,
-        "abs": -39588
-      },
-      "end": {
-        "year": -2100,
-        "month": 12,
-        "abs": -25177
-      },
+      "dateNote": "约前3300–前2100。马家窑、半山、马厂为同一文化诸类型。；原不确定范围：-3300年1月至-2100年12月；按既有事件说明转为代表时点。",
       "at": {
         "year": -2700,
         "month": 1,
-        "abs": -32388
+        "abs": -32388,
+        "confidence": "approximate_year"
       },
       "summary": "甘青地区新石器文化，仰韶西向发展的一支。以精美彩陶著称，林家等地出土早期青铜小刀。",
-      "startAbs": -39588,
-      "endAbs": -25177,
-      "atAbs": -32388
+      "atAbs": -32388,
+      "atConfidence": "approximate_year"
     },
     {
       "kind": "culture",
-      "timeMode": "circa",
-      "precision": "century",
+      "timeMode": "point",
       "dynastyIds": [],
       "participantIds": [],
       "id": "longshan",
       "name": "龙山文化",
-      "dateNote": "距今约5000–4000年；山东龙山约前2500–前2000。此取黄河中下游龙山时代总范围。",
-      "start": {
-        "year": -3000,
-        "month": 1,
-        "abs": -35988
-      },
-      "end": {
-        "year": -2000,
-        "month": 12,
-        "abs": -23977
-      },
+      "dateNote": "距今约5000–4000年；山东龙山约前2500–前2000。此取黄河中下游龙山时代总范围。；原不确定范围：-3000年1月至-2000年12月；按既有事件说明转为代表时点。",
       "at": {
         "year": -2500,
         "month": 1,
-        "abs": -29988
+        "abs": -29988,
+        "confidence": "approximate_year"
       },
       "summary": "新石器晚期黑陶文化，分布于山东、河南、山西、陕西等地。蛋壳黑陶、夯土城址，下接二里头等早期青铜文化。",
-      "startAbs": -35988,
-      "endAbs": -23977,
-      "atAbs": -29988
+      "atAbs": -29988,
+      "atConfidence": "approximate_year"
     },
     {
       "kind": "culture",
-      "timeMode": "circa",
-      "precision": "century",
+      "timeMode": "point",
       "dynastyIds": [],
       "participantIds": [],
       "id": "taosi",
       "name": "陶寺文化",
-      "dateNote": "陶寺中期约前2100–前2000；观象台或可上溯至距今约4700年。此取龙山时代晋南陶寺通行年。",
-      "start": {
-        "year": -2300,
-        "month": 1,
-        "abs": -27588
-      },
-      "end": {
-        "year": -1900,
-        "month": 12,
-        "abs": -22777
-      },
+      "dateNote": "陶寺中期约前2100–前2000；观象台或可上溯至距今约4700年。此取龙山时代晋南陶寺通行年。；原不确定范围：-2300年1月至-1900年12月；按既有事件说明转为代表时点。",
       "at": {
         "year": -2100,
         "month": 1,
-        "abs": -25188
+        "abs": -25188,
+        "confidence": "approximate_year"
       },
       "summary": "山西襄汾陶寺，晋南龙山时代都邑。宫殿、观象台、朱书扁壶与等级墓葬，常被用以探索早期国家与尧都传说。",
-      "startAbs": -27588,
-      "endAbs": -22777,
-      "atAbs": -25188
+      "atAbs": -25188,
+      "atConfidence": "approximate_year"
     },
     {
       "kind": "culture",
-      "timeMode": "circa",
-      "precision": "century",
+      "timeMode": "point",
       "dynastyIds": [],
       "participantIds": [],
       "id": "shimao",
       "name": "石峁",
-      "dateNote": "石峁城址属龙山晚期，通行碳十四约前2300–前1800（距今约4300–3800年）。",
-      "start": {
-        "year": -2300,
-        "month": 1,
-        "abs": -27588
-      },
-      "end": {
-        "year": -1800,
-        "month": 12,
-        "abs": -21577
-      },
+      "dateNote": "石峁城址属龙山晚期，通行碳十四约前2300–前1800（距今约4300–3800年）。；原不确定范围：-2300年1月至-1800年12月；按既有事件说明转为代表时点。",
       "at": {
         "year": -2050,
         "month": 1,
-        "abs": -24588
+        "abs": -24588,
+        "confidence": "approximate_year"
       },
       "summary": "陕西神木石峁，目前所见中国史前规模最大的石构城址。皇城台、玉器与石雕，为河套—陕北早期邦国遗存。",
-      "startAbs": -27588,
-      "endAbs": -21577,
-      "atAbs": -24588
+      "atAbs": -24588,
+      "atConfidence": "approximate_year"
     },
     {
       "kind": "culture",
-      "timeMode": "circa",
-      "precision": "century",
+      "timeMode": "point",
       "dynastyIds": [],
       "participantIds": [],
       "id": "erlitou",
       "name": "二里头文化",
-      "dateNote": "2015年AMS：文化早不过前1900、晚不过前1500；一期约前1750，四期约止于前1520。亦作约前1800–前1500。与文献夏朝不能简单等同。",
-      "start": {
-        "year": -1750,
-        "month": 1,
-        "abs": -20988
-      },
-      "end": {
-        "year": -1520,
-        "month": 12,
-        "abs": -18217
-      },
+      "dateNote": "2015年AMS：文化早不过前1900、晚不过前1500；一期约前1750，四期约止于前1520。亦作约前1800–前1500。与文献夏朝不能简单等同。；原不确定范围：-1750年1月至-1520年12月；按既有事件说明转为代表时点。",
       "at": {
         "year": -1640,
         "month": 1,
-        "abs": -19668
+        "abs": -19668,
+        "confidence": "approximate_year"
       },
       "summary": "河南偃师二里头，中原最早的大型都邑之一。宫城、青铜礼器与绿松石龙，是探索夏商分界与早期国家的核心遗存。",
-      "startAbs": -20988,
-      "endAbs": -18217,
-      "atAbs": -19668
+      "atAbs": -19668,
+      "atConfidence": "approximate_year"
     },
     {
       "kind": "culture",
-      "timeMode": "circa",
-      "precision": "century",
+      "timeMode": "point",
       "dynastyIds": [],
       "participantIds": [],
       "id": "sanxingdui",
       "name": "三星堆文化",
-      "dateNote": "遗址约前2800–前1100。一期属宝墩文化；二三期三星堆文化约前2000–前1400；著名祭祀坑约前1200–前1000，属四期十二桥。不含宝墩一期。",
-      "start": {
-        "year": -2000,
-        "month": 1,
-        "abs": -23988
-      },
-      "end": {
-        "year": -1100,
-        "month": 12,
-        "abs": -13177
-      },
+      "dateNote": "遗址约前2800–前1100。一期属宝墩文化；二三期三星堆文化约前2000–前1400；著名祭祀坑约前1200–前1000，属四期十二桥。不含宝墩一期。；原不确定范围：-2000年1月至-1100年12月；按既有事件说明转为代表时点。",
       "at": {
         "year": -1200,
         "month": 1,
-        "abs": -14388
+        "abs": -14388,
+        "confidence": "approximate_year"
       },
       "summary": "四川广汉三星堆，古蜀青铜文明。纵目面具、神树、金杖与大型祭祀坑，与中原夏商并行而风格迥异。",
-      "startAbs": -23988,
-      "endAbs": -13177,
-      "atAbs": -14388
+      "atAbs": -14388,
+      "atConfidence": "approximate_year"
     }
   ],
   "relations": [],
@@ -440,7 +308,7 @@
     ],
     "notes": [
       "不建王朝行或在位卡片：此类为考古学文化/遗址，不是文献世系国号。事件不挂 event_dynasties，以免把二里头等同夏、三星堆等同商。",
-      "全部 time_mode=circa、precision=century：碳十四窗口本无月日；千年尺度缩放时仅世纪精度事件可见。",
+      "史前文化以可考碳十四年代窗口建模为 span，端点 confidence 标 approximate_year；起止年是文化年代范围，不显示为已知月日。",
       "收录教科书与文明探源常用条目：贾湖、河姆渡、仰韶、红山、大汶口、良渚、马家窑、龙山、陶寺、石峁、二里头、三星堆。半坡、牛河梁、殷墟不另立，以免与仰韶/红山/商重复。",
       "起迄取维基通行年，争议写入各条 date_note（读者可见的年代说明，不含「窗口/维基作」等入库用语）；at 为窗口中点，三星堆 at 取著名祭祀坑约前1200年。",
       "三星堆条自二三期（约前2000）起至遗址下限前1100，含祭祀坑，不含宝墩一期。半坡、庙底沟、马家窑诸类型不另立事件。"

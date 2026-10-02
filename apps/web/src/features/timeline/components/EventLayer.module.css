@@ -40,8 +40,7 @@
   pointer-events: none;
 }
 
-.bandSpan,
-.bandCirca {
+.bandSpan {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -51,8 +50,7 @@
   padding: 0;
 }
 
-.bandSpan::before,
-.bandCirca::before {
+.bandSpan::before {
   position: absolute;
   inset: -10px 0;
   content: "";
@@ -62,20 +60,6 @@
   height: 4px;
   border-radius: 2px;
   background: color-mix(in srgb, var(--color-ink-muted) 42%, transparent);
-}
-
-.bandCirca {
-  height: 10px;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--color-ink-muted) 12%, transparent);
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-ink-muted) 40%, transparent);
-  background-image: repeating-linear-gradient(
-    90deg,
-    transparent,
-    transparent 5px,
-    color-mix(in srgb, var(--color-ink-muted) 18%, transparent) 5px,
-    color-mix(in srgb, var(--color-ink-muted) 18%, transparent) 7px
-  );
 }
 
 .marker {

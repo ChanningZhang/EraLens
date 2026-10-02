@@ -63,8 +63,12 @@ function mapBundlePerson(row: Record<string, unknown>) {
     clanShi: row.clan_shi as string | null,
     birthYear: row.birth_year as number | null,
     birthMonth: row.birth_month as number | null,
+    birthDay: row.birth_day as number | null,
+    birthConfidence: row.birth_confidence as string | null,
     deathYear: row.death_year as number | null,
     deathMonth: row.death_month as number | null,
+    deathDay: row.death_day as number | null,
+    deathConfidence: row.death_confidence as string | null,
     roles: (row.roles as string[] | undefined) ?? [],
     bio: row.bio as string | null,
     links: row.links ?? [],
@@ -91,7 +95,6 @@ function mapBundleRelation(row: Record<string, unknown>): Relation {
           },
         }),
     ...(row.at_abs == null ? {} : { atAbs: Number(row.at_abs) }),
-    ...(row.precision == null ? {} : { precision: row.precision as Relation["precision"] }),
     ...(row.event_id == null ? {} : { eventId: String(row.event_id) }),
   };
 }
@@ -258,8 +261,7 @@ async function loadPersonDetailCapitals(
            longitude, latitude, coordinate_system,
            start_year, start_month, start_day,
            end_year, end_month, end_day,
-           start_abs, end_abs, precision, end_precision,
-           start_date_confidence, end_date_confidence,
+           start_abs, end_abs, start_confidence, end_confidence,
            role, claim_track,
            ARRAY(SELECT rc.reign_id FROM reign_capitals rc
                  WHERE rc.capital_id = dynasty_capitals.id
@@ -298,7 +300,7 @@ async function loadStore() {
 /** Event dynasties provide context; their visibility does not gate the event marker. */
 async function loadEventsInWindow(fromAbs: number, toAbs: number) {
   const eventRows = await prisma.$queryRaw<RawEventRow[]>`
-    SELECT id, name, kind, time_mode, precision, is_approximate, date_note, at_year, at_month, at_day, at_abs,
+    SELECT id, name, kind, time_mode, at_confidence, start_confidence, end_confidence, date_note, at_year, at_month, at_day, at_abs,
            start_year, start_month, start_day, start_abs, end_year, end_month, end_day, end_abs, summary, meaning, content, location_id
     FROM events
     WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')`;
@@ -353,15 +355,15 @@ const PLACEABLE_NON_RULER_WHERE = {
 async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string) {
   const dynastyRows = scope
     ? await prisma.$queryRaw<RawDynastyRow[]>`
-        SELECT id, name, alt_names, scope, region, start_year, start_month, end_year, end_month,
-               start_abs, end_abs, precision, color_token,
+        SELECT id, name, alt_names, scope, region, start_year, start_month, start_day, end_year, end_month, end_day,
+               start_abs, end_abs, start_confidence, end_confidence, color_token,
                parent_id, group_id, note
         FROM dynasties
         WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')
           AND scope = ${scope}`
     : await prisma.$queryRaw<RawDynastyRow[]>`
-        SELECT id, name, alt_names, scope, region, start_year, start_month, end_year, end_month,
-               start_abs, end_abs, precision, color_token,
+        SELECT id, name, alt_names, scope, region, start_year, start_month, start_day, end_year, end_month, end_day,
+               start_abs, end_abs, start_confidence, end_confidence, color_token,
                parent_id, group_id, note
         FROM dynasties
         WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')`;
@@ -390,8 +392,7 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
   const reignRows = await prisma.$queryRaw<RawReignRow[]>`
     SELECT id, dynasty_id, person_id, title, era_names,
            start_year, start_month, start_day, end_year, end_month, end_day,
-           start_abs, end_abs, precision,
-           start_date_confidence, end_date_confidence,
+           start_abs, end_abs, start_confidence, end_confidence,
            claim_track, claim_label, claim_role, is_informal_monarch, is_main
     FROM reigns
     WHERE dynasty_id = ANY(${dynastyIds}::text[])
@@ -408,8 +409,8 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
   const dynastyGroupRows =
     groupIds.length > 0
       ? await prisma.$queryRaw<RawDynastyGroupRow[]>`
-          SELECT id, name, alt_names, scope, start_year, start_month, end_year, end_month,
-                 start_abs, end_abs, precision, note
+          SELECT id, name, alt_names, scope, start_year, start_month, start_day, end_year, end_month, end_day,
+                 start_abs, end_abs, start_confidence, end_confidence, note
           FROM dynasty_groups
           WHERE id = ANY(${groupIds}::text[])`
       : [];
@@ -446,12 +447,12 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
       at_month: number | null;
       at_day: number | null;
       at_abs: number | null;
-      precision: string | null;
+      at_confidence: string | null;
       event_id: string | null;
     }[]
   >`
     SELECT id, from_type, from_id, to_type, to_id, kind,
-           at_year, at_month, at_day, at_abs, precision, event_id
+           at_year, at_month, at_day, at_abs, at_confidence, event_id
     FROM relations
     WHERE kind IN ('killed', 'surrender', 'abdication', 'captured')
       AND at_abs IS NOT NULL
@@ -470,7 +471,7 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
       atMonth: row.at_month,
       atDay: row.at_day,
       atAbs: row.at_abs,
-      precision: row.precision,
+      atConfidence: row.at_confidence,
       eventId: row.event_id,
     }),
   );
@@ -644,8 +645,7 @@ export async function registerRoutes(app: FastifyInstance) {
                  longitude, latitude, coordinate_system,
                  start_year, start_month, start_day,
                  end_year, end_month, end_day,
-                 start_abs, end_abs, precision, end_precision,
-                 start_date_confidence, end_date_confidence,
+                 start_abs, end_abs, start_confidence, end_confidence,
                  role, claim_track,
                  ARRAY(SELECT rc.reign_id FROM reign_capitals rc WHERE rc.capital_id = dynasty_capitals.id ORDER BY rc.reign_id) AS reign_ids,
                  note, links
@@ -786,8 +786,7 @@ export async function registerRoutes(app: FastifyInstance) {
                  longitude, latitude, coordinate_system,
                  start_year, start_month, start_day,
                  end_year, end_month, end_day,
-                 start_abs, end_abs, precision, end_precision,
-                 start_date_confidence, end_date_confidence,
+                 start_abs, end_abs, start_confidence, end_confidence,
                  role, claim_track,
                  ARRAY(SELECT rc.reign_id FROM reign_capitals rc WHERE rc.capital_id = dynasty_capitals.id ORDER BY rc.reign_id) AS reign_ids,
                  note, links
@@ -801,8 +800,7 @@ export async function registerRoutes(app: FastifyInstance) {
                  longitude, latitude, coordinate_system,
                  start_year, start_month, start_day,
                  end_year, end_month, end_day,
-                 start_abs, end_abs, precision, end_precision,
-                 start_date_confidence, end_date_confidence,
+                 start_abs, end_abs, start_confidence, end_confidence,
                  role, claim_track,
                  ARRAY(SELECT rc.reign_id FROM reign_capitals rc WHERE rc.capital_id = dynasty_capitals.id ORDER BY rc.reign_id) AS reign_ids,
                  note, links

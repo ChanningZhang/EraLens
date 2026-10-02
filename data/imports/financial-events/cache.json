@@ -15,7 +15,6 @@
     {
       "kind": "finance",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "song-north"
       ],
@@ -25,7 +24,8 @@
       "at": {
         "year": 1024,
         "month": 2,
-        "abs": 12289
+        "abs": 12289,
+        "confidence": "month"
       },
       "summary": "北宋在益州设交子务，收归民间交子发行权并开始发行官交子。纸币用于缓解四川铁钱沉重、携带不便造成的交易困难，成为国家管理纸币发行的早期制度实践。",
       "dateNote": "天圣二年（1024）二月官交子正式发行；益州交子务于前一年设立。",
@@ -34,7 +34,6 @@
     {
       "kind": "finance",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "qing"
       ],
@@ -44,7 +43,8 @@
       "at": {
         "year": 1712,
         "month": 12,
-        "abs": 20555
+        "abs": 20555,
+        "confidence": "year"
       },
       "summary": "清廷以康熙五十年（1711）在册丁额为定额，规定此后新增人丁不再增加丁银。政策冻结人头税总额，为雍正时期将丁银摊入田赋的改革奠定制度背景。",
       "dateNote": "康熙五十一年（1712）颁旨；后续各省执行与丁银摊入田亩并非同一时点。",
@@ -53,7 +53,6 @@
     {
       "kind": "finance",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "roc"
       ],
@@ -63,7 +62,8 @@
       "at": {
         "year": 1935,
         "month": 11,
-        "abs": 23230
+        "abs": 23230,
+        "confidence": "month"
       },
       "summary": "国民政府将中央、中国、交通三家银行发行的钞票定为法币，集中钞票发行与兑换管理，并停止以银元和白银作为流通货币。改革改变了中国币制和白银货币流通格局。",
       "dateNote": "财政部于1935年11月3日公布改革办法，自11月4日起实施。",

@@ -1,5 +1,6 @@
 export * from "./appellationFields";
 export * from "./time";
+export * from "./historicalDate";
 export * from "./timelineIntervals";
 export * from "./timelineOwnership";
 export * from "./reignVisual";

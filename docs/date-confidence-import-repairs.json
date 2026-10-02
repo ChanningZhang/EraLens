@@ -1,0 +1,335 @@
+{
+  "kind": "incremental-import-cleanup-repair",
+  "rowsRestored": 75,
+  "reason": "全量键集对照发现 chunqiu-zhanguo 包旧版全局白名单清理误删这些仍由唯一所有者包维护的人物。删除语句已移除，人物行按唯一所有者缓存恢复。",
+  "restoredPersons": [
+    {
+      "id": "bai-juyi",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "ban-chao",
+      "owner": "qin-han"
+    },
+    {
+      "id": "bao-zheng",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "cai-lun",
+      "owner": "qin-han"
+    },
+    {
+      "id": "cao-xueqin",
+      "owner": "yuan-ming-qing"
+    },
+    {
+      "id": "chen-jiongming",
+      "owner": "minguo"
+    },
+    {
+      "id": "dong-zhongshu",
+      "owner": "qin-han"
+    },
+    {
+      "id": "dorgon",
+      "owner": "yuan-ming-qing"
+    },
+    {
+      "id": "dou-taihou",
+      "owner": "qin-han"
+    },
+    {
+      "id": "du-ruhui",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "enzhen-kehan",
+      "owner": "tang-border"
+    },
+    {
+      "id": "fan-zhongyan",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "fang-xuanling",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "feng-taihou",
+      "owner": "nanbei-chao"
+    },
+    {
+      "id": "gu-kaizhi",
+      "owner": "jin-sixteen"
+    },
+    {
+      "id": "gu-yanwu",
+      "owner": "yuan-ming-qing"
+    },
+    {
+      "id": "guan-hanqing",
+      "owner": "yuan-ming-qing"
+    },
+    {
+      "id": "guo-ziyi",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "han-shizhong",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "han-yu",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "hu-taihou",
+      "owner": "nanbei-chao"
+    },
+    {
+      "id": "hu-yaobang",
+      "owner": "prc"
+    },
+    {
+      "id": "huang-zongxi",
+      "owner": "yuan-ming-qing"
+    },
+    {
+      "id": "huo-guang",
+      "owner": "qin-han"
+    },
+    {
+      "id": "ji-xiaolan",
+      "owner": "yuan-ming-qing"
+    },
+    {
+      "id": "ji-zi",
+      "owner": "xia-shang-zhou"
+    },
+    {
+      "id": "jia-nanfeng",
+      "owner": "jin-sixteen"
+    },
+    {
+      "id": "jianzhen",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "kou-zhun",
+      "owner": "song-liao-jin"
+    },
+    {
+      "id": "lan-yu",
+      "owner": "yuan-ming-qing"
+    },
+    {
+      "id": "li-gang",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "li-jing-tang",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "li-shizhen",
+      "owner": "yuan-ming-qing"
+    },
+    {
+      "id": "liang-taihou",
+      "owner": "qin-han"
+    },
+    {
+      "id": "liang-taihou-xixia",
+      "owner": "xixia"
+    },
+    {
+      "id": "liu-ji",
+      "owner": "yuan-ming-qing"
+    },
+    {
+      "id": "liu-wenhui",
+      "owner": "minguo"
+    },
+    {
+      "id": "long-yun",
+      "owner": "minguo"
+    },
+    {
+      "id": "ma-bufang",
+      "owner": "minguo"
+    },
+    {
+      "id": "mo-nang-e-pang",
+      "owner": "xixia"
+    },
+    {
+      "id": "murong-yi",
+      "owner": "jin-sixteen"
+    },
+    {
+      "id": "ouyang-xiu",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "shangguan-waner",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "shen-kuo",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "shi-dakai",
+      "owner": "taiping"
+    },
+    {
+      "id": "si-ma-guang",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "si-ma-qian",
+      "owner": "qin-han"
+    },
+    {
+      "id": "song-qingling",
+      "owner": "prc"
+    },
+    {
+      "id": "sun-chuanfang",
+      "owner": "minguo"
+    },
+    {
+      "id": "tang-yin",
+      "owner": "yuan-ming-qing"
+    },
+    {
+      "id": "wang-can",
+      "owner": "poetry"
+    },
+    {
+      "id": "wang-dao",
+      "owner": "jin-sixteen"
+    },
+    {
+      "id": "wang-mian",
+      "owner": "poetry"
+    },
+    {
+      "id": "wang-wei",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "wang-xizhi",
+      "owner": "jin-sixteen"
+    },
+    {
+      "id": "wei-bao",
+      "owner": "qin-han"
+    },
+    {
+      "id": "wei-zheng",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "wei-zhongxian",
+      "owner": "yuan-ming-qing"
+    },
+    {
+      "id": "wujie-kehan",
+      "owner": "tang-border"
+    },
+    {
+      "id": "xia-wanchun",
+      "owner": "poetry"
+    },
+    {
+      "id": "xiao-chuo",
+      "owner": "song-liao-jin"
+    },
+    {
+      "id": "xin-qiji",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "xu-guangqi",
+      "owner": "yuan-ming-qing"
+    },
+    {
+      "id": "xu-xiake",
+      "owner": "yuan-ming-qing"
+    },
+    {
+      "id": "xuanzang",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "xue-rengui",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "yan-song",
+      "owner": "yuan-ming-qing"
+    },
+    {
+      "id": "yan-zhenqing",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "yang-guifei",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "zhang-lihua",
+      "owner": "nanbei-chao"
+    },
+    {
+      "id": "zhang-xun",
+      "owner": "sui-tang-wudai-song"
+    },
+    {
+      "id": "zhao-ziyang",
+      "owner": "prc"
+    },
+    {
+      "id": "zhu-de",
+      "owner": "prc"
+    },
+    {
+      "id": "zu-chongzhi",
+      "owner": "nanbei-chao"
+    },
+    {
+      "id": "zu-ti",
+      "owner": "jin-sixteen"
+    }
+  ],
+  "restoredRelations": [
+    {
+      "table": "reign_capitals",
+      "key": {
+        "reignId": "reign-ju-r6-ju-chunqiu",
+        "capitalId": "cap-ju-chunqiu-ju-615"
+      },
+      "owner": "reign-capitals",
+      "reason": "迁移前源包已有此关联；重放唯一所有者包以恢复被导入顺序遗漏的关联。"
+    }
+  ],
+  "finalKeySetValidation": {
+    "baselineDatabase": "/tmp/eralens-date-migration-prechange-20261002.sql",
+    "matchedTables": [
+      "persons",
+      "dynasties",
+      "dynasty_groups",
+      "reigns",
+      "events",
+      "relations",
+      "dynasty_capitals",
+      "event_locations",
+      "event_participants",
+      "event_dynasties",
+      "reign_capitals",
+      "dynasty_lane_groups"
+    ]
+  }
+}

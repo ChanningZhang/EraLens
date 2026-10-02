@@ -4,8 +4,9 @@ import {
   type Reign,
   buildPreQinClanContext,
   formatReignSpanTooltip,
-  DATE_CONFIDENCE_LABEL,
-  isUncertainDateConfidence,
+  formatHistoricalDate,
+  isInterpolatedConfidence,
+  isApproximateConfidence,
   isParallelClaim,
   PARALLEL_CLAIM_LABEL,
   resolveReignCardGivenName,
@@ -74,10 +75,12 @@ function ReignCardImpl({
   const durationMonths = geometry.visualEndExclusive - geometry.visualStart;
   const visualWidth = Math.max(0, durationMonths * pxPerMonth);
   const anchor = (geometry.visualStart + geometry.visualEndExclusive) / 2;
-  const uncertainStart = isUncertainDateConfidence(reign.startDateConfidence);
-  const uncertainEnd = isUncertainDateConfidence(reign.endDateConfidence);
-  const seamInsetLeft = uncertainStart ? UNCERTAIN_SEAM_GAP_PX : 0;
-  const seamInsetRight = uncertainEnd ? UNCERTAIN_SEAM_GAP_PX : 0;
+  const startConfidence = reign.start.confidence ?? "year";
+  const endConfidence = reign.end.confidence ?? "year";
+  const interpolatedStart = isInterpolatedConfidence(startConfidence);
+  const interpolatedEnd = isInterpolatedConfidence(endConfidence);
+  const seamInsetLeft = interpolatedStart ? UNCERTAIN_SEAM_GAP_PX : 0;
+  const seamInsetRight = interpolatedEnd ? UNCERTAIN_SEAM_GAP_PX : 0;
   const selected =
     (selection.selected?.type === "person" &&
       selection.selected.id === reign.personId &&
@@ -112,8 +115,8 @@ function ReignCardImpl({
       : personName && personName !== label ? personName : label;
     const timeTooltip = formatReignSpanTooltip(reign);
     const dateConfidenceNote = [
-      uncertainStart && reign.startDateConfidence ? `起年${DATE_CONFIDENCE_LABEL[reign.startDateConfidence]}` : null,
-      uncertainEnd && reign.endDateConfidence ? `迄年${DATE_CONFIDENCE_LABEL[reign.endDateConfidence]}` : null,
+      isApproximateConfidence(startConfidence) ? `起年${formatHistoricalDate({ ...reign.start, confidence: startConfidence })}` : null,
+      isApproximateConfidence(endConfidence) ? `迄年${formatHistoricalDate({ ...reign.end, confidence: endConfidence })}` : null,
     ].filter(Boolean).join("；");
     const claimTooltip = parallel
       ? `${PARALLEL_CLAIM_LABEL}${reign.claimLabel ? `・${reign.claimLabel}` : ""}`
@@ -124,7 +127,7 @@ function ReignCardImpl({
       claimTooltip,
     });
     return { label, barLayout, detail, parallel, meta, showMeta, regionLabel, claimTooltip, tooltipText };
-  }, [reign, personName, personClan, dynasty.name, visualWidth, uncertainStart, uncertainEnd, unitHeight]);
+  }, [reign, personName, personClan, dynasty.name, visualWidth, startConfidence, endConfidence, unitHeight]);
   const left = barLayout.centerOnAnchor
     ? anchor * pxPerMonth - barLayout.unitWidthPx / 2
     : geometry.visualStart * pxPerMonth;
@@ -142,8 +145,8 @@ function ReignCardImpl({
       styles.card,
       barLayout.markerStyle ? styles.marker : "",
       detail === "wrap" ? styles.wrap : "",
-      uncertainStart ? styles.uncertainStart : "",
-      uncertainEnd ? styles.uncertainEnd : "",
+      interpolatedStart ? styles.uncertainStart : "",
+      interpolatedEnd ? styles.uncertainEnd : "",
       master ? "masterGold" : "",
       selected ? styles.selected : "",
       parallel ? styles.parallel : "",
@@ -155,8 +158,8 @@ function ReignCardImpl({
   }, [
     barLayout.markerStyle,
     detail,
-    uncertainStart,
-    uncertainEnd,
+    interpolatedStart,
+    interpolatedEnd,
     master,
     selected,
     parallel,
@@ -179,7 +182,7 @@ function ReignCardImpl({
         style={{ ["--card-color" as string]: color }}
         onClick={selectReign}
       >
-        {uncertainStart && <ReignWavyEdge side="left" />}
+        {interpolatedStart && <ReignWavyEdge side="left" />}
         <InfoPopover text={tooltipText}>
           {(handlers) => (
             <button
@@ -219,7 +222,7 @@ function ReignCardImpl({
             </button>
           )}
         </InfoPopover>
-        {uncertainEnd && <ReignWavyEdge side="right" />}
+        {interpolatedEnd && <ReignWavyEdge side="right" />}
       </div>
       {detail === "below" && (
         <button

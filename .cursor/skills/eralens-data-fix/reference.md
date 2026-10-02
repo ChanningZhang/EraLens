@@ -37,7 +37,7 @@
 
 - 大批量 `*_abs` 用 `absMonth()` / `compute-abs.mjs`，禁止手填。
 - 年精度继位切年：按 period-import skill 的规则核定后直接修正 `cache.json` 中的日期。
-- 年代由导入者推算或插值：`start_date_confidence` / `end_date_confidence` = `interpolated` | `approximate`。来源原文记作“约某年 / 约前某年”时，按该年作为确定年桶入库，不加 confidence 标记。
+- 年代由导入者推算或插值：`start_confidence` / `end_confidence` = `interpolated_by_other`, `interpolated_by_generation` 或对应 approximate confidence。来源原文记作“约某年 / 约前某年”时，按该年作为确定年桶入库，不加 confidence 标记。
 - 空白：`system-missing-ruler`（史料缺）vs 不写 reign（无国君）。
 
 ## 修改入口（按优先级）

@@ -230,14 +230,15 @@
       "start": {
         "year": -2804,
         "month": 1,
-        "abs": -33636
+        "abs": -33636,
+        "confidence": "year"
       },
       "end": {
         "year": -2465,
         "month": 12,
-        "abs": -29557
+        "abs": -29557,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "司马贞《三皇本纪》：伏羲、女娲、神农。在位年取《帝王世纪》伏羲一百十年、神农一百二十年；女娲无年，与伏羲同长。"
     },
     {
@@ -255,14 +256,15 @@
       "start": {
         "year": -2464,
         "month": 1,
-        "abs": -29556
+        "abs": -29556,
+        "confidence": "year"
       },
       "end": {
         "year": -2071,
         "month": 12,
-        "abs": -24829
+        "abs": -24829,
+        "confidence": "month"
       },
-      "precision": "year",
       "note": "《史记·五帝本纪》世系，含帝挚过渡。相对在位年下锚夏始前2071，绝对年代为传说推算。"
     }
   ],
@@ -277,22 +279,23 @@
       "start": {
         "year": -2804,
         "month": 1,
-        "abs": -33636
+        "abs": -33636,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -2695,
         "month": 12,
-        "abs": -32317
+        "abs": -32317,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -33636,
       "endAbs": -32317,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-feng-nuwa",
@@ -303,22 +306,23 @@
       "start": {
         "year": -2694,
         "month": 1,
-        "abs": -32316
+        "abs": -32316,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -2585,
         "month": 12,
-        "abs": -30997
+        "abs": -30997,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -32316,
       "endAbs": -30997,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-jiang-shinian",
@@ -329,22 +333,23 @@
       "start": {
         "year": -2584,
         "month": 1,
-        "abs": -30996
+        "abs": -30996,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -2465,
         "month": 12,
-        "abs": -29557
+        "abs": -29557,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -30996,
       "endAbs": -29557,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-ji-xuanyuan",
@@ -355,22 +360,23 @@
       "start": {
         "year": -2464,
         "month": 1,
-        "abs": -29556
+        "abs": -29556,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -2365,
         "month": 12,
-        "abs": -28357
+        "abs": -28357,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -29556,
       "endAbs": -28357,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-ji-zhuanxu",
@@ -381,22 +387,23 @@
       "start": {
         "year": -2364,
         "month": 1,
-        "abs": -28356
+        "abs": -28356,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -2287,
         "month": 12,
-        "abs": -27421
+        "abs": -27421,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -28356,
       "endAbs": -27421,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-ji-ku",
@@ -407,22 +414,23 @@
       "start": {
         "year": -2286,
         "month": 1,
-        "abs": -27420
+        "abs": -27420,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -2217,
         "month": 12,
-        "abs": -26581
+        "abs": -26581,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -27420,
       "endAbs": -26581,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-ji-zhi",
@@ -433,22 +441,23 @@
       "start": {
         "year": -2216,
         "month": 1,
-        "abs": -26580
+        "abs": -26580,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -2208,
         "month": 12,
-        "abs": -26473
+        "abs": -26473,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -26580,
       "endAbs": -26473,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-yiqi-fangxun",
@@ -459,22 +468,23 @@
       "start": {
         "year": -2207,
         "month": 1,
-        "abs": -26472
+        "abs": -26472,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -2110,
         "month": 12,
-        "abs": -25297
+        "abs": -25297,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -26472,
       "endAbs": -25297,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     },
     {
       "id": "reign-yao-chonghua",
@@ -485,29 +495,29 @@
       "start": {
         "year": -2109,
         "month": 1,
-        "abs": -25296
+        "abs": -25296,
+        "confidence": "interpolated_by_other"
       },
       "end": {
         "year": -2071,
         "month": 12,
-        "abs": -24829
+        "abs": -24829,
+        "confidence": "interpolated_by_other"
       },
       "startAbs": -25296,
       "endAbs": -24829,
-      "precision": "year",
-      "startDateConfidence": "interpolated",
-      "endDateConfidence": "interpolated",
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
     }
   ],
   "events": [
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "san-huang",
         "wu-di"
@@ -519,7 +529,8 @@
       "at": {
         "year": -2465,
         "month": 12,
-        "abs": -29557
+        "abs": -29557,
+        "confidence": "year"
       },
       "summary": "传说炎帝末与黄帝阪泉之战，又逐鹿之战胜蚩尤。年代为文献系年，非考古断代。",
       "atAbs": -29557
@@ -527,7 +538,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "wu-di"
       ],
@@ -538,7 +548,8 @@
       "at": {
         "year": -2110,
         "month": 12,
-        "abs": -25297
+        "abs": -25297,
+        "confidence": "year"
       },
       "summary": "《史记》载尧禅舜；舜摄政不另建在位卡，以事件标于尧世末。",
       "atAbs": -25297
@@ -546,7 +557,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "wu-di",
         "xia"
@@ -558,7 +568,8 @@
       "at": {
         "year": -2071,
         "month": 12,
-        "abs": -24829
+        "abs": -24829,
+        "confidence": "year"
       },
       "summary": "舜禅禹，禹建夏后氏，接断代工程夏始前2070年。",
       "atAbs": -24829

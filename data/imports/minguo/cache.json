@@ -769,14 +769,15 @@
       "start": {
         "year": 1912,
         "month": 1,
-        "abs": 22944
+        "abs": 22944,
+        "confidence": "month"
       },
       "end": {
         "year": 2026,
         "month": 9,
-        "abs": 24320
+        "abs": 24320,
+        "confidence": "month"
       },
-      "precision": "month",
       "note": "辛亥革命后，中华民国于1912年建立，先后经历南京临时政府、北京政府、南京国民政府及行宪后的总统制度。民国时期伴随政权更迭、军阀割据、北伐、抗日战争与国共内战；1949年中央政府迁往台湾后，中华民国政府在台湾继续运作。其后经历解除戒严、国会改选和政治民主化，1996年举行首次总统直接选举，2000年实现首次政党轮替。"
     }
   ],
@@ -792,17 +793,18 @@
         "year": 1912,
         "month": 1,
         "abs": 22944,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "end": {
         "year": 1912,
         "month": 3,
         "abs": 22946,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "startAbs": 22944,
       "endAbs": 22946,
-      "precision": "day",
       "isInformalMonarch": false,
       "isMain": true
     },
@@ -816,17 +818,18 @@
         "year": 1912,
         "month": 3,
         "abs": 22946,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "end": {
         "year": 1916,
         "month": 6,
         "abs": 22997,
-        "day": 6
+        "day": 6,
+        "confidence": "day"
       },
       "startAbs": 22946,
       "endAbs": 22997,
-      "precision": "day",
       "isInformalMonarch": false,
       "isMain": true
     },
@@ -840,17 +843,18 @@
         "year": 1916,
         "month": 6,
         "abs": 22997,
-        "day": 7
+        "day": 7,
+        "confidence": "day"
       },
       "end": {
         "year": 1917,
         "month": 7,
         "abs": 23010,
-        "day": 6
+        "day": 6,
+        "confidence": "day"
       },
       "startAbs": 22997,
       "endAbs": 23010,
-      "precision": "day",
       "isInformalMonarch": false,
       "isMain": true
     },
@@ -864,17 +868,18 @@
         "year": 1917,
         "month": 7,
         "abs": 23010,
-        "day": 6
+        "day": 6,
+        "confidence": "day"
       },
       "end": {
         "year": 1918,
         "month": 10,
         "abs": 23025,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "startAbs": 23010,
       "endAbs": 23025,
-      "precision": "day",
       "isInformalMonarch": false,
       "isMain": true
     },
@@ -888,17 +893,18 @@
         "year": 1918,
         "month": 10,
         "abs": 23025,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "end": {
         "year": 1922,
         "month": 6,
         "abs": 23069,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "startAbs": 23025,
       "endAbs": 23069,
-      "precision": "day",
       "isInformalMonarch": false,
       "isMain": true
     },
@@ -912,17 +918,18 @@
         "year": 1922,
         "month": 6,
         "abs": 23069,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "end": {
         "year": 1922,
         "month": 6,
         "abs": 23069,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "startAbs": 23069,
       "endAbs": 23069,
-      "precision": "day",
       "isInformalMonarch": true,
       "isMain": true
     },
@@ -936,17 +943,18 @@
         "year": 1922,
         "month": 6,
         "abs": 23069,
-        "day": 11
+        "day": 11,
+        "confidence": "day"
       },
       "end": {
         "year": 1923,
         "month": 6,
         "abs": 23081,
-        "day": 13
+        "day": 13,
+        "confidence": "day"
       },
       "startAbs": 23069,
       "endAbs": 23081,
-      "precision": "day",
       "isInformalMonarch": false,
       "isMain": true
     },
@@ -960,17 +968,18 @@
         "year": 1923,
         "month": 6,
         "abs": 23081,
-        "day": 14
+        "day": 14,
+        "confidence": "day"
       },
       "end": {
         "year": 1923,
         "month": 10,
         "abs": 23085,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "startAbs": 23081,
       "endAbs": 23085,
-      "precision": "day",
       "isInformalMonarch": true,
       "isMain": true
     },
@@ -984,17 +993,18 @@
         "year": 1923,
         "month": 10,
         "abs": 23085,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "end": {
         "year": 1924,
         "month": 11,
         "abs": 23098,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "startAbs": 23085,
       "endAbs": 23098,
-      "precision": "day",
       "isInformalMonarch": false,
       "isMain": true
     },
@@ -1008,17 +1018,18 @@
         "year": 1924,
         "month": 11,
         "abs": 23098,
-        "day": 2
+        "day": 2,
+        "confidence": "day"
       },
       "end": {
         "year": 1924,
         "month": 11,
         "abs": 23098,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "startAbs": 23098,
       "endAbs": 23098,
-      "precision": "day",
       "isInformalMonarch": true,
       "isMain": true
     },
@@ -1032,17 +1043,18 @@
         "year": 1924,
         "month": 11,
         "abs": 23098,
-        "day": 24
+        "day": 24,
+        "confidence": "day"
       },
       "end": {
         "year": 1926,
         "month": 4,
         "abs": 23115,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "startAbs": 23098,
       "endAbs": 23115,
-      "precision": "day",
       "isInformalMonarch": true,
       "isMain": true
     },
@@ -1056,17 +1068,18 @@
         "year": 1926,
         "month": 4,
         "abs": 23115,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "end": {
         "year": 1926,
         "month": 5,
         "abs": 23116,
-        "day": 13
+        "day": 13,
+        "confidence": "day"
       },
       "startAbs": 23115,
       "endAbs": 23116,
-      "precision": "day",
       "isInformalMonarch": true,
       "isMain": true
     },
@@ -1080,17 +1093,18 @@
         "year": 1926,
         "month": 5,
         "abs": 23116,
-        "day": 13
+        "day": 13,
+        "confidence": "day"
       },
       "end": {
         "year": 1926,
         "month": 6,
         "abs": 23117,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "startAbs": 23116,
       "endAbs": 23117,
-      "precision": "day",
       "isInformalMonarch": true,
       "isMain": true
     },
@@ -1104,17 +1118,18 @@
         "year": 1926,
         "month": 6,
         "abs": 23117,
-        "day": 23
+        "day": 23,
+        "confidence": "day"
       },
       "end": {
         "year": 1926,
         "month": 10,
         "abs": 23121,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "startAbs": 23117,
       "endAbs": 23121,
-      "precision": "day",
       "isInformalMonarch": true,
       "isMain": true
     },
@@ -1128,17 +1143,18 @@
         "year": 1926,
         "month": 10,
         "abs": 23121,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "end": {
         "year": 1927,
         "month": 6,
         "abs": 23129,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "startAbs": 23121,
       "endAbs": 23129,
-      "precision": "day",
       "isInformalMonarch": true,
       "isMain": true
     },
@@ -1152,17 +1168,18 @@
         "year": 1927,
         "month": 6,
         "abs": 23129,
-        "day": 16
+        "day": 16,
+        "confidence": "day"
       },
       "end": {
         "year": 1927,
         "month": 6,
         "abs": 23129,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "startAbs": 23129,
       "endAbs": 23129,
-      "precision": "day",
       "isInformalMonarch": true,
       "isMain": true
     },
@@ -1176,17 +1193,18 @@
         "year": 1927,
         "month": 6,
         "abs": 23129,
-        "day": 18
+        "day": 18,
+        "confidence": "day"
       },
       "end": {
         "year": 1928,
         "month": 6,
         "abs": 23141,
-        "day": 3
+        "day": 3,
+        "confidence": "day"
       },
       "startAbs": 23129,
       "endAbs": 23141,
-      "precision": "day",
       "isInformalMonarch": true,
       "isMain": true
     },
@@ -1200,17 +1218,18 @@
         "year": 1928,
         "month": 6,
         "abs": 23141,
-        "day": 4
+        "day": 4,
+        "confidence": "day"
       },
       "end": {
         "year": 1928,
         "month": 10,
         "abs": 23145,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "startAbs": 23141,
       "endAbs": 23145,
-      "precision": "day",
       "isInformalMonarch": false,
       "isMain": true
     },
@@ -1224,17 +1243,18 @@
         "year": 1928,
         "month": 10,
         "abs": 23145,
-        "day": 10
+        "day": 10,
+        "confidence": "day"
       },
       "end": {
         "year": 1931,
         "month": 12,
         "abs": 23183,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "startAbs": 23145,
       "endAbs": 23183,
-      "precision": "day",
       "isInformalMonarch": false,
       "isMain": true
     },
@@ -1248,17 +1268,18 @@
         "year": 1931,
         "month": 12,
         "abs": 23183,
-        "day": 15
+        "day": 15,
+        "confidence": "day"
       },
       "end": {
         "year": 1943,
         "month": 8,
         "abs": 23323,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "startAbs": 23183,
       "endAbs": 23323,
-      "precision": "day",
       "isInformalMonarch": false,
       "isMain": true
     },
@@ -1272,17 +1293,18 @@
         "year": 1943,
         "month": 8,
         "abs": 23323,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "end": {
         "year": 1948,
         "month": 5,
         "abs": 23380,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "startAbs": 23323,
       "endAbs": 23380,
-      "precision": "day",
       "isInformalMonarch": false,
       "isMain": true
     },
@@ -1296,17 +1318,18 @@
         "year": 1948,
         "month": 5,
         "abs": 23380,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "end": {
         "year": 1949,
         "month": 1,
         "abs": 23388,
-        "day": 21
+        "day": 21,
+        "confidence": "day"
       },
       "startAbs": 23380,
       "endAbs": 23388,
-      "precision": "day",
       "isInformalMonarch": false,
       "isMain": true
     },
@@ -1320,17 +1343,18 @@
         "year": 1949,
         "month": 1,
         "abs": 23388,
-        "day": 21
+        "day": 21,
+        "confidence": "day"
       },
       "end": {
         "year": 1950,
         "month": 3,
         "abs": 23402,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "startAbs": 23388,
       "endAbs": 23402,
-      "precision": "day",
       "isInformalMonarch": false,
       "isMain": true
     },
@@ -1344,17 +1368,18 @@
         "year": 1950,
         "month": 3,
         "abs": 23402,
-        "day": 1
+        "day": 1,
+        "confidence": "day"
       },
       "end": {
         "year": 1975,
         "month": 4,
         "abs": 23703,
-        "day": 5
+        "day": 5,
+        "confidence": "day"
       },
       "startAbs": 23402,
       "endAbs": 23703,
-      "precision": "day",
       "isInformalMonarch": false,
       "isMain": false
     },
@@ -1368,17 +1393,18 @@
         "year": 1975,
         "month": 4,
         "abs": 23703,
-        "day": 6
+        "day": 6,
+        "confidence": "day"
       },
       "end": {
         "year": 1978,
         "month": 5,
         "abs": 23740,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "startAbs": 23703,
       "endAbs": 23740,
-      "precision": "day",
       "isInformalMonarch": false,
       "isMain": false
     },
@@ -1392,17 +1418,18 @@
         "year": 1978,
         "month": 5,
         "abs": 23740,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "end": {
         "year": 1988,
         "month": 1,
         "abs": 23856,
-        "day": 13
+        "day": 13,
+        "confidence": "day"
       },
       "startAbs": 23740,
       "endAbs": 23856,
-      "precision": "day",
       "isInformalMonarch": false,
       "isMain": false
     },
@@ -1416,17 +1443,18 @@
         "year": 1988,
         "month": 1,
         "abs": 23856,
-        "day": 13
+        "day": 13,
+        "confidence": "day"
       },
       "end": {
         "year": 2000,
         "month": 5,
         "abs": 24004,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "startAbs": 23856,
       "endAbs": 24004,
-      "precision": "day",
       "isInformalMonarch": false,
       "isMain": false
     },
@@ -1440,17 +1468,18 @@
         "year": 2000,
         "month": 5,
         "abs": 24004,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "end": {
         "year": 2008,
         "month": 5,
         "abs": 24100,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "startAbs": 24004,
       "endAbs": 24100,
-      "precision": "day",
       "isInformalMonarch": false,
       "isMain": false
     },
@@ -1464,17 +1493,18 @@
         "year": 2008,
         "month": 5,
         "abs": 24100,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "end": {
         "year": 2016,
         "month": 5,
         "abs": 24196,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "startAbs": 24100,
       "endAbs": 24196,
-      "precision": "day",
       "isInformalMonarch": false,
       "isMain": false
     },
@@ -1488,17 +1518,18 @@
         "year": 2016,
         "month": 5,
         "abs": 24196,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "end": {
         "year": 2024,
         "month": 5,
         "abs": 24292,
-        "day": 20
+        "day": 20,
+        "confidence": "day"
       },
       "startAbs": 24196,
       "endAbs": 24292,
-      "precision": "day",
       "isInformalMonarch": false,
       "isMain": false
     },
@@ -1512,12 +1543,12 @@
         "year": 2024,
         "month": 5,
         "abs": 24292,
-        "day": 20
+        "day": 20,
+        "confidence": "month"
       },
       "end": null,
       "startAbs": 24292,
       "endAbs": 24320,
-      "precision": "month",
       "isInformalMonarch": false,
       "isMain": false
     }
@@ -1526,7 +1557,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "roc"
       ],
@@ -1538,14 +1568,14 @@
       "at": {
         "year": 1915,
         "month": 12,
-        "abs": 22991
+        "abs": 22991,
+        "confidence": "year"
       },
       "summary": "袁世凯改国号中华帝国，遭全国反对，83天后取消。",
       "atAbs": 22991
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "roc"
       ],
@@ -1561,12 +1591,14 @@
       "start": {
         "year": 1915,
         "month": 12,
-        "abs": 22991
+        "abs": 22991,
+        "confidence": "year"
       },
       "end": {
         "year": 1916,
         "month": 6,
-        "abs": 22997
+        "abs": 22997,
+        "confidence": "year"
       },
       "summary": "蔡锷、唐继尧等起兵讨袁，袁世凯称帝失败。",
       "startAbs": 22991,
@@ -1575,7 +1607,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "roc"
       ],
@@ -1586,7 +1617,8 @@
       "at": {
         "year": 1919,
         "month": 5,
-        "abs": 23032
+        "abs": 23032,
+        "confidence": "month"
       },
       "summary": "北京学生抗议巴黎和会山东问题，新文化运动与爱国运动高潮。",
       "atAbs": 23032
@@ -1594,7 +1626,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "day",
       "dynastyIds": [
         "qing"
       ],
@@ -1609,14 +1640,14 @@
         "year": 1924,
         "month": 11,
         "abs": 23098,
-        "day": 5
+        "day": 5,
+        "confidence": "day"
       },
       "summary": "冯玉祥北京政变后执行修正清室优待条件，溥仪被逐出紫禁城，逊清小朝廷终结。",
       "atAbs": 23098
     },
     {
       "kind": "politics",
-      "precision": "year",
       "dynastyIds": [
         "roc"
       ],
@@ -1637,12 +1668,14 @@
       "start": {
         "year": 1916,
         "month": 1,
-        "abs": 22992
+        "abs": 22992,
+        "confidence": "year"
       },
       "end": {
         "year": 1928,
         "month": 1,
-        "abs": 23136
+        "abs": 23136,
+        "confidence": "year"
       },
       "summary": "北洋分裂，直皖直奉混战，地方割据，中央名义大于实权。",
       "startAbs": 22992,
@@ -1650,7 +1683,6 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "roc"
       ],
@@ -1663,12 +1695,14 @@
       "start": {
         "year": 1926,
         "month": 7,
-        "abs": 23118
+        "abs": 23118,
+        "confidence": "year"
       },
       "end": {
         "year": 1928,
         "month": 12,
-        "abs": 23147
+        "abs": 23147,
+        "confidence": "year"
       },
       "summary": "国民革命军自广州北伐，推翻北洋军阀，统一全国。",
       "startAbs": 23118,
@@ -1677,7 +1711,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "year",
       "dynastyIds": [
         "roc"
       ],
@@ -1689,7 +1722,8 @@
       "at": {
         "year": 1928,
         "month": 12,
-        "abs": 23147
+        "abs": 23147,
+        "confidence": "year"
       },
       "summary": "张学良宣布服从国民政府，改挂青天白日旗，名义上全国统一。",
       "atAbs": 23147
@@ -1697,7 +1731,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "roc"
       ],
@@ -1710,7 +1743,8 @@
       "at": {
         "year": 1931,
         "month": 9,
-        "abs": 23180
+        "abs": 23180,
+        "confidence": "month"
       },
       "summary": "日本关东军发动事变，侵占东北，十四年抗战开始。",
       "atAbs": 23180
@@ -1718,7 +1752,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "roc"
       ],
@@ -1733,14 +1766,14 @@
       "at": {
         "year": 1936,
         "month": 12,
-        "abs": 23243
+        "abs": 23243,
+        "confidence": "month"
       },
       "summary": "张学良、杨虎城逼蒋抗日，和平解决，国共二次合作。",
       "atAbs": 23243
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "roc"
       ],
@@ -1757,12 +1790,14 @@
       "start": {
         "year": 1937,
         "month": 7,
-        "abs": 23250
+        "abs": 23250,
+        "confidence": "year"
       },
       "end": {
         "year": 1945,
         "month": 9,
-        "abs": 23348
+        "abs": 23348,
+        "confidence": "year"
       },
       "summary": "全民族抗战，1945年日本投降，台湾光复。",
       "startAbs": 23250,
@@ -1770,7 +1805,6 @@
     },
     {
       "kind": "battle",
-      "precision": "year",
       "dynastyIds": [
         "roc"
       ],
@@ -1785,12 +1819,14 @@
       "start": {
         "year": 1946,
         "month": 1,
-        "abs": 23352
+        "abs": 23352,
+        "confidence": "year"
       },
       "end": {
         "year": 1949,
         "month": 12,
-        "abs": 23399
+        "abs": 23399,
+        "confidence": "year"
       },
       "summary": "国共内战，三大战役后国民党退守台湾，大陆政权更迭。",
       "startAbs": 23352,
@@ -1799,7 +1835,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "precision": "month",
       "dynastyIds": [
         "roc"
       ],
@@ -1813,7 +1848,8 @@
       "at": {
         "year": 1949,
         "month": 12,
-        "abs": 23399
+        "abs": 23399,
+        "confidence": "month"
       },
       "summary": "解放军渡江后国民党退守台湾，中华民国大陆时期终结。",
       "atAbs": 23399

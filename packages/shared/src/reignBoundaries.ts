@@ -1,5 +1,5 @@
 import { claimTrackOf, groupByClaimTrack } from "./claimTracks";
-import type { Reign } from "./schema";
+import type { HistoricalDateConfidence, Reign } from "./schema";
 import { isSystemMissingReign } from "./systemReigns";
 import { rangesIntersect } from "./time";
 import {
@@ -16,12 +16,17 @@ import { reignOwnershipInterval, reignOwnershipPeers } from "./timelineOwnership
  * - `approximate` — scholarly estimate with some external support
  * - `interpolated` — filled algorithmically between anchors (e.g. early Zhou gaps)
  */
-export type DateConfidence = "certain" | "approximate" | "interpolated";
+export type DateConfidence = HistoricalDateConfidence;
 
 export const DATE_CONFIDENCE_LABEL: Record<DateConfidence, string> = {
-  certain: "有年表依据",
-  approximate: "年代约数",
-  interpolated: "年代推算",
+  day: "日期确定",
+  month: "月份确定",
+  year: "年份确定",
+  approximate_day: "日期为史学推断",
+  approximate_month: "月份为史学推断",
+  approximate_year: "年份为史学推断",
+  interpolated_by_other: "关联史料推算",
+  interpolated_by_generation: "世次均分推算",
 };
 
 export type ReignUncertaintyBoundaryKind = "gap" | "junction";
@@ -42,7 +47,7 @@ export type ReignUncertaintyBoundary = {
 export function isUncertainDateConfidence(
   confidence?: DateConfidence | null,
 ): boolean {
-  return confidence === "approximate" || confidence === "interpolated";
+  return confidence?.startsWith("approximate_") === true || confidence?.startsWith("interpolated_") === true;
 }
 
 export function sortReignsByCalendar(reigns: readonly Reign[]): Reign[] {
@@ -205,11 +210,11 @@ function missingCoversGap(
   );
 }
 
-/** @deprecated Wavy edges render per-card from start/end_date_confidence. */
+/** Wavy edges render per-card from each endpoint's confidence. */
 export function isUncertainReignSeam(left: Reign, right: Reign): boolean {
   return (
-    isUncertainDateConfidence(left.endDateConfidence) &&
-    isUncertainDateConfidence(right.startDateConfidence)
+    isUncertainDateConfidence(left.end.confidence) &&
+    isUncertainDateConfidence(right.start.confidence)
   );
 }
 
@@ -270,11 +275,11 @@ export function validateReignDateConfidenceSeams(
         right.id !== left.id && isCalendarSeamPair(left, right, active),
     );
     for (const right of successors) {
-      const leftUncertain = isUncertainDateConfidence(left.endDateConfidence);
-      const rightUncertain = isUncertainDateConfidence(right.startDateConfidence);
+      const leftUncertain = isUncertainDateConfidence(left.end.confidence);
+      const rightUncertain = isUncertainDateConfidence(right.start.confidence);
       if (leftUncertain === rightUncertain) continue;
       errors.push(
-        `${left.id} end (${left.endDateConfidence ?? "certain"}) / ${right.id} start (${right.startDateConfidence ?? "certain"}) mismatch`,
+        `${left.id} end (${left.end.confidence ?? "year"}) / ${right.id} start (${right.start.confidence ?? "year"}) mismatch`,
       );
     }
   }
@@ -300,7 +305,7 @@ export function uncertaintyBoundaryTooltip(
   const right = rulers.find((r) => r.id === boundary.rightReignId);
   const confidence =
     left && right && isUncertainReignSeam(left, right)
-      ? (left.endDateConfidence ?? right.startDateConfidence)
+      ? (left.end.confidence ?? right.start.confidence)
       : undefined;
   const label = confidence ? DATE_CONFIDENCE_LABEL[confidence] : "年代失考";
   const note =

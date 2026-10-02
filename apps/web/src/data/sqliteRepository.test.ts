@@ -7,8 +7,8 @@ function emptyDatabase(): SqliteDatabase {
       if (sql.includes("content_metadata")) {
         return {
           values: [
-            { key: "schema_version", value: "1" },
-            { key: "contract_version", value: "2" },
+            { key: "schema_version", value: "2" },
+            { key: "contract_version", value: "3" },
           ],
         };
       }

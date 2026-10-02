@@ -9,6 +9,8 @@ description: >-
 
 # EraLens 时期数据导入
 
+所有日期录入、精度、历法和置信度以 [eralens-date-handling](../eralens-date-handling/SKILL.md) 为准；本 Skill 负责包级数据流程与继位上下文。
+
 将用户指定的历史时期（如「唐朝贞观」「北宋仁宗」）转为可执行的 SQL，写入 PostgreSQL。不要生成或更新 `data/seed/*.json`。
 
 真实导入包以 `data/imports/{slug}/cache.json` 为唯一记录源，来源与处理说明直接写在 `cache.json.manifest.sources` / `cache.json.manifest.notes`。已核定数据直接写进缓存；不要新增包级 `.mjs`、Wiki 抓取/加工脚本或按朝代修补代码。唯一生成入口是 `node data/imports/generate.mjs {slug}`；它只把缓存序列化为 `import.sql` 和 `manifest.json`，不补年份、不改称谓、不解析 Wiki。生成产物不手工编辑。
@@ -61,18 +63,12 @@ Task Progress:
 - [ ] 7. 验收：curl timeline/entity + 浏览器时间轴
 ```
 
-缓存采用 camelCase 字段；时间以 `{ "year", "month", "abs" }` 结构保存，人物、王朝、在位、事件和关系分别放在顶层数组中。都城与事件地点使用 `capitals` / `eventLocations` 等缓存集合；来源说明位于同一个文件的 `manifest` 对象内。SQL 列名由共享序列化器映射。包结构、示例和完整生成命令见 [`data/imports/README.md`](../../../data/imports/README.md)。
+缓存采用 camelCase 字段；日期以 `{ year, month, day?, abs, confidence }` 结构保存。人物、王朝、在位、事件和关系分别放在顶层数组中。都城与事件地点使用 `capitals` / `eventLocations` 等缓存集合；来源说明位于同一个文件的 `manifest` 对象内。SQL 列名由共享序列化器映射。包结构、示例和完整生成命令见 [`data/imports/README.md`](../../../data/imports/README.md)。
 
 ### 1. 调研
 
 - 用 WebSearch / 百科 / 正史条目搜集**可核对**的事实。通行年代框架（如夏商周断代工程、《史记》年表）优先于个人推算。
-- 日期分清三种语义，不要把不确定年代写成精确到月的点事件：
-  - **point**：发生时刻明确（或仅知年份）。填 `at_*`；月未知则 `precision: year`，占位月用 **12**（与泳道年桶右缘、年精度命运线一致）。界面不显示「12 月」。已知正月须标 `precision: month`。
-  - **span**：事件真实持续一段时间。填 `start_*` + `end_*`，`time_mode: span`。
-  - **circa**：大约发生于某窗口（或诸说不一）。窗口填 `start_*` + `end_*`，`time_mode: circa`；学界常用估计可另填 `at_*`（年精度时同样落在 12 月）；原文说法写入 `date_note`。
-- **甄别历法**：录入日期前确认来源使用农历还是公历。不得把农历月日直接作为公历月日录入或参与公历换算；来源只记农历日期时，应保留原始记载并在 `date_note` 说明历法。只有依据可靠历法换算资料确认对应日期后，才录入换算后的公历日期，并在 `date_note` 记录原始农历日期及换算依据；无法确认时不要伪造公历月日，按已知精度记录。
-- 王朝 / 在位月不确定：标 `precision: year`，用月初 / 月末占位。
-- **史料记作“约某年 / 约前某年”**：将该年视为史料给出的确定年桶，按 `precision: year` 记录；reign 不填 `start_date_confidence` / `end_date_confidence`，事件不因此改用 `circa`。这里的“确定”表示忠实采用史料所载年份，不代表史料精确到月日。只有年份由导入者自行推算、插值，或来源给出的是跨年范围 / 多种互相冲突的年份时，才按推算或 `circa` 规则处理。
+- 日期精度、历法、confidence 与事件 point/span 规则遵循 [eralens-date-handling](../eralens-date-handling/SKILL.md)。年精度 point 的月占位及年桶位置也以该 Skill 为准。
 - **年精度顺序继位切年**（先秦通行，与英文维基国王表 / 逾年改元一致；按以下规则核定后，将最终日期直接写入 `cache.json`）：
   - **死年整年归旧王**，新王从**下一年**起算。维基「在位年份」常把死年同时写作新王起年（如秦文公「前766年－前716年」叠在襄公卒年），时间轴按年桶绘制时不要把这一年画成两人并立。
   - 不要把公历 1 月 1 日当成即位日；1–12 月只是年桶占位。中国年本身也不是公历元旦起算。
@@ -81,7 +77,7 @@ Task Progress:
     1. 短祚只存在于该死年（一年实录，如公孙无知、卫戴公、周哀王/思王）；
     2. 史料写明**未逾年改元**（秦灵公、秦简公、秦献公）；
     3. 真正并立 / 旁支（`claim_track`、曲沃与翼）；
-    4. 同年内有可核时长（史记「立三月」）→ 按月切开该年，`precision` 仍为 year，不冒充历月。
+    4. 同年内有可核时长（史记「立三月」）→ 按月切开该年，confidence 仍为 `year`，不冒充历月。
   - 田氏代齐是姜齐之后的**顺序接续**，不是并立。田和称君取前391年自立；齐国表前404年是田悼子卒后的田氏领袖年，不要与康公画成同年并立。
   - 月/日有史料则用月日，不再套这条年桶规则。身后才立的并行对手（如携王相对幽王）与正统次年改元对齐（携王起年与平王同为前770），不要从前王死年正月画起。
 - **所有精度的相邻边界**：在位、都城以及其他有先后接续关系的时间段，对象归属统一调用 `@eralens/shared` 的 `timelineOwnership.ts`；其底层 `timelineIntervals.ts` 按 year/month/day 精度转成日历日比较，支持精度不同的前后记录及同一记录起止边界采用不同精度。重叠部分归较早记录，后记录从旧记录终点后的第一天开始。分组规则也集中在归属入口，生成器、布局、查询、详情关联不得复制对象分组、边界比较或手写年/月偏移。真正并立的君主、不同都城/角色等可共存记录要保留为并行区间，并用 `claim_track` 或实体语义分组区分。
@@ -89,8 +85,8 @@ Task Progress:
   - 来源明确表明该期存在国君、但姓名或具体世次失载，才写一条系统缺失占位 reign。
   - 历史上确实无人统治该王朝行（改朝换号、中断、摄政期不设君等），不写 reign，前端自然留白。例如武周期间的唐行不写占位。
   - 只是本次导入深度不足或尚未搜集完整，必须继续查证/补齐，不能标成「史料缺」。
-- **君主有世系、仅部分在位年可考**：先从编年史、传世文献、考古铭文和可靠君主表交叉核对数个可定年的君主/纪事，建立相互独立的时间锚点。凡世系连续且位于同一组可信起讫锚点之间的失载君主，按次序均分锚点之间的年段，标 `interpolated`；有文献支持的君主年份及锚点相接的确定边界不标插值。两端年表锚点之间即使相隔多代，也可把全部已知世次纳入均分，不得只录一个空泳道或只录孤立锚点。世系中断、国君姓名/世次实质失考、锚点不共时或只靠传统积年推算时，不跨断层均分；先继续查证，并将不能填充的区段及原因写入 `cache.json.manifest.notes`。已知某段确有君主而姓名失载时，依“史料缺”规则用占位 reign，不要把它误当作无国君空白。
-- 无实测或无通行王年（夏代、商前期常见）：遵循上一条先找共同锚点和连续世系；仅当缺少可交叉验证的起讫锚点、世系有断层或只能依传统积年推算时，才只收关键人物，事件用 `circa` + `date_note`，不得跨断层补满君主。
+- **君主有世系、仅部分在位年可考**：共同锚点、连续世系均分和端点 confidence 遵循 [eralens-date-handling](../eralens-date-handling/SKILL.md)。已知某段确有君主而姓名失载时，依“史料缺”规则用占位 reign，不要把它误当作无国君空白。
+- 无实测或无通行王年（夏代、商前期常见）：遵循上一条先找共同锚点和连续世系；仅当缺少可交叉验证的起讫锚点、世系有断层或只能依传统积年推算时，才只收关键人物，事件按日期处理 Skill 记录有依据的 point/span 与 confidence，不得跨断层补满君主。
 - 摄政、共和等非王时期建**事件**，不建 reign。
 - **并立称君**（隋末三帝、南明鲁监国/绍武）留在同一王朝行，用 `claim_track` 分行同时显示，不要拆成多个王朝：
   - **判定并列只看是否「同时另立」**，与是否权臣拥立无关。
@@ -166,9 +162,8 @@ node .cursor/skills/eralens-period-import/scripts/compute-abs.mjs -1046 1  # -12
 **枚举**（见 [reference.md](reference.md)）：
 
 - `color_token`：入库占位 `ochre`；运行时 24 色见 reference.md（前端分配，导入勿轮换）
-- `precision`（王朝/在位）: year | month | day
-- `event.precision`: day | month | year | decade | century
-- `event.time_mode`: point | span | circa
+- 日期 confidence 与历史日期结构：见 [日期处理 Skill](../eralens-date-handling/SKILL.md)
+- `event.time_mode`: point | span
 - `event.kind`: battle | politics | culture | disaster | commerce | agriculture | finance | idiom | poetry | other
 - `relation.kind`: succession | battle | alliance | enthronement | other | killed | surrender | abdication | captured
 - `scope`: cn（默认）| global
@@ -183,12 +178,7 @@ node .cursor/skills/eralens-period-import/scripts/compute-abs.mjs -1046 1  # -12
 - 不增加 `missing` 字段、不建单独 gap 表。前端只根据保留的 `person_id` 将该 reign 渲染为虚线框。
 - 没有占位 reign 的时间空档一律留白，不由前端自动推断为资料缺失；统一生成器不会根据相邻君主间隔自动插入 `reign-missing-*`，缓存中必须显式列出经核实的占位记录。
 
-**在位年失考 / 推算边界**（与史料缺区分）：
-
-- 世系连续但在位年由导入者推算或插值时，在 `reigns` 行标注 `start_date_confidence` / `end_date_confidence`：`approximate`、`interpolated`（确定值默认 NULL）。**来源原文仅记“约某年”的年份不属于此处的 approximate，不加置信度标记。**
-- 前端按本卡 `start_date_confidence` / `end_date_confidence` 在起年/迄年边画波浪线。日历相接的两王交界两侧必须同为失考或同为确定；贴着年表锚点的一侧不打失考标记。灭国留白不相接，各画自己的失考边。
-- 推算或插值结果直接写入导入包 JSON 缓存，并为相应边界写 `interpolated`；生成器不得在读取缓存时推算、均分或修补单个朝代的记录。缺少两端锚点或世系中断时，不跨断层均分。
-- 灭国、亡国等确实无国君的空档：若需占位用史料缺；若仅年代不可考则靠 confidence + 波浪线，不要混用。
+**在位年失考 / 推算边界**遵循 [日期处理 Skill](../eralens-date-handling/SKILL.md) 的端点 confidence 与插值依据要求。历史空白仍须先区分史料缺、无国君与年代失考；只有日期处理 Skill 规定的可靠锚点和连续世系可用于世次均分。数据库兼容旧列在迁移验收前保留。
 
 ### 3. 冲突检查
 
@@ -274,9 +264,9 @@ curl -s "http://localhost:3001/api/timeline?from=START&to=END&scope=cn" | jq '.d
 curl -s "http://localhost:3001/api/bounds"
 ```
 
-浏览器默认读 HTTP（数据库）。入库后若界面未更新，**硬刷新**（bounds 查询 `staleTime: Infinity`）。用搜索跳到朝代名或事件名，比拖标尺快。`Home` 跳到 `bounds.minAbs`（可能早于王朝始年，若有更早的 circa 事件）。若仍为 Mock 数据，检查 `VITE_DATA_SOURCE` 是否为 `http`。
+浏览器默认读 HTTP（数据库）。入库后若界面未更新，**硬刷新**（bounds 查询 `staleTime: Infinity`）。用搜索跳到朝代名或事件名，比拖标尺快。`Home` 跳到 `bounds.minAbs`（可能早于王朝始年，若有更早的 approximate point）。若仍为 Mock 数据，检查 `VITE_DATA_SOURCE` 是否为 `http`。
 
-确认：王朝行、在位卡片、事件标记出现；`circa` 淡色虚线带，`span` 细条，point 无虚假跨度。
+确认：王朝行、在位卡片和事件标记出现；point 显示时点，span 显示真实持续过程，近似和插值按各端点 confidence 展示。
 
 ## 质量要求
 
@@ -284,8 +274,8 @@ curl -s "http://localhost:3001/api/bounds"
 - 外键顺序：reign 引用的 person/dynasty 必须先存在。
 - 事件时间字段：
   - `point`：`at_abs IS NOT NULL`
-  - `span` / `circa`：`start_abs` 与 `end_abs` 均非空；circa 的 `at_abs` 可选（最佳估计）
-- 不要用 `span` 去表示「大约何时」。持续用 `time_mode=span`，不确定用 `circa` + `date_note`。
+- `span`：`start_abs` 与 `end_abs` 均非空；point 必须有 `at_abs`。
+- 事件只用 point/span；不确定性写入各日期端点 confidence，原起止说明保留在 `date_note`。
 - 中文名称用 UTF-8；SQL 字符串中单引号写 `''`。
 - 对争议年代在 `cache.json.manifest.notes` 与事件 `dateNote` 说明取舍，不 silently 编造精确到月。
 - 生卒不明则 `birth_*` / `death_*` 用 NULL，不要用正月占位冒充已知。
@@ -297,7 +287,7 @@ curl -s "http://localhost:3001/api/bounds"
 
 成语单独成包，不与王朝/在位包混写。
 
-- **入库形态**：`events.kind = idiom`，`time_mode = point`（禁止 span/circa）；`at_*` 决定时间轴 marker 位置（年精度占位 12 月）；`meaning` 存释义，`summary` 存典故。
+- **入库形态**：`events.kind = idiom`，`time_mode = point`（禁止 span）；`at_*` 决定时间轴 marker 位置；`meaning` 存释义，`summary` 存典故。
 - **关联**：
   - 故事发生国 / 背景王朝 → `event_dynasties`
   - 典故人物 → `event_participants.person_id`，**只能写 `persons.id`**
