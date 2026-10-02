@@ -2,6 +2,7 @@
 
 import fs from "node:fs";
 import path from "node:path";
+import { discoverPackages, resolvePackageDirectory } from "../../../../data/imports/lib/discoverPackages.mjs";
 import { fileURLToPath } from "node:url";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../../../");
@@ -12,7 +13,7 @@ const requestedSlug = process.argv[2];
 
 if (requestedSlug === "--help" || requestedSlug === "-h") {
   console.log("Usage: node .cursor/skills/eralens-period-import/scripts/check-timeline-font-coverage.mjs [import-slug]");
-  console.log("Omit import-slug to check every data/imports/*/cache.json.");
+  console.log("Omit import-slug to check every cache.json recursively under data/imports.");
   process.exit(0);
 }
 
@@ -54,15 +55,13 @@ function readFontCoverage() {
 
 function cacheFiles() {
   if (requestedSlug) {
-    const cachePath = path.join(importsRoot, requestedSlug, "cache.json");
+    const cachePath = path.join(resolvePackageDirectory(importsRoot, requestedSlug), "cache.json");
     if (!fs.existsSync(cachePath)) fail(`no cache.json for import package "${requestedSlug}"`);
     return [[requestedSlug, cachePath]];
   }
 
-  return fs.readdirSync(importsRoot, { withFileTypes: true })
-    .filter((entry) => entry.isDirectory())
-    .map((entry) => [entry.name, path.join(importsRoot, entry.name, "cache.json")])
-    .filter(([, cachePath]) => fs.existsSync(cachePath));
+  return discoverPackages(importsRoot)
+    .map((slug) => [slug, path.join(importsRoot, slug, "cache.json")]);
 }
 
 function* displayedStrings(cache) {

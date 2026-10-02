@@ -1,0 +1,1939 @@
+{
+  "slug": "chunqiu-zhanguo/song-chunqiu",
+  "window": {
+    "startYear": -1034,
+    "startMonth": 1,
+    "endYear": -286,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "song-weizi",
+      "name": "启",
+      "roles": [
+        "君主"
+      ],
+      "bio": "微子启，帝乙长子、帝辛庶兄。数谏不听而亡奔，周封之于宋，为宋国始封君。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/微子"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [
+        "微子",
+        "微子启"
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "微子",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r1",
+      "name": "衍",
+      "roles": [
+        "君主"
+      ],
+      "bio": "微子启之弟，继兄镇守宋地，为西周时期宋国第二代国君，世次见《史记·宋微子世家》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/微仲"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "微仲",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r2",
+      "name": "稽",
+      "roles": [
+        "君主"
+      ],
+      "bio": "微仲之后，宋国早期君主，世次承续而事迹疏略，属西周中叶宋国世君，殷商后裔封国之一。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/稽"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "稽",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r3",
+      "name": "申",
+      "roles": [
+        "君主"
+      ],
+      "bio": "宋国第三代君主，谥丁公，在位约二十四年，承微子之封，为西周时期宋国世系中继之君。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋丁公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "丁公"
+      ],
+      "templeNames": [],
+      "title": "宋丁公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r4",
+      "name": "共",
+      "roles": [
+        "君主"
+      ],
+      "bio": "丁公之后，谥湣公，在位约二十四年，宋国早期君主，除世次外史料仅存于《史记·宋微子世家》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋湣公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "湣公"
+      ],
+      "templeNames": [],
+      "title": "宋湣公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r5",
+      "name": "熙",
+      "roles": [
+        "君主"
+      ],
+      "bio": "湣公之子，谥炀公，在位约二十四年，《史记》载为伯振之父，世系承续宋国嫡系，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋炀公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "炀公"
+      ],
+      "templeNames": [],
+      "title": "宋炀公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r6",
+      "name": "鲋祀",
+      "roles": [
+        "君主"
+      ],
+      "bio": "炀公之弟鲋祀弑兄自立，谥厉公，在位约二十六年，终为兄子纠所杀，宋国再陷内争，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋厉公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "厉公"
+      ],
+      "templeNames": [],
+      "title": "宋厉公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r7",
+      "name": "举",
+      "roles": [
+        "君主"
+      ],
+      "bio": "纠弑厉公后立，谥釐公，在位约二十八年，复正嫡系，为宋国西周后期重要世君，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋釐公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "釐公"
+      ],
+      "templeNames": [],
+      "title": "宋釐公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r8",
+      "name": "覵",
+      "roles": [
+        "君主"
+      ],
+      "bio": "釐公之子，谥惠公，在位三十余年，属西周晚期宋国君主，事迹除世次外记载有限，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋惠公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "惠公"
+      ],
+      "templeNames": [],
+      "title": "宋惠公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r9",
+      "name": "哀公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "惠公之子，谥哀公，在位仅一年即卒，为宋国世系中罕见的极短祚君主，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋哀公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "哀公"
+      ],
+      "templeNames": [],
+      "title": "宋哀公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r10",
+      "name": "白",
+      "roles": [
+        "君主"
+      ],
+      "bio": "哀公之子，谥戴公，在位三十四年，为春秋初年以前宋国在位时间较长之君，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋戴公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "戴公"
+      ],
+      "templeNames": [],
+      "title": "宋戴公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r11",
+      "name": "司空",
+      "roles": [
+        "君主"
+      ],
+      "bio": "戴公之子司空，谥武公，在位十八年，承续宋国嫡系，事迹记载疏略，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋武公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "武公"
+      ],
+      "templeNames": [],
+      "title": "宋武公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r12",
+      "name": "力",
+      "roles": [
+        "君主"
+      ],
+      "bio": "武公之子，谥宣公，欲传位弟穆公和，临终仍以长子与夷嗣位，开宋国传弟之先河，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋宣公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "宣公"
+      ],
+      "templeNames": [],
+      "title": "宋宣公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r13",
+      "name": "和",
+      "roles": [
+        "君主"
+      ],
+      "bio": "宣公弟子和，为报兄恩拒受传位，后受托孤而立殇公与夷，穆公托孤酿成日后政乱，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋穆公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "穆公"
+      ],
+      "templeNames": [],
+      "title": "宋穆公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r14",
+      "name": "与夷",
+      "roles": [
+        "君主"
+      ],
+      "bio": "宣公长子与夷，年幼继位谥殇公，大夫华元弑君并杀孔父嘉，立庄公冯，孔父之难由此而起。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋殇公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "殇公"
+      ],
+      "templeNames": [],
+      "title": "宋殇公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r15",
+      "name": "冯",
+      "roles": [
+        "君主"
+      ],
+      "bio": "弑殇公自立，乘丘之战败鲁军、擒南宫长万又释归，前692年因博戏争执，为万弑于蒙泽。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋庄公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "庄公"
+      ],
+      "templeNames": [],
+      "title": "宋庄公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r16",
+      "name": "捷",
+      "roles": [
+        "君主"
+      ],
+      "bio": "宋闵公（子捷），宋庄公之子，前691–前682年在位。与鲁多次交战，乘丘之役鲁擒南宫万后释归；因猎博与万争执，前682年为南宫长万所弑于蒙泽。万立子游，诸公子杀子游而立弟御说为宋桓公。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋闵公"
+        }
+      ],
+      "birth": null,
+      "death": {
+        "year": -682,
+        "month": 1,
+        "abs": -8172
+      },
+      "posthumousNames": [
+        "湣公"
+      ],
+      "templeNames": [],
+      "title": "宋湣公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r17",
+      "name": "游",
+      "roles": [
+        "君主"
+      ],
+      "bio": "南宫长万弑闵公后立公子游，旋即为诸公子攻杀，在位仅数月，宋国政局再度动荡，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/游"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "游",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r18",
+      "name": "御说",
+      "roles": [
+        "君主"
+      ],
+      "bio": "闵公弟御说杀子游自立，谥桓公，会盟诸侯、援齐灭郕，使宋国在春秋初年渐成东方强国。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋桓公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "桓公"
+      ],
+      "templeNames": [],
+      "title": "宋桓公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r19",
+      "name": "兹甫",
+      "roles": [
+        "君主"
+      ],
+      "bio": "桓公次子兹甫，谥襄公，泓水之战坚持不击半渡、不擒二毛而败于楚，部分史料列为春秋五霸之一。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋襄公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "襄公"
+      ],
+      "templeNames": [],
+      "title": "宋襄公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r20",
+      "name": "王臣",
+      "roles": [
+        "君主"
+      ],
+      "bio": "襄公之子王臣，谥成公，即位后大夫华氏作乱，赖晋救宋方得平定，在位约十七年，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋成公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "成公"
+      ],
+      "templeNames": [],
+      "title": "宋成公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r21",
+      "name": "御",
+      "roles": [
+        "君主"
+      ],
+      "bio": "成公弟御弑兄自立，旋即为大夫攻杀，在位仅一年，宋国再度因篡弑而政局不稳，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/御"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "御",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r22",
+      "name": "杵臼",
+      "roles": [
+        "君主"
+      ],
+      "bio": "成公之子杵臼，谥昭公，在位八年，其弟鲍革结党弑兄自立，为文公夺位之先声，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋昭公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "昭公"
+      ],
+      "templeNames": [],
+      "title": "宋昭公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r23",
+      "name": "鲍革",
+      "roles": [
+        "君主"
+      ],
+      "bio": "鲍革弑兄昭公自立，谥文公，任用公子鲍为政，与楚国结盟，在位约二十一年，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋文公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "文公"
+      ],
+      "templeNames": [],
+      "title": "宋文公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r24",
+      "name": "瑕",
+      "roles": [
+        "君主"
+      ],
+      "bio": "文公之子瑕，谥共公，在位十二年，承续文公政局，宋国已渐失春秋强国地位，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋共公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "共公"
+      ],
+      "templeNames": [],
+      "title": "宋共公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r25",
+      "name": "成",
+      "roles": [
+        "君主"
+      ],
+      "bio": "共公之子成，谥平公，在位四十三年，为宋国在位最久之君之一，《左传》多有提及，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋平公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "平公"
+      ],
+      "templeNames": [],
+      "title": "宋平公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r26",
+      "name": "佐",
+      "roles": [
+        "君主"
+      ],
+      "bio": "平公之子佐，谥元公，前517年欲乐氏融通晋援，遭华氏之党攻杀，在位约十四年，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋元公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "元公"
+      ],
+      "templeNames": [],
+      "title": "宋元公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r27",
+      "name": "头曼",
+      "roles": [
+        "君主"
+      ],
+      "bio": "元公之子头曼，谥景公，在位四十七年，倚仗大夫谐音能，国政日衰而内乱仍频，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋景公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "景公"
+      ],
+      "templeNames": [],
+      "title": "宋景公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r28",
+      "name": "特",
+      "roles": [
+        "君主"
+      ],
+      "bio": "宋昭公（子特），前469–前404年在位。《史记·宋微子世家》另有前422年卒异说。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋昭公特"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "昭公"
+      ],
+      "templeNames": [],
+      "title": "宋昭公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r29",
+      "name": "购由",
+      "roles": [
+        "君主"
+      ],
+      "bio": "战国初君主，谥悼公，在位约十九年，宋国已沦为中小诸侯，事迹除世次外记载有限，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋悼公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "悼公"
+      ],
+      "templeNames": [],
+      "title": "宋悼公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r30",
+      "name": "田",
+      "roles": [
+        "君主"
+      ],
+      "bio": "悼公之子田，谥休公，在位约二十一年，属战国早期宋国世君，国势卑微，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋休公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "休公"
+      ],
+      "templeNames": [],
+      "title": "宋休公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r31",
+      "name": "辟兵",
+      "roles": [
+        "君主"
+      ],
+      "bio": "休公之子辟兵，谥桓公，在位六年，与春秋宋桓公易混，为战国中期短暂在位之君，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋桓公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "桓公"
+      ],
+      "templeNames": [],
+      "title": "宋桓公",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r32",
+      "name": "喜",
+      "roles": [
+        "君主"
+      ],
+      "bio": "宋剔成君，本名戴喜，字子罕。司城子罕篡位，约前355–前329年在位，无谥号。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/剔成君"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "剔成君",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "song-r33",
+      "name": "偃",
+      "roles": [
+        "君主"
+      ],
+      "bio": "剔成之弟偃废兄自立，僭号称王，灭滕伐薛、屡攻齐魏，前286年为齐湣王所灭，宋国亡。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/宋康王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "康王"
+      ],
+      "templeNames": [],
+      "title": "宋康王",
+      "ancestralXing": "子",
+      "clanShi": "宋"
+    },
+    {
+      "id": "zhuang-zhou",
+      "name": "庄子",
+      "roles": [
+        "思想家"
+      ],
+      "bio": "战国宋国蒙人，名周，道家思想家。曾任漆园吏，拒绝楚威王聘相；其思想与寓言主要见于后世编定的《庄子》，强调顺应自然、逍遥自适。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/庄子"
+        }
+      ],
+      "birth": {
+        "year": -369,
+        "month": 1,
+        "abs": -4416
+      },
+      "death": {
+        "year": -286,
+        "month": 1,
+        "abs": -3420
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "song-chunqiu",
+      "name": "宋",
+      "altNames": [
+        "宋国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -1034,
+        "month": 1,
+        "abs": -12396,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -286,
+        "month": 12,
+        "abs": -3409,
+        "confidence": "month"
+      },
+      "note": "周成王封微子启于宋；前286年齐湣王灭宋。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-song-weizi-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-weizi",
+      "title": "微子",
+      "start": {
+        "year": -1038,
+        "month": 1,
+        "abs": -12444,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -1025,
+        "month": 12,
+        "abs": -12277,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -12444,
+      "endAbs": -12277,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-song-r1-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r1",
+      "title": "微仲",
+      "start": {
+        "year": -1024,
+        "month": 1,
+        "abs": -12276,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -986,
+        "month": 12,
+        "abs": -11809,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -12276,
+      "endAbs": -11809,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-song-r2-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r2",
+      "title": "稽",
+      "start": {
+        "year": -985,
+        "month": 1,
+        "abs": -11808,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -942,
+        "month": 12,
+        "abs": -11281,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -11808,
+      "endAbs": -11281,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-song-r3-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r3",
+      "title": "丁公",
+      "start": {
+        "year": -941,
+        "month": 1,
+        "abs": -11280,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -919,
+        "month": 12,
+        "abs": -11005,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -11280,
+      "endAbs": -11005,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-song-r4-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r4",
+      "title": "湣公",
+      "start": {
+        "year": -918,
+        "month": 1,
+        "abs": -11004,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -895,
+        "month": 12,
+        "abs": -10717,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -11004,
+      "endAbs": -10717,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-song-r5-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r5",
+      "title": "炀公",
+      "start": {
+        "year": -894,
+        "month": 1,
+        "abs": -10716,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -879,
+        "month": 12,
+        "abs": -10525,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -10716,
+      "endAbs": -10525,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-song-r6-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r6",
+      "title": "厉公",
+      "start": {
+        "year": -878,
+        "month": 1,
+        "abs": -10524,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -859,
+        "month": 12,
+        "abs": -10285,
+        "confidence": "year"
+      },
+      "startAbs": -10524,
+      "endAbs": -10285,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-song-r7-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r7",
+      "title": "釐公",
+      "start": {
+        "year": -858,
+        "month": 1,
+        "abs": -10284,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -831,
+        "month": 12,
+        "abs": -9949,
+        "confidence": "year"
+      },
+      "startAbs": -10284,
+      "endAbs": -9949,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r8-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r8",
+      "title": "惠公",
+      "start": {
+        "year": -830,
+        "month": 1,
+        "abs": -9948,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -800,
+        "month": 12,
+        "abs": -9577,
+        "confidence": "year"
+      },
+      "startAbs": -9948,
+      "endAbs": -9577,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r9-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r9",
+      "title": "哀公",
+      "start": {
+        "year": -800,
+        "month": 1,
+        "abs": -9588,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -800,
+        "month": 12,
+        "abs": -9577,
+        "confidence": "year"
+      },
+      "startAbs": -9588,
+      "endAbs": -9577,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r10-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r10",
+      "title": "戴公",
+      "start": {
+        "year": -799,
+        "month": 1,
+        "abs": -9576,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -766,
+        "month": 12,
+        "abs": -9169,
+        "confidence": "year"
+      },
+      "startAbs": -9576,
+      "endAbs": -9169,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r11-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r11",
+      "title": "武公",
+      "start": {
+        "year": -765,
+        "month": 1,
+        "abs": -9168,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -748,
+        "month": 12,
+        "abs": -8953,
+        "confidence": "year"
+      },
+      "startAbs": -9168,
+      "endAbs": -8953,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r12-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r12",
+      "title": "宣公",
+      "start": {
+        "year": -747,
+        "month": 1,
+        "abs": -8952,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -729,
+        "month": 12,
+        "abs": -8725,
+        "confidence": "year"
+      },
+      "startAbs": -8952,
+      "endAbs": -8725,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r13-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r13",
+      "title": "穆公",
+      "start": {
+        "year": -728,
+        "month": 1,
+        "abs": -8724,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -720,
+        "month": 12,
+        "abs": -8617,
+        "confidence": "year"
+      },
+      "startAbs": -8724,
+      "endAbs": -8617,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r14-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r14",
+      "title": "殇公",
+      "start": {
+        "year": -719,
+        "month": 1,
+        "abs": -8616,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -711,
+        "month": 12,
+        "abs": -8509,
+        "confidence": "year"
+      },
+      "startAbs": -8616,
+      "endAbs": -8509,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r15-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r15",
+      "title": "庄公",
+      "start": {
+        "year": -710,
+        "month": 1,
+        "abs": -8508,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -692,
+        "month": 12,
+        "abs": -8281,
+        "confidence": "year"
+      },
+      "startAbs": -8508,
+      "endAbs": -8281,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r16-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r16",
+      "title": "湣公",
+      "start": {
+        "year": -691,
+        "month": 1,
+        "abs": -8280,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -682,
+        "month": 12,
+        "abs": -8161,
+        "confidence": "year"
+      },
+      "startAbs": -8280,
+      "endAbs": -8161,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r17-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r17",
+      "title": "游",
+      "start": {
+        "year": -682,
+        "month": 1,
+        "abs": -8172,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -682,
+        "month": 12,
+        "abs": -8161,
+        "confidence": "year"
+      },
+      "startAbs": -8172,
+      "endAbs": -8161,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r18-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r18",
+      "title": "桓公",
+      "start": {
+        "year": -681,
+        "month": 1,
+        "abs": -8160,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -651,
+        "month": 12,
+        "abs": -7789,
+        "confidence": "year"
+      },
+      "startAbs": -8160,
+      "endAbs": -7789,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r19-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r19",
+      "title": "襄公",
+      "start": {
+        "year": -650,
+        "month": 1,
+        "abs": -7788,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -637,
+        "month": 12,
+        "abs": -7621,
+        "confidence": "year"
+      },
+      "startAbs": -7788,
+      "endAbs": -7621,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r20-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r20",
+      "title": "成公",
+      "start": {
+        "year": -636,
+        "month": 1,
+        "abs": -7620,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -620,
+        "month": 12,
+        "abs": -7417,
+        "confidence": "year"
+      },
+      "startAbs": -7620,
+      "endAbs": -7417,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r21-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r21",
+      "title": "御",
+      "start": {
+        "year": -620,
+        "month": 1,
+        "abs": -7428,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -620,
+        "month": 12,
+        "abs": -7417,
+        "confidence": "year"
+      },
+      "startAbs": -7428,
+      "endAbs": -7417,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r22-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r22",
+      "title": "昭公",
+      "start": {
+        "year": -619,
+        "month": 1,
+        "abs": -7416,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -611,
+        "month": 12,
+        "abs": -7309,
+        "confidence": "year"
+      },
+      "startAbs": -7416,
+      "endAbs": -7309,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r23-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r23",
+      "title": "文公",
+      "start": {
+        "year": -610,
+        "month": 1,
+        "abs": -7308,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -589,
+        "month": 12,
+        "abs": -7045,
+        "confidence": "year"
+      },
+      "startAbs": -7308,
+      "endAbs": -7045,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r24-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r24",
+      "title": "共公",
+      "start": {
+        "year": -588,
+        "month": 1,
+        "abs": -7044,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -576,
+        "month": 12,
+        "abs": -6889,
+        "confidence": "year"
+      },
+      "startAbs": -7044,
+      "endAbs": -6889,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r25-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r25",
+      "title": "平公",
+      "start": {
+        "year": -575,
+        "month": 1,
+        "abs": -6888,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -532,
+        "month": 12,
+        "abs": -6361,
+        "confidence": "year"
+      },
+      "startAbs": -6888,
+      "endAbs": -6361,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r26-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r26",
+      "title": "元公",
+      "start": {
+        "year": -531,
+        "month": 1,
+        "abs": -6360,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -517,
+        "month": 12,
+        "abs": -6181,
+        "confidence": "year"
+      },
+      "startAbs": -6360,
+      "endAbs": -6181,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r27-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r27",
+      "title": "景公",
+      "start": {
+        "year": -516,
+        "month": 1,
+        "abs": -6180,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -469,
+        "month": 12,
+        "abs": -5605,
+        "confidence": "year"
+      },
+      "startAbs": -6180,
+      "endAbs": -5605,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r28-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r28",
+      "title": "昭公",
+      "start": {
+        "year": -468,
+        "month": 1,
+        "abs": -5604,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -404,
+        "month": 12,
+        "abs": -4825,
+        "confidence": "year"
+      },
+      "startAbs": -5604,
+      "endAbs": -4825,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r29-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r29",
+      "title": "悼公",
+      "start": {
+        "year": -403,
+        "month": 1,
+        "abs": -4824,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -385,
+        "month": 12,
+        "abs": -4597,
+        "confidence": "year"
+      },
+      "startAbs": -4824,
+      "endAbs": -4597,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r30-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r30",
+      "title": "休公",
+      "start": {
+        "year": -384,
+        "month": 1,
+        "abs": -4596,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -363,
+        "month": 12,
+        "abs": -4333,
+        "confidence": "year"
+      },
+      "startAbs": -4596,
+      "endAbs": -4333,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r31-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r31",
+      "title": "桓公",
+      "start": {
+        "year": -362,
+        "month": 1,
+        "abs": -4332,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -356,
+        "month": 12,
+        "abs": -4249,
+        "confidence": "year"
+      },
+      "startAbs": -4332,
+      "endAbs": -4249,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r32-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r32",
+      "title": "剔成君",
+      "start": {
+        "year": -355,
+        "month": 1,
+        "abs": -4248,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -329,
+        "month": 12,
+        "abs": -3925,
+        "confidence": "year"
+      },
+      "startAbs": -4248,
+      "endAbs": -3925,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-song-r33-song-chunqiu",
+      "dynastyId": "song-chunqiu",
+      "personId": "song-r33",
+      "title": "康王",
+      "start": {
+        "year": -328,
+        "month": 1,
+        "abs": -3924,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -286,
+        "month": 12,
+        "abs": -3409,
+        "confidence": "year"
+      },
+      "startAbs": -3924,
+      "endAbs": -3409,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    }
+  ],
+  "events": [],
+  "relations": [],
+  "supplementalEventDynasties": [
+    {
+      "eventId": "kuiqiu",
+      "dynastyId": "song-chunqiu"
+    },
+    {
+      "eventId": "chengpu",
+      "dynastyId": "song-chunqiu"
+    },
+    {
+      "eventId": "chunqiu",
+      "dynastyId": "song-chunqiu"
+    }
+  ],
+  "supplementalEventParticipants": [],
+  "preSql": "",
+  "postSql": "-- Remove stale reigns from managed dynasties (superseded ids from older imports)\nWITH stale AS (\n  DELETE FROM reigns\n  WHERE dynasty_id IN ('song-chunqiu') AND id NOT IN ('reign-song-weizi-song-chunqiu', 'reign-song-r1-song-chunqiu', 'reign-song-r2-song-chunqiu', 'reign-song-r3-song-chunqiu', 'reign-song-r4-song-chunqiu', 'reign-song-r5-song-chunqiu', 'reign-song-r6-song-chunqiu', 'reign-song-r7-song-chunqiu', 'reign-song-r8-song-chunqiu', 'reign-song-r9-song-chunqiu', 'reign-song-r10-song-chunqiu', 'reign-song-r11-song-chunqiu', 'reign-song-r12-song-chunqiu', 'reign-song-r13-song-chunqiu', 'reign-song-r14-song-chunqiu', 'reign-song-r15-song-chunqiu', 'reign-song-r16-song-chunqiu', 'reign-song-r17-song-chunqiu', 'reign-song-r18-song-chunqiu', 'reign-song-r19-song-chunqiu', 'reign-song-r20-song-chunqiu', 'reign-song-r21-song-chunqiu', 'reign-song-r22-song-chunqiu', 'reign-song-r23-song-chunqiu', 'reign-song-r24-song-chunqiu', 'reign-song-r25-song-chunqiu', 'reign-song-r26-song-chunqiu', 'reign-song-r27-song-chunqiu', 'reign-song-r28-song-chunqiu', 'reign-song-r29-song-chunqiu', 'reign-song-r30-song-chunqiu', 'reign-song-r31-song-chunqiu', 'reign-song-r32-song-chunqiu', 'reign-song-r33-song-chunqiu')\n  RETURNING person_id\n)\nDELETE FROM persons p\nWHERE p.id IN (SELECT DISTINCT person_id FROM stale)\n  AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)\n  AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = p.id)\n  AND NOT EXISTS (\n    SELECT 1 FROM relations rel\n    WHERE (rel.from_type = 'person' AND rel.from_id = p.id)\n       OR (rel.to_type = 'person' AND rel.to_id = p.id)\n  );\nSELECT rebuild_person_search_terms();",
+  "manifest": {
+    "slug": "chunqiu-zhanguo/song-chunqiu",
+    "title": "宋（春秋战国）",
+    "window": {
+      "startYear": -1034,
+      "startMonth": 1,
+      "endYear": -286,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-10-02",
+    "counts": {
+      "persons": 35,
+      "dynasties": 1,
+      "reigns": 34,
+      "missingReigns": 0,
+      "events": 0,
+      "relations": 0,
+      "existingEventDynastyLinks": 3,
+      "existingEventParticipantLinks": 0,
+      "capitals": 0
+    },
+    "sources": [
+      {
+        "label": "春秋时期",
+        "url": "https://zh.wikipedia.org/wiki/春秋时期"
+      },
+      {
+        "label": "战国时期",
+        "url": "https://zh.wikipedia.org/wiki/战国时期"
+      },
+      {
+        "label": "战国七雄",
+        "url": "https://zh.wikipedia.org/wiki/战国七雄"
+      },
+      {
+        "label": "宋国君主列表",
+        "url": "https://zh.wikipedia.org/wiki/宋国#宋國君主列表及在位年份"
+      },
+      {
+        "label": "周朝诸侯国君主列表",
+        "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/微子"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/微仲"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/稽"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋丁公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋湣公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋炀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋厉公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋釐公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋惠公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋哀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋戴公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋武公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋宣公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋穆公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋殇公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋庄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋闵公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/游"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋桓公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋襄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋成公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/御"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋昭公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋共公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋平公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋元公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋景公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋昭公特"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋悼公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋休公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/剔成君"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋康王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/庄子"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷014"
+      },
+      {
+        "label": "夏商周断代工程与其他西周年代方案对照",
+        "url": "https://zh.wikipedia.org/wiki/夏商周断代工程#年表"
+      },
+      {
+        "label": "春秋鲁国历法复原（据张培瑜《中国古代历法》）",
+        "url": "https://ytliu0.github.io/ChineseCalendar/chunqiu_simp.html"
+      }
+    ],
+    "notes": [
+      "列国泳道名用国号（齐、楚、韩），与夏商周秦汉一致，不带「国」；「齐国」等写入 alt_names。",
+      "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
+      "各国国君世系取维基百科大陆简体（zh-cn）诸侯君主列表与《史记》年表；按表头读取称号/姓名/在位年份，不用本地繁简转换。",
+      "年精度顺序继位按逾年改元切年（死年归旧王、新王次年起算，见 缓存中的最终在位起讫日期；用维基原始起年检测，避免孝文王占死后庄襄王不再后移）。维基在位年份常与死年重叠（如秦文公起前766年）；一年短祚、秦灵公/简公/献公未逾年改元、曲沃与翼并立不后移。魏惠王称王前后合并为一条在位（前369–前319）。",
+      "西周早中期无在位年的国君原则上在相邻锚点之间按世系均分，均分结果标 起止端点标记为 interpolated_by_other。宋微子至宋厉公采用《宋国君主列表》所列《史记·宋世家》与陈梦家《西周年代考》推定年份，仍标 interpolated；宋釐公前858年为后续年表锚点。",
+      "同人多次即位拆多条 reign（reignId 后缀 -2），与唐/明一致；完整在位字段直接维护于 cache.json，不从 Wiki 原始文本自动推断或覆盖。",
+      "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 confidence: year。",
+      "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
+      "逐条复核夏商周包既有事件的诸侯国关联：《左传·僖公九年》载葵丘与会者为鲁、齐、宋、卫、郑、许、曹及周王使者；补入本包有建模泳道的鲁、宋、卫、郑、曹（许未建王朝实体）。城濮之战补入受战事直接影响的宋、曹、卫：宋受楚围而晋出兵救援，晋先伐曹、卫并以复国交涉，原有关联晋、楚保留。依据《中国哲学书电子化计划》所录《左传·僖公九年》 https://ctext.org/chun-qiu-zuo-zhuan/xi-gong-jiu-nian/zhs ，以及《菏泽历史文化集萃·城濮之战》 https://shandong-chorography.org/database/bh/section/22/article/66/ 。",
+      "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
+      "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
+      "称谓复核（2026-10）：本包君主卡片称呼写入对应 reign.title。已有谥号者使用 persons.posthumousNames 的首选本体（不带国名）；无谥号者采用已核对的人物 title，并去除国名前缀；已有非空 reign.title 亦按无国名称呼规则复核。具体来源沿用各人物 links 与本包 manifest.sources。",
+      "2026-10-02按王朝拆包：本包由原chunqiu-zhanguo缓存中的宋记录原样迁移，保留实体ID、史实、日期及置信度。人物按在位归属唯一拥有，非在位人物按迭代归属分配；事件由dynastyIds首项所属包唯一拥有；事件关联按目标王朝或人物归属分配，跨包关系只引用既有ID，不重复写关联行。原包完整来源与复核说明另行归档。"
+    ]
+  }
+}

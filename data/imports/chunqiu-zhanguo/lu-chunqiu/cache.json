@@ -1,0 +1,1956 @@
+{
+  "slug": "chunqiu-zhanguo/lu-chunqiu",
+  "window": {
+    "startYear": -1042,
+    "startMonth": 1,
+    "endYear": -256,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "bo-qin",
+      "name": "伯禽",
+      "roles": [
+        "君主"
+      ],
+      "bio": "周公旦之子，周成王封于鲁为开国君主，帅师洙泗、修礼乐，治理鲁国约四十五年，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/伯禽"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "伯禽",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r1",
+      "name": "酋",
+      "roles": [
+        "君主"
+      ],
+      "bio": "伯禽之子酋，谥考公，在位四年，为鲁国第二代君主，世次见《史记·鲁周公世家》，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁考公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "考公"
+      ],
+      "templeNames": [],
+      "title": "鲁考公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r2",
+      "name": "熙",
+      "roles": [
+        "君主"
+      ],
+      "bio": "考公弟熙弑兄自立，谥炀公，在位六年，为鲁国早期因篡弑更迭之例，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁炀公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "炀公"
+      ],
+      "templeNames": [],
+      "title": "鲁炀公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r3",
+      "name": "宰",
+      "roles": [
+        "君主"
+      ],
+      "bio": "炀公之子宰，谥幽公，在位十四年，承续鲁国嫡系，西周时期事迹记载疏略，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁幽公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "幽公"
+      ],
+      "templeNames": [],
+      "title": "鲁幽公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r4",
+      "name": "晞",
+      "roles": [
+        "君主"
+      ],
+      "bio": "幽公之子晞，谥魏公，在位近五十年，为鲁国西周时期在位时间较长之君，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁魏公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "魏公"
+      ],
+      "templeNames": [],
+      "title": "鲁魏公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r5",
+      "name": "擢",
+      "roles": [
+        "君主"
+      ],
+      "bio": "魏公之子擢，谥厉公，在位三十七年，属西周晚期鲁国君主，除世次外史料有限，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁厉公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "厉公"
+      ],
+      "templeNames": [],
+      "title": "鲁厉公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r6",
+      "name": "具",
+      "roles": [
+        "君主"
+      ],
+      "bio": "厉公之子具，谥献公，在位约三十二年，承续鲁国世系，事迹记载甚少，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁献公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "献公"
+      ],
+      "templeNames": [],
+      "title": "鲁献公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r7",
+      "name": "濞",
+      "roles": [
+        "君主"
+      ],
+      "bio": "献公之子濞，谥真公，在位约三十年，为春秋以前鲁国世君之一，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁真公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "真公"
+      ],
+      "templeNames": [],
+      "title": "鲁真公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r8",
+      "name": "敖",
+      "roles": [
+        "君主"
+      ],
+      "bio": "真公之子敖，谥武公，在位九年，承续鲁国嫡系，事迹除世次外记载有限，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁武公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "武公"
+      ],
+      "templeNames": [],
+      "title": "鲁武公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r9",
+      "name": "戏",
+      "roles": [
+        "君主"
+      ],
+      "bio": "武公之子戏，谥懿公，在位九年，后被侄伯御所弑，鲁国再度陷入内争，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁懿公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "懿公"
+      ],
+      "templeNames": [],
+      "title": "鲁懿公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r10",
+      "name": "伯御",
+      "roles": [
+        "君主"
+      ],
+      "bio": "懿公侄伯御弑君自立，在位十一年，前796年周宣王命鲁人杀伯御，立孝公称复位，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/伯御"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "伯御",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r11",
+      "name": "称",
+      "roles": [
+        "君主"
+      ],
+      "bio": "武公之子称，谥孝公，周宣王命杀伯御后立之，在位近三十年，鲁国政局复归嫡系，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁孝公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "孝公"
+      ],
+      "templeNames": [],
+      "title": "鲁孝公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r12",
+      "name": "弗涅",
+      "roles": [
+        "君主"
+      ],
+      "bio": "孝公之子弗涅，谥惠公，在位四十六年，娶孟子无子，继室声子生隐公，仲子生桓公，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁惠公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "惠公"
+      ],
+      "templeNames": [],
+      "title": "鲁惠公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r13",
+      "name": "息姑",
+      "roles": [
+        "君主"
+      ],
+      "bio": "惠公庶长子息姑，谥隐公，因弟允年幼而摄政，《春秋》纪年起于此，前712年为羽父所弑。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁隐公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "隐公"
+      ],
+      "templeNames": [],
+      "title": "鲁隐公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r14",
+      "name": "允",
+      "roles": [
+        "君主"
+      ],
+      "bio": "惠公嫡子允，谥桓公，隐公遇弑后继位，会盟诸侯，前694年赴齐，为齐襄公所杀，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁桓公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "桓公"
+      ],
+      "templeNames": [],
+      "title": "鲁桓公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r15",
+      "name": "同",
+      "roles": [
+        "君主"
+      ],
+      "bio": "桓公嫡子同，谥庄公，即位初年谷丘败齐，长期与齐、晋周旋，在位三十一年，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁庄公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "庄公"
+      ],
+      "templeNames": [],
+      "title": "鲁庄公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r16",
+      "name": "启",
+      "roles": [
+        "君主"
+      ],
+      "bio": "庄公之子启，谥闵公，在位仅两年，庆父作乱，先后弑闵公与桓公庶子，鲁国几近亡国，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁闵公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "闵公"
+      ],
+      "templeNames": [],
+      "title": "鲁闵公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r17",
+      "name": "申",
+      "roles": [
+        "君主"
+      ],
+      "bio": "庄公嫡子申，谥釐公，季友立之复位，先后败齐、败宋，在位三十二年，奠定鲁中期局势。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁釐公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "釐公"
+      ],
+      "templeNames": [],
+      "title": "鲁釐公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r18",
+      "name": "兴",
+      "roles": [
+        "君主"
+      ],
+      "bio": "釐公之子兴，谥文公，在位十八年，任用季孙、孟孙、叔孙，三桓势力渐盛，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁文公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "文公"
+      ],
+      "templeNames": [],
+      "title": "鲁文公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r19",
+      "name": "馁",
+      "roles": [
+        "君主"
+      ],
+      "bio": "文公之子馁，谥宣公，襄仲弑文公而立之，逆天乱常，三桓专权之势由此加剧，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁宣公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "宣公"
+      ],
+      "templeNames": [],
+      "title": "鲁宣公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r20",
+      "name": "黑肱",
+      "roles": [
+        "君主"
+      ],
+      "bio": "宣公之子黑肱，谥成公，在位十八年，与晋、齐会盟，鲁国已渐为大国附庸，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁成公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "成公"
+      ],
+      "templeNames": [],
+      "title": "鲁成公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r21",
+      "name": "午",
+      "roles": [
+        "君主"
+      ],
+      "bio": "成公之子午，谥襄公，在位三十年，三桓专国，鲁政日衰，《春秋》后期多载其会盟，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁襄公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "襄公"
+      ],
+      "templeNames": [],
+      "title": "鲁襄公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r22",
+      "name": "野",
+      "roles": [
+        "君主"
+      ],
+      "bio": "襄公之子野，未得谥号，即位同年赴田而死，为鲁国罕见的即位即卒之君，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/君野"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "君野",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r23",
+      "name": "稠",
+      "roles": [
+        "君主"
+      ],
+      "bio": "襄公之子稠，谥昭公，在位三十一年，遭三桓逼迫出奔，先后流亡齐、晋，终死于国外，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁昭公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "昭公"
+      ],
+      "templeNames": [],
+      "title": "鲁昭公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r24",
+      "name": "宋",
+      "roles": [
+        "君主"
+      ],
+      "bio": "昭公之弟宋，谥定公，在位十四年，孔子自卫返鲁在其任内，鲁国礼乐稍得修明，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁定公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "定公"
+      ],
+      "templeNames": [],
+      "title": "鲁定公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r25",
+      "name": "将",
+      "roles": [
+        "君主"
+      ],
+      "bio": "定公之子将，谥哀公，在位二十七年，孔子卒于其治世，鲁国已完全为三桓所挟持，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁哀公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "哀公"
+      ],
+      "templeNames": [],
+      "title": "鲁哀公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r26",
+      "name": "宁",
+      "roles": [
+        "君主"
+      ],
+      "bio": "哀公之子宁，谥悼公，在位三十年，战国初鲁国君主，国势衰微，事迹记载有限，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁悼公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "悼公"
+      ],
+      "templeNames": [],
+      "title": "鲁悼公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r27",
+      "name": "嘉",
+      "roles": [
+        "君主"
+      ],
+      "bio": "悼公之子嘉，谥元公，在位二十年，属战国早期鲁国世君，除世次外史料疏略，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁元公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "元公"
+      ],
+      "templeNames": [],
+      "title": "鲁元公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r28",
+      "name": "显",
+      "roles": [
+        "君主"
+      ],
+      "bio": "元公之子显，谥穆公，在位三十二年，战国中期鲁国君主，国势已沦为小国，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁穆公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "穆公"
+      ],
+      "templeNames": [],
+      "title": "鲁穆公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r29",
+      "name": "奋",
+      "roles": [
+        "君主"
+      ],
+      "bio": "穆公之子奋，谥共公，在位三十年，承续鲁国世系，事迹除世次外记载甚少，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁共公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "共公"
+      ],
+      "templeNames": [],
+      "title": "鲁共公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r30",
+      "name": "屯",
+      "roles": [
+        "君主"
+      ],
+      "bio": "共公之子屯，谥康公，在位九年，战国中期鲁国短暂在位之君，国势已十分卑微，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁康公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "康公"
+      ],
+      "templeNames": [],
+      "title": "鲁康公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r31",
+      "name": "匽",
+      "roles": [
+        "君主"
+      ],
+      "bio": "康公之子匽，谥景公，在位二十年，战国中后期鲁国君主，国势卑微，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁景公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "景公"
+      ],
+      "templeNames": [],
+      "title": "鲁景公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r32",
+      "name": "叔",
+      "roles": [
+        "君主"
+      ],
+      "bio": "景公之子叔，谥平公，在位十九年，承续鲁国世系，事迹记载有限，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁平公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "平公"
+      ],
+      "templeNames": [],
+      "title": "鲁平公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r33",
+      "name": "贾",
+      "roles": [
+        "君主"
+      ],
+      "bio": "平公之子贾，谥文公，在位二十三年，与顷公易混，为战国晚期鲁国世君之一，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁文公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "文公"
+      ],
+      "templeNames": [],
+      "title": "鲁文公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    },
+    {
+      "id": "lu-r34",
+      "name": "仇",
+      "roles": [
+        "君主"
+      ],
+      "bio": "文公之子仇，谥顷公，鲁国末代君主，前256年秦灭周，顷公附楚，前249年楚灭鲁。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/鲁顷公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "顷公"
+      ],
+      "templeNames": [],
+      "title": "鲁顷公",
+      "ancestralXing": "姬",
+      "clanShi": "鲁"
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "lu-chunqiu",
+      "name": "鲁",
+      "altNames": [
+        "鲁国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -1042,
+        "month": 1,
+        "abs": -12492,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -256,
+        "month": 12,
+        "abs": -3049,
+        "confidence": "month"
+      },
+      "note": "周武王封周公旦于鲁；孔子故乡，前256年楚灭鲁。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-bo-qin-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "bo-qin",
+      "title": "伯禽",
+      "start": {
+        "year": -1043,
+        "month": 1,
+        "abs": -12504,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -998,
+        "month": 12,
+        "abs": -11953,
+        "confidence": "year"
+      },
+      "startAbs": -12504,
+      "endAbs": -11953,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r1-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r1",
+      "title": "考公",
+      "start": {
+        "year": -997,
+        "month": 1,
+        "abs": -11952,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -994,
+        "month": 12,
+        "abs": -11905,
+        "confidence": "year"
+      },
+      "startAbs": -11952,
+      "endAbs": -11905,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r2-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r2",
+      "title": "炀公",
+      "start": {
+        "year": -993,
+        "month": 1,
+        "abs": -11904,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -988,
+        "month": 12,
+        "abs": -11833,
+        "confidence": "year"
+      },
+      "startAbs": -11904,
+      "endAbs": -11833,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r3-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r3",
+      "title": "幽公",
+      "start": {
+        "year": -987,
+        "month": 1,
+        "abs": -11832,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -974,
+        "month": 12,
+        "abs": -11665,
+        "confidence": "year"
+      },
+      "startAbs": -11832,
+      "endAbs": -11665,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r4-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r4",
+      "title": "魏公",
+      "start": {
+        "year": -973,
+        "month": 1,
+        "abs": -11664,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -924,
+        "month": 12,
+        "abs": -11065,
+        "confidence": "year"
+      },
+      "startAbs": -11664,
+      "endAbs": -11065,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r5-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r5",
+      "title": "厉公",
+      "start": {
+        "year": -923,
+        "month": 1,
+        "abs": -11064,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -887,
+        "month": 12,
+        "abs": -10621,
+        "confidence": "year"
+      },
+      "startAbs": -11064,
+      "endAbs": -10621,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r6-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r6",
+      "title": "献公",
+      "start": {
+        "year": -886,
+        "month": 1,
+        "abs": -10620,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -855,
+        "month": 12,
+        "abs": -10237,
+        "confidence": "year"
+      },
+      "startAbs": -10620,
+      "endAbs": -10237,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r7-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r7",
+      "title": "真公",
+      "start": {
+        "year": -854,
+        "month": 1,
+        "abs": -10236,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -825,
+        "month": 12,
+        "abs": -9877,
+        "confidence": "year"
+      },
+      "startAbs": -10236,
+      "endAbs": -9877,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r8-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r8",
+      "title": "武公",
+      "start": {
+        "year": -824,
+        "month": 1,
+        "abs": -9876,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -816,
+        "month": 12,
+        "abs": -9769,
+        "confidence": "year"
+      },
+      "startAbs": -9876,
+      "endAbs": -9769,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r9-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r9",
+      "title": "懿公",
+      "start": {
+        "year": -815,
+        "month": 1,
+        "abs": -9768,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -807,
+        "month": 12,
+        "abs": -9661,
+        "confidence": "year"
+      },
+      "startAbs": -9768,
+      "endAbs": -9661,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r10-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r10",
+      "title": "伯御",
+      "start": {
+        "year": -806,
+        "month": 1,
+        "abs": -9660,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -796,
+        "month": 12,
+        "abs": -9529,
+        "confidence": "year"
+      },
+      "startAbs": -9660,
+      "endAbs": -9529,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r11-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r11",
+      "title": "孝公",
+      "start": {
+        "year": -795,
+        "month": 1,
+        "abs": -9528,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -769,
+        "month": 12,
+        "abs": -9205,
+        "confidence": "year"
+      },
+      "startAbs": -9528,
+      "endAbs": -9205,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r12-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r12",
+      "title": "惠公",
+      "start": {
+        "year": -768,
+        "month": 1,
+        "abs": -9204,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -723,
+        "month": 12,
+        "abs": -8653,
+        "confidence": "year"
+      },
+      "startAbs": -9204,
+      "endAbs": -8653,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r13-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r13",
+      "title": "隐公",
+      "start": {
+        "year": -722,
+        "month": 1,
+        "abs": -8652,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -712,
+        "month": 12,
+        "abs": -8521,
+        "confidence": "year"
+      },
+      "startAbs": -8652,
+      "endAbs": -8521,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r14-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r14",
+      "title": "桓公",
+      "start": {
+        "year": -711,
+        "month": 1,
+        "abs": -8520,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -694,
+        "month": 12,
+        "abs": -8305,
+        "confidence": "year"
+      },
+      "startAbs": -8520,
+      "endAbs": -8305,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r15-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r15",
+      "title": "庄公",
+      "start": {
+        "year": -693,
+        "month": 1,
+        "abs": -8304,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -662,
+        "month": 12,
+        "abs": -7921,
+        "confidence": "year"
+      },
+      "startAbs": -8304,
+      "endAbs": -7921,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r16-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r16",
+      "title": "闵公",
+      "start": {
+        "year": -661,
+        "month": 1,
+        "abs": -7920,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -660,
+        "month": 12,
+        "abs": -7897,
+        "confidence": "year"
+      },
+      "startAbs": -7920,
+      "endAbs": -7897,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r17-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r17",
+      "title": "釐公",
+      "start": {
+        "year": -659,
+        "month": 1,
+        "abs": -7896,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -627,
+        "month": 12,
+        "abs": -7501,
+        "confidence": "year"
+      },
+      "startAbs": -7896,
+      "endAbs": -7501,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r18-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r18",
+      "title": "文公",
+      "start": {
+        "year": -626,
+        "month": 1,
+        "abs": -7500,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -609,
+        "month": 12,
+        "abs": -7285,
+        "confidence": "year"
+      },
+      "startAbs": -7500,
+      "endAbs": -7285,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r19-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r19",
+      "title": "宣公",
+      "start": {
+        "year": -608,
+        "month": 1,
+        "abs": -7284,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -591,
+        "month": 12,
+        "abs": -7069,
+        "confidence": "year"
+      },
+      "startAbs": -7284,
+      "endAbs": -7069,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r20-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r20",
+      "title": "成公",
+      "start": {
+        "year": -590,
+        "month": 1,
+        "abs": -7068,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -573,
+        "month": 12,
+        "abs": -6853,
+        "confidence": "year"
+      },
+      "startAbs": -7068,
+      "endAbs": -6853,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r21-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r21",
+      "title": "襄公",
+      "start": {
+        "year": -572,
+        "month": 1,
+        "abs": -6852,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -542,
+        "month": 12,
+        "abs": -6481,
+        "confidence": "year"
+      },
+      "startAbs": -6852,
+      "endAbs": -6481,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r22-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r22",
+      "title": "君野",
+      "start": {
+        "year": -542,
+        "month": 1,
+        "abs": -6492,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -542,
+        "month": 12,
+        "abs": -6481,
+        "confidence": "year"
+      },
+      "startAbs": -6492,
+      "endAbs": -6481,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r23-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r23",
+      "title": "昭公",
+      "start": {
+        "year": -541,
+        "month": 1,
+        "abs": -6480,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -510,
+        "month": 12,
+        "abs": -6097,
+        "confidence": "year"
+      },
+      "startAbs": -6480,
+      "endAbs": -6097,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r24-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r24",
+      "title": "定公",
+      "start": {
+        "year": -509,
+        "month": 1,
+        "abs": -6096,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -495,
+        "month": 12,
+        "abs": -5917,
+        "confidence": "year"
+      },
+      "startAbs": -6096,
+      "endAbs": -5917,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r25-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r25",
+      "title": "哀公",
+      "start": {
+        "year": -494,
+        "month": 1,
+        "abs": -5916,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -468,
+        "month": 12,
+        "abs": -5593,
+        "confidence": "year"
+      },
+      "startAbs": -5916,
+      "endAbs": -5593,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r26-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r26",
+      "title": "悼公",
+      "start": {
+        "year": -467,
+        "month": 1,
+        "abs": -5592,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -437,
+        "month": 12,
+        "abs": -5221,
+        "confidence": "year"
+      },
+      "startAbs": -5592,
+      "endAbs": -5221,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r27-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r27",
+      "title": "元公",
+      "start": {
+        "year": -436,
+        "month": 1,
+        "abs": -5220,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -416,
+        "month": 12,
+        "abs": -4969,
+        "confidence": "year"
+      },
+      "startAbs": -5220,
+      "endAbs": -4969,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r28-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r28",
+      "title": "穆公",
+      "start": {
+        "year": -415,
+        "month": 1,
+        "abs": -4968,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -383,
+        "month": 12,
+        "abs": -4573,
+        "confidence": "year"
+      },
+      "startAbs": -4968,
+      "endAbs": -4573,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r29-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r29",
+      "title": "共公",
+      "start": {
+        "year": -382,
+        "month": 1,
+        "abs": -4572,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -353,
+        "month": 12,
+        "abs": -4213,
+        "confidence": "year"
+      },
+      "startAbs": -4572,
+      "endAbs": -4213,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r30-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r30",
+      "title": "康公",
+      "start": {
+        "year": -352,
+        "month": 1,
+        "abs": -4212,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -344,
+        "month": 12,
+        "abs": -4105,
+        "confidence": "year"
+      },
+      "startAbs": -4212,
+      "endAbs": -4105,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r31-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r31",
+      "title": "景公",
+      "start": {
+        "year": -343,
+        "month": 1,
+        "abs": -4104,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -323,
+        "month": 12,
+        "abs": -3853,
+        "confidence": "year"
+      },
+      "startAbs": -4104,
+      "endAbs": -3853,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r32-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r32",
+      "title": "平公",
+      "start": {
+        "year": -322,
+        "month": 1,
+        "abs": -3852,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -303,
+        "month": 12,
+        "abs": -3613,
+        "confidence": "year"
+      },
+      "startAbs": -3852,
+      "endAbs": -3613,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r33-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r33",
+      "title": "文公",
+      "start": {
+        "year": -302,
+        "month": 1,
+        "abs": -3612,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -280,
+        "month": 12,
+        "abs": -3337,
+        "confidence": "year"
+      },
+      "startAbs": -3612,
+      "endAbs": -3337,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-lu-r34-lu-chunqiu",
+      "dynastyId": "lu-chunqiu",
+      "personId": "lu-r34",
+      "title": "顷公",
+      "start": {
+        "year": -279,
+        "month": 1,
+        "abs": -3336,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -256,
+        "month": 12,
+        "abs": -3049,
+        "confidence": "year"
+      },
+      "startAbs": -3336,
+      "endAbs": -3049,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    }
+  ],
+  "events": [],
+  "relations": [],
+  "supplementalEventDynasties": [
+    {
+      "eventId": "kuiqiu",
+      "dynastyId": "lu-chunqiu"
+    },
+    {
+      "eventId": "chunqiu",
+      "dynastyId": "lu-chunqiu"
+    },
+    {
+      "eventId": "baijia-zhengming",
+      "dynastyId": "lu-chunqiu"
+    }
+  ],
+  "supplementalEventParticipants": [],
+  "preSql": "",
+  "postSql": "-- Remove stale reigns from managed dynasties (superseded ids from older imports)\nWITH stale AS (\n  DELETE FROM reigns\n  WHERE dynasty_id IN ('lu-chunqiu') AND id NOT IN ('reign-bo-qin-lu-chunqiu', 'reign-lu-r1-lu-chunqiu', 'reign-lu-r2-lu-chunqiu', 'reign-lu-r3-lu-chunqiu', 'reign-lu-r4-lu-chunqiu', 'reign-lu-r5-lu-chunqiu', 'reign-lu-r6-lu-chunqiu', 'reign-lu-r7-lu-chunqiu', 'reign-lu-r8-lu-chunqiu', 'reign-lu-r9-lu-chunqiu', 'reign-lu-r10-lu-chunqiu', 'reign-lu-r11-lu-chunqiu', 'reign-lu-r12-lu-chunqiu', 'reign-lu-r13-lu-chunqiu', 'reign-lu-r14-lu-chunqiu', 'reign-lu-r15-lu-chunqiu', 'reign-lu-r16-lu-chunqiu', 'reign-lu-r17-lu-chunqiu', 'reign-lu-r18-lu-chunqiu', 'reign-lu-r19-lu-chunqiu', 'reign-lu-r20-lu-chunqiu', 'reign-lu-r21-lu-chunqiu', 'reign-lu-r22-lu-chunqiu', 'reign-lu-r23-lu-chunqiu', 'reign-lu-r24-lu-chunqiu', 'reign-lu-r25-lu-chunqiu', 'reign-lu-r26-lu-chunqiu', 'reign-lu-r27-lu-chunqiu', 'reign-lu-r28-lu-chunqiu', 'reign-lu-r29-lu-chunqiu', 'reign-lu-r30-lu-chunqiu', 'reign-lu-r31-lu-chunqiu', 'reign-lu-r32-lu-chunqiu', 'reign-lu-r33-lu-chunqiu', 'reign-lu-r34-lu-chunqiu')\n  RETURNING person_id\n)\nDELETE FROM persons p\nWHERE p.id IN (SELECT DISTINCT person_id FROM stale)\n  AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)\n  AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = p.id)\n  AND NOT EXISTS (\n    SELECT 1 FROM relations rel\n    WHERE (rel.from_type = 'person' AND rel.from_id = p.id)\n       OR (rel.to_type = 'person' AND rel.to_id = p.id)\n  );\nSELECT rebuild_person_search_terms();",
+  "manifest": {
+    "slug": "chunqiu-zhanguo/lu-chunqiu",
+    "title": "鲁（春秋战国）",
+    "window": {
+      "startYear": -1042,
+      "startMonth": 1,
+      "endYear": -256,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-10-02",
+    "counts": {
+      "persons": 35,
+      "dynasties": 1,
+      "reigns": 35,
+      "missingReigns": 0,
+      "events": 0,
+      "relations": 0,
+      "existingEventDynastyLinks": 3,
+      "existingEventParticipantLinks": 0,
+      "capitals": 0
+    },
+    "sources": [
+      {
+        "label": "春秋时期",
+        "url": "https://zh.wikipedia.org/wiki/春秋时期"
+      },
+      {
+        "label": "战国时期",
+        "url": "https://zh.wikipedia.org/wiki/战国时期"
+      },
+      {
+        "label": "战国七雄",
+        "url": "https://zh.wikipedia.org/wiki/战国七雄"
+      },
+      {
+        "label": "周朝诸侯国君主列表",
+        "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/伯禽"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁考公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁炀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁幽公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁魏公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁厉公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁献公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁真公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁武公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁懿公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/伯御"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁孝公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁惠公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁隐公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁桓公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁庄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁闵公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁釐公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁宣公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁成公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁襄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/君野"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁昭公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁定公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁哀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁悼公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁元公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁穆公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁共公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁康公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁景公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁平公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁顷公"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷014"
+      },
+      {
+        "label": "夏商周断代工程与其他西周年代方案对照",
+        "url": "https://zh.wikipedia.org/wiki/夏商周断代工程#年表"
+      },
+      {
+        "label": "《春秋左氏传·庄公》",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳/莊公"
+      },
+      {
+        "label": "《春秋左氏传·僖公》",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳/僖公"
+      },
+      {
+        "label": "《春秋左氏传·文公》",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳/文公"
+      },
+      {
+        "label": "《春秋左氏传·哀公》",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳/哀公"
+      },
+      {
+        "label": "春秋鲁国历法复原（据张培瑜《中国古代历法》）",
+        "url": "https://ytliu0.github.io/ChineseCalendar/chunqiu_simp.html"
+      }
+    ],
+    "notes": [
+      "列国泳道名用国号（齐、楚、韩），与夏商周秦汉一致，不带「国」；「齐国」等写入 alt_names。",
+      "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
+      "各国国君世系取维基百科大陆简体（zh-cn）诸侯君主列表与《史记》年表；按表头读取称号/姓名/在位年份，不用本地繁简转换。",
+      "年精度顺序继位按逾年改元切年（死年归旧王、新王次年起算，见 缓存中的最终在位起讫日期；用维基原始起年检测，避免孝文王占死后庄襄王不再后移）。维基在位年份常与死年重叠（如秦文公起前766年）；一年短祚、秦灵公/简公/献公未逾年改元、曲沃与翼并立不后移。魏惠王称王前后合并为一条在位（前369–前319）。",
+      "同人多次即位拆多条 reign（reignId 后缀 -2），与唐/明一致；完整在位字段直接维护于 cache.json，不从 Wiki 原始文本自动推断或覆盖。",
+      "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 confidence: year。",
+      "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
+      "逐条复核夏商周包既有事件的诸侯国关联：《左传·僖公九年》载葵丘与会者为鲁、齐、宋、卫、郑、许、曹及周王使者；补入本包有建模泳道的鲁、宋、卫、郑、曹（许未建王朝实体）。城濮之战补入受战事直接影响的宋、曹、卫：宋受楚围而晋出兵救援，晋先伐曹、卫并以复国交涉，原有关联晋、楚保留。依据《中国哲学书电子化计划》所录《左传·僖公九年》 https://ctext.org/chun-qiu-zuo-zhuan/xi-gong-jiu-nian/zhs ，以及《菏泽历史文化集萃·城濮之战》 https://shandong-chorography.org/database/bh/section/22/article/66/ 。",
+      "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
+      "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
+      "称谓复核（2026-10）：本包君主卡片称呼写入对应 reign.title。已有谥号者使用 persons.posthumousNames 的首选本体（不带国名）；无谥号者采用已核对的人物 title，并去除国名前缀；已有非空 reign.title 亦按无国名称呼规则复核。具体来源沿用各人物 links 与本包 manifest.sources。",
+      "2026-10-02按王朝拆包：本包由原chunqiu-zhanguo缓存中的鲁记录原样迁移，保留实体ID、史实、日期及置信度。人物按在位归属唯一拥有，非在位人物按迭代归属分配；事件由dynastyIds首项所属包唯一拥有；事件关联按目标王朝或人物归属分配，跨包关系只引用既有ID，不重复写关联行。原包完整来源与复核说明另行归档。"
+    ]
+  }
+}

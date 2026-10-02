@@ -1,9 +1,10 @@
 #!/usr/bin/env node
-import { readdirSync, statSync } from "node:fs";
+import { statSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { generateCachedPackageFromDirectory } from "./lib/generateCachedPackage.mjs";
 import { auditPackageOwnership } from "./lib/auditPackageOwnership.mjs";
+import { discoverPackages, resolvePackageDirectory } from "./lib/discoverPackages.mjs";
 
 const importsRoot = path.dirname(fileURLToPath(import.meta.url));
 const target = process.argv[2];
@@ -13,19 +14,13 @@ if (!target) {
 }
 
 const slugs = target === "--all"
-  ? readdirSync(importsRoot).filter((slug) => {
-    const dir = path.join(importsRoot, slug);
-    return statSync(dir).isDirectory() && statSync(path.join(dir, "cache.json"), { throwIfNoEntry: false });
-  }).sort()
+  ? discoverPackages(importsRoot)
   : [target];
 
 auditPackageOwnership(importsRoot);
 
 for (const slug of slugs) {
-  if (slug !== path.basename(slug) || slug.startsWith(".")) {
-    throw new Error(`Invalid import package slug: ${slug}`);
-  }
-  const dir = path.join(importsRoot, slug);
+  const dir = resolvePackageDirectory(importsRoot, slug);
   if (!statSync(dir, { throwIfNoEntry: false })?.isDirectory() || !statSync(path.join(dir, "cache.json"), { throwIfNoEntry: false })) {
     throw new Error(`Import package has no cache.json: ${slug}`);
   }

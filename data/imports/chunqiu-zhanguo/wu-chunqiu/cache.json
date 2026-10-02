@@ -1,0 +1,1502 @@
+{
+  "slug": "chunqiu-zhanguo/wu-chunqiu",
+  "window": {
+    "startYear": -1100,
+    "startMonth": 1,
+    "endYear": -473,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "wu-pre-r0",
+      "name": "泰伯",
+      "roles": [
+        "君主"
+      ],
+      "bio": "泰伯，吴国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/泰伯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "泰伯",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-pre-r1",
+      "name": "仲雍",
+      "roles": [
+        "君主"
+      ],
+      "bio": "仲雍，吴国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/仲雍"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "仲雍",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-pre-r2",
+      "name": "季简",
+      "roles": [
+        "君主"
+      ],
+      "bio": "季简，吴国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/季简"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "季简",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-pre-r3",
+      "name": "叔达",
+      "roles": [
+        "君主"
+      ],
+      "bio": "叔达，吴国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/叔达"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "叔达",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-pre-r4",
+      "name": "周章",
+      "roles": [
+        "君主"
+      ],
+      "bio": "周章，吴国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周章"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "周章",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-pre-r5",
+      "name": "熊遂",
+      "roles": [
+        "君主"
+      ],
+      "bio": "熊遂，吴国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/熊遂"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "熊遂",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-pre-r6",
+      "name": "柯相",
+      "roles": [
+        "君主"
+      ],
+      "bio": "柯相，吴国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/柯相"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "柯相",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-pre-r7",
+      "name": "彊鸠夷",
+      "roles": [
+        "君主"
+      ],
+      "bio": "彊鸠夷，吴国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/彊鸠夷"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "彊鸠夷",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-pre-r8",
+      "name": "余桥疑吾",
+      "roles": [
+        "君主"
+      ],
+      "bio": "余桥疑吾，吴国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/余桥疑吾"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "余桥疑吾",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-pre-r9",
+      "name": "柯卢",
+      "roles": [
+        "君主"
+      ],
+      "bio": "柯卢，吴国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/柯卢"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "柯卢",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-pre-r10",
+      "name": "周繇",
+      "roles": [
+        "君主"
+      ],
+      "bio": "周繇，吴国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/周繇"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "周繇",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-pre-r11",
+      "name": "屈羽",
+      "roles": [
+        "君主"
+      ],
+      "bio": "屈羽，吴国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/屈羽"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "屈羽",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-pre-r12",
+      "name": "夷吾",
+      "roles": [
+        "君主"
+      ],
+      "bio": "夷吾，吴国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/夷吾"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "夷吾",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-pre-r13",
+      "name": "禽处",
+      "roles": [
+        "君主"
+      ],
+      "bio": "禽处，吴国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/禽处"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "禽处",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-pre-r14",
+      "name": "转",
+      "roles": [
+        "君主"
+      ],
+      "bio": "转，吴国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/转"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "转",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-pre-r15",
+      "name": "颇高",
+      "roles": [
+        "君主"
+      ],
+      "bio": "颇高，吴国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/颇高"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "颇高",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-pre-r16",
+      "name": "句卑",
+      "roles": [
+        "君主"
+      ],
+      "bio": "句卑，吴国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/句卑"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "句卑",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-pre-r17",
+      "name": "去齐",
+      "roles": [
+        "君主"
+      ],
+      "bio": "去齐，吴国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/去齐"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "去齐",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-r0",
+      "name": "乘",
+      "roles": [
+        "君主"
+      ],
+      "bio": "吴国始称王者，在位时屡伐楚国，开吴国争霸之业，国势渐强，为后世霸业奠基，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/吴王寿梦"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "寿梦",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-r1",
+      "name": "遏",
+      "roles": [
+        "君主"
+      ],
+      "bio": "寿梦之子，依遗命实行兄终弟及。战死传位弟余祭，吴国继续扩张，国势强盛，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/吴王诸樊"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "诸樊",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-r2",
+      "name": "余祭",
+      "roles": [
+        "君主"
+      ],
+      "bio": "诸樊之弟，在位仅三年。继续实行兄终弟及，传位余昧，国势平稳，维持扩张，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/吴王余祭"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "余祭",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-r3",
+      "name": "余眛",
+      "roles": [
+        "君主"
+      ],
+      "bio": "余祭之弟，在位十六年。兄终弟及末代，传位诸樊子僚，吴国政局动荡不安，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/吴王余昧"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "余昧",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-r4",
+      "name": "僚",
+      "roles": [
+        "君主"
+      ],
+      "bio": "诸樊之侄，在位十一年。遭公子光（阖闾）刺杀，吴国权力更迭，政局动荡，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/吴王僚"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "僚",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "helu",
+      "name": "阖闾",
+      "roles": [
+        "君主"
+      ],
+      "bio": "弑僚自立，任用伍子胥、孙武。破楚入郢，与越王勾践争霸，战死槜李，吴国霸业奠基，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/阖闾"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "阖闾",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "wu-fu-gai",
+      "name": "夫概",
+      "roles": [
+        "君主"
+      ],
+      "bio": "阖闾之弟。前505年自立为吴王，不久败走楚国；见吴国君主列表。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/吴王夫概"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "夫概",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "fu-chai",
+      "name": "夫差",
+      "roles": [
+        "君主"
+      ],
+      "bio": "阖闾之子，数次伐越。夫椒战后为勾践所灭，吴国亡，夫差自杀，霸业终结，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/吴王夫差"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "夫差",
+      "ancestralXing": "姬",
+      "clanShi": "姑发"
+    },
+    {
+      "id": "sun-wu",
+      "name": "孙武",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "齐国军事家，著《孙子兵法》，传为吴王阖闾将；《史记》称他向阖闾进呈兵法并训练吴军；其生平记载有限，兵书作者身份亦有学术讨论。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/孙武"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "wu-zixu",
+      "name": "伍子胥",
+      "roles": [
+        "军事家",
+        "政治家"
+      ],
+      "bio": "楚人，助吴王阖闾破楚入郢，后被夫差赐死；夫差听信伯嚭谗言，令其自尽并投尸江中；其故事成为忠谏遭谗的典故。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/伍子胥"
+        }
+      ],
+      "birth": {
+        "year": -559,
+        "month": 1,
+        "abs": -6696
+      },
+      "death": {
+        "year": -484,
+        "month": 1,
+        "abs": -5796
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "wu-chunqiu",
+      "name": "吴",
+      "altNames": [
+        "吴国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -1100,
+        "month": 1,
+        "abs": -13188,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -473,
+        "month": 12,
+        "abs": -5653,
+        "confidence": "month"
+      },
+      "note": "传世世系上溯至泰伯；《史记·吴太伯世家》记载武王克殷时周章已君吴，本项目以西周建国年（前1046）为周章起年确定锚点。锚点前后的无年表连续君主分别按世系均分，失考边标为 interpolated；寿梦起始保留前585年年表锚点。前473年越灭吴。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-wu-pre-r0-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r0",
+      "title": "泰伯",
+      "start": {
+        "year": -1100,
+        "month": 1,
+        "abs": -13188,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -1088,
+        "month": 12,
+        "abs": -13033,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -13188,
+      "endAbs": -13033,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "approximate_year",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-wu-pre-r1-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r1",
+      "title": "仲雍",
+      "start": {
+        "year": -1087,
+        "month": 1,
+        "abs": -13032,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -1074,
+        "month": 12,
+        "abs": -12865,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -13032,
+      "endAbs": -12865,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-wu-pre-r2-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r2",
+      "title": "季简",
+      "start": {
+        "year": -1073,
+        "month": 1,
+        "abs": -12864,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -1061,
+        "month": 12,
+        "abs": -12709,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -12864,
+      "endAbs": -12709,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-wu-pre-r3-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r3",
+      "title": "叔达",
+      "start": {
+        "year": -1060,
+        "month": 1,
+        "abs": -12708,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -1047,
+        "month": 12,
+        "abs": -12541,
+        "confidence": "year"
+      },
+      "startAbs": -12708,
+      "endAbs": -12541,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-wu-pre-r4-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r4",
+      "title": "周章",
+      "start": {
+        "year": -1046,
+        "month": 1,
+        "abs": -12540,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1015,
+        "month": 12,
+        "abs": -12157,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -12540,
+      "endAbs": -12157,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-wu-pre-r5-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r5",
+      "title": "熊遂",
+      "start": {
+        "year": -1014,
+        "month": 1,
+        "abs": -12156,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -982,
+        "month": 12,
+        "abs": -11761,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -12156,
+      "endAbs": -11761,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-wu-pre-r6-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r6",
+      "title": "柯相",
+      "start": {
+        "year": -981,
+        "month": 1,
+        "abs": -11760,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -949,
+        "month": 12,
+        "abs": -11365,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -11760,
+      "endAbs": -11365,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-wu-pre-r7-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r7",
+      "title": "彊鸠夷",
+      "start": {
+        "year": -948,
+        "month": 1,
+        "abs": -11364,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -916,
+        "month": 12,
+        "abs": -10969,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -11364,
+      "endAbs": -10969,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-wu-pre-r8-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r8",
+      "title": "余桥疑吾",
+      "start": {
+        "year": -915,
+        "month": 1,
+        "abs": -10968,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -883,
+        "month": 12,
+        "abs": -10573,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -10968,
+      "endAbs": -10573,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-wu-pre-r9-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r9",
+      "title": "柯卢",
+      "start": {
+        "year": -882,
+        "month": 1,
+        "abs": -10572,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -850,
+        "month": 12,
+        "abs": -10177,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -10572,
+      "endAbs": -10177,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-wu-pre-r10-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r10",
+      "title": "周繇",
+      "start": {
+        "year": -849,
+        "month": 1,
+        "abs": -10176,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -817,
+        "month": 12,
+        "abs": -9781,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -10176,
+      "endAbs": -9781,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-wu-pre-r11-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r11",
+      "title": "屈羽",
+      "start": {
+        "year": -816,
+        "month": 1,
+        "abs": -9780,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -784,
+        "month": 12,
+        "abs": -9385,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -9780,
+      "endAbs": -9385,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-wu-pre-r12-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r12",
+      "title": "夷吾",
+      "start": {
+        "year": -783,
+        "month": 1,
+        "abs": -9384,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -751,
+        "month": 12,
+        "abs": -8989,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -9384,
+      "endAbs": -8989,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-wu-pre-r13-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r13",
+      "title": "禽处",
+      "start": {
+        "year": -750,
+        "month": 1,
+        "abs": -8988,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -718,
+        "month": 12,
+        "abs": -8593,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -8988,
+      "endAbs": -8593,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-wu-pre-r14-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r14",
+      "title": "转",
+      "start": {
+        "year": -717,
+        "month": 1,
+        "abs": -8592,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -685,
+        "month": 12,
+        "abs": -8197,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -8592,
+      "endAbs": -8197,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-wu-pre-r15-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r15",
+      "title": "颇高",
+      "start": {
+        "year": -684,
+        "month": 1,
+        "abs": -8196,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -652,
+        "month": 12,
+        "abs": -7801,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -8196,
+      "endAbs": -7801,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-wu-pre-r16-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r16",
+      "title": "句卑",
+      "start": {
+        "year": -651,
+        "month": 1,
+        "abs": -7800,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -619,
+        "month": 12,
+        "abs": -7405,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -7800,
+      "endAbs": -7405,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-wu-pre-r17-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-pre-r17",
+      "title": "去齐",
+      "start": {
+        "year": -618,
+        "month": 1,
+        "abs": -7404,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -586,
+        "month": 12,
+        "abs": -7009,
+        "confidence": "year"
+      },
+      "startAbs": -7404,
+      "endAbs": -7009,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-wu-r0-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-r0",
+      "title": "寿梦",
+      "start": {
+        "year": -585,
+        "month": 1,
+        "abs": -7008,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -561,
+        "month": 12,
+        "abs": -6709,
+        "confidence": "year"
+      },
+      "startAbs": -7008,
+      "endAbs": -6709,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-wu-r1-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-r1",
+      "title": "诸樊",
+      "start": {
+        "year": -560,
+        "month": 1,
+        "abs": -6708,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -548,
+        "month": 12,
+        "abs": -6553,
+        "confidence": "year"
+      },
+      "startAbs": -6708,
+      "endAbs": -6553,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-wu-r2-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-r2",
+      "title": "余祭",
+      "start": {
+        "year": -547,
+        "month": 1,
+        "abs": -6552,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -544,
+        "month": 12,
+        "abs": -6505,
+        "confidence": "year"
+      },
+      "startAbs": -6552,
+      "endAbs": -6505,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-wu-r3-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-r3",
+      "title": "余昧",
+      "start": {
+        "year": -543,
+        "month": 1,
+        "abs": -6504,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -527,
+        "month": 12,
+        "abs": -6301,
+        "confidence": "year"
+      },
+      "startAbs": -6504,
+      "endAbs": -6301,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-wu-r4-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-r4",
+      "title": "僚",
+      "start": {
+        "year": -526,
+        "month": 1,
+        "abs": -6300,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -515,
+        "month": 12,
+        "abs": -6157,
+        "confidence": "year"
+      },
+      "startAbs": -6300,
+      "endAbs": -6157,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-helu-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "helu",
+      "title": "阖闾",
+      "start": {
+        "year": -514,
+        "month": 1,
+        "abs": -6156,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -496,
+        "month": 12,
+        "abs": -5929,
+        "confidence": "year"
+      },
+      "startAbs": -6156,
+      "endAbs": -5929,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-wu-fu-gai-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "wu-fu-gai",
+      "title": "夫概",
+      "start": {
+        "year": -505,
+        "month": 1,
+        "abs": -6048,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -505,
+        "month": 12,
+        "abs": -6037,
+        "confidence": "year"
+      },
+      "startAbs": -6048,
+      "endAbs": -6037,
+      "claimTrack": "fu-gai",
+      "claimLabel": "夫概",
+      "claimRole": "rival",
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-fu-chai-wu-chunqiu",
+      "dynastyId": "wu-chunqiu",
+      "personId": "fu-chai",
+      "title": "夫差",
+      "start": {
+        "year": -495,
+        "month": 1,
+        "abs": -5928,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -473,
+        "month": 12,
+        "abs": -5653,
+        "confidence": "year"
+      },
+      "startAbs": -5928,
+      "endAbs": -5653,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    }
+  ],
+  "events": [],
+  "relations": [],
+  "supplementalEventDynasties": [
+    {
+      "eventId": "chunqiu",
+      "dynastyId": "wu-chunqiu"
+    }
+  ],
+  "supplementalEventParticipants": [],
+  "preSql": "",
+  "postSql": "-- Remove stale reigns from managed dynasties (superseded ids from older imports)\nWITH stale AS (\n  DELETE FROM reigns\n  WHERE dynasty_id IN ('wu-chunqiu') AND id NOT IN ('reign-wu-pre-r0-wu-chunqiu', 'reign-wu-pre-r1-wu-chunqiu', 'reign-wu-pre-r2-wu-chunqiu', 'reign-wu-pre-r3-wu-chunqiu', 'reign-wu-pre-r4-wu-chunqiu', 'reign-wu-pre-r5-wu-chunqiu', 'reign-wu-pre-r6-wu-chunqiu', 'reign-wu-pre-r7-wu-chunqiu', 'reign-wu-pre-r8-wu-chunqiu', 'reign-wu-pre-r9-wu-chunqiu', 'reign-wu-pre-r10-wu-chunqiu', 'reign-wu-pre-r11-wu-chunqiu', 'reign-wu-pre-r12-wu-chunqiu', 'reign-wu-pre-r13-wu-chunqiu', 'reign-wu-pre-r14-wu-chunqiu', 'reign-wu-pre-r15-wu-chunqiu', 'reign-wu-pre-r16-wu-chunqiu', 'reign-wu-pre-r17-wu-chunqiu', 'reign-wu-r0-wu-chunqiu', 'reign-wu-r1-wu-chunqiu', 'reign-wu-r2-wu-chunqiu', 'reign-wu-r3-wu-chunqiu', 'reign-wu-r4-wu-chunqiu', 'reign-helu-wu-chunqiu', 'reign-wu-fu-gai-wu-chunqiu', 'reign-fu-chai-wu-chunqiu')\n  RETURNING person_id\n)\nDELETE FROM persons p\nWHERE p.id IN (SELECT DISTINCT person_id FROM stale)\n  AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)\n  AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = p.id)\n  AND NOT EXISTS (\n    SELECT 1 FROM relations rel\n    WHERE (rel.from_type = 'person' AND rel.from_id = p.id)\n       OR (rel.to_type = 'person' AND rel.to_id = p.id)\n  );\nSELECT rebuild_person_search_terms();",
+  "manifest": {
+    "slug": "chunqiu-zhanguo/wu-chunqiu",
+    "title": "吴独立数据包",
+    "window": {
+      "startYear": -1100,
+      "startMonth": 1,
+      "endYear": -473,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-10-02",
+    "counts": {
+      "persons": 28,
+      "dynasties": 1,
+      "reigns": 26,
+      "missingReigns": 0,
+      "events": 0,
+      "relations": 0,
+      "existingEventDynastyLinks": 1,
+      "existingEventParticipantLinks": 0,
+      "capitals": 0
+    },
+    "sources": [
+      {
+        "label": "春秋时期",
+        "url": "https://zh.wikipedia.org/wiki/春秋时期"
+      },
+      {
+        "label": "战国时期",
+        "url": "https://zh.wikipedia.org/wiki/战国时期"
+      },
+      {
+        "label": "战国七雄",
+        "url": "https://zh.wikipedia.org/wiki/战国七雄"
+      },
+      {
+        "label": "周朝诸侯国君主列表",
+        "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+      },
+      {
+        "label": "吴国",
+        "url": "https://zh.wikipedia.org/wiki/吴国"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/泰伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/仲雍"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/季简"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/叔达"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周章"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/熊遂"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/柯相"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/彊鸠夷"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/余桥疑吾"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/柯卢"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周繇"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/屈羽"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/夷吾"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/禽处"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/转"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/颇高"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/句卑"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/去齐"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴王寿梦"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴王诸樊"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴王余祭"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴王余昧"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴王僚"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/阖闾"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴王夫概"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴王夫差"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/孙武"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/伍子胥"
+      }
+    ],
+    "notes": [
+      "列国泳道名用国号（齐、楚、韩），与夏商周秦汉一致，不带「国」；「齐国」等写入 alt_names。",
+      "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
+      "各国国君世系取维基百科大陆简体（zh-cn）诸侯君主列表与《史记》年表；按表头读取称号/姓名/在位年份，不用本地繁简转换。",
+      "年精度顺序继位按逾年改元切年（死年归旧王、新王次年起算，见 缓存中的最终在位起讫日期；用维基原始起年检测，避免孝文王占死后庄襄王不再后移）。维基在位年份常与死年重叠（如秦文公起前766年）；一年短祚、秦灵公/简公/献公未逾年改元、曲沃与翼并立不后移。魏惠王称王前后合并为一条在位（前369–前319）。",
+      "西周早中期无在位年的国君原则上在相邻锚点之间按世系均分，均分结果标 起止端点标记为 interpolated_by_other。宋微子至宋厉公采用《宋国君主列表》所列《史记·宋世家》与陈梦家《西周年代考》推定年份，仍标 interpolated；宋釐公前858年为后续年表锚点。",
+      "同人多次即位拆多条 reign（reignId 后缀 -2），与唐/明一致；完整在位字段直接维护于 cache.json，不从 Wiki 原始文本自动推断或覆盖。",
+      "吴国条目列出泰伯至去齐的连续世系但未给出各君主在位年，并称建国约在前12世纪、寿梦始有准确纪年。《史记·吴太伯世家》记载武王克殷时周章已君吴；以西周建国年（前1046）为周章起年确定锚点，锚点前后的无年表连续君主分别按世系均分，失考边标记 interpolated。寿梦起点保留年表锚点。前505年夫概自立，按条目列作短暂并立君主，使用 rival claim track。",
+      "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 confidence: year。",
+      "未收录薛、滕、杞、莒等小国；未收录战国末期的代、胶东等残余。",
+      "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
+      "逐条复核夏商周包既有事件的诸侯国关联：《左传·僖公九年》载葵丘与会者为鲁、齐、宋、卫、郑、许、曹及周王使者；补入本包有建模泳道的鲁、宋、卫、郑、曹（许未建王朝实体）。城濮之战补入受战事直接影响的宋、曹、卫：宋受楚围而晋出兵救援，晋先伐曹、卫并以复国交涉，原有关联晋、楚保留。依据《中国哲学书电子化计划》所录《左传·僖公九年》 https://ctext.org/chun-qiu-zuo-zhuan/xi-gong-jiu-nian/zhs ，以及《菏泽历史文化集萃·城濮之战》 https://shandong-chorography.org/database/bh/section/22/article/66/ 。",
+      "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
+      "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
+      "称谓复核（2026-10）：本包君主卡片称呼写入对应 reign.title。已有谥号者使用 persons.posthumousNames 的首选本体（不带国名）；无谥号者采用已核对的人物 title，并去除国名前缀；已有非空 reign.title 亦按无国名称呼规则复核。具体来源沿用各人物 links 与本包 manifest.sources。",
+      "不新增普通灭国事件重复王朝终点；年精度末年12月及泳道起年1月均为定位占位，不表示史料已知公历月份。不确定在位不分配个人都城。",
+      "2026-10-02按王朝拆分原chunqiu-zhanguo完整包。本包唯一拥有吴的王朝、人物、在位及分配到本包的事件、关系和补充关联；原记录ID、事实、日期与置信度原样保留。跨包引用不复制目标实体；完整原始来源与处理记录见父目录归档。"
+    ]
+  }
+}

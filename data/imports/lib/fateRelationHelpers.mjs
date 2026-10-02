@@ -1,5 +1,6 @@
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import path from "node:path";
+import { discoverPackages } from "./discoverPackages.mjs";
 import { fileURLToPath } from "node:url";
 
 const REIGN_ROW_RE =
@@ -49,7 +50,7 @@ function parseSqlValue(raw) {
 /** Load serialized reign rows from all import.sql files for UI assertions. */
 export function loadReignsFromImports(importsRoot = path.join(path.dirname(fileURLToPath(import.meta.url)), "..")) {
   const reigns = [];
-  for (const slug of readdirSync(importsRoot)) {
+  for (const slug of discoverPackages(importsRoot, "import.sql")) {
     const sqlPath = path.join(importsRoot, slug, "import.sql");
     try {
       const sql = readFileSync(sqlPath, "utf8");
@@ -105,7 +106,7 @@ export function loadReignsFromImports(importsRoot = path.join(path.dirname(fileU
 export function loadEventsFromImports(importsRoot = path.join(path.dirname(fileURLToPath(import.meta.url)), "..")) {
   /** @type {Map<string, {id:string,confidence:string,atAbs:number,atYear:number,atMonth:number,atDay:number|null}>} */
   const events = new Map();
-  for (const slug of readdirSync(importsRoot)) {
+  for (const slug of discoverPackages(importsRoot, "import.sql")) {
     const sqlPath = path.join(importsRoot, slug, "import.sql");
     try {
       const sql = readFileSync(sqlPath, "utf8");

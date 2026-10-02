@@ -1,0 +1,1444 @@
+{
+  "slug": "chunqiu-zhanguo/zheng-chunqiu",
+  "window": {
+    "startYear": -806,
+    "startMonth": 1,
+    "endYear": -375,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "zheng-r0",
+      "name": "友",
+      "roles": [
+        "君主"
+      ],
+      "bio": "周宣王封弟友于郑，任周室司徒。前771年犬戎陷镐京，桓公遇害，子掘突继位为武公，郑国迁于中原。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑桓公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "桓公"
+      ],
+      "templeNames": [],
+      "title": "郑桓公",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r1",
+      "name": "掘突",
+      "roles": [
+        "君主"
+      ],
+      "bio": "助平王东迁，与母申侯共灭申国。灭东虢、郐等国，郑国由畿内诸侯转为中原大国，奠定霸业基础。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑武公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "武公"
+      ],
+      "templeNames": [],
+      "title": "郑武公",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r2",
+      "name": "寤生",
+      "roles": [
+        "君主"
+      ],
+      "bio": "春秋初年第一强国，与周王室「交质」交战。兼并小国、侵夺许国，「多行不义必自毙」典出其事。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑庄公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "庄公"
+      ],
+      "templeNames": [],
+      "title": "郑庄公",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r3",
+      "name": "忽",
+      "roles": [
+        "君主"
+      ],
+      "bio": "庄公嫡长子，曾作人质于周。两度即位，复位不久即为大夫所弑，郑国内乱加剧，国势转衰。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑昭公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "昭公"
+      ],
+      "templeNames": [],
+      "title": "郑昭公",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r4",
+      "name": "突",
+      "roles": [
+        "君主"
+      ],
+      "bio": "庄公庶子，曾流亡宋国被立为君。两度执政，终为夫人与大夫所弑，政局动荡，郑国衰落，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑厉公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "厉公"
+      ],
+      "templeNames": [],
+      "title": "郑厉公",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r6",
+      "name": "子亹",
+      "roles": [
+        "君主"
+      ],
+      "bio": "厉公之子，在位仅七月。政局动荡，旋即被杀，郑国权力更迭频繁，无力维持稳定局面，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/子亹"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "子亹",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r7",
+      "name": "婴",
+      "roles": [
+        "君主"
+      ],
+      "bio": "厉公幼子，在位十四年。厉公死后复位，国势已远不如庄公时的鼎盛局面，郑国渐衰，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/子婴"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "子婴",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r9",
+      "name": "踕",
+      "roles": [
+        "君主"
+      ],
+      "bio": "在位四十五年，屡侵许国、干预诸侯。曾逐太子建与重耳，招致晋国日后伐郑，国势受损，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑文公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "文公"
+      ],
+      "templeNames": [],
+      "title": "郑文公",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r10",
+      "name": "子兰",
+      "roles": [
+        "君主"
+      ],
+      "bio": "文公之子，灵公之弟。弑兄即位，在列国间周旋，维系郑国在中原的存续，国势尚可，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑穆公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "穆公"
+      ],
+      "templeNames": [],
+      "title": "郑穆公",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r11",
+      "name": "子夷",
+      "roles": [
+        "君主"
+      ],
+      "bio": "穆公之子，在位仅一年。因戏弄大夫子家猗指，被弑而亡，郑国再陷内乱，政局不稳，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑灵公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "灵公"
+      ],
+      "templeNames": [],
+      "title": "郑灵公",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r12",
+      "name": "子坚",
+      "roles": [
+        "君主"
+      ],
+      "bio": "灵公之弟，弑兄自立。楚国伐郑，襄公求和割地，郑国国势日衰，仰息于强邻，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑襄公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "襄公"
+      ],
+      "templeNames": [],
+      "title": "郑襄公",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r13",
+      "name": "沸",
+      "roles": [
+        "君主"
+      ],
+      "bio": "在位不足两年，遭兄釐公内乱而被弑，郑国政局继续动荡不安，无力外争，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑悼公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "悼公"
+      ],
+      "templeNames": [],
+      "title": "郑悼公",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r14",
+      "name": "睔",
+      "roles": [
+        "君主"
+      ],
+      "bio": "执政期间郑国夹缝于晋楚之间，多次遣使盟楚，在列国间艰难周旋求存，国势渐弱，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑成公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "成公"
+      ],
+      "templeNames": [],
+      "title": "郑成公",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-gongzi-xu",
+      "name": "繻",
+      "roles": [
+        "君主"
+      ],
+      "bio": "公子繻，郑国君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/公子繻"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "公子繻",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r15",
+      "name": "恽",
+      "roles": [
+        "君主"
+      ],
+      "bio": "在位五年而卒，末代君主中郑国局面尚可维持，但已无力争霸，仰息于晋楚，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑釐公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "釐公"
+      ],
+      "templeNames": [],
+      "title": "郑釐公",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r16",
+      "name": "嘉",
+      "roles": [
+        "君主"
+      ],
+      "bio": "在位三十五年，郑国已沦为二流小国，仰息于晋楚等强邻之间，无力外争，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑简公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "简公"
+      ],
+      "templeNames": [],
+      "title": "郑简公",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r17",
+      "name": "宁",
+      "roles": [
+        "君主"
+      ],
+      "bio": "孔子弟子子产执政之年，修城施政、作刑鼎，郑国稍得整顿，国势略有回升，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑定公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "定公"
+      ],
+      "templeNames": [],
+      "title": "郑定公",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r18",
+      "name": "趸",
+      "roles": [
+        "君主"
+      ],
+      "bio": "定公之弟，弑兄自立。在位十二年而亡，郑国继续衰落，无力维持大国地位，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑献公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "献公"
+      ],
+      "templeNames": [],
+      "title": "郑献公",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r19",
+      "name": "胜",
+      "roles": [
+        "君主"
+      ],
+      "bio": "在位三十八年，郑国名存实亡，仅守新郑一地，无力外争，仰息于韩等强邻，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑声公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "声公"
+      ],
+      "templeNames": [],
+      "title": "郑声公",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r20",
+      "name": "易",
+      "roles": [
+        "君主"
+      ],
+      "bio": "在位仅七年，为共公之弟所弑，郑国内乱不止，国势奄奄一息，无力维持，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑哀公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "哀公"
+      ],
+      "templeNames": [],
+      "title": "郑哀公",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r21",
+      "name": "丑",
+      "roles": [
+        "君主"
+      ],
+      "bio": "在位三十年，郑国式微，无力外争，仰息于韩等强邻，维持小国局面，事迹载于《史记》相关记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑共公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "共公"
+      ],
+      "templeNames": [],
+      "title": "郑共公",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r22",
+      "name": "已",
+      "roles": [
+        "君主"
+      ],
+      "bio": "在位不足一年，为𦈡公所弑，郑国濒临灭亡，政局极度动荡，国势危急，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑幽公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "幽公"
+      ],
+      "templeNames": [],
+      "title": "郑幽公",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r23",
+      "name": "骀",
+      "roles": [
+        "君主"
+      ],
+      "bio": "弑幽公自立，在位二十七年。郑国已濒临灭亡，无力抵抗韩国，国势危急，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑𦈡公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "𦈡公"
+      ],
+      "templeNames": [],
+      "title": "郑𦈡公",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    },
+    {
+      "id": "zheng-r24",
+      "name": "乙",
+      "roles": [
+        "君主"
+      ],
+      "bio": "郑国末代君主。前375年为韩武子所灭，国亡，郑国历史终结，姬姓郑国不复存在，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郑康公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "康公"
+      ],
+      "templeNames": [],
+      "title": "郑康公",
+      "ancestralXing": "姬",
+      "clanShi": "郑"
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "zheng-chunqiu",
+      "name": "郑",
+      "altNames": [
+        "郑国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -806,
+        "month": 1,
+        "abs": -9660,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -375,
+        "month": 12,
+        "abs": -4477,
+        "confidence": "month"
+      },
+      "note": "周厉王少子友封于郑，后东迁新郑；前375年韩灭郑。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-zheng-r0-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r0",
+      "title": "桓公",
+      "start": {
+        "year": -806,
+        "month": 1,
+        "abs": -9660,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -771,
+        "month": 12,
+        "abs": -9229,
+        "confidence": "year"
+      },
+      "startAbs": -9660,
+      "endAbs": -9229,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r1-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r1",
+      "title": "武公",
+      "start": {
+        "year": -770,
+        "month": 1,
+        "abs": -9228,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -744,
+        "month": 12,
+        "abs": -8905,
+        "confidence": "year"
+      },
+      "startAbs": -9228,
+      "endAbs": -8905,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r2-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r2",
+      "title": "庄公",
+      "start": {
+        "year": -743,
+        "month": 1,
+        "abs": -8904,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -701,
+        "month": 12,
+        "abs": -8389,
+        "confidence": "year"
+      },
+      "startAbs": -8904,
+      "endAbs": -8389,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r3-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r3",
+      "title": "昭公",
+      "start": {
+        "year": -700,
+        "month": 1,
+        "abs": -8388,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -700,
+        "month": 12,
+        "abs": -8377,
+        "confidence": "year"
+      },
+      "startAbs": -8388,
+      "endAbs": -8377,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r4-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r4",
+      "title": "厉公",
+      "start": {
+        "year": -699,
+        "month": 1,
+        "abs": -8376,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -697,
+        "month": 12,
+        "abs": -8341,
+        "confidence": "year"
+      },
+      "startAbs": -8376,
+      "endAbs": -8341,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r3-zheng-chunqiu-2",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r3",
+      "title": "昭公",
+      "start": {
+        "year": -696,
+        "month": 1,
+        "abs": -8340,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -695,
+        "month": 12,
+        "abs": -8317,
+        "confidence": "year"
+      },
+      "startAbs": -8340,
+      "endAbs": -8317,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r6-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r6",
+      "title": "子亹",
+      "start": {
+        "year": -694,
+        "month": 1,
+        "abs": -8316,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -694,
+        "month": 12,
+        "abs": -8305,
+        "confidence": "year"
+      },
+      "startAbs": -8316,
+      "endAbs": -8305,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r7-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r7",
+      "title": "子婴",
+      "start": {
+        "year": -693,
+        "month": 1,
+        "abs": -8304,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -680,
+        "month": 12,
+        "abs": -8137,
+        "confidence": "year"
+      },
+      "startAbs": -8304,
+      "endAbs": -8137,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r4-zheng-chunqiu-2",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r4",
+      "title": "厉公",
+      "start": {
+        "year": -679,
+        "month": 1,
+        "abs": -8136,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -673,
+        "month": 12,
+        "abs": -8053,
+        "confidence": "year"
+      },
+      "startAbs": -8136,
+      "endAbs": -8053,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r9-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r9",
+      "title": "文公",
+      "start": {
+        "year": -672,
+        "month": 1,
+        "abs": -8052,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -628,
+        "month": 12,
+        "abs": -7513,
+        "confidence": "year"
+      },
+      "startAbs": -8052,
+      "endAbs": -7513,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r10-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r10",
+      "title": "穆公",
+      "start": {
+        "year": -627,
+        "month": 1,
+        "abs": -7512,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -606,
+        "month": 12,
+        "abs": -7249,
+        "confidence": "year"
+      },
+      "startAbs": -7512,
+      "endAbs": -7249,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r11-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r11",
+      "title": "灵公",
+      "start": {
+        "year": -605,
+        "month": 1,
+        "abs": -7248,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -605,
+        "month": 12,
+        "abs": -7237,
+        "confidence": "year"
+      },
+      "startAbs": -7248,
+      "endAbs": -7237,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r12-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r12",
+      "title": "襄公",
+      "start": {
+        "year": -604,
+        "month": 1,
+        "abs": -7236,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -587,
+        "month": 12,
+        "abs": -7021,
+        "confidence": "year"
+      },
+      "startAbs": -7236,
+      "endAbs": -7021,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r13-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r13",
+      "title": "悼公",
+      "start": {
+        "year": -586,
+        "month": 1,
+        "abs": -7020,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -585,
+        "month": 12,
+        "abs": -6997,
+        "confidence": "year"
+      },
+      "startAbs": -7020,
+      "endAbs": -6997,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r14-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r14",
+      "title": "成公",
+      "start": {
+        "year": -584,
+        "month": 1,
+        "abs": -6996,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -581,
+        "month": 12,
+        "abs": -6949,
+        "confidence": "year"
+      },
+      "startAbs": -6996,
+      "endAbs": -6949,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-gongzi-xu-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-gongzi-xu",
+      "title": "公子繻",
+      "start": {
+        "year": -581,
+        "month": 1,
+        "abs": -6960,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -581,
+        "month": 12,
+        "abs": -6949,
+        "confidence": "year"
+      },
+      "startAbs": -6960,
+      "endAbs": -6949,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r14-zheng-chunqiu-2",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r14",
+      "title": "成公",
+      "start": {
+        "year": -580,
+        "month": 1,
+        "abs": -6948,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -571,
+        "month": 12,
+        "abs": -6829,
+        "confidence": "year"
+      },
+      "startAbs": -6948,
+      "endAbs": -6829,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r15-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r15",
+      "title": "釐公",
+      "start": {
+        "year": -570,
+        "month": 1,
+        "abs": -6828,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -566,
+        "month": 12,
+        "abs": -6769,
+        "confidence": "year"
+      },
+      "startAbs": -6828,
+      "endAbs": -6769,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r16-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r16",
+      "title": "简公",
+      "start": {
+        "year": -565,
+        "month": 1,
+        "abs": -6768,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -530,
+        "month": 12,
+        "abs": -6337,
+        "confidence": "year"
+      },
+      "startAbs": -6768,
+      "endAbs": -6337,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r17-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r17",
+      "title": "定公",
+      "start": {
+        "year": -529,
+        "month": 1,
+        "abs": -6336,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -514,
+        "month": 12,
+        "abs": -6145,
+        "confidence": "year"
+      },
+      "startAbs": -6336,
+      "endAbs": -6145,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r18-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r18",
+      "title": "献公",
+      "start": {
+        "year": -513,
+        "month": 1,
+        "abs": -6144,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -501,
+        "month": 12,
+        "abs": -5989,
+        "confidence": "year"
+      },
+      "startAbs": -6144,
+      "endAbs": -5989,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r19-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r19",
+      "title": "声公",
+      "start": {
+        "year": -500,
+        "month": 1,
+        "abs": -5988,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -463,
+        "month": 12,
+        "abs": -5533,
+        "confidence": "year"
+      },
+      "startAbs": -5988,
+      "endAbs": -5533,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r20-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r20",
+      "title": "哀公",
+      "start": {
+        "year": -462,
+        "month": 1,
+        "abs": -5532,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -455,
+        "month": 12,
+        "abs": -5437,
+        "confidence": "year"
+      },
+      "startAbs": -5532,
+      "endAbs": -5437,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r21-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r21",
+      "title": "共公",
+      "start": {
+        "year": -454,
+        "month": 1,
+        "abs": -5436,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -424,
+        "month": 12,
+        "abs": -5065,
+        "confidence": "year"
+      },
+      "startAbs": -5436,
+      "endAbs": -5065,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r22-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r22",
+      "title": "幽公",
+      "start": {
+        "year": -423,
+        "month": 1,
+        "abs": -5064,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -423,
+        "month": 12,
+        "abs": -5053,
+        "confidence": "year"
+      },
+      "startAbs": -5064,
+      "endAbs": -5053,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r23-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r23",
+      "title": "𦈡公",
+      "start": {
+        "year": -422,
+        "month": 1,
+        "abs": -5052,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -396,
+        "month": 12,
+        "abs": -4729,
+        "confidence": "year"
+      },
+      "startAbs": -5052,
+      "endAbs": -4729,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zheng-r24-zheng-chunqiu",
+      "dynastyId": "zheng-chunqiu",
+      "personId": "zheng-r24",
+      "title": "康公",
+      "start": {
+        "year": -395,
+        "month": 1,
+        "abs": -4728,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -375,
+        "month": 12,
+        "abs": -4477,
+        "confidence": "year"
+      },
+      "startAbs": -4728,
+      "endAbs": -4477,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    }
+  ],
+  "events": [],
+  "relations": [],
+  "supplementalEventDynasties": [
+    {
+      "eventId": "kuiqiu",
+      "dynastyId": "zheng-chunqiu"
+    },
+    {
+      "eventId": "chunqiu",
+      "dynastyId": "zheng-chunqiu"
+    }
+  ],
+  "supplementalEventParticipants": [],
+  "preSql": "",
+  "postSql": "-- Remove stale reigns from managed dynasties (superseded ids from older imports)\nWITH stale AS (\n  DELETE FROM reigns\n  WHERE dynasty_id IN ('zheng-chunqiu') AND id NOT IN ('reign-zheng-r0-zheng-chunqiu', 'reign-zheng-r1-zheng-chunqiu', 'reign-zheng-r2-zheng-chunqiu', 'reign-zheng-r3-zheng-chunqiu', 'reign-zheng-r4-zheng-chunqiu', 'reign-zheng-r3-zheng-chunqiu-2', 'reign-zheng-r6-zheng-chunqiu', 'reign-zheng-r7-zheng-chunqiu', 'reign-zheng-r4-zheng-chunqiu-2', 'reign-zheng-r9-zheng-chunqiu', 'reign-zheng-r10-zheng-chunqiu', 'reign-zheng-r11-zheng-chunqiu', 'reign-zheng-r12-zheng-chunqiu', 'reign-zheng-r13-zheng-chunqiu', 'reign-zheng-r14-zheng-chunqiu', 'reign-zheng-gongzi-xu-zheng-chunqiu', 'reign-zheng-r14-zheng-chunqiu-2', 'reign-zheng-r15-zheng-chunqiu', 'reign-zheng-r16-zheng-chunqiu', 'reign-zheng-r17-zheng-chunqiu', 'reign-zheng-r18-zheng-chunqiu', 'reign-zheng-r19-zheng-chunqiu', 'reign-zheng-r20-zheng-chunqiu', 'reign-zheng-r21-zheng-chunqiu', 'reign-zheng-r22-zheng-chunqiu', 'reign-zheng-r23-zheng-chunqiu', 'reign-zheng-r24-zheng-chunqiu')\n  RETURNING person_id\n)\nDELETE FROM persons p\nWHERE p.id IN (SELECT DISTINCT person_id FROM stale)\n  AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)\n  AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = p.id)\n  AND NOT EXISTS (\n    SELECT 1 FROM relations rel\n    WHERE (rel.from_type = 'person' AND rel.from_id = p.id)\n       OR (rel.to_type = 'person' AND rel.to_id = p.id)\n  );\nSELECT rebuild_person_search_terms();",
+  "manifest": {
+    "slug": "chunqiu-zhanguo/zheng-chunqiu",
+    "title": "郑独立数据包",
+    "window": {
+      "startYear": -806,
+      "startMonth": 1,
+      "endYear": -375,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-10-02",
+    "counts": {
+      "persons": 24,
+      "dynasties": 1,
+      "reigns": 27,
+      "missingReigns": 0,
+      "events": 0,
+      "relations": 0,
+      "existingEventDynastyLinks": 2,
+      "existingEventParticipantLinks": 0,
+      "capitals": 0
+    },
+    "sources": [
+      {
+        "label": "春秋时期",
+        "url": "https://zh.wikipedia.org/wiki/春秋时期"
+      },
+      {
+        "label": "战国时期",
+        "url": "https://zh.wikipedia.org/wiki/战国时期"
+      },
+      {
+        "label": "战国七雄",
+        "url": "https://zh.wikipedia.org/wiki/战国七雄"
+      },
+      {
+        "label": "周朝诸侯国君主列表",
+        "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+      },
+      {
+        "label": "左传·成公十年",
+        "url": "https://ctext.org/chun-qiu-zuo-zhuan/cheng-gong-shi-nian/zhs"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑桓公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑武公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑庄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑昭公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑厉公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/子亹"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/子婴"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑穆公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑灵公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑襄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑悼公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑成公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/公子繻"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑釐公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑简公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑定公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑献公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑声公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑哀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑共公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑幽公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑𦈡公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑康公"
+      },
+      {
+        "label": "《国语·郑语》（虢叔与郑桓公共时）",
+        "url": "https://ctext.org/guo-yu/zheng-yu/ens"
+      },
+      {
+        "label": "孙尚勇《〈春秋〉历史叙事与孔子的文化关怀》（平王四年郑灭虢与杜预注）",
+        "url": "https://www.ica.org.cn/att/site17/20240529/1716968303123.pdf"
+      }
+    ],
+    "notes": [
+      "列国泳道名用国号（齐、楚、韩），与夏商周秦汉一致，不带「国」；「齐国」等写入 alt_names。",
+      "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
+      "各国国君世系取维基百科大陆简体（zh-cn）诸侯君主列表与《史记》年表；按表头读取称号/姓名/在位年份，不用本地繁简转换。",
+      "年精度顺序继位按逾年改元切年（死年归旧王、新王次年起算，见 缓存中的最终在位起讫日期；用维基原始起年检测，避免孝文王占死后庄襄王不再后移）。维基在位年份常与死年重叠（如秦文公起前766年）；一年短祚、秦灵公/简公/献公未逾年改元、曲沃与翼并立不后移。魏惠王称王前后合并为一条在位（前369–前319）。",
+      "西周早中期无在位年的国君原则上在相邻锚点之间按世系均分，均分结果标 起止端点标记为 interpolated_by_other。宋微子至宋厉公采用《宋国君主列表》所列《史记·宋世家》与陈梦家《西周年代考》推定年份，仍标 interpolated；宋釐公前858年为后续年表锚点。",
+      "同人多次即位拆多条 reign（reignId 后缀 -2），与唐/明一致；完整在位字段直接维护于 cache.json，不从 Wiki 原始文本自动推断或覆盖。",
+      "郑成公被晋扣留期间，前581年三月子如立公子繻，四月郑人杀繻并立髡顽，郑伯随后归国（《左传·成公十年》）；在位序列按郑成公第一次在位→公子繻短暂即位→郑成公复位排列。年精度边界沿用前581年。",
+      "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 confidence: year。",
+      "未收录薛、滕、杞、莒等小国；未收录战国末期的代、胶东等残余。",
+      "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
+      "逐条复核夏商周包既有事件的诸侯国关联：《左传·僖公九年》载葵丘与会者为鲁、齐、宋、卫、郑、许、曹及周王使者；补入本包有建模泳道的鲁、宋、卫、郑、曹（许未建王朝实体）。城濮之战补入受战事直接影响的宋、曹、卫：宋受楚围而晋出兵救援，晋先伐曹、卫并以复国交涉，原有关联晋、楚保留。依据《中国哲学书电子化计划》所录《左传·僖公九年》 https://ctext.org/chun-qiu-zuo-zhuan/xi-gong-jiu-nian/zhs ，以及《菏泽历史文化集萃·城濮之战》 https://shandong-chorography.org/database/bh/section/22/article/66/ 。",
+      "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
+      "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
+      "称谓复核（2026-10）：本包君主卡片称呼写入对应 reign.title。已有谥号者使用 persons.posthumousNames 的首选本体（不带国名）；无谥号者采用已核对的人物 title，并去除国名前缀；已有非空 reign.title 亦按无国名称呼规则复核。具体来源沿用各人物 links 与本包 manifest.sources。",
+      "不新增普通灭国事件重复王朝终点；年精度末年12月及泳道起年1月均为定位占位，不表示史料已知公历月份。不确定在位不分配个人都城。",
+      "2026-10-02用户明确命运线应表达被谁灭国，类型不局限于人身结局。采用通用conquered（灭国），末君虢叔指向当时郑国君主郑武公zheng-r1，时点为所采灭国年-767年12月桶右缘，atConfidence=approximate_year。不主张郑武公亲手杀害虢叔。关系由cross-dynasty-fate包唯一拥有。",
+      "2026-10-02按王朝拆分原chunqiu-zhanguo完整包。本包唯一拥有郑的王朝、人物、在位及分配到本包的事件、关系和补充关联；原记录ID、事实、日期与置信度原样保留。跨包引用不复制目标实体；完整原始来源与处理记录见父目录归档。"
+    ]
+  }
+}

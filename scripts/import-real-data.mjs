@@ -3,10 +3,11 @@
  * Load period packages from data/imports/{slug}/import.sql into PostgreSQL.
  * Used by pnpm db:import / pnpm db:setup. Does not use data/seed JSON.
  */
-import { existsSync, readdirSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { spawnSync } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { discoverPackages } from "../data/imports/lib/discoverPackages.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
@@ -33,15 +34,14 @@ RESTART IDENTITY CASCADE;
 `;
 
 function listPackages() {
-  return readdirSync(importDir, { withFileTypes: true })
-    .filter((entry) => entry.isDirectory())
-    .map((entry) => {
-      const sql = path.join(importDir, entry.name, "import.sql");
-      const manifestPath = path.join(importDir, entry.name, "manifest.json");
+  return discoverPackages(importDir, "import.sql")
+    .map((slug) => {
+      const sql = path.join(importDir, slug, "import.sql");
+      const manifestPath = path.join(importDir, slug, "manifest.json");
       if (!existsSync(sql)) return null;
       const manifest = existsSync(manifestPath) ? JSON.parse(readFileSync(manifestPath, "utf8")) : {};
       return {
-        slug: entry.name,
+        slug,
         sql,
         startYear: manifest.window?.startYear ?? Number.MAX_SAFE_INTEGER,
         importPhase: manifest.importPhase ?? "normal",

@@ -1,0 +1,2442 @@
+{
+  "description": "拆分前 chunqiu-zhanguo 包的来源与处理说明归档；不参与生成或导入，当前事实源为各王朝子目录 cache.json。",
+  "splitAt": "2026-10-02",
+  "manifest": {
+    "slug": "chunqiu-zhanguo",
+    "title": "春秋战国诸侯国",
+    "window": {
+      "startYear": -1046,
+      "startMonth": 1,
+      "endYear": -207,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-10-02",
+    "counts": {
+      "persons": 491,
+      "dynasties": 19,
+      "reigns": 487,
+      "missingReigns": 4,
+      "events": 6,
+      "relations": 13,
+      "existingEventDynastyLinks": 38,
+      "existingEventParticipantLinks": 1,
+      "capitals": 1
+    },
+    "sources": [
+      {
+        "label": "孟子志：邾国至邹国沿革及孟子里籍（山东省情资料库）",
+        "url": "https://shandong-chorography.org/database/zzmj/section/19/article/7/"
+      },
+      {
+        "label": "邾国君主世系及所据传世文献",
+        "url": "https://zh.wikipedia.org/wiki/邾国"
+      },
+      {
+        "label": "邾国君主世系图（列邾庄公克、琐、文公，附异称与依据）",
+        "url": "https://zh.wikipedia.org/wiki/邾國君主世系圖"
+      },
+      {
+        "label": "《春秋滕薛杞越莒邾许七国统表·邾世次》（考辨仪父克为庄公的异说）",
+        "url": "https://ctext.org/wiki.pl?chapter=3884730&if=gb&remap=gb"
+      },
+      {
+        "label": "邾文公在位年表（《左传》相关纪事）",
+        "url": "https://ctext.org/datawiki.pl?if=gb&res=980150"
+      },
+      {
+        "label": "邹穆公与孟子",
+        "url": "https://ctext.org/dictionary.pl?did=711&if=en"
+      },
+      {
+        "label": "春秋时期",
+        "url": "https://zh.wikipedia.org/wiki/春秋时期"
+      },
+      {
+        "label": "战国时期",
+        "url": "https://zh.wikipedia.org/wiki/战国时期"
+      },
+      {
+        "label": "战国七雄",
+        "url": "https://zh.wikipedia.org/wiki/战国七雄"
+      },
+      {
+        "label": "齐国",
+        "url": "https://zh.wikipedia.org/wiki/齐国"
+      },
+      {
+        "label": "晋国",
+        "url": "https://zh.wikipedia.org/wiki/晋国"
+      },
+      {
+        "label": "晋文侯（前780—前746年在位）",
+        "url": "https://zh.wikipedia.org/wiki/晋文侯"
+      },
+      {
+        "label": "楚国",
+        "url": "https://zh.wikipedia.org/wiki/楚国"
+      },
+      {
+        "label": "宋国君主列表",
+        "url": "https://zh.wikipedia.org/wiki/宋国#宋國君主列表及在位年份"
+      },
+      {
+        "label": "卫国君主列表",
+        "url": "https://zh.wikipedia.org/wiki/卫国#卫国君主列表及在位年份"
+      },
+      {
+        "label": "中国国家博物馆：康侯斧题记",
+        "url": "https://www.chnmuseum.cn/yj/xscg/xslw/201812/t20181224_36458.shtml"
+      },
+      {
+        "label": "楚国世系年代研究",
+        "url": "https://sinologicalresearch.web.fc2.com/paper/no2/papers/26.pdf"
+      },
+      {
+        "label": "秦国",
+        "url": "https://zh.wikipedia.org/wiki/秦国"
+      },
+      {
+        "label": "三家分晋",
+        "url": "https://zh.wikipedia.org/wiki/三家分晋"
+      },
+      {
+        "label": "周朝诸侯国君主列表",
+        "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+      },
+      {
+        "label": "齐国君主列表",
+        "url": "https://zh.wikipedia.org/zh-cn/齐国君主列表"
+      },
+      {
+        "label": "田和",
+        "url": "https://zh.wikipedia.org/wiki/田和"
+      },
+      {
+        "label": "田氏代齐",
+        "url": "https://zh.wikipedia.org/wiki/田氏代齐"
+      },
+      {
+        "label": "秦国君主列表",
+        "url": "https://zh.wikipedia.org/zh-cn/秦国君主列表"
+      },
+      {
+        "label": "中山国",
+        "url": "https://zh.wikipedia.org/wiki/中山国"
+      },
+      {
+        "label": "吴国",
+        "url": "https://zh.wikipedia.org/wiki/吴国"
+      },
+      {
+        "label": "左传·成公十年",
+        "url": "https://ctext.org/chun-qiu-zuo-zhuan/cheng-gong-shi-nian/zhs"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邾子挟"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邾子非"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邾子成"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邾子车辅"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邾子将新"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邾子訾父"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邾武公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邾子叔术"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邾子夏父"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邾子克"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邾子琐"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邾文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邾定公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邾宣公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邾悼公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邾庄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邾隐公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邾桓公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邾子何"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邾娄考公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/邹穆公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/姜子牙"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐丁公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐乙公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐癸公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐哀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐胡公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐献公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐武公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐厉公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐成公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐庄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐釐公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐襄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/公孙无知"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐桓公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/公子无亏"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐孝公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐昭公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/君舍"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐懿公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐惠公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐顷公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐灵公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐景公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/安孺子"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐悼公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐简公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐平公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐宣公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐康公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/剡"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐威王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐宣王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐湣王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齐襄王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/建"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐叔虞"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燮"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋武侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋成侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋厉侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋靖侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋釐侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋献侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋穆侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋殇叔"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋昭侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曲沃桓叔"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋孝侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曲沃庄伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋鄂侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋哀侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曲沃武公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋小子侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/缗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋献公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋惠公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋怀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋襄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋灵公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋成公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋景公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋厉公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋悼公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋平公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋昭公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋顷公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋定公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋出公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋哀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋幽公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋烈公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋孝公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋静公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/熊绎"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/熊艾"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/熊䵣"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/熊胜"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/熊杨"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/熊渠"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/熊挚红"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/熊延"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/熊勇"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/熊严"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/熊霜"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/熊徇"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/熊咢"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/若敖"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/霄敖"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/蚡冒"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚武王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚文王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/堵敖"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚成王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚穆王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚庄王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚共王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚康王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郏敖"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚灵王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/比"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚平王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚昭王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚惠王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚简王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚声王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚悼王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚肃王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚宣王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚威王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚怀王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚顷襄王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚考烈王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚幽王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/楚哀王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/负刍"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/昌平君"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/义帝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕召公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕侯克"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕侯旨"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕侯舞"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕惠侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕釐侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕顷侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕哀侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕郑侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕穆侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕宣侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕桓侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕庄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕襄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕桓公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕宣公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕昭公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕武公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕前文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕懿公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕惠公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕悼公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕共公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕平公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕简公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕孝公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕成公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕闵公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕后文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕易王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/哙"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕昭王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕惠王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕武成王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕孝王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/喜"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/微子"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/微仲"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/稽"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋丁公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋湣公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋炀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋厉公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋釐公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋惠公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋哀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋戴公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋武公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋宣公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋穆公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋殇公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋庄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋闵公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/游"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋桓公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋襄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋成公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/御"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋昭公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋共公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋平公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋元公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋景公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋昭公特"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋悼公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋休公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/剔成君"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/宋康王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/伯禽"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁考公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁炀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁幽公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁魏公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁厉公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁献公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁真公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁武公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁懿公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/伯御"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁孝公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁惠公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁隐公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁桓公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁庄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁闵公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁釐公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁宣公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁成公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁襄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/君野"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁昭公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁定公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁哀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁悼公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁元公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁穆公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁共公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁康公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁景公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁平公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鲁顷公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫康叔"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫康伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫考伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫嗣伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫疌伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫靖伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫贞伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫顷侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫釐侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫共伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫武公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫庄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫桓公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/州吁"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫宣公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫惠公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/黔牟"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫懿公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫戴公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫成公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/君瑕"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫穆公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫定公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫献公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫殇公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫襄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫灵公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫出公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/斑师"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/君起"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫悼公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫敬公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫昭公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫怀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫慎公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫声公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫成侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫平侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫嗣君"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫怀君"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫元君"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/君角"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑桓公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑武公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑庄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑昭公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑厉公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/子亹"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/子婴"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑穆公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑灵公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑襄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑悼公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑成公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/公子繻"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑釐公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑简公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑定公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑献公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑声公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑哀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑共公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑幽公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑𦈡公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郑康公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/叔振铎"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹太伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/仲君"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹宫伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹孝伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹夷伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹幽伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹戴伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹惠伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹废伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹穆公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹桓公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹庄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹釐公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹昭公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹共公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹宣公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹成公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹武公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹平公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹悼公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹声公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹隐公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹靖公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/伯阳"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/泰伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/仲雍"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/季简"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/叔达"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周章"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/熊遂"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/柯相"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/彊鸠夷"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/余桥疑吾"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/柯卢"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周繇"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/屈羽"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/夷吾"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/禽处"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/转"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/颇高"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/句卑"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/去齐"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴王寿梦"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴王诸樊"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴王余祭"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴王余昧"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴王僚"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/阖闾"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴王夫概"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴王夫差"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/夫谭"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/允常"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/勾践"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/鹿郢"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/不寿"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/朱勾"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/翳"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/错枝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/无余"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/无颛"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/无彊"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/中山文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/中山武公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/中山桓公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/中山成公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/中山王厝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/中山王𧊒"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/中山王尚"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/韩景侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/韩烈侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/韩文侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/韩哀侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/韩共侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/韩釐侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/韩宣惠王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/韩襄王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/韩釐王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/韩桓惠王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/安"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵烈侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵武侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵敬侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵成侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵肃侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵武灵王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵惠文王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵孝成王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵悼襄王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵幽缪王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/魏文侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/魏武侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/魏惠成王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/魏襄王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/魏昭王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/魏安僖王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/魏景湣王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/假"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦襄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦宪公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/出子"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦武公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦德公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦宣公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦成公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦穆公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦康公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦共公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦桓公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦景公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦哀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦惠公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦悼公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦厉共公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦躁公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦怀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦灵公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦简公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦出公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦献公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦孝公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦惠文王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦武王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦昭襄王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦孝文王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦庄襄王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/商鞅"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴起"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/孙武"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/伍子胥"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/范蠡"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/屈原"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/老子"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/孟子"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/庄子"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/韩非"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/孙膑"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/白起"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/王翦"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/扁鹊"
+      },
+      {
+        "label": "《史记·楚世家》",
+        "url": "https://www.chinakongzi.org/kzsf/wxxs/mingpian/shiji/200705/t20070524_25207.htm"
+      },
+      {
+        "label": "《史记·十二诸侯年表》：共和元年楚熊勇七年及其后在位年次",
+        "url": "https://ctext.org/shiji/shi-er-zhu-hou-nian-biao/zh"
+      },
+      {
+        "label": "楚国君主列表：熊绎至熊挚年代失考、熊延终年与熊勇以后年表",
+        "url": "https://zh.wikipedia.org/wiki/楚国#楚国君主列表"
+      },
+      {
+        "label": "《史记·燕召公世家》",
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷034"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
+      },
+      {
+        "label": "首都博物馆：克罍及分封燕侯铭文",
+        "url": "https://www.capitalmuseum.org.cn/collection/30a9844041e24d919ad497143c9db47b"
+      },
+      {
+        "label": "河南博物院：燕侯旨鼎",
+        "url": "https://www.chnmus.net/sitesources/hnsbwy/page_pc/clzl/zlhg/dszhzgdwh/debfzmds/article301959f6691644fd9661d4e7ed7e351f.html"
+      },
+      {
+        "label": "燕国君主列表及所据考古、世系研究",
+        "url": "https://zh.wikipedia.org/wiki/燕国#君主列表"
+      },
+      {
+        "label": "《史记·齐太公世家》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷032"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷014"
+      },
+      {
+        "label": "《尚书·顾命》",
+        "url": "https://zh.wikisource.org/wiki/尚書/顧命"
+      },
+      {
+        "label": "《太平御览》卷八十五引《竹书纪年》",
+        "url": "https://zh.wikisource.org/wiki/太平御覽/0085"
+      },
+      {
+        "label": "夏商周断代工程与其他西周年代方案对照",
+        "url": "https://zh.wikipedia.org/wiki/夏商周断代工程#年表"
+      },
+      {
+        "label": "维基百科：齐国君主列表（早期年代与正文表有异）",
+        "url": "https://zh.wikipedia.org/wiki/齐国君主列表#姜齊君主列表"
+      },
+      {
+        "label": "《资治通鉴外纪》成王条（太公卒年异说）",
+        "url": "https://www.shidianguji.com/book/SBCK033/chapter/SBCK033_14"
+      },
+      {
+        "label": "《春秋公羊传·昭公三十一年》",
+        "url": "https://ctext.org/gongyang-zhuan/zhao-gong-san-shi-yi-nian/zhs"
+      },
+      {
+        "label": "周朝诸侯国君主列表·邾国",
+        "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+      },
+      {
+        "label": "《左传·文公十三年》",
+        "url": "https://ctext.org/chun-qiu-zuo-zhuan/wen-gong-shi-san-nian/zhs"
+      },
+      {
+        "label": "《左传·哀公二十四年》",
+        "url": "https://ctext.org/chun-qiu-zuo-zhuan/ai-gong-er-shi-si-nian/zhs"
+      },
+      {
+        "label": "《左传·哀公八年》",
+        "url": "https://ctext.org/chun-qiu-zuo-zhuan/ai-gong-ba-nian/zhs"
+      },
+      {
+        "label": "《礼记·檀弓下》",
+        "url": "https://ctext.org/liji/tan-gong-xia/zhs"
+      },
+      {
+        "label": "《孟子·滕文公上》",
+        "url": "https://zh.wikisource.org/zh-hans/孟子/滕文公上"
+      },
+      {
+        "label": "邾国故城（山东地情档案）",
+        "url": "https://shandong-chorography.org/database/a/section/70/article/91/"
+      },
+      {
+        "label": "《史记·晋世家》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷039"
+      },
+      {
+        "label": "晋国君主年表（不同系年并列；春秋部分对照杨伯峻《春秋左传注》）",
+        "url": "https://zh.wikipedia.org/wiki/晋国君主"
+      },
+      {
+        "label": "天马—曲村北赵晋侯墓地材料（北京大学机构知识库）",
+        "url": "https://ir.pku.edu.cn/handle/20.500.11897/7324"
+      },
+      {
+        "label": "The Jin Hou Su Bells Inscription and its Implications for the Chronology of Early China",
+        "url": "https://doi.org/10.1017/s0362502800004260"
+      },
+      {
+        "label": "曲沃叛王与晋公戈年代（复旦大学出土文献与古文字研究中心）",
+        "url": "https://www.fdgwz.org.cn/Web/Show/2458"
+      },
+      {
+        "label": "冯峰：《说“醴壶”》（北京大学中国考古学研究中心）",
+        "url": "https://csca.pku.edu.cn/info/1018/1207.htm"
+      },
+      {
+        "label": "张海：《邾器与两周邾邦史事》",
+        "url": "https://www.sohu.com/a/469705297_121124388"
+      },
+      {
+        "label": "邾国君主世系图（据《春秋释例》等）",
+        "url": "https://zh.wikipedia.org/wiki/邾國君主世系圖"
+      },
+      {
+        "label": "维基百科：齐国君主表（早期推定年代）",
+        "url": "https://zh.wikipedia.org/wiki/齐国#姜齊君主列表"
+      },
+      {
+        "label": "维基百科：齐国君主列表（年表及异说）",
+        "url": "https://zh.wikipedia.org/wiki/齐国君主列表"
+      },
+      {
+        "label": "《史记·田敬仲完世家》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷046"
+      },
+      {
+        "label": "《春秋左氏传·庄公》",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳/莊公"
+      },
+      {
+        "label": "《春秋左氏传·僖公》",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳/僖公"
+      },
+      {
+        "label": "《春秋左氏传·文公》",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳/文公"
+      },
+      {
+        "label": "《春秋左氏传·哀公》",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳/哀公"
+      },
+      {
+        "label": "春秋鲁国历法复原（据张培瑜《中国古代历法》）",
+        "url": "https://ytliu0.github.io/ChineseCalendar/chunqiu_simp.html"
+      },
+      {
+        "label": "维基百科：齐庄公（购）",
+        "url": "https://zh.wikipedia.org/wiki/齊莊公_(購)"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/舍_(齊國)"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齊莊公_(光)"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/田侯剡"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/田午"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齊王建"
+      },
+      {
+        "label": "《左传·僖公九年》（周历月序及晋献公、奚齐、卓子之死）",
+        "url": "https://ctext.org/chun-qiu-zuo-zhuan/xi-gong-jiu-nian/zhs"
+      },
+      {
+        "label": "《左传·庄公十六年》",
+        "url": "https://ctext.org/chun-qiu-zuo-zhuan/zhuang-gong-shi-liu-nian/zhs"
+      },
+      {
+        "label": "西虢国（君主与虢公丑）",
+        "url": "https://zh.wikipedia.org/wiki/西虢国"
+      },
+      {
+        "label": "西虢君主纪事与世系",
+        "url": "https://zh.wikipedia.org/wiki/西虢国"
+      },
+      {
+        "label": "虢国（上阳、三门峡）",
+        "url": "https://zh.wikipedia.org/wiki/虢国"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢叔"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郭叔"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢城公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢公长父"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢宣公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢石父"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢公翰"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢公忌父"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢公林父"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢公丑"
+      },
+      {
+        "label": "周朝诸侯国君主列表（西虢中间世系失考）",
+        "url": "https://zh.wikipedia.org/wiki/周朝諸侯國君主列表#西虢国"
+      },
+      {
+        "label": "西虢国（金文人物、年代及世系争议）",
+        "url": "https://zh.wikipedia.org/wiki/西虢国#金文中的虢国氏族"
+      },
+      {
+        "label": "《逸周书·王会》（郭叔掌贡币）",
+        "url": "https://ctext.org/lost-book-of-zhou/wang-hui/zh"
+      },
+      {
+        "label": "《班簋铭文》（毛伯接替虢城公职务）",
+        "url": "https://zh.wikisource.org/wiki/班簋銘文"
+      },
+      {
+        "label": "虢国君主世系（主序列与待考虢季家族）",
+        "url": "https://zh.wikipedia.org/wiki/Template:虢國君主"
+      },
+      {
+        "label": "周朝（共时定位采用的年表）",
+        "url": "https://zh.wikipedia.org/wiki/周朝"
+      },
+      {
+        "label": "冯时《班簋铭文补释》（穆王时期）",
+        "url": "https://www.ctwx.tsinghua.edu.cn/__local/A/61/04/3B0E595B6786E89BFDFF5B51A67_192072D8_490B29.pdf?e=.pdf"
+      },
+      {
+        "label": "虢季易父（五代世系与身份争议）",
+        "url": "https://zh.wikipedia.org/wiki/虢季易父"
+      },
+      {
+        "label": "虢宄公（五代世系与身份争议）",
+        "url": "https://zh.wikipedia.org/wiki/虢宄公"
+      },
+      {
+        "label": "虢幽叔（五代世系与身份争议）",
+        "url": "https://zh.wikipedia.org/wiki/虢幽叔"
+      },
+      {
+        "label": "虢德叔（五代世系与身份争议）",
+        "url": "https://zh.wikipedia.org/wiki/虢德叔"
+      },
+      {
+        "label": "师丞（五代世系与身份争议）",
+        "url": "https://zh.wikipedia.org/wiki/师丞"
+      },
+      {
+        "label": "河南博物院《虢硕父簠》",
+        "url": "https://www.chnmus.net/ch/collection/appraise/details.html?id=512153734134559839"
+      },
+      {
+        "label": "周朝诸侯国君主列表（西虢君主序列）",
+        "url": "https://zh.wikipedia.org/wiki/周朝諸侯國君主列表#西虢国"
+      },
+      {
+        "label": "《左传·僖公五年》（晋灭虢、虢公丑奔京师）",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳/僖公"
+      },
+      {
+        "label": "东虢国（始封与可考君主）",
+        "url": "https://zh.wikipedia.org/wiki/東虢國"
+      },
+      {
+        "label": "虢仲（始封君归属异说及东虢世系待考区段）",
+        "url": "https://zh.wikipedia.org/wiki/虢仲"
+      },
+      {
+        "label": "何志華《西周金文韻讀研究淺議》（虢叔旅钟、惠叔大林父子）",
+        "url": "https://jas.hkbu.edu.hk/content/dam/jas-assets/publications/bulletin-of-the-jao-tsung-i-academy-of-sinology/issue-6-august-2019/12.pdf"
+      },
+      {
+        "label": "《陕西省志·秦志》大事年表（虢叔旅活动于前847年之说）",
+        "url": "https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsz/szdylpdf/201404/P020240923616206405975.pdf"
+      },
+      {
+        "label": "《左传·隐公元年》（制邑、虢叔死焉）",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳/隱公"
+      },
+      {
+        "label": "《国语·郑语》（虢叔与郑桓公共时）",
+        "url": "https://ctext.org/guo-yu/zheng-yu/ens"
+      },
+      {
+        "label": "孙尚勇《〈春秋〉历史叙事与孔子的文化关怀》（平王四年郑灭虢与杜预注）",
+        "url": "https://www.ica.org.cn/att/site17/20240529/1716968303123.pdf"
+      },
+      {
+        "label": "周朝（共时定位的武王年表）",
+        "url": "https://zh.wikipedia.org/wiki/周朝"
+      },
+      {
+        "label": "国家图书馆《国家图书馆藏金文全集》（虢叔旅钟为西周晚期）",
+        "url": "https://www.nlc.cn/pcab/zx/xw/20240119_2637724.shtml"
+      },
+      {
+        "label": "虢国君主世系（宣公、文公顺序异说）",
+        "url": "https://zh.wikipedia.org/wiki/Template:虢國君主"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢季易父"
+      },
+      {
+        "label": "西虢国（金文家族君主身份待考）",
+        "url": "https://zh.wikipedia.org/wiki/西虢国#金文中的虢国氏族"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢宄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢幽叔"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢德叔"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/师丞"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢国"
+      },
+      {
+        "label": "《史记》卷三十九·晋世家：叔虞封唐、燮改号晋与昭侯时翼都",
+        "url": "https://www.chinakongzi.org/kzsf/wxxs/mingpian/shiji/200705/t20070524_25208.htm"
+      },
+      {
+        "label": "山西大学考古文博学院：西周早期晋都、燮父至文侯墓葬序列与三处都邑遗址",
+        "url": "https://archaeology.sxu.edu.cn/rcpy/yxsx/199ac6ba62514d118ef56d7d17add238.htm"
+      },
+      {
+        "label": "上海博物馆《晋侯墓地》：曲村—天马早期晋都及西周晋侯墓葬",
+        "url": "https://www.shanghaimuseum.net/mu/asset2/20151230150415016/"
+      }
+    ],
+    "notes": [
+      "收录春秋主要列国与战国七雄（齐楚燕韩赵魏秦）及宋鲁卫郑曹吴越中山等。",
+      "邹国君主世系初始收录说明（后续日期复核见本包2026-10-02复核记录）：始封和早期君主名录据《元和姓纂》《繹史·邾世系》等后世材料；周初至武公的世系真实性与具体年代有争议，均分坐标仅作时间轴定位。叔术、夏父让国据《公羊传·昭公三十一年》。前780至前678段后经邾君庆铜器铭文补录并重排。战国末段据《春秋释例》整理为邾子何、考公、穆公三位可考，另五世失名；其单任在位年代未见可靠完整年表。邹穆公约前382—前330年及邹国前256年终点均按近似年代记录。",
+      "邾文公前二任称谓复核（2026-10-02）：人物 zou-r11 与克、字仪父为同一人，不新增君主。按《邾国君主世系图》及其所列杜预《春秋释例》《古本竹书纪年》等依据，前期克的卡片首选称谓改为庄公；《邹县续志》另称惠公，其他通行资料称安公，保留为检索异称。《七国统表》据《竹书纪年》记仪父为庄公，并区分后期悼公子庄（穿），因此系统内前后两位庄公为不同君主。琐仍为原有 zou-r12 人物，卡片标题改用世系图所列姓名“琐”，人物谥号“宪公”保留于结构化字段与详情；既有时间区间与克→琐→文公次序不变。",
+      "列国泳道名用国号（齐、楚、韩），与夏商周秦汉一致，不带「国」；「齐国」等写入 alt_names。",
+      "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
+      "秦国 upsert 已有 qin 行，将始年延至前778年秦襄公即位，与 qin-han 统一帝国段衔接；清理脚本保留 qin-han 的秦二世、子婴 reign。",
+      "各国国君世系取维基百科大陆简体（zh-cn）诸侯君主列表与《史记》年表；按表头读取称号/姓名/在位年份，不用本地繁简转换。",
+      "年精度顺序继位按逾年改元切年（死年归旧王、新王次年起算，见 缓存中的最终在位起讫日期；用维基原始起年检测，避免孝文王占死后庄襄王不再后移）。维基在位年份常与死年重叠（如秦文公起前766年）；一年短祚、秦灵公/简公/献公未逾年改元、曲沃与翼并立不后移。魏惠王称王前后合并为一条在位（前369–前319）。",
+      "燕前文公（前554—前549）与燕后文公（前361—前333）是不同世次的两位燕君，分属燕武公之后与燕桓公之后；源表虽均简称燕文公，导入时拆为 yan-r18 与 yan-r30 两个人物，后者本名失载、谥文公。依据《史记·燕召公世家》与《周朝诸侯国君主列表》。",
+      "西周早中期无在位年的国君原则上在相邻锚点之间按世系均分，均分结果标 起止端点标记为 interpolated_by_other。宋微子至宋厉公采用《宋国君主列表》所列《史记·宋世家》与陈梦家《西周年代考》推定年份，仍标 interpolated；宋釐公前858年为后续年表锚点。",
+      "卫康叔至卫贞伯现有资料仅能按其处于周成王、康王、昭王、穆王、共王、懿王/孝王时期作宽区间约束；康叔约前1040年以后，卫贞伯卒年前867年，顷侯自前866年起有年表。未将周王世代误作卫君个人的精确在位年。",
+      "楚早期日期与概述复核（2026-10-02）：熊绎、熊艾、熊䵣、熊胜、熊杨、熊渠、熊挚红、熊延的旧 bio 将本系统均分所得的在位区间冒充史料系年，或误称为“后世系年所推”。已删除这八人的插值年份和资料处理叙述，依据《史记·楚世家》补回世系、继承与可证事迹；插值说明只留于本 manifest。熊绎旧述“共事周康王”改为共事成王；熊渠保留夷王、厉王时期的相对年代与三子王号；熊挚红、熊延继承叙述明确限定为《史记》记载并保留文献异说。熊勇旧述混入周幽王被杀及无据的伐周，已删除，“在位九年”据《楚世家》十年卒纠正；熊严补入继兄位与四子世系。",
+      "曹叔振铎为曹国始封君：《史记·管蔡世家》记武王克殷后封其于曹。本包以克殷年（前1046）为其起年；维基《曹国》君主表所列前1041—前1016与同表“在位30年”不符，故不采其起年，采用前1046—前1016（30年）。",
+      "齐太公不用维基齐国表的前1122年（旧克商年），与西周始年（前1046）对齐。",
+      "田氏代齐为顺序接续，不是并立：宣公→康公→田和→侯剡。齐国表田和前404–前384年是田悼子卒后的领袖年；田和称君取条目前391年自立，前386年周安王列为诸侯。康公卒前379年，前391年被放逐后不在齐行续画，在位迄前392年。",
+      "卫国人物 id 用 weiguo- 前缀，避免与战国魏 wei-r* 冲突；燕召公用 ji-shi，避免与宋恭帝 zhao-shi 冲突。",
+      "同人多次即位拆多条 reign（reignId 后缀 -2），与唐/明一致；完整在位字段直接维护于 cache.json，不从 Wiki 原始文本自动推断或覆盖。",
+      "吴国条目列出泰伯至去齐的连续世系但未给出各君主在位年，并称建国约在前12世纪、寿梦始有准确纪年。《史记·吴太伯世家》记载武王克殷时周章已君吴；以西周建国年（前1046）为周章起年确定锚点，锚点前后的无年表连续君主分别按世系均分，失考边标记 interpolated。寿梦起点保留年表锚点。前505年夫概自立，按条目列作短暂并立君主，使用 rival claim track。",
+      "郑成公被晋扣留期间，前581年三月子如立公子繻，四月郑人杀繻并立髡顽，郑伯随后归国（《左传·成公十年》）；在位序列按郑成公第一次在位→公子繻短暂即位→郑成公复位排列。年精度边界沿用前581年。",
+      "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 confidence: year。",
+      "越国泳道不收夏少康庶子无余及无壬、无瞫：维基诸侯表在无余后「中有十世不明」、无瞫后「中有二十世不明」，无通行王年，不把远祖插值到春秋。有年表自允常；无年表的夫谭仅按允常前窗口插值。王朝起迄取在位首尾（夫谭至无彊前306），楚破越从维基诸侯表前306年，不取旧泳道前334。",
+      "中山国王朝起迄与国君泳道首尾一致，为文公前424年至王尚前296年；不提前至桓公复兴传说起点前478。桓公约前406年在魏灭中山时在位，约前380年复国后再次在位；两段通过同人多次在位配置拆开，中间魏属中山期仍保留空档，不补史料缺占位。",
+      "未收录薛、滕、杞、莒等小国；未收录战国末期的代、胶东等残余。",
+      "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
+      "补充‘晋文侯杀携王’事件与晋国及晋文侯（jin-r10）的关联；命运线终点据此前750年在位的晋文侯卡，不连周平王。",
+      "逐条复核夏商周包既有事件的诸侯国关联：《左传·僖公九年》载葵丘与会者为鲁、齐、宋、卫、郑、许、曹及周王使者；补入本包有建模泳道的鲁、宋、卫、郑、曹（许未建王朝实体）。城濮之战补入受战事直接影响的宋、曹、卫：宋受楚围而晋出兵救援，晋先伐曹、卫并以复国交涉，原有关联晋、楚保留。依据《中国哲学书电子化计划》所录《左传·僖公九年》 https://ctext.org/chun-qiu-zuo-zhuan/xi-gong-jiu-nian/zhs ，以及《菏泽历史文化集萃·城濮之战》 https://shandong-chorography.org/database/bh/section/22/article/66/ 。",
+      "韩赵魏在位仅收录前403年册命立国之后；晋国卿大夫世系（赵简子等）不挂在三国行上。晋国止于前349年静公被杀。",
+      "国君名录共 463 条在位记录与人物简介、Wiki 条目对应关系均维护于 cache.json。运行统一生成命令将缓存转换为 PostgreSQL import.sql。",
+      "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
+      "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
+      "称谓复核（2026-10）：本包君主卡片称呼写入对应 reign.title。已有谥号者使用 persons.posthumousNames 的首选本体（不带国名）；无谥号者采用已核对的人物 title，并去除国名前缀；已有非空 reign.title 亦按无国名称呼规则复核。具体来源沿用各人物 links 与本包 manifest.sources。",
+      "楚早期逐端点复核留据：reign-chu-r0-chu-chunqiu（熊绎，-1042至-1019）、reign-chu-r1-chu-chunqiu（熊艾，-1018至-995）、reign-chu-r2-chu-chunqiu（熊䵣，-994至-970）、reign-chu-r3-chu-chunqiu（熊胜，-969至-946）、reign-chu-r4-chu-chunqiu（熊杨，-945至-922）、reign-chu-r5-chu-chunqiu（熊渠，-921至-897）、reign-chu-r6-chu-chunqiu（熊挚红，-896至-873）：两端均维持 interpolated_by_generation；这些数值仅是既有世系均分的时间轴定位，未在本次复核中确认为史料年份，不写回 bio。reign-chu-r7-chu-chunqiu（熊延，-872至-848）：起点维持 interpolated_by_generation，终点按现行君主年表保留 year。现有左侧定位取周成王时期框架的-1042年，右侧接熊勇-847年起点；《楚世家》只给熊绎受封于成王时，未给受封年，因此-1042不是已核实的熊绎即位年。熊渠与周夷王、厉王的共时记载亦不能由八任整体均分精确还原；本次只清理旧概述，未将旧坐标升级为确定或近似日期，具体重新系年仍待可靠依据。",
+      "楚早期可考日期复核：reign-chu-r8-chu-chunqiu（熊勇，-847至-838）、reign-chu-r9-chu-chunqiu（熊严，-837至-828）两端保留 year；《十二诸侯年表》共和元年（-841）列楚熊勇七年，现行君主表列熊勇十年、熊严十年，与这两段区间相符。《楚世家》另载熊勇六年厉王奔彘，与年表共和元年的七年有年次差异，本次不据此重排已用年表；bio 保留原文相对年次，不将“六年”直接换算成某公历年。reign-chu-r10-chu-chunqiu（熊霜，-827至-822）、reign-chu-r11-chu-chunqiu（熊徇，-821至-800）、reign-chu-r12-chu-chunqiu（熊咢，-799至-791）、reign-chu-r13-chu-chunqiu（若敖，-790至-764）、reign-chu-r14-chu-chunqiu（霄敖，-763至-758）、reign-chu-r15-chu-chunqiu（蚡冒，-757至-741）均保留原起讫与 year confidence：现行君主年表与《楚世家》所载六、二十二、九、二十七、六、十七年在位一致，无插值年份混入概述。",
+      "燕早期概述与来源复核（2026-10-02）：ji-shi（召公奭）、yan-r1（克）、yan-r2（旨）、yan-r3（舞）的旧 bio 将系统分配的年份写成确定在位年或“后世系年所推”，现全部删除，仅保留可证身份、事迹与历史年代失考的说明。召公旧述“周武王同母弟”缺可靠依据，依《史记》只保留与周同姓及王室辅政身份；由子就封据河南博物院燕侯旨鼎说明。克的分封据首都博物馆克罍铭文；旨与克的兄弟/父子关系保留学术异说；舞不再称“史料仅见世系之名”，改为出土铜器所见燕侯。克、旨、舞的泛名维基链接改为专门条目，并在各 person.links 与 manifest.sources 同步补入本次依据。燕惠侯、釐侯补回继承与共和、郑始封等可证事实；燕庄公旧述“击退齐军于东门”缺依据，改为《燕召公世家》所载王子颓之乱与齐桓公救燕。",
+      "燕早期日期复核留据（本次仅修概述与来源，未重算定位）：reign-ji-shi-yan-chunqiu（-1044至-1000，两端 interpolated_by_generation）、reign-yan-r1-yan-chunqiu（-999至-955，两端 interpolated_by_generation）、reign-yan-r2-yan-chunqiu（-954至-910，两端 interpolated_by_generation）、reign-yan-r3-yan-chunqiu（-909至-865，起点 interpolated_by_generation、终点 year）均为旧版本四段均分定位，未获本次史料确认，不再写入 bio。燕早期世系不连续：《史记》仅称召公以下九世至惠侯，克、旨、舞又主要据金文辨认，其后与惠侯之间有世系断层；不能把四个现存姓名当作完整连续的四任世系，也不能由惠侯起年认定舞的卒年。因此这四段旧定位及舞终点 confidence 的重新建模暂缓，待有可靠共同锚点及世次定位时处理；不据本次正文清理新增或重做跨断层插值，不将原坐标视为史料日期。",
+      "燕可考日期复核：reign-yan-r4-yan-chunqiu（惠侯，-864至-827）与 reign-yan-r5-yan-chunqiu（釐侯，-826至-791）两端维持 year；《十二诸侯年表》共和元年（-841）列惠侯二十四年，宣王元年（-827）列惠侯尽，宣王二年（-826）列釐侯庄元年。个别二手条目把惠侯初立年写为-865，本包保留年表年次及旧王占死年的接续规则，不把-865解释成舞卒年。reign-yan-r6-yan-chunqiu（顷侯，-790至-767）、reign-yan-r7-yan-chunqiu（哀侯，-766至-765）、reign-yan-r8-yan-chunqiu（郑侯，-764至-729）、reign-yan-r9-yan-chunqiu（穆侯，-728至-711）、reign-yan-r10-yan-chunqiu（宣侯，-710至-698）、reign-yan-r11-yan-chunqiu（桓侯，-697至-691）与 reign-yan-r12-yan-chunqiu（庄公，-690至-658）保留原起讫、两端 year 及既有概述中的年表年份；二十四、二、三十六、十八、十三、七、三十三年在位与《燕召公世家》对应，没有早期均分年份混入这些记录。",
+      "邹（邾）国君主逐项复核（2026-10-02）：逐人保留 ID、世系主张和具体依据。周初挟至武公一段：现有世系主要由《元和姓纂》《繹史·邾世系》等后世资料整理，来源本身提示该段世系真实性有待考证；前796仅是传统表所采武公卒年。旧缓存把周初到前796的六段均分坐标写入人物简介，本次从简介删除坐标，不将其表述为史料纪年；旧几何仍标 interpolated_by_generation，不能作个人即位/卒年或在位年数使用，待可靠共同锚点或同期材料再重建。叔术、夏父与武公的让国叙述据《公羊传·昭公三十一年》，保留为传文所载。前780至前678之间夏父、失名者、克的既有插值仍只是世系定位，不等同于史载年份。前471年至邹穆公时期的何、考公及失名君主：前471即位据《左传·哀公二十四年》，考公仅见《礼记·檀弓下》，穆公见《孟子·滕文公上》；世系图据杜预《春秋释例》给出何、考公、穆公三位可考及另五位失名君主，但各失名者在三人间的确切排列仍属该图的整理方案。缓存依“何—失名一世—考公—失名二世—穆公—失名二世”记录；后四段坐标标插值，概述不将插值年份当作确定史实或展示确定时长。前614年邾文公卒并迁都绎据《左传·文公十三年》及山东地情档案；旧记录将文公终点记为前615、定公始于前614，违反原始纪年和死年归旧王规则，改文公终点为前614、定公起点为前613，均为年精度，未录入公历月日。姓名按邾国曹姓规范为可检索全名；未知本名者用曹姓加已知谥称/爵称，失名君主仍用“？”。在位卡片称谓移除国名前缀；撤除失名人物不存在的问号维基链接，逐人链接改为可核史料或汇编来源。",
+      "2026-10：按在位信息与日期处理 Skill 复核晋国君主。早期晋侯世系参考《史记·晋世家》并与北赵晋侯墓地考古序列、晋侯苏编钟研究互证；目前具体年界缺少足以替代世次定位的共同绝对锚点，保留原插值坐标并明确为插值，不将其表述为确年。曲沃桓叔、庄伯、武公与翼城公室曾并立，添加曲沃 rival track；武公前678年受周王命为晋侯，主线阶段原始系年记前678年至前677年；曲沃阶段仍独立保留至前678年。由于晋侯缗与武公正式受命均系于前678年而无可靠公历月日，泳道有效归属仍由 timelineOwnership 按年精度死年归旧王裁定，主线有效展示从前677年起；缓存保留史料起年，不把有效裁定回写成前677年；按姓名列规范补入姬姓，殇叔和小子侯的私名无可靠记载，改存“？”。春秋系年有《史记》与《春秋左传注》异说，采用现有包按杨伯峻系年的做法；晋侯缗、曲沃武公及晋武公受命/即位的年份据所引原始记载与研究区分。按《左传·僖公九年》补入奚齐、卓子两任短期君主：经传记献公死于周历九月、奚齐被杀于周历十月、卓子被杀于周历十一月；周历建子，月序不能直接当公历月份。源数据用公历约八、九、十月作为近似月份定位，三任交界 confidence 均为 approximate_month，不据此声称具体日或确定时长。同步删除人物概述中与世次插值相对应的前1006至前896年坐标年份；有独立依据的年份仍保留。",
+      "邾君庆与战国末失名君主补核（2026-10-02）：新见邾君庆信息据枣庄东江春秋墓地铜壶铭文“邾君庆作秦妊礼壶”及冯峰对春秋陶壶/铜壶和邾国世系的研究；张海《邾器与两周邾邦史事》将庆列入邾邦史。其具体在位年份未考，放在夏父至克的世系位置，相关区间重新按夏父起年与克卒年前678锚点、连续四任（夏父、失名一世、庆、克）分配；两端及内部边界均为 interpolated_by_generation，不能当成史载年份。世系图据杜预《春秋释例》称邾子何、邾娄考公、邹穆公三位可考，另有五世不详；其分段列为何与考公间一世、考公与穆公间二世、穆公之后二世。末二世分别建独立失名 person/reign，不以系统占位替代已知世次数。穆公之后缺乏可靠逐年锚点，时间轴位置仅以现有穆公 approximate 终点和本包采用的邹国约前256年终点作世次定位，起止标 interpolated_by_generation；邹国终点改为 approximate_year，表达亡国年有异说，不能把这些分配年当作确切继位/卒年。此前把失名总数及其归属说成无法确认的复核说明由本条细化取代。",
+      "齐国全君主复核（2026-10-02）：逐端点核对齐泳道40任（姜齐32、田齐8）。有出处的具体推定年代优先于旧均分定位；太公采用用户明确指定的前1026年说，丁、乙、癸及哀公起点采用《齐国》君主表所列推定年，标 approximate_year，不声称古籍直接记载这些公元前年份。正文表、个别人物正文、底表存在异说，故不批量标确定 year；太公康王六年约前1015年等异说仍保留来源。太公旧-1011等均分值撤下，不再作为史实或较可信年代。",
+      "齐国原始年与接续占位：太公-1046→-1026，丁-1026→-975，乙-975→-933，癸-933→-902，哀-902→-883；对相续的年精度起点调用 reignOwnershipInterval / effectiveIntervalStartPoint，依死年归旧王分别得到丁-1025、乙-974、癸-932、哀-901。1月/12月为年桶占位，不代表已知月份。哀公终点据《太平御览》引《竹书纪年》夷王三年，采用与周王泳道一致的夷王元年-885，取约-883；优先于百科正文-890和另一列表-863。胡公起点沿用同一边界裁定约-882，终点-860可据武公锚点及献公九年回溯。",
+      "齐国短祚历法复核：襄公死于鲁庄公八年十一月癸未（经；传作十二月），桓公死于鲁僖公十七年十月乙亥（传；经十二月为赴告）。采用张培瑜《中国古代历法》复原法的积月445、976，月序分别11、10，朔策30328/1027、原点JD1457727.5+268/1027；筛取月内干支日并将儒略日转延伸格里历，得-686-10-29、-643-09-05。历法复原及经传差异使其标 approximate_day；公孙无知/无亏起点由共享归属裁定为次日。无知被杀记庄公九年春正月，该复原月覆盖-686-12-21至-685-01-19，采用中段所在的约-685年1月；无亏被杀记僖公十八年三月，覆盖-642-02-23至-642-03-23，采用约-642年3月；孝公获立记同年五月，覆盖-642-04-23至-642-05-21，采用约-642年5月。三个 approximate_month 为转换区间的近似代表月，原文未载日，未补造即位/被杀日；原历月不得直接写成公历月。",
+      "齐国逐端点复核2026-10-02：reign-lv-shang-qi-chunqiu；原-1046/1(year)—-1011/12(interpolated_by_generation)，现-1046/1(year)—-1026/12(approximate_year)。起点沿用克商年-1046 year；终点从旧均分-1011改为百科有出处的-1026 approximate_year，成王时期卒的史源为《外纪》，用户选择此说。",
+      "齐国逐端点复核2026-10-02：reign-qi-r1-qi-chunqiu；原-1010/1(interpolated_by_generation)—-974/12(interpolated_by_generation)，现-1025/1(approximate_year)—-975/12(approximate_year)。原始推定-1026→-975；《顾命》确认吕伋在成王崩时已为齐侯，与新系年相容；起点经共享裁定，不沿用-1010→-974均分。",
+      "齐国逐端点复核2026-10-02：reign-qi-r2-qi-chunqiu；原-973/1(interpolated_by_generation)—-937/12(interpolated_by_generation)，现-974/1(approximate_year)—-933/12(approximate_year)。原始推定-975→-933，采用有出处年表并保留争议标记；撤下-973→-937均分。",
+      "齐国逐端点复核2026-10-02：reign-qi-r3-qi-chunqiu；原-936/1(interpolated_by_generation)—-900/12(interpolated_by_generation)，现-932/1(approximate_year)—-902/12(approximate_year)。原始推定-933→-902，底表与正文有异说，保留近似；撤下-936→-900均分。",
+      "齐国逐端点复核2026-10-02：reign-qi-r4-qi-chunqiu；原-899/1(interpolated_by_generation)—-883/12(approximate_year)，现-901/1(approximate_year)—-883/12(approximate_year)。起年采用-902推定年表，终年采用夷王三年约-883的共同框架；保留近似，不采用百科-890或旧-863异说。",
+      "齐国逐端点复核2026-10-02：reign-qi-r5-qi-chunqiu；原-882/1(approximate_year)—-860/12(year)，现-882/1(approximate_year)—-860/12(year)。烹哀公后继位约-882 approximate_year；终点-860 year由献公九年、武公十年为共和元年回溯，保留较强依据。",
+      "齐国逐端点复核2026-10-02：reign-qi-r6-qi-chunqiu；原-859/1(year)—-851/12(year)，现-859/1(year)—-851/12(year)。献公九年卒，武公起-850，据此为-859→-851；保持 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r7-qi-chunqiu；原-850/1(year)—-825/12(year)，现-850/1(year)—-825/12(year)。共和元年-841为武公十年，年表-825为二十六年、次年厉公元年；两端 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r8-qi-chunqiu；原-824/1(year)—-816/12(year)，现-824/1(year)—-816/12(year)。年表-824厉公元年、-816九年，-815文公元年；两端 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r9-qi-chunqiu；原-815/1(year)—-804/12(year)，现-815/1(year)—-804/12(year)。年表-815文公元年、-804十二年，-803成公元年；两端 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r10-qi-chunqiu；原-803/1(year)—-795/12(year)，现-803/1(year)—-795/12(year)。年表-803成公元年、-795九年，-794庄公元年；两端 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r11-qi-chunqiu；原-794/1(year)—-731/12(year)，现-794/1(year)—-731/12(year)。庄公六十四年卒-731，-730釐公元年；两端 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r12-qi-chunqiu；原-730/1(year)—-698/12(year)，现-730/1(year)—-698/12(year)。釐公三十三年卒-698，襄公元年-697；据世家和年表保留两端 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r13-qi-chunqiu；原-697/1(year)—-686/12(year)，现-697/1(year)—-686/10/29(approximate_day)。襄公元年-697保留 year；末年-686由《春秋》十一月癸未提高至换算近似日，详见历法复核。",
+      "齐国逐端点复核2026-10-02：reign-qi-r14-qi-chunqiu；原-686/1(year)—-686/12(year)，现-686/10/30(approximate_day)—-685/1(approximate_month)。原同年-686→-686截掉翌年被杀；改为襄公死后至-685春，采用近似日/月，保留随后无君的事实，不造缺载君。",
+      "齐国逐端点复核2026-10-02：reign-jiang-xiaobai-qi-chunqiu；原-685/1(year)—-643/12(year)，现-685/1(year)—-643/9/5(approximate_day)。桓公元年-685保留 year；《左传》夏入齐未载确日，不补月日；终点-643采用传十月乙亥换算近似日。",
+      "齐国逐端点复核2026-10-02：reign-qi-r16-qi-chunqiu；原-643/1(year)—-643/12(year)，现-643/9/6(approximate_day)—-642/3(approximate_month)。原-643→-643截掉翌年三月被杀；改为桓公死后至约-642年3月，取《左传》短祚记载及复原月。",
+      "齐国逐端点复核2026-10-02：reign-qi-r17-qi-chunqiu；原-642/1(year)—-633/12(year)，现-642/5(approximate_month)—-633/12(year)。初立原文为-642鲁僖公十八年五月，换算采用 approximate_month；终点-633孝公十年卒保留 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r18-qi-chunqiu；原-632/1(year)—-613/12(year)，现-632/1(year)—-613/12(year)。昭公元年-632、末年-613为年表二十年，保留 year。文公十四年五月乙亥卒，本次复原月不容该干支，不能据模型强行升至月日；原历记载保存在来源中。",
+      "齐国逐端点复核2026-10-02：reign-qi-r19-qi-chunqiu；原-613/1(year)—-613/12(year)，现-613/1(year)—-613/12(year)。两端同为-613，保留 year；《春秋》经九月、传七月乙卯与《史记》十月弑舍记载有异，未可靠换算则不伪造公历月日；删除“商人弑父”的错误概述。",
+      "齐国逐端点复核2026-10-02：reign-qi-r20-qi-chunqiu；原-612/1(year)—-609/12(year)，现-612/1(year)—-609/12(year)。懿公年表元年-612、四年被杀-609；实际在-613弑舍自立与次年元年区分，保留年表两端 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r21-qi-chunqiu；原-608/1(year)—-599/12(year)，现-608/1(year)—-599/12(year)。惠公元年-608、十年卒-599，据世家与年表保留 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r22-qi-chunqiu；原-598/1(year)—-582/12(year)，现-598/1(year)—-582/12(year)。顷公元年-598、十七年卒-582，据世家与年表保留 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r23-qi-chunqiu；原-581/1(year)—-554/12(year)，现-581/1(year)—-554/12(year)。灵公元年-581、二十八年卒-554，据世家与年表保留 year；纠正生平“被弑”，未将未换算的农历五月录为公历五月。",
+      "齐国逐端点复核2026-10-02：reign-qi-r24-qi-chunqiu；原-553/1(year)—-548/12(year)，现-553/1(year)—-548/12(year)。后庄公元年-553、六年被弑-548，保留 year；与前庄公购区分，修正来源及栾盈/崔妻叙述。",
+      "齐国逐端点复核2026-10-02：reign-qi-r25-qi-chunqiu；原-547/1(year)—-490/12(year)，现-547/1(year)—-490/12(year)。景公元年-547、五十八年卒-490，保留 year；《春秋》哀五年九月癸酉原历日保留来源，未以占位月声称确月；去除晏婴辅政58年误述。",
+      "齐国逐端点复核2026-10-02：reign-qi-r26-qi-chunqiu；原-489/1(year)—-489/12(year)，现-489/1(year)—-489/12(year)。安孺子实际在-490景公卒后继位，年表元年/失位-489；保留-489年桶的短祚记录，不把年桶称为实际即位日。经秋七月与传冬十月失位记载有异，不补造公历月日。",
+      "齐国逐端点复核2026-10-02：reign-qi-r27-qi-chunqiu；原-488/1(year)—-485/12(year)，现-488/1(year)—-485/12(year)。悼公实际-489获立，年表元年-488、四年卒-485；保留年表 year，原历月日及异说见《左传》哀公六年。",
+      "齐国逐端点复核2026-10-02：reign-qi-r28-qi-chunqiu；原-484/1(year)—-481/12(year)，现-484/1(year)—-481/12(year)。简公元年-484、四年被杀-481，据世家与年表保留 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r29-qi-chunqiu；原-480/1(year)—-456/12(year)，现-480/1(year)—-456/12(year)。平公元年-480、二十五年卒-456，据世家与年表保留 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r30-qi-chunqiu；原-455/1(year)—-405/12(year)，现-455/1(year)—-405/12(year)。宣公元年-455、五十一年卒-405，据世家与年表保留 year。",
+      "齐国逐端点复核2026-10-02：reign-jiang-dai-qi-chunqiu；原-404/1(year)—-392/12(year)，现-404/1(year)—-392/12(year)。康公元年-404，前391被放逐失齐君位；其卒年-379为人物死年，不延长此泳道实权在位。既有同一泳道交接取康段迄-392、田和起-391，保留年桶 year。",
+      "齐国逐端点复核2026-10-02：reign-tian-he-qi-chunqiu；原-404/1(year)—-384/12(year)，现-391/1(year)—-384/12(year)。原起-404错套康公元年，修为-391实际自立；-386列诸侯为承认年，不另截即位；终点-384保留通行田齐年表 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r33-qi-chunqiu；原-383/1(year)—-375/12(year)，现-383/1(year)—-375/12(year)。采用通行修订田齐年表-383→-375，保留 year；史记田齐早期年数与竹书系年有差异，不以旧年数倒推覆盖较可信通行表；田午为弟。",
+      "齐国逐端点复核2026-10-02：reign-qi-r34-qi-chunqiu；原-374/1(year)—-357/12(year)，现-374/1(year)—-357/12(year)。采用田齐通行年表-374→-357 year，未沿用《史记》桓六年/威元年旧系年；修正田齐桓公来源。",
+      "齐国逐端点复核2026-10-02：reign-qi-r35-qi-chunqiu；原-356/1(year)—-320/12(year)，现-356/1(year)—-320/12(year)。威王通行系年-356→-320，保留 year；世家旧年数及现代系年差异与田齐前段合并记录。",
+      "齐国逐端点复核2026-10-02：reign-qi-r36-qi-chunqiu；原-319/1(year)—-301/12(year)，现-319/1(year)—-301/12(year)。宣王通行系年-319→-301，保留 year；与姜齐宣公区分。",
+      "齐国逐端点复核2026-10-02：reign-qi-r37-qi-chunqiu；原-300/1(year)—-284/12(year)，现-300/1(year)—-284/12(year)。湣王通行系年-300→-284，五国伐齐与遇害年一致，保留 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r38-qi-chunqiu；原-283/1(year)—-265/12(year)，现-283/1(year)—-265/12(year)。襄王元年-283、十九年卒-265，通行系年与世家相符，保留 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r39-qi-chunqiu；原-264/1(year)—-221/12(year)，现-264/1(year)—-221/12(year)。王建元年-264、四十四年秦灭齐-221，通行系年与世家相符，保留 year，修正人物来源。",
+      "2026-10：规范曲沃武公称谓字段：persons.posthumousNames 仅存谥号本体“武公”；并立阶段的称号由对应 reign.title 存“曲沃武公”。",
+      "新增曲沃代翼事件：事件层记录曲沃与翼城公室长期并立争位的终结及晋地重新统一，超出普通君主接续信息。日期取《左传·庄公十六年》周王命曲沃伯为晋侯的前678年；《史记·晋世家》将灭晋侯缗系于前679年，日期说明保留此差异。曲沃武公称与晋侯缗均复用本包人物实体；依据《左传》原文、《史记·晋世家》及复旦大学出土文献与古文字研究中心的系年讨论。",
+      "虢条目表示传统所称虢国总体范围，前1046年为周初传统纪年；东、西虢封国及早期世系归属存在异说。",
+      "上阳为虢国都城，今三门峡李家窑遗址一带；地理坐标用于地图定位，具体遗址位置仍以考古测绘为准。",
+      "2026-10-02世系复核：维基《周朝诸侯国君主列表》在郭叔与虢城公之间、虢城公之后明确记“中间世系失考”；《西虢国》亦说明金文人物世系无法确切断定。《郭叔》的继任栏仅称“一说为虢城公”，《虢城公》的前任栏却链接始封君虢叔，两者互相矛盾，不采用导航框作为直接传位依据。班簋所记毛伯接替的是职务，不能据此建立虢国君位继承关系。",
+      "撤销记录与原定位：reign-guo-r1-guo-chunqiu（guo-r1，-1046至-990年，起点year、终点interpolated_by_generation）；reign-guo-r2-guo-chunqiu（guo-r2，-989至-934年，两端interpolated_by_generation）；reign-guo-r3-guo-chunqiu（guo-r3，-933至-878年，两端interpolated_by_generation）。原区间把失考名录误当连续世系均分，且缺少各人物可靠双端锚点，违反断层不得插值规则；三位人物及史实来源保留，不补造生卒年或即位、去世日期。",
+      "2026-10-02按用户提供的虢国君主世系图修正此前撤下君主卡的处理：恢复guo-r1、guo-r2、guo-r3，保留郭叔与城公之间、城公与厉公之间两处史料缺。主序列11位君主与五代争议家族分开；争议五人保留人物、来源及王朝关联，不建立并立claim_track，不将其强接到城公、厉公之间。宣公与文公的顺序异说保留于王朝及人物概述。",
+      "早期时间定位采用共时关系，不按世次均分：guo-r1参照武王时期（-1046至-1043年）；guo-r2据《逸周书·王会》参照成王时期（-1042至-1021年）；guo-r3据班簋及昭穆时期说参照昭王至穆王时期（-995至-923年，沿用夏商周包的接续裁定坐标）。这些是关联史料活动窗口的示意位置，不是已考定的即位、死亡或完整在位年；两端均interpolated_by_other，显示?与波浪线，不显示确定时长、不分配个人都城。",
+      "两处史料缺有名录明示为依据，君主人数不详。缺载段以普通Reign、system-missing-ruler与title=史料缺记录；示意定位分别参照康王时期（-1020至-996年）及共王至夷王时期（-922至-878年），仅表示相邻已知活动窗口之间的失考区段，两端interpolated_by_other，不主张空白在这些年份精确起讫。上述参照均来自xia-shang-zhou包确定类端点，经timelineOwnership取边界；未使用旧虚构均分边界作为推断锚点。",
+      "guo-ji-yifu、guo-gui-gong、guo-you-shu、guo-de-shu、guo-shi-cheng：五代家族关系可考，但西虢君主身份、具体在位年及主序列衔接有争议；因此不造日期、不建并立在位或按世次均分。各人物链接同步保留身份争议来源，王朝详情以显式other关系列出人物。",
+      "2026-10-02按用户要求统一缺载段展示文案为“史料缺”；同步在位title、王朝概述及导入说明，保留两处断层与原日期置信度。",
+      "称谓复核（2026-10）：河南博物院《虢硕父簠》明确虢公长父死后谥厉公；虢宣公、虢文公条目分别明确谥号为宣公、文公。posthumousNames 仅写谥号本体“厉公、宣公、文公”，不带国名；其余主序列虢国君主缺少可确认谥号依据，暂不补填。",
+      "2026-10-02按复核将 guo-chunqiu 王朝显示名明确为“西虢国”，检索别名保留“虢国”“虢”“南虢”。周朝诸侯国君主列表将虢公丑列为西虢末代君主，前655年亡国；其后无继任君主。现有主序列已录忌父、林父、丑；用户所说“丑后缺少若干国君”的区段含义待确认，未凭空添加人物或在位记录。",
+      "2026-10-02复核虢公丑末年结局：《左传·僖公五年》记“晋灭虢，虢公丑奔京师”，同段被俘者为虞公及井伯。同步人物详情links与王朝概述。按用户明确的“指向被谁灭国”语义，cross-dynasty-fate包新增虢公丑→晋献公的conquered灭国线；不把出奔写成被俘、投降或被杀。",
+      "2026-10-02新增东虢，国号显示为东虢，别名保留东虢国；与西虢独立并存，不合并泳道，不重复拥有西虢始封君或其他包中的郑国人物。",
+      "东、西虢始封君采用虢仲封东虢、虢叔封西虢的通行说，异说保留于人物概述及来源。始封以前1046年克商后的西周初为依据，建国年并非可确证的受封年，标approximate_year。虢仲在位起讫不详，共时坐标参照xia-shang-zhou包武王窗口-1046至-1043，两端interpolated_by_other，不主张即位年或卒年。",
+      "虢惠叔大林与虢叔旅父子关系见虢叔旅钟。钟的西周晚期断代由何志華论文与国家图书馆资料交叉核对；仅《秦志》具体系虢叔旅活动于-847年，该年是有出处的活动年推定，不是可确认的即位、死亡或完整在位区间。旅的在位条目仅用该活动年定位，两端interpolated_by_other；不显示确定时长。惠叔没有可采用的独立活动年份，保留人物及王朝显式关联，不借父子世次造起讫年。",
+      "2026-10-02核对东虢世系：虢仲→世系待考→惠叔大林→旅→世系待考→末君虢叔。前后两处失载国君的任数及世次均不能确认，属于史料缺，并非无国君，分别以普通Reign、system-missing-ruler、title=史料缺作泳道占位；不跨断层按世次均分或推断直接前后任。首段位于虢仲与旅的可定位记录之间（-1042至-848），次段位于旅与末君的定位记录之间（-846至-775）；这些只是未能落实世系及在位年代的展示区段，不是可确证的史料缺起讫年。边界由timelineOwnership与timelineIntervals裁定已有锚点间的区间，两端均interpolated_by_other。首段中的已知人物惠叔大林仍独立保留人物和来源，父子关系明确但在位年代无法独立定位，不把惠叔当作失名君主，也不虚构其在位年以切开首段。",
+      "末君虢叔与西虢始封君虢叔是不同人物，使用guo-east-last-shu独立ID。私名未知，persons.name为？；叔为史称而非私名，reigns.title为叔，无可确认谥号。",
+      "末君在位起年不详。起点参照《国语·郑语》虢叔与郑桓公共时、幽王八年（-774年）史伯论兴衰的传统系年定位，标interpolated_by_other；不声称-774年即位。终点与死亡年采用今本《竹书纪年》平王四年（-767年）郑灭虢的通行说，标approximate_year；灭虢年代及郑桓公、武公归属存在异说，未当成无争议的确定年。",
+      "不新增普通灭国事件重复王朝终点；年精度末年12月及泳道起年1月均为定位占位，不表示史料已知公历月份。不确定在位不分配个人都城。",
+      "2026-10-02用户明确命运线应表达被谁灭国，类型不局限于人身结局。采用通用conquered（灭国），末君虢叔指向当时郑国君主郑武公zheng-r1，时点为所采灭国年-767年12月桶右缘，atConfidence=approximate_year。不主张郑武公亲手杀害虢叔。关系由cross-dynasty-fate包唯一拥有。",
+      "2026-10-02按用户要求统一虢国资料归属：东虢与西虢的王朝、人物、在位、都城及王朝人物关系由chunqiu-zhanguo包唯一拥有；保留原ID、记录内容、日期和置信度。虢国相关的假道伐虢、唇亡齿寒典故事件及其引用仍留在idioms包，原guo-east包移除；灭国命运线仍由cross-dynasty-fate包拥有。",
+      "2026-10-02补充晋王朝早期都邑概述：据《史记·晋世家》区分叔虞始封唐与其子燮改号晋，结合上海博物馆晋侯墓地资料及山西大学三处晋都遗址介绍，补回前745年以前西周晋都的可证事实。早期都邑使用年界与唐/晋/翼城址对应未获足够依据，概述不采用建国年或世次插值充当都城始用年份；王朝详细都城记录仍由dynasty-capitals包唯一拥有，不在本包重复写都城或关联行。"
+    ]
+  }
+}

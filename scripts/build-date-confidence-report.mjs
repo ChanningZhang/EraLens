@@ -1,5 +1,6 @@
-import { readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
+import { discoverPackages } from "../data/imports/lib/discoverPackages.mjs";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -9,10 +10,30 @@ const importRepairs = JSON.parse(readFileSync(path.join(root, "docs/date-confide
 const seedChanges = JSON.parse(readFileSync(path.join(root, "docs/date-confidence-seed-changes.json"), "utf8"));
 const structuralMigration = JSON.parse(readFileSync(path.join(root, "docs/date-confidence-structural-migration.json"), "utf8"));
 const metadataChanges = JSON.parse(readFileSync(path.join(root, "docs/date-confidence-metadata-changes.json"), "utf8"));
-const packages = new Map();
+const importsRoot = path.join(root, "data/imports");
+const packages = new Map(discoverPackages(importsRoot).map((slug) => {
+  const cache = JSON.parse(readFileSync(path.join(importsRoot, slug, "cache.json"), "utf8"));
+  return [slug, { cache, notes: cache.manifest.notes ?? [], sources: cache.manifest.sources ?? [] }];
+}));
+const collectionFor = { reigns: "reigns", dynasty_capitals: "capitals", events: "events" };
+const owners = new Map();
+for (const [slug, { cache }] of packages) {
+  for (const [table, collection] of Object.entries(collectionFor)) {
+    for (const row of cache[collection] ?? []) {
+      const key = `${table}:${row.id}`;
+      if (owners.has(key)) throw new Error(`Multiple owners for ${key}`);
+      owners.set(key, slug);
+    }
+  }
+}
+const ownerFor = (record) => {
+  const owner = owners.get(`${record.table}:${record.id}`);
+  if (!owner) throw new Error(`No current owner for ${record.table}:${record.id}`);
+  return owner;
+};
 const itemFor = (record) => {
-  const cache = packages.get(record.package).cache;
-  const key = { reigns: "reigns", dynasty_capitals: "capitals", events: "events" }[record.table];
+  const cache = packages.get(ownerFor(record)).cache;
+  const key = collectionFor[record.table];
   return cache[key].find((row) => row.id === record.id);
 };
 const isoDate = (point) => point && ({ year: point.year, month: point.month, ...(point.day == null ? {} : { day: point.day }), ...(point.abs == null ? {} : { abs: point.abs }) });
@@ -26,12 +47,6 @@ const confidenceReason = (confidence) => {
   if (confidence.startsWith("approximate_")) return `旧端点为 approximate；现有日期值保留到${confidence.endsWith("_day") ? "日" : confidence.endsWith("_month") ? "月" : "年"}，不把占位年月补作实录。`;
   return `来源可支持到${confidence === "day" ? "日" : confidence === "month" ? "月" : "年"}，按最高现有可信精度保留。`;
 };
-for (const record of baseline.records) {
-  if (!packages.has(record.package)) {
-    const cache = JSON.parse(readFileSync(path.join(root, "data/imports", record.package, "cache.json"), "utf8"));
-    packages.set(record.package, { cache, notes: cache.manifest.notes ?? [], sources: cache.manifest.sources ?? [] });
-  }
-}
 const entries = baseline.records.flatMap((record) => {
   const row = itemFor(record);
   return record.endpoints.map((endpoint) => {
@@ -39,7 +54,7 @@ const entries = baseline.records.flatMap((record) => {
     const newConfidence = current?.confidence ?? row[`${endpoint.endpoint}Confidence`];
     if (!newConfidence) throw new Error(`No new confidence at ${record.id}.${endpoint.endpoint}`);
     return {
-      package: record.package,
+      package: ownerFor(record),
       table: record.table,
       entityType: record.entityType,
       id: record.id,
@@ -52,7 +67,7 @@ const entries = baseline.records.flatMap((record) => {
       conclusion: confidenceReason(newConfidence),
       basis: {
         recordDateNote: record.dateNote,
-        packageEvidenceRef: record.package,
+        packageEvidenceRef: ownerFor(record),
         confidenceAssignmentRule: confidenceReason(newConfidence),
       },
       affectedRelationships: [],
@@ -60,7 +75,7 @@ const entries = baseline.records.flatMap((record) => {
     };
   });
 });
-const legacyEventConversions = readdirSync(path.join(root, "data/imports")).flatMap((slug) => {
+const legacyEventConversions = [...packages.keys()].flatMap((slug) => {
   try {
     const cache = JSON.parse(readFileSync(path.join(root, "data/imports", slug, "cache.json"), "utf8"));
     return (cache.events ?? []).filter((event) => event.dateNote?.includes("原不确定范围："))
@@ -72,7 +87,7 @@ const unmarkedEndpointChecks = baseline.records.flatMap((record) => {
   const row = itemFor(record);
   const pointKeys = record.table === "events" ? ["at"] : ["start", "end"];
   return pointKeys.filter((endpoint) => row[endpoint] && !flaggedKeys.has(`${record.table}:${record.id}:${endpoint}`)).map((endpoint) => ({
-    package: record.package, table: record.table, id: record.id, endpoint,
+    package: ownerFor(record), table: record.table, id: record.id, endpoint,
     date: isoDate(row[endpoint]),
     result: "结构一致性检查通过：未改动该端点数值或 AbsMonth；本轮只更新同一记录中已标记端点的 confidence。",
   }));
@@ -80,7 +95,7 @@ const unmarkedEndpointChecks = baseline.records.flatMap((record) => {
 const packageEvidence = Object.fromEntries([...packages].map(([slug, value]) => [slug, { notes: value.notes, sources: value.sources }]));
 const confidenceCounts = Object.fromEntries(entries.reduce((counts, entry) => counts.set(entry.confidenceAfter, (counts.get(entry.confidenceAfter) ?? 0) + 1), new Map()));
 const legacyCircaConversions = circaBaseline.map((before) => {
-  const owner = readdirSync(path.join(root, "data/imports")).find((slug) => {
+  const owner = [...packages.keys()].find((slug) => {
     try {
       const cache = JSON.parse(readFileSync(path.join(root, "data/imports", slug, "cache.json"), "utf8"));
       return (cache.events ?? []).some((event) => event.id === before.id && event.dateNote?.includes("原不确定范围："));

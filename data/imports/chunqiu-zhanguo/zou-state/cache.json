@@ -1,0 +1,1679 @@
+{
+  "slug": "chunqiu-zhanguo/zou-state",
+  "window": {
+    "startYear": -1046,
+    "startMonth": 1,
+    "endYear": -256,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "zou-r1",
+      "name": "挟",
+      "roles": [
+        "君主"
+      ],
+      "bio": "曹姓邾国传统世系所列的始封君。通行说将其受封置于周初；之后相传历非、成、车辅、将新、訾父至武公。早期世系据后世文献辑成，具体在位年及部分世系真实性尚不能确证。",
+      "links": [
+        {
+          "label": "邾国君主世系与传世文献考",
+          "url": "https://zh.wikipedia.org/wiki/邾国"
+        },
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "邾子挟",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-r2",
+      "name": "非",
+      "roles": [
+        "君主"
+      ],
+      "bio": "传统邾国世系称其为挟之子、继为国君，后传位于成。此世系见后世文献汇编，未见可据以确定其在位年份的同期纪年。",
+      "links": [
+        {
+          "label": "邾国君主世系与传世文献考",
+          "url": "https://zh.wikipedia.org/wiki/邾国"
+        },
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "邾子非",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-r3",
+      "name": "成",
+      "roles": [
+        "君主"
+      ],
+      "bio": "传统邾国世系称其承继曹非，后传位于车辅；具体在位年代无同期纪年可考，早期世系仍有文献可靠性争议。",
+      "links": [
+        {
+          "label": "邾国君主世系与传世文献考",
+          "url": "https://zh.wikipedia.org/wiki/邾国"
+        },
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "邾子成",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-r4",
+      "name": "车辅",
+      "roles": [
+        "君主"
+      ],
+      "bio": "传统邾国世系列为曹成之后、将新之前的国君；其个人事迹与在位年份未见同期纪年记载。",
+      "links": [
+        {
+          "label": "邾国君主世系与传世文献考",
+          "url": "https://zh.wikipedia.org/wiki/邾国"
+        },
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "邾子车辅",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-r5",
+      "name": "将新",
+      "roles": [
+        "君主"
+      ],
+      "bio": "传统邾国世系列为曹车辅之后、訾父之前的国君；其个人事迹与在位年份未见同期纪年记载。",
+      "links": [
+        {
+          "label": "邾国君主世系与传世文献考",
+          "url": "https://zh.wikipedia.org/wiki/邾国"
+        },
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "邾子将新",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-r6",
+      "name": "訾父",
+      "roles": [
+        "君主"
+      ],
+      "bio": "传统邾国世系列为将新之后、武公之前的国君；与武公的父子关系见后世世系整理，具体在位年份无同期纪年可考。",
+      "links": [
+        {
+          "label": "邾国君主世系与传世文献考",
+          "url": "https://zh.wikipedia.org/wiki/邾国"
+        },
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "邾子訾父",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-r7",
+      "name": "夷父",
+      "roles": [
+        "君主"
+      ],
+      "bio": "《公羊传》追述邾娄颜（传统系于武公）及叔术、夏父之间的继承与让国故事；传统年表以周宣王诛颜之年系其卒于前796年。故事中的人物身份与世系细节属于传世叙述。",
+      "links": [
+        {
+          "label": "《春秋公羊传·昭公三十一年》",
+          "url": "https://ctext.org/gongyang-zhuan/zhao-gong-san-shi-yi-nian/zhs"
+        },
+        {
+          "label": "邾国君主世系与传世文献考",
+          "url": "https://zh.wikipedia.org/wiki/邾国"
+        },
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "武公"
+      ],
+      "templeNames": [],
+      "title": "邾武公",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-r8",
+      "name": "叔术",
+      "roles": [
+        "君主"
+      ],
+      "bio": "《公羊传》称叔术受周天子命立为邾君，后让位于夏父，并分得滥地；传文以此称许其让国。传统年表系其在位于前795—前781年，起讫年依年表而非传文精确年月。",
+      "links": [
+        {
+          "label": "《春秋公羊传·昭公三十一年》",
+          "url": "https://ctext.org/gongyang-zhuan/zhao-gong-san-shi-yi-nian/zhs"
+        },
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "邾子叔术",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-r9",
+      "name": "夏父",
+      "roles": [
+        "君主"
+      ],
+      "bio": "传统世系称夏父为武公之子；《公羊传》记叔术让国于夏父并以滥地分封。其确切卒年及之后继位年份没有直接纪年证据。",
+      "links": [
+        {
+          "label": "《春秋公羊传·昭公三十一年》",
+          "url": "https://ctext.org/gongyang-zhuan/zhao-gong-san-shi-yi-nian/zhs"
+        },
+        {
+          "label": "邾国君主世系与传世文献考",
+          "url": "https://zh.wikipedia.org/wiki/邾国"
+        },
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "邾子夏父",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-r10",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姓名失载的邾国君主。具体世次与在位年代未能由现有可核史料确定。",
+      "links": [],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "？",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-r11",
+      "name": "克",
+      "altNames": [
+        "邾安公",
+        "邾惠公",
+        "邾仪父"
+      ],
+      "roles": [
+        "君主"
+      ],
+      "bio": "邾庄公（克，字仪父）为春秋前期邾君；《春秋》鲁隐公元年记鲁与邾仪父会盟，《左传》释其为邾子克，鲁庄公十六年记其卒、子琐继位。世系关系有异说：有说他是夏父元孙，也有说是邾君庆之子；《邹县续志》称其为邾惠公，另有资料称邾安公。",
+      "links": [
+        {
+          "label": "邾国君主世系图（克列作邾庄公，并注明异称）",
+          "url": "https://zh.wikipedia.org/wiki/邾國君主世系圖"
+        },
+        {
+          "label": "《春秋滕薛杞越莒许七国统表·邾世次》（仪父克异称辨析）",
+          "url": "https://ctext.org/wiki.pl?chapter=3884730&if=gb&remap=gb"
+        },
+        {
+          "label": "邾安公（异称）",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%AE%89%E5%85%AC"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "庄公"
+      ],
+      "templeNames": [],
+      "title": "邾子克",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-r12",
+      "name": "琐",
+      "roles": [
+        "君主"
+      ],
+      "bio": "邾宪公，克之子。传统年表系其在位于前677—前666年，后由邾文公继位；早期君主个人事迹记载较少。",
+      "links": [
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾国君主世系图（列作琐）",
+          "url": "https://zh.wikipedia.org/wiki/邾國君主世系圖"
+        },
+        {
+          "label": "邾宪公",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%AE%AA%E5%85%AC"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "宪公"
+      ],
+      "templeNames": [],
+      "title": "邾子琐",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-r13",
+      "name": "蘧蒢",
+      "roles": [
+        "君主"
+      ],
+      "bio": "邾文公，邾宪公之子。鲁文公十三年（前614）卜迁于绎，迁都有利于民而被占为不利于君；文公同年卒，子貜且继位。迁都事见《左传》，遗址与迁都年代亦见山东地情档案。",
+      "links": [
+        {
+          "label": "《左传·文公十三年》",
+          "url": "https://ctext.org/chun-qiu-zuo-zhuan/wen-gong-shi-san-nian/zhs"
+        },
+        {
+          "label": "邾国故城（山东地情档案）",
+          "url": "https://shandong-chorography.org/database/a/section/70/article/91/"
+        },
+        {
+          "label": "邾文公",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E6%96%87%E5%85%AC"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "文公"
+      ],
+      "templeNames": [],
+      "title": "邾文公",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-r14",
+      "name": "貜且",
+      "roles": [
+        "君主"
+      ],
+      "bio": "邾定公，邾文公之子，于文公卒后继位。传统年表以鲁文公十四年（前613）为其元年，记在位至前573年；邾文公迁绎后，邾国都城在绎。",
+      "links": [
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾国故城（山东地情档案）",
+          "url": "https://shandong-chorography.org/database/a/section/70/article/91/"
+        },
+        {
+          "label": "邾定公",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%AE%9A%E5%85%AC"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "定公"
+      ],
+      "templeNames": [],
+      "title": "邾定公",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-r15",
+      "name": "牼",
+      "roles": [
+        "君主"
+      ],
+      "bio": "邾宣公，邾定公之子，后继位；传统年表系其在位于前572—前556年。关于其一名，传世版本有牼、瞷等异文。",
+      "links": [
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾宣公",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%AE%A3%E5%85%AC"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "宣公"
+      ],
+      "templeNames": [],
+      "title": "邾宣公",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-r16",
+      "name": "华",
+      "roles": [
+        "君主"
+      ],
+      "bio": "邾悼公，邾宣公之子，后继位；传统年表系其在位于前555—前541年。",
+      "links": [
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾悼公",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E6%82%BC%E5%85%AC"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "悼公"
+      ],
+      "templeNames": [],
+      "title": "邾悼公",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-r17",
+      "name": "穿",
+      "roles": [
+        "君主"
+      ],
+      "bio": "邾庄公，邾悼公之子，后继位；传统年表系其在位于前540—前507年，其后邾隐公益继位。",
+      "links": [
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾庄公",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%BA%84%E5%85%AC"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "庄公"
+      ],
+      "templeNames": [],
+      "title": "邾庄公",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-r18",
+      "name": "益",
+      "roles": [
+        "君主"
+      ],
+      "bio": "邾隐公，邾庄公之子。吴王夫差立其子革为君后，益一度失位；前473年复位，之后由另一子何继位。传世年表将其分作前506—前487年与前472—前471年两段。",
+      "links": [
+        {
+          "label": "《左传·哀公八年》",
+          "url": "https://ctext.org/chun-qiu-zuo-zhuan/ai-gong-ba-nian/zhs"
+        },
+        {
+          "label": "《左传·哀公二十四年》",
+          "url": "https://ctext.org/chun-qiu-zuo-zhuan/ai-gong-er-shi-si-nian/zhs"
+        },
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾隐公",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E9%9A%90%E5%85%AC"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "隐公"
+      ],
+      "templeNames": [],
+      "title": "邾隐公",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-r19",
+      "name": "革",
+      "roles": [
+        "君主"
+      ],
+      "bio": "邾桓公，邾隐公之子。吴王夫差拥立其为邾君，益复位后革奔越；《左传》记其被立、失位与出奔。",
+      "links": [
+        {
+          "label": "《左传·哀公八年》",
+          "url": "https://ctext.org/chun-qiu-zuo-zhuan/ai-gong-ba-nian/zhs"
+        },
+        {
+          "label": "邾桓公",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E6%A1%93%E5%85%AC"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "桓公"
+      ],
+      "templeNames": [],
+      "title": "邾桓公",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-he",
+      "name": "何",
+      "roles": [
+        "君主"
+      ],
+      "bio": "邾子何，邾隐公之子，前471年由越人立为邾君。《左传·哀公二十四年》记其即位；其退位或卒年及后续继承次序无法由该条直接确定。",
+      "links": [
+        {
+          "label": "《左传·哀公二十四年》",
+          "url": "https://ctext.org/chun-qiu-zuo-zhuan/ai-gong-er-shi-si-nian/zhs"
+        },
+        {
+          "label": "邾子何",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%AD%90%E4%BD%95"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "邾子何",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-missing-after-he-1",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姓名失载的邾国君主。具体世次与在位年代未能由现有可核史料确定。",
+      "links": [],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "？",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-kaogong",
+      "name": "考公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "邾娄考公，传为邾隐公曾孙。《礼记·檀弓下》记徐君遣使来吊其丧；该记载未给出绝对年代，后世对其世代与年代有不同系年。",
+      "links": [
+        {
+          "label": "《礼记·檀弓下》",
+          "url": "https://ctext.org/liji/tan-gong-xia/zhs"
+        },
+        {
+          "label": "邾娄考公",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%A8%84%E8%80%83%E5%85%AC"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "考公"
+      ],
+      "templeNames": [],
+      "title": "邾娄考公",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-missing-after-kaogong-1",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姓名失载的邾国君主。具体世次与在位年代未能由现有可核史料确定。",
+      "links": [],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "？",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-missing-after-kaogong-2",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姓名失载的邾国君主。具体世次与在位年代未能由现有可核史料确定。",
+      "links": [],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "？",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-mu-gong",
+      "name": "穆公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "邹穆公，孟子在世时的邹君。《孟子·滕文公上》记孟子与其讨论灾年中官吏殉职、民众离散与公家仓廪充实等事；具体在位年代为后世推定。",
+      "links": [
+        {
+          "label": "《孟子·滕文公上》",
+          "url": "https://zh.wikisource.org/zh-hans/孟子/滕文公上"
+        },
+        {
+          "label": "孟子志：邾国至邹国沿革及孟子里籍（山东地情档案）",
+          "url": "https://shandong-chorography.org/database/zzmj/section/19/article/7/"
+        },
+        {
+          "label": "邹穆公",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%B9%E7%A9%86%E5%85%AC"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "穆公"
+      ],
+      "templeNames": [],
+      "title": "邹穆公",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "meng-ke",
+      "name": "孟子",
+      "roles": [
+        "思想家"
+      ],
+      "bio": "战国邹人，名轲，承继并发展孔子学说，游说齐、梁等国，主张仁政、民贵君轻与王道。其言论由弟子记录编成《孟子》，后世尊为亚圣。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/孟子"
+        }
+      ],
+      "birth": {
+        "year": -372,
+        "month": 1,
+        "abs": -4452
+      },
+      "death": {
+        "year": -289,
+        "month": 1,
+        "abs": -3456
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "zou-jun-qing",
+      "name": "庆",
+      "roles": [
+        "君主"
+      ],
+      "bio": "邾君庆，春秋早期邾君。枣庄东江春秋墓地出土铜壶铭文称“邾君庆作秦妊礼壶”；现代邾器研究据器铭将其列入邾国君主世系。具体在位年份未考。",
+      "links": [
+        {
+          "label": "冯峰：《说“醴壶”》（北京大学中国考古学研究中心）",
+          "url": "https://csca.pku.edu.cn/info/1018/1207.htm"
+        },
+        {
+          "label": "张海：《邾器与两周邾邦史事》",
+          "url": "https://www.sohu.com/a/469705297_121124388"
+        },
+        {
+          "label": "邾国君主世系图（据《春秋释例》等）",
+          "url": "https://zh.wikipedia.org/wiki/邾國君主世系圖"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "邾君庆",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-missing-after-mugong-1",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姓名失载的邾国君主。传世世系整理将其列为邹穆公之后、楚灭邾之前的第一位失名君主；具体世次年代未考。",
+      "links": [
+        {
+          "label": "邾国君主世系图（据《春秋释例》等）",
+          "url": "https://zh.wikipedia.org/wiki/邾國君主世系圖"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "？",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-missing-after-mugong-2",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姓名失载的邾国君主。传世世系整理将其列为邹穆公之后、楚灭邾之前的第二位失名君主；具体世次年代未考。",
+      "links": [
+        {
+          "label": "邾国君主世系图（据《春秋释例》等）",
+          "url": "https://zh.wikipedia.org/wiki/邾國君主世系圖"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "？",
+      "ancestralXing": "曹"
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "zou-state",
+      "name": "邹",
+      "altNames": [
+        "邹国",
+        "邾国",
+        "邾娄"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -1046,
+        "month": 1,
+        "abs": -12540,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -256,
+        "month": 12,
+        "abs": -3049,
+        "confidence": "approximate_year"
+      },
+      "note": "周代曹姓诸侯国，春秋称邾或邾娄，战国至孟子时称邹。文公于前614年迁都绎并同年去世；楚灭邹的年代依晚战国通行说，具体年份有异说。早期传世世系及战国晚期君主的部分世次、在位年代存在资料局限；插值坐标仅用于时间轴定位，不表示已证实的在位年月或时长。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-zou-r1-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-r1",
+      "title": "挟",
+      "start": {
+        "year": -1046,
+        "month": 1,
+        "abs": -12540,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -1012,
+        "month": 12,
+        "abs": -12121,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -12540,
+      "endAbs": -12121,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-zou-r2-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-r2",
+      "title": "非",
+      "start": {
+        "year": -1011,
+        "month": 1,
+        "abs": -12120,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -976,
+        "month": 12,
+        "abs": -11689,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -12120,
+      "endAbs": -11689,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-zou-r3-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-r3",
+      "title": "成",
+      "start": {
+        "year": -975,
+        "month": 1,
+        "abs": -11688,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -940,
+        "month": 12,
+        "abs": -11257,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -11688,
+      "endAbs": -11257,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-zou-r4-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-r4",
+      "title": "车辅",
+      "start": {
+        "year": -939,
+        "month": 1,
+        "abs": -11256,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -904,
+        "month": 12,
+        "abs": -10825,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -11256,
+      "endAbs": -10825,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-zou-r5-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-r5",
+      "title": "将新",
+      "start": {
+        "year": -903,
+        "month": 1,
+        "abs": -10824,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -868,
+        "month": 12,
+        "abs": -10393,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -10824,
+      "endAbs": -10393,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-zou-r6-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-r6",
+      "title": "訾父",
+      "start": {
+        "year": -867,
+        "month": 1,
+        "abs": -10392,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -832,
+        "month": 12,
+        "abs": -9961,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -10392,
+      "endAbs": -9961,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-zou-r7-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-r7",
+      "title": "武公",
+      "start": {
+        "year": -831,
+        "month": 1,
+        "abs": -9960,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -796,
+        "month": 12,
+        "abs": -9529,
+        "confidence": "year"
+      },
+      "startAbs": -9960,
+      "endAbs": -9529,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-zou-r8-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-r8",
+      "title": "叔术",
+      "start": {
+        "year": -795,
+        "month": 1,
+        "abs": -9528,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -781,
+        "month": 12,
+        "abs": -9349,
+        "confidence": "year"
+      },
+      "startAbs": -9528,
+      "endAbs": -9349,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zou-r9-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-r9",
+      "title": "夏父",
+      "start": {
+        "year": -780,
+        "month": 1,
+        "abs": -9348,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -755,
+        "month": 12,
+        "abs": -9037,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -9348,
+      "endAbs": -9037,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "endConfidence": "interpolated_by_generation",
+      "startConfidence": "year"
+    },
+    {
+      "id": "reign-zou-r10-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-r10",
+      "title": "？",
+      "start": {
+        "year": -754,
+        "month": 1,
+        "abs": -9036,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -729,
+        "month": 12,
+        "abs": -8725,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -9036,
+      "endAbs": -8725,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-zou-r11-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-r11",
+      "title": "庄公",
+      "start": {
+        "year": -702,
+        "month": 1,
+        "abs": -8412,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -678,
+        "month": 12,
+        "abs": -8113,
+        "confidence": "year"
+      },
+      "startAbs": -8412,
+      "endAbs": -8113,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-zou-r12-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-r12",
+      "title": "琐",
+      "start": {
+        "year": -677,
+        "month": 1,
+        "abs": -8112,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -666,
+        "month": 12,
+        "abs": -7969,
+        "confidence": "year"
+      },
+      "startAbs": -8112,
+      "endAbs": -7969,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zou-r13-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-r13",
+      "title": "文公",
+      "start": {
+        "year": -665,
+        "month": 1,
+        "abs": -7968,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -614,
+        "month": 12,
+        "abs": -7345,
+        "confidence": "year"
+      },
+      "startAbs": -7968,
+      "endAbs": -7345,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zou-r14-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-r14",
+      "title": "定公",
+      "start": {
+        "year": -613,
+        "month": 1,
+        "abs": -7344,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -573,
+        "month": 12,
+        "abs": -6853,
+        "confidence": "year"
+      },
+      "startAbs": -7344,
+      "endAbs": -6853,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zou-r15-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-r15",
+      "title": "宣公",
+      "start": {
+        "year": -572,
+        "month": 1,
+        "abs": -6852,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -556,
+        "month": 12,
+        "abs": -6649,
+        "confidence": "year"
+      },
+      "startAbs": -6852,
+      "endAbs": -6649,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zou-r16-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-r16",
+      "title": "悼公",
+      "start": {
+        "year": -555,
+        "month": 1,
+        "abs": -6648,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -541,
+        "month": 12,
+        "abs": -6469,
+        "confidence": "year"
+      },
+      "startAbs": -6648,
+      "endAbs": -6469,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zou-r17-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-r17",
+      "title": "庄公",
+      "start": {
+        "year": -540,
+        "month": 1,
+        "abs": -6468,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -507,
+        "month": 12,
+        "abs": -6061,
+        "confidence": "year"
+      },
+      "startAbs": -6468,
+      "endAbs": -6061,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zou-r18-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-r18",
+      "title": "隐公",
+      "start": {
+        "year": -506,
+        "month": 1,
+        "abs": -6060,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -487,
+        "month": 12,
+        "abs": -5821,
+        "confidence": "year"
+      },
+      "startAbs": -6060,
+      "endAbs": -5821,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zou-r19-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-r19",
+      "title": "桓公",
+      "start": {
+        "year": -486,
+        "month": 1,
+        "abs": -5820,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -473,
+        "month": 12,
+        "abs": -5653,
+        "confidence": "year"
+      },
+      "startAbs": -5820,
+      "endAbs": -5653,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zou-r18-zou-state-2",
+      "dynastyId": "zou-state",
+      "personId": "zou-r18",
+      "title": "隐公",
+      "start": {
+        "year": -472,
+        "month": 1,
+        "abs": -5652,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -471,
+        "month": 12,
+        "abs": -5629,
+        "confidence": "year"
+      },
+      "startAbs": -5652,
+      "endAbs": -5629,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zou-he-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-he",
+      "title": "子何",
+      "start": {
+        "year": -470,
+        "month": 1,
+        "abs": -5628,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -456,
+        "month": 12,
+        "abs": -5449,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -5628,
+      "endAbs": -5449,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-zou-missing-after-he-1",
+      "dynastyId": "zou-state",
+      "personId": "zou-missing-after-he-1",
+      "title": "？",
+      "start": {
+        "year": -455,
+        "month": 1,
+        "abs": -5448,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -437,
+        "month": 12,
+        "abs": -5221,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -5448,
+      "endAbs": -5221,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-zou-kaogong-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-kaogong",
+      "title": "考公",
+      "start": {
+        "year": -436,
+        "month": 1,
+        "abs": -5220,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -419,
+        "month": 12,
+        "abs": -5005,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -5220,
+      "endAbs": -5005,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-zou-missing-after-kaogong-1",
+      "dynastyId": "zou-state",
+      "personId": "zou-missing-after-kaogong-1",
+      "title": "？",
+      "start": {
+        "year": -418,
+        "month": 1,
+        "abs": -5004,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -401,
+        "month": 12,
+        "abs": -4789,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -5004,
+      "endAbs": -4789,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-zou-missing-after-kaogong-2",
+      "dynastyId": "zou-state",
+      "personId": "zou-missing-after-kaogong-2",
+      "title": "？",
+      "start": {
+        "year": -400,
+        "month": 1,
+        "abs": -4788,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -383,
+        "month": 12,
+        "abs": -4573,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -4788,
+      "endAbs": -4573,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-zou-mu-gong-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-mu-gong",
+      "title": "穆公",
+      "start": {
+        "year": -382,
+        "month": 1,
+        "abs": -4572,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -330,
+        "month": 12,
+        "abs": -3937,
+        "confidence": "approximate_year"
+      },
+      "startAbs": -4572,
+      "endAbs": -3937,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "approximate_year",
+      "endConfidence": "approximate_year"
+    },
+    {
+      "id": "reign-zou-jun-qing-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-jun-qing",
+      "title": "庆",
+      "start": {
+        "year": -728,
+        "month": 1,
+        "abs": -8724,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -703,
+        "month": 12,
+        "abs": -8413,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -8724,
+      "endAbs": -8413,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-zou-missing-after-mugong-1",
+      "dynastyId": "zou-state",
+      "personId": "zou-missing-after-mugong-1",
+      "title": "？",
+      "start": {
+        "year": -329,
+        "month": 1,
+        "abs": -3936,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -293,
+        "month": 12,
+        "abs": -3493,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -3936,
+      "endAbs": -3493,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-zou-missing-after-mugong-2",
+      "dynastyId": "zou-state",
+      "personId": "zou-missing-after-mugong-2",
+      "title": "？",
+      "start": {
+        "year": -292,
+        "month": 1,
+        "abs": -3492,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -256,
+        "month": 12,
+        "abs": -3049,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -3492,
+      "endAbs": -3049,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    }
+  ],
+  "events": [],
+  "relations": [],
+  "supplementalEventDynasties": [],
+  "supplementalEventParticipants": [],
+  "preSql": "",
+  "postSql": "-- Remove stale reigns from managed dynasties (superseded ids from older imports)\nWITH stale AS (\n  DELETE FROM reigns\n  WHERE dynasty_id IN ('zou-state') AND id NOT IN ('reign-zou-r1-zou-state', 'reign-zou-r2-zou-state', 'reign-zou-r3-zou-state', 'reign-zou-r4-zou-state', 'reign-zou-r5-zou-state', 'reign-zou-r6-zou-state', 'reign-zou-r7-zou-state', 'reign-zou-r8-zou-state', 'reign-zou-r9-zou-state', 'reign-zou-r10-zou-state', 'reign-zou-r11-zou-state', 'reign-zou-r12-zou-state', 'reign-zou-r13-zou-state', 'reign-zou-r14-zou-state', 'reign-zou-r15-zou-state', 'reign-zou-r16-zou-state', 'reign-zou-r17-zou-state', 'reign-zou-r18-zou-state', 'reign-zou-r19-zou-state', 'reign-zou-r18-zou-state-2', 'reign-zou-he-zou-state', 'reign-zou-missing-after-he-1', 'reign-zou-kaogong-zou-state', 'reign-zou-missing-after-kaogong-1', 'reign-zou-missing-after-kaogong-2', 'reign-zou-mu-gong-zou-state', 'reign-zou-jun-qing-zou-state', 'reign-zou-missing-after-mugong-1', 'reign-zou-missing-after-mugong-2')\n  RETURNING person_id\n)\nDELETE FROM persons p\nWHERE p.id IN (SELECT DISTINCT person_id FROM stale)\n  AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)\n  AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = p.id)\n  AND NOT EXISTS (\n    SELECT 1 FROM relations rel\n    WHERE (rel.from_type = 'person' AND rel.from_id = p.id)\n       OR (rel.to_type = 'person' AND rel.to_id = p.id)\n  );\nSELECT rebuild_person_search_terms();",
+  "manifest": {
+    "slug": "chunqiu-zhanguo/zou-state",
+    "title": "邹（春秋战国）",
+    "window": {
+      "startYear": -1046,
+      "startMonth": 1,
+      "endYear": -256,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-10-02",
+    "counts": {
+      "persons": 29,
+      "dynasties": 1,
+      "reigns": 29,
+      "missingReigns": 0,
+      "events": 0,
+      "relations": 0,
+      "existingEventDynastyLinks": 0,
+      "existingEventParticipantLinks": 0,
+      "capitals": 0
+    },
+    "sources": [
+      {
+        "label": "孟子志：邾国至邹国沿革及孟子里籍（山东省情资料库）",
+        "url": "https://shandong-chorography.org/database/zzmj/section/19/article/7/"
+      },
+      {
+        "label": "邾国君主世系及所据传世文献",
+        "url": "https://zh.wikipedia.org/wiki/邾国"
+      },
+      {
+        "label": "邾国君主世系图（列邾庄公克、琐、文公，附异称与依据）",
+        "url": "https://zh.wikipedia.org/wiki/邾國君主世系圖"
+      },
+      {
+        "label": "《春秋滕薛杞越莒邾许七国统表·邾世次》（考辨仪父克为庄公的异说）",
+        "url": "https://ctext.org/wiki.pl?chapter=3884730&if=gb&remap=gb"
+      },
+      {
+        "label": "邾文公在位年表（《左传》相关纪事）",
+        "url": "https://ctext.org/datawiki.pl?if=gb&res=980150"
+      },
+      {
+        "label": "邹穆公与孟子",
+        "url": "https://ctext.org/dictionary.pl?did=711&if=en"
+      },
+      {
+        "label": "春秋时期",
+        "url": "https://zh.wikipedia.org/wiki/春秋时期"
+      },
+      {
+        "label": "战国时期",
+        "url": "https://zh.wikipedia.org/wiki/战国时期"
+      },
+      {
+        "label": "战国七雄",
+        "url": "https://zh.wikipedia.org/wiki/战国七雄"
+      },
+      {
+        "label": "周朝诸侯国君主列表",
+        "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/孟子"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷014"
+      },
+      {
+        "label": "夏商周断代工程与其他西周年代方案对照",
+        "url": "https://zh.wikipedia.org/wiki/夏商周断代工程#年表"
+      },
+      {
+        "label": "《春秋公羊传·昭公三十一年》",
+        "url": "https://ctext.org/gongyang-zhuan/zhao-gong-san-shi-yi-nian/zhs"
+      },
+      {
+        "label": "周朝诸侯国君主列表·邾国",
+        "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+      },
+      {
+        "label": "《左传·文公十三年》",
+        "url": "https://ctext.org/chun-qiu-zuo-zhuan/wen-gong-shi-san-nian/zhs"
+      },
+      {
+        "label": "《左传·哀公二十四年》",
+        "url": "https://ctext.org/chun-qiu-zuo-zhuan/ai-gong-er-shi-si-nian/zhs"
+      },
+      {
+        "label": "《左传·哀公八年》",
+        "url": "https://ctext.org/chun-qiu-zuo-zhuan/ai-gong-ba-nian/zhs"
+      },
+      {
+        "label": "《礼记·檀弓下》",
+        "url": "https://ctext.org/liji/tan-gong-xia/zhs"
+      },
+      {
+        "label": "《孟子·滕文公上》",
+        "url": "https://zh.wikisource.org/zh-hans/孟子/滕文公上"
+      },
+      {
+        "label": "邾国故城（山东地情档案）",
+        "url": "https://shandong-chorography.org/database/a/section/70/article/91/"
+      },
+      {
+        "label": "冯峰：《说“醴壶”》（北京大学中国考古学研究中心）",
+        "url": "https://csca.pku.edu.cn/info/1018/1207.htm"
+      },
+      {
+        "label": "张海：《邾器与两周邾邦史事》",
+        "url": "https://www.sohu.com/a/469705297_121124388"
+      },
+      {
+        "label": "邾国君主世系图（据《春秋释例》等）",
+        "url": "https://zh.wikipedia.org/wiki/邾國君主世系圖"
+      },
+      {
+        "label": "春秋鲁国历法复原（据张培瑜《中国古代历法》）",
+        "url": "https://ytliu0.github.io/ChineseCalendar/chunqiu_simp.html"
+      }
+    ],
+    "notes": [
+      "邹国君主世系初始收录说明（后续日期复核见本包2026-10-02复核记录）：始封和早期君主名录据《元和姓纂》《繹史·邾世系》等后世材料；周初至武公的世系真实性与具体年代有争议，均分坐标仅作时间轴定位。叔术、夏父让国据《公羊传·昭公三十一年》。前780至前678段后经邾君庆铜器铭文补录并重排。战国末段据《春秋释例》整理为邾子何、考公、穆公三位可考，另五世失名；其单任在位年代未见可靠完整年表。邹穆公约前382—前330年及邹国前256年终点均按近似年代记录。",
+      "邾文公前二任称谓复核（2026-10-02）：人物 zou-r11 与克、字仪父为同一人，不新增君主。按《邾国君主世系图》及其所列杜预《春秋释例》《古本竹书纪年》等依据，前期克的卡片首选称谓改为庄公；《邹县续志》另称惠公，其他通行资料称安公，保留为检索异称。《七国统表》据《竹书纪年》记仪父为庄公，并区分后期悼公子庄（穿），因此系统内前后两位庄公为不同君主。琐仍为原有 zou-r12 人物，卡片标题改用世系图所列姓名“琐”，人物谥号“宪公”保留于结构化字段与详情；既有时间区间与克→琐→文公次序不变。",
+      "列国泳道名用国号（齐、楚、韩），与夏商周秦汉一致，不带「国」；「齐国」等写入 alt_names。",
+      "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
+      "各国国君世系取维基百科大陆简体（zh-cn）诸侯君主列表与《史记》年表；按表头读取称号/姓名/在位年份，不用本地繁简转换。",
+      "年精度顺序继位按逾年改元切年（死年归旧王、新王次年起算，见 缓存中的最终在位起讫日期；用维基原始起年检测，避免孝文王占死后庄襄王不再后移）。维基在位年份常与死年重叠（如秦文公起前766年）；一年短祚、秦灵公/简公/献公未逾年改元、曲沃与翼并立不后移。魏惠王称王前后合并为一条在位（前369–前319）。",
+      "同人多次即位拆多条 reign（reignId 后缀 -2），与唐/明一致；完整在位字段直接维护于 cache.json，不从 Wiki 原始文本自动推断或覆盖。",
+      "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 confidence: year。",
+      "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
+      "逐条复核夏商周包既有事件的诸侯国关联：《左传·僖公九年》载葵丘与会者为鲁、齐、宋、卫、郑、许、曹及周王使者；补入本包有建模泳道的鲁、宋、卫、郑、曹（许未建王朝实体）。城濮之战补入受战事直接影响的宋、曹、卫：宋受楚围而晋出兵救援，晋先伐曹、卫并以复国交涉，原有关联晋、楚保留。依据《中国哲学书电子化计划》所录《左传·僖公九年》 https://ctext.org/chun-qiu-zuo-zhuan/xi-gong-jiu-nian/zhs ，以及《菏泽历史文化集萃·城濮之战》 https://shandong-chorography.org/database/bh/section/22/article/66/ 。",
+      "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
+      "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
+      "称谓复核（2026-10）：本包君主卡片称呼写入对应 reign.title。已有谥号者使用 persons.posthumousNames 的首选本体（不带国名）；无谥号者采用已核对的人物 title，并去除国名前缀；已有非空 reign.title 亦按无国名称呼规则复核。具体来源沿用各人物 links 与本包 manifest.sources。",
+      "邹（邾）国君主逐项复核（2026-10-02）：逐人保留 ID、世系主张和具体依据。周初挟至武公一段：现有世系主要由《元和姓纂》《繹史·邾世系》等后世资料整理，来源本身提示该段世系真实性有待考证；前796仅是传统表所采武公卒年。旧缓存把周初到前796的六段均分坐标写入人物简介，本次从简介删除坐标，不将其表述为史料纪年；旧几何仍标 interpolated_by_generation，不能作个人即位/卒年或在位年数使用，待可靠共同锚点或同期材料再重建。叔术、夏父与武公的让国叙述据《公羊传·昭公三十一年》，保留为传文所载。前780至前678之间夏父、失名者、克的既有插值仍只是世系定位，不等同于史载年份。前471年至邹穆公时期的何、考公及失名君主：前471即位据《左传·哀公二十四年》，考公仅见《礼记·檀弓下》，穆公见《孟子·滕文公上》；世系图据杜预《春秋释例》给出何、考公、穆公三位可考及另五位失名君主，但各失名者在三人间的确切排列仍属该图的整理方案。缓存依“何—失名一世—考公—失名二世—穆公—失名二世”记录；后四段坐标标插值，概述不将插值年份当作确定史实或展示确定时长。前614年邾文公卒并迁都绎据《左传·文公十三年》及山东地情档案；旧记录将文公终点记为前615、定公始于前614，违反原始纪年和死年归旧王规则，改文公终点为前614、定公起点为前613，均为年精度，未录入公历月日。姓名按邾国曹姓规范为可检索全名；未知本名者用曹姓加已知谥称/爵称，失名君主仍用“？”。在位卡片称谓移除国名前缀；撤除失名人物不存在的问号维基链接，逐人链接改为可核史料或汇编来源。",
+      "邾君庆与战国末失名君主补核（2026-10-02）：新见邾君庆信息据枣庄东江春秋墓地铜壶铭文“邾君庆作秦妊礼壶”及冯峰对春秋陶壶/铜壶和邾国世系的研究；张海《邾器与两周邾邦史事》将庆列入邾邦史。其具体在位年份未考，放在夏父至克的世系位置，相关区间重新按夏父起年与克卒年前678锚点、连续四任（夏父、失名一世、庆、克）分配；两端及内部边界均为 interpolated_by_generation，不能当成史载年份。世系图据杜预《春秋释例》称邾子何、邾娄考公、邹穆公三位可考，另有五世不详；其分段列为何与考公间一世、考公与穆公间二世、穆公之后二世。末二世分别建独立失名 person/reign，不以系统占位替代已知世次数。穆公之后缺乏可靠逐年锚点，时间轴位置仅以现有穆公 approximate 终点和本包采用的邹国约前256年终点作世次定位，起止标 interpolated_by_generation；邹国终点改为 approximate_year，表达亡国年有异说，不能把这些分配年当作确切继位/卒年。此前把失名总数及其归属说成无法确认的复核说明由本条细化取代。",
+      "2026-10-02按王朝拆包：本包由原chunqiu-zhanguo缓存中的邹记录原样迁移，保留实体ID、史实、日期及置信度。人物按在位归属唯一拥有，非在位人物按迭代归属分配；事件由dynastyIds首项所属包唯一拥有；事件关联按目标王朝或人物归属分配，跨包关系只引用既有ID，不重复写关联行。原包完整来源与复核说明另行归档。"
+    ]
+  }
+}

@@ -1,0 +1,2133 @@
+{
+  "slug": "chunqiu-zhanguo/yan-chunqiu",
+  "window": {
+    "startYear": -1044,
+    "startMonth": 1,
+    "endYear": -222,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "ji-shi",
+      "name": "奭",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，名奭，西周初年重臣，燕国始封君。周武王灭商后受封于北燕，留在周王室辅政，由其子就封；成王时位列三公，主治陕以西。后世以《甘棠》传颂其治绩，具体封君起讫年代失考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕召公"
+        },
+        {
+          "label": "《史记·燕召公世家》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷034"
+        },
+        {
+          "label": "河南博物院：燕侯旨鼎",
+          "url": "https://www.chnmus.net/sitesources/hnsbwy/page_pc/clzl/zlhg/dszhzgdwh/debfzmds/article301959f6691644fd9661d4e7ed7e351f.html"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "召公"
+      ],
+      "templeNames": [],
+      "title": "燕召公",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r1",
+      "name": "克",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，名克，西周早期燕侯，通常认为是召公奭之子。琉璃河出土的克罍、克盉铭文记载周王命克为燕侯，并赐予人口与职官；是早期燕国分封的重要见证。具体在位起讫年代失考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕侯克"
+        },
+        {
+          "label": "首都博物馆：克罍及分封燕侯铭文",
+          "url": "https://www.capitalmuseum.org.cn/collection/30a9844041e24d919ad497143c9db47b"
+        },
+        {
+          "label": "河南博物院：燕侯旨鼎",
+          "url": "https://www.chnmus.net/sitesources/hnsbwy/page_pc/clzl/zlhg/dszhzgdwh/debfzmds/article301959f6691644fd9661d4e7ed7e351f.html"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "克",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r2",
+      "name": "旨",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，名旨，西周早期燕侯，见于燕侯旨鼎等青铜器铭文。通常列为克之后的燕君，关于其为克之弟或克之子的关系，学者有不同解释。具体在位起讫年代失考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕侯旨"
+        },
+        {
+          "label": "河南博物院：燕侯旨鼎",
+          "url": "https://www.chnmus.net/sitesources/hnsbwy/page_pc/clzl/zlhg/dszhzgdwh/debfzmds/article301959f6691644fd9661d4e7ed7e351f.html"
+        },
+        {
+          "label": "燕国君主列表及所据考古、世系研究",
+          "url": "https://zh.wikipedia.org/wiki/燕国#君主列表"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "旨",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r3",
+      "name": "舞",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，名舞，西周早期燕侯，出土铜器有“匽侯舞”等铭文，传世文献未载其政事。学者据铭文考订其世次；与其他早期燕侯的关系及具体在位起讫年代仍有未明之处。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕侯舞"
+        },
+        {
+          "label": "燕国君主列表及所据考古、世系研究",
+          "url": "https://zh.wikipedia.org/wiki/燕国#君主列表"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "舞",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r4",
+      "name": "惠侯",
+      "roles": [
+        "君主"
+      ],
+      "bio": "燕国西周君主，前864—前827年在位。《史记·燕召公世家》记召公以下九世至惠侯；其在位期间经历周厉王奔彘与共和，周宣王初立时去世，子釐侯继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕惠侯"
+        },
+        {
+          "label": "《史记·燕召公世家》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷034"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "惠侯"
+      ],
+      "templeNames": [],
+      "title": "燕惠侯",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r5",
+      "name": "庄",
+      "roles": [
+        "君主"
+      ],
+      "bio": "燕惠侯之子，名庄，谥釐侯，前826—前791年在位。其二十一年郑桓公初封于郑；在位三十六年而卒，子顷侯继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕釐侯"
+        },
+        {
+          "label": "《史记·燕召公世家》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷034"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "釐侯"
+      ],
+      "templeNames": [],
+      "title": "燕釐侯",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r6",
+      "name": "顷侯",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，谥顷侯。事迹在《史记·燕世家》及后世追述中甚略，前790–前767年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕顷侯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "顷侯"
+      ],
+      "templeNames": [],
+      "title": "燕顷侯",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r7",
+      "name": "哀侯",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，谥哀侯，在位仅二年。卒后由郑侯继立，事迹载录甚略，前766–前765年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕哀侯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "哀侯"
+      ],
+      "templeNames": [],
+      "title": "燕哀侯",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r8",
+      "name": "郑侯",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，谥郑侯。相传在位三十六年，事迹载录甚略，年代见于《燕世家》，前764–前729年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕郑侯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "郑侯"
+      ],
+      "templeNames": [],
+      "title": "燕郑侯",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r9",
+      "name": "穆侯",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，谥穆侯，世系所载君主，政事不见详载，年代见于《燕世家》，前728–前711年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕穆侯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "穆侯"
+      ],
+      "templeNames": [],
+      "title": "燕穆侯",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r10",
+      "name": "宣侯",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，谥宣侯，在位十三年。春秋前期燕国仍较薄弱，事迹载录甚略，前710–前698年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕宣侯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "宣侯"
+      ],
+      "templeNames": [],
+      "title": "燕宣侯",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r11",
+      "name": "桓侯",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，谥桓侯，在位七年。事迹多见世系记载，政事不见详载，前697–前691年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕桓侯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "桓侯"
+      ],
+      "templeNames": [],
+      "title": "燕桓侯",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r12",
+      "name": "庄公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "燕桓侯之后，前690—前658年在位。曾与宋、卫参与拥立王子颓；后来山戎侵燕，齐桓公出兵救援，燕君送齐桓公出境，齐以所至之地赠燕。卒后子襄公继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕庄公"
+        },
+        {
+          "label": "《史记·燕召公世家》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷034"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "庄公"
+      ],
+      "templeNames": [],
+      "title": "燕庄公",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r13",
+      "name": "襄公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，谥襄公，庄公之子。在位近四十年，燕国仍居东偏小国之列，前657–前618年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕襄公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "襄公"
+      ],
+      "templeNames": [],
+      "title": "燕襄公",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r14",
+      "name": "桓公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "谥桓，有两段在位：前617–前602年与前372–前362年；或为同名异君，史家有争议。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕桓公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "桓公"
+      ],
+      "templeNames": [],
+      "title": "燕桓公",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r15",
+      "name": "宣公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，谥宣公，在位十四年。春秋中期燕国仍多赖世系记载，前601–前587年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕宣公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "宣公"
+      ],
+      "templeNames": [],
+      "title": "燕宣公",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r16",
+      "name": "昭公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，谥昭公，在位十二年，政治军事事迹载录甚略，年代见于《燕世家》，前586–前574年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕昭公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "昭公"
+      ],
+      "templeNames": [],
+      "title": "燕昭公",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r17",
+      "name": "武公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，谥武公，在位十八年，世系可考而政事少见详载，年代见于《燕世家》，前573–前555年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕武公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "武公"
+      ],
+      "templeNames": [],
+      "title": "燕武公",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r18",
+      "name": "文公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "燕前文公，燕武公之后，前554—前549年在位，卒后燕懿公继立。《史记·燕召公世家》记其在位六年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕前文公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "文公"
+      ],
+      "templeNames": [],
+      "title": "燕文公",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r19",
+      "name": "懿公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，谥懿公，在位仅四年，事迹载录甚略，年代见于《燕世家》，前548–前545年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕懿公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "懿公"
+      ],
+      "templeNames": [],
+      "title": "燕懿公",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r20",
+      "name": "惠公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "谥惠（春秋），曾出亡齐后复位。在位时与齐、晋多有交往，前544–前536年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕惠公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "惠公"
+      ],
+      "templeNames": [],
+      "title": "燕惠公",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r21",
+      "name": "悼公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，谥悼公，在位六年，事迹载录甚略，年代见于《燕世家》，前535–前529年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕悼公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "悼公"
+      ],
+      "templeNames": [],
+      "title": "燕悼公",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r22",
+      "name": "共公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，谥共公，在位五年，事迹载录甚略，年代见于《燕世家》，前528–前524年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕共公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "共公"
+      ],
+      "templeNames": [],
+      "title": "燕共公",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r23",
+      "name": "平公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，谥平公，在位十九年，事迹载录甚略，年代见于《燕世家》，前523–前505年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕平公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "平公"
+      ],
+      "templeNames": [],
+      "title": "燕平公",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r24",
+      "name": "简公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，谥简公（春秋），在位十二年，前504–前493年在位；与战国燕简公为不同君主。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕简公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "简公"
+      ],
+      "templeNames": [],
+      "title": "燕简公",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r25",
+      "name": "桓",
+      "roles": [
+        "君主"
+      ],
+      "bio": "名桓，谥孝公。在位三十七年，战国初期燕国仍偏处东北，事迹载于《燕世家》，前492–前455年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕孝公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "孝公"
+      ],
+      "templeNames": [],
+      "title": "燕孝公",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r26",
+      "name": "戴",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬戴，谥成公。在位十六年，事迹载录甚略，年代见于《燕世家》，前454–前439年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕成公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "成公"
+      ],
+      "templeNames": [],
+      "title": "燕成公",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r27",
+      "name": "闵公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，谥闵公，在位二十四年，事迹载录甚略，年代见于《燕世家》，前438–前415年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕闵公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "闵公"
+      ],
+      "templeNames": [],
+      "title": "燕闵公",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r28",
+      "name": "载",
+      "roles": [
+        "君主"
+      ],
+      "bio": "名载，谥简公（战国）。在位四十余年，前414–前373年；后被桓公二世所代，事迹载于《燕世家》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕简公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "简公"
+      ],
+      "templeNames": [],
+      "title": "燕简公",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r30",
+      "name": "文公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "燕后文公，燕桓公之后、燕易王之父，前361—前333年在位。燕国君主世系表将其与春秋时期燕前文公区分；本名失载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕后文公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "文公"
+      ],
+      "templeNames": [],
+      "title": "燕后文公",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r31",
+      "name": "易王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬姓，谥易王，文公之后。在位时燕与齐争，事迹载于战国史料，前332–前321年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕易王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "易王"
+      ],
+      "templeNames": [],
+      "title": "燕易王",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r32",
+      "name": "哙",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬哙，无谥。听信邹子之等，禅位于相子之，引发内乱，齐国田章破燕，哙死，前320–前314年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/哙"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "哙",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r33",
+      "name": "职",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬职，燕王哙庶兄。流落赵国后复国即位；用乐毅、邹衍等，合五国伐齐，占齐七十余城，前312–前279年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕昭王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "昭王"
+      ],
+      "templeNames": [],
+      "title": "燕昭王",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r34",
+      "name": "惠王",
+      "roles": [
+        "君主"
+      ],
+      "bio": "谥惠（战国）。疑乐毅而召还，乐毅奔赵；后与齐、秦较量，前278–前271年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕惠王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "惠王"
+      ],
+      "templeNames": [],
+      "title": "燕惠王",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r35",
+      "name": "讙",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬讙，谥武成。在位十二年，燕国国力经昭惠之后已不如前，前270–前258年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕武成王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "武成王"
+      ],
+      "templeNames": [],
+      "title": "燕武成王",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r36",
+      "name": "遇",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬遇，谥孝王（战国）。在位仅三年，事迹载录甚略，年代见于《燕世家》，前257–前255年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/燕孝王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "孝王"
+      ],
+      "templeNames": [],
+      "title": "燕孝王",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    },
+    {
+      "id": "yan-r37",
+      "name": "喜",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姬喜，无谥。秦将王翦、李信攻燕，喜逃亡辽东，后被俘处死，燕亡，前254–前222年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/喜"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "喜",
+      "ancestralXing": "姬",
+      "clanShi": "匽"
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "yan-chunqiu",
+      "name": "燕",
+      "altNames": [
+        "燕国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -1044,
+        "month": 1,
+        "abs": -12516,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -222,
+        "month": 12,
+        "abs": -2641,
+        "confidence": "month"
+      },
+      "note": "周武王封召公奭于燕；战国七雄之一，前222年秦灭燕。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-ji-shi-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "ji-shi",
+      "title": "召公",
+      "start": {
+        "year": -1044,
+        "month": 1,
+        "abs": -12516,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -1000,
+        "month": 12,
+        "abs": -11977,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -12516,
+      "endAbs": -11977,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-yan-r1-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r1",
+      "title": "克",
+      "start": {
+        "year": -999,
+        "month": 1,
+        "abs": -11976,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -955,
+        "month": 12,
+        "abs": -11437,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -11976,
+      "endAbs": -11437,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-yan-r2-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r2",
+      "title": "旨",
+      "start": {
+        "year": -954,
+        "month": 1,
+        "abs": -11436,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -910,
+        "month": 12,
+        "abs": -10897,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -11436,
+      "endAbs": -10897,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-yan-r3-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r3",
+      "title": "舞",
+      "start": {
+        "year": -909,
+        "month": 1,
+        "abs": -10896,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -865,
+        "month": 12,
+        "abs": -10357,
+        "confidence": "year"
+      },
+      "startAbs": -10896,
+      "endAbs": -10357,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-yan-r4-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r4",
+      "title": "惠侯",
+      "start": {
+        "year": -864,
+        "month": 1,
+        "abs": -10356,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -827,
+        "month": 12,
+        "abs": -9901,
+        "confidence": "year"
+      },
+      "startAbs": -10356,
+      "endAbs": -9901,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r5-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r5",
+      "title": "釐侯",
+      "start": {
+        "year": -826,
+        "month": 1,
+        "abs": -9900,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -791,
+        "month": 12,
+        "abs": -9469,
+        "confidence": "year"
+      },
+      "startAbs": -9900,
+      "endAbs": -9469,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r6-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r6",
+      "title": "顷侯",
+      "start": {
+        "year": -790,
+        "month": 1,
+        "abs": -9468,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -767,
+        "month": 12,
+        "abs": -9181,
+        "confidence": "year"
+      },
+      "startAbs": -9468,
+      "endAbs": -9181,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r7-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r7",
+      "title": "哀侯",
+      "start": {
+        "year": -766,
+        "month": 1,
+        "abs": -9180,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -765,
+        "month": 12,
+        "abs": -9157,
+        "confidence": "year"
+      },
+      "startAbs": -9180,
+      "endAbs": -9157,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r8-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r8",
+      "title": "郑侯",
+      "start": {
+        "year": -764,
+        "month": 1,
+        "abs": -9156,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -729,
+        "month": 12,
+        "abs": -8725,
+        "confidence": "year"
+      },
+      "startAbs": -9156,
+      "endAbs": -8725,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r9-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r9",
+      "title": "穆侯",
+      "start": {
+        "year": -728,
+        "month": 1,
+        "abs": -8724,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -711,
+        "month": 12,
+        "abs": -8509,
+        "confidence": "year"
+      },
+      "startAbs": -8724,
+      "endAbs": -8509,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r10-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r10",
+      "title": "宣侯",
+      "start": {
+        "year": -710,
+        "month": 1,
+        "abs": -8508,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -698,
+        "month": 12,
+        "abs": -8353,
+        "confidence": "year"
+      },
+      "startAbs": -8508,
+      "endAbs": -8353,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r11-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r11",
+      "title": "桓侯",
+      "start": {
+        "year": -697,
+        "month": 1,
+        "abs": -8352,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -691,
+        "month": 12,
+        "abs": -8269,
+        "confidence": "year"
+      },
+      "startAbs": -8352,
+      "endAbs": -8269,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r12-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r12",
+      "title": "庄公",
+      "start": {
+        "year": -690,
+        "month": 1,
+        "abs": -8268,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -658,
+        "month": 12,
+        "abs": -7873,
+        "confidence": "year"
+      },
+      "startAbs": -8268,
+      "endAbs": -7873,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r13-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r13",
+      "title": "襄公",
+      "start": {
+        "year": -657,
+        "month": 1,
+        "abs": -7872,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -618,
+        "month": 12,
+        "abs": -7393,
+        "confidence": "year"
+      },
+      "startAbs": -7872,
+      "endAbs": -7393,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r14-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r14",
+      "title": "桓公",
+      "start": {
+        "year": -617,
+        "month": 1,
+        "abs": -7392,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -602,
+        "month": 12,
+        "abs": -7201,
+        "confidence": "year"
+      },
+      "startAbs": -7392,
+      "endAbs": -7201,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r15-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r15",
+      "title": "宣公",
+      "start": {
+        "year": -601,
+        "month": 1,
+        "abs": -7200,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -587,
+        "month": 12,
+        "abs": -7021,
+        "confidence": "year"
+      },
+      "startAbs": -7200,
+      "endAbs": -7021,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r16-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r16",
+      "title": "昭公",
+      "start": {
+        "year": -586,
+        "month": 1,
+        "abs": -7020,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -574,
+        "month": 12,
+        "abs": -6865,
+        "confidence": "year"
+      },
+      "startAbs": -7020,
+      "endAbs": -6865,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r17-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r17",
+      "title": "武公",
+      "start": {
+        "year": -573,
+        "month": 1,
+        "abs": -6864,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -555,
+        "month": 12,
+        "abs": -6637,
+        "confidence": "year"
+      },
+      "startAbs": -6864,
+      "endAbs": -6637,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r18-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r18",
+      "title": "文公",
+      "start": {
+        "year": -554,
+        "month": 1,
+        "abs": -6636,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -549,
+        "month": 12,
+        "abs": -6565,
+        "confidence": "year"
+      },
+      "startAbs": -6636,
+      "endAbs": -6565,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r19-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r19",
+      "title": "懿公",
+      "start": {
+        "year": -548,
+        "month": 1,
+        "abs": -6564,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -545,
+        "month": 12,
+        "abs": -6517,
+        "confidence": "year"
+      },
+      "startAbs": -6564,
+      "endAbs": -6517,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r20-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r20",
+      "title": "惠公",
+      "start": {
+        "year": -544,
+        "month": 1,
+        "abs": -6516,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -536,
+        "month": 12,
+        "abs": -6409,
+        "confidence": "year"
+      },
+      "startAbs": -6516,
+      "endAbs": -6409,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r21-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r21",
+      "title": "悼公",
+      "start": {
+        "year": -535,
+        "month": 1,
+        "abs": -6408,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -529,
+        "month": 12,
+        "abs": -6325,
+        "confidence": "year"
+      },
+      "startAbs": -6408,
+      "endAbs": -6325,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r22-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r22",
+      "title": "共公",
+      "start": {
+        "year": -528,
+        "month": 1,
+        "abs": -6324,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -524,
+        "month": 12,
+        "abs": -6265,
+        "confidence": "year"
+      },
+      "startAbs": -6324,
+      "endAbs": -6265,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r23-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r23",
+      "title": "平公",
+      "start": {
+        "year": -523,
+        "month": 1,
+        "abs": -6264,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -505,
+        "month": 12,
+        "abs": -6037,
+        "confidence": "year"
+      },
+      "startAbs": -6264,
+      "endAbs": -6037,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r24-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r24",
+      "title": "简公",
+      "start": {
+        "year": -504,
+        "month": 1,
+        "abs": -6036,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -493,
+        "month": 12,
+        "abs": -5893,
+        "confidence": "year"
+      },
+      "startAbs": -6036,
+      "endAbs": -5893,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r25-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r25",
+      "title": "孝公",
+      "start": {
+        "year": -492,
+        "month": 1,
+        "abs": -5892,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -455,
+        "month": 12,
+        "abs": -5437,
+        "confidence": "year"
+      },
+      "startAbs": -5892,
+      "endAbs": -5437,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r26-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r26",
+      "title": "成公",
+      "start": {
+        "year": -454,
+        "month": 1,
+        "abs": -5436,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -439,
+        "month": 12,
+        "abs": -5245,
+        "confidence": "year"
+      },
+      "startAbs": -5436,
+      "endAbs": -5245,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r27-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r27",
+      "title": "闵公",
+      "start": {
+        "year": -438,
+        "month": 1,
+        "abs": -5244,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -415,
+        "month": 12,
+        "abs": -4957,
+        "confidence": "year"
+      },
+      "startAbs": -5244,
+      "endAbs": -4957,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r28-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r28",
+      "title": "简公",
+      "start": {
+        "year": -414,
+        "month": 1,
+        "abs": -4956,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -373,
+        "month": 12,
+        "abs": -4453,
+        "confidence": "year"
+      },
+      "startAbs": -4956,
+      "endAbs": -4453,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r14-yan-chunqiu-2",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r14",
+      "title": "桓公",
+      "start": {
+        "year": -372,
+        "month": 1,
+        "abs": -4452,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -362,
+        "month": 12,
+        "abs": -4321,
+        "confidence": "year"
+      },
+      "startAbs": -4452,
+      "endAbs": -4321,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r30-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r30",
+      "title": "文公",
+      "start": {
+        "year": -361,
+        "month": 1,
+        "abs": -4320,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -333,
+        "month": 12,
+        "abs": -3973,
+        "confidence": "year"
+      },
+      "startAbs": -4320,
+      "endAbs": -3973,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r31-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r31",
+      "title": "易王",
+      "start": {
+        "year": -332,
+        "month": 1,
+        "abs": -3972,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -321,
+        "month": 12,
+        "abs": -3829,
+        "confidence": "year"
+      },
+      "startAbs": -3972,
+      "endAbs": -3829,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r32-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r32",
+      "title": "哙",
+      "start": {
+        "year": -320,
+        "month": 1,
+        "abs": -3828,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -314,
+        "month": 12,
+        "abs": -3745,
+        "confidence": "year"
+      },
+      "startAbs": -3828,
+      "endAbs": -3745,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r33-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r33",
+      "title": "昭王",
+      "start": {
+        "year": -312,
+        "month": 1,
+        "abs": -3732,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -279,
+        "month": 12,
+        "abs": -3325,
+        "confidence": "year"
+      },
+      "startAbs": -3732,
+      "endAbs": -3325,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r34-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r34",
+      "title": "惠王",
+      "start": {
+        "year": -278,
+        "month": 1,
+        "abs": -3324,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -271,
+        "month": 12,
+        "abs": -3229,
+        "confidence": "year"
+      },
+      "startAbs": -3324,
+      "endAbs": -3229,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r35-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r35",
+      "title": "武成王",
+      "start": {
+        "year": -270,
+        "month": 1,
+        "abs": -3228,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -258,
+        "month": 12,
+        "abs": -3073,
+        "confidence": "year"
+      },
+      "startAbs": -3228,
+      "endAbs": -3073,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r36-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r36",
+      "title": "孝王",
+      "start": {
+        "year": -257,
+        "month": 1,
+        "abs": -3072,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -255,
+        "month": 12,
+        "abs": -3037,
+        "confidence": "year"
+      },
+      "startAbs": -3072,
+      "endAbs": -3037,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-yan-r37-yan-chunqiu",
+      "dynastyId": "yan-chunqiu",
+      "personId": "yan-r37",
+      "title": "喜",
+      "start": {
+        "year": -254,
+        "month": 1,
+        "abs": -3036,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -222,
+        "month": 12,
+        "abs": -2641,
+        "confidence": "year"
+      },
+      "startAbs": -3036,
+      "endAbs": -2641,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    }
+  ],
+  "events": [],
+  "relations": [],
+  "supplementalEventDynasties": [
+    {
+      "eventId": "zhanguo",
+      "dynastyId": "yan-chunqiu"
+    }
+  ],
+  "supplementalEventParticipants": [],
+  "preSql": "",
+  "postSql": "-- Remove stale reigns from managed dynasties (superseded ids from older imports)\nWITH stale AS (\n  DELETE FROM reigns\n  WHERE dynasty_id IN ('yan-chunqiu') AND id NOT IN ('reign-ji-shi-yan-chunqiu', 'reign-yan-r1-yan-chunqiu', 'reign-yan-r2-yan-chunqiu', 'reign-yan-r3-yan-chunqiu', 'reign-yan-r4-yan-chunqiu', 'reign-yan-r5-yan-chunqiu', 'reign-yan-r6-yan-chunqiu', 'reign-yan-r7-yan-chunqiu', 'reign-yan-r8-yan-chunqiu', 'reign-yan-r9-yan-chunqiu', 'reign-yan-r10-yan-chunqiu', 'reign-yan-r11-yan-chunqiu', 'reign-yan-r12-yan-chunqiu', 'reign-yan-r13-yan-chunqiu', 'reign-yan-r14-yan-chunqiu', 'reign-yan-r15-yan-chunqiu', 'reign-yan-r16-yan-chunqiu', 'reign-yan-r17-yan-chunqiu', 'reign-yan-r18-yan-chunqiu', 'reign-yan-r19-yan-chunqiu', 'reign-yan-r20-yan-chunqiu', 'reign-yan-r21-yan-chunqiu', 'reign-yan-r22-yan-chunqiu', 'reign-yan-r23-yan-chunqiu', 'reign-yan-r24-yan-chunqiu', 'reign-yan-r25-yan-chunqiu', 'reign-yan-r26-yan-chunqiu', 'reign-yan-r27-yan-chunqiu', 'reign-yan-r28-yan-chunqiu', 'reign-yan-r14-yan-chunqiu-2', 'reign-yan-r30-yan-chunqiu', 'reign-yan-r31-yan-chunqiu', 'reign-yan-r32-yan-chunqiu', 'reign-yan-r33-yan-chunqiu', 'reign-yan-r34-yan-chunqiu', 'reign-yan-r35-yan-chunqiu', 'reign-yan-r36-yan-chunqiu', 'reign-yan-r37-yan-chunqiu')\n  RETURNING person_id\n)\nDELETE FROM persons p\nWHERE p.id IN (SELECT DISTINCT person_id FROM stale)\n  AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)\n  AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = p.id)\n  AND NOT EXISTS (\n    SELECT 1 FROM relations rel\n    WHERE (rel.from_type = 'person' AND rel.from_id = p.id)\n       OR (rel.to_type = 'person' AND rel.to_id = p.id)\n  );\nSELECT rebuild_person_search_terms();",
+  "manifest": {
+    "slug": "chunqiu-zhanguo/yan-chunqiu",
+    "title": "燕（春秋战国）",
+    "window": {
+      "startYear": -1044,
+      "startMonth": 1,
+      "endYear": -222,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-10-02",
+    "counts": {
+      "persons": 37,
+      "dynasties": 1,
+      "reigns": 38,
+      "missingReigns": 0,
+      "events": 0,
+      "relations": 0,
+      "existingEventDynastyLinks": 1,
+      "existingEventParticipantLinks": 0,
+      "capitals": 0
+    },
+    "sources": [
+      {
+        "label": "春秋时期",
+        "url": "https://zh.wikipedia.org/wiki/春秋时期"
+      },
+      {
+        "label": "战国时期",
+        "url": "https://zh.wikipedia.org/wiki/战国时期"
+      },
+      {
+        "label": "战国七雄",
+        "url": "https://zh.wikipedia.org/wiki/战国七雄"
+      },
+      {
+        "label": "周朝诸侯国君主列表",
+        "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕召公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕侯克"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕侯旨"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕侯舞"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕惠侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕釐侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕顷侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕哀侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕郑侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕穆侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕宣侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕桓侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕庄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕襄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕桓公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕宣公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕昭公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕武公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕前文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕懿公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕惠公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕悼公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕共公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕平公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕简公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕孝公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕成公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕闵公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕后文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕易王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/哙"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕昭王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕惠王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕武成王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燕孝王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/喜"
+      },
+      {
+        "label": "《史记·燕召公世家》",
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷034"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
+      },
+      {
+        "label": "首都博物馆：克罍及分封燕侯铭文",
+        "url": "https://www.capitalmuseum.org.cn/collection/30a9844041e24d919ad497143c9db47b"
+      },
+      {
+        "label": "河南博物院：燕侯旨鼎",
+        "url": "https://www.chnmus.net/sitesources/hnsbwy/page_pc/clzl/zlhg/dszhzgdwh/debfzmds/article301959f6691644fd9661d4e7ed7e351f.html"
+      },
+      {
+        "label": "燕国君主列表及所据考古、世系研究",
+        "url": "https://zh.wikipedia.org/wiki/燕国#君主列表"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷014"
+      },
+      {
+        "label": "夏商周断代工程与其他西周年代方案对照",
+        "url": "https://zh.wikipedia.org/wiki/夏商周断代工程#年表"
+      },
+      {
+        "label": "春秋鲁国历法复原（据张培瑜《中国古代历法》）",
+        "url": "https://ytliu0.github.io/ChineseCalendar/chunqiu_simp.html"
+      }
+    ],
+    "notes": [
+      "列国泳道名用国号（齐、楚、韩），与夏商周秦汉一致，不带「国」；「齐国」等写入 alt_names。",
+      "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
+      "各国国君世系取维基百科大陆简体（zh-cn）诸侯君主列表与《史记》年表；按表头读取称号/姓名/在位年份，不用本地繁简转换。",
+      "年精度顺序继位按逾年改元切年（死年归旧王、新王次年起算，见 缓存中的最终在位起讫日期；用维基原始起年检测，避免孝文王占死后庄襄王不再后移）。维基在位年份常与死年重叠（如秦文公起前766年）；一年短祚、秦灵公/简公/献公未逾年改元、曲沃与翼并立不后移。魏惠王称王前后合并为一条在位（前369–前319）。",
+      "燕前文公（前554—前549）与燕后文公（前361—前333）是不同世次的两位燕君，分属燕武公之后与燕桓公之后；源表虽均简称燕文公，导入时拆为 yan-r18 与 yan-r30 两个人物，后者本名失载、谥文公。依据《史记·燕召公世家》与《周朝诸侯国君主列表》。",
+      "卫国人物 id 用 weiguo- 前缀，避免与战国魏 wei-r* 冲突；燕召公用 ji-shi，避免与宋恭帝 zhao-shi 冲突。",
+      "同人多次即位拆多条 reign（reignId 后缀 -2），与唐/明一致；完整在位字段直接维护于 cache.json，不从 Wiki 原始文本自动推断或覆盖。",
+      "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 confidence: year。",
+      "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
+      "逐条复核夏商周包既有事件的诸侯国关联：《左传·僖公九年》载葵丘与会者为鲁、齐、宋、卫、郑、许、曹及周王使者；补入本包有建模泳道的鲁、宋、卫、郑、曹（许未建王朝实体）。城濮之战补入受战事直接影响的宋、曹、卫：宋受楚围而晋出兵救援，晋先伐曹、卫并以复国交涉，原有关联晋、楚保留。依据《中国哲学书电子化计划》所录《左传·僖公九年》 https://ctext.org/chun-qiu-zuo-zhuan/xi-gong-jiu-nian/zhs ，以及《菏泽历史文化集萃·城濮之战》 https://shandong-chorography.org/database/bh/section/22/article/66/ 。",
+      "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
+      "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
+      "称谓复核（2026-10）：本包君主卡片称呼写入对应 reign.title。已有谥号者使用 persons.posthumousNames 的首选本体（不带国名）；无谥号者采用已核对的人物 title，并去除国名前缀；已有非空 reign.title 亦按无国名称呼规则复核。具体来源沿用各人物 links 与本包 manifest.sources。",
+      "燕早期概述与来源复核（2026-10-02）：ji-shi（召公奭）、yan-r1（克）、yan-r2（旨）、yan-r3（舞）的旧 bio 将系统分配的年份写成确定在位年或“后世系年所推”，现全部删除，仅保留可证身份、事迹与历史年代失考的说明。召公旧述“周武王同母弟”缺可靠依据，依《史记》只保留与周同姓及王室辅政身份；由子就封据河南博物院燕侯旨鼎说明。克的分封据首都博物馆克罍铭文；旨与克的兄弟/父子关系保留学术异说；舞不再称“史料仅见世系之名”，改为出土铜器所见燕侯。克、旨、舞的泛名维基链接改为专门条目，并在各 person.links 与 manifest.sources 同步补入本次依据。燕惠侯、釐侯补回继承与共和、郑始封等可证事实；燕庄公旧述“击退齐军于东门”缺依据，改为《燕召公世家》所载王子颓之乱与齐桓公救燕。",
+      "燕早期日期复核留据（本次仅修概述与来源，未重算定位）：reign-ji-shi-yan-chunqiu（-1044至-1000，两端 interpolated_by_generation）、reign-yan-r1-yan-chunqiu（-999至-955，两端 interpolated_by_generation）、reign-yan-r2-yan-chunqiu（-954至-910，两端 interpolated_by_generation）、reign-yan-r3-yan-chunqiu（-909至-865，起点 interpolated_by_generation、终点 year）均为旧版本四段均分定位，未获本次史料确认，不再写入 bio。燕早期世系不连续：《史记》仅称召公以下九世至惠侯，克、旨、舞又主要据金文辨认，其后与惠侯之间有世系断层；不能把四个现存姓名当作完整连续的四任世系，也不能由惠侯起年认定舞的卒年。因此这四段旧定位及舞终点 confidence 的重新建模暂缓，待有可靠共同锚点及世次定位时处理；不据本次正文清理新增或重做跨断层插值，不将原坐标视为史料日期。",
+      "燕可考日期复核：reign-yan-r4-yan-chunqiu（惠侯，-864至-827）与 reign-yan-r5-yan-chunqiu（釐侯，-826至-791）两端维持 year；《十二诸侯年表》共和元年（-841）列惠侯二十四年，宣王元年（-827）列惠侯尽，宣王二年（-826）列釐侯庄元年。个别二手条目把惠侯初立年写为-865，本包保留年表年次及旧王占死年的接续规则，不把-865解释成舞卒年。reign-yan-r6-yan-chunqiu（顷侯，-790至-767）、reign-yan-r7-yan-chunqiu（哀侯，-766至-765）、reign-yan-r8-yan-chunqiu（郑侯，-764至-729）、reign-yan-r9-yan-chunqiu（穆侯，-728至-711）、reign-yan-r10-yan-chunqiu（宣侯，-710至-698）、reign-yan-r11-yan-chunqiu（桓侯，-697至-691）与 reign-yan-r12-yan-chunqiu（庄公，-690至-658）保留原起讫、两端 year 及既有概述中的年表年份；二十四、二、三十六、十八、十三、七、三十三年在位与《燕召公世家》对应，没有早期均分年份混入这些记录。",
+      "2026-10-02按王朝拆包：本包由原chunqiu-zhanguo缓存中的燕记录原样迁移，保留实体ID、史实、日期及置信度。人物按在位归属唯一拥有，非在位人物按迭代归属分配；事件由dynastyIds首项所属包唯一拥有；事件关联按目标王朝或人物归属分配，跨包关系只引用既有ID，不重复写关联行。原包完整来源与复核说明另行归档。"
+    ]
+  }
+}

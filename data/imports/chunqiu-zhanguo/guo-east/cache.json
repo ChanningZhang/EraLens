@@ -1,0 +1,442 @@
+{
+  "slug": "chunqiu-zhanguo/guo-east",
+  "window": {
+    "startYear": -1046,
+    "startMonth": 1,
+    "endYear": -767,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "guo-east-zhong",
+      "name": "仲",
+      "title": "虢仲",
+      "ancestralXing": "姬",
+      "clanShi": "虢",
+      "roles": [
+        "君主"
+      ],
+      "bio": "王季之子、周文王之弟，曾与虢叔同任文王卿士。周武王克商后分封二虢，通行说以虢仲封于制邑，为东虢始封君；东、西虢始封君的归属另有异说。生卒及具体在位起讫不详。",
+      "links": [
+        {
+          "label": "虢仲（始封君归属异说及东虢世系待考区段）",
+          "url": "https://zh.wikipedia.org/wiki/虢仲"
+        },
+        {
+          "label": "东虢国（始封与可考君主）",
+          "url": "https://zh.wikipedia.org/wiki/東虢國"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "altNames": [],
+      "birth": null,
+      "death": null
+    },
+    {
+      "id": "guo-east-dalin",
+      "name": "大林",
+      "title": "虢惠叔",
+      "ancestralXing": "姬",
+      "clanShi": "虢",
+      "roles": [
+        "君主"
+      ],
+      "bio": "东虢君主，谥惠叔，虢叔旅之父。《虢叔旅钟》称“皇考惠叔大林”，记其侍奉周天子，旅作钟追念父亲。其与始封君虢仲之间的具体世系、生卒及在位起讫不详。",
+      "links": [
+        {
+          "label": "东虢国（始封与可考君主）",
+          "url": "https://zh.wikipedia.org/wiki/東虢國"
+        },
+        {
+          "label": "何志華《西周金文韻讀研究淺議》（虢叔旅钟、惠叔大林父子）",
+          "url": "https://jas.hkbu.edu.hk/content/dam/jas-assets/publications/bulletin-of-the-jao-tsung-i-academy-of-sinology/issue-6-august-2019/12.pdf"
+        },
+        {
+          "label": "虢仲（始封君归属异说及东虢世系待考区段）",
+          "url": "https://zh.wikipedia.org/wiki/虢仲"
+        }
+      ],
+      "posthumousNames": [
+        "惠叔"
+      ],
+      "templeNames": [],
+      "altNames": [
+        "虢惠叔大林",
+        "惠叔大林"
+      ],
+      "birth": null,
+      "death": null
+    },
+    {
+      "id": "guo-east-lv",
+      "name": "旅",
+      "title": "虢叔旅",
+      "ancestralXing": "姬",
+      "clanShi": "虢",
+      "roles": [
+        "君主"
+      ],
+      "bio": "虢惠叔大林之子，西周虢国君主，东虢君主名录所载。曾作虢叔旅钟追念亡父，铭文记其承继父德、侍奉天子；《秦志》将其审理鬲从与攸卫牧田邑争讼系于前847年。生卒与完整在位起讫不详。",
+      "links": [
+        {
+          "label": "东虢国（始封与可考君主）",
+          "url": "https://zh.wikipedia.org/wiki/東虢國"
+        },
+        {
+          "label": "何志華《西周金文韻讀研究淺議》（虢叔旅钟、惠叔大林父子）",
+          "url": "https://jas.hkbu.edu.hk/content/dam/jas-assets/publications/bulletin-of-the-jao-tsung-i-academy-of-sinology/issue-6-august-2019/12.pdf"
+        },
+        {
+          "label": "《陕西省志·秦志》大事年表（虢叔旅活动于前847年之说）",
+          "url": "https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsz/szdylpdf/201404/P020240923616206405975.pdf"
+        },
+        {
+          "label": "虢仲（始封君归属异说及东虢世系待考区段）",
+          "url": "https://zh.wikipedia.org/wiki/虢仲"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "altNames": [
+        "虢旅"
+      ],
+      "birth": null,
+      "death": null
+    },
+    {
+      "id": "guo-east-last-shu",
+      "name": "？",
+      "title": "虢叔",
+      "ancestralXing": "姬",
+      "clanShi": "虢",
+      "roles": [
+        "君主"
+      ],
+      "bio": "东虢末代君主，史称虢叔，私名及父祖世系不详。《国语·郑语》记其与郑桓公同时；《左传·隐公元年》借郑庄公之言记“制，岩邑也，虢叔死焉”。东虢为郑所灭，通行系年为前767年；死亡方式未详。此人并非周文王之弟、西虢始封君虢叔。",
+      "links": [
+        {
+          "label": "《左传·隐公元年》（制邑、虢叔死焉）",
+          "url": "https://zh.wikisource.org/wiki/春秋左氏傳/隱公"
+        },
+        {
+          "label": "《国语·郑语》（虢叔与郑桓公共时）",
+          "url": "https://ctext.org/guo-yu/zheng-yu/ens"
+        },
+        {
+          "label": "孙尚勇《〈春秋〉历史叙事与孔子的文化关怀》（平王四年郑灭虢与杜预注）",
+          "url": "https://www.ica.org.cn/att/site17/20240529/1716968303123.pdf"
+        },
+        {
+          "label": "东虢国（始封与可考君主）",
+          "url": "https://zh.wikipedia.org/wiki/東虢國"
+        },
+        {
+          "label": "虢仲（始封君归属异说及东虢世系待考区段）",
+          "url": "https://zh.wikipedia.org/wiki/虢仲"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "altNames": [
+        "东虢末君",
+        "东虢虢叔"
+      ],
+      "birth": null,
+      "death": {
+        "year": -767,
+        "month": 12,
+        "abs": -9181,
+        "confidence": "approximate_year"
+      }
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "guo-east",
+      "name": "东虢国",
+      "altNames": [
+        "东虢国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -1046,
+        "month": 1,
+        "abs": -12540,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -767,
+        "month": 12,
+        "abs": -9181,
+        "confidence": "approximate_year"
+      },
+      "note": "西周姬姓诸侯国，位于制邑（今河南荥阳一带）。通行说为周文王弟虢仲的封国，与西虢分别屏卫周王室。可考人物有虢仲、虢惠叔大林、虢叔旅及末君虢叔；惠叔与旅为父子，其余世系有断层。东、西虢始封君的归属存在异说。东虢为郑所灭，通行系年前767年；《左传》记末君虢叔死于制邑。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-guo-east-zhong",
+      "dynastyId": "guo-east",
+      "personId": "guo-east-zhong",
+      "title": "仲",
+      "start": {
+        "year": -1046,
+        "month": 1,
+        "abs": -12540,
+        "confidence": "interpolated_by_other"
+      },
+      "end": {
+        "year": -1043,
+        "month": 12,
+        "abs": -12493,
+        "confidence": "interpolated_by_other"
+      },
+      "startAbs": -12540,
+      "endAbs": -12493,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-missing-guo-east--1042",
+      "dynastyId": "guo-east",
+      "personId": "system-missing-ruler",
+      "title": "史料缺",
+      "start": {
+        "year": -1042,
+        "month": 1,
+        "abs": -12492,
+        "confidence": "interpolated_by_other"
+      },
+      "end": {
+        "year": -848,
+        "month": 12,
+        "abs": -10153,
+        "confidence": "interpolated_by_other"
+      },
+      "startAbs": -12492,
+      "endAbs": -10153,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-guo-east-lv",
+      "dynastyId": "guo-east",
+      "personId": "guo-east-lv",
+      "title": "叔旅",
+      "start": {
+        "year": -847,
+        "month": 1,
+        "abs": -10152,
+        "confidence": "interpolated_by_other"
+      },
+      "end": {
+        "year": -847,
+        "month": 12,
+        "abs": -10141,
+        "confidence": "interpolated_by_other"
+      },
+      "startAbs": -10152,
+      "endAbs": -10141,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-missing-guo-east--846",
+      "dynastyId": "guo-east",
+      "personId": "system-missing-ruler",
+      "title": "史料缺",
+      "start": {
+        "year": -846,
+        "month": 1,
+        "abs": -10140,
+        "confidence": "interpolated_by_other"
+      },
+      "end": {
+        "year": -775,
+        "month": 12,
+        "abs": -9277,
+        "confidence": "interpolated_by_other"
+      },
+      "startAbs": -10140,
+      "endAbs": -9277,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-guo-east-last-shu",
+      "dynastyId": "guo-east",
+      "personId": "guo-east-last-shu",
+      "title": "叔",
+      "start": {
+        "year": -774,
+        "month": 1,
+        "abs": -9276,
+        "confidence": "interpolated_by_other"
+      },
+      "end": {
+        "year": -767,
+        "month": 12,
+        "abs": -9181,
+        "confidence": "approximate_year"
+      },
+      "startAbs": -9276,
+      "endAbs": -9181,
+      "eraNames": [],
+      "isMain": false
+    }
+  ],
+  "events": [],
+  "relations": [
+    {
+      "id": "rel-guo-east-person-1",
+      "fromRef": "dynasty:guo-east",
+      "toRef": "person:guo-east-zhong",
+      "kind": "other"
+    },
+    {
+      "id": "rel-guo-east-person-2",
+      "fromRef": "dynasty:guo-east",
+      "toRef": "person:guo-east-dalin",
+      "kind": "other"
+    },
+    {
+      "id": "rel-guo-east-person-3",
+      "fromRef": "dynasty:guo-east",
+      "toRef": "person:guo-east-lv",
+      "kind": "other"
+    },
+    {
+      "id": "rel-guo-east-person-4",
+      "fromRef": "dynasty:guo-east",
+      "toRef": "person:guo-east-last-shu",
+      "kind": "other"
+    }
+  ],
+  "supplementalEventDynasties": [],
+  "supplementalEventParticipants": [],
+  "preSql": "",
+  "postSql": "-- Remove stale reigns from managed dynasties (superseded ids from older imports)\nWITH stale AS (\n  DELETE FROM reigns\n  WHERE dynasty_id IN ('guo-east') AND id NOT IN ('reign-guo-east-zhong', 'reign-missing-guo-east--1042', 'reign-guo-east-lv', 'reign-missing-guo-east--846', 'reign-guo-east-last-shu')\n  RETURNING person_id\n)\nDELETE FROM persons p\nWHERE p.id IN (SELECT DISTINCT person_id FROM stale)\n  AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)\n  AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = p.id)\n  AND NOT EXISTS (\n    SELECT 1 FROM relations rel\n    WHERE (rel.from_type = 'person' AND rel.from_id = p.id)\n       OR (rel.to_type = 'person' AND rel.to_id = p.id)\n  );\nSELECT rebuild_person_search_terms();",
+  "manifest": {
+    "slug": "chunqiu-zhanguo/guo-east",
+    "title": "东虢国数据包",
+    "window": {
+      "startYear": -1046,
+      "startMonth": 1,
+      "endYear": -767,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-10-02",
+    "counts": {
+      "persons": 4,
+      "dynasties": 1,
+      "reigns": 5,
+      "missingReigns": 2,
+      "events": 0,
+      "relations": 4,
+      "existingEventDynastyLinks": 0,
+      "existingEventParticipantLinks": 0,
+      "capitals": 0
+    },
+    "sources": [
+      {
+        "label": "春秋时期",
+        "url": "https://zh.wikipedia.org/wiki/春秋时期"
+      },
+      {
+        "label": "战国时期",
+        "url": "https://zh.wikipedia.org/wiki/战国时期"
+      },
+      {
+        "label": "战国七雄",
+        "url": "https://zh.wikipedia.org/wiki/战国七雄"
+      },
+      {
+        "label": "周朝诸侯国君主列表",
+        "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷014"
+      },
+      {
+        "label": "夏商周断代工程与其他西周年代方案对照",
+        "url": "https://zh.wikipedia.org/wiki/夏商周断代工程#年表"
+      },
+      {
+        "label": "周朝（共时定位采用的年表）",
+        "url": "https://zh.wikipedia.org/wiki/周朝"
+      },
+      {
+        "label": "东虢国（始封与可考君主）",
+        "url": "https://zh.wikipedia.org/wiki/東虢國"
+      },
+      {
+        "label": "虢仲（始封君归属异说及东虢世系待考区段）",
+        "url": "https://zh.wikipedia.org/wiki/虢仲"
+      },
+      {
+        "label": "何志華《西周金文韻讀研究淺議》（虢叔旅钟、惠叔大林父子）",
+        "url": "https://jas.hkbu.edu.hk/content/dam/jas-assets/publications/bulletin-of-the-jao-tsung-i-academy-of-sinology/issue-6-august-2019/12.pdf"
+      },
+      {
+        "label": "《陕西省志·秦志》大事年表（虢叔旅活动于前847年之说）",
+        "url": "https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsz/szdylpdf/201404/P020240923616206405975.pdf"
+      },
+      {
+        "label": "《左传·隐公元年》（制邑、虢叔死焉）",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳/隱公"
+      },
+      {
+        "label": "《国语·郑语》（虢叔与郑桓公共时）",
+        "url": "https://ctext.org/guo-yu/zheng-yu/ens"
+      },
+      {
+        "label": "孙尚勇《〈春秋〉历史叙事与孔子的文化关怀》（平王四年郑灭虢与杜预注）",
+        "url": "https://www.ica.org.cn/att/site17/20240529/1716968303123.pdf"
+      },
+      {
+        "label": "周朝（共时定位的武王年表）",
+        "url": "https://zh.wikipedia.org/wiki/周朝"
+      },
+      {
+        "label": "国家图书馆《国家图书馆藏金文全集》（虢叔旅钟为西周晚期）",
+        "url": "https://www.nlc.cn/pcab/zx/xw/20240119_2637724.shtml"
+      }
+    ],
+    "notes": [
+      "列国泳道名用国号（齐、楚、韩），与夏商周秦汉一致，不带「国」；「齐国」等写入 alt_names。",
+      "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
+      "各国国君世系取维基百科大陆简体（zh-cn）诸侯君主列表与《史记》年表；按表头读取称号/姓名/在位年份，不用本地繁简转换。",
+      "年精度顺序继位按逾年改元切年（死年归旧王、新王次年起算，见 缓存中的最终在位起讫日期；用维基原始起年检测，避免孝文王占死后庄襄王不再后移）。维基在位年份常与死年重叠（如秦文公起前766年）；一年短祚、秦灵公/简公/献公未逾年改元、曲沃与翼并立不后移。魏惠王称王前后合并为一条在位（前369–前319）。",
+      "同人多次即位拆多条 reign（reignId 后缀 -2），与唐/明一致；完整在位字段直接维护于 cache.json，不从 Wiki 原始文本自动推断或覆盖。",
+      "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 confidence: year。",
+      "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
+      "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
+      "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
+      "称谓复核（2026-10）：本包君主卡片称呼写入对应 reign.title。已有谥号者使用 persons.posthumousNames 的首选本体（不带国名）；无谥号者采用已核对的人物 title，并去除国名前缀；已有非空 reign.title 亦按无国名称呼规则复核。具体来源沿用各人物 links 与本包 manifest.sources。",
+      "虢条目表示传统所称虢国总体范围，前1046年为周初传统纪年；东、西虢封国及早期世系归属存在异说。",
+      "2026-10-02世系复核：维基《周朝诸侯国君主列表》在郭叔与虢城公之间、虢城公之后明确记“中间世系失考”；《西虢国》亦说明金文人物世系无法确切断定。《郭叔》的继任栏仅称“一说为虢城公”，《虢城公》的前任栏却链接始封君虢叔，两者互相矛盾，不采用导航框作为直接传位依据。班簋所记毛伯接替的是职务，不能据此建立虢国君位继承关系。",
+      "2026-10-02按用户要求统一缺载段展示文案为“史料缺”；同步在位title、王朝概述及导入说明，保留两处断层与原日期置信度。",
+      "2026-10-02新增东虢，国号显示为东虢，别名保留东虢国；与西虢独立并存，不合并泳道，不重复拥有西虢始封君或其他包中的郑国人物。",
+      "东、西虢始封君采用虢仲封东虢、虢叔封西虢的通行说，异说保留于人物概述及来源。始封以前1046年克商后的西周初为依据，建国年并非可确证的受封年，标approximate_year。虢仲在位起讫不详，共时坐标参照xia-shang-zhou包武王窗口-1046至-1043，两端interpolated_by_other，不主张即位年或卒年。",
+      "虢惠叔大林与虢叔旅父子关系见虢叔旅钟。钟的西周晚期断代由何志華论文与国家图书馆资料交叉核对；仅《秦志》具体系虢叔旅活动于-847年，该年是有出处的活动年推定，不是可确认的即位、死亡或完整在位区间。旅的在位条目仅用该活动年定位，两端interpolated_by_other；不显示确定时长。惠叔没有可采用的独立活动年份，保留人物及王朝显式关联，不借父子世次造起讫年。",
+      "2026-10-02核对东虢世系：虢仲→世系待考→惠叔大林→旅→世系待考→末君虢叔。前后两处失载国君的任数及世次均不能确认，属于史料缺，并非无国君，分别以普通Reign、system-missing-ruler、title=史料缺作泳道占位；不跨断层按世次均分或推断直接前后任。首段位于虢仲与旅的可定位记录之间（-1042至-848），次段位于旅与末君的定位记录之间（-846至-775）；这些只是未能落实世系及在位年代的展示区段，不是可确证的史料缺起讫年。边界由timelineOwnership与timelineIntervals裁定已有锚点间的区间，两端均interpolated_by_other。首段中的已知人物惠叔大林仍独立保留人物和来源，父子关系明确但在位年代无法独立定位，不把惠叔当作失名君主，也不虚构其在位年以切开首段。",
+      "末君虢叔与西虢始封君虢叔是不同人物，使用guo-east-last-shu独立ID。私名未知，persons.name为？；叔为史称而非私名，reigns.title为叔，无可确认谥号。",
+      "末君在位起年不详。起点参照《国语·郑语》虢叔与郑桓公共时、幽王八年（-774年）史伯论兴衰的传统系年定位，标interpolated_by_other；不声称-774年即位。终点与死亡年采用今本《竹书纪年》平王四年（-767年）郑灭虢的通行说，标approximate_year；灭虢年代及郑桓公、武公归属存在异说，未当成无争议的确定年。",
+      "不新增普通灭国事件重复王朝终点；年精度末年12月及泳道起年1月均为定位占位，不表示史料已知公历月份。不确定在位不分配个人都城。",
+      "2026-10-02用户明确命运线应表达被谁灭国，类型不局限于人身结局。采用通用conquered（灭国），末君虢叔指向当时郑国君主郑武公zheng-r1，时点为所采灭国年-767年12月桶右缘，atConfidence=approximate_year。不主张郑武公亲手杀害虢叔。关系由cross-dynasty-fate包唯一拥有。",
+      "2026-10-02按用户要求统一虢国资料归属：东虢与西虢的王朝、人物、在位、都城及王朝人物关系由chunqiu-zhanguo包唯一拥有；保留原ID、记录内容、日期和置信度。虢国相关的假道伐虢、唇亡齿寒典故事件及其引用仍留在idioms包，原guo-east包移除；灭国命运线仍由cross-dynasty-fate包拥有。",
+      "2026-10-02按王朝拆包：本包从chunqiu-zhanguo原完整缓存迁出guo-east的唯一所有权记录，保留所有实体ID、字段内容、日期和置信度。跨王朝事件由首个dynastyIds对应王朝包拥有；跨包引用不重复写人物、王朝、在位或关联行。原完整来源与处理说明归档于父目录。"
+    ]
+  }
+}

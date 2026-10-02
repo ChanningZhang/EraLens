@@ -3,8 +3,9 @@
  * Audit 618+ persons missing posthumous_name / temple_name in import SQL.
  * Run: node data/imports/lib/auditImperialAppellationFields.mjs
  */
-import { readdirSync, readFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import path from "node:path";
+import { discoverPackages } from "./discoverPackages.mjs";
 import { fileURLToPath } from "node:url";
 
 const TEMPLE_ERA_START_YEAR = 618;
@@ -40,7 +41,7 @@ function parseReignStartYears(content) {
 
 function main() {
   const gaps = [];
-  for (const slug of readdirSync(importsRoot)) {
+  for (const slug of discoverPackages(importsRoot, "import.sql")) {
     const sqlPath = path.join(importsRoot, slug, "import.sql");
     try {
       const content = readFileSync(sqlPath, "utf8");

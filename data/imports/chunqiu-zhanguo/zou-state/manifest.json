@@ -1,0 +1,148 @@
+{
+  "slug": "chunqiu-zhanguo/zou-state",
+  "title": "邹（春秋战国）",
+  "window": {
+    "startYear": -1046,
+    "startMonth": 1,
+    "endYear": -256,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-10-02",
+  "counts": {
+    "persons": 29,
+    "dynasties": 1,
+    "reigns": 29,
+    "missingReigns": 0,
+    "events": 0,
+    "relations": 0,
+    "existingEventDynastyLinks": 0,
+    "existingEventParticipantLinks": 0,
+    "capitals": 0
+  },
+  "sources": [
+    {
+      "label": "孟子志：邾国至邹国沿革及孟子里籍（山东省情资料库）",
+      "url": "https://shandong-chorography.org/database/zzmj/section/19/article/7/"
+    },
+    {
+      "label": "邾国君主世系及所据传世文献",
+      "url": "https://zh.wikipedia.org/wiki/邾国"
+    },
+    {
+      "label": "邾国君主世系图（列邾庄公克、琐、文公，附异称与依据）",
+      "url": "https://zh.wikipedia.org/wiki/邾國君主世系圖"
+    },
+    {
+      "label": "《春秋滕薛杞越莒邾许七国统表·邾世次》（考辨仪父克为庄公的异说）",
+      "url": "https://ctext.org/wiki.pl?chapter=3884730&if=gb&remap=gb"
+    },
+    {
+      "label": "邾文公在位年表（《左传》相关纪事）",
+      "url": "https://ctext.org/datawiki.pl?if=gb&res=980150"
+    },
+    {
+      "label": "邹穆公与孟子",
+      "url": "https://ctext.org/dictionary.pl?did=711&if=en"
+    },
+    {
+      "label": "春秋时期",
+      "url": "https://zh.wikipedia.org/wiki/春秋时期"
+    },
+    {
+      "label": "战国时期",
+      "url": "https://zh.wikipedia.org/wiki/战国时期"
+    },
+    {
+      "label": "战国七雄",
+      "url": "https://zh.wikipedia.org/wiki/战国七雄"
+    },
+    {
+      "label": "周朝诸侯国君主列表",
+      "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/孟子"
+    },
+    {
+      "label": "《史记·十二诸侯年表》",
+      "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
+    },
+    {
+      "label": "《史记·十二诸侯年表》",
+      "url": "https://zh.wikisource.org/wiki/史記/卷014"
+    },
+    {
+      "label": "夏商周断代工程与其他西周年代方案对照",
+      "url": "https://zh.wikipedia.org/wiki/夏商周断代工程#年表"
+    },
+    {
+      "label": "《春秋公羊传·昭公三十一年》",
+      "url": "https://ctext.org/gongyang-zhuan/zhao-gong-san-shi-yi-nian/zhs"
+    },
+    {
+      "label": "周朝诸侯国君主列表·邾国",
+      "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+    },
+    {
+      "label": "《左传·文公十三年》",
+      "url": "https://ctext.org/chun-qiu-zuo-zhuan/wen-gong-shi-san-nian/zhs"
+    },
+    {
+      "label": "《左传·哀公二十四年》",
+      "url": "https://ctext.org/chun-qiu-zuo-zhuan/ai-gong-er-shi-si-nian/zhs"
+    },
+    {
+      "label": "《左传·哀公八年》",
+      "url": "https://ctext.org/chun-qiu-zuo-zhuan/ai-gong-ba-nian/zhs"
+    },
+    {
+      "label": "《礼记·檀弓下》",
+      "url": "https://ctext.org/liji/tan-gong-xia/zhs"
+    },
+    {
+      "label": "《孟子·滕文公上》",
+      "url": "https://zh.wikisource.org/zh-hans/孟子/滕文公上"
+    },
+    {
+      "label": "邾国故城（山东地情档案）",
+      "url": "https://shandong-chorography.org/database/a/section/70/article/91/"
+    },
+    {
+      "label": "冯峰：《说“醴壶”》（北京大学中国考古学研究中心）",
+      "url": "https://csca.pku.edu.cn/info/1018/1207.htm"
+    },
+    {
+      "label": "张海：《邾器与两周邾邦史事》",
+      "url": "https://www.sohu.com/a/469705297_121124388"
+    },
+    {
+      "label": "邾国君主世系图（据《春秋释例》等）",
+      "url": "https://zh.wikipedia.org/wiki/邾國君主世系圖"
+    },
+    {
+      "label": "春秋鲁国历法复原（据张培瑜《中国古代历法》）",
+      "url": "https://ytliu0.github.io/ChineseCalendar/chunqiu_simp.html"
+    }
+  ],
+  "notes": [
+    "邹国君主世系初始收录说明（后续日期复核见本包2026-10-02复核记录）：始封和早期君主名录据《元和姓纂》《繹史·邾世系》等后世材料；周初至武公的世系真实性与具体年代有争议，均分坐标仅作时间轴定位。叔术、夏父让国据《公羊传·昭公三十一年》。前780至前678段后经邾君庆铜器铭文补录并重排。战国末段据《春秋释例》整理为邾子何、考公、穆公三位可考，另五世失名；其单任在位年代未见可靠完整年表。邹穆公约前382—前330年及邹国前256年终点均按近似年代记录。",
+    "邾文公前二任称谓复核（2026-10-02）：人物 zou-r11 与克、字仪父为同一人，不新增君主。按《邾国君主世系图》及其所列杜预《春秋释例》《古本竹书纪年》等依据，前期克的卡片首选称谓改为庄公；《邹县续志》另称惠公，其他通行资料称安公，保留为检索异称。《七国统表》据《竹书纪年》记仪父为庄公，并区分后期悼公子庄（穿），因此系统内前后两位庄公为不同君主。琐仍为原有 zou-r12 人物，卡片标题改用世系图所列姓名“琐”，人物谥号“宪公”保留于结构化字段与详情；既有时间区间与克→琐→文公次序不变。",
+    "列国泳道名用国号（齐、楚、韩），与夏商周秦汉一致，不带「国」；「齐国」等写入 alt_names。",
+    "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
+    "各国国君世系取维基百科大陆简体（zh-cn）诸侯君主列表与《史记》年表；按表头读取称号/姓名/在位年份，不用本地繁简转换。",
+    "年精度顺序继位按逾年改元切年（死年归旧王、新王次年起算，见 缓存中的最终在位起讫日期；用维基原始起年检测，避免孝文王占死后庄襄王不再后移）。维基在位年份常与死年重叠（如秦文公起前766年）；一年短祚、秦灵公/简公/献公未逾年改元、曲沃与翼并立不后移。魏惠王称王前后合并为一条在位（前369–前319）。",
+    "同人多次即位拆多条 reign（reignId 后缀 -2），与唐/明一致；完整在位字段直接维护于 cache.json，不从 Wiki 原始文本自动推断或覆盖。",
+    "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 confidence: year。",
+    "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
+    "逐条复核夏商周包既有事件的诸侯国关联：《左传·僖公九年》载葵丘与会者为鲁、齐、宋、卫、郑、许、曹及周王使者；补入本包有建模泳道的鲁、宋、卫、郑、曹（许未建王朝实体）。城濮之战补入受战事直接影响的宋、曹、卫：宋受楚围而晋出兵救援，晋先伐曹、卫并以复国交涉，原有关联晋、楚保留。依据《中国哲学书电子化计划》所录《左传·僖公九年》 https://ctext.org/chun-qiu-zuo-zhuan/xi-gong-jiu-nian/zhs ，以及《菏泽历史文化集萃·城濮之战》 https://shandong-chorography.org/database/bh/section/22/article/66/ 。",
+    "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
+    "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
+    "称谓复核（2026-10）：本包君主卡片称呼写入对应 reign.title。已有谥号者使用 persons.posthumousNames 的首选本体（不带国名）；无谥号者采用已核对的人物 title，并去除国名前缀；已有非空 reign.title 亦按无国名称呼规则复核。具体来源沿用各人物 links 与本包 manifest.sources。",
+    "邹（邾）国君主逐项复核（2026-10-02）：逐人保留 ID、世系主张和具体依据。周初挟至武公一段：现有世系主要由《元和姓纂》《繹史·邾世系》等后世资料整理，来源本身提示该段世系真实性有待考证；前796仅是传统表所采武公卒年。旧缓存把周初到前796的六段均分坐标写入人物简介，本次从简介删除坐标，不将其表述为史料纪年；旧几何仍标 interpolated_by_generation，不能作个人即位/卒年或在位年数使用，待可靠共同锚点或同期材料再重建。叔术、夏父与武公的让国叙述据《公羊传·昭公三十一年》，保留为传文所载。前780至前678之间夏父、失名者、克的既有插值仍只是世系定位，不等同于史载年份。前471年至邹穆公时期的何、考公及失名君主：前471即位据《左传·哀公二十四年》，考公仅见《礼记·檀弓下》，穆公见《孟子·滕文公上》；世系图据杜预《春秋释例》给出何、考公、穆公三位可考及另五位失名君主，但各失名者在三人间的确切排列仍属该图的整理方案。缓存依“何—失名一世—考公—失名二世—穆公—失名二世”记录；后四段坐标标插值，概述不将插值年份当作确定史实或展示确定时长。前614年邾文公卒并迁都绎据《左传·文公十三年》及山东地情档案；旧记录将文公终点记为前615、定公始于前614，违反原始纪年和死年归旧王规则，改文公终点为前614、定公起点为前613，均为年精度，未录入公历月日。姓名按邾国曹姓规范为可检索全名；未知本名者用曹姓加已知谥称/爵称，失名君主仍用“？”。在位卡片称谓移除国名前缀；撤除失名人物不存在的问号维基链接，逐人链接改为可核史料或汇编来源。",
+    "邾君庆与战国末失名君主补核（2026-10-02）：新见邾君庆信息据枣庄东江春秋墓地铜壶铭文“邾君庆作秦妊礼壶”及冯峰对春秋陶壶/铜壶和邾国世系的研究；张海《邾器与两周邾邦史事》将庆列入邾邦史。其具体在位年份未考，放在夏父至克的世系位置，相关区间重新按夏父起年与克卒年前678锚点、连续四任（夏父、失名一世、庆、克）分配；两端及内部边界均为 interpolated_by_generation，不能当成史载年份。世系图据杜预《春秋释例》称邾子何、邾娄考公、邹穆公三位可考，另有五世不详；其分段列为何与考公间一世、考公与穆公间二世、穆公之后二世。末二世分别建独立失名 person/reign，不以系统占位替代已知世次数。穆公之后缺乏可靠逐年锚点，时间轴位置仅以现有穆公 approximate 终点和本包采用的邹国约前256年终点作世次定位，起止标 interpolated_by_generation；邹国终点改为 approximate_year，表达亡国年有异说，不能把这些分配年当作确切继位/卒年。此前把失名总数及其归属说成无法确认的复核说明由本条细化取代。",
+    "2026-10-02按王朝拆包：本包由原chunqiu-zhanguo缓存中的邹记录原样迁移，保留实体ID、史实、日期及置信度。人物按在位归属唯一拥有，非在位人物按迭代归属分配；事件由dynastyIds首项所属包唯一拥有；事件关联按目标王朝或人物归属分配，跨包关系只引用既有ID，不重复写关联行。原包完整来源与复核说明另行归档。"
+  ]
+}

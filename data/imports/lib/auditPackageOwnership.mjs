@@ -1,6 +1,7 @@
-import { readFileSync, readdirSync, statSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { discoverPackages } from "./discoverPackages.mjs";
 
 const importsRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -159,10 +160,7 @@ function auditPackageSql(owners, slug, cache) {
 export function auditPackageOwnership(root = importsRoot) {
   const owners = new Map();
   const packageCaches = [];
-  const slugs = readdirSync(root).filter((slug) => {
-    const directory = path.join(root, slug);
-    return statSync(directory).isDirectory() && statSync(path.join(directory, "cache.json"), { throwIfNoEntry: false });
-  }).sort();
+  const slugs = discoverPackages(root);
 
   for (const slug of slugs) {
     const cache = JSON.parse(readFileSync(path.join(root, slug, "cache.json"), "utf8"));

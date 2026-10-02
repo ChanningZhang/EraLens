@@ -1,0 +1,345 @@
+{
+  "slug": "chunqiu-zhanguo/qi-chunqiu",
+  "title": "齐（春秋战国）",
+  "window": {
+    "startYear": -1046,
+    "startMonth": 1,
+    "endYear": -221,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-10-02",
+  "counts": {
+    "persons": 41,
+    "dynasties": 1,
+    "reigns": 40,
+    "missingReigns": 0,
+    "events": 0,
+    "relations": 0,
+    "existingEventDynastyLinks": 4,
+    "existingEventParticipantLinks": 0,
+    "capitals": 0
+  },
+  "sources": [
+    {
+      "label": "春秋时期",
+      "url": "https://zh.wikipedia.org/wiki/春秋时期"
+    },
+    {
+      "label": "战国时期",
+      "url": "https://zh.wikipedia.org/wiki/战国时期"
+    },
+    {
+      "label": "战国七雄",
+      "url": "https://zh.wikipedia.org/wiki/战国七雄"
+    },
+    {
+      "label": "齐国",
+      "url": "https://zh.wikipedia.org/wiki/齐国"
+    },
+    {
+      "label": "周朝诸侯国君主列表",
+      "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+    },
+    {
+      "label": "齐国君主列表",
+      "url": "https://zh.wikipedia.org/zh-cn/齐国君主列表"
+    },
+    {
+      "label": "田和",
+      "url": "https://zh.wikipedia.org/wiki/田和"
+    },
+    {
+      "label": "田氏代齐",
+      "url": "https://zh.wikipedia.org/wiki/田氏代齐"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/姜子牙"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐丁公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐乙公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐癸公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐哀公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐胡公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐献公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐武公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐厉公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐文公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐成公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐釐公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐襄公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/公孙无知"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐桓公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/公子无亏"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐孝公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐昭公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐懿公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐惠公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐顷公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐灵公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐景公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/安孺子"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐悼公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐简公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐平公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐宣公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐康公"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐威王"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐宣王"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐湣王"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齐襄王"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/孙膑"
+    },
+    {
+      "label": "《史记·十二诸侯年表》",
+      "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
+    },
+    {
+      "label": "《史记·齐太公世家》",
+      "url": "https://zh.wikisource.org/wiki/史記/卷032"
+    },
+    {
+      "label": "《史记·十二诸侯年表》",
+      "url": "https://zh.wikisource.org/wiki/史記/卷014"
+    },
+    {
+      "label": "《尚书·顾命》",
+      "url": "https://zh.wikisource.org/wiki/尚書/顧命"
+    },
+    {
+      "label": "《太平御览》卷八十五引《竹书纪年》",
+      "url": "https://zh.wikisource.org/wiki/太平御覽/0085"
+    },
+    {
+      "label": "夏商周断代工程与其他西周年代方案对照",
+      "url": "https://zh.wikipedia.org/wiki/夏商周断代工程#年表"
+    },
+    {
+      "label": "维基百科：齐国君主列表（早期年代与正文表有异）",
+      "url": "https://zh.wikipedia.org/wiki/齐国君主列表#姜齊君主列表"
+    },
+    {
+      "label": "《资治通鉴外纪》成王条（太公卒年异说）",
+      "url": "https://www.shidianguji.com/book/SBCK033/chapter/SBCK033_14"
+    },
+    {
+      "label": "维基百科：齐国君主表（早期推定年代）",
+      "url": "https://zh.wikipedia.org/wiki/齐国#姜齊君主列表"
+    },
+    {
+      "label": "维基百科：齐国君主列表（年表及异说）",
+      "url": "https://zh.wikipedia.org/wiki/齐国君主列表"
+    },
+    {
+      "label": "《史记·田敬仲完世家》",
+      "url": "https://zh.wikisource.org/wiki/史記/卷046"
+    },
+    {
+      "label": "《春秋左氏传·庄公》",
+      "url": "https://zh.wikisource.org/wiki/春秋左氏傳/莊公"
+    },
+    {
+      "label": "《春秋左氏传·僖公》",
+      "url": "https://zh.wikisource.org/wiki/春秋左氏傳/僖公"
+    },
+    {
+      "label": "《春秋左氏传·文公》",
+      "url": "https://zh.wikisource.org/wiki/春秋左氏傳/文公"
+    },
+    {
+      "label": "《春秋左氏传·哀公》",
+      "url": "https://zh.wikisource.org/wiki/春秋左氏傳/哀公"
+    },
+    {
+      "label": "春秋鲁国历法复原（据张培瑜《中国古代历法》）",
+      "url": "https://ytliu0.github.io/ChineseCalendar/chunqiu_simp.html"
+    },
+    {
+      "label": "维基百科：齐庄公（购）",
+      "url": "https://zh.wikipedia.org/wiki/齊莊公_(購)"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/舍_(齊國)"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齊莊公_(光)"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/田侯剡"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/田午"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/齊王建"
+    },
+    {
+      "label": "《左传·僖公五年》（晋灭虢、虢公丑奔京师）",
+      "url": "https://zh.wikisource.org/wiki/春秋左氏傳/僖公"
+    }
+  ],
+  "notes": [
+    "列国泳道名用国号（齐、楚、韩），与夏商周秦汉一致，不带「国」；「齐国」等写入 alt_names。",
+    "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
+    "各国国君世系取维基百科大陆简体（zh-cn）诸侯君主列表与《史记》年表；按表头读取称号/姓名/在位年份，不用本地繁简转换。",
+    "年精度顺序继位按逾年改元切年（死年归旧王、新王次年起算，见 缓存中的最终在位起讫日期；用维基原始起年检测，避免孝文王占死后庄襄王不再后移）。维基在位年份常与死年重叠（如秦文公起前766年）；一年短祚、秦灵公/简公/献公未逾年改元、曲沃与翼并立不后移。魏惠王称王前后合并为一条在位（前369–前319）。",
+    "齐太公不用维基齐国表的前1122年（旧克商年），与西周始年（前1046）对齐。",
+    "田氏代齐为顺序接续，不是并立：宣公→康公→田和→侯剡。齐国表田和前404–前384年是田悼子卒后的领袖年；田和称君取条目前391年自立，前386年周安王列为诸侯。康公卒前379年，前391年被放逐后不在齐行续画，在位迄前392年。",
+    "同人多次即位拆多条 reign（reignId 后缀 -2），与唐/明一致；完整在位字段直接维护于 cache.json，不从 Wiki 原始文本自动推断或覆盖。",
+    "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 confidence: year。",
+    "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
+    "逐条复核夏商周包既有事件的诸侯国关联：《左传·僖公九年》载葵丘与会者为鲁、齐、宋、卫、郑、许、曹及周王使者；补入本包有建模泳道的鲁、宋、卫、郑、曹（许未建王朝实体）。城濮之战补入受战事直接影响的宋、曹、卫：宋受楚围而晋出兵救援，晋先伐曹、卫并以复国交涉，原有关联晋、楚保留。依据《中国哲学书电子化计划》所录《左传·僖公九年》 https://ctext.org/chun-qiu-zuo-zhuan/xi-gong-jiu-nian/zhs ，以及《菏泽历史文化集萃·城濮之战》 https://shandong-chorography.org/database/bh/section/22/article/66/ 。",
+    "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
+    "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
+    "称谓复核（2026-10）：本包君主卡片称呼写入对应 reign.title。已有谥号者使用 persons.posthumousNames 的首选本体（不带国名）；无谥号者采用已核对的人物 title，并去除国名前缀；已有非空 reign.title 亦按无国名称呼规则复核。具体来源沿用各人物 links 与本包 manifest.sources。",
+    "齐国全君主复核（2026-10-02）：逐端点核对齐泳道40任（姜齐32、田齐8）。有出处的具体推定年代优先于旧均分定位；太公采用用户明确指定的前1026年说，丁、乙、癸及哀公起点采用《齐国》君主表所列推定年，标 approximate_year，不声称古籍直接记载这些公元前年份。正文表、个别人物正文、底表存在异说，故不批量标确定 year；太公康王六年约前1015年等异说仍保留来源。太公旧-1011等均分值撤下，不再作为史实或较可信年代。",
+    "齐国原始年与接续占位：太公-1046→-1026，丁-1026→-975，乙-975→-933，癸-933→-902，哀-902→-883；对相续的年精度起点调用 reignOwnershipInterval / effectiveIntervalStartPoint，依死年归旧王分别得到丁-1025、乙-974、癸-932、哀-901。1月/12月为年桶占位，不代表已知月份。哀公终点据《太平御览》引《竹书纪年》夷王三年，采用与周王泳道一致的夷王元年-885，取约-883；优先于百科正文-890和另一列表-863。胡公起点沿用同一边界裁定约-882，终点-860可据武公锚点及献公九年回溯。",
+    "齐国短祚历法复核：襄公死于鲁庄公八年十一月癸未（经；传作十二月），桓公死于鲁僖公十七年十月乙亥（传；经十二月为赴告）。采用张培瑜《中国古代历法》复原法的积月445、976，月序分别11、10，朔策30328/1027、原点JD1457727.5+268/1027；筛取月内干支日并将儒略日转延伸格里历，得-686-10-29、-643-09-05。历法复原及经传差异使其标 approximate_day；公孙无知/无亏起点由共享归属裁定为次日。无知被杀记庄公九年春正月，该复原月覆盖-686-12-21至-685-01-19，采用中段所在的约-685年1月；无亏被杀记僖公十八年三月，覆盖-642-02-23至-642-03-23，采用约-642年3月；孝公获立记同年五月，覆盖-642-04-23至-642-05-21，采用约-642年5月。三个 approximate_month 为转换区间的近似代表月，原文未载日，未补造即位/被杀日；原历月不得直接写成公历月。",
+    "齐国逐端点复核2026-10-02：reign-lv-shang-qi-chunqiu；原-1046/1(year)—-1011/12(interpolated_by_generation)，现-1046/1(year)—-1026/12(approximate_year)。起点沿用克商年-1046 year；终点从旧均分-1011改为百科有出处的-1026 approximate_year，成王时期卒的史源为《外纪》，用户选择此说。",
+    "齐国逐端点复核2026-10-02：reign-qi-r1-qi-chunqiu；原-1010/1(interpolated_by_generation)—-974/12(interpolated_by_generation)，现-1025/1(approximate_year)—-975/12(approximate_year)。原始推定-1026→-975；《顾命》确认吕伋在成王崩时已为齐侯，与新系年相容；起点经共享裁定，不沿用-1010→-974均分。",
+    "齐国逐端点复核2026-10-02：reign-qi-r2-qi-chunqiu；原-973/1(interpolated_by_generation)—-937/12(interpolated_by_generation)，现-974/1(approximate_year)—-933/12(approximate_year)。原始推定-975→-933，采用有出处年表并保留争议标记；撤下-973→-937均分。",
+    "齐国逐端点复核2026-10-02：reign-qi-r3-qi-chunqiu；原-936/1(interpolated_by_generation)—-900/12(interpolated_by_generation)，现-932/1(approximate_year)—-902/12(approximate_year)。原始推定-933→-902，底表与正文有异说，保留近似；撤下-936→-900均分。",
+    "齐国逐端点复核2026-10-02：reign-qi-r4-qi-chunqiu；原-899/1(interpolated_by_generation)—-883/12(approximate_year)，现-901/1(approximate_year)—-883/12(approximate_year)。起年采用-902推定年表，终年采用夷王三年约-883的共同框架；保留近似，不采用百科-890或旧-863异说。",
+    "齐国逐端点复核2026-10-02：reign-qi-r5-qi-chunqiu；原-882/1(approximate_year)—-860/12(year)，现-882/1(approximate_year)—-860/12(year)。烹哀公后继位约-882 approximate_year；终点-860 year由献公九年、武公十年为共和元年回溯，保留较强依据。",
+    "齐国逐端点复核2026-10-02：reign-qi-r6-qi-chunqiu；原-859/1(year)—-851/12(year)，现-859/1(year)—-851/12(year)。献公九年卒，武公起-850，据此为-859→-851；保持 year。",
+    "齐国逐端点复核2026-10-02：reign-qi-r7-qi-chunqiu；原-850/1(year)—-825/12(year)，现-850/1(year)—-825/12(year)。共和元年-841为武公十年，年表-825为二十六年、次年厉公元年；两端 year。",
+    "齐国逐端点复核2026-10-02：reign-qi-r8-qi-chunqiu；原-824/1(year)—-816/12(year)，现-824/1(year)—-816/12(year)。年表-824厉公元年、-816九年，-815文公元年；两端 year。",
+    "齐国逐端点复核2026-10-02：reign-qi-r9-qi-chunqiu；原-815/1(year)—-804/12(year)，现-815/1(year)—-804/12(year)。年表-815文公元年、-804十二年，-803成公元年；两端 year。",
+    "齐国逐端点复核2026-10-02：reign-qi-r10-qi-chunqiu；原-803/1(year)—-795/12(year)，现-803/1(year)—-795/12(year)。年表-803成公元年、-795九年，-794庄公元年；两端 year。",
+    "齐国逐端点复核2026-10-02：reign-qi-r11-qi-chunqiu；原-794/1(year)—-731/12(year)，现-794/1(year)—-731/12(year)。庄公六十四年卒-731，-730釐公元年；两端 year。",
+    "齐国逐端点复核2026-10-02：reign-qi-r12-qi-chunqiu；原-730/1(year)—-698/12(year)，现-730/1(year)—-698/12(year)。釐公三十三年卒-698，襄公元年-697；据世家和年表保留两端 year。",
+    "齐国逐端点复核2026-10-02：reign-qi-r13-qi-chunqiu；原-697/1(year)—-686/12(year)，现-697/1(year)—-686/10/29(approximate_day)。襄公元年-697保留 year；末年-686由《春秋》十一月癸未提高至换算近似日，详见历法复核。",
+    "齐国逐端点复核2026-10-02：reign-qi-r14-qi-chunqiu；原-686/1(year)—-686/12(year)，现-686/10/30(approximate_day)—-685/1(approximate_month)。原同年-686→-686截掉翌年被杀；改为襄公死后至-685春，采用近似日/月，保留随后无君的事实，不造缺载君。",
+    "齐国逐端点复核2026-10-02：reign-jiang-xiaobai-qi-chunqiu；原-685/1(year)—-643/12(year)，现-685/1(year)—-643/9/5(approximate_day)。桓公元年-685保留 year；《左传》夏入齐未载确日，不补月日；终点-643采用传十月乙亥换算近似日。",
+    "齐国逐端点复核2026-10-02：reign-qi-r16-qi-chunqiu；原-643/1(year)—-643/12(year)，现-643/9/6(approximate_day)—-642/3(approximate_month)。原-643→-643截掉翌年三月被杀；改为桓公死后至约-642年3月，取《左传》短祚记载及复原月。",
+    "齐国逐端点复核2026-10-02：reign-qi-r17-qi-chunqiu；原-642/1(year)—-633/12(year)，现-642/5(approximate_month)—-633/12(year)。初立原文为-642鲁僖公十八年五月，换算采用 approximate_month；终点-633孝公十年卒保留 year。",
+    "齐国逐端点复核2026-10-02：reign-qi-r18-qi-chunqiu；原-632/1(year)—-613/12(year)，现-632/1(year)—-613/12(year)。昭公元年-632、末年-613为年表二十年，保留 year。文公十四年五月乙亥卒，本次复原月不容该干支，不能据模型强行升至月日；原历记载保存在来源中。",
+    "齐国逐端点复核2026-10-02：reign-qi-r19-qi-chunqiu；原-613/1(year)—-613/12(year)，现-613/1(year)—-613/12(year)。两端同为-613，保留 year；《春秋》经九月、传七月乙卯与《史记》十月弑舍记载有异，未可靠换算则不伪造公历月日；删除“商人弑父”的错误概述。",
+    "齐国逐端点复核2026-10-02：reign-qi-r20-qi-chunqiu；原-612/1(year)—-609/12(year)，现-612/1(year)—-609/12(year)。懿公年表元年-612、四年被杀-609；实际在-613弑舍自立与次年元年区分，保留年表两端 year。",
+    "齐国逐端点复核2026-10-02：reign-qi-r21-qi-chunqiu；原-608/1(year)—-599/12(year)，现-608/1(year)—-599/12(year)。惠公元年-608、十年卒-599，据世家与年表保留 year。",
+    "齐国逐端点复核2026-10-02：reign-qi-r22-qi-chunqiu；原-598/1(year)—-582/12(year)，现-598/1(year)—-582/12(year)。顷公元年-598、十七年卒-582，据世家与年表保留 year。",
+    "齐国逐端点复核2026-10-02：reign-qi-r23-qi-chunqiu；原-581/1(year)—-554/12(year)，现-581/1(year)—-554/12(year)。灵公元年-581、二十八年卒-554，据世家与年表保留 year；纠正生平“被弑”，未将未换算的农历五月录为公历五月。",
+    "齐国逐端点复核2026-10-02：reign-qi-r24-qi-chunqiu；原-553/1(year)—-548/12(year)，现-553/1(year)—-548/12(year)。后庄公元年-553、六年被弑-548，保留 year；与前庄公购区分，修正来源及栾盈/崔妻叙述。",
+    "齐国逐端点复核2026-10-02：reign-qi-r25-qi-chunqiu；原-547/1(year)—-490/12(year)，现-547/1(year)—-490/12(year)。景公元年-547、五十八年卒-490，保留 year；《春秋》哀五年九月癸酉原历日保留来源，未以占位月声称确月；去除晏婴辅政58年误述。",
+    "齐国逐端点复核2026-10-02：reign-qi-r26-qi-chunqiu；原-489/1(year)—-489/12(year)，现-489/1(year)—-489/12(year)。安孺子实际在-490景公卒后继位，年表元年/失位-489；保留-489年桶的短祚记录，不把年桶称为实际即位日。经秋七月与传冬十月失位记载有异，不补造公历月日。",
+    "齐国逐端点复核2026-10-02：reign-qi-r27-qi-chunqiu；原-488/1(year)—-485/12(year)，现-488/1(year)—-485/12(year)。悼公实际-489获立，年表元年-488、四年卒-485；保留年表 year，原历月日及异说见《左传》哀公六年。",
+    "齐国逐端点复核2026-10-02：reign-qi-r28-qi-chunqiu；原-484/1(year)—-481/12(year)，现-484/1(year)—-481/12(year)。简公元年-484、四年被杀-481，据世家与年表保留 year。",
+    "齐国逐端点复核2026-10-02：reign-qi-r29-qi-chunqiu；原-480/1(year)—-456/12(year)，现-480/1(year)—-456/12(year)。平公元年-480、二十五年卒-456，据世家与年表保留 year。",
+    "齐国逐端点复核2026-10-02：reign-qi-r30-qi-chunqiu；原-455/1(year)—-405/12(year)，现-455/1(year)—-405/12(year)。宣公元年-455、五十一年卒-405，据世家与年表保留 year。",
+    "齐国逐端点复核2026-10-02：reign-jiang-dai-qi-chunqiu；原-404/1(year)—-392/12(year)，现-404/1(year)—-392/12(year)。康公元年-404，前391被放逐失齐君位；其卒年-379为人物死年，不延长此泳道实权在位。既有同一泳道交接取康段迄-392、田和起-391，保留年桶 year。",
+    "齐国逐端点复核2026-10-02：reign-tian-he-qi-chunqiu；原-404/1(year)—-384/12(year)，现-391/1(year)—-384/12(year)。原起-404错套康公元年，修为-391实际自立；-386列诸侯为承认年，不另截即位；终点-384保留通行田齐年表 year。",
+    "齐国逐端点复核2026-10-02：reign-qi-r33-qi-chunqiu；原-383/1(year)—-375/12(year)，现-383/1(year)—-375/12(year)。采用通行修订田齐年表-383→-375，保留 year；史记田齐早期年数与竹书系年有差异，不以旧年数倒推覆盖较可信通行表；田午为弟。",
+    "齐国逐端点复核2026-10-02：reign-qi-r34-qi-chunqiu；原-374/1(year)—-357/12(year)，现-374/1(year)—-357/12(year)。采用田齐通行年表-374→-357 year，未沿用《史记》桓六年/威元年旧系年；修正田齐桓公来源。",
+    "齐国逐端点复核2026-10-02：reign-qi-r35-qi-chunqiu；原-356/1(year)—-320/12(year)，现-356/1(year)—-320/12(year)。威王通行系年-356→-320，保留 year；世家旧年数及现代系年差异与田齐前段合并记录。",
+    "齐国逐端点复核2026-10-02：reign-qi-r36-qi-chunqiu；原-319/1(year)—-301/12(year)，现-319/1(year)—-301/12(year)。宣王通行系年-319→-301，保留 year；与姜齐宣公区分。",
+    "齐国逐端点复核2026-10-02：reign-qi-r37-qi-chunqiu；原-300/1(year)—-284/12(year)，现-300/1(year)—-284/12(year)。湣王通行系年-300→-284，五国伐齐与遇害年一致，保留 year。",
+    "齐国逐端点复核2026-10-02：reign-qi-r38-qi-chunqiu；原-283/1(year)—-265/12(year)，现-283/1(year)—-265/12(year)。襄王元年-283、十九年卒-265，通行系年与世家相符，保留 year。",
+    "齐国逐端点复核2026-10-02：reign-qi-r39-qi-chunqiu；原-264/1(year)—-221/12(year)，现-264/1(year)—-221/12(year)。王建元年-264、四十四年秦灭齐-221，通行系年与世家相符，保留 year，修正人物来源。",
+    "2026-10-02按王朝拆包：本包由原chunqiu-zhanguo缓存中的齐记录原样迁移，保留实体ID、史实、日期及置信度。人物按在位归属唯一拥有，非在位人物按迭代归属分配；事件由dynastyIds首项所属包唯一拥有；事件关联按目标王朝或人物归属分配，跨包关系只引用既有ID，不重复写关联行。原包完整来源与复核说明另行归档。"
+  ]
+}

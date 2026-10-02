@@ -72,6 +72,8 @@ Task Progress:
 
 缓存采用 camelCase 字段；日期以 `{ year, month, day?, abs, confidence }` 结构保存。人物、王朝、在位、事件和关系分别放在顶层数组中。都城与事件地点使用 `capitals` / `eventLocations` 等缓存集合；来源说明位于同一个文件的 `manifest` 对象内。SQL 列名由共享序列化器映射。包结构、示例和完整生成命令见 [`data/imports/README.md`](../../../data/imports/README.md)。
 
+`{slug}` 支持相对于 `data/imports/` 的多级包路径，如 `chunqiu-zhanguo/qi-chunqiu`；缓存与 manifest 的 slug 使用完整相对路径。分组父目录不保留可导入的旧 cache/SQL，避免重复拥有行。生成、所有权审计、全量导入、字体检查及数据库去重均递归发现子包。
+
 ### 1. 调研
 
 - 用 WebSearch / 百科 / 正史条目搜集**可核对**的事实。通行年代框架（如夏商周断代工程、《史记》年表）优先于个人推算。

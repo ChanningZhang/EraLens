@@ -1,0 +1,648 @@
+{
+  "slug": "chunqiu-zhanguo/zhao-warring",
+  "window": {
+    "startYear": -403,
+    "startMonth": 1,
+    "endYear": -222,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "zhao-lie",
+      "name": "籍",
+      "roles": [
+        "君主"
+      ],
+      "bio": "前403年与魏、韩同受周室册封为诸侯，赵国正式立国，定都邯郸，开启战国历史，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赵烈侯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "烈侯"
+      ],
+      "templeNames": [],
+      "title": "赵烈侯",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "zhao-r1",
+      "name": "□",
+      "roles": [
+        "君主"
+      ],
+      "bio": "烈侯之子，武侯。在位十三年，名失考，事迹不详，国势平稳，无力争霸，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赵武侯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "武侯"
+      ],
+      "templeNames": [],
+      "title": "赵武侯",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "zhao-r2",
+      "name": "章",
+      "roles": [
+        "君主"
+      ],
+      "bio": "敬侯，迁都邯郸，赵国势力东移。在位十二年，国势渐起，为后世霸业奠基，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赵敬侯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "敬侯"
+      ],
+      "templeNames": [],
+      "title": "赵敬侯",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "zhao-r3",
+      "name": "种",
+      "roles": [
+        "君主"
+      ],
+      "bio": "成侯，曾与韩魏分晋，俘虏晋君。在位二十五年，国势尚可，无力争霸，事迹载于《史记》相关记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赵成侯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "成侯"
+      ],
+      "templeNames": [],
+      "title": "赵成侯",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "zhao-r4",
+      "name": "语",
+      "roles": [
+        "君主"
+      ],
+      "bio": "肃侯，时赵魏大战，赵国中衰。壮志未酬而卒，传位武灵王，国势转弱，事迹载于《史记》相关记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赵肃侯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "肃侯"
+      ],
+      "templeNames": [],
+      "title": "赵肃侯",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "zhao-r5",
+      "name": "雍",
+      "roles": [
+        "君主"
+      ],
+      "bio": "推行胡服骑射，灭中山，拓土云中、雁门、代郡。沙丘之乱中被幽禁饿死，赵国由盛转衰，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赵武灵王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "武灵王"
+      ],
+      "templeNames": [],
+      "title": "赵武灵王",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "zhao-r6",
+      "name": "何",
+      "roles": [
+        "君主"
+      ],
+      "bio": "武灵王之子，惠文王。杀忠臣肥义，秦赵长平之战惨败，国力大损，国势危急，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赵惠文王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "惠文王"
+      ],
+      "templeNames": [],
+      "title": "赵惠文王",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "zhao-r7",
+      "name": "丹",
+      "roles": [
+        "君主"
+      ],
+      "bio": "孝成王，在位时赖名将李牧支撑赵国。长平之后赵国元气大伤，国势危急，无力争霸，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赵孝成王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "孝成王"
+      ],
+      "templeNames": [],
+      "title": "赵孝成王",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "zhao-r8",
+      "name": "偃",
+      "roles": [
+        "君主"
+      ],
+      "bio": "悼襄王，在位九年。秦国连破赵国，国势危急，割地求和，濒临灭亡，事迹载于《史记》相关记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赵悼襄王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "悼襄王"
+      ],
+      "templeNames": [],
+      "title": "赵悼襄王",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "zhao-r9",
+      "name": "迁",
+      "roles": [
+        "君主"
+      ],
+      "bio": "幽缪王，赵国末代君主。前228年秦灭赵，公子嘉逃代自立，旋亦亡，赵国终结，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/赵幽缪王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "幽缪王"
+      ],
+      "templeNames": [],
+      "title": "赵幽缪王",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "zhao-warring",
+      "name": "赵",
+      "altNames": [
+        "赵国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -403,
+        "month": 1,
+        "abs": -4824,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -222,
+        "month": 12,
+        "abs": -2641,
+        "confidence": "month"
+      },
+      "note": "三家分晋后赵氏立国；前222年秦灭赵。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-zhao-lie-zhao-warring",
+      "dynastyId": "zhao-warring",
+      "personId": "zhao-lie",
+      "title": "烈侯",
+      "start": {
+        "year": -403,
+        "month": 1,
+        "abs": -4824,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -400,
+        "month": 12,
+        "abs": -4777,
+        "confidence": "year"
+      },
+      "startAbs": -4824,
+      "endAbs": -4777,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zhao-r1-zhao-warring",
+      "dynastyId": "zhao-warring",
+      "personId": "zhao-r1",
+      "title": "武侯",
+      "start": {
+        "year": -399,
+        "month": 1,
+        "abs": -4776,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -387,
+        "month": 12,
+        "abs": -4621,
+        "confidence": "year"
+      },
+      "startAbs": -4776,
+      "endAbs": -4621,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zhao-r2-zhao-warring",
+      "dynastyId": "zhao-warring",
+      "personId": "zhao-r2",
+      "title": "敬侯",
+      "start": {
+        "year": -386,
+        "month": 1,
+        "abs": -4620,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -375,
+        "month": 12,
+        "abs": -4477,
+        "confidence": "year"
+      },
+      "startAbs": -4620,
+      "endAbs": -4477,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zhao-r3-zhao-warring",
+      "dynastyId": "zhao-warring",
+      "personId": "zhao-r3",
+      "title": "成侯",
+      "start": {
+        "year": -374,
+        "month": 1,
+        "abs": -4476,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -350,
+        "month": 12,
+        "abs": -4177,
+        "confidence": "year"
+      },
+      "startAbs": -4476,
+      "endAbs": -4177,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zhao-r4-zhao-warring",
+      "dynastyId": "zhao-warring",
+      "personId": "zhao-r4",
+      "title": "肃侯",
+      "start": {
+        "year": -349,
+        "month": 1,
+        "abs": -4176,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -326,
+        "month": 12,
+        "abs": -3889,
+        "confidence": "year"
+      },
+      "startAbs": -4176,
+      "endAbs": -3889,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zhao-r5-zhao-warring",
+      "dynastyId": "zhao-warring",
+      "personId": "zhao-r5",
+      "title": "武灵王",
+      "start": {
+        "year": -325,
+        "month": 1,
+        "abs": -3888,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -299,
+        "month": 12,
+        "abs": -3565,
+        "confidence": "year"
+      },
+      "startAbs": -3888,
+      "endAbs": -3565,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zhao-r6-zhao-warring",
+      "dynastyId": "zhao-warring",
+      "personId": "zhao-r6",
+      "title": "惠文王",
+      "start": {
+        "year": -298,
+        "month": 1,
+        "abs": -3564,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -266,
+        "month": 12,
+        "abs": -3169,
+        "confidence": "year"
+      },
+      "startAbs": -3564,
+      "endAbs": -3169,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zhao-r7-zhao-warring",
+      "dynastyId": "zhao-warring",
+      "personId": "zhao-r7",
+      "title": "孝成王",
+      "start": {
+        "year": -265,
+        "month": 1,
+        "abs": -3168,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -245,
+        "month": 12,
+        "abs": -2917,
+        "confidence": "year"
+      },
+      "startAbs": -3168,
+      "endAbs": -2917,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zhao-r8-zhao-warring",
+      "dynastyId": "zhao-warring",
+      "personId": "zhao-r8",
+      "title": "悼襄王",
+      "start": {
+        "year": -244,
+        "month": 1,
+        "abs": -2916,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -236,
+        "month": 12,
+        "abs": -2809,
+        "confidence": "year"
+      },
+      "startAbs": -2916,
+      "endAbs": -2809,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-zhao-r9-zhao-warring",
+      "dynastyId": "zhao-warring",
+      "personId": "zhao-r9",
+      "title": "幽缪王",
+      "start": {
+        "year": -235,
+        "month": 1,
+        "abs": -2808,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -228,
+        "month": 12,
+        "abs": -2713,
+        "confidence": "year"
+      },
+      "startAbs": -2808,
+      "endAbs": -2713,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    }
+  ],
+  "events": [],
+  "relations": [],
+  "supplementalEventDynasties": [
+    {
+      "eventId": "sanjia-fenjin",
+      "dynastyId": "zhao-warring"
+    },
+    {
+      "eventId": "zhanguo",
+      "dynastyId": "zhao-warring"
+    }
+  ],
+  "supplementalEventParticipants": [],
+  "preSql": "",
+  "postSql": "-- Remove stale reigns from managed dynasties (superseded ids from older imports)\nWITH stale AS (\n  DELETE FROM reigns\n  WHERE dynasty_id IN ('zhao-warring') AND id NOT IN ('reign-zhao-lie-zhao-warring', 'reign-zhao-r1-zhao-warring', 'reign-zhao-r2-zhao-warring', 'reign-zhao-r3-zhao-warring', 'reign-zhao-r4-zhao-warring', 'reign-zhao-r5-zhao-warring', 'reign-zhao-r6-zhao-warring', 'reign-zhao-r7-zhao-warring', 'reign-zhao-r8-zhao-warring', 'reign-zhao-r9-zhao-warring')\n  RETURNING person_id\n)\nDELETE FROM persons p\nWHERE p.id IN (SELECT DISTINCT person_id FROM stale)\n  AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)\n  AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = p.id)\n  AND NOT EXISTS (\n    SELECT 1 FROM relations rel\n    WHERE (rel.from_type = 'person' AND rel.from_id = p.id)\n       OR (rel.to_type = 'person' AND rel.to_id = p.id)\n  );\nSELECT rebuild_person_search_terms();",
+  "manifest": {
+    "slug": "chunqiu-zhanguo/zhao-warring",
+    "title": "赵数据包",
+    "window": {
+      "startYear": -403,
+      "startMonth": 1,
+      "endYear": -222,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-10-02",
+    "counts": {
+      "persons": 10,
+      "dynasties": 1,
+      "reigns": 10,
+      "missingReigns": 0,
+      "events": 0,
+      "relations": 0,
+      "existingEventDynastyLinks": 2,
+      "existingEventParticipantLinks": 0,
+      "capitals": 0
+    },
+    "sources": [
+      {
+        "label": "春秋时期",
+        "url": "https://zh.wikipedia.org/wiki/春秋时期"
+      },
+      {
+        "label": "战国时期",
+        "url": "https://zh.wikipedia.org/wiki/战国时期"
+      },
+      {
+        "label": "战国七雄",
+        "url": "https://zh.wikipedia.org/wiki/战国七雄"
+      },
+      {
+        "label": "三家分晋",
+        "url": "https://zh.wikipedia.org/wiki/三家分晋"
+      },
+      {
+        "label": "周朝诸侯国君主列表",
+        "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵烈侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵武侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵敬侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵成侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵肃侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵武灵王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵惠文王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵孝成王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵悼襄王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/赵幽缪王"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷014"
+      },
+      {
+        "label": "夏商周断代工程与其他西周年代方案对照",
+        "url": "https://zh.wikipedia.org/wiki/夏商周断代工程#年表"
+      }
+    ],
+    "notes": [
+      "列国泳道名用国号（齐、楚、韩），与夏商周秦汉一致，不带「国」；「齐国」等写入 alt_names。",
+      "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
+      "各国国君世系取维基百科大陆简体（zh-cn）诸侯君主列表与《史记》年表；按表头读取称号/姓名/在位年份，不用本地繁简转换。",
+      "年精度顺序继位按逾年改元切年（死年归旧王、新王次年起算，见 缓存中的最终在位起讫日期；用维基原始起年检测，避免孝文王占死后庄襄王不再后移）。维基在位年份常与死年重叠（如秦文公起前766年）；一年短祚、秦灵公/简公/献公未逾年改元、曲沃与翼并立不后移。魏惠王称王前后合并为一条在位（前369–前319）。",
+      "同人多次即位拆多条 reign（reignId 后缀 -2），与唐/明一致；完整在位字段直接维护于 cache.json，不从 Wiki 原始文本自动推断或覆盖。",
+      "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 confidence: year。",
+      "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
+      "韩赵魏在位仅收录前403年册命立国之后；晋国卿大夫世系（赵简子等）不挂在三国行上。晋国止于前349年静公被杀。",
+      "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
+      "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
+      "称谓复核（2026-10）：本包君主卡片称呼写入对应 reign.title。已有谥号者使用 persons.posthumousNames 的首选本体（不带国名）；无谥号者采用已核对的人物 title，并去除国名前缀；已有非空 reign.title 亦按无国名称呼规则复核。具体来源沿用各人物 links 与本包 manifest.sources。",
+      "2026-10-02按用户要求统一缺载段展示文案为“史料缺”；同步在位title、王朝概述及导入说明，保留两处断层与原日期置信度。",
+      "不新增普通灭国事件重复王朝终点；年精度末年12月及泳道起年1月均为定位占位，不表示史料已知公历月份。不确定在位不分配个人都城。",
+      "2026-10-02按王朝拆包：本包从chunqiu-zhanguo原完整缓存迁出zhao-warring的唯一所有权记录，保留所有实体ID、字段内容、日期和置信度。跨王朝事件由首个dynastyIds对应王朝包拥有；跨包引用不重复写人物、王朝、在位或关联行。原完整来源与处理说明归档于父目录。"
+    ]
+  }
+}

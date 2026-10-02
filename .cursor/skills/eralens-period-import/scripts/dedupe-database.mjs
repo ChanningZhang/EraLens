@@ -13,8 +13,9 @@
  * Usage:
  *   node .cursor/skills/eralens-period-import/scripts/dedupe-database.mjs [--dry-run]
  */
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import path from "node:path";
+import { discoverPackages } from "../../../../data/imports/lib/discoverPackages.mjs";
 import { fileURLToPath } from "node:url";
 import { execSync } from "node:child_process";
 
@@ -39,7 +40,7 @@ function psqlExec(query) {
 
 function collectImportReignIds() {
   const ids = new Set();
-  for (const slug of readdirSync(importDir)) {
+  for (const slug of discoverPackages(importDir, "import.sql")) {
     const sqlFile = path.join(importDir, slug, "import.sql");
     try {
       const sql = readFileSync(sqlFile, "utf8");

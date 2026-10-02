@@ -2,6 +2,8 @@
 
 导入包的 `cache.json` 是事实源；数据有误时直接编辑缓存。史料依据与取舍写入 `cache.json` 内的 `manifest.sources` / `manifest.notes`。不要手改生成的 `manifest.json`。
 
+支持多级目录。包路径相对于 `data/imports/`，例如 `chunqiu-zhanguo/qi-chunqiu`；缓存与 manifest 的 `slug` 使用这个完整相对路径。分组目录可以只放 README，不放 `cache.json` 或 `import.sql`。生成、审计及全量导入共用递归包发现规则，按实际缓存或 SQL 文件识别包，保留现有一级包兼容性。
+
 缓存驱动包使用统一结构：
 
 - `cache.json`：已核定的 `persons`、`dynasties`、`reigns`、`events`、`relations` 等记录。`*_abs`、时间精度、置信度、别名、来源与取舍均随记录保存；字段采用 camelCase，`manifest` 是缓存中的元数据对象。
@@ -22,6 +24,8 @@ node data/imports/lib/auditPackageOwnership.mjs
 
 ```sh
 node data/imports/generate.mjs {slug}
+# 多级目录中的独立王朝包
+node data/imports/generate.mjs chunqiu-zhanguo/qi-chunqiu
 # 或重新生成全部缓存包
 node data/imports/generate.mjs --all
 ```

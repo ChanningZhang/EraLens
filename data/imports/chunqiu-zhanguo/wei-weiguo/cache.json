@@ -1,0 +1,2512 @@
+{
+  "slug": "chunqiu-zhanguo/wei-weiguo",
+  "window": {
+    "startYear": -1040,
+    "startMonth": 1,
+    "endYear": -209,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "weiguo-r0",
+      "name": "封",
+      "roles": [
+        "君主"
+      ],
+      "bio": "周武王弟封，康叔，封于卫镇抚殷遗民，为卫国开国君主，世系为周王室同姓分支，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫康叔"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "康叔"
+      ],
+      "templeNames": [],
+      "title": "卫康叔",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r1",
+      "name": "代",
+      "roles": [
+        "君主"
+      ],
+      "bio": "康叔之子代，谥康伯，继父镇守卫地，为西周早期卫国第二代国君，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫康伯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "康伯"
+      ],
+      "templeNames": [],
+      "title": "卫康伯",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r2",
+      "name": "考伯",
+      "roles": [
+        "君主"
+      ],
+      "bio": "康伯之后，谥考伯，西周时期卫国君主，世次承续而事迹记载疏略，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫考伯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "考伯"
+      ],
+      "templeNames": [],
+      "title": "卫考伯",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r3",
+      "name": "嗣伯",
+      "roles": [
+        "君主"
+      ],
+      "bio": "考伯之后，谥嗣伯，西周时期卫国世君，除世次外史料记载甚少，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫嗣伯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "嗣伯"
+      ],
+      "templeNames": [],
+      "title": "卫嗣伯",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r4",
+      "name": "疌伯",
+      "roles": [
+        "君主"
+      ],
+      "bio": "嗣伯之后，谥疌伯，西周时期卫国君主，世次见《史记·卫康叔世家》，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫疌伯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "疌伯"
+      ],
+      "templeNames": [],
+      "title": "卫疌伯",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r5",
+      "name": "靖伯",
+      "roles": [
+        "君主"
+      ],
+      "bio": "疌伯之后，谥靖伯，西周时期卫国世君，承续姬姓卫国之嫡系，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫靖伯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "靖伯"
+      ],
+      "templeNames": [],
+      "title": "卫靖伯",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r6",
+      "name": "贞伯",
+      "roles": [
+        "君主"
+      ],
+      "bio": "靖伯之后，谥贞伯，西周晚期卫国君主，在位约二十四年，事迹记载有限，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫贞伯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "贞伯"
+      ],
+      "templeNames": [],
+      "title": "卫贞伯",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r7",
+      "name": "顷侯",
+      "roles": [
+        "君主"
+      ],
+      "bio": "贞伯之子，谥顷侯，曾遭戎狄侵扰，卫国在西周晚期国势一度不振，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫顷侯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "顷侯"
+      ],
+      "templeNames": [],
+      "title": "卫顷侯",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r8",
+      "name": "釐侯",
+      "roles": [
+        "君主"
+      ],
+      "bio": "顷侯之子，谥釐侯，在位四十余年，为春秋以前卫国在位时间较长之君，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫釐侯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "釐侯"
+      ],
+      "templeNames": [],
+      "title": "卫釐侯",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r9",
+      "name": "余",
+      "roles": [
+        "君主"
+      ],
+      "bio": "釐侯之子余，谥共伯，在位仅一年即为弟武公和所弑，卫国再度因篡弑更迭，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫共伯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "共伯"
+      ],
+      "templeNames": [],
+      "title": "卫共伯",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r10",
+      "name": "和",
+      "roles": [
+        "君主"
+      ],
+      "bio": "卫武公（姬和），《史记·卫世家》载前812–前758年在位，共55年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫武公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "武公"
+      ],
+      "templeNames": [],
+      "title": "卫武公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r11",
+      "name": "扬",
+      "roles": [
+        "君主"
+      ],
+      "bio": "武公之子扬，谥庄公，宠妾生子州吁，好兵使将，石碏谏不听，乱端由此酝酿，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫庄公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "庄公"
+      ],
+      "templeNames": [],
+      "title": "卫庄公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r12",
+      "name": "完",
+      "roles": [
+        "君主"
+      ],
+      "bio": "庄公嫡子完，谥桓公，州吁骄奢被绌而出奔，前719年为州吁袭杀，在位十五年，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫桓公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "桓公"
+      ],
+      "templeNames": [],
+      "title": "卫桓公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r13",
+      "name": "州吁",
+      "roles": [
+        "君主"
+      ],
+      "bio": "庄公庶子州吁，好兵弑兄自立，联合宋、陈、蔡伐郑，旋即为石碏诱杀于濮，在位仅数月。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/州吁"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "州吁",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r14",
+      "name": "晋",
+      "roles": [
+        "君主"
+      ],
+      "bio": "桓公弟晋，谥宣公，筑台华周、夺世子妻，杀急子于齐，又逐惠公朔，卫国纲纪大乱，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫宣公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "宣公"
+      ],
+      "templeNames": [],
+      "title": "卫宣公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r15",
+      "name": "朔",
+      "roles": [
+        "君主"
+      ],
+      "bio": "宣公之子朔，谥惠公，宣公杀急子后立之，一度出奔，赖齐复位，前后两段子在位，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫惠公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "惠公"
+      ],
+      "templeNames": [],
+      "title": "卫惠公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r16",
+      "name": "黔牟",
+      "roles": [
+        "君主"
+      ],
+      "bio": "惠公出奔期间，周平王立弟黔牟，在位八年，惠公赖齐复位后，黔牟出奔周，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/黔牟"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "黔牟",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r18",
+      "name": "赤",
+      "roles": [
+        "君主"
+      ],
+      "bio": "惠公之子赤，谥懿公，好鹤淫乐、不修政理，前660年狄人攻卫，懿公兵败被杀，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫懿公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "懿公"
+      ],
+      "templeNames": [],
+      "title": "卫懿公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r19",
+      "name": "申",
+      "roles": [
+        "君主"
+      ],
+      "bio": "懿公弟申，谥戴公，狄乱中即位仅数日即卒，卫国几近亡国，为极短祚之君，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫戴公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "戴公"
+      ],
+      "templeNames": [],
+      "title": "卫戴公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r20",
+      "name": "毁",
+      "roles": [
+        "君主"
+      ],
+      "bio": "戴公弟毁，谥文公，狄乱后自齐归国立国，修政理民，使卫国得以复存，在位二十五年，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫文公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "文公"
+      ],
+      "templeNames": [],
+      "title": "卫文公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r21",
+      "name": "郑",
+      "roles": [
+        "君主"
+      ],
+      "bio": "卫成公（姬郑）。前634年即位，出奔后弟卫君瑕代立，僖公三十年复位，前600年卒。维基分两次在位（前634–前632、前632–前600）；年桶以卫君瑕占前632年，复位段逾年改元起前631年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫成公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "成公"
+      ],
+      "templeNames": [],
+      "title": "卫成公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r22",
+      "name": "瑕",
+      "roles": [
+        "君主"
+      ],
+      "bio": "成公弟瑕，未得谥号，晋助成公复位期间立之，在位仅一年即为成公所复，史称卫君瑕，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/君瑕"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "君瑕",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r23",
+      "name": "遫",
+      "roles": [
+        "君主"
+      ],
+      "bio": "成公之子遫，谥穆公，在位十一年，承续文公以来复国之局，事迹记载有限，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫穆公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "穆公"
+      ],
+      "templeNames": [],
+      "title": "卫穆公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r24",
+      "name": "臧",
+      "roles": [
+        "君主"
+      ],
+      "bio": "穆公之子臧，谥定公，在位十二年，春秋中期卫国君主，除世次外史料疏略，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫定公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "定公"
+      ],
+      "templeNames": [],
+      "title": "卫定公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r25",
+      "name": "衎",
+      "roles": [
+        "君主"
+      ],
+      "bio": "定公之子衎，谥献公，孙林父、宁殖作乱，一度出奔，后复位，前后两段子在位，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫献公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "献公"
+      ],
+      "templeNames": [],
+      "title": "卫献公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r26",
+      "name": "秋",
+      "roles": [
+        "君主"
+      ],
+      "bio": "献公出奔期间，孙林父立弟秋，谥殇公，在位十二年，献公后赖晋复位，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫殇公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "殇公"
+      ],
+      "templeNames": [],
+      "title": "卫殇公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r28",
+      "name": "恶",
+      "roles": [
+        "君主"
+      ],
+      "bio": "献公之子恶，谥襄公，在位九年，承续献公复位后的政局，事迹记载有限，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫襄公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "襄公"
+      ],
+      "templeNames": [],
+      "title": "卫襄公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r29",
+      "name": "元",
+      "roles": [
+        "君主"
+      ],
+      "bio": "襄公之子元，谥灵公，在位四十二年，夫人南子执政，孔子曾见之，拒立嫡子蒯聵，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫灵公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "灵公"
+      ],
+      "templeNames": [],
+      "title": "卫灵公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r30",
+      "name": "辄",
+      "roles": [
+        "君主"
+      ],
+      "bio": "灵公孙辄，谥出公，灵公拒立父蒯聵而立辄，引发父子争国，前后两段子在位，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫出公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "出公"
+      ],
+      "templeNames": [],
+      "title": "卫出公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r31",
+      "name": "蒯聩",
+      "roles": [
+        "君主"
+      ],
+      "bio": "灵公嫡子蒯聵，谥庄公，因得罪南子出奔，赖晋、赵氏返国夺位，在位仅两年，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫庄公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "庄公"
+      ],
+      "templeNames": [],
+      "title": "卫庄公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r32",
+      "name": "斑师",
+      "roles": [
+        "君主"
+      ],
+      "bio": "庄公之子斑师，未得谥号，庄公卒后继位，旋即为卫君起所弑，在位仅数月，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/斑师"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "斑师",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r33",
+      "name": "起",
+      "roles": [
+        "君主"
+      ],
+      "bio": "灵公后裔起，未得谥号，弑斑师自立，在位仅一年即为出公辄所杀，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/君起"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "君起",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r35",
+      "name": "黔",
+      "roles": [
+        "君主"
+      ],
+      "bio": "出公之叔黔，谥悼公，在位五年，出公辄被逐后即位，事迹除世次外记载有限，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫悼公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "悼公"
+      ],
+      "templeNames": [],
+      "title": "卫悼公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r36",
+      "name": "弗",
+      "roles": [
+        "君主"
+      ],
+      "bio": "悼公之子弗，谥敬公，在位三十三年，战国初卫国君主，国势已衰，事迹疏略，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫敬公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "敬公"
+      ],
+      "templeNames": [],
+      "title": "卫敬公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r37",
+      "name": "纠",
+      "roles": [
+        "君主"
+      ],
+      "bio": "敬公之子纠，谥昭公，在位六年，旋即为叔怀公所弑，卫国再度因篡弑更迭，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫昭公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "昭公"
+      ],
+      "templeNames": [],
+      "title": "卫昭公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r38",
+      "name": "亶",
+      "roles": [
+        "君主"
+      ],
+      "bio": "昭公之叔亶，弑侄自立，谥怀公，在位十一年，为战国早期卫国篡弑之例，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫怀公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "怀公"
+      ],
+      "templeNames": [],
+      "title": "卫怀公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r39",
+      "name": "颓",
+      "roles": [
+        "君主"
+      ],
+      "bio": "怀公之子颓，谥慎公，在位三十二年，战国中期卫国君主，国势卑微，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫慎公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "慎公"
+      ],
+      "templeNames": [],
+      "title": "卫慎公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r40",
+      "name": "训",
+      "roles": [
+        "君主"
+      ],
+      "bio": "慎公之子训，谥声公，在位十一年，承续卫国世系，事迹记载有限，事见《史记》本国世家记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫声公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "声公"
+      ],
+      "templeNames": [],
+      "title": "卫声公",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r41",
+      "name": "遫",
+      "roles": [
+        "君主"
+      ],
+      "bio": "卫成侯（姬遫），卫声公之子，前371–前343年在位。前346年卫国自贬为侯，臣服韩、赵、魏。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫成侯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "成侯"
+      ],
+      "templeNames": [],
+      "title": "卫成侯",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r42",
+      "name": "劲",
+      "roles": [
+        "君主"
+      ],
+      "bio": "卫平侯（姬劲），姬姓子南氏，卫灵公少子公子郢之后；前342–前335年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫平侯"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "平侯"
+      ],
+      "templeNames": [],
+      "title": "卫平侯",
+      "ancestralXing": "姬",
+      "clanShi": "子南"
+    },
+    {
+      "id": "weiguo-r43",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "卫嗣君，本名失考，前334–前293年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫嗣君"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "嗣君"
+      ],
+      "templeNames": [],
+      "title": "嗣君",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r44",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "卫怀君，本名失考，前292–前254年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫怀君"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "怀君"
+      ],
+      "templeNames": [],
+      "title": "怀君",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r45",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "卫元君，姬姓子南氏，本名失考，前254–前230年在位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/卫元君"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "元君"
+      ],
+      "templeNames": [],
+      "title": "元君",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    },
+    {
+      "id": "weiguo-r46",
+      "name": "角",
+      "roles": [
+        "君主"
+      ],
+      "bio": "卫国末代君主，未得谥号，前209年秦废卫君角为庶人，卫国至此灭亡，比秦统一早九年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/君角"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "君角",
+      "ancestralXing": "姬",
+      "clanShi": "卫"
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "wei-weiguo",
+      "name": "卫",
+      "altNames": [
+        "卫国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -1040,
+        "month": 1,
+        "abs": -12468,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -209,
+        "month": 12,
+        "abs": -2485,
+        "confidence": "month"
+      },
+      "note": "周成王封康叔封于卫；小国久存，秦二世时废。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-weiguo-r0-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r0",
+      "title": "康叔",
+      "start": {
+        "year": -1040,
+        "month": 1,
+        "abs": -12468,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -1017,
+        "month": 12,
+        "abs": -12181,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -12468,
+      "endAbs": -12181,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-weiguo-r1-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r1",
+      "title": "康伯",
+      "start": {
+        "year": -1016,
+        "month": 1,
+        "abs": -12180,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -992,
+        "month": 12,
+        "abs": -11881,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -12180,
+      "endAbs": -11881,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-weiguo-r2-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r2",
+      "title": "考伯",
+      "start": {
+        "year": -991,
+        "month": 1,
+        "abs": -11880,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -967,
+        "month": 12,
+        "abs": -11581,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -11880,
+      "endAbs": -11581,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-weiguo-r3-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r3",
+      "title": "嗣伯",
+      "start": {
+        "year": -966,
+        "month": 1,
+        "abs": -11580,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -942,
+        "month": 12,
+        "abs": -11281,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -11580,
+      "endAbs": -11281,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-weiguo-r4-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r4",
+      "title": "疌伯",
+      "start": {
+        "year": -941,
+        "month": 1,
+        "abs": -11280,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -917,
+        "month": 12,
+        "abs": -10981,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -11280,
+      "endAbs": -10981,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-weiguo-r5-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r5",
+      "title": "靖伯",
+      "start": {
+        "year": -916,
+        "month": 1,
+        "abs": -10980,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -892,
+        "month": 12,
+        "abs": -10681,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -10980,
+      "endAbs": -10681,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-weiguo-r6-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r6",
+      "title": "贞伯",
+      "start": {
+        "year": -891,
+        "month": 1,
+        "abs": -10680,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -867,
+        "month": 12,
+        "abs": -10381,
+        "confidence": "year"
+      },
+      "startAbs": -10680,
+      "endAbs": -10381,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-weiguo-r7-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r7",
+      "title": "顷侯",
+      "start": {
+        "year": -866,
+        "month": 1,
+        "abs": -10380,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -855,
+        "month": 12,
+        "abs": -10237,
+        "confidence": "year"
+      },
+      "startAbs": -10380,
+      "endAbs": -10237,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r8-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r8",
+      "title": "釐侯",
+      "start": {
+        "year": -854,
+        "month": 1,
+        "abs": -10236,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -813,
+        "month": 12,
+        "abs": -9733,
+        "confidence": "year"
+      },
+      "startAbs": -10236,
+      "endAbs": -9733,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r9-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r9",
+      "title": "共伯",
+      "start": {
+        "year": -813,
+        "month": 1,
+        "abs": -9744,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -813,
+        "month": 12,
+        "abs": -9733,
+        "confidence": "year"
+      },
+      "startAbs": -9744,
+      "endAbs": -9733,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r10-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r10",
+      "title": "武公",
+      "start": {
+        "year": -812,
+        "month": 1,
+        "abs": -9732,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -758,
+        "month": 12,
+        "abs": -9073,
+        "confidence": "year"
+      },
+      "startAbs": -9732,
+      "endAbs": -9073,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r11-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r11",
+      "title": "庄公",
+      "start": {
+        "year": -757,
+        "month": 1,
+        "abs": -9072,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -735,
+        "month": 12,
+        "abs": -8797,
+        "confidence": "year"
+      },
+      "startAbs": -9072,
+      "endAbs": -8797,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r12-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r12",
+      "title": "桓公",
+      "start": {
+        "year": -734,
+        "month": 1,
+        "abs": -8796,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -719,
+        "month": 12,
+        "abs": -8605,
+        "confidence": "year"
+      },
+      "startAbs": -8796,
+      "endAbs": -8605,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r13-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r13",
+      "title": "州吁",
+      "start": {
+        "year": -719,
+        "month": 1,
+        "abs": -8616,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -719,
+        "month": 12,
+        "abs": -8605,
+        "confidence": "year"
+      },
+      "startAbs": -8616,
+      "endAbs": -8605,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r14-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r14",
+      "title": "宣公",
+      "start": {
+        "year": -718,
+        "month": 1,
+        "abs": -8604,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -700,
+        "month": 12,
+        "abs": -8377,
+        "confidence": "year"
+      },
+      "startAbs": -8604,
+      "endAbs": -8377,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r15-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r15",
+      "title": "惠公",
+      "start": {
+        "year": -699,
+        "month": 1,
+        "abs": -8376,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -696,
+        "month": 12,
+        "abs": -8329,
+        "confidence": "year"
+      },
+      "startAbs": -8376,
+      "endAbs": -8329,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r16-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r16",
+      "title": "黔牟",
+      "start": {
+        "year": -695,
+        "month": 1,
+        "abs": -8328,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -688,
+        "month": 12,
+        "abs": -8233,
+        "confidence": "year"
+      },
+      "startAbs": -8328,
+      "endAbs": -8233,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r15-wei-weiguo-2",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r15",
+      "title": "惠公",
+      "start": {
+        "year": -687,
+        "month": 1,
+        "abs": -8232,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -669,
+        "month": 12,
+        "abs": -8005,
+        "confidence": "year"
+      },
+      "startAbs": -8232,
+      "endAbs": -8005,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r18-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r18",
+      "title": "懿公",
+      "start": {
+        "year": -668,
+        "month": 1,
+        "abs": -8004,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -660,
+        "month": 12,
+        "abs": -7897,
+        "confidence": "year"
+      },
+      "startAbs": -8004,
+      "endAbs": -7897,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r19-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r19",
+      "title": "戴公",
+      "start": {
+        "year": -660,
+        "month": 1,
+        "abs": -7908,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -660,
+        "month": 12,
+        "abs": -7897,
+        "confidence": "year"
+      },
+      "startAbs": -7908,
+      "endAbs": -7897,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r20-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r20",
+      "title": "文公",
+      "start": {
+        "year": -659,
+        "month": 1,
+        "abs": -7896,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -635,
+        "month": 12,
+        "abs": -7597,
+        "confidence": "year"
+      },
+      "startAbs": -7896,
+      "endAbs": -7597,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r21-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r21",
+      "title": "成公",
+      "start": {
+        "year": -634,
+        "month": 1,
+        "abs": -7596,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -632,
+        "month": 12,
+        "abs": -7561,
+        "confidence": "year"
+      },
+      "startAbs": -7596,
+      "endAbs": -7561,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r22-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r22",
+      "title": "君瑕",
+      "start": {
+        "year": -632,
+        "month": 1,
+        "abs": -7572,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -632,
+        "month": 12,
+        "abs": -7561,
+        "confidence": "year"
+      },
+      "startAbs": -7572,
+      "endAbs": -7561,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r21-wei-weiguo-2",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r21",
+      "title": "成公",
+      "start": {
+        "year": -631,
+        "month": 1,
+        "abs": -7560,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -600,
+        "month": 12,
+        "abs": -7177,
+        "confidence": "year"
+      },
+      "startAbs": -7560,
+      "endAbs": -7177,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r23-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r23",
+      "title": "穆公",
+      "start": {
+        "year": -599,
+        "month": 1,
+        "abs": -7176,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -589,
+        "month": 12,
+        "abs": -7045,
+        "confidence": "year"
+      },
+      "startAbs": -7176,
+      "endAbs": -7045,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r24-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r24",
+      "title": "定公",
+      "start": {
+        "year": -588,
+        "month": 1,
+        "abs": -7044,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -577,
+        "month": 12,
+        "abs": -6901,
+        "confidence": "year"
+      },
+      "startAbs": -7044,
+      "endAbs": -6901,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r25-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r25",
+      "title": "献公",
+      "start": {
+        "year": -576,
+        "month": 1,
+        "abs": -6900,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -559,
+        "month": 12,
+        "abs": -6685,
+        "confidence": "year"
+      },
+      "startAbs": -6900,
+      "endAbs": -6685,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r26-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r26",
+      "title": "殇公",
+      "start": {
+        "year": -558,
+        "month": 1,
+        "abs": -6684,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -547,
+        "month": 12,
+        "abs": -6541,
+        "confidence": "year"
+      },
+      "startAbs": -6684,
+      "endAbs": -6541,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r25-wei-weiguo-2",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r25",
+      "title": "献公",
+      "start": {
+        "year": -546,
+        "month": 1,
+        "abs": -6540,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -544,
+        "month": 12,
+        "abs": -6505,
+        "confidence": "year"
+      },
+      "startAbs": -6540,
+      "endAbs": -6505,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r28-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r28",
+      "title": "襄公",
+      "start": {
+        "year": -543,
+        "month": 1,
+        "abs": -6504,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -535,
+        "month": 12,
+        "abs": -6397,
+        "confidence": "year"
+      },
+      "startAbs": -6504,
+      "endAbs": -6397,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r29-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r29",
+      "title": "灵公",
+      "start": {
+        "year": -534,
+        "month": 1,
+        "abs": -6396,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -493,
+        "month": 12,
+        "abs": -5893,
+        "confidence": "year"
+      },
+      "startAbs": -6396,
+      "endAbs": -5893,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r30-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r30",
+      "title": "出公",
+      "start": {
+        "year": -492,
+        "month": 1,
+        "abs": -5892,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -480,
+        "month": 12,
+        "abs": -5737,
+        "confidence": "year"
+      },
+      "startAbs": -5892,
+      "endAbs": -5737,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r31-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r31",
+      "title": "庄公",
+      "start": {
+        "year": -479,
+        "month": 1,
+        "abs": -5736,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -478,
+        "month": 12,
+        "abs": -5713,
+        "confidence": "year"
+      },
+      "startAbs": -5736,
+      "endAbs": -5713,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r32-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r32",
+      "title": "斑师",
+      "start": {
+        "year": -478,
+        "month": 1,
+        "abs": -5724,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -478,
+        "month": 12,
+        "abs": -5713,
+        "confidence": "year"
+      },
+      "startAbs": -5724,
+      "endAbs": -5713,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r33-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r33",
+      "title": "君起",
+      "start": {
+        "year": -477,
+        "month": 1,
+        "abs": -5712,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -477,
+        "month": 12,
+        "abs": -5701,
+        "confidence": "year"
+      },
+      "startAbs": -5712,
+      "endAbs": -5701,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r30-wei-weiguo-2",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r30",
+      "title": "出公",
+      "start": {
+        "year": -476,
+        "month": 1,
+        "abs": -5700,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -470,
+        "month": 12,
+        "abs": -5617,
+        "confidence": "year"
+      },
+      "startAbs": -5700,
+      "endAbs": -5617,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r35-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r35",
+      "title": "悼公",
+      "start": {
+        "year": -469,
+        "month": 1,
+        "abs": -5616,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -465,
+        "month": 12,
+        "abs": -5557,
+        "confidence": "year"
+      },
+      "startAbs": -5616,
+      "endAbs": -5557,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r36-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r36",
+      "title": "敬公",
+      "start": {
+        "year": -464,
+        "month": 1,
+        "abs": -5556,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -432,
+        "month": 12,
+        "abs": -5161,
+        "confidence": "year"
+      },
+      "startAbs": -5556,
+      "endAbs": -5161,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r37-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r37",
+      "title": "昭公",
+      "start": {
+        "year": -431,
+        "month": 1,
+        "abs": -5160,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -426,
+        "month": 12,
+        "abs": -5089,
+        "confidence": "year"
+      },
+      "startAbs": -5160,
+      "endAbs": -5089,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r38-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r38",
+      "title": "怀公",
+      "start": {
+        "year": -425,
+        "month": 1,
+        "abs": -5088,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -415,
+        "month": 12,
+        "abs": -4957,
+        "confidence": "year"
+      },
+      "startAbs": -5088,
+      "endAbs": -4957,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r39-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r39",
+      "title": "慎公",
+      "start": {
+        "year": -414,
+        "month": 1,
+        "abs": -4956,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -383,
+        "month": 12,
+        "abs": -4573,
+        "confidence": "year"
+      },
+      "startAbs": -4956,
+      "endAbs": -4573,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r40-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r40",
+      "title": "声公",
+      "start": {
+        "year": -382,
+        "month": 1,
+        "abs": -4572,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -372,
+        "month": 12,
+        "abs": -4441,
+        "confidence": "year"
+      },
+      "startAbs": -4572,
+      "endAbs": -4441,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r41-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r41",
+      "title": "成侯",
+      "start": {
+        "year": -371,
+        "month": 1,
+        "abs": -4440,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -343,
+        "month": 12,
+        "abs": -4093,
+        "confidence": "year"
+      },
+      "startAbs": -4440,
+      "endAbs": -4093,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r42-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r42",
+      "title": "平侯",
+      "start": {
+        "year": -342,
+        "month": 1,
+        "abs": -4092,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -335,
+        "month": 12,
+        "abs": -3997,
+        "confidence": "year"
+      },
+      "startAbs": -4092,
+      "endAbs": -3997,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r43-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r43",
+      "title": "嗣君",
+      "start": {
+        "year": -334,
+        "month": 1,
+        "abs": -3996,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -293,
+        "month": 12,
+        "abs": -3493,
+        "confidence": "year"
+      },
+      "startAbs": -3996,
+      "endAbs": -3493,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r44-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r44",
+      "title": "怀君",
+      "start": {
+        "year": -292,
+        "month": 1,
+        "abs": -3492,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -254,
+        "month": 12,
+        "abs": -3025,
+        "confidence": "year"
+      },
+      "startAbs": -3492,
+      "endAbs": -3025,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r45-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r45",
+      "title": "元君",
+      "start": {
+        "year": -253,
+        "month": 1,
+        "abs": -3024,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -230,
+        "month": 12,
+        "abs": -2737,
+        "confidence": "year"
+      },
+      "startAbs": -3024,
+      "endAbs": -2737,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-weiguo-r46-wei-weiguo",
+      "dynastyId": "wei-weiguo",
+      "personId": "weiguo-r46",
+      "title": "君角",
+      "start": {
+        "year": -241,
+        "month": 1,
+        "abs": -2880,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -209,
+        "month": 12,
+        "abs": -2485,
+        "confidence": "year"
+      },
+      "startAbs": -2880,
+      "endAbs": -2485,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    }
+  ],
+  "events": [],
+  "relations": [],
+  "supplementalEventDynasties": [
+    {
+      "eventId": "kuiqiu",
+      "dynastyId": "wei-weiguo"
+    },
+    {
+      "eventId": "chengpu",
+      "dynastyId": "wei-weiguo"
+    },
+    {
+      "eventId": "chunqiu",
+      "dynastyId": "wei-weiguo"
+    }
+  ],
+  "supplementalEventParticipants": [],
+  "preSql": "",
+  "postSql": "-- Remove stale reigns from managed dynasties (superseded ids from older imports)\nWITH stale AS (\n  DELETE FROM reigns\n  WHERE dynasty_id IN ('wei-weiguo') AND id NOT IN ('reign-weiguo-r0-wei-weiguo', 'reign-weiguo-r1-wei-weiguo', 'reign-weiguo-r2-wei-weiguo', 'reign-weiguo-r3-wei-weiguo', 'reign-weiguo-r4-wei-weiguo', 'reign-weiguo-r5-wei-weiguo', 'reign-weiguo-r6-wei-weiguo', 'reign-weiguo-r7-wei-weiguo', 'reign-weiguo-r8-wei-weiguo', 'reign-weiguo-r9-wei-weiguo', 'reign-weiguo-r10-wei-weiguo', 'reign-weiguo-r11-wei-weiguo', 'reign-weiguo-r12-wei-weiguo', 'reign-weiguo-r13-wei-weiguo', 'reign-weiguo-r14-wei-weiguo', 'reign-weiguo-r15-wei-weiguo', 'reign-weiguo-r16-wei-weiguo', 'reign-weiguo-r15-wei-weiguo-2', 'reign-weiguo-r18-wei-weiguo', 'reign-weiguo-r19-wei-weiguo', 'reign-weiguo-r20-wei-weiguo', 'reign-weiguo-r21-wei-weiguo', 'reign-weiguo-r22-wei-weiguo', 'reign-weiguo-r21-wei-weiguo-2', 'reign-weiguo-r23-wei-weiguo', 'reign-weiguo-r24-wei-weiguo', 'reign-weiguo-r25-wei-weiguo', 'reign-weiguo-r26-wei-weiguo', 'reign-weiguo-r25-wei-weiguo-2', 'reign-weiguo-r28-wei-weiguo', 'reign-weiguo-r29-wei-weiguo', 'reign-weiguo-r30-wei-weiguo', 'reign-weiguo-r31-wei-weiguo', 'reign-weiguo-r32-wei-weiguo', 'reign-weiguo-r33-wei-weiguo', 'reign-weiguo-r30-wei-weiguo-2', 'reign-weiguo-r35-wei-weiguo', 'reign-weiguo-r36-wei-weiguo', 'reign-weiguo-r37-wei-weiguo', 'reign-weiguo-r38-wei-weiguo', 'reign-weiguo-r39-wei-weiguo', 'reign-weiguo-r40-wei-weiguo', 'reign-weiguo-r41-wei-weiguo', 'reign-weiguo-r42-wei-weiguo', 'reign-weiguo-r43-wei-weiguo', 'reign-weiguo-r44-wei-weiguo', 'reign-weiguo-r45-wei-weiguo', 'reign-weiguo-r46-wei-weiguo')\n  RETURNING person_id\n)\nDELETE FROM persons p\nWHERE p.id IN (SELECT DISTINCT person_id FROM stale)\n  AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)\n  AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = p.id)\n  AND NOT EXISTS (\n    SELECT 1 FROM relations rel\n    WHERE (rel.from_type = 'person' AND rel.from_id = p.id)\n       OR (rel.to_type = 'person' AND rel.to_id = p.id)\n  );\nSELECT rebuild_person_search_terms();",
+  "manifest": {
+    "slug": "chunqiu-zhanguo/wei-weiguo",
+    "title": "卫独立数据包",
+    "window": {
+      "startYear": -1040,
+      "startMonth": 1,
+      "endYear": -209,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-10-02",
+    "counts": {
+      "persons": 44,
+      "dynasties": 1,
+      "reigns": 48,
+      "missingReigns": 0,
+      "events": 0,
+      "relations": 0,
+      "existingEventDynastyLinks": 3,
+      "existingEventParticipantLinks": 0,
+      "capitals": 0
+    },
+    "sources": [
+      {
+        "label": "春秋时期",
+        "url": "https://zh.wikipedia.org/wiki/春秋时期"
+      },
+      {
+        "label": "战国时期",
+        "url": "https://zh.wikipedia.org/wiki/战国时期"
+      },
+      {
+        "label": "战国七雄",
+        "url": "https://zh.wikipedia.org/wiki/战国七雄"
+      },
+      {
+        "label": "卫国君主列表",
+        "url": "https://zh.wikipedia.org/wiki/卫国#卫国君主列表及在位年份"
+      },
+      {
+        "label": "中国国家博物馆：康侯斧题记",
+        "url": "https://www.chnmuseum.cn/yj/xscg/xslw/201812/t20181224_36458.shtml"
+      },
+      {
+        "label": "周朝诸侯国君主列表",
+        "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫康叔"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫康伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫考伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫嗣伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫疌伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫靖伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫贞伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫顷侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫釐侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫共伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫武公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫庄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫桓公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/州吁"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫宣公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫惠公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/黔牟"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫懿公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫戴公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫成公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/君瑕"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫穆公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫定公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫献公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫殇公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫襄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫灵公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫出公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/斑师"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/君起"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫悼公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫敬公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫昭公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫怀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫慎公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫声公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫成侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫平侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫嗣君"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫怀君"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/卫元君"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/君角"
+      }
+    ],
+    "notes": [
+      "列国泳道名用国号（齐、楚、韩），与夏商周秦汉一致，不带「国」；「齐国」等写入 alt_names。",
+      "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
+      "各国国君世系取维基百科大陆简体（zh-cn）诸侯君主列表与《史记》年表；按表头读取称号/姓名/在位年份，不用本地繁简转换。",
+      "年精度顺序继位按逾年改元切年（死年归旧王、新王次年起算，见 缓存中的最终在位起讫日期；用维基原始起年检测，避免孝文王占死后庄襄王不再后移）。维基在位年份常与死年重叠（如秦文公起前766年）；一年短祚、秦灵公/简公/献公未逾年改元、曲沃与翼并立不后移。魏惠王称王前后合并为一条在位（前369–前319）。",
+      "西周早中期无在位年的国君原则上在相邻锚点之间按世系均分，均分结果标 起止端点标记为 interpolated_by_other。宋微子至宋厉公采用《宋国君主列表》所列《史记·宋世家》与陈梦家《西周年代考》推定年份，仍标 interpolated；宋釐公前858年为后续年表锚点。",
+      "卫康叔至卫贞伯现有资料仅能按其处于周成王、康王、昭王、穆王、共王、懿王/孝王时期作宽区间约束；康叔约前1040年以后，卫贞伯卒年前867年，顷侯自前866年起有年表。未将周王世代误作卫君个人的精确在位年。",
+      "卫国人物 id 用 weiguo- 前缀，避免与战国魏 wei-r* 冲突；燕召公用 ji-shi，避免与宋恭帝 zhao-shi 冲突。",
+      "同人多次即位拆多条 reign（reignId 后缀 -2），与唐/明一致；完整在位字段直接维护于 cache.json，不从 Wiki 原始文本自动推断或覆盖。",
+      "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 confidence: year。",
+      "未收录薛、滕、杞、莒等小国；未收录战国末期的代、胶东等残余。",
+      "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
+      "逐条复核夏商周包既有事件的诸侯国关联：《左传·僖公九年》载葵丘与会者为鲁、齐、宋、卫、郑、许、曹及周王使者；补入本包有建模泳道的鲁、宋、卫、郑、曹（许未建王朝实体）。城濮之战补入受战事直接影响的宋、曹、卫：宋受楚围而晋出兵救援，晋先伐曹、卫并以复国交涉，原有关联晋、楚保留。依据《中国哲学书电子化计划》所录《左传·僖公九年》 https://ctext.org/chun-qiu-zuo-zhuan/xi-gong-jiu-nian/zhs ，以及《菏泽历史文化集萃·城濮之战》 https://shandong-chorography.org/database/bh/section/22/article/66/ 。",
+      "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
+      "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
+      "称谓复核（2026-10）：本包君主卡片称呼写入对应 reign.title。已有谥号者使用 persons.posthumousNames 的首选本体（不带国名）；无谥号者采用已核对的人物 title，并去除国名前缀；已有非空 reign.title 亦按无国名称呼规则复核。具体来源沿用各人物 links 与本包 manifest.sources。",
+      "不新增普通灭国事件重复王朝终点；年精度末年12月及泳道起年1月均为定位占位，不表示史料已知公历月份。不确定在位不分配个人都城。",
+      "2026-10-02按王朝拆分原chunqiu-zhanguo完整包。本包唯一拥有卫的王朝、人物、在位及分配到本包的事件、关系和补充关联；原记录ID、事实、日期与置信度原样保留。跨包引用不复制目标实体；完整原始来源与处理记录见父目录归档。"
+    ]
+  }
+}

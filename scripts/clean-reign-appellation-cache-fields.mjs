@@ -1,5 +1,6 @@
-import { readFileSync, readdirSync, writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
+import { discoverPackages } from "../data/imports/lib/discoverPackages.mjs";
 import { fileURLToPath } from "node:url";
 
 const projectRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
@@ -7,10 +8,9 @@ const importsRoot = path.join(projectRoot, "data", "imports");
 let changedPackages = 0;
 let removedFields = 0;
 
-for (const entry of readdirSync(importsRoot, { withFileTypes: true })) {
-  if (!entry.isDirectory()) continue;
+for (const slug of discoverPackages(importsRoot)) {
 
-  const cachePath = path.join(importsRoot, entry.name, "cache.json");
+  const cachePath = path.join(importsRoot, slug, "cache.json");
   let cache;
   try {
     cache = JSON.parse(readFileSync(cachePath, "utf8"));
@@ -38,7 +38,7 @@ for (const entry of readdirSync(importsRoot, { withFileTypes: true })) {
   writeFileSync(cachePath, `${JSON.stringify(cache, null, 2)}\n`);
   changedPackages += 1;
   removedFields += packageRemovedFields;
-  console.log(`${entry.name}: removed ${packageRemovedFields} fields`);
+  console.log(`${slug}: removed ${packageRemovedFields} fields`);
 }
 
 console.log(`Done: ${removedFields} fields removed from ${changedPackages} packages.`);

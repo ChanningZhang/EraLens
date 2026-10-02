@@ -1,0 +1,1885 @@
+{
+  "slug": "chunqiu-zhanguo/qin",
+  "window": {
+    "startYear": -778,
+    "startMonth": 1,
+    "endYear": -207,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "ying-qi",
+      "name": "开",
+      "roles": [
+        "君主"
+      ],
+      "bio": "护送周平王东迁有功，受封诸侯。伐戎建初功，秦国始为一方诸侯，开启霸业之路，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦襄公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "襄公"
+      ],
+      "templeNames": [],
+      "title": "秦襄公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r1",
+      "name": "康",
+      "roles": [
+        "君主"
+      ],
+      "bio": "文公，在位五十年。初行大夫葬礼制度，秦国渐有起色，国势平稳，为后世奠基，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦文公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "文公"
+      ],
+      "templeNames": [],
+      "title": "秦文公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r2",
+      "name": "立",
+      "roles": [
+        "君主"
+      ],
+      "bio": "宪公，迁都徙民，国有起色。在位十二年，秦国继续发展，国势渐强，事迹载于《史记》相关记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦宪公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "宪公"
+      ],
+      "templeNames": [],
+      "title": "秦宪公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r3",
+      "name": "曼",
+      "roles": [
+        "君主"
+      ],
+      "bio": "庶子，被立为君后不久为叔父武公所弑。在位仅五年，政局动荡，国势不稳，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/出子"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "出子",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r4",
+      "name": "说",
+      "roles": [
+        "君主"
+      ],
+      "bio": "武公，肃内政、平内乱。在位十九年，秦国渐稳，国势回升，为穆公霸业奠基，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦武公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "武公"
+      ],
+      "templeNames": [],
+      "title": "秦武公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r5",
+      "name": "嘉",
+      "roles": [
+        "君主"
+      ],
+      "bio": "德公，在位仅两年，迁雍都。旋即传位宣公，秦国政局平稳，国势尚可，事迹载于《史记》相关记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦德公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "德公"
+      ],
+      "templeNames": [],
+      "title": "秦德公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r6",
+      "name": "恬",
+      "roles": [
+        "君主"
+      ],
+      "bio": "宣公，在位十一年。秦国维持二流强国地位，国势平稳，无力争霸，事迹载于《史记》相关记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦宣公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "宣公"
+      ],
+      "templeNames": [],
+      "title": "秦宣公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r7",
+      "name": "载",
+      "roles": [
+        "君主"
+      ],
+      "bio": "成公，在位仅四年。旋即传位穆公，秦国迎来霸业时期，国势渐强，事迹载于《史记》相关记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦成公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "成公"
+      ],
+      "templeNames": [],
+      "title": "秦成公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r8",
+      "name": "任好",
+      "roles": [
+        "君主"
+      ],
+      "bio": "在位三十九年，霸西戎，为春秋五霸之一。晚年兵败晋国，国力由盛转衰，霸业渐失，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦穆公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "穆公"
+      ],
+      "templeNames": [],
+      "title": "秦穆公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r9",
+      "name": "罃",
+      "roles": [
+        "君主"
+      ],
+      "bio": "康公，穆公之子。在位十一年，秦国维持现状，国势平稳，无力争霸，事迹载于《史记》相关记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦康公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "康公"
+      ],
+      "templeNames": [],
+      "title": "秦康公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r10",
+      "name": "和",
+      "roles": [
+        "君主"
+      ],
+      "bio": "共公，在位仅三年。旋即传位桓公，秦国继续衰落，国势转弱，无力外争，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦共公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "共公"
+      ],
+      "templeNames": [],
+      "title": "秦共公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r11",
+      "name": "荣",
+      "roles": [
+        "君主"
+      ],
+      "bio": "桓公，在位二十七年。秦国继续衰落，无力争霸，国势平平，维持现状，事迹载于《史记》相关记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦桓公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "桓公"
+      ],
+      "templeNames": [],
+      "title": "秦桓公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r12",
+      "name": "石",
+      "roles": [
+        "君主"
+      ],
+      "bio": "景公，在位四十年。秦国维持于二流强国，国势平平，无力外争，割地求和，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦景公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "景公"
+      ],
+      "templeNames": [],
+      "title": "秦景公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r13",
+      "name": "籍",
+      "roles": [
+        "君主"
+      ],
+      "bio": "哀公，在位三十六年。秦国国力平平，无力外争，维持小国局面，国势转弱，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦哀公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "哀公"
+      ],
+      "templeNames": [],
+      "title": "秦哀公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r14",
+      "name": "宁",
+      "roles": [
+        "君主"
+      ],
+      "bio": "惠公，在位仅九年。旋即传位悼公，秦国继续衰落，国势转弱，无力外争，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦惠公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "惠公"
+      ],
+      "templeNames": [],
+      "title": "秦惠公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r15",
+      "name": "盘",
+      "roles": [
+        "君主"
+      ],
+      "bio": "悼公，在位十四年。秦国继续衰落，国势危急，无力争霸，濒临灭亡，事迹载于《史记》相关记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦悼公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "悼公"
+      ],
+      "templeNames": [],
+      "title": "秦悼公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r16",
+      "name": "刺",
+      "roles": [
+        "君主"
+      ],
+      "bio": "厉共公，在位三十四年。秦国国力衰弱，无力争霸，国势转弱，维持现状，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦厉共公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "厉共公"
+      ],
+      "templeNames": [],
+      "title": "秦厉共公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r17",
+      "name": "欣",
+      "roles": [
+        "君主"
+      ],
+      "bio": "躁公，在位十四年。秦国继续衰落，国势危急，无力外争，濒临灭亡，事迹载于《史记》相关记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦躁公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "躁公"
+      ],
+      "templeNames": [],
+      "title": "秦躁公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r18",
+      "name": "封",
+      "roles": [
+        "君主"
+      ],
+      "bio": "怀公，被庶长所弑。在位仅数年，政局动荡，秦国内乱，国势不稳，事迹载于《史记》相关记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦怀公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "怀公"
+      ],
+      "templeNames": [],
+      "title": "秦怀公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r19",
+      "name": "肃",
+      "roles": [
+        "君主"
+      ],
+      "bio": "灵公，在位十三年。死后献公不得立，传位简公，政局动荡，国势转弱，事迹载于《史记》相关记载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦灵公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "灵公"
+      ],
+      "templeNames": [],
+      "title": "秦灵公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r20",
+      "name": "悼子",
+      "roles": [
+        "君主"
+      ],
+      "bio": "简公，令吏带剑、初开徭。在位十五年，略有革新，国势渐起，为献公奠基，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦简公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "简公"
+      ],
+      "templeNames": [],
+      "title": "秦简公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r21",
+      "name": "仁",
+      "roles": [
+        "君主"
+      ],
+      "bio": "惠公（战国），伐蜀取南郑。在位十二年，旋即传位出公，秦国继续扩张，国势渐强，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦惠公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "惠公"
+      ],
+      "templeNames": [],
+      "title": "秦惠公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r22",
+      "name": "昌",
+      "roles": [
+        "君主"
+      ],
+      "bio": "童主，被庶长改迎献公所弑。在位仅两年，河西地为晋所夺，国势危急，濒临衰落，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦出公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "出公"
+      ],
+      "templeNames": [],
+      "title": "秦出公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r23",
+      "name": "师隰",
+      "roles": [
+        "君主"
+      ],
+      "bio": "止殉、迁栎阳，收复部分失地。商鞅入秦前秦国已有革新，国势渐起，为孝公奠基，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦献公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "献公"
+      ],
+      "templeNames": [],
+      "title": "秦献公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "ying-quliang",
+      "name": "渠梁",
+      "roles": [
+        "君主"
+      ],
+      "bio": "颁布求贤令，用商鞅变法，迁都咸阳。奠定秦国富强基础，为统一六国铺路，开启霸业新篇。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦孝公"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "孝公"
+      ],
+      "templeNames": [],
+      "title": "秦孝公",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r25",
+      "name": "驷",
+      "roles": [
+        "君主"
+      ],
+      "bio": "杀商鞅而沿用其法，灭巴蜀，臣平周王。秦国首称王号，国势强盛，为统一奠基，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦惠文王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "惠文王"
+      ],
+      "templeNames": [],
+      "title": "秦惠文王",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r26",
+      "name": "荡",
+      "roles": [
+        "君主"
+      ],
+      "bio": "武王，举鼎绝膑而亡。在位仅四年，秦国继续扩张，国势强盛，无力维持长期霸业，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦武王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "武王"
+      ],
+      "templeNames": [],
+      "title": "秦武王",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r27",
+      "name": "稷",
+      "roles": [
+        "君主"
+      ],
+      "bio": "在位五十六年，诱杀楚怀王，长平灭赵。为秦国一统奠定决定性基础，国势巅峰，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦昭襄王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "昭襄王"
+      ],
+      "templeNames": [],
+      "title": "秦昭襄王",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r28",
+      "name": "柱",
+      "roles": [
+        "君主"
+      ],
+      "bio": "孝文王，在位仅三天即卒。秦国王位匆匆传递，国势继续强盛，为庄襄王奠基，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦孝文王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "孝文王"
+      ],
+      "templeNames": [],
+      "title": "秦孝文王",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "qin-r29",
+      "name": "子楚",
+      "roles": [
+        "君主"
+      ],
+      "bio": "庄襄王，在位三年。秦占太原，切断韩交通要道，为灭韩铺路，国势继续强盛，事迹见《史记》。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/秦庄襄王"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "庄襄王"
+      ],
+      "templeNames": [],
+      "title": "秦庄襄王",
+      "ancestralXing": "嬴",
+      "clanShi": "赵"
+    },
+    {
+      "id": "shang-yang",
+      "name": "商鞅",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "卫国人，秦孝公时主持变法，奠定秦统一基础；入秦后受封商於，推行军功爵、县制等改革。孝公去世后失去支持，前338年遭车裂。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/商鞅"
+        }
+      ],
+      "birth": {
+        "year": -390,
+        "month": 1,
+        "abs": -4668
+      },
+      "death": {
+        "year": -338,
+        "month": 1,
+        "abs": -4044
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "bai-qi",
+      "name": "白起",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "战国秦国名将，长期为秦昭襄王攻城略地，伊阙、长平等战役重创韩、魏、赵军。长平之战后处置赵军降卒的记载影响深远；后因与秦相范雎失和，被赐死于杜邮。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/白起"
+        }
+      ],
+      "birth": {
+        "year": -332,
+        "month": 1,
+        "abs": -3972
+      },
+      "death": {
+        "year": -257,
+        "month": 1,
+        "abs": -3072
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "wang-jian-qin",
+      "name": "王翦",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "战国末秦国名将，秦王政统一战争的主要统帅。率军灭赵、燕、楚，灭楚时以持重用兵著称；秦统一后退居故里。其子王贲亦为秦将。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/王翦"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    },
+    {
+      "id": "bian-que",
+      "name": "扁鹊",
+      "roles": [
+        "医学家"
+      ],
+      "bio": "战国名医，传说本名秦越人，因医术高明而被尊称扁鹊。史籍记载其周游行医，善察病情并采用多种疗法；望、闻、问、切四诊与其联系主要见于后世医史叙述。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/扁鹊"
+        }
+      ],
+      "birth": {
+        "year": -407,
+        "month": 1,
+        "abs": -4872
+      },
+      "death": {
+        "year": -310,
+        "month": 1,
+        "abs": -3708
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": null
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "qin",
+      "name": "秦",
+      "altNames": [
+        "嬴秦",
+        "秦国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -778,
+        "month": 1,
+        "abs": -9324,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -207,
+        "month": 12,
+        "abs": -2461,
+        "confidence": "month"
+      },
+      "note": "前778年秦襄公即位；前770年护周平王东迁列为诸侯；前221年嬴政称帝统一；前207年子婴降，秦亡。"
+    }
+  ],
+  "capitals": [],
+  "reigns": [
+    {
+      "id": "reign-ying-qi-qin",
+      "dynastyId": "qin",
+      "personId": "ying-qi",
+      "title": "襄公",
+      "start": {
+        "year": -778,
+        "month": 1,
+        "abs": -9324,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -766,
+        "month": 12,
+        "abs": -9169,
+        "confidence": "year"
+      },
+      "startAbs": -9324,
+      "endAbs": -9169,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r1-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r1",
+      "title": "文公",
+      "start": {
+        "year": -765,
+        "month": 1,
+        "abs": -9168,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -716,
+        "month": 12,
+        "abs": -8569,
+        "confidence": "year"
+      },
+      "startAbs": -9168,
+      "endAbs": -8569,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r2-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r2",
+      "title": "宪公",
+      "start": {
+        "year": -715,
+        "month": 1,
+        "abs": -8568,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -704,
+        "month": 12,
+        "abs": -8425,
+        "confidence": "year"
+      },
+      "startAbs": -8568,
+      "endAbs": -8425,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r3-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r3",
+      "title": "出子",
+      "start": {
+        "year": -703,
+        "month": 1,
+        "abs": -8424,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -698,
+        "month": 12,
+        "abs": -8353,
+        "confidence": "year"
+      },
+      "startAbs": -8424,
+      "endAbs": -8353,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r4-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r4",
+      "title": "武公",
+      "start": {
+        "year": -697,
+        "month": 1,
+        "abs": -8352,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -678,
+        "month": 12,
+        "abs": -8113,
+        "confidence": "year"
+      },
+      "startAbs": -8352,
+      "endAbs": -8113,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r5-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r5",
+      "title": "德公",
+      "start": {
+        "year": -677,
+        "month": 1,
+        "abs": -8112,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -676,
+        "month": 12,
+        "abs": -8089,
+        "confidence": "year"
+      },
+      "startAbs": -8112,
+      "endAbs": -8089,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r6-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r6",
+      "title": "宣公",
+      "start": {
+        "year": -675,
+        "month": 1,
+        "abs": -8088,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -664,
+        "month": 12,
+        "abs": -7945,
+        "confidence": "year"
+      },
+      "startAbs": -8088,
+      "endAbs": -7945,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r7-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r7",
+      "title": "成公",
+      "start": {
+        "year": -663,
+        "month": 1,
+        "abs": -7944,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -660,
+        "month": 12,
+        "abs": -7897,
+        "confidence": "year"
+      },
+      "startAbs": -7944,
+      "endAbs": -7897,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r8-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r8",
+      "title": "穆公",
+      "start": {
+        "year": -659,
+        "month": 1,
+        "abs": -7896,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -621,
+        "month": 12,
+        "abs": -7429,
+        "confidence": "year"
+      },
+      "startAbs": -7896,
+      "endAbs": -7429,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r9-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r9",
+      "title": "康公",
+      "start": {
+        "year": -620,
+        "month": 1,
+        "abs": -7428,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -609,
+        "month": 12,
+        "abs": -7285,
+        "confidence": "year"
+      },
+      "startAbs": -7428,
+      "endAbs": -7285,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r10-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r10",
+      "title": "共公",
+      "start": {
+        "year": -608,
+        "month": 1,
+        "abs": -7284,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -605,
+        "month": 12,
+        "abs": -7237,
+        "confidence": "year"
+      },
+      "startAbs": -7284,
+      "endAbs": -7237,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r11-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r11",
+      "title": "桓公",
+      "start": {
+        "year": -604,
+        "month": 1,
+        "abs": -7236,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -577,
+        "month": 12,
+        "abs": -6901,
+        "confidence": "year"
+      },
+      "startAbs": -7236,
+      "endAbs": -6901,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r12-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r12",
+      "title": "景公",
+      "start": {
+        "year": -576,
+        "month": 1,
+        "abs": -6900,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -537,
+        "month": 12,
+        "abs": -6421,
+        "confidence": "year"
+      },
+      "startAbs": -6900,
+      "endAbs": -6421,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r13-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r13",
+      "title": "哀公",
+      "start": {
+        "year": -536,
+        "month": 1,
+        "abs": -6420,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -501,
+        "month": 12,
+        "abs": -5989,
+        "confidence": "year"
+      },
+      "startAbs": -6420,
+      "endAbs": -5989,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r14-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r14",
+      "title": "惠公",
+      "start": {
+        "year": -500,
+        "month": 1,
+        "abs": -5988,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -492,
+        "month": 12,
+        "abs": -5881,
+        "confidence": "year"
+      },
+      "startAbs": -5988,
+      "endAbs": -5881,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r15-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r15",
+      "title": "悼公",
+      "start": {
+        "year": -491,
+        "month": 1,
+        "abs": -5880,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -477,
+        "month": 12,
+        "abs": -5701,
+        "confidence": "year"
+      },
+      "startAbs": -5880,
+      "endAbs": -5701,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r16-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r16",
+      "title": "厉共公",
+      "start": {
+        "year": -476,
+        "month": 1,
+        "abs": -5700,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -443,
+        "month": 12,
+        "abs": -5293,
+        "confidence": "year"
+      },
+      "startAbs": -5700,
+      "endAbs": -5293,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r17-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r17",
+      "title": "躁公",
+      "start": {
+        "year": -442,
+        "month": 1,
+        "abs": -5292,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -429,
+        "month": 12,
+        "abs": -5125,
+        "confidence": "year"
+      },
+      "startAbs": -5292,
+      "endAbs": -5125,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r18-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r18",
+      "title": "怀公",
+      "start": {
+        "year": -428,
+        "month": 1,
+        "abs": -5124,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -425,
+        "month": 12,
+        "abs": -5077,
+        "confidence": "year"
+      },
+      "startAbs": -5124,
+      "endAbs": -5077,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r19-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r19",
+      "title": "灵公",
+      "start": {
+        "year": -425,
+        "month": 1,
+        "abs": -5088,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -415,
+        "month": 12,
+        "abs": -4957,
+        "confidence": "year"
+      },
+      "startAbs": -5088,
+      "endAbs": -4957,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r20-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r20",
+      "title": "简公",
+      "start": {
+        "year": -415,
+        "month": 1,
+        "abs": -4968,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -400,
+        "month": 12,
+        "abs": -4777,
+        "confidence": "year"
+      },
+      "startAbs": -4968,
+      "endAbs": -4777,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r21-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r21",
+      "title": "惠公",
+      "start": {
+        "year": -399,
+        "month": 1,
+        "abs": -4776,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -387,
+        "month": 12,
+        "abs": -4621,
+        "confidence": "year"
+      },
+      "startAbs": -4776,
+      "endAbs": -4621,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r22-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r22",
+      "title": "出公",
+      "start": {
+        "year": -386,
+        "month": 1,
+        "abs": -4620,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -385,
+        "month": 12,
+        "abs": -4597,
+        "confidence": "year"
+      },
+      "startAbs": -4620,
+      "endAbs": -4597,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r23-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r23",
+      "title": "献公",
+      "start": {
+        "year": -385,
+        "month": 1,
+        "abs": -4608,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -362,
+        "month": 12,
+        "abs": -4321,
+        "confidence": "year"
+      },
+      "startAbs": -4608,
+      "endAbs": -4321,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-ying-quliang-qin",
+      "dynastyId": "qin",
+      "personId": "ying-quliang",
+      "title": "孝公",
+      "start": {
+        "year": -361,
+        "month": 1,
+        "abs": -4320,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -338,
+        "month": 12,
+        "abs": -4033,
+        "confidence": "year"
+      },
+      "startAbs": -4320,
+      "endAbs": -4033,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r25-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r25",
+      "title": "惠文王",
+      "start": {
+        "year": -337,
+        "month": 1,
+        "abs": -4032,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -311,
+        "month": 12,
+        "abs": -3709,
+        "confidence": "year"
+      },
+      "startAbs": -4032,
+      "endAbs": -3709,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r26-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r26",
+      "title": "武王",
+      "start": {
+        "year": -310,
+        "month": 1,
+        "abs": -3708,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -307,
+        "month": 12,
+        "abs": -3661,
+        "confidence": "year"
+      },
+      "startAbs": -3708,
+      "endAbs": -3661,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r27-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r27",
+      "title": "昭襄王",
+      "start": {
+        "year": -306,
+        "month": 1,
+        "abs": -3660,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -251,
+        "month": 12,
+        "abs": -2989,
+        "confidence": "year"
+      },
+      "startAbs": -3660,
+      "endAbs": -2989,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r28-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r28",
+      "title": "孝文王",
+      "start": {
+        "year": -250,
+        "month": 1,
+        "abs": -2988,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -250,
+        "month": 12,
+        "abs": -2977,
+        "confidence": "year"
+      },
+      "startAbs": -2988,
+      "endAbs": -2977,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-qin-r29-qin",
+      "dynastyId": "qin",
+      "personId": "qin-r29",
+      "title": "庄襄王",
+      "start": {
+        "year": -249,
+        "month": 1,
+        "abs": -2976,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -247,
+        "month": 12,
+        "abs": -2941,
+        "confidence": "year"
+      },
+      "startAbs": -2976,
+      "endAbs": -2941,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-ying-zheng-qin",
+      "dynastyId": "qin",
+      "personId": "ying-zheng",
+      "title": "王政",
+      "start": {
+        "year": -246,
+        "month": 1,
+        "abs": -2940,
+        "confidence": "month"
+      },
+      "end": {
+        "year": -221,
+        "month": 9,
+        "abs": -2632,
+        "day": 9,
+        "confidence": "month"
+      },
+      "startAbs": -2940,
+      "endAbs": -2632,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false
+    }
+  ],
+  "events": [
+    {
+      "id": "shangyang-reform",
+      "name": "商鞅变法",
+      "kind": "politics",
+      "timeMode": "point",
+      "dateNote": "秦孝公六年，前356年；史籍或作前359年，取前356年",
+      "at": {
+        "year": -356,
+        "month": 12,
+        "abs": -4249,
+        "confidence": "year"
+      },
+      "atAbs": -4249,
+      "dynastyIds": [
+        "qin"
+      ],
+      "participantIds": [
+        "ying-quliang",
+        "shang-yang"
+      ],
+      "summary": "商鞅在秦国推行军功爵、什伍连坐、废井田等改革，奠定统一六国基础。"
+    },
+    {
+      "id": "changping-battle",
+      "name": "长平之战",
+      "kind": "battle",
+      "timeMode": "point",
+      "dateNote": "秦昭襄王四十七年，前260年",
+      "at": {
+        "year": -260,
+        "month": 12,
+        "abs": -3097,
+        "confidence": "year"
+      },
+      "atAbs": -3097,
+      "dynastyIds": [
+        "qin",
+        "zhao-warring"
+      ],
+      "participantIds": [
+        "bai-qi"
+      ],
+      "summary": "白起于长平围歼赵军四十余万，赵国一蹶不振，秦统一大势已定。",
+      "locationId": "loc-changping"
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel-shangyang-reform-shang-yang",
+      "fromRef": "event:shangyang-reform",
+      "toRef": "person:shang-yang",
+      "kind": "politics"
+    },
+    {
+      "id": "rel-changping-bai-qi",
+      "fromRef": "event:changping-battle",
+      "toRef": "person:bai-qi",
+      "kind": "battle"
+    }
+  ],
+  "supplementalEventDynasties": [
+    {
+      "eventId": "zhanguo",
+      "dynastyId": "qin"
+    }
+  ],
+  "supplementalEventParticipants": [],
+  "preSql": "",
+  "postSql": "-- Remove stale reigns from managed dynasties (superseded ids from older imports)\nWITH stale AS (\n  DELETE FROM reigns\n  WHERE dynasty_id IN ('qin') AND id NOT IN ('reign-ying-qi-qin', 'reign-qin-r1-qin', 'reign-qin-r2-qin', 'reign-qin-r3-qin', 'reign-qin-r4-qin', 'reign-qin-r5-qin', 'reign-qin-r6-qin', 'reign-qin-r7-qin', 'reign-qin-r8-qin', 'reign-qin-r9-qin', 'reign-qin-r10-qin', 'reign-qin-r11-qin', 'reign-qin-r12-qin', 'reign-qin-r13-qin', 'reign-qin-r14-qin', 'reign-qin-r15-qin', 'reign-qin-r16-qin', 'reign-qin-r17-qin', 'reign-qin-r18-qin', 'reign-qin-r19-qin', 'reign-qin-r20-qin', 'reign-qin-r21-qin', 'reign-qin-r22-qin', 'reign-qin-r23-qin', 'reign-ying-quliang-qin', 'reign-qin-r25-qin', 'reign-qin-r26-qin', 'reign-qin-r27-qin', 'reign-qin-r28-qin', 'reign-qin-r29-qin', 'reign-ying-zheng-qin', 'reign-ying-zheng', 'reign-ying-huhai', 'reign-ying-ziying')\n  RETURNING person_id\n)\nDELETE FROM persons p\nWHERE p.id IN (SELECT DISTINCT person_id FROM stale)\n  AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)\n  AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = p.id)\n  AND NOT EXISTS (\n    SELECT 1 FROM relations rel\n    WHERE (rel.from_type = 'person' AND rel.from_id = p.id)\n       OR (rel.to_type = 'person' AND rel.to_id = p.id)\n  );\nSELECT rebuild_person_search_terms();",
+  "manifest": {
+    "slug": "chunqiu-zhanguo/qin",
+    "title": "秦数据包",
+    "window": {
+      "startYear": -778,
+      "startMonth": 1,
+      "endYear": -207,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-10-02",
+    "counts": {
+      "persons": 34,
+      "dynasties": 1,
+      "reigns": 31,
+      "missingReigns": 0,
+      "events": 2,
+      "relations": 2,
+      "existingEventDynastyLinks": 1,
+      "existingEventParticipantLinks": 0,
+      "capitals": 0
+    },
+    "sources": [
+      {
+        "label": "春秋时期",
+        "url": "https://zh.wikipedia.org/wiki/春秋时期"
+      },
+      {
+        "label": "战国时期",
+        "url": "https://zh.wikipedia.org/wiki/战国时期"
+      },
+      {
+        "label": "战国七雄",
+        "url": "https://zh.wikipedia.org/wiki/战国七雄"
+      },
+      {
+        "label": "秦国",
+        "url": "https://zh.wikipedia.org/wiki/秦国"
+      },
+      {
+        "label": "周朝诸侯国君主列表",
+        "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+      },
+      {
+        "label": "秦国君主列表",
+        "url": "https://zh.wikipedia.org/zh-cn/秦国君主列表"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦襄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦宪公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/出子"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦武公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦德公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦宣公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦成公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦穆公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦康公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦共公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦桓公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦景公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦哀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦惠公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦悼公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦厉共公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦躁公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦怀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦灵公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦简公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦出公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦献公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦孝公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦惠文王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦武王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦昭襄王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦孝文王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/秦庄襄王"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/商鞅"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/白起"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/王翦"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/扁鹊"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷014"
+      },
+      {
+        "label": "夏商周断代工程与其他西周年代方案对照",
+        "url": "https://zh.wikipedia.org/wiki/夏商周断代工程#年表"
+      }
+    ],
+    "notes": [
+      "列国泳道名用国号（齐、楚、韩），与夏商周秦汉一致，不带「国」；「齐国」等写入 alt_names。",
+      "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
+      "秦国 upsert 已有 qin 行，将始年延至前778年秦襄公即位，与 qin-han 统一帝国段衔接；清理脚本保留 qin-han 的秦二世、子婴 reign。",
+      "各国国君世系取维基百科大陆简体（zh-cn）诸侯君主列表与《史记》年表；按表头读取称号/姓名/在位年份，不用本地繁简转换。",
+      "年精度顺序继位按逾年改元切年（死年归旧王、新王次年起算，见 缓存中的最终在位起讫日期；用维基原始起年检测，避免孝文王占死后庄襄王不再后移）。维基在位年份常与死年重叠（如秦文公起前766年）；一年短祚、秦灵公/简公/献公未逾年改元、曲沃与翼并立不后移。魏惠王称王前后合并为一条在位（前369–前319）。",
+      "同人多次即位拆多条 reign（reignId 后缀 -2），与唐/明一致；完整在位字段直接维护于 cache.json，不从 Wiki 原始文本自动推断或覆盖。",
+      "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 confidence: year。",
+      "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
+      "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
+      "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
+      "称谓复核（2026-10）：本包君主卡片称呼写入对应 reign.title。已有谥号者使用 persons.posthumousNames 的首选本体（不带国名）；无谥号者采用已核对的人物 title，并去除国名前缀；已有非空 reign.title 亦按无国名称呼规则复核。具体来源沿用各人物 links 与本包 manifest.sources。",
+      "2026-10-02按用户要求统一缺载段展示文案为“史料缺”；同步在位title、王朝概述及导入说明，保留两处断层与原日期置信度。",
+      "不新增普通灭国事件重复王朝终点；年精度末年12月及泳道起年1月均为定位占位，不表示史料已知公历月份。不确定在位不分配个人都城。",
+      "2026-10-02按王朝拆包：本包从chunqiu-zhanguo原完整缓存迁出qin的唯一所有权记录，保留所有实体ID、字段内容、日期和置信度。跨王朝事件由首个dynastyIds对应王朝包拥有；跨包引用不重复写人物、王朝、在位或关联行。原完整来源与处理说明归档于父目录。",
+      "秦帝国段reign-ying-zheng、reign-ying-huhai、reign-ying-ziying仍由qin-han包唯一拥有；本包旧在位清理白名单显式保留这三条跨包记录，不删除或重复写入。"
+    ]
+  }
+}

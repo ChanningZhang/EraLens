@@ -4,18 +4,19 @@
  * Reads persons.ancestral_xing / clan_shi from import SQL (DB fields), not runtime name parsing.
  * Run: node data/imports/lib/auditPreQinXingShi.mjs
  */
-import { readdirSync, readFileSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import path from "node:path";
+import { discoverPackages } from "./discoverPackages.mjs";
 import { fileURLToPath } from "node:url";
 import { buildPreQinClanContext, resolvePreQinXingShi } from "./preQinClanContext.mjs";
-const { reigns: cachedReigns } = JSON.parse(
-  readFileSync(new URL("../chunqiu-zhanguo/cache.json", import.meta.url), "utf8"),
-);
 
 const PRE_IMPERIAL_START_YEAR = -221;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const importsRoot = path.resolve(__dirname, "..");
+const cachedReigns = discoverPackages(importsRoot).flatMap((slug) =>
+  JSON.parse(readFileSync(path.join(importsRoot, slug, "cache.json"), "utf8")).reigns ?? [],
+);
 
 function parsePersonsFromSql(content) {
   const persons = new Map();
@@ -67,7 +68,7 @@ function parseReignsFromSql(content) {
 function loadSqlCorpus() {
   const persons = new Map();
   const reigns = [];
-  for (const slug of readdirSync(importsRoot)) {
+  for (const slug of discoverPackages(importsRoot, "import.sql")) {
     const sqlPath = path.join(importsRoot, slug, "import.sql");
     try {
       const content = readFileSync(sqlPath, "utf8");
