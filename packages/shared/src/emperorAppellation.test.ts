@@ -471,9 +471,9 @@ describe("resolveEmperorAppellation for feudal regnal titles", () => {
 describe("resolveReignDetailHeading", () => {
   it.each([
     { title: "", personTitle: "  汉前少帝  ", expected: "汉前少帝" },
-    { title: "在位称号", personTitle: "人物称号", expected: "在位称号" },
+    { title: "在位称号", personTitle: "人物称号", expected: "人物称号" },
     { title: "", personTitle: "  ", expected: "刘？" },
-  ])("falls back through reign title, person title, and name: $expected", ({ title, personTitle, expected }) => {
+  ])("falls back through person title, reign title, and name: $expected", ({ title, personTitle, expected }) => {
     expect(resolveReignDetailHeading(
       source({ start: { year: -188, month: 9 }, title }),
       "西汉",

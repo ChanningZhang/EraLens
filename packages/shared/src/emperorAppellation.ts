@@ -399,7 +399,7 @@ export function resolveReignDetailHeading(
   const appellation = resolvePersonDetailAppellation(reign, personContext)?.name;
   const reignTitle = reign?.title.trim();
   const personTitle = personContext?.title?.trim();
-  const name = appellation || reignTitle || personTitle || personName || "";
+  const name = appellation || personTitle || reignTitle || personName || "";
   return [dynastyName, name].filter(Boolean).join(" · ");
 }
 

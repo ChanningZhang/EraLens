@@ -496,6 +496,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/李势"
+        },
+        {
+          "label": "《资治通鉴》卷97",
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷097"
         }
       ],
       "birth": null,
@@ -666,6 +670,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/石虎"
+        },
+        {
+          "label": "《资治通鉴》卷95",
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷095"
+        },
+        {
+          "label": "資治通鑑/卷098",
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷098"
         }
       ],
       "birth": null,
@@ -690,6 +702,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/石世"
+        },
+        {
+          "label": "資治通鑑/卷098",
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷098"
         }
       ],
       "birth": {
@@ -778,6 +794,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/张轨"
+        },
+        {
+          "label": "太平御覽/0124",
+          "url": "https://zh.wikisource.org/wiki/太平御覽/0124"
+        },
+        {
+          "label": "晉書/卷086",
+          "url": "https://zh.wikisource.org/wiki/晉書/卷086"
         }
       ],
       "birth": {
@@ -787,8 +811,10 @@
       },
       "death": {
         "year": 314,
-        "month": 5,
-        "abs": 3772
+        "month": 6,
+        "day": 20,
+        "confidence": "day",
+        "abs": 3773
       },
       "altNames": [
         "士彦"
@@ -810,6 +836,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/张寔"
+        },
+        {
+          "label": "太平御覽/0124",
+          "url": "https://zh.wikisource.org/wiki/太平御覽/0124"
+        },
+        {
+          "label": "晉書/卷086",
+          "url": "https://zh.wikisource.org/wiki/晉書/卷086"
         }
       ],
       "birth": null,
@@ -942,6 +976,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/张天锡_(前凉)"
+        },
+        {
+          "label": "資治通鑑/卷101",
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷101"
         }
       ],
       "birth": null,
@@ -984,6 +1022,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/慕容儁"
+        },
+        {
+          "label": "資治通鑑/卷101",
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷101"
         }
       ],
       "birth": null,
@@ -1006,6 +1048,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/慕容暐"
+        },
+        {
+          "label": "資治通鑑/卷101",
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷101"
         }
       ],
       "birth": null,
@@ -1232,6 +1278,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/慕容德"
+        },
+        {
+          "label": "資治通鑑/卷114",
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷114"
+        },
+        {
+          "label": "晉書/卷127",
+          "url": "https://zh.wikisource.org/wiki/晉書/卷127"
         }
       ],
       "birth": null,
@@ -1254,6 +1308,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/慕容超"
+        },
+        {
+          "label": "資治通鑑/卷114",
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷114"
+        },
+        {
+          "label": "晉書/卷127",
+          "url": "https://zh.wikisource.org/wiki/晉書/卷127"
         }
       ],
       "birth": null,
@@ -1336,6 +1398,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/冯弘"
+        },
+        {
+          "label": "資治通鑑/卷122",
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷122"
         }
       ],
       "birth": null,
@@ -1492,6 +1558,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/乞伏暮末"
+        },
+        {
+          "label": "資治通鑑/卷121",
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷121"
         }
       ],
       "birth": null,
@@ -1556,6 +1626,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/吕隆"
+        },
+        {
+          "label": "資治通鑑/卷112",
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷112"
         }
       ],
       "birth": null,
@@ -1618,6 +1692,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/秃发傉檀"
+        },
+        {
+          "label": "資治通鑑/卷112",
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷112"
         }
       ],
       "birth": null,
@@ -1660,6 +1738,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/李歆"
+        },
+        {
+          "label": "資治通鑑/卷118",
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷118"
         }
       ],
       "birth": null,
@@ -1702,6 +1784,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/沮渠牧犍"
+        },
+        {
+          "label": "《资治通鉴》卷122",
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷122"
         }
       ],
       "birth": null,
@@ -1764,6 +1850,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/赫连定"
+        },
+        {
+          "label": "資治通鑑/卷121",
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷121"
         }
       ],
       "birth": null,
@@ -3028,7 +3118,7 @@
         "year": 343,
         "month": 1,
         "abs": 4116,
-        "confidence": "day"
+        "confidence": "year"
       },
       "end": {
         "year": 347,
@@ -3039,7 +3129,8 @@
       },
       "startAbs": 4116,
       "endAbs": 4167,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "year"
     },
     {
       "id": "reign-liu-yuan",
@@ -3206,18 +3297,19 @@
         "year": 334,
         "month": 1,
         "abs": 4008,
-        "confidence": "day"
+        "confidence": "year"
       },
       "end": {
         "year": 349,
         "month": 5,
-        "abs": 4192,
-        "day": 26,
-        "confidence": "day"
+        "day": 27,
+        "confidence": "day",
+        "abs": 4192
       },
       "startAbs": 4008,
       "endAbs": 4192,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "year"
     },
     {
       "id": "reign-shi-shi",
@@ -3228,8 +3320,9 @@
       "start": {
         "year": 349,
         "month": 5,
-        "abs": 4192,
-        "confidence": "month"
+        "day": 27,
+        "confidence": "day",
+        "abs": 4192
       },
       "end": {
         "year": 349,
@@ -3321,12 +3414,13 @@
       },
       "end": {
         "year": 314,
-        "month": 5,
-        "abs": 3772,
-        "confidence": "month"
+        "month": 6,
+        "day": 20,
+        "confidence": "day",
+        "abs": 3773
       },
       "startAbs": 3612,
-      "endAbs": 3772,
+      "endAbs": 3773,
       "isMain": false
     },
     {
@@ -3337,9 +3431,10 @@
       "eraNames": [],
       "start": {
         "year": 314,
-        "month": 1,
-        "abs": 3768,
-        "confidence": "year"
+        "month": 6,
+        "day": 20,
+        "confidence": "day",
+        "abs": 3773
       },
       "end": {
         "year": 320,
@@ -3347,7 +3442,7 @@
         "abs": 3851,
         "confidence": "year"
       },
-      "startAbs": 3768,
+      "startAbs": 3773,
       "endAbs": 3851,
       "isMain": false
     },
@@ -3470,8 +3565,8 @@
       "start": {
         "year": 363,
         "month": 1,
-        "abs": 4356,
-        "confidence": "month"
+        "confidence": "year",
+        "abs": 4356
       },
       "end": {
         "year": 376,
@@ -3519,12 +3614,12 @@
       },
       "end": {
         "year": 360,
-        "month": 12,
-        "abs": 4331,
-        "confidence": "year"
+        "month": 2,
+        "confidence": "month",
+        "abs": 4321
       },
       "startAbs": 4176,
-      "endAbs": 4331,
+      "endAbs": 4321,
       "isMain": false
     },
     {
@@ -3536,9 +3631,8 @@
       "start": {
         "year": 360,
         "month": 2,
-        "abs": 4321,
-        "day": 27,
-        "confidence": "day"
+        "confidence": "month",
+        "abs": 4321
       },
       "end": {
         "year": 370,
@@ -3923,8 +4017,8 @@
       "start": {
         "year": 428,
         "month": 1,
-        "abs": 5136,
-        "confidence": "month"
+        "confidence": "year",
+        "abs": 5136
       },
       "end": {
         "year": 431,
@@ -3989,8 +4083,8 @@
       "start": {
         "year": 401,
         "month": 1,
-        "abs": 4812,
-        "confidence": "month"
+        "confidence": "year",
+        "abs": 4812
       },
       "end": {
         "year": 403,
@@ -4055,8 +4149,8 @@
       "start": {
         "year": 402,
         "month": 1,
-        "abs": 4824,
-        "confidence": "month"
+        "confidence": "year",
+        "abs": 4824
       },
       "end": {
         "year": 414,
@@ -4099,8 +4193,8 @@
       "start": {
         "year": 417,
         "month": 1,
-        "abs": 5004,
-        "confidence": "month"
+        "confidence": "year",
+        "abs": 5004
       },
       "end": {
         "year": 420,
@@ -4144,7 +4238,7 @@
         "year": 433,
         "month": 1,
         "abs": 5196,
-        "confidence": "day"
+        "confidence": "year"
       },
       "end": {
         "year": 439,
@@ -4155,7 +4249,8 @@
       },
       "startAbs": 5196,
       "endAbs": 5277,
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "year"
     },
     {
       "id": "reign-murong-de-yan",
@@ -4172,8 +4267,8 @@
       "end": {
         "year": 405,
         "month": 12,
-        "abs": 4871,
-        "confidence": "year"
+        "confidence": "year",
+        "abs": 4871
       },
       "startAbs": 4776,
       "endAbs": 4871,
@@ -4187,10 +4282,9 @@
       "eraNames": [],
       "start": {
         "year": 405,
-        "month": 11,
-        "abs": 4870,
-        "day": 18,
-        "confidence": "day"
+        "month": 1,
+        "confidence": "year",
+        "abs": 4860
       },
       "end": {
         "year": 410,
@@ -4199,7 +4293,7 @@
         "day": 25,
         "confidence": "day"
       },
-      "startAbs": 4870,
+      "startAbs": 4860,
       "endAbs": 4922,
       "isMain": false
     },
@@ -4234,8 +4328,8 @@
       "start": {
         "year": 430,
         "month": 1,
-        "abs": 5160,
-        "confidence": "month"
+        "confidence": "year",
+        "abs": 5160
       },
       "end": {
         "year": 436,
@@ -4300,8 +4394,8 @@
       "start": {
         "year": 428,
         "month": 1,
-        "abs": 5136,
-        "confidence": "month"
+        "confidence": "year",
+        "abs": 5136
       },
       "end": {
         "year": 431,
@@ -5451,6 +5545,54 @@
       {
         "label": "《汉赵》：汉、赵国号沿革",
         "url": "https://zh.wikipedia.org/wiki/汉赵"
+      },
+      {
+        "label": "《资治通鉴》卷95",
+        "url": "https://zh.wikisource.org/wiki/資治通鑑/卷095"
+      },
+      {
+        "label": "《资治通鉴》卷97",
+        "url": "https://zh.wikisource.org/wiki/資治通鑑/卷097"
+      },
+      {
+        "label": "《资治通鉴》卷122",
+        "url": "https://zh.wikisource.org/wiki/資治通鑑/卷122"
+      },
+      {
+        "label": "太平御覽/0124",
+        "url": "https://zh.wikisource.org/wiki/太平御覽/0124"
+      },
+      {
+        "label": "晉書/卷086",
+        "url": "https://zh.wikisource.org/wiki/晉書/卷086"
+      },
+      {
+        "label": "資治通鑑/卷098",
+        "url": "https://zh.wikisource.org/wiki/資治通鑑/卷098"
+      },
+      {
+        "label": "資治通鑑/卷101",
+        "url": "https://zh.wikisource.org/wiki/資治通鑑/卷101"
+      },
+      {
+        "label": "資治通鑑/卷114",
+        "url": "https://zh.wikisource.org/wiki/資治通鑑/卷114"
+      },
+      {
+        "label": "晉書/卷127",
+        "url": "https://zh.wikisource.org/wiki/晉書/卷127"
+      },
+      {
+        "label": "資治通鑑/卷112",
+        "url": "https://zh.wikisource.org/wiki/資治通鑑/卷112"
+      },
+      {
+        "label": "資治通鑑/卷118",
+        "url": "https://zh.wikisource.org/wiki/資治通鑑/卷118"
+      },
+      {
+        "label": "資治通鑑/卷121",
+        "url": "https://zh.wikisource.org/wiki/資治通鑑/卷121"
       }
     ],
     "notes": [
@@ -5470,7 +5612,25 @@
       "司马伦作为301年顺序篡位者录入西晋主泳道：据《晋书·孝惠帝纪》《资治通鉴》记载正月乙丑篡位、四月惠帝反正；公历日期采用本包沿用的史料年表换算，录301-02-03至301-05-31，且标 claimRole=rival、isMain=false，不计入正统主线。",
       "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
       "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
-      "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。成汉首项采用前期国号“成”，保留后期“汉”；汉赵首项采用前期国号“汉”，保留后期“赵”及史称“前赵”。首项是静态代表自称，不随视口年份切换。"
+      "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。成汉首项采用前期国号“成”，保留后期“汉”；汉赵首项采用前期国号“汉”，保留后期“赵”及史称“前赵”。首项是静态代表自称，不随视口年份切换。",
+      "2026-10-02边界修复第一步：reign-shi-hu 起点原为 day 却无 day 字段；核对《资治通鉴》卷95，334年废石弘、石虎摄位；未采用可靠换算的公历即位日。恢复 year，1月仅为年桶起点，不补造公历日；后续如获得可靠公历换算再提升端点精度。",
+      "2026-10-02边界修复第一步：reign-li-shi 起点原为 day 却无 day 字段；核对《资治通鉴》卷97，343年八月（原历）李寿卒、李势即位；原历月份不能直接作为公历月日。恢复 year，1月仅为年桶起点，不补造公历日；后续如获得可靠公历换算再提升端点精度。",
+      "2026-10-02边界修复第一步：reign-juqu-mujian 起点原为 day 却无 day 字段；核对《资治通鉴》卷122，433年四月（原历）蒙逊卒、牧犍即位；原历月份不能直接作为公历月日。恢复 year，1月仅为年桶起点，不补造公历日；后续如获得可靠公历换算再提升端点精度。",
+      "2026-10-02 相邻在位边界复核：reign-zhang-gui end：《太平御览》引《十六国春秋》建兴二年五月己丑；中研院转换为儒略历314-06-19，再转前推公历314-06-20。旧5月误用了原历月份。",
+      "2026-10-02 相邻在位边界复核：reign-zhang-shi start：《晋书》张轨卒、州人推寔摄父位；交接端点采用张轨死亡锚点314-06-20，共享规则保留死亡日归前任。",
+      "2026-10-02 相邻在位边界复核：reign-shi-hu end：永和五年四月己巳石虎卒；中研院转换为儒略历349-05-26，前推公历349-05-27。",
+      "2026-10-02 相邻在位边界复核：reign-shi-shi start：石虎卒后石世承位，共用四月己巳死亡继位锚点349-05-27；不再仅记5月。",
+      "2026-10-02 相邻在位边界复核：reign-murong-jun end：《通鉴》升平四年正月甲午卒、戊子继位的干支次序相矛盾；中研院分别转得儒略历2月23日、2月17日，不能采用倒置的具体日或缓存2月27日。双方可交叉确认公历360年2月，暂保留月精度，日次待校勘。",
+      "2026-10-02 相邻在位边界复核：reign-murong-wei start：《通鉴》升平四年正月甲午卒、戊子继位的干支次序相矛盾；中研院分别转得儒略历2月23日、2月17日，不能采用倒置的具体日或缓存2月27日。双方可交叉确认公历360年2月，暂保留月精度，日次待校勘。",
+      "2026-10-02 相邻在位边界复核：reign-murong-de-yan end：《通鉴》九月戊午卒、己未继位可确认405年；中研院东晋历405年九月不存在这两个干支日，通行11月17／18日对应十月而非原文九月，尚缺南燕历法或校勘依据，撤销未经可靠换算的日精度，原始纪日留此待核。",
+      "2026-10-02 相邻在位边界复核：reign-murong-chao start：《通鉴》九月戊午卒、己未继位可确认405年；中研院东晋历405年九月不存在这两个干支日，通行11月17／18日对应十月而非原文九月，尚缺南燕历法或校勘依据，撤销未经可靠换算的日精度，原始纪日留此待核。",
+      "2026-10-02 相邻在位边界复核：reign-zhang-tianxi start：363年张玄靓被杀后张天锡继位；原历八月，1月为占位。尚无可采用的公历月日换算，按已核年份记录，保留年桶占位语义。",
+      "2026-10-02 相邻在位边界复核：reign-lu-long start：401年吕纂被杀、吕隆继位；原历二月，1月为占位。尚无可采用的公历月日换算，按已核年份记录，保留年桶占位语义。",
+      "2026-10-02 相邻在位边界复核：reign-tufa-rutan start：402年利鹿孤卒、傉檀继位；原历三月，1月为占位。尚无可采用的公历月日换算，按已核年份记录，保留年桶占位语义。",
+      "2026-10-02 相邻在位边界复核：reign-li-xin start：417年李暠卒、李歆继位；原历二月，1月为占位。尚无可采用的公历月日换算，按已核年份记录，保留年桶占位语义。",
+      "2026-10-02 相邻在位边界复核：reign-helian-ding start：428年赫连昌被俘后赫连定继位；1月未见史料依据。尚无可采用的公历月日换算，按已核年份记录，保留年桶占位语义。",
+      "2026-10-02 相邻在位边界复核：reign-qifu-mumo start：428年熾磐卒、暮末即位；原历五月，1月为占位。尚无可采用的公历月日换算，按已核年份记录，保留年桶占位语义。",
+      "2026-10-02 相邻在位边界复核：reign-feng-hong start：430年冯跋卒、冯弘夺位；原历九月，1月为占位。尚无可采用的公历月日换算，按已核年份记录，保留年桶占位语义。"
     ]
   }
 }
