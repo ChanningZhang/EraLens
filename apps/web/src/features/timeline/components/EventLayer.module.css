@@ -50,12 +50,6 @@
   padding: 0;
 }
 
-.bandSpan::before {
-  position: absolute;
-  inset: -10px 0;
-  content: "";
-}
-
 .bandSpan {
   height: 4px;
   border-radius: 2px;
@@ -101,12 +95,6 @@
     background var(--motion-fast),
     color var(--motion-fast),
     transform var(--motion-fast);
-}
-
-.marker::before {
-  position: absolute;
-  inset: -10px -6px;
-  content: "";
 }
 
 .marker:hover {
