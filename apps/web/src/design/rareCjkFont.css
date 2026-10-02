@@ -7,5 +7,5 @@
   src:
     local("BabelStone Han"),
     url("/fonts/rare-cjk.woff2") format("woff2");
-  unicode-range: U+26221, U+27292, U+30BFC;
+  unicode-range: U+26221, U+27292, U+29D66, U+30BFC;
 }
