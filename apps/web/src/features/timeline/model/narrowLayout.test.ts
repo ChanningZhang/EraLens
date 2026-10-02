@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it } from "vitest";
-import { DEFAULT_TIMELINE_LAYOUT_PREFERENCES, clusterFramesForLanes, resolveTimelinePresentation, type Dynasty, type Reign } from "@eralens/shared";
+import { DEFAULT_TIMELINE_LAYOUT_PREFERENCES, clusterFramesForLanes, fromAbsMonth, resolveTimelinePresentation, type Dynasty, type Reign } from "@eralens/shared";
 import { viewportStore } from "../state/viewportStore";
 import { absFromStageX, centerGuideX } from "./coordinates";
 import { layoutLaneReignBar } from "./reignCardLayout";
@@ -7,9 +7,11 @@ import { dynastyLaneHeightForViewport, prepareLaneReignGeometry } from "./reignC
 import { resolveReignBarLayout } from "./lod";
 
 function reign(id: string, claimTrack?: string): Reign {
+  const start = fromAbsMonth(12);
+  const end = fromAbsMonth(131);
   return {
     id, dynastyId: "d", personId: id, title: "国君", eraNames: [],
-    start: { year: 1, month: 1 }, end: { year: 10, month: 12 },
+    start: { ...start, confidence: "month" }, end: { ...end, confidence: "month" },
     startAbs: 12, endAbs: 131, precision: "year", claimTrack,
   };
 }
@@ -22,7 +24,7 @@ afterEach(() => {
 });
 
 describe("narrow timeline layout", () => {
-  it("expands the visible time range without changing center or time scale, then restores the rail on a wide window", () => {
+  it("expands the visible time range without changing center or time scale while preserving the explicit rail setting", () => {
     viewportStore.setWidthPx(402);
     viewportStore.setCenterAbs(-2400);
     const before = viewportStore.getSnapshot();
@@ -33,8 +35,8 @@ describe("narrow timeline layout", () => {
     expect(folded.endAbs - folded.startAbs).toBeGreaterThan(before.endAbs - before.startAbs);
     expect(absFromStageX(folded, centerGuideX(folded))).toBeCloseTo(folded.centerAbs);
     viewportStore.setWidthPx(820);
-    expect(viewportStore.getSnapshot().presentation.railCollapsed).toBe(false);
-    expect(viewportStore.getSnapshot().gutterPx).toBe(102);
+    expect(viewportStore.getSnapshot().presentation.railCollapsed).toBe(true);
+    expect(viewportStore.getSnapshot().gutterPx).toBe(12);
     viewportStore.setWidthPx(402);
     expect(viewportStore.getSnapshot().presentation.railCollapsed).toBe(true);
   });
@@ -65,9 +67,9 @@ describe("narrow timeline layout", () => {
     const ruler = reign("ruler");
     const presentation = resolveTimelinePresentation(375);
     const viewport = { centerAbs: 72, widthPx: 375, pxPerMonth: 2, presentation };
-    expect(dynastyLaneHeightForViewport([ruler], [], viewport, new Map(), new Map())).toBe(44);
+    expect(dynastyLaneHeightForViewport([ruler], [], viewport, new Map(), new Map())).toBe(40);
     const short = { ...ruler, endAbs: 12 };
-    expect(dynastyLaneHeightForViewport([short], [], viewport, new Map(), new Map())).toBeGreaterThan(44);
+    expect(dynastyLaneHeightForViewport([short], [], viewport, new Map(), new Map())).toBeGreaterThan(40);
     expect(resolveReignBarLayout(30, 4, 18).captionBelow).toBe(true);
   });
 

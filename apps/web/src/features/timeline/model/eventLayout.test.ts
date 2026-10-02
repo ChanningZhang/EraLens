@@ -43,7 +43,12 @@ describe("layoutEventBadges", () => {
     dynastyIds: string[],
     atAbs: number,
     precision: "day" | "month" | "year" | "decade" | "century" = "year",
-  ) => EventSchema.parse({ id, name: id, dynastyIds, atAbs, precision });
+  ) => {
+    const year = Math.floor(atAbs / 12);
+    const month = atAbs - year * 12 + 1;
+    const dateConfidence = precision === "day" || precision === "month" ? precision : "year";
+    return EventSchema.parse({ id, name: id, dynastyIds, at: { year: year > 0 ? year : year - 1, month, confidence: dateConfidence }, atAbs, precision });
+  };
 
   it("puts every single-dynasty event on its visible lane, including a merged phase", () => {
     const positions = layoutEventBadges([

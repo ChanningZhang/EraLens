@@ -225,6 +225,42 @@
     {
       "label": "交接日期复核来源",
       "url": "https://www.president.gov.tw/News/28428"
+    },
+    {
+      "label": "中央档案馆：档案里的中国抗战—淞沪会战",
+      "url": "https://www.saac.gov.cn/zt/2014-08/25/content_63860.htm"
+    },
+    {
+      "label": "中央档案馆：档案里的中国抗战—忻口战役",
+      "url": "https://www.saac.gov.cn/zt/2014-08/29/content_64740_2.htm"
+    },
+    {
+      "label": "中国第二历史档案馆：台儿庄大捷",
+      "url": "https://www.saac.gov.cn/zt/2014-09/03/content_65283_4.htm"
+    },
+    {
+      "label": "中央档案馆：档案里的中国抗战—武汉会战",
+      "url": "https://www.saac.gov.cn/zt/2014-09/03/content_65305.htm"
+    },
+    {
+      "label": "湖南省文史研究馆：抗日战争湖南战场史料前言",
+      "url": "https://css.hunan.gov.cn/css/tslm/hxws/wssy/201204/sxrj_52819_13/201609/t20160905_3253626.html"
+    },
+    {
+      "label": "中央纪委国家监委网站：百团大战",
+      "url": "https://m.ccdi.gov.cn/content/bf/ed/5404.html"
+    },
+    {
+      "label": "中国第二历史档案馆：豫湘桂战役与衡阳保卫战",
+      "url": "https://www.saac.gov.cn/zt/2014-09/15/content_67064_3.htm"
+    },
+    {
+      "label": "中国政府网：平型关战役",
+      "url": "https://www.gfbzb.gov.cn/zbbm/gfzs/201403/20140314/819958607.html"
+    },
+    {
+      "label": "北京市委统战部：抗日战争时期的统一战线",
+      "url": "https://www.bjtzb.gov.cn/wwwroot/sdtyzx/publish/article/40/11335.shtml"
     }
   ],
   "notes": [
@@ -237,6 +273,7 @@
     "正统金色截于 1949 年 9 月（十月一日中华人民共和国成立后迁台续统不上金）。1949 年后的台湾地区任期在 reign.title 统一标为「领导人」，人物概述不用「总统」。",
     "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
     "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
-    "2026-10-02 相邻在位边界复核：reign-lai-qingde-roc start：总统府2024年5月20日就职新闻可核到日，既有day=20应标day而非month。"
+    "2026-10-02 相邻在位边界复核：reign-lai-qingde-roc start：总统府2024年5月20日就职新闻可核到日，既有day=20应标day而非month。",
+    "2026-10：补充1937–1945年全面抗战代表性会战与战役；会战级事件与平型关、台儿庄、衡阳等关键战斗分开表达，重叠处在摘要及 dateNote 说明。日期按来源能支持的月精度记录；战果数字存在不同战史口径时不填确定数字。"
   ]
 }

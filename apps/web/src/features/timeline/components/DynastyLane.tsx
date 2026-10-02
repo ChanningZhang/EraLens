@@ -143,6 +143,14 @@ export function DynastyLane({
     labelAnchorAbs,
     laneGroups,
   );
+  const labelGlyphCount = [...frozenLabel].length;
+  const labelContentWidth = viewport.presentation.railLabelWidthPx -
+    (viewport.presentation.narrow ? 10 : 18);
+  const glyphsPerLine = Math.ceil(labelGlyphCount / 2);
+  const labelFontSizePx = Math.max(
+    9,
+    Math.min(12, (labelContentWidth - 2) / Math.max(1, glyphsPerLine)),
+  );
   const frozenMaster = isFrozenLaneMaster(activePhaseDynasty.id, labelAnchorAbs, reigns);
   const selected =
     selection.selected?.type === "dynasty" &&
@@ -158,6 +166,7 @@ export function DynastyLane({
         height,
         ["--dynasty-color" as string]: laneColor,
         ["--dynasty-bar-height" as string]: `${barHeight}px`,
+        ["--dynasty-lane-height" as string]: `${height}px`,
       }}
     >
       {!viewport.presentation.railCollapsed && <button
@@ -185,6 +194,7 @@ export function DynastyLane({
             <motion.span
               key={frozenLabel}
               className={styles.name}
+              style={{ fontSize: `${labelFontSizePx}px` }}
               initial={{ opacity: 0, y: 4 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -4 }}

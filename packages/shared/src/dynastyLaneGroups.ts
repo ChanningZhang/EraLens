@@ -13,8 +13,8 @@ function compareReignOrder(a: Reign, b: Reign): number {
 
 /** Left padding of the dynasty-name rail. */
 export const TIMELINE_RAIL_INSET_PX = 12;
-/** Fixed chip width: 4 CJK glyphs at 14px plus padding. */
-export const TIMELINE_RAIL_LABEL_WIDTH_PX = 80;
+/** Fixed chip width: 4 CJK glyphs at 12px plus padding. */
+export const TIMELINE_RAIL_LABEL_WIDTH_PX = 64;
 /** Air between name chips and time-mapped content. */
 export const TIMELINE_RAIL_GAP_PX = 10;
 /** Stage x where the shared time axis begins. */

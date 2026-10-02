@@ -8,16 +8,20 @@ import {
 } from "./reignVisual";
 
 function reign(partial: Partial<Reign> & Pick<Reign, "startAbs" | "endAbs">): Reign {
+  const precision = partial.precision ?? "day";
+  const confidence = precision === "day" ? "day" : precision === "month" ? "month" : "year";
+  const start = { year: 1234, month: 2, day: 9, confidence, ...partial.start };
+  const end = { year: 1234, month: 2, day: 9, confidence, ...partial.end };
   return {
     id: "test",
     dynastyId: "jin",
     personId: "test",
     title: "test",
     eraNames: [],
-    start: { year: 1234, month: 2, day: 9 },
-    end: { year: 1234, month: 2, day: 9 },
-    precision: "day",
     ...partial,
+    start,
+    end,
+    precision,
   };
 }
 
@@ -148,11 +152,10 @@ describe("formatReignSpanTooltip", () => {
       formatReignSpanTooltip(
         reign({
           precision: "year",
-          start: { year: -899, month: 1 },
+          start: { year: -899, month: 1, confidence: "interpolated_by_generation" },
           end: { year: -863, month: 12 },
           startAbs: absMonth(-899, 1),
           endAbs: absMonth(-863, 12),
-          startDateConfidence: "interpolated",
         }),
       ),
     ).toBe("? — -863年");

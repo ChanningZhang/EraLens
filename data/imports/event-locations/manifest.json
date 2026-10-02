@@ -339,11 +339,56 @@
     {
       "label": "汉长安城（DSR地名集，遗址坐标）",
       "url": "https://dsr.nii.ac.jp/digital-maps/dsr/place-names/0133.html.ja"
+    },
+    {
+      "label": "OpenStreetMap：抗战事件地点代表点坐标（WGS84）",
+      "url": "https://www.openstreetmap.org/"
+    },
+    {
+      "label": "北京市委统战部：抗日战争时期的统一战线",
+      "url": "https://www.bjtzb.gov.cn/wwwroot/sdtyzx/publish/article/40/11335.shtml"
+    },
+    {
+      "label": "中央档案馆：档案里的中国抗战—淞沪会战",
+      "url": "https://www.saac.gov.cn/zt/2014-08/25/content_63860.htm"
+    },
+    {
+      "label": "中国政府网：平型关战役",
+      "url": "https://www.gfbzb.gov.cn/zbbm/gfzs/201403/20140314/819958607.html"
+    },
+    {
+      "label": "中央档案馆：档案里的中国抗战—忻口战役",
+      "url": "https://www.saac.gov.cn/zt/2014-08/29/content_64740_2.htm"
+    },
+    {
+      "label": "中国第二历史档案馆：台儿庄大捷及徐州会战",
+      "url": "https://www.saac.gov.cn/zt/2014-09/03/content_65283_4.htm"
+    },
+    {
+      "label": "中央档案馆：档案里的中国抗战—武汉会战",
+      "url": "https://www.saac.gov.cn/zt/2014-09/03/content_65305.htm"
+    },
+    {
+      "label": "湖南省文史研究馆：抗日战争湖南战场史料前言",
+      "url": "https://css.hunan.gov.cn/css/tslm/hxws/wssy/201204/sxrj_52819_13/201609/t20160905_3253626.html"
+    },
+    {
+      "label": "昆仑关战役地理位置与旧址资料",
+      "url": "https://en.wikipedia.org/wiki/Kunlun_Pass"
+    },
+    {
+      "label": "中央纪委国家监委网站：百团大战",
+      "url": "https://m.ccdi.gov.cn/content/bf/ed/5404.html"
+    },
+    {
+      "label": "中国第二历史档案馆：豫湘桂战役与衡阳保卫战",
+      "url": "https://www.saac.gov.cn/zt/2014-09/15/content_67064_3.htm"
     }
   ],
   "notes": [
     "为可定位到具体遗址或区域的事件补地点；迁都事件取迁入地作为代表点，多地点或大范围事件在地点 note 中说明代表点含义。不能可靠定位的事件保持地点为空。",
     "坐标采用 WGS84；来源链接用于核对古称、今地与地点定位。",
-    "新增长安事件地点。史料只定位至长安及征西府，府址具体遗址未定，采用汉长安城遗址范围近似坐标，不指向单一宫殿；事件地点坐标按WGS84记录。"
+    "新增长安事件地点。史料只定位至长安及征西府，府址具体遗址未定，采用汉长安城遗址范围近似坐标，不指向单一宫殿；事件地点坐标按WGS84记录。",
+    "2026-10：为民国包新增的抗战会战和战役配置事件地点；大范围会战仅选历史战役中心或关键转折点作 approximate 代表点，地点 note 明示不代表全战场。坐标取 OpenStreetMap 地理要素的 WGS84 经纬度。"
   ]
 }

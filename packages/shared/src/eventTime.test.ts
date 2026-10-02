@@ -67,7 +67,7 @@ describe("formatEventTime", () => {
     const event = parseEvent({
       id: "chibi",
       name: "赤壁之战",
-      at: { year: 208, month: 12 },
+      at: { year: 208, month: 12, confidence: "month" },
       atAbs: absMonth(208, 12),
       precision: "month",
     });
@@ -80,8 +80,8 @@ describe("formatEventTime", () => {
       name: "夷陵之战",
       timeMode: "span",
       precision: "month",
-      start: { year: 221, month: 7 },
-      end: { year: 222, month: 8 },
+      start: { year: 221, month: 7, confidence: "month" },
+      end: { year: 222, month: 8, confidence: "month" },
       startAbs: absMonth(221, 7),
       endAbs: absMonth(222, 8),
     });

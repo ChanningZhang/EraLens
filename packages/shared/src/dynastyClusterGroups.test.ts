@@ -278,8 +278,8 @@ describe("dynastyClusterGroups", () => {
     expect(frames).toHaveLength(1);
     expect(frames[0]?.group.name).toBe("五代");
     expect(frames[0]?.left).toBe(7);
-    expect(frames[0]?.width).toBe(90);
+    expect(frames[0]?.width).toBe(74);
     expect(frames[0]?.top).toBe(119);
-    expect(frames[0]?.height).toBe(119);
+    expect(frames[0]?.height).toBe(127);
   });
 });

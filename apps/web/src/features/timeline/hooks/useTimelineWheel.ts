@@ -37,8 +37,45 @@ export function createFramePanAccumulator(
   };
 }
 
+/** Fold high-frequency pinch events into one viewport update per paint. */
+export function createFrameZoomAccumulator(
+  apply: (factor: number, clientX: number) => void,
+  schedule: (callback: FrameRequestCallback) => number,
+  cancel: (id: number) => void,
+) {
+  let pendingFactor = 1;
+  let latestClientX = 0;
+  let frame: number | null = null;
+  const flush = () => {
+    if (frame !== null) cancel(frame);
+    frame = null;
+    const factor = pendingFactor;
+    pendingFactor = 1;
+    if (factor !== 1) apply(factor, latestClientX);
+  };
+  return {
+    queue(factor: number, clientX: number) {
+      if (!Number.isFinite(factor) || factor <= 0 || factor === 1) return;
+      pendingFactor *= factor;
+      latestClientX = clientX;
+      if (frame === null) frame = schedule(() => flush());
+    },
+    flush,
+    cancel() {
+      if (frame !== null) cancel(frame);
+      frame = null;
+      pendingFactor = 1;
+    },
+  };
+}
+
 const wheelPan = createFramePanAccumulator(
   (deltaPx) => viewportStore.panByPixels(deltaPx),
+  (callback) => requestAnimationFrame(callback),
+  (id) => cancelAnimationFrame(id),
+);
+const wheelZoom = createFrameZoomAccumulator(
+  (factor, clientX) => viewportStore.zoomBy(factor, resolveAnchorAbs(clientX)),
   (callback) => requestAnimationFrame(callback),
   (id) => cancelAnimationFrame(id),
 );
@@ -159,11 +196,12 @@ function onWheel(event: WheelEvent) {
     wheelPan.flush();
     const factor = wheelZoomFactor(event.deltaY);
     if (Math.abs(factor - 1) > 0.0005) {
-      viewportStore.zoomBy(factor, resolveAnchorAbs(event.clientX));
+      wheelZoom.queue(factor, event.clientX);
     }
     return;
   }
 
+  wheelZoom.flush();
   wheelPan.queue(-wheelDeltaPx(event.deltaX + event.deltaY, event.deltaMode));
 }
 
@@ -177,6 +215,8 @@ let gestureLastScale = 1;
 function onGestureStart(event: Event) {
   if (isEditableTarget(event.target)) return;
   event.preventDefault();
+  wheelPan.flush();
+  wheelZoom.flush();
   gestureLastScale = (event as WebKitGestureEvent).scale;
 }
 
@@ -189,12 +229,13 @@ function onGestureChange(event: Event) {
   gestureLastScale = ge.scale;
   if (Math.abs(factor - 1) <= 0.0005) return;
 
-  viewportStore.zoomBy(factor, resolveAnchorAbs(ge.clientX));
+  wheelZoom.queue(factor, ge.clientX);
 }
 
 function onGestureEnd(event: Event) {
   if (isEditableTarget(event.target)) return;
   event.preventDefault();
+  wheelZoom.flush();
   gestureLastScale = 1;
 }
 

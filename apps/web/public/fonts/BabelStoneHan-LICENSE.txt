@@ -1,5 +1,6 @@
 EraLens ships a tiny WOFF2 subset of BabelStone Han for rare CJK unified
-ideographs used in imported historical data (e.g. 𰯼 U+30BFC, 𧊒 U+27292, 𦈡 U+26221).
+ideographs used in imported historical data (e.g. 㬎 U+3B0E, 𰯼 U+30BFC,
+𧊒 U+27292, 𦈡 U+26221).
 
 Source font: BabelStone Han
 Copyright (c) Andrew West and Arphic Technology Co., Ltd.

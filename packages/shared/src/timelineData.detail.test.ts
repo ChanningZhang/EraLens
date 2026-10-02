@@ -1,21 +1,25 @@
 import { describe, expect, it } from "vitest";
 import { EventSchema, type Reign } from "./schema";
+import { absMonth } from "./time";
 import { buildEntityDetail } from "./timelineData";
 
 function reign(overrides: Partial<Reign> & { templeName?: string }): Reign {
   const { templeName, ...reignOverrides } = overrides;
+  const start = reignOverrides.start ?? { year: 960, month: 1 };
+  const end = reignOverrides.end ?? { year: 976, month: 12 };
+  const precision = reignOverrides.precision ?? "year";
   return {
     id: "reign-test",
     dynastyId: "song-north",
     personId: "zhao-kuangyin",
     title: "宋太祖",
-    start: { year: 960, month: 1 },
-    end: { year: 976, month: 12 },
-    startAbs: 0,
-    endAbs: 1,
-    precision: "year",
     eraNames: ["建隆"],
     ...reignOverrides,
+    start: { ...start, confidence: start.confidence ?? precision },
+    end: { ...end, confidence: end.confidence ?? precision },
+    startAbs: absMonth(start.year, start.month),
+    endAbs: absMonth(end.year, end.month),
+    precision,
   };
 }
 
@@ -56,12 +60,12 @@ describe("buildEntityDetail reign", () => {
     expect(detail.title).toBe("赵匡胤");
     expect(detail.subtitle).toBe("北宋 · 太祖");
     expect(detail.facts).toEqual([
-      { label: "在位", value: "960 — 976" },
+      { label: "在位", value: "960年 — 976年 · 17年" },
       { label: "庙号", value: "太祖" },
       { label: "年号", value: "建隆" },
     ]);
     expect(detail.capitalTenures).toMatchObject([
-      { tenure: { ref: { type: "reign", id: "reign-test" }, abs: 0 } },
+      { tenure: { ref: { type: "reign", id: "reign-test" }, abs: absMonth(960, 1) } },
     ]);
   });
 
@@ -144,7 +148,7 @@ describe("buildEntityDetail reign", () => {
 
     const detail = buildEntityDetail(store, { type: "reign", id: "reign-tang-test" });
 
-    expect(detail.facts).toContainEqual({ label: "在位", value: "712 — 756" });
+    expect(detail.facts).toContainEqual({ label: "在位", value: "712年9月 — 756年8月 · 44年" });
     expect(detail.capitalTenures).toHaveLength(2);
     expect(detail.capitalTenures[0]?.capital.label).toBe("长安");
     expect(detail.capitalTenures[0]?.tenure.label).toBe("712年9月 — 756年8月");
@@ -325,8 +329,8 @@ describe("buildEntityDetail event", () => {
           name: "大西政权建立",
           kind: "battle" as const,
           timeMode: "point" as const,
-          precision: "day" as const,
-          at: { year: 1644, month: 12 },
+          precision: "month" as const,
+          at: { year: 1644, month: 12, confidence: "month" },
           atAbs: 19739,
           dynastyIds: ["daxi"],
           participantIds: [],
@@ -408,7 +412,7 @@ describe("buildEntityDetail event", () => {
 
     expect(detail.subtitle).toBe("文化");
     expect(detail.facts).toEqual([
-      { label: "时间", value: "约-2000年 — -1100年" },
+      { label: "时间", value: "-2000年 — -1100年" },
       { label: "类型", value: "文化" },
       {
         label: "说明",
@@ -489,7 +493,7 @@ describe("buildEntityDetail dynasty", () => {
 
     expect(detail.related.map((item) => item.group)).toEqual(["capital", "event", "idiom"]);
     expect(detail.related[0]?.label).toBe("成都");
-    expect(detail.related[0]?.subtitle).toBe("221 — 263 · 正都");
+    expect(detail.related[0]?.subtitle).toBe("221年 — 263年 · 正都");
     expect(detail.related[1]?.label).toBe("赤壁之战");
     expect(detail.related[2]?.label).toBe("三顾茅庐");
   });
@@ -655,8 +659,9 @@ describe("buildEntityDetail person", () => {
       {
         tenure: {
           ref: { type: "reign", id: "reign-gou-jian-yue-chunqiu" },
-          label: "-496 — -464",
+          label: "-496年 — -464年",
           abs: -5932,
+          duration: "33年",
         },
       },
     ]);
@@ -686,8 +691,8 @@ describe("buildEntityDetail person", () => {
           title: "曹宫伯",
           start: { year: -938, month: 1 },
           end: { year: -903, month: 12 },
-          startAbs: -200,
-          endAbs: -150,
+          startAbs: absMonth(-938, 1),
+          endAbs: absMonth(-903, 12),
           precision: "year",
           eraNames: [],
         },
@@ -695,7 +700,7 @@ describe("buildEntityDetail person", () => {
       persons: [
         {
           id: "cao-gongbo",
-          name: "姬侯",
+          name: "侯",
           ancestralXing: "姬",
           clanShi: "曹",
           roles: ["君主"],
@@ -710,8 +715,9 @@ describe("buildEntityDetail person", () => {
 
     const detail = buildEntityDetail(store, { type: "person", id: "cao-gongbo" });
 
-    expect(detail.title).toBe("宫伯");
+    expect(detail.title).toBe("侯");
     expect(detail.facts).toEqual([
+      { label: "在位", value: "-938年 — -903年 · 36年" },
       { label: "姓", value: "姬" },
       { label: "氏", value: "曹" },
       { label: "名", value: "侯" },
@@ -722,8 +728,9 @@ describe("buildEntityDetail person", () => {
       {
         tenure: {
           ref: { type: "reign", id: "reign-cao-gongbo" },
-          label: "-938 — -903",
-          abs: -200,
+          label: "-938年 — -903年",
+          abs: absMonth(-938, 1),
+          duration: "36年",
         },
       },
     ]);
@@ -790,8 +797,8 @@ describe("buildEntityDetail person", () => {
       "reign-zhu-qizhen-zhengtong",
       "reign-zhu-qizhen-tianshun",
     ]);
-    expect(detail.capitalTenures[0]?.tenure.label).toBe("1436 — 1449");
-    expect(detail.capitalTenures[1]?.tenure.label).toBe("1457 — 1464");
+    expect(detail.capitalTenures[0]?.tenure.label).toBe("1436年 — 1449年");
+    expect(detail.capitalTenures[1]?.tenure.label).toBe("1457年 — 1464年");
     expect(detail.capitalTenures.map((row) => row.tenure.name)).toEqual([
       undefined,
       undefined,
@@ -841,8 +848,8 @@ describe("buildEntityDetail person", () => {
       undefined,
     ]);
     expect(detail.capitalTenures.map((row) => row.tenure.label)).toEqual([
-      "684 — 690",
-      "710 — 712",
+      "684年 — 690年",
+      "710年 — 712年",
     ]);
   });
 
@@ -1091,10 +1098,10 @@ describe("buildEntityDetail person", () => {
     expect(unfocused.reignCount).toBe(2);
     expect(focused.reignCount).toBe(2);
     expect(unfocused.facts.filter((fact) => fact.label === "在位")).toEqual([
-      { label: "在位", value: "1435 — 1449 · 15年\n1457 — 1464 · 8年" },
+      { label: "在位", value: "1435年 — 1449年 · 15年\n1457年 — 1464年 · 8年" },
     ]);
     expect(focused.facts.filter((fact) => fact.label === "在位")).toEqual([
-      { label: "在位", value: "1435 — 1449 · 15年" },
+      { label: "在位", value: "1435年 — 1449年 · 15年" },
     ]);
     expect(unfocused.facts.filter((fact) => fact.label === "年号")).toEqual([
       { label: "年号", value: "正统，天顺" },
@@ -1301,7 +1308,7 @@ describe("buildEntityDetail capital", () => {
     expect(detail.facts).toEqual([
       { label: "归属", value: "唐" },
       { label: "今址", value: "陕西省西安市" },
-      { label: "时段", value: "618 — 904" },
+      { label: "时段", value: "618年 — 904年" },
       { label: "地位", value: "正都" },
     ]);
     expect(detail.summary).toBe("隋唐京师");

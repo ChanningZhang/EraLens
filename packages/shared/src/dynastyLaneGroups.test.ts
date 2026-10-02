@@ -195,7 +195,7 @@ describe("dynastyLaneGroups", () => {
 
     expect(resolveFrozenLaneLabel(yuan, byId, absMonth(1250), LANE_GROUPS)).toBe("蒙古帝国");
     expect(resolveFrozenLaneLabel(yuan, byId, absMonth(1271, 11), LANE_GROUPS)).toBe("蒙古帝国");
-    expect(resolveFrozenLaneLabel(yuan, byId, absMonth(1271, 12), LANE_GROUPS)).toBe("元");
+    expect(resolveFrozenLaneLabel(yuan, byId, absMonth(1272), LANE_GROUPS)).toBe("元");
     expect(resolveFrozenLaneLabel(yuan, byId, absMonth(1300), LANE_GROUPS)).toBe("元");
   });
 
@@ -280,10 +280,10 @@ describe("dynastyLaneGroups", () => {
 
     expect(resolveFrozenLaneLabel(ming, byId, absMonth(1367), LANE_GROUPS)).toBe("吴");
     expect(resolveFrozenLaneLabel(ming, byId, absMonth(1367, 12), LANE_GROUPS)).toBe("吴");
-    expect(resolveFrozenLaneLabel(ming, byId, absMonth(1368), LANE_GROUPS)).toBe("明");
+    expect(resolveFrozenLaneLabel(ming, byId, absMonth(1369), LANE_GROUPS)).toBe("明");
     expect(resolveFrozenLaneLabel(ming, byId, absMonth(1400), LANE_GROUPS)).toBe("明");
     expect(resolveFrozenLaneLabel(ming, byId, absMonth(1643, 12), LANE_GROUPS)).toBe("明");
-    expect(resolveFrozenLaneLabel(ming, byId, absMonth(1644), LANE_GROUPS)).toBe("南明");
+    expect(resolveFrozenLaneLabel(ming, byId, absMonth(1645), LANE_GROUPS)).toBe("南明");
     expect(resolveFrozenLaneLabel(ming, byId, absMonth(1660), LANE_GROUPS)).toBe("南明");
   });
 

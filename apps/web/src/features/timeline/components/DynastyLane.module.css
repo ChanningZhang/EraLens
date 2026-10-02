@@ -14,8 +14,9 @@
   position: relative;
   height: var(--dynasty-bar-height);
   margin: 0;
-  /* Clip at the shared rail; negative vertical inset keeps captions visible. */
-  clip-path: inset(-64px 0 -64px var(--timeline-gutter));
+  /* Caption rows can extend arbitrarily far below short reigns. The lane
+     height already reserves all of them, including bottom padding. */
+  clip-path: inset(-64px 0 calc(var(--dynasty-bar-height) - var(--dynasty-lane-height)) var(--timeline-gutter));
 }
 
 .frozenLabel {
@@ -26,8 +27,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: var(--timeline-rail-label-width, 80px);
-  min-width: var(--timeline-rail-label-width, 80px);
+  width: var(--timeline-rail-label-width, 64px);
+  min-width: var(--timeline-rail-label-width, 64px);
   height: var(--timeline-rail-chip-height, 36px);
   padding: 0 8px;
   appearance: none;
@@ -75,8 +76,10 @@
 
 .labelText {
   display: flex;
+  width: 100%;
   min-width: 0;
   max-width: 100%;
+  justify-content: center;
   position: relative;
   z-index: 1;
 }
@@ -85,12 +88,14 @@
   display: block;
   margin: 0;
   font-family: "EraLens Lane Serif", var(--font-serif);
+  width: 100%;
   font-size: 12px;
   font-weight: 600;
-  line-height: 1.2;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  line-height: 1.05;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .cards {

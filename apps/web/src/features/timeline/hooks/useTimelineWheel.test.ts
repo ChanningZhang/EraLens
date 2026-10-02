@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   applyStageVerticalScroll,
   createFramePanAccumulator,
+  createFrameZoomAccumulator,
   isStageVerticallyScrollable,
   isZoomWheel,
   resolveWheelAction,
@@ -65,6 +66,63 @@ describe("createFramePanAccumulator", () => {
     pan.cancel();
 
     expect(callbacks.size).toBe(0);
+    expect(applied).toEqual([]);
+  });
+});
+
+describe("createFrameZoomAccumulator", () => {
+  function harness() {
+    const applied: Array<{ factor: number; clientX: number }> = [];
+    const callbacks = new Map<number, FrameRequestCallback>();
+    let nextId = 1;
+    const zoom = createFrameZoomAccumulator(
+      (factor, clientX) => applied.push({ factor, clientX }),
+      (callback) => { const id = nextId++; callbacks.set(id, callback); return id; },
+      (id) => { callbacks.delete(id); },
+    );
+    return { zoom, applied, callbacks };
+  }
+
+  it("combines both fingers' moves into one zoom per frame using the latest midpoint", () => {
+    const { zoom, applied, callbacks } = harness();
+    zoom.queue(110 / 100, 180);
+    zoom.queue(120 / 110, 185);
+    zoom.queue(130 / 120, 190);
+    expect(callbacks.size).toBe(1);
+    expect(applied).toEqual([]);
+    callbacks.get(1)?.(0);
+    expect(applied).toHaveLength(1);
+    expect(applied[0]!.factor).toBeCloseTo(130 / 100);
+    expect(applied[0]!.clientX).toBe(190);
+    expect(callbacks.size).toBe(0);
+    zoom.queue(0.9, 200);
+    zoom.flush();
+    expect(applied[1]).toEqual({ factor: 0.9, clientX: 200 });
+    expect(callbacks.size).toBe(0);
+  });
+
+  it("flushes the last movement at gesture end and discards canceled frames", () => {
+    const { zoom, applied, callbacks } = harness();
+    zoom.queue(1.2, 150);
+    zoom.flush();
+    zoom.flush();
+    expect(applied).toEqual([{ factor: 1.2, clientX: 150 }]);
+    zoom.queue(0.8, 200);
+    zoom.cancel();
+    expect(callbacks.size).toBe(0);
+    expect(applied).toHaveLength(1);
+    zoom.queue(1.1, 210);
+    zoom.flush();
+    expect(applied[1]).toEqual({ factor: 1.1, clientX: 210 });
+  });
+
+  it("skips unchanged and invalid scales and folds opposing movement", () => {
+    const { zoom, applied, callbacks } = harness();
+    for (const factor of [1, 0, -1, NaN, Infinity]) zoom.queue(factor, 100);
+    expect(callbacks.size).toBe(0);
+    zoom.queue(2, 100);
+    zoom.queue(0.5, 100);
+    zoom.flush();
     expect(applied).toEqual([]);
   });
 });

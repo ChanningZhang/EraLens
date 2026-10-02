@@ -149,6 +149,11 @@ export function capitalOwnsAbs(capital: TimedCapital, capitals: readonly TimedCa
   return intervalContainsAbs(capitalOwnershipInterval(capital, capitals), atAbs);
 }
 
+/** Recorded capital span lookup for lane succession matching; ownership arbitration is applied by capitalOwnsAbs. */
+export function capitalRecordCoversAbs(capital: TimedCapital, atAbs: number): boolean {
+  return intervalContainsAbs(leftOpenRightClosedInterval(capital.startAbs, capital.endAbs), atAbs);
+}
+
 export function activeReignsAtAbs(reigns: readonly Reign[], atAbs: number): Reign[] {
   // Recorded month bounds are a cheap superset of the precise ownership interval.
   return reigns.filter((reign) =>

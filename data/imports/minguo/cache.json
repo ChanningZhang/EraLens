@@ -1858,6 +1858,510 @@
       },
       "summary": "解放军渡江后国民党退守台湾，中华民国大陆时期终结。",
       "atAbs": 23399
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "jiang-jieshi"
+      ],
+      "id": "pingjin-campaign",
+      "name": "平津作战",
+      "start": {
+        "year": 1937,
+        "month": 7,
+        "abs": 23250,
+        "confidence": "month"
+      },
+      "end": {
+        "year": 1937,
+        "month": 8,
+        "abs": 23251,
+        "confidence": "month"
+      },
+      "dateNote": "1937年7月至8月；各地战斗与撤退日期不一，按战事阶段记月。",
+      "summary": "七七事变后，日军向平津地区扩大进攻，国民政府军与第二十九军等部在北平、天津及南苑一带抵抗。北平、天津先后失守，华北战事迅速扩大；这场作战揭示局部冲突已演变为全面战争。",
+      "startAbs": 23250,
+      "endAbs": 23251,
+      "locationId": "loc-pingjin-campaign"
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "jiang-jieshi"
+      ],
+      "id": "shanghai-campaign-1937",
+      "name": "淞沪会战",
+      "start": {
+        "year": 1937,
+        "month": 8,
+        "abs": 23251,
+        "confidence": "month"
+      },
+      "end": {
+        "year": 1937,
+        "month": 11,
+        "abs": 23254,
+        "confidence": "month"
+      },
+      "dateNote": "1937年8月13日至11月12日；以月精度记录持续区间。",
+      "summary": "1937年8月，国民政府军在上海主动投入大规模作战，试图牵制日军并争取国际关注。双方围绕闸北、江湾、大场及沿海登陆地持续激战，中国军队坚守三个月后因日军增援登陆而撤退，上海失守；会战粉碎了日方速胜预期，也使战争迅速扩展。",
+      "startAbs": 23251,
+      "endAbs": 23254,
+      "locationId": "loc-shanghai-campaign-1937"
+    },
+    {
+      "kind": "battle",
+      "timeMode": "point",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "lin-biao"
+      ],
+      "id": "pingxingguan-battle",
+      "name": "平型关战斗",
+      "at": {
+        "year": 1937,
+        "month": 9,
+        "day": 25,
+        "abs": 23252,
+        "confidence": "day"
+      },
+      "dateNote": "1937年9月25日；与平型关正面防御作战相关，但两者不是同一场战斗。",
+      "summary": "太原会战期间，八路军第115师在山西灵丘平型关附近伏击日军辎重部队，配合第二战区阻击行动。战斗缴获物资并打击日军推进，其胜利提振了全国抗战信心；此处记录的是平型关伏击战，不把战果数字写成未经交叉核实的确定值。",
+      "atAbs": 23252,
+      "locationId": "loc-pingxingguan-battle"
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "yan-xishan"
+      ],
+      "id": "xinkou-battle",
+      "name": "忻口战役",
+      "start": {
+        "year": 1937,
+        "month": 10,
+        "abs": 23253,
+        "confidence": "month"
+      },
+      "end": {
+        "year": 1937,
+        "month": 11,
+        "abs": 23254,
+        "confidence": "month"
+      },
+      "dateNote": "1937年10月13日忻口正面战斗开始，11月上旬战线撤退；按月精度记载。",
+      "summary": "日军突破内长城防线后，第二战区在忻口组织防御，由阎锡山统筹、卫立煌等指挥前线部队，八路军在日军侧后开展袭扰以配合作战。双方在阵地攻防中持续激战，守军最终因娘子关方向失守及太原受威胁而撤退；这是国共军队协同抗战的重要战例。",
+      "startAbs": 23253,
+      "endAbs": 23254,
+      "locationId": "loc-xinkou-battle"
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "yan-xishan"
+      ],
+      "id": "taiyuan-campaign",
+      "name": "太原会战",
+      "start": {
+        "year": 1937,
+        "month": 9,
+        "abs": 23252,
+        "confidence": "month"
+      },
+      "end": {
+        "year": 1937,
+        "month": 11,
+        "abs": 23254,
+        "confidence": "month"
+      },
+      "dateNote": "1937年9月至11月；不同战史对会战起讫界定略有差异，按战役阶段记月。",
+      "summary": "日军沿平绥、同蒲等方向进攻山西，第二战区依托长城、平型关、忻口及太原外围组织防御。平型关、忻口等战斗迟滞日军，但日军从娘子关方向突破后，太原于11月失守，山西正面防线瓦解；会战由此成为华北战局的重要转折。",
+      "startAbs": 23252,
+      "endAbs": 23254,
+      "locationId": "loc-taiyuan-campaign"
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "jiang-jieshi",
+        "li-zongren"
+      ],
+      "id": "xuzhou-campaign",
+      "name": "徐州会战",
+      "start": {
+        "year": 1938,
+        "month": 1,
+        "abs": 23256,
+        "confidence": "month"
+      },
+      "end": {
+        "year": 1938,
+        "month": 5,
+        "abs": 23260,
+        "confidence": "month"
+      },
+      "dateNote": "1938年初至5月徐州撤退；各战斗跨多个省份且起讫口径不一。",
+      "summary": "日军为打通津浦铁路、连接南北战场，分别由山东和长江下游向徐州合击。中国军队在临沂、台儿庄等地阻击后撤出徐州，避免被合围；日军虽占领徐州，却未能围歼中国主力，随后在武汉方向继续推进。台儿庄战役是徐州会战中的关键胜利，另作独立事件记录。",
+      "startAbs": 23256,
+      "endAbs": 23260,
+      "locationId": "loc-xuzhou-campaign"
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "li-zongren"
+      ],
+      "id": "taierzhuang-battle",
+      "name": "台儿庄战役",
+      "start": {
+        "year": 1938,
+        "month": 3,
+        "abs": 23258,
+        "confidence": "month"
+      },
+      "end": {
+        "year": 1938,
+        "month": 4,
+        "abs": 23259,
+        "confidence": "month"
+      },
+      "dateNote": "1938年3月23日至4月7日；中国第二历史档案馆档案专题采用此战斗区间。",
+      "summary": "徐州会战中，日军沿津浦线南下争夺台儿庄。第五战区司令长官李宗仁调集部队防守，并组织侧翼反击；中国军队在台儿庄及其周边与日军反复争夺，迫使日军撤退。这是全面抗战以来正面战场的重要胜利，显著鼓舞了全国抗战士气。",
+      "startAbs": 23258,
+      "endAbs": 23259,
+      "locationId": "loc-taierzhuang-battle"
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "jiang-jieshi"
+      ],
+      "id": "wuhan-campaign",
+      "name": "武汉会战",
+      "start": {
+        "year": 1938,
+        "month": 6,
+        "abs": 23261,
+        "confidence": "month"
+      },
+      "end": {
+        "year": 1938,
+        "month": 10,
+        "abs": 23265,
+        "confidence": "month"
+      },
+      "dateNote": "1938年6月至10月；武汉于10月25日被日军占领，按月记录会战区间。",
+      "summary": "南京失守后，武汉成为中国重要政治、军事中心。日军自长江南北多路进攻，国民政府军在大别山、长江沿线及万家岭等地节节抵抗；万家岭取得局部胜利，但武汉最终于10月失守。大规模抵抗迟滞日军攻势，标志战争由战略防御转入相持阶段。",
+      "startAbs": 23261,
+      "endAbs": 23265,
+      "locationId": "loc-wuhan-campaign"
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "jiang-jieshi"
+      ],
+      "id": "nanchang-campaign",
+      "name": "南昌会战",
+      "start": {
+        "year": 1939,
+        "month": 3,
+        "abs": 23270,
+        "confidence": "month"
+      },
+      "end": {
+        "year": 1939,
+        "month": 5,
+        "abs": 23272,
+        "confidence": "month"
+      },
+      "dateNote": "1939年3月至5月；南昌于3月27日失守，反攻延续至5月。",
+      "summary": "为控制浙赣铁路并巩固武汉外围，日军于1939年春进攻南昌。中国军队在修水、南昌及周边地区抵抗，南昌于3月下旬失守，随后中国军队发动反攻但未能收复城市；会战反映出相持阶段日军仍持续争夺交通线和战略据点。",
+      "startAbs": 23270,
+      "endAbs": 23272,
+      "locationId": "loc-nanchang-campaign"
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [],
+      "id": "first-changsha-campaign",
+      "name": "第一次长沙会战",
+      "start": {
+        "year": 1939,
+        "month": 9,
+        "abs": 23276,
+        "confidence": "month"
+      },
+      "end": {
+        "year": 1939,
+        "month": 10,
+        "abs": 23277,
+        "confidence": "month"
+      },
+      "dateNote": "1939年9月至10月；日期依据湖南省档案馆与中国第二历史档案馆整理的湖南战场史料。",
+      "summary": "日军第十一军从赣北、鄂南和湘北进攻，企图消灭第九战区主力并迫使中国政府屈服。薛岳指挥中国军队逐步抵抗、诱敌深入后反击，日军推进至长沙外围后撤退并恢复战前态势；这是相持阶段双方围绕湖南交通与战区主力展开的重要会战。",
+      "startAbs": 23276,
+      "endAbs": 23277,
+      "locationId": "loc-first-changsha-campaign"
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [],
+      "id": "kunlun-pass-battle",
+      "name": "昆仑关战役",
+      "start": {
+        "year": 1939,
+        "month": 12,
+        "abs": 23279,
+        "confidence": "month"
+      },
+      "end": {
+        "year": 1940,
+        "month": 1,
+        "abs": 23280,
+        "confidence": "month"
+      },
+      "dateNote": "1939年12月至1940年1月；战斗起于12月中旬，昆仑关于1940年1月收复。",
+      "summary": "日军占领南宁后威胁桂越交通与西南后方，中国军队集中力量反攻昆仑关。第五军等部在杜聿明指挥下与日军激战并一度攻克关隘，随后守住战果；战斗迟滞了日军向桂林、柳州方向的推进，成为桂南会战中的关键战役。",
+      "startAbs": 23279,
+      "endAbs": 23280,
+      "locationId": "loc-kunlun-pass-battle"
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "zhu-de",
+        "peng-dehuai"
+      ],
+      "id": "hundred-regiments-campaign",
+      "name": "百团大战",
+      "start": {
+        "year": 1940,
+        "month": 8,
+        "abs": 23287,
+        "confidence": "month"
+      },
+      "end": {
+        "year": 1941,
+        "month": 1,
+        "abs": 23292,
+        "confidence": "month"
+      },
+      "dateNote": "1940年8月20日发起，战役阶段延续至1941年1月；不同战史对阶段划分有差异。",
+      "summary": "为破击华北日军交通线、打击据点封锁，八路军在总部统一指挥下发动大规模进攻，重点攻击正太铁路，并扩展至同蒲、平汉等交通线。战役初期参战部队超过百个团，故称“百团大战”；铁路与据点遭到破坏，日军随后加强报复性“扫荡”，敌后战场的作战形态也随之变化。",
+      "startAbs": 23287,
+      "endAbs": 23292,
+      "locationId": "loc-hundred-regiments-campaign"
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [],
+      "id": "second-changsha-campaign",
+      "name": "第二次长沙会战",
+      "start": {
+        "year": 1941,
+        "month": 9,
+        "abs": 23300,
+        "confidence": "month"
+      },
+      "end": {
+        "year": 1941,
+        "month": 10,
+        "abs": 23301,
+        "confidence": "month"
+      },
+      "dateNote": "1941年9月至10月；按湖南战场史料所载会战阶段记月。",
+      "summary": "日军第十一军再次进攻长沙，企图重创第九战区并迫使中国方面妥协。薛岳指挥守军在湘北阻击并反攻，日军一度突入长沙后因补给和后方受威胁而撤退，未能达成作战目标；会战显示日军仍试图以局部攻势改变相持态势。",
+      "startAbs": 23300,
+      "endAbs": 23301,
+      "locationId": "loc-second-changsha-campaign"
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [],
+      "id": "third-changsha-campaign",
+      "name": "第三次长沙会战",
+      "start": {
+        "year": 1941,
+        "month": 12,
+        "abs": 23303,
+        "confidence": "month"
+      },
+      "end": {
+        "year": 1942,
+        "month": 1,
+        "abs": 23304,
+        "confidence": "month"
+      },
+      "dateNote": "1941年12月至1942年1月；湖南省档案馆与中国第二历史档案馆战场史料记载会战起讫。",
+      "summary": "太平洋战争爆发后，日军为牵制中国军队并打通粤汉铁路，再度进攻长沙。第九战区以一部守城、主力在外围反击，长沙守军顶住日军猛攻后，中国军队于1942年1月转入反攻，日军撤退至新墙河以北；此次胜利提升了盟国对中国战场的关注。",
+      "startAbs": 23303,
+      "endAbs": 23304,
+      "locationId": "loc-third-changsha-campaign"
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [],
+      "id": "changde-campaign",
+      "name": "常德会战",
+      "start": {
+        "year": 1943,
+        "month": 11,
+        "abs": 23326,
+        "confidence": "month"
+      },
+      "end": {
+        "year": 1943,
+        "month": 12,
+        "abs": 23327,
+        "confidence": "month"
+      },
+      "dateNote": "1943年11月至12月；常德于12月初失守，月底日军撤退。",
+      "summary": "日军为控制洞庭湖西侧交通并削弱第六战区，于1943年冬进攻常德。守城部队在孤立状态下坚守，常德一度陷落；中国军队随后合围反攻，日军撤出并恢复战前态势。会战中日军大量使用毒气，守城与反攻成为相持阶段湖南战场的重要战事。",
+      "startAbs": 23326,
+      "endAbs": 23327,
+      "locationId": "loc-changde-campaign"
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "jiang-jieshi"
+      ],
+      "id": "yuxianggui-campaign",
+      "name": "豫湘桂会战",
+      "start": {
+        "year": 1944,
+        "month": 4,
+        "abs": 23331,
+        "confidence": "month"
+      },
+      "end": {
+        "year": 1944,
+        "month": 12,
+        "abs": 23339,
+        "confidence": "month"
+      },
+      "dateNote": "1944年春至冬，分豫中、长衡、桂柳等阶段；按整体作战年度记载。",
+      "summary": "日本为打通大陆交通线、连接华北与越南方向，发动“一号作战”，中国方面称豫湘桂会战。日军先后进攻河南、湖南、广西，攻占多座城市和机场；中国军队在局部战场持续抵抗，但整体防线严重崩溃，日军获得交通线并造成大规模难民流离。长衡会战及衡阳保卫战是其中的重要阶段，另作独立事件记录。",
+      "startAbs": 23331,
+      "endAbs": 23339,
+      "locationId": "loc-yuxianggui-campaign"
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [],
+      "id": "hengyang-defense",
+      "name": "衡阳保卫战",
+      "start": {
+        "year": 1944,
+        "month": 6,
+        "abs": 23333,
+        "confidence": "month"
+      },
+      "end": {
+        "year": 1944,
+        "month": 8,
+        "abs": 23335,
+        "confidence": "month"
+      },
+      "dateNote": "1944年6月下旬至8月上旬；按中国第二历史档案馆专题记录。",
+      "summary": "豫湘桂会战期间，日军围攻衡阳以控制粤汉铁路。第十军军长方先觉指挥守军依托工事顽强抵抗，日军多次进攻受挫；援军未能解围、弹药补给断绝后，衡阳于8月上旬失守。长期守城迟滞了日军推进，也成为豫湘桂战局中抵抗最持久的战斗之一。",
+      "startAbs": 23333,
+      "endAbs": 23335,
+      "locationId": "loc-hengyang-defense"
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [],
+      "id": "western-hunan-campaign",
+      "name": "湘西会战",
+      "start": {
+        "year": 1945,
+        "month": 4,
+        "abs": 23343,
+        "confidence": "month"
+      },
+      "end": {
+        "year": 1945,
+        "month": 6,
+        "abs": 23345,
+        "confidence": "month"
+      },
+      "dateNote": "1945年4月至6月；又称雪峰山战役，具体起讫日期依不同战史略有差异。",
+      "summary": "日军为夺取芷江机场、改善在华战局，向湘西发动进攻。中国军队依托雪峰山地形防御并转入反击，日军在连续战斗后撤退，未能攻占芷江；这是中国正面战场由防御转入反攻的重要会战，也是日本投降前中国战场最后一场大型会战。",
+      "startAbs": 23343,
+      "endAbs": 23345,
+      "locationId": "loc-western-hunan-campaign"
     }
   ],
   "relations": [
@@ -2290,6 +2794,42 @@
       {
         "label": "交接日期复核来源",
         "url": "https://www.president.gov.tw/News/28428"
+      },
+      {
+        "label": "中央档案馆：档案里的中国抗战—淞沪会战",
+        "url": "https://www.saac.gov.cn/zt/2014-08/25/content_63860.htm"
+      },
+      {
+        "label": "中央档案馆：档案里的中国抗战—忻口战役",
+        "url": "https://www.saac.gov.cn/zt/2014-08/29/content_64740_2.htm"
+      },
+      {
+        "label": "中国第二历史档案馆：台儿庄大捷",
+        "url": "https://www.saac.gov.cn/zt/2014-09/03/content_65283_4.htm"
+      },
+      {
+        "label": "中央档案馆：档案里的中国抗战—武汉会战",
+        "url": "https://www.saac.gov.cn/zt/2014-09/03/content_65305.htm"
+      },
+      {
+        "label": "湖南省文史研究馆：抗日战争湖南战场史料前言",
+        "url": "https://css.hunan.gov.cn/css/tslm/hxws/wssy/201204/sxrj_52819_13/201609/t20160905_3253626.html"
+      },
+      {
+        "label": "中央纪委国家监委网站：百团大战",
+        "url": "https://m.ccdi.gov.cn/content/bf/ed/5404.html"
+      },
+      {
+        "label": "中国第二历史档案馆：豫湘桂战役与衡阳保卫战",
+        "url": "https://www.saac.gov.cn/zt/2014-09/15/content_67064_3.htm"
+      },
+      {
+        "label": "中国政府网：平型关战役",
+        "url": "https://www.gfbzb.gov.cn/zbbm/gfzs/201403/20140314/819958607.html"
+      },
+      {
+        "label": "北京市委统战部：抗日战争时期的统一战线",
+        "url": "https://www.bjtzb.gov.cn/wwwroot/sdtyzx/publish/article/40/11335.shtml"
       }
     ],
     "notes": [
@@ -2302,7 +2842,8 @@
       "正统金色截于 1949 年 9 月（十月一日中华人民共和国成立后迁台续统不上金）。1949 年后的台湾地区任期在 reign.title 统一标为「领导人」，人物概述不用「总统」。",
       "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
       "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
-      "2026-10-02 相邻在位边界复核：reign-lai-qingde-roc start：总统府2024年5月20日就职新闻可核到日，既有day=20应标day而非month。"
+      "2026-10-02 相邻在位边界复核：reign-lai-qingde-roc start：总统府2024年5月20日就职新闻可核到日，既有day=20应标day而非month。",
+      "2026-10：补充1937–1945年全面抗战代表性会战与战役；会战级事件与平型关、台儿庄、衡阳等关键战斗分开表达，重叠处在摘要及 dateNote 说明。日期按来源能支持的月精度记录；战果数字存在不同战史口径时不填确定数字。"
     ]
   }
 }

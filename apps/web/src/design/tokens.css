@@ -44,9 +44,9 @@
   --detail-min-width: 360px;
   --detail-max-width: 640px;
   --timeline-rail-inset: 12px;
-  --timeline-rail-label-width: 80px;
+  --timeline-rail-label-width: 64px;
   --timeline-rail-gap: 10px;
-  --timeline-gutter: 102px;
+  --timeline-gutter: 86px;
   --timeline-rail-bg:
     linear-gradient(
       165deg,

@@ -28,7 +28,7 @@ describe("searchEntities person aliases", () => {
         ref: { type: "person", id: "lv-shang" },
         label: "吕尚",
         subtitle: "君主 · 军事家 · 政治家",
-        abs: absMonth(-1156, 1),
+        abs: (absMonth(-1156, 1) + absMonth(-1017, 1)) / 2,
       },
     ]);
   });
@@ -145,7 +145,7 @@ describe("searchEntities era names", () => {
         ref: { type: "reign", id: "reign-song-taizu-jianlong" },
         label: "建隆",
         subtitle: "赵匡胤 · 宋",
-        abs: absMonth(960, 1),
+        abs: Math.floor((absMonth(960, 1) + absMonth(976, 12)) / 2),
       },
     ]);
   });
@@ -197,7 +197,7 @@ describe("searchEntities capitals", () => {
         ref: { type: "capital", id: "cap-tang-changan" },
         label: "长安",
         subtitle: "陕西省西安市 · 唐 · 都城",
-        abs: absMonth(618, 1),
+        abs: (absMonth(618, 1) + absMonth(904, 12)) / 2,
       },
     ]);
   });

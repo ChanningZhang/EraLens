@@ -29,7 +29,7 @@ import { useLaneColorCatalog } from "../hooks/useLaneColorCatalog";
 import { useStageViewportSize } from "../hooks/useStageViewportHeight";
 import { resolveChinaMapInsets, resolveChinaMapLayout } from "../model/chinaMapProjection";
 import { useTimelineCatalog } from "../hooks/useTimelineCatalog";
-import { createFramePanAccumulator } from "../hooks/useTimelineWheel";
+import { createFramePanAccumulator, createFrameZoomAccumulator } from "../hooks/useTimelineWheel";
 import { useViewport } from "../hooks/useViewport";
 import { useSelection } from "../hooks/useSelection";
 import { viewportStore } from "../state/viewportStore";
@@ -52,7 +52,6 @@ import {
   personLayerHeight,
 } from "../model/personLayout";
 import {
-  assignReignStacks,
   dynastyBarHeightForReigns,
   dynastyLaneHeightForViewport,
   partitionReignRecords,
@@ -73,6 +72,7 @@ import { layoutReignFates } from "../model/reignFateLayout";
 const StableChinaMapBackground = memo(ChinaMapBackground);
 const EVENT_CONTROL_LANE_CLEARANCE = 10;
 const DEFAULT_VISIBLE_EVENT_LANES = 2;
+const MAP_OFFSET = { x: 0, y: 0 };
 
 function laneColorTokenFor(
   map: ReadonlyMap<string, ReturnType<typeof fallbackLaneColorToken>>,
@@ -98,6 +98,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   } | null>(null);
   const timelineInertiaRef = useRef<number | null>(null);
   const timelinePanRef = useRef<ReturnType<typeof createFramePanAccumulator> | null>(null);
+  const timelineZoomRef = useRef<ReturnType<typeof createFrameZoomAccumulator> | null>(null);
   const [eventsExpanded, setEventsExpanded] = useState(false);
   const [mapScale, setMapScale] = useState(1);
   const stageViewportSize = useStageViewportSize(stageRef);
@@ -130,6 +131,26 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       (id) => cancelAnimationFrame(id),
     );
     return timelinePanRef.current;
+  };
+
+  const timelineZoom = () => {
+    timelineZoomRef.current ??= createFrameZoomAccumulator(
+      (factor, clientX) => {
+        const stage = stageRef.current;
+        if (!stage) return;
+        // Resolve the anchor once per frame, before that frame's DOM writes.
+        const rect = stage.getBoundingClientRect();
+        const localX = clientX - rect.left;
+        const viewport = viewportStore.getSnapshot();
+        const anchorAbs = localX < viewport.gutterPx || localX > rect.width
+          ? viewport.centerAbs
+          : absFromStageX(viewport, localX);
+        viewportStore.zoomBy(factor, anchorAbs);
+      },
+      (callback) => requestAnimationFrame(callback),
+      (id) => cancelAnimationFrame(id),
+    );
+    return timelineZoomRef.current;
   };
 
   const startTimelineInertia = (initialVelocity: number) => {
@@ -191,14 +212,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       const distance = Math.max(1, Math.hypot(a.x - b.x, a.y - b.y));
       const midpointX = (a.x + b.x) / 2;
       if (gesture.mode === "pinch" && gesture.distance > 0) {
-        timelinePan().flush();
-        const rect = event.currentTarget.getBoundingClientRect();
-        const localX = midpointX - rect.left;
-        const viewport = viewportStore.getSnapshot();
-        const anchorAbs = localX < viewport.gutterPx || localX > rect.width
-          ? viewport.centerAbs
-          : absFromStageX(viewport, localX);
-        viewportStore.zoomBy(distance / gesture.distance, anchorAbs);
+        timelineZoom().queue(distance / gesture.distance, midpointX);
       }
       timelineGestureRef.current = { ...gesture, mode: "pinch", distance, x: midpointX, y: (a.y + b.y) / 2 };
       event.preventDefault();
@@ -245,12 +259,14 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     const gesture = timelineGestureRef.current;
     timelineGestureRef.current = null;
     timelinePanRef.current?.flush();
+    timelineZoomRef.current?.flush();
     if (event.currentTarget.hasPointerCapture(event.pointerId)) event.currentTarget.releasePointerCapture(event.pointerId);
     if (gesture?.mode === "pan" && timelinePointersRef.current.size === 0) startTimelineInertia(gesture.velocity);
   };
   useEffect(() => () => {
     stopTimelineInertia();
     timelinePanRef.current?.cancel();
+    timelineZoomRef.current?.cancel();
   }, []);
 
   const dynastiesById = useMemo(() => {
@@ -451,7 +467,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     return map;
   }, [data]);
 
-  // Ownership, stacking, and caption height are independent of pan position.
+  // Keep lane record identities across zoom frames so static geometry stays cached.
   const lanePreparedCache = useMemo(
     () => new Map<string, {
       records: NonNullable<typeof data>["reigns"];
@@ -459,11 +475,12 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       missingReigns: NonNullable<typeof data>["reigns"];
       geometry: ReturnType<typeof prepareLaneReignGeometry>;
       height: number;
+      pxPerMonth: number;
       visibleReigns?: Reign[];
       visibleMissingReigns?: Reign[];
     }>(),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [reignsByDynasty, laneGroups, viewport.pxPerMonth, viewport.presentation.rowHeightPx, viewport.presentation.lanePaddingPx, personNames, personDisplay],
+    [reignsByDynasty, laneGroups, viewport.presentation.rowHeightPx, viewport.presentation.lanePaddingPx, personNames, personDisplay],
   );
 
   const lanes = useMemo(() => {
@@ -484,9 +501,11 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       previousClusterId = clusterId;
       hasPreviousLane = true;
       let prepared = lanePreparedCache.get(dynasty.id);
-      if (!prepared) {
-        const records = collectLaneReigns(dynasty.id, reignsByDynasty, laneGroups);
-        const { rulers: reigns, missing: missingReigns } = partitionReignRecords(records);
+      if (!prepared || prepared.pxPerMonth !== viewport.pxPerMonth) {
+        const records = prepared?.records ?? collectLaneReigns(dynasty.id, reignsByDynasty, laneGroups);
+        const { rulers: reigns, missing: missingReigns } = prepared
+          ? { rulers: prepared.reigns, missing: prepared.missingReigns }
+          : partitionReignRecords(records);
         const geometry = prepareLaneReignGeometry(
           reigns,
           laneGroups,
@@ -501,8 +520,9 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
           viewport,
           personNames,
           personDisplay,
+          geometry,
         );
-        prepared = { records, reigns, missingReigns, geometry, height };
+        prepared = { ...prepared, records, reigns, missingReigns, geometry, height, pxPerMonth: viewport.pxPerMonth };
         lanePreparedCache.set(dynasty.id, prepared);
       }
       const { records, reigns, missingReigns, geometry, height } = prepared;
@@ -652,7 +672,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
           <StableChinaMapBackground
             layout={mapLayout}
             scale={mapScale}
-            offset={{ x: 0, y: 0 }}
+            offset={MAP_OFFSET}
           />
         </div>
       </div>
@@ -763,7 +783,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
             atAbs={labelAnchorAbs}
             layout={mapLayout}
             scale={mapScale}
-            offset={{ x: 0, y: 0 }}
+            offset={MAP_OFFSET}
           />
         </div>
       </div>
@@ -774,7 +794,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
             atAbs={viewport.centerAbs}
             layout={mapLayout}
             scale={mapScale}
-            offset={{ x: 0, y: 0 }}
+            offset={MAP_OFFSET}
           />
         </div>
       </div>

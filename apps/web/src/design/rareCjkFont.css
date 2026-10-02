@@ -1,11 +1,11 @@
-/* Subset of BabelStone Han (Arphic Public License) for SIP/TIP glyphs in timeline data. */
+/* Subset of BabelStone Han (Arphic Public License) for rare CJK glyphs in timeline data. */
 @font-face {
   font-family: "EraLens Rare CJK";
   font-style: normal;
   font-weight: 400;
   font-display: swap;
   src:
-    local("BabelStone Han"),
+    local("EraLens Rare CJK"),
     url("/fonts/rare-cjk.woff2") format("woff2");
-  unicode-range: U+26221, U+27292, U+29D66, U+30BFC;
+  unicode-range: U+3B0E, U+26221, U+27292, U+29D66, U+30BFC;
 }

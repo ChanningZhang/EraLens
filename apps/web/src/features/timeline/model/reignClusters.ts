@@ -37,6 +37,7 @@ export const CAPTION_ROW_SPACING_PX = 14;
 /** Matches the 12px caption font in ReignCard.module.css. */
 const CAPTION_GLYPH_WIDTH_PX = 12;
 const CAPTION_COLLISION_GAP_PX = 4;
+const EMPTY_LANE_GROUPS: readonly DynastyLaneGroup[] = [];
 
 export type StackedReign = {
   reign: Reign;
@@ -48,7 +49,7 @@ export type StackedCardUnit = {
   unitHeight: number;
 };
 
-/** Pan-independent card geometry. Build once per lane data revision. */
+/** Card geometry with scale-dependent caption placement. */
 export type PreparedReignGeometry = StackedCardUnit & {
   startAbs: number;
   endExclusive: number;
@@ -61,14 +62,36 @@ export type PreparedReignGeometry = StackedCardUnit & {
   captionRow: number;
 };
 
-export function prepareLaneReignGeometry(
+export type PreparedLaneReignGeometry = {
+  items: StackedReign[];
+  byId: Map<string, PreparedReignGeometry>;
+  barHeight: number;
+  rowCount: number;
+  paintedBottom: number;
+};
+
+// Lane records and groups are immutable data revisions. Weak keys release old
+// slices without retaining a cache for every visited era or zoom level.
+const laneGeometryCache = new WeakMap<readonly Reign[], WeakMap<readonly DynastyLaneGroup[], Map<number, PreparedLaneReignGeometry>>>();
+
+function prepareLaneReignBaseGeometry(
   reigns: Reign[],
-  laneGroups: readonly DynastyLaneGroup[] = [],
-  rowHeight = STACK_ROW_HEIGHT,
-  pxPerMonth = 0,
-  personNames: ReadonlyMap<string, string> = new Map(),
-  personDisplay: ReadonlyMap<string, Parameters<typeof buildPreQinClanContext>[0]> = new Map(),
-): { items: StackedReign[]; byId: Map<string, PreparedReignGeometry>; barHeight: number; rowCount: number } {
+  laneGroups: readonly DynastyLaneGroup[],
+  rowHeight: number,
+): PreparedLaneReignGeometry {
+  let byGroups = laneGeometryCache.get(reigns);
+  if (!byGroups) {
+    byGroups = new WeakMap();
+    laneGeometryCache.set(reigns, byGroups);
+  }
+  let byHeight = byGroups.get(laneGroups);
+  if (!byHeight) {
+    byHeight = new Map();
+    byGroups.set(laneGroups, byHeight);
+  }
+  const cached = byHeight.get(rowHeight);
+  if (cached) return cached;
+
   const { items, rowCount } = assignReignStacks(reigns, laneGroups);
   const spans = new Map(reigns.map((reign) => [reign.id, resolveReignVisualSpan(reign, reigns, laneGroups)]));
   const byId = new Map<string, PreparedReignGeometry>();
@@ -92,34 +115,55 @@ export function prepareLaneReignGeometry(
       }),
     });
   }
-  if (pxPerMonth > 0) {
-    const candidates = items.flatMap(({ reign, stackIndex }) => {
-      const geometry = byId.get(reign.id)!;
-      const width = Math.max(0, geometry.visualEndExclusive - geometry.visualStart) * pxPerMonth;
-      const label = resolveReignCardLabel(reign, personNames.get(reign.personId), {
-        cardWidthPx: width,
-        clan: buildPreQinClanContext(personDisplay.get(reign.personId)),
-      });
-      if (!resolveReignBarLayout(width, [...label].length, geometry.unitHeight).captionBelow) return [];
-      if (resolveReignCaptionPlacement({
-        stackIndex,
-        rowCount,
-        overlapsLowerRow: geometry.overlapsLowerRow,
-      }) !== "below") return [];
-      const center = (geometry.visualStart + geometry.visualEndExclusive) * pxPerMonth / 2;
-      const captionWidth = Math.max(12, [...label].length * CAPTION_GLYPH_WIDTH_PX);
-      return [{ reignId: reign.id, left: center - captionWidth / 2, right: center + captionWidth / 2 }];
-    }).sort((a, b) => a.left - b.left || a.right - b.right);
+  const prepared = { items, byId, barHeight, rowCount, paintedBottom: barHeight };
+  byHeight.set(rowHeight, prepared);
+  return prepared;
+}
 
-    const rowEnds: number[] = [];
-    for (const candidate of candidates) {
-      let row = rowEnds.findIndex((right) => candidate.left >= right + CAPTION_COLLISION_GAP_PX);
-      if (row < 0) row = rowEnds.length;
-      rowEnds[row] = candidate.right;
-      byId.get(candidate.reignId)!.captionRow = row;
-    }
+export function prepareLaneReignGeometry(
+  reigns: Reign[],
+  laneGroups: readonly DynastyLaneGroup[] = EMPTY_LANE_GROUPS,
+  rowHeight = STACK_ROW_HEIGHT,
+  pxPerMonth = 0,
+  personNames: ReadonlyMap<string, string> = new Map(),
+  personDisplay: ReadonlyMap<string, Parameters<typeof buildPreQinClanContext>[0]> = new Map(),
+): PreparedLaneReignGeometry {
+  const base = prepareLaneReignBaseGeometry(reigns, laneGroups, rowHeight);
+  if (pxPerMonth <= 0) return base;
+  const { items, rowCount, barHeight } = base;
+  // Caption rows change with zoom; never mutate the cached date/stack geometry.
+  const byId = new Map(base.byId);
+  let paintedBottom = barHeight;
+  const candidates = items.flatMap(({ reign, stackIndex }) => {
+    const geometry = byId.get(reign.id)!;
+    const width = Math.max(0, geometry.visualEndExclusive - geometry.visualStart) * pxPerMonth;
+    const label = resolveReignCardLabel(reign, personNames.get(reign.personId), {
+      cardWidthPx: width,
+      clan: buildPreQinClanContext(personDisplay.get(reign.personId)),
+    });
+    if (!resolveReignBarLayout(width, [...label].length, geometry.unitHeight).captionBelow) return [];
+    if (resolveReignCaptionPlacement({
+      stackIndex,
+      rowCount,
+      overlapsLowerRow: geometry.overlapsLowerRow,
+    }) !== "below") return [];
+    const center = (geometry.visualStart + geometry.visualEndExclusive) * pxPerMonth / 2;
+    const captionWidth = Math.max(12, [...label].length * CAPTION_GLYPH_WIDTH_PX);
+    return [{ reignId: reign.id, left: center - captionWidth / 2, right: center + captionWidth / 2 }];
+  }).sort((a, b) => a.left - b.left || a.right - b.right);
+
+  const rowEnds: number[] = [];
+  for (const candidate of candidates) {
+    let row = rowEnds.findIndex((right) => candidate.left >= right + CAPTION_COLLISION_GAP_PX);
+    if (row < 0) row = rowEnds.length;
+    rowEnds[row] = candidate.right;
+    const geometry = byId.get(candidate.reignId)!;
+    if (row > 0) byId.set(candidate.reignId, { ...geometry, captionRow: row });
+    paintedBottom = Math.max(paintedBottom,
+      geometry.unitTop + geometry.unitHeight + CAPTION_BELOW_EXTENT + row * CAPTION_ROW_SPACING_PX,
+    );
   }
-  return { items, byId, barHeight, rowCount };
+  return { items, byId, barHeight, rowCount, paintedBottom };
 }
 
 export function stackRowHeightForReign(reign: Pick<Reign, "claimTrack">): number {
@@ -271,10 +315,11 @@ export function dynastyLaneHeightForViewport(
   viewport: ViewportState,
   personNames: ReadonlyMap<string, string>,
   personDisplay: ReadonlyMap<string, Parameters<typeof buildPreQinClanContext>[0]>,
+  geometry?: PreparedLaneReignGeometry,
 ): number {
   const rowHeight = viewport.presentation?.rowHeightPx ?? STACK_ROW_HEIGHT;
   const padding = viewport.presentation?.lanePaddingPx ?? LANE_PADDING_TOP;
-  const prepared = prepareLaneReignGeometry(
+  const prepared = geometry ?? prepareLaneReignGeometry(
     reigns,
     laneGroups,
     rowHeight,
@@ -282,37 +327,7 @@ export function dynastyLaneHeightForViewport(
     personNames,
     personDisplay,
   );
-  const { items, rowCount } = prepared;
-  const barHeight = prepared.barHeight;
-  let paintedBottom = barHeight;
-
-  for (const reign of reigns) {
-    const { startAbs, endExclusive, stackIndex } = resolveReignVisualSpan(reign, reigns, laneGroups);
-    const visual = reignVisualBounds(reign, startAbs, endExclusive);
-    const width = Math.max(0, visual.endExclusive - visual.start) * viewport.pxPerMonth;
-    const label = resolveReignCardLabel(reign, personNames.get(reign.personId), {
-      cardWidthPx: width,
-      clan: buildPreQinClanContext(personDisplay.get(reign.personId)),
-    });
-    const unit = resolveStackedCardUnit(reign, reigns, laneGroups, rowHeight);
-    if (!resolveReignBarLayout(width, [...label].length, unit.unitHeight).captionBelow) continue;
-
-    const overlapsLowerRow = items.some((item) => {
-      if (item.stackIndex <= stackIndex) return false;
-      const span = resolveReignVisualSpan(item.reign, reigns, laneGroups);
-      return span.startAbs < endExclusive && span.endExclusive > startAbs;
-    });
-    if (resolveReignCaptionPlacement({ stackIndex, rowCount, overlapsLowerRow }) !== "below") continue;
-
-    const { unitTop, unitHeight } = unit;
-    const captionRow = prepared.byId.get(reign.id)?.captionRow ?? 0;
-    paintedBottom = Math.max(
-      paintedBottom,
-      unitTop + unitHeight + CAPTION_BELOW_EXTENT + captionRow * CAPTION_ROW_SPACING_PX,
-    );
-  }
-
-  return padding * 2 + paintedBottom;
+  return padding * 2 + prepared.paintedBottom;
 }
 
 export function partitionReignRecords(reigns: readonly Reign[]): {
@@ -349,6 +364,9 @@ type TrackPlacement = {
   peers: Reign[];
 };
 
+type TrackPlacements = { placements: Map<string, TrackPlacement>; rowCount: number };
+const trackPlacementCache = new WeakMap<readonly Reign[], WeakMap<readonly DynastyLaneGroup[], TrackPlacements>>();
+
 /**
  * Row offsets for every reign in a lane. Dynasty phases (西周 / 东周) keep their
  * independent buckets; inside a bucket each claim track gets its own rows so
@@ -356,11 +374,15 @@ type TrackPlacement = {
  */
 function resolveTrackPlacements(
   laneReigns: readonly Reign[],
-  laneGroups: readonly DynastyLaneGroup[] = [],
-): {
-  placements: Map<string, TrackPlacement>;
-  rowCount: number;
-} {
+  laneGroups: readonly DynastyLaneGroup[] = EMPTY_LANE_GROUPS,
+): TrackPlacements {
+  let byGroups = trackPlacementCache.get(laneReigns);
+  if (!byGroups) {
+    byGroups = new WeakMap();
+    trackPlacementCache.set(laneReigns, byGroups);
+  }
+  const cached = byGroups.get(laneGroups);
+  if (cached) return cached;
   const buckets = layoutBucketsForLaneReigns(laneReigns, laneGroups);
   const effectiveBuckets = buckets.length > 0 ? buckets : [[...laneReigns]];
   const placements = new Map<string, TrackPlacement>();
@@ -377,7 +399,9 @@ function resolveTrackPlacements(
     rowCount = Math.max(rowCount, rowOffset);
   }
 
-  return { placements, rowCount };
+  const result = { placements, rowCount };
+  byGroups.set(laneGroups, result);
+  return result;
 }
 
 function trackPeersOf(

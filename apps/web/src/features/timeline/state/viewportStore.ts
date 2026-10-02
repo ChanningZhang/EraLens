@@ -166,6 +166,7 @@ export const viewportStore = {
   },
   setPxPerMonth(next: number, anchorAbs?: AbsMonth) {
     const clamped = Math.min(MAX_PX, Math.max(MIN_PX, next));
+    if (clamped === pxPerMonth) return;
     if (anchorAbs !== undefined) {
       const beforeX = (anchorAbs - centerAbs) * pxPerMonth;
       pxPerMonth = clamped;

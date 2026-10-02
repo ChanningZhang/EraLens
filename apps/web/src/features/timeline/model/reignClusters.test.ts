@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { Reign } from "@eralens/shared";
-import { absMonth } from "@eralens/shared";
+import { absMonth, fromAbsMonth } from "@eralens/shared";
 import {
   assignReignStacks,
   dynastyBarHeightForReigns,
@@ -19,14 +19,16 @@ import {
 } from "./reignClusters";
 
 function reign(id: string, startAbs: number, endAbs: number): Reign {
+  const start = fromAbsMonth(startAbs);
+  const end = fromAbsMonth(endAbs);
   return {
     id,
     dynastyId: "zhou-east",
     personId: id,
     title: id,
     eraNames: [],
-    start: { year: 1, month: 1 },
-    end: { year: 1, month: 12 },
+    start: { ...start, confidence: "month" },
+    end: { ...end, confidence: "month" },
     startAbs,
     endAbs,
     precision: "year",
@@ -103,9 +105,9 @@ describe("assignReignStacks", () => {
 
     const first = resolveReignVisualSpan(qizhenFirst, all);
     const second = resolveReignVisualSpan(qizhenSecond, all);
-    expect(first.endExclusive).toBe(qiyu.startAbs);
-    expect(second.startAbs).toBe(qizhenSecond.startAbs);
-    expect(second.endExclusive).toBe(jianshen.startAbs);
+    expect(first.endExclusive).toBe(absMonth(1450, 1));
+    expect(second.startAbs).toBe(absMonth(1458, 1));
+    expect(second.endExclusive).toBe(absMonth(1465, 1));
   });
 
   it("does not clip the main line when a parallel court overlaps it", () => {
@@ -192,8 +194,8 @@ describe("assignReignStacks", () => {
       PARALLEL_STACK_ROW_HEIGHT,
     ]);
 
-    expect(resolveReignVisualSpan(hongguang, all).endExclusive).toBe(longwu.startAbs);
-    expect(resolveReignVisualSpan(yongli, all).startAbs).toBe(yongli.startAbs);
+    expect(resolveReignVisualSpan(hongguang, all).endExclusive).toBe(absMonth(1646, 1));
+    expect(resolveReignVisualSpan(yongli, all).startAbs).toBe(absMonth(1647, 1));
     expect(resolveReignVisualSpan(luJian, all).endExclusive).toBe(luJian.endAbs + 1);
   });
 

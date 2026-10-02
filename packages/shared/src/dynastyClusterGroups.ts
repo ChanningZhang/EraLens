@@ -1,5 +1,5 @@
 import type { Dynasty, DynastyGroup } from "./schema";
-import { capitalOwnsAbs, type TimedCapital } from "./timelineOwnership";
+import { capitalRecordCoversAbs, type TimedCapital } from "./timelineOwnership";
 import {
   TIMELINE_RAIL_CHIP_HEIGHT_PX,
   TIMELINE_RAIL_INSET_PX,
@@ -74,12 +74,12 @@ function orderBySameCapitalSuccession(
 ): LaneUnit[] {
   const tenuresByDynasty = capitalTenuresByDynastyId(capitals);
 
-  /** Cities a unit holds at absolute month `t` (any member, any capital role). */
+  /** Recorded city tenures covering month `t`; overlap arbitration must not hide a hand-off. */
   const citiesAt = (unit: LaneUnit, t: number): Set<string> => {
     const cities = new Set<string>();
     for (const dynasty of unit.dynasties) {
       for (const tenure of tenuresByDynasty.get(dynasty.id) ?? []) {
-        if (capitalOwnsAbs(tenure.capital, capitals, t)) {
+        if (capitalRecordCoversAbs(tenure.capital, t)) {
           cities.add(tenure.city);
         }
       }

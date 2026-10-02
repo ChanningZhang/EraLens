@@ -2107,7 +2107,7 @@
     },
     {
       "id": "zhao-shi",
-      "name": "赵显",
+      "name": "赵㬎",
       "roles": [
         "皇帝"
       ],
@@ -2121,9 +2121,7 @@
       "birth": null,
       "death": null,
       "posthumousNames": [],
-      "templeNames": [
-        "恭帝"
-      ],
+      "templeNames": [],
       "title": "宋恭帝"
     },
     {

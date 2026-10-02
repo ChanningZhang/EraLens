@@ -1032,6 +1032,384 @@
       ],
       "coordinateSystem": "WGS84",
       "precision": "approximate"
+    },
+    {
+      "id": "loc-pingjin-campaign",
+      "eventId": "pingjin-campaign",
+      "historicalName": "平津作战代表点（北平）",
+      "modernName": "北京市",
+      "longitude": 116.4074,
+      "latitude": 39.9042,
+      "coordinateSystem": "WGS84",
+      "precision": "approximate",
+      "note": "平津作战跨北平、天津及周边地区，以当时政治与战事中心北平作代表点，不表示全部战场。",
+      "links": [
+        {
+          "label": "OpenStreetMap：代表点坐标（WGS84）",
+          "url": "https://www.openstreetmap.org/#map=12/39.9042/116.4074"
+        },
+        {
+          "label": "北京市委统战部：抗日战争时期的统一战线",
+          "url": "https://www.bjtzb.gov.cn/wwwroot/sdtyzx/publish/article/40/11335.shtml"
+        }
+      ]
+    },
+    {
+      "id": "loc-shanghai-campaign-1937",
+      "eventId": "shanghai-campaign-1937",
+      "historicalName": "淞沪会战（上海）",
+      "modernName": "上海市",
+      "longitude": 121.4737,
+      "latitude": 31.2304,
+      "coordinateSystem": "WGS84",
+      "precision": "approximate",
+      "note": "会战覆盖上海城区、沿江沿海登陆地及周边，以市区为代表点，不表示全部战线。",
+      "links": [
+        {
+          "label": "OpenStreetMap：代表点坐标（WGS84）",
+          "url": "https://www.openstreetmap.org/#map=12/31.2304/121.4737"
+        },
+        {
+          "label": "中央档案馆：档案里的中国抗战—淞沪会战",
+          "url": "https://www.saac.gov.cn/zt/2014-08/25/content_63860.htm"
+        }
+      ]
+    },
+    {
+      "id": "loc-pingxingguan-battle",
+      "eventId": "pingxingguan-battle",
+      "historicalName": "平型关",
+      "modernName": "山西省大同市灵丘县平型关镇一带",
+      "longitude": 113.9236,
+      "latitude": 39.3209,
+      "coordinateSystem": "WGS84",
+      "precision": "approximate",
+      "note": "以平型关战斗发生区域为代表点；战斗包含乔沟等附近地点，坐标不指向单一阵地。",
+      "links": [
+        {
+          "label": "OpenStreetMap：代表点坐标（WGS84）",
+          "url": "https://www.openstreetmap.org/#map=12/39.3209/113.9236"
+        },
+        {
+          "label": "中国政府网：平型关战役",
+          "url": "https://www.gfbzb.gov.cn/zbbm/gfzs/201403/20140314/819958607.html"
+        }
+      ]
+    },
+    {
+      "id": "loc-xinkou-battle",
+      "eventId": "xinkou-battle",
+      "historicalName": "忻口",
+      "modernName": "山西省忻州市忻府区忻口镇",
+      "longitude": 112.735,
+      "latitude": 38.5661,
+      "coordinateSystem": "WGS84",
+      "precision": "approximate",
+      "note": "以忻口镇及周边阵地为代表点，战役防线和八路军侧后作战范围更广。",
+      "links": [
+        {
+          "label": "OpenStreetMap：代表点坐标（WGS84）",
+          "url": "https://www.openstreetmap.org/#map=12/38.5661/112.735"
+        },
+        {
+          "label": "中央档案馆：档案里的中国抗战—忻口战役",
+          "url": "https://www.saac.gov.cn/zt/2014-08/29/content_64740_2.htm"
+        }
+      ]
+    },
+    {
+      "id": "loc-taiyuan-campaign",
+      "eventId": "taiyuan-campaign",
+      "historicalName": "太原会战代表点（太原）",
+      "modernName": "山西省太原市",
+      "longitude": 112.5489,
+      "latitude": 37.8706,
+      "coordinateSystem": "WGS84",
+      "precision": "approximate",
+      "note": "太原是会战最终争夺的中心之一；本点不代表平型关、忻口、娘子关等整个战场。",
+      "links": [
+        {
+          "label": "OpenStreetMap：代表点坐标（WGS84）",
+          "url": "https://www.openstreetmap.org/#map=12/37.8706/112.5489"
+        },
+        {
+          "label": "中央档案馆：档案里的中国抗战—忻口战役",
+          "url": "https://www.saac.gov.cn/zt/2014-08/29/content_64740_2.htm"
+        }
+      ]
+    },
+    {
+      "id": "loc-xuzhou-campaign",
+      "eventId": "xuzhou-campaign",
+      "historicalName": "徐州会战代表点（徐州）",
+      "modernName": "江苏省徐州市",
+      "longitude": 117.2858,
+      "latitude": 34.2044,
+      "coordinateSystem": "WGS84",
+      "precision": "approximate",
+      "note": "会战跨鲁南、苏北及徐州周边，以徐州为战役中心代表点，不表示全线。",
+      "links": [
+        {
+          "label": "OpenStreetMap：代表点坐标（WGS84）",
+          "url": "https://www.openstreetmap.org/#map=12/34.2044/117.2858"
+        },
+        {
+          "label": "中国第二历史档案馆：台儿庄大捷及徐州会战",
+          "url": "https://www.saac.gov.cn/zt/2014-09/03/content_65283_4.htm"
+        }
+      ]
+    },
+    {
+      "id": "loc-taierzhuang-battle",
+      "eventId": "taierzhuang-battle",
+      "historicalName": "台儿庄",
+      "modernName": "山东省枣庄市台儿庄区台儿庄古城一带",
+      "longitude": 117.7348,
+      "latitude": 34.56,
+      "coordinateSystem": "WGS84",
+      "precision": "approximate",
+      "note": "以台儿庄旧城及周边战斗区域为代表点；具体战线延伸至临沂等地。",
+      "links": [
+        {
+          "label": "OpenStreetMap：代表点坐标（WGS84）",
+          "url": "https://www.openstreetmap.org/#map=12/34.56/117.7348"
+        },
+        {
+          "label": "中国第二历史档案馆：台儿庄大捷",
+          "url": "https://www.saac.gov.cn/zt/2014-09/03/content_65283_4.htm"
+        }
+      ]
+    },
+    {
+      "id": "loc-wuhan-campaign",
+      "eventId": "wuhan-campaign",
+      "historicalName": "武汉会战代表点（武汉）",
+      "modernName": "湖北省武汉市",
+      "longitude": 114.3055,
+      "latitude": 30.5928,
+      "coordinateSystem": "WGS84",
+      "precision": "approximate",
+      "note": "武汉是会战目标和中心区域；战场横跨鄂、皖、赣、豫等地，坐标不表示整个战场。",
+      "links": [
+        {
+          "label": "OpenStreetMap：代表点坐标（WGS84）",
+          "url": "https://www.openstreetmap.org/#map=12/30.5928/114.3055"
+        },
+        {
+          "label": "中央档案馆：档案里的中国抗战—武汉会战",
+          "url": "https://www.saac.gov.cn/zt/2014-09/03/content_65305.htm"
+        }
+      ]
+    },
+    {
+      "id": "loc-nanchang-campaign",
+      "eventId": "nanchang-campaign",
+      "historicalName": "南昌会战代表点（南昌）",
+      "modernName": "江西省南昌市",
+      "longitude": 115.8582,
+      "latitude": 28.6829,
+      "coordinateSystem": "WGS84",
+      "precision": "approximate",
+      "note": "以南昌为争夺中心；会战还包括修水等外围战场。",
+      "links": [
+        {
+          "label": "OpenStreetMap：代表点坐标（WGS84）",
+          "url": "https://www.openstreetmap.org/#map=12/28.6829/115.8582"
+        },
+        {
+          "label": "北京市委统战部：抗日战争时期的统一战线",
+          "url": "https://www.bjtzb.gov.cn/wwwroot/sdtyzx/publish/article/40/11335.shtml"
+        }
+      ]
+    },
+    {
+      "id": "loc-first-changsha-campaign",
+      "eventId": "first-changsha-campaign",
+      "historicalName": "第一次长沙会战代表点（长沙）",
+      "modernName": "湖南省长沙市",
+      "longitude": 112.9388,
+      "latitude": 28.2282,
+      "coordinateSystem": "WGS84",
+      "precision": "approximate",
+      "note": "长沙为日军进攻目标和战役中心；作战范围包括湘北、鄂南、赣北。",
+      "links": [
+        {
+          "label": "OpenStreetMap：代表点坐标（WGS84）",
+          "url": "https://www.openstreetmap.org/#map=12/28.2282/112.9388"
+        },
+        {
+          "label": "湖南省文史研究馆：抗日战争湖南战场史料前言",
+          "url": "https://css.hunan.gov.cn/css/tslm/hxws/wssy/201204/sxrj_52819_13/201609/t20160905_3253626.html"
+        }
+      ]
+    },
+    {
+      "id": "loc-kunlun-pass-battle",
+      "eventId": "kunlun-pass-battle",
+      "historicalName": "昆仑关",
+      "modernName": "广西壮族自治区南宁市兴宁区昆仑关",
+      "longitude": 108.681,
+      "latitude": 23.0951,
+      "coordinateSystem": "WGS84",
+      "precision": "approximate",
+      "note": "地点为昆仑关及其周边阵地，是桂南会战的关键战场。",
+      "links": [
+        {
+          "label": "OpenStreetMap：代表点坐标（WGS84）",
+          "url": "https://www.openstreetmap.org/#map=12/23.0951/108.681"
+        },
+        {
+          "label": "昆仑关战役地理位置与旧址资料",
+          "url": "https://en.wikipedia.org/wiki/Kunlun_Pass"
+        }
+      ]
+    },
+    {
+      "id": "loc-hundred-regiments-campaign",
+      "eventId": "hundred-regiments-campaign",
+      "historicalName": "百团大战代表点（阳泉）",
+      "modernName": "山西省阳泉市",
+      "longitude": 113.5833,
+      "latitude": 37.8612,
+      "coordinateSystem": "WGS84",
+      "precision": "approximate",
+      "note": "以正太铁路沿线阳泉附近为代表点；百团大战战线遍及华北多个省区，非单点战役。",
+      "links": [
+        {
+          "label": "OpenStreetMap：代表点坐标（WGS84）",
+          "url": "https://www.openstreetmap.org/#map=12/37.8612/113.5833"
+        },
+        {
+          "label": "中央纪委国家监委网站：百团大战",
+          "url": "https://m.ccdi.gov.cn/content/bf/ed/5404.html"
+        }
+      ]
+    },
+    {
+      "id": "loc-second-changsha-campaign",
+      "eventId": "second-changsha-campaign",
+      "historicalName": "第二次长沙会战代表点（长沙）",
+      "modernName": "湖南省长沙市",
+      "longitude": 112.9388,
+      "latitude": 28.2282,
+      "coordinateSystem": "WGS84",
+      "precision": "approximate",
+      "note": "长沙为进攻目标和主要战场之一；交战还发生于湘北及周边区域。",
+      "links": [
+        {
+          "label": "OpenStreetMap：代表点坐标（WGS84）",
+          "url": "https://www.openstreetmap.org/#map=12/28.2282/112.9388"
+        },
+        {
+          "label": "湖南省文史研究馆：抗日战争湖南战场史料前言",
+          "url": "https://css.hunan.gov.cn/css/tslm/hxws/wssy/201204/sxrj_52819_13/201609/t20160905_3253626.html"
+        }
+      ]
+    },
+    {
+      "id": "loc-third-changsha-campaign",
+      "eventId": "third-changsha-campaign",
+      "historicalName": "第三次长沙会战代表点（长沙）",
+      "modernName": "湖南省长沙市",
+      "longitude": 112.9388,
+      "latitude": 28.2282,
+      "coordinateSystem": "WGS84",
+      "precision": "approximate",
+      "note": "以长沙城区为代表点，日军进攻与中国军队反攻范围延伸至新墙河等地。",
+      "links": [
+        {
+          "label": "OpenStreetMap：代表点坐标（WGS84）",
+          "url": "https://www.openstreetmap.org/#map=12/28.2282/112.9388"
+        },
+        {
+          "label": "湖南省文史研究馆：抗日战争湖南战场史料前言",
+          "url": "https://css.hunan.gov.cn/css/tslm/hxws/wssy/201204/sxrj_52819_13/201609/t20160905_3253626.html"
+        }
+      ]
+    },
+    {
+      "id": "loc-changde-campaign",
+      "eventId": "changde-campaign",
+      "historicalName": "常德",
+      "modernName": "湖南省常德市",
+      "longitude": 111.6985,
+      "latitude": 29.0316,
+      "coordinateSystem": "WGS84",
+      "precision": "approximate",
+      "note": "常德城为守城战和反攻的核心地点；会战亦涉及周边县域。",
+      "links": [
+        {
+          "label": "OpenStreetMap：代表点坐标（WGS84）",
+          "url": "https://www.openstreetmap.org/#map=12/29.0316/111.6985"
+        },
+        {
+          "label": "湖南省文史研究馆：抗日战争湖南战场史料前言",
+          "url": "https://css.hunan.gov.cn/css/tslm/hxws/wssy/201204/sxrj_52819_13/201609/t20160905_3253626.html"
+        }
+      ]
+    },
+    {
+      "id": "loc-yuxianggui-campaign",
+      "eventId": "yuxianggui-campaign",
+      "historicalName": "豫湘桂会战代表点（郑州）",
+      "modernName": "河南省郑州市",
+      "longitude": 113.6254,
+      "latitude": 34.7466,
+      "coordinateSystem": "WGS84",
+      "precision": "approximate",
+      "note": "以豫中阶段的郑州区域作代表点；豫湘桂会战跨河南、湖南、广西多个战区，坐标不表示整体范围。",
+      "links": [
+        {
+          "label": "OpenStreetMap：代表点坐标（WGS84）",
+          "url": "https://www.openstreetmap.org/#map=12/34.7466/113.6254"
+        },
+        {
+          "label": "中国第二历史档案馆：豫湘桂战役与衡阳保卫战",
+          "url": "https://www.saac.gov.cn/zt/2014-09/15/content_67064_3.htm"
+        }
+      ]
+    },
+    {
+      "id": "loc-hengyang-defense",
+      "eventId": "hengyang-defense",
+      "historicalName": "衡阳",
+      "modernName": "湖南省衡阳市",
+      "longitude": 112.572,
+      "latitude": 26.8932,
+      "coordinateSystem": "WGS84",
+      "precision": "approximate",
+      "note": "衡阳城区为守城战中心，具体防御阵地分布于城郊。",
+      "links": [
+        {
+          "label": "OpenStreetMap：代表点坐标（WGS84）",
+          "url": "https://www.openstreetmap.org/#map=12/26.8932/112.572"
+        },
+        {
+          "label": "中国第二历史档案馆：豫湘桂战役与衡阳保卫战",
+          "url": "https://www.saac.gov.cn/zt/2014-09/15/content_67064_3.htm"
+        }
+      ]
+    },
+    {
+      "id": "loc-western-hunan-campaign",
+      "eventId": "western-hunan-campaign",
+      "historicalName": "湘西会战代表点（雪峰山）",
+      "modernName": "湖南省怀化市雪峰山一带",
+      "longitude": 110.7,
+      "latitude": 27.3,
+      "coordinateSystem": "WGS84",
+      "precision": "approximate",
+      "note": "雪峰山一带为主要交战区域之一；会战由湘西多地向芷江方向展开，坐标仅作区域代表。",
+      "links": [
+        {
+          "label": "OpenStreetMap：代表点坐标（WGS84）",
+          "url": "https://www.openstreetmap.org/#map=12/27.3/110.7"
+        },
+        {
+          "label": "湖南省文史研究馆：抗日战争湖南战场史料前言",
+          "url": "https://css.hunan.gov.cn/css/tslm/hxws/wssy/201204/sxrj_52819_13/201609/t20160905_3253626.html"
+        }
+      ]
     }
   ],
   "manifest": {
@@ -1375,12 +1753,57 @@
       {
         "label": "汉长安城（DSR地名集，遗址坐标）",
         "url": "https://dsr.nii.ac.jp/digital-maps/dsr/place-names/0133.html.ja"
+      },
+      {
+        "label": "OpenStreetMap：抗战事件地点代表点坐标（WGS84）",
+        "url": "https://www.openstreetmap.org/"
+      },
+      {
+        "label": "北京市委统战部：抗日战争时期的统一战线",
+        "url": "https://www.bjtzb.gov.cn/wwwroot/sdtyzx/publish/article/40/11335.shtml"
+      },
+      {
+        "label": "中央档案馆：档案里的中国抗战—淞沪会战",
+        "url": "https://www.saac.gov.cn/zt/2014-08/25/content_63860.htm"
+      },
+      {
+        "label": "中国政府网：平型关战役",
+        "url": "https://www.gfbzb.gov.cn/zbbm/gfzs/201403/20140314/819958607.html"
+      },
+      {
+        "label": "中央档案馆：档案里的中国抗战—忻口战役",
+        "url": "https://www.saac.gov.cn/zt/2014-08/29/content_64740_2.htm"
+      },
+      {
+        "label": "中国第二历史档案馆：台儿庄大捷及徐州会战",
+        "url": "https://www.saac.gov.cn/zt/2014-09/03/content_65283_4.htm"
+      },
+      {
+        "label": "中央档案馆：档案里的中国抗战—武汉会战",
+        "url": "https://www.saac.gov.cn/zt/2014-09/03/content_65305.htm"
+      },
+      {
+        "label": "湖南省文史研究馆：抗日战争湖南战场史料前言",
+        "url": "https://css.hunan.gov.cn/css/tslm/hxws/wssy/201204/sxrj_52819_13/201609/t20160905_3253626.html"
+      },
+      {
+        "label": "昆仑关战役地理位置与旧址资料",
+        "url": "https://en.wikipedia.org/wiki/Kunlun_Pass"
+      },
+      {
+        "label": "中央纪委国家监委网站：百团大战",
+        "url": "https://m.ccdi.gov.cn/content/bf/ed/5404.html"
+      },
+      {
+        "label": "中国第二历史档案馆：豫湘桂战役与衡阳保卫战",
+        "url": "https://www.saac.gov.cn/zt/2014-09/15/content_67064_3.htm"
       }
     ],
     "notes": [
       "为可定位到具体遗址或区域的事件补地点；迁都事件取迁入地作为代表点，多地点或大范围事件在地点 note 中说明代表点含义。不能可靠定位的事件保持地点为空。",
       "坐标采用 WGS84；来源链接用于核对古称、今地与地点定位。",
-      "新增长安事件地点。史料只定位至长安及征西府，府址具体遗址未定，采用汉长安城遗址范围近似坐标，不指向单一宫殿；事件地点坐标按WGS84记录。"
+      "新增长安事件地点。史料只定位至长安及征西府，府址具体遗址未定，采用汉长安城遗址范围近似坐标，不指向单一宫殿；事件地点坐标按WGS84记录。",
+      "2026-10：为民国包新增的抗战会战和战役配置事件地点；大范围会战仅选历史战役中心或关键转折点作 approximate 代表点，地点 note 明示不代表全战场。坐标取 OpenStreetMap 地理要素的 WGS84 经纬度。"
     ]
   }
 }

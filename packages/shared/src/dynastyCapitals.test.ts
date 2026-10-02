@@ -89,9 +89,9 @@ const tangReign: Reign = {
   dynastyId: "tang",
   personId: "li-longji",
   title: "唐玄宗",
-  start: { year: 712, month: 9 },
-  end: { year: 756, month: 8 },
-  startAbs: 8544,
+  start: { year: 712, month: 9, confidence: "month" },
+  end: { year: 756, month: 8, confidence: "month" },
+  startAbs: 8552,
   endAbs: 9071,
   precision: "month",
 };
@@ -121,7 +121,8 @@ describe("buildReignCapitalTenures", () => {
         tenure: {
           ref: { type: "reign", id: "reign-tang-xuanzong" },
           label: "712年9月 — 756年8月",
-          abs: 8544,
+          abs: 8552,
+          duration: "44年",
         },
       },
       {
@@ -133,7 +134,8 @@ describe("buildReignCapitalTenures", () => {
         tenure: {
           ref: { type: "reign", id: "reign-tang-xuanzong" },
           label: "712年9月 — 756年8月",
-          abs: 8544,
+          abs: 8552,
+          duration: "44年",
         },
       },
     ]);
@@ -180,7 +182,8 @@ describe("buildReignCapitalTenures", () => {
         tenure: {
           ref: { type: "reign", id: "reign-tang-xuanzong" },
           label: "712年9月 — 756年8月",
-          abs: 8544,
+          abs: 8552,
+          duration: "43年4个月",
         },
       },
     ]);
@@ -189,18 +192,10 @@ describe("buildReignCapitalTenures", () => {
   it("renders uncertain reign endpoints as question marks", () => {
     const uncertainReign: Reign = {
       ...tangReign,
-      startDateConfidence: "interpolated",
-      endDateConfidence: "approximate",
+      start: { ...tangReign.start, confidence: "interpolated_by_generation" },
+      end: { ...tangReign.end, confidence: "approximate_month" },
     };
-    expect(buildReignTenureCapitalRows(uncertainReign, [qinXianyang])).toEqual([
-      {
-        tenure: {
-          ref: { type: "reign", id: "reign-tang-xuanzong" },
-          label: "？－？",
-          abs: 8544,
-        },
-      },
-    ]);
+    expect(buildReignTenureCapitalRows(uncertainReign, [qinXianyang])).toEqual([]);
   });
 
   it("preserves day-precision capital intervals instead of collapsing them to a month", () => {
