@@ -103,9 +103,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   const stageViewportSize = useStageViewportSize(stageRef);
   const stageViewportHeight = stageViewportSize.height;
   const viewport = useViewport();
-  const mapVerticalAlignment = stageViewportSize.height > stageViewportSize.width
-    ? "bottom"
-    : "center";
+  const mapVerticalAlignment = "bottom";
   const mapLayout = useMemo(() => {
     if (stageViewportSize.width < 1 || stageViewportSize.height < 1) return null;
     return resolveChinaMapLayout(

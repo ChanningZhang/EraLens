@@ -32,6 +32,19 @@ const uncertainConfidences: HistoricalDateConfidence[] = [
 ];
 
 describe("uncertain date presentation", () => {
+  it("preserves uncertain birth and death facts in person details", () => {
+    const uncertainPerson = {
+      ...person,
+      birth: { year: -800, month: 1, confidence: "interpolated_by_other" as const },
+      death: { year: -767, month: 12, confidence: "approximate_year" as const },
+    };
+    const detail = buildEntityDetail({
+      dynasties: [], reigns: [], persons: [uncertainPerson], events: [], relations: [],
+    }, { type: "person", id: uncertainPerson.id });
+    expect(detail.facts).toContainEqual({ label: "生", value: "?" });
+    expect(detail.facts).toContainEqual({ label: "卒", value: "约-767年" });
+  });
+
   it.each(uncertainConfidences)("keeps %s endpoints out of precise durations and reign capital assignments", (confidence) => {
     for (const side of ["start", "end"] as const) {
       const reign = { ...knownReign, [side]: { ...knownReign[side], day: 9, confidence } };

@@ -202,6 +202,8 @@ model Relation {
   fromId    String  @map("from_id")
   toType    String  @map("to_type")
   toId      String  @map("to_id")
+  // RelationKindSchema in @eralens/shared defines kinds; conquered means loss of the state,
+  // independent of whether its ruler was killed, captured, surrendered, or escaped.
   kind      String
   atYear    Int?    @map("at_year")
   atMonth   Int?    @map("at_month")

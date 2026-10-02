@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildReignCapitalTenures, buildReignTenureCapitalRows, capitalsActiveAtAbs } from "./dynastyCapitals";
+import { buildReignCapitalTenures, buildReignTenureCapitalRows, capitalsActiveAtAbs, dynastyCapitalRelatedItems } from "./dynastyCapitals";
 import { capitalsForReigns } from "./timelineOwnership";
 import type { DynastyCapital, Reign } from "./schema";
 
@@ -97,6 +97,18 @@ const tangReign: Reign = {
 };
 
 describe("buildReignCapitalTenures", () => {
+  it("identifies a parallel claimant's primary seat in dynasty and reign details", () => {
+    const branchCapital = { ...tangChangan, claimTrack: "branch" };
+    const branchReign = { ...tangReign, claimTrack: "branch" };
+    expect(dynastyCapitalRelatedItems("tang", [branchCapital])[0]?.subtitle)
+      .toContain("并立政权治所");
+    expect(buildReignCapitalTenures(branchReign, [branchCapital])[0]?.capital?.subtitle)
+      .toBe("并立政权治所 · 陕西省西安市");
+    expect(buildReignCapitalTenures(tangReign, [branchCapital])).toEqual([]);
+    expect(dynastyCapitalRelatedItems("tang", [{ ...tangChangan, claimTrack: "main" }])[0]?.subtitle)
+      .toContain("正都");
+  });
+
   it("pairs overlapping capitals with intersected reign segments", () => {
     const rows = buildReignCapitalTenures(tangReign, [tangChangan, tangLuoyang, qinXianyang]);
     expect(rows).toEqual([

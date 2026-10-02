@@ -251,24 +251,33 @@
     {
       "id": "zou-r11",
       "name": "克",
+      "altNames": [
+        "邾安公",
+        "邾惠公",
+        "邾仪父"
+      ],
       "roles": [
         "君主"
       ],
-      "bio": "邾安公（克，字仪父）为春秋前期邾君，事迹见《春秋》及《左传》；传统年表系其卒于鲁庄公十六年（前678），继任者为其子琐。",
+      "bio": "邾庄公（克，字仪父）为春秋前期邾君；《春秋》鲁隐公元年记鲁与邾仪父会盟，《左传》释其为邾子克，鲁庄公十六年记其卒、子琐继位。世系关系有异说：有说他是夏父元孙，也有说是邾君庆之子；《邹县续志》称其为邾惠公，另有资料称邾安公。",
       "links": [
         {
-          "label": "周朝诸侯国君主列表·邾国",
-          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+          "label": "邾国君主世系图（克列作邾庄公，并注明异称）",
+          "url": "https://zh.wikipedia.org/wiki/邾國君主世系圖"
         },
         {
-          "label": "邾安公",
+          "label": "《春秋滕薛杞越莒许七国统表·邾世次》（仪父克异称辨析）",
+          "url": "https://ctext.org/wiki.pl?chapter=3884730&if=gb&remap=gb"
+        },
+        {
+          "label": "邾安公（异称）",
           "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%AE%89%E5%85%AC"
         }
       ],
       "birth": null,
       "death": null,
       "posthumousNames": [
-        "安公"
+        "庄公"
       ],
       "templeNames": [],
       "title": "邾子克",
@@ -285,6 +294,10 @@
         {
           "label": "周朝诸侯国君主列表·邾国",
           "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾国君主世系图（列作琐）",
+          "url": "https://zh.wikipedia.org/wiki/邾國君主世系圖"
         },
         {
           "label": "邾宪公",
@@ -2444,6 +2457,10 @@
         {
           "label": "《史记·晋世家》",
           "url": "https://zh.wikisource.org/wiki/史記/卷039"
+        },
+        {
+          "label": "《左传·庄公十六年》",
+          "url": "https://ctext.org/chun-qiu-zuo-zhuan/zhuang-gong-shi-liu-nian/zhs"
         }
       ],
       "birth": null,
@@ -2498,6 +2515,10 @@
         {
           "label": "《史记·晋世家》",
           "url": "https://zh.wikisource.org/wiki/史記/卷039"
+        },
+        {
+          "label": "《左传·庄公十六年》",
+          "url": "https://ctext.org/chun-qiu-zuo-zhuan/zhuang-gong-shi-liu-nian/zhs"
         }
       ],
       "birth": null,
@@ -11400,6 +11421,640 @@
       "title": "卓子",
       "ancestralXing": "姬",
       "clanShi": "晋"
+    },
+    {
+      "id": "guo-r1",
+      "name": "叔",
+      "roles": [
+        "君主"
+      ],
+      "bio": "虢叔，姬姓，周文王弟，曾任文王卿士。传统说法以其为西虢始封君；东、西虢封君归属存在异说，具体在位起讫不详。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/虢叔"
+        },
+        {
+          "label": "周朝诸侯国君主列表（西虢中间世系失考）",
+          "url": "https://zh.wikipedia.org/wiki/周朝諸侯國君主列表#西虢国"
+        },
+        {
+          "label": "西虢国（金文人物、年代及世系争议）",
+          "url": "https://zh.wikipedia.org/wiki/西虢国#金文中的虢国氏族"
+        },
+        {
+          "label": "虢国君主世系（主序列与待考虢季家族）",
+          "url": "https://zh.wikipedia.org/wiki/Template:虢國君主"
+        },
+        {
+          "label": "周朝（共时定位采用的年表）",
+          "url": "https://zh.wikipedia.org/wiki/周朝"
+        }
+      ],
+      "altNames": [],
+      "ancestralXing": "姬",
+      "clanShi": "虢",
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "叔"
+    },
+    {
+      "id": "guo-r2",
+      "name": "郭叔",
+      "roles": [
+        "君主"
+      ],
+      "bio": "郭叔（一作虢叔），西周虢国人物。《逸周书·王会》记其掌天子贡币；《虢国研究》认为其为始封君虢叔之子。具体在位起讫不详，与虢城公之间世系失考，不能确定为虢城公的直接前任。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/郭叔"
+        },
+        {
+          "label": "周朝诸侯国君主列表（西虢中间世系失考）",
+          "url": "https://zh.wikipedia.org/wiki/周朝諸侯國君主列表#西虢国"
+        },
+        {
+          "label": "西虢国（金文人物、年代及世系争议）",
+          "url": "https://zh.wikipedia.org/wiki/西虢国#金文中的虢国氏族"
+        },
+        {
+          "label": "《逸周书·王会》（郭叔掌贡币）",
+          "url": "https://ctext.org/lost-book-of-zhou/wang-hui/zh"
+        },
+        {
+          "label": "虢国君主世系（主序列与待考虢季家族）",
+          "url": "https://zh.wikipedia.org/wiki/Template:虢國君主"
+        },
+        {
+          "label": "周朝（共时定位采用的年表）",
+          "url": "https://zh.wikipedia.org/wiki/周朝"
+        }
+      ],
+      "altNames": [
+        "虢叔"
+      ],
+      "ancestralXing": "姬",
+      "clanShi": "虢",
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "郭叔"
+    },
+    {
+      "id": "guo-r3",
+      "name": "城公",
+      "roles": [
+        "君主"
+      ],
+      "bio": "虢城公，班簋铭文所见西周虢国人物。铭文记周王命毛伯接替其职务，并非国君传位记载。其所属东、西虢及活动年代存在异说，一说为周昭王、穆王时期人；具体在位起讫及直接前任失考。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/虢城公"
+        },
+        {
+          "label": "周朝诸侯国君主列表（西虢中间世系失考）",
+          "url": "https://zh.wikipedia.org/wiki/周朝諸侯國君主列表#西虢国"
+        },
+        {
+          "label": "西虢国（金文人物、年代及世系争议）",
+          "url": "https://zh.wikipedia.org/wiki/西虢国#金文中的虢国氏族"
+        },
+        {
+          "label": "《班簋铭文》（毛伯接替虢城公职务）",
+          "url": "https://zh.wikisource.org/wiki/班簋銘文"
+        },
+        {
+          "label": "虢国君主世系（主序列与待考虢季家族）",
+          "url": "https://zh.wikipedia.org/wiki/Template:虢國君主"
+        },
+        {
+          "label": "周朝（共时定位采用的年表）",
+          "url": "https://zh.wikipedia.org/wiki/周朝"
+        },
+        {
+          "label": "冯时《班簋铭文补释》（穆王时期）",
+          "url": "https://www.ctwx.tsinghua.edu.cn/__local/A/61/04/3B0E595B6786E89BFDFF5B51A67_192072D8_490B29.pdf?e=.pdf"
+        }
+      ],
+      "altNames": [
+        "虢成公"
+      ],
+      "ancestralXing": "姬",
+      "clanShi": "虢",
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "城公"
+    },
+    {
+      "id": "guo-r4",
+      "name": "长父",
+      "roles": [
+        "君主"
+      ],
+      "bio": "虢公长父，又称虢厉公、虢仲，主要活动于周厉王时期，曾任卿士并奉命征讨淮夷。起讫年不详，年代按周厉王时期及后续已知君主插值。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/虢公长父"
+        },
+        {
+          "label": "河南博物院《虢硕父簠》",
+          "url": "https://www.chnmus.net/ch/collection/appraise/details.html?id=512153734134559839"
+        }
+      ],
+      "altNames": [
+        "虢厉公",
+        "虢仲",
+        "虢公长父"
+      ],
+      "ancestralXing": "姬",
+      "clanShi": "虢",
+      "posthumousNames": [
+        "厉公"
+      ],
+      "templeNames": [],
+      "title": "虢公长父"
+    },
+    {
+      "id": "guo-r5",
+      "name": "子白",
+      "roles": [
+        "君主"
+      ],
+      "bio": "虢宣公，亦称虢季子白，周宣王时期率军攻猃狁，相关事迹见虢季子白盘铭文。其与虢文公的世系关系有异说；在位区间按周宣王时期插值。 虢公长父之后的继承顺序有宣公、文公两说。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/虢宣公"
+        },
+        {
+          "label": "虢国君主世系（宣公、文公顺序异说）",
+          "url": "https://zh.wikipedia.org/wiki/Template:虢國君主"
+        }
+      ],
+      "altNames": [
+        "虢季子白",
+        "虢季"
+      ],
+      "ancestralXing": "姬",
+      "clanShi": "虢",
+      "posthumousNames": [
+        "宣公"
+      ],
+      "templeNames": [],
+      "title": "虢宣公"
+    },
+    {
+      "id": "guo-r6",
+      "name": "季",
+      "roles": [
+        "君主"
+      ],
+      "bio": "虢文公，周宣王时期任卿士，曾谏宣王举行籍田礼，事见《国语·周语上》。具体在位年代不详，时间轴按相邻锚点插值。 虢公长父之后的继承顺序有宣公、文公两说。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/虢文公"
+        },
+        {
+          "label": "虢国君主世系（宣公、文公顺序异说）",
+          "url": "https://zh.wikipedia.org/wiki/Template:虢國君主"
+        }
+      ],
+      "altNames": [
+        "虢季"
+      ],
+      "ancestralXing": "姬",
+      "clanShi": "虢",
+      "posthumousNames": [
+        "文公"
+      ],
+      "templeNames": [],
+      "title": "虢文公"
+    },
+    {
+      "id": "guo-r7",
+      "name": "鼓",
+      "roles": [
+        "君主"
+      ],
+      "bio": "虢石父，又称虢公鼓，主要活动于周幽王时期，前775年灭焦为一说。西周灭亡后其世系及去向不详；在位区间按周幽王纪年插值。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/虢石父"
+        }
+      ],
+      "altNames": [
+        "虢石甫",
+        "虢公鼓",
+        "虢硕父"
+      ],
+      "ancestralXing": "姬",
+      "clanShi": "虢",
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "虢石父"
+    },
+    {
+      "id": "guo-r8",
+      "name": "翰",
+      "roles": [
+        "君主"
+      ],
+      "bio": "虢公翰，西周末至东周初的虢国君主，一说为虢石父之子。具体在位年代及世系关系不详，时间轴依后续春秋纪事插值。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/虢公翰"
+        }
+      ],
+      "altNames": [],
+      "ancestralXing": "姬",
+      "clanShi": "虢",
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "虢公翰"
+    },
+    {
+      "id": "guo-r9",
+      "name": "忌父",
+      "roles": [
+        "君主"
+      ],
+      "bio": "虢公忌父，周平王晚年受用为王室卿士，前720年周平王有意分郑伯政于忌父，前715年任右卿士，见《左传·隐公八年》及相关年表。即位年不详，起年依可核纪事定位，终年在后续君主间插值。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/虢公忌父"
+        }
+      ],
+      "altNames": [],
+      "ancestralXing": "姬",
+      "clanShi": "虢",
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "虢公忌父"
+    },
+    {
+      "id": "guo-r10",
+      "name": "林父",
+      "roles": [
+        "君主"
+      ],
+      "bio": "虢公林父，姬姓虢氏，曾任周王室卿士。前707年繻葛之战率王室右军，前706、前703年奉命讨伐曲沃，前702年被迫出奔虞国，均见《左传》；在位起讫依所见纪事定位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/虢公林父"
+        }
+      ],
+      "altNames": [
+        "虢仲"
+      ],
+      "ancestralXing": "姬",
+      "clanShi": "虢",
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "虢公林父"
+    },
+    {
+      "id": "guo-gong-chou",
+      "name": "丑",
+      "roles": [
+        "君主"
+      ],
+      "bio": "虢公丑（又作虢公醜），春秋时期西虢末代君主，生卒及父祖世系不详。前673年与郑厉公合兵平定王子颓之乱，助周惠王复位。前655年晋献公再次借道虞国灭虢，虢公丑出奔周王室京师；《左传》同段记被俘者为虞公及井伯。虢公丑此后的确切卒年不详。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/虢公丑"
+        },
+        {
+          "label": "《左传·僖公五年》（晋灭虢、虢公丑奔京师）",
+          "url": "https://zh.wikisource.org/wiki/春秋左氏傳/僖公"
+        }
+      ],
+      "altNames": [
+        "虢公醜",
+        "虢叔"
+      ],
+      "ancestralXing": "姬",
+      "clanShi": "虢",
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "虢公丑"
+    },
+    {
+      "id": "guo-ji-yifu",
+      "name": "挞",
+      "title": "虢季易父",
+      "posthumousNames": [],
+      "templeNames": [],
+      "altNames": [
+        "虢季易父",
+        "易父"
+      ],
+      "ancestralXing": "姬",
+      "clanShi": "虢季",
+      "roles": [
+        "贵族",
+        "西虢君主身份待考"
+      ],
+      "bio": "虢季易父，姬姓，名挞，字易父，西周虢季家族人物，虢宄公之父。师丞钟记其家族五代世系；其是否兼任西虢君主存在争议，在位起讫不详。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/虢季易父"
+        },
+        {
+          "label": "虢国君主世系（主序列与待考虢季家族）",
+          "url": "https://zh.wikipedia.org/wiki/Template:虢國君主"
+        },
+        {
+          "label": "西虢国（金文家族君主身份待考）",
+          "url": "https://zh.wikipedia.org/wiki/西虢国#金文中的虢国氏族"
+        }
+      ]
+    },
+    {
+      "id": "guo-gui-gong",
+      "name": "虢宄公",
+      "title": "虢宄公",
+      "posthumousNames": [
+        "宄公",
+        "宫公"
+      ],
+      "templeNames": [],
+      "altNames": [
+        "虢宫公",
+        "师哉",
+        "宄公"
+      ],
+      "ancestralXing": "姬",
+      "clanShi": "虢季",
+      "roles": [
+        "贵族",
+        "西虢君主身份待考"
+      ],
+      "bio": "虢宄公，一作虢宫公，姬姓，字哉，虢季易父之子、虢幽叔之父。师哉鼎记其任周王室军职及受命为太师；主要活动于周穆王、共王时期。其西虢君主身份有争议，在位起讫不详。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/虢宄公"
+        },
+        {
+          "label": "虢国君主世系（主序列与待考虢季家族）",
+          "url": "https://zh.wikipedia.org/wiki/Template:虢國君主"
+        },
+        {
+          "label": "西虢国（金文家族君主身份待考）",
+          "url": "https://zh.wikipedia.org/wiki/西虢国#金文中的虢国氏族"
+        }
+      ]
+    },
+    {
+      "id": "guo-you-shu",
+      "name": "虢幽叔",
+      "title": "虢幽叔",
+      "posthumousNames": [
+        "幽叔"
+      ],
+      "templeNames": [],
+      "altNames": [
+        "师望",
+        "幽叔"
+      ],
+      "ancestralXing": "姬",
+      "clanShi": "虢季",
+      "roles": [
+        "贵族",
+        "西虢君主身份待考"
+      ],
+      "bio": "虢幽叔，姬姓，字望，虢宄公之子、虢德叔之父。师望鼎记其承袭父亲的太师职务并受周王赏赐；活动年代有共王时期、懿王至孝王时期等说。其西虢君主身份有争议，在位起讫不详。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/虢幽叔"
+        },
+        {
+          "label": "虢国君主世系（主序列与待考虢季家族）",
+          "url": "https://zh.wikipedia.org/wiki/Template:虢國君主"
+        },
+        {
+          "label": "西虢国（金文家族君主身份待考）",
+          "url": "https://zh.wikipedia.org/wiki/西虢国#金文中的虢国氏族"
+        }
+      ]
+    },
+    {
+      "id": "guo-de-shu",
+      "name": "虢德叔",
+      "title": "虢德叔",
+      "posthumousNames": [
+        "德叔"
+      ],
+      "templeNames": [],
+      "altNames": [
+        "即",
+        "德叔"
+      ],
+      "ancestralXing": "姬",
+      "clanShi": "虢季",
+      "roles": [
+        "贵族",
+        "西虢君主身份待考"
+      ],
+      "bio": "虢德叔，姬姓，字即，虢幽叔之子、师丞之父。即簋记其任周王宫廷近臣；活动年代有共王时期、孝王至夷王时期等说。其西虢君主身份有争议，在位起讫不详。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/虢德叔"
+        },
+        {
+          "label": "虢国君主世系（主序列与待考虢季家族）",
+          "url": "https://zh.wikipedia.org/wiki/Template:虢國君主"
+        },
+        {
+          "label": "西虢国（金文家族君主身份待考）",
+          "url": "https://zh.wikipedia.org/wiki/西虢国#金文中的虢国氏族"
+        }
+      ]
+    },
+    {
+      "id": "guo-shi-cheng",
+      "name": "师丞",
+      "title": "师丞",
+      "posthumousNames": [],
+      "templeNames": [],
+      "altNames": [
+        "虢公师丞"
+      ],
+      "ancestralXing": "姬",
+      "clanShi": "虢季",
+      "roles": [
+        "贵族",
+        "西虢君主身份待考"
+      ],
+      "bio": "师丞，姬姓，字丞，虢德叔之子。师丞钟列叙虢季易父、宄公、幽叔、德叔至师丞五代世系。其活动年代及西虢君主身份存在争议，与城公、厉公主序列的衔接未能确定，在位起讫不详。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/师丞"
+        },
+        {
+          "label": "虢国君主世系（主序列与待考虢季家族）",
+          "url": "https://zh.wikipedia.org/wiki/Template:虢國君主"
+        },
+        {
+          "label": "西虢国（金文家族君主身份待考）",
+          "url": "https://zh.wikipedia.org/wiki/西虢国#金文中的虢国氏族"
+        }
+      ]
+    },
+    {
+      "id": "guo-east-zhong",
+      "name": "仲",
+      "title": "虢仲",
+      "ancestralXing": "姬",
+      "clanShi": "虢",
+      "roles": [
+        "君主"
+      ],
+      "bio": "王季之子、周文王之弟，曾与虢叔同任文王卿士。周武王克商后分封二虢，通行说以虢仲封于制邑，为东虢始封君；东、西虢始封君的归属另有异说。生卒及具体在位起讫不详。",
+      "links": [
+        {
+          "label": "虢仲（始封君归属异说及东虢世系待考区段）",
+          "url": "https://zh.wikipedia.org/wiki/虢仲"
+        },
+        {
+          "label": "东虢国（始封与可考君主）",
+          "url": "https://zh.wikipedia.org/wiki/東虢國"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "altNames": [],
+      "birth": null,
+      "death": null
+    },
+    {
+      "id": "guo-east-dalin",
+      "name": "大林",
+      "title": "虢惠叔",
+      "ancestralXing": "姬",
+      "clanShi": "虢",
+      "roles": [
+        "君主"
+      ],
+      "bio": "东虢君主，谥惠叔，虢叔旅之父。《虢叔旅钟》称“皇考惠叔大林”，记其侍奉周天子，旅作钟追念父亲。其与始封君虢仲之间的具体世系、生卒及在位起讫不详。",
+      "links": [
+        {
+          "label": "东虢国（始封与可考君主）",
+          "url": "https://zh.wikipedia.org/wiki/東虢國"
+        },
+        {
+          "label": "何志華《西周金文韻讀研究淺議》（虢叔旅钟、惠叔大林父子）",
+          "url": "https://jas.hkbu.edu.hk/content/dam/jas-assets/publications/bulletin-of-the-jao-tsung-i-academy-of-sinology/issue-6-august-2019/12.pdf"
+        },
+        {
+          "label": "虢仲（始封君归属异说及东虢世系待考区段）",
+          "url": "https://zh.wikipedia.org/wiki/虢仲"
+        }
+      ],
+      "posthumousNames": [
+        "惠叔"
+      ],
+      "templeNames": [],
+      "altNames": [
+        "虢惠叔大林",
+        "惠叔大林"
+      ],
+      "birth": null,
+      "death": null
+    },
+    {
+      "id": "guo-east-lv",
+      "name": "旅",
+      "title": "虢叔旅",
+      "ancestralXing": "姬",
+      "clanShi": "虢",
+      "roles": [
+        "君主"
+      ],
+      "bio": "虢惠叔大林之子，西周虢国君主，东虢君主名录所载。曾作虢叔旅钟追念亡父，铭文记其承继父德、侍奉天子；《秦志》将其审理鬲从与攸卫牧田邑争讼系于前847年。生卒与完整在位起讫不详。",
+      "links": [
+        {
+          "label": "东虢国（始封与可考君主）",
+          "url": "https://zh.wikipedia.org/wiki/東虢國"
+        },
+        {
+          "label": "何志華《西周金文韻讀研究淺議》（虢叔旅钟、惠叔大林父子）",
+          "url": "https://jas.hkbu.edu.hk/content/dam/jas-assets/publications/bulletin-of-the-jao-tsung-i-academy-of-sinology/issue-6-august-2019/12.pdf"
+        },
+        {
+          "label": "《陕西省志·秦志》大事年表（虢叔旅活动于前847年之说）",
+          "url": "https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsz/szdylpdf/201404/P020240923616206405975.pdf"
+        },
+        {
+          "label": "虢仲（始封君归属异说及东虢世系待考区段）",
+          "url": "https://zh.wikipedia.org/wiki/虢仲"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "altNames": [
+        "虢旅"
+      ],
+      "birth": null,
+      "death": null
+    },
+    {
+      "id": "guo-east-last-shu",
+      "name": "？",
+      "title": "虢叔",
+      "ancestralXing": "姬",
+      "clanShi": "虢",
+      "roles": [
+        "君主"
+      ],
+      "bio": "东虢末代君主，史称虢叔，私名及父祖世系不详。《国语·郑语》记其与郑桓公同时；《左传·隐公元年》借郑庄公之言记“制，岩邑也，虢叔死焉”。东虢为郑所灭，通行系年为前767年；死亡方式未详。此人并非周文王之弟、西虢始封君虢叔。",
+      "links": [
+        {
+          "label": "《左传·隐公元年》（制邑、虢叔死焉）",
+          "url": "https://zh.wikisource.org/wiki/春秋左氏傳/隱公"
+        },
+        {
+          "label": "《国语·郑语》（虢叔与郑桓公共时）",
+          "url": "https://ctext.org/guo-yu/zheng-yu/ens"
+        },
+        {
+          "label": "孙尚勇《〈春秋〉历史叙事与孔子的文化关怀》（平王四年郑灭虢与杜预注）",
+          "url": "https://www.ica.org.cn/att/site17/20240529/1716968303123.pdf"
+        },
+        {
+          "label": "东虢国（始封与可考君主）",
+          "url": "https://zh.wikipedia.org/wiki/東虢國"
+        },
+        {
+          "label": "虢仲（始封君归属异说及东虢世系待考区段）",
+          "url": "https://zh.wikipedia.org/wiki/虢仲"
+        }
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "altNames": [
+        "东虢末君",
+        "东虢虢叔"
+      ],
+      "birth": null,
+      "death": {
+        "year": -767,
+        "month": 12,
+        "abs": -9181,
+        "confidence": "approximate_year"
+      }
     }
   ],
   "dynastyGroups": [],
@@ -11472,7 +12127,7 @@
         "abs": -4165,
         "confidence": "month"
       },
-      "note": "周成王封叔虞于唐，改国号晋；前403年三家分晋；前376年公室被废、另立傀儡君，前349年静公被杀而国亡。"
+      "note": "周成王封叔虞于唐，其子燮继位后改国号为晋。曲村—天马遗址为西周时期晋国早期都邑，发现连续的晋侯及夫人墓葬；早期都邑与文献所称翼的对应、唐至晋的迁移过程及始用年代仍有争议。昭侯时晋君都翼，曲沃支系与翼公室争位，前678年曲沃武公代翼。献公时都绛，景公前585年迁新田。前403年三家分晋；前376年公室被废、另立傀儡君，前349年静公被杀而国亡。"
     },
     {
       "id": "chu-chunqiu",
@@ -11784,9 +12439,87 @@
         "confidence": "month"
       },
       "note": "前778年秦襄公即位；前770年护周平王东迁列为诸侯；前221年嬴政称帝统一；前207年子婴降，秦亡。"
+    },
+    {
+      "id": "guo-chunqiu",
+      "name": "西虢国",
+      "altNames": [
+        "虢国",
+        "虢",
+        "南虢"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -1046,
+        "month": 1,
+        "abs": -12540,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -655,
+        "month": 12,
+        "abs": -7837,
+        "confidence": "month"
+      },
+      "note": "周朝姬姓诸侯国，本条目聚焦西虢；其东迁后三门峡一带亦称南虢。西虢传统君主序列：虢叔 → 郭叔 → 史料缺 → 城公 → 史料缺 → 厉公 → 宣公 → 文公 → 石父 → 翰 → 忌父 → 林父 → 丑。长父之后的君主，一说为宣公，一说为文公。\n有待考证的西虢君主世系：易父 → 宄公 → 幽叔 → 德叔 → 师丞。五代家族世系见师丞钟，但其是否兼任西虢君主及与主序列的衔接存在争议。\n东、西虢始封君归属存在异说。西虢东迁后三门峡一带称南虢，前655年晋献公借道虞国灭虢。《左传·僖公五年》记虢公丑亡国后出奔京师。"
+    },
+    {
+      "id": "guo-east",
+      "name": "东虢国",
+      "altNames": [
+        "东虢国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -1046,
+        "month": 1,
+        "abs": -12540,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -767,
+        "month": 12,
+        "abs": -9181,
+        "confidence": "approximate_year"
+      },
+      "note": "西周姬姓诸侯国，位于制邑（今河南荥阳一带）。通行说为周文王弟虢仲的封国，与西虢分别屏卫周王室。可考人物有虢仲、虢惠叔大林、虢叔旅及末君虢叔；惠叔与旅为父子，其余世系有断层。东、西虢始封君的归属存在异说。东虢为郑所灭，通行系年前767年；《左传》记末君虢叔死于制邑。"
     }
   ],
-  "capitals": [],
+  "capitals": [
+    {
+      "id": "capital-guo-shangyang",
+      "dynastyId": "guo-chunqiu",
+      "historicalName": "上阳",
+      "modernName": "河南省三门峡市李家窑遗址一带",
+      "longitude": 111.19,
+      "latitude": 34.75,
+      "coordinateSystem": "WGS84",
+      "start": {
+        "year": -770,
+        "month": 1,
+        "abs": -9228,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -655,
+        "month": 12,
+        "abs": -7837,
+        "confidence": "month"
+      },
+      "startAbs": -9228,
+      "endAbs": -7837,
+      "role": "primary",
+      "note": "虢都上阳。始年按虢国东迁后在三门峡建都的约数记；遗址位于今三门峡李家窑一带。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/虢国"
+        }
+      ]
+    }
+  ],
   "reigns": [
     {
       "id": "reign-zou-r1-zou-state",
@@ -12059,7 +12792,7 @@
       "id": "reign-zou-r11-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r11",
-      "title": "安公",
+      "title": "庄公",
       "start": {
         "year": -702,
         "month": 1,
@@ -12085,7 +12818,7 @@
       "id": "reign-zou-r12-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r12",
-      "title": "宪公",
+      "title": "琐",
       "start": {
         "year": -677,
         "month": 1,
@@ -23661,6 +24394,466 @@
       "claimRole": null,
       "eraNames": [],
       "isMain": false
+    },
+    {
+      "id": "reign-guo-r1-guo-chunqiu",
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-r1",
+      "title": "叔",
+      "eraNames": [],
+      "start": {
+        "year": -1046,
+        "month": 1,
+        "abs": -12540,
+        "confidence": "interpolated_by_other"
+      },
+      "end": {
+        "year": -1043,
+        "month": 12,
+        "abs": -12493,
+        "confidence": "interpolated_by_other"
+      },
+      "startAbs": -12540,
+      "endAbs": -12493,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
+    },
+    {
+      "id": "reign-guo-r2-guo-chunqiu",
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-r2",
+      "title": "郭叔",
+      "eraNames": [],
+      "start": {
+        "year": -1042,
+        "month": 1,
+        "abs": -12492,
+        "confidence": "interpolated_by_other"
+      },
+      "end": {
+        "year": -1021,
+        "month": 12,
+        "abs": -12229,
+        "confidence": "interpolated_by_other"
+      },
+      "startAbs": -12492,
+      "endAbs": -12229,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
+    },
+    {
+      "id": "reign-missing-guo-chunqiu--1020",
+      "dynastyId": "guo-chunqiu",
+      "personId": "system-missing-ruler",
+      "title": "史料缺",
+      "eraNames": [],
+      "start": {
+        "year": -1020,
+        "month": 1,
+        "abs": -12228,
+        "confidence": "interpolated_by_other"
+      },
+      "end": {
+        "year": -996,
+        "month": 12,
+        "abs": -11929,
+        "confidence": "interpolated_by_other"
+      },
+      "startAbs": -12228,
+      "endAbs": -11929,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
+    },
+    {
+      "id": "reign-guo-r3-guo-chunqiu",
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-r3",
+      "title": "城公",
+      "eraNames": [],
+      "start": {
+        "year": -995,
+        "month": 1,
+        "abs": -11928,
+        "confidence": "interpolated_by_other"
+      },
+      "end": {
+        "year": -923,
+        "month": 12,
+        "abs": -11053,
+        "confidence": "interpolated_by_other"
+      },
+      "startAbs": -11928,
+      "endAbs": -11053,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
+    },
+    {
+      "id": "reign-missing-guo-chunqiu--922",
+      "dynastyId": "guo-chunqiu",
+      "personId": "system-missing-ruler",
+      "title": "史料缺",
+      "eraNames": [],
+      "start": {
+        "year": -922,
+        "month": 1,
+        "abs": -11052,
+        "confidence": "interpolated_by_other"
+      },
+      "end": {
+        "year": -878,
+        "month": 12,
+        "abs": -10513,
+        "confidence": "interpolated_by_other"
+      },
+      "startAbs": -11052,
+      "endAbs": -10513,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false,
+      "startConfidence": "interpolated_by_other",
+      "endConfidence": "interpolated_by_other"
+    },
+    {
+      "id": "reign-guo-r4-guo-chunqiu",
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-r4",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -877,
+        "month": 1,
+        "abs": -10512,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -828,
+        "month": 12,
+        "abs": -9913,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -10512,
+      "endAbs": -9913,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-guo-r5-guo-chunqiu",
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-r5",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -827,
+        "month": 1,
+        "abs": -9912,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -805,
+        "month": 12,
+        "abs": -9637,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -9912,
+      "endAbs": -9637,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-guo-r6-guo-chunqiu",
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-r6",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -804,
+        "month": 1,
+        "abs": -9636,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -782,
+        "month": 12,
+        "abs": -9361,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -9636,
+      "endAbs": -9361,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-guo-r7-guo-chunqiu",
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-r7",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -781,
+        "month": 1,
+        "abs": -9360,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -771,
+        "month": 12,
+        "abs": -9229,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -9360,
+      "endAbs": -9229,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-guo-r8-guo-chunqiu",
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-r8",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -770,
+        "month": 1,
+        "abs": -9228,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -721,
+        "month": 12,
+        "abs": -8629,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -9228,
+      "endAbs": -8629,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-guo-r9-guo-chunqiu",
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-r9",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -720,
+        "month": 1,
+        "abs": -8628,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -708,
+        "month": 12,
+        "abs": -8473,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -8628,
+      "endAbs": -8473,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-guo-r10-guo-chunqiu",
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-r10",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -707,
+        "month": 1,
+        "abs": -8472,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -703,
+        "month": 12,
+        "abs": -8413,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -8472,
+      "endAbs": -8413,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-guo-gong-chou-guo-chunqiu",
+      "dynastyId": "guo-chunqiu",
+      "personId": "guo-gong-chou",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": -702,
+        "month": 1,
+        "abs": -8412,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -655,
+        "month": 12,
+        "abs": -7837,
+        "confidence": "year"
+      },
+      "startAbs": -8412,
+      "endAbs": -7837,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-guo-east-zhong",
+      "dynastyId": "guo-east",
+      "personId": "guo-east-zhong",
+      "title": "仲",
+      "start": {
+        "year": -1046,
+        "month": 1,
+        "abs": -12540,
+        "confidence": "interpolated_by_other"
+      },
+      "end": {
+        "year": -1043,
+        "month": 12,
+        "abs": -12493,
+        "confidence": "interpolated_by_other"
+      },
+      "startAbs": -12540,
+      "endAbs": -12493,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-missing-guo-east--1042",
+      "dynastyId": "guo-east",
+      "personId": "system-missing-ruler",
+      "title": "史料缺",
+      "start": {
+        "year": -1042,
+        "month": 1,
+        "abs": -12492,
+        "confidence": "interpolated_by_other"
+      },
+      "end": {
+        "year": -848,
+        "month": 12,
+        "abs": -10153,
+        "confidence": "interpolated_by_other"
+      },
+      "startAbs": -12492,
+      "endAbs": -10153,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-guo-east-lv",
+      "dynastyId": "guo-east",
+      "personId": "guo-east-lv",
+      "title": "叔旅",
+      "start": {
+        "year": -847,
+        "month": 1,
+        "abs": -10152,
+        "confidence": "interpolated_by_other"
+      },
+      "end": {
+        "year": -847,
+        "month": 12,
+        "abs": -10141,
+        "confidence": "interpolated_by_other"
+      },
+      "startAbs": -10152,
+      "endAbs": -10141,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-missing-guo-east--846",
+      "dynastyId": "guo-east",
+      "personId": "system-missing-ruler",
+      "title": "史料缺",
+      "start": {
+        "year": -846,
+        "month": 1,
+        "abs": -10140,
+        "confidence": "interpolated_by_other"
+      },
+      "end": {
+        "year": -775,
+        "month": 12,
+        "abs": -9277,
+        "confidence": "interpolated_by_other"
+      },
+      "startAbs": -10140,
+      "endAbs": -9277,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-guo-east-last-shu",
+      "dynastyId": "guo-east",
+      "personId": "guo-east-last-shu",
+      "title": "叔",
+      "start": {
+        "year": -774,
+        "month": 1,
+        "abs": -9276,
+        "confidence": "interpolated_by_other"
+      },
+      "end": {
+        "year": -767,
+        "month": 12,
+        "abs": -9181,
+        "confidence": "approximate_year"
+      },
+      "startAbs": -9276,
+      "endAbs": -9181,
+      "eraNames": [],
+      "isMain": false
     }
   ],
   "events": [
@@ -23776,6 +24969,28 @@
       ],
       "summary": "白起于长平围歼赵军四十余万，赵国一蹶不振，秦统一大势已定。",
       "locationId": "loc-changping"
+    },
+    {
+      "id": "quwo-replaces-yi",
+      "name": "曲沃代翼",
+      "kind": "politics",
+      "timeMode": "point",
+      "dateNote": "鲁庄公十六年，前678年。《左传·庄公十六年》记王使虢公命曲沃伯以一军为晋侯；《史记·晋世家》将灭晋侯缗系于前679年，故以受命并有晋地的前678年作为事件代表时点。",
+      "at": {
+        "year": -678,
+        "month": 12,
+        "abs": -8113,
+        "confidence": "year"
+      },
+      "atAbs": -8113,
+      "dynastyIds": [
+        "jin-chunqiu"
+      ],
+      "participantIds": [
+        "jin-r17",
+        "jin-r19"
+      ],
+      "summary": "曲沃武公称（姬姓，名称）与晋侯缗所代表的翼城公室长期争夺晋国君位。前678年，曲沃武公灭晋侯缗，周王命虢公授曲沃伯为晋侯，曲沃由此取代翼城公室并统一晋地，结束历时数代的曲沃与翼之争；武公后来称晋武公。"
     }
   ],
   "relations": [
@@ -23802,6 +25017,60 @@
       "fromRef": "event:maling-battle",
       "toRef": "person:sun-bin",
       "kind": "battle"
+    },
+    {
+      "id": "rel-guo-disputed-1",
+      "fromRef": "dynasty:guo-chunqiu",
+      "toRef": "person:guo-ji-yifu",
+      "kind": "other"
+    },
+    {
+      "id": "rel-guo-disputed-2",
+      "fromRef": "dynasty:guo-chunqiu",
+      "toRef": "person:guo-gui-gong",
+      "kind": "other"
+    },
+    {
+      "id": "rel-guo-disputed-3",
+      "fromRef": "dynasty:guo-chunqiu",
+      "toRef": "person:guo-you-shu",
+      "kind": "other"
+    },
+    {
+      "id": "rel-guo-disputed-4",
+      "fromRef": "dynasty:guo-chunqiu",
+      "toRef": "person:guo-de-shu",
+      "kind": "other"
+    },
+    {
+      "id": "rel-guo-disputed-5",
+      "fromRef": "dynasty:guo-chunqiu",
+      "toRef": "person:guo-shi-cheng",
+      "kind": "other"
+    },
+    {
+      "id": "rel-guo-east-person-1",
+      "fromRef": "dynasty:guo-east",
+      "toRef": "person:guo-east-zhong",
+      "kind": "other"
+    },
+    {
+      "id": "rel-guo-east-person-2",
+      "fromRef": "dynasty:guo-east",
+      "toRef": "person:guo-east-dalin",
+      "kind": "other"
+    },
+    {
+      "id": "rel-guo-east-person-3",
+      "fromRef": "dynasty:guo-east",
+      "toRef": "person:guo-east-lv",
+      "kind": "other"
+    },
+    {
+      "id": "rel-guo-east-person-4",
+      "fromRef": "dynasty:guo-east",
+      "toRef": "person:guo-east-last-shu",
+      "kind": "other"
     }
   ],
   "supplementalEventDynasties": [
@@ -23964,8 +25233,8 @@
       "personId": "jin-r10"
     }
   ],
-  "preSql": "",
-  "postSql": "-- Remove stale reigns from managed dynasties (superseded ids from older imports)\nWITH stale AS (\n  DELETE FROM reigns\n  WHERE dynasty_id IN ('zou-state', 'qi-chunqiu', 'jin-chunqiu', 'chu-chunqiu', 'yan-chunqiu', 'song-chunqiu', 'lu-chunqiu', 'wei-weiguo', 'zheng-chunqiu', 'cao-chunqiu', 'wu-chunqiu', 'yue-chunqiu', 'zhongshan', 'han-warring', 'zhao-warring', 'wei-warring', 'qin') AND id NOT IN ('reign-zou-r1-zou-state', 'reign-zou-r2-zou-state', 'reign-zou-r3-zou-state', 'reign-zou-r4-zou-state', 'reign-zou-r5-zou-state', 'reign-zou-r6-zou-state', 'reign-zou-r7-zou-state', 'reign-zou-r8-zou-state', 'reign-zou-r9-zou-state', 'reign-zou-r10-zou-state', 'reign-zou-r11-zou-state', 'reign-zou-r12-zou-state', 'reign-zou-r13-zou-state', 'reign-zou-r14-zou-state', 'reign-zou-r15-zou-state', 'reign-zou-r16-zou-state', 'reign-zou-r17-zou-state', 'reign-zou-r18-zou-state', 'reign-zou-r19-zou-state', 'reign-zou-r18-zou-state-2', 'reign-zou-he-zou-state', 'reign-zou-missing-after-he-1', 'reign-zou-kaogong-zou-state', 'reign-zou-missing-after-kaogong-1', 'reign-zou-missing-after-kaogong-2', 'reign-zou-mu-gong-zou-state', 'reign-zou-missing-after-mugong-2', 'reign-zou-missing-after-mugong-1', 'reign-zou-jun-qing-zou-state', 'reign-lv-shang-qi-chunqiu', 'reign-qi-r1-qi-chunqiu', 'reign-qi-r2-qi-chunqiu', 'reign-qi-r3-qi-chunqiu', 'reign-qi-r4-qi-chunqiu', 'reign-qi-r5-qi-chunqiu', 'reign-qi-r6-qi-chunqiu', 'reign-qi-r7-qi-chunqiu', 'reign-qi-r8-qi-chunqiu', 'reign-qi-r9-qi-chunqiu', 'reign-qi-r10-qi-chunqiu', 'reign-qi-r11-qi-chunqiu', 'reign-qi-r12-qi-chunqiu', 'reign-qi-r13-qi-chunqiu', 'reign-qi-r14-qi-chunqiu', 'reign-jiang-xiaobai-qi-chunqiu', 'reign-qi-r16-qi-chunqiu', 'reign-qi-r17-qi-chunqiu', 'reign-qi-r18-qi-chunqiu', 'reign-qi-r19-qi-chunqiu', 'reign-qi-r20-qi-chunqiu', 'reign-qi-r21-qi-chunqiu', 'reign-qi-r22-qi-chunqiu', 'reign-qi-r23-qi-chunqiu', 'reign-qi-r24-qi-chunqiu', 'reign-qi-r25-qi-chunqiu', 'reign-qi-r26-qi-chunqiu', 'reign-qi-r27-qi-chunqiu', 'reign-qi-r28-qi-chunqiu', 'reign-qi-r29-qi-chunqiu', 'reign-qi-r30-qi-chunqiu', 'reign-jiang-dai-qi-chunqiu', 'reign-tian-he-qi-chunqiu', 'reign-qi-r33-qi-chunqiu', 'reign-qi-r34-qi-chunqiu', 'reign-qi-r35-qi-chunqiu', 'reign-qi-r36-qi-chunqiu', 'reign-qi-r37-qi-chunqiu', 'reign-qi-r38-qi-chunqiu', 'reign-qi-r39-qi-chunqiu', 'reign-ji-shuyu-jin-chunqiu', 'reign-jin-r1-jin-chunqiu', 'reign-jin-r2-jin-chunqiu', 'reign-jin-r3-jin-chunqiu', 'reign-jin-r4-jin-chunqiu', 'reign-jin-r5-jin-chunqiu', 'reign-jin-r6-jin-chunqiu', 'reign-jin-r7-jin-chunqiu', 'reign-jin-r8-jin-chunqiu', 'reign-jin-r9-jin-chunqiu', 'reign-jin-r10-jin-chunqiu', 'reign-jin-r11-jin-chunqiu', 'reign-jin-r12-jin-chunqiu', 'reign-jin-r13-jin-chunqiu', 'reign-jin-r14-jin-chunqiu', 'reign-jin-r15-jin-chunqiu', 'reign-jin-r16-jin-chunqiu', 'reign-jin-r17-jin-chunqiu', 'reign-jin-r17-main-jin-chunqiu', 'reign-jin-r18-jin-chunqiu', 'reign-jin-r19-jin-chunqiu', 'reign-jin-r20-jin-chunqiu', 'reign-jin-zhuo-zi-jin-chunqiu', 'reign-jin-xi-qi-jin-chunqiu', 'reign-jin-r21-jin-chunqiu', 'reign-jin-r22-jin-chunqiu', 'reign-ji-chonger-jin-chunqiu', 'reign-jin-r24-jin-chunqiu', 'reign-jin-r25-jin-chunqiu', 'reign-jin-r26-jin-chunqiu', 'reign-jin-r27-jin-chunqiu', 'reign-jin-r28-jin-chunqiu', 'reign-jin-r29-jin-chunqiu', 'reign-jin-r30-jin-chunqiu', 'reign-jin-r31-jin-chunqiu', 'reign-jin-r32-jin-chunqiu', 'reign-jin-r33-jin-chunqiu', 'reign-jin-r34-jin-chunqiu', 'reign-jin-r35-jin-chunqiu', 'reign-jin-r36-jin-chunqiu', 'reign-jin-r37-jin-chunqiu', 'reign-jin-r38-jin-chunqiu', 'reign-jin-r39-jin-chunqiu', 'reign-chu-r0-chu-chunqiu', 'reign-chu-r1-chu-chunqiu', 'reign-chu-r2-chu-chunqiu', 'reign-chu-r3-chu-chunqiu', 'reign-chu-r4-chu-chunqiu', 'reign-chu-r5-chu-chunqiu', 'reign-chu-r6-chu-chunqiu', 'reign-chu-r7-chu-chunqiu', 'reign-chu-r8-chu-chunqiu', 'reign-chu-r9-chu-chunqiu', 'reign-chu-r10-chu-chunqiu', 'reign-chu-r11-chu-chunqiu', 'reign-chu-r12-chu-chunqiu', 'reign-chu-r13-chu-chunqiu', 'reign-chu-r14-chu-chunqiu', 'reign-chu-r15-chu-chunqiu', 'reign-chu-r16-chu-chunqiu', 'reign-chu-r17-chu-chunqiu', 'reign-chu-r18-chu-chunqiu', 'reign-chu-r19-chu-chunqiu', 'reign-chu-r20-chu-chunqiu', 'reign-xiong-zhuang-chu-chunqiu', 'reign-chu-r22-chu-chunqiu', 'reign-chu-r23-chu-chunqiu', 'reign-chu-r24-chu-chunqiu', 'reign-chu-r25-chu-chunqiu', 'reign-chu-r26-chu-chunqiu', 'reign-chu-r27-chu-chunqiu', 'reign-chu-r28-chu-chunqiu', 'reign-chu-r29-chu-chunqiu', 'reign-chu-r30-chu-chunqiu', 'reign-chu-r31-chu-chunqiu', 'reign-chu-r32-chu-chunqiu', 'reign-chu-r33-chu-chunqiu', 'reign-chu-r34-chu-chunqiu', 'reign-chu-r35-chu-chunqiu', 'reign-chu-r36-chu-chunqiu', 'reign-chu-r37-chu-chunqiu', 'reign-chu-r38-chu-chunqiu', 'reign-chu-r39-chu-chunqiu', 'reign-chu-r40-chu-chunqiu', 'reign-chu-r41-chu-chunqiu', 'reign-chu-r42-chu-chunqiu', 'reign-chu-r43-chu-chunqiu', 'reign-ji-shi-yan-chunqiu', 'reign-yan-r1-yan-chunqiu', 'reign-yan-r2-yan-chunqiu', 'reign-yan-r3-yan-chunqiu', 'reign-yan-r4-yan-chunqiu', 'reign-yan-r5-yan-chunqiu', 'reign-yan-r6-yan-chunqiu', 'reign-yan-r7-yan-chunqiu', 'reign-yan-r8-yan-chunqiu', 'reign-yan-r9-yan-chunqiu', 'reign-yan-r10-yan-chunqiu', 'reign-yan-r11-yan-chunqiu', 'reign-yan-r12-yan-chunqiu', 'reign-yan-r13-yan-chunqiu', 'reign-yan-r14-yan-chunqiu', 'reign-yan-r15-yan-chunqiu', 'reign-yan-r16-yan-chunqiu', 'reign-yan-r17-yan-chunqiu', 'reign-yan-r18-yan-chunqiu', 'reign-yan-r19-yan-chunqiu', 'reign-yan-r20-yan-chunqiu', 'reign-yan-r21-yan-chunqiu', 'reign-yan-r22-yan-chunqiu', 'reign-yan-r23-yan-chunqiu', 'reign-yan-r24-yan-chunqiu', 'reign-yan-r25-yan-chunqiu', 'reign-yan-r26-yan-chunqiu', 'reign-yan-r27-yan-chunqiu', 'reign-yan-r28-yan-chunqiu', 'reign-yan-r14-yan-chunqiu-2', 'reign-yan-r30-yan-chunqiu', 'reign-yan-r31-yan-chunqiu', 'reign-yan-r32-yan-chunqiu', 'reign-yan-r33-yan-chunqiu', 'reign-yan-r34-yan-chunqiu', 'reign-yan-r35-yan-chunqiu', 'reign-yan-r36-yan-chunqiu', 'reign-yan-r37-yan-chunqiu', 'reign-song-weizi-song-chunqiu', 'reign-song-r1-song-chunqiu', 'reign-song-r2-song-chunqiu', 'reign-song-r3-song-chunqiu', 'reign-song-r4-song-chunqiu', 'reign-song-r5-song-chunqiu', 'reign-song-r6-song-chunqiu', 'reign-song-r7-song-chunqiu', 'reign-song-r8-song-chunqiu', 'reign-song-r9-song-chunqiu', 'reign-song-r10-song-chunqiu', 'reign-song-r11-song-chunqiu', 'reign-song-r12-song-chunqiu', 'reign-song-r13-song-chunqiu', 'reign-song-r14-song-chunqiu', 'reign-song-r15-song-chunqiu', 'reign-song-r16-song-chunqiu', 'reign-song-r17-song-chunqiu', 'reign-song-r18-song-chunqiu', 'reign-song-r19-song-chunqiu', 'reign-song-r20-song-chunqiu', 'reign-song-r21-song-chunqiu', 'reign-song-r22-song-chunqiu', 'reign-song-r23-song-chunqiu', 'reign-song-r24-song-chunqiu', 'reign-song-r25-song-chunqiu', 'reign-song-r26-song-chunqiu', 'reign-song-r27-song-chunqiu', 'reign-song-r28-song-chunqiu', 'reign-song-r29-song-chunqiu', 'reign-song-r30-song-chunqiu', 'reign-song-r31-song-chunqiu', 'reign-song-r32-song-chunqiu', 'reign-song-r33-song-chunqiu', 'reign-bo-qin-lu-chunqiu', 'reign-lu-r1-lu-chunqiu', 'reign-lu-r2-lu-chunqiu', 'reign-lu-r3-lu-chunqiu', 'reign-lu-r4-lu-chunqiu', 'reign-lu-r5-lu-chunqiu', 'reign-lu-r6-lu-chunqiu', 'reign-lu-r7-lu-chunqiu', 'reign-lu-r8-lu-chunqiu', 'reign-lu-r9-lu-chunqiu', 'reign-lu-r10-lu-chunqiu', 'reign-lu-r11-lu-chunqiu', 'reign-lu-r12-lu-chunqiu', 'reign-lu-r13-lu-chunqiu', 'reign-lu-r14-lu-chunqiu', 'reign-lu-r15-lu-chunqiu', 'reign-lu-r16-lu-chunqiu', 'reign-lu-r17-lu-chunqiu', 'reign-lu-r18-lu-chunqiu', 'reign-lu-r19-lu-chunqiu', 'reign-lu-r20-lu-chunqiu', 'reign-lu-r21-lu-chunqiu', 'reign-lu-r22-lu-chunqiu', 'reign-lu-r23-lu-chunqiu', 'reign-lu-r24-lu-chunqiu', 'reign-lu-r25-lu-chunqiu', 'reign-lu-r26-lu-chunqiu', 'reign-lu-r27-lu-chunqiu', 'reign-lu-r28-lu-chunqiu', 'reign-lu-r29-lu-chunqiu', 'reign-lu-r30-lu-chunqiu', 'reign-lu-r31-lu-chunqiu', 'reign-lu-r32-lu-chunqiu', 'reign-lu-r33-lu-chunqiu', 'reign-lu-r34-lu-chunqiu', 'reign-weiguo-r0-wei-weiguo', 'reign-weiguo-r1-wei-weiguo', 'reign-weiguo-r2-wei-weiguo', 'reign-weiguo-r3-wei-weiguo', 'reign-weiguo-r4-wei-weiguo', 'reign-weiguo-r5-wei-weiguo', 'reign-weiguo-r6-wei-weiguo', 'reign-weiguo-r7-wei-weiguo', 'reign-weiguo-r8-wei-weiguo', 'reign-weiguo-r9-wei-weiguo', 'reign-weiguo-r10-wei-weiguo', 'reign-weiguo-r11-wei-weiguo', 'reign-weiguo-r12-wei-weiguo', 'reign-weiguo-r13-wei-weiguo', 'reign-weiguo-r14-wei-weiguo', 'reign-weiguo-r15-wei-weiguo', 'reign-weiguo-r16-wei-weiguo', 'reign-weiguo-r15-wei-weiguo-2', 'reign-weiguo-r18-wei-weiguo', 'reign-weiguo-r19-wei-weiguo', 'reign-weiguo-r20-wei-weiguo', 'reign-weiguo-r21-wei-weiguo', 'reign-weiguo-r22-wei-weiguo', 'reign-weiguo-r21-wei-weiguo-2', 'reign-weiguo-r23-wei-weiguo', 'reign-weiguo-r24-wei-weiguo', 'reign-weiguo-r25-wei-weiguo', 'reign-weiguo-r26-wei-weiguo', 'reign-weiguo-r25-wei-weiguo-2', 'reign-weiguo-r28-wei-weiguo', 'reign-weiguo-r29-wei-weiguo', 'reign-weiguo-r30-wei-weiguo', 'reign-weiguo-r31-wei-weiguo', 'reign-weiguo-r32-wei-weiguo', 'reign-weiguo-r33-wei-weiguo', 'reign-weiguo-r30-wei-weiguo-2', 'reign-weiguo-r35-wei-weiguo', 'reign-weiguo-r36-wei-weiguo', 'reign-weiguo-r37-wei-weiguo', 'reign-weiguo-r38-wei-weiguo', 'reign-weiguo-r39-wei-weiguo', 'reign-weiguo-r40-wei-weiguo', 'reign-weiguo-r41-wei-weiguo', 'reign-weiguo-r42-wei-weiguo', 'reign-weiguo-r43-wei-weiguo', 'reign-weiguo-r44-wei-weiguo', 'reign-weiguo-r45-wei-weiguo', 'reign-weiguo-r46-wei-weiguo', 'reign-zheng-r0-zheng-chunqiu', 'reign-zheng-r1-zheng-chunqiu', 'reign-zheng-r2-zheng-chunqiu', 'reign-zheng-r3-zheng-chunqiu', 'reign-zheng-r4-zheng-chunqiu', 'reign-zheng-r3-zheng-chunqiu-2', 'reign-zheng-r6-zheng-chunqiu', 'reign-zheng-r7-zheng-chunqiu', 'reign-zheng-r4-zheng-chunqiu-2', 'reign-zheng-r9-zheng-chunqiu', 'reign-zheng-r10-zheng-chunqiu', 'reign-zheng-r11-zheng-chunqiu', 'reign-zheng-r12-zheng-chunqiu', 'reign-zheng-r13-zheng-chunqiu', 'reign-zheng-r14-zheng-chunqiu', 'reign-zheng-gongzi-xu-zheng-chunqiu', 'reign-zheng-r14-zheng-chunqiu-2', 'reign-zheng-r15-zheng-chunqiu', 'reign-zheng-r16-zheng-chunqiu', 'reign-zheng-r17-zheng-chunqiu', 'reign-zheng-r18-zheng-chunqiu', 'reign-zheng-r19-zheng-chunqiu', 'reign-zheng-r20-zheng-chunqiu', 'reign-zheng-r21-zheng-chunqiu', 'reign-zheng-r22-zheng-chunqiu', 'reign-zheng-r23-zheng-chunqiu', 'reign-zheng-r24-zheng-chunqiu', 'reign-cao-r0-cao-chunqiu', 'reign-cao-r1-cao-chunqiu', 'reign-cao-r2-cao-chunqiu', 'reign-cao-r3-cao-chunqiu', 'reign-cao-r4-cao-chunqiu', 'reign-cao-r5-cao-chunqiu', 'reign-cao-r6-cao-chunqiu', 'reign-cao-r7-cao-chunqiu', 'reign-cao-r8-cao-chunqiu', 'reign-cao-r9-cao-chunqiu', 'reign-cao-r10-cao-chunqiu', 'reign-cao-r11-cao-chunqiu', 'reign-cao-r12-cao-chunqiu', 'reign-cao-r13-cao-chunqiu', 'reign-cao-r14-cao-chunqiu', 'reign-cao-r15-cao-chunqiu', 'reign-cao-r16-cao-chunqiu', 'reign-cao-r17-cao-chunqiu', 'reign-cao-r18-cao-chunqiu', 'reign-cao-r19-cao-chunqiu', 'reign-cao-r20-cao-chunqiu', 'reign-cao-r21-cao-chunqiu', 'reign-cao-r22-cao-chunqiu', 'reign-cao-r23-cao-chunqiu', 'reign-cao-r24-cao-chunqiu', 'reign-cao-r25-cao-chunqiu', 'reign-wu-pre-r0-wu-chunqiu', 'reign-wu-pre-r1-wu-chunqiu', 'reign-wu-pre-r2-wu-chunqiu', 'reign-wu-pre-r3-wu-chunqiu', 'reign-wu-pre-r4-wu-chunqiu', 'reign-wu-pre-r5-wu-chunqiu', 'reign-wu-pre-r6-wu-chunqiu', 'reign-wu-pre-r7-wu-chunqiu', 'reign-wu-pre-r8-wu-chunqiu', 'reign-wu-pre-r9-wu-chunqiu', 'reign-wu-pre-r10-wu-chunqiu', 'reign-wu-pre-r11-wu-chunqiu', 'reign-wu-pre-r12-wu-chunqiu', 'reign-wu-pre-r13-wu-chunqiu', 'reign-wu-pre-r14-wu-chunqiu', 'reign-wu-pre-r15-wu-chunqiu', 'reign-wu-pre-r16-wu-chunqiu', 'reign-wu-pre-r17-wu-chunqiu', 'reign-wu-r0-wu-chunqiu', 'reign-wu-r1-wu-chunqiu', 'reign-wu-r2-wu-chunqiu', 'reign-wu-r3-wu-chunqiu', 'reign-wu-r4-wu-chunqiu', 'reign-helu-wu-chunqiu', 'reign-wu-fu-gai-wu-chunqiu', 'reign-fu-chai-wu-chunqiu', 'reign-yue-r3-yue-chunqiu', 'reign-yue-r4-yue-chunqiu', 'reign-gou-jian-yue-chunqiu', 'reign-yue-r6-yue-chunqiu', 'reign-yue-r7-yue-chunqiu', 'reign-yue-r8-yue-chunqiu', 'reign-yue-r9-yue-chunqiu', 'reign-yue-r10-yue-chunqiu', 'reign-yue-r11-yue-chunqiu', 'reign-yue-r12-yue-chunqiu', 'reign-yue-r13-yue-chunqiu', 'reign-zhongshan-r0-zhongshan', 'reign-zhongshan-r1-zhongshan', 'reign-zhongshan-r2-zhongshan', 'reign-zhongshan-r2-zhongshan-2', 'reign-zhongshan-r3-zhongshan', 'reign-zhongshan-r4-zhongshan', 'reign-zhongshan-r5-zhongshan', 'reign-zhongshan-r6-zhongshan', 'reign-han-jing-han-warring', 'reign-han-r1-han-warring', 'reign-han-r2-han-warring', 'reign-han-r3-han-warring', 'reign-han-r4-han-warring', 'reign-han-r5-han-warring', 'reign-han-r6-han-warring', 'reign-han-r7-han-warring', 'reign-han-r8-han-warring', 'reign-han-r9-han-warring', 'reign-han-r10-han-warring', 'reign-zhao-lie-zhao-warring', 'reign-zhao-r1-zhao-warring', 'reign-zhao-r2-zhao-warring', 'reign-zhao-r3-zhao-warring', 'reign-zhao-r4-zhao-warring', 'reign-zhao-r5-zhao-warring', 'reign-zhao-r6-zhao-warring', 'reign-zhao-r7-zhao-warring', 'reign-zhao-r8-zhao-warring', 'reign-zhao-r9-zhao-warring', 'reign-wei-wen-wei-warring', 'reign-wei-r1-wei-warring', 'reign-wei-r2-wei-warring', 'reign-wei-r3-wei-warring', 'reign-wei-r4-wei-warring', 'reign-wei-r5-wei-warring', 'reign-wei-r6-wei-warring', 'reign-wei-r7-wei-warring', 'reign-ying-qi-qin', 'reign-qin-r1-qin', 'reign-qin-r2-qin', 'reign-qin-r3-qin', 'reign-qin-r4-qin', 'reign-qin-r5-qin', 'reign-qin-r6-qin', 'reign-qin-r7-qin', 'reign-qin-r8-qin', 'reign-qin-r9-qin', 'reign-qin-r10-qin', 'reign-qin-r11-qin', 'reign-qin-r12-qin', 'reign-qin-r13-qin', 'reign-qin-r14-qin', 'reign-qin-r15-qin', 'reign-qin-r16-qin', 'reign-qin-r17-qin', 'reign-qin-r18-qin', 'reign-qin-r19-qin', 'reign-qin-r20-qin', 'reign-qin-r21-qin', 'reign-qin-r22-qin', 'reign-qin-r23-qin', 'reign-ying-quliang-qin', 'reign-qin-r25-qin', 'reign-qin-r26-qin', 'reign-qin-r27-qin', 'reign-qin-r28-qin', 'reign-qin-r29-qin', 'reign-ying-zheng-qin', 'reign-ying-zheng', 'reign-ying-huhai', 'reign-ying-ziying')\n  RETURNING person_id\n)\nDELETE FROM persons p\nWHERE p.id IN (SELECT DISTINCT person_id FROM stale)\n  AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)\n  AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = p.id)\n  AND NOT EXISTS (\n    SELECT 1 FROM relations rel\n    WHERE (rel.from_type = 'person' AND rel.from_id = p.id)\n       OR (rel.to_type = 'person' AND rel.to_id = p.id)\n  );",
+  "preSql": "DELETE FROM reign_capitals WHERE reign_id IN ('reign-guo-r1-guo-chunqiu', 'reign-guo-r2-guo-chunqiu', 'reign-guo-r3-guo-chunqiu');",
+  "postSql": "-- Remove stale reigns from managed dynasties (superseded ids from older imports)\nWITH stale AS (\n  DELETE FROM reigns\n  WHERE dynasty_id IN ('zou-state', 'qi-chunqiu', 'jin-chunqiu', 'chu-chunqiu', 'yan-chunqiu', 'song-chunqiu', 'lu-chunqiu', 'wei-weiguo', 'zheng-chunqiu', 'cao-chunqiu', 'wu-chunqiu', 'yue-chunqiu', 'zhongshan', 'han-warring', 'zhao-warring', 'wei-warring', 'qin', 'guo-chunqiu', 'guo-east') AND id NOT IN ('reign-zou-r1-zou-state', 'reign-zou-r2-zou-state', 'reign-zou-r3-zou-state', 'reign-zou-r4-zou-state', 'reign-zou-r5-zou-state', 'reign-zou-r6-zou-state', 'reign-zou-r7-zou-state', 'reign-zou-r8-zou-state', 'reign-zou-r9-zou-state', 'reign-zou-r10-zou-state', 'reign-zou-r11-zou-state', 'reign-zou-r12-zou-state', 'reign-zou-r13-zou-state', 'reign-zou-r14-zou-state', 'reign-zou-r15-zou-state', 'reign-zou-r16-zou-state', 'reign-zou-r17-zou-state', 'reign-zou-r18-zou-state', 'reign-zou-r19-zou-state', 'reign-zou-r18-zou-state-2', 'reign-zou-he-zou-state', 'reign-zou-missing-after-he-1', 'reign-zou-kaogong-zou-state', 'reign-zou-missing-after-kaogong-1', 'reign-zou-missing-after-kaogong-2', 'reign-zou-mu-gong-zou-state', 'reign-zou-missing-after-mugong-2', 'reign-zou-missing-after-mugong-1', 'reign-zou-jun-qing-zou-state', 'reign-lv-shang-qi-chunqiu', 'reign-qi-r1-qi-chunqiu', 'reign-qi-r2-qi-chunqiu', 'reign-qi-r3-qi-chunqiu', 'reign-qi-r4-qi-chunqiu', 'reign-qi-r5-qi-chunqiu', 'reign-qi-r6-qi-chunqiu', 'reign-qi-r7-qi-chunqiu', 'reign-qi-r8-qi-chunqiu', 'reign-qi-r9-qi-chunqiu', 'reign-qi-r10-qi-chunqiu', 'reign-qi-r11-qi-chunqiu', 'reign-qi-r12-qi-chunqiu', 'reign-qi-r13-qi-chunqiu', 'reign-qi-r14-qi-chunqiu', 'reign-jiang-xiaobai-qi-chunqiu', 'reign-qi-r16-qi-chunqiu', 'reign-qi-r17-qi-chunqiu', 'reign-qi-r18-qi-chunqiu', 'reign-qi-r19-qi-chunqiu', 'reign-qi-r20-qi-chunqiu', 'reign-qi-r21-qi-chunqiu', 'reign-qi-r22-qi-chunqiu', 'reign-qi-r23-qi-chunqiu', 'reign-qi-r24-qi-chunqiu', 'reign-qi-r25-qi-chunqiu', 'reign-qi-r26-qi-chunqiu', 'reign-qi-r27-qi-chunqiu', 'reign-qi-r28-qi-chunqiu', 'reign-qi-r29-qi-chunqiu', 'reign-qi-r30-qi-chunqiu', 'reign-jiang-dai-qi-chunqiu', 'reign-tian-he-qi-chunqiu', 'reign-qi-r33-qi-chunqiu', 'reign-qi-r34-qi-chunqiu', 'reign-qi-r35-qi-chunqiu', 'reign-qi-r36-qi-chunqiu', 'reign-qi-r37-qi-chunqiu', 'reign-qi-r38-qi-chunqiu', 'reign-qi-r39-qi-chunqiu', 'reign-ji-shuyu-jin-chunqiu', 'reign-jin-r1-jin-chunqiu', 'reign-jin-r2-jin-chunqiu', 'reign-jin-r3-jin-chunqiu', 'reign-jin-r4-jin-chunqiu', 'reign-jin-r5-jin-chunqiu', 'reign-jin-r6-jin-chunqiu', 'reign-jin-r7-jin-chunqiu', 'reign-jin-r8-jin-chunqiu', 'reign-jin-r9-jin-chunqiu', 'reign-jin-r10-jin-chunqiu', 'reign-jin-r11-jin-chunqiu', 'reign-jin-r12-jin-chunqiu', 'reign-jin-r13-jin-chunqiu', 'reign-jin-r14-jin-chunqiu', 'reign-jin-r15-jin-chunqiu', 'reign-jin-r16-jin-chunqiu', 'reign-jin-r17-jin-chunqiu', 'reign-jin-r17-main-jin-chunqiu', 'reign-jin-r18-jin-chunqiu', 'reign-jin-r19-jin-chunqiu', 'reign-jin-r20-jin-chunqiu', 'reign-jin-zhuo-zi-jin-chunqiu', 'reign-jin-xi-qi-jin-chunqiu', 'reign-jin-r21-jin-chunqiu', 'reign-jin-r22-jin-chunqiu', 'reign-ji-chonger-jin-chunqiu', 'reign-jin-r24-jin-chunqiu', 'reign-jin-r25-jin-chunqiu', 'reign-jin-r26-jin-chunqiu', 'reign-jin-r27-jin-chunqiu', 'reign-jin-r28-jin-chunqiu', 'reign-jin-r29-jin-chunqiu', 'reign-jin-r30-jin-chunqiu', 'reign-jin-r31-jin-chunqiu', 'reign-jin-r32-jin-chunqiu', 'reign-jin-r33-jin-chunqiu', 'reign-jin-r34-jin-chunqiu', 'reign-jin-r35-jin-chunqiu', 'reign-jin-r36-jin-chunqiu', 'reign-jin-r37-jin-chunqiu', 'reign-jin-r38-jin-chunqiu', 'reign-jin-r39-jin-chunqiu', 'reign-chu-r0-chu-chunqiu', 'reign-chu-r1-chu-chunqiu', 'reign-chu-r2-chu-chunqiu', 'reign-chu-r3-chu-chunqiu', 'reign-chu-r4-chu-chunqiu', 'reign-chu-r5-chu-chunqiu', 'reign-chu-r6-chu-chunqiu', 'reign-chu-r7-chu-chunqiu', 'reign-chu-r8-chu-chunqiu', 'reign-chu-r9-chu-chunqiu', 'reign-chu-r10-chu-chunqiu', 'reign-chu-r11-chu-chunqiu', 'reign-chu-r12-chu-chunqiu', 'reign-chu-r13-chu-chunqiu', 'reign-chu-r14-chu-chunqiu', 'reign-chu-r15-chu-chunqiu', 'reign-chu-r16-chu-chunqiu', 'reign-chu-r17-chu-chunqiu', 'reign-chu-r18-chu-chunqiu', 'reign-chu-r19-chu-chunqiu', 'reign-chu-r20-chu-chunqiu', 'reign-xiong-zhuang-chu-chunqiu', 'reign-chu-r22-chu-chunqiu', 'reign-chu-r23-chu-chunqiu', 'reign-chu-r24-chu-chunqiu', 'reign-chu-r25-chu-chunqiu', 'reign-chu-r26-chu-chunqiu', 'reign-chu-r27-chu-chunqiu', 'reign-chu-r28-chu-chunqiu', 'reign-chu-r29-chu-chunqiu', 'reign-chu-r30-chu-chunqiu', 'reign-chu-r31-chu-chunqiu', 'reign-chu-r32-chu-chunqiu', 'reign-chu-r33-chu-chunqiu', 'reign-chu-r34-chu-chunqiu', 'reign-chu-r35-chu-chunqiu', 'reign-chu-r36-chu-chunqiu', 'reign-chu-r37-chu-chunqiu', 'reign-chu-r38-chu-chunqiu', 'reign-chu-r39-chu-chunqiu', 'reign-chu-r40-chu-chunqiu', 'reign-chu-r41-chu-chunqiu', 'reign-chu-r42-chu-chunqiu', 'reign-chu-r43-chu-chunqiu', 'reign-ji-shi-yan-chunqiu', 'reign-yan-r1-yan-chunqiu', 'reign-yan-r2-yan-chunqiu', 'reign-yan-r3-yan-chunqiu', 'reign-yan-r4-yan-chunqiu', 'reign-yan-r5-yan-chunqiu', 'reign-yan-r6-yan-chunqiu', 'reign-yan-r7-yan-chunqiu', 'reign-yan-r8-yan-chunqiu', 'reign-yan-r9-yan-chunqiu', 'reign-yan-r10-yan-chunqiu', 'reign-yan-r11-yan-chunqiu', 'reign-yan-r12-yan-chunqiu', 'reign-yan-r13-yan-chunqiu', 'reign-yan-r14-yan-chunqiu', 'reign-yan-r15-yan-chunqiu', 'reign-yan-r16-yan-chunqiu', 'reign-yan-r17-yan-chunqiu', 'reign-yan-r18-yan-chunqiu', 'reign-yan-r19-yan-chunqiu', 'reign-yan-r20-yan-chunqiu', 'reign-yan-r21-yan-chunqiu', 'reign-yan-r22-yan-chunqiu', 'reign-yan-r23-yan-chunqiu', 'reign-yan-r24-yan-chunqiu', 'reign-yan-r25-yan-chunqiu', 'reign-yan-r26-yan-chunqiu', 'reign-yan-r27-yan-chunqiu', 'reign-yan-r28-yan-chunqiu', 'reign-yan-r14-yan-chunqiu-2', 'reign-yan-r30-yan-chunqiu', 'reign-yan-r31-yan-chunqiu', 'reign-yan-r32-yan-chunqiu', 'reign-yan-r33-yan-chunqiu', 'reign-yan-r34-yan-chunqiu', 'reign-yan-r35-yan-chunqiu', 'reign-yan-r36-yan-chunqiu', 'reign-yan-r37-yan-chunqiu', 'reign-song-weizi-song-chunqiu', 'reign-song-r1-song-chunqiu', 'reign-song-r2-song-chunqiu', 'reign-song-r3-song-chunqiu', 'reign-song-r4-song-chunqiu', 'reign-song-r5-song-chunqiu', 'reign-song-r6-song-chunqiu', 'reign-song-r7-song-chunqiu', 'reign-song-r8-song-chunqiu', 'reign-song-r9-song-chunqiu', 'reign-song-r10-song-chunqiu', 'reign-song-r11-song-chunqiu', 'reign-song-r12-song-chunqiu', 'reign-song-r13-song-chunqiu', 'reign-song-r14-song-chunqiu', 'reign-song-r15-song-chunqiu', 'reign-song-r16-song-chunqiu', 'reign-song-r17-song-chunqiu', 'reign-song-r18-song-chunqiu', 'reign-song-r19-song-chunqiu', 'reign-song-r20-song-chunqiu', 'reign-song-r21-song-chunqiu', 'reign-song-r22-song-chunqiu', 'reign-song-r23-song-chunqiu', 'reign-song-r24-song-chunqiu', 'reign-song-r25-song-chunqiu', 'reign-song-r26-song-chunqiu', 'reign-song-r27-song-chunqiu', 'reign-song-r28-song-chunqiu', 'reign-song-r29-song-chunqiu', 'reign-song-r30-song-chunqiu', 'reign-song-r31-song-chunqiu', 'reign-song-r32-song-chunqiu', 'reign-song-r33-song-chunqiu', 'reign-bo-qin-lu-chunqiu', 'reign-lu-r1-lu-chunqiu', 'reign-lu-r2-lu-chunqiu', 'reign-lu-r3-lu-chunqiu', 'reign-lu-r4-lu-chunqiu', 'reign-lu-r5-lu-chunqiu', 'reign-lu-r6-lu-chunqiu', 'reign-lu-r7-lu-chunqiu', 'reign-lu-r8-lu-chunqiu', 'reign-lu-r9-lu-chunqiu', 'reign-lu-r10-lu-chunqiu', 'reign-lu-r11-lu-chunqiu', 'reign-lu-r12-lu-chunqiu', 'reign-lu-r13-lu-chunqiu', 'reign-lu-r14-lu-chunqiu', 'reign-lu-r15-lu-chunqiu', 'reign-lu-r16-lu-chunqiu', 'reign-lu-r17-lu-chunqiu', 'reign-lu-r18-lu-chunqiu', 'reign-lu-r19-lu-chunqiu', 'reign-lu-r20-lu-chunqiu', 'reign-lu-r21-lu-chunqiu', 'reign-lu-r22-lu-chunqiu', 'reign-lu-r23-lu-chunqiu', 'reign-lu-r24-lu-chunqiu', 'reign-lu-r25-lu-chunqiu', 'reign-lu-r26-lu-chunqiu', 'reign-lu-r27-lu-chunqiu', 'reign-lu-r28-lu-chunqiu', 'reign-lu-r29-lu-chunqiu', 'reign-lu-r30-lu-chunqiu', 'reign-lu-r31-lu-chunqiu', 'reign-lu-r32-lu-chunqiu', 'reign-lu-r33-lu-chunqiu', 'reign-lu-r34-lu-chunqiu', 'reign-weiguo-r0-wei-weiguo', 'reign-weiguo-r1-wei-weiguo', 'reign-weiguo-r2-wei-weiguo', 'reign-weiguo-r3-wei-weiguo', 'reign-weiguo-r4-wei-weiguo', 'reign-weiguo-r5-wei-weiguo', 'reign-weiguo-r6-wei-weiguo', 'reign-weiguo-r7-wei-weiguo', 'reign-weiguo-r8-wei-weiguo', 'reign-weiguo-r9-wei-weiguo', 'reign-weiguo-r10-wei-weiguo', 'reign-weiguo-r11-wei-weiguo', 'reign-weiguo-r12-wei-weiguo', 'reign-weiguo-r13-wei-weiguo', 'reign-weiguo-r14-wei-weiguo', 'reign-weiguo-r15-wei-weiguo', 'reign-weiguo-r16-wei-weiguo', 'reign-weiguo-r15-wei-weiguo-2', 'reign-weiguo-r18-wei-weiguo', 'reign-weiguo-r19-wei-weiguo', 'reign-weiguo-r20-wei-weiguo', 'reign-weiguo-r21-wei-weiguo', 'reign-weiguo-r22-wei-weiguo', 'reign-weiguo-r21-wei-weiguo-2', 'reign-weiguo-r23-wei-weiguo', 'reign-weiguo-r24-wei-weiguo', 'reign-weiguo-r25-wei-weiguo', 'reign-weiguo-r26-wei-weiguo', 'reign-weiguo-r25-wei-weiguo-2', 'reign-weiguo-r28-wei-weiguo', 'reign-weiguo-r29-wei-weiguo', 'reign-weiguo-r30-wei-weiguo', 'reign-weiguo-r31-wei-weiguo', 'reign-weiguo-r32-wei-weiguo', 'reign-weiguo-r33-wei-weiguo', 'reign-weiguo-r30-wei-weiguo-2', 'reign-weiguo-r35-wei-weiguo', 'reign-weiguo-r36-wei-weiguo', 'reign-weiguo-r37-wei-weiguo', 'reign-weiguo-r38-wei-weiguo', 'reign-weiguo-r39-wei-weiguo', 'reign-weiguo-r40-wei-weiguo', 'reign-weiguo-r41-wei-weiguo', 'reign-weiguo-r42-wei-weiguo', 'reign-weiguo-r43-wei-weiguo', 'reign-weiguo-r44-wei-weiguo', 'reign-weiguo-r45-wei-weiguo', 'reign-weiguo-r46-wei-weiguo', 'reign-zheng-r0-zheng-chunqiu', 'reign-zheng-r1-zheng-chunqiu', 'reign-zheng-r2-zheng-chunqiu', 'reign-zheng-r3-zheng-chunqiu', 'reign-zheng-r4-zheng-chunqiu', 'reign-zheng-r3-zheng-chunqiu-2', 'reign-zheng-r6-zheng-chunqiu', 'reign-zheng-r7-zheng-chunqiu', 'reign-zheng-r4-zheng-chunqiu-2', 'reign-zheng-r9-zheng-chunqiu', 'reign-zheng-r10-zheng-chunqiu', 'reign-zheng-r11-zheng-chunqiu', 'reign-zheng-r12-zheng-chunqiu', 'reign-zheng-r13-zheng-chunqiu', 'reign-zheng-r14-zheng-chunqiu', 'reign-zheng-gongzi-xu-zheng-chunqiu', 'reign-zheng-r14-zheng-chunqiu-2', 'reign-zheng-r15-zheng-chunqiu', 'reign-zheng-r16-zheng-chunqiu', 'reign-zheng-r17-zheng-chunqiu', 'reign-zheng-r18-zheng-chunqiu', 'reign-zheng-r19-zheng-chunqiu', 'reign-zheng-r20-zheng-chunqiu', 'reign-zheng-r21-zheng-chunqiu', 'reign-zheng-r22-zheng-chunqiu', 'reign-zheng-r23-zheng-chunqiu', 'reign-zheng-r24-zheng-chunqiu', 'reign-cao-r0-cao-chunqiu', 'reign-cao-r1-cao-chunqiu', 'reign-cao-r2-cao-chunqiu', 'reign-cao-r3-cao-chunqiu', 'reign-cao-r4-cao-chunqiu', 'reign-cao-r5-cao-chunqiu', 'reign-cao-r6-cao-chunqiu', 'reign-cao-r7-cao-chunqiu', 'reign-cao-r8-cao-chunqiu', 'reign-cao-r9-cao-chunqiu', 'reign-cao-r10-cao-chunqiu', 'reign-cao-r11-cao-chunqiu', 'reign-cao-r12-cao-chunqiu', 'reign-cao-r13-cao-chunqiu', 'reign-cao-r14-cao-chunqiu', 'reign-cao-r15-cao-chunqiu', 'reign-cao-r16-cao-chunqiu', 'reign-cao-r17-cao-chunqiu', 'reign-cao-r18-cao-chunqiu', 'reign-cao-r19-cao-chunqiu', 'reign-cao-r20-cao-chunqiu', 'reign-cao-r21-cao-chunqiu', 'reign-cao-r22-cao-chunqiu', 'reign-cao-r23-cao-chunqiu', 'reign-cao-r24-cao-chunqiu', 'reign-cao-r25-cao-chunqiu', 'reign-wu-pre-r0-wu-chunqiu', 'reign-wu-pre-r1-wu-chunqiu', 'reign-wu-pre-r2-wu-chunqiu', 'reign-wu-pre-r3-wu-chunqiu', 'reign-wu-pre-r4-wu-chunqiu', 'reign-wu-pre-r5-wu-chunqiu', 'reign-wu-pre-r6-wu-chunqiu', 'reign-wu-pre-r7-wu-chunqiu', 'reign-wu-pre-r8-wu-chunqiu', 'reign-wu-pre-r9-wu-chunqiu', 'reign-wu-pre-r10-wu-chunqiu', 'reign-wu-pre-r11-wu-chunqiu', 'reign-wu-pre-r12-wu-chunqiu', 'reign-wu-pre-r13-wu-chunqiu', 'reign-wu-pre-r14-wu-chunqiu', 'reign-wu-pre-r15-wu-chunqiu', 'reign-wu-pre-r16-wu-chunqiu', 'reign-wu-pre-r17-wu-chunqiu', 'reign-wu-r0-wu-chunqiu', 'reign-wu-r1-wu-chunqiu', 'reign-wu-r2-wu-chunqiu', 'reign-wu-r3-wu-chunqiu', 'reign-wu-r4-wu-chunqiu', 'reign-helu-wu-chunqiu', 'reign-wu-fu-gai-wu-chunqiu', 'reign-fu-chai-wu-chunqiu', 'reign-yue-r3-yue-chunqiu', 'reign-yue-r4-yue-chunqiu', 'reign-gou-jian-yue-chunqiu', 'reign-yue-r6-yue-chunqiu', 'reign-yue-r7-yue-chunqiu', 'reign-yue-r8-yue-chunqiu', 'reign-yue-r9-yue-chunqiu', 'reign-yue-r10-yue-chunqiu', 'reign-yue-r11-yue-chunqiu', 'reign-yue-r12-yue-chunqiu', 'reign-yue-r13-yue-chunqiu', 'reign-zhongshan-r0-zhongshan', 'reign-zhongshan-r1-zhongshan', 'reign-zhongshan-r2-zhongshan', 'reign-zhongshan-r2-zhongshan-2', 'reign-zhongshan-r3-zhongshan', 'reign-zhongshan-r4-zhongshan', 'reign-zhongshan-r5-zhongshan', 'reign-zhongshan-r6-zhongshan', 'reign-han-jing-han-warring', 'reign-han-r1-han-warring', 'reign-han-r2-han-warring', 'reign-han-r3-han-warring', 'reign-han-r4-han-warring', 'reign-han-r5-han-warring', 'reign-han-r6-han-warring', 'reign-han-r7-han-warring', 'reign-han-r8-han-warring', 'reign-han-r9-han-warring', 'reign-han-r10-han-warring', 'reign-zhao-lie-zhao-warring', 'reign-zhao-r1-zhao-warring', 'reign-zhao-r2-zhao-warring', 'reign-zhao-r3-zhao-warring', 'reign-zhao-r4-zhao-warring', 'reign-zhao-r5-zhao-warring', 'reign-zhao-r6-zhao-warring', 'reign-zhao-r7-zhao-warring', 'reign-zhao-r8-zhao-warring', 'reign-zhao-r9-zhao-warring', 'reign-wei-wen-wei-warring', 'reign-wei-r1-wei-warring', 'reign-wei-r2-wei-warring', 'reign-wei-r3-wei-warring', 'reign-wei-r4-wei-warring', 'reign-wei-r5-wei-warring', 'reign-wei-r6-wei-warring', 'reign-wei-r7-wei-warring', 'reign-ying-qi-qin', 'reign-qin-r1-qin', 'reign-qin-r2-qin', 'reign-qin-r3-qin', 'reign-qin-r4-qin', 'reign-qin-r5-qin', 'reign-qin-r6-qin', 'reign-qin-r7-qin', 'reign-qin-r8-qin', 'reign-qin-r9-qin', 'reign-qin-r10-qin', 'reign-qin-r11-qin', 'reign-qin-r12-qin', 'reign-qin-r13-qin', 'reign-qin-r14-qin', 'reign-qin-r15-qin', 'reign-qin-r16-qin', 'reign-qin-r17-qin', 'reign-qin-r18-qin', 'reign-qin-r19-qin', 'reign-qin-r20-qin', 'reign-qin-r21-qin', 'reign-qin-r22-qin', 'reign-qin-r23-qin', 'reign-ying-quliang-qin', 'reign-qin-r25-qin', 'reign-qin-r26-qin', 'reign-qin-r27-qin', 'reign-qin-r28-qin', 'reign-qin-r29-qin', 'reign-ying-zheng-qin', 'reign-ying-zheng', 'reign-ying-huhai', 'reign-ying-ziying', 'reign-guo-r1-guo-chunqiu', 'reign-guo-r2-guo-chunqiu', 'reign-missing-guo-chunqiu--1020', 'reign-guo-r3-guo-chunqiu', 'reign-missing-guo-chunqiu--922', 'reign-guo-r4-guo-chunqiu', 'reign-guo-r5-guo-chunqiu', 'reign-guo-r6-guo-chunqiu', 'reign-guo-r7-guo-chunqiu', 'reign-guo-r8-guo-chunqiu', 'reign-guo-r9-guo-chunqiu', 'reign-guo-r10-guo-chunqiu', 'reign-guo-gong-chou-guo-chunqiu', 'reign-guo-east-zhong', 'reign-missing-guo-east--1042', 'reign-guo-east-lv', 'reign-missing-guo-east--846', 'reign-guo-east-last-shu')\n  RETURNING person_id\n)\nDELETE FROM persons p\nWHERE p.id IN (SELECT DISTINCT person_id FROM stale)\n  AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)\n  AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = p.id)\n  AND NOT EXISTS (\n    SELECT 1 FROM relations rel\n    WHERE (rel.from_type = 'person' AND rel.from_id = p.id)\n       OR (rel.to_type = 'person' AND rel.to_id = p.id)\n  );\nSELECT rebuild_person_search_terms();",
   "manifest": {
     "slug": "chunqiu-zhanguo",
     "title": "春秋战国诸侯国",
@@ -23977,16 +25246,17 @@
     },
     "scope": "cn",
     "depth": "standard",
-    "generatedAt": "2026-09-27",
+    "generatedAt": "2026-10-02",
     "counts": {
-      "persons": 467,
-      "dynasties": 17,
-      "reigns": 463,
-      "missingReigns": 0,
-      "events": 5,
-      "relations": 4,
+      "persons": 491,
+      "dynasties": 19,
+      "reigns": 487,
+      "missingReigns": 4,
+      "events": 6,
+      "relations": 13,
       "existingEventDynastyLinks": 38,
-      "existingEventParticipantLinks": 1
+      "existingEventParticipantLinks": 1,
+      "capitals": 1
     },
     "sources": [
       {
@@ -23996,6 +25266,14 @@
       {
         "label": "邾国君主世系及所据传世文献",
         "url": "https://zh.wikipedia.org/wiki/邾国"
+      },
+      {
+        "label": "邾国君主世系图（列邾庄公克、琐、文公，附异称与依据）",
+        "url": "https://zh.wikipedia.org/wiki/邾國君主世系圖"
+      },
+      {
+        "label": "《春秋滕薛杞越莒邾许七国统表·邾世次》（考辨仪父克为庄公的异说）",
+        "url": "https://ctext.org/wiki.pl?chapter=3884730&if=gb&remap=gb"
       },
       {
         "label": "邾文公在位年表（《左传》相关纪事）",
@@ -26084,11 +27362,212 @@
       {
         "label": "《左传·僖公九年》（周历月序及晋献公、奚齐、卓子之死）",
         "url": "https://ctext.org/chun-qiu-zuo-zhuan/xi-gong-jiu-nian/zhs"
+      },
+      {
+        "label": "《左传·庄公十六年》",
+        "url": "https://ctext.org/chun-qiu-zuo-zhuan/zhuang-gong-shi-liu-nian/zhs"
+      },
+      {
+        "label": "西虢国（君主与虢公丑）",
+        "url": "https://zh.wikipedia.org/wiki/西虢国"
+      },
+      {
+        "label": "西虢君主纪事与世系",
+        "url": "https://zh.wikipedia.org/wiki/西虢国"
+      },
+      {
+        "label": "虢国（上阳、三门峡）",
+        "url": "https://zh.wikipedia.org/wiki/虢国"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢叔"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郭叔"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢城公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢公长父"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢宣公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢石父"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢公翰"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢公忌父"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢公林父"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢公丑"
+      },
+      {
+        "label": "周朝诸侯国君主列表（西虢中间世系失考）",
+        "url": "https://zh.wikipedia.org/wiki/周朝諸侯國君主列表#西虢国"
+      },
+      {
+        "label": "西虢国（金文人物、年代及世系争议）",
+        "url": "https://zh.wikipedia.org/wiki/西虢国#金文中的虢国氏族"
+      },
+      {
+        "label": "《逸周书·王会》（郭叔掌贡币）",
+        "url": "https://ctext.org/lost-book-of-zhou/wang-hui/zh"
+      },
+      {
+        "label": "《班簋铭文》（毛伯接替虢城公职务）",
+        "url": "https://zh.wikisource.org/wiki/班簋銘文"
+      },
+      {
+        "label": "虢国君主世系（主序列与待考虢季家族）",
+        "url": "https://zh.wikipedia.org/wiki/Template:虢國君主"
+      },
+      {
+        "label": "周朝（共时定位采用的年表）",
+        "url": "https://zh.wikipedia.org/wiki/周朝"
+      },
+      {
+        "label": "冯时《班簋铭文补释》（穆王时期）",
+        "url": "https://www.ctwx.tsinghua.edu.cn/__local/A/61/04/3B0E595B6786E89BFDFF5B51A67_192072D8_490B29.pdf?e=.pdf"
+      },
+      {
+        "label": "虢季易父（五代世系与身份争议）",
+        "url": "https://zh.wikipedia.org/wiki/虢季易父"
+      },
+      {
+        "label": "虢宄公（五代世系与身份争议）",
+        "url": "https://zh.wikipedia.org/wiki/虢宄公"
+      },
+      {
+        "label": "虢幽叔（五代世系与身份争议）",
+        "url": "https://zh.wikipedia.org/wiki/虢幽叔"
+      },
+      {
+        "label": "虢德叔（五代世系与身份争议）",
+        "url": "https://zh.wikipedia.org/wiki/虢德叔"
+      },
+      {
+        "label": "师丞（五代世系与身份争议）",
+        "url": "https://zh.wikipedia.org/wiki/师丞"
+      },
+      {
+        "label": "河南博物院《虢硕父簠》",
+        "url": "https://www.chnmus.net/ch/collection/appraise/details.html?id=512153734134559839"
+      },
+      {
+        "label": "周朝诸侯国君主列表（西虢君主序列）",
+        "url": "https://zh.wikipedia.org/wiki/周朝諸侯國君主列表#西虢国"
+      },
+      {
+        "label": "《左传·僖公五年》（晋灭虢、虢公丑奔京师）",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳/僖公"
+      },
+      {
+        "label": "东虢国（始封与可考君主）",
+        "url": "https://zh.wikipedia.org/wiki/東虢國"
+      },
+      {
+        "label": "虢仲（始封君归属异说及东虢世系待考区段）",
+        "url": "https://zh.wikipedia.org/wiki/虢仲"
+      },
+      {
+        "label": "何志華《西周金文韻讀研究淺議》（虢叔旅钟、惠叔大林父子）",
+        "url": "https://jas.hkbu.edu.hk/content/dam/jas-assets/publications/bulletin-of-the-jao-tsung-i-academy-of-sinology/issue-6-august-2019/12.pdf"
+      },
+      {
+        "label": "《陕西省志·秦志》大事年表（虢叔旅活动于前847年之说）",
+        "url": "https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsz/szdylpdf/201404/P020240923616206405975.pdf"
+      },
+      {
+        "label": "《左传·隐公元年》（制邑、虢叔死焉）",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳/隱公"
+      },
+      {
+        "label": "《国语·郑语》（虢叔与郑桓公共时）",
+        "url": "https://ctext.org/guo-yu/zheng-yu/ens"
+      },
+      {
+        "label": "孙尚勇《〈春秋〉历史叙事与孔子的文化关怀》（平王四年郑灭虢与杜预注）",
+        "url": "https://www.ica.org.cn/att/site17/20240529/1716968303123.pdf"
+      },
+      {
+        "label": "周朝（共时定位的武王年表）",
+        "url": "https://zh.wikipedia.org/wiki/周朝"
+      },
+      {
+        "label": "国家图书馆《国家图书馆藏金文全集》（虢叔旅钟为西周晚期）",
+        "url": "https://www.nlc.cn/pcab/zx/xw/20240119_2637724.shtml"
+      },
+      {
+        "label": "虢国君主世系（宣公、文公顺序异说）",
+        "url": "https://zh.wikipedia.org/wiki/Template:虢國君主"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢季易父"
+      },
+      {
+        "label": "西虢国（金文家族君主身份待考）",
+        "url": "https://zh.wikipedia.org/wiki/西虢国#金文中的虢国氏族"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢宄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢幽叔"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢德叔"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/师丞"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢国"
+      },
+      {
+        "label": "《史记》卷三十九·晋世家：叔虞封唐、燮改号晋与昭侯时翼都",
+        "url": "https://www.chinakongzi.org/kzsf/wxxs/mingpian/shiji/200705/t20070524_25208.htm"
+      },
+      {
+        "label": "山西大学考古文博学院：西周早期晋都、燮父至文侯墓葬序列与三处都邑遗址",
+        "url": "https://archaeology.sxu.edu.cn/rcpy/yxsx/199ac6ba62514d118ef56d7d17add238.htm"
+      },
+      {
+        "label": "上海博物馆《晋侯墓地》：曲村—天马早期晋都及西周晋侯墓葬",
+        "url": "https://www.shanghaimuseum.net/mu/asset2/20151230150415016/"
       }
     ],
     "notes": [
       "收录春秋主要列国与战国七雄（齐楚燕韩赵魏秦）及宋鲁卫郑曹吴越中山等。",
       "邹国君主世系初始收录说明（后续日期复核见本包2026-10-02复核记录）：始封和早期君主名录据《元和姓纂》《繹史·邾世系》等后世材料；周初至武公的世系真实性与具体年代有争议，均分坐标仅作时间轴定位。叔术、夏父让国据《公羊传·昭公三十一年》。前780至前678段后经邾君庆铜器铭文补录并重排。战国末段据《春秋释例》整理为邾子何、考公、穆公三位可考，另五世失名；其单任在位年代未见可靠完整年表。邹穆公约前382—前330年及邹国前256年终点均按近似年代记录。",
+      "邾文公前二任称谓复核（2026-10-02）：人物 zou-r11 与克、字仪父为同一人，不新增君主。按《邾国君主世系图》及其所列杜预《春秋释例》《古本竹书纪年》等依据，前期克的卡片首选称谓改为庄公；《邹县续志》另称惠公，其他通行资料称安公，保留为检索异称。《七国统表》据《竹书纪年》记仪父为庄公，并区分后期悼公子庄（穿），因此系统内前后两位庄公为不同君主。琐仍为原有 zou-r12 人物，卡片标题改用世系图所列姓名“琐”，人物谥号“宪公”保留于结构化字段与详情；既有时间区间与克→琐→文公次序不变。",
       "列国泳道名用国号（齐、楚、韩），与夏商周秦汉一致，不带「国」；「齐国」等写入 alt_names。",
       "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
       "秦国 upsert 已有 qin 行，将始年延至前778年秦襄公即位，与 qin-han 统一帝国段衔接；清理脚本保留 qin-han 的秦二世、子婴 reign。",
@@ -26168,7 +27647,30 @@
       "齐国逐端点复核2026-10-02：reign-qi-r37-qi-chunqiu；原-300/1(year)—-284/12(year)，现-300/1(year)—-284/12(year)。湣王通行系年-300→-284，五国伐齐与遇害年一致，保留 year。",
       "齐国逐端点复核2026-10-02：reign-qi-r38-qi-chunqiu；原-283/1(year)—-265/12(year)，现-283/1(year)—-265/12(year)。襄王元年-283、十九年卒-265，通行系年与世家相符，保留 year。",
       "齐国逐端点复核2026-10-02：reign-qi-r39-qi-chunqiu；原-264/1(year)—-221/12(year)，现-264/1(year)—-221/12(year)。王建元年-264、四十四年秦灭齐-221，通行系年与世家相符，保留 year，修正人物来源。",
-      "2026-10：规范曲沃武公称谓字段：persons.posthumousNames 仅存谥号本体“武公”；并立阶段的称号由对应 reign.title 存“曲沃武公”。"
+      "2026-10：规范曲沃武公称谓字段：persons.posthumousNames 仅存谥号本体“武公”；并立阶段的称号由对应 reign.title 存“曲沃武公”。",
+      "新增曲沃代翼事件：事件层记录曲沃与翼城公室长期并立争位的终结及晋地重新统一，超出普通君主接续信息。日期取《左传·庄公十六年》周王命曲沃伯为晋侯的前678年；《史记·晋世家》将灭晋侯缗系于前679年，日期说明保留此差异。曲沃武公称与晋侯缗均复用本包人物实体；依据《左传》原文、《史记·晋世家》及复旦大学出土文献与古文字研究中心的系年讨论。",
+      "虢条目表示传统所称虢国总体范围，前1046年为周初传统纪年；东、西虢封国及早期世系归属存在异说。",
+      "上阳为虢国都城，今三门峡李家窑遗址一带；地理坐标用于地图定位，具体遗址位置仍以考古测绘为准。",
+      "2026-10-02世系复核：维基《周朝诸侯国君主列表》在郭叔与虢城公之间、虢城公之后明确记“中间世系失考”；《西虢国》亦说明金文人物世系无法确切断定。《郭叔》的继任栏仅称“一说为虢城公”，《虢城公》的前任栏却链接始封君虢叔，两者互相矛盾，不采用导航框作为直接传位依据。班簋所记毛伯接替的是职务，不能据此建立虢国君位继承关系。",
+      "撤销记录与原定位：reign-guo-r1-guo-chunqiu（guo-r1，-1046至-990年，起点year、终点interpolated_by_generation）；reign-guo-r2-guo-chunqiu（guo-r2，-989至-934年，两端interpolated_by_generation）；reign-guo-r3-guo-chunqiu（guo-r3，-933至-878年，两端interpolated_by_generation）。原区间把失考名录误当连续世系均分，且缺少各人物可靠双端锚点，违反断层不得插值规则；三位人物及史实来源保留，不补造生卒年或即位、去世日期。",
+      "2026-10-02按用户提供的虢国君主世系图修正此前撤下君主卡的处理：恢复guo-r1、guo-r2、guo-r3，保留郭叔与城公之间、城公与厉公之间两处史料缺。主序列11位君主与五代争议家族分开；争议五人保留人物、来源及王朝关联，不建立并立claim_track，不将其强接到城公、厉公之间。宣公与文公的顺序异说保留于王朝及人物概述。",
+      "早期时间定位采用共时关系，不按世次均分：guo-r1参照武王时期（-1046至-1043年）；guo-r2据《逸周书·王会》参照成王时期（-1042至-1021年）；guo-r3据班簋及昭穆时期说参照昭王至穆王时期（-995至-923年，沿用夏商周包的接续裁定坐标）。这些是关联史料活动窗口的示意位置，不是已考定的即位、死亡或完整在位年；两端均interpolated_by_other，显示?与波浪线，不显示确定时长、不分配个人都城。",
+      "两处史料缺有名录明示为依据，君主人数不详。缺载段以普通Reign、system-missing-ruler与title=史料缺记录；示意定位分别参照康王时期（-1020至-996年）及共王至夷王时期（-922至-878年），仅表示相邻已知活动窗口之间的失考区段，两端interpolated_by_other，不主张空白在这些年份精确起讫。上述参照均来自xia-shang-zhou包确定类端点，经timelineOwnership取边界；未使用旧虚构均分边界作为推断锚点。",
+      "guo-ji-yifu、guo-gui-gong、guo-you-shu、guo-de-shu、guo-shi-cheng：五代家族关系可考，但西虢君主身份、具体在位年及主序列衔接有争议；因此不造日期、不建并立在位或按世次均分。各人物链接同步保留身份争议来源，王朝详情以显式other关系列出人物。",
+      "2026-10-02按用户要求统一缺载段展示文案为“史料缺”；同步在位title、王朝概述及导入说明，保留两处断层与原日期置信度。",
+      "称谓复核（2026-10）：河南博物院《虢硕父簠》明确虢公长父死后谥厉公；虢宣公、虢文公条目分别明确谥号为宣公、文公。posthumousNames 仅写谥号本体“厉公、宣公、文公”，不带国名；其余主序列虢国君主缺少可确认谥号依据，暂不补填。",
+      "2026-10-02按复核将 guo-chunqiu 王朝显示名明确为“西虢国”，检索别名保留“虢国”“虢”“南虢”。周朝诸侯国君主列表将虢公丑列为西虢末代君主，前655年亡国；其后无继任君主。现有主序列已录忌父、林父、丑；用户所说“丑后缺少若干国君”的区段含义待确认，未凭空添加人物或在位记录。",
+      "2026-10-02复核虢公丑末年结局：《左传·僖公五年》记“晋灭虢，虢公丑奔京师”，同段被俘者为虞公及井伯。同步人物详情links与王朝概述。按用户明确的“指向被谁灭国”语义，cross-dynasty-fate包新增虢公丑→晋献公的conquered灭国线；不把出奔写成被俘、投降或被杀。",
+      "2026-10-02新增东虢，国号显示为东虢，别名保留东虢国；与西虢独立并存，不合并泳道，不重复拥有西虢始封君或其他包中的郑国人物。",
+      "东、西虢始封君采用虢仲封东虢、虢叔封西虢的通行说，异说保留于人物概述及来源。始封以前1046年克商后的西周初为依据，建国年并非可确证的受封年，标approximate_year。虢仲在位起讫不详，共时坐标参照xia-shang-zhou包武王窗口-1046至-1043，两端interpolated_by_other，不主张即位年或卒年。",
+      "虢惠叔大林与虢叔旅父子关系见虢叔旅钟。钟的西周晚期断代由何志華论文与国家图书馆资料交叉核对；仅《秦志》具体系虢叔旅活动于-847年，该年是有出处的活动年推定，不是可确认的即位、死亡或完整在位区间。旅的在位条目仅用该活动年定位，两端interpolated_by_other；不显示确定时长。惠叔没有可采用的独立活动年份，保留人物及王朝显式关联，不借父子世次造起讫年。",
+      "2026-10-02核对东虢世系：虢仲→世系待考→惠叔大林→旅→世系待考→末君虢叔。前后两处失载国君的任数及世次均不能确认，属于史料缺，并非无国君，分别以普通Reign、system-missing-ruler、title=史料缺作泳道占位；不跨断层按世次均分或推断直接前后任。首段位于虢仲与旅的可定位记录之间（-1042至-848），次段位于旅与末君的定位记录之间（-846至-775）；这些只是未能落实世系及在位年代的展示区段，不是可确证的史料缺起讫年。边界由timelineOwnership与timelineIntervals裁定已有锚点间的区间，两端均interpolated_by_other。首段中的已知人物惠叔大林仍独立保留人物和来源，父子关系明确但在位年代无法独立定位，不把惠叔当作失名君主，也不虚构其在位年以切开首段。",
+      "末君虢叔与西虢始封君虢叔是不同人物，使用guo-east-last-shu独立ID。私名未知，persons.name为？；叔为史称而非私名，reigns.title为叔，无可确认谥号。",
+      "末君在位起年不详。起点参照《国语·郑语》虢叔与郑桓公共时、幽王八年（-774年）史伯论兴衰的传统系年定位，标interpolated_by_other；不声称-774年即位。终点与死亡年采用今本《竹书纪年》平王四年（-767年）郑灭虢的通行说，标approximate_year；灭虢年代及郑桓公、武公归属存在异说，未当成无争议的确定年。",
+      "不新增普通灭国事件重复王朝终点；年精度末年12月及泳道起年1月均为定位占位，不表示史料已知公历月份。不确定在位不分配个人都城。",
+      "2026-10-02用户明确命运线应表达被谁灭国，类型不局限于人身结局。采用通用conquered（灭国），末君虢叔指向当时郑国君主郑武公zheng-r1，时点为所采灭国年-767年12月桶右缘，atConfidence=approximate_year。不主张郑武公亲手杀害虢叔。关系由cross-dynasty-fate包唯一拥有。",
+      "2026-10-02按用户要求统一虢国资料归属：东虢与西虢的王朝、人物、在位、都城及王朝人物关系由chunqiu-zhanguo包唯一拥有；保留原ID、记录内容、日期和置信度。虢国相关的假道伐虢、唇亡齿寒典故事件及其引用仍留在idioms包，原guo-east包移除；灭国命运线仍由cross-dynasty-fate包拥有。",
+      "2026-10-02补充晋王朝早期都邑概述：据《史记·晋世家》区分叔虞始封唐与其子燮改号晋，结合上海博物馆晋侯墓地资料及山西大学三处晋都遗址介绍，补回前745年以前西周晋都的可证事实。早期都邑使用年界与唐/晋/翼城址对应未获足够依据，概述不采用建国年或世次插值充当都城始用年份；王朝详细都城记录仍由dynasty-capitals包唯一拥有，不在本包重复写都城或关联行。"
     ]
   }
 }

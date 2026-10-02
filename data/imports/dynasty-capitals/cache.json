@@ -704,30 +704,131 @@
       "coordinateSystem": "GCJ02"
     },
     {
-      "id": "cap-jin-chunqiu-jiang-1042",
+      "id": "cap-jin-chunqiu-yi",
       "dynastyId": "jin-chunqiu",
-      "historicalName": "绛",
-      "modernName": "山西省运城市绛县",
+      "historicalName": "翼",
+      "modernName": "山西省临汾市曲沃县、翼城县交界的曲村—天马遗址一带",
       "start": {
-        "year": -1042,
+        "year": -745,
         "month": 1,
-        "abs": -12492,
+        "abs": -8928,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -669,
+        "month": 12,
+        "abs": -8005,
+        "confidence": "year"
+      },
+      "startAbs": -8928,
+      "endAbs": -8005,
+      "role": "primary",
+      "claimTrack": null,
+      "note": "晋国在西周时期已有早期都邑。曲村—天马遗址发现西周早期遗存与连续的晋侯墓地，是早期晋国政治中心；山西大学考古资料将其对应为早期晋都“翼”，翼的确切城址及始用年代仍有争议。前745年昭侯封成师于曲沃时，《史记》明确记翼为晋君都邑，曲沃桓叔、庄伯、武公随后与翼城公室并立。曲沃代翼后，《史记》记晋武公“始都晋国”，献公八年（前669年）“城聚都之，命曰绛”。翼另有翼城县南梁镇故城村等定位说法；地图取曲村—天马遗址代表点，不能视作已确认的翼城宫城坐标。",
+      "links": [
+        {
+          "label": "《史记》卷三十九·晋世家：叔虞封唐、燮改号晋与昭侯时翼都",
+          "url": "https://www.chinakongzi.org/kzsf/wxxs/mingpian/shiji/200705/t20070524_25208.htm"
+        },
+        {
+          "label": "大连博物馆《晋国雄风》：曲沃小宗与翼都大宗、上郭古城",
+          "url": "https://www.dlmodernmuseum.com/news/detail/498.html"
+        },
+        {
+          "label": "山西大学考古文博学院：西周早期晋都、燮父至文侯墓葬序列与三处都邑遗址",
+          "url": "https://archaeology.sxu.edu.cn/rcpy/yxsx/199ac6ba62514d118ef56d7d17add238.htm"
+        },
+        {
+          "label": "潘明娟《圣都与俗都：晋国都城体系的演变》，《中原文化研究》2021年第2期",
+          "url": "https://www.zywhyj.cn/Uploads/PdfFile/2021-03-16/60506026c2527.pdf"
+        },
+        {
+          "label": "上海博物馆《晋侯墓地》：曲村—天马早期晋都及西周晋侯墓葬",
+          "url": "https://www.shanghaimuseum.net/mu/asset2/20151230150415016/"
+        }
+      ],
+      "longitude": 111.568992,
+      "latitude": 35.736531,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "cap-jin-chunqiu-quwo",
+      "dynastyId": "jin-chunqiu",
+      "historicalName": "曲沃",
+      "modernName": "山西省运城市闻喜县桐城镇上郭村上郭城址一带",
+      "start": {
+        "year": -745,
+        "month": 1,
+        "abs": -8928,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -678,
+        "month": 12,
+        "abs": -8113,
+        "confidence": "year"
+      },
+      "startAbs": -8928,
+      "endAbs": -8113,
+      "role": "primary",
+      "claimTrack": "quwo",
+      "note": "前745年晋昭侯封成师于曲沃，号桓叔，曲沃为其封邑及支系治所，当时晋君都翼。桓叔、庄伯、武公三世以曲沃为据点与翼公室争位；前739年桓叔应潘父之邀入晋，遭晋人反击后退回曲沃，双方公开对立；前678年武公代翼并受周王册命为晋侯。古曲沃据上郭城址及邱家庄墓群考古研究定位于今闻喜县，并非现代曲沃县。地图为高德上郭村的约略代表点，不是古城城墙或宫殿的精确位置；代翼后曲沃仍为宗庙所在地，不将祭祀中心自动延长为国君主都。",
+      "links": [
+        {
+          "label": "《史记》卷三十九·晋世家：翼都、曲沃封邑与献公都绛",
+          "url": "https://www.chinakongzi.org/kzsf/wxxs/mingpian/shiji/200705/t20070524_25208.htm"
+        },
+        {
+          "label": "大连博物馆《晋国雄风》：曲沃小宗与翼都大宗、上郭古城",
+          "url": "https://www.dlmodernmuseum.com/news/detail/498.html"
+        },
+        {
+          "label": "山西大学考古文博学院：天马—曲村、上郭—邱家庄与侯马新田",
+          "url": "https://archaeology.sxu.edu.cn/rcpy/yxsx/199ac6ba62514d118ef56d7d17add238.htm"
+        },
+        {
+          "label": "山东大学考古讲座：田建文《唐封晋霸西东周》，古曲沃非今曲沃",
+          "url": "https://klast.sdu.edu.cn/info/1031/1673.htm"
+        }
+      ],
+      "longitude": 111.240915,
+      "latitude": 35.317727,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "cap-jin-chunqiu-jiang-669",
+      "dynastyId": "jin-chunqiu",
+      "historicalName": "绛（故绛）",
+      "modernName": "山西省运城市绛县一带（故绛城址有争议）",
+      "start": {
+        "year": -669,
+        "month": 1,
+        "abs": -8016,
         "confidence": "year"
       },
       "end": {
         "year": -585,
         "month": 12,
         "abs": -6997,
-        "confidence": "month"
+        "confidence": "year"
       },
-      "startAbs": -12492,
+      "startAbs": -8016,
       "endAbs": -6997,
       "role": "primary",
-      "note": "晋国初都绛。",
+      "claimTrack": null,
+      "note": "《史记·晋世家》记献公八年城聚、命曰绛并始都之，取前669年；《左传》庄公二十六年（前668年）另记士蒍城绛。前585年景公迁新田后称故绛。城址有绛县南城村车厢城、翼城县南梁镇故城村及曲村—天马一带等说法，翼与绛是否同址亦有争议；暂保留绛县范围约略代表点，坐标为现代行政区中心，不作为古城遗址定位。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/绛县"
+          "label": "《史记》卷三十九·晋世家：翼都、曲沃封邑与献公都绛",
+          "url": "https://www.chinakongzi.org/kzsf/wxxs/mingpian/shiji/200705/t20070524_25208.htm"
+        },
+        {
+          "label": "运城长安网：南城村车厢城与晋献公都绛的地方志记载",
+          "url": "https://www.ycpeace.gov.cn/a/wenyuan/biaolihedong/20211112/24167.html"
+        },
+        {
+          "label": "潘明娟《圣都与俗都：晋国都城体系的演变》，《中原文化研究》2021年第2期",
+          "url": "https://www.zywhyj.cn/Uploads/PdfFile/2021-03-16/60506026c2527.pdf"
         }
       ],
       "longitude": 111.568849,
@@ -735,30 +836,39 @@
       "coordinateSystem": "GCJ02"
     },
     {
-      "id": "cap-jin-chunqiu-xinjiang-584",
+      "id": "cap-jin-chunqiu-xinjiang-585",
       "dynastyId": "jin-chunqiu",
-      "historicalName": "新绛",
+      "historicalName": "新田/新绛",
       "modernName": "山西省临汾市侯马市",
       "start": {
-        "year": -584,
+        "year": -585,
         "month": 1,
-        "abs": -6996,
+        "abs": -7008,
         "confidence": "year"
       },
       "end": {
         "year": -349,
         "month": 12,
         "abs": -4165,
-        "confidence": "month"
+        "confidence": "year"
       },
-      "startAbs": -6996,
+      "startAbs": -7008,
       "endAbs": -4165,
       "role": "primary",
-      "note": "晋景公迁新绛。",
+      "claimTrack": null,
+      "note": "晋景公于前585年迁都新田，亦称新绛，故址为今侯马晋国遗址。《左传·成公六年》记“夏四月丁丑”，属周历，未经可靠公历换算仅录年精度。地图保留侯马城市范围约略代表点，不表示具体宫城位置。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/侯马市"
+          "label": "《左传·成公六年》：晋景公迁都新田",
+          "url": "https://zh.wikisource.org/wiki/春秋左氏傳/成公"
+        },
+        {
+          "label": "大连博物馆《晋国雄风》：曲沃小宗与翼都大宗、上郭古城",
+          "url": "https://www.dlmodernmuseum.com/news/detail/498.html"
+        },
+        {
+          "label": "山西大学考古文博学院：天马—曲村、上郭—邱家庄与侯马新田",
+          "url": "https://archaeology.sxu.edu.cn/rcpy/yxsx/199ac6ba62514d118ef56d7d17add238.htm"
         }
       ],
       "longitude": 111.372002,
@@ -6975,7 +7085,7 @@
   "eventLocations": [],
   "updates": [],
   "relations": [],
-  "preSql": "-- removed capitals\nDELETE FROM dynasty_capitals WHERE id = 'cap-roc-taibei-23388';\nDELETE FROM dynasty_capitals WHERE id = 'cap-nanzhao-taihecheng-649';\nDELETE FROM dynasty_capitals WHERE id = 'cap-daxi-xijing-1644';\nDELETE FROM dynasty_capitals WHERE id = 'cap-daxi-xichong-1646';\nDELETE FROM dynasty_capitals WHERE id = 'cap-sui-daxing-581';\nDELETE FROM dynasty_capitals WHERE id = 'cap-song-xu-anfeng-16212';\nDELETE FROM dynasty_capitals WHERE id = 'cap-zhou-zhang-chuzhou-16248';\nDELETE FROM dynasty_capitals WHERE id = 'cap-song-han-mianyang-16260';\nDELETE FROM dynasty_capitals WHERE id = 'cap-chen-han-wuchang-1360';\nDELETE FROM dynasty_capitals WHERE id = 'cap-mingzheng-dongning-19932';\nDELETE FROM dynasty_capitals WHERE id = 'cap-taiping-tianjing-1853';\nDELETE FROM dynasty_capitals WHERE id = 'cap-han-zhao-changan-304';\nDELETE FROM dynasty_capitals WHERE id = 'cap-qin-liyue-424';\nDELETE FROM dynasty_capitals WHERE id = 'cap-qin-qianhui-709';\nDELETE FROM dynasty_capitals WHERE id = 'cap-zhou-guo-east-wangcheng-367';\nDELETE FROM dynasty_capitals WHERE id = 'cap-zhou-east-luoyi-770';\nDELETE FROM dynasty_capitals WHERE id = 'cap-han-gengshi-changan-23';\nDELETE FROM dynasty_capitals WHERE id = 'cap-chimei-changan-23';\nDELETE FROM dynasty_capitals WHERE id = 'cap-yue-chunqiu-langya-333';\nDELETE FROM dynasty_capitals WHERE id = 'cap-qing-shengjing-1634';\nDELETE FROM dynasty_capitals WHERE id = 'cap-mingzheng-dongning-1664';",
+  "preSql": "-- removed capitals\nDELETE FROM dynasty_capitals WHERE id = 'cap-roc-taibei-23388';\nDELETE FROM dynasty_capitals WHERE id = 'cap-nanzhao-taihecheng-649';\nDELETE FROM dynasty_capitals WHERE id = 'cap-daxi-xijing-1644';\nDELETE FROM dynasty_capitals WHERE id = 'cap-daxi-xichong-1646';\nDELETE FROM dynasty_capitals WHERE id = 'cap-sui-daxing-581';\nDELETE FROM dynasty_capitals WHERE id = 'cap-song-xu-anfeng-16212';\nDELETE FROM dynasty_capitals WHERE id = 'cap-zhou-zhang-chuzhou-16248';\nDELETE FROM dynasty_capitals WHERE id = 'cap-song-han-mianyang-16260';\nDELETE FROM dynasty_capitals WHERE id = 'cap-chen-han-wuchang-1360';\nDELETE FROM dynasty_capitals WHERE id = 'cap-mingzheng-dongning-19932';\nDELETE FROM dynasty_capitals WHERE id = 'cap-taiping-tianjing-1853';\nDELETE FROM dynasty_capitals WHERE id = 'cap-han-zhao-changan-304';\nDELETE FROM dynasty_capitals WHERE id = 'cap-qin-liyue-424';\nDELETE FROM dynasty_capitals WHERE id = 'cap-qin-qianhui-709';\nDELETE FROM dynasty_capitals WHERE id = 'cap-zhou-guo-east-wangcheng-367';\nDELETE FROM dynasty_capitals WHERE id = 'cap-zhou-east-luoyi-770';\nDELETE FROM dynasty_capitals WHERE id = 'cap-han-gengshi-changan-23';\nDELETE FROM dynasty_capitals WHERE id = 'cap-chimei-changan-23';\nDELETE FROM dynasty_capitals WHERE id = 'cap-yue-chunqiu-langya-333';\nDELETE FROM dynasty_capitals WHERE id = 'cap-qing-shengjing-1634';\nDELETE FROM dynasty_capitals WHERE id = 'cap-mingzheng-dongning-1664';\n-- Replace the obsolete all-period Jiang and late Xintian records.\nDELETE FROM dynasty_capitals WHERE id = 'cap-jin-chunqiu-jiang-1042';\nDELETE FROM dynasty_capitals WHERE id = 'cap-jin-chunqiu-xinjiang-584';",
   "postSql": "",
   "manifest": {
     "slug": "dynasty-capitals",
@@ -6988,9 +7098,9 @@
     },
     "scope": "cn",
     "depth": "standard",
-    "generatedAt": "2026-09-27",
+    "generatedAt": "2026-10-02",
     "counts": {
-      "dynasty_capitals": 218
+      "dynasty_capitals": 220
     },
     "sources": [
       {
@@ -7268,6 +7378,38 @@
       {
         "label": "高德地图：范阳/北京约略地理编码",
         "url": "https://lbs.amap.com/api/webservice/guide/api/georegeo"
+      },
+      {
+        "label": "《史记》卷三十九·晋世家：叔虞封唐、燮改号晋与昭侯时翼都",
+        "url": "https://www.chinakongzi.org/kzsf/wxxs/mingpian/shiji/200705/t20070524_25208.htm"
+      },
+      {
+        "label": "大连博物馆《晋国雄风》：曲沃小宗与翼都大宗、上郭古城",
+        "url": "https://www.dlmodernmuseum.com/news/detail/498.html"
+      },
+      {
+        "label": "山西大学考古文博学院：西周早期晋都、燮父至文侯墓葬序列与三处都邑遗址",
+        "url": "https://archaeology.sxu.edu.cn/rcpy/yxsx/199ac6ba62514d118ef56d7d17add238.htm"
+      },
+      {
+        "label": "山东大学考古讲座：田建文《唐封晋霸西东周》，古曲沃非今曲沃",
+        "url": "https://klast.sdu.edu.cn/info/1031/1673.htm"
+      },
+      {
+        "label": "运城长安网：南城村车厢城与晋献公都绛的地方志记载",
+        "url": "https://www.ycpeace.gov.cn/a/wenyuan/biaolihedong/20211112/24167.html"
+      },
+      {
+        "label": "《左传·成公六年》：晋景公迁都新田",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳/成公"
+      },
+      {
+        "label": "潘明娟《圣都与俗都：晋国都城体系的演变》，《中原文化研究》2021年第2期",
+        "url": "https://www.zywhyj.cn/Uploads/PdfFile/2021-03-16/60506026c2527.pdf"
+      },
+      {
+        "label": "上海博物馆《晋侯墓地》：曲村—天马早期晋都及西周晋侯墓葬",
+        "url": "https://www.shanghaimuseum.net/mu/asset2/20151230150415016/"
       }
     ],
     "notes": [
@@ -7304,7 +7446,11 @@
       "拆分西晋洛阳都城为304年惠帝被挟往长安前、306年六月惠帝还洛阳后两段；中间以长安 temporary 行在记录朝廷实际驻地。迁入、迁出按现有史料精度表示，不把农历日期冒充公历月日。",
       "洛阳后段起点使用306年6月11日，即《晋书》所记光熙元年五月己亥的公历日期；长安行在止于6月10日，避免两都记录在日精度边界重叠。",
       "安史之乱期间唐朝两都按实际失守与收复阶段拆分：洛阳失守据《资治通鉴》天宝十四载十二月丁酉（朔闰历换算到公历755年12月）；长安在天宝十五载农历六月失守。长安失守日《资治通鉴》考异说明诸书缺载，仅《乱离记》记六月二十三日，故不录日精度，按农历六月中点换算为公历月精度。唐军至德二载农历九月收复长安、十月收复洛阳；按朔闰历换算分别以公历757年11月、12月作为月精度恢复点。记录仅表示唐朝实际都城控制阶段，不把叛军占据等同于唐朝都城。",
-      "补录安史之乱大燕洛阳—邺—范阳—洛阳的都城阶段，并单列范阳为燕京的后续陪都记录。洛阳、范阳定位为城市约略点，邺定位为临漳县邺城遗址约略点。只有大燕本包各自拥有的在位记录才显式关联这些都城；唐都洛阳仍由唐包所有。称帝、迁出与攻取日期依纪事记录，范阳称帝起点和史朝义败亡末端按可考日期范围标推定。"
+      "补录安史之乱大燕洛阳—邺—范阳—洛阳的都城阶段，并单列范阳为燕京的后续陪都记录。洛阳、范阳定位为城市约略点，邺定位为临漳县邺城遗址约略点。只有大燕本包各自拥有的在位记录才显式关联这些都城；唐都洛阳仍由唐包所有。称帝、迁出与攻取日期依纪事记录，范阳称帝起点和史朝义败亡末端按可考日期范围标推定。",
+      "2026-10-02：复核晋国翼与曲沃两支都城。删除前1042—前585年一概称绛、以现代绛县点归属全体晋侯的旧记录。仅从《史记》明确记翼为晋都的昭侯元年（前745年）建立确定年界；更早唐/翼迁移年界与确址仍待考，不把王朝建国年冒充都城始用年，旧的早期君主绛都关联全部移除。曲沃前745—前678年独立使用 quwo track，与翼公室并存；代翼后武公主线按《史记》“始都晋国”归翼至献公城聚，曲沃仅存祖庙地位。献公城聚并都绛按《史记》八年取前669年，《左传》前668年士蒍城绛记载不强行等同于迁都。翼与故绛同址说、异址说及确址争议均写入记录，不将两者武断合并。新田迁都恢复前585年原始史料年界，未经换算的周历月日不录成公历；其后段终年沿用旧包，本次未复核晚期晋君迁出新田的问题。",
+      "2026-10-02 地理编码：高德 maps_geo 地址“山西省运城市闻喜县桐城镇上郭村”→111.240915,35.317727（村庄级）；“山西省临汾市曲沃县曲村镇北赵村曲村—天马遗址”→111.568992,35.736531（兴趣点）。maps_regeocode 分别确认山西省运城市闻喜县、山西省临汾市曲沃县，均为 GCJ02。曲沃采用上郭村代表点，翼采用曲村—天马遗址代表点，空间约略性与异说写入 note；故绛保留现代绛县行政中心坐标并显式标明误差范围。",
+      "2026-10-02：澄清曲沃前745年起的 primary + quwo 只表示桓叔支系的主要治所，并不表示晋国自此前都曲沃或获得正统地位。受封以《史记·晋世家》昭侯元年系前745年，前739年公开对立、前678年代翼另作阶段叙述；不将封邑错误改成翼公室的陪都或短期行在。共享标签结合 claimTrack 区分并立政权治所与主线正都。",
+      "2026-10-02补核前745年以前晋都：前745年是《史记》昭侯封曲沃一段明确出现“翼，晋君都邑”的纪年，不是翼始都年，更不是晋国此前无都邑。曲村—天马遗址及晋侯墓地证明西周时期已有早期晋都；据《史记》保留叔虞始封唐、燮改号晋的事实，补入晋王朝概述与翼都详情。唐始封地、唐至晋的迁移过程和翼具体城址存在争议，现有依据不足以给早期都邑设定可采的绝对起止年；不把王朝-1042建国坐标或早期晋侯世次插值套为翼始都年，也不按文献最早提及年拆造另一条同址都城。翼记录仍保留-745至-669的可考时段，早期都邑事实在王朝级展示，未填造早期君主个人都城关联。"
     ]
   }
 }

@@ -1,4 +1,4 @@
-import { isApproximateConfidence } from "./historicalDate";
+import { formatHistoricalDate, isApproximateConfidence } from "./historicalDate";
 import { buildReignTenureCapitalRows, capitalDateRangeLabel, capitalRoleLabel, dynastyCapitalRelatedItems } from "./dynastyCapitals";
 import { claimDetailFacts } from "./claimTracks";
 import { PRE_IMPERIAL_START_YEAR } from "./appellationPolicy";
@@ -274,8 +274,8 @@ function buildPersonEntityDetail(
     ...(factEraNames.length
       ? [{ label: "年号", value: factEraNames.join("，") }]
       : []),
-    ...(person.birth ? [{ label: "生", value: `${person.birth.year}年` }] : []),
-    ...(person.death ? [{ label: "卒", value: `${person.death.year}年` }] : []),
+    ...(person.birth ? [{ label: "生", value: formatHistoricalDate(person.birth) }] : []),
+    ...(person.death ? [{ label: "卒", value: formatHistoricalDate(person.death) }] : []),
   ];
   const facts = [
     ...(factReigns.length
@@ -370,7 +370,7 @@ export function buildEntityDetail(
       { label: "归属", value: dynasty?.name ?? capital.dynastyId },
       { label: "今址", value: capital.modernName },
       { label: "时段", value: capitalDateRangeLabel(capital) },
-      { label: "地位", value: capitalRoleLabel(capital.role) },
+      { label: "地位", value: capitalRoleLabel(capital.role, capital.claimTrack) },
     ];
     if (capital.start.confidence && capital.start.confidence !== "year") {
       facts.push({

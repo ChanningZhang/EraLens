@@ -31,6 +31,8 @@ export function fateRelationLabel(kind: FateRelationKind): string {
       return "禅让";
     case "captured":
       return "被俘";
+    case "conquered":
+      return "灭国";
   }
 }
 

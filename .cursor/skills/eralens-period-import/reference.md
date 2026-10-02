@@ -288,12 +288,13 @@ ON CONFLICT (id) DO UPDATE SET
   lane_order_end_abs = EXCLUDED.lane_order_end_abs;
 ```
 
-跨王朝帝王命运边（时间轴虚线，`killed` / `surrender` / `abdication` / `captured`）：
+跨王朝帝王命运边（时间轴虚线，`killed` / `surrender` / `abdication` / `captured` / `conquered`）：
 
 - 端点：`person:{victim}` → `person:{receiver}`，不写 event/dynasty 端点
 - 必填 `at_year` / `at_month` / `at_abs`；年精度时 `at_abs` 取受害方末年在位 `end_abs`（通常 `end_year` 的 12 月）
 - 可选 `event_id` 挂灭国/禅让等事件，不参与几何
 - 同朝 succession 不画虚线；仅跨王朝边进入时间轴
+- `conquered`（灭国）从末君连向灭国方当时的君主，表达政权覆亡；末君可能出奔或结局失载，不能将灭国自动写成 `killed` / `captured` / `surrender`。人物实际结局独立保留在 bio 与来源中。
 
 ## 禁止写入的列
 

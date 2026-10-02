@@ -6,6 +6,7 @@ import {
   EntityDetailSchema,
   eventKindLabel,
   eventSpanAbs,
+  FATE_RELATION_KINDS,
   midpointAbs,
   normalizeSearchTerm,
   personIntersectsAbsWindow,
@@ -454,7 +455,7 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
     SELECT id, from_type, from_id, to_type, to_id, kind,
            at_year, at_month, at_day, at_abs, at_confidence, event_id
     FROM relations
-    WHERE kind IN ('killed', 'surrender', 'abdication', 'captured')
+    WHERE kind = ANY(${[...FATE_RELATION_KINDS]}::text[])
       AND at_abs IS NOT NULL
       AND at_abs >= ${fromAbs}::int
       AND at_abs <= ${toAbs}::int`;

@@ -344,6 +344,7 @@ export const RelationKindSchema = z.enum([
   "surrender",
   "abdication",
   "captured",
+  "conquered",
 ]);
 export type RelationKind = z.infer<typeof RelationKindSchema>;
 
@@ -352,6 +353,7 @@ export const FATE_RELATION_KINDS = [
   "surrender",
   "abdication",
   "captured",
+  "conquered",
 ] as const satisfies readonly RelationKind[];
 export type FateRelationKind = (typeof FATE_RELATION_KINDS)[number];
 

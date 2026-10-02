@@ -5,6 +5,7 @@ import { Keyboard } from "@capacitor/keyboard";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { App } from "./app/App";
 import { installTimelineWheel } from "./features/timeline/hooks/useTimelineWheel";
+import { viewportStore } from "./features/timeline/state/viewportStore";
 import "./design/tokens.css";
 import "./design/rareCjkFont.css";
 import "./design/timelineSerifFont.css";
@@ -19,10 +20,19 @@ if (Capacitor.getPlatform() === "ios") {
 
 const queryClient = new QueryClient();
 
-createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <App />
-    </QueryClientProvider>
-  </StrictMode>,
-);
+async function bootstrap() {
+  if (Capacitor.getPlatform() === "ios") {
+    await viewportStore.restorePersistedState();
+    viewportStore.enablePersistence();
+  }
+
+  createRoot(document.getElementById("root")!).render(
+    <StrictMode>
+      <QueryClientProvider client={queryClient}>
+        <App />
+      </QueryClientProvider>
+    </StrictMode>,
+  );
+}
+
+void bootstrap();

@@ -172,7 +172,8 @@ node .cursor/skills/eralens-period-import/scripts/compute-abs.mjs -1046 1  # -12
 - 日期 confidence 与历史日期结构：见 [日期处理 Skill](../eralens-date-handling/SKILL.md)
 - `event.time_mode`: point | span
 - `event.kind`: battle | politics | culture | disaster | commerce | agriculture | finance | idiom | poetry | other
-- `relation.kind`: succession | battle | alliance | enthronement | other | killed | surrender | abdication | captured
+- `relation.kind`: succession | battle | alliance | enthronement | other | killed | surrender | abdication | captured | conquered
+- `conquered` 表示灭国，从末代君主指向灭国方当时的君主；只要求灭国事实及责任政权有史料依据，不推断末君被杀、被俘或投降。沿用共用命运线端点解析与布局。
 - `scope`: cn（默认）| global
 
 **不要写入生成列**：`dynasties.span`、`reigns.span`、`events.span*` 均由 DB 自动生成。

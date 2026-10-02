@@ -1,4 +1,5 @@
 import type { CapitalRole, DynastyCapital, EntityRef, Reign } from "./schema";
+import { isParallelClaim } from "./claimTracks";
 import { isUncertainDateConfidence } from "./reignBoundaries";
 import { formatReignDurationLabel } from "./reignVisual";
 import { confidencePrecision, formatHistoricalDate, hasUncertainDateRange } from "./historicalDate";
@@ -26,7 +27,11 @@ const CAPITAL_ROLE_ORDER: Record<CapitalRole, number> = {
   temporary: 2,
 };
 
-export function capitalRoleLabel(role: CapitalRole): string {
+export function capitalRoleLabel(role: CapitalRole, claimTrack?: string | null): string {
+  // A primary seat belongs to its own claimant, not to the dynasty's main court.
+  if (role === "primary" && isParallelClaim({ claimTrack: claimTrack ?? undefined })) {
+    return "并立政权治所";
+  }
   return CAPITAL_ROLE_LABEL[role];
 }
 
@@ -77,8 +82,8 @@ function formatTenureRangeLabel(
 }
 
 export function capitalTenureSubtitle(capital: DynastyCapital): string | undefined {
-  const role = capitalRoleLabel(capital.role);
-  if (capital.role === "primary") {
+  const role = capitalRoleLabel(capital.role, capital.claimTrack);
+  if (capital.role === "primary" && !isParallelClaim(capital)) {
     return capital.modernName;
   }
   return `${role} · ${capital.modernName}`;
@@ -111,7 +116,7 @@ export function dynastyCapitalRelatedItems(
     .map((capital) => ({
       ref: { type: "capital" as const, id: capital.id },
       label: capital.historicalName,
-      subtitle: `${capitalDateRangeLabel(capital)} · ${capitalRoleLabel(capital.role)}`,
+      subtitle: `${capitalDateRangeLabel(capital)} · ${capitalRoleLabel(capital.role, capital.claimTrack)}`,
       abs: capital.startAbs,
       group: "capital" as const,
     }));

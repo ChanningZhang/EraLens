@@ -8,6 +8,7 @@ import {
   type TimelinePresentation,
   type AbsMonth,
 } from "@eralens/shared";
+import { createPlatformSettings } from "@eralens/data-access";
 import { getWindow } from "../model/coordinates";
 import { resolveLod } from "../model/lod";
 
@@ -28,6 +29,9 @@ const DEFAULT_CENTER = absMonth(-221, 1); // Qin Shi Huang's unification of Chin
 const DEFAULT_PX_PER_MONTH = 1.5;
 const MIN_PX = 0.08;
 const MAX_PX = 12;
+const PERSISTENCE_KEY = "eralens.timeline-viewport.v1";
+const PERSISTENCE_DELAY_MS = 250;
+const settings = createPlatformSettings();
 /** Wide defaults until /bounds loads; 5000 abs ≈ 416 CE and blocked post-Han history. */
 const DEFAULT_MIN_ABS = -30_000;
 const DEFAULT_MAX_ABS = 25_000;
@@ -64,11 +68,31 @@ function buildSnapshot(): ViewportSnapshot {
 
 /** Must keep a stable reference between updates for useSyncExternalStore. */
 let snapshot = buildSnapshot();
+let persistenceTimer: ReturnType<typeof setTimeout> | undefined;
+let persistenceEnabled = false;
 
 function notify() {
   snapshot = buildSnapshot();
   for (const listener of listeners) {
     listener();
+  }
+  schedulePersistence();
+}
+
+function schedulePersistence() {
+  if (!persistenceEnabled) return;
+  if (persistenceTimer !== undefined) clearTimeout(persistenceTimer);
+  persistenceTimer = setTimeout(() => {
+    persistenceTimer = undefined;
+    void persistCurrentViewport();
+  }, PERSISTENCE_DELAY_MS);
+}
+
+async function persistCurrentViewport() {
+  try {
+    await settings.set(PERSISTENCE_KEY, JSON.stringify({ centerAbs, pxPerMonth }));
+  } catch {
+    // Keep the current session usable if native preferences are unavailable.
   }
 }
 
@@ -83,6 +107,30 @@ export const viewportStore = {
   },
   getSnapshot,
   getServerSnapshot: getSnapshot,
+  async restorePersistedState() {
+    try {
+      const raw = await settings.get(PERSISTENCE_KEY);
+      if (!raw) return;
+      const saved = JSON.parse(raw) as { centerAbs?: unknown; pxPerMonth?: unknown };
+      if (typeof saved.centerAbs !== "number" || !Number.isFinite(saved.centerAbs)) return;
+      if (typeof saved.pxPerMonth !== "number" || !Number.isFinite(saved.pxPerMonth)) return;
+      centerAbs = saved.centerAbs;
+      pxPerMonth = Math.min(MAX_PX, Math.max(MIN_PX, saved.pxPerMonth));
+      notify();
+    } catch {
+      // Ignore missing or malformed saved state and use the default viewport.
+    }
+  },
+  enablePersistence() {
+    if (persistenceEnabled) return;
+    persistenceEnabled = true;
+    document.addEventListener("visibilitychange", () => {
+      if (document.visibilityState !== "hidden") return;
+      if (persistenceTimer !== undefined) clearTimeout(persistenceTimer);
+      persistenceTimer = undefined;
+      void persistCurrentViewport();
+    });
+  },
   setLayoutPreferences(next: TimelineLayoutPreferences) {
     if (layoutPreferences.railCollapsed === next.railCollapsed && layoutPreferences.density === next.density) return;
     layoutPreferences = next;
