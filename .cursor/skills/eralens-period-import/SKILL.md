@@ -20,6 +20,13 @@ description: >-
 [eralens-reign-import](../eralens-reign-import/SKILL.md)，添加都城或事件地点见
 [eralens-geography-import](../eralens-geography-import/SKILL.md)。本 Skill 负责跨实体的完整时期包。
 
+## 来源维护
+
+- 每次新增、丰富或修复历史数据，都必须同步核对并更新来源，确保来源支持本次新增或改动的事实。
+- 在记录所属包的 `cache.json.manifest.sources` 维护实际采用的来源；已有来源仍适用时保留，新增依据补入，错误或已不适用的引用修正或移除。争议与取舍写入 `manifest.notes`，`manifest.json` 由统一生成器更新。
+- 对有 `links` 字段的条目（人物、都城、事件地点），同步更新记录的 `links: [{ label, url }]`，使用可核对的来源名称与直接页面链接。人物/在位详情的“来源”栏读取对应 person 的 `links`，都城详情读取 capital 的 `links`；不能只更新包级 `manifest.sources` 而遗漏详情来源。
+- 导入后核对 API 返回的来源与详情抽屉“来源”栏，确认本次采用的来源已展示，标签、链接与对应事实一致。
+
 ## 触发后先确认
 
 向用户确认（缺省可推断）：

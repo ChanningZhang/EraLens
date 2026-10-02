@@ -5,8 +5,7 @@ import {
   formatAbsSpanTooltip,
   formatYearMonth,
 } from "./time";
-import { isUncertainDateConfidence } from "./reignBoundaries";
-import { formatHistoricalDate, isApproximateConfidence, isInterpolatedConfidence } from "./historicalDate";
+import { formatHistoricalDate, hasUncertainDateRange } from "./historicalDate";
 import { confidencePrecision } from "./historicalDate";
 import {
   effectiveIntervalEndPoint,
@@ -132,6 +131,10 @@ export function formatReignSpanTooltip(reign: ReignSpanFields): string {
   const endConfidence = reign.end.confidence ?? "year";
   const startLabel = formatHistoricalDate({ ...reign.start, confidence: startConfidence });
   if (reign.isOngoing) return `${startLabel} — 至今`;
+  if (hasUncertainDateRange(reign)) {
+    const endLabel = formatHistoricalDate({ ...reign.end, confidence: endConfidence });
+    return `${startLabel} — ${endLabel}`;
+  }
   if (confidencePrecision(startConfidence) === "day" && confidencePrecision(endConfidence) === "day" && reign.start.day != null && reign.end.day != null) {
     const startLabel = formatYearMonthDay(reign.start.year, reign.start.month, reign.start.day);
     const endLabel = formatYearMonthDay(reign.end.year, reign.end.month, reign.end.day);
@@ -144,14 +147,7 @@ export function formatReignSpanTooltip(reign: ReignSpanFields): string {
     }
   }
   const precision = confidencePrecision(startConfidence) === "day" || confidencePrecision(endConfidence) === "day" ? "day" : confidencePrecision(startConfidence) === "month" || confidencePrecision(endConfidence) === "month" ? "month" : "year";
-  const base = formatAbsSpanTooltip(reign.startAbs, reign.endAbs, precision);
-  const startUncertain = isApproximateConfidence(startConfidence) || isInterpolatedConfidence(startConfidence);
-  const endUncertain = isApproximateConfidence(endConfidence) || isInterpolatedConfidence(endConfidence);
-  if (!startUncertain && !endUncertain) {
-    return base;
-  }
-  const endLabel = formatHistoricalDate({ ...reign.end, confidence: endConfidence });
-  return `${startLabel} — ${endLabel}`;
+  return formatAbsSpanTooltip(reign.startAbs, reign.endAbs, precision);
 }
 
 /** Duration suffix from the same rules used by the reign tooltip. */
@@ -159,8 +155,13 @@ export function formatReignDurationLabel(
   reign: ReignSpanFields,
   interval?: LeftOpenRightClosedInterval,
 ): string | undefined {
+  const startConfidence = reign.start.confidence ?? "year";
+  const endConfidence = reign.end.confidence ?? "year";
+  // Layout intervals may use inferred dates, but cannot make their duration certain.
+  if (reign.isOngoing || hasUncertainDateRange(reign)) {
+    return undefined;
+  }
   if (interval) {
-    if (reign.isOngoing) return undefined;
     const start = effectiveIntervalStartPoint(interval);
     const end = effectiveIntervalEndPoint(interval);
     if (confidencePrecision(reign.start.confidence ?? "year") === "day" || confidencePrecision(reign.end.confidence ?? "year") === "day") {
@@ -179,23 +180,11 @@ export function formatReignDurationLabel(
     );
   }
   const tooltipDuration = formatReignSpanTooltip(reign).match(/ · (.+)$/)?.[1];
-  if (tooltipDuration || reign.isOngoing) return tooltipDuration;
+  if (tooltipDuration) return tooltipDuration;
 
   // A collapsed same-year tooltip has no duration suffix. Only restore that
   // suffix when both endpoints are dated with certainty; interpolated or
   // approximate endpoints must not turn into a made-up "1 year" duration.
-  const startConfidence = reign.start.confidence ?? "year";
-  const endConfidence = reign.end.confidence ?? "year";
-  if (
-    isApproximateConfidence(startConfidence) ||
-    isInterpolatedConfidence(startConfidence) ||
-    isApproximateConfidence(endConfidence) ||
-    isInterpolatedConfidence(endConfidence) ||
-    isUncertainDateConfidence(startConfidence) ||
-    isUncertainDateConfidence(endConfidence)
-  ) {
-    return undefined;
-  }
   if (confidencePrecision(startConfidence) === "year" && confidencePrecision(endConfidence) === "year") return "1年";
   if (confidencePrecision(startConfidence) === "month" && confidencePrecision(endConfidence) === "month") return "1个月";
   const days = reignDurationDays(reign);

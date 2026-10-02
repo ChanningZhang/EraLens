@@ -495,7 +495,63 @@ describe("buildEntityDetail dynasty", () => {
   });
 });
 
+describe("buildEntityDetail undated dynasty associations", () => {
+  it("keeps explicit people in relation order, deduplicated and without invented dates", () => {
+    const store = {
+      dynasties: [{
+        id: "test-state", name: "测试", scope: "cn", region: "east_asia",
+        start: { year: -1000, month: 1 }, end: { year: -700, month: 12 },
+        startAbs: -11988, endAbs: -8377, precision: "year", colorToken: "moss",
+      }],
+      reigns: [], events: [],
+      persons: ["first", "second", "unrelated"].map((id) => ({
+        id, name: id, roles: ["君主身份待考"], links: [],
+      })),
+      relations: [
+        { id: "02", fromRef: "person:second", toRef: "dynasty:test-state", kind: "other" },
+        { id: "01", fromRef: "dynasty:test-state", toRef: "person:first", kind: "other" },
+        { id: "03", fromRef: "dynasty:test-state", toRef: "person:first", kind: "other" },
+        { id: "04", fromRef: "dynasty:test-state", toRef: "person:unrelated", kind: "battle" },
+        { id: "05", fromRef: "dynasty:test-state", toRef: "person:missing", kind: "other" },
+      ],
+    };
+    const detail = buildEntityDetail(store, { type: "dynasty", id: "test-state" });
+    expect(detail.related.map((item) => item.ref.id)).toEqual(["first", "second"]);
+    expect(detail.related.every((item) => item.group === "person" && item.abs === undefined)).toBe(true);
+  });
+});
+
 describe("buildEntityDetail person", () => {
+  it("uses the person title in both person and reign details when a ruler has no appellations", () => {
+    const store = {
+      dynasties: [{
+        id: "han-west", name: "西汉", scope: "cn" as const, region: "east_asia",
+        start: { year: -202, month: 1 }, end: { year: 9, month: 12 },
+        startAbs: -2412, endAbs: 119, precision: "year" as const,
+        colorToken: "moss" as const,
+      }],
+      reigns: [reign({
+        id: "reign-unnamed-ruler", dynastyId: "han-west", personId: "unnamed-ruler",
+        title: "", eraNames: [],
+        start: { year: -188, month: 9 }, end: { year: -184, month: 6 },
+        startAbs: -2236, endAbs: -2191,
+      })],
+      persons: [{
+        id: "unnamed-ruler", name: "刘？", title: "汉前少帝", roles: ["皇帝"],
+        links: [], posthumousNames: [], templeNames: [],
+      }],
+      events: [], relations: [],
+    };
+    for (const ref of [
+      { type: "person" as const, id: "unnamed-ruler" },
+      { type: "reign" as const, id: "reign-unnamed-ruler" },
+    ]) {
+      expect(buildEntityDetail(store, ref)).toMatchObject({
+        title: "刘？", subtitle: "西汉 · 汉前少帝",
+      });
+    }
+  });
+
   it("lists related idioms for participants", () => {
     const store = {
       dynasties: [],

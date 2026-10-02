@@ -1,11 +1,9 @@
-import { formatAbsSpanTooltip, type Dynasty, type Reign } from "@eralens/shared";
+import { formatReignSpanTooltip, systemReignLabel, type Dynasty, type Reign } from "@eralens/shared";
 import { memo } from "react";
 import { InfoPopover } from "./InfoPopover";
 import styles from "./ReignGapCard.module.css";
 
 const MIN_GAP_PX = 10;
-/** 3-char label at 12px + horizontal padding */
-const LABEL_MIN_PX = 44;
 
 type Props = {
   gap: Reign;
@@ -20,11 +18,12 @@ function ReignGapCardImpl({ gap, dynasty, color, pxPerMonth }: Props) {
   const width = Math.max(1, (endExclusive - gap.startAbs) * pxPerMonth);
   if (width < MIN_GAP_PX) return null;
 
-  const showLabel = width >= LABEL_MIN_PX;
-  const timeTooltip = formatAbsSpanTooltip(gap.startAbs, gap.endAbs, gap.precision);
+  const label = systemReignLabel(gap);
+  const showLabel = width >= [...label].length * 12 + 16;
+  const timeTooltip = formatReignSpanTooltip(gap);
   const tooltipText = dynasty.note
-    ? `史料缺\n${timeTooltip}\n${dynasty.note}`
-    : `史料缺\n${timeTooltip}`;
+    ? `${label}\n${timeTooltip}\n${dynasty.note}`
+    : `${label}\n${timeTooltip}`;
 
   return (
     <div className={styles.unit} style={{ left, width, top: 0 }}>
@@ -37,12 +36,12 @@ function ReignGapCardImpl({ gap, dynasty, color, pxPerMonth }: Props) {
               .filter(Boolean)
               .join(" ")}
             style={{ ["--card-color" as string]: color }}
-            aria-label={`${dynasty.name} 史料缺`}
+            aria-label={`${dynasty.name} ${label}`}
             role="img"
             tabIndex={0}
             {...handlers}
           >
-            {showLabel && <p className={styles.label}>史料缺</p>}
+            {showLabel && <p className={styles.label}>{label}</p>}
           </div>
         )}
       </InfoPopover>

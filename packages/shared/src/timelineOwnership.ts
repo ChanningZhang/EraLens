@@ -1,4 +1,5 @@
 import { claimTrackOf } from "./claimTracks";
+import { hasUncertainDateRange } from "./historicalDate";
 import type { Dynasty, DynastyCapital, Reign } from "./schema";
 import {
   effectiveIntervalEndAbs,
@@ -172,12 +173,16 @@ export function capitalSegmentsForReign(
   startsAtReignBoundary: boolean;
   endsAtReignBoundary: boolean;
 }> {
+  // Uncertain dating cannot establish capital tenure for an individual reign.
+  // Keep these capitals at dynasty level, including records with explicit links.
+  if (hasUncertainDateRange(reign)) return [];
   const reignInterval = reignOwnershipInterval(reign, reigns);
   const linked = capitals.filter((capital) => capital.reignIds?.includes(reign.id));
   const candidates = linked.length > 0
     ? linked
     : capitals.filter((capital) => capital.dynastyId === reign.dynastyId);
   return candidates.flatMap((capital) => {
+    if (hasUncertainDateRange(capital)) return [];
     if (linked.length === 0 && (capital.claimTrack ?? null) !== (reign.claimTrack ?? null)) return [];
     const capitalInterval = capitalOwnershipInterval(capital, capitals);
     if (!intervalsIntersect(reignInterval, capitalInterval)) return [];

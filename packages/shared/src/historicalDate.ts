@@ -20,6 +20,16 @@ export function isApproximateConfidence(confidence?: HistoricalDateConfidence | 
   return confidence === "approximate_day" || confidence === "approximate_month" || confidence === "approximate_year";
 }
 
+/** Inferred endpoint coordinates support layout, not a certain duration or reign-capital assignment. */
+export function hasUncertainDateRange(range: {
+  start: { confidence?: HistoricalDateConfidence };
+  end: { confidence?: HistoricalDateConfidence };
+}): boolean {
+  return [range.start.confidence, range.end.confidence].some(
+    (confidence) => isApproximateConfidence(confidence) || isInterpolatedConfidence(confidence),
+  );
+}
+
 export function formatHistoricalDate(date: {
   year: number;
   month?: number;

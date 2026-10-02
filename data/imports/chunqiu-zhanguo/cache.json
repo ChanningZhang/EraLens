@@ -9,15 +9,19 @@
   "persons": [
     {
       "id": "zou-r1",
-      "name": "挟",
+      "name": "曹挟",
       "roles": [
         "君主"
       ],
-      "bio": "邾子挟，邹国君主。",
+      "bio": "曹姓邾国传统世系所列的始封君。通行说将其受封置于周初；之后相传历非、成、车辅、将新、訾父至武公。早期世系据后世文献辑成，具体在位年及部分世系真实性尚不能确证。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/邾子挟"
+          "label": "邾国君主世系与传世文献考",
+          "url": "https://zh.wikipedia.org/wiki/邾国"
+        },
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
         }
       ],
       "birth": null,
@@ -29,15 +33,19 @@
     },
     {
       "id": "zou-r2",
-      "name": "非",
+      "name": "曹非",
       "roles": [
         "君主"
       ],
-      "bio": "邾子非，邹国君主。",
+      "bio": "传统邾国世系称其为挟之子、继为国君，后传位于成。此世系见后世文献汇编，未见可据以确定其在位年份的同期纪年。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/邾子非"
+          "label": "邾国君主世系与传世文献考",
+          "url": "https://zh.wikipedia.org/wiki/邾国"
+        },
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
         }
       ],
       "birth": null,
@@ -49,15 +57,19 @@
     },
     {
       "id": "zou-r3",
-      "name": "成",
+      "name": "曹成",
       "roles": [
         "君主"
       ],
-      "bio": "邾子成，邹国君主。",
+      "bio": "传统邾国世系称其承继曹非，后传位于车辅；具体在位年代无同期纪年可考，早期世系仍有文献可靠性争议。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/邾子成"
+          "label": "邾国君主世系与传世文献考",
+          "url": "https://zh.wikipedia.org/wiki/邾国"
+        },
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
         }
       ],
       "birth": null,
@@ -69,15 +81,19 @@
     },
     {
       "id": "zou-r4",
-      "name": "车辅",
+      "name": "曹车辅",
       "roles": [
         "君主"
       ],
-      "bio": "邾子车辅，邹国君主。",
+      "bio": "传统邾国世系列为曹成之后、将新之前的国君；其个人事迹与在位年份未见同期纪年记载。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/邾子车辅"
+          "label": "邾国君主世系与传世文献考",
+          "url": "https://zh.wikipedia.org/wiki/邾国"
+        },
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
         }
       ],
       "birth": null,
@@ -89,15 +105,19 @@
     },
     {
       "id": "zou-r5",
-      "name": "将新",
+      "name": "曹将新",
       "roles": [
         "君主"
       ],
-      "bio": "邾子将新，邹国君主。",
+      "bio": "传统邾国世系列为曹车辅之后、訾父之前的国君；其个人事迹与在位年份未见同期纪年记载。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/邾子将新"
+          "label": "邾国君主世系与传世文献考",
+          "url": "https://zh.wikipedia.org/wiki/邾国"
+        },
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
         }
       ],
       "birth": null,
@@ -109,15 +129,19 @@
     },
     {
       "id": "zou-r6",
-      "name": "訾父",
+      "name": "曹訾父",
       "roles": [
         "君主"
       ],
-      "bio": "邾子訾父，邹国君主。",
+      "bio": "传统邾国世系列为将新之后、武公之前的国君；与武公的父子关系见后世世系整理，具体在位年份无同期纪年可考。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/邾子訾父"
+          "label": "邾国君主世系与传世文献考",
+          "url": "https://zh.wikipedia.org/wiki/邾国"
+        },
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
         }
       ],
       "birth": null,
@@ -129,15 +153,23 @@
     },
     {
       "id": "zou-r7",
-      "name": "夷父",
+      "name": "曹夷父",
       "roles": [
         "君主"
       ],
-      "bio": "邾武公，邹国君主。",
+      "bio": "《公羊传》追述邾娄颜（传统系于武公）及叔术、夏父之间的继承与让国故事；传统年表以周宣王诛颜之年系其卒于前796年。故事中的人物身份与世系细节属于传世叙述。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/邾武公"
+          "label": "《春秋公羊传·昭公三十一年》",
+          "url": "https://ctext.org/gongyang-zhuan/zhao-gong-san-shi-yi-nian/zhs"
+        },
+        {
+          "label": "邾国君主世系与传世文献考",
+          "url": "https://zh.wikipedia.org/wiki/邾国"
+        },
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
         }
       ],
       "birth": null,
@@ -151,15 +183,19 @@
     },
     {
       "id": "zou-r8",
-      "name": "叔术",
+      "name": "曹叔术",
       "roles": [
         "君主"
       ],
-      "bio": "邾子叔术，邹国君主。",
+      "bio": "《公羊传》称叔术受周天子命立为邾君，后让位于夏父，并分得滥地；传文以此称许其让国。传统年表系其在位于前795—前781年，起讫年依年表而非传文精确年月。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/邾子叔术"
+          "label": "《春秋公羊传·昭公三十一年》",
+          "url": "https://ctext.org/gongyang-zhuan/zhao-gong-san-shi-yi-nian/zhs"
+        },
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
         }
       ],
       "birth": null,
@@ -171,15 +207,23 @@
     },
     {
       "id": "zou-r9",
-      "name": "夏父",
+      "name": "曹夏父",
       "roles": [
         "君主"
       ],
-      "bio": "邾子夏父，邹国君主。",
+      "bio": "传统世系称夏父为武公之子；《公羊传》记叔术让国于夏父并以滥地分封。其确切卒年及之后继位年份没有直接纪年证据。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/邾子夏父"
+          "label": "《春秋公羊传·昭公三十一年》",
+          "url": "https://ctext.org/gongyang-zhuan/zhao-gong-san-shi-yi-nian/zhs"
+        },
+        {
+          "label": "邾国君主世系与传世文献考",
+          "url": "https://zh.wikipedia.org/wiki/邾国"
+        },
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
         }
       ],
       "birth": null,
@@ -195,13 +239,8 @@
       "roles": [
         "君主"
       ],
-      "bio": "？，邹国君主。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/？"
-        }
-      ],
+      "bio": "姓名失载的邾国君主。具体世次与在位年代未能由现有可核史料确定。",
+      "links": [],
       "birth": null,
       "death": null,
       "posthumousNames": [],
@@ -211,55 +250,75 @@
     },
     {
       "id": "zou-r11",
-      "name": "克",
+      "name": "曹克",
       "roles": [
         "君主"
       ],
-      "bio": "邾子克，邹国君主。",
+      "bio": "邾安公（克，字仪父）为春秋前期邾君，事迹见《春秋》及《左传》；传统年表系其卒于鲁庄公十六年（前678），继任者为其子琐。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/邾子克"
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾安公",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%AE%89%E5%85%AC"
         }
       ],
       "birth": null,
       "death": null,
-      "posthumousNames": [],
+      "posthumousNames": [
+        "安公"
+      ],
       "templeNames": [],
       "title": "邾子克",
       "ancestralXing": "曹"
     },
     {
       "id": "zou-r12",
-      "name": "琐",
+      "name": "曹琐",
       "roles": [
         "君主"
       ],
-      "bio": "邾子琐，邹国君主。",
+      "bio": "邾宪公，克之子。传统年表系其在位于前677—前666年，后由邾文公继位；早期君主个人事迹记载较少。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/邾子琐"
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾宪公",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%AE%AA%E5%85%AC"
         }
       ],
       "birth": null,
       "death": null,
-      "posthumousNames": [],
+      "posthumousNames": [
+        "宪公"
+      ],
       "templeNames": [],
       "title": "邾子琐",
       "ancestralXing": "曹"
     },
     {
       "id": "zou-r13",
-      "name": "蘧蒢",
+      "name": "曹蘧蒢",
       "roles": [
         "君主"
       ],
-      "bio": "邾文公，邹国君主。",
+      "bio": "邾文公，邾宪公之子。鲁文公十三年（前614）卜迁于绎，迁都有利于民而被占为不利于君；文公同年卒，子貜且继位。迁都事见《左传》，遗址与迁都年代亦见山东地情档案。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/邾文公"
+          "label": "《左传·文公十三年》",
+          "url": "https://ctext.org/chun-qiu-zuo-zhuan/wen-gong-shi-san-nian/zhs"
+        },
+        {
+          "label": "邾国故城（山东地情档案）",
+          "url": "https://shandong-chorography.org/database/a/section/70/article/91/"
+        },
+        {
+          "label": "邾文公",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E6%96%87%E5%85%AC"
         }
       ],
       "birth": null,
@@ -273,15 +332,23 @@
     },
     {
       "id": "zou-r14",
-      "name": "貜且",
+      "name": "曹貜且",
       "roles": [
         "君主"
       ],
-      "bio": "邾定公，邹国君主。",
+      "bio": "邾定公，邾文公之子，于文公卒后继位。传统年表以鲁文公十四年（前613）为其元年，记在位至前573年；邾文公迁绎后，邾国都城在绎。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/邾定公"
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾国故城（山东地情档案）",
+          "url": "https://shandong-chorography.org/database/a/section/70/article/91/"
+        },
+        {
+          "label": "邾定公",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%AE%9A%E5%85%AC"
         }
       ],
       "birth": null,
@@ -295,15 +362,19 @@
     },
     {
       "id": "zou-r15",
-      "name": "牼",
+      "name": "曹牼",
       "roles": [
         "君主"
       ],
-      "bio": "邾宣公，邹国君主。",
+      "bio": "邾宣公，邾定公之子，后继位；传统年表系其在位于前572—前556年。关于其一名，传世版本有牼、瞷等异文。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/邾宣公"
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾宣公",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%AE%A3%E5%85%AC"
         }
       ],
       "birth": null,
@@ -317,15 +388,19 @@
     },
     {
       "id": "zou-r16",
-      "name": "华",
+      "name": "曹华",
       "roles": [
         "君主"
       ],
-      "bio": "邾悼公，邹国君主。",
+      "bio": "邾悼公，邾宣公之子，后继位；传统年表系其在位于前555—前541年。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/邾悼公"
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾悼公",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E6%82%BC%E5%85%AC"
         }
       ],
       "birth": null,
@@ -339,15 +414,19 @@
     },
     {
       "id": "zou-r17",
-      "name": "穿",
+      "name": "曹穿",
       "roles": [
         "君主"
       ],
-      "bio": "邾庄公，邹国君主。",
+      "bio": "邾庄公，邾悼公之子，后继位；传统年表系其在位于前540—前507年，其后邾隐公益继位。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/邾庄公"
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾庄公",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%BA%84%E5%85%AC"
         }
       ],
       "birth": null,
@@ -361,15 +440,27 @@
     },
     {
       "id": "zou-r18",
-      "name": "益",
+      "name": "曹益",
       "roles": [
         "君主"
       ],
-      "bio": "邾隐公，邹国君主。",
+      "bio": "邾隐公，邾庄公之子。吴王夫差立其子革为君后，益一度失位；前473年复位，之后由另一子何继位。传世年表将其分作前506—前487年与前472—前471年两段。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/邾隐公"
+          "label": "《左传·哀公八年》",
+          "url": "https://ctext.org/chun-qiu-zuo-zhuan/ai-gong-ba-nian/zhs"
+        },
+        {
+          "label": "《左传·哀公二十四年》",
+          "url": "https://ctext.org/chun-qiu-zuo-zhuan/ai-gong-er-shi-si-nian/zhs"
+        },
+        {
+          "label": "周朝诸侯国君主列表·邾国",
+          "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+        },
+        {
+          "label": "邾隐公",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E9%9A%90%E5%85%AC"
         }
       ],
       "birth": null,
@@ -383,15 +474,19 @@
     },
     {
       "id": "zou-r19",
-      "name": "革",
+      "name": "曹革",
       "roles": [
         "君主"
       ],
-      "bio": "邾隐公之子，名革，谥桓公。吴王夫差立为邾君；前473年隐公复位后奔越。见《左传·哀公八年》及邾桓公条目。",
+      "bio": "邾桓公，邾隐公之子。吴王夫差拥立其为邾君，益复位后革奔越；《左传》记其被立、失位与出奔。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/邾桓公"
+          "label": "《左传·哀公八年》",
+          "url": "https://ctext.org/chun-qiu-zuo-zhuan/ai-gong-ba-nian/zhs"
+        },
+        {
+          "label": "邾桓公",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E6%A1%93%E5%85%AC"
         }
       ],
       "birth": null,
@@ -405,15 +500,19 @@
     },
     {
       "id": "zou-he",
-      "name": "何",
+      "name": "曹何",
       "roles": [
         "君主"
       ],
-      "bio": "邾隐公之子，前471年由越人立为邾君。《左传·哀公二十四年》记其即位，退位或卒年未详；在位区段依连续世系锚点插值。",
+      "bio": "邾子何，邾隐公之子，前471年由越人立为邾君。《左传·哀公二十四年》记其即位；其退位或卒年及后续继承次序无法由该条直接确定。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/邾子何"
+          "label": "《左传·哀公二十四年》",
+          "url": "https://ctext.org/chun-qiu-zuo-zhuan/ai-gong-er-shi-si-nian/zhs"
+        },
+        {
+          "label": "邾子何",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%AD%90%E4%BD%95"
         }
       ],
       "birth": null,
@@ -429,13 +528,8 @@
       "roles": [
         "君主"
       ],
-      "bio": "？，邹国君主。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/？"
-        }
-      ],
+      "bio": "姓名失载的邾国君主。具体世次与在位年代未能由现有可核史料确定。",
+      "links": [],
       "birth": null,
       "death": null,
       "posthumousNames": [],
@@ -445,15 +539,19 @@
     },
     {
       "id": "zou-kaogong",
-      "name": "考公",
+      "name": "曹考公",
       "roles": [
         "君主"
       ],
-      "bio": "邾隐公曾孙，事见《礼记·檀弓》。具体在位年无确证；本包依邾子何至邹穆公的连续世系区段插值，另有将其系于鲁文公、宣公时期的说法，与世系年代不合。",
+      "bio": "邾娄考公，传为邾隐公曾孙。《礼记·檀弓下》记徐君遣使来吊其丧；该记载未给出绝对年代，后世对其世代与年代有不同系年。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/邾娄考公"
+          "label": "《礼记·檀弓下》",
+          "url": "https://ctext.org/liji/tan-gong-xia/zhs"
+        },
+        {
+          "label": "邾娄考公",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%BE%E5%A8%84%E8%80%83%E5%85%AC"
         }
       ],
       "birth": null,
@@ -471,13 +569,8 @@
       "roles": [
         "君主"
       ],
-      "bio": "？，邹国君主。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/？"
-        }
-      ],
+      "bio": "姓名失载的邾国君主。具体世次与在位年代未能由现有可核史料确定。",
+      "links": [],
       "birth": null,
       "death": null,
       "posthumousNames": [],
@@ -491,13 +584,8 @@
       "roles": [
         "君主"
       ],
-      "bio": "？，邹国君主。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/？"
-        }
-      ],
+      "bio": "姓名失载的邾国君主。具体世次与在位年代未能由现有可核史料确定。",
+      "links": [],
       "birth": null,
       "death": null,
       "posthumousNames": [],
@@ -507,15 +595,23 @@
     },
     {
       "id": "zou-mu-gong",
-      "name": "某",
+      "name": "曹穆公",
       "roles": [
         "君主"
       ],
-      "bio": "邹穆公，邹国君主。",
+      "bio": "邹穆公，孟子在世时的邹君。《孟子·滕文公上》记孟子与其讨论灾年中官吏殉职、民众离散与公家仓廪充实等事；具体在位年代为后世推定。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/邹穆公"
+          "label": "《孟子·滕文公上》",
+          "url": "https://zh.wikisource.org/zh-hans/孟子/滕文公上"
+        },
+        {
+          "label": "孟子志：邾国至邹国沿革及孟子里籍（山东地情档案）",
+          "url": "https://shandong-chorography.org/database/zzmj/section/19/article/7/"
+        },
+        {
+          "label": "邹穆公",
+          "url": "https://zh.wikipedia.org/wiki/%E9%82%B9%E7%A9%86%E5%85%AC"
         }
       ],
       "birth": null,
@@ -535,23 +631,31 @@
         "军事家",
         "政治家"
       ],
-      "bio": "姜太公（姜子牙），辅武王克商，封于齐。",
+      "bio": "姜姓，吕氏，名尚，号太公望，通称姜子牙。辅佐周文王、武王，参与克商，前1046年受封于齐营丘；因当地风俗修政，发展工商与鱼盐之利。卒年有异说，一说约前1026年卒，其子吕伋继为齐丁公。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/姜子牙"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "维基百科：齐国君主列表（早期年代与正文表有异）",
+          "url": "https://zh.wikipedia.org/wiki/齐国君主列表#姜齊君主列表"
+        },
+        {
+          "label": "《资治通鉴外纪》成王条（太公卒年异说）",
+          "url": "https://www.shidianguji.com/book/SBCK033/chapter/SBCK033_14"
+        },
+        {
+          "label": "维基百科：齐国君主表（早期推定年代）",
+          "url": "https://zh.wikipedia.org/wiki/齐国#姜齊君主列表"
         }
       ],
-      "birth": {
-        "year": -1156,
-        "month": 1,
-        "abs": -13860
-      },
-      "death": {
-        "year": -1017,
-        "month": 1,
-        "abs": -12192
-      },
+      "birth": null,
+      "death": null,
       "altNames": [
         "姜子牙",
         "姜太公",
@@ -571,11 +675,27 @@
       "roles": [
         "君主"
       ],
-      "bio": "齐丁公（伋），姜太公之子，西周初期齐国第二代君主，前1010–前974年在位。史书记载有限，为吕伋，继太公之位守齐。",
+      "bio": "齐太公之子，名伋，史书称吕伋。继太公为齐君，约前1026年至前975年间在位。《尚书·顾命》记其以齐侯身份参与迎立周康王，《左传》记其与熊绎、伯禽等共事康王。卒后其子得继位为乙公。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐丁公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《尚书·顾命》",
+          "url": "https://zh.wikisource.org/wiki/尚書/顧命"
+        },
+        {
+          "label": "维基百科：齐国君主列表（早期年代与正文表有异）",
+          "url": "https://zh.wikipedia.org/wiki/齐国君主列表#姜齊君主列表"
+        },
+        {
+          "label": "维基百科：齐国君主表（早期推定年代）",
+          "url": "https://zh.wikipedia.org/wiki/齐国#姜齊君主列表"
         }
       ],
       "birth": null,
@@ -594,11 +714,23 @@
       "roles": [
         "君主"
       ],
-      "bio": "齐乙公（得），丁公之子，前973–前937年在位。丁公嫡子季子让位于弟而自食采于崔，叔乙遂继兄为君。",
+      "bio": "齐丁公之子，名得，又称叔乙。继丁公为齐君，约前975年至前933年间在位，卒后由子慈母继位。《通志·氏族略》载丁公嫡子季子让国于叔乙，季子食采于崔，为崔氏始祖。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐乙公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "维基百科：齐国君主列表（早期年代与正文表有异）",
+          "url": "https://zh.wikipedia.org/wiki/齐国君主列表#姜齊君主列表"
+        },
+        {
+          "label": "维基百科：齐国君主表（早期推定年代）",
+          "url": "https://zh.wikipedia.org/wiki/齐国#姜齊君主列表"
         }
       ],
       "birth": null,
@@ -617,11 +749,23 @@
       "roles": [
         "君主"
       ],
-      "bio": "齐癸公（慈母），齐国第四代君主，前936–前900年在位。史书记载有限，世次与事迹均不详。",
+      "bio": "齐乙公之子，名慈母。继乙公为齐君，约前933年至前902年间在位，卒后由子不辰继位为哀公。哀公、胡公静与献公山为其后嗣。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐癸公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "维基百科：齐国君主列表（早期年代与正文表有异）",
+          "url": "https://zh.wikipedia.org/wiki/齐国君主列表#姜齊君主列表"
+        },
+        {
+          "label": "维基百科：齐国君主表（早期推定年代）",
+          "url": "https://zh.wikipedia.org/wiki/齐国#姜齊君主列表"
         }
       ],
       "birth": null,
@@ -640,11 +784,31 @@
       "roles": [
         "君主"
       ],
-      "bio": "齐哀公（不辰），齐国第五代君主，前899–前863年在位。据《史记》，为弟胡公所弑，齐国政局动荡。",
+      "bio": "齐癸公之子，名不辰，一作不臣。继父为齐君；据《史记·齐太公世家》，纪侯向周王进谗，周王烹杀哀公，另立其异母弟静为胡公。献公山为其同母弟。《竹书纪年》将烹杀记于周夷王三年，绝对年代有异说。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐哀公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《太平御览》卷八十五引《竹书纪年》",
+          "url": "https://zh.wikisource.org/wiki/太平御覽/0085"
+        },
+        {
+          "label": "夏商周断代工程与其他西周年代方案对照",
+          "url": "https://zh.wikipedia.org/wiki/夏商周断代工程#年表"
+        },
+        {
+          "label": "维基百科：齐国君主列表（早期年代与正文表有异）",
+          "url": "https://zh.wikipedia.org/wiki/齐国君主列表#姜齊君主列表"
+        },
+        {
+          "label": "维基百科：齐国君主表（早期推定年代）",
+          "url": "https://zh.wikipedia.org/wiki/齐国#姜齊君主列表"
         }
       ],
       "birth": null,
@@ -663,11 +827,31 @@
       "roles": [
         "君主"
       ],
-      "bio": "齐胡公（静），哀公之弟，前862–前860年在位。迁都薄姑不得民心，仅二年即被献公谋杀。",
+      "bio": "齐哀公异母弟，名静。哀公被周王烹杀后获立为齐君，迁都薄姑。哀公同母弟公子山与其党率营丘人袭杀胡公，自立为献公；胡公之子随后被驱逐。即位年份有异说，不能据此断言仅在位二年。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐胡公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《太平御览》卷八十五引《竹书纪年》",
+          "url": "https://zh.wikisource.org/wiki/太平御覽/0085"
+        },
+        {
+          "label": "夏商周断代工程与其他西周年代方案对照",
+          "url": "https://zh.wikipedia.org/wiki/夏商周断代工程#年表"
+        },
+        {
+          "label": "维基百科：齐国君主列表（早期年代与正文表有异）",
+          "url": "https://zh.wikipedia.org/wiki/齐国君主列表#姜齊君主列表"
+        },
+        {
+          "label": "维基百科：齐国君主表（早期推定年代）",
+          "url": "https://zh.wikipedia.org/wiki/齐国#姜齊君主列表"
         }
       ],
       "birth": null,
@@ -686,11 +870,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "齐献公（山），胡公异母弟，前859–前851年在位。杀胡公复位营丘，结束迁都之乱，齐国重归安定。",
+      "bio": "齐哀公同母弟、胡公异母弟，名山。率营丘人袭杀胡公后自立，逐胡公之子，迁都临淄。《史记》记其九年卒，子寿继位；按武公共和年次回溯，年表在位为前859—前851年。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐献公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
         }
       ],
       "birth": null,
@@ -709,11 +901,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "齐武公（寿），献公之子，前850–前825年在位。西周齐国君主，世次承续，史书记载有限。",
+      "bio": "齐献公之子，名寿。前850—前825年在位。《史记》记其九年周厉王奔彘，十年王室共和；《十二诸侯年表》以共和元年为武公十年。二十六年卒，子无忌继位为厉公。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐武公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
         }
       ],
       "birth": null,
@@ -732,11 +932,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "齐厉公（无忌），武公之子，前824–前816年在位。据《史记》骄恣失众，终为国人诛杀，文公继立。",
+      "bio": "齐武公之子，名无忌。前824—前816年在位。因暴虐，齐人欲立胡公之子，联合攻杀厉公；胡公之子亦战死。齐人随后立厉公之子赤为文公，并诛杀参与弑君者七十人。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐厉公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
         }
       ],
       "birth": null,
@@ -755,11 +963,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "齐文公（赤），厉公被杀后即位，前815–前804年在位。史书记载有限，为齐国世系承续之君。",
+      "bio": "齐厉公之子，名赤。厉公被杀后获立，前815—前804年在位；即位时齐人诛杀参与杀厉公者七十人。《史记》记其十二年卒，子脱继位为成公。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐文公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
         }
       ],
       "birth": null,
@@ -778,11 +994,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "齐成公（脱），文公之子，前803–前795年在位。史书记载有限，为齐国守成之君。",
+      "bio": "齐文公之子，名脱，一作说。前803—前795年在位。《史记》记其继父位，九年卒，子购继位为庄公；《十二诸侯年表》所列年次与此相符。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐成公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
         }
       ],
       "birth": null,
@@ -801,11 +1025,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "齐前庄公（姜购），维基齐国君主表载在位64年（前794–前731），为齐国在位最久之君。",
+      "bio": "齐成公之子，名购，为区别后来的齐庄公光，通称齐前庄公。前794—前731年在位，共六十四年；二十四年周幽王被犬戎杀害，周室东迁。卒后由子禄甫继位为釐公。",
       "links": [
         {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/齐庄公"
+          "label": "维基百科：齐庄公（购）",
+          "url": "https://zh.wikipedia.org/wiki/齊莊公_(購)"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
         }
       ],
       "birth": null,
@@ -829,6 +1061,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐釐公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
         }
       ],
       "birth": null,
@@ -852,6 +1092,22 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐襄公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
+        },
+        {
+          "label": "《春秋左氏传·庄公》",
+          "url": "https://zh.wikisource.org/wiki/春秋左氏傳/莊公"
+        },
+        {
+          "label": "春秋鲁国历法复原（据张培瑜《中国古代历法》）",
+          "url": "https://ytliu0.github.io/ChineseCalendar/chunqiu_simp.html"
         }
       ],
       "birth": null,
@@ -870,11 +1126,27 @@
       "roles": [
         "君主"
       ],
-      "bio": "公孙无知（无知），庄公孙、僖公庶弟仲年遗腹子，前686年在位。弑襄公自立，旋为雍廪所杀，在位仅数月。",
+      "bio": "公孙无知，齐庄公之孙、釐公之弟夷仲年之子。前686年襄公被弑后获立，次年前685年春为雍廪所杀；齐国一度无君，公子小白随后入齐即位为桓公。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/公孙无知"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
+        },
+        {
+          "label": "《春秋左氏传·庄公》",
+          "url": "https://zh.wikisource.org/wiki/春秋左氏傳/莊公"
+        },
+        {
+          "label": "春秋鲁国历法复原（据张培瑜《中国古代历法》）",
+          "url": "https://ytliu0.github.io/ChineseCalendar/chunqiu_simp.html"
         }
       ],
       "birth": null,
@@ -896,6 +1168,22 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐桓公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
+        },
+        {
+          "label": "《春秋左氏传·僖公》",
+          "url": "https://zh.wikisource.org/wiki/春秋左氏傳/僖公"
+        },
+        {
+          "label": "春秋鲁国历法复原（据张培瑜《中国古代历法》）",
+          "url": "https://ytliu0.github.io/ChineseCalendar/chunqiu_simp.html"
         }
       ],
       "birth": null,
@@ -914,11 +1202,27 @@
       "roles": [
         "君主"
       ],
-      "bio": "公子无亏（无诡），桓公之子，前643年在位。易牙、竖刁拥立，诸公子争位，旋为国人诛杀。",
+      "bio": "公子无亏，又称无诡，齐桓公之子。前643年桓公卒后由易牙、竖刁拥立，孝公昭奔宋；前642年春为齐人所杀，随后宋襄公助昭返国即位。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/公子无亏"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
+        },
+        {
+          "label": "《春秋左氏传·僖公》",
+          "url": "https://zh.wikisource.org/wiki/春秋左氏傳/僖公"
+        },
+        {
+          "label": "春秋鲁国历法复原（据张培瑜《中国古代历法》）",
+          "url": "https://ytliu0.github.io/ChineseCalendar/chunqiu_simp.html"
         }
       ],
       "birth": null,
@@ -940,6 +1244,22 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐孝公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
+        },
+        {
+          "label": "《春秋左氏传·僖公》",
+          "url": "https://zh.wikisource.org/wiki/春秋左氏傳/僖公"
+        },
+        {
+          "label": "春秋鲁国历法复原（据张培瑜《中国古代历法》）",
+          "url": "https://ytliu0.github.io/ChineseCalendar/chunqiu_simp.html"
         }
       ],
       "birth": null,
@@ -963,6 +1283,18 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐昭公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
+        },
+        {
+          "label": "《春秋左氏传·文公》",
+          "url": "https://zh.wikisource.org/wiki/春秋左氏傳/文公"
         }
       ],
       "birth": null,
@@ -981,11 +1313,23 @@
       "roles": [
         "君主"
       ],
-      "bio": "齐君舍（舍），昭公之子，前613年在位。即位仅数月，为弑父之齐懿公商人所杀而亡。",
+      "bio": "齐君舍，齐昭公与子叔姬之子。前613年父卒后即位，当年为其叔父公子商人所杀，商人自立为齐懿公。",
       "links": [
         {
           "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/君舍"
+          "url": "https://zh.wikipedia.org/wiki/舍_(齊國)"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
+        },
+        {
+          "label": "《春秋左氏传·文公》",
+          "url": "https://zh.wikisource.org/wiki/春秋左氏傳/文公"
         }
       ],
       "birth": null,
@@ -1007,6 +1351,18 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐懿公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
+        },
+        {
+          "label": "《春秋左氏传·文公》",
+          "url": "https://zh.wikisource.org/wiki/春秋左氏傳/文公"
         }
       ],
       "birth": null,
@@ -1030,6 +1386,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐惠公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
         }
       ],
       "birth": null,
@@ -1053,6 +1417,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐顷公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
         }
       ],
       "birth": null,
@@ -1071,11 +1443,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "齐灵公（环），顷公之子，前581–前554年在位。晏婴父子相继辅政，欲废太子而立公子牙，终遭弑杀。",
+      "bio": "齐灵公，名环，顷公之子，前581—前554年在位。晏婴父子相继辅政，晚年欲废太子光而立公子牙；病重时崔杼迎回光，灵公卒后光继位为庄公。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐灵公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
         }
       ],
       "birth": null,
@@ -1094,11 +1474,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "齐庄公（光），灵公之子，前553–前548年在位。与栾盈私通，为崔杼所弑，引发齐国卿族内斗。",
+      "bio": "齐庄公，名光，灵公之子，前553—前548年在位。支持栾盈返晋争权，又与崔杼之妻私通，后为崔杼所弑，景公继位，齐国卿族争权加剧。",
       "links": [
         {
           "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/齐庄公"
+          "url": "https://zh.wikipedia.org/wiki/齊莊公_(光)"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
         }
       ],
       "birth": null,
@@ -1117,11 +1505,23 @@
       "roles": [
         "君主"
       ],
-      "bio": "齐景公（杵臼），庄公异母弟，前547–前490年在位。晏婴辅政五十八年，好奢侈厚赋，国势日衰。",
+      "bio": "齐景公，名杵臼，庄公异母弟，前547—前490年在位。晏婴曾辅政；晚年立幼子荼为嗣，卒后国惠子、高昭子奉荼继位，随后发生田乞拥立阳生的政变。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐景公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
+        },
+        {
+          "label": "《春秋左氏传·哀公》",
+          "url": "https://zh.wikisource.org/wiki/春秋左氏傳/哀公"
         }
       ],
       "birth": null,
@@ -1140,11 +1540,23 @@
       "roles": [
         "君主"
       ],
-      "bio": "安孺子（荼），景公幼子，前489年在位。国惠子、高昭子所立，田乞政变后即被弑，在位仅数月。",
+      "bio": "安孺子，名荼，齐景公幼子。前490年景公卒后由国惠子、高昭子奉立，前489年田乞政变后被废杀，阳生继位为悼公。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/安孺子"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
+        },
+        {
+          "label": "《春秋左氏传·哀公》",
+          "url": "https://zh.wikisource.org/wiki/春秋左氏傳/哀公"
         }
       ],
       "birth": null,
@@ -1166,6 +1578,18 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐悼公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
+        },
+        {
+          "label": "《春秋左氏传·哀公》",
+          "url": "https://zh.wikisource.org/wiki/春秋左氏傳/哀公"
         }
       ],
       "birth": null,
@@ -1189,6 +1613,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐简公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
         }
       ],
       "birth": null,
@@ -1212,6 +1644,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐平公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
         }
       ],
       "birth": null,
@@ -1235,6 +1675,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐宣公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
         }
       ],
       "birth": null,
@@ -1258,6 +1706,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐康公"
+        },
+        {
+          "label": "《史记·齐太公世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷032"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷014"
         }
       ],
       "birth": null,
@@ -1285,6 +1741,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/田和"
+        },
+        {
+          "label": "《史记·田敬仲完世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷046"
+        },
+        {
+          "label": "维基百科：齐国君主列表（年表及异说）",
+          "url": "https://zh.wikipedia.org/wiki/齐国君主列表"
         }
       ],
       "birth": null,
@@ -1307,11 +1771,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "齐侯剡（剡），田和之子，田氏齐国第二代君主，前383–前375年在位。后被其兄田午所杀。",
+      "bio": "田侯剡，田和之子，田齐第二代君主，前383—前375年在位。后被其弟田午所杀，田午继位为桓公。",
       "links": [
         {
           "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/剡"
+          "url": "https://zh.wikipedia.org/wiki/田侯剡"
+        },
+        {
+          "label": "《史记·田敬仲完世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷046"
+        },
+        {
+          "label": "维基百科：齐国君主列表（年表及异说）",
+          "url": "https://zh.wikipedia.org/wiki/齐国君主列表"
         }
       ],
       "birth": null,
@@ -1328,11 +1800,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "田齐桓公（午），田午弑兄奫位，前374–前357年在位。田氏政权稳固，齐国进入战国时代。",
+      "bio": "田齐桓公，名午，田和之子、田侯剡之弟。杀剡夺位，前374—前357年为在位年表所列年次；卒后其子因齐继位为威王。",
       "links": [
         {
           "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/齐桓公"
+          "url": "https://zh.wikipedia.org/wiki/田午"
+        },
+        {
+          "label": "《史记·田敬仲完世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷046"
+        },
+        {
+          "label": "维基百科：齐国君主列表（年表及异说）",
+          "url": "https://zh.wikipedia.org/wiki/齐国君主列表"
         }
       ],
       "birth": null,
@@ -1356,6 +1836,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐威王"
+        },
+        {
+          "label": "《史记·田敬仲完世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷046"
+        },
+        {
+          "label": "维基百科：齐国君主列表（年表及异说）",
+          "url": "https://zh.wikipedia.org/wiki/齐国君主列表"
         }
       ],
       "birth": null,
@@ -1379,6 +1867,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐宣王"
+        },
+        {
+          "label": "《史记·田敬仲完世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷046"
+        },
+        {
+          "label": "维基百科：齐国君主列表（年表及异说）",
+          "url": "https://zh.wikipedia.org/wiki/齐国君主列表"
         }
       ],
       "birth": null,
@@ -1402,6 +1898,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐湣王"
+        },
+        {
+          "label": "《史记·田敬仲完世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷046"
+        },
+        {
+          "label": "维基百科：齐国君主列表（年表及异说）",
+          "url": "https://zh.wikipedia.org/wiki/齐国君主列表"
         }
       ],
       "birth": null,
@@ -1425,6 +1929,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/齐襄王"
+        },
+        {
+          "label": "《史记·田敬仲完世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷046"
+        },
+        {
+          "label": "维基百科：齐国君主列表（年表及异说）",
+          "url": "https://zh.wikipedia.org/wiki/齐国君主列表"
         }
       ],
       "birth": null,
@@ -1447,7 +1959,15 @@
       "links": [
         {
           "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/建"
+          "url": "https://zh.wikipedia.org/wiki/齊王建"
+        },
+        {
+          "label": "《史记·田敬仲完世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷046"
+        },
+        {
+          "label": "维基百科：齐国君主列表（年表及异说）",
+          "url": "https://zh.wikipedia.org/wiki/齐国君主列表"
         }
       ],
       "birth": null,
@@ -1460,7 +1980,7 @@
     },
     {
       "id": "ji-shuyu",
-      "name": "虞",
+      "name": "姬虞",
       "roles": [
         "君主"
       ],
@@ -1469,6 +1989,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/唐叔虞"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1481,15 +2005,19 @@
     },
     {
       "id": "jin-r1",
-      "name": "燮",
+      "name": "姬燮",
       "roles": [
         "君主"
       ],
-      "bio": "晋侯燮（燮），唐叔虞之子，晋国第二代君主，前1006–前970年在位。改国号为晋，史书记载有限。",
+      "bio": "姬姓，唐叔虞之子，继承晋君之位；传世文献记载简略，具体在位年代失考。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燮"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1502,15 +2030,19 @@
     },
     {
       "id": "jin-r2",
-      "name": "宁族",
+      "name": "姬宁族",
       "roles": [
         "君主"
       ],
-      "bio": "晋武侯（宁族），燮之子孙，前969–前933年在位。西周晋国君主，史书记载有限。",
+      "bio": "姬姓，燮之子，名宁族，谥武侯。继父燮为晋君；其后由成侯服人继位。传世文献对其事迹与在位年代记载有限。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋武侯"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1525,15 +2057,19 @@
     },
     {
       "id": "jin-r3",
-      "name": "服人",
+      "name": "姬服人",
       "roles": [
         "君主"
       ],
-      "bio": "晋成侯（服人），前932–前896年在位。西周晋国君主，世次承续，史书记载有限。",
+      "bio": "姬姓，名服人，承袭武侯为晋君。传世文献主要保存其世系，事迹与具体在位年代失考。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋成侯"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1548,15 +2084,19 @@
     },
     {
       "id": "jin-r4",
-      "name": "福",
+      "name": "姬福",
       "roles": [
         "君主"
       ],
-      "bio": "晋厉侯（福），成侯之子，前895–前859年在位。出土铭文作「僰马」，墓在曲沃北赵村。",
+      "bio": "姬姓，名福，成侯之子，继位为晋君。北赵晋侯墓地及相关铭文研究为其名号与年代提供线索；传统编年记其卒于前859年，继位年份失考。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋厉侯"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1571,7 +2111,7 @@
     },
     {
       "id": "jin-r5",
-      "name": "宜臼",
+      "name": "姬宜臼",
       "roles": [
         "君主"
       ],
@@ -1580,6 +2120,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋靖侯"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1594,7 +2138,7 @@
     },
     {
       "id": "jin-r6",
-      "name": "司徒",
+      "name": "姬司徒",
       "roles": [
         "君主"
       ],
@@ -1603,6 +2147,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋釐侯"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1617,7 +2165,7 @@
     },
     {
       "id": "jin-r7",
-      "name": "籍",
+      "name": "姬籍",
       "roles": [
         "君主"
       ],
@@ -1626,6 +2174,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋献侯"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1640,7 +2192,7 @@
     },
     {
       "id": "jin-r8",
-      "name": "费",
+      "name": "姬费",
       "roles": [
         "君主"
       ],
@@ -1649,6 +2201,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋穆侯"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1663,15 +2219,19 @@
     },
     {
       "id": "jin-r9",
-      "name": "殇",
+      "name": "？",
       "roles": [
         "君主"
       ],
-      "bio": "晋殇叔（殇），穆侯之弟，前784–前781年在位。趁太子仇年幼夺位，后被文侯逐还。",
+      "bio": "姬姓，穆侯之弟，谥殇叔，个人名失载。穆侯死后取代太子仇为君；前781年文侯仇复位。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋殇叔"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1686,7 +2246,7 @@
     },
     {
       "id": "jin-r10",
-      "name": "仇",
+      "name": "姬仇",
       "roles": [
         "君主"
       ],
@@ -1695,6 +2255,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋文侯"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1709,7 +2273,7 @@
     },
     {
       "id": "jin-r11",
-      "name": "伯",
+      "name": "姬伯",
       "roles": [
         "君主"
       ],
@@ -1718,6 +2282,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋昭侯"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1732,7 +2300,7 @@
     },
     {
       "id": "jin-r12",
-      "name": "成师",
+      "name": "姬成师",
       "roles": [
         "君主"
       ],
@@ -1741,6 +2309,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/曲沃桓叔"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1753,7 +2325,7 @@
     },
     {
       "id": "jin-r13",
-      "name": "平",
+      "name": "姬平",
       "roles": [
         "君主"
       ],
@@ -1762,6 +2334,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋孝侯"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1776,7 +2352,7 @@
     },
     {
       "id": "jin-r14",
-      "name": "鱓",
+      "name": "姬鱓",
       "roles": [
         "君主"
       ],
@@ -1785,6 +2361,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/曲沃庄伯"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1797,7 +2377,7 @@
     },
     {
       "id": "jin-r15",
-      "name": "却",
+      "name": "姬却",
       "roles": [
         "君主"
       ],
@@ -1806,6 +2386,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋鄂侯"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1820,7 +2404,7 @@
     },
     {
       "id": "jin-r16",
-      "name": "光",
+      "name": "姬光",
       "roles": [
         "君主"
       ],
@@ -1829,6 +2413,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋哀侯"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1843,15 +2431,19 @@
     },
     {
       "id": "jin-r17",
-      "name": "称",
+      "name": "姬称",
       "roles": [
         "君主"
       ],
-      "bio": "曲沃武公（称），庄伯之子，前715–前677年在位。连弑三君灭小子侯，前678年入晋都即位，完成曲沃代翼。",
+      "bio": "姬姓，曲沃庄伯之子，名称。前715年继父为曲沃君，延续曲沃与翼城公室的争位；前678年灭晋侯缗、并有晋地，受周王册命为晋君，前677年去世，子诡诸继位。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/曲沃武公"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1866,15 +2458,19 @@
     },
     {
       "id": "jin-r18",
-      "name": "小子",
+      "name": "？",
       "roles": [
         "君主"
       ],
-      "bio": "晋小子侯（小子），哀侯之子，前708–前705年在位。曲沃攻晋杀之，在位仅四年。",
+      "bio": "姬姓，哀侯之子，史称小子侯，个人名失载。前708年继位，前705年为曲沃武公所杀。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋小子侯"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1889,15 +2485,19 @@
     },
     {
       "id": "jin-r19",
-      "name": "缗",
+      "name": "姬缗",
       "roles": [
         "君主"
       ],
-      "bio": "晋侯缗（缗），鄂侯之子，前704–前678年在位。曲沃武公屡攻翼城，缗被弑后曲沃代晋完成。",
+      "bio": "姬姓，名缗，晋侯。曲沃武公攻杀小子侯后，晋人立哀侯之弟于翼，是为缗；前678年为曲沃武公所灭，曲沃并晋。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/缗"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1910,7 +2510,7 @@
     },
     {
       "id": "jin-r20",
-      "name": "诡诸",
+      "name": "姬诡诸",
       "roles": [
         "君主"
       ],
@@ -1919,6 +2519,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋献公"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1933,7 +2537,7 @@
     },
     {
       "id": "jin-r21",
-      "name": "夷吾",
+      "name": "姬夷吾",
       "roles": [
         "君主"
       ],
@@ -1942,6 +2546,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋惠公"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1956,7 +2564,7 @@
     },
     {
       "id": "jin-r22",
-      "name": "圉",
+      "name": "姬圉",
       "roles": [
         "君主"
       ],
@@ -1965,6 +2573,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋怀公"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -1979,7 +2591,7 @@
     },
     {
       "id": "ji-chonger",
-      "name": "重耳",
+      "name": "姬重耳",
       "roles": [
         "君主"
       ],
@@ -1988,6 +2600,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋文公"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -2002,7 +2618,7 @@
     },
     {
       "id": "jin-r24",
-      "name": "欢",
+      "name": "姬欢",
       "roles": [
         "君主"
       ],
@@ -2011,6 +2627,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋襄公"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -2025,7 +2645,7 @@
     },
     {
       "id": "jin-r25",
-      "name": "夷皋",
+      "name": "姬夷皋",
       "roles": [
         "君主"
       ],
@@ -2034,6 +2654,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋灵公"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -2048,7 +2672,7 @@
     },
     {
       "id": "jin-r26",
-      "name": "黑臀",
+      "name": "姬黑臀",
       "roles": [
         "君主"
       ],
@@ -2057,6 +2681,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋成公"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -2071,7 +2699,7 @@
     },
     {
       "id": "jin-r27",
-      "name": "据",
+      "name": "姬据",
       "roles": [
         "君主"
       ],
@@ -2080,6 +2708,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋景公"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -2094,7 +2726,7 @@
     },
     {
       "id": "jin-r28",
-      "name": "寿曼",
+      "name": "姬寿曼",
       "roles": [
         "君主"
       ],
@@ -2103,6 +2735,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋厉公"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -2117,7 +2753,7 @@
     },
     {
       "id": "jin-r29",
-      "name": "周",
+      "name": "姬周",
       "roles": [
         "君主"
       ],
@@ -2126,6 +2762,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋悼公"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -2140,7 +2780,7 @@
     },
     {
       "id": "jin-r30",
-      "name": "彪",
+      "name": "姬彪",
       "roles": [
         "君主"
       ],
@@ -2149,6 +2789,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋平公"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -2163,7 +2807,7 @@
     },
     {
       "id": "jin-r31",
-      "name": "夷",
+      "name": "姬夷",
       "roles": [
         "君主"
       ],
@@ -2172,6 +2816,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋昭公"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -2186,7 +2834,7 @@
     },
     {
       "id": "jin-r32",
-      "name": "弃疾",
+      "name": "姬弃疾",
       "roles": [
         "君主"
       ],
@@ -2195,6 +2843,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋顷公"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -2209,7 +2861,7 @@
     },
     {
       "id": "jin-r33",
-      "name": "午",
+      "name": "姬午",
       "roles": [
         "君主"
       ],
@@ -2218,6 +2870,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋定公"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -2232,7 +2888,7 @@
     },
     {
       "id": "jin-r34",
-      "name": "凿",
+      "name": "姬凿",
       "roles": [
         "君主"
       ],
@@ -2241,6 +2897,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋出公"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -2255,7 +2915,7 @@
     },
     {
       "id": "jin-r35",
-      "name": "骄",
+      "name": "姬骄",
       "roles": [
         "君主"
       ],
@@ -2264,6 +2924,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋哀公"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -2278,7 +2942,7 @@
     },
     {
       "id": "jin-r36",
-      "name": "柳",
+      "name": "姬柳",
       "roles": [
         "君主"
       ],
@@ -2287,6 +2951,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋幽公"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -2301,7 +2969,7 @@
     },
     {
       "id": "jin-r37",
-      "name": "止",
+      "name": "姬止",
       "roles": [
         "君主"
       ],
@@ -2310,6 +2978,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋烈公"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -2324,7 +2996,7 @@
     },
     {
       "id": "jin-r38",
-      "name": "颀",
+      "name": "姬颀",
       "roles": [
         "君主"
       ],
@@ -2333,6 +3005,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋孝公"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -2347,7 +3023,7 @@
     },
     {
       "id": "jin-r39",
-      "name": "俱酒",
+      "name": "姬俱酒",
       "roles": [
         "君主"
       ],
@@ -2356,6 +3032,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/晋静公"
+        },
+        {
+          "label": "《史记·晋世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷039"
         }
       ],
       "birth": null,
@@ -2374,11 +3054,15 @@
       "roles": [
         "君主"
       ],
-      "bio": "芈姓熊氏，楚国始祖。周成王封鬻熊后裔熊绎于丹阳，赐子男之田；司马迁称其与鲁共事周康王，实开荆楚之基，前1042–前1019年在位。",
+      "bio": "熊狂之子，鬻熊后裔，楚国受西周分封后的首任国君。周成王时受封于楚蛮，获子男之田，居丹阳；与鲁、卫、晋、齐诸侯共事成王。具体在位起讫年代失考。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/熊绎"
+        },
+        {
+          "label": "《史记·楚世家》",
+          "url": "https://www.chinakongzi.org/kzsf/wxxs/mingpian/shiji/200705/t20070524_25207.htm"
         }
       ],
       "birth": null,
@@ -2395,11 +3079,15 @@
       "roles": [
         "君主"
       ],
-      "bio": "熊绎之子，楚国第二代君主。世次见于《史记·楚世家》，具体事迹史料缺载，前1018–前995年在位。",
+      "bio": "熊绎之子，继父为楚君，子熊䵣继位。世系见于《史记·楚世家》，具体在位年代与政事未见详载。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/熊艾"
+        },
+        {
+          "label": "《史记·楚世家》",
+          "url": "https://www.chinakongzi.org/kzsf/wxxs/mingpian/shiji/200705/t20070524_25207.htm"
         }
       ],
       "birth": null,
@@ -2416,11 +3104,15 @@
       "roles": [
         "君主"
       ],
-      "bio": "楚国第三代君主，仅见世系之名，政事不见详载。年代为后世系年所推，前994–前970年在位。",
+      "bio": "熊艾之子，继父为楚君，子熊胜继位。世系见于《史记·楚世家》，具体在位年代与政事未见详载。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/熊䵣"
+        },
+        {
+          "label": "《史记·楚世家》",
+          "url": "https://www.chinakongzi.org/kzsf/wxxs/mingpian/shiji/200705/t20070524_25207.htm"
         }
       ],
       "birth": null,
@@ -2437,11 +3129,15 @@
       "roles": [
         "君主"
       ],
-      "bio": "楚国第四代君主，早期文献记载甚略，世次可考而无显著事迹，前969–前946年在位。",
+      "bio": "熊䵣之子，继父为楚君，后由弟熊杨继位。世系见于《史记·楚世家》，具体在位年代与政事未见详载。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/熊胜"
+        },
+        {
+          "label": "《史记·楚世家》",
+          "url": "https://www.chinakongzi.org/kzsf/wxxs/mingpian/shiji/200705/t20070524_25207.htm"
         }
       ],
       "birth": null,
@@ -2458,11 +3154,15 @@
       "roles": [
         "君主"
       ],
-      "bio": "楚国第五代君主熊杨，世系见于《楚世家》，具体作为失载，年代为后世系年所推，前945–前922年在位。",
+      "bio": "熊䵣之子、熊胜之弟，继兄为楚君，子熊渠继位。世系见于《史记·楚世家》，名又作熊炀；具体在位年代与政事未见详载。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/熊杨"
+        },
+        {
+          "label": "《史记·楚世家》",
+          "url": "https://www.chinakongzi.org/kzsf/wxxs/mingpian/shiji/200705/t20070524_25207.htm"
         }
       ],
       "birth": null,
@@ -2479,11 +3179,15 @@
       "roles": [
         "君主"
       ],
-      "bio": "楚国君主，传曾分封诸子为君后又复归一家，事迹多赖后世追述，前921–前897年在位。",
+      "bio": "熊杨之子，西周楚君。周夷王时兴兵伐庸、扬越，进至鄂，立三子为句亶王、鄂王和越章王；周厉王时惧周讨伐，撤去王号。具体在位起讫年代失考。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/熊渠"
+        },
+        {
+          "label": "《史记·楚世家》",
+          "url": "https://www.chinakongzi.org/kzsf/wxxs/mingpian/shiji/200705/t20070524_25207.htm"
         }
       ],
       "birth": null,
@@ -2500,11 +3204,15 @@
       "roles": [
         "君主"
       ],
-      "bio": "楚国君主熊挚红，一作熊挚。世次可考，政事不见详载，年代为后世系年所推，前896–前873年在位。",
+      "bio": "熊挚红，一作熊挚。《史记·楚世家》记为熊渠之子，曾封鄂王，后继为楚君；关于其继位、去世及与熊延的关系，传世文献有异说。具体在位起讫年代失考。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/熊挚红"
+        },
+        {
+          "label": "《史记·楚世家》",
+          "url": "https://www.chinakongzi.org/kzsf/wxxs/mingpian/shiji/200705/t20070524_25207.htm"
         }
       ],
       "birth": null,
@@ -2521,11 +3229,15 @@
       "roles": [
         "君主"
       ],
-      "bio": "楚国君主熊延，世系所载而文献甚略，具体事迹失载，年代为后世系年所推，前872–前848年在位。",
+      "bio": "熊勇之父，西周楚君。《史记·楚世家》记其为熊挚红之弟，杀兄代立；关于熊挚与熊延的继承关系，传世文献有异说。即位年代失考，后由子熊勇继位。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/熊延"
+        },
+        {
+          "label": "《史记·楚世家》",
+          "url": "https://www.chinakongzi.org/kzsf/wxxs/mingpian/shiji/200705/t20070524_25207.htm"
         }
       ],
       "birth": null,
@@ -2542,11 +3254,15 @@
       "roles": [
         "君主"
       ],
-      "bio": "熊严之兄，周厉王奔彘、幽王被杀后，传其曾起兵伐周。在位九年，前847–前838年。",
+      "bio": "熊延之子，前847—前838年在位。《史记·楚世家》载其六年周厉王出奔彘，十年卒，弟熊严继位。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/熊勇"
+        },
+        {
+          "label": "《史记·楚世家》",
+          "url": "https://www.chinakongzi.org/kzsf/wxxs/mingpian/shiji/200705/t20070524_25207.htm"
         }
       ],
       "birth": null,
@@ -2563,11 +3279,15 @@
       "roles": [
         "君主"
       ],
-      "bio": "熊勇之弟熊严，继兄位为楚君。世次可考，事迹少见详载，年代见于《楚世家》，前837–前828年在位。",
+      "bio": "熊勇之弟，继兄为楚君，前837—前828年在位。有伯霜、仲雪、叔堪、季徇四子；在位十年而卒，长子伯霜继位，是为熊霜。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/熊严"
+        },
+        {
+          "label": "《史记·楚世家》",
+          "url": "https://www.chinakongzi.org/kzsf/wxxs/mingpian/shiji/200705/t20070524_25207.htm"
         }
       ],
       "birth": null,
@@ -3342,11 +4062,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "姬奭，周武王同母弟，与周公同为三公，封于燕而留治镐京。后世燕国君主皆其后裔，前1044–前1000年在位（年代约数）。",
+      "bio": "姬姓，名奭，西周初年重臣，燕国始封君。周武王灭商后受封于北燕，留在周王室辅政，由其子就封；成王时位列三公，主治陕以西。后世以《甘棠》传颂其治绩，具体封君起讫年代失考。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕召公"
+        },
+        {
+          "label": "《史记·燕召公世家》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷034"
+        },
+        {
+          "label": "河南博物院：燕侯旨鼎",
+          "url": "https://www.chnmus.net/sitesources/hnsbwy/page_pc/clzl/zlhg/dszhzgdwh/debfzmds/article301959f6691644fd9661d4e7ed7e351f.html"
         }
       ],
       "birth": null,
@@ -3365,11 +4093,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "姬克，燕召公之后，世次见于诸侯系年，事迹载记甚略，年代为后世系年所推，前999–前955年在位。",
+      "bio": "姬姓，名克，西周早期燕侯，通常认为是召公奭之子。琉璃河出土的克罍、克盉铭文记载周王命克为燕侯，并赐予人口与职官；是早期燕国分封的重要见证。具体在位起讫年代失考。",
       "links": [
         {
           "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/克"
+          "url": "https://zh.wikipedia.org/wiki/燕侯克"
+        },
+        {
+          "label": "首都博物馆：克罍及分封燕侯铭文",
+          "url": "https://www.capitalmuseum.org.cn/collection/30a9844041e24d919ad497143c9db47b"
+        },
+        {
+          "label": "河南博物院：燕侯旨鼎",
+          "url": "https://www.chnmus.net/sitesources/hnsbwy/page_pc/clzl/zlhg/dszhzgdwh/debfzmds/article301959f6691644fd9661d4e7ed7e351f.html"
         }
       ],
       "birth": null,
@@ -3386,11 +4122,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "姬旨，燕国早期君主，史料仅见世系之名，政事不见详载，年代为后世系年所推，前954–前910年在位。",
+      "bio": "姬姓，名旨，西周早期燕侯，见于燕侯旨鼎等青铜器铭文。通常列为克之后的燕君，关于其为克之弟或克之子的关系，学者有不同解释。具体在位起讫年代失考。",
       "links": [
         {
           "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/旨"
+          "url": "https://zh.wikipedia.org/wiki/燕侯旨"
+        },
+        {
+          "label": "河南博物院：燕侯旨鼎",
+          "url": "https://www.chnmus.net/sitesources/hnsbwy/page_pc/clzl/zlhg/dszhzgdwh/debfzmds/article301959f6691644fd9661d4e7ed7e351f.html"
+        },
+        {
+          "label": "燕国君主列表及所据考古、世系研究",
+          "url": "https://zh.wikipedia.org/wiki/燕国#君主列表"
         }
       ],
       "birth": null,
@@ -3407,11 +4151,15 @@
       "roles": [
         "君主"
       ],
-      "bio": "姬舞，燕国世系所载君主，政事不见详载，年代为后世系年所推，前909–前865年在位。",
+      "bio": "姬姓，名舞，西周早期燕侯，出土铜器有“匽侯舞”等铭文，传世文献未载其政事。学者据铭文考订其世次；与其他早期燕侯的关系及具体在位起讫年代仍有未明之处。",
       "links": [
         {
           "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/舞"
+          "url": "https://zh.wikipedia.org/wiki/燕侯舞"
+        },
+        {
+          "label": "燕国君主列表及所据考古、世系研究",
+          "url": "https://zh.wikipedia.org/wiki/燕国#君主列表"
         }
       ],
       "birth": null,
@@ -3428,11 +4176,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "姬姓，谥惠侯。在位时周王室渐衰，燕国事迹载录稀少，年代见于《燕世家》，前864–前827年在位。",
+      "bio": "燕国西周君主，前864—前827年在位。《史记·燕召公世家》记召公以下九世至惠侯；其在位期间经历周厉王奔彘与共和，周宣王初立时去世，子釐侯继位。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕惠侯"
+        },
+        {
+          "label": "《史记·燕召公世家》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷034"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
         }
       ],
       "birth": null,
@@ -3451,11 +4207,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "名庄，谥釐侯。世系可考，战国前燕国少见军事政治记载，年代见于《燕世家》，前826–前791年在位。",
+      "bio": "燕惠侯之子，名庄，谥釐侯，前826—前791年在位。其二十一年郑桓公初封于郑；在位三十六年而卒，子顷侯继位。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕釐侯"
+        },
+        {
+          "label": "《史记·燕召公世家》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷034"
+        },
+        {
+          "label": "《史记·十二诸侯年表》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
         }
       ],
       "birth": null,
@@ -3612,11 +4376,15 @@
       "roles": [
         "君主"
       ],
-      "bio": "姬姓，谥庄公。春秋初年齐、燕屡有战事，庄公曾击退齐军于东门，前690–前658年在位。",
+      "bio": "燕桓侯之后，前690—前658年在位。曾与宋、卫参与拥立王子颓；后来山戎侵燕，齐桓公出兵救援，燕君送齐桓公出境，齐以所至之地赠燕。卒后子襄公继位。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/燕庄公"
+        },
+        {
+          "label": "《史记·燕召公世家》",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷034"
         }
       ],
       "birth": null,
@@ -10514,6 +11282,74 @@
       "posthumousNames": [],
       "templeNames": [],
       "title": null
+    },
+    {
+      "id": "zou-jun-qing",
+      "name": "曹庆",
+      "roles": [
+        "君主"
+      ],
+      "bio": "邾君庆，春秋早期邾君。枣庄东江春秋墓地出土铜壶铭文称“邾君庆作秦妊礼壶”；现代邾器研究据器铭将其列入邾国君主世系。具体在位年份未考。",
+      "links": [
+        {
+          "label": "冯峰：《说“醴壶”》（北京大学中国考古学研究中心）",
+          "url": "https://csca.pku.edu.cn/info/1018/1207.htm"
+        },
+        {
+          "label": "张海：《邾器与两周邾邦史事》",
+          "url": "https://www.sohu.com/a/469705297_121124388"
+        },
+        {
+          "label": "邾国君主世系图（据《春秋释例》等）",
+          "url": "https://zh.wikipedia.org/wiki/邾國君主世系圖"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "邾君庆",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-missing-after-mugong-1",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姓名失载的邾国君主。传世世系整理将其列为邹穆公之后、楚灭邾之前的第一位失名君主；具体世次年代未考。",
+      "links": [
+        {
+          "label": "邾国君主世系图（据《春秋释例》等）",
+          "url": "https://zh.wikipedia.org/wiki/邾國君主世系圖"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "？",
+      "ancestralXing": "曹"
+    },
+    {
+      "id": "zou-missing-after-mugong-2",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "姓名失载的邾国君主。传世世系整理将其列为邹穆公之后、楚灭邾之前的第二位失名君主；具体世次年代未考。",
+      "links": [
+        {
+          "label": "邾国君主世系图（据《春秋释例》等）",
+          "url": "https://zh.wikipedia.org/wiki/邾國君主世系圖"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "？",
+      "ancestralXing": "曹"
     }
   ],
   "dynastyGroups": [],
@@ -10538,9 +11374,9 @@
         "year": -256,
         "month": 12,
         "abs": -3049,
-        "confidence": "month"
+        "confidence": "approximate_year"
       },
-      "note": "周代曹姓诸侯国，春秋称邾或邾娄，战国至孟子时称邹。传统始封年代按周初纪年；楚灭邹年份依战国末年通行说。君主世系跨多种文献辑录，部分在位年依可考君主锚点与连续世系均分插值；前471年至约前382年有未能交叉验证的断层，未跨段补齐。"
+      "note": "周代曹姓诸侯国，春秋称邾或邾娄，战国至孟子时称邹。文公于前614年迁都绎并同年去世；楚灭邹的年代依晚战国通行说，具体年份有异说。早期传世世系及战国晚期君主的部分世次、在位年代存在资料局限；插值坐标仅用于时间轴定位，不表示已证实的在位年月或时长。"
     },
     {
       "id": "qi-chunqiu",
@@ -10906,7 +11742,7 @@
       "id": "reign-zou-r1-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r1",
-      "title": "子挟",
+      "title": "挟",
       "start": {
         "year": -1046,
         "month": 1,
@@ -10933,7 +11769,7 @@
       "id": "reign-zou-r2-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r2",
-      "title": "子非",
+      "title": "非",
       "start": {
         "year": -1011,
         "month": 1,
@@ -10960,7 +11796,7 @@
       "id": "reign-zou-r3-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r3",
-      "title": "子成",
+      "title": "成",
       "start": {
         "year": -975,
         "month": 1,
@@ -10987,7 +11823,7 @@
       "id": "reign-zou-r4-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r4",
-      "title": "子车辅",
+      "title": "车辅",
       "start": {
         "year": -939,
         "month": 1,
@@ -11014,7 +11850,7 @@
       "id": "reign-zou-r5-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r5",
-      "title": "子将新",
+      "title": "将新",
       "start": {
         "year": -903,
         "month": 1,
@@ -11041,7 +11877,7 @@
       "id": "reign-zou-r6-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r6",
-      "title": "子訾父",
+      "title": "訾父",
       "start": {
         "year": -867,
         "month": 1,
@@ -11094,7 +11930,7 @@
       "id": "reign-zou-r8-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r8",
-      "title": "子叔术",
+      "title": "叔术",
       "start": {
         "year": -795,
         "month": 1,
@@ -11119,7 +11955,7 @@
       "id": "reign-zou-r9-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r9",
-      "title": "子夏父",
+      "title": "夏父",
       "start": {
         "year": -780,
         "month": 1,
@@ -11127,19 +11963,20 @@
         "confidence": "year"
       },
       "end": {
-        "year": -747,
+        "year": -755,
         "month": 12,
-        "abs": -8941,
+        "abs": -9037,
         "confidence": "interpolated_by_generation"
       },
       "startAbs": -9348,
-      "endAbs": -8941,
+      "endAbs": -9037,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
       "eraNames": [],
       "isMain": false,
-      "endConfidence": "interpolated_by_generation"
+      "endConfidence": "interpolated_by_generation",
+      "startConfidence": "year"
     },
     {
       "id": "reign-zou-r10-zou-state",
@@ -11147,19 +11984,19 @@
       "personId": "zou-r10",
       "title": "？",
       "start": {
-        "year": -746,
+        "year": -754,
         "month": 1,
-        "abs": -8940,
+        "abs": -9036,
         "confidence": "interpolated_by_generation"
       },
       "end": {
-        "year": -713,
+        "year": -729,
         "month": 12,
-        "abs": -8533,
+        "abs": -8725,
         "confidence": "interpolated_by_generation"
       },
-      "startAbs": -8940,
-      "endAbs": -8533,
+      "startAbs": -9036,
+      "endAbs": -8725,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -11172,11 +12009,11 @@
       "id": "reign-zou-r11-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r11",
-      "title": "子克",
+      "title": "安公",
       "start": {
-        "year": -712,
+        "year": -702,
         "month": 1,
-        "abs": -8532,
+        "abs": -8412,
         "confidence": "interpolated_by_generation"
       },
       "end": {
@@ -11185,7 +12022,7 @@
         "abs": -8113,
         "confidence": "year"
       },
-      "startAbs": -8532,
+      "startAbs": -8412,
       "endAbs": -8113,
       "claimTrack": null,
       "claimLabel": null,
@@ -11198,7 +12035,7 @@
       "id": "reign-zou-r12-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r12",
-      "title": "子琐",
+      "title": "宪公",
       "start": {
         "year": -677,
         "month": 1,
@@ -11231,13 +12068,13 @@
         "confidence": "year"
       },
       "end": {
-        "year": -615,
+        "year": -614,
         "month": 12,
-        "abs": -7357,
+        "abs": -7345,
         "confidence": "year"
       },
       "startAbs": -7968,
-      "endAbs": -7357,
+      "endAbs": -7345,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -11250,9 +12087,9 @@
       "personId": "zou-r14",
       "title": "定公",
       "start": {
-        "year": -614,
+        "year": -613,
         "month": 1,
-        "abs": -7356,
+        "abs": -7344,
         "confidence": "year"
       },
       "end": {
@@ -11261,7 +12098,7 @@
         "abs": -6853,
         "confidence": "year"
       },
-      "startAbs": -7356,
+      "startAbs": -7344,
       "endAbs": -6853,
       "claimTrack": null,
       "claimLabel": null,
@@ -11589,23 +12426,23 @@
         "year": -1046,
         "month": 1,
         "abs": -12540,
-        "confidence": "interpolated_by_generation"
+        "confidence": "year"
       },
       "end": {
-        "year": -1011,
+        "year": -1026,
         "month": 12,
-        "abs": -12109,
-        "confidence": "interpolated_by_generation"
+        "abs": -12289,
+        "confidence": "approximate_year"
       },
       "startAbs": -12540,
-      "endAbs": -12109,
+      "endAbs": -12289,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
       "eraNames": [],
       "isMain": false,
-      "startConfidence": "interpolated_by_generation",
-      "endConfidence": "interpolated_by_generation"
+      "startConfidence": "year",
+      "endConfidence": "approximate_year"
     },
     {
       "id": "reign-qi-r1-qi-chunqiu",
@@ -11613,26 +12450,26 @@
       "personId": "qi-r1",
       "title": "丁公",
       "start": {
-        "year": -1010,
+        "year": -1025,
         "month": 1,
-        "abs": -12108,
-        "confidence": "interpolated_by_generation"
+        "abs": -12288,
+        "confidence": "approximate_year"
       },
       "end": {
-        "year": -974,
+        "year": -975,
         "month": 12,
-        "abs": -11665,
-        "confidence": "interpolated_by_generation"
+        "abs": -11677,
+        "confidence": "approximate_year"
       },
-      "startAbs": -12108,
-      "endAbs": -11665,
+      "startAbs": -12288,
+      "endAbs": -11677,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
       "eraNames": [],
       "isMain": false,
-      "startConfidence": "interpolated_by_generation",
-      "endConfidence": "interpolated_by_generation"
+      "startConfidence": "approximate_year",
+      "endConfidence": "approximate_year"
     },
     {
       "id": "reign-qi-r2-qi-chunqiu",
@@ -11640,26 +12477,26 @@
       "personId": "qi-r2",
       "title": "乙公",
       "start": {
-        "year": -973,
+        "year": -974,
         "month": 1,
-        "abs": -11664,
-        "confidence": "interpolated_by_generation"
+        "abs": -11676,
+        "confidence": "approximate_year"
       },
       "end": {
-        "year": -937,
+        "year": -933,
         "month": 12,
-        "abs": -11221,
-        "confidence": "interpolated_by_generation"
+        "abs": -11173,
+        "confidence": "approximate_year"
       },
-      "startAbs": -11664,
-      "endAbs": -11221,
+      "startAbs": -11676,
+      "endAbs": -11173,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
       "eraNames": [],
       "isMain": false,
-      "startConfidence": "interpolated_by_generation",
-      "endConfidence": "interpolated_by_generation"
+      "startConfidence": "approximate_year",
+      "endConfidence": "approximate_year"
     },
     {
       "id": "reign-qi-r3-qi-chunqiu",
@@ -11667,26 +12504,26 @@
       "personId": "qi-r3",
       "title": "癸公",
       "start": {
-        "year": -936,
+        "year": -932,
         "month": 1,
-        "abs": -11220,
-        "confidence": "interpolated_by_generation"
+        "abs": -11172,
+        "confidence": "approximate_year"
       },
       "end": {
-        "year": -900,
+        "year": -902,
         "month": 12,
-        "abs": -10777,
-        "confidence": "interpolated_by_generation"
+        "abs": -10801,
+        "confidence": "approximate_year"
       },
-      "startAbs": -11220,
-      "endAbs": -10777,
+      "startAbs": -11172,
+      "endAbs": -10801,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
       "eraNames": [],
       "isMain": false,
-      "startConfidence": "interpolated_by_generation",
-      "endConfidence": "interpolated_by_generation"
+      "startConfidence": "approximate_year",
+      "endConfidence": "approximate_year"
     },
     {
       "id": "reign-qi-r4-qi-chunqiu",
@@ -11694,25 +12531,26 @@
       "personId": "qi-r4",
       "title": "哀公",
       "start": {
-        "year": -899,
+        "year": -901,
         "month": 1,
-        "abs": -10776,
-        "confidence": "interpolated_by_generation"
+        "abs": -10800,
+        "confidence": "approximate_year"
       },
       "end": {
-        "year": -863,
+        "year": -883,
         "month": 12,
-        "abs": -10333,
-        "confidence": "year"
+        "abs": -10573,
+        "confidence": "approximate_year"
       },
-      "startAbs": -10776,
-      "endAbs": -10333,
+      "startAbs": -10800,
+      "endAbs": -10573,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
       "eraNames": [],
       "isMain": false,
-      "startConfidence": "interpolated_by_generation"
+      "startConfidence": "approximate_year",
+      "endConfidence": "approximate_year"
     },
     {
       "id": "reign-qi-r5-qi-chunqiu",
@@ -11720,10 +12558,10 @@
       "personId": "qi-r5",
       "title": "胡公",
       "start": {
-        "year": -862,
+        "year": -882,
         "month": 1,
-        "abs": -10332,
-        "confidence": "year"
+        "abs": -10572,
+        "confidence": "approximate_year"
       },
       "end": {
         "year": -860,
@@ -11731,13 +12569,14 @@
         "abs": -10297,
         "confidence": "year"
       },
-      "startAbs": -10332,
+      "startAbs": -10572,
       "endAbs": -10297,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
       "eraNames": [],
-      "isMain": false
+      "isMain": false,
+      "startConfidence": "approximate_year"
     },
     {
       "id": "reign-qi-r6-qi-chunqiu",
@@ -11927,12 +12766,13 @@
       },
       "end": {
         "year": -686,
-        "month": 12,
-        "abs": -8209,
-        "confidence": "year"
+        "month": 10,
+        "day": 29,
+        "abs": -8211,
+        "confidence": "approximate_day"
       },
       "startAbs": -8352,
-      "endAbs": -8209,
+      "endAbs": -8211,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -11946,18 +12786,19 @@
       "title": "公孙无知",
       "start": {
         "year": -686,
-        "month": 1,
-        "abs": -8220,
-        "confidence": "year"
+        "month": 10,
+        "day": 30,
+        "abs": -8211,
+        "confidence": "approximate_day"
       },
       "end": {
-        "year": -686,
-        "month": 12,
-        "abs": -8209,
-        "confidence": "year"
+        "year": -685,
+        "month": 1,
+        "abs": -8208,
+        "confidence": "approximate_month"
       },
-      "startAbs": -8220,
-      "endAbs": -8209,
+      "startAbs": -8211,
+      "endAbs": -8208,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -11977,12 +12818,13 @@
       },
       "end": {
         "year": -643,
-        "month": 12,
-        "abs": -7693,
-        "confidence": "year"
+        "month": 9,
+        "day": 5,
+        "abs": -7696,
+        "confidence": "approximate_day"
       },
       "startAbs": -8208,
-      "endAbs": -7693,
+      "endAbs": -7696,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -11996,18 +12838,19 @@
       "title": "公子无亏",
       "start": {
         "year": -643,
-        "month": 1,
-        "abs": -7704,
-        "confidence": "year"
+        "month": 9,
+        "day": 6,
+        "abs": -7696,
+        "confidence": "approximate_day"
       },
       "end": {
-        "year": -643,
-        "month": 12,
-        "abs": -7693,
-        "confidence": "year"
+        "year": -642,
+        "month": 3,
+        "abs": -7690,
+        "confidence": "approximate_month"
       },
-      "startAbs": -7704,
-      "endAbs": -7693,
+      "startAbs": -7696,
+      "endAbs": -7690,
       "claimTrack": null,
       "claimLabel": null,
       "claimRole": null,
@@ -12021,9 +12864,9 @@
       "title": "孝公",
       "start": {
         "year": -642,
-        "month": 1,
-        "abs": -7692,
-        "confidence": "year"
+        "month": 5,
+        "abs": -7688,
+        "confidence": "approximate_month"
       },
       "end": {
         "year": -633,
@@ -12031,7 +12874,7 @@
         "abs": -7573,
         "confidence": "year"
       },
-      "startAbs": -7692,
+      "startAbs": -7688,
       "endAbs": -7573,
       "claimTrack": null,
       "claimLabel": null,
@@ -12395,9 +13238,9 @@
       "personId": "tian-he",
       "title": "太公",
       "start": {
-        "year": -404,
+        "year": -391,
         "month": 1,
-        "abs": -4836,
+        "abs": -4680,
         "confidence": "year"
       },
       "end": {
@@ -12406,7 +13249,7 @@
         "abs": -4585,
         "confidence": "year"
       },
-      "startAbs": -4836,
+      "startAbs": -4680,
       "endAbs": -4585,
       "claimTrack": null,
       "claimLabel": null,
@@ -12902,7 +13745,7 @@
       "id": "reign-jin-r12-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r12",
-      "title": "曲沃桓叔",
+      "title": "桓叔",
       "start": {
         "year": -744,
         "month": 1,
@@ -12917,9 +13760,9 @@
       },
       "startAbs": -8916,
       "endAbs": -8749,
-      "claimTrack": null,
-      "claimLabel": null,
-      "claimRole": null,
+      "claimTrack": "quwo",
+      "claimLabel": "曲沃",
+      "claimRole": "rival",
       "eraNames": [],
       "isMain": false
     },
@@ -12952,7 +13795,7 @@
       "id": "reign-jin-r14-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r14",
-      "title": "曲沃庄伯",
+      "title": "庄伯",
       "start": {
         "year": -730,
         "month": 1,
@@ -12967,9 +13810,9 @@
       },
       "startAbs": -8748,
       "endAbs": -8569,
-      "claimTrack": null,
-      "claimLabel": null,
-      "claimRole": null,
+      "claimTrack": "quwo",
+      "claimLabel": "曲沃",
+      "claimRole": "rival",
       "eraNames": [],
       "isMain": false
     },
@@ -13027,11 +13870,36 @@
       "id": "reign-jin-r17-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r17",
-      "title": "曲沃武公",
+      "title": "武公",
       "start": {
         "year": -715,
         "month": 1,
         "abs": -8568,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -678,
+        "month": 12,
+        "abs": -8113,
+        "confidence": "year"
+      },
+      "startAbs": -8568,
+      "endAbs": -8101,
+      "claimTrack": "quwo",
+      "claimLabel": "曲沃",
+      "claimRole": "rival",
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-jin-r17-main-jin-chunqiu",
+      "dynastyId": "jin-chunqiu",
+      "personId": "jin-r17",
+      "title": "武公",
+      "start": {
+        "year": -677,
+        "month": 1,
+        "abs": -8112,
         "confidence": "year"
       },
       "end": {
@@ -22612,6 +23480,87 @@
       "claimRole": null,
       "eraNames": [],
       "isMain": false
+    },
+    {
+      "id": "reign-zou-jun-qing-zou-state",
+      "dynastyId": "zou-state",
+      "personId": "zou-jun-qing",
+      "title": "庆",
+      "start": {
+        "year": -728,
+        "month": 1,
+        "abs": -8724,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -703,
+        "month": 12,
+        "abs": -8413,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -8724,
+      "endAbs": -8413,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-zou-missing-after-mugong-1",
+      "dynastyId": "zou-state",
+      "personId": "zou-missing-after-mugong-1",
+      "title": "？",
+      "start": {
+        "year": -329,
+        "month": 1,
+        "abs": -3936,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -293,
+        "month": 12,
+        "abs": -3493,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -3936,
+      "endAbs": -3493,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
+    },
+    {
+      "id": "reign-zou-missing-after-mugong-2",
+      "dynastyId": "zou-state",
+      "personId": "zou-missing-after-mugong-2",
+      "title": "？",
+      "start": {
+        "year": -292,
+        "month": 1,
+        "abs": -3492,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -256,
+        "month": 12,
+        "abs": -3049,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -3492,
+      "endAbs": -3049,
+      "claimTrack": null,
+      "claimLabel": null,
+      "claimRole": null,
+      "eraNames": [],
+      "isMain": false,
+      "startConfidence": "interpolated_by_generation",
+      "endConfidence": "interpolated_by_generation"
     }
   ],
   "events": [
@@ -22916,7 +23865,7 @@
     }
   ],
   "preSql": "",
-  "postSql": "-- Remove stale reigns from managed dynasties (superseded ids from older imports)\nWITH stale AS (\n  DELETE FROM reigns\n  WHERE dynasty_id IN ('zou-state', 'qi-chunqiu', 'jin-chunqiu', 'chu-chunqiu', 'yan-chunqiu', 'song-chunqiu', 'lu-chunqiu', 'wei-weiguo', 'zheng-chunqiu', 'cao-chunqiu', 'wu-chunqiu', 'yue-chunqiu', 'zhongshan', 'han-warring', 'zhao-warring', 'wei-warring', 'qin') AND id NOT IN ('reign-zou-r1-zou-state', 'reign-zou-r2-zou-state', 'reign-zou-r3-zou-state', 'reign-zou-r4-zou-state', 'reign-zou-r5-zou-state', 'reign-zou-r6-zou-state', 'reign-zou-r7-zou-state', 'reign-zou-r8-zou-state', 'reign-zou-r9-zou-state', 'reign-zou-r10-zou-state', 'reign-zou-r11-zou-state', 'reign-zou-r12-zou-state', 'reign-zou-r13-zou-state', 'reign-zou-r14-zou-state', 'reign-zou-r15-zou-state', 'reign-zou-r16-zou-state', 'reign-zou-r17-zou-state', 'reign-zou-r18-zou-state', 'reign-zou-r19-zou-state', 'reign-zou-r18-zou-state-2', 'reign-zou-he-zou-state', 'reign-zou-missing-after-he-1', 'reign-zou-kaogong-zou-state', 'reign-zou-missing-after-kaogong-1', 'reign-zou-missing-after-kaogong-2', 'reign-zou-mu-gong-zou-state', 'reign-lv-shang-qi-chunqiu', 'reign-qi-r1-qi-chunqiu', 'reign-qi-r2-qi-chunqiu', 'reign-qi-r3-qi-chunqiu', 'reign-qi-r4-qi-chunqiu', 'reign-qi-r5-qi-chunqiu', 'reign-qi-r6-qi-chunqiu', 'reign-qi-r7-qi-chunqiu', 'reign-qi-r8-qi-chunqiu', 'reign-qi-r9-qi-chunqiu', 'reign-qi-r10-qi-chunqiu', 'reign-qi-r11-qi-chunqiu', 'reign-qi-r12-qi-chunqiu', 'reign-qi-r13-qi-chunqiu', 'reign-qi-r14-qi-chunqiu', 'reign-jiang-xiaobai-qi-chunqiu', 'reign-qi-r16-qi-chunqiu', 'reign-qi-r17-qi-chunqiu', 'reign-qi-r18-qi-chunqiu', 'reign-qi-r19-qi-chunqiu', 'reign-qi-r20-qi-chunqiu', 'reign-qi-r21-qi-chunqiu', 'reign-qi-r22-qi-chunqiu', 'reign-qi-r23-qi-chunqiu', 'reign-qi-r24-qi-chunqiu', 'reign-qi-r25-qi-chunqiu', 'reign-qi-r26-qi-chunqiu', 'reign-qi-r27-qi-chunqiu', 'reign-qi-r28-qi-chunqiu', 'reign-qi-r29-qi-chunqiu', 'reign-qi-r30-qi-chunqiu', 'reign-jiang-dai-qi-chunqiu', 'reign-tian-he-qi-chunqiu', 'reign-qi-r33-qi-chunqiu', 'reign-qi-r34-qi-chunqiu', 'reign-qi-r35-qi-chunqiu', 'reign-qi-r36-qi-chunqiu', 'reign-qi-r37-qi-chunqiu', 'reign-qi-r38-qi-chunqiu', 'reign-qi-r39-qi-chunqiu', 'reign-ji-shuyu-jin-chunqiu', 'reign-jin-r1-jin-chunqiu', 'reign-jin-r2-jin-chunqiu', 'reign-jin-r3-jin-chunqiu', 'reign-jin-r4-jin-chunqiu', 'reign-jin-r5-jin-chunqiu', 'reign-jin-r6-jin-chunqiu', 'reign-jin-r7-jin-chunqiu', 'reign-jin-r8-jin-chunqiu', 'reign-jin-r9-jin-chunqiu', 'reign-jin-r10-jin-chunqiu', 'reign-jin-r11-jin-chunqiu', 'reign-jin-r12-jin-chunqiu', 'reign-jin-r13-jin-chunqiu', 'reign-jin-r14-jin-chunqiu', 'reign-jin-r15-jin-chunqiu', 'reign-jin-r16-jin-chunqiu', 'reign-jin-r17-jin-chunqiu', 'reign-jin-r18-jin-chunqiu', 'reign-jin-r19-jin-chunqiu', 'reign-jin-r20-jin-chunqiu', 'reign-jin-r21-jin-chunqiu', 'reign-jin-r22-jin-chunqiu', 'reign-ji-chonger-jin-chunqiu', 'reign-jin-r24-jin-chunqiu', 'reign-jin-r25-jin-chunqiu', 'reign-jin-r26-jin-chunqiu', 'reign-jin-r27-jin-chunqiu', 'reign-jin-r28-jin-chunqiu', 'reign-jin-r29-jin-chunqiu', 'reign-jin-r30-jin-chunqiu', 'reign-jin-r31-jin-chunqiu', 'reign-jin-r32-jin-chunqiu', 'reign-jin-r33-jin-chunqiu', 'reign-jin-r34-jin-chunqiu', 'reign-jin-r35-jin-chunqiu', 'reign-jin-r36-jin-chunqiu', 'reign-jin-r37-jin-chunqiu', 'reign-jin-r38-jin-chunqiu', 'reign-jin-r39-jin-chunqiu', 'reign-chu-r0-chu-chunqiu', 'reign-chu-r1-chu-chunqiu', 'reign-chu-r2-chu-chunqiu', 'reign-chu-r3-chu-chunqiu', 'reign-chu-r4-chu-chunqiu', 'reign-chu-r5-chu-chunqiu', 'reign-chu-r6-chu-chunqiu', 'reign-chu-r7-chu-chunqiu', 'reign-chu-r8-chu-chunqiu', 'reign-chu-r9-chu-chunqiu', 'reign-chu-r10-chu-chunqiu', 'reign-chu-r11-chu-chunqiu', 'reign-chu-r12-chu-chunqiu', 'reign-chu-r13-chu-chunqiu', 'reign-chu-r14-chu-chunqiu', 'reign-chu-r15-chu-chunqiu', 'reign-chu-r16-chu-chunqiu', 'reign-chu-r17-chu-chunqiu', 'reign-chu-r18-chu-chunqiu', 'reign-chu-r19-chu-chunqiu', 'reign-chu-r20-chu-chunqiu', 'reign-xiong-zhuang-chu-chunqiu', 'reign-chu-r22-chu-chunqiu', 'reign-chu-r23-chu-chunqiu', 'reign-chu-r24-chu-chunqiu', 'reign-chu-r25-chu-chunqiu', 'reign-chu-r26-chu-chunqiu', 'reign-chu-r27-chu-chunqiu', 'reign-chu-r28-chu-chunqiu', 'reign-chu-r29-chu-chunqiu', 'reign-chu-r30-chu-chunqiu', 'reign-chu-r31-chu-chunqiu', 'reign-chu-r32-chu-chunqiu', 'reign-chu-r33-chu-chunqiu', 'reign-chu-r34-chu-chunqiu', 'reign-chu-r35-chu-chunqiu', 'reign-chu-r36-chu-chunqiu', 'reign-chu-r37-chu-chunqiu', 'reign-chu-r38-chu-chunqiu', 'reign-chu-r39-chu-chunqiu', 'reign-chu-r40-chu-chunqiu', 'reign-chu-r41-chu-chunqiu', 'reign-chu-r42-chu-chunqiu', 'reign-chu-r43-chu-chunqiu', 'reign-ji-shi-yan-chunqiu', 'reign-yan-r1-yan-chunqiu', 'reign-yan-r2-yan-chunqiu', 'reign-yan-r3-yan-chunqiu', 'reign-yan-r4-yan-chunqiu', 'reign-yan-r5-yan-chunqiu', 'reign-yan-r6-yan-chunqiu', 'reign-yan-r7-yan-chunqiu', 'reign-yan-r8-yan-chunqiu', 'reign-yan-r9-yan-chunqiu', 'reign-yan-r10-yan-chunqiu', 'reign-yan-r11-yan-chunqiu', 'reign-yan-r12-yan-chunqiu', 'reign-yan-r13-yan-chunqiu', 'reign-yan-r14-yan-chunqiu', 'reign-yan-r15-yan-chunqiu', 'reign-yan-r16-yan-chunqiu', 'reign-yan-r17-yan-chunqiu', 'reign-yan-r18-yan-chunqiu', 'reign-yan-r19-yan-chunqiu', 'reign-yan-r20-yan-chunqiu', 'reign-yan-r21-yan-chunqiu', 'reign-yan-r22-yan-chunqiu', 'reign-yan-r23-yan-chunqiu', 'reign-yan-r24-yan-chunqiu', 'reign-yan-r25-yan-chunqiu', 'reign-yan-r26-yan-chunqiu', 'reign-yan-r27-yan-chunqiu', 'reign-yan-r28-yan-chunqiu', 'reign-yan-r14-yan-chunqiu-2', 'reign-yan-r30-yan-chunqiu', 'reign-yan-r31-yan-chunqiu', 'reign-yan-r32-yan-chunqiu', 'reign-yan-r33-yan-chunqiu', 'reign-yan-r34-yan-chunqiu', 'reign-yan-r35-yan-chunqiu', 'reign-yan-r36-yan-chunqiu', 'reign-yan-r37-yan-chunqiu', 'reign-song-weizi-song-chunqiu', 'reign-song-r1-song-chunqiu', 'reign-song-r2-song-chunqiu', 'reign-song-r3-song-chunqiu', 'reign-song-r4-song-chunqiu', 'reign-song-r5-song-chunqiu', 'reign-song-r6-song-chunqiu', 'reign-song-r7-song-chunqiu', 'reign-song-r8-song-chunqiu', 'reign-song-r9-song-chunqiu', 'reign-song-r10-song-chunqiu', 'reign-song-r11-song-chunqiu', 'reign-song-r12-song-chunqiu', 'reign-song-r13-song-chunqiu', 'reign-song-r14-song-chunqiu', 'reign-song-r15-song-chunqiu', 'reign-song-r16-song-chunqiu', 'reign-song-r17-song-chunqiu', 'reign-song-r18-song-chunqiu', 'reign-song-r19-song-chunqiu', 'reign-song-r20-song-chunqiu', 'reign-song-r21-song-chunqiu', 'reign-song-r22-song-chunqiu', 'reign-song-r23-song-chunqiu', 'reign-song-r24-song-chunqiu', 'reign-song-r25-song-chunqiu', 'reign-song-r26-song-chunqiu', 'reign-song-r27-song-chunqiu', 'reign-song-r28-song-chunqiu', 'reign-song-r29-song-chunqiu', 'reign-song-r30-song-chunqiu', 'reign-song-r31-song-chunqiu', 'reign-song-r32-song-chunqiu', 'reign-song-r33-song-chunqiu', 'reign-bo-qin-lu-chunqiu', 'reign-lu-r1-lu-chunqiu', 'reign-lu-r2-lu-chunqiu', 'reign-lu-r3-lu-chunqiu', 'reign-lu-r4-lu-chunqiu', 'reign-lu-r5-lu-chunqiu', 'reign-lu-r6-lu-chunqiu', 'reign-lu-r7-lu-chunqiu', 'reign-lu-r8-lu-chunqiu', 'reign-lu-r9-lu-chunqiu', 'reign-lu-r10-lu-chunqiu', 'reign-lu-r11-lu-chunqiu', 'reign-lu-r12-lu-chunqiu', 'reign-lu-r13-lu-chunqiu', 'reign-lu-r14-lu-chunqiu', 'reign-lu-r15-lu-chunqiu', 'reign-lu-r16-lu-chunqiu', 'reign-lu-r17-lu-chunqiu', 'reign-lu-r18-lu-chunqiu', 'reign-lu-r19-lu-chunqiu', 'reign-lu-r20-lu-chunqiu', 'reign-lu-r21-lu-chunqiu', 'reign-lu-r22-lu-chunqiu', 'reign-lu-r23-lu-chunqiu', 'reign-lu-r24-lu-chunqiu', 'reign-lu-r25-lu-chunqiu', 'reign-lu-r26-lu-chunqiu', 'reign-lu-r27-lu-chunqiu', 'reign-lu-r28-lu-chunqiu', 'reign-lu-r29-lu-chunqiu', 'reign-lu-r30-lu-chunqiu', 'reign-lu-r31-lu-chunqiu', 'reign-lu-r32-lu-chunqiu', 'reign-lu-r33-lu-chunqiu', 'reign-lu-r34-lu-chunqiu', 'reign-weiguo-r0-wei-weiguo', 'reign-weiguo-r1-wei-weiguo', 'reign-weiguo-r2-wei-weiguo', 'reign-weiguo-r3-wei-weiguo', 'reign-weiguo-r4-wei-weiguo', 'reign-weiguo-r5-wei-weiguo', 'reign-weiguo-r6-wei-weiguo', 'reign-weiguo-r7-wei-weiguo', 'reign-weiguo-r8-wei-weiguo', 'reign-weiguo-r9-wei-weiguo', 'reign-weiguo-r10-wei-weiguo', 'reign-weiguo-r11-wei-weiguo', 'reign-weiguo-r12-wei-weiguo', 'reign-weiguo-r13-wei-weiguo', 'reign-weiguo-r14-wei-weiguo', 'reign-weiguo-r15-wei-weiguo', 'reign-weiguo-r16-wei-weiguo', 'reign-weiguo-r15-wei-weiguo-2', 'reign-weiguo-r18-wei-weiguo', 'reign-weiguo-r19-wei-weiguo', 'reign-weiguo-r20-wei-weiguo', 'reign-weiguo-r21-wei-weiguo', 'reign-weiguo-r22-wei-weiguo', 'reign-weiguo-r21-wei-weiguo-2', 'reign-weiguo-r23-wei-weiguo', 'reign-weiguo-r24-wei-weiguo', 'reign-weiguo-r25-wei-weiguo', 'reign-weiguo-r26-wei-weiguo', 'reign-weiguo-r25-wei-weiguo-2', 'reign-weiguo-r28-wei-weiguo', 'reign-weiguo-r29-wei-weiguo', 'reign-weiguo-r30-wei-weiguo', 'reign-weiguo-r31-wei-weiguo', 'reign-weiguo-r32-wei-weiguo', 'reign-weiguo-r33-wei-weiguo', 'reign-weiguo-r30-wei-weiguo-2', 'reign-weiguo-r35-wei-weiguo', 'reign-weiguo-r36-wei-weiguo', 'reign-weiguo-r37-wei-weiguo', 'reign-weiguo-r38-wei-weiguo', 'reign-weiguo-r39-wei-weiguo', 'reign-weiguo-r40-wei-weiguo', 'reign-weiguo-r41-wei-weiguo', 'reign-weiguo-r42-wei-weiguo', 'reign-weiguo-r43-wei-weiguo', 'reign-weiguo-r44-wei-weiguo', 'reign-weiguo-r45-wei-weiguo', 'reign-weiguo-r46-wei-weiguo', 'reign-zheng-r0-zheng-chunqiu', 'reign-zheng-r1-zheng-chunqiu', 'reign-zheng-r2-zheng-chunqiu', 'reign-zheng-r3-zheng-chunqiu', 'reign-zheng-r4-zheng-chunqiu', 'reign-zheng-r3-zheng-chunqiu-2', 'reign-zheng-r6-zheng-chunqiu', 'reign-zheng-r7-zheng-chunqiu', 'reign-zheng-r4-zheng-chunqiu-2', 'reign-zheng-r9-zheng-chunqiu', 'reign-zheng-r10-zheng-chunqiu', 'reign-zheng-r11-zheng-chunqiu', 'reign-zheng-r12-zheng-chunqiu', 'reign-zheng-r13-zheng-chunqiu', 'reign-zheng-r14-zheng-chunqiu', 'reign-zheng-gongzi-xu-zheng-chunqiu', 'reign-zheng-r14-zheng-chunqiu-2', 'reign-zheng-r15-zheng-chunqiu', 'reign-zheng-r16-zheng-chunqiu', 'reign-zheng-r17-zheng-chunqiu', 'reign-zheng-r18-zheng-chunqiu', 'reign-zheng-r19-zheng-chunqiu', 'reign-zheng-r20-zheng-chunqiu', 'reign-zheng-r21-zheng-chunqiu', 'reign-zheng-r22-zheng-chunqiu', 'reign-zheng-r23-zheng-chunqiu', 'reign-zheng-r24-zheng-chunqiu', 'reign-cao-r0-cao-chunqiu', 'reign-cao-r1-cao-chunqiu', 'reign-cao-r2-cao-chunqiu', 'reign-cao-r3-cao-chunqiu', 'reign-cao-r4-cao-chunqiu', 'reign-cao-r5-cao-chunqiu', 'reign-cao-r6-cao-chunqiu', 'reign-cao-r7-cao-chunqiu', 'reign-cao-r8-cao-chunqiu', 'reign-cao-r9-cao-chunqiu', 'reign-cao-r10-cao-chunqiu', 'reign-cao-r11-cao-chunqiu', 'reign-cao-r12-cao-chunqiu', 'reign-cao-r13-cao-chunqiu', 'reign-cao-r14-cao-chunqiu', 'reign-cao-r15-cao-chunqiu', 'reign-cao-r16-cao-chunqiu', 'reign-cao-r17-cao-chunqiu', 'reign-cao-r18-cao-chunqiu', 'reign-cao-r19-cao-chunqiu', 'reign-cao-r20-cao-chunqiu', 'reign-cao-r21-cao-chunqiu', 'reign-cao-r22-cao-chunqiu', 'reign-cao-r23-cao-chunqiu', 'reign-cao-r24-cao-chunqiu', 'reign-cao-r25-cao-chunqiu', 'reign-wu-pre-r0-wu-chunqiu', 'reign-wu-pre-r1-wu-chunqiu', 'reign-wu-pre-r2-wu-chunqiu', 'reign-wu-pre-r3-wu-chunqiu', 'reign-wu-pre-r4-wu-chunqiu', 'reign-wu-pre-r5-wu-chunqiu', 'reign-wu-pre-r6-wu-chunqiu', 'reign-wu-pre-r7-wu-chunqiu', 'reign-wu-pre-r8-wu-chunqiu', 'reign-wu-pre-r9-wu-chunqiu', 'reign-wu-pre-r10-wu-chunqiu', 'reign-wu-pre-r11-wu-chunqiu', 'reign-wu-pre-r12-wu-chunqiu', 'reign-wu-pre-r13-wu-chunqiu', 'reign-wu-pre-r14-wu-chunqiu', 'reign-wu-pre-r15-wu-chunqiu', 'reign-wu-pre-r16-wu-chunqiu', 'reign-wu-pre-r17-wu-chunqiu', 'reign-wu-r0-wu-chunqiu', 'reign-wu-r1-wu-chunqiu', 'reign-wu-r2-wu-chunqiu', 'reign-wu-r3-wu-chunqiu', 'reign-wu-r4-wu-chunqiu', 'reign-helu-wu-chunqiu', 'reign-wu-fu-gai-wu-chunqiu', 'reign-fu-chai-wu-chunqiu', 'reign-yue-r3-yue-chunqiu', 'reign-yue-r4-yue-chunqiu', 'reign-gou-jian-yue-chunqiu', 'reign-yue-r6-yue-chunqiu', 'reign-yue-r7-yue-chunqiu', 'reign-yue-r8-yue-chunqiu', 'reign-yue-r9-yue-chunqiu', 'reign-yue-r10-yue-chunqiu', 'reign-yue-r11-yue-chunqiu', 'reign-yue-r12-yue-chunqiu', 'reign-yue-r13-yue-chunqiu', 'reign-zhongshan-r0-zhongshan', 'reign-zhongshan-r1-zhongshan', 'reign-zhongshan-r2-zhongshan', 'reign-zhongshan-r2-zhongshan-2', 'reign-zhongshan-r3-zhongshan', 'reign-zhongshan-r4-zhongshan', 'reign-zhongshan-r5-zhongshan', 'reign-zhongshan-r6-zhongshan', 'reign-han-jing-han-warring', 'reign-han-r1-han-warring', 'reign-han-r2-han-warring', 'reign-han-r3-han-warring', 'reign-han-r4-han-warring', 'reign-han-r5-han-warring', 'reign-han-r6-han-warring', 'reign-han-r7-han-warring', 'reign-han-r8-han-warring', 'reign-han-r9-han-warring', 'reign-han-r10-han-warring', 'reign-zhao-lie-zhao-warring', 'reign-zhao-r1-zhao-warring', 'reign-zhao-r2-zhao-warring', 'reign-zhao-r3-zhao-warring', 'reign-zhao-r4-zhao-warring', 'reign-zhao-r5-zhao-warring', 'reign-zhao-r6-zhao-warring', 'reign-zhao-r7-zhao-warring', 'reign-zhao-r8-zhao-warring', 'reign-zhao-r9-zhao-warring', 'reign-wei-wen-wei-warring', 'reign-wei-r1-wei-warring', 'reign-wei-r2-wei-warring', 'reign-wei-r3-wei-warring', 'reign-wei-r4-wei-warring', 'reign-wei-r5-wei-warring', 'reign-wei-r6-wei-warring', 'reign-wei-r7-wei-warring', 'reign-ying-qi-qin', 'reign-qin-r1-qin', 'reign-qin-r2-qin', 'reign-qin-r3-qin', 'reign-qin-r4-qin', 'reign-qin-r5-qin', 'reign-qin-r6-qin', 'reign-qin-r7-qin', 'reign-qin-r8-qin', 'reign-qin-r9-qin', 'reign-qin-r10-qin', 'reign-qin-r11-qin', 'reign-qin-r12-qin', 'reign-qin-r13-qin', 'reign-qin-r14-qin', 'reign-qin-r15-qin', 'reign-qin-r16-qin', 'reign-qin-r17-qin', 'reign-qin-r18-qin', 'reign-qin-r19-qin', 'reign-qin-r20-qin', 'reign-qin-r21-qin', 'reign-qin-r22-qin', 'reign-qin-r23-qin', 'reign-ying-quliang-qin', 'reign-qin-r25-qin', 'reign-qin-r26-qin', 'reign-qin-r27-qin', 'reign-qin-r28-qin', 'reign-qin-r29-qin', 'reign-ying-zheng-qin', 'reign-ying-zheng', 'reign-ying-huhai', 'reign-ying-ziying')\n  RETURNING person_id\n)\nDELETE FROM persons p\nWHERE p.id IN (SELECT DISTINCT person_id FROM stale)\n  AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)\n  AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = p.id)\n  AND NOT EXISTS (\n    SELECT 1 FROM relations rel\n    WHERE (rel.from_type = 'person' AND rel.from_id = p.id)\n       OR (rel.to_type = 'person' AND rel.to_id = p.id)\n  );",
+  "postSql": "-- Remove stale reigns from managed dynasties (superseded ids from older imports)\nWITH stale AS (\n  DELETE FROM reigns\n  WHERE dynasty_id IN ('zou-state', 'qi-chunqiu', 'jin-chunqiu', 'chu-chunqiu', 'yan-chunqiu', 'song-chunqiu', 'lu-chunqiu', 'wei-weiguo', 'zheng-chunqiu', 'cao-chunqiu', 'wu-chunqiu', 'yue-chunqiu', 'zhongshan', 'han-warring', 'zhao-warring', 'wei-warring', 'qin') AND id NOT IN ('reign-zou-r1-zou-state', 'reign-zou-r2-zou-state', 'reign-zou-r3-zou-state', 'reign-zou-r4-zou-state', 'reign-zou-r5-zou-state', 'reign-zou-r6-zou-state', 'reign-zou-r7-zou-state', 'reign-zou-r8-zou-state', 'reign-zou-r9-zou-state', 'reign-zou-r10-zou-state', 'reign-zou-r11-zou-state', 'reign-zou-r12-zou-state', 'reign-zou-r13-zou-state', 'reign-zou-r14-zou-state', 'reign-zou-r15-zou-state', 'reign-zou-r16-zou-state', 'reign-zou-r17-zou-state', 'reign-zou-r18-zou-state', 'reign-zou-r19-zou-state', 'reign-zou-r18-zou-state-2', 'reign-zou-he-zou-state', 'reign-zou-missing-after-he-1', 'reign-zou-kaogong-zou-state', 'reign-zou-missing-after-kaogong-1', 'reign-zou-missing-after-kaogong-2', 'reign-zou-mu-gong-zou-state', 'reign-zou-missing-after-mugong-2', 'reign-zou-missing-after-mugong-1', 'reign-zou-jun-qing-zou-state', 'reign-lv-shang-qi-chunqiu', 'reign-qi-r1-qi-chunqiu', 'reign-qi-r2-qi-chunqiu', 'reign-qi-r3-qi-chunqiu', 'reign-qi-r4-qi-chunqiu', 'reign-qi-r5-qi-chunqiu', 'reign-qi-r6-qi-chunqiu', 'reign-qi-r7-qi-chunqiu', 'reign-qi-r8-qi-chunqiu', 'reign-qi-r9-qi-chunqiu', 'reign-qi-r10-qi-chunqiu', 'reign-qi-r11-qi-chunqiu', 'reign-qi-r12-qi-chunqiu', 'reign-qi-r13-qi-chunqiu', 'reign-qi-r14-qi-chunqiu', 'reign-jiang-xiaobai-qi-chunqiu', 'reign-qi-r16-qi-chunqiu', 'reign-qi-r17-qi-chunqiu', 'reign-qi-r18-qi-chunqiu', 'reign-qi-r19-qi-chunqiu', 'reign-qi-r20-qi-chunqiu', 'reign-qi-r21-qi-chunqiu', 'reign-qi-r22-qi-chunqiu', 'reign-qi-r23-qi-chunqiu', 'reign-qi-r24-qi-chunqiu', 'reign-qi-r25-qi-chunqiu', 'reign-qi-r26-qi-chunqiu', 'reign-qi-r27-qi-chunqiu', 'reign-qi-r28-qi-chunqiu', 'reign-qi-r29-qi-chunqiu', 'reign-qi-r30-qi-chunqiu', 'reign-jiang-dai-qi-chunqiu', 'reign-tian-he-qi-chunqiu', 'reign-qi-r33-qi-chunqiu', 'reign-qi-r34-qi-chunqiu', 'reign-qi-r35-qi-chunqiu', 'reign-qi-r36-qi-chunqiu', 'reign-qi-r37-qi-chunqiu', 'reign-qi-r38-qi-chunqiu', 'reign-qi-r39-qi-chunqiu', 'reign-ji-shuyu-jin-chunqiu', 'reign-jin-r1-jin-chunqiu', 'reign-jin-r2-jin-chunqiu', 'reign-jin-r3-jin-chunqiu', 'reign-jin-r4-jin-chunqiu', 'reign-jin-r5-jin-chunqiu', 'reign-jin-r6-jin-chunqiu', 'reign-jin-r7-jin-chunqiu', 'reign-jin-r8-jin-chunqiu', 'reign-jin-r9-jin-chunqiu', 'reign-jin-r10-jin-chunqiu', 'reign-jin-r11-jin-chunqiu', 'reign-jin-r12-jin-chunqiu', 'reign-jin-r13-jin-chunqiu', 'reign-jin-r14-jin-chunqiu', 'reign-jin-r15-jin-chunqiu', 'reign-jin-r16-jin-chunqiu', 'reign-jin-r17-jin-chunqiu', 'reign-jin-r17-main-jin-chunqiu', 'reign-jin-r18-jin-chunqiu', 'reign-jin-r19-jin-chunqiu', 'reign-jin-r20-jin-chunqiu', 'reign-jin-r21-jin-chunqiu', 'reign-jin-r22-jin-chunqiu', 'reign-ji-chonger-jin-chunqiu', 'reign-jin-r24-jin-chunqiu', 'reign-jin-r25-jin-chunqiu', 'reign-jin-r26-jin-chunqiu', 'reign-jin-r27-jin-chunqiu', 'reign-jin-r28-jin-chunqiu', 'reign-jin-r29-jin-chunqiu', 'reign-jin-r30-jin-chunqiu', 'reign-jin-r31-jin-chunqiu', 'reign-jin-r32-jin-chunqiu', 'reign-jin-r33-jin-chunqiu', 'reign-jin-r34-jin-chunqiu', 'reign-jin-r35-jin-chunqiu', 'reign-jin-r36-jin-chunqiu', 'reign-jin-r37-jin-chunqiu', 'reign-jin-r38-jin-chunqiu', 'reign-jin-r39-jin-chunqiu', 'reign-chu-r0-chu-chunqiu', 'reign-chu-r1-chu-chunqiu', 'reign-chu-r2-chu-chunqiu', 'reign-chu-r3-chu-chunqiu', 'reign-chu-r4-chu-chunqiu', 'reign-chu-r5-chu-chunqiu', 'reign-chu-r6-chu-chunqiu', 'reign-chu-r7-chu-chunqiu', 'reign-chu-r8-chu-chunqiu', 'reign-chu-r9-chu-chunqiu', 'reign-chu-r10-chu-chunqiu', 'reign-chu-r11-chu-chunqiu', 'reign-chu-r12-chu-chunqiu', 'reign-chu-r13-chu-chunqiu', 'reign-chu-r14-chu-chunqiu', 'reign-chu-r15-chu-chunqiu', 'reign-chu-r16-chu-chunqiu', 'reign-chu-r17-chu-chunqiu', 'reign-chu-r18-chu-chunqiu', 'reign-chu-r19-chu-chunqiu', 'reign-chu-r20-chu-chunqiu', 'reign-xiong-zhuang-chu-chunqiu', 'reign-chu-r22-chu-chunqiu', 'reign-chu-r23-chu-chunqiu', 'reign-chu-r24-chu-chunqiu', 'reign-chu-r25-chu-chunqiu', 'reign-chu-r26-chu-chunqiu', 'reign-chu-r27-chu-chunqiu', 'reign-chu-r28-chu-chunqiu', 'reign-chu-r29-chu-chunqiu', 'reign-chu-r30-chu-chunqiu', 'reign-chu-r31-chu-chunqiu', 'reign-chu-r32-chu-chunqiu', 'reign-chu-r33-chu-chunqiu', 'reign-chu-r34-chu-chunqiu', 'reign-chu-r35-chu-chunqiu', 'reign-chu-r36-chu-chunqiu', 'reign-chu-r37-chu-chunqiu', 'reign-chu-r38-chu-chunqiu', 'reign-chu-r39-chu-chunqiu', 'reign-chu-r40-chu-chunqiu', 'reign-chu-r41-chu-chunqiu', 'reign-chu-r42-chu-chunqiu', 'reign-chu-r43-chu-chunqiu', 'reign-ji-shi-yan-chunqiu', 'reign-yan-r1-yan-chunqiu', 'reign-yan-r2-yan-chunqiu', 'reign-yan-r3-yan-chunqiu', 'reign-yan-r4-yan-chunqiu', 'reign-yan-r5-yan-chunqiu', 'reign-yan-r6-yan-chunqiu', 'reign-yan-r7-yan-chunqiu', 'reign-yan-r8-yan-chunqiu', 'reign-yan-r9-yan-chunqiu', 'reign-yan-r10-yan-chunqiu', 'reign-yan-r11-yan-chunqiu', 'reign-yan-r12-yan-chunqiu', 'reign-yan-r13-yan-chunqiu', 'reign-yan-r14-yan-chunqiu', 'reign-yan-r15-yan-chunqiu', 'reign-yan-r16-yan-chunqiu', 'reign-yan-r17-yan-chunqiu', 'reign-yan-r18-yan-chunqiu', 'reign-yan-r19-yan-chunqiu', 'reign-yan-r20-yan-chunqiu', 'reign-yan-r21-yan-chunqiu', 'reign-yan-r22-yan-chunqiu', 'reign-yan-r23-yan-chunqiu', 'reign-yan-r24-yan-chunqiu', 'reign-yan-r25-yan-chunqiu', 'reign-yan-r26-yan-chunqiu', 'reign-yan-r27-yan-chunqiu', 'reign-yan-r28-yan-chunqiu', 'reign-yan-r14-yan-chunqiu-2', 'reign-yan-r30-yan-chunqiu', 'reign-yan-r31-yan-chunqiu', 'reign-yan-r32-yan-chunqiu', 'reign-yan-r33-yan-chunqiu', 'reign-yan-r34-yan-chunqiu', 'reign-yan-r35-yan-chunqiu', 'reign-yan-r36-yan-chunqiu', 'reign-yan-r37-yan-chunqiu', 'reign-song-weizi-song-chunqiu', 'reign-song-r1-song-chunqiu', 'reign-song-r2-song-chunqiu', 'reign-song-r3-song-chunqiu', 'reign-song-r4-song-chunqiu', 'reign-song-r5-song-chunqiu', 'reign-song-r6-song-chunqiu', 'reign-song-r7-song-chunqiu', 'reign-song-r8-song-chunqiu', 'reign-song-r9-song-chunqiu', 'reign-song-r10-song-chunqiu', 'reign-song-r11-song-chunqiu', 'reign-song-r12-song-chunqiu', 'reign-song-r13-song-chunqiu', 'reign-song-r14-song-chunqiu', 'reign-song-r15-song-chunqiu', 'reign-song-r16-song-chunqiu', 'reign-song-r17-song-chunqiu', 'reign-song-r18-song-chunqiu', 'reign-song-r19-song-chunqiu', 'reign-song-r20-song-chunqiu', 'reign-song-r21-song-chunqiu', 'reign-song-r22-song-chunqiu', 'reign-song-r23-song-chunqiu', 'reign-song-r24-song-chunqiu', 'reign-song-r25-song-chunqiu', 'reign-song-r26-song-chunqiu', 'reign-song-r27-song-chunqiu', 'reign-song-r28-song-chunqiu', 'reign-song-r29-song-chunqiu', 'reign-song-r30-song-chunqiu', 'reign-song-r31-song-chunqiu', 'reign-song-r32-song-chunqiu', 'reign-song-r33-song-chunqiu', 'reign-bo-qin-lu-chunqiu', 'reign-lu-r1-lu-chunqiu', 'reign-lu-r2-lu-chunqiu', 'reign-lu-r3-lu-chunqiu', 'reign-lu-r4-lu-chunqiu', 'reign-lu-r5-lu-chunqiu', 'reign-lu-r6-lu-chunqiu', 'reign-lu-r7-lu-chunqiu', 'reign-lu-r8-lu-chunqiu', 'reign-lu-r9-lu-chunqiu', 'reign-lu-r10-lu-chunqiu', 'reign-lu-r11-lu-chunqiu', 'reign-lu-r12-lu-chunqiu', 'reign-lu-r13-lu-chunqiu', 'reign-lu-r14-lu-chunqiu', 'reign-lu-r15-lu-chunqiu', 'reign-lu-r16-lu-chunqiu', 'reign-lu-r17-lu-chunqiu', 'reign-lu-r18-lu-chunqiu', 'reign-lu-r19-lu-chunqiu', 'reign-lu-r20-lu-chunqiu', 'reign-lu-r21-lu-chunqiu', 'reign-lu-r22-lu-chunqiu', 'reign-lu-r23-lu-chunqiu', 'reign-lu-r24-lu-chunqiu', 'reign-lu-r25-lu-chunqiu', 'reign-lu-r26-lu-chunqiu', 'reign-lu-r27-lu-chunqiu', 'reign-lu-r28-lu-chunqiu', 'reign-lu-r29-lu-chunqiu', 'reign-lu-r30-lu-chunqiu', 'reign-lu-r31-lu-chunqiu', 'reign-lu-r32-lu-chunqiu', 'reign-lu-r33-lu-chunqiu', 'reign-lu-r34-lu-chunqiu', 'reign-weiguo-r0-wei-weiguo', 'reign-weiguo-r1-wei-weiguo', 'reign-weiguo-r2-wei-weiguo', 'reign-weiguo-r3-wei-weiguo', 'reign-weiguo-r4-wei-weiguo', 'reign-weiguo-r5-wei-weiguo', 'reign-weiguo-r6-wei-weiguo', 'reign-weiguo-r7-wei-weiguo', 'reign-weiguo-r8-wei-weiguo', 'reign-weiguo-r9-wei-weiguo', 'reign-weiguo-r10-wei-weiguo', 'reign-weiguo-r11-wei-weiguo', 'reign-weiguo-r12-wei-weiguo', 'reign-weiguo-r13-wei-weiguo', 'reign-weiguo-r14-wei-weiguo', 'reign-weiguo-r15-wei-weiguo', 'reign-weiguo-r16-wei-weiguo', 'reign-weiguo-r15-wei-weiguo-2', 'reign-weiguo-r18-wei-weiguo', 'reign-weiguo-r19-wei-weiguo', 'reign-weiguo-r20-wei-weiguo', 'reign-weiguo-r21-wei-weiguo', 'reign-weiguo-r22-wei-weiguo', 'reign-weiguo-r21-wei-weiguo-2', 'reign-weiguo-r23-wei-weiguo', 'reign-weiguo-r24-wei-weiguo', 'reign-weiguo-r25-wei-weiguo', 'reign-weiguo-r26-wei-weiguo', 'reign-weiguo-r25-wei-weiguo-2', 'reign-weiguo-r28-wei-weiguo', 'reign-weiguo-r29-wei-weiguo', 'reign-weiguo-r30-wei-weiguo', 'reign-weiguo-r31-wei-weiguo', 'reign-weiguo-r32-wei-weiguo', 'reign-weiguo-r33-wei-weiguo', 'reign-weiguo-r30-wei-weiguo-2', 'reign-weiguo-r35-wei-weiguo', 'reign-weiguo-r36-wei-weiguo', 'reign-weiguo-r37-wei-weiguo', 'reign-weiguo-r38-wei-weiguo', 'reign-weiguo-r39-wei-weiguo', 'reign-weiguo-r40-wei-weiguo', 'reign-weiguo-r41-wei-weiguo', 'reign-weiguo-r42-wei-weiguo', 'reign-weiguo-r43-wei-weiguo', 'reign-weiguo-r44-wei-weiguo', 'reign-weiguo-r45-wei-weiguo', 'reign-weiguo-r46-wei-weiguo', 'reign-zheng-r0-zheng-chunqiu', 'reign-zheng-r1-zheng-chunqiu', 'reign-zheng-r2-zheng-chunqiu', 'reign-zheng-r3-zheng-chunqiu', 'reign-zheng-r4-zheng-chunqiu', 'reign-zheng-r3-zheng-chunqiu-2', 'reign-zheng-r6-zheng-chunqiu', 'reign-zheng-r7-zheng-chunqiu', 'reign-zheng-r4-zheng-chunqiu-2', 'reign-zheng-r9-zheng-chunqiu', 'reign-zheng-r10-zheng-chunqiu', 'reign-zheng-r11-zheng-chunqiu', 'reign-zheng-r12-zheng-chunqiu', 'reign-zheng-r13-zheng-chunqiu', 'reign-zheng-r14-zheng-chunqiu', 'reign-zheng-gongzi-xu-zheng-chunqiu', 'reign-zheng-r14-zheng-chunqiu-2', 'reign-zheng-r15-zheng-chunqiu', 'reign-zheng-r16-zheng-chunqiu', 'reign-zheng-r17-zheng-chunqiu', 'reign-zheng-r18-zheng-chunqiu', 'reign-zheng-r19-zheng-chunqiu', 'reign-zheng-r20-zheng-chunqiu', 'reign-zheng-r21-zheng-chunqiu', 'reign-zheng-r22-zheng-chunqiu', 'reign-zheng-r23-zheng-chunqiu', 'reign-zheng-r24-zheng-chunqiu', 'reign-cao-r0-cao-chunqiu', 'reign-cao-r1-cao-chunqiu', 'reign-cao-r2-cao-chunqiu', 'reign-cao-r3-cao-chunqiu', 'reign-cao-r4-cao-chunqiu', 'reign-cao-r5-cao-chunqiu', 'reign-cao-r6-cao-chunqiu', 'reign-cao-r7-cao-chunqiu', 'reign-cao-r8-cao-chunqiu', 'reign-cao-r9-cao-chunqiu', 'reign-cao-r10-cao-chunqiu', 'reign-cao-r11-cao-chunqiu', 'reign-cao-r12-cao-chunqiu', 'reign-cao-r13-cao-chunqiu', 'reign-cao-r14-cao-chunqiu', 'reign-cao-r15-cao-chunqiu', 'reign-cao-r16-cao-chunqiu', 'reign-cao-r17-cao-chunqiu', 'reign-cao-r18-cao-chunqiu', 'reign-cao-r19-cao-chunqiu', 'reign-cao-r20-cao-chunqiu', 'reign-cao-r21-cao-chunqiu', 'reign-cao-r22-cao-chunqiu', 'reign-cao-r23-cao-chunqiu', 'reign-cao-r24-cao-chunqiu', 'reign-cao-r25-cao-chunqiu', 'reign-wu-pre-r0-wu-chunqiu', 'reign-wu-pre-r1-wu-chunqiu', 'reign-wu-pre-r2-wu-chunqiu', 'reign-wu-pre-r3-wu-chunqiu', 'reign-wu-pre-r4-wu-chunqiu', 'reign-wu-pre-r5-wu-chunqiu', 'reign-wu-pre-r6-wu-chunqiu', 'reign-wu-pre-r7-wu-chunqiu', 'reign-wu-pre-r8-wu-chunqiu', 'reign-wu-pre-r9-wu-chunqiu', 'reign-wu-pre-r10-wu-chunqiu', 'reign-wu-pre-r11-wu-chunqiu', 'reign-wu-pre-r12-wu-chunqiu', 'reign-wu-pre-r13-wu-chunqiu', 'reign-wu-pre-r14-wu-chunqiu', 'reign-wu-pre-r15-wu-chunqiu', 'reign-wu-pre-r16-wu-chunqiu', 'reign-wu-pre-r17-wu-chunqiu', 'reign-wu-r0-wu-chunqiu', 'reign-wu-r1-wu-chunqiu', 'reign-wu-r2-wu-chunqiu', 'reign-wu-r3-wu-chunqiu', 'reign-wu-r4-wu-chunqiu', 'reign-helu-wu-chunqiu', 'reign-wu-fu-gai-wu-chunqiu', 'reign-fu-chai-wu-chunqiu', 'reign-yue-r3-yue-chunqiu', 'reign-yue-r4-yue-chunqiu', 'reign-gou-jian-yue-chunqiu', 'reign-yue-r6-yue-chunqiu', 'reign-yue-r7-yue-chunqiu', 'reign-yue-r8-yue-chunqiu', 'reign-yue-r9-yue-chunqiu', 'reign-yue-r10-yue-chunqiu', 'reign-yue-r11-yue-chunqiu', 'reign-yue-r12-yue-chunqiu', 'reign-yue-r13-yue-chunqiu', 'reign-zhongshan-r0-zhongshan', 'reign-zhongshan-r1-zhongshan', 'reign-zhongshan-r2-zhongshan', 'reign-zhongshan-r2-zhongshan-2', 'reign-zhongshan-r3-zhongshan', 'reign-zhongshan-r4-zhongshan', 'reign-zhongshan-r5-zhongshan', 'reign-zhongshan-r6-zhongshan', 'reign-han-jing-han-warring', 'reign-han-r1-han-warring', 'reign-han-r2-han-warring', 'reign-han-r3-han-warring', 'reign-han-r4-han-warring', 'reign-han-r5-han-warring', 'reign-han-r6-han-warring', 'reign-han-r7-han-warring', 'reign-han-r8-han-warring', 'reign-han-r9-han-warring', 'reign-han-r10-han-warring', 'reign-zhao-lie-zhao-warring', 'reign-zhao-r1-zhao-warring', 'reign-zhao-r2-zhao-warring', 'reign-zhao-r3-zhao-warring', 'reign-zhao-r4-zhao-warring', 'reign-zhao-r5-zhao-warring', 'reign-zhao-r6-zhao-warring', 'reign-zhao-r7-zhao-warring', 'reign-zhao-r8-zhao-warring', 'reign-zhao-r9-zhao-warring', 'reign-wei-wen-wei-warring', 'reign-wei-r1-wei-warring', 'reign-wei-r2-wei-warring', 'reign-wei-r3-wei-warring', 'reign-wei-r4-wei-warring', 'reign-wei-r5-wei-warring', 'reign-wei-r6-wei-warring', 'reign-wei-r7-wei-warring', 'reign-ying-qi-qin', 'reign-qin-r1-qin', 'reign-qin-r2-qin', 'reign-qin-r3-qin', 'reign-qin-r4-qin', 'reign-qin-r5-qin', 'reign-qin-r6-qin', 'reign-qin-r7-qin', 'reign-qin-r8-qin', 'reign-qin-r9-qin', 'reign-qin-r10-qin', 'reign-qin-r11-qin', 'reign-qin-r12-qin', 'reign-qin-r13-qin', 'reign-qin-r14-qin', 'reign-qin-r15-qin', 'reign-qin-r16-qin', 'reign-qin-r17-qin', 'reign-qin-r18-qin', 'reign-qin-r19-qin', 'reign-qin-r20-qin', 'reign-qin-r21-qin', 'reign-qin-r22-qin', 'reign-qin-r23-qin', 'reign-ying-quliang-qin', 'reign-qin-r25-qin', 'reign-qin-r26-qin', 'reign-qin-r27-qin', 'reign-qin-r28-qin', 'reign-qin-r29-qin', 'reign-ying-zheng-qin', 'reign-ying-zheng', 'reign-ying-huhai', 'reign-ying-ziying')\n  RETURNING person_id\n)\nDELETE FROM persons p\nWHERE p.id IN (SELECT DISTINCT person_id FROM stale)\n  AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)\n  AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = p.id)\n  AND NOT EXISTS (\n    SELECT 1 FROM relations rel\n    WHERE (rel.from_type = 'person' AND rel.from_id = p.id)\n       OR (rel.to_type = 'person' AND rel.to_id = p.id)\n  );",
   "manifest": {
     "slug": "chunqiu-zhanguo",
     "title": "春秋战国诸侯国",
@@ -23075,10 +24024,6 @@
       {
         "label": "维基百科",
         "url": "https://zh.wikipedia.org/wiki/邾子夏父"
-      },
-      {
-        "label": "维基百科",
-        "url": "https://zh.wikipedia.org/wiki/？"
       },
       {
         "label": "维基百科",
@@ -23614,15 +24559,15 @@
       },
       {
         "label": "维基百科",
-        "url": "https://zh.wikipedia.org/wiki/克"
+        "url": "https://zh.wikipedia.org/wiki/燕侯克"
       },
       {
         "label": "维基百科",
-        "url": "https://zh.wikipedia.org/wiki/旨"
+        "url": "https://zh.wikipedia.org/wiki/燕侯旨"
       },
       {
         "label": "维基百科",
-        "url": "https://zh.wikipedia.org/wiki/舞"
+        "url": "https://zh.wikipedia.org/wiki/燕侯舞"
       },
       {
         "label": "维基百科",
@@ -24855,11 +25800,191 @@
       {
         "label": "维基百科",
         "url": "https://zh.wikipedia.org/wiki/扁鹊"
+      },
+      {
+        "label": "《史记·楚世家》",
+        "url": "https://www.chinakongzi.org/kzsf/wxxs/mingpian/shiji/200705/t20070524_25207.htm"
+      },
+      {
+        "label": "《史记·十二诸侯年表》：共和元年楚熊勇七年及其后在位年次",
+        "url": "https://ctext.org/shiji/shi-er-zhu-hou-nian-biao/zh"
+      },
+      {
+        "label": "楚国君主列表：熊绎至熊挚年代失考、熊延终年与熊勇以后年表",
+        "url": "https://zh.wikipedia.org/wiki/楚国#楚国君主列表"
+      },
+      {
+        "label": "《史记·燕召公世家》",
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷034"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
+      },
+      {
+        "label": "首都博物馆：克罍及分封燕侯铭文",
+        "url": "https://www.capitalmuseum.org.cn/collection/30a9844041e24d919ad497143c9db47b"
+      },
+      {
+        "label": "河南博物院：燕侯旨鼎",
+        "url": "https://www.chnmus.net/sitesources/hnsbwy/page_pc/clzl/zlhg/dszhzgdwh/debfzmds/article301959f6691644fd9661d4e7ed7e351f.html"
+      },
+      {
+        "label": "燕国君主列表及所据考古、世系研究",
+        "url": "https://zh.wikipedia.org/wiki/燕国#君主列表"
+      },
+      {
+        "label": "《史记·齐太公世家》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷032"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷014"
+      },
+      {
+        "label": "《尚书·顾命》",
+        "url": "https://zh.wikisource.org/wiki/尚書/顧命"
+      },
+      {
+        "label": "《太平御览》卷八十五引《竹书纪年》",
+        "url": "https://zh.wikisource.org/wiki/太平御覽/0085"
+      },
+      {
+        "label": "夏商周断代工程与其他西周年代方案对照",
+        "url": "https://zh.wikipedia.org/wiki/夏商周断代工程#年表"
+      },
+      {
+        "label": "维基百科：齐国君主列表（早期年代与正文表有异）",
+        "url": "https://zh.wikipedia.org/wiki/齐国君主列表#姜齊君主列表"
+      },
+      {
+        "label": "《资治通鉴外纪》成王条（太公卒年异说）",
+        "url": "https://www.shidianguji.com/book/SBCK033/chapter/SBCK033_14"
+      },
+      {
+        "label": "《春秋公羊传·昭公三十一年》",
+        "url": "https://ctext.org/gongyang-zhuan/zhao-gong-san-shi-yi-nian/zhs"
+      },
+      {
+        "label": "周朝诸侯国君主列表·邾国",
+        "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+      },
+      {
+        "label": "《左传·文公十三年》",
+        "url": "https://ctext.org/chun-qiu-zuo-zhuan/wen-gong-shi-san-nian/zhs"
+      },
+      {
+        "label": "《左传·哀公二十四年》",
+        "url": "https://ctext.org/chun-qiu-zuo-zhuan/ai-gong-er-shi-si-nian/zhs"
+      },
+      {
+        "label": "《左传·哀公八年》",
+        "url": "https://ctext.org/chun-qiu-zuo-zhuan/ai-gong-ba-nian/zhs"
+      },
+      {
+        "label": "《礼记·檀弓下》",
+        "url": "https://ctext.org/liji/tan-gong-xia/zhs"
+      },
+      {
+        "label": "《孟子·滕文公上》",
+        "url": "https://zh.wikisource.org/zh-hans/孟子/滕文公上"
+      },
+      {
+        "label": "邾国故城（山东地情档案）",
+        "url": "https://shandong-chorography.org/database/a/section/70/article/91/"
+      },
+      {
+        "label": "《史记·晋世家》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷039"
+      },
+      {
+        "label": "晋国君主年表（不同系年并列；春秋部分对照杨伯峻《春秋左传注》）",
+        "url": "https://zh.wikipedia.org/wiki/晋国君主"
+      },
+      {
+        "label": "天马—曲村北赵晋侯墓地材料（北京大学机构知识库）",
+        "url": "https://ir.pku.edu.cn/handle/20.500.11897/7324"
+      },
+      {
+        "label": "The Jin Hou Su Bells Inscription and its Implications for the Chronology of Early China",
+        "url": "https://doi.org/10.1017/s0362502800004260"
+      },
+      {
+        "label": "曲沃叛王与晋公戈年代（复旦大学出土文献与古文字研究中心）",
+        "url": "https://www.fdgwz.org.cn/Web/Show/2458"
+      },
+      {
+        "label": "冯峰：《说“醴壶”》（北京大学中国考古学研究中心）",
+        "url": "https://csca.pku.edu.cn/info/1018/1207.htm"
+      },
+      {
+        "label": "张海：《邾器与两周邾邦史事》",
+        "url": "https://www.sohu.com/a/469705297_121124388"
+      },
+      {
+        "label": "邾国君主世系图（据《春秋释例》等）",
+        "url": "https://zh.wikipedia.org/wiki/邾國君主世系圖"
+      },
+      {
+        "label": "维基百科：齐国君主表（早期推定年代）",
+        "url": "https://zh.wikipedia.org/wiki/齐国#姜齊君主列表"
+      },
+      {
+        "label": "维基百科：齐国君主列表（年表及异说）",
+        "url": "https://zh.wikipedia.org/wiki/齐国君主列表"
+      },
+      {
+        "label": "《史记·田敬仲完世家》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷046"
+      },
+      {
+        "label": "《春秋左氏传·庄公》",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳/莊公"
+      },
+      {
+        "label": "《春秋左氏传·僖公》",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳/僖公"
+      },
+      {
+        "label": "《春秋左氏传·文公》",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳/文公"
+      },
+      {
+        "label": "《春秋左氏传·哀公》",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳/哀公"
+      },
+      {
+        "label": "春秋鲁国历法复原（据张培瑜《中国古代历法》）",
+        "url": "https://ytliu0.github.io/ChineseCalendar/chunqiu_simp.html"
+      },
+      {
+        "label": "维基百科：齐庄公（购）",
+        "url": "https://zh.wikipedia.org/wiki/齊莊公_(購)"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/舍_(齊國)"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齊莊公_(光)"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/田侯剡"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/田午"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/齊王建"
       }
     ],
     "notes": [
       "收录春秋主要列国与战国七雄（齐楚燕韩赵魏秦）及宋鲁卫郑曹吴越中山等。",
-      "新增邹（春秋称邾、邾娄）国君卡：周初始封至邾武公前796年之间连续七世按共同边界均分；前780年邾子夏父至前678年邾子克之间，按世系所记的一世失考将三段均分；邾文公等依据君主年表收录。前471年邾子何即位后至邹穆公约前382年之间，依据邹国君主世系图的连续世系与两端年代锚点，按君主次序均分前470至前383年：何之后、邾娄考公之前仅列一位失名君主，考公之后至邹穆公之前列两位失名君主；分别以独立 person（persons.name='？'）和 title='？' 记录，不作“史料缺”占位。按修正后的世次数重新均分各在位区间，边界标 interpolated；邹穆公前382年起点仍标 approximate。学者另有将考公系于鲁文公至宣公时期（约前626至前591年）的说法，与其为前470年后邾隐公曾孙的世系冲突；本包依连续世系与前后锚点均分，并在考公 bio 中说明异说。邹穆公约前382—前330年依地方人物资料，区间标 approximate。",
+      "邹国君主世系初始收录说明（后续日期复核见本包2026-10-02复核记录）：始封和早期君主名录据《元和姓纂》《繹史·邾世系》等后世材料；周初至武公的世系真实性与具体年代有争议，均分坐标仅作时间轴定位。叔术、夏父让国据《公羊传·昭公三十一年》。前780至前678段后经邾君庆铜器铭文补录并重排。战国末段据《春秋释例》整理为邾子何、考公、穆公三位可考，另五世失名；其单任在位年代未见可靠完整年表。邹穆公约前382—前330年及邹国前256年终点均按近似年代记录。",
       "列国泳道名用国号（齐、楚、韩），与夏商周秦汉一致，不带「国」；「齐国」等写入 alt_names。",
       "id 后缀 -chunqiu / -warring / wei-weiguo 避免与曹魏 wei、孙吴 wu、北宋 song-north 等同名冲突。",
       "秦国 upsert 已有 qin 行，将始年延至前778年秦襄公即位，与 qin-han 统一帝国段衔接；清理脚本保留 qin-han 的秦二世、子婴 reign。",
@@ -24868,7 +25993,7 @@
       "燕前文公（前554—前549）与燕后文公（前361—前333）是不同世次的两位燕君，分属燕武公之后与燕桓公之后；源表虽均简称燕文公，导入时拆为 yan-r18 与 yan-r30 两个人物，后者本名失载、谥文公。依据《史记·燕召公世家》与《周朝诸侯国君主列表》。",
       "西周早中期无在位年的国君原则上在相邻锚点之间按世系均分，均分结果标 起止端点标记为 interpolated_by_other。宋微子至宋厉公采用《宋国君主列表》所列《史记·宋世家》与陈梦家《西周年代考》推定年份，仍标 interpolated；宋釐公前858年为后续年表锚点。",
       "卫康叔至卫贞伯现有资料仅能按其处于周成王、康王、昭王、穆王、共王、懿王/孝王时期作宽区间约束；康叔约前1040年以后，卫贞伯卒年前867年，顷侯自前866年起有年表。未将周王世代误作卫君个人的精确在位年。",
-      "楚早期熊绎至熊杨仍按世系均分。熊渠及熊挚红、熊延年代存在资料异说，不以低质量二手列表改写为确定年份；熊勇及以后采用诸侯君主表/相关研究所载年表锚点，所有本由推算确定的边界仍标 interpolated。",
+      "楚早期日期与概述复核（2026-10-02）：熊绎、熊艾、熊䵣、熊胜、熊杨、熊渠、熊挚红、熊延的旧 bio 将本系统均分所得的在位区间冒充史料系年，或误称为“后世系年所推”。已删除这八人的插值年份和资料处理叙述，依据《史记·楚世家》补回世系、继承与可证事迹；插值说明只留于本 manifest。熊绎旧述“共事周康王”改为共事成王；熊渠保留夷王、厉王时期的相对年代与三子王号；熊挚红、熊延继承叙述明确限定为《史记》记载并保留文献异说。熊勇旧述混入周幽王被杀及无据的伐周，已删除，“在位九年”据《楚世家》十年卒纠正；熊严补入继兄位与四子世系。",
       "曹叔振铎为曹国始封君：《史记·管蔡世家》记武王克殷后封其于曹。本包以克殷年（前1046）为其起年；维基《曹国》君主表所列前1041—前1016与同表“在位30年”不符，故不采其起年，采用前1046—前1016（30年）。",
       "齐太公不用维基齐国表的前1122年（旧克商年），与西周始年（前1046）对齐。",
       "田氏代齐为顺序接续，不是并立：宣公→康公→田和→侯剡。齐国表田和前404–前384年是田悼子卒后的领袖年；田和称君取条目前391年自立，前386年周安王列为诸侯。康公卒前379年，前391年被放逐后不在齐行续画，在位迄前392年。",
@@ -24887,7 +26012,58 @@
       "国君名录共 463 条在位记录与人物简介、Wiki 条目对应关系均维护于 cache.json。运行统一生成命令将缓存转换为 PostgreSQL import.sql。",
       "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
       "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
-      "称谓复核（2026-10）：本包君主卡片称呼写入对应 reign.title。已有谥号者使用 persons.posthumousNames 的首选本体（不带国名）；无谥号者采用已核对的人物 title，并去除国名前缀；已有非空 reign.title 亦按无国名称呼规则复核。具体来源沿用各人物 links 与本包 manifest.sources。"
+      "称谓复核（2026-10）：本包君主卡片称呼写入对应 reign.title。已有谥号者使用 persons.posthumousNames 的首选本体（不带国名）；无谥号者采用已核对的人物 title，并去除国名前缀；已有非空 reign.title 亦按无国名称呼规则复核。具体来源沿用各人物 links 与本包 manifest.sources。",
+      "楚早期逐端点复核留据：reign-chu-r0-chu-chunqiu（熊绎，-1042至-1019）、reign-chu-r1-chu-chunqiu（熊艾，-1018至-995）、reign-chu-r2-chu-chunqiu（熊䵣，-994至-970）、reign-chu-r3-chu-chunqiu（熊胜，-969至-946）、reign-chu-r4-chu-chunqiu（熊杨，-945至-922）、reign-chu-r5-chu-chunqiu（熊渠，-921至-897）、reign-chu-r6-chu-chunqiu（熊挚红，-896至-873）：两端均维持 interpolated_by_generation；这些数值仅是既有世系均分的时间轴定位，未在本次复核中确认为史料年份，不写回 bio。reign-chu-r7-chu-chunqiu（熊延，-872至-848）：起点维持 interpolated_by_generation，终点按现行君主年表保留 year。现有左侧定位取周成王时期框架的-1042年，右侧接熊勇-847年起点；《楚世家》只给熊绎受封于成王时，未给受封年，因此-1042不是已核实的熊绎即位年。熊渠与周夷王、厉王的共时记载亦不能由八任整体均分精确还原；本次只清理旧概述，未将旧坐标升级为确定或近似日期，具体重新系年仍待可靠依据。",
+      "楚早期可考日期复核：reign-chu-r8-chu-chunqiu（熊勇，-847至-838）、reign-chu-r9-chu-chunqiu（熊严，-837至-828）两端保留 year；《十二诸侯年表》共和元年（-841）列楚熊勇七年，现行君主表列熊勇十年、熊严十年，与这两段区间相符。《楚世家》另载熊勇六年厉王奔彘，与年表共和元年的七年有年次差异，本次不据此重排已用年表；bio 保留原文相对年次，不将“六年”直接换算成某公历年。reign-chu-r10-chu-chunqiu（熊霜，-827至-822）、reign-chu-r11-chu-chunqiu（熊徇，-821至-800）、reign-chu-r12-chu-chunqiu（熊咢，-799至-791）、reign-chu-r13-chu-chunqiu（若敖，-790至-764）、reign-chu-r14-chu-chunqiu（霄敖，-763至-758）、reign-chu-r15-chu-chunqiu（蚡冒，-757至-741）均保留原起讫与 year confidence：现行君主年表与《楚世家》所载六、二十二、九、二十七、六、十七年在位一致，无插值年份混入概述。",
+      "燕早期概述与来源复核（2026-10-02）：ji-shi（召公奭）、yan-r1（克）、yan-r2（旨）、yan-r3（舞）的旧 bio 将系统分配的年份写成确定在位年或“后世系年所推”，现全部删除，仅保留可证身份、事迹与历史年代失考的说明。召公旧述“周武王同母弟”缺可靠依据，依《史记》只保留与周同姓及王室辅政身份；由子就封据河南博物院燕侯旨鼎说明。克的分封据首都博物馆克罍铭文；旨与克的兄弟/父子关系保留学术异说；舞不再称“史料仅见世系之名”，改为出土铜器所见燕侯。克、旨、舞的泛名维基链接改为专门条目，并在各 person.links 与 manifest.sources 同步补入本次依据。燕惠侯、釐侯补回继承与共和、郑始封等可证事实；燕庄公旧述“击退齐军于东门”缺依据，改为《燕召公世家》所载王子颓之乱与齐桓公救燕。",
+      "燕早期日期复核留据（本次仅修概述与来源，未重算定位）：reign-ji-shi-yan-chunqiu（-1044至-1000，两端 interpolated_by_generation）、reign-yan-r1-yan-chunqiu（-999至-955，两端 interpolated_by_generation）、reign-yan-r2-yan-chunqiu（-954至-910，两端 interpolated_by_generation）、reign-yan-r3-yan-chunqiu（-909至-865，起点 interpolated_by_generation、终点 year）均为旧版本四段均分定位，未获本次史料确认，不再写入 bio。燕早期世系不连续：《史记》仅称召公以下九世至惠侯，克、旨、舞又主要据金文辨认，其后与惠侯之间有世系断层；不能把四个现存姓名当作完整连续的四任世系，也不能由惠侯起年认定舞的卒年。因此这四段旧定位及舞终点 confidence 的重新建模暂缓，待有可靠共同锚点及世次定位时处理；不据本次正文清理新增或重做跨断层插值，不将原坐标视为史料日期。",
+      "燕可考日期复核：reign-yan-r4-yan-chunqiu（惠侯，-864至-827）与 reign-yan-r5-yan-chunqiu（釐侯，-826至-791）两端维持 year；《十二诸侯年表》共和元年（-841）列惠侯二十四年，宣王元年（-827）列惠侯尽，宣王二年（-826）列釐侯庄元年。个别二手条目把惠侯初立年写为-865，本包保留年表年次及旧王占死年的接续规则，不把-865解释成舞卒年。reign-yan-r6-yan-chunqiu（顷侯，-790至-767）、reign-yan-r7-yan-chunqiu（哀侯，-766至-765）、reign-yan-r8-yan-chunqiu（郑侯，-764至-729）、reign-yan-r9-yan-chunqiu（穆侯，-728至-711）、reign-yan-r10-yan-chunqiu（宣侯，-710至-698）、reign-yan-r11-yan-chunqiu（桓侯，-697至-691）与 reign-yan-r12-yan-chunqiu（庄公，-690至-658）保留原起讫、两端 year 及既有概述中的年表年份；二十四、二、三十六、十八、十三、七、三十三年在位与《燕召公世家》对应，没有早期均分年份混入这些记录。",
+      "邹（邾）国君主逐项复核（2026-10-02）：逐人保留 ID、世系主张和具体依据。周初挟至武公一段：现有世系主要由《元和姓纂》《繹史·邾世系》等后世资料整理，来源本身提示该段世系真实性有待考证；前796仅是传统表所采武公卒年。旧缓存把周初到前796的六段均分坐标写入人物简介，本次从简介删除坐标，不将其表述为史料纪年；旧几何仍标 interpolated_by_generation，不能作个人即位/卒年或在位年数使用，待可靠共同锚点或同期材料再重建。叔术、夏父与武公的让国叙述据《公羊传·昭公三十一年》，保留为传文所载。前780至前678之间夏父、失名者、克的既有插值仍只是世系定位，不等同于史载年份。前471年至邹穆公时期的何、考公及失名君主：前471即位据《左传·哀公二十四年》，考公仅见《礼记·檀弓下》，穆公见《孟子·滕文公上》；世系图据杜预《春秋释例》给出何、考公、穆公三位可考及另五位失名君主，但各失名者在三人间的确切排列仍属该图的整理方案。缓存依“何—失名一世—考公—失名二世—穆公—失名二世”记录；后四段坐标标插值，概述不将插值年份当作确定史实或展示确定时长。前614年邾文公卒并迁都绎据《左传·文公十三年》及山东地情档案；旧记录将文公终点记为前615、定公始于前614，违反原始纪年和死年归旧王规则，改文公终点为前614、定公起点为前613，均为年精度，未录入公历月日。姓名按邾国曹姓规范为可检索全名；未知本名者用曹姓加已知谥称/爵称，失名君主仍用“？”。在位卡片称谓移除国名前缀；撤除失名人物不存在的问号维基链接，逐人链接改为可核史料或汇编来源。",
+      "2026-10：按在位信息与日期处理 Skill 复核晋国君主。早期晋侯世系参考《史记·晋世家》并与北赵晋侯墓地考古序列、晋侯苏编钟研究互证；目前具体年界缺少足以替代世次定位的共同绝对锚点，保留原插值坐标并明确为插值，不将其表述为确年。曲沃桓叔、庄伯、武公与翼城公室曾并立，添加曲沃 rival track；武公在前678年并晋后，以前677年作为继位新王首个完整年，从并立段另拆主线段；按姓名列规范补入姬姓，殇叔和小子侯的私名无可靠记载，改存“？”。春秋系年有《史记》与《春秋左传注》异说，采用现有包按杨伯峻系年的做法；晋侯缗、曲沃武公及晋武公受命/即位的年份据所引原始记载与研究区分。奚齐、卓子仅在献公死后被立、均于未逾年内遇害；因具体短期端点尚不能可靠换算为公历月日，本次不将整年占位伪作其在位期，也不据此插造整年 reign。 同步删除人物概述中与世次插值相对应的前1006至前896年坐标年份；有独立依据的年份仍保留。",
+      "邾君庆与战国末失名君主补核（2026-10-02）：新见邾君庆信息据枣庄东江春秋墓地铜壶铭文“邾君庆作秦妊礼壶”及冯峰对春秋陶壶/铜壶和邾国世系的研究；张海《邾器与两周邾邦史事》将庆列入邾邦史。其具体在位年份未考，放在夏父至克的世系位置，相关区间重新按夏父起年与克卒年前678锚点、连续四任（夏父、失名一世、庆、克）分配；两端及内部边界均为 interpolated_by_generation，不能当成史载年份。世系图据杜预《春秋释例》称邾子何、邾娄考公、邹穆公三位可考，另有五世不详；其分段列为何与考公间一世、考公与穆公间二世、穆公之后二世。末二世分别建独立失名 person/reign，不以系统占位替代已知世次数。穆公之后缺乏可靠逐年锚点，时间轴位置仅以现有穆公 approximate 终点和本包采用的邹国约前256年终点作世次定位，起止标 interpolated_by_generation；邹国终点改为 approximate_year，表达亡国年有异说，不能把这些分配年当作确切继位/卒年。此前把失名总数及其归属说成无法确认的复核说明由本条细化取代。",
+      "齐国全君主复核（2026-10-02）：逐端点核对齐泳道40任（姜齐32、田齐8）。有出处的具体推定年代优先于旧均分定位；太公采用用户明确指定的前1026年说，丁、乙、癸及哀公起点采用《齐国》君主表所列推定年，标 approximate_year，不声称古籍直接记载这些公元前年份。正文表、个别人物正文、底表存在异说，故不批量标确定 year；太公康王六年约前1015年等异说仍保留来源。太公旧-1011等均分值撤下，不再作为史实或较可信年代。",
+      "齐国原始年与接续占位：太公-1046→-1026，丁-1026→-975，乙-975→-933，癸-933→-902，哀-902→-883；对相续的年精度起点调用 reignOwnershipInterval / effectiveIntervalStartPoint，依死年归旧王分别得到丁-1025、乙-974、癸-932、哀-901。1月/12月为年桶占位，不代表已知月份。哀公终点据《太平御览》引《竹书纪年》夷王三年，采用与周王泳道一致的夷王元年-885，取约-883；优先于百科正文-890和另一列表-863。胡公起点沿用同一边界裁定约-882，终点-860可据武公锚点及献公九年回溯。",
+      "齐国短祚历法复核：襄公死于鲁庄公八年十一月癸未（经；传作十二月），桓公死于鲁僖公十七年十月乙亥（传；经十二月为赴告）。采用张培瑜《中国古代历法》复原法的积月445、976，月序分别11、10，朔策30328/1027、原点JD1457727.5+268/1027；筛取月内干支日并将儒略日转延伸格里历，得-686-10-29、-643-09-05。历法复原及经传差异使其标 approximate_day；公孙无知/无亏起点由共享归属裁定为次日。无知被杀记庄公九年春正月，该复原月覆盖-686-12-21至-685-01-19，采用中段所在的约-685年1月；无亏被杀记僖公十八年三月，覆盖-642-02-23至-642-03-23，采用约-642年3月；孝公获立记同年五月，覆盖-642-04-23至-642-05-21，采用约-642年5月。三个 approximate_month 为转换区间的近似代表月，原文未载日，未补造即位/被杀日；原历月不得直接写成公历月。",
+      "齐国逐端点复核2026-10-02：reign-lv-shang-qi-chunqiu；原-1046/1(year)—-1011/12(interpolated_by_generation)，现-1046/1(year)—-1026/12(approximate_year)。起点沿用克商年-1046 year；终点从旧均分-1011改为百科有出处的-1026 approximate_year，成王时期卒的史源为《外纪》，用户选择此说。",
+      "齐国逐端点复核2026-10-02：reign-qi-r1-qi-chunqiu；原-1010/1(interpolated_by_generation)—-974/12(interpolated_by_generation)，现-1025/1(approximate_year)—-975/12(approximate_year)。原始推定-1026→-975；《顾命》确认吕伋在成王崩时已为齐侯，与新系年相容；起点经共享裁定，不沿用-1010→-974均分。",
+      "齐国逐端点复核2026-10-02：reign-qi-r2-qi-chunqiu；原-973/1(interpolated_by_generation)—-937/12(interpolated_by_generation)，现-974/1(approximate_year)—-933/12(approximate_year)。原始推定-975→-933，采用有出处年表并保留争议标记；撤下-973→-937均分。",
+      "齐国逐端点复核2026-10-02：reign-qi-r3-qi-chunqiu；原-936/1(interpolated_by_generation)—-900/12(interpolated_by_generation)，现-932/1(approximate_year)—-902/12(approximate_year)。原始推定-933→-902，底表与正文有异说，保留近似；撤下-936→-900均分。",
+      "齐国逐端点复核2026-10-02：reign-qi-r4-qi-chunqiu；原-899/1(interpolated_by_generation)—-883/12(approximate_year)，现-901/1(approximate_year)—-883/12(approximate_year)。起年采用-902推定年表，终年采用夷王三年约-883的共同框架；保留近似，不采用百科-890或旧-863异说。",
+      "齐国逐端点复核2026-10-02：reign-qi-r5-qi-chunqiu；原-882/1(approximate_year)—-860/12(year)，现-882/1(approximate_year)—-860/12(year)。烹哀公后继位约-882 approximate_year；终点-860 year由献公九年、武公十年为共和元年回溯，保留较强依据。",
+      "齐国逐端点复核2026-10-02：reign-qi-r6-qi-chunqiu；原-859/1(year)—-851/12(year)，现-859/1(year)—-851/12(year)。献公九年卒，武公起-850，据此为-859→-851；保持 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r7-qi-chunqiu；原-850/1(year)—-825/12(year)，现-850/1(year)—-825/12(year)。共和元年-841为武公十年，年表-825为二十六年、次年厉公元年；两端 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r8-qi-chunqiu；原-824/1(year)—-816/12(year)，现-824/1(year)—-816/12(year)。年表-824厉公元年、-816九年，-815文公元年；两端 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r9-qi-chunqiu；原-815/1(year)—-804/12(year)，现-815/1(year)—-804/12(year)。年表-815文公元年、-804十二年，-803成公元年；两端 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r10-qi-chunqiu；原-803/1(year)—-795/12(year)，现-803/1(year)—-795/12(year)。年表-803成公元年、-795九年，-794庄公元年；两端 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r11-qi-chunqiu；原-794/1(year)—-731/12(year)，现-794/1(year)—-731/12(year)。庄公六十四年卒-731，-730釐公元年；两端 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r12-qi-chunqiu；原-730/1(year)—-698/12(year)，现-730/1(year)—-698/12(year)。釐公三十三年卒-698，襄公元年-697；据世家和年表保留两端 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r13-qi-chunqiu；原-697/1(year)—-686/12(year)，现-697/1(year)—-686/10/29(approximate_day)。襄公元年-697保留 year；末年-686由《春秋》十一月癸未提高至换算近似日，详见历法复核。",
+      "齐国逐端点复核2026-10-02：reign-qi-r14-qi-chunqiu；原-686/1(year)—-686/12(year)，现-686/10/30(approximate_day)—-685/1(approximate_month)。原同年-686→-686截掉翌年被杀；改为襄公死后至-685春，采用近似日/月，保留随后无君的事实，不造缺载君。",
+      "齐国逐端点复核2026-10-02：reign-jiang-xiaobai-qi-chunqiu；原-685/1(year)—-643/12(year)，现-685/1(year)—-643/9/5(approximate_day)。桓公元年-685保留 year；《左传》夏入齐未载确日，不补月日；终点-643采用传十月乙亥换算近似日。",
+      "齐国逐端点复核2026-10-02：reign-qi-r16-qi-chunqiu；原-643/1(year)—-643/12(year)，现-643/9/6(approximate_day)—-642/3(approximate_month)。原-643→-643截掉翌年三月被杀；改为桓公死后至约-642年3月，取《左传》短祚记载及复原月。",
+      "齐国逐端点复核2026-10-02：reign-qi-r17-qi-chunqiu；原-642/1(year)—-633/12(year)，现-642/5(approximate_month)—-633/12(year)。初立原文为-642鲁僖公十八年五月，换算采用 approximate_month；终点-633孝公十年卒保留 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r18-qi-chunqiu；原-632/1(year)—-613/12(year)，现-632/1(year)—-613/12(year)。昭公元年-632、末年-613为年表二十年，保留 year。文公十四年五月乙亥卒，本次复原月不容该干支，不能据模型强行升至月日；原历记载保存在来源中。",
+      "齐国逐端点复核2026-10-02：reign-qi-r19-qi-chunqiu；原-613/1(year)—-613/12(year)，现-613/1(year)—-613/12(year)。两端同为-613，保留 year；《春秋》经九月、传七月乙卯与《史记》十月弑舍记载有异，未可靠换算则不伪造公历月日；删除“商人弑父”的错误概述。",
+      "齐国逐端点复核2026-10-02：reign-qi-r20-qi-chunqiu；原-612/1(year)—-609/12(year)，现-612/1(year)—-609/12(year)。懿公年表元年-612、四年被杀-609；实际在-613弑舍自立与次年元年区分，保留年表两端 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r21-qi-chunqiu；原-608/1(year)—-599/12(year)，现-608/1(year)—-599/12(year)。惠公元年-608、十年卒-599，据世家与年表保留 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r22-qi-chunqiu；原-598/1(year)—-582/12(year)，现-598/1(year)—-582/12(year)。顷公元年-598、十七年卒-582，据世家与年表保留 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r23-qi-chunqiu；原-581/1(year)—-554/12(year)，现-581/1(year)—-554/12(year)。灵公元年-581、二十八年卒-554，据世家与年表保留 year；纠正生平“被弑”，未将未换算的农历五月录为公历五月。",
+      "齐国逐端点复核2026-10-02：reign-qi-r24-qi-chunqiu；原-553/1(year)—-548/12(year)，现-553/1(year)—-548/12(year)。后庄公元年-553、六年被弑-548，保留 year；与前庄公购区分，修正来源及栾盈/崔妻叙述。",
+      "齐国逐端点复核2026-10-02：reign-qi-r25-qi-chunqiu；原-547/1(year)—-490/12(year)，现-547/1(year)—-490/12(year)。景公元年-547、五十八年卒-490，保留 year；《春秋》哀五年九月癸酉原历日保留来源，未以占位月声称确月；去除晏婴辅政58年误述。",
+      "齐国逐端点复核2026-10-02：reign-qi-r26-qi-chunqiu；原-489/1(year)—-489/12(year)，现-489/1(year)—-489/12(year)。安孺子实际在-490景公卒后继位，年表元年/失位-489；保留-489年桶的短祚记录，不把年桶称为实际即位日。经秋七月与传冬十月失位记载有异，不补造公历月日。",
+      "齐国逐端点复核2026-10-02：reign-qi-r27-qi-chunqiu；原-488/1(year)—-485/12(year)，现-488/1(year)—-485/12(year)。悼公实际-489获立，年表元年-488、四年卒-485；保留年表 year，原历月日及异说见《左传》哀公六年。",
+      "齐国逐端点复核2026-10-02：reign-qi-r28-qi-chunqiu；原-484/1(year)—-481/12(year)，现-484/1(year)—-481/12(year)。简公元年-484、四年被杀-481，据世家与年表保留 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r29-qi-chunqiu；原-480/1(year)—-456/12(year)，现-480/1(year)—-456/12(year)。平公元年-480、二十五年卒-456，据世家与年表保留 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r30-qi-chunqiu；原-455/1(year)—-405/12(year)，现-455/1(year)—-405/12(year)。宣公元年-455、五十一年卒-405，据世家与年表保留 year。",
+      "齐国逐端点复核2026-10-02：reign-jiang-dai-qi-chunqiu；原-404/1(year)—-392/12(year)，现-404/1(year)—-392/12(year)。康公元年-404，前391被放逐失齐君位；其卒年-379为人物死年，不延长此泳道实权在位。既有同一泳道交接取康段迄-392、田和起-391，保留年桶 year。",
+      "齐国逐端点复核2026-10-02：reign-tian-he-qi-chunqiu；原-404/1(year)—-384/12(year)，现-391/1(year)—-384/12(year)。原起-404错套康公元年，修为-391实际自立；-386列诸侯为承认年，不另截即位；终点-384保留通行田齐年表 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r33-qi-chunqiu；原-383/1(year)—-375/12(year)，现-383/1(year)—-375/12(year)。采用通行修订田齐年表-383→-375，保留 year；史记田齐早期年数与竹书系年有差异，不以旧年数倒推覆盖较可信通行表；田午为弟。",
+      "齐国逐端点复核2026-10-02：reign-qi-r34-qi-chunqiu；原-374/1(year)—-357/12(year)，现-374/1(year)—-357/12(year)。采用田齐通行年表-374→-357 year，未沿用《史记》桓六年/威元年旧系年；修正田齐桓公来源。",
+      "齐国逐端点复核2026-10-02：reign-qi-r35-qi-chunqiu；原-356/1(year)—-320/12(year)，现-356/1(year)—-320/12(year)。威王通行系年-356→-320，保留 year；世家旧年数及现代系年差异与田齐前段合并记录。",
+      "齐国逐端点复核2026-10-02：reign-qi-r36-qi-chunqiu；原-319/1(year)—-301/12(year)，现-319/1(year)—-301/12(year)。宣王通行系年-319→-301，保留 year；与姜齐宣公区分。",
+      "齐国逐端点复核2026-10-02：reign-qi-r37-qi-chunqiu；原-300/1(year)—-284/12(year)，现-300/1(year)—-284/12(year)。湣王通行系年-300→-284，五国伐齐与遇害年一致，保留 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r38-qi-chunqiu；原-283/1(year)—-265/12(year)，现-283/1(year)—-265/12(year)。襄王元年-283、十九年卒-265，通行系年与世家相符，保留 year。",
+      "齐国逐端点复核2026-10-02：reign-qi-r39-qi-chunqiu；原-264/1(year)—-221/12(year)，现-264/1(year)—-221/12(year)。王建元年-264、四十四年秦灭齐-221，通行系年与世家相符，保留 year，修正人物来源。"
     ]
   }
 }

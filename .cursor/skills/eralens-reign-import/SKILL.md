@@ -34,6 +34,7 @@ description: >-
 - 以下情况不机械后移：一年短祚、史料明确未逾年改元、真正并立/旁支、同年内有可核时长。已知月日时按史料月日。
 - 混合精度和相邻区间统一走 `packages/shared/src/timelineOwnership.ts`，底层由 `timelineIntervals.ts` 按日历日执行边界归属。生成器、API、布局和详情不得另写 `+1 年/月` 或端点判断。
 - 日期精度、历法和 confidence 分类统一遵循 [eralens-date-handling](../eralens-date-handling/SKILL.md)。
+- 不确定在位不分配都城、不显示推算时长；都城保留在王朝级，详情仅保留在位事实。执行 [不确定区间的展示与都城归属](../eralens-date-handling/SKILL.md#不确定区间的展示与都城归属)，不得按时间轴定位区间批量补君主都城关联。
 
 ## 空白与失考
 
@@ -45,7 +46,7 @@ description: >-
 - **年代失考**：知道是谁但边界为推算/均分。为各端点填写新日期 confidence，不用“史料缺”占位；兼容迁移阶段保留旧字段。
 - **资料未收齐**：继续查证，不能因为当前深度不足就标成“史料缺”。
 
-世次均分的锚点条件、置信度和留据方式统一遵循 [eralens-date-handling](../eralens-date-handling/SKILL.md)。
+先按 [年代依据的选择](../eralens-date-handling/SKILL.md#年代依据的选择) 采用最可信的具体日期，有出处的推定年份优先替换旧均分坐标；世次均分的锚点条件、置信度和留据方式统一遵循日期处理 Skill。
 
 日历相接的两王交界两侧必须同为失考或同为确定；可用共享边界校验规则核对，修正后把置信度直接写入 `cache.json`。灭国留白不相接，各自保留自己的边界状态。
 
@@ -70,6 +71,7 @@ description: >-
 - 运行时称呼不读取 `era_names`：泳道卡片优先展示非空 `reigns.title`；人物详情按年代优先展示庙谥（唐代起包括明清优先庙号，唐以前优先谥号），没有庙谥时才回退 `reigns.title`。
 - **人物/在位概述不能过于简单**：`bio` 应简略交代人物身份与世系/继承背景、主要相关人物或政权关系、在位年代，以及能说明其历史脉络的关键事迹或转折。保持精炼但信息完整，不能只写身份标签、单句评价或空泛结论；资料不足时如实限定，不补造细节。
 - `bio` 只写历史内容，不写收录方法、年代插值或绘制规范；这些写进 `cache.json.manifest.notes`。
+- 新增或丰富人物/在位信息时必须同步更新对应 person 的 `links` 和所属包的 `manifest.sources`，按 [来源维护](../eralens-period-import/SKILL.md#来源维护) 执行，确保详情“来源”栏包含本次采用的依据。
 - 修改人物、reign 归属/称号或王朝名后，确认 `persons.search_terms` 触发器刷新；批量改写后执行 `SELECT rebuild_person_search_terms();`。
 
 ## 工作流
@@ -101,6 +103,7 @@ node data/imports/lib/auditPreQinXingShi.mjs
 
 - [ ] 无重复 person/reign，无未定性的空白
 - [ ] 原始史料日期与接续裁定可追溯，精度和 confidence 正确
+- [ ] person 的 `links` 与 `manifest.sources` 已同步更新，详情“来源”栏已核对
 - [ ] 插值只发生在连续世系与可信共同锚点之间
 - [ ] 人物/在位概述简洁说明身份背景、相关人物、在位年代和关键历史脉络
 - [ ] 并立、主线、`is_main` 与 `claim_role` 语义正确

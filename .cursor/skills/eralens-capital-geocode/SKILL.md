@@ -16,6 +16,8 @@ description: >-
 
 **不要**在运行时 API 调高德；坐标与 `modernName` 一并写入 `data/imports/dynasty-capitals/cache.json` 的 `capitals` 记录。
 
+每次补充或修改都城数据，必须按 [来源维护](../eralens-period-import/SKILL.md#来源维护) 同步更新 capital 的 `links` 与 `manifest.sources`；地理编码说明不能替代历史依据，导入后核对都城详情“来源”栏。
+
 ## 前置
 
 本机 Cursor 已配置 MCP **`user-amap-maps-streamableHTTP`**，主要工具：

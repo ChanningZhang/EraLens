@@ -13,6 +13,7 @@ import {
   eventSpanAbs,
   formatYear,
   fromAbsMonth,
+  hasUncertainDateRange,
   rangesIntersect,
   fallbackLaneColorToken,
   getDynastyLaneGroup,
@@ -316,7 +317,10 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     () => {
       const capitals = capitalsQuery.data ?? [];
       const activeReigns = activeReignsAtAbs(data?.reigns ?? [], labelAnchorAbs);
-      const activeReignDynasties = new Set(activeReigns.map((reign) => reign.dynastyId));
+      // An inferred reign cannot narrow the dynasty's own capital map records.
+      const activeReignDynasties = new Set(
+        activeReigns.filter((reign) => !hasUncertainDateRange(reign)).map((reign) => reign.dynastyId),
+      );
       const ownedAtAnchor = capitalsForReigns(activeReigns, data?.reigns ?? [], capitals)
         .filter((capital) => capital.startAbs <= labelAnchorAbs && capital.endAbs >= labelAnchorAbs);
       const ownedIds = new Set(ownedAtAnchor.map((capital) => capital.id));

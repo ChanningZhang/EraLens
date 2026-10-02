@@ -62,6 +62,7 @@ Task Progress:
 - 改年、切年、正统窗口前，用来源的**原始在位年**，不要在已后移过的日期上再切。
 - 处理相邻时间段必须调用 `packages/shared/src/timelineOwnership.ts`；区间端点和混合精度归属遵循 [eralens-date-handling](../eralens-date-handling/SKILL.md)。真正并存的数据保留并行，并通过 `claim_track` 或实体语义分组表达。
 - 争议取舍写入对应 `cache.json.manifest.notes`，并在 `cache.json.manifest.sources` 附来源。
+- 修复事实时必须同步核对并更新条目来源，按 [来源维护](../eralens-period-import/SKILL.md#来源维护) 更新适用记录的 `links` 与所属包的 `manifest.sources`，不能修完正文或日期却遗漏详情“来源”栏。
 
 ### 2. 修哪里
 
@@ -116,7 +117,7 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 
 - 泳道卡片小字优先显示非空 `reigns.title`；title 为空时按年代选择人物庙谥：唐代起（包括明清）庙号优先于谥号，唐以前谥号优先。`reigns.era_names` 不参与称呼选择。
 - 明清皇帝的年号式泳道卡片称呼在导入时预先写入 `reigns.title`；`era_names` 仍保存完整年号列表，供详情事实展示和数据检索使用。朱元璋吴王段（`吴`）、努尔哈赤（`太祖`）、皇太极（`太宗`）保留原称号例外。
-- 人物详情页不优先 `reigns.title`：按在位起始年选择庙谥，唐以前谥号优先，唐代起（包括明清）庙号优先，再回退到另一种庙谥，最后才回退 `reigns.title`。此规则与泳道卡片优先 title 的规则分开维护。
+- 人物详情页不优先 `reigns.title`：按在位起始年选择庙谥，唐以前谥号优先，唐代起（包括明清）庙号优先，再回退到另一种庙谥，随后依次回退 `reigns.title`、`persons.title`、人物姓名。此规则与泳道卡片优先 title 的规则分开维护。
 - 先秦卡片：主行读 `posthumous_name` / `reigns.title`；副行私名靠 `ancestral_xing` / `clan_shi` 去姓。
 - 先秦 `persons.ancestralXing` / `persons.clanShi` 直接写入时期包 `cache.json`；不要在生成时套模板或人物覆盖。
 
@@ -147,6 +148,7 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 - [ ] 审计脚本无新增告警（或 notes 解释例外）
 - [ ] `validate-import.mjs` 通过
 - [ ] 时间轴卡片、详情抽屉、搜索、tooltip 与史料一致
+- [ ] 本次修复依据已同步到 `manifest.sources` 与适用条目的 `links`，详情“来源”栏已核对
 - [ ] diff 中无 `if (personId ===` / `if (reignId ===` 式个案（除非用户已批准）
 
 ## 延伸阅读

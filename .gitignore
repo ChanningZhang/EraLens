@@ -9,3 +9,4 @@ coverage
 .vite
 data/mobile/*.sqlite
 data/mobile/*.sqlite-*
+.playwright-mcp

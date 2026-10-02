@@ -1,7 +1,7 @@
 import type { CapitalRole, DynastyCapital, EntityRef, Reign } from "./schema";
 import { isUncertainDateConfidence } from "./reignBoundaries";
-import { formatDaySpanDuration, formatReignDurationLabel } from "./reignVisual";
-import { formatAbsSpanDurationLabel, formatYear, formatYearMonth, absMonth } from "./time";
+import { formatReignDurationLabel } from "./reignVisual";
+import { confidencePrecision, formatHistoricalDate, hasUncertainDateRange } from "./historicalDate";
 import {
   effectiveIntervalEndPoint,
   effectiveIntervalStartAbs,
@@ -66,27 +66,14 @@ function formatTenureRangeLabel(
     point: CapitalTimePoint,
     precision: Reign["precision"] | undefined,
     confidence: Reign["start"]["confidence"] | undefined,
-  ): string => {
-    if ((precision ?? "year") === "year" && isUncertainDateConfidence(confidence)) {
-      return "？";
-    }
-    if (precision === "day" && point.day != null) {
-      return `${formatYearMonth(point.year, point.month)}${point.day}日`;
-    }
-    if (precision === "month") {
-      return formatYearMonth(point.year, point.month);
-    }
-    return formatYear(point.year);
-  };
+  ): string => formatHistoricalDate({ ...point, confidence: confidence ?? precision ?? "year" });
 
   const startLabel = formatPoint(start, startPrecision, startConfidence);
   if (isOngoing) return `${startLabel} — 至今`;
   const endLabel = formatPoint(end, endPrecision, endConfidence);
-  return startLabel === endLabel && startLabel !== "？"
+  return startLabel === endLabel && !isUncertainDateConfidence(startConfidence) && !isUncertainDateConfidence(endConfidence)
     ? startLabel
-    : startLabel === "？" && endLabel === "？"
-      ? "？－？"
-      : `${startLabel} — ${endLabel}`;
+    : `${startLabel} — ${endLabel}`;
 }
 
 export function capitalTenureSubtitle(capital: DynastyCapital): string | undefined {
@@ -98,14 +85,9 @@ export function capitalTenureSubtitle(capital: DynastyCapital): string | undefin
 }
 
 export function capitalDateRangeLabel(capital: DynastyCapital): string {
-  const pointLabel = (point: CapitalTimePoint, precision: DynastyCapital["precision"]) => {
-    if (precision === "day" && point.day != null) {
-      return `${formatYearMonth(point.year, point.month)}${point.day}日`;
-    }
-    if (precision === "month") return formatYearMonth(point.year, point.month);
-    return formatYear(point.year);
-  };
-  return `${pointLabel(capital.start, capital.precision)} — ${pointLabel(capital.end, capital.endPrecision ?? capital.precision)}`;
+  const start = formatHistoricalDate({ ...capital.start, confidence: capital.start.confidence ?? capital.precision ?? "year" });
+  const end = formatHistoricalDate({ ...capital.end, confidence: capital.end.confidence ?? capital.endPrecision ?? capital.precision ?? "year" });
+  return `${start} — ${end}`;
 }
 
 export function dynastyCapitalRelatedItems(
@@ -146,21 +128,22 @@ export function buildReignCapitalTenures(
       const startAbs = effectiveIntervalStartAbs(overlapInterval);
       const start = effectiveIntervalStartPoint(overlapInterval);
       const end = effectiveIntervalEndPoint(overlapInterval);
-      const startPrecision = startsAtReignBoundary ? reign.precision : capital.precision;
-      const endPrecision = endsAtReignBoundary
-        ? reign.precision
-        : (capital.endPrecision ?? capital.precision);
-      const duration = endsAtReignBoundary && reign.isOngoing
-        ? undefined
-        : startPrecision === "day" || endPrecision === "day"
-          ? formatDaySpanDuration(start, end, overlapInterval.endInclusive - overlapInterval.startExclusive)
-          : formatAbsSpanDurationLabel(
-              start,
-              end,
-              absMonth(start.year, start.month),
-              absMonth(end.year, end.month),
-              startPrecision === "year" && endPrecision === "year" ? "year" : "month",
-            );
+      // Each clipped endpoint inherits the confidence of the boundary that supplied it.
+      const startConfidence = startsAtReignBoundary
+        ? reign.start.confidence ?? reign.precision ?? "year"
+        : capital.start.confidence ?? capital.precision ?? "year";
+      const endConfidence = endsAtReignBoundary
+        ? reign.end.confidence ?? reign.precision ?? "year"
+        : capital.end.confidence ?? capital.endPrecision ?? capital.precision ?? "year";
+      const startPrecision = confidencePrecision(startConfidence);
+      const endPrecision = confidencePrecision(endConfidence);
+      const isOngoing = endsAtReignBoundary && reign.isOngoing;
+      const duration = formatReignDurationLabel({
+        ...reign,
+        start: { ...start, confidence: startConfidence },
+        end: { ...end, confidence: endConfidence },
+        isOngoing,
+      }, overlapInterval);
       return {
         capital: {
           ref: { type: "capital" as const, id: capital.id },
@@ -174,9 +157,9 @@ export function buildReignCapitalTenures(
             end,
             startPrecision,
             endPrecision,
-            startsAtReignBoundary ? reign.start.confidence : undefined,
-            endsAtReignBoundary ? reign.end.confidence : undefined,
-            endsAtReignBoundary && reign.isOngoing,
+            startConfidence,
+            endConfidence,
+            isOngoing,
           ),
           abs: startAbs,
           ...(duration ? { duration } : {}),
@@ -203,6 +186,7 @@ export function buildReignTenureCapitalRows(
   capitals: readonly DynastyCapital[],
   dynastyReigns: readonly Reign[] = [reign],
 ): ReignCapitalTenureRow[] {
+  if (hasUncertainDateRange(reign)) return [];
   const rows = buildReignCapitalTenures(reign, capitals, dynastyReigns);
   if (rows.length > 0) return rows;
   // The detail row describes the recorded reign span. Ownership clipping is

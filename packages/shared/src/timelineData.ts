@@ -426,6 +426,22 @@ export function buildEntityDetail(
     const poetryRelated = poetryRelatedItems(dynastyEvents);
     const eventRelated = eventRelatedItems(dynastyEvents);
     const capitalRelated = dynastyCapitalRelatedItems(dynasty.id, store.capitals ?? []);
+    // Explicit associations also cover people whose reign dates are unknown.
+    // Keep their membership independent of dated reigns or concurrent claims.
+    const associatedPersonIds = [...new Set(store.relations
+      .filter((relation) => relation.kind === "other")
+      .sort((a, b) => a.id.localeCompare(b.id))
+      .flatMap((relation) => {
+        const other = relation.fromRef === refKey(ref) ? relation.toRef
+          : relation.toRef === refKey(ref) ? relation.fromRef : undefined;
+        const parsed = other ? parseRef(other) : null;
+        return parsed?.type === "person" && personMap.has(parsed.id) ? [parsed.id] : [];
+      }))];
+    const personRelated: RelatedItem[] = associatedPersonIds.map((id) => ({
+      ...buildRelatedSummary({ type: "person", id }),
+      abs: personSearchAnchorAbs(personMap.get(id)!, store.reigns),
+      group: "person",
+    }));
     return {
       ref,
       title: dynasty.name,
@@ -441,7 +457,7 @@ export function buildEntityDetail(
         { label: "范围", value: dynasty.scope === "cn" ? "中国史" : dynasty.scope },
       ],
       summary: dynasty.note,
-      related: [...capitalRelated, ...eventRelated, ...idiomRelated, ...poetryRelated],
+      related: [...capitalRelated, ...eventRelated, ...idiomRelated, ...poetryRelated, ...personRelated],
       capitalTenures: [],
       links: [],
     };

@@ -38,11 +38,13 @@ description: >-
 - `dynasty_capitals` 沿用 `GCJ02`，优先用高德地理编码并反查省市；坐标在导入期烘焙，运行时不调用地图服务。
 - `event_locations` 沿用 `WGS84`。坐标来源须明确为 WGS84；若原始来源是 GCJ-02，必须用项目认可、可复现的转换后再入库并记录方法。
 - 地点 `links` 保存支持古今对应和定位的直接来源；地图搜索只能辅助定位，不能替代历史依据。
+- 新增或丰富都城、事件地点时必须同步更新记录的 `links` 与所属包的 `manifest.sources`，按 [来源维护](../eralens-period-import/SKILL.md#来源维护) 执行，并核对都城详情“来源”栏。
 
 ## 王朝都城
 
 - `role`：`primary`（京师）、`secondary`（陪都）、`temporary`（行在）。不要因短期驻跸就自动建都城。
 - 时段端点日期、精度和置信度遵循 [eralens-date-handling](../eralens-date-handling/SKILL.md)。
+- 不确定时段的都城仅保留在王朝级，不下沉到各段在位；在位或都城任一端点为近似/插值时，不生成君主都城任期，也不以显式关联绕过。具体展示与时长规则见 [不确定区间的展示与都城归属](../eralens-date-handling/SKILL.md#不确定区间的展示与都城归属)。
 - 相邻都城时段的归属统一走 `timelineOwnership.ts`；不得手写 `+1` 截断。不同角色、不同地点或并行政权可真实并存，不由区间解析器互相裁掉。
 - 并立政权的都城用与 reign 相同的 `claim_track`。同一王朝/track 在同一时段有多个都城时，必须由角色或史料语义说明共存。
 - 都城只属于特定君主或不能由王朝、track、日期无歧义推断时，写 `reign_capitals` 显式关联。更新前先清理该 reign 的陈旧关联，再 `ON CONFLICT DO NOTHING` 插入正确集合。
@@ -93,6 +95,7 @@ node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/impor
 ## 验收
 
 - [ ] 古称、今址、坐标、坐标系和来源一致
+- [ ] `links` 与 `manifest.sources` 已同步更新，适用详情的“来源”栏已核对
 - [ ] 争议位置、代表点和范围误差已写入 note
 - [ ] 都城 role、时段、track 与 reign 关联无歧义
 - [ ] 事件地点不是把大范围行动伪装成精确点
