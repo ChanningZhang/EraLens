@@ -710,11 +710,19 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "元恪之子，515—528年在位，史称孝明帝。即位后由生母胡太后临朝，成年后试图收回权力；528年胡太后毒杀他，尔朱荣借机发动河阴之变。",
+      "bio": "元恪之子，515—528年在位，史称孝明帝。即位后由生母胡太后临朝，成年后试图收回权力；528年胡太后与郑俨、徐纥合谋将其毒杀，尔朱荣借机发动河阴之变。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/魏孝明帝"
+        },
+        {
+          "label": "《资治通鉴》卷152",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷152"
+        },
+        {
+          "label": "《魏书》卷13·皇后列传",
+          "url": "https://zh.wikisource.org/zh-hans/魏書/卷13"
         }
       ],
       "birth": null,
@@ -724,6 +732,85 @@
       ],
       "templeNames": [],
       "title": "魏孝明帝"
+    },
+    {
+      "id": "yuan-shi-xiaoming-daughter",
+      "name": "元氏",
+      "altNames": [
+        "元姑娘",
+        "孝明帝之女",
+        "女帝元氏"
+      ],
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "孝明帝元诩与潘充华之女，姓名失载。528年孝明帝死后，胡太后以皇子名义立她为帝，旋即承认其为皇女，改立临洮王世子元钊；此后事迹失载。",
+      "links": [
+        {
+          "label": "维基百科：孝明帝之女",
+          "url": "https://zh.wikipedia.org/wiki/元氏_(魏孝明帝女)"
+        },
+        {
+          "label": "《资治通鉴》卷152",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷152"
+        },
+        {
+          "label": "《魏书》卷13·皇后列传",
+          "url": "https://zh.wikisource.org/zh-hans/魏書/卷13"
+        }
+      ],
+      "birth": {
+        "year": 528,
+        "month": 1,
+        "abs": 6336,
+        "confidence": "year"
+      },
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "女帝元氏"
+    },
+    {
+      "id": "yuan-zhao",
+      "name": "元钊",
+      "altNames": [
+        "北魏幼主",
+        "魏幼主"
+      ],
+      "roles": [
+        "皇帝"
+      ],
+      "bio": "临洮王元宝晖之子、孝文帝元宏曾孙。528年孝明帝死后，胡太后先立皇女，旋改立年幼的元钊，继续临朝。尔朱荣拥立元子攸并进军洛阳，同年在河阴将元钊与胡太后沉入黄河。",
+      "links": [
+        {
+          "label": "维基百科：元钊",
+          "url": "https://zh.wikipedia.org/wiki/元钊"
+        },
+        {
+          "label": "《资治通鉴》卷152",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷152"
+        },
+        {
+          "label": "《魏书》卷13·皇后列传",
+          "url": "https://zh.wikisource.org/zh-hans/魏書/卷13"
+        }
+      ],
+      "birth": {
+        "year": 526,
+        "month": 1,
+        "abs": 6312,
+        "confidence": "year"
+      },
+      "death": {
+        "year": 528,
+        "month": 5,
+        "abs": 6340,
+        "day": 17,
+        "confidence": "day"
+      },
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "魏幼主"
     },
     {
       "id": "yuan-zi-you",
@@ -736,6 +823,14 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/魏孝庄帝"
+        },
+        {
+          "label": "《资治通鉴》卷152",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷152"
+        },
+        {
+          "label": "《魏书》卷10·孝庄纪",
+          "url": "https://zh.wikisource.org/zh-hans/魏書/卷10"
         }
       ],
       "birth": null,
@@ -1207,18 +1302,28 @@
         "太后",
         "政治家"
       ],
-      "bio": "北魏灵太后，孝明帝生母，毒杀明帝，河阴之变后被沉河；她毒杀孝明帝并另立幼主，尔朱荣进军洛阳后将她与幼主投入黄河。",
+      "bio": "北魏灵太后，孝明帝元诩生母，两度临朝。528年与郑俨、徐纥合谋毒杀孝明帝，先立孝明帝之女，旋改立幼主元钊；尔朱荣进军洛阳后，在河阴将她与元钊沉入黄河。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/胡太后"
+        },
+        {
+          "label": "《资治通鉴》卷152",
+          "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷152"
+        },
+        {
+          "label": "《魏书》卷13·皇后列传",
+          "url": "https://zh.wikisource.org/zh-hans/魏書/卷13"
         }
       ],
       "birth": null,
       "death": {
         "year": 528,
-        "month": 4,
-        "abs": 6339
+        "month": 5,
+        "abs": 6340,
+        "day": 17,
+        "confidence": "day"
       },
       "posthumousNames": [],
       "templeNames": [],
@@ -1801,6 +1906,58 @@
       "isMain": false
     },
     {
+      "id": "reign-yuan-shi-xiaoming-daughter",
+      "dynastyId": "wei-north",
+      "personId": "yuan-shi-xiaoming-daughter",
+      "title": "女帝",
+      "eraNames": [
+        "武泰"
+      ],
+      "start": {
+        "year": 528,
+        "month": 4,
+        "abs": 6339,
+        "day": 1,
+        "confidence": "day"
+      },
+      "end": {
+        "year": 528,
+        "month": 4,
+        "abs": 6339,
+        "day": 1,
+        "confidence": "day"
+      },
+      "startAbs": 6339,
+      "endAbs": 6339,
+      "isMain": false
+    },
+    {
+      "id": "reign-yuan-zhao",
+      "dynastyId": "wei-north",
+      "personId": "yuan-zhao",
+      "title": "幼主",
+      "eraNames": [
+        "武泰"
+      ],
+      "start": {
+        "year": 528,
+        "month": 4,
+        "abs": 6339,
+        "day": 2,
+        "confidence": "day"
+      },
+      "end": {
+        "year": 528,
+        "month": 5,
+        "abs": 6340,
+        "day": 17,
+        "confidence": "day"
+      },
+      "startAbs": 6339,
+      "endAbs": 6340,
+      "isMain": false
+    },
+    {
       "id": "reign-yuan-zi-you",
       "dynastyId": "wei-north",
       "personId": "yuan-zi-you",
@@ -1808,9 +1965,9 @@
       "eraNames": [],
       "start": {
         "year": 528,
-        "month": 4,
-        "abs": 6339,
-        "day": 1,
+        "month": 5,
+        "abs": 6340,
+        "day": 17,
         "confidence": "day"
       },
       "end": {
@@ -1820,7 +1977,7 @@
         "day": 24,
         "confidence": "day"
       },
-      "startAbs": 6339,
+      "startAbs": 6340,
       "endAbs": 6360,
       "isMain": false
     },
@@ -3117,19 +3274,21 @@
         "wei-north"
       ],
       "participantIds": [
-        "erzhu-rong"
+        "erzhu-rong",
+        "hu-taihou",
+        "yuan-zhao"
       ],
       "id": "he-yin-massacre",
       "name": "河阴之变",
-      "dateNote": "528年，尔朱荣于河阴屠杀百官",
+      "dateNote": "528年，尔朱荣在河阴杀害胡太后、幼主元钊并屠杀百官。史书记于农历四月；据元钊条目换算为公历5月，事件整体保留月精度。",
       "at": {
         "year": 528,
-        "month": 12,
-        "abs": 6347,
-        "confidence": "year"
+        "month": 5,
+        "abs": 6340,
+        "confidence": "month"
       },
-      "summary": "尔朱荣于河阴屠杀北魏公卿两千余人，后诛杀孝明帝。",
-      "atAbs": 6347
+      "summary": "尔朱荣在河阴将胡太后与幼主元钊沉入黄河，随后屠杀北魏王公朝臣两千余人。",
+      "atAbs": 6340
     }
   ],
   "relations": [
@@ -3418,7 +3577,7 @@
   ],
   "supplementalEventDynasties": [],
   "supplementalEventParticipants": [],
-  "preSql": "DELETE FROM event_participants WHERE event_id IN ('song-liu-founded', 'qi-nan-founded', 'liang-nan-founded', 'chen-nan-founded', 'qi-bei-founded', 'zhou-bei-founded', 'yang-jian-usurp', 'sui-chen-unify');\nDELETE FROM event_dynasties WHERE event_id IN ('song-liu-founded', 'qi-nan-founded', 'liang-nan-founded', 'chen-nan-founded', 'qi-bei-founded', 'zhou-bei-founded', 'yang-jian-usurp', 'sui-chen-unify');\nDELETE FROM events WHERE id IN ('song-liu-founded', 'qi-nan-founded', 'liang-nan-founded', 'chen-nan-founded', 'qi-bei-founded', 'zhou-bei-founded', 'yang-jian-usurp', 'sui-chen-unify');\nDELETE FROM relations WHERE id = 'rel-songliu-liu-yu-jin';",
+  "preSql": "DELETE FROM event_participants WHERE event_id IN ('song-liu-founded', 'qi-nan-founded', 'liang-nan-founded', 'chen-nan-founded', 'qi-bei-founded', 'zhou-bei-founded', 'yang-jian-usurp', 'sui-chen-unify');\nDELETE FROM event_dynasties WHERE event_id IN ('song-liu-founded', 'qi-nan-founded', 'liang-nan-founded', 'chen-nan-founded', 'qi-bei-founded', 'zhou-bei-founded', 'yang-jian-usurp', 'sui-chen-unify');\nDELETE FROM events WHERE id IN ('song-liu-founded', 'qi-nan-founded', 'liang-nan-founded', 'chen-nan-founded', 'qi-bei-founded', 'zhou-bei-founded', 'yang-jian-usurp', 'sui-chen-unify');\nDELETE FROM relations WHERE id = 'rel-songliu-liu-yu-jin';\nDELETE FROM reigns WHERE id = 'reign-yuan-zi-you-rival-528';",
   "reignCapitals": [],
   "manifest": {
     "slug": "nanbei-chao",
@@ -3771,6 +3930,26 @@
       {
         "label": "《“国号”中的历史流变》：国号、自称与方位史称",
         "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
+      },
+      {
+        "label": "维基百科：孝明帝之女",
+        "url": "https://zh.wikipedia.org/wiki/元氏_(魏孝明帝女)"
+      },
+      {
+        "label": "《资治通鉴》卷152",
+        "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷152"
+      },
+      {
+        "label": "《魏书》卷13·皇后列传",
+        "url": "https://zh.wikisource.org/zh-hans/魏書/卷13"
+      },
+      {
+        "label": "维基百科：元钊",
+        "url": "https://zh.wikipedia.org/wiki/元钊"
+      },
+      {
+        "label": "《魏书》卷10·孝庄纪",
+        "url": "https://zh.wikisource.org/zh-hans/魏書/卷10"
       }
     ],
     "notes": [
@@ -3788,7 +3967,10 @@
       "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
       "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
       "张丽华生年史料未载，清除原缓存推定值559；卒年修正为589年。",
-      "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。"
+      "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
+      "2026-10：据《资治通鉴》卷152、《魏书》卷13补齐孝明帝之女与幼主元钊，修正河阴之变误称尔朱荣杀孝明帝的概述。孝明帝之女的当日即位/废黜采用《通鉴》甲寅立皇女、乙卯钊即位的日序；《魏书》有“经数日”的不同叙述，依《通鉴》取一日记录。",
+      "元钊原始在位日期采用条目公历换算528-04-02至528-05-17；孝庄帝原始即位日为528-05-15（农历四月戊戌）。按用户要求删除5月15至17日的孝庄帝并立记录，仅保留元钊遇害后的主行记录；主行起点以元钊终点作为接续锚点，实际归属由timelineOwnership.ts统一裁定。孝庄帝后续终点及530年以后北魏世系不属本次修复范围。",
+      "胡太后与元钊卒日采用条目换算的528-05-17；河阴屠杀人数采用《通鉴》及《魏书·孝庄纪》的两千余人，《魏书·尔朱荣传》另记千三百余人。河阴之变整体记公历528年5月，避免将原记农历四月直接录成公历4月。"
     ]
   }
 }
