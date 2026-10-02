@@ -4,9 +4,7 @@ import {
   type Reign,
   buildPreQinClanContext,
   formatReignSpanTooltip,
-  formatHistoricalDate,
   isInterpolatedConfidence,
-  isApproximateConfidence,
   isParallelClaim,
   PARALLEL_CLAIM_LABEL,
   resolveReignCardGivenName,
@@ -24,6 +22,7 @@ import {
   shouldShowReignCardMeta,
 } from "../model/lod";
 import {
+  CAPTION_ROW_SPACING_PX,
   type PreparedReignGeometry,
 } from "../model/reignClusters";
 import { selectionStore } from "../state/selectionStore";
@@ -114,16 +113,12 @@ function ReignCardImpl({
       ? givenName
       : personName && personName !== label ? personName : label;
     const timeTooltip = formatReignSpanTooltip(reign);
-    const dateConfidenceNote = [
-      isApproximateConfidence(startConfidence) ? `起年${formatHistoricalDate({ ...reign.start, confidence: startConfidence })}` : null,
-      isApproximateConfidence(endConfidence) ? `迄年${formatHistoricalDate({ ...reign.end, confidence: endConfidence })}` : null,
-    ].filter(Boolean).join("；");
     const claimTooltip = parallel
       ? `${PARALLEL_CLAIM_LABEL}${reign.claimLabel ? `・${reign.claimLabel}` : ""}`
       : undefined;
     const tooltipText = buildReignCardTooltip({
       detail, showMeta, meta, tooltipName,
-      timeTooltip: dateConfidenceNote ? `${timeTooltip}\n${dateConfidenceNote}` : timeTooltip,
+      timeTooltip,
       claimTooltip,
     });
     return { label, barLayout, detail, parallel, meta, showMeta, regionLabel, claimTooltip, tooltipText };
@@ -230,6 +225,9 @@ function ReignCardImpl({
           className={
             captionPlacement === "above" ? styles.captionAbove : styles.caption
           }
+          style={{
+            ["--caption-offset-px" as string]: `${geometry.captionRow * CAPTION_ROW_SPACING_PX}px`,
+          }}
           onClick={selectReign}
           aria-label={`${label} 在位详情`}
         >

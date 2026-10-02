@@ -32,6 +32,11 @@ export const PARALLEL_STACK_ROW_HEIGHT = STACK_ROW_HEIGHT * PARALLEL_STACK_ROW_R
 export const PARALLEL_TRACK_GAP = 4;
 /** Matches the caption's 2px offset and 12px × 1.2 line height in ReignCard.module.css. */
 const CAPTION_BELOW_EXTENT = 2 + 12 * 1.2;
+/** Vertical step used when neighboring short-reign captions need separate rows. */
+export const CAPTION_ROW_SPACING_PX = 14;
+/** Matches the 12px caption font in ReignCard.module.css. */
+const CAPTION_GLYPH_WIDTH_PX = 12;
+const CAPTION_COLLISION_GAP_PX = 4;
 
 export type StackedReign = {
   reign: Reign;
@@ -52,12 +57,17 @@ export type PreparedReignGeometry = StackedCardUnit & {
   stackIndex: number;
   rowCount: number;
   overlapsLowerRow: boolean;
+  /** Extra caption row for short bars whose labels collide horizontally. */
+  captionRow: number;
 };
 
 export function prepareLaneReignGeometry(
   reigns: Reign[],
   laneGroups: readonly DynastyLaneGroup[] = [],
   rowHeight = STACK_ROW_HEIGHT,
+  pxPerMonth = 0,
+  personNames: ReadonlyMap<string, string> = new Map(),
+  personDisplay: ReadonlyMap<string, Parameters<typeof buildPreQinClanContext>[0]> = new Map(),
 ): { items: StackedReign[]; byId: Map<string, PreparedReignGeometry>; barHeight: number; rowCount: number } {
   const { items, rowCount } = assignReignStacks(reigns, laneGroups);
   const spans = new Map(reigns.map((reign) => [reign.id, resolveReignVisualSpan(reign, reigns, laneGroups)]));
@@ -74,12 +84,40 @@ export function prepareLaneReignGeometry(
       visualStart: visual.start,
       visualEndExclusive: visual.endExclusive,
       rowCount,
+      captionRow: 0,
       overlapsLowerRow: items.some((item) => {
         if (item.stackIndex <= span.stackIndex) return false;
         const lower = spans.get(item.reign.id)!;
         return lower.startAbs < span.endExclusive && lower.endExclusive > span.startAbs;
       }),
     });
+  }
+  if (pxPerMonth > 0) {
+    const candidates = items.flatMap(({ reign, stackIndex }) => {
+      const geometry = byId.get(reign.id)!;
+      const width = Math.max(0, geometry.visualEndExclusive - geometry.visualStart) * pxPerMonth;
+      const label = resolveReignCardLabel(reign, personNames.get(reign.personId), {
+        cardWidthPx: width,
+        clan: buildPreQinClanContext(personDisplay.get(reign.personId)),
+      });
+      if (!resolveReignBarLayout(width, [...label].length, geometry.unitHeight).captionBelow) return [];
+      if (resolveReignCaptionPlacement({
+        stackIndex,
+        rowCount,
+        overlapsLowerRow: geometry.overlapsLowerRow,
+      }) !== "below") return [];
+      const center = (geometry.visualStart + geometry.visualEndExclusive) * pxPerMonth / 2;
+      const captionWidth = Math.max(12, [...label].length * CAPTION_GLYPH_WIDTH_PX);
+      return [{ reignId: reign.id, left: center - captionWidth / 2, right: center + captionWidth / 2 }];
+    }).sort((a, b) => a.left - b.left || a.right - b.right);
+
+    const rowEnds: number[] = [];
+    for (const candidate of candidates) {
+      let row = rowEnds.findIndex((right) => candidate.left >= right + CAPTION_COLLISION_GAP_PX);
+      if (row < 0) row = rowEnds.length;
+      rowEnds[row] = candidate.right;
+      byId.get(candidate.reignId)!.captionRow = row;
+    }
   }
   return { items, byId, barHeight, rowCount };
 }
@@ -236,8 +274,16 @@ export function dynastyLaneHeightForViewport(
 ): number {
   const rowHeight = viewport.presentation?.rowHeightPx ?? STACK_ROW_HEIGHT;
   const padding = viewport.presentation?.lanePaddingPx ?? LANE_PADDING_TOP;
-  const barHeight = dynastyBarHeightForReigns(reigns, laneGroups, rowHeight);
-  const { items, rowCount } = assignReignStacks(reigns, laneGroups);
+  const prepared = prepareLaneReignGeometry(
+    reigns,
+    laneGroups,
+    rowHeight,
+    viewport.pxPerMonth,
+    personNames,
+    personDisplay,
+  );
+  const { items, rowCount } = prepared;
+  const barHeight = prepared.barHeight;
   let paintedBottom = barHeight;
 
   for (const reign of reigns) {
@@ -259,7 +305,11 @@ export function dynastyLaneHeightForViewport(
     if (resolveReignCaptionPlacement({ stackIndex, rowCount, overlapsLowerRow }) !== "below") continue;
 
     const { unitTop, unitHeight } = unit;
-    paintedBottom = Math.max(paintedBottom, unitTop + unitHeight + CAPTION_BELOW_EXTENT);
+    const captionRow = prepared.byId.get(reign.id)?.captionRow ?? 0;
+    paintedBottom = Math.max(
+      paintedBottom,
+      unitTop + unitHeight + CAPTION_BELOW_EXTENT + captionRow * CAPTION_ROW_SPACING_PX,
+    );
   }
 
   return padding * 2 + paintedBottom;

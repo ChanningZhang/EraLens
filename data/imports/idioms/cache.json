@@ -324,7 +324,7 @@
     },
     {
       "id": "guo-r1",
-      "name": "虢叔",
+      "name": "叔",
       "roles": [
         "君主"
       ],
@@ -402,7 +402,7 @@
     },
     {
       "id": "guo-r3",
-      "name": "虢城公",
+      "name": "城公",
       "roles": [
         "君主"
       ],
@@ -457,6 +457,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/虢公长父"
+        },
+        {
+          "label": "河南博物院《虢硕父簠》",
+          "url": "https://www.chnmus.net/ch/collection/appraise/details.html?id=512153734134559839"
         }
       ],
       "altNames": [
@@ -466,7 +470,9 @@
       ],
       "ancestralXing": "姬",
       "clanShi": "虢",
-      "posthumousNames": [],
+      "posthumousNames": [
+        "厉公"
+      ],
       "templeNames": [],
       "title": "虢公长父"
     },
@@ -493,7 +499,9 @@
       ],
       "ancestralXing": "姬",
       "clanShi": "虢",
-      "posthumousNames": [],
+      "posthumousNames": [
+        "宣公"
+      ],
       "templeNames": [],
       "title": "虢宣公"
     },
@@ -519,7 +527,9 @@
       ],
       "ancestralXing": "姬",
       "clanShi": "虢",
-      "posthumousNames": [],
+      "posthumousNames": [
+        "文公"
+      ],
       "templeNames": [],
       "title": "虢文公"
     },
@@ -634,7 +644,7 @@
     },
     {
       "id": "guo-ji-yifu",
-      "name": "姬挞",
+      "name": "挞",
       "title": "虢季易父",
       "posthumousNames": [],
       "templeNames": [],
@@ -3324,6 +3334,10 @@
       {
         "label": "师丞（五代世系与身份争议）",
         "url": "https://zh.wikipedia.org/wiki/师丞"
+      },
+      {
+        "label": "河南博物院《虢硕父簠》",
+        "url": "https://www.chnmus.net/ch/collection/appraise/details.html?id=512153734134559839"
       }
     ],
     "notes": [
@@ -3352,7 +3366,8 @@
       "早期时间定位采用共时关系，不按世次均分：guo-r1参照武王时期（-1046至-1043年）；guo-r2据《逸周书·王会》参照成王时期（-1042至-1021年）；guo-r3据班簋及昭穆时期说参照昭王至穆王时期（-995至-923年，沿用夏商周包的接续裁定坐标）。这些是关联史料活动窗口的示意位置，不是已考定的即位、死亡或完整在位年；两端均interpolated_by_other，显示?与波浪线，不显示确定时长、不分配个人都城。",
       "两处史料缺有名录明示为依据，君主人数不详。缺载段以普通Reign、system-missing-ruler与title=史料缺记录；示意定位分别参照康王时期（-1020至-996年）及共王至夷王时期（-922至-878年），仅表示相邻已知活动窗口之间的失考区段，两端interpolated_by_other，不主张空白在这些年份精确起讫。上述参照均来自xia-shang-zhou包确定类端点，经timelineOwnership取边界；未使用旧虚构均分边界作为推断锚点。",
       "guo-ji-yifu、guo-gui-gong、guo-you-shu、guo-de-shu、guo-shi-cheng：五代家族关系可考，但西虢君主身份、具体在位年及主序列衔接有争议；因此不造日期、不建并立在位或按世次均分。各人物链接同步保留身份争议来源，王朝详情以显式other关系列出人物。",
-      "2026-10-02按用户要求统一缺载段展示文案为“史料缺”；同步在位title、王朝概述及导入说明，保留两处断层与原日期置信度。"
+      "2026-10-02按用户要求统一缺载段展示文案为“史料缺”；同步在位title、王朝概述及导入说明，保留两处断层与原日期置信度。",
+      "称谓复核（2026-10）：河南博物院《虢硕父簠》明确虢公长父死后谥厉公；虢宣公、虢文公条目分别明确谥号为宣公、文公。posthumousNames 仅写谥号本体“厉公、宣公、文公”，不带国名；其余主序列虢国君主缺少可确认谥号依据，暂不补填。"
     ]
   },
   "postSql": "SELECT rebuild_person_search_terms();"

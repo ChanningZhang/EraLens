@@ -4,7 +4,7 @@
 
 | DB 列 | 类型 | 说明 |
 |---|---|---|
-| `persons.name` | text | 检索用姓名，君主带姓 |
+| `persons.name` | text | 常用姓名；先秦人物不带已单列到姓/氏字段的前缀 |
 | `persons.alt_names` | text[] | 别名，供搜索 |
 | `persons.ancestral_xing` | text? | 姓 |
 | `persons.clan_shi` | text? | 氏 |
@@ -29,7 +29,8 @@
 
 ## 先秦姓/氏
 
-- 姓写入 `ancestral_xing`，氏写入 `clan_shi`；`persons.name` 前缀用**姓**，氏不进 `name` 前缀。
+- 姓写入 `ancestral_xing`，氏写入 `clan_shi`；先秦 `persons.name` 只写私名/常用名，不重复姓或氏。未知姓名仍写 `？`，不拼接姓氏。
+- 搜索词由数据库根据 `ancestral_xing` / `clan_shi` 与 `name` 组合生成；需要补充通行叫法时写入 `alt_names`。
 - `ancestralXing`、`clanShi` 及适用数据标记直接写入 `cache.json`；SQL 生成不补默认值。
 - 审计：`node data/imports/lib/auditPreQinXingShi.mjs`
 
@@ -56,7 +57,7 @@
   "sources": [{ "label": "《左传》昭公三十一年", "url": "https://example.invalid/source" }],
   "notes": [
   "曹髦无谥，title 用高贵乡公；封号不写入 posthumous_name",
-  "莒郊公本名狂，入库 name=己狂，姓己来自诸侯表"
+  "莒郊公本名狂，入库 name=狂，姓己写入 ancestral_xing"
   ]
 }
 ```

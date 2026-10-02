@@ -1,7 +1,8 @@
-import type { Precision } from "./schema";
+import { confidencePrecision } from "./historicalDate";
+import type { HistoricalDateConfidence, Precision } from "./schema";
 import type { AbsMonth } from "./time";
 
-type TimePoint = { year: number; month: number; day?: number };
+type TimePoint = { year: number; month: number; day?: number; confidence?: HistoricalDateConfidence };
 
 /**
  * Absolute-day coordinates avoid rounding year-, month-, and day-precision
@@ -71,8 +72,13 @@ export function timelineInterval(
   startPrecision: Precision,
   endPrecision: Precision = startPrecision,
 ): LeftOpenRightClosedInterval {
+  // Endpoint confidence is canonical. Legacy record-level precision is only a
+  // fallback: a year-dated start must not turn a month/day-dated end into a
+  // whole-year bucket and erase the short reigns that follow it.
+  const effectiveStartPrecision = start.confidence ? confidencePrecision(start.confidence) : startPrecision;
+  const effectiveEndPrecision = end.confidence ? confidencePrecision(end.confidence) : endPrecision;
   const normalizedEnd =
-    endPrecision === "day" && end.day == null
+    effectiveEndPrecision === "day" && end.day == null
       ? {
           ...end,
           day:
@@ -81,8 +87,8 @@ export function timelineInterval(
               : daysInMonth(end.year, end.month),
         }
       : end;
-  const firstDay = dayNumber(pointForPrecision(start, startPrecision, false));
-  const dayAfterLast = dayNumber(pointForPrecision(normalizedEnd, endPrecision, true));
+  const firstDay = dayNumber(pointForPrecision(start, effectiveStartPrecision, false));
+  const dayAfterLast = dayNumber(pointForPrecision(normalizedEnd, effectiveEndPrecision, true));
   return { startExclusive: firstDay - 1, endInclusive: dayAfterLast - 1 };
 }
 

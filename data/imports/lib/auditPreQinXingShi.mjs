@@ -89,10 +89,30 @@ function auditRow(clan) {
   return missing;
 }
 
+function duplicateNameParts(person) {
+  if (!person?.name || person.name === "？") return [];
+  return [...new Set([person.ancestralXing, person.clanShi].filter(Boolean))].filter(
+    (part) =>
+      person.name.startsWith(part) &&
+      person.name.length > part.length &&
+      // A person known only by the clan designation (e.g. 涂山氏) has no
+      // private name to separate; this is not a duplicated name prefix.
+      person.name !== `${part}氏`,
+  );
+}
+
 function main() {
   const { persons, reigns } = loadSqlCorpus();
   const missing = [];
+  const repeatedPrefixes = [];
   const seenReign = new Set();
+
+  for (const [personId, person] of persons) {
+    const duplicateParts = duplicateNameParts(person);
+    if (duplicateParts.length) {
+      repeatedPrefixes.push({ personId, ...person, duplicateParts });
+    }
+  }
 
   for (const reign of cachedReigns) {
     if (reign.start.year >= PRE_IMPERIAL_START_YEAR) continue;
@@ -139,6 +159,13 @@ function main() {
     );
   }
   console.log(`Total: ${missing.length}`);
+  console.log("=== Pre-Qin names repeating structured 姓/氏 ===");
+  for (const row of repeatedPrefixes) {
+    console.log(
+      `${row.personId}\t${row.name}\tancestral_xing=${row.ancestralXing ?? ""}\tclan_shi=${row.clanShi ?? ""}\trepeated: ${row.duplicateParts.join(", ")}`,
+    );
+  }
+  console.log(`Total: ${repeatedPrefixes.length}`);
 }
 
 main();

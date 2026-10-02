@@ -489,7 +489,14 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       if (!prepared) {
         const records = collectLaneReigns(dynasty.id, reignsByDynasty, laneGroups);
         const { rulers: reigns, missing: missingReigns } = partitionReignRecords(records);
-        const geometry = prepareLaneReignGeometry(reigns, laneGroups, viewport.presentation.rowHeightPx);
+        const geometry = prepareLaneReignGeometry(
+          reigns,
+          laneGroups,
+          viewport.presentation.rowHeightPx,
+          viewport.pxPerMonth,
+          personNames,
+          personDisplay,
+        );
         const height = dynastyLaneHeightForViewport(
           reigns,
           laneGroups,

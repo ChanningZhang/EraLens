@@ -201,7 +201,7 @@
 }
 
 .caption {
-  top: calc(100% + 2px);
+  top: calc(100% + 2px + var(--caption-offset-px, 0px));
 }
 
 .captionAbove {

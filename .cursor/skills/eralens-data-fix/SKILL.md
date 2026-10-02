@@ -99,7 +99,7 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 
 | 列 | 存什么 | 不存什么 |
 |---|---|---|
-| `persons.name` | 可检索全名；君主**带姓**（`己狂` 不写 `狂`） | 谥号/庙号/年号、国号前缀 |
+| `persons.name` | 常用可检索姓名；先秦人物不带已拆入结构化字段的姓或氏（如存 `狂`，不存 `己狂`） | 先秦姓/氏前缀、谥号/庙号/年号、国号前缀 |
 | `ancestral_xing` | 姓（姬、姜、嬴） | 氏、国名 |
 | `clan_shi` | 氏（齐、晋、赵） | 姓 |
 | `posthumous_name` | 谥号本体 CSV（`武王`、`孝文皇帝`） | 国号、`少帝`/`末帝`/`后主` 等史称 |
@@ -118,7 +118,7 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 - 泳道卡片小字优先显示非空 `reigns.title`；title 为空时按年代选择人物庙谥：唐代起（包括明清）庙号优先于谥号，唐以前谥号优先。`reigns.era_names` 不参与称呼选择。
 - 明清皇帝的年号式泳道卡片称呼在导入时预先写入 `reigns.title`；`era_names` 仍保存完整年号列表，供详情事实展示和数据检索使用。朱元璋吴王段（`吴`）、努尔哈赤（`太祖`）、皇太极（`太宗`）保留原称号例外。
 - 人物详情页不优先 `reigns.title`：按在位起始年选择庙谥，唐以前谥号优先，唐代起（包括明清）庙号优先，再回退到另一种庙谥，随后依次回退 `reigns.title`、`persons.title`、人物姓名。此规则与泳道卡片优先 title 的规则分开维护。
-- 先秦卡片：主行读 `posthumous_name` / `reigns.title`；副行私名靠 `ancestral_xing` / `clan_shi` 去姓。
+- 先秦卡片：主行读 `posthumous_name` / `reigns.title`；副行从不带姓氏的 `persons.name` 读取私名，结构化姓氏用于检索和相关展示。
 - 先秦 `persons.ancestralXing` / `persons.clanShi` 直接写入时期包 `cache.json`；不要在生成时套模板或人物覆盖。
 
 字段细则与 INSERT 模板见 [reference.md](reference.md)；正反例见 [examples.md](examples.md)。
@@ -128,7 +128,7 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 | 症状 | 根因 | 修法 |
 |---|---|---|
 | 卡片显示「唐太宗」但详情无庙号 | 庙号只在 `title` | 写入 `persons.temple_name = '太宗'` |
-| 副行出现「姬发」重复姓 | `name` 已带姓缺 `ancestral_xing` | 补姓/氏列，或规范 `name` 为带姓检索名 |
+| 姓氏在先秦副行重复 | `name` 已含结构化的姓或氏 | 保留 `ancestral_xing` / `clan_shi`，从 `name` 去掉重复前缀；检索组合由结构化字段生成 |
 | 史称「少帝」当谥号显示 | 误写入 `posthumous_name` | 移到 `title`，清空 `posthumous_name` |
 | 检索「姜子牙」无结果 | 未建 `alt_names` | 加 `alt_names`，不改 API 特判 |
 | 上下叠两张卡 | 库内重复 `reign` / 旧宽跨度行 | SQL 去重或合并，禁止 CSS 遮盖 |
