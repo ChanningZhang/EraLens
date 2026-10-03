@@ -170,7 +170,6 @@ export function layoutReignFates(
         lane.top,
         personNames.get(reign.personId),
         buildPreQinClanContext(personDisplay.get(reign.personId)),
-        [],
         lane.geometryByReignId?.get(reign.id),
       );
       if (layout) layoutByReignId.set(reign.id, layout);

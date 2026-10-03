@@ -8,7 +8,7 @@ import {
   type Relation,
 } from "@eralens/shared";
 import { layoutReignFates } from "./reignFateLayout";
-import { LANE_PADDING_TOP, STACK_ROW_HEIGHT } from "./reignClusters";
+import { LANE_PADDING_TOP, STACK_ROW_HEIGHT, prepareLaneReignGeometry } from "./reignClusters";
 import { projectAbs } from "./coordinates";
 
 function pathCoords(path: string): { x: number; y: number }[] {
@@ -56,6 +56,31 @@ const hanLast: Reign = {
 };
 
 describe("layoutReignFates", () => {
+  it("keeps fate coordinates finite when using the stage's prepared card geometry", () => {
+    const relation: Relation = {
+      id: "fate-prepared-geometry",
+      fromRef: `person:${hanLast.personId}`,
+      toRef: `person:${yingZhengQin.personId}`,
+      kind: "surrender",
+      atAbs: absMonth(-230, 12),
+    };
+    const lanes = [
+      { dynastyId: hanLast.dynastyId, top: 80, records: [hanLast], color: COLOR_VALUES.grape },
+      { dynastyId: yingZhengQin.dynastyId, top: 140, records: [yingZhengQin], color: COLOR_VALUES.cinnabar },
+    ];
+    const preparedLanes = lanes.map(lane => ({
+      ...lane, geometryByReignId: prepareLaneReignGeometry(lane.records).byId,
+    }));
+    const expected = layoutReignFates([relation], [hanLast, yingZhengQin], lanes, viewport, new Map());
+    const actual = layoutReignFates([relation], [hanLast, yingZhengQin], preparedLanes, viewport, new Map());
+    expect(actual).toHaveLength(1);
+    expect(actual).toEqual(expected);
+    expect(actual[0].path).not.toContain("NaN");
+    for (const coordinate of ["originX", "originY", "eventX", "destinationX", "destinationY", "tickX", "tickTop", "tickHeight"] as const) {
+      expect(Number.isFinite(actual[0][coordinate])).toBe(true);
+    }
+  });
+
   it("projects fate anchors onto the current horizontal viewport without changing their lane heights", () => {
     const relation: Relation = {
       id: "rel-han-r10-ying-zheng-surrender",
