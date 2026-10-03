@@ -91,6 +91,7 @@ INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('dynasty', 
 INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('dynasty', 'han-west', 'event', 'zhangqian-mission') ON CONFLICT DO NOTHING;
 INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('dynasty', 'han-west', 'event', 'zhaojun-chusai') ON CONFLICT DO NOTHING;
 INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('dynasty', 'han-west', 'event', 'zhaoxuan-rule') ON CONFLICT DO NOTHING;
+INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('dynasty', 'han-zhao', 'event', 'liu-yao-change-country-name') ON CONFLICT DO NOTHING;
 INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('dynasty', 'han-zhao', 'event', 'wuhu-chaos') ON CONFLICT DO NOTHING;
 INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('dynasty', 'han-zhao', 'event', 'yongjia-disaster') ON CONFLICT DO NOTHING;
 INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('dynasty', 'jiaodong-warring', 'event', 'zhanguo') ON CONFLICT DO NOTHING;
@@ -887,6 +888,7 @@ INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('event', 'l
 INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('event', 'liu-bei-takes-yizhou', 'person', 'liu-zhang') ON CONFLICT DO NOTHING;
 INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('event', 'liu-enter-xianyang', 'person', 'liu-bang') ON CONFLICT DO NOTHING;
 INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('event', 'liu-enter-xianyang', 'person', 'ying-ziying') ON CONFLICT DO NOTHING;
+INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('event', 'liu-yao-change-country-name', 'person', 'liu-yao-jin') ON CONFLICT DO NOTHING;
 INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('event', 'liu-yu-north', 'person', 'liu-yu-jin') ON CONFLICT DO NOTHING;
 INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('event', 'liu-yu-north', 'person', 'yao-hong') ON CONFLICT DO NOTHING;
 INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('event', 'lv-regency', 'person', 'lv-zhi') ON CONFLICT DO NOTHING;
