@@ -17,7 +17,7 @@
     "reigns": 0,
     "events": 0,
     "relations": 0,
-    "eventLocations": 65
+    "eventLocations": 85
   },
   "sources": [
     {
@@ -383,12 +383,38 @@
     {
       "label": "中国第二历史档案馆：豫湘桂战役与衡阳保卫战",
       "url": "https://www.saac.gov.cn/zt/2014-09/15/content_67064_3.htm"
+    },
+    {
+      "label": "辽宁省文物局：北大营营房旧址",
+      "url": "https://whly.ln.gov.cn/whly/wlzt/lnww/zdwwbhdw/5803363F8215492CB7D711CE0B44F2DA/index.shtml"
+    },
+    {
+      "label": "中华人民共和国外交部：外交史上的今天（九一八事变）",
+      "url": "https://www.mfa.gov.cn/ziliao_674904/historytoday_674971/200309/t20030918_9284645.shtml"
+    },
+    {
+      "label": "高德地图：北大营营房旧址点位（GCJ-02）",
+      "url": "https://www.amap.com/place/B0FFHQA8E8"
+    },
+    {
+      "label": "国家档案局：上海首次线上全文公布抗战时期档案",
+      "url": "https://www.saac.gov.cn/daj/xwdt/202009/8bf331194d1a4d40a81cdffa440b8eaf.shtml"
+    },
+    {
+      "label": "上海市民政局：是谁打响“一·二八”淞沪抗战第一枪",
+      "url": "https://mzj.sh.gov.cn/lnb-wsws/20220207/97fe1737b42c42ad93b2c426450660f1.html"
+    },
+    {
+      "label": "OpenStreetMap：天通庵路附近代表点坐标（WGS84）",
+      "url": "https://www.openstreetmap.org/#map=15/31.276/121.483"
     }
   ],
   "notes": [
     "为可定位到具体遗址或区域的事件补地点；迁都事件取迁入地作为代表点，多地点或大范围事件在地点 note 中说明代表点含义。不能可靠定位的事件保持地点为空。",
     "坐标采用 WGS84；来源链接用于核对古称、今地与地点定位。",
     "新增长安事件地点。史料只定位至长安及征西府，府址具体遗址未定，采用汉长安城遗址范围近似坐标，不指向单一宫殿；事件地点坐标按WGS84记录。",
-    "2026-10：为民国包新增的抗战会战和战役配置事件地点；大范围会战仅选历史战役中心或关键转折点作 approximate 代表点，地点 note 明示不代表全战场。坐标取 OpenStreetMap 地理要素的 WGS84 经纬度。"
+    "2026-10：为民国包新增的抗战会战和战役配置事件地点；大范围会战仅选历史战役中心或关键转折点作 approximate 代表点，地点 note 明示不代表全战场。坐标取 OpenStreetMap 地理要素的 WGS84 经纬度。",
+    "2026-10：为九一八事变添加北大营代表地点；事变始于柳条湖铁路段并扩展至北大营、沈阳城，单点选择北大营以代表初期主要交战。坐标由高德GCJ-02点位按常用逆迭代方法转换为WGS84，精度为approximate。",
+    "2026-10：为一·二八淞沪抗战添加闸北天通庵车站附近代表地点；战事扩及上海多处，坐标仅表示初期战斗区域，WGS84 approximate。"
   ]
 }

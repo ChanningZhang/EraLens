@@ -138,6 +138,57 @@
       "title": "国民政府主席"
     },
     {
+      "id": "wang-jingwei",
+      "name": "汪精卫",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "曾任中国国民党要职，抗战期间脱离重庆国民政府并与日本合作。1940年在南京建立汪伪国民政府，先任代主席、后任主席；1944年赴日治疗并由陈公博代理，11月病逝。",
+      "links": [
+        {
+          "label": "中国抗日战争史：汪精卫建立伪国民政府",
+          "url": "https://szzy.7lue.cn/read/eddf364fc59f9d9306913a56193b3e20/2dfe4578f86d60f92960c1df4e84e7b7.md"
+        },
+        {
+          "label": "中国通史：汪精卫国民政府的僭立",
+          "url": "https://szzy.7lue.cn/read/5d14e01721b1a1ebbcbf1e7f1/fb899fb6618b6ef45941a56359ca9999.md"
+        }
+      ],
+      "birth": null,
+      "death": {
+        "year": 1944,
+        "month": 11,
+        "abs": 23338,
+        "confidence": "month"
+      },
+      "altNames": [
+        "汪兆铭"
+      ],
+      "title": "国民政府主席"
+    },
+    {
+      "id": "chen-gongbo",
+      "name": "陈公博",
+      "roles": [
+        "政治家"
+      ],
+      "bio": "汪精卫政权重要成员，曾任立法院长、行政院长。1944年汪精卫赴日治疗后代理汪伪国民政府主席，1945年8月16日宣布解散该政权；抗战胜利后被捕并以汉奸罪审判。",
+      "links": [
+        {
+          "label": "中国抗日战争史：汪精卫建立伪国民政府",
+          "url": "https://szzy.7lue.cn/read/eddf364fc59f9d9306913a56193b3e20/2dfe4578f86d60f92960c1df4e84e7b7.md"
+        },
+        {
+          "label": "人民日报党史频道：汪伪政权的最后一天",
+          "url": "https://dangshi.people.com.cn/n1/2016/0811/c85037-28628608.html"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "title": "国民政府代主席"
+    },
+    {
       "id": "jiang-jieshi",
       "name": "蒋介石",
       "roles": [
@@ -743,6 +794,40 @@
       "altNames": []
     },
     {
+      "id": "jiang-guangnai",
+      "name": "蒋光鼐",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "国民革命军将领，淞沪抗战期间任第十九路军总指挥，与蔡廷锴等指挥上海守军抵抗日军进攻。",
+      "links": [
+        {
+          "label": "上海市民政局：是谁打响“一·二八”淞沪抗战第一枪",
+          "url": "https://mzj.sh.gov.cn/lnb-wsws/20220207/97fe1737b42c42ad93b2c426450660f1.html"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
+      "id": "cai-tingkai",
+      "name": "蔡廷锴",
+      "roles": [
+        "军事家"
+      ],
+      "bio": "国民革命军将领，淞沪抗战期间任第十九路军军长，参与指挥驻沪部队抵抗日军进攻。",
+      "links": [
+        {
+          "label": "上海市民政局：是谁打响“一·二八”淞沪抗战第一枪",
+          "url": "https://mzj.sh.gov.cn/lnb-wsws/20220207/97fe1737b42c42ad93b2c426450660f1.html"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": []
+    },
+    {
       "id": "zhang-xueliang",
       "name": "张学良",
       "roles": [
@@ -1339,6 +1424,90 @@
       "isMain": true
     },
     {
+      "id": "reign-wang-jingwei-acting-chairman",
+      "dynastyId": "roc",
+      "personId": "wang-jingwei",
+      "title": "国民政府代主席",
+      "eraNames": [],
+      "start": {
+        "year": 1940,
+        "month": 3,
+        "day": 30,
+        "abs": 23282,
+        "confidence": "day"
+      },
+      "end": {
+        "year": 1940,
+        "month": 11,
+        "day": 28,
+        "abs": 23290,
+        "confidence": "day"
+      },
+      "startAbs": 23282,
+      "endAbs": 23290,
+      "isInformalMonarch": false,
+      "isMain": false,
+      "claimTrack": "nanjing",
+      "claimLabel": "南京政府",
+      "claimRole": "rival"
+    },
+    {
+      "id": "reign-wang-jingwei-chairman",
+      "dynastyId": "roc",
+      "personId": "wang-jingwei",
+      "title": "国民政府主席",
+      "eraNames": [],
+      "start": {
+        "year": 1940,
+        "month": 11,
+        "day": 28,
+        "abs": 23290,
+        "confidence": "day"
+      },
+      "end": {
+        "year": 1944,
+        "month": 3,
+        "day": 22,
+        "abs": 23330,
+        "confidence": "day"
+      },
+      "startAbs": 23290,
+      "endAbs": 23330,
+      "isInformalMonarch": false,
+      "isMain": false,
+      "claimTrack": "nanjing",
+      "claimLabel": "南京政府",
+      "claimRole": "rival"
+    },
+    {
+      "id": "reign-chen-gongbo-acting-chairman",
+      "dynastyId": "roc",
+      "personId": "chen-gongbo",
+      "title": "国民政府代主席",
+      "eraNames": [],
+      "start": {
+        "year": 1944,
+        "month": 3,
+        "day": 22,
+        "abs": 23330,
+        "confidence": "day"
+      },
+      "end": {
+        "year": 1945,
+        "month": 8,
+        "day": 16,
+        "abs": 23347,
+        "confidence": "day"
+      },
+      "startAbs": 23330,
+      "endAbs": 23347,
+      "isInformalMonarch": false,
+      "isMain": false,
+      "claimTrack": "nanjing",
+      "claimLabel": "南京政府",
+      "claimRole": "rival"
+    },
+    {
       "id": "reign-li-zongren-roc",
       "dynastyId": "roc",
       "personId": "li-zongren",
@@ -1752,7 +1921,8 @@
         "confidence": "month"
       },
       "summary": "日本关东军发动事变，侵占东北，十四年抗战开始。",
-      "atAbs": 23180
+      "atAbs": 23180,
+      "locationId": "loc-mukden-incident"
     },
     {
       "kind": "politics",
@@ -1887,6 +2057,38 @@
       "startAbs": 23250,
       "endAbs": 23251,
       "locationId": "loc-pingjin-campaign"
+    },
+    {
+      "kind": "battle",
+      "timeMode": "span",
+      "dynastyIds": [
+        "roc"
+      ],
+      "participantIds": [
+        "jiang-guangnai",
+        "cai-tingkai"
+      ],
+      "id": "shanghai-incident-1932",
+      "name": "一·二八淞沪抗战",
+      "start": {
+        "year": 1932,
+        "month": 1,
+        "day": 28,
+        "abs": 23184,
+        "confidence": "day"
+      },
+      "end": {
+        "year": 1932,
+        "month": 3,
+        "day": 3,
+        "abs": 23186,
+        "confidence": "day"
+      },
+      "dateNote": "以1932年1月28日战事爆发至3月3日停战记录作战区间；5月5日签署《淞沪停战协定》，结束后续停战交涉。",
+      "summary": "九一八事变后，中日关系持续紧张，上海的抵制日货风潮及日方挑衅使局势升级。1932年1月28日晚，日军突袭上海闸北，第十九路军在蒋光鼐、蔡廷锴等指挥下抵抗，随后第五军增援，战事扩展至吴淞等地；在上海民众支援与国际调停下，交战于3月3日停战，5月5日签署《淞沪停战协定》。此战阻止日军迅速占领上海，但协定限制中国军队在上海周边的部署。",
+      "startAbs": 23184,
+      "endAbs": 23186,
+      "locationId": "loc-shanghai-128-incident"
     },
     {
       "kind": "battle",
@@ -2566,6 +2768,7 @@
   ],
   "supplementalEventParticipants": [],
   "preSql": "-- remove stale auto-generated 史料缺 (元首空缺期应留白)\nDELETE FROM reigns WHERE dynasty_id IN ('roc') AND person_id = 'system-missing-ruler';\nDELETE FROM relations WHERE id = 'rel-jiang-jieshi-jiang-jieshi-succession';\nDELETE FROM event_dynasties WHERE event_id = 'puyi-leaves-forbidden-city';",
+  "postSql": "-- remove the formerly separate Wang Jingwei dynasty/group after its reigns have been reassigned to roc\nDELETE FROM dynasties WHERE id = 'wang-jingwei-regime';\nDELETE FROM dynasty_groups WHERE id = 'wartime-china-governments';",
   "reignCapitals": [],
   "manifest": {
     "slug": "minguo",
@@ -2580,10 +2783,10 @@
     "depth": "standard",
     "generatedAt": "2026-09-26",
     "counts": {
-      "persons": 40,
+      "persons": 42,
       "dynasties": 1,
-      "reigns": 31,
-      "events": 12,
+      "reigns": 34,
+      "events": 31,
       "relations": 32
     },
     "sources": [
@@ -2830,20 +3033,51 @@
       {
         "label": "北京市委统战部：抗日战争时期的统一战线",
         "url": "https://www.bjtzb.gov.cn/wwwroot/sdtyzx/publish/article/40/11335.shtml"
+      },
+      {
+        "label": "辽宁省文物局：北大营营房旧址",
+        "url": "https://whly.ln.gov.cn/whly/wlzt/lnww/zdwwbhdw/5803363F8215492CB7D711CE0B44F2DA/index.shtml"
+      },
+      {
+        "label": "中华人民共和国外交部：外交史上的今天（九一八事变）",
+        "url": "https://www.mfa.gov.cn/ziliao_674904/historytoday_674971/200309/t20030918_9284645.shtml"
+      },
+      {
+        "label": "中国抗日战争史：汪精卫建立伪国民政府",
+        "url": "https://szzy.7lue.cn/read/eddf364fc59f9d9306913a56193b3e20/2dfe4578f86d60f92960c1df4e84e7b7.md"
+      },
+      {
+        "label": "中国通史：汪精卫国民政府的僭立",
+        "url": "https://szzy.7lue.cn/read/5d14e01721b1a1ebbcbf1e7f1/fb899fb6618b6ef45941a56359ca9999.md"
+      },
+      {
+        "label": "人民日报党史频道：汪伪政权的最后一天",
+        "url": "https://dangshi.people.com.cn/n1/2016/0811/c85037-28628608.html"
+      },
+      {
+        "label": "国家档案局：上海首次线上全文公布抗战时期档案",
+        "url": "https://www.saac.gov.cn/daj/xwdt/202009/8bf331194d1a4d40a81cdffa440b8eaf.shtml"
+      },
+      {
+        "label": "上海市民政局：是谁打响“一·二八”淞沪抗战第一枪",
+        "url": "https://mzj.sh.gov.cn/lnb-wsws/20220207/97fe1737b42c42ad93b2c426450660f1.html"
       }
     ],
     "notes": [
-      "覆盖中华民国（1912–2026-09），单行 roc 王朝；各路军阀仅作 persons，不建独立王朝。中华人民共和国不在本包内。",
+      "覆盖中华民国（1912–2026-09），汪伪政权以 roc 内南京 rival claim_track 展示为并立政权，不另建 dynasty 或 dynasty_group。各路军阀仅作 persons，不建独立王朝。中华人民共和国不在本包内。",
       "国家元首按维基百科「中华民国国家元首列表」收录（临时大总统、大总统、国民政府主席、总统）。连任不拆卡。",
       "孙中山（sun-yat-sen）复用已有 id。蒋介石分四段：国民政府主席 1928–1931、1943–1948，总统 1948–1949、1950–1975。",
-      "不收录：护法军政府、1925–1928 广州/武汉国民政府（汪兆铭等，维基详表仅列 1928 年后主席）、汪精卫伪政权。",
+      "不收录：护法军政府、1925–1928 广州/武汉国民政府（汪兆铭等，维基详表仅列 1928 年后主席）。1940–1945 汪精卫政权按中华民国内部的南京并立主张，以 claim_track=nanjing、claim_role=rival 放在 roc 行，不另建王朝或王朝分组。",
+      "汪伪政权：1940-03-30 成立，汪精卫先任代主席、1940-11-28 起任主席；1944-03-22 陈公博代理主席，1945-08-16 宣布解散。汪精卫赴日治疗期间名义上仍任主席至11月病逝，时间轴从3月代理职权交接起显示陈公博。",
       "国务院摄行按维基「中华民国国家元首列表」建 informal reign：周自齐、高凌霨、黄郛、胡惟德（两段）、颜惠庆、杜锡珪、顾维钧。",
       "谭延闿维基自 1928-02-07 任南京国民政府主席，与张作霖安国军政府并立至 6 月；主线自张作霖 1928-06-03 离京后接谭，避免叠卡。",
       "正统金色截于 1949 年 9 月（十月一日中华人民共和国成立后迁台续统不上金）。1949 年后的台湾地区任期在 reign.title 统一标为「领导人」，人物概述不用「总统」。",
       "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
       "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
       "2026-10-02 相邻在位边界复核：reign-lai-qingde-roc start：总统府2024年5月20日就职新闻可核到日，既有day=20应标day而非month。",
-      "2026-10：补充1937–1945年全面抗战代表性会战与战役；会战级事件与平型关、台儿庄、衡阳等关键战斗分开表达，重叠处在摘要及 dateNote 说明。日期按来源能支持的月精度记录；战果数字存在不同战史口径时不填确定数字。"
+      "2026-10：补充1937–1945年全面抗战代表性会战与战役；会战级事件与平型关、台儿庄、衡阳等关键战斗分开表达，重叠处在摘要及 dateNote 说明。日期按来源能支持的月精度记录；战果数字存在不同战史口径时不填确定数字。",
+      "2026-10：九一八事变关联北大营事件地点；北大营作为柳条湖铁路爆炸、北大营战斗与沈阳城受袭这一多地点事件的代表点，详见 event-locations 包地点说明。",
+      "2026-10：补录一·二八淞沪抗战，作战区涉及上海闸北、吴淞等多处，以闸北战事中心作地点代表点；事件span记录1932-01-28爆发至1932-03-03停战，5月5日签署协定作为结束交涉背景写入摘要。"
     ]
   }
 }

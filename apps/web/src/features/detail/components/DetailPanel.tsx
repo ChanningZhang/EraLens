@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import type { EntityDetail, EntityRef } from "@eralens/shared";
-import { getRepository } from "@/data/repository";
+import { entityDetailQueryOptions } from "../entityDetailQuery";
 import { useLaneColorValue } from "@/features/timeline/hooks/useLaneColor";
 import { useSelection } from "@/features/timeline/hooks/useSelection";
 import { isNativeApp, openExternalSource } from "@/data/mobileUpdates";
@@ -91,48 +91,32 @@ export function DetailPanel() {
   const selection = useSelection();
   const viewport = useViewport();
 
-  const detailQuery = useQuery({
-    queryKey: [
-      "entity",
-      selection.selected?.type,
-      selection.selected?.id,
-      selection.focusReignId,
-    ],
-    queryFn: async () => {
-      if (!selection.selected) throw new Error("No selection");
-      const repo = await getRepository();
-      if (selection.selected.type === "person") {
-        return repo.getEntity(selection.selected, {
-          focusReignId: selection.focusReignId ?? undefined,
-        });
-      }
-      return repo.getEntity(selection.selected);
-    },
-    enabled: Boolean(selection.selected),
-  });
-
-  const dynastyId =
-    selection.selected?.type === "dynasty"
-      ? selection.selected.id
-      : detailQuery.data?.dynastyId;
+  const detailQuery = useQuery(entityDetailQueryOptions(selection.selected, selection.focusReignId));
+  const detail = detailQuery.data?.detail;
+  const displayedSelection = detailQuery.data;
+  const switchingDetail = detailQuery.isPlaceholderData;
+  const dynastyId = displayedSelection?.selected.type === "dynasty"
+    ? displayedSelection.selected.id
+    : detail?.dynastyId;
   const accent = useLaneColorValue(dynastyId) ?? "var(--color-accent)";
 
-  const capitalTenures = detailQuery.data?.capitalTenures ?? [];
-  const relatedItems = detailQuery.data?.related ?? [];
+  const capitalTenures = detail?.capitalTenures ?? [];
+  const relatedItems = detail?.related ?? [];
   const canOpenPersonOverview =
-    selection.selected?.type === "person" &&
-    selection.focusReignId != null &&
-    (detailQuery.data?.reignCount ?? 0) > 1;
+    displayedSelection?.selected.type === "person" &&
+    displayedSelection.focusReignId != null &&
+    (detail?.reignCount ?? 0) > 1;
 
   if (!selection.selected) return null;
 
   return (
     <aside
       className={styles.panel}
+      aria-busy={detailQuery.isFetching}
       style={{ ["--detail-accent" as string]: accent }}
     >
       <div className={styles.header}>
-        <div className={styles.titleBlock}>
+        <div className={styles.titleBlock} inert={switchingDetail}>
           <span className={styles.accent} />
           {detailQuery.isLoading ? (
             <p className={styles.loading}>加载中…</p>
@@ -157,14 +141,14 @@ export function DetailPanel() {
                       selectionStore.syncToUrl(viewport.centerAbs);
                     }}
                   >
-                    {detailQuery.data?.title}
+                    {detail?.title}
                   </button>
                 ) : (
-                  detailQuery.data?.title
+                  detail?.title
                 )}
               </h2>
-              {detailQuery.data?.subtitle && (
-                <p className={styles.subtitle}>{detailQuery.data.subtitle}</p>
+              {detail?.subtitle && (
+                <p className={styles.subtitle}>{detail.subtitle}</p>
               )}
             </>
           )}
@@ -199,12 +183,12 @@ export function DetailPanel() {
         </div>
       </div>
 
-      <div className={styles.body}>
-        {detailQuery.data?.facts && detailQuery.data.facts.length > 0 && (
+      <div className={styles.body} inert={switchingDetail}>
+        {detail?.facts && detail.facts.length > 0 && (
           <section className={styles.section}>
             <h3 className={styles.sectionTitle}>要点</h3>
             <div className={styles.facts}>
-              {detailQuery.data.facts.map((fact) => (
+              {detail.facts.map((fact) => (
                 <div
                   key={fact.label}
                   className={
@@ -240,17 +224,17 @@ export function DetailPanel() {
           </section>
         )}
 
-        {detailQuery.data?.summary && (
+        {detail?.summary && (
           <section className={styles.section}>
             <h3 className={styles.sectionTitle}>概述</h3>
-            <p className={styles.summary}>{detailQuery.data.summary}</p>
+            <p className={styles.summary}>{detail.summary}</p>
           </section>
         )}
 
-        {detailQuery.data?.content && (
+        {detail?.content && (
           <section className={styles.section}>
             <h3 className={styles.sectionTitle}>全文</h3>
-            <p className={styles.poemText}>{detailQuery.data.content}</p>
+            <p className={styles.poemText}>{detail.content}</p>
           </section>
         )}
 
@@ -355,11 +339,11 @@ export function DetailPanel() {
           </section>
         )}
 
-        {detailQuery.data?.links && detailQuery.data.links.length > 0 && (
+        {detail?.links && detail.links.length > 0 && (
           <section className={styles.section}>
             <h3 className={styles.sectionTitle}>来源</h3>
             <div className={styles.links}>
-              {detailQuery.data.links.map((link) => (
+              {detail.links.map((link) => (
                 <a
                   key={link.url}
                   href={link.url}
