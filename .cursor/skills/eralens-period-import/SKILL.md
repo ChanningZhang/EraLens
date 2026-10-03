@@ -116,7 +116,7 @@ Task Progress:
 
 ### 2. 建模规则
 
-王朝 `altNames` 首项为经核实的国号或自称，供详情副标题使用；其余项保留史称、地域称呼及检索别名。首项可与 `name` 相同，不从史称机械去前缀生成。跨改号时期采用代表自称并在 `manifest.notes` 说明，依据放入 `manifest.sources`。无统一政权自称的集合记录（如三皇、五帝）使用空数组。
+王朝 `altNames` 首项为经核实的国号或自称，供详情副标题使用；其余项保留史称、地域称呼及检索别名。首项可与 `name` 相同，不从史称机械去前缀生成。跨改号时期采用代表自称并在 `manifest.notes` 说明，依据放入 `manifest.sources`。无统一政权自称的集合记录（如三皇、五帝）使用空数组。分时名称例外：`name` 保存仅含 `periods` 的 JSON 字符串，`altNames[0]` 保存代表显示名称，原自称移入后续别名。其人物与在位详情使用代表名称，泳道按时点解析。
 
 **ID 约定**（kebab-case，英文或拼音）：
 
@@ -220,7 +220,7 @@ node data/imports/generate.mjs {slug}
 
 1. `BEGIN;`，然后执行 `preSql` 中的旧库清理
 2. `persons`、`dynasty_groups`、`dynasties`
-3. `locations`、`dynasty_lane_groups`
+3. `locations`
 4. `reigns`（含 `era_names` CSV）
 5. `events`；集中包的 `entity_associations` 在所有实体完成后导入
 6. `relations`、`location_mapping` 及缓存显式列出的更新

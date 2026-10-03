@@ -1,3 +1,5 @@
+import { TimePointSchema, DateConfidenceSchema, HistoricalDateSchema } from "./historicalDateSchemas.mjs";
+import { parseDynastyName, validateDynastyName } from "./dynastyNameFormat.mjs";
 import { assertEntityAssociation } from "./entityAssociations.mjs";
 import { z } from "zod";
 
@@ -16,22 +18,8 @@ export type EventPrecision = z.infer<typeof EventPrecisionSchema>;
 export const EventTimeModeSchema = z.enum(["point", "span"]);
 export type EventTimeMode = z.infer<typeof EventTimeModeSchema>;
 
-export const TimePointSchema = z.object({
-  year: z.number(),
-  month: z.number().int().min(1).max(12),
-  day: z.number().int().min(1).max(31).optional(),
-  /** Endpoint-level confidence. Optional only for older/mock inputs during rollout. */
-  confidence: z.enum([
-    "day", "month", "year", "approximate_day", "approximate_month", "approximate_year",
-    "interpolated_by_other", "interpolated_by_generation",
-  ]).optional(),
-});
-export const DateConfidenceSchema = z.enum([
-  "day", "month", "year", "approximate_day", "approximate_month", "approximate_year",
-  "interpolated_by_other", "interpolated_by_generation",
-]);
+export { TimePointSchema, DateConfidenceSchema, HistoricalDateSchema } from "./historicalDateSchemas.mjs";
 export type HistoricalDateConfidence = z.infer<typeof DateConfidenceSchema>;
-export const HistoricalDateSchema = TimePointSchema.extend({ confidence: DateConfidenceSchema });
 export type HistoricalDate = z.infer<typeof HistoricalDateSchema>;
 
 export const TimeRangeSchema = z.object({
@@ -72,14 +60,6 @@ export const ColorTokenSchema = z.enum([
 export type ColorToken = z.infer<typeof ColorTokenSchema>;
 export const COLOR_TOKENS = ColorTokenSchema.options;
 
-export const DynastyLaneGroupSchema = z.object({
-  id: z.string(),
-  primaryDynastyId: z.string(),
-  phaseDynastyIds: z.array(z.string()),
-  laneOrderStartAbs: z.number(),
-  laneOrderEndAbs: z.number(),
-});
-
 export const DynastyGroupSchema = z.object({
   id: z.string(),
   name: z.string(),
@@ -98,7 +78,11 @@ export const DynastyGroupSchema = z.object({
 
 export const DynastySchema = z.object({
   id: z.string(),
-  name: z.string(),
+  name: z.string().superRefine((name, ctx) => {
+    try { parseDynastyName(name); } catch (error) {
+      ctx.addIssue({ code: "custom", message: error instanceof Error ? error.message : "Invalid dynasty name" });
+    }
+  }),
   altNames: z.array(z.string()).default([]),
   scope: ScopeSchema.default("cn"),
   region: z.string().default("east_asia"),
@@ -115,6 +99,10 @@ export const DynastySchema = z.object({
   parentId: z.string().optional(),
   groupId: z.string().optional(),
   note: z.string().optional(),
+}).superRefine((dynasty, ctx) => {
+  try { validateDynastyName(dynasty); } catch (error) {
+    ctx.addIssue({ code: "custom", path: ["name"], message: error instanceof Error ? error.message : "Invalid dynasty name" });
+  }
 });
 
 export const PersonSchema = z.object({
@@ -411,7 +399,6 @@ export type Lod = z.infer<typeof LodSchema>;
 export const TimelineSliceSchema = z.object({
   dynasties: z.array(DynastySchema),
   dynastyGroups: z.array(DynastyGroupSchema).default([]),
-  dynastyLaneGroups: z.array(DynastyLaneGroupSchema).default([]),
   reigns: z.array(ReignSchema),
   events: z.array(EventSchema),
   persons: z.array(PersonSchema).default([]),
@@ -422,7 +409,6 @@ export const TimelineSliceSchema = z.object({
 export const TimelineCatalogSchema = z.object({
   dynasties: z.array(DynastySchema),
   dynastyGroups: z.array(DynastyGroupSchema).default([]),
-  dynastyLaneGroups: z.array(DynastyLaneGroupSchema).default([]),
 });
 export type TimelineCatalog = z.infer<typeof TimelineCatalogSchema>;
 
@@ -488,7 +474,6 @@ export const SearchHitSchema = z.object({
 export type CapitalLocation = z.infer<typeof CapitalLocationSchema>;
 export type Dynasty = z.infer<typeof DynastySchema>;
 export type DynastyGroup = z.infer<typeof DynastyGroupSchema>;
-export type DynastyLaneGroup = z.infer<typeof DynastyLaneGroupSchema>;
 export type Reign = z.infer<typeof ReignSchema>;
 export type ClaimRole = z.infer<typeof ClaimRoleSchema>;
 export type AppellationKind = z.infer<typeof AppellationKindSchema>;

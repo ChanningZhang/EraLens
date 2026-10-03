@@ -51,10 +51,6 @@ CREATE TABLE relations (
   at_abs INTEGER, at_confidence TEXT, event_id TEXT, UNIQUE(from_type, from_id, to_type, to_id, kind),
  CHECK((kind='succession' AND from_type='person' AND to_type='person') OR (kind<>'succession' AND from_type IN ('person','reign') AND to_type='person' AND at_abs IS NOT NULL))
 );
-CREATE TABLE dynasty_lane_groups (
-  id TEXT PRIMARY KEY, primary_dynasty_id TEXT NOT NULL, phase_dynasty_ids TEXT NOT NULL DEFAULT '[]',
-  lane_order_start_abs INTEGER NOT NULL, lane_order_end_abs INTEGER NOT NULL
-);
 CREATE TABLE search_entries (
   entity_type TEXT NOT NULL, entity_id TEXT NOT NULL, normalized_term TEXT NOT NULL,
   term_kind TEXT NOT NULL, label TEXT NOT NULL, subtitle TEXT, anchor_abs INTEGER,

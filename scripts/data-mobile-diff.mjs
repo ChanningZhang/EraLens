@@ -12,10 +12,10 @@ const candidatePath = args.get("--candidate") ?? path.join(root, "data/mobile/er
 if (!basePath) throw new Error("Usage: pnpm data:mobile:diff -- --base=<previous.sqlite> [--candidate=<candidate.sqlite>]");
 const base = new DatabaseSync(path.resolve(basePath), { readOnly: true });
 const candidate = new DatabaseSync(path.resolve(candidatePath), { readOnly: true });
-const tables = ["persons", "dynasty_groups", "dynasties", "reigns", "events", "entity_associations", "relations", "dynasty_lane_groups", "locations", "location_mapping", "dynasty_capitals", "reign_capitals", "event_locations", "search_entries"];
+const tables = ["persons", "dynasty_groups", "dynasties", "reigns", "events", "entity_associations", "relations", "locations", "location_mapping", "dynasty_capitals", "reign_capitals", "event_locations", "search_entries"];
 const primaryKeys = {
   persons: ["id"], dynasty_groups: ["id"], dynasties: ["id"], reigns: ["id"], events: ["id"],
-  entity_associations: ["a_type", "a_id", "b_type", "b_id"], relations: ["id"], dynasty_lane_groups: ["id"],
+  entity_associations: ["a_type", "a_id", "b_type", "b_id"], relations: ["id"],
   dynasty_capitals: ["id"], reign_capitals: ["reign_id","capital_id"], event_locations: ["id"],
   locations: ["id"], location_mapping: ["id"],
   search_entries: ["entity_type", "entity_id", "normalized_term", "term_kind"],

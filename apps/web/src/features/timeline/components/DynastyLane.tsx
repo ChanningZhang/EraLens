@@ -1,15 +1,12 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { memo } from "react";
 import {
-  getDynastyLaneGroup,
   isFrozenLaneMaster,
-  resolveActivePhaseDynastyId,
   resolveDynastyColorValue,
   resolveFrozenLaneLabel,
   resolveReignColorValue,
   type ColorToken,
   type Dynasty,
-  type DynastyLaneGroup,
   type Reign,
 } from "@eralens/shared";
 import { useSelection } from "../hooks/useSelection";
@@ -48,7 +45,6 @@ type Props = {
       }
     | undefined
   >;
-  laneGroups: readonly DynastyLaneGroup[];
   top: number;
   height: number;
   badges: PlacedEvent[];
@@ -121,7 +117,7 @@ export function DynastyLane({
   dynastiesById,
   personNames,
   personClans,
-  laneGroups,
+
   top,
   height,
   badges,
@@ -130,19 +126,7 @@ export function DynastyLane({
   const selection = useSelection();
   const labelAnchorAbs = laneLabelAnchorAbs(viewport);
   const cardPanX = worldPanOffsetX(viewport);
-  const laneGroup = getDynastyLaneGroup(dynasty.id, laneGroups);
-  const activePhaseDynasty =
-    laneGroup == null
-      ? dynasty
-      : dynastiesById.get(
-          resolveActivePhaseDynastyId(laneGroup, dynastiesById, labelAnchorAbs),
-        ) ?? dynasty;
-  const frozenLabel = resolveFrozenLaneLabel(
-    dynasty,
-    dynastiesById,
-    labelAnchorAbs,
-    laneGroups,
-  );
+  const frozenLabel = resolveFrozenLaneLabel(dynasty, labelAnchorAbs);
   const labelGlyphCount = [...frozenLabel].length;
   const labelContentWidth = viewport.presentation.railLabelWidthPx -
     (viewport.presentation.narrow ? 10 : 18);
@@ -151,13 +135,13 @@ export function DynastyLane({
     9,
     Math.min(12, (labelContentWidth - 2) / Math.max(1, glyphsPerLine)),
   );
-  const frozenMaster = isFrozenLaneMaster(activePhaseDynasty.id, labelAnchorAbs, reigns);
+  const frozenMaster = isFrozenLaneMaster(dynasty.id, labelAnchorAbs, reigns);
   const selected =
     selection.selected?.type === "dynasty" &&
-    selection.selected.id === activePhaseDynasty.id;
+    selection.selected.id === dynasty.id;
   // Lane floor / gap cards stay on the persisted token. The frozen name
   // chip overlays gold when the center guide falls within a master reign.
-  const laneColor = resolveDynastyColorValue(activePhaseDynasty, laneColorToken);
+  const laneColor = resolveDynastyColorValue(dynasty, laneColorToken);
   return (
     <div
       className={styles.lane}
@@ -181,8 +165,8 @@ export function DynastyLane({
         style={rowCount > 1 ? { top: "50%", transform: "translateY(-50%)" } : undefined}
         onClick={() => {
           selectionStore.select(
-            { type: "dynasty", id: activePhaseDynasty.id },
-            activePhaseDynasty.startAbs,
+            { type: "dynasty", id: dynasty.id },
+            labelAnchorAbs,
           );
           selectionStore.syncToUrl(viewport.centerAbs);
         }}

@@ -5,7 +5,6 @@ import {
   type Dynasty,
   type CapitalLocation,
   type DynastyGroup,
-  type DynastyLaneGroup,
   type Event,
   type HistoricalDateConfidence,
   type Person,
@@ -18,7 +17,6 @@ import {
 import type {
   Dynasty as DbDynasty,
   DynastyGroup as DbDynastyGroup,
-  DynastyLaneGroup as DbDynastyLaneGroup,
   Event as DbEvent,
   Person as DbPerson,
   Reign as DbReign,
@@ -166,15 +164,6 @@ export function mapDynastyGroup(
   };
 }
 
-export function mapDynastyLaneGroup(row: DbDynastyLaneGroup): DynastyLaneGroup {
-  return {
-    id: row.id,
-    primaryDynastyId: row.primaryDynastyId,
-    phaseDynastyIds: row.phaseDynastyIds,
-    laneOrderStartAbs: row.laneOrderStartAbs,
-    laneOrderEndAbs: row.laneOrderEndAbs,
-  };
-}
 
 function toCoordinateNumber(value: { toString(): string } | number | string): number {
   return typeof value === "number" ? value : Number(value);

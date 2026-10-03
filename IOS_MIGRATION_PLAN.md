@@ -203,7 +203,6 @@ Test                 -> InMemoryTimelineRepository
 - `event_locations`
 - `entity_associations`（普通无向关联；四字段复合主键）
 - `relations`
-- `dynasty_lane_groups`
 - `dynasty_capitals`
 - `reign_capitals`
 - `content_metadata`
@@ -408,7 +407,7 @@ pnpm release:classify --base <last-data-tag-or-app-tag>
 ### 6.2 王朝、在位与称谓
 
 - 普通 reign 与缺载 reign 共用 `Reign`、布局和坐标路径。
-- `claim_track` 表达同时并立，`dynasty_groups` 表达同时并存政权，`dynasty_lane_groups` 表达前后相续泳道，三者不能互换。
+- `claim_track` 表达同时并立，`dynasty_groups` 表达同时并存政权；同一王朝改名通过单条 `dynasties` 记录的分时名称表达。
 - `is_main` 和正统窗口控制金色覆盖；王朝本色不能写成 `gold`。
 - 卡片宽度严格服从时间几何，移动端不能为了塞字而扩大时长。
 - `persons.name`、姓、氏、谥号、庙号、年号、`reigns.title` 保持字段职责，不因移动端显示空间不足而合并字段。

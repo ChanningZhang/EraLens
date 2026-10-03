@@ -69,6 +69,12 @@ description: >-
 - `span` 表达实际持续过程，不可仅因日期模糊而使用；模糊点事件仍为 `point` 并设置近似 confidence。
 - 年精度 point 的轴时点使用该年 12 月桶右缘；占位月份不得显示为史料已知月份。
 
+## 王朝分时名称
+
+- `dynasties.name` 中 JSON `periods` 的起止日期使用 HistoricalDate 和独立端点 confidence；不在 JSON 中保存 default，代表名称位于 `altNames[0]`。
+- 名称阶段归属通过共享 `phaseOwnershipInterval()` 与 `timelineIntervals.ts` 裁定，不按 reign 边界拆分，也不手写年月截断。
+- 人物与在位详情使用代表名称；泳道按视口时点解析阶段名称。
+
 ## 共享实现与复核
 
 - 日历区间归属调用 `packages/shared/src/timelineOwnership.ts` 和 `timelineIntervals.ts`；调用侧不得重写端点比较或手工加减年月。

@@ -2,6 +2,7 @@ import {
   COLOR_VALUES,
   fallbackLaneColorToken,
   resolveDynastyColorValue,
+  resolveDynastyName as nameAtAbs,
   type ColorToken,
   type Dynasty,
   type CapitalLocation,
@@ -42,12 +43,14 @@ function resolveDynastyName(
   capital: CapitalLocation,
   dynastiesById: ReadonlyMap<string, Dynasty>,
   dynastyNamesById: ReadonlyMap<string, string>,
+  atAbs: number,
 ): string {
-  return (
+  const raw = (
     dynastiesById.get(capital.dynastyId)?.name ??
     dynastyNamesById.get(capital.dynastyId) ??
     capital.dynastyId
   );
+  return nameAtAbs(dynastiesById.get(capital.dynastyId) ?? { name: raw }, atAbs);
 }
 
 export function CapitalMapLayer({
@@ -76,7 +79,7 @@ export function CapitalMapLayer({
       const point = projectGcj02InLayout(coordinate.x, coordinate.y, layout);
       return {
         capital,
-        dynastyName: resolveDynastyName(capital, dynastiesById, dynastyNamesById),
+        dynastyName: resolveDynastyName(capital, dynastiesById, dynastyNamesById, atAbs),
         x: point.x,
         y: point.y,
         color,

@@ -6,7 +6,6 @@ import {
   capitalsForReigns,
   clusterLaneGapForPresentation,
   clusterFramesForLanes,
-  collapseDynastyLaneGroups,
   collectLaneReigns,
   compareTimedOrder,
   eventSpanAbs,
@@ -14,7 +13,6 @@ import {
   fromAbsMonth,
   rangesIntersect,
   fallbackLaneColorToken,
-  getDynastyLaneGroup,
   resolveDynastyColorValue,
   resolveFateRelations,
   type Dynasty,
@@ -336,7 +334,6 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       buildLaneOrderIndex(
         timelineCatalog?.dynasties ?? [],
         timelineCatalog?.dynastyGroups ?? [],
-        timelineCatalog?.dynastyLaneGroups ?? [],
         allCapitals ?? [],
       ),
     [timelineCatalog, allCapitals],
@@ -353,12 +350,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       (dynasty) =>
         rangesIntersect(dynasty.startAbs, dynasty.endAbs, viewport.startAbs, viewport.endAbs),
     );
-    const collapsed = collapseDynastyLaneGroups(
-      visible,
-      dynastiesById,
-      data?.dynastyLaneGroups ?? [],
-    );
-    const ordered = [...collapsed].sort((a, b) => {
+    const ordered = [...visible].sort((a, b) => {
       const ra = laneOrderRank.get(a.id);
       const rb = laneOrderRank.get(b.id);
       if (ra != null && rb != null && ra !== rb) return ra - rb;
@@ -415,7 +407,6 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     return map;
   }, [timelineCatalog]);
 
-  const laneGroups = data?.dynastyLaneGroups ?? [];
 
   const { railEvents, badgeEvents, badgePositions } = useMemo(() => {
     if (!data) return { railEvents: [], badgeEvents: [], badgePositions: new Map() };
@@ -426,10 +417,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     const laneIdByDynastyId = new Map<string, string>();
     for (const dynasty of placed) {
       laneIdByDynastyId.set(dynasty.id, dynasty.id);
-      const group = getDynastyLaneGroup(dynasty.id, laneGroups);
-      for (const phaseId of group?.phaseDynastyIds ?? []) {
-        laneIdByDynastyId.set(phaseId, dynasty.id);
-      }
+
     }
     const projected = layoutEvents(visible, viewport);
     const badgePositions = layoutPlacedEventBadges(projected, laneIdByDynastyId, viewport.widthPx);
@@ -439,7 +427,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       badgeEvents: projected.filter((item) => visibleIds.has(item.event.id) && badgePositions.has(item.event.id)),
       badgePositions,
     };
-  }, [data, viewport, placed, laneGroups, eventDisplay]);
+  }, [data, viewport, placed, eventDisplay]);
 
   const eventPlaced = useMemo(() => layoutEvents(railEvents, viewport), [railEvents, viewport]);
 
@@ -515,7 +503,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       visibleMissingReigns?: Reign[];
     }>(),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [reignsByDynasty, laneGroups, viewport.presentation.rowHeightPx, viewport.presentation.lanePaddingPx, personNames, personDisplay],
+    [reignsByDynasty, viewport.presentation.rowHeightPx, viewport.presentation.lanePaddingPx, personNames, personDisplay],
   );
 
   const lanes = useMemo(() => {
@@ -537,13 +525,13 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       hasPreviousLane = true;
       let prepared = lanePreparedCache.get(dynasty.id);
       if (!prepared || prepared.pxPerMonth !== viewport.pxPerMonth) {
-        const records = prepared?.records ?? collectLaneReigns(dynasty.id, reignsByDynasty, laneGroups);
+        const records = prepared?.records ?? collectLaneReigns(dynasty.id, reignsByDynasty);
         const { rulers: reigns, missing: missingReigns } = prepared
           ? { rulers: prepared.reigns, missing: prepared.missingReigns }
           : partitionReignRecords(records);
         const geometry = prepareLaneReignGeometry(
           reigns,
-          laneGroups,
+
           viewport.presentation.rowHeightPx,
           viewport.pxPerMonth,
           personNames,
@@ -551,7 +539,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
         );
         const height = dynastyLaneHeightForViewport(
           reigns,
-          laneGroups,
+
           viewport,
           personNames,
           personDisplay,
@@ -578,7 +566,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       top += height;
       return item;
     });
-  }, [data?.dynastyGroups, placed, railHeight, reignsByDynasty, laneGroups, viewport, personNames, personDisplay, lanePreparedCache]);
+  }, [data?.dynastyGroups, placed, railHeight, reignsByDynasty, viewport, personNames, personDisplay, lanePreparedCache]);
 
   const badgePlaced = useMemo(() => {
     const laneById = new Map(lanes.map((lane) => [lane.dynasty.id, lane]));
@@ -594,14 +582,14 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
           ? lane
             ? viewport.presentation.lanePaddingPx + (unit
               ? unit.unitTop + unit.unitHeight
-              : dynastyBarHeightForReigns(lane.reigns, laneGroups, viewport.presentation.rowHeightPx)) - EVENT_BADGE_HALF_HEIGHT
+              : dynastyBarHeightForReigns(lane.reigns, viewport.presentation.rowHeightPx)) - EVENT_BADGE_HALF_HEIGHT
             : item.top
           : unit
             ? viewport.presentation.lanePaddingPx + unit.unitTop - EVENT_BADGE_HALF_HEIGHT
             : lane ? lane.badgeTop - lane.top : item.top,
       };
     });
-  }, [badgeEvents, badgePositions, lanes, laneGroups, viewport.presentation]);
+  }, [badgeEvents, badgePositions, lanes, viewport.presentation]);
 
   const badgesByLane = useMemo(() => {
     const map = new Map<string, typeof badgePlaced>();
@@ -773,7 +761,6 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
                   dynastiesById={dynastiesById}
                   personNames={personNames}
                   personClans={personDisplay}
-                  laneGroups={laneGroups}
                   top={top}
                   height={height}
                   badges={badgesByLane.get(dynasty.id) ?? []}

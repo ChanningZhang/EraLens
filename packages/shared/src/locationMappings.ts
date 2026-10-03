@@ -42,5 +42,5 @@ export function filterLocationMappings(mappings: readonly LocationMapping[], que
     const e=m.kind === "event" ? byEvent.get(m.externalId) : undefined;
     const start=e ? e.atAbs ?? e.startAbs : m.startAbs; const end=e ? e.atAbs ?? e.endAbs : m.endAbs;
     return (query.fromAbs == null || end != null && end >= query.fromAbs) && (query.toAbs == null || start != null && start <= query.toAbs);
-  }).sort((a,b)=>(a.startAbs ?? 0)-(b.startAbs ?? 0) || (a.role ?? "").localeCompare(b.role ?? "") || a.id.localeCompare(b.id));
+  }).sort((a,b)=>(a.startAbs ?? 0)-(b.startAbs ?? 0) || (a.role ?? "").localeCompare(b.role ?? "") || (a.id < b.id ? -1 : a.id > b.id ? 1 : 0));
 }

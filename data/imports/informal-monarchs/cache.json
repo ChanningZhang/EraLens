@@ -195,7 +195,7 @@
     },
     {
       "id": "reign-tolui-mongol",
-      "dynastyId": "mongol-empire",
+      "dynastyId": "yuan",
       "personId": "tolui",
       "title": "",
       "eraNames": [],
@@ -223,7 +223,7 @@
     },
     {
       "id": "reign-toregene-mongol",
-      "dynastyId": "mongol-empire",
+      "dynastyId": "yuan",
       "personId": "toregene-khatun",
       "title": "",
       "eraNames": [],
@@ -251,7 +251,7 @@
     },
     {
       "id": "reign-oghul-qaimish-mongol",
-      "dynastyId": "mongol-empire",
+      "dynastyId": "yuan",
       "personId": "oghul-qaimish",
       "title": "",
       "eraNames": [],

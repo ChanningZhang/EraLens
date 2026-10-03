@@ -5,10 +5,10 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
-  LocationSchema, LocationMappingSchema, mapLocation, mapLocationMapping, DynastyGroupSchema, DynastyLaneGroupSchema, DynastySchema,
+  LocationSchema, LocationMappingSchema, mapLocation, mapLocationMapping, DynastyGroupSchema, DynastySchema,
   EventSchema, PersonSchema, RelationSchema, ReignSchema,
 } from "@eralens/shared";
-import { mapDynasty, mapDynastyGroup, mapDynastyLaneGroup, mapEvent, mapPerson, mapRelation, mapReign } from "../src/mappers.js";
+import { mapDynasty, mapDynastyGroup, mapEvent, mapPerson, mapRelation, mapReign } from "../src/mappers.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 const input = path.resolve(process.argv.find((arg) => arg.startsWith("--db="))?.slice(5) ?? path.join(root, "data/mobile/eralens-content.sqlite"));
@@ -50,7 +50,7 @@ try {
   const checksum = createHash("sha256");
   const contentTables: [string, string][] = [
     ["persons", "id"], ["dynasty_groups", "id"], ["dynasties", "id"], ["reigns", "id"],
-    ["events", "id"], ["entity_associations", "a_type, a_id, b_type, b_id"], ["relations", "id"], ["dynasty_lane_groups", "id"],
+    ["events", "id"], ["entity_associations", "a_type, a_id, b_type, b_id"], ["relations", "id"],
     ["locations", "id"], ["location_mapping", "id"],
   ];
   for (const [table, keys] of contentTables) {
@@ -63,7 +63,6 @@ try {
   const persons = all("persons");
   const dynasties = all("dynasties");
   const groups = all("dynasty_groups");
-  const laneGroups = all("dynasty_lane_groups");
   const reigns = all("reigns");
   const events = all("events");
   const relations = all("relations");
@@ -71,7 +70,6 @@ try {
   for (const row of persons) PersonSchema.parse(mapPerson(hydrate(row) as never));
   for (const row of dynasties) DynastySchema.parse(mapDynasty(rawHydrate(row) as never));
   for (const row of groups) DynastyGroupSchema.parse(mapDynastyGroup(rawHydrate(row) as never));
-  for (const row of laneGroups) DynastyLaneGroupSchema.parse(mapDynastyLaneGroup(hydrate(row) as never));
   for (const row of reigns) ReignSchema.parse(mapReign(rawHydrate(row) as never));
   for (const row of relations) RelationSchema.parse(mapRelation(hydrate(row) as never));
   const relationTargets = new Map([
@@ -108,7 +106,7 @@ try {
     ...rawHydrate(row),
     locationMappings:mappings.filter(m=>m.kind === "event" && m.externalId===row.id),
   } as never, associations));
-  const rowCounts = { persons: persons.length, dynasties: dynasties.length, dynastyGroups: groups.length, dynastyLaneGroups: laneGroups.length, reigns: reigns.length, events: events.length, relations: relations.length, locations: locationRows.length, locationMappings: mappingRows.length };
+  const rowCounts = { persons: persons.length, dynasties: dynasties.length, dynastyGroups: groups.length, reigns: reigns.length, events: events.length, relations: relations.length, locations: locationRows.length, locationMappings: mappingRows.length };
   console.log(JSON.stringify({ input, status: "ok", schemaVersion: versions.schemaVersion, contractVersion: versions.contractVersion, counts: declaredCounts, zodRows: rowCounts }, null, 2));
 } finally {
   db.close();

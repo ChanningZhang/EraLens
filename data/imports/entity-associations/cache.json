@@ -682,51 +682,51 @@
       "bRef": "event:zheng-recover-taiwan"
     },
     {
-      "aRef": "dynasty:mongol-empire",
+      "aRef": "dynasty:yuan",
       "bRef": "event:great-khan-contention"
     },
     {
-      "aRef": "dynasty:mongol-empire",
+      "aRef": "dynasty:yuan",
       "bRef": "event:kublai-court-at-kaiping"
     },
     {
-      "aRef": "dynasty:mongol-empire",
+      "aRef": "dynasty:yuan",
       "bRef": "event:kublai-moves-capital-to-zhongdu"
     },
     {
-      "aRef": "dynasty:mongol-empire",
+      "aRef": "dynasty:yuan",
       "bRef": "event:mongke-death"
     },
     {
-      "aRef": "dynasty:mongol-empire",
+      "aRef": "dynasty:yuan",
       "bRef": "event:mongol-campaign-jin"
     },
     {
-      "aRef": "dynasty:mongol-empire",
+      "aRef": "dynasty:yuan",
       "bRef": "event:mongol-campaign-song"
     },
     {
-      "aRef": "dynasty:mongol-empire",
+      "aRef": "dynasty:yuan",
       "bRef": "event:mongol-conquer-dali"
     },
     {
-      "aRef": "dynasty:mongol-empire",
+      "aRef": "dynasty:yuan",
       "bRef": "event:mongol-west-campaign"
     },
     {
-      "aRef": "dynasty:mongol-empire",
+      "aRef": "dynasty:yuan",
       "bRef": "event:song-jin-alliance-mongol"
     },
     {
-      "aRef": "dynasty:mongol-empire",
+      "aRef": "dynasty:yuan",
       "bRef": "event:song-mongol-duanping-enter-luo"
     },
     {
-      "aRef": "dynasty:mongol-empire",
+      "aRef": "dynasty:yuan",
       "bRef": "event:tolui-regency"
     },
     {
-      "aRef": "dynasty:mongol-empire",
+      "aRef": "dynasty:yuan",
       "bRef": "event:xiangyang-siege"
     },
     {
@@ -2010,11 +2010,11 @@
       "bRef": "event:wudai-shiguo"
     },
     {
-      "aRef": "dynasty:wu-zhu",
+      "aRef": "dynasty:ming",
       "bRef": "event:han-liner-death"
     },
     {
-      "aRef": "dynasty:wu-zhu",
+      "aRef": "dynasty:ming",
       "bRef": "event:poyang-lake-battle"
     },
     {
@@ -2111,10 +2111,6 @@
     },
     {
       "aRef": "dynasty:yuan",
-      "bRef": "event:mongol-campaign-song"
-    },
-    {
-      "aRef": "dynasty:yuan",
       "bRef": "event:poetry-tianjing-shaqiu"
     },
     {
@@ -2128,10 +2124,6 @@
     {
       "aRef": "dynasty:yuan",
       "bRef": "event:war-of-two-capitals"
-    },
-    {
-      "aRef": "dynasty:yuan",
-      "bRef": "event:xiangyang-siege"
     },
     {
       "aRef": "dynasty:yuan",
@@ -4761,7 +4753,7 @@
     "importPhase": "post",
     "postImportOrder": 100,
     "counts": {
-      "associations": 1188
+      "associations": 1186
     },
     "sources": [
       {

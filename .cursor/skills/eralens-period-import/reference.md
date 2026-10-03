@@ -12,7 +12,6 @@
   "window": { "startYear": 626, "startMonth": 1, "endYear": 649, "endMonth": 12 },
   "persons": [{ "id": "li-shimin", "name": "李世民", "title": "唐太宗", "posthumousNames": ["文武皇帝"], "templeNames": ["太宗"] }],
   "dynastyGroups": [],
-  "dynastyLaneGroups": [],
   "dynasties": [{ "id": "tang", "name": "唐", "start": { "year": 618, "month": 6, "abs": 7421, "confidence": "month" }, "end": { "year": 907, "month": 5, "abs": 10888, "confidence": "month" } }],
   "locations": [],
   "locationMappings": [],
@@ -54,7 +53,6 @@
 | persons | id |
 | dynasty_groups | id |
 | dynasties | id |
-| dynasty_lane_groups | id |
 | reigns | id |
 | locations | id（集中地点包唯一维护） |
 | location_mapping | id |
@@ -269,26 +267,13 @@ VALUES ('rel-li-yuan-li-shimin', 'person', 'li-yuan', 'person', 'li-shimin', 'su
 ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 ```
 
-### dynasty_lane_groups
+### 王朝分时名称
 
-相续泳道合并（西周/东周、蒙古/元、吴/明/南明）写入独立包 `data/imports/dynasty-lane-groups/`，不要在前端 hardcode。
+`dynasties.name` 仍为文本。普通名称原样保存；分时名称保存 JSON 字符串，唯一顶层字段为 `periods`，各项含 `name`、`start`、`end`，日期使用带 confidence 的 HistoricalDate。代表名称放在 `altNames[0]`，不得在 JSON 中另存 default；原国号、自称及检索名保留在后续别名。
 
-```sql
-INSERT INTO dynasty_lane_groups (
-  id, primary_dynasty_id, phase_dynasty_ids,
-  lane_order_start_abs, lane_order_end_abs
-) VALUES (
-  'zhou-west-east',
-  'zhou-west',
-  ARRAY['zhou-west','zhou-east'],
-  -12540, -3049
-)
-ON CONFLICT (id) DO UPDATE SET
-  primary_dynasty_id = EXCLUDED.primary_dynasty_id,
-  phase_dynasty_ids = EXCLUDED.phase_dynasty_ids,
-  lane_order_start_abs = EXCLUDED.lane_order_start_abs,
-  lane_order_end_abs = EXCLUDED.lane_order_end_abs;
-```
+人物总览、在位详情及相关人物摘要使用代表名称。泳道及有明确时点的展示通过 `resolveDynastyName()` 解析；区间归属复用共享时间规则，支持在一条 reign 内部切换名称。普通文本名称保持原显示。所有显示和搜索必须解析名称，禁止展示或索引 JSON 原文。
+
+同一王朝的改名阶段使用单一王朝 ID，跨包只能引用，不能重复拥有王朝行。合并元、明的配置保存在所属源包的 `dynastyMerges`；生成和校验后执行 `node scripts/apply-dynasty-merges.mjs yuan-ming-qing` 增量迁移。该入口在事务内迁移引用、去重关联、检查人物与在位 ID 保留，最后删除旧王朝。
 
 跨王朝帝王命运边（时间轴虚线，`killed` / `surrender` / `abdication` / `captured` / `conquered`）：
 
@@ -309,7 +294,7 @@ ON CONFLICT (id) DO UPDATE SET
 | 数据 | 入库 | 运行时 |
 |---|---|---|
 | 主线分类 | `cache.json.reigns[].isMain` → `reigns.is_main` | 运行时据此展示主线/正统标记 |
-| 相续泳道合并 | `dynasty_lane_groups` | API 下发，`dynastyLaneGroups.ts` 无硬编码组 |
+| 王朝分时名称 | `dynasties.name` JSON 字符串，代表名称在 `alt_names[0]` | 共享解析器；阶段切换独立于 reign 边界 |
 | 检索别名 | `persons.alt_names` | 作为人工来源字段，由触发器合并进 `search_terms` |
 | 人物搜索索引 | `persons.search_terms` | 预生成姓名、别名、姓/氏组合、庙谥、title、朝代 + 庙谥；`text[]` GIN 完整词查询 |
 | 庙号/谥号/称呼 | `persons.posthumous_name` / `persons.temple_name` / `reigns.title` | 泳道卡片优先 title；人物详情独立按年代优先 person 庙谥（618 年及以后优先庙号），缺失时才回退 title；**不**从 title 推导庙谥 |

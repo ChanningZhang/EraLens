@@ -48,9 +48,9 @@ describe("narrow timeline layout", () => {
     for (const density of ["comfortable", "compact"] as const) {
       const presentation = resolveTimelinePresentation(375, { railCollapsed: false, density });
       const viewport = { centerAbs: 72, widthPx: 375, gutterPx: presentation.gutterPx, pxPerMonth: 2, presentation };
-      const prepared = prepareLaneReignGeometry(rulers, [], presentation.rowHeightPx);
+      const prepared = prepareLaneReignGeometry(rulers, presentation.rowHeightPx);
       for (const ruler of rulers) {
-        const cached = layoutLaneReignBar(ruler, "d", rulers, viewport, 50, ruler.title, null, [], prepared.byId.get(ruler.id))!;
+        const cached = layoutLaneReignBar(ruler, "d", rulers, viewport, 50, ruler.title, null, prepared.byId.get(ruler.id))!;
         expect(cached).toEqual(layoutLaneReignBar(ruler, "d", rulers, viewport, 50, ruler.title));
         expect(cached.barHeight).toBe(prepared.byId.get(ruler.id)!.unitHeight);
       }
@@ -67,9 +67,9 @@ describe("narrow timeline layout", () => {
     const ruler = reign("ruler");
     const presentation = resolveTimelinePresentation(375);
     const viewport = { centerAbs: 72, widthPx: 375, pxPerMonth: 2, presentation };
-    expect(dynastyLaneHeightForViewport([ruler], [], viewport, new Map(), new Map())).toBe(40);
+    expect(dynastyLaneHeightForViewport([ruler], viewport, new Map(), new Map())).toBe(40);
     const short = { ...ruler, endAbs: 12 };
-    expect(dynastyLaneHeightForViewport([short], [], viewport, new Map(), new Map())).toBeGreaterThan(40);
+    expect(dynastyLaneHeightForViewport([short], viewport, new Map(), new Map())).toBeGreaterThan(40);
     expect(resolveReignBarLayout(30, 4, 18).captionBelow).toBe(true);
   });
 

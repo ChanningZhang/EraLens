@@ -1,3 +1,4 @@
+import { resolveDynastyName, resolveDynastyDefaultName, dynastyNameSearchEntries } from "./dynastyNames";
 import { relatedEntityRefs, type EntityAssociation } from "./entityAssociations.mjs";
 import { capitalLocations } from "./locationMappings";
 import { formatHistoricalDate, isApproximateConfidence } from "./historicalDate";
@@ -25,7 +26,6 @@ import {
   type Dynasty,
   type CapitalLocation,
   type DynastyGroup,
-  type DynastyLaneGroup,
   type EntityDetail,
   type EntityRef,
   type Event,
@@ -54,7 +54,6 @@ export type TimelineFilterQuery = {
 export type TimelineDataStore = {
   dynasties: Dynasty[];
   dynastyGroups?: DynastyGroup[];
-  dynastyLaneGroups?: DynastyLaneGroup[];
   reigns: Reign[];
   persons: Person[];
   events: Event[];
@@ -108,7 +107,6 @@ export function filterTimeline(
   return TimelineSliceSchema.parse({
     dynasties: visibleDynasties,
     dynastyGroups: visibleDynastyGroups,
-    dynastyLaneGroups: store.dynastyLaneGroups ?? [],
     reigns: visibleReigns,
     events: visibleEvents,
     persons: visiblePersons,
@@ -127,7 +125,7 @@ function truncateText(text: string, max = 36): string {
 
 type RelatedItem = EntityDetail["related"][number];
 
-type RelatedSummary = (ref: EntityRef) => { ref: EntityRef; label: string; subtitle?: string };
+type RelatedSummary = (ref: EntityRef, atAbs?: number) => { ref: EntityRef; label: string; subtitle?: string };
 
 function associationRelatedItems(
   store: TimelineDataStore,
@@ -156,7 +154,7 @@ function associationRelatedItems(
       abs = eventSpanAbs(event).anchorAbs;
       group = event.kind === "idiom" ? "idiom" : event.kind === "poetry" ? "poetry" : "event";
     } else return [];
-    return [{ ...summary(other), abs, group }];
+    return [{ ...summary(other, other.type === "dynasty" ? abs : undefined), abs, group }];
   }).sort((a, b) => (a.abs ?? Infinity) - (b.abs ?? Infinity));
 }
 
@@ -191,6 +189,8 @@ function fateRelationRelatedItems(
 export type PersonDetailOptions = {
   /** Summary construction must not recursively expand association graphs. */
   includeRelated?: boolean;
+  /** Optional time context for dynasty details; person headings always use the default name. */
+  atAbs?: number;
   focusReignId?: string;
   /** Reign rows selected by the single detail query; other rows may be ownership context. */
   selectedReignIds?: readonly string[];
@@ -251,8 +251,10 @@ function buildPersonEntityDetail(
   const reignCount = options.reignCount ?? personReigns.length;
   const detailReign = focusReign ?? personReigns[0];
   const headingDynasty = detailReign ? dynastyMap.get(detailReign.dynastyId) : undefined;
+  const headingDynastyName = headingDynasty?.altNames?.[0]?.trim() ||
+    (headingDynasty ? resolveDynastyDefaultName(headingDynasty) : undefined);
   const heading = detailReign
-    ? resolveReignDetailHeading(detailReign, headingDynasty?.name, person.name, clan)
+    ? resolveReignDetailHeading(detailReign, headingDynastyName, person.name, clan)
     : person.roles.join(" · ");
   const subtitle = focusReign && reignCount > 1 && focusReignIndex
     ? `${heading} · ${focusReignIndex}/${reignCount}`
@@ -349,9 +351,9 @@ export function buildEntityDetail(
   const reignMap = new Map(store.reigns.map((r) => [r.id, r]));
   const eventMap = new Map(store.events.map((e) => [e.id, e]));
 
-  function buildRelatedSummary(relatedRef: EntityRef) {
+  function buildRelatedSummary(relatedRef: EntityRef, atAbs?: number) {
     try {
-      const detail = buildEntityDetail(store, relatedRef, { includeRelated: false });
+      const detail = buildEntityDetail(store, relatedRef, { includeRelated: false, atAbs });
       return {
         ref: relatedRef,
         label: detail.title,
@@ -366,7 +368,7 @@ export function buildEntityDetail(
     const mapping=(store.locationMappings ?? []).find(m=>m.id===ref.id) ?? store.events.flatMap(e=>e.locationMappings ?? []).find(m=>m.id===ref.id);
     if (!mapping) throw new Error(`Location mapping not found: ${ref.id}`);
     const ownerRef: EntityRef={type:mapping.kind,id:mapping.externalId};
-    const owner=buildRelatedSummary(ownerRef);
+    const owner=buildRelatedSummary(ownerRef,mapping.startAbs);
     const capital=capitalLocations(store).find(c=>c.id===mapping.id);
     const mappedEvent=mapping.kind === "event" ? eventMap.get(mapping.externalId) : undefined;
     const dynastyId=mapping.kind === "dynasty" ? mapping.externalId : mapping.kind === "reign" ? store.reigns.find(r=>r.id===mapping.externalId)?.dynastyId : undefined;
@@ -387,7 +389,7 @@ export function buildEntityDetail(
     const associatedRelated = options.includeRelated === false ? [] : associationRelatedItems(store,ref,buildRelatedSummary);
     return {
       ref,
-      title: dynasty.name,
+      title: resolveDynastyName(dynasty, options.atAbs),
       subtitle: dynasty.altNames?.[0],
       dynastyId: dynasty.id,
       colorToken: resolveDynastyColorToken(
@@ -440,7 +442,7 @@ export function buildEntityDetail(
       title: event.name,
       subtitle:
         linkedDynasties.length > 0
-          ? linkedDynasties.map((dynasty) => dynasty.name).join(" · ")
+          ? linkedDynasties.map((dynasty) => resolveDynastyName(dynasty, anchorAbs)).join(" · ")
           : eventKindLabel(event.kind),
       dynastyId: primaryDynasty?.id,
       colorToken: primaryDynasty
@@ -469,7 +471,7 @@ export function buildEntityDetail(
     title: event.name,
     subtitle:
       linkedDynasties.length > 0
-        ? linkedDynasties.map((dynasty) => dynasty.name).join(" · ")
+        ? linkedDynasties.map((dynasty) => resolveDynastyName(dynasty, anchorAbs)).join(" · ")
         : eventKindLabel(event.kind),
     dynastyId: primaryDynasty?.id,
     colorToken: primaryDynasty
@@ -510,12 +512,14 @@ export function searchEntities(store: TimelineDataStore, term: string): SearchHi
   const dynastyById = new Map(store.dynasties.map((dynasty) => [dynasty.id, dynasty]));
 
   for (const dynasty of [...store.dynasties].sort((a,b)=>a.id.localeCompare(b.id))) {
-    if (dynasty.name.toLowerCase().includes(q)) {
-      hits.push({
-        ref: { type: "dynasty", id: dynasty.id },
-        label: dynasty.name,
-        abs: midpointAbs(dynasty.startAbs, dynasty.endAbs),
-      });
+    const entries = dynastyNameSearchEntries(dynasty, midpointAbs(dynasty.startAbs, dynasty.endAbs));
+    const exact = entries.find(entry => normalizeSearchTerm(entry.name) === q);
+    const matched = exact ?? entries.find(entry => normalizeSearchTerm(entry.name).includes(q));
+    const alias = (dynasty.altNames ?? []).some(name => normalizeSearchTerm(name).includes(q));
+    if (matched || alias) {
+      hits.push({ ref: { type: "dynasty", id: dynasty.id },
+        label: matched?.name ?? resolveDynastyDefaultName(dynasty),
+        abs: matched?.abs ?? midpointAbs(dynasty.startAbs, dynasty.endAbs) });
     }
   }
   for (const person of [...store.persons].sort((a,b)=>a.id.localeCompare(b.id))) {
@@ -538,7 +542,7 @@ export function searchEntities(store: TimelineDataStore, term: string): SearchHi
     hits.push({
       ref: { type: "reign", id: reign.id },
       label: matchedEraNames[0],
-      subtitle: [person?.name, dynasty?.name].filter(Boolean).join(" · ") || undefined,
+      subtitle: [person?.name, dynasty ? resolveDynastyDefaultName(dynasty) : undefined].filter(Boolean).join(" · ") || undefined,
       abs: midpointAbs(reign.startAbs, reign.endAbs),
     });
   }
@@ -548,7 +552,7 @@ export function searchEntities(store: TimelineDataStore, term: string): SearchHi
     const dynasty=dynastyById.get(reign?.dynastyId ?? m.externalId);
     const event=m.kind === "event" ? store.events.find(e=>e.id===m.externalId) : undefined;
     hits.push({ref:{type:"location_mapping",id:m.id},label:m.historicalName,
-      subtitle:[m.location.modernName,event?.name ?? dynasty?.name,m.kind === "event" ? "事件地点" : "都城"].filter(Boolean).join(" · "),
+      subtitle:[m.location.modernName,event?.name ?? (dynasty ? resolveDynastyName(dynasty, m.startAbs) : undefined),m.kind === "event" ? "事件地点" : "都城"].filter(Boolean).join(" · "),
       abs:event ? eventSpanAbs(event).anchorAbs : m.startAbs != null && m.endAbs != null ? midpointAbs(m.startAbs,m.endAbs) : undefined});
   }
   for (const event of [...store.events].sort((a,b)=>a.id.localeCompare(b.id))) {

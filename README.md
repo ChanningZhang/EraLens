@@ -48,3 +48,20 @@ pnpm dev:all
 项目结构、接口、数据库命令、入库规则和排查约定见 [AGENTS.md](AGENTS.md)。时期数据位于 `data/imports/`；`data/seed/` 是体验和 Mock 使用的示例数据。
 
 人物、事件、王朝的普通关联统一维护在 [entity-associations/cache.json](data/imports/entity-associations/cache.json)，数据库使用无向的 `entity_associations` 表；`relations` 仅保存命运与人物继承关系。导入规则见 [数据维护说明](data/imports/README.md)。移动数据使用 schema 4、contract 5；修改数据后重新生成并校验移动数据库。
+
+### 王朝分时名称与增量合并
+
+普通王朝的 `name` 为名称文本。改名阶段合并为同一条王朝记录后，`name` 保存仅含 `periods` 的 JSON 字符串，每个阶段包含 `name`、`start`、`end`（带 confidence 的历史日期）。代表显示名称放在 `altNames[0]`；人物与在位详情使用代表名称，泳道按视口时间切换名称。
+
+当前 `yuan` 覆盖蒙古帝国与元，`ming` 覆盖吴、明、南明，源记录唯一由 `yuan-ming-qing` 包维护。更新已有真实库时先执行迁移、生成和校验，再事务性增量导入：
+
+```bash
+pnpm db:migrate
+node data/imports/generate.mjs --all
+node scripts/apply-dynasty-merges.mjs yuan-ming-qing --dry-run
+node scripts/apply-dynasty-merges.mjs yuan-ming-qing
+pnpm data:mobile:build
+pnpm data:mobile:validate
+```
+
+增量入口读取源包的 `dynastyMerges`，统一迁移引用并校验现有人物、在位 ID 保留；发生错误时回滚。

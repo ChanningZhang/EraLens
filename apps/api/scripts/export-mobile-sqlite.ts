@@ -1,3 +1,4 @@
+import { resolveDynastyName, resolveDynastyDefaultName, dynastyNameSearchEntries } from "@eralens/shared";
 import { mapEntityAssociation, EntityAssociationSchema } from "@eralens/shared";
 import { createHash } from "node:crypto";
 import { DatabaseSync } from "node:sqlite";
@@ -8,7 +9,6 @@ import { fileURLToPath } from "node:url";
 import {
   LocationSchema, LocationMappingSchema, mapLocation, mapLocationMapping,
   DynastyGroupSchema,
-  DynastyLaneGroupSchema,
   DynastySchema,
   EventSchema,
 
@@ -20,7 +20,6 @@ import {
 import {
   mapDynasty,
   mapDynastyGroup,
-  mapDynastyLaneGroup,
   mapEvent,
   mapPerson,
   mapRelation,
@@ -41,7 +40,7 @@ const tempPath = `${outputPath}.tmp`;
 const TABLES = [
   ["persons", "id"], ["dynasty_groups", "id"], ["dynasties", "id"], ["reigns", "id"],
   ["events", "id"], ["entity_associations", "a_type, a_id, b_type, b_id"], ["relations", "id"],
-  ["dynasty_lane_groups", "id"], ["locations", "id"], ["location_mapping", "id"],
+  ["locations", "id"], ["location_mapping", "id"],
 ] as const;
 
 type Row = Record<string, unknown>;
@@ -115,7 +114,6 @@ try {
   const persons = raw.get("persons")!;
   const dynasties = raw.get("dynasties")!;
   const groups = raw.get("dynasty_groups")!;
-  const laneGroups = raw.get("dynasty_lane_groups")!;
   const reigns = raw.get("reigns")!;
   const events = raw.get("events")!;
   const relations = raw.get("relations")!;
@@ -123,7 +121,6 @@ try {
   for (const row of persons) dtoValidate("Person", PersonSchema, mapPerson(camelizeRow(row) as never));
   for (const row of dynasties) dtoValidate("Dynasty", DynastySchema, mapDynasty(row as never));
   for (const row of groups) dtoValidate("DynastyGroup", DynastyGroupSchema, mapDynastyGroup(row as never));
-  for (const row of laneGroups) dtoValidate("DynastyLaneGroup", DynastyLaneGroupSchema, mapDynastyLaneGroup(camelizeRow(row) as never));
   for (const row of reigns) dtoValidate("Reign", ReignSchema, mapReign(row as never));
   const associations=raw.get("entity_associations")!.map(mapEntityAssociation);
   for (const row of associations) EntityAssociationSchema.parse(row);
@@ -164,7 +161,7 @@ try {
   if (danglingRelations.length) throw new Error(`Found ${danglingRelations.length} dangling relation endpoint(s):\n${danglingRelations.map((item) => `- ${item}`).join("\n")}`);
   const personReigns = new Map<string, Row[]>();
   for (const row of reigns) personReigns.set(String(row.person_id), [...(personReigns.get(String(row.person_id)) ?? []), row]);
-  const dynastyNames = new Map(dynasties.map((row) => [String(row.id), String(row.name)]));
+  const dynastyById = new Map(dynasties.map((row) => { const dynasty = mapDynasty(camelizeRow(row) as never); return [dynasty.id, dynasty]; }));
   const eventKindLabel: Record<string, string> = { idiom: "成语", poetry: "诗词", battle: "战争", politics: "政治", culture: "文化", disaster: "灾害", commerce: "商业", agriculture: "农业", finance: "金融", other: "其他" };
   for (const row of persons) {
     const roles = Array.isArray(row.roles) ? row.roles.join(" · ") : "";
@@ -174,10 +171,15 @@ try {
       searchEntry(db, "person", String(row.id), String(term), "person", String(row.name), roles || null, anchor);
     }
   }
-  for (const row of dynasties) searchEntry(db, "dynasty", String(row.id), String(row.name), "name", String(row.name), null, Number(row.start_abs));
+  for (const dynasty of dynastyById.values()) {
+    const entries = dynastyNameSearchEntries(dynasty, dynasty.startAbs);
+    for (const entry of entries) searchEntry(db, "dynasty", dynasty.id, entry.name, "name", entry.name, null, entry.abs);
+    for (const alias of dynasty.altNames ?? []) searchEntry(db, "dynasty", dynasty.id, alias, "alias", resolveDynastyDefaultName(dynasty), null, dynasty.startAbs);
+  }
   for (const row of reigns) {
     const person = persons.find((item) => item.id === row.person_id);
-    const dynasty = dynastyNames.get(String(row.dynasty_id)) ?? "";
+    const dynastyRow = dynastyById.get(String(row.dynasty_id));
+    const dynasty = dynastyRow ? resolveDynastyDefaultName(dynastyRow) : "";
     for (const term of String(row.era_names ?? "").split(",").map((item) => item.trim()).filter(Boolean)) {
       searchEntry(db, "reign", String(row.id), term, "era", term, `${String(person?.name ?? "")} · ${dynasty}`, Number(row.start_abs));
     }
@@ -191,7 +193,8 @@ try {
   for (const m of mappings) {
     const reign=m.kind === "reign" ? reigns.find(r=>r.id===m.externalId) : undefined;
     const event=m.kind === "event" ? events.find(e=>e.id===m.externalId) : undefined;
-    const subtitle=[m.location.modernName,event?.name ?? dynastyNames.get(String(reign?.dynasty_id ?? m.externalId)),m.kind === "event" ? "事件地点" : "都城"].filter(Boolean).join(" · ");
+    const dynasty = dynastyById.get(String(reign?.dynasty_id ?? m.externalId));
+    const subtitle=[m.location.modernName,event?.name ?? (dynasty ? resolveDynastyName(dynasty, m.startAbs) : undefined),m.kind === "event" ? "事件地点" : "都城"].filter(Boolean).join(" · ");
     const anchor=m.startAbs ?? event?.at_abs ?? event?.start_abs;
     searchEntry(db,"location_mapping",m.id,m.historicalName,"historical_name",m.historicalName,subtitle,anchor == null ? null : Number(anchor));
     searchEntry(db,"location_mapping",m.id,m.location.modernName,"modern_name",m.historicalName,subtitle,anchor == null ? null : Number(anchor));

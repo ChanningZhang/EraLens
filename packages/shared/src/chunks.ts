@@ -53,7 +53,6 @@ export function getAdjacentChunk(
 export function mergeTimelineSlices(slices: TimelineSlice[]): TimelineSlice {
   const dynastyMap = new Map<string, TimelineSlice["dynasties"][number]>();
   const dynastyGroupMap = new Map<string, TimelineSlice["dynastyGroups"][number]>();
-  const dynastyLaneGroupMap = new Map<string, TimelineSlice["dynastyLaneGroups"][number]>();
   // The same database row can arrive in several overlapping query chunks.
   // Merge only that same ID; distinct reign rows always remain visible.
   const reignMap = new Map<string, TimelineSlice["reigns"][number]>();
@@ -68,9 +67,6 @@ export function mergeTimelineSlices(slices: TimelineSlice[]): TimelineSlice {
     }
     for (const group of slice.dynastyGroups ?? []) {
       dynastyGroupMap.set(group.id, group);
-    }
-    for (const group of slice.dynastyLaneGroups ?? []) {
-      dynastyLaneGroupMap.set(group.id, group);
     }
     for (const reign of slice.reigns) {
       reignMap.set(reign.id, reign);
@@ -97,7 +93,6 @@ export function mergeTimelineSlices(slices: TimelineSlice[]): TimelineSlice {
   return TimelineSliceSchema.parse({
     dynasties: [...dynastyMap.values()],
     dynastyGroups: [...dynastyGroupMap.values()],
-    dynastyLaneGroups: [...dynastyLaneGroupMap.values()],
     reigns,
     events: [...eventMap.values()],
     persons,

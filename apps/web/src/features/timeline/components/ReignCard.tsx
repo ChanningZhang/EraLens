@@ -1,3 +1,4 @@
+import { resolveDynastyDefaultName } from "@eralens/shared";
 import { memo, useMemo } from "react";
 import {
   type Dynasty,
@@ -108,7 +109,7 @@ function ReignCardImpl({
     const meta = resolveReignCardMeta(reign, personName, clan);
     const showMeta = shouldShowReignCardMeta(barLayout.barWidthPx, labelLength, meta ? [...meta.name].length : 0, unitHeight);
     const givenName = resolveReignCardGivenName(reign, personName, clan);
-    const regionLabel = resolveRocReignRegionLabel(reign, dynasty.name);
+    const regionLabel = resolveRocReignRegionLabel(reign, resolveDynastyDefaultName(dynasty));
     const tooltipName = givenName && givenName !== label
       ? givenName
       : personName && personName !== label ? personName : label;

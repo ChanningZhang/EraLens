@@ -25,7 +25,7 @@ describe("prepared reign bar geometry", () => {
     for (const pxPerMonth of [1.5, 6, 12]) {
       const viewport = { centerAbs: absMonth(-651, 9), pxPerMonth, widthPx: 1000, gutterPx: 102 };
       const prepared = prepareLaneReignGeometry(rulers);
-      const bars = rulers.map((item) => layoutLaneReignBar(item, "d", rulers, viewport, 50, item.title, null, [], prepared.byId.get(item.id))!);
+      const bars = rulers.map((item) => layoutLaneReignBar(item, "d", rulers, viewport, 50, item.title, null, prepared.byId.get(item.id))!);
       expect(bars[0]!.barRight).toBeCloseTo(bars[1]!.barLeft);
       expect(bars[1]!.barRight).toBeCloseTo(bars[2]!.barLeft);
       for (const bar of bars.slice(1)) expect(bar.barRight - bar.barLeft).toBeCloseTo(pxPerMonth);
@@ -40,7 +40,7 @@ describe("prepared reign bar geometry", () => {
       { centerAbs: 49, pxPerMonth: 5, widthPx: 1000, gutterPx: 102 },
     ]) {
       for (const ruler of rulers) {
-        expect(layoutLaneReignBar(ruler, "d", rulers, viewport, 50, ruler.title, null, [], prepared.byId.get(ruler.id)))
+        expect(layoutLaneReignBar(ruler, "d", rulers, viewport, 50, ruler.title, null, prepared.byId.get(ruler.id)))
           .toEqual(layoutLaneReignBar(ruler, "d", rulers, viewport, 50, ruler.title));
       }
     }

@@ -21,7 +21,7 @@ export interface TimelineQuery {
 export interface TimelineRepository {
   getTimeline(query: TimelineQuery): Promise<TimelineSlice>;
   getTimelineCatalog(scope?: string): Promise<TimelineCatalog>;
-  getEntity(ref: EntityRef, options?: { focusReignId?: string }): Promise<EntityDetail>;
+  getEntity(ref: EntityRef, options?: { focusReignId?: string; atAbs?: number }): Promise<EntityDetail>;
   search(term: string): Promise<SearchHit[]>;
   getBounds(): Promise<{ minAbs: number; maxAbs: number }>;
   getLocations(): Promise<Location[]>;

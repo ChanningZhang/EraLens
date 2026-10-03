@@ -2,9 +2,9 @@ import { keepPreviousData, queryOptions } from "@tanstack/react-query";
 import type { EntityRef } from "@eralens/shared";
 import { getRepository } from "@/data/repository";
 
-export function entityDetailQueryOptions(selected: EntityRef | null, focusReignId: string | null) {
+export function entityDetailQueryOptions(selected: EntityRef | null, focusReignId: string | null, atAbs?: number) {
   return queryOptions({
-    queryKey: ["entity", selected?.type, selected?.id, focusReignId],
+    queryKey: ["entity", selected?.type, selected?.id, focusReignId, selected?.type === "dynasty" ? atAbs : undefined],
     queryFn: async () => {
       if (!selected) throw new Error("No selection");
       const repo = await getRepository();
@@ -12,7 +12,7 @@ export function entityDetailQueryOptions(selected: EntityRef | null, focusReignI
         selected,
         selected.type === "person"
           ? { focusReignId: focusReignId ?? undefined }
-          : undefined,
+          : selected.type === "dynasty" ? { atAbs } : undefined,
       );
       // Keep the displayed entity and its navigation context together while
       // another selection loads, including another reign of the same person.

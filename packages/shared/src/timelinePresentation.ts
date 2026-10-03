@@ -1,4 +1,4 @@
-import { TIMELINE_GUTTER_PX, TIMELINE_RAIL_INSET_PX, TIMELINE_RAIL_LABEL_WIDTH_PX } from "./dynastyLaneGroups";
+import { TIMELINE_GUTTER_PX, TIMELINE_RAIL_INSET_PX, TIMELINE_RAIL_LABEL_WIDTH_PX } from "./timelineLanes";
 
 export type TimelineLayoutPreferences = {
   railCollapsed: boolean;

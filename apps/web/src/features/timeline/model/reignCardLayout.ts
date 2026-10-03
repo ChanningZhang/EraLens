@@ -5,7 +5,6 @@ import {
   resolveReignCardLabel,
   type PreQinClanContext,
   type Reign,
-  type DynastyLaneGroup,
 } from "@eralens/shared";
 import {
   LANE_PADDING_TOP,
@@ -62,13 +61,12 @@ export function layoutLaneReignBar(
   laneTop: number,
   personName?: string,
   clan?: PreQinClanContext | null,
-  laneGroups: readonly DynastyLaneGroup[] = [],
   geometry?: PreparedReignGeometry,
 ): ReignCardLayout | null {
   if (isSystemMissingReign(reign)) {
     return layoutMissingReignBar(reign, dynastyId, laneTop, viewport);
   }
-  return layoutRulerReignBar(reign, dynastyId, rulers, viewport, laneTop, personName, clan, laneGroups, geometry);
+  return layoutRulerReignBar(reign, dynastyId, rulers, viewport, laneTop, personName, clan, geometry);
 }
 
 function layoutRulerReignBar(
@@ -79,11 +77,10 @@ function layoutRulerReignBar(
   laneTop: number,
   personName?: string,
   clan?: PreQinClanContext | null,
-  laneGroups: readonly DynastyLaneGroup[] = [],
   geometry?: PreparedReignGeometry,
 ): ReignCardLayout | null {
-  const span = geometry ?? resolveReignVisualSpan(reign, reigns, laneGroups);
-  const { unitTop, unitHeight } = geometry ?? resolveStackedCardUnit(reign, reigns, laneGroups, viewport.presentation?.rowHeightPx);
+  const span = geometry ?? resolveReignVisualSpan(reign, reigns);
+  const { unitTop, unitHeight } = geometry ?? resolveStackedCardUnit(reign, reigns, viewport.presentation?.rowHeightPx);
   const visual = geometry
     ? { start: geometry.visualStart, endExclusive: geometry.visualEndExclusive }
     : reignVisualBounds(reign, span.startAbs, span.endExclusive);

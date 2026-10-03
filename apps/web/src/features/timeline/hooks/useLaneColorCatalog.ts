@@ -17,7 +17,6 @@ export function useLaneColorCatalog(
     return buildStableLaneColorMap(
       catalog.dynasties,
       catalog.dynastyGroups,
-      catalog.dynastyLaneGroups,
       capitals ?? [],
     );
   }, [catalog, capitals]);

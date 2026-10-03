@@ -91,7 +91,7 @@ export function DetailPanel() {
   const selection = useSelection();
   const viewport = useViewport();
 
-  const detailQuery = useQuery(entityDetailQueryOptions(selection.selected, selection.focusReignId));
+  const detailQuery = useQuery(entityDetailQueryOptions(selection.selected, selection.focusReignId, selection.highlightAbs ?? undefined));
   const detail = detailQuery.data?.detail;
   const displayedSelection = detailQuery.data;
   const switchingDetail = detailQuery.isPlaceholderData;

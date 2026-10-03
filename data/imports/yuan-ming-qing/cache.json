@@ -1,8 +1,8 @@
 {
   "slug": "yuan-ming-qing",
   "window": {
-    "startYear": 1271,
-    "startMonth": 12,
+    "startYear": 1206,
+    "startMonth": 1,
     "endYear": 1912,
     "endMonth": 2
   },
@@ -2164,29 +2164,33 @@
   "dynasties": [
     {
       "id": "yuan",
-      "name": "元",
+      "name": "{\"periods\":[{\"name\":\"蒙古帝国\",\"start\":{\"year\":1206,\"month\":1,\"confidence\":\"year\"},\"end\":{\"year\":1271,\"month\":12,\"day\":18,\"confidence\":\"day\"}},{\"name\":\"元\",\"start\":{\"year\":1271,\"month\":12,\"day\":18,\"confidence\":\"day\"},\"end\":{\"year\":1388,\"month\":11,\"confidence\":\"month\"}}]}",
       "altNames": [
+        "元",
         "大元",
         "蒙元",
         "北元",
         "残元",
-        "故元"
+        "故元",
+        "蒙古帝国",
+        "大蒙古国",
+        "蒙古汗国"
       ],
       "scope": "cn",
       "region": "east_asia",
       "start": {
-        "year": 1271,
-        "month": 12,
-        "abs": 15263,
-        "confidence": "month"
+        "year": 1206,
+        "month": 1,
+        "confidence": "year",
+        "abs": 14472
       },
       "end": {
         "year": 1388,
         "month": 11,
-        "abs": 16666,
-        "confidence": "month"
+        "confidence": "month",
+        "abs": 16666
       },
-      "note": "忽必烈1271年定国号大元；1368年顺帝北逃漠北继续称大元。北元延续至1388年11月天元帝被杀，政权终结。"
+      "note": "1206年铁木真称成吉思汗建国；1271年忽必烈定国号大元，中原史语境转入元朝。帝国诸汗国此后分治。\n忽必烈1271年定国号大元；1368年顺帝北逃漠北继续称大元。北元延续至1388年11月天元帝被杀，政权终结。"
     },
     {
       "id": "song-xu",
@@ -2304,78 +2308,37 @@
       "note": "明玉珍由徐寿辉部将转而经营四川，1362年在重庆称帝、国号夏，建元天统，以四川为核心并据有周边地区。政权设置官署、学校并实行较轻赋税；明玉珍死后子明升继位，1371年明军攻取重庆，明夏亡。"
     },
     {
-      "id": "wu-zhu",
-      "name": "吴",
+      "id": "ming",
+      "name": "{\"periods\":[{\"name\":\"吴\",\"start\":{\"year\":1364,\"month\":2,\"day\":4,\"confidence\":\"day\"},\"end\":{\"year\":1368,\"month\":1,\"day\":23,\"confidence\":\"day\"}},{\"name\":\"明\",\"start\":{\"year\":1368,\"month\":1,\"day\":23,\"confidence\":\"day\"},\"end\":{\"year\":1644,\"month\":4,\"day\":25,\"confidence\":\"day\"}},{\"name\":\"南明\",\"start\":{\"year\":1644,\"month\":6,\"day\":19,\"confidence\":\"day\"},\"end\":{\"year\":1662,\"month\":6,\"day\":1,\"confidence\":\"day\"}}]}",
       "altNames": [
+        "明",
+        "大明",
         "吴",
-        "西吴"
+        "西吴",
+        "南明"
       ],
       "scope": "cn",
       "region": "east_asia",
       "start": {
         "year": 1364,
         "month": 1,
-        "abs": 16368,
-        "confidence": "year"
-      },
-      "end": {
-        "year": 1368,
-        "month": 1,
-        "abs": 16416,
-        "confidence": "year"
-      },
-      "note": "朱元璋以应天为中心经营江南，击败陈友谅、张士诚后，于1364年称吴王，起初仍奉韩宋龙凤年号。1367年改用吴年号并发动北伐；次年在应天称帝、建立明朝，吴政权阶段结束。"
-    },
-    {
-      "id": "ming",
-      "name": "明",
-      "altNames": [
-        "大明"
-      ],
-      "scope": "cn",
-      "region": "east_asia",
-      "start": {
-        "year": 1368,
-        "month": 1,
-        "abs": 16416,
-        "confidence": "month"
-      },
-      "end": {
-        "year": 1644,
-        "month": 4,
-        "abs": 19731,
-        "confidence": "month"
-      },
-      "note": "朱元璋于1368年建立明朝，初都南京；永乐年间迁都北京，经营北方边防并开展郑和下西洋等对外活动。明代前中期中央集权持续加强，农业、手工业与商业发展，后期经历财政压力、边疆战争和政治纷争。1644年李自成军攻入北京，崇祯帝自缢，明朝中央政权覆亡；南方明室政权此后继续抵抗。"
-    },
-    {
-      "id": "ming-south",
-      "name": "南明",
-      "altNames": [
-        "大明",
-        "明"
-      ],
-      "scope": "cn",
-      "region": "east_asia",
-      "start": {
-        "year": 1644,
-        "month": 1,
-        "abs": 19728,
-        "confidence": "year"
+        "confidence": "year",
+        "abs": 16368
       },
       "end": {
         "year": 1662,
-        "month": 1,
-        "abs": 19944,
-        "confidence": "year"
+        "month": 12,
+        "confidence": "year",
+        "abs": 19955
       },
-      "note": "明亡后朱氏多支并立：通行主线弘光→隆武→永历；鲁监国、绍武为并行朝廷。1662年永历帝殉，南明终结。"
+      "note": "朱元璋以应天为中心经营江南，击败陈友谅、张士诚后，于1364年称吴王，起初仍奉韩宋龙凤年号。1367年改用吴年号并发动北伐；次年在应天称帝、建立明朝，吴政权阶段结束。\n朱元璋于1368年建立明朝，初都南京；永乐年间迁都北京，经营北方边防并开展郑和下西洋等对外活动。明代前中期中央集权持续加强，农业、手工业与商业发展，后期经历财政压力、边疆战争和政治纷争。1644年李自成军攻入北京，崇祯帝自缢，明朝中央政权覆亡；南方明室政权此后继续抵抗。\n明亡后朱氏多支并立：通行主线弘光→隆武→永历；鲁监国、绍武为并行朝廷。1662年永历帝殉，南明终结。"
     },
     {
       "id": "qing",
-      "name": "清",
+      "name": "{\"periods\":[{\"name\":\"后金\",\"start\":{\"year\":1616,\"month\":2,\"confidence\":\"month\"},\"end\":{\"year\":1636,\"month\":5,\"day\":14,\"confidence\":\"day\"}},{\"name\":\"大清\",\"start\":{\"year\":1636,\"month\":5,\"day\":15,\"confidence\":\"day\"},\"end\":{\"year\":1912,\"month\":2,\"confidence\":\"month\"}}]}",
       "altNames": [
         "大清",
+        "金",
         "后金"
       ],
       "scope": "cn",
@@ -2990,7 +2953,7 @@
     },
     {
       "id": "reign-zhu-yuanzhang-wu-zhu",
-      "dynastyId": "wu-zhu",
+      "dynastyId": "ming",
       "personId": "zhu-yuanzhang",
       "title": "吴",
       "eraNames": [
@@ -3458,7 +3421,7 @@
     },
     {
       "id": "reign-zhu-yousong-ming-south",
-      "dynastyId": "ming-south",
+      "dynastyId": "ming",
       "personId": "zhu-yousong",
       "title": "弘光",
       "eraNames": [
@@ -3484,7 +3447,7 @@
     },
     {
       "id": "reign-zhu-yujian-ming-south",
-      "dynastyId": "ming-south",
+      "dynastyId": "ming",
       "personId": "zhu-yujian",
       "title": "隆武",
       "eraNames": [
@@ -3510,7 +3473,7 @@
     },
     {
       "id": "reign-zhu-youlang-ming-south",
-      "dynastyId": "ming-south",
+      "dynastyId": "ming",
       "personId": "zhu-youlang",
       "title": "永历",
       "eraNames": [
@@ -3536,7 +3499,7 @@
     },
     {
       "id": "reign-zhu-yihai-ming-south",
-      "dynastyId": "ming-south",
+      "dynastyId": "ming",
       "personId": "zhu-yihai",
       "title": "鲁监国",
       "eraNames": [],
@@ -3564,7 +3527,7 @@
     },
     {
       "id": "reign-zhu-yuyue-ming-south",
-      "dynastyId": "ming-south",
+      "dynastyId": "ming",
       "personId": "zhu-yuyue",
       "title": "绍武",
       "eraNames": [
@@ -5299,8 +5262,8 @@
     "slug": "yuan-ming-qing",
     "title": "元明清（含南明）",
     "window": {
-      "startYear": 1271,
-      "startMonth": 12,
+      "startYear": 1206,
+      "startMonth": 1,
       "endYear": 1912,
       "endMonth": 2
     },
@@ -5309,7 +5272,7 @@
     "generatedAt": "2026-09-13",
     "counts": {
       "persons": 89,
-      "dynasties": 10,
+      "dynasties": 8,
       "reigns": 58,
       "events": 63,
       "relations": 50
@@ -5890,6 +5853,50 @@
       {
         "label": "《“国号”中的历史流变》：国号、自称与方位史称",
         "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
+      },
+      {
+        "label": "蒙古帝国",
+        "url": "https://zh.wikipedia.org/wiki/蒙古帝国"
+      },
+      {
+        "label": "成吉思汗",
+        "url": "https://zh.wikipedia.org/wiki/成吉思汗"
+      },
+      {
+        "label": "窝阔台",
+        "url": "https://zh.wikipedia.org/wiki/窝阔台"
+      },
+      {
+        "label": "蒙哥",
+        "url": "https://zh.wikipedia.org/wiki/蒙哥"
+      },
+      {
+        "label": "忽必烈",
+        "url": "https://zh.wikipedia.org/wiki/忽必烈"
+      },
+      {
+        "label": "蒙古帝国大汗列表",
+        "url": "https://zh.wikipedia.org/wiki/蒙古帝国大汗列表"
+      },
+      {
+        "label": "《元史》卷七：至元八年十一月乙亥建国号大元",
+        "url": "https://zh.wikisource.org/zh-hans/元史/卷007"
+      },
+      {
+        "label": "建国号诏：至元八年十一月十五的通行公历换算",
+        "url": "https://zh.wikipedia.org/wiki/建国号诏"
+      },
+      {
+        "label": "吴（纪年）：称吴王及建明日期的通行换算",
+        "url": "https://zh.wikipedia.org/wiki/吴_(纪年)"
+      },
+      {
+        "label": "故宫博物院：南明弘光政权及其覆灭",
+        "url": "https://www.dpm.org.cn/court/event/159031.html"
+      },
+      {
+        "label": "《清太宗实录》卷二十八（天聪十年四月十一日改国号为大清）",
+        "url": "https://zh.wikipedia.org/wiki/后金"
       }
     ],
     "notes": [
@@ -5921,7 +5928,24 @@
       "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
       "朱祁钰的监国经历改记为单点事件“郕王受命监国”；《明史》记正统十四年秋八月（农历）皇太后命王监国，未将农历日期换算为公历，事件按年精度落点。其唯一在位段仍从九月初六（农历）即皇帝位起，止于1457年夺门之变。",
       "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
-      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。",
+      "2026-10-03：蒙古帝国与元合为 yuan，吴、明、南明合为 ming。name 使用 JSON 字符串保存 分时 periods，代表名称放在 altNames 首项；人物与在位详情采用 altNames 首项，泳道按时点解析。日期、置信度及在位分段沿用原记录；年精度端点占位月份规范为起点 1 月、终点 12 月。代表名称为元、明，大元、大明保留在后续别名，原阶段别名和来源保留。王朝记录统一由本包所有；其他包仅引用。",
+      "2026-10-03：复核分时名称端点精度。蒙古帝国→元以《元史》至元八年十一月十五乙亥建国号诏为依据，采用通行公历1271-12-18；吴阶段起于至正二十四年正月初一（通行换算1364-02-04），吴→明以洪武元年正月初四即位（1368-01-23）为共享交接依据；明阶段结束于崇祯自缢（1644-04-25），南明阶段起于崇祯十七年五月十五弘光即位（1644-06-19），止于永历帝遇害（1662-06-01），上述端点confidence=day。明中央覆亡至弘光即位之间没有名称阶段，按统一规则返回代表名明。1206年蒙古建国和1388年11月北元结束暂保留年、月精度，不补造月日。名称期间修正不修改合并王朝的时间几何或reign记录；既有吴王reign起日1364-02-15与称吴王日期的差异作为独立在位数据复核事项保留，不以该日期覆盖已核实的名称起点。",
+      "2026-10-03：王朝泳道名按分时名称记录：1616年建国后至1636-05-15称“后金”，自崇德元年四月十一日（公历1636-05-15）起称“大清”。后金自称金，altNames 保留“金”“后金”；详情代表名为“大清”。改号日据《清太宗实录》卷二十八及其公历换算，采用日精度。"
     ]
-  }
+  },
+  "dynastyMerges": [
+    {
+      "fromId": "mongol-empire",
+      "toId": "yuan"
+    },
+    {
+      "fromId": "wu-zhu",
+      "toId": "ming"
+    },
+    {
+      "fromId": "ming-south",
+      "toId": "ming"
+    }
+  ]
 }

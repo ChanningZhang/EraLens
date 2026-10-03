@@ -1,3 +1,4 @@
+import { validateDynastyName } from "../../../packages/shared/src/dynastyNameFormat.mjs";
 import { assertEntityAssociation } from "../../../packages/shared/src/entityAssociations.mjs";
 import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
@@ -221,11 +222,6 @@ VALUES (${sqlStr(p.id)}, ${sqlStr(p.name)}, ${sqlArray(p.altNames ?? [])}, ${sql
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, birth_day = EXCLUDED.birth_day, birth_confidence = EXCLUDED.birth_confidence, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, death_day = EXCLUDED.death_day, death_confidence = EXCLUDED.death_confidence, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, title = EXCLUDED.title;`;
 }
 
-export function dynastyLaneGroupSql(group) {
-  return `INSERT INTO dynasty_lane_groups (id, primary_dynasty_id, phase_dynasty_ids, lane_order_start_abs, lane_order_end_abs)
-VALUES (${sqlStr(group.id)}, ${sqlStr(group.primaryDynastyId)}, ${sqlArray(group.phaseDynastyIds)}, ${group.laneOrderStartAbs}, ${group.laneOrderEndAbs})
-ON CONFLICT (id) DO UPDATE SET primary_dynasty_id = EXCLUDED.primary_dynasty_id, phase_dynasty_ids = EXCLUDED.phase_dynasty_ids, lane_order_start_abs = EXCLUDED.lane_order_start_abs, lane_order_end_abs = EXCLUDED.lane_order_end_abs;`;
-}
 
 export function dynastyGroupSql(g) {
   return `INSERT INTO dynasty_groups (id, name, alt_names, scope, start_year, start_month, start_day, start_confidence, end_year, end_month, end_day, end_confidence, start_abs, end_abs, note)
@@ -237,6 +233,7 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_na
 export const LEGACY_COLOR_TOKEN = "ochre";
 
 export function dynastySql(d) {
+  validateDynastyName(d);
   const groupId = d.groupId ? sqlStr(d.groupId) : "NULL";
   return `INSERT INTO dynasties (id, name, alt_names, scope, region, start_year, start_month, start_day, start_confidence, end_year, end_month, end_day, end_confidence, start_abs, end_abs, color_token, parent_id, group_id, note)
 VALUES (${sqlStr(d.id)}, ${sqlStr(d.name)}, ${sqlArray(d.altNames)}, ${sqlStr(d.scope)}, ${sqlStr(d.region)}, ${d.start.year}, ${d.start.month}, ${d.start.day ?? "NULL"}, ${sqlStr(endpointDateConfidence(d.start.confidence, d.start))}, ${d.end.year}, ${d.end.month}, ${d.end.day ?? "NULL"}, ${sqlStr(endpointDateConfidence(d.end.confidence, d.end))}, ${d.start.abs}, ${d.end.abs}, ${sqlStr(LEGACY_COLOR_TOKEN)}, NULL, ${groupId}, ${sqlStr(d.note)})
@@ -308,7 +305,6 @@ export function writePreparedImportPackage(dir, {
   window = { startYear: 9999, startMonth: 1, endYear: 9999, endMonth: 12 },
   persons = [],
   dynastyGroups = [],
-  dynastyLaneGroups = [],
   dynasties = [],
   locations = [],
   locationMappings = [],
@@ -337,7 +333,6 @@ export function writePreparedImportPackage(dir, {
     ...(dynastyGroups.length ? ["", "-- dynasty_groups", ...dynastyGroups.map(dynastyGroupSql)] : []),
     ...(dynasties.length ? ["", "-- dynasties", ...dynasties.map(dynastySql)] : []),
     ...(locations.length ? ["", "-- locations", ...locations.map(locationSql)] : []),
-    ...(dynastyLaneGroups.length ? ["", "-- dynasty_lane_groups", ...dynastyLaneGroups.map(dynastyLaneGroupSql)] : []),
     ...(reigns.length ? ["", "-- reigns", ...reigns.map(reignSql)] : []),
     ...(events.length ? ["", "-- events", ...events.map(eventSql)] : []),
     ...(associationSql.length ? ["", "-- entity_associations", ...associationSql] : []),

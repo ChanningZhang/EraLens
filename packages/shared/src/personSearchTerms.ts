@@ -1,3 +1,4 @@
+import { dynastyNameTerms } from "./dynastyNames";
 import type { Dynasty, Person, Reign } from "./schema";
 
 /** Search terms are stored without whitespace so DB and mock lookup agree. */
@@ -48,7 +49,7 @@ export function buildPersonSearchTerms(
     add(reign.title);
     const dynasty = dynastyById.get(reign.dynastyId);
     if (!dynasty) continue;
-    for (const dynastyName of [dynasty.name, ...(dynasty.altNames ?? [])]) {
+    for (const dynastyName of [...dynastyNameTerms(dynasty.name), ...(dynasty.altNames ?? [])]) {
       for (const appellation of appellations(person)) {
         add(`${dynastyName}${appellation}`);
       }

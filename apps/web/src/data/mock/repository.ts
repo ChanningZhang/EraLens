@@ -104,14 +104,13 @@ export const mockRepository: TimelineRepository = {
     return {
       dynasties,
       dynastyGroups: [],
-      dynastyLaneGroups: [],
     };
   },
   async getEntity(ref, options) {
     return buildEntityDetail(
       store,
       ref,
-      { focusReignId: options?.focusReignId },
+      { focusReignId: options?.focusReignId, atAbs: options?.atAbs },
     );
   },
   async search(term) {

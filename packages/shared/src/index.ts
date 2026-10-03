@@ -13,7 +13,7 @@ export * from "./rocTaiwanLeaderDisplay";
 export * from "./timelineData";
 export * from "./chunks";
 export * from "./dynastyColors";
-export * from "./dynastyLaneGroups";
+export * from "./timelineLanes";
 export * from "./timelinePresentation";
 export * from "./dynastyClusterGroups";
 export * from "./claimTracks";
@@ -25,3 +25,5 @@ export * from "./dynastyCapitals";
 export * from "./locationMappings";
 
 export * from "./entityAssociations.mjs";
+
+export * from "./dynastyNames";

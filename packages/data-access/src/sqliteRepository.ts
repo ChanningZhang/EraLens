@@ -1,11 +1,11 @@
 import { mapEntityAssociation, eventAssociationIds, type EntityAssociation } from "@eralens/shared";
 import {
   buildEntityDetail, computeBounds, DynastyGroupSchema,
-  DynastyLaneGroupSchema, DynastySchema, EventSchema, mapLocation, mapLocationMapping, filterLocationMappings,
+  DynastySchema, EventSchema, mapLocation, mapLocationMapping, filterLocationMappings,
   filterTimeline, fromAbsMonth, normalizeSearchTerm, PersonSchema, RelationSchema, ReignSchema,
   confidencePrecision,
   searchEntities, type Dynasty, type LocationMappingQuery, type LocationMapping, type Location, type DynastyGroup,
-  type DynastyLaneGroup, type EntityDetail, type EntityRef, type Event,
+type EntityDetail, type EntityRef, type Event,
   type EventDisplayConfig, type Person, type Reign, type Relation,
   type SearchHit, type TimelineCatalog, type TimelineDataStore, type TimelineSlice,
 } from "@eralens/shared";
@@ -62,12 +62,6 @@ function mapGroup(row: Row): DynastyGroup {
   });
 }
 
-function mapLaneGroup(row: Row): DynastyLaneGroup {
-  return DynastyLaneGroupSchema.parse({
-    id: row.id, primaryDynastyId: row.primary_dynasty_id, phaseDynastyIds: strings(row.phase_dynasty_ids),
-    laneOrderStartAbs: Number(row.lane_order_start_abs), laneOrderEndAbs: Number(row.lane_order_end_abs),
-  });
-}
 
 function mapReign(row: Row): Reign {
   const endAbs = Number(row.end_abs);
@@ -146,10 +140,10 @@ export class SqliteTimelineRepository implements TimelineRepository {
     const metadata = await rows(db, "SELECT key, value FROM content_metadata");
     const meta = new Map<string, unknown>(metadata.map((row) => [String(row.key), JSON.parse(String(row.value)) as unknown]));
     if (!meta.has("schema_version") || !meta.has("contract_version")) throw new Error("SQLite content database has no schema metadata");
-    if (meta.get("schema_version") !== 4 || meta.get("contract_version") !== 5) throw new Error("SQLite content database version is not supported by this app");
-    const [personsRaw, dynastiesRaw, groupsRaw, lanesRaw, reignsRaw, eventsRaw, associationRows, mappingRaw, relationsRaw] = await Promise.all([
+    if (meta.get("schema_version") !== 5 || meta.get("contract_version") !== 6) throw new Error("SQLite content database version is not supported by this app");
+    const [personsRaw, dynastiesRaw, groupsRaw, reignsRaw, eventsRaw, associationRows, mappingRaw, relationsRaw] = await Promise.all([
       rows(db, "SELECT * FROM persons"), rows(db, "SELECT * FROM dynasties"), rows(db, "SELECT * FROM dynasty_groups"),
-      rows(db, "SELECT * FROM dynasty_lane_groups"), rows(db, "SELECT * FROM reigns"), rows(db, "SELECT * FROM events"),
+      rows(db, "SELECT * FROM reigns"), rows(db, "SELECT * FROM events"),
       rows(db, "SELECT * FROM entity_associations"), rows(db, "SELECT m.*, json_object('id',l.id,'modern_name',l.modern_name,'longitude',l.longitude,'latitude',l.latitude,'coordinate_system',l.coordinate_system) AS location FROM location_mapping m JOIN locations l ON l.id=m.location_id"),
       rows(db, "SELECT * FROM relations"),
     ]);
@@ -157,7 +151,7 @@ export class SqliteTimelineRepository implements TimelineRepository {
     const associations=associationRows.map(mapEntityAssociation);
     return {
       persons: personsRaw.map(mapPerson), dynasties: dynastiesRaw.map(mapDynasty),
-      dynastyGroups: groupsRaw.map(mapGroup), dynastyLaneGroups: lanesRaw.map(mapLaneGroup),
+      dynastyGroups: groupsRaw.map(mapGroup),
       reigns: reignsRaw.map(mapReign),
       events: eventsRaw.map((event) => mapEvent(event, associations,
         locationMappings.filter(m=>m.kind === "event" && m.externalId===event.id))),
@@ -267,11 +261,11 @@ export class SqliteTimelineRepository implements TimelineRepository {
     const store = await this.store();
     return {
       dynasties: scope ? store.dynasties.filter((item) => item.scope === scope) : store.dynasties,
-      dynastyGroups: store.dynastyGroups ?? [], dynastyLaneGroups: store.dynastyLaneGroups ?? [],
+      dynastyGroups: store.dynastyGroups ?? [],
     };
   }
 
-  async getEntity(ref: EntityRef, options?: { focusReignId?: string }): Promise<EntityDetail> {
+  async getEntity(ref: EntityRef, options?: { focusReignId?: string; atAbs?: number }): Promise<EntityDetail> {
     const store = await this.store();
     const context = await this.personDetailContext(ref, options?.focusReignId);
     if (context && context.length === 0) throw new Error(`Entity not found: ${ref.id}`);
@@ -291,6 +285,7 @@ export class SqliteTimelineRepository implements TimelineRepository {
       detailStore,
       ref,
       {
+        atAbs: options?.atAbs,
         focusReignId: ref.type === "reign" ? ref.id : options?.focusReignId,
         selectedReignIds: contextReigns.map((reign) => reign.id),
         focusReignIndex: context?.[0]?.reignIndex,

@@ -206,10 +206,10 @@ describe("assignReignStacks", () => {
     const all = [main, upper, lower];
     const viewport = { centerAbs: 60, pxPerMonth: 1, widthPx: 800 };
     const regularHeight = dynastyLaneHeight([], all);
-    const withCaption = dynastyLaneHeightForViewport(all, [], viewport, new Map(), new Map());
+    const withCaption = dynastyLaneHeightForViewport(all, viewport, new Map(), new Map());
 
     expect(withCaption).toBeCloseTo(regularHeight + 16.4, 5);
-    expect(dynastyLaneHeightForViewport(all, [], { ...viewport, pxPerMonth: 100 }, new Map(), new Map()))
+    expect(dynastyLaneHeightForViewport(all, { ...viewport, pxPerMonth: 100 }, new Map(), new Map()))
       .toBeCloseTo(regularHeight, 5);
   });
 

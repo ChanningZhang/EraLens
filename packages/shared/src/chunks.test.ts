@@ -37,7 +37,7 @@ describe("mergeTimelineSlices", () => {
           },
         ],
         dynastyGroups: [],
-        dynastyLaneGroups: [],
+
         reigns: [],
         events: [],
         persons: [
@@ -70,7 +70,7 @@ describe("mergeTimelineSlices", () => {
           },
         ],
         dynastyGroups: [],
-        dynastyLaneGroups: [],
+
         reigns: [],
         events: [],
         persons: [
@@ -134,7 +134,7 @@ describe("mergeTimelineSlices", () => {
       {
         dynasties: [],
         dynastyGroups: [],
-        dynastyLaneGroups: [],
+
         reigns: [stale],
         events: [],
         persons: [{ id: "qin-r30", name: "原名子异", altNames: [], roles: ["君主"], links: [] }],
@@ -143,7 +143,7 @@ describe("mergeTimelineSlices", () => {
       {
         dynasties: [],
         dynastyGroups: [],
-        dynastyLaneGroups: [],
+
         reigns: [current],
         events: [],
         persons: [{ id: "qin-r29", name: "嬴子楚", altNames: [], roles: ["君主"], links: [] }],
@@ -178,7 +178,7 @@ describe("mergeTimelineSlices", () => {
       claimRole: "rival",
     };
     const slice = {
-      dynasties: [], dynastyGroups: [], dynastyLaneGroups: [],
+      dynasties: [], dynastyGroups: [],
       reigns: [ping, xie], events: [], persons: [], relations: [],
     };
 
@@ -188,36 +188,5 @@ describe("mergeTimelineSlices", () => {
     ]);
   });
 
-  it("preserves dynasty lane group config across chunks", () => {
-    const laneGroup = {
-      id: "mongol-yuan",
-      primaryDynastyId: "yuan",
-      phaseDynastyIds: ["mongol-empire", "yuan"],
-      laneOrderStartAbs: 14472,
-      laneOrderEndAbs: 16656,
-    };
 
-    const merged = mergeTimelineSlices([
-      {
-        dynasties: [],
-        dynastyGroups: [],
-        dynastyLaneGroups: [laneGroup],
-        reigns: [],
-        events: [],
-        persons: [],
-        relations: [],
-      },
-      {
-        dynasties: [],
-        dynastyGroups: [],
-        dynastyLaneGroups: [],
-        reigns: [],
-        events: [],
-        persons: [],
-        relations: [],
-      },
-    ]);
-
-    expect(merged.dynastyLaneGroups).toEqual([laneGroup]);
-  });
 });

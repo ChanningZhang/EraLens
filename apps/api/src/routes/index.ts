@@ -25,7 +25,6 @@ import { prisma } from "../db.js";
 import {
   mapDynasty,
   mapDynastyGroup,
-  mapDynastyLaneGroup,
   mapEvent,
   mapPerson,
   mapReign,
@@ -345,7 +344,6 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
     return TimelineSliceSchema.parse({
       dynasties: [],
       dynastyGroups: [],
-      dynastyLaneGroups: [],
       reigns: [],
       events,
       persons,
@@ -379,9 +377,7 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
           WHERE id = ANY(${groupIds}::text[])`
       : [];
   const dynastyGroups = dynastyGroupRows.map(mapDynastyGroup);
-  const dynastyLaneGroups = (await prisma.dynastyLaneGroup.findMany()).map(
-    mapDynastyLaneGroup,
-  );
+
   const reigns = reignRows.map((row) => mapReign(row));
   const visibleReignPersonIds = [...new Set(reignRows.map((row) => row.person_id))];
   const [lifePersonRows, rulerPersonRows] = await Promise.all([
@@ -443,7 +439,6 @@ async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string)
   return TimelineSliceSchema.parse({
     dynasties,
     dynastyGroups,
-    dynastyLaneGroups,
     reigns,
     events,
     persons,
@@ -498,14 +493,10 @@ export async function registerRoutes(app: FastifyInstance) {
     const dynastyRows = query.scope
       ? await prisma.dynasty.findMany({ where: { scope: query.scope } })
       : await prisma.dynasty.findMany();
-    const [dynastyGroupRows, dynastyLaneGroups] = await Promise.all([
-      prisma.dynastyGroup.findMany(),
-      prisma.dynastyLaneGroup.findMany(),
-    ]);
+    const dynastyGroupRows = await prisma.dynastyGroup.findMany();
     return TimelineCatalogSchema.parse({
       dynasties: dynastyRows.map(mapDynasty),
       dynastyGroups: dynastyGroupRows.map(mapDynastyGroup),
-      dynastyLaneGroups: dynastyLaneGroups.map(mapDynastyLaneGroup),
     });
   });
 
@@ -535,13 +526,16 @@ export async function registerRoutes(app: FastifyInstance) {
       return { error: "Invalid entity type" };
     }
 
+    const query = request.query as { focusReign?: string; atAbs?: string };
+    const atAbs = query.atAbs == null ? undefined : Number(query.atAbs);
+    if (atAbs != null && !Number.isFinite(atAbs)) return reply.code(400).send({ error: "Invalid atAbs" });
+
     try {
       if (params.type === "location_mapping") {
         const store=await loadStore();
         return EntityDetailSchema.parse(buildEntityDetail(store,{type:"location_mapping",id:params.id}));
       }
 
-      const query = request.query as { focusReign?: string };
       let entityType = params.type;
       let entityId = params.id;
       let focusReignId = query.focusReign;
@@ -582,7 +576,7 @@ export async function registerRoutes(app: FastifyInstance) {
           type: entityType as "dynasty" | "person" | "event",
           id: entityId,
         },
-        {},
+        { atAbs },
       );
       return EntityDetailSchema.parse(detail);
     } catch {

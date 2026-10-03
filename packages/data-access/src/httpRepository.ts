@@ -41,9 +41,10 @@ export class HttpTimelineRepository implements TimelineRepository {
     return this.fetchJson(`/timeline-catalog${query ? `?${query}` : ""}`, TimelineCatalogSchema);
   }
 
-  getEntity(ref: EntityRef, options?: { focusReignId?: string }): Promise<EntityDetail> {
+  getEntity(ref: EntityRef, options?: { focusReignId?: string; atAbs?: number }): Promise<EntityDetail> {
     const params = new URLSearchParams();
     if (options?.focusReignId) params.set("focusReign", options.focusReignId);
+    if (options?.atAbs != null) params.set("atAbs", String(options.atAbs));
     const query = params.toString();
     return this.fetchJson(`/entities/${ref.type}/${encodeURIComponent(ref.id)}${query ? `?${query}` : ""}`, EntityDetailSchema);
   }

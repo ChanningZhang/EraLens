@@ -11,7 +11,7 @@ const windows = [
   [-1046, -771], [-1, 1], [220, 280], [420, 589], [581, 907], [960, 1279], [1368, 1912], [1912, 2026],
 ] as const;
 const lods = ["month", "decade", "century", "millennium"] as const;
-const unorderedIdArrays = new Set(["dynasties", "dynastyGroups", "dynastyLaneGroups", "reigns", "events", "persons", "relations"]);
+const unorderedIdArrays = new Set(["dynasties", "dynastyGroups", "reigns", "events", "persons", "relations"]);
 const canonical = (value: unknown, parentKey = ""): unknown => {
   if (Array.isArray(value)) {
     const ordered = unorderedIdArrays.has(parentKey) && value.every((item) => item && typeof item === "object" && "id" in item)
@@ -107,13 +107,13 @@ try {
     }
   }
 
-  for (const term of ["唐", "李隆基", "长安", "开元", "赤壁"]) {
+  for (const term of ["唐", "李隆基", "长安", "开元", "赤壁", "蒙古帝国", "元", "吴", "明", "南明"]) {
     const [httpHits, sqliteHits] = await Promise.all([httpRepository.search(term), sqliteRepository.search(term)]);
     compare(`search:${term}`, httpHits, sqliteHits);
   }
 
   const refs = [
-    { type: "dynasty", id: "tang" }, { type: "reign", id: "reign-li-longji" },
+    { type: "dynasty", id: "tang" }, { type: "dynasty", id: "yuan" }, { type: "dynasty", id: "ming" }, { type: "person", id: "zhu-yuanzhang" }, { type: "reign", id: "reign-li-longji" },
     { type: "person", id: "li-longji" }, { type: "event", id: "banquan-zhulu" },
     { type: "event", id: "chibi" }, { type: "dynasty", id: "shu" },
     { type: "event", id: "idiom-wan-bi-gui-zhao" }, { type: "person", id: "lin-xiangru" },

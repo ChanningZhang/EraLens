@@ -12,7 +12,7 @@ import {
   resolveDynastyColorToken,
   resolveReignColorToken,
 } from "./dynastyColors";
-import type { Dynasty, DynastyGroup, DynastyLaneGroup } from "./schema";
+import type { Dynasty, DynastyGroup } from "./schema";
 
 function mockDynasties(count: number) {
   return Array.from({ length: count }, (_, index) => ({
@@ -172,8 +172,8 @@ describe("buildLaneOrderIndex (stable placement)", () => {
       reignIds: ["reign-yang-tong"],
     }));
 
-    expect(buildLaneOrderIndex(dynasties, [], [], linkedCapitals)).toEqual(
-      buildLaneOrderIndex(dynasties, [], [], capitals),
+    expect(buildLaneOrderIndex(dynasties, [], linkedCapitals)).toEqual(
+      buildLaneOrderIndex(dynasties, [], capitals),
     );
   });
 
@@ -204,7 +204,7 @@ describe("buildLaneOrderIndex (stable placement)", () => {
       cap("dali", "云南省大理市", absMonth(937), absMonth(1253, 12)),
     ];
 
-    const rank = buildLaneOrderIndex(dynasties, groups, [], capitals);
+    const rank = buildLaneOrderIndex(dynasties, groups, capitals);
     // 北宋 outranks 大理 (pulled up under 五代).
     expect(rank.get("song-north")!).toBeLessThan(rank.get("dali")!);
 
@@ -226,28 +226,18 @@ describe("buildLaneOrderIndex (stable placement)", () => {
       d("jin-nv", absMonth(1115), absMonth(1234, 12)),
       d("xiliao", absMonth(1124), absMonth(1218, 12)),
       d("song-south", absMonth(1127), absMonth(1279, 12)),
-      d("mongol-empire", absMonth(1206), absMonth(1271, 12)),
-      d("yuan", absMonth(1271), absMonth(1368, 12)),
-    ];
-    const laneGroups: DynastyLaneGroup[] = [
-      {
-        id: "mongol-yuan",
-        primaryDynastyId: "yuan",
-        phaseDynastyIds: ["mongol-empire", "yuan"],
-        laneOrderStartAbs: absMonth(1206),
-        laneOrderEndAbs: absMonth(1388),
-      },
+      d("yuan", absMonth(1206), absMonth(1388, 11)),
     ];
     const capitals = [
       cap("jin-nv", "黑龙江省哈尔滨市阿城区", absMonth(1115), absMonth(1153, 12)),
       cap("jin-nv", "北京市", absMonth(1154), absMonth(1214, 12)),
       cap("xiliao", "吉尔吉斯斯坦楚河州", absMonth(1124), absMonth(1218, 12)),
       cap("song-south", "浙江省杭州市", absMonth(1130), absMonth(1279, 12)),
-      cap("mongol-empire", "蒙古国哈拉和林", absMonth(1206), absMonth(1271, 12)),
+      cap("yuan", "蒙古国哈拉和林", absMonth(1206), absMonth(1271, 12)),
       cap("yuan", "北京市", absMonth(1272), absMonth(1368, 12)),
     ];
 
-    const rank = buildLaneOrderIndex(dynasties, [], laneGroups, capitals);
+    const rank = buildLaneOrderIndex(dynasties, [], capitals);
     expect(rank.get("yuan")!).toBeGreaterThan(rank.get("xiliao")!);
     expect(rank.get("yuan")!).toBeGreaterThan(rank.get("song-south")!);
     expect(rank.get("yuan")!).toBeGreaterThan(rank.get("jin-nv")!);

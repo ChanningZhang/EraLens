@@ -1,3 +1,4 @@
+import { resolveDynastyName } from "@eralens/shared";
 import { formatReignSpanTooltip, systemReignLabel, type Dynasty, type Reign } from "@eralens/shared";
 import { memo } from "react";
 import { InfoPopover } from "./InfoPopover";
@@ -36,7 +37,7 @@ function ReignGapCardImpl({ gap, dynasty, color, pxPerMonth }: Props) {
               .filter(Boolean)
               .join(" ")}
             style={{ ["--card-color" as string]: color }}
-            aria-label={`${dynasty.name} ${label}`}
+            aria-label={`${resolveDynastyName(dynasty, gap.startAbs)} ${label}`}
             role="img"
             tabIndex={0}
             {...handlers}

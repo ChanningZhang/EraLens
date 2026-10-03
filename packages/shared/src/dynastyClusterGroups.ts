@@ -4,7 +4,7 @@ import {
   TIMELINE_RAIL_CHIP_HEIGHT_PX,
   TIMELINE_RAIL_INSET_PX,
   TIMELINE_RAIL_LABEL_WIDTH_PX,
-} from "./dynastyLaneGroups";
+} from "./timelineLanes";
 
 export type TimedSortKey = {
   id: string;

@@ -8,7 +8,6 @@
   },
   "persons": [],
   "dynastyGroups": [],
-  "dynastyLaneGroups": [],
   "dynasties": [],
   "reigns": [],
   "events": [],
@@ -5204,7 +5203,7 @@
       "id": "cap-mongol-empire-karakorum-1206",
       "locationId": "loc-93259114b5fd929bb6de3e5c3c3a608e",
       "kind": "dynasty",
-      "externalId": "mongol-empire",
+      "externalId": "yuan",
       "historicalName": "哈拉和林"
     },
     {
@@ -5676,7 +5675,7 @@
       "id": "cap-wu-zhu-yingtian-1364",
       "locationId": "loc-248ff7be823a2f4964045f586e347281",
       "kind": "dynasty",
-      "externalId": "wu-zhu",
+      "externalId": "ming",
       "historicalName": "应天"
     },
     {
@@ -5823,7 +5822,7 @@
       "id": "cap-ming-south-yingtian-1644",
       "locationId": "loc-248ff7be823a2f4964045f586e347281",
       "kind": "dynasty",
-      "externalId": "ming-south",
+      "externalId": "ming",
       "historicalName": "应天"
     },
     {
@@ -5854,7 +5853,7 @@
       "id": "cap-ming-south-fuzhou-1645",
       "locationId": "loc-17f7888ff91688321999184cfd1fe654",
       "kind": "dynasty",
-      "externalId": "ming-south",
+      "externalId": "ming",
       "historicalName": "福州"
     },
     {
@@ -5885,7 +5884,7 @@
       "id": "cap-ming-south-广州-1646",
       "locationId": "loc-7261c4cf1bd03fbfd924dcce300a9bd9",
       "kind": "dynasty",
-      "externalId": "ming-south",
+      "externalId": "ming",
       "historicalName": "广州"
     },
     {
@@ -5916,7 +5915,7 @@
       "id": "cap-ming-south-zhaoqing-1646",
       "locationId": "loc-fead7761c1222e82e7341856395fad7d",
       "kind": "dynasty",
-      "externalId": "ming-south",
+      "externalId": "ming",
       "historicalName": "肇庆"
     },
     {
@@ -5954,7 +5953,7 @@
       "id": "cap-ming-south-guilin-1647",
       "locationId": "loc-0f8df4e323a3898f21c271123be50710",
       "kind": "dynasty",
-      "externalId": "ming-south",
+      "externalId": "ming",
       "historicalName": "桂林"
     },
     {
@@ -5987,7 +5986,7 @@
       "id": "cap-ming-south-zhaoqing-1648",
       "locationId": "loc-fead7761c1222e82e7341856395fad7d",
       "kind": "dynasty",
-      "externalId": "ming-south",
+      "externalId": "ming",
       "historicalName": "肇庆"
     },
     {
@@ -6016,7 +6015,7 @@
       "id": "cap-ming-south-nanning-1649",
       "locationId": "loc-7d6a624049adc070b6e40742c0de744f",
       "kind": "dynasty",
-      "externalId": "ming-south",
+      "externalId": "ming",
       "historicalName": "南宁"
     },
     {
@@ -6045,7 +6044,7 @@
       "id": "cap-ming-south-anlong-1651",
       "locationId": "loc-b911341254d87a99ce13ec82b484fc20",
       "kind": "dynasty",
-      "externalId": "ming-south",
+      "externalId": "ming",
       "historicalName": "安龙"
     },
     {
@@ -6074,7 +6073,7 @@
       "id": "cap-ming-south-kunming-1656",
       "locationId": "loc-ec15bd36f0eb0c34a7794f7900c22600",
       "kind": "dynasty",
-      "externalId": "ming-south",
+      "externalId": "ming",
       "historicalName": "昆明"
     },
     {
@@ -6729,7 +6728,7 @@
       "id": "cap-ming-south-shaoxing-1645",
       "locationId": "loc-404e1270fc3a23c5c4214a60897bedb6",
       "kind": "dynasty",
-      "externalId": "ming-south",
+      "externalId": "ming",
       "historicalName": "绍兴"
     },
     {

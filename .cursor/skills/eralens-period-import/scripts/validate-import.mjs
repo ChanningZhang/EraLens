@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import { validateDynastyName } from "../../../../packages/shared/src/dynastyNameFormat.mjs";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { validateReignDateConfidenceSeams } from "../../../../data/imports/lib/validateReignSeams.mjs";
@@ -95,6 +96,7 @@ const absFields = sql.match(/\b(start_abs|end_abs|at_abs)\s*,\s*(-?\d+)/gi) ?? [
 const cachePath = path.join(path.dirname(path.resolve(file)), "cache.json");
 try {
   const cache = JSON.parse(readFileSync(cachePath, "utf8"));
+  for (const dynasty of cache.dynasties ?? []) validateDynastyName(dynasty);
   for (const seamError of validateReignDateConfidenceSeams(cache.reigns ?? [])) {
     errors.push(`Reign seam mismatch: ${seamError}`);
   }

@@ -21,7 +21,6 @@ function collectPackageRows(owners, slug, cache) {
     ["persons", cache.persons],
     ["dynasty_groups", cache.dynastyGroups],
     ["dynasties", cache.dynasties],
-    ["dynasty_lane_groups", cache.dynastyLaneGroups],
     ["reigns", cache.reigns],
     ["events", cache.events],
     ["locations", cache.locations],
@@ -53,7 +52,7 @@ function collectPackageRows(owners, slug, cache) {
       throw new Error(`${slug}: legacy association count ${key}`);
     }
   }
-  const countFields={persons:"persons",dynasties:"dynasties",reigns:"reigns",events:"events",relations:"relations",associations:"associations",locations:"locations",locationMappings:"locationMappings",dynastyGroups:"dynastyGroups",dynastyLaneGroups:"dynastyLaneGroups"};
+  const countFields={persons:"persons",dynasties:"dynasties",reigns:"reigns",events:"events",relations:"relations",associations:"associations",locations:"locations",locationMappings:"locationMappings",dynastyGroups:"dynastyGroups"};
   for (const [key,value] of Object.entries(cache.manifest?.counts ?? {})) if (countFields[key] && value !== (cache[countFields[key]] ?? []).length) throw new Error(`${slug}: manifest.counts.${key} does not match records`);
   (cache.updates ?? []).forEach((row, index) => {
     add(owners, "updates", [row.table, row.id, row.column].join("|"), slug, index);
@@ -91,7 +90,7 @@ function auditPackageSql(owners, slug, cache) {
       const ids = literalsFor(where, "id");
       const primaryTables = {
         persons: "persons", dynasty_groups: "dynasty_groups", dynasties: "dynasties",
-        dynasty_lane_groups: "dynasty_lane_groups", reigns: "reigns", events: "events",
+        reigns: "reigns", events: "events",
         locations: "locations", location_mapping: "location_mapping", relations: "relations.id",
       };
       if (ids) for (const id of ids) rejectExternal(primaryTables[table] ?? `${table}.id`, id, "DELETE", field);
