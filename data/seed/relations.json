@@ -408,24 +408,6 @@
     "kind": "succession"
   },
   {
-    "id": "rel-mingtiao-tang",
-    "fromRef": "event:mingtiao",
-    "toRef": "person:zi-tang",
-    "kind": "battle"
-  },
-  {
-    "id": "rel-muye-fa",
-    "fromRef": "event:muye",
-    "toRef": "person:ji-fa",
-    "kind": "battle"
-  },
-  {
-    "id": "rel-chengpu-chonger",
-    "fromRef": "event:chengpu",
-    "toRef": "person:ji-chonger",
-    "kind": "battle"
-  },
-  {
     "id": "rel-zi-zujia-zi-wuyi-succession",
     "fromRef": "person:zi-zujia",
     "toRef": "person:zi-wuyi",
@@ -460,23 +442,5 @@
     "fromRef": "person:zi-wuding",
     "toRef": "person:zi-wuyi",
     "kind": "succession"
-  },
-  {
-    "id": "rel-cao-pi-succession",
-    "fromRef": "person:cao-cao",
-    "toRef": "reign:cao-pi",
-    "kind": "succession"
-  },
-  {
-    "id": "rel-guandu-cao",
-    "fromRef": "event:guandu",
-    "toRef": "person:cao-cao",
-    "kind": "battle"
-  },
-  {
-    "id": "rel-chibi-zhuge",
-    "fromRef": "event:chibi",
-    "toRef": "person:zhuge-liang",
-    "kind": "battle"
   }
 ]

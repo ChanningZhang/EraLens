@@ -588,11 +588,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [
-        "cao-cao",
-        "yuan-shao"
-      ],
       "id": "guandu",
       "name": "官渡之战",
       "dateNote": "建安五年六月，曹操大败袁绍",
@@ -608,18 +603,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "wei",
-        "shu",
-        "wu"
-      ],
-      "participantIds": [
-        "cao-cao",
-        "liu-bei",
-        "sun-quan",
-        "zhuge-liang",
-        "zhou-yu"
-      ],
       "id": "chibi",
       "name": "赤壁之战",
       "dateNote": "建安十三年十二月，孙刘联军大败曹操",
@@ -635,13 +618,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "shu"
-      ],
-      "participantIds": [
-        "liu-bei",
-        "liu-zhang"
-      ],
       "id": "liu-bei-takes-yizhou",
       "name": "刘备取益州",
       "dateNote": "建安十九年，214年",
@@ -657,14 +633,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "shu",
-        "wu"
-      ],
-      "participantIds": [
-        "liu-bei",
-        "sun-quan"
-      ],
       "id": "yiling",
       "name": "夷陵之战",
       "dateNote": "章武元年七月至二年八月",
@@ -687,14 +655,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "wei",
-        "shu"
-      ],
-      "participantIds": [
-        "deng-ai",
-        "liu-shan"
-      ],
       "id": "deng-ai-crosses-yinping",
       "name": "邓艾偷渡阴平",
       "dateNote": "景元四年冬十月（263年），邓艾自阴平道行军入蜀",
@@ -720,35 +680,9 @@
       "fromRef": "person:liu-bei",
       "toRef": "person:liu-shan",
       "kind": "succession"
-    },
-    {
-      "id": "rel-guandu-cao-cao",
-      "fromRef": "event:guandu",
-      "toRef": "person:cao-cao",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-chibi-cao-cao",
-      "fromRef": "event:chibi",
-      "toRef": "person:cao-cao",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-chibi-zhuge",
-      "fromRef": "event:chibi",
-      "toRef": "person:zhuge-liang",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-yiling-liu-bei",
-      "fromRef": "event:yiling",
-      "toRef": "person:liu-bei",
-      "kind": "battle"
     }
   ],
-  "supplementalEventDynasties": [],
-  "supplementalEventParticipants": [],
-  "preSql": "DELETE FROM event_dynasties WHERE event_id IN ('guandu', 'liu-bei-takes-yizhou');\nDELETE FROM event_dynasties WHERE dynasty_id IN ('yuan-hebei', 'yizhou-liu');\nDELETE FROM relations WHERE id IN ('rel-cao-cao-cao-pi-succession', 'rel-cao-pi-cao-pi-succession', 'rel-liu-bei-liu-bei-succession', 'rel-sun-quan-sun-quan-succession');\nDELETE FROM reigns WHERE id IN ('reign-yuan-shao-hebei', 'reign-liu-zhang-yizhou', 'reign-cao-cao-wei', 'reign-cao-pi-king', 'reign-liu-bei-warlord', 'reign-sun-quan-warlord');\nDELETE FROM dynasties WHERE id IN ('yuan-hebei', 'yizhou-liu');",
+  "preSql": "DELETE FROM relations WHERE id IN ('rel-cao-cao-cao-pi-succession', 'rel-cao-pi-cao-pi-succession', 'rel-liu-bei-liu-bei-succession', 'rel-sun-quan-sun-quan-succession');\nDELETE FROM reigns WHERE id IN ('reign-yuan-shao-hebei', 'reign-liu-zhang-yizhou', 'reign-cao-cao-wei', 'reign-cao-pi-king', 'reign-liu-bei-warlord', 'reign-sun-quan-warlord');\nDELETE FROM dynasties WHERE id IN ('yuan-hebei', 'yizhou-liu');",
   "manifest": {
     "slug": "three-kingdoms-warlord",
     "title": "三国割据：赤壁后魏蜀吴",
@@ -766,7 +700,7 @@
       "dynasties": 3,
       "reigns": 5,
       "events": 5,
-      "relations": 6
+      "relations": 2
     },
     "sources": [
       {
@@ -886,7 +820,8 @@
       "2026-09：按《三国志·魏书·文帝纪》《明帝纪》《蜀书·先主传》《后主传》《吴书·吴主传》扩充曹丕、曹叡、刘备、刘禅、孙权及魏蜀吴王朝概述，补充继承背景、在位阶段与政权转折。",
       "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
       "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
-      "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。"
+      "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   }
 }

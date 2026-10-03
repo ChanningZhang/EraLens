@@ -280,8 +280,6 @@
   ],
   "events": [],
   "relations": [],
-  "supplementalEventDynasties": [],
-  "supplementalEventParticipants": [],
   "preSql": "DELETE FROM reigns WHERE id = 'reign-wang-mang-regent';\nDELETE FROM persons WHERE id = 'wang-mang-regent';\nDELETE FROM reigns WHERE id = 'reign-zhu-qiyu-regent-ming';",
   "manifest": {
     "slug": "informal-monarchs",
@@ -300,7 +298,7 @@
     "counts": {
       "persons": 4,
       "dynasties": 0,
-      "reigns": 7,
+      "reigns": 6,
       "events": 0,
       "relations": 0
     },

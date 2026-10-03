@@ -38,12 +38,6 @@ INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, sta
 VALUES ('reign-guo-east-last-shu', 'guo-east', 'guo-east-last-shu', '叔', NULL, -774, 1, NULL, -767, 12, NULL, -9276, -9181, 'interpolated_by_other', 'approximate_year', false)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, start_confidence = EXCLUDED.start_confidence, end_confidence = EXCLUDED.end_confidence, is_main = EXCLUDED.is_main;
 
--- relations
-INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_day, at_abs, at_confidence, event_id) VALUES ('rel-guo-east-person-1', 'dynasty', 'guo-east', 'person', 'guo-east-zhong', 'other', NULL, NULL, NULL, NULL, 'year', NULL) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, at_confidence = EXCLUDED.at_confidence, event_id = EXCLUDED.event_id;
-INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_day, at_abs, at_confidence, event_id) VALUES ('rel-guo-east-person-2', 'dynasty', 'guo-east', 'person', 'guo-east-dalin', 'other', NULL, NULL, NULL, NULL, 'year', NULL) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, at_confidence = EXCLUDED.at_confidence, event_id = EXCLUDED.event_id;
-INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_day, at_abs, at_confidence, event_id) VALUES ('rel-guo-east-person-3', 'dynasty', 'guo-east', 'person', 'guo-east-lv', 'other', NULL, NULL, NULL, NULL, 'year', NULL) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, at_confidence = EXCLUDED.at_confidence, event_id = EXCLUDED.event_id;
-INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_day, at_abs, at_confidence, event_id) VALUES ('rel-guo-east-person-4', 'dynasty', 'guo-east', 'person', 'guo-east-last-shu', 'other', NULL, NULL, NULL, NULL, 'year', NULL) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, at_confidence = EXCLUDED.at_confidence, event_id = EXCLUDED.event_id;
-
 -- Remove stale reigns from managed dynasties (superseded ids from older imports)
 WITH stale AS (
   DELETE FROM reigns
@@ -53,7 +47,7 @@ WITH stale AS (
 DELETE FROM persons p
 WHERE p.id IN (SELECT DISTINCT person_id FROM stale)
   AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)
-  AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = p.id)
+  AND NOT EXISTS (SELECT 1 FROM entity_associations a WHERE (a.a_type = 'person' AND a.a_id = p.id) OR (a.b_type = 'person' AND a.b_id = p.id))
   AND NOT EXISTS (
     SELECT 1 FROM relations rel
     WHERE (rel.from_type = 'person' AND rel.from_id = p.id)

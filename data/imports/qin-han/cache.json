@@ -2436,13 +2436,6 @@
   "events": [
     {
       "kind": "culture",
-      "dynastyIds": [
-        "qin"
-      ],
-      "participantIds": [
-        "ying-zheng",
-        "li-si"
-      ],
       "id": "qin-standardize",
       "name": "书同文车同轨",
       "timeMode": "span",
@@ -2465,13 +2458,6 @@
     },
     {
       "kind": "culture",
-      "dynastyIds": [
-        "qin"
-      ],
-      "participantIds": [
-        "ying-zheng",
-        "li-si"
-      ],
       "id": "burn-books",
       "name": "焚书坑儒",
       "timeMode": "point",
@@ -2488,12 +2474,6 @@
     },
     {
       "kind": "other",
-      "dynastyIds": [
-        "qin"
-      ],
-      "participantIds": [
-        "ying-zheng"
-      ],
       "id": "great-wall-qin",
       "name": "修筑长城",
       "timeMode": "span",
@@ -2519,13 +2499,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qin"
-      ],
-      "participantIds": [
-        "chen-sheng",
-        "wu-guang"
-      ],
       "id": "daze-uprising",
       "name": "大泽乡起义",
       "dateNote": "秦二世元年七月，前209年",
@@ -2541,15 +2514,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "qin",
-        "chu-west"
-      ],
-      "participantIds": [
-        "xiang-yu",
-        "zhang-han",
-        "xiang-liang"
-      ],
       "id": "julu-battle",
       "name": "巨鹿之战",
       "dateNote": "秦二世三年，前207年，项羽破秦军主力",
@@ -2565,13 +2529,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "chu-west"
-      ],
-      "participantIds": [
-        "xiang-liang",
-        "xiang-yu"
-      ],
       "id": "xiangliang-death",
       "name": "项梁战死定陶",
       "dateNote": "秦二世三年九月，前208年",
@@ -2587,13 +2544,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "han-west"
-      ],
-      "participantIds": [
-        "liu-bang",
-        "ying-ziying"
-      ],
       "id": "liu-enter-xianyang",
       "name": "刘邦入关",
       "dateNote": "秦王子婴投降，前207年",
@@ -2609,15 +2559,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "chu-west",
-        "han-west"
-      ],
-      "participantIds": [
-        "liu-bang",
-        "xiang-yu",
-        "zhang-liang"
-      ],
       "id": "hongmen-banquet",
       "name": "鸿门宴",
       "dateNote": "汉王元年，前206年",
@@ -2632,16 +2573,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "chu-west",
-        "han-west"
-      ],
-      "participantIds": [
-        "liu-bang",
-        "xiang-yu",
-        "han-xin",
-        "zhang-liang"
-      ],
       "id": "chu-han-war",
       "name": "楚汉战争",
       "timeMode": "span",
@@ -2665,15 +2596,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "chu-west",
-        "han-west"
-      ],
-      "participantIds": [
-        "liu-bang",
-        "xiang-yu",
-        "han-xin"
-      ],
       "id": "gaixia",
       "name": "垓下之战",
       "dateNote": "汉五年十二月，前202年",
@@ -2689,12 +2611,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "han-west"
-      ],
-      "participantIds": [
-        "liu-bang"
-      ],
       "id": "baiteng-siege",
       "name": "白登之围",
       "dateNote": "汉七年，前200年，高祖被匈奴围困于白登山",
@@ -2709,12 +2625,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "han-west"
-      ],
-      "participantIds": [
-        "liu-qi"
-      ],
       "id": "qiguo-rebellion",
       "name": "七国之乱",
       "timeMode": "span",
@@ -2737,12 +2647,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "han-west"
-      ],
-      "participantIds": [
-        "lv-zhi"
-      ],
       "id": "lv-regency",
       "name": "吕后称制",
       "timeMode": "span",
@@ -2765,13 +2669,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "han-west"
-      ],
-      "participantIds": [
-        "liu-heng",
-        "liu-qi"
-      ],
       "id": "wenjing-rule",
       "name": "文景之治",
       "timeMode": "span",
@@ -2793,12 +2690,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "han-west"
-      ],
-      "participantIds": [
-        "liu-che"
-      ],
       "id": "wu-han-expansion",
       "name": "汉武帝开疆",
       "timeMode": "span",
@@ -2820,13 +2711,6 @@
     },
     {
       "kind": "culture",
-      "dynastyIds": [
-        "han-west"
-      ],
-      "participantIds": [
-        "liu-che",
-        "zhang-qian"
-      ],
       "id": "zhangqian-mission",
       "name": "张骞通西域",
       "timeMode": "point",
@@ -2844,13 +2728,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "han-west"
-      ],
-      "participantIds": [
-        "liu-che",
-        "huo-qubing"
-      ],
       "id": "hexi-battle",
       "name": "河西之战",
       "dateNote": "元狩二年，前121年，霍去病两次西进",
@@ -2866,14 +2743,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "han-west"
-      ],
-      "participantIds": [
-        "liu-che",
-        "wei-qing",
-        "huo-qubing"
-      ],
       "id": "mobei-battle",
       "name": "漠北之战",
       "dateNote": "元狩四年，前119年，卫青、霍去病分道出击",
@@ -2888,12 +2757,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "han-west"
-      ],
-      "participantIds": [
-        "liu-che"
-      ],
       "id": "dayuan-expedition",
       "name": "远征大宛",
       "timeMode": "span",
@@ -2919,12 +2782,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "han-west"
-      ],
-      "participantIds": [
-        "liu-che"
-      ],
       "id": "wugu-case",
       "name": "巫蛊之祸",
       "dateNote": "征和二年，前91年",
@@ -2939,13 +2796,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "han-west"
-      ],
-      "participantIds": [
-        "liu-fuling",
-        "liu-xun"
-      ],
       "id": "zhaoxuan-rule",
       "name": "昭宣之治",
       "timeMode": "span",
@@ -2968,13 +2818,6 @@
     {
       "kind": "culture",
       "timeMode": "point",
-      "dynastyIds": [
-        "han-west"
-      ],
-      "participantIds": [
-        "liu-shi",
-        "wang-zhaojun"
-      ],
       "id": "zhaojun-chusai",
       "name": "昭君出塞",
       "dateNote": "竟宁元年，前33年",
@@ -2990,14 +2833,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "xin",
-        "han-gengshi"
-      ],
-      "participantIds": [
-        "liu-xiu",
-        "wang-mang"
-      ],
       "id": "kunyang-battle",
       "name": "昆阳之战",
       "dateNote": "更始元年，23年，刘秀以少胜多破王莽军",
@@ -3013,12 +2848,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "han-east"
-      ],
-      "participantIds": [
-        "liu-hong"
-      ],
       "id": "yellow-turban",
       "name": "黄巾起义",
       "dateNote": "灵帝建宁二年，184年",
@@ -3212,47 +3041,9 @@
       "fromRef": "person:liu-bian",
       "toRef": "person:liu-xie",
       "kind": "succession"
-    },
-    {
-      "id": "rel-gaixia-liu-bang",
-      "fromRef": "event:gaixia",
-      "toRef": "person:liu-bang",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-gaixia-xiang-yu",
-      "fromRef": "event:gaixia",
-      "toRef": "person:xiang-yu",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-chu-han-liu-bang",
-      "fromRef": "event:chu-han-war",
-      "toRef": "person:liu-bang",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-julu-xiang-yu",
-      "fromRef": "event:julu-battle",
-      "toRef": "person:xiang-yu",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-mobei-huo-qubing",
-      "fromRef": "event:mobei-battle",
-      "toRef": "person:huo-qubing",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-kunyang-liu-xiu",
-      "fromRef": "event:kunyang-battle",
-      "toRef": "person:liu-xiu",
-      "kind": "battle"
     }
   ],
-  "supplementalEventDynasties": [],
-  "supplementalEventParticipants": [],
-  "preSql": "DELETE FROM event_participants WHERE event_id = 'wang-mang-usurp';\nDELETE FROM event_dynasties WHERE event_id = 'wang-mang-usurp';\nDELETE FROM events WHERE id = 'wang-mang-usurp';",
+  "preSql": "DELETE FROM events WHERE id = 'wang-mang-usurp';",
   "manifest": {
     "slug": "qin-han",
     "title": "秦汉（含新莽、更始、东汉）",
@@ -3270,7 +3061,7 @@
       "dynasties": 5,
       "reigns": 36,
       "events": 24,
-      "relations": 36
+      "relations": 30
     },
     "sources": [
       {
@@ -3637,7 +3428,8 @@
       "2026-10-02 相邻在位边界复核：reign-ying-zheng start：《史记·秦始皇本纪》二十六年议帝号；旧前221-09-10未获原始史料支持，恢复年精度，1月为年桶占位。",
       "2026-10-02 相邻在位边界复核：reign-liu-bang-han-king-han-west end：《汉书》二月甲午即帝位；儒略历前202-02-28换算为前推公历前202-02-24。前相位终点由共享日区间起界求得，不保留错误的月精度。",
       "2026-10-02 相邻在位边界复核：reign-liu-bang start：《汉书》二月甲午即帝位；儒略历前202-02-28换算为前推公历前202-02-24，干支相符。",
-      "2026-10-02 嬴政秦王阶段由chunqiu-zhanguo/qin包拥有，在位交接采用《秦本纪》及庄襄王纪日；人物详情来源由本包唯一人物所有者同步维护。"
+      "2026-10-02 嬴政秦王阶段由chunqiu-zhanguo/qin包拥有，在位交接采用《秦本纪》及庄襄王纪日；人物详情来源由本包唯一人物所有者同步维护。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   }
 }

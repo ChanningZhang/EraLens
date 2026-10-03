@@ -3085,12 +3085,6 @@
   "events": [
     {
       "kind": "politics",
-      "dynastyIds": [
-        "song-liu"
-      ],
-      "participantIds": [
-        "liu-yilong"
-      ],
       "id": "yuanjia-rule",
       "name": "元嘉之治",
       "timeMode": "span",
@@ -3112,12 +3106,6 @@
     },
     {
       "kind": "culture",
-      "dynastyIds": [
-        "liang-nan"
-      ],
-      "participantIds": [
-        "xiao-yan"
-      ],
       "id": "xiaoyan-reform",
       "name": "梁武帝崇佛",
       "timeMode": "span",
@@ -3140,15 +3128,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "liang-nan"
-      ],
-      "participantIds": [
-        "hou-jing",
-        "xiao-yan",
-        "xiao-gang",
-        "xiao-dong"
-      ],
       "id": "houjing-rebellion",
       "name": "侯景之乱",
       "timeMode": "span",
@@ -3171,12 +3150,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "wei-north"
-      ],
-      "participantIds": [
-        "yuan-hong"
-      ],
       "id": "tuoba-reform",
       "name": "孝文帝改革",
       "timeMode": "span",
@@ -3200,15 +3173,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "wei-north",
-        "wei-east",
-        "wei-west"
-      ],
-      "participantIds": [
-        "yuan-xiu",
-        "yuan-shan-jian"
-      ],
       "id": "wei-split",
       "name": "北魏分裂",
       "dateNote": "534年，孝武帝西迁，东魏、西魏分立",
@@ -3224,14 +3188,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhou-bei",
-        "qi-bei"
-      ],
-      "participantIds": [
-        "yuwen-yong",
-        "gao-wei"
-      ],
       "id": "zhou-qi-unify",
       "name": "北周统一北方",
       "dateNote": "577年，周武帝宇文邕灭齐",
@@ -3247,13 +3203,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "liang-nan",
-        "wei-north"
-      ],
-      "participantIds": [
-        "chen-qingzhi"
-      ],
       "id": "chen-qingzhi-luoyang",
       "name": "白袍军入洛",
       "dateNote": "528年，陈庆之率七千白袍军入洛阳",
@@ -3269,14 +3218,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "wei-north"
-      ],
-      "participantIds": [
-        "erzhu-rong",
-        "hu-taihou",
-        "yuan-zhao"
-      ],
       "id": "he-yin-massacre",
       "name": "河阴之变",
       "dateNote": "528年，尔朱荣在河阴杀害胡太后、幼主元钊并屠杀百官。史书记于农历四月；据元钊条目换算为公历5月，事件整体保留月精度。",
@@ -3560,23 +3501,9 @@
       "fromRef": "person:yuwen-yun",
       "toRef": "person:yuwen-yan",
       "kind": "succession"
-    },
-    {
-      "id": "rel-houjing-xiao-yan",
-      "fromRef": "event:houjing-rebellion",
-      "toRef": "person:hou-jing",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-zhouqi-yuwen-yong",
-      "fromRef": "event:zhou-qi-unify",
-      "toRef": "person:yuwen-yong",
-      "kind": "battle"
     }
   ],
-  "supplementalEventDynasties": [],
-  "supplementalEventParticipants": [],
-  "preSql": "DELETE FROM event_participants WHERE event_id IN ('song-liu-founded', 'qi-nan-founded', 'liang-nan-founded', 'chen-nan-founded', 'qi-bei-founded', 'zhou-bei-founded', 'yang-jian-usurp', 'sui-chen-unify');\nDELETE FROM event_dynasties WHERE event_id IN ('song-liu-founded', 'qi-nan-founded', 'liang-nan-founded', 'chen-nan-founded', 'qi-bei-founded', 'zhou-bei-founded', 'yang-jian-usurp', 'sui-chen-unify');\nDELETE FROM events WHERE id IN ('song-liu-founded', 'qi-nan-founded', 'liang-nan-founded', 'chen-nan-founded', 'qi-bei-founded', 'zhou-bei-founded', 'yang-jian-usurp', 'sui-chen-unify');\nDELETE FROM relations WHERE id = 'rel-songliu-liu-yu-jin';\nDELETE FROM reigns WHERE id = 'reign-yuan-zi-you-rival-528';",
+  "preSql": "DELETE FROM events WHERE id IN ('song-liu-founded', 'qi-nan-founded', 'liang-nan-founded', 'chen-nan-founded', 'qi-bei-founded', 'zhou-bei-founded', 'yang-jian-usurp', 'sui-chen-unify');\nDELETE FROM relations WHERE id = 'rel-songliu-liu-yu-jin';\nDELETE FROM reigns WHERE id = 'reign-yuan-zi-you-rival-528';",
   "manifest": {
     "slug": "nanbei-chao",
     "title": "南北朝",
@@ -3590,11 +3517,11 @@
     "depth": "standard",
     "generatedAt": "2026-09-18",
     "counts": {
-      "persons": 61,
+      "persons": 63,
       "dynasties": 10,
-      "reigns": 55,
+      "reigns": 57,
       "events": 8,
-      "relations": 47
+      "relations": 45
     },
     "sources": [
       {
@@ -3968,7 +3895,8 @@
       "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
       "2026-10：据《资治通鉴》卷152、《魏书》卷13补齐孝明帝之女与幼主元钊，修正河阴之变误称尔朱荣杀孝明帝的概述。孝明帝之女的当日即位/废黜采用《通鉴》甲寅立皇女、乙卯钊即位的日序；《魏书》有“经数日”的不同叙述，依《通鉴》取一日记录。",
       "元钊原始在位日期采用条目公历换算528-04-02至528-05-17；孝庄帝原始即位日为528-05-15（农历四月戊戌）。按用户要求删除5月15至17日的孝庄帝并立记录，仅保留元钊遇害后的主行记录；主行起点以元钊终点作为接续锚点，实际归属由timelineOwnership.ts统一裁定。孝庄帝后续终点及530年以后北魏世系不属本次修复范围。",
-      "胡太后与元钊卒日采用条目换算的528-05-17；河阴屠杀人数采用《通鉴》及《魏书·孝庄纪》的两千余人，《魏书·尔朱荣传》另记千三百余人。河阴之变整体记公历528年5月，避免将原记农历四月直接录成公历4月。"
+      "胡太后与元钊卒日采用条目换算的528-05-17；河阴屠杀人数采用《通鉴》及《魏书·孝庄纪》的两千余人，《魏书·尔朱荣传》另记千三百余人。河阴之变整体记公历528年5月，避免将原记农历四月直接录成公历4月。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   }
 }

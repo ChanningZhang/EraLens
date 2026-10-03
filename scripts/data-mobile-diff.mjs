@@ -12,15 +12,18 @@ const candidatePath = args.get("--candidate") ?? path.join(root, "data/mobile/er
 if (!basePath) throw new Error("Usage: pnpm data:mobile:diff -- --base=<previous.sqlite> [--candidate=<candidate.sqlite>]");
 const base = new DatabaseSync(path.resolve(basePath), { readOnly: true });
 const candidate = new DatabaseSync(path.resolve(candidatePath), { readOnly: true });
-const tables = ["persons", "dynasty_groups", "dynasties", "reigns", "events", "event_dynasties", "event_participants", "relations", "dynasty_lane_groups", "locations", "location_mapping", "dynasty_capitals", "reign_capitals", "event_locations", "search_entries"];
+const tables = ["persons", "dynasty_groups", "dynasties", "reigns", "events", "entity_associations", "relations", "dynasty_lane_groups", "locations", "location_mapping", "dynasty_capitals", "reign_capitals", "event_locations", "search_entries"];
 const primaryKeys = {
   persons: ["id"], dynasty_groups: ["id"], dynasties: ["id"], reigns: ["id"], events: ["id"],
-  event_dynasties: ["event_id", "dynasty_id"],
-  event_participants: ["event_id", "person_id"], relations: ["id"], dynasty_lane_groups: ["id"],
+  entity_associations: ["a_type", "a_id", "b_type", "b_id"], relations: ["id"], dynasty_lane_groups: ["id"],
   dynasty_capitals: ["id"], reign_capitals: ["reign_id","capital_id"], event_locations: ["id"],
   locations: ["id"], location_mapping: ["id"],
   search_entries: ["entity_type", "entity_id", "normalized_term", "term_kind"],
 };
+// Include removed tables when comparing an older mobile schema with schema 4.
+tables.push("event_dynasties", "event_participants");
+primaryKeys.event_dynasties = ["event_id", "dynasty_id"];
+primaryKeys.event_participants = ["event_id", "person_id"];
 const keyOf = (row, keys) => JSON.stringify(keys.map((key) => row[key]));
 const stable = (v) => Array.isArray(v) ? `[${v.map(stable).join(",")}]` : v && typeof v === "object" ? `{${Object.keys(v).sort().map((k) => `${JSON.stringify(k)}:${stable(v[k])}`).join(",")}}` : JSON.stringify(v);
 const exists = (db, table) => Boolean(db.prepare("SELECT 1 FROM sqlite_master WHERE type='table' AND name=?").get(table));

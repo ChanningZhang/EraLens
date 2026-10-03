@@ -23,3 +23,5 @@ export * from "./reignFateRelations";
 export * from "./dynastyCapitals";
 
 export * from "./locationMappings";
+
+export * from "./entityAssociations.mjs";

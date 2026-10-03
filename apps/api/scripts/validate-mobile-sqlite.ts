@@ -1,3 +1,4 @@
+import { mapEntityAssociation, EntityAssociationSchema } from "@eralens/shared";
 import { DatabaseSync } from "node:sqlite";
 import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
@@ -49,8 +50,7 @@ try {
   const checksum = createHash("sha256");
   const contentTables: [string, string][] = [
     ["persons", "id"], ["dynasty_groups", "id"], ["dynasties", "id"], ["reigns", "id"],
-    ["events", "id"], ["event_dynasties", "event_id, dynasty_id"],
-    ["event_participants", "event_id, person_id"], ["relations", "id"], ["dynasty_lane_groups", "id"],
+    ["events", "id"], ["entity_associations", "a_type, a_id, b_type, b_id"], ["relations", "id"], ["dynasty_lane_groups", "id"],
     ["locations", "id"], ["location_mapping", "id"],
   ];
   for (const [table, keys] of contentTables) {
@@ -89,8 +89,14 @@ try {
     }
     if (row.event_id != null && !relationTargets.get("event")?.has(String(row.event_id))) fail(`dangling relation event reference: ${String(row.id)} event_id=${String(row.event_id)}`);
   }
-  const dynLinks = all("event_dynasties");
-  const personLinks = all("event_participants");
+  const associations=all("entity_associations").map(mapEntityAssociation);
+  for (const row of associations) {
+    EntityAssociationSchema.parse(row);
+    for(const ref of [row.aRef,row.bRef]) {
+      const colon=ref.indexOf(":"),type=ref.slice(0,colon),id=ref.slice(colon+1);
+      if(!relationTargets.get(type)?.has(id)) fail(`Dangling association: ${ref}`);
+    }
+  }
   const locationRows=all("locations");
   const locations=new Map(locationRows.map(row=>[String(row.id),mapLocation(row)]));
   const mappings=all("location_mapping").map(row=>mapLocationMapping({...row,location:locations.get(String(row.location_id))}));
@@ -100,10 +106,8 @@ try {
   }
   for (const row of events) EventSchema.parse(mapEvent({
     ...rawHydrate(row),
-    dynasties: dynLinks.filter((link) => link.event_id === row.id).map((link) => ({ dynastyId: link.dynasty_id })),
-    participants: personLinks.filter((link) => link.event_id === row.id).map((link) => ({ personId: link.person_id })),
     locationMappings:mappings.filter(m=>m.kind === "event" && m.externalId===row.id),
-  } as never));
+  } as never, associations));
   const rowCounts = { persons: persons.length, dynasties: dynasties.length, dynastyGroups: groups.length, dynastyLaneGroups: laneGroups.length, reigns: reigns.length, events: events.length, relations: relations.length, locations: locationRows.length, locationMappings: mappingRows.length };
   console.log(JSON.stringify({ input, status: "ok", schemaVersion: versions.schemaVersion, contractVersion: versions.contractVersion, counts: declaredCounts, zodRows: rowCounts }, null, 2));
 } finally {

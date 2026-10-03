@@ -18,11 +18,9 @@
   "locationMappings": [],
   "reigns": [{ "id": "reign-li-shimin", "dynastyId": "tang", "personId": "li-shimin", "title": "唐太宗", "start": { "year": 626, "month": 9, "abs": 7520, "confidence": "month" }, "end": { "year": 649, "month": 7, "abs": 7794, "confidence": "month" }, "startAbs": 7520, "endAbs": 7794, "eraNames": ["贞观"], "isMain": true }],
   "reignCapitals": [],
-  "events": [{ "id": "example-event", "name": "示例事件", "kind": "politics", "timeMode": "point", "at": { "year": 627, "month": 12, "abs": 7535, "confidence": "year" }, "dynastyIds": ["tang"], "participantIds": ["li-shimin"] }],
+  "events": [{ "id": "example-event", "name": "示例事件", "kind": "politics", "timeMode": "point", "at": { "year": 627, "month": 12, "abs": 7535, "confidence": "year" } }],
   "eventLocations": [],
   "relations": [],
-  "supplementalEventDynasties": [],
-  "supplementalEventParticipants": [],
   "manifest": { "slug": "example-period", "title": "示例时期", "generatedAt": "2026-09-27", "counts": { "persons": 1, "dynasties": 1, "reigns": 1, "events": 1 }, "sources": [], "notes": [] },
   "preSql": "",
   "postSql": ""
@@ -61,8 +59,7 @@
 | locations | id（集中地点包唯一维护） |
 | location_mapping | id |
 | events | id |
-| event_dynasties | (event_id, dynasty_id) |
-| event_participants | (event_id, person_id) |
+| entity_associations | (a_type, a_id, b_type, b_id)，唯一维护包 entity-associations |
 | relations | id |
 
 事件日期列：`time_mode`（point/span）、`at_confidence` / `start_confidence` / `end_confidence`、`date_note`（可选）。日期精度只由每个端点的 confidence 表达；空间定位的 `location_mapping.spatial_precision` 单独保留。
@@ -249,21 +246,22 @@ INSERT INTO events (
 
 ### events（成语 idiom）
 
-成语典故专用 `kind = idiom`，只能 `time_mode = point`。时间轴按 `at_abs` 画时刻 marker；`meaning` 必填，`summary` 写典故。人物关联使用 `event_participants.person_id`，必须为 `persons.id`；对照史事关联写入 `relations`。
+成语典故专用 `kind = idiom`，只能 `time_mode = point`。时间轴按 `at_abs` 画时刻 marker；`meaning` 必填，`summary` 写典故。人物、王朝、史事对照均使用集中包 `associations`。人物端点必须为 `person:`，国君也不使用 reign 端点。
 
-### event_dynasties / event_participants
+### entity_associations（集中普通关联）
 
-```sql
-INSERT INTO event_dynasties (event_id, dynasty_id)
-VALUES ('xuanwumen', 'tang')
-ON CONFLICT DO NOTHING;
+唯一源：`data/imports/entity-associations/cache.json` 的 `associations` 数组。示例：
 
-INSERT INTO event_participants (event_id, person_id)
-VALUES ('xuanwumen', 'li-shimin')
-ON CONFLICT DO NOTHING;
+```json
+[
+  { "aRef": "dynasty:tang", "bRef": "event:xuanwumen" },
+  { "aRef": "event:xuanwumen", "bRef": "person:li-shimin" }
+]
 ```
 
-### relations
+无方向、无标签；完整 ref 按 UTF-8 字节顺序排列，禁止自关联或重复。人物—王朝、事件—事件等遵循同一结构，两侧详情均可查询。来源、迁移取舍与计数放在集中包 manifest。禁止各历史包写事件 dynastyIds/participantIds 或 supplementalEventDynasties/supplementalEventParticipants。接口中的同名事件数组是计算结果。
+
+### relations（仅命运与人物继承）
 
 ```sql
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind)

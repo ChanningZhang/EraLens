@@ -276,15 +276,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "han-east"
-      ],
-      "participantIds": [
-        "liu-bei",
-        "cao-cao",
-        "zhang-fei",
-        "zhuge-liang"
-      ],
       "id": "changban",
       "name": "长坂之战",
       "dateNote": "建安十三年，208年，刘备南逃于长坂遭曹军追击",
@@ -300,15 +291,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "wei",
-        "wu"
-      ],
-      "participantIds": [
-        "zhang-liao",
-        "sun-quan",
-        "cao-ren"
-      ],
       "id": "xiaoyaojin",
       "name": "逍遥津之战",
       "dateNote": "建安二十年七月，张辽八百破孙权",
@@ -324,16 +306,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "shu",
-        "wei"
-      ],
-      "participantIds": [
-        "liu-bei",
-        "cao-cao",
-        "huang-zhong",
-        "xiahou-yuan"
-      ],
       "id": "hanzhong",
       "name": "汉中之战",
       "dateNote": "建安二十二年至二十四年五月",
@@ -356,14 +328,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "shu",
-        "wei"
-      ],
-      "participantIds": [
-        "huang-zhong",
-        "xiahou-yuan"
-      ],
       "id": "dingjunshan",
       "name": "定军山之战",
       "dateNote": "建安二十四年正月，黄忠斩夏侯渊",
@@ -379,14 +343,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "shu",
-        "wei"
-      ],
-      "participantIds": [
-        "guan-yu",
-        "cao-ren"
-      ],
       "id": "xiangfan",
       "name": "襄樊之战",
       "dateNote": "建安二十四年七月至十二月",
@@ -409,14 +365,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "wei",
-        "wu"
-      ],
-      "participantIds": [
-        "sun-quan",
-        "zhang-liao"
-      ],
       "id": "ruxu",
       "name": "濡须之战",
       "dateNote": "黄初三年至四年，222–223年",
@@ -439,15 +387,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "shu",
-        "wei"
-      ],
-      "participantIds": [
-        "zhuge-liang",
-        "ma-su",
-        "zhang-he"
-      ],
       "id": "jieting",
       "name": "街亭之战",
       "dateNote": "建兴六年春，228年",
@@ -463,14 +402,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "wu",
-        "wei"
-      ],
-      "participantIds": [
-        "lu-xun",
-        "cao-xiu"
-      ],
       "id": "shiting",
       "name": "石亭之战",
       "dateNote": "黄初七年七月，228年",
@@ -486,13 +417,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "shu",
-        "wei"
-      ],
-      "participantIds": [
-        "zhuge-liang"
-      ],
       "id": "wuzhangyuan",
       "name": "五丈原之战",
       "dateNote": "建兴十二年二月至八月",
@@ -513,82 +437,7 @@
       "endAbs": 2815
     }
   ],
-  "relations": [
-    {
-      "id": "rel-changban-liu-bei",
-      "fromRef": "event:changban",
-      "toRef": "person:liu-bei",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-xiaoyaojin-zhang-liao",
-      "fromRef": "event:xiaoyaojin",
-      "toRef": "person:zhang-liao",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-hanzhong-liu-bei",
-      "fromRef": "event:hanzhong",
-      "toRef": "person:liu-bei",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-dingjunshan-huang-zhong",
-      "fromRef": "event:dingjunshan",
-      "toRef": "person:huang-zhong",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-xiangfan-guan-yu",
-      "fromRef": "event:xiangfan",
-      "toRef": "person:guan-yu",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-jieting-zhuge",
-      "fromRef": "event:jieting",
-      "toRef": "person:zhuge-liang",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-shiting-lu-xun",
-      "fromRef": "event:shiting",
-      "toRef": "person:lu-xun",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-wuzhangyuan-zhuge",
-      "fromRef": "event:wuzhangyuan",
-      "toRef": "person:zhuge-liang",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-yiling-lu-xun",
-      "fromRef": "event:yiling",
-      "toRef": "person:lu-xun",
-      "kind": "battle"
-    }
-  ],
-  "supplementalEventDynasties": [
-    {
-      "eventId": "changban",
-      "dynastyId": "wei"
-    },
-    {
-      "eventId": "changban",
-      "dynastyId": "shu"
-    }
-  ],
-  "supplementalEventParticipants": [
-    {
-      "eventId": "yiling",
-      "personId": "lu-xun"
-    },
-    {
-      "eventId": "xiangfan",
-      "personId": "liu-bei"
-    }
-  ],
+  "relations": [],
   "preSql": "",
   "manifest": {
     "slug": "three-kingdoms-battles",
@@ -607,7 +456,7 @@
       "dynasties": 0,
       "reigns": 0,
       "events": 9,
-      "relations": 9
+      "relations": 0
     },
     "sources": [
       {
@@ -694,7 +543,8 @@
       "定军山为汉中之战关键节点，单独建点事件以便检索。",
       "人物生卒据《三国志》及维基百科通行换算，不详处 birth/death 留 NULL。",
       "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
-      "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。"
+      "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   }
 }

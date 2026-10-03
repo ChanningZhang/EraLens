@@ -295,12 +295,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "yelang"
-      ],
-      "participantIds": [
-        "yelang-duotong"
-      ],
       "id": "tangmeng-tong-yelang",
       "name": "唐蒙通夜郎",
       "at": {
@@ -315,8 +309,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "han-pacify-southwest-yi",
       "name": "汉平西南夷",
       "at": {
@@ -331,12 +323,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "dian"
-      ],
-      "participantIds": [
-        "dian-changqiang"
-      ],
       "id": "dian-surrender-han",
       "name": "滇国降汉",
       "at": {
@@ -351,12 +337,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "yelang"
-      ],
-      "participantIds": [
-        "yelang-duotong"
-      ],
       "id": "yelang-xin-killed",
       "name": "夜郎自大",
       "at": {
@@ -382,48 +362,9 @@
       "fromRef": "person:zhuang-qiao",
       "toRef": "person:dian-changqiang",
       "kind": "succession"
-    },
-    {
-      "id": "rel-tangmeng-yelang",
-      "fromRef": "event:tangmeng-tong-yelang",
-      "toRef": "dynasty:yelang",
-      "kind": "other"
-    },
-    {
-      "id": "rel-han-pacify-southwest-yi",
-      "fromRef": "event:han-pacify-southwest-yi",
-      "toRef": "dynasty:han-west",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-dian-surrender",
-      "fromRef": "event:dian-surrender-han",
-      "toRef": "dynasty:dian",
-      "kind": "other"
-    },
-    {
-      "id": "rel-yelang-xin-killed",
-      "fromRef": "event:yelang-xin-killed",
-      "toRef": "person:yelang-xin",
-      "kind": "other"
     }
   ],
-  "supplementalEventDynasties": [
-    {
-      "eventId": "tangmeng-tong-yelang",
-      "dynastyId": "han-west"
-    },
-    {
-      "eventId": "han-pacify-southwest-yi",
-      "dynastyId": "han-west"
-    },
-    {
-      "eventId": "dian-surrender-han",
-      "dynastyId": "han-west"
-    }
-  ],
-  "supplementalEventParticipants": [],
-  "preSql": "DELETE FROM event_dynasties WHERE event_id = 'yelang-xin-killed' AND dynasty_id = 'han-west';\nDELETE FROM event_participants WHERE event_id = 'yelang-xin-killed';\nDELETE FROM event_dynasties WHERE dynasty_id IN ('qiongdu', 'zuodu', 'ranmang', 'baima', 'qielan', 'laomo');\nDELETE FROM event_dynasties WHERE event_id = 'han-destroy-qielan';\nDELETE FROM event_participants WHERE person_id IN ('qiong-jun', 'zuo-hou', 'qielan-jun');\nDELETE FROM event_participants WHERE event_id = 'han-destroy-qielan';\nDELETE FROM relations WHERE id = 'rel-han-destroy-qielan';\nDELETE FROM reigns WHERE id IN ('reign-qiong-jun-qiongdu', 'reign-zuo-hou-zuodu', 'reign-qielan-jun-qielan');\nDELETE FROM reigns WHERE dynasty_id IN ('qiongdu', 'zuodu', 'ranmang', 'baima', 'qielan', 'laomo');\nDELETE FROM persons WHERE id IN ('qiong-jun', 'zuo-hou', 'qielan-jun');\nDELETE FROM dynasties WHERE id IN ('qiongdu', 'zuodu', 'ranmang', 'baima', 'qielan', 'laomo');\nDELETE FROM events WHERE id = 'han-destroy-qielan';",
+  "preSql": "DELETE FROM relations WHERE id = 'rel-han-destroy-qielan';\nDELETE FROM reigns WHERE id IN ('reign-qiong-jun-qiongdu', 'reign-zuo-hou-zuodu', 'reign-qielan-jun-qielan');\nDELETE FROM reigns WHERE dynasty_id IN ('qiongdu', 'zuodu', 'ranmang', 'baima', 'qielan', 'laomo');\nDELETE FROM persons WHERE id IN ('qiong-jun', 'zuo-hou', 'qielan-jun');\nDELETE FROM dynasties WHERE id IN ('qiongdu', 'zuodu', 'ranmang', 'baima', 'qielan', 'laomo');\nDELETE FROM events WHERE id = 'han-destroy-qielan';",
   "manifest": {
     "slug": "xinan-guozheng",
     "title": "西汉西南夷诸国（含夜郎）",
@@ -439,9 +380,9 @@
     "counts": {
       "persons": 4,
       "dynasties": 2,
-      "reigns": 4,
+      "reigns": 6,
       "events": 4,
-      "relations": 6
+      "relations": 2
     },
     "sources": [
       {
@@ -479,7 +420,8 @@
       "多同取唐蒙通夜郎（前135）前后约二十年；兴取被杀前数年；尝羌取降汉前数年。",
       "庄蹻与尝羌之间、多同与兴之间世系失考，中间空缺不补齐。",
       "confidence=year，scope=cn，region=east_asia。",
-      "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。"
+      "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   }
 }

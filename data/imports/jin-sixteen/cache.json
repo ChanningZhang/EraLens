@@ -4411,12 +4411,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "jin-west"
-      ],
-      "participantIds": [
-        "sima-yan"
-      ],
       "id": "jin-unify-wu",
       "name": "三国归晋",
       "dateNote": "太康元年四月，280年",
@@ -4431,12 +4425,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "jin-west"
-      ],
-      "participantIds": [
-        "sima-zhong"
-      ],
       "id": "eight-princes",
       "name": "八王之乱",
       "timeMode": "span",
@@ -4460,14 +4448,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "jin-west",
-        "han-zhao"
-      ],
-      "participantIds": [
-        "sima-chi",
-        "liu-cong"
-      ],
       "id": "yongjia-disaster",
       "name": "永嘉之乱",
       "dateNote": "永嘉五年六月（311年7月13日），刘曜陷洛阳，俘晋怀帝",
@@ -4482,16 +4462,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "jin-west",
-        "jin-east",
-        "han-zhao",
-        "cheng-han"
-      ],
-      "participantIds": [
-        "liu-yuan",
-        "li-xiong"
-      ],
       "id": "wuhu-chaos",
       "name": "五胡乱华",
       "timeMode": "span",
@@ -4514,14 +4484,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "qin-front",
-        "yan-front",
-        "liang-front"
-      ],
-      "participantIds": [
-        "fu-jian-ming"
-      ],
       "id": "fu-jian-unify-north",
       "name": "苻坚统一北方",
       "timeMode": "span",
@@ -4545,16 +4507,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "jin-east",
-        "qin-front"
-      ],
-      "participantIds": [
-        "fu-jian-ming",
-        "sima-yao",
-        "xie-an",
-        "xie-xuan"
-      ],
       "id": "feishui-battle",
       "name": "淝水之战",
       "dateNote": "太元八年，383年，前秦败于东晋",
@@ -4569,12 +4521,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "jin-east"
-      ],
-      "participantIds": [
-        "huan-wen"
-      ],
       "id": "huan-wen-expeditions",
       "name": "桓温北伐",
       "timeMode": "span",
@@ -4598,14 +4544,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "jin-east",
-        "cheng-han"
-      ],
-      "participantIds": [
-        "huan-wen",
-        "li-shi"
-      ],
       "id": "cheng-han-fall",
       "name": "桓温伐蜀",
       "dateNote": "346年，桓温攻成都，李势降",
@@ -4621,14 +4559,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "jin-east",
-        "qin-back"
-      ],
-      "participantIds": [
-        "liu-yu-jin",
-        "yao-hong"
-      ],
       "id": "liu-yu-north",
       "name": "刘裕北伐",
       "dateNote": "416–417年，刘裕灭后秦",
@@ -4996,28 +4926,8 @@
       "fromRef": "person:helian-chang",
       "toRef": "person:helian-ding",
       "kind": "succession"
-    },
-    {
-      "id": "rel-feishui-fu-jian",
-      "fromRef": "event:feishui-battle",
-      "toRef": "person:fu-jian-ming",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-feishui-xie-an",
-      "fromRef": "event:feishui-battle",
-      "toRef": "person:xie-an",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-yongjia-liu-cong",
-      "fromRef": "event:yongjia-disaster",
-      "toRef": "person:liu-cong",
-      "kind": "battle"
     }
   ],
-  "supplementalEventDynasties": [],
-  "supplementalEventParticipants": [],
   "preSql": "",
   "manifest": {
     "slug": "jin-sixteen",
@@ -5036,7 +4946,7 @@
       "dynasties": 18,
       "reigns": 79,
       "events": 9,
-      "relations": 62
+      "relations": 59
     },
     "sources": [
       {
@@ -5627,7 +5537,8 @@
       "2026-10-02 相邻在位边界复核：reign-li-xin start：417年李暠卒、李歆继位；原历二月，1月为占位。尚无可采用的公历月日换算，按已核年份记录，保留年桶占位语义。",
       "2026-10-02 相邻在位边界复核：reign-helian-ding start：428年赫连昌被俘后赫连定继位；1月未见史料依据。尚无可采用的公历月日换算，按已核年份记录，保留年桶占位语义。",
       "2026-10-02 相邻在位边界复核：reign-qifu-mumo start：428年熾磐卒、暮末即位；原历五月，1月为占位。尚无可采用的公历月日换算，按已核年份记录，保留年桶占位语义。",
-      "2026-10-02 相邻在位边界复核：reign-feng-hong start：430年冯跋卒、冯弘夺位；原历九月，1月为占位。尚无可采用的公历月日换算，按已核年份记录，保留年桶占位语义。"
+      "2026-10-02 相邻在位边界复核：reign-feng-hong start：430年冯跋卒、冯弘夺位；原历九月，1月为占位。尚无可采用的公历月日换算，按已核年份记录，保留年桶占位语义。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   }
 }

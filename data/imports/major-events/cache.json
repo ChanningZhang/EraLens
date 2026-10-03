@@ -14,10 +14,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "mongol-empire"
-      ],
-      "participantIds": [],
       "id": "kublai-court-at-kaiping",
       "name": "忽必烈以开平为汗廷",
       "at": {
@@ -33,10 +29,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "mongol-empire"
-      ],
-      "participantIds": [],
       "id": "kublai-moves-capital-to-zhongdu",
       "name": "忽必烈迁都中都",
       "at": {
@@ -52,10 +44,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhou-east"
-      ],
-      "participantIds": [],
       "id": "zhou-nanwang-moves-to-western-zhou-capital",
       "name": "赧王徙居西周",
       "at": {
@@ -71,10 +59,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "sui"
-      ],
-      "participantIds": [],
       "id": "sui-moves-to-daxing",
       "name": "隋文帝迁都大兴",
       "at": {
@@ -90,10 +74,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhou-wu"
-      ],
-      "participantIds": [],
       "id": "wu-zhou-moves-capital-to-luoyang",
       "name": "武周迁都洛阳",
       "at": {
@@ -109,10 +89,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [],
       "id": "tang-forced-move-to-luoyang",
       "name": "昭宗东迁洛阳",
       "at": {
@@ -128,10 +104,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [],
       "id": "tang-restored-capital-to-changan",
       "name": "唐中宗还都长安",
       "at": {
@@ -147,10 +119,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-south"
-      ],
-      "participantIds": [],
       "id": "song-moves-capital-to-linan",
       "name": "南宋定都临安",
       "at": {
@@ -166,10 +134,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "ming"
-      ],
-      "participantIds": [],
       "id": "ming-moves-capital-to-beijing",
       "name": "永乐迁都北京",
       "at": {
@@ -185,10 +149,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [],
       "id": "roc-moves-wartime-government-to-chongqing",
       "name": "国民政府迁都重庆",
       "at": {
@@ -204,10 +164,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [],
       "id": "roc-returns-capital-to-nanjing",
       "name": "国民政府还都南京",
       "at": {
@@ -223,10 +179,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhou-east"
-      ],
-      "participantIds": [],
       "id": "zhou-jingwang-moves-to-chengzhou",
       "name": "周敬王迁都成周",
       "at": {
@@ -242,11 +194,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "jin-hou",
-        "liao"
-      ],
-      "participantIds": [],
       "id": "later-jin-cedes-yanyun",
       "name": "后晋割让燕云十六州",
       "at": {
@@ -262,11 +209,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhou-hou",
-        "liao"
-      ],
-      "participantIds": [],
       "id": "later-zhou-recovers-ying-mo",
       "name": "后周北伐收复瀛、莫二州",
       "at": {
@@ -282,12 +224,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-north",
-        "jin-nvzhen",
-        "liao"
-      ],
-      "participantIds": [],
       "id": "song-jin-maritime-alliance",
       "name": "宋金海上之盟",
       "at": {
@@ -303,11 +239,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-north",
-        "jin-nvzhen"
-      ],
-      "participantIds": [],
       "id": "song-recovers-yanyun-six-prefectures",
       "name": "北宋短暂收复燕京及六州",
       "at": {
@@ -323,11 +254,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "jin-nvzhen",
-        "song-north"
-      ],
-      "participantIds": [],
       "id": "jin-reclaims-yanyun",
       "name": "金重新夺取燕云",
       "at": {
@@ -343,11 +269,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang",
-        "jin-hou"
-      ],
-      "participantIds": [],
       "id": "heirloom-seal-lost",
       "name": "传国玉玺失踪",
       "at": {
@@ -364,11 +285,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-south",
-        "mongol-empire"
-      ],
-      "participantIds": [],
       "id": "song-mongol-duanping-enter-luo",
       "name": "端平入洛",
       "at": {
@@ -384,10 +300,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qin"
-      ],
-      "participantIds": [],
       "id": "qin-unifies-china",
       "name": "秦统一中国",
       "at": {
@@ -403,10 +315,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "han-west"
-      ],
-      "participantIds": [],
       "id": "western-han-protectorate-of-western-regions",
       "name": "西域都护府建立",
       "at": {
@@ -422,10 +330,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "han-west"
-      ],
-      "participantIds": [],
       "id": "western-han-grace-order",
       "name": "推恩令颁行",
       "at": {
@@ -441,10 +345,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "han-west"
-      ],
-      "participantIds": [],
       "id": "western-han-salt-iron-monopoly",
       "name": "盐铁官营",
       "at": {
@@ -460,12 +360,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "han-east"
-      ],
-      "participantIds": [
-        "liu-bian"
-      ],
       "id": "he-jin-killed",
       "name": "何进被杀",
       "at": {
@@ -481,12 +375,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "han-east"
-      ],
-      "participantIds": [
-        "liu-bian"
-      ],
       "id": "dong-zhuo-enters-luoyang",
       "name": "董卓进京",
       "at": {
@@ -502,10 +390,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "sui"
-      ],
-      "participantIds": [],
       "id": "sui-establishes-jinshi-examination",
       "name": "隋代设进士科",
       "at": {
@@ -521,10 +405,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [],
       "id": "tang-two-tax-law",
       "name": "两税法推行",
       "at": {
@@ -540,10 +420,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [],
       "id": "tang-tubo-changqing-alliance",
       "name": "唐蕃长庆会盟",
       "at": {
@@ -559,10 +435,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [],
       "id": "qing-establishes-ili-general",
       "name": "清设伊犁将军",
       "at": {
@@ -578,12 +450,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhao-warring"
-      ],
-      "participantIds": [
-        "zhao-r5"
-      ],
       "id": "zhao-saqiu-coup",
       "name": "沙丘宫变",
       "at": {
@@ -599,14 +465,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhou-wu",
-        "tang"
-      ],
-      "participantIds": [
-        "li-xian",
-        "wu-zetian"
-      ],
       "id": "shenlong-coup",
       "name": "神龙政变",
       "at": {
@@ -622,14 +480,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "li-longji",
-        "li-dan",
-        "wei-hou"
-      ],
       "id": "tanglong-coup",
       "name": "唐隆政变",
       "at": {
@@ -645,12 +495,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "li-ang"
-      ],
       "id": "ganlu-coup",
       "name": "甘露之变",
       "at": {
@@ -666,14 +510,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhou-hou",
-        "song-north"
-      ],
-      "participantIds": [
-        "zhao-kuangyin",
-        "chai-zongxun"
-      ],
       "id": "chenqiao-mutiny",
       "name": "陈桥兵变",
       "at": {
@@ -689,15 +525,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "ci-xi",
-        "ci-an",
-        "yi-xin",
-        "zaichun"
-      ],
       "id": "xinyou-coup",
       "name": "辛酉政变",
       "at": {
@@ -722,19 +549,11 @@
         "confidence": "year"
       },
       "atAbs": 3659,
-      "dynastyIds": [
-        "jin-west"
-      ],
-      "participantIds": [
-        "sima-zhong"
-      ],
       "summary": "八王之乱中，河间王司马颙的部将张方为控制朝廷，于永安元年（304）挟持晋惠帝司马衷及公卿由洛阳西往长安，司马颙以征西府为帝宫。洛阳仍留有官员组成的留台承制行事；惠帝至306年六月才被迎回洛阳，期间长安成为朝廷实际所在。",
       "dateNote": "《晋书·惠帝纪》记永安元年冬十一月乙未张方劫帝幸长安。该月份为农历，未将月日直接换作公历日期，事件按304年年精度记录。"
     }
   ],
   "relations": [],
-  "supplementalEventDynasties": [],
-  "supplementalEventParticipants": [],
   "preSql": "DELETE FROM events WHERE id IN ('shang-moves-capital-to-yin', 'zhou-pingwang-moves-east', 'song-gaozong-establishes-capital-yingtian');",
   "manifest": {
     "slug": "major-events",
@@ -864,7 +683,8 @@
       "前510年迁居成周事件补充都城记录未表达的政治原因；缘由据杜预注，前510年为通行系年。",
       "端平入洛依传统历月记端平元年六月至八月，事件采用1234年年精度；其范围亦称端平三京之役。",
       "迁都事件按正统窗口与都城包中的首都变更记录核对；同时存在陪都、留都或多京时不把政治中心往来误作迁都。仅收录有通行系年或可核史料的迁都、还都节点；周赧王迁居王城依资料记作约前314年。夏代都邑变动年代争议较大，不按都城阶段边界自动造事件。元代迁往大都早于本项目采用的正统起算点（1276），但按用户要求仍纳入蒙古／元都城迁移序列。盘庚迁殷、平王东迁已由对应时期包收录，本包不再重复；清廷迁都北京并入「清军入关」事件，不另拆一条。1127年赵构在应天即位属于继统节点，不另建迁都事件。",
-      "新增西晋惠帝被挟往长安事件，记录八王之乱中皇帝与朝廷实际驻地西移、洛阳留台继续行事的结构变化；与都城包短期长安行在记录对应。事件日期按公元304年年精度，避免把农历十一月误写为公历月份。"
+      "新增西晋惠帝被挟往长安事件，记录八王之乱中皇帝与朝廷实际驻地西移、洛阳留台继续行事的结构变化；与都城包短期长安行在记录对应。事件日期按公元304年年精度，避免把农历十一月误写为公历月份。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   }
 }

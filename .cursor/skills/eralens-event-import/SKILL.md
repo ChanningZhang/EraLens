@@ -40,7 +40,7 @@ description: >-
 - 少数重大统一、分裂、战争转折；
 - 摄政、共和等无法建模为 reign 的非王时期。
 
-复杂疆域变化按独立事实拆分。一个事实已有事件时，补 `event_dynasties`、`event_participants`、`location_id` 或内容字段，不建同义事件。
+复杂疆域变化按独立事实拆分。一个事实已有事件时，补集中包的普通关联、地理映射或内容字段，不建同义事件。
 
 ## 时间建模
 
@@ -54,11 +54,11 @@ description: >-
 - **事件概述不能过于简单**：应让读者不看其他资料也能简略理解事件的历史背景、起因或前因、关键经过/转折、结果与影响，并点明相关政权、主要人物及事件年代。按事件重要性取舍细节，避免只写「某年发生某事」或一句空泛结论；不确定的内容须保留限定，不补造细节。
 - 概述只写历史内容。收录取舍、编辑方法和推算过程写 `cache.json.manifest.notes`；来源写 `cache.json.manifest.sources`。
 - 新增或丰富事件时必须同步更新来源；直接关联的人物、地点记录的 `links` 也须核对，按 [来源维护](../eralens-period-import/SKILL.md#来源维护) 执行。
-- `event_dynasties` 关联事件实际涉及或直接影响的王朝，不因同年存在就泛关联。
+- 事件—王朝关联写入 `entity-associations/cache.json.associations`，只关联实际涉及或直接影响的王朝，不因同年存在就泛关联。
 - 起义或新政权自身的建号、领袖即位、迁都/定都、内部政变、末代君主被俘等事件，默认只关联该政权。事件发生于反抗旧朝、由旧朝军队镇压或影响双方，并不足以自动关联旧朝；只有旧朝作为事件主体直接参战、签约、被取代等且事件本身表达该关系时，才关联旧朝。长期战争/运动跨度事件可关联交战双方；单次战役也可关联直接交战双方。摘要中可照实叙述对手和影响，但不要用摘要中的对抗关系替代关联判定。
-- `event_participants.person_id` 只能引用 `persons.id`；国君也引用 person，不引用 reign。
+- 事件—人物关联写入集中包 associations，人物端点必须为 `person:`；国君也引用 person，不引用 reign。
 - 缺少人物时先在合适时期包创建或复用 person，禁止用文本替代应有实体。
-- 成语事件固定 `kind='idiom'`、`time_mode='point'`，`meaning` 存释义、`summary` 存典故；与史事的对应使用 event→event `relations`。
+- 成语事件固定 `kind='idiom'`、`time_mode='point'`，`meaning` 存释义、`summary` 存典故；与史事的对应使用集中包中无方向的 event—event associations。
 - 可可靠定位时才填 `location_id`。地点不确定、跨大范围或存在多说时按
   [eralens-geography-import](../eralens-geography-import/SKILL.md) 记录代表点和说明；不能定位则留空。
 
@@ -75,7 +75,7 @@ Task Progress:
 - [ ] 7. 验证 API、详情关联与时间轴显示
 ```
 
-事件记录使用缓存中的 camelCase 字段，例如 `at: { year, month, abs }`、`dynastyIds`、`participantIds`；事件地点放在 `eventLocations` 集合，额外关系放在 `relations`。统一序列化器负责生成事件与连接表 SQL。删除已废弃事件时，在缓存中维护明确的清理语句，清除旧数据库中的连接与关系。不要修改 `data/seed/*.json` 修生产数据，也不要手改生成后的 SQL。
+事件记录使用缓存中的 camelCase 字段，例如 `at: { year, month, abs }`。所有普通关联唯一维护在 `entity-associations/cache.json.associations`（`{aRef,bRef}`，规范 UTF-8 排序，无方向、无标签）；历史包不存 dynastyIds/participantIds 或 supplemental 关联数组。事件地点放在 `locationMappings`。relations 仅保留命运与人物继承关系。实体修改在原包，关联修改在集中包，来源和数量随所属包维护，再统一生成、审计、导入。删除实体自动级联清关联；单独移除关联时由集中包维护四字段完整键清理语句。不要手改 SQL，也不要用 seed 更新真实库。
 
 ```bash
 node data/imports/generate.mjs {slug}

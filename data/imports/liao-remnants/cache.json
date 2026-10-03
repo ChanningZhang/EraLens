@@ -738,12 +738,6 @@
     {
       "kind": "politics",
       "timeMode": "span",
-      "dynastyIds": [
-        "beiliao"
-      ],
-      "participantIds": [
-        "xiao-defei"
-      ],
       "id": "beiliao-xiao-defei-regency",
       "name": "萧德妃称制",
       "dateNote": "保大二年六月耶律淳卒后临朝改元德兴；逾年北辽亡",
@@ -766,13 +760,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "dongliao"
-      ],
-      "participantIds": [
-        "yelu-sibu",
-        "yelu-liuge"
-      ],
       "id": "dongliao-yelu-sibu-rebel",
       "name": "耶律厮不叛乱",
       "dateNote": "元史太祖十一年丙子（1216年）僭帝号于澄州，改元天威，方阅月被杀",
@@ -842,13 +829,6 @@
       "kind": "succession"
     }
   ],
-  "supplementalEventDynasties": [
-    {
-      "eventId": "jin-destroy-liao",
-      "dynastyId": "beiliao"
-    }
-  ],
-  "supplementalEventParticipants": [],
   "preSql": "",
   "manifest": {
     "slug": "liao-remnants",
@@ -963,7 +943,8 @@
       "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。西辽、北辽首项采用所承袭国号“大辽”；东辽据耶律留哥称王时国号取“辽”，不将“燕京辽”“黑契丹”等他称置于首项。",
       "2026-10-02 相邻在位边界复核：reign-yelu-dashi-xiliao end：1143年耶律大石卒；12月仅为年桶占位，不能标已知月份。尚无可采用的公历月日换算，按已核年份记录，保留年桶占位语义。",
       "2026-10-02 相邻在位边界复核：reign-qu-chulu-xiliao start：1211年屈出律夺权；1月仅为年桶占位，不能标已知月份。尚无可采用的公历月日换算，按已核年份记录，保留年桶占位语义。",
-      "2026-10-02 相邻在位边界复核：reign-yelu-liuge-dongliao end：《元史》庚辰（1220）卒、姚里氏权领其众；12月仅为年桶占位。尚无可采用的公历月日换算，按已核年份记录，保留年桶占位语义。"
+      "2026-10-02 相邻在位边界复核：reign-yelu-liuge-dongliao end：《元史》庚辰（1220）卒、姚里氏权领其众；12月仅为年桶占位。尚无可采用的公历月日换算，按已核年份记录，保留年桶占位语义。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   }
 }

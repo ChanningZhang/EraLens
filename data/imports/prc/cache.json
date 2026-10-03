@@ -912,14 +912,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "prc"
-      ],
-      "participantIds": [
-        "mao-zedong",
-        "zhou-enlai",
-        "peng-dehuai"
-      ],
       "id": "korean-war",
       "name": "抗美援朝",
       "dateNote": "1950年10月志愿军入朝，至1953年7月朝鲜停战协定签字",
@@ -942,12 +934,6 @@
     {
       "kind": "politics",
       "timeMode": "span",
-      "dynastyIds": [
-        "prc"
-      ],
-      "participantIds": [
-        "mao-zedong"
-      ],
       "id": "great-leap-forward",
       "name": "大跃进",
       "dateNote": "1958年八大二次会议提出总路线，至1961年国民经济调整",
@@ -970,16 +956,6 @@
     {
       "kind": "politics",
       "timeMode": "span",
-      "dynastyIds": [
-        "prc"
-      ],
-      "participantIds": [
-        "mao-zedong",
-        "liu-shaoqi",
-        "lin-biao",
-        "jiang-qing",
-        "zhou-enlai"
-      ],
       "id": "cultural-revolution",
       "name": "文化大革命",
       "dateNote": "1966年5月「五一六通知」至1976年10月粉碎「四人帮」",
@@ -1002,13 +978,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "prc"
-      ],
-      "participantIds": [
-        "lin-biao",
-        "mao-zedong"
-      ],
       "id": "lin-biao-incident",
       "name": "九一三事件",
       "dateNote": "1971年9月13日，林彪乘机出逃，坠于蒙古温都尔汗",
@@ -1024,14 +993,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "prc"
-      ],
-      "participantIds": [
-        "hua-guofeng",
-        "jiang-qing",
-        "ye-jianying"
-      ],
       "id": "gang-of-four-arrested",
       "name": "粉碎「四人帮」",
       "dateNote": "1976年10月6日，华国锋、叶剑英等在怀仁堂拘禁江青等",
@@ -1047,13 +1008,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "prc"
-      ],
-      "participantIds": [
-        "deng-xiaoping",
-        "hua-guofeng"
-      ],
       "id": "third-plenum-1978",
       "name": "十一届三中全会",
       "dateNote": "1978年12月18日至22日",
@@ -1069,12 +1023,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "prc"
-      ],
-      "participantIds": [
-        "deng-xiaoping"
-      ],
       "id": "deng-southern-tour",
       "name": "邓小平南巡",
       "dateNote": "1992年1–2月视察武昌、深圳、珠海、上海",
@@ -1090,12 +1038,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "prc"
-      ],
-      "participantIds": [
-        "jiang-zemin"
-      ],
       "id": "hong-kong-handover",
       "name": "香港回归",
       "dateNote": "1997年7月1日，中华人民共和国对香港恢复行使主权",
@@ -1111,12 +1053,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "prc"
-      ],
-      "participantIds": [
-        "jiang-zemin"
-      ],
       "id": "macau-handover",
       "name": "澳门回归",
       "dateNote": "1999年12月20日，中华人民共和国对澳门恢复行使主权",
@@ -1132,12 +1068,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "prc"
-      ],
-      "participantIds": [
-        "jiang-zemin"
-      ],
       "id": "china-joins-wto",
       "name": "加入世界贸易组织",
       "dateNote": "2001年12月11日正式成为世界贸易组织成员",
@@ -1153,12 +1083,6 @@
     {
       "kind": "culture",
       "timeMode": "point",
-      "dynastyIds": [
-        "prc"
-      ],
-      "participantIds": [
-        "hu-jintao"
-      ],
       "id": "beijing-olympics-2008",
       "name": "北京奥运会",
       "dateNote": "2008年8月8日至24日",
@@ -1174,13 +1098,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "prc"
-      ],
-      "participantIds": [
-        "hu-jintao",
-        "xi-jinping"
-      ],
       "id": "eighteenth-party-congress",
       "name": "中共十八大",
       "dateNote": "2012年11月8日至14日，15日十八届一中全会选举习近平为总书记",
@@ -1232,13 +1149,6 @@
       "kind": "succession"
     }
   ],
-  "supplementalEventDynasties": [
-    {
-      "eventId": "civil-war",
-      "dynastyId": "prc"
-    }
-  ],
-  "supplementalEventParticipants": [],
   "preSql": "DELETE FROM reigns WHERE dynasty_id IN ('prc') AND person_id = 'system-missing-ruler';\nDELETE FROM reigns WHERE id IN ('reign-hua-guofeng-prc', 'reign-deng-xiaoping-prc', 'reign-song-qingling-prc', 'reign-dong-biwu-prc-vice');\nDELETE FROM relations WHERE id IN ('rel-mao-zedong-hua-guofeng-succession', 'rel-hua-guofeng-deng-xiaoping-succession', 'rel-deng-xiaoping-jiang-zemin-succession');",
   "manifest": {
     "slug": "prc",
@@ -1257,8 +1167,7 @@
       "dynasties": 1,
       "reigns": 11,
       "events": 12,
-      "relations": 6,
-      "supplementalEventDynastyLinks": 1
+      "relations": 6
     },
     "sources": [
       {
@@ -1325,7 +1234,8 @@
       "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
       "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
       "2026-10-02人物概述清理：概述仅保留历史事实与必要史料背景，系统建模、年表选择、定位及收录说明移入本说明。以下原文仅留作处理记录，不作为新增史实依据：song-qingling-dong-biwu 原概述：1968年10月31日至1972年2月24日，与董必武（按联合主体记录）共同以国家副主席身份代行国家主席职权。个人资料分别保留在宋庆龄、董必武人物记录中。",
-      "2026-10-02 相邻在位边界复核：reign-xi-jinping-prc start：2013年3月14日全国人大选举产生国家主席，官方新华社报道可核到日，既有day=14应标day而非month。"
+      "2026-10-02 相邻在位边界复核：reign-xi-jinping-prc start：2013年3月14日全国人大选举产生国家主席，官方新华社报道可核到日，既有day=14应标day而非month。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   }
 }

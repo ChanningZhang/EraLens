@@ -1,0 +1,346 @@
+[
+  {
+    "aRef": "dynasty:han-east",
+    "bRef": "event:chibi"
+  },
+  {
+    "aRef": "dynasty:han-east",
+    "bRef": "event:guandu"
+  },
+  {
+    "aRef": "dynasty:han-east",
+    "bRef": "event:jianan-literature"
+  },
+  {
+    "aRef": "dynasty:han-east",
+    "bRef": "event:wei-founded"
+  },
+  {
+    "aRef": "dynasty:shang",
+    "bRef": "event:mingtiao"
+  },
+  {
+    "aRef": "dynasty:shang",
+    "bRef": "event:muye"
+  },
+  {
+    "aRef": "dynasty:shang",
+    "bRef": "event:pangeng-move-yin"
+  },
+  {
+    "aRef": "dynasty:shang",
+    "bRef": "event:wuding-zhongxing"
+  },
+  {
+    "aRef": "dynasty:shang",
+    "bRef": "event:yiyin-taijia"
+  },
+  {
+    "aRef": "dynasty:shu",
+    "bRef": "event:yiling"
+  },
+  {
+    "aRef": "dynasty:wei",
+    "bRef": "event:wei-founded"
+  },
+  {
+    "aRef": "dynasty:wu",
+    "bRef": "event:chibi"
+  },
+  {
+    "aRef": "dynasty:wu",
+    "bRef": "event:yiling"
+  },
+  {
+    "aRef": "dynasty:xia",
+    "bRef": "event:gan-battle"
+  },
+  {
+    "aRef": "dynasty:xia",
+    "bRef": "event:mingtiao"
+  },
+  {
+    "aRef": "dynasty:xia",
+    "bRef": "event:shaokang-zhongxing"
+  },
+  {
+    "aRef": "dynasty:xia",
+    "bRef": "event:taikang-lost"
+  },
+  {
+    "aRef": "dynasty:xia",
+    "bRef": "event:yu-flood-control"
+  },
+  {
+    "aRef": "dynasty:zhou-east",
+    "bRef": "event:baijia-zhengming"
+  },
+  {
+    "aRef": "dynasty:zhou-east",
+    "bRef": "event:chengpu"
+  },
+  {
+    "aRef": "dynasty:zhou-east",
+    "bRef": "event:chunqiu"
+  },
+  {
+    "aRef": "dynasty:zhou-east",
+    "bRef": "event:kuiqiu"
+  },
+  {
+    "aRef": "dynasty:zhou-east",
+    "bRef": "event:pingwang-eastward"
+  },
+  {
+    "aRef": "dynasty:zhou-east",
+    "bRef": "event:qin-destroy-zhou"
+  },
+  {
+    "aRef": "dynasty:zhou-east",
+    "bRef": "event:sanjia-fenjin"
+  },
+  {
+    "aRef": "dynasty:zhou-east",
+    "bRef": "event:xie-wang-killed"
+  },
+  {
+    "aRef": "dynasty:zhou-east",
+    "bRef": "event:zhanguo"
+  },
+  {
+    "aRef": "dynasty:zhou-east",
+    "bRef": "event:zhou-dual-kings"
+  },
+  {
+    "aRef": "dynasty:zhou-west",
+    "bRef": "event:chengkang-rule"
+  },
+  {
+    "aRef": "dynasty:zhou-west",
+    "bRef": "event:gonghe-regency"
+  },
+  {
+    "aRef": "dynasty:zhou-west",
+    "bRef": "event:guoren-riot"
+  },
+  {
+    "aRef": "dynasty:zhou-west",
+    "bRef": "event:muye"
+  },
+  {
+    "aRef": "dynasty:zhou-west",
+    "bRef": "event:quanrong-invasion"
+  },
+  {
+    "aRef": "dynasty:zhou-west",
+    "bRef": "event:sanjian-rebellion"
+  },
+  {
+    "aRef": "dynasty:zhou-west",
+    "bRef": "event:xuanwang-zhongxing"
+  },
+  {
+    "aRef": "dynasty:zhou-west",
+    "bRef": "event:zhaowang-south"
+  },
+  {
+    "aRef": "event:baijia-zhengming",
+    "bRef": "person:kong-qiu"
+  },
+  {
+    "aRef": "event:chengkang-rule",
+    "bRef": "person:ji-dan"
+  },
+  {
+    "aRef": "event:chengkang-rule",
+    "bRef": "person:ji-song"
+  },
+  {
+    "aRef": "event:chengkang-rule",
+    "bRef": "person:ji-zhao"
+  },
+  {
+    "aRef": "event:chengpu",
+    "bRef": "person:ji-chonger"
+  },
+  {
+    "aRef": "event:chibi",
+    "bRef": "person:cao-cao"
+  },
+  {
+    "aRef": "event:chibi",
+    "bRef": "person:liu-bei"
+  },
+  {
+    "aRef": "event:chibi",
+    "bRef": "person:sun-quan"
+  },
+  {
+    "aRef": "event:chibi",
+    "bRef": "person:zhou-yu"
+  },
+  {
+    "aRef": "event:chibi",
+    "bRef": "person:zhuge-liang"
+  },
+  {
+    "aRef": "event:gan-battle",
+    "bRef": "person:si-qi"
+  },
+  {
+    "aRef": "event:gonghe-regency",
+    "bRef": "person:ji-hu"
+  },
+  {
+    "aRef": "event:guandu",
+    "bRef": "person:cao-cao"
+  },
+  {
+    "aRef": "event:guandu",
+    "bRef": "person:yuan-shao"
+  },
+  {
+    "aRef": "event:guoren-riot",
+    "bRef": "person:ji-hu"
+  },
+  {
+    "aRef": "event:jianan-literature",
+    "bRef": "person:cao-cao"
+  },
+  {
+    "aRef": "event:kuiqiu",
+    "bRef": "person:guan-zhong"
+  },
+  {
+    "aRef": "event:kuiqiu",
+    "bRef": "person:ji-zheng"
+  },
+  {
+    "aRef": "event:kuiqiu",
+    "bRef": "person:jiang-xiaobai"
+  },
+  {
+    "aRef": "event:mingtiao",
+    "bRef": "person:si-jie"
+  },
+  {
+    "aRef": "event:mingtiao",
+    "bRef": "person:yi-yin"
+  },
+  {
+    "aRef": "event:mingtiao",
+    "bRef": "person:zi-tang"
+  },
+  {
+    "aRef": "event:muye",
+    "bRef": "person:ji-fa"
+  },
+  {
+    "aRef": "event:muye",
+    "bRef": "person:lv-shang"
+  },
+  {
+    "aRef": "event:muye",
+    "bRef": "person:zi-dixin"
+  },
+  {
+    "aRef": "event:pangeng-move-yin",
+    "bRef": "person:zi-pangeng"
+  },
+  {
+    "aRef": "event:pingwang-eastward",
+    "bRef": "person:ji-yijiu"
+  },
+  {
+    "aRef": "event:qin-destroy-zhou",
+    "bRef": "person:ji-yan"
+  },
+  {
+    "aRef": "event:quanrong-invasion",
+    "bRef": "person:ji-gongsheng"
+  },
+  {
+    "aRef": "event:quanrong-invasion",
+    "bRef": "person:ji-yijiu"
+  },
+  {
+    "aRef": "event:sanjia-fenjin",
+    "bRef": "person:ji-wu"
+  },
+  {
+    "aRef": "event:sanjian-rebellion",
+    "bRef": "person:ji-dan"
+  },
+  {
+    "aRef": "event:sanjian-rebellion",
+    "bRef": "person:ji-song"
+  },
+  {
+    "aRef": "event:shaokang-zhongxing",
+    "bRef": "person:si-shaokang"
+  },
+  {
+    "aRef": "event:taikang-lost",
+    "bRef": "person:hou-yi"
+  },
+  {
+    "aRef": "event:taikang-lost",
+    "bRef": "person:si-taikang"
+  },
+  {
+    "aRef": "event:wei-founded",
+    "bRef": "person:cao-pi"
+  },
+  {
+    "aRef": "event:wuding-zhongxing",
+    "bRef": "person:fu-hao"
+  },
+  {
+    "aRef": "event:wuding-zhongxing",
+    "bRef": "person:zi-wuding"
+  },
+  {
+    "aRef": "event:xie-wang-killed",
+    "bRef": "person:ji-yuchen"
+  },
+  {
+    "aRef": "event:xuanwang-zhongxing",
+    "bRef": "person:ji-jing"
+  },
+  {
+    "aRef": "event:yiling",
+    "bRef": "person:liu-bei"
+  },
+  {
+    "aRef": "event:yiling",
+    "bRef": "person:sun-quan"
+  },
+  {
+    "aRef": "event:yiyin-taijia",
+    "bRef": "person:yi-yin"
+  },
+  {
+    "aRef": "event:yiyin-taijia",
+    "bRef": "person:zi-taijia"
+  },
+  {
+    "aRef": "event:yu-flood-control",
+    "bRef": "person:si-yu"
+  },
+  {
+    "aRef": "event:zhaowang-south",
+    "bRef": "person:ji-xia"
+  },
+  {
+    "aRef": "event:zhou-dual-kings",
+    "bRef": "person:ji-yijiu"
+  },
+  {
+    "aRef": "event:zhou-dual-kings",
+    "bRef": "person:ji-yuchen"
+  },
+  {
+    "aRef": "person:cao-cao",
+    "bRef": "reign:cao-pi"
+  }
+]

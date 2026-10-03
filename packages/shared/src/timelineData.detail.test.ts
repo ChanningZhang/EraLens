@@ -262,6 +262,10 @@ describe("buildEntityDetail reign", () => {
         },
       ],
       relations: [],
+      associations: [
+        {aRef:"event:idiom-wo-xin-chang-dan",bRef:"person:gou-jian"},
+      ],
+
     };
 
     const detail = buildEntityDetail(store, {
@@ -339,6 +343,10 @@ describe("buildEntityDetail event", () => {
         },
       ],
       relations: [],
+      associations: [
+        {aRef:"dynasty:daxi",bRef:"event:daxi-founded"},
+      ],
+
     };
 
     const detail = buildEntityDetail(store, { type: "event", id: "daxi-founded" });
@@ -371,6 +379,11 @@ describe("buildEntityDetail event", () => {
         },
       ],
       reigns: [], persons: [], relations: [],
+      associations: [
+        {aRef:"dynasty:jin",bRef:"event:xie-wang-killed"},
+        {aRef:"dynasty:zhou-east",bRef:"event:xie-wang-killed"},
+      ],
+
       events: [EventSchema.parse({
         id: "xie-wang-killed", name: "晋文侯杀携王", kind: "politics",
         atAbs: -8977, dynastyIds: ["zhou-east", "jin"], participantIds: [],
@@ -378,8 +391,8 @@ describe("buildEntityDetail event", () => {
     };
     const detail = buildEntityDetail(store, { type: "event", id: "xie-wang-killed" });
     expect(detail.related).toEqual([
-      expect.objectContaining({ ref: { type: "dynasty", id: "zhou-east" }, label: "东周" }),
       expect.objectContaining({ ref: { type: "dynasty", id: "jin" }, label: "晋" }),
+      expect.objectContaining({ ref: { type: "dynasty", id: "zhou-east" }, label: "东周" }),
     ]);
   });
 
@@ -471,6 +484,11 @@ describe("buildEntityDetail dynasty", () => {
         },
       ],
       relations: [],
+      associations: [
+        {aRef:"dynasty:shu",bRef:"event:chibi"},
+        {aRef:"dynasty:shu",bRef:"event:idiom-san-gu-mao-lu"},
+      ],
+
       locationMappings: [
         {
           id: "cap-shu-chengdu",
@@ -493,16 +511,16 @@ describe("buildEntityDetail dynasty", () => {
 
     const detail = buildEntityDetail(store, { type: "dynasty", id: "shu" });
 
-    expect(detail.related.map((item) => item.group)).toEqual(["location_mapping", "event", "idiom"]);
+    expect(detail.related.map((item) => item.group)).toEqual(["location_mapping", "idiom", "event"]);
     expect(detail.related[0]?.label).toBe("成都");
     expect(detail.related[0]?.subtitle).toBe("221年 — 263年 · 主要治所");
-    expect(detail.related[1]?.label).toBe("赤壁之战");
-    expect(detail.related[2]?.label).toBe("三顾茅庐");
+    expect(detail.related[1]?.label).toBe("三顾茅庐");
+    expect(detail.related[2]?.label).toBe("赤壁之战");
   });
 });
 
 describe("buildEntityDetail undated dynasty associations", () => {
-  it("keeps explicit people in relation order, deduplicated and without invented dates", () => {
+  it("shows undated association endpoints without inventing dates", () => {
     const store = {
       dynasties: [{
         id: "test-state", name: "测试", scope: "cn", region: "east_asia",
@@ -513,12 +531,10 @@ describe("buildEntityDetail undated dynasty associations", () => {
       persons: ["first", "second", "unrelated"].map((id) => ({
         id, name: id, roles: ["君主身份待考"], links: [],
       })),
-      relations: [
-        { id: "02", fromRef: "person:second", toRef: "dynasty:test-state", kind: "other" },
-        { id: "01", fromRef: "dynasty:test-state", toRef: "person:first", kind: "other" },
-        { id: "03", fromRef: "dynasty:test-state", toRef: "person:first", kind: "other" },
-        { id: "04", fromRef: "dynasty:test-state", toRef: "person:unrelated", kind: "battle" },
-        { id: "05", fromRef: "dynasty:test-state", toRef: "person:missing", kind: "other" },
+      relations: [],
+      associations: [
+        {aRef:"dynasty:test-state",bRef:"person:first"},
+        {aRef:"dynasty:test-state",bRef:"person:second"},
       ],
     };
     const detail = buildEntityDetail(store, { type: "dynasty", id: "test-state" });
@@ -587,6 +603,10 @@ describe("buildEntityDetail person", () => {
         },
       ],
       relations: [],
+      associations: [
+        {aRef:"event:idiom-wan-bi-gui-zhao",bRef:"person:lin-xiangru"},
+      ],
+
     };
 
     const detail = buildEntityDetail(store, { type: "person", id: "lin-xiangru" });
@@ -651,6 +671,10 @@ describe("buildEntityDetail person", () => {
         },
       ],
       relations: [],
+      associations: [
+        {aRef:"event:idiom-wo-xin-chang-dan",bRef:"person:gou-jian"},
+      ],
+
     };
 
     const detail = buildEntityDetail(store, { type: "person", id: "gou-jian" });
@@ -1203,6 +1227,11 @@ describe("buildEntityDetail idiom event", () => {
         },
       ],
       relations: [],
+      associations: [
+        {aRef:"dynasty:shu",bRef:"event:idiom-san-gu-mao-lu"},
+        {aRef:"event:idiom-san-gu-mao-lu",bRef:"person:liu-bei"},
+      ],
+
     };
 
     const detail = buildEntityDetail(store, { type: "event", id: "idiom-san-gu-mao-lu" });

@@ -1,3 +1,4 @@
+import { assertEntityAssociation } from "../../../packages/shared/src/entityAssociations.mjs";
 import { writeFileSync, mkdirSync } from "node:fs";
 import path from "node:path";
 
@@ -173,8 +174,6 @@ export function eventPoint(partial) {
   return {
     kind: "other",
     timeMode: "point",
-    dynastyIds: [],
-    participantIds: [],
     ...partial,
     at,
     atAbs: at.abs,
@@ -201,8 +200,6 @@ export function eventRange(partial) {
   return {
     kind: "other",
     timeMode: "span",
-    dynastyIds: [],
-    participantIds: [],
     ...partial,
     start,
     end,
@@ -319,21 +316,17 @@ export function writePreparedImportPackage(dir, {
   events = [],
   updates = [],
   relations = [],
-  supplementalEventDynasties = [],
-  supplementalEventParticipants = [],
+  associations = [],
   preSql = "",
   postSql = "",
   manifest,
 }) {
 
-  const eventDynastySql = events.flatMap((e) => e.dynastyIds.map((d) => `INSERT INTO event_dynasties (event_id, dynasty_id) VALUES (${sqlStr(e.id)}, ${sqlStr(d)}) ON CONFLICT DO NOTHING;`));
-  const supplementalEventDynastySql = supplementalEventDynasties.map(
-    ({ eventId, dynastyId }) => `INSERT INTO event_dynasties (event_id, dynasty_id) VALUES (${sqlStr(eventId)}, ${sqlStr(dynastyId)}) ON CONFLICT DO NOTHING;`,
-  );
-  const eventParticipantSql = events.flatMap((e) => e.participantIds.map((p) => `INSERT INTO event_participants (event_id, person_id) VALUES (${sqlStr(e.id)}, ${sqlStr(p)}) ON CONFLICT DO NOTHING;`));
-  const supplementalEventParticipantSql = supplementalEventParticipants.map(
-    ({ eventId, personId }) => `INSERT INTO event_participants (event_id, person_id) VALUES (${sqlStr(eventId)}, ${sqlStr(personId)}) ON CONFLICT DO NOTHING;`,
-  );
+  const associationSql = associations.map(row => {
+    assertEntityAssociation(row);
+    const a=parseRef(row.aRef), b=parseRef(row.bRef);
+    return `INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES (${sqlStr(a.type)}, ${sqlStr(a.id)}, ${sqlStr(b.type)}, ${sqlStr(b.id)}) ON CONFLICT DO NOTHING;`;
+  });
 
   const sql = [
     `-- EraLens period import: ${slug}`,
@@ -347,8 +340,7 @@ export function writePreparedImportPackage(dir, {
     ...(dynastyLaneGroups.length ? ["", "-- dynasty_lane_groups", ...dynastyLaneGroups.map(dynastyLaneGroupSql)] : []),
     ...(reigns.length ? ["", "-- reigns", ...reigns.map(reignSql)] : []),
     ...(events.length ? ["", "-- events", ...events.map(eventSql)] : []),
-    ...(eventDynastySql.length || supplementalEventDynastySql.length ? ["", "-- event_dynasties", ...eventDynastySql, ...supplementalEventDynastySql] : []),
-    ...(eventParticipantSql.length || supplementalEventParticipantSql.length ? ["", "-- event_participants", ...eventParticipantSql, ...supplementalEventParticipantSql] : []),
+    ...(associationSql.length ? ["", "-- entity_associations", ...associationSql] : []),
     ...(relations.length ? ["", "-- relations", ...relations.map(relationSql)] : []),
     ...(locationMappings.length ? ["", "-- location_mapping", ...locationMappings.map(locationMappingSql)] : []),
     ...(updates.length ? ["", "-- updates", ...updates.map((update) => {

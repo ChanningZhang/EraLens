@@ -176,7 +176,8 @@ node .cursor/skills/eralens-period-import/scripts/compute-abs.mjs -1046 1  # -12
 - 日期 confidence 与历史日期结构：见 [日期处理 Skill](../eralens-date-handling/SKILL.md)
 - `event.time_mode`: point | span
 - `event.kind`: battle | politics | culture | disaster | commerce | agriculture | finance | idiom | poetry | other
-- `relation.kind`: succession | battle | alliance | enthronement | other | killed | surrender | abdication | captured | conquered
+- `relation.kind`: succession | killed | surrender | abdication | captured | conquered
+- 普通关联唯一维护在 entity-associations/cache.json.associations（无方向、无标签、UTF-8 规范顺序的 `{aRef,bRef}`）；历史包不保存事件 dynastyIds/participantIds 或 supplemental 关联字段。集中包 sources/notes/counts 维护关联依据与数量，关联在实体完成后导入。
 - `conquered` 表示灭国，从末代君主指向灭国方当时的君主；只要求灭国事实及责任政权有史料依据，不推断末君被杀、被俘或投降。沿用共用命运线端点解析与布局。
 - `scope`: cn（默认）| global
 
@@ -221,7 +222,7 @@ node data/imports/generate.mjs {slug}
 2. `persons`、`dynasty_groups`、`dynasties`
 3. `locations`、`dynasty_lane_groups`
 4. `reigns`（含 `era_names` CSV）
-5. `events`、`event_dynasties`、`event_participants`
+5. `events`；集中包的 `entity_associations` 在所有实体完成后导入
 6. `relations`、`location_mapping` 及缓存显式列出的更新
 7. 执行 `postSql` 中的旧库清理，再 `COMMIT;`
 
@@ -301,12 +302,12 @@ curl -s "http://localhost:3001/api/bounds"
 
 - **入库形态**：`events.kind = idiom`，`time_mode = point`（禁止 span）；`at_*` 决定时间轴 marker 位置；`meaning` 存释义，`summary` 存典故。
 - **关联**：
-  - 故事发生国 / 背景王朝 → `event_dynasties`
-  - 典故人物 → `event_participants.person_id`，**只能写 `persons.id`**
-  - **禁止**写 `reign` id、禁止在 `relations` 中挂 `reign:*`
+  - 故事发生国 / 背景王朝 → 集中包的普通关联
+  - 典故人物 → 集中包 associations 的 `person:` 端点，**只能写 persons ID**
+  - 普通关联**禁止**写 `reign` id；命运关系可按规范使用 reign 端点
   - 国君引用各时期包已入库的 person id（如 `gou-jian`、`qi-r25`），不要写 `reign-gou-jian-*`
   - 库内尚无的人物由 idioms 包 `upsert`（蔺相如、荆轲等）
-- **史事对照**：有明确对应 battle/politics 事件时，用 `relations` 从成语 `event:idiom-*` 指向已有 `event:*`（`kind: other`），不写 reign 端点。
+- **史事对照**：有明确对应 battle/politics 事件时，在集中包 associations 关联成语 `event:idiom-*` 与已有 `event:*`，无方向、无标签，不写 reign 端点。
 - **展示语义**：成语详情关联 person；person 详情关联成语；reign 详情**不**因 person 间接列出成语。时间轴上成语只按 `at_abs` 画点。
 
 生成：`node data/imports/generate.mjs idioms` → `import.sql` + `manifest.json`。

@@ -1,3 +1,4 @@
+import { eventAssociationIds, type EntityAssociation } from "@eralens/shared";
 import {
   parseAppellationCsv,
   formatAppellationCsv,
@@ -275,10 +276,9 @@ export function mapReign(row: DbReign | RawReignRow): Reign {
 
 export function mapEvent(
   row: (DbEvent | RawEventRow) & {
-    dynasties: { dynastyId: string }[];
-    participants: { personId: string }[];
     locationMappings?: import("@eralens/shared").LocationMapping[];
   },
+  associations: readonly EntityAssociation[] = [],
 ): Event {
   const atYear = "atYear" in row ? row.atYear : row.at_year;
   const atMonth = "atMonth" in row ? row.atMonth : row.at_month;
@@ -315,8 +315,7 @@ export function mapEvent(
     atAbs: atAbs ?? undefined,
     startAbs: startAbs ?? undefined,
     endAbs: endAbs ?? undefined,
-    dynastyIds: row.dynasties.map((d) => d.dynastyId),
-    participantIds: row.participants.map((p) => p.personId),
+    ...eventAssociationIds(row.id, associations),
     summary: row.summary ?? undefined,
     meaning: meaning ?? undefined,
     content: row.content ?? undefined,
@@ -347,6 +346,7 @@ export function toTimelineDataStore(input: {
   reigns: Reign[];
   events: Event[];
   relations: Relation[];
+  associations?: EntityAssociation[];
 }): TimelineDataStore {
   return input;
 }

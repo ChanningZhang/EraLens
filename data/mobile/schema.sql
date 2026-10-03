@@ -36,20 +36,20 @@ CREATE TABLE events (
   end_year INTEGER, end_month INTEGER, end_day INTEGER, end_abs INTEGER,
   summary TEXT, meaning TEXT, content TEXT
 );
-CREATE TABLE event_dynasties (
-  event_id TEXT NOT NULL, dynasty_id TEXT NOT NULL, PRIMARY KEY(event_id, dynasty_id),
-  FOREIGN KEY(event_id) REFERENCES events(id) ON DELETE CASCADE,
-  FOREIGN KEY(dynasty_id) REFERENCES dynasties(id) ON DELETE CASCADE
+CREATE TABLE entity_associations (
+ a_type TEXT NOT NULL CHECK(a_type IN ('dynasty','event','person')),
+ a_id TEXT NOT NULL CHECK(length(a_id)>0),
+ b_type TEXT NOT NULL CHECK(b_type IN ('dynasty','event','person')),
+ b_id TEXT NOT NULL CHECK(length(b_id)>0),
+ PRIMARY KEY(a_type,a_id,b_type,b_id),
+ CHECK((a_type||':'||a_id) COLLATE BINARY < (b_type||':'||b_id) COLLATE BINARY)
 );
-CREATE TABLE event_participants (
-  event_id TEXT NOT NULL, person_id TEXT NOT NULL, PRIMARY KEY(event_id, person_id),
-  FOREIGN KEY(event_id) REFERENCES events(id) ON DELETE CASCADE,
-  FOREIGN KEY(person_id) REFERENCES persons(id) ON DELETE CASCADE
-);
+CREATE INDEX entity_associations_b_idx ON entity_associations(b_type,b_id);
 CREATE TABLE relations (
   id TEXT PRIMARY KEY, from_type TEXT NOT NULL, from_id TEXT NOT NULL, to_type TEXT NOT NULL,
-  to_id TEXT NOT NULL, kind TEXT NOT NULL, at_year INTEGER, at_month INTEGER, at_day INTEGER,
-  at_abs INTEGER, at_confidence TEXT, event_id TEXT, UNIQUE(from_type, from_id, to_type, to_id, kind)
+  to_id TEXT NOT NULL, kind TEXT NOT NULL CHECK(kind IN ('succession','killed','surrender','abdication','captured','conquered')), at_year INTEGER, at_month INTEGER, at_day INTEGER,
+  at_abs INTEGER, at_confidence TEXT, event_id TEXT, UNIQUE(from_type, from_id, to_type, to_id, kind),
+ CHECK((kind='succession' AND from_type='person' AND to_type='person') OR (kind<>'succession' AND from_type IN ('person','reign') AND to_type='person' AND at_abs IS NOT NULL))
 );
 CREATE TABLE dynasty_lane_groups (
   id TEXT PRIMARY KEY, primary_dynasty_id TEXT NOT NULL, phase_dynasty_ids TEXT NOT NULL DEFAULT '[]',
@@ -113,3 +113,17 @@ CREATE TRIGGER reign_mapping_update AFTER UPDATE OF id ON reigns BEGIN UPDATE lo
 CREATE TRIGGER reign_mapping_delete BEFORE DELETE ON reigns BEGIN DELETE FROM location_mapping WHERE kind='reign' AND external_id=OLD.id; END;
 CREATE TRIGGER event_mapping_update AFTER UPDATE OF id ON events BEGIN UPDATE location_mapping SET external_id=NEW.id WHERE kind='event' AND external_id=OLD.id; END;
 CREATE TRIGGER event_mapping_delete BEFORE DELETE ON events BEGIN DELETE FROM location_mapping WHERE kind='event' AND external_id=OLD.id; END;
+
+CREATE TRIGGER association_endpoints_insert BEFORE INSERT ON entity_associations BEGIN
+ SELECT CASE WHEN (NEW.a_type='dynasty' AND NOT EXISTS(SELECT 1 FROM dynasties WHERE id=NEW.a_id)) OR (NEW.a_type='event' AND NOT EXISTS(SELECT 1 FROM events WHERE id=NEW.a_id)) OR (NEW.a_type='person' AND NOT EXISTS(SELECT 1 FROM persons WHERE id=NEW.a_id)) OR (NEW.b_type='dynasty' AND NOT EXISTS(SELECT 1 FROM dynasties WHERE id=NEW.b_id)) OR (NEW.b_type='event' AND NOT EXISTS(SELECT 1 FROM events WHERE id=NEW.b_id)) OR (NEW.b_type='person' AND NOT EXISTS(SELECT 1 FROM persons WHERE id=NEW.b_id)) THEN RAISE(ABORT,'Invalid association endpoint') END;
+END;
+
+CREATE TRIGGER association_endpoints_update BEFORE UPDATE ON entity_associations BEGIN
+ SELECT CASE WHEN (NEW.a_type='dynasty' AND NOT EXISTS(SELECT 1 FROM dynasties WHERE id=NEW.a_id)) OR (NEW.a_type='event' AND NOT EXISTS(SELECT 1 FROM events WHERE id=NEW.a_id)) OR (NEW.a_type='person' AND NOT EXISTS(SELECT 1 FROM persons WHERE id=NEW.a_id)) OR (NEW.b_type='dynasty' AND NOT EXISTS(SELECT 1 FROM dynasties WHERE id=NEW.b_id)) OR (NEW.b_type='event' AND NOT EXISTS(SELECT 1 FROM events WHERE id=NEW.b_id)) OR (NEW.b_type='person' AND NOT EXISTS(SELECT 1 FROM persons WHERE id=NEW.b_id)) THEN RAISE(ABORT,'Invalid association endpoint') END;
+END;
+CREATE TRIGGER dynasty_associations_delete BEFORE DELETE ON dynasties BEGIN DELETE FROM entity_associations WHERE (a_type='dynasty' AND a_id=OLD.id) OR (b_type='dynasty' AND b_id=OLD.id); END;
+CREATE TRIGGER dynasty_associations_update BEFORE UPDATE OF id ON dynasties BEGIN SELECT CASE WHEN NEW.id<>OLD.id AND EXISTS(SELECT 1 FROM entity_associations WHERE (a_type='dynasty' AND a_id=OLD.id) OR (b_type='dynasty' AND b_id=OLD.id)) THEN RAISE(ABORT,'Cannot rename an associated entity') END; END;
+CREATE TRIGGER event_associations_delete BEFORE DELETE ON events BEGIN DELETE FROM entity_associations WHERE (a_type='event' AND a_id=OLD.id) OR (b_type='event' AND b_id=OLD.id); END;
+CREATE TRIGGER event_associations_update BEFORE UPDATE OF id ON events BEGIN SELECT CASE WHEN NEW.id<>OLD.id AND EXISTS(SELECT 1 FROM entity_associations WHERE (a_type='event' AND a_id=OLD.id) OR (b_type='event' AND b_id=OLD.id)) THEN RAISE(ABORT,'Cannot rename an associated entity') END; END;
+CREATE TRIGGER person_associations_delete BEFORE DELETE ON persons BEGIN DELETE FROM entity_associations WHERE (a_type='person' AND a_id=OLD.id) OR (b_type='person' AND b_id=OLD.id); END;
+CREATE TRIGGER person_associations_update BEFORE UPDATE OF id ON persons BEGIN SELECT CASE WHEN NEW.id<>OLD.id AND EXISTS(SELECT 1 FROM entity_associations WHERE (a_type='person' AND a_id=OLD.id) OR (b_type='person' AND b_id=OLD.id)) THEN RAISE(ABORT,'Cannot rename an associated entity') END; END;

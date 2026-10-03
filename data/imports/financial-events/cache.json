@@ -14,10 +14,6 @@
     {
       "kind": "finance",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-north"
-      ],
-      "participantIds": [],
       "id": "finance-official-jiaozi-issued",
       "name": "官交子发行",
       "at": {
@@ -33,10 +29,6 @@
     {
       "kind": "finance",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [],
       "id": "finance-qing-fixed-ding-tax",
       "name": "滋生人丁永不加赋",
       "at": {
@@ -52,10 +44,6 @@
     {
       "kind": "finance",
       "timeMode": "point",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [],
       "id": "finance-fabi-reform",
       "name": "法币改革",
       "at": {
@@ -70,8 +58,6 @@
     }
   ],
   "relations": [],
-  "supplementalEventDynasties": [],
-  "supplementalEventParticipants": [],
   "preSql": "",
   "manifest": {
     "slug": "financial-events",
@@ -121,7 +107,8 @@
     "notes": [
       "金融 kind 用于具有制度影响的货币发行、税收金融化与币制改革节点。",
       "本批新增官交子、滋生人丁永不加赋、法币改革三条；与商业事件包合计15条，不超过用户设定的上限。",
-      "一条鞭法未另列：已有张居正改革事件涵盖该项改革，避免重复导入。"
+      "一条鞭法未另列：已有张居正改革事件涵盖该项改革，避免重复导入。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   }
 }

@@ -1,3 +1,4 @@
+import { relatedEntityRefs, type EntityAssociation } from "./entityAssociations.mjs";
 import { capitalLocations } from "./locationMappings";
 import { formatHistoricalDate, isApproximateConfidence } from "./historicalDate";
 import { buildReignTenureCapitalRows, capitalDateRangeLabel, capitalLocationRoleLabel, dynastyCapitalRelatedItems } from "./dynastyCapitals";
@@ -58,6 +59,7 @@ export type TimelineDataStore = {
   persons: Person[];
   events: Event[];
   relations: Relation[];
+  associations?: EntityAssociation[];
   locationMappings?: import("./schema").LocationMapping[];
 };
 
@@ -123,72 +125,72 @@ function truncateText(text: string, max = 36): string {
   return `${text.slice(0, max)}…`;
 }
 
-function sortEventsByAnchor(events: Event[]): Event[] {
-  return [...events].sort(
-    (a, b) => eventSpanAbs(a).anchorAbs - eventSpanAbs(b).anchorAbs || a.id.localeCompare(b.id),
-  );
-}
-
 type RelatedItem = EntityDetail["related"][number];
 
-function idiomRelatedItems(events: Event[]): RelatedItem[] {
-  return sortEventsByAnchor(events.filter((e) => e.kind === "idiom")).map((e) => ({
-    ref: { type: "event", id: e.id },
-    label: e.name,
-    subtitle: e.meaning ? truncateText(e.meaning) : undefined,
-    abs: eventSpanAbs(e).anchorAbs,
-    group: "idiom",
-  }));
+type RelatedSummary = (ref: EntityRef) => { ref: EntityRef; label: string; subtitle?: string };
+
+function associationRelatedItems(
+  store: TimelineDataStore,
+  ref: EntityRef,
+  summary: RelatedSummary,
+): RelatedItem[] {
+  const sourceEvent = ref.type === "event" ? store.events.find(e => e.id === ref.id) : undefined;
+  return relatedEntityRefs(store.associations ?? [], refKey(ref)).flatMap(raw => {
+    const other = parseRef(raw);
+    if (!other) return [];
+    let abs: number | undefined;
+    let group: RelatedItem["group"];
+    if (other.type === "person") {
+      const person = store.persons.find(p => p.id === other.id);
+      if (!person) return [];
+      abs = sourceEvent ? eventSpanAbs(sourceEvent).anchorAbs : personSearchAnchorAbs(person, store.reigns);
+      group = "person";
+    } else if (other.type === "dynasty") {
+      const dynasty = store.dynasties.find(d => d.id === other.id);
+      if (!dynasty) return [];
+      abs = sourceEvent ? eventSpanAbs(sourceEvent).anchorAbs : dynasty.startAbs;
+      group = "dynasty";
+    } else if (other.type === "event") {
+      const event = store.events.find(e => e.id === other.id);
+      if (!event) return [];
+      abs = eventSpanAbs(event).anchorAbs;
+      group = event.kind === "idiom" ? "idiom" : event.kind === "poetry" ? "poetry" : "event";
+    } else return [];
+    return [{ ...summary(other), abs, group }];
+  }).sort((a, b) => (a.abs ?? Infinity) - (b.abs ?? Infinity));
 }
 
-function poetryRelatedItems(events: Event[]): RelatedItem[] {
-  return sortEventsByAnchor(events.filter((e) => e.kind === "poetry")).map((e) => ({
-    ref: { type: "event", id: e.id },
-    label: e.name,
-    subtitle: eventKindLabel(e.kind),
-    abs: eventSpanAbs(e).anchorAbs,
-    group: "poetry",
-  }));
-}
-
-function eventRelatedItems(events: Event[]): RelatedItem[] {
-  return sortEventsByAnchor(events.filter((e) => e.kind !== "idiom" && e.kind !== "poetry")).map((e) => ({
-    ref: { type: "event", id: e.id },
-    label: e.name,
-    subtitle: formatEventTime(e),
-    abs: eventSpanAbs(e).anchorAbs,
-    group: "event",
-  }));
-}
-
-function eventsForPerson(store: TimelineDataStore, personId: string): Event[] {
-  return store.events.filter((e) => e.participantIds.includes(personId));
+function uniqueRelatedItems(items: RelatedItem[]): RelatedItem[] {
+  const seen = new Set<string>();
+  return items.filter(item => {
+    const key = refKey(item.ref);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
 }
 
 function fateRelationRelatedItems(
   store: TimelineDataStore,
   reigns: Reign[],
-  buildRelatedSummary: (relatedRef: EntityRef) => {
-    ref: EntityRef;
-    label: string;
-    subtitle?: string;
-  },
+  personId: string,
+  summary: RelatedSummary,
 ): RelatedItem[] {
-  return reigns.flatMap((reign) => {
-    const reignRef: EntityRef = { type: "reign", id: reign.id };
-    return store.relations
-      .filter((rel) => rel.fromRef === refKey(reignRef) || rel.toRef === refKey(reignRef))
-      .map((rel) => {
-        const other = rel.fromRef === refKey(reignRef) ? rel.toRef : rel.fromRef;
-        const parsed = parseRef(other);
-        if (!parsed) return null;
-        return buildRelatedSummary(parsed);
-      })
-      .filter(Boolean) as RelatedItem[];
+  const refs = new Set([`person:${personId}`, ...reigns.map(r => `reign:${r.id}`)]);
+  return store.relations.filter(rel =>
+    isFateRelationKind(rel.kind) && (refs.has(rel.fromRef) || refs.has(rel.toRef)),
+  ).flatMap(rel => {
+    const other = parseRef(refs.has(rel.fromRef) ? rel.toRef : rel.fromRef);
+    return other ? [{
+      ...summary(other), abs: rel.atAbs,
+      group: other.type === "reign" ? "reign" as const : "person" as const,
+    }] : [];
   });
 }
 
 export type PersonDetailOptions = {
+  /** Summary construction must not recursively expand association graphs. */
+  includeRelated?: boolean;
   focusReignId?: string;
   /** Reign rows selected by the single detail query; other rows may be ownership context. */
   selectedReignIds?: readonly string[];
@@ -237,7 +239,6 @@ function buildPersonEntityDetail(
     return rows;
   });
   const clan = buildPreQinClanContext(person);
-  const participantEvents = eventsForPerson(store, person.id);
   const preQinReign = personReigns.find((reign) => usesPreQinCardLayout(reign));
   const preQinByBirth =
     !preQinReign &&
@@ -313,12 +314,10 @@ function buildPersonEntityDetail(
         : undefined,
     facts,
     summary: person.bio,
-    related: [
-      ...fateRelationRelatedItems(store, personReigns, buildRelatedSummary),
-      ...eventRelatedItems(participantEvents),
-      ...idiomRelatedItems(participantEvents),
-      ...poetryRelatedItems(participantEvents),
-    ],
+    related: options.includeRelated === false ? [] : uniqueRelatedItems([
+      ...fateRelationRelatedItems(store, personReigns, person.id, buildRelatedSummary),
+      ...associationRelatedItems(store, {type:"person",id:person.id},buildRelatedSummary),
+    ]),
     capitalTenures,
     links: person.links ?? [],
   };
@@ -352,7 +351,7 @@ export function buildEntityDetail(
 
   function buildRelatedSummary(relatedRef: EntityRef) {
     try {
-      const detail = buildEntityDetail(store, relatedRef);
+      const detail = buildEntityDetail(store, relatedRef, { includeRelated: false });
       return {
         ref: relatedRef,
         label: detail.title,
@@ -384,29 +383,8 @@ export function buildEntityDetail(
   if (ref.type === "dynasty") {
     const dynasty = dynastyMap.get(ref.id);
     if (!dynasty) throw new Error(`Dynasty not found: ${ref.id}`);
-    const dynastyEvents = store.events.filter((e) =>
-      e.dynastyIds.includes(dynasty.id),
-    );
-    const idiomRelated = idiomRelatedItems(dynastyEvents);
-    const poetryRelated = poetryRelatedItems(dynastyEvents);
-    const eventRelated = eventRelatedItems(dynastyEvents);
     const capitalRelated = dynastyCapitalRelatedItems(dynasty.id, capitalLocations(store));
-    // Explicit associations also cover people whose reign dates are unknown.
-    // Keep their membership independent of dated reigns or concurrent claims.
-    const associatedPersonIds = [...new Set(store.relations
-      .filter((relation) => relation.kind === "other")
-      .sort((a, b) => a.id.localeCompare(b.id))
-      .flatMap((relation) => {
-        const other = relation.fromRef === refKey(ref) ? relation.toRef
-          : relation.toRef === refKey(ref) ? relation.fromRef : undefined;
-        const parsed = other ? parseRef(other) : null;
-        return parsed?.type === "person" && personMap.has(parsed.id) ? [parsed.id] : [];
-      }))];
-    const personRelated: RelatedItem[] = associatedPersonIds.map((id) => ({
-      ...buildRelatedSummary({ type: "person", id }),
-      abs: personSearchAnchorAbs(personMap.get(id)!, store.reigns),
-      group: "person",
-    }));
+    const associatedRelated = options.includeRelated === false ? [] : associationRelatedItems(store,ref,buildRelatedSummary);
     return {
       ref,
       title: dynasty.name,
@@ -422,7 +400,7 @@ export function buildEntityDetail(
         { label: "范围", value: dynasty.scope === "cn" ? "中国史" : dynasty.scope },
       ],
       summary: dynasty.note,
-      related: [...capitalRelated, ...eventRelated, ...idiomRelated, ...poetryRelated, ...personRelated],
+      related: options.includeRelated === false ? [] : uniqueRelatedItems([...capitalRelated, ...associatedRelated]),
       capitalTenures: [],
       links: [],
     };
@@ -453,46 +431,10 @@ export function buildEntityDetail(
     .map((id) => dynastyMap.get(id))
     .filter((dynasty): dynasty is NonNullable<typeof dynasty> => dynasty != null);
   const primaryDynasty = linkedDynasties[0];
-  const dynastyRelated: EntityDetail["related"] = linkedDynasties.map((dynasty) => ({
-    ref: { type: "dynasty", id: dynasty.id },
-    label: dynasty.name,
-    subtitle: dynasty.altNames?.[0],
-    abs: anchorAbs,
-    group: "dynasty",
-  }));
   const locationRelated: EntityDetail["related"] = (event.locationMappings ?? []).map(m => ({ref:{type:"location_mapping",id:m.id}, label:m.historicalName, subtitle:m.location.modernName, abs:anchorAbs,group:"location"}));
-
-  // Event relations describe an association, so either endpoint should expose
-  // the other event in its detail view regardless of stored direction.
-  const associatedEventRelated = store.relations
-    .filter((rel) => {
-      const isEventPair = rel.fromRef.startsWith("event:") && rel.toRef.startsWith("event:");
-      return isEventPair && (rel.fromRef === refKey(ref) || rel.toRef === refKey(ref));
-    })
-    .map((rel) => {
-      const otherRef = rel.fromRef === refKey(ref) ? rel.toRef : rel.fromRef;
-      const parsed = parseRef(otherRef);
-      if (!parsed) return null;
-      const summary = buildRelatedSummary(parsed);
-      const otherEvent = eventMap.get(parsed.id);
-      return {
-        ...summary,
-        abs: otherEvent ? eventSpanAbs(otherEvent).anchorAbs : anchorAbs,
-        group: otherEvent?.kind === "idiom" ? "idiom" as const : "event" as const,
-      };
-    })
-    .filter((item): item is NonNullable<typeof item> => item != null);
+  const ordinaryRelated = options.includeRelated === false ? [] : associationRelatedItems(store,ref,buildRelatedSummary);
 
   if (event.kind === "idiom") {
-    const participantRelated = event.participantIds
-      .map((id) => {
-        const summary = buildRelatedSummary({ type: "person", id });
-        return summary
-          ? { ...summary, abs: anchorAbs, group: "person" as const }
-          : null;
-      })
-      .filter(Boolean) as EntityDetail["related"];
-
     return {
       ref,
       title: event.name,
@@ -516,7 +458,7 @@ export function buildEntityDetail(
         ...((isApproximateConfidence(event.atConfidence ?? event.at?.confidence) || isApproximateConfidence(event.startConfidence ?? event.start?.confidence) || isApproximateConfidence(event.endConfidence ?? event.end?.confidence)) ? [{ label: "日期精度", value: "非精确" }] : []),
       ],
       summary: event.summary,
-      related: [...locationRelated, ...dynastyRelated, ...participantRelated, ...associatedEventRelated],
+      related: options.includeRelated === false ? [] : uniqueRelatedItems([...locationRelated, ...ordinaryRelated]),
       capitalTenures: [],
       links: [],
     };
@@ -547,19 +489,7 @@ export function buildEntityDetail(
     ],
     summary: event.summary,
     content: event.content,
-    related: [
-      ...locationRelated,
-      ...dynastyRelated,
-      ...event.participantIds
-      .map((id) => {
-        const summary = buildRelatedSummary({ type: "person", id });
-        return summary
-          ? { ...summary, abs: anchorAbs, group: "person" as const }
-          : null;
-      })
-      .filter(Boolean) as EntityDetail["related"],
-      ...associatedEventRelated,
-    ],
+    related: options.includeRelated === false ? [] : uniqueRelatedItems([...locationRelated, ...ordinaryRelated]),
     capitalTenures: [],
     links: [],
   };

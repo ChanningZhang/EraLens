@@ -6,7 +6,7 @@ BEGIN;
 -- remove stale auto-generated 史料缺 (元首空缺期应留白)
 DELETE FROM reigns WHERE dynasty_id IN ('roc') AND person_id = 'system-missing-ruler';
 DELETE FROM relations WHERE id = 'rel-jiang-jieshi-jiang-jieshi-succession';
-DELETE FROM event_dynasties WHERE event_id = 'puyi-leaves-forbidden-city';
+
 
 -- persons
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, birth_day, birth_confidence, death_year, death_month, death_day, death_confidence, roles, bio, links, posthumous_name, temple_name, title)
@@ -309,86 +309,6 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_
 INSERT INTO events (id, name, kind, time_mode, at_confidence, start_confidence, end_confidence, date_note, at_year, at_month, at_day, at_abs, start_year, start_month, start_day, start_abs, end_year, end_month, end_day, end_abs, summary, meaning, content) VALUES ('western-hunan-campaign', '湘西会战', 'battle', 'span', NULL, 'month', 'month', '1945年4月至6月；又称雪峰山战役，具体起讫日期依不同战史略有差异。', NULL, NULL, NULL, NULL, 1945, 4, NULL, 23343, 1945, 6, NULL, 23345, '日军为夺取芷江机场、改善在华战局，向湘西发动进攻。中国军队依托雪峰山地形防御并转入反击，日军在连续战斗后撤退，未能攻占芷江；这是中国正面战场由防御转入反攻的重要会战，也是日本投降前中国战场最后一场大型会战。', NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, at_confidence = EXCLUDED.at_confidence, start_confidence = EXCLUDED.start_confidence, end_confidence = EXCLUDED.end_confidence, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning, content = EXCLUDED.content;
 
--- event_dynasties
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('yuan-shikai-emperor', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('national-protection-war', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('may-fourth', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('puyi-leaves-forbidden-city', 'qing') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('warlord-era', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('northern-expedition', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('northeast-flag-change', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('mukden-incident', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('xi-an-incident', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('resistance-war', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('civil-war', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('roc-mainland-end', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('pingjin-campaign', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('shanghai-incident-1932', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('shanghai-campaign-1937', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('pingxingguan-battle', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('xinkou-battle', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('taiyuan-campaign', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('xuzhou-campaign', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('taierzhuang-battle', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('wuhan-campaign', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('nanchang-campaign', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('first-changsha-campaign', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('kunlun-pass-battle', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('hundred-regiments-campaign', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('second-changsha-campaign', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('third-changsha-campaign', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('changde-campaign', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('yuxianggui-campaign', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('hengyang-defense', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('western-hunan-campaign', 'roc') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('xinhai-revolution', 'roc') ON CONFLICT DO NOTHING;
-
--- event_participants
-INSERT INTO event_participants (event_id, person_id) VALUES ('yuan-shikai-emperor', 'yuan-shikai') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('national-protection-war', 'cai-e') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('national-protection-war', 'yuan-shikai') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('national-protection-war', 'tang-jiyao') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('puyi-leaves-forbidden-city', 'puyi') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('puyi-leaves-forbidden-city', 'feng-yuxiang') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('warlord-era', 'duan-qirui') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('warlord-era', 'wu-peifu') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('warlord-era', 'zhang-zuolin') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('warlord-era', 'yan-xishan') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('warlord-era', 'feng-yuxiang') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('warlord-era', 'lu-rongting') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('warlord-era', 'tang-jiyao') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('warlord-era', 'liu-xiang') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('northern-expedition', 'jiang-jieshi') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('northeast-flag-change', 'zhang-xueliang') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('mukden-incident', 'zhang-xueliang') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('xi-an-incident', 'zhang-xueliang') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('xi-an-incident', 'jiang-jieshi') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('xi-an-incident', 'zhou-enlai') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('resistance-war', 'jiang-jieshi') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('resistance-war', 'mao-zedong') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('resistance-war', 'zhou-enlai') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('resistance-war', 'yan-xishan') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('civil-war', 'jiang-jieshi') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('civil-war', 'mao-zedong') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('civil-war', 'li-zongren') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('roc-mainland-end', 'jiang-jieshi') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('roc-mainland-end', 'li-zongren') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('pingjin-campaign', 'jiang-jieshi') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('shanghai-incident-1932', 'jiang-guangnai') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('shanghai-incident-1932', 'cai-tingkai') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('shanghai-campaign-1937', 'jiang-jieshi') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('pingxingguan-battle', 'lin-biao') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('xinkou-battle', 'yan-xishan') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('taiyuan-campaign', 'yan-xishan') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('xuzhou-campaign', 'jiang-jieshi') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('xuzhou-campaign', 'li-zongren') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('taierzhuang-battle', 'li-zongren') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('wuhan-campaign', 'jiang-jieshi') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('nanchang-campaign', 'jiang-jieshi') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('hundred-regiments-campaign', 'zhu-de') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('hundred-regiments-campaign', 'peng-dehuai') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('yuxianggui-campaign', 'jiang-jieshi') ON CONFLICT DO NOTHING;
-
 -- relations
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_day, at_abs, at_confidence, event_id) VALUES ('rel-sun-yat-sen-yuan-shikai-succession', 'person', 'sun-yat-sen', 'person', 'yuan-shikai', 'succession', NULL, NULL, NULL, NULL, 'year', NULL) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, at_confidence = EXCLUDED.at_confidence, event_id = EXCLUDED.event_id;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_day, at_abs, at_confidence, event_id) VALUES ('rel-yuan-shikai-li-yuanhong-succession', 'person', 'yuan-shikai', 'person', 'li-yuanhong', 'succession', NULL, NULL, NULL, NULL, 'year', NULL) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, at_confidence = EXCLUDED.at_confidence, event_id = EXCLUDED.event_id;
@@ -419,9 +339,6 @@ INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_day, at_abs, at_confidence, event_id) VALUES ('rel-chen-shuibian-ma-yingjiu-succession', 'person', 'chen-shuibian', 'person', 'ma-yingjiu', 'succession', NULL, NULL, NULL, NULL, 'year', NULL) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, at_confidence = EXCLUDED.at_confidence, event_id = EXCLUDED.event_id;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_day, at_abs, at_confidence, event_id) VALUES ('rel-ma-yingjiu-cai-yingwen-succession', 'person', 'ma-yingjiu', 'person', 'cai-yingwen', 'succession', NULL, NULL, NULL, NULL, 'year', NULL) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, at_confidence = EXCLUDED.at_confidence, event_id = EXCLUDED.event_id;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_day, at_abs, at_confidence, event_id) VALUES ('rel-cai-yingwen-lai-qingde-succession', 'person', 'cai-yingwen', 'person', 'lai-qingde', 'succession', NULL, NULL, NULL, NULL, 'year', NULL) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, at_confidence = EXCLUDED.at_confidence, event_id = EXCLUDED.event_id;
-INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_day, at_abs, at_confidence, event_id) VALUES ('rel-northern-jiang', 'event', 'northern-expedition', 'person', 'jiang-jieshi', 'battle', NULL, NULL, NULL, NULL, 'year', NULL) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, at_confidence = EXCLUDED.at_confidence, event_id = EXCLUDED.event_id;
-INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_day, at_abs, at_confidence, event_id) VALUES ('rel-xian-zhang', 'event', 'xi-an-incident', 'person', 'zhang-xueliang', 'battle', NULL, NULL, NULL, NULL, 'year', NULL) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, at_confidence = EXCLUDED.at_confidence, event_id = EXCLUDED.event_id;
-INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_day, at_abs, at_confidence, event_id) VALUES ('rel-protection-cai-e', 'event', 'national-protection-war', 'person', 'cai-e', 'battle', NULL, NULL, NULL, NULL, 'year', NULL) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, at_confidence = EXCLUDED.at_confidence, event_id = EXCLUDED.event_id;
 
 -- remove the formerly separate Wang Jingwei dynasty/group after its reigns have been reassigned to roc
 DELETE FROM dynasties WHERE id = 'wang-jingwei-regime';

@@ -17,8 +17,6 @@
     "missingReigns": 0,
     "events": 0,
     "relations": 0,
-    "existingEventDynastyLinks": 1,
-    "existingEventParticipantLinks": 0,
     "capitals": 0
   },
   "sources": [
@@ -236,7 +234,7 @@
     "卫国人物 id 用 weiguo- 前缀，避免与战国魏 wei-r* 冲突；燕召公用 ji-shi，避免与宋恭帝 zhao-shi 冲突。",
     "同人多次即位拆多条 reign（reignId 后缀 -2），与唐/明一致；完整在位字段直接维护于 cache.json，不从 Wiki 原始文本自动推断或覆盖。",
     "年代诸说不一或仅存谥号者，在 manifest 与 date_note 中说明；月日未知标 confidence: year。",
-    "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 event_dynasties 关联。",
+    "葵丘之盟、城濮之战、三家分晋等事件沿用 xia-shang-zhou 已有 id，本包仅补 集中普通关联 关联。",
     "逐条复核夏商周包既有事件的诸侯国关联：《左传·僖公九年》载葵丘与会者为鲁、齐、宋、卫、郑、许、曹及周王使者；补入本包有建模泳道的鲁、宋、卫、郑、曹（许未建王朝实体）。城濮之战补入受战事直接影响的宋、曹、卫：宋受楚围而晋出兵救援，晋先伐曹、卫并以复国交涉，原有关联晋、楚保留。依据《中国哲学书电子化计划》所录《左传·僖公九年》 https://ctext.org/chun-qiu-zuo-zhuan/xi-gong-jiu-nian/zhs ，以及《菏泽历史文化集萃·城濮之战》 https://shandong-chorography.org/database/bh/section/22/article/66/ 。",
     "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
     "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
@@ -245,6 +243,7 @@
     "燕早期日期复核留据（本次仅修概述与来源，未重算定位）：reign-ji-shi-yan-chunqiu（-1044至-1000，两端 interpolated_by_generation）、reign-yan-r1-yan-chunqiu（-999至-955，两端 interpolated_by_generation）、reign-yan-r2-yan-chunqiu（-954至-910，两端 interpolated_by_generation）、reign-yan-r3-yan-chunqiu（-909至-865，起点 interpolated_by_generation、终点 year）均为旧版本四段均分定位，未获本次史料确认，不再写入 bio。燕早期世系不连续：《史记》仅称召公以下九世至惠侯，克、旨、舞又主要据金文辨认，其后与惠侯之间有世系断层；不能把四个现存姓名当作完整连续的四任世系，也不能由惠侯起年认定舞的卒年。因此这四段旧定位及舞终点 confidence 的重新建模暂缓，待有可靠共同锚点及世次定位时处理；不据本次正文清理新增或重做跨断层插值，不将原坐标视为史料日期。",
     "燕可考日期复核：reign-yan-r4-yan-chunqiu（惠侯，-864至-827）与 reign-yan-r5-yan-chunqiu（釐侯，-826至-791）两端维持 year；《十二诸侯年表》共和元年（-841）列惠侯二十四年，宣王元年（-827）列惠侯尽，宣王二年（-826）列釐侯庄元年。个别二手条目把惠侯初立年写为-865，本包保留年表年次及旧王占死年的接续规则，不把-865解释成舞卒年。reign-yan-r6-yan-chunqiu（顷侯，-790至-767）、reign-yan-r7-yan-chunqiu（哀侯，-766至-765）、reign-yan-r8-yan-chunqiu（郑侯，-764至-729）、reign-yan-r9-yan-chunqiu（穆侯，-728至-711）、reign-yan-r10-yan-chunqiu（宣侯，-710至-698）、reign-yan-r11-yan-chunqiu（桓侯，-697至-691）与 reign-yan-r12-yan-chunqiu（庄公，-690至-658）保留原起讫、两端 year 及既有概述中的年表年份；二十四、二、三十六、十八、十三、七、三十三年在位与《燕召公世家》对应，没有早期均分年份混入这些记录。",
     "2026-10-02按王朝拆包：本包由原chunqiu-zhanguo缓存中的燕记录原样迁移，保留实体ID、史实、日期及置信度。人物按在位归属唯一拥有，非在位人物按迭代归属分配；事件由dynastyIds首项所属包唯一拥有；事件关联按目标王朝或人物归属分配，跨包关系只引用既有ID，不重复写关联行。原包完整来源与复核说明另行归档。",
-    "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。"
+    "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
+    "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
   ]
 }

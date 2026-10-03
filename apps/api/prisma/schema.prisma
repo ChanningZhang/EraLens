@@ -29,7 +29,6 @@ model Person {
   title       String?
   searchTerms String[]            @default([]) @map("search_terms")
   reigns      Reign[]
-  participants EventParticipant[]
 
   @@index([birthYear])
   @@index([deathYear])
@@ -82,7 +81,6 @@ model Dynasty {
   note        String?
   group       DynastyGroup?    @relation(fields: [groupId], references: [id])
   reigns      Reign[]
-  eventDynasties EventDynasty[]
 
 
   @@index([startYear])
@@ -149,8 +147,6 @@ model Event {
   summary     String?
   meaning     String?
   content     String?
-  dynasties   EventDynasty[]
-  participants EventParticipant[]
 
   @@index([atYear])
   @@index([startYear])
@@ -159,24 +155,15 @@ model Event {
 }
 
 
-model EventDynasty {
-  eventId   String  @map("event_id")
-  dynastyId String  @map("dynasty_id")
-  event     Event   @relation(fields: [eventId], references: [id], onDelete: Cascade)
-  dynasty   Dynasty @relation(fields: [dynastyId], references: [id], onDelete: Cascade)
+model EntityAssociation {
+  aType String @map("a_type")
+  aId String @map("a_id")
+  bType String @map("b_type")
+  bId String @map("b_id")
 
-  @@id([eventId, dynastyId])
-  @@map("event_dynasties")
-}
-
-model EventParticipant {
-  eventId  String @map("event_id")
-  personId String @map("person_id")
-  event    Event  @relation(fields: [eventId], references: [id], onDelete: Cascade)
-  person   Person @relation(fields: [personId], references: [id], onDelete: Cascade)
-
-  @@id([eventId, personId])
-  @@map("event_participants")
+  @@id([aType, aId, bType, bId])
+  @@index([bType, bId], map: "entity_associations_b_idx")
+  @@map("entity_associations")
 }
 
 model Relation {

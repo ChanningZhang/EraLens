@@ -8,6 +8,7 @@ import { spawnSync } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { discoverPackages } from "../data/imports/lib/discoverPackages.mjs";
+import { auditPackageOwnership } from "../data/imports/lib/auditPackageOwnership.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, "..");
@@ -19,8 +20,7 @@ const PGDB = process.env.ERALENS_PG_DB || "eralens";
 
 const TRUNCATE_SQL = `
 TRUNCATE TABLE
-  event_participants,
-  event_dynasties,
+  entity_associations,
   relations,
   events,
   location_mapping,
@@ -105,8 +105,7 @@ function sqlStatements(sql) {
 // and create a retry cycle (for example, capitals <-> reign capitals).
 const DEFERRED_INSERT_TABLES = new Set([
   "location_mapping",
-  "event_dynasties",
-  "event_participants",
+  "entity_associations",
 ]);
 
 function splitDeferredInserts(sql) {
@@ -182,6 +181,7 @@ function fail(message, detail) {
 }
 
 function main() {
+  auditPackageOwnership(importDir);
   const allPackages = listPackages();
   const packages = allPackages.filter((pkg) => pkg.importPhase !== "post");
   const postPackages = allPackages

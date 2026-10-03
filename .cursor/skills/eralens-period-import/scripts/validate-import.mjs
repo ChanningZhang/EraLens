@@ -18,6 +18,7 @@ if (!/\bCOMMIT\s*;/i.test(sql)) errors.push("Missing COMMIT;");
 
 // Only inspect the column list, not VALUES — time_mode 'span' is valid.
 const forbidden = [
+  /\b(?:INSERT\s+INTO|DELETE\s+FROM)\s+(?:event_dynasties|event_participants)\b/is,
   /\bINSERT\s+INTO\s+dynasty_groups\s*\([^)]*\bspan\b/is,
   /\bINSERT\s+INTO\s+dynasties\s*\([^)]*\bspan\b/is,
   /\bINSERT\s+INTO\s+reigns\s*\([^)]*\bspan\b/is,
@@ -35,8 +36,7 @@ const tableOrder = [
   "dynasties",
   "reigns",
   "events",
-  "event_dynasties",
-  "event_participants",
+  "entity_associations",
   "relations",
   "location_mapping",
 ];

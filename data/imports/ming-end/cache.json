@@ -372,14 +372,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "mingzheng",
-        "qing"
-      ],
-      "participantIds": [
-        "zheng-keshuang",
-        "xuanye"
-      ],
       "id": "qing-conquer-taiwan",
       "name": "清军攻克台湾",
       "dateNote": "康熙二十二年十月初八，1683年10月8日郑克塽降清",
@@ -406,23 +398,9 @@
       "fromRef": "person:zheng-jing",
       "toRef": "person:zheng-keshuang",
       "kind": "succession"
-    },
-    {
-      "id": "rel-mingzheng-taiwan-zheng",
-      "fromRef": "event:zheng-recover-taiwan",
-      "toRef": "person:zheng-chenggong",
-      "kind": "politics"
-    },
-    {
-      "id": "rel-qing-taiwan-zheng-keshuang",
-      "fromRef": "event:qing-conquer-taiwan",
-      "toRef": "person:zheng-keshuang",
-      "kind": "battle"
     }
   ],
-  "supplementalEventDynasties": [],
-  "supplementalEventParticipants": [],
-  "preSql": "DELETE FROM event_dynasties WHERE event_id IN ('mingzheng-taiwan-founded', 'qing-unify-taiwan');\nDELETE FROM event_dynasties WHERE event_id = 'qing-enter-pass' AND dynasty_id = 'dashun';\nDELETE FROM event_participants WHERE event_id IN ('mingzheng-taiwan-founded', 'qing-unify-taiwan');\nDELETE FROM relations WHERE from_type = 'event' AND from_id = 'mingzheng-taiwan-founded';\nDELETE FROM events WHERE id IN ('mingzheng-taiwan-founded', 'qing-unify-taiwan');",
+  "preSql": "DELETE FROM events WHERE id IN ('mingzheng-taiwan-founded', 'qing-unify-taiwan');",
   "manifest": {
     "slug": "ming-end",
     "title": "明末清初过渡政权",
@@ -440,9 +418,7 @@
       "dynasties": 3,
       "reigns": 5,
       "events": 1,
-      "relations": 4,
-      "supplementalEventDynastyLinks": 1,
-      "supplementalEventParticipantLinks": 0
+      "relations": 2
     },
     "sources": [
       {
@@ -496,8 +472,9 @@
       "郑成功、郑经、郑克塽在位与 yuan-ming-qing 已有人物 upsert 衔接。",
       "大西年号亦作大顺，与李自成大顺国号同名异政权。",
       "郑成功收复台湾（1662）与郑克塽降清（1683）各保留一条跨包共用事件，合并原重复记录的信息与关联。",
-      "明朝灭亡、清军入关、南明终结等事件沿用已有 id，补 event_dynasties。",
-      "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。明郑奉明正朔，首项采用“大明”，保留地域名称“东宁”和封爵简称“延平”；大顺、大西采用“大顺”“大西”。"
+      "明朝灭亡、清军入关、南明终结等事件沿用已有 id，补 集中普通关联。",
+      "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。明郑奉明正朔，首项采用“大明”，保留地域名称“东宁”和封爵简称“延平”；大顺、大西采用“大顺”“大西”。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   }
 }

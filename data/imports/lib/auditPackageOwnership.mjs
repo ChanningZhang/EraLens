@@ -1,3 +1,4 @@
+import { assertEntityAssociation } from "../../../packages/shared/src/entityAssociations.mjs";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -35,20 +36,25 @@ function collectPackageRows(owners, slug, cache) {
     add(owners, "relations.unique", [row.fromRef, row.toRef, row.kind].join("|"), slug, index, row.id, row);
   });
 
-  (cache.events ?? []).forEach((event, index) => {
-    for (const dynastyId of event.dynastyIds ?? []) {
-      add(owners, "event_dynasties", [event.id, dynastyId].join("|"), slug, index);
+  for (const field of ["supplementalEventDynasties", "supplementalEventParticipants"]) if (Object.hasOwn(cache, field)) throw new Error(`${slug}: legacy association array ${field}`);
+  for (const event of cache.events ?? []) for (const field of ["participantIds", "dynastyIds"]) if (Object.hasOwn(event, field)) throw new Error(`${slug}: legacy event association field ${field}`);
+  if (Object.hasOwn(cache, "associations") && slug !== "entity-associations") throw new Error(`${slug}: ordinary associations belong to entity-associations`);
+  (cache.associations ?? []).forEach((row,index) => {
+    assertEntityAssociation(row);
+    add(owners, "entity_associations", JSON.stringify([row.aRef,row.bRef]), slug, index, `${row.aRef} <-> ${row.bRef}`, row);
+  });
+  for (const row of cache.relations ?? []) {
+    if (!["succession","killed","surrender","abdication","captured","conquered"].includes(row.kind)) throw new Error(`${slug}: invalid relation kind ${row.kind}`);
+    if (row.kind === "succession" ? !/^person:.+$/u.test(row.fromRef) || !/^person:.+$/u.test(row.toRef) : !/^(person|reign):.+$/u.test(row.fromRef) || !/^person:.+$/u.test(row.toRef) || row.atAbs == null) throw new Error(`${slug}: invalid relation endpoints/date ${row.id}`);
+  }
+  if (slug === "entity-associations" && cache.manifest?.counts?.associations !== (cache.associations ?? []).length) throw new Error(`${slug}: manifest.counts.associations does not match records`);
+  for (const key of Object.keys(cache.manifest?.counts ?? {})) {
+    if (/^(existing|supplemental)Event(Dynasty|Participant)Links$/.test(key)) {
+      throw new Error(`${slug}: legacy association count ${key}`);
     }
-    for (const personId of event.participantIds ?? []) {
-      add(owners, "event_participants", [event.id, personId].join("|"), slug, index);
-    }
-  });
-  (cache.supplementalEventDynasties ?? []).forEach((row, index) => {
-    add(owners, "event_dynasties", [row.eventId, row.dynastyId].join("|"), slug, index);
-  });
-  (cache.supplementalEventParticipants ?? []).forEach((row, index) => {
-    add(owners, "event_participants", [row.eventId, row.personId].join("|"), slug, index);
-  });
+  }
+  const countFields={persons:"persons",dynasties:"dynasties",reigns:"reigns",events:"events",relations:"relations",associations:"associations",locations:"locations",locationMappings:"locationMappings",dynastyGroups:"dynastyGroups",dynastyLaneGroups:"dynastyLaneGroups"};
+  for (const [key,value] of Object.entries(cache.manifest?.counts ?? {})) if (countFields[key] && value !== (cache[countFields[key]] ?? []).length) throw new Error(`${slug}: manifest.counts.${key} does not match records`);
   (cache.updates ?? []).forEach((row, index) => {
     add(owners, "updates", [row.table, row.id, row.column].join("|"), slug, index);
     // An update is another writer for the target row. Keep it in the same
@@ -74,6 +80,8 @@ function auditPackageSql(owners, slug, cache) {
   };
   for (const [field, sql] of [["preSql", cache.preSql], ["postSql", cache.postSql]]) {
     if (!sql) continue;
+    if (/\b(?:event_dynasties|event_participants)\b/i.test(sql)) throw new Error(`${slug}.${field}: legacy association table`);
+    if (slug !== "entity-associations" && /\b(?:INSERT\s+INTO|DELETE\s+FROM|UPDATE)\s+entity_associations\b/i.test(sql)) throw new Error(`${slug}.${field}: only entity-associations may maintain ordinary associations`);
     for (const match of sql.matchAll(/\bDELETE\s+FROM\s+([\w"]+)\b([\s\S]*?);/gi)) {
       if (!/\bWHERE\b/i.test(match[2])) {
         throw new Error(`${slug}.${field} contains an unscoped DELETE FROM ${match[1]}; package cleanup must target specific rows`);
@@ -88,25 +96,21 @@ function auditPackageSql(owners, slug, cache) {
       };
       if (ids) for (const id of ids) rejectExternal(primaryTables[table] ?? `${table}.id`, id, "DELETE", field);
 
-      const keySpecs = {
-        event_dynasties: ["event_dynasties", ["event_id", "dynasty_id"]],
-        event_participants: ["event_participants", ["event_id", "person_id"]],
-      };
-      const spec = keySpecs[table];
-      if (spec) {
-        const [ownerTable, columns] = spec;
-        const filters = columns.map((column) => literalsFor(where, column));
-        if (!filters.some((values) => values != null)) continue;
-        for (const [ownerKey, rows] of owners) {
-          const [candidateTable, key] = ownerKey.split("\0");
-          if (candidateTable !== ownerTable || rows.every((row) => row.slug === slug)) continue;
-          const parts = key.split("|");
-          if (filters.every((values, index) => values == null || values.includes(parts[index]))) {
-            throw new Error(`${slug}.${field} DELETEs ${ownerTable} ${key}, owned by ${rows.filter((row) => row.slug !== slug).map((row) => row.slug).join(", ")}`);
-          }
+      if (table === "entity_associations") {
+        if (slug !== "entity-associations") throw new Error(`${slug}.${field} cannot delete associations owned by the centralized package`);
+        const columns = ["a_type", "a_id", "b_type", "b_id"];
+        const termPattern = /\b(a_type|a_id|b_type|b_id)\s*=\s*'((?:[^']|'')*)'/gi;
+        const terms = [...where.matchAll(termPattern)];
+        const values = new Map(terms.map(term => [term[1].toLowerCase(), term[2].replaceAll("''", "'")]));
+        if (terms.length !== 4 || !columns.every(column => values.has(column)) ||
+            !/^\s*KEY(?:\s+AND\s+KEY){3}\s*$/i.test(where.replace(termPattern, "KEY"))) {
+          throw new Error(`${slug}.${field}: association cleanup must identify a complete pair key`);
         }
+        assertEntityAssociation({
+          aRef: `${values.get("a_type")}:${values.get("a_id")}`,
+          bRef: `${values.get("b_type")}:${values.get("b_id")}`,
+        });
       }
-
       const foreignColumns = {
         reigns: ["dynasty_id", "person_id"],
         location_mapping: ["kind", "external_id", "location_id"],
@@ -188,6 +192,11 @@ export function auditPackageOwnership(root = importsRoot) {
     }
   }
 
+  const entities=new Map([ ["dynasty",new Set(packageCaches.flatMap(p=>p.cache.dynasties ?? []).map(r=>r.id))], ["person",new Set(packageCaches.flatMap(p=>p.cache.persons ?? []).map(r=>r.id))], ["event",new Set(packageCaches.flatMap(p=>p.cache.events ?? []).map(r=>r.id))] ]);
+  for (const {slug,cache} of packageCaches) for (const row of cache.associations ?? []) for (const ref of [row.aRef,row.bRef]) {
+    const colon=ref.indexOf(":"), type=ref.slice(0,colon), id=ref.slice(colon+1);
+    if (!entities.get(type)?.has(id)) throw new Error(`${slug}: dangling association endpoint ${ref}`);
+  }
   for (const { slug, cache } of packageCaches) auditPackageSql(owners, slug, cache);
 
   const conflicts = [...owners.entries()].filter(([, rows]) => rows.length > 1);

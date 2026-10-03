@@ -3908,15 +3908,6 @@
   "events": [
     {
       "kind": "politics",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "zaitian",
-        "kang-youwei",
-        "liang-qichao",
-        "tan-sitong"
-      ],
       "id": "wuxu-reform",
       "name": "戊戌变法",
       "timeMode": "span",
@@ -3939,13 +3930,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "yuan"
-      ],
-      "participantIds": [
-        "tugh-temur",
-        "ragibagh"
-      ],
       "id": "war-of-two-capitals",
       "name": "两都之战",
       "timeMode": "span",
@@ -3967,14 +3951,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "yuan"
-      ],
-      "participantIds": [
-        "togon-temur",
-        "liu-futong",
-        "xu-shouhui"
-      ],
       "id": "red-turban-uprising",
       "name": "红巾起义",
       "timeMode": "span",
@@ -3997,14 +3973,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-xu",
-        "chen-han"
-      ],
-      "participantIds": [
-        "chen-youliang",
-        "xu-shouhui"
-      ],
       "id": "chen-kills-xu",
       "name": "陈友谅弑徐寿辉",
       "at": {
@@ -4019,14 +3987,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "chen-han",
-        "wu-zhu"
-      ],
-      "participantIds": [
-        "chen-youliang",
-        "zhu-yuanzhang"
-      ],
       "id": "poyang-lake-battle",
       "name": "鄱阳湖之战",
       "at": {
@@ -4041,14 +4001,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-han",
-        "wu-zhu"
-      ],
-      "participantIds": [
-        "han-liner",
-        "zhu-yuanzhang"
-      ],
       "id": "han-liner-death",
       "name": "韩林儿溺亡",
       "at": {
@@ -4063,14 +4015,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "ming",
-        "yuan"
-      ],
-      "participantIds": [
-        "zhu-yuanzhang",
-        "togon-temur"
-      ],
       "id": "ming-capture-dadu",
       "name": "明军攻占大都",
       "dateNote": "洪武元年八月，明军克大都",
@@ -4086,13 +4030,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "yuan",
-        "ming"
-      ],
-      "participantIds": [
-        "togus-temur"
-      ],
       "id": "korqin-sea-battle",
       "name": "捕鱼儿海之战",
       "dateNote": "洪武二十一年四月十二日（公历1388年5月18日），蓝玉袭破元嗣君于捕鱼儿海",
@@ -4107,12 +4044,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "ming"
-      ],
-      "participantIds": [
-        "zhu-di"
-      ],
       "id": "yongle-rule",
       "name": "永乐盛世",
       "timeMode": "span",
@@ -4135,13 +4066,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "ming"
-      ],
-      "participantIds": [
-        "zhu-di",
-        "zhu-yunwen"
-      ],
       "id": "jingnan-campaign",
       "name": "靖难之役",
       "dateNote": "建文四年六月，朱棣攻入南京",
@@ -4156,13 +4080,6 @@
     },
     {
       "kind": "culture",
-      "dynastyIds": [
-        "ming"
-      ],
-      "participantIds": [
-        "zheng-he",
-        "zhu-di"
-      ],
       "id": "zheng-he-voyages",
       "name": "郑和下西洋",
       "timeMode": "span",
@@ -4185,12 +4102,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "ming"
-      ],
-      "participantIds": [
-        "zhu-qizhen"
-      ],
       "id": "tumu-crisis",
       "name": "土木堡之变",
       "dateNote": "正统十四年八月十五日（公历1449年9月1日）",
@@ -4206,13 +4117,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "ming"
-      ],
-      "participantIds": [
-        "yu-qian",
-        "zhu-qiyu"
-      ],
       "id": "beijing-defense",
       "name": "北京保卫战",
       "dateNote": "正统十四年十月；瓦剌军十月初一进攻京师",
@@ -4228,13 +4132,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "ming"
-      ],
-      "participantIds": [
-        "zhu-qizhen",
-        "zhu-qiyu"
-      ],
       "id": "duomen-restoration",
       "name": "夺门之变",
       "dateNote": "景泰八年正月十七日，石亨等拥英宗复辟",
@@ -4249,12 +4146,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "ming"
-      ],
-      "participantIds": [
-        "zhu-yiming"
-      ],
       "id": "wanli-campaigns",
       "name": "万历三大征",
       "timeMode": "span",
@@ -4276,13 +4167,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "ming"
-      ],
-      "participantIds": [
-        "zhang-juzheng",
-        "zhu-yiming"
-      ],
       "id": "zhang-juzheng-reforms",
       "name": "张居正改革",
       "timeMode": "span",
@@ -4304,13 +4188,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "ming"
-      ],
-      "participantIds": [
-        "qi-jiguang",
-        "zhu-houcong"
-      ],
       "id": "anti-wokou-campaign",
       "name": "抗倭战争",
       "timeMode": "span",
@@ -4333,14 +4210,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "ming",
-        "qing"
-      ],
-      "participantIds": [
-        "zhu-yiming",
-        "nurhaci"
-      ],
       "id": "sarhu-battle",
       "name": "萨尔浒之战",
       "dateNote": "万历四十七年三月，后金大败明军",
@@ -4356,15 +4225,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "ming",
-        "qing"
-      ],
-      "participantIds": [
-        "yuan-chonghuan",
-        "huang-taiji",
-        "nurhaci"
-      ],
       "id": "ningyuan-battle",
       "name": "宁远之战",
       "dateNote": "天启六年正月，袁崇焕守宁远",
@@ -4379,14 +4239,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "ming",
-        "qing"
-      ],
-      "participantIds": [
-        "zhu-youjian",
-        "huang-taiji"
-      ],
       "id": "songjin-campaign",
       "name": "松锦之战",
       "timeMode": "span",
@@ -4409,13 +4261,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "ming"
-      ],
-      "participantIds": [
-        "zhu-changluo",
-        "zheng-guifei"
-      ],
       "id": "tingji-case",
       "name": "梃击案",
       "dateNote": "万历四十三年五月初四，张差闯慈庆宫击太子",
@@ -4431,13 +4276,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "ming"
-      ],
-      "participantIds": [
-        "zhu-changluo",
-        "fang-congze"
-      ],
       "id": "hongwan-case",
       "name": "红丸案",
       "dateNote": "泰昌元年八月二十九日，光宗服用红丸暴毙",
@@ -4453,13 +4291,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "ming"
-      ],
-      "participantIds": [
-        "zhu-youjiao",
-        "li-xuanshi"
-      ],
       "id": "yigong-case",
       "name": "移宫案",
       "dateNote": "泰昌元年九月，熹宗即位后逼李选侍迁出乾清宫",
@@ -4475,14 +4306,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "ming",
-        "qing"
-      ],
-      "participantIds": [
-        "yuan-chonghuan",
-        "zhu-youjian"
-      ],
       "id": "yuan-chonghuan-executed",
       "name": "袁崇焕冤杀",
       "dateNote": "崇祯三年八月十六日，磔于市",
@@ -4498,12 +4321,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "yuan"
-      ],
-      "participantIds": [
-        "hu-bilie"
-      ],
       "id": "yuan-moves-capital-to-dadu",
       "name": "元朝迁都大都",
       "at": {
@@ -4519,12 +4336,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "fulin"
-      ],
       "id": "qing-enter-pass",
       "name": "清军入关",
       "at": {
@@ -4538,13 +4349,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "xuanye",
-        "hongli"
-      ],
       "id": "kangqian-prosperity",
       "name": "康乾盛世",
       "timeMode": "span",
@@ -4566,12 +4370,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "xuanye"
-      ],
       "id": "suppress-three-feudatories",
       "name": "平定三藩",
       "timeMode": "span",
@@ -4593,12 +4391,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "xuanye"
-      ],
       "id": "yaksa-conflict",
       "name": "雅克萨之战",
       "timeMode": "span",
@@ -4620,12 +4412,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "hongli"
-      ],
       "id": "jinchuan-campaigns",
       "name": "大小金川之战",
       "timeMode": "span",
@@ -4647,12 +4433,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "hongli"
-      ],
       "id": "dzungar-campaign",
       "name": "平定准噶尔",
       "timeMode": "span",
@@ -4674,12 +4454,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "hongli"
-      ],
       "id": "sino-burmese-war",
       "name": "清缅战争",
       "timeMode": "span",
@@ -4702,13 +4476,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "minning",
-        "lin-zexu"
-      ],
       "id": "humen-opium-destruction",
       "name": "虎门销烟",
       "dateNote": "道光十九年六月，林则徐在虎门销毁鸦片",
@@ -4723,13 +4490,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "minning",
-        "lin-zexu"
-      ],
       "id": "opium-war",
       "name": "第一次鸦片战争",
       "timeMode": "span",
@@ -4751,13 +4511,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "zuo-zongtang",
-        "zaitian"
-      ],
       "id": "zuo-recover-xinjiang",
       "name": "左宗棠收复新疆",
       "timeMode": "span",
@@ -4779,12 +4532,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "zaitian"
-      ],
       "id": "sino-tibetan-war",
       "name": "隆务关之战",
       "timeMode": "span",
@@ -4806,12 +4553,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "yizhu"
-      ],
       "id": "second-opium-war",
       "name": "第二次鸦片战争",
       "timeMode": "span",
@@ -4833,13 +4574,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "zaitian",
-        "zuo-zongtang"
-      ],
       "id": "sino-french-war",
       "name": "中法战争",
       "timeMode": "span",
@@ -4861,14 +4595,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "zaitian",
-        "deng-shichang",
-        "li-hongzhang"
-      ],
       "id": "first-sino-japanese-war",
       "name": "甲午战争",
       "timeMode": "span",
@@ -4890,12 +4616,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "zaitian"
-      ],
       "id": "boxer-rebellion",
       "name": "义和团运动",
       "timeMode": "span",
@@ -4917,12 +4637,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "zaitian"
-      ],
       "id": "eight-nation-invasion",
       "name": "八国联军侵华",
       "timeMode": "span",
@@ -4945,12 +4659,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "xuanye"
-      ],
       "id": "treaty-of-nerchinsk",
       "name": "尼布楚条约",
       "dateNote": "康熙二十八年七月，中俄签订",
@@ -4966,12 +4674,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "minning"
-      ],
       "id": "treaty-of-nanjing",
       "name": "南京条约",
       "dateNote": "道光二十二年七月二十四日（1842年8月29日），中英在南京签订",
@@ -4987,12 +4689,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "minning"
-      ],
       "id": "treaty-of-bogue",
       "name": "虎门条约",
       "dateNote": "道光二十三年九月，中英签订",
@@ -5008,12 +4704,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "minning"
-      ],
       "id": "treaty-of-wanghia",
       "name": "望厦条约",
       "dateNote": "道光二十四年六月，中美签订",
@@ -5029,12 +4719,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "minning"
-      ],
       "id": "treaty-of-whampoa",
       "name": "黄埔条约",
       "dateNote": "道光二十四年九月，中法签订",
@@ -5050,12 +4734,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "yizhu"
-      ],
       "id": "treaty-of-aigun",
       "name": "瑷珲条约",
       "dateNote": "咸丰八年五月，中俄签订",
@@ -5071,12 +4749,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "yizhu"
-      ],
       "id": "treaty-of-tientsin",
       "name": "天津条约",
       "dateNote": "咸丰八年五月，与英法美俄分别签订",
@@ -5092,12 +4764,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "yizhu"
-      ],
       "id": "convention-of-peking",
       "name": "北京条约",
       "dateNote": "咸丰十年九月，与英法俄签订",
@@ -5113,12 +4779,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "zaichun"
-      ],
       "id": "sino-japanese-amity-treaty",
       "name": "中日修好条规",
       "dateNote": "同治十年七月，中日签订",
@@ -5134,12 +4794,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "zaichun"
-      ],
       "id": "treaty-of-chefoo",
       "name": "烟台条约",
       "dateNote": "光绪二年八月，中英签订",
@@ -5155,13 +4809,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "zaitian",
-        "zuo-zongtang"
-      ],
       "id": "treaty-of-saint-petersburg",
       "name": "伊犁条约",
       "dateNote": "光绪七年正月，中俄签订",
@@ -5177,12 +4824,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "zaitian"
-      ],
       "id": "treaty-of-sino-french",
       "name": "中法新约",
       "dateNote": "光绪十一年六月，中法签订",
@@ -5198,12 +4839,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "zaitian"
-      ],
       "id": "convention-of-sikkim",
       "name": "中英续议藏印条约",
       "dateNote": "光绪十六年十二月，中英签订",
@@ -5219,12 +4854,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "zaitian"
-      ],
       "id": "convention-of-burma",
       "name": "中英续议滇缅条约",
       "dateNote": "光绪二十年十二月，中英签订",
@@ -5240,13 +4869,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "zaitian",
-        "li-hongzhang"
-      ],
       "id": "treaty-of-shimonoseki",
       "name": "马关条约",
       "dateNote": "光绪二十一年四月，中日签订",
@@ -5262,13 +4884,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "zaitian",
-        "li-hongzhang"
-      ],
       "id": "triple-intervention",
       "name": "三国干涉还辽",
       "dateNote": "光绪二十一年四月，俄法德迫使日本归还辽东",
@@ -5284,13 +4899,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "zaitian",
-        "li-hongzhang"
-      ],
       "id": "boxer-protocol",
       "name": "辛丑条约",
       "dateNote": "光绪二十七年七月，与十一国签订",
@@ -5306,12 +4914,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "zaitian"
-      ],
       "id": "treaty-of-renewal-1902",
       "name": "中俄改订条约",
       "dateNote": "光绪二十八年三月，中俄签订",
@@ -5326,12 +4928,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "yizhu"
-      ],
       "id": "taiping-rebellion",
       "name": "太平天国运动",
       "timeMode": "span",
@@ -5354,12 +4950,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "sun-yat-sen"
-      ],
       "id": "xinhai-revolution",
       "name": "辛亥革命",
       "at": {
@@ -5374,12 +4964,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "mingzheng"
-      ],
-      "participantIds": [
-        "zheng-chenggong"
-      ],
       "id": "zheng-recover-taiwan",
       "name": "郑成功收复台湾",
       "dateNote": "永历十五年十二月十三日，1662年2月1日，荷军签约投降",
@@ -5396,12 +4980,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "ming"
-      ],
-      "participantIds": [
-        "zhu-qiyu"
-      ],
       "id": "cheng-prince-appointed-regent",
       "name": "郕王受命监国",
       "at": {
@@ -5714,137 +5292,9 @@
       "fromRef": "person:zaitian",
       "toRef": "person:puyi",
       "kind": "succession"
-    },
-    {
-      "id": "rel-chen-kills-xu",
-      "fromRef": "event:chen-kills-xu",
-      "toRef": "person:chen-youliang",
-      "kind": "other"
-    },
-    {
-      "id": "rel-poyang-chen-youliang",
-      "fromRef": "event:poyang-lake-battle",
-      "toRef": "person:chen-youliang",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-tumu-zhu-qizhen",
-      "fromRef": "event:tumu-crisis",
-      "toRef": "person:zhu-qizhen",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-jingnan-zhu-di",
-      "fromRef": "event:jingnan-campaign",
-      "toRef": "person:zhu-di",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-beijing-yu-qian",
-      "fromRef": "event:beijing-defense",
-      "toRef": "person:yu-qian",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-tingji-zhu-changluo",
-      "fromRef": "event:tingji-case",
-      "toRef": "person:zhu-changluo",
-      "kind": "other"
-    },
-    {
-      "id": "rel-hongwan-zhu-changluo",
-      "fromRef": "event:hongwan-case",
-      "toRef": "person:zhu-changluo",
-      "kind": "other"
-    },
-    {
-      "id": "rel-yigong-zhu-youjiao",
-      "fromRef": "event:yigong-case",
-      "toRef": "person:zhu-youjiao",
-      "kind": "other"
-    },
-    {
-      "id": "rel-opium-lin-zexu",
-      "fromRef": "event:opium-war",
-      "toRef": "person:lin-zexu",
-      "kind": "other"
-    },
-    {
-      "id": "rel-sino-japanese-deng",
-      "fromRef": "event:first-sino-japanese-war",
-      "toRef": "person:deng-shichang",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-shimonoseki-li",
-      "fromRef": "event:treaty-of-shimonoseki",
-      "toRef": "person:li-hongzhang",
-      "kind": "other"
-    },
-    {
-      "id": "rel-boxer-protocol-li",
-      "fromRef": "event:boxer-protocol",
-      "toRef": "person:li-hongzhang",
-      "kind": "other"
-    },
-    {
-      "id": "rel-sino-french-zuo",
-      "fromRef": "event:sino-french-war",
-      "toRef": "person:zuo-zongtang",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-humen-lin-zexu",
-      "fromRef": "event:humen-opium-destruction",
-      "toRef": "person:lin-zexu",
-      "kind": "other"
-    },
-    {
-      "id": "rel-xinjiang-zuo",
-      "fromRef": "event:zuo-recover-xinjiang",
-      "toRef": "person:zuo-zongtang",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-ili-zuo",
-      "fromRef": "event:treaty-of-saint-petersburg",
-      "toRef": "person:zuo-zongtang",
-      "kind": "other"
-    },
-    {
-      "id": "rel-sarhu-nurhaci",
-      "fromRef": "event:sarhu-battle",
-      "toRef": "person:nurhaci",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-ningyuan-yuan",
-      "fromRef": "event:ningyuan-battle",
-      "toRef": "person:yuan-chonghuan",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-wokou-qi",
-      "fromRef": "event:anti-wokou-campaign",
-      "toRef": "person:qi-jiguang",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-red-turban-liu",
-      "fromRef": "event:red-turban-uprising",
-      "toRef": "person:liu-futong",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-zhang-reforms",
-      "fromRef": "event:zhang-juzheng-reforms",
-      "toRef": "person:zhang-juzheng",
-      "kind": "other"
     }
   ],
-  "supplementalEventDynasties": [],
-  "supplementalEventParticipants": [],
-  "preSql": "DELETE FROM event_dynasties WHERE event_id = 'qing-enter-pass';\nDELETE FROM event_dynasties WHERE event_id = 'zheng-recover-taiwan' AND dynasty_id = 'ming-south';\nDELETE FROM event_dynasties WHERE event_id = 'lu-jian-enthroned';\nDELETE FROM event_participants WHERE event_id = 'lu-jian-enthroned';\nDELETE FROM events WHERE id = 'lu-jian-enthroned';\nDELETE FROM event_dynasties WHERE dynasty_id = 'yuan-north';\nDELETE FROM event_participants WHERE event_id = 'yuan-north-end';\nDELETE FROM events WHERE id = 'yuan-north-end';\nDELETE FROM reigns WHERE dynasty_id = 'yuan-north';\nDELETE FROM dynasties WHERE id = 'yuan-north';\n-- remove stale auto-generated 史料缺 (两都之战并行叠放、驾崩至即位短空档应留白)\nDELETE FROM reigns WHERE dynasty_id IN ('yuan') AND person_id = 'system-missing-ruler';\nDELETE FROM relations WHERE id IN ('rel-yeshuntuemur-ragibagh-succession', 'rel-ragibagh-tugh-temur-succession', 'rel-khoshila-irinchibal-succession');\nDELETE FROM reigns WHERE id = 'reign-puyi-qing-forbidden';\nDELETE FROM events WHERE id = 'qing-moves-capital-to-beijing';\nDELETE FROM event_participants WHERE event_id = 'shaowu-enthroned';\nDELETE FROM event_dynasties WHERE event_id = 'shaowu-enthroned';\nDELETE FROM events WHERE id = 'shaowu-enthroned';",
+  "preSql": "DELETE FROM events WHERE id = 'lu-jian-enthroned';\nDELETE FROM events WHERE id = 'yuan-north-end';\nDELETE FROM reigns WHERE dynasty_id = 'yuan-north';\nDELETE FROM dynasties WHERE id = 'yuan-north';\n-- remove stale auto-generated 史料缺 (两都之战并行叠放、驾崩至即位短空档应留白)\nDELETE FROM reigns WHERE dynasty_id IN ('yuan') AND person_id = 'system-missing-ruler';\nDELETE FROM relations WHERE id IN ('rel-yeshuntuemur-ragibagh-succession', 'rel-ragibagh-tugh-temur-succession', 'rel-khoshila-irinchibal-succession');\nDELETE FROM reigns WHERE id = 'reign-puyi-qing-forbidden';\nDELETE FROM events WHERE id = 'qing-moves-capital-to-beijing';\nDELETE FROM events WHERE id = 'shaowu-enthroned';",
   "manifest": {
     "slug": "yuan-ming-qing",
     "title": "元明清（含南明）",
@@ -5858,11 +5308,11 @@
     "depth": "standard",
     "generatedAt": "2026-09-13",
     "counts": {
-      "persons": 91,
+      "persons": 89,
       "dynasties": 10,
       "reigns": 58,
-      "events": 62,
-      "relations": 71
+      "events": 63,
+      "relations": 50
     },
     "sources": [
       {
@@ -6470,7 +5920,8 @@
       "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
       "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
       "朱祁钰的监国经历改记为单点事件“郕王受命监国”；《明史》记正统十四年秋八月（农历）皇太后命王监国，未将农历日期换算为公历，事件按年精度落点。其唯一在位段仍从九月初六（农历）即皇帝位起，止于1457年夺门之变。",
-      "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。"
+      "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   }
 }

@@ -1,7 +1,6 @@
 import { memo, useEffect, useMemo, useRef, useState, type PointerEvent as ReactPointerEvent } from "react";
 import { ExpandToggle } from "@/components/ExpandToggle";
 import {
-  activeReignsAtAbs,
   buildLaneOrderIndex,
   capitalsActiveAtAbs,
   capitalsForReigns,
@@ -13,7 +12,6 @@ import {
   eventSpanAbs,
   formatYear,
   fromAbsMonth,
-  hasUncertainDateRange,
   rangesIntersect,
   fallbackLaneColorToken,
   getDynastyLaneGroup,
@@ -376,20 +374,11 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   const activeCapitals = useMemo(
     () => {
       const capitals = capitalsQuery.data ?? [];
-      const activeReigns = activeReignsAtAbs(data?.reigns ?? [], labelAnchorAbs);
-      // An inferred reign cannot narrow the dynasty's own capital map records.
-      const activeReignDynasties = new Set(
-        activeReigns.filter((reign) => !hasUncertainDateRange(reign)).map((reign) => reign.dynastyId),
-      );
-      const ownedAtAnchor = capitalsForReigns(activeReigns, data?.reigns ?? [], capitals)
-        .filter((capital) => capital.startAbs <= labelAnchorAbs && capital.endAbs >= labelAnchorAbs);
-      const ownedIds = new Set(ownedAtAnchor.map((capital) => capital.id));
-      const visible = capitalsActiveAtAbs(capitals, labelAnchorAbs).filter(
-        (capital) => !activeReignDynasties.has(capital.dynastyId) || ownedIds.has(capital.id),
-      );
+      // The map uses dynasty mappings; reign associations only determine monarch tenures.
+      const visible = capitalsActiveAtAbs(capitals, labelAnchorAbs);
       const selected = selection.selected;
       if (!selected) {
-        return [...new Map([...visible, ...ownedAtAnchor].map((capital) => [capital.id, capital])).values()];
+        return visible;
       }
       const reign = selected.type === "reign" ? data?.reigns.find((item) => item.id === selected.id) : undefined;
       const personReigns = selected.type === "person" ? data?.reigns.filter((item) => item.personId === selected.id) ?? [] : [];

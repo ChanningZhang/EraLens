@@ -101,16 +101,6 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_
 INSERT INTO events (id, name, kind, time_mode, at_confidence, start_confidence, end_confidence, date_note, at_year, at_month, at_day, at_abs, start_year, start_month, start_day, start_abs, end_year, end_month, end_day, end_abs, summary, meaning, content) VALUES ('dongliao-yelu-sibu-rebel', '耶律厮不叛乱', 'politics', 'point', 'month', NULL, NULL, '元史太祖十一年丙子（1216年）僭帝号于澄州，改元天威，方阅月被杀', 1216, 2, NULL, 14593, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '耶律厮不僭帝号于澄州，国号辽、改元天威；月余被杀，其后金山、统古与、喊舍相继自立。', NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, at_confidence = EXCLUDED.at_confidence, start_confidence = EXCLUDED.start_confidence, end_confidence = EXCLUDED.end_confidence, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning, content = EXCLUDED.content;
 
--- event_dynasties
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('beiliao-xiao-defei-regency', 'beiliao') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('dongliao-yelu-sibu-rebel', 'dongliao') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('jin-destroy-liao', 'beiliao') ON CONFLICT DO NOTHING;
-
--- event_participants
-INSERT INTO event_participants (event_id, person_id) VALUES ('beiliao-xiao-defei-regency', 'xiao-defei') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('dongliao-yelu-sibu-rebel', 'yelu-sibu') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('dongliao-yelu-sibu-rebel', 'yelu-liuge') ON CONFLICT DO NOTHING;
-
 -- relations
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_day, at_abs, at_confidence, event_id) VALUES ('rel-yelu-dashi-xiao-tabuyan-succession', 'person', 'yelu-dashi', 'person', 'xiao-tabuyan', 'succession', NULL, NULL, NULL, NULL, 'year', NULL) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, at_confidence = EXCLUDED.at_confidence, event_id = EXCLUDED.event_id;
 INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_day, at_abs, at_confidence, event_id) VALUES ('rel-xiao-tabuyan-yelu-yilie-succession', 'person', 'xiao-tabuyan', 'person', 'yelu-yilie', 'succession', NULL, NULL, NULL, NULL, 'year', NULL) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, at_confidence = EXCLUDED.at_confidence, event_id = EXCLUDED.event_id;

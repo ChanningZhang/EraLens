@@ -232,12 +232,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "taiping"
-      ],
-      "participantIds": [
-        "hong-xiuquan"
-      ],
       "id": "jintian-uprising",
       "name": "金田起义",
       "dateNote": "咸丰元年十一月十一日，1851年1月11日",
@@ -253,12 +247,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "taiping"
-      ],
-      "participantIds": [
-        "hong-xiuquan"
-      ],
       "id": "hong-xiuquan-enthroned",
       "name": "洪秀全登基",
       "dateNote": "咸丰元年二月二十一日，1851年3月23日，广西武宣",
@@ -274,12 +262,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "taiping"
-      ],
-      "participantIds": [
-        "hong-xiuquan"
-      ],
       "id": "taiping-capital-tianjing",
       "name": "定都天京",
       "dateNote": "咸丰三年二月初十，1853年3月19日攻克江宁；三月十九日洪秀全入城",
@@ -295,13 +277,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "taiping"
-      ],
-      "participantIds": [
-        "yang-xiuqing",
-        "hong-xiuquan"
-      ],
       "id": "tianjing-incident",
       "name": "天京事变",
       "dateNote": "咸丰六年八月初四，1856年9月2日东王杨秀清被诛",
@@ -317,13 +292,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "taiping"
-      ],
-      "participantIds": [
-        "hong-tianguifu",
-        "li-xiucheng"
-      ],
       "id": "fall-of-tianjing",
       "name": "天京陷落",
       "dateNote": "同治三年六月十六日，1864年7月19日",
@@ -339,13 +307,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "taiping"
-      ],
-      "participantIds": [
-        "hong-tianguifu",
-        "zaichun"
-      ],
       "id": "hong-tianguifu-captured",
       "name": "幼天王被俘",
       "dateNote": "同治三年九月二十二日，1864年10月25日，江西石城",
@@ -366,55 +327,9 @@
       "fromRef": "person:hong-xiuquan",
       "toRef": "person:hong-tianguifu",
       "kind": "succession"
-    },
-    {
-      "id": "rel-jintian-hong",
-      "fromRef": "event:jintian-uprising",
-      "toRef": "person:hong-xiuquan",
-      "kind": "politics"
-    },
-    {
-      "id": "rel-hong-enthroned",
-      "fromRef": "event:hong-xiuquan-enthroned",
-      "toRef": "person:hong-xiuquan",
-      "kind": "succession"
-    },
-    {
-      "id": "rel-tianjing-capital",
-      "fromRef": "event:taiping-capital-tianjing",
-      "toRef": "dynasty:taiping",
-      "kind": "politics"
-    },
-    {
-      "id": "rel-tianjing-incident-yang",
-      "fromRef": "event:tianjing-incident",
-      "toRef": "person:yang-xiuqing",
-      "kind": "politics"
-    },
-    {
-      "id": "rel-fall-tianjing",
-      "fromRef": "event:fall-of-tianjing",
-      "toRef": "dynasty:taiping",
-      "kind": "battle"
     }
   ],
-  "supplementalEventDynasties": [
-    {
-      "eventId": "taiping-rebellion",
-      "dynastyId": "taiping"
-    }
-  ],
-  "supplementalEventParticipants": [
-    {
-      "eventId": "taiping-rebellion",
-      "personId": "hong-xiuquan"
-    },
-    {
-      "eventId": "fall-of-tianjing",
-      "personId": "zeng-guofan"
-    }
-  ],
-  "preSql": "DELETE FROM event_dynasties WHERE event_id IN ('jintian-uprising', 'hong-xiuquan-enthroned', 'taiping-capital-tianjing', 'hong-tianguifu-captured') AND dynasty_id = 'qing';",
+  "preSql": "",
   "manifest": {
     "slug": "taiping",
     "title": "太平天国",
@@ -432,9 +347,7 @@
       "dynasties": 1,
       "reigns": 2,
       "events": 6,
-      "relations": 6,
-      "supplementalEventDynastyLinks": 1,
-      "supplementalEventParticipantLinks": 4
+      "relations": 1
     },
     "sources": [
       {
@@ -481,7 +394,8 @@
       "太平天国以干支纪年，不设传统年号，故省略 era_names。",
       "金田起义、洪秀全登基、定都天京及幼天王被俘均为太平天国自身事件，只关联太平天国；反清背景、清军参与镇压或事件造成双方对峙，不单独构成清朝事件关联。",
       "taiping-rebellion 事件沿用 yuan-ming-qing 已有 id，本包补 taiping 王朝与洪秀全参与关联。",
-      "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。"
+      "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   }
 }

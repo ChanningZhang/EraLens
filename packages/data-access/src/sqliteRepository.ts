@@ -1,3 +1,4 @@
+import { mapEntityAssociation, eventAssociationIds, type EntityAssociation } from "@eralens/shared";
 import {
   buildEntityDetail, computeBounds, DynastyGroupSchema,
   DynastyLaneGroupSchema, DynastySchema, EventSchema, mapLocation, mapLocationMapping, filterLocationMappings,
@@ -84,15 +85,14 @@ function mapReign(row: Row): Reign {
   });
 }
 
-function mapEvent(row: Row, dynasties: Row[], participants: Row[], locationMappings: LocationMapping[] = []): Event {
+function mapEvent(row: Row, associations: readonly EntityAssociation[], locationMappings: LocationMapping[] = []): Event {
   return EventSchema.parse({
     id: row.id, name: row.name, kind: row.kind, timeMode: row.time_mode, precision: confidencePrecision((row.at_confidence ?? row.start_confidence ?? "year") as Parameters<typeof confidencePrecision>[0]), atConfidence: own(row, "at_confidence"), startConfidence: own(row, "start_confidence"), endConfidence: own(row, "end_confidence"), dateNote: own(row, "date_note"),
     at: point(row.at_year, row.at_month, row.at_day) ? { ...point(row.at_year, row.at_month, row.at_day), confidence: own(row, "at_confidence") } : undefined,
     start: point(row.start_year, row.start_month, row.start_day) ? { ...point(row.start_year, row.start_month, row.start_day), confidence: own(row, "start_confidence") } : undefined,
     end: point(row.end_year, row.end_month, row.end_day) ? { ...point(row.end_year, row.end_month, row.end_day), confidence: own(row, "end_confidence") } : undefined,
     atAbs: n(row.at_abs), startAbs: n(row.start_abs), endAbs: n(row.end_abs),
-    dynastyIds: dynasties.map((link) => String(link.dynasty_id)),
-    participantIds: participants.map((link) => String(link.person_id)),
+    ...eventAssociationIds(String(row.id),associations),
     summary: own(row, "summary"), meaning: own(row, "meaning"), content: own(row, "content"),
     locationMappings,
   });
@@ -146,37 +146,23 @@ export class SqliteTimelineRepository implements TimelineRepository {
     const metadata = await rows(db, "SELECT key, value FROM content_metadata");
     const meta = new Map<string, unknown>(metadata.map((row) => [String(row.key), JSON.parse(String(row.value)) as unknown]));
     if (!meta.has("schema_version") || !meta.has("contract_version")) throw new Error("SQLite content database has no schema metadata");
-    if (meta.get("schema_version") !== 3 || meta.get("contract_version") !== 4) throw new Error("SQLite content database version is not supported by this app");
-    const [personsRaw, dynastiesRaw, groupsRaw, lanesRaw, reignsRaw, eventsRaw, dynLinks, participantLinks, mappingRaw, relationsRaw] = await Promise.all([
+    if (meta.get("schema_version") !== 4 || meta.get("contract_version") !== 5) throw new Error("SQLite content database version is not supported by this app");
+    const [personsRaw, dynastiesRaw, groupsRaw, lanesRaw, reignsRaw, eventsRaw, associationRows, mappingRaw, relationsRaw] = await Promise.all([
       rows(db, "SELECT * FROM persons"), rows(db, "SELECT * FROM dynasties"), rows(db, "SELECT * FROM dynasty_groups"),
       rows(db, "SELECT * FROM dynasty_lane_groups"), rows(db, "SELECT * FROM reigns"), rows(db, "SELECT * FROM events"),
-      rows(db, "SELECT * FROM event_dynasties"), rows(db, "SELECT * FROM event_participants"), rows(db, "SELECT m.*, json_object('id',l.id,'modern_name',l.modern_name,'longitude',l.longitude,'latitude',l.latitude,'coordinate_system',l.coordinate_system) AS location FROM location_mapping m JOIN locations l ON l.id=m.location_id"),
+      rows(db, "SELECT * FROM entity_associations"), rows(db, "SELECT m.*, json_object('id',l.id,'modern_name',l.modern_name,'longitude',l.longitude,'latitude',l.latitude,'coordinate_system',l.coordinate_system) AS location FROM location_mapping m JOIN locations l ON l.id=m.location_id"),
       rows(db, "SELECT * FROM relations"),
     ]);
     const locationMappings=filterLocationMappings(mappingRaw.map(mapLocationMapping),{});
-    const dynastiesByEvent = new Map<string, Row[]>();
-    for (const link of dynLinks) {
-      const eventId = String(link.event_id);
-      const links = dynastiesByEvent.get(eventId) ?? [];
-      links.push(link);
-      dynastiesByEvent.set(eventId, links);
-    }
-    const participantsByEvent = new Map<string, Row[]>();
-    for (const link of participantLinks) {
-      const eventId = String(link.event_id);
-      const links = participantsByEvent.get(eventId) ?? [];
-      links.push(link);
-      participantsByEvent.set(eventId, links);
-    }
+    const associations=associationRows.map(mapEntityAssociation);
     return {
       persons: personsRaw.map(mapPerson), dynasties: dynastiesRaw.map(mapDynasty),
       dynastyGroups: groupsRaw.map(mapGroup), dynastyLaneGroups: lanesRaw.map(mapLaneGroup),
       reigns: reignsRaw.map(mapReign),
-      events: eventsRaw.map((event) => mapEvent(event,
-        dynastiesByEvent.get(String(event.id)) ?? [],
-        participantsByEvent.get(String(event.id)) ?? [],
+      events: eventsRaw.map((event) => mapEvent(event, associations,
         locationMappings.filter(m=>m.kind === "event" && m.externalId===event.id))),
       relations: relationsRaw.map(mapRelation),
+      associations,
       locationMappings,
     };
   }

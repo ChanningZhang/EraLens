@@ -1,3 +1,4 @@
+import { mapEntityAssociation, EntityAssociationSchema } from "@eralens/shared";
 import { createHash } from "node:crypto";
 import { DatabaseSync } from "node:sqlite";
 import { execFileSync } from "node:child_process";
@@ -39,8 +40,7 @@ const tempPath = `${outputPath}.tmp`;
 
 const TABLES = [
   ["persons", "id"], ["dynasty_groups", "id"], ["dynasties", "id"], ["reigns", "id"],
-  ["events", "id"], ["event_dynasties", "event_id, dynasty_id"],
-  ["event_participants", "event_id, person_id"], ["relations", "id"],
+  ["events", "id"], ["entity_associations", "a_type, a_id, b_type, b_id"], ["relations", "id"],
   ["dynasty_lane_groups", "id"], ["locations", "id"], ["location_mapping", "id"],
 ] as const;
 
@@ -125,8 +125,8 @@ try {
   for (const row of groups) dtoValidate("DynastyGroup", DynastyGroupSchema, mapDynastyGroup(row as never));
   for (const row of laneGroups) dtoValidate("DynastyLaneGroup", DynastyLaneGroupSchema, mapDynastyLaneGroup(camelizeRow(row) as never));
   for (const row of reigns) dtoValidate("Reign", ReignSchema, mapReign(row as never));
-  const dynastyLinks = raw.get("event_dynasties")!;
-  const participantLinks = raw.get("event_participants")!;
+  const associations=raw.get("entity_associations")!.map(mapEntityAssociation);
+  for (const row of associations) EntityAssociationSchema.parse(row);
   const locations = new Map(raw.get("locations")!.map(row=>[String(row.id),mapLocation(row)]));
   const mappings = raw.get("location_mapping")!.map(row=>mapLocationMapping({...row,location:locations.get(String(row.location_id))}));
   for(const m of mappings) dtoValidate("LocationMapping",LocationMappingSchema,m);
@@ -134,10 +134,8 @@ try {
     const camel = camelizeRow(row);
     const mapped = mapEvent({
       ...row,
-      dynasties: dynastyLinks.filter((link) => link.event_id === row.id).map((link) => ({ dynastyId: link.dynasty_id })),
-      participants: participantLinks.filter((link) => link.event_id === row.id).map((link) => ({ personId: link.person_id })),
       locationMappings:mappings.filter(m=>m.kind === "event" && m.externalId===row.id),
-    } as never);
+    } as never, associations);
     dtoValidate("Event", EventSchema, mapped);
   }
   for (const row of relations) dtoValidate("Relation", RelationSchema, mapRelation(camelizeRow(row) as never));
@@ -148,6 +146,10 @@ try {
     ["event", new Set(events.map((row) => String(row.id)))],
     ["location_mapping", new Set(capitalRows.map((row) => String(row.id)))],
   ]);
+  for (const row of associations) for (const ref of [row.aRef,row.bRef]) {
+    const colon=ref.indexOf(":"),type=ref.slice(0,colon),id=ref.slice(colon+1);
+    if(!relationTargets.get(type)?.has(id)) throw new Error(`Dangling association: ${ref}`);
+  }
   const danglingRelations: string[] = [];
   for (const row of relations) {
     for (const end of ["from", "to"] as const) {

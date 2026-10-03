@@ -313,14 +313,6 @@
   "events": [
     {
       "kind": "battle",
-      "dynastyIds": [
-        "mongol-empire",
-        "jin-nvzhen"
-      ],
-      "participantIds": [
-        "temujin",
-        "ogedei"
-      ],
       "id": "mongol-campaign-jin",
       "name": "蒙古攻金",
       "timeMode": "span",
@@ -342,12 +334,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "mongol-empire"
-      ],
-      "participantIds": [
-        "temujin"
-      ],
       "id": "mongol-west-campaign",
       "name": "西征花剌子模",
       "timeMode": "span",
@@ -372,12 +358,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "mongol-empire"
-      ],
-      "participantIds": [
-        "tolui"
-      ],
       "id": "tolui-regency",
       "name": "拖雷监国",
       "timeMode": "span",
@@ -403,12 +383,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "mongol-empire"
-      ],
-      "participantIds": [
-        "mongke"
-      ],
       "id": "mongke-death",
       "name": "蒙哥汗驾崩",
       "dateNote": "1259年攻宋四川军中",
@@ -423,13 +397,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "mongol-empire"
-      ],
-      "participantIds": [
-        "hu-bilie",
-        "ariq-boke"
-      ],
       "id": "great-khan-contention",
       "name": "忽必烈与阿里不哥争位",
       "timeMode": "span",
@@ -451,15 +418,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "mongol-empire",
-        "yuan",
-        "song-south"
-      ],
-      "participantIds": [
-        "hu-bilie",
-        "mongke"
-      ],
       "id": "mongol-campaign-song",
       "name": "蒙古攻宋",
       "timeMode": "span",
@@ -504,42 +462,6 @@
       "fromRef": "person:mongke",
       "toRef": "person:hu-bilie",
       "kind": "succession"
-    },
-    {
-      "id": "rel-great-khan-hu-bilie",
-      "fromRef": "event:great-khan-contention",
-      "toRef": "person:hu-bilie",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-great-khan-ariq-boke",
-      "fromRef": "event:great-khan-contention",
-      "toRef": "person:ariq-boke",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-mongol-song-hu-bilie",
-      "fromRef": "event:mongol-campaign-song",
-      "toRef": "person:hu-bilie",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-temujin-tolui-succession",
-      "fromRef": "person:temujin",
-      "toRef": "person:tolui",
-      "kind": "other"
-    }
-  ],
-  "supplementalEventDynasties": [
-    {
-      "eventId": "song-jin-alliance-mongol",
-      "dynastyId": "mongol-empire"
-    }
-  ],
-  "supplementalEventParticipants": [
-    {
-      "eventId": "song-jin-alliance-mongol",
-      "personId": "ogedei"
     }
   ],
   "preSql": "-- remove stale auto-generated 史料缺 (regency gaps are intentional blanks)\nDELETE FROM reigns WHERE dynasty_id IN ('mongol-empire') AND person_id = 'system-missing-ruler';",
@@ -562,7 +484,7 @@
       "dynasties": 1,
       "reigns": 5,
       "events": 6,
-      "relations": 8
+      "relations": 4
     },
     "sources": [
       {
@@ -597,7 +519,8 @@
       "联蒙灭金事件见 song-liao-jin，本包补充 mongol-empire 关联。",
       "未收录钦察、伊利、察合台等汗国分治时期。",
       "在位年取维基百科君主列表，confidence=year。",
-      "2026-10-02人物概述清理：概述仅保留历史事实与必要史料背景，系统建模、年表选择、定位及收录说明移入本说明。以下原文仅留作处理记录，不作为新增史实依据：hu-bilie 原概述：忽必烈，成吉思汗之孙、拖雷之子。1260年即大汗位后与阿里不哥争位，1264年获胜；1271年定国号大元，1279年灭南宋，建都大都并确立中原王朝的行政制度。其元朝统治见元朝在位记录。"
+      "2026-10-02人物概述清理：概述仅保留历史事实与必要史料背景，系统建模、年表选择、定位及收录说明移入本说明。以下原文仅留作处理记录，不作为新增史实依据：hu-bilie 原概述：忽必烈，成吉思汗之孙、拖雷之子。1260年即大汗位后与阿里不哥争位，1264年获胜；1271年定国号大元，1279年灭南宋，建都大都并确立中原王朝的行政制度。其元朝统治见元朝在位记录。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   }
 }

@@ -15,7 +15,7 @@
     "dynasties": 2,
     "reigns": 7,
     "events": 1,
-    "relations": 6
+    "relations": 5
   },
   "sources": [
     {
@@ -75,6 +75,7 @@
     "西汉、更始关联见 qin-han 包，本包以 supplemental 补充。",
     "confidence=year，scope=cn，region=east_asia。",
     "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。赤眉首项采用25年拥立刘盆子后的国号“汉”；23—25年起义军阶段尚无该帝号政权，静态详情采用称帝后的代表国号，并保留“赤眉军”。",
-    "2026-10-02 全库复核另发现樊崇起点23年1月为既有年内占位、无day；撤销approximate_day，恢复approximate_year，保留原采用的23年阶段定位。"
+    "2026-10-02 全库复核另发现樊崇起点23年1月为既有年内占位、无day；撤销approximate_day，恢复approximate_year，保留原采用的23年阶段定位。",
+    "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
   ]
 }

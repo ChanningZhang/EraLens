@@ -3,15 +3,9 @@
 BEGIN;
 
 -- cleanup
-DELETE FROM event_dynasties WHERE event_id IN ('poetry-duan-ge-xing', 'poetry-guan-cang-hai', 'poetry-gui-sui-shou');
-DELETE FROM event_dynasties WHERE event_id = 'poetry-zhengqige';
-DELETE FROM event_dynasties WHERE event_id = 'poetry-bie-yunjian';
-DELETE FROM event_participants WHERE event_id = 'poetry-bie-yunjian';
 DELETE FROM events WHERE id = 'poetry-bie-yunjian';
-DELETE FROM event_dynasties WHERE event_id = 'poetry-yuanyuanqu';
-DELETE FROM event_participants WHERE event_id = 'poetry-yuanyuanqu';
 DELETE FROM events WHERE id = 'poetry-yuanyuanqu';
-DELETE FROM persons WHERE id = 'wu-meicun' AND NOT EXISTS (SELECT 1 FROM event_participants WHERE person_id = 'wu-meicun') AND NOT EXISTS (SELECT 1 FROM reigns WHERE person_id = 'wu-meicun');
+DELETE FROM persons WHERE id = 'wu-meicun' AND NOT EXISTS (SELECT 1 FROM entity_associations WHERE (a_type = 'person' AND a_id = 'wu-meicun') OR (b_type = 'person' AND b_id = 'wu-meicun')) AND NOT EXISTS (SELECT 1 FROM reigns WHERE person_id = 'wu-meicun');
 
 -- persons
 INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, birth_day, birth_confidence, death_year, death_month, death_day, death_confidence, roles, bio, links, posthumous_name, temple_name, title)
@@ -325,102 +319,5 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_
 INSERT INTO events (id, name, kind, time_mode, at_confidence, start_confidence, end_confidence, date_note, at_year, at_month, at_day, at_abs, start_year, start_month, start_day, start_abs, end_year, end_month, end_day, end_abs, summary, meaning, content) VALUES ('poetry-yuzhong-tibi', '狱中题壁', 'poetry', 'point', 'year', NULL, NULL, '光绪二十四年，戊戌政变后狱中', 1898, 12, NULL, 22787, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '谭嗣同被捕后作，关联戊戌政变与维新派殉难。', NULL, '望门投止思张俭，忍死须臾待杜根。
 我自横刀向天笑，去留肝胆两昆仑。')
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, at_confidence = EXCLUDED.at_confidence, start_confidence = EXCLUDED.start_confidence, end_confidence = EXCLUDED.end_confidence, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning, content = EXCLUDED.content;
-
--- event_dynasties
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-wuyi', 'qin') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-gaixia-ge', 'chu-west') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-gaixia-ge', 'han-west') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-da-feng-ge', 'han-west') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-duan-ge-xing', 'wei') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-guan-cang-hai', 'wei') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-gui-sui-shou', 'wei') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-yin-jiu', 'jin-east') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-mulan', 'wei-north') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-chile-ge', 'wei-north') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-chile-ge', 'qi-bei') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-chun-xiao', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-dengguanquelou', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-liangzhou', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-chusai-wang-changling', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-congjunxing', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-huanghelou', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-wangyue', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-shudaonan', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-jingyesi', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-jiangjinjiu', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-zaofabaidicheng', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-chunwang', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-shuxiang', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-wenguanjun', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-denggao', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-fengqiao-yebo', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-jiangxue', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-youzimeng', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-minnong', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-wuyixiang', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-boqinhua', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-chibi-du-mu', 'tang') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-yumeiren-li-yu', 'tang-nan') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-xiangjianhuan-li-yu', 'tang-nan') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-tixilinbi', 'song-north') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-yinhu-chuqing', 'song-north') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-youshanxicun', 'song-south') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-shufen', 'song-south') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-shier', 'song-south') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-guolingdingyang', 'song-south') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-zhengqige', 'song-south') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-tongguan-huaigu', 'yuan') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-tianjing-shaqiu', 'yuan') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-shihuiyin', 'ming') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-jihai', 'qing') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-fushu-dengcheng', 'qing') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-chunchou', 'qing') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('poetry-yuzhong-tibi', 'qing') ON CONFLICT DO NOTHING;
-
--- event_participants
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-gaixia-ge', 'xiang-yu') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-da-feng-ge', 'liu-bang') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-duan-ge-xing', 'cao-cao') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-guan-cang-hai', 'cao-cao') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-gui-sui-shou', 'cao-cao') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-yin-jiu', 'tao-yuanming') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-chun-xiao', 'meng-hao-ran') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-dengguanquelou', 'wang-zhi-huan') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-liangzhou', 'wang-zhi-huan') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-chusai-wang-changling', 'wang-chang-ling') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-congjunxing', 'wang-chang-ling') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-huanghelou', 'cui-hao') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-wangyue', 'du-fu') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-shudaonan', 'li-bai') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-jingyesi', 'li-bai') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-jiangjinjiu', 'li-bai') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-zaofabaidicheng', 'li-bai') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-chunwang', 'du-fu') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-shuxiang', 'du-fu') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-wenguanjun', 'du-fu') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-denggao', 'du-fu') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-fengqiao-yebo', 'zhang-ji') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-jiangxue', 'liu-zong-yuan') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-youzimeng', 'meng-jiao') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-minnong', 'li-shen') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-wuyixiang', 'liu-yu-xi') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-boqinhua', 'du-mu') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-chibi-du-mu', 'du-mu') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-yumeiren-li-yu', 'li-yu-nantang') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-xiangjianhuan-li-yu', 'li-yu-nantang') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-tixilinbi', 'su-shi') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-yinhu-chuqing', 'su-shi') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-youshanxicun', 'lu-you') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-shufen', 'lu-you') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-shier', 'lu-you') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-guolingdingyang', 'wen-tianxiang') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-zhengqige', 'wen-tianxiang') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-tongguan-huaigu', 'zhang-yanghao') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-tianjing-shaqiu', 'ma-zhiyuan') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-shihuiyin', 'yu-qian') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-jihai', 'gong-zi-zhen') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-fushu-dengcheng', 'lin-zexu') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-chunchou', 'qiu-fengjia') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('poetry-yuzhong-tibi', 'tan-sitong') ON CONFLICT DO NOTHING;
 
 COMMIT;

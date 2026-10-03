@@ -1,3 +1,4 @@
+import { EntityAssociationSchema, eventAssociationIds } from "@eralens/shared";
 import {
   capitalsActiveAtAbs,
   DynastySchema,
@@ -27,6 +28,7 @@ import dynastiesJson from "../../../../../data/seed/dynasties.json";
 import eventsJson from "../../../../../data/seed/events.json";
 import personsJson from "../../../../../data/seed/persons.json";
 import reignsJson from "../../../../../data/seed/reigns.json";
+import associationsJson from "../../../../../data/seed/associations.json";
 import relationsJson from "../../../../../data/seed/relations.json";
 
 const dynasties = [
@@ -42,7 +44,8 @@ const persons = rawPersons.map((person) => ({
   ...person,
   searchTerms: buildPersonSearchTerms(person, reigns, dynasties),
 }));
-const events = EventSchema.array().parse(eventsJson);
+const associations=EntityAssociationSchema.array().parse(associationsJson);
+const events = EventSchema.array().parse(eventsJson).map(event=>({...event,...eventAssociationIds(event.id,associations)}));
 const relations = RelationSchema.array().parse(relationsJson);
 
 const mockCapitals: CapitalLocation[] = [
@@ -83,7 +86,7 @@ const mockCapitals: CapitalLocation[] = [
 const locationMappings: LocationMapping[]=mockCapitals.map(c=>({id:c.id,kind:"dynasty",externalId:c.dynastyId,locationId:c.id,
   location:{id:c.id,modernName:c.modernName,longitude:c.longitude,latitude:c.latitude,coordinateSystem:c.coordinateSystem},historicalName:c.historicalName,
   start:c.start,end:c.end,startAbs:c.startAbs,endAbs:c.endAbs,role:c.role,links:c.links}));
-const store = { dynasties, reigns, persons, events, relations, locationMappings };
+const store = { dynasties, reigns, persons, events, relations, associations, locationMappings };
 const settings = createPlatformSettings();
 
 export const mockRepository: TimelineRepository = {

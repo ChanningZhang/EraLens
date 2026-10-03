@@ -6519,13 +6519,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "sui",
-        "chen-nan"
-      ],
-      "participantIds": [
-        "yang-jian"
-      ],
       "id": "sui-unify",
       "name": "隋灭陈统一",
       "at": {
@@ -6539,12 +6532,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "sui"
-      ],
-      "participantIds": [
-        "yang-jian"
-      ],
       "id": "kaihuang-rule",
       "name": "开皇之治",
       "timeMode": "span",
@@ -6566,12 +6553,6 @@
     },
     {
       "kind": "culture",
-      "dynastyIds": [
-        "sui"
-      ],
-      "participantIds": [
-        "yang-guang"
-      ],
       "id": "grand-canal",
       "name": "开凿大运河",
       "timeMode": "span",
@@ -6594,12 +6575,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "sui"
-      ],
-      "participantIds": [
-        "yang-guang"
-      ],
       "id": "sui-campaign-goguryeo",
       "name": "隋炀帝三征高丽",
       "timeMode": "span",
@@ -6622,13 +6597,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "sui"
-      ],
-      "participantIds": [
-        "yang-guang",
-        "yuwen-huaji"
-      ],
       "id": "yang-guang-killed",
       "name": "江都兵变",
       "dateNote": "大业十四年三月十一丙辰，618年4月11日，宇文化及发动兵变，隋炀帝被弑",
@@ -6645,14 +6613,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "sui",
-        "xu"
-      ],
-      "participantIds": [
-        "yang-hao",
-        "yuwen-huaji"
-      ],
       "id": "yang-hao-killed",
       "name": "宇文化及杀秦王杨浩",
       "dateNote": "武德元年九月辛未，618年10月23日，《新唐书·高祖本纪》记宇文化及杀秦王浩并自称皇帝",
@@ -6669,12 +6629,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "li-shimin"
-      ],
       "id": "xuanwumen",
       "name": "玄武门之变",
       "dateNote": "武德九年六月，626年",
@@ -6690,14 +6644,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "li-shimin",
-        "dou-jiande",
-        "wang-shichong"
-      ],
       "id": "hulao-battle",
       "name": "虎牢之战",
       "dateNote": "武德四年五月，李世民大败窦建德；王世充于同月丙寅（公历621年6月4日）降唐",
@@ -6712,12 +6658,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "li-shimin"
-      ],
       "id": "zhenguan-rule",
       "name": "贞观之治",
       "timeMode": "span",
@@ -6739,12 +6679,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "li-longji"
-      ],
       "id": "kaiyuan-prosperity",
       "name": "开元盛世",
       "timeMode": "span",
@@ -6766,13 +6700,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "li-longji",
-        "an-lushan"
-      ],
       "id": "anshi-rebellion",
       "name": "安史之乱",
       "timeMode": "span",
@@ -6796,12 +6723,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "huang-chao"
-      ],
       "id": "huang-chao-uprising",
       "name": "黄巢起义",
       "at": {
@@ -6816,13 +6737,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-north",
-        "liao"
-      ],
-      "participantIds": [
-        "zhao-kuangyi"
-      ],
       "id": "gaoliang-river-battle",
       "name": "高梁河之战",
       "dateNote": "太平兴国四年六月，宋太宗北伐败于辽",
@@ -6837,14 +6751,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "song-south",
-        "mongol-empire",
-        "yuan"
-      ],
-      "participantIds": [
-        "zhao-qi"
-      ],
       "id": "xiangyang-siege",
       "name": "襄樊之战",
       "timeMode": "span",
@@ -6866,13 +6772,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "song-north"
-      ],
-      "participantIds": [
-        "zhao-xu",
-        "wang-anshi"
-      ],
       "id": "xining-reform",
       "name": "王安石变法",
       "timeMode": "span",
@@ -6895,13 +6794,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-north"
-      ],
-      "participantIds": [
-        "zhao-ji",
-        "zhao-huan"
-      ],
       "id": "jingkang-incident",
       "name": "靖康之变",
       "dateNote": "天会五年二月初六，1127年3月20日，金废徽钦二帝为庶人",
@@ -6918,13 +6810,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-south",
-        "yuan"
-      ],
-      "participantIds": [
-        "zhao-bing"
-      ],
       "id": "yashan-battle",
       "name": "崖山海战",
       "dateNote": "祥兴二年二月初六，1279年3月19日，陆秀夫负帝昺殉国",
@@ -6940,18 +6825,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "liang-hou",
-        "tang-hou",
-        "jin-hou",
-        "han-hou",
-        "zhou-hou",
-        "wu-shi",
-        "tang-nan"
-      ],
-      "participantIds": [
-        "zhu-wen"
-      ],
       "id": "wudai-shiguo",
       "name": "五代十国",
       "timeMode": "span",
@@ -7513,35 +7386,9 @@
       "fromRef": "person:zhao-shi-duan",
       "toRef": "person:zhao-bing",
       "kind": "succession"
-    },
-    {
-      "id": "rel-xuanwumen-li-shimin",
-      "fromRef": "event:xuanwumen",
-      "toRef": "person:li-shimin",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-hulao-li-shimin",
-      "fromRef": "event:hulao-battle",
-      "toRef": "person:li-shimin",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-anshi-an-lushan",
-      "fromRef": "event:anshi-rebellion",
-      "toRef": "person:an-lushan",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-gaoliang-zhao",
-      "fromRef": "event:gaoliang-river-battle",
-      "toRef": "person:zhao-kuangyi",
-      "kind": "battle"
     }
   ],
-  "supplementalEventDynasties": [],
-  "supplementalEventParticipants": [],
-  "preSql": "DELETE FROM relations WHERE id = 'rel-yang-guang-yang-you-succession';\nDELETE FROM relations WHERE id = 'rel-yang-guang-yang-hao-succession';\nDELETE FROM relations WHERE from_type = 'event' AND from_id IN ('zhu-wen-usurp', 'yang-you-enthroned', 'yang-hao-enthroned', 'yang-tong-enthroned');\nDELETE FROM event_participants WHERE event_id IN ('yang-you-enthroned', 'yang-hao-enthroned', 'yang-tong-enthroned');\nDELETE FROM event_dynasties WHERE event_id IN ('yang-you-enthroned', 'yang-hao-enthroned', 'yang-tong-enthroned');\nDELETE FROM events WHERE id IN ('yang-you-enthroned', 'yang-hao-enthroned', 'yang-tong-enthroned');\nDELETE FROM event_participants WHERE event_id = 'zhu-wen-usurp';\nDELETE FROM event_dynasties WHERE event_id = 'zhu-wen-usurp';\nDELETE FROM events WHERE id = 'zhu-wen-usurp';\nDELETE FROM relations WHERE id = 'rel-yang-tong-li-yuan-killed';\nDELETE FROM event_participants WHERE event_id = 'yang-tong-killed';\nDELETE FROM event_dynasties WHERE event_id = 'yang-tong-killed';\nDELETE FROM events WHERE id = 'yang-tong-killed';\nDELETE FROM reigns WHERE id = 'reign-dou-jiande-xia';\n\n-- remove stale auto-generated 史料缺 (武周期间唐行留白)\nDELETE FROM reigns WHERE dynasty_id IN ('tang') AND person_id = 'system-missing-ruler';",
+  "preSql": "DELETE FROM relations WHERE id = 'rel-yang-guang-yang-you-succession';\nDELETE FROM relations WHERE id = 'rel-yang-guang-yang-hao-succession';\nDELETE FROM events WHERE id IN ('yang-you-enthroned', 'yang-hao-enthroned', 'yang-tong-enthroned');\nDELETE FROM events WHERE id = 'zhu-wen-usurp';\nDELETE FROM relations WHERE id = 'rel-yang-tong-li-yuan-killed';\nDELETE FROM events WHERE id = 'yang-tong-killed';\nDELETE FROM reigns WHERE id = 'reign-dou-jiande-xia';\n\n-- remove stale auto-generated 史料缺 (武周期间唐行留白)\nDELETE FROM reigns WHERE dynasty_id IN ('tang') AND person_id = 'system-missing-ruler';",
   "manifest": {
     "slug": "sui-tang-wudai-song",
     "title": "隋唐宋（含五代十国、武周）",
@@ -7557,10 +7404,10 @@
     "counts": {
       "persons": 138,
       "dynasties": 24,
-      "reigns": 108,
+      "reigns": 109,
       "reign_capitals": 0,
       "events": 18,
-      "relations": 94
+      "relations": 90
     },
     "sources": [
       {
@@ -8365,7 +8212,8 @@
       "2026-10-02 相邻在位边界复核：reign-ma-xie-chu-nan start：十二月乙巳入府视事，儒略历951-01-22转前推公历951-01-27；丁未自称楚王为951-01-29。此段以接掌军府为起点，纠正误写947年。",
       "2026-10-02 相邻在位边界复核：reign-ma-xie-chu-nan end：广顺元年九月戊寅兵变被废，儒略历951-10-22转前推公历951-10-27；旧终年950错误。",
       "2026-10-02 相邻在位边界复核：reign-ma-xichong-chu-nan start：九月戊寅被拥立武安留后，共用951-10-27兵变锚点，日归属由共享规则裁定；旧1月仅为占位。",
-      "2026-10-02 相邻在位边界复核：reign-ma-xichong-chu-nan end：十月癸卯迎边镐出降，儒略历951-11-16转前推公历951-11-21；保留可核日精度。"
+      "2026-10-02 相邻在位边界复核：reign-ma-xichong-chu-nan end：十月癸卯迎边镐出降，儒略历951-11-16转前推公历951-11-21；保留可核日精度。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   }
 }

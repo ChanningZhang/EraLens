@@ -7,8 +7,8 @@ function emptyDatabase(): SqliteDatabase {
       if (sql.includes("content_metadata")) {
         return {
           values: [
-            { key: "schema_version", value: "3" },
-            { key: "contract_version", value: "4" },
+            { key: "schema_version", value: "4" },
+            { key: "contract_version", value: "5" },
           ],
         };
       }
@@ -19,6 +19,23 @@ function emptyDatabase(): SqliteDatabase {
 }
 
 describe("SqliteTimelineRepository recovery", () => {
+  it.each([[3, 5], [4, 4]])("rejects schema %i / contract %i", async (schema, contract) => {
+    const repository = new SqliteTimelineRepository({
+      async open() {
+        return {
+          async query() {
+            return { values: [
+              { key: "schema_version", value: String(schema) },
+              { key: "contract_version", value: String(contract) },
+            ] };
+          },
+          async close() {},
+        };
+      },
+    });
+    await expect(repository.getBounds()).rejects.toThrow("version is not supported");
+  });
+
   it("opens the database again after a transient initialization failure", async () => {
     let opens = 0;
     const provider: SqliteDatabaseProvider = {

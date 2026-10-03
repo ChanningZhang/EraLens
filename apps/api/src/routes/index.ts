@@ -1,3 +1,4 @@
+import { mapEntityAssociation } from "@eralens/shared";
 import {
   buildEntityDetail,
   DEFAULT_EVENT_DISPLAY_CONFIG,
@@ -44,6 +45,7 @@ type PersonDetailBundleRow = {
   reigns: unknown;
   events: unknown;
   relations: unknown;
+  associations: unknown;
   selected_reign_ids: unknown;
   focus_reign_index: number | null;
   reign_count: number;
@@ -142,42 +144,62 @@ async function loadPersonDetailBundle(
     selected_dynasty_ids AS (
       SELECT DISTINCT dynasty_id FROM selected_target_reigns
     ),
+    target_associations AS (
+      SELECT a.* FROM entity_associations a JOIN target_person p ON a.a_type='person' AND a.a_id=p.id
+      UNION ALL
+      SELECT a.* FROM entity_associations a JOIN target_person p ON a.b_type='person' AND a.b_id=p.id
+    ),
     relevant_relations AS (
       SELECT rel.*
       FROM relations rel
-      WHERE EXISTS (
+      WHERE rel.kind IN ('killed','surrender','abdication','captured','conquered') AND (EXISTS (
         SELECT 1
         FROM selected_target_reigns sr
         WHERE (rel.from_type = 'reign' AND rel.from_id = sr.id)
            OR (rel.to_type = 'reign' AND rel.to_id = sr.id)
-      )
+      ) OR EXISTS(SELECT 1 FROM target_person p WHERE (rel.from_type='person' AND rel.from_id=p.id) OR (rel.to_type='person' AND rel.to_id=p.id)))
     ),
     related_reign_ids AS (
       SELECT from_id AS id FROM relevant_relations WHERE from_type = 'reign'
       UNION
       SELECT to_id AS id FROM relevant_relations WHERE to_type = 'reign'
     ),
+    capital_context_reign_ids AS (
+      SELECT m.external_id AS id
+      FROM location_mapping m JOIN locations l ON l.id = m.location_id
+      WHERE m.kind = 'reign' AND l.modern_name IN (
+        SELECT l.modern_name
+        FROM location_mapping m JOIN locations l ON l.id = m.location_id
+        WHERE m.kind = 'reign' AND m.external_id IN (SELECT id FROM selected_target_reigns)
+      )
+    ),
     bundle_reigns AS (
       SELECT r.*
       FROM reigns r
       WHERE r.dynasty_id IN (SELECT dynasty_id FROM selected_dynasty_ids)
-         OR r.id IN (SELECT id FROM related_reign_ids)
+         OR r.id IN (SELECT id FROM capital_context_reign_ids)
+         OR r.person_id IN (SELECT person_id FROM reigns WHERE id IN (SELECT id FROM related_reign_ids))
+         OR r.person_id IN (SELECT from_id FROM relevant_relations WHERE from_type='person' UNION SELECT to_id FROM relevant_relations WHERE to_type='person')
+         OR r.person_id IN (SELECT a_id FROM target_associations WHERE a_type='person' UNION SELECT b_id FROM target_associations WHERE b_type='person')
     ),
     relevant_events AS (
       SELECT e.*
       FROM events e
-      WHERE EXISTS (
-        SELECT 1 FROM event_participants ep
-        JOIN target_person tp ON tp.id = ep.person_id
-        WHERE ep.event_id = e.id
-      )
+      WHERE e.id IN (SELECT a_id FROM target_associations WHERE a_type='event' UNION SELECT b_id FROM target_associations WHERE b_type='event')
+    ),
+    bundle_associations AS (
+      SELECT * FROM target_associations
+      UNION
+      SELECT a.* FROM entity_associations a JOIN relevant_events e ON a.a_type='event' AND a.a_id=e.id
+      UNION
+      SELECT a.* FROM entity_associations a JOIN relevant_events e ON a.b_type='event' AND a.b_id=e.id
     ),
     bundle_dynasty_ids AS (
       SELECT dynasty_id AS id FROM bundle_reigns
       UNION
-      SELECT ed.dynasty_id AS id
-      FROM event_dynasties ed
-      JOIN relevant_events e ON e.id = ed.event_id
+      SELECT a_id FROM bundle_associations WHERE a_type='dynasty'
+      UNION SELECT b_id FROM bundle_associations WHERE b_type='dynasty'
+      UNION SELECT dynasty_id FROM reigns WHERE person_id IN (SELECT a_id FROM bundle_associations WHERE a_type='person' UNION SELECT b_id FROM bundle_associations WHERE b_type='person')
     ),
     bundle_person_ids AS (
       SELECT id FROM target_person
@@ -189,6 +211,9 @@ async function loadPersonDetailBundle(
       SELECT from_id AS id FROM relevant_relations WHERE from_type = 'person'
       UNION
       SELECT to_id AS id FROM relevant_relations WHERE to_type = 'person'
+      UNION SELECT person_id FROM bundle_reigns
+      UNION SELECT a_id FROM bundle_associations WHERE a_type='person'
+      UNION SELECT b_id FROM bundle_associations WHERE b_type='person'
     )
     SELECT
       COALESCE((SELECT jsonb_agg(to_jsonb(p) ORDER BY p.id)
@@ -197,15 +222,8 @@ async function loadPersonDetailBundle(
                 FROM dynasties d WHERE d.id IN (SELECT id FROM bundle_dynasty_ids)), '[]'::jsonb) AS dynasties,
       COALESCE((SELECT jsonb_agg(to_jsonb(r) ORDER BY r.start_abs, COALESCE(r.start_day, 1), r.id)
                 FROM bundle_reigns r), '[]'::jsonb) AS reigns,
-      COALESCE((SELECT jsonb_agg(
-        to_jsonb(e) || jsonb_build_object(
-          'dynasties', COALESCE((SELECT jsonb_agg(jsonb_build_object('dynastyId', ed.dynasty_id) ORDER BY ed.dynasty_id)
-                                  FROM event_dynasties ed WHERE ed.event_id = e.id), '[]'::jsonb),
-          'participants', COALESCE((SELECT jsonb_agg(jsonb_build_object('personId', ep.person_id) ORDER BY ep.person_id)
-                                    FROM event_participants ep WHERE ep.event_id = e.id), '[]'::jsonb),
-          'locationMappings', '[]'::jsonb
-        ) ORDER BY e.id
-      ) FROM relevant_events e), '[]'::jsonb) AS events,
+      COALESCE((SELECT jsonb_agg(to_jsonb(e) ORDER BY e.id) FROM relevant_events e),'[]'::jsonb) AS events,
+      COALESCE((SELECT jsonb_agg(to_jsonb(a) ORDER BY a.a_type,a.a_id,a.b_type,a.b_id) FROM bundle_associations a),'[]'::jsonb) AS associations,
       COALESCE((SELECT jsonb_agg(to_jsonb(rel) ORDER BY rel.id)
                 FROM relevant_relations rel), '[]'::jsonb) AS relations,
       COALESCE((SELECT jsonb_agg(sr.id ORDER BY sr.reign_index) FROM selected_target_reigns sr), '[]'::jsonb) AS selected_reign_ids,
@@ -216,6 +234,7 @@ async function loadPersonDetailBundle(
   if (!row) return null;
   const eventMappings = await loadMappings({kind:"event"});
   const persons = jsonRows(row.persons).map(mapBundlePerson);
+  const associations = jsonRows(row.associations).map(mapEntityAssociation);
   const targetPerson = persons.find((person) => person.id === personId) ??
     persons.find((person) =>
       jsonRows(row.reigns).some((reign) => reign.id === focusReignId && reign.person_id === person.id)
@@ -226,8 +245,9 @@ async function loadPersonDetailBundle(
       persons,
       dynasties: jsonRows(row.dynasties).map((value) => mapDynasty(value as never)),
       reigns: jsonRows(row.reigns).map((value) => mapReign(value as never)),
-      events: jsonRows(row.events).map((value) => mapEvent({...value, locationMappings:eventMappings.filter(m=>m.externalId===value.id)} as never)),
+      events: jsonRows(row.events).map((value) => mapEvent({...value, locationMappings:eventMappings.filter(m=>m.externalId===value.id)} as never, associations)),
       relations: jsonRows(row.relations).map(mapBundleRelation),
+      associations,
     },
     personId: targetPerson.id,
     selectedReignIds: Array.isArray(row.selected_reign_ids)
@@ -251,28 +271,25 @@ async function loadPersonDetailLocations(store: TimelineDataStore, selectedReign
 }
 
 async function loadStore() {
-  const [personRows, dynastyRows, reignRows, eventRows, relationRows] = await Promise.all([
+  const [personRows, dynastyRows, reignRows, eventRows, relationRows, associationRows] = await Promise.all([
     prisma.person.findMany({orderBy:{id:"asc"}}),
     prisma.dynasty.findMany({orderBy:{id:"asc"}}),
     prisma.reign.findMany({orderBy:{id:"asc"}}),
-    prisma.event.findMany({
-      orderBy:{id:"asc"},
-      include: {
-        dynasties: { orderBy: { dynastyId: "asc" } },
-        participants: { orderBy: { personId: "asc" } },
-      },
-    }),
+    prisma.event.findMany({ orderBy:{id:"asc"} }),
     prisma.relation.findMany({orderBy:{id:"asc"}}),
+    prisma.entityAssociation.findMany(),
   ]);
   const locationMappings=await loadMappings();
+  const associations=associationRows.map(mapEntityAssociation);
 
   return toTimelineDataStore({
     persons: personRows.map(row=>({...mapPerson(row),searchTerms:row.searchTerms})),
     dynasties: dynastyRows.map(mapDynasty),
     reigns: reignRows.map((row) => mapReign(row)),
-    events: eventRows.map(row=>mapEvent({...row,locationMappings:locationMappings.filter(m=>m.kind === "event" && m.externalId === row.id)})),
+    events: eventRows.map(row=>mapEvent({...row,locationMappings:locationMappings.filter(m=>m.kind === "event" && m.externalId === row.id)}, associations)),
     locationMappings,
     relations: relationRows.map(mapRelation),
+    associations,
   });
 }
 
@@ -285,38 +302,10 @@ async function loadEventsInWindow(fromAbs: number, toAbs: number) {
     WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')`;
 
   const eventIds = eventRows.map((row) => row.id);
-  const [eventDynasties, eventParticipants] = await Promise.all([
-    eventIds.length
-      ? prisma.eventDynasty.findMany({ where: { eventId: { in: eventIds } }, orderBy: [{ eventId: "asc" }, { dynastyId: "asc" }] })
-      : Promise.resolve([]),
-    eventIds.length
-      ? prisma.eventParticipant.findMany({ where: { eventId: { in: eventIds } }, orderBy: [{ eventId: "asc" }, { personId: "asc" }] })
-      : Promise.resolve([]),
-  ]);
-
+  const associationRows=eventIds.length ? await prisma.entityAssociation.findMany({where:{OR:[{aType:"event",aId:{in:eventIds}},{bType:"event",bId:{in:eventIds}}]}}) : [];
+  const associations=associationRows.map(mapEntityAssociation);
   const mappings=await loadMappings({kind:"event"});
-
-  const dynastiesByEvent = new Map<string, string[]>();
-  for (const row of eventDynasties) {
-    const list = dynastiesByEvent.get(row.eventId) ?? [];
-    list.push(row.dynastyId);
-    dynastiesByEvent.set(row.eventId, list);
-  }
-  const participantsByEvent = new Map<string, string[]>();
-  for (const row of eventParticipants) {
-    const list = participantsByEvent.get(row.eventId) ?? [];
-    list.push(row.personId);
-    participantsByEvent.set(row.eventId, list);
-  }
-
-  return eventRows.map((row) =>
-    mapEvent({
-      ...row,
-      locationMappings: mappings.filter(m=>m.externalId===row.id),
-      dynasties: (dynastiesByEvent.get(row.id) ?? []).map((dynastyId) => ({ dynastyId })),
-      participants: (participantsByEvent.get(row.id) ?? []).map((personId) => ({ personId })),
-    }),
-  );
+  return eventRows.map(row=>mapEvent({...row,locationMappings:mappings.filter(m=>m.externalId===row.id)},associations));
 }
 
 const PLACEABLE_NON_RULER_WHERE = {

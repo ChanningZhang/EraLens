@@ -1058,14 +1058,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "liao",
-        "song-north"
-      ],
-      "participantIds": [
-        "yelu-longxu",
-        "zhao-heng"
-      ],
       "id": "chanyuan-treaty",
       "name": "澶渊之盟",
       "at": {
@@ -1080,14 +1072,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "jin-nvzhen",
-        "liao"
-      ],
-      "participantIds": [
-        "wanyan-sheng",
-        "yelu-yanxi"
-      ],
       "id": "jin-destroy-liao",
       "name": "辽朝覆亡",
       "dateNote": "保大五年三月二十六日，1125年3月26日，金俘辽天祚帝",
@@ -1104,13 +1088,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-south",
-        "jin-nvzhen"
-      ],
-      "participantIds": [
-        "yue-fei"
-      ],
       "id": "yancheng-battle",
       "name": "郾城之战",
       "at": {
@@ -1125,14 +1102,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-south",
-        "jin-nvzhen"
-      ],
-      "participantIds": [
-        "zhao-gou",
-        "qin-hui"
-      ],
       "id": "shaoxing-treaty",
       "name": "绍兴和议",
       "at": {
@@ -1147,14 +1116,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-south",
-        "jin-nvzhen"
-      ],
-      "participantIds": [
-        "yu-yunwen",
-        "wanyan-liang"
-      ],
       "id": "caishi-battle",
       "name": "采石之战",
       "dateNote": "绍兴三十一年十一月初八至初九，1161年11月26日至27日",
@@ -1170,13 +1131,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "song-south",
-        "jin-nvzhen"
-      ],
-      "participantIds": [
-        "zhao-kuo"
-      ],
       "id": "kaixi-expedition",
       "name": "开禧北伐",
       "timeMode": "span",
@@ -1199,14 +1153,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-south",
-        "jin-nvzhen"
-      ],
-      "participantIds": [
-        "zhao-yun",
-        "wanyan-shouxu"
-      ],
       "id": "song-jin-alliance-mongol",
       "name": "联蒙灭金",
       "dateNote": "天兴二年二月九日，1234年2月9日，蔡州陷落，金哀宗殉国",
@@ -1223,13 +1169,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-north",
-        "liao"
-      ],
-      "participantIds": [
-        "zhao-kuangyi"
-      ],
       "id": "yongle-campaign",
       "name": "雍熙北伐",
       "dateNote": "986年，宋太宗二次北伐辽国失利",
@@ -1345,39 +1284,8 @@
       "fromRef": "person:wanyan-shouxu",
       "toRef": "person:wanyan-chenglin",
       "kind": "succession"
-    },
-    {
-      "id": "rel-chanyuan-liao-song",
-      "fromRef": "event:chanyuan-treaty",
-      "toRef": "dynasty:liao",
-      "kind": "alliance"
-    },
-    {
-      "id": "rel-yancheng-yue-fei",
-      "fromRef": "event:yancheng-battle",
-      "toRef": "person:yue-fei",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-caishi-yu-yunwen",
-      "fromRef": "event:caishi-battle",
-      "toRef": "person:yu-yunwen",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-jin-destroy-liao",
-      "fromRef": "event:jin-destroy-liao",
-      "toRef": "dynasty:liao",
-      "kind": "battle"
     }
   ],
-  "supplementalEventDynasties": [
-    {
-      "eventId": "jingkang-incident",
-      "dynastyId": "jin-nvzhen"
-    }
-  ],
-  "supplementalEventParticipants": [],
   "preSql": "-- remove stale auto-generated 史料缺 (太祖卒后述律太后摄政期应留白)\nDELETE FROM reigns WHERE dynasty_id IN ('liao') AND person_id = 'system-missing-ruler';",
   "manifest": {
     "slug": "song-liao-jin",
@@ -1398,7 +1306,7 @@
       "dynasties": 2,
       "reigns": 19,
       "events": 8,
-      "relations": 21
+      "relations": 17
     },
     "sources": [
       {
@@ -1577,7 +1485,7 @@
     "notes": [
       "覆盖辽（916–1125）、女真金（1115–1234）及宋辽金对峙重大事件。",
       "金朝 id 为 jin-nvzhen，避免与两晋 jin-west/jin-east、后晋 jin-hou 冲突。",
-      "南宋/北宋王朝与皇帝见 sui-tang-wudai-song；本包补充 event_dynasties 关联靖康之变、南宋建立。",
+      "南宋/北宋王朝与皇帝见 sui-tang-wudai-song；本包补充 集中普通关联 关联靖康之变、南宋建立。",
       "移除靖康之变与辽朝的错误关联：辽于1125年覆亡，靖康之变发生于1125–1127年，1127年北宋覆亡阶段由金军直接攻宋；本包生成 SQL 显式删除旧关联。",
       "未收录西辽、北辽、东辽等辽亡后残余政权。",
       "辽金皇帝在位日取中国君主列表/维基百科通行换算，confidence=day；1234年蔡州陷落同年更替用 month；承麟在位不足一日用 day。",
@@ -1588,7 +1496,8 @@
       "2026-09：按用户请求进一步丰富辽朝王朝概述，补充契丹统一与建国、南北面官、燕云地区、澶渊之盟后的边境关系及金灭辽；依据《中国大百科全书·中国历史》辽条、西安交通大学南北面官制度介绍及宋辽关系研究，年代边界仍沿用本包记录。",
       "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
       "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
-      "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。"
+      "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   }
 }

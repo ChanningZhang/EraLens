@@ -1730,12 +1730,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "yuan-shikai"
-      ],
       "id": "yuan-shikai-emperor",
       "name": "袁世凯称帝",
       "at": {
@@ -1749,14 +1743,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "cai-e",
-        "yuan-shikai",
-        "tang-jiyao"
-      ],
       "timeMode": "span",
       "id": "national-protection-war",
       "name": "护国战争",
@@ -1780,10 +1766,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [],
       "id": "may-fourth",
       "name": "五四运动",
       "dateNote": "1919年5月4日",
@@ -1799,13 +1781,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "puyi",
-        "feng-yuxiang"
-      ],
       "id": "puyi-leaves-forbidden-city",
       "name": "溥仪出宫",
       "dateNote": "1924年11月5日，国民军将溥仪逐出紫禁城",
@@ -1821,19 +1796,6 @@
     },
     {
       "kind": "politics",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "duan-qirui",
-        "wu-peifu",
-        "zhang-zuolin",
-        "yan-xishan",
-        "feng-yuxiang",
-        "lu-rongting",
-        "tang-jiyao",
-        "liu-xiang"
-      ],
       "timeMode": "span",
       "id": "warlord-era",
       "name": "军阀割据",
@@ -1856,12 +1818,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "jiang-jieshi"
-      ],
       "timeMode": "span",
       "id": "northern-expedition",
       "name": "北伐战争",
@@ -1884,12 +1840,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "zhang-xueliang"
-      ],
       "id": "northeast-flag-change",
       "name": "东北易帜",
       "at": {
@@ -1904,12 +1854,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "zhang-xueliang"
-      ],
       "id": "mukden-incident",
       "name": "九一八事变",
       "dateNote": "1931年9月18日",
@@ -1925,14 +1869,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "zhang-xueliang",
-        "jiang-jieshi",
-        "zhou-enlai"
-      ],
       "id": "xi-an-incident",
       "name": "西安事变",
       "dateNote": "1936年12月12日",
@@ -1947,15 +1883,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "jiang-jieshi",
-        "mao-zedong",
-        "zhou-enlai",
-        "yan-xishan"
-      ],
       "timeMode": "span",
       "id": "resistance-war",
       "name": "抗日战争",
@@ -1978,14 +1905,6 @@
     },
     {
       "kind": "battle",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "jiang-jieshi",
-        "mao-zedong",
-        "li-zongren"
-      ],
       "timeMode": "span",
       "id": "civil-war",
       "name": "解放战争",
@@ -2008,13 +1927,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "jiang-jieshi",
-        "li-zongren"
-      ],
       "id": "roc-mainland-end",
       "name": "国民政府迁台",
       "dateNote": "1949年12月，中央迁台北，大陆时期结束",
@@ -2030,12 +1942,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "jiang-jieshi"
-      ],
       "id": "pingjin-campaign",
       "name": "平津作战",
       "start": {
@@ -2058,13 +1964,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "jiang-guangnai",
-        "cai-tingkai"
-      ],
       "id": "shanghai-incident-1932",
       "name": "一·二八淞沪抗战",
       "start": {
@@ -2089,12 +1988,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "jiang-jieshi"
-      ],
       "id": "shanghai-campaign-1937",
       "name": "淞沪会战",
       "start": {
@@ -2117,12 +2010,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "lin-biao"
-      ],
       "id": "pingxingguan-battle",
       "name": "平型关战斗",
       "at": {
@@ -2139,12 +2026,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "yan-xishan"
-      ],
       "id": "xinkou-battle",
       "name": "忻口战役",
       "start": {
@@ -2167,12 +2048,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "yan-xishan"
-      ],
       "id": "taiyuan-campaign",
       "name": "太原会战",
       "start": {
@@ -2195,13 +2070,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "jiang-jieshi",
-        "li-zongren"
-      ],
       "id": "xuzhou-campaign",
       "name": "徐州会战",
       "start": {
@@ -2224,12 +2092,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "li-zongren"
-      ],
       "id": "taierzhuang-battle",
       "name": "台儿庄战役",
       "start": {
@@ -2252,12 +2114,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "jiang-jieshi"
-      ],
       "id": "wuhan-campaign",
       "name": "武汉会战",
       "start": {
@@ -2280,12 +2136,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "jiang-jieshi"
-      ],
       "id": "nanchang-campaign",
       "name": "南昌会战",
       "start": {
@@ -2308,10 +2158,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [],
       "id": "first-changsha-campaign",
       "name": "第一次长沙会战",
       "start": {
@@ -2334,10 +2180,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [],
       "id": "kunlun-pass-battle",
       "name": "昆仑关战役",
       "start": {
@@ -2360,13 +2202,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "zhu-de",
-        "peng-dehuai"
-      ],
       "id": "hundred-regiments-campaign",
       "name": "百团大战",
       "start": {
@@ -2389,10 +2224,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [],
       "id": "second-changsha-campaign",
       "name": "第二次长沙会战",
       "start": {
@@ -2415,10 +2246,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [],
       "id": "third-changsha-campaign",
       "name": "第三次长沙会战",
       "start": {
@@ -2441,10 +2268,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [],
       "id": "changde-campaign",
       "name": "常德会战",
       "start": {
@@ -2467,12 +2290,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [
-        "jiang-jieshi"
-      ],
       "id": "yuxianggui-campaign",
       "name": "豫湘桂会战",
       "start": {
@@ -2495,10 +2312,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [],
       "id": "hengyang-defense",
       "name": "衡阳保卫战",
       "start": {
@@ -2521,10 +2334,6 @@
     {
       "kind": "battle",
       "timeMode": "span",
-      "dynastyIds": [
-        "roc"
-      ],
-      "participantIds": [],
       "id": "western-hunan-campaign",
       "name": "湘西会战",
       "start": {
@@ -2719,34 +2528,9 @@
       "fromRef": "person:cai-yingwen",
       "toRef": "person:lai-qingde",
       "kind": "succession"
-    },
-    {
-      "id": "rel-northern-jiang",
-      "fromRef": "event:northern-expedition",
-      "toRef": "person:jiang-jieshi",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-xian-zhang",
-      "fromRef": "event:xi-an-incident",
-      "toRef": "person:zhang-xueliang",
-      "kind": "battle"
-    },
-    {
-      "id": "rel-protection-cai-e",
-      "fromRef": "event:national-protection-war",
-      "toRef": "person:cai-e",
-      "kind": "battle"
     }
   ],
-  "supplementalEventDynasties": [
-    {
-      "eventId": "xinhai-revolution",
-      "dynastyId": "roc"
-    }
-  ],
-  "supplementalEventParticipants": [],
-  "preSql": "-- remove stale auto-generated 史料缺 (元首空缺期应留白)\nDELETE FROM reigns WHERE dynasty_id IN ('roc') AND person_id = 'system-missing-ruler';\nDELETE FROM relations WHERE id = 'rel-jiang-jieshi-jiang-jieshi-succession';\nDELETE FROM event_dynasties WHERE event_id = 'puyi-leaves-forbidden-city';",
+  "preSql": "-- remove stale auto-generated 史料缺 (元首空缺期应留白)\nDELETE FROM reigns WHERE dynasty_id IN ('roc') AND person_id = 'system-missing-ruler';\nDELETE FROM relations WHERE id = 'rel-jiang-jieshi-jiang-jieshi-succession';\n",
   "postSql": "-- remove the formerly separate Wang Jingwei dynasty/group after its reigns have been reassigned to roc\nDELETE FROM dynasties WHERE id = 'wang-jingwei-regime';\nDELETE FROM dynasty_groups WHERE id = 'wartime-china-governments';",
   "manifest": {
     "slug": "minguo",
@@ -2765,7 +2549,7 @@
       "dynasties": 1,
       "reigns": 34,
       "events": 31,
-      "relations": 32
+      "relations": 29
     },
     "sources": [
       {
@@ -3055,7 +2839,8 @@
       "2026-10-02 相邻在位边界复核：reign-lai-qingde-roc start：总统府2024年5月20日就职新闻可核到日，既有day=20应标day而非month。",
       "2026-10：补充1937–1945年全面抗战代表性会战与战役；会战级事件与平型关、台儿庄、衡阳等关键战斗分开表达，重叠处在摘要及 dateNote 说明。日期按来源能支持的月精度记录；战果数字存在不同战史口径时不填确定数字。",
       "2026-10：九一八事变关联北大营事件地点；北大营作为柳条湖铁路爆炸、北大营战斗与沈阳城受袭这一多地点事件的代表点，详见 event-locations 包地点说明。",
-      "2026-10：补录一·二八淞沪抗战，作战区涉及上海闸北、吴淞等多处，以闸北战事中心作地点代表点；事件span记录1932-01-28爆发至1932-03-03停战，5月5日签署协定作为结束交涉背景写入摘要。"
+      "2026-10：补录一·二八淞沪抗战，作战区涉及上海闸北、吴淞等多处，以闸北战事中心作地点代表点；事件span记录1932-01-28爆发至1932-03-03停战，5月5日签署协定作为结束交涉背景写入摘要。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   }
 }

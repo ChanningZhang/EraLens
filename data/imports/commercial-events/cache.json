@@ -14,8 +14,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "commerce-maize-introduction",
       "name": "玉米传入中国",
       "at": {
@@ -32,8 +30,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "commerce-sweet-potato-introduction",
       "name": "甘薯经海路传入福建",
       "at": {
@@ -50,8 +46,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "commerce-chili-introduction",
       "name": "辣椒传入中国",
       "at": {
@@ -68,8 +62,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "commerce-tomato-introduction",
       "name": "番茄传入中国",
       "at": {
@@ -86,8 +78,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "commerce-tobacco-introduction",
       "name": "烟草传入中国",
       "at": {
@@ -104,10 +94,6 @@
     {
       "kind": "commerce",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-north"
-      ],
-      "participantIds": [],
       "id": "commerce-song-guangzhou-shipping-office",
       "name": "广州设市舶司",
       "at": {
@@ -123,10 +109,6 @@
     {
       "kind": "commerce",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-north"
-      ],
-      "participantIds": [],
       "id": "commerce-song-tea-horse-trade",
       "name": "茶马互市兴起",
       "at": {
@@ -142,10 +124,6 @@
     {
       "kind": "commerce",
       "timeMode": "point",
-      "dynastyIds": [
-        "ming"
-      ],
-      "participantIds": [],
       "id": "commerce-longqing-yuegang-opening",
       "name": "隆庆开海",
       "at": {
@@ -161,10 +139,6 @@
     {
       "kind": "commerce",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [],
       "id": "commerce-qing-maritime-trade-reopened",
       "name": "清廷开海",
       "at": {
@@ -180,10 +154,6 @@
     {
       "kind": "commerce",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [],
       "id": "commerce-qing-canton-system",
       "name": "广州一口通商",
       "at": {
@@ -199,8 +169,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-fig-introduction",
       "name": "无花果传入中国",
       "at": {
@@ -217,8 +185,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-eggplant-introduction",
       "name": "茄子传入中国",
       "at": {
@@ -235,8 +201,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-spinach-introduction",
       "name": "菠菜传入中国",
       "at": {
@@ -253,8 +217,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-watermelon-introduction",
       "name": "西瓜传入中国北方",
       "at": {
@@ -271,8 +233,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-champa-rice-introduction",
       "name": "占城稻引入中国",
       "at": {
@@ -289,8 +249,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-carrot-introduction",
       "name": "胡萝卜传入中国",
       "at": {
@@ -307,8 +265,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-cotton-introduction",
       "name": "亚洲棉传入中国",
       "at": {
@@ -325,8 +281,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-peanut-introduction",
       "name": "花生传入中国",
       "at": {
@@ -343,8 +297,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-potato-introduction",
       "name": "马铃薯传入中国",
       "at": {
@@ -361,8 +313,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-pumpkin-introduction",
       "name": "南瓜传入中国",
       "at": {
@@ -379,8 +329,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-sunflower-introduction",
       "name": "向日葵传入中国",
       "at": {
@@ -397,8 +345,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-cashew-introduction",
       "name": "腰果传入中国",
       "at": {
@@ -415,8 +361,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-pineapple-introduction",
       "name": "菠萝（凤梨）传入中国",
       "at": {
@@ -433,8 +377,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-bean-introduction",
       "name": "菜豆（四季豆）传入中国",
       "at": {
@@ -451,8 +393,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-onion-introduction",
       "name": "洋葱传入中国",
       "at": {
@@ -469,8 +409,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-cabbage-introduction",
       "name": "卷心菜（洋白菜）传入中国",
       "at": {
@@ -487,8 +425,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-cauliflower-introduction",
       "name": "花菜传入中国",
       "at": {
@@ -505,8 +441,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-zucchini-introduction",
       "name": "西葫芦传入中国",
       "at": {
@@ -523,8 +457,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-western-apple-introduction",
       "name": "西洋苹果传入中国",
       "at": {
@@ -541,8 +473,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-strawberry-introduction",
       "name": "现代草莓传入中国",
       "at": {
@@ -559,8 +489,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-luffa-introduction",
       "name": "丝瓜传入中国",
       "at": {
@@ -577,8 +505,6 @@
     {
       "kind": "agriculture",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "agri-crops-introduction",
       "name": "汉代作物传入",
       "at": {
@@ -594,30 +520,7 @@
     }
   ],
   "relations": [],
-  "supplementalEventDynasties": [
-    {
-      "eventId": "agri-cabbage-introduction",
-      "dynastyId": "qing"
-    },
-    {
-      "eventId": "agri-cauliflower-introduction",
-      "dynastyId": "qing"
-    },
-    {
-      "eventId": "agri-onion-introduction",
-      "dynastyId": "qing"
-    },
-    {
-      "eventId": "agri-western-apple-introduction",
-      "dynastyId": "qing"
-    },
-    {
-      "eventId": "agri-zucchini-introduction",
-      "dynastyId": "qing"
-    }
-  ],
-  "supplementalEventParticipants": [],
-  "preSql": "DELETE FROM event_dynasties WHERE event_id IN ('commerce-maize-introduction', 'commerce-sweet-potato-introduction', 'commerce-chili-introduction', 'commerce-tomato-introduction', 'commerce-tobacco-introduction', 'agri-fig-introduction', 'agri-eggplant-introduction', 'agri-spinach-introduction', 'agri-watermelon-introduction', 'agri-champa-rice-introduction', 'agri-carrot-introduction', 'agri-cotton-introduction', 'agri-peanut-introduction', 'agri-potato-introduction', 'agri-pumpkin-introduction', 'agri-sunflower-introduction', 'agri-cashew-introduction', 'agri-pineapple-introduction', 'agri-bean-introduction', 'agri-onion-introduction', 'agri-cabbage-introduction', 'agri-cauliflower-introduction', 'agri-zucchini-introduction', 'agri-western-apple-introduction', 'agri-strawberry-introduction', 'agri-luffa-introduction', 'agri-crops-introduction', 'commerce-cucumber-introduction', 'agri-grape-introduction', 'agri-pomegranate-introduction', 'agri-walnut-introduction', 'agri-garlic-introduction', 'agri-coriander-introduction', 'agri-sesame-introduction', 'agri-alfalfa-introduction', 'agri-pepper-introduction', 'agri-pea-introduction', 'agri-broad-bean-introduction', 'agri-cowpea-introduction');\nDELETE FROM event_dynasties WHERE event_id = 'commerce-treaty-of-nanking-five-ports';\nDELETE FROM events WHERE id = 'commerce-treaty-of-nanking-five-ports';\nDELETE FROM events WHERE id IN ('commerce-cucumber-recorded-in-qimin-yaoshu', 'commerce-maize-earliest-record', 'commerce-chili-earliest-record', 'commerce-tomato-recorded-in-zhipin', 'commerce-tobacco-recorded-in-jingyue-quanshu');\nDELETE FROM events WHERE id IN ('commerce-cucumber-introduction', 'agri-grape-introduction', 'agri-pomegranate-introduction', 'agri-walnut-introduction', 'agri-garlic-introduction', 'agri-coriander-introduction', 'agri-sesame-introduction', 'agri-alfalfa-introduction', 'agri-pepper-introduction', 'agri-pea-introduction', 'agri-broad-bean-introduction', 'agri-cowpea-introduction');",
+  "preSql": "DELETE FROM events WHERE id = 'commerce-treaty-of-nanking-five-ports';\nDELETE FROM events WHERE id IN ('commerce-cucumber-recorded-in-qimin-yaoshu', 'commerce-maize-earliest-record', 'commerce-chili-earliest-record', 'commerce-tomato-recorded-in-zhipin', 'commerce-tobacco-recorded-in-jingyue-quanshu');\nDELETE FROM events WHERE id IN ('commerce-cucumber-introduction', 'agri-grape-introduction', 'agri-pomegranate-introduction', 'agri-walnut-introduction', 'agri-garlic-introduction', 'agri-coriander-introduction', 'agri-sesame-introduction', 'agri-alfalfa-introduction', 'agri-pepper-introduction', 'agri-pea-introduction', 'agri-broad-bean-introduction', 'agri-cowpea-introduction');",
   "manifest": {
     "slug": "commercial-events",
     "title": "商业与商品传播事件",
@@ -730,7 +633,8 @@
       "不重复已入库的张骞通西域、郑和下西洋等事件；不确定的首传年份只作单点显示，并在 date_note 中明确其证据性质。",
       "中国相关作物传入、见载与栽培事件不关联王朝；年代锚点表示传播叙述或早期文献线索，不等于由某一王朝直接推动。",
       "无花果与现代草莓未关联王朝：前者只有魏晋南北朝或唐代等宽泛时期说法，后者只有近现代年代锚点；证据不足以证明实际传入政权。",
-      "丝瓜实际首传年难以考定，按用户要求以宋代起始年960作近似单点年代锚点，并在 date_note 中说明不代表确切首传年；马铃薯传入时间及路线存在争议，1650年锚点不足以确定由明或清直接推动，故不关联两朝。"
+      "丝瓜实际首传年难以考定，按用户要求以宋代起始年960作近似单点年代锚点，并在 date_note 中说明不代表确切首传年；马铃薯传入时间及路线存在争议，1650年锚点不足以确定由明或清直接推动，故不关联两朝。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   }
 }

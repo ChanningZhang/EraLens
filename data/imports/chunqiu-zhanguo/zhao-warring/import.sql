@@ -71,10 +71,6 @@ INSERT INTO reigns (id, dynasty_id, person_id, title, era_names, start_year, sta
 VALUES ('reign-zhao-r9-zhao-warring', 'zhao-warring', 'zhao-r9', '幽缪王', NULL, -235, 1, NULL, -228, 12, NULL, -2808, -2713, 'year', 'year', NULL, NULL, NULL, false)
 ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXCLUDED.person_id, title = EXCLUDED.title, era_names = EXCLUDED.era_names, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, start_confidence = EXCLUDED.start_confidence, end_confidence = EXCLUDED.end_confidence, claim_track = EXCLUDED.claim_track, claim_label = EXCLUDED.claim_label, claim_role = EXCLUDED.claim_role, is_main = EXCLUDED.is_main;
 
--- event_dynasties
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('sanjia-fenjin', 'zhao-warring') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('zhanguo', 'zhao-warring') ON CONFLICT DO NOTHING;
-
 -- Remove stale reigns from managed dynasties (superseded ids from older imports)
 WITH stale AS (
   DELETE FROM reigns
@@ -84,7 +80,7 @@ WITH stale AS (
 DELETE FROM persons p
 WHERE p.id IN (SELECT DISTINCT person_id FROM stale)
   AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)
-  AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = p.id)
+  AND NOT EXISTS (SELECT 1 FROM entity_associations a WHERE (a.a_type = 'person' AND a.a_id = p.id) OR (a.b_type = 'person' AND a.b_id = p.id))
   AND NOT EXISTS (
     SELECT 1 FROM relations rel
     WHERE (rel.from_type = 'person' AND rel.from_id = p.id)

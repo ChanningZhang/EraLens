@@ -3327,13 +3327,6 @@
     {
       "kind": "battle",
       "timeMode": "point",
-      "dynastyIds": [
-        "gaogouli",
-        "tang"
-      ],
-      "participantIds": [
-        "baozang-wang"
-      ],
       "id": "gaogouli-destroyed-tang",
       "name": "高句丽覆亡",
       "dateNote": "总章元年九月，668年10月，宝藏王被俘",
@@ -3743,16 +3736,8 @@
       "fromRef": "person:aidengli-kehan",
       "toRef": "person:kasa-kehan",
       "kind": "succession"
-    },
-    {
-      "id": "rel-gaogouli-destroyed",
-      "fromRef": "event:gaogouli-destroyed-tang",
-      "toRef": "dynasty:gaogouli",
-      "kind": "battle"
     }
   ],
-  "supplementalEventDynasties": [],
-  "supplementalEventParticipants": [],
   "preSql": "DELETE FROM relations WHERE id IN (\n  'rel-gao-zhumeng-daewuseong-succession',\n  'rel-daewuseong-taizu-wang-succession',\n  'rel-dongchuan-wang-meichuan-wang-succession',\n  'rel-xiaoshoulin-wang-guangkaitu-wang-succession',\n  'rel-wenzhi-wang-pingyuan-wang-succession'\n);",
   "manifest": {
     "slug": "tang-border",
@@ -3771,7 +3756,7 @@
       "dynasties": 4,
       "reigns": 70,
       "events": 1,
-      "relations": 67
+      "relations": 66
     },
     "sources": [
       {
@@ -3832,9 +3817,10 @@
       "吐谷浑含慕容吐谷浑至诺曷钵完整首领序列；王朝窗口取329–663。",
       "高句丽取维基百科君主列表28王（东明圣王至宝藏王）；故国川王以前年代有争议，confidence=year，在位年依三国史记/维基列表。报德王（安胜，670–683）为亡国后新罗境内残部，不入高句丽王朝行。",
       "回鹘可汗序列据维基百科回鹘可汗列表（744–840）；人物名用本名，在位 title 用唐封称号，尊号不入人物名。",
-      "唐（tang）复用 sui-tang-wudai-song 已有 id，本包仅关联 event_dynasties。",
+      "唐（tang）复用 sui-tang-wudai-song 已有 id，本包仅关联 集中普通关联。",
       "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
-      "2026-10-02 相邻在位边界复核：reign-baozang-wang-gaogouli start：642年渊盖苏文杀荣留王后立宝藏王；1月为占位。尚无可采用的公历月日换算，按已核年份记录，保留年桶占位语义。"
+      "2026-10-02 相邻在位边界复核：reign-baozang-wang-gaogouli start：642年渊盖苏文杀荣留王后立宝藏王；1月为占位。尚无可采用的公历月日换算，按已核年份记录，保留年桶占位语义。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   }
 }

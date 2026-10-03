@@ -1,3 +1,4 @@
+import { EntityAssociationSchema } from "@eralens/shared";
 import {
   absMonth,
   formatAppellationCsv,
@@ -38,6 +39,7 @@ function parseRef(raw: string): { type: string; id: string } {
 }
 
 async function main() {
+  const associations=await readSeed("associations.json",EntityAssociationSchema.array());
   const persons = await readSeed<Person[]>("persons.json", PersonSchema.array());
   const dynasties = await readSeed<Dynasty[]>("dynasties.json", DynastySchema.array());
   const reigns = await readSeed<Reign[]>("reigns.json", ReignSchema.array());
@@ -65,8 +67,7 @@ async function main() {
   }
 
   await prisma.$transaction(async (tx) => {
-    await tx.eventParticipant.deleteMany();
-    await tx.eventDynasty.deleteMany();
+    await tx.entityAssociation.deleteMany();
     await tx.relation.deleteMany();
     await tx.event.deleteMany();
     await tx.reign.deleteMany();
@@ -172,14 +173,13 @@ async function main() {
           endAbs: event.endAbs,
           summary: event.summary,
           content: event.content,
-          dynasties: {
-            create: event.dynastyIds.map((dynastyId) => ({ dynastyId })),
-          },
-          participants: {
-            create: event.participantIds.map((personId) => ({ personId })),
-          },
         },
       });
+    }
+
+    for (const row of associations) {
+      const a=parseRef(row.aRef),b=parseRef(row.bRef);
+      await tx.entityAssociation.create({data:{aType:a.type,aId:a.id,bType:b.type,bId:b.id}});
     }
 
     for (const relation of relations) {

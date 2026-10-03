@@ -1,3 +1,4 @@
+import { assertEntityAssociation } from "./entityAssociations.mjs";
 import { z } from "zod";
 
 export const PrecisionSchema = z.enum(["year", "month", "day"]);
@@ -342,13 +343,12 @@ export const EventSchema = z
     }
   });
 
+export const EntityAssociationSchema = z.object({ aRef: z.string(), bRef: z.string() }).strict().superRefine((row, ctx) => {
+  try { assertEntityAssociation(row); } catch (error) { ctx.addIssue({code: z.ZodIssueCode.custom, message: String(error)}); }
+});
+
 export const RelationKindSchema = z.enum([
   "succession",
-  "politics",
-  "battle",
-  "alliance",
-  "enthronement",
-  "other",
   "killed",
   "surrender",
   "abdication",
@@ -378,7 +378,8 @@ export const RelationSchema = z
     eventId: z.string().optional(),
   })
   .superRefine((relation, ctx) => {
-    if (!FATE_RELATION_KINDS.includes(relation.kind as FateRelationKind)) {
+    if (relation.kind === "succession") {
+      if (!/^person:.+$/u.test(relation.fromRef) || !/^person:.+$/u.test(relation.toRef)) ctx.addIssue({code: z.ZodIssueCode.custom, message: "succession requires person endpoints"});
       return;
     }
     if (relation.atAbs == null) {

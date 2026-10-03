@@ -330,13 +330,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "shang"
-      ],
-      "participantIds": [
-        "zi-dixin",
-        "bi-gan"
-      ],
       "id": "idiom-zhu-zhou-wei-nue",
       "name": "助纣为虐",
       "meaning": "比喻帮助坏人干坏事。",
@@ -353,12 +346,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "shang"
-      ],
-      "participantIds": [
-        "zi-dixin"
-      ],
       "id": "idiom-jiu-chi-rou-lin",
       "name": "酒池肉林",
       "meaning": "形容生活极端奢侈、纵欲无度。",
@@ -375,13 +362,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "shang",
-        "zhou-west"
-      ],
-      "participantIds": [
-        "ji-fa"
-      ],
       "id": "idiom-ai-wu-ji-wu",
       "name": "爱屋及乌",
       "meaning": "比喻爱一个人而连带喜爱与他有关的人或物。",
@@ -398,12 +378,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhou-west"
-      ],
-      "participantIds": [
-        "ji-dan"
-      ],
       "id": "idiom-zhou-gong-tu-bu",
       "name": "周公吐哺",
       "meaning": "形容求贤若渴、礼贤下士。",
@@ -420,12 +394,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhou-west"
-      ],
-      "participantIds": [
-        "ji-hu"
-      ],
       "id": "idiom-dao-lu-yi-mu",
       "name": "道路以目",
       "meaning": "形容严酷统治下，人们不敢交谈，路上相遇只以目示意。",
@@ -442,12 +410,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhou-west"
-      ],
-      "participantIds": [
-        "ji-hu"
-      ],
       "id": "idiom-yin-jian-bu-yuan",
       "name": "殷鉴不远",
       "meaning": "指前人的教训就在眼前，应当引以为戒。",
@@ -464,12 +426,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhou-east"
-      ],
-      "participantIds": [
-        "ji-yan"
-      ],
       "id": "idiom-zhai-tai-gao-zhu",
       "name": "债台高筑",
       "meaning": "形容欠债很多，难以偿还。",
@@ -486,14 +442,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "qi-chunqiu",
-        "lu-chunqiu"
-      ],
-      "participantIds": [
-        "lu-r15",
-        "cao-gui"
-      ],
       "id": "idiom-yi-gu-zuo-qi",
       "name": "一鼓作气",
       "meaning": "比喻趁劲头大的时候一下子把事情做完。",
@@ -510,13 +458,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "qi-chunqiu"
-      ],
-      "participantIds": [
-        "jiang-xiaobai",
-        "guan-zhong"
-      ],
       "id": "idiom-lao-ma-shi-tu",
       "name": "老马识途",
       "meaning": "比喻富有经验的人对情况熟悉，能起引导作用。",
@@ -533,13 +474,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "jin-chunqiu",
-        "guo-chunqiu"
-      ],
-      "participantIds": [
-        "jin-r20"
-      ],
       "id": "idiom-chun-wang-chi-han",
       "name": "唇亡齿寒",
       "meaning": "比喻利害密切相关，一方受损另一方也难保全。",
@@ -556,14 +490,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "guo-chunqiu",
-        "jin-chunqiu"
-      ],
-      "participantIds": [
-        "guo-gong-chou",
-        "jin-r20"
-      ],
       "id": "idiom-jia-dao-fa-guo",
       "name": "假道伐虢",
       "meaning": "以借路为名，行灭亡对方之实；后用来比喻利用对方作为进攻第三方的通道，达到目的后再消灭对方。",
@@ -580,13 +506,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "jin-chunqiu",
-        "chu-chunqiu"
-      ],
-      "participantIds": [
-        "ji-chonger"
-      ],
       "id": "idiom-tui-bi-san-she",
       "name": "退避三舍",
       "meaning": "比喻主动退让，避免冲突；也指退让回避。",
@@ -603,13 +522,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "chu-chunqiu",
-        "zhou-east"
-      ],
-      "participantIds": [
-        "xiong-zhuang"
-      ],
       "id": "idiom-wen-ding-zhong-yuan",
       "name": "问鼎中原",
       "meaning": "比喻企图夺取天下或最高权力。",
@@ -626,14 +538,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "chu-chunqiu",
-        "jin-chunqiu",
-        "zheng-chunqiu"
-      ],
-      "participantIds": [
-        "xiong-zhuang"
-      ],
       "id": "idiom-bian-chang-mo-ji",
       "name": "鞭长莫及",
       "meaning": "比喻力量达不到，无法控制或影响远处的事物。",
@@ -650,10 +554,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhou-east"
-      ],
-      "participantIds": [],
       "id": "idiom-tong-zhou-gong-ji",
       "name": "同舟共济",
       "meaning": "比喻在困难时同心协力，共渡难关。",
@@ -670,12 +570,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "wei-north"
-      ],
-      "participantIds": [
-        "yuan-hong"
-      ],
       "id": "idiom-fen-dao-yang-biao",
       "name": "分道扬镳",
       "meaning": "比喻目标不同，各走各的路；也指分道而行。",
@@ -692,12 +586,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "zheng-chunqiu"
-      ],
-      "participantIds": [
-        "zheng-r2"
-      ],
       "id": "idiom-duo-xing-bu-yi-bi-zi-bi",
       "name": "多行不义必自毙",
       "meaning": "坏事干得多了，必定会自取灭亡。",
@@ -714,12 +602,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "chu-chunqiu"
-      ],
-      "participantIds": [
-        "shen-zhuliang"
-      ],
       "id": "idiom-ye-gong-hao-long",
       "name": "叶公好龙",
       "meaning": "比喻表面上爱好某事物，实际上并非真正喜欢，甚至害怕。",
@@ -736,13 +618,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "qi-chunqiu"
-      ],
-      "participantIds": [
-        "qi-r25",
-        "yan-ying"
-      ],
       "id": "idiom-er-tao-sha-san-shi",
       "name": "二桃杀三士",
       "meaning": "比喻用阴谋借刀杀人，或借小事除掉强者。",
@@ -759,14 +634,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "yue-chunqiu",
-        "wu-chunqiu"
-      ],
-      "participantIds": [
-        "gou-jian",
-        "fu-chai"
-      ],
       "id": "idiom-wo-xin-chang-dan",
       "name": "卧薪尝胆",
       "meaning": "形容刻苦自励，发愤图强。",
@@ -783,14 +650,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "wei-warring",
-        "qi-chunqiu",
-        "zhao-warring"
-      ],
-      "participantIds": [
-        "sun-bin"
-      ],
       "id": "idiom-wei-wei-jiu-zhao",
       "name": "围魏救赵",
       "meaning": "比喻袭击敌人后方，迫其撤兵回援。",
@@ -807,12 +666,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "qi-chunqiu"
-      ],
-      "participantIds": [
-        "qi-r35"
-      ],
       "id": "idiom-yi-ming-jing-ren",
       "name": "一鸣惊人",
       "meaning": "比喻平时没有突出表现，一旦有所作为就使人震惊。",
@@ -829,13 +682,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhou-east"
-      ],
-      "participantIds": [
-        "bian-que",
-        "cai-huanhou"
-      ],
       "id": "idiom-hui-ji-ji-yi",
       "name": "讳疾忌医",
       "meaning": "比喻隐瞒缺点，拒绝批评和帮助。",
@@ -852,12 +698,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "zou-state"
-      ],
-      "participantIds": [
-        "meng-ke"
-      ],
       "id": "idiom-meng-mu-san-qian",
       "name": "孟母三迁",
       "meaning": "比喻为子女成长选择良好环境。",
@@ -874,12 +714,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "qi-chunqiu"
-      ],
-      "participantIds": [
-        "qi-r36"
-      ],
       "id": "idiom-lan-yu-chong-shu",
       "name": "滥竽充数",
       "meaning": "比喻没有真才实学的人混在行家里面充数，或以次充好。",
@@ -896,14 +730,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "wei-warring",
-        "zhao-warring"
-      ],
-      "participantIds": [
-        "wei-r2",
-        "pang-chong"
-      ],
       "id": "idiom-san-ren-cheng-hu",
       "name": "三人成虎",
       "meaning": "比喻谣言或讹传一再重复，就容易使人信以为真。",
@@ -920,8 +746,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "idiom-dong-shi-xiao-pin",
       "name": "东施效颦",
       "meaning": "比喻盲目模仿别人，不但学不像，反而出丑。",
@@ -938,8 +762,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "idiom-xiang-ru-yi-mo",
       "name": "相濡以沫",
       "meaning": "比喻同处困境，相互救助；也形容夫妻感情深厚。",
@@ -956,8 +778,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "idiom-dui-niu-tan-qin",
       "name": "对牛弹琴",
       "meaning": "比喻对不能理解的人讲道理，白费口舌。",
@@ -974,8 +794,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "idiom-jing-di-zhi-wa",
       "name": "井底之蛙",
       "meaning": "比喻见识狭窄、眼光短浅的人。",
@@ -992,10 +810,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-chunqiu"
-      ],
-      "participantIds": [],
       "id": "idiom-zhao-san-mu-si",
       "name": "朝三暮四",
       "meaning": "原指实质未变而表面花样翻新；后多比喻反复无常。",
@@ -1012,11 +826,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "wei-warring",
-        "chu-chunqiu"
-      ],
-      "participantIds": [],
       "id": "idiom-nan-yuan-bei-zhe",
       "name": "南辕北辙",
       "meaning": "比喻行动和目的相反，越努力离目标越远。",
@@ -1033,10 +842,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "qi-state-chunqiu"
-      ],
-      "participantIds": [],
       "id": "idiom-qi-ren-you-tian",
       "name": "杞人忧天",
       "meaning": "比喻不必要的或缺乏根据的忧虑和担心。",
@@ -1053,10 +858,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "chu-chunqiu"
-      ],
-      "participantIds": [],
       "id": "idiom-ke-zhou-qiu-jian",
       "name": "刻舟求剑",
       "meaning": "比喻拘泥成例、不知变通，或办事方法不对。",
@@ -1073,8 +874,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [],
-      "participantIds": [],
       "id": "idiom-shi-fu-yi-lin",
       "name": "失斧疑邻",
       "meaning": "比喻没有根据就胡乱猜疑他人。",
@@ -1091,13 +890,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "wei-warring"
-      ],
-      "participantIds": [
-        "meng-ke",
-        "wei-r2"
-      ],
       "id": "idiom-wu-shi-bu-xiao-bai-bu",
       "name": "五十步笑百步",
       "meaning": "比喻自己虽有缺点，却去嘲笑别人，本质相同。",
@@ -1114,13 +906,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "qi-chunqiu"
-      ],
-      "participantIds": [
-        "tian-wen",
-        "feng-xuan"
-      ],
       "id": "idiom-jiao-tu-san-ku",
       "name": "狡兔三窟",
       "meaning": "比喻隐蔽的地方多，便于藏身或留有退路。",
@@ -1137,13 +922,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "chu-chunqiu"
-      ],
-      "participantIds": [
-        "chu-r37",
-        "zhuang-xin"
-      ],
       "id": "idiom-wang-yang-bu-lao",
       "name": "亡羊补牢",
       "meaning": "比喻出了问题后及时补救，仍可防止继续受损失。",
@@ -1160,11 +938,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhao-warring",
-        "yan-chunqiu"
-      ],
-      "participantIds": [],
       "id": "idiom-handan-xue-bu",
       "name": "邯郸学步",
       "meaning": "比喻模仿别人不成，反而失去自己原有的技能。",
@@ -1181,12 +954,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-chunqiu"
-      ],
-      "participantIds": [
-        "meng-ke"
-      ],
       "id": "idiom-ya-miao-zhu-zhang",
       "name": "揠苗助长",
       "meaning": "比喻违反规律、急于求成，反而把事情弄糟。",
@@ -1203,10 +970,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "zheng-chunqiu"
-      ],
-      "participantIds": [],
       "id": "idiom-zheng-ren-mai-lu",
       "name": "郑人买履",
       "meaning": "比喻拘泥教条、不顾实际，或办事刻板不知变通。",
@@ -1223,10 +986,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "chu-chunqiu"
-      ],
-      "participantIds": [],
       "id": "idiom-zi-xiang-mao-dun",
       "name": "自相矛盾",
       "meaning": "比喻言行前后抵触，不能自圆其说。",
@@ -1243,10 +1002,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-chunqiu"
-      ],
-      "participantIds": [],
       "id": "idiom-shou-zhu-dai-tu",
       "name": "守株待兔",
       "meaning": "比喻死守狭隘经验，不知变通，妄想不劳而获。",
@@ -1263,11 +1018,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "chu-chunqiu",
-        "zheng-chunqiu"
-      ],
-      "participantIds": [],
       "id": "idiom-mai-du-huan-zhu",
       "name": "买椟还珠",
       "meaning": "比喻取舍不当，舍本逐末；也指不识货。",
@@ -1284,10 +1034,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "chu-chunqiu"
-      ],
-      "participantIds": [],
       "id": "idiom-hua-she-tian-zu",
       "name": "画蛇添足",
       "meaning": "比喻做了多余的事，反而把事情弄坏。",
@@ -1304,10 +1050,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "chu-chunqiu"
-      ],
-      "participantIds": [],
       "id": "idiom-hu-jia-hu-wei",
       "name": "狐假虎威",
       "meaning": "比喻倚仗别人的势力欺压人。",
@@ -1324,13 +1066,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhao-warring",
-        "yan-chunqiu"
-      ],
-      "participantIds": [
-        "zhao-r6"
-      ],
       "id": "idiom-yu-bang-xiang-zheng",
       "name": "鹬蚌相争",
       "meaning": "比喻双方相持不下，让第三方从中得利。",
@@ -1347,11 +1082,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "wu-chunqiu",
-        "chu-chunqiu"
-      ],
-      "participantIds": [],
       "id": "idiom-tang-lang-bu-chan",
       "name": "螳螂捕蝉",
       "meaning": "比喻只顾眼前利益，不顾后患。",
@@ -1368,15 +1098,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhao-warring"
-      ],
-      "participantIds": [
-        "bai-qi",
-        "zhao-zhuo",
-        "lian-po",
-        "qin-r27"
-      ],
       "id": "idiom-zhi-shang-tan-bing",
       "name": "纸上谈兵",
       "meaning": "比喻空谈理论，不能解决实际问题。",
@@ -1393,12 +1114,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhao-warring"
-      ],
-      "participantIds": [
-        "zhao-r5"
-      ],
       "id": "idiom-hu-fu-qi-she",
       "name": "胡服骑射",
       "meaning": "指改穿便于骑射的胡服、学习骑马射箭；后用以比喻改革旧制，吸收他人所长以增强实力。",
@@ -1415,15 +1130,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhao-warring",
-        "qin"
-      ],
-      "participantIds": [
-        "lin-xiangru",
-        "zhao-r6",
-        "qin-r27"
-      ],
       "id": "idiom-wan-bi-gui-zhao",
       "name": "完璧归赵",
       "meaning": "比喻把原物完好地归还本人。",
@@ -1440,14 +1146,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhao-warring"
-      ],
-      "participantIds": [
-        "lian-po",
-        "lin-xiangru",
-        "zhao-r6"
-      ],
       "id": "idiom-fu-jing-qing-zui",
       "name": "负荆请罪",
       "meaning": "形容主动认错、道歉，请求责罚。",
@@ -1464,14 +1162,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhao-warring"
-      ],
-      "participantIds": [
-        "mao-sui",
-        "zhao-sheng",
-        "zhao-r7"
-      ],
       "id": "idiom-mao-sui-zi-jian",
       "name": "毛遂自荐",
       "meaning": "比喻自告奋勇，自己推荐自己担任某项工作。",
@@ -1488,12 +1178,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "yan-chunqiu"
-      ],
-      "participantIds": [
-        "yan-r33"
-      ],
       "id": "idiom-qian-jin-mai-gu",
       "name": "千金买骨",
       "meaning": "比喻重视人才、以优厚待遇招揽贤士。",
@@ -1510,13 +1194,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "wei-warring"
-      ],
-      "participantIds": [
-        "wei-r5",
-        "geng-ying"
-      ],
       "id": "idiom-jing-gong-zhi-niao",
       "name": "惊弓之鸟",
       "meaning": "比喻受过惊吓的人遇到类似情形就惶恐不安。",
@@ -1533,13 +1210,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "han-west"
-      ],
-      "participantIds": [
-        "huo-qubing",
-        "liu-che"
-      ],
       "id": "idiom-feng-lang-ju-xu",
       "name": "封狼居胥",
       "meaning": "比喻建立显赫战功，常用来形容将领远征并取得重大胜利。",
@@ -1556,13 +1226,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "qin"
-      ],
-      "participantIds": [
-        "zhao-gao",
-        "ying-huhai"
-      ],
       "id": "idiom-zhi-lu-wei-ma",
       "name": "指鹿为马",
       "meaning": "比喻故意颠倒黑白，混淆是非。",
@@ -1579,14 +1242,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "qin",
-        "yan-chunqiu"
-      ],
-      "participantIds": [
-        "ying-zheng",
-        "jing-ke"
-      ],
       "id": "idiom-tu-qiong-bi-xian",
       "name": "图穷匕见",
       "meaning": "比喻事情发展到最后，真相或本意显露出来。",
@@ -1603,13 +1258,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "qin",
-        "chu-west"
-      ],
-      "participantIds": [
-        "xiang-yu"
-      ],
       "id": "idiom-po-fu-chen-zhou",
       "name": "破釜沉舟",
       "meaning": "比喻下定决心，不顾一切地干到底。",
@@ -1626,14 +1274,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "han-west"
-      ],
-      "participantIds": [
-        "han-xin",
-        "xiao-he",
-        "liu-bang"
-      ],
       "id": "idiom-cheng-ye-xiao-he",
       "name": "成也萧何败也萧何",
       "meaning": "比喻事情的成功或失败都出于同一个人或同一原因。",
@@ -1649,13 +1289,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "han-west"
-      ],
-      "participantIds": [
-        "han-xin",
-        "liu-bang"
-      ],
       "id": "idiom-duo-duo-yi-shan",
       "name": "多多益善",
       "meaning": "形容越多越好。",
@@ -1671,13 +1304,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "han-west",
-        "zhao-warring"
-      ],
-      "participantIds": [
-        "han-xin"
-      ],
       "id": "idiom-bei-shui-yi-zhan",
       "name": "背水一战",
       "meaning": "比喻没有退路，只能决一死战。",
@@ -1694,13 +1320,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "shu"
-      ],
-      "participantIds": [
-        "liu-bei",
-        "zhuge-liang"
-      ],
       "id": "idiom-san-gu-mao-lu",
       "name": "三顾茅庐",
       "meaning": "比喻诚心诚意地一再邀请或拜访。",
@@ -1716,14 +1335,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "shu",
-        "wei"
-      ],
-      "participantIds": [
-        "zhuge-liang",
-        "cao-cao"
-      ],
       "id": "idiom-cao-chuan-jiejian",
       "name": "草船借箭",
       "meaning": "比喻用智谋向敌方取得所需之物。",
@@ -1740,12 +1351,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "wei"
-      ],
-      "participantIds": [
-        "cao-cao"
-      ],
       "id": "idiom-wang-mei-zhi-ke",
       "name": "望梅止渴",
       "meaning": "比喻用空想安慰自己。",
@@ -1761,12 +1366,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "shu"
-      ],
-      "participantIds": [
-        "liu-shan"
-      ],
       "id": "idiom-le-bu-si-shu",
       "name": "乐不思蜀",
       "meaning": "比喻乐而忘返，或安于现状不想回去。",
@@ -1782,12 +1381,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "wei"
-      ],
-      "participantIds": [
-        "cao-mao"
-      ],
       "id": "idiom-sima-zhao-zhi-xin-luren-jiezhi",
       "name": "司马昭之心，路人皆知",
       "meaning": "比喻人的野心或意图非常明显，众人都已看出。",
@@ -1804,12 +1397,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "shu"
-      ],
-      "participantIds": [
-        "zhuge-liang"
-      ],
       "id": "idiom-ju-gong-jin-cui",
       "name": "鞠躬尽瘁",
       "meaning": "指恭敬谨慎，竭尽心力。",
@@ -1826,12 +1413,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhou-wu"
-      ],
-      "participantIds": [
-        "wu-zetian"
-      ],
       "id": "idiom-qing-jun-ru-weng",
       "name": "请君入瓮",
       "meaning": "比喻用某人整治别人的办法来整治他自己。",
@@ -1847,12 +1428,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "zhang-sengyou"
-      ],
       "id": "idiom-hua-long-dian-jing",
       "name": "画龙点睛",
       "meaning": "比喻说话或写作在关键处点明要旨，使内容生动传神。",
@@ -1869,12 +1444,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "di-renjie"
-      ],
       "id": "idiom-tao-li-man-tian-xia",
       "name": "桃李满天下",
       "meaning": "比喻学生或门生很多，遍布各地。",
@@ -1890,12 +1459,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-south"
-      ],
-      "participantIds": [
-        "yue-fei"
-      ],
       "id": "idiom-jing-zhong-bao-guo",
       "name": "精忠报国",
       "meaning": "竭尽忠诚，报效国家。",
@@ -1911,13 +1474,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-north"
-      ],
-      "participantIds": [
-        "cheng-yi",
-        "yang-shi"
-      ],
       "id": "idiom-cheng-men-li-xue",
       "name": "程门立雪",
       "meaning": "比喻尊敬师长，虔诚求学。",
@@ -1933,12 +1489,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-north"
-      ],
-      "participantIds": [
-        "zhao-heng"
-      ],
       "id": "idiom-kai-juan-you-yi",
       "name": "开卷有益",
       "meaning": "读书就有好处。",
@@ -1954,12 +1504,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "ming"
-      ],
-      "participantIds": [
-        "wang-yangming"
-      ],
       "id": "idiom-zhi-xing-he-yi",
       "name": "知行合一",
       "meaning": "认识事物的道理与在现实中运用此道理，是密不可分的。",
@@ -1975,12 +1519,6 @@
     {
       "kind": "idiom",
       "timeMode": "point",
-      "dynastyIds": [
-        "ming"
-      ],
-      "participantIds": [
-        "hai-rui"
-      ],
       "id": "idiom-gang-zheng-bu-a",
       "name": "刚正不阿",
       "meaning": "刚强正直，不逢迎，无偏私。",
@@ -1995,65 +1533,8 @@
       "atAbs": 18791
     }
   ],
-  "relations": [
-    {
-      "id": "rel-idiom-feng-lang-ju-xu-mobei",
-      "fromRef": "event:idiom-feng-lang-ju-xu",
-      "toRef": "event:mobei-battle",
-      "kind": "other"
-    },
-    {
-      "id": "rel-idiom-daolu-guoren",
-      "fromRef": "event:idiom-dao-lu-yi-mu",
-      "toRef": "event:guoren-riot",
-      "kind": "other"
-    },
-    {
-      "id": "rel-idiom-tuibi-chengpu",
-      "fromRef": "event:idiom-tui-bi-san-she",
-      "toRef": "event:chengpu",
-      "kind": "other"
-    },
-    {
-      "id": "rel-idiom-weiei-guiling",
-      "fromRef": "event:idiom-wei-wei-jiu-zhao",
-      "toRef": "event:guiling-battle",
-      "kind": "other"
-    },
-    {
-      "id": "rel-idiom-zhishang-changping",
-      "fromRef": "event:idiom-zhi-shang-tan-bing",
-      "toRef": "event:changping-battle",
-      "kind": "other"
-    },
-    {
-      "id": "rel-idiom-zhuzhou-bigan",
-      "fromRef": "event:idiom-zhu-zhou-wei-nue",
-      "toRef": "event:bigan-killed",
-      "kind": "other"
-    },
-    {
-      "id": "rel-idiom-caoyuan-chibi",
-      "fromRef": "event:idiom-cao-chuan-jiejian",
-      "toRef": "event:chibi",
-      "kind": "other"
-    },
-    {
-      "id": "rel-idiom-wangmei-chibi",
-      "fromRef": "event:idiom-wang-mei-zhi-ke",
-      "toRef": "event:chibi",
-      "kind": "other"
-    },
-    {
-      "id": "rel-idiom-jingzhong-yancheng",
-      "fromRef": "event:idiom-jing-zhong-bao-guo",
-      "toRef": "event:yancheng-battle",
-      "kind": "other"
-    }
-  ],
-  "supplementalEventDynasties": [],
-  "supplementalEventParticipants": [],
-  "preSql": "DELETE FROM event_dynasties WHERE event_id IN ('idiom-zhu-zhou-wei-nue', 'idiom-jiu-chi-rou-lin', 'idiom-ai-wu-ji-wu', 'idiom-zhou-gong-tu-bu', 'idiom-dao-lu-yi-mu', 'idiom-yin-jian-bu-yuan', 'idiom-zhai-tai-gao-zhu', 'idiom-yi-gu-zuo-qi', 'idiom-lao-ma-shi-tu', 'idiom-chun-wang-chi-han', 'idiom-jia-dao-fa-guo', 'idiom-tui-bi-san-she', 'idiom-wen-ding-zhong-yuan', 'idiom-bian-chang-mo-ji', 'idiom-tong-zhou-gong-ji', 'idiom-fen-dao-yang-biao', 'idiom-duo-xing-bu-yi-bi-zi-bi', 'idiom-ye-gong-hao-long', 'idiom-er-tao-sha-san-shi', 'idiom-wo-xin-chang-dan', 'idiom-wei-wei-jiu-zhao', 'idiom-yi-ming-jing-ren', 'idiom-hui-ji-ji-yi', 'idiom-meng-mu-san-qian', 'idiom-lan-yu-chong-shu', 'idiom-san-ren-cheng-hu', 'idiom-dong-shi-xiao-pin', 'idiom-xiang-ru-yi-mo', 'idiom-dui-niu-tan-qin', 'idiom-jing-di-zhi-wa', 'idiom-zhao-san-mu-si', 'idiom-nan-yuan-bei-zhe', 'idiom-qi-ren-you-tian', 'idiom-ke-zhou-qiu-jian', 'idiom-shi-fu-yi-lin', 'idiom-wu-shi-bu-xiao-bai-bu', 'idiom-jiao-tu-san-ku', 'idiom-wang-yang-bu-lao', 'idiom-handan-xue-bu', 'idiom-ya-miao-zhu-zhang', 'idiom-zheng-ren-mai-lu', 'idiom-zi-xiang-mao-dun', 'idiom-shou-zhu-dai-tu', 'idiom-mai-du-huan-zhu', 'idiom-hua-she-tian-zu', 'idiom-hu-jia-hu-wei', 'idiom-yu-bang-xiang-zheng', 'idiom-tang-lang-bu-chan', 'idiom-zhi-shang-tan-bing', 'idiom-hu-fu-qi-she', 'idiom-wan-bi-gui-zhao', 'idiom-fu-jing-qing-zui', 'idiom-mao-sui-zi-jian', 'idiom-qian-jin-mai-gu', 'idiom-jing-gong-zhi-niao', 'idiom-feng-lang-ju-xu', 'idiom-zhi-lu-wei-ma', 'idiom-tu-qiong-bi-xian', 'idiom-po-fu-chen-zhou', 'idiom-cheng-ye-xiao-he', 'idiom-duo-duo-yi-shan', 'idiom-bei-shui-yi-zhan', 'idiom-san-gu-mao-lu', 'idiom-cao-chuan-jiejian', 'idiom-wang-mei-zhi-ke', 'idiom-le-bu-si-shu', 'idiom-sima-zhao-zhi-xin-luren-jiezhi', 'idiom-ju-gong-jin-cui', 'idiom-qing-jun-ru-weng', 'idiom-hua-long-dian-jing', 'idiom-tao-li-man-tian-xia', 'idiom-jing-zhong-bao-guo', 'idiom-cheng-men-li-xue', 'idiom-kai-juan-you-yi', 'idiom-zhi-xing-he-yi', 'idiom-gang-zheng-bu-a');\nDELETE FROM event_participants WHERE event_id IN ('idiom-zhu-zhou-wei-nue', 'idiom-jiu-chi-rou-lin', 'idiom-ai-wu-ji-wu', 'idiom-zhou-gong-tu-bu', 'idiom-dao-lu-yi-mu', 'idiom-yin-jian-bu-yuan', 'idiom-zhai-tai-gao-zhu', 'idiom-yi-gu-zuo-qi', 'idiom-lao-ma-shi-tu', 'idiom-chun-wang-chi-han', 'idiom-jia-dao-fa-guo', 'idiom-tui-bi-san-she', 'idiom-wen-ding-zhong-yuan', 'idiom-bian-chang-mo-ji', 'idiom-tong-zhou-gong-ji', 'idiom-fen-dao-yang-biao', 'idiom-duo-xing-bu-yi-bi-zi-bi', 'idiom-ye-gong-hao-long', 'idiom-er-tao-sha-san-shi', 'idiom-wo-xin-chang-dan', 'idiom-wei-wei-jiu-zhao', 'idiom-yi-ming-jing-ren', 'idiom-hui-ji-ji-yi', 'idiom-meng-mu-san-qian', 'idiom-lan-yu-chong-shu', 'idiom-san-ren-cheng-hu', 'idiom-dong-shi-xiao-pin', 'idiom-xiang-ru-yi-mo', 'idiom-dui-niu-tan-qin', 'idiom-jing-di-zhi-wa', 'idiom-zhao-san-mu-si', 'idiom-nan-yuan-bei-zhe', 'idiom-qi-ren-you-tian', 'idiom-ke-zhou-qiu-jian', 'idiom-shi-fu-yi-lin', 'idiom-wu-shi-bu-xiao-bai-bu', 'idiom-jiao-tu-san-ku', 'idiom-wang-yang-bu-lao', 'idiom-handan-xue-bu', 'idiom-ya-miao-zhu-zhang', 'idiom-zheng-ren-mai-lu', 'idiom-zi-xiang-mao-dun', 'idiom-shou-zhu-dai-tu', 'idiom-mai-du-huan-zhu', 'idiom-hua-she-tian-zu', 'idiom-hu-jia-hu-wei', 'idiom-yu-bang-xiang-zheng', 'idiom-tang-lang-bu-chan', 'idiom-zhi-shang-tan-bing', 'idiom-hu-fu-qi-she', 'idiom-wan-bi-gui-zhao', 'idiom-fu-jing-qing-zui', 'idiom-mao-sui-zi-jian', 'idiom-qian-jin-mai-gu', 'idiom-jing-gong-zhi-niao', 'idiom-feng-lang-ju-xu', 'idiom-zhi-lu-wei-ma', 'idiom-tu-qiong-bi-xian', 'idiom-po-fu-chen-zhou', 'idiom-cheng-ye-xiao-he', 'idiom-duo-duo-yi-shan', 'idiom-bei-shui-yi-zhan', 'idiom-san-gu-mao-lu', 'idiom-cao-chuan-jiejian', 'idiom-wang-mei-zhi-ke', 'idiom-le-bu-si-shu', 'idiom-sima-zhao-zhi-xin-luren-jiezhi', 'idiom-ju-gong-jin-cui', 'idiom-qing-jun-ru-weng', 'idiom-hua-long-dian-jing', 'idiom-tao-li-man-tian-xia', 'idiom-jing-zhong-bao-guo', 'idiom-cheng-men-li-xue', 'idiom-kai-juan-you-yi', 'idiom-zhi-xing-he-yi', 'idiom-gang-zheng-bu-a');\nDELETE FROM relations WHERE from_type = 'event' AND from_id = 'idiom-feng-huo-xi-zhu-hou';\nDELETE FROM event_dynasties WHERE event_id = 'idiom-feng-huo-xi-zhu-hou';\nDELETE FROM event_participants WHERE event_id = 'idiom-feng-huo-xi-zhu-hou';\nDELETE FROM events WHERE id = 'idiom-feng-huo-xi-zhu-hou';\nDELETE FROM relations WHERE (from_type = 'event' AND from_id = 'idiom-fen-shen-sui-gu') OR (to_type = 'event' AND to_id = 'idiom-fen-shen-sui-gu');\nDELETE FROM event_dynasties WHERE event_id = 'idiom-fen-shen-sui-gu';\nDELETE FROM event_participants WHERE event_id = 'idiom-fen-shen-sui-gu';\nDELETE FROM events WHERE id = 'idiom-fen-shen-sui-gu';",
+  "relations": [],
+  "preSql": "DELETE FROM events WHERE id = 'idiom-feng-huo-xi-zhu-hou';\nDELETE FROM events WHERE id = 'idiom-fen-shen-sui-gu';",
   "manifest": {
     "slug": "idioms",
     "title": "成语典故（point 事件）",
@@ -2073,7 +1554,7 @@
       "dynasties": 0,
       "reigns": 0,
       "events": 76,
-      "relations": 9,
+      "relations": 0,
       "capitals": 0
     },
     "sources": [
@@ -2309,7 +1790,7 @@
     "notes": [
       "成语以 kind=idiom 的 point 事件入库，仅在时间轴显示时刻 marker；日期 confidence 按日期处理 Skill 执行。",
       "烽火戏诸侯并入夏商周包的犬戎之祸事件说明；该传统叙事史实有争议，不再单独绘制时间轴事件。",
-      "meaning 存释义，summary 存典故；王朝经 event_dynasties，人物经 event_participants（仅 person_id）。",
+      "meaning 存释义，summary 存典故；王朝和人物普通关联由 entity-associations 集中包维护。",
       "participantIds 必须引用 persons.id，禁止写 reign id 或在 relations 中挂 reign。",
       "有明确史事者经 relations 指向已有 battle/politics 事件（event→event）。",
       "典故国君引用各时期包已入库的 person id（如 gou-jian、qi-r25）；蔺相如、荆轲等名臣由本包 upsert。",
@@ -2325,7 +1806,8 @@
       "补录假道伐虢，按《左传·僖公五年》系于前655年，并关联晋献公与虢公丑；西虢王朝及虢公丑人物由chunqiu-zhanguo包拥有，本包仅拥有典故事件及其关联行。",
       "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
       "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
-      "2026-10-02将原属本包的西虢王朝、人物、在位、上阳都城和待考人物关系迁入chunqiu-zhanguo；历史内容及ID保持不变，假道伐虢事件继续引用原王朝和人物ID。"
+      "2026-10-02将原属本包的西虢王朝、人物、在位、上阳都城和待考人物关系迁入chunqiu-zhanguo；历史内容及ID保持不变，假道伐虢事件继续引用原王朝和人物ID。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   },
   "postSql": "SELECT rebuild_person_search_terms();"

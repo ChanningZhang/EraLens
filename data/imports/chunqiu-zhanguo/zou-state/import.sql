@@ -194,7 +194,7 @@ WITH stale AS (
 DELETE FROM persons p
 WHERE p.id IN (SELECT DISTINCT person_id FROM stale)
   AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)
-  AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = p.id)
+  AND NOT EXISTS (SELECT 1 FROM entity_associations a WHERE (a.a_type = 'person' AND a.a_id = p.id) OR (a.b_type = 'person' AND a.b_id = p.id))
   AND NOT EXISTS (
     SELECT 1 FROM relations rel
     WHERE (rel.from_type = 'person' AND rel.from_id = p.id)

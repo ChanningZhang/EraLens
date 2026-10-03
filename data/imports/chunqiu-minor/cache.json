@@ -3709,15 +3709,6 @@
     {
       "kind": "politics",
       "timeMode": "point",
-      "dynastyIds": [
-        "zhou-guo-west",
-        "zhou-guo-east",
-        "zhou-east"
-      ],
-      "participantIds": [
-        "zhou-guo-chao",
-        "zhou-guo-gen"
-      ],
       "id": "zhou-guo-split",
       "name": "东西周国分立",
       "dateNote": "周威公卒，前367年；赵成侯、韩懿侯分周为二",
@@ -3907,18 +3898,6 @@
       "kind": "succession"
     },
     {
-      "id": "rel-zhou-guo-split-chao",
-      "fromRef": "event:zhou-guo-split",
-      "toRef": "person:zhou-guo-chao",
-      "kind": "politics"
-    },
-    {
-      "id": "rel-zhou-guo-split-gen",
-      "fromRef": "event:zhou-guo-split",
-      "toRef": "person:zhou-guo-gen",
-      "kind": "politics"
-    },
-    {
       "id": "rel-teng-r0-teng-r20-succession",
       "fromRef": "person:teng-r0",
       "toRef": "person:teng-r20",
@@ -4069,42 +4048,7 @@
       "kind": "succession"
     }
   ],
-  "supplementalEventDynasties": [
-    {
-      "eventId": "chunqiu",
-      "dynastyId": "xue-chunqiu"
-    },
-    {
-      "eventId": "chunqiu",
-      "dynastyId": "teng-chunqiu"
-    },
-    {
-      "eventId": "chunqiu",
-      "dynastyId": "qi-state-chunqiu"
-    },
-    {
-      "eventId": "chunqiu",
-      "dynastyId": "ju-chunqiu"
-    },
-    {
-      "eventId": "zhanguo",
-      "dynastyId": "dai-warring"
-    },
-    {
-      "eventId": "zhanguo",
-      "dynastyId": "jiaodong-warring"
-    },
-    {
-      "eventId": "zhanguo",
-      "dynastyId": "zhou-guo-west"
-    },
-    {
-      "eventId": "zhanguo",
-      "dynastyId": "zhou-guo-east"
-    }
-  ],
-  "supplementalEventParticipants": [],
-  "preSql": "DELETE FROM reigns WHERE id = 'reign-missing-zhou-guo-west--365';\nDELETE FROM event_participants WHERE event_id = 'dai-founded';\nDELETE FROM event_dynasties WHERE event_id = 'dai-founded';\nDELETE FROM events WHERE id = 'dai-founded';\nDELETE FROM relations WHERE id = 'rel-dai-founded-zhao-jia';\nDELETE FROM reigns WHERE id IN (\n  'reign-xue-r0-xue-chunqiu',\n  'reign-teng-r0-teng-chunqiu',\n  'reign-teng-r1-teng-chunqiu',\n  'reign-teng-r7-teng-chunqiu',\n  'reign-qi-state-r0-qi-state-chunqiu',\n  'reign-ju-r0-ju-chunqiu',\n  'reign-ju-r6-ju-chunqiu'\n);\nDELETE FROM persons WHERE id IN ('xue-r0','qi-state-r0','ju-r0','zhou-guo-sijun')\n  AND id NOT IN (SELECT person_id FROM reigns);\nDELETE FROM reigns WHERE id = 'reign-missing-teng-chunqiu--484';\nDELETE FROM reigns WHERE id = 'reign-teng-r32-teng-chunqiu';\nDELETE FROM persons WHERE id = 'teng-r32' AND id NOT IN (SELECT person_id FROM reigns);\nDELETE FROM reigns WHERE id = 'reign-zhou-guo-sijun-zhou-guo-east';\n-- 滕国世系复核：清理撤下的虚拟在位段与错误继位关系\nDELETE FROM relations WHERE id IN (\n  'rel-teng-r24-teng-r25-succession',\n  'rel-teng-r25-teng-r26-succession',\n  'rel-teng-r26-teng-r27-succession',\n  'rel-teng-r27-teng-r28-succession',\n  'rel-teng-r28-teng-r29-succession',\n  'rel-teng-r29-teng-r30-succession',\n  'rel-teng-r30-teng-r1-succession',\n  'rel-teng-r9-teng-r33-succession',\n  'rel-teng-r31-teng-r2-succession'\n);\nDELETE FROM reigns WHERE id IN (\n  'reign-teng-r20-teng-chunqiu',\n  'reign-teng-r21-teng-chunqiu',\n  'reign-teng-r22-teng-chunqiu',\n  'reign-teng-r23-teng-chunqiu',\n  'reign-teng-r24-teng-chunqiu',\n  'reign-teng-r25-teng-chunqiu',\n  'reign-teng-r26-teng-chunqiu',\n  'reign-teng-r27-teng-chunqiu',\n  'reign-teng-r28-teng-chunqiu',\n  'reign-teng-r29-teng-chunqiu',\n  'reign-teng-r30-teng-chunqiu'\n);\nDELETE FROM persons WHERE id IN (\n  'teng-r25',\n  'teng-r26',\n  'teng-r27',\n  'teng-r28',\n  'teng-r29',\n  'teng-r30'\n) AND id NOT IN (SELECT person_id FROM reigns);",
+  "preSql": "DELETE FROM reigns WHERE id = 'reign-missing-zhou-guo-west--365';\nDELETE FROM events WHERE id = 'dai-founded';\nDELETE FROM relations WHERE id = 'rel-dai-founded-zhao-jia';\nDELETE FROM reigns WHERE id IN (\n  'reign-xue-r0-xue-chunqiu',\n  'reign-teng-r0-teng-chunqiu',\n  'reign-teng-r1-teng-chunqiu',\n  'reign-teng-r7-teng-chunqiu',\n  'reign-qi-state-r0-qi-state-chunqiu',\n  'reign-ju-r0-ju-chunqiu',\n  'reign-ju-r6-ju-chunqiu'\n);\nDELETE FROM persons WHERE id IN ('xue-r0','qi-state-r0','ju-r0','zhou-guo-sijun')\n  AND id NOT IN (SELECT person_id FROM reigns);\nDELETE FROM reigns WHERE id = 'reign-missing-teng-chunqiu--484';\nDELETE FROM reigns WHERE id = 'reign-teng-r32-teng-chunqiu';\nDELETE FROM persons WHERE id = 'teng-r32' AND id NOT IN (SELECT person_id FROM reigns);\nDELETE FROM reigns WHERE id = 'reign-zhou-guo-sijun-zhou-guo-east';\n-- 滕国世系复核：清理撤下的虚拟在位段与错误继位关系\nDELETE FROM relations WHERE id IN (\n  'rel-teng-r24-teng-r25-succession',\n  'rel-teng-r25-teng-r26-succession',\n  'rel-teng-r26-teng-r27-succession',\n  'rel-teng-r27-teng-r28-succession',\n  'rel-teng-r28-teng-r29-succession',\n  'rel-teng-r29-teng-r30-succession',\n  'rel-teng-r30-teng-r1-succession',\n  'rel-teng-r9-teng-r33-succession',\n  'rel-teng-r31-teng-r2-succession'\n);\nDELETE FROM reigns WHERE id IN (\n  'reign-teng-r20-teng-chunqiu',\n  'reign-teng-r21-teng-chunqiu',\n  'reign-teng-r22-teng-chunqiu',\n  'reign-teng-r23-teng-chunqiu',\n  'reign-teng-r24-teng-chunqiu',\n  'reign-teng-r25-teng-chunqiu',\n  'reign-teng-r26-teng-chunqiu',\n  'reign-teng-r27-teng-chunqiu',\n  'reign-teng-r28-teng-chunqiu',\n  'reign-teng-r29-teng-chunqiu',\n  'reign-teng-r30-teng-chunqiu'\n);\nDELETE FROM persons WHERE id IN (\n  'teng-r25',\n  'teng-r26',\n  'teng-r27',\n  'teng-r28',\n  'teng-r29',\n  'teng-r30'\n) AND id NOT IN (SELECT person_id FROM reigns);",
   "manifest": {
     "slug": "chunqiu-minor",
     "title": "春秋小国与战国残余",
@@ -4122,8 +4066,7 @@
       "dynasties": 8,
       "reigns": 65,
       "events": 1,
-      "relations": 56,
-      "supplementalEventDynastyLinks": 8
+      "relations": 54
     },
     "sources": [
       {
@@ -4243,7 +4186,8 @@
       "2026-10-02人物概述清理：概述仅保留历史事实与必要史料背景，系统建模、年表选择、定位及收录说明移入本说明。以下原文仅留作处理记录，不作为新增史实依据：system-missing-ruler 原概述：EraLens 系统保留人物，仅用于标记经考证确认的国君资料缺失区间。；qi-state-r1 原概述：杞武公，夏后姒姓后裔，前750–前704年在位。本包可考杞君始于此，在位四十七年。",
       "2026-10-02：田巿简介原文将田儋战死、田假被立两事并列，未说明田巿与田假的王位更替关系，造成叙述跳跃。依《史记·田儋列传》补明田假被田荣驱逐后，田荣立田儋之子田巿为齐王，并补入田巿改封胶东及被田荣攻杀的后续；人物来源链接改为该列传。",
       "宋灭滕日期与命运线复核（2026-10-02）：采用张志鹏《滕国新考》所考前296年，王朝末端及末段史料缺在位末端统一标approximate_year，撤除原王朝month和在位year所暗示的确定精度；12月是年桶占位。cross-dynasty-fate包唯一维护末段史料缺→宋康王的conquered关系，旧captured无可靠末君被俘依据予以替换，不据灭国推断末君结局。",
-      "相邻竖线／波浪线修复（2026-10-02）：文公终点沿用梁涛、张志鹏考证框架的约前316年，并与滕文公条目年表对照。文公之后末段史料缺的-315年起端采用同一近似锚点，confidence从interpolated_by_other改为approximate_year，统一交接两侧的竖线与“约”展示；其-296年终端仍按宋灭滕近似年代处理。归属沿用共享timelineOwnership/timelineIntervals规则，未改年份、占位月份或区间几何；不据此确认滕公丘或其他失名君主的身份、人数与逐任年代。"
+      "相邻竖线／波浪线修复（2026-10-02）：文公终点沿用梁涛、张志鹏考证框架的约前316年，并与滕文公条目年表对照。文公之后末段史料缺的-315年起端采用同一近似锚点，confidence从interpolated_by_other改为approximate_year，统一交接两侧的竖线与“约”展示；其-296年终端仍按宋灭滕近似年代处理。归属沿用共享timelineOwnership/timelineIntervals规则，未改年份、占位月份或区间几何；不据此确认滕公丘或其他失名君主的身份、人数与逐任年代。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   }
 }

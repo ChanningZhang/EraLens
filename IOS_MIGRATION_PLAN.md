@@ -201,8 +201,7 @@ Test                 -> InMemoryTimelineRepository
 - `reigns`
 - `events`
 - `event_locations`
-- `event_dynasties`
-- `event_participants`
+- `entity_associations`（普通无向关联；四字段复合主键）
 - `relations`
 - `dynasty_lane_groups`
 - `dynasty_capitals`

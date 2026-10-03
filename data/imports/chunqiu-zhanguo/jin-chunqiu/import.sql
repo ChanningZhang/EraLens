@@ -270,18 +270,6 @@ ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, person_id = EXC
 INSERT INTO events (id, name, kind, time_mode, at_confidence, start_confidence, end_confidence, date_note, at_year, at_month, at_day, at_abs, start_year, start_month, start_day, start_abs, end_year, end_month, end_day, end_abs, summary, meaning, content) VALUES ('quwo-replaces-yi', '曲沃代翼', 'politics', 'point', 'year', NULL, NULL, '鲁庄公十六年，前678年。《左传·庄公十六年》记王使虢公命曲沃伯以一军为晋侯；《史记·晋世家》将灭晋侯缗系于前679年，故以受命并有晋地的前678年作为事件代表时点。', -678, 12, NULL, -8113, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '曲沃武公称（姬姓，名称）与晋侯缗所代表的翼城公室长期争夺晋国君位。前678年，曲沃武公灭晋侯缗，周王命虢公授曲沃伯为晋侯，曲沃由此取代翼城公室并统一晋地，结束历时数代的曲沃与翼之争；武公后来称晋武公。', NULL, NULL)
 ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, at_confidence = EXCLUDED.at_confidence, start_confidence = EXCLUDED.start_confidence, end_confidence = EXCLUDED.end_confidence, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning, content = EXCLUDED.content;
 
--- event_dynasties
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('quwo-replaces-yi', 'jin-chunqiu') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('xie-wang-killed', 'jin-chunqiu') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('chengpu', 'jin-chunqiu') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('sanjia-fenjin', 'jin-chunqiu') ON CONFLICT DO NOTHING;
-INSERT INTO event_dynasties (event_id, dynasty_id) VALUES ('chunqiu', 'jin-chunqiu') ON CONFLICT DO NOTHING;
-
--- event_participants
-INSERT INTO event_participants (event_id, person_id) VALUES ('quwo-replaces-yi', 'jin-r17') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('quwo-replaces-yi', 'jin-r19') ON CONFLICT DO NOTHING;
-INSERT INTO event_participants (event_id, person_id) VALUES ('xie-wang-killed', 'jin-r10') ON CONFLICT DO NOTHING;
-
 -- Remove stale reigns from managed dynasties (superseded ids from older imports)
 WITH stale AS (
   DELETE FROM reigns
@@ -291,7 +279,7 @@ WITH stale AS (
 DELETE FROM persons p
 WHERE p.id IN (SELECT DISTINCT person_id FROM stale)
   AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)
-  AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = p.id)
+  AND NOT EXISTS (SELECT 1 FROM entity_associations a WHERE (a.a_type = 'person' AND a.a_id = p.id) OR (a.b_type = 'person' AND a.b_id = p.id))
   AND NOT EXISTS (
     SELECT 1 FROM relations rel
     WHERE (rel.from_type = 'person' AND rel.from_id = p.id)

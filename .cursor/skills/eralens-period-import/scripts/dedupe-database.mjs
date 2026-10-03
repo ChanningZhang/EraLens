@@ -145,7 +145,7 @@ function main() {
     ? `DELETE FROM persons
        WHERE id IN (${uniquePersonIds})
          AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = persons.id)
-         AND NOT EXISTS (SELECT 1 FROM event_participants ep WHERE ep.person_id = persons.id)
+         AND NOT EXISTS (SELECT 1 FROM entity_associations a WHERE (a.a_type = 'person' AND a.a_id = persons.id) OR (a.b_type = 'person' AND a.b_id = persons.id))
          AND NOT EXISTS (SELECT 1 FROM relations rel WHERE rel.from_id = persons.id OR rel.to_id = persons.id);`
     : "";
 

@@ -10,6 +10,14 @@
 - `data/imports/generate.mjs`：唯一生成入口；只读取指定包缓存并调用共用 SQL 序列化器。
 - `import.sql`、`manifest.json`：由统一生成器从缓存生成，不手工维护。`import.sql` 用于导入 PostgreSQL；移动端 SQLite 由 PostgreSQL 导出，不在导入包内生成 SQLite SQL。
 
+## 普通关联与有向关系
+
+普通关联唯一维护在 `entity-associations/cache.json.associations`：`{ aRef, bRef }`，端点限定 `dynasty:` / `event:` / `person:`，按完整引用的 UTF-8 字节顺序排列；同一对实体只存一条，不保存方向、kind、日期或独立 ID。各历史包不写 associations，也不写事件 dynastyIds/participantIds 或 supplemental 连接数组。
+
+`relations` 只保存人物→人物的 succession，以及 killed/surrender/abdication/captured/conquered 命运关系。事件与人物、王朝、其他事件的普通关联都进入集中包；在位归属与地理映射继续保留专用结构。运行时事件的 dynastyIds/participantIds 由关联表投影，详情统一双向展示。
+
+集中包的 manifest.sources/notes/counts 维护关联依据与数量，所有实体导入完成后才写关联。关联移除时，在集中包 preSql 中用 a_type/a_id/b_type/b_id 四字段精确清理旧行；实体删除自动级联清关联。其他包不能直接维护关联表。生成前审计拒绝旧字段、重复/非法端点与数量不符；生成器不补算 manifest 数量。
+
 ## 包间行所有权
 
 每条数据库行只能由一个导入包拥有。同一 `id` 的人物、王朝、在位、事件等主记录不得在多个缓存中重复；关系和关联表按数据库主键/唯一键去重。补充包可以引用其他包的行，但不得再次写入同一关联行，也不得通过 `updates` 覆盖其他包的记录。需要补充字段时，直接编辑该行所属包的 `cache.json`。
@@ -34,7 +42,9 @@ node data/imports/generate.mjs --all
 
 单包变更流程：编辑 `cache.json`（含 `manifest.sources` / `manifest.notes` / `manifest.counts`）→ `node data/imports/generate.mjs {slug}` → 校验对应 `import.sql` → `apply-sql.sh`。全量流程：先运行 `node data/imports/generate.mjs --all`，再运行 `pnpm db:import`。`db:import` 不会替缓存生成 SQL，并会清空后重载本地 PostgreSQL，再构建移动端 SQLite。
 
-## 地理数据（schema 3 / contract 4）
+API 与移动 SQLite 的契约对比使用 `pnpm data:mobile:contract`；附加 `--all-entities` 可检查全部王朝、人物、事件与在位详情。
+
+## 地理数据（schema 4 / contract 5）
 
 `locations/cache.json` 唯一维护空间地点，历史包的 `locationMappings` 显式引用地点与 dynasty/reign/event 实体。名称、说明、来源、空间精度和都城完整时段属于 mapping；事件日期沿用所属事件。运行时和生成器都不推断君主都城关联。地点 ID 修订字段后仍保持不变。
 

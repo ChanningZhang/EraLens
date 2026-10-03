@@ -2247,8 +2247,6 @@
       "eventId": null
     }
   ],
-  "supplementalEventDynasties": [],
-  "supplementalEventParticipants": [],
   "preSql": "DELETE FROM relations WHERE id = 'rel-liu-xuan-liu-panzi-killed';\nDELETE FROM relations WHERE id = 'rel-wang-shichong-li-shimin-surrender';\nDELETE FROM relations WHERE id = 'rel-ji-yan-qin-r27-killed';\nDELETE FROM relations WHERE id = 'rel-murong-yong-fu-jian-ming-killed';\nDELETE FROM relations WHERE id = 'rel-yang-nandang-fu-jian-ming-surrender';\nDELETE FROM relations WHERE id = 'rel-puyi-duan-qirui-surrender';\nDELETE FROM relations WHERE id = 'rel-yang-guang-li-yuan-killed';\nDELETE FROM relations WHERE id IN (\n  'rel-zhou-guo-gen-qin-r29-killed',\n  'rel-xue-r4-qi-r35-captured',\n  'rel-teng-r6-yue-r8-captured',\n  'rel-teng-r6-song-r32-captured',\n  'rel-missing-teng-chunqiu-yue-r8-captured',\n  'rel-missing-teng-chunqiu-song-r33-captured',\n  'rel-ju-r7-chu-r30-captured',\n  'rel-qi-state-r6-qi-r31-captured',\n  'rel-zhongshan-r6-zhao-r5-captured',\n  'rel-yelang-xin-liu-che-killed',\n  'rel-li-shi-huan-wen-surrender',\n  'rel-murong-chao-liu-yu-jin-captured',\n  'rel-tufa-rutan-liu-yu-jin-surrender',\n  'rel-yao-hong-liu-yu-jin-killed',\n  'rel-qifu-gan-yao-xing-killed',\n  'rel-yuan-shan-jian-yuwen-jue-abdication',\n  'rel-gao-jichong-zhao-kuangyi-surrender',\n  'rel-meng-chang-zhao-kuangyi-surrender',\n  'rel-liu-chang-zhao-kuangyi-surrender',\n  'rel-li-yu-nantang-zhao-kuangyi-captured',\n  'rel-duan-xingzhi-hu-bilie-surrender',\n  'rel-hong-tianguifu-zeng-guofan-captured',\n  'rel-sima-ye-liu-yao-jin-surrender',\n  'rel-shi-hu-ran-min-killed'\n);",
   "manifest": {
     "slug": "cross-dynasty-fate",
@@ -2267,7 +2265,7 @@
       "dynasties": 0,
       "reigns": 0,
       "events": 0,
-      "relations": 147
+      "relations": 148
     },
     "sources": [
       {

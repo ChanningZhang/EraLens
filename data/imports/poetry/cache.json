@@ -347,10 +347,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "qin"
-      ],
-      "participantIds": [],
       "id": "poetry-wuyi",
       "name": "无衣",
       "at": {
@@ -367,13 +363,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "chu-west",
-        "han-west"
-      ],
-      "participantIds": [
-        "xiang-yu"
-      ],
       "id": "poetry-gaixia-ge",
       "name": "垓下歌",
       "at": {
@@ -390,12 +379,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "han-west"
-      ],
-      "participantIds": [
-        "liu-bang"
-      ],
       "id": "poetry-da-feng-ge",
       "name": "大风歌",
       "at": {
@@ -412,12 +395,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "wei"
-      ],
-      "participantIds": [
-        "cao-cao"
-      ],
       "id": "poetry-duan-ge-xing",
       "name": "短歌行",
       "at": {
@@ -434,12 +411,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "wei"
-      ],
-      "participantIds": [
-        "cao-cao"
-      ],
       "id": "poetry-guan-cang-hai",
       "name": "观沧海",
       "at": {
@@ -456,12 +427,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "wei"
-      ],
-      "participantIds": [
-        "cao-cao"
-      ],
       "id": "poetry-gui-sui-shou",
       "name": "龟虽寿",
       "at": {
@@ -478,12 +443,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "jin-east"
-      ],
-      "participantIds": [
-        "tao-yuanming"
-      ],
       "id": "poetry-yin-jiu",
       "name": "饮酒》其五",
       "at": {
@@ -500,10 +459,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "wei-north"
-      ],
-      "participantIds": [],
       "id": "poetry-mulan",
       "name": "木兰诗",
       "at": {
@@ -520,11 +475,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "wei-north",
-        "qi-bei"
-      ],
-      "participantIds": [],
       "id": "poetry-chile-ge",
       "name": "敕勒歌",
       "at": {
@@ -541,12 +491,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "meng-hao-ran"
-      ],
       "id": "poetry-chun-xiao",
       "name": "春晓",
       "at": {
@@ -563,12 +507,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "wang-zhi-huan"
-      ],
       "id": "poetry-dengguanquelou",
       "name": "登鹳雀楼",
       "at": {
@@ -585,12 +523,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "wang-zhi-huan"
-      ],
       "id": "poetry-liangzhou",
       "name": "凉州词",
       "at": {
@@ -607,12 +539,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "wang-chang-ling"
-      ],
       "id": "poetry-chusai-wang-changling",
       "name": "出塞",
       "at": {
@@ -629,12 +555,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "wang-chang-ling"
-      ],
       "id": "poetry-congjunxing",
       "name": "从军行",
       "at": {
@@ -651,12 +571,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "cui-hao"
-      ],
       "id": "poetry-huanghelou",
       "name": "黄鹤楼",
       "at": {
@@ -673,12 +587,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "du-fu"
-      ],
       "id": "poetry-wangyue",
       "name": "望岳",
       "at": {
@@ -695,12 +603,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "li-bai"
-      ],
       "id": "poetry-shudaonan",
       "name": "蜀道难",
       "at": {
@@ -717,12 +619,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "li-bai"
-      ],
       "id": "poetry-jingyesi",
       "name": "静夜思",
       "at": {
@@ -739,12 +635,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "li-bai"
-      ],
       "id": "poetry-jiangjinjiu",
       "name": "将进酒",
       "at": {
@@ -761,12 +651,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "li-bai"
-      ],
       "id": "poetry-zaofabaidicheng",
       "name": "早发白帝城",
       "at": {
@@ -783,12 +667,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "du-fu"
-      ],
       "id": "poetry-chunwang",
       "name": "春望",
       "at": {
@@ -805,12 +683,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "du-fu"
-      ],
       "id": "poetry-shuxiang",
       "name": "蜀相",
       "at": {
@@ -827,12 +699,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "du-fu"
-      ],
       "id": "poetry-wenguanjun",
       "name": "闻官军收河南河北",
       "at": {
@@ -849,12 +715,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "du-fu"
-      ],
       "id": "poetry-denggao",
       "name": "登高",
       "at": {
@@ -871,12 +731,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "zhang-ji"
-      ],
       "id": "poetry-fengqiao-yebo",
       "name": "枫桥夜泊",
       "at": {
@@ -893,12 +747,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "liu-zong-yuan"
-      ],
       "id": "poetry-jiangxue",
       "name": "江雪",
       "at": {
@@ -915,12 +763,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "meng-jiao"
-      ],
       "id": "poetry-youzimeng",
       "name": "游子吟",
       "at": {
@@ -937,12 +779,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "li-shen"
-      ],
       "id": "poetry-minnong",
       "name": "悯农",
       "at": {
@@ -959,12 +795,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "liu-yu-xi"
-      ],
       "id": "poetry-wuyixiang",
       "name": "乌衣巷",
       "at": {
@@ -981,12 +811,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "du-mu"
-      ],
       "id": "poetry-boqinhua",
       "name": "泊秦淮",
       "at": {
@@ -1003,12 +827,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang"
-      ],
-      "participantIds": [
-        "du-mu"
-      ],
       "id": "poetry-chibi-du-mu",
       "name": "赤壁",
       "at": {
@@ -1025,12 +843,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang-nan"
-      ],
-      "participantIds": [
-        "li-yu-nantang"
-      ],
       "id": "poetry-yumeiren-li-yu",
       "name": "虞美人·春花秋月何时了",
       "at": {
@@ -1048,12 +860,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "tang-nan"
-      ],
-      "participantIds": [
-        "li-yu-nantang"
-      ],
       "id": "poetry-xiangjianhuan-li-yu",
       "name": "相见欢·无言独上西楼",
       "at": {
@@ -1070,12 +876,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-north"
-      ],
-      "participantIds": [
-        "su-shi"
-      ],
       "id": "poetry-tixilinbi",
       "name": "题西林壁",
       "at": {
@@ -1092,12 +892,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-north"
-      ],
-      "participantIds": [
-        "su-shi"
-      ],
       "id": "poetry-yinhu-chuqing",
       "name": "饮湖上初晴后雨",
       "at": {
@@ -1114,12 +908,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-south"
-      ],
-      "participantIds": [
-        "lu-you"
-      ],
       "id": "poetry-youshanxicun",
       "name": "游山西村",
       "at": {
@@ -1136,12 +924,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-south"
-      ],
-      "participantIds": [
-        "lu-you"
-      ],
       "id": "poetry-shufen",
       "name": "书愤",
       "at": {
@@ -1158,12 +940,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-south"
-      ],
-      "participantIds": [
-        "lu-you"
-      ],
       "id": "poetry-shier",
       "name": "示儿",
       "at": {
@@ -1180,12 +956,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-south"
-      ],
-      "participantIds": [
-        "wen-tianxiang"
-      ],
       "id": "poetry-guolingdingyang",
       "name": "过零丁洋",
       "at": {
@@ -1202,12 +972,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "song-south"
-      ],
-      "participantIds": [
-        "wen-tianxiang"
-      ],
       "id": "poetry-zhengqige",
       "name": "正气歌",
       "at": {
@@ -1224,12 +988,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "yuan"
-      ],
-      "participantIds": [
-        "zhang-yanghao"
-      ],
       "id": "poetry-tongguan-huaigu",
       "name": "山坡羊·潼关怀古",
       "at": {
@@ -1246,12 +1004,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "yuan"
-      ],
-      "participantIds": [
-        "ma-zhiyuan"
-      ],
       "id": "poetry-tianjing-shaqiu",
       "name": "天净沙·秋思",
       "at": {
@@ -1268,12 +1020,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "ming"
-      ],
-      "participantIds": [
-        "yu-qian"
-      ],
       "id": "poetry-shihuiyin",
       "name": "石灰吟",
       "at": {
@@ -1290,12 +1036,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "gong-zi-zhen"
-      ],
       "id": "poetry-jihai",
       "name": "己亥杂诗》其五",
       "at": {
@@ -1312,12 +1052,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "lin-zexu"
-      ],
       "id": "poetry-fushu-dengcheng",
       "name": "赴戍登程口占示家人",
       "at": {
@@ -1334,12 +1068,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "qiu-fengjia"
-      ],
       "id": "poetry-chunchou",
       "name": "春愁",
       "at": {
@@ -1356,12 +1084,6 @@
     {
       "kind": "poetry",
       "timeMode": "point",
-      "dynastyIds": [
-        "qing"
-      ],
-      "participantIds": [
-        "tan-sitong"
-      ],
       "id": "poetry-yuzhong-tibi",
       "name": "狱中题壁",
       "at": {
@@ -1377,9 +1099,7 @@
     }
   ],
   "relations": [],
-  "supplementalEventDynasties": [],
-  "supplementalEventParticipants": [],
-  "preSql": "DELETE FROM event_dynasties WHERE event_id IN ('poetry-duan-ge-xing', 'poetry-guan-cang-hai', 'poetry-gui-sui-shou');\nDELETE FROM event_dynasties WHERE event_id = 'poetry-zhengqige';\nDELETE FROM event_dynasties WHERE event_id = 'poetry-bie-yunjian';\nDELETE FROM event_participants WHERE event_id = 'poetry-bie-yunjian';\nDELETE FROM events WHERE id = 'poetry-bie-yunjian';\nDELETE FROM event_dynasties WHERE event_id = 'poetry-yuanyuanqu';\nDELETE FROM event_participants WHERE event_id = 'poetry-yuanyuanqu';\nDELETE FROM events WHERE id = 'poetry-yuanyuanqu';\nDELETE FROM persons WHERE id = 'wu-meicun' AND NOT EXISTS (SELECT 1 FROM event_participants WHERE person_id = 'wu-meicun') AND NOT EXISTS (SELECT 1 FROM reigns WHERE person_id = 'wu-meicun');",
+  "preSql": "DELETE FROM events WHERE id = 'poetry-bie-yunjian';\nDELETE FROM events WHERE id = 'poetry-yuanyuanqu';\nDELETE FROM persons WHERE id = 'wu-meicun' AND NOT EXISTS (SELECT 1 FROM entity_associations WHERE (a_type = 'person' AND a_id = 'wu-meicun') OR (b_type = 'person' AND b_id = 'wu-meicun')) AND NOT EXISTS (SELECT 1 FROM reigns WHERE person_id = 'wu-meicun');",
   "manifest": {
     "slug": "poetry",
     "title": "古诗名篇（poetry 事件）",
@@ -1393,7 +1113,7 @@
     "depth": "standard",
     "generatedAt": "2026-09-23",
     "counts": {
-      "persons": 24,
+      "persons": 16,
       "dynasties": 0,
       "reigns": 0,
       "events": 47,
@@ -1669,7 +1389,8 @@
       "《正气歌》据文史广东所载1281年5月16日创作；按用户指定的时期归属，《过零丁洋》《正气歌》均关联南宋。",
       "《虞美人·春花秋月何时了》与李煜之死相连的叙述源自后世传闻。方震华《悲剧故事的形成——李煜之死与相关传说》梳理宋代材料，指出卒日有七月初七、初八异说，较早墓志记七月初八遘疾；本包沿用初八命运线，并将词的传闻代表日记为初七以保持先后，日期及历法对应不作为确证。《相见欢·无言独上西楼》系于亡国被俘后的后期。两词均依用户指定关联南唐泳道。",
       "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
-      "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。"
+      "2026-09：将少于30字的非帝王人物概述扩写；有争议的传说与史实区分表述。",
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
   }
 }

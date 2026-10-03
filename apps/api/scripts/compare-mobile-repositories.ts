@@ -115,13 +115,32 @@ try {
   const refs = [
     { type: "dynasty", id: "tang" }, { type: "reign", id: "reign-li-longji" },
     { type: "person", id: "li-longji" }, { type: "event", id: "banquan-zhulu" },
+    { type: "event", id: "chibi" }, { type: "dynasty", id: "shu" },
+    { type: "event", id: "idiom-wan-bi-gui-zhao" }, { type: "person", id: "lin-xiangru" },
+    { type: "dynasty", id: "daxi" },
+    { type: "person", id: "temujin" }, { type: "person", id: "tolui" },
     { type: "location_mapping", id: "cap-tang-changan" },
     { type: "location_mapping", id: "map-reign:reign-jin-r12-jin-chunqiu:cap-jin-chunqiu-quwo" },
     { type: "reign", id: "reign-jin-r12-jin-chunqiu" },
   ] as const;
-  for (const ref of refs) {
-    const [httpDetail, sqliteDetail] = await Promise.all([httpRepository.getEntity(ref), sqliteRepository.getEntity(ref)]);
-    compare(`entity:${ref.type}:${ref.id}`, httpDetail, sqliteDetail);
+  const detailRefs = [...refs] as { type: "dynasty" | "person" | "event" | "reign" | "location_mapping"; id: string }[];
+  if (process.argv.includes("--all-entities")) {
+    const db = new DatabaseSync(databasePath, { readOnly: true });
+    try {
+      const existing = new Set(detailRefs.map(ref => `${ref.type}:${ref.id}`));
+      for (const [type, table] of [["dynasty", "dynasties"], ["person", "persons"], ["event", "events"], ["reign", "reigns"]] as const) {
+        for (const row of db.prepare(`SELECT id FROM ${table} ORDER BY id`).all()) {
+          const id = String(row.id);
+          if (!existing.has(`${type}:${id}`)) detailRefs.push({ type, id });
+        }
+      }
+    } finally { db.close(); }
+  }
+  for (let start = 0; start < detailRefs.length; start += 8) {
+    await Promise.all(detailRefs.slice(start, start + 8).map(async ref => {
+      const [httpDetail, sqliteDetail] = await Promise.all([httpRepository.getEntity(ref), sqliteRepository.getEntity(ref)]);
+      compare(`entity:${ref.type}:${ref.id}`, httpDetail, sqliteDetail);
+    }));
   }
   console.log(JSON.stringify({ status: "ok", compared, windows: windows.length, lods: lods.length }, null, 2));
 } finally {

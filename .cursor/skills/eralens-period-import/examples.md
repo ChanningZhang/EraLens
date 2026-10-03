@@ -41,9 +41,7 @@
       "timeMode": "span",
       "start": { "year": 627, "month": 1, "abs": 7524, "confidence": "year" },
       "end": { "year": 649, "month": 7, "abs": 7794, "confidence": "month" },
-      "dateNote": "制度性治理过程；端点精度分别记录。",
-      "dynastyIds": ["tang"],
-      "participantIds": ["li-shimin"]
+      "dateNote": "制度性治理过程；端点精度分别记录。"
     },
     {
       "id": "example-accession",
@@ -66,6 +64,17 @@
 ```
 
 `abs` 必须由共享 `absMonth()` 或导入工具计算。上例的正月是年精度占位，confidence 为 `year`，不得展示为已知月份。实际导入时只录入史料支持的事件；点事件不足一日历年使用 `point`，持续至少一完整日历年的真实过程使用 `span`，不得用占位年月计算持续时间。
+
+普通关联另写入 `data/imports/entity-associations/cache.json.associations`：
+
+```json
+[
+  { "aRef": "dynasty:tang", "bRef": "event:zhenguan-rule" },
+  { "aRef": "event:zhenguan-rule", "bRef": "person:li-shimin" }
+]
+```
+
+同步集中包 `manifest.counts.associations` 和来源，再生成两个包；历史包不维护关联数组。
 
 ## 生成 SQL 的日期列示意
 
