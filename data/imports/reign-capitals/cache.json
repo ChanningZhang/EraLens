@@ -2897,7 +2897,7 @@
     },
     {
       "reignId": "reign-sima-ye",
-      "capitalId": "cap-jin-west-luoyang-306"
+      "capitalId": "cap-jin-west-changan-313"
     },
     {
       "reignId": "reign-sima-yi-jin",
@@ -5087,6 +5087,10 @@
         "url": "https://www.shidianguji.com/book/LS0005/chapter/LS0005_52"
       },
       {
+        "label": "《晋书》卷五·愍帝纪",
+        "url": "https://www.shidianguji.com/book/HY3000/chapter/1kr3u6p11dkwr"
+      },
+      {
         "label": "《史记》卷三十九·晋世家：翼都、曲沃封邑与献公都绛",
         "url": "https://www.chinakongzi.org/kzsf/wxxs/mingpian/shiji/200705/t20070524_25208.htm"
       },
@@ -5145,6 +5149,7 @@
       "明郑郑成功、郑经、郑克塽统一关联同一条台南都城记录“东都/东宁”；都城改名不另建实体。",
       "所有 reign_capitals 关联统一由本包逐行拥有；其他导入包只引用，不重复写入。",
       "拆分洛阳都城记录后，将司马衷复位期关联到洛阳前段、长安行在和洛阳后段；司马炽、司马邺关联洛阳后段。司马衷首次在位仍关联原洛阳段。",
+      "2026-10-03：司马邺（晋愍帝）313年在长安即位，出降时西晋亡；其显式都城关联从洛阳后段改为长安段，并在导入前清理该 reign 的旧关联。",
       "补录大燕安禄山—安庆绪—史思明—史朝义与本包大燕专属都城记录的显式关联；范阳作为主都和燕京陪都分别关联，洛阳复归后与范阳陪都并存。",
       "安史之乱时期拆分唐长安、洛阳都城记录后，同步重建所有唐帝在位—都城关联：只关联与在位时段实际相交的都城阶段；肃宗及以后各帝关联至收复后都城记录，肃宗在失陷至收复期间仍保留无固定都城地理项的在位时段。",
       "移除朱祁钰旧监国 reign（reign-zhu-qiyu-regent-ming）的北京都城关联；监国经历已改为单点事件，不再有对应 reign。",
@@ -5153,5 +5158,5 @@
       "2026-10-02：将安禄山称帝前的在位段显式关联范阳、洛阳两阶段。洛阳陷落日期据《资治通鉴》卷217天宝十四载十二月丁酉（十二日），按朔闰表换算为公历756-01-18；范阳止于前一日，洛阳阶段至安禄山称帝前一日。"
     ]
   },
-  "preSql": "DELETE FROM reign_capitals WHERE reign_id = 'reign-zhu-youlang-ming-south' AND capital_id = 'cap-ming-south-nanning-1648';\nDELETE FROM reign_capitals WHERE capital_id IN ('cap-tang-changan', 'cap-tang-changan-757', 'cap-tang-luoyang', 'cap-tang-luoyang-757', 'cap-tang-luoyang-904');\nDELETE FROM reign_capitals WHERE (reign_id = 'reign-sima-zhong' AND capital_id = 'cap-jin-west-changan-304') OR (reign_id IN ('reign-sima-chi', 'reign-sima-ye') AND capital_id = 'cap-jin-west-luoyang-266');\n-- Rebuild Jin associations, including obsolete explicit cross-track links.\nDELETE FROM reign_capitals WHERE reign_id IN ('reign-ji-shuyu-jin-chunqiu', 'reign-jin-r1-jin-chunqiu', 'reign-jin-r2-jin-chunqiu', 'reign-jin-r3-jin-chunqiu', 'reign-jin-r4-jin-chunqiu', 'reign-jin-r5-jin-chunqiu', 'reign-jin-r6-jin-chunqiu', 'reign-jin-r7-jin-chunqiu', 'reign-jin-r8-jin-chunqiu', 'reign-jin-r9-jin-chunqiu', 'reign-jin-r10-jin-chunqiu', 'reign-jin-r11-jin-chunqiu', 'reign-jin-r12-jin-chunqiu', 'reign-jin-r13-jin-chunqiu', 'reign-jin-r14-jin-chunqiu', 'reign-jin-r15-jin-chunqiu', 'reign-jin-r16-jin-chunqiu', 'reign-jin-r17-jin-chunqiu', 'reign-jin-r17-main-jin-chunqiu', 'reign-jin-r18-jin-chunqiu', 'reign-jin-r19-jin-chunqiu', 'reign-jin-r20-jin-chunqiu', 'reign-jin-r21-jin-chunqiu', 'reign-jin-r22-jin-chunqiu', 'reign-ji-chonger-jin-chunqiu', 'reign-jin-r24-jin-chunqiu', 'reign-jin-r25-jin-chunqiu', 'reign-jin-r26-jin-chunqiu', 'reign-jin-r27-jin-chunqiu', 'reign-jin-r28-jin-chunqiu', 'reign-jin-r29-jin-chunqiu', 'reign-jin-r30-jin-chunqiu', 'reign-jin-r31-jin-chunqiu', 'reign-jin-r32-jin-chunqiu', 'reign-jin-r33-jin-chunqiu', 'reign-jin-r34-jin-chunqiu', 'reign-jin-r35-jin-chunqiu', 'reign-jin-r36-jin-chunqiu', 'reign-jin-r37-jin-chunqiu', 'reign-jin-r38-jin-chunqiu', 'reign-jin-r39-jin-chunqiu', 'reign-jin-xi-qi-jin-chunqiu', 'reign-jin-zhuo-zi-jin-chunqiu');\nDELETE FROM reign_capitals WHERE reign_id IN ('reign-fu-chong', 'reign-fu-deng', 'reign-fu-pi') AND capital_id = 'cap-qin-front-changan-351';"
+  "preSql": "DELETE FROM reign_capitals WHERE reign_id = 'reign-zhu-youlang-ming-south' AND capital_id = 'cap-ming-south-nanning-1648';\nDELETE FROM reign_capitals WHERE capital_id IN ('cap-tang-changan', 'cap-tang-changan-757', 'cap-tang-luoyang', 'cap-tang-luoyang-757', 'cap-tang-luoyang-904');\nDELETE FROM reign_capitals WHERE (reign_id = 'reign-sima-zhong' AND capital_id = 'cap-jin-west-changan-304') OR (reign_id IN ('reign-sima-chi', 'reign-sima-ye') AND capital_id = 'cap-jin-west-luoyang-266');\n-- Rebuild Jin associations, including obsolete explicit cross-track links.\nDELETE FROM reign_capitals WHERE reign_id IN ('reign-ji-shuyu-jin-chunqiu', 'reign-jin-r1-jin-chunqiu', 'reign-jin-r2-jin-chunqiu', 'reign-jin-r3-jin-chunqiu', 'reign-jin-r4-jin-chunqiu', 'reign-jin-r5-jin-chunqiu', 'reign-jin-r6-jin-chunqiu', 'reign-jin-r7-jin-chunqiu', 'reign-jin-r8-jin-chunqiu', 'reign-jin-r9-jin-chunqiu', 'reign-jin-r10-jin-chunqiu', 'reign-jin-r11-jin-chunqiu', 'reign-jin-r12-jin-chunqiu', 'reign-jin-r13-jin-chunqiu', 'reign-jin-r14-jin-chunqiu', 'reign-jin-r15-jin-chunqiu', 'reign-jin-r16-jin-chunqiu', 'reign-jin-r17-jin-chunqiu', 'reign-jin-r17-main-jin-chunqiu', 'reign-jin-r18-jin-chunqiu', 'reign-jin-r19-jin-chunqiu', 'reign-jin-r20-jin-chunqiu', 'reign-jin-r21-jin-chunqiu', 'reign-jin-r22-jin-chunqiu', 'reign-ji-chonger-jin-chunqiu', 'reign-jin-r24-jin-chunqiu', 'reign-jin-r25-jin-chunqiu', 'reign-jin-r26-jin-chunqiu', 'reign-jin-r27-jin-chunqiu', 'reign-jin-r28-jin-chunqiu', 'reign-jin-r29-jin-chunqiu', 'reign-jin-r30-jin-chunqiu', 'reign-jin-r31-jin-chunqiu', 'reign-jin-r32-jin-chunqiu', 'reign-jin-r33-jin-chunqiu', 'reign-jin-r34-jin-chunqiu', 'reign-jin-r35-jin-chunqiu', 'reign-jin-r36-jin-chunqiu', 'reign-jin-r37-jin-chunqiu', 'reign-jin-r38-jin-chunqiu', 'reign-jin-r39-jin-chunqiu', 'reign-jin-xi-qi-jin-chunqiu', 'reign-jin-zhuo-zi-jin-chunqiu');\nDELETE FROM reign_capitals WHERE reign_id IN ('reign-fu-chong', 'reign-fu-deng', 'reign-fu-pi') AND capital_id = 'cap-qin-front-changan-351';\nDELETE FROM reign_capitals WHERE reign_id = 'reign-sima-ye';"
 }

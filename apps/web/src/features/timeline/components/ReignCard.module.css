@@ -32,6 +32,15 @@
   overflow: hidden;
 }
 
+.card:focus:not(:focus-visible) {
+  outline: none;
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--color-ochre);
+  outline-offset: 2px;
+}
+
 .uncertainStart {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
