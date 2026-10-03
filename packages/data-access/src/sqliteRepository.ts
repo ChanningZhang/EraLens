@@ -47,7 +47,7 @@ function mapPerson(row: Row): Person {
 
 function mapDynasty(row: Row): Dynasty {
   return DynastySchema.parse({
-    id: row.id, name: row.name, altNames: strings(row.alt_names), scope: row.scope,
+    id: row.id, name: row.name, altNames: strings(row.alt_names), ethnicity: own(row, "ethnicity"), scope: row.scope,
     region: row.region, start: { ...point(row.start_year, row.start_month, row.start_day), confidence: row.start_confidence }, end: { ...point(row.end_year, row.end_month, row.end_day), confidence: row.end_confidence },
     startAbs: Number(row.start_abs), endAbs: Number(row.end_abs), precision: confidencePrecision((row.start_confidence ?? "year") as Parameters<typeof confidencePrecision>[0]), startConfidence: row.start_confidence, endConfidence: row.end_confidence,
     colorToken: row.color_token, parentId: own(row, "parent_id"), groupId: own(row, "group_id"), note: own(row, "note"),
@@ -140,7 +140,7 @@ export class SqliteTimelineRepository implements TimelineRepository {
     const metadata = await rows(db, "SELECT key, value FROM content_metadata");
     const meta = new Map<string, unknown>(metadata.map((row) => [String(row.key), JSON.parse(String(row.value)) as unknown]));
     if (!meta.has("schema_version") || !meta.has("contract_version")) throw new Error("SQLite content database has no schema metadata");
-    if (meta.get("schema_version") !== 5 || meta.get("contract_version") !== 6) throw new Error("SQLite content database version is not supported by this app");
+    if (meta.get("schema_version") !== 6 || meta.get("contract_version") !== 7) throw new Error("SQLite content database version is not supported by this app");
     const [personsRaw, dynastiesRaw, groupsRaw, reignsRaw, eventsRaw, associationRows, mappingRaw, relationsRaw] = await Promise.all([
       rows(db, "SELECT * FROM persons"), rows(db, "SELECT * FROM dynasties"), rows(db, "SELECT * FROM dynasty_groups"),
       rows(db, "SELECT * FROM reigns"), rows(db, "SELECT * FROM events"),

@@ -170,7 +170,7 @@ export function DynastyLane({
           );
           selectionStore.syncToUrl(viewport.centerAbs);
         }}
-        aria-label={frozenLabel}
+        aria-label={dynasty.ethnicity ? `${frozenLabel}（${dynasty.ethnicity}）` : frozenLabel}
         aria-pressed={selected}
       >
         <span className={styles.labelText}>
@@ -188,6 +188,11 @@ export function DynastyLane({
             </motion.span>
           </AnimatePresence>
         </span>
+        {dynasty.ethnicity && (
+          <span className={styles.ethnicity} aria-hidden="true">
+            {dynasty.ethnicity}
+          </span>
+        )}
       </button>}
 
       <div className={styles.reignSequence}>

@@ -84,6 +84,8 @@ export const DynastySchema = z.object({
     }
   }),
   altNames: z.array(z.string()).default([]),
+  /** Founding or ruling ethnic group, when historically well supported. */
+  ethnicity: z.string().trim().min(1).optional(),
   scope: ScopeSchema.default("cn"),
   region: z.string().default("east_asia"),
   start: TimePointSchema,

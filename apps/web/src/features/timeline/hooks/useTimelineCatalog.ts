@@ -3,7 +3,7 @@ import type { TimelineCatalog } from "@eralens/shared";
 import { getRepository } from "@/data/repository";
 
 const SCOPE = "cn";
-const CATALOG_VERSION = 3;
+const CATALOG_VERSION = 4;
 
 export function useTimelineCatalog(): TimelineCatalog | undefined {
   const query = useQuery({

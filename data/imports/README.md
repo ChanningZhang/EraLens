@@ -44,7 +44,11 @@ node data/imports/generate.mjs --all
 
 API 与移动 SQLite 的契约对比使用 `pnpm data:mobile:contract`；附加 `--all-entities` 可检查全部王朝、人物、事件与在位详情。
 
-## 地理数据（schema 4 / contract 5）
+## 移动端数据契约（schema 6 / contract 7）
+
+`dynasties.ethnicity` 是可选的非汉族属显示字段，按该政权皇帝所属皇族/宗族的族属填写简短通行称谓，不按摄政者或实际掌权集团填写。王朝分期中皇族变更且无法用一个称谓准确表达，或皇族族属有争议时留空。该字段用于时间轴左侧王朝标签，不替代王朝概述、国号或别名。
+
+## 地理数据
 
 `locations/cache.json` 唯一维护空间地点，历史包的 `locationMappings` 显式引用地点与 dynasty/reign/event 实体。名称、说明、来源、空间精度和都城完整时段属于 mapping；事件日期沿用所属事件。运行时和生成器都不推断君主都城关联。地点 ID 修订字段后仍保持不变。
 

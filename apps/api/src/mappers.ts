@@ -27,6 +27,7 @@ export type RawDynastyRow = {
   id: string;
   name: string;
   alt_names: string[];
+  ethnicity?: string | null;
   scope: string;
   region: string;
   start_year: number;
@@ -186,6 +187,7 @@ export function mapDynasty(row: DbDynasty | RawDynastyRow): Dynasty {
     id: row.id,
     name: row.name,
     altNames,
+    ethnicity: row.ethnicity ?? undefined,
     scope: row.scope as Dynasty["scope"],
     region: row.region,
     start: { year: startYear, month: startMonth, ...("startDay" in row && row.startDay != null ? { day: row.startDay } : "start_day" in row && row.start_day != null ? { day: row.start_day } : {}), confidence: (("startConfidence" in row ? row.startConfidence : row.start_confidence) ?? "year") as HistoricalDateConfidence },

@@ -105,6 +105,7 @@ async function main() {
           id: dynasty.id,
           name: dynasty.name,
           altNames: dynasty.altNames,
+          ethnicity: dynasty.ethnicity,
           scope: dynasty.scope,
           region: dynasty.region,
           startYear: dynasty.start.year,

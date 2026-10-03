@@ -39,6 +39,10 @@
     },
     {
       "aRef": "dynasty:cheng-han",
+      "bRef": "event:li-shou-change-country-name"
+    },
+    {
+      "aRef": "dynasty:cheng-han",
       "bRef": "event:wuhu-chaos"
     },
     {
@@ -595,6 +599,10 @@
     },
     {
       "aRef": "dynasty:ming",
+      "bRef": "event:han-liner-death"
+    },
+    {
+      "aRef": "dynasty:ming",
       "bRef": "event:hongwan-case"
     },
     {
@@ -632,6 +640,10 @@
     {
       "aRef": "dynasty:ming",
       "bRef": "event:poetry-shihuiyin"
+    },
+    {
+      "aRef": "dynasty:ming",
+      "bRef": "event:poyang-lake-battle"
     },
     {
       "aRef": "dynasty:ming",
@@ -674,60 +686,16 @@
       "bRef": "event:zheng-he-voyages"
     },
     {
+      "aRef": "dynasty:ming",
+      "bRef": "event:zhu-yuanzhang-change-country-name-to-ming"
+    },
+    {
       "aRef": "dynasty:mingzheng",
       "bRef": "event:qing-conquer-taiwan"
     },
     {
       "aRef": "dynasty:mingzheng",
       "bRef": "event:zheng-recover-taiwan"
-    },
-    {
-      "aRef": "dynasty:yuan",
-      "bRef": "event:great-khan-contention"
-    },
-    {
-      "aRef": "dynasty:yuan",
-      "bRef": "event:kublai-court-at-kaiping"
-    },
-    {
-      "aRef": "dynasty:yuan",
-      "bRef": "event:kublai-moves-capital-to-zhongdu"
-    },
-    {
-      "aRef": "dynasty:yuan",
-      "bRef": "event:mongke-death"
-    },
-    {
-      "aRef": "dynasty:yuan",
-      "bRef": "event:mongol-campaign-jin"
-    },
-    {
-      "aRef": "dynasty:yuan",
-      "bRef": "event:mongol-campaign-song"
-    },
-    {
-      "aRef": "dynasty:yuan",
-      "bRef": "event:mongol-conquer-dali"
-    },
-    {
-      "aRef": "dynasty:yuan",
-      "bRef": "event:mongol-west-campaign"
-    },
-    {
-      "aRef": "dynasty:yuan",
-      "bRef": "event:song-jin-alliance-mongol"
-    },
-    {
-      "aRef": "dynasty:yuan",
-      "bRef": "event:song-mongol-duanping-enter-luo"
-    },
-    {
-      "aRef": "dynasty:yuan",
-      "bRef": "event:tolui-regency"
-    },
-    {
-      "aRef": "dynasty:yuan",
-      "bRef": "event:xiangyang-siege"
     },
     {
       "aRef": "dynasty:prc",
@@ -984,6 +952,10 @@
     {
       "aRef": "dynasty:qing",
       "bRef": "event:first-sino-japanese-war"
+    },
+    {
+      "aRef": "dynasty:qing",
+      "bRef": "event:huang-taiji-change-country-name-to-qing"
     },
     {
       "aRef": "dynasty:qing",
@@ -1895,6 +1867,10 @@
     },
     {
       "aRef": "dynasty:wei-north",
+      "bRef": "event:tuoba-gui-change-country-name"
+    },
+    {
+      "aRef": "dynasty:wei-north",
       "bRef": "event:tuoba-reform"
     },
     {
@@ -2010,14 +1986,6 @@
       "bRef": "event:wudai-shiguo"
     },
     {
-      "aRef": "dynasty:ming",
-      "bRef": "event:han-liner-death"
-    },
-    {
-      "aRef": "dynasty:ming",
-      "bRef": "event:poyang-lake-battle"
-    },
-    {
       "aRef": "dynasty:xia",
       "bRef": "event:gan-battle"
     },
@@ -2103,11 +2071,47 @@
     },
     {
       "aRef": "dynasty:yuan",
+      "bRef": "event:great-khan-contention"
+    },
+    {
+      "aRef": "dynasty:yuan",
       "bRef": "event:korqin-sea-battle"
     },
     {
       "aRef": "dynasty:yuan",
+      "bRef": "event:kublai-change-country-name-to-yuan"
+    },
+    {
+      "aRef": "dynasty:yuan",
+      "bRef": "event:kublai-court-at-kaiping"
+    },
+    {
+      "aRef": "dynasty:yuan",
+      "bRef": "event:kublai-moves-capital-to-zhongdu"
+    },
+    {
+      "aRef": "dynasty:yuan",
       "bRef": "event:ming-capture-dadu"
+    },
+    {
+      "aRef": "dynasty:yuan",
+      "bRef": "event:mongke-death"
+    },
+    {
+      "aRef": "dynasty:yuan",
+      "bRef": "event:mongol-campaign-jin"
+    },
+    {
+      "aRef": "dynasty:yuan",
+      "bRef": "event:mongol-campaign-song"
+    },
+    {
+      "aRef": "dynasty:yuan",
+      "bRef": "event:mongol-conquer-dali"
+    },
+    {
+      "aRef": "dynasty:yuan",
+      "bRef": "event:mongol-west-campaign"
     },
     {
       "aRef": "dynasty:yuan",
@@ -2123,7 +2127,23 @@
     },
     {
       "aRef": "dynasty:yuan",
+      "bRef": "event:song-jin-alliance-mongol"
+    },
+    {
+      "aRef": "dynasty:yuan",
+      "bRef": "event:song-mongol-duanping-enter-luo"
+    },
+    {
+      "aRef": "dynasty:yuan",
+      "bRef": "event:tolui-regency"
+    },
+    {
+      "aRef": "dynasty:yuan",
       "bRef": "event:war-of-two-capitals"
+    },
+    {
+      "aRef": "dynasty:yuan",
+      "bRef": "event:xiangyang-siege"
     },
     {
       "aRef": "dynasty:yuan",
@@ -2998,6 +3018,10 @@
       "bRef": "person:huang-chao"
     },
     {
+      "aRef": "event:huang-taiji-change-country-name-to-qing",
+      "bRef": "person:huang-taiji"
+    },
+    {
       "aRef": "event:hulao-battle",
       "bRef": "person:dou-jiande"
     },
@@ -3490,6 +3514,10 @@
       "bRef": "person:togus-temur"
     },
     {
+      "aRef": "event:kublai-change-country-name-to-yuan",
+      "bRef": "person:hu-bilie"
+    },
+    {
       "aRef": "event:kuiqiu",
       "bRef": "person:guan-zhong"
     },
@@ -3508,6 +3536,10 @@
     {
       "aRef": "event:kunyang-battle",
       "bRef": "person:wang-mang"
+    },
+    {
+      "aRef": "event:li-shou-change-country-name",
+      "bRef": "person:li-shou"
     },
     {
       "aRef": "event:lin-biao-incident",
@@ -4278,6 +4310,10 @@
       "bRef": "person:zhu-qizhen"
     },
     {
+      "aRef": "event:tuoba-gui-change-country-name",
+      "bRef": "person:tuoba-gui"
+    },
+    {
       "aRef": "event:tuoba-reform",
       "bRef": "person:yuan-hong"
     },
@@ -4734,6 +4770,10 @@
       "bRef": "person:yuwen-yong"
     },
     {
+      "aRef": "event:zhu-yuanzhang-change-country-name-to-ming",
+      "bRef": "person:zhu-yuanzhang"
+    },
+    {
       "aRef": "event:zuo-recover-xinjiang",
       "bRef": "person:zaitian"
     },
@@ -4744,38 +4784,6 @@
     {
       "aRef": "person:temujin",
       "bRef": "person:tolui"
-    },
-    {
-      "aRef": "dynasty:cheng-han",
-      "bRef": "event:li-shou-change-country-name"
-    },
-    {
-      "aRef": "event:li-shou-change-country-name",
-      "bRef": "person:li-shou"
-    },
-    {
-      "aRef": "dynasty:yuan",
-      "bRef": "event:kublai-change-country-name-to-yuan"
-    },
-    {
-      "aRef": "event:kublai-change-country-name-to-yuan",
-      "bRef": "person:hu-bilie"
-    },
-    {
-      "aRef": "dynasty:ming",
-      "bRef": "event:zhu-yuanzhang-change-country-name-to-ming"
-    },
-    {
-      "aRef": "event:zhu-yuanzhang-change-country-name-to-ming",
-      "bRef": "person:zhu-yuanzhang"
-    },
-    {
-      "aRef": "dynasty:qing",
-      "bRef": "event:huang-taiji-change-country-name-to-qing"
-    },
-    {
-      "aRef": "event:huang-taiji-change-country-name-to-qing",
-      "bRef": "person:huang-taiji"
     }
   ],
   "manifest": {
@@ -4785,7 +4793,7 @@
     "importPhase": "post",
     "postImportOrder": 100,
     "counts": {
-      "associations": 1194
+      "associations": 1196
     },
     "sources": [
       {
@@ -11807,11 +11815,20 @@
       {
         "label": "《清史稿·朝鲜列传》（天聪十年国号大清）",
         "url": "https://db.history.go.kr/item/compareViewer.do?levelId=jo_024_0010_0020_0130"
+      },
+      {
+        "label": "代 (十六国)",
+        "url": "https://zh.wikipedia.org/wiki/代_(十六国)"
+      },
+      {
+        "label": "《魏书》卷二·太祖纪",
+        "url": "https://wk.100ke.info/wiki/魏書/卷2"
       }
     ],
     "notes": [
       "无方向、无标签；端点按 UTF-8 字节顺序排列。来源为原事件连接记录与普通 relations 的去重并集。",
-      "原始维护包及迁入记录数：{\"chunqiu-minor\": 15, \"chunqiu-zhanguo/cao-chunqiu\": 3, \"chunqiu-zhanguo/chu-chunqiu\": 4, \"chunqiu-zhanguo/guo-chunqiu\": 5, \"chunqiu-zhanguo/guo-east\": 4, \"chunqiu-zhanguo/han-warring\": 2, \"chunqiu-zhanguo/jin-chunqiu\": 8, \"chunqiu-zhanguo/lu-chunqiu\": 3, \"chunqiu-zhanguo/qi-chunqiu\": 4, \"chunqiu-zhanguo/qin\": 9, \"chunqiu-zhanguo/song-chunqiu\": 3, \"chunqiu-zhanguo/wei-warring\": 14, \"chunqiu-zhanguo/wei-weiguo\": 3, \"chunqiu-zhanguo/wu-chunqiu\": 1, \"chunqiu-zhanguo/yan-chunqiu\": 1, \"chunqiu-zhanguo/yue-chunqiu\": 1, \"chunqiu-zhanguo/zhao-warring\": 2, \"chunqiu-zhanguo/zheng-chunqiu\": 2, \"chunqiu-zhanguo/zhongshan\": 1, \"commercial-events\": 10, \"disaster-events\": 3, \"financial-events\": 3, \"idioms\": 190, \"jin-sixteen\": 37, \"liao-remnants\": 6, \"major-events\": 62, \"ming-end\": 6, \"minguo\": 79, \"mongol-pre-yuan\": 24, \"nanbei-chao\": 29, \"nanzhao-dali\": 5, \"poetry\": 93, \"prc\": 36, \"qin-han\": 81, \"qin-han-extra\": 6, \"sanhuang-wudi\": 5, \"song-liao-jin\": 34, \"sui-tang-wudai-song\": 59, \"taiping\": 23, \"tang-border\": 4, \"three-kingdoms-battles\": 53, \"three-kingdoms-late\": 3, \"three-kingdoms-warlord\": 25, \"xia-shang-zhou\": 96, \"xinan-guozheng\": 13, \"xixia\": 7, \"yuan-ming-qing\": 191}"
+      "原始维护包及迁入记录数：{\"chunqiu-minor\": 15, \"chunqiu-zhanguo/cao-chunqiu\": 3, \"chunqiu-zhanguo/chu-chunqiu\": 4, \"chunqiu-zhanguo/guo-chunqiu\": 5, \"chunqiu-zhanguo/guo-east\": 4, \"chunqiu-zhanguo/han-warring\": 2, \"chunqiu-zhanguo/jin-chunqiu\": 8, \"chunqiu-zhanguo/lu-chunqiu\": 3, \"chunqiu-zhanguo/qi-chunqiu\": 4, \"chunqiu-zhanguo/qin\": 9, \"chunqiu-zhanguo/song-chunqiu\": 3, \"chunqiu-zhanguo/wei-warring\": 14, \"chunqiu-zhanguo/wei-weiguo\": 3, \"chunqiu-zhanguo/wu-chunqiu\": 1, \"chunqiu-zhanguo/yan-chunqiu\": 1, \"chunqiu-zhanguo/yue-chunqiu\": 1, \"chunqiu-zhanguo/zhao-warring\": 2, \"chunqiu-zhanguo/zheng-chunqiu\": 2, \"chunqiu-zhanguo/zhongshan\": 1, \"commercial-events\": 10, \"disaster-events\": 3, \"financial-events\": 3, \"idioms\": 190, \"jin-sixteen\": 37, \"liao-remnants\": 6, \"major-events\": 62, \"ming-end\": 6, \"minguo\": 79, \"mongol-pre-yuan\": 24, \"nanbei-chao\": 29, \"nanzhao-dali\": 5, \"poetry\": 93, \"prc\": 36, \"qin-han\": 81, \"qin-han-extra\": 6, \"sanhuang-wudi\": 5, \"song-liao-jin\": 34, \"sui-tang-wudai-song\": 59, \"taiping\": 23, \"tang-border\": 4, \"three-kingdoms-battles\": 53, \"three-kingdoms-late\": 3, \"three-kingdoms-warlord\": 25, \"xia-shang-zhou\": 96, \"xinan-guozheng\": 13, \"xixia\": 7, \"yuan-ming-qing\": 191}",
+      "拓跋珪改国号为魏事件关联北魏与拓跋珪；事件原文与王朝关联依据《魏书·太祖纪》及“代（十六国）”条目。"
     ]
   }
 }

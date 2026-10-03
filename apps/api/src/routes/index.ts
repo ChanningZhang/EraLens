@@ -318,14 +318,14 @@ const PLACEABLE_NON_RULER_WHERE = {
 async function loadTimelineSlice(fromAbs: number, toAbs: number, scope?: string) {
   const dynastyRows = scope
     ? await prisma.$queryRaw<RawDynastyRow[]>`
-        SELECT id, name, alt_names, scope, region, start_year, start_month, start_day, end_year, end_month, end_day,
+        SELECT id, name, alt_names, ethnicity, scope, region, start_year, start_month, start_day, end_year, end_month, end_day,
                start_abs, end_abs, start_confidence, end_confidence, color_token,
                parent_id, group_id, note
         FROM dynasties
         WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')
           AND scope = ${scope}`
     : await prisma.$queryRaw<RawDynastyRow[]>`
-        SELECT id, name, alt_names, scope, region, start_year, start_month, start_day, end_year, end_month, end_day,
+        SELECT id, name, alt_names, ethnicity, scope, region, start_year, start_month, start_day, end_year, end_month, end_day,
                start_abs, end_abs, start_confidence, end_confidence, color_token,
                parent_id, group_id, note
         FROM dynasties

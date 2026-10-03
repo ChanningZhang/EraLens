@@ -7,8 +7,8 @@ function emptyDatabase(): SqliteDatabase {
       if (sql.includes("content_metadata")) {
         return {
           values: [
-            { key: "schema_version", value: "5" },
-            { key: "contract_version", value: "6" },
+            { key: "schema_version", value: "6" },
+            { key: "contract_version", value: "7" },
           ],
         };
       }
@@ -19,7 +19,7 @@ function emptyDatabase(): SqliteDatabase {
 }
 
 describe("SqliteTimelineRepository recovery", () => {
-  it.each([[4, 6], [5, 5]])("rejects schema %i / contract %i", async (schema, contract) => {
+  it.each([[5, 7], [6, 6]])("rejects schema %i / contract %i", async (schema, contract) => {
     const repository = new SqliteTimelineRepository({
       async open() {
         return {

@@ -69,6 +69,26 @@
     {
       "label": "交接日期复核来源",
       "url": "https://zh.wikipedia.org/wiki/宝藏王"
+    },
+    {
+      "label": "贵南县人民政府：追踪溯源——吐谷浑的慕容鲜卑来源及多族群政权",
+      "url": "https://www.guinan.gov.cn/lnb/zjgn1/lsgk1__zjgn/lsgk/content_1013648762"
+    },
+    {
+      "label": "国家民族事务委员会：西藏民族历史沿革",
+      "url": "https://www.neac.gov.cn/seac/ztzl/zz/lsyg.shtml"
+    },
+    {
+      "label": "国家民族事务委员会：回鹘历史沿革",
+      "url": "https://www.neac.gov.cn/seac/ztzl/201806/1067487.shtml"
+    },
+    {
+      "label": "全国哲学社会科学工作办公室：如何处理和确定高句丽的历史定位",
+      "url": "https://www.nopss.gov.cn/n/2013/0423/c362359-21247822.html"
+    },
+    {
+      "label": "北票市人民政府：吐谷浑历史文化",
+      "url": "https://www.bp.gov.cn/html/BPSZF/201912/0162969663126731.html"
     }
   ],
   "notes": [
@@ -79,6 +99,7 @@
     "唐（tang）复用 sui-tang-wudai-song 已有 id，本包仅关联 集中普通关联。",
     "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
     "2026-10-02 相邻在位边界复核：reign-baozang-wang-gaogouli start：642年渊盖苏文杀荣留王后立宝藏王；1月为占位。尚无可采用的公历月日换算，按已核年份记录，保留年桶占位语义。",
-    "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
+    "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。",
+    "2026-10-03：逐项核对吐蕃政权对应古代藏族，标签简写“藏族”；吐谷浑源出慕容鲜卑，但发展成鲜卑、羌、汉等构成的复合政权，按核心统治来源标“慕容鲜卑”，不表示单一族群；高句丽既是族名也是政权名，沿用史料称谓“高句丽”；回鹘政权按回鹘人标注。"
   ]
 }

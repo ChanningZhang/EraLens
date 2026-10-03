@@ -63,6 +63,7 @@ model Dynasty {
   id          String           @id
   name        String
   altNames    String[]         @default([]) @map("alt_names")
+  ethnicity   String?
   scope       String           @default("cn")
   region      String           @default("east_asia")
   startYear   Int              @map("start_year")
