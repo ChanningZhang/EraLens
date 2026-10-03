@@ -9,6 +9,11 @@ private struct SignedManifest: Decodable {
     let signature: String
 }
 
+private struct ContentVersions: Decodable {
+    let schemaVersion: Int
+    let contractVersion: Int
+}
+
 private struct UpdateManifest: Decodable {
     let datasetVersion: String
     let schemaVersion: Int
@@ -34,8 +39,6 @@ public class EraLensNativePlugin: CAPPlugin, CAPBridgedPlugin {
     private let databaseName = "eralens-contentSQLite.db"
     private let candidateName = "eralens-content.candidate.db"
     private let previousName = "eralens-content.previous.db"
-    private let expectedSchemaVersion = 5
-    private let expectedContractVersion = 7
 
     @objc public func getContentInfo(_ call: CAPPluginCall) {
         do {
@@ -256,8 +259,9 @@ public class EraLensNativePlugin: CAPPlugin, CAPBridgedPlugin {
     }
 
     private func validateCompatibility(_ manifest: UpdateManifest) throws {
-        guard manifest.schemaVersion == expectedSchemaVersion,
-              manifest.contractVersion == expectedContractVersion else {
+        let expected = try bundledContentVersions()
+        guard manifest.schemaVersion == expected.schemaVersion,
+              manifest.contractVersion == expected.contractVersion else {
             throw UpdateError.incompatible("数据 schema/contract 与此应用不兼容")
         }
         let appBuild = Int(Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "0") ?? 0
@@ -271,6 +275,19 @@ public class EraLensNativePlugin: CAPPlugin, CAPBridgedPlugin {
         return try validateDatabase(at: url)
     }
 
+    private func bundledContentVersions() throws -> ContentVersions {
+        // Staged from data/mobile/versions.json alongside the bundled database.
+        // Read the app's compatibility contract, never the installed database's.
+        guard let url = Bundle.main.url(forResource: "eralens-content.versions", withExtension: "json",
+                                        subdirectory: "public/assets/databases"),
+              let data = try? Data(contentsOf: url),
+              let versions = try? JSONDecoder().decode(ContentVersions.self, from: data),
+              versions.schemaVersion > 0, versions.contractVersion > 0 else {
+            throw UpdateError.invalidDatabase("应用缺少有效的数据版本配置，请重新执行 ios:sync 并构建应用")
+        }
+        return versions
+    }
+
     private func validateDatabase(at url: URL) throws -> [String: String] {
         guard FileManager.default.fileExists(atPath: url.path) else { throw UpdateError.invalidDatabase("数据库文件不存在") }
         var db: OpaquePointer?
@@ -281,9 +298,10 @@ public class EraLensNativePlugin: CAPPlugin, CAPBridgedPlugin {
         guard try queryText(db, "PRAGMA integrity_check") == "ok" else { throw UpdateError.invalidDatabase("SQLite integrity_check 未通过") }
         guard try queryText(db, "PRAGMA foreign_key_check") == nil else { throw UpdateError.invalidDatabase("SQLite foreign_key_check 未通过") }
         let metadata = try queryMetadata(db)
-        guard Int(metadata["schema_version"] ?? "0") == expectedSchemaVersion,
-              Int(metadata["contract_version"] ?? "0") == expectedContractVersion else {
-            throw UpdateError.incompatible("数据库 schema/contract 版本不受支持")
+        let expected = try bundledContentVersions()
+        guard Int(metadata["schema_version"] ?? "0") == expected.schemaVersion,
+              Int(metadata["contract_version"] ?? "0") == expected.contractVersion else {
+            throw UpdateError.incompatible("数据库 schema/contract 版本不受支持：实际 \(metadata["schema_version"] ?? "缺失")/\(metadata["contract_version"] ?? "缺失")，应用要求 \(expected.schemaVersion)/\(expected.contractVersion)")
         }
         return metadata
     }

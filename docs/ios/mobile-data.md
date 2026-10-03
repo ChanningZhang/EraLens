@@ -22,6 +22,8 @@ pnpm release:classify -- --base=<last-data-or-app-tag>
 - SQLite 表或索引结构变化时，在 `data/mobile/versions.json` 递增 `schemaVersion`。
 - DTO、枚举或 SQLite 到共享契约映射的兼容性变化时递增 `contractVersion`。
 - schema / contract 变化属于应用发布，不能分类为纯数据更新。
+- `data/mobile/versions.json` 同时定义导出、校验和 SQLite Repository 支持的版本。`pnpm ios:sync` 将其复制为 `public/assets/databases/eralens-content.versions.json`，与数据库一起打包；iOS 原生启动校验与更新清单校验读取这份应用内配置，不另行维护版本常量。版本变更后必须重新同步并构建应用；旧的设备数据库会通过现有恢复流程替换为兼容的内置快照。
+- 启动时 `copyFromAssets(false)` 只补齐缺失的数据库；已安装的数据更新由原生校验、升级和恢复流程处理，避免每次打开应用都被内置快照覆盖。
 - `release:classify` 比较候选工作区与基线引用，输出 `DATA_ONLY`、`APP_RELEASE_REQUIRED` 或 `MANUAL_REVIEW`。生成器、SQL 导入物和非安全 manifest 字段会触发人工复核；应用、共享契约、schema、依赖和构建基础设施改动要求发应用版本。
 - 快照 diff 给出各表主键维度的新增、更新和删除数量，便于发布前复核内容变动。
 

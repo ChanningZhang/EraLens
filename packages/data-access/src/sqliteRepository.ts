@@ -12,6 +12,7 @@ type EntityDetail, type EntityRef, type Event,
 import { DEFAULT_EVENT_DISPLAY_CONFIG, EventDisplayConfigSchema } from "@eralens/shared";
 import type { SqliteDatabaseProvider, TimelineQuery, TimelineRepository } from "./repository";
 import { createPlatformSettings } from "./platformSettings";
+import contentVersions from "../../../data/mobile/versions.json";
 
 type Row = Record<string, unknown>;
 type PersonDetailContext = {
@@ -140,7 +141,7 @@ export class SqliteTimelineRepository implements TimelineRepository {
     const metadata = await rows(db, "SELECT key, value FROM content_metadata");
     const meta = new Map<string, unknown>(metadata.map((row) => [String(row.key), JSON.parse(String(row.value)) as unknown]));
     if (!meta.has("schema_version") || !meta.has("contract_version")) throw new Error("SQLite content database has no schema metadata");
-    if (meta.get("schema_version") !== 6 || meta.get("contract_version") !== 7) throw new Error("SQLite content database version is not supported by this app");
+    if (meta.get("schema_version") !== contentVersions.schemaVersion || meta.get("contract_version") !== contentVersions.contractVersion) throw new Error("SQLite content database version is not supported by this app");
     const [personsRaw, dynastiesRaw, groupsRaw, reignsRaw, eventsRaw, associationRows, mappingRaw, relationsRaw] = await Promise.all([
       rows(db, "SELECT * FROM persons"), rows(db, "SELECT * FROM dynasties"), rows(db, "SELECT * FROM dynasty_groups"),
       rows(db, "SELECT * FROM reigns"), rows(db, "SELECT * FROM events"),

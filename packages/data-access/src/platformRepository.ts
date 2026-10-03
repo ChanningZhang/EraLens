@@ -23,7 +23,8 @@ async function nativeConnection(): Promise<SQLiteDBConnection> {
       // A WebView reload can leave a native connection that no longer has a
       // matching JS wrapper. Reconcile it before validating/replacing files.
       await sqlite.checkConnectionsConsistency().catch(() => ({ result: false }));
-      await sqlite.copyFromAssets();
+      // Preserve installed updates; the native validator owns upgrades/recovery.
+      await sqlite.copyFromAssets(false);
       await EraLensNative.prepareContentDatabase();
       const exists = await sqlite.isConnection(CONTENT_DATABASE, false);
       const database = exists.result

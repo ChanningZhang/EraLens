@@ -47,7 +47,7 @@ pnpm dev:all
 
 项目结构、接口、数据库命令、入库规则和排查约定见 [AGENTS.md](AGENTS.md)。时期数据位于 `data/imports/`；`data/seed/` 是体验和 Mock 使用的示例数据。
 
-人物、事件、王朝的普通关联统一维护在 [entity-associations/cache.json](data/imports/entity-associations/cache.json)，数据库使用无向的 `entity_associations` 表；`relations` 仅保存命运与人物继承关系。导入规则见 [数据维护说明](data/imports/README.md)。移动数据使用 schema 4、contract 5；修改数据后重新生成并校验移动数据库。
+人物、事件、王朝的普通关联统一维护在 [entity-associations/cache.json](data/imports/entity-associations/cache.json)，数据库使用无向的 `entity_associations` 表；`relations` 仅保存命运与人物继承关系。导入规则见 [数据维护说明](data/imports/README.md)。移动数据版本统一由 [versions.json](data/mobile/versions.json) 定义；修改数据后重新生成并校验移动数据库。
 
 ### 王朝分时名称与增量合并
 
