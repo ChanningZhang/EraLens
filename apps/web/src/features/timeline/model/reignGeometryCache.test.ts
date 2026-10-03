@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { absMonth, type DynastyLaneGroup, type Reign } from "@eralens/shared";
-import { dynastyLaneHeightForViewport, prepareLaneReignGeometry } from "./reignClusters";
+import { CAPTION_ROW_SPACING_PX, dynastyLaneHeightForViewport, prepareLaneReignGeometry } from "./reignClusters";
 
 function ruler(id: string, startDay: number, endDay: number): Reign {
   return {
@@ -11,7 +11,59 @@ function ruler(id: string, startDay: number, endDay: number): Reign {
   };
 }
 
+function shortRulerInMonth(id: string, month: number, claimTrack?: string): Reign {
+  const reign = ruler(id, 1, 2);
+  return {
+    ...reign,
+    start: { ...reign.start, month },
+    end: { ...reign.end, month },
+    startAbs: absMonth(1912, month),
+    endAbs: absMonth(1912, month),
+    claimTrack,
+  };
+}
+
 describe("lane geometry across zoom frames", () => {
+  it("keeps horizontally overlapping captions close to bars on separate claim tracks", () => {
+    const reigns = [shortRulerInMonth("main", 1), shortRulerInMonth("rival", 2, "rival")];
+    for (const rowHeight of [40, 32]) {
+      for (const pxPerMonth of [0.5, 1, 2, 1]) {
+        const prepared = prepareLaneReignGeometry(reigns, [], rowHeight, pxPerMonth);
+        const main = prepared.byId.get("main")!;
+        const rival = prepared.byId.get("rival")!;
+        expect(main.overlapsLowerRow).toBe(false);
+        expect(rival.unitTop).toBeGreaterThan(main.unitTop + main.unitHeight);
+        expect(main.captionRow).toBe(0);
+        expect(rival.captionRow).toBe(0);
+      }
+    }
+  });
+
+  it("separates truly overlapping captions by at least their rendered line height", () => {
+    const reigns = [shortRulerInMonth("a", 1), shortRulerInMonth("b", 2)];
+    const prepared = prepareLaneReignGeometry(reigns, [], 40, 1);
+    const first = prepared.byId.get("a")!;
+    const second = prepared.byId.get("b")!;
+    expect(first.captionRow).toBe(0);
+    expect(second.captionRow).toBeGreaterThan(0);
+    const firstBottom = first.unitTop + first.unitHeight + 2 + first.captionRow * CAPTION_ROW_SPACING_PX + 12 * 1.2;
+    const secondTop = second.unitTop + second.unitHeight + 2 + second.captionRow * CAPTION_ROW_SPACING_PX;
+    expect(secondTop).toBeGreaterThanOrEqual(firstBottom);
+  });
+
+  it("avoids actual collisions with shifted captions from another track in compact rows", () => {
+    const reigns = [shortRulerInMonth("a", 1), shortRulerInMonth("b", 2), shortRulerInMonth("rival", 3, "rival")];
+    const prepared = prepareLaneReignGeometry(reigns, [], 18, 1);
+    const rival = prepared.byId.get("rival")!;
+    expect(rival.captionRow).toBeGreaterThan(0);
+    const tops = [...prepared.byId.values()].map((geometry) =>
+      geometry.unitTop + geometry.unitHeight + 2 + geometry.captionRow * CAPTION_ROW_SPACING_PX,
+    ).sort((a, b) => a - b);
+    for (let index = 1; index < tops.length; index += 1) {
+      expect(tops[index]! - tops[index - 1]!).toBeGreaterThanOrEqual(12 * 1.2);
+    }
+  });
+
   it("reuses static layout while recalculating captions without changing previous frames", () => {
     const reigns = [ruler("a", 1, 2), ruler("b", 3, 4), ruler("c", 5, 6)];
     const groups: DynastyLaneGroup[] = [];

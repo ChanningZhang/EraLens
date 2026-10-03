@@ -30,10 +30,12 @@ export const PARALLEL_STACK_ROW_RATIO = 2 / 3;
 export const PARALLEL_STACK_ROW_HEIGHT = STACK_ROW_HEIGHT * PARALLEL_STACK_ROW_RATIO;
 /** Small visual separation between the main row and parallel claimant rows. */
 export const PARALLEL_TRACK_GAP = 4;
-/** Matches the caption's 2px offset and 12px × 1.2 line height in ReignCard.module.css. */
-const CAPTION_BELOW_EXTENT = 2 + 12 * 1.2;
+/** Matches the caption's offset and line height in ReignCard.module.css. */
+const CAPTION_BELOW_OFFSET_PX = 2;
+const CAPTION_LINE_HEIGHT_PX = 12 * 1.2;
+const CAPTION_BELOW_EXTENT = CAPTION_BELOW_OFFSET_PX + CAPTION_LINE_HEIGHT_PX;
 /** Vertical step used when neighboring short-reign captions need separate rows. */
-export const CAPTION_ROW_SPACING_PX = 14;
+export const CAPTION_ROW_SPACING_PX = Math.ceil(CAPTION_LINE_HEIGHT_PX);
 /** Matches the 12px caption font in ReignCard.module.css. */
 const CAPTION_GLYPH_WIDTH_PX = 12;
 const CAPTION_COLLISION_GAP_PX = 4;
@@ -58,7 +60,7 @@ export type PreparedReignGeometry = StackedCardUnit & {
   stackIndex: number;
   rowCount: number;
   overlapsLowerRow: boolean;
-  /** Extra caption row for short bars whose labels collide horizontally. */
+  /** Extra caption row for short bars whose labels overlap in both axes. */
   captionRow: number;
 };
 
@@ -149,14 +151,26 @@ export function prepareLaneReignGeometry(
     }) !== "below") return [];
     const center = (geometry.visualStart + geometry.visualEndExclusive) * pxPerMonth / 2;
     const captionWidth = Math.max(12, [...label].length * CAPTION_GLYPH_WIDTH_PX);
-    return [{ reignId: reign.id, left: center - captionWidth / 2, right: center + captionWidth / 2 }];
+    return [{
+      reignId: reign.id,
+      left: center - captionWidth / 2,
+      right: center + captionWidth / 2,
+      top: geometry.unitTop + geometry.unitHeight + CAPTION_BELOW_OFFSET_PX,
+    }];
   }).sort((a, b) => a.left - b.left || a.right - b.right);
 
-  const rowEnds: number[] = [];
+  // Sweep left to right, retaining only captions that can still overlap in x.
+  // Claim tracks have different y positions; sharing x alone is not a collision.
+  let occupied: Array<{ right: number; top: number; bottom: number }> = [];
   for (const candidate of candidates) {
-    let row = rowEnds.findIndex((right) => candidate.left >= right + CAPTION_COLLISION_GAP_PX);
-    if (row < 0) row = rowEnds.length;
-    rowEnds[row] = candidate.right;
+    occupied = occupied.filter((caption) => candidate.left < caption.right + CAPTION_COLLISION_GAP_PX);
+    let row = 0;
+    let top = candidate.top;
+    while (occupied.some((caption) => top < caption.bottom && top + CAPTION_LINE_HEIGHT_PX > caption.top)) {
+      row += 1;
+      top = candidate.top + row * CAPTION_ROW_SPACING_PX;
+    }
+    occupied.push({ right: candidate.right, top, bottom: top + CAPTION_LINE_HEIGHT_PX });
     const geometry = byId.get(candidate.reignId)!;
     if (row > 0) byId.set(candidate.reignId, { ...geometry, captionRow: row });
     paintedBottom = Math.max(paintedBottom,
