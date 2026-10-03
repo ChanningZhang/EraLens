@@ -472,6 +472,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/李寿"
+        },
+        {
+          "label": "《晋书》卷七·成帝纪（咸康四年夏四月李寿改国号汉）",
+          "url": "https://zh.wikisource.org/zh-hans/晋书/卷007"
         }
       ],
       "birth": null,
@@ -4586,6 +4590,21 @@
         "confidence": "year"
       },
       "summary": "刘曜迁都长安后下令议改汉赵宗庙与国号，群臣据其功业及中山分野建议称“大赵”；刘曜采纳，并以冒顿配天、刘渊配上帝，汉赵由此改称赵，后世称前赵。"
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "id": "li-shou-change-country-name",
+      "name": "李寿改国号为汉",
+      "dateNote": "咸康四年夏四月（原历），公元338年",
+      "at": {
+        "year": 338,
+        "month": 12,
+        "abs": 4067,
+        "confidence": "year"
+      },
+      "atAbs": 4067,
+      "summary": "李寿发动政变废杀李期并即皇帝位，随后废“成”号、改国号为“汉”，改元汉兴，以承续汉朝统绪。改号后的政权仍是原成都政权的延续，后世为与其他汉政权区别而合称成汉；其后仍与东晋、后赵周旋，最终于347年为东晋桓温所灭。"
     }
   ],
   "relations": [
@@ -4961,7 +4980,7 @@
       "persons": 89,
       "dynasties": 18,
       "reigns": 79,
-      "events": 10,
+      "events": 11,
       "relations": 59
     },
     "sources": [
@@ -5532,6 +5551,10 @@
       {
         "label": "《晋书》卷七·成帝纪（咸康四年夏四月李寿改国号汉）",
         "url": "https://zh.wikisource.org/zh-hans/晋书/卷007"
+      },
+      {
+        "label": "《资治通鉴》卷九十六（李寿改号后的政局）",
+        "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷096"
       }
     ],
     "notes": [

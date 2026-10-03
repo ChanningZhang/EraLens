@@ -492,6 +492,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/朱元璋"
+        },
+        {
+          "label": "《明史》卷一·太祖本纪（吴二年即皇帝位、定国号大明）",
+          "url": "https://zh.wikisource.org/zh-hans/明史/卷1"
         }
       ],
       "birth": null,
@@ -1808,6 +1812,10 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/皇太极"
+        },
+        {
+          "label": "《清史稿·朝鲜列传》：天聪十年改元崇德、国号大清",
+          "url": "https://db.history.go.kr/item/compareViewer.do?levelId=jo_024_0010_0020_0130"
         }
       ],
       "birth": null,
@@ -4953,6 +4961,54 @@
       },
       "summary": "土木堡之变后，英宗被俘，皇太后命郕王朱祁钰监国、总理国政。监国自1449年9月4日至9月21日，共18天。",
       "atAbs": 17399
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "id": "kublai-change-country-name-to-yuan",
+      "name": "忽必烈改国号为大元",
+      "dateNote": "至元八年十一月十五日（公历1271年12月18日）",
+      "at": {
+        "year": 1271,
+        "month": 12,
+        "day": 18,
+        "abs": 15263,
+        "confidence": "day"
+      },
+      "atAbs": 15263,
+      "summary": "忽必烈在蒙古帝国扩张和汗位争夺之后，依汉地王朝定号传统颁《建国号诏》，取《易经》“乾元”之义，定国号为“大元”。此举确立元朝的汉文国号；对南宋的战争仍在继续，直到1279年崖山之战后才完成统一。"
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "id": "zhu-yuanzhang-change-country-name-to-ming",
+      "name": "朱元璋改国号为大明",
+      "dateNote": "吴二年正月初四（公历1368年1月23日）",
+      "at": {
+        "year": 1368,
+        "month": 1,
+        "day": 23,
+        "abs": 16416,
+        "confidence": "day"
+      },
+      "atAbs": 16416,
+      "summary": "元末群雄割据中，朱元璋先以吴为政权称号，以应天为根据地。1368年正月初四，他在应天即皇帝位，定有天下之号为“大明”、年号洪武，吴政权由此转入明朝阶段；随后明军北伐攻取大都，元廷退居漠北。"
+    },
+    {
+      "kind": "politics",
+      "timeMode": "point",
+      "id": "huang-taiji-change-country-name-to-qing",
+      "name": "皇太极改国号为大清",
+      "dateNote": "天聪十年四月十一日（公历1636年5月15日）",
+      "at": {
+        "year": 1636,
+        "month": 5,
+        "day": 15,
+        "abs": 19636,
+        "confidence": "day"
+      },
+      "atAbs": 19636,
+      "summary": "努尔哈赤建立的后金政权由皇太极继承并扩张。天聪十年，皇太极在盛京称帝，改国号为“大清”、改元崇德，后金由此进入清朝阶段；此后清与明、朝鲜及蒙古诸部的战争和外交继续交织。"
     }
   ],
   "relations": [
@@ -5274,7 +5330,7 @@
       "persons": 89,
       "dynasties": 8,
       "reigns": 58,
-      "events": 63,
+      "events": 66,
       "relations": 50
     },
     "sources": [
@@ -5897,6 +5953,22 @@
       {
         "label": "《清太宗实录》卷二十八（天聪十年四月十一日改国号为大清）",
         "url": "https://zh.wikipedia.org/wiki/后金"
+      },
+      {
+        "label": "《元典章·建国号诏》",
+        "url": "https://zh.wikisource.org/zh-hant/建國號詔"
+      },
+      {
+        "label": "故宫博物院：洪武皇帝",
+        "url": "https://www.dpm.org.cn/court/lineage/226244.html"
+      },
+      {
+        "label": "《清史稿·朝鲜列传》：天聪十年改元崇德、国号大清",
+        "url": "https://db.history.go.kr/item/compareViewer.do?levelId=jo_024_0010_0020_0130"
+      },
+      {
+        "label": "《明史》卷一·太祖本纪（吴二年即皇帝位、定国号大明）",
+        "url": "https://zh.wikisource.org/zh-hans/明史/卷1"
       }
     ],
     "notes": [

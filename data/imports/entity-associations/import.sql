@@ -1189,5 +1189,13 @@ INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('event', 'z
 INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('event', 'zuo-recover-xinjiang', 'person', 'zaitian') ON CONFLICT DO NOTHING;
 INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('event', 'zuo-recover-xinjiang', 'person', 'zuo-zongtang') ON CONFLICT DO NOTHING;
 INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('person', 'temujin', 'person', 'tolui') ON CONFLICT DO NOTHING;
+INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('dynasty', 'cheng-han', 'event', 'li-shou-change-country-name') ON CONFLICT DO NOTHING;
+INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('event', 'li-shou-change-country-name', 'person', 'li-shou') ON CONFLICT DO NOTHING;
+INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('dynasty', 'yuan', 'event', 'kublai-change-country-name-to-yuan') ON CONFLICT DO NOTHING;
+INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('event', 'kublai-change-country-name-to-yuan', 'person', 'hu-bilie') ON CONFLICT DO NOTHING;
+INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('dynasty', 'ming', 'event', 'zhu-yuanzhang-change-country-name-to-ming') ON CONFLICT DO NOTHING;
+INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('event', 'zhu-yuanzhang-change-country-name-to-ming', 'person', 'zhu-yuanzhang') ON CONFLICT DO NOTHING;
+INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('dynasty', 'qing', 'event', 'huang-taiji-change-country-name-to-qing') ON CONFLICT DO NOTHING;
+INSERT INTO entity_associations (a_type, a_id, b_type, b_id) VALUES ('event', 'huang-taiji-change-country-name-to-qing', 'person', 'huang-taiji') ON CONFLICT DO NOTHING;
 
 COMMIT;

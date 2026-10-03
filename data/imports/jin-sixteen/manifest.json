@@ -14,7 +14,7 @@
     "persons": 89,
     "dynasties": 18,
     "reigns": 79,
-    "events": 10,
+    "events": 11,
     "relations": 59
   },
   "sources": [
@@ -585,6 +585,10 @@
     {
       "label": "《晋书》卷七·成帝纪（咸康四年夏四月李寿改国号汉）",
       "url": "https://zh.wikisource.org/zh-hans/晋书/卷007"
+    },
+    {
+      "label": "《资治通鉴》卷九十六（李寿改号后的政局）",
+      "url": "https://zh.wikisource.org/zh-hans/資治通鑑/卷096"
     }
   ],
   "notes": [

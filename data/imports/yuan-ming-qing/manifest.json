@@ -14,7 +14,7 @@
     "persons": 89,
     "dynasties": 8,
     "reigns": 58,
-    "events": 63,
+    "events": 66,
     "relations": 50
   },
   "sources": [
@@ -637,6 +637,22 @@
     {
       "label": "《清太宗实录》卷二十八（天聪十年四月十一日改国号为大清）",
       "url": "https://zh.wikipedia.org/wiki/后金"
+    },
+    {
+      "label": "《元典章·建国号诏》",
+      "url": "https://zh.wikisource.org/zh-hant/建國號詔"
+    },
+    {
+      "label": "故宫博物院：洪武皇帝",
+      "url": "https://www.dpm.org.cn/court/lineage/226244.html"
+    },
+    {
+      "label": "《清史稿·朝鲜列传》：天聪十年改元崇德、国号大清",
+      "url": "https://db.history.go.kr/item/compareViewer.do?levelId=jo_024_0010_0020_0130"
+    },
+    {
+      "label": "《明史》卷一·太祖本纪（吴二年即皇帝位、定国号大明）",
+      "url": "https://zh.wikisource.org/zh-hans/明史/卷1"
     }
   ],
   "notes": [

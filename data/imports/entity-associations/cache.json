@@ -4744,6 +4744,38 @@
     {
       "aRef": "person:temujin",
       "bRef": "person:tolui"
+    },
+    {
+      "aRef": "dynasty:cheng-han",
+      "bRef": "event:li-shou-change-country-name"
+    },
+    {
+      "aRef": "event:li-shou-change-country-name",
+      "bRef": "person:li-shou"
+    },
+    {
+      "aRef": "dynasty:yuan",
+      "bRef": "event:kublai-change-country-name-to-yuan"
+    },
+    {
+      "aRef": "event:kublai-change-country-name-to-yuan",
+      "bRef": "person:hu-bilie"
+    },
+    {
+      "aRef": "dynasty:ming",
+      "bRef": "event:zhu-yuanzhang-change-country-name-to-ming"
+    },
+    {
+      "aRef": "event:zhu-yuanzhang-change-country-name-to-ming",
+      "bRef": "person:zhu-yuanzhang"
+    },
+    {
+      "aRef": "dynasty:qing",
+      "bRef": "event:huang-taiji-change-country-name-to-qing"
+    },
+    {
+      "aRef": "event:huang-taiji-change-country-name-to-qing",
+      "bRef": "person:huang-taiji"
     }
   ],
   "manifest": {
@@ -4753,7 +4785,7 @@
     "importPhase": "post",
     "postImportOrder": 100,
     "counts": {
-      "associations": 1186
+      "associations": 1194
     },
     "sources": [
       {
@@ -11759,6 +11791,22 @@
       {
         "label": "1449年农历八月日历换算",
         "url": "https://datedb.net/tool/conversion/lunar_to_solar/14490817/"
+      },
+      {
+        "label": "《晋书》卷七·成帝纪（李寿改国号汉）",
+        "url": "https://zh.wikisource.org/zh-hans/晋书/卷007"
+      },
+      {
+        "label": "《元典章·建国号诏》（忽必烈定国号大元）",
+        "url": "https://zh.wikisource.org/zh-hant/建國號詔"
+      },
+      {
+        "label": "《明史》卷一·太祖本纪（朱元璋定国号大明）",
+        "url": "https://zh.wikisource.org/zh-hans/明史/卷1"
+      },
+      {
+        "label": "《清史稿·朝鲜列传》（天聪十年国号大清）",
+        "url": "https://db.history.go.kr/item/compareViewer.do?levelId=jo_024_0010_0020_0130"
       }
     ],
     "notes": [
