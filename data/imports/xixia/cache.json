@@ -358,7 +358,6 @@
       "note": "党项李氏原据夏州一带，李继迁时期逐步摆脱宋朝控制并扩展至河西；1038年李元昊称帝，国号大夏，定都兴庆府，宋人因其地在西而称西夏。西夏在党项旧制基础上设置官僚机构，创制并推行西夏文字，翻译佛经、发展佛教文化。其政权与北宋、辽长期并立，先后交战、议和并开展贸易；金灭辽后，又处于宋金之间。蒙古自13世纪初持续进攻，1227年西夏为蒙古所灭。"
     }
   ],
-  "capitals": [],
   "reigns": [
     {
       "id": "reign-li-jiqian-xixia",
@@ -777,7 +776,6 @@
   "supplementalEventDynasties": [],
   "supplementalEventParticipants": [],
   "preSql": "DELETE FROM relations WHERE id = 'rel-xixia-yuanhao-empire';\nDELETE FROM event_participants WHERE event_id IN ('xixia-li-jiqian-rebel', 'xixia-yuanhao-empire');\nDELETE FROM event_dynasties WHERE event_id IN ('xixia-li-jiqian-rebel', 'xixia-yuanhao-empire');\nDELETE FROM events WHERE id IN ('xixia-li-jiqian-rebel', 'xixia-yuanhao-empire');",
-  "reignCapitals": [],
   "manifest": {
     "slug": "xixia",
     "title": "西夏（党项大夏）",

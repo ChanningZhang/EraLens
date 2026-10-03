@@ -188,7 +188,6 @@
       "note": "1206年铁木真称成吉思汗建国；1271年忽必烈定国号大元，中原史语境转入元朝。帝国诸汗国此后分治。"
     }
   ],
-  "capitals": [],
   "reigns": [
     {
       "id": "reign-temujin-mongol-empire",
@@ -544,7 +543,6 @@
     }
   ],
   "preSql": "-- remove stale auto-generated 史料缺 (regency gaps are intentional blanks)\nDELETE FROM reigns WHERE dynasty_id IN ('mongol-empire') AND person_id = 'system-missing-ruler';",
-  "reignCapitals": [],
   "manifest": {
     "slug": "mongol-pre-yuan",
     "title": "元朝建立前的蒙古帝国",

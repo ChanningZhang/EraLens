@@ -1,3 +1,5 @@
+import type { CapitalLocation } from "./schema";
+import { locationFixture } from "../test/locationFixtures";
 import { describe, expect, it } from "vitest";
 import { absMonth } from "./time";
 import { searchEntities } from "./timelineData";
@@ -172,7 +174,7 @@ describe("searchEntities capitals", () => {
       persons: [],
       events: [],
       relations: [],
-      capitals: [
+      locationMappings: [
         {
           id: "cap-tang-changan",
           dynastyId: "tang",
@@ -189,12 +191,12 @@ describe("searchEntities capitals", () => {
           role: "primary" as const,
           links: [],
         },
-      ],
+      ].map(c => locationFixture(c as CapitalLocation,"dynasty",c.dynastyId)),
     };
 
     expect(searchEntities(store, "西安")).toEqual([
       {
-        ref: { type: "capital", id: "cap-tang-changan" },
+        ref: { type: "location_mapping", id: "cap-tang-changan" },
         label: "长安",
         subtitle: "陕西省西安市 · 唐 · 都城",
         abs: (absMonth(618, 1) + absMonth(904, 12)) / 2,

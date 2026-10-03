@@ -1,0 +1,1374 @@
+{
+  "slug": "locations",
+  "locations": [
+    {
+      "id": "loc-00b602f076336a1d9821474d74aa5a12",
+      "modernName": "甘肃省酒泉市",
+      "longitude": 98.49432,
+      "latitude": 39.733416,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-08f48e4e849b7ddef96d361d7eb9112e",
+      "modernName": "青海省海东市乐都区",
+      "longitude": 102.401614,
+      "latitude": 36.482242,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-091bfa4d41f9cc6bb6d97a9eb5945623",
+      "modernName": "陕西省宝鸡市岐山县",
+      "longitude": 107.621397,
+      "latitude": 34.44373,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-09f3c173ba489602bebbd62253d859ec",
+      "modernName": "山西省临汾市曲沃县、翼城县交界的曲村—天马遗址一带",
+      "longitude": 111.568992,
+      "latitude": 35.736531,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-0c629f5f65ed44824e39bf7540b1d2e9",
+      "modernName": "山西省吕梁市方山县",
+      "longitude": 111.244309,
+      "latitude": 37.895017,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-0ccb6d6d58b9e924d9458cf5163e8210",
+      "modernName": "甘肃省陇南市成县",
+      "longitude": 105.729569,
+      "latitude": 33.740547,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-0f8df4e323a3898f21c271123be50710",
+      "modernName": "广西壮族自治区桂林市",
+      "longitude": 110.179752,
+      "latitude": 25.235615,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-0fbe67ff838d9f5900b267fb56ad7f34",
+      "modernName": "河北省邯郸市大名县魏城村旧魏县城",
+      "longitude": 114.86891,
+      "latitude": 36.34847,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-100ffde93a630c13770d309967ab61ee",
+      "modernName": "湖北省黄冈市浠水县",
+      "longitude": 115.265155,
+      "latitude": 30.452212,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-102fb3aa5ae9b60b645596098d59db9f",
+      "modernName": "河南省三门峡市李家窑遗址一带",
+      "longitude": 111.19,
+      "latitude": 34.75,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-11b93738d0f04ecad01441a20ff57204",
+      "modernName": "黑龙江省哈尔滨市阿城区",
+      "longitude": 126.957984,
+      "latitude": 45.548671,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-13987393804ac7bff0c47288e4eec640",
+      "modernName": "甘肃省张掖市",
+      "longitude": 100.449858,
+      "latitude": 38.924766,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-13ed0405e4b4d3d7f8d38fd6223d5961",
+      "modernName": "安徽省芜湖市无为市裕溪河入长江口一带",
+      "longitude": 117.78,
+      "latitude": 31.3,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-14720c3b46bb1941f160a0de17260d11",
+      "modernName": "辽宁省葫芦岛市兴城市古城",
+      "longitude": 120.73,
+      "latitude": 40.62,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-1513787be59e4e9254efdf30c00989e5",
+      "modernName": "浙江省绍兴市",
+      "longitude": 120.582886,
+      "latitude": 30.051549,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-17f7888ff91688321999184cfd1fe654",
+      "modernName": "福建省福州市",
+      "longitude": 119.296411,
+      "latitude": 26.074286,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-196d420edc2358abf08394a3b0cb6ef5",
+      "modernName": "河南省郑州市荥阳市汜水镇虎牢关遗址",
+      "longitude": 113.13,
+      "latitude": 34.91,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-1bc639efb49d835e714ac0e15ab69752",
+      "modernName": "甘肃省武威市",
+      "longitude": 102.637821,
+      "latitude": 37.92898,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-1ea20b006e9d880c15ec72dcb4e97b1e",
+      "modernName": "内蒙古自治区赤峰市克什克腾旗达日罕乌拉苏木应昌路故城遗址",
+      "longitude": 116.487067,
+      "latitude": 43.269985,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-1ed87e6c1c5aec9650cf0e1a436c6dc4",
+      "modernName": "陕西省西安市",
+      "longitude": 108.939645,
+      "latitude": 34.343207,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-20cf322c3ac6c0c10c4f113a5572ab75",
+      "modernName": "安徽省宿州市灵璧县东南一带",
+      "longitude": 117.62,
+      "latitude": 33.43,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-21798e9ca7e2d2124da0f0a34e2bd98f",
+      "modernName": "河南省安阳市殷都区殷墟遗址",
+      "longitude": 114.316,
+      "latitude": 36.125,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-227b3fea624a14a6bb463e7d139d66dc",
+      "modernName": "河南省开封市兰考县一带",
+      "longitude": 114.82,
+      "latitude": 34.82,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-232c7689608a0537eb34bb8a0040b929",
+      "modernName": "河南省新乡市封丘县陈桥镇陈桥村",
+      "longitude": 114.46,
+      "latitude": 35.03,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-23f1d257b9588a187a0a5ab7711e4d0d",
+      "modernName": "台湾海峡澎湖群岛至台湾岛",
+      "longitude": 119.57,
+      "latitude": 23.57,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-248ff7be823a2f4964045f586e347281",
+      "modernName": "江苏省南京市",
+      "longitude": 118.796624,
+      "latitude": 32.059344,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-24efec2923a46f6eb4e54600192eee01",
+      "modernName": "江苏省苏州市",
+      "longitude": 120.585294,
+      "latitude": 31.299758,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-252a9a87a629880d32ae7c740a3c8b8d",
+      "modernName": "山西省大同市云州区周士庄镇马铺山",
+      "longitude": 113.37025,
+      "latitude": 40.13972,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-255292847f696ae457f126b587f6e241",
+      "modernName": "河南省平顶山市叶县古城一带",
+      "longitude": 113.35,
+      "latitude": 33.62,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-259af1fc7ebc3c45652d2a79835c79e6",
+      "modernName": "浙江省杭州市",
+      "longitude": 120.155,
+      "latitude": 30.274,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-26db396c52120f3ca5d958c0e43e1bdc",
+      "modernName": "陕西省宝鸡市凤翔县",
+      "longitude": 107.401029,
+      "latitude": 34.522167,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-274b46582b7c685b4f68d87b936312ab",
+      "modernName": "山西省运城市绛县一带（故绛城址有争议）",
+      "longitude": 111.568849,
+      "latitude": 35.491764,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-274b76d226520ebfe537c8ea5c0b5dfd",
+      "modernName": "河南省商丘市",
+      "longitude": 115.656358,
+      "latitude": 34.415165,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-28fdff339f6b49d015ababa2ba5a839b",
+      "modernName": "辽宁省沈阳市",
+      "longitude": 123.464675,
+      "latitude": 41.677576,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-29af81808abe96196c82242e48ea98f6",
+      "modernName": "内蒙古自治区锡林郭勒盟正蓝旗",
+      "longitude": 115.991648,
+      "latitude": 42.241815,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-2f90720244ea1b5a2620da9ae6e2c40f",
+      "modernName": "山东省枣庄市滕州市姜屯镇滕国故城遗址",
+      "longitude": 117.090733,
+      "latitude": 35.044255,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-30a3cf6611edde8e06c2243abe038a59",
+      "modernName": "江西省南昌市",
+      "longitude": 115.8582,
+      "latitude": 28.6829,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-30e65be35eeafdbba3671ed1b5cc2ab0",
+      "modernName": "蒙古国前杭爱省哈拉和林古城遗址",
+      "longitude": 102.83333,
+      "latitude": 47.23333,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-334efd5254a006d7eb9f5dc3f0101d7d",
+      "modernName": "北京市",
+      "longitude": 116.4074,
+      "latitude": 39.9042,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-34619906a804353306984cd1999d81b0",
+      "modernName": "湖北省荆州市",
+      "longitude": 112.24143,
+      "latitude": 30.336282,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-3493a5d321fb7ecbe010ac93a915b133",
+      "modernName": "河北省张家口市蔚县",
+      "longitude": 114.589136,
+      "latitude": 39.840154,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-34a97e68794cfbf0158f24317dd81795",
+      "modernName": "陕西省西安市",
+      "longitude": 108.939,
+      "latitude": 34.248,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-361160e7b1386976f8d8ab86ba3e5740",
+      "modernName": "甘肃省陇南市礼县",
+      "longitude": 105.17864,
+      "latitude": 34.189345,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-37e8177dc834c0d2e083e7228e74d249",
+      "modernName": "江西省鄱阳湖南昌附近水域",
+      "longitude": 116.2,
+      "latitude": 29.05,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-39900428bdd0a01d9fe0ae65fa39d992",
+      "modernName": "北京市海淀区高梁河一带",
+      "longitude": 116.34,
+      "latitude": 39.95,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-39bea5536ce486068b468de61ed288a6",
+      "modernName": "山东省菏泽市牡丹区西南一带",
+      "longitude": 115.35,
+      "latitude": 35.1,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-3c77970bd7687281888f43e74b44ff8d",
+      "modernName": "河南省洛阳市瀍河回族区汉魏洛阳故城",
+      "longitude": 112.589,
+      "latitude": 34.728,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-3d0eecacf3ef276d2d2ec3eda4ca17b2",
+      "modernName": "云南省大理白族自治州大理市",
+      "longitude": 100.301614,
+      "latitude": 25.678466,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-3d5043964471fd257a273845e0c118f8",
+      "modernName": "山西省临汾市侯马市",
+      "longitude": 111.372002,
+      "latitude": 35.619105,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-3f81c12ee7208c1de43478570ae0f562",
+      "modernName": "河北省邯郸市永年区广府古城",
+      "longitude": 114.729273,
+      "latitude": 36.701056,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-404e1270fc3a23c5c4214a60897bedb6",
+      "modernName": "浙江省绍兴市越城区",
+      "longitude": 120.582338,
+      "latitude": 29.989092,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-4083da04d1ab15d6ed35bd955472d52f",
+      "modernName": "陕西省西安市阎良区",
+      "longitude": 109.226124,
+      "latitude": 34.662232,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-42727c5fb2b03ba6f0970e4ca69b7d77",
+      "modernName": "湖南省衡阳市",
+      "longitude": 112.572,
+      "latitude": 26.8932,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-42bc422742b565ec8b38b694290c0fc8",
+      "modernName": "山东省枣庄市滕州市官桥镇薛国故城遗址",
+      "longitude": 117.175054,
+      "latitude": 34.90236,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-42f30eb44965d5d771ed147d4ff28787",
+      "modernName": "河北省邢台市巨鹿县一带",
+      "longitude": 115.037,
+      "latitude": 37.221,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-454e2784686de512df6c7429d442a66c",
+      "modernName": "湖北省咸宁市赤壁市赤壁镇至洪湖市乌林镇",
+      "longitude": 113.63,
+      "latitude": 29.89,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-464ca4b5ce39e700a0b48163b3bca982",
+      "modernName": "山东省枣庄市台儿庄区台儿庄古城一带",
+      "longitude": 117.7348,
+      "latitude": 34.56,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-4adb5fc9b88edb3e46611b219415f7ac",
+      "modernName": "湖南省长沙市",
+      "longitude": 112.938882,
+      "latitude": 28.228304,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-4de38da8dfd40c7a25fe5227987ea1d0",
+      "modernName": "西藏自治区拉萨市",
+      "longitude": 91.171924,
+      "latitude": 29.653491,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-4ecc93e88e68734a88f3e47717ab8cfd",
+      "modernName": "吉林省通化市集安市",
+      "longitude": 126.193172,
+      "latitude": 41.125805,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-51390342940d6258c1043ce86efecc39",
+      "modernName": "河北省保定市定州市",
+      "longitude": 114.990321,
+      "latitude": 38.516746,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-51c2bc5f10de2fd1e36812b2a3fad191",
+      "modernName": "安徽省合肥市庐阳区逍遥津公园",
+      "longitude": 117.302,
+      "latitude": 31.873,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-5212a71d6257208d456e5c3dc9d65a13",
+      "modernName": "河南省南阳市淅川县",
+      "longitude": 111.490902,
+      "latitude": 33.137831,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-52526c9af996bf7ffdd859fee51e19af",
+      "modernName": "陕西省宝鸡市岐山县五丈原镇",
+      "longitude": 107.63,
+      "latitude": 34.3,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-52ab382a96b99bcd8afb6172635c41c1",
+      "modernName": "河南省南阳市",
+      "longitude": 112.584753,
+      "latitude": 33.016102,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-541df36ea525c780ae7542fe455f7c5d",
+      "modernName": "安徽省淮南市寿县东南",
+      "longitude": 116.82,
+      "latitude": 32.5,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-54de1d92f30c8315e56ed2e15af1e5de",
+      "modernName": "河北省石家庄市灵寿县",
+      "longitude": 114.383013,
+      "latitude": 38.307908,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-587e49df0acc0f18f2136909626d3809",
+      "modernName": "辽宁省抚顺市新宾满族自治县永陵镇赫图阿拉城遗址",
+      "longitude": 124.874263,
+      "latitude": 41.705298,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-589b4eba8edb31f7b1edeee350a5fe92",
+      "modernName": "江苏省南京市",
+      "longitude": 118.8,
+      "latitude": 32.06,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-5abaca1da3b34c6e696c91445d72a21e",
+      "modernName": "浙江省杭州市",
+      "longitude": 120.209903,
+      "latitude": 30.246566,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-5b6799dae31959ffd32fbfeb62ec52ff",
+      "modernName": "河南省安阳市",
+      "longitude": 114.39248,
+      "latitude": 36.098779,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-5de9cbb56093c466444d98e25baf9990",
+      "modernName": "上海市",
+      "longitude": 121.4737,
+      "latitude": 31.2304,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-60a84e1fa06e3195e3323e209fbb5435",
+      "modernName": "陕西省咸阳市",
+      "longitude": 108.708837,
+      "latitude": 34.329896,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-63af1c1e87c86718a8fe9d90d828321c",
+      "modernName": "辽宁省沈阳市大东区柳林街2号北大营营房旧址",
+      "longitude": 123.482871,
+      "latitude": 41.840793,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-63d49fec9080c20af3f133b9aeb1fb35",
+      "modernName": "河南省濮阳市",
+      "longitude": 115.029246,
+      "latitude": 35.762731,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-695dfbd938aeff918659c9ad5cda38ee",
+      "modernName": "安徽省淮南市寿县",
+      "longitude": 116.798203,
+      "latitude": 32.545027,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-6a3fe761ca859409473395306f1c0c1b",
+      "modernName": "山西省临汾市隰县",
+      "longitude": 110.940752,
+      "latitude": 36.693345,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-6acfc31df705e8bc4d2c864936135a3e",
+      "modernName": "河北省邯郸市",
+      "longitude": 114.53915,
+      "latitude": 36.625849,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-6b821b6fcabd5c809ee0816773b2a2bd",
+      "modernName": "山东省日照市莒县",
+      "longitude": 118.869059,
+      "latitude": 35.59125,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-6d9f5d42facccf35a3c078c48e8ee83b",
+      "modernName": "山西省大同市灵丘县平型关镇一带",
+      "longitude": 113.9236,
+      "latitude": 39.3209,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-6dfbe5d117811a8c9f7c114473378c51",
+      "modernName": "河北省邢台市巨鹿县",
+      "longitude": 115.04,
+      "latitude": 37.22,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-70f02970df9f56dbd2288064001f7adb",
+      "modernName": "河南省漯河市郾城区",
+      "longitude": 113.98,
+      "latitude": 33.59,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-70f11d6649bb6ed9b8731280f6d53a84",
+      "modernName": "新疆维吾尔自治区巴音郭楞蒙古自治州轮台县东南乌垒古城区域",
+      "longitude": 84.25,
+      "latitude": 41.55,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-720a91ea2e1a06cc27dc8694aff5b417",
+      "modernName": "辽宁省辽阳市白塔区",
+      "longitude": 123.174347,
+      "latitude": 41.270397,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-7261c4cf1bd03fbfd924dcce300a9bd9",
+      "modernName": "广东省广州市",
+      "longitude": 113.264499,
+      "latitude": 23.130061,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-732b06794824d017f100cb3e3d6da356",
+      "modernName": "陕西省榆林市靖边县",
+      "longitude": 108.794153,
+      "latitude": 37.600351,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-738cce444b113b03fe896949f97a6d9c",
+      "modernName": "河南省洛阳市瀍河回族区汉魏洛阳故城成周遗址",
+      "longitude": 112.618163,
+      "latitude": 34.7202,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-7575495d7526cb46127984392d92bd76",
+      "modernName": "河南省安阳市内黄县",
+      "longitude": 114.90146,
+      "latitude": 35.972016,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-77031b2c2d2f59487205590317234b79",
+      "modernName": "河南省洛阳市；高平陵遗址位于洛阳市汝阳县茹店村一带",
+      "longitude": 112.453,
+      "latitude": 34.619,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-77fbefe4a5d06111e45a9a373d032274",
+      "modernName": "陕西省汉中市勉县定军山镇",
+      "longitude": 106.674,
+      "latitude": 33.118,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-7d6a624049adc070b6e40742c0de744f",
+      "modernName": "广西壮族自治区南宁市",
+      "longitude": 108.366407,
+      "latitude": 22.8177,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-7d85879a6616f742b9caa48493138ce6",
+      "modernName": "湖北省荆州市江陵区",
+      "longitude": 112.24143,
+      "latitude": 30.336282,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-806658dc845429fdd4d9971880684542",
+      "modernName": "河北省邯郸市临漳县邺城遗址",
+      "longitude": 114.585514,
+      "latitude": 36.322504,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-823f1e50fb5d19905068bfa648831034",
+      "modernName": "山西省运城市闻喜县桐城镇上郭村上郭城址一带",
+      "longitude": 111.240915,
+      "latitude": 35.317727,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-82f0372c24cb2702712a9a90a50e525f",
+      "modernName": "河南省郑州市巩义市康店镇康北村东周故城遗址",
+      "longitude": 112.950276,
+      "latitude": 34.767303,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-8479a6095d16bac22eb8971f44db0b24",
+      "modernName": "蒙古国肯特山脉一带",
+      "longitude": 109.5,
+      "latitude": 48.5,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-86510f8cf702b07cba4c776681228a29",
+      "modernName": "湖北省武汉市",
+      "longitude": 114.304569,
+      "latitude": 30.593354,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-8835abf918f6ec79da8743869f9d67a6",
+      "modernName": "陕西省宝鸡市陈仓区",
+      "longitude": 107.368993,
+      "latitude": 34.35073,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-8a2aaf2d1acc7be238af6f2ff5152180",
+      "modernName": "贵州省毕节市赫章县",
+      "longitude": 104.728011,
+      "latitude": 27.117933,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-8adb40681e0917f39ec94f5119a4c291",
+      "modernName": "山东省济宁市邹城市峄山镇邾国故城遗址",
+      "longitude": 117.023387,
+      "latitude": 35.304314,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-8bfa6e74f42652bba0676e4537fbaed6",
+      "modernName": "湖北省武汉市汉阳区",
+      "longitude": 114.21859,
+      "latitude": 30.554287,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-913a958ed522d75a8558a1c72a81aece",
+      "modernName": "云南省大理白族自治州大理市太和村太和城遗址",
+      "longitude": 100.198061,
+      "latitude": 25.633246,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-91b731e0771362127a8e9b8445a5d4c2",
+      "modernName": "河南省开封市",
+      "longitude": 114.314278,
+      "latitude": 34.798083,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-93259114b5fd929bb6de3e5c3c3a608e",
+      "modernName": "蒙古国前杭爱省哈拉和林苏木",
+      "longitude": 102.848,
+      "latitude": 47.197,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-9372bfb98b66d76ed82b7ca22822b623",
+      "modernName": "河北省邯郸市临漳县",
+      "longitude": 114.585514,
+      "latitude": 36.322504,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-94e88a2f3f91f514e7016f414b9292da",
+      "modernName": "内蒙古自治区赤峰市巴林左旗",
+      "longitude": 119.362832,
+      "latitude": 43.961547,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-95a17813c634ad0a37f915483db079bc",
+      "modernName": "重庆市",
+      "longitude": 106.551,
+      "latitude": 29.563,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-975f3b115a30797b8b2c2e59720c08da",
+      "modernName": "广东省江门市新会区古井镇崖门水道",
+      "longitude": 113.09,
+      "latitude": 22.27,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-977f695b66f567acd2953b1fcf9bb5cf",
+      "modernName": "湖南省常德市",
+      "longitude": 111.6985,
+      "latitude": 29.0316,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-9b7ba8af254b356e67d22d96ea621e56",
+      "modernName": "山西省大同市",
+      "longitude": 113.366749,
+      "latitude": 40.09711,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-9be5a2972cd38752e751330b1f60883d",
+      "modernName": "上海市虹口区天通庵路一带",
+      "longitude": 121.483,
+      "latitude": 31.276,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-9c1e65798848b975fcd3a4febbbd6d6a",
+      "modernName": "山东省聊城市莘县大张家镇",
+      "longitude": 115.55,
+      "latitude": 36.16,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-9d1fef066a3e2e76d160a264570f298e",
+      "modernName": "辽宁省锦州市凌海市至锦州市区",
+      "longitude": 121.15,
+      "latitude": 41.1,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-9d2b60d1f2b37f84e2b5228539f9bcfb",
+      "modernName": "江苏省徐州市",
+      "longitude": 117.2858,
+      "latitude": 34.2044,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-9e55316f5ecc76f0beeaa2c82cc9bb8c",
+      "modernName": "湖南省怀化市雪峰山一带",
+      "longitude": 110.7,
+      "latitude": 27.3,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-9e77260ad656396b6fdcb2e9721b1737",
+      "modernName": "江苏省徐州市",
+      "longitude": 117.283752,
+      "latitude": 34.204224,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-9efed331fab4b4a75a343593f53c5bed",
+      "modernName": "山西省临汾市尧都区",
+      "longitude": 111.578797,
+      "latitude": 36.082463,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-9f1565fcaf315fd7065f6da4a36807ac",
+      "modernName": "山西省太原市",
+      "longitude": 112.5489,
+      "latitude": 37.8706,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-a02ba5e8fc73cc6d786e660d405d1b89",
+      "modernName": "湖北省荆门市掇刀区长坂坡",
+      "longitude": 112.211,
+      "latitude": 30.965,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-a0838c927f530f86c43cbd83b9c61ffe",
+      "modernName": "重庆市",
+      "longitude": 106.551787,
+      "latitude": 29.56268,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-a1e62a0c8b0ea409dd90b5d89a1b2811",
+      "modernName": "河南省洛阳市西工区东周王城遗址",
+      "longitude": 112.437,
+      "latitude": 34.672,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-a27e018b8f494d5767c214c24558805a",
+      "modernName": "山西省阳泉市",
+      "longitude": 113.5833,
+      "latitude": 37.8612,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-a286892c3d461160b24d88e277fb1120",
+      "modernName": "北京市",
+      "longitude": 116.397,
+      "latitude": 39.916,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-a4c9869ebda17ab4429e7af85bea9092",
+      "modernName": "朝鲜民主主义人民共和国平壤市",
+      "longitude": 125.7625,
+      "latitude": 39.0392,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-a5f693857025e27b1f199405f6ccbe29",
+      "modernName": "山西省临汾市",
+      "longitude": 111.51931,
+      "latitude": 36.088581,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-a60fbe8b688d3d86b49edff907467615",
+      "modernName": "湖北省武汉市",
+      "longitude": 114.3055,
+      "latitude": 30.5928,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-ab0259150a8684f8bf30e3907309db93",
+      "modernName": "陕西省汉中市",
+      "longitude": 107.023,
+      "latitude": 33.067,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-ab9afa31d077175f7d9f1471f1936fa4",
+      "modernName": "江苏省扬州市高邮市",
+      "longitude": 119.45892,
+      "latitude": 32.781606,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-aee6fe65b2e534b66e6a82cef6246943",
+      "modernName": "河南省鹤壁市淇县",
+      "longitude": 114.208851,
+      "latitude": 35.622571,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-b00a6d4ea5a3182c3bd14a198da28d2d",
+      "modernName": "甘肃省临夏回族自治州临夏市",
+      "longitude": 103.24222,
+      "latitude": 35.604682,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-b0209fa035e1cbc61bdf614a0da41e24",
+      "modernName": "江苏省扬州市",
+      "longitude": 119.412834,
+      "latitude": 32.394404,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-b5f03fc29104b00589578ed9e5002047",
+      "modernName": "河南省开封市杞县",
+      "longitude": 114.782629,
+      "latitude": 34.549731,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-b756ae273da43a217bd92241a3441b93",
+      "modernName": "辽宁省抚顺市东洲区萨尔浒山",
+      "longitude": 124.06,
+      "latitude": 41.89,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-b7ba8e65ec67469f89bc43d18d15f54e",
+      "modernName": "河南省郑州市登封市",
+      "longitude": 113.05056,
+      "latitude": 34.454877,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-b9037dbfc2b269e192347f9adde110f7",
+      "modernName": "山东省菏泽市定陶区",
+      "longitude": 115.583172,
+      "latitude": 35.105742,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-b911341254d87a99ce13ec82b484fc20",
+      "modernName": "贵州省黔西南布依族苗族自治州安龙县",
+      "longitude": 105.442702,
+      "latitude": 25.099014,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-baeef41907d3a371f6050cb34b74346f",
+      "modernName": "辽宁省铁岭市开原市",
+      "longitude": 124.051886,
+      "latitude": 42.577645,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-bb89088fdb33e146c8c221eea977ba9c",
+      "modernName": "河南省郑州市",
+      "longitude": 113.6254,
+      "latitude": 34.7466,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-bdbe217d58d2becb8018927319f45679",
+      "modernName": "陕西省西安市未央区汉长安城遗址",
+      "longitude": 108.849843,
+      "latitude": 34.293244,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-c027e49915302f1edee40b26faadd36d",
+      "modernName": "河南省洛阳市西工区东周王城遗址",
+      "longitude": 112.414181,
+      "latitude": 34.67794,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-c16ed6b4594c9f364336e503e1b71b57",
+      "modernName": "河南省郑州市新郑市",
+      "longitude": 113.74024,
+      "latitude": 34.396479,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-c1945d26eb29a7424fb2e6bb3b30d64e",
+      "modernName": "北京市",
+      "longitude": 116.4,
+      "latitude": 39.9,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-c1ecb47a2bde5339cf55ac50c084599e",
+      "modernName": "朝鲜民主主义人民共和国平壤市",
+      "longitude": 125.75,
+      "latitude": 39.02,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-c25165f5446b7e531fc3c549a7acde85",
+      "modernName": "安徽省宿州市埇桥区大泽乡镇一带",
+      "longitude": 117.19,
+      "latitude": 33.65,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-c47c9e7bf21db90f091c12ce29c144ca",
+      "modernName": "安徽省亳州市",
+      "longitude": 115.778588,
+      "latitude": 33.846285,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-c85d6e5023c430da8525a9e416b16ed2",
+      "modernName": "台湾省台南市",
+      "longitude": 120.189139,
+      "latitude": 22.989779,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-c872b6c8a33f0513d72e9fdd73bdce17",
+      "modernName": "湖南省长沙市",
+      "longitude": 112.9388,
+      "latitude": 28.2282,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-cb4d41325d9e27b63ee876fa63edb8eb",
+      "modernName": "辽宁省抚顺市新宾满族自治县永陵镇二道村附近界藩山城遗址",
+      "longitude": 124.849567,
+      "latitude": 41.670843,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-ce682c985f4b881033df398af3a13567",
+      "modernName": "山西省太原市",
+      "longitude": 112.549656,
+      "latitude": 37.870451,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-cf3e297dd8fb8b96d544c6c985bba47c",
+      "modernName": "河南省郑州市中牟县官渡镇",
+      "longitude": 113.98,
+      "latitude": 34.72,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-d0231a628469cb0d67dc543490ea94a1",
+      "modernName": "内蒙古自治区呼和浩特市和林格尔县",
+      "longitude": 111.821695,
+      "latitude": 40.379226,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-d0f912cc274515214338b7c96ffce31f",
+      "modernName": "山东省济宁市曲阜市",
+      "longitude": 116.986212,
+      "latitude": 35.581933,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-d111d3facba210da70660efdd42050d7",
+      "modernName": "山西省晋城市高平市长平之战遗址",
+      "longitude": 112.92,
+      "latitude": 35.8,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-d211fa25b6f975879188d308d32c40b3",
+      "modernName": "山东省青岛市即墨区",
+      "longitude": 120.447691,
+      "latitude": 36.390217,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-d34e89ff623f45525b55b9095a2ca1b4",
+      "modernName": "江西省九江市",
+      "longitude": 115.95356,
+      "latitude": 29.66116,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-d4daeff95fd876c3f13d7e10de236c85",
+      "modernName": "云南省大理白族自治州巍山彝族回族自治县大仓镇团山村山龙山于图山城址",
+      "longitude": 100.223126,
+      "latitude": 25.348365,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-d53a7e8dc6daf311385b6562f9d0c6b6",
+      "modernName": "山西省运城市夏县",
+      "longitude": 111.219946,
+      "latitude": 35.140733,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-d6e8c98d9c6656204b7084c156fb4b7b",
+      "modernName": "湖北省襄阳市襄城区、樊城区",
+      "longitude": 112.145,
+      "latitude": 32.043,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-d72838809319e2d5bdbf43e3acd89c5f",
+      "modernName": "山西省忻州市忻府区忻口镇",
+      "longitude": 112.735,
+      "latitude": 38.5661,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-db68921f59e025dcfe7f014a4d2018cf",
+      "modernName": "中蒙边界贝尔湖一带",
+      "longitude": 117.706,
+      "latitude": 47.802,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-ddc05c80683b244a8afca7d6ae64a131",
+      "modernName": "青海省海南藏族自治州共和县",
+      "longitude": 100.619405,
+      "latitude": 36.284158,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-de1476d3a8e1aacc647d05f427e7185c",
+      "modernName": "陕西省西安市",
+      "longitude": 108.94,
+      "latitude": 34.34,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-dfa5a99e7024e7efc5fbeb5efd568e78",
+      "modernName": "云南省昆明市晋宁区",
+      "longitude": 102.595325,
+      "latitude": 24.669077,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-e2be46d726fae7a6963144dacff26d94",
+      "modernName": "辽宁省朝阳市",
+      "longitude": 120.488801,
+      "latitude": 41.601855,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-e371eae86ec539966ac98d299b52c39d",
+      "modernName": "江苏省南京市",
+      "longitude": 118.797,
+      "latitude": 32.06,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-e4d58ea4d1ecb3d7ce4d0980cc5611a3",
+      "modernName": "河北省沧州市献县",
+      "longitude": 116.122767,
+      "latitude": 38.189924,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-e5239914003a8c2037948a72d3ee28a2",
+      "modernName": "山东省菏泽市定陶区",
+      "longitude": 115.57,
+      "latitude": 35.07,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-e5501ddbc2adfb5dae88ade75fc09e6a",
+      "modernName": "河北省张家口市怀来县土木镇",
+      "longitude": 115.62,
+      "latitude": 40.39,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-e6adf98724ff2c40bb4d414f9f8b8889",
+      "modernName": "广西壮族自治区南宁市兴宁区昆仑关",
+      "longitude": 108.681,
+      "latitude": 23.0951,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-e7ada8c68a3c74da7fbad732dd29ab15",
+      "modernName": "安徽省马鞍山市雨山区采石街道",
+      "longitude": 118.49,
+      "latitude": 31.66,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-e96e1bad4e232e967a19dcf6dc8180e8",
+      "modernName": "安徽省安庆市潜山市至桐城市一带",
+      "longitude": 116.95,
+      "latitude": 31.04,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-ea36bf10f6f624664cffe9590c9bef79",
+      "modernName": "北京市",
+      "longitude": 116.407387,
+      "latitude": 39.904179,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-ec15bd36f0eb0c34a7794f7900c22600",
+      "modernName": "云南省昆明市",
+      "longitude": 102.833669,
+      "latitude": 24.88149,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-eecfe59f04a51bc8e52cdf08659d4980",
+      "modernName": "山西省长治市长子县",
+      "longitude": 112.877922,
+      "latitude": 36.122258,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-f04f2eab0280928be374ac4e6e4b2a10",
+      "modernName": "河南省周口市淮阳区",
+      "longitude": 114.852604,
+      "latitude": 33.731543,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-f11b5ed638470a31da66f7454ce9945c",
+      "modernName": "河北省邢台市",
+      "longitude": 114.49742,
+      "latitude": 37.060227,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-f178892393ffa783eb3334eca474b3ad",
+      "modernName": "湖北省宜昌市夷陵区至猇亭区",
+      "longitude": 111.42,
+      "latitude": 30.95,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-f19ea961df87deb79092d22f3040eab8",
+      "modernName": "四川省成都市",
+      "longitude": 104.066301,
+      "latitude": 30.572961,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-f19fcca169729963595af0d6145fc033",
+      "modernName": "甘肃省天水市秦安县陇城镇一带",
+      "longitude": 105.68,
+      "latitude": 34.96,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-f39031b76114b4e1b6dc6f3f18575534",
+      "modernName": "山西省长治市壶关县",
+      "longitude": 113.206836,
+      "latitude": 36.115645,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-f3d005b4525a565c96e2d19633efc904",
+      "modernName": "河南省洛阳市偃师区",
+      "longitude": 112.789375,
+      "latitude": 34.72715,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-f4353ee36ebbe0a0ad6bebc81f8a051d",
+      "modernName": "陕西省西安市临潼区新丰街道鸿门堡村鸿门坂遗址",
+      "longitude": 109.272,
+      "latitude": 34.412,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-f58fd94af02036a695ccac1f962accdc",
+      "modernName": "山东省青岛市黄岛区",
+      "longitude": 120.19777,
+      "latitude": 35.960688,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-f7e930313c1cb946efe0973a87515dd4",
+      "modernName": "河南省洛阳市",
+      "longitude": 112.453895,
+      "latitude": 34.619702,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-f98edee195f0b3d3537b14668804de3a",
+      "modernName": "山东省潍坊市青州市",
+      "longitude": 118.479637,
+      "latitude": 36.685178,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-f9b2b2e1a7115ca9c27269949729f636",
+      "modernName": "吉尔吉斯斯坦楚河州托克马克市",
+      "longitude": 75.279,
+      "latitude": 42.848,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-fc3ae6d51b01d35acb4156c2017c5394",
+      "modernName": "湖北省襄阳市襄城区",
+      "longitude": 112.14,
+      "latitude": 32.01,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-fc9d28c6710861a93c064fe5c4229829",
+      "modernName": "河南省洛阳市",
+      "longitude": 112.454,
+      "latitude": 34.619,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-fcf5f48b113009b313855c4834260d2d",
+      "modernName": "宁夏回族自治区银川市",
+      "longitude": 106.230977,
+      "latitude": 38.487783,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-fd7d57f3d61dadb6fe8bc583ce36213f",
+      "modernName": "甘肃省陇南市文县鹄衣坝附近",
+      "longitude": 104.6835,
+      "latitude": 32.944031,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-fea5fdf4da49e2e5784ed1aeb3458cd7",
+      "modernName": "陕西省西安市未央区汉长安城遗址",
+      "longitude": 108.858889,
+      "latitude": 34.303598,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-fead7761c1222e82e7341856395fad7d",
+      "modernName": "广东省肇庆市",
+      "longitude": 112.465245,
+      "latitude": 23.047747,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-ff4af19f35888f76f9a4eb3164b61196",
+      "modernName": "山东省淄博市临淄区",
+      "longitude": 118.309398,
+      "latitude": 36.826882,
+      "coordinateSystem": "GCJ02"
+    }
+  ],
+  "manifest": {
+    "slug": "locations",
+    "title": "统一地点坐标目录",
+    "window": {
+      "startYear": -2804,
+      "startMonth": 1,
+      "endYear": 2026,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "counts": {
+      "locations": 193
+    },
+    "sources": [],
+    "notes": [
+      "坐标按现代地名、七位小数经纬度、坐标系完全一致首次去重；ID 已固化，后续修改字段不重新计算 ID。"
+    ]
+  }
+}

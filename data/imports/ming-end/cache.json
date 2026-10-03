@@ -228,7 +228,6 @@
       "note": "郑成功1662年收复台湾后建承天府，奉永历正朔；1683年郑克塽降清，东宁终结。"
     }
   ],
-  "capitals": [],
   "reigns": [
     {
       "id": "reign-li-zicheng-dashun",
@@ -392,8 +391,7 @@
         "confidence": "day"
       },
       "summary": "施琅率清军在澎湖海战取胜，郑克塽于同年十月降清，明郑灭亡，台湾纳入清朝统治。",
-      "atAbs": 20205,
-      "locationId": "loc-taiwan-conquest"
+      "atAbs": 20205
     }
   ],
   "relations": [

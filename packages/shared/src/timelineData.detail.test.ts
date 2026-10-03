@@ -1,3 +1,5 @@
+import type { CapitalLocation } from "./schema";
+import { locationFixture } from "../test/locationFixtures";
 import { describe, expect, it } from "vitest";
 import { EventSchema, type Reign } from "./schema";
 import { absMonth } from "./time";
@@ -110,7 +112,7 @@ describe("buildEntityDetail reign", () => {
       ],
       events: [],
       relations: [],
-      capitals: [
+      locationMappings: [
         {
           id: "cap-tang-changan",
           dynastyId: "tang",
@@ -143,7 +145,7 @@ describe("buildEntityDetail reign", () => {
           role: "secondary",
           links: [],
         },
-      ],
+      ].map(c => locationFixture(c as CapitalLocation,"reign","reign-tang-test")),
     };
 
     const detail = buildEntityDetail(store, { type: "reign", id: "reign-tang-test" });
@@ -469,7 +471,7 @@ describe("buildEntityDetail dynasty", () => {
         },
       ],
       relations: [],
-      capitals: [
+      locationMappings: [
         {
           id: "cap-shu-chengdu",
           dynastyId: "shu",
@@ -486,14 +488,14 @@ describe("buildEntityDetail dynasty", () => {
           role: "primary",
           links: [],
         },
-      ],
+      ].map(c => locationFixture(c as CapitalLocation,"dynasty",c.dynastyId)),
     };
 
     const detail = buildEntityDetail(store, { type: "dynasty", id: "shu" });
 
-    expect(detail.related.map((item) => item.group)).toEqual(["capital", "event", "idiom"]);
+    expect(detail.related.map((item) => item.group)).toEqual(["location_mapping", "event", "idiom"]);
     expect(detail.related[0]?.label).toBe("成都");
-    expect(detail.related[0]?.subtitle).toBe("221年 — 263年 · 正都");
+    expect(detail.related[0]?.subtitle).toBe("221年 — 263年 · 主要治所");
     expect(detail.related[1]?.label).toBe("赤壁之战");
     expect(detail.related[2]?.label).toBe("三顾茅庐");
   });
@@ -1276,7 +1278,7 @@ describe("buildEntityDetail capital", () => {
       persons: [],
       events: [],
       relations: [],
-      capitals: [
+      locationMappings: [
         {
           id: "cap-tang-changan",
           dynastyId: "tang",
@@ -1294,11 +1296,11 @@ describe("buildEntityDetail capital", () => {
           note: "隋唐京师",
           links: [],
         },
-      ],
+      ].map(c => locationFixture(c as CapitalLocation,"dynasty",c.dynastyId)),
     };
 
     const detail = buildEntityDetail(store, {
-      type: "capital",
+      type: "location_mapping",
       id: "cap-tang-changan",
     });
 
@@ -1309,7 +1311,7 @@ describe("buildEntityDetail capital", () => {
       { label: "归属", value: "唐" },
       { label: "今址", value: "陕西省西安市" },
       { label: "时段", value: "618年 — 904年" },
-      { label: "地位", value: "正都" },
+      { label: "地位", value: "主要治所" },
     ]);
     expect(detail.summary).toBe("隋唐京师");
     expect(detail.related).toEqual([

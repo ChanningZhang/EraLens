@@ -18,7 +18,7 @@ export function readSelectionUrlState(): Partial<UrlSelection> {
   if (sel) {
     const [type, ...rest] = sel.split(":");
     const id = rest.join(":");
-    if (["dynasty", "reign", "person", "event", "capital"].includes(type ?? "")) {
+    if (["dynasty", "reign", "person", "event", "location_mapping"].includes(type ?? "")) {
       next.selected = { type: type as EntityRef["type"], id };
       next.detailOpen = true;
     }

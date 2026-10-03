@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { DynastyCapitalSchema } from "./schema";
+import { CapitalLocationSchema } from "./schema";
 
 const baseCapital = {
   id: "cap-tang-changan",
@@ -14,11 +14,11 @@ const baseCapital = {
   endAbs: 10848,
 };
 
-describe("DynastyCapitalSchema", () => {
+describe("CapitalLocationSchema", () => {
   it("parses capital records without modernName format checks", () => {
-    expect(DynastyCapitalSchema.parse(baseCapital).modernName).toBe("陕西省西安市");
+    expect(CapitalLocationSchema.parse(baseCapital).modernName).toBe("陕西省西安市");
     expect(
-      DynastyCapitalSchema.parse({
+      CapitalLocationSchema.parse({
         ...baseCapital,
         modernName: "西安",
       }).modernName,

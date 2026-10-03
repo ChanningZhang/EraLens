@@ -20,7 +20,7 @@ export function EventMapLayer({ events, atAbs, layout, scale, offset }: Props) {
   const placed = useMemo(() => {
     if (!layout) return [];
     return events.flatMap((event) => {
-      const locations = event.locations.length > 0 ? event.locations : event.location ? [event.location] : [];
+      const locations = event.locationMappings.map(m=>({...m.location,id:m.id,historicalName:m.historicalName}));
       return locations.map((location, index) => {
         const point = location.coordinateSystem === "GCJ02"
           ? { x: location.longitude, y: location.latitude }

@@ -584,7 +584,6 @@
       "note": "女真完颜氏建立的王朝。完颜阿骨打于1115年称帝建国，先后灭辽、灭北宋，统治中国北方；金朝在中都等地推行中原官制，同时保留猛安谋克等女真制度。此后金与南宋长期对峙，1141年议和后边界和关系相对稳定。蒙古兴起后金国力渐衰，1234年蒙古与南宋联军攻破蔡州，金亡。"
     }
   ],
-  "capitals": [],
   "reigns": [
     {
       "id": "reign-yelu-abaoji-liao",
@@ -1121,8 +1120,7 @@
         "confidence": "year"
       },
       "summary": "岳飞率岳家军大败金军，收复中原要地。",
-      "atAbs": 13691,
-      "locationId": "loc-yancheng"
+      "atAbs": 13691
     },
     {
       "kind": "politics",
@@ -1168,8 +1166,7 @@
         "confidence": "day"
       },
       "summary": "虞允文督师采石，大败金军，完颜亮兵败被杀。",
-      "atAbs": 13942,
-      "locationId": "loc-caishi"
+      "atAbs": 13942
     },
     {
       "kind": "battle",
@@ -1382,7 +1379,6 @@
   ],
   "supplementalEventParticipants": [],
   "preSql": "-- remove stale auto-generated 史料缺 (太祖卒后述律太后摄政期应留白)\nDELETE FROM reigns WHERE dynasty_id IN ('liao') AND person_id = 'system-missing-ruler';",
-  "reignCapitals": [],
   "manifest": {
     "slug": "song-liao-jin",
     "title": "宋辽金对峙（含南宋时期）",

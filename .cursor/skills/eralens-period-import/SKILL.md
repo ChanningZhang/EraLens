@@ -70,7 +70,7 @@ Task Progress:
 - [ ] 7. 验收：curl timeline/entity + 浏览器时间轴
 ```
 
-缓存采用 camelCase 字段；日期以 `{ year, month, day?, abs, confidence }` 结构保存。人物、王朝、在位、事件和关系分别放在顶层数组中。都城与事件地点使用 `capitals` / `eventLocations` 等缓存集合；来源说明位于同一个文件的 `manifest` 对象内。SQL 列名由共享序列化器映射。包结构、示例和完整生成命令见 [`data/imports/README.md`](../../../data/imports/README.md)。
+缓存采用 camelCase 字段；日期以 `{ year, month, day?, abs, confidence }` 结构保存。人物、王朝、在位、事件和关系分别放在顶层数组中。集中地点使用 `locations`，历史地理关联使用显式 `locationMappings` 缓存集合；来源说明位于同一个文件的 `manifest` 对象内。SQL 列名由共享序列化器映射。包结构、示例和完整生成命令见 [`data/imports/README.md`](../../../data/imports/README.md)。
 
 `{slug}` 支持相对于 `data/imports/` 的多级包路径，如 `chunqiu-zhanguo/qi-chunqiu`；缓存与 manifest 的 slug 使用完整相对路径。分组父目录不保留可导入的旧 cache/SQL，避免重复拥有行。生成、所有权审计、全量导入、字体检查及数据库去重均递归发现子包。
 
@@ -219,10 +219,10 @@ node data/imports/generate.mjs {slug}
 
 1. `BEGIN;`，然后执行 `preSql` 中的旧库清理
 2. `persons`、`dynasty_groups`、`dynasties`
-3. `dynasty_capitals`、`dynasty_lane_groups`
-4. `reigns`（含 `era_names` CSV）与 `reign_capitals`
+3. `locations`、`dynasty_lane_groups`
+4. `reigns`（含 `era_names` CSV）
 5. `events`、`event_dynasties`、`event_participants`
-6. `relations`、`event_locations` 及缓存显式列出的更新
+6. `relations`、`location_mapping` 及缓存显式列出的更新
 7. 执行 `postSql` 中的旧库清理，再 `COMMIT;`
 
 默认用 `INSERT ... ON CONFLICT (id) DO UPDATE SET ...`（persons/dynasties/reigns/events/relations）。连接表用 `ON CONFLICT DO NOTHING`。

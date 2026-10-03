@@ -4,10 +4,10 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
-  DynastyCapitalSchema, DynastyGroupSchema, DynastyLaneGroupSchema, DynastySchema,
-  EventLocationSchema, EventSchema, PersonSchema, RelationSchema, ReignSchema,
+  LocationSchema, LocationMappingSchema, mapLocation, mapLocationMapping, DynastyGroupSchema, DynastyLaneGroupSchema, DynastySchema,
+  EventSchema, PersonSchema, RelationSchema, ReignSchema,
 } from "@eralens/shared";
-import { mapDynasty, mapDynastyCapital, mapDynastyGroup, mapDynastyLaneGroup, mapEvent, mapPerson, mapRelation, mapReign } from "../src/mappers.js";
+import { mapDynasty, mapDynastyGroup, mapDynastyLaneGroup, mapEvent, mapPerson, mapRelation, mapReign } from "../src/mappers.js";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 const input = path.resolve(process.argv.find((arg) => arg.startsWith("--db="))?.slice(5) ?? path.join(root, "data/mobile/eralens-content.sqlite"));
@@ -49,9 +49,9 @@ try {
   const checksum = createHash("sha256");
   const contentTables: [string, string][] = [
     ["persons", "id"], ["dynasty_groups", "id"], ["dynasties", "id"], ["reigns", "id"],
-    ["event_locations", "id"], ["events", "id"], ["event_dynasties", "event_id, dynasty_id"],
+    ["events", "id"], ["event_dynasties", "event_id, dynasty_id"],
     ["event_participants", "event_id, person_id"], ["relations", "id"], ["dynasty_lane_groups", "id"],
-    ["dynasty_capitals", "id"], ["reign_capitals", "reign_id, capital_id"],
+    ["locations", "id"], ["location_mapping", "id"],
   ];
   for (const [table, keys] of contentTables) {
     for (const row of db.prepare(`SELECT * FROM "${table}" ORDER BY ${keys.split(", ").map((key) => `"${key}"`).join(", ")}`).all()) checksum.update(`${table}\n${stableJson(row)}\n`);
@@ -67,7 +67,7 @@ try {
   const reigns = all("reigns");
   const events = all("events");
   const relations = all("relations");
-  const capitals = all("dynasty_capitals");
+  const mappingRows = all("location_mapping");
   for (const row of persons) PersonSchema.parse(mapPerson(hydrate(row) as never));
   for (const row of dynasties) DynastySchema.parse(mapDynasty(rawHydrate(row) as never));
   for (const row of groups) DynastyGroupSchema.parse(mapDynastyGroup(rawHydrate(row) as never));
@@ -79,7 +79,7 @@ try {
     ["dynasty", new Set(dynasties.map((row) => String(row.id)))],
     ["reign", new Set(reigns.map((row) => String(row.id)))],
     ["event", new Set(events.map((row) => String(row.id)))],
-    ["capital", new Set(all("dynasty_capitals").map((row) => String(row.id)))],
+    ["location_mapping", new Set(all("location_mapping").map((row) => String(row.id)))],
   ]);
   for (const row of relations) {
     for (const end of ["from", "to"]) {
@@ -91,21 +91,20 @@ try {
   }
   const dynLinks = all("event_dynasties");
   const personLinks = all("event_participants");
-  const locationRows = all("event_locations");
-  const locations = new Map(locationRows.map((row) => [String(row.id), hydrate(row)]));
-  for (const row of locationRows) EventLocationSchema.parse({ ...hydrate(row), note: row.note ?? undefined });
+  const locationRows=all("locations");
+  const locations=new Map(locationRows.map(row=>[String(row.id),mapLocation(row)]));
+  const mappings=all("location_mapping").map(row=>mapLocationMapping({...row,location:locations.get(String(row.location_id))}));
+  for(const m of mappings) {
+    const table=m.kind === "dynasty" ? dynasties : m.kind === "reign" ? reigns : events;
+    if(!table.some(r=>r.id===m.externalId)) fail(`Dangling mapping owner: ${m.id}`);
+  }
   for (const row of events) EventSchema.parse(mapEvent({
     ...rawHydrate(row),
     dynasties: dynLinks.filter((link) => link.event_id === row.id).map((link) => ({ dynastyId: link.dynasty_id })),
     participants: personLinks.filter((link) => link.event_id === row.id).map((link) => ({ personId: link.person_id })),
-    location: locations.get(String(row.location_id)) as never,
+    locationMappings:mappings.filter(m=>m.kind === "event" && m.externalId===row.id),
   } as never));
-  const reignLinks = all("reign_capitals");
-  for (const row of capitals) DynastyCapitalSchema.parse(mapDynastyCapital({
-    ...rawHydrate(row),
-    reign_ids: reignLinks.filter((link) => link.capital_id === row.id).map((link) => link.reign_id),
-  } as never));
-  const rowCounts = { persons: persons.length, dynasties: dynasties.length, dynastyGroups: groups.length, dynastyLaneGroups: laneGroups.length, reigns: reigns.length, events: events.length, relations: relations.length, capitals: capitals.length };
+  const rowCounts = { persons: persons.length, dynasties: dynasties.length, dynastyGroups: groups.length, dynastyLaneGroups: laneGroups.length, reigns: reigns.length, events: events.length, relations: relations.length, locations: locationRows.length, locationMappings: mappingRows.length };
   console.log(JSON.stringify({ input, status: "ok", schemaVersion: versions.schemaVersion, contractVersion: versions.contractVersion, counts: declaredCounts, zodRows: rowCounts }, null, 2));
 } finally {
   db.close();

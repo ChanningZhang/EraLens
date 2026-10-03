@@ -1,0 +1,18 @@
+{
+  "slug": "locations",
+  "title": "统一地点坐标目录",
+  "window": {
+    "startYear": -2804,
+    "startMonth": 1,
+    "endYear": 2026,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "counts": {
+    "locations": 193
+  },
+  "sources": [],
+  "notes": [
+    "坐标按现代地名、七位小数经纬度、坐标系完全一致首次去重；ID 已固化，后续修改字段不重新计算 ID。"
+  ]
+}

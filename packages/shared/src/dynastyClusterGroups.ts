@@ -28,7 +28,7 @@ type LaneUnit = {
   isCluster: boolean;
 };
 
-/** Capital fields the lane rule needs; a subset of `DynastyCapital`. */
+/** Capital fields the lane rule needs; a subset of `CapitalLocation`. */
 export type LaneCapital = TimedCapital;
 
 type CapitalTenure = {

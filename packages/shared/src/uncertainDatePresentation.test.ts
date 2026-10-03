@@ -1,8 +1,9 @@
+import { locationFixture } from "../test/locationFixtures";
 import { describe, expect, it } from "vitest";
 import { buildReignCapitalTenures, buildReignTenureCapitalRows, capitalDateRangeLabel } from "./dynastyCapitals";
 import { formatHistoricalDate, hasUncertainDateRange } from "./historicalDate";
 import { formatReignDurationLabel, formatReignSpanTooltip } from "./reignVisual";
-import { DynastyCapitalSchema, DynastySchema, PersonSchema, ReignSchema, type HistoricalDateConfidence } from "./schema";
+import { CapitalLocationSchema, DynastySchema, PersonSchema, ReignSchema, type HistoricalDateConfidence } from "./schema";
 import { absMonth } from "./time";
 import { buildEntityDetail, type TimelineDataStore } from "./timelineData";
 import { timelineInterval } from "./timelineIntervals";
@@ -14,7 +15,7 @@ const knownReign = ReignSchema.parse({
   end: { year: -986, month: 12, confidence: "year" },
   startAbs: absMonth(-1024, 1), endAbs: absMonth(-986, 12), precision: "year",
 });
-const capital = DynastyCapitalSchema.parse({
+const capital = CapitalLocationSchema.parse({
   id: "capital-test", dynastyId: knownReign.dynastyId, historicalName: "商丘", modernName: "河南省商丘市",
   longitude: 115.65, latitude: 34.44,
   start: { year: -1040, month: 1, confidence: "year" },
@@ -71,7 +72,7 @@ describe("uncertain date presentation", () => {
       end: { ...knownReign.end, confidence: "interpolated_by_generation" as const },
     };
     const store: TimelineDataStore = {
-      dynasties: [dynasty], reigns: [reign], persons: [person], capitals: [capital], events: [], relations: [],
+      dynasties: [dynasty], reigns: [reign], persons: [person], locationMappings: [locationFixture(capital)], events: [], relations: [],
     };
     for (const ref of [{ type: "reign" as const, id: reign.id }, { type: "person" as const, id: person.id }]) {
       const detail = buildEntityDetail(store, ref);
@@ -80,7 +81,7 @@ describe("uncertain date presentation", () => {
     }
     const dynastyDetail = buildEntityDetail(store, { type: "dynasty", id: dynasty.id });
     expect(dynastyDetail.related).toContainEqual(expect.objectContaining({
-      ref: { type: "capital", id: capital.id }, label: "商丘", group: "capital",
+      ref: { type: "location_mapping", id: capital.id }, label: "商丘", group: "location_mapping",
     }));
   });
 
@@ -93,7 +94,7 @@ describe("uncertain date presentation", () => {
         `${formatHistoricalDate(uncertainCapital.start)} — ${formatHistoricalDate(uncertainCapital.end)}`,
       );
       const detail = buildEntityDetail({
-        dynasties: [dynasty], reigns: [knownReign], persons: [person], capitals: [uncertainCapital], events: [], relations: [],
+        dynasties: [dynasty], reigns: [knownReign], persons: [person], locationMappings: [locationFixture(uncertainCapital)], events: [], relations: [],
       }, { type: "dynasty", id: dynasty.id });
       expect(detail.related.map((item) => item.ref.id)).toContain(capital.id);
     }
@@ -111,7 +112,7 @@ describe("uncertain date presentation", () => {
   });
 
   it("keeps certain year tenures and their duration", () => {
-    const row = buildReignCapitalTenures(knownReign, [capital])[0];
+    const row = buildReignCapitalTenures(knownReign, [{...capital,reignIds:[knownReign.id]}])[0];
     expect(row?.capital?.ref.id).toBe(capital.id);
     expect(row?.tenure.label).toBe("-1024年 — -986年");
     expect(row?.tenure.duration).toBe("39年");
@@ -131,7 +132,7 @@ describe("uncertain date presentation", () => {
       end: { year: 1644, month: 4, day: 30, confidence: "day" as const },
       startAbs: reign.startAbs, endAbs: reign.startAbs,
     };
-    expect(buildReignCapitalTenures(reign, [seat])[0]?.tenure).toMatchObject({
+    expect(buildReignCapitalTenures(reign, [{...seat,reignIds:[reign.id]}])[0]?.tenure).toMatchObject({
       label: "1644年4月25日 — 1644年4月30日", duration: "6天",
     });
     expect(capitalDateRangeLabel(seat)).toBe("1644年4月25日 — 1644年4月30日");

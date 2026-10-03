@@ -23,8 +23,8 @@ function collectPackageRows(owners, slug, cache) {
     ["dynasty_lane_groups", cache.dynastyLaneGroups],
     ["reigns", cache.reigns],
     ["events", cache.events],
-    ["event_locations", cache.eventLocations],
-    ["dynasty_capitals", cache.capitals],
+    ["locations", cache.locations],
+    ["location_mapping", cache.locationMappings],
   ];
   for (const [table, rows] of byId) {
     (rows ?? []).forEach((row, index) => add(owners, table, row.id, slug, index, row.id, row));
@@ -34,9 +34,7 @@ function collectPackageRows(owners, slug, cache) {
     add(owners, "relations.id", row.id, slug, index, row.id, row);
     add(owners, "relations.unique", [row.fromRef, row.toRef, row.kind].join("|"), slug, index, row.id, row);
   });
-  (cache.reignCapitals ?? []).forEach((row, index) => {
-    add(owners, "reign_capitals", [row.reignId, row.capitalId].join("|"), slug, index, undefined, row);
-  });
+
   (cache.events ?? []).forEach((event, index) => {
     for (const dynastyId of event.dynastyIds ?? []) {
       add(owners, "event_dynasties", [event.id, dynastyId].join("|"), slug, index);
@@ -86,14 +84,13 @@ function auditPackageSql(owners, slug, cache) {
       const primaryTables = {
         persons: "persons", dynasty_groups: "dynasty_groups", dynasties: "dynasties",
         dynasty_lane_groups: "dynasty_lane_groups", reigns: "reigns", events: "events",
-        event_locations: "event_locations", dynasty_capitals: "dynasty_capitals", relations: "relations.id",
+        locations: "locations", location_mapping: "location_mapping", relations: "relations.id",
       };
       if (ids) for (const id of ids) rejectExternal(primaryTables[table] ?? `${table}.id`, id, "DELETE", field);
 
       const keySpecs = {
         event_dynasties: ["event_dynasties", ["event_id", "dynasty_id"]],
         event_participants: ["event_participants", ["event_id", "person_id"]],
-        reign_capitals: ["reign_capitals", ["reign_id", "capital_id"]],
       };
       const spec = keySpecs[table];
       if (spec) {
@@ -112,7 +109,7 @@ function auditPackageSql(owners, slug, cache) {
 
       const foreignColumns = {
         reigns: ["dynasty_id", "person_id"],
-        dynasty_capitals: ["dynasty_id"],
+        location_mapping: ["kind", "external_id", "location_id"],
         relations: ["from_type", "from_id", "to_type", "to_id", "event_id"],
       }[table] ?? [];
       if (foreignColumns.length) {
@@ -131,6 +128,7 @@ function auditPackageSql(owners, slug, cache) {
             const row = owner.row;
             if (excludedIds.includes(row.id)) continue;
             const values = {
+              kind: row.kind, external_id: row.externalId, location_id: row.locationId,
               dynasty_id: row.dynastyId,
               person_id: row.personId,
               event_id: row.eventId,
@@ -168,25 +166,25 @@ export function auditPackageOwnership(root = importsRoot) {
     packageCaches.push({ slug, cache });
   }
 
-  const eventOwners = new Map();
-  const locationIds = new Set();
-  for (const { slug, cache } of packageCaches) {
-    for (const event of cache.events ?? []) {
-      eventOwners.set(event.id, [...(eventOwners.get(event.id) ?? []), { slug, event }]);
+  const locationIds = new Set(packageCaches.flatMap(({cache}) => (cache.locations ?? []).map(row => row.id)));
+  const uniqueLocations = new Set();
+  for (const {slug, cache} of packageCaches) {
+    for (const field of ["capitals", "reignCapitals", "eventLocations"]) {
+      if (cache[field]?.length) throw new Error(`${slug}: legacy geography array ${field}`);
     }
-    for (const location of cache.eventLocations ?? []) locationIds.add(location.id);
-  }
-  for (const { slug, cache } of packageCaches) {
-    for (const location of cache.eventLocations ?? []) {
-      const matches = eventOwners.get(location.eventId) ?? [];
-      if (matches.length !== 1 || matches[0].event.locationId !== location.id) {
-        throw new Error(`${slug}: event location ${location.id} must be referenced by its unique owning event ${location.eventId}`);
-      }
+    for (const event of cache.events ?? []) if (event.locationId != null) throw new Error(`${slug}: legacy event locationId`);
+    for (const row of cache.locations ?? []) {
+      if (slug !== "locations") throw new Error(`${slug}: spatial records belong to the locations package`);
+      if (!row.modernName?.trim() || !Number.isFinite(row.longitude) || !Number.isFinite(row.latitude) || Math.abs(row.longitude)>180 || Math.abs(row.latitude)>90 || !["GCJ02","WGS84"].includes(row.coordinateSystem)) throw new Error(`${slug}: invalid location ${row.id}`);
+      const key=JSON.stringify([row.modernName,row.longitude.toFixed(7),row.latitude.toFixed(7),row.coordinateSystem]);
+      if (uniqueLocations.has(key)) throw new Error(`${slug}: duplicate spatial record ${row.id}`);
+      uniqueLocations.add(key);
     }
-    for (const event of cache.events ?? []) {
-      if (event.locationId && !locationIds.has(event.locationId)) {
-        throw new Error(`${slug}: event ${event.id} references missing event location ${event.locationId}`);
-      }
+    for (const row of cache.locationMappings ?? []) {
+      const table={dynasty:"dynasties",reign:"reigns",event:"events"}[row.kind];
+      if (!table || !owners.has(`${table}\0${row.externalId}`) || !locationIds.has(row.locationId)) throw new Error(`${slug}: orphan mapping ${row.id}`);
+      if (row.claimTrack != null || !row.historicalName?.trim() || /[()（）]/.test(row.historicalName) || row.historicalName.split("/").some(name=>!name.trim()) || new Set(row.historicalName.split("/")).size !== row.historicalName.split("/").length) throw new Error(`${slug}: invalid historical name or claimTrack in ${row.id}`);
+      if (row.kind === "event" ? row.start != null || row.end != null || row.role != null : !row.start || !row.end || !["primary","secondary","temporary"].includes(row.role)) throw new Error(`${slug}: invalid mapping interval ${row.id}`);
     }
   }
 

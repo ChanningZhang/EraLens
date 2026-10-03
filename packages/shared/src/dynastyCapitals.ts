@@ -1,4 +1,4 @@
-import type { CapitalRole, DynastyCapital, EntityRef, Reign } from "./schema";
+import type { CapitalRole, CapitalLocation, EntityRef, Reign } from "./schema";
 import { isParallelClaim } from "./claimTracks";
 import { isUncertainDateConfidence } from "./reignBoundaries";
 import { formatReignDurationLabel } from "./reignVisual";
@@ -35,11 +35,17 @@ export function capitalRoleLabel(role: CapitalRole, claimTrack?: string | null):
   return CAPITAL_ROLE_LABEL[role];
 }
 
+/** Dynasty mappings do not claim that a primary seat belonged to the whole dynasty. */
+export function capitalLocationRoleLabel(capital: CapitalLocation): string {
+  return capital.mappingKind === "dynasty" && capital.role === "primary"
+    ? "主要治所" : capitalRoleLabel(capital.role, capital.claimTrack);
+}
+
 /** Capitals whose reign span includes `atAbs` (inclusive on both ends). */
 export function capitalsActiveAtAbs(
-  capitals: readonly DynastyCapital[],
+  capitals: readonly CapitalLocation[],
   atAbs: number,
-): DynastyCapital[] {
+): CapitalLocation[] {
   return activeCapitalsAtAbs(capitals, atAbs);
 }
 
@@ -81,7 +87,7 @@ function formatTenureRangeLabel(
     : `${startLabel} — ${endLabel}`;
 }
 
-export function capitalTenureSubtitle(capital: DynastyCapital): string | undefined {
+export function capitalTenureSubtitle(capital: CapitalLocation): string | undefined {
   const role = capitalRoleLabel(capital.role, capital.claimTrack);
   if (capital.role === "primary" && !isParallelClaim(capital)) {
     return capital.modernName;
@@ -89,7 +95,7 @@ export function capitalTenureSubtitle(capital: DynastyCapital): string | undefin
   return `${role} · ${capital.modernName}`;
 }
 
-export function capitalDateRangeLabel(capital: DynastyCapital): string {
+export function capitalDateRangeLabel(capital: CapitalLocation): string {
   const start = formatHistoricalDate({ ...capital.start, confidence: capital.start.confidence ?? capital.precision ?? "year" });
   const end = formatHistoricalDate({ ...capital.end, confidence: capital.end.confidence ?? capital.endPrecision ?? capital.precision ?? "year" });
   return `${start} — ${end}`;
@@ -97,16 +103,16 @@ export function capitalDateRangeLabel(capital: DynastyCapital): string {
 
 export function dynastyCapitalRelatedItems(
   dynastyId: string,
-  capitals: readonly DynastyCapital[],
+  capitals: readonly CapitalLocation[],
 ): Array<{
   ref: EntityRef;
   label: string;
   subtitle: string;
   abs: number;
-  group: "capital";
+  group: "location_mapping";
 }> {
   return capitals
-    .filter((capital) => capital.dynastyId === dynastyId)
+    .filter((capital) => capital.dynastyId === dynastyId && capital.mappingKind !== "reign")
     .sort(
       (a, b) =>
         a.startAbs - b.startAbs ||
@@ -114,18 +120,18 @@ export function dynastyCapitalRelatedItems(
         a.historicalName.localeCompare(b.historicalName, "zh-Hans"),
     )
     .map((capital) => ({
-      ref: { type: "capital" as const, id: capital.id },
+      ref: { type: "location_mapping" as const, id: capital.id },
       label: capital.historicalName,
-      subtitle: `${capitalDateRangeLabel(capital)} · ${capitalRoleLabel(capital.role, capital.claimTrack)}`,
+      subtitle: `${capitalDateRangeLabel(capital)} · ${capitalLocationRoleLabel(capital)}`,
       abs: capital.startAbs,
-      group: "capital" as const,
+      group: "location_mapping" as const,
     }));
 }
 
 /** Pair each overlapping capital with the intersected reign tenure segment. */
 export function buildReignCapitalTenures(
   reign: Reign,
-  capitals: readonly DynastyCapital[],
+  capitals: readonly CapitalLocation[],
   dynastyReigns: readonly Reign[] = [reign],
 ): ReignCapitalTenureRow[] {
   return capitalSegmentsForReign(reign, dynastyReigns, capitals)
@@ -151,7 +157,7 @@ export function buildReignCapitalTenures(
       }, overlapInterval);
       return {
         capital: {
-          ref: { type: "capital" as const, id: capital.id },
+          ref: { type: "location_mapping" as const, id: capital.id },
           label: capital.historicalName,
           subtitle: capitalTenureSubtitle(capital),
         },
@@ -188,7 +194,7 @@ export function buildReignCapitalTenures(
 /** Tenure rows for a reign; falls back to tenure-only when no capitals overlap. */
 export function buildReignTenureCapitalRows(
   reign: Reign,
-  capitals: readonly DynastyCapital[],
+  capitals: readonly CapitalLocation[],
   dynastyReigns: readonly Reign[] = [reign],
 ): ReignCapitalTenureRow[] {
   if (hasUncertainDateRange(reign)) return [];

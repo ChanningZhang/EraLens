@@ -172,8 +172,9 @@ export type CoordinateSystem = z.infer<typeof CoordinateSystemSchema>;
 export const CapitalRoleSchema = z.enum(["primary", "secondary", "temporary"]);
 export type CapitalRole = z.infer<typeof CapitalRoleSchema>;
 
-export const DynastyCapitalSchema = z.object({
+export const CapitalLocationSchema = z.object({
   id: z.string(),
+  mappingKind: z.enum(["dynasty", "reign"]).optional(),
   dynastyId: z.string(),
   historicalName: z.string(),
   modernName: z.string(),
@@ -191,7 +192,7 @@ export const DynastyCapitalSchema = z.object({
   endConfidence: DateConfidenceSchema.optional(),
   role: CapitalRoleSchema.default("primary"),
   claimTrack: z.string().optional(),
-  /** Explicit reign-capital links; an empty list uses dynasty/time ownership. */
+  /** Explicit reign mapping owners; an empty list never establishes a reign tenure. */
   reignIds: z.array(z.string()).optional(),
   note: z.string().optional(),
   links: z
@@ -250,18 +251,28 @@ export const EventDisplayConfigSchema = z.object({
 });
 export type EventDisplayConfig = z.infer<typeof EventDisplayConfigSchema>;
 
-export const EventLocationSchema = z.object({
-  id: z.string(),
-  historicalName: z.string(),
-  modernName: z.string(),
-  longitude: z.number(),
-  latitude: z.number(),
-  coordinateSystem: z.string(),
-  precision: z.string(),
-  note: z.string().optional(),
-  links: z.array(z.object({ label: z.string(), url: z.string() })).default([]),
+export const LocationKindSchema = z.enum(["dynasty", "reign", "event"]);
+export type LocationKind = z.infer<typeof LocationKindSchema>;
+export const LocationSchema = z.object({
+  id: z.string(), modernName: z.string(), longitude: z.number().min(-180).max(180),
+  latitude: z.number().min(-90).max(90), coordinateSystem: CoordinateSystemSchema,
 });
-export type EventLocation = z.infer<typeof EventLocationSchema>;
+export type Location = z.infer<typeof LocationSchema>;
+export const LocationMappingSchema = z.object({
+  id: z.string(), locationId: z.string(), kind: LocationKindSchema, externalId: z.string(),
+  historicalName: z.string().min(1).refine(name => !/[（）()；;]/u.test(name) && !/代表点|会战|大战/u.test(name), "historicalName must contain only period place names"),
+  location: LocationSchema,
+  spatialPrecision: z.string().optional(),
+  start: TimePointSchema.optional(), end: TimePointSchema.optional(), startAbs: z.number().optional(), endAbs: z.number().optional(),
+  startConfidence: DateConfidenceSchema.optional(), endConfidence: DateConfidenceSchema.optional(),
+  role: CapitalRoleSchema.optional(), note: z.string().optional(),
+  links: z.array(z.object({ label: z.string(), url: z.string() })).default([]),
+}).superRefine((m, ctx) => {
+  if (m.location.id !== m.locationId) ctx.addIssue({code: z.ZodIssueCode.custom, message: "Location reference mismatch", path: ["locationId"]});
+  if (m.kind !== "event" && (!m.start || !m.end || m.startAbs == null || m.endAbs == null || !m.role)) ctx.addIssue({code: z.ZodIssueCode.custom, message: "Capital mapping requires dated endpoints and role"});
+  if (m.kind === "event" && (m.start || m.end || m.role || m.startAbs != null || m.endAbs != null)) ctx.addIssue({code: z.ZodIssueCode.custom, message: "Event mapping dates belong to its event"});
+});
+export type LocationMapping = z.infer<typeof LocationMappingSchema>;
 
 export const DEFAULT_EVENT_DISPLAY_CONFIG: EventDisplayConfig = {
   kinds: {
@@ -293,9 +304,7 @@ export const EventSchema = z
     summary: z.string().optional(),
     meaning: z.string().optional(),
     content: z.string().optional(),
-    locationId: z.string().optional(),
-    location: EventLocationSchema.optional(),
-    locations: z.array(EventLocationSchema).default([]),
+    locationMappings: z.array(LocationMappingSchema).default([]),
   })
   .superRefine((event, ctx) => {
     if (event.kind === "idiom") {
@@ -391,7 +400,7 @@ export const RelationSchema = z
   });
 
 export const EntityRefSchema = z.object({
-  type: z.enum(["dynasty", "reign", "person", "event", "capital"]),
+  type: z.enum(["dynasty", "reign", "person", "event", "location_mapping"]),
   id: z.string(),
 });
 
@@ -433,7 +442,7 @@ export const EntityDetailSchema = z.object({
         label: z.string(),
         subtitle: z.string().optional(),
         abs: z.number().optional(),
-        group: z.enum(["idiom", "poetry", "event", "reign", "person", "dynasty", "capital", "location"]).optional(),
+        group: z.enum(["idiom", "poetry", "event", "reign", "person", "dynasty", "location_mapping", "location"]).optional(),
       }),
     )
     .default([]),
@@ -475,7 +484,7 @@ export const SearchHitSchema = z.object({
   abs: z.number().optional(),
 });
 
-export type DynastyCapital = z.infer<typeof DynastyCapitalSchema>;
+export type CapitalLocation = z.infer<typeof CapitalLocationSchema>;
 export type Dynasty = z.infer<typeof DynastySchema>;
 export type DynastyGroup = z.infer<typeof DynastyGroupSchema>;
 export type DynastyLaneGroup = z.infer<typeof DynastyLaneGroupSchema>;

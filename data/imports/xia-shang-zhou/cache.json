@@ -2557,7 +2557,6 @@
       "note": "平王东迁至秦灭周。前770–前750年与携王二王并立，后世以平王为正统。"
     }
   ],
-  "capitals": [],
   "reigns": [
     {
       "id": "reign-si-yu",
@@ -4785,7 +4784,6 @@
       },
       "summary": "盘庚迁都于殷（今安阳），此后商亦称殷。",
       "atAbs": -15588,
-      "locationId": "loc-pangeng-move-yin",
       "atConfidence": "approximate_year"
     },
     {
@@ -5135,8 +5133,7 @@
         "confidence": "year"
       },
       "summary": "平王迁都洛邑，东周开始，王室逐渐失去对诸侯的实质控制。",
-      "atAbs": -9217,
-      "locationId": "loc-pingwang-eastward"
+      "atAbs": -9217
     },
     {
       "kind": "politics",
@@ -5801,7 +5798,6 @@
   "supplementalEventDynasties": [],
   "supplementalEventParticipants": [],
   "preSql": "DELETE FROM event_dynasties WHERE dynasty_id = 'zhou';\nDELETE FROM reigns WHERE dynasty_id = 'zhou';\nDELETE FROM dynasties WHERE id = 'zhou';\nDELETE FROM reigns WHERE id = 'reign-missing-zhou-west--840';\nDELETE FROM reigns WHERE id = 'reign-missing-shang--1570';\nDELETE FROM reigns WHERE dynasty_id = 'xia' AND person_id = 'system-missing-ruler';\nDELETE FROM relations WHERE id LIKE 'rel-si-%-succession';\nDELETE FROM relations WHERE id IN ('rel-zi-tang-zi-taijia-succession','rel-ji-yijiu-ji-yuchen-succession','rel-ji-yuchen-ji-lin-succession','rel-hou-yi-han-zhuo-succession');\nDELETE FROM event_participants WHERE event_id IN ('taikang-lost','houyi-dai-xia','hanzhuo-cuan-xia');\nDELETE FROM event_dynasties WHERE event_id IN ('houyi-dai-xia','hanzhuo-cuan-xia');\nDELETE FROM events WHERE id IN ('houyi-dai-xia','hanzhuo-cuan-xia');",
-  "reignCapitals": [],
   "manifest": {
     "slug": "xia-shang-zhou",
     "importPhase": "post",

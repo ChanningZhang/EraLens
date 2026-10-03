@@ -33,3 +33,9 @@ node data/imports/generate.mjs --all
 缓存中的 `preSql` / `postSql` 仅用于升级时清理旧数据库记录；它们不负责修改缓存记录。正式移动端 SQLite 数据库由 `pnpm db:import` 从 PostgreSQL 导出，导入包只生成 PostgreSQL SQL。Xcode 构建和运行不会执行导入包 SQL。
 
 单包变更流程：编辑 `cache.json`（含 `manifest.sources` / `manifest.notes` / `manifest.counts`）→ `node data/imports/generate.mjs {slug}` → 校验对应 `import.sql` → `apply-sql.sh`。全量流程：先运行 `node data/imports/generate.mjs --all`，再运行 `pnpm db:import`。`db:import` 不会替缓存生成 SQL，并会清空后重载本地 PostgreSQL，再构建移动端 SQLite。
+
+## 地理数据（schema 3 / contract 4）
+
+`locations/cache.json` 唯一维护空间地点，历史包的 `locationMappings` 显式引用地点与 dynasty/reign/event 实体。名称、说明、来源、空间精度和都城完整时段属于 mapping；事件日期沿用所属事件。运行时和生成器都不推断君主都城关联。地点 ID 修订字段后仍保持不变。
+
+增量导入先写地点包，再写历史 mapping 所有者包。现有库升级使用 Prisma migration，不运行全量重灌。字段与历史名称规范见 [地理信息 Skill](../../.cursor/skills/eralens-geography-import/SKILL.md)。

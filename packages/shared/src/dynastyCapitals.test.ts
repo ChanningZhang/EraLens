@@ -1,9 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { buildReignCapitalTenures, buildReignTenureCapitalRows, capitalsActiveAtAbs, dynastyCapitalRelatedItems } from "./dynastyCapitals";
 import { capitalsForReigns } from "./timelineOwnership";
-import type { DynastyCapital, Reign } from "./schema";
+import type { CapitalLocation, Reign } from "./schema";
 
-const tangChangan: DynastyCapital = {
+const tangChangan: CapitalLocation = {
   id: "cap-tang-changan",
   dynastyId: "tang",
   historicalName: "长安",
@@ -19,7 +19,7 @@ const tangChangan: DynastyCapital = {
   links: [],
 };
 
-const tangLuoyang: DynastyCapital = {
+const tangLuoyang: CapitalLocation = {
   id: "cap-tang-luoyang",
   dynastyId: "tang",
   historicalName: "洛阳",
@@ -35,7 +35,7 @@ const tangLuoyang: DynastyCapital = {
   links: [],
 };
 
-const qinXianyang: DynastyCapital = {
+const qinXianyang: CapitalLocation = {
   id: "cap-qin-xianyang",
   dynastyId: "qin",
   historicalName: "咸阳",
@@ -98,8 +98,8 @@ const tangReign: Reign = {
 
 describe("buildReignCapitalTenures", () => {
   it("identifies a parallel claimant's primary seat in dynasty and reign details", () => {
-    const branchCapital = { ...tangChangan, claimTrack: "branch" };
-    const branchReign = { ...tangReign, claimTrack: "branch" };
+    const branchCapital = { ...tangChangan, reignIds:["reign-tang-branch"],claimTrack: "branch" };
+    const branchReign = { ...tangReign,id:"reign-tang-branch",claimTrack: "branch" };
     expect(dynastyCapitalRelatedItems("tang", [branchCapital])[0]?.subtitle)
       .toContain("并立政权治所");
     expect(buildReignCapitalTenures(branchReign, [branchCapital])[0]?.capital?.subtitle)
@@ -110,11 +110,11 @@ describe("buildReignCapitalTenures", () => {
   });
 
   it("pairs overlapping capitals with intersected reign segments", () => {
-    const rows = buildReignCapitalTenures(tangReign, [tangChangan, tangLuoyang, qinXianyang]);
+    const rows = buildReignCapitalTenures(tangReign, [{...tangChangan,reignIds:[tangReign.id]}, {...tangLuoyang,reignIds:[tangReign.id]}, qinXianyang]);
     expect(rows).toEqual([
       {
         capital: {
-          ref: { type: "capital", id: "cap-tang-changan" },
+          ref: { type: "location_mapping", id: "cap-tang-changan" },
           label: "长安",
           subtitle: "陕西省西安市",
         },
@@ -127,7 +127,7 @@ describe("buildReignCapitalTenures", () => {
       },
       {
         capital: {
-          ref: { type: "capital", id: "cap-tang-luoyang" },
+          ref: { type: "location_mapping", id: "cap-tang-luoyang" },
           label: "洛阳",
           subtitle: "陪都 · 河南省洛阳市",
         },
@@ -142,7 +142,7 @@ describe("buildReignCapitalTenures", () => {
   });
 
   it("uses explicit reign-capital links ahead of dynasty time ownership", () => {
-    const linkedCapital: DynastyCapital = {
+    const linkedCapital: CapitalLocation = {
       ...tangLuoyang,
       id: "cap-parallel-seat",
       dynastyId: "other-dynasty",
@@ -158,22 +158,18 @@ describe("buildReignCapitalTenures", () => {
     ]);
   });
 
-  it("uses existing dynasty, time, and claim track matching when no explicit link exists", () => {
+  it("does not infer a capital from dynasty, time, or track without an explicit mapping", () => {
     const parallelReign: Reign = {
       ...tangReign,
       id: "reign-tang-claimant",
       claimTrack: "luoyang",
     };
-    const trackCapital: DynastyCapital = {
+    const trackCapital: CapitalLocation = {
       ...tangLuoyang,
       claimTrack: "luoyang",
     };
-    expect(buildReignCapitalTenures(parallelReign, [tangChangan, trackCapital]).map((row) => row.capital?.ref.id)).toEqual([
-      "cap-tang-luoyang",
-    ]);
-    expect(capitalsForReigns([parallelReign], [parallelReign], [tangChangan, trackCapital]).map((capital) => capital.id)).toEqual([
-      "cap-tang-luoyang",
-    ]);
+    expect(buildReignCapitalTenures(parallelReign, [tangChangan, trackCapital]).map((row) => row.capital?.ref.id)).toEqual([]);
+    expect(capitalsForReigns([parallelReign], [parallelReign], [tangChangan, trackCapital]).map((capital) => capital.id)).toEqual([]);
   });
 
   it("returns empty when no capitals overlap the reign", () => {
@@ -225,7 +221,7 @@ describe("buildReignCapitalTenures", () => {
       precision: "day" as const,
       role: "primary" as const,
     };
-    expect(buildReignCapitalTenures(liZichengReign, [beijing])[0]?.tenure.label).toBe(
+    expect(buildReignCapitalTenures(liZichengReign, [{...beijing,reignIds:[liZichengReign.id]}])[0]?.tenure.label).toBe(
       "1644年4月25日 — 1644年4月30日",
     );
   });
@@ -242,7 +238,7 @@ describe("buildReignCapitalTenures", () => {
       endAbs: 19732,
       precision: "day",
     };
-    const capital: DynastyCapital = {
+    const capital: CapitalLocation = {
       id: "cap-mixed-precision",
       dynastyId: "mixed",
       historicalName: "都城",
@@ -259,7 +255,7 @@ describe("buildReignCapitalTenures", () => {
       links: [],
     };
 
-    expect(buildReignCapitalTenures(reign, [capital])[0]?.tenure.label).toBe(
+    expect(buildReignCapitalTenures(reign, [{...capital,reignIds:[reign.id]}])[0]?.tenure.label).toBe(
       "1644年4月25日 — 1644年4月",
     );
   });

@@ -1,20 +1,20 @@
 ---
 name: eralens-capital-geocode
 description: >-
-  为 EraLens dynasty_capitals 表调研都城时段、用高德 MCP 地理编码并烘焙坐标进
+  为 EraLens locations / location_mapping 表调研都城时段、用高德 MCP 地理编码并烘焙坐标进
   data/imports。Use when collecting dynasty capital locations, geocoding historical
-  seats, or adding rows to dynasty_capitals.
+  seats, or adding capital location mappings.
 ---
 
 # EraLens 都城地理编码
 
 都城起止日期遵循 [eralens-date-handling](../eralens-date-handling/SKILL.md)；本 Skill 的 `precision` 仅描述空间坐标定位精度。
 
-为 `dynasty_capitals` 表补数据：调研都城时段 → 高德取点 → 写入对应包 `cache.json` → 统一生成 SQL。
+为 `locations` 与 `location_mapping` 表补数据：调研都城时段 → 高德取点 → 写入对应包 `cache.json` → 统一生成 SQL。
 
-`data/imports/dynasty-capitals/cache.json` 是都城事实与来源说明的唯一源文件：记录放入 `capitals`，来源/编码说明放入其中的 `manifest.sources` / `manifest.notes`。不要另建坐标表、raw 文件或包级生成脚本；生成的 `manifest.json` 和 `import.sql` 不手工修改。
+`data/imports/dynasty-capitals/cache.json` 是都城事实与来源说明的唯一源文件：历史记录放入 `locationMappings`，坐标放入集中地点包 `data/imports/locations/cache.json` 的 `locations`，来源/编码说明放入其中的 `manifest.sources` / `manifest.notes`。不要另建重复坐标文件、raw 文件或包级生成脚本；生成的 `manifest.json` 和 `import.sql` 不手工修改。
 
-**不要**在运行时 API 调高德；坐标与 `modernName` 一并写入 `data/imports/dynasty-capitals/cache.json` 的 `capitals` 记录。
+**不要**在运行时 API 调高德；坐标与 `modernName` 一并写入 `data/imports/locations/cache.json` 的 `locations` 记录。
 
 每次补充或修改都城数据，必须按 [来源维护](../eralens-period-import/SKILL.md#来源维护) 同步更新 capital 的 `links` 与 `manifest.sources`；地理编码说明不能替代历史依据，导入后核对都城详情“来源”栏。
 
@@ -35,7 +35,7 @@ Task Progress:
 - [ ] 1. 调研：核对维基/年表，确定 historical_name、时段、role
 - [ ] 2. 写 modern_name：省/市全称（见下）
 - [ ] 3. 高德取点：maps_geo → maps_regeocode 校验
-- [ ] 4. 将核实后的坐标直接写入 `data/imports/dynasty-capitals/cache.json` 的 `capitals` 记录及 `manifest.sources` / `manifest.notes`
+- [ ] 4. 将核实后的坐标直接写入 `data/imports/locations/cache.json` 的 `locations` 记录，并维护历史包 `locationMappings`及 `manifest.sources` / `manifest.notes`
 - [ ] 5. 运行统一生成器并用同目录缓存校验 SQL
 - [ ] 6. 用 `apply-sql.sh` 单包增量导入，或按需执行全量 `pnpm db:import`
 ```
@@ -63,16 +63,16 @@ Task Progress:
 5. 将 `longitude`、`latitude`（GCJ-02）直接写入 `cache.json`。
 6. 在 `cache.json.manifest.notes` 记录 geocode 来源（地址串、日期）。
 
-## dynasty_capitals 字段
+## 地点及 mapping 字段
 
-缓存字段采用 camelCase（如 `historicalName`、`modernName`、`dynastyId`、`coordinateSystem`、`start`、`end`）；SQL 列名与缓存字段对应关系见 [eralens-period-import reference.md](../eralens-period-import/reference.md) 的 `dynasty_capitals` 节。
+缓存字段采用 camelCase（如 `historicalName`、`modernName`、`dynastyId`、`coordinateSystem`、`start`、`end`）；SQL 列名与缓存字段对应关系见 [eralens-period-import reference.md](../eralens-period-import/reference.md) 的 `locations / location_mapping` 节。
 
 要点：
 
 - `historical_name`：当时名称（长安、大都、临安）
-- `dynasty_id`：引用已有 `dynasties.id`
+- `kind` / `external_id`：引用王朝或在位实体；`location_id` 引用集中地点
 - `role`：`primary` / `secondary` / `temporary`
-- `claim_track`：并行政权都城时与 `reigns.claim_track` 同一 key
+- 地理表不保存 `claim_track`，并立治所归属在说明中表达，每条 reign mapping 显式关联一个在位 ID
 - 时间：`start_abs` / `end_abs` 用 `absMonth()`；日期端点遵循 [eralens-date-handling](../eralens-date-handling/SKILL.md)
 - `coordinate_system`：固定 `GCJ02`
 
@@ -85,3 +85,5 @@ Task Progress:
 ## 试点包
 
 参考 [data/imports/dynasty-capitals/cache.json](../../../data/imports/dynasty-capitals/cache.json)。
+
+地点 ID 永久保留，不因坐标修订重新计算；历史名称、说明、角色、时段和来源保存于 mapping。完整规范见 [地理信息 Skill](../eralens-geography-import/SKILL.md)。

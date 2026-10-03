@@ -2560,7 +2560,6 @@
       "note": "匈奴铁弗部赫连氏建立，以统万城为都，控制河套并向关中扩张。赫连昌被北魏俘获后国势衰退，431年赫连定被俘，胡夏亡。"
     }
   ],
-  "capitals": [],
   "reigns": [
     {
       "id": "reign-sima-yan",
@@ -4566,8 +4565,7 @@
         "confidence": "year"
       },
       "summary": "苻坚率百万大军南征东晋，于淝水惨败，前秦迅速崩溃，北方再分裂。",
-      "atAbs": 4607,
-      "locationId": "loc-feishui"
+      "atAbs": 4607
     },
     {
       "kind": "battle",
@@ -5021,7 +5019,6 @@
   "supplementalEventDynasties": [],
   "supplementalEventParticipants": [],
   "preSql": "",
-  "reignCapitals": [],
   "manifest": {
     "slug": "jin-sixteen",
     "title": "两晋五胡十六国",

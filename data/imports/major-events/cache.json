@@ -9,7 +9,6 @@
   "persons": [],
   "dynastyGroups": [],
   "dynasties": [],
-  "capitals": [],
   "reigns": [],
   "events": [
     {
@@ -48,8 +47,7 @@
       },
       "summary": "忽必烈由上都迁往中都（今北京），上都转为陪都，并在中都东北营建新城。",
       "dateNote": "至元四年（1267年）；北京地方志资料记为迁都中都之年。",
-      "atAbs": 15215,
-      "locationId": "loc-kublai-moves-capital-to-zhongdu"
+      "atAbs": 15215
     },
     {
       "kind": "politics",
@@ -68,8 +66,7 @@
       },
       "summary": "周赧王被迫迁居西周国王城，当时此处仍是西周国都；这是寄居避难，不表述为正式迁都。",
       "dateNote": "仅知周赧王时期发生，具体年份有异说；以都城资料采用的约前314年作为年精度锚点。",
-      "atAbs": -3745,
-      "locationId": "loc-zhou-nanwang-moves-to-western-zhou-capital"
+      "atAbs": -3745
     },
     {
       "kind": "politics",
@@ -88,8 +85,7 @@
       },
       "summary": "隋文帝迁入新建的大兴城，取代旧长安城成为隋朝都城。",
       "dateNote": "开皇三年（583年）；新城营建与迁入按年精度记录。",
-      "atAbs": 7007,
-      "locationId": "loc-sui-moves-to-daxing"
+      "atAbs": 7007
     },
     {
       "kind": "politics",
@@ -108,8 +104,7 @@
       },
       "summary": "武则天称帝建立武周，以洛阳为都并称神都，政治中心由长安转至洛阳。",
       "dateNote": "天授元年（690年）；采用武周建立并以洛阳为都的年份。",
-      "atAbs": 8291,
-      "locationId": "loc-wu-zhou-moves-capital-to-luoyang"
+      "atAbs": 8291
     },
     {
       "kind": "politics",
@@ -128,8 +123,7 @@
       },
       "summary": "朱全忠迫使唐昭宗离开长安迁往洛阳，长安遭到毁坏，唐朝政治中心自此未能恢复。",
       "dateNote": "天祐元年（904年）正月迁都；《旧唐书·昭宗本纪》记载此事。",
-      "atAbs": 10859,
-      "locationId": "loc-tang-forced-move-to-luoyang"
+      "atAbs": 10859
     },
     {
       "kind": "politics",
@@ -148,8 +142,7 @@
       },
       "summary": "神龙政变后唐朝复辟，中宗次年还都长安，结束武周时期以洛阳为政治中心的阶段。",
       "dateNote": "神龙二年（706年）还都长安；武周复唐发生于705年。",
-      "atAbs": 8483,
-      "locationId": "loc-tang-restored-capital-to-changan"
+      "atAbs": 8483
     },
     {
       "kind": "politics",
@@ -168,8 +161,7 @@
       },
       "summary": "宋高宗正式以临安为行在，临安由此成为南宋长期的政治中心。",
       "dateNote": "绍兴八年（1138年）；此处取正式定临安为行在之年，不将此前数次临幸混作定都。",
-      "atAbs": 13667,
-      "locationId": "loc-song-moves-capital-to-linan"
+      "atAbs": 13667
     },
     {
       "kind": "politics",
@@ -188,8 +180,7 @@
       },
       "summary": "明成祖将都城由南京迁至北京，南京保留留都地位。",
       "dateNote": "永乐十九年（1421年）正式迁都。",
-      "atAbs": 17063,
-      "locationId": "loc-ming-moves-capital-to-beijing"
+      "atAbs": 17063
     },
     {
       "kind": "politics",
@@ -208,8 +199,7 @@
       },
       "summary": "抗日战争全面爆发后，国民政府迁往重庆，重庆成为战时陪都和全国抗战的重要政治中心。",
       "dateNote": "1937年11月国民政府决定迁渝；重庆市政协资料记载迁移过程。",
-      "atAbs": 23254,
-      "locationId": "loc-roc-moves-wartime-government-to-chongqing"
+      "atAbs": 23254
     },
     {
       "kind": "politics",
@@ -228,8 +218,7 @@
       },
       "summary": "抗战胜利后，国民政府由重庆还都南京。",
       "dateNote": "1946年5月还都南京。",
-      "atAbs": 23356,
-      "locationId": "loc-roc-returns-capital-to-nanjing"
+      "atAbs": 23356
     },
     {
       "kind": "politics",
@@ -248,8 +237,7 @@
       },
       "summary": "王子朝之乱后，王城仍有其党羽活动。周敬王据杜预注的传统解释迁居王城以东的新成周，以避乱自安。",
       "dateNote": "前510年营建新城并迁居的通行系年；《左传》记王子朝之乱，迁居缘由见杜预注。",
-      "atAbs": -6097,
-      "locationId": "loc-zhou-jingwang-moves-to-chengzhou"
+      "atAbs": -6097
     },
     {
       "kind": "politics",
@@ -429,8 +417,7 @@
       },
       "summary": "西汉在西域设置都护，标志中央政权对西域的经略由军事往来推进到持续行政管理。",
       "dateNote": "神爵二年，前60年；具体设置月份不详。",
-      "atAbs": -697,
-      "locationId": "loc-wulei-city"
+      "atAbs": -697
     },
     {
       "kind": "politics",
@@ -697,8 +684,7 @@
       },
       "summary": "后周显德七年，朝廷命殿前都点检赵匡胤率军北上应对北汉、契丹来报。军队行至陈桥驿后拥立赵匡胤，赵随即率军返回开封，后周恭帝柴宗训禅位，赵匡胤建立宋朝。兵变以军队拥立完成政权更替，也开启北宋统一进程。",
       "dateNote": "显德七年正月初三至初四（960年）；《续资治通鉴长编》等记陈桥拥立与次日入京，按年精度记录。",
-      "atAbs": 11531,
-      "locationId": "loc-chenqiao"
+      "atAbs": 11531
     },
     {
       "kind": "politics",
@@ -743,8 +729,7 @@
         "sima-zhong"
       ],
       "summary": "八王之乱中，河间王司马颙的部将张方为控制朝廷，于永安元年（304）挟持晋惠帝司马衷及公卿由洛阳西往长安，司马颙以征西府为帝宫。洛阳仍留有官员组成的留台承制行事；惠帝至306年六月才被迎回洛阳，期间长安成为朝廷实际所在。",
-      "dateNote": "《晋书·惠帝纪》记永安元年冬十一月乙未张方劫帝幸长安。该月份为农历，未将月日直接换作公历日期，事件按304年年精度记录。",
-      "locationId": "loc-jin-west-court-forced-to-changan"
+      "dateNote": "《晋书·惠帝纪》记永安元年冬十一月乙未张方劫帝幸长安。该月份为农历，未将月日直接换作公历日期，事件按304年年精度记录。"
     }
   ],
   "relations": [],

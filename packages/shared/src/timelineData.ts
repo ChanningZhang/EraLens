@@ -1,5 +1,6 @@
+import { capitalLocations } from "./locationMappings";
 import { formatHistoricalDate, isApproximateConfidence } from "./historicalDate";
-import { buildReignTenureCapitalRows, capitalDateRangeLabel, capitalRoleLabel, dynastyCapitalRelatedItems } from "./dynastyCapitals";
+import { buildReignTenureCapitalRows, capitalDateRangeLabel, capitalLocationRoleLabel, dynastyCapitalRelatedItems } from "./dynastyCapitals";
 import { claimDetailFacts } from "./claimTracks";
 import { PRE_IMPERIAL_START_YEAR } from "./appellationPolicy";
 import {
@@ -21,7 +22,7 @@ import {
 import {
   TimelineSliceSchema,
   type Dynasty,
-  type DynastyCapital,
+  type CapitalLocation,
   type DynastyGroup,
   type DynastyLaneGroup,
   type EntityDetail,
@@ -57,7 +58,7 @@ export type TimelineDataStore = {
   persons: Person[];
   events: Event[];
   relations: Relation[];
-  capitals?: DynastyCapital[];
+  locationMappings?: import("./schema").LocationMapping[];
 };
 
 export function filterTimeline(
@@ -232,7 +233,7 @@ function buildPersonEntityDetail(
 
   const capitalReigns = focusReign ? [focusReign] : personReigns;
   const capitalTenures = capitalReigns.flatMap((reign) => {
-    const rows = buildReignTenureCapitalRows(reign, store.capitals ?? [], store.reigns);
+    const rows = buildReignTenureCapitalRows(reign, capitalLocations(store), store.reigns);
     return rows;
   });
   const clan = buildPreQinClanContext(person);
@@ -332,7 +333,7 @@ function parseRef(raw: string): EntityRef | null {
     type === "reign" ||
     type === "person" ||
     type === "event" ||
-    type === "capital"
+    type === "location_mapping"
   ) {
     return { type, id };
   }
@@ -362,58 +363,22 @@ export function buildEntityDetail(
     }
   }
 
-  if (ref.type === "capital") {
-    const capital = (store.capitals ?? []).find((item) => item.id === ref.id);
-    if (!capital) throw new Error(`Capital not found: ${ref.id}`);
-    const dynasty = dynastyMap.get(capital.dynastyId);
-    const facts = [
-      { label: "归属", value: dynasty?.name ?? capital.dynastyId },
-      { label: "今址", value: capital.modernName },
-      { label: "时段", value: capitalDateRangeLabel(capital) },
-      { label: "地位", value: capitalRoleLabel(capital.role, capital.claimTrack) },
-    ];
-    if (capital.start.confidence && capital.start.confidence !== "year") {
-      facts.push({
-        label: "起始年代",
-        value: DATE_CONFIDENCE_LABEL[capital.start.confidence],
-      });
-    }
-    if (capital.end.confidence && capital.end.confidence !== "year") {
-      facts.push({
-        label: "终止年代",
-        value: DATE_CONFIDENCE_LABEL[capital.end.confidence],
-      });
-    }
-    return {
-      ref,
-      title: capital.historicalName,
-      subtitle: dynasty
-        ? `${dynasty.name} · ${capital.modernName}`
-        : capital.modernName,
-      dynastyId: capital.dynastyId,
-      colorToken: dynasty
-        ? resolveDynastyColorToken(
-            dynasty,
-            fallbackLaneColorToken(dynasty.id),
-
-          )
-        : undefined,
-      facts,
-      summary: capital.note,
-      related: dynasty
-        ? [
-            {
-              ref: { type: "dynasty", id: dynasty.id },
-              label: dynasty.name,
-              subtitle: dynasty.altNames?.[0],
-              abs: capital.startAbs,
-              group: "dynasty",
-            },
-          ]
-        : [],
-      capitalTenures: [],
-      links: capital.links,
-    };
+  if (ref.type === "location_mapping") {
+    const mapping=(store.locationMappings ?? []).find(m=>m.id===ref.id) ?? store.events.flatMap(e=>e.locationMappings ?? []).find(m=>m.id===ref.id);
+    if (!mapping) throw new Error(`Location mapping not found: ${ref.id}`);
+    const ownerRef: EntityRef={type:mapping.kind,id:mapping.externalId};
+    const owner=buildRelatedSummary(ownerRef);
+    const capital=capitalLocations(store).find(c=>c.id===mapping.id);
+    const mappedEvent=mapping.kind === "event" ? eventMap.get(mapping.externalId) : undefined;
+    const dynastyId=mapping.kind === "dynasty" ? mapping.externalId : mapping.kind === "reign" ? store.reigns.find(r=>r.id===mapping.externalId)?.dynastyId : undefined;
+    const dynasty=dynastyId ? dynastyMap.get(dynastyId) : undefined;
+    return {ref,title:mapping.historicalName,subtitle:[owner.label,mapping.location.modernName].filter(Boolean).join(" · "),dynastyId,
+      colorToken:dynasty ? resolveDynastyColorToken(dynasty,fallbackLaneColorToken(dynasty.id)) : undefined,
+      facts:[{label:"归属",value:owner.label},{label:"今址",value:mapping.location.modernName},
+        ...(capital ? [{label:"时段",value:capitalDateRangeLabel(capital)},{label:"地位",value:capitalLocationRoleLabel(capital)}] : []),
+        ...(mappedEvent ? [{label:"时间",value:formatEventTime(mappedEvent)}] : []),
+        ...(mapping.spatialPrecision ? [{label:"空间定位精度",value:mapping.spatialPrecision}] : [])],
+      summary:mapping.note,related:[{...owner,abs:capital?.startAbs ?? (mappedEvent ? eventSpanAbs(mappedEvent).anchorAbs : undefined),group:mapping.kind}],capitalTenures:[],links:mapping.links};
   }
 
   if (ref.type === "dynasty") {
@@ -425,7 +390,7 @@ export function buildEntityDetail(
     const idiomRelated = idiomRelatedItems(dynastyEvents);
     const poetryRelated = poetryRelatedItems(dynastyEvents);
     const eventRelated = eventRelatedItems(dynastyEvents);
-    const capitalRelated = dynastyCapitalRelatedItems(dynasty.id, store.capitals ?? []);
+    const capitalRelated = dynastyCapitalRelatedItems(dynasty.id, capitalLocations(store));
     // Explicit associations also cover people whose reign dates are unknown.
     // Keep their membership independent of dated reigns or concurrent claims.
     const associatedPersonIds = [...new Set(store.relations
@@ -495,13 +460,7 @@ export function buildEntityDetail(
     abs: anchorAbs,
     group: "dynasty",
   }));
-  const locationRelated: EntityDetail["related"] = event.location ? [{
-    ref,
-    label: event.location.historicalName,
-    subtitle: event.location.modernName,
-    abs: anchorAbs,
-    group: "location",
-  }] : [];
+  const locationRelated: EntityDetail["related"] = (event.locationMappings ?? []).map(m => ({ref:{type:"location_mapping",id:m.id}, label:m.historicalName, subtitle:m.location.modernName, abs:anchorAbs,group:"location"}));
 
   // Event relations describe an association, so either endpoint should expose
   // the other event in its detail view regardless of stored direction.
@@ -620,7 +579,7 @@ export function searchEntities(store: TimelineDataStore, term: string): SearchHi
   const personById = new Map(store.persons.map((person) => [person.id, person]));
   const dynastyById = new Map(store.dynasties.map((dynasty) => [dynasty.id, dynasty]));
 
-  for (const dynasty of store.dynasties) {
+  for (const dynasty of [...store.dynasties].sort((a,b)=>a.id.localeCompare(b.id))) {
     if (dynasty.name.toLowerCase().includes(q)) {
       hits.push({
         ref: { type: "dynasty", id: dynasty.id },
@@ -629,7 +588,7 @@ export function searchEntities(store: TimelineDataStore, term: string): SearchHi
       });
     }
   }
-  for (const person of store.persons) {
+  for (const person of [...store.persons].sort((a,b)=>a.id.localeCompare(b.id))) {
     if (personMatchesSearch(person, q)) {
       hits.push({
         ref: { type: "person", id: person.id },
@@ -639,7 +598,7 @@ export function searchEntities(store: TimelineDataStore, term: string): SearchHi
       });
     }
   }
-  for (const reign of store.reigns) {
+  for (const reign of [...store.reigns].sort((a,b)=>a.id.localeCompare(b.id))) {
     const matchedEraNames = reign.eraNames.filter((eraName) =>
       eraName.toLowerCase().includes(q),
     );
@@ -653,19 +612,16 @@ export function searchEntities(store: TimelineDataStore, term: string): SearchHi
       abs: midpointAbs(reign.startAbs, reign.endAbs),
     });
   }
-  for (const capital of store.capitals ?? []) {
-    const dynasty = dynastyById.get(capital.dynastyId);
-    const nameHit = normalizeSearchTerm(capital.historicalName).includes(q);
-    const modernNameHit = normalizeSearchTerm(capital.modernName).includes(q);
-    if (!nameHit && !modernNameHit) continue;
-    hits.push({
-      ref: { type: "capital", id: capital.id },
-      label: capital.historicalName,
-      subtitle: [capital.modernName, dynasty?.name, "都城"].filter(Boolean).join(" · "),
-      abs: midpointAbs(capital.startAbs, capital.endAbs),
-    });
+  for (const m of store.locationMappings ?? []) {
+    if (!normalizeSearchTerm(m.historicalName).includes(q) && !normalizeSearchTerm(m.location.modernName).includes(q)) continue;
+    const reign=m.kind === "reign" ? store.reigns.find(r=>r.id===m.externalId) : undefined;
+    const dynasty=dynastyById.get(reign?.dynastyId ?? m.externalId);
+    const event=m.kind === "event" ? store.events.find(e=>e.id===m.externalId) : undefined;
+    hits.push({ref:{type:"location_mapping",id:m.id},label:m.historicalName,
+      subtitle:[m.location.modernName,event?.name ?? dynasty?.name,m.kind === "event" ? "事件地点" : "都城"].filter(Boolean).join(" · "),
+      abs:event ? eventSpanAbs(event).anchorAbs : m.startAbs != null && m.endAbs != null ? midpointAbs(m.startAbs,m.endAbs) : undefined});
   }
-  for (const event of store.events) {
+  for (const event of [...store.events].sort((a,b)=>a.id.localeCompare(b.id))) {
     const nameHit = event.name.toLowerCase().includes(q);
     const meaningHit = event.meaning?.toLowerCase().includes(q) ?? false;
     if (nameHit || meaningHit) {

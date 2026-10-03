@@ -14,7 +14,8 @@
   "dynastyGroups": [],
   "dynastyLaneGroups": [],
   "dynasties": [{ "id": "tang", "name": "唐", "start": { "year": 618, "month": 6, "abs": 7421, "confidence": "month" }, "end": { "year": 907, "month": 5, "abs": 10888, "confidence": "month" } }],
-  "capitals": [],
+  "locations": [],
+  "locationMappings": [],
   "reigns": [{ "id": "reign-li-shimin", "dynastyId": "tang", "personId": "li-shimin", "title": "唐太宗", "start": { "year": 626, "month": 9, "abs": 7520, "confidence": "month" }, "end": { "year": 649, "month": 7, "abs": 7794, "confidence": "month" }, "startAbs": 7520, "endAbs": 7794, "eraNames": ["贞观"], "isMain": true }],
   "reignCapitals": [],
   "events": [{ "id": "example-event", "name": "示例事件", "kind": "politics", "timeMode": "point", "at": { "year": 627, "month": 12, "abs": 7535, "confidence": "year" }, "dynastyIds": ["tang"], "participantIds": ["li-shimin"] }],
@@ -57,15 +58,14 @@
 | dynasties | id |
 | dynasty_lane_groups | id |
 | reigns | id |
-| dynasty_capitals | id |
-| reign_capitals | (reign_id, capital_id) |
+| locations | id（集中地点包唯一维护） |
+| location_mapping | id |
 | events | id |
-| event_locations | id |
 | event_dynasties | (event_id, dynasty_id) |
 | event_participants | (event_id, person_id) |
 | relations | id |
 
-事件日期列：`time_mode`（point/span）、`at_confidence` / `start_confidence` / `end_confidence`、`date_note`（可选）。日期精度只由每个端点的 confidence 表达；空间定位的 `event_locations.precision` 单独保留。
+事件日期列：`time_mode`（point/span）、`at_confidence` / `start_confidence` / `end_confidence`、`date_note`（可选）。日期精度只由每个端点的 confidence 表达；空间定位的 `location_mapping.spatial_precision` 单独保留。
 
 `events.kind` 支持 `battle`、`politics`、`culture`、`disaster`、`commerce`、`agriculture`、`finance`、`idiom`、`poetry`、`other`。`commerce` 表示贸易制度、通商格局与重要商品传播事件，界面标签为「商业」；`finance` 表示货币、银行与财政制度转折，界面标签为「金融」。新增 kind 时同步更新 `packages/shared/src/schema.ts`、共享标签函数、界面样式与本节枚举。
 
@@ -81,7 +81,7 @@
 | `persons` | `birth_year/month/day`, `birth_confidence`, `death_year/month/day`, `death_confidence` |
 | `dynasties`, `dynasty_groups` | `start_year/month/day`, `start_confidence`, `end_year/month/day`, `end_confidence` |
 | `reigns` | `start_year/month/day`, `start_confidence`, `end_year/month/day`, `end_confidence` |
-| `dynasty_capitals` | `start_year/month/day`, `start_confidence`, `end_year/month/day`, `end_confidence` |
+| `location_mapping`（dynasty/reign） | `start_year/month/day`, `start_confidence`, `end_year/month/day`, `end_confidence` |
 | `events` | point 用 `at_year/month/day`, `at_confidence`；span 用独立 `start_*` / `end_*` 与对应 confidence |
 | `relations` | `at_year/month/day`, `at_confidence` |
 
@@ -207,19 +207,23 @@ INSERT INTO reigns (
 ) VALUES (...);
 ```
 
-### dynasty_capitals
+### locations / location_mapping
 
-都城时间端点与在位日期规则一致，分别使用年月日和 `start_confidence` / `end_confidence`。年桶占位月份不得显示为史料记载的月份。城市坐标的空间定位精度使用 `event_locations.precision`；日期 confidence 不复用空间精度字段。
+`locations` 仅存稳定 ID、现代地名及坐标。`location_mapping` 的 kind 为 dynasty/reign/event，external_id 分别引用对应实体；location_id 外键引用集中地点包。两表都不保存 claim_track，reigns 仍保留该字段。
+
+缓存使用 `locations` 与 `locationMappings`。mapping 含 `id, locationId, kind, externalId, historicalName, note?, links, spatialPrecision?`；dynasty/reign 另有 `start, end, role`，event 的日期取所属事件。historicalName 只含当时古称，史料支持的同期同址别称可用 `/`，解释写入 note。
 
 ```sql
-INSERT INTO dynasty_capitals (
-  id, dynasty_id, historical_name, modern_name,
-  longitude, latitude, coordinate_system,
+INSERT INTO locations (id, modern_name, longitude, latitude, coordinate_system) VALUES (...);
+INSERT INTO location_mapping (
+  id, location_id, kind, external_id, historical_name, spatial_precision,
   start_year, start_month, start_day, start_confidence,
   end_year, end_month, end_day, end_confidence,
-  start_abs, end_abs, role, claim_track, note, links
+  start_abs, end_abs, role, note, links
 ) VALUES (...);
 ```
+
+首次迁移按现代地名、七位小数坐标和坐标系完全一致去重；此后 ID 不随字段修订变化、不自动合并。显式 reign mapping 保存都城完整时段，由共享规则在展示时裁剪；生成器及运行时均不推断关联。年桶占位月份不展示为已知月份。
 
 ### events（point / span）
 

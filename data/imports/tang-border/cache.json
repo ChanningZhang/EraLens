@@ -1571,7 +1571,6 @@
       "note": "744年骨力裴罗建国；840年黠戛斯攻破牙帐，㕎馺可汗被杀，漠北汗国终结。"
     }
   ],
-  "capitals": [],
   "reigns": [
     {
       "id": "reign-namri-songtsen-tubo",
@@ -3345,8 +3344,7 @@
         "confidence": "month"
       },
       "summary": "唐军攻灭高句丽，宝藏王被俘，高句丽亡国。",
-      "atAbs": 8025,
-      "locationId": "loc-gaogouli-pyongyang"
+      "atAbs": 8025
     }
   ],
   "relations": [

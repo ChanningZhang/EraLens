@@ -209,7 +209,6 @@
       "note": "新莽末赤眉起义军政权，樊崇为首，25年立刘盆子为帝，27年降刘秀。"
     }
   ],
-  "capitals": [],
   "reigns": [
     {
       "id": "reign-zhao-tuo-nanyue",
@@ -416,8 +415,7 @@
         "confidence": "day"
       },
       "summary": "赤眉军攻入长安，杀更始帝刘玄，立刘盆子为帝，更始政权终结。",
-      "atAbs": 309,
-      "locationId": "loc-chimei-changan"
+      "atAbs": 309
     }
   ],
   "relations": [

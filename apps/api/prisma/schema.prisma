@@ -83,7 +83,7 @@ model Dynasty {
   group       DynastyGroup?    @relation(fields: [groupId], references: [id])
   reigns      Reign[]
   eventDynasties EventDynasty[]
-  capitals    DynastyCapital[]
+
 
   @@index([startYear])
   @@index([endYear])
@@ -115,7 +115,7 @@ model Reign {
   isMain              Boolean?    @map("is_main")
   dynasty               Dynasty     @relation(fields: [dynastyId], references: [id])
   person                Person      @relation(fields: [personId], references: [id])
-  capitals              ReignCapital[]
+
 
   @@index([startYear])
   @@index([endYear])
@@ -149,32 +149,15 @@ model Event {
   summary     String?
   meaning     String?
   content     String?
-  locationId  String?             @map("location_id")
-  location    EventLocation?      @relation(fields: [locationId], references: [id], onDelete: SetNull)
   dynasties   EventDynasty[]
   participants EventParticipant[]
 
   @@index([atYear])
   @@index([startYear])
   @@index([endYear])
-  @@index([locationId])
   @@map("events")
 }
 
-model EventLocation {
-  id               String   @id
-  historicalName   String   @map("historical_name")
-  modernName       String   @map("modern_name")
-  longitude        Decimal  @db.Decimal(10, 7)
-  latitude         Decimal  @db.Decimal(10, 7)
-  coordinateSystem String   @default("WGS84") @map("coordinate_system")
-  precision        String   @default("approximate")
-  note             String?
-  links            Json     @default("[]")
-  events           Event[]
-
-  @@map("event_locations")
-}
 
 model EventDynasty {
   eventId   String  @map("event_id")
@@ -226,46 +209,7 @@ model DynastyLaneGroup {
   @@map("dynasty_lane_groups")
 }
 
-model DynastyCapital {
-  id                  String   @id
-  dynastyId           String   @map("dynasty_id")
-  historicalName      String   @map("historical_name")
-  modernName          String   @map("modern_name")
-  longitude           Decimal  @db.Decimal(10, 7)
-  latitude            Decimal  @db.Decimal(10, 7)
-  coordinateSystem    String   @default("GCJ02") @map("coordinate_system")
-  startYear           Int      @map("start_year")
-  startMonth          Int      @map("start_month")
-  startDay            Int?     @map("start_day")
-  endYear             Int      @map("end_year")
-  endMonth            Int      @map("end_month")
-  endDay              Int?     @map("end_day")
-  startAbs            Int      @map("start_abs")
-  endAbs              Int      @map("end_abs")
-  startConfidence     String   @default("year") @map("start_confidence")
-  endConfidence       String   @default("year") @map("end_confidence")
-  role                String   @default("primary")
-  claimTrack          String?  @map("claim_track")
-  note                String?
-  links               Json     @default("[]")
-  dynasty             Dynasty  @relation(fields: [dynastyId], references: [id])
-  reigns              ReignCapital[]
 
-  @@index([dynastyId])
-  @@index([startAbs, endAbs])
-  @@map("dynasty_capitals")
-}
-
-model ReignCapital {
-  reignId   String        @map("reign_id")
-  capitalId String        @map("capital_id")
-  reign     Reign         @relation(fields: [reignId], references: [id], onDelete: Cascade)
-  capital   DynastyCapital @relation(fields: [capitalId], references: [id], onDelete: Cascade)
-
-  @@id([reignId, capitalId])
-  @@index([capitalId])
-  @@map("reign_capitals")
-}
 
 model SysConfig {
   key       String   @id
@@ -273,4 +217,42 @@ model SysConfig {
   updatedAt DateTime @updatedAt @map("updated_at")
 
   @@map("sys_config")
+}
+
+model Location {
+  id String @id
+  modernName String @map("modern_name")
+  longitude Decimal @db.Decimal(10, 7)
+  latitude Decimal @db.Decimal(10, 7)
+  coordinateSystem String @map("coordinate_system")
+  mappings LocationMapping[]
+  @@unique([modernName, longitude, latitude, coordinateSystem])
+  @@map("locations")
+}
+
+model LocationMapping {
+  id String @id
+  locationId String @map("location_id")
+  kind String
+  externalId String @map("external_id")
+  historicalName String @map("historical_name")
+  spatialPrecision String? @map("spatial_precision")
+  startYear Int? @map("start_year")
+  startMonth Int? @map("start_month")
+  startDay Int? @map("start_day")
+  endYear Int? @map("end_year")
+  endMonth Int? @map("end_month")
+  endDay Int? @map("end_day")
+  startAbs Int? @map("start_abs")
+  endAbs Int? @map("end_abs")
+  startConfidence String? @map("start_confidence")
+  endConfidence String? @map("end_confidence")
+  role String?
+  note String?
+  links Json @default("[]")
+  location Location @relation(fields: [locationId], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  @@index([kind, externalId])
+  @@index([locationId])
+  @@index([startAbs, endAbs])
+  @@map("location_mapping")
 }

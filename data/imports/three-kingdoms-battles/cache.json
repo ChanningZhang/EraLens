@@ -271,7 +271,6 @@
   ],
   "dynastyGroups": [],
   "dynasties": [],
-  "capitals": [],
   "reigns": [],
   "events": [
     {
@@ -296,8 +295,7 @@
         "confidence": "year"
       },
       "summary": "曹操南下荆州，刘备携百姓南奔，于长坂遭曹军追上；张飞断后，赵云救主，奠定孙刘联盟基础。",
-      "atAbs": 2507,
-      "locationId": "loc-changban"
+      "atAbs": 2507
     },
     {
       "kind": "battle",
@@ -321,8 +319,7 @@
         "confidence": "month"
       },
       "summary": "张辽率八百壮士夜袭逍遥津，大破孙权军，威震江东。",
-      "atAbs": 2586,
-      "locationId": "loc-xiaoyaojin"
+      "atAbs": 2586
     },
     {
       "kind": "battle",
@@ -354,8 +351,7 @@
       },
       "summary": "刘备与曹操争夺汉中，历时近两年，刘备最终占据汉中并称汉中王。",
       "startAbs": 2604,
-      "endAbs": 2632,
-      "locationId": "loc-hanzhong"
+      "endAbs": 2632
     },
     {
       "kind": "battle",
@@ -378,8 +374,7 @@
         "confidence": "month"
       },
       "summary": "黄忠于定军山斩曹魏大将夏侯渊，汉中战局逆转，刘备军占上风。",
-      "atAbs": 2628,
-      "locationId": "loc-dingjunshan"
+      "atAbs": 2628
     },
     {
       "kind": "battle",
@@ -409,8 +404,7 @@
       },
       "summary": "关羽北伐襄樊，水淹七军威震华夏，后遭吕蒙偷袭荆州，兵败被俘遇害。",
       "startAbs": 2634,
-      "endAbs": 2639,
-      "locationId": "loc-xiangfan"
+      "endAbs": 2639
     },
     {
       "kind": "battle",
@@ -440,8 +434,7 @@
       },
       "summary": "曹魏攻吴濡须口，双方对峙数月，最终议和罢兵。",
       "startAbs": 2664,
-      "endAbs": 2676,
-      "locationId": "loc-ruxu"
+      "endAbs": 2676
     },
     {
       "kind": "battle",
@@ -465,8 +458,7 @@
         "confidence": "year"
       },
       "summary": "诸葛亮第一次北伐，马谡守街亭违令，兵败于张郃，蜀军被迫撤退。",
-      "atAbs": 2747,
-      "locationId": "loc-jieting"
+      "atAbs": 2747
     },
     {
       "kind": "battle",
@@ -489,8 +481,7 @@
         "confidence": "month"
       },
       "summary": "陆逊于石亭大败曹休，斩获甚众，孙吴北方边境得以巩固。",
-      "atAbs": 2742,
-      "locationId": "loc-shiting"
+      "atAbs": 2742
     },
     {
       "kind": "battle",
@@ -519,8 +510,7 @@
       },
       "summary": "诸葛亮最后一次北伐，屯兵五丈原与魏军对峙，八月病逝军中，蜀军退归。",
       "startAbs": 2809,
-      "endAbs": 2815,
-      "locationId": "loc-wuzhangyuan"
+      "endAbs": 2815
     }
   ],
   "relations": [

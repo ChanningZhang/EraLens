@@ -1,6 +1,6 @@
 import { claimTrackOf } from "./claimTracks";
 import { hasUncertainDateRange } from "./historicalDate";
-import type { Dynasty, DynastyCapital, Reign } from "./schema";
+import type { Dynasty, CapitalLocation, Reign } from "./schema";
 import {
   effectiveIntervalEndAbs,
   intervalContainsAbs,
@@ -14,14 +14,14 @@ import {
 
 /** A partial capital record is also used while ordering dynasty lanes. */
 export type TimedCapital = Pick<
-  DynastyCapital,
+  CapitalLocation,
   "dynastyId" | "modernName" | "startAbs" | "endAbs"
-> & Partial<Pick<DynastyCapital, "id" | "start" | "end" | "precision" | "endPrecision" | "role" | "claimTrack">>;
+> & Partial<Pick<CapitalLocation, "id" | "start" | "end" | "precision" | "endPrecision" | "role" | "claimTrack">>;
 
 type OwnershipRecord = Reign | TimedCapital | Pick<Dynasty, "id" | "start" | "end" | "precision">;
 type OwnershipRequest =
   | { kind: "reign"; item: Reign; peers: readonly Reign[]; scope?: "dynasty" | "lane" }
-  | { kind: "capital"; item: TimedCapital; peers: readonly TimedCapital[] }
+  | { kind: "location_mapping"; item: TimedCapital; peers: readonly TimedCapital[] }
   | { kind: "phase"; item: Pick<Dynasty, "id" | "start" | "end" | "precision">; peers: readonly Pick<Dynasty, "id" | "start" | "end" | "precision">[] };
 
 function sameReignSeries(a: Reign, b: Reign, scope: "dynasty" | "lane"): boolean {
@@ -106,7 +106,7 @@ export function capitalOwnershipInterval(capital: TimedCapital, capitals: readon
   }
   const existing = cached.intervals.get(capital);
   if (existing) return existing;
-  const interval = timelineOwnershipInterval({ kind: "capital", item: capital, peers: capitals });
+  const interval = timelineOwnershipInterval({ kind: "location_mapping", item: capital, peers: capitals });
   cached.intervals.set(capital, interval);
   return interval;
 }
@@ -167,13 +167,13 @@ export function activeCapitalsAtAbs<T extends TimedCapital>(capitals: readonly T
   );
 }
 
-/** Prefer explicit reign-capital links; otherwise match dynasty, track, and owned date ranges. */
+/** Only explicit reign-location mappings establish a capital tenure. */
 export function capitalSegmentsForReign(
   reign: Reign,
   reigns: readonly Reign[],
-  capitals: readonly DynastyCapital[],
+  capitals: readonly CapitalLocation[],
 ): Array<{
-  capital: DynastyCapital;
+  capital: CapitalLocation;
   overlapInterval: LeftOpenRightClosedInterval;
   startsAtReignBoundary: boolean;
   endsAtReignBoundary: boolean;
@@ -183,13 +183,11 @@ export function capitalSegmentsForReign(
   if (hasUncertainDateRange(reign)) return [];
   const reignInterval = reignOwnershipInterval(reign, reigns);
   const linked = capitals.filter((capital) => capital.reignIds?.includes(reign.id));
-  const candidates = linked.length > 0
-    ? linked
-    : capitals.filter((capital) => capital.dynastyId === reign.dynastyId);
+  const candidates = linked;
+  const ownershipPeers = capitals.filter(item => item.mappingKind !== "dynasty");
   return candidates.flatMap((capital) => {
     if (hasUncertainDateRange(capital)) return [];
-    if (linked.length === 0 && (capital.claimTrack ?? null) !== (reign.claimTrack ?? null)) return [];
-    const capitalInterval = capitalOwnershipInterval(capital, capitals);
+    const capitalInterval = capitalOwnershipInterval(capital, ownershipPeers);
     if (!intervalsIntersect(reignInterval, capitalInterval)) return [];
     // A one-day handoff is owned by the older interval even if a viewport
     // slice omitted the predecessor reign that would otherwise clip this start.
@@ -210,8 +208,8 @@ export function capitalSegmentsForReign(
 export function capitalsForReigns(
   selectedReigns: readonly Reign[],
   allReigns: readonly Reign[],
-  capitals: readonly DynastyCapital[],
-): DynastyCapital[] {
+  capitals: readonly CapitalLocation[],
+): CapitalLocation[] {
   const ids = new Set(
     selectedReigns.flatMap((reign) =>
       capitalSegmentsForReign(reign, allReigns, capitals).map(({ capital }) => capital.id),

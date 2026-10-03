@@ -24,7 +24,7 @@ import {
   type Reign,
 } from "@eralens/shared";
 import { useDataBounds, useTimelineData } from "../hooks/useTimelineData";
-import { useDynastyCapitals } from "../hooks/useDynastyCapitals";
+import { useCapitalLocations } from "../hooks/useDynastyCapitals";
 import { useLaneColorCatalog } from "../hooks/useLaneColorCatalog";
 import { useStageViewportSize } from "../hooks/useStageViewportHeight";
 import { resolveChinaMapInsets, resolveChinaMapLayout } from "../model/chinaMapProjection";
@@ -72,7 +72,6 @@ import { layoutReignFates } from "../model/reignFateLayout";
 const StableChinaMapBackground = memo(ChinaMapBackground);
 const EVENT_CONTROL_LANE_CLEARANCE = 10;
 const DEFAULT_VISIBLE_EVENT_LANES = 2;
-const MAP_OFFSET = { x: 0, y: 0 };
 
 function laneColorTokenFor(
   map: ReadonlyMap<string, ReturnType<typeof fallbackLaneColorToken>>,
@@ -89,7 +88,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   const stageRef = useRef<HTMLDivElement>(null);
   const timelinePointersRef = useRef(new Map<number, { x: number; y: number }>());
   const timelineGestureRef = useRef<{
-    mode: "pending" | "pan" | "scroll" | "pinch";
+    mode: "pending" | "pan" | "scroll" | "pinch" | "map-pan";
     x: number;
     y: number;
     time: number;
@@ -97,10 +96,12 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     distance: number;
   } | null>(null);
   const timelineInertiaRef = useRef<number | null>(null);
+  const mapPanTimerRef = useRef<number | null>(null);
   const timelinePanRef = useRef<ReturnType<typeof createFramePanAccumulator> | null>(null);
   const timelineZoomRef = useRef<ReturnType<typeof createFrameZoomAccumulator> | null>(null);
   const [eventsExpanded, setEventsExpanded] = useState(false);
   const [mapScale, setMapScale] = useState(1);
+  const [mapOffset, setMapOffset] = useState({ x: 0, y: 0 });
   const stageViewportSize = useStageViewportSize(stageRef);
   const stageViewportHeight = stageViewportSize.height;
   const viewport = useViewport();
@@ -172,12 +173,39 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     if (Math.abs(velocity) > 0.045) timelineInertiaRef.current = requestAnimationFrame(step);
   };
 
+  const clearMapPanTimer = () => {
+    if (mapPanTimerRef.current !== null) {
+      window.clearTimeout(mapPanTimerRef.current);
+      mapPanTimerRef.current = null;
+    }
+  };
+
+  const isPointOverMap = (clientX: number, clientY: number) => {
+    const stage = stageRef.current;
+    if (!stage || !mapLayout) return false;
+    const rect = stage.getBoundingClientRect();
+    const x = clientX - rect.left;
+    const y = clientY - rect.top;
+    const left = mapOffset.x + mapLayout.left * mapScale;
+    const top = mapOffset.y + mapLayout.top * mapScale;
+    return x >= left && x <= left + mapLayout.width * mapScale &&
+      y >= top && y <= top + mapLayout.height * mapScale;
+  };
+
+  const isInteractiveTarget = (target: EventTarget | null) =>
+    target instanceof Element && Boolean(
+      target.closest("button, a, [role='button'], [data-map-pan-exclude]"),
+    );
+
   const onStagePointerDown = (event: ReactPointerEvent<HTMLDivElement>) => {
-    if (event.pointerType !== "touch") return;
+    if (event.pointerType === "mouse") {
+      if (event.button !== 0 || isInteractiveTarget(event.target) || !isPointOverMap(event.clientX, event.clientY)) return;
+    } else if (event.pointerType !== "touch") return;
     stopTimelineInertia();
     timelinePointersRef.current.set(event.pointerId, { x: event.clientX, y: event.clientY });
     const points = [...timelinePointersRef.current.values()];
     if (points.length >= 2) {
+      clearMapPanTimer();
       timelinePanRef.current?.flush();
       const [a, b] = points;
       timelineGestureRef.current = {
@@ -190,7 +218,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       };
     } else {
       timelineGestureRef.current = {
-        mode: "pending",
+        mode: event.pointerType === "mouse" ? "map-pan" : "pending",
         x: event.clientX,
         y: event.clientY,
         time: performance.now(),
@@ -199,6 +227,15 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       };
     }
     event.currentTarget.setPointerCapture(event.pointerId);
+    if (event.pointerType === "touch" && points.length === 1 &&
+      !isInteractiveTarget(event.target) && isPointOverMap(event.clientX, event.clientY)) {
+      mapPanTimerRef.current = window.setTimeout(() => {
+        if (timelineGestureRef.current?.mode === "pending" && timelinePointersRef.current.size === 1) {
+          timelineGestureRef.current = { ...timelineGestureRef.current, mode: "map-pan" };
+        }
+        mapPanTimerRef.current = null;
+      }, 450);
+    }
   };
 
   const onStagePointerMove = (event: ReactPointerEvent<HTMLDivElement>) => {
@@ -221,8 +258,15 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
 
     const dx = event.clientX - gesture.x;
     const dy = event.clientY - gesture.y;
+    if (gesture.mode === "map-pan") {
+      setMapOffset((offset) => ({ x: offset.x + dx, y: offset.y + dy }));
+      timelineGestureRef.current = { ...gesture, x: event.clientX, y: event.clientY };
+      event.preventDefault();
+      return;
+    }
     if (gesture.mode === "pending") {
       if (Math.max(Math.abs(dx), Math.abs(dy)) < 7) return;
+      clearMapPanTimer();
       if (Math.abs(dx) >= Math.abs(dy) * 1.2) {
         timelineGestureRef.current = { ...gesture, mode: "pan", x: event.clientX, y: event.clientY, time: performance.now() };
       } else {
@@ -255,6 +299,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
 
   const onStagePointerUp = (event: ReactPointerEvent<HTMLDivElement>) => {
     if (!timelinePointersRef.current.has(event.pointerId)) return;
+    clearMapPanTimer();
     timelinePointersRef.current.delete(event.pointerId);
     const gesture = timelineGestureRef.current;
     timelineGestureRef.current = null;
@@ -265,6 +310,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   };
   useEffect(() => () => {
     stopTimelineInertia();
+    clearMapPanTimer();
     timelinePanRef.current?.cancel();
     timelineZoomRef.current?.cancel();
   }, []);
@@ -279,7 +325,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   }, [data]);
 
   const boundsQuery = useDataBounds();
-  const capitalsQuery = useDynastyCapitals(boundsQuery.data);
+  const capitalsQuery = useCapitalLocations(boundsQuery.data);
   const allCapitals = capitalsQuery.data;
   const timelineCatalog = useTimelineCatalog();
 
@@ -351,7 +397,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       if (selected.type === "dynasty") dynastyIds.add(selected.id);
       if (reign) dynastyIds.add(reign.dynastyId);
       for (const item of personReigns) dynastyIds.add(item.dynastyId);
-      const selectedCapitals = selected.type === "capital"
+      const selectedCapitals = selected.type === "location_mapping"
         ? capitals.filter((capital) => capital.id === selected.id)
         : selected.type === "dynasty"
           ? capitals.filter((capital) => dynastyIds.has(capital.dynastyId))
@@ -366,7 +412,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     const windowEnd = viewport.centerAbs + 12;
     const selectedEventId = selection.selected?.type === "event" ? selection.selected.id : undefined;
     return data.events.filter((event) => {
-      if ((!eventDisplay.kinds[event.kind] && event.id !== selectedEventId) || (!event.location && event.locations.length === 0)) return false;
+      if ((!eventDisplay.kinds[event.kind] && event.id !== selectedEventId) || event.locationMappings.length === 0) return false;
       if (event.id === selectedEventId) return true;
       const span = eventSpanAbs(event);
       return rangesIntersect(span.startAbs, span.endAbs, windowStart, windowEnd);
@@ -672,7 +718,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
           <StableChinaMapBackground
             layout={mapLayout}
             scale={mapScale}
-            offset={MAP_OFFSET}
+            offset={mapOffset}
           />
         </div>
       </div>
@@ -783,7 +829,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
             atAbs={labelAnchorAbs}
             layout={mapLayout}
             scale={mapScale}
-            offset={MAP_OFFSET}
+            offset={mapOffset}
           />
         </div>
       </div>
@@ -794,7 +840,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
             atAbs={viewport.centerAbs}
             layout={mapLayout}
             scale={mapScale}
-            offset={MAP_OFFSET}
+            offset={mapOffset}
           />
         </div>
       </div>

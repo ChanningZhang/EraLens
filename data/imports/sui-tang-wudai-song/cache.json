@@ -3764,7 +3764,6 @@
       "endAbs": 9167
     }
   ],
-  "capitals": [],
   "reigns": [
     {
       "id": "reign-yang-jian",
@@ -6709,8 +6708,7 @@
         "confidence": "month"
       },
       "summary": "李世民于虎牢关以少胜多，窦建德被俘；失去外援的王世充随后降唐，唐朝平定夏、郑。",
-      "atAbs": 7456,
-      "locationId": "loc-hulao"
+      "atAbs": 7456
     },
     {
       "kind": "politics",
@@ -6813,8 +6811,7 @@
         "confidence": "year"
       },
       "summary": "黄巢领导农民起义，攻入长安，唐廷名存实亡。",
-      "atAbs": 10511,
-      "locationId": "loc-yuanju"
+      "atAbs": 10511
     },
     {
       "kind": "battle",
@@ -6836,8 +6833,7 @@
         "confidence": "month"
       },
       "summary": "宋太宗率军北伐辽国，于高梁河被耶律休哥击败，宋军溃退。",
-      "atAbs": 11753,
-      "locationId": "loc-gaoliang-river"
+      "atAbs": 11753
     },
     {
       "kind": "battle",
@@ -6866,8 +6862,7 @@
       },
       "summary": "蒙古军围攻襄阳、樊城；战争跨越1271年忽必烈改国号大元，1273年吕文焕降元，南宋长江防线洞开。",
       "startAbs": 15216,
-      "endAbs": 15276,
-      "locationId": "loc-xiangyang-siege"
+      "endAbs": 15276
     },
     {
       "kind": "politics",
@@ -6941,8 +6936,7 @@
         "confidence": "day"
       },
       "summary": "元军于崖山击败宋军，陆秀夫负帝昺殉国，南宋亡。",
-      "atAbs": 15350,
-      "locationId": "loc-yashan"
+      "atAbs": 15350
     },
     {
       "kind": "politics",
@@ -7548,7 +7542,6 @@
   "supplementalEventDynasties": [],
   "supplementalEventParticipants": [],
   "preSql": "DELETE FROM relations WHERE id = 'rel-yang-guang-yang-you-succession';\nDELETE FROM relations WHERE id = 'rel-yang-guang-yang-hao-succession';\nDELETE FROM relations WHERE from_type = 'event' AND from_id IN ('zhu-wen-usurp', 'yang-you-enthroned', 'yang-hao-enthroned', 'yang-tong-enthroned');\nDELETE FROM event_participants WHERE event_id IN ('yang-you-enthroned', 'yang-hao-enthroned', 'yang-tong-enthroned');\nDELETE FROM event_dynasties WHERE event_id IN ('yang-you-enthroned', 'yang-hao-enthroned', 'yang-tong-enthroned');\nDELETE FROM events WHERE id IN ('yang-you-enthroned', 'yang-hao-enthroned', 'yang-tong-enthroned');\nDELETE FROM event_participants WHERE event_id = 'zhu-wen-usurp';\nDELETE FROM event_dynasties WHERE event_id = 'zhu-wen-usurp';\nDELETE FROM events WHERE id = 'zhu-wen-usurp';\nDELETE FROM relations WHERE id = 'rel-yang-tong-li-yuan-killed';\nDELETE FROM event_participants WHERE event_id = 'yang-tong-killed';\nDELETE FROM event_dynasties WHERE event_id = 'yang-tong-killed';\nDELETE FROM events WHERE id = 'yang-tong-killed';\nDELETE FROM reigns WHERE id = 'reign-dou-jiande-xia';\n\n-- remove stale auto-generated 史料缺 (武周期间唐行留白)\nDELETE FROM reigns WHERE dynasty_id IN ('tang') AND person_id = 'system-missing-ruler';",
-  "reignCapitals": [],
   "manifest": {
     "slug": "sui-tang-wudai-song",
     "title": "隋唐宋（含五代十国、武周）",

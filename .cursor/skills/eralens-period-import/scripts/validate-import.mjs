@@ -33,12 +33,12 @@ const tableOrder = [
   "persons",
   "dynasty_groups",
   "dynasties",
-  "dynasty_capitals",
   "reigns",
   "events",
   "event_dynasties",
   "event_participants",
   "relations",
+  "location_mapping",
 ];
 
 const positions = tableOrder.map((table) => {

@@ -1506,7 +1506,6 @@
       "note": "刘秀于25年重建汉室、定都洛阳，初期整顿吏治并恢复社会生产，明、章时期国势较盛，经营西域亦有进展。和帝以后外戚与宦官交替掌权，黄巾起事及州郡割据削弱朝廷；献帝于220年禅位曹丕，东汉结束。"
     }
   ],
-  "capitals": [],
   "reigns": [
     {
       "id": "reign-ying-zheng",
@@ -2537,8 +2536,7 @@
         "confidence": "year"
       },
       "summary": "陈胜、吴广揭竿而起，秦末农民战争爆发。",
-      "atAbs": -2485,
-      "locationId": "loc-daze-township"
+      "atAbs": -2485
     },
     {
       "kind": "battle",
@@ -2562,8 +2560,7 @@
         "confidence": "year"
       },
       "summary": "项羽破釜沉舟，大破章邯所率秦军，秦亡势成。",
-      "atAbs": -2461,
-      "locationId": "loc-julu"
+      "atAbs": -2461
     },
     {
       "kind": "battle",
@@ -2585,8 +2582,7 @@
         "confidence": "year"
       },
       "summary": "项梁战死于定陶，项羽继其军权。",
-      "atAbs": -2473,
-      "locationId": "loc-qin-liang-dingtao"
+      "atAbs": -2473
     },
     {
       "kind": "politics",
@@ -2632,8 +2628,7 @@
         "confidence": "year"
       },
       "summary": "刘邦赴项羽之会，张良等周旋，刘邦脱险。",
-      "atAbs": -2449,
-      "locationId": "loc-hongmen-banquet"
+      "atAbs": -2449
     },
     {
       "kind": "battle",
@@ -2689,8 +2684,7 @@
         "confidence": "year"
       },
       "summary": "韩信等合围项羽于垓下，项羽兵败自刎，楚亡汉兴。",
-      "atAbs": -2401,
-      "locationId": "loc-gaixia"
+      "atAbs": -2401
     },
     {
       "kind": "battle",
@@ -2711,8 +2705,7 @@
         "confidence": "year"
       },
       "summary": "刘邦北击匈奴失利被围，脱险后改行和亲政策。",
-      "atAbs": -2377,
-      "locationId": "loc-baiteng"
+      "atAbs": -2377
     },
     {
       "kind": "battle",
@@ -3015,8 +3008,7 @@
         "confidence": "year"
       },
       "summary": "刘秀率绿林军于昆阳大破王莽主力，新莽覆亡在即。",
-      "atAbs": 287,
-      "locationId": "loc-kunyang"
+      "atAbs": 287
     },
     {
       "kind": "politics",
@@ -3037,8 +3029,7 @@
         "confidence": "year"
       },
       "summary": "张角领导黄巾起义，东汉统治根基动摇，群雄割据。",
-      "atAbs": 2219,
-      "locationId": "loc-julu-yellow-turban"
+      "atAbs": 2219
     }
   ],
   "relations": [
@@ -3262,7 +3253,6 @@
   "supplementalEventDynasties": [],
   "supplementalEventParticipants": [],
   "preSql": "DELETE FROM event_participants WHERE event_id = 'wang-mang-usurp';\nDELETE FROM event_dynasties WHERE event_id = 'wang-mang-usurp';\nDELETE FROM events WHERE id = 'wang-mang-usurp';",
-  "reignCapitals": [],
   "manifest": {
     "slug": "qin-han",
     "title": "秦汉（含新莽、更始、东汉）",

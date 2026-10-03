@@ -5,12 +5,12 @@ import { mkdir, readFile, rename, rm } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import {
-  DynastyCapitalSchema,
+  LocationSchema, LocationMappingSchema, mapLocation, mapLocationMapping,
   DynastyGroupSchema,
   DynastyLaneGroupSchema,
   DynastySchema,
   EventSchema,
-  EventLocationSchema,
+
   PersonSchema,
   RelationSchema,
   ReignSchema,
@@ -18,7 +18,6 @@ import {
 } from "@eralens/shared";
 import {
   mapDynasty,
-  mapDynastyCapital,
   mapDynastyGroup,
   mapDynastyLaneGroup,
   mapEvent,
@@ -40,9 +39,9 @@ const tempPath = `${outputPath}.tmp`;
 
 const TABLES = [
   ["persons", "id"], ["dynasty_groups", "id"], ["dynasties", "id"], ["reigns", "id"],
-  ["event_locations", "id"], ["events", "id"], ["event_dynasties", "event_id, dynasty_id"],
+  ["events", "id"], ["event_dynasties", "event_id, dynasty_id"],
   ["event_participants", "event_id, person_id"], ["relations", "id"],
-  ["dynasty_lane_groups", "id"], ["dynasty_capitals", "id"], ["reign_capitals", "reign_id, capital_id"],
+  ["dynasty_lane_groups", "id"], ["locations", "id"], ["location_mapping", "id"],
 ] as const;
 
 type Row = Record<string, unknown>;
@@ -120,7 +119,7 @@ try {
   const reigns = raw.get("reigns")!;
   const events = raw.get("events")!;
   const relations = raw.get("relations")!;
-  const capitalRows = raw.get("dynasty_capitals")!;
+  const capitalRows = raw.get("location_mapping")!;
   for (const row of persons) dtoValidate("Person", PersonSchema, mapPerson(camelizeRow(row) as never));
   for (const row of dynasties) dtoValidate("Dynasty", DynastySchema, mapDynasty(row as never));
   for (const row of groups) dtoValidate("DynastyGroup", DynastyGroupSchema, mapDynastyGroup(row as never));
@@ -128,19 +127,16 @@ try {
   for (const row of reigns) dtoValidate("Reign", ReignSchema, mapReign(row as never));
   const dynastyLinks = raw.get("event_dynasties")!;
   const participantLinks = raw.get("event_participants")!;
-  const locations = new Map(raw.get("event_locations")!.map((row) => [row.id, camelizeRow(row)]));
-  for (const row of raw.get("event_locations")!) {
-    dtoValidate("EventLocation", EventLocationSchema, {
-      ...camelizeRow(row), longitude: Number(row.longitude), latitude: Number(row.latitude), note: row.note ?? undefined,
-    });
-  }
+  const locations = new Map(raw.get("locations")!.map(row=>[String(row.id),mapLocation(row)]));
+  const mappings = raw.get("location_mapping")!.map(row=>mapLocationMapping({...row,location:locations.get(String(row.location_id))}));
+  for(const m of mappings) dtoValidate("LocationMapping",LocationMappingSchema,m);
   for (const row of events) {
     const camel = camelizeRow(row);
     const mapped = mapEvent({
       ...row,
       dynasties: dynastyLinks.filter((link) => link.event_id === row.id).map((link) => ({ dynastyId: link.dynasty_id })),
       participants: participantLinks.filter((link) => link.event_id === row.id).map((link) => ({ personId: link.person_id })),
-      location: locations.get(row.location_id as string) as never,
+      locationMappings:mappings.filter(m=>m.kind === "event" && m.externalId===row.id),
     } as never);
     dtoValidate("Event", EventSchema, mapped);
   }
@@ -150,7 +146,7 @@ try {
     ["dynasty", new Set(dynasties.map((row) => String(row.id)))],
     ["reign", new Set(reigns.map((row) => String(row.id)))],
     ["event", new Set(events.map((row) => String(row.id)))],
-    ["capital", new Set(capitalRows.map((row) => String(row.id)))],
+    ["location_mapping", new Set(capitalRows.map((row) => String(row.id)))],
   ]);
   const danglingRelations: string[] = [];
   for (const row of relations) {
@@ -164,12 +160,6 @@ try {
     }
   }
   if (danglingRelations.length) throw new Error(`Found ${danglingRelations.length} dangling relation endpoint(s):\n${danglingRelations.map((item) => `- ${item}`).join("\n")}`);
-  const capitalLinks = raw.get("reign_capitals")!;
-  for (const row of capitalRows) {
-    const mapped = mapDynastyCapital({ ...row, reign_ids: capitalLinks.filter((link) => link.capital_id === row.id).map((link) => link.reign_id) } as never);
-    dtoValidate("DynastyCapital", DynastyCapitalSchema, mapped);
-  }
-
   const personReigns = new Map<string, Row[]>();
   for (const row of reigns) personReigns.set(String(row.person_id), [...(personReigns.get(String(row.person_id)) ?? []), row]);
   const dynastyNames = new Map(dynasties.map((row) => [String(row.id), String(row.name)]));
@@ -196,10 +186,13 @@ try {
     searchEntry(db, "event", String(row.id), String(row.name), "name", String(row.name), subtitle, anchor == null ? null : Number(anchor));
     if (row.meaning) searchEntry(db, "event", String(row.id), String(row.meaning), "meaning", String(row.name), subtitle, anchor == null ? null : Number(anchor));
   }
-  for (const row of capitalRows) {
-    const subtitle = `${String(row.modern_name)} · ${dynastyNames.get(String(row.dynasty_id)) ?? ""} · 都城`;
-    searchEntry(db, "capital", String(row.id), String(row.historical_name), "historical_name", String(row.historical_name), subtitle, Number(row.start_abs));
-    searchEntry(db, "capital", String(row.id), String(row.modern_name), "modern_name", String(row.historical_name), subtitle, Number(row.start_abs));
+  for (const m of mappings) {
+    const reign=m.kind === "reign" ? reigns.find(r=>r.id===m.externalId) : undefined;
+    const event=m.kind === "event" ? events.find(e=>e.id===m.externalId) : undefined;
+    const subtitle=[m.location.modernName,event?.name ?? dynastyNames.get(String(reign?.dynasty_id ?? m.externalId)),m.kind === "event" ? "事件地点" : "都城"].filter(Boolean).join(" · ");
+    const anchor=m.startAbs ?? event?.at_abs ?? event?.start_abs;
+    searchEntry(db,"location_mapping",m.id,m.historicalName,"historical_name",m.historicalName,subtitle,anchor == null ? null : Number(anchor));
+    searchEntry(db,"location_mapping",m.id,m.location.modernName,"modern_name",m.historicalName,subtitle,anchor == null ? null : Number(anchor));
   }
   counts.search_entries = Number((db.prepare("SELECT COUNT(*) AS count FROM search_entries").get() as { count: number }).count);
 

@@ -1,14 +1,14 @@
 import {
   buildStableLaneColorMap,
   type ColorToken,
-  type DynastyCapital,
+  type CapitalLocation,
 } from "@eralens/shared";
 import { useEffect, useMemo } from "react";
 import { laneColorStore } from "../state/laneColorStore";
 import { useTimelineCatalog } from "./useTimelineCatalog";
 
 export function useLaneColorCatalog(
-  capitals?: readonly DynastyCapital[],
+  capitals?: readonly CapitalLocation[],
 ): ReadonlyMap<string, ColorToken> {
   const catalog = useTimelineCatalog();
 

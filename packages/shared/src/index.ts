@@ -21,3 +21,5 @@ export * from "./systemReigns";
 export * from "./reignBoundaries";
 export * from "./reignFateRelations";
 export * from "./dynastyCapitals";
+
+export * from "./locationMappings";

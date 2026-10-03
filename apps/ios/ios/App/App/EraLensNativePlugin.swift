@@ -34,8 +34,8 @@ public class EraLensNativePlugin: CAPPlugin, CAPBridgedPlugin {
     private let databaseName = "eralens-contentSQLite.db"
     private let candidateName = "eralens-content.candidate.db"
     private let previousName = "eralens-content.previous.db"
-    private let expectedSchemaVersion = 2
-    private let expectedContractVersion = 3
+    private let expectedSchemaVersion = 3
+    private let expectedContractVersion = 4
 
     @objc public func getContentInfo(_ call: CAPPluginCall) {
         do {

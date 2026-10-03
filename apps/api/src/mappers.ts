@@ -2,7 +2,7 @@ import {
   parseAppellationCsv,
   formatAppellationCsv,
   type Dynasty,
-  type DynastyCapital,
+  type CapitalLocation,
   type DynastyGroup,
   type DynastyLaneGroup,
   type Event,
@@ -16,11 +16,9 @@ import {
 } from "@eralens/shared";
 import type {
   Dynasty as DbDynasty,
-  DynastyCapital as DbDynastyCapital,
   DynastyGroup as DbDynastyGroup,
   DynastyLaneGroup as DbDynastyLaneGroup,
   Event as DbEvent,
-  EventLocation as DbEventLocation,
   Person as DbPerson,
   Reign as DbReign,
   Relation as DbRelation,
@@ -89,33 +87,6 @@ export type RawReignRow = {
   is_main: boolean | null;
 };
 
-export type RawDynastyCapitalRow = {
-  id: string;
-  dynasty_id: string;
-  historical_name: string;
-  modern_name: string;
-  longitude: { toString(): string } | number | string;
-  latitude: { toString(): string } | number | string;
-  coordinate_system: string;
-  start_year: number;
-  start_month: number;
-  start_day: number | null;
-  end_year: number;
-  end_month: number;
-  end_day: number | null;
-  start_abs: number;
-  end_abs: number;
-  start_confidence?: string;
-  end_confidence?: string;
-  role: string;
-  claim_track: string | null;
-  reign_ids: string[] | null;
-  note: string | null;
-  links: unknown;
-};
-
-type DynastyCapitalRowWithReignIds = DbDynastyCapital & { reignIds?: string[] };
-
 export type RawEventRow = {
   id: string;
   name: string;
@@ -140,7 +111,6 @@ export type RawEventRow = {
   summary: string | null;
   meaning: string | null;
   content: string | null;
-  location_id: string | null;
 };
 
 export function mapPerson(row: DbPerson): Person {
@@ -207,62 +177,6 @@ export function mapDynastyLaneGroup(row: DbDynastyLaneGroup): DynastyLaneGroup {
 
 function toCoordinateNumber(value: { toString(): string } | number | string): number {
   return typeof value === "number" ? value : Number(value);
-}
-
-export function mapDynastyCapital(
-  row: DynastyCapitalRowWithReignIds | RawDynastyCapitalRow,
-): DynastyCapital {
-  const dynastyId = "dynastyId" in row ? row.dynastyId : row.dynasty_id;
-  const historicalName =
-    "historicalName" in row ? row.historicalName : row.historical_name;
-  const modernName = "modernName" in row ? row.modernName : row.modern_name;
-  const coordinateSystem =
-    "coordinateSystem" in row ? row.coordinateSystem : row.coordinate_system;
-  const startYear = "startYear" in row ? row.startYear : row.start_year;
-  const startMonth = "startMonth" in row ? row.startMonth : row.start_month;
-  const startDay = "startDay" in row ? row.startDay : row.start_day;
-  const endYear = "endYear" in row ? row.endYear : row.end_year;
-  const endMonth = "endMonth" in row ? row.endMonth : row.end_month;
-  const endDay = "endDay" in row ? row.endDay : row.end_day;
-  const startAbs = "startAbs" in row ? row.startAbs : row.start_abs;
-  const endAbs = "endAbs" in row ? row.endAbs : row.end_abs;
-  const claimTrack = "claimTrack" in row ? row.claimTrack : row.claim_track;
-  const reignIds: string[] = "reign_ids" in row ? row.reign_ids ?? [] : row.reignIds ?? [];
-  const noteValue = row.note;
-  const links = (row.links as DynastyCapital["links"]) ?? [];
-
-  return {
-    id: row.id,
-    dynastyId,
-    historicalName,
-    modernName,
-    longitude: toCoordinateNumber(row.longitude),
-    latitude: toCoordinateNumber(row.latitude),
-    coordinateSystem: coordinateSystem as DynastyCapital["coordinateSystem"],
-    start: {
-      year: startYear,
-      month: startMonth,
-      ...(startDay != null ? { day: startDay } : {}),
-      confidence: (("startConfidence" in row ? row.startConfidence : row.start_confidence) ?? "year") as HistoricalDateConfidence,
-    },
-    end: {
-      year: endYear,
-      month: endMonth,
-      ...(endDay != null ? { day: endDay } : {}),
-      confidence: (("endConfidence" in row ? row.endConfidence : row.end_confidence) ?? "year") as HistoricalDateConfidence,
-    },
-    startAbs,
-    endAbs,
-    precision: confidencePrecision((("startConfidence" in row ? row.startConfidence : row.start_confidence) ?? "year") as HistoricalDateConfidence),
-    endPrecision: confidencePrecision((("endConfidence" in row ? row.endConfidence : row.end_confidence) ?? "year") as HistoricalDateConfidence),
-    startConfidence: ("startConfidence" in row ? row.startConfidence : row.start_confidence) as DynastyCapital["startConfidence"],
-    endConfidence: ("endConfidence" in row ? row.endConfidence : row.end_confidence) as DynastyCapital["endConfidence"],
-    role: row.role as DynastyCapital["role"],
-    claimTrack: claimTrack ?? undefined,
-    reignIds: reignIds ?? [],
-    note: noteValue ?? undefined,
-    links,
-  };
 }
 
 export function mapDynasty(row: DbDynasty | RawDynastyRow): Dynasty {
@@ -363,7 +277,7 @@ export function mapEvent(
   row: (DbEvent | RawEventRow) & {
     dynasties: { dynastyId: string }[];
     participants: { personId: string }[];
-    location?: DbEventLocation | null;
+    locationMappings?: import("@eralens/shared").LocationMapping[];
   },
 ): Event {
   const atYear = "atYear" in row ? row.atYear : row.at_year;
@@ -381,21 +295,6 @@ export function mapEvent(
   const timeMode = "timeMode" in row ? row.timeMode : row.time_mode;
   const dateNote = "dateNote" in row ? row.dateNote : row.date_note;
   const meaning = row.meaning;
-  const location = row.location
-    ? {
-        id: row.location.id,
-        historicalName: row.location.historicalName,
-        modernName: row.location.modernName,
-        longitude: Number(row.location.longitude),
-        latitude: Number(row.location.latitude),
-        coordinateSystem: row.location.coordinateSystem,
-        precision: row.location.precision,
-        note: row.location.note ?? undefined,
-        links: Array.isArray(row.location.links)
-          ? (row.location.links as { label: string; url: string }[])
-          : [],
-      }
-    : undefined;
 
   return {
     id: row.id,
@@ -421,9 +320,7 @@ export function mapEvent(
     summary: row.summary ?? undefined,
     meaning: meaning ?? undefined,
     content: row.content ?? undefined,
-    locationId: ("locationId" in row ? row.locationId : row.location_id) ?? undefined,
-    location,
-    locations: location ? [location] : [],
+    locationMappings: row.locationMappings ?? [],
   };
 }
 
@@ -444,6 +341,7 @@ export function mapRelation(row: DbRelation): Relation {
 }
 
 export function toTimelineDataStore(input: {
+  locationMappings?: import("@eralens/shared").LocationMapping[];
   persons: Person[];
   dynasties: Dynasty[];
   reigns: Reign[];

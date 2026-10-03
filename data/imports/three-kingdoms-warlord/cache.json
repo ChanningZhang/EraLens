@@ -432,7 +432,6 @@
       "note": "孙氏政权立足江东，孙权于222年受魏封吴王，229年称帝，后世称孙吴或东吴；建业是其主要都城，疆域包括长江下游及南方广大地区。孙权之后由孙亮、孙休、孙皓相继即位，孙吴在三国中延续最久，280年孙皓向西晋投降，政权灭亡。"
     }
   ],
-  "capitals": [],
   "reigns": [
     {
       "id": "reign-cao-pi",
@@ -604,8 +603,7 @@
         "confidence": "month"
       },
       "summary": "曹操以少胜多，大败袁绍，奠定统一北方基础。",
-      "atAbs": 2405,
-      "locationId": "loc-guandu"
+      "atAbs": 2405
     },
     {
       "kind": "battle",
@@ -632,8 +630,7 @@
         "confidence": "month"
       },
       "summary": "孙刘联军于赤壁大败曹操，三国鼎立格局初步形成。",
-      "atAbs": 2507,
-      "locationId": "loc-chibi"
+      "atAbs": 2507
     },
     {
       "kind": "politics",
@@ -685,8 +682,7 @@
       },
       "summary": "刘备伐吴复仇，于夷陵大败，蜀汉元气大伤。",
       "startAbs": 2658,
-      "endAbs": 2671,
-      "locationId": "loc-yiling"
+      "endAbs": 2671
     },
     {
       "kind": "battle",
@@ -709,8 +705,7 @@
         "confidence": "month"
       },
       "summary": "钟会军受阻于剑阁时，邓艾率军由阴平道穿越险阻，进至江油并击败蜀军，迫使蜀汉政权迅速瓦解。",
-      "atAbs": 3165,
-      "locationId": "loc-yinping"
+      "atAbs": 3165
     }
   ],
   "relations": [

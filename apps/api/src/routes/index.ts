@@ -1,7 +1,7 @@
 import {
   buildEntityDetail,
   DEFAULT_EVENT_DISPLAY_CONFIG,
-  DynastyCapitalSchema,
+  LocationSchema, LocationMappingSchema, LocationKindSchema, mapLocation, mapLocationMapping, filterLocationMappings, searchEntities,
   EventDisplayConfigSchema,
   EntityDetailSchema,
   eventKindLabel,
@@ -23,7 +23,6 @@ import type { FastifyInstance } from "fastify";
 import { prisma } from "../db.js";
 import {
   mapDynasty,
-  mapDynastyCapital,
   mapDynastyGroup,
   mapDynastyLaneGroup,
   mapEvent,
@@ -31,7 +30,6 @@ import {
   mapReign,
   mapRelation,
   toTimelineDataStore,
-  type RawDynastyCapitalRow,
   type RawDynastyGroupRow,
   type RawDynastyRow,
   type RawEventRow,
@@ -205,12 +203,7 @@ async function loadPersonDetailBundle(
                                   FROM event_dynasties ed WHERE ed.event_id = e.id), '[]'::jsonb),
           'participants', COALESCE((SELECT jsonb_agg(jsonb_build_object('personId', ep.person_id) ORDER BY ep.person_id)
                                     FROM event_participants ep WHERE ep.event_id = e.id), '[]'::jsonb),
-          'location', (SELECT jsonb_build_object(
-            'id', l.id, 'historicalName', l.historical_name, 'modernName', l.modern_name,
-            'longitude', l.longitude, 'latitude', l.latitude,
-            'coordinateSystem', l.coordinate_system, 'precision', l.precision,
-            'note', l.note, 'links', l.links
-          ) FROM event_locations l WHERE l.id = e.location_id)
+          'locationMappings', '[]'::jsonb
         ) ORDER BY e.id
       ) FROM relevant_events e), '[]'::jsonb) AS events,
       COALESCE((SELECT jsonb_agg(to_jsonb(rel) ORDER BY rel.id)
@@ -221,6 +214,7 @@ async function loadPersonDetailBundle(
 
   const row = rows[0];
   if (!row) return null;
+  const eventMappings = await loadMappings({kind:"event"});
   const persons = jsonRows(row.persons).map(mapBundlePerson);
   const targetPerson = persons.find((person) => person.id === personId) ??
     persons.find((person) =>
@@ -232,7 +226,7 @@ async function loadPersonDetailBundle(
       persons,
       dynasties: jsonRows(row.dynasties).map((value) => mapDynasty(value as never)),
       reigns: jsonRows(row.reigns).map((value) => mapReign(value as never)),
-      events: jsonRows(row.events).map((value) => mapEvent(value as never)),
+      events: jsonRows(row.events).map((value) => mapEvent({...value, locationMappings:eventMappings.filter(m=>m.externalId===value.id)} as never)),
       relations: jsonRows(row.relations).map(mapBundleRelation),
     },
     personId: targetPerson.id,
@@ -244,56 +238,40 @@ async function loadPersonDetailBundle(
   };
 }
 
-async function loadPersonDetailCapitals(
-  store: TimelineDataStore,
-  selectedReignIds: readonly string[],
-) {
-  const selectedIds = new Set(selectedReignIds);
-  const dynastyIds = [
-    ...new Set(
-      store.reigns
-        .filter((reign) => selectedIds.has(reign.id))
-        .map((reign) => reign.dynastyId),
-    ),
-  ];
-  if (dynastyIds.length === 0) return [];
-  const rows = await prisma.$queryRaw<RawDynastyCapitalRow[]>`
-    SELECT id, dynasty_id, historical_name, modern_name,
-           longitude, latitude, coordinate_system,
-           start_year, start_month, start_day,
-           end_year, end_month, end_day,
-           start_abs, end_abs, start_confidence, end_confidence,
-           role, claim_track,
-           ARRAY(SELECT rc.reign_id FROM reign_capitals rc
-                 WHERE rc.capital_id = dynasty_capitals.id
-                 ORDER BY rc.reign_id) AS reign_ids,
-           note, links
-    FROM dynasty_capitals
-    WHERE dynasty_id = ANY(${dynastyIds}::text[])
-    ORDER BY start_abs, role, id`;
-  return rows.map(mapDynastyCapital);
+async function loadMappings(query: import("@eralens/shared").LocationMappingQuery = {}) {
+  const rows = await prisma.locationMapping.findMany({where:{kind:query.kind,externalId:query.externalId,locationId:query.locationId},include:{location:true},orderBy:{id:"asc"}});
+  const mappings=rows.map(mapLocationMapping);
+  const events=query.fromAbs != null || query.toAbs != null ? await prisma.event.findMany() : [];
+  return filterLocationMappings(mappings,query,events.map(e=>({id:e.id,atAbs:e.atAbs ?? undefined,startAbs:e.startAbs ?? undefined,endAbs:e.endAbs ?? undefined})));
+}
+async function loadPersonDetailLocations(store: TimelineDataStore, selectedReignIds: readonly string[]) {
+  const ids=new Set(selectedReignIds);
+  const dynastyIds=new Set(store.reigns.filter(r=>ids.has(r.id)).map(r=>r.dynastyId));
+  return (await loadMappings()).filter(m=>m.kind === "reign" ? store.reigns.some(r=>r.id===m.externalId) : m.kind === "dynasty" ? dynastyIds.has(m.externalId) : store.events.some(e=>e.id===m.externalId));
 }
 
 async function loadStore() {
   const [personRows, dynastyRows, reignRows, eventRows, relationRows] = await Promise.all([
-    prisma.person.findMany(),
-    prisma.dynasty.findMany(),
-    prisma.reign.findMany(),
+    prisma.person.findMany({orderBy:{id:"asc"}}),
+    prisma.dynasty.findMany({orderBy:{id:"asc"}}),
+    prisma.reign.findMany({orderBy:{id:"asc"}}),
     prisma.event.findMany({
+      orderBy:{id:"asc"},
       include: {
         dynasties: { orderBy: { dynastyId: "asc" } },
         participants: { orderBy: { personId: "asc" } },
-        location: true,
       },
     }),
-    prisma.relation.findMany(),
+    prisma.relation.findMany({orderBy:{id:"asc"}}),
   ]);
+  const locationMappings=await loadMappings();
 
   return toTimelineDataStore({
-    persons: personRows.map(mapPerson),
+    persons: personRows.map(row=>({...mapPerson(row),searchTerms:row.searchTerms})),
     dynasties: dynastyRows.map(mapDynasty),
     reigns: reignRows.map((row) => mapReign(row)),
-    events: eventRows.map(mapEvent),
+    events: eventRows.map(row=>mapEvent({...row,locationMappings:locationMappings.filter(m=>m.kind === "event" && m.externalId === row.id)})),
+    locationMappings,
     relations: relationRows.map(mapRelation),
   });
 }
@@ -302,7 +280,7 @@ async function loadStore() {
 async function loadEventsInWindow(fromAbs: number, toAbs: number) {
   const eventRows = await prisma.$queryRaw<RawEventRow[]>`
     SELECT id, name, kind, time_mode, at_confidence, start_confidence, end_confidence, date_note, at_year, at_month, at_day, at_abs,
-           start_year, start_month, start_day, start_abs, end_year, end_month, end_day, end_abs, summary, meaning, content, location_id
+           start_year, start_month, start_day, start_abs, end_year, end_month, end_day, end_abs, summary, meaning, content
     FROM events
     WHERE span && int4range(${fromAbs}::int, ${toAbs}::int, '[]')`;
 
@@ -316,11 +294,7 @@ async function loadEventsInWindow(fromAbs: number, toAbs: number) {
       : Promise.resolve([]),
   ]);
 
-  const locationIds = [...new Set(eventRows.map((row) => row.location_id).filter((id): id is string => id != null))];
-  const locations = locationIds.length
-    ? await prisma.eventLocation.findMany({ where: { id: { in: locationIds } } })
-    : [];
-  const locationById = new Map(locations.map((location) => [location.id, location]));
+  const mappings=await loadMappings({kind:"event"});
 
   const dynastiesByEvent = new Map<string, string[]>();
   for (const row of eventDynasties) {
@@ -338,7 +312,7 @@ async function loadEventsInWindow(fromAbs: number, toAbs: number) {
   return eventRows.map((row) =>
     mapEvent({
       ...row,
-      location: row.location_id ? locationById.get(row.location_id) ?? null : null,
+      locationMappings: mappings.filter(m=>m.externalId===row.id),
       dynasties: (dynastiesByEvent.get(row.id) ?? []).map((dynastyId) => ({ dynastyId })),
       participants: (participantsByEvent.get(row.id) ?? []).map((personId) => ({ personId })),
     }),
@@ -567,37 +541,15 @@ export async function registerRoutes(app: FastifyInstance) {
   app.get("/entities/:type/:id", async (request, reply) => {
     reply.header("Cache-Control", "no-store");
     const params = request.params as { type: string; id: string };
-    if (!["dynasty", "reign", "person", "event", "capital"].includes(params.type)) {
+    if (!["dynasty", "reign", "person", "event", "location_mapping"].includes(params.type)) {
       reply.code(400);
       return { error: "Invalid entity type" };
     }
 
     try {
-      if (params.type === "capital") {
-        const row = await prisma.dynastyCapital.findUnique({ where: { id: params.id } });
-        if (!row) {
-          reply.code(404);
-          return { error: "Entity not found" };
-        }
-        const store = await loadStore();
-        const capitalReigns = await prisma.reignCapital.findMany({
-          where: { capitalId: params.id },
-          select: { reignId: true },
-          orderBy: { reignId: "asc" },
-        });
-        const detail = buildEntityDetail(
-          {
-            ...store,
-            capitals: [
-              mapDynastyCapital({
-                ...row,
-                reignIds: capitalReigns.map((item) => item.reignId),
-              }),
-            ],
-          },
-          { type: "capital", id: params.id },
-        );
-        return EntityDetailSchema.parse(detail);
+      if (params.type === "location_mapping") {
+        const store=await loadStore();
+        return EntityDetailSchema.parse(buildEntityDetail(store,{type:"location_mapping",id:params.id}));
       }
 
       const query = request.query as { focusReign?: string };
@@ -616,12 +568,12 @@ export async function registerRoutes(app: FastifyInstance) {
           reply.code(404);
           return { error: "Entity not found" };
         }
-        const capitals = await loadPersonDetailCapitals(
+        const locationMappings = await loadPersonDetailLocations(
           bundle.store,
           bundle.selectedReignIds,
         );
         const detail = buildEntityDetail(
-          { ...bundle.store, capitals },
+          { ...bundle.store, locationMappings },
           { type: "person", id: bundle.personId },
           {
             focusReignId,
@@ -634,30 +586,9 @@ export async function registerRoutes(app: FastifyInstance) {
       }
 
       const store = await loadStore();
-      let capitals;
-      if (entityType === "dynasty") {
-        const dynasty = store.dynasties.find((item) => item.id === entityId);
-        if (!dynasty) {
-          reply.code(404);
-          return { error: "Entity not found" };
-        }
-        const rows = await prisma.$queryRaw<RawDynastyCapitalRow[]>`
-          SELECT id, dynasty_id, historical_name, modern_name,
-                 longitude, latitude, coordinate_system,
-                 start_year, start_month, start_day,
-                 end_year, end_month, end_day,
-                 start_abs, end_abs, start_confidence, end_confidence,
-                 role, claim_track,
-                 ARRAY(SELECT rc.reign_id FROM reign_capitals rc WHERE rc.capital_id = dynasty_capitals.id ORDER BY rc.reign_id) AS reign_ids,
-                 note, links
-          FROM dynasty_capitals
-          WHERE dynasty_id = ${dynasty.id}
-          ORDER BY start_abs, role, id`;
-        capitals = rows.map(mapDynastyCapital);
-      }
 
       const detail = buildEntityDetail(
-        capitals ? { ...store, capitals } : store,
+        store,
         {
           type: entityType as "dynasty" | "person" | "event",
           id: entityId,
@@ -677,139 +608,20 @@ export async function registerRoutes(app: FastifyInstance) {
     const q = normalizeSearchTerm(query.q ?? "");
     if (!q) return [];
 
-    const [personRows, dynastyRows, reignRows, eventRows, capitalRows] = await Promise.all([
-      prisma.person.findMany({
-        where: { searchTerms: { has: q } },
-        orderBy: { id: "asc" },
-        take: 12,
-      }),
-      prisma.dynasty.findMany({
-        where: { name: { contains: q, mode: "insensitive" } },
-        orderBy: { id: "asc" },
-        take: 12,
-      }),
-      prisma.reign.findMany({
-        where: { eraNames: { contains: q, mode: "insensitive" } },
-        include: { person: true, dynasty: true },
-        orderBy: { id: "asc" },
-        take: 12,
-      }),
-      prisma.event.findMany({
-        where: {
-          OR: [
-            { name: { contains: q, mode: "insensitive" } },
-            { meaning: { contains: q, mode: "insensitive" } },
-          ],
-        },
-        orderBy: { id: "asc" },
-        take: 12,
-      }),
-      prisma.dynastyCapital.findMany({
-        where: {
-          OR: [
-            { historicalName: { contains: q, mode: "insensitive" } },
-            { modernName: { contains: q, mode: "insensitive" } },
-          ],
-        },
-        include: { dynasty: true },
-        orderBy: { id: "asc" },
-        take: 12,
-      }),
-    ]);
-
-    const personReigns = personRows.length
-      ? await prisma.reign.findMany({
-          where: { personId: { in: personRows.map((person) => person.id) } },
-          select: { personId: true, startAbs: true, endAbs: true },
-          orderBy: { startAbs: "asc" },
-        })
-      : [];
-
-    const hits = [
-      ...dynastyRows.map((dynasty) => ({
-        ref: { type: "dynasty" as const, id: dynasty.id },
-        label: dynasty.name,
-        abs: midpointAbs(dynasty.startAbs, dynasty.endAbs),
-      })),
-      ...personRows.map((row) => {
-        const person = mapPerson(row);
-        return {
-          ref: { type: "person" as const, id: person.id },
-          label: person.name,
-          subtitle: person.roles.join(" · "),
-          abs: personSearchAnchorAbs(person, personReigns),
-        };
-      }),
-      ...reignRows.map((reign) => ({
-        ref: { type: "reign" as const, id: reign.id },
-        label:
-          reign.eraNames
-            ?.split(",")
-            .map((name) => name.trim())
-            .find((name) => normalizeSearchTerm(name).includes(q)) ?? reign.title,
-        subtitle: `${reign.person.name} · ${reign.dynasty.name}`,
-        abs: midpointAbs(reign.startAbs, reign.endAbs),
-      })),
-      ...capitalRows.map((capital) => ({
-        ref: { type: "capital" as const, id: capital.id },
-        label: capital.historicalName,
-        subtitle: `${capital.modernName} · ${capital.dynasty.name} · 都城`,
-        abs: midpointAbs(capital.startAbs, capital.endAbs),
-      })),
-      ...eventRows.map((event) => ({
-        ref: { type: "event" as const, id: event.id },
-        label: event.name,
-        subtitle:
-          event.kind === "idiom" ? "成语" : eventKindLabel(event.kind as Event["kind"]),
-        abs: eventSpanAbs({
-          atAbs: event.atAbs ?? undefined,
-          startAbs: event.startAbs ?? undefined,
-          endAbs: event.endAbs ?? undefined,
-        }).anchorAbs,
-      })),
-    ].slice(0, 12);
-    return SearchHitSchema.array().parse(hits);
+    return SearchHitSchema.array().parse(searchEntities(await loadStore(),query.q ?? ""));
   });
 
-  app.get("/capitals", async (request, reply) => {
-    reply.header("Cache-Control", CACHE_HEADER);
-    const query = request.query as { from?: string; to?: string; dynastyId?: string };
-    const fromAbs = Number(query.from);
-    const toAbs = Number(query.to);
-    if (!Number.isFinite(fromAbs) || !Number.isFinite(toAbs)) {
-      reply.code(400);
-      return { error: "from and to are required numeric AbsMonth values" };
-    }
-
-    const rows = query.dynastyId
-      ? await prisma.$queryRaw<RawDynastyCapitalRow[]>`
-          SELECT id, dynasty_id, historical_name, modern_name,
-                 longitude, latitude, coordinate_system,
-                 start_year, start_month, start_day,
-                 end_year, end_month, end_day,
-                 start_abs, end_abs, start_confidence, end_confidence,
-                 role, claim_track,
-                 ARRAY(SELECT rc.reign_id FROM reign_capitals rc WHERE rc.capital_id = dynasty_capitals.id ORDER BY rc.reign_id) AS reign_ids,
-                 note, links
-          FROM dynasty_capitals
-          WHERE dynasty_id = ${query.dynastyId}
-            AND start_abs <= ${toAbs}::int
-            AND end_abs >= ${fromAbs}::int
-          ORDER BY start_abs, role, id`
-      : await prisma.$queryRaw<RawDynastyCapitalRow[]>`
-          SELECT id, dynasty_id, historical_name, modern_name,
-                 longitude, latitude, coordinate_system,
-                 start_year, start_month, start_day,
-                 end_year, end_month, end_day,
-                 start_abs, end_abs, start_confidence, end_confidence,
-                 role, claim_track,
-                 ARRAY(SELECT rc.reign_id FROM reign_capitals rc WHERE rc.capital_id = dynasty_capitals.id ORDER BY rc.reign_id) AS reign_ids,
-                 note, links
-          FROM dynasty_capitals
-          WHERE start_abs <= ${toAbs}::int
-            AND end_abs >= ${fromAbs}::int
-          ORDER BY start_abs, role, id`;
-
-    return DynastyCapitalSchema.array().parse(rows.map(mapDynastyCapital));
+  app.get("/locations",async (_request,reply)=>{
+    reply.header("Cache-Control",CACHE_HEADER);
+    return LocationSchema.array().parse((await prisma.location.findMany({orderBy:{id:"asc"}})).map(mapLocation));
+  });
+  app.get("/location-mappings",async (request,reply)=>{
+    reply.header("Cache-Control",CACHE_HEADER);
+    const q=request.query as {kind?:string;externalId?:string;locationId?:string;from?:string;to?:string};
+    const kind=q.kind ? LocationKindSchema.safeParse(q.kind) : undefined;
+    if(kind && !kind.success) return reply.code(400).send({error:"Invalid location kind"});
+    const from=q.from == null ? undefined : Number(q.from),to=q.to == null ? undefined : Number(q.to);
+    if((from == null)!==(to == null) || from != null && (!Number.isInteger(from) || !Number.isInteger(to) || from>to!)) return reply.code(400).send({error:"from/to must be an ordered pair of integer AbsMonth values"});
+    return LocationMappingSchema.array().parse(await loadMappings({kind:kind?.success ? kind.data : undefined,externalId:q.externalId,locationId:q.locationId,fromAbs:from,toAbs:to}));
   });
 }

@@ -276,16 +276,22 @@ export function eventSql(e) {
   const atConfidence = endpointDateConfidence(at?.confidence ?? e.atConfidence, at);
   const startConfidence = endpointDateConfidence(e.start?.confidence ?? e.startConfidence, e.start);
   const endConfidence = endpointDateConfidence(e.end?.confidence ?? e.endConfidence, e.end);
-  const cols = ["id", "name", "kind", "time_mode", "at_confidence", "start_confidence", "end_confidence", "date_note", "at_year", "at_month", "at_day", "at_abs", "start_year", "start_month", "start_day", "start_abs", "end_year", "end_month", "end_day", "end_abs", "summary", "meaning", "content", "location_id"];
-  const vals = [sqlStr(e.id), sqlStr(e.name), sqlStr(e.kind), sqlStr(e.timeMode), sqlStr(at ? atConfidence : null), sqlStr(e.start ? startConfidence : null), sqlStr(e.end ? endConfidence : null), sqlStr(e.dateNote ?? null), at?.year ?? "NULL", at?.month ?? "NULL", at?.day ?? "NULL", at?.abs ?? e.atAbs ?? "NULL", e.start?.year ?? "NULL", e.start?.month ?? "NULL", e.start?.day ?? "NULL", e.startAbs ?? "NULL", e.end?.year ?? "NULL", e.end?.month ?? "NULL", e.end?.day ?? "NULL", e.endAbs ?? "NULL", sqlStr(e.summary ?? null), sqlStr(e.meaning ?? null), sqlStr(e.content ?? null), sqlStr(e.locationId ?? null)];
+  const cols = ["id", "name", "kind", "time_mode", "at_confidence", "start_confidence", "end_confidence", "date_note", "at_year", "at_month", "at_day", "at_abs", "start_year", "start_month", "start_day", "start_abs", "end_year", "end_month", "end_day", "end_abs", "summary", "meaning", "content"];
+  const vals = [sqlStr(e.id), sqlStr(e.name), sqlStr(e.kind), sqlStr(e.timeMode), sqlStr(at ? atConfidence : null), sqlStr(e.start ? startConfidence : null), sqlStr(e.end ? endConfidence : null), sqlStr(e.dateNote ?? null), at?.year ?? "NULL", at?.month ?? "NULL", at?.day ?? "NULL", at?.abs ?? e.atAbs ?? "NULL", e.start?.year ?? "NULL", e.start?.month ?? "NULL", e.start?.day ?? "NULL", e.startAbs ?? "NULL", e.end?.year ?? "NULL", e.end?.month ?? "NULL", e.end?.day ?? "NULL", e.endAbs ?? "NULL", sqlStr(e.summary ?? null), sqlStr(e.meaning ?? null), sqlStr(e.content ?? null)];
   return `INSERT INTO events (${cols.join(", ")}) VALUES (${vals.join(", ")})
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, at_confidence = EXCLUDED.at_confidence, start_confidence = EXCLUDED.start_confidence, end_confidence = EXCLUDED.end_confidence, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning, content = EXCLUDED.content, location_id = EXCLUDED.location_id;`;
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, kind = EXCLUDED.kind, time_mode = EXCLUDED.time_mode, at_confidence = EXCLUDED.at_confidence, start_confidence = EXCLUDED.start_confidence, end_confidence = EXCLUDED.end_confidence, date_note = EXCLUDED.date_note, at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, start_abs = EXCLUDED.start_abs, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, end_abs = EXCLUDED.end_abs, summary = EXCLUDED.summary, meaning = EXCLUDED.meaning, content = EXCLUDED.content;`;
 }
 
-export function eventLocationSql(location) {
-  return `INSERT INTO event_locations (id, historical_name, modern_name, longitude, latitude, coordinate_system, precision, note, links)
-VALUES (${sqlStr(location.id)}, ${sqlStr(location.historicalName)}, ${sqlStr(location.modernName)}, ${location.longitude}, ${location.latitude}, ${sqlStr(location.coordinateSystem ?? "WGS84")}, ${sqlStr(location.precision ?? "approximate")}, ${sqlStr(location.note ?? null)}, ${sqlJson(location.links ?? [])})
-ON CONFLICT (id) DO UPDATE SET historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, precision = EXCLUDED.precision, note = EXCLUDED.note, links = EXCLUDED.links;`;
+export function locationSql(l) {
+  return `INSERT INTO locations (id, modern_name, longitude, latitude, coordinate_system) VALUES (${sqlStr(l.id)}, ${sqlStr(l.modernName)}, ${l.longitude}, ${l.latitude}, ${sqlStr(l.coordinateSystem)}) ON CONFLICT(id) DO UPDATE SET modern_name=EXCLUDED.modern_name, longitude=EXCLUDED.longitude, latitude=EXCLUDED.latitude, coordinate_system=EXCLUDED.coordinate_system;`;
+}
+
+export function locationMappingSql(m) {
+  if (Object.hasOwn(m, "claimTrack")) throw new Error(`Mapping ${m.id} must not store claimTrack`);
+  if (/[（）()；;]/u.test(m.historicalName) || /代表点|会战|大战/u.test(m.historicalName)) throw new Error(`Mapping ${m.id} has an annotated historicalName`);
+  const columns = ["id", "location_id", "kind", "external_id", "historical_name", "spatial_precision", "start_year", "start_month", "start_day", "end_year", "end_month", "end_day", "start_abs", "end_abs", "start_confidence", "end_confidence", "role", "note", "links"];
+  const values = [sqlStr(m.id), sqlStr(m.locationId), sqlStr(m.kind), sqlStr(m.externalId), sqlStr(m.historicalName), sqlStr(m.spatialPrecision ?? null), m.start?.year ?? "NULL", m.start?.month ?? "NULL", m.start?.day ?? "NULL", m.end?.year ?? "NULL", m.end?.month ?? "NULL", m.end?.day ?? "NULL", m.startAbs ?? "NULL", m.endAbs ?? "NULL", sqlStr(m.start ? endpointDateConfidence(m.start.confidence ?? m.startConfidence, m.start) : null), sqlStr(m.end ? endpointDateConfidence(m.end.confidence ?? m.endConfidence, m.end) : null), sqlStr(m.kind === "event" ? null : m.role ?? "primary"), sqlStr(m.note ?? null), sqlJson(m.links ?? [])];
+  return `INSERT INTO location_mapping (${columns.join(", ")}) VALUES (${values.join(", ")}) ON CONFLICT(id) DO UPDATE SET ${columns.slice(1).map(c => `${c}=EXCLUDED.${c}`).join(", ")};`;
 }
 
 function parseRef(raw) {
@@ -299,14 +305,6 @@ export function relationSql(r) {
   return `INSERT INTO relations (id, from_type, from_id, to_type, to_id, kind, at_year, at_month, at_day, at_abs, at_confidence, event_id) VALUES (${sqlStr(r.id)}, ${sqlStr(from.type)}, ${sqlStr(from.id)}, ${sqlStr(to.type)}, ${sqlStr(to.id)}, ${sqlStr(r.kind)}, ${r.at?.year ?? "NULL"}, ${r.at?.month ?? "NULL"}, ${r.at?.day ?? "NULL"}, ${r.atAbs ?? "NULL"}, ${sqlStr(endpointDateConfidence(r.at?.confidence ?? r.atConfidence, r.at))}, ${sqlStr(r.eventId ?? null)}) ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO UPDATE SET at_year = EXCLUDED.at_year, at_month = EXCLUDED.at_month, at_day = EXCLUDED.at_day, at_abs = EXCLUDED.at_abs, at_confidence = EXCLUDED.at_confidence, event_id = EXCLUDED.event_id;`;
 }
 
-export function dynastyCapitalSql(c) {
-  const startConfidence = endpointDateConfidence(c.start?.confidence ?? c.startConfidence, c.start);
-  const endConfidence = endpointDateConfidence(c.end?.confidence ?? c.endConfidence, c.end);
-  return `INSERT INTO dynasty_capitals (id, dynasty_id, historical_name, modern_name, longitude, latitude, coordinate_system, start_year, start_month, start_day, end_year, end_month, end_day, start_abs, end_abs, start_confidence, end_confidence, role, claim_track, note, links)
-VALUES (${sqlStr(c.id)}, ${sqlStr(c.dynastyId)}, ${sqlStr(c.historicalName)}, ${sqlStr(c.modernName)}, ${c.longitude}, ${c.latitude}, ${sqlStr(c.coordinateSystem ?? "GCJ02")}, ${c.start.year}, ${c.start.month}, ${c.start.day ?? "NULL"}, ${c.end.year}, ${c.end.month}, ${c.end.day ?? "NULL"}, ${c.startAbs}, ${c.endAbs}, ${sqlStr(startConfidence)}, ${sqlStr(endConfidence)}, ${sqlStr(c.role ?? "primary")}, ${sqlStr(c.claimTrack ?? null)}, ${sqlStr(c.note ?? null)}, ${sqlJson(c.links ?? [])})
-ON CONFLICT (id) DO UPDATE SET dynasty_id = EXCLUDED.dynasty_id, historical_name = EXCLUDED.historical_name, modern_name = EXCLUDED.modern_name, longitude = EXCLUDED.longitude, latitude = EXCLUDED.latitude, coordinate_system = EXCLUDED.coordinate_system, start_year = EXCLUDED.start_year, start_month = EXCLUDED.start_month, start_day = EXCLUDED.start_day, end_year = EXCLUDED.end_year, end_month = EXCLUDED.end_month, end_day = EXCLUDED.end_day, start_abs = EXCLUDED.start_abs, end_abs = EXCLUDED.end_abs, start_confidence = EXCLUDED.start_confidence, end_confidence = EXCLUDED.end_confidence, role = EXCLUDED.role, claim_track = EXCLUDED.claim_track, note = EXCLUDED.note, links = EXCLUDED.links;`;
-}
-
 /** Write a cache of already-resolved records without applying data-specific transformations. */
 export function writePreparedImportPackage(dir, {
   slug,
@@ -315,11 +313,10 @@ export function writePreparedImportPackage(dir, {
   dynastyGroups = [],
   dynastyLaneGroups = [],
   dynasties = [],
-  capitals = [],
+  locations = [],
+  locationMappings = [],
   reigns = [],
-  reignCapitals = [],
   events = [],
-  eventLocations = [],
   updates = [],
   relations = [],
   supplementalEventDynasties = [],
@@ -346,15 +343,14 @@ export function writePreparedImportPackage(dir, {
     ...(persons.length ? ["", "-- persons", ...persons.map(personSql)] : []),
     ...(dynastyGroups.length ? ["", "-- dynasty_groups", ...dynastyGroups.map(dynastyGroupSql)] : []),
     ...(dynasties.length ? ["", "-- dynasties", ...dynasties.map(dynastySql)] : []),
-    ...(capitals.length ? ["", "-- dynasty_capitals", ...capitals.map(dynastyCapitalSql)] : []),
+    ...(locations.length ? ["", "-- locations", ...locations.map(locationSql)] : []),
     ...(dynastyLaneGroups.length ? ["", "-- dynasty_lane_groups", ...dynastyLaneGroups.map(dynastyLaneGroupSql)] : []),
     ...(reigns.length ? ["", "-- reigns", ...reigns.map(reignSql)] : []),
-    ...(reignCapitals.length ? ["", "-- reign_capitals", ...reignCapitals.map(({ reignId, capitalId }) => `INSERT INTO reign_capitals (reign_id, capital_id) VALUES (${sqlStr(reignId)}, ${sqlStr(capitalId)}) ON CONFLICT DO NOTHING;`)] : []),
     ...(events.length ? ["", "-- events", ...events.map(eventSql)] : []),
     ...(eventDynastySql.length || supplementalEventDynastySql.length ? ["", "-- event_dynasties", ...eventDynastySql, ...supplementalEventDynastySql] : []),
     ...(eventParticipantSql.length || supplementalEventParticipantSql.length ? ["", "-- event_participants", ...eventParticipantSql, ...supplementalEventParticipantSql] : []),
     ...(relations.length ? ["", "-- relations", ...relations.map(relationSql)] : []),
-    ...(eventLocations.length ? ["", "-- event_locations", ...eventLocations.map(eventLocationSql)] : []),
+    ...(locationMappings.length ? ["", "-- location_mapping", ...locationMappings.map(locationMappingSql)] : []),
     ...(updates.length ? ["", "-- updates", ...updates.map((update) => {
       const allowed = { persons: new Set(["bio"]), dynasties: new Set(["note"]) };
       if (!allowed[update.table]?.has(update.column)) throw new Error(`Unsupported cached update: ${update.table}.${update.column}`);
@@ -368,6 +364,6 @@ export function writePreparedImportPackage(dir, {
   writeFileSync(path.join(dir, "import.sql"), sql);
   writeFileSync(path.join(dir, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);
   console.log(
-    `[${slug}] ${persons.length} persons, ${dynasties.length} dynasties, ${capitals.length} capitals, ${reigns.length} reigns, ${events.length} events`,
+    `[${slug}] ${persons.length} persons, ${dynasties.length} dynasties, ${locations.length} locations, ${locationMappings.length} mappings, ${reigns.length} reigns, ${events.length} events`,
   );
 }

@@ -245,7 +245,6 @@
       "note": "三家分晋后魏氏立国，都大梁；前225年秦灭魏。与三国曹魏 wei 区分。"
     }
   ],
-  "capitals": [],
   "reigns": [
     {
       "id": "reign-wei-wen-wei-warring",
@@ -491,8 +490,7 @@
       "participantIds": [
         "sun-bin"
       ],
-      "summary": "孙膑围魏救赵，于桂陵大败魏军，开创围魏救赵战法。",
-      "locationId": "loc-guiling"
+      "summary": "孙膑围魏救赵，于桂陵大败魏军，开创围魏救赵战法。"
     },
     {
       "id": "maling-battle",
@@ -514,8 +512,7 @@
       "participantIds": [
         "sun-bin"
       ],
-      "summary": "孙膑减灶诱敌，于马陵伏击魏军，庞涓战死，魏国元气大伤。",
-      "locationId": "loc-maling"
+      "summary": "孙膑减灶诱敌，于马陵伏击魏军，庞涓战死，魏国元气大伤。"
     }
   ],
   "relations": [

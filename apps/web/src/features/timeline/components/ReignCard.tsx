@@ -174,6 +174,7 @@ function ReignCardImpl({
     >
       <div
         className={styles.cardShell}
+        data-map-pan-exclude
         style={{ ["--card-color" as string]: color }}
         onClick={selectReign}
       >

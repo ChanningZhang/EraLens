@@ -1,5 +1,5 @@
 import type {
-  DynastyCapital,
+  Location, LocationMapping, LocationMappingQuery,
   EntityDetail,
   EntityRef,
   EventDisplayConfig,
@@ -24,7 +24,8 @@ export interface TimelineRepository {
   getEntity(ref: EntityRef, options?: { focusReignId?: string }): Promise<EntityDetail>;
   search(term: string): Promise<SearchHit[]>;
   getBounds(): Promise<{ minAbs: number; maxAbs: number }>;
-  getCapitals(fromAbs: number, toAbs: number): Promise<DynastyCapital[]>;
+  getLocations(): Promise<Location[]>;
+  getLocationMappings(query?: LocationMappingQuery): Promise<LocationMapping[]>;
   getEventDisplayConfig(): Promise<EventDisplayConfig>;
   setEventDisplayConfig(config: EventDisplayConfig): Promise<void>;
 }

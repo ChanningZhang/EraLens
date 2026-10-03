@@ -1,9 +1,9 @@
 import {
-  buildEntityDetail, computeBounds, DynastyCapitalSchema, DynastyGroupSchema,
-  DynastyLaneGroupSchema, DynastySchema, EventSchema, EventLocationSchema,
+  buildEntityDetail, computeBounds, DynastyGroupSchema,
+  DynastyLaneGroupSchema, DynastySchema, EventSchema, mapLocation, mapLocationMapping, filterLocationMappings,
   filterTimeline, fromAbsMonth, normalizeSearchTerm, PersonSchema, RelationSchema, ReignSchema,
   confidencePrecision,
-  searchEntities, type Dynasty, type DynastyCapital, type DynastyGroup,
+  searchEntities, type Dynasty, type LocationMappingQuery, type LocationMapping, type Location, type DynastyGroup,
   type DynastyLaneGroup, type EntityDetail, type EntityRef, type Event,
   type EventDisplayConfig, type Person, type Reign, type Relation,
   type SearchHit, type TimelineCatalog, type TimelineDataStore, type TimelineSlice,
@@ -84,15 +84,7 @@ function mapReign(row: Row): Reign {
   });
 }
 
-function mapLocation(row: Row) {
-  return EventLocationSchema.parse({
-    id: row.id, historicalName: row.historical_name, modernName: row.modern_name,
-    longitude: Number(row.longitude), latitude: Number(row.latitude), coordinateSystem: row.coordinate_system,
-    precision: row.precision, note: own(row, "note"), links: json(row.links, []),
-  });
-}
-
-function mapEvent(row: Row, dynasties: Row[], participants: Row[], location?: ReturnType<typeof mapLocation>): Event {
+function mapEvent(row: Row, dynasties: Row[], participants: Row[], locationMappings: LocationMapping[] = []): Event {
   return EventSchema.parse({
     id: row.id, name: row.name, kind: row.kind, timeMode: row.time_mode, precision: confidencePrecision((row.at_confidence ?? row.start_confidence ?? "year") as Parameters<typeof confidencePrecision>[0]), atConfidence: own(row, "at_confidence"), startConfidence: own(row, "start_confidence"), endConfidence: own(row, "end_confidence"), dateNote: own(row, "date_note"),
     at: point(row.at_year, row.at_month, row.at_day) ? { ...point(row.at_year, row.at_month, row.at_day), confidence: own(row, "at_confidence") } : undefined,
@@ -102,7 +94,7 @@ function mapEvent(row: Row, dynasties: Row[], participants: Row[], location?: Re
     dynastyIds: dynasties.map((link) => String(link.dynasty_id)),
     participantIds: participants.map((link) => String(link.person_id)),
     summary: own(row, "summary"), meaning: own(row, "meaning"), content: own(row, "content"),
-    locationId: own(row, "location_id"), location, locations: location ? [location] : [],
+    locationMappings,
   });
 }
 
@@ -111,17 +103,6 @@ function mapRelation(row: Row): Relation {
     id: row.id, fromRef: `${row.from_type}:${row.from_id}`, toRef: `${row.to_type}:${row.to_id}`,
     kind: row.kind, at: point(row.at_year, row.at_month, row.at_day), atAbs: n(row.at_abs),
     atConfidence: own(row, "at_confidence"), eventId: own(row, "event_id"),
-  });
-}
-
-function mapCapital(row: Row, reignIds: string[]): DynastyCapital {
-  return DynastyCapitalSchema.parse({
-    id: row.id, dynastyId: row.dynasty_id, historicalName: row.historical_name, modernName: row.modern_name,
-    longitude: Number(row.longitude), latitude: Number(row.latitude), coordinateSystem: row.coordinate_system,
-    start: { ...point(row.start_year, row.start_month, row.start_day), confidence: row.start_confidence }, end: { ...point(row.end_year, row.end_month, row.end_day), confidence: row.end_confidence },
-    startAbs: Number(row.start_abs), endAbs: Number(row.end_abs), precision: confidencePrecision((row.start_confidence ?? "year") as Parameters<typeof confidencePrecision>[0]), endPrecision: confidencePrecision((row.end_confidence ?? "year") as Parameters<typeof confidencePrecision>[0]), startConfidence: row.start_confidence, endConfidence: row.end_confidence,
-    role: row.role, claimTrack: own(row, "claim_track"),
-    reignIds, note: own(row, "note"), links: json(row.links, []),
   });
 }
 
@@ -165,14 +146,14 @@ export class SqliteTimelineRepository implements TimelineRepository {
     const metadata = await rows(db, "SELECT key, value FROM content_metadata");
     const meta = new Map<string, unknown>(metadata.map((row) => [String(row.key), JSON.parse(String(row.value)) as unknown]));
     if (!meta.has("schema_version") || !meta.has("contract_version")) throw new Error("SQLite content database has no schema metadata");
-    if (meta.get("schema_version") !== 2 || meta.get("contract_version") !== 3) throw new Error("SQLite content database version is not supported by this app");
-    const [personsRaw, dynastiesRaw, groupsRaw, lanesRaw, reignsRaw, eventsRaw, dynLinks, participantLinks, locationRaw, relationsRaw, capitalsRaw, capitalLinks] = await Promise.all([
+    if (meta.get("schema_version") !== 3 || meta.get("contract_version") !== 4) throw new Error("SQLite content database version is not supported by this app");
+    const [personsRaw, dynastiesRaw, groupsRaw, lanesRaw, reignsRaw, eventsRaw, dynLinks, participantLinks, mappingRaw, relationsRaw] = await Promise.all([
       rows(db, "SELECT * FROM persons"), rows(db, "SELECT * FROM dynasties"), rows(db, "SELECT * FROM dynasty_groups"),
       rows(db, "SELECT * FROM dynasty_lane_groups"), rows(db, "SELECT * FROM reigns"), rows(db, "SELECT * FROM events"),
-      rows(db, "SELECT * FROM event_dynasties"), rows(db, "SELECT * FROM event_participants"), rows(db, "SELECT * FROM event_locations"),
-      rows(db, "SELECT * FROM relations"), rows(db, "SELECT * FROM dynasty_capitals"), rows(db, "SELECT * FROM reign_capitals"),
+      rows(db, "SELECT * FROM event_dynasties"), rows(db, "SELECT * FROM event_participants"), rows(db, "SELECT m.*, json_object('id',l.id,'modern_name',l.modern_name,'longitude',l.longitude,'latitude',l.latitude,'coordinate_system',l.coordinate_system) AS location FROM location_mapping m JOIN locations l ON l.id=m.location_id"),
+      rows(db, "SELECT * FROM relations"),
     ]);
-    const locations = new Map(locationRaw.map((row) => [String(row.id), mapLocation(row)]));
+    const locationMappings=filterLocationMappings(mappingRaw.map(mapLocationMapping),{});
     const dynastiesByEvent = new Map<string, Row[]>();
     for (const link of dynLinks) {
       const eventId = String(link.event_id);
@@ -187,13 +168,6 @@ export class SqliteTimelineRepository implements TimelineRepository {
       links.push(link);
       participantsByEvent.set(eventId, links);
     }
-    const reignIdsByCapital = new Map<string, string[]>();
-    for (const link of capitalLinks) {
-      const capitalId = String(link.capital_id);
-      const reignIds = reignIdsByCapital.get(capitalId) ?? [];
-      reignIds.push(String(link.reign_id));
-      reignIdsByCapital.set(capitalId, reignIds);
-    }
     return {
       persons: personsRaw.map(mapPerson), dynasties: dynastiesRaw.map(mapDynasty),
       dynastyGroups: groupsRaw.map(mapGroup), dynastyLaneGroups: lanesRaw.map(mapLaneGroup),
@@ -201,61 +175,10 @@ export class SqliteTimelineRepository implements TimelineRepository {
       events: eventsRaw.map((event) => mapEvent(event,
         dynastiesByEvent.get(String(event.id)) ?? [],
         participantsByEvent.get(String(event.id)) ?? [],
-        locations.get(String(event.location_id)))),
+        locationMappings.filter(m=>m.kind === "event" && m.externalId===event.id))),
       relations: relationsRaw.map(mapRelation),
-      capitals: capitalsRaw.map((capital) => mapCapital(capital, reignIdsByCapital.get(String(capital.id)) ?? [])),
+      locationMappings,
     };
-  }
-
-  private async capitalsForEntity(
-    ref: EntityRef,
-    store: TimelineDataStore,
-  ): Promise<DynastyCapital[]> {
-    const db = await this.database();
-    let where: string;
-    let values: unknown[];
-
-    if (ref.type === "capital") {
-      where = "dc.id = ?";
-      values = [ref.id];
-    } else if (ref.type === "dynasty") {
-      where = "dc.dynasty_id = ?";
-      values = [ref.id];
-    } else if (ref.type === "person" || ref.type === "reign") {
-      const personId = ref.type === "person"
-        ? ref.id
-        : store.reigns.find((reign) => reign.id === ref.id)?.personId;
-      if (!personId) return [];
-
-      // Match the API detail route: a person's reign-capital context includes
-      // every dynasty they ruled, but excludes other dynasties' capitals.
-      where = `dc.dynasty_id IN (
-        SELECT DISTINCT dynasty_id FROM reigns WHERE person_id = ?
-      )`;
-      values = [personId];
-    } else {
-      // The API builds event details without loading capital rows.
-      return [];
-    }
-
-    const capitalRows = await rows(db, `
-      SELECT dc.*,
-             COALESCE((
-               SELECT json_group_array(link.reign_id)
-               FROM (
-                 SELECT rc.reign_id
-                 FROM reign_capitals AS rc
-                 WHERE rc.capital_id = dc.id
-                 ORDER BY rc.reign_id
-               ) AS link
-             ), '[]') AS detail_reign_ids
-      FROM dynasty_capitals AS dc
-      WHERE ${where}
-      ORDER BY dc.start_abs, dc.role, dc.id
-    `, values);
-    return capitalRows.map((capital) =>
-      mapCapital(capital, strings(capital.detail_reign_ids)),
-    );
   }
 
   /** SQLite counterpart of the API's person-detail context query. */
@@ -366,7 +289,6 @@ export class SqliteTimelineRepository implements TimelineRepository {
     const store = await this.store();
     const context = await this.personDetailContext(ref, options?.focusReignId);
     if (context && context.length === 0) throw new Error(`Entity not found: ${ref.id}`);
-    const capitals = await this.capitalsForEntity(ref, store);
     const contextPerson = context?.[0]?.person;
     const contextReigns = context?.flatMap((row) => row.reign ? [row.reign] : []) ?? [];
     const contextReignById = new Map(contextReigns.map((reign) => [reign.id, reign]));
@@ -377,9 +299,8 @@ export class SqliteTimelineRepository implements TimelineRepository {
             person.id === contextPerson.id ? contextPerson : person,
           ),
           reigns: store.reigns.map((reign) => contextReignById.get(reign.id) ?? reign),
-          capitals,
         }
-      : { ...store, capitals };
+      : store;
     return buildEntityDetail(
       detailStore,
       ref,
@@ -396,11 +317,12 @@ export class SqliteTimelineRepository implements TimelineRepository {
 
   async getBounds(): Promise<{ minAbs: number; maxAbs: number }> { return computeBounds(await this.store()); }
 
-  async getCapitals(fromAbs: number, toAbs: number): Promise<DynastyCapital[]> {
-    const store = await this.store();
-    return (store.capitals ?? [])
-      .filter((capital) => capital.startAbs <= toAbs && capital.endAbs >= fromAbs)
-      .sort((a, b) => a.startAbs - b.startAbs || a.role.localeCompare(b.role) || a.id.localeCompare(b.id));
+  async getLocations(): Promise<Location[]> {
+    return (await rows(await this.database(),"SELECT * FROM locations ORDER BY id")).map(mapLocation);
+  }
+  async getLocationMappings(query: LocationMappingQuery = {}): Promise<LocationMapping[]> {
+    const store=await this.store();
+    return filterLocationMappings(store.locationMappings ?? [],query,store.events);
   }
 
   async getEventDisplayConfig(): Promise<EventDisplayConfig> {

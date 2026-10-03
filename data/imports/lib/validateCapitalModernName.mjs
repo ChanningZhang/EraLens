@@ -15,6 +15,6 @@ export function assertCapitalModernNames(capitals) {
   if (invalid.length === 0) return;
   const lines = invalid.map((c) => `  - ${c.id}: ${c.modernName}`);
   throw new Error(
-    `Invalid dynasty_capitals modernName (must be 省/自治区/直辖市全称 or 境外):\n${lines.join("\n")}`,
+    `Invalid locations modernName (must be 省/自治区/直辖市全称 or 境外):\n${lines.join("\n")}`,
   );
 }

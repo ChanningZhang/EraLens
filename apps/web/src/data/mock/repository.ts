@@ -13,7 +13,7 @@ import {
   filterTimeline,
   searchEntities,
   type Dynasty,
-  type DynastyCapital,
+  type CapitalLocation, type LocationMappingQuery, type LocationMapping, filterLocationMappings,
   type Event,
   type Person,
   type Reign,
@@ -45,7 +45,7 @@ const persons = rawPersons.map((person) => ({
 const events = EventSchema.array().parse(eventsJson);
 const relations = RelationSchema.array().parse(relationsJson);
 
-const mockCapitals: DynastyCapital[] = [
+const mockCapitals: CapitalLocation[] = [
   {
     id: "cap-tang-changan",
     dynastyId: "tang",
@@ -80,7 +80,10 @@ const mockCapitals: DynastyCapital[] = [
   },
 ];
 
-const store = { dynasties, reigns, persons, events, relations, capitals: mockCapitals };
+const locationMappings: LocationMapping[]=mockCapitals.map(c=>({id:c.id,kind:"dynasty",externalId:c.dynastyId,locationId:c.id,
+  location:{id:c.id,modernName:c.modernName,longitude:c.longitude,latitude:c.latitude,coordinateSystem:c.coordinateSystem},historicalName:c.historicalName,
+  start:c.start,end:c.end,startAbs:c.startAbs,endAbs:c.endAbs,role:c.role,links:c.links}));
+const store = { dynasties, reigns, persons, events, relations, locationMappings };
 const settings = createPlatformSettings();
 
 export const mockRepository: TimelineRepository = {
@@ -103,7 +106,7 @@ export const mockRepository: TimelineRepository = {
   },
   async getEntity(ref, options) {
     return buildEntityDetail(
-      { ...store, capitals: mockCapitals },
+      store,
       ref,
       { focusReignId: options?.focusReignId },
     );
@@ -114,13 +117,9 @@ export const mockRepository: TimelineRepository = {
   async getBounds() {
     return computeBounds(store);
   },
-  async getCapitals(fromAbs: number, toAbs: number) {
-    const atAbs = Math.round((fromAbs + toAbs) / 2);
-    return capitalsActiveAtAbs(mockCapitals, atAbs).map((capital) => ({
-      ...capital,
-      reignIds: capital.reignIds ?? [],
-    }));
-  },
+  async getLocations() { return locationMappings.map(m=>m.location); },
+  async getLocationMappings(query: LocationMappingQuery = {}) {return filterLocationMappings(locationMappings,query,events);},
+
   async getEventDisplayConfig() {
     const stored = await settings.get("eralens-event-display");
     return stored ? EventDisplayConfigSchema.parse(JSON.parse(stored)) : DEFAULT_EVENT_DISPLAY_CONFIG;

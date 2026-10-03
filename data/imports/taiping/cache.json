@@ -178,7 +178,6 @@
       "note": "1851年3月23日洪秀全登基称天王、正号太平天国；1853年3月定都天京（南京）；1864年7月19日天京陷落，政权覆亡。与清廷并立，非正统。"
     }
   ],
-  "capitals": [],
   "reigns": [
     {
       "id": "reign-hong-xiuquan-taiping",
@@ -291,8 +290,7 @@
         "confidence": "day"
       },
       "summary": "太平军攻克江宁，改南京为天京并定都，与清朝形成南北对峙。",
-      "atAbs": 22238,
-      "locationId": "loc-taiping-capital-tianjing"
+      "atAbs": 22238
     },
     {
       "kind": "politics",
@@ -336,8 +334,7 @@
         "confidence": "day"
       },
       "summary": "湘军攻破天京，幼天王洪天贵福出逃，太平天国政权覆亡。",
-      "atAbs": 22374,
-      "locationId": "loc-tianjing"
+      "atAbs": 22374
     },
     {
       "kind": "politics",

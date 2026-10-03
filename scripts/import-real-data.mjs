@@ -23,10 +23,9 @@ TRUNCATE TABLE
   event_dynasties,
   relations,
   events,
-  event_locations,
-  reign_capitals,
+  location_mapping,
+  locations,
   reigns,
-  dynasty_capitals,
   dynasties,
   dynasty_lane_groups,
   persons
@@ -105,10 +104,9 @@ function sqlStatements(sql) {
 // applying them with the owning package can roll back that package's core rows
 // and create a retry cycle (for example, capitals <-> reign capitals).
 const DEFERRED_INSERT_TABLES = new Set([
-  "dynasty_capitals",
+  "location_mapping",
   "event_dynasties",
   "event_participants",
-  "reign_capitals",
 ]);
 
 function splitDeferredInserts(sql) {
@@ -205,7 +203,7 @@ function main() {
   preseedDynastyGroups(allPackages);
   preseedDynasties(allPackages);
   preseedRows(allPackages, "persons", "person");
-  preseedRows(allPackages, "event_locations", "event location");
+  preseedRows(allPackages, "locations", "location");
 
   let remaining = packages;
   const deferredInserts = [];

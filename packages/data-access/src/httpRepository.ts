@@ -1,11 +1,11 @@
 import {
-  DynastyCapitalSchema,
+  LocationSchema, LocationMappingSchema,
   EntityDetailSchema,
   EventDisplayConfigSchema,
   SearchHitSchema,
   TimelineCatalogSchema,
   TimelineSliceSchema,
-  type DynastyCapital,
+  type Location, type LocationMapping, type LocationMappingQuery,
   type EntityDetail,
   type EntityRef,
   type EventDisplayConfig,
@@ -66,9 +66,11 @@ export class HttpTimelineRepository implements TimelineRepository {
     return { minAbs: value.minAbs, maxAbs: value.maxAbs };
   }
 
-  getCapitals(fromAbs: number, toAbs: number): Promise<DynastyCapital[]> {
-    const params = new URLSearchParams({ from: String(fromAbs), to: String(toAbs) });
-    return this.fetchJson(`/capitals?${params}`, DynastyCapitalSchema.array());
+  getLocations(): Promise<Location[]> { return this.fetchJson("/locations",LocationSchema.array()); }
+  getLocationMappings(query: LocationMappingQuery = {}): Promise<LocationMapping[]> {
+    const params=new URLSearchParams();
+    for(const [key,value] of Object.entries(query)) if(value != null) params.set(key === "fromAbs" ? "from" : key === "toAbs" ? "to" : key,String(value));
+    return this.fetchJson(`/location-mappings?${params}`,LocationMappingSchema.array());
   }
 
   async getEventDisplayConfig(): Promise<EventDisplayConfig> {

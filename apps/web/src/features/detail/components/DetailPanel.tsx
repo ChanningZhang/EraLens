@@ -13,7 +13,7 @@ import { viewportStore } from "@/features/timeline/state/viewportStore";
 import styles from "./DetailPanel.module.css";
 
 const RELATED_GROUPS = [
-  { key: "capital", title: "都城" },
+  { key: "location_mapping", title: "都城" },
   { key: "location", title: "地点" },
   { key: "event", title: "事件" },
   { key: "idiom", title: "成语" },

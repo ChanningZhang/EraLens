@@ -4,7 +4,7 @@ import {
   resolveDynastyColorValue,
   type ColorToken,
   type Dynasty,
-  type DynastyCapital,
+  type CapitalLocation,
 } from "@eralens/shared";
 import { useMemo } from "react";
 import { InfoPopover } from "./InfoPopover";
@@ -14,7 +14,7 @@ import { selectionStore } from "../state/selectionStore";
 import styles from "./CapitalMapLayer.module.css";
 
 type PlacedCapital = {
-  capital: DynastyCapital;
+  capital: CapitalLocation;
   dynastyName: string;
   x: number;
   y: number;
@@ -22,7 +22,7 @@ type PlacedCapital = {
 };
 
 type Props = {
-  capitals: readonly DynastyCapital[];
+  capitals: readonly CapitalLocation[];
   dynastiesById: ReadonlyMap<string, Dynasty>;
   dynastyNamesById: ReadonlyMap<string, string>;
   laneColorMap: ReadonlyMap<string, ColorToken>;
@@ -32,14 +32,14 @@ type Props = {
   offset: { x: number; y: number };
 };
 
-function roleClassName(role: DynastyCapital["role"]) {
+function roleClassName(role: CapitalLocation["role"]) {
   if (role === "secondary") return styles.secondary;
   if (role === "temporary") return styles.temporary;
   return styles.primary;
 }
 
 function resolveDynastyName(
-  capital: DynastyCapital,
+  capital: CapitalLocation,
   dynastiesById: ReadonlyMap<string, Dynasty>,
   dynastyNamesById: ReadonlyMap<string, string>,
 ): string {
@@ -95,7 +95,7 @@ export function CapitalMapLayer({
     <div className={styles.layer} aria-hidden={placed.length === 0}>
       {placed.map(({ capital, dynastyName, x, y, color }) => {
         const isSelected =
-          selection.selected?.type === "capital" && selection.selected.id === capital.id;
+          selection.selected?.type === "location_mapping" && selection.selected.id === capital.id;
         return (
         <InfoPopover
           key={capital.id}
@@ -113,7 +113,7 @@ export function CapitalMapLayer({
               aria-label={`${dynastyName}都城${capital.historicalName}（${capital.modernName}）`}
               aria-pressed={isSelected}
               onClick={() => {
-                selectionStore.select({ type: "capital", id: capital.id }, atAbs);
+                selectionStore.select({ type: "location_mapping", id: capital.id }, atAbs);
               }}
               {...handlers}
             >

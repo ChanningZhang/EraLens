@@ -2395,7 +2395,6 @@
       "note": "1616年2月努尔哈赤建后金，1636年改国号大清；1912年2月宣统退位。"
     }
   ],
-  "capitals": [],
   "reigns": [
     {
       "id": "reign-hu-bilie-yuan",
@@ -4037,8 +4036,7 @@
         "confidence": "year"
       },
       "summary": "朱元璋与陈友谅鄱阳湖决战，陈友谅中流矢阵亡，陈汉大势已去。",
-      "atAbs": 16365,
-      "locationId": "loc-poyang-lake-battle"
+      "atAbs": 16365
     },
     {
       "kind": "politics",
@@ -4083,8 +4081,7 @@
         "confidence": "month"
       },
       "summary": "明军北伐攻克大都，元顺帝北逃，元朝失去中原。",
-      "atAbs": 16423,
-      "locationId": "loc-ming-capture-dadu"
+      "atAbs": 16423
     },
     {
       "kind": "battle",
@@ -4106,8 +4103,7 @@
         "confidence": "month"
       },
       "summary": "明将蓝玉率军深入漠北，突袭元天元帝驻地并大破元军；天元帝逃脱后同年被部将杀害，北元随之终结。",
-      "atAbs": 16660,
-      "locationId": "loc-korqin-sea-battle"
+      "atAbs": 16660
     },
     {
       "kind": "politics",
@@ -4205,8 +4201,7 @@
         "confidence": "month"
       },
       "summary": "明英宗率军北征瓦剌，土木堡被俘，明军主力覆没。",
-      "atAbs": 17396,
-      "locationId": "loc-tumu"
+      "atAbs": 17396
     },
     {
       "kind": "battle",
@@ -4228,8 +4223,7 @@
         "confidence": "month"
       },
       "summary": "土木堡之变后瓦剌兵临北京，于谦拥立景泰帝，击退敌军。",
-      "atAbs": 17397,
-      "locationId": "loc-beijing-defense"
+      "atAbs": 17397
     },
     {
       "kind": "politics",
@@ -4357,8 +4351,7 @@
         "confidence": "month"
       },
       "summary": "努尔哈赤以少胜多，明军四路溃败，辽东战局逆转。",
-      "atAbs": 19430,
-      "locationId": "loc-sarhu"
+      "atAbs": 19430
     },
     {
       "kind": "battle",
@@ -4382,8 +4375,7 @@
         "confidence": "month"
       },
       "summary": "袁崇焕率红夷大炮守宁远，击伤努尔哈赤，后金首次攻明受挫。",
-      "atAbs": 19512,
-      "locationId": "loc-ningyuan"
+      "atAbs": 19512
     },
     {
       "kind": "battle",
@@ -4412,8 +4404,7 @@
       },
       "summary": "清军围攻松山、锦州，洪承畴降清，明军关外主力覆没，辽东防线崩溃。",
       "startAbs": 19680,
-      "endAbs": 19704,
-      "locationId": "loc-songjin"
+      "endAbs": 19704
     },
     {
       "kind": "politics",
@@ -4523,8 +4514,7 @@
       },
       "summary": "忽必烈将中都改名大都，并以新城为元朝都城；上都继续作为夏都。",
       "dateNote": "至元九年（1272年）命名大都并建都；按年精度记录都城迁移阶段。",
-      "atAbs": 15275,
-      "locationId": "loc-yuan-moves-capital-to-dadu"
+      "atAbs": 15275
     },
     {
       "kind": "politics",
@@ -4544,8 +4534,7 @@
         "confidence": "year"
       },
       "summary": "吴三桂引清军入关，清军占领北京；顺治帝同年由盛京迁都北京，盛京保留陪都地位，清廷由此入主中原。",
-      "atAbs": 19739,
-      "locationId": "loc-qing-enter-pass"
+      "atAbs": 19739
     },
     {
       "kind": "politics",
@@ -5856,7 +5845,6 @@
   "supplementalEventDynasties": [],
   "supplementalEventParticipants": [],
   "preSql": "DELETE FROM event_dynasties WHERE event_id = 'qing-enter-pass';\nDELETE FROM event_dynasties WHERE event_id = 'zheng-recover-taiwan' AND dynasty_id = 'ming-south';\nDELETE FROM event_dynasties WHERE event_id = 'lu-jian-enthroned';\nDELETE FROM event_participants WHERE event_id = 'lu-jian-enthroned';\nDELETE FROM events WHERE id = 'lu-jian-enthroned';\nDELETE FROM event_dynasties WHERE dynasty_id = 'yuan-north';\nDELETE FROM event_participants WHERE event_id = 'yuan-north-end';\nDELETE FROM events WHERE id = 'yuan-north-end';\nDELETE FROM reigns WHERE dynasty_id = 'yuan-north';\nDELETE FROM dynasties WHERE id = 'yuan-north';\n-- remove stale auto-generated 史料缺 (两都之战并行叠放、驾崩至即位短空档应留白)\nDELETE FROM reigns WHERE dynasty_id IN ('yuan') AND person_id = 'system-missing-ruler';\nDELETE FROM relations WHERE id IN ('rel-yeshuntuemur-ragibagh-succession', 'rel-ragibagh-tugh-temur-succession', 'rel-khoshila-irinchibal-succession');\nDELETE FROM reigns WHERE id = 'reign-puyi-qing-forbidden';\nDELETE FROM events WHERE id = 'qing-moves-capital-to-beijing';\nDELETE FROM event_participants WHERE event_id = 'shaowu-enthroned';\nDELETE FROM event_dynasties WHERE event_id = 'shaowu-enthroned';\nDELETE FROM events WHERE id = 'shaowu-enthroned';",
-  "reignCapitals": [],
   "manifest": {
     "slug": "yuan-ming-qing",
     "title": "元明清（含南明）",

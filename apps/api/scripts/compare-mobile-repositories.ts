@@ -62,7 +62,7 @@ if (process.argv.includes("--sqlite-only")) {
     const slice = await sqliteRepository.getTimeline({
       fromAbs: absMonth(-1046, 1), toAbs: absMonth(-771, 12), lod: "month", scope: "cn",
     });
-    const capitals = await sqliteRepository.getCapitals(absMonth(600, 1), absMonth(900, 12));
+    const capitals = await sqliteRepository.getLocationMappings({kind:"dynasty",fromAbs:absMonth(600, 1),toAbs:absMonth(900, 12)});
     const search = await sqliteRepository.search("李隆基");
     const detail = await sqliteRepository.getEntity({ type: "person", id: "li-longji" });
     console.log(JSON.stringify({ status: "ok", bounds, catalogDynasties: catalog.dynasties.length, zhou: {
@@ -86,11 +86,16 @@ try {
   const [httpBounds, sqliteBounds] = await Promise.all([httpRepository.getBounds(), sqliteRepository.getBounds()]);
   compare("bounds", httpBounds, sqliteBounds);
 
+  compare("locations",await httpRepository.getLocations(),await sqliteRepository.getLocations());
+  for (const query of [{}, {kind:"reign" as const, externalId:"reign-jin-r12-jin-chunqiu"}, {kind:"event" as const}, {kind:"event" as const, fromAbs:absMonth(1900,1),toAbs:absMonth(1950,12)}]) {
+    compare(`mappings:${JSON.stringify(query)}`,await httpRepository.getLocationMappings(query),await sqliteRepository.getLocationMappings(query));
+  }
+
   for (const [index, [startYear, endYear]] of windows.entries()) {
     const fromAbs = absMonth(startYear, 1);
     const toAbs = absMonth(endYear, 12);
     const [httpCaps, sqliteCaps] = await Promise.all([
-      httpRepository.getCapitals(fromAbs, toAbs), sqliteRepository.getCapitals(fromAbs, toAbs),
+      httpRepository.getLocationMappings({kind:"dynasty",fromAbs,toAbs}), sqliteRepository.getLocationMappings({kind:"dynasty",fromAbs,toAbs}),
     ]);
     compare(`capitals:${index}`, httpCaps, sqliteCaps);
     for (const lod of lods) {
@@ -110,7 +115,9 @@ try {
   const refs = [
     { type: "dynasty", id: "tang" }, { type: "reign", id: "reign-li-longji" },
     { type: "person", id: "li-longji" }, { type: "event", id: "banquan-zhulu" },
-    { type: "capital", id: "cap-tang-changan" },
+    { type: "location_mapping", id: "cap-tang-changan" },
+    { type: "location_mapping", id: "map-reign:reign-jin-r12-jin-chunqiu:cap-jin-chunqiu-quwo" },
+    { type: "reign", id: "reign-jin-r12-jin-chunqiu" },
   ] as const;
   for (const ref of refs) {
     const [httpDetail, sqliteDetail] = await Promise.all([httpRepository.getEntity(ref), sqliteRepository.getEntity(ref)]);

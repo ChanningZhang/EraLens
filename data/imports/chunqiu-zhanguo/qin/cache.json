@@ -831,7 +831,6 @@
       "note": "前778年秦襄公即位；前770年护周平王东迁列为诸侯；前221年嬴政称帝统一；前207年子婴降，秦亡。"
     }
   ],
-  "capitals": [],
   "reigns": [
     {
       "id": "reign-ying-qi-qin",
@@ -1654,8 +1653,7 @@
       "participantIds": [
         "bai-qi"
       ],
-      "summary": "白起于长平围歼赵军四十余万，赵国一蹶不振，秦统一大势已定。",
-      "locationId": "loc-changping"
+      "summary": "白起于长平围歼赵军四十余万，赵国一蹶不振，秦统一大势已定。"
     }
   ],
   "relations": [

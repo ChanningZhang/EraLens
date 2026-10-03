@@ -325,7 +325,6 @@
   ],
   "dynastyGroups": [],
   "dynasties": [],
-  "capitals": [],
   "reigns": [],
   "events": [
     {
@@ -1552,8 +1551,7 @@
       },
       "summary": "汉武帝元狩四年（前119年），霍去病率军深入漠北击败匈奴左部，登狼居胥山祭天、于姑衍山祭地后返师。后世以“封狼居胥”概括这一战功，成为建功边疆的典故。",
       "dateNote": "元狩四年，前119年；典出《史记·卫将军骠骑列传》及《汉书·卫青霍去病传》",
-      "atAbs": -1405,
-      "locationId": "loc-feng-lang-ju-xu"
+      "atAbs": -1405
     },
     {
       "kind": "idiom",
