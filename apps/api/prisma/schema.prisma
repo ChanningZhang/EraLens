@@ -10,6 +10,7 @@ datasource db {
 model Person {
   id          String              @id
   name        String
+  dynastyId   String?             @map("dynasty_id")
   altNames    String[]            @default([]) @map("alt_names")
   ancestralXing String?           @map("ancestral_xing")
   clanShi     String?             @map("clan_shi")
@@ -28,8 +29,10 @@ model Person {
   templeName  String?             @map("temple_name")
   title       String?
   searchTerms String[]            @default([]) @map("search_terms")
+  dynasty     Dynasty?            @relation(fields: [dynastyId], references: [id], onDelete: SetNull)
   reigns      Reign[]
 
+  @@index([dynastyId])
   @@index([birthYear])
   @@index([deathYear])
   @@index([name])
@@ -81,6 +84,7 @@ model Dynasty {
   groupId     String?          @map("group_id")
   note        String?
   group       DynastyGroup?    @relation(fields: [groupId], references: [id])
+  persons     Person[]
   reigns      Reign[]
 
 

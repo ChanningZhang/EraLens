@@ -35,7 +35,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "wei"
     },
     {
       "id": "cao-pi",
@@ -67,7 +68,8 @@
       "templeNames": [
         "高祖"
       ],
-      "title": "魏文帝"
+      "title": "魏文帝",
+      "dynastyId": "wei"
     },
     {
       "id": "cao-rui",
@@ -99,7 +101,8 @@
       "templeNames": [
         "烈祖"
       ],
-      "title": "魏明帝"
+      "title": "魏明帝",
+      "dynastyId": "wei"
     },
     {
       "id": "liu-bei",
@@ -131,7 +134,8 @@
       "templeNames": [
         "烈祖"
       ],
-      "title": "昭烈帝"
+      "title": "昭烈帝",
+      "dynastyId": "shu"
     },
     {
       "id": "liu-shan",
@@ -161,7 +165,8 @@
         "孝怀皇帝"
       ],
       "templeNames": [],
-      "title": "蜀汉后主"
+      "title": "蜀汉后主",
+      "dynastyId": "shu"
     },
     {
       "id": "sun-quan",
@@ -193,7 +198,8 @@
       "templeNames": [
         "太祖"
       ],
-      "title": "大皇帝"
+      "title": "大皇帝",
+      "dynastyId": "wu"
     },
     {
       "id": "zhuge-liang",
@@ -222,7 +228,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "shu"
     },
     {
       "id": "zhou-yu",
@@ -250,7 +257,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "wu"
     },
     {
       "id": "deng-ai",
@@ -279,7 +287,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "wei"
     },
     {
       "id": "yuan-shao",
@@ -307,7 +316,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "han-east"
     },
     {
       "id": "liu-zhang",
@@ -335,7 +345,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "shu"
     }
   ],
   "dynastyGroups": [

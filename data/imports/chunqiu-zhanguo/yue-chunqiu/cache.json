@@ -25,7 +25,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "title": "夫谭",
-      "ancestralXing": "姒"
+      "ancestralXing": "姒",
+      "dynastyId": "yue-chunqiu"
     },
     {
       "id": "yue-r4",
@@ -45,7 +46,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "title": "允常",
-      "ancestralXing": "姒"
+      "ancestralXing": "姒",
+      "dynastyId": "yue-chunqiu"
     },
     {
       "id": "gou-jian",
@@ -65,7 +67,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "title": "勾践",
-      "ancestralXing": "姒"
+      "ancestralXing": "姒",
+      "dynastyId": "yue-chunqiu"
     },
     {
       "id": "yue-r6",
@@ -85,7 +88,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "title": "鹿郢",
-      "ancestralXing": "姒"
+      "ancestralXing": "姒",
+      "dynastyId": "yue-chunqiu"
     },
     {
       "id": "yue-r7",
@@ -105,7 +109,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "title": "不寿",
-      "ancestralXing": "姒"
+      "ancestralXing": "姒",
+      "dynastyId": "yue-chunqiu"
     },
     {
       "id": "yue-r8",
@@ -125,7 +130,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "title": "朱勾",
-      "ancestralXing": "姒"
+      "ancestralXing": "姒",
+      "dynastyId": "yue-chunqiu"
     },
     {
       "id": "yue-r9",
@@ -145,7 +151,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "title": "翳",
-      "ancestralXing": "姒"
+      "ancestralXing": "姒",
+      "dynastyId": "yue-chunqiu"
     },
     {
       "id": "yue-r10",
@@ -165,7 +172,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "title": "错枝",
-      "ancestralXing": "姒"
+      "ancestralXing": "姒",
+      "dynastyId": "yue-chunqiu"
     },
     {
       "id": "yue-r11",
@@ -185,7 +193,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "title": "无余",
-      "ancestralXing": "姒"
+      "ancestralXing": "姒",
+      "dynastyId": "yue-chunqiu"
     },
     {
       "id": "yue-r12",
@@ -205,7 +214,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "title": "无颛",
-      "ancestralXing": "姒"
+      "ancestralXing": "姒",
+      "dynastyId": "yue-chunqiu"
     },
     {
       "id": "yue-r13",
@@ -225,7 +235,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "title": "无彊",
-      "ancestralXing": "姒"
+      "ancestralXing": "姒",
+      "dynastyId": "yue-chunqiu"
     },
     {
       "id": "fan-li",
@@ -253,7 +264,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "yue-chunqiu"
     }
   ],
   "dynastyGroups": [],

@@ -215,9 +215,9 @@ export function successionPairs(list) {
 }
 
 export function personSql(p) {
-  return `INSERT INTO persons (id, name, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, birth_day, birth_confidence, death_year, death_month, death_day, death_confidence, roles, bio, links, posthumous_name, temple_name, title)
-VALUES (${sqlStr(p.id)}, ${sqlStr(p.name)}, ${sqlArray(p.altNames ?? [])}, ${sqlStr(p.ancestralXing ?? null)}, ${sqlStr(p.clanShi ?? null)}, ${p.birth?.year ?? "NULL"}, ${p.birth?.month ?? "NULL"}, ${p.birth?.day ?? "NULL"}, ${sqlStr(p.birth ? p.birth.confidence ?? (p.birth.month !== 1 ? "month" : "year") : null)}, ${p.death?.year ?? "NULL"}, ${p.death?.month ?? "NULL"}, ${p.death?.day ?? "NULL"}, ${sqlStr(p.death ? p.death.confidence ?? (p.death.month !== 1 ? "month" : "year") : null)}, ${sqlArray(p.roles)}, ${sqlStr(p.bio)}, ${sqlJson(p.links)}, ${sqlStr(formatAppellationCsv(p.posthumousNames))}, ${sqlStr(formatAppellationCsv(p.templeNames))}, ${sqlStr(p.title ?? null)})
-ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, birth_day = EXCLUDED.birth_day, birth_confidence = EXCLUDED.birth_confidence, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, death_day = EXCLUDED.death_day, death_confidence = EXCLUDED.death_confidence, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, title = EXCLUDED.title;`;
+  return `INSERT INTO persons (id, name, dynasty_id, alt_names, ancestral_xing, clan_shi, birth_year, birth_month, birth_day, birth_confidence, death_year, death_month, death_day, death_confidence, roles, bio, links, posthumous_name, temple_name, title)
+VALUES (${sqlStr(p.id)}, ${sqlStr(p.name)}, ${sqlStr(p.dynastyId ?? null)}, ${sqlArray(p.altNames ?? [])}, ${sqlStr(p.ancestralXing ?? null)}, ${sqlStr(p.clanShi ?? null)}, ${p.birth?.year ?? "NULL"}, ${p.birth?.month ?? "NULL"}, ${p.birth?.day ?? "NULL"}, ${sqlStr(p.birth ? p.birth.confidence ?? (p.birth.month !== 1 ? "month" : "year") : null)}, ${p.death?.year ?? "NULL"}, ${p.death?.month ?? "NULL"}, ${p.death?.day ?? "NULL"}, ${sqlStr(p.death ? p.death.confidence ?? (p.death.month !== 1 ? "month" : "year") : null)}, ${sqlArray(p.roles)}, ${sqlStr(p.bio)}, ${sqlJson(p.links)}, ${sqlStr(formatAppellationCsv(p.posthumousNames))}, ${sqlStr(formatAppellationCsv(p.templeNames))}, ${sqlStr(p.title ?? null)})
+ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, dynasty_id = EXCLUDED.dynasty_id, alt_names = EXCLUDED.alt_names, ancestral_xing = EXCLUDED.ancestral_xing, clan_shi = EXCLUDED.clan_shi, birth_year = EXCLUDED.birth_year, birth_month = EXCLUDED.birth_month, birth_day = EXCLUDED.birth_day, birth_confidence = EXCLUDED.birth_confidence, death_year = EXCLUDED.death_year, death_month = EXCLUDED.death_month, death_day = EXCLUDED.death_day, death_confidence = EXCLUDED.death_confidence, roles = EXCLUDED.roles, bio = EXCLUDED.bio, links = EXCLUDED.links, posthumous_name = EXCLUDED.posthumous_name, temple_name = EXCLUDED.temple_name, title = EXCLUDED.title;`;
 }
 
 
@@ -327,9 +327,9 @@ export function writePreparedImportPackage(dir, {
     `-- Window: ${window.startYear}-${String(window.startMonth).padStart(2, "0")} .. ${window.endYear}-${String(window.endMonth).padStart(2, "0")}`,
     "BEGIN;",
     ...(preSql ? ["", "-- cleanup", preSql] : []),
-    ...(persons.length ? ["", "-- persons", ...persons.map(personSql)] : []),
     ...(dynastyGroups.length ? ["", "-- dynasty_groups", ...dynastyGroups.map(dynastyGroupSql)] : []),
     ...(dynasties.length ? ["", "-- dynasties", ...dynasties.map(dynastySql)] : []),
+    ...(persons.length ? ["", "-- persons", ...persons.map(personSql)] : []),
     ...(locations.length ? ["", "-- locations", ...locations.map(locationSql)] : []),
     ...(reigns.length ? ["", "-- reigns", ...reigns.map(reignSql)] : []),
     ...(events.length ? ["", "-- events", ...events.map(eventSql)] : []),

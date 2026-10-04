@@ -34,7 +34,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "大顺皇帝"
+      "title": "大顺皇帝",
+      "dynastyId": "dashun"
     },
     {
       "id": "zhang-xianzhong",
@@ -63,7 +64,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "大西皇帝"
+      "title": "大西皇帝",
+      "dynastyId": "daxi"
     },
     {
       "id": "zheng-chenggong",
@@ -94,7 +96,8 @@
         "武王"
       ],
       "templeNames": [],
-      "title": "延平王"
+      "title": "延平王",
+      "dynastyId": "mingzheng"
     },
     {
       "id": "zheng-jing",
@@ -124,7 +127,8 @@
         "文王"
       ],
       "templeNames": [],
-      "title": "延平王"
+      "title": "延平王",
+      "dynastyId": "mingzheng"
     },
     {
       "id": "zheng-keshuang",
@@ -152,7 +156,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "延平王"
+      "title": "延平王",
+      "dynastyId": "mingzheng"
     }
   ],
   "dynastyGroups": [],

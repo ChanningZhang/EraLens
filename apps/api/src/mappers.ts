@@ -116,6 +116,7 @@ export function mapPerson(row: DbPerson): Person {
   return {
     id: row.id,
     name: row.name,
+    dynastyId: row.dynastyId ?? undefined,
     title: row.title ?? undefined,
     altNames: row.altNames ?? [],
     ancestralXing: row.ancestralXing ?? undefined,

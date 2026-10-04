@@ -25,7 +25,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "赞普"
+      "title": "赞普",
+      "dynastyId": "tubo"
     },
     {
       "id": "songtsen-gampo",
@@ -45,7 +46,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "赞普"
+      "title": "赞普",
+      "dynastyId": "tubo"
     },
     {
       "id": "mangsong-mangtsen",
@@ -65,7 +67,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "赞普"
+      "title": "赞普",
+      "dynastyId": "tubo"
     },
     {
       "id": "dusong-mangje",
@@ -85,7 +88,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "赞普"
+      "title": "赞普",
+      "dynastyId": "tubo"
     },
     {
       "id": "tri-detsug-nyima",
@@ -105,7 +109,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "赞普"
+      "title": "赞普",
+      "dynastyId": "tubo"
     },
     {
       "id": "tri-song-detsen",
@@ -125,7 +130,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "赞普"
+      "title": "赞普",
+      "dynastyId": "tubo"
     },
     {
       "id": "mu-ne-btsan",
@@ -145,7 +151,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "赞普"
+      "title": "赞普",
+      "dynastyId": "tubo"
     },
     {
       "id": "tri-desong-btsan",
@@ -165,7 +172,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "赞普"
+      "title": "赞普",
+      "dynastyId": "tubo"
     },
     {
       "id": "tri-tsug-lde-btsan",
@@ -185,7 +193,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "赞普"
+      "title": "赞普",
+      "dynastyId": "tubo"
     },
     {
       "id": "lang-darma",
@@ -205,7 +214,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "赞普"
+      "title": "赞普",
+      "dynastyId": "tubo"
     },
     {
       "id": "murong-tuyuhun",
@@ -225,7 +235,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "河南王"
+      "title": "河南王",
+      "dynastyId": "tuyuhun"
     },
     {
       "id": "tuyan",
@@ -245,7 +256,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "河南王"
+      "title": "河南王",
+      "dynastyId": "tuyuhun"
     },
     {
       "id": "yeyan",
@@ -265,7 +277,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "吐谷浑王"
+      "title": "吐谷浑王",
+      "dynastyId": "tuyuhun"
     },
     {
       "id": "suixi",
@@ -285,7 +298,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "吐谷浑王"
+      "title": "吐谷浑王",
+      "dynastyId": "tuyuhun"
     },
     {
       "id": "shilian",
@@ -305,7 +319,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "白兰王"
+      "title": "白兰王",
+      "dynastyId": "tuyuhun"
     },
     {
       "id": "shipi",
@@ -325,7 +340,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "吐谷浑王"
+      "title": "吐谷浑王",
+      "dynastyId": "tuyuhun"
     },
     {
       "id": "wuheti",
@@ -345,7 +361,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "大单于"
+      "title": "大单于",
+      "dynastyId": "tuyuhun"
     },
     {
       "id": "shulogan",
@@ -367,7 +384,8 @@
         "武王"
       ],
       "templeNames": [],
-      "title": "戊寅可汗"
+      "title": "戊寅可汗",
+      "dynastyId": "tuyuhun"
     },
     {
       "id": "achen",
@@ -389,7 +407,8 @@
         "威王"
       ],
       "templeNames": [],
-      "title": "白兰王"
+      "title": "白兰王",
+      "dynastyId": "tuyuhun"
     },
     {
       "id": "mugui",
@@ -411,7 +430,8 @@
         "陇西王"
       ],
       "templeNames": [],
-      "title": "惠王"
+      "title": "惠王",
+      "dynastyId": "tuyuhun"
     },
     {
       "id": "muliyan",
@@ -431,7 +451,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "河南王"
+      "title": "河南王",
+      "dynastyId": "tuyuhun"
     },
     {
       "id": "shiyin",
@@ -453,7 +474,8 @@
         "西平王"
       ],
       "templeNames": [],
-      "title": "河南王"
+      "title": "河南王",
+      "dynastyId": "tuyuhun"
     },
     {
       "id": "duyihou",
@@ -473,7 +495,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "河南王"
+      "title": "河南王",
+      "dynastyId": "tuyuhun"
     },
     {
       "id": "fulianchou",
@@ -493,7 +516,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "可汗"
+      "title": "可汗",
+      "dynastyId": "tuyuhun"
     },
     {
       "id": "kuailv",
@@ -513,7 +537,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "可汗"
+      "title": "可汗",
+      "dynastyId": "tuyuhun"
     },
     {
       "id": "shifu",
@@ -533,7 +558,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "可汗"
+      "title": "可汗",
+      "dynastyId": "tuyuhun"
     },
     {
       "id": "fuyun",
@@ -553,7 +579,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "步萨钵可汗"
+      "title": "步萨钵可汗",
+      "dynastyId": "tuyuhun"
     },
     {
       "id": "murong-shun",
@@ -573,7 +600,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "甘豆可汗"
+      "title": "甘豆可汗",
+      "dynastyId": "tuyuhun"
     },
     {
       "id": "nuohabo",
@@ -595,7 +623,8 @@
         "河源郡王"
       ],
       "templeNames": [],
-      "title": "勤豆可汗"
+      "title": "勤豆可汗",
+      "dynastyId": "tuyuhun"
     },
     {
       "id": "gao-zhumeng",
@@ -615,7 +644,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "东明圣王"
+      "title": "东明圣王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "liuli-ming-wang",
@@ -635,7 +665,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "琉璃明王"
+      "title": "琉璃明王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "daewuseong",
@@ -655,7 +686,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "大武神王"
+      "title": "大武神王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "minzhong-wang",
@@ -675,7 +707,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "闵中王"
+      "title": "闵中王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "muben-wang",
@@ -695,7 +728,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "慕本王"
+      "title": "慕本王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "taizu-wang",
@@ -715,7 +749,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "太祖王"
+      "title": "太祖王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "cida-wang",
@@ -735,7 +770,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "次大王"
+      "title": "次大王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "xingda-wang",
@@ -755,7 +791,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "新大王"
+      "title": "新大王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "guguo-chuan-wang",
@@ -775,7 +812,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "故国川王"
+      "title": "故国川王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "shanshang-wang",
@@ -795,7 +833,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "山上王"
+      "title": "山上王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "dongchuan-wang",
@@ -815,7 +854,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "东川王"
+      "title": "东川王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "zhongchuan-wang",
@@ -835,7 +875,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "中川王"
+      "title": "中川王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "xichuan-wang",
@@ -855,7 +896,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "西川王"
+      "title": "西川王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "fengshang-wang",
@@ -875,7 +917,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "烽上王"
+      "title": "烽上王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "meichuan-wang",
@@ -895,7 +938,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "美川王"
+      "title": "美川王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "guguo-yuan-wang",
@@ -915,7 +959,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "故国原王"
+      "title": "故国原王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "xiaoshoulin-wang",
@@ -935,7 +980,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "小兽林王"
+      "title": "小兽林王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "guguo-rang-wang",
@@ -955,7 +1001,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "故国壤王"
+      "title": "故国壤王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "guangkaitu-wang",
@@ -975,7 +1022,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "广开土王"
+      "title": "广开土王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "changsheng-wang",
@@ -995,7 +1043,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "长寿王"
+      "title": "长寿王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "wenzhi-wang",
@@ -1015,7 +1064,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "文咨王"
+      "title": "文咨王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "ancang-wang",
@@ -1035,7 +1085,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "安藏王"
+      "title": "安藏王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "anyuan-wang",
@@ -1055,7 +1106,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "安原王"
+      "title": "安原王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "yangyuan-wang",
@@ -1075,7 +1127,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "阳原王"
+      "title": "阳原王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "pingyuan-wang",
@@ -1095,7 +1148,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "平原王"
+      "title": "平原王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "yingyang-wang",
@@ -1115,7 +1169,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "婴阳王"
+      "title": "婴阳王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "rongliu-wang",
@@ -1135,7 +1190,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "荣留王"
+      "title": "荣留王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "baozang-wang",
@@ -1155,7 +1211,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "宝藏王"
+      "title": "宝藏王",
+      "dynastyId": "gaogouli"
     },
     {
       "id": "guli-peiluo",
@@ -1176,7 +1233,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "怀仁可汗"
+      "title": "怀仁可汗",
+      "dynastyId": "huihu"
     },
     {
       "id": "mo-yanchuo",
@@ -1197,7 +1255,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "英武可汗"
+      "title": "英武可汗",
+      "dynastyId": "huihu"
     },
     {
       "id": "ya-yanchuo",
@@ -1218,7 +1277,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "英义可汗"
+      "title": "英义可汗",
+      "dynastyId": "huihu"
     },
     {
       "id": "huairen-kehan",
@@ -1239,7 +1299,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "长寿天亲可汗"
+      "title": "长寿天亲可汗",
+      "dynastyId": "huihu"
     },
     {
       "id": "fengcheng-kehan",
@@ -1260,7 +1321,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "忠贞可汗"
+      "title": "忠贞可汗",
+      "dynastyId": "huihu"
     },
     {
       "id": "jieyu-jiasi",
@@ -1281,7 +1343,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "奉诚可汗"
+      "title": "奉诚可汗",
+      "dynastyId": "huihu"
     },
     {
       "id": "huaixin-kehan",
@@ -1302,7 +1365,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "怀信可汗"
+      "title": "怀信可汗",
+      "dynastyId": "huihu"
     },
     {
       "id": "fengyi-kehan",
@@ -1323,7 +1387,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "滕里可汗"
+      "title": "滕里可汗",
+      "dynastyId": "huihu"
     },
     {
       "id": "anyuan-kehan",
@@ -1344,7 +1409,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "保义可汗"
+      "title": "保义可汗",
+      "dynastyId": "huihu"
     },
     {
       "id": "zhongzhen-kehan",
@@ -1365,7 +1431,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "崇德可汗"
+      "title": "崇德可汗",
+      "dynastyId": "huihu"
     },
     {
       "id": "zhongjing-kehan",
@@ -1386,7 +1453,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "昭礼可汗"
+      "title": "昭礼可汗",
+      "dynastyId": "huihu"
     },
     {
       "id": "aidengli-kehan",
@@ -1407,7 +1475,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "彰信可汗"
+      "title": "彰信可汗",
+      "dynastyId": "huihu"
     },
     {
       "id": "kasa-kehan",
@@ -1428,7 +1497,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "㕎馺可汗"
+      "title": "㕎馺可汗",
+      "dynastyId": "huihu"
     },
     {
       "id": "wujie-kehan",
@@ -1449,7 +1519,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "huihu"
     },
     {
       "id": "enzhen-kehan",
@@ -1470,7 +1541,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "huihu"
     }
   ],
   "dynastyGroups": [],

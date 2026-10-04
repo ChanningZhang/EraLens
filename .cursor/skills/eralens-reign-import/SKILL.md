@@ -64,6 +64,7 @@ description: >-
 
 ## 人物、称谓与字段
 
+- 人物主要所属王朝写在 `persons.dynastyId`；不依赖 `reign` 推导详情页所属王朝。无单一可靠归属时留空。君主和非君主共用该字段。
 - `persons.name` 保存常用姓名。先秦人物的姓、氏分别维护在 `ancestral_xing` / `clan_shi`，`name` 不重复姓氏；数据库搜索词会生成姓氏组合。其他时期保留通行全名。
 - `persons.posthumous_name`、`persons.temple_name` 只存谥号/庙号本体，不带国号；多值用逗号 CSV。
 - `reigns.era_names` 存年号 CSV。自汉武帝起使用；不要再建 `era_names` 子表。

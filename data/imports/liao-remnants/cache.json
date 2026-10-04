@@ -39,7 +39,8 @@
       "templeNames": [
         "德宗"
       ],
-      "title": "西辽德宗"
+      "title": "西辽德宗",
+      "dynastyId": "xiliao"
     },
     {
       "id": "xiao-tabuyan",
@@ -60,7 +61,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "感天皇后"
+      "title": "感天皇后",
+      "dynastyId": "xiliao"
     },
     {
       "id": "yelu-yilie",
@@ -82,7 +84,8 @@
       "templeNames": [
         "仁宗"
       ],
-      "title": "西辽仁宗"
+      "title": "西辽仁宗",
+      "dynastyId": "xiliao"
     },
     {
       "id": "yelu-pusuwan",
@@ -103,7 +106,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "承天太后"
+      "title": "承天太后",
+      "dynastyId": "xiliao"
     },
     {
       "id": "yelu-zhilugu",
@@ -123,7 +127,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "西辽皇帝"
+      "title": "西辽皇帝",
+      "dynastyId": "xiliao"
     },
     {
       "id": "qu-chulu",
@@ -143,7 +148,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "西辽皇帝"
+      "title": "西辽皇帝",
+      "dynastyId": "xiliao"
     },
     {
       "id": "yelu-chun",
@@ -163,7 +169,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "北辽皇帝"
+      "title": "北辽皇帝",
+      "dynastyId": "beiliao"
     },
     {
       "id": "xiao-defei",
@@ -184,7 +191,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "beiliao"
     },
     {
       "id": "yelu-liuge",
@@ -216,7 +224,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "辽王"
+      "title": "辽王",
+      "dynastyId": "dongliao"
     },
     {
       "id": "yao-li-shi",
@@ -237,7 +246,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "王后"
+      "title": "王后",
+      "dynastyId": "dongliao"
     },
     {
       "id": "yelu-xieshe",
@@ -265,7 +275,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "辽王"
+      "title": "辽王",
+      "dynastyId": "dongliao"
     },
     {
       "id": "yelu-shouguonu",
@@ -293,7 +304,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "辽王"
+      "title": "辽王",
+      "dynastyId": "dongliao"
     },
     {
       "id": "yelu-gunai",
@@ -321,7 +333,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "辽王"
+      "title": "辽王",
+      "dynastyId": "dongliao"
     },
     {
       "id": "yelu-sibu",
@@ -341,7 +354,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "dongliao"
     }
   ],
   "dynastyGroups": [],

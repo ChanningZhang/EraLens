@@ -74,31 +74,6 @@ async function main() {
     await tx.dynasty.deleteMany();
     await tx.person.deleteMany();
 
-    for (const person of persons) {
-      await tx.person.create({
-        data: {
-          id: person.id,
-          name: person.name,
-          altNames: person.altNames,
-          ancestralXing: person.ancestralXing,
-          clanShi: person.clanShi,
-          birthYear: person.birth?.year,
-          birthMonth: person.birth?.month,
-          birthDay: person.birth?.day,
-          birthConfidence: person.birth?.confidence,
-          deathYear: person.death?.year,
-          deathMonth: person.death?.month,
-          deathDay: person.death?.day,
-          deathConfidence: person.death?.confidence,
-          roles: person.roles,
-          bio: person.bio,
-          links: person.links,
-          posthumousName: formatAppellationCsv(person.posthumousNames),
-          templeName: formatAppellationCsv(person.templeNames),
-        },
-      });
-    }
-
     for (const dynasty of dynasties) {
       await tx.dynasty.create({
         data: {
@@ -122,6 +97,32 @@ async function main() {
           parentId: dynasty.parentId,
           groupId: dynasty.groupId,
           note: dynasty.note,
+        },
+      });
+    }
+
+    for (const person of persons) {
+      await tx.person.create({
+        data: {
+          id: person.id,
+          name: person.name,
+          dynastyId: person.dynastyId,
+          altNames: person.altNames,
+          ancestralXing: person.ancestralXing,
+          clanShi: person.clanShi,
+          birthYear: person.birth?.year,
+          birthMonth: person.birth?.month,
+          birthDay: person.birth?.day,
+          birthConfidence: person.birth?.confidence,
+          deathYear: person.death?.year,
+          deathMonth: person.death?.month,
+          deathDay: person.death?.day,
+          deathConfidence: person.death?.confidence,
+          roles: person.roles,
+          bio: person.bio,
+          links: person.links,
+          posthumousName: formatAppellationCsv(person.posthumousNames),
+          templeName: formatAppellationCsv(person.templeNames),
         },
       });
     }

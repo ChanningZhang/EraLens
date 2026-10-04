@@ -28,7 +28,8 @@
       "templeNames": [],
       "title": "韩景侯",
       "ancestralXing": "姬",
-      "clanShi": "韩"
+      "clanShi": "韩",
+      "dynastyId": "han-warring"
     },
     {
       "id": "han-r1",
@@ -51,7 +52,8 @@
       "templeNames": [],
       "title": "韩烈侯",
       "ancestralXing": "姬",
-      "clanShi": "韩"
+      "clanShi": "韩",
+      "dynastyId": "han-warring"
     },
     {
       "id": "han-r2",
@@ -74,7 +76,8 @@
       "templeNames": [],
       "title": "韩文侯",
       "ancestralXing": "姬",
-      "clanShi": "韩"
+      "clanShi": "韩",
+      "dynastyId": "han-warring"
     },
     {
       "id": "han-r3",
@@ -97,7 +100,8 @@
       "templeNames": [],
       "title": "韩哀侯",
       "ancestralXing": "姬",
-      "clanShi": "韩"
+      "clanShi": "韩",
+      "dynastyId": "han-warring"
     },
     {
       "id": "han-r4",
@@ -120,7 +124,8 @@
       "templeNames": [],
       "title": "韩共侯",
       "ancestralXing": "姬",
-      "clanShi": "韩"
+      "clanShi": "韩",
+      "dynastyId": "han-warring"
     },
     {
       "id": "han-r5",
@@ -143,7 +148,8 @@
       "templeNames": [],
       "title": "韩釐侯",
       "ancestralXing": "姬",
-      "clanShi": "韩"
+      "clanShi": "韩",
+      "dynastyId": "han-warring"
     },
     {
       "id": "han-r6",
@@ -166,7 +172,8 @@
       "templeNames": [],
       "title": "韩宣惠王",
       "ancestralXing": "姬",
-      "clanShi": "韩"
+      "clanShi": "韩",
+      "dynastyId": "han-warring"
     },
     {
       "id": "han-r7",
@@ -189,7 +196,8 @@
       "templeNames": [],
       "title": "韩襄王",
       "ancestralXing": "姬",
-      "clanShi": "韩"
+      "clanShi": "韩",
+      "dynastyId": "han-warring"
     },
     {
       "id": "han-r8",
@@ -212,7 +220,8 @@
       "templeNames": [],
       "title": "韩釐王",
       "ancestralXing": "姬",
-      "clanShi": "韩"
+      "clanShi": "韩",
+      "dynastyId": "han-warring"
     },
     {
       "id": "han-r9",
@@ -235,7 +244,8 @@
       "templeNames": [],
       "title": "韩桓惠王",
       "ancestralXing": "姬",
-      "clanShi": "韩"
+      "clanShi": "韩",
+      "dynastyId": "han-warring"
     },
     {
       "id": "han-r10",
@@ -256,7 +266,8 @@
       "templeNames": [],
       "title": "安",
       "ancestralXing": "姬",
-      "clanShi": "韩"
+      "clanShi": "韩",
+      "dynastyId": "han-warring"
     },
     {
       "id": "han-fei",
@@ -283,7 +294,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "han-warring"
     }
   ],
   "dynastyGroups": [],

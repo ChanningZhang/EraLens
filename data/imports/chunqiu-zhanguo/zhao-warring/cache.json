@@ -28,7 +28,8 @@
       "templeNames": [],
       "title": "赵烈侯",
       "ancestralXing": "嬴",
-      "clanShi": "赵"
+      "clanShi": "赵",
+      "dynastyId": "zhao-warring"
     },
     {
       "id": "zhao-r1",
@@ -51,7 +52,8 @@
       "templeNames": [],
       "title": "赵武侯",
       "ancestralXing": "嬴",
-      "clanShi": "赵"
+      "clanShi": "赵",
+      "dynastyId": "zhao-warring"
     },
     {
       "id": "zhao-r2",
@@ -74,7 +76,8 @@
       "templeNames": [],
       "title": "赵敬侯",
       "ancestralXing": "嬴",
-      "clanShi": "赵"
+      "clanShi": "赵",
+      "dynastyId": "zhao-warring"
     },
     {
       "id": "zhao-r3",
@@ -97,7 +100,8 @@
       "templeNames": [],
       "title": "赵成侯",
       "ancestralXing": "嬴",
-      "clanShi": "赵"
+      "clanShi": "赵",
+      "dynastyId": "zhao-warring"
     },
     {
       "id": "zhao-r4",
@@ -120,7 +124,8 @@
       "templeNames": [],
       "title": "赵肃侯",
       "ancestralXing": "嬴",
-      "clanShi": "赵"
+      "clanShi": "赵",
+      "dynastyId": "zhao-warring"
     },
     {
       "id": "zhao-r5",
@@ -143,7 +148,8 @@
       "templeNames": [],
       "title": "赵武灵王",
       "ancestralXing": "嬴",
-      "clanShi": "赵"
+      "clanShi": "赵",
+      "dynastyId": "zhao-warring"
     },
     {
       "id": "zhao-r6",
@@ -166,7 +172,8 @@
       "templeNames": [],
       "title": "赵惠文王",
       "ancestralXing": "嬴",
-      "clanShi": "赵"
+      "clanShi": "赵",
+      "dynastyId": "zhao-warring"
     },
     {
       "id": "zhao-r7",
@@ -189,7 +196,8 @@
       "templeNames": [],
       "title": "赵孝成王",
       "ancestralXing": "嬴",
-      "clanShi": "赵"
+      "clanShi": "赵",
+      "dynastyId": "zhao-warring"
     },
     {
       "id": "zhao-r8",
@@ -212,7 +220,8 @@
       "templeNames": [],
       "title": "赵悼襄王",
       "ancestralXing": "嬴",
-      "clanShi": "赵"
+      "clanShi": "赵",
+      "dynastyId": "zhao-warring"
     },
     {
       "id": "zhao-r9",
@@ -235,7 +244,8 @@
       "templeNames": [],
       "title": "赵幽缪王",
       "ancestralXing": "嬴",
-      "clanShi": "赵"
+      "clanShi": "赵",
+      "dynastyId": "zhao-warring"
     }
   ],
   "dynastyGroups": [],

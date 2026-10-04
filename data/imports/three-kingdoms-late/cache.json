@@ -34,7 +34,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "wei"
     },
     {
       "id": "cao-fang",
@@ -64,7 +65,8 @@
         "邵陵厉公"
       ],
       "templeNames": [],
-      "title": "齐王"
+      "title": "齐王",
+      "dynastyId": "wei"
     },
     {
       "id": "cao-mao",
@@ -92,7 +94,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "高贵乡公"
+      "title": "高贵乡公",
+      "dynastyId": "wei"
     },
     {
       "id": "cao-huan",
@@ -122,7 +125,8 @@
         "元皇帝"
       ],
       "templeNames": [],
-      "title": "魏元帝"
+      "title": "魏元帝",
+      "dynastyId": "wei"
     },
     {
       "id": "sun-liang",
@@ -150,7 +154,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "会稽王"
+      "title": "会稽王",
+      "dynastyId": "wu"
     },
     {
       "id": "sun-xiu",
@@ -180,7 +185,8 @@
         "景皇帝"
       ],
       "templeNames": [],
-      "title": "吴景帝"
+      "title": "吴景帝",
+      "dynastyId": "wu"
     },
     {
       "id": "sun-hao",
@@ -208,7 +214,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "吴末帝"
+      "title": "吴末帝",
+      "dynastyId": "wu"
     }
   ],
   "dynastyGroups": [],

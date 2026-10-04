@@ -32,7 +32,8 @@
       "templeNames": [
         "太祖"
       ],
-      "title": "成吉思汗"
+      "title": "成吉思汗",
+      "dynastyId": "yuan"
     },
     {
       "id": "ogedei",
@@ -55,7 +56,8 @@
       "templeNames": [
         "太宗"
       ],
-      "title": "窝阔台汗"
+      "title": "窝阔台汗",
+      "dynastyId": "yuan"
     },
     {
       "id": "guyuk",
@@ -78,7 +80,8 @@
       "templeNames": [
         "定宗"
       ],
-      "title": "贵由汗"
+      "title": "贵由汗",
+      "dynastyId": "yuan"
     },
     {
       "id": "mongke",
@@ -101,7 +104,8 @@
       "templeNames": [
         "宪宗"
       ],
-      "title": "蒙哥汗"
+      "title": "蒙哥汗",
+      "dynastyId": "yuan"
     },
     {
       "id": "hu-bilie",
@@ -124,8 +128,11 @@
       "birth": null,
       "death": null,
       "posthumousNames": [],
-      "templeNames": ["世祖"],
-      "title": "元世祖"
+      "templeNames": [
+        "世祖"
+      ],
+      "title": "元世祖",
+      "dynastyId": "yuan"
     },
     {
       "id": "ariq-boke",
@@ -144,7 +151,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "yuan"
     },
     {
       "id": "tolui",
@@ -163,7 +171,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "yuan"
     }
   ],
   "dynastyGroups": [],

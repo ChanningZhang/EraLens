@@ -58,6 +58,7 @@ function mapBundlePerson(row: Record<string, unknown>) {
   return mapPerson({
     id: String(row.id),
     name: String(row.name),
+    dynastyId: row.dynasty_id as string | null,
     altNames: (row.alt_names as string[] | undefined) ?? [],
     ancestralXing: row.ancestral_xing as string | null,
     clanShi: row.clan_shi as string | null,
@@ -195,6 +196,7 @@ async function loadPersonDetailBundle(
     ),
     bundle_dynasty_ids AS (
       SELECT dynasty_id AS id FROM bundle_reigns
+      UNION SELECT dynasty_id AS id FROM target_person WHERE dynasty_id IS NOT NULL
       UNION
       SELECT a_id FROM bundle_associations WHERE a_type='dynasty'
       UNION SELECT b_id FROM bundle_associations WHERE b_type='dynasty'

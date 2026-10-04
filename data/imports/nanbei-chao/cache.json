@@ -24,7 +24,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "宋少帝"
+      "title": "宋少帝",
+      "dynastyId": "song-liu"
     },
     {
       "id": "liu-yilong",
@@ -47,7 +48,8 @@
       "templeNames": [
         "太祖"
       ],
-      "title": "宋文帝"
+      "title": "宋文帝",
+      "dynastyId": "song-liu"
     },
     {
       "id": "liu-shao",
@@ -66,7 +68,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "宋元凶"
+      "title": "宋元凶",
+      "dynastyId": "song-liu"
     },
     {
       "id": "liu-jun",
@@ -89,7 +92,8 @@
       "templeNames": [
         "世祖"
       ],
-      "title": "宋孝武帝"
+      "title": "宋孝武帝",
+      "dynastyId": "song-liu"
     },
     {
       "id": "liu-ziye",
@@ -108,7 +112,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "宋前废帝"
+      "title": "宋前废帝",
+      "dynastyId": "song-liu"
     },
     {
       "id": "liu-yu-song",
@@ -131,7 +136,8 @@
       "templeNames": [
         "太宗"
       ],
-      "title": "宋明帝"
+      "title": "宋明帝",
+      "dynastyId": "song-liu"
     },
     {
       "id": "liu-yu-fei",
@@ -150,7 +156,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "宋后废帝"
+      "title": "宋后废帝",
+      "dynastyId": "song-liu"
     },
     {
       "id": "liu-zhun",
@@ -171,7 +178,8 @@
         "顺皇帝"
       ],
       "templeNames": [],
-      "title": "宋顺帝"
+      "title": "宋顺帝",
+      "dynastyId": "song-liu"
     },
     {
       "id": "xiao-daocheng",
@@ -194,7 +202,8 @@
       "templeNames": [
         "太祖"
       ],
-      "title": "齐高帝"
+      "title": "齐高帝",
+      "dynastyId": "qi-nan"
     },
     {
       "id": "xiao-ze",
@@ -217,7 +226,8 @@
       "templeNames": [
         "世祖"
       ],
-      "title": "齐武帝"
+      "title": "齐武帝",
+      "dynastyId": "qi-nan"
     },
     {
       "id": "xiao-zhaoye",
@@ -236,7 +246,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "齐郁林王"
+      "title": "齐郁林王",
+      "dynastyId": "qi-nan"
     },
     {
       "id": "xiao-zhaowen",
@@ -255,7 +266,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "齐海陵王"
+      "title": "齐海陵王",
+      "dynastyId": "qi-nan"
     },
     {
       "id": "xiao-luan",
@@ -278,7 +290,8 @@
       "templeNames": [
         "高宗"
       ],
-      "title": "齐明帝"
+      "title": "齐明帝",
+      "dynastyId": "qi-nan"
     },
     {
       "id": "xiao-baojuan",
@@ -297,7 +310,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "东昏侯"
+      "title": "东昏侯",
+      "dynastyId": "qi-nan"
     },
     {
       "id": "xiao-baorong",
@@ -318,7 +332,8 @@
         "和帝"
       ],
       "templeNames": [],
-      "title": "齐和帝"
+      "title": "齐和帝",
+      "dynastyId": "qi-nan"
     },
     {
       "id": "xiao-yan",
@@ -341,7 +356,8 @@
       "templeNames": [
         "高祖"
       ],
-      "title": "梁武帝"
+      "title": "梁武帝",
+      "dynastyId": "liang-nan"
     },
     {
       "id": "xiao-gang",
@@ -362,7 +378,8 @@
         "简文帝"
       ],
       "templeNames": [],
-      "title": "梁简文帝"
+      "title": "梁简文帝",
+      "dynastyId": "liang-nan"
     },
     {
       "id": "xiao-dong",
@@ -381,7 +398,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "梁废帝"
+      "title": "梁废帝",
+      "dynastyId": "liang-nan"
     },
     {
       "id": "xiao-yi",
@@ -402,7 +420,8 @@
         "孝元皇帝"
       ],
       "templeNames": [],
-      "title": "梁元帝"
+      "title": "梁元帝",
+      "dynastyId": "liang-nan"
     },
     {
       "id": "xiao-fangzhi",
@@ -423,7 +442,8 @@
         "敬帝"
       ],
       "templeNames": [],
-      "title": "梁敬帝"
+      "title": "梁敬帝",
+      "dynastyId": "liang-nan"
     },
     {
       "id": "chen-baxian",
@@ -446,7 +466,8 @@
       "templeNames": [
         "高祖"
       ],
-      "title": "陈武帝"
+      "title": "陈武帝",
+      "dynastyId": "chen-nan"
     },
     {
       "id": "chen-qian",
@@ -467,7 +488,8 @@
         "文皇帝"
       ],
       "templeNames": [],
-      "title": "陈文帝"
+      "title": "陈文帝",
+      "dynastyId": "chen-nan"
     },
     {
       "id": "chen-bozong",
@@ -486,7 +508,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "陈废帝"
+      "title": "陈废帝",
+      "dynastyId": "chen-nan"
     },
     {
       "id": "chen-xu",
@@ -507,7 +530,8 @@
         "宣皇帝"
       ],
       "templeNames": [],
-      "title": "陈宣帝"
+      "title": "陈宣帝",
+      "dynastyId": "chen-nan"
     },
     {
       "id": "chen-shubao",
@@ -526,7 +550,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "陈后主"
+      "title": "陈后主",
+      "dynastyId": "chen-nan"
     },
     {
       "id": "tuoba-gui",
@@ -557,7 +582,8 @@
       "templeNames": [
         "太祖"
       ],
-      "title": "魏道武帝"
+      "title": "魏道武帝",
+      "dynastyId": "wei-north"
     },
     {
       "id": "tuoba-si",
@@ -580,7 +606,8 @@
       "templeNames": [
         "太宗"
       ],
-      "title": "魏明元帝"
+      "title": "魏明元帝",
+      "dynastyId": "wei-north"
     },
     {
       "id": "tuoba-tao",
@@ -603,7 +630,8 @@
       "templeNames": [
         "世祖"
       ],
-      "title": "魏太武帝"
+      "title": "魏太武帝",
+      "dynastyId": "wei-north"
     },
     {
       "id": "tuoba-yu",
@@ -622,7 +650,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "魏南安王"
+      "title": "魏南安王",
+      "dynastyId": "wei-north"
     },
     {
       "id": "tuoba-jun",
@@ -645,7 +674,8 @@
       "templeNames": [
         "高宗"
       ],
-      "title": "魏文成帝"
+      "title": "魏文成帝",
+      "dynastyId": "wei-north"
     },
     {
       "id": "tuoba-hong",
@@ -666,7 +696,8 @@
         "献文皇帝"
       ],
       "templeNames": [],
-      "title": "魏献文帝"
+      "title": "魏献文帝",
+      "dynastyId": "wei-north"
     },
     {
       "id": "yuan-hong",
@@ -689,7 +720,8 @@
       "templeNames": [
         "高祖"
       ],
-      "title": "魏孝文帝"
+      "title": "魏孝文帝",
+      "dynastyId": "wei-north"
     },
     {
       "id": "yuan-ke",
@@ -710,7 +742,8 @@
         "宣武皇帝"
       ],
       "templeNames": [],
-      "title": "魏宣武帝"
+      "title": "魏宣武帝",
+      "dynastyId": "wei-north"
     },
     {
       "id": "yuan-xu",
@@ -739,7 +772,8 @@
         "孝明皇帝"
       ],
       "templeNames": [],
-      "title": "魏孝明帝"
+      "title": "魏孝明帝",
+      "dynastyId": "wei-north"
     },
     {
       "id": "yuan-shi-xiaoming-daughter",
@@ -776,7 +810,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "女帝元氏"
+      "title": "女帝元氏",
+      "dynastyId": "wei-north"
     },
     {
       "id": "yuan-zhao",
@@ -818,7 +853,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": "魏幼主"
+      "title": "魏幼主",
+      "dynastyId": "wei-north"
     },
     {
       "id": "yuan-zi-you",
@@ -847,7 +883,8 @@
         "孝庄皇帝"
       ],
       "templeNames": [],
-      "title": "魏孝庄帝"
+      "title": "魏孝庄帝",
+      "dynastyId": "wei-north"
     },
     {
       "id": "yuan-ye",
@@ -866,7 +903,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "魏长广王"
+      "title": "魏长广王",
+      "dynastyId": "wei-north"
     },
     {
       "id": "yuan-lang",
@@ -887,7 +925,8 @@
         "节闵帝"
       ],
       "templeNames": [],
-      "title": "魏节闵帝"
+      "title": "魏节闵帝",
+      "dynastyId": "wei-north"
     },
     {
       "id": "yuan-xiu",
@@ -908,7 +947,8 @@
         "孝武皇帝"
       ],
       "templeNames": [],
-      "title": "魏孝武帝"
+      "title": "魏孝武帝",
+      "dynastyId": "wei-north"
     },
     {
       "id": "yuan-shan-jian",
@@ -929,7 +969,8 @@
         "孝静皇帝"
       ],
       "templeNames": [],
-      "title": "魏孝静帝"
+      "title": "魏孝静帝",
+      "dynastyId": "wei-east"
     },
     {
       "id": "yuan-bao-ju",
@@ -950,7 +991,8 @@
         "文皇帝"
       ],
       "templeNames": [],
-      "title": "魏文帝"
+      "title": "魏文帝",
+      "dynastyId": "wei-west"
     },
     {
       "id": "yuan-qin",
@@ -969,7 +1011,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "魏废帝"
+      "title": "魏废帝",
+      "dynastyId": "wei-west"
     },
     {
       "id": "tuoba-kuo",
@@ -990,7 +1033,8 @@
         "恭帝"
       ],
       "templeNames": [],
-      "title": "魏恭帝"
+      "title": "魏恭帝",
+      "dynastyId": "wei-west"
     },
     {
       "id": "gao-yang",
@@ -1011,7 +1055,8 @@
         "文宣皇帝"
       ],
       "templeNames": [],
-      "title": "齐文宣帝"
+      "title": "齐文宣帝",
+      "dynastyId": "qi-bei"
     },
     {
       "id": "gao-yin",
@@ -1030,7 +1075,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "齐废帝"
+      "title": "齐废帝",
+      "dynastyId": "qi-bei"
     },
     {
       "id": "gao-yan",
@@ -1051,7 +1097,8 @@
         "孝昭皇帝"
       ],
       "templeNames": [],
-      "title": "齐孝昭帝"
+      "title": "齐孝昭帝",
+      "dynastyId": "qi-bei"
     },
     {
       "id": "gao-zhan",
@@ -1072,7 +1119,8 @@
         "武成皇帝"
       ],
       "templeNames": [],
-      "title": "齐武成帝"
+      "title": "齐武成帝",
+      "dynastyId": "qi-bei"
     },
     {
       "id": "gao-wei",
@@ -1091,7 +1139,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "齐后主"
+      "title": "齐后主",
+      "dynastyId": "qi-bei"
     },
     {
       "id": "gao-heng",
@@ -1110,7 +1159,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "齐幼主"
+      "title": "齐幼主",
+      "dynastyId": "qi-bei"
     },
     {
       "id": "yuwen-jue",
@@ -1131,7 +1181,8 @@
         "孝闵帝"
       ],
       "templeNames": [],
-      "title": "周孝闵帝"
+      "title": "周孝闵帝",
+      "dynastyId": "zhou-bei"
     },
     {
       "id": "yuwen-yu",
@@ -1152,7 +1203,8 @@
         "明皇帝"
       ],
       "templeNames": [],
-      "title": "周明帝"
+      "title": "周明帝",
+      "dynastyId": "zhou-bei"
     },
     {
       "id": "yuwen-yong",
@@ -1173,7 +1225,8 @@
         "武皇帝"
       ],
       "templeNames": [],
-      "title": "周武帝"
+      "title": "周武帝",
+      "dynastyId": "zhou-bei"
     },
     {
       "id": "yuwen-yun",
@@ -1194,7 +1247,8 @@
         "宣皇帝"
       ],
       "templeNames": [],
-      "title": "周宣帝"
+      "title": "周宣帝",
+      "dynastyId": "zhou-bei"
     },
     {
       "id": "yuwen-yan",
@@ -1215,7 +1269,8 @@
         "静帝"
       ],
       "templeNames": [],
-      "title": "周静帝"
+      "title": "周静帝",
+      "dynastyId": "zhou-bei"
     },
     {
       "id": "hou-jing",
@@ -1234,7 +1289,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "汉帝"
+      "title": "汉帝",
+      "dynastyId": "han-houjing"
     },
     {
       "id": "chen-qingzhi",
@@ -1253,7 +1309,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "liang-nan"
     },
     {
       "id": "erzhu-rong",
@@ -1273,7 +1330,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "wei-north"
     },
     {
       "id": "feng-taihou",
@@ -1301,7 +1359,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "wei-north"
     },
     {
       "id": "hu-taihou",
@@ -1335,7 +1394,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "wei-north"
     },
     {
       "id": "zu-chongzhi",
@@ -1362,7 +1422,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "song-liu"
     },
     {
       "id": "zhang-lihua",
@@ -1386,7 +1447,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "chen-nan"
     },
     {
       "id": "yang-jian",
@@ -1410,7 +1472,8 @@
       "templeNames": [
         "高祖"
       ],
-      "title": null
+      "title": null,
+      "dynastyId": "sui"
     }
   ],
   "dynastyGroups": [

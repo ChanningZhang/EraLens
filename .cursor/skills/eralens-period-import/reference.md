@@ -10,7 +10,7 @@
 {
   "slug": "example-period",
   "window": { "startYear": 626, "startMonth": 1, "endYear": 649, "endMonth": 12 },
-  "persons": [{ "id": "li-shimin", "name": "李世民", "title": "唐太宗", "posthumousNames": ["文武皇帝"], "templeNames": ["太宗"] }],
+  "persons": [{ "id": "li-shimin", "name": "李世民", "dynastyId": "tang", "title": "唐太宗", "posthumousNames": ["文武皇帝"], "templeNames": ["太宗"] }],
   "dynastyGroups": [],
   "dynasties": [{ "id": "tang", "name": "唐", "start": { "year": 618, "month": 6, "abs": 7421, "confidence": "month" }, "end": { "year": 907, "month": 5, "abs": 10888, "confidence": "month" } }],
   "locations": [],
@@ -92,13 +92,14 @@ SQL 模板不得使用已删除的日期精度列。以下 SQL 片段只示意�
 
 ```sql
 INSERT INTO persons (
-  id, name, alt_names, ancestral_xing, clan_shi,
+  id, name, dynasty_id, alt_names, ancestral_xing, clan_shi,
   birth_year, birth_month, death_year, death_month,
   roles, bio, links, posthumous_name, temple_name, title
 )
 VALUES (
   'li-shimin',
   '李世民',
+  'tang',
   ARRAY[]::text[],
   NULL, NULL,
   598, 1, 649, 7,
@@ -109,6 +110,7 @@ VALUES (
 )
 ON CONFLICT (id) DO UPDATE SET
   name = EXCLUDED.name,
+  dynasty_id = EXCLUDED.dynasty_id,
   alt_names = EXCLUDED.alt_names,
   ancestral_xing = EXCLUDED.ancestral_xing,
   clan_shi = EXCLUDED.clan_shi,
@@ -125,6 +127,8 @@ ON CONFLICT (id) DO UPDATE SET
 ```
 
 检索别名（如 `lv-shang` → `姜子牙`）写入 `alt_names`，不要在前端或 shared 维护硬编码映射。`search_terms` 不写进 INSERT；数据库触发器根据人物字段、关联 reign 与王朝统一生成。
+
+`persons.dynastyId` 保存人物主要所属王朝，适用于君主和非君主人物；无可靠的单一归属时留空。新增或修改人物归属时在所属包的 `cache.json` 填写该字段。打开人物详情时按 `dynastyId` 实时读取王朝 `altNames[0]`，不从 `reign` 推导人物归属。
 
 人物相关字段、reign 的人物/王朝归属或称号、王朝名称发生变化时，触发器会刷新对应 `persons.search_terms`，GIN 索引随行更新自动维护。批量 SQL 改写后必须执行：
 

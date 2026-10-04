@@ -50,7 +50,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "任",
-      "title": "薛献公"
+      "title": "薛献公",
+      "dynastyId": "xue-chunqiu"
     },
     {
       "id": "xue-r2",
@@ -73,7 +74,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "任",
-      "title": "薛襄公"
+      "title": "薛襄公",
+      "dynastyId": "xue-chunqiu"
     },
     {
       "id": "xue-r3",
@@ -94,7 +96,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "任",
-      "title": "公比"
+      "title": "公比",
+      "dynastyId": "xue-chunqiu"
     },
     {
       "id": "xue-r4",
@@ -117,7 +120,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "任",
-      "title": "薛惠公"
+      "title": "薛惠公",
+      "dynastyId": "xue-chunqiu"
     },
     {
       "id": "teng-r0",
@@ -146,7 +150,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "错叔"
+      "title": "错叔",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r20",
@@ -175,7 +180,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "公"
+      "title": "公",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r21",
@@ -204,7 +210,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "侯"
+      "title": "侯",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r22",
@@ -233,7 +240,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "命仲"
+      "title": "命仲",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r23",
@@ -262,7 +270,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "？"
+      "title": "？",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r24",
@@ -295,7 +304,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "伯文"
+      "title": "伯文",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r1",
@@ -330,7 +340,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "庄公"
+      "title": "庄公",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r13",
@@ -359,7 +370,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "侯"
+      "title": "侯",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r12",
@@ -388,7 +400,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "子"
+      "title": "子",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r11",
@@ -417,7 +430,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "子"
+      "title": "子",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r7",
@@ -448,7 +462,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "宣公"
+      "title": "宣公",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r10",
@@ -477,7 +492,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "子"
+      "title": "子",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r8",
@@ -510,7 +526,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "孝侯"
+      "title": "孝侯",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r9",
@@ -543,7 +560,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "昭公"
+      "title": "昭公",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r33",
@@ -568,7 +586,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "？"
+      "title": "？",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r34",
@@ -593,7 +612,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "？"
+      "title": "？",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r35",
@@ -618,7 +638,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "？"
+      "title": "？",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r36",
@@ -643,7 +664,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "？"
+      "title": "？",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r37",
@@ -668,7 +690,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "？"
+      "title": "？",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r31",
@@ -693,7 +716,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "？"
+      "title": "？",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r2",
@@ -727,7 +751,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "滕文公"
+      "title": "滕文公",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r3",
@@ -760,7 +785,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "滕成公"
+      "title": "滕成公",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r4",
@@ -791,7 +817,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "滕悼公"
+      "title": "滕悼公",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r5",
@@ -822,7 +849,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "滕顷公"
+      "title": "滕顷公",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r6",
@@ -855,7 +883,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "滕隐公"
+      "title": "滕隐公",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "qi-state-r1",
@@ -878,7 +907,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞武公"
+      "title": "杞武公",
+      "dynastyId": "qi-state-chunqiu"
     },
     {
       "id": "qi-state-r1b",
@@ -901,7 +931,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞靖公"
+      "title": "杞靖公",
+      "dynastyId": "qi-state-chunqiu"
     },
     {
       "id": "qi-state-gong",
@@ -924,7 +955,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞共公"
+      "title": "杞共公",
+      "dynastyId": "qi-state-chunqiu"
     },
     {
       "id": "qi-state-de",
@@ -947,7 +979,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞德公"
+      "title": "杞德公",
+      "dynastyId": "qi-state-chunqiu"
     },
     {
       "id": "qi-state-r1c",
@@ -970,7 +1003,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞成公"
+      "title": "杞成公",
+      "dynastyId": "qi-state-chunqiu"
     },
     {
       "id": "qi-state-r2",
@@ -993,7 +1027,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞桓公"
+      "title": "杞桓公",
+      "dynastyId": "qi-state-chunqiu"
     },
     {
       "id": "qi-state-xiao",
@@ -1016,7 +1051,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞孝公"
+      "title": "杞孝公",
+      "dynastyId": "qi-state-chunqiu"
     },
     {
       "id": "qi-state-r3",
@@ -1039,7 +1075,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞文公"
+      "title": "杞文公",
+      "dynastyId": "qi-state-chunqiu"
     },
     {
       "id": "qi-state-r4",
@@ -1062,7 +1099,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞平公"
+      "title": "杞平公",
+      "dynastyId": "qi-state-chunqiu"
     },
     {
       "id": "qi-state-dao",
@@ -1085,7 +1123,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞悼公"
+      "title": "杞悼公",
+      "dynastyId": "qi-state-chunqiu"
     },
     {
       "id": "qi-state-yin",
@@ -1108,7 +1147,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞隐公"
+      "title": "杞隐公",
+      "dynastyId": "qi-state-chunqiu"
     },
     {
       "id": "qi-state-xi",
@@ -1131,7 +1171,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞僖公"
+      "title": "杞僖公",
+      "dynastyId": "qi-state-chunqiu"
     },
     {
       "id": "qi-state-r5",
@@ -1154,7 +1195,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞湣公"
+      "title": "杞湣公",
+      "dynastyId": "qi-state-chunqiu"
     },
     {
       "id": "qi-state-ai",
@@ -1177,7 +1219,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞哀公"
+      "title": "杞哀公",
+      "dynastyId": "qi-state-chunqiu"
     },
     {
       "id": "qi-state-chu",
@@ -1200,7 +1243,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞出公"
+      "title": "杞出公",
+      "dynastyId": "qi-state-chunqiu"
     },
     {
       "id": "qi-state-r6",
@@ -1223,7 +1267,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姒",
-      "title": "杞简公"
+      "title": "杞简公",
+      "dynastyId": "qi-state-chunqiu"
     },
     {
       "id": "ju-r1",
@@ -1246,7 +1291,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "己",
-      "title": "莒纪公"
+      "title": "莒纪公",
+      "dynastyId": "ju-chunqiu"
     },
     {
       "id": "ju-r1b",
@@ -1269,7 +1315,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "己",
-      "title": "莒厉公"
+      "title": "莒厉公",
+      "dynastyId": "ju-chunqiu"
     },
     {
       "id": "ju-r2",
@@ -1292,7 +1339,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "己",
-      "title": "莒渠丘公"
+      "title": "莒渠丘公",
+      "dynastyId": "ju-chunqiu"
     },
     {
       "id": "ju-r3",
@@ -1315,7 +1363,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "己",
-      "title": "莒犂比公"
+      "title": "莒犂比公",
+      "dynastyId": "ju-chunqiu"
     },
     {
       "id": "ju-r4",
@@ -1336,7 +1385,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "己",
-      "title": "子舆"
+      "title": "子舆",
+      "dynastyId": "ju-chunqiu"
     },
     {
       "id": "ju-r5",
@@ -1359,7 +1409,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "己",
-      "title": "莒著丘公"
+      "title": "莒著丘公",
+      "dynastyId": "ju-chunqiu"
     },
     {
       "id": "ju-r6",
@@ -1382,7 +1433,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "己",
-      "title": "莒共公"
+      "title": "莒共公",
+      "dynastyId": "ju-chunqiu"
     },
     {
       "id": "ju-r7",
@@ -1405,7 +1457,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "己",
-      "title": "莒郊公"
+      "title": "莒郊公",
+      "dynastyId": "ju-chunqiu"
     },
     {
       "id": "zhao-jia-dai",
@@ -1427,7 +1480,8 @@
       "templeNames": [],
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "title": "代王"
+      "title": "代王",
+      "dynastyId": "dai-warring"
     },
     {
       "id": "tian-shi",
@@ -1449,7 +1503,8 @@
       "templeNames": [],
       "ancestralXing": "妫",
       "clanShi": "田",
-      "title": "胶东王"
+      "title": "胶东王",
+      "dynastyId": "jiaodong-warring"
     },
     {
       "id": "zhou-guo-jie",
@@ -1472,7 +1527,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "西周桓公"
+      "title": "西周桓公",
+      "dynastyId": "zhou-guo-west"
     },
     {
       "id": "zhou-guo-zao",
@@ -1495,7 +1551,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "西周威公"
+      "title": "西周威公",
+      "dynastyId": "zhou-guo-west"
     },
     {
       "id": "zhou-guo-chao",
@@ -1518,7 +1575,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "西周惠公"
+      "title": "西周惠公",
+      "dynastyId": "zhou-guo-west"
     },
     {
       "id": "zhou-guo-wugong",
@@ -1541,7 +1599,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "武公"
+      "title": "武公",
+      "dynastyId": "zhou-guo-west"
     },
     {
       "id": "zhou-guo-jiu",
@@ -1564,7 +1623,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "西周文公"
+      "title": "西周文公",
+      "dynastyId": "zhou-guo-west"
     },
     {
       "id": "zhou-guo-gen",
@@ -1587,7 +1647,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "东周惠公"
+      "title": "东周惠公",
+      "dynastyId": "zhou-guo-east"
     },
     {
       "id": "teng-r16",
@@ -1628,7 +1689,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "定公"
+      "title": "定公",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r17",
@@ -1672,7 +1734,8 @@
       ],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "文公"
+      "title": "文公",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r18",
@@ -1703,7 +1766,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "侯"
+      "title": "侯",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r19",
@@ -1738,7 +1802,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "公"
+      "title": "公",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-gong-middle",
@@ -1763,7 +1828,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "公"
+      "title": "公",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-hou-middle",
@@ -1788,7 +1854,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "侯"
+      "title": "侯",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-zhong",
@@ -1815,7 +1882,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "仲"
+      "title": "仲",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-hou-su",
@@ -1844,7 +1912,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "侯"
+      "title": "侯",
+      "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-hu",
@@ -1877,7 +1946,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "虎"
+      "title": "虎",
+      "dynastyId": "teng-chunqiu"
     }
   ],
   "dynastyGroups": [],

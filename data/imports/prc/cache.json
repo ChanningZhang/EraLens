@@ -34,7 +34,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "国家主席"
+      "title": "国家主席",
+      "dynastyId": "prc"
     },
     {
       "id": "liu-shaoqi",
@@ -62,7 +63,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "国家主席"
+      "title": "国家主席",
+      "dynastyId": "prc"
     },
     {
       "id": "dong-biwu",
@@ -90,7 +92,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "国家代主席"
+      "title": "国家代主席",
+      "dynastyId": "prc"
     },
     {
       "id": "song-qingling",
@@ -118,7 +121,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "prc"
     },
     {
       "id": "song-qingling-dong-biwu",
@@ -141,7 +145,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "国家副主席共同代行国家主席职权"
+      "title": "国家副主席共同代行国家主席职权",
+      "dynastyId": "prc"
     },
     {
       "id": "npc-standing-committee",
@@ -164,7 +169,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "全国人大常委会"
+      "title": "全国人大常委会",
+      "dynastyId": "prc"
     },
     {
       "id": "zhu-de",
@@ -193,7 +199,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "prc"
     },
     {
       "id": "li-xiannian",
@@ -221,7 +228,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "国家主席"
+      "title": "国家主席",
+      "dynastyId": "prc"
     },
     {
       "id": "yang-shangkun",
@@ -249,7 +257,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "国家主席"
+      "title": "国家主席",
+      "dynastyId": "prc"
     },
     {
       "id": "jiang-zemin",
@@ -277,7 +286,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "国家主席"
+      "title": "国家主席",
+      "dynastyId": "prc"
     },
     {
       "id": "hu-jintao",
@@ -301,7 +311,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "国家主席"
+      "title": "国家主席",
+      "dynastyId": "prc"
     },
     {
       "id": "xi-jinping",
@@ -329,7 +340,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "国家主席"
+      "title": "国家主席",
+      "dynastyId": "prc"
     },
     {
       "id": "zhou-enlai",
@@ -357,7 +369,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "prc"
     },
     {
       "id": "deng-xiaoping",
@@ -385,7 +398,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "prc"
     },
     {
       "id": "hua-guofeng",
@@ -413,7 +427,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "prc"
     },
     {
       "id": "lin-biao",
@@ -442,7 +457,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "prc"
     },
     {
       "id": "jiang-qing",
@@ -470,7 +486,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "prc"
     },
     {
       "id": "peng-dehuai",
@@ -498,7 +515,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "prc"
     },
     {
       "id": "ye-jianying",
@@ -527,7 +545,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "prc"
     },
     {
       "id": "hu-yaobang",
@@ -555,7 +574,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "prc"
     },
     {
       "id": "zhao-ziyang",
@@ -583,7 +603,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "prc"
     }
   ],
   "dynastyGroups": [],

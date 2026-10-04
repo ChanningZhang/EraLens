@@ -23,7 +23,7 @@ const reign: Reign = {
 };
 const store: TimelineDataStore = {
   dynasties: [dynasty], reigns: [reign], events: [], relations: [],
-  persons: [{ id: "ruler", name: "某人", roles: ["君主"], altNames: [], links: [], posthumousNames: [], templeNames: ["太祖"] }],
+  persons: [{ id: "ruler", name: "某人", dynastyId: dynasty.id, roles: ["君主"], altNames: [], links: [], posthumousNames: [], templeNames: ["太祖"] }],
 };
 
 describe("dynasty names", () => {

@@ -28,7 +28,8 @@
       "templeNames": [
         "太祖"
       ],
-      "title": "夏太祖"
+      "title": "夏太祖",
+      "dynastyId": "xixia"
     },
     {
       "id": "li-deming",
@@ -51,7 +52,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "西夏王"
+      "title": "西夏王",
+      "dynastyId": "xixia"
     },
     {
       "id": "li-yuanhao",
@@ -86,7 +88,8 @@
       "templeNames": [
         "景宗"
       ],
-      "title": "夏景宗"
+      "title": "夏景宗",
+      "dynastyId": "xixia"
     },
     {
       "id": "li-liangzuo",
@@ -109,7 +112,8 @@
       "templeNames": [
         "毅宗"
       ],
-      "title": "夏毅宗"
+      "title": "夏毅宗",
+      "dynastyId": "xixia"
     },
     {
       "id": "li-bingchang",
@@ -132,7 +136,8 @@
       "templeNames": [
         "惠宗"
       ],
-      "title": "夏惠宗"
+      "title": "夏惠宗",
+      "dynastyId": "xixia"
     },
     {
       "id": "li-qianshun",
@@ -155,7 +160,8 @@
       "templeNames": [
         "崇宗"
       ],
-      "title": "夏崇宗"
+      "title": "夏崇宗",
+      "dynastyId": "xixia"
     },
     {
       "id": "li-renxiao",
@@ -178,7 +184,8 @@
       "templeNames": [
         "仁宗"
       ],
-      "title": "夏仁宗"
+      "title": "夏仁宗",
+      "dynastyId": "xixia"
     },
     {
       "id": "li-chunyou",
@@ -201,7 +208,8 @@
       "templeNames": [
         "桓宗"
       ],
-      "title": "夏桓宗"
+      "title": "夏桓宗",
+      "dynastyId": "xixia"
     },
     {
       "id": "li-anquan",
@@ -224,7 +232,8 @@
       "templeNames": [
         "襄宗"
       ],
-      "title": "夏襄宗"
+      "title": "夏襄宗",
+      "dynastyId": "xixia"
     },
     {
       "id": "li-zunxu",
@@ -247,7 +256,8 @@
       "templeNames": [
         "神宗"
       ],
-      "title": "夏神宗"
+      "title": "夏神宗",
+      "dynastyId": "xixia"
     },
     {
       "id": "li-dewang",
@@ -270,7 +280,8 @@
       "templeNames": [
         "献宗"
       ],
-      "title": "夏献宗"
+      "title": "夏献宗",
+      "dynastyId": "xixia"
     },
     {
       "id": "li-xian-xixia",
@@ -289,7 +300,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "夏末帝"
+      "title": "夏末帝",
+      "dynastyId": "xixia"
     },
     {
       "id": "mo-nang-e-pang",
@@ -309,7 +321,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "xixia"
     },
     {
       "id": "liang-taihou-xixia",
@@ -329,7 +342,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "xixia"
     }
   ],
   "dynastyGroups": [],

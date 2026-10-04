@@ -22,7 +22,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "lu-chunqiu"
     },
     {
       "id": "yan-ying",
@@ -39,7 +40,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qi-chunqiu"
     },
     {
       "id": "shen-zhuliang",
@@ -59,7 +61,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "chu-chunqiu"
     },
     {
       "id": "lin-xiangru",
@@ -76,7 +79,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "zhao-warring"
     },
     {
       "id": "lian-po",
@@ -93,7 +97,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "zhao-warring"
     },
     {
       "id": "zhao-zhuo",
@@ -110,7 +115,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "zhao-warring"
     },
     {
       "id": "mao-sui",
@@ -127,7 +133,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "zhao-warring"
     },
     {
       "id": "zhao-sheng",
@@ -147,7 +154,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "zhao-warring"
     },
     {
       "id": "jing-ke",
@@ -164,7 +172,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "yan-chunqiu"
     },
     {
       "id": "pang-chong",
@@ -181,7 +190,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "wei-warring"
     },
     {
       "id": "feng-xuan",
@@ -198,7 +208,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qi-chunqiu"
     },
     {
       "id": "tian-wen",
@@ -218,7 +229,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qi-chunqiu"
     },
     {
       "id": "cai-huanhou",
@@ -235,7 +247,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "zhou-east"
     },
     {
       "id": "zhuang-xin",
@@ -252,7 +265,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "chu-chunqiu"
     },
     {
       "id": "geng-ying",
@@ -269,7 +283,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "wei-warring"
     },
     {
       "id": "cheng-yi",
@@ -286,7 +301,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "song-north"
     },
     {
       "id": "yang-shi",
@@ -303,7 +319,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "song-north"
     },
     {
       "id": "zhang-sengyou",
@@ -320,7 +337,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "liang-nan"
     }
   ],
   "dynastyGroups": [],

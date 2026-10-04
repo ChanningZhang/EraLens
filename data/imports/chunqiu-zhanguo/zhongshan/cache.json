@@ -27,7 +27,8 @@
       ],
       "templeNames": [],
       "title": "中山文公",
-      "ancestralXing": "姬"
+      "ancestralXing": "姬",
+      "dynastyId": "zhongshan"
     },
     {
       "id": "zhongshan-r1",
@@ -49,7 +50,8 @@
       ],
       "templeNames": [],
       "title": "中山武公",
-      "ancestralXing": "姬"
+      "ancestralXing": "姬",
+      "dynastyId": "zhongshan"
     },
     {
       "id": "zhongshan-r2",
@@ -71,7 +73,8 @@
       ],
       "templeNames": [],
       "title": "中山桓公",
-      "ancestralXing": "姬"
+      "ancestralXing": "姬",
+      "dynastyId": "zhongshan"
     },
     {
       "id": "zhongshan-r3",
@@ -93,7 +96,8 @@
       ],
       "templeNames": [],
       "title": "中山成公",
-      "ancestralXing": "姬"
+      "ancestralXing": "姬",
+      "dynastyId": "zhongshan"
     },
     {
       "id": "zhongshan-r4",
@@ -113,7 +117,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "title": "厝",
-      "ancestralXing": "姬"
+      "ancestralXing": "姬",
+      "dynastyId": "zhongshan"
     },
     {
       "id": "zhongshan-r5",
@@ -133,7 +138,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "title": "𧊒",
-      "ancestralXing": "姬"
+      "ancestralXing": "姬",
+      "dynastyId": "zhongshan"
     },
     {
       "id": "zhongshan-r6",
@@ -153,7 +159,8 @@
       "posthumousNames": [],
       "templeNames": [],
       "title": "尚",
-      "ancestralXing": "姬"
+      "ancestralXing": "姬",
+      "dynastyId": "zhongshan"
     }
   ],
   "dynastyGroups": [],

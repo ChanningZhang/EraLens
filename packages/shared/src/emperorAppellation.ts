@@ -351,7 +351,10 @@ export function resolveReignCardAppellation(
     return resolvePosthumousAppellation(personContext);
   }
   if (reign.start.year < REPUBLIC_ERA_START_YEAR) {
-    return resolveTempleAppellation(personContext);
+    return (
+      resolveTempleAppellation(personContext) ??
+      resolvePosthumousAppellation(personContext)
+    );
   }
   return null;
 }
@@ -382,7 +385,7 @@ export function resolveReignDetailHeading(
     const title = firstNonEmpty(reign?.title);
     if (title) return joinDetailHeading(dynastyName ?? undefined, title);
     if (year == null || year >= REPUBLIC_ERA_START_YEAR) return "";
-    const fallback = year < TEMPLE_ERA_START_YEAR ? posthumous : temple;
+    const fallback = year < TEMPLE_ERA_START_YEAR ? posthumous : temple ?? posthumous;
     return joinDetailHeading(dynastyName ?? undefined, fallback);
   }
 
@@ -393,7 +396,10 @@ export function resolveReignDetailHeading(
     return joinDetailHeading(dynastyName ?? undefined, posthumous ?? personTitle);
   }
   if (year < REPUBLIC_ERA_START_YEAR) {
-    return joinDetailHeading(dynastyName ?? undefined, temple ?? personTitle);
+    return joinDetailHeading(
+      dynastyName ?? undefined,
+      temple ?? posthumous ?? personTitle,
+    );
   }
   return joinDetailHeading(dynastyName ?? undefined, personTitle);
 }

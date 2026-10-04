@@ -32,9 +32,9 @@ for (const re of forbidden) {
 }
 
 const tableOrder = [
-  "persons",
   "dynasty_groups",
   "dynasties",
+  "persons",
   "reigns",
   "events",
   "entity_associations",

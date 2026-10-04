@@ -29,7 +29,8 @@
       "templeNames": [
         "高祖"
       ],
-      "title": "诏王"
+      "title": "诏王",
+      "dynastyId": "nanzhao"
     },
     {
       "id": "luo-sheng",
@@ -53,7 +54,8 @@
       "templeNames": [
         "世宗"
       ],
-      "title": "诏王"
+      "title": "诏王",
+      "dynastyId": "nanzhao"
     },
     {
       "id": "sheng-luopi",
@@ -77,7 +79,8 @@
       "templeNames": [
         "太宗"
       ],
-      "title": "诏王"
+      "title": "诏王",
+      "dynastyId": "nanzhao"
     },
     {
       "id": "pi-luoge",
@@ -99,7 +102,8 @@
         "归义王"
       ],
       "templeNames": [],
-      "title": "云南王"
+      "title": "云南王",
+      "dynastyId": "nanzhao"
     },
     {
       "id": "ge-luofeng",
@@ -121,7 +125,8 @@
         "神武王"
       ],
       "templeNames": [],
-      "title": "云南王"
+      "title": "云南王",
+      "dynastyId": "nanzhao"
     },
     {
       "id": "yi-mouxun",
@@ -143,7 +148,8 @@
         "孝桓王"
       ],
       "templeNames": [],
-      "title": "南诏王"
+      "title": "南诏王",
+      "dynastyId": "nanzhao"
     },
     {
       "id": "xun-gequan",
@@ -165,7 +171,8 @@
         "孝惠王"
       ],
       "templeNames": [],
-      "title": "南诏王"
+      "title": "南诏王",
+      "dynastyId": "nanzhao"
     },
     {
       "id": "quan-longsheng",
@@ -187,7 +194,8 @@
         "幽王"
       ],
       "templeNames": [],
-      "title": "南诏王"
+      "title": "南诏王",
+      "dynastyId": "nanzhao"
     },
     {
       "id": "quan-lisheng",
@@ -209,7 +217,8 @@
         "靖王"
       ],
       "templeNames": [],
-      "title": "南诏王"
+      "title": "南诏王",
+      "dynastyId": "nanzhao"
     },
     {
       "id": "quan-fengyou",
@@ -231,7 +240,8 @@
         "昭成王"
       ],
       "templeNames": [],
-      "title": "南诏王"
+      "title": "南诏王",
+      "dynastyId": "nanzhao"
     },
     {
       "id": "shi-long",
@@ -254,7 +264,8 @@
         "景庄帝"
       ],
       "templeNames": [],
-      "title": "皇帝"
+      "title": "皇帝",
+      "dynastyId": "nanzhao"
     },
     {
       "id": "long-shun",
@@ -277,7 +288,8 @@
         "武宣帝"
       ],
       "templeNames": [],
-      "title": "皇帝"
+      "title": "皇帝",
+      "dynastyId": "nanzhao"
     },
     {
       "id": "shun-huazhen",
@@ -300,7 +312,8 @@
         "孝哀帝"
       ],
       "templeNames": [],
-      "title": "皇帝"
+      "title": "皇帝",
+      "dynastyId": "nanzhao"
     },
     {
       "id": "duan-siping",
@@ -324,7 +337,8 @@
       "templeNames": [
         "太祖"
       ],
-      "title": "大理太祖"
+      "title": "大理太祖",
+      "dynastyId": "dali"
     },
     {
       "id": "duan-siying",
@@ -344,7 +358,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "大理皇帝"
+      "title": "大理皇帝",
+      "dynastyId": "dali"
     },
     {
       "id": "duan-siliang",
@@ -366,7 +381,8 @@
         "圣慈文武皇帝"
       ],
       "templeNames": [],
-      "title": "大理皇帝"
+      "title": "大理皇帝",
+      "dynastyId": "dali"
     },
     {
       "id": "duan-sicong",
@@ -388,7 +404,8 @@
         "至道广慈皇帝"
       ],
       "templeNames": [],
-      "title": "大理皇帝"
+      "title": "大理皇帝",
+      "dynastyId": "dali"
     },
     {
       "id": "duan-sushun",
@@ -410,7 +427,8 @@
         "应道皇帝"
       ],
       "templeNames": [],
-      "title": "大理皇帝"
+      "title": "大理皇帝",
+      "dynastyId": "dali"
     },
     {
       "id": "duan-suying",
@@ -432,7 +450,8 @@
         "昭明皇帝"
       ],
       "templeNames": [],
-      "title": "大理皇帝"
+      "title": "大理皇帝",
+      "dynastyId": "dali"
     },
     {
       "id": "duan-sulian",
@@ -454,7 +473,8 @@
         "宣肃皇帝"
       ],
       "templeNames": [],
-      "title": "大理皇帝"
+      "title": "大理皇帝",
+      "dynastyId": "dali"
     },
     {
       "id": "duan-sulong",
@@ -476,7 +496,8 @@
         "秉义皇帝"
       ],
       "templeNames": [],
-      "title": "大理皇帝"
+      "title": "大理皇帝",
+      "dynastyId": "dali"
     },
     {
       "id": "duan-suzhen",
@@ -498,7 +519,8 @@
         "圣德皇帝"
       ],
       "templeNames": [],
-      "title": "大理皇帝"
+      "title": "大理皇帝",
+      "dynastyId": "dali"
     },
     {
       "id": "duan-suxing",
@@ -520,7 +542,8 @@
         "天明皇帝"
       ],
       "templeNames": [],
-      "title": "大理皇帝"
+      "title": "大理皇帝",
+      "dynastyId": "dali"
     },
     {
       "id": "duan-silian",
@@ -544,7 +567,8 @@
       "templeNames": [
         "世宗"
       ],
-      "title": "大理世宗"
+      "title": "大理世宗",
+      "dynastyId": "dali"
     },
     {
       "id": "duan-lianyi",
@@ -566,7 +590,8 @@
         "上德皇帝"
       ],
       "templeNames": [],
-      "title": "大理皇帝"
+      "title": "大理皇帝",
+      "dynastyId": "dali"
     },
     {
       "id": "yang-yizhen",
@@ -588,7 +613,8 @@
         "上明皇帝"
       ],
       "templeNames": [],
-      "title": "大理皇帝"
+      "title": "大理皇帝",
+      "dynastyId": "dali"
     },
     {
       "id": "duan-shouhui",
@@ -610,7 +636,8 @@
         "上明皇帝"
       ],
       "templeNames": [],
-      "title": "大理皇帝"
+      "title": "大理皇帝",
+      "dynastyId": "dali"
     },
     {
       "id": "duan-zhengming",
@@ -632,7 +659,8 @@
         "保定皇帝"
       ],
       "templeNames": [],
-      "title": "大理皇帝"
+      "title": "大理皇帝",
+      "dynastyId": "dali"
     },
     {
       "id": "gao-shengtai",
@@ -654,7 +682,8 @@
         "富有圣德表正皇帝"
       ],
       "templeNames": [],
-      "title": "大中国皇帝"
+      "title": "大中国皇帝",
+      "dynastyId": "dali"
     },
     {
       "id": "duan-zhengchun",
@@ -678,7 +707,8 @@
       "templeNames": [
         "中宗"
       ],
-      "title": "大理中宗"
+      "title": "大理中宗",
+      "dynastyId": "dali"
     },
     {
       "id": "duan-zhengyan",
@@ -705,7 +735,8 @@
       "templeNames": [
         "宪宗"
       ],
-      "title": "大理宪宗"
+      "title": "大理宪宗",
+      "dynastyId": "dali"
     },
     {
       "id": "duan-zhengxing",
@@ -729,7 +760,8 @@
       "templeNames": [
         "景宗"
       ],
-      "title": "大理景宗"
+      "title": "大理景宗",
+      "dynastyId": "dali"
     },
     {
       "id": "duan-zhixing",
@@ -753,7 +785,8 @@
       "templeNames": [
         "宣宗"
       ],
-      "title": "大理宣宗"
+      "title": "大理宣宗",
+      "dynastyId": "dali"
     },
     {
       "id": "duan-zhilian",
@@ -775,7 +808,8 @@
         "亨天皇帝"
       ],
       "templeNames": [],
-      "title": "大理皇帝"
+      "title": "大理皇帝",
+      "dynastyId": "dali"
     },
     {
       "id": "duan-zhixiang",
@@ -797,7 +831,8 @@
       "templeNames": [
         "神宗"
       ],
-      "title": "大理神宗"
+      "title": "大理神宗",
+      "dynastyId": "dali"
     },
     {
       "id": "duan-xiangxing",
@@ -819,7 +854,8 @@
         "孝义皇帝"
       ],
       "templeNames": [],
-      "title": "大理皇帝"
+      "title": "大理皇帝",
+      "dynastyId": "dali"
     },
     {
       "id": "duan-xingzhi",
@@ -839,7 +875,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "大理皇帝"
+      "title": "大理皇帝",
+      "dynastyId": "dali"
     }
   ],
   "dynastyGroups": [],

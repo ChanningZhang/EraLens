@@ -28,7 +28,8 @@
       "templeNames": [],
       "title": "魏文侯",
       "ancestralXing": "姬",
-      "clanShi": "魏"
+      "clanShi": "魏",
+      "dynastyId": "wei-warring"
     },
     {
       "id": "wei-r1",
@@ -51,7 +52,8 @@
       "templeNames": [],
       "title": "魏武侯",
       "ancestralXing": "姬",
-      "clanShi": "魏"
+      "clanShi": "魏",
+      "dynastyId": "wei-warring"
     },
     {
       "id": "wei-r2",
@@ -74,7 +76,8 @@
       "templeNames": [],
       "title": "魏惠成王",
       "ancestralXing": "姬",
-      "clanShi": "魏"
+      "clanShi": "魏",
+      "dynastyId": "wei-warring"
     },
     {
       "id": "wei-r3",
@@ -97,7 +100,8 @@
       "templeNames": [],
       "title": "魏襄王",
       "ancestralXing": "姬",
-      "clanShi": "魏"
+      "clanShi": "魏",
+      "dynastyId": "wei-warring"
     },
     {
       "id": "wei-r4",
@@ -120,7 +124,8 @@
       "templeNames": [],
       "title": "魏昭王",
       "ancestralXing": "姬",
-      "clanShi": "魏"
+      "clanShi": "魏",
+      "dynastyId": "wei-warring"
     },
     {
       "id": "wei-r5",
@@ -143,7 +148,8 @@
       "templeNames": [],
       "title": "魏安僖王",
       "ancestralXing": "姬",
-      "clanShi": "魏"
+      "clanShi": "魏",
+      "dynastyId": "wei-warring"
     },
     {
       "id": "wei-r6",
@@ -166,7 +172,8 @@
       "templeNames": [],
       "title": "魏景湣王",
       "ancestralXing": "姬",
-      "clanShi": "魏"
+      "clanShi": "魏",
+      "dynastyId": "wei-warring"
     },
     {
       "id": "wei-r7",
@@ -187,7 +194,8 @@
       "templeNames": [],
       "title": "假",
       "ancestralXing": "姬",
-      "clanShi": "魏"
+      "clanShi": "魏",
+      "dynastyId": "wei-warring"
     },
     {
       "id": "wu-qi",
@@ -215,7 +223,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "wei-warring"
     }
   ],
   "dynastyGroups": [],

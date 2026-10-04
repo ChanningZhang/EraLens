@@ -33,7 +33,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "南越武王"
+      "title": "南越武王",
+      "dynastyId": "nanyue"
     },
     {
       "id": "zhao-mo",
@@ -53,7 +54,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "南越文王"
+      "title": "南越文王",
+      "dynastyId": "nanyue"
     },
     {
       "id": "zhao-yingqi",
@@ -73,7 +75,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "南越明王"
+      "title": "南越明王",
+      "dynastyId": "nanyue"
     },
     {
       "id": "zhao-xing",
@@ -93,7 +96,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "南越王"
+      "title": "南越王",
+      "dynastyId": "nanyue"
     },
     {
       "id": "zhao-jiande",
@@ -113,7 +117,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "南越王"
+      "title": "南越王",
+      "dynastyId": "nanyue"
     },
     {
       "id": "liu-panzi",
@@ -133,7 +138,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "赤眉帝"
+      "title": "赤眉帝",
+      "dynastyId": "chimei"
     },
     {
       "id": "fan-chong",
@@ -157,7 +163,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "赤眉首领"
+      "title": "赤眉首领",
+      "dynastyId": "chimei"
     }
   ],
   "dynastyGroups": [],

@@ -29,7 +29,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "共和行政"
+      "title": "共和行政",
+      "dynastyId": "zhou-west"
     },
     {
       "id": "shulvping",
@@ -57,7 +58,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "应天太后称制"
+      "title": "应天太后称制",
+      "dynastyId": "liao"
     },
     {
       "id": "toregene-khatun",
@@ -81,7 +83,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "称制皇后"
+      "title": "称制皇后",
+      "dynastyId": "yuan"
     },
     {
       "id": "oghul-qaimish",
@@ -105,7 +108,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "称制皇后"
+      "title": "称制皇后",
+      "dynastyId": "yuan"
     }
   ],
   "dynastyGroups": [],

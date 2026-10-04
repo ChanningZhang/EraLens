@@ -28,7 +28,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "伏羲"
+      "title": "伏羲",
+      "dynastyId": "san-huang"
     },
     {
       "id": "feng-nuwa",
@@ -50,7 +51,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "女娲"
+      "title": "女娲",
+      "dynastyId": "san-huang"
     },
     {
       "id": "jiang-shinian",
@@ -73,7 +75,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "神农"
+      "title": "神农",
+      "dynastyId": "san-huang"
     },
     {
       "id": "ji-xuanyuan",
@@ -96,7 +99,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "黄帝"
+      "title": "黄帝",
+      "dynastyId": "wu-di"
     },
     {
       "id": "ji-zhuanxu",
@@ -118,7 +122,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "颛顼"
+      "title": "颛顼",
+      "dynastyId": "wu-di"
     },
     {
       "id": "ji-ku",
@@ -141,7 +146,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "帝喾"
+      "title": "帝喾",
+      "dynastyId": "wu-di"
     },
     {
       "id": "ji-zhi",
@@ -163,7 +169,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "挚"
+      "title": "挚",
+      "dynastyId": "wu-di"
     },
     {
       "id": "yiqi-fangxun",
@@ -189,7 +196,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "尧"
+      "title": "尧",
+      "dynastyId": "wu-di"
     },
     {
       "id": "yao-chonghua",
@@ -212,7 +220,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "舜"
+      "title": "舜",
+      "dynastyId": "wu-di"
     }
   ],
   "dynastyGroups": [],

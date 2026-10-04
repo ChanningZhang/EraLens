@@ -24,7 +24,8 @@
       "birth": null,
       "death": null,
       "altNames": [],
-      "title": "大总统"
+      "title": "大总统",
+      "dynastyId": "roc"
     },
     {
       "id": "li-yuanhong",
@@ -42,7 +43,8 @@
       "birth": null,
       "death": null,
       "altNames": [],
-      "title": "大总统"
+      "title": "大总统",
+      "dynastyId": "roc"
     },
     {
       "id": "feng-guozhang",
@@ -61,7 +63,8 @@
       "birth": null,
       "death": null,
       "altNames": [],
-      "title": "代理大总统"
+      "title": "代理大总统",
+      "dynastyId": "roc"
     },
     {
       "id": "xu-shichang",
@@ -79,7 +82,8 @@
       "birth": null,
       "death": null,
       "altNames": [],
-      "title": "大总统"
+      "title": "大总统",
+      "dynastyId": "roc"
     },
     {
       "id": "cao-kun",
@@ -98,7 +102,8 @@
       "birth": null,
       "death": null,
       "altNames": [],
-      "title": "大总统"
+      "title": "大总统",
+      "dynastyId": "roc"
     },
     {
       "id": "zhang-zuolin",
@@ -117,7 +122,8 @@
       "birth": null,
       "death": null,
       "altNames": [],
-      "title": "陆海军大元帅"
+      "title": "陆海军大元帅",
+      "dynastyId": "roc"
     },
     {
       "id": "lin-sen",
@@ -135,7 +141,8 @@
       "birth": null,
       "death": null,
       "altNames": [],
-      "title": "国民政府主席"
+      "title": "国民政府主席",
+      "dynastyId": "roc"
     },
     {
       "id": "wang-jingwei",
@@ -164,7 +171,8 @@
       "altNames": [
         "汪兆铭"
       ],
-      "title": "国民政府主席"
+      "title": "国民政府主席",
+      "dynastyId": "roc"
     },
     {
       "id": "chen-gongbo",
@@ -186,7 +194,8 @@
       "birth": null,
       "death": null,
       "altNames": [],
-      "title": "国民政府代主席"
+      "title": "国民政府代主席",
+      "dynastyId": "roc"
     },
     {
       "id": "jiang-jieshi",
@@ -215,7 +224,8 @@
       "altNames": [
         "蒋中正"
       ],
-      "title": ""
+      "title": "",
+      "dynastyId": "roc"
     },
     {
       "id": "li-zongren",
@@ -234,7 +244,8 @@
       "birth": null,
       "death": null,
       "altNames": [],
-      "title": "代总统"
+      "title": "代总统",
+      "dynastyId": "roc"
     },
     {
       "id": "tan-yankai",
@@ -262,7 +273,8 @@
       "altNames": [
         "谭延闓"
       ],
-      "title": "国民政府主席"
+      "title": "国民政府主席",
+      "dynastyId": "roc"
     },
     {
       "id": "yan-jiagan",
@@ -288,7 +300,8 @@
         "abs": 23927
       },
       "altNames": [],
-      "title": "领导人"
+      "title": "领导人",
+      "dynastyId": "roc"
     },
     {
       "id": "jiang-jingguo",
@@ -314,7 +327,8 @@
         "abs": 23856
       },
       "altNames": [],
-      "title": ""
+      "title": "",
+      "dynastyId": "roc"
     },
     {
       "id": "li-denghui",
@@ -340,7 +354,8 @@
         "abs": 24246
       },
       "altNames": [],
-      "title": ""
+      "title": "",
+      "dynastyId": "roc"
     },
     {
       "id": "chen-shuibian",
@@ -362,7 +377,8 @@
       },
       "death": null,
       "altNames": [],
-      "title": ""
+      "title": "",
+      "dynastyId": "roc"
     },
     {
       "id": "ma-yingjiu",
@@ -384,7 +400,8 @@
       },
       "death": null,
       "altNames": [],
-      "title": ""
+      "title": "",
+      "dynastyId": "roc"
     },
     {
       "id": "cai-yingwen",
@@ -406,7 +423,8 @@
       },
       "death": null,
       "altNames": [],
-      "title": ""
+      "title": "",
+      "dynastyId": "roc"
     },
     {
       "id": "lai-qingde",
@@ -432,7 +450,8 @@
       },
       "death": null,
       "altNames": [],
-      "title": ""
+      "title": "",
+      "dynastyId": "roc"
     },
     {
       "id": "duan-qirui",
@@ -451,7 +470,8 @@
       "birth": null,
       "death": null,
       "altNames": [],
-      "title": "临时执政"
+      "title": "临时执政",
+      "dynastyId": "roc"
     },
     {
       "id": "zhou-ziqi",
@@ -469,7 +489,8 @@
       "birth": null,
       "death": null,
       "altNames": [],
-      "title": "国务院摄行"
+      "title": "国务院摄行",
+      "dynastyId": "roc"
     },
     {
       "id": "gao-lingwei",
@@ -487,7 +508,8 @@
       "birth": null,
       "death": null,
       "altNames": [],
-      "title": "国务院摄行"
+      "title": "国务院摄行",
+      "dynastyId": "roc"
     },
     {
       "id": "huang-fu",
@@ -505,7 +527,8 @@
       "birth": null,
       "death": null,
       "altNames": [],
-      "title": "国务院摄行"
+      "title": "国务院摄行",
+      "dynastyId": "roc"
     },
     {
       "id": "hu-weide",
@@ -524,7 +547,8 @@
       "birth": null,
       "death": null,
       "altNames": [],
-      "title": "国务院摄行"
+      "title": "国务院摄行",
+      "dynastyId": "roc"
     },
     {
       "id": "yan-huiqing",
@@ -543,7 +567,8 @@
       "birth": null,
       "death": null,
       "altNames": [],
-      "title": "国务院摄行"
+      "title": "国务院摄行",
+      "dynastyId": "roc"
     },
     {
       "id": "du-xigui",
@@ -562,7 +587,8 @@
       "birth": null,
       "death": null,
       "altNames": [],
-      "title": "国务院摄行"
+      "title": "国务院摄行",
+      "dynastyId": "roc"
     },
     {
       "id": "gu-weijun",
@@ -583,7 +609,8 @@
       "altNames": [
         "V. K. Wellington Koo"
       ],
-      "title": "国务院摄行"
+      "title": "国务院摄行",
+      "dynastyId": "roc"
     },
     {
       "id": "wu-peifu",
@@ -600,7 +627,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "dynastyId": "roc"
     },
     {
       "id": "sun-chuanfang",
@@ -617,7 +645,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "dynastyId": "roc"
     },
     {
       "id": "feng-yuxiang",
@@ -634,7 +663,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "dynastyId": "roc"
     },
     {
       "id": "yan-xishan",
@@ -652,7 +682,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "dynastyId": "roc"
     },
     {
       "id": "lu-rongting",
@@ -669,7 +700,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "dynastyId": "roc"
     },
     {
       "id": "tang-jiyao",
@@ -687,7 +719,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "dynastyId": "roc"
     },
     {
       "id": "long-yun",
@@ -705,7 +738,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "dynastyId": "roc"
     },
     {
       "id": "liu-xiang",
@@ -722,7 +756,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "dynastyId": "roc"
     },
     {
       "id": "liu-wenhui",
@@ -739,7 +774,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "dynastyId": "roc"
     },
     {
       "id": "chen-jiongming",
@@ -757,7 +793,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "dynastyId": "roc"
     },
     {
       "id": "ma-bufang",
@@ -774,7 +811,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "dynastyId": "roc"
     },
     {
       "id": "cai-e",
@@ -791,7 +829,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "dynastyId": "roc"
     },
     {
       "id": "jiang-guangnai",
@@ -808,7 +847,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "dynastyId": "roc"
     },
     {
       "id": "cai-tingkai",
@@ -825,7 +865,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "dynastyId": "roc"
     },
     {
       "id": "zhang-xueliang",
@@ -842,7 +883,8 @@
       ],
       "birth": null,
       "death": null,
-      "altNames": []
+      "altNames": [],
+      "dynastyId": "roc"
     }
   ],
   "dynastyGroups": [],

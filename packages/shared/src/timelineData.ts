@@ -250,9 +250,10 @@ function buildPersonEntityDetail(
     : undefined;
   const reignCount = options.reignCount ?? personReigns.length;
   const detailReign = focusReign ?? personReigns[0];
-  const headingDynasty = detailReign ? dynastyMap.get(detailReign.dynastyId) : undefined;
-  const headingDynastyName = headingDynasty?.altNames?.[0]?.trim() ||
-    (headingDynasty ? resolveDynastyDefaultName(headingDynasty) : undefined);
+  const headingDynasty = person.dynastyId
+    ? dynastyMap.get(person.dynastyId)
+    : undefined;
+  const headingDynastyName = headingDynasty?.altNames?.[0]?.trim() || undefined;
   const heading = resolveReignDetailHeading(
     detailReign,
     headingDynastyName,
@@ -314,7 +315,7 @@ function buildPersonEntityDetail(
     title,
     subtitle,
     reignCount,
-    dynastyId: colorReign?.dynastyId,
+    dynastyId: person.dynastyId ?? colorReign?.dynastyId,
     colorToken:
       colorReign && colorDynasty
         ? resolveReignColorToken(

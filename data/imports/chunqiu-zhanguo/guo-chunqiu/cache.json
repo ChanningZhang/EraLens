@@ -41,7 +41,8 @@
       "clanShi": "虢",
       "posthumousNames": [],
       "templeNames": [],
-      "title": "叔"
+      "title": "叔",
+      "dynastyId": "guo-chunqiu"
     },
     {
       "id": "guo-r2",
@@ -83,7 +84,8 @@
       "clanShi": "虢",
       "posthumousNames": [],
       "templeNames": [],
-      "title": "郭叔"
+      "title": "郭叔",
+      "dynastyId": "guo-chunqiu"
     },
     {
       "id": "guo-r3",
@@ -129,7 +131,8 @@
       "clanShi": "虢",
       "posthumousNames": [],
       "templeNames": [],
-      "title": "城公"
+      "title": "城公",
+      "dynastyId": "guo-chunqiu"
     },
     {
       "id": "guo-r4",
@@ -159,7 +162,8 @@
         "厉公"
       ],
       "templeNames": [],
-      "title": "虢公长父"
+      "title": "虢公长父",
+      "dynastyId": "guo-chunqiu"
     },
     {
       "id": "guo-r5",
@@ -188,7 +192,8 @@
         "宣公"
       ],
       "templeNames": [],
-      "title": "虢宣公"
+      "title": "虢宣公",
+      "dynastyId": "guo-chunqiu"
     },
     {
       "id": "guo-r6",
@@ -216,7 +221,8 @@
         "文公"
       ],
       "templeNames": [],
-      "title": "虢文公"
+      "title": "虢文公",
+      "dynastyId": "guo-chunqiu"
     },
     {
       "id": "guo-r7",
@@ -240,7 +246,8 @@
       "clanShi": "虢",
       "posthumousNames": [],
       "templeNames": [],
-      "title": "虢石父"
+      "title": "虢石父",
+      "dynastyId": "guo-chunqiu"
     },
     {
       "id": "guo-r8",
@@ -260,7 +267,8 @@
       "clanShi": "虢",
       "posthumousNames": [],
       "templeNames": [],
-      "title": "虢公翰"
+      "title": "虢公翰",
+      "dynastyId": "guo-chunqiu"
     },
     {
       "id": "guo-r9",
@@ -280,7 +288,8 @@
       "clanShi": "虢",
       "posthumousNames": [],
       "templeNames": [],
-      "title": "虢公忌父"
+      "title": "虢公忌父",
+      "dynastyId": "guo-chunqiu"
     },
     {
       "id": "guo-r10",
@@ -302,7 +311,8 @@
       "clanShi": "虢",
       "posthumousNames": [],
       "templeNames": [],
-      "title": "虢公林父"
+      "title": "虢公林父",
+      "dynastyId": "guo-chunqiu"
     },
     {
       "id": "guo-gong-chou",
@@ -329,7 +339,8 @@
       "clanShi": "虢",
       "posthumousNames": [],
       "templeNames": [],
-      "title": "虢公丑"
+      "title": "虢公丑",
+      "dynastyId": "guo-chunqiu"
     },
     {
       "id": "guo-ji-yifu",
@@ -361,7 +372,8 @@
           "label": "西虢国（金文家族君主身份待考）",
           "url": "https://zh.wikipedia.org/wiki/西虢国#金文中的虢国氏族"
         }
-      ]
+      ],
+      "dynastyId": "guo-chunqiu"
     },
     {
       "id": "guo-gui-gong",
@@ -397,7 +409,8 @@
           "label": "西虢国（金文家族君主身份待考）",
           "url": "https://zh.wikipedia.org/wiki/西虢国#金文中的虢国氏族"
         }
-      ]
+      ],
+      "dynastyId": "guo-chunqiu"
     },
     {
       "id": "guo-you-shu",
@@ -431,7 +444,8 @@
           "label": "西虢国（金文家族君主身份待考）",
           "url": "https://zh.wikipedia.org/wiki/西虢国#金文中的虢国氏族"
         }
-      ]
+      ],
+      "dynastyId": "guo-chunqiu"
     },
     {
       "id": "guo-de-shu",
@@ -465,7 +479,8 @@
           "label": "西虢国（金文家族君主身份待考）",
           "url": "https://zh.wikipedia.org/wiki/西虢国#金文中的虢国氏族"
         }
-      ]
+      ],
+      "dynastyId": "guo-chunqiu"
     },
     {
       "id": "guo-shi-cheng",
@@ -496,7 +511,8 @@
           "label": "西虢国（金文家族君主身份待考）",
           "url": "https://zh.wikipedia.org/wiki/西虢国#金文中的虢国氏族"
         }
-      ]
+      ],
+      "dynastyId": "guo-chunqiu"
     }
   ],
   "dynastyGroups": [],

@@ -28,7 +28,8 @@
       "templeNames": [
         "成宗"
       ],
-      "title": "元成宗"
+      "title": "元成宗",
+      "dynastyId": "yuan"
     },
     {
       "id": "khayishan",
@@ -51,7 +52,8 @@
       "templeNames": [
         "武宗"
       ],
-      "title": "元武宗"
+      "title": "元武宗",
+      "dynastyId": "yuan"
     },
     {
       "id": "ayurbarwada",
@@ -74,7 +76,8 @@
       "templeNames": [
         "仁宗"
       ],
-      "title": "元仁宗"
+      "title": "元仁宗",
+      "dynastyId": "yuan"
     },
     {
       "id": "shidebala",
@@ -97,7 +100,8 @@
       "templeNames": [
         "英宗"
       ],
-      "title": "元英宗"
+      "title": "元英宗",
+      "dynastyId": "yuan"
     },
     {
       "id": "yeshuntuemur",
@@ -116,7 +120,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "元泰定帝"
+      "title": "元泰定帝",
+      "dynastyId": "yuan"
     },
     {
       "id": "ragibagh",
@@ -135,7 +140,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "元天顺帝"
+      "title": "元天顺帝",
+      "dynastyId": "yuan"
     },
     {
       "id": "tugh-temur",
@@ -158,7 +164,8 @@
       "templeNames": [
         "文宗"
       ],
-      "title": "元文宗"
+      "title": "元文宗",
+      "dynastyId": "yuan"
     },
     {
       "id": "khoshila",
@@ -181,7 +188,8 @@
       "templeNames": [
         "明宗"
       ],
-      "title": "元明宗"
+      "title": "元明宗",
+      "dynastyId": "yuan"
     },
     {
       "id": "irinchibal",
@@ -204,7 +212,8 @@
       "templeNames": [
         "宁宗"
       ],
-      "title": "元宁宗"
+      "title": "元宁宗",
+      "dynastyId": "yuan"
     },
     {
       "id": "togon-temur",
@@ -227,7 +236,8 @@
       "templeNames": [
         "惠宗"
       ],
-      "title": "元惠宗"
+      "title": "元惠宗",
+      "dynastyId": "yuan"
     },
     {
       "id": "xu-shouhui",
@@ -258,7 +268,8 @@
       "templeNames": [
         "世宗"
       ],
-      "title": "徐宋世宗"
+      "title": "徐宋世宗",
+      "dynastyId": "song-xu"
     },
     {
       "id": "chen-youliang",
@@ -285,7 +296,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": "陈汉帝"
+      "title": "陈汉帝",
+      "dynastyId": "chen-han"
     },
     {
       "id": "chen-li",
@@ -312,7 +324,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": "陈汉帝"
+      "title": "陈汉帝",
+      "dynastyId": "chen-han"
     },
     {
       "id": "han-liner",
@@ -335,7 +348,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": "小明王"
+      "title": "小明王",
+      "dynastyId": "song-han"
     },
     {
       "id": "zhang-shicheng",
@@ -362,7 +376,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": "诚王"
+      "title": "诚王",
+      "dynastyId": "zhou-zhang"
     },
     {
       "id": "ming-yuzhen",
@@ -393,7 +408,8 @@
       "templeNames": [
         "太祖"
       ],
-      "title": "明夏太祖"
+      "title": "明夏太祖",
+      "dynastyId": "xia-ming"
     },
     {
       "id": "ming-sheng",
@@ -416,7 +432,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": "明夏帝"
+      "title": "明夏帝",
+      "dynastyId": "xia-ming"
     },
     {
       "id": "liu-futong",
@@ -439,7 +456,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "song-han"
     },
     {
       "id": "ayushiridara",
@@ -460,7 +478,8 @@
       "templeNames": [
         "昭宗"
       ],
-      "title": "元昭宗"
+      "title": "元昭宗",
+      "dynastyId": "yuan"
     },
     {
       "id": "togus-temur",
@@ -479,7 +498,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "天元帝"
+      "title": "天元帝",
+      "dynastyId": "yuan"
     },
     {
       "id": "zhu-yuanzhang",
@@ -506,7 +526,8 @@
       "templeNames": [
         "太祖"
       ],
-      "title": "明太祖"
+      "title": "明太祖",
+      "dynastyId": "ming"
     },
     {
       "id": "zhu-yunwen",
@@ -525,7 +546,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "建文帝"
+      "title": "建文帝",
+      "dynastyId": "ming"
     },
     {
       "id": "zhu-di",
@@ -548,7 +570,8 @@
       "templeNames": [
         "成祖"
       ],
-      "title": "明成祖"
+      "title": "明成祖",
+      "dynastyId": "ming"
     },
     {
       "id": "zhu-gaochi",
@@ -571,7 +594,8 @@
       "templeNames": [
         "仁宗"
       ],
-      "title": "明仁宗"
+      "title": "明仁宗",
+      "dynastyId": "ming"
     },
     {
       "id": "zhu-zhanji",
@@ -594,7 +618,8 @@
       "templeNames": [
         "宣宗"
       ],
-      "title": "明宣宗"
+      "title": "明宣宗",
+      "dynastyId": "ming"
     },
     {
       "id": "zhu-qizhen",
@@ -617,7 +642,8 @@
       "templeNames": [
         "英宗"
       ],
-      "title": "明英宗"
+      "title": "明英宗",
+      "dynastyId": "ming"
     },
     {
       "id": "zhu-qiyu",
@@ -640,7 +666,8 @@
       "templeNames": [
         "代宗"
       ],
-      "title": "明代宗"
+      "title": "明代宗",
+      "dynastyId": "ming"
     },
     {
       "id": "zhu-jianshen",
@@ -663,7 +690,8 @@
       "templeNames": [
         "宪宗"
       ],
-      "title": "明宪宗"
+      "title": "明宪宗",
+      "dynastyId": "ming"
     },
     {
       "id": "zhu-youcheng",
@@ -686,7 +714,8 @@
       "templeNames": [
         "孝宗"
       ],
-      "title": "明孝宗"
+      "title": "明孝宗",
+      "dynastyId": "ming"
     },
     {
       "id": "zhu-houzhao",
@@ -709,7 +738,8 @@
       "templeNames": [
         "武宗"
       ],
-      "title": "明武宗"
+      "title": "明武宗",
+      "dynastyId": "ming"
     },
     {
       "id": "zhu-houcong",
@@ -732,7 +762,8 @@
       "templeNames": [
         "世宗"
       ],
-      "title": "明世宗"
+      "title": "明世宗",
+      "dynastyId": "ming"
     },
     {
       "id": "zhu-zaihou",
@@ -755,7 +786,8 @@
       "templeNames": [
         "穆宗"
       ],
-      "title": "明穆宗"
+      "title": "明穆宗",
+      "dynastyId": "ming"
     },
     {
       "id": "zhu-yiming",
@@ -778,7 +810,8 @@
       "templeNames": [
         "神宗"
       ],
-      "title": "明神宗"
+      "title": "明神宗",
+      "dynastyId": "ming"
     },
     {
       "id": "zhu-changluo",
@@ -801,7 +834,8 @@
       "templeNames": [
         "光宗"
       ],
-      "title": "明光宗"
+      "title": "明光宗",
+      "dynastyId": "ming"
     },
     {
       "id": "zhu-youjiao",
@@ -824,7 +858,8 @@
       "templeNames": [
         "熹宗"
       ],
-      "title": "明熹宗"
+      "title": "明熹宗",
+      "dynastyId": "ming"
     },
     {
       "id": "zhu-youjian",
@@ -847,7 +882,8 @@
       "templeNames": [
         "思宗"
       ],
-      "title": "明思宗"
+      "title": "明思宗",
+      "dynastyId": "ming"
     },
     {
       "id": "zhu-yousong",
@@ -866,7 +902,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "弘光帝"
+      "title": "弘光帝",
+      "dynastyId": "ming"
     },
     {
       "id": "zhu-yujian",
@@ -885,7 +922,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "隆武帝"
+      "title": "隆武帝",
+      "dynastyId": "ming"
     },
     {
       "id": "zhu-yihai",
@@ -904,7 +942,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "鲁监国"
+      "title": "鲁监国",
+      "dynastyId": "ming"
     },
     {
       "id": "zhu-yuyue",
@@ -923,7 +962,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "绍武帝"
+      "title": "绍武帝",
+      "dynastyId": "ming"
     },
     {
       "id": "zhu-youlang",
@@ -942,7 +982,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "永历帝"
+      "title": "永历帝",
+      "dynastyId": "ming"
     },
     {
       "id": "yu-qian",
@@ -970,7 +1011,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "ming"
     },
     {
       "id": "guan-hanqing",
@@ -989,7 +1031,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "yuan"
     },
     {
       "id": "liu-ji",
@@ -1017,7 +1060,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "ming"
     },
     {
       "id": "lan-yu",
@@ -1040,7 +1084,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "ming"
     },
     {
       "id": "zhang-juzheng",
@@ -1067,7 +1112,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "ming"
     },
     {
       "id": "hai-rui",
@@ -1094,7 +1140,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "ming"
     },
     {
       "id": "qi-jiguang",
@@ -1121,7 +1168,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "ming"
     },
     {
       "id": "wang-yangming",
@@ -1149,7 +1197,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "ming"
     },
     {
       "id": "yan-song",
@@ -1176,7 +1225,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "ming"
     },
     {
       "id": "tang-yin",
@@ -1204,7 +1254,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "ming"
     },
     {
       "id": "li-shizhen",
@@ -1231,7 +1282,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "ming"
     },
     {
       "id": "xu-guangqi",
@@ -1259,7 +1311,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "ming"
     },
     {
       "id": "xu-xiake",
@@ -1286,7 +1339,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "ming"
     },
     {
       "id": "yuan-chonghuan",
@@ -1313,7 +1367,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "ming"
     },
     {
       "id": "zheng-guifei",
@@ -1340,7 +1395,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "ming"
     },
     {
       "id": "li-xuanshi",
@@ -1363,7 +1419,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "ming"
     },
     {
       "id": "fang-congze",
@@ -1390,7 +1447,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "ming"
     },
     {
       "id": "wei-zhongxian",
@@ -1417,7 +1475,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "ming"
     },
     {
       "id": "zheng-he",
@@ -1444,7 +1503,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "ming"
     },
     {
       "id": "dorgon",
@@ -1472,7 +1532,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qing"
     },
     {
       "id": "huang-zongxi",
@@ -1499,7 +1560,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "ming"
     },
     {
       "id": "gu-yanwu",
@@ -1526,7 +1588,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "ming"
     },
     {
       "id": "cao-xueqin",
@@ -1553,7 +1616,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qing"
     },
     {
       "id": "ji-xiaolan",
@@ -1581,7 +1645,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qing"
     },
     {
       "id": "zeng-guofan",
@@ -1609,7 +1674,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qing"
     },
     {
       "id": "li-hongzhang",
@@ -1637,7 +1703,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qing"
     },
     {
       "id": "zuo-zongtang",
@@ -1665,7 +1732,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qing"
     },
     {
       "id": "deng-shichang",
@@ -1692,7 +1760,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qing"
     },
     {
       "id": "kang-youwei",
@@ -1720,7 +1789,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qing"
     },
     {
       "id": "liang-qichao",
@@ -1748,7 +1818,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qing"
     },
     {
       "id": "tan-sitong",
@@ -1776,7 +1847,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qing"
     },
     {
       "id": "nurhaci",
@@ -1799,7 +1871,8 @@
       "templeNames": [
         "太祖"
       ],
-      "title": "清太祖"
+      "title": "清太祖",
+      "dynastyId": "qing"
     },
     {
       "id": "huang-taiji",
@@ -1826,7 +1899,8 @@
       "templeNames": [
         "太宗"
       ],
-      "title": "清太宗"
+      "title": "清太宗",
+      "dynastyId": "qing"
     },
     {
       "id": "fulin",
@@ -1849,7 +1923,8 @@
       "templeNames": [
         "世祖"
       ],
-      "title": "清世祖"
+      "title": "清世祖",
+      "dynastyId": "qing"
     },
     {
       "id": "xuanye",
@@ -1872,7 +1947,8 @@
       "templeNames": [
         "圣祖"
       ],
-      "title": "清圣祖"
+      "title": "清圣祖",
+      "dynastyId": "qing"
     },
     {
       "id": "yinzhen",
@@ -1895,7 +1971,8 @@
       "templeNames": [
         "世宗"
       ],
-      "title": "清世宗"
+      "title": "清世宗",
+      "dynastyId": "qing"
     },
     {
       "id": "hongli",
@@ -1918,7 +1995,8 @@
       "templeNames": [
         "高宗"
       ],
-      "title": "清高宗"
+      "title": "清高宗",
+      "dynastyId": "qing"
     },
     {
       "id": "yongyan",
@@ -1941,7 +2019,8 @@
       "templeNames": [
         "仁宗"
       ],
-      "title": "清仁宗"
+      "title": "清仁宗",
+      "dynastyId": "qing"
     },
     {
       "id": "minning",
@@ -1964,7 +2043,8 @@
       "templeNames": [
         "宣宗"
       ],
-      "title": "清宣宗"
+      "title": "清宣宗",
+      "dynastyId": "qing"
     },
     {
       "id": "yizhu",
@@ -1987,7 +2067,8 @@
       "templeNames": [
         "文宗"
       ],
-      "title": "清文宗"
+      "title": "清文宗",
+      "dynastyId": "qing"
     },
     {
       "id": "ci-xi",
@@ -2007,7 +2088,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qing"
     },
     {
       "id": "ci-an",
@@ -2027,7 +2109,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qing"
     },
     {
       "id": "yi-xin",
@@ -2046,7 +2129,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qing"
     },
     {
       "id": "zaichun",
@@ -2069,7 +2153,8 @@
       "templeNames": [
         "穆宗"
       ],
-      "title": "清穆宗"
+      "title": "清穆宗",
+      "dynastyId": "qing"
     },
     {
       "id": "zaitian",
@@ -2092,7 +2177,8 @@
       "templeNames": [
         "德宗"
       ],
-      "title": "清德宗"
+      "title": "清德宗",
+      "dynastyId": "qing"
     },
     {
       "id": "puyi",
@@ -2111,7 +2197,8 @@
       "death": null,
       "posthumousNames": [],
       "templeNames": [],
-      "title": "清逊帝"
+      "title": "清逊帝",
+      "dynastyId": "qing"
     },
     {
       "id": "lin-zexu",
@@ -2138,7 +2225,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qing"
     },
     {
       "id": "sun-yat-sen",
@@ -2165,7 +2253,8 @@
       },
       "posthumousNames": [],
       "templeNames": [],
-      "title": "临时大总统"
+      "title": "临时大总统",
+      "dynastyId": "roc"
     }
   ],
   "dynastyGroups": [],
@@ -2965,7 +3054,7 @@
       "id": "reign-zhu-yuanzhang-wu-zhu",
       "dynastyId": "ming",
       "personId": "zhu-yuanzhang",
-      "title": "吴",
+      "title": "吴王",
       "eraNames": [
         "吴"
       ],

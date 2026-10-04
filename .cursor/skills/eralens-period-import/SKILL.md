@@ -132,6 +132,8 @@ Task Progress:
 
 `persons.name` 使用常用姓名。先秦人物若姓、氏分别写在 `ancestralXing` / `clanShi`，`name` 只存私名/常用名，不拼姓或氏（如莒郊公存 `狂`，不存 `己狂`；未知姓名存 `？`，不拼姓氏）。其他时期保留通行可检索全名。时间轴卡片在始皇帝以前主行显示谥号/称号，由 `resolveReignCardLabel` 处理，不要为迁就卡片去改姓名字段。先秦王朝/人物须在 `cache.json` 直接写入 `ancestralXing` / `clanShi`；生成器和运行时不套姓氏默认表。常用称呼与人工别名仍写 `persons.alt_names`；数据库会把姓名、别名、姓/氏组合、庙谥、reign title、朝代名 + 庙谥预生成到 `persons.search_terms`，因此移除 `name` 中的姓氏不会丢失姓氏检索。
 
+人物主要所属王朝写入 `persons.dynastyId`，帝王与非帝王统一使用该字段，不以是否有 `reign` 决定人物所属王朝。无单一可靠归属时留空。人物详情按 `dynastyId` 实时读取王朝 `altNames[0]`；新增或改动人物归属时编辑人物所属包的 `cache.json`，不要在补充包重复写人物行。
+
 **人物搜索词与索引（强制）**：
 
 - `persons.search_terms` 是预计算的标准化 `text[]`，用于完整词命中；API 使用数组包含查询，依赖 `persons_search_terms_gin_idx`，禁止在请求时遍历全量 person/reign/dynasty 临时拼词。

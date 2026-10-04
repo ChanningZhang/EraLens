@@ -51,7 +51,8 @@
       "templeNames": [],
       "ancestralXing": "嬴",
       "clanShi": "赵",
-      "title": "始皇帝"
+      "title": "始皇帝",
+      "dynastyId": "qin"
     },
     {
       "id": "ying-huhai",
@@ -68,7 +69,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "秦二世"
+      "title": "秦二世",
+      "dynastyId": "qin"
     },
     {
       "id": "ying-ziying",
@@ -85,7 +87,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "秦王子婴"
+      "title": "秦王子婴",
+      "dynastyId": "qin"
     },
     {
       "id": "li-si",
@@ -102,7 +105,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qin"
     },
     {
       "id": "chen-sheng",
@@ -119,7 +123,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qin"
     },
     {
       "id": "wu-guang",
@@ -136,7 +141,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qin"
     },
     {
       "id": "xiang-yu",
@@ -164,7 +170,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "西楚霸王"
+      "title": "西楚霸王",
+      "dynastyId": "chu-west"
     },
     {
       "id": "liu-bang",
@@ -203,7 +210,8 @@
       "templeNames": [
         "太祖"
       ],
-      "title": "汉高祖"
+      "title": "汉高祖",
+      "dynastyId": "han-west"
     },
     {
       "id": "lv-zhi",
@@ -221,7 +229,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "han-west"
     },
     {
       "id": "xiao-he",
@@ -248,7 +257,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "han-west"
     },
     {
       "id": "han-xin",
@@ -275,7 +285,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "han-west"
     },
     {
       "id": "zhang-liang",
@@ -303,7 +314,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "han-west"
     },
     {
       "id": "liu-ying",
@@ -332,7 +344,8 @@
         "孝惠皇帝"
       ],
       "templeNames": [],
-      "title": "汉惠帝"
+      "title": "汉惠帝",
+      "dynastyId": "han-west"
     },
     {
       "id": "liu-gong",
@@ -357,7 +370,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "前少帝"
+      "title": "前少帝",
+      "dynastyId": "han-west"
     },
     {
       "id": "liu-hong-shao",
@@ -374,7 +388,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "汉后少帝"
+      "title": "汉后少帝",
+      "dynastyId": "han-west"
     },
     {
       "id": "liu-heng",
@@ -405,7 +420,8 @@
       "templeNames": [
         "太宗"
       ],
-      "title": "汉文帝"
+      "title": "汉文帝",
+      "dynastyId": "han-west"
     },
     {
       "id": "liu-qi",
@@ -434,7 +450,8 @@
         "孝景皇帝"
       ],
       "templeNames": [],
-      "title": "汉景帝"
+      "title": "汉景帝",
+      "dynastyId": "han-west"
     },
     {
       "id": "liu-che",
@@ -465,7 +482,8 @@
       "templeNames": [
         "世宗"
       ],
-      "title": "汉武帝"
+      "title": "汉武帝",
+      "dynastyId": "han-west"
     },
     {
       "id": "liu-fuling",
@@ -494,7 +512,8 @@
         "孝昭皇帝"
       ],
       "templeNames": [],
-      "title": "汉昭帝"
+      "title": "汉昭帝",
+      "dynastyId": "han-west"
     },
     {
       "id": "liu-he",
@@ -513,7 +532,8 @@
         "海昏侯"
       ],
       "templeNames": [],
-      "title": "汉废帝"
+      "title": "汉废帝",
+      "dynastyId": "han-west"
     },
     {
       "id": "liu-xun",
@@ -542,7 +562,8 @@
         "孝宣皇帝"
       ],
       "templeNames": [],
-      "title": "汉宣帝"
+      "title": "汉宣帝",
+      "dynastyId": "han-west"
     },
     {
       "id": "liu-shi",
@@ -571,7 +592,8 @@
         "孝元皇帝"
       ],
       "templeNames": [],
-      "title": "汉元帝"
+      "title": "汉元帝",
+      "dynastyId": "han-west"
     },
     {
       "id": "liu-ao",
@@ -600,7 +622,8 @@
         "孝成皇帝"
       ],
       "templeNames": [],
-      "title": "汉成帝"
+      "title": "汉成帝",
+      "dynastyId": "han-west"
     },
     {
       "id": "liu-xin",
@@ -629,7 +652,8 @@
         "孝哀皇帝"
       ],
       "templeNames": [],
-      "title": "汉哀帝"
+      "title": "汉哀帝",
+      "dynastyId": "han-west"
     },
     {
       "id": "liu-kan",
@@ -658,7 +682,8 @@
         "孝平皇帝"
       ],
       "templeNames": [],
-      "title": "汉平帝"
+      "title": "汉平帝",
+      "dynastyId": "han-west"
     },
     {
       "id": "ruzi-ying",
@@ -680,7 +705,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "孺子婴"
+      "title": "孺子婴",
+      "dynastyId": "han-west"
     },
     {
       "id": "zhang-qian",
@@ -707,7 +733,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "han-west"
     },
     {
       "id": "zhang-han",
@@ -724,7 +751,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qin"
     },
     {
       "id": "xiang-liang",
@@ -742,7 +770,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "chu-west"
     },
     {
       "id": "wei-bao",
@@ -759,7 +788,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "han-gengshi"
     },
     {
       "id": "wei-qing",
@@ -776,7 +806,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "han-west"
     },
     {
       "id": "huo-qubing",
@@ -803,7 +834,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "han-west"
     },
     {
       "id": "wang-mang",
@@ -830,7 +862,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": ""
+      "title": "",
+      "dynastyId": "xin"
     },
     {
       "id": "liu-xuan",
@@ -847,7 +880,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "更始帝"
+      "title": "更始帝",
+      "dynastyId": "han-gengshi"
     },
     {
       "id": "liu-xiu",
@@ -878,7 +912,8 @@
       "templeNames": [
         "世祖"
       ],
-      "title": "汉光武帝"
+      "title": "汉光武帝",
+      "dynastyId": "han-east"
     },
     {
       "id": "liu-zhuang",
@@ -909,7 +944,8 @@
       "templeNames": [
         "显宗"
       ],
-      "title": "汉明帝"
+      "title": "汉明帝",
+      "dynastyId": "han-east"
     },
     {
       "id": "liu-zuo",
@@ -940,7 +976,8 @@
       "templeNames": [
         "肃宗"
       ],
-      "title": "汉章帝"
+      "title": "汉章帝",
+      "dynastyId": "han-east"
     },
     {
       "id": "liu-zhao",
@@ -969,7 +1006,8 @@
         "孝和皇帝"
       ],
       "templeNames": [],
-      "title": "汉和帝"
+      "title": "汉和帝",
+      "dynastyId": "han-east"
     },
     {
       "id": "liu-long",
@@ -988,7 +1026,8 @@
         "孝殇皇帝"
       ],
       "templeNames": [],
-      "title": "汉殇帝"
+      "title": "汉殇帝",
+      "dynastyId": "han-east"
     },
     {
       "id": "liu-hu",
@@ -1007,7 +1046,8 @@
         "孝安皇帝"
       ],
       "templeNames": [],
-      "title": "汉安帝"
+      "title": "汉安帝",
+      "dynastyId": "han-east"
     },
     {
       "id": "liu-yi-shao",
@@ -1024,7 +1064,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "汉前少帝"
+      "title": "汉前少帝",
+      "dynastyId": "han-east"
     },
     {
       "id": "liu-bao",
@@ -1043,7 +1084,8 @@
         "孝顺皇帝"
       ],
       "templeNames": [],
-      "title": "汉顺帝"
+      "title": "汉顺帝",
+      "dynastyId": "han-east"
     },
     {
       "id": "liu-bing",
@@ -1062,7 +1104,8 @@
         "孝冲皇帝"
       ],
       "templeNames": [],
-      "title": "汉冲帝"
+      "title": "汉冲帝",
+      "dynastyId": "han-east"
     },
     {
       "id": "liu-zuan",
@@ -1081,7 +1124,8 @@
         "孝质皇帝"
       ],
       "templeNames": [],
-      "title": "汉质帝"
+      "title": "汉质帝",
+      "dynastyId": "han-east"
     },
     {
       "id": "liu-zhi",
@@ -1110,7 +1154,8 @@
         "孝桓皇帝"
       ],
       "templeNames": [],
-      "title": "汉桓帝"
+      "title": "汉桓帝",
+      "dynastyId": "han-east"
     },
     {
       "id": "liu-hong",
@@ -1139,7 +1184,8 @@
         "孝灵皇帝"
       ],
       "templeNames": [],
-      "title": "汉灵帝"
+      "title": "汉灵帝",
+      "dynastyId": "han-east"
     },
     {
       "id": "liu-bian",
@@ -1156,7 +1202,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "汉后少帝"
+      "title": "汉后少帝",
+      "dynastyId": "han-east"
     },
     {
       "id": "liu-xie",
@@ -1185,7 +1232,8 @@
         "孝献皇帝"
       ],
       "templeNames": [],
-      "title": "汉献帝"
+      "title": "汉献帝",
+      "dynastyId": "han-east"
     },
     {
       "id": "zhao-gao",
@@ -1202,7 +1250,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "qin"
     },
     {
       "id": "huo-guang",
@@ -1224,7 +1273,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "han-west"
     },
     {
       "id": "wang-zhaojun",
@@ -1251,7 +1301,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "han-west"
     },
     {
       "id": "dou-taihou",
@@ -1269,7 +1320,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "han-west"
     },
     {
       "id": "liang-taihou",
@@ -1287,7 +1339,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "han-east"
     },
     {
       "id": "dong-zhongshu",
@@ -1314,7 +1367,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "han-west"
     },
     {
       "id": "si-ma-qian",
@@ -1341,7 +1395,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "han-west"
     },
     {
       "id": "ban-chao",
@@ -1369,7 +1424,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "han-east"
     },
     {
       "id": "cai-lun",
@@ -1386,7 +1442,8 @@
       ],
       "posthumousNames": [],
       "templeNames": [],
-      "title": null
+      "title": null,
+      "dynastyId": "han-east"
     }
   ],
   "dynastyGroups": [],

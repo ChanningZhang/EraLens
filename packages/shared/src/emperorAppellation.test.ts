@@ -519,6 +519,49 @@ describe("resolveReignDetailHeading", () => {
       source({ start: { year: 2000, month: 1 }, title: "" }), "中华民国", "某", context,
     )).toBe("");
   });
+
+  it("uses a Tang-to-Qing posthumous name after temple name, before person title", () => {
+    const withBoth = {
+      posthumousNames: ["谥号"],
+      templeNames: ["庙号"],
+      title: "人物称号",
+    };
+    const focusedWithoutTemple = source({
+      start: { year: 900, month: 1 },
+      title: "",
+      posthumousName: "谥号",
+      personTitle: "人物称号",
+    });
+    const focusedWithoutEither = source({
+      start: { year: 900, month: 1 },
+      title: "",
+      personTitle: "人物称号",
+    });
+
+    expect(resolveReignDetailHeading(
+      source({ start: { year: 900, month: 1 }, title: "" }), "唐", "某", withBoth,
+    )).toBe("唐 · 庙号");
+    expect(resolveReignDetailHeading(
+      focusedWithoutTemple, "唐", "某", mergePersonContext(focusedWithoutTemple),
+    )).toBe("唐 · 谥号");
+    expect(resolveReignDetailHeading(
+      focusedWithoutEither, "唐", "某", mergePersonContext(focusedWithoutEither),
+    )).toBe("唐");
+    expect(resolveReignDetailHeading(
+      source({ start: { year: 900, month: 1 }, title: "" }), "唐", "某", withBoth,
+      { focusedReign: false, periodYear: 900 },
+    )).toBe("唐 · 庙号");
+    expect(resolveReignDetailHeading(
+      source({ start: { year: 900, month: 1 }, title: "" }), "唐", "某",
+      { posthumousNames: ["谥号"], templeNames: [], title: "人物称号" },
+      { focusedReign: false, periodYear: 900 },
+    )).toBe("唐 · 谥号");
+    expect(resolveReignDetailHeading(
+      source({ start: { year: 900, month: 1 }, title: "" }), "唐", "某",
+      { posthumousNames: [], templeNames: [], title: "人物称号" },
+      { focusedReign: false, periodYear: 900 },
+    )).toBe("唐 · 人物称号");
+  });
 });
 
 describe("resolveReignDetailSubtitle for Yue kings", () => {
@@ -729,6 +772,18 @@ describe("resolveReignCardMeta", () => {
       )).toEqual({ label: "庙号", name: "某宗" });
     },
   );
+
+  it("falls back from temple name to posthumous name for Tang-to-Qing card meta", () => {
+    expect(resolveReignCardMeta(
+      source({
+        start: { year: 900, month: 1 },
+        title: "",
+        templeName: "",
+        posthumousName: "谥号",
+      }),
+      "人物",
+    )).toEqual({ label: "谥号", name: "谥号" });
+  });
 
   it("hides metadata when modern reign titles are empty", () => {
     expect(resolveReignCardMeta(

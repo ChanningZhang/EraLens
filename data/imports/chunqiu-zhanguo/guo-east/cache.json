@@ -31,7 +31,8 @@
       "templeNames": [],
       "altNames": [],
       "birth": null,
-      "death": null
+      "death": null,
+      "dynastyId": "guo-east"
     },
     {
       "id": "guo-east-dalin",
@@ -66,7 +67,8 @@
         "惠叔大林"
       ],
       "birth": null,
-      "death": null
+      "death": null,
+      "dynastyId": "guo-east"
     },
     {
       "id": "guo-east-lv",
@@ -102,7 +104,8 @@
         "虢旅"
       ],
       "birth": null,
-      "death": null
+      "death": null,
+      "dynastyId": "guo-east"
     },
     {
       "id": "guo-east-last-shu",
@@ -148,7 +151,8 @@
         "month": 12,
         "abs": -9181,
         "confidence": "approximate_year"
-      }
+      },
+      "dynastyId": "guo-east"
     }
   ],
   "dynastyGroups": [],

@@ -547,6 +547,7 @@ describe("buildEntityDetail person", () => {
     const store = {
       dynasties: [{
         id: "han-west", name: "西汉", scope: "cn" as const, region: "east_asia",
+        altNames: ["西汉"],
         start: { year: -202, month: 1 }, end: { year: 9, month: 12 },
         startAbs: -2412, endAbs: 119, precision: "year" as const,
         colorToken: "moss" as const,
@@ -558,7 +559,7 @@ describe("buildEntityDetail person", () => {
         startAbs: -2236, endAbs: -2191,
       })],
       persons: [{
-        id: "unnamed-ruler", name: "刘？", title: "汉前少帝", roles: ["皇帝"],
+        id: "unnamed-ruler", name: "刘？", dynastyId: "han-west", title: "汉前少帝", roles: ["皇帝"],
         links: [], posthumousNames: [], templeNames: [],
       }],
       events: [], relations: [],
@@ -567,7 +568,7 @@ describe("buildEntityDetail person", () => {
       title: "刘？", subtitle: "西汉 · 汉前少帝",
     });
     expect(buildEntityDetail(store, { type: "reign", id: "reign-unnamed-ruler" })).toMatchObject({
-      title: "刘？", subtitle: undefined,
+      title: "刘？", subtitle: "西汉",
     });
   });
 

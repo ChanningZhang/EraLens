@@ -25,7 +25,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "夜郎侯"
+      "title": "夜郎侯",
+      "dynastyId": "yelang"
     },
     {
       "id": "yelang-xin",
@@ -49,7 +50,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "夜郎王"
+      "title": "夜郎王",
+      "dynastyId": "yelang"
     },
     {
       "id": "zhuang-qiao",
@@ -73,7 +75,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "滇王"
+      "title": "滇王",
+      "dynastyId": "dian"
     },
     {
       "id": "dian-changqiang",
@@ -93,7 +96,8 @@
       "altNames": [],
       "posthumousNames": [],
       "templeNames": [],
-      "title": "滇王"
+      "title": "滇王",
+      "dynastyId": "dian"
     }
   ],
   "dynastyGroups": [],
