@@ -344,16 +344,21 @@ export function resolveReignCardAppellation(
   }
 
   const title = firstNonEmpty(reign.title);
+  const personTitle = firstNonEmpty(personContext?.title);
   if (title) return { kind: "regnal", name: title };
 
   if (reign.start.year < PRE_IMPERIAL_START_YEAR) return null;
   if (reign.start.year < TEMPLE_ERA_START_YEAR) {
-    return resolvePosthumousAppellation(personContext);
+    return (
+      resolvePosthumousAppellation(personContext) ??
+      (personTitle ? { kind: "regnal", name: personTitle } : null)
+    );
   }
   if (reign.start.year < REPUBLIC_ERA_START_YEAR) {
     return (
       resolveTempleAppellation(personContext) ??
-      resolvePosthumousAppellation(personContext)
+      resolvePosthumousAppellation(personContext) ??
+      (personTitle ? { kind: "regnal", name: personTitle } : null)
     );
   }
   return null;
@@ -385,7 +390,12 @@ export function resolveReignDetailHeading(
     const title = firstNonEmpty(reign?.title);
     if (title) return joinDetailHeading(dynastyName ?? undefined, title);
     if (year == null || year >= REPUBLIC_ERA_START_YEAR) return "";
-    const fallback = year < TEMPLE_ERA_START_YEAR ? posthumous : temple ?? posthumous;
+    const fallback =
+      year < PRE_IMPERIAL_START_YEAR
+        ? posthumous
+        : year < TEMPLE_ERA_START_YEAR
+          ? posthumous ?? personTitle
+          : temple ?? posthumous ?? personTitle;
     return joinDetailHeading(dynastyName ?? undefined, fallback);
   }
 

@@ -562,6 +562,27 @@ describe("resolveReignDetailHeading", () => {
       { focusedReign: false, periodYear: 900 },
     )).toBe("唐 · 人物称号");
   });
+
+  it("uses person title as the focused Qin-to-Sui fallback after posthumous name", () => {
+    const focusedWithPosthumous = source({
+      start: { year: 589, month: 1 },
+      title: "",
+      posthumousName: "文皇帝",
+      personTitle: "隋文帝",
+    });
+    const focusedWithTitleOnly = source({
+      start: { year: 589, month: 1 },
+      title: "",
+      personTitle: "隋文帝",
+    });
+
+    expect(resolveReignDetailHeading(
+      focusedWithPosthumous, "隋", "杨坚", mergePersonContext(focusedWithPosthumous),
+    )).toBe("隋 · 文皇帝");
+    expect(resolveReignDetailHeading(
+      focusedWithTitleOnly, "隋", "杨坚", mergePersonContext(focusedWithTitleOnly),
+    )).toBe("隋 · 隋文帝");
+  });
 });
 
 describe("resolveReignDetailSubtitle for Yue kings", () => {
@@ -783,6 +804,25 @@ describe("resolveReignCardMeta", () => {
       }),
       "人物",
     )).toEqual({ label: "谥号", name: "谥号" });
+  });
+
+  it("uses person title after posthumous fallback on Qin-to-Sui and Tang-to-Qing cards", () => {
+    expect(resolveReignCardMeta(
+      source({
+        start: { year: 589, month: 1 },
+        title: "",
+        personTitle: "隋文帝",
+      }),
+      "杨坚",
+    )).toEqual({ label: "称号", name: "隋文帝" });
+    expect(resolveReignCardMeta(
+      source({
+        start: { year: 900, month: 1 },
+        title: "",
+        personTitle: "人物称号",
+      }),
+      "人物",
+    )).toEqual({ label: "称号", name: "人物称号" });
   });
 
   it("hides metadata when modern reign titles are empty", () => {
