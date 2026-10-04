@@ -227,12 +227,24 @@ public class EraLensNativePlugin: CAPPlugin, CAPBridgedPlugin {
               FileManager.default.fileExists(atPath: databaseURL.path),
               let current = try? validateDatabase(at: databaseURL),
               let packaged = try? validateDatabase(at: baseline),
-              let currentVersion = current["dataset_version"],
-              let packagedVersion = packaged["dataset_version"],
-              isVersion(packagedVersion, newerThan: currentVersion) else { return }
+              isBundledBaselineNewer(packaged, than: current) else { return }
         try? FileManager.default.removeItem(at: documentsURL.appendingPathComponent(previousName))
         try FileManager.default.copyItem(at: databaseURL, to: documentsURL.appendingPathComponent(previousName))
         try replaceDatabase(with: baseline)
+    }
+
+    private func isBundledBaselineNewer(_ packaged: [String: String], than current: [String: String]) -> Bool {
+        guard let packagedVersion = packaged["dataset_version"],
+              let currentVersion = current["dataset_version"] else { return false }
+        if isVersion(packagedVersion, newerThan: currentVersion) { return true }
+
+        // Local builds use content hashes instead of ordered numeric versions.
+        // Use their build timestamps so a newly synced bundle replaces the older
+        // database persisted in the app's Documents directory.
+        guard packagedVersion.hasPrefix("local-"), currentVersion.hasPrefix("local-") else { return false }
+        let packagedBuild = packaged["built_at"] ?? ""
+        let currentBuild = current["built_at"] ?? ""
+        return !packagedBuild.isEmpty && packagedBuild > currentBuild
     }
 
     private func replaceDatabase(with source: URL) throws {
