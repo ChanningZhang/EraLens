@@ -71,7 +71,7 @@ Task Progress:
 - [ ] 3. 直接修改 data/imports/{slug}/cache.json
 - [ ] 4. 运行统一生成命令，生成 SQLite `import.sql` 与 manifest.json
 - [ ] 5. 校验 SQL
-- [ ] 6. 增量导入或全量重灌
+- [ ] 6. `pnpm db:import` 更新现有内容库并校验
 - [ ] 7. 验证 API、详情关联与时间轴显示
 ```
 
@@ -82,7 +82,7 @@ node data/imports/generate.mjs {slug}
 node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/imports/{slug}/import.sql
 ```
 
-校验器会读取 SQL 同目录的 `cache.json` 检查在位边界；失败时修缓存、重新生成，再校验。真实内容通过整库快照更新：运行 `pnpm data:build` 和 `pnpm data:validate`。API 和 iOS 使用同一 SQLite schema 与内容库；Xcode 不执行导入包 SQL。
+校验器会读取 SQL 同目录的 `cache.json` 检查在位边界；失败时修缓存、重新生成，再校验。普通数据更新运行 `pnpm db:import`，在事务中更新现有内容库并校验；重建限制、重建后重启 API 及验收要求遵循项目 `AGENTS.md`。API 和 iOS 使用同一 SQLite schema 与内容库；Xcode 不执行导入包 SQL。
 
 ## 验收
 

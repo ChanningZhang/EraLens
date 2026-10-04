@@ -84,7 +84,7 @@ Task Progress:
 - [ ] 3. 直接修改 data/imports/{slug}/cache.json 中的人物和 reign 记录
 - [ ] 4. 运行 generate.mjs
 - [ ] 5. 校验 import.sql、接续边界和称谓字段
-- [ ] 6. 增量导入或全量重灌
+- [ ] 6. `pnpm db:import` 更新现有内容库并校验
 - [ ] 7. 验收卡片、搜索、详情、正统色与并立布局
 ```
 
@@ -97,7 +97,7 @@ node data/imports/lib/auditImperialAppellationFields.mjs
 node data/imports/lib/auditPreQinXingShi.mjs
 ```
 
-校验器从 SQL 同目录的 `cache.json` 核对接续精度；校验失败时修缓存并重新生成，不要修生成的 SQL。所有包通过整库构建发布：运行 `pnpm data:build` 和 `pnpm data:validate`，无需数据库服务。Xcode 启动不执行导入脚本。
+校验器从 SQL 同目录的 `cache.json` 核对接续精度；校验失败时修缓存并重新生成，不要修生成的 SQL。普通数据更新运行 `pnpm db:import`，在事务中更新现有内容库并校验；重建限制、重建后重启 API 及验收要求遵循项目 `AGENTS.md`。Xcode 启动不执行导入脚本。
 
 ## 验收
 

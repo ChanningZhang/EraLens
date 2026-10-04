@@ -33,7 +33,7 @@ description: >-
 **三分法**（必须先做）：
 
 1. **数据错**：字段填错列、缺列、重复行、年代与史料不符 → 走本 skill，改 `data/imports/`。
-2. **导入残留**：同 id 或同名宽跨度旧行 → 核对快照与全部所有者源包，修源缓存并整库重建。
+2. **导入残留**：同 id 或同名宽跨度旧行 → 核对快照与全部所有者源包，修源缓存并通过 `pnpm db:import` 更新现有内容库。
 3. **渲染规则**：数据已正确仍显示错 → 才查 `@eralens/shared` / 前端；若需新规则，写抽象逻辑，不写个案分支。
 
 ```bash
@@ -50,11 +50,11 @@ Task Progress:
 - [ ] 1. 核对史料（维基/正史），不要只信当前缓存值
 - [ ] 2. 对照 schema，判定每个字符串应进哪一列
 - [ ] 3. 直接改 `data/imports/{slug}/cache.json`，来源/取舍写入该文件的 `manifest.sources` / `manifest.notes`
-- [ ] 4. 重新生成包 SQL → 全量构建、校验快照
+- [ ] 4. 重新生成包 SQL → `pnpm db:import` 更新现有内容库并校验
 - [ ] 5. 跑审计脚本 + 浏览器验收
 ```
 
-各包 `cache.json` 是事实源，字段为 camelCase；来源与说明放在缓存的 `manifest.sources` / `manifest.notes`，生成器据此输出 `manifest.json` 与 SQLite `import.sql`。校验器从同目录缓存检查接续边界；失败时修缓存并重生成，不能直接修改 SQL。真实数据采用整库快照：运行 `pnpm data:build` 和 `pnpm data:validate`。Xcode 启动不执行导入命令。
+各包 `cache.json` 是事实源，字段为 camelCase；来源与说明放在缓存的 `manifest.sources` / `manifest.notes`，生成器据此输出 `manifest.json` 与 SQLite `import.sql`。校验器从同目录缓存检查接续边界；失败时修缓存并重生成，不能直接修改 SQL。普通数据修复运行 `pnpm db:import`，在事务中更新现有内容库并校验。重建限制、重建后重启 API 及验收要求遵循项目 `AGENTS.md`。Xcode 启动不执行导入命令。
 
 ### 1. 调研
 
@@ -70,7 +70,7 @@ Task Progress:
 | 层级 | 允许 | 禁止 |
 |---|---|---|
 | `data/imports/{slug}/` | ✅ 源数据、generate、SQLite SQL | — |
-| `pnpm data:build` / `pnpm data:validate` | ✅ 构建与校验完整快照 | — |
+| `pnpm db:import` / `pnpm data:validate` | ✅ 更新现有内容库与校验完整快照 | ❌ 普通数据修复随意重建文件 |
 | `data/seed/*.json` | — | ❌ 不修生产数据 |
 | 前端 / API 映射 | 仅当数据已正确 | ❌ 用 hardcode 掩盖脏数据 |
 | `@eralens/shared` | 抽象规则、schema | ❌ 单实体特例（须用户同意） |
@@ -82,8 +82,7 @@ Task Progress:
 ```bash
 node data/imports/generate.mjs {slug}
 node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/imports/{slug}/import.sql
-pnpm data:build
-pnpm data:validate
+pnpm db:import
 ```
 
 新包或字段约定不明时，同时阅读 [eralens-period-import](../eralens-period-import/SKILL.md)。
@@ -122,7 +121,7 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 - 泳道卡片小字优先显示非空 `reigns.title`；title 为空时按年代选择人物庙谥：唐代起（包括明清）庙号优先于谥号，唐以前谥号优先。`reigns.era_names` 不参与称呼选择。
 - 明清皇帝的年号式泳道卡片称呼在导入时预先写入 `reigns.title`；`era_names` 仍保存完整年号列表，供详情事实展示和数据检索使用。朱元璋吴王段（`吴`）、努尔哈赤（`太祖`）、皇太极（`太宗`）保留原称号例外。
 - 人物详情页不优先 `reigns.title`：按在位起始年选择庙谥，唐以前谥号优先，唐代起（包括明清）庙号优先，再回退到另一种庙谥，随后依次回退 `reigns.title`、`persons.title`、人物姓名。此规则与泳道卡片优先 title 的规则分开维护。
-- 先秦卡片：主行读 `posthumous_name` / `reigns.title`；副行从不带姓氏的 `persons.name` 读取私名，结构化姓氏用于检索和相关展示。
+- 先秦在位卡片大字与人物详情大字统一按 `persons.posthumous_name` → `persons.title` → `persons.name` 回退；卡片副行仍从不带姓氏的 `persons.name` 读取私名，结构化姓氏用于检索和相关展示。
 - 先秦 `persons.ancestralXing` / `persons.clanShi` 直接写入时期包 `cache.json`；不要在生成时套模板或人物覆盖。
 
 字段细则与 INSERT 模板见 [reference.md](reference.md)；正反例见 [examples.md](examples.md)。

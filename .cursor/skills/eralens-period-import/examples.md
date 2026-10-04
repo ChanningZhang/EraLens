@@ -113,7 +113,7 @@ INSERT INTO events (
 ```bash
 node data/imports/generate.mjs tang-zhenguan
 node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/imports/tang-zhenguan/import.sql
-pnpm data:build && pnpm data:validate
+pnpm db:import
 curl -s "http://localhost:3001/api/timeline?from=7524&to=7795&scope=cn" | jq '.dynasties[].name,.reigns[].title'
 ```
 

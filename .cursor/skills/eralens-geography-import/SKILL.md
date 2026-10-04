@@ -58,6 +58,6 @@ node data/imports/generate.mjs {slug}
 node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/imports/{slug}/import.sql
 ```
 
-修改唯一所有者包后运行 `pnpm data:build` 和 `pnpm data:validate`，生成的 SQL、manifest 不手改。全量内容库按缓存重建，无需数据库服务。
+修改唯一所有者包后运行 `pnpm db:import`，在事务中更新现有内容库并校验，生成的 SQL、manifest 不手改。重建限制、重建后重启 API 及验收要求遵循项目 `AGENTS.md`。
 
 验收包括稳定 ID、无重复空间记录、无孤儿关联、来源保留、历史名称规范、时段及并立记录正确，以及重复增量导入幂等。

@@ -39,7 +39,7 @@ Task Progress:
 - [ ] 5. 运行统一生成器并用同目录缓存校验 SQL
 ```
 
-导入包生成 SQLite `import.sql` 供审阅。数据修改后运行 `pnpm data:build` 和 `pnpm data:validate`，通过整库快照更新 Web 与 iOS 内容。Xcode 启动不会运行数据导入命令。
+导入包生成 SQLite `import.sql` 供审阅。普通数据修改后运行 `pnpm db:import`，在事务中更新现有内容库并校验；重建限制、重建后重启 API 及验收要求遵循项目 `AGENTS.md`。Xcode 启动不会运行数据导入命令。
 
 ## modern_name 规范（必填）
 

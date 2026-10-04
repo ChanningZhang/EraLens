@@ -65,7 +65,7 @@ Task Progress:
 - [ ] 3. 冲突检查：查询 DB 已有 id
 - [ ] 4. 运行统一生成器，输出 SQLite `import.sql` 并刷新 `manifest.json`
 - [ ] 5. 校验：`node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/imports/{slug}/import.sql`
-- [ ] 6. 全量构建和校验：`pnpm data:build && pnpm data:validate`
+- [ ] 6. 更新现有内容库并校验：`pnpm db:import`
 - [ ] 7. 验收：启动 API 后 curl timeline/entity + 浏览器时间轴
 ```
 
@@ -129,7 +129,7 @@ Task Progress:
 - 事件 `{topic}`：`xuanwumen`、`muye`
 - 关系 `rel-{from}-{to}-{kind}`
 
-`persons.name` 使用常用姓名。先秦人物若姓、氏分别写在 `ancestralXing` / `clanShi`，`name` 只存私名/常用名，不拼姓或氏（如莒郊公存 `狂`，不存 `己狂`；未知姓名存 `？`，不拼姓氏）。其他时期保留通行可检索全名。时间轴卡片在始皇帝以前主行显示谥号/称号，由 `resolveReignCardLabel` 处理，不要为迁就卡片去改姓名字段。先秦王朝/人物须在 `cache.json` 直接写入 `ancestralXing` / `clanShi`；生成器和运行时不套姓氏默认表。常用称呼与人工别名仍写 `persons.alt_names`；数据库会把姓名、别名、姓/氏组合、庙谥、reign title、朝代名 + 庙谥预生成到 `persons.search_terms`，因此移除 `name` 中的姓氏不会丢失姓氏检索。
+`persons.name` 使用常用姓名。先秦人物若姓、氏分别写在 `ancestralXing` / `clanShi`，`name` 只存私名/常用名，不拼姓或氏（如莒郊公存 `狂`，不存 `己狂`；未知姓名存 `？`，不拼姓氏）。其他时期保留通行可检索全名。先秦在位卡片大字与人物详情大字依次回退 `persons.posthumous_name`、`persons.title`、`persons.name`，由 `resolveReignCardLabel` 等共享规则处理，不要为迁就展示去改姓名字段。先秦王朝/人物须在 `cache.json` 直接写入 `ancestralXing` / `clanShi`；生成器和运行时不套姓氏默认表。常用称呼与人工别名仍写 `persons.alt_names`；数据库会把姓名、别名、姓/氏组合、庙谥、reign title、朝代名 + 庙谥预生成到 `persons.search_terms`，因此移除 `name` 中的姓氏不会丢失姓氏检索。
 
 人物主要所属王朝写入 `persons.dynastyId`，帝王与非帝王统一使用该字段，不以是否有 `reign` 决定人物所属王朝。无单一可靠归属时留空。人物详情按 `dynastyId` 实时读取王朝 `altNames[0]`；新增或改动人物归属时编辑人物所属包的 `cache.json`，不要在补充包重复写人物行。
 
@@ -138,7 +138,7 @@ Task Progress:
 - `persons.search_terms` 是预计算的标准化 `text[]`，用于完整词命中；API 使用数组包含查询，依赖 `persons_search_terms_gin_idx`，禁止在请求时遍历全量 person/reign/dynasty 临时拼词。
 - 搜索词包括：`name`、`alt_names`、按结构化 `ancestral_xing` / `clan_shi` 生成的姓+名/氏+名、`posthumous_name`、`temple_name`、人物关联的 `reigns.title`，以及关联王朝 `name` / `alt_names` + 庙号或谥号（如 `唐太宗`、`唐文皇帝`）。不要把带朝代的组合词写回庙谥字段。
 - `name`、`alt_names`、`ancestral_xing`、`clan_shi`、`posthumous_name`、`temple_name` 发生变化，或关联 reign 的 `person_id` / `dynasty_id` / `title`、王朝 `name` / `alt_names` 发生变化后，必须刷新 `search_terms`。数据库触发器会自动刷新受影响人物。
-- 大批量脚本改写人物、在位或王朝相关字段后，搜索词由 SQLite 构建器通过共享 `buildPersonSearchTerms()` 重建；数据变更后运行 `pnpm data:build` 和 `pnpm data:validate`，不直接修改快照中的搜索列。
+- 大批量脚本改写人物、在位或王朝相关字段后，搜索词由 SQLite SQL 生成器通过共享 `buildPersonSearchTerms()` 重建；数据变更后运行 `pnpm db:import`，不直接修改快照中的搜索列。
 - `personSql` 不手填 `search_terms`；继续写结构化来源字段，由数据库统一派生，避免各导入包算法漂移。
 
 **谥号 / 庙号 / 年号字段**（与商周一致）：
@@ -219,7 +219,7 @@ node data/imports/generate.mjs {slug}
 
 这会从 `cache.json` 序列化 SQLite `import.sql` 和 `manifest.json`。全量生成：`node data/imports/generate.mjs --all`。所有包先通过行所有权审计；SQLite SQL 使用共用序列化器 `data/imports/lib/sqlitePackageRows.mjs`。
 
-**统一生成器与整库构建**：包 SQL 为 SQLite 语法，用于审阅，不作为生产增量写入脚本。`pnpm data:build` 会审计所有缓存，再将全部最终记录放入一个临时数据库事务中，按 `dynasty_groups`、`dynasties`、`persons`、`locations`、`reigns`、`events`、关联、关系和地点映射顺序写入；之后根据共享规则重建搜索索引、全量校验并原子替换快照。源包不支持 `preSql` / `postSql`、`updates` 或手写库清理语句；删除或合并实体要直接反映在唯一所有者缓存和所有引用中。
+**统一生成器与内容库更新**：包 SQL 为 SQLite 语法，用于审阅，不作为生产增量写入脚本。普通数据更新使用 `pnpm db:import`：审计所有缓存、生成全量 SQL 与搜索索引，在事务中按外键依赖顺序更新现有内容库并校验，保留 SQLite 文件。仅首次初始化、schema 变更或确有必要时使用 `pnpm data:build` / `pnpm db:setup` 构建临时数据库并替换快照；替换后必须重启正在运行的 API，遵循项目 `AGENTS.md` 的版本及页面验收要求。源包不支持 `preSql` / `postSql`、`updates` 或手写库清理语句；删除或合并实体要直接反映在唯一所有者缓存和所有引用中。
 
 ### 5. 校验
 
@@ -241,15 +241,14 @@ node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/impor
 
 必须通过后再入库。校验会检查 SQL 结构，并读取同目录 `cache.json` 校验在位接续边界；若失败，回到缓存修正后重新生成，再重跑校验。它只看 INSERT **列名**里的生成列 `span`；`time_mode` 取值 `'span'` 合法。禁止再写 `era_names` 表或 `reigns.posthumous_name`/`temple_name`。
 
-### 6. 构建
+### 6. 入库
 
 ```bash
 node data/imports/generate.mjs {slug}
-pnpm data:build
-pnpm data:validate
+pnpm db:import
 ```
 
-所有 Web/iOS 历史内容采用整库快照发布。开发环境可运行 `pnpm db:setup`（同义于完整构建和校验）；无需 Docker 数据库。Web API 从 `CONTENT_DB_PATH` 加载只读内容快照，服务设置独立保存在 `STATE_DB_PATH`。iOS 使用 `pnpm ios:sync` 将同一已校验快照打包；Xcode 启动不执行数据导入。
+所有 Web/iOS 历史内容采用同一内容快照发布。普通数据变更按上述命令更新现有文件；重建限制及重建后重启 API 的要求见项目 `AGENTS.md`。Web API 从 `CONTENT_DB_PATH` 加载只读内容快照，服务设置独立保存在 `STATE_DB_PATH`。iOS 使用 `pnpm ios:sync` 将同一已校验快照打包；Xcode 启动不执行数据导入。
 
 ### 7. 验收
 
@@ -259,7 +258,7 @@ curl -s "http://localhost:3001/api/timeline?from=START&to=END&scope=cn" | jq '.d
 curl -s "http://localhost:3001/api/bounds"
 ```
 
-浏览器默认读 HTTP（数据库）。入库后若界面未更新，**硬刷新**（bounds 查询 `staleTime: Infinity`）。用搜索跳到朝代名或事件名，比拖标尺快。`Home` 跳到 `bounds.minAbs`（可能早于王朝始年，若有更早的 approximate point）。若仍为 Mock 数据，检查 `VITE_DATA_SOURCE` 是否为 `http`。
+浏览器默认读 HTTP（数据库）。入库后核对 `/api/health` 的 `datasetVersion` 与库内版本、相关实体返回值，再刷新页面验收（bounds 查询 `staleTime: Infinity`）；重建或替换 SQLite 文件时必须先重启正在运行的 API。用搜索跳到朝代名或事件名，比拖标尺快。`Home` 跳到 `bounds.minAbs`（可能早于王朝始年，若有更早的 approximate point）。若仍为 Mock 数据，检查 `VITE_DATA_SOURCE` 是否为 `http`。
 
 确认：王朝行、在位卡片和事件标记出现；point 显示时点，span 显示真实持续过程，近似和插值按各端点 confidence 展示。
 

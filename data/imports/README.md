@@ -40,7 +40,7 @@ node data/imports/generate.mjs --all
 
 缓存不再支持 `preSql` / `postSql`、跨包 `updates` 或增量合并指令。整库构建直接表达所有源包的最终状态，并在事务中按外键依赖顺序载入。Xcode 构建和运行不会执行导入包 SQL。
 
-单包变更流程：编辑 `cache.json`（含 `manifest.sources` / `manifest.notes`）→ `node data/imports/generate.mjs {slug}` → 检查包 SQL → `pnpm db:import`。全量更新前可运行 `node data/imports/generate.mjs --all`；`pnpm db:import` 会审计所有包，生成并执行全量 SQLite SQL，在单事务内更新现有内容库并校验，API 无需重启。`pnpm db:setup` / `pnpm data:build` 用于首次初始化或 schema 变更，会重建快照文件。
+单包变更流程：编辑 `cache.json`（含 `manifest.sources` / `manifest.notes`）→ `node data/imports/generate.mjs {slug}` → 检查包 SQL → `pnpm db:import`。全量更新前可运行 `node data/imports/generate.mjs --all`；`pnpm db:import` 会审计所有包，生成并执行全量 SQLite SQL，在单事务内更新现有内容库并校验，API 无需重启。普通数据更新不得随意重建文件；`pnpm db:setup` / `pnpm data:build` 仅用于首次初始化、schema 变更或确有必要的重建。重建或替换 SQLite 文件后必须重启正在运行的 API，并核对 `/api/health` 的版本、相关实体返回值和刷新后的页面，详见项目 `AGENTS.md`。
 
 API 与移动 SQLite 的契约对比使用 `pnpm data:mobile:contract`；附加 `--all-entities` 可检查全部王朝、人物、事件与在位详情。
 

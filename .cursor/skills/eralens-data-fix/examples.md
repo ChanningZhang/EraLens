@@ -114,4 +114,4 @@ vim data/seed/timeline.json
 pnpm data:build
 ```
 
-应直接改 `data/imports/{slug}/cache.json`（包含 `manifest.sources` / `manifest.notes`），运行统一生成器并用校验器检查，再执行 `pnpm data:build` 与 `pnpm data:validate` 发布完整 SQLite 快照。
+应直接改 `data/imports/{slug}/cache.json`（包含 `manifest.sources` / `manifest.notes`），运行统一生成器并用校验器检查，再执行 `pnpm db:import` 更新现有内容库并校验。确需重建或替换 SQLite 文件时，必须重启正在运行的 API 并核对版本、相关返回值和刷新后的页面，遵循项目 `AGENTS.md`。

@@ -120,11 +120,19 @@ function firstNonEmpty(...values: Array<string | null | undefined>): string | nu
   return null;
 }
 
-/** Large title in person details: name, then posthumous name, then stored person title. */
+/** Large title in person details. Pre-Qin people prefer appellations over personal names. */
 export function resolvePersonDetailTitle(
   personName?: string | null,
   personContext?: PersonDisplayContext | null,
+  options: { preQin?: boolean } = {},
 ): string {
+  if (options.preQin) {
+    return firstNonEmpty(
+      resolvePosthumousAppellation(personContext)?.name,
+      personContext?.title,
+      personName,
+    ) ?? "";
+  }
   return firstNonEmpty(
     personName,
     resolvePosthumousAppellation(personContext)?.name,
@@ -175,12 +183,16 @@ export function resolvePreQinNameFacts(
   return facts;
 }
 
-/** Pre-Qin card primary: use the stored person-level 谥号 when available. */
+/** Pre-Qin card primary follows the shared large-title priority order. */
 function resolvePreQinCardPrimary(
   personContext?: PersonDisplayContext | null,
+  personName?: string | null,
 ): string | null {
-  const posthumous = firstAppellation(personContext?.posthumousNames);
-  return posthumous || null;
+  return firstNonEmpty(
+    firstAppellation(personContext?.posthumousNames),
+    personContext?.title,
+    personName,
+  );
 }
 
 function resolvePreQinGivenName(
@@ -190,7 +202,7 @@ function resolvePreQinGivenName(
 ): string | null {
   if (!personName || isPlaceholderPersonName(personName)) return null;
   const appellation =
-    resolvePreQinCardPrimary(personContext) ??
+    resolvePreQinCardPrimary(personContext, personName) ??
     firstNonEmpty(reign.title) ??
     personName;
   if (!appellation || givenNameIsRedundant(appellation, personName)) return null;
@@ -208,17 +220,14 @@ export function resolveReignPrimaryLabel(
   personContext?: PersonDisplayContext | null,
 ): string {
   const personalName = personalNamePrimary(personName);
+  if (usesPreQinCardLayout(reign)) {
+    return resolvePreQinCardPrimary(personContext, personalName) ?? "";
+  }
   if (!personalName) {
     return firstNonEmpty(
       personContext?.title,
       resolvePosthumousAppellation(personContext)?.name,
     ) ?? "";
-  }
-  if (usesPreQinCardLayout(reign)) {
-    return (
-      resolvePreQinCardPrimary(personContext) ??
-      personalName
-    );
   }
   return personalName;
 }

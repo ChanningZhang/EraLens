@@ -273,7 +273,9 @@ function buildPersonEntityDetail(
       ? `${heading} · ${focusReignIndex}/${reignCount}`
       : heading
     : undefined;
-  const title = resolvePersonDetailTitle(person.name, clan);
+  const title = resolvePersonDetailTitle(person.name, clan, {
+    preQin: Boolean(preQinReign || preQinByBirth),
+  });
   const factReigns = focusReign ? [focusReign] : personReigns;
   const factEraNames = factReigns.flatMap((reign) =>
     reign.eraNames.filter(Boolean),
