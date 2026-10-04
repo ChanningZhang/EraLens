@@ -250,10 +250,13 @@ function buildPersonEntityDetail(
     : undefined;
   const reignCount = options.reignCount ?? personReigns.length;
   const detailReign = focusReign ?? personReigns[0];
-  const headingDynasty = person.dynastyId
-    ? dynastyMap.get(person.dynastyId)
-    : undefined;
-  const headingDynastyName = headingDynasty?.altNames?.[0]?.trim() || undefined;
+  const headingDynasty = detailReign
+    ? dynastyMap.get(detailReign.dynastyId)
+    : person.dynastyId
+      ? dynastyMap.get(person.dynastyId)
+      : undefined;
+  const headingDynastyName = headingDynasty?.altNames?.[0]?.trim() ||
+    (headingDynasty ? resolveDynastyDefaultName(headingDynasty) : undefined);
   const heading = resolveReignDetailHeading(
     detailReign,
     headingDynastyName,

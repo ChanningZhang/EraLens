@@ -433,7 +433,7 @@ export function resolveReignCardMeta(
       { ...reign, title: "" },
       personContext,
     );
-    if (appellation && appellation.kind !== "regnal") {
+    if (appellation) {
       candidates.push({ label: APPELLATION_LABELS[appellation.kind], name: appellation.name });
     }
   }

@@ -568,7 +568,7 @@ describe("buildEntityDetail person", () => {
       title: "刘？", subtitle: "西汉 · 汉前少帝",
     });
     expect(buildEntityDetail(store, { type: "reign", id: "reign-unnamed-ruler" })).toMatchObject({
-      title: "刘？", subtitle: "西汉",
+      title: "刘？", subtitle: "西汉 · 汉前少帝",
     });
   });
 

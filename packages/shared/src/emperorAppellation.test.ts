@@ -546,7 +546,7 @@ describe("resolveReignDetailHeading", () => {
     )).toBe("唐 · 谥号");
     expect(resolveReignDetailHeading(
       focusedWithoutEither, "唐", "某", mergePersonContext(focusedWithoutEither),
-    )).toBe("唐");
+    )).toBe("唐 · 人物称号");
     expect(resolveReignDetailHeading(
       source({ start: { year: 900, month: 1 }, title: "" }), "唐", "某", withBoth,
       { focusedReign: false, periodYear: 900 },
