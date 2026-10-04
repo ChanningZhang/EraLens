@@ -1,3 +1,0 @@
-ALTER TABLE "reigns"
-  ALTER COLUMN "end_year" DROP NOT NULL,
-  ALTER COLUMN "end_month" DROP NOT NULL;

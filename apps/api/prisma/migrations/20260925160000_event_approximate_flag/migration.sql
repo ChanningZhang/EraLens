@@ -1,2 +1,0 @@
-ALTER TABLE "events"
-ADD COLUMN "is_approximate" BOOLEAN NOT NULL DEFAULT FALSE;
