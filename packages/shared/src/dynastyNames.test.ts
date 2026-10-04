@@ -23,7 +23,7 @@ const reign: Reign = {
 };
 const store: TimelineDataStore = {
   dynasties: [dynasty], reigns: [reign], events: [], relations: [],
-  persons: [{ id: "ruler", name: "某人", roles: ["君主"], altNames: [], links: [], posthumousNames: [], templeNames: [] }],
+  persons: [{ id: "ruler", name: "某人", roles: ["君主"], altNames: [], links: [], posthumousNames: [], templeNames: ["太祖"] }],
 };
 
 describe("dynasty names", () => {
@@ -81,12 +81,13 @@ describe("dynasty names", () => {
   });
 
   it("uses the representative name in focused and overview person details, including related summaries", () => {
-    for (const options of [{}, { focusReignId: reign.id }, { focusReignId: reign.id, atAbs: absMonth(1900) }]) {
+    expect(buildEntityDetail(store, { type: "person", id: "ruler" }).subtitle).toBe("代表名称 · 太祖");
+    for (const options of [{ focusReignId: reign.id }, { focusReignId: reign.id, atAbs: absMonth(1900) }]) {
       expect(buildEntityDetail(store, { type: "person", id: "ruler" }, options).subtitle).toBe("代表名称 · 君主");
     }
     expect(buildEntityDetail(store, { type: "reign", id: reign.id }).subtitle).toBe("代表名称 · 君主");
     const associated = { ...store, associations: [{ aRef: `dynasty:${dynasty.id}`, bRef: "person:ruler" }] };
-    expect(buildEntityDetail(associated, { type: "dynasty", id: dynasty.id }).related.find(item => item.ref.type === "person")?.subtitle).toBe("代表名称 · 君主");
+    expect(buildEntityDetail(associated, { type: "dynasty", id: dynasty.id }).related.find(item => item.ref.type === "person")?.subtitle).toBe("代表名称 · 太祖");
   });
 
   it("resolves dynasty detail titles from optional time context", () => {

@@ -656,7 +656,7 @@
       "id": "reign-cao-r1-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r1",
-      "title": "太伯",
+      "title": "",
       "start": {
         "year": -1015,
         "month": 1,
@@ -706,7 +706,7 @@
       "id": "reign-cao-r3-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r3",
-      "title": "宫伯",
+      "title": "",
       "start": {
         "year": -924,
         "month": 1,
@@ -731,7 +731,7 @@
       "id": "reign-cao-r4-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r4",
-      "title": "孝伯",
+      "title": "",
       "start": {
         "year": -884,
         "month": 1,
@@ -756,7 +756,7 @@
       "id": "reign-cao-r5-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r5",
-      "title": "夷伯",
+      "title": "",
       "start": {
         "year": -864,
         "month": 1,
@@ -781,7 +781,7 @@
       "id": "reign-cao-r6-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r6",
-      "title": "幽伯",
+      "title": "",
       "start": {
         "year": -834,
         "month": 1,
@@ -806,7 +806,7 @@
       "id": "reign-cao-r7-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r7",
-      "title": "戴伯",
+      "title": "",
       "start": {
         "year": -825,
         "month": 1,
@@ -831,7 +831,7 @@
       "id": "reign-cao-r8-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r8",
-      "title": "惠伯",
+      "title": "",
       "start": {
         "year": -795,
         "month": 1,
@@ -856,7 +856,7 @@
       "id": "reign-cao-r9-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r9",
-      "title": "废伯",
+      "title": "",
       "start": {
         "year": -760,
         "month": 1,
@@ -881,7 +881,7 @@
       "id": "reign-cao-r10-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r10",
-      "title": "穆公",
+      "title": "",
       "start": {
         "year": -759,
         "month": 1,
@@ -906,7 +906,7 @@
       "id": "reign-cao-r11-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r11",
-      "title": "桓公",
+      "title": "",
       "start": {
         "year": -756,
         "month": 1,
@@ -931,7 +931,7 @@
       "id": "reign-cao-r12-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r12",
-      "title": "庄公",
+      "title": "",
       "start": {
         "year": -701,
         "month": 1,
@@ -956,7 +956,7 @@
       "id": "reign-cao-r13-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r13",
-      "title": "釐公",
+      "title": "",
       "start": {
         "year": -670,
         "month": 1,
@@ -981,7 +981,7 @@
       "id": "reign-cao-r14-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r14",
-      "title": "昭公",
+      "title": "",
       "start": {
         "year": -661,
         "month": 1,
@@ -1006,7 +1006,7 @@
       "id": "reign-cao-r15-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r15",
-      "title": "共公",
+      "title": "",
       "start": {
         "year": -652,
         "month": 1,
@@ -1031,7 +1031,7 @@
       "id": "reign-cao-r16-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r16",
-      "title": "文公",
+      "title": "",
       "start": {
         "year": -617,
         "month": 1,
@@ -1056,7 +1056,7 @@
       "id": "reign-cao-r17-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r17",
-      "title": "宣公",
+      "title": "",
       "start": {
         "year": -594,
         "month": 1,
@@ -1081,7 +1081,7 @@
       "id": "reign-cao-r18-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r18",
-      "title": "成公",
+      "title": "",
       "start": {
         "year": -577,
         "month": 1,
@@ -1106,7 +1106,7 @@
       "id": "reign-cao-r19-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r19",
-      "title": "武公",
+      "title": "",
       "start": {
         "year": -554,
         "month": 1,
@@ -1131,7 +1131,7 @@
       "id": "reign-cao-r20-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r20",
-      "title": "平公",
+      "title": "",
       "start": {
         "year": -527,
         "month": 1,
@@ -1156,7 +1156,7 @@
       "id": "reign-cao-r21-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r21",
-      "title": "悼公",
+      "title": "",
       "start": {
         "year": -523,
         "month": 1,
@@ -1181,7 +1181,7 @@
       "id": "reign-cao-r22-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r22",
-      "title": "声公",
+      "title": "",
       "start": {
         "year": -514,
         "month": 1,
@@ -1206,7 +1206,7 @@
       "id": "reign-cao-r23-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r23",
-      "title": "隐公",
+      "title": "",
       "start": {
         "year": -509,
         "month": 1,
@@ -1231,7 +1231,7 @@
       "id": "reign-cao-r24-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r24",
-      "title": "靖公",
+      "title": "",
       "start": {
         "year": -505,
         "month": 1,
@@ -1256,7 +1256,7 @@
       "id": "reign-cao-r25-cao-chunqiu",
       "dynastyId": "cao-chunqiu",
       "personId": "cao-r25",
-      "title": "伯阳",
+      "title": "",
       "start": {
         "year": -501,
         "month": 1,

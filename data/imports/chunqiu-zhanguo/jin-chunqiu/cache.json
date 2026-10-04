@@ -1194,7 +1194,7 @@
       "id": "reign-jin-r1-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r1",
-      "title": "燮",
+      "title": "",
       "start": {
         "year": -1006,
         "month": 1,
@@ -1221,7 +1221,7 @@
       "id": "reign-jin-r2-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r2",
-      "title": "武侯",
+      "title": "",
       "start": {
         "year": -969,
         "month": 1,
@@ -1248,7 +1248,7 @@
       "id": "reign-jin-r3-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r3",
-      "title": "成侯",
+      "title": "",
       "start": {
         "year": -932,
         "month": 1,
@@ -1275,7 +1275,7 @@
       "id": "reign-jin-r4-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r4",
-      "title": "厉侯",
+      "title": "",
       "start": {
         "year": -895,
         "month": 1,
@@ -1301,7 +1301,7 @@
       "id": "reign-jin-r5-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r5",
-      "title": "靖侯",
+      "title": "",
       "start": {
         "year": -858,
         "month": 1,
@@ -1326,7 +1326,7 @@
       "id": "reign-jin-r6-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r6",
-      "title": "釐侯",
+      "title": "",
       "start": {
         "year": -840,
         "month": 1,
@@ -1351,7 +1351,7 @@
       "id": "reign-jin-r7-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r7",
-      "title": "献侯",
+      "title": "",
       "start": {
         "year": -822,
         "month": 1,
@@ -1376,7 +1376,7 @@
       "id": "reign-jin-r8-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r8",
-      "title": "穆侯",
+      "title": "",
       "start": {
         "year": -811,
         "month": 1,
@@ -1401,7 +1401,7 @@
       "id": "reign-jin-r9-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r9",
-      "title": "殇叔",
+      "title": "",
       "start": {
         "year": -784,
         "month": 1,
@@ -1426,7 +1426,7 @@
       "id": "reign-jin-r10-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r10",
-      "title": "文侯",
+      "title": "",
       "start": {
         "year": -780,
         "month": 1,
@@ -1451,7 +1451,7 @@
       "id": "reign-jin-r11-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r11",
-      "title": "昭侯",
+      "title": "",
       "start": {
         "year": -745,
         "month": 1,
@@ -1501,7 +1501,7 @@
       "id": "reign-jin-r13-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r13",
-      "title": "孝侯",
+      "title": "",
       "start": {
         "year": -739,
         "month": 1,
@@ -1551,7 +1551,7 @@
       "id": "reign-jin-r15-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r15",
-      "title": "鄂侯",
+      "title": "",
       "start": {
         "year": -723,
         "month": 1,
@@ -1576,7 +1576,7 @@
       "id": "reign-jin-r16-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r16",
-      "title": "哀侯",
+      "title": "",
       "start": {
         "year": -717,
         "month": 1,
@@ -1626,7 +1626,7 @@
       "id": "reign-jin-r17-main-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r17",
-      "title": "武公",
+      "title": "",
       "start": {
         "year": -678,
         "month": 1,
@@ -1651,7 +1651,7 @@
       "id": "reign-jin-r18-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r18",
-      "title": "小子侯",
+      "title": "",
       "start": {
         "year": -708,
         "month": 1,
@@ -1676,7 +1676,7 @@
       "id": "reign-jin-r19-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r19",
-      "title": "缗",
+      "title": "",
       "start": {
         "year": -704,
         "month": 1,
@@ -1701,7 +1701,7 @@
       "id": "reign-jin-r20-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r20",
-      "title": "献公",
+      "title": "",
       "start": {
         "year": -676,
         "month": 1,
@@ -1726,7 +1726,7 @@
       "id": "reign-jin-r21-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r21",
-      "title": "惠公",
+      "title": "",
       "start": {
         "year": -650,
         "month": 1,
@@ -1751,7 +1751,7 @@
       "id": "reign-jin-r22-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r22",
-      "title": "怀公",
+      "title": "",
       "start": {
         "year": -637,
         "month": 1,
@@ -1776,7 +1776,7 @@
       "id": "reign-ji-chonger-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "ji-chonger",
-      "title": "文公",
+      "title": "",
       "start": {
         "year": -636,
         "month": 1,
@@ -1801,7 +1801,7 @@
       "id": "reign-jin-r24-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r24",
-      "title": "襄公",
+      "title": "",
       "start": {
         "year": -627,
         "month": 1,
@@ -1826,7 +1826,7 @@
       "id": "reign-jin-r25-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r25",
-      "title": "灵公",
+      "title": "",
       "start": {
         "year": -620,
         "month": 1,
@@ -1851,7 +1851,7 @@
       "id": "reign-jin-r26-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r26",
-      "title": "成公",
+      "title": "",
       "start": {
         "year": -606,
         "month": 1,
@@ -1876,7 +1876,7 @@
       "id": "reign-jin-r27-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r27",
-      "title": "景公",
+      "title": "",
       "start": {
         "year": -599,
         "month": 1,
@@ -1901,7 +1901,7 @@
       "id": "reign-jin-r28-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r28",
-      "title": "厉公",
+      "title": "",
       "start": {
         "year": -580,
         "month": 1,
@@ -1926,7 +1926,7 @@
       "id": "reign-jin-r29-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r29",
-      "title": "悼公",
+      "title": "",
       "start": {
         "year": -572,
         "month": 1,
@@ -1951,7 +1951,7 @@
       "id": "reign-jin-r30-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r30",
-      "title": "平公",
+      "title": "",
       "start": {
         "year": -557,
         "month": 1,
@@ -1976,7 +1976,7 @@
       "id": "reign-jin-r31-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r31",
-      "title": "昭公",
+      "title": "",
       "start": {
         "year": -531,
         "month": 1,
@@ -2001,7 +2001,7 @@
       "id": "reign-jin-r32-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r32",
-      "title": "顷公",
+      "title": "",
       "start": {
         "year": -525,
         "month": 1,
@@ -2026,7 +2026,7 @@
       "id": "reign-jin-r33-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r33",
-      "title": "定公",
+      "title": "",
       "start": {
         "year": -511,
         "month": 1,
@@ -2051,7 +2051,7 @@
       "id": "reign-jin-r34-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r34",
-      "title": "出公",
+      "title": "",
       "start": {
         "year": -474,
         "month": 1,
@@ -2076,7 +2076,7 @@
       "id": "reign-jin-r35-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r35",
-      "title": "哀公",
+      "title": "",
       "start": {
         "year": -451,
         "month": 1,
@@ -2101,7 +2101,7 @@
       "id": "reign-jin-r36-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r36",
-      "title": "幽公",
+      "title": "",
       "start": {
         "year": -433,
         "month": 1,
@@ -2126,7 +2126,7 @@
       "id": "reign-jin-r37-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r37",
-      "title": "烈公",
+      "title": "",
       "start": {
         "year": -415,
         "month": 1,
@@ -2151,7 +2151,7 @@
       "id": "reign-jin-r38-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r38",
-      "title": "孝公",
+      "title": "",
       "start": {
         "year": -388,
         "month": 1,
@@ -2176,7 +2176,7 @@
       "id": "reign-jin-r39-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-r39",
-      "title": "静公",
+      "title": "",
       "start": {
         "year": -356,
         "month": 1,
@@ -2201,7 +2201,7 @@
       "id": "reign-jin-xi-qi-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-xi-qi",
-      "title": "奚齐",
+      "title": "",
       "start": {
         "year": -651,
         "month": 8,
@@ -2226,7 +2226,7 @@
       "id": "reign-jin-zhuo-zi-jin-chunqiu",
       "dynastyId": "jin-chunqiu",
       "personId": "jin-zhuo-zi",
-      "title": "卓子",
+      "title": "",
       "start": {
         "year": -651,
         "month": 9,

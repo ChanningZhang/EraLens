@@ -1510,7 +1510,7 @@
       "id": "reign-chu-r16-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r16",
-      "title": "武王",
+      "title": "",
       "start": {
         "year": -740,
         "month": 1,
@@ -1535,7 +1535,7 @@
       "id": "reign-chu-r17-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r17",
-      "title": "文王",
+      "title": "",
       "start": {
         "year": -689,
         "month": 1,
@@ -1585,7 +1585,7 @@
       "id": "reign-chu-r19-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r19",
-      "title": "成王",
+      "title": "",
       "start": {
         "year": -671,
         "month": 1,
@@ -1610,7 +1610,7 @@
       "id": "reign-chu-r20-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r20",
-      "title": "穆王",
+      "title": "",
       "start": {
         "year": -625,
         "month": 1,
@@ -1635,7 +1635,7 @@
       "id": "reign-xiong-zhuang-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "xiong-zhuang",
-      "title": "庄王",
+      "title": "",
       "start": {
         "year": -613,
         "month": 1,
@@ -1660,7 +1660,7 @@
       "id": "reign-chu-r22-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r22",
-      "title": "共王",
+      "title": "",
       "start": {
         "year": -590,
         "month": 1,
@@ -1685,7 +1685,7 @@
       "id": "reign-chu-r23-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r23",
-      "title": "康王",
+      "title": "",
       "start": {
         "year": -559,
         "month": 1,
@@ -1735,7 +1735,7 @@
       "id": "reign-chu-r25-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r25",
-      "title": "灵王",
+      "title": "",
       "start": {
         "year": -540,
         "month": 1,
@@ -1760,7 +1760,7 @@
       "id": "reign-chu-r26-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r26",
-      "title": "比",
+      "title": "",
       "start": {
         "year": -529,
         "month": 1,
@@ -1785,7 +1785,7 @@
       "id": "reign-chu-r27-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r27",
-      "title": "平王",
+      "title": "",
       "start": {
         "year": -528,
         "month": 1,
@@ -1810,7 +1810,7 @@
       "id": "reign-chu-r28-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r28",
-      "title": "昭王",
+      "title": "",
       "start": {
         "year": -515,
         "month": 1,
@@ -1835,7 +1835,7 @@
       "id": "reign-chu-r29-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r29",
-      "title": "惠王",
+      "title": "",
       "start": {
         "year": -488,
         "month": 1,
@@ -1860,7 +1860,7 @@
       "id": "reign-chu-r30-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r30",
-      "title": "简王",
+      "title": "",
       "start": {
         "year": -431,
         "month": 1,
@@ -1885,7 +1885,7 @@
       "id": "reign-chu-r31-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r31",
-      "title": "声王",
+      "title": "",
       "start": {
         "year": -407,
         "month": 1,
@@ -1910,7 +1910,7 @@
       "id": "reign-chu-r32-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r32",
-      "title": "悼王",
+      "title": "",
       "start": {
         "year": -401,
         "month": 1,
@@ -1935,7 +1935,7 @@
       "id": "reign-chu-r33-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r33",
-      "title": "肃王",
+      "title": "",
       "start": {
         "year": -380,
         "month": 1,
@@ -1960,7 +1960,7 @@
       "id": "reign-chu-r34-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r34",
-      "title": "宣王",
+      "title": "",
       "start": {
         "year": -369,
         "month": 1,
@@ -1985,7 +1985,7 @@
       "id": "reign-chu-r35-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r35",
-      "title": "威王",
+      "title": "",
       "start": {
         "year": -339,
         "month": 1,
@@ -2010,7 +2010,7 @@
       "id": "reign-chu-r36-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r36",
-      "title": "怀王",
+      "title": "",
       "start": {
         "year": -328,
         "month": 1,
@@ -2035,7 +2035,7 @@
       "id": "reign-chu-r37-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r37",
-      "title": "顷襄王",
+      "title": "",
       "start": {
         "year": -298,
         "month": 1,
@@ -2060,7 +2060,7 @@
       "id": "reign-chu-r38-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r38",
-      "title": "考烈王",
+      "title": "",
       "start": {
         "year": -262,
         "month": 1,
@@ -2085,7 +2085,7 @@
       "id": "reign-chu-r39-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r39",
-      "title": "幽王",
+      "title": "",
       "start": {
         "year": -237,
         "month": 1,
@@ -2110,7 +2110,7 @@
       "id": "reign-chu-r40-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r40",
-      "title": "哀王",
+      "title": "",
       "start": {
         "year": -228,
         "month": 1,
@@ -2135,7 +2135,7 @@
       "id": "reign-chu-r41-chu-chunqiu",
       "dynastyId": "chu-chunqiu",
       "personId": "chu-r41",
-      "title": "负刍",
+      "title": "",
       "start": {
         "year": -227,
         "month": 1,

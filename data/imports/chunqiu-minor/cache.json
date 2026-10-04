@@ -2074,7 +2074,7 @@
       "id": "reign-xue-r1-xue-chunqiu",
       "dynastyId": "xue-chunqiu",
       "personId": "xue-r1",
-      "title": "献公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -548,
@@ -2099,7 +2099,7 @@
       "id": "reign-xue-r2-xue-chunqiu",
       "dynastyId": "xue-chunqiu",
       "personId": "xue-r2",
-      "title": "襄公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -510,
@@ -2149,7 +2149,7 @@
       "id": "reign-xue-r4-xue-chunqiu",
       "dynastyId": "xue-chunqiu",
       "personId": "xue-r4",
-      "title": "惠公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -496,
@@ -2199,7 +2199,7 @@
       "id": "reign-teng-r1-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r1",
-      "title": "庄公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -716,
@@ -2302,7 +2302,7 @@
       "id": "reign-teng-r7-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r7",
-      "title": "宣公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -659,
@@ -2356,7 +2356,7 @@
       "id": "reign-teng-r8-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r8",
-      "title": "孝侯",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -630,
@@ -2383,7 +2383,7 @@
       "id": "reign-teng-r9-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r9",
-      "title": "昭公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -622,
@@ -2409,7 +2409,7 @@
       "id": "reign-teng-r33-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r33",
-      "title": "？",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -483,
@@ -2435,7 +2435,7 @@
       "id": "reign-teng-r34-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r34",
-      "title": "？",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -471,
@@ -2462,7 +2462,7 @@
       "id": "reign-teng-r35-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r35",
-      "title": "？",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -459,
@@ -2489,7 +2489,7 @@
       "id": "reign-teng-r36-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r36",
-      "title": "？",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -447,
@@ -2516,7 +2516,7 @@
       "id": "reign-teng-r37-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r37",
-      "title": "？",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -435,
@@ -2543,7 +2543,7 @@
       "id": "reign-teng-r31-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r31",
-      "title": "？",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -424,
@@ -2569,7 +2569,7 @@
       "id": "reign-teng-r2-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r2",
-      "title": "文公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -599,
@@ -2594,7 +2594,7 @@
       "id": "reign-teng-r3-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r3",
-      "title": "成公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -574,
@@ -2619,7 +2619,7 @@
       "id": "reign-teng-r4-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r4",
-      "title": "悼公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -538,
@@ -2644,7 +2644,7 @@
       "id": "reign-teng-r5-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r5",
-      "title": "顷公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -513,
@@ -2669,7 +2669,7 @@
       "id": "reign-teng-r6-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r6",
-      "title": "隐公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -490,
@@ -2694,7 +2694,7 @@
       "id": "reign-qi-state-r1-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r1",
-      "title": "武公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -750,
@@ -2719,7 +2719,7 @@
       "id": "reign-qi-state-r1b-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r1b",
-      "title": "靖公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -703,
@@ -2744,7 +2744,7 @@
       "id": "reign-qi-state-gong-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-gong",
-      "title": "共公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -680,
@@ -2769,7 +2769,7 @@
       "id": "reign-qi-state-de-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-de",
-      "title": "德公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -672,
@@ -2794,7 +2794,7 @@
       "id": "reign-qi-state-r1c-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r1c",
-      "title": "成公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -654,
@@ -2819,7 +2819,7 @@
       "id": "reign-qi-state-r2-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r2",
-      "title": "桓公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -636,
@@ -2844,7 +2844,7 @@
       "id": "reign-qi-state-xiao-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-xiao",
-      "title": "孝公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -566,
@@ -2869,7 +2869,7 @@
       "id": "reign-qi-state-r3-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r3",
-      "title": "文公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -549,
@@ -2894,7 +2894,7 @@
       "id": "reign-qi-state-r4-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r4",
-      "title": "平公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -535,
@@ -2919,7 +2919,7 @@
       "id": "reign-qi-state-dao-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-dao",
-      "title": "悼公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -517,
@@ -2944,7 +2944,7 @@
       "id": "reign-qi-state-yin-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-yin",
-      "title": "隐公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -506,
@@ -2969,7 +2969,7 @@
       "id": "reign-qi-state-xi-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-xi",
-      "title": "僖公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -505,
@@ -2994,7 +2994,7 @@
       "id": "reign-qi-state-r5-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r5",
-      "title": "湣公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -486,
@@ -3019,7 +3019,7 @@
       "id": "reign-qi-state-ai-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-ai",
-      "title": "哀公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -470,
@@ -3044,7 +3044,7 @@
       "id": "reign-qi-state-chu-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-chu",
-      "title": "出公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -460,
@@ -3069,7 +3069,7 @@
       "id": "reign-qi-state-r6-qi-state-chunqiu",
       "dynastyId": "qi-state-chunqiu",
       "personId": "qi-state-r6",
-      "title": "简公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -448,
@@ -3094,7 +3094,7 @@
       "id": "reign-ju-r1-ju-chunqiu",
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r1",
-      "title": "纪公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -615,
@@ -3119,7 +3119,7 @@
       "id": "reign-ju-r1b-ju-chunqiu",
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r1b",
-      "title": "厉公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -608,
@@ -3144,7 +3144,7 @@
       "id": "reign-ju-r2-ju-chunqiu",
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r2",
-      "title": "渠丘公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -579,
@@ -3169,7 +3169,7 @@
       "id": "reign-ju-r3-ju-chunqiu",
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r3",
-      "title": "犂比公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -576,
@@ -3219,7 +3219,7 @@
       "id": "reign-ju-r5-ju-chunqiu",
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r5",
-      "title": "著丘公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -540,
@@ -3244,7 +3244,7 @@
       "id": "reign-ju-r6-ju-chunqiu",
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r6",
-      "title": "共公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -527,
@@ -3269,7 +3269,7 @@
       "id": "reign-ju-r7-ju-chunqiu",
       "dynastyId": "ju-chunqiu",
       "personId": "ju-r7",
-      "title": "郊公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -518,
@@ -3344,7 +3344,7 @@
       "id": "reign-zhou-guo-jie-zhou-guo-west",
       "dynastyId": "zhou-guo-west",
       "personId": "zhou-guo-jie",
-      "title": "桓公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -440,
@@ -3369,7 +3369,7 @@
       "id": "reign-zhou-guo-zao-zhou-guo-west",
       "dynastyId": "zhou-guo-west",
       "personId": "zhou-guo-zao",
-      "title": "威公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -414,
@@ -3394,7 +3394,7 @@
       "id": "reign-zhou-guo-chao-zhou-guo-west",
       "dynastyId": "zhou-guo-west",
       "personId": "zhou-guo-chao",
-      "title": "惠公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -366,
@@ -3420,7 +3420,7 @@
       "id": "reign-zhou-guo-wugong-zhou-guo-west",
       "dynastyId": "zhou-guo-west",
       "personId": "zhou-guo-wugong",
-      "title": "武公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -329,
@@ -3447,7 +3447,7 @@
       "id": "reign-zhou-guo-jiu-zhou-guo-west",
       "dynastyId": "zhou-guo-west",
       "personId": "zhou-guo-jiu",
-      "title": "文公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -292,
@@ -3473,7 +3473,7 @@
       "id": "reign-zhou-guo-gen-zhou-guo-east",
       "dynastyId": "zhou-guo-east",
       "personId": "zhou-guo-gen",
-      "title": "惠公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -366,
@@ -3498,7 +3498,7 @@
       "id": "reign-missing-zhou-guo-east--360",
       "dynastyId": "zhou-guo-east",
       "personId": "system-missing-ruler",
-      "title": "史料缺",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -360,
@@ -3520,7 +3520,7 @@
       "id": "reign-missing-xue-chunqiu--485",
       "dynastyId": "xue-chunqiu",
       "personId": "system-missing-ruler",
-      "title": "史料缺",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -485,
@@ -3542,7 +3542,7 @@
       "id": "reign-missing-teng-chunqiu--296",
       "dynastyId": "teng-chunqiu",
       "personId": "system-missing-ruler",
-      "title": "史料缺",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -315,
@@ -3564,7 +3564,7 @@
       "id": "reign-missing-ju-chunqiu--1046",
       "dynastyId": "ju-chunqiu",
       "personId": "system-missing-ruler",
-      "title": "史料缺",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -1046,
@@ -3586,7 +3586,7 @@
       "id": "reign-missing-ju-chunqiu--481",
       "dynastyId": "ju-chunqiu",
       "personId": "system-missing-ruler",
-      "title": "史料缺",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -481,
@@ -3608,7 +3608,7 @@
       "id": "reign-missing-teng-chunqiu--1044",
       "dynastyId": "teng-chunqiu",
       "personId": "system-missing-ruler",
-      "title": "史料缺",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -1044,
@@ -3633,7 +3633,7 @@
       "id": "reign-missing-teng-chunqiu--375",
       "dynastyId": "teng-chunqiu",
       "personId": "system-missing-ruler",
-      "title": "史料缺",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -375,
@@ -3658,7 +3658,7 @@
       "id": "reign-teng-r16-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r16",
-      "title": "定公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -324,
@@ -3683,7 +3683,7 @@
       "id": "reign-teng-r17-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r17",
-      "title": "文公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -323,

@@ -791,7 +791,7 @@
       "id": "reign-zou-r1-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r1",
-      "title": "挟",
+      "title": "",
       "start": {
         "year": -1046,
         "month": 1,
@@ -818,7 +818,7 @@
       "id": "reign-zou-r2-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r2",
-      "title": "非",
+      "title": "",
       "start": {
         "year": -1011,
         "month": 1,
@@ -845,7 +845,7 @@
       "id": "reign-zou-r3-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r3",
-      "title": "成",
+      "title": "",
       "start": {
         "year": -975,
         "month": 1,
@@ -872,7 +872,7 @@
       "id": "reign-zou-r4-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r4",
-      "title": "车辅",
+      "title": "",
       "start": {
         "year": -939,
         "month": 1,
@@ -899,7 +899,7 @@
       "id": "reign-zou-r5-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r5",
-      "title": "将新",
+      "title": "",
       "start": {
         "year": -903,
         "month": 1,
@@ -926,7 +926,7 @@
       "id": "reign-zou-r6-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r6",
-      "title": "訾父",
+      "title": "",
       "start": {
         "year": -867,
         "month": 1,
@@ -953,7 +953,7 @@
       "id": "reign-zou-r7-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r7",
-      "title": "武公",
+      "title": "",
       "start": {
         "year": -831,
         "month": 1,
@@ -979,7 +979,7 @@
       "id": "reign-zou-r8-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r8",
-      "title": "叔术",
+      "title": "",
       "start": {
         "year": -795,
         "month": 1,
@@ -1004,7 +1004,7 @@
       "id": "reign-zou-r9-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r9",
-      "title": "夏父",
+      "title": "",
       "start": {
         "year": -780,
         "month": 1,
@@ -1031,7 +1031,7 @@
       "id": "reign-zou-r10-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r10",
-      "title": "？",
+      "title": "",
       "start": {
         "year": -754,
         "month": 1,
@@ -1058,7 +1058,7 @@
       "id": "reign-zou-r11-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r11",
-      "title": "庄公",
+      "title": "",
       "start": {
         "year": -702,
         "month": 1,
@@ -1109,7 +1109,7 @@
       "id": "reign-zou-r13-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r13",
-      "title": "文公",
+      "title": "",
       "start": {
         "year": -665,
         "month": 1,
@@ -1134,7 +1134,7 @@
       "id": "reign-zou-r14-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r14",
-      "title": "定公",
+      "title": "",
       "start": {
         "year": -613,
         "month": 1,
@@ -1159,7 +1159,7 @@
       "id": "reign-zou-r15-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r15",
-      "title": "宣公",
+      "title": "",
       "start": {
         "year": -572,
         "month": 1,
@@ -1184,7 +1184,7 @@
       "id": "reign-zou-r16-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r16",
-      "title": "悼公",
+      "title": "",
       "start": {
         "year": -555,
         "month": 1,
@@ -1209,7 +1209,7 @@
       "id": "reign-zou-r17-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r17",
-      "title": "庄公",
+      "title": "",
       "start": {
         "year": -540,
         "month": 1,
@@ -1234,7 +1234,7 @@
       "id": "reign-zou-r18-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r18",
-      "title": "隐公",
+      "title": "",
       "start": {
         "year": -506,
         "month": 1,
@@ -1259,7 +1259,7 @@
       "id": "reign-zou-r19-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-r19",
-      "title": "桓公",
+      "title": "",
       "start": {
         "year": -486,
         "month": 1,
@@ -1284,7 +1284,7 @@
       "id": "reign-zou-r18-zou-state-2",
       "dynastyId": "zou-state",
       "personId": "zou-r18",
-      "title": "隐公",
+      "title": "",
       "start": {
         "year": -472,
         "month": 1,
@@ -1335,7 +1335,7 @@
       "id": "reign-zou-missing-after-he-1",
       "dynastyId": "zou-state",
       "personId": "zou-missing-after-he-1",
-      "title": "？",
+      "title": "",
       "start": {
         "year": -455,
         "month": 1,
@@ -1362,7 +1362,7 @@
       "id": "reign-zou-kaogong-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-kaogong",
-      "title": "考公",
+      "title": "",
       "start": {
         "year": -436,
         "month": 1,
@@ -1389,7 +1389,7 @@
       "id": "reign-zou-missing-after-kaogong-1",
       "dynastyId": "zou-state",
       "personId": "zou-missing-after-kaogong-1",
-      "title": "？",
+      "title": "",
       "start": {
         "year": -418,
         "month": 1,
@@ -1416,7 +1416,7 @@
       "id": "reign-zou-missing-after-kaogong-2",
       "dynastyId": "zou-state",
       "personId": "zou-missing-after-kaogong-2",
-      "title": "？",
+      "title": "",
       "start": {
         "year": -400,
         "month": 1,
@@ -1443,7 +1443,7 @@
       "id": "reign-zou-mu-gong-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-mu-gong",
-      "title": "穆公",
+      "title": "",
       "start": {
         "year": -382,
         "month": 1,
@@ -1470,7 +1470,7 @@
       "id": "reign-zou-jun-qing-zou-state",
       "dynastyId": "zou-state",
       "personId": "zou-jun-qing",
-      "title": "庆",
+      "title": "",
       "start": {
         "year": -728,
         "month": 1,
@@ -1497,7 +1497,7 @@
       "id": "reign-zou-missing-after-mugong-1",
       "dynastyId": "zou-state",
       "personId": "zou-missing-after-mugong-1",
-      "title": "？",
+      "title": "",
       "start": {
         "year": -329,
         "month": 1,
@@ -1524,7 +1524,7 @@
       "id": "reign-zou-missing-after-mugong-2",
       "dynastyId": "zou-state",
       "personId": "zou-missing-after-mugong-2",
-      "title": "？",
+      "title": "",
       "start": {
         "year": -292,
         "month": 1,

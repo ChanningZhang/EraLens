@@ -250,7 +250,7 @@
       "id": "reign-wei-wen-wei-warring",
       "dynastyId": "wei-warring",
       "personId": "wei-wen",
-      "title": "文侯",
+      "title": "",
       "start": {
         "year": -403,
         "month": 1,
@@ -275,7 +275,7 @@
       "id": "reign-wei-r1-wei-warring",
       "dynastyId": "wei-warring",
       "personId": "wei-r1",
-      "title": "武侯",
+      "title": "",
       "start": {
         "year": -395,
         "month": 1,
@@ -300,7 +300,7 @@
       "id": "reign-wei-r2-wei-warring",
       "dynastyId": "wei-warring",
       "personId": "wei-r2",
-      "title": "惠成王",
+      "title": "",
       "start": {
         "year": -369,
         "month": 1,
@@ -325,7 +325,7 @@
       "id": "reign-wei-r3-wei-warring",
       "dynastyId": "wei-warring",
       "personId": "wei-r3",
-      "title": "襄王",
+      "title": "",
       "start": {
         "year": -318,
         "month": 1,
@@ -350,7 +350,7 @@
       "id": "reign-wei-r4-wei-warring",
       "dynastyId": "wei-warring",
       "personId": "wei-r4",
-      "title": "昭王",
+      "title": "",
       "start": {
         "year": -295,
         "month": 1,
@@ -375,7 +375,7 @@
       "id": "reign-wei-r5-wei-warring",
       "dynastyId": "wei-warring",
       "personId": "wei-r5",
-      "title": "安僖王",
+      "title": "",
       "start": {
         "year": -276,
         "month": 1,
@@ -400,7 +400,7 @@
       "id": "reign-wei-r6-wei-warring",
       "dynastyId": "wei-warring",
       "personId": "wei-r6",
-      "title": "景湣王",
+      "title": "",
       "start": {
         "year": -242,
         "month": 1,
@@ -425,7 +425,7 @@
       "id": "reign-wei-r7-wei-warring",
       "dynastyId": "wei-warring",
       "personId": "wei-r7",
-      "title": "假",
+      "title": "",
       "start": {
         "year": -227,
         "month": 1,

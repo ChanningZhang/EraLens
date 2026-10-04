@@ -253,12 +253,21 @@ function buildPersonEntityDetail(
   const headingDynasty = detailReign ? dynastyMap.get(detailReign.dynastyId) : undefined;
   const headingDynastyName = headingDynasty?.altNames?.[0]?.trim() ||
     (headingDynasty ? resolveDynastyDefaultName(headingDynasty) : undefined);
-  const heading = detailReign
-    ? resolveReignDetailHeading(detailReign, headingDynastyName, person.name, clan)
-    : person.roles.join(" · ");
-  const subtitle = focusReign && reignCount > 1 && focusReignIndex
-    ? `${heading} · ${focusReignIndex}/${reignCount}`
-    : heading || undefined;
+  const heading = resolveReignDetailHeading(
+    detailReign,
+    headingDynastyName,
+    person.name,
+    clan,
+    {
+      focusedReign: Boolean(focusReign),
+      periodYear: detailReign?.start.year ?? person.birth?.year,
+    },
+  );
+  const subtitle = heading
+    ? focusReign && reignCount > 1 && focusReignIndex
+      ? `${heading} · ${focusReignIndex}/${reignCount}`
+      : heading
+    : undefined;
   const title = person.name;
   const factReigns = focusReign ? [focusReign] : personReigns;
   const factEraNames = factReigns.flatMap((reign) =>

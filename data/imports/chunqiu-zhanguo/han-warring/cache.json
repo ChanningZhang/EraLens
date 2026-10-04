@@ -317,7 +317,7 @@
       "id": "reign-han-jing-han-warring",
       "dynastyId": "han-warring",
       "personId": "han-jing",
-      "title": "景侯",
+      "title": "",
       "start": {
         "year": -403,
         "month": 1,
@@ -342,7 +342,7 @@
       "id": "reign-han-r1-han-warring",
       "dynastyId": "han-warring",
       "personId": "han-r1",
-      "title": "烈侯",
+      "title": "",
       "start": {
         "year": -399,
         "month": 1,
@@ -367,7 +367,7 @@
       "id": "reign-han-r2-han-warring",
       "dynastyId": "han-warring",
       "personId": "han-r2",
-      "title": "文侯",
+      "title": "",
       "start": {
         "year": -386,
         "month": 1,
@@ -392,7 +392,7 @@
       "id": "reign-han-r3-han-warring",
       "dynastyId": "han-warring",
       "personId": "han-r3",
-      "title": "哀侯",
+      "title": "",
       "start": {
         "year": -376,
         "month": 1,
@@ -417,7 +417,7 @@
       "id": "reign-han-r4-han-warring",
       "dynastyId": "han-warring",
       "personId": "han-r4",
-      "title": "共侯",
+      "title": "",
       "start": {
         "year": -373,
         "month": 1,
@@ -442,7 +442,7 @@
       "id": "reign-han-r5-han-warring",
       "dynastyId": "han-warring",
       "personId": "han-r5",
-      "title": "釐侯",
+      "title": "",
       "start": {
         "year": -362,
         "month": 1,
@@ -467,7 +467,7 @@
       "id": "reign-han-r6-han-warring",
       "dynastyId": "han-warring",
       "personId": "han-r6",
-      "title": "宣惠王",
+      "title": "",
       "start": {
         "year": -332,
         "month": 1,
@@ -492,7 +492,7 @@
       "id": "reign-han-r7-han-warring",
       "dynastyId": "han-warring",
       "personId": "han-r7",
-      "title": "襄王",
+      "title": "",
       "start": {
         "year": -311,
         "month": 1,
@@ -517,7 +517,7 @@
       "id": "reign-han-r8-han-warring",
       "dynastyId": "han-warring",
       "personId": "han-r8",
-      "title": "釐王",
+      "title": "",
       "start": {
         "year": -295,
         "month": 1,
@@ -542,7 +542,7 @@
       "id": "reign-han-r9-han-warring",
       "dynastyId": "han-warring",
       "personId": "han-r9",
-      "title": "桓惠王",
+      "title": "",
       "start": {
         "year": -272,
         "month": 1,
@@ -567,7 +567,7 @@
       "id": "reign-han-r10-han-warring",
       "dynastyId": "han-warring",
       "personId": "han-r10",
-      "title": "安",
+      "title": "",
       "start": {
         "year": -238,
         "month": 1,

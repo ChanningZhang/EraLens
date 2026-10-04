@@ -182,7 +182,7 @@
       "id": "reign-guo-east-zhong",
       "dynastyId": "guo-east",
       "personId": "guo-east-zhong",
-      "title": "仲",
+      "title": "",
       "start": {
         "year": -1046,
         "month": 1,
@@ -204,7 +204,7 @@
       "id": "reign-missing-guo-east--1042",
       "dynastyId": "guo-east",
       "personId": "system-missing-ruler",
-      "title": "史料缺",
+      "title": "",
       "start": {
         "year": -1042,
         "month": 1,
@@ -248,7 +248,7 @@
       "id": "reign-missing-guo-east--846",
       "dynastyId": "guo-east",
       "personId": "system-missing-ruler",
-      "title": "史料缺",
+      "title": "",
       "start": {
         "year": -846,
         "month": 1,

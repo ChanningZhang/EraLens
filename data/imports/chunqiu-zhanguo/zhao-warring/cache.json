@@ -269,7 +269,7 @@
       "id": "reign-zhao-lie-zhao-warring",
       "dynastyId": "zhao-warring",
       "personId": "zhao-lie",
-      "title": "烈侯",
+      "title": "",
       "start": {
         "year": -403,
         "month": 1,
@@ -294,7 +294,7 @@
       "id": "reign-zhao-r1-zhao-warring",
       "dynastyId": "zhao-warring",
       "personId": "zhao-r1",
-      "title": "武侯",
+      "title": "",
       "start": {
         "year": -399,
         "month": 1,
@@ -319,7 +319,7 @@
       "id": "reign-zhao-r2-zhao-warring",
       "dynastyId": "zhao-warring",
       "personId": "zhao-r2",
-      "title": "敬侯",
+      "title": "",
       "start": {
         "year": -386,
         "month": 1,
@@ -344,7 +344,7 @@
       "id": "reign-zhao-r3-zhao-warring",
       "dynastyId": "zhao-warring",
       "personId": "zhao-r3",
-      "title": "成侯",
+      "title": "",
       "start": {
         "year": -374,
         "month": 1,
@@ -369,7 +369,7 @@
       "id": "reign-zhao-r4-zhao-warring",
       "dynastyId": "zhao-warring",
       "personId": "zhao-r4",
-      "title": "肃侯",
+      "title": "",
       "start": {
         "year": -349,
         "month": 1,
@@ -394,7 +394,7 @@
       "id": "reign-zhao-r5-zhao-warring",
       "dynastyId": "zhao-warring",
       "personId": "zhao-r5",
-      "title": "武灵王",
+      "title": "",
       "start": {
         "year": -325,
         "month": 1,
@@ -419,7 +419,7 @@
       "id": "reign-zhao-r6-zhao-warring",
       "dynastyId": "zhao-warring",
       "personId": "zhao-r6",
-      "title": "惠文王",
+      "title": "",
       "start": {
         "year": -298,
         "month": 1,
@@ -444,7 +444,7 @@
       "id": "reign-zhao-r7-zhao-warring",
       "dynastyId": "zhao-warring",
       "personId": "zhao-r7",
-      "title": "孝成王",
+      "title": "",
       "start": {
         "year": -265,
         "month": 1,
@@ -469,7 +469,7 @@
       "id": "reign-zhao-r8-zhao-warring",
       "dynastyId": "zhao-warring",
       "personId": "zhao-r8",
-      "title": "悼襄王",
+      "title": "",
       "start": {
         "year": -244,
         "month": 1,
@@ -494,7 +494,7 @@
       "id": "reign-zhao-r9-zhao-warring",
       "dynastyId": "zhao-warring",
       "personId": "zhao-r9",
-      "title": "幽缪王",
+      "title": "",
       "start": {
         "year": -235,
         "month": 1,

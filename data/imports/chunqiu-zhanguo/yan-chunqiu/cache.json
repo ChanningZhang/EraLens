@@ -928,7 +928,7 @@
       "id": "reign-ji-shi-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "ji-shi",
-      "title": "召公",
+      "title": "",
       "start": {
         "year": -1044,
         "month": 1,
@@ -955,7 +955,7 @@
       "id": "reign-yan-r1-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r1",
-      "title": "克",
+      "title": "",
       "start": {
         "year": -999,
         "month": 1,
@@ -982,7 +982,7 @@
       "id": "reign-yan-r2-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r2",
-      "title": "旨",
+      "title": "",
       "start": {
         "year": -954,
         "month": 1,
@@ -1009,7 +1009,7 @@
       "id": "reign-yan-r3-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r3",
-      "title": "舞",
+      "title": "",
       "start": {
         "year": -909,
         "month": 1,
@@ -1035,7 +1035,7 @@
       "id": "reign-yan-r4-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r4",
-      "title": "惠侯",
+      "title": "",
       "start": {
         "year": -864,
         "month": 1,
@@ -1060,7 +1060,7 @@
       "id": "reign-yan-r5-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r5",
-      "title": "釐侯",
+      "title": "",
       "start": {
         "year": -826,
         "month": 1,
@@ -1085,7 +1085,7 @@
       "id": "reign-yan-r6-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r6",
-      "title": "顷侯",
+      "title": "",
       "start": {
         "year": -790,
         "month": 1,
@@ -1110,7 +1110,7 @@
       "id": "reign-yan-r7-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r7",
-      "title": "哀侯",
+      "title": "",
       "start": {
         "year": -766,
         "month": 1,
@@ -1135,7 +1135,7 @@
       "id": "reign-yan-r8-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r8",
-      "title": "郑侯",
+      "title": "",
       "start": {
         "year": -764,
         "month": 1,
@@ -1160,7 +1160,7 @@
       "id": "reign-yan-r9-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r9",
-      "title": "穆侯",
+      "title": "",
       "start": {
         "year": -728,
         "month": 1,
@@ -1185,7 +1185,7 @@
       "id": "reign-yan-r10-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r10",
-      "title": "宣侯",
+      "title": "",
       "start": {
         "year": -710,
         "month": 1,
@@ -1210,7 +1210,7 @@
       "id": "reign-yan-r11-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r11",
-      "title": "桓侯",
+      "title": "",
       "start": {
         "year": -697,
         "month": 1,
@@ -1235,7 +1235,7 @@
       "id": "reign-yan-r12-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r12",
-      "title": "庄公",
+      "title": "",
       "start": {
         "year": -690,
         "month": 1,
@@ -1260,7 +1260,7 @@
       "id": "reign-yan-r13-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r13",
-      "title": "襄公",
+      "title": "",
       "start": {
         "year": -657,
         "month": 1,
@@ -1285,7 +1285,7 @@
       "id": "reign-yan-r14-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r14",
-      "title": "桓公",
+      "title": "",
       "start": {
         "year": -617,
         "month": 1,
@@ -1310,7 +1310,7 @@
       "id": "reign-yan-r15-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r15",
-      "title": "宣公",
+      "title": "",
       "start": {
         "year": -601,
         "month": 1,
@@ -1335,7 +1335,7 @@
       "id": "reign-yan-r16-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r16",
-      "title": "昭公",
+      "title": "",
       "start": {
         "year": -586,
         "month": 1,
@@ -1360,7 +1360,7 @@
       "id": "reign-yan-r17-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r17",
-      "title": "武公",
+      "title": "",
       "start": {
         "year": -573,
         "month": 1,
@@ -1385,7 +1385,7 @@
       "id": "reign-yan-r18-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r18",
-      "title": "文公",
+      "title": "",
       "start": {
         "year": -554,
         "month": 1,
@@ -1410,7 +1410,7 @@
       "id": "reign-yan-r19-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r19",
-      "title": "懿公",
+      "title": "",
       "start": {
         "year": -548,
         "month": 1,
@@ -1435,7 +1435,7 @@
       "id": "reign-yan-r20-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r20",
-      "title": "惠公",
+      "title": "",
       "start": {
         "year": -544,
         "month": 1,
@@ -1460,7 +1460,7 @@
       "id": "reign-yan-r21-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r21",
-      "title": "悼公",
+      "title": "",
       "start": {
         "year": -535,
         "month": 1,
@@ -1485,7 +1485,7 @@
       "id": "reign-yan-r22-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r22",
-      "title": "共公",
+      "title": "",
       "start": {
         "year": -528,
         "month": 1,
@@ -1510,7 +1510,7 @@
       "id": "reign-yan-r23-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r23",
-      "title": "平公",
+      "title": "",
       "start": {
         "year": -523,
         "month": 1,
@@ -1535,7 +1535,7 @@
       "id": "reign-yan-r24-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r24",
-      "title": "简公",
+      "title": "",
       "start": {
         "year": -504,
         "month": 1,
@@ -1560,7 +1560,7 @@
       "id": "reign-yan-r25-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r25",
-      "title": "孝公",
+      "title": "",
       "start": {
         "year": -492,
         "month": 1,
@@ -1585,7 +1585,7 @@
       "id": "reign-yan-r26-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r26",
-      "title": "成公",
+      "title": "",
       "start": {
         "year": -454,
         "month": 1,
@@ -1610,7 +1610,7 @@
       "id": "reign-yan-r27-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r27",
-      "title": "闵公",
+      "title": "",
       "start": {
         "year": -438,
         "month": 1,
@@ -1635,7 +1635,7 @@
       "id": "reign-yan-r28-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r28",
-      "title": "简公",
+      "title": "",
       "start": {
         "year": -414,
         "month": 1,
@@ -1660,7 +1660,7 @@
       "id": "reign-yan-r14-yan-chunqiu-2",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r14",
-      "title": "桓公",
+      "title": "",
       "start": {
         "year": -372,
         "month": 1,
@@ -1685,7 +1685,7 @@
       "id": "reign-yan-r30-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r30",
-      "title": "文公",
+      "title": "",
       "start": {
         "year": -361,
         "month": 1,
@@ -1710,7 +1710,7 @@
       "id": "reign-yan-r31-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r31",
-      "title": "易王",
+      "title": "",
       "start": {
         "year": -332,
         "month": 1,
@@ -1735,7 +1735,7 @@
       "id": "reign-yan-r32-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r32",
-      "title": "哙",
+      "title": "",
       "start": {
         "year": -320,
         "month": 1,
@@ -1760,7 +1760,7 @@
       "id": "reign-yan-r33-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r33",
-      "title": "昭王",
+      "title": "",
       "start": {
         "year": -312,
         "month": 1,
@@ -1785,7 +1785,7 @@
       "id": "reign-yan-r34-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r34",
-      "title": "惠王",
+      "title": "",
       "start": {
         "year": -278,
         "month": 1,
@@ -1810,7 +1810,7 @@
       "id": "reign-yan-r35-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r35",
-      "title": "武成王",
+      "title": "",
       "start": {
         "year": -270,
         "month": 1,
@@ -1835,7 +1835,7 @@
       "id": "reign-yan-r36-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r36",
-      "title": "孝王",
+      "title": "",
       "start": {
         "year": -257,
         "month": 1,
@@ -1860,7 +1860,7 @@
       "id": "reign-yan-r37-yan-chunqiu",
       "dynastyId": "yan-chunqiu",
       "personId": "yan-r37",
-      "title": "喜",
+      "title": "",
       "start": {
         "year": -254,
         "month": 1,

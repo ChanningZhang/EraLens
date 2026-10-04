@@ -187,7 +187,7 @@
       "id": "reign-zhongshan-r0-zhongshan",
       "dynastyId": "zhongshan",
       "personId": "zhongshan-r0",
-      "title": "文公",
+      "title": "",
       "start": {
         "year": -424,
         "month": 1,
@@ -212,7 +212,7 @@
       "id": "reign-zhongshan-r1-zhongshan",
       "dynastyId": "zhongshan",
       "personId": "zhongshan-r1",
-      "title": "武公",
+      "title": "",
       "start": {
         "year": -414,
         "month": 1,
@@ -237,7 +237,7 @@
       "id": "reign-zhongshan-r2-zhongshan",
       "dynastyId": "zhongshan",
       "personId": "zhongshan-r2",
-      "title": "桓公",
+      "title": "",
       "start": {
         "year": -406,
         "month": 1,
@@ -264,7 +264,7 @@
       "id": "reign-zhongshan-r2-zhongshan-2",
       "dynastyId": "zhongshan",
       "personId": "zhongshan-r2",
-      "title": "桓公",
+      "title": "",
       "start": {
         "year": -380,
         "month": 1,
@@ -291,7 +291,7 @@
       "id": "reign-zhongshan-r3-zhongshan",
       "dynastyId": "zhongshan",
       "personId": "zhongshan-r3",
-      "title": "成公",
+      "title": "",
       "start": {
         "year": -349,
         "month": 1,
@@ -317,7 +317,7 @@
       "id": "reign-zhongshan-r4-zhongshan",
       "dynastyId": "zhongshan",
       "personId": "zhongshan-r4",
-      "title": "厝",
+      "title": "",
       "start": {
         "year": -327,
         "month": 1,
@@ -343,7 +343,7 @@
       "id": "reign-zhongshan-r5-zhongshan",
       "dynastyId": "zhongshan",
       "personId": "zhongshan-r5",
-      "title": "𧊒",
+      "title": "",
       "start": {
         "year": -309,
         "month": 1,
@@ -369,7 +369,7 @@
       "id": "reign-zhongshan-r6-zhongshan",
       "dynastyId": "zhongshan",
       "personId": "zhongshan-r6",
-      "title": "尚",
+      "title": "",
       "start": {
         "year": -298,
         "month": 1,

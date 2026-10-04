@@ -1423,7 +1423,7 @@
       "id": "reign-lv-shang-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "lv-shang",
-      "title": "太公",
+      "title": "",
       "start": {
         "year": -1046,
         "month": 1,
@@ -1450,7 +1450,7 @@
       "id": "reign-qi-r1-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r1",
-      "title": "丁公",
+      "title": "",
       "start": {
         "year": -1025,
         "month": 1,
@@ -1477,7 +1477,7 @@
       "id": "reign-qi-r2-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r2",
-      "title": "乙公",
+      "title": "",
       "start": {
         "year": -974,
         "month": 1,
@@ -1504,7 +1504,7 @@
       "id": "reign-qi-r3-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r3",
-      "title": "癸公",
+      "title": "",
       "start": {
         "year": -932,
         "month": 1,
@@ -1531,7 +1531,7 @@
       "id": "reign-qi-r4-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r4",
-      "title": "哀公",
+      "title": "",
       "start": {
         "year": -901,
         "month": 1,
@@ -1558,7 +1558,7 @@
       "id": "reign-qi-r5-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r5",
-      "title": "胡公",
+      "title": "",
       "start": {
         "year": -882,
         "month": 1,
@@ -1584,7 +1584,7 @@
       "id": "reign-qi-r6-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r6",
-      "title": "献公",
+      "title": "",
       "start": {
         "year": -859,
         "month": 1,
@@ -1609,7 +1609,7 @@
       "id": "reign-qi-r7-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r7",
-      "title": "武公",
+      "title": "",
       "start": {
         "year": -850,
         "month": 1,
@@ -1634,7 +1634,7 @@
       "id": "reign-qi-r8-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r8",
-      "title": "厉公",
+      "title": "",
       "start": {
         "year": -824,
         "month": 1,
@@ -1659,7 +1659,7 @@
       "id": "reign-qi-r9-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r9",
-      "title": "文公",
+      "title": "",
       "start": {
         "year": -815,
         "month": 1,
@@ -1684,7 +1684,7 @@
       "id": "reign-qi-r10-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r10",
-      "title": "成公",
+      "title": "",
       "start": {
         "year": -803,
         "month": 1,
@@ -1709,7 +1709,7 @@
       "id": "reign-qi-r11-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r11",
-      "title": "庄公",
+      "title": "",
       "start": {
         "year": -794,
         "month": 1,
@@ -1734,7 +1734,7 @@
       "id": "reign-qi-r12-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r12",
-      "title": "釐公",
+      "title": "",
       "start": {
         "year": -730,
         "month": 1,
@@ -1759,7 +1759,7 @@
       "id": "reign-qi-r13-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r13",
-      "title": "襄公",
+      "title": "",
       "start": {
         "year": -697,
         "month": 1,
@@ -1811,7 +1811,7 @@
       "id": "reign-jiang-xiaobai-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "jiang-xiaobai",
-      "title": "桓公",
+      "title": "",
       "start": {
         "year": -685,
         "month": 1,
@@ -1863,7 +1863,7 @@
       "id": "reign-qi-r17-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r17",
-      "title": "孝公",
+      "title": "",
       "start": {
         "year": -642,
         "month": 5,
@@ -1888,7 +1888,7 @@
       "id": "reign-qi-r18-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r18",
-      "title": "昭公",
+      "title": "",
       "start": {
         "year": -632,
         "month": 1,
@@ -1938,7 +1938,7 @@
       "id": "reign-qi-r20-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r20",
-      "title": "懿公",
+      "title": "",
       "start": {
         "year": -612,
         "month": 1,
@@ -1963,7 +1963,7 @@
       "id": "reign-qi-r21-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r21",
-      "title": "惠公",
+      "title": "",
       "start": {
         "year": -608,
         "month": 1,
@@ -1988,7 +1988,7 @@
       "id": "reign-qi-r22-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r22",
-      "title": "顷公",
+      "title": "",
       "start": {
         "year": -598,
         "month": 1,
@@ -2013,7 +2013,7 @@
       "id": "reign-qi-r23-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r23",
-      "title": "灵公",
+      "title": "",
       "start": {
         "year": -581,
         "month": 1,
@@ -2038,7 +2038,7 @@
       "id": "reign-qi-r24-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r24",
-      "title": "庄公",
+      "title": "",
       "start": {
         "year": -553,
         "month": 1,
@@ -2063,7 +2063,7 @@
       "id": "reign-qi-r25-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r25",
-      "title": "景公",
+      "title": "",
       "start": {
         "year": -547,
         "month": 1,
@@ -2113,7 +2113,7 @@
       "id": "reign-qi-r27-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r27",
-      "title": "悼公",
+      "title": "",
       "start": {
         "year": -488,
         "month": 1,
@@ -2138,7 +2138,7 @@
       "id": "reign-qi-r28-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r28",
-      "title": "简公",
+      "title": "",
       "start": {
         "year": -484,
         "month": 1,
@@ -2163,7 +2163,7 @@
       "id": "reign-qi-r29-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r29",
-      "title": "平公",
+      "title": "",
       "start": {
         "year": -480,
         "month": 1,
@@ -2188,7 +2188,7 @@
       "id": "reign-qi-r30-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r30",
-      "title": "宣公",
+      "title": "",
       "start": {
         "year": -455,
         "month": 1,
@@ -2213,7 +2213,7 @@
       "id": "reign-jiang-dai-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "jiang-dai",
-      "title": "康公",
+      "title": "",
       "start": {
         "year": -404,
         "month": 1,
@@ -2238,7 +2238,7 @@
       "id": "reign-tian-he-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "tian-he",
-      "title": "太公",
+      "title": "",
       "start": {
         "year": -391,
         "month": 1,
@@ -2263,7 +2263,7 @@
       "id": "reign-qi-r33-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r33",
-      "title": "剡",
+      "title": "",
       "start": {
         "year": -383,
         "month": 1,
@@ -2288,7 +2288,7 @@
       "id": "reign-qi-r34-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r34",
-      "title": "桓公",
+      "title": "",
       "start": {
         "year": -374,
         "month": 1,
@@ -2313,7 +2313,7 @@
       "id": "reign-qi-r35-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r35",
-      "title": "威王",
+      "title": "",
       "start": {
         "year": -356,
         "month": 1,
@@ -2338,7 +2338,7 @@
       "id": "reign-qi-r36-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r36",
-      "title": "宣王",
+      "title": "",
       "start": {
         "year": -319,
         "month": 1,
@@ -2363,7 +2363,7 @@
       "id": "reign-qi-r37-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r37",
-      "title": "湣王",
+      "title": "",
       "start": {
         "year": -300,
         "month": 1,
@@ -2388,7 +2388,7 @@
       "id": "reign-qi-r38-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r38",
-      "title": "襄王",
+      "title": "",
       "start": {
         "year": -283,
         "month": 1,
@@ -2413,7 +2413,7 @@
       "id": "reign-qi-r39-qi-chunqiu",
       "dynastyId": "qi-chunqiu",
       "personId": "qi-r39",
-      "title": "建",
+      "title": "",
       "start": {
         "year": -264,
         "month": 1,

@@ -531,7 +531,7 @@
       "id": "reign-guo-r1-guo-chunqiu",
       "dynastyId": "guo-chunqiu",
       "personId": "guo-r1",
-      "title": "叔",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -1046,
@@ -558,7 +558,7 @@
       "id": "reign-guo-r2-guo-chunqiu",
       "dynastyId": "guo-chunqiu",
       "personId": "guo-r2",
-      "title": "郭叔",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -1042,
@@ -585,7 +585,7 @@
       "id": "reign-missing-guo-chunqiu--1020",
       "dynastyId": "guo-chunqiu",
       "personId": "system-missing-ruler",
-      "title": "史料缺",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -1020,
@@ -612,7 +612,7 @@
       "id": "reign-guo-r3-guo-chunqiu",
       "dynastyId": "guo-chunqiu",
       "personId": "guo-r3",
-      "title": "城公",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -995,
@@ -639,7 +639,7 @@
       "id": "reign-missing-guo-chunqiu--922",
       "dynastyId": "guo-chunqiu",
       "personId": "system-missing-ruler",
-      "title": "史料缺",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -922,

@@ -632,7 +632,7 @@
       "id": "reign-wu-pre-r0-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "wu-pre-r0",
-      "title": "泰伯",
+      "title": "",
       "start": {
         "year": -1100,
         "month": 1,
@@ -659,7 +659,7 @@
       "id": "reign-wu-pre-r1-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "wu-pre-r1",
-      "title": "仲雍",
+      "title": "",
       "start": {
         "year": -1087,
         "month": 1,
@@ -686,7 +686,7 @@
       "id": "reign-wu-pre-r2-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "wu-pre-r2",
-      "title": "季简",
+      "title": "",
       "start": {
         "year": -1073,
         "month": 1,
@@ -713,7 +713,7 @@
       "id": "reign-wu-pre-r3-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "wu-pre-r3",
-      "title": "叔达",
+      "title": "",
       "start": {
         "year": -1060,
         "month": 1,
@@ -739,7 +739,7 @@
       "id": "reign-wu-pre-r4-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "wu-pre-r4",
-      "title": "周章",
+      "title": "",
       "start": {
         "year": -1046,
         "month": 1,
@@ -765,7 +765,7 @@
       "id": "reign-wu-pre-r5-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "wu-pre-r5",
-      "title": "熊遂",
+      "title": "",
       "start": {
         "year": -1014,
         "month": 1,
@@ -792,7 +792,7 @@
       "id": "reign-wu-pre-r6-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "wu-pre-r6",
-      "title": "柯相",
+      "title": "",
       "start": {
         "year": -981,
         "month": 1,
@@ -819,7 +819,7 @@
       "id": "reign-wu-pre-r7-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "wu-pre-r7",
-      "title": "彊鸠夷",
+      "title": "",
       "start": {
         "year": -948,
         "month": 1,
@@ -846,7 +846,7 @@
       "id": "reign-wu-pre-r8-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "wu-pre-r8",
-      "title": "余桥疑吾",
+      "title": "",
       "start": {
         "year": -915,
         "month": 1,
@@ -873,7 +873,7 @@
       "id": "reign-wu-pre-r9-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "wu-pre-r9",
-      "title": "柯卢",
+      "title": "",
       "start": {
         "year": -882,
         "month": 1,
@@ -900,7 +900,7 @@
       "id": "reign-wu-pre-r10-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "wu-pre-r10",
-      "title": "周繇",
+      "title": "",
       "start": {
         "year": -849,
         "month": 1,
@@ -927,7 +927,7 @@
       "id": "reign-wu-pre-r11-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "wu-pre-r11",
-      "title": "屈羽",
+      "title": "",
       "start": {
         "year": -816,
         "month": 1,
@@ -954,7 +954,7 @@
       "id": "reign-wu-pre-r12-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "wu-pre-r12",
-      "title": "夷吾",
+      "title": "",
       "start": {
         "year": -783,
         "month": 1,
@@ -981,7 +981,7 @@
       "id": "reign-wu-pre-r13-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "wu-pre-r13",
-      "title": "禽处",
+      "title": "",
       "start": {
         "year": -750,
         "month": 1,
@@ -1008,7 +1008,7 @@
       "id": "reign-wu-pre-r14-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "wu-pre-r14",
-      "title": "转",
+      "title": "",
       "start": {
         "year": -717,
         "month": 1,
@@ -1035,7 +1035,7 @@
       "id": "reign-wu-pre-r15-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "wu-pre-r15",
-      "title": "颇高",
+      "title": "",
       "start": {
         "year": -684,
         "month": 1,
@@ -1062,7 +1062,7 @@
       "id": "reign-wu-pre-r16-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "wu-pre-r16",
-      "title": "句卑",
+      "title": "",
       "start": {
         "year": -651,
         "month": 1,
@@ -1089,7 +1089,7 @@
       "id": "reign-wu-pre-r17-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "wu-pre-r17",
-      "title": "去齐",
+      "title": "",
       "start": {
         "year": -618,
         "month": 1,
@@ -1165,7 +1165,7 @@
       "id": "reign-wu-r2-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "wu-r2",
-      "title": "余祭",
+      "title": "",
       "start": {
         "year": -547,
         "month": 1,
@@ -1215,7 +1215,7 @@
       "id": "reign-wu-r4-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "wu-r4",
-      "title": "僚",
+      "title": "",
       "start": {
         "year": -526,
         "month": 1,
@@ -1240,7 +1240,7 @@
       "id": "reign-helu-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "helu",
-      "title": "阖闾",
+      "title": "",
       "start": {
         "year": -514,
         "month": 1,
@@ -1265,7 +1265,7 @@
       "id": "reign-wu-fu-gai-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "wu-fu-gai",
-      "title": "夫概",
+      "title": "",
       "start": {
         "year": -505,
         "month": 1,
@@ -1290,7 +1290,7 @@
       "id": "reign-fu-chai-wu-chunqiu",
       "dynastyId": "wu-chunqiu",
       "personId": "fu-chai",
-      "title": "夫差",
+      "title": "",
       "start": {
         "year": -495,
         "month": 1,

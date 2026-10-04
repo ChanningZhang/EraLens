@@ -26,7 +26,7 @@ function reign(overrides: Partial<Reign> & { templeName?: string }): Reign {
 }
 
 describe("buildEntityDetail reign", () => {
-  it("uses the conventional appellation in the detail heading", () => {
+  it("uses the focused reign title in the detail subtitle", () => {
     const store = {
       dynasties: [
         {
@@ -60,7 +60,7 @@ describe("buildEntityDetail reign", () => {
 
     expect(detail.ref).toEqual({ type: "person", id: "zhao-kuangyin" });
     expect(detail.title).toBe("赵匡胤");
-    expect(detail.subtitle).toBe("北宋 · 太祖");
+    expect(detail.subtitle).toBe("北宋 · 宋太祖");
     expect(detail.facts).toEqual([
       { label: "在位", value: "960年 — 976年 · 17年" },
       { label: "庙号", value: "太祖" },
@@ -544,7 +544,7 @@ describe("buildEntityDetail undated dynasty associations", () => {
 });
 
 describe("buildEntityDetail person", () => {
-  it("uses the person title in both person and reign details when a ruler has no appellations", () => {
+  it("uses person title without focus but only period fallback for a focused reign", () => {
     const store = {
       dynasties: [{
         id: "han-west", name: "西汉", scope: "cn" as const, region: "east_asia",
@@ -564,14 +564,44 @@ describe("buildEntityDetail person", () => {
       }],
       events: [], relations: [],
     };
-    for (const ref of [
-      { type: "person" as const, id: "unnamed-ruler" },
-      { type: "reign" as const, id: "reign-unnamed-ruler" },
-    ]) {
-      expect(buildEntityDetail(store, ref)).toMatchObject({
-        title: "刘？", subtitle: "西汉 · 汉前少帝",
-      });
-    }
+    expect(buildEntityDetail(store, { type: "person", id: "unnamed-ruler" })).toMatchObject({
+      title: "刘？", subtitle: "西汉 · 汉前少帝",
+    });
+    expect(buildEntityDetail(store, { type: "reign", id: "reign-unnamed-ruler" })).toMatchObject({
+      title: "刘？", subtitle: undefined,
+    });
+  });
+
+  it("uses birth year to choose an unfocused heading and generic fields without a date", () => {
+    const store = {
+      dynasties: [],
+      reigns: [],
+      persons: [
+        {
+          id: "born-pre-qin", name: "先秦人物", birth: { year: -500, month: 1 },
+          title: "人物称号", roles: ["君主"], posthumousNames: ["某公"], templeNames: [], links: [],
+        },
+        {
+          id: "born-tang", name: "唐代人物", birth: { year: 700, month: 1 },
+          title: "人物称号", roles: ["君主"], posthumousNames: ["谥号"], templeNames: ["某宗"], links: [],
+        },
+        {
+          id: "undated", name: "无年代人物", title: "通用称号", roles: ["人物"],
+          posthumousNames: [], templeNames: [], links: [],
+        },
+        {
+          id: "undated-untitled", name: "无称号人物", roles: ["人物"],
+          posthumousNames: [], templeNames: [], links: [],
+        },
+      ],
+      events: [],
+      relations: [],
+    };
+
+    expect(buildEntityDetail(store, { type: "person", id: "born-pre-qin" }).subtitle).toBe("某公");
+    expect(buildEntityDetail(store, { type: "person", id: "born-tang" }).subtitle).toBe("某宗");
+    expect(buildEntityDetail(store, { type: "person", id: "undated" }).subtitle).toBe("通用称号");
+    expect(buildEntityDetail(store, { type: "person", id: "undated-untitled" }).subtitle).toBe("无称号人物");
   });
 
   it("lists related idioms for participants", () => {
@@ -1051,7 +1081,7 @@ describe("buildEntityDetail person", () => {
     );
 
     expect(detail.title).toBe("朱元璋");
-    expect(detail.subtitle).toBe("明 · 太祖 · 2/2");
+    expect(detail.subtitle).toBe("明 · 洪武 · 2/2");
     expect(detail.capitalTenures.map((row) => row.tenure.ref.id)).toEqual([
       "reign-zhu-yuanzhang-ming",
     ]);
@@ -1120,7 +1150,7 @@ describe("buildEntityDetail person", () => {
     );
 
     expect(unfocused.subtitle).toBe("明 · 英宗");
-    expect(focused.subtitle).toBe("明 · 英宗 · 1/2");
+    expect(focused.subtitle).toBe("明 · 正统 · 1/2");
     expect(unfocused.reignCount).toBe(2);
     expect(focused.reignCount).toBe(2);
     expect(unfocused.facts.filter((fact) => fact.label === "在位")).toEqual([
