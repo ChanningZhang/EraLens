@@ -168,17 +168,17 @@ export function resolvePreQinXingShi(
 export function resolvePreQinNameFacts(
   personName: string | null | undefined,
   clan?: PersonDisplayContext | null,
-  reign?: ReignLabelFields | null,
+  _reign?: ReignLabelFields | null,
 ): Array<{ label: string; value: string }> {
   const { xing, shi } = resolvePreQinXingShi(personName, clan);
   const facts: Array<{ label: string; value: string }> = [];
   if (xing) facts.push({ label: "姓", value: xing });
   if (shi) facts.push({ label: "氏", value: shi });
-  const given = reign
-    ? resolvePreQinGivenName(reign, personName, clan)
-    : personName && !isPlaceholderPersonName(personName)
-      ? personName
-      : null;
+  // The card may already include the given name in its title (e.g. 熊严),
+  // but detail facts list the structured pre-Qin name fields separately.
+  const given = personName && !isPlaceholderPersonName(personName)
+    ? personName
+    : null;
   if (given) facts.push({ label: "名", value: given });
   return facts;
 }
