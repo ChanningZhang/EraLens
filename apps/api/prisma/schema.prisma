@@ -109,7 +109,6 @@ model Reign {
   endConfidence        String      @default("year") @map("end_confidence")
   claimTrack            String?     @map("claim_track")
   claimLabel            String?     @map("claim_label")
-  claimRole             String?     @map("claim_role")
   isInformalMonarch     Boolean     @default(false) @map("is_informal_monarch")
   isMain              Boolean?    @map("is_main")
   dynasty               Dynasty     @relation(fields: [dynastyId], references: [id])

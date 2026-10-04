@@ -116,7 +116,6 @@ export function reign({
   eraNames = [],
   claimTrack = null,
   claimLabel = null,
-  claimRole = null,
 }) {
   return {
     id,
@@ -132,7 +131,6 @@ export function reign({
     endAbs: explicitEndAbs ?? end?.abs ?? null,
     claimTrack,
     claimLabel,
-    claimRole,
   };
 }
 
@@ -243,15 +241,15 @@ ON CONFLICT (id) DO UPDATE SET name = EXCLUDED.name, alt_names = EXCLUDED.alt_na
 export function reignSql(r) {
   const isMain = r.isMain;
   const hasClaimFields =
-    Object.hasOwn(r, "claimTrack") || Object.hasOwn(r, "claimLabel") || Object.hasOwn(r, "claimRole");
+    Object.hasOwn(r, "claimTrack") || Object.hasOwn(r, "claimLabel");
   const claimCols =
-    hasClaimFields ? ", claim_track, claim_label, claim_role" : "";
+    hasClaimFields ? ", claim_track, claim_label" : "";
   const claimVals =
     hasClaimFields
-      ? `, ${sqlStr(r.claimTrack ?? null)}, ${sqlStr(r.claimLabel ?? null)}, ${sqlStr(r.claimRole ?? null)}`
+      ? `, ${sqlStr(r.claimTrack ?? null)}, ${sqlStr(r.claimLabel ?? null)}`
       : "";
   const claimUpdates =
-    hasClaimFields ? ", claim_track = EXCLUDED.claim_track, claim_label = EXCLUDED.claim_label, claim_role = EXCLUDED.claim_role" : "";
+    hasClaimFields ? ", claim_track = EXCLUDED.claim_track, claim_label = EXCLUDED.claim_label" : "";
   const informalCol = r.isInformalMonarch != null ? ", is_informal_monarch" : "";
   const informalVal = r.isInformalMonarch != null ? `, ${r.isInformalMonarch}` : "";
   const informalUpdate = r.isInformalMonarch != null ? ", is_informal_monarch = EXCLUDED.is_informal_monarch" : "";

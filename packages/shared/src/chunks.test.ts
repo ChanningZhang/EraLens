@@ -175,7 +175,6 @@ describe("mergeTimelineSlices", () => {
       end: { year: -750, month: 12 },
       endAbs: -8977,
       claimTrack: "xie",
-      claimRole: "rival",
     };
     const slice = {
       dynasties: [], dynastyGroups: [],

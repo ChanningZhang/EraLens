@@ -191,14 +191,14 @@ INSERT INTO dynasties (
 
 泳道卡片优先读取 `reigns.title`；人物详情页按日期处理 Skill 展示置信日期。人物庙号和谥号仍写入 `persons.temple_name` / `persons.posthumous_name`。称呼选择不读取 `era_names`。明清年号式卡片称呼直接写入 `reigns.title`，原有吴王、努尔哈赤和皇太极称号例外照旧。
 
-起止日期分别写 `start_year/month/day/start_confidence` 和 `end_year/month/day/end_confidence`。开放终点仍保留空 end date 与 display cap `end_abs`。并立君主使用 `claim_track`、`claim_role` 表达，不改变日期归属规则。
+起止日期分别写 `start_year/month/day/start_confidence` 和 `end_year/month/day/end_confidence`。开放终点仍保留空 end date 与 display cap `end_abs`。并立君主使用 `claim_track`、`claim_label` 表达，不改变日期归属规则。
 
 ```sql
 INSERT INTO reigns (
   id, dynasty_id, person_id, title, era_names,
   start_year, start_month, start_day, start_confidence,
   end_year, end_month, end_day, end_confidence,
-  start_abs, end_abs, claim_track, claim_label, claim_role
+  start_abs, end_abs, claim_track, claim_label
 ) VALUES (...);
 ```
 

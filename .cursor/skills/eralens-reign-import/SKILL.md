@@ -52,15 +52,15 @@ description: >-
 
 ## 并立、主线与正统
 
-- 前任仍在位时另一政权另立，或同年真实分立：填 `claim_track`、`claim_label`，`claim_role='rival'`。
+- 前任仍在位时另一政权另立，或同年真实分立：填 `claim_track`、`claim_label`。
 - 前帝身后才即位，即使由权臣拥立，也走主线，不填 `claim_track`。
-- 主行上的非约定正统代政可不填 track，但标 `claim_role='rival'`；不要串入通行 succession。
-- `is_main` 只标正统覆盖窗口；并立 track 与 `claim_role='rival'` 不标主线。不得给王朝写 `color_token='gold'`。
+- 主行上的非约定正统代政可不填 track；不要串入通行 succession。
+- `is_main` 只标正统覆盖窗口；并立 track 不标主线。不得给王朝写 `color_token='gold'`。
 - 正统覆盖窗口按以下项目约定维护；需要切段时基于原始史料日期，不从已经裁过的日期再切：
   - 大一统自起始即为正统：商周、东汉、西东晋、隋唐、武周、南北宋、明、中华民国、中华人民共和国；夏自启（家天下）起，禹受禅不上金。
   - 延迟起算：秦自前221年；西汉自刘邦称帝（前202年2月），沛公/汉王阶段不上金；清自1644年福临起，努尔哈赤、皇太极不上金；元自1276年2月宋恭帝降起，忽必烈定国号至降宋前不上金。
   - 截断：隋可覆盖至618年末（含江都杨浩）；元止于1368年；南宋止于1276年2月，端宗、帝昺不上金。
-  - 并立 track、主行 `claim_role='rival'`、王莽/更始不上金；魏蜀吴称帝前不建帝王卡。
+  - 并立 track、王莽/更始不上金；魏蜀吴称帝前不建帝王卡。
 
 ## 人物、称谓与字段
 
@@ -87,7 +87,7 @@ Task Progress:
 - [ ] 7. 验收卡片、搜索、详情、正统色与并立布局
 ```
 
-直接修改 `data/imports/{slug}/cache.json`，将已核定的日期、称谓、confidence 和世系关系写入记录；日期格式统一见日期处理 Skill。来源与取舍也写在 `manifest.sources` / `manifest.notes`。主线标记使用 `isMain`，track 字段使用 `claimTrack` / `claimRole`。人物称谓放在 person/reign 各自字段。用统一命令生成 SQL；生成流程只序列化缓存，不解析 Wiki、不做朝代特判、年份补丁或自动插值。AbsMonth 按共享定义计算，不能为单个朝代另造处理脚本。
+直接修改 `data/imports/{slug}/cache.json`，将已核定的日期、称谓、confidence 和世系关系写入记录；日期格式统一见日期处理 Skill。来源与取舍也写在 `manifest.sources` / `manifest.notes`。正统覆盖标记使用 `isMain`，并立轨道使用 `claimTrack` / `claimLabel`。人物称谓放在 person/reign 各自字段。用统一命令生成 SQL；生成流程只序列化缓存，不解析 Wiki、不做朝代特判、年份补丁或自动插值。AbsMonth 按共享定义计算，不能为单个朝代另造处理脚本。
 
 ```bash
 node data/imports/generate.mjs {slug}
@@ -106,7 +106,7 @@ node data/imports/lib/auditPreQinXingShi.mjs
 - [ ] person 的 `links` 与 `manifest.sources` 已同步更新，详情“来源”栏已核对
 - [ ] 插值只发生在连续世系与可信共同锚点之间
 - [ ] 人物/在位概述简洁说明身份背景、可考身世（如某某之子、之孙）、相关人物、在位年代和关键历史脉络；关系有争议或史料未载时妥善限定，不作推断
-- [ ] 并立、主线、`is_main` 与 `claim_role` 语义正确
+- [ ] 并立、主线与 `is_main` 语义正确
 - [ ] 姓氏、谥号、庙号、年号、title 各归其列
 - [ ] 校验和审计通过，卡片、详情、搜索、tooltip 均符合预期
 

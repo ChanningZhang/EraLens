@@ -183,7 +183,6 @@ describe("buildEntityDetail reign", () => {
           eraNames: [],
           claimTrack: "lu-jian",
           claimLabel: "绍兴监国",
-          claimRole: "rival",
         }),
       ],
       persons: [

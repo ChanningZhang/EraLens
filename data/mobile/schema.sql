@@ -25,7 +25,7 @@ CREATE TABLE reigns (
   era_names TEXT, start_year INTEGER NOT NULL, start_month INTEGER NOT NULL, start_day INTEGER,
   end_year INTEGER, end_month INTEGER, end_day INTEGER, start_abs INTEGER NOT NULL, end_abs INTEGER NOT NULL,
   start_confidence TEXT NOT NULL, end_confidence TEXT NOT NULL,
-  claim_track TEXT, claim_label TEXT, claim_role TEXT, is_informal_monarch INTEGER NOT NULL,
+  claim_track TEXT, claim_label TEXT, is_informal_monarch INTEGER NOT NULL,
   is_main INTEGER, FOREIGN KEY(dynasty_id) REFERENCES dynasties(id), FOREIGN KEY(person_id) REFERENCES persons(id)
 );
 CREATE TABLE events (

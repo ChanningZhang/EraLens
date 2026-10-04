@@ -4,7 +4,6 @@ import {
   claimDetailFacts,
   claimTrackOf,
   groupByClaimTrack,
-  isNonMasterLine,
   MAIN_CLAIM_TRACK,
   resolveConcurrencySpans,
 } from "./claimTracks";
@@ -43,12 +42,10 @@ describe("groupByClaimTrack", () => {
       reign("yang-tong", 618, 619, {
         claimTrack: "luoyang",
         claimLabel: "洛阳",
-        claimRole: "rival",
       }),
       reign("yang-you", 617, 618, {
         claimTrack: "changan",
         claimLabel: "长安",
-        claimRole: "rival",
       }),
     ]);
 
@@ -65,12 +62,10 @@ describe("groupByClaimTrack", () => {
       reign("shaowu", 1646, 1647, {
         dynastyId: "ming-south",
         claimTrack: "shaowu",
-        claimRole: "rival",
       }),
       reign("lu-jian", 1645, 1653, {
         dynastyId: "ming-south",
         claimTrack: "lu-jian",
-        claimRole: "rival",
       }),
     ]);
 
@@ -90,7 +85,6 @@ describe("groupByClaimTrack — early Zhou dual kings", () => {
         dynastyId: "zhou-east",
         claimTrack: "xie",
         claimLabel: "携",
-        claimRole: "rival",
       }),
     ]);
 
@@ -106,7 +100,6 @@ describe("groupByClaimTrack — posthumous successor vs same-year rival", () => 
       reign("rival-a", 534, 550, {
         claimTrack: "ye",
         claimLabel: "邺",
-        claimRole: "rival",
       }),
     ]);
 
@@ -154,19 +147,4 @@ describe("claimDetailFacts", () => {
     ]);
   });
 
-  it("does not label a main-row rival as 并立", () => {
-    expect(claimDetailFacts({ claimRole: "rival" })).toEqual([]);
-  });
-});
-
-describe("isNonMasterLine", () => {
-  it("treats parallel tracks and main-row rivals as non-master", () => {
-    expect(isNonMasterLine(reign("yang-you", 617, 618, { claimTrack: "changan" }))).toBe(
-      true,
-    );
-    expect(isNonMasterLine(reign("hou-yi", -2006, -1999, { claimRole: "rival" }))).toBe(
-      true,
-    );
-    expect(isNonMasterLine(reign("si-qi", -2061, -2046))).toBe(false);
-  });
 });

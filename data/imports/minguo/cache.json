@@ -1447,8 +1447,7 @@
       "isInformalMonarch": false,
       "isMain": false,
       "claimTrack": "nanjing",
-      "claimLabel": "南京政府",
-      "claimRole": "rival"
+      "claimLabel": "南京政府"
     },
     {
       "id": "reign-wang-jingwei-chairman",
@@ -1475,8 +1474,7 @@
       "isInformalMonarch": false,
       "isMain": false,
       "claimTrack": "nanjing",
-      "claimLabel": "南京政府",
-      "claimRole": "rival"
+      "claimLabel": "南京政府"
     },
     {
       "id": "reign-chen-gongbo-acting-chairman",
@@ -1503,8 +1501,7 @@
       "isInformalMonarch": false,
       "isMain": false,
       "claimTrack": "nanjing",
-      "claimLabel": "南京政府",
-      "claimRole": "rival"
+      "claimLabel": "南京政府"
     },
     {
       "id": "reign-li-zongren-roc",
@@ -2829,7 +2826,7 @@
       "覆盖中华民国（1912–2026-09），汪伪政权以 roc 内南京 rival claim_track 展示为并立政权，不另建 dynasty 或 dynasty_group。各路军阀仅作 persons，不建独立王朝。中华人民共和国不在本包内。",
       "国家元首按维基百科「中华民国国家元首列表」收录（临时大总统、大总统、国民政府主席、总统）。连任不拆卡。",
       "孙中山（sun-yat-sen）复用已有 id。蒋介石分四段：国民政府主席 1928–1931、1943–1948，总统 1948–1949、1950–1975。",
-      "不收录：护法军政府、1925–1928 广州/武汉国民政府（汪兆铭等，维基详表仅列 1928 年后主席）。1940–1945 汪精卫政权按中华民国内部的南京并立主张，以 claim_track=nanjing、claim_role=rival 放在 roc 行，不另建王朝或王朝分组。",
+      "不收录：护法军政府、1925–1928 广州/武汉国民政府（汪兆铭等，维基详表仅列 1928 年后主席）。1940–1945 汪精卫政权按中华民国内部的南京并立主张，以 claim_track=nanjing 放在 roc 行，不另建王朝或王朝分组。",
       "汪伪政权：1940-03-30 成立，汪精卫先任代主席、1940-11-28 起任主席；1944-03-22 陈公博代理主席，1945-08-16 宣布解散。汪精卫赴日治疗期间名义上仍任主席至11月病逝，时间轴从3月代理职权交接起显示陈公博。",
       "国务院摄行按维基「中华民国国家元首列表」建 informal reign：周自齐、高凌霨、黄郛、胡惟德（两段）、颜惠庆、杜锡珪、顾维钧。",
       "谭延闿维基自 1928-02-07 任南京国民政府主席，与张作霖安国军政府并立至 6 月；主线自张作霖 1928-06-03 离京后接谭，避免叠卡。",

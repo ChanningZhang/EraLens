@@ -281,7 +281,6 @@
       "endAbs": -32317,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -308,7 +307,6 @@
       "endAbs": -30997,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -335,7 +333,6 @@
       "endAbs": -29557,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -362,7 +359,6 @@
       "endAbs": -28357,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -389,7 +385,6 @@
       "endAbs": -27421,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -416,7 +411,6 @@
       "endAbs": -26581,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -443,7 +437,6 @@
       "endAbs": -26473,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -470,7 +463,6 @@
       "endAbs": -25297,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -497,7 +489,6 @@
       "endAbs": -24829,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"

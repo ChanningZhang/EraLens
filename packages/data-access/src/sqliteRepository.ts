@@ -75,7 +75,6 @@ function mapReign(row: Row): Reign {
     startAbs: Number(row.start_abs), endAbs, isOngoing: row.end_year == null || row.end_month == null,
     precision: confidencePrecision((row.start_confidence ?? "year") as Parameters<typeof confidencePrecision>[0]), startConfidence: row.start_confidence, endConfidence: row.end_confidence,
     claimTrack, claimLabel: own(row, "claim_label"),
-    claimRole: claimTrack || row.claim_role === "rival" ? "rival" : undefined,
     isInformalMonarch: Boolean(row.is_informal_monarch), isMain: row.is_main == null ? undefined : Boolean(row.is_main),
   });
 }
@@ -223,7 +222,6 @@ export class SqliteTimelineRepository implements TimelineRepository {
                'end_confidence', rr.end_confidence,
                'start_abs', rr.start_abs, 'end_abs', rr.end_abs,
                'claim_track', rr.claim_track, 'claim_label', rr.claim_label,
-               'claim_role', rr.claim_role,
                'is_informal_monarch', rr.is_informal_monarch,
                'is_main', rr.is_main
              ) END AS reign_json,

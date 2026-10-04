@@ -2366,7 +2366,7 @@
         "confidence": "month"
       },
       "note": "1616年2月努尔哈赤建后金，1636年改国号大清；1912年2月宣统退位。",
-      "ethnicity": "女真→满洲"
+      "ethnicity": "女真/满洲"
     }
   ],
   "reigns": [
@@ -2774,7 +2774,6 @@
       "endAbs": 15946,
       "claimTrack": "shangdu",
       "claimLabel": "上都",
-      "claimRole": "rival",
       "isMain": false
     },
     {
@@ -3532,7 +3531,6 @@
       "endAbs": 19838,
       "claimTrack": "lu-jian",
       "claimLabel": "绍兴监国",
-      "claimRole": "rival",
       "isMain": false,
       "isInformalMonarch": true
     },
@@ -3562,7 +3560,6 @@
       "endAbs": 19764,
       "claimTrack": "shaowu",
       "claimLabel": "广州",
-      "claimRole": "rival",
       "isMain": false
     },
     {

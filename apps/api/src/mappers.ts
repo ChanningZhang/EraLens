@@ -82,7 +82,6 @@ export type RawReignRow = {
   end_confidence?: string;
   claim_track: string | null;
   claim_label: string | null;
-  claim_role: string | null;
   is_informal_monarch: boolean;
   is_main: boolean | null;
 };
@@ -204,15 +203,6 @@ export function mapDynasty(row: DbDynasty | RawDynastyRow): Dynasty {
   };
 }
 
-function mapClaimRole(
-  claimRole: string | null | undefined,
-  claimTrack: string | null | undefined,
-): Reign["claimRole"] | undefined {
-  if (claimTrack) return "rival";
-  if (claimRole === "rival") return "rival";
-  return undefined;
-}
-
 export function mapReign(row: DbReign | RawReignRow): Reign {
   const dynastyId = "dynastyId" in row ? row.dynastyId : row.dynasty_id;
   const personId = "personId" in row ? row.personId : row.person_id;
@@ -227,7 +217,6 @@ export function mapReign(row: DbReign | RawReignRow): Reign {
   const endAbs = "endAbs" in row ? row.endAbs : row.end_abs;
   const claimTrack = "claimTrack" in row ? row.claimTrack : row.claim_track;
   const claimLabel = "claimLabel" in row ? row.claimLabel : row.claim_label;
-  const rawClaimRole = "claimRole" in row ? row.claimRole : row.claim_role;
   const isInformalMonarch =
     "isInformalMonarch" in row ? row.isInformalMonarch : row.is_informal_monarch;
   const isMain = "isMain" in row ? row.isMain : row.is_main;
@@ -259,7 +248,6 @@ export function mapReign(row: DbReign | RawReignRow): Reign {
     endConfidence: ("endConfidence" in row ? row.endConfidence : row.end_confidence) as Reign["endConfidence"],
     claimTrack: claimTrack ?? undefined,
     claimLabel: claimLabel ?? undefined,
-    claimRole: mapClaimRole(rawClaimRole, claimTrack),
     isInformalMonarch: isInformalMonarch ?? false,
     isMain: isMain ?? undefined,
   };

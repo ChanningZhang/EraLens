@@ -254,7 +254,6 @@
       "endAbs": 19744,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false
     },
     {
@@ -283,7 +282,6 @@
       "endAbs": 19764,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false
     },
     {
@@ -310,7 +308,6 @@
       "endAbs": 19949,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false
     },
     {
@@ -337,7 +334,6 @@
       "endAbs": 20174,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false
     },
     {
@@ -364,7 +360,6 @@
       "endAbs": 20205,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false
     }
   ],

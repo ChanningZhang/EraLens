@@ -116,13 +116,11 @@ describe("assignReignStacks", () => {
       ...reign("yang-you", absMonth(617, 1), absMonth(618, 12)),
       claimTrack: "changan",
       claimLabel: "长安",
-      claimRole: "rival" as const,
     };
     const tong = {
       ...reign("yang-tong", absMonth(618, 1), absMonth(619, 12)),
       claimTrack: "luoyang",
       claimLabel: "洛阳",
-      claimRole: "rival" as const,
     };
     const all = [guang, you, tong];
 
@@ -168,12 +166,10 @@ describe("assignReignStacks", () => {
     const luJian = {
       ...reign("lu-jian", absMonth(1645, 1), absMonth(1653, 12)),
       claimTrack: "lu-jian",
-      claimRole: "rival" as const,
     };
     const shaowu = {
       ...reign("shaowu", absMonth(1646, 1), absMonth(1647, 12)),
       claimTrack: "shaowu",
-      claimRole: "rival" as const,
     };
     const all = [hongguang, longwu, yongli, luJian, shaowu];
 

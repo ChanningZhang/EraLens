@@ -121,9 +121,7 @@ function firstNonEmpty(...values: Array<string | null | undefined>): string | nu
 }
 
 function joinDetailHeading(dynastyName: string | undefined, appellation: string | null): string {
-  return appellation
-    ? [dynastyName, appellation].filter(Boolean).join(" · ")
-    : "";
+  return [dynastyName, appellation].filter(Boolean).join(" · ");
 }
 
 /** True for 天子/诸侯 reigns before 始皇帝; imperial cards keep name-first layout. */

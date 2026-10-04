@@ -142,14 +142,6 @@ export const AppellationKindSchema = z.enum([
   "regnal",
 ]);
 
-/**
- * Marker for a ruler who is not on the conventionally counted master line.
- * With `claimTrack`: concurrent claimant (隋末三帝并立, 南明鲁监国 / 绍武),
- * secondary parallel row. Without `claimTrack`: sequential usurper on the main
- * row (有穷代夏), no gold and no extra stack. Absent means main succession.
- */
-export const ClaimRoleSchema = z.enum(["rival"]);
-
 /** Trust level for a reign start/end year when sources disagree or are interpolated. */
 export const LegacyDateConfidenceSchema = z.enum([
   "certain",
@@ -217,7 +209,6 @@ export const ReignSchema = z.object({
   claimTrack: z.string().optional(),
   /** Short seat label shown on the card (长安 / 洛阳 / 绍兴监国). */
   claimLabel: z.string().optional(),
-  claimRole: ClaimRoleSchema.optional(),
   /** Non-formal sovereign: regent, acting head, joint vice-chair, etc. Renders with diagonal stripes. */
   isInformalMonarch: z.boolean().default(false),
   /** Explicitly marked main-line ruler; null/omitted means unclassified. */
@@ -477,7 +468,6 @@ export type CapitalLocation = z.infer<typeof CapitalLocationSchema>;
 export type Dynasty = z.infer<typeof DynastySchema>;
 export type DynastyGroup = z.infer<typeof DynastyGroupSchema>;
 export type Reign = z.infer<typeof ReignSchema>;
-export type ClaimRole = z.infer<typeof ClaimRoleSchema>;
 export type AppellationKind = z.infer<typeof AppellationKindSchema>;
 export type Person = z.infer<typeof PersonSchema>;
 export type Event = z.output<typeof EventSchema>;

@@ -549,7 +549,6 @@
       "endAbs": -12493,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -576,7 +575,6 @@
       "endAbs": -12229,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -603,7 +601,6 @@
       "endAbs": -11929,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -630,7 +627,6 @@
       "endAbs": -11053,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -657,7 +653,6 @@
       "endAbs": -10513,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_other",
       "endConfidence": "interpolated_by_other"
@@ -684,7 +679,6 @@
       "endAbs": -9913,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_generation",
       "endConfidence": "interpolated_by_generation"
@@ -711,7 +705,6 @@
       "endAbs": -9637,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_generation",
       "endConfidence": "interpolated_by_generation"
@@ -738,7 +731,6 @@
       "endAbs": -9361,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_generation",
       "endConfidence": "interpolated_by_generation"
@@ -765,7 +757,6 @@
       "endAbs": -9229,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_generation",
       "endConfidence": "interpolated_by_generation"
@@ -792,7 +783,6 @@
       "endAbs": -8629,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_generation",
       "endConfidence": "interpolated_by_generation"
@@ -819,7 +809,6 @@
       "endAbs": -8473,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_generation",
       "endConfidence": "interpolated_by_generation"
@@ -846,7 +835,6 @@
       "endAbs": -8413,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_generation",
       "endConfidence": "interpolated_by_generation"
@@ -873,7 +861,6 @@
       "endAbs": -7837,
       "claimTrack": null,
       "claimLabel": null,
-      "claimRole": null,
       "isMain": false,
       "startConfidence": "interpolated_by_generation"
     }
