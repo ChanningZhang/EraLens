@@ -15,7 +15,7 @@ for (const file of git("ls-files", "--others", "--exclude-standard").split("\n")
 const files = [...changed].sort();
 
 const contractPaths = [
-  "apps/api/prisma/schema.prisma", "apps/api/src/mappers.ts", "packages/shared/src/schema.ts",
+  "packages/shared/src/schema.ts", "packages/data-access/src/sqliteRepository.ts",
   "data/mobile/schema.sql", "data/mobile/versions.json",
 ];
 const hash = createHash("sha256");

@@ -18,7 +18,11 @@
     "events": 0,
     "relations": 0,
     "eventLocations": 85,
-    "location_mapping": 85
+    "location_mapping": 85,
+    "dynastyGroups": 0,
+    "associations": 0,
+    "locations": 0,
+    "locationMappings": 85
   },
   "sources": [
     {

@@ -1,3 +1,4 @@
+import contentVersions from "../../../../data/mobile/versions.json";
 import { describe, expect, it } from "vitest";
 import { SqliteTimelineRepository, type SqliteDatabase, type SqliteDatabaseProvider } from "@eralens/data-access";
 
@@ -7,8 +8,8 @@ function emptyDatabase(): SqliteDatabase {
       if (sql.includes("content_metadata")) {
         return {
           values: [
-            { key: "schema_version", value: "6" },
-            { key: "contract_version", value: "7" },
+            { key: "schema_version", value: String(contentVersions.schemaVersion) },
+            { key: "contract_version", value: String(contentVersions.contractVersion) },
           ],
         };
       }
@@ -19,7 +20,7 @@ function emptyDatabase(): SqliteDatabase {
 }
 
 describe("SqliteTimelineRepository recovery", () => {
-  it.each([[5, 7], [6, 6]])("rejects schema %i / contract %i", async (schema, contract) => {
+  it.each([[contentVersions.schemaVersion - 1, contentVersions.contractVersion], [contentVersions.schemaVersion, contentVersions.contractVersion - 1]])("rejects schema %i / contract %i", async (schema, contract) => {
     const repository = new SqliteTimelineRepository({
       async open() {
         return {
@@ -78,5 +79,57 @@ describe("SqliteTimelineRepository recovery", () => {
       signal: controller.signal,
     })).rejects.toBeDefined();
     expect(opens).toBe(0);
+  });
+});
+
+describe("SQLite person detail dynasty context", () => {
+  it("keeps a non-ruler's dynasty in the detail subtitle", async () => {
+    const repository = new SqliteTimelineRepository({
+      async open() {
+        return {
+          async query(sql) {
+            if (sql.includes("content_metadata")) {
+              return { values: [
+                { key: "schema_version", value: String(contentVersions.schemaVersion) },
+                { key: "contract_version", value: String(contentVersions.contractVersion) },
+              ] };
+            }
+            if (sql.includes("WITH request(person_id")) {
+              expect(sql).toContain("'dynasty_id', p.dynasty_id");
+              return { values: [{
+                person_json: JSON.stringify({
+                  id: "du-fu", name: "杜甫", dynasty_id: "tang", roles: "[\"诗人\"]",
+                  alt_names: "[]", links: "[]", search_terms: "[\"杜甫\"]",
+                }),
+                reign_json: null,
+                reign_count: 0,
+              }] };
+            }
+            if (sql === "SELECT * FROM persons") {
+              return { values: [{
+                id: "du-fu", name: "杜甫", dynasty_id: "tang", roles: "[\"诗人\"]",
+                alt_names: "[]", links: "[]", search_terms: "[\"杜甫\"]",
+              }] };
+            }
+            if (sql.includes("FROM dynasties")) {
+              return { values: [{
+                id: "tang", name: "唐", alt_names: "[\"唐\"]", scope: "cn", region: "east_asia",
+                start_year: 618, start_month: 1, start_day: null, start_confidence: "year", start_abs: 7421,
+                end_year: 907, end_month: 12, end_day: null, end_confidence: "year", end_abs: 10895,
+                color_token: "ochre", parent_id: null, group_id: null, note: null,
+              }] };
+            }
+            return { values: [] };
+          },
+          async close() {},
+        };
+      },
+    });
+
+    await expect(repository.getEntity({ type: "person", id: "du-fu" })).resolves.toMatchObject({
+      title: "杜甫",
+      subtitle: expect.stringContaining("唐"),
+      dynastyId: "tang",
+    });
   });
 });

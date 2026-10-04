@@ -7522,7 +7522,6 @@
       "kind": "succession"
     }
   ],
-  "preSql": "DELETE FROM relations WHERE id = 'rel-yang-guang-yang-you-succession';\nDELETE FROM relations WHERE id = 'rel-yang-guang-yang-hao-succession';\nDELETE FROM events WHERE id IN ('yang-you-enthroned', 'yang-hao-enthroned', 'yang-tong-enthroned');\nDELETE FROM events WHERE id = 'zhu-wen-usurp';\nDELETE FROM relations WHERE id = 'rel-yang-tong-li-yuan-killed';\nDELETE FROM events WHERE id = 'yang-tong-killed';\nDELETE FROM reigns WHERE id = 'reign-dou-jiande-xia';\n\n-- remove stale auto-generated 史料缺 (武周期间唐行留白)\nDELETE FROM reigns WHERE dynasty_id IN ('tang') AND person_id = 'system-missing-ruler';",
   "manifest": {
     "slug": "sui-tang-wudai-song",
     "title": "隋唐宋（含五代十国、武周）",

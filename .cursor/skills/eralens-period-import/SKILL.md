@@ -1,9 +1,8 @@
 ---
 name: eralens-period-import
 description: >-
-  为 EraLens 搜集指定历史时期数据，校验 AbsMonth 与 schema，生成完整 PostgreSQL
-  INSERT/UPSERT 脚本并导入 Docker 数据库。Use when the user asks to collect historical
-  period data, generate PostgreSQL import SQL, import dynasties/reigns/events into EraLens, or
+  为 EraLens 搜集指定历史时期数据，校验 AbsMonth 与 schema，生成 SQLite 包 SQL 并构建统一内容快照。Use when the user asks to collect historical
+  period data, generate SQLite import SQL, build EraLens content, or
   expand timeline coverage for a dynasty or era.
 ---
 
@@ -11,7 +10,7 @@ description: >-
 
 所有日期录入、精度、历法和置信度以 [eralens-date-handling](../eralens-date-handling/SKILL.md) 为准；本 Skill 负责包级数据流程与继位上下文。
 
-将用户指定的历史时期（如「唐朝贞观」「北宋仁宗」）转为可执行的 SQL，写入 PostgreSQL。不要生成或更新 `data/seed/*.json`。
+将用户指定的历史时期（如「唐朝贞观」「北宋仁宗」）写入统一 SQLite 内容库。不要生成或更新 `data/seed/*.json`。
 
 真实导入包以 `data/imports/{slug}/cache.json` 为唯一记录源，来源与处理说明直接写在 `cache.json.manifest.sources` / `cache.json.manifest.notes`。已核定数据直接写进缓存；不要新增包级 `.mjs`、Wiki 抓取/加工脚本或按朝代修补代码。唯一生成入口是 `node data/imports/generate.mjs {slug}`；它只把缓存序列化为 `import.sql` 和 `manifest.json`，不补年份、不改称谓、不解析 Wiki。生成产物不手工编辑。
 
@@ -64,10 +63,10 @@ Task Progress:
 - [ ] 1. 调研：列出王朝、在位、人物、事件、关系及来源
 - [ ] 2. 将已核定记录直接写入 `data/imports/{slug}/cache.json`（计算 `start_abs/end_abs`，不写缓存加工脚本）
 - [ ] 3. 冲突检查：查询 DB 已有 id
-- [ ] 4. 运行统一生成器，输出 PostgreSQL `import.sql` 并刷新 `manifest.json`
+- [ ] 4. 运行统一生成器，输出 SQLite `import.sql` 并刷新 `manifest.json`
 - [ ] 5. 校验：`node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/imports/{slug}/import.sql`
-- [ ] 6. 入库：scripts/apply-sql.sh
-- [ ] 7. 验收：curl timeline/entity + 浏览器时间轴
+- [ ] 6. 全量构建和校验：`pnpm data:build && pnpm data:validate`
+- [ ] 7. 验收：启动 API 后 curl timeline/entity + 浏览器时间轴
 ```
 
 缓存采用 camelCase 字段；日期以 `{ year, month, day?, abs, confidence }` 结构保存。人物、王朝、在位、事件和关系分别放在顶层数组中。集中地点使用 `locations`，历史地理关联使用显式 `locationMappings` 缓存集合；来源说明位于同一个文件的 `manifest` 对象内。SQL 列名由共享序列化器映射。包结构、示例和完整生成命令见 [`data/imports/README.md`](../../../data/imports/README.md)。
@@ -139,7 +138,7 @@ Task Progress:
 - `persons.search_terms` 是预计算的标准化 `text[]`，用于完整词命中；API 使用数组包含查询，依赖 `persons_search_terms_gin_idx`，禁止在请求时遍历全量 person/reign/dynasty 临时拼词。
 - 搜索词包括：`name`、`alt_names`、按结构化 `ancestral_xing` / `clan_shi` 生成的姓+名/氏+名、`posthumous_name`、`temple_name`、人物关联的 `reigns.title`，以及关联王朝 `name` / `alt_names` + 庙号或谥号（如 `唐太宗`、`唐文皇帝`）。不要把带朝代的组合词写回庙谥字段。
 - `name`、`alt_names`、`ancestral_xing`、`clan_shi`、`posthumous_name`、`temple_name` 发生变化，或关联 reign 的 `person_id` / `dynasty_id` / `title`、王朝 `name` / `alt_names` 发生变化后，必须刷新 `search_terms`。数据库触发器会自动刷新受影响人物。
-- 大批量脚本改写人物、在位或王朝相关字段后，必须显式执行 `SELECT rebuild_person_search_terms();` 全量重建搜索词并抽查目标人物。更新 `search_terms` 时 PostgreSQL 会自动维护 GIN 条目；正常数据变更禁止额外执行锁表的 `REINDEX`，只有索引损坏时才物理重建。
+- 大批量脚本改写人物、在位或王朝相关字段后，搜索词由 SQLite 构建器通过共享 `buildPersonSearchTerms()` 重建；数据变更后运行 `pnpm data:build` 和 `pnpm data:validate`，不直接修改快照中的搜索列。
 - `personSql` 不手填 `search_terms`；继续写结构化来源字段，由数据库统一派生，避免各导入包算法漂移。
 
 **谥号 / 庙号 / 年号字段**（与商周一致）：
@@ -189,24 +188,24 @@ node .cursor/skills/eralens-period-import/scripts/compute-abs.mjs -1046 1  # -12
 
 **国君资料缺失占位**：
 
-- 先 UPSERT 系统人物：`id = 'system-missing-ruler'`、`name = '史料缺'`、`roles = ARRAY['系统占位']`。
+- 先 UPSERT 系统人物：`id = 'system-missing-ruler'`、`name = '史料缺'`、`roles = ['系统占位']`。
 - 缺失区间仍写入普通 `reigns` 表，`person_id = 'system-missing-ruler'`，`title = '史料缺'`，起止时间为查证后的缺失范围。
 - 不添加年号、谥号、庙号（`title` 保持 `史料缺`）。
 - 不增加 `missing` 字段、不建单独 gap 表。前端只根据保留的 `person_id` 将该 reign 渲染为虚线框。
 - 没有占位 reign 的时间空档一律留白，不由前端自动推断为资料缺失；统一生成器不会根据相邻君主间隔自动插入 `reign-missing-*`，缓存中必须显式列出经核实的占位记录。
 
-**在位年失考 / 推算边界**遵循 [日期处理 Skill](../eralens-date-handling/SKILL.md) 的端点 confidence 与插值依据要求。历史空白仍须先区分史料缺、无国君与年代失考；只有日期处理 Skill 规定的可靠锚点和连续世系可用于世次均分。数据库兼容旧列在迁移验收前保留。
+**在位年失考 / 推算边界**遵循 [日期处理 Skill](../eralens-date-handling/SKILL.md) 的端点 confidence 与插值依据要求。历史空白仍须先区分史料缺、无国君与年代失考；只有日期处理 Skill 规定的可靠锚点和连续世系可用于世次均分。SQLite schema 只保留当前契约字段。
 
 ### 3. 冲突检查
 
 导入前查询已有 id：
 
 ```bash
-docker exec eralens-postgres psql -U eralens -d eralens -c \
+sqlite3 data/mobile/eralens-content.sqlite \
   "SELECT id FROM dynasties UNION ALL SELECT id FROM persons ORDER BY 1;"
 ```
 
-新 id 不得与库中已有重复（除非 upsert 同一实体）。不要改 `data/seed/*.json`：那是 Mock / `pnpm db:seed` 用的样本，本 skill 只产出 SQL 并写入 PostgreSQL。
+新 id 不得与其他导入包主键冲突；生成前全量所有权审计会检查。不要改 `data/seed/*.json`：那是 Mock 和示例数据，本 skill 维护真实源缓存并构建 SQLite 内容库。
 
 ### 4. 从缓存生成 SQL
 
@@ -218,21 +217,9 @@ docker exec eralens-postgres psql -U eralens -d eralens -c \
 node data/imports/generate.mjs {slug}
 ```
 
-这会从 `cache.json` 序列化 PostgreSQL `import.sql` 和 `manifest.json`；清点后同步维护缓存内 `manifest.counts` / `manifest.generatedAt`。全量重新生成：`node data/imports/generate.mjs --all`。每个包不再有自己的生成器；序列化规则只维护在 `data/imports/lib/sqlHelpers.mjs`。
+这会从 `cache.json` 序列化 SQLite `import.sql` 和 `manifest.json`。全量生成：`node data/imports/generate.mjs --all`。所有包先通过行所有权审计；SQLite SQL 使用共用序列化器 `data/imports/lib/sqlitePackageRows.mjs`。
 
-**统一生成器输出顺序**（不要手写或在包里另造这条序列化逻辑）：
-
-1. `BEGIN;`，然后执行 `preSql` 中的旧库清理
-2. `persons`、`dynasty_groups`、`dynasties`
-3. `locations`
-4. `reigns`（含 `era_names` CSV）
-5. `events`；集中包的 `entity_associations` 在所有实体完成后导入
-6. `relations`、`location_mapping` 及缓存显式列出的更新
-7. 执行 `postSql` 中的旧库清理，再 `COMMIT;`
-
-默认用 `INSERT ... ON CONFLICT (id) DO UPDATE SET ...`（persons/dynasties/reigns/events/relations）。连接表用 `ON CONFLICT DO NOTHING`。
-
-SQL 列映射示例见 [reference.md](reference.md)；数据录入请以 `cache.json` 结构为准，不能把 SQL 示例当作手写源文件。
+**统一生成器与整库构建**：包 SQL 为 SQLite 语法，用于审阅，不作为生产增量写入脚本。`pnpm data:build` 会审计所有缓存，再将全部最终记录放入一个临时数据库事务中，按 `dynasty_groups`、`dynasties`、`persons`、`locations`、`reigns`、`events`、关联、关系和地点映射顺序写入；之后根据共享规则重建搜索索引、全量校验并原子替换快照。源包不支持 `preSql` / `postSql`、`updates` 或手写库清理语句；删除或合并实体要直接反映在唯一所有者缓存和所有引用中。
 
 ### 5. 校验
 
@@ -254,24 +241,15 @@ node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/impor
 
 必须通过后再入库。校验会检查 SQL 结构，并读取同目录 `cache.json` 校验在位接续边界；若失败，回到缓存修正后重新生成，再重跑校验。它只看 INSERT **列名**里的生成列 `span`；`time_mode` 取值 `'span'` 合法。禁止再写 `era_names` 表或 `reigns.posthumous_name`/`temple_name`。
 
-### 6. 入库
-
-确保数据库已启动：`pnpm db:up`。单包增量导入前运行 `node data/imports/generate.mjs {slug}`、校验后用 `apply-sql.sh`；全量 `pnpm db:import` 前运行 `node data/imports/generate.mjs --all`，因为 db:import 本身不会从缓存生成 SQL。
+### 6. 构建
 
 ```bash
-.cursor/skills/eralens-period-import/scripts/apply-sql.sh data/imports/{slug}/import.sql
+node data/imports/generate.mjs {slug}
+pnpm data:build
+pnpm data:validate
 ```
 
-上面是单包增量导入。`pnpm db:import` 会清空并重载本地 PostgreSQL 的真实数据包，随后从 PostgreSQL 构建并校验移动端 SQLite 数据库；不要把它当作 Xcode 启动时执行的脚本。Xcode 使用已导出的 SQLite 文件。导入包本身只生成 PostgreSQL `import.sql`。
-
-导入后若时间轴出现君主卡片上下叠放，运行去重脚本清理旧版 import 残留的孤儿记录：
-
-```bash
-node .cursor/skills/eralens-period-import/scripts/dedupe-database.mjs --dry-run
-node .cursor/skills/eralens-period-import/scripts/dedupe-database.mjs
-```
-
-连接串默认 `postgresql://eralens:eralens@localhost:5432/eralens`（与 `apps/api/.env` 一致）。不要跑 `pnpm db:seed`：它会清空表再灌 JSON，冲掉本次 SQL 导入。
+所有 Web/iOS 历史内容采用整库快照发布。开发环境可运行 `pnpm db:setup`（同义于完整构建和校验）；无需 Docker 数据库。Web API 从 `CONTENT_DB_PATH` 加载只读内容快照，服务设置独立保存在 `STATE_DB_PATH`。iOS 使用 `pnpm ios:sync` 将同一已校验快照打包；Xcode 启动不执行数据导入。
 
 ### 7. 验收
 
@@ -320,4 +298,4 @@ curl -s "http://localhost:3001/api/bounds"
 
 - 列定义与 INSERT 模板：[reference.md](reference.md)
 - 贞观示例：[examples.md](examples.md)
-- 先秦大批量：`data/imports/xia-shang-zhou/`（统一生成器 → PostgreSQL SQL）
+- 先秦大批量：`data/imports/xia-shang-zhou/`（统一生成器 → SQLite SQL）

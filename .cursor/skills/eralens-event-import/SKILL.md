@@ -46,7 +46,7 @@ description: >-
 
 日期和 point/span 的规则以 [eralens-date-handling](../eralens-date-handling/SKILL.md) 为准。事件缓存仍使用 `at`、`start`、`end` 及对应 AbsMonth 字段；`*_abs` 用共享 `absMonth()` 或 `compute-abs.mjs` 核算。
 
-`kind` 使用现有枚举：`battle | politics | culture | disaster | commerce | agriculture | finance | idiom | poetry | other`。`agriculture` 用于农业生产、作物引种及相关农业技术传播。新增枚举必须同步 Zod、Prisma、共享标签、界面样式和入库 Skill，不能只在数据里发明新值。
+`kind` 使用现有枚举：`battle | politics | culture | disaster | commerce | agriculture | finance | idiom | poetry | other`。`agriculture` 用于农业生产、作物引种及相关农业技术传播。新增枚举必须同步 Zod、SQLite schema、共享标签、界面样式和入库 Skill，不能只在数据里发明新值。
 
 ## 内容与关联
 
@@ -69,21 +69,20 @@ Task Progress:
 - [ ] 1. 查史料并列出候选事件、日期、关联和来源
 - [ ] 2. 查重并执行收录判断
 - [ ] 3. 直接修改 data/imports/{slug}/cache.json
-- [ ] 4. 运行统一生成命令，生成 PostgreSQL `import.sql` 与 manifest.json
+- [ ] 4. 运行统一生成命令，生成 SQLite `import.sql` 与 manifest.json
 - [ ] 5. 校验 SQL
 - [ ] 6. 增量导入或全量重灌
 - [ ] 7. 验证 API、详情关联与时间轴显示
 ```
 
-事件记录使用缓存中的 camelCase 字段，例如 `at: { year, month, abs }`。所有普通关联唯一维护在 `entity-associations/cache.json.associations`（`{aRef,bRef}`，规范 UTF-8 排序，无方向、无标签）；历史包不存 dynastyIds/participantIds 或 supplemental 关联数组。事件地点放在 `locationMappings`。relations 仅保留命运与人物继承关系。实体修改在原包，关联修改在集中包，来源和数量随所属包维护，再统一生成、审计、导入。删除实体自动级联清关联；单独移除关联时由集中包维护四字段完整键清理语句。不要手改 SQL，也不要用 seed 更新真实库。
+事件记录使用缓存中的 camelCase 字段，例如 `at: { year, month, abs }`。所有普通关联唯一维护在 `entity-associations/cache.json.associations`（`{aRef,bRef}`，规范 UTF-8 排序，无方向、无标签）；历史包不存 dynastyIds/participantIds 或 supplemental 关联数组。事件地点放在 `locationMappings`。relations 仅保留命运与人物继承关系。实体修改在原包，关联修改在集中包，来源和数量随所属包维护，再统一生成、审计和构建完整快照。删除实体自动级联清关联；移除关联时从集中包缓存删除对应记录。不要手改 SQL，也不要用 seed 更新真实库。
 
 ```bash
 node data/imports/generate.mjs {slug}
 node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/imports/{slug}/import.sql
-.cursor/skills/eralens-period-import/scripts/apply-sql.sh data/imports/{slug}/import.sql
 ```
 
-校验器会读取 SQL 同目录的 `cache.json` 检查在位边界；失败时修缓存、重新生成，再校验。单包增量写 PostgreSQL 用 `apply-sql.sh`；全量重载前先运行 `node data/imports/generate.mjs --all`，再执行 `pnpm db:import`。该命令会清空并重载本地 PostgreSQL，随后导出和校验移动端 SQLite，但不会从缓存生成 SQL。Xcode 不执行导入包 SQL。
+校验器会读取 SQL 同目录的 `cache.json` 检查在位边界；失败时修缓存、重新生成，再校验。真实内容通过整库快照更新：运行 `pnpm data:build` 和 `pnpm data:validate`。API 和 iOS 使用同一 SQLite schema 与内容库；Xcode 不执行导入包 SQL。
 
 ## 验收
 

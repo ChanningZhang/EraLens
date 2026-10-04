@@ -56,9 +56,8 @@ description: >-
 node data/imports/lib/auditPackageOwnership.mjs
 node data/imports/generate.mjs {slug}
 node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/imports/{slug}/import.sql
-.cursor/skills/eralens-period-import/scripts/apply-sql.sh data/imports/{slug}/import.sql
 ```
 
-单包增量导入使用上述 apply-sql。全量导入须先 `generate.mjs --all`；`pnpm db:import` 会清空本地库，不能替代现有库 schema 升级。禁止 `db:seed` 覆盖真实库。生成的 SQL、manifest 不手改。
+修改唯一所有者包后运行 `pnpm data:build` 和 `pnpm data:validate`，生成的 SQL、manifest 不手改。全量内容库按缓存重建，无需数据库服务。
 
 验收包括稳定 ID、无重复空间记录、无孤儿关联、来源保留、历史名称规范、时段及并立记录正确，以及重复增量导入幂等。

@@ -1,17 +1,28 @@
-import { readFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
-import { discoverPackages } from "./discoverPackages.mjs";
-import { writePreparedImportPackage } from "./sqlHelpers.mjs";
+import { serializeSqlitePackages } from "./sqlitePackageRows.mjs";
 
 export function generateCachedPackageFromDirectory(dir) {
-  const cache = JSON.parse(readFileSync(path.join(dir, "cache.json"), "utf8"));
-  for (const key of ["capitals", "reignCapitals", "eventLocations"]) if (cache[key]?.length) throw new Error(`Legacy geography cache: ${key}`);
-  const root = path.resolve(dir.split(`${path.sep}data${path.sep}imports${path.sep}`)[0], "data/imports");
-  const all = discoverPackages(root).map(slug => JSON.parse(readFileSync(path.join(root, slug, "cache.json"), "utf8")));
-  const locations = new Set(all.flatMap(c => c.locations ?? []).map(l => l.id));
-  const owners = Object.fromEntries(["dynasty", "reign", "event"].map(kind => [kind, new Set(all.flatMap(c => c[kind === "dynasty" ? "dynasties" : kind === "reign" ? "reigns" : "events"] ?? []).map(r => r.id))]));
-  for (const m of cache.locationMappings ?? []) {
-    if (!locations.has(m.locationId) || !owners[m.kind]?.has(m.externalId)) throw new Error(`Dangling mapping ${m.id}: ${m.kind}:${m.externalId} @ ${m.locationId}`);
-  }
-  writePreparedImportPackage(dir, cache);
+  const cachePath = path.join(dir, "cache.json");
+  const cache = JSON.parse(readFileSync(cachePath, "utf8"));
+  const { sql, counts } = serializeSqlitePackages([{ slug: cache.slug, cache }]);
+  const manifest = {
+    ...cache.manifest,
+    slug: cache.slug,
+    counts: {
+      ...(cache.manifest?.counts ?? {}),
+      persons: cache.persons?.length ?? 0,
+      dynastyGroups: cache.dynastyGroups?.length ?? 0,
+      dynasties: cache.dynasties?.length ?? 0,
+      reigns: cache.reigns?.length ?? 0,
+      events: cache.events?.length ?? 0,
+      relations: cache.relations?.length ?? 0,
+      associations: cache.associations?.length ?? 0,
+      locations: cache.locations?.length ?? 0,
+      locationMappings: cache.locationMappings?.length ?? 0,
+    },
+  };
+  writeFileSync(path.join(dir, "import.sql"), `-- SQLite import package: ${cache.slug}\nBEGIN;\n${sql}\nCOMMIT;\n`);
+  writeFileSync(path.join(dir, "manifest.json"), `${JSON.stringify(manifest, null, 2)}\n`);
+  console.log(`[${cache.slug}] ${JSON.stringify(counts)}`);
 }

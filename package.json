@@ -9,24 +9,26 @@
     "build": "pnpm -r build",
     "test": "pnpm -r test",
     "lint": "pnpm -r lint",
-    "db:up": "docker compose up -d --wait postgres",
-    "db:down": "docker compose down",
-    "db:migrate": "pnpm --filter @eralens/api db:migrate",
-    "db:seed": "pnpm --filter @eralens/api db:seed",
-    "db:import": "node scripts/import-real-data.mjs && pnpm data:mobile:build && pnpm data:mobile:validate",
-    "db:setup": "pnpm db:up && pnpm db:migrate && pnpm db:import",
-    "data:mobile:build": "pnpm --filter @eralens/api exec tsx scripts/export-mobile-sqlite.ts",
-    "data:mobile:validate": "pnpm --filter @eralens/api exec tsx scripts/validate-mobile-sqlite.ts",
+    "db:import": "pnpm data:build && pnpm data:validate",
+    "db:setup": "pnpm data:build && pnpm data:validate",
+    "data:build": "pnpm --filter @eralens/api exec tsx scripts/export-mobile-sqlite.ts",
+    "data:validate": "pnpm --filter @eralens/api exec tsx scripts/validate-mobile-sqlite.ts",
+    "data:mobile:build": "pnpm data:build",
+    "data:mobile:validate": "pnpm data:validate",
     "data:mobile:diff": "node scripts/data-mobile-diff.mjs",
     "data:mobile:sign-manifest": "node scripts/sign-mobile-manifest.mjs",
     "data:mobile:contract": "pnpm --filter @eralens/api exec tsx scripts/compare-mobile-repositories.ts",
     "data:mobile:sqlite-smoke": "pnpm --filter @eralens/api exec tsx scripts/compare-mobile-repositories.ts --sqlite-only",
     "release:classify": "node scripts/release-classify.mjs",
     "ios:sync": "pnpm --filter @eralens/ios probe:db && node scripts/remove-mobile-probe.mjs && pnpm data:mobile:validate && node scripts/stage-mobile-sqlite.mjs && pnpm --filter @eralens/web build:ios && pnpm --filter @eralens/ios sync",
-    "ios:build:sim": "env -u CC -u CXX -u CPPFLAGS -u LDFLAGS xcodebuild -project apps/ios/ios/App/App.xcodeproj -scheme App -configuration Debug -destination 'generic/platform=iOS Simulator' -derivedDataPath .build/ios/DerivedData -clonedSourcePackagesDirPath .build/ios/SourcePackages CODE_SIGNING_ALLOWED=NO build"
+    "ios:build:sim": "env -u CC -u CXX -u CPPFLAGS -u LDFLAGS xcodebuild -project apps/ios/ios/App/App.xcodeproj -scheme App -configuration Debug -destination 'generic/platform=iOS Simulator' -derivedDataPath .build/ios/DerivedData -clonedSourcePackagesDirPath .build/ios/SourcePackages CODE_SIGNING_ALLOWED=NO build",
+    "settings:import": "pnpm --filter @eralens/api exec tsx scripts/import-settings-snapshot.ts"
   },
   "devDependencies": {
     "typescript": "^5.7.3"
   },
-  "packageManager": "pnpm@9.15.4"
+  "packageManager": "pnpm@9.15.4",
+  "engines": {
+    "node": ">=22.16.0"
+  }
 }

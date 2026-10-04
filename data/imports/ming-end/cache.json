@@ -400,7 +400,6 @@
       "kind": "succession"
     }
   ],
-  "preSql": "DELETE FROM events WHERE id IN ('mingzheng-taiwan-founded', 'qing-unify-taiwan');",
   "manifest": {
     "slug": "ming-end",
     "title": "明末清初过渡政权",

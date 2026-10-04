@@ -12,109 +12,25 @@ if (!file) {
 
 const sql = readFileSync(file, "utf8");
 const errors = [];
-const warnings = [];
+if (!/^\s*-- SQLite import package:/u.test(sql)) errors.push("Expected generated SQLite package SQL");
+if (!/\bBEGIN\s*;/iu.test(sql)) errors.push("Missing BEGIN;");
+if (!/\bCOMMIT\s*;/iu.test(sql)) errors.push("Missing COMMIT;");
+if (/\b(?:SERIAL|JSONB|ARRAY\s*\[|::text\[\]|EXCLUDED\.)/iu.test(sql)) errors.push("PostgreSQL-only syntax found in SQLite import SQL");
+if (/\b(?:event_dynasties|event_participants)\b/iu.test(sql)) errors.push("Deprecated event association table found");
+if (/\bINSERT\s+INTO\s+\w+\s*\([^)]*\b(?:span|span_start_abs|span_end_abs)\b/iu.test(sql)) errors.push("Generated span column must not be inserted");
 
-if (!/\bBEGIN\s*;/i.test(sql)) errors.push("Missing BEGIN;");
-if (!/\bCOMMIT\s*;/i.test(sql)) errors.push("Missing COMMIT;");
-
-// Only inspect the column list, not VALUES — time_mode 'span' is valid.
-const forbidden = [
-  /\b(?:INSERT\s+INTO|DELETE\s+FROM)\s+(?:event_dynasties|event_participants)\b/is,
-  /\bINSERT\s+INTO\s+dynasty_groups\s*\([^)]*\bspan\b/is,
-  /\bINSERT\s+INTO\s+dynasties\s*\([^)]*\bspan\b/is,
-  /\bINSERT\s+INTO\s+reigns\s*\([^)]*\bspan\b/is,
-  /\bINSERT\s+INTO\s+events\s*\([^)]*\bspan_start_abs\b/is,
-  /\bINSERT\s+INTO\s+events\s*\([^)]*\bspan_end_abs\b/is,
-  /\bINSERT\s+INTO\s+events\s*\([^)]*\bspan\b/is,
-];
-for (const re of forbidden) {
-  if (re.test(sql)) errors.push(`Forbidden generated column in INSERT: ${re}`);
-}
-
-const tableOrder = [
-  "dynasty_groups",
-  "dynasties",
-  "persons",
-  "reigns",
-  "events",
-  "entity_associations",
-  "relations",
-  "location_mapping",
-];
-
-const positions = tableOrder.map((table) => {
-  const re = new RegExp(`\\bINSERT\\s+INTO\\s+${table}\\b`, "i");
-  const match = re.exec(sql);
-  return { table, index: match ? match.index : -1 };
-});
-
-const seen = positions.filter((p) => p.index >= 0);
-for (let i = 1; i < seen.length; i++) {
-  if (seen[i].index < seen[i - 1].index) {
-    errors.push(
-      `Insert order violation: ${seen[i].table} appears before ${seen[i - 1].table}`,
-    );
-  }
-}
-
-for (const table of ["persons", "dynasties", "reigns", "events"]) {
-  const re = new RegExp(`\\bINSERT\\s+INTO\\s+${table}\\b`, "i");
-  if (!re.test(sql)) warnings.push(`No INSERT into ${table}`);
-}
-
-if (/\bINSERT\s+INTO\s+events\b/i.test(sql) && !/\btime_mode\b/i.test(sql)) {
-  warnings.push("events INSERT has no time_mode; DB default is point");
-}
-
-if (/\bINSERT\s+INTO\s+era_names\b/i.test(sql)) {
-  errors.push("Deprecated era_names table INSERT; use reigns.era_names CSV");
-}
-if (/\bINSERT\s+INTO\s+reigns\b[^;]*\bposthumous_name\b/i.test(sql)) {
-  errors.push("Deprecated reigns.posthumous_name; use persons.posthumous_name CSV");
-}
-if (/\bINSERT\s+INTO\s+persons\b/i.test(sql) && !/\bposthumous_name,\s*temple_name\b/i.test(sql)) {
-  warnings.push("persons INSERT missing posthumous_name/temple_name columns");
-}
-
-const eventInsertRe =
-  /INSERT INTO events \([^)]*\) VALUES \('((?:[^']|'')*)',\s*'(?:[^']|'')*',\s*'(?:[^']|'')*',\s*'([^']*)',\s*'([^']*)',\s*(?:NULL|'(?:[^']|'')*'),\s*(-?\d+|NULL),\s*(-?\d+|NULL)/gi;
-for (const match of sql.matchAll(eventInsertRe)) {
-  const [, id, timeMode, precision, atYear, atMonth] = match;
-  if (precision !== "year" || atMonth === "NULL") continue;
-  if (Number(atMonth) === 1) {
-    errors.push(
-      `Year-precision event ${id} (${timeMode}) must use at_month=12 to match lane year-end (got ${atYear}-${atMonth})`,
-    );
-  }
-}
-
-const absFields = sql.match(/\b(start_abs|end_abs|at_abs)\s*,\s*(-?\d+)/gi) ?? [];
-// Heuristic: flag obviously unquoted negative in wrong context — light check only
-
-// The cache is the source of truth; validate its reign seams instead of
-// reparsing generated SQL through a separate parser.
 const cachePath = path.join(path.dirname(path.resolve(file)), "cache.json");
 try {
   const cache = JSON.parse(readFileSync(cachePath, "utf8"));
   for (const dynasty of cache.dynasties ?? []) validateDynastyName(dynasty);
-  for (const seamError of validateReignDateConfidenceSeams(cache.reigns ?? [])) {
-    errors.push(`Reign seam mismatch: ${seamError}`);
-  }
+  for (const seamError of validateReignDateConfidenceSeams(cache.reigns ?? [])) errors.push(`Reign seam mismatch: ${seamError}`);
 } catch (error) {
   errors.push(`Could not read adjacent cache.json for reign seam validation: ${error.message}`);
 }
 
 if (errors.length) {
   console.error("VALIDATION FAILED");
-  for (const e of errors) console.error("  ✗", e);
-  if (warnings.length) {
-    console.warn("Warnings:");
-    for (const w of warnings) console.warn("  !", w);
-  }
+  for (const error of errors) console.error("  ✗", error);
   process.exit(1);
 }
-
 console.log("OK:", file);
-if (warnings.length) {
-  for (const w of warnings) console.warn("  !", w);
-}

@@ -1159,7 +1159,6 @@
       "kind": "succession"
     }
   ],
-  "preSql": "DELETE FROM reigns WHERE dynasty_id IN ('prc') AND person_id = 'system-missing-ruler';\nDELETE FROM reigns WHERE id IN ('reign-hua-guofeng-prc', 'reign-deng-xiaoping-prc', 'reign-song-qingling-prc', 'reign-dong-biwu-prc-vice');\nDELETE FROM relations WHERE id IN ('rel-mao-zedong-hua-guofeng-succession', 'rel-hua-guofeng-deng-xiaoping-succession', 'rel-deng-xiaoping-jiang-zemin-succession');",
   "manifest": {
     "slug": "prc",
     "title": "中华人民共和国",

@@ -592,8 +592,6 @@
   ],
   "events": [],
   "relations": [],
-  "preSql": "",
-  "postSql": "-- Remove stale reigns from managed dynasties (superseded ids from older imports)\nWITH stale AS (\n  DELETE FROM reigns\n  WHERE dynasty_id IN ('han-warring') AND id NOT IN ('reign-han-jing-han-warring', 'reign-han-r1-han-warring', 'reign-han-r2-han-warring', 'reign-han-r3-han-warring', 'reign-han-r4-han-warring', 'reign-han-r5-han-warring', 'reign-han-r6-han-warring', 'reign-han-r7-han-warring', 'reign-han-r8-han-warring', 'reign-han-r9-han-warring', 'reign-han-r10-han-warring')\n  RETURNING person_id\n)\nDELETE FROM persons p\nWHERE p.id IN (SELECT DISTINCT person_id FROM stale)\n  AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)\n  AND NOT EXISTS (SELECT 1 FROM entity_associations a WHERE (a.a_type = 'person' AND a.a_id = p.id) OR (a.b_type = 'person' AND a.b_id = p.id))\n  AND NOT EXISTS (\n    SELECT 1 FROM relations rel\n    WHERE (rel.from_type = 'person' AND rel.from_id = p.id)\n       OR (rel.to_type = 'person' AND rel.to_id = p.id)\n  );\nSELECT rebuild_person_search_terms();",
   "manifest": {
     "slug": "chunqiu-zhanguo/han-warring",
     "title": "韩数据包",

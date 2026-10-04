@@ -6,6 +6,7 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 import { normalizeAssociation, assertEntityAssociation, relatedEntityRefs, eventAssociationIds } from '../../../packages/shared/src/entityAssociations.mjs';
 import { auditPackageOwnership } from './auditPackageOwnership.mjs';
+import { serializeSqlitePackages } from './sqlitePackageRows.mjs';
 
 describe('ordinary association invariants', () => {
   it('normalizes reversed pairs and compares Unicode using UTF-8 rather than UTF-16', () => {
@@ -66,7 +67,7 @@ describe('association import ownership',()=>{
     try {
       change(packages);
       for (const [slug,cache] of Object.entries(packages)) {mkdirSync(path.join(root,slug));writeFileSync(path.join(root,slug,'cache.json'),JSON.stringify(cache));}
-      expectation(()=>auditPackageOwnership(root));
+      expectation(()=>auditPackageOwnership(root), packages);
     } finally {rmSync(root,{recursive:true,force:true});}
   }
   it('accepts the single central owner',()=>fixture(()=>{},run=>assert.doesNotThrow(run)));
@@ -77,11 +78,9 @@ describe('association import ownership',()=>{
     fixture(p=>p['entity-associations'].manifest.counts.associations=2,run=>assert.throws(run,/counts/));
     fixture(p=>delete p['entity-associations'].manifest.counts.associations,run=>assert.throws(run,/counts/));
   });
-  it('rejects dangling endpoints and unrestricted cleanup',()=>{
+  it('rejects dangling endpoints and retired cleanup SQL',()=>{
     fixture(p=>p['entity-associations'].associations[0].bRef='person:missing',run=>assert.throws(run,/dangling/));
-    fixture(p=>p['entity-associations'].preSql="DELETE FROM entity_associations WHERE a_type='event';",run=>assert.throws(run,/complete pair key/));
-    fixture(p=>p['entity-associations'].preSql="DELETE FROM entity_associations WHERE a_type='event' OR a_id='e' OR b_type='person' OR b_id='p';",run=>assert.throws(run,/complete pair key/));
-    fixture(p=>p['entity-associations'].preSql="DELETE FROM entity_associations WHERE a_type='event' AND a_id='e' AND b_type='person' AND b_id='p';",run=>assert.doesNotThrow(run));
-    fixture(p=>p.period.preSql="DELETE FROM entity_associations WHERE a_type='event' AND a_id='e' AND b_type='person' AND b_id='p';",run=>assert.throws(run,/only entity-associations/));
+    fixture(p=>p['entity-associations'].preSql="DELETE FROM entity_associations WHERE a_type='event';",(run,packages)=>assert.throws(()=>{run();serializeSqlitePackages(Object.entries(packages).map(([slug,cache])=>({slug,cache})));},/preSql is retired/));
+    fixture(p=>p.period.postSql="DELETE FROM persons;",(run,packages)=>assert.throws(()=>{run();serializeSqlitePackages(Object.entries(packages).map(([slug,cache])=>({slug,cache})));},/postSql is retired/));
   });
 });

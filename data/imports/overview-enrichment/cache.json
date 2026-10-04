@@ -8,7 +8,6 @@
   },
   "persons": [],
   "dynasties": [],
-  "updates": [],
   "manifest": {
     "slug": "overview-enrichment",
     "description": "已停用：概述字段已迁入各实体所属包，不再生成覆盖更新。",

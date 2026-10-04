@@ -11,10 +11,7 @@
   "dynasties": [],
   "reigns": [],
   "events": [],
-  "updates": [],
   "relations": [],
-  "preSql": "-- Remove superseded dynasty mapping IDs; spatial records keep their stable IDs.\nDELETE FROM location_mapping WHERE id IN ('cap-ming-south-nanning-1648', 'cap-roc-taibei-23388', 'cap-nanzhao-taihecheng-649', 'cap-daxi-xijing-1644', 'cap-daxi-xichong-1646', 'cap-sui-daxing-581', 'cap-song-xu-anfeng-16212', 'cap-zhou-zhang-chuzhou-16248', 'cap-song-han-mianyang-16260', 'cap-chen-han-wuchang-1360', 'cap-mingzheng-dongning-19932', 'cap-taiping-tianjing-1853', 'cap-han-zhao-changan-304', 'cap-qin-liyue-424', 'cap-qin-qianhui-709', 'cap-zhou-guo-east-wangcheng-367', 'cap-zhou-east-luoyi-770', 'cap-han-gengshi-changan-23', 'cap-chimei-changan-23', 'cap-yue-chunqiu-langya-333', 'cap-qing-shengjing-1634', 'cap-mingzheng-dongning-1664', 'cap-jin-chunqiu-jiang-1042', 'cap-jin-chunqiu-xinjiang-584');",
-  "postSql": "",
   "manifest": {
     "slug": "dynasty-capitals",
     "title": "全库王朝都城",

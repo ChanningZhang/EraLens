@@ -6,15 +6,7 @@ EraLens 是中国历史时间轴。拖动底部标尺可以浏览不同时期；
 
 ## 启动
 
-需要 Docker 和 Docker Compose。想先体验示例数据，运行：
-
-```bash
-RUN_SEED=true docker compose up --build
-```
-
-打开 [http://localhost:8080](http://localhost:8080)。示例数据只覆盖部分时期；停止服务用 `docker compose down`，数据库数据卷会保留。此命令会写入示例数据，不适合已有完整数据的数据库。
-
-想浏览 `data/imports/` 中的完整历史数据，需要 Node.js、pnpm 和 Docker：
+需要 Node.js 22.16 或更新版本和 pnpm。开发环境直接构建 SQLite 内容库并启动 Web 与 API，无需 Docker 或 PostgreSQL：
 
 ```bash
 pnpm install
@@ -22,7 +14,17 @@ pnpm db:setup
 pnpm dev:all
 ```
 
-打开 [http://localhost:5173](http://localhost:5173)。`db:setup` 会启动 PostgreSQL、执行迁移并重新导入时期数据，覆盖数据库中现有的时间轴数据。完整数据的开发服务分别使用前端 5173 端口和 API 3001 端口。
+打开 [http://localhost:5173](http://localhost:5173)。Web 请求本地 Fastify API（默认 3001 端口）；API 从 `CONTENT_DB_PATH` 只读加载内容库，并将共享事件设置保存在 `STATE_DB_PATH`。默认内容快照为 `data/mobile/eralens-content.sqlite`，设置库为 `data/mobile/eralens-state.sqlite`。
+
+也可以通过 Docker Compose 启动打包后的 Web/API：
+
+```bash
+docker compose up --build
+```
+
+打开 [http://localhost:8080](http://localhost:8080)。Docker 构建会从真实导入源生成并校验内容快照；设置库保存在 `eralens-state` 持久卷中。无需启动数据库容器。部署切换时如需带入旧 `sys_config` 设置，可将原库导出为 `{ "key": "value" }` JSON，再执行 `pnpm settings:import -- --input=/path/to/settings.json`。
+
+`pnpm db:setup` / `pnpm data:build` 会审计所有导入包、构建临时 SQLite、校验成功后再替换内容快照；`pnpm data:validate` 可单独校验现有快照。数据变更后重新运行构建和校验，再执行 `pnpm ios:sync` 将同一快照同步到 iOS。
 
 ## 使用时间轴
 
@@ -49,19 +51,6 @@ pnpm dev:all
 
 人物、事件、王朝的普通关联统一维护在 [entity-associations/cache.json](data/imports/entity-associations/cache.json)，数据库使用无向的 `entity_associations` 表；`relations` 仅保存命运与人物继承关系。导入规则见 [数据维护说明](data/imports/README.md)。移动数据版本统一由 [versions.json](data/mobile/versions.json) 定义；修改数据后重新生成并校验移动数据库。
 
-### 王朝分时名称与增量合并
+### 王朝分时名称
 
-普通王朝的 `name` 为名称文本。改名阶段合并为同一条王朝记录后，`name` 保存仅含 `periods` 的 JSON 字符串，每个阶段包含 `name`、`start`、`end`（带 confidence 的历史日期）。代表显示名称放在 `altNames[0]`；人物与在位详情使用代表名称，泳道按视口时间切换名称。
-
-当前 `yuan` 覆盖蒙古帝国与元，`ming` 覆盖吴、明、南明，源记录唯一由 `yuan-ming-qing` 包维护。更新已有真实库时先执行迁移、生成和校验，再事务性增量导入：
-
-```bash
-pnpm db:migrate
-node data/imports/generate.mjs --all
-node scripts/apply-dynasty-merges.mjs yuan-ming-qing --dry-run
-node scripts/apply-dynasty-merges.mjs yuan-ming-qing
-pnpm data:mobile:build
-pnpm data:mobile:validate
-```
-
-增量入口读取源包的 `dynastyMerges`，统一迁移引用并校验现有人物、在位 ID 保留；发生错误时回滚。
+普通王朝的 `name` 为名称文本。改名阶段合并为同一条王朝记录后，`name` 保存仅含 `periods` 的 JSON 字符串，每个阶段包含 `name`、`start`、`end`（带 confidence 的历史日期）。代表显示名称放在 `altNames[0]`；人物与在位详情使用代表名称，泳道按视口时间切换名称。整库构建以导入源的最终记录和引用为准，不再运行旧的增量合并脚本。

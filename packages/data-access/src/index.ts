@@ -1,4 +1,4 @@
-export type { TimelineQuery, TimelineRepository, SqliteDatabase, SqliteDatabaseProvider } from "./repository";
+export type { TimelineQuery, TimelineRepository, SqliteDatabase, SqliteDatabaseProvider, SettingsStore } from "./repository";
 export { HttpTimelineRepository } from "./httpRepository";
 export { SqliteTimelineRepository } from "./sqliteRepository";
 export { EraLensNative } from "./nativeContentPlugin";

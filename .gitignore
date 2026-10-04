@@ -10,3 +10,5 @@ coverage
 data/mobile/*.sqlite
 data/mobile/*.sqlite-*
 .playwright-mcp
+data/mobile/*.sqlite.sql
+data/mobile/*.sqlite.sql-*

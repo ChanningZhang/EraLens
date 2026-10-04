@@ -17,7 +17,11 @@
     "missingReigns": 2,
     "events": 0,
     "relations": 0,
-    "location_mapping": 1
+    "location_mapping": 1,
+    "dynastyGroups": 0,
+    "associations": 0,
+    "locations": 0,
+    "locationMappings": 1
   },
   "sources": [
     {

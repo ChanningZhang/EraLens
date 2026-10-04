@@ -1,19 +1,19 @@
 # iOS 内容快照
 
-`data/imports/` 是历史资料唯一事实源。iOS SQLite 由 PostgreSQL 导出，不手工编辑快照，也不运行导入 SQL 到设备端。
+`data/imports/` 是历史资料唯一事实源。Web API 与 iOS 共用由 `data/imports/` 全量构建的 SQLite 内容库；不手工编辑快照，也不运行导入 SQL 到设备端。
 
 ## 构建与检查
 
-需要 Node.js 22.13 或更新版本（使用内置 `node:sqlite`），以及项目正常配置的 PostgreSQL `DATABASE_URL`：
+需要 Node.js 22.16 或更新版本（使用内置 `node:sqlite`），无需 PostgreSQL：
 
 ```bash
-pnpm data:mobile:build
-pnpm data:mobile:validate
+pnpm data:build
+pnpm data:validate
 pnpm data:mobile:diff -- --base=/path/to/previous.sqlite
 pnpm release:classify -- --base=<last-data-or-app-tag>
 ```
 
-导出默认写入被 Git 忽略的 `data/mobile/eralens-content.sqlite`；可通过 `--out=/path/file.sqlite` 指定其他位置。构建会按稳定主键顺序导出实体和连接表、生成 `search_entries`、用共享 DTO mapper 和 Zod 校验数据，并执行 SQLite 完整性与外键校验。成功后才会原子替换目标快照。
+构建默认写入被 Git 忽略的 `data/mobile/eralens-content.sqlite`；可通过 `--out=/path/file.sqlite` 指定其他位置。构建会按稳定主键顺序构建实体和连接表、生成 `search_entries`、用共享 DTO mapper 和 Zod 校验数据，并执行 SQLite 完整性与外键校验。成功后才会原子替换目标快照。
 
 每个快照的 `content_metadata` 包含 `schema_version`、`contract_version`、`dataset_version`、来源 Git SHA、内容 checksum、表计数和构建时间。checksum 覆盖所有内容表及搜索索引，不含会变化的构建时间。可用 `DATASET_VERSION` 固定发布版本标识；未设置时使用内容 checksum 派生本地版本号。
 

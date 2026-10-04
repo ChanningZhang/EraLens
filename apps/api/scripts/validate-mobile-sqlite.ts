@@ -8,7 +8,7 @@ import {
   LocationSchema, LocationMappingSchema, mapLocation, mapLocationMapping, DynastyGroupSchema, DynastySchema,
   EventSchema, PersonSchema, RelationSchema, ReignSchema,
 } from "@eralens/shared";
-import { mapDynasty, mapDynastyGroup, mapEvent, mapPerson, mapRelation, mapReign } from "../src/mappers.js";
+import { mapDynasty, mapGroup as mapDynastyGroup, mapEvent, mapPerson, mapRelation, mapReign } from "@eralens/data-access/sqlite";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 const input = path.resolve(process.argv.find((arg) => arg.startsWith("--db="))?.slice(5) ?? path.join(root, "data/mobile/eralens-content.sqlite"));
@@ -71,7 +71,7 @@ try {
   for (const row of dynasties) DynastySchema.parse(mapDynasty(rawHydrate(row) as never));
   for (const row of groups) DynastyGroupSchema.parse(mapDynastyGroup(rawHydrate(row) as never));
   for (const row of reigns) ReignSchema.parse(mapReign(rawHydrate(row) as never));
-  for (const row of relations) RelationSchema.parse(mapRelation(hydrate(row) as never));
+  for (const row of relations) RelationSchema.parse(mapRelation(rawHydrate(row) as never));
   const relationTargets = new Map([
     ["person", new Set(persons.map((row) => String(row.id)))],
     ["dynasty", new Set(dynasties.map((row) => String(row.id)))],

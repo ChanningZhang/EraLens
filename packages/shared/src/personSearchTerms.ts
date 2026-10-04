@@ -21,7 +21,7 @@ function privateNameWithoutStoredClan(person: Person): string {
 
 /**
  * Build the persisted person search aliases from structured fields.
- * PostgreSQL mirrors this rule in rebuild_person_search_terms().
+ * The content snapshot builder persists these terms for both API and clients.
  */
 export function buildPersonSearchTerms(
   person: Person,

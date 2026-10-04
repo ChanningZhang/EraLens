@@ -1550,8 +1550,6 @@
   ],
   "events": [],
   "relations": [],
-  "preSql": "",
-  "postSql": "-- Remove stale reigns from managed dynasties (superseded ids from older imports)\nWITH stale AS (\n  DELETE FROM reigns\n  WHERE dynasty_id IN ('zou-state') AND id NOT IN ('reign-zou-r1-zou-state', 'reign-zou-r2-zou-state', 'reign-zou-r3-zou-state', 'reign-zou-r4-zou-state', 'reign-zou-r5-zou-state', 'reign-zou-r6-zou-state', 'reign-zou-r7-zou-state', 'reign-zou-r8-zou-state', 'reign-zou-r9-zou-state', 'reign-zou-r10-zou-state', 'reign-zou-r11-zou-state', 'reign-zou-r12-zou-state', 'reign-zou-r13-zou-state', 'reign-zou-r14-zou-state', 'reign-zou-r15-zou-state', 'reign-zou-r16-zou-state', 'reign-zou-r17-zou-state', 'reign-zou-r18-zou-state', 'reign-zou-r19-zou-state', 'reign-zou-r18-zou-state-2', 'reign-zou-he-zou-state', 'reign-zou-missing-after-he-1', 'reign-zou-kaogong-zou-state', 'reign-zou-missing-after-kaogong-1', 'reign-zou-missing-after-kaogong-2', 'reign-zou-mu-gong-zou-state', 'reign-zou-jun-qing-zou-state', 'reign-zou-missing-after-mugong-1', 'reign-zou-missing-after-mugong-2')\n  RETURNING person_id\n)\nDELETE FROM persons p\nWHERE p.id IN (SELECT DISTINCT person_id FROM stale)\n  AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)\n  AND NOT EXISTS (SELECT 1 FROM entity_associations a WHERE (a.a_type = 'person' AND a.a_id = p.id) OR (a.b_type = 'person' AND a.b_id = p.id))\n  AND NOT EXISTS (\n    SELECT 1 FROM relations rel\n    WHERE (rel.from_type = 'person' AND rel.from_id = p.id)\n       OR (rel.to_type = 'person' AND rel.to_id = p.id)\n  );\nSELECT rebuild_person_search_terms();",
   "manifest": {
     "slug": "chunqiu-zhanguo/zou-state",
     "title": "邹（春秋战国）",

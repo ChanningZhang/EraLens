@@ -3744,7 +3744,6 @@
       "kind": "succession"
     }
   ],
-  "preSql": "DELETE FROM relations WHERE id IN (\n  'rel-gao-zhumeng-daewuseong-succession',\n  'rel-daewuseong-taizu-wang-succession',\n  'rel-dongchuan-wang-meichuan-wang-succession',\n  'rel-xiaoshoulin-wang-guangkaitu-wang-succession',\n  'rel-wenzhi-wang-pingyuan-wang-succession'\n);",
   "manifest": {
     "slug": "tang-border",
     "title": "唐代边陲政权（吐蕃·吐谷浑·高句丽·回鹘）",

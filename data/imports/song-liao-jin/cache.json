@@ -1312,7 +1312,6 @@
       "kind": "succession"
     }
   ],
-  "preSql": "-- remove stale auto-generated 史料缺 (太祖卒后述律太后摄政期应留白)\nDELETE FROM reigns WHERE dynasty_id IN ('liao') AND person_id = 'system-missing-ruler';",
   "manifest": {
     "slug": "song-liao-jin",
     "title": "宋辽金对峙（含南宋时期）",

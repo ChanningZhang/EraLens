@@ -1,7 +1,7 @@
 ---
 name: eralens-data-fix
 description: >-
-  修复 EraLens 历史数据问题：在 data/imports 源数据与 SQL 层纠正字段，禁止用代码 hardcode
+  修复 EraLens 历史数据问题：在 data/imports 源数据与 SQLite 内容快照层纠正字段，禁止用代码 hardcode
   掩盖脏数据。Use when the user reports wrong names, titles, dates, duplicates, missing
   reigns, display bugs caused by bad import data, or asks to fix/clean historical records.
 ---
@@ -33,14 +33,15 @@ description: >-
 **三分法**（必须先做）：
 
 1. **数据错**：字段填错列、缺列、重复行、年代与史料不符 → 走本 skill，改 `data/imports/`。
-2. **导入残留**：同 id 或同名宽跨度旧行 → 查库去重，修 SQL 后重导。
+2. **导入残留**：同 id 或同名宽跨度旧行 → 核对快照与全部所有者源包，修源缓存并整库重建。
 3. **渲染规则**：数据已正确仍显示错 → 才查 `@eralens/shared` / 前端；若需新规则，写抽象逻辑，不写个案分支。
 
 ```bash
-# 定位实体（Docker 库）
-docker compose exec -T db psql -U eralens -d eralens -c \
-  "SELECT id, name, ancestral_xing, clan_shi, posthumous_name, temple_name FROM persons WHERE id = '…';"
+# 查询已构建的本地内容快照
+sqlite3 data/mobile/eralens-content.sqlite \
+  "SELECT id,name,ancestral_xing,clan_shi,posthumous_name,temple_name FROM persons WHERE id='…';"
 ```
+
 
 ## 工作流
 
@@ -49,11 +50,11 @@ Task Progress:
 - [ ] 1. 核对史料（维基/正史），不要只信当前缓存值
 - [ ] 2. 对照 schema，判定每个字符串应进哪一列
 - [ ] 3. 直接改 `data/imports/{slug}/cache.json`，来源/取舍写入该文件的 `manifest.sources` / `manifest.notes`
-- [ ] 4. 重新 generate → 校验 SQL → 导入
+- [ ] 4. 重新生成包 SQL → 全量构建、校验快照
 - [ ] 5. 跑审计脚本 + 浏览器验收
 ```
 
-各包 `cache.json` 是事实源，字段为 camelCase；来源与说明放在 `cache.json.manifest.sources` / `cache.json.manifest.notes`，生成器据此输出 `manifest.json` 与 PostgreSQL `import.sql`。校验器从 SQL 同目录缓存检查接续边界；失败时修缓存并重生成，不能直接修改 SQL。`apply-sql.sh` 用于单包增量导入；全量重载前运行 `node data/imports/generate.mjs --all`，再执行 `pnpm db:import`。后者清空并重载本地 PostgreSQL，再导出移动端 SQLite，但不会生成 SQL。Xcode 启动不执行导入命令。
+各包 `cache.json` 是事实源，字段为 camelCase；来源与说明放在缓存的 `manifest.sources` / `manifest.notes`，生成器据此输出 `manifest.json` 与 SQLite `import.sql`。校验器从同目录缓存检查接续边界；失败时修缓存并重生成，不能直接修改 SQL。真实数据采用整库快照：运行 `pnpm data:build` 和 `pnpm data:validate`。Xcode 启动不执行导入命令。
 
 ### 1. 调研
 
@@ -68,8 +69,8 @@ Task Progress:
 
 | 层级 | 允许 | 禁止 |
 |---|---|---|
-| `data/imports/{slug}/` | ✅ 源数据、generate、SQL | — |
-| `pnpm db:import` / `apply-sql.sh` | ✅ 写入真实库 | — |
+| `data/imports/{slug}/` | ✅ 源数据、generate、SQLite SQL | — |
+| `pnpm data:build` / `pnpm data:validate` | ✅ 构建与校验完整快照 | — |
 | `data/seed/*.json` | — | ❌ 不修生产数据 |
 | 前端 / API 映射 | 仅当数据已正确 | ❌ 用 hardcode 掩盖脏数据 |
 | `@eralens/shared` | 抽象规则、schema | ❌ 单实体特例（须用户同意） |
@@ -81,7 +82,8 @@ Task Progress:
 ```bash
 node data/imports/generate.mjs {slug}
 node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/imports/{slug}/import.sql
-.cursor/skills/eralens-period-import/scripts/apply-sql.sh data/imports/{slug}/import.sql
+pnpm data:build
+pnpm data:validate
 ```
 
 新包或字段约定不明时，同时阅读 [eralens-period-import](../eralens-period-import/SKILL.md)。
@@ -133,7 +135,7 @@ node data/imports/lib/auditPreQinXingShi.mjs               # 先秦姓/氏
 | 姓氏在先秦副行重复 | `name` 已含结构化的姓或氏 | 保留 `ancestral_xing` / `clan_shi`，从 `name` 去掉重复前缀；检索组合由结构化字段生成 |
 | 史称「少帝」当谥号显示 | 误写入 `posthumous_name` | 移到 `title`，清空 `posthumous_name` |
 | 检索「姜子牙」无结果 | 未建 `alt_names` | 加 `alt_names`，不改 API 特判 |
-| 上下叠两张卡 | 库内重复 `reign` / 旧宽跨度行 | SQL 去重或合并，禁止 CSS 遮盖 |
+| 上下叠两张卡 | 库内重复 `reign` / 旧宽跨度行 | 缓存去重或合并，禁止 CSS 遮盖 |
 | 年份与维基不一致 | 源数据错或未按死年继位规则切年 | 核对史料后直接修正 `cache.json` 的日期与对应 `*_abs` |
 | 空白该不该填 | 未定性 | 史料缺 → `system-missing-ruler`；无国君 → 不写 reign |
 

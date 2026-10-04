@@ -1,7 +1,8 @@
 PRAGMA foreign_keys = ON;
 
 CREATE TABLE persons (
-  id TEXT PRIMARY KEY, name TEXT NOT NULL, alt_names TEXT NOT NULL DEFAULT '[]',
+  id TEXT PRIMARY KEY, name TEXT NOT NULL, dynasty_id TEXT REFERENCES dynasties(id) ON DELETE SET NULL,
+  alt_names TEXT NOT NULL DEFAULT '[]',
   ancestral_xing TEXT, clan_shi TEXT, birth_year INTEGER, birth_month INTEGER, birth_day INTEGER, birth_confidence TEXT,
   death_year INTEGER, death_month INTEGER, death_day INTEGER, death_confidence TEXT, roles TEXT NOT NULL DEFAULT '[]', bio TEXT,
   links TEXT NOT NULL DEFAULT '[]', posthumous_name TEXT, temple_name TEXT, title TEXT,
@@ -63,6 +64,7 @@ CREATE TABLE content_metadata (
 CREATE INDEX persons_birth_year_idx ON persons(birth_year);
 CREATE INDEX persons_death_year_idx ON persons(death_year);
 CREATE INDEX persons_name_idx ON persons(name);
+CREATE INDEX persons_dynasty_idx ON persons(dynasty_id);
 CREATE INDEX dynasty_groups_window_idx ON dynasty_groups(scope, start_abs, end_abs);
 CREATE INDEX dynasties_window_idx ON dynasties(scope, start_abs, end_abs);
 CREATE INDEX dynasties_group_idx ON dynasties(group_id);

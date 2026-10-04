@@ -1,11 +1,11 @@
 # 数据修复参考
 
-## persons / reigns 相关列（Prisma）
+## persons / reigns 相关列（SQLite）
 
 | DB 列 | 类型 | 说明 |
 |---|---|---|
 | `persons.name` | text | 常用姓名；先秦人物不带已单列到姓/氏字段的前缀 |
-| `persons.alt_names` | text[] | 别名，供搜索 |
+| `persons.alt_names` | JSON text | 别名，供搜索 |
 | `persons.ancestral_xing` | text? | 姓 |
 | `persons.clan_shi` | text? | 氏 |
 | `persons.posthumous_name` | text? | 谥号 CSV |
@@ -44,8 +44,8 @@
 ## 修改入口（按优先级）
 
 1. **JSON 源缓存**：`data/imports/{slug}/cache.json`
-2. **manifest**：`data/imports/{slug}/manifest.json`（来源、争议与年代取舍）
-3. **共享 SQL 输出器**：`data/imports/lib/sqlHelpers.mjs`（只维护通用序列化规则）
+2. **manifest**：缓存内的 `manifest.sources` / `manifest.notes`（来源、争议与年代取舍）
+3. **共享 SQLite 输出器**：`data/imports/lib/sqlitePackageRows.mjs`（只维护通用序列化规则）
 4. **直接 SQL**：仅作生成产物；修复应回写 JSON 缓存
 
 禁止：在 `apps/web`、`apps/api` 加 `displayNameOverrides['li-shimin'] = …`。

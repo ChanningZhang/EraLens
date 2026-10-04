@@ -95,10 +95,9 @@ node data/imports/generate.mjs {slug}
 node .cursor/skills/eralens-period-import/scripts/validate-import.mjs data/imports/{slug}/import.sql
 node data/imports/lib/auditImperialAppellationFields.mjs
 node data/imports/lib/auditPreQinXingShi.mjs
-.cursor/skills/eralens-period-import/scripts/apply-sql.sh data/imports/{slug}/import.sql
 ```
 
-校验器从 SQL 同目录的 `cache.json` 核对接续精度；校验失败时修缓存并重新生成，不要修生成的 SQL。`apply-sql.sh` 是单包增量导入；全量重载前先运行 `node data/imports/generate.mjs --all`，再执行 `pnpm db:import`。它会清空并重载本地 PostgreSQL，再构建和校验移动端 SQLite，但不会从缓存生成 SQL。Xcode 启动不执行导入脚本。
+校验器从 SQL 同目录的 `cache.json` 核对接续精度；校验失败时修缓存并重新生成，不要修生成的 SQL。所有包通过整库构建发布：运行 `pnpm data:build` 和 `pnpm data:validate`，无需数据库服务。Xcode 启动不执行导入脚本。
 
 ## 验收
 

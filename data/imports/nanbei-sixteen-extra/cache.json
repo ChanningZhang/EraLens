@@ -1174,7 +1174,6 @@
       "kind": "succession"
     }
   ],
-  "preSql": "DELETE FROM relations WHERE id = 'rel-xiao-zhuang-xiao-cong-succession';\nDELETE FROM reigns WHERE id = 'reign-xiao-zhuang-xiliang';\nDELETE FROM persons WHERE id = 'xiao-zhuang';\nDELETE FROM relations WHERE id IN (\n  'rel-yang-teng-yang-chu-succession',\n  'rel-yang-chu-yang-lan-succession',\n  'rel-yang-lan-yang-fu-succession',\n  'rel-yang-fu-yang-nandang-succession'\n);\nDELETE FROM reigns WHERE id IN (\n  'reign-yang-teng-chouchi',\n  'reign-yang-lan-chouchi',\n  'reign-yang-fu-chouchi',\n  'reign-yang-nandang-chouchi'\n);\nDELETE FROM persons WHERE id IN ('yang-teng', 'yang-lan', 'yang-fu', 'yang-nandang');\nDELETE FROM relations WHERE id IN (\n  'rel-murong-chong-murong-yong-succession',\n  'rel-duan-sui-murong-yi-xiyan-succession',\n  'rel-murong-yi-xiyan-murong-yao-succession'\n);\nDELETE FROM reigns WHERE id = 'reign-murong-yi-xiyan-xiyan';\nDELETE FROM persons WHERE id = 'murong-yi-xiyan';",
   "manifest": {
     "slug": "nanbei-sixteen-extra",
     "title": "南北朝与十六国补充政权",

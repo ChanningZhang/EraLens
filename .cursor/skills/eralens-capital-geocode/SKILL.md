@@ -37,10 +37,9 @@ Task Progress:
 - [ ] 3. 高德取点：maps_geo → maps_regeocode 校验
 - [ ] 4. 将核实后的坐标直接写入 `data/imports/locations/cache.json` 的 `locations` 记录，并维护历史包 `locationMappings`及 `manifest.sources` / `manifest.notes`
 - [ ] 5. 运行统一生成器并用同目录缓存校验 SQL
-- [ ] 6. 用 `apply-sql.sh` 单包增量导入，或按需执行全量 `pnpm db:import`
 ```
 
-导入包只生成 PostgreSQL `import.sql`；单包增量导入生成该包后用 `apply-sql.sh`。全量 `pnpm db:import` 前先运行 `node data/imports/generate.mjs --all`；db:import 会清空并重载本地 PostgreSQL 后构建移动端 SQLite，但不会生成 SQL。Xcode 启动不会运行这条数据导入命令。
+导入包生成 SQLite `import.sql` 供审阅。数据修改后运行 `pnpm data:build` 和 `pnpm data:validate`，通过整库快照更新 Web 与 iOS 内容。Xcode 启动不会运行数据导入命令。
 
 ## modern_name 规范（必填）
 

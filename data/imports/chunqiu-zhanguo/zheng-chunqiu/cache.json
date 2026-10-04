@@ -1256,8 +1256,6 @@
   ],
   "events": [],
   "relations": [],
-  "preSql": "",
-  "postSql": "-- Remove stale reigns from managed dynasties (superseded ids from older imports)\nWITH stale AS (\n  DELETE FROM reigns\n  WHERE dynasty_id IN ('zheng-chunqiu') AND id NOT IN ('reign-zheng-r0-zheng-chunqiu', 'reign-zheng-r1-zheng-chunqiu', 'reign-zheng-r2-zheng-chunqiu', 'reign-zheng-r3-zheng-chunqiu', 'reign-zheng-r4-zheng-chunqiu', 'reign-zheng-r3-zheng-chunqiu-2', 'reign-zheng-r6-zheng-chunqiu', 'reign-zheng-r7-zheng-chunqiu', 'reign-zheng-r4-zheng-chunqiu-2', 'reign-zheng-r9-zheng-chunqiu', 'reign-zheng-r10-zheng-chunqiu', 'reign-zheng-r11-zheng-chunqiu', 'reign-zheng-r12-zheng-chunqiu', 'reign-zheng-r13-zheng-chunqiu', 'reign-zheng-r14-zheng-chunqiu', 'reign-zheng-gongzi-xu-zheng-chunqiu', 'reign-zheng-r14-zheng-chunqiu-2', 'reign-zheng-r15-zheng-chunqiu', 'reign-zheng-r16-zheng-chunqiu', 'reign-zheng-r17-zheng-chunqiu', 'reign-zheng-r18-zheng-chunqiu', 'reign-zheng-r19-zheng-chunqiu', 'reign-zheng-r20-zheng-chunqiu', 'reign-zheng-r21-zheng-chunqiu', 'reign-zheng-r22-zheng-chunqiu', 'reign-zheng-r23-zheng-chunqiu', 'reign-zheng-r24-zheng-chunqiu')\n  RETURNING person_id\n)\nDELETE FROM persons p\nWHERE p.id IN (SELECT DISTINCT person_id FROM stale)\n  AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)\n  AND NOT EXISTS (SELECT 1 FROM entity_associations a WHERE (a.a_type = 'person' AND a.a_id = p.id) OR (a.b_type = 'person' AND a.b_id = p.id))\n  AND NOT EXISTS (\n    SELECT 1 FROM relations rel\n    WHERE (rel.from_type = 'person' AND rel.from_id = p.id)\n       OR (rel.to_type = 'person' AND rel.to_id = p.id)\n  );\nSELECT rebuild_person_search_terms();",
   "manifest": {
     "slug": "chunqiu-zhanguo/zheng-chunqiu",
     "title": "郑独立数据包",

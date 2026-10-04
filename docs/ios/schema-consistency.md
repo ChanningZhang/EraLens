@@ -11,14 +11,14 @@
 - `pnpm data:mobile:contract` 对比八个固定历史窗口、四种 LOD、五类详情、搜索、bounds、catalog 和 capitals；比较前只对无顺序语义的 ID 集合规范排序。`pnpm data:mobile:sqlite-smoke` 可在没有 API 的情况下跑 SQLite 查询冒烟检查。
 - `pnpm ios:sync` 现在先校验正式快照，再把 `eralens-content.sqlite` 复制为 Capacitor assets 所需的 `eralens-content.db`，最后构建 Web 并同步原生工程。
 
-全量对照已通过：从本机 PostgreSQL 重建快照后，SQLite 完整性、外键与全量 Zod 校验通过（schema 1 / contract 2）；Repository 对照通过 52 组比较，覆盖八个固定窗口、四种 LOD、五类详情、搜索、bounds、catalog 和 capitals。先前发现的 11 条悬空关系已按来源修复：删除两个指向已删除事件的事件关联；重放命运线源，更新九条有效的人物命运关系，其中陈叔宝降隋改为关联现存的 `sui-unify`，其余过期事件关联清空。
+历史对照记录：该次工作从本机 PostgreSQL 重建快照后，SQLite 完整性、外键与全量 Zod 校验通过（schema 1 / contract 2）；Repository 对照通过 52 组比较，覆盖八个固定窗口、四种 LOD、五类详情、搜索、bounds、catalog 和 capitals。先前发现的 11 条悬空关系已按来源修复：删除两个指向已删除事件的事件关联；重放命运线源，更新九条有效的人物命运关系，其中陈叔宝降隋改为关联现存的 `sui-unify`，其余过期事件关联清空。
 
 iPhone 17 Pro 与 iPad (A16) / iOS 26.4 模拟器验证：首次启动暴露本机 `apps/web/.env` 的 HTTP 配置覆盖了原生 SQLite 自动选择；新增 `.env.ios` 明确指定 `VITE_DATA_SOURCE=sqlite` 后，重跑 `pnpm ios:sync`、模拟器构建、安装并启动成功。两台设备页面均显示本地快照中的时间轴数据，无需 API 服务。
 
 | 契约项 | 当前定义位置 | 当前状态 |
 |---|---|---|
 | `EventKindSchema` | `packages/shared/src/schema.ts` | `battle`, `politics`, `culture`, `disaster`, `commerce`, `agriculture`, `finance`, `idiom`, `poetry`, `other` |
-| Prisma `Event.kind` | `apps/api/prisma/schema.prisma` | `String`；取值由共享 Zod 契约和导入校验约束 |
+| SQLite `events.kind` | `data/mobile/schema.sql` | `TEXT`；取值由共享 Zod 契约和导入校验约束 |
 | 中文标签 | `packages/shared/src/eventTime.ts` | 含“农业” |
 | 时间轴样式 | `apps/web/src/features/timeline/components/EventLayer.module.css` | 含 `agriculture` 样式 |
 | 筛选默认值 | `packages/shared/src/schema.ts` | 十种类型默认启用 |
@@ -29,4 +29,7 @@ iPhone 17 Pro 与 iPad (A16) / iOS 26.4 模拟器验证：首次启动暴露本�
 
 ## 后续变更门禁
 
-新增事件类型时，逐项更新上表涉及的 Zod、Prisma/数据库校验、显示标签、样式、筛选默认值、导入 Skill 和 SQLite 导出/校验。类型集合以共享 Zod 枚举为权威，不能仅新增数据值。
+新增事件类型时，逐项更新上表涉及的 Zod、SQLite schema/数据库校验、显示标签、样式、筛选默认值、导入 Skill 和 SQLite 构建/校验。类型集合以共享 Zod 枚举为权威，不能仅新增数据值。
+
+
+> 现行架构（schema 8 / contract 9）已由 `data/mobile/schema.sql`、`data/mobile/versions.json` 和共享 SQLite Repository 定义。上述 PostgreSQL 对照结果为历史记录，不代表当前构建流程。

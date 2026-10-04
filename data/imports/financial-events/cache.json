@@ -58,7 +58,6 @@
     }
   ],
   "relations": [],
-  "preSql": "",
   "manifest": {
     "slug": "financial-events",
     "title": "金融重大事件",

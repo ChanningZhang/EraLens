@@ -1,5 +1,4 @@
--- EraLens period import: overview-enrichment
--- Window: 9999-01 .. 9999-12
+-- SQLite import package: overview-enrichment
 BEGIN;
 
 COMMIT;

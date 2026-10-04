@@ -2569,8 +2569,6 @@
       "kind": "succession"
     }
   ],
-  "preSql": "-- remove stale auto-generated 史料缺 (元首空缺期应留白)\nDELETE FROM reigns WHERE dynasty_id IN ('roc') AND person_id = 'system-missing-ruler';\nDELETE FROM relations WHERE id = 'rel-jiang-jieshi-jiang-jieshi-succession';\n",
-  "postSql": "-- remove the formerly separate Wang Jingwei dynasty/group after its reigns have been reassigned to roc\nDELETE FROM dynasties WHERE id = 'wang-jingwei-regime';\nDELETE FROM dynasty_groups WHERE id = 'wartime-china-governments';",
   "manifest": {
     "slug": "minguo",
     "title": "中华民国",

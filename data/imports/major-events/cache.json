@@ -554,7 +554,6 @@
     }
   ],
   "relations": [],
-  "preSql": "DELETE FROM events WHERE id IN ('shang-moves-capital-to-yin', 'zhou-pingwang-moves-east', 'song-gaozong-establishes-capital-yingtian');",
   "manifest": {
     "slug": "major-events",
     "title": "跨时期重大事件补充",

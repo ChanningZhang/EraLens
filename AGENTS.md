@@ -11,8 +11,8 @@
 
 ## 项目结构
 
-- Web：React + TypeScript + Vite，位于 `apps/web/`；API：Fastify + Prisma，位于 `apps/api/`。
-- `packages/shared/` 存领域规则与数据契约；`data/imports/` 存真实数据源；`data/seed/` 仅供 Mock 和 `db:seed`。
+- Web：React + TypeScript + Vite，位于 `apps/web/`；API：Fastify + Node.js 内置 SQLite，位于 `apps/api/`。
+- `packages/shared/` 存领域规则与数据契约；`data/imports/` 存真实数据源；`data/seed/` 仅供 Mock 和示例数据。
 - 本地命令、环境变量和 Docker 说明以 README 与各 `.env.example` 为准。
 
 ## 通用技术约束
@@ -32,11 +32,11 @@
 
 ## 真实数据与验证
 
-- 真实数据只修改 `data/imports/{slug}/` 的源文件，经 generate → SQL → 校验 → 导入流程更新数据库。不要用 `data/seed/*.json` 修生产数据，也不要运行 `pnpm db:seed` 覆盖真实库。
+- 真实数据只修改 `data/imports/{slug}/` 的源文件，经行所有权审计 → SQLite SQL 生成 → 全量构建和校验更新内容快照。不要用 `data/seed/*.json` 修生产数据。
 - 导入包按数据库行隔离所有权：同一主键/唯一键只能出现在一个包；补充包可引用其他包的记录，但不得重复写关联行或通过 `updates` 覆盖其他包的字段。生成前运行全量行所有权审计，冲突时先合并到唯一所有者包。
 - 大批量数据的 `*_abs` 使用 `absMonth()` 或共享生成器计算；不要写入数据库生成列 `span`。
 - 数据问题先核对可靠史料，再区分源数据错误、导入残留和渲染规则问题。修复数据应回到导入源与数据库层，不在 API/前端 hardcode 掩盖。
-- 新枚举或 schema 字段须同步 Prisma、Zod、共享逻辑及对应 Skill/reference。
+- 新枚举或 schema 字段须同步 SQLite schema、Zod、共享逻辑及对应 Skill/reference。
 
 ## 历史数据判定
 

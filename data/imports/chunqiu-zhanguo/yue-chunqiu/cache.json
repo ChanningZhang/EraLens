@@ -563,8 +563,6 @@
   ],
   "events": [],
   "relations": [],
-  "preSql": "",
-  "postSql": "-- Remove stale reigns from managed dynasties (superseded ids from older imports)\nWITH stale AS (\n  DELETE FROM reigns\n  WHERE dynasty_id IN ('yue-chunqiu') AND id NOT IN ('reign-yue-r3-yue-chunqiu', 'reign-yue-r4-yue-chunqiu', 'reign-gou-jian-yue-chunqiu', 'reign-yue-r6-yue-chunqiu', 'reign-yue-r7-yue-chunqiu', 'reign-yue-r8-yue-chunqiu', 'reign-yue-r9-yue-chunqiu', 'reign-yue-r10-yue-chunqiu', 'reign-yue-r11-yue-chunqiu', 'reign-yue-r12-yue-chunqiu', 'reign-yue-r13-yue-chunqiu')\n  RETURNING person_id\n)\nDELETE FROM persons p\nWHERE p.id IN (SELECT DISTINCT person_id FROM stale)\n  AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)\n  AND NOT EXISTS (SELECT 1 FROM entity_associations a WHERE (a.a_type = 'person' AND a.a_id = p.id) OR (a.b_type = 'person' AND a.b_id = p.id))\n  AND NOT EXISTS (\n    SELECT 1 FROM relations rel\n    WHERE (rel.from_type = 'person' AND rel.from_id = p.id)\n       OR (rel.to_type = 'person' AND rel.to_id = p.id)\n  );\nSELECT rebuild_person_search_terms();",
   "manifest": {
     "slug": "chunqiu-zhanguo/yue-chunqiu",
     "title": "越独立数据包",

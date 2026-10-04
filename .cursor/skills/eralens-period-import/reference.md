@@ -16,17 +16,13 @@
   "locations": [],
   "locationMappings": [],
   "reigns": [{ "id": "reign-li-shimin", "dynastyId": "tang", "personId": "li-shimin", "title": "唐太宗", "start": { "year": 626, "month": 9, "abs": 7520, "confidence": "month" }, "end": { "year": 649, "month": 7, "abs": 7794, "confidence": "month" }, "startAbs": 7520, "endAbs": 7794, "eraNames": ["贞观"], "isMain": true }],
-  "reignCapitals": [],
   "events": [{ "id": "example-event", "name": "示例事件", "kind": "politics", "timeMode": "point", "at": { "year": 627, "month": 12, "abs": 7535, "confidence": "year" } }],
-  "eventLocations": [],
   "relations": [],
   "manifest": { "slug": "example-period", "title": "示例时期", "generatedAt": "2026-09-27", "counts": { "persons": 1, "dynasties": 1, "reigns": 1, "events": 1 }, "sources": [], "notes": [] },
-  "preSql": "",
-  "postSql": ""
 }
 ```
 
-正常录入只改这些缓存记录及 `manifest`。新增或删除记录时同步维护缓存中的 `manifest.counts`，修订时更新 `manifest.generatedAt`；生成器按缓存原样输出元数据，不自动计算或修复数量。`preSql` / `postSql` 仅在确实需要清理历史数据库残留时使用，不能用于转换或覆盖缓存数据。生成与导入步骤见 [时期数据导入 Skill](./SKILL.md) 和 [数据包说明](../../../data/imports/README.md)。
+正常录入只改这些缓存记录及 `manifest`。生成器按缓存中的 manifest 输出计数、来源和说明；不得添加 `preSql` / `postSql`、`updates` 或 `dynastyMerges` 增量指令。实体合并应直接维护最终记录与所有引用。生成与导入步骤见 [时期数据导入 Skill](./SKILL.md) 和 [数据包说明](../../../data/imports/README.md)。
 
 ## 生成的 manifest.json 格式
 
@@ -277,7 +273,7 @@ ON CONFLICT (from_type, from_id, to_type, to_id, kind) DO NOTHING;
 
 人物总览、在位详情及相关人物摘要使用代表名称。泳道及有明确时点的展示通过 `resolveDynastyName()` 解析；区间归属复用共享时间规则，支持在一条 reign 内部切换名称。普通文本名称保持原显示。所有显示和搜索必须解析名称，禁止展示或索引 JSON 原文。
 
-同一王朝的改名阶段使用单一王朝 ID，跨包只能引用，不能重复拥有王朝行。合并元、明的配置保存在所属源包的 `dynastyMerges`；生成和校验后执行 `node scripts/apply-dynasty-merges.mjs yuan-ming-qing` 增量迁移。该入口在事务内迁移引用、去重关联、检查人物与在位 ID 保留，最后删除旧王朝。
+同一王朝的改名阶段使用单一王朝 ID，跨包只能引用，不能重复拥有王朝行。整库构建直接从唯一所有者缓存写入最终王朝 ID 和全部引用；不再使用 `dynastyMerges` 增量入口。
 
 跨王朝帝王命运边（时间轴虚线，`killed` / `surrender` / `abdication` / `captured` / `conquered`）：
 

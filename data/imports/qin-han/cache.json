@@ -3100,7 +3100,6 @@
       "kind": "succession"
     }
   ],
-  "preSql": "DELETE FROM events WHERE id = 'wang-mang-usurp';",
   "manifest": {
     "slug": "qin-han",
     "title": "秦汉（含新莽、更始、东汉）",

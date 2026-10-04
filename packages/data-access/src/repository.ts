@@ -38,3 +38,8 @@ export interface SqliteDatabase {
 export interface SqliteDatabaseProvider {
   open(): Promise<SqliteDatabase>;
 }
+
+export interface SettingsStore {
+  get(key: string): Promise<string | null>;
+  set(key: string, value: string): Promise<void>;
+}

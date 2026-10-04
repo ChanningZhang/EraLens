@@ -1316,8 +1316,6 @@
   ],
   "events": [],
   "relations": [],
-  "preSql": "",
-  "postSql": "-- Remove stale reigns from managed dynasties (superseded ids from older imports)\nWITH stale AS (\n  DELETE FROM reigns\n  WHERE dynasty_id IN ('wu-chunqiu') AND id NOT IN ('reign-wu-pre-r0-wu-chunqiu', 'reign-wu-pre-r1-wu-chunqiu', 'reign-wu-pre-r2-wu-chunqiu', 'reign-wu-pre-r3-wu-chunqiu', 'reign-wu-pre-r4-wu-chunqiu', 'reign-wu-pre-r5-wu-chunqiu', 'reign-wu-pre-r6-wu-chunqiu', 'reign-wu-pre-r7-wu-chunqiu', 'reign-wu-pre-r8-wu-chunqiu', 'reign-wu-pre-r9-wu-chunqiu', 'reign-wu-pre-r10-wu-chunqiu', 'reign-wu-pre-r11-wu-chunqiu', 'reign-wu-pre-r12-wu-chunqiu', 'reign-wu-pre-r13-wu-chunqiu', 'reign-wu-pre-r14-wu-chunqiu', 'reign-wu-pre-r15-wu-chunqiu', 'reign-wu-pre-r16-wu-chunqiu', 'reign-wu-pre-r17-wu-chunqiu', 'reign-wu-r0-wu-chunqiu', 'reign-wu-r1-wu-chunqiu', 'reign-wu-r2-wu-chunqiu', 'reign-wu-r3-wu-chunqiu', 'reign-wu-r4-wu-chunqiu', 'reign-helu-wu-chunqiu', 'reign-wu-fu-gai-wu-chunqiu', 'reign-fu-chai-wu-chunqiu')\n  RETURNING person_id\n)\nDELETE FROM persons p\nWHERE p.id IN (SELECT DISTINCT person_id FROM stale)\n  AND NOT EXISTS (SELECT 1 FROM reigns r WHERE r.person_id = p.id)\n  AND NOT EXISTS (SELECT 1 FROM entity_associations a WHERE (a.a_type = 'person' AND a.a_id = p.id) OR (a.b_type = 'person' AND a.b_id = p.id))\n  AND NOT EXISTS (\n    SELECT 1 FROM relations rel\n    WHERE (rel.from_type = 'person' AND rel.from_id = p.id)\n       OR (rel.to_type = 'person' AND rel.to_id = p.id)\n  );\nSELECT rebuild_person_search_terms();",
   "manifest": {
     "slug": "chunqiu-zhanguo/wu-chunqiu",
     "title": "吴独立数据包",

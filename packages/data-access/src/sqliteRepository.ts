@@ -11,7 +11,6 @@ type EntityDetail, type EntityRef, type Event,
 } from "@eralens/shared";
 import { DEFAULT_EVENT_DISPLAY_CONFIG, EventDisplayConfigSchema } from "@eralens/shared";
 import type { SqliteDatabaseProvider, TimelineQuery, TimelineRepository } from "./repository";
-import { createPlatformSettings } from "./platformSettings";
 import contentVersions from "../../../data/mobile/versions.json";
 
 type Row = Record<string, unknown>;
@@ -34,9 +33,10 @@ const point = (year: unknown, month: unknown, day?: unknown) => year == null || 
   : { year: Number(year), month: Number(month), ...(day == null ? {} : { day: Number(day) }) };
 const csv = (value: unknown) => typeof value === "string" ? value.split(",").map((part) => part.trim()).filter(Boolean) : [];
 
-function mapPerson(row: Row): Person {
+export function mapPerson(row: Row): Person {
   return PersonSchema.parse({
     id: row.id, name: row.name, title: own(row, "title"), altNames: strings(row.alt_names),
+    dynastyId: own(row, "dynasty_id"),
     ancestralXing: own(row, "ancestral_xing"), clanShi: own(row, "clan_shi"),
     birth: point(row.birth_year, row.birth_month, row.birth_day) ? { ...point(row.birth_year, row.birth_month, row.birth_day), confidence: own(row, "birth_confidence") } : undefined,
     death: point(row.death_year, row.death_month, row.death_day) ? { ...point(row.death_year, row.death_month, row.death_day), confidence: own(row, "death_confidence") } : undefined,
@@ -46,7 +46,7 @@ function mapPerson(row: Row): Person {
   });
 }
 
-function mapDynasty(row: Row): Dynasty {
+export function mapDynasty(row: Row): Dynasty {
   return DynastySchema.parse({
     id: row.id, name: row.name, altNames: strings(row.alt_names), ethnicity: own(row, "ethnicity"), scope: row.scope,
     region: row.region, start: { ...point(row.start_year, row.start_month, row.start_day), confidence: row.start_confidence }, end: { ...point(row.end_year, row.end_month, row.end_day), confidence: row.end_confidence },
@@ -55,7 +55,7 @@ function mapDynasty(row: Row): Dynasty {
   });
 }
 
-function mapGroup(row: Row): DynastyGroup {
+export function mapGroup(row: Row): DynastyGroup {
   return DynastyGroupSchema.parse({
     id: row.id, name: row.name, altNames: strings(row.alt_names), scope: row.scope,
     start: { ...point(row.start_year, row.start_month, row.start_day), confidence: row.start_confidence }, end: { ...point(row.end_year, row.end_month, row.end_day), confidence: row.end_confidence },
@@ -64,7 +64,7 @@ function mapGroup(row: Row): DynastyGroup {
 }
 
 
-function mapReign(row: Row): Reign {
+export function mapReign(row: Row): Reign {
   const endAbs = Number(row.end_abs);
   const fallbackEnd = fromAbsMonth(endAbs);
   const claimTrack = own(row, "claim_track");
@@ -79,7 +79,7 @@ function mapReign(row: Row): Reign {
   });
 }
 
-function mapEvent(row: Row, associations: readonly EntityAssociation[], locationMappings: LocationMapping[] = []): Event {
+export function mapEvent(row: Row, associations: readonly EntityAssociation[], locationMappings: LocationMapping[] = []): Event {
   return EventSchema.parse({
     id: row.id, name: row.name, kind: row.kind, timeMode: row.time_mode, precision: confidencePrecision((row.at_confidence ?? row.start_confidence ?? "year") as Parameters<typeof confidencePrecision>[0]), atConfidence: own(row, "at_confidence"), startConfidence: own(row, "start_confidence"), endConfidence: own(row, "end_confidence"), dateNote: own(row, "date_note"),
     at: point(row.at_year, row.at_month, row.at_day) ? { ...point(row.at_year, row.at_month, row.at_day), confidence: own(row, "at_confidence") } : undefined,
@@ -92,7 +92,7 @@ function mapEvent(row: Row, associations: readonly EntityAssociation[], location
   });
 }
 
-function mapRelation(row: Row): Relation {
+export function mapRelation(row: Row): Relation {
   return RelationSchema.parse({
     id: row.id, fromRef: `${row.from_type}:${row.from_id}`, toRef: `${row.to_type}:${row.to_id}`,
     kind: row.kind, at: point(row.at_year, row.at_month, row.at_day), atAbs: n(row.at_abs),
@@ -107,9 +107,13 @@ async function rows(db: Awaited<ReturnType<SqliteDatabaseProvider["open"]>>, sql
 export class SqliteTimelineRepository implements TimelineRepository {
   private dbPromise: ReturnType<SqliteDatabaseProvider["open"]> | null = null;
   private storePromise: Promise<TimelineDataStore> | null = null;
-  private readonly settings = createPlatformSettings();
-
-  constructor(private readonly provider: SqliteDatabaseProvider) {}
+  constructor(
+    private readonly provider: SqliteDatabaseProvider,
+    private readonly settings: import("./repository").SettingsStore = {
+      async get() { return null; },
+      async set() {},
+    },
+  ) {}
 
   private database(): ReturnType<SqliteDatabaseProvider["open"]> {
     if (!this.dbPromise) {
@@ -199,6 +203,7 @@ export class SqliteTimelineRepository implements TimelineRepository {
       )
       SELECT json_object(
                'id', p.id, 'name', p.name, 'title', p.title,
+               'dynasty_id', p.dynasty_id,
                'alt_names', p.alt_names,
                'ancestral_xing', p.ancestral_xing, 'clan_shi', p.clan_shi,
                'birth_year', p.birth_year, 'birth_month', p.birth_month, 'birth_day', p.birth_day,

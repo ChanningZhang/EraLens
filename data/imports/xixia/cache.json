@@ -768,7 +768,6 @@
       "kind": "succession"
     }
   ],
-  "preSql": "DELETE FROM relations WHERE id = 'rel-xixia-yuanhao-empire';\nDELETE FROM events WHERE id IN ('xixia-li-jiqian-rebel', 'xixia-yuanhao-empire');",
   "manifest": {
     "slug": "xixia",
     "title": "西夏（党项大夏）",

@@ -1115,7 +1115,6 @@
     }
   ],
   "relations": [],
-  "preSql": "DELETE FROM events WHERE id = 'poetry-bie-yunjian';\nDELETE FROM events WHERE id = 'poetry-yuanyuanqu';\nDELETE FROM persons WHERE id = 'wu-meicun' AND NOT EXISTS (SELECT 1 FROM entity_associations WHERE (a_type = 'person' AND a_id = 'wu-meicun') OR (b_type = 'person' AND b_id = 'wu-meicun')) AND NOT EXISTS (SELECT 1 FROM reigns WHERE person_id = 'wu-meicun');",
   "manifest": {
     "slug": "poetry",
     "title": "古诗名篇（poetry 事件）",

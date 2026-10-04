@@ -278,7 +278,6 @@
   ],
   "events": [],
   "relations": [],
-  "preSql": "DELETE FROM reigns WHERE id = 'reign-wang-mang-regent';\nDELETE FROM persons WHERE id = 'wang-mang-regent';\nDELETE FROM reigns WHERE id = 'reign-zhu-qiyu-regent-ming';",
   "manifest": {
     "slug": "informal-monarchs",
     "title": "非正式国君",

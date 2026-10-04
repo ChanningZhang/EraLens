@@ -3594,7 +3594,6 @@
       "kind": "succession"
     }
   ],
-  "preSql": "DELETE FROM events WHERE id IN ('song-liu-founded', 'qi-nan-founded', 'liang-nan-founded', 'chen-nan-founded', 'qi-bei-founded', 'zhou-bei-founded', 'yang-jian-usurp', 'sui-chen-unify');\nDELETE FROM relations WHERE id = 'rel-songliu-liu-yu-jin';\nDELETE FROM reigns WHERE id = 'reign-yuan-zi-you-rival-528';",
   "manifest": {
     "slug": "nanbei-chao",
     "title": "南北朝",

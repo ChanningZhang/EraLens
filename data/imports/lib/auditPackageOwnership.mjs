@@ -62,102 +62,6 @@ function collectPackageRows(owners, slug, cache) {
   });
 }
 
-function auditPackageSql(owners, slug, cache) {
-  const literalsFor = (where, column) => {
-    const escaped = column.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    const match = new RegExp(`\\b${escaped}\\s*(?:=\\s*'((?:[^']|'')*)'|IN\\s*\\(([^)]*)\\))`, "i").exec(where);
-    if (!match) return null;
-    return match[1] != null
-      ? [match[1].replaceAll("''", "'")]
-      : [...match[2].matchAll(/'((?:[^']|'')*)'/g)].map((value) => value[1].replaceAll("''", "'"));
-  };
-  const rejectExternal = (table, key, operation, field) => {
-    const otherOwners = owners.get(`${table}\0${key}`) ?? [];
-    if (otherOwners.some((owner) => owner.slug !== slug)) {
-      throw new Error(`${slug}.${field} ${operation}s ${table}.${key}, owned by ${otherOwners.filter((owner) => owner.slug !== slug).map((owner) => owner.slug).join(", ")}`);
-    }
-  };
-  for (const [field, sql] of [["preSql", cache.preSql], ["postSql", cache.postSql]]) {
-    if (!sql) continue;
-    if (/\b(?:event_dynasties|event_participants)\b/i.test(sql)) throw new Error(`${slug}.${field}: legacy association table`);
-    if (slug !== "entity-associations" && /\b(?:INSERT\s+INTO|DELETE\s+FROM|UPDATE)\s+entity_associations\b/i.test(sql)) throw new Error(`${slug}.${field}: only entity-associations may maintain ordinary associations`);
-    for (const match of sql.matchAll(/\bDELETE\s+FROM\s+([\w"]+)\b([\s\S]*?);/gi)) {
-      if (!/\bWHERE\b/i.test(match[2])) {
-        throw new Error(`${slug}.${field} contains an unscoped DELETE FROM ${match[1]}; package cleanup must target specific rows`);
-      }
-      const table = match[1].replaceAll('"', "").toLowerCase();
-      const where = match[2].slice(match[2].search(/\bWHERE\b/i) + 5);
-      const ids = literalsFor(where, "id");
-      const primaryTables = {
-        persons: "persons", dynasty_groups: "dynasty_groups", dynasties: "dynasties",
-        reigns: "reigns", events: "events",
-        locations: "locations", location_mapping: "location_mapping", relations: "relations.id",
-      };
-      if (ids) for (const id of ids) rejectExternal(primaryTables[table] ?? `${table}.id`, id, "DELETE", field);
-
-      if (table === "entity_associations") {
-        if (slug !== "entity-associations") throw new Error(`${slug}.${field} cannot delete associations owned by the centralized package`);
-        const columns = ["a_type", "a_id", "b_type", "b_id"];
-        const termPattern = /\b(a_type|a_id|b_type|b_id)\s*=\s*'((?:[^']|'')*)'/gi;
-        const terms = [...where.matchAll(termPattern)];
-        const values = new Map(terms.map(term => [term[1].toLowerCase(), term[2].replaceAll("''", "'")]));
-        if (terms.length !== 4 || !columns.every(column => values.has(column)) ||
-            !/^\s*KEY(?:\s+AND\s+KEY){3}\s*$/i.test(where.replace(termPattern, "KEY"))) {
-          throw new Error(`${slug}.${field}: association cleanup must identify a complete pair key`);
-        }
-        assertEntityAssociation({
-          aRef: `${values.get("a_type")}:${values.get("a_id")}`,
-          bRef: `${values.get("b_type")}:${values.get("b_id")}`,
-        });
-      }
-      const foreignColumns = {
-        reigns: ["dynasty_id", "person_id"],
-        location_mapping: ["kind", "external_id", "location_id"],
-        relations: ["from_type", "from_id", "to_type", "to_id", "event_id"],
-      }[table] ?? [];
-      if (foreignColumns.length) {
-        const filters = new Map(foreignColumns.map((column) => [column, literalsFor(where, column)]));
-        if (![...filters.values()].some((values) => values != null)) continue;
-        const excludedIdsMatch = /\bid\s+NOT\s+IN\s*\(([^)]*)\)/i.exec(where);
-        const excludedIds = excludedIdsMatch
-          ? [...excludedIdsMatch[1].matchAll(/'((?:[^']|'')*)'/g)].map((value) => value[1].replaceAll("''", "'"))
-          : [];
-        for (const [ownerKey, rows] of owners) {
-          const [candidateTable] = ownerKey.split("\0");
-          const expectedTable = table === "relations" ? "relations.id" : table;
-          if (candidateTable !== expectedTable) continue;
-          for (const owner of rows) {
-            if (owner.slug === slug || !owner.row) continue;
-            const row = owner.row;
-            if (excludedIds.includes(row.id)) continue;
-            const values = {
-              kind: row.kind, external_id: row.externalId, location_id: row.locationId,
-              dynasty_id: row.dynastyId,
-              person_id: row.personId,
-              event_id: row.eventId,
-              from_type: row.fromRef?.split(":", 1)[0],
-              from_id: row.fromRef?.split(":").slice(1).join(":"),
-              to_type: row.toRef?.split(":", 1)[0],
-              to_id: row.toRef?.split(":").slice(1).join(":"),
-            };
-            const matches = [...filters].every(([column, allowed]) => allowed == null || allowed.includes(values[column]));
-            if (matches) {
-              throw new Error(`${slug}.${field} DELETEs ${table} row ${owner.description}, owned by ${owner.slug}`);
-            }
-          }
-        }
-      }
-    }
-    for (const match of sql.matchAll(/\bUPDATE\s+([\w"]+)\s+SET\b[\s\S]*?\bWHERE\b([\s\S]*?);/gi)) {
-      const table = match[1].replaceAll('"', "").toLowerCase();
-      const where = match[2];
-      const ids = literalsFor(where, "id");
-      if (!ids) throw new Error(`${slug}.${field} contains an UPDATE without a direct id target; move field data into the owning cache row`);
-      for (const id of ids) rejectExternal(table, id, "UPDATE", field);
-    }
-  }
-}
-
 export function auditPackageOwnership(root = importsRoot) {
   const owners = new Map();
   const packageCaches = [];
@@ -196,7 +100,6 @@ export function auditPackageOwnership(root = importsRoot) {
     const colon=ref.indexOf(":"), type=ref.slice(0,colon), id=ref.slice(colon+1);
     if (!entities.get(type)?.has(id)) throw new Error(`${slug}: dangling association endpoint ${ref}`);
   }
-  for (const { slug, cache } of packageCaches) auditPackageSql(owners, slug, cache);
 
   const conflicts = [...owners.entries()].filter(([, rows]) => rows.length > 1);
   if (conflicts.length) {

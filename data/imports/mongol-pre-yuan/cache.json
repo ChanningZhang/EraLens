@@ -453,7 +453,6 @@
       "kind": "succession"
     }
   ],
-  "preSql": "-- remove stale auto-generated 史料缺 (regency gaps are intentional blanks)\nDELETE FROM reigns WHERE dynasty_id IN ('mongol-empire') AND person_id = 'system-missing-ruler';",
   "manifest": {
     "slug": "mongol-pre-yuan",
     "title": "元朝建立前的蒙古帝国",

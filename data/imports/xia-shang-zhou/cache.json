@@ -5671,7 +5671,6 @@
       "kind": "succession"
     }
   ],
-  "preSql": "DELETE FROM reigns WHERE dynasty_id = 'zhou';\nDELETE FROM dynasties WHERE id = 'zhou';\nDELETE FROM reigns WHERE id = 'reign-missing-zhou-west--840';\nDELETE FROM reigns WHERE id = 'reign-missing-shang--1570';\nDELETE FROM reigns WHERE dynasty_id = 'xia' AND person_id = 'system-missing-ruler';\nDELETE FROM relations WHERE id LIKE 'rel-si-%-succession';\nDELETE FROM relations WHERE id IN ('rel-zi-tang-zi-taijia-succession','rel-ji-yijiu-ji-yuchen-succession','rel-ji-yuchen-ji-lin-succession','rel-hou-yi-han-zhuo-succession');\nDELETE FROM events WHERE id IN ('houyi-dai-xia','hanzhuo-cuan-xia');",
   "manifest": {
     "slug": "xia-shang-zhou",
     "importPhase": "post",

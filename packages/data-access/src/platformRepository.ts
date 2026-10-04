@@ -3,6 +3,7 @@ import { CapacitorSQLite, SQLiteConnection, type SQLiteDBConnection } from "@cap
 import { HttpTimelineRepository } from "./httpRepository";
 import { SqliteTimelineRepository } from "./sqliteRepository";
 import { EraLensNative } from "./nativeContentPlugin";
+import { createPlatformSettings } from "./platformSettings";
 import type { TimelineRepository } from "./repository";
 
 const CONTENT_DATABASE = "eralens-content";
@@ -98,7 +99,7 @@ export function createPlatformRepository(options: {
             close: () => serializeNativeQuery(closeNativeConnection),
           };
         },
-      });
+      }, createPlatformSettings());
     }
     return nativeRepository;
   }

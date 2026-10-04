@@ -1552,7 +1552,6 @@
     }
   ],
   "relations": [],
-  "preSql": "DELETE FROM events WHERE id = 'idiom-feng-huo-xi-zhu-hou';\nDELETE FROM events WHERE id = 'idiom-fen-shen-sui-gu';",
   "manifest": {
     "slug": "idioms",
     "title": "成语典故（point 事件）",
@@ -1827,6 +1826,5 @@
       "2026-10-02将原属本包的西虢王朝、人物、在位、上阳都城和待考人物关系迁入chunqiu-zhanguo；历史内容及ID保持不变，假道伐虢事件继续引用原王朝和人物ID。",
       "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
     ]
-  },
-  "postSql": "SELECT rebuild_person_search_terms();"
+  }
 }

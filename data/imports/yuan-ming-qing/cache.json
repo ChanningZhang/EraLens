@@ -5402,7 +5402,6 @@
       "kind": "succession"
     }
   ],
-  "preSql": "DELETE FROM events WHERE id = 'lu-jian-enthroned';\nDELETE FROM events WHERE id = 'yuan-north-end';\nDELETE FROM reigns WHERE dynasty_id = 'yuan-north';\nDELETE FROM dynasties WHERE id = 'yuan-north';\n-- remove stale auto-generated 史料缺 (两都之战并行叠放、驾崩至即位短空档应留白)\nDELETE FROM reigns WHERE dynasty_id IN ('yuan') AND person_id = 'system-missing-ruler';\nDELETE FROM relations WHERE id IN ('rel-yeshuntuemur-ragibagh-succession', 'rel-ragibagh-tugh-temur-succession', 'rel-khoshila-irinchibal-succession');\nDELETE FROM reigns WHERE id = 'reign-puyi-qing-forbidden';\nDELETE FROM events WHERE id = 'qing-moves-capital-to-beijing';\nDELETE FROM events WHERE id = 'shaowu-enthroned';",
   "manifest": {
     "slug": "yuan-ming-qing",
     "title": "元明清（含南明）",
@@ -6119,19 +6118,5 @@
       "2026-10-03：王朝泳道名按分时名称记录：1616年建国后至1636-05-15称“后金”，自崇德元年四月十一日（公历1636-05-15）起称“大清”。后金自称金，altNames 保留“金”“后金”；详情代表名为“大清”。改号日据《清太宗实录》卷二十八及其公历换算，采用日精度。",
       "2026-10-03：清代王朝记录跨越1616年后金至1636年大清。皇太极于1635年将女真族称正式更改为满洲，1636年改国号为大清；因此按皇帝所属族系并尊重族称变更，展示为“女真→满洲”，不把后期族称追溯到整个后金阶段。"
     ]
-  },
-  "dynastyMerges": [
-    {
-      "fromId": "mongol-empire",
-      "toId": "yuan"
-    },
-    {
-      "fromId": "wu-zhu",
-      "toId": "ming"
-    },
-    {
-      "fromId": "ming-south",
-      "toId": "ming"
-    }
-  ]
+  }
 }

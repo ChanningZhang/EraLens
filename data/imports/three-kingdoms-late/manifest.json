@@ -15,7 +15,11 @@
     "dynasties": 0,
     "reigns": 6,
     "events": 1,
-    "relations": 6
+    "relations": 6,
+    "dynastyGroups": 0,
+    "associations": 0,
+    "locations": 0,
+    "locationMappings": 0
   },
   "sources": [
     {

@@ -688,7 +688,6 @@
       "kind": "succession"
     }
   ],
-  "preSql": "DELETE FROM relations WHERE id IN ('rel-cao-cao-cao-pi-succession', 'rel-cao-pi-cao-pi-succession', 'rel-liu-bei-liu-bei-succession', 'rel-sun-quan-sun-quan-succession');\nDELETE FROM reigns WHERE id IN ('reign-yuan-shao-hebei', 'reign-liu-zhang-yizhou', 'reign-cao-cao-wei', 'reign-cao-pi-king', 'reign-liu-bei-warlord', 'reign-sun-quan-warlord');\nDELETE FROM dynasties WHERE id IN ('yuan-hebei', 'yizhou-liu');",
   "manifest": {
     "slug": "three-kingdoms-warlord",
     "title": "三国割据：赤壁后魏蜀吴",

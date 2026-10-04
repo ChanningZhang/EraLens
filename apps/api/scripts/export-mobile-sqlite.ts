@@ -1,223 +1,181 @@
-import { resolveDynastyName, resolveDynastyDefaultName, dynastyNameSearchEntries } from "@eralens/shared";
-import { mapEntityAssociation, EntityAssociationSchema } from "@eralens/shared";
-import { createHash } from "node:crypto";
+import { mapEntityAssociation, buildPersonSearchTerms, normalizeSearchTerm, resolveDynastyName, resolveDynastyDefaultName, dynastyNameSearchEntries } from "@eralens/shared";
+import {
+  EventSchema, PersonSchema, ReignSchema, DynastySchema, DynastyGroupSchema, RelationSchema,
+  LocationSchema, LocationMappingSchema, EntityAssociationSchema,
+  mapLocation, mapLocationMapping,
+} from "@eralens/shared";
 import { DatabaseSync } from "node:sqlite";
+import { createHash } from "node:crypto";
 import { execFileSync } from "node:child_process";
-import { mkdir, readFile, rename, rm } from "node:fs/promises";
+import { readFileSync } from "node:fs";
+import { mkdir, readFile, rename, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { discoverPackages } from "../../../data/imports/lib/discoverPackages.mjs";
+import { auditPackageOwnership } from "../../../data/imports/lib/auditPackageOwnership.mjs";
+import { serializeSqlitePackages } from "../../../data/imports/lib/sqlitePackageRows.mjs";
 import {
-  LocationSchema, LocationMappingSchema, mapLocation, mapLocationMapping,
-  DynastyGroupSchema,
-  DynastySchema,
-  EventSchema,
-
-  PersonSchema,
-  RelationSchema,
-  ReignSchema,
-  normalizeSearchTerm,
-} from "@eralens/shared";
-import {
-  mapDynasty,
-  mapDynastyGroup,
-  mapEvent,
-  mapPerson,
-  mapRelation,
-  mapReign,
-} from "../src/mappers.js";
-import { prisma } from "../src/db.js";
+  mapDynasty, mapGroup as mapDynastyGroup, mapEvent, mapPerson, mapRelation, mapReign,
+} from "@eralens/data-access/sqlite";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
+const importsRoot = path.join(root, "data/imports");
 const schemaPath = path.join(root, "data/mobile/schema.sql");
-const versions = JSON.parse(await readFile(path.join(root, "data/mobile/versions.json"), "utf8")) as {
-  schemaVersion: number;
-  contractVersion: number;
-};
-const outputArg = process.argv.find((arg) => arg.startsWith("--out="))?.slice(6);
+const versionsPath = path.join(root, "data/mobile/versions.json");
+const versions = JSON.parse(await readFile(versionsPath, "utf8")) as { schemaVersion: number; contractVersion: number };
+const outputArg = process.argv.find(arg => arg.startsWith("--out="))?.slice(6);
 const outputPath = path.resolve(outputArg ?? path.join(root, "data/mobile/eralens-content.sqlite"));
 const tempPath = `${outputPath}.tmp`;
+const sqlPath = `${outputPath}.sql`;
+const tempSqlPath = `${sqlPath}.tmp`;
+const tables: [string, string][] = [
+  ["persons", "id"], ["dynasty_groups", "id"], ["dynasties", "id"], ["reigns", "id"], ["events", "id"],
+  ["entity_associations", "a_type, a_id, b_type, b_id"], ["relations", "id"], ["locations", "id"], ["location_mapping", "id"],
+];
+type Row = Record<string, any>;
+const sqlText = (value: unknown) => `'${String(value).replaceAll("'", "''")}'`;
+const stableJson = (value: unknown): string => Array.isArray(value)
+  ? `[${value.map(stableJson).join(",")}]`
+  : value && typeof value === "object"
+    ? `{${Object.entries(value as Row).sort(([a], [b]) => a.localeCompare(b)).map(([key, item]) => `${JSON.stringify(key)}:${stableJson(item)}`).join(",")}}`
+    : JSON.stringify(value);
 
-const TABLES = [
-  ["persons", "id"], ["dynasty_groups", "id"], ["dynasties", "id"], ["reigns", "id"],
-  ["events", "id"], ["entity_associations", "a_type, a_id, b_type, b_id"], ["relations", "id"],
-  ["locations", "id"], ["location_mapping", "id"],
-] as const;
-
-type Row = Record<string, unknown>;
-const quoteId = (id: string) => `"${id.replaceAll('"', '""')}"`;
-
-function camelizeRow(row: Row): Row {
-  return Object.fromEntries(Object.entries(row).map(([key, value]) => [
-    key.replace(/_([a-z])/g, (_, c: string) => c.toUpperCase()), value,
-  ]));
+function canonicalRows(db: DatabaseSync, table: string, orderBy: string): Row[] {
+  return db.prepare(`SELECT * FROM "${table}" ORDER BY ${orderBy}`).all() as Row[];
 }
 
-function dtoValidate(name: string, schema: { parse(value: unknown): unknown }, value: unknown) {
-  try { schema.parse(value); }
-  catch (error) { throw new Error(`${name} failed Zod validation: ${String(error)}`); }
-}
-
-function serializable(value: unknown): null | string | number | Uint8Array {
-  if (value == null) return null;
-  if (typeof value === "string" || typeof value === "number") return value;
-  if (typeof value === "boolean") return value ? 1 : 0;
-  if (Array.isArray(value)) return JSON.stringify(value);
-  if (typeof value === "object" && "toString" in value) {
-    const text = String(value);
-    const numeric = Number(text);
-    return Number.isFinite(numeric) && /^-?\d+(\.\d+)?$/.test(text) ? numeric : text;
-  }
-  return JSON.stringify(value) ?? String(value);
-}
-
-function stableJson(value: unknown): string {
-  if (Array.isArray(value)) return `[${value.map(stableJson).join(",")}]`;
-  if (value && typeof value === "object") {
-    return `{${Object.entries(value as Row).sort(([a], [b]) => a.localeCompare(b)).map(([k, v]) => `${JSON.stringify(k)}:${stableJson(v)}`).join(",")}}`;
-  }
-  return JSON.stringify(value);
-}
-
-function searchEntry(db: DatabaseSync, type: string, id: string, term: string, kind: string, label: string, subtitle: string | null, anchor: number | null) {
+function insertSearchEntry(db: DatabaseSync, type: string, id: string, term: string, kind: string, label: string, subtitle: string | null, anchor: number | null) {
   const normalized = normalizeSearchTerm(term);
   if (!normalized) return;
-  db.prepare(`INSERT OR IGNORE INTO search_entries(entity_type, entity_id, normalized_term, term_kind, label, subtitle, anchor_abs) VALUES (?, ?, ?, ?, ?, ?, ?)`)
+  db.prepare("INSERT OR IGNORE INTO search_entries(entity_type,entity_id,normalized_term,term_kind,label,subtitle,anchor_abs) VALUES(?,?,?,?,?,?,?)")
     .run(type, id, normalized, kind, label, subtitle, anchor);
 }
 
+function createSearchIndex(db: DatabaseSync): string {
+  const sql: string[] = [];
+  const insert = db.prepare("INSERT OR IGNORE INTO search_entries(entity_type,entity_id,normalized_term,term_kind,label,subtitle,anchor_abs) VALUES(?,?,?,?,?,?,?)");
+  const personRows = canonicalRows(db, "persons", "id");
+  const dynastyRows = canonicalRows(db, "dynasties", "id");
+  const reignRows = canonicalRows(db, "reigns", "id");
+  const eventRows = canonicalRows(db, "events", "id");
+  const locationRows = canonicalRows(db, "locations", "id");
+  const mappingRows = canonicalRows(db, "location_mapping", "id");
+  const associations = canonicalRows(db, "entity_associations", "a_type,a_id,b_type,b_id").map(mapEntityAssociation);
+  const persons = personRows.map(mapPerson);
+  const dynasties = dynastyRows.map(mapDynasty);
+  const reigns = reignRows.map(mapReign);
+  const dynastyById = new Map(dynasties.map(dynasty => [dynasty.id, dynasty]));
+  const personById = new Map(persons.map(person => [person.id, person]));
+  const mappingByEvent = new Map<string, Row[]>();
+  const locationById = new Map(locationRows.map(row => [String(row.id), mapLocation(row)]));
+  const mappings = mappingRows.map(row => mapLocationMapping({
+    ...row,
+    links: row.links,
+    location: locationById.get(String(row.location_id)),
+  }));
+  const eventLocationById = new Map<string, typeof mappings>();
+  for (const mapping of mappings) if (mapping.kind === "event") eventLocationById.set(mapping.externalId, [...(eventLocationById.get(mapping.externalId) ?? []), mapping]);
+  const events = eventRows.map(row => mapEvent({
+    ...row,
+    locationMappings: eventLocationById.get(String(row.id)) ?? [],
+  }, associations));
+
+  const updatePerson = db.prepare("UPDATE persons SET search_terms=? WHERE id=?");
+  for (const person of persons) {
+    const terms = buildPersonSearchTerms(person, reigns, dynasties);
+    updatePerson.run(JSON.stringify(terms), person.id);
+    const roles = person.roles.join(" · ");
+    const anchorRows = reignRows.filter(row => row.person_id === person.id);
+    const anchor = anchorRows.length ? Math.min(...anchorRows.map(row => Number(row.start_abs))) : null;
+    for (const term of terms) {
+      const normalized = normalizeSearchTerm(term);
+      if (!normalized) continue;
+      const values = ["person", person.id, normalized, "person", person.name, roles || null, anchor];
+      insert.run(...values);
+      sql.push(`INSERT OR IGNORE INTO search_entries(entity_type,entity_id,normalized_term,term_kind,label,subtitle,anchor_abs) VALUES(${values.map(value => value == null ? "NULL" : typeof value === "number" ? value : sqlText(value)).join(",")});`);
+    }
+    sql.push(`UPDATE persons SET search_terms=${sqlText(JSON.stringify(terms))} WHERE id=${sqlText(person.id)};`);
+  }
+  for (const dynasty of dynasties) {
+    for (const entry of dynastyNameSearchEntries(dynasty, dynasty.startAbs)) {
+      const values = ["dynasty", dynasty.id, entry.name, "name", entry.name, null, entry.abs];
+      insertSearchEntry(db, ...values as [string,string,string,string,string,string|null,number|null]);
+      sql.push(`INSERT OR IGNORE INTO search_entries(entity_type,entity_id,normalized_term,term_kind,label,subtitle,anchor_abs) VALUES(${values.map(value => value == null ? "NULL" : typeof value === "number" ? value : sqlText(value)).join(",")});`);
+    }
+    for (const alias of dynasty.altNames ?? []) {
+      const label = resolveDynastyDefaultName(dynasty);
+      const values = ["dynasty", dynasty.id, alias, "alias", label, null, dynasty.startAbs];
+      insertSearchEntry(db, ...values as [string,string,string,string,string,string|null,number|null]);
+      sql.push(`INSERT OR IGNORE INTO search_entries(entity_type,entity_id,normalized_term,term_kind,label,subtitle,anchor_abs) VALUES(${values.map(value => value == null ? "NULL" : typeof value === "number" ? value : sqlText(value)).join(",")});`);
+    }
+  }
+  for (const row of reignRows) {
+    const person = personById.get(String(row.person_id));
+    const dynasty = dynastyById.get(String(row.dynasty_id));
+    const dynastyName = dynasty ? resolveDynastyDefaultName(dynasty) : "";
+    for (const term of String(row.era_names ?? "").split(",").map(value => value.trim()).filter(Boolean)) {
+      const values = ["reign", String(row.id), term, "era", term, `${person?.name ?? ""} · ${dynastyName}`, Number(row.start_abs)];
+      insertSearchEntry(db, ...values as [string,string,string,string,string,string|null,number|null]);
+      sql.push(`INSERT OR IGNORE INTO search_entries(entity_type,entity_id,normalized_term,term_kind,label,subtitle,anchor_abs) VALUES(${values.map(value => value == null ? "NULL" : typeof value === "number" ? value : sqlText(value)).join(",")});`);
+    }
+  }
+  const eventLabels: Record<string, string> = { idiom: "成语", poetry: "诗词", battle: "战争", politics: "政治", culture: "文化", disaster: "灾害", commerce: "商业", agriculture: "农业", finance: "金融", other: "其他" };
+  for (const row of eventRows) {
+    const anchor = row.at_abs ?? row.start_abs ?? row.end_abs;
+    const subtitle = row.kind === "idiom" ? "成语" : eventLabels[String(row.kind)] ?? "其他";
+    const terms: [string, string][] = [[String(row.name), "name"], ...(row.meaning ? [[String(row.meaning), "meaning"] as [string,string]] : [])];
+    for (const [term, kind] of terms) {
+      const values = ["event", String(row.id), term, kind, String(row.name), subtitle, anchor == null ? null : Number(anchor)];
+      insertSearchEntry(db, ...values as [string,string,string,string,string,string|null,number|null]);
+      sql.push(`INSERT OR IGNORE INTO search_entries(entity_type,entity_id,normalized_term,term_kind,label,subtitle,anchor_abs) VALUES(${values.map(value => value == null ? "NULL" : typeof value === "number" ? value : sqlText(value)).join(",")});`);
+    }
+  }
+  for (const mapping of mappings) {
+    const reign = mapping.kind === "reign" ? reigns.find(item => item.id === mapping.externalId) : undefined;
+    const event = mapping.kind === "event" ? events.find(item => item.id === mapping.externalId) : undefined;
+    const dynasty = dynastyById.get(reign?.dynastyId ?? mapping.externalId);
+    const subtitle = [mapping.location.modernName, event?.name ?? (dynasty ? resolveDynastyName(dynasty, mapping.startAbs) : undefined), mapping.kind === "event" ? "事件地点" : "都城"].filter(Boolean).join(" · ");
+    const anchor = mapping.startAbs ?? event?.atAbs ?? event?.startAbs;
+    for (const [term, kind] of [[mapping.historicalName, "historical_name"], [mapping.location.modernName, "modern_name"]] as const) {
+      const values = ["location_mapping", mapping.id, term, kind, mapping.historicalName, subtitle, anchor ?? null];
+      insertSearchEntry(db, ...values as [string,string,string,string,string,string|null,number|null]);
+      sql.push(`INSERT OR IGNORE INTO search_entries(entity_type,entity_id,normalized_term,term_kind,label,subtitle,anchor_abs) VALUES(${values.map(value => value == null ? "NULL" : typeof value === "number" ? value : sqlText(value)).join(",")});`);
+    }
+  }
+  return sql.join("\n");
+}
+
+auditPackageOwnership(importsRoot);
+const packages = discoverPackages(importsRoot).map(slug => ({
+  slug,
+  cache: JSON.parse(readFileSync(path.join(importsRoot, slug, "cache.json"), "utf8")) as Row,
+}));
+const serialized = serializeSqlitePackages(packages);
 await mkdir(path.dirname(outputPath), { recursive: true });
 await rm(tempPath, { force: true });
+await rm(tempSqlPath, { force: true });
 const db = new DatabaseSync(tempPath);
-let pgConnected = false;
+let open = true;
 try {
-  await prisma.$connect();
-  pgConnected = true;
   const schemaSql = await readFile(schemaPath, "utf8");
+  db.exec("PRAGMA foreign_keys=ON;");
   db.exec(schemaSql);
-  db.exec("BEGIN IMMEDIATE");
+  const indexSql = createSearchIndexAfterLoad(db, serialized.sql);
+  validateContent(db);
+  const counts = { ...serialized.counts, search_entries: Number((db.prepare("SELECT COUNT(*) AS count FROM search_entries").get() as { count: number }).count) };
+  const foreignErrors = db.prepare("PRAGMA foreign_key_check").all();
+  if (foreignErrors.length) throw new Error(`foreign_key_check failed (${foreignErrors.length})`);
+  const integrity = (db.prepare("PRAGMA integrity_check").get() as { integrity_check: string }).integrity_check;
+  if (integrity !== "ok") throw new Error(`integrity_check failed: ${integrity}`);
 
-  const raw = new Map<string, Row[]>();
-  const counts: Record<string, number> = {};
-  for (const [table, orderBy] of TABLES) {
-    const info = db.prepare(`PRAGMA table_info(${quoteId(table)})`).all() as { name: string }[];
-    const columns = info.map((column) => column.name);
-    const rows = await prisma.$queryRawUnsafe<Row[]>(`SELECT ${columns.map(quoteId).join(", ")} FROM "${table}" ORDER BY ${orderBy.split(", ").map(quoteId).join(", ")}`);
-    raw.set(table, rows);
-    counts[table] = rows.length;
-    const insert = db.prepare(`INSERT INTO ${quoteId(table)} (${columns.map(quoteId).join(",")}) VALUES (${columns.map(() => "?").join(",")})`);
-    for (const row of rows) {
-      try { insert.run(...columns.map((column) => serializable(row[column]))); }
-      catch (error) { throw new Error(`SQLite insert failed for ${table} row ${String(row.id ?? row.event_id ?? row.reign_id)} (event_id=${String(row.event_id ?? "null")}, dynasty_id=${String(row.dynasty_id ?? "null")}, person_id=${String(row.person_id ?? "null")}): ${String(error)}`); }
-    }
+  const hash = createHash("sha256");
+  for (const [table, orderBy] of tables) {
+    for (const row of canonicalRows(db, table, orderBy)) hash.update(`${table}\n${stableJson(row)}\n`);
   }
-
-  const persons = raw.get("persons")!;
-  const dynasties = raw.get("dynasties")!;
-  const groups = raw.get("dynasty_groups")!;
-  const reigns = raw.get("reigns")!;
-  const events = raw.get("events")!;
-  const relations = raw.get("relations")!;
-  const capitalRows = raw.get("location_mapping")!;
-  for (const row of persons) dtoValidate("Person", PersonSchema, mapPerson(camelizeRow(row) as never));
-  for (const row of dynasties) dtoValidate("Dynasty", DynastySchema, mapDynasty(row as never));
-  for (const row of groups) dtoValidate("DynastyGroup", DynastyGroupSchema, mapDynastyGroup(row as never));
-  for (const row of reigns) dtoValidate("Reign", ReignSchema, mapReign(row as never));
-  const associations=raw.get("entity_associations")!.map(mapEntityAssociation);
-  for (const row of associations) EntityAssociationSchema.parse(row);
-  const locations = new Map(raw.get("locations")!.map(row=>[String(row.id),mapLocation(row)]));
-  const mappings = raw.get("location_mapping")!.map(row=>mapLocationMapping({...row,location:locations.get(String(row.location_id))}));
-  for(const m of mappings) dtoValidate("LocationMapping",LocationMappingSchema,m);
-  for (const row of events) {
-    const camel = camelizeRow(row);
-    const mapped = mapEvent({
-      ...row,
-      locationMappings:mappings.filter(m=>m.kind === "event" && m.externalId===row.id),
-    } as never, associations);
-    dtoValidate("Event", EventSchema, mapped);
-  }
-  for (const row of relations) dtoValidate("Relation", RelationSchema, mapRelation(camelizeRow(row) as never));
-  const relationTargets = new Map([
-    ["person", new Set(persons.map((row) => String(row.id)))],
-    ["dynasty", new Set(dynasties.map((row) => String(row.id)))],
-    ["reign", new Set(reigns.map((row) => String(row.id)))],
-    ["event", new Set(events.map((row) => String(row.id)))],
-    ["location_mapping", new Set(capitalRows.map((row) => String(row.id)))],
-  ]);
-  for (const row of associations) for (const ref of [row.aRef,row.bRef]) {
-    const colon=ref.indexOf(":"),type=ref.slice(0,colon),id=ref.slice(colon+1);
-    if(!relationTargets.get(type)?.has(id)) throw new Error(`Dangling association: ${ref}`);
-  }
-  const danglingRelations: string[] = [];
-  for (const row of relations) {
-    for (const end of ["from", "to"] as const) {
-      const type = String(row[`${end}_type`]);
-      const id = String(row[`${end}_id`]);
-      if (!relationTargets.get(type)?.has(id)) danglingRelations.push(`${String(row.id)} ${end}=${type}:${id}`);
-    }
-    if (row.event_id != null && !relationTargets.get("event")?.has(String(row.event_id))) {
-      danglingRelations.push(`${String(row.id)} event_id=event:${String(row.event_id)}`);
-    }
-  }
-  if (danglingRelations.length) throw new Error(`Found ${danglingRelations.length} dangling relation endpoint(s):\n${danglingRelations.map((item) => `- ${item}`).join("\n")}`);
-  const personReigns = new Map<string, Row[]>();
-  for (const row of reigns) personReigns.set(String(row.person_id), [...(personReigns.get(String(row.person_id)) ?? []), row]);
-  const dynastyById = new Map(dynasties.map((row) => { const dynasty = mapDynasty(camelizeRow(row) as never); return [dynasty.id, dynasty]; }));
-  const eventKindLabel: Record<string, string> = { idiom: "成语", poetry: "诗词", battle: "战争", politics: "政治", culture: "文化", disaster: "灾害", commerce: "商业", agriculture: "农业", finance: "金融", other: "其他" };
-  for (const row of persons) {
-    const roles = Array.isArray(row.roles) ? row.roles.join(" · ") : "";
-    const anchorReigns = personReigns.get(String(row.id)) ?? [];
-    const anchor = anchorReigns.length ? Math.min(...anchorReigns.map((reign) => Number(reign.start_abs))) : null;
-    for (const term of (Array.isArray(row.search_terms) && row.search_terms.length ? row.search_terms : [row.name, ...(Array.isArray(row.alt_names) ? row.alt_names : [])])) {
-      searchEntry(db, "person", String(row.id), String(term), "person", String(row.name), roles || null, anchor);
-    }
-  }
-  for (const dynasty of dynastyById.values()) {
-    const entries = dynastyNameSearchEntries(dynasty, dynasty.startAbs);
-    for (const entry of entries) searchEntry(db, "dynasty", dynasty.id, entry.name, "name", entry.name, null, entry.abs);
-    for (const alias of dynasty.altNames ?? []) searchEntry(db, "dynasty", dynasty.id, alias, "alias", resolveDynastyDefaultName(dynasty), null, dynasty.startAbs);
-  }
-  for (const row of reigns) {
-    const person = persons.find((item) => item.id === row.person_id);
-    const dynastyRow = dynastyById.get(String(row.dynasty_id));
-    const dynasty = dynastyRow ? resolveDynastyDefaultName(dynastyRow) : "";
-    for (const term of String(row.era_names ?? "").split(",").map((item) => item.trim()).filter(Boolean)) {
-      searchEntry(db, "reign", String(row.id), term, "era", term, `${String(person?.name ?? "")} · ${dynasty}`, Number(row.start_abs));
-    }
-  }
-  for (const row of events) {
-    const anchor = row.at_abs ?? row.start_abs ?? row.end_abs;
-    const subtitle = row.kind === "idiom" ? "成语" : eventKindLabel[String(row.kind)] ?? "其他";
-    searchEntry(db, "event", String(row.id), String(row.name), "name", String(row.name), subtitle, anchor == null ? null : Number(anchor));
-    if (row.meaning) searchEntry(db, "event", String(row.id), String(row.meaning), "meaning", String(row.name), subtitle, anchor == null ? null : Number(anchor));
-  }
-  for (const m of mappings) {
-    const reign=m.kind === "reign" ? reigns.find(r=>r.id===m.externalId) : undefined;
-    const event=m.kind === "event" ? events.find(e=>e.id===m.externalId) : undefined;
-    const dynasty = dynastyById.get(String(reign?.dynasty_id ?? m.externalId));
-    const subtitle=[m.location.modernName,event?.name ?? (dynasty ? resolveDynastyName(dynasty, m.startAbs) : undefined),m.kind === "event" ? "事件地点" : "都城"].filter(Boolean).join(" · ");
-    const anchor=m.startAbs ?? event?.at_abs ?? event?.start_abs;
-    searchEntry(db,"location_mapping",m.id,m.historicalName,"historical_name",m.historicalName,subtitle,anchor == null ? null : Number(anchor));
-    searchEntry(db,"location_mapping",m.id,m.location.modernName,"modern_name",m.historicalName,subtitle,anchor == null ? null : Number(anchor));
-  }
-  counts.search_entries = Number((db.prepare("SELECT COUNT(*) AS count FROM search_entries").get() as { count: number }).count);
-
-  const fkErrors = db.prepare("PRAGMA foreign_key_check").all();
-  if (fkErrors.length) throw new Error(`SQLite foreign_key_check failed with ${fkErrors.length} row(s)`);
-  const integrity = db.prepare("PRAGMA integrity_check").get() as { integrity_check: string };
-  if (integrity.integrity_check !== "ok") throw new Error(`SQLite integrity_check failed: ${integrity.integrity_check}`);
-
-  const checksumHash = createHash("sha256");
-  for (const [table, orderBy] of TABLES) {
-    const columns = (db.prepare(`PRAGMA table_info(${quoteId(table)})`).all() as { name: string }[]).map((column) => column.name);
-    const rows = db.prepare(`SELECT * FROM ${quoteId(table)} ORDER BY ${orderBy.split(", ").map(quoteId).join(", ")}`).all();
-    for (const row of rows) checksumHash.update(`${table}\n${stableJson(row)}\n`);
-  }
-  for (const row of db.prepare("SELECT * FROM search_entries ORDER BY entity_type, entity_id, normalized_term, term_kind").all()) {
-    checksumHash.update(`search_entries\n${stableJson(row)}\n`);
-  }
-  const sourceChecksum = checksumHash.digest("hex");
+  for (const row of canonicalRows(db, "search_entries", "entity_type,entity_id,normalized_term,term_kind")) hash.update(`search_entries\n${stableJson(row)}\n`);
+  const sourceChecksum = hash.digest("hex");
   let sourceGitSha = "unknown";
-  try { sourceGitSha = execFileSync("git", ["rev-parse", "HEAD"], { cwd: root, encoding: "utf8" }).trim(); } catch { /* export may run from a source archive */ }
+  try { sourceGitSha = execFileSync("git", ["rev-parse", "HEAD"], { cwd: root, encoding: "utf8" }).trim(); } catch { /* source archive */ }
   const metadata = {
     schema_version: versions.schemaVersion,
     contract_version: versions.contractVersion,
@@ -227,18 +185,52 @@ try {
     counts,
     built_at: new Date().toISOString(),
   };
-  const putMetadata = db.prepare("INSERT INTO content_metadata(key, value) VALUES (?, ?)");
-  for (const [key, value] of Object.entries(metadata)) putMetadata.run(key, JSON.stringify(value));
-  db.exec("COMMIT");
-  db.exec("PRAGMA optimize");
+  const insertMetadata = db.prepare("INSERT INTO content_metadata(key,value) VALUES(?,?)");
+  for (const [key, value] of Object.entries(metadata)) insertMetadata.run(key, JSON.stringify(value));
+  db.exec("PRAGMA optimize;");
   db.close();
+  open = false;
+
+  const fullSql = `${schemaSql}\nBEGIN IMMEDIATE;\n${serialized.sql}\n${indexSql}\n${Object.entries(metadata).map(([key, value]) => `INSERT INTO content_metadata(key,value) VALUES(${sqlText(key)},${sqlText(JSON.stringify(value))});`).join("\n")}\nCOMMIT;\n`;
+  await writeFile(tempSqlPath, fullSql);
   await rename(tempPath, outputPath);
-  console.log(JSON.stringify({ outputPath, ...metadata }, null, 2));
+  await rename(tempSqlPath, sqlPath);
+  console.log(JSON.stringify({ outputPath, sqlPath, ...metadata }, null, 2));
 } catch (error) {
-  try { db.exec("ROLLBACK"); } catch { /* transaction may have closed */ }
-  db.close();
+  if (open) {
+    try { db.close(); } catch { /* already closed */ }
+  }
   await rm(tempPath, { force: true });
+  await rm(tempSqlPath, { force: true });
   throw error;
-} finally {
-  if (pgConnected) await prisma.$disconnect();
+}
+
+function createSearchIndexAfterLoad(database: DatabaseSync, baseSql: string): string {
+  database.exec("BEGIN IMMEDIATE;");
+  try {
+    database.exec(baseSql);
+    const indexSql = createSearchIndex(database);
+    database.exec("COMMIT;");
+    return indexSql;
+  } catch (error) {
+    database.exec("ROLLBACK;");
+    throw error;
+  }
+}
+
+function validateContent(database: DatabaseSync) {
+  const rows = (table: string) => database.prepare(`SELECT * FROM "${table}" ORDER BY 1`).all() as Row[];
+  const persons = rows("persons").map(row => PersonSchema.parse(mapPerson(row)));
+  const dynasties = rows("dynasties").map(row => DynastySchema.parse(mapDynasty(row)));
+  const groups = rows("dynasty_groups").map(row => DynastyGroupSchema.parse(mapDynastyGroup(row)));
+  const reigns = rows("reigns").map(row => ReignSchema.parse(mapReign(row)));
+  const relations = rows("relations").map(row => RelationSchema.parse(mapRelation(row)));
+  const associations = rows("entity_associations").map(row => EntityAssociationSchema.parse(mapEntityAssociation(row)));
+  const locationsById = new Map(rows("locations").map(row => [String(row.id), LocationSchema.parse(mapLocation(row))]));
+  const mappings = rows("location_mapping").map(row => LocationMappingSchema.parse(mapLocationMapping({ ...row, location: locationsById.get(String(row.location_id)) })));
+  const eventMappings = new Map<string, typeof mappings>();
+  for (const mapping of mappings) if (mapping.kind === "event") eventMappings.set(mapping.externalId, [...(eventMappings.get(mapping.externalId) ?? []), mapping]);
+  for (const row of rows("events")) EventSchema.parse(mapEvent({ ...row, locationMappings: eventMappings.get(String(row.id)) ?? [] }, associations));
+  const names = [persons.length, dynasties.length, groups.length, reigns.length, relations.length, associations.length, locationsById.size, mappings.length];
+  if (names.some(count => !Number.isInteger(count))) throw new Error("SQLite content schema validation failed");
 }

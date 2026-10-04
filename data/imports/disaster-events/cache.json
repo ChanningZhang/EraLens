@@ -67,7 +67,6 @@
     }
   ],
   "relations": [],
-  "preSql": "",
   "manifest": {
     "slug": "disaster-events",
     "title": "跨时期重大灾害事件",

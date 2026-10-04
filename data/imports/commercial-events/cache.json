@@ -520,7 +520,6 @@
     }
   ],
   "relations": [],
-  "preSql": "DELETE FROM events WHERE id = 'commerce-treaty-of-nanking-five-ports';\nDELETE FROM events WHERE id IN ('commerce-cucumber-recorded-in-qimin-yaoshu', 'commerce-maize-earliest-record', 'commerce-chili-earliest-record', 'commerce-tomato-recorded-in-zhipin', 'commerce-tobacco-recorded-in-jingyue-quanshu');\nDELETE FROM events WHERE id IN ('commerce-cucumber-introduction', 'agri-grape-introduction', 'agri-pomegranate-introduction', 'agri-walnut-introduction', 'agri-garlic-introduction', 'agri-coriander-introduction', 'agri-sesame-introduction', 'agri-alfalfa-introduction', 'agri-pepper-introduction', 'agri-pea-introduction', 'agri-broad-bean-introduction', 'agri-cowpea-introduction');",
   "manifest": {
     "slug": "commercial-events",
     "title": "商业与商品传播事件",

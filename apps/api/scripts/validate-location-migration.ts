@@ -4,7 +4,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { DatabaseSync } from "node:sqlite";
 import { capitalLocations, capitalSegmentsForReign, mapLocationMapping } from "@eralens/shared";
-import { mapReign } from "../src/mappers.js";
+import { mapReign } from "@eralens/data-access/sqlite";
 
 const option = (name: string) => process.argv.find(arg => arg.startsWith(`--${name}=`))?.slice(name.length + 3);
 const baseline = option("baseline");

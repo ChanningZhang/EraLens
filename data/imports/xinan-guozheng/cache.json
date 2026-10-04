@@ -364,7 +364,6 @@
       "kind": "succession"
     }
   ],
-  "preSql": "DELETE FROM relations WHERE id = 'rel-han-destroy-qielan';\nDELETE FROM reigns WHERE id IN ('reign-qiong-jun-qiongdu', 'reign-zuo-hou-zuodu', 'reign-qielan-jun-qielan');\nDELETE FROM reigns WHERE dynasty_id IN ('qiongdu', 'zuodu', 'ranmang', 'baima', 'qielan', 'laomo');\nDELETE FROM persons WHERE id IN ('qiong-jun', 'zuo-hou', 'qielan-jun');\nDELETE FROM dynasties WHERE id IN ('qiongdu', 'zuodu', 'ranmang', 'baima', 'qielan', 'laomo');\nDELETE FROM events WHERE id = 'han-destroy-qielan';",
   "manifest": {
     "slug": "xinan-guozheng",
     "title": "西汉西南夷诸国（含夜郎）",

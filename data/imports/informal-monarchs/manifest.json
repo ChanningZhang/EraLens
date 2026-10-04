@@ -17,7 +17,11 @@
     "dynasties": 0,
     "reigns": 6,
     "events": 0,
-    "relations": 0
+    "relations": 0,
+    "dynastyGroups": 0,
+    "associations": 0,
+    "locations": 0,
+    "locationMappings": 0
   },
   "description": "非正式君主/摄政记录；新建记录由本包拥有，既有在位标记归并到原在位所属包。",
   "sources": [

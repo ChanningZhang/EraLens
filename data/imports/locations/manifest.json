@@ -9,7 +9,15 @@
   },
   "scope": "cn",
   "counts": {
-    "locations": 193
+    "locations": 193,
+    "persons": 0,
+    "dynastyGroups": 0,
+    "dynasties": 0,
+    "reigns": 0,
+    "events": 0,
+    "relations": 0,
+    "associations": 0,
+    "locationMappings": 0
   },
   "sources": [],
   "notes": [

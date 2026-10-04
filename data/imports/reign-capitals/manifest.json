@@ -12,7 +12,16 @@
   "importPhase": "post",
   "generatedAt": "2026-10-02",
   "counts": {
-    "location_mapping": 1261
+    "location_mapping": 1261,
+    "persons": 0,
+    "dynastyGroups": 0,
+    "dynasties": 0,
+    "reigns": 0,
+    "events": 0,
+    "relations": 0,
+    "associations": 0,
+    "locations": 0,
+    "locationMappings": 1261
   },
   "sources": [
     {
