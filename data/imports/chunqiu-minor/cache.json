@@ -155,7 +155,7 @@
     },
     {
       "id": "teng-r20",
-      "name": "？",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -180,12 +180,12 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "公",
+      "title": "滕公",
       "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r21",
-      "name": "？",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -210,7 +210,7 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "侯",
+      "title": "滕侯",
       "dynastyId": "teng-chunqiu"
     },
     {
@@ -270,7 +270,7 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "？",
+      "title": "",
       "dynastyId": "teng-chunqiu"
     },
     {
@@ -345,7 +345,7 @@
     },
     {
       "id": "teng-r13",
-      "name": "？",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -370,12 +370,12 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "侯",
+      "title": "滕侯",
       "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r12",
-      "name": "？",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -400,12 +400,12 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "子",
+      "title": "滕子",
       "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-r11",
-      "name": "？",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -430,7 +430,7 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "子",
+      "title": "滕子",
       "dynastyId": "teng-chunqiu"
     },
     {
@@ -467,7 +467,7 @@
     },
     {
       "id": "teng-r10",
-      "name": "？",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -492,7 +492,7 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "子",
+      "title": "滕子",
       "dynastyId": "teng-chunqiu"
     },
     {
@@ -586,7 +586,7 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "？",
+      "title": "",
       "dynastyId": "teng-chunqiu"
     },
     {
@@ -612,7 +612,7 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "？",
+      "title": "",
       "dynastyId": "teng-chunqiu"
     },
     {
@@ -638,7 +638,7 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "？",
+      "title": "",
       "dynastyId": "teng-chunqiu"
     },
     {
@@ -664,7 +664,7 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "？",
+      "title": "",
       "dynastyId": "teng-chunqiu"
     },
     {
@@ -690,7 +690,7 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "？",
+      "title": "",
       "dynastyId": "teng-chunqiu"
     },
     {
@@ -716,7 +716,7 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "？",
+      "title": "",
       "dynastyId": "teng-chunqiu"
     },
     {
@@ -1807,7 +1807,7 @@
     },
     {
       "id": "teng-gong-middle",
-      "name": "？",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -1828,12 +1828,12 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "公",
+      "title": "滕公",
       "dynastyId": "teng-chunqiu"
     },
     {
       "id": "teng-hou-middle",
-      "name": "？",
+      "name": "",
       "roles": [
         "君主"
       ],
@@ -1854,7 +1854,7 @@
       "posthumousNames": [],
       "templeNames": [],
       "ancestralXing": "姬",
-      "title": "侯",
+      "title": "滕侯",
       "dynastyId": "teng-chunqiu"
     },
     {
@@ -2288,7 +2288,7 @@
       "id": "reign-teng-r13-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r13",
-      "title": "侯",
+      "title": "滕侯",
       "eraNames": [],
       "start": {
         "year": -715,
@@ -2312,7 +2312,7 @@
       "id": "reign-teng-r12-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r12",
-      "title": "子",
+      "title": "滕子",
       "eraNames": [],
       "start": {
         "year": -710,
@@ -2337,7 +2337,7 @@
       "id": "reign-teng-r11-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r11",
-      "title": "子",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -694,
@@ -2389,7 +2389,7 @@
       "id": "reign-teng-r10-teng-chunqiu",
       "dynastyId": "teng-chunqiu",
       "personId": "teng-r10",
-      "title": "子",
+      "title": "",
       "eraNames": [],
       "start": {
         "year": -639,

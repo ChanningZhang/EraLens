@@ -137,10 +137,8 @@ describe("buildReignCardTooltip", () => {
   it("shows only time when the card already shows name and meta", () => {
     expect(
       buildReignCardTooltip({
-        detail: "full",
         showMeta: true,
         meta: { name: "汉赵光文皇帝" },
-        tooltipName: "刘渊",
         timeTooltip: time,
       }),
     ).toBe(time);
@@ -149,34 +147,28 @@ describe("buildReignCardTooltip", () => {
   it("adds hidden meta when the card shows the name but not the appellation", () => {
     expect(
       buildReignCardTooltip({
-        detail: "full",
         showMeta: false,
         meta: { name: "汉赵光文皇帝" },
-        tooltipName: "刘渊",
         timeTooltip: time,
       }),
     ).toBe(`汉赵光文皇帝\n${time}`);
   });
 
-  it("adds name and meta when the label hangs below the bar", () => {
+  it("shows the hidden given name only once for a narrow pre-Qin card", () => {
     expect(
       buildReignCardTooltip({
-        detail: "below",
         showMeta: false,
-        meta: { name: "汉赵光文皇帝" },
-        tooltipName: "刘渊",
+        meta: { name: "绣" },
         timeTooltip: time,
       }),
-    ).toBe(`刘渊　汉赵光文皇帝\n${time}`);
+    ).toBe(`绣\n${time}`);
   });
 
   it("appends claim lines after the time span", () => {
     expect(
       buildReignCardTooltip({
-        detail: "full",
         showMeta: false,
         meta: { name: "汉赵光文皇帝" },
-        tooltipName: "刘渊",
         timeTooltip: time,
         claimTooltip: "割据・长安",
       }),

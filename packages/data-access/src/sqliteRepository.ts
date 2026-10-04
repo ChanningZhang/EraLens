@@ -106,7 +106,6 @@ async function rows(db: Awaited<ReturnType<SqliteDatabaseProvider["open"]>>, sql
 
 export class SqliteTimelineRepository implements TimelineRepository {
   private dbPromise: ReturnType<SqliteDatabaseProvider["open"]> | null = null;
-  private storePromise: Promise<TimelineDataStore> | null = null;
   constructor(
     private readonly provider: SqliteDatabaseProvider,
     private readonly settings: import("./repository").SettingsStore = {
@@ -128,15 +127,7 @@ export class SqliteTimelineRepository implements TimelineRepository {
   }
 
   private async store(): Promise<TimelineDataStore> {
-    if (!this.storePromise) {
-      const loading = this.loadStore();
-      const recoverable = loading.catch((error) => {
-        if (this.storePromise === recoverable) this.storePromise = null;
-        throw error;
-      });
-      this.storePromise = recoverable;
-    }
-    return this.storePromise;
+    return this.loadStore();
   }
 
   private async loadStore(): Promise<TimelineDataStore> {
@@ -322,7 +313,6 @@ export class SqliteTimelineRepository implements TimelineRepository {
   async close(): Promise<void> {
     const database = this.dbPromise;
     this.dbPromise = null;
-    this.storePromise = null;
     if (database) await (await database).close();
   }
 }

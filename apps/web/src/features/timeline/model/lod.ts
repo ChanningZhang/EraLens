@@ -210,34 +210,23 @@ export function shouldShowReignCardMeta(
 }
 
 type ReignCardTooltipOptions = {
-  detail: CardDetailLevel;
   showMeta: boolean;
   meta?: { name: string } | null;
-  tooltipName: string;
   timeTooltip: string;
   claimTooltip?: string;
 };
 
-/**
- * Tooltip supplements the card: include appellation meta when the card hides it,
- * and include the personal name when the card does not render the label at all.
- */
+/** Tooltip supplements the card with hidden meta, dates, and claim information. */
 export function buildReignCardTooltip({
-  detail,
   showMeta,
   meta,
-  tooltipName,
   timeTooltip,
   claimTooltip,
 }: ReignCardTooltipOptions): string {
   const lines: string[] = [];
   const cardShowsMeta = Boolean(showMeta && meta);
-  const cardShowsName = detail !== "below";
-
   if (meta && !cardShowsMeta) {
-    lines.push(cardShowsName ? meta.name : `${tooltipName}　${meta.name}`);
-  } else if (!cardShowsName) {
-    lines.push(tooltipName);
+    lines.push(meta.name);
   }
 
   lines.push(timeTooltip);

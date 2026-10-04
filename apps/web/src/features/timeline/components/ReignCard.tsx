@@ -8,7 +8,6 @@ import {
   isInterpolatedConfidence,
   isParallelClaim,
   PARALLEL_CLAIM_LABEL,
-  resolveReignCardGivenName,
   resolveReignCardLabel,
   resolveReignCardMeta,
   resolveRocReignRegionLabel,
@@ -108,17 +107,13 @@ function ReignCardImpl({
     const parallel = isParallelClaim(reign);
     const meta = resolveReignCardMeta(reign, personName, clan);
     const showMeta = shouldShowReignCardMeta(barLayout.barWidthPx, labelLength, meta ? [...meta.name].length : 0, unitHeight);
-    const givenName = resolveReignCardGivenName(reign, personName, clan);
     const regionLabel = resolveRocReignRegionLabel(reign, resolveDynastyDefaultName(dynasty));
-    const tooltipName = givenName && givenName !== label
-      ? givenName
-      : personName && personName !== label ? personName : label;
     const timeTooltip = formatReignSpanTooltip(reign);
     const claimTooltip = parallel
       ? `${PARALLEL_CLAIM_LABEL}${reign.claimLabel ? `・${reign.claimLabel}` : ""}`
       : undefined;
     const tooltipText = buildReignCardTooltip({
-      detail, showMeta, meta, tooltipName,
+      showMeta: showMeta && detail !== "below", meta,
       timeTooltip,
       claimTooltip,
     });
