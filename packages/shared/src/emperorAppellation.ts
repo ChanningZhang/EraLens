@@ -120,12 +120,16 @@ function firstNonEmpty(...values: Array<string | null | undefined>): string | nu
   return null;
 }
 
-/** Large title in person details: use the posthumous name when the person name is absent. */
+/** Large title in person details: name, then posthumous name, then stored person title. */
 export function resolvePersonDetailTitle(
   personName?: string | null,
   personContext?: PersonDisplayContext | null,
 ): string {
-  return firstNonEmpty(personName, resolvePosthumousAppellation(personContext)?.name) ?? "";
+  return firstNonEmpty(
+    personName,
+    resolvePosthumousAppellation(personContext)?.name,
+    personContext?.title,
+  ) ?? "";
 }
 
 function joinDetailHeading(dynastyName: string | undefined, appellation: string | null): string {
@@ -203,13 +207,20 @@ export function resolveReignPrimaryLabel(
   personName?: string | null,
   personContext?: PersonDisplayContext | null,
 ): string {
+  const personalName = personalNamePrimary(personName);
+  if (!personalName) {
+    return firstNonEmpty(
+      personContext?.title,
+      resolvePosthumousAppellation(personContext)?.name,
+    ) ?? "";
+  }
   if (usesPreQinCardLayout(reign)) {
     return (
       resolvePreQinCardPrimary(personContext) ??
-      personalNamePrimary(personName)
+      personalName
     );
   }
-  return personalNamePrimary(personName);
+  return personalName;
 }
 
 type ReignCardLabelOptions = {

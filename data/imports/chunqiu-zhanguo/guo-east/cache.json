@@ -109,7 +109,7 @@
     },
     {
       "id": "guo-east-last-shu",
-      "name": "？",
+      "name": "",
       "title": "虢叔",
       "ancestralXing": "姬",
       "clanShi": "虢",
@@ -274,7 +274,7 @@
       "id": "reign-guo-east-last-shu",
       "dynastyId": "guo-east",
       "personId": "guo-east-last-shu",
-      "title": "叔",
+      "title": "",
       "start": {
         "year": -774,
         "month": 1,
