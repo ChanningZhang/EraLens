@@ -70,9 +70,9 @@ export function resolveFateFromReign(
   return ended[0];
 }
 
-const FATE_TO_REIGN_MAX_LAG_MONTHS = 24;
+const FATE_TO_REIGN_MAX_LAG_MONTHS = 36;
 
-/** Receiver side: reign at atAbs, else next reign within 24 months (禅让/降后即位). */
+/** Receiver side: reign at atAbs, else next reign within 36 months. */
 export function resolveFateToReign(
   personId: string,
   atAbs: number,

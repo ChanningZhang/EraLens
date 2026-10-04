@@ -7,6 +7,7 @@ import { claimDetailFacts } from "./claimTracks";
 import { PRE_IMPERIAL_START_YEAR } from "./appellationPolicy";
 import {
   buildPreQinClanContext,
+  resolvePersonDetailTitle,
   resolveReignDetailHeading,
   resolvePreQinNameFacts,
   usesPreQinCardLayout,
@@ -272,7 +273,7 @@ function buildPersonEntityDetail(
       ? `${heading} · ${focusReignIndex}/${reignCount}`
       : heading
     : undefined;
-  const title = person.name;
+  const title = resolvePersonDetailTitle(person.name, clan);
   const factReigns = focusReign ? [focusReign] : personReigns;
   const factEraNames = factReigns.flatMap((reign) =>
     reign.eraNames.filter(Boolean),

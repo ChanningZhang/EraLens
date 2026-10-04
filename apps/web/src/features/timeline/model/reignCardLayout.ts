@@ -86,7 +86,9 @@ function layoutRulerReignBar(
     : reignVisualBounds(reign, span.startAbs, span.endExclusive);
   const durationMonths = visual.endExclusive - visual.start;
   const visualWidth = Math.max(0, durationMonths * viewport.pxPerMonth);
-  if (visualWidth <= 0) return null;
+  // A year-precision handoff can leave a ruler with a zero-width owned span
+  // while its caption remains visible. Fate links still need a point anchor
+  // at that ruler's date so the relationship can be drawn.
 
   const anchor = (visual.start + visual.endExclusive) / 2;
   const seamInsetLeft = (isInterpolatedConfidence(reign.start.confidence))

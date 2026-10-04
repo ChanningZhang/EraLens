@@ -120,6 +120,14 @@ function firstNonEmpty(...values: Array<string | null | undefined>): string | nu
   return null;
 }
 
+/** Large title in person details: use the posthumous name when the person name is absent. */
+export function resolvePersonDetailTitle(
+  personName?: string | null,
+  personContext?: PersonDisplayContext | null,
+): string {
+  return firstNonEmpty(personName, resolvePosthumousAppellation(personContext)?.name) ?? "";
+}
+
 function joinDetailHeading(dynastyName: string | undefined, appellation: string | null): string {
   return [dynastyName, appellation].filter(Boolean).join(" · ");
 }

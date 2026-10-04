@@ -13,14 +13,14 @@ import {
 import type { TimelineRepository, SettingsStore } from "@eralens/data-access/repository";
 import type { FastifyInstance } from "fastify";
 
-const CACHE_HEADER = "public, max-age=60";
+const CACHE_HEADER = "no-cache";
 const LODS = new Set(["month", "decade", "century", "millennium"]);
 
 export async function registerRoutes(
   app: FastifyInstance,
   repository: TimelineRepository,
   settings: SettingsStore,
-  contentInfo: { datasetVersion: string; schemaVersion: number; contractVersion: number },
+  getContentInfo: () => Promise<{ datasetVersion: string; schemaVersion: number; contractVersion: number }>,
 ) {
   app.get("/settings/events", async () => {
     const value = await settings.get("event-display");
@@ -35,7 +35,7 @@ export async function registerRoutes(
     return parsed.data;
   });
 
-  app.get("/health", async () => ({ ok: true, ...contentInfo }));
+  app.get("/health", async () => ({ ok: true, ...await getContentInfo() }));
 
   app.get("/bounds", async (_request, reply) => {
     reply.header("Cache-Control", CACHE_HEADER);

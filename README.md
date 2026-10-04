@@ -24,7 +24,7 @@ docker compose up --build
 
 打开 [http://localhost:8080](http://localhost:8080)。Docker 构建会从真实导入源生成并校验内容快照；设置库保存在 `eralens-state` 持久卷中。无需启动数据库容器。部署切换时如需带入旧 `sys_config` 设置，可将原库导出为 `{ "key": "value" }` JSON，再执行 `pnpm settings:import -- --input=/path/to/settings.json`。
 
-`pnpm db:setup` / `pnpm data:build` 会审计所有导入包、构建临时 SQLite、校验成功后再替换内容快照；`pnpm data:validate` 可单独校验现有快照。数据变更后重新运行构建和校验，再执行 `pnpm ios:sync` 将同一快照同步到 iOS。
+`pnpm db:setup` / `pnpm data:build` 会审计所有导入包、构建临时 SQLite、校验成功后再替换内容快照，适用于首次初始化或 schema 变更。日常修改 `cache.json` 后运行 `pnpm db:import`：它生成全量 SQLite SQL，在事务中更新现有内容库并校验，不需重启 API；`pnpm data:validate` 可单独校验现有快照。数据变更后运行 `pnpm ios:sync` 将同一快照同步到 iOS。
 
 ## 使用时间轴
 

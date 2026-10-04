@@ -24,10 +24,13 @@ const schemaPath = path.join(root, "data/mobile/schema.sql");
 const versionsPath = path.join(root, "data/mobile/versions.json");
 const versions = JSON.parse(await readFile(versionsPath, "utf8")) as { schemaVersion: number; contractVersion: number };
 const outputArg = process.argv.find(arg => arg.startsWith("--out="))?.slice(6);
+const sqlOnly = process.argv.includes("--sql-only");
 const outputPath = path.resolve(outputArg ?? path.join(root, "data/mobile/eralens-content.sqlite"));
 const tempPath = `${outputPath}.tmp`;
 const sqlPath = `${outputPath}.sql`;
+const refreshSqlPath = `${outputPath}.refresh.sql`;
 const tempSqlPath = `${sqlPath}.tmp`;
+const tempRefreshSqlPath = `${refreshSqlPath}.tmp`;
 const tables: [string, string][] = [
   ["persons", "id"], ["dynasty_groups", "id"], ["dynasties", "id"], ["reigns", "id"], ["events", "id"],
   ["entity_associations", "a_type, a_id, b_type, b_id"], ["relations", "id"], ["locations", "id"], ["location_mapping", "id"],
@@ -154,6 +157,7 @@ const serialized = serializeSqlitePackages(packages);
 await mkdir(path.dirname(outputPath), { recursive: true });
 await rm(tempPath, { force: true });
 await rm(tempSqlPath, { force: true });
+await rm(tempRefreshSqlPath, { force: true });
 const db = new DatabaseSync(tempPath);
 let open = true;
 try {
@@ -191,17 +195,39 @@ try {
   db.close();
   open = false;
 
-  const fullSql = `${schemaSql}\nBEGIN IMMEDIATE;\n${serialized.sql}\n${indexSql}\n${Object.entries(metadata).map(([key, value]) => `INSERT INTO content_metadata(key,value) VALUES(${sqlText(key)},${sqlText(JSON.stringify(value))});`).join("\n")}\nCOMMIT;\n`;
+  const metadataSql = Object.entries(metadata).map(([key, value]) => `INSERT INTO content_metadata(key,value) VALUES(${sqlText(key)},${sqlText(JSON.stringify(value))});`).join("\n");
+  const fullSql = `${schemaSql}\nBEGIN IMMEDIATE;\n${serialized.sql}\n${indexSql}\n${metadataSql}\nCOMMIT;\n`;
+  const clearSql = [
+    "DELETE FROM search_entries;",
+    "DELETE FROM content_metadata;",
+    "DELETE FROM entity_associations;",
+    "DELETE FROM relations;",
+    "DELETE FROM location_mapping;",
+    "DELETE FROM events;",
+    "DELETE FROM reigns;",
+    "DELETE FROM dynasties;",
+    "DELETE FROM dynasty_groups;",
+    "DELETE FROM persons;",
+    "DELETE FROM locations;",
+  ].join("\n");
+  const refreshSql = `${clearSql}\n${serialized.sql}\n${indexSql}\n${metadataSql}\n`;
   await writeFile(tempSqlPath, fullSql);
-  await rename(tempPath, outputPath);
+  await writeFile(tempRefreshSqlPath, refreshSql);
+  if (sqlOnly) {
+    await rm(tempPath, { force: true });
+  } else {
+    await rename(tempPath, outputPath);
+  }
   await rename(tempSqlPath, sqlPath);
-  console.log(JSON.stringify({ outputPath, sqlPath, ...metadata }, null, 2));
+  await rename(tempRefreshSqlPath, refreshSqlPath);
+  console.log(JSON.stringify({ outputPath, sqlPath, refreshSqlPath, mode: sqlOnly ? "sql-only" : "snapshot", ...metadata }, null, 2));
 } catch (error) {
   if (open) {
     try { db.close(); } catch { /* already closed */ }
   }
   await rm(tempPath, { force: true });
   await rm(tempSqlPath, { force: true });
+  await rm(tempRefreshSqlPath, { force: true });
   throw error;
 }
 

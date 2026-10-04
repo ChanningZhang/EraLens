@@ -14,7 +14,7 @@ const database = await openApiDatabase();
 await app.register(cors, { origin: true });
 await app.register(
   async (api) => {
-    await registerRoutes(api, database.repository, database.settings, database.contentInfo);
+    await registerRoutes(api, database.repository, database.settings, database.getContentInfo);
   },
   { prefix: "/api" },
 );

@@ -83,7 +83,7 @@ describe("reignFateRelations", () => {
     );
   });
 
-  it("falls back to next reign within 24 months for abdication receivers", () => {
+  it("falls back to the next reign within 36 months for receivers", () => {
     const liuXie: Reign = {
       id: "reign-liu-xie",
       dynastyId: "han-east",

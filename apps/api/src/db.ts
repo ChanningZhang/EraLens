@@ -76,16 +76,16 @@ export async function openApiDatabase() {
   const contentProvider = new NodeSqliteProvider(contentPath, true);
   const settings = await SqliteSettingsStore.open(statePath);
   const repository = new SqliteTimelineRepository(contentProvider, settings);
-  const [bounds, metadataRows] = await Promise.all([
-    repository.getBounds(),
-    (await contentProvider.open()).query("SELECT key,value FROM content_metadata"),
-  ]);
-  const metadata = new Map((metadataRows.values ?? []).map(row => [String(row.key), JSON.parse(String(row.value)) as unknown]));
-  const contentInfo = {
+  const getContentInfo = async () => {
+    const metadataRows = await (await contentProvider.open()).query("SELECT key,value FROM content_metadata");
+    const metadata = new Map((metadataRows.values ?? []).map(row => [String(row.key), JSON.parse(String(row.value)) as unknown]));
+    return {
     datasetVersion: String(metadata.get("dataset_version") ?? "unknown"),
     schemaVersion: Number(metadata.get("schema_version") ?? 0),
     contractVersion: Number(metadata.get("contract_version") ?? 0),
+    };
   };
+  const [bounds, contentInfo] = await Promise.all([repository.getBounds(), getContentInfo()]);
   if (!contentInfo.schemaVersion || !contentInfo.contractVersion) throw new Error(`Invalid SQLite content metadata at ${contentPath}`);
-  return { repository, contentProvider, settings, contentInfo, bounds };
+  return { repository, contentProvider, settings, getContentInfo, bounds };
 }
