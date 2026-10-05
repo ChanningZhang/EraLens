@@ -436,6 +436,7 @@ export const EntityDetailSchema = z.object({
       z.object({
         ref: EntityRefSchema,
         label: z.string(),
+        modernName: z.string().optional(),
         subtitle: z.string().optional(),
         abs: z.number().optional(),
         group: z.enum(["idiom", "poetry", "event", "reign", "person", "dynasty", "location_mapping", "location"]).optional(),
@@ -449,6 +450,7 @@ export const EntityDetailSchema = z.object({
           .object({
             ref: EntityRefSchema,
             label: z.string(),
+            modernName: z.string(),
             subtitle: z.string().optional(),
           })
           .optional(),

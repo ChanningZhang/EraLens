@@ -11,6 +11,7 @@ import {
 } from "@/features/timeline/state/selectionStore";
 import { viewportStore } from "@/features/timeline/state/viewportStore";
 import styles from "./DetailPanel.module.css";
+import { CapitalCard } from "./CapitalCard";
 
 const RELATED_GROUPS = [
   { key: "location_mapping", title: "都城" },
@@ -58,16 +59,6 @@ function selectRelatedItem(
   if (item.abs !== undefined) {
     viewportStore.jumpToAbs(item.abs);
   }
-  selectionStore.syncToUrl(centerAbs);
-}
-
-function selectDetailRef(
-  ref: EntityRef,
-  abs: number,
-  centerAbs: number,
-) {
-  selectionStore.navigateToDetail(ref, abs, centerAbs);
-  viewportStore.jumpToAbs(abs);
   selectionStore.syncToUrl(centerAbs);
 }
 
@@ -247,56 +238,18 @@ export function DetailPanel() {
               {capitalTenures.map((row) => (
                 <div
                   key={`${row.tenure.ref.id}:${row.tenure.abs}:${row.capital?.ref.id ?? "solo"}`}
-                  className={
-                    row.capital
-                      ? styles.capitalTenureRow
-                      : `${styles.capitalTenureRow} ${styles.capitalTenureRowSingle}`
-                  }
+                  className={`${styles.capitalTenureRow} ${styles.capitalTenureRowSingle}`}
                 >
-                  <button
-                    type="button"
-                    className={
-                      selection.highlightAbs === row.tenure.abs
-                        ? `${styles.capitalTenureCell} ${styles.capitalTenureCellActive}`
-                        : styles.capitalTenureCell
-                    }
-                    onClick={() =>
-                      selectTenureRef(row.tenure, selection, viewport.centerAbs)
-                    }
-                  >
-                    <span
-                      className={
-                        row.tenure.name
-                          ? styles.capitalTenureLabel
-                          : `${styles.capitalTenureLabel} ${styles.tenureLabel}`
-                      }
-                    >
-                      {row.tenure.name ?? row.tenure.label}
-                      {!row.tenure.name && row.tenure.duration && (
-                        <span className={styles.tenureDuration}> · {row.tenure.duration}</span>
-                      )}
-                    </span>
-                    {row.tenure.name && (
-                      <span className={styles.capitalTenureSub}>
-                        {row.tenure.label}
-                        {row.tenure.duration && (
-                          <span className={styles.tenureDuration}> · {row.tenure.duration}</span>
-                        )}
-                      </span>
-                    )}
-                  </button>
-                  {row.capital && (
-                    <button
-                      type="button"
-                      className={styles.capitalTenureCell}
-                      onClick={() =>
-                        selectDetailRef(row.capital!.ref, row.tenure.abs, viewport.centerAbs)
-                      }
-                    >
-                      <span className={styles.capitalTenureLabel}>{row.capital.label}</span>
-                      {row.capital.subtitle && (
-                        <span className={styles.capitalTenureSub}>{row.capital.subtitle}</span>
-                      )}
+                  {row.capital ? (
+                    <CapitalCard
+                      historicalName={row.capital.label}
+                      modernName={row.capital.modernName}
+                      subtitle={[row.tenure.label, row.tenure.duration, row.capital.subtitle].filter(Boolean).join(" · ")}
+                      onClick={() => selectTenureRef(row.tenure, selection, viewport.centerAbs)}
+                    />
+                  ) : (
+                    <button type="button" className={styles.capitalTenureCell} onClick={() => selectTenureRef(row.tenure, selection, viewport.centerAbs)}>
+                      <span className={`${styles.capitalTenureLabel} ${styles.tenureLabel}`}>{row.tenure.label}</span>
                     </button>
                   )}
                 </div>
@@ -314,8 +267,17 @@ export function DetailPanel() {
                   <h4 className={styles.relatedGroupTitle}>{group.title}</h4>
                 )}
                 <div className={styles.relatedList}>
-                  {group.items.map((item) => (
-                    <button
+                    {group.items.map((item) => (
+                      item.group === "location_mapping" && item.modernName ? (
+                        <CapitalCard
+                          key={`${item.ref.type}:${item.ref.id}`}
+                          historicalName={item.label}
+                          modernName={item.modernName}
+                          subtitle={item.subtitle ?? ""}
+                          onClick={() => selectRelatedItem(item, selection, viewport.centerAbs)}
+                        />
+                      ) : (
+                      <button
                       key={`${item.ref.type}:${item.ref.id}`}
                       type="button"
                       className={
@@ -333,8 +295,9 @@ export function DetailPanel() {
                       {item.subtitle && (
                         <span className={styles.relatedSub}>{item.subtitle}</span>
                       )}
-                    </button>
-                  ))}
+                      </button>
+                      )
+                    ))}
                 </div>
               </div>
             ))}

@@ -122,6 +122,7 @@ export function dynastyCapitalRelatedItems(
     .map((capital) => ({
       ref: { type: "location_mapping" as const, id: capital.id },
       label: capital.historicalName,
+      modernName: capital.modernName,
       subtitle: `${capitalDateRangeLabel(capital)} · ${capitalLocationRoleLabel(capital)}`,
       abs: capital.startAbs,
       group: "location_mapping" as const,
@@ -159,7 +160,8 @@ export function buildReignCapitalTenures(
         capital: {
           ref: { type: "location_mapping" as const, id: capital.id },
           label: capital.historicalName,
-          subtitle: capitalTenureSubtitle(capital),
+          modernName: capital.modernName,
+          subtitle: capitalLocationRoleLabel(capital),
         },
         tenure: {
           ref: { type: "reign" as const, id: reign.id },
