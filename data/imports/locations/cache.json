@@ -1477,6 +1477,34 @@
       "longitude": 114.117989,
       "latitude": 36.575589,
       "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-shang-bi-yuncheng-approx",
+      "modernName": "山东省菏泽市郓城县区域（庇故址推定范围）",
+      "longitude": 115.944412,
+      "latitude": 35.574958,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-eedb70b881c9a04e37c1d405c41c034a",
+      "modernName": "河南省驻马店市上蔡县蔡国故城遗址公园（遗址范围代表点）",
+      "longitude": 114.249714,
+      "latitude": 33.273434,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-1c9505fb757f399069819e0562ed9f0a",
+      "modernName": "河南省驻马店市新蔡县城关镇西北部新蔡故城遗址区域（示意点）",
+      "longitude": 114.979306,
+      "latitude": 32.749158,
+      "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-4a04c289ebc12a812e0fd7c8fe458df6",
+      "modernName": "安徽省淮南市凤台县城关镇北端州来古城区域（示意点）",
+      "longitude": 116.735288,
+      "latitude": 32.711976,
+      "coordinateSystem": "GCJ02"
     }
   ],
   "manifest": {
@@ -1490,7 +1518,7 @@
     },
     "scope": "cn",
     "counts": {
-      "locations": 211
+      "locations": 215
     },
     "sources": [
       {
@@ -1528,13 +1556,47 @@
       {
         "label": "Wikimedia Commons：磁山遗址地图坐标",
         "url": "https://commons.wikimedia.org/wiki/Category:Cishan_Site?uselang=zh-my"
+      },
+      {
+        "label": "山东地情档案：郓城县地理位置与县城坐标",
+        "url": "https://shandong-chorography.org/database/bh/section/1/article/18/"
+      },
+      {
+        "label": "郓城县行政中心坐标（区域示意，不代表古城遗址）",
+        "url": "https://www.poi86.com/poi/amap/district/371725/7.html"
+      },
+      {
+        "label": "维基百科：蔡国（迁都沿革）",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%9C%8B"
+      },
+      {
+        "label": "河南博物院：文化解读（新蔡故城遗址与蔡国迁都）",
+        "url": "https://www.chnmus.net/sitesources/hnsbwy/page_pc/dzjp/mzyp/phwtgd/article95d1de6d1745434b9448c914fa90559c.html"
+      },
+      {
+        "label": "识典古籍：《上蔡县志》卷一（州来、上下蔡及迁都说法辨析）",
+        "url": "https://www.shidianguji.com/zh/book/HY4310/chapter/1kyawqyrvaasm"
+      },
+      {
+        "label": "凤台县：关于下蔡之研究（州来古城位置）",
+        "url": "https://www.sohu.com/a/431081244_743485"
+      },
+      {
+        "label": "高德地图：蔡国故城遗址公园坐标",
+        "url": "https://www.amap.com/place/B0FFKLVRC5"
+      },
+      {
+        "label": "Chinese Text Project：新蔡县地名坐标",
+        "url": "https://ctext.org/datawiki.pl?if=en&res=733876"
       }
     ],
     "notes": [
       "坐标按现代地名、七位小数经纬度、坐标系完全一致首次去重；ID 已固化，后续修改字段不重新计算 ID。",
       "2026-10-05：补入北凉建康骆驼城遗址和敦煌城市约略点，WGS84坐标取OpenStreetMap。敦煌点仅表示城市范围，不作为十六国城址精确定位。",
       "2026-10-05：新增loc-wu-wuchang-ezhou，三国武昌复用鄂州吴王城遗址而非今武汉武昌。高德POI搜索吴王城遗址得到凤凰街道古肆北街1号；结构化地址地理编码=114.895675,30.402416（GCJ02），逆地理编码核验湖北省鄂州市鄂城区。坐标是遗址POI约略点，不代表精确宫殿位置或城墙边界。",
-      "2026-10-05：新增裴李岗、大地湾、磁山三处前仰韶遗址坐标。裴李岗取裴李岗村附近OSM点，大地湾取考古研究论文公布的遗址坐标，磁山取遗址地图坐标；均作代表性近似点，不表示遗址边界。"
+      "2026-10-05：新增裴李岗、大地湾、磁山三处前仰韶遗址坐标。裴李岗取裴李岗村附近OSM点，大地湾取考古研究论文公布的遗址坐标，磁山取遗址地图坐标；均作代表性近似点，不表示遗址边界。",
+      "新增 loc-shang-bi-yuncheng-approx 仅表示郓城县区域中心，系《古本竹书纪年》系统及相关辞书所指庇地望的一种推定范围；并非已确认的商代都城遗址点；GCJ02 坐标由县城中心 WGS84 坐标按常用 GCJ-02 转换计算。",
+      "2026-10-05：新增蔡国上蔡、新蔡、州来/下蔡都城地点。上蔡取高德蔡国故城遗址公园POI坐标（GCJ02）；新蔡以Chinese Text Project新蔡地名坐标为基础，转换至GCJ02后表示县城西北新蔡故城区域；州来点依凤台县城关镇北端古城区域描述作近似示意。后两者均非考古测绘坐标，见对应都城mapping精度说明。"
     ]
   }
 }

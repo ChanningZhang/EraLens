@@ -93,8 +93,100 @@
       "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
     },
     {
+      "label": "夏商周断代工程与其他西周年代方案对照",
+      "url": "https://zh.wikipedia.org/wiki/夏商周断代工程#年表"
+    },
+    {
+      "label": "《国号》：中国历代国号与史称",
+      "url": "https://zh.wikipedia.org/wiki/国号"
+    },
+    {
+      "label": "《中国政权列表》：各时期政权与国号",
+      "url": "https://zh.wikipedia.org/wiki/中国政权列表"
+    },
+    {
+      "label": "《“国号”中的历史流变》：国号、自称与方位史称",
+      "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
+    },
+    {
+      "label": "《史记》赵世家、魏世家及楚世家",
+      "url": "https://zh.wikisource.org/wiki/史記"
+    },
+    {
+      "label": "《史记》赵世家：中牟、迁邯郸与秦灭赵",
+      "url": "https://zh.wikisource.org/wiki/史記/卷043"
+    },
+    {
+      "label": "杞国条目（爵位沿革）",
+      "url": "https://zh.wikipedia.org/wiki/杞國"
+    },
+    {
+      "label": "春秋时期",
+      "url": "https://zh.wikipedia.org/wiki/春秋时期"
+    },
+    {
+      "label": "战国时期",
+      "url": "https://zh.wikipedia.org/wiki/战国时期"
+    },
+    {
+      "label": "战国七雄",
+      "url": "https://zh.wikipedia.org/wiki/战国七雄"
+    },
+    {
+      "label": "三家分晋",
+      "url": "https://zh.wikipedia.org/wiki/三家分晋"
+    },
+    {
+      "label": "周朝诸侯国君主列表",
+      "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/赵烈侯"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/赵武侯"
+    },
+    {
+      "label": "《史记·赵世家》",
+      "url": "https://ctext.org/shiji/zhao-shi-jia/zh"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/赵敬侯"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/赵成侯"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/赵肃侯"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/赵武灵王"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/赵惠文王"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/赵孝成王"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/赵悼襄王"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/赵幽缪王"
+    },
+    {
       "label": "《史记·十二诸侯年表》",
-      "url": "https://zh.wikisource.org/wiki/史記/卷014"
+      "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
     },
     {
       "label": "夏商周断代工程与其他西周年代方案对照",
@@ -119,6 +211,22 @@
     {
       "label": "《史记》赵世家：中牟、迁邯郸与秦灭赵",
       "url": "https://zh.wikisource.org/wiki/史記/卷043"
+    },
+    {
+      "label": "杞国条目（爵位沿革）",
+      "url": "https://zh.wikipedia.org/wiki/杞國"
+    },
+    {
+      "label": "周代诸侯列国（杞国条目底部模板）",
+      "url": "https://zh.wikipedia.org/wiki/Template:周代诸侯列国"
+    },
+    {
+      "label": "《史记·六国年表》",
+      "url": "https://ctext.org/shiji/liu-guo-nian-biao/zh"
+    },
+    {
+      "label": "《史记·十二诸侯年表》",
+      "url": "https://zh.wikisource.org/wiki/史記/卷014"
     }
   ],
   "notes": [
@@ -141,6 +249,9 @@
     "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。",
     "2026-10-05：开国经历逐条复核并改写：zhao-lie。分清奠基者、继承者、正式建国及史料缺载；删除无依据评价，保留传说与异说限定。",
     "2026-10-05：与已修订开国人物概述、王朝起讫、在位及都城逐条交叉核对，修订王朝简史：zhao-warring。区分势力发迹、称王、称帝、改国号和灭亡；收录口径与年代取舍只保留在manifest，不写进历史正文。",
-    "赵王朝止于前228年邯郸陷落；赵嘉前228至前222年续立已由chunqiu-minor的dai-warring单独收录，不将赵主泳道重复延至前222年。"
+    "赵王朝止于前228年邯郸陷落；赵嘉前228至前222年续立已由chunqiu-minor的dai-warring单独收录，不将赵主泳道重复延至前222年。",
+    "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
+    "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
+    "赵武灵王时期是否自称王及赵惠文王称王时间，来源有异说。本包以《史记》表中赵惠文王王年自前299年起作为王阶段起点；前296年是灭中山年，不作改称年。"
   ]
 }

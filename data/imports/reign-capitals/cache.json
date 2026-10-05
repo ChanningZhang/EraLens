@@ -21,7 +21,7 @@
     "generatedAt": "2026-10-02",
     "counts": {
       "location_mapping": 1265,
-      "locationMappings": 1265
+      "locationMappings": 1264
     },
     "sources": [
       {
@@ -223,6 +223,38 @@
       {
         "label": "中国社会科学网：黄帝的都城究竟在哪里？（汇述不同地望说）",
         "url": "https://www.cssn.cn/kgxc/kgxc_kgxl/202209/t20220930_5545231.shtml"
+      },
+      {
+        "label": "中国社会科学网：商代王位继承制的特质（引述相关研究）",
+        "url": "https://www.cssn.cn/lsx/lsx_zgs/202210/t20221024_5552503.shtml"
+      },
+      {
+        "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+        "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+      },
+      {
+        "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+        "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+      },
+      {
+        "label": "《史记·殷本纪》",
+        "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+      },
+      {
+        "label": "商朝君主列表（都城与夏商周断代工程年表）",
+        "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+      },
+      {
+        "label": "沃甲",
+        "url": "https://zh.wikipedia.org/wiki/沃甲"
+      },
+      {
+        "label": "庇（所据古本《竹书纪年》及地望考证）",
+        "url": "https://zh.wikipedia.org/wiki/庇"
+      },
+      {
+        "label": "郓城县地方志：地理位置与庇故址",
+        "url": "https://shandong-chorography.org/database/bh/section/1/article/18/"
       }
     ],
     "notes": [
@@ -262,7 +294,8 @@
       "2026-10-05：修正耶律淳在位都城关联。其在辽南京燕京受拥立建立北辽，故在位治所为南京析津府；原关联误指辽上京临潢府。复用辽南京已有地点记录。",
       "2026-10-05：辽南京析津府在位映射按燕京政权分立复核：天祚帝的南京关联止于1122年4月21日，耶律淳 claimTrack 的南京关联从其1122年4月22日即位起至7月20日病逝止。其余在位南京映射按各自任期与王朝级时段交集展示。",
       "2026-10-05：删除三皇王朝及伏羲、女娲、神农的宛丘都城关联。宛丘作为“太昊之墟”及伏羲都陈的传统有后世文献与地方传说依据，但不足以证实三皇是设有固定京师的政权，更不能据此把同一都城推广给三位传说人物；相关史料亦指出“王都”是后世观念下的称谓，并非可考的后世意义王都。此类不确定传说保持无都城关联。",
-      "2026-10-05：删除五帝王朝的有熊、帝丘、亳、平阳四阶段都城关联及对应六位传说帝王的九条个人都城关联。黄帝都邑在《史记》“邑于涿鹿之阿”与后世有熊、穷桑/曲阜等说之间存在争议；其余地点亦主要依托后世帝王谱系与地望附会，不能为按传统年数推算的五帝在位区间提供可核实的固定京师及适用时段。按日期与地理关联规则，争议地点和插值年代不下沉为确定都城关联。"
+      "2026-10-05：删除五帝王朝的有熊、帝丘、亳、平阳四阶段都城关联及对应六位传说帝王的九条个人都城关联。黄帝都邑在《史记》“邑于涿鹿之阿”与后世有熊、穷桑/曲阜等说之间存在争议；其余地点亦主要依托后世帝王谱系与地望附会，不能为按传统年数推算的五帝在位区间提供可核实的固定京师及适用时段。按日期与地理关联规则，争议地点和插值年代不下沉为确定都城关联。",
+      "商王在位都城关联已逐条按商朝君主世系及都城记录复核；沃甲及祖乙、祖辛、祖丁改为庇，南庚、阳甲改为奄，盘庚按约前1300年迁殷切分，后继诸王为殷。仲丁至南庚的迁置作为在位王的治所记录；朝代层另区分主都与辅都。相关古都地望及盘庚迁殷年代存在争议，详见各 mapping note；盘庚切分为约略年界。"
     ]
   },
   "locationMappings": [
@@ -35739,934 +35772,6 @@
     },
     {
       "start": {
-        "year": -1209,
-        "month": 1,
-        "abs": -14496,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1046,
-        "month": 12,
-        "abs": -12529,
-        "confidence": "month"
-      },
-      "startAbs": -14496,
-      "endAbs": -12529,
-      "role": "primary",
-      "note": "盘庚迁殷后商都殷。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/殷墟"
-        }
-      ],
-      "id": "map-reign:reign-zi-dixin:cap-shang-yin-1209",
-      "locationId": "loc-5b6799dae31959ffd32fbfeb62ec52ff",
-      "kind": "reign",
-      "externalId": "reign-zi-dixin",
-      "historicalName": "殷"
-    },
-    {
-      "start": {
-        "year": -1209,
-        "month": 1,
-        "abs": -14496,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1046,
-        "month": 12,
-        "abs": -12529,
-        "confidence": "month"
-      },
-      "startAbs": -14496,
-      "endAbs": -12529,
-      "role": "primary",
-      "note": "盘庚迁殷后商都殷。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/殷墟"
-        }
-      ],
-      "id": "map-reign:reign-zi-diyi:cap-shang-yin-1209",
-      "locationId": "loc-5b6799dae31959ffd32fbfeb62ec52ff",
-      "kind": "reign",
-      "externalId": "reign-zi-diyi",
-      "historicalName": "殷"
-    },
-    {
-      "start": {
-        "year": -1209,
-        "month": 1,
-        "abs": -14496,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1046,
-        "month": 12,
-        "abs": -12529,
-        "confidence": "month"
-      },
-      "startAbs": -14496,
-      "endAbs": -12529,
-      "role": "primary",
-      "note": "盘庚迁殷后商都殷。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/殷墟"
-        }
-      ],
-      "id": "map-reign:reign-zi-gengding:cap-shang-yin-1209",
-      "locationId": "loc-5b6799dae31959ffd32fbfeb62ec52ff",
-      "kind": "reign",
-      "externalId": "reign-zi-gengding",
-      "historicalName": "殷"
-    },
-    {
-      "start": {
-        "year": -1600,
-        "month": 1,
-        "abs": -19188,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1300,
-        "month": 12,
-        "abs": -15577,
-        "confidence": "month"
-      },
-      "startAbs": -19188,
-      "endAbs": -15577,
-      "role": "primary",
-      "note": "商初都亳。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/亳"
-        }
-      ],
-      "id": "map-reign:reign-zi-hedanjia:cap-shang-bo-1600",
-      "locationId": "loc-274b76d226520ebfe537c8ea5c0b5dfd",
-      "kind": "reign",
-      "externalId": "reign-zi-hedanjia",
-      "historicalName": "亳"
-    },
-    {
-      "start": {
-        "year": -1209,
-        "month": 1,
-        "abs": -14496,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1046,
-        "month": 12,
-        "abs": -12529,
-        "confidence": "month"
-      },
-      "startAbs": -14496,
-      "endAbs": -12529,
-      "role": "primary",
-      "note": "盘庚迁殷后商都殷。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/殷墟"
-        }
-      ],
-      "id": "map-reign:reign-zi-linxin:cap-shang-yin-1209",
-      "locationId": "loc-5b6799dae31959ffd32fbfeb62ec52ff",
-      "kind": "reign",
-      "externalId": "reign-zi-linxin",
-      "historicalName": "殷"
-    },
-    {
-      "start": {
-        "year": -1600,
-        "month": 1,
-        "abs": -19188,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1300,
-        "month": 12,
-        "abs": -15577,
-        "confidence": "month"
-      },
-      "startAbs": -19188,
-      "endAbs": -15577,
-      "role": "primary",
-      "note": "商初都亳。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/亳"
-        }
-      ],
-      "id": "map-reign:reign-zi-nangeng:cap-shang-bo-1600",
-      "locationId": "loc-274b76d226520ebfe537c8ea5c0b5dfd",
-      "kind": "reign",
-      "externalId": "reign-zi-nangeng",
-      "historicalName": "亳"
-    },
-    {
-      "start": {
-        "year": -1600,
-        "month": 1,
-        "abs": -19188,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1300,
-        "month": 12,
-        "abs": -15577,
-        "confidence": "month"
-      },
-      "startAbs": -19188,
-      "endAbs": -15577,
-      "role": "primary",
-      "note": "商初都亳。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/亳"
-        }
-      ],
-      "id": "map-reign:reign-zi-pangeng:cap-shang-bo-1600",
-      "locationId": "loc-274b76d226520ebfe537c8ea5c0b5dfd",
-      "kind": "reign",
-      "externalId": "reign-zi-pangeng",
-      "historicalName": "亳"
-    },
-    {
-      "start": {
-        "year": -1299,
-        "month": 1,
-        "abs": -15576,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1210,
-        "month": 12,
-        "abs": -14497,
-        "confidence": "month"
-      },
-      "startAbs": -15576,
-      "endAbs": -14497,
-      "role": "primary",
-      "note": "商中期西亳（偃师）。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/偃师区"
-        }
-      ],
-      "id": "map-reign:reign-zi-pangeng:cap-shang-zhenxun-1299",
-      "locationId": "loc-f3d005b4525a565c96e2d19633efc904",
-      "kind": "reign",
-      "externalId": "reign-zi-pangeng",
-      "historicalName": "斟鄩"
-    },
-    {
-      "start": {
-        "year": -1600,
-        "month": 1,
-        "abs": -19188,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1300,
-        "month": 12,
-        "abs": -15577,
-        "confidence": "month"
-      },
-      "startAbs": -19188,
-      "endAbs": -15577,
-      "role": "primary",
-      "note": "商初都亳。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/亳"
-        }
-      ],
-      "id": "map-reign:reign-zi-taigeng:cap-shang-bo-1600",
-      "locationId": "loc-274b76d226520ebfe537c8ea5c0b5dfd",
-      "kind": "reign",
-      "externalId": "reign-zi-taigeng",
-      "historicalName": "亳"
-    },
-    {
-      "start": {
-        "year": -1600,
-        "month": 1,
-        "abs": -19188,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1300,
-        "month": 12,
-        "abs": -15577,
-        "confidence": "month"
-      },
-      "startAbs": -19188,
-      "endAbs": -15577,
-      "role": "primary",
-      "note": "商初都亳。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/亳"
-        }
-      ],
-      "id": "map-reign:reign-zi-taijia:cap-shang-bo-1600",
-      "locationId": "loc-274b76d226520ebfe537c8ea5c0b5dfd",
-      "kind": "reign",
-      "externalId": "reign-zi-taijia",
-      "historicalName": "亳"
-    },
-    {
-      "start": {
-        "year": -1600,
-        "month": 1,
-        "abs": -19188,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1300,
-        "month": 12,
-        "abs": -15577,
-        "confidence": "month"
-      },
-      "startAbs": -19188,
-      "endAbs": -15577,
-      "role": "primary",
-      "note": "商初都亳。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/亳"
-        }
-      ],
-      "id": "map-reign:reign-zi-taiwu:cap-shang-bo-1600",
-      "locationId": "loc-274b76d226520ebfe537c8ea5c0b5dfd",
-      "kind": "reign",
-      "externalId": "reign-zi-taiwu",
-      "historicalName": "亳"
-    },
-    {
-      "start": {
-        "year": -1600,
-        "month": 1,
-        "abs": -19188,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1300,
-        "month": 12,
-        "abs": -15577,
-        "confidence": "month"
-      },
-      "startAbs": -19188,
-      "endAbs": -15577,
-      "role": "primary",
-      "note": "商初都亳。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/亳"
-        }
-      ],
-      "id": "map-reign:reign-zi-tang:cap-shang-bo-1600",
-      "locationId": "loc-274b76d226520ebfe537c8ea5c0b5dfd",
-      "kind": "reign",
-      "externalId": "reign-zi-tang",
-      "historicalName": "亳"
-    },
-    {
-      "start": {
-        "year": -1600,
-        "month": 1,
-        "abs": -19188,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1300,
-        "month": 12,
-        "abs": -15577,
-        "confidence": "month"
-      },
-      "startAbs": -19188,
-      "endAbs": -15577,
-      "role": "primary",
-      "note": "商初都亳。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/亳"
-        }
-      ],
-      "id": "map-reign:reign-zi-waibing:cap-shang-bo-1600",
-      "locationId": "loc-274b76d226520ebfe537c8ea5c0b5dfd",
-      "kind": "reign",
-      "externalId": "reign-zi-waibing",
-      "historicalName": "亳"
-    },
-    {
-      "start": {
-        "year": -1600,
-        "month": 1,
-        "abs": -19188,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1300,
-        "month": 12,
-        "abs": -15577,
-        "confidence": "month"
-      },
-      "startAbs": -19188,
-      "endAbs": -15577,
-      "role": "primary",
-      "note": "商初都亳。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/亳"
-        }
-      ],
-      "id": "map-reign:reign-zi-wairen:cap-shang-bo-1600",
-      "locationId": "loc-274b76d226520ebfe537c8ea5c0b5dfd",
-      "kind": "reign",
-      "externalId": "reign-zi-wairen",
-      "historicalName": "亳"
-    },
-    {
-      "start": {
-        "year": -1209,
-        "month": 1,
-        "abs": -14496,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1046,
-        "month": 12,
-        "abs": -12529,
-        "confidence": "month"
-      },
-      "startAbs": -14496,
-      "endAbs": -12529,
-      "role": "primary",
-      "note": "盘庚迁殷后商都殷。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/殷墟"
-        }
-      ],
-      "id": "map-reign:reign-zi-wending:cap-shang-yin-1209",
-      "locationId": "loc-5b6799dae31959ffd32fbfeb62ec52ff",
-      "kind": "reign",
-      "externalId": "reign-zi-wending",
-      "historicalName": "殷"
-    },
-    {
-      "start": {
-        "year": -1600,
-        "month": 1,
-        "abs": -19188,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1300,
-        "month": 12,
-        "abs": -15577,
-        "confidence": "month"
-      },
-      "startAbs": -19188,
-      "endAbs": -15577,
-      "role": "primary",
-      "note": "商初都亳。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/亳"
-        }
-      ],
-      "id": "map-reign:reign-zi-woding:cap-shang-bo-1600",
-      "locationId": "loc-274b76d226520ebfe537c8ea5c0b5dfd",
-      "kind": "reign",
-      "externalId": "reign-zi-woding",
-      "historicalName": "亳"
-    },
-    {
-      "start": {
-        "year": -1600,
-        "month": 1,
-        "abs": -19188,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1300,
-        "month": 12,
-        "abs": -15577,
-        "confidence": "month"
-      },
-      "startAbs": -19188,
-      "endAbs": -15577,
-      "role": "primary",
-      "note": "商初都亳。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/亳"
-        }
-      ],
-      "id": "map-reign:reign-zi-wojia:cap-shang-bo-1600",
-      "locationId": "loc-274b76d226520ebfe537c8ea5c0b5dfd",
-      "kind": "reign",
-      "externalId": "reign-zi-wojia",
-      "historicalName": "亳"
-    },
-    {
-      "start": {
-        "year": -1209,
-        "month": 1,
-        "abs": -14496,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1046,
-        "month": 12,
-        "abs": -12529,
-        "confidence": "month"
-      },
-      "startAbs": -14496,
-      "endAbs": -12529,
-      "role": "primary",
-      "note": "盘庚迁殷后商都殷。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/殷墟"
-        }
-      ],
-      "id": "map-reign:reign-zi-wuding:cap-shang-yin-1209",
-      "locationId": "loc-5b6799dae31959ffd32fbfeb62ec52ff",
-      "kind": "reign",
-      "externalId": "reign-zi-wuding",
-      "historicalName": "殷"
-    },
-    {
-      "start": {
-        "year": -1299,
-        "month": 1,
-        "abs": -15576,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1210,
-        "month": 12,
-        "abs": -14497,
-        "confidence": "month"
-      },
-      "startAbs": -15576,
-      "endAbs": -14497,
-      "role": "primary",
-      "note": "商中期西亳（偃师）。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/偃师区"
-        }
-      ],
-      "id": "map-reign:reign-zi-wuding:cap-shang-zhenxun-1299",
-      "locationId": "loc-f3d005b4525a565c96e2d19633efc904",
-      "kind": "reign",
-      "externalId": "reign-zi-wuding",
-      "historicalName": "斟鄩"
-    },
-    {
-      "start": {
-        "year": -1209,
-        "month": 1,
-        "abs": -14496,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1046,
-        "month": 12,
-        "abs": -12529,
-        "confidence": "month"
-      },
-      "startAbs": -14496,
-      "endAbs": -12529,
-      "role": "primary",
-      "note": "盘庚迁殷后商都殷。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/殷墟"
-        }
-      ],
-      "id": "map-reign:reign-zi-wuyi:cap-shang-yin-1209",
-      "locationId": "loc-5b6799dae31959ffd32fbfeb62ec52ff",
-      "kind": "reign",
-      "externalId": "reign-zi-wuyi",
-      "historicalName": "殷"
-    },
-    {
-      "start": {
-        "year": -1600,
-        "month": 1,
-        "abs": -19188,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1300,
-        "month": 12,
-        "abs": -15577,
-        "confidence": "month"
-      },
-      "startAbs": -19188,
-      "endAbs": -15577,
-      "role": "primary",
-      "note": "商初都亳。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/亳"
-        }
-      ],
-      "id": "map-reign:reign-zi-xiaojia:cap-shang-bo-1600",
-      "locationId": "loc-274b76d226520ebfe537c8ea5c0b5dfd",
-      "kind": "reign",
-      "externalId": "reign-zi-xiaojia",
-      "historicalName": "亳"
-    },
-    {
-      "start": {
-        "year": -1299,
-        "month": 1,
-        "abs": -15576,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1210,
-        "month": 12,
-        "abs": -14497,
-        "confidence": "month"
-      },
-      "startAbs": -15576,
-      "endAbs": -14497,
-      "role": "primary",
-      "note": "商中期西亳（偃师）。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/偃师区"
-        }
-      ],
-      "id": "map-reign:reign-zi-xiaoxin:cap-shang-zhenxun-1299",
-      "locationId": "loc-f3d005b4525a565c96e2d19633efc904",
-      "kind": "reign",
-      "externalId": "reign-zi-xiaoxin",
-      "historicalName": "斟鄩"
-    },
-    {
-      "start": {
-        "year": -1299,
-        "month": 1,
-        "abs": -15576,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1210,
-        "month": 12,
-        "abs": -14497,
-        "confidence": "month"
-      },
-      "startAbs": -15576,
-      "endAbs": -14497,
-      "role": "primary",
-      "note": "商中期西亳（偃师）。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/偃师区"
-        }
-      ],
-      "id": "map-reign:reign-zi-xiaoyi:cap-shang-zhenxun-1299",
-      "locationId": "loc-f3d005b4525a565c96e2d19633efc904",
-      "kind": "reign",
-      "externalId": "reign-zi-xiaoyi",
-      "historicalName": "斟鄩"
-    },
-    {
-      "start": {
-        "year": -1600,
-        "month": 1,
-        "abs": -19188,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1300,
-        "month": 12,
-        "abs": -15577,
-        "confidence": "month"
-      },
-      "startAbs": -19188,
-      "endAbs": -15577,
-      "role": "primary",
-      "note": "商初都亳。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/亳"
-        }
-      ],
-      "id": "map-reign:reign-zi-yangjia:cap-shang-bo-1600",
-      "locationId": "loc-274b76d226520ebfe537c8ea5c0b5dfd",
-      "kind": "reign",
-      "externalId": "reign-zi-yangjia",
-      "historicalName": "亳"
-    },
-    {
-      "start": {
-        "year": -1600,
-        "month": 1,
-        "abs": -19188,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1300,
-        "month": 12,
-        "abs": -15577,
-        "confidence": "month"
-      },
-      "startAbs": -19188,
-      "endAbs": -15577,
-      "role": "primary",
-      "note": "商初都亳。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/亳"
-        }
-      ],
-      "id": "map-reign:reign-zi-yongji:cap-shang-bo-1600",
-      "locationId": "loc-274b76d226520ebfe537c8ea5c0b5dfd",
-      "kind": "reign",
-      "externalId": "reign-zi-yongji",
-      "historicalName": "亳"
-    },
-    {
-      "start": {
-        "year": -1600,
-        "month": 1,
-        "abs": -19188,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1300,
-        "month": 12,
-        "abs": -15577,
-        "confidence": "month"
-      },
-      "startAbs": -19188,
-      "endAbs": -15577,
-      "role": "primary",
-      "note": "商初都亳。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/亳"
-        }
-      ],
-      "id": "map-reign:reign-zi-zhongding:cap-shang-bo-1600",
-      "locationId": "loc-274b76d226520ebfe537c8ea5c0b5dfd",
-      "kind": "reign",
-      "externalId": "reign-zi-zhongding",
-      "historicalName": "亳"
-    },
-    {
-      "start": {
-        "year": -1600,
-        "month": 1,
-        "abs": -19188,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1300,
-        "month": 12,
-        "abs": -15577,
-        "confidence": "month"
-      },
-      "startAbs": -19188,
-      "endAbs": -15577,
-      "role": "primary",
-      "note": "商初都亳。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/亳"
-        }
-      ],
-      "id": "map-reign:reign-zi-zhongren:cap-shang-bo-1600",
-      "locationId": "loc-274b76d226520ebfe537c8ea5c0b5dfd",
-      "kind": "reign",
-      "externalId": "reign-zi-zhongren",
-      "historicalName": "亳"
-    },
-    {
-      "start": {
-        "year": -1600,
-        "month": 1,
-        "abs": -19188,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1300,
-        "month": 12,
-        "abs": -15577,
-        "confidence": "month"
-      },
-      "startAbs": -19188,
-      "endAbs": -15577,
-      "role": "primary",
-      "note": "商初都亳。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/亳"
-        }
-      ],
-      "id": "map-reign:reign-zi-zuding:cap-shang-bo-1600",
-      "locationId": "loc-274b76d226520ebfe537c8ea5c0b5dfd",
-      "kind": "reign",
-      "externalId": "reign-zi-zuding",
-      "historicalName": "亳"
-    },
-    {
-      "start": {
-        "year": -1209,
-        "month": 1,
-        "abs": -14496,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1046,
-        "month": 12,
-        "abs": -12529,
-        "confidence": "month"
-      },
-      "startAbs": -14496,
-      "endAbs": -12529,
-      "role": "primary",
-      "note": "盘庚迁殷后商都殷。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/殷墟"
-        }
-      ],
-      "id": "map-reign:reign-zi-zugeng:cap-shang-yin-1209",
-      "locationId": "loc-5b6799dae31959ffd32fbfeb62ec52ff",
-      "kind": "reign",
-      "externalId": "reign-zi-zugeng",
-      "historicalName": "殷"
-    },
-    {
-      "start": {
-        "year": -1209,
-        "month": 1,
-        "abs": -14496,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1046,
-        "month": 12,
-        "abs": -12529,
-        "confidence": "month"
-      },
-      "startAbs": -14496,
-      "endAbs": -12529,
-      "role": "primary",
-      "note": "盘庚迁殷后商都殷。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/殷墟"
-        }
-      ],
-      "id": "map-reign:reign-zi-zujia:cap-shang-yin-1209",
-      "locationId": "loc-5b6799dae31959ffd32fbfeb62ec52ff",
-      "kind": "reign",
-      "externalId": "reign-zi-zujia",
-      "historicalName": "殷"
-    },
-    {
-      "start": {
-        "year": -1600,
-        "month": 1,
-        "abs": -19188,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1300,
-        "month": 12,
-        "abs": -15577,
-        "confidence": "month"
-      },
-      "startAbs": -19188,
-      "endAbs": -15577,
-      "role": "primary",
-      "note": "商初都亳。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/亳"
-        }
-      ],
-      "id": "map-reign:reign-zi-zuxin:cap-shang-bo-1600",
-      "locationId": "loc-274b76d226520ebfe537c8ea5c0b5dfd",
-      "kind": "reign",
-      "externalId": "reign-zi-zuxin",
-      "historicalName": "亳"
-    },
-    {
-      "start": {
-        "year": -1600,
-        "month": 1,
-        "abs": -19188,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1300,
-        "month": 12,
-        "abs": -15577,
-        "confidence": "month"
-      },
-      "startAbs": -19188,
-      "endAbs": -15577,
-      "role": "primary",
-      "note": "商初都亳。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/亳"
-        }
-      ],
-      "id": "map-reign:reign-zi-zuyi:cap-shang-bo-1600",
-      "locationId": "loc-274b76d226520ebfe537c8ea5c0b5dfd",
-      "kind": "reign",
-      "externalId": "reign-zi-zuyi",
-      "historicalName": "亳"
-    },
-    {
-      "start": {
         "year": -614,
         "month": 1,
         "abs": -7356,
@@ -38282,6 +37387,1232 @@
       "kind": "reign",
       "externalId": "reign-sima-yan-jin-wang",
       "historicalName": "洛阳"
+    },
+    {
+      "id": "map-reign:reign-zi-tang:cap-shang-bo",
+      "locationId": "loc-bb89088fdb33e146c8c221eea977ba9c",
+      "kind": "reign",
+      "externalId": "reign-zi-tang",
+      "historicalName": "亳",
+      "start": {
+        "year": -1600,
+        "month": 1,
+        "abs": -19188,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1571,
+        "month": 12,
+        "abs": -18829,
+        "confidence": "year"
+      },
+      "startAbs": -19188,
+      "endAbs": -18829,
+      "role": "primary",
+      "note": "在位期间王室主治所记为亳。考古研究常以郑州商城定位商前期主都；具体地望有争论。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "郑州商城遗址所在城市约略点；亳的地望存在学术争议"
+    },
+    {
+      "id": "map-reign:reign-zi-waibing:cap-shang-bo",
+      "locationId": "loc-bb89088fdb33e146c8c221eea977ba9c",
+      "kind": "reign",
+      "externalId": "reign-zi-waibing",
+      "historicalName": "亳",
+      "start": {
+        "year": -1570,
+        "month": 1,
+        "abs": -18828,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1566,
+        "month": 12,
+        "abs": -18769,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -18828,
+      "endAbs": -18769,
+      "role": "primary",
+      "note": "在位期间王室主治所记为亳。考古研究常以郑州商城定位商前期主都；具体地望有争论。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "郑州商城遗址所在城市约略点；亳的地望存在学术争议"
+    },
+    {
+      "id": "map-reign:reign-zi-zhongren:cap-shang-bo",
+      "locationId": "loc-bb89088fdb33e146c8c221eea977ba9c",
+      "kind": "reign",
+      "externalId": "reign-zi-zhongren",
+      "historicalName": "亳",
+      "start": {
+        "year": -1565,
+        "month": 1,
+        "abs": -18768,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -1561,
+        "month": 12,
+        "abs": -18709,
+        "confidence": "year"
+      },
+      "startAbs": -18768,
+      "endAbs": -18709,
+      "role": "primary",
+      "note": "在位期间王室主治所记为亳。考古研究常以郑州商城定位商前期主都；具体地望有争论。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "郑州商城遗址所在城市约略点；亳的地望存在学术争议"
+    },
+    {
+      "id": "map-reign:reign-zi-taijia:cap-shang-bo",
+      "locationId": "loc-bb89088fdb33e146c8c221eea977ba9c",
+      "kind": "reign",
+      "externalId": "reign-zi-taijia",
+      "historicalName": "亳",
+      "start": {
+        "year": -1560,
+        "month": 1,
+        "abs": -18708,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1548,
+        "month": 12,
+        "abs": -18553,
+        "confidence": "year"
+      },
+      "startAbs": -18708,
+      "endAbs": -18553,
+      "role": "primary",
+      "note": "在位期间王室主治所记为亳。考古研究常以郑州商城定位商前期主都；具体地望有争论。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "郑州商城遗址所在城市约略点；亳的地望存在学术争议"
+    },
+    {
+      "id": "map-reign:reign-zi-woding:cap-shang-bo",
+      "locationId": "loc-bb89088fdb33e146c8c221eea977ba9c",
+      "kind": "reign",
+      "externalId": "reign-zi-woding",
+      "historicalName": "亳",
+      "start": {
+        "year": -1547,
+        "month": 1,
+        "abs": -18552,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1529,
+        "month": 12,
+        "abs": -18325,
+        "confidence": "year"
+      },
+      "startAbs": -18552,
+      "endAbs": -18325,
+      "role": "primary",
+      "note": "在位期间王室主治所记为亳。考古研究常以郑州商城定位商前期主都；具体地望有争论。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "郑州商城遗址所在城市约略点；亳的地望存在学术争议"
+    },
+    {
+      "id": "map-reign:reign-zi-taigeng:cap-shang-bo",
+      "locationId": "loc-bb89088fdb33e146c8c221eea977ba9c",
+      "kind": "reign",
+      "externalId": "reign-zi-taigeng",
+      "historicalName": "亳",
+      "start": {
+        "year": -1528,
+        "month": 1,
+        "abs": -18324,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1524,
+        "month": 12,
+        "abs": -18265,
+        "confidence": "year"
+      },
+      "startAbs": -18324,
+      "endAbs": -18265,
+      "role": "primary",
+      "note": "在位期间王室主治所记为亳。考古研究常以郑州商城定位商前期主都；具体地望有争论。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "郑州商城遗址所在城市约略点；亳的地望存在学术争议"
+    },
+    {
+      "id": "map-reign:reign-zi-xiaojia:cap-shang-bo",
+      "locationId": "loc-bb89088fdb33e146c8c221eea977ba9c",
+      "kind": "reign",
+      "externalId": "reign-zi-xiaojia",
+      "historicalName": "亳",
+      "start": {
+        "year": -1523,
+        "month": 1,
+        "abs": -18264,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1507,
+        "month": 12,
+        "abs": -18061,
+        "confidence": "year"
+      },
+      "startAbs": -18264,
+      "endAbs": -18061,
+      "role": "primary",
+      "note": "在位期间王室主治所记为亳。考古研究常以郑州商城定位商前期主都；具体地望有争论。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "郑州商城遗址所在城市约略点；亳的地望存在学术争议"
+    },
+    {
+      "id": "map-reign:reign-zi-yongji:cap-shang-bo",
+      "locationId": "loc-bb89088fdb33e146c8c221eea977ba9c",
+      "kind": "reign",
+      "externalId": "reign-zi-yongji",
+      "historicalName": "亳",
+      "start": {
+        "year": -1506,
+        "month": 1,
+        "abs": -18060,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1495,
+        "month": 12,
+        "abs": -17917,
+        "confidence": "year"
+      },
+      "startAbs": -18060,
+      "endAbs": -17917,
+      "role": "primary",
+      "note": "在位期间王室主治所记为亳。考古研究常以郑州商城定位商前期主都；具体地望有争论。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "郑州商城遗址所在城市约略点；亳的地望存在学术争议"
+    },
+    {
+      "id": "map-reign:reign-zi-taiwu:cap-shang-bo",
+      "locationId": "loc-bb89088fdb33e146c8c221eea977ba9c",
+      "kind": "reign",
+      "externalId": "reign-zi-taiwu",
+      "historicalName": "亳",
+      "start": {
+        "year": -1494,
+        "month": 1,
+        "abs": -17916,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1420,
+        "month": 12,
+        "abs": -17017,
+        "confidence": "year"
+      },
+      "startAbs": -17916,
+      "endAbs": -17017,
+      "role": "primary",
+      "note": "在位期间王室主治所记为亳。考古研究常以郑州商城定位商前期主都；具体地望有争论。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "郑州商城遗址所在城市约略点；亳的地望存在学术争议"
+    },
+    {
+      "id": "map-reign:reign-zi-zhongding:cap-shang-ao",
+      "locationId": "loc-bb89088fdb33e146c8c221eea977ba9c",
+      "kind": "reign",
+      "externalId": "reign-zi-zhongding",
+      "historicalName": "隞/嚣",
+      "start": {
+        "year": -1419,
+        "month": 1,
+        "abs": -17016,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1411,
+        "month": 12,
+        "abs": -16909,
+        "confidence": "year"
+      },
+      "startAbs": -17016,
+      "endAbs": -16909,
+      "role": "primary",
+      "note": "中丁迁隞（又作嚣/敖）；前期辅都与郑州亳主都并存，隞地望有争议，按郑州一带作示意点。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        }
+      ],
+      "spatialPrecision": "郑州市约略点；隞的具体地望有争议"
+    },
+    {
+      "id": "map-reign:reign-zi-wairen:cap-shang-ao",
+      "locationId": "loc-bb89088fdb33e146c8c221eea977ba9c",
+      "kind": "reign",
+      "externalId": "reign-zi-wairen",
+      "historicalName": "隞/嚣",
+      "start": {
+        "year": -1410,
+        "month": 1,
+        "abs": -16908,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1401,
+        "month": 12,
+        "abs": -16789,
+        "confidence": "year"
+      },
+      "startAbs": -16908,
+      "endAbs": -16789,
+      "role": "primary",
+      "note": "中丁迁隞（又作嚣/敖）；前期辅都与郑州亳主都并存，隞地望有争议，按郑州一带作示意点。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        }
+      ],
+      "spatialPrecision": "郑州市约略点；隞的具体地望有争议"
+    },
+    {
+      "id": "map-reign:reign-zi-hedanjia:cap-shang-xiang",
+      "locationId": "loc-7575495d7526cb46127984392d92bd76",
+      "kind": "reign",
+      "externalId": "reign-zi-hedanjia",
+      "historicalName": "相",
+      "start": {
+        "year": -1400,
+        "month": 1,
+        "abs": -16788,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1392,
+        "month": 12,
+        "abs": -16681,
+        "confidence": "year"
+      },
+      "startAbs": -16788,
+      "endAbs": -16681,
+      "role": "primary",
+      "note": "《史记·殷本纪》记河亶甲居相；研究约定在今内黄一带，商代都城遗址尚未确证。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        }
+      ],
+      "spatialPrecision": "内黄县区域约略点；遗址未能确证"
+    },
+    {
+      "id": "map-reign:reign-zi-zuyi:cap-shang-bi",
+      "locationId": "loc-shang-bi-yuncheng-approx",
+      "kind": "reign",
+      "externalId": "reign-zi-zuyi",
+      "historicalName": "庇",
+      "start": {
+        "year": -1391,
+        "month": 1,
+        "abs": -16680,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1373,
+        "month": 12,
+        "abs": -16453,
+        "confidence": "year"
+      },
+      "startAbs": -16680,
+      "endAbs": -16453,
+      "role": "primary",
+      "note": "据《古本竹书纪年》系统，祖乙居庇；此后祖辛、沃甲、祖丁承用。沃甲条目亦记在位都庇。庇约在今郓城县境，故址及庇、邢、耿关系有争议。",
+      "links": [
+        {
+          "label": "沃甲",
+          "url": "https://zh.wikipedia.org/wiki/沃甲"
+        },
+        {
+          "label": "庇（所据古本《竹书纪年》及地望考证）",
+          "url": "https://zh.wikipedia.org/wiki/庇"
+        },
+        {
+          "label": "郓城县地方志：地理位置与庇故址",
+          "url": "https://shandong-chorography.org/database/bh/section/1/article/18/"
+        }
+      ],
+      "spatialPrecision": "郓城县区域示意点，非考古遗址定位；庇地望有争议"
+    },
+    {
+      "id": "map-reign:reign-zi-zuxin:cap-shang-bi",
+      "locationId": "loc-shang-bi-yuncheng-approx",
+      "kind": "reign",
+      "externalId": "reign-zi-zuxin",
+      "historicalName": "庇",
+      "start": {
+        "year": -1372,
+        "month": 1,
+        "abs": -16452,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1359,
+        "month": 12,
+        "abs": -16285,
+        "confidence": "year"
+      },
+      "startAbs": -16452,
+      "endAbs": -16285,
+      "role": "primary",
+      "note": "据《古本竹书纪年》系统，祖乙居庇；此后祖辛、沃甲、祖丁承用。沃甲条目亦记在位都庇。庇约在今郓城县境，故址及庇、邢、耿关系有争议。",
+      "links": [
+        {
+          "label": "沃甲",
+          "url": "https://zh.wikipedia.org/wiki/沃甲"
+        },
+        {
+          "label": "庇（所据古本《竹书纪年》及地望考证）",
+          "url": "https://zh.wikipedia.org/wiki/庇"
+        },
+        {
+          "label": "郓城县地方志：地理位置与庇故址",
+          "url": "https://shandong-chorography.org/database/bh/section/1/article/18/"
+        }
+      ],
+      "spatialPrecision": "郓城县区域示意点，非考古遗址定位；庇地望有争议"
+    },
+    {
+      "id": "map-reign:reign-zi-wojia:cap-shang-bi",
+      "locationId": "loc-shang-bi-yuncheng-approx",
+      "kind": "reign",
+      "externalId": "reign-zi-wojia",
+      "historicalName": "庇",
+      "start": {
+        "year": -1358,
+        "month": 1,
+        "abs": -16284,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1339,
+        "month": 12,
+        "abs": -16045,
+        "confidence": "year"
+      },
+      "startAbs": -16284,
+      "endAbs": -16045,
+      "role": "primary",
+      "note": "据《古本竹书纪年》系统，祖乙居庇；此后祖辛、沃甲、祖丁承用。沃甲条目亦记在位都庇。庇约在今郓城县境，故址及庇、邢、耿关系有争议。",
+      "links": [
+        {
+          "label": "沃甲",
+          "url": "https://zh.wikipedia.org/wiki/沃甲"
+        },
+        {
+          "label": "庇（所据古本《竹书纪年》及地望考证）",
+          "url": "https://zh.wikipedia.org/wiki/庇"
+        },
+        {
+          "label": "郓城县地方志：地理位置与庇故址",
+          "url": "https://shandong-chorography.org/database/bh/section/1/article/18/"
+        }
+      ],
+      "spatialPrecision": "郓城县区域示意点，非考古遗址定位；庇地望有争议"
+    },
+    {
+      "id": "map-reign:reign-zi-zuding:cap-shang-bi",
+      "locationId": "loc-shang-bi-yuncheng-approx",
+      "kind": "reign",
+      "externalId": "reign-zi-zuding",
+      "historicalName": "庇",
+      "start": {
+        "year": -1338,
+        "month": 1,
+        "abs": -16044,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1330,
+        "month": 12,
+        "abs": -15937,
+        "confidence": "year"
+      },
+      "startAbs": -16044,
+      "endAbs": -15937,
+      "role": "primary",
+      "note": "据《古本竹书纪年》系统，祖乙居庇；此后祖辛、沃甲、祖丁承用。沃甲条目亦记在位都庇。庇约在今郓城县境，故址及庇、邢、耿关系有争议。",
+      "links": [
+        {
+          "label": "沃甲",
+          "url": "https://zh.wikipedia.org/wiki/沃甲"
+        },
+        {
+          "label": "庇（所据古本《竹书纪年》及地望考证）",
+          "url": "https://zh.wikipedia.org/wiki/庇"
+        },
+        {
+          "label": "郓城县地方志：地理位置与庇故址",
+          "url": "https://shandong-chorography.org/database/bh/section/1/article/18/"
+        }
+      ],
+      "spatialPrecision": "郓城县区域示意点，非考古遗址定位；庇地望有争议"
+    },
+    {
+      "id": "map-reign:reign-zi-nangeng:cap-shang-yan",
+      "locationId": "loc-d0f912cc274515214338b7c96ffce31f",
+      "kind": "reign",
+      "externalId": "reign-zi-nangeng",
+      "historicalName": "奄",
+      "start": {
+        "year": -1329,
+        "month": 1,
+        "abs": -15936,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1324,
+        "month": 12,
+        "abs": -15865,
+        "confidence": "year"
+      },
+      "startAbs": -15936,
+      "endAbs": -15865,
+      "role": "primary",
+      "note": "南庚自庇迁奄，阳甲及盘庚迁殷前沿用。奄传统地望在今曲阜附近。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        }
+      ],
+      "spatialPrecision": "曲阜市约略点"
+    },
+    {
+      "id": "map-reign:reign-zi-yangjia:cap-shang-yan",
+      "locationId": "loc-d0f912cc274515214338b7c96ffce31f",
+      "kind": "reign",
+      "externalId": "reign-zi-yangjia",
+      "historicalName": "奄",
+      "start": {
+        "year": -1323,
+        "month": 1,
+        "abs": -15864,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1311,
+        "month": 12,
+        "abs": -15709,
+        "confidence": "year"
+      },
+      "startAbs": -15864,
+      "endAbs": -15709,
+      "role": "primary",
+      "note": "南庚自庇迁奄，阳甲及盘庚迁殷前沿用。奄传统地望在今曲阜附近。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        }
+      ],
+      "spatialPrecision": "曲阜市约略点"
+    },
+    {
+      "id": "map-reign:reign-zi-pangeng:cap-shang-yan",
+      "locationId": "loc-d0f912cc274515214338b7c96ffce31f",
+      "kind": "reign",
+      "externalId": "reign-zi-pangeng",
+      "historicalName": "奄",
+      "start": {
+        "year": -1310,
+        "month": 1,
+        "abs": -15708,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1301,
+        "month": 12,
+        "abs": -15589,
+        "confidence": "year"
+      },
+      "startAbs": -15708,
+      "endAbs": -15589,
+      "role": "primary",
+      "note": "南庚自庇迁奄，阳甲及盘庚迁殷前沿用。奄传统地望在今曲阜附近。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        }
+      ],
+      "spatialPrecision": "曲阜市约略点"
+    },
+    {
+      "id": "map-reign:reign-zi-pangeng:cap-shang-yin",
+      "locationId": "loc-21798e9ca7e2d2124da0f0a34e2bd98f",
+      "kind": "reign",
+      "externalId": "reign-zi-pangeng",
+      "historicalName": "殷",
+      "start": {
+        "year": -1300,
+        "month": 1,
+        "abs": -15588,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1280,
+        "month": 12,
+        "abs": -15337,
+        "confidence": "year"
+      },
+      "startAbs": -15588,
+      "endAbs": -15337,
+      "role": "primary",
+      "note": "盘庚迁殷后定都殷墟一带，作为商后期都城延续至商亡。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "殷墟遗址约略点"
+    },
+    {
+      "id": "map-reign:reign-zi-xiaoxin:cap-shang-yin",
+      "locationId": "loc-21798e9ca7e2d2124da0f0a34e2bd98f",
+      "kind": "reign",
+      "externalId": "reign-zi-xiaoxin",
+      "historicalName": "殷",
+      "start": {
+        "year": -1279,
+        "month": 1,
+        "abs": -15336,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1277,
+        "month": 12,
+        "abs": -15301,
+        "confidence": "year"
+      },
+      "startAbs": -15336,
+      "endAbs": -15301,
+      "role": "primary",
+      "note": "盘庚迁殷后定都殷墟一带，作为商后期都城延续至商亡。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "殷墟遗址约略点"
+    },
+    {
+      "id": "map-reign:reign-zi-xiaoyi:cap-shang-yin",
+      "locationId": "loc-21798e9ca7e2d2124da0f0a34e2bd98f",
+      "kind": "reign",
+      "externalId": "reign-zi-xiaoyi",
+      "historicalName": "殷",
+      "start": {
+        "year": -1276,
+        "month": 1,
+        "abs": -15300,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1251,
+        "month": 12,
+        "abs": -14989,
+        "confidence": "year"
+      },
+      "startAbs": -15300,
+      "endAbs": -14989,
+      "role": "primary",
+      "note": "盘庚迁殷后定都殷墟一带，作为商后期都城延续至商亡。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "殷墟遗址约略点"
+    },
+    {
+      "id": "map-reign:reign-zi-wuding:cap-shang-yin",
+      "locationId": "loc-21798e9ca7e2d2124da0f0a34e2bd98f",
+      "kind": "reign",
+      "externalId": "reign-zi-wuding",
+      "historicalName": "殷",
+      "start": {
+        "year": -1250,
+        "month": 1,
+        "abs": -14988,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1192,
+        "month": 12,
+        "abs": -14281,
+        "confidence": "year"
+      },
+      "startAbs": -14988,
+      "endAbs": -14281,
+      "role": "primary",
+      "note": "盘庚迁殷后定都殷墟一带，作为商后期都城延续至商亡。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "殷墟遗址约略点"
+    },
+    {
+      "id": "map-reign:reign-zi-zugeng:cap-shang-yin",
+      "locationId": "loc-21798e9ca7e2d2124da0f0a34e2bd98f",
+      "kind": "reign",
+      "externalId": "reign-zi-zugeng",
+      "historicalName": "殷",
+      "start": {
+        "year": -1191,
+        "month": 1,
+        "abs": -14280,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1181,
+        "month": 12,
+        "abs": -14149,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -14280,
+      "endAbs": -14149,
+      "role": "primary",
+      "note": "盘庚迁殷后定都殷墟一带，作为商后期都城延续至商亡。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "殷墟遗址约略点"
+    },
+    {
+      "id": "map-reign:reign-zi-zujia:cap-shang-yin",
+      "locationId": "loc-21798e9ca7e2d2124da0f0a34e2bd98f",
+      "kind": "reign",
+      "externalId": "reign-zi-zujia",
+      "historicalName": "殷",
+      "start": {
+        "year": -1180,
+        "month": 1,
+        "abs": -14148,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -1170,
+        "month": 12,
+        "abs": -14017,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -14148,
+      "endAbs": -14017,
+      "role": "primary",
+      "note": "盘庚迁殷后定都殷墟一带，作为商后期都城延续至商亡。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "殷墟遗址约略点"
+    },
+    {
+      "id": "map-reign:reign-zi-linxin:cap-shang-yin",
+      "locationId": "loc-21798e9ca7e2d2124da0f0a34e2bd98f",
+      "kind": "reign",
+      "externalId": "reign-zi-linxin",
+      "historicalName": "殷",
+      "start": {
+        "year": -1169,
+        "month": 1,
+        "abs": -14016,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -1159,
+        "month": 12,
+        "abs": -13885,
+        "confidence": "interpolated_by_generation"
+      },
+      "startAbs": -14016,
+      "endAbs": -13885,
+      "role": "primary",
+      "note": "盘庚迁殷后定都殷墟一带，作为商后期都城延续至商亡。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "殷墟遗址约略点"
+    },
+    {
+      "id": "map-reign:reign-zi-gengding:cap-shang-yin",
+      "locationId": "loc-21798e9ca7e2d2124da0f0a34e2bd98f",
+      "kind": "reign",
+      "externalId": "reign-zi-gengding",
+      "historicalName": "殷",
+      "start": {
+        "year": -1158,
+        "month": 1,
+        "abs": -13884,
+        "confidence": "interpolated_by_generation"
+      },
+      "end": {
+        "year": -1148,
+        "month": 12,
+        "abs": -13753,
+        "confidence": "year"
+      },
+      "startAbs": -13884,
+      "endAbs": -13753,
+      "role": "primary",
+      "note": "盘庚迁殷后定都殷墟一带，作为商后期都城延续至商亡。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "殷墟遗址约略点"
+    },
+    {
+      "id": "map-reign:reign-zi-wuyi:cap-shang-yin",
+      "locationId": "loc-21798e9ca7e2d2124da0f0a34e2bd98f",
+      "kind": "reign",
+      "externalId": "reign-zi-wuyi",
+      "historicalName": "殷",
+      "start": {
+        "year": -1147,
+        "month": 1,
+        "abs": -13752,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1113,
+        "month": 12,
+        "abs": -13333,
+        "confidence": "year"
+      },
+      "startAbs": -13752,
+      "endAbs": -13333,
+      "role": "primary",
+      "note": "盘庚迁殷后定都殷墟一带，作为商后期都城延续至商亡。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "殷墟遗址约略点"
+    },
+    {
+      "id": "map-reign:reign-zi-wending:cap-shang-yin",
+      "locationId": "loc-21798e9ca7e2d2124da0f0a34e2bd98f",
+      "kind": "reign",
+      "externalId": "reign-zi-wending",
+      "historicalName": "殷",
+      "start": {
+        "year": -1112,
+        "month": 1,
+        "abs": -13332,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1102,
+        "month": 12,
+        "abs": -13201,
+        "confidence": "year"
+      },
+      "startAbs": -13332,
+      "endAbs": -13201,
+      "role": "primary",
+      "note": "盘庚迁殷后定都殷墟一带，作为商后期都城延续至商亡。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "殷墟遗址约略点"
+    },
+    {
+      "id": "map-reign:reign-zi-diyi:cap-shang-yin",
+      "locationId": "loc-21798e9ca7e2d2124da0f0a34e2bd98f",
+      "kind": "reign",
+      "externalId": "reign-zi-diyi",
+      "historicalName": "殷",
+      "start": {
+        "year": -1101,
+        "month": 1,
+        "abs": -13200,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1076,
+        "month": 12,
+        "abs": -12889,
+        "confidence": "year"
+      },
+      "startAbs": -13200,
+      "endAbs": -12889,
+      "role": "primary",
+      "note": "盘庚迁殷后定都殷墟一带，作为商后期都城延续至商亡。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "殷墟遗址约略点"
+    },
+    {
+      "id": "map-reign:reign-zi-dixin:cap-shang-yin",
+      "locationId": "loc-21798e9ca7e2d2124da0f0a34e2bd98f",
+      "kind": "reign",
+      "externalId": "reign-zi-dixin",
+      "historicalName": "殷",
+      "start": {
+        "year": -1075,
+        "month": 1,
+        "abs": -12888,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1046,
+        "month": 1,
+        "abs": -12540,
+        "confidence": "year"
+      },
+      "startAbs": -12888,
+      "endAbs": -12540,
+      "role": "primary",
+      "note": "盘庚迁殷后定都殷墟一带，作为商后期都城延续至商亡。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "殷墟遗址约略点"
     }
   ]
 }

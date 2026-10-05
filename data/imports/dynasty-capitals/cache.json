@@ -25,8 +25,8 @@
     "depth": "standard",
     "generatedAt": "2026-10-02",
     "counts": {
-      "location_mapping": 226,
-      "locationMappings": 226
+      "location_mapping": 232,
+      "locationMappings": 232
     },
     "sources": [
       {
@@ -512,6 +512,62 @@
       {
         "label": "中国社会科学网：黄帝的都城究竟在哪里？（汇述不同地望说）",
         "url": "https://www.cssn.cn/kgxc/kgxc_kgxl/202209/t20220930_5545231.shtml"
+      },
+      {
+        "label": "中国社会科学网：商代王位继承制的特质（引述相关研究）",
+        "url": "https://www.cssn.cn/lsx/lsx_zgs/202210/t20221024_5552503.shtml"
+      },
+      {
+        "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+        "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+      },
+      {
+        "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+        "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+      },
+      {
+        "label": "《史记·殷本纪》",
+        "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+      },
+      {
+        "label": "商朝君主列表（都城与夏商周断代工程年表）",
+        "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+      },
+      {
+        "label": "沃甲",
+        "url": "https://zh.wikipedia.org/wiki/沃甲"
+      },
+      {
+        "label": "庇（所据古本《竹书纪年》及地望考证）",
+        "url": "https://zh.wikipedia.org/wiki/庇"
+      },
+      {
+        "label": "郓城县地方志：地理位置与庇故址",
+        "url": "https://shandong-chorography.org/database/bh/section/1/article/18/"
+      },
+      {
+        "label": "维基百科：蔡国（迁都沿革）",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%9C%8B"
+      },
+      {
+        "label": "河南博物院：文化解读（新蔡故城遗址与蔡国迁都）",
+        "url": "https://www.chnmus.net/sitesources/hnsbwy/page_pc/dzjp/mzyp/phwtgd/article95d1de6d1745434b9448c914fa90559c.html"
+      },
+      {
+        "label": "识典古籍：《上蔡县志》卷一（州来、上下蔡及迁都说法辨析）",
+        "url": "https://www.shidianguji.com/zh/book/HY4310/chapter/1kyawqyrvaasm"
+      },
+      {
+        "label": "凤台县：关于下蔡之研究（州来古城位置）",
+        "url": "https://www.sohu.com/a/431081244_743485"
+      },
+      {
+        "label": "高德地图：蔡国故城遗址公园坐标",
+        "url": "https://www.amap.com/place/B0FFKLVRC5"
+      },
+      {
+        "label": "Chinese Text Project：新蔡县地名坐标",
+        "url": "https://ctext.org/datawiki.pl?if=en&res=733876"
       }
     ],
     "notes": [
@@ -574,7 +630,9 @@
       "2026-10-05：将北辽建模为辽朝的燕京 claimTrack，移除独立 dynasty 都城行；辽朝南京陪都映射止于耶律淳1122年4月22日在燕京即位前一日。",
       "辽南京控制权交接按《辽史·耶律淳传》所记耶律淳于1122年4月22日在燕京即位处理；王朝级南京陪都记录至4月21日，北辽支系在位关联从4月22日起。",
       "2026-10-05：删除三皇王朝及伏羲、女娲、神农的宛丘都城关联。宛丘作为“太昊之墟”及伏羲都陈的传统有后世文献与地方传说依据，但不足以证实三皇是设有固定京师的政权，更不能据此把同一都城推广给三位传说人物；相关史料亦指出“王都”是后世观念下的称谓，并非可考的后世意义王都。此类不确定传说保持无都城关联。",
-      "2026-10-05：删除五帝王朝的有熊、帝丘、亳、平阳四阶段都城关联及对应六位传说帝王的九条个人都城关联。黄帝都邑在《史记》“邑于涿鹿之阿”与后世有熊、穷桑/曲阜等说之间存在争议；其余地点亦主要依托后世帝王谱系与地望附会，不能为按传统年数推算的五帝在位区间提供可核实的固定京师及适用时段。按日期与地理关联规则，争议地点和插值年代不下沉为确定都城关联。"
+      "2026-10-05：删除五帝王朝的有熊、帝丘、亳、平阳四阶段都城关联及对应六位传说帝王的九条个人都城关联。黄帝都邑在《史记》“邑于涿鹿之阿”与后世有熊、穷桑/曲阜等说之间存在争议；其余地点亦主要依托后世帝王谱系与地望附会，不能为按传统年数推算的五帝在位区间提供可核实的固定京师及适用时段。按日期与地理关联规则，争议地点和插值年代不下沉为确定都城关联。",
+      "本次复核商朝都城：旧数据将商朝压缩成亳、斟鄩、殷三段，遗漏仲丁至南庚时期的隞、相、庇、奄等都城/辅都，且将偃师斟鄩误作一段主都。按夏商周断代工程系商王年表及《史记·殷本纪》调整君主在位关联；朝代层按张国硕关于商前期主辅都制的研究，郑州商城亳为主都、各迁置地为辅都，盘庚迁殷后殷为主都。早商亳、隞及庇/邢/耿地望存在争议；所选点仅为地图示意。项目年表的盘庚迁殷边界按约前1300年表达，不声称精确到年。",
+      "2026-10-05：为蔡补入上蔡、新蔡、州来/下蔡三段王朝级主都 mapping。上蔡从蔡仲复封阶段起，未把更早的蔡叔受封于祭（郑州祭城）说并入；新蔡迁都依本文采用的前531灭蔡、三年后复国叙述取约前528年，史料另有前529等系年；州来古城传统定位于凤台，但遗址精确位置有争议，空间点仅作区域示意。未生成君主都城关联。"
     ]
   },
   "locationMappings": [
@@ -759,93 +817,6 @@
       "kind": "dynasty",
       "externalId": "xia",
       "historicalName": "西河"
-    },
-    {
-      "start": {
-        "year": -1600,
-        "month": 1,
-        "abs": -19188,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1300,
-        "month": 12,
-        "abs": -15577,
-        "confidence": "month"
-      },
-      "startAbs": -19188,
-      "endAbs": -15577,
-      "role": "primary",
-      "note": "商初都亳。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/亳"
-        }
-      ],
-      "id": "cap-shang-bo-1600",
-      "locationId": "loc-274b76d226520ebfe537c8ea5c0b5dfd",
-      "kind": "dynasty",
-      "externalId": "shang",
-      "historicalName": "亳"
-    },
-    {
-      "start": {
-        "year": -1299,
-        "month": 1,
-        "abs": -15576,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1210,
-        "month": 12,
-        "abs": -14497,
-        "confidence": "month"
-      },
-      "startAbs": -15576,
-      "endAbs": -14497,
-      "role": "primary",
-      "note": "商中期西亳（偃师）。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/偃师区"
-        }
-      ],
-      "id": "cap-shang-zhenxun-1299",
-      "locationId": "loc-f3d005b4525a565c96e2d19633efc904",
-      "kind": "dynasty",
-      "externalId": "shang",
-      "historicalName": "斟鄩"
-    },
-    {
-      "start": {
-        "year": -1209,
-        "month": 1,
-        "abs": -14496,
-        "confidence": "year"
-      },
-      "end": {
-        "year": -1046,
-        "month": 12,
-        "abs": -12529,
-        "confidence": "month"
-      },
-      "startAbs": -14496,
-      "endAbs": -12529,
-      "role": "primary",
-      "note": "盘庚迁殷后商都殷。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/殷墟"
-        }
-      ],
-      "id": "cap-shang-yin-1209",
-      "locationId": "loc-5b6799dae31959ffd32fbfeb62ec52ff",
-      "kind": "dynasty",
-      "externalId": "shang",
-      "historicalName": "殷"
     },
     {
       "start": {
@@ -7512,6 +7483,350 @@
         }
       ],
       "spatialPrecision": "遗址POI约略点，非宫殿或完整城墙边界"
+    },
+    {
+      "id": "cap-shang-bo-primary-1600",
+      "locationId": "loc-bb89088fdb33e146c8c221eea977ba9c",
+      "kind": "dynasty",
+      "externalId": "shang",
+      "historicalName": "亳",
+      "start": {
+        "year": -1600,
+        "month": 1,
+        "abs": -19188,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1301,
+        "month": 12,
+        "abs": -15589,
+        "confidence": "year"
+      },
+      "startAbs": -19188,
+      "endAbs": -15589,
+      "role": "primary",
+      "note": "商前期主都。此处按郑州商城为亳的考古与研究观点定位；早商亳的具体地望及商丘、偃师等说仍有争论。前期主都与东部、北部辅都并行，不代表唯一王室驻地。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "郑州商城遗址所在城市约略点；亳的地望存在学术争议"
+    },
+    {
+      "id": "cap-shang-ao-secondary-1419",
+      "locationId": "loc-bb89088fdb33e146c8c221eea977ba9c",
+      "kind": "dynasty",
+      "externalId": "shang",
+      "historicalName": "隞/嚣",
+      "start": {
+        "year": -1419,
+        "month": 1,
+        "abs": -17016,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1401,
+        "month": 12,
+        "abs": -16789,
+        "confidence": "year"
+      },
+      "startAbs": -17016,
+      "endAbs": -16789,
+      "role": "secondary",
+      "note": "中丁迁隞（又作嚣/敖）后，此地为商王室辅都之一；具体遗址地望有争议，郑州一带为一种考古解释。郑州亳都在这一时期仍延续。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        }
+      ],
+      "spatialPrecision": "郑州市约略点；隞的具体地望有争议"
+    },
+    {
+      "id": "cap-shang-xiang-secondary-1400",
+      "locationId": "loc-7575495d7526cb46127984392d92bd76",
+      "kind": "dynasty",
+      "externalId": "shang",
+      "historicalName": "相",
+      "start": {
+        "year": -1400,
+        "month": 1,
+        "abs": -16788,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1392,
+        "month": 12,
+        "abs": -16681,
+        "confidence": "year"
+      },
+      "startAbs": -16788,
+      "endAbs": -16681,
+      "role": "secondary",
+      "note": "传世文献载河亶甲居相。现有研究将相地望约定在今河南内黄一带，尚无对应商代都城遗址的充分考古确认；此条表示辅都，不覆盖郑州亳主都。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        }
+      ],
+      "spatialPrecision": "内黄县区域约略点；遗址未能确证"
+    },
+    {
+      "id": "cap-shang-bi-secondary-1391",
+      "locationId": "loc-shang-bi-yuncheng-approx",
+      "kind": "dynasty",
+      "externalId": "shang",
+      "historicalName": "庇",
+      "start": {
+        "year": -1391,
+        "month": 1,
+        "abs": -16680,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1330,
+        "month": 12,
+        "abs": -15937,
+        "confidence": "year"
+      },
+      "startAbs": -16680,
+      "endAbs": -15937,
+      "role": "secondary",
+      "note": "祖乙居庇，祖辛、沃甲、祖丁承用庇地的传世记载见《古本竹书纪年》系统；Wiki 所列沃甲都庇与该世系相符。庇常被考定为今郓城县境，但具体故址及庇、邢、耿异名关系仍有争议；本点仅作区域示意。",
+      "links": [
+        {
+          "label": "沃甲",
+          "url": "https://zh.wikipedia.org/wiki/沃甲"
+        },
+        {
+          "label": "庇（所据古本《竹书纪年》及地望考证）",
+          "url": "https://zh.wikipedia.org/wiki/庇"
+        },
+        {
+          "label": "郓城县地方志：地理位置与庇故址",
+          "url": "https://shandong-chorography.org/database/bh/section/1/article/18/"
+        }
+      ],
+      "spatialPrecision": "郓城县区域示意点，非考古遗址定位；庇地望有争议"
+    },
+    {
+      "id": "cap-shang-yan-secondary-1329",
+      "locationId": "loc-d0f912cc274515214338b7c96ffce31f",
+      "kind": "dynasty",
+      "externalId": "shang",
+      "historicalName": "奄",
+      "start": {
+        "year": -1329,
+        "month": 1,
+        "abs": -15936,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1311,
+        "month": 12,
+        "abs": -15709,
+        "confidence": "year"
+      },
+      "startAbs": -15936,
+      "endAbs": -15709,
+      "role": "secondary",
+      "note": "南庚迁都于奄，后阳甲沿用；奄的传统地望在今山东曲阜附近。辅都设置期间，商前期主都亳仍延续。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "曲阜市约略点"
+    },
+    {
+      "id": "cap-shang-yin-primary-1300",
+      "locationId": "loc-21798e9ca7e2d2124da0f0a34e2bd98f",
+      "kind": "dynasty",
+      "externalId": "shang",
+      "historicalName": "殷",
+      "start": {
+        "year": -1300,
+        "month": 1,
+        "abs": -15588,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -1046,
+        "month": 12,
+        "abs": -12529,
+        "confidence": "year"
+      },
+      "startAbs": -15588,
+      "endAbs": -12529,
+      "role": "primary",
+      "note": "盘庚迁殷后，以殷墟一带为商后期主都，延续至商亡；迁殷约前1300年，具体年份在传世年表间有差异。",
+      "links": [
+        {
+          "label": "全国哲学社会科学工作办公室：张国硕《中国早期都城的设都制度》",
+          "url": "https://www.nopss.gov.cn/n1/2021/0113/c430752-31997972.html"
+        },
+        {
+          "label": "河南博物院：《商代的都城有几个？它们都在河南的什么地方？》",
+          "url": "https://www.chnmus.net/clzl/2011-12/20/content_3611.htm"
+        },
+        {
+          "label": "《史记·殷本纪》",
+          "url": "https://ctext.org/shiji/yin-ben-ji/zh"
+        },
+        {
+          "label": "商朝君主列表（都城与夏商周断代工程年表）",
+          "url": "https://zh.wikipedia.org/wiki/商朝君主列表"
+        }
+      ],
+      "spatialPrecision": "殷墟遗址约略点"
+    },
+    {
+      "id": "cap-cai-shangcai-1039",
+      "locationId": "loc-eedb70b881c9a04e37c1d405c41c034a",
+      "kind": "dynasty",
+      "externalId": "cai-chunqiu",
+      "historicalName": "上蔡",
+      "start": {
+        "year": -1039,
+        "month": 1,
+        "abs": -12456,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -531,
+        "month": 12,
+        "abs": -6349,
+        "confidence": "year"
+      },
+      "role": "primary",
+      "note": "蔡仲复封后以今河南上蔡一带为都，沿用至前531年楚灭蔡。前1045年前后蔡叔初封之都另有祭（今郑州祭城）说，未与上蔡遗址合并；本记录从复封阶段起，仅表示蔡国故城遗址范围代表点。",
+      "links": [
+        {
+          "label": "维基百科：蔡国（迁都沿革）",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%9C%8B"
+        },
+        {
+          "label": "河南博物院：文化解读（新蔡故城遗址与蔡国迁都）",
+          "url": "https://www.chnmus.net/sitesources/hnsbwy/page_pc/dzjp/mzyp/phwtgd/article95d1de6d1745434b9448c914fa90559c.html"
+        },
+        {
+          "label": "识典古籍：《上蔡县志》卷一（州来、上下蔡及迁都说法辨析）",
+          "url": "https://www.shidianguji.com/zh/book/HY4310/chapter/1kyawqyrvaasm"
+        }
+      ],
+      "spatialPrecision": "高德遗址公园POI约略点；代表上蔡蔡国故城范围，不表示宫殿或城墙精确位置"
+    },
+    {
+      "id": "cap-cai-xincai-528",
+      "locationId": "loc-1c9505fb757f399069819e0562ed9f0a",
+      "kind": "dynasty",
+      "externalId": "cai-chunqiu",
+      "historicalName": "新蔡",
+      "start": {
+        "year": -528,
+        "month": 1,
+        "abs": -6324,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -493,
+        "month": 12,
+        "abs": -5893,
+        "confidence": "year"
+      },
+      "role": "primary",
+      "note": "蔡平侯复国后迁都吕亭（今新蔡）。楚灭蔡与复国常系于前531/前529年，迁都起年有前529、前528等说；为与本包采纳的前531年灭蔡、三年后复国叙述一致，起点取约前528年。坐标取新蔡地名点转换为GCJ02后作县城西北新蔡故城区域示意，不代表遗址精确边界。",
+      "links": [
+        {
+          "label": "维基百科：蔡国（迁都沿革）",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%9C%8B"
+        },
+        {
+          "label": "河南博物院：文化解读（新蔡故城遗址与蔡国迁都）",
+          "url": "https://www.chnmus.net/sitesources/hnsbwy/page_pc/dzjp/mzyp/phwtgd/article95d1de6d1745434b9448c914fa90559c.html"
+        },
+        {
+          "label": "Chinese Text Project：新蔡县地名坐标",
+          "url": "https://ctext.org/datawiki.pl?if=en&res=733876"
+        }
+      ],
+      "spatialPrecision": "县城西北故城区域约略点；坐标由Chinese Text Project新蔡地名WGS84点转换为GCJ02，非遗址测绘点"
+    },
+    {
+      "id": "cap-cai-xiacai-493",
+      "locationId": "loc-4a04c289ebc12a812e0fd7c8fe458df6",
+      "kind": "dynasty",
+      "externalId": "cai-chunqiu",
+      "historicalName": "州来/下蔡",
+      "start": {
+        "year": -493,
+        "month": 1,
+        "abs": -5904,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -447,
+        "month": 12,
+        "abs": -5341,
+        "confidence": "year"
+      },
+      "role": "primary",
+      "note": "蔡昭侯受楚逼迫迁都州来；后称下蔡。传统定位在今安徽凤台，关于州来故城具体位置仍有考辨。本坐标仅取凤台县城关镇北端古城区域示意，不表示已确认的考古遗址点。",
+      "links": [
+        {
+          "label": "维基百科：蔡国（迁都沿革）",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%9C%8B"
+        },
+        {
+          "label": "识典古籍：《上蔡县志》卷一（州来、上下蔡及迁都说法辨析）",
+          "url": "https://www.shidianguji.com/zh/book/HY4310/chapter/1kyawqyrvaasm"
+        },
+        {
+          "label": "凤台县：关于下蔡之研究（州来古城位置）",
+          "url": "https://www.sohu.com/a/431081244_743485"
+        }
+      ],
+      "spatialPrecision": "凤台县城关镇北端区域示意点，非已确认遗址测绘坐标"
     }
   ]
 }

@@ -543,7 +543,24 @@
         "abs": -7837,
         "confidence": "month"
       },
-      "note": "周朝姬姓诸侯国，本条目聚焦西虢；其东迁后三门峡一带亦称南虢。西虢传统君主序列：虢叔 → 郭叔 → 史料缺 → 城公 → 史料缺 → 厉公 → 宣公 → 文公 → 石父 → 翰 → 忌父 → 林父 → 丑。长父之后的君主，一说为宣公，一说为文公。\n有待考证的西虢君主世系：易父 → 宄公 → 幽叔 → 德叔 → 师丞。五代家族世系见师丞钟，但其是否兼任西虢君主及与主序列的衔接存在争议。\n东、西虢始封君归属存在异说。西虢东迁后三门峡一带称南虢，前655年晋献公借道虞国灭虢。《左传·僖公五年》记虢公丑亡国后出奔京师。"
+      "note": "周朝姬姓诸侯国，本条目聚焦西虢；其东迁后三门峡一带亦称南虢。西虢传统君主序列：虢叔 → 郭叔 → 史料缺 → 城公 → 史料缺 → 厉公 → 宣公 → 文公 → 石父 → 翰 → 忌父 → 林父 → 丑。长父之后的君主，一说为宣公，一说为文公。\n有待考证的西虢君主世系：易父 → 宄公 → 幽叔 → 德叔 → 师丞。五代家族世系见师丞钟，但其是否兼任西虢君主及与主序列的衔接存在争议。\n东、西虢始封君归属存在异说。西虢东迁后三门峡一带称南虢，前655年晋献公借道虞国灭虢。《左传·僖公五年》记虢公丑亡国后出奔京师。",
+      "feudalRank": {
+        "periods": [
+          {
+            "rank": "公",
+            "start": {
+              "year": -1046,
+              "month": 1,
+              "confidence": "year"
+            },
+            "end": {
+              "year": -655,
+              "month": 12,
+              "confidence": "month"
+            }
+          }
+        ]
+      }
     }
   ],
   "reigns": [
@@ -930,10 +947,6 @@
         "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
       },
       {
-        "label": "《史记·十二诸侯年表》",
-        "url": "https://zh.wikisource.org/wiki/史記/卷014"
-      },
-      {
         "label": "夏商周断代工程与其他西周年代方案对照",
         "url": "https://zh.wikipedia.org/wiki/夏商周断代工程#年表"
       },
@@ -1108,6 +1121,174 @@
       {
         "label": "《“国号”中的历史流变》：国号、自称与方位史称",
         "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
+      },
+      {
+        "label": "杞国条目（爵位沿革）",
+        "url": "https://zh.wikipedia.org/wiki/杞國"
+      },
+      {
+        "label": "春秋时期",
+        "url": "https://zh.wikipedia.org/wiki/春秋时期"
+      },
+      {
+        "label": "战国时期",
+        "url": "https://zh.wikipedia.org/wiki/战国时期"
+      },
+      {
+        "label": "战国七雄",
+        "url": "https://zh.wikipedia.org/wiki/战国七雄"
+      },
+      {
+        "label": "周朝诸侯国君主列表",
+        "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
+      },
+      {
+        "label": "夏商周断代工程与其他西周年代方案对照",
+        "url": "https://zh.wikipedia.org/wiki/夏商周断代工程#年表"
+      },
+      {
+        "label": "《春秋左氏传·僖公》",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳/僖公"
+      },
+      {
+        "label": "西虢国（君主与虢公丑）",
+        "url": "https://zh.wikipedia.org/wiki/西虢国"
+      },
+      {
+        "label": "虢国（上阳、三门峡）",
+        "url": "https://zh.wikipedia.org/wiki/虢国"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢叔"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/郭叔"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢城公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢公长父"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢宣公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢石父"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢公翰"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢公忌父"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢公林父"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/虢公丑"
+      },
+      {
+        "label": "周朝诸侯国君主列表（西虢中间世系失考）",
+        "url": "https://zh.wikipedia.org/wiki/周朝諸侯國君主列表#西虢国"
+      },
+      {
+        "label": "西虢国（金文人物、年代及世系争议）",
+        "url": "https://zh.wikipedia.org/wiki/西虢国#金文中的虢国氏族"
+      },
+      {
+        "label": "《逸周书·王会》（郭叔掌贡币）",
+        "url": "https://ctext.org/lost-book-of-zhou/wang-hui/zh"
+      },
+      {
+        "label": "《班簋铭文》（毛伯接替虢城公职务）",
+        "url": "https://zh.wikisource.org/wiki/班簋銘文"
+      },
+      {
+        "label": "虢国君主世系（主序列与待考虢季家族）",
+        "url": "https://zh.wikipedia.org/wiki/Template:虢國君主"
+      },
+      {
+        "label": "周朝（共时定位采用的年表）",
+        "url": "https://zh.wikipedia.org/wiki/周朝"
+      },
+      {
+        "label": "冯时《班簋铭文补释》（穆王时期）",
+        "url": "https://www.ctwx.tsinghua.edu.cn/__local/A/61/04/3B0E595B6786E89BFDFF5B51A67_192072D8_490B29.pdf?e=.pdf"
+      },
+      {
+        "label": "虢季易父（五代世系与身份争议）",
+        "url": "https://zh.wikipedia.org/wiki/虢季易父"
+      },
+      {
+        "label": "虢宄公（五代世系与身份争议）",
+        "url": "https://zh.wikipedia.org/wiki/虢宄公"
+      },
+      {
+        "label": "虢幽叔（五代世系与身份争议）",
+        "url": "https://zh.wikipedia.org/wiki/虢幽叔"
+      },
+      {
+        "label": "虢德叔（五代世系与身份争议）",
+        "url": "https://zh.wikipedia.org/wiki/虢德叔"
+      },
+      {
+        "label": "师丞（五代世系与身份争议）",
+        "url": "https://zh.wikipedia.org/wiki/师丞"
+      },
+      {
+        "label": "河南博物院《虢硕父簠》",
+        "url": "https://www.chnmus.net/ch/collection/appraise/details.html?id=512153734134559839"
+      },
+      {
+        "label": "东虢国（始封与可考君主）",
+        "url": "https://zh.wikipedia.org/wiki/東虢國"
+      },
+      {
+        "label": "《国号》：中国历代国号与史称",
+        "url": "https://zh.wikipedia.org/wiki/国号"
+      },
+      {
+        "label": "《中国政权列表》：各时期政权与国号",
+        "url": "https://zh.wikipedia.org/wiki/中国政权列表"
+      },
+      {
+        "label": "《“国号”中的历史流变》：国号、自称与方位史称",
+        "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
+      },
+      {
+        "label": "杞国条目（爵位沿革）",
+        "url": "https://zh.wikipedia.org/wiki/杞國"
+      },
+      {
+        "label": "周代诸侯列国（杞国条目底部模板）",
+        "url": "https://zh.wikipedia.org/wiki/Template:周代诸侯列国"
+      },
+      {
+        "label": "《史记·六国年表》",
+        "url": "https://ctext.org/shiji/liu-guo-nian-biao/zh"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷014"
       }
     ],
     "notes": [
@@ -1142,7 +1323,9 @@
       "2026-10-03：地理记录迁移为显式 locationMappings，坐标集中引用 locations；君主都城关联已固化，运行时不再按 claimTrack 自动推断。",
       "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。",
       "2026-10-04称谓与私名复核：guo-east-zhong（东虢包）/guo-r1（西虢包）统一以title记录虢仲、虢叔；依《春秋左传正义·僖公五年》杜预注“仲、叔皆虢君字”，其“仲”“叔”属字/排行称谓。没有可靠史料支持早期虢仲私名为“忌”、虢叔私名为“珪”，亦未见其他可确认私名，故persons.name留空。注意勿与春秋晚期虢公忌父混为一人。",
-      "2026-10-05：开国候选逐项复核后保留原概述：guo-r1。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。"
+      "2026-10-05：开国候选逐项复核后保留原概述：guo-r1。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。",
+      "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
+      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。"
     ]
   },
   "locationMappings": [

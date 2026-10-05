@@ -39,6 +39,7 @@ export function rowsForPackage(slug, cache) {
   }));
   const dynasties = (cache.dynasties ?? []).map(row => ({
     id: row.id, name: row.name, alt_names: row.altNames ?? [], ethnicity: row.ethnicity ?? null,
+    feudal_rank: row.feudalRank ?? null,
     scope: row.scope ?? "cn", region: row.region ?? "east_asia",
     ...point(row.start, "start"), start_confidence: confidence(row.start),
     ...point(row.end, "end"), end_confidence: row.end ? confidence(row.end) : null,

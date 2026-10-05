@@ -98,3 +98,12 @@
   src: url("/fonts/eralens-timeline-serif-11.woff2") format("woff2");
   unicode-range: U+4f2a, U+533a, U+535a, U+6c6a, U+6e7e, U+7cbe, U+9534, U+9f10;
 }
+
+@font-face {
+  font-family: "EraLens Lane Serif";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/fonts/eralens-timeline-serif-12.woff2") format("woff2");
+  unicode-range: U+4e8b, U+4ea7, U+56fa, U+5e90, U+6240, U+63aa, U+80b8, U+822c, U+8352;
+}

@@ -1,0 +1,106 @@
+{
+  "slug": "chunqiu-zhanguo/chen-chunqiu",
+  "title": "陈国（春秋诸侯国）",
+  "window": {
+    "startYear": -1045,
+    "startMonth": 1,
+    "endYear": -478,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-10-05",
+  "sources": [
+    {
+      "label": "陈国",
+      "url": "https://zh.wikipedia.org/wiki/陈国"
+    },
+    {
+      "label": "陈国君主世系图",
+      "url": "https://zh.wikipedia.org/wiki/陈国君主世系图"
+    },
+    {
+      "label": "《史记·卷三十六·陈杞世家》",
+      "url": "https://zh.wikisource.org/wiki/史記/卷036"
+    },
+    {
+      "label": "《春秋左氏传》",
+      "url": "https://zh.wikisource.org/wiki/春秋左氏傳"
+    },
+    {
+      "label": "杞国条目（爵位沿革）",
+      "url": "https://zh.wikipedia.org/wiki/杞國"
+    },
+    {
+      "label": "周口市文化广电和旅游局：《“陈楚故城”复建3000年前古城墙》",
+      "url": "https://wglj.zhoukou.gov.cn/sitesources/whgdlyj/page_pc/wzsy/gzdt/article8b2d5782dd0143e5a6e76119620c5c56.html"
+    },
+    {
+      "label": "河南省人民政府台湾事务办公室：《“寻根淮阳”系列之“序言篇”人祖龙根在淮阳》",
+      "url": "https://ytsc.rootinhenan.gov.cn/sitesources/ytsc/page_pc/hnly/xsgq/articleed62c31f08504d88a4eb7ee59ce439ca.html"
+    },
+    {
+      "label": "陈国",
+      "url": "https://zh.wikipedia.org/wiki/陈国"
+    },
+    {
+      "label": "陈国君主世系图",
+      "url": "https://zh.wikipedia.org/wiki/陈国君主世系图"
+    },
+    {
+      "label": "《史记·卷三十六·陈杞世家》",
+      "url": "https://zh.wikisource.org/wiki/史記/卷036"
+    },
+    {
+      "label": "《春秋左氏传》",
+      "url": "https://zh.wikisource.org/wiki/春秋左氏傳"
+    },
+    {
+      "label": "杞国条目（爵位沿革）",
+      "url": "https://zh.wikipedia.org/wiki/杞國"
+    },
+    {
+      "label": "周口市文化广电和旅游局：《“陈楚故城”复建3000年前古城墙》",
+      "url": "https://wglj.zhoukou.gov.cn/sitesources/whgdlyj/page_pc/wzsy/gzdt/article8b2d5782dd0143e5a6e76119620c5c56.html"
+    },
+    {
+      "label": "河南省人民政府台湾事务办公室：《“寻根淮阳”系列之“序言篇”人祖龙根在淮阳》",
+      "url": "https://ytsc.rootinhenan.gov.cn/sitesources/ytsc/page_pc/hnly/xsgq/articleed62c31f08504d88a4eb7ee59ce439ca.html"
+    },
+    {
+      "label": "周代诸侯列国（杞国条目底部模板）",
+      "url": "https://zh.wikipedia.org/wiki/Template:周代诸侯列国"
+    },
+    {
+      "label": "《史记·六国年表》",
+      "url": "https://ctext.org/shiji/liu-guo-nian-biao/zh"
+    },
+    {
+      "label": "《史记·十二诸侯年表》",
+      "url": "https://zh.wikisource.org/wiki/史記/卷014"
+    }
+  ],
+  "notes": [
+    "主君序列与在位年份以《陈国》条目所列君主表为基准，并与《史记·陈杞世家》《左传》所载世系及关键节点互核；不把维基世系图中不同表格的推测年份混用。",
+    "《陈国》条目注称幽公以前君主在位年均为推测，故胡公至申公的起讫端点使用 approximate_year；幽公起点也采用 approximate_year，以与此前推测终点保持同一交接依据。具体年份用于定位而非确定到月日。",
+    "前707至前706年佗在位八个月、前706至前700年跃在位七年；依来源所列原始年份保留短祚及同年交接，不机械把佗后移。前599年陈征舒杀灵公后自立、同年被楚杀，作为短期在位保留同年起讫。",
+    "前534年公子留即位及楚灭陈均发生于同年；《左传》所记三月至十一月为古历月份，未换算为公历月份，因此时间字段保留年精度，月份叙述只保留在概述。",
+    "前534年楚灭陈并置县，楚大夫穿封戌为陈公；他是楚国任命的县公而非陈国君，未建陈国reign。前529年陈复国，吴归陈为侯；在前534至前529年的楚直接统治期不补造陈君，也不把复国前后接为连续人物继承。",
+    "周初受封传统系年采用维基条目所列前1045年并标 approximate_year；陈国末年采用《左传》及《史记》系于前478年。陈侯征舒和陈侯留虽未获正式谥号，依在位事实收录但不将其身份写入谥号字段。",
+    "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
+    "都城mapping：沿用陈国条目所记宛丘为都，现代范围采用周口市淮阳区；周口市文旅部门资料定位于淮阳城关镇。河南省台办所载历史地理说明区分宛丘土丘与春秋陈楚故城，指出宛丘在古陈城东南且具体比定有异说。因此复用 locations 包淮阳区城市范围约略点，不把行政区点标成遗址精确坐标。都城时段沿用陈国传统起讫范围，起点约前1045年，终点前478年。",
+    "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
+    "时期边界采用年精度；开始年有史料明确记载时标 year。来源表只按春秋、战国分栏、无确切改称年的，沿用前453年栏界并标 approximate_year，表示分类边界而非断言该年实际改爵。"
+  ],
+  "counts": {
+    "persons": 26,
+    "dynastyGroups": 0,
+    "dynasties": 1,
+    "reigns": 26,
+    "events": 0,
+    "relations": 24,
+    "associations": 0,
+    "locations": 0,
+    "locationMappings": 1
+  }
+}

@@ -178,6 +178,8 @@ ON CONFLICT (id) DO UPDATE SET
 
 分组和王朝边界分别写入 `dynasty_groups` 与 `dynasties`。两端日期使用独立的年月日和 confidence；`start_abs` / `end_abs` 继续按 AbsMonth 计算。SQL 由统一生成器从 cache 产生。
 
+`dynasties.ethnicity` 保存有史料依据的族属标签；`dynasties.feudalRank` 为可选 JSON 对象 `{ "periods": [{ "rank": "侯", "start": HistoricalDate, "end": HistoricalDate }] }`。`rank` 为一个汉字，按“周代诸侯列国”来源表录入，允许 `公、侯、伯、子、男、王、君、帝`；后者在秦统一后对应“皇帝”的单字显示。每个时期必须有史料精度日期，按 `phaseOwnershipInterval` 裁定时期归属，禁止另写端点判断。仅来源表春秋/战国分栏、没有实际改称年份证据时，可用 `approximate_year` 记录表格栏界，但须在 `manifest.notes` 明示它不是确定的改称日期。字段反映该表的爵称/君主称谓，不代表这些标签构成一套严格可比的五等爵序列。“君”按具体国别与语境解释，不由名称或 ID 推导。
+
 ```sql
 INSERT INTO dynasties (
   id, name, scope, region,

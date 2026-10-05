@@ -1,5 +1,6 @@
 import { TimePointSchema, DateConfidenceSchema, HistoricalDateSchema } from "./historicalDateSchemas.mjs";
 import { parseDynastyName, validateDynastyName } from "./dynastyNameFormat.mjs";
+import { DynastyFeudalRankDefinitionSchema } from "./dynastyFeudalRank";
 import { assertEntityAssociation } from "./entityAssociations.mjs";
 import { z } from "zod";
 
@@ -86,6 +87,8 @@ export const DynastySchema = z.object({
   altNames: z.array(z.string()).default([]),
   /** Founding or ruling ethnic group, when historically well supported. */
   ethnicity: z.string().trim().min(1).optional(),
+  /** Time-varying one-character label from the cited Zhou states table. */
+  feudalRank: DynastyFeudalRankDefinitionSchema.optional(),
   scope: ScopeSchema.default("cn"),
   region: z.string().default("east_asia"),
   start: TimePointSchema,

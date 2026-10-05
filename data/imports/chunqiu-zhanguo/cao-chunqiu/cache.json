@@ -649,7 +649,24 @@
         "abs": -5821,
         "confidence": "month"
       },
-      "note": "周武王封弟振铎于曹；前487年宋灭曹。"
+      "note": "周武王封弟振铎于曹；前487年宋灭曹。",
+      "feudalRank": {
+        "periods": [
+          {
+            "rank": "伯",
+            "start": {
+              "year": -1046,
+              "month": 1,
+              "confidence": "year"
+            },
+            "end": {
+              "year": -487,
+              "month": 12,
+              "confidence": "month"
+            }
+          }
+        ]
+      }
     }
   ],
   "reigns": [
@@ -1433,6 +1450,158 @@
       {
         "label": "《“国号”中的历史流变》：国号、自称与方位史称",
         "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
+      },
+      {
+        "label": "杞国条目（爵位沿革）",
+        "url": "https://zh.wikipedia.org/wiki/杞國"
+      },
+      {
+        "label": "春秋时期",
+        "url": "https://zh.wikipedia.org/wiki/春秋时期"
+      },
+      {
+        "label": "战国时期",
+        "url": "https://zh.wikipedia.org/wiki/战国时期"
+      },
+      {
+        "label": "战国七雄",
+        "url": "https://zh.wikipedia.org/wiki/战国七雄"
+      },
+      {
+        "label": "周朝诸侯国君主列表",
+        "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/叔振铎"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹太伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/仲君"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹宫伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹孝伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹夷伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹幽伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹戴伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹惠伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹废伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹穆公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹桓公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹庄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹釐公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹昭公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹共公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹宣公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹成公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹武公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹平公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹悼公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹声公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹隐公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曹靖公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/伯阳"
+      },
+      {
+        "label": "《国号》：中国历代国号与史称",
+        "url": "https://zh.wikipedia.org/wiki/国号"
+      },
+      {
+        "label": "《中国政权列表》：各时期政权与国号",
+        "url": "https://zh.wikipedia.org/wiki/中国政权列表"
+      },
+      {
+        "label": "《“国号”中的历史流变》：国号、自称与方位史称",
+        "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
+      },
+      {
+        "label": "杞国条目（爵位沿革）",
+        "url": "https://zh.wikipedia.org/wiki/杞國"
+      },
+      {
+        "label": "周代诸侯列国（杞国条目底部模板）",
+        "url": "https://zh.wikipedia.org/wiki/Template:周代诸侯列国"
+      },
+      {
+        "label": "《史记·六国年表》",
+        "url": "https://ctext.org/shiji/liu-guo-nian-biao/zh"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷014"
       }
     ],
     "notes": [
@@ -1454,7 +1623,9 @@
       "2026-10-02按王朝拆分原chunqiu-zhanguo完整包。本包唯一拥有曹的王朝、人物、在位及分配到本包的事件、关系和补充关联；原记录ID、事实、日期与置信度原样保留。跨包引用不复制目标实体；完整原始来源与处理记录见父目录归档。",
       "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
       "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。",
-      "2026-10-05：开国经历逐条复核并改写：cao-r0。分清奠基者、继承者、正式建国及史料缺载；删除无依据评价，保留传说与异说限定。"
+      "2026-10-05：开国经历逐条复核并改写：cao-r0。分清奠基者、继承者、正式建国及史料缺载；删除无依据评价，保留传说与异说限定。",
+      "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
+      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。"
     ]
   }
 }

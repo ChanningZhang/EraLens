@@ -1,0 +1,1588 @@
+{
+  "slug": "chunqiu-zhanguo/cai-chunqiu",
+  "window": {
+    "startYear": -1045,
+    "startMonth": 1,
+    "endYear": -447,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "cai-r0",
+      "name": "度",
+      "roles": [
+        "君主"
+      ],
+      "bio": "周武王之弟，周灭商后受封于蔡。周公东征后被放逐，蔡叔度死后，其子胡改行获复封。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%8F%94%E5%BA%A6"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "叔度",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r1",
+      "name": "胡",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡叔度之子。周公举荐其为鲁卿士，后复封于蔡以奉蔡叔之祀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E4%BB%B2%E8%83%A1"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "仲胡"
+      ],
+      "templeNames": [],
+      "title": "仲胡",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r2",
+      "name": "荒",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡仲之子，继承蔡国君位；其在位年代仅能系于周昭王、穆王时期。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E4%BC%AF%E8%8D%92"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "伯荒"
+      ],
+      "templeNames": [],
+      "title": "伯荒",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r3",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡伯荒之子，具体姓名与在位年次失载；陈梦家将其系于周共王、懿王时期。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%AE%AB%E4%BE%AF"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "宫侯"
+      ],
+      "templeNames": [],
+      "title": "宫侯",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r4",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "宫侯之子，具体姓名与在位年次失载；其子武侯于前863年即位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%8E%89%E4%BE%AF"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "厉侯"
+      ],
+      "templeNames": [],
+      "title": "厉侯",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r5",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡厉侯之子。《史记》记其在位时周厉王失国奔彘，共和行政。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%AD%A6%E4%BE%AF"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "武侯"
+      ],
+      "templeNames": [],
+      "title": "武侯",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r6",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡武侯之子。依《史记》纪年，夷侯十一年周宣王即位，夷侯在位二十八年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%A4%B7%E4%BE%AF"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "夷侯"
+      ],
+      "templeNames": [],
+      "title": "夷侯",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r7",
+      "name": "所事",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡夷侯之子，在位四十八年；其三十九年周幽王被杀，周室东迁。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E9%87%90%E4%BE%AF"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "釐侯"
+      ],
+      "templeNames": [],
+      "title": "釐侯",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r8",
+      "name": "兴",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡釐侯之子，在位二年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%85%B1%E4%BE%AF"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "共侯"
+      ],
+      "templeNames": [],
+      "title": "共侯",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r9",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡共侯之子，在位十年，后由其子宣侯继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%88%B4%E4%BE%AF"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "戴侯"
+      ],
+      "templeNames": [],
+      "title": "戴侯",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r10",
+      "name": "措父",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡戴侯之子。《左传》称考父；其在位三十五年，鲁隐公即位时为宣侯二十八年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%AE%A3%E4%BE%AF"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "宣侯"
+      ],
+      "templeNames": [],
+      "title": "宣侯",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r11",
+      "name": "封人",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡宣侯之子，在位二十年；死后由其弟献舞继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%A1%93%E4%BE%AF"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "桓侯"
+      ],
+      "templeNames": [],
+      "title": "桓侯",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r12",
+      "name": "献舞",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡宣侯之子、桓侯之弟。前684年为楚所俘，后死于楚地。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%93%80%E4%BE%AF"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "哀侯"
+      ],
+      "templeNames": [],
+      "title": "哀侯",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r13",
+      "name": "肸",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡哀侯之子。曾被齐桓公俘获，后经诸侯调停获释；在位二十九年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E7%BC%AA%E4%BE%AF"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "缪侯"
+      ],
+      "templeNames": [],
+      "title": "缪侯",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r14",
+      "name": "甲午",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡缪侯之子，在位三十四年，后由其子申继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%BA%84%E4%BE%AF"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "庄侯"
+      ],
+      "templeNames": [],
+      "title": "庄侯",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r15",
+      "name": "申",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡庄侯之子，在位二十年；其子固继位。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%96%87%E4%BE%AF"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "文侯"
+      ],
+      "templeNames": [],
+      "title": "文侯",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r16",
+      "name": "固",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡文侯之子，在位四十九年；因与太子之妻私通，后被太子般弑杀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%99%AF%E4%BE%AF"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "景侯"
+      ],
+      "templeNames": [],
+      "title": "景侯",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r17",
+      "name": "般",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡景侯之子。前531年楚灵王诱杀灵侯，随后楚军灭蔡并置蔡为县。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E7%81%B5%E4%BE%AF"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "灵侯"
+      ],
+      "templeNames": [],
+      "title": "灵侯",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r18",
+      "name": "庐",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡景侯少子。楚平王复立蔡国后立庐为君，蔡国迁都新蔡；其在位九年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%B9%B3%E4%BE%AF"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "平侯"
+      ],
+      "templeNames": [],
+      "title": "平侯",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r19",
+      "name": "朱",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡平侯之子，前521年短暂在位；其后悼侯东国取代平侯一系。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E4%BE%AF%E6%9C%B1"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "侯朱"
+      ],
+      "templeNames": [],
+      "title": "侯朱",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r20",
+      "name": "东国",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡灵侯之孙、隐太子友之子。取代蔡平侯之子朱，在位三年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%82%BC%E4%BE%AF"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "悼侯"
+      ],
+      "templeNames": [],
+      "title": "悼侯",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r21",
+      "name": "申",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡悼侯之弟，在位二十八年。前506年与吴等伐楚并入郢；后在楚逼迫下迁都州来，最终遇弑。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%98%AD%E4%BE%AF"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "昭侯"
+      ],
+      "templeNames": [],
+      "title": "昭侯",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r22",
+      "name": "朔",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡昭侯之子，在位十九年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%88%90%E4%BE%AF"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "成侯"
+      ],
+      "templeNames": [],
+      "title": "成侯",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r23",
+      "name": "产",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡成侯之子，在位十五年。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%A3%B0%E4%BE%AF"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "声侯"
+      ],
+      "templeNames": [],
+      "title": "声侯",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r24",
+      "name": "？",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡声侯之子，在位六年，姓名失载。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%85%83%E4%BE%AF"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "元侯"
+      ],
+      "templeNames": [],
+      "title": "元侯",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    },
+    {
+      "id": "cai-r25",
+      "name": "齐",
+      "roles": [
+        "君主"
+      ],
+      "bio": "蔡元侯之子。前447年楚惠王灭蔡，蔡侯齐出亡，蔡国绝祀。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E4%BE%AF%E9%BD%90"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "posthumousNames": [
+        "侯齐"
+      ],
+      "templeNames": [],
+      "title": "侯齐",
+      "ancestralXing": "姬",
+      "clanShi": "蔡",
+      "dynastyId": "cai-chunqiu"
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "cai-chunqiu",
+      "name": "蔡",
+      "altNames": [
+        "蔡",
+        "蔡国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -1045,
+        "month": 1,
+        "abs": -12528,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -447,
+        "month": 12,
+        "abs": -5341,
+        "confidence": "year"
+      },
+      "note": "周灭商后封叔度于蔡；前447年楚灭蔡。",
+      "feudalRank": {
+        "periods": [
+          {
+            "rank": "侯",
+            "start": {
+              "year": -1045,
+              "month": 1,
+              "confidence": "approximate_year"
+            },
+            "end": {
+              "year": -447,
+              "month": 12,
+              "confidence": "year"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "locations": [],
+  "locationMappings": [],
+  "reigns": [
+    {
+      "id": "reign-cai-r0-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r0",
+      "title": "叔度",
+      "start": {
+        "year": -1045,
+        "month": 1,
+        "abs": -12528,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -1040,
+        "month": 12,
+        "abs": -12457,
+        "confidence": "approximate_year"
+      },
+      "startAbs": -12528,
+      "endAbs": -12457,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r1-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r1",
+      "title": "仲胡",
+      "start": {
+        "year": -1039,
+        "month": 1,
+        "abs": -12456,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -996,
+        "month": 12,
+        "abs": -11929,
+        "confidence": "interpolated_by_other"
+      },
+      "startAbs": -12456,
+      "endAbs": -11929,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r2-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r2",
+      "title": "伯荒",
+      "start": {
+        "year": -995,
+        "month": 1,
+        "abs": -11928,
+        "confidence": "interpolated_by_other"
+      },
+      "end": {
+        "year": -923,
+        "month": 12,
+        "abs": -11053,
+        "confidence": "interpolated_by_other"
+      },
+      "startAbs": -11928,
+      "endAbs": -11053,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r3-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r3",
+      "title": "宫侯",
+      "start": {
+        "year": -922,
+        "month": 1,
+        "abs": -11052,
+        "confidence": "interpolated_by_other"
+      },
+      "end": {
+        "year": -879,
+        "month": 12,
+        "abs": -10525,
+        "confidence": "interpolated_by_other"
+      },
+      "startAbs": -11052,
+      "endAbs": -10525,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r4-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r4",
+      "title": "厉侯",
+      "start": {
+        "year": -878,
+        "month": 1,
+        "abs": -10524,
+        "confidence": "interpolated_by_other"
+      },
+      "end": {
+        "year": -864,
+        "month": 12,
+        "abs": -10345,
+        "confidence": "year"
+      },
+      "startAbs": -10524,
+      "endAbs": -10345,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r5-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r5",
+      "title": "武侯",
+      "start": {
+        "year": -863,
+        "month": 1,
+        "abs": -10344,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -837,
+        "month": 12,
+        "abs": -10021,
+        "confidence": "year"
+      },
+      "startAbs": -10344,
+      "endAbs": -10021,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r6-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r6",
+      "title": "夷侯",
+      "start": {
+        "year": -836,
+        "month": 1,
+        "abs": -10020,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -809,
+        "month": 12,
+        "abs": -9685,
+        "confidence": "year"
+      },
+      "startAbs": -10020,
+      "endAbs": -9685,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r7-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r7",
+      "title": "釐侯",
+      "start": {
+        "year": -808,
+        "month": 1,
+        "abs": -9684,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -761,
+        "month": 12,
+        "abs": -9109,
+        "confidence": "year"
+      },
+      "startAbs": -9684,
+      "endAbs": -9109,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r8-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r8",
+      "title": "共侯",
+      "start": {
+        "year": -760,
+        "month": 1,
+        "abs": -9108,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -760,
+        "month": 12,
+        "abs": -9097,
+        "confidence": "year"
+      },
+      "startAbs": -9108,
+      "endAbs": -9097,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r9-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r9",
+      "title": "戴侯",
+      "start": {
+        "year": -759,
+        "month": 1,
+        "abs": -9096,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -750,
+        "month": 12,
+        "abs": -8977,
+        "confidence": "year"
+      },
+      "startAbs": -9096,
+      "endAbs": -8977,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r10-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r10",
+      "title": "宣侯",
+      "start": {
+        "year": -749,
+        "month": 1,
+        "abs": -8976,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -715,
+        "month": 12,
+        "abs": -8557,
+        "confidence": "year"
+      },
+      "startAbs": -8976,
+      "endAbs": -8557,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r11-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r11",
+      "title": "桓侯",
+      "start": {
+        "year": -714,
+        "month": 1,
+        "abs": -8556,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -695,
+        "month": 12,
+        "abs": -8317,
+        "confidence": "year"
+      },
+      "startAbs": -8556,
+      "endAbs": -8317,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r12-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r12",
+      "title": "哀侯",
+      "start": {
+        "year": -694,
+        "month": 1,
+        "abs": -8316,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -675,
+        "month": 12,
+        "abs": -8077,
+        "confidence": "year"
+      },
+      "startAbs": -8316,
+      "endAbs": -8077,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r13-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r13",
+      "title": "缪侯",
+      "start": {
+        "year": -674,
+        "month": 1,
+        "abs": -8076,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -646,
+        "month": 12,
+        "abs": -7729,
+        "confidence": "year"
+      },
+      "startAbs": -8076,
+      "endAbs": -7729,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r14-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r14",
+      "title": "庄侯",
+      "start": {
+        "year": -645,
+        "month": 1,
+        "abs": -7728,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -612,
+        "month": 12,
+        "abs": -7321,
+        "confidence": "year"
+      },
+      "startAbs": -7728,
+      "endAbs": -7321,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r15-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r15",
+      "title": "文侯",
+      "start": {
+        "year": -611,
+        "month": 1,
+        "abs": -7320,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -592,
+        "month": 12,
+        "abs": -7081,
+        "confidence": "year"
+      },
+      "startAbs": -7320,
+      "endAbs": -7081,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r16-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r16",
+      "title": "景侯",
+      "start": {
+        "year": -591,
+        "month": 1,
+        "abs": -7080,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -543,
+        "month": 12,
+        "abs": -6493,
+        "confidence": "year"
+      },
+      "startAbs": -7080,
+      "endAbs": -6493,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r17-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r17",
+      "title": "灵侯",
+      "start": {
+        "year": -542,
+        "month": 1,
+        "abs": -6492,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -531,
+        "month": 12,
+        "abs": -6349,
+        "confidence": "year"
+      },
+      "startAbs": -6492,
+      "endAbs": -6349,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r18-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r18",
+      "title": "平侯",
+      "start": {
+        "year": -528,
+        "month": 1,
+        "abs": -6324,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -522,
+        "month": 12,
+        "abs": -6241,
+        "confidence": "year"
+      },
+      "startAbs": -6324,
+      "endAbs": -6241,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r19-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r19",
+      "title": "侯朱",
+      "start": {
+        "year": -521,
+        "month": 1,
+        "abs": -6240,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -521,
+        "month": 12,
+        "abs": -6229,
+        "confidence": "year"
+      },
+      "startAbs": -6240,
+      "endAbs": -6229,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r20-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r20",
+      "title": "悼侯",
+      "start": {
+        "year": -521,
+        "month": 1,
+        "abs": -6240,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -519,
+        "month": 12,
+        "abs": -6205,
+        "confidence": "year"
+      },
+      "startAbs": -6240,
+      "endAbs": -6205,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r21-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r21",
+      "title": "昭侯",
+      "start": {
+        "year": -518,
+        "month": 1,
+        "abs": -6204,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -491,
+        "month": 12,
+        "abs": -5869,
+        "confidence": "year"
+      },
+      "startAbs": -6204,
+      "endAbs": -5869,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r22-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r22",
+      "title": "成侯",
+      "start": {
+        "year": -490,
+        "month": 1,
+        "abs": -5868,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -472,
+        "month": 12,
+        "abs": -5641,
+        "confidence": "year"
+      },
+      "startAbs": -5868,
+      "endAbs": -5641,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r23-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r23",
+      "title": "声侯",
+      "start": {
+        "year": -471,
+        "month": 1,
+        "abs": -5640,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -457,
+        "month": 12,
+        "abs": -5461,
+        "confidence": "year"
+      },
+      "startAbs": -5640,
+      "endAbs": -5461,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r24-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r24",
+      "title": "元侯",
+      "start": {
+        "year": -456,
+        "month": 1,
+        "abs": -5460,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -451,
+        "month": 12,
+        "abs": -5389,
+        "confidence": "year"
+      },
+      "startAbs": -5460,
+      "endAbs": -5389,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-cai-r25-cai-chunqiu",
+      "dynastyId": "cai-chunqiu",
+      "personId": "cai-r25",
+      "title": "侯齐",
+      "start": {
+        "year": -450,
+        "month": 1,
+        "abs": -5388,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -447,
+        "month": 12,
+        "abs": -5341,
+        "confidence": "year"
+      },
+      "startAbs": -5388,
+      "endAbs": -5341,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    }
+  ],
+  "events": [],
+  "relations": [],
+  "manifest": {
+    "slug": "chunqiu-zhanguo/cai-chunqiu",
+    "title": "蔡独立数据包",
+    "window": {
+      "startYear": -1045,
+      "startMonth": 1,
+      "endYear": -447,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-10-05",
+    "sources": [
+      {
+        "label": "蔡国",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%9C%8B"
+      },
+      {
+        "label": "《史记·管蔡世家》",
+        "url": "https://zh.wikisource.org/zh-hans/%E5%8F%B2%E8%A8%98/%E5%8D%B7035"
+      },
+      {
+        "label": "《春秋左传》",
+        "url": "https://ctext.org/chun-qiu-zuo-zhuan/zhs"
+      },
+      {
+        "label": "陈梦家《西周年代考》",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%9C%8B"
+      },
+      {
+        "label": "维基百科：蔡叔度",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%8F%94%E5%BA%A6"
+      },
+      {
+        "label": "维基百科：蔡仲胡",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E4%BB%B2%E8%83%A1"
+      },
+      {
+        "label": "维基百科：蔡伯荒",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E4%BC%AF%E8%8D%92"
+      },
+      {
+        "label": "维基百科：蔡宫侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%AE%AB%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡厉侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%8E%89%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡武侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%AD%A6%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡夷侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%A4%B7%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡釐侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E9%87%90%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡共侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%85%B1%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡戴侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%88%B4%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡宣侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%AE%A3%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡桓侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%A1%93%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡哀侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%93%80%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡缪侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E7%BC%AA%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡庄侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%BA%84%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡文侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%96%87%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡景侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%99%AF%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡灵侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E7%81%B5%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡平侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%B9%B3%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡侯朱",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E4%BE%AF%E6%9C%B1"
+      },
+      {
+        "label": "维基百科：蔡悼侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%82%BC%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡昭侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%98%AD%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡成侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%88%90%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡声侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%A3%B0%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡元侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%85%83%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡侯齐",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E4%BE%AF%E9%BD%90"
+      },
+      {
+        "label": "杞国条目（爵位沿革）",
+        "url": "https://zh.wikipedia.org/wiki/杞國"
+      },
+      {
+        "label": "蔡国",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%9C%8B"
+      },
+      {
+        "label": "《史记·管蔡世家》",
+        "url": "https://zh.wikisource.org/zh-hans/%E5%8F%B2%E8%A8%98/%E5%8D%B7035"
+      },
+      {
+        "label": "《春秋左传》",
+        "url": "https://ctext.org/chun-qiu-zuo-zhuan/zhs"
+      },
+      {
+        "label": "维基百科：蔡叔度",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%8F%94%E5%BA%A6"
+      },
+      {
+        "label": "维基百科：蔡仲胡",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E4%BB%B2%E8%83%A1"
+      },
+      {
+        "label": "维基百科：蔡伯荒",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E4%BC%AF%E8%8D%92"
+      },
+      {
+        "label": "维基百科：蔡宫侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%AE%AB%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡厉侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%8E%89%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡武侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%AD%A6%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡夷侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%A4%B7%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡釐侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E9%87%90%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡共侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%85%B1%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡戴侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%88%B4%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡宣侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%AE%A3%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡桓侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%A1%93%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡哀侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%93%80%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡缪侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E7%BC%AA%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡庄侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%BA%84%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡文侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%96%87%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡景侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%99%AF%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡灵侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E7%81%B5%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡平侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%B9%B3%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡侯朱",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E4%BE%AF%E6%9C%B1"
+      },
+      {
+        "label": "维基百科：蔡悼侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%82%BC%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡昭侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%98%AD%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡成侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%88%90%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡声侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%A3%B0%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡元侯",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%85%83%E4%BE%AF"
+      },
+      {
+        "label": "维基百科：蔡侯齐",
+        "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E4%BE%AF%E9%BD%90"
+      },
+      {
+        "label": "杞国条目（爵位沿革）",
+        "url": "https://zh.wikipedia.org/wiki/杞國"
+      },
+      {
+        "label": "周代诸侯列国（杞国条目底部模板）",
+        "url": "https://zh.wikipedia.org/wiki/Template:周代诸侯列国"
+      },
+      {
+        "label": "《史记·六国年表》",
+        "url": "https://ctext.org/shiji/liu-guo-nian-biao/zh"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷014"
+      }
+    ],
+    "notes": [
+      "本包按蔡国作为同一姬姓诸侯国维护；ID采用 cai-chunqiu，与历史人物蔡锷等现有 cai-* 人物区分。人物名遵循先秦字段规则：姓名未知写「？」，不拼姬姓或蔡氏；title 与谥号不含国名前缀。",
+      "王朝起点采用《蔡国》条目所列约前1045年封国，终点采用《史记·管蔡世家》与君主表所载前447年楚灭蔡；个别资料写前445年，本包采用可与蔡侯齐四年、楚惠王纪年的前447年系年。",
+      "前1045—前1040的蔡叔度在位为条目约数。蔡仲、蔡伯荒、宫侯、厉侯具体在位年次失载，按《史记》连续世系、蔡仲复封约前1040年、陈梦家系于各周王时期以及蔡武侯前863年起的锚点定位：蔡仲约置于成、康时期，伯荒置于昭、穆时期，宫侯置于共、懿时期，厉侯止于前864年；这些边界均标 interpolated_by_other，只供时间轴定位，不表示可考的实际即位、卒年。蔡叔度约于前1040年终，蔡仲复封虽系年约前1040年，依年精度顺序交接规则，蔡仲卡片从次年定位。西周初始封、复封与君主连续性并非完全清楚，蔡叔度遭放逐后至蔡仲复封间不构造额外君主。",
+      "年表中连续君主常以同一年作前任末年和后任起年；按项目规则保留前任死年，并将后任推至次年。早期武侯—夷侯、夷侯—釐侯的重叠分别按此处理；其余年表有缺年或年数与起讫不合之处，采用条目所列起讫年份并以年精度记录，不据在位年数再反推。",
+      "蔡灵侯前531年被杀后，蔡国一度为楚所灭；蔡平侯为楚平王于前528年复立。该段不补造蔡国君主，王朝同一记录保留，君主在位自然留出空档。蔡平侯“九年”与条目将前530作为追述元年、前528才实际复国并有差异，采用实际复立年作为 reign 起点，终点按《史记》九年系年取前522年。",
+      "蔡侯朱与悼侯在前521年发生短期更替，依年精度短祚例外保留同年记录；不能据此宣称二人历月并立。年/月字段中的一月、十二月均为时间轴定位占位。人物概述只写可核事实；未收录事件与都城记录，以避免重复维护相邻包实体或在没有来源精度时产生不必要数据。",
+      "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
+      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
+      "时期边界采用年精度；开始年有史料明确记载时标 year。来源表只按春秋、战国分栏、无确切改称年的，沿用前453年栏界并标 approximate_year，表示分类边界而非断言该年实际改爵。"
+    ]
+  }
+}

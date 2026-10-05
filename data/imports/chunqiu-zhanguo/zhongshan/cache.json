@@ -190,7 +190,37 @@
         "abs": -3529,
         "confidence": "month"
       },
-      "note": "鲜虞白狄所建。有年表自文公、武公；前406年后亡国，桓公复兴。前296年赵灭中山。"
+      "note": "鲜虞白狄所建。有年表自文公、武公；前406年后亡国，桓公复兴。前296年赵灭中山。",
+      "feudalRank": {
+        "periods": [
+          {
+            "rank": "侯",
+            "start": {
+              "year": -424,
+              "month": 1,
+              "confidence": "year"
+            },
+            "end": {
+              "year": -324,
+              "month": 12,
+              "confidence": "year"
+            }
+          },
+          {
+            "rank": "王",
+            "start": {
+              "year": -323,
+              "month": 1,
+              "confidence": "year"
+            },
+            "end": {
+              "year": -296,
+              "month": 12,
+              "confidence": "month"
+            }
+          }
+        ]
+      }
     }
   ],
   "reigns": [
@@ -467,8 +497,80 @@
         "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
       },
       {
+        "label": "夏商周断代工程与其他西周年代方案对照",
+        "url": "https://zh.wikipedia.org/wiki/夏商周断代工程#年表"
+      },
+      {
+        "label": "《国号》：中国历代国号与史称",
+        "url": "https://zh.wikipedia.org/wiki/国号"
+      },
+      {
+        "label": "《中国政权列表》：各时期政权与国号",
+        "url": "https://zh.wikipedia.org/wiki/中国政权列表"
+      },
+      {
+        "label": "《“国号”中的历史流变》：国号、自称与方位史称",
+        "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
+      },
+      {
+        "label": "中国社会科学网：战国中山国研究的回顾与展望",
+        "url": "https://www.cssn.cn/lsx/lsx_kgx/202210/t20221024_5552649.shtml"
+      },
+      {
+        "label": "河北省文物考古研究院：河北百年百项重要考古发现—中山王墓",
+        "url": "https://www.hbswwkg.com/2021-12/26/content_8697074.html"
+      },
+      {
+        "label": "杞国条目（爵位沿革）",
+        "url": "https://zh.wikipedia.org/wiki/杞國"
+      },
+      {
+        "label": "春秋时期",
+        "url": "https://zh.wikipedia.org/wiki/春秋时期"
+      },
+      {
+        "label": "战国时期",
+        "url": "https://zh.wikipedia.org/wiki/战国时期"
+      },
+      {
+        "label": "战国七雄",
+        "url": "https://zh.wikipedia.org/wiki/战国七雄"
+      },
+      {
+        "label": "周朝诸侯国君主列表",
+        "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/中山文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/中山武公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/中山桓公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/中山成公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/中山王厝"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/中山王𧊒"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/中山王尚"
+      },
+      {
         "label": "《史记·十二诸侯年表》",
-        "url": "https://zh.wikisource.org/wiki/史記/卷014"
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
       },
       {
         "label": "夏商周断代工程与其他西周年代方案对照",
@@ -493,6 +595,22 @@
       {
         "label": "河北省文物考古研究院：河北百年百项重要考古发现—中山王墓",
         "url": "https://www.hbswwkg.com/2021-12/26/content_8697074.html"
+      },
+      {
+        "label": "杞国条目（爵位沿革）",
+        "url": "https://zh.wikipedia.org/wiki/杞國"
+      },
+      {
+        "label": "周代诸侯列国（杞国条目底部模板）",
+        "url": "https://zh.wikipedia.org/wiki/Template:周代诸侯列国"
+      },
+      {
+        "label": "《史记·六国年表》",
+        "url": "https://ctext.org/shiji/liu-guo-nian-biao/zh"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷014"
       }
     ],
     "notes": [
@@ -515,7 +633,9 @@
       "2026-10-03族属复核：不为战国中山国填写单一 ethnicity。研究对君统来源及鲜虞、白狄主体性存在不同解释，不能把春秋鲜虞与战国中山简单等同。",
       "2026-10-05：人物概述审查与补充。按人物逐条采用具体史事及正史、传世文献或学术考证；史料仅存名号/世系、不能确认具体经历的记录保留简短表述，不以统一模板扩写。",
       "2026-10-05：开国候选逐项复核后保留原概述：zhongshan-r0。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。",
-      "2026-10-05称谓字段修正：按库内 SQL 查询，将中山文公、桓公、成公仅存的称号从 persons.name 移出；所属人物概述均注明本名失载，保留 posthumousNames 与称号。桓公两段在位属于同一人物，按person记录修正一次。"
+      "2026-10-05称谓字段修正：按库内 SQL 查询，将中山文公、桓公、成公仅存的称号从 persons.name 移出；所属人物概述均注明本名失载，保留 posthumousNames 与称号。桓公两段在位属于同一人物，按person记录修正一次。",
+      "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
+      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。"
     ]
   }
 }

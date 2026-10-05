@@ -3,7 +3,6 @@ import { relatedEntityRefs, type EntityAssociation } from "./entityAssociations.
 import { capitalLocations } from "./locationMappings";
 import { formatHistoricalDate, isApproximateConfidence } from "./historicalDate";
 import { buildReignTenureCapitalRows, capitalDateRangeLabel, capitalLocationRoleLabel, dynastyCapitalRelatedItems } from "./dynastyCapitals";
-import { claimDetailFacts } from "./claimTracks";
 import { PRE_IMPERIAL_START_YEAR } from "./appellationPolicy";
 import {
   buildPreQinClanContext,
@@ -261,9 +260,10 @@ function buildPersonEntityDetail(
       ? resolveDynastyName(headingDynasty, detailReign.startAbs)
       : headingDynasty.altNames?.[0]?.trim() || resolveDynastyDefaultName(headingDynasty)
     : undefined;
+  const claimLabel = focusReign?.claimLabel?.trim();
   const heading = resolveReignDetailHeading(
     detailReign,
-    headingDynastyName,
+    claimLabel || headingDynastyName,
     person.name,
     clan,
     {
@@ -271,10 +271,11 @@ function buildPersonEntityDetail(
       periodYear: detailReign?.start.year ?? person.birth?.year,
     },
   );
-  const subtitle = heading
+  const displayHeading = heading || claimLabel;
+  const subtitle = displayHeading
     ? focusReign && reignCount > 1 && focusReignIndex
-      ? `${heading} · ${focusReignIndex}/${reignCount}`
-      : heading
+      ? `${displayHeading} · ${focusReignIndex}/${reignCount}`
+      : displayHeading
     : undefined;
   const title = resolvePersonDetailTitle(person.name, clan, {
     preQin: Boolean(preQinReign || preQinByBirth),
@@ -318,7 +319,6 @@ function buildPersonEntityDetail(
         }]
       : []),
     ...commonFacts,
-    ...(focusReign ? claimDetailFacts(focusReign) : []),
   ];
 
   const colorReign = focusReign ?? personReigns[0];

@@ -1,0 +1,293 @@
+{
+  "slug": "chunqiu-zhanguo/cai-chunqiu",
+  "title": "蔡独立数据包",
+  "window": {
+    "startYear": -1045,
+    "startMonth": 1,
+    "endYear": -447,
+    "endMonth": 12
+  },
+  "scope": "cn",
+  "depth": "standard",
+  "generatedAt": "2026-10-05",
+  "sources": [
+    {
+      "label": "蔡国",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%9C%8B"
+    },
+    {
+      "label": "《史记·管蔡世家》",
+      "url": "https://zh.wikisource.org/zh-hans/%E5%8F%B2%E8%A8%98/%E5%8D%B7035"
+    },
+    {
+      "label": "《春秋左传》",
+      "url": "https://ctext.org/chun-qiu-zuo-zhuan/zhs"
+    },
+    {
+      "label": "陈梦家《西周年代考》",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%9C%8B"
+    },
+    {
+      "label": "维基百科：蔡叔度",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%8F%94%E5%BA%A6"
+    },
+    {
+      "label": "维基百科：蔡仲胡",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E4%BB%B2%E8%83%A1"
+    },
+    {
+      "label": "维基百科：蔡伯荒",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E4%BC%AF%E8%8D%92"
+    },
+    {
+      "label": "维基百科：蔡宫侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%AE%AB%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡厉侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%8E%89%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡武侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%AD%A6%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡夷侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%A4%B7%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡釐侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E9%87%90%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡共侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%85%B1%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡戴侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%88%B4%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡宣侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%AE%A3%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡桓侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%A1%93%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡哀侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%93%80%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡缪侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E7%BC%AA%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡庄侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%BA%84%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡文侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%96%87%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡景侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%99%AF%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡灵侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E7%81%B5%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡平侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%B9%B3%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡侯朱",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E4%BE%AF%E6%9C%B1"
+    },
+    {
+      "label": "维基百科：蔡悼侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%82%BC%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡昭侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%98%AD%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡成侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%88%90%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡声侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%A3%B0%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡元侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%85%83%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡侯齐",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E4%BE%AF%E9%BD%90"
+    },
+    {
+      "label": "杞国条目（爵位沿革）",
+      "url": "https://zh.wikipedia.org/wiki/杞國"
+    },
+    {
+      "label": "蔡国",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%9C%8B"
+    },
+    {
+      "label": "《史记·管蔡世家》",
+      "url": "https://zh.wikisource.org/zh-hans/%E5%8F%B2%E8%A8%98/%E5%8D%B7035"
+    },
+    {
+      "label": "《春秋左传》",
+      "url": "https://ctext.org/chun-qiu-zuo-zhuan/zhs"
+    },
+    {
+      "label": "维基百科：蔡叔度",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%8F%94%E5%BA%A6"
+    },
+    {
+      "label": "维基百科：蔡仲胡",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E4%BB%B2%E8%83%A1"
+    },
+    {
+      "label": "维基百科：蔡伯荒",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E4%BC%AF%E8%8D%92"
+    },
+    {
+      "label": "维基百科：蔡宫侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%AE%AB%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡厉侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%8E%89%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡武侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%AD%A6%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡夷侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%A4%B7%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡釐侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E9%87%90%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡共侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%85%B1%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡戴侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%88%B4%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡宣侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%AE%A3%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡桓侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%A1%93%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡哀侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%93%80%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡缪侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E7%BC%AA%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡庄侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%BA%84%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡文侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%96%87%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡景侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%99%AF%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡灵侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E7%81%B5%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡平侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%B9%B3%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡侯朱",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E4%BE%AF%E6%9C%B1"
+    },
+    {
+      "label": "维基百科：蔡悼侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%82%BC%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡昭侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%98%AD%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡成侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E6%88%90%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡声侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%A3%B0%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡元侯",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E5%85%83%E4%BE%AF"
+    },
+    {
+      "label": "维基百科：蔡侯齐",
+      "url": "https://zh.wikipedia.org/wiki/%E8%94%A1%E4%BE%AF%E9%BD%90"
+    },
+    {
+      "label": "杞国条目（爵位沿革）",
+      "url": "https://zh.wikipedia.org/wiki/杞國"
+    },
+    {
+      "label": "周代诸侯列国（杞国条目底部模板）",
+      "url": "https://zh.wikipedia.org/wiki/Template:周代诸侯列国"
+    },
+    {
+      "label": "《史记·六国年表》",
+      "url": "https://ctext.org/shiji/liu-guo-nian-biao/zh"
+    },
+    {
+      "label": "《史记·十二诸侯年表》",
+      "url": "https://zh.wikisource.org/wiki/史記/卷014"
+    }
+  ],
+  "notes": [
+    "本包按蔡国作为同一姬姓诸侯国维护；ID采用 cai-chunqiu，与历史人物蔡锷等现有 cai-* 人物区分。人物名遵循先秦字段规则：姓名未知写「？」，不拼姬姓或蔡氏；title 与谥号不含国名前缀。",
+    "王朝起点采用《蔡国》条目所列约前1045年封国，终点采用《史记·管蔡世家》与君主表所载前447年楚灭蔡；个别资料写前445年，本包采用可与蔡侯齐四年、楚惠王纪年的前447年系年。",
+    "前1045—前1040的蔡叔度在位为条目约数。蔡仲、蔡伯荒、宫侯、厉侯具体在位年次失载，按《史记》连续世系、蔡仲复封约前1040年、陈梦家系于各周王时期以及蔡武侯前863年起的锚点定位：蔡仲约置于成、康时期，伯荒置于昭、穆时期，宫侯置于共、懿时期，厉侯止于前864年；这些边界均标 interpolated_by_other，只供时间轴定位，不表示可考的实际即位、卒年。蔡叔度约于前1040年终，蔡仲复封虽系年约前1040年，依年精度顺序交接规则，蔡仲卡片从次年定位。西周初始封、复封与君主连续性并非完全清楚，蔡叔度遭放逐后至蔡仲复封间不构造额外君主。",
+    "年表中连续君主常以同一年作前任末年和后任起年；按项目规则保留前任死年，并将后任推至次年。早期武侯—夷侯、夷侯—釐侯的重叠分别按此处理；其余年表有缺年或年数与起讫不合之处，采用条目所列起讫年份并以年精度记录，不据在位年数再反推。",
+    "蔡灵侯前531年被杀后，蔡国一度为楚所灭；蔡平侯为楚平王于前528年复立。该段不补造蔡国君主，王朝同一记录保留，君主在位自然留出空档。蔡平侯“九年”与条目将前530作为追述元年、前528才实际复国并有差异，采用实际复立年作为 reign 起点，终点按《史记》九年系年取前522年。",
+    "蔡侯朱与悼侯在前521年发生短期更替，依年精度短祚例外保留同年记录；不能据此宣称二人历月并立。年/月字段中的一月、十二月均为时间轴定位占位。人物概述只写可核事实；未收录事件与都城记录，以避免重复维护相邻包实体或在没有来源精度时产生不必要数据。",
+    "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
+    "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
+    "时期边界采用年精度；开始年有史料明确记载时标 year。来源表只按春秋、战国分栏、无确切改称年的，沿用前453年栏界并标 approximate_year，表示分类边界而非断言该年实际改爵。"
+  ],
+  "counts": {
+    "persons": 26,
+    "dynastyGroups": 0,
+    "dynasties": 1,
+    "reigns": 26,
+    "events": 0,
+    "relations": 0,
+    "associations": 0,
+    "locations": 0,
+    "locationMappings": 0
+  }
+}

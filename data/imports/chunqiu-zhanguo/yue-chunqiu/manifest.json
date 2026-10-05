@@ -103,6 +103,110 @@
     {
       "label": "《“国号”中的历史流变》：国号、自称与方位史称",
       "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
+    },
+    {
+      "label": "杞国条目（爵位沿革）",
+      "url": "https://zh.wikipedia.org/wiki/杞國"
+    },
+    {
+      "label": "《春秋滕薛杞越莒邾许七国统表·邾世次》（考辨仪父克为庄公的异说）",
+      "url": "https://ctext.org/wiki.pl?chapter=3884730&if=gb&remap=gb"
+    },
+    {
+      "label": "春秋时期",
+      "url": "https://zh.wikipedia.org/wiki/春秋时期"
+    },
+    {
+      "label": "战国时期",
+      "url": "https://zh.wikipedia.org/wiki/战国时期"
+    },
+    {
+      "label": "战国七雄",
+      "url": "https://zh.wikipedia.org/wiki/战国七雄"
+    },
+    {
+      "label": "周朝诸侯国君主列表",
+      "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/夫谭"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/允常"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/勾践"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/鹿郢"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/不寿"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/朱勾"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/翳"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/错枝"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/无余"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/无颛"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/无彊"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/范蠡"
+    },
+    {
+      "label": "《国号》：中国历代国号与史称",
+      "url": "https://zh.wikipedia.org/wiki/国号"
+    },
+    {
+      "label": "《中国政权列表》：各时期政权与国号",
+      "url": "https://zh.wikipedia.org/wiki/中国政权列表"
+    },
+    {
+      "label": "《“国号”中的历史流变》：国号、自称与方位史称",
+      "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
+    },
+    {
+      "label": "杞国条目（爵位沿革）",
+      "url": "https://zh.wikipedia.org/wiki/杞國"
+    },
+    {
+      "label": "周代诸侯列国（杞国条目底部模板）",
+      "url": "https://zh.wikipedia.org/wiki/Template:周代诸侯列国"
+    },
+    {
+      "label": "《史记·六国年表》",
+      "url": "https://ctext.org/shiji/liu-guo-nian-biao/zh"
+    },
+    {
+      "label": "《史记·十二诸侯年表》",
+      "url": "https://zh.wikisource.org/wiki/史記/卷014"
+    },
+    {
+      "label": "《史记·越王勾践世家》",
+      "url": "https://zh.wikisource.org/wiki/史記/卷041"
     }
   ],
   "notes": [
@@ -125,6 +229,9 @@
     "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
     "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。",
     "2026-10-05：人物概述审查与补充。按人物逐条采用具体史事及正史、传世文献或学术考证；史料仅存名号/世系、不能确认具体经历的记录保留简短表述，不以统一模板扩写。",
-    "2026-10-05：开国经历逐条复核并改写：yue-r3。分清奠基者、继承者、正式建国及史料缺载；删除无依据评价，保留传说与异说限定。"
+    "2026-10-05：开国经历逐条复核并改写：yue-r3。分清奠基者、继承者、正式建国及史料缺载；删除无依据评价，保留传说与异说限定。",
+    "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
+    "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
+    "时期边界采用年精度；开始年有史料明确记载时标 year。来源表只按春秋、战国分栏、无确切改称年的，沿用前453年栏界并标 approximate_year，表示分类边界而非断言该年实际改爵。"
   ]
 }

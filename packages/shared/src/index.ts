@@ -27,3 +27,4 @@ export * from "./locationMappings";
 export * from "./entityAssociations.mjs";
 
 export * from "./dynastyNames";
+export * from "./dynastyFeudalRank";

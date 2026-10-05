@@ -45,10 +45,6 @@
       "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
     },
     {
-      "label": "《史记·十二诸侯年表》",
-      "url": "https://zh.wikisource.org/wiki/史記/卷014"
-    },
-    {
       "label": "夏商周断代工程与其他西周年代方案对照",
       "url": "https://zh.wikipedia.org/wiki/夏商周断代工程#年表"
     },
@@ -103,6 +99,98 @@
     {
       "label": "《“国号”中的历史流变》：国号、自称与方位史称",
       "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
+    },
+    {
+      "label": "杞国条目（爵位沿革）",
+      "url": "https://zh.wikipedia.org/wiki/杞國"
+    },
+    {
+      "label": "春秋时期",
+      "url": "https://zh.wikipedia.org/wiki/春秋时期"
+    },
+    {
+      "label": "战国时期",
+      "url": "https://zh.wikipedia.org/wiki/战国时期"
+    },
+    {
+      "label": "战国七雄",
+      "url": "https://zh.wikipedia.org/wiki/战国七雄"
+    },
+    {
+      "label": "周朝诸侯国君主列表",
+      "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+    },
+    {
+      "label": "《史记·十二诸侯年表》",
+      "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
+    },
+    {
+      "label": "夏商周断代工程与其他西周年代方案对照",
+      "url": "https://zh.wikipedia.org/wiki/夏商周断代工程#年表"
+    },
+    {
+      "label": "周朝（共时定位采用的年表）",
+      "url": "https://zh.wikipedia.org/wiki/周朝"
+    },
+    {
+      "label": "东虢国（始封与可考君主）",
+      "url": "https://zh.wikipedia.org/wiki/東虢國"
+    },
+    {
+      "label": "虢仲（始封君归属异说及东虢世系待考区段）",
+      "url": "https://zh.wikipedia.org/wiki/虢仲"
+    },
+    {
+      "label": "何志華《西周金文韻讀研究淺議》（虢叔旅钟、惠叔大林父子）",
+      "url": "https://jas.hkbu.edu.hk/content/dam/jas-assets/publications/bulletin-of-the-jao-tsung-i-academy-of-sinology/issue-6-august-2019/12.pdf"
+    },
+    {
+      "label": "《陕西省志·秦志》大事年表（虢叔旅活动于前847年之说）",
+      "url": "https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsz/szdylpdf/201404/P020240923616206405975.pdf"
+    },
+    {
+      "label": "《左传·隐公元年》（制邑、虢叔死焉）",
+      "url": "https://zh.wikisource.org/wiki/春秋左氏傳/隱公"
+    },
+    {
+      "label": "《国语·郑语》（虢叔与郑桓公共时）",
+      "url": "https://ctext.org/guo-yu/zheng-yu/ens"
+    },
+    {
+      "label": "孙尚勇《〈春秋〉历史叙事与孔子的文化关怀》（平王四年郑灭虢与杜预注）",
+      "url": "https://www.ica.org.cn/att/site17/20240529/1716968303123.pdf"
+    },
+    {
+      "label": "国家图书馆《国家图书馆藏金文全集》（虢叔旅钟为西周晚期）",
+      "url": "https://www.nlc.cn/pcab/zx/xw/20240119_2637724.shtml"
+    },
+    {
+      "label": "《国号》：中国历代国号与史称",
+      "url": "https://zh.wikipedia.org/wiki/国号"
+    },
+    {
+      "label": "《中国政权列表》：各时期政权与国号",
+      "url": "https://zh.wikipedia.org/wiki/中国政权列表"
+    },
+    {
+      "label": "《“国号”中的历史流变》：国号、自称与方位史称",
+      "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
+    },
+    {
+      "label": "杞国条目（爵位沿革）",
+      "url": "https://zh.wikipedia.org/wiki/杞國"
+    },
+    {
+      "label": "周代诸侯列国（杞国条目底部模板）",
+      "url": "https://zh.wikipedia.org/wiki/Template:周代诸侯列国"
+    },
+    {
+      "label": "《史记·六国年表》",
+      "url": "https://ctext.org/shiji/liu-guo-nian-biao/zh"
+    },
+    {
+      "label": "《史记·十二诸侯年表》",
+      "url": "https://zh.wikisource.org/wiki/史記/卷014"
     }
   ],
   "notes": [
@@ -132,6 +220,9 @@
     "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
     "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。",
     "2026-10-04称谓与私名复核：guo-east-zhong（东虢包）/guo-r1（西虢包）统一以title记录虢仲、虢叔；依《春秋左传正义·僖公五年》杜预注“仲、叔皆虢君字”，其“仲”“叔”属字/排行称谓。没有可靠史料支持早期虢仲私名为“忌”、虢叔私名为“珪”，亦未见其他可确认私名，故persons.name留空。注意勿与春秋晚期虢公忌父混为一人。",
-    "2026-10-05：开国候选逐项复核后保留原概述：guo-east-zhong。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。"
+    "2026-10-05：开国候选逐项复核后保留原概述：guo-east-zhong。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。",
+    "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
+    "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
+    "时期边界采用年精度；开始年有史料明确记载时标 year。来源表只按春秋、战国分栏、无确切改称年的，沿用前453年栏界并标 approximate_year，表示分类边界而非断言该年实际改爵。"
   ]
 }

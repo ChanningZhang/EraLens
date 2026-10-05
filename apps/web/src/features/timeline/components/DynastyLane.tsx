@@ -3,6 +3,7 @@ import { memo } from "react";
 import {
   isFrozenLaneMaster,
   resolveDynastyColorValue,
+  resolveDynastyFeudalRank,
   resolveFrozenLaneLabel,
   resolveReignColorValue,
   type ColorToken,
@@ -127,6 +128,7 @@ export function DynastyLane({
   const labelAnchorAbs = laneLabelAnchorAbs(viewport);
   const cardPanX = worldPanOffsetX(viewport);
   const frozenLabel = resolveFrozenLaneLabel(dynasty, labelAnchorAbs);
+  const feudalRank = resolveDynastyFeudalRank(dynasty.feudalRank, labelAnchorAbs);
   const labelGlyphCount = [...frozenLabel].length;
   const labelContentWidth = viewport.presentation.railLabelWidthPx -
     (viewport.presentation.narrow ? 10 : 18);
@@ -170,7 +172,9 @@ export function DynastyLane({
           );
           selectionStore.syncToUrl(viewport.centerAbs);
         }}
-        aria-label={dynasty.ethnicity ? `${frozenLabel}（${dynasty.ethnicity}）` : frozenLabel}
+        aria-label={[dynasty.ethnicity, feudalRank].filter(Boolean).length
+          ? `${frozenLabel}（${[dynasty.ethnicity, feudalRank].filter(Boolean).join("，")}）`
+          : frozenLabel}
         aria-pressed={selected}
       >
         <span className={styles.labelText}>
@@ -191,6 +195,11 @@ export function DynastyLane({
         {dynasty.ethnicity && (
           <span className={styles.ethnicity} aria-hidden="true">
             {dynasty.ethnicity}
+          </span>
+        )}
+        {feudalRank && (
+          <span className={styles.feudalRank} aria-hidden="true">
+            {feudalRank}
           </span>
         )}
       </button>}

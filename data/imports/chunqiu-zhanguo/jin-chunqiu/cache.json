@@ -1213,7 +1213,24 @@
         "abs": -4165,
         "confidence": "month"
       },
-      "note": "周成王封叔虞于唐，其子燮继位后改国号为晋。曲村—天马遗址为西周时期晋国早期都邑，发现连续的晋侯及夫人墓葬；早期都邑与文献所称翼的对应、唐至晋的迁移过程及始用年代仍有争议。昭侯时晋君都翼，曲沃支系与翼公室争位，前678年曲沃武公代翼。献公时都绛，景公前585年迁新田。前403年三家分晋；前376年公室被废、另立傀儡君，前349年静公被杀而国亡。"
+      "note": "周成王封叔虞于唐，其子燮继位后改国号为晋。曲村—天马遗址为西周时期晋国早期都邑，发现连续的晋侯及夫人墓葬；早期都邑与文献所称翼的对应、唐至晋的迁移过程及始用年代仍有争议。昭侯时晋君都翼，曲沃支系与翼公室争位，前678年曲沃武公代翼。献公时都绛，景公前585年迁新田。前403年三家分晋；前376年公室被废、另立傀儡君，前349年静公被杀而国亡。",
+      "feudalRank": {
+        "periods": [
+          {
+            "rank": "侯",
+            "start": {
+              "year": -1042,
+              "month": 1,
+              "confidence": "year"
+            },
+            "end": {
+              "year": -349,
+              "month": 12,
+              "confidence": "month"
+            }
+          }
+        ]
+      }
     }
   ],
   "reigns": [
@@ -2488,8 +2505,256 @@
         "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
       },
       {
+        "label": "夏商周断代工程与其他西周年代方案对照",
+        "url": "https://zh.wikipedia.org/wiki/夏商周断代工程#年表"
+      },
+      {
+        "label": "《史记·晋世家》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷039"
+      },
+      {
+        "label": "晋国君主年表（不同系年并列；春秋部分对照杨伯峻《春秋左传注》）",
+        "url": "https://zh.wikipedia.org/wiki/晋国君主"
+      },
+      {
+        "label": "天马—曲村北赵晋侯墓地材料（北京大学机构知识库）",
+        "url": "https://ir.pku.edu.cn/handle/20.500.11897/7324"
+      },
+      {
+        "label": "The Jin Hou Su Bells Inscription and its Implications for the Chronology of Early China",
+        "url": "https://doi.org/10.1017/s0362502800004260"
+      },
+      {
+        "label": "曲沃叛王与晋公戈年代（复旦大学出土文献与古文字研究中心）",
+        "url": "https://www.fdgwz.org.cn/Web/Show/2458"
+      },
+      {
+        "label": "春秋鲁国历法复原（据张培瑜《中国古代历法》）",
+        "url": "https://ytliu0.github.io/ChineseCalendar/chunqiu_simp.html"
+      },
+      {
+        "label": "《左传·僖公九年》（周历月序及晋献公、奚齐、卓子之死）",
+        "url": "https://ctext.org/chun-qiu-zuo-zhuan/xi-gong-jiu-nian/zhs"
+      },
+      {
+        "label": "《左传·庄公十六年》",
+        "url": "https://ctext.org/chun-qiu-zuo-zhuan/zhuang-gong-shi-liu-nian/zhs"
+      },
+      {
+        "label": "《史记》卷三十九·晋世家：叔虞封唐、燮改号晋与昭侯时翼都",
+        "url": "https://www.chinakongzi.org/kzsf/wxxs/mingpian/shiji/200705/t20070524_25208.htm"
+      },
+      {
+        "label": "山西大学考古文博学院：西周早期晋都、燮父至文侯墓葬序列与三处都邑遗址",
+        "url": "https://archaeology.sxu.edu.cn/rcpy/yxsx/199ac6ba62514d118ef56d7d17add238.htm"
+      },
+      {
+        "label": "上海博物馆《晋侯墓地》：曲村—天马早期晋都及西周晋侯墓葬",
+        "url": "https://www.shanghaimuseum.net/mu/asset2/20151230150415016/"
+      },
+      {
+        "label": "《国号》：中国历代国号与史称",
+        "url": "https://zh.wikipedia.org/wiki/国号"
+      },
+      {
+        "label": "《中国政权列表》：各时期政权与国号",
+        "url": "https://zh.wikipedia.org/wiki/中国政权列表"
+      },
+      {
+        "label": "《“国号”中的历史流变》：国号、自称与方位史称",
+        "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
+      },
+      {
+        "label": "杞国条目（爵位沿革）",
+        "url": "https://zh.wikipedia.org/wiki/杞國"
+      },
+      {
+        "label": "春秋时期",
+        "url": "https://zh.wikipedia.org/wiki/春秋时期"
+      },
+      {
+        "label": "战国时期",
+        "url": "https://zh.wikipedia.org/wiki/战国时期"
+      },
+      {
+        "label": "战国七雄",
+        "url": "https://zh.wikipedia.org/wiki/战国七雄"
+      },
+      {
+        "label": "晋国",
+        "url": "https://zh.wikipedia.org/wiki/晋国"
+      },
+      {
+        "label": "晋文侯（前780—前746年在位）",
+        "url": "https://zh.wikipedia.org/wiki/晋文侯"
+      },
+      {
+        "label": "三家分晋",
+        "url": "https://zh.wikipedia.org/wiki/三家分晋"
+      },
+      {
+        "label": "周朝诸侯国君主列表",
+        "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/唐叔虞"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/燮"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋武侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋成侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋厉侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋靖侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋釐侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋献侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋穆侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋殇叔"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋昭侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曲沃桓叔"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋孝侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曲沃庄伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋鄂侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋哀侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/曲沃武公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋小子侯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/缗"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋献公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋惠公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋怀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋襄公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋灵公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋成公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋景公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋厉公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋悼公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋平公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋昭公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋顷公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋定公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋出公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋哀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋幽公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋烈公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋孝公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/晋静公"
+      },
+      {
         "label": "《史记·十二诸侯年表》",
-        "url": "https://zh.wikisource.org/wiki/史記/卷014"
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷014"
       },
       {
         "label": "夏商周断代工程与其他西周年代方案对照",
@@ -2550,6 +2815,22 @@
       {
         "label": "《“国号”中的历史流变》：国号、自称与方位史称",
         "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
+      },
+      {
+        "label": "杞国条目（爵位沿革）",
+        "url": "https://zh.wikipedia.org/wiki/杞國"
+      },
+      {
+        "label": "周代诸侯列国（杞国条目底部模板）",
+        "url": "https://zh.wikipedia.org/wiki/Template:周代诸侯列国"
+      },
+      {
+        "label": "《史记·六国年表》",
+        "url": "https://ctext.org/shiji/liu-guo-nian-biao/zh"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷014"
       }
     ],
     "notes": [
@@ -2574,7 +2855,10 @@
       "2026-10-02按王朝拆包：本包由原chunqiu-zhanguo缓存中的晋记录原样迁移，保留实体ID、史实、日期及置信度。人物按在位归属唯一拥有，非在位人物按迭代归属分配；事件由dynastyIds首项所属包唯一拥有；事件关联按目标王朝或人物归属分配，跨包关系只引用既有ID，不重复写关联行。原包完整来源与复核说明另行归档。",
       "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
       "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。",
-      "2026-10-05：开国经历逐条复核并改写：ji-shuyu。分清奠基者、继承者、正式建国及史料缺载；删除无依据评价，保留传说与异说限定。"
+      "2026-10-05：开国经历逐条复核并改写：ji-shuyu。分清奠基者、继承者、正式建国及史料缺载；删除无依据评价，保留传说与异说限定。",
+      "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
+      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
+      "晋国记录采用《春秋》等史籍常用的晋侯。模板后期“晋国公”与晋国末代君主谥号/尊称混淆，未据此添加公爵阶段。"
     ]
   }
 }

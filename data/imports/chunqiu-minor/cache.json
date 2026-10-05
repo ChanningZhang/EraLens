@@ -2061,7 +2061,37 @@
         "abs": -3901,
         "confidence": "month"
       },
-      "note": "任姓诸侯国。薛献公在位始年不详，前511年卒；薛襄公、薛公比、薛惠公的在位见于《春秋》《左传》。"
+      "note": "任姓诸侯国。薛献公在位始年不详，前511年卒；薛襄公、薛公比、薛惠公的在位见于《春秋》《左传》。",
+      "feudalRank": {
+        "periods": [
+          {
+            "rank": "侯",
+            "start": {
+              "year": -548,
+              "month": 1,
+              "confidence": "year"
+            },
+            "end": {
+              "year": -454,
+              "month": 12,
+              "confidence": "approximate_year"
+            }
+          },
+          {
+            "rank": "伯",
+            "start": {
+              "year": -453,
+              "month": 1,
+              "confidence": "approximate_year"
+            },
+            "end": {
+              "year": -327,
+              "month": 12,
+              "confidence": "month"
+            }
+          }
+        ]
+      }
     },
     {
       "id": "teng-chunqiu",
@@ -2084,7 +2114,37 @@
         "abs": -3529,
         "confidence": "approximate_year"
       },
-      "note": "姬姓诸侯国，周武王封错叔绣。前414年一度为越所灭，后复国，前296年为宋所灭。"
+      "note": "姬姓诸侯国，周武王封错叔绣。前414年一度为越所灭，后复国，前296年为宋所灭。",
+      "feudalRank": {
+        "periods": [
+          {
+            "rank": "侯",
+            "start": {
+              "year": -1045,
+              "month": 1,
+              "confidence": "year"
+            },
+            "end": {
+              "year": -711,
+              "month": 12,
+              "confidence": "year"
+            }
+          },
+          {
+            "rank": "子",
+            "start": {
+              "year": -710,
+              "month": 1,
+              "confidence": "year"
+            },
+            "end": {
+              "year": -296,
+              "month": 12,
+              "confidence": "approximate_year"
+            }
+          }
+        ]
+      }
     },
     {
       "id": "qi-state-chunqiu",
@@ -2107,7 +2167,24 @@
         "abs": -5317,
         "confidence": "month"
       },
-      "note": "杞为夏后氏后裔受封的诸侯国，早期世系与建国年代记载不足。春秋时期在今山东一带活动，前445年楚惠王灭杞。"
+      "note": "杞为夏后氏后裔受封的诸侯国，早期世系与建国年代记载不足。春秋时期在今山东一带活动，前445年楚惠王灭杞。",
+      "feudalRank": {
+        "periods": [
+          {
+            "rank": "伯",
+            "start": {
+              "year": -750,
+              "month": 1,
+              "confidence": "year"
+            },
+            "end": {
+              "year": -445,
+              "month": 12,
+              "confidence": "month"
+            }
+          }
+        ]
+      }
     },
     {
       "id": "ju-chunqiu",
@@ -2130,7 +2207,37 @@
         "abs": -5149,
         "confidence": "month"
       },
-      "note": "周初（断代工程取前1046年）封兹舆期；至春秋早期世系与具体在位年长期失载，以史料缺占位至前616年，后接可考莒君；前481年后至前431年楚灭莒前再以史料缺占位。"
+      "note": "周初（断代工程取前1046年）封兹舆期；至春秋早期世系与具体在位年长期失载，以史料缺占位至前616年，后接可考莒君；前481年后至前431年楚灭莒前再以史料缺占位。",
+      "feudalRank": {
+        "periods": [
+          {
+            "rank": "侯",
+            "start": {
+              "year": -1046,
+              "month": 1,
+              "confidence": "year"
+            },
+            "end": {
+              "year": -454,
+              "month": 12,
+              "confidence": "approximate_year"
+            }
+          },
+          {
+            "rank": "子",
+            "start": {
+              "year": -453,
+              "month": 1,
+              "confidence": "approximate_year"
+            },
+            "end": {
+              "year": -431,
+              "month": 12,
+              "confidence": "month"
+            }
+          }
+        ]
+      }
     },
     {
       "id": "dai-warring",
@@ -2200,7 +2307,24 @@
         "abs": -3049,
         "confidence": "month"
       },
-      "note": "战国周王畿小国，都王城（洛阳）；前440年周考王封弟揭所立，非西周王朝（zhou-west）。前367年威公卒后与东周国分立；前256年秦灭。"
+      "note": "战国周王畿小国，都王城（洛阳）；前440年周考王封弟揭所立，非西周王朝（zhou-west）。前367年威公卒后与东周国分立；前256年秦灭。",
+      "feudalRank": {
+        "periods": [
+          {
+            "rank": "公",
+            "start": {
+              "year": -440,
+              "month": 1,
+              "confidence": "year"
+            },
+            "end": {
+              "year": -256,
+              "month": 12,
+              "confidence": "month"
+            }
+          }
+        ]
+      }
     },
     {
       "id": "zhou-guo-east",
@@ -2223,6 +2347,23 @@
         "month": 12,
         "abs": -2965,
         "confidence": "month"
+      },
+      "feudalRank": {
+        "periods": [
+          {
+            "rank": "君",
+            "start": {
+              "year": -367,
+              "month": 1,
+              "confidence": "year"
+            },
+            "end": {
+              "year": -249,
+              "month": 12,
+              "confidence": "month"
+            }
+          }
+        ]
       },
       "note": "战国周王畿小国，都巩（巩义）；前367年由西周威公少子根所立，非东周王朝（zhou-east）。前249年秦庄襄王灭。"
     }
@@ -4211,6 +4352,10 @@
         "url": "https://zh.wikipedia.org/wiki/东周国"
       },
       {
+        "label": "《史记·秦本纪》庄襄王元年：东周君与诸侯谋秦",
+        "url": "https://www.shidianguji.com/mid-page/7426481298157486117"
+      },
+      {
         "label": "周朝诸侯国君主列表",
         "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
       },
@@ -4335,8 +4480,200 @@
         "url": "https://zh.wikisource.org/wiki/史記"
       },
       {
-        "label": "《史记》楚世家：惠王四十四年楚灭杞",
-        "url": "https://zh.wikisource.org/wiki/史記/卷040"
+        "label": "杞国条目（爵位沿革）",
+        "url": "https://zh.wikipedia.org/wiki/杞國"
+      },
+      {
+        "label": "薛国",
+        "url": "https://zh.wikipedia.org/wiki/薛国"
+      },
+      {
+        "label": "滕国",
+        "url": "https://zh.wikipedia.org/wiki/滕国"
+      },
+      {
+        "label": "夏商周断代工程西周年表（周王年代）",
+        "url": "https://zh.wikipedia.org/wiki/周朝纪年"
+      },
+      {
+        "label": "杞国",
+        "url": "https://zh.wikipedia.org/wiki/杞国"
+      },
+      {
+        "label": "莒国",
+        "url": "https://zh.wikipedia.org/wiki/莒国"
+      },
+      {
+        "label": "代国 (战国)",
+        "url": "https://zh.wikipedia.org/wiki/代国_(战国)"
+      },
+      {
+        "label": "西周国",
+        "url": "https://zh.wikipedia.org/wiki/西周国"
+      },
+      {
+        "label": "西周武公",
+        "url": "https://zh.wikipedia.org/wiki/西周武公"
+      },
+      {
+        "label": "史记·周本纪",
+        "url": "https://ctext.org/shiji/zhou-ben-ji"
+      },
+      {
+        "label": "《史记·田儋列传》",
+        "url": "https://zh.wikisource.org/wiki/史记/卷094"
+      },
+      {
+        "label": "东周国",
+        "url": "https://zh.wikipedia.org/wiki/东周国"
+      },
+      {
+        "label": "《史记·秦本纪》庄襄王元年：东周君与诸侯谋秦",
+        "url": "https://www.shidianguji.com/mid-page/7426481298157486117"
+      },
+      {
+        "label": "周朝诸侯国君主列表",
+        "url": "https://zh.wikipedia.org/wiki/周朝诸侯国君主列表"
+      },
+      {
+        "label": "张志鹏《滕国新考》（2011）：金文、世系与存灭考证",
+        "url": "https://www.fdgwz.org.cn/Web/Show/1428"
+      },
+      {
+        "label": "《孟子注疏》卷五：赵岐注考公／定公、元公／文公",
+        "url": "https://ctext.org/wiki.pl?chapter=372734&if=en"
+      },
+      {
+        "label": "《礼记·檀弓上》：滕伯文与孟虎的亲属关系",
+        "url": "https://ctext.org/text.pl?if=gb&node=9665&show=parallel"
+      },
+      {
+        "label": "《通志》卷二十六·氏族略：滕氏（末君异说所据原文）",
+        "url": "https://zh.wikisource.org/wiki/通志_(四庫全書本)/卷026"
+      },
+      {
+        "label": "《国号》：中国历代国号与史称",
+        "url": "https://zh.wikipedia.org/wiki/国号"
+      },
+      {
+        "label": "《中国政权列表》：各时期政权与国号",
+        "url": "https://zh.wikipedia.org/wiki/中国政权列表"
+      },
+      {
+        "label": "《“国号”中的历史流变》：国号、自称与方位史称",
+        "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
+      },
+      {
+        "label": "《左传·昭公三十一年》",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳/昭公#昭公三十一年"
+      },
+      {
+        "label": "《春秋滕薛杞越莒邾許七國統表》卷三（引《左传》杜注、孔疏）",
+        "url": "https://www.shidianguji.com/zh/book/CADAL02030731/chapter/1l6u63jtnvzfq"
+      },
+      {
+        "label": "滕文公年表（前323—前316年，与本包所采考证框架对照）",
+        "url": "https://zh.wikipedia.org/wiki/滕文公"
+      },
+      {
+        "label": "《史记·陈杞世家》（维基文库）",
+        "url": "https://zh.wikisource.org/wiki/史記/卷036"
+      },
+      {
+        "label": "《左传》（中国哲学书电子化计划）",
+        "url": "https://ctext.org/chun-qiu-zuo-zhuan"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞武公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/代王嘉"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞靖公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞共公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞德公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞成公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞桓公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞孝公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞平公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞悼公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞隐公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞僖公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞湣公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞哀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞出公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞简公"
+      },
+      {
+        "label": "《史记》赵世家、魏世家及楚世家",
+        "url": "https://zh.wikisource.org/wiki/史記"
+      },
+      {
+        "label": "杞国条目（爵位沿革）",
+        "url": "https://zh.wikipedia.org/wiki/杞國"
+      },
+      {
+        "label": "周代诸侯列国（杞国条目底部模板）",
+        "url": "https://zh.wikipedia.org/wiki/Template:周代诸侯列国"
+      },
+      {
+        "label": "《史记·六国年表》",
+        "url": "https://ctext.org/shiji/liu-guo-nian-biao/zh"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷014"
+      },
+      {
+        "label": "《春秋左传正义》卷四：隐公十一年称滕侯、桓公二年已称滕子",
+        "url": "https://zh.wikisource.org/zh-hans/春秋左传正义/卷04"
       }
     ],
     "notes": [
@@ -4374,7 +4711,13 @@
       "2026-10-05：开国候选逐项复核后保留原概述：xue-r1、teng-r0、tian-shi、zhou-guo-jie、zhou-guo-gen。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。",
       "2026-10-05：与已修订开国人物概述、王朝起讫、在位及都城逐条交叉核对，修订王朝简史：qi-state-chunqiu。区分势力发迹、称王、称帝、改国号和灭亡；收录口径与年代取舍只保留在manifest，不写进历史正文。",
       "同步修复杞简公qi-state-r6误写“齐灭杞”，并纠正qi-state-r5、qi-state-chu将杞出公写作亡国末君的表述；末君为简公，楚灭杞据《史记·楚世家》。",
-      "2026-10-05称谓字段修正：按库内 SQL 查询，将杞武公、杞靖公、杞共公、杞德公、杞成公的谥号从 persons.name 移出；《史记·陈杞世家》只载其称号、世系与年次，未载上述本名。杞共公另有辑本异说，缺乏足以定名的可靠依据，故本库留空。西周武公原名“武公”与谥号相同，现据《史记·周本纪》及《史记集解》未载本名而清空；后世表所见“共”出处未详。"
+      "2026-10-05称谓字段修正：按库内 SQL 查询，将杞武公、杞靖公、杞共公、杞德公、杞成公的谥号从 persons.name 移出；《史记·陈杞世家》只载其称号、世系与年次，未载上述本名。杞共公另有辑本异说，缺乏足以定名的可靠依据，故本库留空。西周武公原名“武公”与谥号相同，现据《史记·周本纪》及《史记集解》未载本名而清空；后世表所见“共”出处未详。",
+      "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。杞国数据采用该表战国栏所列“伯”。",
+      "东周国等级标签复核（2026-10-05）：“周代诸侯列国”表将东周国标作“君”。“君”不是公、侯、伯、子、男五等爵中的一等，但并非误标：东周国是前367年从周王畿分立的战国小国，《史记·秦本纪》记其末君为“东周君”，前249年秦灭东周时仍以此称之；故按用户指定的来源表保留单字 feudalRank“君”。《东周列国志》关于由公降君的说法是后世叙事，不作为本字段的等级沿革依据。",
+      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
+      "时期边界采用年精度；开始年有史料明确记载时标 year。来源表只按春秋、战国分栏、无确切改称年的，沿用前453年栏界并标 approximate_year，表示分类边界而非断言该年实际改爵。",
+      "“君”依条目语境标记：如东周国为国君称号、卫嗣君为降等后的称号；它不是公、侯、伯、子、男之外的一等通用爵。各条具体含义不由程序统一推断。",
+      "滕国爵称沿革复核（2026-10-05）：用户提供的模板截图明确将西周、春秋栏滕国标为“侯”。《春秋》前712年（鲁隐公十一年）称滕侯；《春秋左传正义》释鲁桓公二年（前710）“隐十一年称侯，今称子者，盖时王所黜”，并言“自是以下，滕当称子”。故数据以前710年首见“滕子”的记事年作为称子分期起点，精度为年；该年是称谓最早明证，不断言正式降爵恰发生于该年。"
     ]
   }
 }

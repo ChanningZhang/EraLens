@@ -1,0 +1,1726 @@
+{
+  "slug": "chunqiu-zhanguo/chen-chunqiu",
+  "window": {
+    "startYear": -1045,
+    "startMonth": 1,
+    "endYear": -478,
+    "endMonth": 12
+  },
+  "persons": [
+    {
+      "id": "chen-r0",
+      "name": "满",
+      "roles": [
+        "君主"
+      ],
+      "bio": "舜裔，周武王克商后受封于陈，建国并奉舜祀。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [
+        "胡公满"
+      ],
+      "posthumousNames": [
+        "胡公"
+      ],
+      "templeNames": [],
+      "title": "胡公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r1",
+      "name": "犀侯",
+      "roles": [
+        "君主"
+      ],
+      "bio": "胡公之子，继位为陈君；早期世系事迹主要见《史记·陈杞世家》。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "申公"
+      ],
+      "templeNames": [],
+      "title": "申公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r2",
+      "name": "皋羊",
+      "roles": [
+        "君主"
+      ],
+      "bio": "申公之弟，承继为陈君；其后由申公之子突继位。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "相公"
+      ],
+      "templeNames": [],
+      "title": "相公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r3",
+      "name": "突",
+      "roles": [
+        "君主"
+      ],
+      "bio": "申公之子，承继相公为陈君，后由其子圉戎继位。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "孝公"
+      ],
+      "templeNames": [],
+      "title": "孝公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r4",
+      "name": "圉戎",
+      "roles": [
+        "君主"
+      ],
+      "bio": "孝公之子，周厉王时期在位；其子宁继位为幽公。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "慎公"
+      ],
+      "templeNames": [],
+      "title": "慎公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r5",
+      "name": "宁",
+      "roles": [
+        "君主"
+      ],
+      "bio": "慎公之子。其在位年代处于可与周王年及春秋纪年相互参照的早期阶段，卒后子孝继位。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "幽公"
+      ],
+      "templeNames": [],
+      "title": "幽公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r6",
+      "name": "孝",
+      "roles": [
+        "君主"
+      ],
+      "bio": "幽公之子，在位期间周宣王即位；卒后子灵继位。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [
+        "釐公"
+      ],
+      "posthumousNames": [
+        "僖公"
+      ],
+      "templeNames": [],
+      "title": "僖公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r7",
+      "name": "灵",
+      "roles": [
+        "君主"
+      ],
+      "bio": "僖公之子，卒后子说继位。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "武公"
+      ],
+      "templeNames": [],
+      "title": "武公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r8",
+      "name": "说",
+      "roles": [
+        "君主"
+      ],
+      "bio": "武公之子，在位期间周幽王即位；卒后由弟燮继位。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "夷公"
+      ],
+      "templeNames": [],
+      "title": "夷公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r9",
+      "name": "燮",
+      "roles": [
+        "君主"
+      ],
+      "bio": "夷公之弟，周幽王被杀、周室东迁发生于其在位后期；卒后子圉继位。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "平公"
+      ],
+      "templeNames": [],
+      "title": "平公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r10",
+      "name": "圉",
+      "roles": [
+        "君主"
+      ],
+      "bio": "平公之子，娶蔡女并生佗；卒后长子鲍继位。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "文公"
+      ],
+      "templeNames": [],
+      "title": "文公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r11",
+      "name": "鲍",
+      "roles": [
+        "君主"
+      ],
+      "bio": "文公之子，在位三十八年。卒后弟佗在蔡人支持下即位，陈国继承与政局转入动荡。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "桓公"
+      ],
+      "templeNames": [],
+      "title": "桓公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r12",
+      "name": "佗",
+      "roles": [
+        "君主"
+      ],
+      "bio": "桓公之弟，母为蔡女。桓公卒后蔡人杀太子免等人而立佗；在位不足一年，后为蔡人所杀。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [
+        "陈侯佗",
+        "厉公"
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "佗",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r13",
+      "name": "跃",
+      "roles": [
+        "君主"
+      ],
+      "bio": "桓公之子。蔡人杀佗后立跃；《史记》记其在位七年，后由弟林继位。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [
+        "利公"
+      ],
+      "posthumousNames": [
+        "厉公"
+      ],
+      "templeNames": [],
+      "title": "厉公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r14",
+      "name": "林",
+      "roles": [
+        "君主"
+      ],
+      "bio": "厉公之弟。继位七年而卒，少弟杵臼继位为宣公。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "庄公"
+      ],
+      "templeNames": [],
+      "title": "庄公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r15",
+      "name": "杵臼",
+      "roles": [
+        "君主"
+      ],
+      "bio": "庄公之弟，在位四十五年。杀太子御寇而改立宠姬之子款；公子完因与御寇交好避祸奔齐，成为田氏后来的先祖。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "宣公"
+      ],
+      "templeNames": [],
+      "title": "宣公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r16",
+      "name": "款",
+      "roles": [
+        "君主"
+      ],
+      "bio": "宣公之子，承继为陈君；卒后子朔继位。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "穆公"
+      ],
+      "templeNames": [],
+      "title": "穆公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r17",
+      "name": "朔",
+      "roles": [
+        "君主"
+      ],
+      "bio": "穆公之子，卒后子平国继位。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "共公"
+      ],
+      "templeNames": [],
+      "title": "共公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r18",
+      "name": "平国",
+      "roles": [
+        "君主"
+      ],
+      "bio": "共公之子。与大夫孔宁、仪行父皆与夏姬私通；前599年被夏征舒射杀，太子午出奔晋国。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "灵公"
+      ],
+      "templeNames": [],
+      "title": "灵公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r19",
+      "name": "征舒",
+      "roles": [
+        "君主"
+      ],
+      "bio": "夏御叔与夏姬之子，陈宣公后裔。前599年射杀陈灵公后自立为陈侯，同年楚庄王伐陈并杀征舒。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [
+        "夏征舒",
+        "陈侯征舒"
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "征舒",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r20",
+      "name": "午",
+      "roles": [
+        "君主"
+      ],
+      "bio": "灵公之子。前599年灵公死后出奔晋国，前598年楚庄王迎立其归陈复位；在位三十年，卒后子弱继位。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "成公"
+      ],
+      "templeNames": [],
+      "title": "成公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r21",
+      "name": "弱",
+      "roles": [
+        "君主"
+      ],
+      "bio": "成公之子。前566年楚围陈；晚年宠爱公子留，司徒招杀太子偃师并立留，哀公随后自缢。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "哀公"
+      ],
+      "templeNames": [],
+      "title": "哀公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r22",
+      "name": "留",
+      "roles": [
+        "君主"
+      ],
+      "bio": "哀公之子。前534年司徒招在杀太子偃师后立留为君；当年楚军灭陈，留出奔郑。史书记其在位自三月至十一月，月份为古历记载，未直接换算为公历月。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [
+        "陈侯留"
+      ],
+      "posthumousNames": [],
+      "templeNames": [],
+      "title": "留",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r23",
+      "name": "吴",
+      "roles": [
+        "君主"
+      ],
+      "bio": "悼太子师之子、哀公之孙。前529年楚平王恢复陈国并立吴为陈侯；陈国由楚县复国。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "惠公"
+      ],
+      "templeNames": [],
+      "title": "惠公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r24",
+      "name": "柳",
+      "roles": [
+        "君主"
+      ],
+      "bio": "惠公之子。吴国两度召其赴吴，最终将他扣留；柳客死吴国后，子越继位。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [],
+      "posthumousNames": [
+        "怀公"
+      ],
+      "templeNames": [],
+      "title": "怀公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    },
+    {
+      "id": "chen-r25",
+      "name": "越",
+      "roles": [
+        "君主"
+      ],
+      "bio": "怀公之子。前496年陈与楚灭顿，前489年吴攻陈而楚救陈；前478年楚军攻陈，楚惠王杀越，陈国灭亡。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "《史记·陈杞世家》",
+          "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        }
+      ],
+      "birth": null,
+      "death": null,
+      "altNames": [
+        "闵公"
+      ],
+      "posthumousNames": [
+        "湣公"
+      ],
+      "templeNames": [],
+      "title": "湣公",
+      "ancestralXing": "媯",
+      "clanShi": "陈",
+      "dynastyId": "chen-chunqiu"
+    }
+  ],
+  "dynastyGroups": [],
+  "dynasties": [
+    {
+      "id": "chen-chunqiu",
+      "name": "陈",
+      "altNames": [
+        "陈",
+        "陈国"
+      ],
+      "scope": "cn",
+      "region": "east_asia",
+      "start": {
+        "year": -1045,
+        "month": 1,
+        "abs": -12528,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -478,
+        "month": 12,
+        "abs": -5713,
+        "confidence": "year"
+      },
+      "note": "周武王封舜后于陈，陈国以宛丘为都。前534年楚灭陈并置县，前529年复国；前478年楚惠王杀陈湣公，陈亡。",
+      "feudalRank": {
+        "periods": [
+          {
+            "rank": "侯",
+            "start": {
+              "year": -1045,
+              "month": 1,
+              "confidence": "approximate_year"
+            },
+            "end": {
+              "year": -478,
+              "month": 12,
+              "confidence": "year"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "reigns": [
+    {
+      "id": "reign-chen-r0-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r0",
+      "title": "胡公",
+      "start": {
+        "year": -1045,
+        "month": 1,
+        "abs": -12528,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -986,
+        "month": 12,
+        "abs": -11809,
+        "confidence": "approximate_year"
+      },
+      "startAbs": -12528,
+      "endAbs": -11809,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r1-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r1",
+      "title": "申公",
+      "start": {
+        "year": -985,
+        "month": 1,
+        "abs": -11808,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -961,
+        "month": 12,
+        "abs": -11509,
+        "confidence": "approximate_year"
+      },
+      "startAbs": -11808,
+      "endAbs": -11509,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r2-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r2",
+      "title": "相公",
+      "start": {
+        "year": -960,
+        "month": 1,
+        "abs": -11508,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -939,
+        "month": 12,
+        "abs": -11245,
+        "confidence": "approximate_year"
+      },
+      "startAbs": -11508,
+      "endAbs": -11245,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r3-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r3",
+      "title": "孝公",
+      "start": {
+        "year": -938,
+        "month": 1,
+        "abs": -11244,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -905,
+        "month": 12,
+        "abs": -10837,
+        "confidence": "approximate_year"
+      },
+      "startAbs": -11244,
+      "endAbs": -10837,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r4-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r4",
+      "title": "慎公",
+      "start": {
+        "year": -904,
+        "month": 1,
+        "abs": -10836,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -855,
+        "month": 12,
+        "abs": -10237,
+        "confidence": "approximate_year"
+      },
+      "startAbs": -10836,
+      "endAbs": -10237,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r5-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r5",
+      "title": "幽公",
+      "start": {
+        "year": -854,
+        "month": 1,
+        "abs": -10236,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -832,
+        "month": 12,
+        "abs": -9961,
+        "confidence": "year"
+      },
+      "startAbs": -10236,
+      "endAbs": -9961,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r6-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r6",
+      "title": "僖公",
+      "start": {
+        "year": -831,
+        "month": 1,
+        "abs": -9960,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -796,
+        "month": 12,
+        "abs": -9529,
+        "confidence": "year"
+      },
+      "startAbs": -9960,
+      "endAbs": -9529,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r7-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r7",
+      "title": "武公",
+      "start": {
+        "year": -795,
+        "month": 1,
+        "abs": -9528,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -781,
+        "month": 12,
+        "abs": -9349,
+        "confidence": "year"
+      },
+      "startAbs": -9528,
+      "endAbs": -9349,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r8-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r8",
+      "title": "夷公",
+      "start": {
+        "year": -780,
+        "month": 1,
+        "abs": -9348,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -778,
+        "month": 12,
+        "abs": -9313,
+        "confidence": "year"
+      },
+      "startAbs": -9348,
+      "endAbs": -9313,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r9-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r9",
+      "title": "平公",
+      "start": {
+        "year": -777,
+        "month": 1,
+        "abs": -9312,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -755,
+        "month": 12,
+        "abs": -9037,
+        "confidence": "year"
+      },
+      "startAbs": -9312,
+      "endAbs": -9037,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r10-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r10",
+      "title": "文公",
+      "start": {
+        "year": -754,
+        "month": 1,
+        "abs": -9036,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -745,
+        "month": 12,
+        "abs": -8917,
+        "confidence": "year"
+      },
+      "startAbs": -9036,
+      "endAbs": -8917,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r11-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r11",
+      "title": "桓公",
+      "start": {
+        "year": -744,
+        "month": 1,
+        "abs": -8916,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -707,
+        "month": 12,
+        "abs": -8461,
+        "confidence": "year"
+      },
+      "startAbs": -8916,
+      "endAbs": -8461,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r12-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r12",
+      "title": "佗",
+      "start": {
+        "year": -707,
+        "month": 1,
+        "abs": -8472,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -706,
+        "month": 12,
+        "abs": -8449,
+        "confidence": "year"
+      },
+      "startAbs": -8472,
+      "endAbs": -8449,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r13-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r13",
+      "title": "厉公",
+      "start": {
+        "year": -706,
+        "month": 1,
+        "abs": -8460,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -700,
+        "month": 12,
+        "abs": -8377,
+        "confidence": "year"
+      },
+      "startAbs": -8460,
+      "endAbs": -8377,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r14-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r14",
+      "title": "庄公",
+      "start": {
+        "year": -699,
+        "month": 1,
+        "abs": -8376,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -693,
+        "month": 12,
+        "abs": -8293,
+        "confidence": "year"
+      },
+      "startAbs": -8376,
+      "endAbs": -8293,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r15-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r15",
+      "title": "宣公",
+      "start": {
+        "year": -692,
+        "month": 1,
+        "abs": -8292,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -648,
+        "month": 12,
+        "abs": -7753,
+        "confidence": "year"
+      },
+      "startAbs": -8292,
+      "endAbs": -7753,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r16-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r16",
+      "title": "穆公",
+      "start": {
+        "year": -647,
+        "month": 1,
+        "abs": -7752,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -632,
+        "month": 12,
+        "abs": -7561,
+        "confidence": "year"
+      },
+      "startAbs": -7752,
+      "endAbs": -7561,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r17-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r17",
+      "title": "共公",
+      "start": {
+        "year": -631,
+        "month": 1,
+        "abs": -7560,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -614,
+        "month": 12,
+        "abs": -7345,
+        "confidence": "year"
+      },
+      "startAbs": -7560,
+      "endAbs": -7345,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r18-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r18",
+      "title": "灵公",
+      "start": {
+        "year": -613,
+        "month": 1,
+        "abs": -7344,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -599,
+        "month": 12,
+        "abs": -7165,
+        "confidence": "year"
+      },
+      "startAbs": -7344,
+      "endAbs": -7165,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r19-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r19",
+      "title": "征舒",
+      "start": {
+        "year": -599,
+        "month": 1,
+        "abs": -7176,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -599,
+        "month": 12,
+        "abs": -7165,
+        "confidence": "year"
+      },
+      "startAbs": -7176,
+      "endAbs": -7165,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r20-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r20",
+      "title": "成公",
+      "start": {
+        "year": -598,
+        "month": 1,
+        "abs": -7164,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -569,
+        "month": 12,
+        "abs": -6805,
+        "confidence": "year"
+      },
+      "startAbs": -7164,
+      "endAbs": -6805,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r21-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r21",
+      "title": "哀公",
+      "start": {
+        "year": -568,
+        "month": 1,
+        "abs": -6804,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -534,
+        "month": 12,
+        "abs": -6385,
+        "confidence": "year"
+      },
+      "startAbs": -6804,
+      "endAbs": -6385,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r22-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r22",
+      "title": "留",
+      "start": {
+        "year": -534,
+        "month": 1,
+        "abs": -6396,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -534,
+        "month": 12,
+        "abs": -6385,
+        "confidence": "year"
+      },
+      "startAbs": -6396,
+      "endAbs": -6385,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r23-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r23",
+      "title": "惠公",
+      "start": {
+        "year": -529,
+        "month": 1,
+        "abs": -6336,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -506,
+        "month": 12,
+        "abs": -6049,
+        "confidence": "year"
+      },
+      "startAbs": -6336,
+      "endAbs": -6049,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r24-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r24",
+      "title": "怀公",
+      "start": {
+        "year": -505,
+        "month": 1,
+        "abs": -6048,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -502,
+        "month": 12,
+        "abs": -6001,
+        "confidence": "year"
+      },
+      "startAbs": -6048,
+      "endAbs": -6001,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    },
+    {
+      "id": "reign-chen-r25-chen-chunqiu",
+      "dynastyId": "chen-chunqiu",
+      "personId": "chen-r25",
+      "title": "湣公",
+      "start": {
+        "year": -501,
+        "month": 1,
+        "abs": -6000,
+        "confidence": "year"
+      },
+      "end": {
+        "year": -478,
+        "month": 12,
+        "abs": -5713,
+        "confidence": "year"
+      },
+      "startAbs": -6000,
+      "endAbs": -5713,
+      "claimTrack": null,
+      "claimLabel": null,
+      "eraNames": [],
+      "isMain": false
+    }
+  ],
+  "events": [],
+  "relations": [
+    {
+      "id": "rel-chen-r0-chen-r1-succession",
+      "fromRef": "person:chen-r0",
+      "toRef": "person:chen-r1",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r1-chen-r2-succession",
+      "fromRef": "person:chen-r1",
+      "toRef": "person:chen-r2",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r2-chen-r3-succession",
+      "fromRef": "person:chen-r2",
+      "toRef": "person:chen-r3",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r3-chen-r4-succession",
+      "fromRef": "person:chen-r3",
+      "toRef": "person:chen-r4",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r4-chen-r5-succession",
+      "fromRef": "person:chen-r4",
+      "toRef": "person:chen-r5",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r5-chen-r6-succession",
+      "fromRef": "person:chen-r5",
+      "toRef": "person:chen-r6",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r6-chen-r7-succession",
+      "fromRef": "person:chen-r6",
+      "toRef": "person:chen-r7",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r7-chen-r8-succession",
+      "fromRef": "person:chen-r7",
+      "toRef": "person:chen-r8",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r8-chen-r9-succession",
+      "fromRef": "person:chen-r8",
+      "toRef": "person:chen-r9",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r9-chen-r10-succession",
+      "fromRef": "person:chen-r9",
+      "toRef": "person:chen-r10",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r10-chen-r11-succession",
+      "fromRef": "person:chen-r10",
+      "toRef": "person:chen-r11",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r11-chen-r12-succession",
+      "fromRef": "person:chen-r11",
+      "toRef": "person:chen-r12",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r12-chen-r13-succession",
+      "fromRef": "person:chen-r12",
+      "toRef": "person:chen-r13",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r13-chen-r14-succession",
+      "fromRef": "person:chen-r13",
+      "toRef": "person:chen-r14",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r14-chen-r15-succession",
+      "fromRef": "person:chen-r14",
+      "toRef": "person:chen-r15",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r15-chen-r16-succession",
+      "fromRef": "person:chen-r15",
+      "toRef": "person:chen-r16",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r16-chen-r17-succession",
+      "fromRef": "person:chen-r16",
+      "toRef": "person:chen-r17",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r17-chen-r18-succession",
+      "fromRef": "person:chen-r17",
+      "toRef": "person:chen-r18",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r18-chen-r19-succession",
+      "fromRef": "person:chen-r18",
+      "toRef": "person:chen-r19",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r19-chen-r20-succession",
+      "fromRef": "person:chen-r19",
+      "toRef": "person:chen-r20",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r20-chen-r21-succession",
+      "fromRef": "person:chen-r20",
+      "toRef": "person:chen-r21",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r21-chen-r22-succession",
+      "fromRef": "person:chen-r21",
+      "toRef": "person:chen-r22",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r23-chen-r24-succession",
+      "fromRef": "person:chen-r23",
+      "toRef": "person:chen-r24",
+      "kind": "succession"
+    },
+    {
+      "id": "rel-chen-r24-chen-r25-succession",
+      "fromRef": "person:chen-r24",
+      "toRef": "person:chen-r25",
+      "kind": "succession"
+    }
+  ],
+  "manifest": {
+    "slug": "chunqiu-zhanguo/chen-chunqiu",
+    "title": "陈国（春秋诸侯国）",
+    "window": {
+      "startYear": -1045,
+      "startMonth": 1,
+      "endYear": -478,
+      "endMonth": 12
+    },
+    "scope": "cn",
+    "depth": "standard",
+    "generatedAt": "2026-10-05",
+    "sources": [
+      {
+        "label": "陈国",
+        "url": "https://zh.wikipedia.org/wiki/陈国"
+      },
+      {
+        "label": "陈国君主世系图",
+        "url": "https://zh.wikipedia.org/wiki/陈国君主世系图"
+      },
+      {
+        "label": "《史记·卷三十六·陈杞世家》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷036"
+      },
+      {
+        "label": "《春秋左氏传》",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳"
+      },
+      {
+        "label": "杞国条目（爵位沿革）",
+        "url": "https://zh.wikipedia.org/wiki/杞國"
+      },
+      {
+        "label": "周口市文化广电和旅游局：《“陈楚故城”复建3000年前古城墙》",
+        "url": "https://wglj.zhoukou.gov.cn/sitesources/whgdlyj/page_pc/wzsy/gzdt/article8b2d5782dd0143e5a6e76119620c5c56.html"
+      },
+      {
+        "label": "河南省人民政府台湾事务办公室：《“寻根淮阳”系列之“序言篇”人祖龙根在淮阳》",
+        "url": "https://ytsc.rootinhenan.gov.cn/sitesources/ytsc/page_pc/hnly/xsgq/articleed62c31f08504d88a4eb7ee59ce439ca.html"
+      },
+      {
+        "label": "陈国",
+        "url": "https://zh.wikipedia.org/wiki/陈国"
+      },
+      {
+        "label": "陈国君主世系图",
+        "url": "https://zh.wikipedia.org/wiki/陈国君主世系图"
+      },
+      {
+        "label": "《史记·卷三十六·陈杞世家》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷036"
+      },
+      {
+        "label": "《春秋左氏传》",
+        "url": "https://zh.wikisource.org/wiki/春秋左氏傳"
+      },
+      {
+        "label": "杞国条目（爵位沿革）",
+        "url": "https://zh.wikipedia.org/wiki/杞國"
+      },
+      {
+        "label": "周口市文化广电和旅游局：《“陈楚故城”复建3000年前古城墙》",
+        "url": "https://wglj.zhoukou.gov.cn/sitesources/whgdlyj/page_pc/wzsy/gzdt/article8b2d5782dd0143e5a6e76119620c5c56.html"
+      },
+      {
+        "label": "河南省人民政府台湾事务办公室：《“寻根淮阳”系列之“序言篇”人祖龙根在淮阳》",
+        "url": "https://ytsc.rootinhenan.gov.cn/sitesources/ytsc/page_pc/hnly/xsgq/articleed62c31f08504d88a4eb7ee59ce439ca.html"
+      },
+      {
+        "label": "周代诸侯列国（杞国条目底部模板）",
+        "url": "https://zh.wikipedia.org/wiki/Template:周代诸侯列国"
+      },
+      {
+        "label": "《史记·六国年表》",
+        "url": "https://ctext.org/shiji/liu-guo-nian-biao/zh"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷014"
+      }
+    ],
+    "notes": [
+      "主君序列与在位年份以《陈国》条目所列君主表为基准，并与《史记·陈杞世家》《左传》所载世系及关键节点互核；不把维基世系图中不同表格的推测年份混用。",
+      "《陈国》条目注称幽公以前君主在位年均为推测，故胡公至申公的起讫端点使用 approximate_year；幽公起点也采用 approximate_year，以与此前推测终点保持同一交接依据。具体年份用于定位而非确定到月日。",
+      "前707至前706年佗在位八个月、前706至前700年跃在位七年；依来源所列原始年份保留短祚及同年交接，不机械把佗后移。前599年陈征舒杀灵公后自立、同年被楚杀，作为短期在位保留同年起讫。",
+      "前534年公子留即位及楚灭陈均发生于同年；《左传》所记三月至十一月为古历月份，未换算为公历月份，因此时间字段保留年精度，月份叙述只保留在概述。",
+      "前534年楚灭陈并置县，楚大夫穿封戌为陈公；他是楚国任命的县公而非陈国君，未建陈国reign。前529年陈复国，吴归陈为侯；在前534至前529年的楚直接统治期不补造陈君，也不把复国前后接为连续人物继承。",
+      "周初受封传统系年采用维基条目所列前1045年并标 approximate_year；陈国末年采用《左传》及《史记》系于前478年。陈侯征舒和陈侯留虽未获正式谥号，依在位事实收录但不将其身份写入谥号字段。",
+      "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
+      "都城mapping：沿用陈国条目所记宛丘为都，现代范围采用周口市淮阳区；周口市文旅部门资料定位于淮阳城关镇。河南省台办所载历史地理说明区分宛丘土丘与春秋陈楚故城，指出宛丘在古陈城东南且具体比定有异说。因此复用 locations 包淮阳区城市范围约略点，不把行政区点标成遗址精确坐标。都城时段沿用陈国传统起讫范围，起点约前1045年，终点前478年。",
+      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
+      "时期边界采用年精度；开始年有史料明确记载时标 year。来源表只按春秋、战国分栏、无确切改称年的，沿用前453年栏界并标 approximate_year，表示分类边界而非断言该年实际改爵。"
+    ]
+  },
+  "locationMappings": [
+    {
+      "id": "cap-chen-chunqiu-wanqiu-1045",
+      "locationId": "loc-f04f2eab0280928be374ac4e6e4b2a10",
+      "kind": "dynasty",
+      "externalId": "chen-chunqiu",
+      "historicalName": "宛丘",
+      "role": "primary",
+      "start": {
+        "year": -1045,
+        "month": 1,
+        "abs": -12528,
+        "confidence": "approximate_year"
+      },
+      "end": {
+        "year": -478,
+        "month": 12,
+        "abs": -5713,
+        "confidence": "year"
+      },
+      "startAbs": -12528,
+      "endAbs": -5713,
+      "spatialPrecision": "淮阳城区范围约略点，非宛丘土丘或古城墙遗址的精确中心。",
+      "note": "陈国以宛丘为都，地望在今河南省周口市淮阳区一带。宛丘土丘与春秋陈楚故城的具体相对位置、考古遗址比定存在不同说法；本点复用淮阳区城市范围定位，仅表示都城所在区域，不主张遗址精确坐标。",
+      "links": [
+        {
+          "label": "维基百科：陈国",
+          "url": "https://zh.wikipedia.org/wiki/陈国"
+        },
+        {
+          "label": "周口市文化广电和旅游局：《“陈楚故城”复建3000年前古城墙》",
+          "url": "https://wglj.zhoukou.gov.cn/sitesources/whgdlyj/page_pc/wzsy/gzdt/article8b2d5782dd0143e5a6e76119620c5c56.html"
+        },
+        {
+          "label": "河南省人民政府台湾事务办公室：《“寻根淮阳”系列之“序言篇”人祖龙根在淮阳》",
+          "url": "https://ytsc.rootinhenan.gov.cn/sitesources/ytsc/page_pc/hnly/xsgq/articleed62c31f08504d88a4eb7ee59ce439ca.html"
+        }
+      ]
+    }
+  ]
+}

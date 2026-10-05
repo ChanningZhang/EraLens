@@ -18,6 +18,7 @@ INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_s
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-17f7888ff91688321999184cfd1fe654','福建省福州市',119.296411,26.074286,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-196d420edc2358abf08394a3b0cb6ef5','河南省郑州市荥阳市汜水镇虎牢关遗址',113.13,34.91,'WGS84');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-1bc639efb49d835e714ac0e15ab69752','甘肃省武威市',102.637821,37.92898,'GCJ02');
+INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-1c9505fb757f399069819e0562ed9f0a','河南省驻马店市新蔡县城关镇西北部新蔡故城遗址区域（示意点）',114.979306,32.749158,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-1ea20b006e9d880c15ec72dcb4e97b1e','内蒙古自治区赤峰市克什克腾旗达日罕乌拉苏木应昌路故城遗址',116.487067,43.269985,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-1ed87e6c1c5aec9650cf0e1a436c6dc4','陕西省西安市',108.939645,34.343207,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-20cf322c3ac6c0c10c4f113a5572ab75','安徽省宿州市灵璧县东南一带',117.62,33.43,'WGS84');
@@ -57,6 +58,7 @@ INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_s
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-42f30eb44965d5d771ed147d4ff28787','河北省邢台市巨鹿县一带',115.037,37.221,'WGS84');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-454e2784686de512df6c7429d442a66c','湖北省咸宁市赤壁市赤壁镇至洪湖市乌林镇',113.63,29.89,'WGS84');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-464ca4b5ce39e700a0b48163b3bca982','山东省枣庄市台儿庄区台儿庄古城一带',117.7348,34.56,'WGS84');
+INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-4a04c289ebc12a812e0fd7c8fe458df6','安徽省淮南市凤台县城关镇北端州来古城区域（示意点）',116.735288,32.711976,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-4adb5fc9b88edb3e46611b219415f7ac','湖南省长沙市',112.938882,28.228304,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-4de38da8dfd40c7a25fe5227987ea1d0','西藏自治区拉萨市',91.171924,29.653491,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-4ecc93e88e68734a88f3e47717ab8cfd','吉林省通化市集安市',126.193172,41.125805,'GCJ02');
@@ -175,6 +177,7 @@ INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_s
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-ea36bf10f6f624664cffe9590c9bef79','北京市',116.407387,39.904179,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-ec15bd36f0eb0c34a7794f7900c22600','云南省昆明市',102.833669,24.88149,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-eecfe59f04a51bc8e52cdf08659d4980','山西省长治市长子县',112.877922,36.122258,'GCJ02');
+INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-eedb70b881c9a04e37c1d405c41c034a','河南省驻马店市上蔡县蔡国故城遗址公园（遗址范围代表点）',114.249714,33.273434,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-f04f2eab0280928be374ac4e6e4b2a10','河南省周口市淮阳区',114.852604,33.731543,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-f11b5ed638470a31da66f7454ce9945c','河北省邢台市',114.49742,37.060227,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-f178892393ffa783eb3334eca474b3ad','湖北省宜昌市夷陵区至猇亭区',111.42,30.95,'WGS84');
@@ -210,5 +213,6 @@ INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_s
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-prehistoric-shimao-site','陕西省榆林市神木市高家堡镇石峁遗址',110.32538,38.56564,'WGS84');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-prehistoric-taosi-site','山西省临汾市襄汾县陶寺乡陶寺遗址',111.49717,35.890603,'WGS84');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-prehistoric-yangshao-site','河南省三门峡市渑池县仰韶镇仰韶村南仰韶村遗址',111.777333,34.810528,'WGS84');
+INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-shang-bi-yuncheng-approx','山东省菏泽市郓城县区域（庇故址推定范围）',115.944412,35.574958,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-wu-wuchang-ezhou','湖北省鄂州市鄂城区吴王城遗址',114.895675,30.402416,'GCJ02');
 COMMIT;

@@ -660,7 +660,37 @@
         "abs": -5653,
         "confidence": "month"
       },
-      "note": "传世世系上溯至泰伯；《史记·吴太伯世家》记载武王克殷时周章已君吴，本项目以西周建国年（前1046）为周章起年确定锚点。锚点前后的无年表连续君主分别按世系均分，失考边标为 interpolated；寿梦起始保留前585年年表锚点。前473年越灭吴。"
+      "note": "传世世系上溯至泰伯；《史记·吴太伯世家》记载武王克殷时周章已君吴，本项目以西周建国年（前1046）为周章起年确定锚点。锚点前后的无年表连续君主分别按世系均分，失考边标为 interpolated；寿梦起始保留前585年年表锚点。前473年越灭吴。",
+      "feudalRank": {
+        "periods": [
+          {
+            "rank": "伯",
+            "start": {
+              "year": -1100,
+              "month": 1,
+              "confidence": "year"
+            },
+            "end": {
+              "year": -586,
+              "month": 12,
+              "confidence": "approximate_year"
+            }
+          },
+          {
+            "rank": "王",
+            "start": {
+              "year": -585,
+              "month": 1,
+              "confidence": "approximate_year"
+            },
+            "end": {
+              "year": -473,
+              "month": 12,
+              "confidence": "month"
+            }
+          }
+        ]
+      }
     }
   ],
   "reigns": [
@@ -1493,6 +1523,178 @@
       {
         "label": "《史记·吴太伯世家》（中国哲学书电子化计划）",
         "url": "https://ctext.org/shiji/wu-tai-bo-shi-jia/zhs"
+      },
+      {
+        "label": "杞国条目（爵位沿革）",
+        "url": "https://zh.wikipedia.org/wiki/杞國"
+      },
+      {
+        "label": "春秋时期",
+        "url": "https://zh.wikipedia.org/wiki/春秋时期"
+      },
+      {
+        "label": "战国时期",
+        "url": "https://zh.wikipedia.org/wiki/战国时期"
+      },
+      {
+        "label": "战国七雄",
+        "url": "https://zh.wikipedia.org/wiki/战国七雄"
+      },
+      {
+        "label": "周朝诸侯国君主列表",
+        "url": "https://zh.wikipedia.org/zh-cn/周朝诸侯国君主列表"
+      },
+      {
+        "label": "吴国",
+        "url": "https://zh.wikipedia.org/wiki/吴国"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/泰伯"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/仲雍"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/季简"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/叔达"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周章"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/熊遂"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/柯相"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/彊鸠夷"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/余桥疑吾"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/柯卢"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/周繇"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/屈羽"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/夷吾"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/禽处"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/转"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/颇高"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/句卑"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/去齐"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴王寿梦"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴王诸樊"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴王余祭"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴王余昧"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴王僚"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/阖闾"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴王夫概"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/吴王夫差"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/孙武"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/伍子胥"
+      },
+      {
+        "label": "《国号》：中国历代国号与史称",
+        "url": "https://zh.wikipedia.org/wiki/国号"
+      },
+      {
+        "label": "《中国政权列表》：各时期政权与国号",
+        "url": "https://zh.wikipedia.org/wiki/中国政权列表"
+      },
+      {
+        "label": "《“国号”中的历史流变》：国号、自称与方位史称",
+        "url": "https://paper.people.com.cn/rmlt/html/2024-02/01/content_26042785.htm"
+      },
+      {
+        "label": "《史记·吴太伯世家》（中国哲学书电子化计划）",
+        "url": "https://ctext.org/shiji/wu-tai-bo-shi-jia/zhs"
+      },
+      {
+        "label": "杞国条目（爵位沿革）",
+        "url": "https://zh.wikipedia.org/wiki/杞國"
+      },
+      {
+        "label": "周代诸侯列国（杞国条目底部模板）",
+        "url": "https://zh.wikipedia.org/wiki/Template:周代诸侯列国"
+      },
+      {
+        "label": "《史记·六国年表》",
+        "url": "https://ctext.org/shiji/liu-guo-nian-biao/zh"
+      },
+      {
+        "label": "《史记·十二诸侯年表》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷014"
+      },
+      {
+        "label": "《史记·吴太伯世家》",
+        "url": "https://zh.wikisource.org/wiki/史記/卷031"
       }
     ],
     "notes": [
@@ -1515,7 +1717,10 @@
       "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
       "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。",
       "2026-10-05：人物概述审查与补充。按人物逐条采用具体史事及正史、传世文献或学术考证；史料仅存名号/世系、不能确认具体经历的记录保留简短表述，不以统一模板扩写。",
-      "2026-10-05：开国候选逐项复核后保留原概述：wu-pre-r0。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。"
+      "2026-10-05：开国候选逐项复核后保留原概述：wu-pre-r0。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。",
+      "2026-10-05起feudalRank记录为分期JSON；称号变化日期与置信度及来源取舍见同包爵称沿革说明。",
+      "2026-10-05：feudalRank 改为 {periods:[{rank,start,end}]}，保存来源表中括号的单字称号，并由时间轴标签锚点解析当时称号；“帝”代表“皇帝”的单字显示标签。该字段是来源表称号/爵称，不宣称所有称号构成一套可严格比较的五等爵序列。",
+      "时期边界采用年精度；开始年有史料明确记载时标 year。来源表只按春秋、战国分栏、无确切改称年的，沿用前453年栏界并标 approximate_year，表示分类边界而非断言该年实际改爵。"
     ]
   }
 }

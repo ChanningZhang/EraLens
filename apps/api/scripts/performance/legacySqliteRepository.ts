@@ -49,7 +49,7 @@ export function mapPerson(row: Row): Person {
 
 export function mapDynasty(row: Row): Dynasty {
   return DynastySchema.parse({
-    id: row.id, name: row.name, altNames: strings(row.alt_names), ethnicity: own(row, "ethnicity"), scope: row.scope,
+    id: row.id, name: row.name, altNames: strings(row.alt_names), ethnicity: own(row, "ethnicity"), feudalRank: row.feudal_rank == null ? undefined : json(row.feudal_rank, undefined), scope: row.scope,
     region: row.region, start: { ...point(row.start_year, row.start_month, row.start_day), confidence: row.start_confidence }, end: { ...point(row.end_year, row.end_month, row.end_day), confidence: row.end_confidence },
     startAbs: Number(row.start_abs), endAbs: Number(row.end_abs), precision: confidencePrecision((row.start_confidence ?? "year") as Parameters<typeof confidencePrecision>[0]), startConfidence: row.start_confidence, endConfidence: row.end_confidence,
     colorToken: row.color_token, parentId: own(row, "parent_id"), groupId: own(row, "group_id"), note: own(row, "note"),

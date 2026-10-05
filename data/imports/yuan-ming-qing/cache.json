@@ -3639,7 +3639,7 @@
       "startAbs": 19748,
       "endAbs": 19838,
       "claimTrack": "lu-jian",
-      "claimLabel": "绍兴监国",
+      "claimLabel": "绍兴",
       "isMain": false,
       "isInformalMonarch": true
     },
@@ -3647,7 +3647,7 @@
       "id": "reign-zhu-yuyue-ming-south",
       "dynastyId": "ming",
       "personId": "zhu-yuyue",
-      "title": "绍武",
+      "title": "",
       "eraNames": [
         "绍武"
       ],
@@ -3668,7 +3668,7 @@
       "startAbs": 19763,
       "endAbs": 19764,
       "claimTrack": "shaowu",
-      "claimLabel": "广州",
+      "claimLabel": "绍武",
       "isMain": false
     },
     {

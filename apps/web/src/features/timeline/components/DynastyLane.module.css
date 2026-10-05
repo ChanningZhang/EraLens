@@ -121,6 +121,26 @@
   pointer-events: none;
 }
 
+.feudalRank {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  z-index: 2;
+  max-width: calc(100% - 4px);
+  padding: 2px 4px;
+  border: 1px solid color-mix(in srgb, var(--dynasty-color) 24%, var(--color-border));
+  border-radius: 5px;
+  background: color-mix(in srgb, var(--dynasty-color) 12%, var(--color-surface));
+  box-shadow: 0 1px 3px color-mix(in srgb, var(--color-ink) 10%, transparent);
+  overflow: hidden;
+  color: var(--color-ink-secondary);
+  font: 400 8px/1 var(--font-sans);
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
 .cards {
   position: absolute;
   inset: 0;
