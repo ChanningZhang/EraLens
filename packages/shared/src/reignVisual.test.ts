@@ -147,6 +147,15 @@ describe("formatReignSpanTooltip", () => {
     ).toBe("-356年 — -320年 · 37年");
   });
 
+  it("keeps independent endpoint precision in mixed year/day tooltips", () => {
+    expect(formatReignSpanTooltip(reign({
+      start: { year: 219, month: 1, confidence: "year" },
+      end: { year: 221, month: 5, day: 15, confidence: "day" },
+      startAbs: absMonth(219, 1),
+      endAbs: absMonth(221, 5),
+    }))).toBe("219年 — 221年5月15日 · 2年5个月");
+  });
+
   it("shows interpolated endpoints as question marks", () => {
     expect(
       formatReignSpanTooltip(

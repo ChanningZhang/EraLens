@@ -1212,7 +1212,7 @@
       "roles": [
         "君主"
       ],
-      "bio": "杞湣公名维，处于春秋末年鲁定公、哀公时期；其后杞国国势衰弱，至出公时最终为楚所灭。个人政事在传世文献中记载有限。",
+      "bio": "杞湣公名维，处于春秋末年鲁定公、哀公时期；其后杞国国势衰弱，至简公时最终为楚所灭。个人政事在传世文献中记载有限。",
       "links": [
         {
           "label": "维基百科",
@@ -1221,6 +1221,10 @@
         {
           "label": "《史记·陈杞世家》（维基文库）",
           "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        },
+        {
+          "label": "《史记》楚世家：楚惠王四十四年灭杞",
+          "url": "https://zh.wikisource.org/wiki/史記/卷040"
         }
       ],
       "birth": null,
@@ -1268,7 +1272,7 @@
       "roles": [
         "君主"
       ],
-      "bio": "杞出公名欶，在位末期正值战国诸侯兼并加剧；其后杞国为楚所灭，夏后氏在中原延续的杞国至此终结。",
+      "bio": "杞出公名欶，在战国初期统治杞国，后由简公继位。前445年楚灭杞；出公个人政事在传世文献中记载有限。",
       "links": [
         {
           "label": "维基百科",
@@ -1277,6 +1281,10 @@
         {
           "label": "《史记·陈杞世家》（维基文库）",
           "url": "https://zh.wikisource.org/wiki/史記/卷036"
+        },
+        {
+          "label": "《史记》楚世家：楚惠王四十四年灭杞",
+          "url": "https://zh.wikisource.org/wiki/史記/卷040"
         }
       ],
       "birth": null,
@@ -1296,11 +1304,15 @@
       "roles": [
         "君主"
       ],
-      "bio": "杞简公（春），末代君主，前448–前445年在位。前445年为齐所灭，杞国亡。",
+      "bio": "杞简公名春，杞国末代君主，前448至前445年在位。前445年楚惠王灭杞，杞国结束。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/杞简公"
+        },
+        {
+          "label": "《史记》楚世家：楚惠王四十四年灭杞",
+          "url": "https://zh.wikisource.org/wiki/史記/卷040"
         }
       ],
       "birth": null,
@@ -2075,7 +2087,7 @@
         "abs": -5317,
         "confidence": "month"
       },
-      "note": "自杞武公起有通行在位年；东楼公等更早君主失考。前445年为齐所灭。"
+      "note": "杞为夏后氏后裔受封的诸侯国，早期世系与建国年代记载不足。春秋时期在今山东一带活动，前445年楚惠王灭杞。"
     },
     {
       "id": "ju-chunqiu",
@@ -4237,6 +4249,74 @@
       {
         "label": "维基百科",
         "url": "https://zh.wikipedia.org/wiki/代王嘉"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞靖公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞共公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞德公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞成公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞桓公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞孝公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞文公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞平公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞悼公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞隐公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞僖公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞湣公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞哀公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞出公"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/杞简公"
+      },
+      {
+        "label": "《史记》赵世家、魏世家及楚世家",
+        "url": "https://zh.wikisource.org/wiki/史記"
+      },
+      {
+        "label": "《史记》楚世家：惠王四十四年楚灭杞",
+        "url": "https://zh.wikisource.org/wiki/史記/卷040"
       }
     ],
     "notes": [
@@ -4271,7 +4351,9 @@
       "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。",
       "2026-10-05：人物概述审查与补充。按人物逐条采用具体史事及正史、传世文献或学术考证；史料仅存名号/世系、不能确认具体经历的记录保留简短表述，不以统一模板扩写。",
       "2026-10-05：开国经历逐条复核并改写：qi-state-r1、zhao-jia-dai。分清奠基者、继承者、正式建国及史料缺载；删除无依据评价，保留传说与异说限定。",
-      "2026-10-05：开国候选逐项复核后保留原概述：xue-r1、teng-r0、tian-shi、zhou-guo-jie、zhou-guo-gen。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。"
+      "2026-10-05：开国候选逐项复核后保留原概述：xue-r1、teng-r0、tian-shi、zhou-guo-jie、zhou-guo-gen。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。",
+      "2026-10-05：与已修订开国人物概述、王朝起讫、在位及都城逐条交叉核对，修订王朝简史：qi-state-chunqiu。区分势力发迹、称王、称帝、改国号和灭亡；收录口径与年代取舍只保留在manifest，不写进历史正文。",
+      "同步修复杞简公qi-state-r6误写“齐灭杞”，并纠正qi-state-r5、qi-state-chu将杞出公写作亡国末君的表述；末君为简公，楚灭杞据《史记·楚世家》。"
     ]
   }
 }

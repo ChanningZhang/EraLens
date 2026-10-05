@@ -5,6 +5,24 @@ import { EventSchema, type Reign } from "./schema";
 import { absMonth } from "./time";
 import { buildEntityDetail } from "./timelineData";
 
+function capitalMappingsFor(reigns: readonly Reign[]) {
+  return reigns.map((r) => locationFixture({
+    id: `capital-${r.id}`,
+    dynastyId: r.dynastyId,
+    historicalName: "测试都城",
+    modernName: "测试今址",
+    longitude: 110,
+    latitude: 30,
+    coordinateSystem: "GCJ02",
+    start: r.start,
+    end: r.end,
+    startAbs: r.startAbs,
+    endAbs: r.endAbs,
+    role: "primary",
+    links: [],
+  }, "reign", r.id));
+}
+
 function reign(overrides: Partial<Reign> & { templeName?: string }): Reign {
   const { templeName, ...reignOverrides } = overrides;
   const start = reignOverrides.start ?? { year: 960, month: 1 };
@@ -66,9 +84,7 @@ describe("buildEntityDetail reign", () => {
       { label: "庙号", value: "太祖" },
       { label: "年号", value: "建隆" },
     ]);
-    expect(detail.capitalTenures).toMatchObject([
-      { tenure: { ref: { type: "reign", id: "reign-test" }, abs: absMonth(960, 1) } },
-    ]);
+    expect(detail.capitalTenures).toEqual([]);
   });
 
   it("pairs capitals with reign tenure rows while retaining focused reign facts", () => {
@@ -711,16 +727,7 @@ describe("buildEntityDetail person", () => {
 
     expect(detail.related.map((item) => item.group)).toEqual(["idiom"]);
     expect(detail.related[0]?.label).toBe("卧薪尝胆");
-    expect(detail.capitalTenures).toEqual([
-      {
-        tenure: {
-          ref: { type: "reign", id: "reign-gou-jian-yue-chunqiu" },
-          label: "-496年 — -464年",
-          abs: -5932,
-          duration: "33年",
-        },
-      },
-    ]);
+    expect(detail.capitalTenures).toEqual([]);
   });
 
   it("shows pre-Qin appellation as title and dynasty-appellation on reign cards", () => {
@@ -780,16 +787,7 @@ describe("buildEntityDetail person", () => {
       { label: "谥号", value: "宫伯" },
     ]);
     expect(detail.related).toEqual([]);
-    expect(detail.capitalTenures).toEqual([
-      {
-        tenure: {
-          ref: { type: "reign", id: "reign-cao-gongbo" },
-          label: "-938年 — -903年",
-          abs: absMonth(-938, 1),
-          duration: "36年",
-        },
-      },
-    ]);
+    expect(detail.capitalTenures).toEqual([]);
   });
 
   it("lists multiple reigns in chronological order", () => {
@@ -846,7 +844,7 @@ describe("buildEntityDetail person", () => {
       relations: [],
     };
 
-    const detail = buildEntityDetail(store, { type: "person", id: "zhu-qizhen" });
+    const detail = buildEntityDetail({ ...store, locationMappings: capitalMappingsFor(store.reigns) }, { type: "person", id: "zhu-qizhen" });
 
     expect(detail.related).toEqual([]);
     expect(detail.capitalTenures.map((row) => row.tenure.ref.id)).toEqual([
@@ -898,7 +896,7 @@ describe("buildEntityDetail person", () => {
       relations: [],
     };
 
-    const detail = buildEntityDetail(store, { type: "person", id: "ruler" });
+    const detail = buildEntityDetail({ ...store, locationMappings: capitalMappingsFor(store.reigns) }, { type: "person", id: "ruler" });
     expect(detail.capitalTenures.map((row) => row.tenure.name)).toEqual([
       undefined,
       undefined,
@@ -946,14 +944,14 @@ describe("buildEntityDetail person", () => {
       relations: [],
     };
 
-    const detail = buildEntityDetail(store, { type: "person", id: "zhu-qiyu" });
+    const detail = buildEntityDetail({ ...store, locationMappings: capitalMappingsFor(store.reigns) }, { type: "person", id: "zhu-qiyu" });
     expect(detail.capitalTenures.map((row) => row.tenure.ref.id)).toEqual([
       "reign-zhu-qiyu-regent-ming",
       "reign-zhu-qiyu-ming",
     ]);
     expect(detail.capitalTenures.map((row) => row.tenure.label)).toEqual([
       "1449年9月6日 — 1449年9月22日",
-      "1449年9月22日 — 1457年2月24日",
+      "1449年9月23日 — 1457年2月24日",
     ]);
     expect(detail.capitalTenures.map((row) => row.tenure.isInformalMonarch)).toEqual([
       true,
@@ -1075,7 +1073,7 @@ describe("buildEntityDetail person", () => {
     };
 
     const detail = buildEntityDetail(
-      store,
+      { ...store, locationMappings: capitalMappingsFor(store.reigns) },
       { type: "person", id: "zhu-yuanzhang" },
       { focusReignId: "reign-zhu-yuanzhang-ming" },
     );

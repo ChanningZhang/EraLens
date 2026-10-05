@@ -97,6 +97,42 @@ const tangReign: Reign = {
 };
 
 describe("buildReignCapitalTenures", () => {
+  it("arbitrates a year-dated move between primary cities before clipping to a day-dated reign", () => {
+    const reign: Reign = {
+      ...tangReign, id: "reign-moving-court",
+      start: { year: 229, month: 5, day: 23, confidence: "day" },
+      end: { year: 252, month: 5, day: 21, confidence: "day" },
+      startAbs: 2752, endAbs: 3028, precision: "day",
+    };
+    const older: CapitalLocation = {
+      ...tangChangan, id: "older-seat", mappingKind: "reign", reignIds: [reign.id],
+      start: { year: 221, month: 1, confidence: "year" },
+      end: { year: 229, month: 12, confidence: "year" },
+      startAbs: 2652, endAbs: 2759,
+    };
+    const later: CapitalLocation = {
+      ...tangLuoyang, id: "later-seat", mappingKind: "reign", reignIds: [reign.id], role: "primary",
+      start: { year: 229, month: 1, confidence: "year" },
+      end: { year: 265, month: 12, confidence: "year" },
+      startAbs: 2748, endAbs: 3191,
+    };
+    const rows = buildReignCapitalTenures(reign, [later, older]);
+    expect(rows.map(row => [row.capital?.ref.id, row.tenure.label])).toEqual([
+      ["older-seat", "229年5月23日 — 229年"],
+      ["later-seat", "230年 — 252年5月21日"],
+    ]);
+    // A secondary capital, another claimant, or another dynasty is not a move.
+    for (const concurrent of [
+      { ...later, role: "secondary" as const },
+      { ...later, claimTrack: "branch" },
+      { ...later, dynastyId: "other" },
+    ]) {
+      const concurrentRows = buildReignCapitalTenures(reign, [older, concurrent]);
+      expect(concurrentRows.find(row => row.capital?.ref.id === "later-seat")?.tenure.label)
+        .toBe("229年5月23日 — 252年5月21日");
+    }
+  });
+
   it("identifies a parallel claimant's primary seat in dynasty and reign details", () => {
     const branchCapital = { ...tangChangan, reignIds:["reign-tang-branch"],claimTrack: "branch" };
     const branchReign = { ...tangReign,id:"reign-tang-branch",claimTrack: "branch" };
@@ -173,16 +209,8 @@ describe("buildReignCapitalTenures", () => {
   });
 
   it("returns empty when no capitals overlap the reign", () => {
-    expect(buildReignTenureCapitalRows(tangReign, [qinXianyang])).toEqual([
-      {
-        tenure: {
-          ref: { type: "reign", id: "reign-tang-xuanzong" },
-          label: "712年9月 — 756年8月",
-          abs: 8552,
-          duration: "43年4个月",
-        },
-      },
-    ]);
+    expect(buildReignTenureCapitalRows(tangReign, [qinXianyang])).toEqual([]);
+    expect(buildReignTenureCapitalRows(tangReign, [])).toEqual([]);
   });
 
   it("renders uncertain reign endpoints as question marks", () => {

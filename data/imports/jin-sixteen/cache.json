@@ -1,7 +1,7 @@
 {
   "slug": "jin-sixteen",
   "window": {
-    "startYear": 266,
+    "startYear": 249,
     "startMonth": 2,
     "endYear": 439,
     "endMonth": 12
@@ -18,6 +18,22 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/司马炎"
+        },
+        {
+          "label": "《晋书·武帝纪》",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷003"
+        },
+        {
+          "label": "《三国志·三少帝纪》",
+          "url": "https://zh.wikisource.org/zh-hans/三國志/卷04"
+        },
+        {
+          "label": "景元纪年农历对照表",
+          "url": "https://zh.wikipedia.org/wiki/景元"
+        },
+        {
+          "label": "咸熙纪年农历对照表",
+          "url": "https://zh.wikipedia.org/wiki/咸熙"
         }
       ],
       "birth": {
@@ -2274,6 +2290,140 @@
       "templeNames": [],
       "title": "天王",
       "dynastyId": "yan-north"
+    },
+    {
+      "id": "sima-shi",
+      "name": "司马师",
+      "roles": [
+        "政治家",
+        "军事家"
+      ],
+      "bio": "司马懿与张春华长子，司马昭之兄。249年参与高平陵之变，251年父亲去世后袭舞阳侯、以抚军大将军辅政，次年升大将军，总领魏廷军政。254年诛李丰、夏侯玄等，废曹芳、立曹髦；255年亲征毌丘俭、文钦，平乱后病逝于许昌，司马昭继掌军政。后来追尊晋景王，晋朝建立后追尊景皇帝，庙号世宗。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/司马师"
+        },
+        {
+          "label": "《晋书·景帝纪、文帝纪》",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷002"
+        },
+        {
+          "label": "《三国志·三少帝纪》",
+          "url": "https://zh.wikisource.org/zh-hans/三國志/卷04"
+        },
+        {
+          "label": "正始 (曹魏)纪年农历对照表",
+          "url": "https://zh.wikipedia.org/wiki/正始_(曹魏)"
+        },
+        {
+          "label": "嘉平 (曹魏)纪年农历对照表",
+          "url": "https://zh.wikipedia.org/wiki/嘉平_(曹魏)"
+        },
+        {
+          "label": "正元 (曹魏)纪年农历对照表",
+          "url": "https://zh.wikipedia.org/wiki/正元_(曹魏)"
+        },
+        {
+          "label": "景元纪年农历对照表",
+          "url": "https://zh.wikipedia.org/wiki/景元"
+        },
+        {
+          "label": "咸熙纪年农历对照表",
+          "url": "https://zh.wikipedia.org/wiki/咸熙"
+        }
+      ],
+      "birth": {
+        "year": 208,
+        "month": 1,
+        "abs": 2496,
+        "confidence": "year"
+      },
+      "death": {
+        "year": 255,
+        "month": 3,
+        "abs": 3062,
+        "day": 23,
+        "confidence": "day"
+      },
+      "altNames": [],
+      "posthumousNames": [
+        "忠武侯",
+        "景王",
+        "景皇帝"
+      ],
+      "templeNames": [
+        "世宗"
+      ],
+      "title": null,
+      "dynastyId": "jin-west"
+    },
+    {
+      "id": "sima-zhao",
+      "name": "司马昭",
+      "roles": [
+        "政治家",
+        "军事家",
+        "君主"
+      ],
+      "bio": "司马懿与张春华次子，司马师之弟、司马炎之父。254年因拥立曹髦进封高都侯，255年继司马师掌握魏廷军政，平定诸葛诞之乱。260年曹髦讨伐司马氏，被贾充部下成济杀害，随后拥立曹奂。263年派邓艾、钟会等伐蜀，同年受命为相国、晋公，264年进晋王。265年在洛阳去世，司马炎继位；晋朝建立后追尊文皇帝，庙号太祖。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/司马昭"
+        },
+        {
+          "label": "《晋书·景帝纪、文帝纪》",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷002"
+        },
+        {
+          "label": "《三国志·三少帝纪》",
+          "url": "https://zh.wikisource.org/zh-hans/三國志/卷04"
+        },
+        {
+          "label": "正始 (曹魏)纪年农历对照表",
+          "url": "https://zh.wikipedia.org/wiki/正始_(曹魏)"
+        },
+        {
+          "label": "嘉平 (曹魏)纪年农历对照表",
+          "url": "https://zh.wikipedia.org/wiki/嘉平_(曹魏)"
+        },
+        {
+          "label": "正元 (曹魏)纪年农历对照表",
+          "url": "https://zh.wikipedia.org/wiki/正元_(曹魏)"
+        },
+        {
+          "label": "景元纪年农历对照表",
+          "url": "https://zh.wikipedia.org/wiki/景元"
+        },
+        {
+          "label": "咸熙纪年农历对照表",
+          "url": "https://zh.wikipedia.org/wiki/咸熙"
+        }
+      ],
+      "birth": {
+        "year": 211,
+        "month": 1,
+        "abs": 2532,
+        "confidence": "year"
+      },
+      "death": {
+        "year": 265,
+        "month": 9,
+        "abs": 3188,
+        "day": 6,
+        "confidence": "day"
+      },
+      "altNames": [],
+      "posthumousNames": [
+        "文王",
+        "文皇帝"
+      ],
+      "templeNames": [
+        "太祖"
+      ],
+      "title": null,
+      "dynastyId": "jin-west"
     }
   ],
   "dynastyGroups": [
@@ -2311,10 +2461,11 @@
       "scope": "cn",
       "region": "east_asia",
       "start": {
-        "year": 266,
+        "year": 249,
         "month": 2,
-        "abs": 3193,
-        "confidence": "month"
+        "abs": 2989,
+        "day": 5,
+        "confidence": "day"
       },
       "end": {
         "year": 316,
@@ -2322,7 +2473,7 @@
         "abs": 3803,
         "confidence": "month"
       },
-      "note": "司马炎于266年承魏禅建立晋朝，定都洛阳，280年灭吴而短暂统一。武帝死后，皇后贾南风与宗室诸王争权引发八王之乱；北方战乱中，汉赵于311年攻陷洛阳、316年迫使长安朝廷出降，西晋覆亡。大量北方人口与士族南迁，为晋室在江南延续统治奠定基础。"
+      "note": "司马氏在曹魏末逐步掌握军政：249年司马懿发动高平陵之变，司马师、司马昭先后执掌魏廷，以洛阳为政治中心；263年司马昭受封晋公，264年进晋王，265年司马炎继承晋王及相国职位。266年司马炎受魏禅建立晋朝，定都洛阳，280年灭吴而统一。武帝死后，宫廷争权与八王之乱削弱中央；汉赵于311年攻陷洛阳、316年迫使长安朝廷出降，西晋覆亡。北方人口与士族大量南迁，晋室后来在江南延续统治。"
     },
     {
       "id": "jin-east",
@@ -2344,7 +2495,7 @@
         "abs": 5046,
         "confidence": "month"
       },
-      "note": "西晋覆亡后，司马睿于317年在建康重建晋室，史称东晋；政权以江南为中心，与北方多个政权长期并立，王导、谢安等士族及桓温、刘裕等掌兵重臣深刻影响朝政。383年淝水之战挫败前秦南下，东晋得以延续；此后北伐未能统一，刘裕逐步控制朝廷，420年受禅建立刘宋，东晋结束。北方人口南迁也推动江南开发与政治文化重心南移。"
+      "note": "司马睿于307年镇守建邺，在王导等支持下经营江南。西晋覆亡后，317年称晋王，318年称帝，晋室在建康延续，史称东晋。王导、谢安等士族及桓温、刘裕等掌兵重臣先后影响朝政；383年淝水之战挫败前秦南下，420年刘裕受禅建立宋，东晋结束。北方人口南迁推动了江南开发。"
     },
     {
       "id": "cheng-han",
@@ -2589,7 +2740,7 @@
         "confidence": "year"
       },
       "groupId": "wuhu",
-      "note": "吕光率前秦军队经营凉州后建立，定都姑臧。吕光晚年继承纷争使河西割据加深，403年吕隆降后秦。",
+      "note": "吕光原为前秦将领，383年奉命征西域，东归时前秦已陷入分裂。386年攻取姑臧、控制凉州，随后建立后凉，396年称天王。吕光晚年继承纷争使河西割据加深，403年吕隆降后秦。",
       "ethnicity": "氐"
     },
     {
@@ -2613,7 +2764,7 @@
         "confidence": "year"
       },
       "groupId": "wuhu",
-      "note": "鲜卑秃发氏在河湟建立的政权，后迁都姑臧；与后凉、北凉、西秦交战，414年为西秦所灭。",
+      "note": "秃发氏在河湟长期经营部众，秃发乌孤于397年脱离后凉、建立南凉，初据廉川，399年迁乐都。其弟利鹿孤、傉檀相继统治，先后以西平、乐都、姑臧为中心，与后凉、北凉、西秦争战；414年西秦攻取乐都，南凉灭亡。",
       "ethnicity": "秃发鲜卑"
     },
     {
@@ -2637,7 +2788,7 @@
         "confidence": "year"
       },
       "groupId": "wuhu",
-      "note": "李暠建立、以敦煌和酒泉为中心的河西政权，注重经营绿洲与屯田。420年李歆败死于北凉，西凉亡。"
+      "note": "400年敦煌地方官民推戴李暠，西凉由此建立，初都敦煌，405年迁酒泉。420年李歆败死于北凉，酒泉失守，其弟李恂在敦煌续立；421年北凉攻陷敦煌，李恂自杀，西凉结束。"
     },
     {
       "id": "liang-north",
@@ -2660,7 +2811,7 @@
         "confidence": "year"
       },
       "groupId": "wuhu",
-      "note": "397年沮渠男成、蒙逊起兵反后凉，拥立段业，北凉由此建立。401年蒙逊杀段业、自掌政权，412年迁都姑臧，逐步兼并河西诸国。439年北魏攻陷姑臧，北凉在河西的统治结束。",
+      "note": "397年沮渠男成、蒙逊起兵反后凉，拥立建康太守段业，北凉由此建立。398年段业迁治张掖，401年蒙逊杀段业、自掌政权，412年迁都姑臧，逐步兼并河西诸国。439年北魏攻陷姑臧，北凉在河西的统治结束。",
       "ethnicity": "卢水胡匈奴"
     },
     {
@@ -2737,6 +2888,162 @@
     }
   ],
   "reigns": [
+    {
+      "id": "reign-sima-yi-wuyang-hou",
+      "dynastyId": "jin-west",
+      "personId": "sima-yi",
+      "title": "舞阳侯",
+      "eraNames": [],
+      "start": {
+        "year": 249,
+        "month": 2,
+        "abs": 2989,
+        "day": 5,
+        "confidence": "day"
+      },
+      "end": {
+        "year": 251,
+        "month": 9,
+        "abs": 3020,
+        "day": 7,
+        "confidence": "day"
+      },
+      "startAbs": 2989,
+      "endAbs": 3020,
+      "isMain": false,
+      "claimTrack": null,
+      "claimLabel": null
+    },
+    {
+      "id": "reign-sima-shi-wuyang-hou",
+      "dynastyId": "jin-west",
+      "personId": "sima-shi",
+      "title": "舞阳侯",
+      "eraNames": [],
+      "start": {
+        "year": 251,
+        "month": 9,
+        "abs": 3020,
+        "day": 7,
+        "confidence": "day"
+      },
+      "end": {
+        "year": 255,
+        "month": 3,
+        "abs": 3062,
+        "day": 23,
+        "confidence": "day"
+      },
+      "startAbs": 3020,
+      "endAbs": 3062,
+      "isMain": false,
+      "claimTrack": null,
+      "claimLabel": null
+    },
+    {
+      "id": "reign-sima-zhao-gaodu-hou",
+      "dynastyId": "jin-west",
+      "personId": "sima-zhao",
+      "title": "高都侯",
+      "eraNames": [],
+      "start": {
+        "year": 255,
+        "month": 3,
+        "abs": 3062,
+        "day": 23,
+        "confidence": "day"
+      },
+      "end": {
+        "year": 263,
+        "month": 12,
+        "abs": 3167,
+        "day": 9,
+        "confidence": "day"
+      },
+      "startAbs": 3062,
+      "endAbs": 3167,
+      "isMain": false,
+      "claimTrack": null,
+      "claimLabel": null
+    },
+    {
+      "id": "reign-sima-zhao-jin-gong",
+      "dynastyId": "jin-west",
+      "personId": "sima-zhao",
+      "title": "晋公",
+      "eraNames": [],
+      "start": {
+        "year": 263,
+        "month": 12,
+        "abs": 3167,
+        "day": 9,
+        "confidence": "day"
+      },
+      "end": {
+        "year": 264,
+        "month": 5,
+        "abs": 3172,
+        "day": 2,
+        "confidence": "day"
+      },
+      "startAbs": 3167,
+      "endAbs": 3172,
+      "isMain": false,
+      "claimTrack": null,
+      "claimLabel": null
+    },
+    {
+      "id": "reign-sima-zhao-jin-wang",
+      "dynastyId": "jin-west",
+      "personId": "sima-zhao",
+      "title": "晋王",
+      "eraNames": [],
+      "start": {
+        "year": 264,
+        "month": 5,
+        "abs": 3172,
+        "day": 2,
+        "confidence": "day"
+      },
+      "end": {
+        "year": 265,
+        "month": 9,
+        "abs": 3188,
+        "day": 6,
+        "confidence": "day"
+      },
+      "startAbs": 3172,
+      "endAbs": 3188,
+      "isMain": false,
+      "claimTrack": null,
+      "claimLabel": null
+    },
+    {
+      "id": "reign-sima-yan-jin-wang",
+      "dynastyId": "jin-west",
+      "personId": "sima-yan",
+      "title": "晋王",
+      "eraNames": [],
+      "start": {
+        "year": 265,
+        "month": 9,
+        "abs": 3188,
+        "day": 6,
+        "confidence": "day"
+      },
+      "end": {
+        "year": 266,
+        "month": 2,
+        "abs": 3193,
+        "day": 8,
+        "confidence": "day"
+      },
+      "startAbs": 3188,
+      "endAbs": 3193,
+      "isMain": false,
+      "claimTrack": null,
+      "claimLabel": null
+    },
     {
       "id": "reign-sima-yan",
       "dynastyId": "jin-west",
@@ -5220,9 +5527,9 @@
     "depth": "standard",
     "generatedAt": "2026-09-28",
     "counts": {
-      "persons": 91,
+      "persons": 93,
       "dynasties": 18,
-      "reigns": 81,
+      "reigns": 87,
       "events": 11,
       "relations": 61
     },
@@ -5846,6 +6153,42 @@
       {
         "label": "《晋书》卷125·冯跋载记",
         "url": "https://zh.wikisource.org/wiki/晉書/卷125"
+      },
+      {
+        "label": "《晋书·宣帝纪》",
+        "url": "https://zh.wikisource.org/zh-hans/晉書/卷001"
+      },
+      {
+        "label": "《晋书·景帝纪、文帝纪》",
+        "url": "https://zh.wikisource.org/zh-hans/晉書/卷002"
+      },
+      {
+        "label": "《晋书·武帝纪》",
+        "url": "https://zh.wikisource.org/zh-hans/晉書/卷003"
+      },
+      {
+        "label": "《三国志·三少帝纪》",
+        "url": "https://zh.wikisource.org/zh-hans/三國志/卷04"
+      },
+      {
+        "label": "正始 (曹魏)纪年农历对照表",
+        "url": "https://zh.wikipedia.org/wiki/正始_(曹魏)"
+      },
+      {
+        "label": "嘉平 (曹魏)纪年农历对照表",
+        "url": "https://zh.wikipedia.org/wiki/嘉平_(曹魏)"
+      },
+      {
+        "label": "正元 (曹魏)纪年农历对照表",
+        "url": "https://zh.wikipedia.org/wiki/正元_(曹魏)"
+      },
+      {
+        "label": "景元纪年农历对照表",
+        "url": "https://zh.wikipedia.org/wiki/景元"
+      },
+      {
+        "label": "咸熙纪年农历对照表",
+        "url": "https://zh.wikipedia.org/wiki/咸熙"
       }
     ],
     "notes": [
@@ -5892,7 +6235,12 @@
       "2026-10-05：人物概述审查与补充。按人物逐条采用具体史事及正史、传世文献或学术考证；史料仅存名号/世系、不能确认具体经历的记录保留简短表述，不以统一模板扩写。",
       "2026-10-05：逐人补充开国前身份、势力积累、掌权与建国过程，区分称王、称帝、迁都和统一；文字保持中立简洁，按经历组织而不套固定句式。本批人物：sima-yan、sima-rui、li-xiong、liu-yuan、shi-le、zhang-gui、murong-huang、fu-jian、murong-chui、murong-de-yan、feng-ba、yao-chang、qifu-guoren、lu-guang、li-gao、juqu-mengxun、helian-bobo、liu-yu-jin。概述年份叙述历史行为，在位年桶归属另按共享日期规则；不将原历月日写成公历。",
       "2026-10-05：开国经历逐条复核并改写：tufa-wugu。分清奠基者、继承者、正式建国及史料缺载；删除无依据评价，保留传说与异说限定。",
-      "2026-10-05：修正开国概述与在位矛盾。北凉补段业397—401年，蒙逊起点改为401年；北燕补高云407—409年，冯跋起点改为409年。两次交接史料可靠到年，原历月份未经可靠换算，保存同年交接锚点，不手写年桶截断；继位投影由共享规则裁定。北燕407年与409年开端有两种口径，本包保留407年政权起点并说明高云、冯跋各自作用。"
+      "2026-10-05：修正开国概述与在位矛盾。北凉补段业397—401年，蒙逊起点改为401年；北燕补高云407—409年，冯跋起点改为409年。两次交接史料可靠到年，原历月份未经可靠换算，保存同年交接锚点，不手写年桶截断；继位投影由共享规则裁定。北燕407年与409年开端有两种口径，本包保留407年政权起点并说明高云、冯跋各自作用。",
+      "2026-10-05：与已修订开国人物概述、王朝起讫、在位及都城逐条交叉核对，修订王朝简史：jin-east、liang-back、liang-south、liang-xi、liang-north。区分势力发迹、称王、称帝、改国号和灭亡；收录口径与年代取舍只保留在manifest，不写进历史正文。",
+      "2026-10-05：按用户要求补司马懿、司马师、司马昭在位卡。晋泳道自249-02-05高平陵之变包含司马氏掌权前身，249并非晋国或晋朝成立年；正式晋公国始于263受命，西晋帝国仍始于司马炎266称帝。早期三人未生前称帝，不以追尊帝号代替当时爵号；爵号在reigns.title，全部新增前身段isMain=false，正统金色仍从司马炎称帝开始。司马懿人物仍由three-kingdoms-late唯一所有者维护，师、昭由本包新增。",
+      "日期取原始史料加纪年农历对照表核算公历干支：正始十年正月甲午=249-02-05；《晋书》嘉平三年八月戊寅=251-09-07（八月朔251-09-03甲戌，初五）。《三国志》将死日系七月，与通行系年冲突，此处采用《晋书》及人物年表；师承掌边界按父死及嗣事记载。正元二年闰正月辛亥=255-03-23（闰正月朔255-02-24甲申）；昭起点为师临终命其总统诸军并卒后的权力继承，二月丁巳255-03-29正式拜大将军为后续任官，不移作掌权起点。",
+      "昭254已受高都侯。256六月高都公、258及260/261/263早期晋公九锡之命均有固辞记载，不按诏封未受建立生效爵号阶段；本次依《晋书》263冬十月册命及群臣劝进后帝乃受命，以《三国志》同月甲寅册命为晋公阶段锚点。历表十月朔263-11-18癸巳，甲寅为263-12-09；受命过程具体日未另载，以册命日表示此阶段。景元五年三月己卯=264-05-02（三月朔264-04-14辛酉，十九日），非部分转述所称三月三十日。咸熙二年八月辛卯=265-09-06（八月朔265-08-29癸未，初九）；《晋书·武帝纪》同日太子嗣晋王，补炎晋王段至既有266-02-08称帝锚点。所有接续保留原端点，归属交共用时间规则。",
+      "都城洛阳前身段表示司马氏在魏廷辅政、掌权和晋公/晋王府的政治中心，不表示舞阳侯、高都侯封邑是都城，也不表示249已有独立晋朝。按《晋书》政变控制洛阳、昭率军返洛阳执政及武帝嗣王、受禅记载，复用集中洛阳地点，显式补每段reign mapping。"
     ]
   }
 }

@@ -147,7 +147,10 @@ export function formatReignSpanTooltip(reign: ReignSpanFields): string {
     }
   }
   const precision = confidencePrecision(startConfidence) === "day" || confidencePrecision(endConfidence) === "day" ? "day" : confidencePrecision(startConfidence) === "month" || confidencePrecision(endConfidence) === "month" ? "month" : "year";
-  return formatAbsSpanTooltip(reign.startAbs, reign.endAbs, precision);
+  const span = formatAbsSpanTooltip(reign.startAbs, reign.endAbs, precision);
+  const duration = span.match(/ · (.+)$/)?.[1];
+  const endLabel = formatHistoricalDate({ ...reign.end, confidence: endConfidence });
+  return `${startLabel} — ${endLabel}${duration ? ` · ${duration}` : ""}`;
 }
 
 /** Duration suffix from the same rules used by the reign tooltip. */

@@ -100,7 +100,9 @@ export function DetailPanel() {
     : detail?.dynastyId;
   const accent = useLaneColorValue(dynastyId) ?? "var(--color-accent)";
 
-  const capitalTenures = detail?.capitalTenures ?? [];
+  const capitalTenures = (detail?.capitalTenures ?? []).filter(
+    (row) => row.capital?.label.trim() && row.tenure.label.trim(),
+  );
   const relatedItems = detail?.related ?? [];
   const canOpenPersonOverview =
     displayedSelection?.selected.type === "person" &&

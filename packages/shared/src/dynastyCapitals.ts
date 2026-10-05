@@ -191,35 +191,13 @@ export function buildReignCapitalTenures(
     .map(({ sortKey: _sortKey, ...row }) => row);
 }
 
-/** Tenure rows for a reign; falls back to tenure-only when no capitals overlap. */
+/** Show a reign capital only together with its intersected tenure interval. */
 export function buildReignTenureCapitalRows(
   reign: Reign,
   capitals: readonly CapitalLocation[],
   dynastyReigns: readonly Reign[] = [reign],
 ): ReignCapitalTenureRow[] {
   if (hasUncertainDateRange(reign)) return [];
-  const rows = buildReignCapitalTenures(reign, capitals, dynastyReigns);
-  if (rows.length > 0) return rows;
-  // The detail row describes the recorded reign span. Ownership clipping is
-  // for timeline placement and must not rewrite the tenure's displayed length.
-  const duration = formatReignDurationLabel(reign);
-  return [
-    {
-      tenure: {
-        ref: { type: "reign", id: reign.id },
-        label: formatTenureRangeLabel(
-          reign.start,
-          reign.end,
-          reign.precision,
-          reign.precision,
-          reign.start.confidence,
-          reign.end.confidence,
-          reign.isOngoing,
-        ),
-        abs: reign.startAbs,
-        ...(duration ? { duration } : {}),
-        ...(reign.isInformalMonarch ? { isInformalMonarch: true } : {}),
-      },
-    },
-  ];
+  return buildReignCapitalTenures(reign, capitals, dynastyReigns)
+    .filter((row) => row.capital?.label.trim() && row.tenure.label.trim());
 }

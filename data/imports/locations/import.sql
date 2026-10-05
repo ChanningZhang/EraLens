@@ -195,4 +195,5 @@ INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_s
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-fead7761c1222e82e7341856395fad7d','广东省肇庆市',112.465245,23.047747,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-ff4af19f35888f76f9a4eb3164b61196','山东省淄博市临淄区',118.309398,36.826882,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-luotuocheng-founder-review','甘肃省张掖市高台县骆驼城遗址',99.56879,39.34957,'WGS84');
+INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-wu-wuchang-ezhou','湖北省鄂州市鄂城区吴王城遗址',114.895675,30.402416,'GCJ02');
 COMMIT;

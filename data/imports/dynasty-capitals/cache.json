@@ -25,8 +25,8 @@
     "depth": "standard",
     "generatedAt": "2026-10-02",
     "counts": {
-      "location_mapping": 223,
-      "locationMappings": 229
+      "location_mapping": 232,
+      "locationMappings": 232
     },
     "sources": [
       {
@@ -420,6 +420,90 @@
       {
         "label": "《通鉴纪事本末》段业徙治张掖",
         "url": "https://www.shidianguji.com/mid-page/7426852941149208626"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/李存勖"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/李嗣源"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/李从厚"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/李从珂"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/石敬瑭"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/石重贵"
+      },
+      {
+        "label": "《资治通鉴》后唐末年与后晋迁都",
+        "url": "https://zh.wikisource.org/wiki/資治通鑑/卷281"
+      },
+      {
+        "label": "复旦大学中国历史地理数据库：汴州938年改东京开封府",
+        "url": "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_44315"
+      },
+      {
+        "label": "河北省文物考古研究院：曹操营建的邺城",
+        "url": "https://www.hbswwkg.com/2023-12/12/content_9113769.html"
+      },
+      {
+        "label": "《三国志·魏书·武帝纪》",
+        "url": "https://zh.wikisource.org/zh-hans/三國志/卷01"
+      },
+      {
+        "label": "《三国志·魏书·文帝纪》",
+        "url": "https://zh.wikisource.org/zh-hans/三國志/卷02"
+      },
+      {
+        "label": "《三国志·蜀书·先主传》",
+        "url": "https://zh.wikisource.org/zh-hans/三國志/卷32"
+      },
+      {
+        "label": "《三国志·吴书·吴主传》",
+        "url": "https://zh.wikisource.org/zh-hans/三國志/卷47"
+      },
+      {
+        "label": "鄂州市民政局：鄂州市最古老地名—吴王城",
+        "url": "https://mzj.ezhou.gov.cn/ztzl/dmpc/201602/t20160224_208688.html"
+      },
+      {
+        "label": "南京市地方志：东吴政权两次迁都南京",
+        "url": "https://dfz.nanjing.gov.cn/gzdt/202403/t20240315_4186987.html"
+      },
+      {
+        "label": "黄初纪年农历对照表",
+        "url": "https://zh.wikipedia.org/wiki/黄初"
+      },
+      {
+        "label": "黄龙纪年农历对照表",
+        "url": "https://zh.wikipedia.org/wiki/黄龙_(孙吴)"
+      },
+      {
+        "label": "《晋书·宣帝纪》",
+        "url": "https://zh.wikisource.org/zh-hans/晉書/卷001"
+      },
+      {
+        "label": "《晋书·景帝纪、文帝纪》",
+        "url": "https://zh.wikisource.org/zh-hans/晉書/卷002"
+      },
+      {
+        "label": "《晋书·武帝纪》",
+        "url": "https://zh.wikisource.org/zh-hans/晉書/卷003"
+      },
+      {
+        "label": "《三国志·三少帝纪》",
+        "url": "https://zh.wikisource.org/zh-hans/三國志/卷04"
       }
     ],
     "notes": [
@@ -471,7 +555,14 @@
       "迁移前旧注中的 claim_track、reign_capitals 等字段名仅记载当时的数据处理。当前地理两表均不存 track，全部在位关联由 reign mapping 独立维护；primary 表示所属政权主要治所，不表示整个王朝的正都。",
       "2026-10-05：对照开国概述修正北凉、南燕、西凉、南凉、西秦、赵的都城阶段，并同步显式在位关联。迁都端点按史料年精度共用锚点，不手写次年截断。滑台、廉川、西平及西秦早期若干城址尚未完成可靠空间定位，删除其错误对应的广固、姑臧、枹罕关联；中牟定位有争议，删除错误晋阳关联，不用现代同名县或行政中心冒充古城。史事和未建地图关联的原因保留于此。",
       "2026-10-05：吴都建业起点由222年改为229年，并按孙皓265年迁武昌、266年还建业拆分。武昌为今鄂州，不能复用陈汉所用的武汉点；暂不补造未核定城址的空间记录。",
-      "2026-10-05：北凉张掖迁都年采用《通鉴纪事本末》隆安二年段业徙治张掖及张掖地方志细颗粒资料的398年；部分地方概述合并至401年蒙逊夺位，本次不采用该简化口径。"
+      "2026-10-05：北凉张掖迁都年采用《通鉴纪事本末》隆安二年段业徙治张掖及张掖地方志细颗粒资料的398年；部分地方概述合并至401年蒙逊夺位，本次不采用该简化口径。",
+      "2026-10-05：与已修订开国人物概述、王朝起讫、在位及都城逐条交叉核对，修订王朝简史：tang-hou、jin-hou。区分势力发迹、称王、称帝、改国号和灭亡；收录口径与年代取舍只保留在manifest，不写进历史正文。",
+      "后唐王朝起讫同步采用本包已有李存勖923-05-14即位及李从珂937-01-11自焚锚点；936为原历清泰三年，末帝终点公历已进入937年，不沿用936年年桶。后晋938年迁汴，据《通鉴》天福三年原历十月，以年精度记录迁都。",
+      "2026-10-05：补魏蜀吴称帝前五段的显式都城关联：曹操魏公/魏王、曹丕魏王为邺，刘备汉中王为成都，孙权吴王为武昌（今鄂州）。reign mapping保存完整都城时段，按共享日期交集裁剪在位任期；不把汉廷所在许县当作魏国国都，不把沔阳称王坛场或魏延驻守的汉中当作刘备治所。",
+      "曹魏都洛阳起点据《文帝纪》黄初元年十二月戊午；历表该月壬寅朔=221-01-11，戊午为十七日=221-01-27，儒略历与前推公历同日。邺主都段存213-06-16至221-01-27；新增曹丕皇帝段邺映射并将原洛阳完整时段起点对齐，王位交接与都城交接各按共享所有权裁定。",
+      "刘备219年还治成都，成都完整都城时段前移至219年；不凭汉中王名称推断都城为汉中。219年1月为年桶占位，详情不显示为已知月份。",
+      "孙权武昌主都段从221年至229年，221年已徙治鄂而后受封吴王；吴王及称帝初期均有武昌显式映射。迁建业原历黄龙元年九月跨公历229-10-05至11-03，无确切迁都日，保持年精度边界；229年内两都按年精度保留交接信息，不以1月占位声称年初已迁都。",
+      "都城洛阳前身段表示司马氏在魏廷辅政、掌权和晋公/晋王府的政治中心，不表示舞阳侯、高都侯封邑是都城，也不表示249已有独立晋朝。按《晋书》政变控制洛阳、昭率军返洛阳执政及武帝嗣王、受禅记载，复用集中洛阳地点，显式补每段reign mapping。 原洛阳mapping稳定ID保留，完整时段起点扩为249-02-05，界面按共享规则裁剪每段任期。"
     ]
   },
   "locationMappings": [
@@ -2594,10 +2685,11 @@
     },
     {
       "start": {
-        "year": 220,
+        "year": 221,
         "month": 1,
-        "abs": 2640,
-        "confidence": "year"
+        "day": 27,
+        "confidence": "day",
+        "abs": 2652
       },
       "end": {
         "year": 266,
@@ -2605,14 +2697,22 @@
         "abs": 3203,
         "confidence": "month"
       },
-      "startAbs": 2640,
+      "startAbs": 2652,
       "endAbs": 3203,
       "role": "primary",
-      "note": "曹魏都城洛阳。",
+      "note": "曹丕称帝后初营洛阳宫，黄初元年十二月戊午幸洛阳；据历表为221年1月27日，此后以洛阳为主都。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/曹魏"
+        },
+        {
+          "label": "《三国志·魏书·文帝纪》",
+          "url": "https://zh.wikisource.org/zh-hans/三國志/卷02"
+        },
+        {
+          "label": "黄初纪年农历对照表",
+          "url": "https://zh.wikipedia.org/wiki/黄初"
         }
       ],
       "id": "cap-wei-luoyang-220",
@@ -2623,10 +2723,10 @@
     },
     {
       "start": {
-        "year": 221,
+        "year": 219,
         "month": 1,
-        "abs": 2652,
-        "confidence": "year"
+        "confidence": "year",
+        "abs": 2628
       },
       "end": {
         "year": 263,
@@ -2634,14 +2734,18 @@
         "abs": 3167,
         "confidence": "month"
       },
-      "startAbs": 2652,
+      "startAbs": 2628,
       "endAbs": 3167,
       "role": "primary",
-      "note": "蜀汉都城成都。",
+      "note": "219年刘备在沔阳称汉中王后还治成都，魏延镇汉中；成都继续为其称帝后的都城。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/蜀汉"
+        },
+        {
+          "label": "《三国志·蜀书·先主传》",
+          "url": "https://zh.wikisource.org/zh-hans/三國志/卷32"
         }
       ],
       "id": "cap-shu-chengdu-221",
@@ -2666,11 +2770,23 @@
       "startAbs": 2748,
       "endAbs": 3191,
       "role": "primary",
-      "note": "孙权222年建立独立吴政权时都武昌（今鄂州），229年称帝后迁建业；此记录不把建业提前到222年。孙皓265年迁武昌、266年复还，建业阶段另分时记录。",
+      "note": "孙权229年秋九月由武昌迁都建业，至265年孙皓迁武昌前建业为主都。229年迁都月为原历九月，不是公历1月；本记录起点按可确定公历年展示。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/东吴"
+        },
+        {
+          "label": "《三国志·吴书·吴主传》",
+          "url": "https://zh.wikisource.org/zh-hans/三國志/卷47"
+        },
+        {
+          "label": "南京市地方志：东吴政权两次迁都南京",
+          "url": "https://dfz.nanjing.gov.cn/gzdt/202403/t20240315_4186987.html"
+        },
+        {
+          "label": "黄龙纪年农历对照表",
+          "url": "https://zh.wikipedia.org/wiki/黄龙_(孙吴)"
         }
       ],
       "id": "cap-wu-jianye-222",
@@ -2681,10 +2797,11 @@
     },
     {
       "start": {
-        "year": 266,
-        "month": 1,
-        "abs": 3192,
-        "confidence": "year"
+        "year": 249,
+        "month": 2,
+        "abs": 2989,
+        "day": 5,
+        "confidence": "day"
       },
       "end": {
         "year": 304,
@@ -2692,14 +2809,30 @@
         "abs": 3659,
         "confidence": "month"
       },
-      "startAbs": 3192,
+      "startAbs": 2989,
       "endAbs": 3659,
       "role": "primary",
-      "note": "西晋建都洛阳至晋惠帝永安元年（304）被张方挟往长安前；迁出记于农历十一月，按年精度保留边界。",
+      "note": "249年高平陵之变后，洛阳为司马氏执掌魏廷的政治中心；263年晋公、264年晋王府及266年西晋帝国均在洛阳。侯爵封邑不作为都城。西晋建都洛阳至304年被张方挟往长安前，迁出记于农历十一月，保留原年精度边界。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/西晋"
+        },
+        {
+          "label": "《晋书·宣帝纪》",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷001"
+        },
+        {
+          "label": "《晋书·景帝纪、文帝纪》",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷002"
+        },
+        {
+          "label": "《晋书·武帝纪》",
+          "url": "https://zh.wikisource.org/zh-hans/晉書/卷003"
+        },
+        {
+          "label": "《三国志·三少帝纪》",
+          "url": "https://zh.wikisource.org/zh-hans/三國志/卷04"
         }
       ],
       "id": "cap-jin-west-luoyang-266",
@@ -4399,15 +4532,16 @@
         "confidence": "year"
       },
       "end": {
-        "year": 936,
-        "month": 12,
-        "abs": 11243,
-        "confidence": "month"
+        "year": 937,
+        "month": 1,
+        "abs": 11244,
+        "day": 11,
+        "confidence": "day"
       },
       "startAbs": 11076,
-      "endAbs": 11243,
+      "endAbs": 11244,
       "role": "primary",
-      "note": "后唐都城洛阳。",
+      "note": "后唐灭后梁后以洛阳为都，937年1月李从珂自焚，后唐结束。",
       "links": [
         {
           "label": "维基百科",
@@ -4480,25 +4614,30 @@
     },
     {
       "start": {
-        "year": 936,
+        "year": 938,
         "month": 1,
-        "abs": 11232,
-        "confidence": "year"
+        "confidence": "year",
+        "abs": 11256
       },
       "end": {
         "year": 947,
-        "month": 12,
-        "abs": 11375,
-        "confidence": "month"
+        "month": 1,
+        "abs": 11364,
+        "day": 16,
+        "confidence": "day"
       },
-      "startAbs": 11232,
-      "endAbs": 11375,
+      "startAbs": 11256,
+      "endAbs": 11364,
       "role": "primary",
-      "note": "后晋936年自洛阳迁都汴州（东京开封府）；太原为其兴王之地，不是国都。",
+      "note": "后晋初据洛阳，938年迁都汴州，947年为契丹所灭；迁都月份为原历十月，未直接写作公历十月。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/后晋"
+        },
+        {
+          "label": "复旦大学中国历史地理数据库：938年迁都汴州",
+          "url": "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_44315"
         }
       ],
       "id": "cap-jin-hou-taiyuan-936",
@@ -7415,6 +7554,121 @@
       "kind": "dynasty",
       "externalId": "wu",
       "historicalName": "建业"
+    },
+    {
+      "start": {
+        "year": 937,
+        "month": 1,
+        "confidence": "year",
+        "abs": 11244
+      },
+      "end": {
+        "year": 938,
+        "month": 12,
+        "confidence": "year",
+        "abs": 11267
+      },
+      "startAbs": 11244,
+      "endAbs": 11267,
+      "role": "primary",
+      "note": "937年初后唐亡后，石敬瑭入洛阳；938年迁都汴州。",
+      "links": [
+        {
+          "label": "《资治通鉴》卷281",
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷281"
+        },
+        {
+          "label": "复旦大学中国历史地理数据库：938年迁都汴州",
+          "url": "https://tgaz.fudan.edu.cn/tgaz/placename/hvd_44315"
+        }
+      ],
+      "id": "cap-jin-hou-luoyang-937",
+      "locationId": "loc-f7e930313c1cb946efe0973a87515dd4",
+      "kind": "dynasty",
+      "externalId": "jin-hou",
+      "historicalName": "洛阳"
+    },
+    {
+      "id": "cap-wei-ye-213",
+      "locationId": "loc-806658dc845429fdd4d9971880684542",
+      "kind": "dynasty",
+      "externalId": "wei",
+      "historicalName": "邺",
+      "start": {
+        "year": 213,
+        "month": 6,
+        "day": 16,
+        "confidence": "day",
+        "abs": 2561
+      },
+      "end": {
+        "year": 221,
+        "month": 1,
+        "day": 27,
+        "confidence": "day",
+        "abs": 2652
+      },
+      "startAbs": 2561,
+      "endAbs": 2652,
+      "role": "primary",
+      "note": "曹操受封魏公及进爵魏王后，魏国以邺为国都，建立宗庙与官属；曹丕继为魏王。称帝后初营洛阳宫，黄初元年十二月戊午幸洛阳，迁都洛阳。邺后为曹魏五都之一，本段记录其作为主都的阶段。",
+      "links": [
+        {
+          "label": "《三国志·魏书·武帝纪》",
+          "url": "https://zh.wikisource.org/zh-hans/三國志/卷01"
+        },
+        {
+          "label": "《三国志·魏书·文帝纪》",
+          "url": "https://zh.wikisource.org/zh-hans/三國志/卷02"
+        },
+        {
+          "label": "河北省文物考古研究院：曹操营建的邺城",
+          "url": "https://www.hbswwkg.com/2023-12/12/content_9113769.html"
+        },
+        {
+          "label": "黄初纪年农历对照表",
+          "url": "https://zh.wikipedia.org/wiki/黄初"
+        }
+      ],
+      "spatialPrecision": "邺城遗址范围约略点"
+    },
+    {
+      "id": "cap-wu-wuchang-221",
+      "locationId": "loc-wu-wuchang-ezhou",
+      "kind": "dynasty",
+      "externalId": "wu",
+      "historicalName": "武昌",
+      "start": {
+        "year": 221,
+        "month": 1,
+        "confidence": "year",
+        "abs": 2652
+      },
+      "end": {
+        "year": 229,
+        "month": 12,
+        "confidence": "year",
+        "abs": 2759
+      },
+      "startAbs": 2652,
+      "endAbs": 2759,
+      "role": "primary",
+      "note": "孙权221年由公安徙治鄂，改名武昌，营筑城郭，受封吴王后以此为都；229年在武昌称帝，同年秋九月迁都建业。古武昌城为今湖北鄂州吴王城遗址，非今武汉市武昌区。",
+      "links": [
+        {
+          "label": "《三国志·吴书·吴主传》",
+          "url": "https://zh.wikisource.org/zh-hans/三國志/卷47"
+        },
+        {
+          "label": "鄂州市民政局：鄂州市最古老地名—吴王城",
+          "url": "https://mzj.ezhou.gov.cn/ztzl/dmpc/201602/t20160224_208688.html"
+        },
+        {
+          "label": "南京市地方志：东吴政权两次迁都南京",
+          "url": "https://dfz.nanjing.gov.cn/gzdt/202403/t20240315_4186987.html"
+        }
+      ],
+      "spatialPrecision": "遗址POI约略点，非宫殿或完整城墙边界"
     }
   ]
 }

@@ -1365,6 +1365,13 @@
       "longitude": 94.6638,
       "latitude": 40.141,
       "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-wu-wuchang-ezhou",
+      "modernName": "湖北省鄂州市鄂城区吴王城遗址",
+      "longitude": 114.895675,
+      "latitude": 30.402416,
+      "coordinateSystem": "GCJ02"
     }
   ],
   "manifest": {
@@ -1378,7 +1385,7 @@
     },
     "scope": "cn",
     "counts": {
-      "locations": 195
+      "locations": 196
     },
     "sources": [
       {
@@ -1388,11 +1395,20 @@
       {
         "label": "OpenStreetMap地点坐标（Mapcarta）",
         "url": "https://mapcarta.com/Dunhuang"
+      },
+      {
+        "label": "鄂州市民政局：鄂州市最古老地名—吴王城",
+        "url": "https://mzj.ezhou.gov.cn/ztzl/dmpc/201602/t20160224_208688.html"
+      },
+      {
+        "label": "高德地图地理编码",
+        "url": "https://lbs.amap.com/api/webservice/guide/api/georegeo"
       }
     ],
     "notes": [
       "坐标按现代地名、七位小数经纬度、坐标系完全一致首次去重；ID 已固化，后续修改字段不重新计算 ID。",
-      "2026-10-05：补入北凉建康骆驼城遗址和敦煌城市约略点，WGS84坐标取OpenStreetMap。敦煌点仅表示城市范围，不作为十六国城址精确定位。"
+      "2026-10-05：补入北凉建康骆驼城遗址和敦煌城市约略点，WGS84坐标取OpenStreetMap。敦煌点仅表示城市范围，不作为十六国城址精确定位。",
+      "2026-10-05：新增loc-wu-wuchang-ezhou，三国武昌复用鄂州吴王城遗址而非今武汉武昌。高德POI搜索吴王城遗址得到凤凰街道古肆北街1号；结构化地址地理编码=114.895675,30.402416（GCJ02），逆地理编码核验湖北省鄂州市鄂城区。坐标是遗址POI约略点，不代表精确宫殿位置或城墙边界。"
     ]
   }
 }

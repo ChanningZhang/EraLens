@@ -101,6 +101,54 @@
     {
       "label": "建国或重建统治经历",
       "url": "https://zh.wikipedia.org/wiki/高升泰"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/细奴逻"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/逻盛"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/盛逻皮"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/阁罗凤"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/异牟寻"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/寻阁劝"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/劝龙晟"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/劝利晟"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/劝丰祐"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/世隆"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/隆舜"
+    },
+    {
+      "label": "维基百科",
+      "url": "https://zh.wikipedia.org/wiki/舜化贞"
     }
   ],
   "notes": [
@@ -120,6 +168,7 @@
     "2026-10-05：人物概述审查与补充。按人物逐条采用具体史事及正史、传世文献或学术考证；史料仅存名号/世系、不能确认具体经历的记录保留简短表述，不以统一模板扩写。",
     "2026-10-05：开国经历逐条复核并改写：duan-siping。分清奠基者、继承者、正式建国及史料缺载；删除无依据评价，保留传说与异说限定。",
     "2026-10-05：补查并改写跨王统、更换政权与复国阶段人物：pi-luoge、gao-shengtai。不只依据泳道第一位识别开国或重建统治；改号、继统与另建政权分开叙述。",
-    "2026-10-05：开国候选逐项复核后保留原概述：xi-nuoluo。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。"
+    "2026-10-05：开国候选逐项复核后保留原概述：xi-nuoluo。现有文本已交代受封、迁徙、起事或世系背景；仅存世次、传统传说或首位可考记录者按史料边界保留简述，不据泳道首任补造开国经历。",
+    "2026-10-05：与已修订开国人物概述、王朝起讫、在位及都城逐条交叉核对，修订王朝简史：nanzhao。区分势力发迹、称王、称帝、改国号和灭亡；收录口径与年代取舍只保留在manifest，不写进历史正文。"
   ]
 }

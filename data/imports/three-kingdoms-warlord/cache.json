@@ -11,11 +11,12 @@
       "id": "cao-cao",
       "name": "曹操",
       "roles": [
+        "君主",
         "政治家",
         "军事家",
         "文学家"
       ],
-      "bio": "曹操出身宦官家族，东汉末以讨伐董卓起兵，官渡之战击败袁绍后控制北方；他迎汉献帝都许并任丞相，生前未称帝，曹丕建魏后追尊魏武帝。",
+      "bio": "曹嵩之子。东汉末起兵讨董卓，192年领兖州，196年迎汉献帝至许县，官渡之战击败袁绍后逐步控制北方，208年任汉丞相。213年受封魏公，建立魏国社稷、宗庙及官属，216年进爵魏王；220年去世，曹丕继承魏王并于同年称帝，追尊其为武皇帝。生前未称帝，亦以诗文与军事著述传世。",
       "links": [
         {
           "label": "维基百科",
@@ -24,6 +25,22 @@
         {
           "label": "《三国志·魏书·武帝纪》（维基文库）",
           "url": "https://zh.wikisource.org/wiki/三國志/卷01"
+        },
+        {
+          "label": "《三国志·魏书·武帝纪》",
+          "url": "https://zh.wikisource.org/zh-hans/三國志/卷01"
+        },
+        {
+          "label": "《后汉书·献帝纪》",
+          "url": "https://zh.wikisource.org/zh-hans/後漢書/卷9"
+        },
+        {
+          "label": "建安纪年农历对照表",
+          "url": "https://zh.wikipedia.org/wiki/建安_(东汉)"
+        },
+        {
+          "label": "河北省文物考古研究院：曹操营建的邺城",
+          "url": "https://www.hbswwkg.com/2023-12/12/content_9113769.html"
         }
       ],
       "birth": {
@@ -34,11 +51,18 @@
       "death": {
         "year": 220,
         "month": 3,
+        "day": 15,
+        "confidence": "day",
         "abs": 2642
       },
       "altNames": [],
-      "posthumousNames": [],
-      "templeNames": [],
+      "posthumousNames": [
+        "武王",
+        "武皇帝"
+      ],
+      "templeNames": [
+        "太祖"
+      ],
       "title": null,
       "dynastyId": "wei"
     },
@@ -53,6 +77,18 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/曹丕"
+        },
+        {
+          "label": "《三国志·魏书·文帝纪》",
+          "url": "https://zh.wikisource.org/zh-hans/三國志/卷02"
+        },
+        {
+          "label": "《后汉书·献帝纪》",
+          "url": "https://zh.wikisource.org/zh-hans/後漢書/卷9"
+        },
+        {
+          "label": "河北省文物考古研究院：曹操营建的邺城",
+          "url": "https://www.hbswwkg.com/2023-12/12/content_9113769.html"
         }
       ],
       "birth": {
@@ -119,6 +155,22 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/刘备"
+        },
+        {
+          "label": "《三国志·蜀书·先主传》",
+          "url": "https://zh.wikisource.org/zh-hans/三國志/卷32"
+        },
+        {
+          "label": "《后汉书·献帝纪》",
+          "url": "https://zh.wikisource.org/zh-hans/後漢書/卷9"
+        },
+        {
+          "label": "建安纪年农历对照表",
+          "url": "https://zh.wikipedia.org/wiki/建安_(东汉)"
+        },
+        {
+          "label": "刘备称汉中王日期考证（历表冲突）",
+          "url": "https://en.wikipedia.org/wiki/Liu_Bei#Notes"
         }
       ],
       "birth": {
@@ -183,6 +235,22 @@
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/孙权"
+        },
+        {
+          "label": "《三国志·魏书·文帝纪》",
+          "url": "https://zh.wikisource.org/zh-hans/三國志/卷02"
+        },
+        {
+          "label": "《三国志·吴书·吴主传》",
+          "url": "https://zh.wikisource.org/zh-hans/三國志/卷47"
+        },
+        {
+          "label": "鄂州市民政局：鄂州市最古老地名—吴王城",
+          "url": "https://mzj.ezhou.gov.cn/ztzl/dmpc/201602/t20160224_208688.html"
+        },
+        {
+          "label": "南京市地方志：东吴政权两次迁都南京",
+          "url": "https://dfz.nanjing.gov.cn/gzdt/202403/t20240315_4186987.html"
         }
       ],
       "birth": {
@@ -384,10 +452,11 @@
       "scope": "cn",
       "region": "east_asia",
       "start": {
-        "year": 220,
-        "month": 12,
-        "abs": 2651,
-        "confidence": "month"
+        "year": 213,
+        "month": 6,
+        "day": 16,
+        "confidence": "day",
+        "abs": 2561
       },
       "end": {
         "year": 266,
@@ -396,7 +465,7 @@
         "confidence": "month"
       },
       "groupId": "sanguo",
-      "note": "220年曹丕受汉献帝禅让称帝，国号魏，史称曹魏；以洛阳为都，主要统治中国北方，与蜀汉、孙吴长期对峙。曹氏历经曹丕、曹叡及曹芳、曹髦、曹奂五帝；高平陵之变后司马氏掌握朝政，266年曹奂禅位于司马炎，曹魏为西晋取代。"
+      "note": "213年曹操受汉献帝封为魏公，216年进爵魏王，220年曹丕继承魏王。220年曹丕受汉献帝禅让称帝，国号魏，史称曹魏；以洛阳为都，主要统治中国北方，与蜀汉、孙吴长期对峙。曹氏历经曹丕、曹叡及曹芳、曹髦、曹奂五帝；高平陵之变后司马氏掌握朝政，266年曹奂禅位于司马炎，曹魏为西晋取代。"
     },
     {
       "id": "shu",
@@ -409,10 +478,10 @@
       "scope": "cn",
       "region": "east_asia",
       "start": {
-        "year": 221,
-        "month": 5,
-        "abs": 2656,
-        "confidence": "month"
+        "year": 219,
+        "month": 1,
+        "confidence": "year",
+        "abs": 2628
       },
       "end": {
         "year": 263,
@@ -421,7 +490,7 @@
         "confidence": "month"
       },
       "groupId": "sanguo",
-      "note": "221年刘备在成都称帝，国号汉，后世称蜀汉或季汉，以益州为核心、成都为都，立国主张承续汉统。刘备死后刘禅在位，诸葛亮等主持政务并多次北伐；蜀汉长期与曹魏交战，263年魏军入蜀、刘禅投降，王朝结束。"
+      "note": "219年刘备取得汉中后，群臣推戴为汉中王并上表汉帝，建立王国官属。221年刘备在成都称帝，国号汉，后世称蜀汉或季汉，以益州为核心、成都为都，立国主张承续汉统。刘备死后刘禅在位，诸葛亮等主持政务并多次北伐；蜀汉长期与曹魏交战，263年魏军入蜀、刘禅投降，王朝结束。"
     },
     {
       "id": "wu",
@@ -432,10 +501,11 @@
       "scope": "cn",
       "region": "east_asia",
       "start": {
-        "year": 222,
-        "month": 10,
-        "abs": 2673,
-        "confidence": "month"
+        "year": 221,
+        "month": 9,
+        "day": 23,
+        "confidence": "day",
+        "abs": 2660
       },
       "end": {
         "year": 280,
@@ -444,10 +514,141 @@
         "confidence": "month"
       },
       "groupId": "sanguo",
-      "note": "孙氏以江东为基础，孙权于221年受魏封为吴王，222年改元黄武、与魏决裂，形成独立吴政权；229年称帝，同年从武昌迁都建业。孙亮、孙休、孙皓相继继位，280年孙皓降晋，吴亡。"
+      "note": "孙坚、孙策先后经营江东，孙权于200年继承其势力。221年受魏封为吴王，222年改元黄武、与魏决裂，形成独立吴政权；229年称帝，同年从武昌迁都建业。孙亮、孙休、孙皓相继继位，280年孙皓降晋，吴亡。"
     }
   ],
   "reigns": [
+    {
+      "id": "reign-cao-cao-wei-gong",
+      "dynastyId": "wei",
+      "personId": "cao-cao",
+      "title": "魏公",
+      "eraNames": [],
+      "start": {
+        "year": 213,
+        "month": 6,
+        "day": 16,
+        "confidence": "day",
+        "abs": 2561
+      },
+      "end": {
+        "year": 216,
+        "month": 5,
+        "day": 29,
+        "confidence": "day",
+        "abs": 2596
+      },
+      "startAbs": 2561,
+      "endAbs": 2596,
+      "claimTrack": null,
+      "claimLabel": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-cao-cao-wei-wang",
+      "dynastyId": "wei",
+      "personId": "cao-cao",
+      "title": "魏王",
+      "eraNames": [],
+      "start": {
+        "year": 216,
+        "month": 5,
+        "day": 29,
+        "confidence": "day",
+        "abs": 2596
+      },
+      "end": {
+        "year": 220,
+        "month": 3,
+        "day": 15,
+        "confidence": "day",
+        "abs": 2642
+      },
+      "startAbs": 2596,
+      "endAbs": 2642,
+      "claimTrack": null,
+      "claimLabel": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-cao-pi-wei-wang",
+      "dynastyId": "wei",
+      "personId": "cao-pi",
+      "title": "魏王",
+      "eraNames": [],
+      "start": {
+        "year": 220,
+        "month": 3,
+        "day": 15,
+        "confidence": "day",
+        "abs": 2642
+      },
+      "end": {
+        "year": 220,
+        "month": 12,
+        "abs": 2651,
+        "day": 11,
+        "confidence": "day"
+      },
+      "startAbs": 2642,
+      "endAbs": 2651,
+      "claimTrack": null,
+      "claimLabel": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-liu-bei-hanzhong-wang",
+      "dynastyId": "shu",
+      "personId": "liu-bei",
+      "title": "汉中王",
+      "eraNames": [],
+      "start": {
+        "year": 219,
+        "month": 1,
+        "confidence": "year",
+        "abs": 2628
+      },
+      "end": {
+        "year": 221,
+        "month": 5,
+        "abs": 2656,
+        "day": 15,
+        "confidence": "day"
+      },
+      "startAbs": 2628,
+      "endAbs": 2656,
+      "claimTrack": null,
+      "claimLabel": null,
+      "isMain": false
+    },
+    {
+      "id": "reign-sun-quan-wu-wang",
+      "dynastyId": "wu",
+      "personId": "sun-quan",
+      "title": "吴王",
+      "eraNames": [
+        "黄武"
+      ],
+      "start": {
+        "year": 221,
+        "month": 9,
+        "day": 23,
+        "confidence": "day",
+        "abs": 2660
+      },
+      "end": {
+        "year": 229,
+        "month": 5,
+        "day": 23,
+        "confidence": "day",
+        "abs": 2752
+      },
+      "startAbs": 2660,
+      "endAbs": 2752,
+      "claimTrack": null,
+      "claimLabel": null,
+      "isMain": false
+    },
     {
       "id": "reign-cao-pi",
       "dynastyId": "wei",
@@ -711,7 +912,7 @@
     "counts": {
       "persons": 11,
       "dynasties": 3,
-      "reigns": 5,
+      "reigns": 10,
       "events": 5,
       "relations": 2
     },
@@ -823,11 +1024,50 @@
       {
         "label": "《三国志·魏书·武帝纪》（维基文库）",
         "url": "https://zh.wikisource.org/wiki/三國志/卷01"
+      },
+      {
+        "label": "《后汉书·献帝纪》",
+        "url": "https://zh.wikisource.org/zh-hans/後漢書/卷9"
+      },
+      {
+        "label": "建安纪年农历对照表",
+        "url": "https://zh.wikipedia.org/wiki/建安_(东汉)"
+      },
+      {
+        "label": "刘备称汉中王日期考证（历表冲突）",
+        "url": "https://en.wikipedia.org/wiki/Liu_Bei#Notes"
+      },
+      {
+        "label": "《三国志·魏书·武帝纪》",
+        "url": "https://zh.wikisource.org/zh-hans/三國志/卷01"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/孙亮"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/孙休"
+      },
+      {
+        "label": "维基百科",
+        "url": "https://zh.wikipedia.org/wiki/孙皓"
+      },
+      {
+        "label": "河北省文物考古研究院：曹操营建的邺城",
+        "url": "https://www.hbswwkg.com/2023-12/12/content_9113769.html"
+      },
+      {
+        "label": "鄂州市民政局：鄂州市最古老地名—吴王城",
+        "url": "https://mzj.ezhou.gov.cn/ztzl/dmpc/201602/t20160224_208688.html"
+      },
+      {
+        "label": "南京市地方志：东吴政权两次迁都南京",
+        "url": "https://dfz.nanjing.gov.cn/gzdt/202403/t20240315_4186987.html"
       }
     ],
     "notes": [
       "魏蜀吴同属 dynasty_groups.sanguo（狭义 220–280，据中文维基「三国」）；组 span 用年精度，不被成员月精度撑开或截短。",
-      "魏蜀吴王朝行分别自曹丕称帝（220-12）、刘备称帝（221-5）、孙权称王（222-10）起；称帝前不建 reign。",
       "wei 的 主线起点 与王朝始年同为 220 年 12 月曹丕称帝。",
       "袁绍（yuan-shao）、刘璋（liu-zhang）仅作人物收录，不建割据王朝行。按事件关联口径，官渡之战不关联东汉；刘备取益州仅关联蜀汉。",
       "曹叡、刘禅在位及年号本包写入；曹芳及孙吴末帝见 three-kingdoms-late。",
@@ -841,7 +1081,14 @@
       "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。",
       "2026-10-05：人物概述审查与补充。按人物逐条采用具体史事及正史、传世文献或学术考证；史料仅存名号/世系、不能确认具体经历的记录保留简短表述，不以统一模板扩写。",
       "2026-10-05：逐人补充开国前身份、势力积累、掌权与建国过程，区分称王、称帝、迁都和统一；文字保持中立简洁，按经历组织而不套固定句式。本批人物：cao-pi、liu-bei、sun-quan。概述年份叙述历史行为，在位年桶归属另按共享日期规则；不将原历月日写成公历。",
-      "2026-10-05：孙权在位记录起点由222年独立吴王阶段改为229年5月23日称帝，遵循魏蜀吴称帝前不建帝王卡规则；王朝222年独立政权起点保留。称帝原文为黄龙元年四月丙申，公历5月23日见人物年表，229年该日儒略历与前推公历同日；黄武年号属于王阶段，不列入此皇帝在位段。"
+      "2026-10-05：经用户允许，魏蜀吴收录称帝前公国/王国阶段，爵号存 reigns.title，所有新增段 isMain=false、claimTrack=null；曹魏正统覆盖仍自曹丕220年12月11日称帝起，不因前移泳道起点扩张。既有皇帝段保留原ID和日期；以共用 timelineOwnership.ts/timelineIntervals.ts 处理同日接续。三国组220–280年口径不变，成员泳道包含前身。",
+      "称帝前起点选择公国/王国成立，不以地方官任职、起兵或夺取地域为王位起点。曹操：建安十八年五月丙申受封魏公（213-06-16），魏国宗庙及官属随之建立；魏王采用《后汉书·献帝纪》建安二十一年四月甲午（216-05-29），较《三国志·武帝纪》五月记载更具体，保留两书记月异说。日期以建安朔日历表与干支核对；这些200–299年的日期儒略历与前推公历一致。",
+      "曹操终点与曹丕魏王起点据建安二十五年正月庚子（220-03-15）；《三国志·文帝纪》记嗣位丞相、魏王并引汉帝授玺诏。曹丕魏王段止于原皇帝段220-12-11；不把当时沿用的汉年号建安、延康作为自立年号写入王阶段 eraNames。",
+      "刘备采用219年取得汉中后受群臣推戴为汉中王的起点，而非199年左将军受命、209年荆州牧或214年取益州。《三国志·先主传》记秋群下推戴后上表汉帝，表称奉辞在外、礼命断绝及权宜封王；不能写成汉献帝正式册封。按汉初诸侯王故典建官属已有明确王国语义。",
+      "刘备称汉中王原历：《后汉书·献帝纪》建安二十四年七月庚子，《资治通鉴》卷68七月，《三国志》仅秋。历表七月辛亥朔、西历219-07-30至08-27，无庚子日，原日记载与历表冲突；未能确定具体公历月日，起点存219年confidence=year、month=1仅作占位，不展示为已知1月，不强行补造日期。皇帝段仍从221-05-15起。",
+      "孙权采用《三国志·文帝纪》黄初二年八月丁巳诏封吴王（221-09-23）；《吴主传》十一月详载策命，区分魏廷发诏与使者至吴受册。221年册封人为曹丕，非汉献帝。222年拒绝遣子入魏、改元黄武转为独立，爵号仍吴王，故合为一张221-09-23至229-05-23吴王卡，eraNames只列自身黄武；黄龙等留在皇帝段。",
+      "2026-10-05：与已修订开国人物概述、王朝起讫、在位及都城逐条交叉核对，修订王朝简史：wu。区分势力发迹、称王、称帝、改国号和灭亡；收录口径与年代取舍只保留在manifest，不写进历史正文。",
+      "2026-10-05：称帝前新增在位的都城事实分别由dynasty-capitals与reign-capitals唯一维护；补邺、成都、武昌显式关联，武昌使用今鄂州吴王城遗址。来源同步至人物详情。"
     ]
   }
 }

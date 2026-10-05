@@ -57,8 +57,15 @@ function sameOwnershipSeries(request: OwnershipRequest, peer: OwnershipRecord): 
     return sameReignSeries(other, request.item, request.scope ?? "dynasty");
   }
   const other = peer as TimedCapital;
-  return request.item.modernName.trim() !== "" &&
-    other.modernName.trim() === request.item.modernName.trim() &&
+  // A primary court's moves form one series even when the city changes.
+  // Secondary seats and separate claimant tracks can coexist with that court.
+  const primarySuccession = request.item.role === "primary" && other.role === "primary" &&
+    request.item.dynastyId === other.dynastyId;
+  const sameCity = request.item.modernName.trim() !== "" &&
+    other.modernName.trim() === request.item.modernName.trim();
+  // Different polities can share a city while their recorded periods overlap.
+  // Only seats within one polity form a succession series.
+  return request.item.dynastyId === other.dynastyId && (primarySuccession || sameCity) &&
     (request.item.role == null || other.role === request.item.role) &&
     (other.claimTrack ?? null) === (request.item.claimTrack ?? null);
 }

@@ -86,4 +86,13 @@ describe("reign ownership interval cache", () => {
     expect(capitalOwnershipInterval(later, together).startExclusive)
       .toBeGreaterThan(capitalOwnershipInterval(later, alone).startExclusive);
   });
+
+  it("preserves overlapping seats of different polities in the same city", () => {
+    const older = { dynastyId: "older-polity", modernName: "共同治所", role: "primary" as const,
+      startAbs: 0, endAbs: 35, start: { year: 1, month: 1 }, end: { year: 3, month: 12 }, precision: "year" as const };
+    const later = { ...older, dynastyId: "later-polity", startAbs: 24, endAbs: 47,
+      start: { year: 3, month: 1 }, end: { year: 4, month: 12 } };
+    expect(capitalOwnershipInterval(later, [older, later]))
+      .toEqual(capitalOwnershipInterval(later, [later]));
+  });
 });
