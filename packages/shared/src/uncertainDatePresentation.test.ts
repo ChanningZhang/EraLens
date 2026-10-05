@@ -42,8 +42,7 @@ describe("uncertain date presentation", () => {
     const detail = buildEntityDetail({
       dynasties: [], reigns: [], persons: [uncertainPerson], events: [], relations: [],
     }, { type: "person", id: uncertainPerson.id });
-    expect(detail.facts).toContainEqual({ label: "生", value: "?" });
-    expect(detail.facts).toContainEqual({ label: "卒", value: "约-767年" });
+    expect(detail.facts).toContainEqual({ label: "生卒", value: "? — 约-767年" });
   });
 
   it.each(uncertainConfidences)("keeps %s endpoints out of precise durations and reign capital assignments", (confidence) => {

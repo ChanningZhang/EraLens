@@ -294,8 +294,12 @@ function buildPersonEntityDetail(
     ...(factEraNames.length
       ? [{ label: "年号", value: factEraNames.join("，") }]
       : []),
-    ...(person.birth ? [{ label: "生", value: formatHistoricalDate(person.birth) }] : []),
-    ...(person.death ? [{ label: "卒", value: formatHistoricalDate(person.death) }] : []),
+    ...(person.birth || person.death
+      ? [{
+          label: "生卒",
+          value: `${person.birth ? formatHistoricalDate(person.birth) : "?"} — ${person.death ? formatHistoricalDate(person.death) : "?"}`,
+        }]
+      : []),
   ];
   const facts = [
     ...(factReigns.length

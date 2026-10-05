@@ -75,6 +75,8 @@ Task Progress:
 
 ### 1. 调研
 
+- 人物与帝王概述按[统一概述规则](../eralens-reign-import/SKILL.md#人物与帝王概述)调研；开国帝王须核对建国前的经历、势力基础与关键转折，保留可考时期及对应来源。
+
 - 用 WebSearch / 百科 / 正史条目搜集**可核对**的事实。通行年代框架（如夏商周断代工程、《史记》年表）优先于个人推算。
 - 日期精度、历法、confidence 与事件 point/span 规则遵循 [eralens-date-handling](../eralens-date-handling/SKILL.md)。年精度 point 的月占位及年桶位置也以该 Skill 为准。
 - **年精度顺序继位切年**（先秦通行，与英文维基国王表 / 逾年改元一致；按以下规则核定后，将最终日期直接写入 `cache.json`）：
@@ -263,6 +265,8 @@ curl -s "http://localhost:3001/api/bounds"
 确认：王朝行、在位卡片和事件标记出现；point 显示时点，span 显示真实持续过程，近似和插值按各端点 confidence 展示。
 
 ## 质量要求
+
+- 人物与帝王概述遵循[统一概述规则](../eralens-reign-import/SKILL.md#人物与帝王概述)及其验收项：建国因果完整、语气中立简洁、句式与组织方式不模板化；抽查本批涉及的不同崛起路径与先秦史料不足案例，并核对来源依据。
 
 - 所有 `*_abs` 必须用 `compute-abs.mjs` 或 `absMonth()` 验算，禁止手填。
 - 外键顺序：reign 引用的 person/dynasty 必须先存在。
