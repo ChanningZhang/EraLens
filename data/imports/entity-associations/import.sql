@@ -1,7 +1,5 @@
 -- SQLite import package: entity-associations
 BEGIN;
-INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','beiliao','event','beiliao-xiao-defei-regency');
-INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','beiliao','event','jin-destroy-liao');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','cao-chunqiu','event','chengpu');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','cao-chunqiu','event','chunqiu');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','cao-chunqiu','event','kuiqiu');
@@ -133,6 +131,7 @@ INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dyn
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','liang-nan','event','chen-qingzhi-luoyang');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','liang-nan','event','houjing-rebellion');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','liang-nan','event','xiaoyan-reform');
+INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','liao','event','beiliao-xiao-defei-regency');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','liao','event','chanyuan-treaty');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','liao','event','gaoliang-river-battle');
 INSERT INTO "entity_associations" ("a_type","a_id","b_type","b_id") VALUES ('dynasty','liao','event','jin-destroy-liao');

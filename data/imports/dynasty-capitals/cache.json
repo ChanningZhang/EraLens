@@ -25,8 +25,8 @@
     "depth": "standard",
     "generatedAt": "2026-10-02",
     "counts": {
-      "location_mapping": 232,
-      "locationMappings": 232
+      "location_mapping": 231,
+      "locationMappings": 231
     },
     "sources": [
       {
@@ -504,6 +504,10 @@
       {
         "label": "《三国志·三少帝纪》",
         "url": "https://zh.wikisource.org/zh-hans/三國志/卷04"
+      },
+      {
+        "label": "《辽史·耶律淳传》及北辽建都南京析津府",
+        "url": "https://www.xuges.com/ls/liaoshi/027.htm"
       }
     ],
     "notes": [
@@ -562,7 +566,9 @@
       "曹魏都洛阳起点据《文帝纪》黄初元年十二月戊午；历表该月壬寅朔=221-01-11，戊午为十七日=221-01-27，儒略历与前推公历同日。邺主都段存213-06-16至221-01-27；新增曹丕皇帝段邺映射并将原洛阳完整时段起点对齐，王位交接与都城交接各按共享所有权裁定。",
       "刘备219年还治成都，成都完整都城时段前移至219年；不凭汉中王名称推断都城为汉中。219年1月为年桶占位，详情不显示为已知月份。",
       "孙权武昌主都段从221年至229年，221年已徙治鄂而后受封吴王；吴王及称帝初期均有武昌显式映射。迁建业原历黄龙元年九月跨公历229-10-05至11-03，无确切迁都日，保持年精度边界；229年内两都按年精度保留交接信息，不以1月占位声称年初已迁都。",
-      "都城洛阳前身段表示司马氏在魏廷辅政、掌权和晋公/晋王府的政治中心，不表示舞阳侯、高都侯封邑是都城，也不表示249已有独立晋朝。按《晋书》政变控制洛阳、昭率军返洛阳执政及武帝嗣王、受禅记载，复用集中洛阳地点，显式补每段reign mapping。 原洛阳mapping稳定ID保留，完整时段起点扩为249-02-05，界面按共享规则裁剪每段任期。"
+      "都城洛阳前身段表示司马氏在魏廷辅政、掌权和晋公/晋王府的政治中心，不表示舞阳侯、高都侯封邑是都城，也不表示249已有独立晋朝。按《晋书》政变控制洛阳、昭率军返洛阳执政及武帝嗣王、受禅记载，复用集中洛阳地点，显式补每段reign mapping。 原洛阳mapping稳定ID保留，完整时段起点扩为249-02-05，界面按共享规则裁剪每段任期。",
+      "2026-10-05：将北辽建模为辽朝的燕京 claimTrack，移除独立 dynasty 都城行；辽朝南京陪都映射止于耶律淳1122年4月22日在燕京即位前一日。",
+      "辽南京控制权交接按《辽史·耶律淳传》所记耶律淳于1122年4月22日在燕京即位处理；王朝级南京陪都记录至4月21日，北辽支系在位关联从4月22日起。"
     ]
   },
   "locationMappings": [
@@ -4886,19 +4892,24 @@
         "confidence": "year"
       },
       "end": {
-        "year": 1125,
-        "month": 12,
-        "abs": 13511,
-        "confidence": "month"
+        "year": 1122,
+        "month": 4,
+        "day": 21,
+        "abs": 13467,
+        "confidence": "day"
       },
       "startAbs": 11256,
-      "endAbs": 13511,
+      "endAbs": 13467,
       "role": "secondary",
-      "note": "辽南京（析津府，今北京）。",
+      "note": "辽南京析津府为辽朝陪都；1122年4月22日耶律淳在燕京即位后，南京归燕京支系控制。",
       "links": [
         {
-          "label": "维基百科",
+          "label": "辽南京沿革",
           "url": "https://zh.wikipedia.org/wiki/南京_(辽朝)"
+        },
+        {
+          "label": "《辽史·耶律淳传》",
+          "url": "https://zh.wikisource.org/zh-hans/遼史/卷30"
         }
       ],
       "id": "cap-liao-南京-938",
@@ -4993,35 +5004,6 @@
       "kind": "dynasty",
       "externalId": "jin-nvzhen",
       "historicalName": "汴京"
-    },
-    {
-      "start": {
-        "year": 1122,
-        "month": 1,
-        "abs": 13464,
-        "confidence": "year"
-      },
-      "end": {
-        "year": 1123,
-        "month": 12,
-        "abs": 13487,
-        "confidence": "month"
-      },
-      "startAbs": 13464,
-      "endAbs": 13487,
-      "role": "primary",
-      "note": "北辽据辽上京临潢府。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/北辽"
-        }
-      ],
-      "id": "cap-beiliao-linhuang-13464",
-      "locationId": "loc-94e88a2f3f91f514e7016f414b9292da",
-      "kind": "dynasty",
-      "externalId": "beiliao",
-      "historicalName": "临潢府"
     },
     {
       "start": {

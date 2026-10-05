@@ -171,7 +171,7 @@
       "altNames": [
         "汪兆铭"
       ],
-      "title": "国民政府主席",
+      "title": "伪国民政府主席",
       "dynastyId": "roc"
     },
     {
@@ -194,7 +194,7 @@
       "birth": null,
       "death": null,
       "altNames": [],
-      "title": "国民政府代主席",
+      "title": "伪国民政府代主席",
       "dynastyId": "roc"
     },
     {
@@ -1468,7 +1468,7 @@
       "id": "reign-wang-jingwei-acting-chairman",
       "dynastyId": "roc",
       "personId": "wang-jingwei",
-      "title": "国民政府代主席",
+      "title": "伪国民政府代主席",
       "eraNames": [],
       "start": {
         "year": 1940,
@@ -1495,7 +1495,7 @@
       "id": "reign-wang-jingwei-chairman",
       "dynastyId": "roc",
       "personId": "wang-jingwei",
-      "title": "国民政府主席",
+      "title": "伪国民政府主席",
       "eraNames": [],
       "start": {
         "year": 1940,
@@ -1522,7 +1522,7 @@
       "id": "reign-chen-gongbo-acting-chairman",
       "dynastyId": "roc",
       "personId": "chen-gongbo",
-      "title": "国民政府代主席",
+      "title": "伪国民政府代主席",
       "eraNames": [],
       "start": {
         "year": 1944,

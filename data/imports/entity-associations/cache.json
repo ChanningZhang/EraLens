@@ -2,12 +2,8 @@
   "slug": "entity-associations",
   "associations": [
     {
-      "aRef": "dynasty:beiliao",
+      "aRef": "dynasty:liao",
       "bRef": "event:beiliao-xiao-defei-regency"
-    },
-    {
-      "aRef": "dynasty:beiliao",
-      "bRef": "event:jin-destroy-liao"
     },
     {
       "aRef": "dynasty:cao-chunqiu",
@@ -4793,7 +4789,7 @@
     "importPhase": "post",
     "postImportOrder": 100,
     "counts": {
-      "associations": 1196
+      "associations": 1195
     },
     "sources": [
       {
