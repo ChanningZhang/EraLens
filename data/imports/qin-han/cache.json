@@ -161,11 +161,15 @@
         "霸王",
         "军事家"
       ],
-      "bio": "西楚霸王，巨鹿破秦军，垓下败于刘邦后自刎。",
+      "bio": "项羽名籍，秦末与叔父项梁起兵反秦。巨鹿之战击破秦军主力，秦亡后自立西楚霸王；楚汉战争败于刘邦，前202年在乌江自刎。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/项羽"
+        },
+        {
+          "label": "《史记·项羽本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷07"
         }
       ],
       "posthumousNames": [],
@@ -779,11 +783,19 @@
       "roles": [
         "诸侯"
       ],
-      "bio": "魏王豹，秦末复立魏国，楚汉间反复，终为韩信所灭。",
+      "bio": "魏豹是魏王魏咎之弟，秦末被项羽立为魏王。楚汉战争中他先从汉、后叛汉，韩信攻取魏地后将其俘杀，魏国复立政权随之消失。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/魏王豹"
+        },
+        {
+          "label": "《史记·项羽本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷07"
+        },
+        {
+          "label": "《史记·秦始皇本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷06"
         }
       ],
       "posthumousNames": [],
@@ -871,11 +883,19 @@
       "roles": [
         "皇帝"
       ],
-      "bio": "更始帝，绿林军拥立，新莽亡后短暂称帝，后为赤眉所杀。",
+      "bio": "刘玄是汉景帝后裔，绿林军于23年拥立他为更始帝；昆阳之战后新莽政权崩溃。赤眉军入长安后刘玄投降，后被杀，更始政权结束。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/更始帝"
+        },
+        {
+          "label": "《史记·项羽本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷07"
+        },
+        {
+          "label": "《史记·秦始皇本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷06"
         }
       ],
       "posthumousNames": [],
@@ -3463,6 +3483,14 @@
       {
         "label": "秦庄襄王纪日及儒略历换算",
         "url": "https://en.wikipedia.org/wiki/King_Zhuangxiang_of_Qin"
+      },
+      {
+        "label": "《史记·项羽本纪》（维基文库）",
+        "url": "https://zh.wikisource.org/wiki/史記/卷07"
+      },
+      {
+        "label": "《史记·秦始皇本纪》（维基文库）",
+        "url": "https://zh.wikisource.org/wiki/史記/卷06"
       }
     ],
     "notes": [
@@ -3485,7 +3513,8 @@
       "2026-10-02 相邻在位边界复核：reign-liu-bang-han-king-han-west end：《汉书》二月甲午即帝位；儒略历前202-02-28换算为前推公历前202-02-24。前相位终点由共享日区间起界求得，不保留错误的月精度。",
       "2026-10-02 相邻在位边界复核：reign-liu-bang start：《汉书》二月甲午即帝位；儒略历前202-02-28换算为前推公历前202-02-24，干支相符。",
       "2026-10-02 嬴政秦王阶段由chunqiu-zhanguo/qin包拥有，在位交接采用《秦本纪》及庄襄王纪日；人物详情来源由本包唯一人物所有者同步维护。",
-      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。",
+      "2026-10-05：人物概述审查与补充。按人物逐条采用具体史事及正史、传世文献或学术考证；史料仅存名号/世系、不能确认具体经历的记录保留简短表述，不以统一模板扩写。"
     ]
   }
 }

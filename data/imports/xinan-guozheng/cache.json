@@ -34,11 +34,23 @@
       "roles": [
         "君主"
       ],
-      "bio": "夜郎王，前27年被邛郿侯陈立所杀，夜郎国亡。",
+      "bio": "夜郎王兴拒绝汉使陈立的招谕，前27年被陈立袭杀；夜郎由此并入汉朝郡县。此事见于《汉书·西南夷两粤朝鲜传》，后世“夜郎自大”典故则另有演变。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/夜郎"
+        },
+        {
+          "label": "《汉书·西南夷两粤朝鲜传》（维基文库）",
+          "url": "https://zh.wikisource.org/zh-hans/漢書/卷095"
+        },
+        {
+          "label": "《后汉书·南蛮西南夷列传》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/後漢書/卷86"
+        },
+        {
+          "label": "《华阳国志·南中志》（中国哲学书电子化计划）",
+          "url": "https://ctext.org/wiki.pl?chapter=588599&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -59,11 +71,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "楚将，入滇称滇王，据滇池，开创滇国世系。",
+      "bio": "庄蹻原为楚将，奉楚威王命经营黔中以西。秦军截断归路后，他留在滇地自立为王；其经历见于《史记·西南夷列传》，是滇国早期王统叙事的一部分。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/庄蹻"
+        },
+        {
+          "label": "《史记·西南夷列传》（维基文库）",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷116"
+        },
+        {
+          "label": "《华阳国志·南中志》（中国哲学书电子化计划）",
+          "url": "https://ctext.org/wiki.pl?chapter=588599&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -84,11 +104,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "滇王，汉武帝元封二年率众降汉，设益州郡。中间世系多失考。",
+      "bio": "尝羌是滇王，汉武帝元封二年（前109）率众归汉，汉廷在其地设置益州郡。此后滇王保留一定地方权力，直至西汉后期滇国王统终止。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/滇国"
+        },
+        {
+          "label": "《史记·西南夷列传》（维基文库）",
+          "url": "https://zh.wikisource.org/zh-hans/史記/卷116"
+        },
+        {
+          "label": "《华阳国志·南中志》（中国哲学书电子化计划）",
+          "url": "https://ctext.org/wiki.pl?chapter=588599&if=gb&remap=gb"
         }
       ],
       "birth": null,
@@ -419,6 +447,22 @@
       {
         "label": "云南省社会科学院：论古代滇文化的民族属性",
         "url": "https://www.sky.yn.gov.cn/ztzl/yq30zn/zgwj/mzwxs/01955108049867228083"
+      },
+      {
+        "label": "《史记·西南夷列传》（维基文库）",
+        "url": "https://zh.wikisource.org/zh-hans/史記/卷116"
+      },
+      {
+        "label": "《华阳国志·南中志》（中国哲学书电子化计划）",
+        "url": "https://ctext.org/wiki.pl?chapter=588599&if=gb&remap=gb"
+      },
+      {
+        "label": "《汉书·西南夷两粤朝鲜传》（维基文库）",
+        "url": "https://zh.wikisource.org/zh-hans/漢書/卷095"
+      },
+      {
+        "label": "《后汉书·南蛮西南夷列传》（维基文库）",
+        "url": "https://zh.wikisource.org/wiki/後漢書/卷86"
       }
     ],
     "notes": [
@@ -429,7 +473,8 @@
       "confidence=year，scope=cn，region=east_asia。",
       "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
       "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。",
-      "2026-10-03族属复核：夜郎与滇不标单一现代民族。相关研究将夜郎区域描述为多部族、多族群政权；古滇族属及主体成分仍有争论，考古与民族史研究存在不同解释。"
+      "2026-10-03族属复核：夜郎与滇不标单一现代民族。相关研究将夜郎区域描述为多部族、多族群政权；古滇族属及主体成分仍有争论，考古与民族史研究存在不同解释。",
+      "2026-10-05：人物概述审查与补充。按人物逐条采用具体史事及正史、传世文献或学术考证；史料仅存名号/世系、不能确认具体经历的记录保留简短表述，不以统一模板扩写。"
     ]
   }
 }

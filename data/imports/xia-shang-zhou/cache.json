@@ -279,11 +279,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "不降之弟。兄终弟及，子为廑。正史几乎无事迹。生卒年不详。",
+      "bio": "《史记·夏本纪》称扃为不降之弟，不降死后继位，后由其子廑承统；传世史书没有记下扃的具体政事，夏代年代本身也属于传统纪年。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/扃"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [],
@@ -668,11 +676,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "商朝开国之君，子姓，名履，又称成汤、天乙；鸣条之战灭夏。",
+      "bio": "商汤名履，又称天乙、成汤。传统记载称他联合伊尹等伐夏桀，鸣条之战后建立商朝；《史记·殷本纪》同时保留了其“革命”叙事与早期商世系。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/商汤"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [
@@ -803,11 +819,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "汤之孙，名至；商朝早期重要君主，与伊尹传说相关。",
+      "bio": "太甲名至，是商汤之孙、太丁之子。《史记》记伊尹辅政期间曾将他放居桐宫，太甲改过后复位；这段故事也是商初政治传统的重要叙述。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/太甲"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [
@@ -830,11 +854,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "太甲之子，名绚；伊尹卒后仍用伊尹诸子及咎单为政。",
+      "bio": "沃丁名绚，为太甲之子。传统记载称其承统后伊尹去世，沃丁以礼安葬这位辅政大臣；其后由弟太庚继位。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/沃丁"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [
@@ -856,11 +888,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "沃丁之弟，名辩，又称大庚。",
+      "bio": "太庚名辩，又称大庚，是沃丁之弟。其后由子小甲继位；商初兄终弟及的继承叙事见于《史记·殷本纪》，实际年代仍属传统纪年。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/太庚"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [
@@ -881,11 +921,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "太庚之子，名高，商代早中期君主。",
+      "bio": "小甲名高，为太庚之子。其后商王位在雍己与太戊之间传承，《史记》将这一阶段描述为商道衰微，细节缺少同时代文字材料佐证。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/小甲"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [
@@ -998,11 +1046,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "太戊之子，名庄；迁于嚣，九世之乱始。",
+      "bio": "仲丁名庄，为太戊之子。《史记》称其迁都于嚣，其死后外壬、河亶甲相继，商王室开始出现连续的兄弟继承与政局动荡。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/仲丁"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [
@@ -1024,11 +1080,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "仲丁之弟，名发；甲骨或作卜壬，九世之乱中继位。",
+      "bio": "外壬名发，为仲丁之弟，在商王继承冲突中继位。《史记》称其与河亶甲前后接续，属“九世之乱”时期；甲骨材料有不同释名。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/外壬"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [
@@ -1050,11 +1114,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "外壬之弟，名整；甲骨作戔甲，传统记载曾迁于相。",
+      "bio": "河亶甲名整，为外壬之弟。传统记载称其居于相，之后由祖乙继位；早商与中商君主世次主要依据传世文献，年代存在争议。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/河亶甲"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [
@@ -1075,11 +1147,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "河亶甲之子，名滕；传统记载迁邢、殷道再兴。",
+      "bio": "祖乙名滕，为河亶甲之子。传统记载称他从相迁至耿，并任用巫贤，商势复振；其后由祖辛继位。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/祖乙"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [
@@ -1100,11 +1180,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "祖乙之子，名旦，商代早中期君主。",
+      "bio": "祖辛名旦，为祖乙之子、沃甲之兄。传统世系称其死后由弟沃甲继位；具体政事与年代主要依据后世史籍传承。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/祖辛"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [
@@ -1127,11 +1215,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "祖辛之弟，名踰；竹书或作开甲，甲骨或作羌甲。",
+      "bio": "沃甲名踰，又称开甲；甲骨材料中的释名与传世文献并不完全一致。他在祖辛之后继位，死后商王位转入祖丁一支，反映商王室继承关系复杂。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/沃甲"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [
@@ -1152,11 +1248,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "沃甲之侄、祖辛之子，名新；传统记载居庇。",
+      "bio": "祖丁名新，为祖辛之子。沃甲死后由祖丁继位，之后南庚承统；《史记》把这几代的兄弟、叔侄相继列为“九世之乱”的背景。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/祖丁"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [
@@ -1177,11 +1281,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "沃甲之子，名更；传统记载自庇迁于奄。",
+      "bio": "南庚名更，为沃甲之子。祖丁死后继位，传统记载称他将都城迁至奄；其后阳甲即位，商王位继续在旁支间转移。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/南庚"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [
@@ -1202,11 +1314,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "祖丁之子、盘庚之兄，名和；传统记载此际殷衰。",
+      "bio": "阳甲名和，为祖丁之子、盘庚之兄。其时商王室继承冲突加深，《史记》称诸侯不朝；阳甲死后由盘庚继位并迁殷。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/阳甲"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [
@@ -1227,11 +1347,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "祖丁之子，名旬；约前1300年迁都于殷，晚商以此为界。",
+      "bio": "盘庚名旬，为祖丁之子。即位后将商都迁至殷，面对反对仍坚持迁徙；《史记》称迁殷后百姓安定、商势复兴，殷墟考古为晚商都城提供了重要证据。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/盘庚"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [
@@ -1254,11 +1382,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "盘庚之弟，名颂；迁殷后继位，传统记载殷道再衰。",
+      "bio": "小辛名颂，是盘庚之弟。盘庚迁殷后由小辛继位，《史记》称商道再衰；关于这一时期的具体政局，传世记载十分简略。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/小辛"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [
@@ -1279,11 +1415,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "小辛之弟、武丁之父，名敛；传统记载仍居殷。",
+      "bio": "小乙名敛，为小辛之弟、武丁之父。传统世系称其死后武丁即位；有关小乙的个人政事，史书没有留下可与武丁时期相比的详细叙述。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/小乙_(商朝)"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [
@@ -1304,11 +1448,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "小乙之子，名昭；商高宗，甲骨文所见盛世之王，史称武丁中兴。",
+      "bio": "武丁名昭，为小乙之子。传世文献记他任用傅说为相、商势复兴；殷墟甲骨卜辞大量涉及武丁时期，是研究晚商政治与祭祀的重要材料。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/武丁"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [
@@ -1529,11 +1681,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "武乙之子，名托；晚商之王，《史记》或作太丁。",
+      "bio": "文丁名托，为武乙之子、帝乙之父；《史记》称其又作太丁。其后帝乙、帝辛相继，商王朝末期与周势力冲突逐步升级。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/文丁"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [
@@ -1554,11 +1714,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "文丁之子、帝辛之父，名羡。",
+      "bio": "帝乙名羡，为文丁之子、帝辛之父。其在位晚期周人势力上升，死后由帝辛继位；关于他与周文王的关系，传世史籍记载存在不同叙述。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/帝乙"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [
@@ -1581,11 +1749,19 @@
       "roles": [
         "君主"
       ],
-      "bio": "商朝末代之王，名受，一名受德；周谥纣，牧野之战亡于周。",
+      "bio": "帝辛名受，周人谥称纣，是商朝末王。周武王伐商，双方战于牧野；商军败后帝辛死于鹿台，商王朝随之终结。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/帝辛"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [
@@ -2540,11 +2716,19 @@
       "roles": [
         "后妃"
       ],
-      "bio": "传说中商末帝辛宠妃，生卒年不详。",
+      "bio": "妲己是商末传说中有苏氏之女，嫁予帝辛。关于她诱使帝辛施政、导致亡国的情节主要见于后世叙事，缺乏同时代材料印证，不能视为已证实的个人史实。",
       "links": [
         {
           "label": "维基百科",
           "url": "https://zh.wikipedia.org/wiki/妲己"
+        },
+        {
+          "label": "《史记·夏本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷02"
+        },
+        {
+          "label": "《史记·殷本纪》（维基文库）",
+          "url": "https://zh.wikisource.org/wiki/史記/卷03"
         }
       ],
       "posthumousNames": [],
@@ -6208,7 +6392,8 @@
       "称谓复核（2026-10）：春秋战国时期的东周君主卡片称呼写入 reign.title，取 persons.posthumousNames 的首选谥号本体（不带国名）；来源沿用各人物 links 与本包 manifest.sources。",
       "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；自称与 name 相同时允许重复，以供详情副标题显示。",
       "2026-10-02人物概述清理：概述仅保留历史事实与必要史料背景，系统建模、年表选择、定位及收录说明移入本说明。以下原文仅留作处理记录，不作为新增史实依据：hou-yi 原概述：有穷氏首领，善射。《左传》载其自鉏迁穷石，因夏民以代夏政，不修民事，为寒浞所杀。传说未称夏后，不入夏后氏正统世次。生卒年无实测。；han-zhuo 原概述：寒氏，名浞，妘姓。伯明氏谗子弟，后羿用为相，旋杀羿代有穷；使浇灭相。后为少康、靡所灭。非夏后正统，不入十七王继承链。生卒年无实测。；gun 原概述：禹之父，崇伯。传说奉尧命障洪水九年不成，后被殛于羽山。生卒无实测；卒年取断代工程夏始约前2070年，示禹受禅之前。；guan-longpang 原概述：夏桀时谏臣。传说桀通宵宴乐，关龙逢进黄图强谏被杀。生卒无实测；卒年取夏商分界约前1600年，示桀世之末。；yi-yin 原概述：商初重臣，名挚，有莘氏媵臣出身；辅汤灭夏，历外丙、仲壬、太甲、沃丁。传说曾放太甲于桐宫。传统生年取维基前1649年；卒年按《今本竹书》沃丁八年，对到本表沃丁窗为前1540年。皆非实测。；fu-hao 原概述：武丁配偶，甲骨所见女将、祭司，殷墟有墓。生年不详；卒于武丁在世时，年取考古通行约前1200年。；zi-zugeng 原概述：武丁之子，名跃，一作曜；甲骨文作「且庚」。断代工程将祖庚至庚丁合为前1191–前1148年，年精度下四王平分。；bi-gan 原概述：商末少师，文丁之子、帝辛叔父。《论语》与微子、箕子并称殷有三仁。传说强谏被剖心。生年不详；死年取牧野之年（断代工程前1046年），示纣末。；ji-yihu 原概述：周穆王之子，前922—前900年在位。其时西周王室仍维持对诸侯的统治，但传世史籍关于具体政事记载不多；共王之后，王位由其子懿王继承。年代采用本项目所用断代年表。；ji-jian 原概述：周共王之子，前899—前892年在位。传世记载称西北戎狄侵扰加剧，周人承受边患；其元年系年与“天再旦”日食记录有关，古史年代存在不同方案。本项目沿用所采用的断代年表。；da-ji 原概述：传说中商末帝辛宠妃。生卒无实测；卒年取牧野之年（前1046年），示商亡。",
-      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。",
+      "2026-10-05：人物概述审查与补充。按人物逐条采用具体史事及正史、传世文献或学术考证；史料仅存名号/世系、不能确认具体经历的记录保留简短表述，不以统一模板扩写。"
     ]
   }
 }
