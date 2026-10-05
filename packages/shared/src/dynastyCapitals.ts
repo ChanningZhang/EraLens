@@ -2,7 +2,7 @@ import type { CapitalRole, CapitalLocation, EntityRef, Reign } from "./schema";
 import { isParallelClaim } from "./claimTracks";
 import { isUncertainDateConfidence } from "./reignBoundaries";
 import { formatReignDurationLabel } from "./reignVisual";
-import { confidencePrecision, formatHistoricalDate, hasUncertainDateRange } from "./historicalDate";
+import { confidencePrecision, formatHistoricalDate, isInterpolatedConfidence } from "./historicalDate";
 import {
   effectiveIntervalEndPoint,
   effectiveIntervalStartAbs,
@@ -197,7 +197,7 @@ export function buildReignTenureCapitalRows(
   capitals: readonly CapitalLocation[],
   dynastyReigns: readonly Reign[] = [reign],
 ): ReignCapitalTenureRow[] {
-  if (hasUncertainDateRange(reign)) return [];
+  if (isInterpolatedConfidence(reign.start.confidence) || isInterpolatedConfidence(reign.end.confidence)) return [];
   return buildReignCapitalTenures(reign, capitals, dynastyReigns)
     .filter((row) => row.capital?.label.trim() && row.tenure.label.trim());
 }

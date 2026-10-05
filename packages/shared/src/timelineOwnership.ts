@@ -1,5 +1,5 @@
 import { claimTrackOf } from "./claimTracks";
-import { hasUncertainDateRange } from "./historicalDate";
+import { isInterpolatedConfidence } from "./historicalDate";
 import type { Dynasty, CapitalLocation, Reign } from "./schema";
 import {
   effectiveIntervalEndAbs,
@@ -187,13 +187,13 @@ export function capitalSegmentsForReign(
 }> {
   // Uncertain dating cannot establish capital tenure for an individual reign.
   // Keep these capitals at dynasty level, including records with explicit links.
-  if (hasUncertainDateRange(reign)) return [];
+  if (isInterpolatedConfidence(reign.start.confidence) || isInterpolatedConfidence(reign.end.confidence)) return [];
   const reignInterval = reignOwnershipInterval(reign, reigns);
   const linked = capitals.filter((capital) => capital.reignIds?.includes(reign.id));
   const candidates = linked;
   const ownershipPeers = capitals.filter(item => item.mappingKind !== "dynasty");
   return candidates.flatMap((capital) => {
-    if (hasUncertainDateRange(capital)) return [];
+    if (isInterpolatedConfidence(capital.start.confidence) || isInterpolatedConfidence(capital.end.confidence)) return [];
     const capitalInterval = capitalOwnershipInterval(capital, ownershipPeers);
     if (!intervalsIntersect(reignInterval, capitalInterval)) return [];
     // A one-day handoff is owned by the older interval even if a viewport

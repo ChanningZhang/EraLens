@@ -5,7 +5,7 @@ import {
   formatAbsSpanTooltip,
   formatYearMonth,
 } from "./time";
-import { formatHistoricalDate, hasUncertainDateRange } from "./historicalDate";
+import { formatHistoricalDate, hasUncertainDateRange, isApproximateConfidence } from "./historicalDate";
 import { confidencePrecision } from "./historicalDate";
 import {
   effectiveIntervalEndPoint,
@@ -161,29 +161,30 @@ export function formatReignDurationLabel(
   const startConfidence = reign.start.confidence ?? "year";
   const endConfidence = reign.end.confidence ?? "year";
   // Layout intervals may use inferred dates, but cannot make their duration certain.
-  if (reign.isOngoing || hasUncertainDateRange(reign)) {
+  if (reign.isOngoing || [reign.start.confidence, reign.end.confidence].some((c) => c?.startsWith("interpolated_"))) {
     return undefined;
   }
+  const approximate = isApproximateConfidence(startConfidence) || isApproximateConfidence(endConfidence);
   if (interval) {
     const start = effectiveIntervalStartPoint(interval);
     const end = effectiveIntervalEndPoint(interval);
     if (confidencePrecision(reign.start.confidence ?? "year") === "day" || confidencePrecision(reign.end.confidence ?? "year") === "day") {
-      return formatDaySpanDuration(
+      return `${approximate ? "约" : ""}${formatDaySpanDuration(
         start,
         end,
         interval.endInclusive - interval.startExclusive,
-      );
+      )}`;
     }
-    return formatAbsSpanDurationLabel(
+    return `${approximate ? "约" : ""}${formatAbsSpanDurationLabel(
       start,
       end,
       absMonth(start.year, start.month),
       absMonth(end.year, end.month),
       confidencePrecision(reign.start.confidence ?? "year") === "year" && confidencePrecision(reign.end.confidence ?? "year") === "year" ? "year" : "month",
-    );
+    )}`;
   }
   const tooltipDuration = formatReignSpanTooltip(reign).match(/ · (.+)$/)?.[1];
-  if (tooltipDuration) return tooltipDuration;
+  if (tooltipDuration) return `${approximate ? "约" : ""}${tooltipDuration}`;
 
   // A collapsed same-year tooltip has no duration suffix. Only restore that
   // suffix when both endpoints are dated with certainty; interpolated or

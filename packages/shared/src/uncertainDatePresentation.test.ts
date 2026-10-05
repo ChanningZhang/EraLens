@@ -45,7 +45,7 @@ describe("uncertain date presentation", () => {
     expect(detail.facts).toContainEqual({ label: "生卒", value: "? — 约-767年" });
   });
 
-  it.each(uncertainConfidences)("keeps %s endpoints out of precise durations and reign capital assignments", (confidence) => {
+  it.each(uncertainConfidences)("keeps %s endpoints from creating certain duration labels", (confidence) => {
     for (const side of ["start", "end"] as const) {
       const reign = { ...knownReign, [side]: { ...knownReign[side], day: 9, confidence } };
       const interval = timelineInterval(reign.start, reign.end, reign.precision);
@@ -53,14 +53,19 @@ describe("uncertain date presentation", () => {
       expect(formatReignSpanTooltip(reign)).toBe(
         `${formatHistoricalDate(reign.start)} — ${formatHistoricalDate(reign.end)}`,
       );
-      expect(formatReignDurationLabel(reign)).toBeUndefined();
-      expect(formatReignDurationLabel(reign, interval)).toBeUndefined();
-      expect(buildReignCapitalTenures(reign, [capital])).toEqual([]);
-      expect(buildReignTenureCapitalRows(reign, [capital])).toEqual([]);
-      expect(buildReignTenureCapitalRows(reign, [])).toEqual([]);
-      expect(capitalsForReigns([reign], [reign], [capital])).toEqual([]);
-      // Explicit links must not bypass uncertain dating.
-      expect(buildReignCapitalTenures(reign, [{ ...capital, reignIds: [reign.id] }])).toEqual([]);
+      if (confidence.startsWith("interpolated_")) {
+        expect(formatReignDurationLabel(reign)).toBeUndefined();
+        expect(formatReignDurationLabel(reign, interval)).toBeUndefined();
+        expect(buildReignCapitalTenures(reign, [capital])).toEqual([]);
+        expect(buildReignTenureCapitalRows(reign, [capital])).toEqual([]);
+        expect(buildReignTenureCapitalRows(reign, [])).toEqual([]);
+        expect(capitalsForReigns([reign], [reign], [capital])).toEqual([]);
+        expect(buildReignCapitalTenures(reign, [{ ...capital, reignIds: [reign.id] }])).toEqual([]);
+      } else {
+        expect(formatReignDurationLabel(reign)).toMatch(/^约/);
+        expect(formatReignDurationLabel(reign, interval)).toMatch(/^约/);
+        expect(buildReignCapitalTenures(reign, [{ ...capital, reignIds: [reign.id] }])).not.toEqual([]);
+      }
     }
   });
 
@@ -107,7 +112,7 @@ describe("uncertain date presentation", () => {
       startAbs: absMonth(1234, 2), endAbs: absMonth(1234, 2),
     };
     expect(formatReignSpanTooltip(reign)).toBe("约1234年2月9日 — 1234年2月20日");
-    expect(formatReignDurationLabel(reign)).toBeUndefined();
+    expect(formatReignDurationLabel(reign)).toMatch(/^约/);
   });
 
   it("keeps certain year tenures and their duration", () => {
