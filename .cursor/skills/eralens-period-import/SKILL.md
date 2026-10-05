@@ -221,7 +221,7 @@ node data/imports/generate.mjs {slug}
 
 这会从 `cache.json` 序列化 SQLite `import.sql` 和 `manifest.json`。全量生成：`node data/imports/generate.mjs --all`。所有包先通过行所有权审计；SQLite SQL 使用共用序列化器 `data/imports/lib/sqlitePackageRows.mjs`。
 
-**统一生成器与内容库更新**：包 SQL 为 SQLite 语法，用于审阅，不作为生产增量写入脚本。普通数据更新使用 `pnpm db:import`：审计所有缓存、生成全量 SQL 与搜索索引，在事务中按外键依赖顺序更新现有内容库并校验，保留 SQLite 文件。仅首次初始化、schema 变更或确有必要时使用 `pnpm data:build` / `pnpm db:setup` 构建临时数据库并替换快照；替换后必须重启正在运行的 API，遵循项目 `AGENTS.md` 的版本及页面验收要求。源包不支持 `preSql` / `postSql`、`updates` 或手写库清理语句；删除或合并实体要直接反映在唯一所有者缓存和所有引用中。
+**统一生成器与内容库更新**：包 SQL 为 SQLite 语法，同时用于审阅和统一内容库加载；不单独逐包提交，也不作为增量写入脚本。普通数据更新使用 `pnpm db:import`：审计所有缓存、重新生成全部包级 SQL，在一个事务中按表的外键依赖顺序加载所有包，再生成搜索索引和版本元信息并校验现有内容库，保留 SQLite 文件。仅首次初始化、schema 变更或确有必要时使用 `pnpm data:build` / `pnpm db:setup` 构建临时数据库并替换快照；替换后必须重启正在运行的 API，遵循项目 `AGENTS.md` 的版本及页面验收要求。源包不支持 `preSql` / `postSql`、`updates` 或手写库清理语句；删除或合并实体要直接反映在唯一所有者缓存和所有引用中。
 
 ### 5. 校验
 

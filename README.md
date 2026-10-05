@@ -24,7 +24,7 @@ docker compose up --build
 
 打开 [http://localhost:8080](http://localhost:8080)。Docker 构建会从真实导入源生成并校验内容快照；设置库保存在 `eralens-state` 持久卷中。无需启动数据库容器。部署切换时如需带入旧 `sys_config` 设置，可将原库导出为 `{ "key": "value" }` JSON，再执行 `pnpm settings:import -- --input=/path/to/settings.json`。
 
-日常修改 `cache.json` 后运行 `pnpm db:import`：它生成全量 SQLite SQL，在事务中更新现有内容库并校验，不需重启 API；`pnpm data:validate` 可单独校验现有快照。`pnpm db:setup` / `pnpm data:build` 会构建临时 SQLite 并替换内容快照，仅用于首次初始化、schema 变更或确有必要的重建。重建或替换文件后必须重启正在运行的 API，否则其连接可能继续读取旧文件；随后核对 `/api/health` 的 `datasetVersion` 与库内版本、相关实体返回值和刷新后的页面。数据变更后运行 `pnpm ios:sync` 将同一快照同步到 iOS。
+日常修改 `cache.json` 后运行 `pnpm db:import`：它生成全部包级 SQL，在一个事务中按表依赖顺序加载各包、生成搜索索引和版本元信息并校验现有内容库，不需重启 API；`pnpm data:validate` 可单独校验现有快照。`pnpm db:setup` / `pnpm data:build` 会构建临时 SQLite 并替换内容快照，仅用于首次初始化、schema 变更或确有必要的重建。重建或替换文件后必须重启正在运行的 API，否则其连接可能继续读取旧文件；随后核对 `/api/health` 的 `datasetVersion` 与库内版本、相关实体返回值和刷新后的页面。数据变更后运行 `pnpm ios:sync` 将同一快照同步到 iOS。
 
 ## 使用时间轴
 

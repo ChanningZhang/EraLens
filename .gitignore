@@ -12,3 +12,5 @@ data/mobile/*.sqlite-*
 .playwright-mcp
 data/mobile/*.sqlite.sql
 data/mobile/*.sqlite.sql-*
+data/mobile/*.sqlite.refresh.sql
+data/mobile/*.sqlite.refresh.sql-*
