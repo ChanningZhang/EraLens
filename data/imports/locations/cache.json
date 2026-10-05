@@ -1351,6 +1351,20 @@
       "longitude": 118.309398,
       "latitude": 36.826882,
       "coordinateSystem": "GCJ02"
+    },
+    {
+      "id": "loc-luotuocheng-founder-review",
+      "modernName": "甘肃省张掖市高台县骆驼城遗址",
+      "longitude": 99.56879,
+      "latitude": 39.34957,
+      "coordinateSystem": "WGS84"
+    },
+    {
+      "id": "loc-dunhuang-founder-review",
+      "modernName": "甘肃省酒泉市敦煌市",
+      "longitude": 94.6638,
+      "latitude": 40.141,
+      "coordinateSystem": "WGS84"
     }
   ],
   "manifest": {
@@ -1364,11 +1378,21 @@
     },
     "scope": "cn",
     "counts": {
-      "locations": 193
+      "locations": 195
     },
-    "sources": [],
+    "sources": [
+      {
+        "label": "OpenStreetMap地点坐标（Mapcarta）",
+        "url": "https://mapcarta.com/W1545369191"
+      },
+      {
+        "label": "OpenStreetMap地点坐标（Mapcarta）",
+        "url": "https://mapcarta.com/Dunhuang"
+      }
+    ],
     "notes": [
-      "坐标按现代地名、七位小数经纬度、坐标系完全一致首次去重；ID 已固化，后续修改字段不重新计算 ID。"
+      "坐标按现代地名、七位小数经纬度、坐标系完全一致首次去重；ID 已固化，后续修改字段不重新计算 ID。",
+      "2026-10-05：补入北凉建康骆驼城遗址和敦煌城市约略点，WGS84坐标取OpenStreetMap。敦煌点仅表示城市范围，不作为十六国城址精确定位。"
     ]
   }
 }

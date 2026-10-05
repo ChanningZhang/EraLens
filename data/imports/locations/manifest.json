@@ -9,7 +9,7 @@
   },
   "scope": "cn",
   "counts": {
-    "locations": 193,
+    "locations": 195,
     "persons": 0,
     "dynastyGroups": 0,
     "dynasties": 0,
@@ -19,8 +19,18 @@
     "associations": 0,
     "locationMappings": 0
   },
-  "sources": [],
+  "sources": [
+    {
+      "label": "OpenStreetMap地点坐标（Mapcarta）",
+      "url": "https://mapcarta.com/W1545369191"
+    },
+    {
+      "label": "OpenStreetMap地点坐标（Mapcarta）",
+      "url": "https://mapcarta.com/Dunhuang"
+    }
+  ],
   "notes": [
-    "坐标按现代地名、七位小数经纬度、坐标系完全一致首次去重；ID 已固化，后续修改字段不重新计算 ID。"
+    "坐标按现代地名、七位小数经纬度、坐标系完全一致首次去重；ID 已固化，后续修改字段不重新计算 ID。",
+    "2026-10-05：补入北凉建康骆驼城遗址和敦煌城市约略点，WGS84坐标取OpenStreetMap。敦煌点仅表示城市范围，不作为十六国城址精确定位。"
   ]
 }

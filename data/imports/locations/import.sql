@@ -163,6 +163,7 @@ INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_s
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-ddc05c80683b244a8afca7d6ae64a131','青海省海南藏族自治州共和县',100.619405,36.284158,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-de1476d3a8e1aacc647d05f427e7185c','陕西省西安市',108.94,34.34,'WGS84');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-dfa5a99e7024e7efc5fbeb5efd568e78','云南省昆明市晋宁区',102.595325,24.669077,'GCJ02');
+INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-dunhuang-founder-review','甘肃省酒泉市敦煌市',94.6638,40.141,'WGS84');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-e2be46d726fae7a6963144dacff26d94','辽宁省朝阳市',120.488801,41.601855,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-e371eae86ec539966ac98d299b52c39d','江苏省南京市',118.797,32.06,'WGS84');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-e4d58ea4d1ecb3d7ce4d0980cc5611a3','河北省沧州市献县',116.122767,38.189924,'GCJ02');
@@ -193,4 +194,5 @@ INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_s
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-fea5fdf4da49e2e5784ed1aeb3458cd7','陕西省西安市未央区汉长安城遗址',108.858889,34.303598,'WGS84');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-fead7761c1222e82e7341856395fad7d','广东省肇庆市',112.465245,23.047747,'GCJ02');
 INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-ff4af19f35888f76f9a4eb3164b61196','山东省淄博市临淄区',118.309398,36.826882,'GCJ02');
+INSERT INTO "locations" ("id","modern_name","longitude","latitude","coordinate_system") VALUES ('loc-luotuocheng-founder-review','甘肃省张掖市高台县骆驼城遗址',99.56879,39.34957,'WGS84');
 COMMIT;

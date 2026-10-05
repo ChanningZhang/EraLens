@@ -25,7 +25,8 @@
     "depth": "standard",
     "generatedAt": "2026-10-02",
     "counts": {
-      "location_mapping": 223
+      "location_mapping": 223,
+      "locationMappings": 229
     },
     "sources": [
       {
@@ -391,6 +392,34 @@
       {
         "label": "故宫博物院：赫图阿拉",
         "url": "https://www.dpm.org.cn/lemmas/244892.html"
+      },
+      {
+        "label": "迁都史事及地点依据",
+        "url": "https://zh.wikipedia.org/wiki/北凉"
+      },
+      {
+        "label": "迁都史事及地点依据",
+        "url": "https://zh.wikisource.org/wiki/資治通鑑/卷111"
+      },
+      {
+        "label": "迁都史事及地点依据",
+        "url": "https://zh.wikipedia.org/wiki/西凉"
+      },
+      {
+        "label": "迁都史事及地点依据",
+        "url": "https://zh.wikipedia.org/wiki/南凉"
+      },
+      {
+        "label": "迁都史事及地点依据",
+        "url": "https://zh.wikipedia.org/wiki/西秦"
+      },
+      {
+        "label": "迁都史事及地点依据",
+        "url": "https://zh.wikisource.org/wiki/史記/卷043"
+      },
+      {
+        "label": "《通鉴纪事本末》段业徙治张掖",
+        "url": "https://www.shidianguji.com/mid-page/7426852941149208626"
       }
     ],
     "notes": [
@@ -439,7 +468,10 @@
       "2026-10-02复核前秦、后秦长安都城时段：前秦长安止于385年六月慕容冲入城（《晋书·孝武帝纪》）；西安市志记后秦至386年四月才取长安并即帝位，故后秦长安都城从386年四月起，不沿用384年后秦建国年。原前秦记录延伸至394年仅因前秦残余政权灭亡年，不能视作其继续控制长安；此后长安属后秦。",
       "前秦失长安后，苻丕于385年秋入据晋阳并于晋阳南即位；现有在位源将其起点换算为公历385年10月，按该月起记晋阳都城，至苻丕386年11月败亡止。苻登继立后的《晋书》记其营垒、行军与据点多次转移，未见可据以设立固定首都的明确迁都记载，故不把胡空堡、平凉等军事驻地直接标为都城。",
       "2026-10-03：地理记录迁移为显式 locationMappings，坐标集中引用 locations；君主都城关联已固化，运行时不再按 claimTrack 自动推断。",
-      "迁移前旧注中的 claim_track、reign_capitals 等字段名仅记载当时的数据处理。当前地理两表均不存 track，全部在位关联由 reign mapping 独立维护；primary 表示所属政权主要治所，不表示整个王朝的正都。"
+      "迁移前旧注中的 claim_track、reign_capitals 等字段名仅记载当时的数据处理。当前地理两表均不存 track，全部在位关联由 reign mapping 独立维护；primary 表示所属政权主要治所，不表示整个王朝的正都。",
+      "2026-10-05：对照开国概述修正北凉、南燕、西凉、南凉、西秦、赵的都城阶段，并同步显式在位关联。迁都端点按史料年精度共用锚点，不手写次年截断。滑台、廉川、西平及西秦早期若干城址尚未完成可靠空间定位，删除其错误对应的广固、姑臧、枹罕关联；中牟定位有争议，删除错误晋阳关联，不用现代同名县或行政中心冒充古城。史事和未建地图关联的原因保留于此。",
+      "2026-10-05：吴都建业起点由222年改为229年，并按孙皓265年迁武昌、266年还建业拆分。武昌为今鄂州，不能复用陈汉所用的武汉点；暂不补造未核定城址的空间记录。",
+      "2026-10-05：北凉张掖迁都年采用《通鉴纪事本末》隆安二年段业徙治张掖及张掖地方志细颗粒资料的398年；部分地方概述合并至401年蒙逊夺位，本次不采用该简化口径。"
     ]
   },
   "locationMappings": [
@@ -2040,50 +2072,19 @@
     },
     {
       "start": {
-        "year": -403,
-        "month": 1,
-        "abs": -4824,
-        "confidence": "year"
-      },
-      "end": {
         "year": -386,
-        "month": 12,
-        "abs": -4609,
-        "confidence": "month"
-      },
-      "startAbs": -4824,
-      "endAbs": -4609,
-      "role": "primary",
-      "note": "赵国初都晋阳。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/晋阳"
-        }
-      ],
-      "id": "cap-zhao-warring-jinyang-403",
-      "locationId": "loc-ce682c985f4b881033df398af3a13567",
-      "kind": "dynasty",
-      "externalId": "zhao-warring",
-      "historicalName": "晋阳"
-    },
-    {
-      "start": {
-        "year": -385,
         "month": 1,
-        "abs": -4608,
-        "confidence": "year"
+        "confidence": "year",
+        "abs": -4620
       },
       "end": {
-        "year": -222,
+        "year": -228,
         "month": 12,
-        "abs": -2641,
-        "confidence": "month"
+        "confidence": "year",
+        "abs": -2713
       },
-      "startAbs": -4608,
-      "endAbs": -2641,
       "role": "primary",
-      "note": "赵敬侯迁邯郸。",
+      "note": "赵敬侯元年（前386年）迁都邯郸，前228年秦攻陷邯郸；之后赵嘉在代地续立，不属于邯郸都城阶段。",
       "links": [
         {
           "label": "维基百科",
@@ -2094,7 +2095,9 @@
       "locationId": "loc-6acfc31df705e8bc4d2c864936135a3e",
       "kind": "dynasty",
       "externalId": "zhao-warring",
-      "historicalName": "邯郸"
+      "historicalName": "邯郸",
+      "startAbs": -4620,
+      "endAbs": -2713
     },
     {
       "start": {
@@ -2649,21 +2652,21 @@
     },
     {
       "start": {
-        "year": 222,
+        "year": 229,
         "month": 1,
-        "abs": 2664,
-        "confidence": "year"
+        "confidence": "year",
+        "abs": 2748
       },
       "end": {
-        "year": 280,
+        "year": 265,
         "month": 12,
-        "abs": 3371,
-        "confidence": "month"
+        "confidence": "year",
+        "abs": 3191
       },
-      "startAbs": 2664,
-      "endAbs": 3371,
+      "startAbs": 2748,
+      "endAbs": 3191,
       "role": "primary",
-      "note": "东吴都城建业。",
+      "note": "孙权222年建立独立吴政权时都武昌（今鄂州），229年称帝后迁建业；此记录不把建业提前到222年。孙皓265年迁武昌、266年复还，建业阶段另分时记录。",
       "links": [
         {
           "label": "维基百科",
@@ -3241,35 +3244,6 @@
     },
     {
       "start": {
-        "year": 385,
-        "month": 1,
-        "abs": 4620,
-        "confidence": "year"
-      },
-      "end": {
-        "year": 431,
-        "month": 12,
-        "abs": 5183,
-        "confidence": "month"
-      },
-      "startAbs": 4620,
-      "endAbs": 5183,
-      "role": "primary",
-      "note": "西秦都城桴罕。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/西秦"
-        }
-      ],
-      "id": "cap-qin-xi-fuhan-385",
-      "locationId": "loc-b00a6d4ea5a3182c3bd14a198da28d2d",
-      "kind": "dynasty",
-      "externalId": "qin-xi",
-      "historicalName": "桴罕"
-    },
-    {
-      "start": {
         "year": 386,
         "month": 1,
         "abs": 4632,
@@ -3383,151 +3357,6 @@
       "kind": "dynasty",
       "externalId": "wei-north",
       "historicalName": "洛阳"
-    },
-    {
-      "start": {
-        "year": 397,
-        "month": 1,
-        "abs": 4764,
-        "confidence": "year"
-      },
-      "end": {
-        "year": 404,
-        "month": 12,
-        "abs": 4859,
-        "confidence": "month"
-      },
-      "startAbs": 4764,
-      "endAbs": 4859,
-      "role": "primary",
-      "note": "南凉初都姑臧。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/南凉"
-        }
-      ],
-      "id": "cap-liang-south-guzang-397",
-      "locationId": "loc-1bc639efb49d835e714ac0e15ab69752",
-      "kind": "dynasty",
-      "externalId": "liang-south",
-      "historicalName": "姑臧"
-    },
-    {
-      "start": {
-        "year": 405,
-        "month": 1,
-        "abs": 4860,
-        "confidence": "year"
-      },
-      "end": {
-        "year": 414,
-        "month": 12,
-        "abs": 4979,
-        "confidence": "month"
-      },
-      "startAbs": 4860,
-      "endAbs": 4979,
-      "role": "primary",
-      "note": "南凉迁都乐都。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/乐都区"
-        }
-      ],
-      "id": "cap-liang-south-ledu-405",
-      "locationId": "loc-08f48e4e849b7ddef96d361d7eb9112e",
-      "kind": "dynasty",
-      "externalId": "liang-south",
-      "historicalName": "乐都"
-    },
-    {
-      "start": {
-        "year": 397,
-        "month": 1,
-        "abs": 4764,
-        "confidence": "year"
-      },
-      "end": {
-        "year": 439,
-        "month": 12,
-        "abs": 5279,
-        "confidence": "month"
-      },
-      "startAbs": 4764,
-      "endAbs": 5279,
-      "role": "primary",
-      "note": "北凉都城张掖→姑臧。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/北凉"
-        }
-      ],
-      "id": "cap-liang-north-zhangye-397",
-      "locationId": "loc-13987393804ac7bff0c47288e4eec640",
-      "kind": "dynasty",
-      "externalId": "liang-north",
-      "historicalName": "张掖"
-    },
-    {
-      "start": {
-        "year": 398,
-        "month": 1,
-        "abs": 4776,
-        "confidence": "year"
-      },
-      "end": {
-        "year": 410,
-        "month": 12,
-        "abs": 4931,
-        "confidence": "month"
-      },
-      "startAbs": 4776,
-      "endAbs": 4931,
-      "role": "primary",
-      "note": "南燕都城广固。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/南燕"
-        }
-      ],
-      "id": "cap-yan-south-guanggu-398",
-      "locationId": "loc-f98edee195f0b3d3537b14668804de3a",
-      "kind": "dynasty",
-      "externalId": "yan-south",
-      "historicalName": "广固"
-    },
-    {
-      "start": {
-        "year": 400,
-        "month": 1,
-        "abs": 4800,
-        "confidence": "year"
-      },
-      "end": {
-        "year": 421,
-        "month": 12,
-        "abs": 5063,
-        "confidence": "month"
-      },
-      "startAbs": 4800,
-      "endAbs": 5063,
-      "role": "primary",
-      "note": "西凉都城酒泉→敦煌。",
-      "links": [
-        {
-          "label": "维基百科",
-          "url": "https://zh.wikipedia.org/wiki/西凉"
-        }
-      ],
-      "id": "cap-liang-xi-jiuquan-400",
-      "locationId": "loc-00b602f076336a1d9821474d74aa5a12",
-      "kind": "dynasty",
-      "externalId": "liang-xi",
-      "historicalName": "酒泉"
     },
     {
       "start": {
@@ -7072,7 +6901,7 @@
         "confidence": "day"
       },
       "startAbs": 9093,
-      "endAbs": 9107,
+      "endAbs": 9111,
       "role": "primary",
       "note": "安庆绪弃洛阳后退保邺郡，改邺郡为安成府；史思明杀安庆绪并接收其军后，该政权中心转至范阳。定位采用邺城遗址所在临漳县约略坐标。 地点名称原注：邺（安成府）。",
       "links": [
@@ -7106,8 +6935,8 @@
         "abs": 9116,
         "confidence": "day"
       },
-      "startAbs": 9107,
-      "endAbs": 9112,
+      "startAbs": 9111,
+      "endAbs": 9116,
       "role": "primary",
       "note": "史思明杀安庆绪后返回范阳，并于乾元二年四月在范阳称帝、改称燕京；称帝具体公历日未能据可靠历日确定，起点以安庆绪被杀日作为接续标记并标推定。759年九月史军重新进入洛阳，主都阶段止于入城前一日。坐标是北京市区约略点，不代表已确认的唐范阳城址。",
       "links": [
@@ -7142,8 +6971,8 @@
         "abs": 9153,
         "confidence": "day"
       },
-      "startAbs": 9112,
-      "endAbs": 9150,
+      "startAbs": 9116,
+      "endAbs": 9153,
       "role": "primary",
       "note": "史思明军759年九月再入洛阳后，以洛阳为周京；762年唐军收复洛阳，止于失守前一日。坐标为洛阳市区约略点。 地点名称原注：洛阳（周京）。",
       "links": [
@@ -7177,8 +7006,8 @@
         "abs": 9156,
         "confidence": "approximate_day"
       },
-      "startAbs": 9107,
-      "endAbs": 9153,
+      "startAbs": 9111,
+      "endAbs": 9156,
       "role": "secondary",
       "note": "史思明称帝后改范阳为燕京；759年洛阳复入后范阳保留为燕京/后方政治中心，至史朝义败亡前后失去政权控制。末端依史朝义败亡、首级入京的时间范围标推定。坐标是北京市区约略点，不代表已确认的唐范阳城址。",
       "links": [
@@ -7198,6 +7027,394 @@
       "kind": "dynasty",
       "externalId": "yan-anshi",
       "historicalName": "范阳/燕京"
+    },
+    {
+      "start": {
+        "year": 397,
+        "month": 1,
+        "confidence": "year",
+        "abs": 4764
+      },
+      "end": {
+        "year": 398,
+        "month": 12,
+        "confidence": "year",
+        "abs": 4787
+      },
+      "role": "primary",
+      "note": "北凉397年起于建康，398年段业转治张掖，412年沮渠蒙逊迁姑臧；迁都原历月份未可靠换算，采用年精度锚点。",
+      "links": [
+        {
+          "label": "迁都史事及地点依据",
+          "url": "https://zh.wikipedia.org/wiki/北凉"
+        },
+        {
+          "label": "《通鉴纪事本末》段业徙治张掖",
+          "url": "https://www.shidianguji.com/mid-page/7426852941149208626"
+        }
+      ],
+      "id": "cap-liang-north-jiankang-397",
+      "locationId": "loc-luotuocheng-founder-review",
+      "kind": "dynasty",
+      "externalId": "liang-north",
+      "historicalName": "建康",
+      "spatialPrecision": "遗址范围约略点",
+      "startAbs": 4764,
+      "endAbs": 4787
+    },
+    {
+      "start": {
+        "year": 398,
+        "month": 1,
+        "confidence": "year",
+        "abs": 4776
+      },
+      "end": {
+        "year": 412,
+        "month": 12,
+        "confidence": "year",
+        "abs": 4955
+      },
+      "role": "primary",
+      "note": "北凉397年起于建康，398年段业转治张掖，412年沮渠蒙逊迁姑臧；迁都原历月份未可靠换算，采用年精度锚点。",
+      "links": [
+        {
+          "label": "迁都史事及地点依据",
+          "url": "https://zh.wikipedia.org/wiki/北凉"
+        },
+        {
+          "label": "《通鉴纪事本末》段业徙治张掖",
+          "url": "https://www.shidianguji.com/mid-page/7426852941149208626"
+        }
+      ],
+      "id": "cap-liang-north-zhangye-398",
+      "locationId": "loc-13987393804ac7bff0c47288e4eec640",
+      "kind": "dynasty",
+      "externalId": "liang-north",
+      "historicalName": "张掖",
+      "startAbs": 4776,
+      "endAbs": 4955
+    },
+    {
+      "start": {
+        "year": 412,
+        "month": 1,
+        "confidence": "year",
+        "abs": 4944
+      },
+      "end": {
+        "year": 439,
+        "month": 12,
+        "confidence": "year",
+        "abs": 5279
+      },
+      "role": "primary",
+      "note": "北凉397年起于建康，398年段业转治张掖，412年沮渠蒙逊迁姑臧；迁都原历月份未可靠换算，采用年精度锚点。",
+      "links": [
+        {
+          "label": "迁都史事及地点依据",
+          "url": "https://zh.wikipedia.org/wiki/北凉"
+        }
+      ],
+      "id": "cap-liang-north-guzang-412",
+      "locationId": "loc-1bc639efb49d835e714ac0e15ab69752",
+      "kind": "dynasty",
+      "externalId": "liang-north",
+      "historicalName": "姑臧",
+      "startAbs": 4944,
+      "endAbs": 5279
+    },
+    {
+      "start": {
+        "year": 399,
+        "month": 1,
+        "confidence": "year",
+        "abs": 4788
+      },
+      "end": {
+        "year": 410,
+        "month": 12,
+        "confidence": "year",
+        "abs": 4931
+      },
+      "role": "primary",
+      "note": "398年慕容德初据滑台，399年失滑台后攻取广固并迁都，不将广固起点提前至398年。",
+      "links": [
+        {
+          "label": "迁都史事及地点依据",
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷111"
+        }
+      ],
+      "id": "cap-yan-south-guanggu-399",
+      "locationId": "loc-f98edee195f0b3d3537b14668804de3a",
+      "kind": "dynasty",
+      "externalId": "yan-south",
+      "historicalName": "广固",
+      "startAbs": 4788,
+      "endAbs": 4931
+    },
+    {
+      "start": {
+        "year": 400,
+        "month": 1,
+        "confidence": "year",
+        "abs": 4800
+      },
+      "end": {
+        "year": 405,
+        "month": 12,
+        "confidence": "year",
+        "abs": 4871
+      },
+      "role": "primary",
+      "note": "西凉400年李暠立国于敦煌，405年迁酒泉；420年李歆败亡、酒泉失守后李恂在敦煌续立，421年终结。",
+      "links": [
+        {
+          "label": "迁都史事及地点依据",
+          "url": "https://zh.wikipedia.org/wiki/西凉"
+        }
+      ],
+      "id": "cap-liang-xi-dunhuang-400",
+      "locationId": "loc-dunhuang-founder-review",
+      "kind": "dynasty",
+      "externalId": "liang-xi",
+      "historicalName": "敦煌",
+      "spatialPrecision": "城市范围约略点，非古城遗址",
+      "startAbs": 4800,
+      "endAbs": 4871
+    },
+    {
+      "start": {
+        "year": 405,
+        "month": 1,
+        "confidence": "year",
+        "abs": 4860
+      },
+      "end": {
+        "year": 420,
+        "month": 12,
+        "confidence": "year",
+        "abs": 5051
+      },
+      "role": "primary",
+      "note": "西凉400年李暠立国于敦煌，405年迁酒泉；420年李歆败亡、酒泉失守后李恂在敦煌续立，421年终结。",
+      "links": [
+        {
+          "label": "迁都史事及地点依据",
+          "url": "https://zh.wikipedia.org/wiki/西凉"
+        }
+      ],
+      "id": "cap-liang-xi-jiuquan-405",
+      "locationId": "loc-00b602f076336a1d9821474d74aa5a12",
+      "kind": "dynasty",
+      "externalId": "liang-xi",
+      "historicalName": "酒泉",
+      "startAbs": 4860,
+      "endAbs": 5051
+    },
+    {
+      "start": {
+        "year": 420,
+        "month": 1,
+        "confidence": "year",
+        "abs": 5040
+      },
+      "end": {
+        "year": 421,
+        "month": 12,
+        "confidence": "year",
+        "abs": 5063
+      },
+      "role": "primary",
+      "note": "西凉400年李暠立国于敦煌，405年迁酒泉；420年李歆败亡、酒泉失守后李恂在敦煌续立，421年终结。",
+      "links": [
+        {
+          "label": "迁都史事及地点依据",
+          "url": "https://zh.wikipedia.org/wiki/西凉"
+        }
+      ],
+      "id": "cap-liang-xi-dunhuang-420",
+      "locationId": "loc-dunhuang-founder-review",
+      "kind": "dynasty",
+      "externalId": "liang-xi",
+      "historicalName": "敦煌",
+      "spatialPrecision": "城市范围约略点，非古城遗址",
+      "startAbs": 5040,
+      "endAbs": 5063
+    },
+    {
+      "start": {
+        "year": 406,
+        "month": 1,
+        "confidence": "year",
+        "abs": 4872
+      },
+      "end": {
+        "year": 410,
+        "month": 12,
+        "confidence": "year",
+        "abs": 4931
+      },
+      "role": "primary",
+      "note": "南凉406年秃发傉檀取得姑臧后迁都，410年退出，不能记为397年初都。",
+      "links": [
+        {
+          "label": "迁都史事及地点依据",
+          "url": "https://zh.wikipedia.org/wiki/南凉"
+        }
+      ],
+      "id": "cap-liang-south-guzang-406",
+      "locationId": "loc-1bc639efb49d835e714ac0e15ab69752",
+      "kind": "dynasty",
+      "externalId": "liang-south",
+      "historicalName": "姑臧",
+      "startAbs": 4872,
+      "endAbs": 4931
+    },
+    {
+      "start": {
+        "year": 399,
+        "month": 1,
+        "confidence": "year",
+        "abs": 4788
+      },
+      "end": {
+        "year": 400,
+        "month": 12,
+        "confidence": "year",
+        "abs": 4811
+      },
+      "role": "primary",
+      "note": "399年秃发乌孤迁乐都；400年利鹿孤迁西平，402年傉檀复迁乐都，406年迁姑臧，410年返回乐都。",
+      "links": [
+        {
+          "label": "迁都史事及地点依据",
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷111"
+        }
+      ],
+      "id": "cap-liang-south-ledu-399",
+      "locationId": "loc-08f48e4e849b7ddef96d361d7eb9112e",
+      "kind": "dynasty",
+      "externalId": "liang-south",
+      "historicalName": "乐都",
+      "startAbs": 4788,
+      "endAbs": 4811
+    },
+    {
+      "start": {
+        "year": 402,
+        "month": 1,
+        "confidence": "year",
+        "abs": 4824
+      },
+      "end": {
+        "year": 406,
+        "month": 12,
+        "confidence": "year",
+        "abs": 4883
+      },
+      "role": "primary",
+      "note": "399年秃发乌孤迁乐都；400年利鹿孤迁西平，402年傉檀复迁乐都，406年迁姑臧，410年返回乐都。",
+      "links": [
+        {
+          "label": "迁都史事及地点依据",
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷111"
+        }
+      ],
+      "id": "cap-liang-south-ledu-402",
+      "locationId": "loc-08f48e4e849b7ddef96d361d7eb9112e",
+      "kind": "dynasty",
+      "externalId": "liang-south",
+      "historicalName": "乐都",
+      "startAbs": 4824,
+      "endAbs": 4883
+    },
+    {
+      "start": {
+        "year": 410,
+        "month": 1,
+        "confidence": "year",
+        "abs": 4920
+      },
+      "end": {
+        "year": 414,
+        "month": 12,
+        "confidence": "year",
+        "abs": 4979
+      },
+      "role": "primary",
+      "note": "399年秃发乌孤迁乐都；400年利鹿孤迁西平，402年傉檀复迁乐都，406年迁姑臧，410年返回乐都。",
+      "links": [
+        {
+          "label": "迁都史事及地点依据",
+          "url": "https://zh.wikisource.org/wiki/資治通鑑/卷111"
+        }
+      ],
+      "id": "cap-liang-south-ledu-410",
+      "locationId": "loc-08f48e4e849b7ddef96d361d7eb9112e",
+      "kind": "dynasty",
+      "externalId": "liang-south",
+      "historicalName": "乐都",
+      "startAbs": 4920,
+      "endAbs": 4979
+    },
+    {
+      "start": {
+        "year": 412,
+        "month": 1,
+        "confidence": "year",
+        "abs": 4944
+      },
+      "end": {
+        "year": 431,
+        "month": 12,
+        "confidence": "year",
+        "abs": 5183
+      },
+      "role": "primary",
+      "note": "乞伏炽磐412年继位后以枹罕为都；国仁385年初都勇士城，不能把枹罕都城阶段提前。",
+      "links": [
+        {
+          "label": "迁都史事及地点依据",
+          "url": "https://zh.wikipedia.org/wiki/西秦"
+        }
+      ],
+      "id": "cap-qin-xi-fuhan-412",
+      "locationId": "loc-b00a6d4ea5a3182c3bd14a198da28d2d",
+      "kind": "dynasty",
+      "externalId": "qin-xi",
+      "historicalName": "枹罕",
+      "startAbs": 4944,
+      "endAbs": 5183
+    },
+    {
+      "start": {
+        "year": 266,
+        "month": 1,
+        "confidence": "year",
+        "abs": 3192
+      },
+      "end": {
+        "year": 280,
+        "month": 12,
+        "confidence": "year",
+        "abs": 3371
+      },
+      "startAbs": 3192,
+      "endAbs": 3371,
+      "role": "primary",
+      "note": "孙权222年建立独立吴政权时都武昌（今鄂州），229年称帝后迁建业；此记录不把建业提前到222年。孙皓265年迁武昌、266年复还，建业阶段另分时记录。",
+      "links": [
+        {
+          "label": "维基百科",
+          "url": "https://zh.wikipedia.org/wiki/东吴"
+        }
+      ],
+      "id": "cap-wu-jianye-266",
+      "locationId": "loc-248ff7be823a2f4964045f586e347281",
+      "kind": "dynasty",
+      "externalId": "wu",
+      "historicalName": "建业"
     }
   ]
 }
