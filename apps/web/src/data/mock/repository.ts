@@ -12,6 +12,7 @@ import {
   DEFAULT_EVENT_DISPLAY_CONFIG,
   EventDisplayConfigSchema,
   filterTimeline,
+  reignTimelineFromStore, personTimelineFromStore, ContentVersionMismatchError,
   searchEntities,
   type Dynasty,
   type CapitalLocation, type LocationMappingQuery, type LocationMapping, filterLocationMappings,
@@ -90,6 +91,22 @@ const store = { dynasties, reigns, persons, events, relations, associations, loc
 const settings = createPlatformSettings();
 
 export const mockRepository: TimelineRepository = {
+  async getDatasetVersion() { return "mock-v1"; },
+  async getReignTimeline(query) {
+    if (query.signal?.aborted) throw query.signal.reason;
+    if (query.datasetVersion && query.datasetVersion !== "mock-v1") throw new ContentVersionMismatchError();
+    return reignTimelineFromStore(store,query,"mock-v1");
+  },
+  async getEventTimeline(query) {
+    if (query.signal?.aborted) throw query.signal.reason;
+    if (query.datasetVersion && query.datasetVersion !== "mock-v1") throw new ContentVersionMismatchError();
+    return { datasetVersion:"mock-v1",events:filterTimeline(store,query).events };
+  },
+  async getPersonTimeline(query) {
+    if (query.signal?.aborted) throw query.signal.reason;
+    if (query.datasetVersion && query.datasetVersion !== "mock-v1") throw new ContentVersionMismatchError();
+    return personTimelineFromStore(store,query,"mock-v1");
+  },
   async getTimeline(query: TimelineQuery) {
     return filterTimeline(store, {
       fromAbs: query.fromAbs,

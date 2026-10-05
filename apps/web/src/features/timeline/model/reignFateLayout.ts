@@ -158,8 +158,9 @@ export function layoutReignFates(
   const colorByReignId = new Map<string, string>();
 
   for (const lane of lanes) {
-    const { rulers } = partitionReignRecords(lane.records);
-    for (const reign of lane.records) {
+    const records = [...new Map([...lane.records,...reigns.filter(r => r.dynastyId === lane.dynastyId)].map(r => [r.id,r])).values()];
+    const { rulers } = partitionReignRecords(records);
+    for (const reign of records) {
       if (!neededReigns.has(reign.id)) continue;
       colorByReignId.set(reign.id, lane.color);
       const layout = layoutLaneReignBar(

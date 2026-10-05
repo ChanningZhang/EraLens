@@ -11,6 +11,7 @@ export * from "./personSearchTerms";
 export * from "./emperorAppellation";
 export * from "./rocTaiwanLeaderDisplay";
 export * from "./timelineData";
+export * from "./timelineLayers";
 export * from "./chunks";
 export * from "./dynastyColors";
 export * from "./timelineLanes";

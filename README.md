@@ -54,3 +54,20 @@ docker compose up --build
 ### 王朝分时名称
 
 普通王朝的 `name` 为名称文本。改名阶段合并为同一条王朝记录后，`name` 保存仅含 `periods` 的 JSON 字符串，每个阶段包含 `name`、`start`、`end`（带 confidence 的历史日期）。代表显示名称放在 `altNames[0]`；人物与在位详情使用代表名称，泳道按视口时间切换名称。整库构建以导入源的最终记录和引用为准，不再运行旧的增量合并脚本。
+
+### 时间轴分层查询与性能验证
+
+时间轴分别读取 `/api/timeline/reigns`、`/api/timeline/events`、`/api/timeline/persons`，参数为 `from`、`to`、`lod` 和可选 `scope`。三个响应都带 `datasetVersion`；传入期望版本 `datasetVersion` 时，版本不一致返回 409。在位响应附带 `context`，供命运线解析使用；事件自带关联 ID 与地点映射。底部人物接口在全库排除已有在位记录者，千年视图不发起该层查询。旧 `/api/timeline` 聚合接口保持可用。
+
+前端各层独立缓存、取消和预取，相同窗口及数据版本就绪后才组合关联展示。内容版本每 30 秒及窗口重新聚焦时检查；普通导入不需要重建数据库。
+
+性能与契约验证命令：
+
+```bash
+pnpm performance:contract
+pnpm performance:http
+pnpm performance:before
+pnpm performance:after
+```
+
+前后基准使用冻结的旧 Repository 和当前实现，预热 10 次、采样 200 次，并将原始数据写入 `docs/performance/`。应依次运行两个基准，避免并行构建或测试造成干扰。测试只读访问内容库，不运行数据构建或导入。方法、结果和局限见 [SQL 性能报告](docs/sqlite-performance.md)。

@@ -1,0 +1,213 @@
+
+ RUN  v3.2.7 /private/var/folders/cw/1bp3nby17f94j3kd9c7_5v7h0000gn/T/eralens-original-tests-hvw7ml8z/packages/shared
+
+ ❯ src/emperorAppellation.test.ts (66 tests | 3 failed) 15ms
+   ✓ resolveEmperorAppellation > uses a posthumous name before Tang 1ms
+   ✓ resolveEmperorAppellation > uses the dynastic title for Sui posthumous shorthand 0ms
+   ✓ resolveEmperorAppellation > falls back to the stored reign title when no temple name exists 0ms
+   ✓ resolveEmperorAppellation > uses a temple name from Tang through Yuan 0ms
+   ✓ resolveEmperorAppellation > prefers temple over posthumous from Tang onward 0ms
+   ✓ resolveEmperorAppellation > prefers temple over posthumous for Ming and Qing too 0ms
+   ✓ resolveEmperorAppellation > does not treat {regime}帝 placeholders as posthumous names 0ms
+   ✓ resolveEmperorAppellation > uses the temple name for a late Yuan emperor with a recorded 庙号 0ms
+   ✓ resolveEmperorAppellation > falls back to a regnal title when Qin-style names do not exist 0ms
+   ✓ resolveEmperorAppellation > honors regnal preferred overrides 0ms
+   ✓ resolveEmperorAppellation > ignores stored temple/posthumous preferred and follows year rules 0ms
+   ✓ resolveEmperorAppellation > does not use era names as appellations for Ming reigns 0ms
+   ✓ resolveReignPrimaryLabel > shows person name for Ming and Qing emperors 0ms
+   ✓ resolveReignPrimaryLabel > shows person name for earlier dynasties 0ms
+   ✓ resolveReignPrimaryLabel > shows stored posthumous on the card when the person name is clean 0ms
+   ✓ resolveReignPrimaryLabel > uses the person name as pre-Qin primary when no posthumous name exists 0ms
+   ✓ resolveReignPrimaryLabel > keeps surnames that begin with 王, such as 王莽 0ms
+   ✓ resolveEmperorAppellation for feudal regnal titles > honors stored regnal preferred bodies 0ms
+   ✓ resolveEmperorAppellation for feudal regnal titles > reads posthumous from the stored field, not title parsing 0ms
+   ✓ resolveReignDetailHeading > uses person-level fields without a focused reign: '西汉 · 汉前少帝' 0ms
+   ✓ resolveReignDetailHeading > uses person-level fields without a focused reign: '西汉 · 人物称号' 0ms
+   ✓ resolveReignDetailHeading > uses person-level fields without a focused reign: '西汉 · 刘？' 0ms
+   ✓ resolveReignDetailHeading > uses the focused reign title before the period appellation 0ms
+   ✓ resolveReignDetailHeading > falls back by period for focused reigns and hides empty modern headings 0ms
+   ✓ resolveReignDetailHeading > uses a Tang-to-Qing posthumous name after temple name, before person title 0ms
+   ✓ resolveReignDetailHeading > uses person title as the focused Qin-to-Sui fallback after posthumous name 0ms
+   ✓ resolveReignDetailSubtitle for Yue kings > omits a redundant personal name from the dynasty subtitle 0ms
+   ✓ resolveReignCardMeta for Zhongshan kings > hides given-name meta when it is already the card appellation 0ms
+   ✓ resolveReignCardLabel > keeps the posthumous primary and puts a distinct reign title on meta 0ms
+   ✓ resolveReignCardLabel > shows posthumous names for Jin deposed and short-reign emperors 0ms
+   ✓ resolveReignCardMeta > uses reign title first, then the era-appropriate appellation 0ms
+   ✓ resolveReignCardMeta > uses stored Ming and Qing reign titles for card metadata 0ms
+   ✓ resolveReignCardMeta > skips a title equal to the large pre-Qin appellation and falls back consistently 0ms
+   ✓ resolveReignCardMeta > uses the shared Tang-to-Qing temple fallback for year 618 0ms
+   ✓ resolveReignCardMeta > uses the shared Tang-to-Qing temple fallback for year 900 0ms
+   ✓ resolveReignCardMeta > uses the shared Tang-to-Qing temple fallback for year 1368 0ms
+   ✓ resolveReignCardMeta > uses the shared Tang-to-Qing temple fallback for year 1911 0ms
+   ✓ resolveReignCardMeta > falls back from temple name to posthumous name for Tang-to-Qing card meta 0ms
+   ✓ resolveReignCardMeta > uses person title after posthumous fallback on Qin-to-Sui and Tang-to-Qing cards 0ms
+   ✓ resolveReignCardMeta > hides metadata when modern reign titles are empty 0ms
+   ✓ resolveReignCardMeta > ignores era names and keeps temple-name priority for Ming and Qing 0ms
+   ✓ resolveReignCardMeta > keeps the person name while separating multiple reign titles 0ms
+   ✓ resolveReignCardMeta > shows temple names for Tang emperors 0ms
+   ✓ resolveReignCardMeta > shows temple names for Nanzhao rulers from Tang onward 0ms
+   ✓ resolveReignCardMeta > shows posthumous names for Sui emperors 0ms
+   ✓ resolveReignCardMeta > hides redundant regnal meta when the title is also the person name 0ms
+   ✓ resolveReignCardMeta > shows the given name under a stored pre-Qin posthumous name 0ms
+   ✓ resolveReignCardMeta > does not treat 吴末帝 or 后主 as 谥号 1ms
+   ✓ resolveReignCardMeta > shows the stored posthumous name instead of the dynasty-prefixed title 0ms
+   ✓ resolveReignCardMeta > shows temple names for Song emperors 0ms
+   ✓ resolveReignCardMeta > shows posthumous meta for Shang rulers 0ms
+   ✓ resolveReignDetailSubtitle > prefers a nonempty reign title over person-level appellations 0ms
+   ✓ resolveReignDetailSubtitle > uses 台湾地区 and the reign title for ROC leaders from 1950 onward 0ms
+   ✓ resolveReignDetailFacts > renders uncertain reign endpoints as question marks 0ms
+   ✓ resolveReignDetailFacts > keeps supplementary temple and era facts 0ms
+   ✓ resolveReignDetailFacts > lists every era name instead of only the first 0ms
+   ✓ pre-Qin card layout > treats years before 始皇帝 as pre-Qin 0ms
+   ✓ pre-Qin card layout > uses posthumous names on the primary line and distinct titles on meta 0ms
+   ✓ pre-Qin card layout > keeps clan-style given names and drops duplicate meta 0ms
+   ✓ pre-Qin card layout > uses stored 称号 without a runtime state-name list 0ms
+   ✓ pre-Qin card layout > does not invent a 姓 when the given name is missing 0ms
+   ✓ pre-Qin card layout > keeps imperial name-first layout from 始皇帝 onward 0ms
+   × pre-Qin card layout > uses the stored name as primary and keeps a distinct reign title as meta 6ms
+     → expected [ { label: '在位', …(1) }, …(3) ] to deeply equal [ { label: '在位', …(1) }, …(2) ]
+   ✓ pre-Qin card layout > shows 余臣 under 携王 instead of repeating the 携 seat 0ms
+   × pre-Qin card layout > adds 姓/氏 facts to pre-Qin reign detail panels 1ms
+     → expected [ { label: '在位', …(1) }, …(3) ] to deeply equal [ { label: '在位', …(1) }, …(2) ]
+   × pre-Qin card layout > does not invent 姓/氏 for placeholder or posthumous-only names 1ms
+     → expected [ { label: '在位', …(1) }, …(4) ] to deeply equal [ { label: '在位', …(1) }, …(3) ]
+ ❯ src/timelineData.detail.test.ts (26 tests | 1 failed) 17ms
+   ✓ buildEntityDetail reign > uses the focused reign title in the detail subtitle 3ms
+   ✓ buildEntityDetail reign > pairs capitals with reign tenure rows while retaining focused reign facts 1ms
+   ✓ buildEntityDetail reign > adds claim seat facts for a parallel court 0ms
+   ✓ buildEntityDetail reign > includes person-linked idioms in the unified person detail 0ms
+   ✓ buildEntityDetail event > shows a Chinese kind label instead of the stored enum 0ms
+   ✓ buildEntityDetail event > shows linked dynasty names for events with dynastyIds 0ms
+   ✓ buildEntityDetail event > includes all linked dynasties in a political event's related entities 1ms
+   ✓ buildEntityDetail event > shows dateNote as a reader-facing 说明 fact 0ms
+   ✓ buildEntityDetail dynasty > groups related capitals, idioms and events 1ms
+   ✓ buildEntityDetail undated dynasty associations > shows undated association endpoints without inventing dates 0ms
+   ✓ buildEntityDetail person > uses person title without focus but only period fallback for a focused reign 0ms
+   ✓ buildEntityDetail person > uses birth year to choose an unfocused heading and generic fields without a date 0ms
+   ✓ buildEntityDetail person > lists related idioms for participants 0ms
+   ✓ buildEntityDetail person > lists reign cards for monarch participants 0ms
+   × buildEntityDetail person > shows pre-Qin appellation as title and dynasty-appellation on reign cards 5ms
+     → expected '宫伯' to be '侯' // Object.is equality
+   ✓ buildEntityDetail person > lists multiple reigns in chronological order 0ms
+   ✓ buildEntityDetail person > keeps dates visible when multiple reigns have no stored title or era name 0ms
+   ✓ buildEntityDetail person > orders reigns starting in the same month by day 1ms
+   ✓ buildEntityDetail person > matches reign detail when focusing a single reign on a person 0ms
+   ✓ buildEntityDetail person > limits capital tenures to the focused reign on a multi-reign person 0ms
+   ✓ buildEntityDetail person > uses the same appellation heading without a focus reign, minus the ordinal 0ms
+   ✓ buildEntityDetail idiom event > shows meaning and 典故年代 facts 0ms
+   ✓ buildEntityDetail idiom event > lists linked dynasties and participants in related 0ms
+   ✓ buildEntityDetail poetry event > keeps the poem title and labels its type as 诗歌 0ms
+   ✓ buildEntityDetail capital > shows capital facts and links to the owning dynasty 0ms
+   ✓ EventSchema idiom > rejects span idiom events 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/emperorAppellation.test.ts > pre-Qin card layout > uses the stored name as primary and keeps a distinct reign title as meta
+AssertionError: expected [ { label: '在位', …(1) }, …(3) ] to deeply equal [ { label: '在位', …(1) }, …(2) ]
+
+- Expected
++ Received
+
+@@ -9,6 +9,10 @@
+    },
+    {
+      "label": "氏",
+      "value": "赵",
+    },
++   {
++     "label": "名",
++     "value": "政",
++   },
+  ]
+
+ ❯ src/emperorAppellation.test.ts:1450:7
+    1448|         }),
+    1449|       ),
+    1450|     ).toEqual([
+       |       ^
+    1451|       { label: "在位", value: "-246年 — 1年 · 247年" },
+    1452|       { label: "姓", value: "嬴" },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  src/emperorAppellation.test.ts > pre-Qin card layout > adds 姓/氏 facts to pre-Qin reign detail panels
+AssertionError: expected [ { label: '在位', …(1) }, …(3) ] to deeply equal [ { label: '在位', …(1) }, …(2) ]
+
+- Expected
++ Received
+
+@@ -9,6 +9,10 @@
+    },
+    {
+      "label": "氏",
+      "value": "姑发",
+    },
++   {
++     "label": "名",
++     "value": "夫差",
++   },
+  ]
+
+ ❯ src/emperorAppellation.test.ts:1564:7
+    1562|         buildPreQinClanContext({ ancestralXing: "姬", clanShi: "姑发" }),
+    1563|       ),
+    1564|     ).toEqual([
+       |       ^
+    1565|       { label: "在位", value: "-495年 — -473年 · 23年" },
+    1566|       { label: "姓", value: "姬" },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  src/emperorAppellation.test.ts > pre-Qin card layout > does not invent 姓/氏 for placeholder or posthumous-only names
+AssertionError: expected [ { label: '在位', …(1) }, …(4) ] to deeply equal [ { label: '在位', …(1) }, …(3) ]
+
+- Expected
++ Received
+
+@@ -10,9 +10,13 @@
+    {
+      "label": "氏",
+      "value": "匽",
+    },
+    {
++     "label": "名",
++     "value": "襄公",
++   },
++   {
+      "label": "谥号",
+      "value": "襄公",
+    },
+  ]
+
+ ❯ src/emperorAppellation.test.ts:1604:7
+    1602|         buildPreQinClanContext({ ancestralXing: "姬", clanShi: "匽" }),
+    1603|       ),
+    1604|     ).toEqual([
+       |       ^
+    1605|       { label: "在位", value: "-657年 — -617年 · 41年" },
+    1606|       { label: "姓", value: "姬" },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  src/timelineData.detail.test.ts > buildEntityDetail person > shows pre-Qin appellation as title and dynasty-appellation on reign cards
+AssertionError: expected '宫伯' to be '侯' // Object.is equality
+
+Expected: "侯"
+Received: "宫伯"
+
+ ❯ src/timelineData.detail.test.ts:774:26
+    772|     const detail = buildEntityDetail(store, { type: "person", id: "cao…
+    773| 
+    774|     expect(detail.title).toBe("侯");
+       |                          ^
+    775|     expect(detail.facts).toEqual([
+    776|       { label: "在位", value: "-938年 — -903年 · 36年" },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  2 failed (2)
+      Tests  4 failed | 88 passed (92)
+   Start at  00:08:17
+   Duration  325ms (transform 132ms, setup 0ms, collect 213ms, tests 31ms, environment 0ms, prepare 68ms)
+

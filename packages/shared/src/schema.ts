@@ -399,6 +399,21 @@ export const TimelineSliceSchema = z.object({
   relations: z.array(RelationSchema).default([]),
 });
 
+export const TimelineContextSchema = z.object({
+  dynasties: z.array(DynastySchema),
+  reigns: z.array(ReignSchema),
+  persons: z.array(PersonSchema),
+});
+export const ReignTimelineSchema = TimelineSliceSchema.pick({
+  dynasties: true, dynastyGroups: true, reigns: true, persons: true, relations: true,
+}).extend({ datasetVersion: z.string(), context: TimelineContextSchema });
+export const EventTimelineSchema = z.object({ datasetVersion: z.string(), events: z.array(EventSchema) });
+export const PersonTimelineSchema = z.object({ datasetVersion: z.string(), persons: z.array(PersonSchema) });
+export type ReignTimeline = z.infer<typeof ReignTimelineSchema>;
+export type EventTimeline = z.infer<typeof EventTimelineSchema>;
+export type PersonTimeline = z.infer<typeof PersonTimelineSchema>;
+export type TimelineContext = z.infer<typeof TimelineContextSchema>;
+
 /** Full dynasty catalog for stable lane-color assignment (no reigns/events). */
 export const TimelineCatalogSchema = z.object({
   dynasties: z.array(DynastySchema),

@@ -112,7 +112,8 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
     );
   }, [mapVerticalAlignment, stageViewportSize.height, stageViewportSize.width, viewport.gutterPx]);
   const selection = useSelection();
-  const { data, isLoading, error } = useTimelineData();
+  const { data, context, isLoading, error } = useTimelineData();
+  const fateReigns = useMemo(() => [...new Map([...(data?.reigns ?? []),...(context?.reigns ?? [])].map(r => [r.id,r])).values()], [data?.reigns,context?.reigns]);
 
   const stopTimelineInertia = () => {
     if (timelineInertiaRef.current !== null) {
@@ -452,11 +453,11 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   const personNames = useMemo(() => {
     const map = new Map<string, string>();
     if (!data) return map;
-    for (const person of data.persons) {
+    for (const person of [...data.persons,...(context?.persons ?? [])]) {
       map.set(person.id, person.name);
     }
     return map;
-  }, [data]);
+  }, [data,context?.persons]);
 
   const personDisplay = useMemo(() => {
     const map = new Map<
@@ -470,7 +471,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       }
     >();
     if (!data) return map;
-    for (const person of data.persons) {
+    for (const person of [...data.persons,...(context?.persons ?? [])]) {
       if (
         person.ancestralXing ||
         person.clanShi ||
@@ -488,7 +489,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       }
     }
     return map;
-  }, [data]);
+  }, [data,context?.persons]);
 
   // Keep lane record identities across zoom frames so static geometry stays cached.
   const lanePreparedCache = useMemo(
@@ -612,15 +613,15 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
   );
 
   const resolvedFates = useMemo(
-    () => data?.relations?.length ? resolveFateRelations(data.relations, data.reigns) : [],
-    [data],
+    () => data?.relations?.length ? resolveFateRelations(data.relations, fateReigns) : [],
+    [data,fateReigns],
   );
 
   const fatePlaced = useMemo(() => {
     if (!data?.relations?.length || resolvedFates.length === 0) return [];
     return layoutReignFates(
       data.relations,
-      data.reigns,
+      fateReigns,
       lanes.map(({ dynasty, records, geometry, top }) => ({
         dynastyId: dynasty.id,
         top,
@@ -636,7 +637,7 @@ export function TimelineStage({ eventDisplay }: { eventDisplay: EventDisplayConf
       personDisplay,
       resolvedFates,
     );
-  }, [data, lanes, laneColorMap, viewport, personNames, personDisplay, resolvedFates]);
+  }, [data, fateReigns, lanes, laneColorMap, viewport, personNames, personDisplay, resolvedFates]);
 
   const dynastiesBottom = lanes.at(-1)
     ? lanes.at(-1)!.top + lanes.at(-1)!.height

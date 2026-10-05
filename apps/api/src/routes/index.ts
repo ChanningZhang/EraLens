@@ -8,6 +8,7 @@ import {
   SearchHitSchema,
   TimelineCatalogSchema,
   TimelineSliceSchema,
+  ReignTimelineSchema, EventTimelineSchema, PersonTimelineSchema, ContentVersionMismatchError,
   type EntityRef,
 } from "@eralens/shared";
 import type { TimelineRepository, SettingsStore } from "@eralens/data-access/repository";
@@ -37,6 +38,25 @@ export async function registerRoutes(
 
   app.get("/health", async () => ({ ok: true, ...await getContentInfo() }));
 
+  for (const layer of ["reigns","events","persons"] as const) {
+    app.get(`/timeline/${layer}`, async (request,reply) => {
+      reply.header("Cache-Control",CACHE_HEADER);
+      const params = request.query as {from?:string;to?:string;scope?:string;lod?:string;datasetVersion?:string};
+      const fromAbs=Number(params.from),toAbs=Number(params.to);
+      if (!Number.isFinite(fromAbs) || !Number.isFinite(toAbs) || fromAbs>toAbs) return reply.code(400).send({error:"from/to must be an ordered pair of AbsMonth values"});
+      if (params.lod && !LODS.has(params.lod)) return reply.code(400).send({error:"Invalid lod"});
+      const query = {fromAbs,toAbs,scope:params.scope,lod:(params.lod ?? "month") as "month"|"decade"|"century"|"millennium",datasetVersion:params.datasetVersion};
+      try {
+        if (layer === "reigns") return ReignTimelineSchema.parse(await repository.getReignTimeline(query));
+        if (layer === "events") return EventTimelineSchema.parse(await repository.getEventTimeline(query));
+        return PersonTimelineSchema.parse(await repository.getPersonTimeline(query));
+      } catch (error) {
+        if (error instanceof ContentVersionMismatchError) return reply.code(409).send({error:error.message});
+        request.log.error(error); return reply.code(500).send({error:"Unable to load timeline layer"});
+      }
+    });
+  }
+
   app.get("/bounds", async (_request, reply) => {
     reply.header("Cache-Control", CACHE_HEADER);
     return repository.getBounds();
@@ -62,6 +82,7 @@ export async function registerRoutes(
         fromAbs, toAbs, scope: query.scope, lod: (query.lod ?? "month") as "month" | "decade" | "century" | "millennium",
       }));
     } catch (error) {
+      if (error instanceof ContentVersionMismatchError) return reply.code(409).send({error:error.message});
       request.log.error(error);
       return reply.code(500).send({ error: "Unable to load timeline" });
     }

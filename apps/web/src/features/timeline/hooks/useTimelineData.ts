@@ -1,153 +1,100 @@
 import { useQueries, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useEffect, useMemo, useRef } from "react";
 import {
-  getAdjacentChunk,
-  listQueryChunks,
-  mergeTimelineSlices,
-  type Lod,
-  type QueryChunk,
-  type TimelineSlice,
+  getAdjacentChunk, listQueryChunks, mergeReignTimelineChunks, ContentVersionMismatchError,
+  type Lod, type QueryChunk, type ReignTimeline, type EventTimeline, type PersonTimeline,
 } from "@eralens/shared";
 import { getRepository } from "@/data/repository";
 import { useViewport } from "./useViewport";
+import { shouldShowPersons } from "../model/lod";
+import { assembleTimelineFrame } from "../model/timelineLayerState";
 
 const SCOPE = "cn";
-const TIMELINE_CACHE_VERSION = 35;
-/** Historical slices do not change at runtime; keep them hot across tab idle. */
-const STALE_TIME = Infinity;
-/** A short fallback GC prevents a long mobile session from retaining every visited era. */
-const GC_TIME = 5 * 60_000;
-const RETAINED_NEIGHBOR_CHUNKS = 2;
+const TIMELINE_CACHE_VERSION = 36;
+type Layer = "reigns" | "events" | "persons";
 
-function chunkKey(chunk: QueryChunk) {
-  return ["timeline-chunk", TIMELINE_CACHE_VERSION, chunk.fromAbs, chunk.toAbs, SCOPE] as const;
+export function useContentVersion() {
+  return useQuery({ queryKey:["content-version"], queryFn:async () => (await getRepository()).getDatasetVersion(),
+    staleTime:30_000, refetchInterval:30_000 });
 }
-
-function sameChunks(a: readonly QueryChunk[], b: readonly QueryChunk[]): boolean {
-  return a.length === b.length && a.every((chunk, index) =>
-    chunk.fromAbs === b[index]?.fromAbs && chunk.toAbs === b[index]?.toAbs,
-  );
+function chunkKey(layer:Layer, chunk:QueryChunk, version:string) {
+  return ["timeline-layer",TIMELINE_CACHE_VERSION,chunk.fromAbs,chunk.toAbs,SCOPE,layer,version] as const;
 }
-
-async function fetchTimelineChunk(chunk: QueryChunk, lod: Lod, signal?: AbortSignal) {
-  const repo = await getRepository();
-  return repo.getTimeline({
-    fromAbs: chunk.fromAbs,
-    toAbs: chunk.toAbs,
-    lod,
-    scope: SCOPE,
-    signal,
-  });
+export function shouldPruneTimelineChunk(key:readonly unknown[], from:number, to:number):boolean {
+  if (key[0] !== "timeline-layer" || key[1] !== TIMELINE_CACHE_VERSION) return false;
+  return typeof key[2] === "number" && typeof key[3] === "number" && (key[3] < from || key[2] > to);
 }
-
-export function shouldPruneTimelineChunk(
-  queryKey: readonly unknown[],
-  retainFromAbs: number,
-  retainToAbs: number,
-): boolean {
-  if (queryKey[0] !== "timeline-chunk" || queryKey[1] !== TIMELINE_CACHE_VERSION) return false;
-  const fromAbs = queryKey[2];
-  const toAbs = queryKey[3];
-  if (typeof fromAbs !== "number" || typeof toAbs !== "number") return false;
-  return toAbs < retainFromAbs || fromAbs > retainToAbs;
-}
-
-const CHUNK_QUERY_OPTIONS = {
-  staleTime: STALE_TIME,
-  gcTime: GC_TIME,
-  // Completed historical slices stay cached; failed chunks retry after a
-  // temporary API interruption (for example while a local migration runs).
-  refetchOnWindowFocus: (query: { state: { status: string } }) => query.state.status === "error",
-  refetchOnReconnect: (query: { state: { status: string } }) => query.state.status === "error",
-  refetchInterval: (query: { state: { status: string } }) =>
-    query.state.status === "error" ? 10_000 : false,
+const OPTIONS = {
+  staleTime:Infinity, gcTime:5*60_000,
+  retry:(count:number,error:Error) => !(error instanceof ContentVersionMismatchError) && count < 3,
+  refetchOnWindowFocus:(query:{state:{status:string}}) => query.state.status === "error",
+  refetchOnReconnect:(query:{state:{status:string}}) => query.state.status === "error",
+  refetchInterval:(query:{state:{status:string}}) => query.state.status === "error" ? 10_000 : false,
 } as const;
 
-export function useTimelineData() {
-  const viewport = useViewport();
-  const queryClient = useQueryClient();
-
-  const requestedChunks = listQueryChunks(viewport.startAbs - 60, viewport.endAbs + 60, viewport.lod);
-  const stableChunksRef = useRef<{ lod: Lod; chunks: QueryChunk[] } | null>(null);
-  if (!stableChunksRef.current || stableChunksRef.current.lod !== viewport.lod ||
-      !sameChunks(stableChunksRef.current.chunks, requestedChunks)) {
-    stableChunksRef.current = { lod: viewport.lod, chunks: requestedChunks };
-  }
-  const chunks = stableChunksRef.current.chunks;
-
-  const queryOptions = useMemo(() => chunks.map((chunk) => ({
-    queryKey: chunkKey(chunk),
-    queryFn: ({ signal }: { signal: AbortSignal }) => fetchTimelineChunk(chunk, viewport.lod, signal),
-    ...CHUNK_QUERY_OPTIONS,
-  })), [chunks, viewport.lod]);
-  const chunkQueries = useQueries({
-    queries: queryOptions,
-  });
-
-  const lastCompleteDataRef = useRef<TimelineSlice | undefined>(undefined);
-  const sliceRevision = [
-    chunks.map((chunk) => `${chunk.fromAbs}-${chunk.toAbs}`).join(","),
-    chunkQueries.map((query) => query.dataUpdatedAt).join(":"),
-  ].join("|");
-
-  const mergedData = useMemo(() => {
-    const slices = chunkQueries.map((query) => query.data);
-    const allChunksReady = slices.length > 0 && slices.every(Boolean);
-    if (!allChunksReady) {
-      return lastCompleteDataRef.current;
+function useLayer<T extends {datasetVersion:string}>(
+  layer:Layer, chunks:QueryChunk[], lod:Lod, version:string|undefined, enabled:boolean,
+  merge:(items:T[]) => T,
+) {
+  const client=useQueryClient();
+  const sourceKey=chunks.map(c => `${c.fromAbs}:${c.toAbs}`).join("|");
+  const fetchChunk=async (chunk:QueryChunk,signal?:AbortSignal):Promise<T> => {
+    const repository=await getRepository();
+    const query={...chunk,lod,scope:SCOPE,signal,datasetVersion:version};
+    try {
+      const value = layer === "reigns" ? await repository.getReignTimeline(query)
+        : layer === "events" ? await repository.getEventTimeline(query) : await repository.getPersonTimeline(query);
+      if (value.datasetVersion !== version) throw new ContentVersionMismatchError();
+      return value as unknown as T;
+    } catch (error) {
+      if (error instanceof ContentVersionMismatchError) void client.invalidateQueries({queryKey:["content-version"]});
+      throw error;
     }
-    const merged = mergeTimelineSlices(slices as TimelineSlice[]);
-    lastCompleteDataRef.current = merged;
-    return merged;
-    // useQueries returns a new array every render; dataUpdatedAt is the stable signal.
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [sliceRevision]);
-
-  const isLoading = chunkQueries.some((query) => query.isLoading);
-  const isFetching = chunkQueries.some((query) => query.isFetching);
-  const error = chunkQueries.find((query) => query.error)?.error ?? null;
-
-  useEffect(() => {
-    if (chunks.length === 0) return;
-
-    const chunkSize = chunks[0]!.toAbs - chunks[0]!.fromAbs;
-    const retainFromAbs = chunks[0]!.fromAbs - chunkSize * RETAINED_NEIGHBOR_CHUNKS;
-    const retainToAbs = chunks[chunks.length - 1]!.toAbs + chunkSize * RETAINED_NEIGHBOR_CHUNKS;
-    queryClient.removeQueries({
-      predicate: (query) =>
-        query.getObserversCount() === 0 &&
-        shouldPruneTimelineChunk(query.queryKey, retainFromAbs, retainToAbs),
-    });
-
-    const neighbors = [
-      getAdjacentChunk(chunks[0]!, -1, viewport.lod),
-      getAdjacentChunk(chunks[chunks.length - 1]!, 1, viewport.lod),
-    ];
-
-    for (const prefetchChunk of neighbors) {
-      void queryClient.prefetchQuery({
-        queryKey: chunkKey(prefetchChunk),
-        queryFn: ({ signal }) => fetchTimelineChunk(prefetchChunk, viewport.lod, signal),
-        ...CHUNK_QUERY_OPTIONS,
-      });
-    }
-  }, [chunks, queryClient, viewport.lod]);
-
-  return {
-    data: mergedData,
-    isLoading,
-    isFetching,
-    error,
   };
+  const queries=useQueries({queries:chunks.map(chunk => ({queryKey:chunkKey(layer,chunk,version ?? "pending"),
+    queryFn:({signal}:{signal:AbortSignal}) => fetchChunk(chunk,signal),enabled:enabled && !!version,...OPTIONS}))});
+  const last=useRef<{data:T;sourceKey:string}|undefined>(undefined);
+  const revision=`${version}|${enabled}|${sourceKey}|${queries.map(q => `${q.dataUpdatedAt}:${q.status}`).join(":")}`;
+  const result=useMemo(() => {
+    if (!enabled || !version) return undefined;
+    const values=queries.map(q => q.data);
+    if (values.length && values.every((v):v is T => !!v && v.datasetVersion === version)) last.current={data:merge(values),sourceKey};
+    return last.current?.data.datasetVersion === version ? last.current : undefined;
+    // Query revisions, not useQueries array identity, drive merging.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[revision]);
+  useEffect(() => {
+    if (!version || !enabled || !chunks.length) return;
+    const size=chunks[0].toAbs-chunks[0].fromAbs;
+    client.removeQueries({predicate:q => q.queryKey[0] === "timeline-layer" && q.getObserversCount() === 0 && q.queryKey[5] === layer &&
+      (q.queryKey[6] !== version || shouldPruneTimelineChunk(q.queryKey,chunks[0].fromAbs-size*2,chunks.at(-1)!.toAbs+size*2))});
+    for (const chunk of [getAdjacentChunk(chunks[0],-1,lod),getAdjacentChunk(chunks.at(-1)!,1,lod)]) {
+      void client.prefetchQuery({queryKey:chunkKey(layer,chunk,version),queryFn:({signal}) => fetchChunk(chunk,signal),...OPTIONS});
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  },[sourceKey,version,enabled,lod,layer,client]);
+  useEffect(() => {
+    if (!enabled) void client.cancelQueries({predicate:q => q.queryKey[0] === "timeline-layer" && q.queryKey[5] === layer});
+  },[enabled,layer,client]);
+  return { ...result, error:queries.find(q => q.error)?.error ?? null,
+    isLoading:enabled && !!version && queries.some(q => q.isLoading),isFetching:queries.some(q => q.isFetching) };
 }
 
+export function useTimelineData() {
+  const viewport=useViewport();
+  const version=useContentVersion();
+  const requested=listQueryChunks(viewport.startAbs-60,viewport.endAbs+60,viewport.lod);
+  const chunkRevision=requested.map(c => `${c.fromAbs}:${c.toAbs}`).join("|");
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  const chunks=useMemo(() => requested,[chunkRevision]);
+  const reigns=useLayer<ReignTimeline>("reigns",chunks,viewport.lod,version.data,true,mergeReignTimelineChunks);
+  const events=useLayer<EventTimeline>("events",chunks,viewport.lod,version.data,true,items => ({datasetVersion:items[0].datasetVersion,events:[...new Map(items.flatMap(i => i.events).map(e => [e.id,e])).values()]}));
+  const persons=useLayer<PersonTimeline>("persons",chunks,viewport.lod,version.data,shouldShowPersons(viewport.lod),items => ({datasetVersion:items[0].datasetVersion,persons:[...new Map(items.flatMap(i => i.persons).map(p => [p.id,p])).values()]}));
+  const frame=useMemo(() => assembleTimelineFrame(reigns,events,persons),[reigns.data,reigns.sourceKey,events.data,events.sourceKey,persons.data,persons.sourceKey]);
+  return { ...frame,isLoading:version.isLoading || reigns.isLoading,isFetching:reigns.isFetching || events.isFetching || persons.isFetching,
+    error:version.error ?? reigns.error,layerErrors:{reigns:reigns.error,events:events.error,persons:persons.error} };
+}
 export function useDataBounds() {
-  return useQuery({
-    queryKey: ["bounds", 8],
-    queryFn: async () => {
-      const repo = await getRepository();
-      return repo.getBounds();
-    },
-    staleTime: Infinity,
-  });
+  const version=useContentVersion();
+  return useQuery({queryKey:["bounds",9,version.data],queryFn:async () => (await getRepository()).getBounds(),enabled:!!version.data,staleTime:Infinity});
 }

@@ -7,6 +7,7 @@ import type {
   SearchHit,
   TimelineCatalog,
   TimelineSlice,
+  ReignTimeline, EventTimeline, PersonTimeline,
 } from "@eralens/shared";
 
 export interface TimelineQuery {
@@ -16,9 +17,14 @@ export interface TimelineQuery {
   lod: Lod;
   /** Lets viewport changes cancel HTTP work that is no longer visible. */
   signal?: AbortSignal;
+  datasetVersion?: string;
 }
 
 export interface TimelineRepository {
+  getDatasetVersion(): Promise<string>;
+  getReignTimeline(query: TimelineQuery): Promise<ReignTimeline>;
+  getEventTimeline(query: TimelineQuery): Promise<EventTimeline>;
+  getPersonTimeline(query: TimelineQuery): Promise<PersonTimeline>;
   getTimeline(query: TimelineQuery): Promise<TimelineSlice>;
   getTimelineCatalog(scope?: string): Promise<TimelineCatalog>;
   getEntity(ref: EntityRef, options?: { focusReignId?: string; atAbs?: number }): Promise<EntityDetail>;

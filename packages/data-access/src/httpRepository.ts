@@ -12,6 +12,8 @@ import {
   type SearchHit,
   type TimelineCatalog,
   type TimelineSlice,
+  ReignTimelineSchema, EventTimelineSchema, PersonTimelineSchema, ContentVersionMismatchError,
+  type ReignTimeline, type EventTimeline, type PersonTimeline,
 } from "@eralens/shared";
 import type { TimelineQuery, TimelineRepository } from "./repository";
 
@@ -24,8 +26,31 @@ export class HttpTimelineRepository implements TimelineRepository {
     signal?: AbortSignal,
   ): Promise<T> {
     const response = await fetch(`${this.apiBase}${path}`, { signal });
+    if (response.status === 409) throw new ContentVersionMismatchError();
     if (!response.ok) throw new Error(`API error ${response.status}: ${path}`);
     return schema.parse(await response.json());
+  }
+
+  async getDatasetVersion(): Promise<string> {
+    const response = await fetch(`${this.apiBase}/health`);
+    if (!response.ok) throw new Error("Unable to read content version");
+    const value = await response.json() as {datasetVersion?:unknown};
+    if (typeof value.datasetVersion !== "string") throw new Error("Invalid content version");
+    return value.datasetVersion;
+  }
+
+  private layerParams(query: TimelineQuery) {
+    return new URLSearchParams({ from:String(query.fromAbs), to:String(query.toAbs), lod:query.lod,
+      ...(query.scope ? {scope:query.scope} : {}), ...(query.datasetVersion ? {datasetVersion:query.datasetVersion} : {}) });
+  }
+  getReignTimeline(query: TimelineQuery): Promise<ReignTimeline> {
+    return this.fetchJson(`/timeline/reigns?${this.layerParams(query)}`,ReignTimelineSchema,query.signal);
+  }
+  getEventTimeline(query: TimelineQuery): Promise<EventTimeline> {
+    return this.fetchJson(`/timeline/events?${this.layerParams(query)}`,EventTimelineSchema,query.signal);
+  }
+  getPersonTimeline(query: TimelineQuery): Promise<PersonTimeline> {
+    return this.fetchJson(`/timeline/persons?${this.layerParams(query)}`,PersonTimelineSchema,query.signal);
   }
 
   getTimeline(query: TimelineQuery): Promise<TimelineSlice> {

@@ -1,0 +1,35 @@
+
+ RUN  v3.2.7 /private/var/folders/cw/1bp3nby17f94j3kd9c7_5v7h0000gn/T/eralens-original-tests-hvw7ml8z/apps/web
+
+ ❯ src/features/timeline/model/reignFateImports.test.mjs (2 tests | 1 failed) 53ms
+   ✓ imported Guo conquest endpoints > draws each last ruler to the ruler of the conquering state without asserting a personal fate 28ms
+   × imported Chimei fate endpoints > resolves and draws both connections through Liu Penzi's effective reign 24ms
+     → expected [ { relation: { …(7) }, …(2) } ] to have a length of +0 but got 1
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/features/timeline/model/reignFateImports.test.mjs > imported Chimei fate endpoints > resolves and draws both connections through Liu Penzi's effective reign
+AssertionError: expected [ { relation: { …(7) }, …(2) } ] to have a length of +0 but got 1
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ src/features/timeline/model/reignFateImports.test.mjs:62:56
+     60|           end: { year: 27, month: 12 }, endAbs: 335, precision: "year"…
+     61|         : reign);
+     62|     expect(resolveFateRelations(relations, oldReigns)).toHaveLength(0);
+       |                                                        ^
+     63|     const lanes = ["han-gengshi", "chimei", "han-east"].map((dynastyId…
+     64|       dynastyId,
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 1 passed (2)
+   Start at  00:08:18
+   Duration  366ms (transform 108ms, setup 0ms, collect 151ms, tests 53ms, environment 0ms, prepare 34ms)
+

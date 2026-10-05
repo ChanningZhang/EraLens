@@ -520,7 +520,7 @@ function personMatchesSearch(person: Person, q: string): boolean {
   return terms.some((term) => normalizeSearchTerm(term) === q);
 }
 
-export function searchEntities(store: TimelineDataStore, term: string): SearchHit[] {
+export function searchEntities(store: TimelineDataStore, term: string, candidates?: ReadonlySet<string>): SearchHit[] {
   const q = normalizeSearchTerm(term);
   if (!q) return [];
   const hits: SearchHit[] = [];
@@ -528,6 +528,7 @@ export function searchEntities(store: TimelineDataStore, term: string): SearchHi
   const dynastyById = new Map(store.dynasties.map((dynasty) => [dynasty.id, dynasty]));
 
   for (const dynasty of [...store.dynasties].sort((a,b)=>a.id.localeCompare(b.id))) {
+    if (candidates && !candidates.has(`dynasty:${dynasty.id}`)) continue;
     const entries = dynastyNameSearchEntries(dynasty, midpointAbs(dynasty.startAbs, dynasty.endAbs));
     const exact = entries.find(entry => normalizeSearchTerm(entry.name) === q);
     const matched = exact ?? entries.find(entry => normalizeSearchTerm(entry.name).includes(q));
@@ -539,6 +540,7 @@ export function searchEntities(store: TimelineDataStore, term: string): SearchHi
     }
   }
   for (const person of [...store.persons].sort((a,b)=>a.id.localeCompare(b.id))) {
+    if (candidates && !candidates.has(`person:${person.id}`)) continue;
     if (personMatchesSearch(person, q)) {
       hits.push({
         ref: { type: "person", id: person.id },
@@ -549,6 +551,7 @@ export function searchEntities(store: TimelineDataStore, term: string): SearchHi
     }
   }
   for (const reign of [...store.reigns].sort((a,b)=>a.id.localeCompare(b.id))) {
+    if (candidates && !candidates.has(`reign:${reign.id}`)) continue;
     const matchedEraNames = reign.eraNames.filter((eraName) =>
       eraName.toLowerCase().includes(q),
     );
@@ -563,6 +566,7 @@ export function searchEntities(store: TimelineDataStore, term: string): SearchHi
     });
   }
   for (const m of store.locationMappings ?? []) {
+    if (candidates && !candidates.has(`location_mapping:${m.id}`)) continue;
     if (!normalizeSearchTerm(m.historicalName).includes(q) && !normalizeSearchTerm(m.location.modernName).includes(q)) continue;
     const reign=m.kind === "reign" ? store.reigns.find(r=>r.id===m.externalId) : undefined;
     const dynasty=dynastyById.get(reign?.dynastyId ?? m.externalId);
@@ -572,6 +576,7 @@ export function searchEntities(store: TimelineDataStore, term: string): SearchHi
       abs:event ? eventSpanAbs(event).anchorAbs : m.startAbs != null && m.endAbs != null ? midpointAbs(m.startAbs,m.endAbs) : undefined});
   }
   for (const event of [...store.events].sort((a,b)=>a.id.localeCompare(b.id))) {
+    if (candidates && !candidates.has(`event:${event.id}`)) continue;
     const nameHit = event.name.toLowerCase().includes(q);
     const meaningHit = event.meaning?.toLowerCase().includes(q) ?? false;
     if (nameHit || meaningHit) {

@@ -458,3 +458,17 @@ describe("layoutReignFates", () => {
     expect(placed).toHaveLength(0);
   });
 });
+
+describe("fate context outside visible cards", () => {
+  it("uses the common card layout for an endpoint absent from visible lane records", () => {
+    const relation: Relation = {id:"context-fate",fromRef:"person:han-r10",toRef:"person:ying-zheng",kind:"surrender",atAbs:absMonth(-230,12)};
+    const fullLanes = [
+      {dynastyId:"han-warring",top:80,records:[hanLast],color:COLOR_VALUES.grape},
+      {dynastyId:"qin",top:140,records:[yingZhengQin],color:COLOR_VALUES.cinnabar},
+    ];
+    const expected=layoutReignFates([relation],[hanLast,yingZhengQin],fullLanes,viewport,new Map());
+    const visibleLanes=fullLanes.map(l => ({...l,records:l.dynastyId === "han-warring" ? [] : l.records}));
+    expect(layoutReignFates([relation],[hanLast,yingZhengQin],visibleLanes,viewport,new Map())).toEqual(expected);
+    expect(expected).toHaveLength(1);
+  });
+});
