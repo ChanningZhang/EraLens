@@ -21,7 +21,7 @@ const RELATED_GROUPS = [
   { key: "poetry", title: "诗歌" },
   { key: "reign", title: "在位" },
   { key: "person", title: "人物" },
-  { key: "dynasty", title: "王朝" },
+  { key: "dynasty", title: "政权" },
 ] as const;
 
 function groupRelatedItems(items: EntityDetail["related"]) {

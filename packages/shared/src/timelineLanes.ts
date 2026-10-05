@@ -1,4 +1,3 @@
-import { resolveRocLaneRegionLabel } from "./rocTaiwanLeaderDisplay";
 import { resolveDynastyName } from "./dynastyNames";
 import { activeReignsAtAbs } from "./timelineOwnership";
 import type { Dynasty, Reign } from "./schema";
@@ -17,7 +16,7 @@ export const TIMELINE_RAIL_CHIP_TOP_PX = 10;
 export const TIMELINE_RAIL_CHIP_HEIGHT_PX = 44;
 
 export function resolveFrozenLaneLabel(dynasty: Pick<Dynasty, "id" | "name" | "altNames">, labelAnchorAbs: number): string {
-  return resolveRocLaneRegionLabel(dynasty.id, resolveDynastyName(dynasty, labelAnchorAbs), labelAnchorAbs);
+  return resolveDynastyName(dynasty, labelAnchorAbs);
 }
 
 export function isFrozenLaneMaster(dynastyId: string, labelAnchorAbs: number, reigns: readonly Reign[]): boolean {

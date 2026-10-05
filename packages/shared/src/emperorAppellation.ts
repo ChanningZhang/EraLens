@@ -1,9 +1,5 @@
 import { firstAppellation } from "./appellationFields";
 import {
-  isRocTaiwanLeaderReign,
-  resolveRocReignDetailSubtitle,
-} from "./rocTaiwanLeaderDisplay";
-import {
   PRE_IMPERIAL_START_YEAR,
   REPUBLIC_ERA_START_YEAR,
   TEMPLE_ERA_START_YEAR,
@@ -280,17 +276,11 @@ export function resolveReignDetailSubtitle(
 ): string {
   const heading = resolveReignDetailHeading(
     reign,
-    isRocTaiwanLeaderReign(reign) ? undefined : dynastyName,
+    dynastyName,
     personName,
     personContext,
     { focusedReign: true },
   );
-  if (isRocTaiwanLeaderReign(reign)) {
-    if (!heading) return "";
-    return [resolveRocReignDetailSubtitle(), heading]
-      .filter(Boolean)
-      .join(" · ");
-  }
   return heading;
 }
 

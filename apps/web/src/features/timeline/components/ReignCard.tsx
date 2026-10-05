@@ -1,4 +1,4 @@
-import { resolveDynastyDefaultName } from "@eralens/shared";
+import { resolveDynastyName } from "@eralens/shared";
 import { memo, useMemo } from "react";
 import {
   type Dynasty,
@@ -10,7 +10,6 @@ import {
   PARALLEL_CLAIM_LABEL,
   resolveReignCardLabel,
   resolveReignCardMeta,
-  resolveRocReignRegionLabel,
 } from "@eralens/shared";
 import { useQuery } from "@tanstack/react-query";
 import { getRepository } from "@/data/repository";
@@ -107,7 +106,7 @@ function ReignCardImpl({
     const parallel = isParallelClaim(reign);
     const meta = resolveReignCardMeta(reign, personName, clan);
     const showMeta = shouldShowReignCardMeta(barLayout.barWidthPx, labelLength, meta ? [...meta.name].length : 0, unitHeight);
-    const regionLabel = resolveRocReignRegionLabel(reign, resolveDynastyDefaultName(dynasty));
+    const regionLabel = resolveDynastyName(dynasty, reign.startAbs);
     const timeTooltip = formatReignSpanTooltip(reign);
     const claimTooltip = parallel
       ? `${PARALLEL_CLAIM_LABEL}${reign.claimLabel ? `・${reign.claimLabel}` : ""}`

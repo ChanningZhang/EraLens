@@ -1171,7 +1171,7 @@ describe("resolveReignDetailSubtitle", () => {
     );
   });
 
-  it("uses 台湾地区 and the reign title for ROC leaders from 1950 onward", () => {
+  it("uses the supplied timed dynasty name with the reign title", () => {
     const chen = source({
       dynastyId: "roc",
       start: { year: 2000, month: 5 },
@@ -1194,10 +1194,10 @@ describe("resolveReignDetailSubtitle", () => {
       eraNames: [],
     });
 
-    expect(resolveReignDetailSubtitle(chen, "中华民国", "陈水扁")).toBe(
+    expect(resolveReignDetailSubtitle(chen, "台湾地区", "陈水扁")).toBe(
       "台湾地区 · 总统",
     );
-    expect(resolveReignDetailSubtitle(jiang, "中华民国", "蒋介石")).toBe(
+    expect(resolveReignDetailSubtitle(jiang, "台湾地区", "蒋介石")).toBe(
       "台湾地区 · 总统",
     );
     expect(resolveReignDetailSubtitle(li, "中华民国", "李宗仁")).toBe(

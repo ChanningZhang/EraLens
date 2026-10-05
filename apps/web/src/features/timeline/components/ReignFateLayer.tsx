@@ -15,7 +15,7 @@ export function ReignFateLayer({ placed, height }: Props) {
       className={styles.layer}
       style={{ height }}
       role="group"
-      aria-label="跨王朝帝王关系"
+      aria-label="跨政权帝王关系"
     >
       {placed.map((item) => {
         const segments = [

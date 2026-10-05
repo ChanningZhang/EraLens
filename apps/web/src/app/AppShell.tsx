@@ -179,8 +179,8 @@ export function AppShell() {
           className={styles.railToggle}
           axis="horizontal"
           expanded={!presentation.railCollapsed}
-          expandLabel="展开王朝栏"
-          collapseLabel="折叠王朝栏"
+          expandLabel="展开政权栏"
+          collapseLabel="折叠政权栏"
           onClick={() => {
             const nextCollapsed = !preferences.railCollapsed;
             updateLayout({ railCollapsed: nextCollapsed });
@@ -209,8 +209,8 @@ export function AppShell() {
           <input
             ref={searchInputRef}
             className={styles.searchInput}
-            placeholder="搜索人物、王朝、年号、都城、事件…"
-            aria-label="搜索人物、王朝、年号、都城、事件"
+            placeholder="搜索人物、政权、年号、都城、事件…"
+            aria-label="搜索人物、政权、年号、都城、事件"
             value={search}
             onChange={async (e) => {
               const value = e.target.value;

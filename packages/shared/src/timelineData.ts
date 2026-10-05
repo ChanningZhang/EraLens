@@ -256,8 +256,11 @@ function buildPersonEntityDetail(
     : person.dynastyId
       ? dynastyMap.get(person.dynastyId)
       : undefined;
-  const headingDynastyName = headingDynasty?.altNames?.[0]?.trim() ||
-    (headingDynasty ? resolveDynastyDefaultName(headingDynasty) : undefined);
+  const headingDynastyName = headingDynasty
+    ? focusReign && detailReign
+      ? resolveDynastyName(headingDynasty, detailReign.startAbs)
+      : headingDynasty.altNames?.[0]?.trim() || resolveDynastyDefaultName(headingDynasty)
+    : undefined;
   const heading = resolveReignDetailHeading(
     detailReign,
     headingDynastyName,
