@@ -16,8 +16,8 @@ CREATE TABLE dynasty_groups (
 );
 CREATE TABLE dynasties (
   id TEXT PRIMARY KEY, name TEXT NOT NULL, alt_names TEXT NOT NULL DEFAULT '[]', ethnicity TEXT, scope TEXT NOT NULL,
-  region TEXT NOT NULL, start_year INTEGER NOT NULL, start_month INTEGER NOT NULL, end_year INTEGER NOT NULL,
-  end_month INTEGER NOT NULL, end_day INTEGER, end_confidence TEXT NOT NULL, start_abs INTEGER NOT NULL, end_abs INTEGER NOT NULL,
+  region TEXT NOT NULL, start_year INTEGER NOT NULL, start_month INTEGER NOT NULL, end_year INTEGER,
+  end_month INTEGER, end_day INTEGER, end_confidence TEXT, start_abs INTEGER NOT NULL, end_abs INTEGER NOT NULL,
   start_day INTEGER, start_confidence TEXT NOT NULL, color_token TEXT NOT NULL, parent_id TEXT, group_id TEXT,
   note TEXT, FOREIGN KEY(group_id) REFERENCES dynasty_groups(id)
 );

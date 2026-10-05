@@ -161,6 +161,10 @@ export function eventTargetReign(event: Event, reigns: readonly Reign[]): Reign 
   );
   const participants = active.filter((reign) => event.participantIds.includes(reign.personId));
   if (participants.length === 1) return participants[0]!;
+  // When participants do not identify one card, prefer the active main line
+  // over a concurrently active claim track.
+  const mainReigns = active.filter((reign) => reign.isMain === true);
+  if (mainReigns.length === 1) return mainReigns[0]!;
   if (participants.length > 1) return null;
   return active.length === 1 ? active[0]! : null;
 }

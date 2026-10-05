@@ -891,7 +891,7 @@
   "dynasties": [
     {
       "id": "roc",
-      "name": "{\"periods\":[{\"name\":\"中华民国\",\"start\":{\"year\":1912,\"month\":1,\"confidence\":\"month\"},\"end\":{\"year\":1950,\"month\":1,\"confidence\":\"year\"}},{\"name\":\"台湾地区\",\"start\":{\"year\":1950,\"month\":1,\"confidence\":\"year\"},\"end\":{\"year\":2026,\"month\":9,\"confidence\":\"month\"}}]}",
+      "name": "中华民国",
       "altNames": [
         "中华民国",
         "民国"
@@ -905,12 +905,12 @@
         "confidence": "month"
       },
       "end": {
-        "year": 2026,
-        "month": 9,
-        "abs": 24320,
+        "year": 1949,
+        "month": 10,
+        "abs": 23397,
         "confidence": "month"
       },
-      "note": "辛亥革命后，中华民国于1912年建立，先后经历南京临时政府、北京政府、南京国民政府及行宪后的总统制度。民国时期伴随政权更迭、军阀割据、北伐、抗日战争与国共内战；1949年中央政府迁往台湾后，中华民国政府在台湾继续运作。其后经历解除戒严、国会改选和政治民主化，1996年举行首次总统直接选举，2000年实现首次政党轮替。"
+      "note": "辛亥革命后，中华民国于1912年建立，先后经历南京临时政府、北京政府、南京国民政府及行宪后的总统制度。民国时期伴随政权更迭、军阀割据、北伐、抗日战争与国共内战；1949年迁往台湾。"
     }
   ],
   "reigns": [
@@ -1569,200 +1569,6 @@
       "endAbs": 23402,
       "isInformalMonarch": false,
       "isMain": true
-    },
-    {
-      "id": "reign-jiang-jieshi-roc-2",
-      "dynastyId": "roc",
-      "personId": "jiang-jieshi",
-      "title": "",
-      "eraNames": [],
-      "start": {
-        "year": 1950,
-        "month": 3,
-        "abs": 23402,
-        "day": 1,
-        "confidence": "day"
-      },
-      "end": {
-        "year": 1975,
-        "month": 4,
-        "abs": 23703,
-        "day": 5,
-        "confidence": "day"
-      },
-      "startAbs": 23402,
-      "endAbs": 23703,
-      "isInformalMonarch": false,
-      "isMain": false
-    },
-    {
-      "id": "reign-yan-jiagan-roc",
-      "dynastyId": "roc",
-      "personId": "yan-jiagan",
-      "title": "",
-      "eraNames": [],
-      "start": {
-        "year": 1975,
-        "month": 4,
-        "abs": 23703,
-        "day": 6,
-        "confidence": "day"
-      },
-      "end": {
-        "year": 1978,
-        "month": 5,
-        "abs": 23740,
-        "day": 20,
-        "confidence": "day"
-      },
-      "startAbs": 23703,
-      "endAbs": 23740,
-      "isInformalMonarch": false,
-      "isMain": false
-    },
-    {
-      "id": "reign-jiang-jingguo-roc",
-      "dynastyId": "roc",
-      "personId": "jiang-jingguo",
-      "title": "",
-      "eraNames": [],
-      "start": {
-        "year": 1978,
-        "month": 5,
-        "abs": 23740,
-        "day": 20,
-        "confidence": "day"
-      },
-      "end": {
-        "year": 1988,
-        "month": 1,
-        "abs": 23856,
-        "day": 13,
-        "confidence": "day"
-      },
-      "startAbs": 23740,
-      "endAbs": 23856,
-      "isInformalMonarch": false,
-      "isMain": false
-    },
-    {
-      "id": "reign-li-denghui-roc",
-      "dynastyId": "roc",
-      "personId": "li-denghui",
-      "title": "",
-      "eraNames": [],
-      "start": {
-        "year": 1988,
-        "month": 1,
-        "abs": 23856,
-        "day": 13,
-        "confidence": "day"
-      },
-      "end": {
-        "year": 2000,
-        "month": 5,
-        "abs": 24004,
-        "day": 20,
-        "confidence": "day"
-      },
-      "startAbs": 23856,
-      "endAbs": 24004,
-      "isInformalMonarch": false,
-      "isMain": false
-    },
-    {
-      "id": "reign-chen-shuibian-roc",
-      "dynastyId": "roc",
-      "personId": "chen-shuibian",
-      "title": "",
-      "eraNames": [],
-      "start": {
-        "year": 2000,
-        "month": 5,
-        "abs": 24004,
-        "day": 20,
-        "confidence": "day"
-      },
-      "end": {
-        "year": 2008,
-        "month": 5,
-        "abs": 24100,
-        "day": 20,
-        "confidence": "day"
-      },
-      "startAbs": 24004,
-      "endAbs": 24100,
-      "isInformalMonarch": false,
-      "isMain": false
-    },
-    {
-      "id": "reign-ma-yingjiu-roc",
-      "dynastyId": "roc",
-      "personId": "ma-yingjiu",
-      "title": "",
-      "eraNames": [],
-      "start": {
-        "year": 2008,
-        "month": 5,
-        "abs": 24100,
-        "day": 20,
-        "confidence": "day"
-      },
-      "end": {
-        "year": 2016,
-        "month": 5,
-        "abs": 24196,
-        "day": 20,
-        "confidence": "day"
-      },
-      "startAbs": 24100,
-      "endAbs": 24196,
-      "isInformalMonarch": false,
-      "isMain": false
-    },
-    {
-      "id": "reign-cai-yingwen-roc",
-      "dynastyId": "roc",
-      "personId": "cai-yingwen",
-      "title": "",
-      "eraNames": [],
-      "start": {
-        "year": 2016,
-        "month": 5,
-        "abs": 24196,
-        "day": 20,
-        "confidence": "day"
-      },
-      "end": {
-        "year": 2024,
-        "month": 5,
-        "abs": 24292,
-        "day": 20,
-        "confidence": "day"
-      },
-      "startAbs": 24196,
-      "endAbs": 24292,
-      "isInformalMonarch": false,
-      "isMain": false
-    },
-    {
-      "id": "reign-lai-qingde-roc",
-      "dynastyId": "roc",
-      "personId": "lai-qingde",
-      "title": "",
-      "eraNames": [],
-      "start": {
-        "year": 2024,
-        "month": 5,
-        "day": 20,
-        "confidence": "day",
-        "abs": 24292
-      },
-      "end": null,
-      "startAbs": 24292,
-      "endAbs": 24320,
-      "isInformalMonarch": false,
-      "isMain": false
     }
   ],
   "events": [
@@ -2584,7 +2390,7 @@
     "counts": {
       "persons": 42,
       "dynasties": 1,
-      "reigns": 34,
+      "reigns": 26,
       "events": 31,
       "relations": 29
     },
@@ -2870,7 +2676,7 @@
       "汪伪政权：1940-03-30 成立，汪精卫先任代主席、1940-11-28 起任主席；1944-03-22 陈公博代理主席，1945-08-16 宣布解散。汪精卫赴日治疗期间名义上仍任主席至11月病逝，时间轴从3月代理职权交接起显示陈公博。",
       "国务院摄行按维基「中华民国国家元首列表」建 informal reign：周自齐、高凌霨、黄郛、胡惟德（两段）、颜惠庆、杜锡珪、顾维钧。",
       "谭延闿维基自 1928-02-07 任南京国民政府主席，与张作霖安国军政府并立至 6 月；主线自张作霖 1928-06-03 离京后接谭，避免叠卡。",
-      "正统金色截于 1949 年 9 月（十月一日中华人民共和国成立后迁台续统不上金）。1949 年后的台湾地区任期在 reign.title 统一标为「领导人」，人物概述不用「总统」。",
+      "1949年前大陆时期的中华民国在位记录留在本包；1950年蒋介石在台北复任后至今的台湾地区在位记录转由 prc 包维护，以 claim_track=taiwan 作为并立政权轨道，人物仍归属 roc。",
       "人物概述依所属记录的链接来源扩写；争议生平保留限定语，不将传说直接写作确定事实。",
       "2026-10：roc.name 按展示沿革分为 1912–1949「中华民国」与 1950 起「台湾地区」；altNames[0] 保留代表名称「中华民国」，阶段名称由共享分时名称解析器按时间读取。1950 年起点沿用项目既有迁台续统展示边界。",
       "2026-10：统一治理王朝 altNames：首项为经核实的国号或自称，其余保留原有史称、地域称呼与检索别名；分时名称王朝以 altNames[0] 保存代表名称。",
@@ -2878,7 +2684,8 @@
       "2026-10：补充1937–1945年全面抗战代表性会战与战役；会战级事件与平型关、台儿庄、衡阳等关键战斗分开表达，重叠处在摘要及 dateNote 说明。日期按来源能支持的月精度记录；战果数字存在不同战史口径时不填确定数字。",
       "2026-10：九一八事变关联北大营事件地点；北大营作为柳条湖铁路爆炸、北大营战斗与沈阳城受袭这一多地点事件的代表点，详见 event-locations 包地点说明。",
       "2026-10：补录一·二八淞沪抗战，作战区涉及上海闸北、吴淞等多处，以闸北战事中心作地点代表点；事件span记录1932-01-28爆发至1932-03-03停战，5月5日签署协定作为结束交涉背景写入摘要。",
-      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。"
+      "普通实体关联统一迁入 entity-associations 包；本包仅维护实体、命运与人物继承记录。",
+      "2026-10-05：将1950年3月蒋介石在台北复任起的8条台湾地区在位记录移交 prc 包，统一使用并立轨道 claim_track=taiwan；本包继续维护相应人物及中华民国王朝记录。"
     ]
   }
 }

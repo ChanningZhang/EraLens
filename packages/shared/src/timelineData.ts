@@ -421,7 +421,7 @@ export function buildEntityDetail(
 
       ),
       facts: [
-        { label: "起止", value: `${dynasty.start.year} — ${dynasty.end.year}` },
+        { label: "起止", value: `${dynasty.start.year} — ${dynasty.end?.year ?? "至今"}` },
         { label: "范围", value: dynasty.scope === "cn" ? "中国史" : dynasty.scope },
       ],
       summary: dynasty.note,

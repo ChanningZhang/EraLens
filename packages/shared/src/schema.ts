@@ -89,7 +89,7 @@ export const DynastySchema = z.object({
   scope: ScopeSchema.default("cn"),
   region: z.string().default("east_asia"),
   start: TimePointSchema,
-  end: TimePointSchema,
+  end: TimePointSchema.optional(),
   startAbs: z.number(),
   endAbs: z.number(),
   /** Derived at the API boundary from endpoint confidence; not persisted. */

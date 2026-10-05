@@ -3,6 +3,11 @@ import { assertEntityAssociation } from "../../../packages/shared/src/entityAsso
 const text = value => value == null ? null : String(value);
 const csv = values => values?.length ? values.map(value => String(value).trim()).filter(Boolean).join(",") || null : null;
 const confidence = (date, explicit) => explicit ?? date?.confidence ?? (date?.day != null ? "day" : date?.month != null && date.month !== 1 ? "month" : "year");
+const currentAbsMonth = () => {
+  const now = new Date();
+  const year = now.getUTCFullYear();
+  return (year > 0 ? year : year + 1) * 12 + now.getUTCMonth();
+};
 const point = (date, key) => ({
   [`${key}_year`]: date?.year ?? null,
   [`${key}_month`]: date?.month ?? null,
@@ -36,8 +41,8 @@ export function rowsForPackage(slug, cache) {
     id: row.id, name: row.name, alt_names: row.altNames ?? [], ethnicity: row.ethnicity ?? null,
     scope: row.scope ?? "cn", region: row.region ?? "east_asia",
     ...point(row.start, "start"), start_confidence: confidence(row.start),
-    ...point(row.end, "end"), end_confidence: confidence(row.end),
-    start_abs: row.start.abs, end_abs: row.end.abs, color_token: "ochre",
+    ...point(row.end, "end"), end_confidence: row.end ? confidence(row.end) : null,
+    start_abs: row.start.abs, end_abs: row.end?.abs ?? currentAbsMonth(), color_token: "ochre",
     parent_id: row.parentId ?? null, group_id: row.groupId ?? null, note: row.note ?? null,
   }));
   const persons = (cache.persons ?? []).map(row => ({

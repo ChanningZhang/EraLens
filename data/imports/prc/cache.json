@@ -640,12 +640,7 @@
         "abs": 23397,
         "confidence": "month"
       },
-      "end": {
-        "year": 2026,
-        "month": 9,
-        "abs": 24320,
-        "confidence": "month"
-      },
+      "end": null,
       "note": "1949年9月中国人民政治协商会议第一届全体会议通过《共同纲领》，选举中央人民政府委员会；10月1日中华人民共和国成立。此后确立人民代表大会制度，1954年制定宪法；1978年以后推行改革开放，经济与社会结构持续变化。"
     }
   ],
@@ -932,6 +927,216 @@
       "claimLabel": null,
       "isMain": true,
       "isInformalMonarch": true
+    },
+    {
+      "id": "reign-jiang-jieshi-roc-2",
+      "dynastyId": "prc",
+      "personId": "jiang-jieshi",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": 1950,
+        "month": 3,
+        "abs": 23402,
+        "day": 1,
+        "confidence": "day"
+      },
+      "end": {
+        "year": 1975,
+        "month": 4,
+        "abs": 23703,
+        "day": 5,
+        "confidence": "day"
+      },
+      "startAbs": 23402,
+      "endAbs": 23703,
+      "isInformalMonarch": false,
+      "isMain": false,
+      "claimTrack": "taiwan",
+      "claimLabel": "台湾地区"
+    },
+    {
+      "id": "reign-yan-jiagan-roc",
+      "dynastyId": "prc",
+      "personId": "yan-jiagan",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": 1975,
+        "month": 4,
+        "abs": 23703,
+        "day": 6,
+        "confidence": "day"
+      },
+      "end": {
+        "year": 1978,
+        "month": 5,
+        "abs": 23740,
+        "day": 20,
+        "confidence": "day"
+      },
+      "startAbs": 23703,
+      "endAbs": 23740,
+      "isInformalMonarch": false,
+      "isMain": false,
+      "claimTrack": "taiwan",
+      "claimLabel": "台湾地区"
+    },
+    {
+      "id": "reign-jiang-jingguo-roc",
+      "dynastyId": "prc",
+      "personId": "jiang-jingguo",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": 1978,
+        "month": 5,
+        "abs": 23740,
+        "day": 20,
+        "confidence": "day"
+      },
+      "end": {
+        "year": 1988,
+        "month": 1,
+        "abs": 23856,
+        "day": 13,
+        "confidence": "day"
+      },
+      "startAbs": 23740,
+      "endAbs": 23856,
+      "isInformalMonarch": false,
+      "isMain": false,
+      "claimTrack": "taiwan",
+      "claimLabel": "台湾地区"
+    },
+    {
+      "id": "reign-li-denghui-roc",
+      "dynastyId": "prc",
+      "personId": "li-denghui",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": 1988,
+        "month": 1,
+        "abs": 23856,
+        "day": 13,
+        "confidence": "day"
+      },
+      "end": {
+        "year": 2000,
+        "month": 5,
+        "abs": 24004,
+        "day": 20,
+        "confidence": "day"
+      },
+      "startAbs": 23856,
+      "endAbs": 24004,
+      "isInformalMonarch": false,
+      "isMain": false,
+      "claimTrack": "taiwan",
+      "claimLabel": "台湾地区"
+    },
+    {
+      "id": "reign-chen-shuibian-roc",
+      "dynastyId": "prc",
+      "personId": "chen-shuibian",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": 2000,
+        "month": 5,
+        "abs": 24004,
+        "day": 20,
+        "confidence": "day"
+      },
+      "end": {
+        "year": 2008,
+        "month": 5,
+        "abs": 24100,
+        "day": 20,
+        "confidence": "day"
+      },
+      "startAbs": 24004,
+      "endAbs": 24100,
+      "isInformalMonarch": false,
+      "isMain": false,
+      "claimTrack": "taiwan",
+      "claimLabel": "台湾地区"
+    },
+    {
+      "id": "reign-ma-yingjiu-roc",
+      "dynastyId": "prc",
+      "personId": "ma-yingjiu",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": 2008,
+        "month": 5,
+        "abs": 24100,
+        "day": 20,
+        "confidence": "day"
+      },
+      "end": {
+        "year": 2016,
+        "month": 5,
+        "abs": 24196,
+        "day": 20,
+        "confidence": "day"
+      },
+      "startAbs": 24100,
+      "endAbs": 24196,
+      "isInformalMonarch": false,
+      "isMain": false,
+      "claimTrack": "taiwan",
+      "claimLabel": "台湾地区"
+    },
+    {
+      "id": "reign-cai-yingwen-roc",
+      "dynastyId": "prc",
+      "personId": "cai-yingwen",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": 2016,
+        "month": 5,
+        "abs": 24196,
+        "day": 20,
+        "confidence": "day"
+      },
+      "end": {
+        "year": 2024,
+        "month": 5,
+        "abs": 24292,
+        "day": 20,
+        "confidence": "day"
+      },
+      "startAbs": 24196,
+      "endAbs": 24292,
+      "isInformalMonarch": false,
+      "isMain": false,
+      "claimTrack": "taiwan",
+      "claimLabel": "台湾地区"
+    },
+    {
+      "id": "reign-lai-qingde-roc",
+      "dynastyId": "prc",
+      "personId": "lai-qingde",
+      "title": "",
+      "eraNames": [],
+      "start": {
+        "year": 2024,
+        "month": 5,
+        "day": 20,
+        "confidence": "day",
+        "abs": 24292
+      },
+      "end": null,
+      "startAbs": 24292,
+      "endAbs": 24320,
+      "isInformalMonarch": false,
+      "isMain": false,
+      "claimTrack": "taiwan",
+      "claimLabel": "台湾地区"
     }
   ],
   "events": [
@@ -1190,7 +1395,7 @@
     "counts": {
       "persons": 21,
       "dynasties": 1,
-      "reigns": 11,
+      "reigns": 19,
       "events": 12,
       "relations": 6
     },
@@ -1294,6 +1499,10 @@
       {
         "label": "维基百科",
         "url": "https://zh.wikipedia.org/wiki/习近平"
+      },
+      {
+        "label": "中華民國總統府：歷任總統",
+        "url": "https://www.president.gov.tw/qrcode/16c"
       }
     ],
     "notes": [
@@ -1312,7 +1521,8 @@
       "2026-10-05：人物概述审查与补充。按人物逐条采用具体史事及正史、传世文献或学术考证；史料仅存名号/世系、不能确认具体经历的记录保留简短表述，不以统一模板扩写。",
       "2026-10-05：补足政权形成前经历：mao-zedong。边疆传统记载保留限定，近现代人物沿用原职位字段，不赋予帝王称谓。",
       "2026-10-05：与已修订开国人物概述、王朝起讫、在位及都城逐条交叉核对，修订王朝简史：prc。区分势力发迹、称王、称帝、改国号和灭亡；收录口径与年代取舍只保留在manifest，不写进历史正文。",
-      "原王朝概述中的元首收录口径移至此：元首按中央人民政府主席、国家主席、副主席代行、代主席及废除主席期间全国人大常委会收录；资料截至2026年9月。正统标记沿用数据字段，不写入历史正文。"
+      "原王朝概述中的元首收录口径移至此：元首按中央人民政府主席、国家主席、副主席代行、代主席及废除主席期间全国人大常委会收录；资料截至2026年9月。正统标记沿用数据字段，不写入历史正文。",
+      "2026-10-05：按台湾地区政权在位序列，将蒋介石1950年在台北复任至赖清德现任的8条记录并入 prc 王朝，使用 claim_track=taiwan、claim_label=台湾地区表达并立；人物与来源仍由 minguo 包唯一维护。起讫日沿用该包已核实的总统府来源，不将1949年前大陆政府任期移入。"
     ]
   }
 }
